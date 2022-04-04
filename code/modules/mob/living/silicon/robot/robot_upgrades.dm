@@ -39,6 +39,7 @@
 	R.pixel_x = 0
 	R.old_x = 0
 	R.default_pixel_x = 0
+	R.stats.removeAllPerks() //We dont want to stack perks on perks so we remove them all, sads
 
 	return TRUE
 
@@ -146,7 +147,7 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 
-	var/obj/item/weapon/gun/energy/taser/mounted/cyborg/T = locate() in R.module
+	var/obj/item/gun/energy/taser/mounted/cyborg/T = locate() in R.module
 	if(!T)
 		T = locate() in R.module.contents
 	if(!T)
@@ -179,8 +180,8 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		R.module.modules += new/obj/item/weapon/tank/jetpack/carbondioxide
-//		for(var/obj/item/weapon/tank/jetpack/carbondioxide in R.module.modules)
+		R.module.modules += new/obj/item/tank/jetpack/carbondioxide
+//		for(var/obj/item/tank/jetpack/carbondioxide in R.module.modules)
 //			R.internals = src
 		//R.icon_state="Miner+j"
 		R.module.Initialize() //Fixes layering and possible tool issues
@@ -201,7 +202,7 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		R.module.modules += new/obj/item/weapon/rcd/borg(R.module)
+		R.module.modules += new/obj/item/rcd/borg(R.module)
 		R.module.Initialize() //Fixes layering and possible tool issues
 		return TRUE
 
@@ -209,7 +210,7 @@
 	name = "engineering robot arc welder"
 	desc = "An electric based, safe welder that runs on its own mini reactor. Use during construction operations."
 	icon_state = "cyborg_upgrade3"
-	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASMA = 10, MATERIAL_URANIUM = 10, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_SILVER = 1, MATERIAL_STEEL = 10)
 	require_module = TRUE
 
 /obj/item/borg/upgrade/arc_welder/action(var/mob/living/silicon/robot/R)
@@ -220,7 +221,7 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		R.module.modules += new/obj/item/weapon/tool/arcwelder/cyborg(R.module)
+		R.module.modules += new/obj/item/tool/baton/arcwelder/cyborg(R.module)
 		R.module.Initialize() //Fixes layering and possible tool issues
 		return TRUE
 
@@ -231,11 +232,19 @@
 	var/list/additional_reagents = list()
 
 /obj/item/borg/upgrade/hypospray/action(mob/living/silicon/robot/R, user = usr)
-	. = ..()
-	if(.)
-		for(var/obj/item/weapon/reagent_containers/borghypo/H in R.module.modules)
+	if(..()) return FALSE
+
+	if(!R.module || !(type in R.module.supported_upgrades))
+		to_chat(R, "Upgrade mounting error!  No suitable hardpoint detected!")
+		to_chat(usr, "There's no mounting point for the module!")
+		return FALSE
+	else
+		for(var/obj/item/reagent_containers/borghypo/H in R.module.contents)
 			if(H.accepts_reagent_upgrades)
 				H.reagent_ids += additional_reagents
+			H.Reindex()
+			return TRUE
+
 
 /obj/item/borg/upgrade/hypospray/medical
 	additional_reagents = list("dermaline", "meralyne", "tricordrazine", "dexalinp")
@@ -248,10 +257,10 @@
 
 
 /obj/item/borg/upgrade/syndicate
-	name = "illegal equipment module"
-	desc = "Unlocks the hidden, deadlier functions of a robot"
+	name = "Overclocking equipment module"
+	desc = "Unlocks hidden, deadlier functions of a robot or overclocked equipment."
 	icon_state = "cyborg_upgrade3"
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 15, MATERIAL_DIAMOND = 10)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 15, MATERIAL_DIAMOND = 5)
 	require_module = TRUE
 
 /obj/item/borg/upgrade/syndicate/action(var/mob/living/silicon/robot/R)
@@ -278,7 +287,7 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		R.module.modules += new/obj/item/weapon/tool/sword/machete(R.module)
+		R.module.modules += new/obj/item/tool/sword/machete(R.module)
 		R.module.Initialize() //Fixes layering and possible tool issues
 		return TRUE
 
@@ -298,6 +307,6 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		R.module.modules += new/obj/item/weapon/storage/bag/robotic/holding(R.module)
+		R.module.modules += new/obj/item/storage/bag/robotic/holding(R.module)
 		R.module.Initialize() //Fixes layering and possible tool issues
 		return TRUE

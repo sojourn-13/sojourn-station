@@ -22,9 +22,11 @@
 		for(var/obj/item/organ/external/Ex in organs)
 			bad_external_organs |= Ex
 
-	//processing internal organs is pretty cheap, do that first.
+	//Processing internal organs, shutting them off if the process returns with the classic Kill return value.
 	for(var/obj/item/organ/I in internal_organs)
-		I.Process()
+		if(I.inserted_and_processing && I.Process() == PROCESS_KILL)
+			I.inserted_and_processing = FALSE
+			
 
 	handle_stance()
 	handle_grasp()
@@ -85,9 +87,9 @@
 	// One cane fully mitigates a broken leg.
 	// Two canes are needed for a lost leg. If you are missing both legs, canes aren't gonna help you.
 	if(stance_damage > 0 && stance_damage < 8)
-		if (l_hand && istype(l_hand, /obj/item/weapon/cane))
+		if (l_hand && istype(l_hand, /obj/item/cane))
 			stance_damage -= 3
-		if (r_hand && istype(r_hand, /obj/item/weapon/cane))
+		if (r_hand && istype(r_hand, /obj/item/cane))
 			stance_damage -= 3
 		stance_damage = max(stance_damage, 0)
 

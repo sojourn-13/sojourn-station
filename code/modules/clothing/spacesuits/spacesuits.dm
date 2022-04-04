@@ -12,7 +12,7 @@
 		slot_r_hand_str = "s_helmet",
 		)
 	permeability_coefficient = 0.01
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 10,
 		energy = 10,
@@ -75,7 +75,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 10)
 	slowdown = 3
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 10,
 		energy = 10,
@@ -90,7 +90,7 @@
 	species_restricted = list("exclude")
 	equip_delay = 4 SECONDS
 	var/list/supporting_limbs //If not-null, automatically splints breaks. Checked when removing the suit.
-
+	stiffness = HEAVY_STIFFNESS
 
 /obj/item/clothing/suit/space/equipped(mob/M)
 	check_limb_support()

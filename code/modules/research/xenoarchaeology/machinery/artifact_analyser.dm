@@ -57,7 +57,7 @@
 	onclose(user, "artanalyser")
 
 // Special paper for the science tool
-/obj/item/weapon/paper/artifact_info
+/obj/item/paper/artifact_info
 	var/artifact_type
 	var/artifact_first_effect
 	var/artifact_second_effect
@@ -80,7 +80,7 @@
 			results = get_scan_info(scanned_object)
 
 		src.visible_message("<b>[name]</b> states, \"Scanning complete.\"")
-		var/obj/item/weapon/paper/artifact_info/P = new(src.loc)
+		var/obj/item/paper/artifact_info/P = new(src.loc)
 		P.name = "[src] report #[++report_num]"
 		P.info = "<b>[src] analysis report #[report_num]</b><br>"
 		P.info += "<br>"
@@ -147,9 +147,6 @@
 			ecosystem involving self cannibalism and a symbiotic relationship with the contained liquid.<br><br>\
 			Structure is composed of a carbo-titanium alloy with interlaced reinforcing energy fields, and the contained liquid \
 			resembles proto-plasmic residue supportive of single cellular developmental conditions."
-		if(/obj/machinery/power/supermatter)
-			return "Super dense plasma clump - Appears to have been shaped or hewn, structure is composed of matter 2000% denser than ordinary carbon matter residue.\
-			Potential application as unrefined plasma source."
 		if(/obj/machinery/power/supermatter)
 			return "Super dense plasma clump - Appears to have been shaped or hewn, structure is composed of matter 2000% denser than ordinary carbon matter residue.\
 			Potential application as unrefined plasma source."

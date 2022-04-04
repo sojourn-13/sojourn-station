@@ -103,11 +103,10 @@
 	var/MS_type
 
 
-/obj/machinery/multistructure/Initialize()
+/obj/machinery/multistructure/Initialize(mapload)
 	. = ..()
 	// Will attempt to create MS on spawn
 	check_MS()
-
 
 /obj/machinery/multistructure/attackby(obj/item/I, mob/user)
 	check_MS()

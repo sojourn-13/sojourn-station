@@ -13,7 +13,7 @@
 	waring_faction = "" //It was a inside job
 	waring_faction_multy = 5 //We know your weakness
 */
-
+	price_tag = 1500
 	flash_resistances = 15 //We are the light
 
 	//spawn_blacklisted = TRUE
@@ -25,13 +25,8 @@
 	. = ..()
 	do_sparks(3, 0, src.loc)
 
-/mob/living/carbon/superior_animal/roach/bluespace/Life()
-	. = ..()
-	if(stat != CONSCIOUS)
-		return
-
-	if(stat != AI_inactive)
-		return
+/mob/living/carbon/superior_animal/roach/bluespace/handle_ai()
+	..()
 
 	var/turf/target
 	if((stance == HOSTILE_STANCE_ATTACK || stance == HOSTILE_STANCE_ATTACKING) && target_mob && !Adjacent(target_mob) && prob(change_tele_to_mob))

@@ -28,7 +28,7 @@
 	var/cooldown = 0						//cooldown in world.time value
 	var/time_until_regen = 0
 	var/obj/assimilated_machinery
-	var/obj/item/weapon/circuitboard/saved_circuit
+	var/obj/item/circuitboard/saved_circuit
 
 /obj/machinery/hivemind_machine/Initialize()
 	. = ..()
@@ -252,6 +252,8 @@
 
 /obj/machinery/hivemind_machine/bullet_act(obj/item/projectile/Proj)
 	take_damage(Proj.get_structure_damage())
+	if(istype(Proj, /obj/item/projectile/ion))
+		Proj.on_hit(loc)
 	. = ..()
 
 

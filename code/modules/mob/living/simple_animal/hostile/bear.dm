@@ -11,7 +11,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/bearmeat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/bearmeat
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "pokes"
@@ -20,10 +20,17 @@
 	health = 60
 	melee_damage_lower = 20
 	melee_damage_upper = 30
+	attack_sound = 'sound/effects/creatures/maul.ogg'
 	leather_amount = 6
 	bones_amount = 4
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
 	faction = "russian"
+	inherent_mutations = list(MUTATION_EPILEPSY, MUTATION_THICK_FUR, MUTATION_IMBECILE, MUTATION_NERVOUSNESS)
+
+/mob/living/simple_animal/hostile/bear/FindTarget()
+	. = ..()
+	if(.)
+		playsound(src, 'sound/effects/creatures/bear.ogg', 100, 1, -3)
 
 /mob/living/simple_animal/hostile/bear/hudson
 	name = "Hudson"
@@ -75,6 +82,7 @@
 	melee_damage_upper = 40
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 
+// Credit to scar#1579 for the sprite.
 /mob/living/simple_animal/hostile/bear/mukwah
 	name = "mukwah"
 	desc = "A bear that escaped from the abandoned zoo labs before mutating into a creature known as a mukwah. Unlike a standard bear, a mukwah is much more powerful, a heavy hitter that is \
@@ -85,7 +93,7 @@
 	maxHealth = 400
 	health = 400
 	melee_damage_lower = 40 //Low health but an extremely powerful hitter
-	melee_damage_upper = 50
+	melee_damage_upper = 50 //You call 400 HP LOW HEALTH?! - Seb
 	leather_amount = 10
 	bones_amount = 10
 	pixel_x = -16

@@ -15,7 +15,7 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 	idle_power_usage = 30
 	active_power_usage = 200
 
-	var/obj/item/weapon/card/id/scan = null // identification
+	var/obj/item/card/id/scan = null // identification
 	var/authenticated = 0
 	var/sendcooldown = 0 // to avoid spamming fax messages
 	var/department = "Unknown" // our department
@@ -83,13 +83,13 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 	return
 
 /obj/machinery/photocopier/faxmachine/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/weapon/card/id) && user.unEquip(I))
+	if(istype(I, /obj/item/card/id) && user.unEquip(I))
 		insert_id(I)
 		return
 	. = ..()
 
-/obj/machinery/photocopier/faxmachine/proc/insert_id(var/obj/item/weapon/card/id/id)
-	if(istype(id, /obj/item/weapon/card/id))
+/obj/machinery/photocopier/faxmachine/proc/insert_id(var/obj/item/card/id/id)
+	if(istype(id, /obj/item/card/id))
 		id.loc = src
 		scan = id
 		authenticated = 0
@@ -127,7 +127,7 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 			authenticated = 0
 		else
 			var/obj/item/I = usr.get_active_hand()
-			if (istype(I, /obj/item/weapon/card/id) && usr.unEquip(I))
+			if (istype(I, /obj/item/card/id) && usr.unEquip(I))
 				insert_id(I)
 
 	if(href_list["dept"])
@@ -174,11 +174,11 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 	// give the sprite some time to flick
 	sleep(20)
 
-	if (istype(incoming, /obj/item/weapon/paper))
+	if (istype(incoming, /obj/item/paper))
 		copy(incoming)
-	else if (istype(incoming, /obj/item/weapon/photo))
+	else if (istype(incoming, /obj/item/photo))
 		photocopy(incoming)
-	else if (istype(incoming, /obj/item/weapon/paper_bundle))
+	else if (istype(incoming, /obj/item/paper_bundle))
 		bundlecopy(incoming)
 	else
 		return 0
@@ -193,11 +193,11 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 	use_power(200)
 
 	var/obj/item/rcvdcopy
-	if (istype(copyitem, /obj/item/weapon/paper))
+	if (istype(copyitem, /obj/item/paper))
 		rcvdcopy = copy(copyitem)
-	else if (istype(copyitem, /obj/item/weapon/photo))
+	else if (istype(copyitem, /obj/item/photo))
 		rcvdcopy = photocopy(copyitem)
-	else if (istype(copyitem, /obj/item/weapon/paper_bundle))
+	else if (istype(copyitem, /obj/item/paper_bundle))
 		rcvdcopy = bundlecopy(copyitem, 0)
 	else
 		visible_message("[src] beeps, \"Error transmitting message.\"")
@@ -226,12 +226,12 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 
 /obj/machinery/photocopier/faxmachine/proc/export_fax(fax)
 	var faxid = "[num2text(world.realtime,12)]_[rand(10000)]"
-	if (istype(fax, /obj/item/weapon/paper))
-		var/obj/item/weapon/paper/P = fax
+	if (istype(fax, /obj/item/paper))
+		var/obj/item/paper/P = fax
 		var/text = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>";
 		file("[config.fax_export_dir]/fax_[faxid].html") << text;
-	else if (istype(fax, /obj/item/weapon/photo))
-		var/obj/item/weapon/photo/H = fax
+	else if (istype(fax, /obj/item/photo))
+		var/obj/item/photo/H = fax
 		fcopy(H.img, "[config.fax_export_dir]/photo_[faxid].png")
 		var/text = "<html><head><title>[H.name]</title></head>" \
 			+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
@@ -239,8 +239,8 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 			+ "[H.scribble ? "<br>Written on the back:<br><i>[H.scribble]</i>" : ""]"\
 			+ "</body></html>"
 		file("[config.fax_export_dir]/fax_[faxid].html") << text
-	else if (istype(fax, /obj/item/weapon/paper_bundle))
-		var/obj/item/weapon/paper_bundle/B = fax
+	else if (istype(fax, /obj/item/paper_bundle))
+		var/obj/item/paper_bundle/B = fax
 		var/data = ""
 		for (var/page = 1, page <= B.pages.len, page++)
 			var/obj/pageobj = B.pages[page]

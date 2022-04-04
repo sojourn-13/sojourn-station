@@ -8,14 +8,14 @@
 	icon_screen = "supply"
 	light_color = COLOR_LIGHTING_ORANGE_MACHINERY
 	req_access = list(access_cargo)
-	circuit = /obj/item/weapon/circuitboard/supplycomp
-	var/temp = null
+	circuit = /obj/item/circuitboard/supplycomp
+	var/temp
 	var/reqtime = 0 //Cooldown for requisitions - Quarxink
 	var/last_viewed_group = "categories"
-	var/can_order_contraband = FALSE
+	var/can_order_contraband = TRUE
 	var/requestonly = FALSE
-	var/contraband = FALSE
-	var/hacked = FALSE
+	var/contraband = TRUE
+	var/hacked = TRUE
 
 /obj/machinery/computer/supplycomp/attack_hand(mob/user)
 	if(!allowed(user))
@@ -329,6 +329,6 @@
 /obj/machinery/computer/supplycomp/order
 	name = "supply ordering console"
 	icon_screen = "request"
-	circuit = /obj/item/weapon/circuitboard/ordercomp
+	circuit = /obj/item/circuitboard/ordercomp
 	requestonly = TRUE
 	req_access = list()

@@ -42,7 +42,7 @@
 		me_verb(message)
 
 
-/mob/verb/me_verb(message as text)
+/mob/verb/me_verb(message as message)
 	set name = "Me"
 	set hidden = TRUE
 
@@ -141,6 +141,8 @@
 		verb=pick("exclaims", "shouts", "yells")
 	else if(ending=="?")
 		verb="asks"
+	else if(ending=="@")
+		verb="reports"
 
 	return verb
 

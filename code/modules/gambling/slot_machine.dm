@@ -142,15 +142,11 @@
 			else
 				playsound(src.loc, 'sound/machines/ping.ogg', 50, 1)
 				prize = bet*slots_payouts[wintype]
-			else
 		if(prize > 0)
 			src.visible_message("<b>[name]</b> states, \"Congratulations! You won [prize] Credits!\"")
 			if(jester)
 				jackpot = max(jackpot - prize, 0)
 			spawn_money(prize,src.loc,user)
-		else
-
-
 	src.add_fingerprint(user)
 	update_icon()
 	bet = 0
@@ -159,8 +155,8 @@
 /obj/machinery/slotmachine/attackby(obj/item/S as obj, mob/user as mob)
 	if (spinning)
 		return
-	if (istype(S, /obj/item/weapon/spacecash))
-		var/obj/item/weapon/spacecash/cash = S
+	if (istype(S, /obj/item/spacecash))
+		var/obj/item/spacecash/cash = S
 		if ((cash.worth > 0) && (cash.worth<=1000) && (bet + cash.worth <= 1000))
 			to_chat(user, SPAN_NOTICE("You insert [cash.worth] Credits into [src]."))
 			bet += cash.worth
@@ -168,7 +164,7 @@
 			qdel(cash)
 		else
 			to_chat(user, SPAN_WARNING("You must bet 1-1000 Credits!"))
-	else if (istype(S, /obj/item/weapon/coin))
+	else if (istype(S, /obj/item/coin))
 		to_chat(user, SPAN_NOTICE("You add the [S.name] into the [src]. It will slightly increase chance to win."))
 		user.drop_from_inventory(S)
 		bet = 100

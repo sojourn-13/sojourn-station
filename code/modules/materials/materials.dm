@@ -6,7 +6,7 @@
 
 	PATHS THAT USE DATUMS
 		turf/simulated/wall
-		obj/item/weapon/material
+		obj/item/material
 		obj/structure/barricade
 		obj/item/stack/material
 		obj/structure/table
@@ -20,7 +20,6 @@
 		DOORS
 			stone
 			metal
-			resin
 			wood
 */
 
@@ -98,9 +97,9 @@ var/list/name_to_material
 
 	// Icons
 	var/icon_colour                                      // Colour applied to products of this material.
-	var/icon_base = "metal"                              // Wall and table base icon tag. See header.
+	var/icon_base = "solid"                              // Wall and table base icon tag. See header.
 	var/door_icon_base = "metal"                         // Door base icon tag. See header.
-	var/icon_reinf = "reinf_metal"                       // Overlay used
+	var/icon_reinf = "reinf_over"                        // Overlay used
 	var/list/stack_origin_tech = list(TECH_MATERIAL = 1) // Research level for stacks.
 
 	// Attributes
@@ -217,10 +216,13 @@ var/list/name_to_material
 		G.reinforce_girder()
 
 // Use this to drop a given amount of material.
-/material/proc/place_material(target, amount=1)
+/material/proc/place_material(target, amount=1, mob/living/user = null)
 	// Drop the integer amount of sheets
-	if(place_sheet(target, round(amount)))
+	var/obj/sheets = place_sheet(target, round(amount))
+	if(sheets)
 		amount -= round(amount)
+		if(user)
+			sheets.add_fingerprint(user)
 
 	// If there is a remainder left, drop it as a shard instead
 	if(amount)
@@ -234,7 +236,7 @@ var/list/name_to_material
 // As above.
 /material/proc/place_shard(target, amount=1)
 	if(shard_type)
-		return new /obj/item/weapon/material/shard(target, src.name, amount)
+		return new /obj/item/material/shard(target, src.name, amount)
 
 // Used by walls and weapons to determine if they break or not.
 /material/proc/is_brittle()
@@ -519,7 +521,7 @@ var/list/name_to_material
 	hardness = 40
 	weight = 30
 	stack_origin_tech = "materials=2"
-	composite_material = list(MATERIAL_STEEL = 2,MATERIAL_GLASS = 3)
+	composite_material = list(MATERIAL_STEEL = 1,MATERIAL_GLASS = 1)
 	window_options = list("One Direction" = 1, "Full Window" = 6, "Windoor" = 5)
 	created_window = /obj/structure/window/reinforced
 	created_window_full = /obj/structure/window/reinforced/full
@@ -684,22 +686,7 @@ var/list/name_to_material
 	flags = MATERIAL_PADDING
 	sheet_singular_name = "ball"
 	sheet_plural_name = "balls"
-/*
-/material/resin
-	name = "resin"
-	icon_colour = "#E85DD8"
-	dooropen_noise = 'sound/effects/attackblob.ogg'
-	door_icon_base = "resin"
-	melting_point = T0C+300
-	sheet_singular_name = "blob"
-	sheet_plural_name = "blobs"
 
-/material/resin/can_open_material_door(var/mob/living/user)
-	var/mob/living/carbon/M = user
-	if(istype(M) && locate(/obj/item/organ/internal/xenos/hivenode) in M.internal_organs)
-		return 1
-	return 0
-*/
 /material/biomatter
 	name = MATERIAL_BIOMATTER
 	stack_type = /obj/item/stack/material/biomatter
@@ -824,3 +811,11 @@ var/list/name_to_material
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+232
 	melting_point = T0C+300
+
+/material/ameridian
+	name = MATERIAL_AMERIDIAN
+	stack_type = /obj/item/stack/material/ameridian
+	icon_colour = "#007A00"
+	sheet_singular_name = "shard"
+	sheet_plural_name = "shards"
+	stack_origin_tech = list(TECH_MATERIAL = 9)

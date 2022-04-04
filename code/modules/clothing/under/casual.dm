@@ -163,6 +163,12 @@
 	icon_state = "cuttop_red"
 	item_state = "cuttop_red"
 
+/obj/item/clothing/under/top/haltertop
+	name = "black halterneck top"
+	desc = "A black halterneck top and jean shorts"
+	icon_state = " haltertop"
+	item_state = " haltertop"
+
 /obj/item/clothing/under/top/outfitfrontier
 	name = "frontier outfit"
 	desc = "A leather shirt worn alongside a tan undershirt and pants."
@@ -211,6 +217,38 @@
 	icon_state = "dispatch"
 	item_state = "dispatch"
 
+/obj/item/clothing/under/top/dimmadome
+	name = "ivory texan suit"
+	desc = "An ivory set of pants with white shirt and a black collar, perfect for the haughty southerner Plasma magnate. Howdy!"
+	icon_state = "texan_suit"
+	item_state = "texan_suit"
+
+/*Hawaiian 'fits*/
+
+/obj/item/clothing/under/hawaiian
+	name = "black Hawaiian shirt"
+	desc = "A black, flowery Hawaiian shirt paired with striking tangerine hued pants."
+	icon_state = "animalstyle"
+	item_state = "animalstyle"
+
+/obj/item/clothing/under/hawaiian/vintage
+	name = "pink Hawaiian shirt"
+	desc = "A powder-pink Hawaiian shirt paired with dark khaki slacks.."
+	icon_state = "3005vintage"
+	item_state = "3005vintage"
+
+/obj/item/clothing/under/hawaiian/tropico
+	name = "green Hawaiian shirt"
+	desc = "A leafy green Hawaiian shirt paired with khaki slacks.."
+	icon_state = "tropicopuke"
+	item_state = "tropicopuke"
+
+/obj/item/clothing/under/hawaiian/vice
+	name = "aquamarine Hawaiian shirt"
+	desc = "An ocean blue Hawaiian shirt paired with bluejeans. The shirt label read 'Vercetti! Remember the name!'."
+	icon_state = "miamivice"
+	item_state = "miamivice"
+
 /*Turtlenecks*/
 
 /obj/item/clothing/under/turtleneck/green
@@ -243,6 +281,13 @@
 	icon_state = "blackturtle"
 	item_state = "blackturtle"
 
+/obj/item/clothing/under/dismas
+	name = "highwayman clothes"
+	desc = "A set of clothes for a man of dubious morals who seeks redemption on the old road."
+	icon_state = "dismas"
+	item_state = "dismas"
+
+
 /* Church */
 /obj/item/clothing/under/rank/monashka
 	name = "monashka garments"
@@ -255,3 +300,9 @@
 	desc = "A dark and golden skirt warn by the faiths."
 	icon_state = "lemniscate_skirt"
 	item_state = "lemniscate_skirt"
+
+/obj/item/clothing/under/rank/ntdress
+	name = "Absolutist summer dress"
+	desc = "A white and gold summerdress, produced and oft worn by Abolutists"
+	icon_state = "summerdress_nt"
+	item_state = "summerdress_nt"

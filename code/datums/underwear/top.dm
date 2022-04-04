@@ -70,3 +70,8 @@
 	name = "Striped Bra"
 	icon_state = "striped_bra"
 	has_color = TRUE
+
+/datum/category_item/underwear/top/bandage
+	name = "Bandage Bra"
+	icon_state = "bandage_bra"
+	has_color = TRUE

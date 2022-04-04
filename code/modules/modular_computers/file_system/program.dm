@@ -5,7 +5,7 @@
 	var/required_access = null						// Access level required to run/download the program.
 	var/requires_access_to_run = 1					// Whether the program checks for required_access when run.
 	var/requires_access_to_download = 1				// Whether the program checks for required_access when downloading.
-	var/datum/nano_module/NM = null					// If the program uses NanoModule, put it here and it will be automagically opened. Otherwise implement ui_interact.
+	var/datum/nano_module/NM = null					// If the program uses NanoModule, put it here and it will be automagically opened. Otherwise implement nano_ui_interact.
 	var/nanomodule_path = null						// Path to nanomodule, make sure to set this if implementing new program.
 	var/program_state = PROGRAM_STATE_KILLED		// PROGRAM_STATE_KILLED or PROGRAM_STATE_BACKGROUND or PROGRAM_STATE_ACTIVE - specifies whether this program is running.
 	var/obj/item/modular_computer/computer			// Device that runs this program.
@@ -36,6 +36,8 @@
 	. = ..()
 
 /datum/computer_file/program/clone()
+	if(!clone_able && copy_cat)
+		return
 	var/datum/computer_file/program/temp = ..()
 	temp.required_access = required_access
 	temp.nanomodule_path = nanomodule_path
@@ -44,12 +46,13 @@
 	temp.requires_ntnet = requires_ntnet
 	temp.requires_ntnet_feature = requires_ntnet_feature
 	temp.usage_flags = usage_flags
+	temp.copy_cat = TRUE
 	return temp
 
 // Used by programs that manipulate files.
 /datum/computer_file/program/proc/get_file(var/filename)
-	var/obj/item/weapon/computer_hardware/hard_drive/HDD = computer.hard_drive
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/RHDD = computer.portable_drive
+	var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+	var/obj/item/computer_hardware/hard_drive/portable/RHDD = computer.portable_drive
 	if(!HDD && !RHDD)
 		return
 	var/datum/computer_file/data/F = HDD.find_file_by_name(filename)
@@ -63,7 +66,7 @@
 /datum/computer_file/program/proc/create_file(var/newname, var/data = "", var/file_type = /datum/computer_file/data)
 	if(!newname)
 		return
-	var/obj/item/weapon/computer_hardware/hard_drive/HDD = computer.hard_drive
+	var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
 	if(!HDD)
 		return
 	if(get_file(newname))
@@ -79,6 +82,11 @@
 /datum/computer_file/program/proc/update_computer_icon()
 	if(computer)
 		computer.update_icon()
+
+/datum/computer_file/program/proc/set_icon(string)
+	if(string && istext(string))
+		program_icon_state = string
+	update_computer_icon()
 
 // Attempts to create a log in global ntnet datum. Returns 1 on success, 0 on fail.
 /datum/computer_file/program/proc/generate_network_log(var/text)
@@ -134,7 +142,7 @@
 	if(!istype(user))
 		return 0
 
-	var/obj/item/weapon/card/id/I = user.GetIdCard()
+	var/obj/item/card/id/I = user.GetIdCard()
 	if(!I)
 		if(loud)
 			to_chat(user, SPAN_WARNING("RFID Error - Unable to scan ID"))
@@ -185,13 +193,13 @@
 
 // This is called every tick when the program is enabled. Ensure you do parent call if you override it. If parent returns 1 continue with UI initialisation.
 // It returns 0 if it can't run or if NanoModule was used instead. I suggest using NanoModules where applicable.
-/datum/computer_file/program/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/datum/computer_file/program/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	if(program_state != PROGRAM_STATE_ACTIVE) // Our program was closed. Close the ui if it exists.
 		if(ui)
 			ui.close()
-		return computer.ui_interact(user)
+		return computer.nano_ui_interact(user)
 	if(istype(NM))
-		NM.ui_interact(user, ui_key, null, force_open)
+		NM.nano_ui_interact(user, ui_key, null, force_open)
 		return 0
 	return 1
 

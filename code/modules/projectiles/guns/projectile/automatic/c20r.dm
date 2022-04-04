@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/c20r
+/obj/item/gun/projectile/automatic/c20r
 	name = "bullpup SMG"
 	desc = "The C-20r is a lightweight and rapid-firing SMG, for when you REALLY need someone dead. Uses .35 Auto. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstock stamp."
 	icon = 'icons/obj/guns/projectile/cr20.dmi'
@@ -9,7 +9,7 @@
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_SMG
 	auto_eject = TRUE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
@@ -21,10 +21,10 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.5
 	zoom_factor = 0.4
-	recoil_buildup = 3
+	recoil_buildup = 0.5
 	one_hand_penalty = 5 //smg level
 
-	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE,GUN_CALIBRE_35,GUN_SCOPE, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_SCOPE, GUN_MAGWELL)
 
 	init_firemodes = list(
 		FULL_AUTO_400,
@@ -32,7 +32,7 @@
 		BURST_3_ROUND
 		)
 
-/obj/item/weapon/gun/projectile/automatic/c20r/update_icon()
+/obj/item/gun/projectile/automatic/c20r/update_icon()
 	cut_overlays()
 	icon_state = "[initial(icon_state)][silenced ? "_s" : ""]"
 	if(ammo_magazine)
@@ -40,13 +40,20 @@
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		add_overlay("slide[silenced ? "_s" : ""]")
 
-/obj/item/weapon/gun/projectile/automatic/c20r/Initialize()
+/obj/item/gun/projectile/automatic/c20r/Initialize()
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/c20r/sci
+/obj/item/gun/projectile/automatic/c20r/sci
 	name = "bullpip SMG"
 	desc = "A Soteria copy of the Scarborough Arms C-20r, not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses .35 Auto."
+	icon = 'icons/obj/guns/projectile/si_cr20.dmi'
 	damage_multiplier = 1
 	penetration_multiplier = 1
 	price_tag = 500
+
+/obj/item/gun/projectile/automatic/c20r/sci/preloaded
+
+/obj/item/gun/projectile/automatic/c20r/sci/preloaded/New()
+	. = ..()
+	ammo_magazine = new /obj/item/ammo_magazine/smg_35/hv(src)

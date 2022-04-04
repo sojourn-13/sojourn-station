@@ -8,7 +8,7 @@
 	item_state = "bluetag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag)
+	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/redtag
@@ -18,7 +18,7 @@
 	item_state = "redtag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag)
+	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/greentag
@@ -28,7 +28,7 @@
 	item_state = "greentag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag)
+	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/yellowtag
@@ -38,7 +38,7 @@
 	item_state = "yellowtag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag)
+	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/cyborg_suit
@@ -72,7 +72,7 @@ obj/item/clothing/suit/fluff/kimono
 	item_state = "straight_jacket"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
-	allowed = list(/obj/item/weapon/tank)
+	allowed = list(/obj/item/tank)
 
 /*Swimsuit*/
 
@@ -126,6 +126,12 @@ obj/item/clothing/suit/fluff/kimono
 	name = "white swimsuit"
 	desc = "A white swimsuit perfect for the pool."
 	icon_state = "swim_white"
+	siemens_coefficient = 1
+
+/obj/item/clothing/under/swimsuit/ntswimsuit
+	name = "Absolutist swimsuit"
+	desc = "A fine, white and gold trim swimsuit produced and often worn by those of the faith"
+	icon_state = "swim_nt"
 	siemens_coefficient = 1
 
 /*Poncho*/
@@ -219,17 +225,18 @@ obj/item/clothing/suit/fluff/kimono
 	name = "universal sling"
 	desc = "A generic universal equipment sling for whatever you could need on your back."
 	icon_state = "universal_sling"
-	allowed = list (/obj/item/weapon/gun,
+	allowed = list (/obj/item/gun,
 	/obj/item/device,
-	/obj/item/weapon/material,
-	/obj/item/weapon/storage/pouch,
-	/obj/item/weapon/storage/box,
-	/obj/item/weapon/storage/firstaid,
-	/obj/item/weapon/storage/lockbox,
-	/obj/item/weapon/storage/part_replacer,
-	/obj/item/weapon/storage/secure,
-	/obj/item/weapon/storage/toolbox,
-	/obj/item/weapon/tank,
+	/obj/item/material,
+	/obj/item/storage/pouch,
+	/obj/item/storage/box,
+	/obj/item/storage/firstaid,
+	/obj/item/storage/lockbox,
+	/obj/item/storage/part_replacer,
+	/obj/item/storage/secure,
+	/obj/item/storage/toolbox,
+	/obj/item/storage/briefcase,
+	/obj/item/tank,
 	/obj/item/ammo_magazine,
 	/obj/item/ammo_magazine/ammobox/
 	)
@@ -239,17 +246,16 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "Sleek grey vest with pockets in it. You feel absolutely punk wearing this sturdy leather coat."
 	icon_state = "punk_vest"
 	item_state = "punk_vest"
-	armor = list(
-		melee = 10,
-		bullet = 20,
-		energy = 10,
+	armor_list = list(
+		melee = 5,
+		bullet = 5,
+		energy = 5,
 		bomb = 0,
 		bio = 0,
 		rad = 0
 	)
 	body_parts_covered = UPPER_TORSO
-	cold_protection = UPPER_TORSO
-	min_cold_protection_temperature = T0C - 20
+
 
 /obj/item/clothing/suit/ivory
 	name = "ivory tabard"
@@ -268,9 +274,9 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "A dark vest made out of light, breathable fabric. Feeling lucky, punk?"
 	icon_state = "punkvest"
 	item_state = "punkvest"
-	armor = list(
-		melee = 10,
-		bullet = 10,
+	armor_list = list(
+		melee = 5,
+		bullet = 5,
 		energy = 0,
 		bomb = 0,
 		bio = 0,
@@ -285,13 +291,13 @@ obj/item/clothing/suit/fluff/kimono
 	item_state = "windbreaker" //Is this even used for anything?
 	icon_open = "windbreaker_open"
 	icon_closed = "windbreaker"
-	armor = list(
-		melee = 10,
-		bullet = 10,
-		energy = 0,
+	armor_list = list(
+		melee = 0,
+		bullet = 0,
+		energy = 5,
 		bomb = 0,
 		bio = 30,
-		rad = 0
+		rad = 10
 	)
 	body_parts_covered = UPPER_TORSO|ARMS
 
@@ -300,9 +306,9 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "A red vest with golden streaks. It's made out of tough materials, and can protect fairly well against bullets. Wake the fuck up, Samurai."
 	icon_state = "cyberpunk"
 	item_state = "cyberpunk"
-	armor = list(
+	armor_list = list(
 		melee = 10,
-		bullet = 20,
+		bullet = 10,
 		energy = 10,
 		bomb = 0,
 		bio = 0,
@@ -311,16 +317,130 @@ obj/item/clothing/suit/fluff/kimono
 
 /obj/item/clothing/suit/storage/scavengerarmor
 	name = "scavenger armor"
-	desc = "A sturdy, rigged scavenger armor. strong and sturdy as most vests. made fully from junk."
+	desc = "A rigged yet sturdy scavenger armor. Strong and protective as most vests, it is made entirely from reclaimed materials. It even has pockets!"
 	icon_state = "scav_armor"
 	item_state = "scav_armor"
-	armor = list(
-		melee = 35,
+	armor_list = list(
+		melee = 35, //Not the best armor, but easily crafted and adds some utility with decent protection all round.
 		bullet = 35,
 		energy = 35,
 		bomb = 25,
 		bio = 0,
 		rad = 0
 	)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_GLASS = 10, MATERIAL_STEEL = 10)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	siemens_coefficient = 0.7
+
+/obj/item/clothing/suit/storage/scavengerarmor/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["scavenger armor"] = "scav_armor"
+	options["alt scavenger armor"] = "alt_scavenger"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/storage/triad
+	name = "triad jacket"//RUINER reference
+	desc = "A well armoured trench coat. The label on the inside claims it comes from somewhere dangerous."
+	icon_state = "triadkillers"
+	item_state = "triadkillers"
+	armor_list = list(
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	price_tag = 105
+
+
+/obj/item/clothing/suit/storage/akira
+	name = "red jacket"//Akira, preety obvious
+	desc = "A red jacket designed for riding on a bike. Has a pill icon on the back."
+	icon_state = "akira"
+	item_state = "akira"
+	armor_list = list(
+		melee = 10,
+		bullet = 10,
+		energy = 10,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO|ARMS
+	price_tag = 60
+
+/obj/item/clothing/suit/storage/raggedcape
+	name = "outcast's cloak"
+	desc = "A haphazardly-made cloak made of reclaimed leather and other fiber materials, it's all you have for protection... for now."
+	icon_state = "outcast_cloak"
+	item_state = "outcast_cloak"
+	armor_list = list(
+		melee = 20,
+		bullet = 10,
+		energy = 20, //Decent starting armor but intentionally shitty because outsiders are hard mode. Scavenge better. Triumph or die! -Kaz
+		bomb = 10,
+		bio = 5,
+		rad = 5
+		)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	cold_protection = UPPER_TORSO|LOWER_TORSO
+	min_cold_protection_temperature = T0C - 20
+	price_tag = 50
+
+/obj/item/clothing/suit/storage/numericalgarb
+	name = "numerical garb"
+	desc = "A padded cloak meant for numerical, made to be biomatter resistant. The cloak is reversible, with its switchable colors being red and grey."
+	icon_state = "numericalgarb"
+	item_state = "numericalgarb"
+	armor_list = list(
+		melee = 10,
+		bullet = 0, //well armored its not going to help a bullet
+		energy = 10,
+		bomb = 5,
+		bio = 100,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO|ARMS
+	price_tag = 60
+
+/obj/item/clothing/suit/storage/numericalgarb/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Red Garb"] = "numericalgarb"
+	options["Gray Garb"] = "numericalgarbgrey"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1

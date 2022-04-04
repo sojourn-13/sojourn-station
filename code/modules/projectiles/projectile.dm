@@ -44,7 +44,7 @@
 	var/projectile_type = /obj/item/projectile
 	var/penetrating = 0 //If greater than zero, the projectile will pass through dense objects as specified by on_penetrate()
 	var/kill_count = 50 //This will de-increment every process(). When 0, it will delete the projectile.
-
+	var/nocap_structures = FALSE // wether or not this projectile can circumvent the damage cap you can do to walls and doors in one hit. Also increases the structure damage done to walls by 300%
 	//Effects
 	var/stun = 0
 	var/weaken = 0
@@ -64,6 +64,12 @@
 	var/muzzle_type
 	var/tracer_type
 	var/impact_type
+	var/luminosity_range
+	var/luminosity_power
+	var/luminosity_color
+	var/luminosity_ttl
+	var/obj/effect/attached_effect
+	var/proj_sound
 
 	var/proj_color //If defined, is used to change the muzzle, tracer, and impact icon colors through Blend()
 
@@ -71,6 +77,19 @@
 	var/datum/vector_loc/location		// current location of the projectile in pixel space
 	var/matrix/effect_transform			// matrix to rotate and scale projectile effects - putting it here so it doesn't
 										//  have to be recreated multiple times
+
+	// Ranged issue
+
+	var/has_drop_off = FALSE
+
+	var/speed_drop_off = 0 //How much we get slowed farther we go
+	var/damage_drop_off = 0 //How much less damage we have the farther we go
+	var/ap_drop_off = 0 //How much less AP we have the farther we go
+
+	var/affective_damage_range = 50 //How far we can go before we start being negitively impacted, higher is a buffer
+	var/affective_ap_range = 50 //How far we can go before we start being negitively impacted, higher is a buffer
+
+	var/range_shot = 1 //How far we been shot so far. We start at 1 to prevent runtimes with deviding by 0
 
 /obj/item/projectile/is_hot()
 	if (damage_types[BURN])
@@ -102,6 +121,9 @@
 	if(!hitscan)
 		step_delay = initial(step_delay) * newmult
 
+/obj/item/projectile/multiply_projectile_agony(newmult)
+	agony = initial(agony) * newmult
+
 /obj/item/projectile/proc/adjust_damages(var/list/newdamages)
 	if(!newdamages.len)
 		return
@@ -121,6 +143,10 @@
 // generate impact effect
 /obj/item/projectile/proc/on_impact(atom/A)
 	impact_effect(effect_transform)
+	if(luminosity_ttl && attached_effect)
+		spawn(luminosity_ttl)
+		qdel(attached_effect)
+
 	if(!ismob(A))
 		playsound(src, hitsound_wall, 50, 1, -2)
 	return
@@ -154,7 +180,7 @@
 		p_y = text2num(mouse_control["icon-y"])
 
 //called to launch a projectile
-/obj/item/projectile/proc/launch(atom/target, target_zone, x_offset=0, y_offset=0, angle_offset=0)
+/obj/item/projectile/proc/launch(atom/target, target_zone, x_offset=0, y_offset=0, angle_offset=0, proj_sound)
 	var/turf/curloc = get_turf(src)
 	var/turf/targloc = get_turf(target)
 	if (!istype(targloc) || !istype(curloc))
@@ -166,6 +192,9 @@
 		qdel(src)
 		return FALSE
 
+	if(proj_sound)
+		playsound(proj_sound)
+
 	original = target
 	def_zone = target_zone
 
@@ -176,7 +205,7 @@
 	return FALSE
 
 //called to launch a projectile from a gun
-/obj/item/projectile/proc/launch_from_gun(atom/target, mob/user, obj/item/weapon/gun/launcher, target_zone, x_offset=0, y_offset=0, angle_offset)
+/obj/item/projectile/proc/launch_from_gun(atom/target, mob/user, obj/item/gun/launcher, target_zone, x_offset=0, y_offset=0, angle_offset)
 	if(user == target) //Shooting yourself
 		user.bullet_act(src, target_zone)
 		qdel(src)
@@ -627,16 +656,37 @@
 	var/tempLoc = get_turf(A)
 
 	bumped = TRUE
+	if(istype(A, /obj/structure/multiz/stairs/active))
+		var/obj/structure/multiz/stairs/active/S = A
+		if(S.target)
+			forceMove(get_turf(S.target))
+			trajectory.loc_z = loc.z
+			bumped = FALSE
+			return FALSE
+	if(iscarbon(A))
+		var/mob/living/carbon/C = A
+		var/obj/item/shield/S
+		for(S in get_both_hands(C))
+			if(S && S.block_bullet(C, src, def_zone))
+				on_hit(S,def_zone)
+				qdel(src)
+				return TRUE
+			break //Prevents shield dual-wielding
+		S = C.get_equipped_item(slot_back)
+		if(S && S.block_bullet(C, src, def_zone))
+			on_hit(S,def_zone)
+			qdel(src)
+			return TRUE
+
 	if(ismob(A))
 		var/mob/M = A
 		if(isliving(A))
 			//if they have a neck grab on someone, that person gets hit instead
-			var/obj/item/weapon/grab/G = locate() in M
-			if(G && G.state >= GRAB_NECK)
+			var/obj/item/grab/G = locate() in M
+			if(G && G.state >= GRAB_NECK && G.affecting.health >= 0) //Cant use dead or dieing bodies as a shield as they are limp
 				visible_message(SPAN_DANGER("\The [M] uses [G.affecting] as a shield!"))
 				if(Bump(G.affecting, TRUE))
 					return //If Bump() returns 0 (keep going) then we continue on to attack M.
-
 			passthrough = !attack_mob(M, distance)
 		else
 			passthrough = FALSE //so ghosts don't stop bullets
@@ -697,6 +747,33 @@
 			qdel(src)
 			return
 
+
+		if(has_drop_off) //Does this shot get weaker as it goes?
+			//log_and_message_admins("LOG 1: range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
+			range_shot++ //We get the distence form the shooter to what it hit
+			damage_drop_off = max(1, range_shot - affective_damage_range) / 100 //How far we were shot - are affective range. This one is for damage drop off
+			ap_drop_off = max(1, range_shot - affective_ap_range) //How far we were shot - are affective range. This one is for AP drop off
+
+			armor_penetration = max(0, armor_penetration - ap_drop_off)
+
+			agony = max(0, agony - range_shot) //every step we lose one agony, this stops sniping with rubbers.
+			//log_and_message_admins("LOG 2| range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
+			if(damage_types[BRUTE])
+				damage_types[BRUTE] -= max(0, damage_drop_off - penetrating / 2) //1 penitration gives 25 tiles| 2 penitration 50 tiles making 0 drop
+
+			if(damage_types[BURN])
+				damage_types[BURN] -= max(0, damage_drop_off - penetrating / 2) //they can still embed
+
+			if(damage_types[TOX])
+				damage_types[TOX] -= max(0, damage_drop_off - penetrating / 2) //they can still embed
+
+			//Clone dosnt get removed do to being rare same as o2
+
+			if(!hitscan)
+				speed_drop_off = range_shot / 500 //How far we were shot - are affective range. This one is for speed drop off
+				// Every 500 steps = 1 step delay , 50 is 0.1 (thats huge!), 5 0.01
+				step_delay = step_delay + speed_drop_off
+
 		trajectory.increment()	// increment the current location
 		location = trajectory.return_location(location)		// update the locally stored location data
 
@@ -720,6 +797,7 @@
 			first_step = FALSE
 		else if(!bumped)
 			tracer_effect(effect_transform)
+			luminosity_effect()
 
 		if(!hitscan)
 			sleep(step_delay)	//add delay between movement iterations if it's not a hitscan weapon
@@ -787,6 +865,16 @@
 				P.activate(step_delay)	//if not a hitscan projectile, remove after a single delay
 			else
 				P.activate()
+
+/obj/item/projectile/proc/luminosity_effect()
+	if(!location)
+		return
+
+	if(attached_effect)
+		attached_effect.Move(src.loc)
+
+	else if(luminosity_range && luminosity_power && luminosity_color)
+		attached_effect = new /obj/effect/effect/light(src.loc, luminosity_range, luminosity_power, luminosity_color, 20)
 
 /obj/item/projectile/proc/impact_effect(var/matrix/M)
 	//This can happen when firing inside a wall, safety check

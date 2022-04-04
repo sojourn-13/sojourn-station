@@ -1,3 +1,5 @@
+//This entire file is an occulus edited
+
 //Dummy object for holding items in vehicles.
 //Prevents items from being interacted with.
 /datum/vehicle_dummy_load
@@ -7,7 +9,7 @@
 /obj/vehicle
 	name = "vehicle"
 	icon = 'icons/obj/vehicles.dmi'
-	layer = MOB_LAYER + 0.1 //so it sits above objects including mobs
+	layer = MOB_LAYER - 0.1 //It sits below the mob layer.
 	density = 1
 	anchored = 1
 	animate_movement=1
@@ -32,7 +34,7 @@
 
 	var/passenger_allowed = 1
 
-	var/obj/item/weapon/cell/large/cell
+	var/obj/item/cell/large/cell
 	var/charge_use = 5	//set this to adjust the amount of power the vehicle uses per move
 
 	var/atom/movable/load		//all vehicles can take a load, since they should all be a least drivable
@@ -124,9 +126,9 @@
 		if(ABORT_CHECK)
 			return
 
-	if(istype(I, /obj/item/weapon/hand_labeler))
+	if(istype(I, /obj/item/hand_labeler))
 		return
-	else if(istype(I, /obj/item/weapon/cell/large) && !cell && open)
+	else if(istype(I, /obj/item/cell/large) && !cell && open)
 		insert_cell(I, user)
 	else if(hasvar(I,"force") && hasvar(I,"damtype"))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -255,7 +257,7 @@
 		turn_on()
 		return
 
-/obj/vehicle/proc/insert_cell(var/obj/item/weapon/cell/large/C, var/mob/living/carbon/human/H)
+/obj/vehicle/proc/insert_cell(var/obj/item/cell/large/C, var/mob/living/carbon/human/H)
 	if(cell)
 		return
 	if(!istype(C))
@@ -306,6 +308,9 @@
 
 	load = C
 
+	if(ismob(C))
+		buckle_mob(C)
+
 	if(load_item_visible)
 		C.pixel_x += load_offset_x
 		if(ismob(C))
@@ -313,9 +318,6 @@
 		else
 			C.pixel_y += load_offset_y
 		C.layer = layer + 0.1		//so it sits above the vehicle
-
-	if(ismob(C))
-		buckle_mob(C)
 
 	return 1
 

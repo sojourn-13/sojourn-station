@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/vintorez
+/obj/item/gun/projectile/automatic/vintorez
 	name = "Excelsior \"Vintorez\" silenced carbine"
 	desc = "\"We have no compassion and we ask no compassion from you. When our turn comes, we shall not make excuses for the terror.\"\
 	A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.5mm Rifle rounds."
@@ -10,13 +10,14 @@
 	caliber = CAL_RIFLE //needs a new caliber type?
 	origin_tech = list(TECH_COMBAT = 6, TECH_ILLEGAL = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE //need a new magwell type?
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 5)
 	price_tag = 2000
 	zoom_factor = 0.8 // double as IH_heavy
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.2
+	extra_damage_mult_scoped = 0.3
 	recoil_buildup = 5
 	one_hand_penalty = 10 //automatic rifle level
 	silenced = TRUE
@@ -27,7 +28,13 @@
 		FULL_AUTO_400
 		)
 
-/obj/item/weapon/gun/projectile/automatic/vintorez/update_icon()
+/obj/item/gun/projectile/automatic/vintorez/NM_colony
+	name = "\"Val\" silenced carbine"
+	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.5mm Rifle rounds."
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
+	price_tag = 800
+
+/obj/item/gun/projectile/automatic/vintorez/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -42,6 +49,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/vintorez/Initialize()
+/obj/item/gun/projectile/automatic/vintorez/Initialize()
 	. = ..()
 	update_icon()

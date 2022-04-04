@@ -326,6 +326,8 @@
 			H.client.screen += global_hud.darkMask
 		else if((!H.equipment_prescription && (H.disabilities & NEARSIGHTED)) || H.equipment_tint_total == TINT_MODERATE)
 			H.client.screen += global_hud.vimpaired
+		else if(H.equipment_tint_total == TINT_LOW)
+			H.client.screen += global_hud.lightMask
 //	if(H.eye_blurry)	H.client.screen += global_hud.blurry
 //	if(H.druggy)		H.client.screen += global_hud.druggy
 
@@ -372,12 +374,12 @@
 	return L
 
 /datum/species/proc/equip_survival_gear(mob/living/carbon/human/H, extendedtank = TRUE)
-	var/box_type = /obj/item/weapon/storage/box/survival
+	var/box_type = /obj/item/storage/box/survival
 
 	if(extendedtank)
-		box_type = /obj/item/weapon/storage/box/survival/extended
+		box_type = /obj/item/storage/box/survival/extended
 
-	if(istype(H.get_equipped_item(slot_back), /obj/item/weapon/storage))
+	if(istype(H.get_equipped_item(slot_back), /obj/item/storage))
 		H.equip_to_storage(new box_type(H.back))
 	else
 		H.equip_to_slot_or_del(new box_type(H), slot_r_hand)

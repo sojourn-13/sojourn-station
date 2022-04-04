@@ -11,6 +11,7 @@
 	difficulty = "Medium."
 	selection_color = "#c7b97b"
 	req_admin_notify = 1
+	playtimerequired = 1200
 	wage = WAGE_COMMAND
 	ideal_character_age = 50
 	minimum_character_age = 30
@@ -30,48 +31,6 @@
 		STAT_TGH = 15,
 		STAT_VIG = 15,
 	)
-
-	known_recipes = list(
-			/datum/craft_recipe/guild/melee,
-			/datum/craft_recipe/guild/bullet,
-			/datum/craft_recipe/guild/energy,
-			/datum/craft_recipe/guild/bomb,
-			/datum/craft_recipe/guild/robotmelee,
-			/datum/craft_recipe/guild/arcwelder,
-			/datum/craft_recipe/guild/polytool,
-			/datum/craft_recipe/guild/combat_shovel,
-			/datum/craft_recipe/guild/railgunpistol,
-			/datum/craft_recipe/guild/railgunrifle,
-			/datum/craft_recipe/guild/heavypulserifle,
-			/datum/craft_recipe/guild/mace,
-			/datum/craft_recipe/guild/claymore,
-			/datum/craft_recipe/guild/machete,
-			/datum/craft_recipe/guild/katana,
-			/datum/craft_recipe/guild/firebrand,
-			/datum/craft_recipe/guild/technosuit,
-			/datum/craft_recipe/guild/technohelmet,
-			/datum/craft_recipe/guild/webbing,
-			/datum/craft_recipe/guild/plasmablock,
-			/datum/craft_recipe/guild/rubbermesh,
-			/datum/craft_recipe/guild/booster,
-			/datum/craft_recipe/guild/injector,
-			/datum/craft_recipe/guild/weintraub,
-			/datum/craft_recipe/guild/overshooter,
-			/datum/craft_recipe/guild/dangerzone,
-			/datum/craft_recipe/guild/forged,
-			/datum/craft_recipe/guild/silencer,
-			/datum/craft_recipe/guild/turretcircuit,
-			/datum/craft_recipe/guild/rocket_engine,
-			/datum/craft_recipe/guild/watchman,
-			/datum/craft_recipe/guild/matter_nanoforge,
-			/datum/craft_recipe/guild/matter_nanoforge_blackbox,
-			/datum/craft_recipe/guild/guild_bin,
-			/datum/craft_recipe/guild/guild_manip,
-			/datum/craft_recipe/guild/guild_laser,
-			/datum/craft_recipe/guild/guild_scanner,
-			/datum/craft_recipe/guild/guild_capacitor,
-			//datum/craft_recipe/guild/guild_mine_trap,
-			)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/ntnetmonitor,
@@ -114,9 +73,8 @@
 	difficulty = "Medium."
 	selection_color = "#d5c88f"
 	wage = WAGE_PROFESSIONAL
-
 	outfit_type = /decl/hierarchy/outfit/job/engineering/engineer
-
+	alt_titles = list("Guild Novice")
 	access = list(
 		access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,
 		access_external_airlocks, access_construction, access_atmospherics
@@ -128,48 +86,6 @@
 		STAT_TGH = 10,
 		STAT_VIG = 10,
 	)
-
-	known_recipes = list(
-			/datum/craft_recipe/guild/melee,
-			/datum/craft_recipe/guild/bullet,
-			/datum/craft_recipe/guild/energy,
-			/datum/craft_recipe/guild/bomb,
-			/datum/craft_recipe/guild/robotmelee,
-			/datum/craft_recipe/guild/arcwelder,
-			/datum/craft_recipe/guild/polytool,
-			/datum/craft_recipe/guild/combat_shovel,
-			/datum/craft_recipe/guild/railgunpistol,
-			/datum/craft_recipe/guild/railgunrifle,
-			/datum/craft_recipe/guild/heavypulserifle,
-			/datum/craft_recipe/guild/mace,
-			/datum/craft_recipe/guild/claymore,
-			/datum/craft_recipe/guild/machete,
-			/datum/craft_recipe/guild/katana,
-			/datum/craft_recipe/guild/firebrand,
-			/datum/craft_recipe/guild/technosuit,
-			/datum/craft_recipe/guild/technohelmet,
-			/datum/craft_recipe/guild/webbing,
-			/datum/craft_recipe/guild/plasmablock,
-			/datum/craft_recipe/guild/rubbermesh,
-			/datum/craft_recipe/guild/booster,
-			/datum/craft_recipe/guild/injector,
-			/datum/craft_recipe/guild/weintraub,
-			/datum/craft_recipe/guild/overshooter,
-			/datum/craft_recipe/guild/dangerzone,
-			/datum/craft_recipe/guild/forged,
-			/datum/craft_recipe/guild/silencer,
-			/datum/craft_recipe/guild/turretcircuit,
-			/datum/craft_recipe/guild/rocket_engine,
-			/datum/craft_recipe/guild/watchman,
-			/datum/craft_recipe/guild/matter_nanoforge,
-			/datum/craft_recipe/guild/matter_nanoforge_blackbox,
-			/datum/craft_recipe/guild/guild_bin,
-			/datum/craft_recipe/guild/guild_manip,
-			/datum/craft_recipe/guild/guild_laser,
-			/datum/craft_recipe/guild/guild_scanner,
-			/datum/craft_recipe/guild/guild_capacitor,
-			//datum/craft_recipe/guild/guild_mine_trap,
-			)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,

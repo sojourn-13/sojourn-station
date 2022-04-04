@@ -54,6 +54,12 @@
 #define I_GRAB		"grab"
 #define I_HURT		"harm"
 
+//Used in mob/proc/get_input
+
+#define MOB_INPUT_TEXT "text"
+#define MOB_INPUT_MESSAGE "message"
+#define MOB_INPUT_NUM "num"
+
 //These are used Bump() code for living mobs, in the mob_bump_flag, mob_swap_flags, and mob_push_flags vars to determine whom can bump/swap with whom.
 #define HUMAN 1
 #define MONKEY 2
@@ -109,7 +115,7 @@
 #define ONLY_GHOSTS_IN_VIEW 0
 
 // Defines mob sizes, used by lockers and to determine what is considered a small sized mob, etc.
-#define MOB_LARGE  		40
+#define MOB_LARGE  		100
 #define MOB_MEDIUM 		20
 #define MOB_SMALL 		10
 #define MOB_TINY 		5
@@ -129,11 +135,11 @@
 #define CLASSIFICATION_WEIRD        8	// Slimes, constructs, demons, and other creatures of a magical or bluespace nature.
 #define CLASSIFICATION_INCORPOREAL 16 // Mobs that don't really have any physical form to them. Ghosts mostly
 
-
 #define TINT_NONE 0
-#define TINT_MODERATE 1
-#define TINT_HEAVY 2
-#define TINT_BLIND 3
+#define TINT_LOW 1
+#define TINT_MODERATE 2
+#define TINT_HEAVY 4
+#define TINT_BLIND 8
 
 #define FLASH_PROTECTION_REDUCED -1
 #define FLASH_PROTECTION_NONE 0
@@ -167,6 +173,7 @@
 #define INCAPACITATION_KNOCKDOWN (INCAPACITATION_UNCONSCIOUS|INCAPACITATION_FORCELYING)
 #define INCAPACITATION_DISABLED (INCAPACITATION_KNOCKDOWN|INCAPACITATION_STUNNED)
 #define INCAPACITATION_DEFAULT (INCAPACITATION_RESTRAINED|INCAPACITATION_BUCKLED_FULLY|INCAPACITATION_DISABLED)
+#define INCAPACITATED_ROACH (INCAPACITATION_BUCKLED_FULLY | INCAPACITATION_DISABLED)
 #define INCAPACITATION_ALL (~INCAPACITATION_NONE)
 
 
@@ -191,7 +198,7 @@
 
 #define ORGAN_HEALTH_MULTIPLIER 1
 #define ORGAN_REGENERATION_MULTIPLIER 0.2
-#define WOUND_BLEED_MULTIPLIER 0.01 //Bleeding wounds drip damage*this units of blood per process tick
+#define WOUND_BLEED_MULTIPLIER 0.05 //Bleeding wounds drip damage*this units of blood per process tick, this also cheats by doble taking, so higher numbers byond 0.1 are insainly bleedy
 #define OPEN_ORGAN_BLEED_AMOUNT 0.5 //Wounds with open, unclamped incisions bleed this many units of blood per process tick
 
 #define HEAT_MOBIGNITE_THRESHOLD 530 //minimum amount of heat an object needs to ignite a mob when it hits the mob

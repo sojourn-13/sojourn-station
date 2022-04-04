@@ -10,14 +10,14 @@
 	flags = CONDUCT
 	origin_tech = list(TECH_MAGNET = 2, TECH_COMBAT = 1)
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
-
+	price_tag = 5
 	var/times_used = 0 //Number of times it's been used.
 	var/broken = 0     //Is the flash burnt out?
 	var/last_used = 0 //last world.time it was used.
 
 /obj/item/device/flash/proc/clown_check(var/mob/user)
-	if(user && (CLUMSY in user.mutations) && prob(50))
-		to_chat(user, SPAN_WARNING("\The [src] slips out of your hand."))
+	if(user && (CLUMSY in user.mutations) && prob(15))
+		to_chat(user, SPAN_WARNING("\The [src] clumsily slips out from your hand."))
 		user.drop_item()
 		return 0
 	return 1

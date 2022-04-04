@@ -1,3 +1,6 @@
+/*
+Unused file of cryo pods that on click dont even work, these are not used and are disabled to stop admins using these over the working ghost role verson.
+
 /obj/structure/cryopod_spawner/proc/justequip(var/mob/living/carbon/human/H, var/title, var/alt_title, var/outfit_type)
 	var/decl/hierarchy/outfit/outfit = outfit_type
 	. = outfit.equip(H, title, alt_title)
@@ -85,3 +88,4 @@
 		STAT_TGH = 30,
 		STAT_VIG = 40,
 	)
+*/

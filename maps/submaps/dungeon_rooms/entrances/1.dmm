@@ -9,16 +9,8 @@
 "c" = (
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
-"d" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
 "e" = (
 /turf/simulated/floor/bluegrid,
-/area/crawler)
-"f" = (
-/obj/machinery/light/floor/built,
-/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "g" = (
 /obj/crawler/crawler_wallbreaker/vertical,
@@ -69,11 +61,11 @@ a
 (4,1,1) = {"
 a
 c
-d
 c
 c
 c
-d
+c
+c
 c
 a
 "}
@@ -135,11 +127,11 @@ a
 (10,1,1) = {"
 a
 c
-f
 c
 c
 c
-f
+c
+c
 c
 a
 "}

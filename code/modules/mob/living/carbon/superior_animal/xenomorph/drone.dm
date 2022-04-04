@@ -2,7 +2,7 @@
 var/datum/xenomorph/xenomorph_ai
 
 /mob/living/carbon/superior_animal/xenomorph
-	name = "drone"
+	name = "xenomorph drone" //So we dont mix up drone as in the contruction drone or such
 	desc = "A basic xenomorph drone, all slime, teeth, and claws. Looking at it unnerves you..."
 	icon = 'icons/mob/Xenos_48x48.dmi'
 	icon_state = "drone"
@@ -12,12 +12,16 @@ var/datum/xenomorph/xenomorph_ai
 	icon_gib = "drone_gibbed"
 	pass_flags = PASSTABLE
 
+	cant_be_pulled = TRUE
+
 	mob_size = MOB_LARGE
 	viewRange = 12
+	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
 
 	maxHealth = 30
 	health = 30
 	randpixel = 0
+	gibspawner_type = /obj/effect/gibspawner/xenomorph
 	gibspawner = /obj/effect/gibspawner/xenomorph
 	attack_sound = list('sound/xenomorph/alien_claw_flesh1.ogg', 'sound/xenomorph/alien_claw_flesh2.ogg', 'sound/xenomorph/alien_claw_flesh3.ogg')
 	attack_sound_chance = 100
@@ -28,10 +32,13 @@ var/datum/xenomorph/xenomorph_ai
 	overkill_gib = 20
 	overkill_dust = 20
 
+	breath_required_type = NONE
+	breath_poison_type = NONE
+
 	move_to_delay = 4
 	turns_per_move = 12
 	see_in_dark = 10
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/xenomeat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/xenomeat
 	meat_amount = 3
 	leather_amount = 0
 	bones_amount = 0
@@ -46,6 +53,7 @@ var/datum/xenomorph/xenomorph_ai
 	min_breath_required_type = 0
 	min_air_pressure = 0 //below this, brute damage is dealt
 	min_breath_poison_type = 0
+	default_pixel_x = -14
 
 	var/poison_per_bite = 0
 	var/poison_type = "xenotoxin"
@@ -54,6 +62,12 @@ var/datum/xenomorph/xenomorph_ai
 
 	fleshcolor = "#00ff00"
 	bloodcolor = "#00ff00"
+
+	can_burrow = FALSE
+	colony_friend = FALSE
+	friendly_to_colony = FALSE
+
+	known_languages = list(LANGUAGE_XENOMORPH)
 
 /mob/living/carbon/superior_animal/xenomorph/slip(var/slipped_on,stun_duration=8)
 	return FALSE
@@ -85,6 +99,10 @@ var/datum/xenomorph/xenomorph_ai
 	pixel_x = 0
 	pixel_y = 0
 
+/mob/living/carbon/superior_animal/xenomorph/start_pulling(var/atom/movable/AM)
+	to_chat(src, SPAN_WARNING("Your hand gets slashed away from \the [src]. !"))
+	return
+
 /mob/living/carbon/superior_animal/xenomorph/attack_hand(mob/living/carbon/M as mob)
 	..()
 	var/mob/living/carbon/human/H = M
@@ -106,12 +124,12 @@ var/datum/xenomorph/xenomorph_ai
 			else
 				if(M == src || anchored)
 					return 0
-				for(var/obj/item/weapon/grab/G in src.grabbed_by)
+				for(var/obj/item/grab/G in src.grabbed_by)
 					if(G.assailant == M)
 						to_chat(M, SPAN_NOTICE("You already grabbed [src]."))
 						return
 
-				var/obj/item/weapon/grab/G = new /obj/item/weapon/grab(M, src)
+				var/obj/item/grab/G = new /obj/item/grab(M, src)
 				if(buckled)
 					to_chat(M, SPAN_NOTICE("You cannot grab [src], \he is buckled in!"))
 				if(!G) //the grab will delete itself in New if affecting is anchored

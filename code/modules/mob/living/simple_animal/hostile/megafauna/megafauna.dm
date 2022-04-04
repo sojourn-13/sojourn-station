@@ -1,5 +1,3 @@
-#define MOB_SIZE_LARGE 3
-#define LARGE_MOB_LAYER 4.4
 
 /mob/living/simple_animal/hostile/megafauna
 	name = "boss of this gym"
@@ -13,9 +11,9 @@
 	var/atom/target
 	minbodytemp = 0
 	maxbodytemp = INFINITY
-	mob_size = MOB_SIZE_LARGE
+	mob_size = MOB_LARGE
 	status_flags = 0 //No pushing, no stunning, no paralyze and no weaken.
-	layer = LARGE_MOB_LAYER //Looks weird with them slipping under mineral walls and cameras and shit otherwise
+	layer = 4.4 //Looks weird with them slipping under mineral walls and cameras and shit otherwise
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
 	leather_amount = 0
 	bones_amount = 0
@@ -25,6 +23,9 @@
 	var/list/attack_action_types = list()
 	var/megafauna_min_cooldown = 10
 	var/megafauna_max_cooldown = 20
+	var/emp_proof = FALSE
+
+	needs_environment = FALSE
 
 /mob/living/simple_animal/hostile/megafauna/Initialize(mapload)
 	. = ..()
@@ -69,15 +70,16 @@
 	return TRUE
 
 /mob/living/simple_animal/hostile/megafauna/ex_act(severity, target)
+	if(emp_proof)
+		return
 	switch (severity)
-		if (1)
-			adjustBruteLoss(250)
 
-		if (2)
-			adjustBruteLoss(100)
-
+		if(1)
+			adjustFireLoss(rand(250,500))
+		if(2)
+			adjustFireLoss(rand(100,250))
 		if(3)
-			adjustBruteLoss(50)
+			adjustFireLoss(rand(50,100))
 
 /mob/living/simple_animal/hostile/megafauna/proc/SetRecoveryTime(buffer_time)
 	recovery_time = world.time + buffer_time

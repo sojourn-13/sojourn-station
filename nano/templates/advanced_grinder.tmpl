@@ -1,0 +1,63 @@
+<div class="item">
+	<div class="itemLabelWide">
+		Processing chamber
+	</div>
+	<div class="itemContentMedium">
+		{{:helper.link('Eject Reagents', 'eject', {'eject' : 1}, data.contents.length ? null : 'disabled', 'floatRight')}}
+	</div>
+</div>
+<div class="statusDisplay" style="min-height: 180px;">
+	<div class='item'>
+		{{for data.contents}}
+			<span class='highlight'>{{:value}}</span><br>
+		{{empty}}
+			<span class="average"><i>
+				No reagents loaded
+			</i></span>
+		{{/for}}
+	</div>
+</div>
+
+<div class="item">
+	<div class="itemLabel">
+		Buffer
+	</div>
+</div>
+<div class="statusDisplay" style="min-height: 180px;">
+	<div class="item">
+		<div class="itemContent" style="width: 100%;">
+			{{for data.reagents.contents}}
+				<div class="highlight clearBoth">
+					{{:helper.fixed(value.volume)}} units of {{:value.name}} {{if data.bidon_linked == 1}} {{:helper.link('Filter to Bidon', 'eject', {'filter' : value.id}, null, 'floatRight')}}{{/if}} {{:helper.link('Create Bottle', 'eject', {'bottle' : value.id}, null, 'floatRight')}} {{:helper.link('Purge All', 'eject', {'purge' : value.id}, null, 'floatRight')}}
+				</div>
+			{{empty}}
+				<span class="bad">
+					Buffer is empty
+				</span>
+			{{/for}}
+		</div>
+	</div>
+</div>
+
+{{if data.bidon_linked == 1}}
+<div class="item">
+	<div class="itemLabel">
+		Filter List
+	</div>
+</div>
+<div class="statusDisplay" style="min-height: 180px;">
+	<div class="item">
+		<div class="itemContent" style="width: 100%;">
+			{{for data.bidon_filter}}
+				<div class="highlight clearBoth">
+					{{:value.name}} {{:helper.link('Remove Filter', 'eject', {'unfilter' : value.id}, null, 'floatRight')}}
+				</div>
+			{{empty}}
+				<span class="bad">
+					Buffer is empty
+				</span>
+			{{/for}}
+		</div>
+	</div>
+</div>
+{{/if}}

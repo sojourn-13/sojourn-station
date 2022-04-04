@@ -10,8 +10,10 @@
 	plane = FLOOR_PLANE
 	icon = 'icons/obj/burrows.dmi'
 	icon_state = "cracks"
-	level = BELOW_PLATING_LEVEL
-	layer = ABOVE_NORMAL_TURF_LAYER
+//	level = BELOW_PLATING_LEVEL - Eris layering of it
+//	layer = ABOVE_NORMAL_TURF_LAYER - Eris layering of it
+	layer = OPEN_DOOR_LAYER //Basiclly we can see this over most things other then closed doors, and the like
+	plane = GAME_PLANE
 
 	//health is used when attempting to collapse this hole. It is a multiplier on the time taken and failure rate
 	//Any failed attempt to collapse it will reduce the health, making future attempts easier
@@ -60,13 +62,13 @@
 
 	var/deepmaint_entry_point = FALSE //Will this burrow turn into a deep maint entry point upon getting collapsed?
 
-/obj/structure/burrow/New(var/loc, var/turf/anchor)
+/obj/structure/burrow/New(var/loc, turf/anchor)
 	.=..()
+	GLOB.all_burrows.Add(src)
 	var/obj/machinery/power/nt_obelisk/obelisk = locate(/obj/machinery/power/nt_obelisk) in range(7, src)
-	if(obelisk ? obelisk.active : FALSE) //(obelisk && obelisk.active) doesn't work for some reason. //TODO: Revisit this
+	if(obelisk && obelisk.active)
 		qdel(src)
 		return
-	all_burrows.Add(src)
 	if (anchor)
 		offset_to(anchor, 8)
 
@@ -92,9 +94,12 @@
 	if(prob(3))
 		deepmaint_entry_point = TRUE
 
+	if(deepmaint_entry_point) //so we can tell at a glace what is a deep maints borrow
+		desc = "There appears to be an entrance here, covered by rubble and dirt. Collapsing it would take some serious tools and time."
+
 //Lets remove ourselves from the global list and cleanup any held references
 /obj/structure/burrow/Destroy()
-	all_burrows.Remove(src)
+	GLOB.all_burrows.Remove(src)
 	target = null
 	recieving = null
 	//Eject any mobs that tunnelled through us
@@ -171,7 +176,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 	Passing a percentage of zero is a special case, this burrow will not suck up any mobs.
 	The mobs it is to send should be placed inside it by the caller
 */
-/obj/structure/burrow/proc/migrate_to(var/obj/structure/burrow/_target, var/time = 1, var/percentage = 1)
+/obj/structure/burrow/proc/migrate_to(obj/structure/burrow/_target, time = 1, percentage = 1)
 	if (!_target)
 		return
 
@@ -208,9 +213,8 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 
 
 //Summons some or all of the nearby population to this hole, where they will enter it and travel
-/obj/structure/burrow/proc/summon_mobs(var/percentage = 1)
+/obj/structure/burrow/proc/summon_mobs(percentage = 1)
 	var/list/candidates = population.Copy() //Make a copy of the population list so we can modify it
-	if(!LAZYLEN(candidates)) return //Skip the whole process if there isn't anyone to pull.
 	var/step = 1 / candidates.len //What percentage of the population is each mob worth?
 	sending_mobs = list()
 	for (var/v in candidates)
@@ -241,7 +245,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 
 
 //Tells this burrow that it's soon to recieve new arrivals
-/obj/structure/burrow/proc/prepare_reception(var/start_time, var/_duration, var/sender)
+/obj/structure/burrow/proc/prepare_reception(start_time, _duration, sender)
 	migration_initiated = start_time
 	duration = _duration
 	recieving = sender
@@ -398,7 +402,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 
 
 //Called when an area becomes uninhabitable
-/obj/structure/burrow/proc/evacuate(var/force_nonmaint = TRUE)
+/obj/structure/burrow/proc/evacuate(force_nonmaint = TRUE)
 	//We're already busy sending or recieving a migration, can't start another or closed
 	if (target || recieving || isSealed)
 		return
@@ -419,7 +423,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 		migrate_to(btarget, 10 SECONDS, 1)
 
 
-/obj/structure/burrow/proc/distress(var/immediate = FALSE)
+/obj/structure/burrow/proc/distress(immediate = FALSE)
 	//This burrow requests reinforcements from elsewhere
 	if (reinforcements <= 0)
 		return
@@ -439,14 +443,16 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 
 
 //Called when things enter or leave this burrow
-/obj/structure/burrow/proc/break_open(var/silent = FALSE)
+/obj/structure/burrow/proc/break_open(silent = FALSE)
 	if(isSealed)
 		reveal()
 		isSealed = FALSE
 		invisibility = 0
 		icon_state = "hole"
 		name = "burrow"
-		desc = "Some sort of hole that leads inside a wall. It's full of hardened resin and secretions. Collapsing this would require some heavy digging tools"
+		desc = "Some sort of hole that leads inside a wall. It's full of hardened resin and secretions. Collapsing this would require some heavy digging tools."
+		if(deepmaint_entry_point)
+			desc = "Entrance hidden by bricks and rubble. Collapsing this would require some heavy digging tools."
 		var/turf/simulated/floor/F = loc
 		if (istype(F) && F.flooring)
 			//This should never be false
@@ -481,7 +487,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 		if (I.has_quality(QUALITY_WELDING))
 			user.visible_message("[user] attempts to weld [src] with the [I]", "You start welding [src] with the [I]")
 			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC) && isSealed)
-				user.visible_message("[user] welds [src] with the [I].", "You weld [src] with the [I].")
+				user.visible_message("[user] welds [src] with the [I].", "You welds [src] with the [I].")
 				if(recieving)
 					if(prob(33))
 						qdel(src)
@@ -534,7 +540,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 				spawn_rubble(loc, 1, 100)
 
 				if (I.get_tool_quality(QUALITY_DIGGING) > 30)
-					to_chat(user, SPAN_NOTICE("[src] crumbles a bit. Keep trying and you'll collapse it eventually"))
+					to_chat(user, SPAN_NOTICE("The [src] crumbles a bit. Keep trying and you'll collapse it eventually"))
 				else
 					to_chat(user, SPAN_NOTICE("This isn't working very well. Perhaps you should get a better digging tool?"))
 
@@ -619,6 +625,9 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 /obj/structure/burrow/attack_generic(mob/living/L)
 	if (is_valid(L))
 		enter_burrow(L)
+	if (issuperioranimal(L))//So they don't carry burrow's reference and never qdel
+		var/mob/living/carbon/superior_animal/SA = L
+		SA.target_mob = null
 
 
 /obj/structure/burrow/proc/pull_mob(mob/living/L)

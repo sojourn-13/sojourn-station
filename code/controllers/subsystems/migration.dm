@@ -4,8 +4,6 @@
 	and keeps track of all the burrows, negating any need for them to process individually most of the time
 	This subsystem also handles spreading plants through burrows
 */
-
-var/list/global/all_burrows = list()
 var/list/global/populated_burrows = list()
 var/list/global/unpopulated_burrows = list()
 var/list/global/distressed_burrows = list()
@@ -28,10 +26,10 @@ SUBSYSTEM_DEF(migration)
 	var/migrate_chance = 15 //The chance, during each migration, for each populated burrow, that mobs will move from there to somewhere else
 
 
-	var/roundstart_burrows = 20
-	var/migrate_time = 30 SECONDS //How long it takes to move mobs from one burrow to another
+	var/roundstart_burrows = 30
+	var/migrate_time = 80 SECONDS //How long it takes to move mobs from one burrow to another
 	var/reinforcement_time = 10 SECONDS //How long it takes for reinforcements to arrive
-	var/plantspread_burrows_num = 1 //How many other burrows will each one with plants send them to
+	var/plantspread_burrows_num = 2 //How many other burrows will each one with plants send them to
 
 
 
@@ -91,7 +89,7 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 		//To be valid, the floor needs to have a wall in a cardinal direction
 		for (var/d in cardinal)
 			var/turf/T = get_step(F, d)
-			if (T.is_wall)
+			if (T && T.is_wall)
 				//Its got a wall!
 				possible_turfs[F] = T //We put this floor and its wall into the possible turfs list
 
@@ -136,7 +134,7 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 //Tells all the burrows to refresh their population lists
 /datum/controller/subsystem/migration/proc/do_scan()
 	set waitfor = FALSE
-	for (var/obj/structure/burrow/B in all_burrows)
+	for (var/obj/structure/burrow/B in GLOB.all_burrows)
 		B.life_scan()
 
 	next_scan = world.time + burrow_scan_interval
@@ -159,6 +157,10 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 			//This could only happen if all the burrows on the map were collapsed
 			return
 
+		if (!B.population.len)
+			// There is no mob nearby for the migration
+			// Avoid division by 0 in summon_mobs
+			continue
 
 		//Alright now we know where to go, next up, how many are we sending?
 		var/percentage = migration_percentage()
@@ -208,13 +210,13 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 	var/obj/structure/burrow/candidate
 
 	switch (GLOB.storyteller.config_tag)
-		if ("jester") // Jester is much more likely to not reroll the maintenance check.
-			reroll_prob = 59.5
+		if ("jester") // Jester will most likely not reroll the maintenance area check.
+			reroll_prob = 19.5
 		if ("warrior")
-			reroll_prob = 98.5
+			reroll_prob = 80
 
 	//Lets copy the list into a candidates buffer
-	var/list/candidates = all_burrows.Copy(1,0)
+	var/list/candidates = GLOB.all_burrows.Copy(1,0)
 
 	//No picking the source burrow
 	candidates -= source
@@ -319,12 +321,11 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 	This proc allows plants like maintshrooms to spread through burrows
 	Run every 10 minutes
 */
-
 /datum/controller/subsystem/migration/proc/handle_plant_spreading()
 	next_plantspread = world.time + burrow_plantspread_interval//Setup the next spread tick
 
 	//We loop through every burrow and see what it needs
-	for (var/obj/structure/burrow/B in all_burrows)
+	for (var/obj/structure/burrow/B in GLOB.all_burrows)
 
 		//Branch 1: No plants yet
 		if (!B.plant)
@@ -408,8 +409,6 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 		C.plant = B.plant //Make them share the same seed
 		C.spread_plants() //And make some plants at the new burrow
 
-
-
 /*************************************************
 	Burrow Finding and Sorting
 *************************************************/
@@ -452,7 +451,7 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 /proc/get_sorted_burrow_network(var/atom/source)
 	var/list/sorted = list() //List of the burrows, in order
 	var/list/distances  = list() //Associative list of burrows and distances
-	for (var/b in all_burrows)
+	for (var/b in GLOB.all_burrows)
 		if (b == source)
 			continue //Don't have ourselves in the return list
 

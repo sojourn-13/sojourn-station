@@ -16,7 +16,7 @@
 	                 "laus", "maiors", "mando", "novem", "occido", "occidi", "occasum", "pax pacis", "penitus", "quercus", "regula", \
 	                 "rigor", "rusticus", "saeta", "sane", "sato", "teres", "terra", "timor", "trans", "turbo onis", "ultra", "ustilo", \
 	                 "victoria!", "volo", "werumensium", "xiphias", "ullus", "tum", "Tungris", "super", "acerbus", "adulescenta", "alioqui", \
-	                 "aegrus", "Brocherota", "callidus", "cautela", "creta", "cum", "demitto", "dilato", "donec", "edo", "elue", "excellentia", \
+	                 "aegrus", "Brocherota", "callidus", "cautela", "creta", "com", "demitto", "dilato", "donec", "edo", "elue", "excellentia", \
                      "expono", "flamma", "flumen", "gladius", "gratus", "homo hominis", "horrendus", "illud", "imitor", "infeste", "iuro", \
                      "laeto letor", "laganum", "lector", "maneo", "mille", "missa", "medica", "optimus", "cedo", "comiter", "quia", "rumor", \
                      "siccus", "sano", "eruo", "denuo", "decor", "corona", "compostio", "color", "bellum", "bestia", "audax", "similis", "tres tria")

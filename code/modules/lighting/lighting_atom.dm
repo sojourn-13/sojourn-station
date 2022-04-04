@@ -43,6 +43,7 @@
 		else
 			light = new /datum/light_source(src, .)
 
+
 /atom/New()
 	. = ..()
 
@@ -124,4 +125,5 @@
 
 /obj/item/dropped()
 	. = ..()
+	SEND_SIGNAL(src, COMSIG_ITEM_DROPPED, src)
 	update_light()

@@ -122,7 +122,7 @@
 				return TRUE
 			if(istype(organ, /obj/item/organ/external))
 				var/obj/item/organ/external/E = organ
-				for(var/obj/item/weapon/implant/I in E.implants)
+				for(var/obj/item/implant/I in E.implants)
 					if(I.malfunction)
 						metabolism = 1
 						constant_metabolism = TRUE
@@ -135,7 +135,7 @@
 		for(var/obj/item/organ/organ in H.organs) //Grab the organ holding the implant.
 			if(metabolism == 1 && istype(organ, /obj/item/organ/external)) // if metabolism == 1 then broken implant is found see implant_medics/will_occur()
 				var/obj/item/organ/external/E = organ
-				for(var/obj/item/weapon/implant/I in E.implants)
+				for(var/obj/item/implant/I in E.implants)
 					if(I.malfunction)
 						I.restore()
 						return
@@ -273,6 +273,7 @@
 	var/voiceName = "Unknown"
 	heating_point = 523
 	heating_products = list("uncap nanites")
+	illegal = TRUE
 
 /datum/reagent/nanites/uncapped/voice_mimic/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(..())
@@ -285,6 +286,7 @@
 	var/uni_identity
 	heating_point = 523
 	heating_products = list("uncap nanites")
+	illegal = TRUE
 
 /datum/reagent/nanites/uncapped/dynamic_handprints/on_mob_add(mob/living/L)
 	..()

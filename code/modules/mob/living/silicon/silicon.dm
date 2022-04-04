@@ -26,8 +26,8 @@
 	var/list/datum/alarm/queued_alarms = new()
 
 	var/list/access_rights
-	var/obj/item/weapon/card/id/idcard
-	var/idcard_type = /obj/item/weapon/card/id/synthetic
+	var/obj/item/card/id/idcard
+	var/idcard_type = /obj/item/card/id/synthetic
 
 	var/email_ringtone = TRUE
 
@@ -40,6 +40,13 @@
 	GLOB.silicon_mob_list |= src
 	. = ..()
 	add_language(LANGUAGE_COMMON)
+	add_language(LANGUAGE_ROBOT)
+	add_language(LANGUAGE_COMMON)
+	add_language(LANGUAGE_SERBIAN)
+	add_language(LANGUAGE_GERMAN)
+	add_language(LANGUAGE_JANA)
+	add_language(LANGUAGE_CYRILLIC)
+	add_language(LANGUAGE_LATIN)
 	init_id()
 	init_subsystems()
 
@@ -48,6 +55,10 @@
 	for(var/datum/alarm_handler/AH in SSalarm.all_handlers)
 		AH.unregister_alarm(src)
 	. = ..()
+
+/mob/living/silicon/lay_down()
+	resting = FALSE
+	update_lying_buckled_and_verb_status()
 
 /mob/living/silicon/proc/init_id()
 	if(idcard)

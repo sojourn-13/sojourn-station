@@ -6,6 +6,11 @@
 	sort_category = "Suits and Overwear"
 	cost = 1
 
+/datum/gear/suit/bunnysuit
+	display_name = "bunny suit"
+	path = /obj/item/clothing/suit/costume/kinky/alyson
+	cost = 2 // Pay the horni tax.
+
 /datum/gear/suit/cloakselect
 	display_name = "cloak selection"
 	path = /obj/item/clothing/suit/hooded/cloak/simple
@@ -39,6 +44,18 @@
 	display_name = "black hazard vest"
 	path = /obj/item/clothing/suit/storage/hazardvest_black
 
+/datum/gear/suit/ivory
+	display_name = "ivory tabard"
+	path = /obj/item/clothing/suit/ivory
+
+/datum/gear/suit/blacksilk
+	display_name = "blacksilk tabard"
+	path = /obj/item/clothing/suit/blacksilk
+
+/datum/gear/suit/numerical_grab
+	display_name = "numerical garb"
+	path = /obj/item/clothing/suit/storage/numericalgarb
+
 /datum/gear/suit/hoodies
 	display_name = "hoodie selection"
 	path = /obj/item/clothing/suit/storage/toggle/hoodie
@@ -63,6 +80,10 @@
 	display_name = "punk vest"
 	path = /obj/item/clothing/suit/storage/punkvest
 
+/datum/gear/suit/texan
+	display_name = "ivory texan jacket"
+	path = /obj/item/clothing/suit/storage/texan
+
 /datum/gear/suit/trackjacket
 	display_name = "jacket sport selection"
 	path = /obj/item/clothing/suit/storage/toggle/track
@@ -75,6 +96,10 @@
 /datum/gear/suit/labcoat
 	display_name = "labcoat"
 	path = /obj/item/clothing/suit/storage/toggle/labcoat
+
+/datum/gear/suit/formal_labcoat
+	display_name = "formal labcoat"
+	path = /obj/item/clothing/suit/storage/toggle/labcoat/poofy
 
 /datum/gear/suit/peacoat
 	display_name = "peacoat"
@@ -132,6 +157,26 @@
 /datum/gear/suit/jamrock_blazer
 	display_name = "jamrock blazer"
 	path = /obj/item/clothing/suit/storage/jamrock_blazer
+
+/datum/gear/suit/triad
+	display_name = "triad jacket"
+	path = /obj/item/clothing/suit/storage/triad
+
+/datum/gear/suit/akira
+	display_name = "red jacket"
+	path = /obj/item/clothing/suit/storage/akira
+
+/datum/gear/suit/absolute_hoodie
+	display_name = "absolute hoodie"
+	path = /obj/item/clothing/suit/storage/toggle/absolutehoodie
+
+/datum/gear/suit/absolute_great_coat
+	display_name = "absolute great coat"
+	path = /obj/item/clothing/suit/greatcoat/absolutecoat
+
+/datum/gear/suit/absolute_cloak
+	display_name = "absolutist cloak"
+	path = /obj/item/clothing/suit/hooded/absolutecloak
 
 /datum/gear/suit/radhat
 	display_name = "radiation hood"

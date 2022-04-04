@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/lasercannon
+/obj/item/gun/energy/lasercannon
 	name = "\"Titanica\" laser cannon"
 	desc = "A bulky outdated and now abandoned H&S design for an energy weapon that allows for it to shoot condenced laser beams to really burn a whole in anything. At its time it was compared to the \"Bull\" as one of the worst personal defence laser firearms created."
 	icon = 'icons/obj/guns/energy/lascannon.dmi'
@@ -21,7 +21,7 @@
 		)
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 
-/obj/item/weapon/gun/energy/lasercannon/mounted
+/obj/item/gun/energy/lasercannon/mounted
 	name = "mounted laser cannon"
 	self_recharge = TRUE
 	use_external_power = TRUE
@@ -29,12 +29,14 @@
 	recharge_time = 10
 	safety = FALSE
 	restrict_safety = TRUE
+	one_hand_penalty = 0 // It's mounted on the arm and there's no way to wield it.
 	twohanded = FALSE
 
-/obj/item/weapon/gun/energy/lasercannon/rnd
+/obj/item/gun/energy/lasercannon/rnd
 	name = "\"Solaris\" laser cannon"
 	desc = "A outdated and abandoned design for an energy weapon, revamped by Soteria Institute. The lasing medium is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core. \
 		This incredible technology packed inside let it stand on it's own has one of the markets best laser cannon for turret defense and firepower! "
+	icon = 'icons/obj/guns/energy/si_lascannon.dmi'
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_SILVER = 4, MATERIAL_URANIUM = 1)
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_POWER = 3)
 	price_tag = 1500

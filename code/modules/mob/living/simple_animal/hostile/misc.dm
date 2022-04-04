@@ -48,6 +48,8 @@
 	mob_size = 3
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	clone_difficulty = CLONE_EASY
+	inherent_mutations = list(MUTATION_DWARFISM, MUTATION_EPILEPSY, MUTATION_UNBALANCED, MUTATION_IMBECILE)
 
 /mob/living/simple_animal/hostile/shantak
 	name = "shantak"
@@ -79,7 +81,6 @@
 	icon_state = "yithian"
 	icon_living = "yithian"
 	icon_dead = "yithian_dead"
-	pass_flags = PASSTABLE
 	density = 0
 	mob_size = 2
 
@@ -89,7 +90,6 @@
 	icon_state = "tindalos"
 	icon_living = "tindalos"
 	icon_dead = "tindalos_dead"
-	pass_flags = PASSTABLE
 	density = 0
 	mob_size = 1.5
 
@@ -103,6 +103,8 @@
 	pass_flags = PASSTABLE
 	density = 0
 	mob_size = 2
+	//Schlorgo is a fucking mess
+	inherent_mutations = list(MUTATION_DWARFISM, MUTATION_NO_PAIN, MUTATION_UNBALANCED, MUTATION_IMBECILE, MUTATION_TOURETTES)
 
 /mob/living/simple_animal/hostile/snake
 	name = "viper"
@@ -114,7 +116,7 @@
 	layer = HIDE_LAYER
 	density = 0
 	turns_per_move = 5
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/carp
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/carp
 	response_help = "pets the"
 	response_disarm = "gently pushes aside the"
 	response_harm = "hits the"
@@ -133,6 +135,7 @@
 	var/attack_reagent = "toxin"
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	inherent_mutations = list(MUTATION_NEARSIGHTED, MUTATION_TOXIN_RESISTANCE, MUTATION_UNBALANCED, MUTATION_CLUMSY)
 
 /mob/living/simple_animal/hostile/snake/AttackingTarget()
 	. = ..()
@@ -151,7 +154,7 @@
 	layer = HIDE_LAYER
 	density = 0
 	turns_per_move = 2
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/carp
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/carp
 	response_help = "boops the"
 	response_disarm = "gently pushes aside the"
 	response_harm = "hits the"
@@ -347,6 +350,7 @@
 	mob_size = 20
 	resistance = 15
 
+// Credit to scar#1579 for the sprite.
 /mob/living/simple_animal/hostile/retaliate/tahca
 	name = "tahca"
 	desc = "A cervine creature, surprisingly native to this planet, that resembles a two-headed deer. Despite what one would expect, while docile in nature, it is more than willing to fight if attacked. Hunters value \

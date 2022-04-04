@@ -13,7 +13,7 @@
 	var/state = HOME
 	var/datum/disease2/disease/virus2 = null
 	var/datum/data/record/entry = null
-	var/obj/item/weapon/reagent_containers/syringe/sample = null
+	var/obj/item/reagent_containers/syringe/sample = null
 
 /obj/machinery/disease2/isolator/update_icon()
 	if (stat & (BROKEN|NOPOWER))
@@ -28,13 +28,15 @@
 		icon_state = "isolator"
 
 /obj/machinery/disease2/isolator/attackby(var/obj/O as obj, var/mob/user)
-	if(!istype(O,/obj/item/weapon/reagent_containers/syringe)) return
-	var/obj/item/weapon/reagent_containers/syringe/S = O
+	if(!istype(O,/obj/item/reagent_containers/syringe)) return
+	//var/obj/item/reagent_containers/syringe/S = O
 
 	if(sample)
 		to_chat(user, "\The [src] is already loaded.")
 		return
-
+	else
+		to_chat(user, "\The [src] has a slot for a syringe style you've never seen before.")
+/* Currently bugged. Unable to interact with machine after inserting syringe. Quick fix of not being able to insert anything for now. ~Aeger
 	sample = S
 	user.drop_item()
 	S.loc = src
@@ -44,12 +46,13 @@
 	update_icon()
 
 	src.attack_hand(user)
+*/
 
 /obj/machinery/disease2/isolator/attack_hand(mob/user as mob)
 	if(stat & (NOPOWER|BROKEN)) return
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/disease2/isolator/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/disease2/isolator/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	user.set_machine(src)
 
 	var/data[0]
@@ -111,7 +114,7 @@
 		isolating -= 1
 		if (isolating == 0)
 			if (virus2)
-				var/obj/item/weapon/virusdish/d = new /obj/item/weapon/virusdish(src.loc)
+				var/obj/item/virusdish/d = new /obj/item/virusdish(src.loc)
 				d.virus2 = virus2.getcopy()
 				virus2 = null
 				ping("\The [src] pings, \"Viral strain isolated.\"")
@@ -166,7 +169,7 @@
 		return 1
 
 /obj/machinery/disease2/isolator/proc/print(var/mob/user)
-	var/obj/item/weapon/paper/P = new /obj/item/weapon/paper(loc)
+	var/obj/item/paper/P = new /obj/item/paper(loc)
 
 	switch (state)
 		if (HOME)

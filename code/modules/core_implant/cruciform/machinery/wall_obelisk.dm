@@ -23,7 +23,7 @@
 	var/biomatter_ammo = 10 //We attack 10 times before running out on map spawn
 	var/biomatter_use_per_shot = 1 //Modular way of making it so admins can tweak this mid round
 
-/obj/machinery/power/power/wall_obelisk/New()
+/obj/machinery/power/wall_obelisk/New()
 	..()
 
 /obj/machinery/power/wall_obelisk/attack_hand(mob/user)

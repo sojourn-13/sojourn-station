@@ -75,7 +75,7 @@
 
 /obj/item/modular_computer/Destroy()
 	kill_program(forced=TRUE)
-	QDEL_NULL_LIST(terminals)
+	QDEL_LIST(terminals)
 	STOP_PROCESSING(SSobj, src)
 
 	if(stored_pen && !ispath(stored_pen))
@@ -191,7 +191,7 @@
 		active_program = null
 	var/mob/user = usr
 	if(user && istype(user))
-		ui_interact(user) // Re-open the UI on this computer. It should show the main screen now.
+		nano_ui_interact(user) // Re-open the UI on this computer. It should show the main screen now.
 	update_icon()
 
 // Returns 0 for No Signal, 1 for Low Signal and 2 for Good Signal. 3 is for wired connection (always-on)
@@ -207,7 +207,7 @@
 	return ntnet_global.add_log(text, network_card)
 
 /obj/item/modular_computer/proc/shutdown_computer(loud = TRUE)
-	QDEL_NULL_LIST(terminals)
+	QDEL_LIST(terminals)
 
 	kill_program(forced=TRUE)
 	for(var/p in all_threads)
@@ -216,11 +216,11 @@
 		all_threads.Remove(PRG)
 
 	//Turn on all non-disabled hardware
-	for (var/obj/item/weapon/computer_hardware/H in src)
+	for (var/obj/item/computer_hardware/H in src)
 		if (H.enabled)
 			H.disabled()
 	if(loud)
-		visible_message("\The [src] shuts down.", viewing_distance = 1)
+		visible_message("\The [src] shuts down.", range = 1)
 	enabled = FALSE
 	update_icon()
 
@@ -229,7 +229,7 @@
 	update_icon()
 
 	//Turn on all non-disabled hardware
-	for (var/obj/item/weapon/computer_hardware/H in src)
+	for (var/obj/item/computer_hardware/H in src)
 		if (H.enabled)
 			H.enabled()
 
@@ -237,9 +237,9 @@
 	autorun_program(hard_drive)
 
 	if(user)
-		ui_interact(user)
+		nano_ui_interact(user)
 
-/obj/item/modular_computer/proc/autorun_program(obj/item/weapon/computer_hardware/hard_drive/disk)
+/obj/item/modular_computer/proc/autorun_program(obj/item/computer_hardware/hard_drive/disk)
 	var/datum/computer_file/data/autorun = disk?.find_file_by_name("AUTORUN")
 	if(istype(autorun))
 		run_program(autorun.stored_data, disk)
@@ -253,9 +253,9 @@
 	active_program = null
 	update_icon()
 	if(istype(user))
-		ui_interact(user) // Re-open the UI on this computer. It should show the main screen now.
+		nano_ui_interact(user) // Re-open the UI on this computer. It should show the main screen now.
 
-/obj/item/modular_computer/proc/run_program(prog_name, obj/item/weapon/computer_hardware/hard_drive/disk)
+/obj/item/modular_computer/proc/run_program(prog_name, obj/item/computer_hardware/hard_drive/disk)
 	var/datum/computer_file/program/P = null
 	var/mob/user = usr
 
@@ -292,12 +292,12 @@
 	if(P.run_program(user))
 		active_program = P
 		all_threads.Add(P)
-		active_program.ui_interact(user)
+		active_program.nano_ui_interact(user)
 		update_uis()
 		update_icon()
 	return TRUE
 
-/obj/item/modular_computer/proc/on_disk_disabled(obj/item/weapon/computer_hardware/hard_drive/disk)
+/obj/item/modular_computer/proc/on_disk_disabled(obj/item/computer_hardware/hard_drive/disk)
 	// Close all running apps before the disk is removed
 	for(var/p in all_threads)
 		var/datum/computer_file/program/PRG = p
@@ -305,7 +305,7 @@
 			PRG.event_disk_removed()
 
 /obj/item/modular_computer/proc/update_label()
-	var/obj/item/weapon/card/id/I = GetIdCard()
+	var/obj/item/card/id/I = GetIdCard()
 	if (istype(I))
 		SetName("[initial(name)]-[I.registered_name] ([I.assignment])")
 		return

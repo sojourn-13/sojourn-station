@@ -30,6 +30,7 @@
 	//Used for the /random subtypes of material stacks. any stack works
 	var/rand_min = 0
 	var/rand_max = 0
+	var/stacktype_alt = null
 
 
 
@@ -70,9 +71,6 @@
 
 
 	return ..()
-
-/obj/item/stack/get_item_cost()
-	return amount * price_tag
 
 /obj/item/stack/examine(mob/user)
 	if(..(user, 1))
@@ -177,7 +175,7 @@
 			S.amount = produced
 			S.add_to_stacks(user)
 
-		if (istype(O, /obj/item/weapon/storage)) //BubbleWrap - so newly formed boxes are empty
+		if (istype(O, /obj/item/storage)) //BubbleWrap - so newly formed boxes are empty
 			for (var/obj/item/I in O)
 				qdel(I)
 
@@ -190,7 +188,9 @@
 		list_recipes(usr, text2num(href_list["sublist"]))
 
 	if (href_list["make"])
-		if (src.get_amount() < 1) qdel(src) //Never should happen
+		if (src.get_amount() < 1)
+			if(consumable)
+				qdel(src) //Never should happen
 
 		var/list/recipes_list = recipes
 		if (href_list["sublist"])
@@ -237,6 +237,8 @@
 		return 1
 
 /obj/item/stack/proc/add(var/extra)
+	if(amount < 1 && consumable)
+		qdel(src)
 	if(!uses_charge)
 		if(amount + extra > get_max_amount())
 			return 0
@@ -262,7 +264,8 @@
 	if (!get_amount())
 		return 0
 	if ((stacktype != S.stacktype) && !type_verified)
-		return 0
+		if((stacktype != S.stacktype_alt) && !type_verified)
+			return 0
 	if (isnull(tamount))
 		tamount = src.get_amount()
 
@@ -274,6 +277,8 @@
 		if (prob(transfer/orig_amount * 100))
 			transfer_fingerprints_to(S)
 			if(blood_DNA)
+				if(!S.blood_DNA || !istype(S.blood_DNA, /list))	//if our list of DNA doesn't exist yet (or isn't a list) initialise it.
+					S.blood_DNA = list()
 				LAZYINITLIST(S.blood_DNA)
 				S.blood_DNA |= blood_DNA
 		return transfer
@@ -292,13 +297,15 @@
 
 	var/orig_amount = src.amount
 	if (transfer && src.use(transfer))
-		var/obj/item/stack/newstack = new src.type(loc, transfer)
-		newstack.color = color
+		var/obj/item/stack/S = new src.type(loc, transfer)
+		S.color = color
 		if (prob(transfer/orig_amount * 100))
-			transfer_fingerprints_to(newstack)
+			transfer_fingerprints_to(S)
 			if(blood_DNA)
-				newstack.blood_DNA = blood_DNA.Copy()
-		return newstack
+				if(!S.blood_DNA || !istype(S.blood_DNA, /list))	//if our list of DNA doesn't exist yet (or isn't a list) initialise it.
+					S.blood_DNA = list()
+				S.blood_DNA |= blood_DNA
+		return S
 	return null
 
 /obj/item/stack/proc/get_amount()

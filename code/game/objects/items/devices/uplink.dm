@@ -114,7 +114,7 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 /*
 	NANO UI FOR UPLINK WOOP WOOP
 */
-/obj/item/device/uplink/hidden/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/item/device/uplink/hidden/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/title = "Remote Uplink"
 	var/data[0]
 
@@ -138,7 +138,7 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 
 // Interaction code. Gathers a list of items purchasable from the paren't uplink and displays it. It also adds a lock button.
 /obj/item/device/uplink/interact(mob/user)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 // The purchasing code.
 /obj/item/device/uplink/hidden/Topic(href, href_list)
@@ -254,12 +254,12 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 	if(hidden_uplink)
 		hidden_uplink.trigger(user)
 
-/obj/item/weapon/tool/multitool/uplink/New(loc, mind, crystal_amount)
+/obj/item/tool/multitool/uplink/New(loc, mind, crystal_amount)
 	..(loc)
 	hidden_uplink = new(src, mind, crystal_amount)
 
 
-/obj/item/weapon/tool/multitool/uplink/attack_self(mob/user as mob)
+/obj/item/tool/multitool/uplink/attack_self(mob/user as mob)
 	if(hidden_uplink)
 		hidden_uplink.trigger(user)
 
@@ -270,6 +270,7 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 	..(loc)
 	hidden_uplink = new(src, mind, crystal_amount)
 	hidden_uplink.uses = DEFAULT_TELECRYSTAL_AMOUNT
+	hidden_uplink.trigger_code = 1445
 
 
 

@@ -1,4 +1,4 @@
-#define CRUCIFORM_TYPE obj/item/weapon/implant/core_implant/cruciform
+#define CRUCIFORM_TYPE obj/item/implant/core_implant/cruciform
 
 GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 
@@ -8,6 +8,12 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		if(blueprint_type == /datum/nt_blueprint)
 			continue
 		if(blueprint_type == /datum/nt_blueprint/machinery)
+			continue
+		if(blueprint_type == /datum/nt_blueprint/mob)
+			continue
+		if(blueprint_type == /datum/nt_blueprint/cruciform_upgrade)
+			continue
+		if(blueprint_type == /datum/nt_blueprint/weapons)
 			continue
 		var/datum/nt_blueprint/pb = new blueprint_type()
 		list[pb.name] = pb
@@ -19,8 +25,10 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	desc = "Building needs mainly faith but resources as well. Find out what it takes."
 	power = 5
 	category = "Construction"
+	nutri_cost = 10
+	blood_cost = 10
 
-/datum/ritual/cruciform/priest/blueprint_check/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C, list/targets)
+/datum/ritual/cruciform/priest/blueprint_check/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C, list/targets)
 	var/construction_key = input("Select construction", "") as null|anything in GLOB.nt_blueprints
 	var/datum/nt_blueprint/blueprint = GLOB.nt_blueprints[construction_key]
 	var/list/listed_components = list()
@@ -30,6 +38,12 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			continue
 		listed_components += list("[blueprint.materials[placeholder]] [initial(placeholder.name)]")
 	to_chat(user, SPAN_NOTICE("[blueprint.name] requires: [english_list(listed_components)]."))
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 
 /datum/ritual/cruciform/priest/construction
 	name = "Manifestation"
@@ -37,8 +51,11 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	desc = "Build and expand. Shape your faith into something more sensible."
 	power = 40
 	category = "Construction"
+	nutri_cost = 25
+	blood_cost = 25
 
-/datum/ritual/cruciform/priest/construction/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C, list/targets)
+
+/datum/ritual/cruciform/priest/construction/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C, list/targets)
 	var/construction_key = input("Select construction", "") as null|anything in GLOB.nt_blueprints
 	var/datum/nt_blueprint/blueprint = GLOB.nt_blueprints[construction_key]
 	var/turf/target_turf = get_step(user,user.dir)
@@ -50,6 +67,12 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		return
 
 	user.visible_message(SPAN_NOTICE("You see as [user] passes his hands over something."),SPAN_NOTICE("You see your faith take physical form as you concentrate on [blueprint.name] image"))
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 
 	var/obj/effect/overlay/nt_construction/effect = new(target_turf, blueprint.build_time)
 
@@ -65,13 +88,16 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 
 	for(var/item_type in blueprint.materials)
 		var/t = locate(item_type) in target_turf.contents
-		qdel(t)
+		if(istype(t, /obj/item/stack))
+			var/obj/item/stack/S = t
+			S.use(blueprint.materials[item_type])
+		else
+			qdel(t)
 
 	effect.success()
 	user.visible_message(SPAN_NOTICE("You hear a soft humming sound as [user] finishes his ritual."),SPAN_NOTICE("You take a deep breath as the divine manifestation finishes."))
 	var/build_path = blueprint.build_path
 	new build_path(target_turf)
-
 
 /datum/ritual/cruciform/priest/construction/proc/items_check(mob/user,turf/target, datum/nt_blueprint/blueprint)
 	var/list/turf_contents = target.contents
@@ -90,6 +116,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			if(stacked.amount < required_amount)
 				return FALSE
 	return TRUE
+
 /datum/nt_blueprint/
 	var/name = "Report me"
 	var/build_path
@@ -119,18 +146,64 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 
 /datum/nt_blueprint/mob/rook
 	name = "Rook Golem"
-	build_path = /mob/living/simple_animal/hostile/roomba/synthetic/allied/rook
+	build_path = /mob/living/carbon/superior_animal/robot/church/rook
+	materials = list(
+		/obj/item/stack/material/steel = 15,
+		/obj/item/stack/material/plastic = 10,
+		/obj/item/stack/material/gold = 16,
+		/obj/item/stack/cable_coil = 15,
+		/obj/item/stack/material/plasteel = 5,
+		/obj/item/stack/material/biomatter = 30,
+		/obj/item/stack/material/diamond = 1,
+		/obj/item/book/ritual/cruciform = 1 //Limiting factor
+	)
+	build_time = 20 SECONDS //We dont want to make these in combat
+
+/datum/nt_blueprint/mob/knight
+	name = "Knight Golem"
+	build_path = /mob/living/carbon/superior_animal/robot/church/knight
 	materials = list(
 		/obj/item/stack/material/steel = 15,
 		/obj/item/stack/material/plastic = 10,
 		/obj/item/stack/material/gold = 10,
 		/obj/item/stack/cable_coil = 15,
 		/obj/item/stack/material/plasteel = 5,
-		/obj/item/stack/material/biomatter = 30,
-		/obj/item/stack/material/diamond = 1,
-		/obj/item/weapon/book/ritual/cruciform = 1 //Limiting factor
+		/obj/item/stack/material/biomatter = 20,
+		/obj/item/tool/sword/nt/longsword = 1,
+		/obj/item/book/ritual/cruciform = 1 //Limiting factor
 	)
 	build_time = 20 SECONDS //We dont want to make these in combat
+
+/datum/nt_blueprint/mob/pawn
+	name = "Pawn Golem"
+	build_path = /mob/living/carbon/superior_animal/robot/church/pawm
+	materials = list(
+		/obj/item/stack/material/steel = 10,
+		/obj/item/stack/material/plastic = 5,
+		/obj/item/stack/material/silver = 8,
+		/obj/item/stack/cable_coil = 15,
+		/obj/item/stack/material/plasteel = 3,
+		/obj/item/stack/material/biomatter = 15,
+		/obj/item/tool/sword/nt/longsword = 1,
+		/obj/item/tool/sword/nt/shortsword = 1,
+		/obj/item/paper = 1 //Limiting factor
+	)
+	build_time = 1 SECONDS //We do want to mid-comat summan these
+
+/datum/nt_blueprint/mob/bishop
+	name = "Bishop Golem"
+	build_path = /mob/living/carbon/superior_animal/robot/church/bishop
+	materials = list(
+		/obj/item/stack/material/steel = 15,
+		/obj/item/stack/material/plastic = 15,
+		/obj/item/stack/material/gold = 8,
+		/obj/item/stack/cable_coil = 15,
+		/obj/item/stack/material/plasteel = 10,
+		/obj/item/stack/material/biomatter = 60,
+		/obj/item/book/ritual/cruciform/priest = 1 //Limiting factor
+	)
+	build_time = 60 SECONDS //These need a lot of prep
+
 
 //For making machinery
 /datum/nt_blueprint/machinery
@@ -146,8 +219,8 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	build_time = 8 SECONDS
 
 /datum/nt_blueprint/machinery/eotp
-	name = "Eye of the Absolute"
-	build_path = /obj/machinery/power/nt_obelisk/eotp
+	name = "Will of the Protector"
+	build_path = /obj/machinery/power/eotp
 	materials = list(
 		/obj/item/stack/material/plasteel = 15,
 		/obj/item/stack/material/biomatter = 10,
@@ -164,9 +237,10 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/material/steel = 10,
 		/obj/item/stack/material/glass = 2,
 		/obj/item/stack/material/silver = 6,
-		/obj/item/weapon/storage/toolbox = 1
+		/obj/item/storage/toolbox = 1
 	)
 	build_time = 5 SECONDS
+
 /datum/nt_blueprint/machinery/solidifier
 	name = "Biomatter Solidifier"
 	build_path = /obj/machinery/biomatter_solidifier
@@ -176,6 +250,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/structure/reagent_dispensers/biomatter = 1
 	)
 	build_time = 9 SECONDS
+
 //Notice: We don't use them on Soj but its kept here for posterity. -Kaz
 //cloner
 /*
@@ -189,6 +264,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/material/glass/reinforced = 10,
 	)
 	build_time = 10 SECONDS
+
 /datum/nt_blueprint/machinery/reader
 	name = "Cruciform Reader"
 	build_path = /obj/machinery/neotheology/reader
@@ -199,6 +275,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/CRUCIFORM_TYPE = 1
 	)
 	build_time = 10 SECONDS
+
 /datum/nt_blueprint/machinery/biocan
 	name = "Biomass tank"
 	build_path = /obj/machinery/neotheology/biomass_container
@@ -209,6 +286,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	)
 	build_time = 8 SECONDS
 */
+
 //generator
 /datum/nt_blueprint/machinery/biogen
 	name = "Biomatter Power Generator"
@@ -237,7 +315,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	build_path = /obj/machinery/multistructure/biogenerator_part/port
 	materials = list(
 		/obj/item/stack/material/steel = 10,
-		/obj/item/weapon/reagent_containers/glass/bucket = 1
+		/obj/item/reagent_containers/glass/bucket = 1
 	)
 	build_time = 5 SECONDS
 
@@ -252,6 +330,14 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/structure/reagent_dispensers/biomatter = 1
 	)
 	build_time = 8 SECONDS
+
+/datum/nt_blueprint/machinery/bioreactor_unloader
+	name = "Biomatter Reactor: Unloader" //Basically a hopper
+	build_path = /obj/machinery/multistructure/bioreactor_part/platform
+	materials = list(
+		/obj/item/stack/material/steel = 10
+	)
+	build_time = 2 SECONDS
 
 /datum/nt_blueprint/machinery/bioreactor_metrics
 	name = "Biomatter Reactor: Metrics"
@@ -269,7 +355,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	build_path = /obj/machinery/multistructure/bioreactor_part/bioport
 	materials = list(
 		/obj/item/stack/material/silver = 5,
-		/obj/item/weapon/reagent_containers/glass/bucket = 1
+		/obj/item/reagent_containers/glass/bucket = 1
 	)
 	build_time = 6 SECONDS
 
@@ -309,5 +395,147 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/material/steel = 10,
 		/obj/item/stack/material/plastic = 4,
 		/obj/item/stack/tile/floor = 1
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/machinery/door_silver
+	name = "Common Door"
+	build_path = /obj/machinery/door/holy
+	materials = list(
+		/obj/item/stack/material/steel = 5,
+		/obj/item/stack/material/biomatter = 20,
+		/obj/item/stack/material/silver = 2,
+		/obj/item/stack/material/gold = 1
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/machinery/door_gold
+	name = "Clergy Door"
+	build_path = /obj/machinery/door/holy/preacher
+	materials = list(
+		/obj/item/stack/material/steel = 5,
+		/obj/item/stack/material/biomatter = 20,
+		/obj/item/stack/material/gold = 3
+	)
+	build_time = 8 SECONDS
+
+//Requires a lot but heals bluespace, for free, like really good
+/datum/nt_blueprint/machinery/entropy_repairer
+	name = "Absolute Nullifer"
+	build_path = /obj/machinery/telesci_inhibitor/nt_bluespace_seer
+	materials = list(
+		/obj/item/stack/material/steel = 35,
+		/obj/item/stack/material/plastic = 30,
+		/obj/item/stack/material/biomatter = 120,
+		/obj/item/stack/material/silver = 10,
+		/obj/item/stack/material/gold = 5
+	)
+	build_time = 8 SECONDS
+
+
+//Church implant upgrade, basiclly biomatter dumps?
+/datum/nt_blueprint/cruciform_upgrade
+
+/datum/nt_blueprint/cruciform_upgrade/natures_blessing
+	name = "Cruciform Natures blessing Upgrade"
+	build_path = /obj/item/cruciform_upgrade/natures_blessing
+	materials = list(
+		/obj/item/stack/material/plasteel = 5,
+		/obj/item/stack/material/biomatter = 120,
+		/obj/item/stack/material/gold = 5
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/cruciform_upgrade/faiths_shield
+	name = "Cruciform Faiths shield Upgrade"
+	build_path = /obj/item/cruciform_upgrade/faiths_shield
+	materials = list(
+		/obj/item/stack/material/plasteel = 15,
+		/obj/item/stack/material/biomatter = 120,
+		/obj/item/stack/material/gold = 5
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/cruciform_upgrade/cleansing_presence
+	name = "Cruciform Cleansing Presence Upgrade"
+	build_path = /obj/item/cruciform_upgrade/cleansing_presence
+	materials = list(
+		/obj/item/stack/material/plasteel = 10,
+		/obj/item/stack/material/biomatter = 70,
+		/obj/item/stack/material/silver = 5
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/cruciform_upgrade/martyr_gift
+	name = "Cruciform Martyr Gift Upgrade"
+	build_path = /obj/item/cruciform_upgrade/martyr_gift
+	materials = list(
+		/obj/item/stack/material/plasteel = 15,
+		/obj/item/stack/material/biomatter = 120,
+		/obj/item/stack/material/gold = 5,
+		/obj/item/stack/material/plasma = 10
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/cruciform_upgrade/wrath_of_god
+	name = "Cruciform Wrath of god Upgrade"
+	build_path = /obj/item/cruciform_upgrade/wrath_of_god
+	materials = list(
+		/obj/item/stack/material/plasteel = 10,
+		/obj/item/stack/material/biomatter = 70,
+		/obj/item/stack/material/silver = 5
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/cruciform_upgrade/speed_of_the_chosen
+	name = "Cruciform Speed of the chosen Upgrade"
+	build_path = /obj/item/cruciform_upgrade/speed_of_the_chosen
+	//Speed is king, so we requires a kings randsom to make!
+	materials = list(
+		/obj/item/stack/material/plasteel = 10,
+		/obj/item/stack/material/biomatter = 70,
+		/obj/item/stack/material/silver = 10,
+		/obj/item/stack/material/gold = 3,
+		/obj/item/stack/material/plasma = 1
+	)
+	build_time = 8 SECONDS
+
+
+//Church weapons, faster but more exspensive way for vectors to get their armorments without a disk
+/datum/nt_blueprint/weapons
+
+/datum/nt_blueprint/weapons/antebellum
+	name = "\"Antebellum\" Blunderbuss lasgun"
+	build_path = /obj/item/gun/energy/plasma/antebellum
+	materials = list(
+		/obj/item/stack/material/plasteel = 10,
+		/obj/item/stack/material/wood = 15,
+		/obj/item/stack/material/biomatter = 20,
+		/obj/item/stack/material/gold = 2,
+		/obj/item/stack/material/silver = 2
+	)
+	build_time = 3 SECONDS
+
+/datum/nt_blueprint/weapons/carpediem
+	name = "\"Carpediem\" lasgun"
+	build_path = /obj/item/gun/energy/carpediem
+	materials = list(
+		/obj/item/stack/material/plasteel = 5,
+		/obj/item/stack/material/wood = 10,
+		/obj/item/stack/material/glass = 3,
+		/obj/item/stack/material/gold = 1,
+		/obj/item/stack/material/silver = 2
+	)
+	build_time = 6 SECONDS
+
+/datum/nt_blueprint/weapons/concillium
+	name = "\"Concillium\" las-machinegun"
+	build_path = /obj/item/gun/energy/concillium
+	materials = list(
+		/obj/item/stack/material/plasteel = 30,
+		/obj/item/stack/material/wood = 25,
+		/obj/item/stack/material/glass = 15,
+		/obj/item/stack/material/gold = 3,
+		/obj/item/stack/material/silver = 5
 	)
 	build_time = 8 SECONDS

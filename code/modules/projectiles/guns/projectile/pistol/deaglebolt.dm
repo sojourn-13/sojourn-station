@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/deaglebolt
+/obj/item/gun/projectile/deaglebolt
 	name = "\"Triple Primary\" heavy pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	This particular pistol is the pinnacle of gunsmithing, featuring an advanced chamber switching magwell capable of fitting pistol, magnum, and kurtz rounds. A bit flashy, but hands down \
@@ -8,7 +8,7 @@
 	item_state = "deagle"
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_50
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 1750
@@ -22,9 +22,9 @@
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	auto_eject = 1
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50, GUN_CALIBRE_35)
 
-/obj/item/weapon/gun/projectile/deaglebolt/verb/change_caliber()
+/obj/item/gun/projectile/deaglebolt/verb/change_caliber()
 	set name = "Change Caliber"
 	set desc = "For when you need to change your guns caliber, handy when you have more ammo of one type."
 	set category = "Object"

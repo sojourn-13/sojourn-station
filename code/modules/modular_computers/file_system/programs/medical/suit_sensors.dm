@@ -38,13 +38,13 @@
 	var/search = ""
 
 /datum/nano_module/crew_monitor/proc/has_alerts()
-	for(var/z_level in maps_data.station_levels)
-		if (crew_repository.has_health_alert(z_level))
+	for(var/z_level in GLOB.maps_data.station_levels)
+		if(crew_repository.has_health_alert(z_level))
 			return TRUE
 	return FALSE
 
 /datum/nano_module/crew_monitor/Topic(href, href_list)
-	if(..()) return 1
+	if(..()) return TOPIC_HANDLED
 
 	if(href_list["track"])
 		if(isAI(usr))
@@ -52,23 +52,51 @@
 			var/mob/living/carbon/human/H = locate(href_list["track"]) in SSmobs.mob_list
 			if(hassensorlevel(H, SUIT_SENSOR_TRACKING))
 				AI.ai_actual_track(H)
-		return 1
+		else
+			var/datum/computer_file/program/host_program = host
+			if(istype(host_program))
+				var/obj/item/modular_computer/tablet/moebius/T = host_program.computer
+				if(istype(T))
+					var/mob/living/carbon/human/H = locate(href_list["track"]) in SSmobs.mob_list
+					T.target_mob = H
+					if(!T.is_tracking)
+						T.pinpoint()
+		return TOPIC_HANDLED
+
 	if(href_list["search"])
 		var/new_search = sanitize(input("Enter the value for search for.") as null|text)
 		if(!new_search || new_search == "")
 			search = ""
-			return 1
+			return TOPIC_HANDLED
 		search = new_search
-		return 1
+		return TOPIC_HANDLED
 
+	if(href_list["mute"])
+		var/mob/living/carbon/human/H = locate(href_list["mute"]) in SSmobs.mob_list
+		if(H)
+			GLOB.ignore_health_alerts_from.Add(H.name)
+			// Run that so UI updates right after button is pressed, without 5 second delay
+			for(var/z_level in GLOB.maps_data.station_levels)
+				// Forced update, we don't want cached entry to be returned
+				crew_repository.health_data(z_level, TRUE)
+		return TOPIC_HANDLED
 
+	if(href_list["unmute"])
+		var/mob/living/carbon/human/H = locate(href_list["unmute"]) in SSmobs.mob_list
+		if(H)
+			GLOB.ignore_health_alerts_from.Remove(H.name)
+			for(var/z_level in GLOB.maps_data.station_levels)
+				crew_repository.health_data(z_level, TRUE)
+		return TOPIC_HANDLED
 
 /datum/nano_module/crew_monitor/ui_data(mob/user)
 	var/list/data = host.initial_data()
-
-	data["isAI"] = isAI(user)
+	var/datum/computer_file/program/host_program = host
+	var/tracking_tablet_used = (istype(host_program) && istype(host_program.computer, /obj/item/modular_computer/tablet/moebius))
+	data["can_mute"] = tracking_tablet_used
+	data["can_track"] = (isAI(user) || tracking_tablet_used)
 	var/list/crewmembers = list()
-	for(var/z_level in maps_data.station_levels)
+	for(var/z_level in GLOB.maps_data.station_levels)
 		crewmembers += crew_repository.health_data(z_level)
 	crewmembers = sortNames(crewmembers)
 	//now lets get problematic crewmembers in separate list so they could be shown first
@@ -92,7 +120,7 @@
 	data["search"] = search ? search : "Search"
 	return data
 
-/datum/nano_module/crew_monitor/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/crew_monitor/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	var/list/data = ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)

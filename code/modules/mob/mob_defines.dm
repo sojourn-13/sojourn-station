@@ -8,7 +8,8 @@
 
 	//This is here for admins to modife for any player, mob for events or other things. Also antags could
 	//likely use this - I.E Bots with deeper scans could see through into a carrion or a Exl agent
-	var/colony_friend = FALSE //Are we friendly to the colony?
+	var/colony_friend = FALSE //Are we friendly to the colony? Turrets/Mechs vs Mob
+	var/friendly_to_colony = FALSE //Do we attack colony stuff - Mechs / Turrets regardless of who they are
 
 	movement_handlers = list(
 	/datum/movement_handler/mob/relayed_movement,
@@ -44,7 +45,7 @@
 	var/sdisabilities = 0	//Carbon
 	var/disabilities = 0	//Carbon
 
-
+	var/current_vertical_travel_method // Link currently used VTM if we moving between Z-levels
 	var/last_move_attempt = 0 //Last time the mob attempted to move, successful or not
 	var/atom/movable/pulling = null
 	var/other_mobs = null
@@ -53,7 +54,6 @@
 	var/hand = null
 	var/real_name = null
 
-	var/bhunger = 0			//Carbon
 	var/ajourn = 0
 	var/seer = 0 //for cult//Carbon, probably Human
 
@@ -64,6 +64,10 @@
 	var/lying = 0
 	var/lying_prev = 0
 	var/canmove = 1
+
+/* Is mannquin to be used when we want to make sure character start up beings do not also get the boon of what ever we are adding
+   this is current used in magic cups to prevent them form being apart of the faith's list.*/
+	var/is_mannequin = FALSE
 
 
 	/*
@@ -106,8 +110,8 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/obj/buckled = null//Living
 	var/obj/item/l_hand = null//Living
 	var/obj/item/r_hand = null//Living
-	var/obj/item/weapon/back = null//Human/Monkey
-	var/obj/item/weapon/storage/s_active = null//Carbon
+	var/obj/item/back = null//Human/Monkey
+	var/obj/item/storage/s_active = null//Carbon
 	var/obj/item/clothing/mask/wear_mask = null//Carbon
 
 
@@ -192,6 +196,8 @@ While it would be entirely possible to check the mob's move handlers list for th
 
 	var/list/progressbars = null
 
+	///The z level this mob is currently registered in
+	var/registered_z
 
 	var/speed_factor = 1.0
 

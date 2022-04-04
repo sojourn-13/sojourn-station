@@ -9,7 +9,7 @@
 	emote_see = list("shakes its head", "shivers")
 	speak_chance = 1
 	turns_per_move = 10
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/corgi
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/corgi
 	meat_amount = 3
 	response_help  = "pets"
 	response_disarm = "bops"
@@ -20,10 +20,11 @@
 	stomach_size_mult = 30
 	seek_speed = 6
 	possession_candidate = 1
-	holder_type = /obj/item/weapon/holder/corgi
+	holder_type = /obj/item/holder/corgi
 	var/obj/item/inventory_head
 	var/obj/item/inventory_back
 	colony_friend = TRUE
+	inherent_mutations = list(MUTATION_BOTTOMLESS_BELLY, MUTATION_IMBECILE, MUTATION_CLUMSY, MUTATION_THICK_FUR)
 
 /mob/living/simple_animal/corgi/New()
 	..()
@@ -38,6 +39,8 @@
 	response_help  = "pets"
 	response_disarm = "bops"
 	response_harm   = "kicks"
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/corgi/Life()
 	..()
@@ -54,12 +57,12 @@
 /mob/living/simple_animal/corgi/beg(var/atom/thing, var/atom/holder)
 	visible_emote("stares at the [thing] that [holder] has with sad puppy eyes.")
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/corgi
+/obj/item/reagent_containers/food/snacks/meat/corgi
 	name = "Corgi meat"
 	desc = "Tastes like... well you know..."
 
 /mob/living/simple_animal/corgi/attackby(var/obj/item/O as obj, var/mob/user as mob)  //Marker -Agouri
-	if(istype(O, /obj/item/weapon/newspaper))
+	if(istype(O, /obj/item/newspaper))
 		if(!stat)
 			visible_message(SPAN_NOTICE("[user] baps [name] on the nose with the rolled up [O.name]."))
 			scan_interval = max_scan_interval//discipline your dog to make it stop stealing food for a while
@@ -122,6 +125,8 @@
 	response_disarm = "bops"
 	response_harm   = "kicks"
 	var/puppies = 0
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 //Lisa already has a cute bow!
 /mob/living/simple_animal/corgi/Lisa/Topic(href, href_list)
@@ -162,3 +167,57 @@
 				for(var/i in list(1,2,4,8,4,2,1,2,4,8,4,2,1,2,4,8,4,2))
 					set_dir(i)
 					sleep(1)
+
+/mob/living/simple_animal/corgi/E_N
+	name = "E-N"
+	real_name = "E-N"
+	gender = FEMALE
+	desc = "It's a robot corgi."
+	icon_state = "E-N"
+	response_help  = "pets"
+	response_disarm = "bops"
+	response_harm   = "kicks"
+	autoseek_food = 0
+	beg_for_food = 0
+	mob_classification = CLASSIFICATION_SYNTHETIC
+	min_oxy = 0
+	max_oxy = 0
+	min_tox = 0
+	max_tox = 0
+	min_co2 = 0
+	max_co2 = 0
+	min_n2 = 0
+	max_n2 = 0
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
+
+/mob/living/simple_animal/corgi/E_M/death()
+	..()
+	visible_message("<b>[src]</b> blows apart!")
+	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
+	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+	s.set_up(3, 1, src)
+	s.start()
+	qdel(src)
+	return
+
+// For repairing damage to the synths.
+/mob/living/simple_animal/corgi/E_M/attackby(obj/item/W as obj, mob/user as mob)
+	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+	if(user.a_intent == I_HELP) // Are we helping ?
+
+		// If it is a tool, assign it to the tool variable defined earlier.
+		if(istype(W, /obj/item/tool))
+			T = W
+
+		if(QUALITY_WELDING in T?.tool_qualities)
+			if(health < maxHealth)
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					health = maxHealth
+					to_chat(user, "You repair the damage to [src].")
+					return
+				return
+			to_chat(user, "[src] doesn't need repairs.")
+			return
+	// If nothing was ever triggered, continue as normal
+	..()

@@ -15,7 +15,7 @@
 	department_account_access = TRUE
 
 	outfit_type = /decl/hierarchy/outfit/job/foreman
-
+	playtimerequired = 1200
 	access = list(
 		access_prospector, access_foreman, access_external_airlocks, access_eva, access_heads, access_sec_doors,
 		access_RC_announce, access_keycard_auth, access_maint_tunnels, access_medical_suits //for locating scav team dead bodies
@@ -26,7 +26,7 @@
 		STAT_TGH = 30,
 		STAT_VIG = 30,
 		STAT_MEC = 10,
-		STAT_BIO = 10,
+		STAT_BIO = 10
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -61,6 +61,7 @@
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
+	alt_titles = list("Scrapper","Sapper","Junk Technician","Sawbones")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR
 
@@ -76,7 +77,7 @@
 		STAT_COG = 10,
 		STAT_TGH = 10,
 		STAT_VIG = 10,
-		STAT_ROB = 10,
+		STAT_ROB = 10
 	)
 
 	perks = list(/datum/perk/junkborn, /datum/perk/stalker)
@@ -105,6 +106,7 @@
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
+	alt_titles = list("Enforcer","Frontiersmen","Triggerman")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_DUMB
 
@@ -117,7 +119,7 @@
 	stat_modifiers = list(
 		STAT_TGH = 20,
 		STAT_VIG = 20,
-		STAT_ROB = 20,
+		STAT_ROB = 20
 	)
 
 	perks = list(/datum/perk/stalker, /datum/perk/job/prospector_conditioning)

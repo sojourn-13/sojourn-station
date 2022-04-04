@@ -49,6 +49,14 @@
 	var/building_terminal = 0 //Suggestions about how to avoid clickspam building several terminals accepted!
 	var/obj/machinery/power/terminal/terminal = null
 	var/should_be_mapped = 0 // If this is set to 0 it will send out warning on New()
+	var/skill_check = STAT_LEVEL_ADEPT
+
+/obj/machinery/power/smes/dummysimple
+	name = "simple power storage unit"
+	desc = "A overly simplified high-capacity superconducting magnetic energy storage (SMES) unit. \
+	It goes as far as to have big red arrows pointing to the switches, \
+	and indentations on the controles to allow even the blind or unable to read to set this SMES.."
+	skill_check = -30 //So legit anyone unless exstream stat reduction
 
 /obj/machinery/power/smes/drain_power(var/drain_check, var/surge, var/amount = 0)
 
@@ -63,6 +71,7 @@
 /obj/machinery/power/smes/New()
 	..()
 	spawn(5)
+		GLOB.smes_list += src
 		if(!powernet)
 			connect_to_network()
 
@@ -88,6 +97,10 @@
 			warning("Non-buildable or Non-magical SMES at [src.x]X [src.y]Y [src.z]Z")
 
 	return
+
+/obj/machinery/power/smes/Destroy()
+	GLOB.smes_list -= src
+	..()
 
 /obj/machinery/power/smes/add_avail(var/amount)
 	if(..(amount))
@@ -243,10 +256,20 @@
 
 /obj/machinery/power/smes/attack_hand(mob/user)
 	add_fingerprint(user)
-	ui_interact(user)
+	if(!check_user(user)) //To try and make this more guild only
+		return
+	nano_ui_interact(user)
+
+/obj/machinery/power/smes/proc/check_user(mob/user)
+	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, skill_check))
+		return TRUE
+	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
+	return FALSE
 
 
 /obj/machinery/power/smes/attackby(var/obj/item/I, var/mob/user)
+	if(!check_user(user)) //To try and make this more guild only
+		return
 	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING,QUALITY_WIRE_CUTTING,QUALITY_PRYING,QUALITY_PULSING)
 
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
@@ -305,7 +328,7 @@
 
 	return tool_type || 1
 
-/obj/machinery/power/smes/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/power/smes/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 
 	if(stat & BROKEN)
 		return
@@ -483,6 +506,7 @@
 	capacity = 5000000
 	output_level = 250000
 	should_be_mapped = 1
+	skill_check = 300 //Only mken, or guild can use this I guess
 
 /obj/machinery/power/smes/magical/Process()
 	charge = 5000000

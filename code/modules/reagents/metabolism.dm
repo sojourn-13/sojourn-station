@@ -1,3 +1,5 @@
+#define NSA_THRESHOLD_MINIMUM 20 //The lowest someone's NSA Threshhold can reach
+
 /datum/reagents/metabolism
 	var/metabolism_class //CHEM_TOUCH, CHEM_INGEST, or CHEM_BLOOD
 	var/mob/living/carbon/parent
@@ -29,6 +31,10 @@
 /datum/metabolism_effects
 	var/list/nerve_system_accumulations = list() // Nerve system accumulations
 	var/nsa_threshold = 100
+	var/nsa_bonus = 0 //For various perks and organs affecting the nsa threshhold
+	var/nsa_chem_bonus = 0 //For chems (detox in specific) affecting the nsa threshhold
+	var/nsa_mult = 1 //Multiplier for nsa, used by specific perks. Added so the number doesn't fuck with other numbers.
+	var/nsa_organ_bonus = 0 //For efficiency modifiers on the nerves
 	var/nsa_current = 0
 
 	var/mob/living/carbon/parent
@@ -41,10 +47,19 @@
 	/// The final chance for an addiction to manifest is multiplied by this value before being passed to prob.
 	var/addiction_chance_multiplier = 1
 
+//Must be called WHENEVER you modify nsa_bonus, nsa_chem_bonus, nsa_mult, or when you change nerve efficiency.
+//calc_nerves: Activates nerve efficiency recalculation, so its not recalculated every time.
+/datum/metabolism_effects/proc/calculate_nsa(calc_nerves = FALSE)
+	if(calc_nerves && ishuman(parent))
+		var/mob/living/carbon/human/parent_human = parent
+		nsa_organ_bonus = (parent_human.get_organ_efficiency(OP_NERVE) - 700) / 2
+	nsa_threshold = round((100 + nsa_bonus + nsa_chem_bonus + nsa_organ_bonus) * nsa_mult)
+	nsa_threshold = max(nsa_threshold, NSA_THRESHOLD_MINIMUM) //Can't be below for any reason. Keeps
+	return nsa_threshold
+
 /datum/metabolism_effects/proc/adjust_nsa(value, tag)
 	if(!tag)
-		crash_with("no tag given to adjust_nsa()")
-		return
+		CRASH("no tag given to adjust_nsa()")
 	nerve_system_accumulations[tag] = value
 
 /datum/metabolism_effects/proc/remove_nsa(tag)
@@ -58,6 +73,7 @@
 		return nerve_system_accumulations[tag]
 
 /datum/metabolism_effects/proc/get_nsa()
+	SEND_SIGNAL(parent, COMSING_NSA, nsa_current)
 	return nsa_current
 
 /datum/metabolism_effects/proc/get_nsa_target()
@@ -145,6 +161,8 @@
 			new_reagent.max_dose = R.max_dose
 			addiction_list.Add(new_reagent)
 			addiction_list[new_reagent] = 0
+			for(var/mob/living/carbon/human/H in viewers(parent))
+				SEND_SIGNAL(H, COMSIG_CARBON_ADICTION, parent, R)
 
 	if(is_type_in_list(R, addiction_list))
 		for(var/addiction in addiction_list)

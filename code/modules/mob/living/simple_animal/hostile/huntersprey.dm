@@ -33,7 +33,7 @@
 	pixel_x = -16
 	pixel_y = 0
 	meat_amount = 6
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/primal
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/primal
 	can_burrow = FALSE
 	mob_size =  3  // The same as Hivemind Tyrant
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
@@ -50,19 +50,19 @@
 	var chancedrop = rand(1,3)
 	if(chancedrop == 1)
 		new /obj/item/clothing/suit/armor/vest/technomancersuit (src.loc)
-		new	/obj/item/weapon/gun/energy/laser/railgun/pistol (src.loc)
-		new /obj/item/weapon/storage/belt/utility/full (src.loc)
+		new	/obj/item/gun/energy/laser/railgun/pistol (src.loc)
+		new /obj/item/storage/belt/utility/full (src.loc)
 		qdel(src)
 		return
 	if(chancedrop == 2)
-		new /obj/item/weapon/gun/projectile/boltgun/sa (src.loc)
+		new /obj/item/gun/projectile/boltgun/sa (src.loc)
 		new	/obj/item/ammo_magazine/rifle_75 (src.loc)
 		new /obj/item/ammo_magazine/ammobox/rifle_75 (src.loc)
 		new /obj/item/clothing/suit/space/void/SCAF/blackshield (src.loc)
 		qdel(src)
 		return
 	if(chancedrop == 3)
-		new /obj/item/weapon/tool/sword/katana/nano (src.loc)
+		new /obj/item/tool/sword/katana/nano (src.loc)
 		new /obj/item/clothing/suit/armor/vest/soteriasuit (src.loc)
 		new /obj/item/clothing/head/helmet/soteriasuit (src.loc)
 		qdel(src)
@@ -199,14 +199,14 @@
 /mob/living/simple_animal/hostile/renderpatriarch/lay_down()
 	set category = "IC"
 	var/state_changed = FALSE
-	if(resting && can_stand_up())
+	if(resting)
 		resting = FALSE
 		state_changed = TRUE
 
 
 	else if (!resting)
 		if(ishuman(src))
-			var/obj/item/weapon/bedsheet/BS = locate(/obj/item/weapon/bedsheet) in get_turf(src)
+			var/obj/item/bedsheet/BS = locate(/obj/item/bedsheet) in get_turf(src)
 			// If there is unrolled bedsheet roll and unroll it to get in bed like a proper adult does
 			if(BS && !BS.rolled && !BS.folded)
 				resting = TRUE
@@ -353,7 +353,8 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	old_x = -16
-	speed = 0.8
+	speed = 3.7
+	var/setspeed = 3.7
 	var/zoomeye = 7
 	see_invisible = 15
 	old_y = 0
@@ -380,7 +381,7 @@
 		to_chat(src, "You gun isnt ready to fire!.")
 		return
 	if(loaded_ammo == 1)
-		projectiletype = /obj/item/projectile/bullet/antim
+		projectiletype = /obj/item/projectile/bullet/rifle_75/hv
 		rapid = 0
 		shooter.OpenFire(targetDD)
 		visible_emote("fires an armor piercing shot!")
@@ -407,7 +408,7 @@
 		return
 	if(loaded_ammo == 3)
 		visible_emote("is preparing to unleash a powerful volley of bullets, take cover! RUN AND HIDE NOW!")
-		speed = 7
+		speed = 8.5
 		animate(src, alpha = 255, color = "#ffffcc", transform = matrix()*1.1, time = 2)
 		playsound(src, 'sound/weapons/guns/interact/chaingun_cock.ogg', 30, 1, -3)
 		sleep(5)
@@ -424,7 +425,7 @@
 		animate(src, alpha = 255, color = "#fffffc", transform = matrix()*1.3, time = 2)
 		sleep(3)
 		animate(src, alpha = 255, color = initial(color), transform = matrix()*1, time = 2)
-		projectiletype = /obj/item/projectile/bullet/rifle_75
+		projectiletype = /obj/item/projectile/bullet/light_rifle_257
 		playsound(src, 'sound/weapons/guns/fire/chaingun_fire.ogg', 30, 1, -3)
 		shooter.OpenFire(targetDD)
 		shooter.OpenFire(get_step_rand(targetDD))
@@ -434,22 +435,23 @@
 		shooter.OpenFire(get_step_rand(targetDD))
 		shooter.OpenFire(get_step_rand(targetDD))
 		shooter.OpenFire(get_step_rand(targetDD))
+		projectiletype = /obj/item/projectile/bullet/pistol_35
 		loaded_ammo = 0
-		speed = initial(speed)
+		speed = setspeed
 		icon_state = "excelatomiton_unpowered"
 		icon_living = "excelatomiton_unpowered"
 		return
 	if(loaded_ammo == 4)
-		var/obj/item/weapon/grenade/explosive/artileria/g1 = new /obj/item/weapon/grenade/explosive/artileria(targetDD)
+		var/obj/item/grenade/explosive/artileria/g1 = new /obj/item/grenade/explosive/artileria(targetDD)
 		playsound(src, 'sound/effects/Custom_flare.ogg', 30, 1, -3)
-		var/obj/item/weapon/grenade/explosive/artileria/g2 = new /obj/item/weapon/grenade/explosive/artileria(get_step_rand(targetDD))
+		var/obj/item/grenade/explosive/artileria/g2 = new /obj/item/grenade/explosive/artileria(get_step_rand(targetDD))
 		playsound(src, 'sound/effects/Custom_flare.ogg', 30, 1, -3)
-		var/obj/item/weapon/grenade/explosive/artileria/g3 = new /obj/item/weapon/grenade/explosive/artileria(get_step_rand(targetDD))
+		var/obj/item/grenade/explosive/artileria/g3 = new /obj/item/grenade/explosive/artileria(get_step_rand(targetDD))
 		playsound(src, 'sound/effects/Custom_flare.ogg', 30, 1, -3)
 		loaded_ammo = 0
 		icon_state = "excelatomiton_unpowered"
 		icon_living = "excelatomiton_unpowered"
-		sleep(150)
+		sleep(380)
 		g1.prime()
 		g2.prime()
 		g3.prime()
@@ -530,7 +532,7 @@
 		to_chat(usr, SPAN_NOTICE("You can not release smoke just yet."))
 		return
 	say(pick("Hide from capitalism!", "Run away!", "Dismissing!"))
-	var/obj/item/weapon/grenade/explosive/artileria/s1 = new /obj/item/weapon/grenade/smokebomb(src)
+	var/obj/item/grenade/explosive/artileria/s1 = new /obj/item/grenade/smokebomb(src)
 	s1.prime()
 	smokecooldown = 30 SECONDS + world.time
 

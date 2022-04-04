@@ -1,4 +1,4 @@
-/obj/item/weapon/extinguisher
+/obj/item/extinguisher
 	name = "fire extinguisher"
 	desc = "A traditional red fire extinguisher, its rated for A and B, unless it was refilled with just water..."
 	icon = 'icons/obj/items.dmi'
@@ -24,7 +24,7 @@
 	var/list/overlaylist = list("fire_extinguisherO1","fire_extinguisherO2","fire_extinguisherO3","fire_extinguisherO4","fire_extinguisherO5","fire_extinguisherO6")
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 
-/obj/item/weapon/extinguisher/mini
+/obj/item/extinguisher/mini
 	name = "fire extinguisher"
 	desc = "A light and compact fiberglass-framed model fire extinguisher, its rated for A and B, unless it was refilled with just water..."
 	icon_state = "miniFE0"
@@ -38,7 +38,7 @@
 	sprite_name = "miniFE"
 	overlaylist = list()
 
-/obj/item/weapon/extinguisher/Initialize()
+/obj/item/extinguisher/Initialize()
 	. = ..()
 	if(overlaylist.len)
 		var/icon/temp = new /icon('icons/obj/items.dmi', overlaylist[rand(1,overlaylist.len)])
@@ -47,14 +47,14 @@
 	reagents.add_reagent("abwater", max_water)
 
 
-/obj/item/weapon/extinguisher/attack_self(mob/user as mob)
+/obj/item/extinguisher/attack_self(mob/user as mob)
 	safety = !safety
 	src.icon_state = "[sprite_name][!safety]"
 	src.desc = "The safety is [safety ? "on" : "off"]."
 	to_chat(user, "The safety is [safety ? "on" : "off"].")
 	return
 
-/obj/item/weapon/extinguisher/proc/propel_object(var/obj/O, mob/user, movementdirection)
+/obj/item/extinguisher/proc/propel_object(var/obj/O, mob/user, movementdirection)
 	if(O.anchored) return
 
 	var/obj/structure/bed/chair/C
@@ -72,7 +72,7 @@
 		O.Move(get_step(user,movementdirection), movementdirection)
 		sleep(3)
 
-/obj/item/weapon/extinguisher/afterattack(var/atom/target, var/mob/user, var/flag)
+/obj/item/extinguisher/afterattack(var/atom/target, var/mob/user, var/flag)
 	//TODO; Add support for reagents in water.
 
 	if( istype(target, /obj/structure/reagent_dispensers/watertank) && flag)

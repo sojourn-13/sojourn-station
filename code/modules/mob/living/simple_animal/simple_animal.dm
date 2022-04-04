@@ -9,7 +9,7 @@
 	mob_push_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 
 	var/datum/component/spawner/nest
-
+	universal_understand = TRUE //QoL to admins controling mobs
 	var/show_stat_health = TRUE	//does the percentage health show in the stat panel for the mob
 
 	var/icon_living = ""
@@ -33,7 +33,7 @@
 
 	//Meat/harvest vars
 	var/meat_amount = 1
-	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat //all mobs now can be butchered into meat
+	var/meat_type = /obj/item/reagent_containers/food/snacks/meat //all mobs now can be butchered into meat
 	var/blood_from_harvest = /obj/effect/decal/cleanable/blood/splatter
 	//Lodge related products
 	var/leather_amount = 1 //The amount of leather sheets dropped.
@@ -53,7 +53,6 @@
 	var/response_harm   = "tries to hurt"
 	var/harm_intent_damage = 3
 	var/cleaning = FALSE //we do clean prase us!
-	var/friendly_to_colony = FALSE //Do we attack colony stuff - Mechs / Turrets regardless of who they are
 
 	//Temperature effect
 	var/minbodytemp = 250
@@ -63,6 +62,7 @@
 	var/fire_alert = 0
 
 	//Atmos effect - Yes, you can make creatures that require plasma or co2 to survive. N2O is a trace gas and handled separately, hence why it isn't here. It'd be hard to add it. Hard and me don't mix (Yes, yes make all the dick jokes you want with that.) - Errorage
+	var/needs_environment = TRUE
 	var/min_oxy = 5
 	var/max_oxy = 0					//Leaving something at 0 means it's off - has no maximum
 	var/min_tox = 0
@@ -162,7 +162,7 @@
 			tile.clean_blood()
 			for(var/A in tile)
 				if(istype(A, /obj/effect))
-					if(istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay))
+					if(istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay) && !istype(A, /obj/effect/overlay/water))
 						qdel(A)
 				else if(istype(A, /obj/item))
 					var/obj/item/cleaned_item = A
@@ -206,6 +206,7 @@
 
 /mob/living/simple_animal/updatehealth()
 	..()
+	activate_ai()
 	if (health <= 0 && stat != DEAD)
 		death()
 
@@ -235,7 +236,7 @@
 		if(!.)
 			return FALSE
 
-		if(health <= 0)
+		if(health <= 0 && stat != DEAD) //So we dont loop every tick
 			death()
 			return FALSE
 
@@ -255,7 +256,7 @@
 
 		var/atom/A = loc
 
-		if(istype(A,/turf))
+		if(istype(A,/turf) && needs_environment)
 			var/turf/T = A
 
 			var/datum/gas_mixture/Environment = T.return_air()
@@ -291,17 +292,18 @@
 						atmos_suitable = 0
 
 		//Atmos effect
-		if(bodytemperature < minbodytemp)
-			fire_alert = 2
-			adjustBruteLoss(cold_damage_per_tick)
-		else if(bodytemperature > maxbodytemp)
-			fire_alert = 1
-			adjustBruteLoss(heat_damage_per_tick)
-		else
-			fire_alert = 0
+		if(needs_environment)
+			if(bodytemperature < minbodytemp)
+				fire_alert = 2
+				adjustBruteLoss(cold_damage_per_tick)
+			else if(bodytemperature > maxbodytemp)
+				fire_alert = 1
+				adjustBruteLoss(heat_damage_per_tick)
+			else
+				fire_alert = 0
 
-		if(!atmos_suitable)
-			adjustBruteLoss(unsuitable_atoms_damage)
+			if(!atmos_suitable)
+				adjustBruteLoss(unsuitable_atoms_damage)
 
 		if(!AI_inactive)
 			//Speaking
@@ -386,8 +388,12 @@
 	..(icon_gib,1)
 
 /mob/living/simple_animal/bullet_act(var/obj/item/projectile/Proj, var/def_zone = null)
-	if(!Proj || Proj.nodamage)
+	if(!Proj)
 		return
+
+	if(Proj.nodamage)
+		if(istype(Proj, /obj/item/projectile/ion))
+			Proj.on_hit(loc)
 
 	for(var/damage_type in Proj.damage_types)
 		var/damage = Proj.damage_types[damage_type]
@@ -396,6 +402,7 @@
 
 /mob/living/simple_animal/rejuvenate()
 	..()
+	activate_ai()
 	health = maxHealth
 	density = initial(density)
 	update_icons()
@@ -432,7 +439,7 @@
 			if (!(status_flags & CANPUSH))
 				return
 
-			var/obj/item/weapon/grab/G = new /obj/item/weapon/grab(M, src)
+			var/obj/item/grab/G = new /obj/item/grab(M, src)
 
 			M.put_in_active_hand(G)
 
@@ -464,10 +471,10 @@
 	return
 
 /mob/living/simple_animal/attackby(var/obj/item/O, var/mob/user)
-	if(istype(O, /obj/item/weapon/gripper))
+	if(istype(O, /obj/item/gripper))
 		return ..(O, user)
 
-	else if(istype(O, /obj/item/weapon/reagent_containers) || istype(O, /obj/item/stack/medical))
+	else if(istype(O, /obj/item/reagent_containers) || istype(O, /obj/item/stack/medical))
 		..()
 
 	else if(meat_type && (stat == DEAD))	//if the animal has a meat, and if it is dead.
@@ -510,6 +517,7 @@
 	movement_target = null
 	icon_state = icon_dead
 	density = 0
+	AI_inactive = TRUE //Were dead
 	return ..(gibbed,deathmessage)
 
 /mob/living/simple_animal/ex_act(severity)
@@ -576,8 +584,13 @@
 
 	if(meat_type && actual_meat_amount > 0 && (stat == DEAD))
 		for(var/i=0;i<actual_meat_amount;i++)
-			var/obj/item/meat = new meat_type(get_turf(src))
-			meat.name = "[src.name] [meat.name]"
+			if(ispath(src.meat_type, /obj/item/reagent_containers/food/snacks/meat))
+				var/obj/item/reagent_containers/food/snacks/meat/butchered_meat = new meat_type(get_turf(src))
+				butchered_meat.name = "[src.name] [butchered_meat.name]"
+				butchered_meat.initialize_genetics(src)
+			else
+				var/obj/item/non_meat = new meat_type(get_turf(src))
+				non_meat.name = "[src.name] [non_meat.name]"
 		if(issmall(src))
 			user.visible_message(SPAN_DANGER("[user] chops up \the [src]!"))
 			new blood_from_harvest(get_turf(src))
@@ -611,7 +624,7 @@
 				foodtarget = 0
 				stop_automated_movement = 0
 				if (can_eat())
-					for(var/obj/item/weapon/reagent_containers/food/snacks/S in oview(src,7))
+					for(var/obj/item/reagent_containers/food/snacks/S in oview(src,7))
 						if(isturf(S.loc) || ishuman(S.loc))
 							movement_target = S
 							foodtarget = 1
@@ -619,12 +632,12 @@
 
 					//Look for food in people's hand
 					if (!movement_target && beg_for_food)
-						var/obj/item/weapon/reagent_containers/food/snacks/F = null
+						var/obj/item/reagent_containers/food/snacks/F = null
 						for(var/mob/living/carbon/human/H in oview(src,scan_range))
-							if(istype(H.l_hand, /obj/item/weapon/reagent_containers/food/snacks))
+							if(istype(H.l_hand, /obj/item/reagent_containers/food/snacks))
 								F = H.l_hand
 
-							if(istype(H.r_hand, /obj/item/weapon/reagent_containers/food/snacks))
+							if(istype(H.r_hand, /obj/item/reagent_containers/food/snacks))
 								F = H.r_hand
 
 							if (F)
@@ -724,13 +737,12 @@
 /mob/living/simple_animal/lay_down()
 	set name = "Rest"
 	set category = "Abilities"
-	if(resting && can_stand_up())
+	if(resting)
 		wake_up()
 	else if (!resting)
 		fall_asleep()
 	to_chat(src, span("notice","You are now [resting ? "resting" : "getting up"]"))
 	update_icons()
-
 
 //This is called when an animal 'speaks'. It does nothing here, but descendants should override it to add audio
 /mob/living/simple_animal/proc/speak_audio()
@@ -739,3 +751,45 @@
 //Animals are generally good at falling, small ones are immune
 /mob/living/simple_animal/get_fall_damage()
 	return mob_size - 1
+
+/mob/living/simple_animal/electrocute_act(var/shock_damage, var/obj/source, var/siemens_coeff = 1.0, var/def_zone = null)
+	shock_damage *= siemens_coeff
+	if (shock_damage<1)
+		return 0
+
+	src.apply_damage(shock_damage, BURN, def_zone, used_weapon="Electrocution")
+	playsound(loc, "sparks", 50, 1, -1)
+	if (shock_damage > 15)
+		src.visible_message(
+			"\red [src] was shocked by the [source]!", \
+			"\red <B>You feel a powerful shock course through your body!</B>", \
+			"\red You hear a heavy electrical crack." \
+		)
+		Stun(10)//This should work for now, more is really silly and makes you lay there forever
+		Weaken(10)
+	else
+		src.visible_message(
+			"\red [src] was mildly shocked by the [source].", \
+			"\red You feel a mild shock course through your body.", \
+			"\red You hear a light zapping." \
+		)
+
+	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+	s.set_up(5, 1, loc)
+	s.start()
+
+	return shock_damage
+
+//Putting this here do to no idea were it would fit other then here
+/mob/living/simple_animal/verb/toggle_AI()
+	set name = "Toggle AI"
+	set desc = "Toggles on/off the mobs AI."
+	set category = "Mob verbs"
+
+	if (AI_inactive)
+		activate_ai()
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to ON."))
+		return
+	else
+		AI_inactive = TRUE
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to OFF."))

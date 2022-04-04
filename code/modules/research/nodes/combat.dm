@@ -1,6 +1,6 @@
 /datum/technology/basic_combat
 	name = "Basic Combat Systems"
-	desc = "Basic combat systems and integration of security database HUD in glasses."
+	desc = "Basic combat systems and integration of security database HUD in glasses. As well as a low power pistol"
 	tech_type = RESEARCH_COMBAT
 
 	x = 0.1
@@ -11,7 +11,8 @@
 	required_tech_levels = list()
 	cost = 0
 
-	unlocks_designs = list(/datum/design/research/item/clothing/security)
+	unlocks_designs = list(/datum/design/research/item/clothing/security,
+							/datum/design/research/item/weapon/clarissa)
 
 // TO ADD: synth flashes?
 /datum/technology/basic_nonlethal
@@ -25,7 +26,7 @@
 
 	required_technologies = list(/datum/technology/basic_combat)
 	required_tech_levels = list()
-	cost = 500
+	cost = 375
 
 	unlocks_designs = list(/datum/design/research/item/flash)
 
@@ -42,7 +43,7 @@
 								/datum/technology/basic_combat
 								)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(
 							/datum/design/research/circuit/recharger
@@ -60,7 +61,7 @@
 
 	required_technologies = list(/datum/technology/weapon_recharging)
 	required_tech_levels = list()
-	cost = 1500
+	cost = 1125
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/stunrevolver,
 							/datum/design/research/item/ammo/shotgun_stun
@@ -75,7 +76,7 @@
 	icon = "abnegate"
 	required_technologies = list(/datum/technology/advanced_nonlethal)
 	required_tech_levels = list(RESEARCH_GREYSON = 3) //Likely people will get parts/cog/bots for this
-	cost = 7500
+	cost = 5625
 	unlocks_designs = list(/datum/design/research/item/greyson/abnegate,
 						/datum/design/research/item/greyson/formatbound,
 						/datum/design/research/item/greyson/humility,
@@ -92,7 +93,7 @@
 
 	required_technologies = list(/datum/technology/advanced_nonlethal)
 	required_tech_levels = list()
-	cost = 4500
+	cost = 3375
 
 	unlocks_designs = list(	/datum/design/research/item/rig_grenade_launcher,
 							/datum/design/research/item/rig_flash,
@@ -125,13 +126,14 @@
 
 	required_technologies = list(/datum/technology/weapon_recharging)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1500
 
 	unlocks_designs = list(/datum/design/research/item/weapon/large_grenade,
 							/datum/design/research/item/ammo/smg_mag,
 							/datum/design/research/item/ammo/pistol_laser,
 							/datum/design/research/item/ammo/magum_laser,
-							/datum/design/research/item/robot_upgrade/bigknife
+							/datum/design/research/item/robot_upgrade/bigknife,
+							/datum/design/research/item/weapon/slimebaton
 							)
 
 /datum/technology/exotic_weaponry
@@ -145,11 +147,13 @@
 
 	required_technologies = list(/datum/technology/basic_lethal)
 	required_tech_levels = list()
-	cost = 3000
+	cost = 3750
 
 	unlocks_designs = list(/datum/design/research/item/weapon/temp_gun,
+							/datum/design/research/item/weapon/slimegun,
 							/datum/design/research/item/ammo/shotgun_fire,
-							/datum/design/research/item/ammo/shotgun_laser
+							/datum/design/research/item/ammo/shotgun_laser,
+							/datum/design/research/item/weapon/bastion
 							)
 
 /datum/technology/adv_exotic_weaponry
@@ -163,7 +167,7 @@
 
 	required_technologies = list(/datum/technology/exotic_weaponry)
 	required_tech_levels = list()
-	cost = 5000
+	cost = 3750
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/decloner,
 							/datum/design/research/item/weapon/centurio,
@@ -182,7 +186,7 @@
 
 	required_technologies = list(/datum/technology/basic_lethal)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1500
 
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/c20r,
@@ -209,7 +213,7 @@
 
 	required_technologies = list(/datum/technology/adv_lethal)
 	required_tech_levels = list()
-	cost = 4000
+	cost = 1500
 
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/weapon_upgrade/battery_shunt,
@@ -232,14 +236,15 @@
 
 	required_technologies = list(/datum/technology/adv_lethal, /datum/technology/adv_exotic_weaponry)
 	required_tech_levels = list()
-	cost = 5000
+	cost = 3750
 
 	unlocks_designs = list(/datum/design/research/item/weapon/nuclear_gun,
 							/datum/design/research/item/weapon/lasercannon,
 							/datum/design/research/item/ammo/heavy_rifle_408,
 							/datum/design/research/item/ammo/laser_mag,
 							/datum/design/research/item/weapon/laser_ak,
-							/datum/design/research/item/weapon/centauri)
+							/datum/design/research/item/weapon/centauri
+							)
 
 /datum/technology/riglaser_weaponry
 	name = "Hardsuit Laser Weaponry"
@@ -252,7 +257,7 @@
 
 	required_technologies = list(/datum/technology/laser_weaponry)
 	required_tech_levels = list()
-	cost = 7500
+	cost = 5625
 
 	unlocks_designs = list(/datum/design/research/item/lasercannon, /datum/design/research/item/lasermount)
 
@@ -268,11 +273,12 @@
 
 	required_technologies = list()
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(/datum/design/research/item/clothing/soteriaarmorchest,
 							 /datum/design/research/item/clothing/soteriaarmorhead,
-							 /datum/design/research/item/clothing/rig_cheap)
+							 /datum/design/research/item/clothing/rig_cheap,
+							 /datum/design/research/item/clothing/tinfoil)
 
 /datum/technology/advanced_armor
 	name = "Advanced Armor Designs"
@@ -285,8 +291,32 @@
 
 	required_technologies = list(/datum/technology/basic_armor)
 	required_tech_levels = list()
-	cost = 5000
+	cost = 3750
 
 	unlocks_designs = list(/datum/design/research/item/clothing/medarmor,
 							/datum/design/research/item/clothing/armor_laserproof,
+							/datum/design/research/item/paramedic_armor,
+							/datum/design/research/item/paramedic_helmet,
 							/datum/design/research/item/clothing/rig_advhazmat)
+
+/datum/technology/advanced_unstable_plasma_weapons
+	name = "Advanced Plasma Weapon Designs"
+	desc = "Advanced plasma designs for space or ground combat, rather unstable designs for unstable minds."
+	tech_type = RESEARCH_COMBAT
+
+	x = 0.9
+	y = 0.8
+	icon = "hydrogen"
+
+	required_technologies = list(/datum/technology/advanced_armor,
+								 /datum/technology/laser_weaponry)
+	required_tech_levels = list(RESEARCH_POWERSTORAGE = 12, RESEARCH_ENGINEERING = 20)
+	cost = 5625 //You get back a lot
+
+	unlocks_designs = list(/datum/design/research/item/weapon/hydrogen_rifle,
+							/datum/design/research/item/weapon/hydrogen_pistol,
+							/datum/design/research/item/weapon/hydrogen_cannon,
+							/datum/design/research/item/mecha/weapon/hydrogen,
+							/datum/design/research/item/weapon/hydrogen_welder,
+							/datum/design/research/item/weapon/hydrogrenade,
+							/datum/design/research/item/ammo/hydroflaskette)

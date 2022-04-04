@@ -90,13 +90,13 @@ var/list/possible_cable_coil_colours = list(
 
 	var/turf/T = src.loc			// hide if turf is not intact
 	if(level==1) hide(!T.is_plating())
-	cable_list += src //add it to the global cable list
+	GLOB.cable_list += src //add it to the global cable list
 
 
 /obj/structure/cable/Destroy()					// called when a cable is deleted
 	if(powernet)
 		cut_cable_from_powernet()				// update the powernets
-	cable_list -= src							//remove it from global cable list
+	GLOB.cable_list -= src							//remove it from global cable list
 	. = ..()										// then go ahead and delete the cable
 
 ///////////////////////////////////
@@ -178,6 +178,7 @@ var/list/possible_cable_coil_colours = list(
 				used_now = FALSE
 				return 		//he didn't
 			if(do_after(user, 20, src))
+				log_and_message_admins(" - Wire splicing trap being added to at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 				var/fail_chance = FAILCHANCE_HARD - user.stats.getStat(STAT_MEC) // 72 for assistant
 				if(prob(fail_chance))
 					if(!shock(user, 100)) //why not
@@ -193,7 +194,7 @@ var/list/possible_cable_coil_colours = list(
 		else
 			coil.cable_join(src, user)
 
-	else if(istype(I, /obj/item/weapon/tool/multitool))
+	else if(istype(I, /obj/item/tool/multitool))
 
 		if(powernet && (powernet.avail > 0))		// is it powered?
 			to_chat(user, SPAN_WARNING("[power_to_text(powernet.avail)] in power network."))
@@ -635,7 +636,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 		if(src.amount <= 14)
 			to_chat(usr, "\red You need at least 15 lengths to make restraints!")
 			return
-		var/obj/item/weapon/handcuffs/cable/B = new /obj/item/weapon/handcuffs/cable(usr.loc)
+		var/obj/item/handcuffs/cable/B = new /obj/item/handcuffs/cable(usr.loc)
 		B.color = color
 		to_chat(usr, SPAN_NOTICE("You wind some cable together to make some restraints."))
 		src.use(15)

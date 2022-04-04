@@ -7,7 +7,7 @@
 // more than one chemical it will still only appear in only one of the sublists.
 /proc/initialize_chemical_reactions()
 	var/paths = typesof(/datum/chemical_reaction) - /datum/chemical_reaction
-	chemical_reactions_list = list()
+	GLOB.chemical_reactions_list = list()
 
 	for(var/path in paths)
 		var/datum/chemical_reaction/D = new path()
@@ -29,9 +29,9 @@
 					GLOB.chemical_reactions_list_by_result[D.result] = list()
 				GLOB.chemical_reactions_list_by_result[D.result] += D
 			var/reagent_id = D.required_reagents[1]
-			if(!chemical_reactions_list[reagent_id])
-				chemical_reactions_list[reagent_id] = list()
-			chemical_reactions_list[reagent_id] += D
+			if(!GLOB.chemical_reactions_list[reagent_id])
+				GLOB.chemical_reactions_list[reagent_id] = list()
+			GLOB.chemical_reactions_list[reagent_id] += D
 
 //helper that ensures the reaction rate holds after iterating
 //Ex. REACTION_RATE(0.3) means that 30% of the reagents will react each chemistry tick (~2 seconds by default).
@@ -67,6 +67,7 @@
 
 	var/rotation_required = FALSE
 
+	//var/maximum_pressure = INFINITY - Soj Edit unused added for 1:1ing with eris
 	// if true then chemical can be decomposed to initial reagents
 	var/supports_decomposition_by_electrolysis = TRUE
 
@@ -78,7 +79,7 @@
 	var/reaction_sound = 'sound/effects/bubbles.ogg'
 
 	var/list/require_containers = list() // This reaction will only occure in these containers(Or their subtypes).
-	var/list/blacklist_containers = list() // This reaction will not occure in these containers(Or their subtypes).
+	var/list/blacklist_containers = list(/obj/machinery/microwave) // This reaction will not occure in these containers(Or their subtypes).
 
 	var/log_is_important = 0 // If this reaction should be considered important for logging. Important recipes message admins when mixed, non-important ones just log to file.
 
@@ -107,7 +108,17 @@
 
 	if(rotation_required && !holder.rotating)
 		return FALSE
-
+/* - Soj Edit unused added for 1:1ing with eris
+	if(maximum_pressure)
+		var/turf/location = get_turf(holder.my_atom)
+		var/datum/gas_mixture/GM = location.return_air()
+		if(location)
+			var/datum/gas_mixture/GM = location.return_air()
+			if(GM.return_pressure() > maximum_pressure)
+				return FALSE
+		else
+			return FALSE
+*/
 	return TRUE
 
 /datum/chemical_reaction/proc/calc_reaction_progress(var/datum/reagents/holder, var/reaction_limit)
@@ -219,6 +230,14 @@
 		dat["catalyst"] = list()
 		for(var/id in catalysts)
 			dat["catalyst"] += list(list("type" = get_reagent_type_by_id(id), "reagent" = get_reagent_name_by_id(id), "units" = catalysts[id]))
+	if(inhibitors)
+		dat["inhibitors"] = list()
+		for(var/id in inhibitors)
+			dat["inhibitors"] += list(list("type" = get_reagent_type_by_id(id), "reagent" = get_reagent_name_by_id(id), "units" = inhibitors[id]))
+	if(byproducts)
+		dat["byproducts"] = list()
+		for(var/id in byproducts)
+			dat["byproducts"] += list(list("type" = get_reagent_type_by_id(id), "reagent" = get_reagent_name_by_id(id), "units" = byproducts[id]))
 
 	dat["minimum_temperature"] = minimum_temperature
 	if(maximum_temperature != INFINITY)

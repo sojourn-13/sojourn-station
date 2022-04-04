@@ -1,4 +1,4 @@
-#define ARMOR_AGONY_COEFFICIENT 0.6
+#define ARMOR_AGONY_COEFFICIENT 0.3
 #define ARMOR_GDR_COEFFICIENT 0.1
 
 //This calculation replaces old run_armor_check in favor of more complex and better system
@@ -14,6 +14,7 @@
 	var/armor = getarmor(def_zone, attack_flag)
 	var/guaranteed_damage_red = armor * ARMOR_GDR_COEFFICIENT
 	var/armor_effectiveness = max(0, ( armor - armour_pen ) )
+	var/armor_over_penitration = armour_pen - armor // This basiclly lets us over penitrate to deal extra damage. 20 AP - 10 Armor would give 10, well the reverse would be -10
 	var/effective_damage = damage - guaranteed_damage_red
 
 	if(damagetype == HALLOSS)
@@ -27,8 +28,17 @@
 			effective_damage = round ( effective_damage * ( 100 - src.getarmor(def_zone, "agony") ) / 100 )
 
 	if(effective_damage <= 0)
-		show_message(SPAN_NOTICE("Your armor absorbs the blow!"))
+		show_message(SPAN_NOTICE("Your armor fully absorbs the blow!"))
 		return FALSE
+
+	if(armor_over_penitration > 0 && damagetype == BRUTE) //did we even over-penitrate?
+		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
+			effective_damage += max(0,round(armor_over_penitration - src.getarmor(def_zone, "bullet"))) //We re-check are armor we over-pentrated, this counts both melee and bullets. We reduce are over AP as bullets tend to have a lot
+
+	if(armor_over_penitration > 0 && damagetype == BURN) //did we even over-penitrate?
+		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
+			effective_damage += max(0,round((armor_over_penitration - src.getarmor(def_zone, "energy")) * 2)) //We re-check are armor we over-pentrated, and then deal 2x damage do to being a laser, thus weaker then most bullets and most mobs having less engery armor.
+
 
 	//Here we can remove edge or sharpness from the blow
 	if ( (sharp || edge) && prob ( getarmor (def_zone, attack_flag) ) )
@@ -191,12 +201,12 @@
 	if(istype(AM,/obj/))
 		var/obj/O = AM
 		var/dtype = O.damtype
-		var/throw_damage = O.throwforce*(speed/THROWFORCE_SPEED_DIVISOR)
+		var/throw_damage = O.throwforce //Are minium damage we do is baseline in cases were we do more damage we do more
 
 		var/miss_chance = 15
 		if (O.throw_source)
 			var/distance = get_dist(O.throw_source, loc)
-			miss_chance = max(15*(distance-2), 0)
+			miss_chance = max(15*(distance-4), 0)
 
 		if (prob(miss_chance))
 			visible_message("\blue \The [O] misses [src] narrowly!")
@@ -296,13 +306,13 @@
 
 /mob/living/proc/IgniteMob()
 	if(fire_stacks > 0 && !on_fire)
-		on_fire = 1
-		set_light(light_range + 3)
+		on_fire = TRUE
+		set_light(light_range + 3, l_color = COLOR_RED)
 		update_fire()
 
 /mob/living/proc/ExtinguishMob()
 	if(on_fire)
-		on_fire = 0
+		on_fire = FALSE
 		fire_stacks = 0
 		set_light(max(0, light_range - 3))
 		update_fire()
@@ -328,10 +338,6 @@
 		ExtinguishMob() //If there's no oxygen in the tile we're on, put out the fire
 		return 1
 
-	if(world.time >= next_onfire_hal)
-		next_onfire_hal = world.time + 50
-		adjustHalLoss(fire_stacks*10 + 3)
-
 	var/turf/location = get_turf(src)
 	location.hotspot_expose(fire_burn_temperature(), 50, 1)
 
@@ -348,11 +354,11 @@
 //Finds the effective temperature that the mob is burning at.
 /mob/living/proc/fire_burn_temperature()
 	if (fire_stacks <= 0)
-		return 0
+		return FALSE
 
 	//Scale quadratically so that single digit numbers of fire stacks don't burn ridiculously hot.
 	//lower limit of 700 K, same as matches and roughly the temperature of a cool flame.
-	return min(5200,max(2.25*round(FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE*(fire_stacks/FIRE_MAX_FIRESUIT_STACKS)**2), 700))
+	return FIRESTACKS_TEMP_CONV(fire_stacks)
 
 /mob/living/proc/reagent_permeability()
 	return 1

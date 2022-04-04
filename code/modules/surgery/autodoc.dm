@@ -93,7 +93,7 @@
 				patchnote.surgery_operations |= AUTODOC_FRACTURE
 		if(AUTODOC_EMBED_OBJECT in possible_operations)
 			if(external.implants)
-				if(/obj/item/weapon/material/shard/shrapnel in external.implants)
+				if(/obj/item/material/shard/shrapnel in external.implants)
 					patchnote.surgery_operations |= AUTODOC_EMBED_OBJECT
 
 		if(external.wounds.len)
@@ -152,7 +152,7 @@
 
 	else if(patchnote.surgery_operations & AUTODOC_EMBED_OBJECT)
 		to_chat(patient, SPAN_NOTICE("Removing embedded objects from the patients [external]."))
-		for(var/obj/item/weapon/material/shard/shrapnel/shrapnel in external.implants)
+		for(var/obj/item/material/shard/shrapnel/shrapnel in external.implants)
 			external.implants -= shrapnel
 			shrapnel.loc = get_turf(patient)
 		patchnote.surgery_operations &= ~AUTODOC_EMBED_OBJECT
@@ -173,15 +173,15 @@
 		external.mend_fracture()
 		patchnote.surgery_operations &= ~AUTODOC_FRACTURE
 
-//	else if(patchnote.surgery_operations & AUTODOC_IB)
-//		to_chat(patient, SPAN_NOTICE("Treating internal bleeding in the patients [external]."))
-//		for(var/datum/wound/wound in external.wounds)
-//			if(wound.internal)
-//				external.wounds -= wound
-//				qdel(wound)
-//				external.update_damages()
-//		patchnote.surgery_operations &= ~AUTODOC_IB
-//	return !patchnote.surgery_operations
+	else if(patchnote.surgery_operations & AUTODOC_IB)
+		to_chat(patient, SPAN_NOTICE("Treating internal trauma in the patients [external]."))
+		for(var/datum/wound/wound in external.wounds)
+			if(wound.internal)
+				external.wounds -= wound
+				qdel(wound)
+				external.update_damages()
+		patchnote.surgery_operations &= ~AUTODOC_IB
+	return !patchnote.surgery_operations
 
 /datum/autodoc/Process()
 	if(!patient)
@@ -198,7 +198,7 @@
 /datum/autodoc/proc/fail()
 	current_step++
 
-/datum/autodoc/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 2, var/datum/topic_state/state)
+/datum/autodoc/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 2, var/datum/topic_state/state)
 	if(!patient)
 		if(ui)
 			ui.close()
@@ -425,7 +425,7 @@
 	if(!patient)
 		patient_account = null
 		return
-	var/obj/item/weapon/card/id/id_card = patient.GetIdCard()
+	var/obj/item/card/id/id_card = patient.GetIdCard()
 	if(id_card)
 		patient_account = get_account(id_card.associated_account_number)
 		if(patient_account.security_level)

@@ -22,12 +22,9 @@
 	Vorhut battalions were originally formed and trained by the survivors of the rebellion with experience fighting the Terran military, and were seen as fanatical and violent extremists. \
 	Nowadays, Vorhut are far more focused on military superiority than racial, and have a reputation for following orders ruthlessly and without question. They often hold the belief that \
 	their deaths are predetermined, and that if their time has come, they must face it with courage and dignity. If it has not, then their Corpsmen will see to it they live to battle another \
-	day. As a result, they are fearless warriors with no patience for engineering or science, and their ultimately violent doctrines leave them barred from serving in \
-	command roles."
+	day."
 
 	restricted_to_species = list(FORM_KRIOSAN)
-
-	restricted_depts = COMMAND | ENGINEERING | SCIENCE
 
 	stat_modifiers = list(
 		STAT_ROB = 5,

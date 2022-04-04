@@ -10,7 +10,7 @@
 	item_state = "ass_jacket"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(
+	armor_list = list(
 		melee = 5,
 		bullet = 5,
 		energy = 5,
@@ -27,7 +27,7 @@
 	item_state = "cargo_jacket"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(
+	armor_list = list(
 		melee = 5,
 		bullet = 5,
 		energy = 5,
@@ -44,7 +44,7 @@
 	item_state = "qm_coat"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(
+	armor_list = list(
 		melee = 20,
 		bullet = 10,
 		energy = 5,
@@ -64,14 +64,14 @@
 	body_parts_covered = 0
 	extra_allowed = list(
 		/obj/item/seeds,
-		/obj/item/weapon/reagent_containers/glass/fertilizer,
+		/obj/item/reagent_containers/glass/fertilizer,
 		/obj/item/weedkiller
 	)
 
 //Civillian
 /obj/item/clothing/suit/storage/toggle/club
-	name = "executive officer's jacket"
-	desc = "A well tailored and rich jacket of the executive officer."
+	name = "chief executive officer's jacket"
+	desc = "A well tailored and rich jacket for the Chief Executive Officer."
 	icon_state = "cm_coat"
 	item_state = "cm_coat"
 	icon_open = "cm_coat_open"
@@ -89,7 +89,7 @@
 	item_state = "artist_armor"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 5,
 		energy = 0,
@@ -109,7 +109,7 @@
 	permeability_coefficient = 0.50
 	siemens_coefficient = 0.7
 	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_GOLD = 5)
-	armor = list(
+	armor_list = list(
 		melee = 20,
 		bullet = 20,
 		energy = 10,
@@ -124,7 +124,7 @@
 	icon_state = "nt_sportsjacket"
 	item_state = "nt_sportsjacket"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(
+	armor_list = list(
 		melee = 15,
 		bullet = 10,
 		energy = 5,
@@ -166,12 +166,12 @@
 //Detective
 /obj/item/clothing/suit/storage/rank/insp_trench
 	name = "ranger's armored trenchcoat"
-	desc = "Brown and armored trenchcoat, designed and created by Security. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
+	desc = "Brown and armored trenchcoat, designed and created by the Marshals. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
 	icon_state = "rangercoat"
 	item_state = "rangercoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(melee = 30, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 30, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
 	price_tag = 250
 
 /obj/item/clothing/suit/storage/rank/det_trench
@@ -181,7 +181,7 @@
 	item_state = "det_suit"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(
+	armor_list = list(
 		melee = 20,
 		bullet = 20,
 		energy = 20,
@@ -204,7 +204,7 @@
 	icon_state = "hazard"
 	item_state = "hazard"
 	blood_overlay_type = "armor"
-	extra_allowed = list(/obj/item/weapon/tool)
+	extra_allowed = list(/obj/item/tool)
 	body_parts_covered = UPPER_TORSO
 	price_tag = 50
 
@@ -214,7 +214,7 @@
 	icon_state = "hazard_black"
 	item_state = "hazard_nlack"
 	blood_overlay_type = "armor"
-	extra_allowed = list(/obj/item/weapon/tool)
+	extra_allowed = list(/obj/item/tool)
 	body_parts_covered = UPPER_TORSO
 	price_tag = 50
 
@@ -227,7 +227,7 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	price_tag = 50
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 0,
 		energy = 0,
@@ -243,13 +243,13 @@
 	item_state = "surgeon"
 	blood_overlay_type = "armor"
 	extra_allowed = list(
-		/obj/item/weapon/tool/bonesetter,
-		/obj/item/weapon/tool/cautery,
-		/obj/item/weapon/tool/saw/circular,
-		/obj/item/weapon/tool/hemostat,
-		/obj/item/weapon/tool/retractor,
-		/obj/item/weapon/tool/scalpel,
-		/obj/item/weapon/tool/tape_roll/bonegel,
+		/obj/item/tool/bonesetter,
+		/obj/item/tool/cautery,
+		/obj/item/tool/saw/circular,
+		/obj/item/tool/hemostat,
+		/obj/item/tool/retractor,
+		/obj/item/tool/scalpel,
+		/obj/item/tool/tape_roll/bonegel,
 		/obj/item/stack/medical/advanced/bruise_pack
 	)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO

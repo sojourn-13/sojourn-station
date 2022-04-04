@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/handmade_pistol
+/obj/item/gun/projectile/handmade_pistol
 	name = "handmade pistol"
 	desc = "An unreliable hand-crafted pistol liable to blow up in your hands, while it has a chance to jam with every shot its easy and cheap to make with customizable calibers. \
 	Reloading, clearing jams, and opening or closing the chamber is done with a screwdriver. This one chambers up to six .35 pistol ammo."
@@ -19,16 +19,18 @@
 	var/jam_chance = 15
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_CALIBRE_35)
 	max_upgrades = 0
+	price_tag = 50
 
-/obj/item/weapon/gun/projectile/handmade_pistol/magnum
+/obj/item/gun/projectile/handmade_pistol/magnum
 	name = "handmade magnum"
 	desc = "An unreliable hand-crafted pistol liable to blow up in your hands, while it has a chance to jam with every shot its easy and cheap to make with customizable calibers. \
 	Reloading, clearing jams, and opening or closing the chamber is done with a screwdriver. This one chambers up to four .40 magnum ammo."
 	caliber = CAL_MAGNUM
 	max_shells = 4
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	price_tag = 60
 
-/obj/item/weapon/gun/projectile/handmade_pistol/shotgun
+/obj/item/gun/projectile/handmade_pistol/shotgun
 	name = "handmade slugger"
 	desc = "An unreliable hand-crafted pistol liable to blow up in your hands, while it has a chance to jam with every shot its easy and cheap to make with customizable calibers. \
 	Reloading, clearing jams, and opening or closing the chamber is done with a screwdriver. This one chambers up to two 20mm shotgun ammo. This model sports a higher jam chance \
@@ -38,8 +40,9 @@
 	recoil_buildup = 18 //Still a shotgun
 	jam_chance = 25
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	price_tag = 70
 
-/obj/item/weapon/gun/projectile/handmade_pistol/anti_material
+/obj/item/gun/projectile/handmade_pistol/anti_material
 	name = "handmade man-opener"
 	desc = "An unreliable hand-crafted pistol liable to blow up in your hands, while it has a chance to jam with every shot its easy and cheap to make with customizable calibers. \
 	Reloading, clearing jams, and opening or closing the chamber is done with a screwdriver. This one chambers up to one .60-06 anti material ammo. What mad man made this? It's jam chance and recoil \
@@ -50,12 +53,13 @@
 	recoil_buildup = 30 //still a massive bullet
 	jam_chance = 35
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	price_tag = 75
 
-obj/item/weapon/gun/projectile/handmade_pistol/New()
+obj/item/gun/projectile/handmade_pistol/New()
 	..()
 	open_chamber()
 
-/obj/item/weapon/gun/projectile/handmade_pistol/special_check(mob/user)
+/obj/item/gun/projectile/handmade_pistol/special_check(mob/user)
 	if(jammed)
 		to_chat(user, SPAN_WARNING("[src] is jammed!"))
 		return 0
@@ -67,7 +71,7 @@ obj/item/weapon/gun/projectile/handmade_pistol/New()
 			return 0
 	return ..()
 
-/obj/item/weapon/gun/projectile/handmade_pistol/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/gun/projectile/handmade_pistol/attackby(obj/item/W as obj, mob/user as mob)
 	if(!chamber_open)
 		if(W.use_tool(user, src, WORKTIME_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			open_chamber()
@@ -80,19 +84,19 @@ obj/item/weapon/gun/projectile/handmade_pistol/New()
 			to_chat(user, SPAN_NOTICE("You force the chamber closed with [W]."))
 	..()
 
-/obj/item/weapon/gun/projectile/handmade_pistol/load_ammo(var/obj/item/A, mob/user)
+/obj/item/gun/projectile/handmade_pistol/load_ammo(var/obj/item/A, mob/user)
 	if(istype(A, /obj/item/ammo_casing))
 		if(!chamber_open)
 			to_chat(user, SPAN_WARNING("You need to open chamber first."))
 			return
 		..()
 
-/obj/item/weapon/gun/projectile/handmade_pistol/unload_ammo(mob/user, var/allow_dump=1)
+/obj/item/gun/projectile/handmade_pistol/unload_ammo(mob/user, var/allow_dump=1)
 	if(!chamber_open)
 		return
 	..()
 
-/obj/item/weapon/gun/projectile/handmade_pistol/proc/open_chamber()
+/obj/item/gun/projectile/handmade_pistol/proc/open_chamber()
 	src.jammed = FALSE
 	src.chamber_open = TRUE
 	icon_state = "hm_pistol_open"

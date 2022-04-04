@@ -1,5 +1,5 @@
-/obj/item/weapon/gun/projectile/boltgun/lever
-	name = "\"Armstrong\" repeater rifle"
+/obj/item/gun/projectile/boltgun/lever
+	name = "\"Armstrong\" repeating rifle"
 	desc = "Weapon for hunting, or endless open plains. Perfect for horseback!"
 	icon = 'icons/obj/guns/projectile/lever.dmi'
 	icon_state = "lever"
@@ -12,5 +12,19 @@
 	recoil_buildup = 10
 	damage_multiplier = 0.9
 	penetration_multiplier  = 1.1
+	extra_damage_mult_scoped = 0.2 //scoping this should be rewarded its not that good
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 5)
 	saw_off = FALSE
+
+/obj/item/gun/projectile/boltgun/lever/custer
+	name = "\"Custer\" repeating rifle"
+	desc = "This sized-up version of the \"Armstrong\" sports a few improvements compared to its predesessor. \
+			Made to content with modern bolt actions in hunting, this repeating rifle sports a rifle cartiage for that extra punch!"
+	icon = 'icons/obj/guns/projectile/custer.dmi'
+	icon_state = "custer"
+	item_state = "custer"
+	caliber = CAL_HRIFLE
+	max_shells = 7
+	price_tag = 950
+	recoil_buildup = 10
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 15, MATERIAL_WOOD = 10)

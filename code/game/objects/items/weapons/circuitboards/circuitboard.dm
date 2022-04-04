@@ -1,4 +1,4 @@
-/obj/item/weapon/circuitboard
+/obj/item/circuitboard
 	name = "circuit board"
 	icon = 'icons/obj/module.dmi'
 	icon_state = "id_mod"
@@ -21,25 +21,25 @@
 	var/board_type = "computer"
 	var/list/req_components = null
 
-/obj/item/weapon/circuitboard/New() //Using this to automate names on each board.
+/obj/item/circuitboard/New() //Using this to automate names on each board.
 	..()
 	if(build_name && build_name != null) //This check here is only because not all boards use automated names, apparently.
 		name = "[build_name] board"
 
 //Called when the circuitboard is used to contruct a new machine.
-/obj/item/weapon/circuitboard/proc/construct(var/obj/machinery/M)
+/obj/item/circuitboard/proc/construct(var/obj/machinery/M)
 	if (istype(M, build_path))
 		return TRUE
 	return FALSE
 
 //Called when a computer is deconstructed to produce a circuitboard.
 //Only used by computers, as other machines store their circuitboard instance.
-/obj/item/weapon/circuitboard/proc/deconstruct(var/obj/machinery/M)
+/obj/item/circuitboard/proc/deconstruct(var/obj/machinery/M)
 	if (istype(M, build_path))
 		return TRUE
 	return FALSE
 
-/obj/item/weapon/circuitboard/examine(user, distance)
+/obj/item/circuitboard/examine(user, distance)
 	. = ..()
 	// gets the required components and displays it in a list to the user when examined.
 	if(length(req_components))

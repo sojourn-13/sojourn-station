@@ -1,3 +1,25 @@
+/datum/category_item/setup_option/background/homeworld
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT, FORM_KRIOSAN, FORM_CINDAR, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_FBP, FORM_UNBRANDED)
+
+/datum/category_item/setup_option/background/homeworld/amethyn
+	name = "Amethyn"
+	desc = "The great jewel of the frontier, Amethyn, the place you have lived formerly as a tribal (or perhaps currently) that contains all the wonder and mystery of the realm. It's \
+	natural splendor has given you an understanding of the potential green wealth on offer, but a world without written history is one of mystery. One that you may or may not know. As someone who \
+	has resided here for quite some time, you've grown accustomed to the dangers and strangeness of the world. While this hasn't quite given you any advantage, surviving in the wilds requires \
+	natural remedies, and as such you instinctively know your way around plants."
+
+	restricted_to_species = list(FORM_MYCUS, FORM_FOLKEN)
+	perks = list(/datum/perk/greenthumb)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
 /datum/category_item/setup_option/background/homeworld/newdamascus
 	name = "New Damascus"
 	desc = "Once a bustling manufacturing world that was rich in oxygen and low in moisture, New Damascus is an arid world slowly bringing itself back from the brink of economic collapse. \
@@ -22,17 +44,19 @@
 	by most major powers. Neapolis is covered with endless plains of Vermillion grass, migratory forests, and deep violet colored oceans and it's marble white settlements have proven to be \
 	highly attractive destinations for tourists and vacationers, but the planet does have a number of drawbacks. The primary issue facing the residents of Neapolis is the lack of settle-able \
 	land with only a smattering of plateaus being safe enough for permanent settlements in the face of the ever transient forests. Fortunately the second issue- a lack of valuable ores \
-	or gasses, has so far been a boon for Neapolitians who have managed to evade major interest from their large- sometimes hostile, neighbors. Individuals from Neapolis are often \
+	or gasses, has so far been a boon for Neapolitians who have managed to evade major interest from their large sometimes hostile neighbors. Individuals from Neapolis are often \
 	idealistic, artistic, and sometimes a little naive. As a lush garden world that boasts a highly productive and often self reliance on growable food, those from Neapolis are often \
-	described as having a green thumb."
+	described as having a green thumb. Decades of living on a garden world have also made many of Neapolis obligate herbivores, preferring organic diets, but the lack of protein makes them \
+	weaker on average."
 
-	perks = list(/datum/perk/greenthumb)
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_KRIOSAN, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_CHTMANT)
+	perks = list(/datum/perk/greenthumb, /datum/perk/herbivore)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
+		STAT_ROB = -5,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 0,
+		STAT_BIO = 5,
 		STAT_MEC = 0,
 		STAT_COG = 5
 	)
@@ -120,11 +144,13 @@
 	name = "Rankorin"
 	desc = "Rankorin was originally classified as a death world due to its highly toxic atmosphere caused by a combination of natural flora and common storms of poisonous dusts clouds. \
 	However the discovery of immense diamonds deposits lured potential companies to establish colonies on the planet for a highly lucrative mining operation. Much to misfortune of the first \
-	people to settle there the toxic nature of the world proved most disastrous to kriosans and cindarites despite their usual tolerance to such conditions. Through a quirk of biology the flora of \
-	Rankorin developed toxins that attacked the immune system and turned it against the body, as such, races normally suited for this world avoided it as much as possible. \
+	people to settle there the toxic nature of the world proved most disastrous to kriosans, cindarites, and synthetic life forms despite their usual tolerance to such conditions. Through a quirk of biology the flora of \
+	Rankorin developed toxins that attacked the immune system and turned it against the body, as such, races normally suited for this world avoided it as much as possible where in the case of synthetics, the \
+	exceptional amount of pollution, radiation, dust storms, and electromagnetic pulses prevent synthetic individuals from surviving with any kind of ease. \
 	The remaining people who choose to settle here and work the mines adapted over several generations to thrive in bad atmosphere and have almost become dependent on it. \
 	This adaptation, coupled with working the diamond mines, have made them physically tough but comparably weak to people of other home-worlds."
 
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
 	perks = list(/datum/perk/chaingun_smoker)
 
 	stat_modifiers = list(
@@ -144,7 +170,7 @@
 	technology used to produce star ship engines or planetary nuclear reactors. People from this planet tend to be physically tougher than most, cheerfully resolute and have naturally \
 	evolved to resist most forms of toxins."
 
-	restricted_to_species = list(FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
 	perks = list(/datum/perk/blood_of_lead)
 
 	stat_modifiers = list(
@@ -183,7 +209,7 @@
 	natural armor that require either great strength to break or superior firepower. Due to the planets hostility few other than sablekyne choose to live on the planet, those that do are often \
 	family members to humans, abhumans, or naramads stationed there as part of the Terran Federation planetary defense force. "
 
-	restricted_to_species = list(FORM_SABLEKYNE, FORM_HUMAN, FORM_NARAMAD)
+	restricted_to_species = list(FORM_SABLEKYNE, FORM_HUMAN, FORM_EXALT_HUMAN, FORM_NARAMAD)
 
 	stat_modifiers = list(
 		STAT_ROB = 5,
@@ -202,7 +228,7 @@
 	that make it an appealing place both to live and visit. Donbettyr is largely home to those well adapted to living in wet environments, with humans, abhumans, akula, and very rarely mar'qua \
 	choosing to live there. The harsh storms and weather, coupled with swimming as the most common leisure activity, toughens most who spend there lives here."
 
-	restricted_to_species = list(FORM_AKULA, FORM_HUMAN, FORM_MARQUA, FORM_SABLEKYNE)
+	restricted_to_species = list(FORM_AKULA, FORM_HUMAN, FORM_EXALT_HUMAN, FORM_MARQUA, FORM_SABLEKYNE)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -222,7 +248,7 @@
 	citizenship to any other race. Life in the homeworlds is one of monotony, but such living enhances the intelligence of denizens as toil and reassignment happen often enough to \
 	broaden your skill sets."
 
-	restricted_to_species = list(FORM_MARQUA, FORM_HUMAN, FORM_CINDAR)
+	restricted_to_species = list(FORM_MARQUA, FORM_HUMAN, FORM_EXALT_HUMAN, FORM_CINDAR)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -256,7 +282,7 @@
 	the Terran Federation are uniquely capable of adapting to the harsh world. Unfortunately Norian has next to nothing in the way of proper education, even among the Terran planetary defense forces. \
 	People from this planet tend to be the hardiest of individuals, but just as often they prove to be dull and lacking in attention to detail."
 
-	restricted_to_species = list(FORM_NARAMAD, FORM_HUMAN, FORM_SABLEKYNE, FORM_AKULA)
+	restricted_to_species = list(FORM_NARAMAD, FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_AKULA)
 
 	stat_modifiers = list(
 		STAT_ROB = 10,

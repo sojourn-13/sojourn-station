@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/ostwind
+/obj/item/gun/projectile/automatic/ostwind
 	name = "\"Ostwind\" carbine"
 	desc = "An \"Ostwind\" high-end police-grade assault rifle manufactured by Seinemetall Defense GmbH. Primarily used by law enforcement, counter-terror units, and private security. Uses .257 Carbine rounds."
 	icon = 'icons/obj/guns/projectile/ostwind.dmi'
@@ -9,7 +9,7 @@
 	caliber = CAL_LRIFLE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	auto_eject = 1
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
@@ -22,7 +22,7 @@
 	zoom_factor = 0.4
 	penetration_multiplier = 1.2
 	damage_multiplier = 0.9
-	recoil_buildup = 5
+	recoil_buildup = 1.25
 	one_hand_penalty = 10 //automatic rifle level
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
@@ -32,7 +32,7 @@
 		BURST_3_ROUND
 		)
 
-/obj/item/weapon/gun/projectile/automatic/ostwind/update_icon()
+/obj/item/gun/projectile/automatic/ostwind/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -47,6 +47,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/ostwind/Initialize()
+/obj/item/gun/projectile/automatic/ostwind/Initialize()
 	. = ..()
 	update_icon()

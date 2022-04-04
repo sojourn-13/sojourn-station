@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/gun
+/obj/item/gun/energy/gun
 	name = "\"Spider Rose\" energy pistol"
 	desc = "Spider Rose is a versatile energy based sidearm, capable of switching between low and high capacity projectile settings. In other words: Stun or Kill."
 	icon = 'icons/obj/guns/energy/egun.dmi'
@@ -17,19 +17,19 @@
 	item_modifystate = "stun"
 
 	init_firemodes = list(
-		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, modifystate="energystun", item_modifystate="stun", fire_sound='sound/weapons/Taser.ogg', icon="stun"),
-		list(mode_name="kill", projectile_type=/obj/item/projectile/beam, modifystate="energykill", item_modifystate="kill", fire_sound='sound/weapons/Laser.ogg', icon="kill"),
+		STUNBOLT,
+		LETHAL,
 		WEAPON_CHARGE,
 		)
 
-/obj/item/weapon/gun/energy/gun/mounted
+/obj/item/gun/energy/gun/mounted
 	name = "mounted energy gun"
 	self_recharge = 1
 	use_external_power = 1
 	safety = FALSE
 	restrict_safety = TRUE
 
-/obj/item/weapon/gun/energy/gun/martin
+/obj/item/gun/energy/gun/martin
 	name = "\"Martin\" energy pistol"
 	desc = "Martin is essentialy downscaled Spider Rose, made for security employees and civilians to use it as personal self defence weapon."
 	icon = 'icons/obj/guns/energy/pdw.dmi'
@@ -43,22 +43,29 @@
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 4, MATERIAL_SILVER = 2)
 	price_tag = 250
 	modifystate = null
-	suitable_cell = /obj/item/weapon/cell/small
-	cell_type = /obj/item/weapon/cell/small
+	suitable_cell = /obj/item/cell/small
+	cell_type = /obj/item/cell/small
 
-/obj/item/weapon/gun/energy/gun/martin/proc/update_mode()
+/obj/item/gun/energy/gun/martin/preloaded
+
+/obj/item/gun/energy/gun/martin/preloaded/New()
+	cell = new /obj/item/cell/small/high(src)
+	. = ..()
+	update_icon()
+
+/obj/item/gun/energy/gun/martin/proc/update_mode()
 	var/datum/firemode/current_mode = firemodes[sel_mode]
 	if(current_mode.name == "stun")
 		add_overlay("taser_pdw")
 	else
 		add_overlay("lazer_pdw")
 
-/obj/item/weapon/gun/energy/gun/martin/update_icon()
+/obj/item/gun/energy/gun/martin/update_icon()
 	cut_overlays()
 	if(cell && cell.charge >= charge_cost) //no overlay if we dont have any power
 		update_mode()
 
-/obj/item/weapon/gun/energy/ntpistol
+/obj/item/gun/energy/ntpistol
 	name = "\"Serenity\" energy pistol"
 	desc = "\"New Testament\" brand laser pistol. Small and easily concealable, it's still a reasonable punch for a laser weapon."
 	icon = 'icons/obj/guns/energy/ntpistol.dmi'
@@ -74,9 +81,9 @@
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_WOOD = 4, MATERIAL_SILVER = 2)
 	price_tag = 150
 	init_firemodes = list(
-		WEAPON_NORMAL,
- 		WEAPON_CHARGE
+		LETHAL,
+		WEAPON_CHARGE
 	)
 	twohanded = FALSE
-	suitable_cell = /obj/item/weapon/cell/small
-	cell_type = /obj/item/weapon/cell/small
+	suitable_cell = /obj/item/cell/small
+	cell_type = /obj/item/cell/small

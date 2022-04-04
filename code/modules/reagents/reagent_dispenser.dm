@@ -7,17 +7,13 @@
 	anchored = FALSE
 	reagent_flags = DRAINABLE | AMOUNT_VISIBLE
 	var/volume = 1500
+	var/starting_volume = 0
 	var/starting_reagent = null
 	var/amount_per_transfer_from_this = 10
 	var/possible_transfer_amounts = list(10,25,50,100)
 	var/contents_cost
 
-/obj/structure/reagent_dispensers/get_item_cost()
-	var/ratio = reagents.total_volume / reagents.maximum_volume
-
-	return ..() + round(contents_cost * ratio)
-
-/obj/structure/reagent_dispensers/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/reagent_dispensers/attackby(obj/item/W as obj, mob/user as mob)
 	if(W.is_refillable())
 		return 0 //so we can refill them via their afterattack.
 	else
@@ -27,7 +23,12 @@
 	create_reagents(volume)
 
 	if (starting_reagent)
-		reagents.add_reagent(starting_reagent, volume)
+		//If a starting volume is not 0, use that for the volume amount
+		if(starting_volume)
+			reagents.add_reagent(starting_reagent, starting_volume)
+		else
+			reagents.add_reagent(starting_reagent, volume)
+
 	if (!possible_transfer_amounts)
 		src.verbs -= /obj/structure/reagent_dispensers/verb/set_APTFT
 	..()
@@ -164,7 +165,7 @@
 			test.Shift(EAST,6)
 			add_overlay(test)
 
-	var/obj/item/weapon/tool/T = I
+	var/obj/item/tool/T = I
 	if(istype(T) && T.use_fuel_cost)
 		return 0
 
@@ -226,6 +227,16 @@
 	volume = 1000
 	starting_reagent = "condensedcapsaicin"
 
+/obj/structure/reagent_dispensers/ammonia
+	name = "ammonia dispenser"
+	desc = "Contains ammonia meant to clean things and mix to make spacecleaner."
+	icon_state = "ammoniatank"
+	anchored = 1
+	density = 0
+	amount_per_transfer_from_this = 10
+	volume = 1000
+	starting_reagent = "cleaner"
+	possible_transfer_amounts = list(1,5,10,25,50,100)
 
 /obj/structure/reagent_dispensers/water_cooler
 	name = "water cooler"
@@ -238,7 +249,7 @@
 	volume = 500
 	starting_reagent = "water"
 	var/cups = 20
-	var/cup_type = /obj/item/weapon/reagent_containers/food/drinks/sillycup
+	var/cup_type = /obj/item/reagent_containers/food/drinks/sillycup
 
 /obj/structure/reagent_dispensers/water_cooler/attack_hand(var/mob/user)
 	if(cups > 0)
@@ -276,17 +287,27 @@
 /obj/structure/reagent_dispensers/beerkeg
 	name = "beer keg"
 	desc = "A beer keg"
-	icon_state = "beertankTEMP"
+	icon_state = "beer_keg" //Sprite by greenteaguzzler
 	amount_per_transfer_from_this = 10
 	volume = 1000
 	starting_reagent = "beer"
 	price_tag = 25
 	contents_cost = 700
 
+/obj/structure/reagent_dispensers/meadkeg
+	name = "mead keg"
+	desc = "A keg of honey and beer"
+	icon_state = "barrel"
+	amount_per_transfer_from_this = 10
+	volume = 1000
+	starting_reagent = "mead"
+	price_tag = 25
+	contents_cost = 1200
+
 /obj/structure/reagent_dispensers/cahorsbarrel
 	name = "Absolutism Cahors barrel"
 	desc = "Barrel a day - keeps liver away."
-	icon_state = "barrel"
+	icon_state = "barrel_alt"
 	volume = 1000
 	starting_reagent = "ntcahors"
 	price_tag = 25

@@ -8,7 +8,7 @@
 	//icon_state = "trashcart_mimic"
 	icon_dead = "mimic_dead"
 
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/carp
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/carp
 	response_help = "touches"
 	response_disarm = "pushes"
 	response_harm = "hits"

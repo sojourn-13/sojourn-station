@@ -3,7 +3,7 @@
 	desc = "Even the most devout deserve head protection."
 	icon_state = "acolyte"
 	item_state = "acolyte"
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 25,
 		energy = 25,
@@ -19,7 +19,7 @@
 	item_state = "acolyte"
 	slowdown = 0.15
 	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 25, MATERIAL_BIOMATTER = 40)
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 25,
 		energy = 25,
@@ -34,7 +34,7 @@
 	desc = "Don't want anything getting in your eyes."
 	icon_state = "botanist"
 	item_state = "botanist"
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 25,
 		energy = 25,
@@ -50,7 +50,7 @@
 	item_state = "botanist"
 	slowdown = 0
 	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 15, MATERIAL_BIOMATTER = 40)
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 25,
 		energy = 25,
@@ -65,7 +65,7 @@
 	desc = "Cleaning floors is more dangerous than it looks."
 	icon_state = "custodian"
 	item_state = "custodian"
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 25,
 		energy = 25,
@@ -82,7 +82,7 @@
 	item_state = "custodian"
 	slowdown = 0.05
 	matter = list(MATERIAL_PLASTIC = 40, MATERIAL_STEEL = 15, MATERIAL_BIOMATTER = 40)
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 25,
 		energy = 25,
@@ -97,7 +97,7 @@
 	name = "prime hood"
 	desc = "A visored helmet with a cloth hood covering it."
 	icon_state = "prime"
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 40,
 		energy = 40,
@@ -111,7 +111,7 @@
 	desc = "Trust in god but keep your armor on."
 	icon_state = "prime"
 	slowdown = 0.15
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 40,
 		energy = 40,
@@ -121,14 +121,15 @@
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/prime
 
-/obj/item/clothing/head/space/void/NTvoid
+/obj/item/clothing/head/helmet/space/void/NTvoid
 	name = "angel voidsuit helmet"
 	desc = "A voidsuit helmet designed by the church with a most holy mix of biomatter and inorganic matter."
 	icon_state = "ntvoidhelmet"
 	item_state = "ntvoidhelmet"
 	action_button_name = "Toggle Helmet Light"
-	flags_inv = BLOCKHAIR
-	armor = list(
+	brightness_on = 4 //luminosity when on
+	light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT //Holyer then thou!
+	armor_list = list(
 		melee = 40,
 		bullet = 30,
 		energy = 30,
@@ -146,8 +147,7 @@
 	item_state = "ntvoid"
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_STEEL = 10, MATERIAL_BIOMATTER = 29)
 	slowdown = 0.15
-	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 30,
 		energy = 30,
@@ -158,4 +158,12 @@
 	siemens_coefficient = 0.35
 	breach_threshold = 10
 	resilience = 0.07
-	helmet = /obj/item/clothing/head/space/void/NTvoid
+	price_tag = 300
+
+
+	helmet = /obj/item/clothing/head/helmet/space/void/NTvoid
+
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	flash_protection = FLASH_PROTECTION_MAJOR
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR

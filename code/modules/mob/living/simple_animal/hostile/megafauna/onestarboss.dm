@@ -2,7 +2,7 @@
 	name = "Type - 0315"
 	desc = "Love and concrete."
 
-	faction = "onestar"
+	faction = "greyson"
 
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "onestar_boss_unpowered"
@@ -25,6 +25,8 @@
 	megafauna_max_cooldown = 60
 
 	wander = FALSE //No more sleepwalking
+	mob_classification = CLASSIFICATION_SYNTHETIC
+	emp_proof = TRUE
 
 	projectiletype = /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 

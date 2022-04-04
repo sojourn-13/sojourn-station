@@ -37,7 +37,7 @@
 	user.visible_message(SPAN_WARNING("[user] lets go of their other hand."))
 	if(unwieldsound)
 		playsound(loc, unwieldsound, 50, 1)
-	var/obj/item/weapon/twohanded/offhand/O = user.get_inactive_hand()
+	var/obj/item/twohanded/offhand/O = user.get_inactive_hand()
 	if(O && istype(O))
 		user.drop_from_inventory(O)
 	return
@@ -65,7 +65,7 @@
 	user.visible_message(SPAN_WARNING("[user] grabs \the [original_name] with both hands."))
 	if(wieldsound)
 		playsound(loc, wieldsound, 50, 1)
-	var/obj/item/weapon/twohanded/offhand/O = new(user) ////Let's reserve his other hand~
+	var/obj/item/twohanded/offhand/O = new(user) ////Let's reserve his other hand~
 	O.name = "[name] - offhand"
 	O.desc = "Your second grip on \the [name]"
 	user.put_in_inactive_hand(O)
@@ -117,24 +117,25 @@
 	return FALSE
 
 
-/obj/item/weapon/twohanded/offhand
+/obj/item/twohanded/offhand
 	name = "offhand"
 	icon_state = "offhand"
 	w_class = ITEM_SIZE_COLOSSAL
 	item_flags = ABSTRACT
+	icon = 'icons/obj/weapons.dmi'
 
-/obj/item/weapon/twohanded/offhand/unwield()
+/obj/item/twohanded/offhand/unwield()
 	wielded = FALSE
 	if(!QDELETED(src))
 		qdel(src)
 
-/obj/item/weapon/twohanded/offhand/wield()
+/obj/item/twohanded/offhand/wield()
 	if(wielded)//Only delete if we're wielded
 		wielded = FALSE
 		if(!QDELETED(src))
 			qdel(src)
 
-/obj/item/weapon/twohanded/offhand/dropped(mob/living/user)
+/obj/item/twohanded/offhand/dropped(mob/living/user)
 	..()
 	var/obj/item/I = user.get_active_hand()
 	var/obj/item/II = user.get_inactive_hand()

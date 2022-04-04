@@ -17,7 +17,7 @@
 	use_power = IDLE_POWER_USE				//this turret uses and requires power
 	idle_power_usage = 50		//when inactive, this turret takes up constant 50 Equipment power
 	active_power_usage = 300	//when active, this turret takes up constant 300 Equipment power
-	power_channel = EQUIP	//drains power from the EQUIPMENT channel
+	power_channel = STATIC_EQUIP	//drains power from the EQUIPMENT channel
 
 	var/raised = FALSE			//if the turret cover is "open" and the turret is raised
 	var/raising= FALSE			//if the turret is currently opening or closing its cover
@@ -28,7 +28,7 @@
 	var/locked = TRUE			//if the turret's behaviour control access is locked
 	var/controllock = FALSE		//if the turret responds to control panels
 
-	var/obj/item/weapon/gun/energy/installation = /obj/item/weapon/gun/energy/gun	//the weapon that's installed. Store as path to initialize a new gun on creation.
+	var/obj/item/gun/energy/installation = /obj/item/gun/energy/gun	//the weapon that's installed. Store as path to initialize a new gun on creation.
 	var/projectile = null	//holder for bullettype
 	var/eprojectile = null	//holder for the shot when emagged
 	var/reqpower = 500		//holder for power needed
@@ -71,7 +71,7 @@
 
 /obj/machinery/porta_turret/One_star
 	name = "greyson positronic turret"
-	installation = /obj/item/weapon/gun/energy/retro
+	installation = /obj/item/gun/energy/cog
 
 /obj/machinery/porta_turret/crescent
 	enabled = FALSE
@@ -93,12 +93,12 @@
 	check_weapons = FALSE
 	check_anomalies = TRUE
 	colony_allied_turret = TRUE
-	installation = /obj/item/weapon/gun/energy/retro
+	installation = /obj/item/gun/energy/cog
 
 /obj/machinery/porta_turret/stationary
 	ailock = TRUE
 	lethal = TRUE
-	installation = /obj/item/weapon/gun/energy/laser
+	installation = /obj/item/gun/energy/laser
 
 /obj/machinery/porta_turret/New()
 	..()
@@ -109,7 +109,8 @@
 	spark_system = new /datum/effect/effect/system/spark_spread
 	spark_system.set_up(5, 0, src)
 	spark_system.attach(src)
-
+	var/area/A = get_area(src)
+	SEND_SIGNAL(A, COMSIG_TURRENT, src)
 	setup()
 
 /obj/machinery/porta_turret/crescent/New()
@@ -135,40 +136,40 @@
 
 /obj/machinery/porta_turret/proc/weapon_setup(var/guntype)
 	switch(guntype)
-		if(/obj/item/weapon/gun/energy/laser/practice)
+		if(/obj/item/gun/energy/laser/practice)
 			iconholder = 1
 			eprojectile = /obj/item/projectile/beam
 
-//			if(/obj/item/weapon/gun/energy/laser/practice/sc_laser)
+//			if(/obj/item/gun/energy/laser/practice/sc_laser)
 //				iconholder = 1
 //				eprojectile = /obj/item/projectile/beam
 
-		if(/obj/item/weapon/gun/energy/retro)
+		if(/obj/item/gun/energy/cog)
 			iconholder = 1
 
-//			if(/obj/item/weapon/gun/energy/retro/sc_retro)
+//			if(/obj/item/gun/energy/cog/sc_retro)
 //				iconholder = 1
 
-		if(/obj/item/weapon/gun/energy/captain)
+		if(/obj/item/gun/energy/captain)
 			iconholder = 1
 
-		if(/obj/item/weapon/gun/energy/lasercannon)
+		if(/obj/item/gun/energy/lasercannon)
 			iconholder = 1
 
-		if(/obj/item/weapon/gun/energy/taser)
+		if(/obj/item/gun/energy/taser)
 			eprojectile = /obj/item/projectile/beam
 			eshot_sound = 'sound/weapons/Laser.ogg'
 
-		if(/obj/item/weapon/gun/energy/stunrevolver)
+		if(/obj/item/gun/energy/stunrevolver)
 			eprojectile = /obj/item/projectile/beam
 			eshot_sound = 'sound/weapons/Laser.ogg'
 
-		if(/obj/item/weapon/gun/energy/gun)
+		if(/obj/item/gun/energy/gun)
 			eprojectile = /obj/item/projectile/beam	//If it has, going to kill mode
 			eshot_sound = 'sound/weapons/Laser.ogg'
 			egun = 1
 
-		if(/obj/item/weapon/gun/energy/gun/nuclear)
+		if(/obj/item/gun/energy/gun/nuclear)
 			eprojectile = /obj/item/projectile/beam	//If it has, going to kill mode
 			eshot_sound = 'sound/weapons/Laser.ogg'
 			egun = 1
@@ -213,9 +214,9 @@ var/list/turret_icons
 	if(isLocked(user))
 		return
 
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/porta_turret/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/porta_turret/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 	data["access"] = !isLocked(user)
 	data["locked"] = locked
@@ -300,9 +301,9 @@ var/list/turret_icons
 
 /obj/machinery/porta_turret/attackby(obj/item/I, mob/user)
 
-	var/obj/item/weapon/card/id/ID = I.GetIdCard()
+	var/obj/item/card/id/ID = I.GetIdCard()
 
-	if (user.a_intent != I_HURT)
+	if (user.a_intent == I_HELP)
 		if(stat & BROKEN)
 			if(QUALITY_PRYING in I.tool_qualities)
 				//If the turret is destroyed, you can remove it with a crowbar to
@@ -321,20 +322,21 @@ var/list/turret_icons
 					else
 						to_chat(user, SPAN_NOTICE("You remove the turret but did not manage to salvage anything."))
 					qdel(src) // qdel
+				return TRUE //No whacking the turret with tools on help intent
 
 		else if(QUALITY_BOLT_TURNING in I.tool_qualities)
 			if(enabled)
 				to_chat(user, SPAN_WARNING("You cannot unsecure an active turret!"))
-				return
+				return TRUE //No whacking the turret with tools on help intent
 			if(wrenching)
 				to_chat(user, "<span class='warning'>Someone is already [anchored ? "un" : ""]securing the turret!</span>")
-				return
+				return TRUE //No whacking the turret with tools on help intent
 			if(debugopen)
 				to_chat(user, SPAN_WARNING("You can't secure the turret while the circuitry is exposed!"))
-				return
+				return TRUE //No whacking the turret with tools on help intent
 			if(!anchored && isinspace())
 				to_chat(user, SPAN_WARNING("Cannot secure turrets in space!"))
-				return
+				return TRUE //No whacking the turret with tools on help intent
 
 			user.visible_message( \
 					"<span class='warning'>[user] begins [anchored ? "un" : ""]securing the turret.</span>", \
@@ -362,8 +364,8 @@ var/list/turret_icons
 					to_chat(user, SPAN_NOTICE("You unsecure the exterior bolts on the turret."))
 					update_icon()
 			wrenching = 0
-
-		else if(istype(I, /obj/item/weapon/card/id)||istype(I, /obj/item/modular_computer))
+			return TRUE //No whacking the turret with tools on help intent
+		else if(istype(I, /obj/item/card/id)||istype(I, /obj/item/modular_computer))
 			if(allowed(user))
 				locked = !locked
 				to_chat(user, "<span class='notice'>Controls are now [locked ? "locked" : "unlocked"].</span>")
@@ -380,6 +382,7 @@ var/list/turret_icons
 					registered_names.Cut()
 					registered_names = list()
 					to_chat(user, SPAN_NOTICE("You access the debug board and reset the turret's access list."))
+					return TRUE //No whacking the turret with tools on help intent
 
 			else
 				if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_HARD,  required_stat = STAT_COG))
@@ -402,6 +405,7 @@ var/list/turret_icons
 						hackfail = 0
 					else
 						to_chat(user, SPAN_WARNING("You fail to hack the ID reader, but avoid tripping the security protocol."))
+					return TRUE //No whacking the turret with tools on help intent
 
 		else if(QUALITY_SCREW_DRIVING in I.tool_qualities)
 			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_HARD,  required_stat = STAT_MEC))
@@ -412,6 +416,7 @@ var/list/turret_icons
 					debugopen = 1
 					to_chat(user, SPAN_NOTICE("You gently unscrew the seconday maintenance hatch, gaining access to the turret's internal circuitry and debug functions."))
 					desc = "A hatch on the bottom of the access panel is opened, exposing the circuitry inside."
+				return TRUE //No whacking the turret with tools on help intent
 
 		else if((QUALITY_WIRE_CUTTING in I.tool_qualities) && (debugopen))
 			if(overridden)
@@ -432,6 +437,7 @@ var/list/turret_icons
 						hackfail = 1
 						sleep(300)
 						hackfail = 0
+			return TRUE //No whacking the turret with tools on help intent
 
 	if (!(I.flags & NOBLUDGEON) && I.force && !(stat & BROKEN))
 		//if the turret was attacked with the intention of harming it:
@@ -485,6 +491,8 @@ var/list/turret_icons
 	var/damage = Proj.get_structure_damage()
 
 	if(!damage)
+		if(istype(Proj, /obj/item/projectile/ion))
+			Proj.on_hit(loc)
 		return
 
 	if(enabled)
@@ -568,7 +576,7 @@ var/list/turret_icons
 			secondarytargets += L
 
 /obj/machinery/porta_turret/proc/assess_living(var/mob/living/L)
-	var/obj/item/weapon/card/id/id_card = L.GetIdCard()
+	var/obj/item/card/id/id_card = L.GetIdCard()
 
 	if(id_card && (id_card.registered_name in registered_names))
 		return TURRET_NOT_TARGET
@@ -579,17 +587,26 @@ var/list/turret_icons
 	if(L.invisibility >= INVISIBILITY_LEVEL_ONE) // Cannot see him. see_invisible is a mob-var
 		return TURRET_NOT_TARGET
 
+	if(L.stat && !emagged)		//if the perp is dead/dying, no need to bother really
+		return TURRET_NOT_TARGET	//move onto next potential victim!
+
 	if(!L)
 		return TURRET_NOT_TARGET
 
 	if(!emagged && colony_allied_turret && L.colony_friend) //Dont target colony pets if were allied with them
 		return TURRET_NOT_TARGET
 
-	if(!emagged && issilicon(L))	// Don't target silica
+	if(!emagged && !colony_allied_turret && !L.colony_friend) //If were not allied to the colony we dont attack anything thats against the colony
 		return TURRET_NOT_TARGET
 
-	if(L.stat && !emagged)		//if the perp is dead/dying, no need to bother really
-		return TURRET_NOT_TARGET	//move onto next potential victim!
+	if(!emagged && !colony_allied_turret && L.colony_friend) //If were not allied with the colony we attack them and their pets
+		return TURRET_SECONDARY_TARGET
+
+	if(!emagged && colony_allied_turret && !L.colony_friend) //If were allied with the colony and we attack things that are not are pets
+		return TURRET_SECONDARY_TARGET
+
+	if(!emagged && issilicon(L))	// Don't target silica
+		return TURRET_NOT_TARGET
 
 	if(get_dist(src, L) > 7)	//if it's too far away, why bother?
 		return TURRET_NOT_TARGET
@@ -800,7 +817,7 @@ var/list/turret_icons
 	var/target_type = /obj/machinery/porta_turret	// The type we intend to build
 	var/build_step = 0			//the current step in the building process
 	var/finish_name="turret"	//the name applied to the product turret
-	var/obj/item/weapon/gun/energy/installation = null		//the gun type installed
+	var/obj/item/gun/energy/installation = null		//the gun type installed
 	var/gun_charge = 0			//the gun charge of the gun type installed
 
 
@@ -914,7 +931,7 @@ var/list/turret_icons
 				return
 
 		if(3)
-			if(istype(I, /obj/item/weapon/gun/energy)) //the gun installation part
+			if(istype(I, /obj/item/gun/energy)) //the gun installation part
 
 				if(isrobot(user))
 					return
@@ -952,7 +969,7 @@ var/list/turret_icons
 					to_chat(user, SPAN_WARNING("You need two sheets of metal to continue construction."))
 				return
 
-	if(istype(I, /obj/item/weapon/pen))	//you can rename turrets like bots!
+	if(istype(I, /obj/item/pen))	//you can rename turrets like bots!
 		var/t = sanitizeSafe(input(user, "Enter new turret name", name, finish_name) as text, MAX_NAME_LEN)
 		if(!t)
 			return

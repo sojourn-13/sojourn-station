@@ -11,6 +11,7 @@
 	gender = MALE // barf (unless you're a dorf, dorfs dig chix /w beards :P)
 	species_allowed = list(
 		SPECIES_HUMAN,
+		SPECIES_EXALT_HUMAN,
 		FORM_MARQUA,
 		FORM_SABLEKYNE,
 		FORM_KRIOSAN,
@@ -18,7 +19,8 @@
 		FORM_CHTMANT,
 		FORM_CINDAR,
 		FORM_NARAMAD,
-		FORM_OPIFEX
+		FORM_OPIFEX,
+		FORM_FBP
 		)
 
 /datum/sprite_accessory/facial_hair/shaved
@@ -57,6 +59,10 @@
 /datum/sprite_accessory/facial_hair/braid
 	name = "Braided Beard"
 	icon_state = "braided"
+
+/datum/sprite_accessory/facial_hair/brokenman
+	name = "Broken Man"
+	icon_state = "facial_brokenman"
 
 /datum/sprite_accessory/facial_hair/chinless
 	name = "Chinless Beard"
@@ -125,6 +131,11 @@
 /datum/sprite_accessory/facial_hair/seadog
 	name = "Sea Dog Beard"
 	icon_state = "seadog"
+
+/datum/sprite_accessory/facial_hair/shaggy
+	name = "Shaggy"
+	icon_state = "shag"
+	gender = NEUTER
 
 /datum/sprite_accessory/facial_hair/tribeard
 	name = "Tribeard"
@@ -195,6 +206,11 @@
 /datum/sprite_accessory/facial_hair/una_dorsalfrill
 	name = "Cindarite Dorsal Frill"
 	icon_state = "facial_dorsalfrill_s"
+	gender = NEUTER
+
+/datum/sprite_accessory/facial_hair/neck_fluff
+	name = "Neck Fluff"
+	icon_state = "neckfluff"
 	gender = NEUTER
 
 /*

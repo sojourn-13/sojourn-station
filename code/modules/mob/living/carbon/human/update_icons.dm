@@ -426,7 +426,7 @@ var/global/list/wings_icon_cache = list()
 /mob/living/carbon/human/update_implants(var/update_icons = 1)
 	var/image/standing = image('icons/mob/mob.dmi', "blank")
 	var/have_icon = FALSE
-	for(var/obj/item/weapon/implant/I in src)
+	for(var/obj/item/implant/I in src)
 		if(I.is_external() && I.wearer == src)
 			var/image/mob_icon = I.get_mob_overlay(gender, form)
 			if(mob_icon)
@@ -462,11 +462,11 @@ var/global/list/wings_icon_cache = list()
 			//Eris lacks hands and feet. This code should allow hands and feet.
 			//This exists because the sprites are separated over all limbs whereas this codebase doesn't have hands or feet.
 			//Apparently chest and groin are considered disembodied, which I otherwise used to exclude severed limbs.
-			var/valid = (part in organs_by_name) && organs_by_name[part] && ((part in BP_BASE_PARTS) || organs_by_name[part].dislocated >= 0)
+			var/valid = (part in organs_by_name) && organs_by_name[part] && ((part in BP_BASE_PARTS) || organs_by_name[part]:dislocated >= 0)
 			if(!valid)
 				for(var/organ in organs_by_name)
 					var/obj/item/organ/external/O = organs_by_name[organ]
-					if(O.dislocated >= 0 && part in O.additional_limb_parts)
+					if(O.dislocated >= 0 && (part in O.additional_limb_parts))
 						valid = TRUE
 						break
 			if(valid && ("[real_marking.icon_state]-[part]" in icon_states(real_marking.icon)))
@@ -950,7 +950,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			var/obj/item/clothing/head/hat = head
 			var/cache_key = "[hat.light_overlay]_[species.get_bodytype()]"
 			if(hat.on && light_overlay_cache[cache_key])
-				standing.copy_overlays(light_overlay_cache[cache_key], FALSE)
+				standing.overlays |= (light_overlay_cache[cache_key])
 
 		standing.color = head.color
 		overlays_standing[HEAD_LAYER] = standing
@@ -960,6 +960,7 @@ mob/living/carbon/human/proc/get_wings_image()
 
 /mob/living/carbon/human/update_inv_belt(var/update_icons=1)
 	overlays_standing[BELT_LAYER] = null
+	overlays_standing[BELT_LAYER_ALT] = null
 	if(belt)
 		var/t_state = belt.icon_state
 		var/t_icon = belt.icon
@@ -979,12 +980,20 @@ mob/living/carbon/human/proc/get_wings_image()
 		else
 			t_icon = form.get_mob_icon("belt")
 
+		var/icon/test = new (t_icon)
+		if (!(t_state in icon_states(test)))
+			t_icon = get_back_icon(belt)
+			t_state = "back"
+
 		standing = image(icon = t_icon, icon_state = t_state)
 
 		var/beltlayer = BELT_LAYER
 		var/otherlayer = BELT_LAYER_ALT
-		if(istype(belt, /obj/item/weapon/storage/belt))
-			var/obj/item/weapon/storage/belt/ubelt = belt
+		if(!(t_state in icon_states(test)))
+			beltlayer = BELT_LAYER_ALT
+			otherlayer = BELT_LAYER
+		if(istype(belt, /obj/item/storage/belt))
+			var/obj/item/storage/belt/ubelt = belt
 			if(ubelt.show_above_suit)
 				beltlayer = BELT_LAYER_ALT
 				otherlayer = BELT_LAYER
@@ -1110,9 +1119,9 @@ mob/living/carbon/human/proc/get_wings_image()
 				overlay_icon = test.icon
 		else if(test.icon_override)
 			overlay_icon = test.icon_override
-		else if(istype(test, /obj/item/weapon/rig))
+		else if(istype(test, /obj/item/rig))
 			//If this is a rig and a mob_icon is set, it will take species into account in the rig update_icon() proc.
-			var/obj/item/weapon/rig/rig = test
+			var/obj/item/rig/rig = test
 			overlay_icon = rig.mob_icon
 
 		else if(test.item_icons && (slot_back_str in test.item_icons))

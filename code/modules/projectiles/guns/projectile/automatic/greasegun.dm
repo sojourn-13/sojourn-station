@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/greasegun
+/obj/item/gun/projectile/automatic/greasegun
 	name = "M3 \"Grease Gun\" assault SMG"
 	desc = "An old, handy firearm hailing from Sol. Despite it's inredibly dated design it has maintained use within the Sol Federal Police due to its compactness and sub-sonic rounds. \
 		 It appears to be made for urban combat with a built in silencer and chambered in .35 Auto; taking specifically only SMG magazines. Reliable but slow firing."
@@ -10,21 +10,21 @@
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_SMG
 	matter = list(MATERIAL_PLASTEEL = 28, MATERIAL_PLASTIC = 10)
 	price_tag = 950
 	penetration_multiplier = 1.2
-	recoil_buildup = 5
+	recoil_buildup = 1.25
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
-	one_hand_penalty = 25
+	one_hand_penalty = 3
 	init_firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY
 		)
 
-/obj/item/weapon/gun/projectile/automatic/greasegun/update_icon()
+/obj/item/gun/projectile/automatic/greasegun/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)

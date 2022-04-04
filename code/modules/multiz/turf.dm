@@ -163,7 +163,12 @@ see multiz/movement.dm for some info.
 			var/fall_damage = mover.get_fall_damage()
 			if(M == mover)
 				continue
-			M.Weaken(10)
+			if(ishuman(M))
+				if(!M.stats.getPerk(PERK_PARKOUR))
+					M.Weaken(10)
+			else
+				M.Weaken(10)
+				continue
 			if(fall_damage >= FALL_GIB_DAMAGE)
 				M.gib()
 			else
@@ -172,7 +177,7 @@ see multiz/movement.dm for some info.
 
 				while(fall_damage > 0)
 					fall_damage -= tmp_damage = rand(0, fall_damage)
-					M.apply_damage(tmp_damage, BRUTE, organ)
+					M.damage_through_armor(tmp_damage, BRUTE, organ, used_weapon = mover)
 					organ = pickweight(list(BP_HEAD = 0.3, BP_CHEST = 0.8, BP_R_ARM = 0.6, BP_L_ARM = 0.6))
 
 

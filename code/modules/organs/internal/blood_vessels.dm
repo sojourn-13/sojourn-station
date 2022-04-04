@@ -17,3 +17,16 @@
 	nature = MODIFICATION_SILICON
 	matter = list(MATERIAL_STEEL = 1)
 	organ_efficiency = list(OP_BLOOD_VESSEL = 100)
+
+/obj/item/organ/internal/blood_vessel/extensive
+	name = "extensive blood vessels"
+	icon_state = "blood_vessel_extensive"
+	price_tag = 150
+	oxygen_req = 2
+	organ_efficiency = list(OP_BLOOD_VESSEL = 150)
+	specific_organ_size = 0.6
+
+
+/obj/item/organ/internal/blood_vessel/extensive/exalt
+	name = "Exalt blood vessels"
+	desc = "Genetically Improved blood vessels for pumping only the most blue of blood."

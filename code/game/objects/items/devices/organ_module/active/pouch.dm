@@ -5,4 +5,4 @@
 	icon_state = "medium_opifex"
 	matter = list(MATERIAL_BIO = 8, MATERIAL_STEEL = 4)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/storage/pouch/medium_generic/opifex
+	holding_type = /obj/item/storage/pouch/medium_generic/opifex

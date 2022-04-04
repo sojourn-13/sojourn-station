@@ -54,7 +54,7 @@ var/list/mob_hat_cache = list()
 	var/mail_destination = ""
 	var/obj/machinery/drone_fabricator/master_fabricator
 	var/law_type = /datum/ai_laws/drone
-	var/module_type = /obj/item/weapon/robot_module/drone
+	var/module_type = /obj/item/robot_module/drone
 	var/obj/item/hat
 	var/hat_x_offset = 0
 	var/hat_y_offset = -13
@@ -62,7 +62,7 @@ var/list/mob_hat_cache = list()
 	var/armguard = ""
 	var/communication_channel = LANGUAGE_DRONE
 	var/station_drone = TRUE
-	holder_type = /obj/item/weapon/holder/drone
+	holder_type = /obj/item/holder/drone
 
 /mob/living/silicon/robot/drone/can_be_possessed_by(var/mob/observer/ghost/possessor)
 	if(!istype(possessor) || !possessor.client || !possessor.ckey)
@@ -101,7 +101,7 @@ var/list/mob_hat_cache = list()
 /mob/living/silicon/robot/drone/construction
 	icon_state = "constructiondrone"
 	law_type = /datum/ai_laws/construction_drone
-	module_type = /obj/item/weapon/robot_module/drone/construction
+	module_type = /obj/item/robot_module/drone/construction
 	hat_x_offset = 1
 	hat_y_offset = -12
 //	can_pull_size = ITEM_SIZE_HUGE Soj chnge, same as base
@@ -188,7 +188,7 @@ var/list/mob_hat_cache = list()
 	updateicon()
 
 //Drones cannot be upgraded with borg modules so we need to catch some items before they get used in ..().
-/mob/living/silicon/robot/drone/attackby(var/obj/item/weapon/W, var/mob/user)
+/mob/living/silicon/robot/drone/attackby(var/obj/item/W, var/mob/user)
 
 	if(user.a_intent == I_HELP && istype(W, /obj/item/clothing/head))
 		if(hat)
@@ -202,7 +202,7 @@ var/list/mob_hat_cache = list()
 		to_chat(user, SPAN_DANGER("\The [src] is not compatible with \the [W]."))
 		return
 
-	else if (istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/modular_computer))
+	else if (istype(W, /obj/item/card/id)||istype(W, /obj/item/modular_computer))
 
 		if(stat == 2)
 
@@ -286,7 +286,7 @@ var/list/mob_hat_cache = list()
 //Drones killed by damage will gib.
 /mob/living/silicon/robot/drone/handle_regular_status_updates()
 	var/turf/T = get_turf(src)
-	if((!T || health <= -maxHealth) && src.stat != DEAD)
+	if((!T || health <= 0) && src.stat != DEAD)
 		timeofdeath = world.time
 		death() //Possibly redundant, having trouble making death() cooperate.
 		gib()
@@ -324,7 +324,9 @@ var/list/mob_hat_cache = list()
 //Reboot procs.
 
 /mob/living/silicon/robot/drone/proc/we_live_again(var/mob/living/silicon/robot/R) //we shall live again!
-	..() //Can never go wrong with one of these!
+	//..() //Can never go wrong with one of these!
+	//Hex: Yes you can! STOP MAKING LINTER CHAN CRY!
+
 	R.stat = CONSCIOUS //We live again!
 	GLOB.dead_mob_list -= R //Were not dead...
 	GLOB.living_mob_list |= R //Were infact alive

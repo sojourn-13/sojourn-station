@@ -9,7 +9,7 @@
 /obj/item/device/t_scanner
 	name = "\improper T-ray scanner"
 	desc = "A terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes."
-	icon_state = "t-ray0"
+	icon_state = "t-ray"
 	slot_flags = SLOT_BELT
 	w_class = ITEM_SIZE_SMALL
 	item_state = "electronic"
@@ -19,14 +19,17 @@
 
 	//Scan range can be changed, and the power costs scale up with it
 	var/scan_range = 1
+	var/icon_swap_to_old = TRUE
 
 	//TODO: Make devices have cell support as an inherent behaviour
-	var/obj/item/weapon/cell/cell = null
-	var/suitable_cell = /obj/item/weapon/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 	var/active_power_usage = 25 //Watts
 
 	var/turn_on_sound = 'sound/effects/Custom_flashlight.ogg'
 
+	//Advanced T-rays can find hidden stashes and boxes
+	var/advanced = FALSE
 	/*Enabled and active are seperate things.
 	Enabled determines the power status. Is the scanner turned on or not?
 	The scanner is enabled as long as it has power, and the power switch is turned on. While enabled it will use power
@@ -51,6 +54,35 @@
 	var/datum/event_source //When listening for movement, this is the source we're listening to
 	var/mob/current_user //The last mob who interacted with us. We'll try to fetch the client from them
 
+/obj/item/device/t_scanner/advanced
+	name = "\improper High-Power T-ray scanner"
+	desc = "A terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes. This one scans deeper and more clearly showing hidden storage objects."
+	advanced = TRUE
+	active_power_usage = 75 //3x the Watts of a normal one
+	icon_swap_to_old = FALSE // We start looking soj fancy
+
+/obj/item/device/t_scanner/verb/toggle_style()
+	set name = "Adjust Sprite"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default eris"] = TRUE
+	options["default sojourn"] = FALSE
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_swap_to_old = options[choice]
+		to_chat(M, "You adjusted your t-ray scanner's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/device/t_scanner/get_cell()
 	return cell
@@ -61,8 +93,24 @@
 		cell = null
 		update_icon()
 
+/obj/item/device/t_scanner/New()
+	..()
+	update_icon()
+
 /obj/item/device/t_scanner/update_icon()
-	icon_state = "t-ray[enabled]"
+	var/iconstring = initial(icon_state)
+
+	if (!icon_swap_to_old)
+		iconstring = "t-ray"
+	else
+		iconstring = "t-ray_alt"
+
+	if (enabled)
+		iconstring += "1"
+	else
+		iconstring += "0"
+
+	icon_state = iconstring
 
 /******************************************************
 	CORE FUNCTIONALITY: SCANNING AND DRAWING OVERLAYS
@@ -142,7 +190,11 @@ are technically visible but obscured, for example by catwalks or trash sitting o
 				continue
 			if(!O.invisibility && !O.hides_under_flooring())
 				continue //if it's already visible don't need an overlay for it
+			//Hiding contraband just got a lot easyer >:D, and stashes. Still can see the skull and bones tho on many spawns of stashs
+			if(istype(O, /obj/item/storage) && !advanced)
+				continue
 			. += O
+
 
 
 
@@ -152,7 +204,7 @@ are technically visible but obscured, for example by catwalks or trash sitting o
 ***************************************/
 /obj/item/device/t_scanner/attack_self(mob/user)
 	set_user(user)
-	ui_interact(user)
+	nano_ui_interact(user)
 	//set_enabled(!enabled)
 
 /obj/item/device/t_scanner/New()
@@ -168,7 +220,7 @@ are technically visible but obscured, for example by catwalks or trash sitting o
 	if (loc == M)
 		set_enabled(!enabled)
 
-/obj/item/device/t_scanner/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/item/device/t_scanner/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	// this is the data which will be sent to the ui
 	var/data[0]
 	data["enabled"] = enabled ? 1 : 0
@@ -204,7 +256,7 @@ are technically visible but obscured, for example by catwalks or trash sitting o
 	playsound(loc, 'sound/machines/machine_switch.ogg', 40, 1, -2)
 	add_fingerprint(usr)
 	spawn()
-		ui_interact(usr)
+		nano_ui_interact(usr)
 
 
 /obj/item/device/t_scanner/examine(var/mob/user)

@@ -92,8 +92,11 @@
 	src.health -= damage*0.2
 	spawn(0) healthCheck() //spawn to make sure we return properly if the grille is deleted
 
-/obj/structure/grille/attackby(obj/item/weapon/I, mob/user)
-
+/obj/structure/grille/attackby(obj/item/I, mob/user)
+	if(user.a_intent == I_HELP && istype(I, /obj/item/gun))
+		var/obj/item/gun/G = I
+		G.gun_brace(user, src)
+		return
 	var/list/usable_qualities = list(QUALITY_WIRE_CUTTING)
 	if(anchored)
 		usable_qualities.Add(QUALITY_SCREW_DRIVING)
@@ -214,11 +217,20 @@
 	..()
 
 /obj/structure/grille/attack_generic(var/mob/user, var/damage, var/attack_verb)
-	visible_message(SPAN_DANGER("[user] [attack_verb] the [src]!"))
-	attack_animation(user)
-	health -= damage
-	spawn(1) healthCheck()
-	return 1
+	if(istype(user))
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.do_attack_animation(src)
+		visible_message(SPAN_DANGER("[user] smashes into [src]!"))
+		take_damage(damage)
+		return 1
+
+/obj/structure/grille/proc/take_damage(amount)
+	health -= amount
+	if(health <= 0)
+		visible_message(SPAN_WARNING("\The [src] breaks down!"))
+		playsound(loc, 'sound/effects/grillehit.ogg', 50, 1)
+		new /obj/item/stack/rods(get_turf(usr))
+		qdel(src)
 
 /obj/structure/grille/hitby(AM as mob|obj)
 	..()

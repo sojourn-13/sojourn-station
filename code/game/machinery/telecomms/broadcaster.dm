@@ -18,7 +18,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 	machinetype = 5
 	produces_heat = 0
 	delay = 7
-	circuit = /obj/item/weapon/circuitboard/telecomms/broadcaster
+	circuit = /obj/item/circuitboard/telecomms/broadcaster
 
 /obj/machinery/telecomms/broadcaster/receive_information(datum/signal/signal, obj/machinery/telecomms/machine_from)
 	// Don't broadcast rejected signals
@@ -265,7 +265,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 	var/list/heard_gibberish= list() // completely screwed over message (ie "F%! (O*# *#!<>&**%!")
 
 	for (var/mob/R in receive)
-
+		SEND_SIGNAL(radio, COMSIG_MESSAGE_RECEIVED, R)
 	  /* --- Loop through the receivers and categorize them --- */
 		if(isnewplayer(R)) // we don't want new players to hear messages. rare but generates runtimes.
 			continue
@@ -422,7 +422,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 	if(data == 1)
 		for (var/obj/item/device/radio/intercom/R in connection.devices["[RADIO_CHAT]"])
 			var/turf/position = get_turf(R)
-			if(position && position.z in levels)
+			if(position && (position.z in levels))
 				receive |= R.send_hear(display_freq, position.z)
 
 
@@ -434,7 +434,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 			if(istype(R, /obj/item/device/radio/headset))
 				continue
 			var/turf/position = get_turf(R)
-			if(position && position.z in levels)
+			if(position && (position.z in levels))
 				receive |= R.send_hear(display_freq)
 
 
@@ -445,7 +445,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 			var/datum/radio_frequency/antag_connection = SSradio.return_frequency(freq)
 			for (var/obj/item/device/radio/R in antag_connection.devices["[RADIO_CHAT]"])
 				var/turf/position = get_turf(R)
-				if(position && position.z in levels)
+				if(position && (position.z in levels))
 					receive |= R.send_hear(freq)
 
 
@@ -454,7 +454,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 	else
 		for (var/obj/item/device/radio/R in connection.devices["[RADIO_CHAT]"])
 			var/turf/position = get_turf(R)
-			if(position && position.z in levels)
+			if(position && (position.z in levels))
 				receive |= R.send_hear(display_freq)
 
 

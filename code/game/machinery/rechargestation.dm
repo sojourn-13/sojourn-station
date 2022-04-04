@@ -7,9 +7,9 @@
 	anchored = 1
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 50
-	circuit = /obj/item/weapon/circuitboard/recharge_station
+	circuit = /obj/item/circuitboard/recharge_station
 	var/mob/occupant = null
-	var/obj/item/weapon/cell/large/cell = null
+	var/obj/item/cell/large/cell = null
 	var/icon_update_tick = 0	// Used to rebuild the overlay only once every 10 ticks
 	var/charging = 0
 	var/efficiency = 0.9
@@ -26,12 +26,33 @@
 
 /obj/machinery/recharge_station/Initialize()
 	. = ..()
+	RefreshParts()
+	update_icon()
+
+/obj/machinery/recharge_station/robotics
+
+/obj/machinery/recharge_station/robotics/Initialize()
+	. = ..()
 	component_parts = list()
-	component_parts += new /obj/item/weapon/stock_parts/capacitor/super(null)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator/pico(null)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator/pico(null)
-	component_parts += new /obj/item/weapon/stock_parts/capacitor/super(null)
-	component_parts += new /obj/item/weapon/cell/large/moebius(null)
+	component_parts += new /obj/item/stock_parts/capacitor/super(null)
+	component_parts += new /obj/item/stock_parts/manipulator/pico(null)
+	component_parts += new /obj/item/stock_parts/manipulator/pico(null)
+	component_parts += new /obj/item/stock_parts/capacitor/super(null)
+	component_parts += new /obj/item/cell/large/moebius/super(null) //has better cell do to being for robotics
+	component_parts += new /obj/item/stack/cable_coil{amount = 5}(null)
+	RefreshParts()
+	update_icon()
+
+/obj/machinery/recharge_station/upgraded_t_three
+
+/obj/machinery/recharge_station/upgraded_t_three/Initialize()
+	. = ..()
+	component_parts = list()
+	component_parts += new /obj/item/stock_parts/capacitor/super(null)
+	component_parts += new /obj/item/stock_parts/manipulator/pico(null)
+	component_parts += new /obj/item/stock_parts/manipulator/pico(null)
+	component_parts += new /obj/item/stock_parts/capacitor/super(null)
+	component_parts += new /obj/item/cell/large/moebius(null)
 	component_parts += new /obj/item/stack/cable_coil{amount = 5}(null)
 	RefreshParts()
 	update_icon()
@@ -146,12 +167,12 @@
 	var/man_rating = 0
 	var/cap_rating = 0
 
-	for(var/obj/item/weapon/stock_parts/P in component_parts)
-		if(istype(P, /obj/item/weapon/stock_parts/capacitor))
+	for(var/obj/item/stock_parts/P in component_parts)
+		if(istype(P, /obj/item/stock_parts/capacitor))
 			cap_rating += P.rating
-		if(istype(P, /obj/item/weapon/stock_parts/manipulator))
+		if(istype(P, /obj/item/stock_parts/manipulator))
 			man_rating += P.rating
-	cell = locate(/obj/item/weapon/cell/large) in component_parts
+	cell = locate(/obj/item/cell/large) in component_parts
 
 	charging_power = 40000 + 40000 * cap_rating
 	restore_power_active = 10000 + 15000 * cap_rating
@@ -274,12 +295,12 @@
 	name = "cyborg auto-repair platform"
 	desc = "An automated repair system, designed to repair drones and cyborgs that stand on it."
 	icon = 'icons/mecha/mech_bay.dmi'
-	icon_state = "recharge_floor"
+	icon_state = "recharge_floor_robotic"
 	anchored = TRUE
 	density = FALSE
 	layer = TURF_LAYER + 0.1
 
-	circuit = /obj/item/weapon/circuitboard/repair_station
+	circuit = /obj/item/circuitboard/repair_station
 
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 4
@@ -311,12 +332,14 @@
 
 /obj/machinery/repair_station/RefreshParts()
 	..()
+	idle_power_usage = initial(idle_power_usage)
+	active_power_usage = initial(active_power_usage)
 	var/manip_level = 1
 	var/scan_level = 1
-	for(var/obj/item/weapon/stock_parts/P in component_parts)
-		if(istype(P, /obj/item/weapon/stock_parts/scanning_module))
+	for(var/obj/item/stock_parts/P in component_parts)
+		if(istype(P, /obj/item/stock_parts/scanning_module))
 			scan_level += P.rating-1
-		if(istype(P, /obj/item/weapon/stock_parts/manipulator))
+		if(istype(P, /obj/item/stock_parts/manipulator))
 			manip_level += P.rating-1
 
 	repair_rate = initial(repair_rate)+(manip_level*max(1, scan_level/2))
@@ -388,7 +411,7 @@
 	repairing = null
 	update_use_power(IDLE_POWER_USE)
 
-/obj/machinery/repair_station/attackby(var/obj/item/weapon/O, var/mob/user)
+/obj/machinery/repair_station/attackby(var/obj/item/O, var/mob/user)
 
 	if(default_deconstruction(O, user))
 		return

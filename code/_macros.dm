@@ -59,21 +59,21 @@
 
 #define isitem(A) istype(A, /obj/item)
 
-#define istool(A) istype(A, /obj/item/weapon/tool)
+#define istool(A) istype(A, /obj/item/tool)
 
-#define isWrench(A) istype(A, /obj/item/weapon/tool/wrench)
+#define isWrench(A) istype(A, /obj/item/tool/wrench)
 
-#define isWelder(A) istype(A, /obj/item/weapon/tool/weldingtool)
+#define isWelder(A) istype(A, /obj/item/tool/weldingtool)
 
 #define isCoil(A) istype(A, /obj/item/stack/cable_coil)
 
-#define isWirecutter(A) istype(A, /obj/item/weapon/tool/wirecutters)
+#define isWirecutter(A) istype(A, /obj/item/tool/wirecutters)
 
-#define isScrewdriver(A) istype(A, /obj/item/weapon/tool/screwdriver)
+#define isScrewdriver(A) istype(A, /obj/item/tool/screwdriver)
 
-#define isMultitool(A) istype(A, /obj/item/weapon/tool/multitool)
+#define isMultitool(A) istype(A, /obj/item/tool/multitool)
 
-#define isCrowbar(A) istype(A, /obj/item/weapon/tool/crowbar)
+#define isCrowbar(A) istype(A, /obj/item/tool/crowbar)
 
 #define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
 
@@ -153,9 +153,9 @@
 
 #define RANDOM_BLOOD_TYPE pick(4;"O-", 36;"O+", 3;"A-", 28;"A+", 1;"B-", 20;"B+", 1;"AB-", 5;"AB+")
 
-#define MAP_IMAGE_PATH "nano/images/[maps_data.path]/"
+#define MAP_IMAGE_PATH "nano/images/[GLOB.maps_data.path]/"
 
-#define map_image_file_name(z_level) "[maps_data.path]-[z_level].png"
+#define map_image_file_name(z_level) "[GLOB.maps_data.path]-[z_level].png"
 
 #define QDEL_NULL_LIST(x) if(x) { for(var/y in x) { qdel(y) } ; x = null }
 

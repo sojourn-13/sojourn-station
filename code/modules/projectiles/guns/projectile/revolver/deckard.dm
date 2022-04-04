@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/revolver/deckard
+/obj/item/gun/projectile/revolver/deckard
 	name = "\"Deckard\" heavy revolver"
 	desc = "A rare, custom-built revolver formerly used on Sol by early Turing Police. Use when there is no time for the Voight-Kampff test. Uses .50 Kurtz."
 	icon = 'icons/obj/guns/projectile/deckard.dmi'
@@ -14,4 +14,4 @@
 	one_hand_penalty = 10
 	zoom_factor = 0.4
 	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)

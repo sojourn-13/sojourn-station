@@ -8,7 +8,9 @@
 
 	//No changes.
 
-/*#define FORM_HUMAN				"Human"
+/*
+#define FORM_EXALT_HUMAN		"Exalt Human"
+#define FORM_HUMAN				"Human"
 #define FORM_CANINE				"Canine"
 #define FORM_SHARK				"Shark"
 #define FORM_LIZARD				"Lizard"
@@ -28,6 +30,12 @@
 	damage_overlays
 	damage_mask
 	blood_mask*/
+/datum/species_form/exalt
+	name = FORM_EXALT_HUMAN
+	base = 'icons/mob/human_races/r_human_white.dmi'
+	deform = 'icons/mob/human_races/r_def_human_white.dmi'
+	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR | HAS_SKIN_COLOR
+	playable = TRUE
 
 /datum/species_form/canine
 	playable = TRUE
@@ -116,7 +124,6 @@
 	deform = null
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
 
-
 /datum/species_form/stationxeno
 	playable = FALSE
 	name = FORM_STATIONXENO
@@ -203,7 +210,7 @@
 	blood_color = "#191919"
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
-	appearance_flags = HAS_UNDERWEAR
+	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR
 	death_sound = 'sound/machines/shutdown.ogg'
 	death_message = "falls over crashing to the ground as their electronic eyes fade off."
 	knockout_message = "has been knocked offline!"
@@ -216,7 +223,7 @@
 	blood_color = "#191919"
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
-	appearance_flags = HAS_UNDERWEAR
+	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR
 	death_sound = 'sound/machines/shutdown.ogg'
 	death_message = "falls over crashing to the ground as their electronic eyes fade off."
 	knockout_message = "has been knocked offline!"
@@ -229,7 +236,7 @@
 	blood_color = "#191919"
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
-	appearance_flags = HAS_UNDERWEAR
+	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR
 	death_sound = 'sound/machines/shutdown.ogg'
 	death_message = "falls over crashing to the ground as their electronic eyes fade off."
 	knockout_message = "has been knocked offline!"
@@ -242,7 +249,20 @@
 	blood_color = "#191919"
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
-	appearance_flags = HAS_UNDERWEAR
+	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR
+	death_sound = 'sound/machines/shutdown.ogg'
+	death_message = "falls over crashing to the ground as their electronic eyes fade off."
+	knockout_message = "has been knocked offline!"
+	halloss_message = "falls down with a loud clash and seems to be unresponsive."
+	halloss_message_self = "Your systems are rebooting after an overload."
+
+/datum/species_form/nashef_synthetic
+	playable = FALSE
+	name = FORM_NASHEF
+	blood_color = "#191919"
+	base = 'icons/mob/human_races/r_human_white.dmi'
+	deform = 'icons/mob/human_races/r_def_human_white.dmi'
+	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR
 	death_sound = 'sound/machines/shutdown.ogg'
 	death_message = "falls over crashing to the ground as their electronic eyes fade off."
 	knockout_message = "has been knocked offline!"
@@ -256,9 +276,57 @@
 	colorable = TRUE
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
-	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR | HAS_SKIN_TONE
 	death_sound = 'sound/machines/shutdown.ogg'
 	death_message = "falls over crashing to the ground as their electronic eyes fade off."
 	knockout_message = "has been knocked offline!"
 	halloss_message = "falls down with a loud clash and seems to be unresponsive."
 	halloss_message_self = "Your systems are rebooting after an overload."
+
+/datum/species_form/unbranded_synth
+	playable = FALSE
+	name = FORM_UNBRANDED
+	blood_color = "#191919"
+	colorable = TRUE
+	base = 'icons/mob/human_races/r_human_white.dmi'
+	deform = 'icons/mob/human_races/r_def_human_white.dmi'
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR | HAS_SKIN_TONE
+	death_sound = 'sound/machines/shutdown.ogg'
+	death_message = "falls over crashing to the ground as their electronic eyes fade off."
+	knockout_message = "has been knocked offline!"
+	halloss_message = "falls down with a loud clash and seems to be unresponsive."
+	halloss_message_self = "Your systems are rebooting after an overload."
+
+/datum/species_form/folken
+	playable = FALSE
+	name = FORM_FOLKEN
+	base = 'icons/mob/human_races/r_folken.dmi'
+	deform = null
+	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR | HAS_SKIN_COLOR
+
+/datum/species_form/mycus
+	playable = FALSE
+	name = FORM_MYCUS
+	base = 'icons/mob/human_races/r_mycus.dmi'
+	deform = null
+	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR | HAS_SKIN_COLOR
+
+/datum/species_form/axolotl
+	playable = TRUE
+	name = FORM_AXOLOTL
+	base = 'icons/mob/human_races/r_axolotl_white.dmi'
+	deform = null
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+
+/datum/species_form/slime
+	name = FORM_SLIME
+	base = 'icons/mob/human_races/r_slime.dmi'
+	deform = 'icons/mob/human_races/r_slime.dmi'
+	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR | HAS_SKIN_COLOR
+	playable = FALSE
+
+	blood_color = "#05FF9B"
+	flesh_color = "#05FFFB"
+
+	remains_type = /obj/effect/decal/cleanable/ash // TODO : Better remains
+	death_message = "rapidly loses cohesion, splattering across the ground..."

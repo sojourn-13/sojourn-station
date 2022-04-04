@@ -12,13 +12,13 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 		TECH_ENGINEERING = 300,
 		TECH_PLASMA = 600, //Harder to get in higher levels, Rnd gets 2-3-4
 		TECH_POWER = 350,
-		TECH_BLUESPACE = 1000,
+		TECH_BLUESPACE = 750,
 		TECH_BIO = 350,
-		TECH_COMBAT = 550,
+		TECH_COMBAT = 500,
 		TECH_MAGNET = 350,
 		TECH_DATA = 450,
-		TECH_ILLEGAL = 5000,
-	)
+		TECH_ILLEGAL = 3500,
+	) //Ideally rnd DA should get you most things with right items well harder to get items like end nodes would require disks you buy/get or doing subdepartments
 
 	// So we don't give points for researching non-artifact item
 	var/static/list/artifact_types = list(
@@ -33,6 +33,9 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	var/list/saved_tech_levels = list() // list("materials" = list(1, 4, ...), ...)
 	var/list/saved_autopsy_weapons = list()
 	var/list/saved_artifacts = list()
+	var/list/saved_odd_matter = list()
+	var/list/saved_really_old = list()
+	var/list/saved_rock_aged = list()
 	var/list/saved_symptoms = list()
 	var/list/saved_slimecores = list()
 	var/list/saved_fruituid = list()
@@ -54,32 +57,32 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	// Points for special slime cores
 	var/static/list/core_points = list(
 		//Level 0 - Gray
-		/obj/item/slime_extract/grey = 500,
+		/obj/item/slime_extract/grey = 3000,
 		//Level 1
-		/obj/item/slime_extract/metal = 750,
-		/obj/item/slime_extract/purple = 750,
-		/obj/item/slime_extract/orange = 750,
-		/obj/item/slime_extract/blue = 750,
+		/obj/item/slime_extract/metal = 4500,
+		/obj/item/slime_extract/purple = 4500,
+		/obj/item/slime_extract/orange = 4500,
+		/obj/item/slime_extract/blue = 4500,
 		//Level 2
-		/obj/item/slime_extract/yellow = 1000,
-		/obj/item/slime_extract/red = 1000,
-		/obj/item/slime_extract/darkpurple = 1000,
-		/obj/item/slime_extract/silver = 1000,
-		/obj/item/slime_extract/gold = 1000,
-		/obj/item/slime_extract/darkblue = 1000,
-		/obj/item/slime_extract/pink = 1000,
-		/obj/item/slime_extract/green = 1000,
+		/obj/item/slime_extract/yellow = 5750,
+		/obj/item/slime_extract/red = 5750,
+		/obj/item/slime_extract/darkpurple = 5750,
+		/obj/item/slime_extract/silver = 5750,
+		/obj/item/slime_extract/gold = 5750,
+		/obj/item/slime_extract/darkblue = 5750,
+		/obj/item/slime_extract/pink = 5750,
+		/obj/item/slime_extract/green = 5750,
 		//Level 3
-		/obj/item/slime_extract/black = 1250,
-		/obj/item/slime_extract/lightpink = 1250,
-		/obj/item/slime_extract/oil = 1250,
-		/obj/item/slime_extract/adamantine = 1250,
+		/obj/item/slime_extract/black = 7500,
+		/obj/item/slime_extract/lightpink = 7500,
+		/obj/item/slime_extract/oil = 7500,
+		/obj/item/slime_extract/adamantine = 7500,
 		//Fancy/Rare
-		/obj/item/slime_extract/pyrite = 5000,
-		/obj/item/slime_extract/cerulean = 5000,
-		/obj/item/slime_extract/sepia = 5000,
-		/obj/item/slime_extract/bluespace = 7500,
-		/obj/item/slime_extract/rainbow = 15000
+		/obj/item/slime_extract/pyrite = 10000,
+		/obj/item/slime_extract/cerulean = 10000,
+		/obj/item/slime_extract/sepia = 10000,
+		/obj/item/slime_extract/bluespace = 15000,
+		/obj/item/slime_extract/rainbow = 25000 //Lots of work for basiclly 1/4th of what RnD can do with a bit of metal
 	)
 
 /*
@@ -101,7 +104,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 				item_tech_points += temp_tech[T] * tech_points[T]
 			else
 				if(saved_tech_levels[T] && (temp_tech[T] in saved_tech_levels[T])) // You only get a fraction of points if you researched items with this level already
-					if(istype(I,/obj/item/weapon/circuitboard) || istype(I,/obj/item/integrated_circuit)) //Boards and ciruits are cheap and spamable to make
+					if(istype(I,/obj/item/circuitboard) || istype(I,/obj/item/integrated_circuit)) //Boards and ciruits are cheap and spamable to make
 						item_tech_points += temp_tech[T] * tech_points[T] * 0
 					else
 						item_tech_points += temp_tech[T] * tech_points[T] * 0.1
@@ -195,10 +198,37 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	for(var/traitname in I.scanned_fruittraits)
 		if (traitname in saved_fruittraits)
 			continue
-		var/ given = rand (1500,2500)
+		var/given = rand (1500,2500)
 		saved_fruittraits += traitname
 		points += given
 
+		////////////////////////////////////////// ROCK DATA
+
+
+	for(var/odd_matter in I.scanned_odd_matter)
+		if(odd_matter in saved_odd_matter)
+			continue
+
+		var/given = rand (3000,3500) //Really odd data!
+		if(odd_matter in odd_matter)
+			points = given
+
+		points += given
+		saved_odd_matter += odd_matter
+
+	for(var/really_old in I.scanned_really_old)
+		if (really_old in saved_really_old)
+			continue
+		var/given = rand (4000,5000) //Really odd data
+		saved_odd_matter += really_old
+		points += given
+
+	for(var/rock_aged in I.scanned_rock_aged)
+		if (rock_aged in saved_rock_aged)
+			continue
+		var/given = rand (2000,3000) //Old rocks
+		saved_rock_aged += rock_aged
+		points += given
 
 	I.clear_data()
 	return round(points)
@@ -237,6 +267,14 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	desc = "Scans the level of kinetic energy from explosions. This beacon, is in fact bomb proof and to use it properly you must use the bomb within 10 tiles of this scanner."
 
 	channels = list("Science" = 1)
+	var/targetBoom
+	var/stored_points //This is how many points we hve stored, we use them up when successfull
+
+/obj/item/device/radio/beacon/explosion_watcher/examine()
+	..()
+	to_chat(usr, "EXPECTED EXPLOSION - [targetBoom]")
+	to_chat(usr, "Points Left - [stored_points]")
+	return
 
 /obj/item/device/radio/beacon/explosion_watcher/ex_act(severity)
 	return
@@ -244,6 +282,8 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 /obj/item/device/radio/beacon/explosion_watcher/Initialize()
 	. = ..()
 	GLOB.explosion_watcher_list += src
+	targetBoom = rand(10,35)
+	stored_points = 250000 //6.1 perfect bombs
 
 /obj/item/device/radio/beacon/explosion_watcher/Destroy()
 	GLOB.explosion_watcher_list -= src
@@ -252,24 +292,27 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 /obj/item/device/radio/beacon/explosion_watcher/proc/react_explosion(turf/epicenter, power)
 	power = round(power)
 	var/calculated_research_points = -1
-	for(var/obj/machinery/computer/rdconsole/RD in SSmachines.machinery)
+	for(var/obj/machinery/computer/rdconsole/RD in GLOB.computer_list)
 		if(RD.id == 1) // only core gets the science
-			var/saved_power_level = RD.files.experiments.saved_best_explosion
+			var missed
 
-			var/added_power = max(0, power - saved_power_level)
-			var/already_earned_power = min(saved_power_level, power)
+			missed = abs(power-targetBoom) * 8000 // each step away from the target will result in 8,000 points less, this is a range of 11.
+			if(stored_points >= 40000)
+				calculated_research_points = max(0,40000 - missed)
+			else
+				calculated_research_points = max(0,stored_points - missed)
 
-			calculated_research_points = added_power * 500 + already_earned_power * 200
 
-			if(power > saved_power_level)
-				RD.files.experiments.saved_best_explosion = power
+			stored_points -= calculated_research_points
+			RD.files.adjust_research_points(calculated_research_points)
 
-			RD.files.research_points += calculated_research_points
-
-	if(calculated_research_points > 0)
-		autosay("Detected explosion with power level [power], received [calculated_research_points] research points", name ,"Science")
+	if(calculated_research_points > 0 && stored_points)
+		autosay("Detected explosion with power level [power]. Expected explosion was [targetBoom]. Received [calculated_research_points] Research Points", name ,"Science")
+	if(0 >= stored_points)
+		autosay("Detected explosion with power level [power]. Expected explosion was [targetBoom]. No Additional Data Points Able To Gather", name ,"Science")
 	else
-		autosay("Detected explosion with power level [power], R&D console is missing or broken", name ,"Science")
+		autosay("Detected explosion with power level [power], Expected explosion was [targetBoom]. Test Results Outside Expected Range", name ,"Science")
+	targetBoom = rand(10,35)
 
 // Universal tool to get research points from autopsy reports, virus info reports, archeology reports, slime cores
 /obj/item/device/science_tool
@@ -287,14 +330,23 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	origin_tech = list(TECH_ENGINEERING = 1, TECH_BIO = 1)
 
 	var/datum/experiment_data/experiments
+	//Autopsy weapon data
 	var/list/scanned_autopsy_weapons = list()
+	//Xenoarch Data
 	var/list/scanned_artifacts = list()
+	var/list/scanned_odd_matter = list()
+	var/list/scanned_really_old = list()
+	var/list/scanned_rock_aged = list()
+	//Viro Data
 	var/list/scanned_symptoms = list()
+	//Slime cores data
 	var/list/scanned_slimecores = list()
+	//Hydro/Plant data
 	var/list/scanned_fruituid = list()
 	var/list/scanned_fruitnames = list()
 	var/list/scanned_fruitchems = list()
 	var/list/scanned_fruittraits = list()
+	//Datablock Data
 	var/datablocks = 0
 
 /obj/item/device/science_tool/Initialize()
@@ -302,7 +354,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	experiments = new
 
 /obj/item/device/science_tool/attack(mob/living/M, mob/living/user)
-	if(!user.stat_check(STAT_COG, STAT_LEVEL_ADEPT))
+	if(!usr.stats?.getPerk(PERK_SI_SCI) || !user.stat_check(STAT_COG, STAT_LEVEL_ADEPT))
 		to_chat(user, SPAN_WARNING("Your cognitive understanding isn't high enough to use this!"))
 		return
 
@@ -311,19 +363,20 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 /obj/item/device/science_tool/afterattack(obj/O, mob/living/user)
 	var/scanneddata = 0
 
-	if(istype(O,/obj/item/weapon/paper/autopsy_report))
-		var/obj/item/weapon/paper/autopsy_report/report = O
+	if(istype(O,/obj/item/paper/autopsy_report))
+		var/obj/item/paper/autopsy_report/report = O
 		for(var/datum/autopsy_data/W in report.autopsy_data)
 			if(!(W.weapon in scanned_autopsy_weapons))
 				scanneddata += 1
 				scanned_autopsy_weapons += W.weapon
 
-	if(istype(O, /obj/item/weapon/paper/artifact_info))
-		var/obj/item/weapon/paper/artifact_info/report = O
+	if(istype(O, /obj/item/paper/artifact_info))
+		var/obj/item/paper/artifact_info/report = O
 		if(report.artifact_type)
 			for(var/list/artifact in scanned_artifacts)
 				if(artifact["type"] == report.artifact_type && artifact["first_effect"] == report.artifact_first_effect && artifact["second_effect"] == report.artifact_second_effect)
 					to_chat(user, SPAN_NOTICE("[src] already has data about this artifact report"))
+					flick("science3", src)
 					return
 
 			scanned_artifacts += list(list(
@@ -333,8 +386,23 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			))
 			scanneddata += 1
 
-	if(istype(O, /obj/item/weapon/paper/virus_report))
-		var/obj/item/weapon/paper/virus_report/report = O
+	if(istype(O, /obj/item/paper/geo_info))
+		var/obj/item/paper/geo_info/rock_report = O
+		for(var/odd_matter in rock_report.odd_matter)
+			if(rock_report.odd_matter)
+				scanned_odd_matter += rock_report.odd_matter
+				scanneddata += 1
+		for(var/really_old in rock_report.really_old)
+			if(rock_report.really_old)
+				scanned_really_old += rock_report.really_old
+				scanneddata += 1
+		for(var/rock_aged in rock_report.rock_aged)
+			if(rock_report.rock_aged)
+				scanned_rock_aged += rock_report.rock_aged
+				scanneddata += 1
+
+	if(istype(O, /obj/item/paper/virus_report))
+		var/obj/item/paper/virus_report/report = O
 		for(var/symptom in report.symptoms)
 			if(!scanned_symptoms[symptom])
 				scanneddata += 1
@@ -345,8 +413,8 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			scanned_slimecores += O.type
 			scanneddata += 1
 
-	if(istype(O, /obj/item/weapon/paper/plant_report))
-		var/obj/item/weapon/paper/plant_report/report = O
+	if(istype(O, /obj/item/paper/plant_report))
+		var/obj/item/paper/plant_report/report = O
 
 		if(!report.scanned_reagents)
 			to_chat(user, SPAN_NOTICE("Can only gather research from fully grown fruit."))
@@ -417,17 +485,23 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	if(scanneddata > 0)
 		datablocks += scanneddata
 		to_chat(user, SPAN_NOTICE("[src] received [scanneddata] data block[scanneddata>1?"s":""] from scanning [O]"))
+		flick("science2", src)
 
 	else if(istype(O, /obj/item))
 		var/science_value = experiments.get_object_research_value(O)
 		if(science_value > 0)
 			to_chat(user, SPAN_NOTICE("Estimated research value of [O.name] is [science_value]"))
+			flick("science2", src)
 		else
 			to_chat(user, SPAN_NOTICE("[O] has no research value"))
+			flick("science3", src)
 
 /obj/item/device/science_tool/proc/clear_data()
 	scanned_autopsy_weapons = list()
 	scanned_artifacts = list()
+	scanned_odd_matter = list()
+	scanned_really_old = list()
+	scanned_rock_aged = list()
 	scanned_symptoms = list()
 	scanned_slimecores = list()
 	scanned_fruitnames = list()
@@ -435,18 +509,50 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	scanned_fruittraits = list()
 	datablocks = 0
 
+/obj/item/computer_hardware/hard_drive/portable/research_points/proc/get_title()
+	var/list/verb_ion = list("exploration", "development", "refinement", "investigation", "analysis", "improvement", "emulation", "simulation", "construction", "evaluation", "deployment", "synthesis", "visualization")
+	var/list/prefixes = list("","[pick(verb_ion)]: ")
+	var/list/suffixes = list("using [pick(verb_ion)]","with [pick(verb_ion)]")
+	var/list/subjects = list("proprioception", "implants", "null space", "AI", "neural networks", "drones", "cyborgs", "human thought", "materiel", "materials", "microgravity", "artificial gravity", "MMIs", "brain death", "system shock", "SSD", "memory transcription", "closed intranets", "internal networks", "bluespace fault tolerance", "bluespace translocation", "firewalls", "ICE", "symmetric encryption", "NTNet", "low-light ecosystems", "algorithms", "systems", "ionospheric anomalies", "mass hallucinations", "human experimentation")
+	var/list/impact = list("impact of", "effect of", "influence of")
+	var/list/verb_ing = list("harnessing", "enabling", "exploring", "controlling", "developing", "refining", "investigating", "improving", "analyzing", "constructing", "simulating", "evaluating", "emulating", "deploying", "synthesizing", "visualizing", "studying")
+	var/list/buzzword_nouns = list("wetware", "technology", "nanotechnology", "communication", "algorithms", "theory", "methodologies", "information", "models", "archetypes", "configurations", "modalities", "symmetries", "epistemologies", "gradients", "plots", "matrices", "manifolds", "methods")
+	var/list/buzzword_adjs = list("n-dimensional", "anomalistic", "parallel", "noisy", "discrete", "exhaustive", "randomized", "pipelined", "critical", "heuristic", "bluespace", "high-throughput", "peer-to-peer", "game-theoretic", "knowledge-based", "relational", "compact", "ubiquitous", "linear-time", "fuzzy", "embedded", "constant-time", "client-server", "efficient", "reliable", "replicated", "low-energy", "omniscient", "wireless", "modular", "autonomous", "introspective", "distributed", "flexible", "extensible", "amphibious", "metamorphic", "ambimorphic", "permutable", "adaptive", "self-learning", "trainable", "smart", "classical", "atomic", "event-driven", "read-write", "encrypted", "highly-available", "secure", "interposable", "cacheable", "perfect", "electronic", "pervasive", "large-scale", "multimodal", "authenticated", "interactive", "heterogeneous", "homogeneous", "collaborative", "concurrent", "probabilistic", "mobile", "semantic", "real-time", "cooperative", "decentralized", "scalable", "certifiable", "robust", "signed", "virtual", "lossless", "psychoacoustic", "empathic", "optimal", "stable", "unstable", "symbiotic", "stochastic", "Monte Carlo", "pseudorandom")
+	var/buzzword_adj_multi = "[pick(buzzword_adjs)], [pick(buzzword_adjs)]"
+	var/list/fields = list("cyanocommunication", "cyanotranslocation", "population control", "psychoanalysis", "networking", "operating systems", "programming languages", "theory", "algorithms", "chaos theory", "artificial intelligence", "machine learning", "robotics", "electrical engineering", "cyborg engineering", "drone fabrication", "cryptography", "cryptanalysis", "cyberinformatics", "steganography", "software engineering", "information control", "memetics")
+	var/list/compare = list("comparing", "contrasting", "the relationship between", pick(verb_ing))
+	var/list/status = list("ethical", "unethical", "harmful", "desirable", "detrimental", "practical", "effective", "beneficial", "crucial", "instrumental")
+	var/list/titles = list("[pick(prefixes)][pick(verb_ion)] of [pick(subjects)]",
+							"on the [pick(verb_ion)] of [pick(subjects)]",
+							"a [pick(verb_ion)] of [pick(subjects)] [pick(suffixes)]",
+							"[pick(subjects)] [pick("","no longer ")]considered [pick(status)] in [pick("","[pick(buzzword_adjs)] ")][pick(fields)]",
+							"deconstructing [pick(subjects)] [pick(suffixes)]",
+							"decoupling [pick(subjects)] from [pick(subjects)] in [pick(subjects)]",
+							"[pick(prefixes)]a methodology for the [pick(verb_ion)] of [pick(subjects)]",
+							"a case [pick("for", "against")] [pick(subjects)]",
+							"[pick(verb_ing)] [pick(subjects)] using [pick(buzzword_adjs)] [pick(buzzword_nouns)]",
+							"[pick(verb_ing)] [pick(subjects)] and [pick(subjects)] [pick(suffixes)]",
+							"[pick(prefixes)][buzzword_adj_multi] [pick(buzzword_nouns)]",
+							"[pick(compare)] [pick(subjects)] and [pick(subjects)] [pick(suffixes)]",
+							"the [pick(impact)] [pick(buzzword_adjs)] [pick(buzzword_nouns)] on [pick("","[pick(buzzword_adjs)] ")][pick(fields)]",
+							"[buzzword_adj_multi] [pick(buzzword_nouns)] for [pick(subjects)]")
+	return capitalize(pick(titles))
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/research_points
-	disk_name = "research data"
+/obj/item/computer_hardware/hard_drive/portable/research_points
+	desc = "A removable disk used to store large amounts of research data."
 	icon_state = "onestar"
 	var/min_points = 2000
 	var/max_points = 10000
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/research_points/install_default_files()
+/obj/item/computer_hardware/hard_drive/portable/research_points/Initialize()
+	disk_name = get_title()
+	. = ..()
+
+/obj/item/computer_hardware/hard_drive/portable/research_points/install_default_files()
 	..()
 	var/datum/computer_file/binary/research_points/F = new(size = rand(min_points / 1000, max_points / 1000))
 	store_file(F)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/research_points/rare
+/obj/item/computer_hardware/hard_drive/portable/research_points/rare
 	min_points = 10000
 	max_points = 20000

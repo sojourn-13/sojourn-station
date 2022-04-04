@@ -8,13 +8,13 @@
 	prescription = TRUE
 	active = FALSE
 	var/tick_cost = 1
-	var/obj/item/weapon/cell/cell = null
-	var/suitable_cell = /obj/item/weapon/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 
 /obj/item/clothing/glasses/powered/Initialize()
 	. = ..()
 	if(!cell && suitable_cell)
-		cell = new /obj/item/weapon/cell/small(src)
+		cell = new /obj/item/cell/small(src)
 
 /obj/item/clothing/glasses/powered/Process()
 	if(active)
@@ -48,7 +48,7 @@
 
 /obj/item/clothing/glasses/powered/science
 	name = "science goggles"
-	desc = "Powered goggles remotely synched with the Research database, allowing you to see the research potential of objects."
+	desc = "These goggles scan the reagents within beakers, displaying them to you!"
 	icon_state = "purple"
 	item_state = "glasses"
 

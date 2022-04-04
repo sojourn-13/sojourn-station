@@ -65,7 +65,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "n" = (
-/obj/machinery/light/floor,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "o" = (
@@ -75,6 +75,7 @@
 "p" = (
 /obj/machinery/power/terminal,
 /obj/structure/catwalk,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "q" = (
@@ -84,36 +85,17 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "r" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict/white_small_edges,
+/obj/effect/floor_decal/industrial/warning,
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "s" = (
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/floor/bluegrid,
 /area/crawler)
-"t" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
 "u" = (
 /obj/machinery/power/smes/buildable,
 /turf/simulated/floor/tiled/techmaint_panels,
-/area/crawler)
-"v" = (
-/obj/effect/floor_decal/industrial/warning,
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
-"w" = (
-/obj/structure/catwalk,
-/obj/machinery/light/floor,
-/turf/simulated/floor/plating/under,
 /area/crawler)
 "x" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -153,7 +135,7 @@
 "E" = (
 /obj/machinery/power/terminal,
 /obj/structure/catwalk,
-/obj/item/weapon/tool_upgrade/augment/cell_mount,
+/obj/item/tool_upgrade/augment/cell_mount,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "M" = (
@@ -186,7 +168,7 @@ a
 c
 j
 Q
-r
+j
 c
 j
 c
@@ -230,7 +212,7 @@ b
 f
 f
 D
-t
+f
 a
 i
 A
@@ -240,9 +222,9 @@ C
 b
 g
 g
+n
 g
-g
-v
+x
 z
 A
 C
@@ -250,7 +232,7 @@ C
 (8,1,1) = {"
 b
 g
-n
+g
 g
 g
 x
@@ -262,7 +244,7 @@ C
 a
 h
 a
-n
+g
 M
 x
 z
@@ -275,7 +257,7 @@ i
 h
 g
 g
-x
+r
 z
 A
 a
@@ -299,7 +281,7 @@ g
 g
 x
 z
-w
+A
 a
 "}
 (13,1,1) = {"

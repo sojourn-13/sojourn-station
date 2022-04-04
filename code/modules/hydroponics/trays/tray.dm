@@ -7,6 +7,8 @@
 	reagent_flags = OPENCONTAINER
 	volume = 100
 
+	blue_ink_tk_blocker = TRUE //Removes bugs with teleportion
+
 	var/mechanical = 1         // Set to 0 to stop it from drawing the alert lights.
 	var/base_name = "tray"
 
@@ -125,7 +127,7 @@
 		)
 
 	var/global/list/potency_reagents = list(
-		"diethylamine" =    2
+		"diethylamine" =    1
 	)
 
 /obj/machinery/portable_atmospherics/hydroponics/AltClick()
@@ -216,7 +218,7 @@
 			if(potency_reagents[R.id])
 				//While I myself would love to see this limit removed, 400 potency bluespace tomato's are a little to powerfull
 				if(seed.get_trait(TRAIT_POTENCY) < 100)
-					seed.set_trait(TRAIT_POTENCY, seed.get_trait(TRAIT_POTENCY) + (potency_reagents[R.id] * reagent_total * 0.5))
+					seed.set_trait(TRAIT_POTENCY, min(100, seed.get_trait(TRAIT_POTENCY) + potency_reagents[R.id] * reagent_total))
 				else
 					seed.set_trait(TRAIT_POTENCY, 100)
 
@@ -252,11 +254,16 @@
 	if(closed_system)
 		if(user) to_chat(user, "You can't harvest from the plant while the lid is shut.")
 		return
-
+/*
+	if(user.stats.getPerk(PERK_MASTER_HERBALIST))
+		yield_mod += 2
+		seed.harvest(user,yield_mod)
+	else
+*/
 	if(user)
 		seed.harvest(user,yield_mod)
 	else
-		seed.harvest(get_turf(src),yield_mod)
+		seed.selfharvest(get_turf(src),yield_mod)
 	// Reset values.
 	harvest = 0
 	lastproduce = age
@@ -323,7 +330,7 @@
 			if (seed.evolutions && seed.evolutions.len)
 				for(var/rid in seed.evolutions)
 
-					var/list/checkEvoChems = seed.evolutions[rid].Copy()
+					var/list/checkEvoChems = seed.evolutions[rid]?:Copy()
 
 					if (checkEvoChems ~= (checkEvoChems & seed.chems))
 						evolve_species(rid)
@@ -528,9 +535,9 @@
 	if (I.is_drainable())
 		return 0
 
-	else if(istype(I, /obj/item/weapon/reagent_containers/syringe))
+	else if(istype(I, /obj/item/reagent_containers/syringe))
 
-		var/obj/item/weapon/reagent_containers/syringe/S = I
+		var/obj/item/reagent_containers/syringe/S = I
 
 		if (S.mode == 1)
 			if(seed)
@@ -574,19 +581,24 @@
 		else
 			to_chat(user, SPAN_DANGER("\The [src] already has seeds in it!"))
 
-	else if (istype(I, /obj/item/weapon/storage/bag/produce))
+	else if (istype(I, /obj/item/storage/bag/produce))
 
 		attack_hand(user)
 
-		var/obj/item/weapon/storage/bag/produce/S = I
-		for (var/obj/item/weapon/reagent_containers/food/snacks/grown/G in locate(user.x,user.y,user.z))
+		var/obj/item/storage/bag/produce/S = I
+		var/at_least_one = FALSE
+		for (var/obj/item/reagent_containers/food/snacks/grown/G in locate(user.x,user.y,user.z))
 			if(!S.can_be_inserted(G))
 				return
-			S.handle_item_insertion(G, 1)
+			if(!at_least_one)
+				at_least_one = TRUE
+			S.handle_item_insertion(G, suppress_warning = TRUE)
+		if(at_least_one)
+			to_chat(usr, SPAN_NOTICE("You put an assortment of produce in \the [I]."))
 
-	else if ( istype(I, /obj/item/weapon/plantspray) )
+	else if ( istype(I, /obj/item/plantspray) )
 
-		var/obj/item/weapon/plantspray/spray = I
+		var/obj/item/plantspray/spray = I
 		user.remove_from_mob(I)
 		toxins += spray.toxicity
 		pestlevel -= spray.pest_kill_str
@@ -596,7 +608,7 @@
 		qdel(I)
 		check_health()
 
-	else if(istype(I, /obj/item/weapon/tool/multitool))
+	else if(istype(I, /obj/item/tool/multitool))
 		if(!anchored)
 			to_chat(user, "<span class='warning'>Anchor it first!</span>")
 			return

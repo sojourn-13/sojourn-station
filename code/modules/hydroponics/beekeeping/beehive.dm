@@ -1,16 +1,19 @@
 /obj/machinery/beehive
 	name = "beehive"
+	desc = "A brown box hopefully full of honey and bees, they help pollinate plants keeping them healthy and help produce slighty!"
 	icon = 'icons/obj/beekeeping.dmi'
 	icon_state = "beehive"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 
-	var/closed = 0
+	var/closed = FALSE
 	var/bee_count = 0 // Percent
 	var/smoked = 0 // Timer
 	var/honeycombs = 0 // Percent
 	var/frames = 0
 	var/maxFrames = 5
+
+	var/foods = 0 //How many flower beds are around us that we can use?
 
 /obj/machinery/beehive/update_icon()
 	cut_overlays()
@@ -30,22 +33,14 @@
 			if(81 to 100)
 				add_overlay("bees3")
 
-/obj/machinery/beehive/examine(var/mob/user)
+/obj/machinery/beehive/examine(mob/user)
 	..()
 	if(!closed)
 		to_chat(user, "The lid is open.")
 
-/obj/machinery/beehive/attackby(var/obj/item/I, var/mob/user)
-	if(istype(I, /obj/item/weapon/tool/crowbar))
-		closed = !closed
-		user.visible_message("<span class='notice'>\The [user] [closed ? "closes" : "opens"] \the [src].</span>", "<span class='notice'>You [closed ? "close" : "open"] \the [src].</span>")
-		update_icon()
-		return
-	else if(istype(I, /obj/item/weapon/tool/wrench))
-		anchored = !anchored
-		user.visible_message("<span class='notice'>\The [user] [anchored ? "wrenches" : "unwrenches"] \the [src].</span>", "<span class='notice'>You [anchored ? "wrench" : "unwrench"] \the [src].</span>")
-		return
-	else if(istype(I, /obj/item/bee_smoker))
+/obj/machinery/beehive/attackby(obj/item/I, mob/user)
+
+	if(istype(I, /obj/item/bee_smoker))
 		if(closed)
 			to_chat(user, SPAN_NOTICE("You need to open \the [src] with a crowbar before smoking the bees."))
 			return
@@ -94,17 +89,38 @@
 			B.fill()
 		update_icon()
 		return
-	else if(istype(I, /obj/item/weapon/tool/screwdriver))
-		if(bee_count)
-			to_chat(user, SPAN_NOTICE("You can't dismantle \the [src] with these bees inside."))
+
+	var/list/usable_qualities = list(QUALITY_BOLT_TURNING, QUALITY_SCREW_DRIVING, QUALITY_PRYING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	switch(tool_type)
+		if(QUALITY_BOLT_TURNING)
+			if(istype(get_turf(src), /turf/space) && !anchored)
+				to_chat(user, SPAN_NOTICE("You can't anchor something to empty space. Idiot."))
+				return
+			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				to_chat(user, SPAN_NOTICE("The [user] [anchored ? "wrenches" : "unwrenches"] \the [src]."))
+				anchored = !anchored
+
+		if(QUALITY_SCREW_DRIVING)
+			if(bee_count)
+				to_chat(user, SPAN_NOTICE("You can't dismantle \the [src] with these bees inside."))
+				return
+			to_chat(user, SPAN_NOTICE("You start dismantling \the [src]..."))
+			playsound(loc, 'sound/items/Screwdriver.ogg', 50, 1)
+			if(do_after(user, 30, src))
+				user.visible_message(SPAN_NOTICE("\The [user] dismantles \the [src]."), SPAN_NOTICE("You dismantle \the [src]."))
+				new /obj/item/beehive_assembly(loc)
+				qdel(src)
 			return
-		to_chat(user, SPAN_NOTICE("You start dismantling \the [src]..."))
-		playsound(loc, 'sound/items/Screwdriver.ogg', 50, 1)
-		if(do_after(user, 30, src))
-			user.visible_message(SPAN_NOTICE("\The [user] dismantles \the [src]."), SPAN_NOTICE("You dismantle \the [src]."))
-			new /obj/item/beehive_assembly(loc)
-			qdel(src)
-		return
+
+		if(QUALITY_PRYING)
+			closed = !closed
+			user.visible_message("<span class='notice'>\The [user] [closed ? "closes" : "opens"] \the [src].</span>", "<span class='notice'>You [closed ? "close" : "open"] \the [src].</span>")
+			update_icon()
+			return
+
+		if(ABORT_CHECK)
+			return
 
 /obj/machinery/beehive/attack_hand(var/mob/user)
 	if(!closed)
@@ -130,8 +146,9 @@
 		update_icon()
 	smoked = max(0, smoked - 1)
 	if(!smoked && bee_count)
-		bee_count = min(bee_count * 1.005, 100)
+		bee_count = min(foods + bee_count * 1.005, 100) //We start with are plant food amount so we dont times a negitive if we ever have harmful plants
 		update_icon()
+	foods = 0 //We reset are food after pollinating and dong are bee making, to prevent stacking
 
 /obj/machinery/beehive/proc/pollinate_flowers()
 	var/coef = bee_count / 100
@@ -139,7 +156,11 @@
 	for(var/obj/machinery/portable_atmospherics/hydroponics/H in view(7, src))
 		if(H.seed && !H.dead)
 			H.health += 0.05 * coef
+			H.yield_mod += 0.005 * coef
 			++trays
+			if(H.seed.seed_name in bee_food_list)
+				++foods
+	coef = (foods + bee_count) / 100 //Redo are math to get extra honecomb
 	honeycombs = min(honeycombs + 0.1 * coef * min(trays, 5), frames * 100)
 
 /obj/machinery/honey_extractor
@@ -147,11 +168,32 @@
 	desc = "A machine used to turn honeycombs on the frame into honey and wax."
 	icon = 'icons/obj/virology.dmi'
 	icon_state = "centrifuge"
-
+	density = TRUE
+	anchored = TRUE
 	var/processing = 0
 	var/honey = 0
+	var/spin_time = 50
+	circuit = /obj/item/circuitboard/honey_extractor
+
+/obj/machinery/honey_extractor/RefreshParts()
+	..()
+	var/sm_rating = 0
+	var/sm_amount = 0
+	for(var/obj/item/stock_parts/scanning_module/SM in component_parts)
+		sm_rating += SM.rating
+		sm_amount++
+
+	spin_time = round(initial(spin_time)/(sm_rating/sm_amount))
+
 
 /obj/machinery/honey_extractor/attackby(var/obj/item/I, var/mob/user)
+
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
+
 	if(processing)
 		to_chat(user, SPAN_NOTICE("\The [src] is currently spinning, wait until it's finished."))
 		return
@@ -164,17 +206,17 @@
 		processing = H.honey
 		icon_state = "centrifuge_moving"
 		qdel(H)
-		spawn(50)
+		spawn(spin_time)
 			new /obj/item/honey_frame(loc)
 			new /obj/item/stack/wax(loc)
 			honey += processing
 			processing = 0
 			icon_state = "centrifuge"
-	else if(istype(I, /obj/item/weapon/reagent_containers/glass))
+	else if(istype(I, /obj/item/reagent_containers/glass))
 		if(!honey)
 			to_chat(user, SPAN_NOTICE("There is no honey in \the [src]."))
 			return
-		var/obj/item/weapon/reagent_containers/glass/G = I
+		var/obj/item/reagent_containers/glass/G = I
 		var/transferred = min(G.reagents.maximum_volume - G.reagents.total_volume, honey)
 		G.reagents.add_reagent("honey", transferred)
 		honey -= transferred
@@ -209,7 +251,7 @@
 /obj/item/beehive_assembly
 	name = "beehive assembly"
 	desc = "Contains everything you need to build a beehive."
-	icon = 'icons/obj/apiary_bees_etc.dmi'
+	icon = 'icons/obj/beekeeping.dmi'
 	icon_state = "apiary"
 
 /obj/item/beehive_assembly/attack_self(var/mob/user)
@@ -227,13 +269,15 @@
 	desc = "Soft substance produced by bees. Used to make candles."
 	icon = 'icons/obj/beekeeping.dmi'
 	icon_state = "wax"
+	max_amount = 20
+	price_tag = 95 //long and semi hard to get
 
 /obj/item/stack/wax/New()
 	..()
 	recipes = wax_recipes
 
 var/global/list/datum/stack_recipe/wax_recipes = list( \
-	new/datum/stack_recipe("candle", /obj/item/weapon/flame/candle) \
+	new/datum/stack_recipe("candle", /obj/item/flame/candle) \
 )
 
 /obj/item/bee_pack
@@ -241,14 +285,14 @@ var/global/list/datum/stack_recipe/wax_recipes = list( \
 	desc = "Contains a queen bee and some worker bees. Everything you'll need to start a hive!"
 	icon = 'icons/obj/beekeeping.dmi'
 	icon_state = "beepack"
-	var/full = 1
+	var/full = TRUE
 
 /obj/item/bee_pack/New()
 	..()
 	add_overlay("beepack-full")
 
 /obj/item/bee_pack/proc/empty()
-	full = 0
+	full = FALSE
 	name = "empty bee pack"
 	desc = "A stasis pack for moving bees. It's empty."
 	cut_overlays()

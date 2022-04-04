@@ -363,7 +363,7 @@ ADMIN_VERB_ADD(/client/proc/spawn_character, R_ADMIN, FALSE)
 
 	//Well you're not reloading their job or they never had one.
 	if(!charjob)
-		var/pickjob = input(src,"Pick a job to assign them (or none).","Job Select","-No Job-") as null|anything in joblist + "-No Job-"
+		var/pickjob = input(src,"Pick a job to assign them (or none).","Job Select","-No Job-") as null|anything in GLOB.joblist + "-No Job-"
 		if(!pickjob)
 			return
 		if(pickjob != "-No Job-")
@@ -623,13 +623,9 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_rejuvenate, R_ADMIN|R_MOD, FALSE)
 	if(!istype(M))
 		alert("Cannot revive a ghost")
 		return
-	if(config.allow_admin_rev)
-		M.revive()
-
-		log_admin("[key_name(usr)] healed / revived [key_name(M)]")
-		message_admins("\red Admin [key_name_admin(usr)] healed / revived [key_name_admin(M)]!", 1)
-	else
-		alert("Admin revive disabled")
+	M.revive()
+	log_admin("[key_name(usr)] healed / revived [key_name(M)]")
+	message_admins("\red Admin [key_name_admin(usr)] healed / revived [key_name_admin(M)]!", 1)
 
 
 ADMIN_VERB_ADD(/client/proc/cmd_admin_create_centcom_report, R_FUN, FALSE)
@@ -919,7 +915,7 @@ ADMIN_VERB_ADD(/client/proc/admin_call_shuttle, R_ADMIN|R_FUN, FALSE)
 	return
 
 ADMIN_VERB_ADD(/client/proc/admin_cancel_shuttle, R_ADMIN|R_FUN, FALSE)
-//allows us to cancel the emergency shuttle, sending it back to centcomm
+//allows us to cancel the emergency shuttle, sending it back to centcom
 /client/proc/admin_cancel_shuttle()
 	set category = "Admin"
 	set name = "Cancel Evacuation"
@@ -1068,8 +1064,8 @@ ADMIN_VERB_ADD(/client/proc/spawn_mob_template, R_ADMIN, FALSE)
 			var/obj/obj = new objPath
 			createdObjects[i] = obj
 
-			if(istype(obj, /obj/item/weapon/gun))
-				var/obj/item/weapon/gun/weapon = obj
+			if(istype(obj, /obj/item/gun))
+				var/obj/item/gun/weapon = obj
 				weapon.loadAmmoBestGuess()
 
 

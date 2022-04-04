@@ -43,7 +43,7 @@
 	control.malfturbines = control.malfturbines + 1
 	return
 
-/obj/machinery/power/hydroelectric/attackby(obj/item/weapon/I, mob/user)
+/obj/machinery/power/hydroelectric/attackby(obj/item/I, mob/user)
 	var/list/usable_qualities = list(QUALITY_PRYING,QUALITY_PULSING)
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type == QUALITY_PRYING && malfstate == DEBRISMALFUNCTION)
@@ -177,7 +177,7 @@
 			tricklein = rand(4,9)
 			if(malfnumber > rand(1,100))
 				var/malftrigger = rand(1,workingturbines)
-				connected_turbines[malftrigger].Malfunction()
+				connected_turbines[malftrigger]?:Malfunction()
 				malfnumber = 0
 			tidechange = 0
 		return
@@ -190,7 +190,7 @@
 	..()
 	update_icon()
 
-/obj/machinery/power/hydroelectric_control/ui_interact(mob/user, ui_key = "hydroelectric", datum/nanoui/ui=null, force_open=NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/obj/machinery/power/hydroelectric_control/nano_ui_interact(mob/user, ui_key = "hydroelectric", datum/nanoui/ui=null, force_open=NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 
 	if(stat & BROKEN)
 		return
@@ -230,9 +230,9 @@
 	malfnumber = malfnumber + 10
 
 /obj/machinery/power/hydroelectric_control/attack_hand(mob/user)
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/item/weapon/paper/hydroworking
+/obj/item/paper/hydroworking
 	name = "paper- 'Working the Hydroelectric Generator.'"
 	info = "<h1>Hey there.</h1><p>We've installed a whole new way of making power, namely a hydroelectirc generator and it's as easy as they get to work with. \
 	First thing first, click that button to detect the turbines, there should be ten of them. From that point onward it will be a waiting game. \

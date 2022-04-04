@@ -12,14 +12,15 @@
 	melee_damage_upper = 15 //Rare
 
 	mob_size = MOB_MEDIUM
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch
 	knockdown_odds = 1 //its affect shouldnt be stunlocks like this
+	inherent_mutations = list(MUTATION_EMP, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY, MUTATION_ROACH_BLOOD)
 
 /mob/living/carbon/superior_animal/roach/elektromagnetisch/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
 	if(prob(5))
 		empulse(src.loc, 0, 3)
-		playsound(src.loc, list('sound/weapons/unknown_spacegun_burn.ogg', 'sound/weapons/unknown_spacegun_melt.ogg', 'sound/weapons/unknown_spacegun_incinerate.ogg', 'sound/weapons/unknown_spacegun_vaporize.ogg'))
+		playsound(src.loc, list('sound/weapons/unknown_spacegun_burn.ogg', 'sound/weapons/unknown_spacegun_melt.ogg', 'sound/weapons/unknown_spacegun_incinerate.ogg', 'sound/weapons/unknown_spacegun_vaporize.ogg'), 50, 1)
 
 /mob/living/carbon/superior_animal/roach/elektromagnetisch/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)

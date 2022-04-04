@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/centauri
+/obj/item/gun/energy/centauri
 	name = "SI PDW \"Centauri\""
 	desc = "\"Soteria\" brand laser sub-machine gun with a great firerate. \
 	With a built in red dotted scope and plasma cooling build into the barrel makes recoil and sight not an issue. \
@@ -13,7 +13,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BELT
 	projectile_type = /obj/item/projectile/beam
-	suitable_cell = /obj/item/weapon/cell/medium
+	suitable_cell = /obj/item/cell/medium
 	charge_cost = 50 //Doble normal do to being cooled by plasma and other such things
 	fire_delay = 8 //Well its an SMG it has a long cool down form shits
 	zoom_factor = 0.5 //Scope

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/revolver/detective
+/obj/item/gun/projectile/revolver/detective
 	name = "\"Havelock\" revolver"
 	desc = "A cheap H&S J-frame revolver, simple, reliable, .35 caliber."
 	icon = 'icons/obj/guns/projectile/detective.dmi'
@@ -17,7 +17,7 @@
 	one_hand_penalty = 6
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
 
-/obj/item/weapon/gun/projectile/revolver/detective/update_icon()
+/obj/item/gun/projectile/revolver/detective/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)

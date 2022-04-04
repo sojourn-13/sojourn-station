@@ -13,6 +13,8 @@
 	var/last_id
 
 	var/save_load_cooldown
+			//Playtime recorded per department.
+	var/list/playtime = list()
 
 	//game-preferences
 	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
@@ -38,6 +40,11 @@
 	if(istype(C))
 		client = C
 		client_ckey = C.ckey
+		for(var/departmentplaytime in typesof(/datum/department) - /datum/department)
+			var/datum/department/departmentplaytimevar = new departmentplaytime()
+			if(departmentplaytimevar.id)
+				playtime += departmentplaytimevar.id
+				playtime[departmentplaytimevar.id] = 0
 		SScharacter_setup.preferences_datums[client_ckey] = src
 		if(SScharacter_setup.initialized)
 			setup()
@@ -216,7 +223,7 @@
 	/////////////////////////////////////////////////////////////////////////////////////////////////
 			if("Equipment")
 				categoriesChanged=null
-				QDEL_NULL_LIST(character.worn_underwear) //4
+				QDEL_LIST(character.worn_underwear) //4
 				character.worn_underwear = list() //4
 				for(var/underwear_category_name in all_underwear) //4
 					var/datum/category_group/underwear/underwear_category = GLOB.underwear.categories_by_name[underwear_category_name]
@@ -288,7 +295,7 @@
 	character.update_hair(0) //2
 	character.force_update_limbs()//2
 
-	QDEL_NULL_LIST(character.worn_underwear) //4
+	QDEL_LIST(character.worn_underwear) //4
 	character.worn_underwear = list() //4
 	for(var/underwear_category_name in all_underwear) //4
 		var/datum/category_group/underwear/underwear_category = GLOB.underwear.categories_by_name[underwear_category_name]
@@ -350,7 +357,7 @@
 		dat += "<b>Select a character slot to load</b><hr>"
 		var/name
 		for(var/i=1, i<= config.character_slots, i++)
-			S.cd = maps_data.character_load_path(S, i)
+			S.cd = GLOB.maps_data.character_load_path(S, i)
 			S["real_name"] >> name
 			if(!name)	name = "Character[i]"
 			if(i==default_slot)

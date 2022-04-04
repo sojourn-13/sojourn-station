@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/revolver/artwork_revolver
+/obj/item/gun/projectile/revolver/artwork_revolver
 	name = "Weird Revolver"
 	desc = "This is an artistically-made revolver with a limited use chameleon projector."
 	icon = 'icons/obj/guns/projectile/artwork_revolver.dmi'
@@ -12,14 +12,22 @@
 	damage_multiplier = 1.4 //From havelock.dm
 	penetration_multiplier = 1.4
 	recoil_buildup = 30 //Arbitrary value
+	max_upgrades = 0 //Upgrading this revolver destorys its stats
 
-/obj/item/weapon/gun/projectile/revolver/artwork_revolver/Initialize()
+/obj/item/gun/projectile/revolver/artwork_revolver/refresh_upgrades()
+	return //Same reason why we dont have max upgrades, refreshing in this case is always bad
+
+/obj/item/gun/projectile/revolver/artwork_revolver/Initialize()
 	name = get_weapon_name(capitalize = TRUE)
 
 	var/random_icon = rand(1,5)
 	icon_state = "artwork_revolver_[random_icon]"
 	item_state = "artwork_revolver_[random_icon]"
 	caliber = pick(CAL_MAGNUM,CAL_PISTOL)
+	if(caliber == CAL_PISTOL)
+		gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_35)// if we get .35 then we should take .35 upgrades
+	else
+		gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	max_shells += rand(-2,7)
 
 	var/sanity_value = 0.2 + pick(0,0.1,0.2)
@@ -33,11 +41,11 @@
 
 	. = ..()
 
-/obj/item/weapon/gun/projectile/revolver/artwork_revolver/get_item_cost(export)
+/obj/item/gun/projectile/revolver/artwork_revolver/get_item_cost(export)
 	. = ..()
 	. += rand(-1000,2500)
 
-/obj/item/weapon/gun/projectile/revolver/artwork_revolver/spin_cylinder()
+/obj/item/gun/projectile/revolver/artwork_revolver/spin_cylinder()
 	set name = "Spin revolver"
 	set desc = "Fun when you're bored out of your skull. Or if you want to change your revolvers appearence."
 	set category = "Object"

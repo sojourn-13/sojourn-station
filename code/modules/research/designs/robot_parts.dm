@@ -31,7 +31,6 @@
 	name = "Robot right leg"
 	build_path = /obj/item/robot_parts/r_leg
 
-
 /datum/design/research/item/mechfab/robot/component
 	name_category = "robot component"
 	category = CAT_ROBOT
@@ -71,7 +70,6 @@
 	desc = "Self refilling jet pack that makes the unit suitable for EVA work."
 	build_path = /obj/item/robot_parts/robot_component/jetpack
 	starts_unlocked = FALSE
-
 
 
 // Robot updates

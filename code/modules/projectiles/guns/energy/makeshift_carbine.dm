@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/laser/makeshift
+/obj/item/gun/energy/laser/makeshift
 	name = "makeshift laser carbine"
 	desc = "A makeshift laser carbine, rather wasteful on its charge, but none the less reliable"
 	icon = 'icons/obj/guns/energy/makeshift_carbine.dmi'

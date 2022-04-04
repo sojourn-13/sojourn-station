@@ -29,8 +29,19 @@
 	leather_amount = 0
 	bones_amount = 0
 	//Drops
-	var/drop1 = /obj/item/weapon/scrap_lump
+	var/drop1 = /obj/item/scrap_lump
 	var/drop2 = null
+	needs_environment = FALSE
+	armor = list(melee = 15, bullet = 5, energy = 20, bomb = 25, bio = 100, rad = 25)
+
+
+/mob/living/simple_animal/hostile/hivebot/emp_act(severity)
+	..()
+	adjustFireLoss(rand(20,30))
+	if(rapid)
+		rapid = FALSE
+	if(prob(95) && ranged)
+		ranged = FALSE
 
 /mob/living/simple_animal/hostile/hivebot/range
 	name = "Malfunctioning Autonomous Sentinel"
@@ -66,12 +77,12 @@
 	melee_damage_upper = 25
 	attacktext = "clawed"
 	projectilesound = 'sound/weapons/Laser.ogg'
-	projectiletype = /obj/item/projectile/beam/heavylaser
+	projectiletype = /obj/item/projectile/beam //This basiclly nulls armor + deals 20 damage
 	faction = "hivebot"
 
 	//Death and harvest vars
 	meat_amount = 3
-	meat_type = /obj/item/weapon/scrap_lump
+	meat_type = /obj/item/scrap_lump
 	blood_from_harvest = /obj/effect/decal/cleanable/blood/gibs/robot
 	gibspawner = /obj/effect/gibspawner/robot
 
@@ -90,6 +101,14 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	move_to_delay = 5
 
+/mob/living/simple_animal/hostile/republicon/emp_act(severity)
+	..()
+	adjustFireLoss(rand(80,130))
+	if(rapid)
+		rapid = FALSE
+	if(prob(95) && ranged)
+		ranged = FALSE
+
 /mob/living/simple_animal/hostile/republicon/range
 	name = "Forgotten Sentinel"
 	desc = "The creators of the malfunctioning autonomous drones, having long since gone haywire themselves they destroy anything they find. This one is equipped with a heavy laser cannon."
@@ -107,6 +126,8 @@
 	pass_flags = PASSTABLE
 
 	mob_size = MOB_LARGE
+	reagent_immune = TRUE
+	toxin_immune = TRUE
 
 	attack_sound = 'sound/weapons/rapidslice.ogg'
 	speak_emote = list("screams")
@@ -114,23 +135,18 @@
 	deathmessage = "collapses into a pile of scrap!"
 	speak_chance = 5
 
+	friendly_to_colony = FALSE
+
 	move_to_delay = 1
 	turns_per_move = 4
 	see_in_dark = 10
 
 	melee_damage_lower = 35
 	melee_damage_upper = 40
-/*
-	armor = list(
-		melee = 40,
-		bullet = 40,
-		energy = 10,
-		bomb = 60,
-		bio = 0,
-		rad = 0,
-		agony = 0
-	)
-*/
+
+	armor = list(melee = 15, bullet = 10, energy = 20, bomb = 25, bio = 0, rad = 25)
+
+
 	health = 900
 	maxHealth = 900
 	attacktext = "sliced"
@@ -139,9 +155,11 @@
 	default_pixel_x = -16
 	randpixel = 0
 
+	can_burrow = FALSE //We cant borrow to the colony or away
+
 	//Death and harvest vars
 	meat_amount = 3
-	meat_type = /obj/item/weapon/scrap_lump
+	meat_type = /obj/item/scrap_lump
 	gibspawner = /obj/effect/gibspawner/robot
 	leather_amount = 0
 	bones_amount = 0
@@ -156,3 +174,70 @@
 	..()
 	pixel_x = -16
 	pixel_y = 0
+
+/mob/living/carbon/superior_animal/sentinal_seeker/attack_hand(mob/living/carbon/M as mob)
+	..()
+	var/mob/living/carbon/human/H = M
+
+	switch(M.a_intent)
+		if (I_HELP)
+			help_shake_act(M)
+
+		if (I_GRAB)
+			if(!weakened && stat == CONSCIOUS)
+				M.adjustBruteLoss(150)
+				M.Weaken(5)
+				visible_message(SPAN_WARNING("\red [src] immediately impales [M] with one of its three-foot blade tentacles!"))
+				return 1
+			else
+				if(M == src || anchored)
+					return 0
+				for(var/obj/item/grab/G in src.grabbed_by)
+					if(G.assailant == M)
+						to_chat(M, SPAN_NOTICE("You already grabbed [src]."))
+						return
+
+				var/obj/item/grab/G = new /obj/item/grab(M, src)
+				if(buckled)
+					to_chat(M, SPAN_NOTICE("You cannot grab [src], \he is buckled in!"))
+				if(!G) //the grab will delete itself in New if affecting is anchored
+					return
+
+				M.put_in_active_hand(G)
+				G.synch()
+				LAssailant = M
+
+				M.do_attack_animation(src)
+				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+				visible_message(SPAN_WARNING("[M] has grabbed [src] passively!"))
+
+				return 1
+
+		if (I_DISARM)
+			if(!weakened && stat == CONSCIOUS)
+				M.visible_message("\red [src] impales [M] with one of its three-foot blade tentacles!!")
+				M.Weaken(5)
+				M.adjustBruteLoss(150)
+				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+
+			M.do_attack_animation(src)
+
+		if (I_HURT)
+			var/damage = 3
+			if ((stat == CONSCIOUS) && prob(10))
+				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+				M.visible_message("\red [M] missed \the [src]")
+			else
+				if (istype(H))
+					damage += max(0, (H.stats.getStat(STAT_ROB) / 10))
+					if (HULK in H.mutations)
+						damage *= 2
+
+				playsound(loc, "punch", 25, 1, -1)
+				M.visible_message("\red [M] has punched \the [src]")
+
+				adjustBruteLoss(damage)
+				updatehealth()
+				M.do_attack_animation(src)
+
+				return 1

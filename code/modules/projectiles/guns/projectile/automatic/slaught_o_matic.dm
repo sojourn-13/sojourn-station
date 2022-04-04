@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/slaught_o_matic
+/obj/item/gun/projectile/automatic/slaught_o_matic
 	name = "\"Slaught-o-Matic\""
 	desc = "This disposable plastic handgun is mass-produced by H&S for civilian use. It often is used by street urchins, thugs, or terrorists on a budget. For what it's worth, it's not an awful handgun - but you only get one magazine before the gun locks up and becomes useless."
 	icon = 'icons/obj/guns/projectile/slaught_o_matic.dmi'
@@ -7,7 +7,7 @@
 	w_class = ITEM_SIZE_SMALL
 	can_dual = TRUE
 	caliber = CAL_PISTOL
-	max_shells = 0
+	max_shells = 1
 	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	ammo_type = "/obj/item/ammo_casing/pistol"
@@ -26,7 +26,7 @@
 
 	damage_multiplier = 0.8
 	penetration_multiplier = 0.2
-	recoil_buildup = 3
+	recoil_buildup = 0.75
 	one_hand_penalty = 5 //despite it being handgun, it's better to hold in two hands while shooting. SMG level.
 
 	init_firemodes = list(
@@ -34,14 +34,14 @@
 		FULL_AUTO_800
 		)
 
-/obj/item/weapon/gun/projectile/automatic/slaught_o_matic/Initialize()
+/obj/item/gun/projectile/automatic/slaught_o_matic/Initialize()
 	. = ..()
 	ammo_magazine = new magazine_type(src)
 
 	choosen_color = pick(possible_colors)
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/slaught_o_matic/update_icon()
+/obj/item/gun/projectile/automatic/slaught_o_matic/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -50,8 +50,8 @@
 	icon_state = iconstring + itemstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/slaught_o_matic/load_ammo(obj/item/A, mob/user)
+/obj/item/gun/projectile/automatic/slaught_o_matic/load_ammo(obj/item/A, mob/user)
 	to_chat(user, SPAN_WARNING("You try to reload the handgun, but the magazine that's already loaded won't come out!"))
 
-/obj/item/weapon/gun/projectile/automatic/slaught_o_matic/unload_ammo(mob/user, var/allow_dump=1)
+/obj/item/gun/projectile/automatic/slaught_o_matic/unload_ammo(mob/user, var/allow_dump=1)
 	to_chat(user, SPAN_WARNING("You try to take out the handgun's magazine, but it won't budge!"))

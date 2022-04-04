@@ -1,3 +1,10 @@
+/datum/gear/factionlonestar/guildgorka
+	display_name = "gorka, lonestar"
+	path = /obj/item/clothing/under/rank/lonestar_gorka
+	allowed_roles = list("Chief Executive Officer","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor")
+	slot = slot_w_uniform
+	sort_category = "Faction: Lonestar"
+
 /datum/gear/factionlonestar/cloakguild
 	display_name = "cloak, lonestar"
 	path = /obj/item/clothing/suit/hooded/cloak/job/guild

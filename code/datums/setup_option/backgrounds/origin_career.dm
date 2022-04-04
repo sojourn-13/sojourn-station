@@ -3,14 +3,13 @@
 	desc = "Early on in your life you became a pirate for personal reasons. You may have been a void wolf or apart of a named group of space raiders, regardless of your decisions you spent a \
 	period attacking other ships, frontier colonies, and looting the aftermaths of battles for anything of value. For whatever reason you gave up that life to become an honest \
 	(or dishonest) citizen of the colony. One benefit at least of your raider life style is you got good at getting in and out quickly, regardless of any barriers in your way. Sadly your past is \
-	a known factor and while here on the frontier security can overlook a checkered past, command positions are still barred for you."
+	a known factor and while here on the frontier security can overlook a checkered past, your records should contain a detailed and accurate report of your history."
 
-	restricted_depts = COMMAND
-	perks = list(/datum/perk/parkour)
+	perks = list(/datum/perk/parkour, /datum/perk/chem_contraband)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 0,
+		STAT_TGH = 5,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
@@ -89,6 +88,8 @@
 	teaching you how to properly set a bandage and spot the differences and uses of various medical chemicals. Later on in life you might have taken your medical career further or chosen a different path. \
 	Whatever happened, you haven't forgotten the few tricks you learned."
 
+	perks = list(/datum/perk/chem_contraband)
+
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
@@ -119,6 +120,8 @@
 	to serve their nation. Some individuals may come from their own planetary defense forces, serving as a combination of planetary guard and soldier. Military training has the benefit \
 	of physical conditioning and as a combat medic you got the benefit of additional medical training, though not as good as what you'd get in a hospital, it has its benefits."
 
+	perks = list(/datum/perk/chem_contraband)
+
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 2,
@@ -146,17 +149,16 @@
 /datum/category_item/setup_option/background/career/criminal
 	name = "Former Criminal"
 	desc = "Maybe you were a low tier ganger, a mafioso, or a professional with a criminal syndicate. Whatever you were it wasn't honest, nor was it something any good person could take pride in. \
-	Your former connections, for they are former as you've left that life behind, still haunt you as your record is known by security. As such you are barred from command positions, though not from \
-	security itself, after all, its the frontier and the colony can't be as picky as bigger empires. But that life has at least gifted you with some broad if boorish skills and a quick fingered \
+	Your former connections, for they are former as you've left that life behind, still haunt you as your record is known by security. As such your records should contain a detailed list of \
+	your past and history, after all, its the frontier and the colony can't be as picky as bigger empires. But that life has at least gifted you with some broad if boorish skills and a quick fingered \
 	disposition for snatching objects off of people without them noticing."
 
-	restricted_depts = COMMAND
-	perks = list(/datum/perk/fast_fingers)
+	perks = list(/datum/perk/fast_fingers, /datum/perk/chem_contraband)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
-		STAT_VIG = 0,
+		STAT_VIG = 5,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -200,11 +202,6 @@
 	This can range from starting your own shop to small business making stuff. Who knows how many tried and failed but your one of them, the market back in Sol Fed was just to crowed, that must be it. \
 	The system of bureaucracy and its regulations have pushed out many like you but it really gets the old noggin working in overtime."
 
-//Idea is simple, this one is to be a smart cookie and try and make a something to rival even LLS!
-//The main boon, loads of cog and some bio and mec so you can craft fast and e-z well also not being to robust in maints.
-//-11Loss Stats +"16"Gained Stats
-
-	restricted_depts = LSS //You dont need those non-entrepreneurs!
 	perks = list(/datum/perk/market_prof) //YOU GOT THIS, YOU KNOW WHATS UP AND HOW TO TURN TRASH INTO GOLD! BE YOUR OWN BOSS, GONE ON TO DO IT!
 
 	stat_modifiers = list(
@@ -213,7 +210,7 @@
 		STAT_VIG = -3,
 		STAT_BIO = 3,
 		STAT_MEC = 3,
-		STAT_COG = 10 //Dump stat kinda not a big deal to be "to high"
+		STAT_COG = 10 //So many psions are going to fucking pick this.
 	)
 
 /datum/category_item/setup_option/background/career/scavenger
@@ -222,9 +219,41 @@
 	Sometimes it was more localized, crawling to the abandoned tunnels of destroyed and long forgotten ship looking for valuables and answers to why they were brought to this state. \
 	Life as a scavenger was rough, but it did let you adjust to frontier work comfortably. Your life of avoiding hazards be they incidental or made with malcontent has at least made you more ready \
 	to dodge potential traps."
-
 	perks = list(/datum/perk/sure_step)
 
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/career/psi_sufficiency
+	name = "Former Scholar"
+	desc = "Once in life, you were a scholar and researcher. This may have been academic, personal interest, or hobbyist but regardless the reason you spent a great deal of time collecting massive \
+	amounts of information from various cultures, planets, and sectors both advanced and primitive. Regardless of where your focus laid, you became quite used to piecing together and categorizing \
+	details to such an extent that it became second nature. As a result, should you ever become a psion, your ability to hyper focus without losing the bigger picture allows you to lessen the \
+	negative side effects of your powers and use some abilities at no cost."
+
+	perks = list(/datum/perk/psi_attunement)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/career/nepotism
+	name = "Product of Nepotism"
+	desc = "Your existence has been deemed to be \"of particular worth to the colony.\" you were either head-hunted for a position here, or simply knew the right people to talk to.\
+	As a result, you've earned yourself a contract granting higher pay than other colonists on the station. Whether or not you earned that pay is up for debate, but for now,\
+	you can enjoy the closest thing to the high life that this backwater dump has going for it."
+	perks = list(/datum/perk/nepotism)
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,

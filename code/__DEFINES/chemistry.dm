@@ -38,11 +38,10 @@
 
 // Some on_mob_life() procs check for alien races.
 #define IS_XENOS   1
-#define IS_CARNIVORE   2
-#define IS_CHTMANT 3
-#define IS_OPIFEX 4
-#define IS_SYNTHETIC 5
-#define IS_HERBIVORE 6
+#define IS_CHTMANT 2
+#define IS_OPIFEX 3
+#define IS_SYNTHETIC 4
+#define IS_SLIME 5
 
 #define CE_STABLE "stable" // Inaprovaline
 #define CE_ANTIBIOTIC "antibiotic" // Spaceacilin
@@ -50,7 +49,8 @@
 #define CE_PAINKILLER "painkiller"
 #define CE_ALCOHOL "alcohol" // Liver filtering
 #define CE_ALCOHOL_TOXIC "alcotoxic" // Liver damage
-#define CE_SPEEDBOOST "gofast" // Hyperzine
+#define CE_SPEEDBOOST "gofast" // Makes you go faster
+#define CE_SLOWDOWN "goslower" // Makes you go slower
 #define CE_PULSE      "xcardic" // increases or decreases heart rate
 #define CE_NOPULSE    "heartstop" // stops heartbeat
 #define CE_MIND    		 "mindbending"  // Stabilizes or wrecks mind. Used for hallucinations

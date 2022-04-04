@@ -185,6 +185,13 @@
 	siemens_coefficient = 2.0
 	body_parts_covered = HEAD|FACE|EYES
 
+/obj/item/clothing/head/costume/halloween/scream
+	name = "Ghastly hood"
+	desc = "A sleek, black hood - all the better to hide your identity when stalking through the night"
+	icon_state = "ghosthood"
+	flags_inv = BLOCKHAIR
+	body_parts_covered = HEAD
+
 /*History*/
 
 /obj/item/clothing/head/costume/history/anarchist_cap
@@ -253,6 +260,32 @@
 	icon_state = "nun_hood"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD
+
+/obj/item/clothing/head/costume/job/nun/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default nun hood"] = "nun_hood"
+	options["sine cornette"] = "sine_cornette"
+	options["sine cornette switched"] = "sine_cornette_switched"
+	options["sine cornette switched alternative"] = "sine_cornette_switched_alternative"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 /obj/item/clothing/head/costume/job/police
 	name = "police cap"

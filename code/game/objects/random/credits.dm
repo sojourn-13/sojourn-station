@@ -7,10 +7,10 @@
 	has_postspawn = TRUE
 
 /obj/random/credits/item_to_spawn()
-	return /obj/item/weapon/spacecash/bundle
+	return /obj/item/spacecash/bundle
 
 /obj/random/credits/post_spawn(var/list/spawns)
-	for (var/obj/item/weapon/spacecash/bundle/C in spawns)
+	for (var/obj/item/spacecash/bundle/C in spawns)
 		C.worth = rand(min, max) //Rand conveniently produces integers
 		C.update_icon()
 

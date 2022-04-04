@@ -11,6 +11,11 @@
 	slot = slot_shoes
 	sort_category = "Shoes and Footwear"
 
+/datum/gear/shoes/sneakers
+	display_name = "sneaker selection"
+	path = /obj/item/clothing/shoes/sneakers
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/shoes/cowboys
 	display_name = "cowboy boots selection"
 	path = /obj/item/clothing/shoes/cowboy
@@ -58,6 +63,14 @@
 /datum/gear/shoes/brownjackboots
 	display_name = "brown jackboots"
 	path = /obj/item/clothing/shoes/jackboots/german
+
+/datum/gear/shoes/redboot
+	display_name = "red boots"
+	path = /obj/item/clothing/shoes/jackboots/redboot
+
+/datum/gear/shoes/longboot
+	display_name = "long boots"
+	path = /obj/item/clothing/shoes/jackboots/longboot
 
 /datum/gear/shoes/laced_jackboots
 	display_name = "laced jackboots"

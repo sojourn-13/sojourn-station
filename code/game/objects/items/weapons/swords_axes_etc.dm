@@ -7,19 +7,20 @@
 /*
  * Classic Baton
  */
-/obj/item/weapon/melee/classic_baton
+/obj/item/melee/classic_baton
 	name = "police baton"
 	desc = "A wooden truncheon for beating criminal scum."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "baton"
 	item_state = "classic_baton"
+	hitsound = 'sound/effects/woodhit.ogg'
 	slot_flags = SLOT_BELT
 	damtype = BRUTE
 	armor_penetration = ARMOR_PEN_SHALLOW
 	force = WEAPON_FORCE_ROBUST
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 
-/obj/item/weapon/melee/classic_baton/attack(mob/M as mob, mob/living/user as mob)
+/obj/item/melee/classic_baton/attack(mob/M as mob, mob/living/user as mob)
 	if(user.a_intent == I_HELP)
 		damtype = HALLOSS
 		force = WEAPON_FORCE_PAINFUL
@@ -34,7 +35,7 @@
 		damtype = BRUTE
 		force = WEAPON_FORCE_ROBUST
 
-	if ((CLUMSY in user.mutations) && prob(50))
+	if ((CLUMSY in user.mutations) && prob(10))
 		to_chat(user, SPAN_WARNING("You club yourself over the head."))
 		playsound(src.loc, 'sound/effects/woodhit.ogg', 50, 1, -1)
 		user.Weaken(3 * force)
@@ -49,7 +50,7 @@
 
 
 //Telescopic baton
-/obj/item/weapon/melee/telebaton
+/obj/item/melee/telebaton
 	name = "telescopic baton"
 	desc = "A compact yet rebalanced personal defense weapon. Can be concealed when folded."
 	icon = 'icons/obj/weapons.dmi'
@@ -62,7 +63,7 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 
 
-/obj/item/weapon/melee/telebaton/attack_self(mob/user as mob)
+/obj/item/melee/telebaton/attack_self(mob/user as mob)
 	on = !on
 	if(on)
 		user.visible_message(
@@ -105,7 +106,7 @@
 
 	return
 
-/obj/item/weapon/melee/telebaton/attack(mob/target as mob, mob/living/user as mob)
+/obj/item/melee/telebaton/attack(mob/target as mob, mob/living/user as mob)
 	if(on)
 		if(user.a_intent == I_HELP)
 			damtype = HALLOSS
@@ -121,7 +122,7 @@
 			damtype = BRUTE
 			force = WEAPON_FORCE_DANGEROUS
 
-		if ((CLUMSY in user.mutations) && prob(50))
+		if ((CLUMSY in user.mutations) && prob(10))
 			to_chat(user, SPAN_WARNING("You club yourself over the head."))
 			user.Weaken(3 * force)
 			if(ishuman(user))

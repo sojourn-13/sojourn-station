@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/bastard
+/obj/item/gun/projectile/automatic/bastard
 	name = "\"Bastard\" SMG"
 	desc = "A weapon that invokes conflicting feelings. While the weapon looks to be welded, riveted and otherwise pieced together with scrap. \
 		 The SMG oddly appears to be chambered in .257 and takes box magazines, firing from an open-bolt position. An odd mix of a sub-machine gun and a 'machine'-machine gun. \
@@ -8,7 +8,7 @@
 	item_state = "bastard"
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_BOX
 	caliber = CAL_LRIFLE
 	tac_reloads = FALSE
@@ -17,14 +17,14 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 4, MATERIAL_STEEL = 15)
 	price_tag = 1000
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
-	recoil_buildup = 4
+	recoil_buildup = 1
 
 	init_firemodes = list(
 		BURST_5_ROUND,
 		FULL_AUTO_600
 		)
 
-/obj/item/weapon/gun/projectile/automatic/bastard/update_icon()
+/obj/item/gun/projectile/automatic/bastard/update_icon()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 	if (ammo_magazine)

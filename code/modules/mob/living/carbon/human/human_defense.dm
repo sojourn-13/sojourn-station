@@ -32,7 +32,7 @@ meteor_act
 	if(P.can_embed() && (check_absorb < 2) && !src.stats.getPerk(PERK_IRON_FLESH))
 		var/armor = getarmor_organ(organ, ARMOR_BULLET)
 		if(prob(20 + max(P.damage_types[BRUTE] - armor, -10)))
-			var/obj/item/weapon/material/shard/shrapnel/SP = new()
+			var/obj/item/material/shard/shrapnel/SP = new()
 			SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
 			SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
 			SP.loc = organ
@@ -194,6 +194,12 @@ meteor_act
 		if(.) return
 	return 0
 
+/mob/living/carbon/human/proc/has_shield()
+	for(var/obj/item/shield/shield in list(l_hand, r_hand))
+		if(!shield) continue
+		return shield
+	return FALSE
+
 /mob/living/carbon/human/resolve_item_attack(obj/item/I, mob/living/user, var/target_zone)
 	if(check_attack_throat(I, user))
 		return null
@@ -246,7 +252,7 @@ meteor_act
 	if(effective_force > 10 || effective_force >= 5 && prob(33))
 		forcesay(hit_appends)	//forcesay checks stat already
 	if((I.damtype == BRUTE || I.damtype == HALLOSS) && prob(25 + (effective_force * 2)))
-		if(!stat)
+		if(!stat && !(has_shield()))
 			if(headcheck(hit_zone))
 				//Harder to score a stun but if you do it lasts a bit longer
 				if(prob(effective_force))
@@ -321,7 +327,7 @@ meteor_act
 					return
 
 		var/dtype = O.damtype
-		var/throw_damage = O.throwforce * (speed / THROWFORCE_SPEED_DIVISOR)
+		var/throw_damage = O.throwforce
 
 		var/zone
 		if (isliving(O.thrower))
@@ -349,6 +355,9 @@ meteor_act
 			return
 
 		O.throwing = 0		//it hit, so stop moving
+
+		/// Get hit with glass shards , your fibers are on them now, or with a rod idk.
+		O.add_fibers(src)
 
 		var/obj/item/organ/external/affecting = get_organ(zone)
 		var/hit_area = affecting.name
@@ -442,8 +451,8 @@ meteor_act
 	if(damtype != BURN && damtype != BRUTE) return
 
 	// The rig might soak this hit, if we're wearing one.
-	if(back && istype(back,/obj/item/weapon/rig))
-		var/obj/item/weapon/rig/rig = back
+	if(back && istype(back,/obj/item/rig))
+		var/obj/item/rig/rig = back
 		rig.take_hit(damage)
 
 	// We may also be taking a suit breach.

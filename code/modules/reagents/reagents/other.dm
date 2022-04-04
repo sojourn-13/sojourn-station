@@ -11,6 +11,7 @@
 	color = "#888888"
 	overdose = 1885
 	color_weight = 10
+	common = TRUE //So the coders know what they're eating better. (It's just wax)
 
 //None
 /datum/reagent/other/crayon_dust/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
@@ -118,6 +119,7 @@
 	color = "#808080"
 	overdose = 1885
 	color_weight = 20
+	common = TRUE //Easily Identifiable, Good for huffing
 
 /datum/reagent/other/paint/touch_turf(turf/T)
 	if(istype(T) && !istype(T, /turf/space))
@@ -169,17 +171,18 @@
 /* Things that didn't fit anywhere else */
 
 /datum/reagent/adminordrazine //An OP chemical for admins
-	name = "Adminordrazine"
+	name = "Chemical Nakh"
 	id = "adminordrazine"
-	description = "It's magic. We don't have to explain it."
-	taste_description = "100% abuse"
+	description = "An extremely rare chemical rumored to have been created specifically by soteria director Nakharan Mkne. Believed to be able to bring back even the dead or keep even the most \
+	ruined of people away from death's door. How did you get this?"
+	taste_description = "overpowered bullshit"
 	reagent_state = LIQUID
-	color = "#C8A5DC"
+	color = "#daa520"
 	affects_dead = 1 //This can even heal dead people.
 
 	glass_icon_state = "golden_cup"
 	glass_name = "golden cup"
-	glass_desc = "It's magic. We don't have to explain it."
+	glass_desc = "It's science. We don't have to explain shit."
 	appear_in_default_catalog = FALSE
 
 /datum/reagent/adminordrazine/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
@@ -215,6 +218,7 @@
 	taste_description = "expensive metal"
 	reagent_state = SOLID
 	color = "#F7C430"
+	common = TRUE //People know what gold is at a glance.
 
 /datum/reagent/metal/silver
 	name = "Silver"
@@ -265,6 +269,18 @@
 
 /datum/reagent/adrenaline/withdrawal_act(mob/living/carbon/M)
 	M.adjustOxyLoss(15)
+
+/datum/reagent/other/viroputine
+	name = "Viroputine"
+	id = "viroputine"
+	description = "A horrid by product of nosfernium that creates more of it. vary bad withdrawels."
+	taste_description = "chalky backwash"
+	reagent_state = LIQUID
+	color = "#A5F0EE"
+	addiction_chance = 5
+
+/datum/reagent/other/viroputine/withdrawal_act(mob/living/carbon/M)
+	M.drowsyness = max(M.drowsyness, 20)
 
 /datum/reagent/other/diethylamine
 	name = "Diethylamine"
@@ -344,6 +360,7 @@
 	reagent_state = LIQUID
 	color = "#A5F0EE"
 	touch_met = 50
+	common = TRUE //It's just ammonia and water, and the Janitor should be able to know what they are working with.
 
 /datum/reagent/other/space_cleaner/touch_obj(obj/O)
 	O.clean_blood()
@@ -357,7 +374,7 @@
 				S.wet_floor(1, TRUE)
 		T.clean_blood()
 		for(var/obj/effect/O in T)
-			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay))
+			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay) && !istype(O,/obj/effect/overlay/water))
 				qdel(O)
 		for(var/mob/living/carbon/slime/M in T)
 			M.adjustToxLoss(rand(5, 10))
@@ -400,6 +417,7 @@
 	taste_description = "slime"
 	reagent_state = LIQUID
 	color = "#009CA8"
+	common = TRUE //lewd
 
 /datum/reagent/other/lube/touch_turf(turf/simulated/T)
 	if(!istype(T))
@@ -466,6 +484,7 @@
 	taste_description = "wood"
 	reagent_state = LIQUID
 	color = "#B97A57"
+	common = TRUE //Wood pulp is identifiable at a glance
 
 /datum/reagent/other/luminol
 	name = "Luminol"
@@ -474,43 +493,13 @@
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#F2F3F4"
+	illegal=TRUE //Allows inspectors to know they are working with Luminol
 
 /datum/reagent/other/luminol/touch_obj(obj/O)
 	O.reveal_blood()
 
 /datum/reagent/other/luminol/touch_mob(mob/living/L)
 	L.reveal_blood()
-
-
-/datum/reagent/other/aranecolmin
-	name = "Aranecolmin"
-	id = "aranecolmin"
-	description = "Weak antitoxin used by warrior spiders. Speeds up metabolism immensely."
-	taste_description = "sludge"
-	reagent_state = LIQUID
-	color = "#acc107"
-	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 10
-	nerve_system_accumulations = 5
-
-/datum/reagent/other/aranecolmin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_ANTITOX, 0.3)
-	if(M.bloodstr)
-		for(var/current in M.bloodstr.reagent_list)
-			var/datum/reagent/toxin/pararein/R = current
-			if(istype(R))
-				R.metabolism = initial(R.metabolism) * 3
-				break
-
-/datum/reagent/other/aranecolmin/on_mob_delete(mob/living/carbon/M)
-	..()
-	if(istype(M))
-		if(M.bloodstr)
-			for(var/current in M.bloodstr.reagent_list)
-				var/datum/reagent/toxin/pararein/R = current
-				if(istype(R))
-					R.metabolism = initial(R.metabolism)
-					break
 
 /datum/reagent/other/arectine
 	name = "Arectine"
@@ -532,6 +521,18 @@
 /datum/reagent/other/arectine/on_mob_delete(mob/living/L)
 	..()
 	L.set_light(0)
+
+/datum/reagent/other/rejuvenating_agent
+	name = "Rejuvenating agent"
+	id = "rejuvenating_agent"
+	description = "A complex reagent that, applied to an object, is capable of eliminating most of the effects of the passage of time"
+	taste_description = "nothing"
+	reagent_state = LIQUID
+	color = "#c8d0f5"
+
+/datum/reagent/other/rejuvenating_agent/touch_obj(obj/O)
+	if(istype(O))
+		O.make_young()
 
 /datum/reagent/other/instantice
 	name = "InstantIce"

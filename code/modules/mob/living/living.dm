@@ -53,7 +53,7 @@ default behaviour is:
 			var/mob/living/tmob = AM
 
 			for(var/mob/living/M in range(tmob, 1))
-				if(tmob.pinned.len ||  ((M.pulling == tmob && ( tmob.restrained() && !( M.restrained() ) && M.stat == 0)) || locate(/obj/item/weapon/grab, tmob.grabbed_by.len)) )
+				if(tmob.pinned.len ||  ((M.pulling == tmob && ( tmob.restrained() && !( M.restrained() ) && M.stat == 0)) || locate(/obj/item/grab, tmob.grabbed_by.len)) )
 					if ( !(world.time % 5) )
 						to_chat(src, "<span class='warning'>[tmob] is restrained, you cannot push past</span>")
 					now_pushing = FALSE
@@ -92,11 +92,11 @@ default behaviour is:
 					to_chat(src, "<span class='danger'>You fail to push [tmob]'s fat ass out of the way.</span>")
 					now_pushing = FALSE
 					return
-			if(tmob.r_hand && istype(tmob.r_hand, /obj/item/weapon/shield/riot))
+			if(tmob.r_hand && istype(tmob.r_hand, /obj/item/shield/riot))
 				if(prob(99))
 					now_pushing = FALSE
 					return
-			if(tmob.l_hand && istype(tmob.l_hand, /obj/item/weapon/shield/riot))
+			if(tmob.l_hand && istype(tmob.l_hand, /obj/item/shield/riot))
 				if(prob(99))
 					now_pushing = FALSE
 					return
@@ -122,7 +122,7 @@ default behaviour is:
 							return
 					step_glide(AM, t, glide_size)
 					if(ishuman(AM) && AM:grabbed_by)
-						for(var/obj/item/weapon/grab/G in AM:grabbed_by)
+						for(var/obj/item/grab/G in AM:grabbed_by)
 							step_glide(G:assailant, get_dir(G:assailant, AM), glide_size)
 							G.adjust_position()
 				now_pushing = FALSE
@@ -335,41 +335,41 @@ default behaviour is:
 
 
 //Recursive function to find everything a mob is holding.
-/mob/living/get_contents(var/obj/item/weapon/storage/Storage = null)
+/mob/living/get_contents(var/obj/item/storage/Storage = null)
 	var/list/L = list()
 
 	if(Storage) //If it called itself
 		L += Storage.return_inv()
 
 		//Leave this commented out, it will cause storage items to exponentially add duplicate to the list
-		//for(var/obj/item/weapon/storage/S in Storage.return_inv()) //Check for storage items
+		//for(var/obj/item/storage/S in Storage.return_inv()) //Check for storage items
 		//	L += get_contents(S)
 
-		for(var/obj/item/weapon/gift/G in Storage.return_inv()) //Check for gift-wrapped items
+		for(var/obj/item/gift/G in Storage.return_inv()) //Check for gift-wrapped items
 			L += G.gift
-			if(istype(G.gift, /obj/item/weapon/storage))
+			if(istype(G.gift, /obj/item/storage))
 				L += get_contents(G.gift)
 
 		for(var/obj/item/smallDelivery/D in Storage.return_inv()) //Check for package wrapped items
 			L += D.wrapped
-			if(istype(D.wrapped, /obj/item/weapon/storage)) //this should never happen
+			if(istype(D.wrapped, /obj/item/storage)) //this should never happen
 				L += get_contents(D.wrapped)
 		return L
 
 	else
 
 		L += src.contents
-		for(var/obj/item/weapon/storage/S in src.contents)	//Check for storage items
+		for(var/obj/item/storage/S in src.contents)	//Check for storage items
 			L += get_contents(S)
 
-		for(var/obj/item/weapon/gift/G in src.contents) //Check for gift-wrapped items
+		for(var/obj/item/gift/G in src.contents) //Check for gift-wrapped items
 			L += G.gift
-			if(istype(G.gift, /obj/item/weapon/storage))
+			if(istype(G.gift, /obj/item/storage))
 				L += get_contents(G.gift)
 
 		for(var/obj/item/smallDelivery/D in src.contents) //Check for package wrapped items
 			L += D.wrapped
-			if(istype(D.wrapped, /obj/item/weapon/storage)) //this should never happen
+			if(istype(D.wrapped, /obj/item/storage)) //this should never happen
 				L += get_contents(D.wrapped)
 		return L
 
@@ -516,17 +516,17 @@ default behaviour is:
 				if (isliving(pulling))
 					var/mob/living/M = pulling
 					var/ok = 1
-					if (locate(/obj/item/weapon/grab, M.grabbed_by))
+					if (locate(/obj/item/grab, M.grabbed_by))
 						if (prob(75))
-							var/obj/item/weapon/grab/G = pick(M.grabbed_by)
-							if (istype(G, /obj/item/weapon/grab))
+							var/obj/item/grab/G = pick(M.grabbed_by)
+							if (istype(G, /obj/item/grab))
 								for(var/mob/O in viewers(M, null))
 									O.show_message(text("\red [] has been pulled from []'s grip by []", G.affecting, G.assailant, src), 1)
 								//G = null
 								qdel(G)
 						else
 							ok = 0
-						if (locate(/obj/item/weapon/grab, M.grabbed_by.len))
+						if (locate(/obj/item/grab, M.grabbed_by.len))
 							ok = 0
 					if (ok)
 						var/atom/movable/t = M.pulling
@@ -583,58 +583,92 @@ default behaviour is:
 		for(var/mob/living/carbon/slime/M in view(1,src))
 			M.UpdateFeed(src)
 
-
-
-
 /mob/living/verb/lay_down()
 	set name = "Rest"
 	set category = "IC"
 
-	var/state_changed = FALSE
-	if(resting && can_stand_up())
-		resting = FALSE
-		state_changed = TRUE
+	if(resting && unstack)
+		unstack = FALSE
 
-
-	else if (!resting)
-		if(ishuman(src))
-			var/obj/item/weapon/bedsheet/BS = locate(/obj/item/weapon/bedsheet) in get_turf(src)
-			// If there is unrolled bedsheet roll and unroll it to get in bed like a proper adult does
-			if(BS && !BS.rolled && !BS.folded)
-				resting = TRUE
-				BS.toggle_roll(src, no_message = TRUE)
-				BS.toggle_roll(src)
-			else
-				resting = TRUE
-			state_changed = TRUE
+		if(do_after(src, (src.stats.getPerk(PERK_PARKOUR) ? 0.2 SECONDS : 0.4 SECONDS), null, 0, 1, INCAPACITATION_DEFAULT, immobile = 0))
+			resting = FALSE
+			unstack = TRUE
+			to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"].</span>")
+			update_lying_buckled_and_verb_status()
 		else
-			resting = TRUE
-			state_changed = TRUE
-	if(state_changed)
-		to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"]</span>")
-		update_lying_buckled_and_verb_status()
-
-/mob/living/proc/can_stand_up()
-	var/no_blankets = FALSE
-	no_blankets = unblanket()
-
-	if(no_blankets)
-		return TRUE
+			unstack = TRUE
 	else
-		to_chat(src, SPAN_WARNING("You can't stand up, bedsheets are in the way and you struggle to get rid of them."))
-		return FALSE
+		if (!resting)
+			dive()
+		else
+			to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"].</span>")
+			update_lying_buckled_and_verb_status()
 
-//used to push away bedsheets in order to stand up, only humans will roll them (see overriden human proc)
-/mob/living/proc/unblanket()
-	var/obj/item/weapon/bedsheet/blankets = (locate(/obj/item/weapon/bedsheet) in loc)
-	if (blankets && !blankets.rolled && !blankets.folded)
-		return blankets.toggle_roll(src)
-	return TRUE
+/mob/living/proc/dive()
+	var/client/C = src.client
+	var/speed = movement_delay()
+	resting = TRUE
+	var/_dir = C.true_dir
+	var/_hunger = (MOB_BASE_MAX_HUNGER - nutrition)
+	if(_hunger >= 250) //Will be shown on overlay as orange nutrition
+		to_chat(src, SPAN_WARNING("You weakly slump down!")) //You fall down because the rest still procs; a huge disadvantage
+		return
+//The sanity! - SoJ edits
+	if(ishuman(src) && !weakened && (_dir))// If true_dir = 0(src isn't moving), doesn't proc.
+		var/mob/living/carbon/human/H = src
+		if(H.handcuffed || H.legcuffed)
+			to_chat(H, SPAN_NOTICE("You cant dive well cuffed!"))
+			return
+
+		if(H.grabbed_by.len)
+			to_chat(H, SPAN_NOTICE("You cant dive well grappled!"))
+			return
+
+		if(H.stat != CONSCIOUS)
+			to_chat(H, SPAN_NOTICE("You cant dive well not awake!"))
+			return
+
+		if(buckled)
+			to_chat(H, SPAN_NOTICE("You cant dive well buckled!"))
+			return
+
+		if(40 >= health)
+			to_chat(H, SPAN_NOTICE("Your to hurt to dive!"))
+			return
+//End of SoJ edits
+	if(ishuman(src) && !weakened && (_dir))// If true_dir = 0(src isn't moving), doesn't proc.
+		livmomentum = 5 // Set momentum value as soon as possible for stopSliding to work better
+		nutrition -= 25
+		var/mob/living/carbon/human/H = src
+		var/range = 1 //checks for move intent; dive one tile further if on run intent
+		if (move_intent.flags & MOVE_INTENT_EXERTIVE)
+			range++
+		to_chat(H, SPAN_NOTICE("You dive onwards!"))
+		pass_flags += PASSTABLE // Jump over them!
+		H.allow_spin = FALSE
+		var/is_jump = FALSE
+		if(istype(get_step(H, _dir), /turf/simulated/open))
+			is_jump = TRUE
+		H.throw_at(get_edge_target_turf(H, _dir), range + is_jump, 1)// "Diving"; if you dive over a table, your momentum is set to 0. If you dive over space, you are thrown a tile further.
+		update_lying_buckled_and_verb_status()
+		pass_flags -= PASSTABLE // Jumpn't over them anymore!
+		H.allow_spin = TRUE
+		sleep(2)
+		C.mloop = 1
+		while(livmomentum > 0 && C.true_dir)
+			H.Move(get_step(H.loc, _dir),dir)
+			livmomentum = (livmomentum - speed)
+		C.mloop = 0
 
 /mob/living/simple_animal/spiderbot/is_allowed_vent_crawl_item(var/obj/item/carried_item)
 	if(carried_item == held_item)
 		return FALSE
 	return ..()
+
+mob/living/carbon/human/verb/stopSliding()
+	set hidden = 1
+	set instant = 1
+	livmomentum = 0
 
 /mob/living/proc/cannot_use_vents()
 	return "You can't fit into that vent."
@@ -647,6 +681,10 @@ default behaviour is:
 
 /mob/living/proc/slip(var/slipped_on,stun_duration=8)
 	return FALSE
+
+/mob/living/proc/trip(tripped_on, stun_duration)
+	return FALSE
+
 
 //damage/heal the mob ears and adjust the deaf amount
 /mob/living/adjustEarDamage(var/damage, var/deaf)
@@ -746,6 +784,9 @@ default behaviour is:
 		to_chat(src, "<span class='warning'>It won't budge!</span>")
 		return
 
+	if (AM.cant_be_pulled)
+		return
+
 	var/mob/M = AM
 	if(ismob(AM))
 
@@ -813,11 +854,19 @@ default behaviour is:
 	if (!stats)
 		stats = new /datum/stat_holder(src)
 
+
+	//Mutations populated through horrendous genetic tampering.
+	unnatural_mutations = new(src)
+
 	generate_static_overlay()
 	for(var/mob/observer/eye/angel/A in GLOB.player_list)
 		if(A)
 			A.static_overlays |= static_overlay
 			A.client.images |= static_overlay
+
+	var/turf/T = get_turf(src)
+	if(T)
+		update_z(T.z)
 
 /mob/living/Destroy()
 	qdel(stats)
@@ -836,6 +885,15 @@ default behaviour is:
 
 /mob/living/proc/is_asystole()
 	return FALSE
+
+//Makes a creature drop loot if they have any set
+//must be called manually in death()
+/mob/living/proc/drop_death_loot()
+	if(drop_items)
+		for(var/drop_item in drop_items)
+			if(ispath(drop_item, /obj))
+				new drop_item(src.loc)
+		drop_items = null
 
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/proc/drip_blood(var/amt as num)

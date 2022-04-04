@@ -1,4 +1,4 @@
-/obj/item/weapon/towel
+/obj/item/towel
 	name = "towel"
 	desc = "A soft cotton towel."
 	icon = 'icons/obj/weapons.dmi'
@@ -10,7 +10,7 @@
 	hitsound = 'sound/weapons/towelwhip.ogg'
 	var/equip_delay = 2
 
-/obj/item/weapon/towel/attack_self(mob/living/user as mob)
+/obj/item/towel/attack_self(mob/living/user as mob)
 	user.visible_message(text("<span class='notice'>[] uses [] to towel themselves off.</span>", user, src))
 	playsound(user, 'sound/weapons/towelwipe.ogg', 25, 1)
 	if(user.fire_stacks > 0)
@@ -18,12 +18,12 @@
 	else if(user.fire_stacks < 0)
 		user.fire_stacks = (min(0, user.fire_stacks + 1.5))
 
-/obj/item/weapon/towel/random/New()
+/obj/item/towel/random/New()
 	..()
 	color = "#"+get_random_colour()
 
 //Delayed equipping
-/obj/item/weapon/towel/pre_equip(var/mob/user, var/slot)
+/obj/item/towel/pre_equip(var/mob/user, var/slot)
 	..(user, slot)
 	if (equip_delay > 0)
 		//If its currently worn, we must be taking it off
@@ -44,7 +44,7 @@
 				return TRUE //A nonzero return value will cause the equipping operation to fail
 
 // To catch MouseDrop on clothing
-/obj/item/weapon/towel/MouseDrop(over_object)
+/obj/item/towel/MouseDrop(over_object)
 	if(!(item_flags & DRAG_AND_DROP_UNEQUIP))
 		return ..()
 	if(!pre_equip(usr, over_object))

@@ -16,12 +16,6 @@
 "d" = (
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/crawler)
-"e" = (
-/obj/machinery/light/built{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/crawler)
 "f" = (
 /turf/simulated/floor/tiled/dark/cargo,
 /area/crawler)
@@ -92,7 +86,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/crawler)
 "w" = (
-/obj/item/weapon/bedsheet/brown,
+/obj/item/bedsheet/brown,
 /obj/structure/bed,
 /obj/random/credits,
 /turf/simulated/floor/carpet/bcarpet,
@@ -111,22 +105,6 @@
 "A" = (
 /obj/effect/window_lwall_spawn/smartspawn/onestar,
 /turf/simulated/floor/tiled/techmaint,
-/area/crawler)
-"B" = (
-/obj/machinery/light/built{
-	dir = 1
-	},
-/obj/random/structures/os,
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/crawler)
-"C" = (
-/obj/machinery/light/built,
-/turf/simulated/floor/carpet/bcarpet,
-/area/crawler)
-"D" = (
-/obj/machinery/light/built,
-/obj/random/structures/os,
-/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/crawler)
 "E" = (
 /obj/random/mob/roomba,
@@ -187,13 +165,13 @@ a
 "}
 (3,1,1) = {"
 a
-e
+d
 U
 i
 q
 k
 u
-C
+u
 a
 "}
 (4,1,1) = {"
@@ -275,13 +253,13 @@ a
 "}
 (11,1,1) = {"
 a
-B
+g
 f
 f
 E
 f
 f
-D
+g
 a
 "}
 (12,1,1) = {"

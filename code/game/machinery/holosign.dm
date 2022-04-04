@@ -66,8 +66,8 @@
 	use_power(5)
 	active = !active
 	icon_state = "light1"
-	
-	for(var/obj/machinery/holosign/M in SSmachines.machinery)
+
+	for(var/obj/machinery/holosign/M in GLOB.machines)
 		if (M.id == src.id)
 			spawn( 0 )
 				M.toggle()

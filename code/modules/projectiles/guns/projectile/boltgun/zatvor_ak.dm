@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/boltgun/zatvor
+/obj/item/gun/projectile/boltgun/zatvor
 	name = "homemade \"Zatvor Kalashnikov\" rifle"
 	desc = "A mangeled mess of a boltgun and a Kalashnikov rifle combined into one with a soldered internal magazine; saving on production cost, thanks to Nadezhda Marshals gunsmiths and copious amounts of booze."
 	icon = 'icons/obj/guns/projectile/zatvor.dmi'

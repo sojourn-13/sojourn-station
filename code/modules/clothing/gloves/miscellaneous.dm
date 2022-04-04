@@ -3,7 +3,7 @@
 	name = "premier's gloves"
 	icon_state = "captain"
 	item_state = "captain"
-	armor = list(melee = 25, bullet = 10, energy = 25, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 25, bullet = 10, energy = 25, bomb = 0, bio = 0, rad = 0)
 	price_tag = 250
 
 /obj/item/clothing/gloves/cyborg
@@ -18,7 +18,7 @@
 	name = "insulated gloves"
 	icon_state = "yellow"
 	item_state = "yellow"
-	armor = list(melee = 0, bullet = 0, energy = 15, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 15, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	price_tag = 200
@@ -40,7 +40,7 @@
 	name = "thick gloves"
 	icon_state = "black"
 	item_state = "black"
-	armor = list(melee = 20, bullet = 0, energy = 20, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 20, bullet = 0, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
 	price_tag = 100
@@ -61,7 +61,7 @@
 	desc = "A pair of modified work gloves with some steel."
 	icon_state = "hm_combat"
 	item_state = "hm_combat"
-	armor = list(melee = 25, bullet = 5, energy = 20, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 25, bullet = 5, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.6
 	price_tag = 150
 
@@ -70,30 +70,61 @@
 	name = "combat gloves"
 	icon_state = "ihscombat"
 	item_state = "ihscombat"
-	armor = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
 	price_tag = 150
 
 /obj/item/clothing/gloves/thick/ablasive
 	name = "ablative gloves"
 	desc = "A thick pare of gloves that excels in protecting the wearer against energy projectiles."
-	armor = list(melee = 10, bullet = 10, energy = 70, bomb = 30, bio = 10, rad = 0)
+	armor_list = list(melee = 10, bullet = 10, energy = 70, bomb = 30, bio = 10, rad = 0)
 	icon_state = "ihscombat"
 	item_state = "ihscombat"
 	price_tag = 150
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 10, MATERIAL_PLATINUM = 2)
 
+/obj/item/clothing/gloves/thick/ablasive/militia
+	name = "militia ablative gloves"
+	desc = "A thick pair of gloves that excels in protecting the wearer against energy projectiles."
+	armor_list = list(melee = 10, bullet = 10, energy = 60, bomb = 10, bio = 0, rad = 0)
+	icon_state = "bs_ablative"
+	item_state = "ihscombat"
+
 /obj/item/clothing/gloves/thick/ablasive/iron_lock_security
 	name = "outdated gloves"
 	desc = "An \"Iron Lock Security\" ablative gloves with plates designed to absorb energy projectiles, even after all this time no one has been able to improve its design by Greyson Positronic."
+
+/obj/item/clothing/gloves/thick/swat/militia
+	name = "militia bulletproof gloves"
+	desc = "A pair of heavy duty gauntlets designed with high-grade bulletproof materials."
+	icon_state = "bs_bulletproof"
+	item_state = "ihscombat"
+	armor_list = list(melee = 10, bullet = 60, energy = 10, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/gloves/thick/combat //Combined effect of SWAT gloves and insulated gloves
 	desc = "A pair of fire, shock-proof, and impact-resistant combat gloves."
 	name = "combat gloves"
 	icon_state = "black"
 	item_state = "black"
-	armor = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
 	price_tag = 250
+
+/obj/item/clothing/gloves/thick/hunter
+	desc = "Tough, tight fitting and reinforced with bone this pair of leather gloves blend a perfect compromise between durability and comfort thanks to the different materials used."
+	name = "hunter gloves"
+	icon_state = "huntergloves"
+	item_state = "huntergloves"
+	armor_list = list(melee = 30, bullet = 10, energy = 20, bomb = 10, bio = 5, rad = 0)
+	siemens_coefficient = 0.5
+	price_tag = 200
+
+/obj/item/clothing/gloves/knuckles
+	name = "knuckle gloves"
+	desc = "Gloves with additional reinforcment on the knuckles."
+	icon_state = "knuckles"
+	item_state = "knuckles"
+	armor_list = list(melee = 20, bullet = 5, energy = 0, bomb = 0, bio = 0, rad = 0)
+	price_tag = 50
 
 /obj/item/clothing/gloves/evening
 	name = "evening gloves"
@@ -108,6 +139,23 @@
 	desc = "A pair of ash elegant evening gloves."
 	icon_state = "ash_evening_gloves"
 	item_state = "ash_evening_gloves"
+
+/obj/item/clothing/gloves/ash_evening
+	name = "ash evening gloves"
+	initial_name = "ash evening gloves"
+	desc = "A pair of ash elegant evening gloves."
+	icon_state = "ash_evening_gloves"
+	item_state = "ash_evening_gloves"
+
+/obj/item/clothing/gloves/goldenring
+	name = "golden ring"
+	initial_name = "golden ring"
+	desc = "Large ring made of gold, to put on the naked hand, sadly cant fit any gloves over its bulk." //Todo: make rings be able to be placed on gloves and on the bar hand
+	icon_state = "goldenring"
+	item_state = "goldenring"
+	price_tag = 250
+	siemens_coefficient = 1.0 //Its not protecting you
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/gloves/latex
 	name = "latex gloves"
@@ -134,6 +182,12 @@
 	siemens_coefficient = 0.50 //thick work gloves
 	price_tag = 50
 
+/obj/item/clothing/gloves/botanic_leather/claw
+	name = "clawed glove"
+	desc = "A single claw took away from some type of animal, that protects against floral dangers such as thorns and barbs."
+	icon_state = "leather"
+	item_state = "leather"
+
 /obj/item/clothing/gloves/aerostatic_gloves
 	name = "red designer leather gloves"
 	desc = "A pair of elegant leather gloves."
@@ -159,7 +213,7 @@
 	desc = "Heavy gloves to keep your hands intact for future experiments."
 	icon_state = "science"
 	item_state = "science"
-	armor = list(melee = 25, bullet = 5, energy = 20, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 25, bullet = 5, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
 	germ_level = 0

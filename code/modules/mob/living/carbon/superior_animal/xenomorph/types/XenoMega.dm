@@ -12,6 +12,8 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 
+	armor = list(melee = 20, bullet = 25, energy = 15, bomb = 30, bio = 100, rad = 100)
+
 	move_to_delay = 2
 	turns_per_move = 12
 
@@ -27,6 +29,9 @@
 	maxHealth = 3000
 	health = 3000
 	poison_per_bite = 10
+
+	armor = list(melee = 20, bullet = 25, energy = 15, bomb = 30, bio = 100, rad = 100)
+
 
 	melee_damage_lower = 40
 	melee_damage_upper = 50
@@ -73,12 +78,12 @@
 			else
 				if(M == src || anchored)
 					return 0
-				for(var/obj/item/weapon/grab/G in src.grabbed_by)
+				for(var/obj/item/grab/G in src.grabbed_by)
 					if(G.assailant == M)
 						to_chat(M, SPAN_NOTICE("You already grabbed [src]."))
 						return
 
-				var/obj/item/weapon/grab/G = new /obj/item/weapon/grab(M, src)
+				var/obj/item/grab/G = new /obj/item/grab(M, src)
 				if(buckled)
 					to_chat(M, SPAN_NOTICE("You cannot grab [src], \he is buckled in!"))
 				if(!G) //the grab will delete itself in New if affecting is anchored

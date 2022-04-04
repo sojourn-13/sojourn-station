@@ -14,9 +14,9 @@
 
 	var/car_limit = 3		//how many cars an engine can pull before performance degrades
 	active_engines = 1
-	var/obj/item/weapon/key/cargo_train/key
+	var/obj/item/key/cargo_train/key
 
-/obj/item/weapon/key/cargo_train
+/obj/item/key/cargo_train
 	name = "key"
 	desc = "A keyring with a small steel key, and a yellow fob reading \"Choo Choo!\"."
 	icon = 'icons/obj/vehicles.dmi'
@@ -41,7 +41,7 @@
 //-------------------------------------------
 /obj/vehicle/train/cargo/engine/New()
 	..()
-	cell = new /obj/item/weapon/cell/large/high(src)
+	cell = new /obj/item/cell/large/high(src)
 	key = new(src)
 	var/image/I = new(icon = 'icons/obj/vehicles.dmi', icon_state = "cargo_engine_overlay", layer = src.layer + 0.2) //over mobs
 	add_overlay(I)
@@ -63,8 +63,8 @@
 
 	return ..()
 
-/obj/vehicle/train/cargo/engine/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/key/cargo_train))
+/obj/vehicle/train/cargo/engine/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/key/cargo_train))
 		if(!key)
 			user.drop_item()
 			W.forceMove(src)
@@ -86,10 +86,10 @@
 	else
 		icon_state = initial(icon_state)
 
-/obj/vehicle/train/cargo/trolley/insert_cell(var/obj/item/weapon/cell/large/C, var/mob/living/carbon/human/H)
+/obj/vehicle/train/cargo/trolley/insert_cell(var/obj/item/cell/large/C, var/mob/living/carbon/human/H)
 	return
 
-/obj/vehicle/train/cargo/engine/insert_cell(var/obj/item/weapon/cell/large/C, var/mob/living/carbon/human/H)
+/obj/vehicle/train/cargo/engine/insert_cell(var/obj/item/cell/large/C, var/mob/living/carbon/human/H)
 	..()
 	update_stats()
 
@@ -98,11 +98,15 @@
 	update_stats()
 
 /obj/vehicle/train/cargo/engine/Bump(atom/Obstacle)
-	var/obj/machinery/door/D = Obstacle
 	var/mob/living/carbon/human/H = load
-	if(istype(D) && istype(H))
-		D.Bumped(H)		//a little hacky, but hey, it works, and respects access rights
-
+	if(istype(Obstacle, /obj/machinery/door) && istype(H))
+		Obstacle.Bumped(H)		//a little hacky, but hey, it works, and respects access rights
+	if(istype(Obstacle, /obj/structure/multiz/stairs/active))//Start: Trying to get stairs to work
+		var/init_anc = anchored
+		anchored = FALSE
+		Obstacle.Bumped(src)
+		anchored = init_anc
+		return
 	..()
 
 /obj/vehicle/train/cargo/trolley/Bump(atom/Obstacle)
@@ -260,20 +264,20 @@
 // Loading/unloading procs
 //-------------------------------------------
 /obj/vehicle/train/cargo/trolley
-	var/list/allowed_passengers = list(
+	/*var/list/allowed_passengers = list(
 		/obj/machinery,
 		/obj/structure/closet,
 		/obj/structure/largecrate,
 		/obj/structure/reagent_dispensers,
 		/obj/structure/ore_box,
 		/mob/living/carbon/human
-	)
+	)*/
 
 /obj/vehicle/train/cargo/trolley/load(var/atom/movable/C)
 	if(ismob(C) && !passenger_allowed)
 		return 0
-	if(!is_type_in_list(C, allowed_passengers))
-		return 0
+//	if(!is_type_in_list(C, allowed_passengers))
+//		return 0 We are going to relax this a tiny bit
 
 	//if there are any items you don't want to be able to interact with, add them to this check
 	// ~no more shielded, emitter armed death trains

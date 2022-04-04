@@ -1,4 +1,4 @@
-/obj/item/weapon/board
+/obj/item/board
 	name = "board"
 	desc = "A standard 12' checkerboard. Well used."
 	icon = 'icons/obj/pieces.dmi'
@@ -9,31 +9,35 @@
 	var/board = list()
 	var/selected = -1
 
-/obj/item/weapon/board/New()
-	..()
-	var i
-	for(i = 0; i < 12; i++)
-		new /obj/item/weapon/checker(src.loc)
-		new /obj/item/weapon/checker/red(src.loc)
+/obj/item/storage/pill_bottle/chechker
+	name = "bag for checkers"
+	desc = "It's a small bag with checkers inside."
+	icon = 'icons/obj/dice.dmi'
+	icon_state = "dicebag"
 
-/obj/item/weapon/board/examine(mob/user, var/distance = -1)
+/obj/item/storage/pill_bottle/chechker/populate_contents()
+	for(var/i = 1 to 16)
+		new /obj/item/checker(src.loc)
+		new /obj/item/checker/red(src.loc)
+
+/obj/item/board/examine(mob/user, var/distance = -1)
 	if(in_range(user,src))
 		user.set_machine(src)
 		interact(user)
 		return
 	..()
 
-/obj/item/weapon/board/attack_hand(mob/living/carbon/human/M as mob)
+/obj/item/board/attack_hand(mob/living/carbon/human/M as mob)
 	if(M.machine == src)
 		..()
 	else
 		src.examine(M)
 
-obj/item/weapon/board/attackby(obj/item/I as obj, mob/user as mob)
+obj/item/board/attackby(obj/item/I as obj, mob/user as mob)
 	if(!addPiece(I,user))
 		..()
 
-/obj/item/weapon/board/proc/addPiece(obj/item/I as obj, mob/user as mob, var/tile = 0)
+/obj/item/board/proc/addPiece(obj/item/I as obj, mob/user as mob, var/tile = 0)
 	if(I.w_class != ITEM_SIZE_TINY) //only small stuff
 		user.show_message(SPAN_WARNING("\The [I] is too big to be used as a board piece."))
 		return 0
@@ -68,7 +72,7 @@ obj/item/weapon/board/attackby(obj/item/I as obj, mob/user as mob)
 	return 1
 
 
-/obj/item/weapon/board/interact(mob/user as mob)
+/obj/item/board/interact(mob/user as mob)
 	if(user.is_physically_disabled() || (!isAI(user) && !user.Adjacent(src))) //can't see if you arent conscious. If you are not an AI you can't see it unless you are next to it, either.
 		user << browse(null, "window=boardgame")
 		user.unset_machine()
@@ -109,7 +113,7 @@ obj/item/weapon/board/attackby(obj/item/I as obj, mob/user as mob)
 	user << browse(dat,"window=boardgame;size=500x500")
 	onclose(usr, "boardgame")
 
-/obj/item/weapon/board/Topic(href, href_list)
+/obj/item/board/Topic(href, href_list)
 	if(!usr.Adjacent(src))
 		usr.unset_machine()
 		usr << browse(null, "window=boardgame")
@@ -167,13 +171,39 @@ obj/item/weapon/board/attackby(obj/item/I as obj, mob/user as mob)
 			board_icons -= null
 	src.updateDialog()
 
-/obj/item/weapon/checker/
+/obj/item/checker
 	name = "black checker"
 	desc = "It is plastic and shiny."
 	icon = 'icons/obj/pieces.dmi'
-	icon_state = "checker_black"
+	icon_state = "checker"
 	w_class = ITEM_SIZE_TINY
+	var/colour_team = "_black"
+	var/king = FALSE
 
-/obj/item/weapon/checker/red
+/obj/item/checker/red
 	name = "red checker"
-	icon_state = "checker_red"
+	colour_team = "_red"
+
+/obj/item/checker/New()
+	..()
+	update_icon()
+
+/obj/item/checker/attack_self(var/mob/user as mob)
+	user.visible_message("[user] flips \the [src]!")
+	if(king)
+		king = FALSE
+	else
+		king = TRUE
+	update_icon()
+
+/obj/item/checker/update_icon()
+	..()
+
+	if(king)
+		king = FALSE
+		icon_state = "checker[colour_team]_king"
+	else
+		king = TRUE
+		icon_state = "checker[colour_team]"
+
+

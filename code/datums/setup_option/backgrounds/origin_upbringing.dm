@@ -4,6 +4,13 @@
 	that desperate people will use force as commonly as they'll beg for aid. A sharp eye and careful or creative thinking let you avoid getting hurt and allowed you to thrive, so at least you got \
 	that going for you."
 
+	restricted_to_species = list(	//Exalted Humans are pay 2 win, they can't be born poor.
+		FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN,
+		FORM_AKULA, FORM_MARQUA, FORM_NARAMAD,
+		FORM_CINDAR, FORM_FBP, FORM_UNBRANDED,
+		FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH,
+		FORM_FOLKEN, FORM_MYCUS)
+
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 3,
@@ -64,6 +71,23 @@
 		STAT_COG = 0
 	)
 
+/datum/category_item/setup_option/background/bckgrnd/linguist
+	name = "Aspiring Linguist"
+	desc = "Be it from your education or from a multi-lingual family, you've found yourself studying languages non-stop throughout your childhood and early adulthood. Unlike most you're silver-tongued \
+	in both your knowledge of English, your secondary or native language - and your tertiary! Being tri-lingual has its upsides, making you an adept trader of sorts. Though its downside is that you may \
+	have not studied as hard as some others have in other subjects."
+
+	perks = list(/datum/perk/linguist)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
 /datum/category_item/setup_option/background/bckgrnd/drugaddict
 	name = "Chem Addict"
 	desc = "For whatever reason, be it from an early age and bad parenting or personal choice you became a devout user of illicit drugs. The constant use over the years has weakened your body \
@@ -71,7 +95,7 @@
 	to most drugs so you can inject more varied amounts than others."
 
 	perks = list(/datum/perk/addict)
-	restricted_to_species = list(FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT, FORM_CINDAR)
+	restricted_to_species = list(FORM_HUMAN, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT, FORM_CINDAR)
 
 	stat_modifiers = list(
 		STAT_ROB = -5,
@@ -84,15 +108,15 @@
 
 /datum/category_item/setup_option/background/bckgrnd/klutz
 	name = "Klutz"
-	desc = "Your entire life has been a series of unlucky and often self inflicted accidents, you spent enough time hurting yourself due to your own clumsiness that you've built up a bit more \
-	pain tolerance than most. A shame this doesn't stop you from failing even the most basic tasks at times. In fact, you find some tasks that require precision damn near impossible."
+	desc = "Your entire life has been a series of unlucky and often self-inflicted accidents, you spent enough time hurting yourself due to your own clumsiness that you've built up a more \
+	pain tolerance than most of common folks, meaning that due to this clumsiness problem, you've become quite tough and a little stronger too. A shame, this doesn't stop you from time to time failing even the most basic tasks at times. In fact, you find some tasks that require precision damn near impossible, and even handling or using guns is a dangerous prospect. Due to this problem, you have a terrible perception around the area around you."
 
 	perks = list(/datum/perk/klutz)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
+		STAT_ROB = 10,
 		STAT_TGH = 20,
-		STAT_VIG = -5,
+		STAT_VIG = -20,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -143,4 +167,63 @@
 		STAT_BIO = 8,
 		STAT_MEC = 8,
 		STAT_COG = -15
+	)
+
+/datum/category_item/setup_option/background/bckgrnd/psionic_harmony
+	name = "Peaceful Life"
+	desc = "You've lived a life of peace and harmony so idyllic that is has given you a special bit of enlightenment. This is not to say your life was easy, nor without trial or consequence, \
+	it merely speaks of your approach being serene in ways that have left lasting effects upon you. This early life has left you so deeply effected that your mind is the calm within the storm, \
+	no matter the scenario you cannot be left in turmoil for long. You always find contentment, you always find peace. As such, should you ever become a psion, you're mind is perfectly adapted \
+	to make the most of the essence from which your powers are called, granting you three additional uses of your abilities."
+
+	perks = list(/datum/perk/psi_harmony)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/bckgrnd/psionic_mania
+	name = "Bedlam"
+	desc = "Your life has been nothing but conflict, violence, and bedlam for as long as you can remember. You were fighting the moment you can stand and nothing has changed. You're always \
+	ready to throw down. You may not be outwardly confrontational, hell, people might not even know the capacity for hurting others you have deep down. But you cannot see violence as anything \
+	but the ultimate authority from which all authority is granted. This bedlam has changed how your mind works and, should you ever become a psion, has made you the perfect example of what \
+	a destructive mind can do. You always deal the maximum level of destruction when using your psionic powers which scale with your body and mind."
+
+	perks = list(/datum/perk/psi_mania)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/bckgrnd/razor_maniac
+	name = "Razor Girl/Boy"
+	desc = "Razor Girls/Boys are those who heavily augment themselves, often times for the purpose of combat or merely because they enjoy the utility offered. Razors, sometimes called metal heads, \
+	are a distinctly human and abhuman sub-culture and benefit greatly from the advanced cybernetics humans are known, though outliers from other races also adopt it. The most common and consistent \
+	sign that someone is a razor is the implantation of metal claws implanted in the arm, serving as a hidden and potentially deadly weapon. Most razors further augment this by using cybernetics to \
+	enhance their physical strength and endurance or replace organic limbs with stronger synthetics."
+
+	restricted_to_species = list(
+		FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN,
+		FORM_AKULA, FORM_MARQUA, FORM_NARAMAD,
+		FORM_CINDAR)
+
+	racial_implants = (/obj/item/organ_module/active/simple/wolverine)
+
+	stat_modifiers = list(
+		STAT_ROB = 3,
+		STAT_TGH = 2,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)

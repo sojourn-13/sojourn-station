@@ -1,10 +1,10 @@
-/obj/item/weapon/storage/part_replacer
+/obj/item/storage/part_replacer
 	name = "rapid part exchange device"
 	desc = "Special mechanical module made to store, sort, and exchange standard machine parts."
 	icon_state = "RPED"
 	item_state = "RPED"
 	w_class = ITEM_SIZE_HUGE
-	can_hold = list(/obj/item/weapon/stock_parts)
+	can_hold = list(/obj/item/stock_parts)
 	storage_slots = 50
 	use_to_pickup = TRUE
 	allow_quick_gather = TRUE
@@ -15,7 +15,7 @@
 	max_storage_space = 200
 	matter = list(MATERIAL_PLASTIC = 5, MATERIAL_STEEL = 2)
 
-/obj/item/weapon/storage/part_replacer/mini
+/obj/item/storage/part_replacer/mini
 	name = "compact rapid part exchange device"
 	desc = "A special mechanical module made to store, sort, and exchange standard machine parts. This one is compact, making it easier to transport, but holds less."
 	icon_state = "RPEDMINI"

@@ -37,7 +37,7 @@
 
 /obj/item/clothing/under/burial
 	name = "burial garments"
-	desc = "Traditional burial garments used to clothe the deceased.."
+	desc = "Traditional burial garments used to clothe the deceased."
 	icon_state = "burial"
 	item_state = "burial"
 
@@ -63,7 +63,7 @@
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 100, bullet = 100, energy = 100, bomb = 100, bio = 100, rad = 100)
+	armor_list = list(melee = 100, bullet = 100, energy = 100, bomb = 100, bio = 100, rad = 100)
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0
@@ -74,6 +74,16 @@
 	name = "loincloth"
 	desc = "A sturdy cloth that covers the private areas."
 	icon_state = "loincloth"
+
+/obj/item/clothing/under/chestwrap
+	name = "chest wrap"
+	desc = "A sturdy cloth that covers the private areas of females."
+	icon_state = "chestwrap"
+
+/obj/item/clothing/under/gharness
+	name = "gear harness"
+	desc = "A series of belts and straps to hold your equipment. Originally designed for simple drones and synths, this is hardly a modest option for organics."
+	icon_state = "gear_harness"
 
 /obj/item/clothing/under/monomial_belt
 	name = "monomial belt"
@@ -184,6 +194,12 @@
 	icon_state = "gorka"
 	item_state = "gorka"
 
+/obj/item/clothing/under/gorka/dark
+	name = "dark gorka"
+	desc = "A rugged set of vaguely militant two-tone dark utility wear with dark patches and markings."
+	icon_state = "gorka_ih"
+	item_state = "gorka_ih"
+
 /obj/item/clothing/under/gorka
 	name = "tan gorka"
 	desc = "A rugged set of vaguely militant and quite slavic two-tone clothes, this time coyote brown on tan."
@@ -202,7 +218,7 @@
 	icon_state = "gorka_ih_med_b"
 	item_state = "gorka_ih_med_b"
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/medspec/gorka_ih_med_g
 	name = "medical specialist gorka"
@@ -210,7 +226,7 @@
 	icon_state = "gorka_ih_med_g"
 	item_state = "gorka_ih_med_g"
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/medical/gorka_crew_med
 	name = "medical crew gorka"
@@ -230,6 +246,13 @@
 	icon_state = "genericb"
 	item_state = "genericb"
 
+/obj/item/clothing/under/netrunner
+	name = "cybersuit"
+	desc = "Jumpsuit favored by surveillance officers and VR gamers alike. Ugly as sin. Luckily, in cyberspace no one can see your realspace clothing."
+	icon_state = "jensen"
+	item_state = "jensen"
+
+
 /obj/item/clothing/under/genericw
 	name = "white generic outfit"
 	desc = "A simple white shirt with grey pants."
@@ -248,34 +271,167 @@
 	icon_state = "northtech"
 	has_sensor = 0
 
+/obj/item/clothing/under/os_jumpsuit
+	name = "Greyson Positronic jumpsuit"
+	desc = "An uniform that was produced by Greyson Positronics, cleaning to enginering this over engineered suit was used. Surprisingly the suit senors still work."
+	icon_state = "os_jumpsuit"
+
+/obj/item/clothing/under/os_jumpsuit/bdu
+	name = "Greyson Positronic jumpsuit"
+	desc = "A Battle Dress Uniform produced by Greyson Positronics for their more style oriented personnel"
+	icon_state = "bdugreyson"
+
+/obj/item/clothing/under/os_jumpsuit/bdu/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["suit up"] = ""
+	options["suit down"] = "_pants"
+	options["sleeves up"] = "_rolled"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 //Excelsior
 /obj/item/clothing/under/excelsior
 	name = "white excelsior jumpsuit"
-	desc = "An excelsior jumpsuit designed to boost morale and spread the revolution"
+	desc = "An Excelsior jumpsuit designed to boost morale and spread the revolution"
 	icon_state = "excelsior_white"
 	item_state = "bl_suit"
 	has_sensor = 0
 
 /obj/item/clothing/under/excelsior/mixed
 	name = "mixed excelsior jumpsuit"
-	desc = "An excelsior jumpsuit designed to boost morale and spread the revolution"
+	desc = "An Excelsior jumpsuit designed to boost morale and spread the revolution"
 	icon_state = "excelsior_mixed"
 	item_state = "bl_suit"
 	has_sensor = 0
 
 /obj/item/clothing/under/excelsior/orange
 	name = "orange excelsior jumpsuit"
-	desc = "An excelsior jumpsuit designed to boost morale and spread the revolution"
+	desc = "An Excelsior jumpsuit designed to boost morale and spread the revolution"
 	icon_state = "excelsior_orange"
 	item_state = "bl_suit"
 	has_sensor = 0
 
 /obj/item/clothing/under/excelsior/officer
 	name = "officer excelsior jumpsuit"
-	desc = "An excelsior jumpsuit designed to boost morale and spread the revolution; made specifically for commissars."
+	desc = "An Excelsior jumpsuit designed to boost morale and spread the revolution; made specifically for commissars."
 	icon_state = "excelsior_officer"
 	item_state = "bl_suit"
 	has_sensor = 0
+
+/obj/item/clothing/under/excelsior/bdu
+	name = "excelsior BDU"
+	desc = "A somewhat dated Excelsior styled Battle Dress Uniform, spread the revolution in style!"
+	icon_state = "bduexcel"
+	item_state = "bduexcel"
+	has_sensor = 0
+/obj/item/clothing/under/excelsior/bdu/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["suit up"] = ""
+	options["suit down"] = "_pants"
+	options["sleeves up"] = "_rolled"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(usr, SPAN_NOTICE("You roll your [choice]."))
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+//*BDUs*//
+
+/obj/item/clothing/under/bdu
+	name = "standard BDU"
+	desc = "A baggy, dated Battle Dress Uniform in slavic tow tone."
+	icon_state = "bdustandard"
+	item_state = "bdustandard"
+
+/obj/item/clothing/under/bdu/tan
+	name = "tan BDU"
+	desc = "A baggy, dated Battle Dress Uniform in desert shades."
+	icon_state = "bdutan"
+	item_state = "bdutan"
+
+/obj/item/clothing/under/bdu/black
+	name = "black BDU"
+	desc = "A baggy, dated Battle Dress Uniform in dark colours."
+	icon_state = "bdublack"
+	item_state = "bdublack"
+
+/obj/item/clothing/under/bdu/grey
+	name = "grey BDU"
+	desc = "A baggy, dated Battle Dress Uniform in station-grey."
+	icon_state = "bdugrey"
+	item_state = "bdugrey"
+
+/obj/item/clothing/under/bdu/camo
+	name = "camo BDU"
+	desc = "A baggy, dated Battle Dress Uniform in classic camo pattern."
+	icon_state = "bducamo"
+	item_state = "bducamo"
+
+/obj/item/clothing/under/bdu/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["suit up"] = ""
+	options["suit down"] = "_pants"
+	options["sleeves up"] = "_rolled"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 //Dresses
 /obj/item/clothing/under/dress
@@ -340,7 +496,7 @@
 
 /obj/item/clothing/under/track_suit
 	name = "striped tracksuit"
-	desc = "A tracksuit lined with white tripped fibers on its side."
+	desc = "A tracksuit lined with white stripes on its side."
 	icon_state = "tracksuit_black"
 	item_state = "tracksuit_black"
 
@@ -367,3 +523,226 @@
 	desc = "A tracksuit lined with red neon fibers. Slightly luminescent."
 	icon_state = "neonr"
 	item_state = "bl_suit"
+
+/obj/item/clothing/under/white
+	name = "ivory white outfit"
+	desc = "White suit, white pants and a white tie. Very stylish."
+	icon_state = "suit_white"
+	item_state = "suit_white"
+	price_tag = 45
+
+/obj/item/clothing/under/red
+	name = "blood red outfit"
+	desc = "Red suit, red pants and a red tie. Very stylish."
+	icon_state = "suit_red"
+	item_state = "suit_red"
+	price_tag = 45
+
+/obj/item/clothing/under/green
+	name = "questionable outfit"//Riddler reference, you probably knew that
+	desc = "Green suit, green pants and a green tie. Quite a riddle to solve."
+	icon_state = "riddler"
+	item_state = "riddler"
+	price_tag = 45
+
+/obj/item/clothing/under/grey
+	name = "ash grey outfit"
+	desc = "Grey suit, grey pants and a grey tie. Very stylish."
+	icon_state = "suit_grey"
+	item_state = "suit_grey"
+	price_tag = 45
+
+/obj/item/clothing/under/black
+	name = "charcoal black outfit"
+	desc = "Black suit, black pants and a black tie. Very stylish."
+	icon_state = "suit_black"
+	item_state = "suit_black"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/black
+	name = "black and purple dress"
+	desc = "A black and purple dress, quite stylish"
+	icon_state = "black_purple"
+	item_state = "black_purple"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/white
+	name = "white and yellow dress"
+	desc = "A white and yellow dress, quite stylish"
+	icon_state = "white_yellow"
+	item_state = "white_yellow"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/saloon
+	name = "saloon dress"
+	desc = "The classic saloon girls attire, perfect for serving schnitzengruben"
+	icon_state = "dress_saloon"
+	item_state = "dress_saloon"
+	price_tag = 45
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
+
+/obj/item/clothing/under/dress/casual/blackdress
+	name = "cocktail dress"
+	desc = "A flattering black cocktail dress."
+	icon_state = "blackdress"
+	item_state = "blackdress"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/blackdressalt
+	name = "skater dress"
+	desc = "A lovely black skater dress"
+	icon_state = "blackdress2"
+	item_state = "blackdress2"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/flowerdress
+	name = "flower pattern dress"
+	desc = "A rather loud, flower patterned dress. Aloha!"
+	icon_state = "flower_dress"
+	item_state = "flower_dress"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/sweptdress
+	name = "red swept dress"
+	desc = "A simple, asymmetrical red dress and belt. Perfect for a night on the town!"
+	icon_state = "red_swept_dress"
+	item_state = "red_swept_dress"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/sevillanadress
+	name = "Sevillana dress"
+	desc = "A traditional garb from an ancient nation of old terra."
+	icon_state = "flamenco"
+	item_state = "flamenco"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/westernbustle
+	name = "western barmaids dress"
+	desc = "For those saloon workers who spend more time behind the counters than under them"
+	icon_state = "westernbustle"
+	item_state = "westernbustle"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/casual/lilac
+	name = "lilac dress"
+	desc = "A simple, lilac dress."
+	icon_state = "lilacdress"
+	item_state = "lilacdress"
+	price_tag = 45
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
+
+/obj/item/clothing/under/dress/casual/bluedress
+	name = "blue dress"
+	desc = "A comfortable, breezy blue summer dress."
+	icon_state = "bluedress"
+	item_state = "bluedress"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/rattydress
+	name = "skimpy black dress"
+	desc = "A short black dress, skimpy enough to qualify as a tank-top for many"
+	icon_state = "rattydress"
+	item_state = "rattydress"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/littleblackdress
+	name = "little black dress"
+	desc = "A short cut, black cocktail dress. Considered a must have by the out of touch for at least 500 years!"
+	icon_state = "littleblackdress"
+	item_state = "littleblackdress"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/pinkdress
+	name = "pink skirt"
+	desc = "A simple pink skirt."
+	icon_state = "pinktutu"
+	item_state = "pinktutu"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/barmaid
+	name = "barmaids dress"
+	desc = "The bar-wench standard for a thousand years!"
+	icon_state = "barmaid"
+	item_state = "barmaid"
+	price_tag = 45
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
+
+/obj/item/clothing/under/helltaker
+	name = "charming outfit"//Helltaker reference
+	desc = "A red shirt with a black tie and black pants. Stylish enough to impress the devil."
+	icon_state = "helltaker"
+	item_state = "helltaker"
+	price_tag = 45
+
+/obj/item/clothing/under/colony
+	name = "cheap charming outfit"//Sprite by INFRARED_BARON
+	desc = "A cheap outfit to that goes well with any actor's career."
+	icon_state = "colony"
+	item_state = "colony"
+	price_tag = 40
+
+/obj/item/clothing/under/johnny
+	name = "rockerboy outfit"//Cyberpunk 2077, Johnny Silverhand's outfit
+	desc = "A padded vest with brown leather pants. Never stop fightin'"
+	icon_state = "johnny"
+	item_state = "johnny"
+	price_tag = 60
+	armor_list = list(
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
+/obj/item/clothing/under/raider
+	name = "leather outfit"
+	desc = "A rather resistant, generic leather outfit. Smells like waste"
+	icon_state = "raider"
+	item_state = "raider"
+	price_tag = 60
+	armor_list = list(
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+/obj/item/clothing/under/tribalhide
+	name = "Tribal Hides"
+	desc = "Leather and fur stitched together, for your inner unga. You feel like thumping your chest."
+	icon_state = "tribalm"
+	item_state = "tribalm"
+	price_tag = 50
+	armor_list = list(
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+/obj/item/clothing/under/tribalhide/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Exposed Chest"] = "tribalm"
+	options["Covered Chest"] = "tribalf"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your hides into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1

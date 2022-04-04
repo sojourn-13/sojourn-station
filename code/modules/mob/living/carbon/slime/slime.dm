@@ -170,15 +170,18 @@
 
 /mob/living/carbon/slime/adjustFireLoss(amount)
 	..(-abs(amount)) // Heals them
+	handle_regular_status_updates()
 	return
 
 /mob/living/carbon/slime/bullet_act(var/obj/item/projectile/Proj)
 	attacked += 10
 	..(Proj)
+	handle_regular_status_updates()
 	return 0
 
 /mob/living/carbon/slime/emp_act(severity)
 	powerlevel = 0 // oh no, the power!
+	handle_regular_status_updates()
 	..()
 
 /mob/living/carbon/slime/ex_act(severity)
@@ -202,7 +205,7 @@
 
 	adjustBruteLoss(b_loss)
 	adjustFireLoss(f_loss)
-
+	handle_regular_status_updates()
 	updatehealth()
 
 
@@ -215,7 +218,7 @@
 /mob/living/carbon/slime/attack_hand(mob/living/carbon/human/M as mob)
 
 	..()
-
+	handle_regular_status_updates()
 	if(Victim)
 		if(Victim == M)
 			if(prob(60))
@@ -273,7 +276,7 @@
 		if (I_GRAB)
 			if (M == src || anchored)
 				return
-			var/obj/item/weapon/grab/G = new /obj/item/weapon/grab(M, src)
+			var/obj/item/grab/G = new /obj/item/grab(M, src)
 
 			M.put_in_active_hand(G)
 
@@ -317,7 +320,7 @@
 /mob/living/carbon/slime/attackby(obj/item/W, mob/user)
 	if(W.force > 0)
 		attacked += 10
-		if(prob(25))
+		if(prob(25) && !user.stats?.getPerk(PERK_SI_SCI))
 			to_chat(user, SPAN_DANGER("[W] passes right through [src]!"))
 			return
 		if(Discipline && prob(50)) // wow, buddy, why am I getting attacked??
@@ -371,6 +374,7 @@
 								if(user)
 									step_away(src, user)
 							canmove = 1
+	handle_regular_status_updates()
 	..()
 
 /mob/living/carbon/slime/restrained()
@@ -390,6 +394,7 @@ mob/living/carbon/slime/toggle_throw_mode()
 			powerlevel = 10
 			adjustToxLoss(-10)
 	nutrition = max(nutrition, get_max_nutrition())
+	handle_regular_status_updates()
 
 /mob/living/carbon/slime/cannot_use_vents()
 	if(Victim)

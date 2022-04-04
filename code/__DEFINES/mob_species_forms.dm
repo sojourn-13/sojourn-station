@@ -1,5 +1,6 @@
 // 'Regular' species.
 #define SPECIES_HUMAN			"Human"
+#define SPECIES_EXALT_HUMAN		"Exalt Human"
 #define SPECIES_HUMAN_VATBORN	"Vatborn"
 #define SPECIES_UNATHI			"Lizard"
 #define SPECIES_SKRELL			"Mar'qua"
@@ -54,6 +55,7 @@
 
 // Forms for the Appearances
 #define FORM_HUMAN				"Human"
+#define FORM_EXALT_HUMAN		"Exalt Human"
 #define FORM_CANINE				"Canine"
 #define FORM_FELINE				"Feline"
 #define FORM_SHARK				"Shark"
@@ -83,7 +85,12 @@
 #define FORM_AGSYNTH			"Artificer Guild Synthetic"
 #define FORM_BSSYNTH			"Blackshield Synthetic"
 #define FORM_CHURCHSYNTH		"Absolute Synthetic"
+#define FORM_NASHEF				"Nashef-Agunabi"
 #define FORM_FBP				"Full Body Prosthetic"
+#define FORM_UNBRANDED			"Unbranded Full Body Prosthetic"
+#define FORM_FOLKEN				"Folken"
+#define FORM_MYCUS				"Mycus"
+#define FORM_AXOLOTL			"Axolotl"
 
 #define FORM_BIRD				"Avian"
 

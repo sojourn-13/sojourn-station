@@ -283,7 +283,7 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 	..()
 
 /datum/asset/simple/tool_upgrades/register()
-	for(var/type in subtypesof(/obj/item/weapon/tool_upgrade))
+	for(var/type in subtypesof(/obj/item/tool_upgrade))
 		var/filename = sanitizeFileName("[type].png")
 		var/icon/I = getFlatTypeIcon(type)
 		assets[filename] = I
@@ -296,6 +296,14 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 		var/icon/I = icon(P.icon, P.icon_state)
 		assets[filename] = I
 	..()
+
+/datum/asset/simple/codicon
+	isTrivial = TRUE
+	verify = FALSE
+	assets = list(
+		"codicon.css" = 'html/codicon/codicon.css',
+		"codicon.ttf" = 'html/codicon/codicon.ttf'
+	)
 
 /datum/asset/directories/nanoui
 	isTrivial = FALSE
@@ -314,7 +322,7 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 
 /datum/asset/images_map/register()
 	var/list/mapnames = list()
-	for(var/z in maps_data.station_levels)
+	for(var/z in GLOB.maps_data.station_levels)
 		mapnames += map_image_file_name(z)
 
 	var/list/filenames = flist(MAP_IMAGE_PATH)

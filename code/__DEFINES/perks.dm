@@ -60,13 +60,65 @@
 #define PERK_MEDICAL_EXPERT /datum/perk/medicalexpertise
 #define PERK_SURGICAL_MASTER /datum/perk/surgical_master
 #define PERK_ADVANCED_MEDICAL /datum/perk/advanced_medical
+#define PERK_NERD /datum/perk/chemist
 #define PERK_ROBOTICS_EXPERT /datum/perk/robotics_expert
 #define PERK_ARTIST /datum/perk/job/artist
 #define PERK_BOLT_REFLECT /datum/perk/job/bolt_reflect
 #define PERK_JINGLE_JANGLE /datum/perk/job/jingle_jangle
 #define PERK_BUTCHER /datum/perk/job/butcher
+#define PERK_MASTER_HERBALIST /datum/perk/job/master_herbalist
 #define PERK_PERFECT_SHOT /datum/perk/exceptional_aim
 #define PERK_STAY_HYDRATED /datum/perk/stay_hydrated
 #define PERK_SECOND_SKIN /datum/perk/second_skin
 #define PERK_IRON_FLESH /datum/perk/iron_flesh
 #define PERK_SI_SCI /datum/perk/si_sci
+#define PERK_ODD_REROLL /datum/perk/oddity_reroll
+#define PERK_FOLKEN_HEALING /datum/perk/folken_healing
+#define PERK_FOLKEN_HEALING_YOUNG /datum/perk/folken_healing/young
+#define PERK_DARK_HEAL /datum/perk/dark_heal
+#define PERK_MUSH_FOLLOWER /datum/perk/mushroom_follower
+#define PERK_SLIME_FOLLOWER /datum/perk/slime_follower
+#define PERK_GREENTHUMB /datum/perk/greenthumb
+#define PERK_ADDICT /datum/perk/addict
+#define PERK_SPEED /datum/perk/speed_boost
+#define PERK_LIMB_REGEN /datum/perk/limb_regen
+#define PERK_MIND_BOOST /datum/perk/slime_stat_boost/mental
+#define PERK_BODY_BOOST /datum/perk/slime_stat_boost/physical
+
+// Psionic perks
+#define PERK_PSION /datum/perk/psion
+#define PERK_PSI_MANIA /datum/perk/psi_mania
+#define PERK_PSI_HARMONY /datum/perk/psi_harmony
+#define PERK_PSI_ATTUNEMENT /datum/perk/psi_attunement
+#define PERK_PSI_PSYCHOLOGIST /datum/perk/psi_psychology
+#define PERK_PSI_PEACE /datum/perk/psi_peace_of_the_psion
+#define PERK_PSI_GRACE /datum/perk/psi_grace
+
+// Nanogate Perks
+#define PERK_NANOGATE /datum/perk/nanogate
+#define PERK_NANITE_REGEN /datum/perk/nanite_regen
+#define PERK_NANITE_MUSCLE /datum/perk/nanite_muscle
+#define PERK_NANITE_ARMOR /datum/perk/nanite_armor
+#define PERK_NANITE_AMMO /datum/perk/nanite_ammo
+
+// Nanite Chem Perks.
+#define PERK_NANITE_CHEM /datum/perk/nanite_chem
+#define PERK_NANITE_CHEM_IMPLANT /datum/perk/nanite_chem/implantoids
+#define PERK_NANITE_CHEM_TCS /datum/perk/nanite_chem/trauma_control_system
+#define PERK_NANITE_CHEM_CBU /datum/perk/nanite_chem/control_booster_utility
+#define PERK_NANITE_CHEM_CBC /datum/perk/nanite_chem/control_booster_combat
+#define PERK_NANITE_CHEM_PURGER /datum/perk/nanite_chem/purgers
+#define PERK_NANITE_CHEM_OXYRUSH /datum/perk/nanite_chem/oxyrush
+#define PERK_NANITE_CHEM_NANTIDOTE /datum/perk/nanite_chem/nantidotes
+
+//Wage Perks
+#define PERK_NEPOTISM /datum/perk/nepotism
+#define PERK_DEBTOR /datum/perk/debtor
+
+//Genetics Perks
+#define PERK_SPLICED /datum/perk/spliced
+
+// Food perks
+#define PERK_CARNIVORE /datum/perk/carnivore
+#define PERK_HERBIVORE /datum/perk/herbivore
+#define PERK_SNACKIVORE /datum/perk/oddity/snackivore

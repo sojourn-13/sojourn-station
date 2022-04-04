@@ -20,9 +20,11 @@
 /turf/simulated/floor/plating/under,
 /area/crawler)
 "f" = (
-/obj/structure/catwalk,
-/obj/machinery/light/floor,
-/turf/simulated/floor/plating/under,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "g" = (
 /obj/structure/window/reinforced{
@@ -32,7 +34,7 @@
 /area/crawler)
 "h" = (
 /obj/machinery/power/breakerbox/activated,
-/obj/item/weapon/tool_upgrade/augment/cell_mount,
+/obj/item/tool_upgrade/augment/cell_mount,
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/crawler)
 "i" = (
@@ -74,11 +76,11 @@
 /turf/simulated/floor/bluegrid,
 /area/crawler)
 "p" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
+/obj/machinery/power/terminal,
+/obj/structure/catwalk,
+/obj/random/powercell,
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "q" = (
 /obj/crawler/crawler_wallbreaker/vertical,
@@ -97,10 +99,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "u" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
-/obj/machinery/light/floor,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "v" = (
@@ -111,17 +110,6 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
-"w" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
-"x" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "y" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -156,7 +144,7 @@
 "H" = (
 /obj/machinery/power/terminal,
 /obj/structure/catwalk,
-/obj/item/weapon/tool_upgrade/augment/cell_mount,
+/obj/item/tool_upgrade/augment/cell_mount,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "N" = (
@@ -198,7 +186,7 @@ a
 "}
 (2,1,1) = {"
 a
-f
+e
 l
 n
 t
@@ -211,7 +199,7 @@ a
 a
 e
 l
-n
+f
 t
 t
 A
@@ -235,7 +223,7 @@ e
 l
 n
 t
-x
+t
 a
 A
 b
@@ -246,8 +234,8 @@ e
 l
 n
 t
+u
 t
-x
 t
 C
 "}
@@ -255,10 +243,10 @@ C
 b
 e
 l
-p
+n
 B
 t
-t
+u
 t
 C
 "}
@@ -267,7 +255,7 @@ b
 e
 k
 a
-u
+y
 y
 y
 R
@@ -288,7 +276,7 @@ b
 a
 d
 h
-N
+p
 s
 N
 s
@@ -311,7 +299,7 @@ a
 T
 j
 c
-w
+j
 c
 j
 T

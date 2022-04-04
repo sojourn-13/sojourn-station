@@ -369,7 +369,7 @@
 		var/mob/living/carbon/human/H = pick(candidates)
 		candidates.Remove(H)
 		var/list/contents = H.get_contents()
-		target = locate(/obj/item/weapon/oddity) in contents
+		target = locate(/obj/item/oddity) in contents
 		if(!target)
 			target = pick(H.organs - H.organs_by_name[BP_CHEST])
 

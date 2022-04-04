@@ -9,7 +9,6 @@
 	invisibility = 101
 	update_lying_buckled_and_verb_status()
 	GLOB.dead_mob_list -= src
-
 	if(do_gibs) gibs(loc, dna, gibspawner)
 
 	var/atom/movable/overlay/animation = null
@@ -21,6 +20,7 @@
 		animation.master = src
 		flick(anim, animation)
 	addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
+	STOP_PROCESSING(SSmobs, src) //were dead, and have no possable way to revive
 
 /mob/proc/check_delete(var/atom/movable/overlay/animation)
 	if(animation)	qdel(animation)
@@ -31,8 +31,8 @@
 //Dusting robots does not eject the MMI, so it's a bit more powerful than gib() /N
 /mob/proc/dust(anim = "dust-m", remains = /obj/effect/decal/cleanable/ash, iconfile = 'icons/mob/mob.dmi')
 	death(1)
-	if (istype(loc, /obj/item/weapon/holder))
-		var/obj/item/weapon/holder/H = loc
+	if (istype(loc, /obj/item/holder))
+		var/obj/item/holder/H = loc
 		H.release_mob()
 
 	transforming = TRUE
@@ -40,7 +40,6 @@
 	canmove = 0
 	icon = null
 	invisibility = 101
-
 	new remains(loc)
 
 
@@ -54,12 +53,13 @@
 		animation.master = src
 		flick(anim, animation)
 	addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
-
+	STOP_PROCESSING(SSmobs, src) //were dead, and have no possable way to revive
 
 /mob/proc/death(gibbed,deathmessage="seizes up and falls limp...",show_dead_message = "You have died.")
 	if(stat == DEAD)
 		return 0
 
+	activate_mobs_in_range(src, 5) //Its quite clear to everyone close by when something dies
 	facing_dir = null
 
 	if(!gibbed && deathmessage != "no message") // This is gross, but reliable. Only brains use it.
@@ -71,11 +71,12 @@
 			O.forceMove(loc)
 		embedded = list()
 
-	for(var/obj/item/weapon/implant/carrion_spider/control/C in src)
+	for(var/obj/item/implant/carrion_spider/control/C in src)
 		C.return_mind()
 
 	for(var/mob/living/carbon/human/H in oviewers(src))
 		H.sanity.onSeeDeath(src)
+		SEND_SIGNAL(H, COMSIG_MOB_DEATH, src)
 
 	stat = DEAD
 	update_lying_buckled_and_verb_status()
@@ -117,8 +118,6 @@
 	updateicon()
 	to_chat(src,"<span class='deadsay'>[show_dead_message]</span>")
 	return 1
-
-
 
 
 //This proc retrieves the relevant time of death from
