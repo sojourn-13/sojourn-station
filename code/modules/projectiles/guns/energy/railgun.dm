@@ -189,6 +189,7 @@
 		list(mode_name="ultrahigh-velocity", mode_desc="fires a metal rod at hypersonic speed", projectile_type=/obj/item/projectile/bullet/rail/uhv, charge_cost=2000, silenced = FALSE, fire_delay = 18, icon="destroy")
 	)
 	var/obj/item/stack/stack_used = /obj/item/stack/rods
+	var/mat_per_stack = 2
 	var/material_storage = 0
 	var/material_max = 30
 	var/mat_per_fire = 1
@@ -211,6 +212,6 @@
 	if(istype(S,stack_used))
 		while((S.amount && S) && (material_max > material_storage))
 			if(S.use(1) && do_after(user, 5, src))
-				material_storage += 2
+				material_storage += mat_per_stack
 				playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
-				to_chat(user, "<span class='notice'>You load a rod into \the [src]. The [src] now holds [material_storage]/[material_max] rods.</span>")
+				to_chat(user, "<span class='notice'>You load a [initial(stack_used.name)] into \the [src]. The [src] now holds [material_storage]/[material_max] [initial(stack_used.name)]s.</span>")
