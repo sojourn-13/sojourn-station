@@ -137,6 +137,9 @@
 			var/obj/item/clothing/mask/mask = wear_mask
 			if(istype(mask) && mask.muffle_voice)
 				voice_sub = "Unknown"
+				if(GetIdCard())
+					var/obj/item/card/id/gotcard = src.GetIdCard()
+					voice_sub = voice_sub + " as [gotcard.registered_name]"
 		for(var/obj/item/gear in list(wear_mask, wear_suit, head))
 			if(!gear)
 				continue
