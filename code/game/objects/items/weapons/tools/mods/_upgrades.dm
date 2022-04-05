@@ -260,13 +260,13 @@
 
 /datum/component/item_upgrade/proc/apply_values_armor(var/obj/item/clothing/T)
 	if(tool_upgrades[UPGRADE_MELEE_ARMOR])
-		T.armor.melee += tool_upgrades[UPGRADE_MELEE_ARMOR]
+		T.armor.modifyRating(melee = tool_upgrades[UPGRADE_MELEE_ARMOR]) 
 	if(tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
-		T.armor.bullet += tool_upgrades[UPGRADE_BALLISTIC_ARMOR]
+		T.armor.modifyRating(bullet = tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
 	if(tool_upgrades[UPGRADE_ENERGY_ARMOR])
-		T.armor.energy += tool_upgrades[UPGRADE_ENERGY_ARMOR]
+		T.armor.modifyRating(energy = tool_upgrades[UPGRADE_ENERGY_ARMOR])
 	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
-		T.armor.bomb += tool_upgrades[UPGRADE_BOMB_ARMOR]
+		T.armor.modifyRating(bomb = tool_upgrades[UPGRADE_BOMB_ARMOR])
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
 		T.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
 
