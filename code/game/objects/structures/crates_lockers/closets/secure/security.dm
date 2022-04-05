@@ -13,6 +13,7 @@
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/device/radio/headset/heads/captain(src)
 	new /obj/item/clothing/gloves/captain(src)
+	new /obj/item/clothing/accessory/halfcape/premier
 	new /obj/item/device/flash(src)
 	new /obj/item/gun/projectile/basilisk(src)
 	new /obj/item/ammo_magazine/kurtz_50/rubber(src)
@@ -64,6 +65,7 @@
 	new /obj/item/clothing/glasses/sechud/tactical(src)
 	new /obj/item/clothing/accessory/badge/hos(src)
 	new /obj/item/clothing/suit/greatcoat/ihc(src)
+	new /obj/item/clothing/accessory/halfcape/wo(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
 	new /obj/item/storage/pouch/pistol_holster(src)
 	new /obj/item/storage/pouch/baton_holster/telebaton(src)

@@ -14,6 +14,7 @@
 	new /obj/item/clothing/head/welding(src)
 	new /obj/item/clothing/gloves/insulated(src)
 	new /obj/item/clothing/shoes/color/brown(src)
+	new /obj/item/clothing/accessory/halfcape/gm(src)
 	new /obj/item/device/radio/headset/heads/ce(src)
 	new /obj/item/storage/toolbox/mechanical(src)
 	new /obj/item/clothing/suit/storage/hazardvest(src)

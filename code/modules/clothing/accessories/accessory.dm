@@ -282,10 +282,22 @@
 	icon_state = "scav_mantle"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
+/obj/item/clothing/accessory/cape/sergeant_cape
+	name = "Sergeants mantle"
+	desc = "A shoulder-mantlee made from black and silver fabric, denoting the position of Sergeant. Allows for identification at a glance."
+	icon_state = "half_sarg"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
 /obj/item/clothing/accessory/cape/corpsmans_cape
-	name = "corpsman cape"
-	desc = "A cape made from blue and white fabric denoting that they are a corpsman, to be easily seen in the jungle."
-	icon_state = "corpsman_cape"
+	name = "Corpsman mantle"
+	desc = "A half-cape made from blue and black fabric denoting that they are a corpsman, to be easily seen in the jungle."
+	icon_state = "half_corp"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/cape/trooper_cape
+	name = "Troopers mantle"
+	desc = "A half-cape made from blue and white fabric denoting the rank of Trooper. Allows for identification at a glance"
+	icon_state = "half_troop"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/cape/black
@@ -315,6 +327,65 @@
 	name = "camo Blackshield cloak"
 	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a tactical camo pattern."
 	icon_state = "blackshieldcloak_camo"
+
+/obj/item/clothing/accessory/halfcape
+	name = "Blackshield Commanders holo-mantle"
+	desc = "A fancy holographic mantle cape made from dark fabric and bearing the rank markings of the Blackshield Commander. Despite skillful repair, the signs of multiple back-facing \
+	perforations give no doubt as to who this cloak belongs to."
+	icon_state = "half_co"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/halfcape/cbo
+	name = "Chief Biolab Officers holo-mantle"
+	desc = "A fancy holo-mantle made from light fabric and bearing the rank markings of the Soteria CBO. While sleek and sterile, it sadly lacks \
+	protection against man-made horrors beyond our comprehension."
+	icon_state = "half_cbo"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/halfcape/cro
+	name = "Chief Biolab Officers holo-mantle"
+	desc = "A fancy holo-mantle made from dark fabric and bearing the rank markings of the Soteria CRO. Black and purple, a color scheme and style to match the \
+	mad scientist in every Overseer."
+	icon_state = "half_cro"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/halfcape/gm
+	name = "Guildmasters holo-mantle"
+	desc = "A fancy holo-mantle made from dark fabric and bearing the rank markings of the Guildmaster. A snagging hazard sure to cause even the most hardened of safety inspectors\
+	to blanch."
+	icon_state = "half_gm"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/halfcape/foreman
+	name = "Foreman holo-mantle"
+	desc = "A fancy holo-mantle made from dark fabric and bearing the rank markings of the Foreman. The question hangs as to whether or not the color is from dyes, \
+	or the blood of countless voidwolves."
+	icon_state = "half_fm"
+
+/obj/item/clothing/accessory/halfcape/wo
+	name = "Warrant Officers holo-mantle"
+	desc = "A fancy holo-mantle made from dark fabric and bearing the rank markings of the Warrant Officer. A wonderful ostentateous accessory to suit the inflated ego of many a \
+	frontier mall-cop."
+	icon_state = "half_wo"
+
+/obj/item/clothing/accessory/halfcape/prime
+	name = "Primes holo-mantle"
+	desc = "A fancy holo-mantle made from dark fabric and bearing the rank markings of the Prime. Muted browns and golds, a perfectly subdued tone to compliment the \
+	usual flare of the church."
+	icon_state = "half_nt"
+
+/obj/item/clothing/accessory/halfcape/ceo
+	name = "CEOs holo-mantle"
+	desc = "A fancy holo-mantle made from light-toned silk and bearing the rank markings of the Prime. Fine alabaster silks and gold trim, despite its seemingly similar\
+	 make to similar cloaks, its quality cannot be contested."
+	icon_state = "half_ceo"
+
+
+/obj/item/clothing/accessory/halfcape/premier
+	name = "Premiers holo-mantle"
+	desc = "A fancy, holo-mantle made from fine silk and bearing the rank markings of the Premier. The classic color scheme, coniferous green and tinsel gold. "
+	icon_state = "half_prem"
+
 
 /obj/item/clothing/accessory/cape/blackedge
 	name = "heavy black cloak"

@@ -71,6 +71,7 @@
 
 /obj/structure/closet/secure_closet/reinforced/quartermaster/populate_contents()
 	new /obj/item/clothing/under/rank/cargotech(src)
+	new /obj/item/clothing/accessory/halfcape/ceo(src)
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/device/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/gloves/thick(src)
@@ -311,6 +312,7 @@
 /obj/structure/closet/secure_closet/reinforced/foreman/populate_contents()
 	new /obj/item/device/radio/headset/heads/foreman(src)
 	new /obj/item/clothing/accessory/cape/scav(src)
+	new /obj/item/clothing/accessory/halfcape/foreman(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/scav/forman(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/guns/vector(src)
 	if(prob(60))
