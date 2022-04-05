@@ -4,7 +4,7 @@
 	suit_type = "hydrogen knight"
 	desc = "An armored, knight-like suit designed by Soteria's best roboticists and powered by hydrogen."
 	icon_state = "hydrogen_knight_rig"
-	armor_list = list(melee = 30, bullet = 30, energy = 35, bomb = 10, bio = 100, rad = 100)
+	armor_list = list(melee = 80, bullet = 80, energy = 80, bomb = 70, bio = 100, rad = 100)
 	slowdown = 0 // Lot of stuff used in its construction that justify not having any slowdown while active
 	offline_slowdown = 5 // Very heavy and the suit isn't helping while offline
 	offline_vision_restriction = 2
@@ -27,12 +27,10 @@
 
 /obj/item/clothing/suit/space/rig/hydrogen_knight
 	name = "suit"
-	armor_list = list(melee = 80, bullet = 80, energy = 80, bomb = 70, bio = 100, rad = 100)
 	retract_while_active = FALSE
 
 /obj/item/clothing/head/helmet/space/rig/hydrogen_knight
 	name = "helmet"
-	armor_list = list(melee = 80, bullet = 80, energy = 80, bomb = 70, bio = 100, rad = 100)
 	retract_while_active = TRUE
 	flash_protection = FLASH_PROTECTION_MAJOR
 
