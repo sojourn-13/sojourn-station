@@ -173,7 +173,6 @@
 					/obj/item/ammo_magazine/smg_35/rubber = 8,
 					/obj/item/ammo_magazine/magnum_40/rubber = 8,
 					/obj/item/ammo_magazine/speed_loader_magnum_40/rubber = 6,
-					/obj/item/ammo_magazine/smg_magnum_40/rubber = 8,
 					/obj/item/ammo_magazine/kurtz_50/rubber = 6,
 					/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 6,
 					/obj/item/ammo_magazine/light_rifle_257_short/rubber = 8,
