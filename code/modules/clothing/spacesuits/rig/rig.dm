@@ -39,6 +39,8 @@
 	slowdown = 0
 	stiffness = LIGHT_STIFFNESS
 	obscuration = LIGHT_OBSCURATION
+	tool_qualities = list(QUALITY_ARMOR = 100)
+	max_upgrades = 1
 	var/interface_path = "hardsuit.tmpl"
 	var/ai_interface_path = "hardsuit.tmpl"
 	var/interface_title = "Hardsuit Controller"
@@ -199,6 +201,22 @@
 		if(armor) piece.armor = armor
 
 	update_icon(1)
+
+/obj/item/rig/proc/updateArmor()
+	for(var/obj/item/piece in list(gloves,helmet,boots,chest))
+		if(!istype(piece))
+			continue
+		piece.name = "[suit_type] [initial(piece.name)]"
+		piece.desc = "It seems to be part of a [src.name]."
+		piece.icon_state = "[initial(icon_state)]"
+		piece.min_cold_protection_temperature = min_cold_protection_temperature
+		piece.max_heat_protection_temperature = max_heat_protection_temperature
+		if(piece.siemens_coefficient > siemens_coefficient) //So that insulated gloves keep their insulation.
+			piece.siemens_coefficient = siemens_coefficient
+		piece.permeability_coefficient = permeability_coefficient
+		piece.unacidable = unacidable
+		if(armor)
+			piece.armor = armor
 
 /obj/item/rig/Destroy()
 	for(var/obj/item/piece in list(gloves,boots,helmet,chest))

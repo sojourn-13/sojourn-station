@@ -96,6 +96,8 @@
 		/obj/item/rcd
 	)
 
+	max_upgrades = 2 //guild
+
 	req_access = list()
 	req_one_access = list()
 
@@ -142,6 +144,8 @@ Advanced Voidsuit: Guild Master
 		/obj/item/device/t_scanner,
 		/obj/item/rcd
 	)
+
+	max_upgrades = 2 //also gets two upgrades, because it's also guild
 
 	req_access = list(access_ce)
 	req_one_access = list()
@@ -197,6 +201,8 @@ Technomancer RIG
 		/obj/item/device/t_scanner,
 		/obj/item/rcd
 	)
+
+	max_upgrades = 2
 
 /obj/item/rig/techno/equipped
 	initial_modules = list(
@@ -384,6 +390,7 @@ Technomancer RIG
 		/obj/item/stack/medical,
 		/obj/item/roller
 	)
+	max_upgrades = 0 //already has 60 armor
 
 /obj/item/rig/trauma_suit/equipped
 	req_access = list()
