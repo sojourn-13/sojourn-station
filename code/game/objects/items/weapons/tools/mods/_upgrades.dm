@@ -71,7 +71,7 @@
 	if(isarmor(A))
 		return check_armor(A, user)
 
-	if(istype(holder, /obj/item/rig))
+	if(istype(A, /obj/item/rig))
 		return check_rig(A, user)
 
 	return FALSE
@@ -164,14 +164,14 @@
 	return TRUE
 
 /datum/component/item_upgrade/proc/check_rig(var/obj/item/rig/R, var/mob/living/user)
-	if(T.item_upgrades.len >= T.max_upgrades)
+	if(R.item_upgrades.len >= R.max_upgrades)
 		to_chat(user, SPAN_WARNING("This hardsuit can't fit any more modifications!"))
 		return FALSE
 
 	if(required_qualities.len)
 		var/qmatch = FALSE
 		for (var/q in required_qualities)
-			if (T.has_quality(q))
+			if (R.has_quality(q))
 				qmatch = TRUE
 				break
 
