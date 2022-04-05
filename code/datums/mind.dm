@@ -102,7 +102,7 @@
 	if(new_character.client.get_preference_value(/datum/client_preference/stay_in_hotkey_mode) == GLOB.PREF_YES)
 		winset(new_character.client, null, "mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true input.background-color=#F0F0F0")
 		if(istype(new_character, /mob/living/silicon/robot))
-			winset(src, null, "mainwindow.macro=borgmacro")
+			winset(new_character.client, null, "mainwindow.macro=borgmacro")
 
 /datum/mind/proc/store_memory(new_text)
 	memory += "[new_text]<BR>"
