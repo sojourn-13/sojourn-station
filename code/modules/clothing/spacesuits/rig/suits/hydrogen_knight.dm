@@ -21,7 +21,7 @@
 	extra_allowed = list(
 		/obj/item/hydrogen_fuel_cell
 	)
-
+	max_upgrades = 0 //no
 	req_access = list()
 	req_one_access = list()
 
