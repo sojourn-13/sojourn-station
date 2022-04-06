@@ -264,18 +264,18 @@
 	name = "\"Star Striker\" casing"
 	desc = "A 30 round packet of casings for the Star Striker laser rifle, its cal is .233."
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223
-	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5, MATERIAL_SILVER = 5) //Takes silver
+	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_SILVER = 2.5) //Takes silver
 
 /datum/design/research/item/ammo/laser/ap
 	name = "\"Star Striker\" piercing laser casing."
 	desc = "A 30 round packet of casings for the Star Striker laser rifle. Meant for penetration of armor, its cal is .233."
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/ap
-	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5, MATERIAL_GOLD = 5) //Takes gold
+	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5) //Takes gold
 
 /datum/design/research/item/ammo/laser/lethal
 	name = "\"Star Striker\" dense laser casing."
 	desc = "A 30 round packet of casings for the Star Striker laser rifle. Compact laser that deals more damage but is easily blocked by armor, its cal is .233."
-	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5, MATERIAL_PLASMA = 5) //Takes plasma
+	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_PLASMA = 2.5) //Takes plasma
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/lethal
 
 /datum/design/research/item/ammo/laser/box // larger initial investment, but highly beneficial for Laser AK users.
