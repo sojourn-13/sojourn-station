@@ -299,7 +299,7 @@
 	if(tool_upgrades[UPGRADE_MELEE_ARMOR])
 		R.armor_list[melee] += tool_upgrades[UPGRADE_MELEE_ARMOR]
 	if(tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
-		R.armor_list.[bullet += tool_upgrades[UPGRADE_BALLISTIC_ARMOR]
+		R.armor_list.[bullet] += tool_upgrades[UPGRADE_BALLISTIC_ARMOR]
 	if(tool_upgrades[UPGRADE_ENERGY_ARMOR])
 		R.armor_list.[energy] += tool_upgrades[UPGRADE_ENERGY_ARMOR]
 	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
