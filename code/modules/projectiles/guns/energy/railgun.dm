@@ -177,7 +177,7 @@
 	zoom_factor = 1.8
 	extra_damage_mult_scoped = 0.2
 	damage_multiplier = 1.6
-	penetration_multiplier = 4.0
+	penetration_multiplier = 2.0
 	twohanded = TRUE
 	slowdown_hold = 1.5
 	brace_penalty = 30
@@ -193,6 +193,19 @@
 	var/matter_type = MATERIAL_RSCRAP
 
 	var/projectile_cost = 1
+
+/obj/item/gun/energy/laser/railgun/gauss/Initialize()
+    ..()
+    AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE,  50,  60,  20, 0.01, 2)
+    RegisterSignal(src, COMSIG_HEAT_VENT, .proc/ventEvent) //this sould just be a fluff message, proc can be anything
+    RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheat)
+//this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
+
+/obj/item/gun/energy/your_gun_path_here/consume_next_projectile()
+	var/datum/component/heat/H = GetComponent(/datum/component/heat)
+	if((H.currentHeat > H.heatThresholdSpecial) || !..())
+		return null
+	return ..()
 
 /obj/item/gun/energy/laser/railgun/gauss/attackby(obj/item/I, mob/user)
 
