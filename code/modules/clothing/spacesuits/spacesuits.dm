@@ -27,6 +27,7 @@
 	siemens_coefficient = 0.9
 	species_restricted = list("exclude")
 	flash_protection = FLASH_PROTECTION_MAJOR
+	obscuration = LIGHT_OBSCURATION
 
 	var/obj/machinery/camera/camera
 	var/list/camera_networks

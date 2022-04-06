@@ -320,10 +320,13 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "A rigged yet sturdy scavenger armor. Strong and protective as most vests, it is made entirely from reclaimed materials. It even has pockets!"
 	icon_state = "scav_armor"
 	item_state = "scav_armor"
+	stiffness = MEDIUM_STIFFNESS
+	equip_delay = 2 SECONDS
+	slowdown = 0.2
 	armor_list = list(
-		melee = 35, //Not the best armor, but easily crafted and adds some utility with decent protection all round.
-		bullet = 35,
-		energy = 35,
+		melee = 30, //Not the best armor, but easily crafted and adds some utility with decent protection all round.
+		bullet = 25,
+		energy = 15,
 		bomb = 25,
 		bio = 0,
 		rad = 0
