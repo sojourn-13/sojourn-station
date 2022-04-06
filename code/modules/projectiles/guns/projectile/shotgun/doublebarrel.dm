@@ -103,3 +103,14 @@
 	recoil_buildup = 1.2 //gonna have solid grip on those, point-blank shots adviced
 	one_hand_penalty = 10 //compact shotgun level
 	saw_off = FALSE
+
+/obj/item/gun/projectile/shotgun/doublebarrel/axe
+	name = "axe double-barreled shotgun"
+	desc = "A mutilated clasic shotgun chambered in 20mm, this one complete with an axe head towards the barrels!"
+	icon_state = "bshotgun"
+	item_state = "bshotgun"
+	damage_multiplier = 0.8 //slightly weaker due to the fact - you know, you put a fucking axe on it.
+	recoil_buildup = 1.2
+	saw_off = FALSE
+	sharp = TRUE //Duh, it's an axe.
+	force = WEAPON_FORCE_ROBUST
