@@ -23,7 +23,7 @@
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
 
 	// These values are passed on to all component pieces.
-	armor_list = list(
+	armor = list(
 		melee = 30,
 		bullet = 20,
 		energy = 20,
@@ -206,16 +206,7 @@
 	for(var/obj/item/piece in list(gloves,helmet,boots,chest))
 		if(!istype(piece))
 			continue
-		piece.name = "[suit_type] [initial(piece.name)]"
-		piece.desc = "It seems to be part of a [src.name]."
-		piece.icon_state = "[initial(icon_state)]"
-		piece.min_cold_protection_temperature = min_cold_protection_temperature
-		piece.max_heat_protection_temperature = max_heat_protection_temperature
-		if(piece.siemens_coefficient > siemens_coefficient) //So that insulated gloves keep their insulation.
-			piece.siemens_coefficient = siemens_coefficient
-		piece.permeability_coefficient = permeability_coefficient
-		piece.unacidable = unacidable
-		if(armor)
+		if(armor_list)
 			piece.armor = armor
 
 /obj/item/rig/Destroy()
