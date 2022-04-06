@@ -306,6 +306,11 @@
 	icon_state = "cloak"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
+/obj/item/clothing/accessory/bscloak
+	name = "Blackshield longcoat"
+	desc = "A simple, durable longcoat intended to be worn under armored vests for protection in incliment weather."
+	icon_state = "bs_longcoat"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/cape/blackshield
 	name = "grey Blackshield cloak"
