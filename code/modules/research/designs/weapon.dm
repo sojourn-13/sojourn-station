@@ -283,6 +283,7 @@
 	desc = "A 200 round box of casings for the Legkiy-Kalashnikov laser carbine, its cal is .233."
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/box
 	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50, MATERIAL_SILVER = 25)
+
 /datum/design/research/item/ammo/laser/ap/box
 	name = "\"Legkiy-Kalashnikov\" piercing laser box."
 	desc = "A 200 round box of casings for the Legkiy-Kalashnikov laser carbine. Meant for penetration of armor, its cal is .233."
