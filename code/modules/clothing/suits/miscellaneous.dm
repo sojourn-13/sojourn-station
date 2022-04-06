@@ -317,9 +317,11 @@ obj/item/clothing/suit/fluff/kimono
 
 /obj/item/clothing/suit/storage/scavengerarmor
 	name = "scavenger armor"
-	desc = "A rigged yet sturdy scavenger armor. Strong and protective as most vests, it is made entirely from reclaimed materials. It even has pockets!"
+	desc = "A rigged yet sturdy scavenger armor. Strong and protective as most vests, it is made entirely from reclaimed materials. It even has pockets as well as room for additional plates of armor to be added."
 	icon_state = "scav_armor"
 	item_state = "scav_armor"
+	tool_qualities = list(QUALITY_ARMOR = 100)
+	max_upgrades = 2
 	stiffness = MEDIUM_STIFFNESS
 	equip_delay = 2 SECONDS
 	slowdown = 0.2
