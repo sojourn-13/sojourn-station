@@ -97,7 +97,7 @@
 		/obj/item/rcd
 	)
 
-	max_upgrades = 1 //guild
+	max_upgrades = 1
 
 	req_access = list()
 	req_one_access = list()
@@ -146,7 +146,7 @@ Advanced Voidsuit: Guild Master
 		/obj/item/rcd
 	)
 
-	max_upgrades = 1 //also gets two upgrades, because it's also guild
+	max_upgrades = 1
 
 	req_access = list(access_ce)
 	req_one_access = list()
