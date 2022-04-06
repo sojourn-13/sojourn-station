@@ -346,7 +346,7 @@
 /obj/item/ammo_magazine/ammobox/laser_223/box
 	name = "ammunition box (.223 L)"
 	icon_state = "box223-laser"
-	desc = "A packet of .223 laser round."
+	desc = "A large box of .223 laser round."
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_SCI
 	ammo_type = /obj/item/ammo_casing/beam
