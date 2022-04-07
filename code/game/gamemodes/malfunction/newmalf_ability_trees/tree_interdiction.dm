@@ -47,15 +47,13 @@
 	if(!ability_prechecks(user, price))
 		return
 
-	if(evacuation_controller?.emergency_evacuation)
-		if (alert(user, "Really recall the shuttle?", "Recall Shuttle: ", "Yes", "No") != "Yes")
-			return
-		if(!ability_pay(user, price))
-			return
-		message_admins("Malfunctioning AI [user.name] recalled the shuttle.")
-		cancel_call_proc(user)
-	else
-		to_chat(user, "You cannot stop a bluespace jump.")
+	if (alert(user, "Really recall the shuttle?", "Recall Shuttle: ", "Yes", "No") != "Yes")
+		return
+
+	if(!ability_pay(user, price))
+		return
+	message_admins("Malfunctioning AI [user.name] recalled the shuttle.")
+	cancel_call_proc(user)
 
 
 /datum/game_mode/malfunction/verb/unlock_cyborg(var/mob/living/silicon/robot/target = null as mob in get_linked_cyborgs(usr))
@@ -155,8 +153,6 @@
 		return
 
 	if(target)
-		if(target.HasTrait(CYBORG_TRAIT_AI_HACKED))
-			return FALSE
 		if(alert(user, "Really try to hack cyborg [target.name]?", "Hack Cyborg", "Yes", "No") != "Yes")
 			return
 		if(!ability_pay(user, price))
@@ -189,8 +185,7 @@
 			// Connect the cyborg to AI
 			target.connected_ai = user
 			user.connected_robots += target
-			target.lawupdate = TRUE
-			target.AddTrait(CYBORG_TRAIT_AI_HACKED)
+			target.lawupdate = 1
 			target.sync()
 			target.show_laws()
 			user.hacking = 0

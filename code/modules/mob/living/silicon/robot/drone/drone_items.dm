@@ -193,7 +193,7 @@
 
 	dat += tools
 
-	if (HasTrait(CYBORG_TRAIT_EMAGGED))
+	if (emagged)
 		if (!module.emag)
 			dat += text("<B>Resource depleted</B><BR>")
 		else if(activated(module.emag))

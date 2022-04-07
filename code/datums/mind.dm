@@ -218,7 +218,7 @@
 			if("unemag")
 				var/mob/living/silicon/robot/R = current
 				if (istype(R))
-					R.RemoveTrait(CYBORG_TRAIT_EMAGGED)
+					R.emagged = 0
 					if (R.activated(R.module.emag))
 						R.module_active = null
 					if(R.module_state_1 == R.module.emag)
@@ -236,7 +236,7 @@
 				if (isAI(current))
 					var/mob/living/silicon/ai/ai = current
 					for (var/mob/living/silicon/robot/R in ai.connected_robots)
-						R.RemoveTrait(CYBORG_TRAIT_EMAGGED)
+						R.emagged = 0
 						if (R.module)
 							if (R.activated(R.module.emag))
 								R.module_active = null

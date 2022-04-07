@@ -11,8 +11,7 @@
 	var/max_damage = 30  // HP of this component.
 	var/mob/living/silicon/robot/owner
 	var/installed_by_default = TRUE
-	var/robot_trait = null // a cyborg trait to add when this is installed
-	var/powered_trait = FALSE // does this module need to be powered for its trait to be active ?
+
 
 // The actual device object that has to be installed for this.
 /datum/robot_component/var/external_type = null
@@ -24,13 +23,7 @@
 	src.owner = R
 
 /datum/robot_component/proc/install()
-	if(!powered_trait)
-		owner.AddTrait(robot_trait)
-	else
-		update_power_state()
-
 /datum/robot_component/proc/uninstall()
-	owner.RemoveTrait(robot_trait)
 
 /datum/robot_component/proc/destroy()
 	// The thing itself isn't there anymore, but some fried remains are.
@@ -54,7 +47,7 @@
 	uninstall()
 
 /datum/robot_component/proc/take_damage(brute, electronics, sharp, edge)
-	if(installed != TRUE) return
+	if(installed != 1) return
 
 	brute_damage += brute
 	electronics_damage += electronics
@@ -63,7 +56,7 @@
 		destroy()
 
 /datum/robot_component/proc/heal_damage(brute, electronics)
-	if(installed != TRUE)
+	if(installed != 1)
 		// If it's not installed, can't repair it.
 		return 0
 
@@ -71,23 +64,17 @@
 	electronics_damage = max(0, electronics_damage - electronics)
 
 /datum/robot_component/proc/is_powered()
-	return (installed == TRUE) && (brute_damage + electronics_damage < max_damage) && (!idle_usage || powered)
+	return (installed == 1) && (brute_damage + electronics_damage < max_damage) && (!idle_usage || powered)
 
 /datum/robot_component/proc/update_power_state()
-	if(toggled == FALSE)
-		powered = FALSE
-		if(powered_trait && robot_trait)
-			owner.RemoveTrait(robot_trait)
+	if(toggled == 0)
+		powered = 0
 		return
 	if(owner.cell && owner.cell.charge >= idle_usage)
 		owner.cell_use_power(idle_usage)
-		powered = TRUE
-		if(powered_trait && robot_trait)
-			owner.AddTrait(robot_trait)
+		powered = 1
 	else
-		powered = FALSE
-		if(powered_trait && robot_trait)
-			owner.RemoveTrait(robot_trait)
+		powered = 0
 
 
 // ARMOUR

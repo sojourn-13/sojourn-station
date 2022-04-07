@@ -5,6 +5,8 @@
 	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
 
+	src.blinded = null
+
 	//Status updates, death etc.
 	clamp_values()
 	handle_regular_status_updates()
@@ -29,9 +31,9 @@
 
 /mob/living/silicon/robot/proc/clamp_values()
 
-	SetStunned(min(stunned, 30))
+//	SetStunned(min(stunned, 30))
 	SetParalysis(min(paralysis, 30))
-	SetWeakened(min(weakened, 20))
+//	SetWeakened(min(weakened, 20))
 	sleeping = 0
 	adjustBruteLoss(0)
 	adjustToxLoss(0)
@@ -92,12 +94,12 @@
 		death()
 
 	if (src.stat != 2) //Alive.
-		if (src.paralysis || src.stunned || !src.has_power || src.weakened) //Stunned etc.
+		if (src.paralysis || src.stunned || src.weakened || !src.has_power) //Stunned etc.
 			src.stat = 1
-			if (src.weakened > 0)
-				AdjustWeakened(-1)
 			if (src.stunned > 0)
 				AdjustStunned(-1)
+			if (src.weakened > 0)
+				AdjustWeakened(-1)
 			if (src.paralysis > 0)
 				AdjustParalysis(-1)
 				src.blinded = 1
@@ -268,8 +270,8 @@
 			weaponlock_time = 120
 
 /mob/living/silicon/robot/update_lying_buckled_and_verb_status()
-	if(paralysis || stunned || weakened || buckled || lockcharge || !is_component_functioning("actuator")) canmove = FALSE
-	else canmove = TRUE
+	if(paralysis || stunned || weakened || buckled || lockcharge || !is_component_functioning("actuator")) canmove = 0
+	else canmove = 1
 	return canmove
 
 /mob/living/silicon/robot/update_fire()

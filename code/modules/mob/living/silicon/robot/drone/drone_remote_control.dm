@@ -14,7 +14,7 @@
 		to_chat(user, "<span class='warning'>You cannot take control of an autonomous, active drone.</span>")
 		return
 
-	if(health < -35 || HasTrait(CYBORG_TRAIT_EMAGGED))
+	if(health < -35 || emagged)
 		to_chat(user, "<span class='notice'><b>WARNING:</b> connection timed out.</span>")
 		return
 

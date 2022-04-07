@@ -50,11 +50,11 @@
 
 /mob/living/silicon/robot/proc/get_armour()
 
-	if(!components.len) return FALSE
+	if(!components.len) return 0
 	var/datum/robot_component/C = components["armour"]
 	if(C && C.installed == 1)
 		return C
-	return FALSE
+	return 0
 
 /mob/living/silicon/robot/heal_organ_damage(var/brute, var/burn)
 	var/list/datum/robot_component/parts = get_damaged_components(brute,burn)
