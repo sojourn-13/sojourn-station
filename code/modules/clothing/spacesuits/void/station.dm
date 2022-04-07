@@ -89,7 +89,7 @@
 
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 4, MATERIAL_PLASTIC = 3)
 	armor_list = list(
-		melee = 40,
+		melee = 25,
 		bullet = 20,
 		energy = 20,
 		bomb = 25,
@@ -98,6 +98,7 @@
 	)
 	light_overlay = "helmet_light_dual"
 	siemens_coefficient = 0.8
+	obscuration = MEDIUM_OBSCURATION
 
 /obj/item/clothing/head/space/void/riggedvoidsuit/verb/toggle_style()
 	set name = "Adjust Style"
@@ -130,7 +131,7 @@
 	item_state = "makeshift_void"
 	siemens_coefficient = 0.4
 	armor_list = list(
-		melee = 40,
+		melee = 30,
 		bullet = 20,
 		energy = 20,
 		bomb = 25,
