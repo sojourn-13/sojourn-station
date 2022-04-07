@@ -84,6 +84,47 @@ Ideally, if all optional steps are followed and all items are created
 			recipe_icon_state = product_info.icon_state
 	
 	QDEL_NULL(product_info) //We don't need this anymore.
+//-----------------------------------------------------------------------------------
+//Add reagent step shortcut commands
+/datum/cooking_with_jane/recipe/proc/create_step_add_reagent_optional( var/reagent_id, var/amount, var/base_quality_award)
+	src.create_step_add_reagent(reagent_id, amount, base_quality_award, TRUE)
+
+/datum/cooking_with_jane/recipe/proc/create_step_add_reagent_required( var/reagent_id, var/amount, var/base_quality_award)
+	src.create_step_add_reagent(reagent_id, amount, base_quality_award, FALSE)
+
+/datum/cooking_with_jane/recipe/proc/create_step_add_reagent( var/reagent_id, var/amount, var/base_quality_award, var/optional)
+	var/datum/cooking_with_jane/recipe_step/add_reagent/step = new (base_quality_award, reagent_id, amount, src)
+	src.add_step(step, optional)
+
+//-----------------------------------------------------------------------------------
+//Add item step shortcut commands
+/datum/cooking_with_jane/recipe/proc/create_step_add_item_optional(var/item_type, var/base_quality_award)
+	src.create_step_add_item(item_type, base_quality_award, TRUE)
+
+/datum/cooking_with_jane/recipe/proc/create_step_add_item_required(var/item_type, var/base_quality_award)
+	src.create_step_add_item(item_type, base_quality_award, FALSE)
+
+/datum/cooking_with_jane/recipe/proc/create_step_add_item(var/item_type, var/base_quality_award, var/optional)
+	var/datum/cooking_with_jane/recipe_step/add_item/step = new (base_quality_award, item_type, src)
+	src.add_step(step, optional)
+//-----------------------------------------------------------------------------------
+
+/datum/cooking_with_jane/recipe/proc/add_step(var/datum/cooking_with_jane/recipe_step/step, var/optional)
+	if(!first_step)
+		if(optional)
+			log_debug("/datum/cooking_with_jane/recipe/proc/add_step_reagent: optional step added before required step. Skipping.")
+			return
+		first_step = step
+	else
+		if(optional)
+			last_required_step.optional_step_list += step
+			step.next_step = last_required_step
+		else
+			last_required_step.next_step = step
+	step.previous_step = last_required_step
+	if(!optional)
+		last_required_step = step
+	last_created_step = step
 
 //A step in a recipe, whether optional or required
 /datum/cooking_with_jane/recipe_step
@@ -101,8 +142,6 @@ Ideally, if all optional steps are followed and all items are created
 
 	var/max_quality_awarded = 0 //The maximum quality awarded by following a given step to the letter.
 
-	
-
 	//The next required step for the parent recipe
 	var/datum/cooking_with_jane/recipe_step/next_step
 
@@ -115,11 +154,11 @@ Ideally, if all optional steps are followed and all items are created
 
 //Calculate how well the recipe step was followed to the letter.
 /datum/cooking_with_jane/recipe_step/proc/calculate_quality()
-	return 0
+	return max_quality_awarded
 
 //Check if the conditions of a recipe step was followed correctly.
 /datum/cooking_with_jane/recipe_step/proc/check_conditions_met()
-	return FALSE
+	return TRUE
 
 
 
