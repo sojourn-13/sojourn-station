@@ -89,7 +89,7 @@
 
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 4, MATERIAL_PLASTIC = 3)
 	armor_list = list(
-		melee = 40,
+		melee = 25,
 		bullet = 20,
 		energy = 20,
 		bomb = 25,
@@ -98,6 +98,7 @@
 	)
 	light_overlay = "helmet_light_dual"
 	siemens_coefficient = 0.8
+	obscuration = MEDIUM_OBSCURATION
 
 /obj/item/clothing/head/space/void/riggedvoidsuit/verb/toggle_style()
 	set name = "Adjust Style"
@@ -130,7 +131,7 @@
 	item_state = "makeshift_void"
 	siemens_coefficient = 0.4
 	armor_list = list(
-		melee = 40,
+		melee = 30,
 		bullet = 20,
 		energy = 20,
 		bomb = 25,
@@ -187,6 +188,49 @@
 		rad = 75
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/mining
+
+//CEO Rig
+/obj/item/clothing/head/helmet/space/void/goldilocks
+	name = "Goldilocks Gilded Helmet"
+	desc = "A helmet designed to look good while watching people you paid to do your work for you. Not the best for personal protection."
+
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 6 //luminosity when on
+	icon_state = "goldilocks_helmet"
+	item_state = "goldilocks_helmet"
+	item_state_slots = list(
+		slot_l_hand_str = "goldilocks_helm",
+		slot_r_hand_str = "goldilocks_helm",
+		)
+	armor_list = list(
+		melee = 20,
+		bullet = 20,
+		energy = 10,
+		bomb = 25,
+		bio = 100,
+		rad = 75
+	)
+	light_overlay = "helmet_light_dual"
+	siemens_coefficient = 2 //Guess what gold conducts?
+
+/obj/item/clothing/suit/space/void/goldilocks
+	name = "Goldilocks Gilded Voidsuit"
+	desc = "Grandeur incarnated in a padded suit of armor, fitting for a CEO that would like to boast their wealth at the expense personal safety."
+	item_state = "goldilocks_suit"
+	icon_state = "goldilocks_suit"
+	slowdown = 0.35
+	armor_list = list(
+		melee = 20,
+		bullet = 20,
+		energy = 10,
+		bomb = 25,
+		bio = 100,
+		rad = 75
+	)
+	helmet = /obj/item/clothing/head/helmet/space/void/goldilocks
+	boots = /obj/item/clothing/shoes/magboots
+	tank = /obj/item/tank/jetpack/void/cope
+	siemens_coefficient = 2 //Guess what gold conducts?
 
 //Medical Rig
 /obj/item/clothing/head/helmet/space/void/medical

@@ -36,14 +36,14 @@
 
 /datum/gear/factionartificer/cloaktechnomancer
 	display_name = "cloak, artificer"
-	path = /obj/item/clothing/suit/hooded/cloak/job/technomancer
+	path = /obj/item/clothing/accessory/job/cape/technomancer
 	allowed_roles = list("Guild Master","Guild Adept")
 	slot = slot_wear_suit
 	sort_category = "Faction: Artificer"
 
 /datum/gear/factionartificer/cloakte
 	display_name = "cloak, guild master"
-	path = /obj/item/clothing/suit/hooded/cloak/job/te
+	path = /obj/item/clothing/accessory/job/cape/te
 	allowed_roles = list("Guild Master")
 	slot = slot_wear_suit
 	sort_category = "Faction: Artificer"
