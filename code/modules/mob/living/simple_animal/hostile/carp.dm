@@ -48,9 +48,8 @@
 	icon = 'icons/mob/spaceshark.dmi'
 	icon_state = "shark"
 	meat_amount = 6
-	turns_per_move = 2
-	move_to_delay = 2
-	speed = 0
+	turns_per_move = 3
+	move_to_delay = 3
 	mob_size = MOB_LARGE
 
 	//pixel_x = -16
@@ -70,15 +69,15 @@
 	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "neocarp"
 	meat_amount = 8
-	turns_per_move = 1
-	move_to_delay = 1
+	turns_per_move = 3
+	move_to_delay = 3
 	mob_size = MOB_LARGE
 
-	health = 275
-	maxHealth = 275
+	health = 200
+	maxHealth = 200
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
-	melee_damage_lower = 40
-	melee_damage_upper = 65
+	melee_damage_lower = 25
+	melee_damage_upper = 30
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_EPILEPSY, MUTATION_DEAF, MUTATION_BAROTRAUMA)
 
 	break_stuff_probability = 100
