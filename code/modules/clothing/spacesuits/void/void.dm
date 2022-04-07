@@ -46,8 +46,6 @@
 	valid_accessory_slots = list()
 	restricted_accessory_slots = list()
 
-	tool_qualities = list()
-	max_upgrades = 0
 
 /obj/item/clothing/suit/space/void/Initialize()
 	if(boots && ispath(boots))
