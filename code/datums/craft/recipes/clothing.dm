@@ -177,15 +177,6 @@
 		list(QUALITY_CUTTING, 10, 60)
 	)
 
-/datum/craft_recipe/clothing/acc_cloak
-	name = "attachable cloak"
-	result = /obj/item/clothing/accessory/cape/black
-	steps = list(
-		list(/obj/item/clothing/suit/hooded/cloak/simple, 1, "time" = 30),
-		list(QUALITY_CUTTING, 10, 30)
-	)
-
-
 /datum/craft_recipe/clothing/sandals
 	name = "wooden sandals"
 	result = /obj/item/clothing/shoes/sandal
