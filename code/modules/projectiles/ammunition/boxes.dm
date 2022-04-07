@@ -326,7 +326,7 @@
 
 /obj/item/ammo_magazine/ammobox/laser_223
 	name = "ammunition packet (.223 L)"
-	icon_state = "box223-laser"
+	icon_state = "223-laser"
 	desc = "A packet of .223 laser round."
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_SCI
@@ -335,11 +335,31 @@
 
 /obj/item/ammo_magazine/ammobox/laser_223/ap
 	name = "ammunition packet (.223 PL)"
-	icon_state = "box223-ap-laser"
+	icon_state = "223-ap-laser"
 	ammo_type = /obj/item/ammo_casing/beam/ap
 
 /obj/item/ammo_magazine/ammobox/laser_223/lethal
 	name = "ammunition packet (.223 DL)"
+	icon_state = "223-lethal-laser"
+	ammo_type = /obj/item/ammo_casing/beam
+
+/obj/item/ammo_magazine/ammobox/laser_223/box
+	name = "ammunition box (.223 L)"
+	icon_state = "box223-laser"
+	desc = "A large box of .223 laser round."
+	matter = list(MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SCI
+	ammo_type = /obj/item/ammo_casing/beam
+	max_ammo = 200
+	w_class = ITEM_SIZE_BULKY
+
+/obj/item/ammo_magazine/ammobox/laser_223/ap/box
+	name = "ammunition box (.223 PL)"
+	icon_state = "box223-ap-laser"
+	ammo_type = /obj/item/ammo_casing/beam/ap
+
+/obj/item/ammo_magazine/ammobox/laser_223/lethal/box
+	name = "ammunition box (.223 DL)"
 	icon_state = "box223-lethal-laser"
 	ammo_type = /obj/item/ammo_casing/beam
 
