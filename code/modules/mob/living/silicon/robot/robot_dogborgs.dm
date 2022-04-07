@@ -87,7 +87,7 @@
 	channels = list("Medical" = 1)
 	networks = list(NETWORK_MEDICAL)
 	can_be_pushed = 0
-	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,
+	supported_upgrades = list(/obj/item/borg/upgrade/hypospray_medical,
 							  /obj/item/borg/upgrade/jetpack,
 							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 	health = 120 //Fragile
@@ -196,7 +196,7 @@
 	health = 175 //Bulky
 	speed_factor = 1.4 //Slow
 	power_efficiency = 0.8 //Poor
-
+	robot_traits = CYBORG_TRAIT_CLEANING_WALK
 	stat_modifiers = list(
 		STAT_ROB = 25,
 		STAT_TGH = 25,
