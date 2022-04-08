@@ -324,16 +324,15 @@ obj/item/clothing/suit/fluff/kimono
 	max_upgrades = 2
 	stiffness = MEDIUM_STIFFNESS
 	equip_delay = 2 SECONDS
-	slowdown = 0.2
 	armor_list = list(
 		melee = 30, //Not the best armor, but easily crafted and adds some utility with decent protection all round.
 		bullet = 25,
-		energy = 15,
+		energy = 25,
 		bomb = 25,
 		bio = 0,
 		rad = 0
 	)
-	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_GLASS = 10, MATERIAL_STEEL = 10)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_GLASS = 10, MATERIAL_STEEL = 10, MATERIAL_PLATINUM = 2)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	siemens_coefficient = 0.7
 
