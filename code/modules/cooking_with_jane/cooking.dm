@@ -19,53 +19,18 @@ By following the steps correctly, good food can be made.
 
 Food quality is calculated based on a mix between the incoming reagent and the quality of the steps taken.
 
-Ideally, if all optional steps are followed and all items are created
-
 */
 
-//Datum held by objects that is the core component in a recipe. 
-//You use other items on an items with this datum to advance its recipe.
-//Kept intentionally bare-bones because MANY of these objects are going to be made.
-/datum/cooking_with_jane/recipe_tracker
-	var/obj/parent //The parent object holding the recipe tracker.	
-	//This variable is a little complicated.
-	//It specifically references recipe_pointer objects each pointing to a different point in a different recipe. 
-	var/list/active_recipe_pointers = null
-
-
-/datum/cooking_with_jane/recipe_tracker/New(var/food_item)
-	parent = food_item
-	recipe_quality = parent:food_quality
-
-	//Generate pointers
-	active_recipe_pointers = generate_pointers()
-
-//Check if a recipe tracker has recipes loaded.
-/datum/cooking_with_jane/recipe_tracker/proc/has_recipes()
-	return active_recipe_pointers?TRUE:FALSE
-
-
-//Points to a specific step in a recipe while considering the optional paths that recipe can take.
-/datum/cooking_with_jane/recipe_pointer
-	var/datum/cooking_with_jane/recipe/target_recipe //The recipe we are following
-	
-	var/tracked_quality //The current level of quality within that recipe.
-
-	var/current_required_step //The next step in the given recipe.
-
-	var/list/steps_taken //built over the course of following a recipe, tracks what has been done to the object.
-
-//===================================================================================
-
 /datum/cooking_with_jane/recipe
+	var/unique_id
 	var/name				//Name for the cooking guide. Auto-populates if not set.
 	var/description			//Description for the cooking guide. Auto-populates if not set.
 	var/recipe_icon			//Icon for the cooking guide. Auto-populates if not set.
 	var/recipe_icon_state	//Icon state for the cooking guide. Auto-populates if not set.
 	
-	var/start_type //Type path for the first object in the recipe. An item of this type should have a recipe_tracker Datum.
-
-	var/produce_type //Name path specifically for handling grown foods which have an obfuscated type path.
+	//String/Type path for potential starting object types in the recipe.
+	//If a child of a type is also applicable, it MUST BE ADDED HERE.
+	var/start_type_list = list() 
 
 	var/product_type //Type path for the product created by the recipe. An item of this type should ALSO have a recipe_tracker Datum.
 
@@ -73,7 +38,11 @@ Ideally, if all optional steps are followed and all items are created
 
 	var/exclusive_option_mode = FALSE //triggers whether two steps in a process are exclusive- IE: you can do one or the other, but not both.
 
-	var/option_chain_mode = FALSE //triggers whether two steps in a process are exclusive- IE: you can do one or the other, but not both.
+	var/active_exclusive_option_list = NULL //Only needed during the creation process for tracking a given exclusive option dictionary.
+
+	var/option_chain_mode = 0 //triggers whether two steps in a process are exclusive- IE: you can do one or the other, but not both.
+
+	var/active_exclusive_option_chain //Only needed during the creation process for tracking items in an option chain.
 
 	var/datum/cooking_with_jane/recipe_step/first_step //The first step in the linked list that will result in the final recipe
 
@@ -82,6 +51,13 @@ Ideally, if all optional steps are followed and all items are created
 	var/datum/cooking_with_jane/recipe_step/last_created_step //Reference to the last step made, regardless of if it was required or not.
 
 /datum/cooking_with_jane/recipe/New()
+
+	if(exclusive_option_mode)
+		CRASH("/datum/cooking_with_jane/recipe/New: Exclusive option active at end of recipe creation process. Recipe name=[name].")
+	
+	if(option_chain_mode)
+		CRASH("/datum/cooking_with_jane/recipe/New: Option Chain active at end of recipe creation process. Recipe name=[name].")
+		
 	var/obj/product_info = new product_type()
 	if(product_info)
 		if(!name)
@@ -94,60 +70,72 @@ Ideally, if all optional steps are followed and all items are created
 			recipe_icon = product_info.icon
 			recipe_icon_state = product_info.icon_state
 	
+	unique_id = sequential_id(type)
+	
 	QDEL_NULL(product_info) //We don't need this anymore.
+//-----------------------------------------------------------------------------------
+//Commands for interacting with the recipe tracker
+
+
 //-----------------------------------------------------------------------------------
 //Add reagent step shortcut commands
 /datum/cooking_with_jane/recipe/proc/create_step_add_reagent_optional( var/reagent_id, var/amount, var/base_quality_award)
-	src.create_step_add_reagent(reagent_id, amount, base_quality_award, TRUE)
+	return src.create_step_add_reagent(reagent_id, amount, base_quality_award, TRUE)
 
 /datum/cooking_with_jane/recipe/proc/create_step_add_reagent_required( var/reagent_id, var/amount, var/base_quality_award)
-	src.create_step_add_reagent(reagent_id, amount, base_quality_award, FALSE)
+	return src.create_step_add_reagent(reagent_id, amount, base_quality_award, FALSE)
 
 /datum/cooking_with_jane/recipe/proc/create_step_add_reagent( var/reagent_id, var/amount, var/base_quality_award, var/optional)
 	var/datum/cooking_with_jane/recipe_step/add_reagent/step = new (base_quality_award, reagent_id, amount, src)
-	src.add_step(step, optional)
+	return src.add_step(step, optional)
 
 //-----------------------------------------------------------------------------------
 //Add item step shortcut commands
 /datum/cooking_with_jane/recipe/proc/create_step_add_item_optional(var/item_type, var/base_quality_award)
-	src.create_step_add_item(item_type, base_quality_award, TRUE)
+	return src.create_step_add_item(item_type, base_quality_award, TRUE)
 
 /datum/cooking_with_jane/recipe/proc/create_step_add_item_required(var/item_type, var/base_quality_award)
-	src.create_step_add_item(item_type, base_quality_award, FALSE)
+	return src.create_step_add_item(item_type, base_quality_award, FALSE)
 
 /datum/cooking_with_jane/recipe/proc/create_step_add_item(var/item_type, var/base_quality_award, var/optional)
 	var/datum/cooking_with_jane/recipe_step/add_item/step = new (base_quality_award, item_type, src)
-	src.add_step(step, optional)
+	return src.add_step(step, optional)
 //-----------------------------------------------------------------------------------
 //Use item step shortcut commands
 /datum/cooking_with_jane/recipe/proc/create_step_use_item_optional(var/item_type, var/base_quality_award)
-	src.create_step_use_item(item_type, base_quality_award, TRUE)
+	return src.create_step_use_item(item_type, base_quality_award, TRUE)
 
 /datum/cooking_with_jane/recipe/proc/create_step_use_item_required(var/item_type, var/base_quality_award)
-	src.create_step_use_item(item_type, base_quality_award, FALSE)
+	return src.create_step_use_item(item_type, base_quality_award, FALSE)
 
 /datum/cooking_with_jane/recipe/proc/create_step_use_item(var/item_type, var/base_quality_award, var/optional)
 	var/datum/cooking_with_jane/recipe_step/add_item/step = new (base_quality_award, item_type, src)
-	src.add_step(step, optional)
+	return src.add_step(step, optional)
+	
 
 //-----------------------------------------------------------------------------------
 //Add a custom step to the cooking process not covered by the existing shortcuts.
 //TODO
-/datum/cooking_with_jane/recipe/proc/add_custom_step(var/step_type, var/base_quality_award, var/param_list, optional=FALSE)
+/datum/cooking_with_jane/recipe/proc/add_custom_step()
+	//var/step_type, var/base_quality_award, var/param_list, optional=FALSE
 	var/datum/cooking_with_jane/recipe_step/step = new step_type(base_quality_award, src)
-	src.add_step(step, optional)
+	return src.add_step(step, optional)
 
 //-----------------------------------------------------------------------------------
 //Setup for two options being exclusive to eachother.
 //Performs a lot of internal checking to make sure that it doesn't break everything.
 //If begin_exclusive_options is called, end_exclusive_options must eventually be called in order to close out and proceed to the next required step.
+
 /datum/cooking_with_jane/recipe/proc/begin_exclusive_options()
 	if(exclusive_option_mode)
-		log_debug("/datum/cooking_with_jane/recipe/proc/end_exclusive_options: Exclusive option already active.")
+		log_debug("/datum/cooking_with_jane/recipe/proc/begin_exclusive_options: Exclusive option already active.")
 		log_debug("Recipe name=[name].")
 		return
+	else if(!first_step)
+		CRASH("/datum/cooking_with_jane/recipe/proc/begin_exclusive_options: Exclusive list cannot be active before the first required step is defined. Recipe name=[name].")
+		return
 	exclusive_option_mode = TRUE
-	last_required_step.optional_step_list += list(list()) //Yes, we need to add a nested list here to get things going.
+	active_exclusive_option_list = list()
 
 /datum/cooking_with_jane/recipe/proc/end_exclusive_options()
 	if(!exclusive_option_mode)
@@ -159,7 +147,18 @@ Ideally, if all optional steps are followed and all items are created
 		return
 	else if(option_chain_mode)
 		CRASH("/datum/cooking_with_jane/recipe/proc/end_exclusive_options: Exclusive option cannot end while option chain is active. Recipe name=[name].")
+	
 	exclusive_option_mode = FALSE
+
+	//Flatten exclusive options into the global list for easy referencing later.
+	for (var/datum/cooking_with_jane/recipe_step/exclusive_option in exclusive_option_list)
+		if(!GLOB.cwj_optional_step_exclusion_dictionary[exclusive_option.unique_id])
+			GLOB.cwj_optional_step_exclusion_dictionary[exclusive_option.unique_id] = list()
+		for(var/datum/cooking_with_jane/recipe_step/excluder in exclusive_option_list[exclusive_option])
+			GLOB.cwj_optional_step_exclusion_dictionary[exclusive_option.unique_id] += excluder.unique_id
+
+
+	active_exclusive_option_list = NULL
 
 //-----------------------------------------------------------------------------------
 //Setup for a chain of optional steps to be added that order themselves sequentially.
@@ -170,14 +169,16 @@ Ideally, if all optional steps are followed and all items are created
 		log_debug("/datum/cooking_with_jane/recipe/proc/begin_option_chain: Option Chain already active.")
 		log_debug("Recipe name=[name].")
 		return
-	option_chain_mode =TRUE
+	if(!first_step)
+		CRASH("/datum/cooking_with_jane/recipe/proc/begin_option_chain: Option Chain cannot be active before first required step is defined. Recipe name=[name].")
+	option_chain_mode =1
 
 /datum/cooking_with_jane/recipe/proc/end_option_chain()
 	if(!option_chain_mode)
-		log_debug("/datum/cooking_with_jane/recipe/proc/begin_option_chain: Option Chain already inactive.")
+		log_debug("/datum/cooking_with_jane/recipe/proc/end_option_chain: Option Chain already inactive.")
 		log_debug("Recipe name=[name].")
 		return
-	option_chain_mode =FALSE
+	option_chain_mode = 0
 
 
 //-----------------------------------------------------------------------------------
@@ -200,18 +201,57 @@ Ideally, if all optional steps are followed and all items are created
 		first_step = step
 	else
 		if(optional)
-			//Add the step to the list normally.
-			if(!exclusive_option_mode)
-				last_required_step.optional_step_list += step
-			//Add the step to 'exclusive sublist' set up with exclusive options.
-			else
-				last_required_step.optional_step_list[last_required_step.optional_step_list.len] += step
-
+			switch(option_chain_mode)
+				//When the chain needs to be initialized
+				if(1)
+					last_required_step.optional_step_list += step
+					option_chain_mode = 2
+					step.is_option_chain = TRUE
+				//When the chain has already started.
+				if(2)
+					last_created_step.next_step = step
+					step.is_option_chain = TRUE
+				//Add the step to the optional_step_list list normally.
+				else
+					last_required_step.optional_step_list += step
+			//Set the next step to loop back to the step it branched from.
 			step.next_step = last_required_step
 		else
 			last_required_step.next_step = step
-	step.previous_step = last_required_step
+
+		
+	
+	//populate the previous step for optional backwards pathing.
+	if(option_chain_mode)
+		step.previous_step = last_created_step
+	else
+		step.previous_step = last_required_step
+
+	//Update flags
 	if(!optional)
+		last_required_step.flags &= ~CWJ_IS_LAST_STEP
+		step.flags |= CWJ_IS_LAST_STEP
+	else
+		step.flags |= CWJ_IS_OPTIONAL
+		if(exclusive_option_mode)
+			step.flags |= CWJ_IS_EXCLUSIVE
+		if(option_chain_mode)
+			step.flags |= CWJ_IS_OPTION_CHAIN
+
+	if(!optional)		
 		last_required_step = step
+		
 	last_created_step = step
 
+	//Handle exclusive options
+	if(exclusive_option_mode)
+		active_exclusive_option_list[step] = list()
+		for (var/datum/cooking_with_jane/recipe_step/ex_step in active_exclusive_option_list)
+			if(ex_step == step.unique_id || step.in_option_chain(ex_step))
+				continue			
+			active_exclusive_option_list[ex_step] += step
+	return step
+//-----------------------------------------------------------------------------------
+//placeholder function for creating a product
+/datum/cooking_with_jane/recipe/proc/create_product(var/datum/cooking_with_jane/recipe_pointer)
+	return new product_type(recipe_pointer.parent.holder.get_turf())

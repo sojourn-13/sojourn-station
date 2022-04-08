@@ -1,5 +1,7 @@
 //A step in a recipe, whether optional or required
 /datum/cooking_with_jane/recipe_step
+	var/unique_id //Special ID for a given recipe, allows for referencing later by food objects to save on memory.
+
 	var/class //The classificaiton of the step involved.
 
 	var/parent_recipe //The parent recipe of this particular step. Created on initialization with New()
@@ -14,7 +16,7 @@
 
 	var/max_quality_awarded = 0 //The maximum quality awarded by following a given step to the letter.
 
-	var/unique_optional_step_count = 0 //references the index of the last non-exclusive grouping of the steps
+	var/flags = 0
 
 	//The next required step for the parent recipe
 	var/datum/cooking_with_jane/recipe_step/next_step
@@ -25,6 +27,10 @@
 /datum/cooking_with_jane/recipe_step/New(var/base_quality_award, var/quality_description, var/datum/cooking_with_jane/recipe/our_recipe)
 	parent_recipe = our_recipe
 	base_quality_award = base_quality_award
+	unique_id = sequential_id(type)
+
+	//Add the recipe to our dictionary for future reference.
+	GLOB.cwj_step_dictionary["[unique_id]"] = src
 
 //Calculate how well the recipe step was followed to the letter.
 /datum/cooking_with_jane/recipe_step/proc/calculate_quality()
@@ -33,6 +39,30 @@
 //Check if the conditions of a recipe step was followed correctly.
 /datum/cooking_with_jane/recipe_step/proc/check_conditions_met()
 	return TRUE
+
+//Check if a given step is in the same option chain as another step.
+/datum/cooking_with_jane/recipe_step/proc/in_option_chain(var/datum/cooking_with_jane/recipe_step/step)
+	if(!step)
+		return FALSE
+	if((flags & ~CWJ_IS_OPTION_CHAIN) || (step.flags & ~CWJ_IS_OPTION_CHAIN))
+		return FALSE
+	
+	var/datum/cooking_with_jane/recipe_step/target_step = src.previous_step
+	//traverse backwards on the chain.
+	while(target_step && (target_step & ~CWJ_IS_OPTION_CHAIN))
+		if(step.unique_id == target_step.unique_id)
+			return TRUE
+		target_step = target_step.previous_step
+	
+	//Traverse forwards on the chain.
+	target_step = src.next_step
+	while(target_step && (target_step & ~CWJ_IS_OPTION_CHAIN))
+		if(step.unique_id == target_step.unique_id)
+			return TRUE
+		target_step = src.next_step
+	
+	//We didn't find anything. Return False.
+	return FALSE
 
 //-----------------------------------------------------------------------------------
 //A cooking step that involves adding a reagent to the food.
@@ -62,7 +92,7 @@
 /datum/cooking_with_jane/recipe_step/add_reagent/calculate_quality(var/amount)
 	#ifdef JANEDEBUG
 	var/quality = (base_quality_award - abs(amount - required_reagent_amount))
-	log_debug("/datum/cooking_with_jane/recipe_step/calculate_quality(var/amount) returned quality of [quality])
+	log_debug("/datum/cooking_with_jane/recipe_step/calculate_quality(var/amount) returned quality of [quality]")
 	#endif
 	return min((base_quality_award - abs(amount - required_reagent_amount)), 0)
 //-----------------------------------------------------------------------------------
