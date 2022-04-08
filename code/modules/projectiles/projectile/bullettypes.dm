@@ -732,7 +732,7 @@
 /obj/item/projectile/bullet/rail
 	name = "rod"
 	icon_state = "rail"
-	damage_types = list(BRUTE = 65)
+	damage_types = list(BRUTE = 60)
 	armor_penetration = 30
 	can_ricochet = FALSE
 	affective_damage_range = 18
