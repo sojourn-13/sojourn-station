@@ -13,6 +13,7 @@
 		/obj/item/storage/box/bs_kit/cog = 3,
 		/obj/item/storage/box/bs_kit/roe = 3,
 		/obj/item/storage/box/bs_kit/greasegun = 3,
+		/obj/item/storage/box/bs_kit/triage = 2,
 		/obj/item/storage/box/bs_kit/buckler = 3,
 		/obj/item/storage/box/bs_kit/grizzly = 3,
 		/obj/item/storage/box/bs_kit/rushing_bull = 3,
@@ -40,6 +41,7 @@
 		/obj/item/storage/box/bs_kit/cog = 750,
 		/obj/item/storage/box/bs_kit/roe = 750,
 		/obj/item/storage/box/bs_kit/greasegun = 750,
+		/obj/item/storage/box/bs_kit/triage = 1200,
 		/obj/item/storage/box/bs_kit/buckler = 750,
 		/obj/item/storage/box/bs_kit/grizzly = 750,
 		/obj/item/storage/box/bs_kit/rushing_bull = 750,
@@ -70,6 +72,8 @@
 		switch(Voucher.voucher_type)
 			if("Primary")
 				RedeemPrimary(I, user)
+			if("CorpsPrimary")
+				RedeemCorpsPrimary(I, user)
 			if("SargPrimary")
 				RedeemSargPrimary(I, user)
 			if("Secondary")
@@ -100,6 +104,25 @@
 	else
 		voucher.stamped = FALSE
 
+/obj/machinery/vending/blackshield_kit/proc/RedeemCorpsPrimary(obj/item/voucher/voucher, mob/redeemer)
+	var/items = list(
+					"Mosin Kit" = /obj/item/storage/box/bs_kit/mosin,
+					"STS Kit" = /obj/item/storage/box/bs_kit/sts,
+					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
+					"Grease Gun Kit" = /obj/item/storage/box/bs_kit/greasegun,
+					"Buckler SMG Kit" = /obj/item/storage/box/bs_kit/buckler,
+					"Triage SMG Kit" = /obj/item/storage/box/bs_kit/triage,
+					"Roe light boltgun Kit" = /obj/item/storage/box/bs_kit/roe,
+					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly,
+					"Rushing Bull Kit" = /obj/item/storage/box/bs_kit/rushing_bull,
+					"Watchtower Kit" = /obj/item/storage/box/bs_kit/watchtower)
+	var/selection = items[input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items]
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+	else
+		voucher.stamped = FALSE
 
 /obj/machinery/vending/blackshield_kit/proc/RedeemSargPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
