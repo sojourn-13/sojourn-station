@@ -46,11 +46,12 @@
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
 
-	if (silenced)
-		iconstring += "_s"
-
 	if(wielded)
 		itemstring += "_doble"
+
+	if (silenced)
+		itemstring += "_s"
+		iconstring += "_s"
 
 
 	icon_state = iconstring
