@@ -940,13 +940,13 @@
 
 /obj/item/clothing/accessory/choker/gold_tag_goth
 	name = "Gothic Collar (Gold Tag)"
-	desc = "A black band of studded leather with a locked clasp. A golden dogtag has been attached to reflect the slow, but sure appropriation of Kriosan culture."
+	desc = "A black band of studded leather with a locked clasp. A golden dogtag has been attached to reflect the slow but sure appropriation of Kriosan culture."
 	icon_state = "collar_gold_tag_goth"
 	item_state = "collar_gold_goth"
 
 /obj/item/clothing/accessory/choker/silver_tag_goth
 	name = "Gothic Collar (Silver Tag)"
-	desc = "A black band of studded leather with a locked clasp. A golden dogtag has been attached to reflect the slow, but sure appropriation of Kriosan culture."
+	desc = "A black band of studded leather with a locked clasp. A silver dogtag has been attached to reflect the slow but sure appropriation of Kriosan culture."
 	icon_state = "collar_silver_tag_goth"
 	item_state = "collar_silver_goth"
 
