@@ -16,6 +16,7 @@
 	new /obj/item/clothing/shoes/reinforced(src)
 	new /obj/item/clothing/suit/storage/chaplain(src)
 	new /obj/item/clothing/gloves/thick(src)
+	new /obj/item/clothing/accessory/halfcape/prime(src)
 	new /obj/item/storage/fancy/candle_box(src)
 	new /obj/item/storage/fancy/candle_box(src)
 	new /obj/item/deck/tarot(src)

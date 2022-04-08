@@ -961,9 +961,9 @@
 	item_state = "commander"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor_list = list(melee = 45, bullet = 50, energy = 25, bomb = 30, bio = 0, rad = 0)
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
+	armor_list = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 	stiffness = MEDIUM_STIFFNESS
@@ -1003,18 +1003,21 @@
 obj/item/clothing/suit/armor/commander/militia_overcoat
 	name = "blackshield armored overcoat"
 	desc = "Blackshield greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
+	armor_list = list(melee = 30, bullet = 35, energy = 20, bomb = 10, bio = 0, rad = 0)
 	icon_state = "overcoat_bm"
 	item_state = "overcoat_bm"
 
 obj/item/clothing/suit/armor/commander/marshal_coat
 	name = "marshal officers greatcoat"
 	desc = "Marshal Officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
+	armor_list = list(melee = 35, bullet = 30, energy = 20, bomb = 10, bio = 0, rad = 0)
 	icon_state = "marshal_coat"
 	item_state = "marshal_coat"
 
 obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	name = "supply specialist's jacket"
 	desc = "Supply Specialist's jacket with an armored weave. For formality, protection and style."
+	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 10, bio = 0, rad = 0)
 	icon_state = "marshal_coat_ss"
 	item_state = "marshal_coat_ss"
 
