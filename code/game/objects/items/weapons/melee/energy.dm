@@ -204,6 +204,7 @@
 	name = "energy blade"
 	desc = "A concentrated beam of energy in the shape of a blade. Very stylish... and lethal."
 	icon_state = "blade"
+	icon = 'icons/obj/weapons.dmi'
 	armor_penetration = 30
 	sharp = 1
 	edge = 1
