@@ -155,6 +155,7 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL), // Bullets
 		list(QUALITY_WELDING, 10, 20),
 		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS), // Reflective plating?
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLATINUM), // Bullets
 		list(QUALITY_ADHESIVE, 15, "time" = 60)
 	)
 
