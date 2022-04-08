@@ -892,6 +892,78 @@
 	icon_state = "choker_goth"
 	item_state = "choker_goth"
 
+/obj/item/clothing/accessory/choker/gold_bell
+	name = "Leather Collar (Gold Bell)"
+	desc = "A band of supple leather with a locked clasp. A golden cow bell has been attached to reflect a more \"agricultural\" lifestyle."
+	icon_state = "collar_gold_bell"
+	item_state = "collar_gold"
+
+/obj/item/clothing/accessory/choker/silver_bell
+	name = "Leather Collar (Silver Bell)"
+	desc = "A band of supple leather with a locked clasp. A silver cow bell has been attached to reflect a more \"agricultural\" lifestyle."
+	icon_state = "collar_silver_bell"
+	item_state = "collar_silver"
+
+/obj/item/clothing/accessory/choker/gold_bell_small
+	name = "Leather Collar (Small Gold Bell)"
+	desc = "A band of supple leather with a locked clasp. A golden sleigh bell has been attached to publically announce the wearer's \"holiday spirit.\""
+	icon_state = "collar_gold_bell_small"
+	item_state = "collar_gold"
+
+/obj/item/clothing/accessory/choker/silver_bell_small
+	name = "Leather Collar (Small Silver Bell)"
+	desc = "A band of supple leather with a locked clasp. A silver sleigh bell has been attached to publically announce the wearer's \"holiday spirit.\""
+	icon_state = "collar_silver_bell_small"
+	item_state = "collar_silver"
+
+/obj/item/clothing/accessory/choker/gold_tag
+	name = "Leather Collar (Gold Tag)"
+	desc = "A band of supple leather with a locked clasp. A gold-plated dogtag has been attached to show solidarity with our strong, proud, Blackshield militia."
+	icon_state = "collar_gold_tag"
+	item_state = "collar_gold"
+
+/obj/item/clothing/accessory/choker/silver_tag
+	name = "Leather Collar (Silver Tag)"
+	desc = "A band of supple leather with a locked clasp. A silver-plated dogtag has been attached to show solidarity with our strong, proud, Blackshield militia."
+	icon_state = "collar_silver_tag"
+	item_state = "collar_silver"
+
+/obj/item/clothing/accessory/choker/gold_bell_goth
+	name = "Gothic Collar (Gold Bell)"
+	desc = "A black band of studded leather with a locked clasp. A golden cowbell has been attached to chime the song of herbivorous rebellion."
+	icon_state = "collar_gold_bell_goth"
+	item_state = "collar_gold_goth"
+
+/obj/item/clothing/accessory/choker/silver_bell_goth
+	name = "Gothic Collar (Silver Bell)"
+	desc = "A black band of studded leather with a locked clasp. A silver cowbell has been attached to chime the song of herbivorous rebellion."
+	icon_state = "collar_silver_bell_goth"
+	item_state = "collar_silver_goth"
+
+/obj/item/clothing/accessory/choker/gold_bell_small_goth
+	name = "Gothic Collar (Small Gold Bell)"
+	desc = "A black band of studded leather with a locked clasp. A golden jingle bell has been attached to announce that a true sleigher has arrived."
+	icon_state = "collar_gold_bell_small_goth"
+	item_state = "collar_gold_goth"
+
+/obj/item/clothing/accessory/choker/silver_bell_small_goth
+	name = "Gothic Collar (Small Silver Bell)"
+	desc = "A black band of studded leather with a locked clasp. A silver jingle bell has been attached to announce that a true sleigher has arrived."
+	icon_state = "collar_silver_bell_small_goth"
+	item_state = "collar_silver_goth"
+
+/obj/item/clothing/accessory/choker/gold_tag_goth
+	name = "Gothic Collar (Gold Tag)"
+	desc = "A black band of studded leather with a locked clasp. A golden dogtag has been attached- making it suitable for Kriosans, Naramad and other kinds of dog."
+	icon_state = "collar_gold_tag_goth"
+	item_state = "collar_gold_goth"
+
+/obj/item/clothing/accessory/choker/silver_tag_goth
+	name = "Gothic Collar (Silver Tag)"
+	desc = "A black band of studded leather with a locked clasp. A silver dogtag has been attached- making it suitable for Kriosans, Naramad and other kinds of dog."
+	icon_state = "collar_silver_tag_goth"
+	item_state = "collar_silver_goth"
+
 /* Bracelets and watches */
 
 /obj/item/clothing/accessory/bracelet
