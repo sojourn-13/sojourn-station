@@ -111,8 +111,17 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 /datum/cooking_with_jane/recipe/proc/create_step_use_item(var/item_type, var/base_quality_award, var/optional)
 	var/datum/cooking_with_jane/recipe_step/add_item/step = new (base_quality_award, item_type, src)
 	return src.add_step(step, optional)
-	
 
+//-----------------------------------------------------------------------------------
+//Customize the last step created
+/datum/cooking_with_jane/recipe/proc/set_step_desc(var/new_description)
+	last_created_step.desc = new_description
+
+/datum/cooking_with_jane/recipe/proc/set_step_max_quality(var/quality)
+	last_created_step.max_quality_awarded = quality
+
+/datum/cooking_with_jane/recipe/proc/set_step_base_quality(var/quality)
+	last_created_step.base_quality_awarded = quality
 //-----------------------------------------------------------------------------------
 //Add a custom step to the cooking process not covered by the existing shortcuts.
 //TODO

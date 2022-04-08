@@ -11,9 +11,7 @@
 /datum/cooking_with_jane/recipe_tracker/New(var/food_item)
 	if(istype(food_item, /obj/item/reagent_containers/food/snacks/grown))
 		flags |= CWJ_IS_PRODUCE
-	parent = food_item
-	
-	
+	holder = food_item
 	src.generate_pointers()
 
 //Generate recipe_pointer objects based on the global list
@@ -46,3 +44,6 @@
 	var/list/possible_steps //A list detailing the next possible steps in a given recipe
 
 	var/list/steps_taken //built over the course of following a recipe, tracks what has been done to the object.
+
+//TODO:
+/datum/cooking_with_jane/recipe_pointer/pointer/New(start_type, recipe_id)
