@@ -159,6 +159,7 @@
 	nutri_cost = 25
 	blood_cost = 25
 	cooldown_time = 15 MINUTES
+	cooldown_category = "realignment"
 
 /datum/ritual/cruciform/tessellate/realignment/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
@@ -308,6 +309,7 @@
 	power = 35
 	nutri_cost = 25
 	blood_cost = 25
+	cooldown_category = "zoom_litany"
 
 /datum/ritual/cruciform/lemniscate/zoom_litany/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C,list/targets)
 	if(H.species?.reagent_tag != IS_SYNTHETIC)
@@ -754,6 +756,7 @@
 	power = 40
 	cooldown = TRUE
 	cooldown_time = 60 MINUTES
+	cooldown_category = "production_litany"
 	success_message = "On the verge of audibility you hear pleasant music, an autolathe disk slides out from a slot within the altar."
 
 /datum/ritual/cruciform/factorial/production_litany/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
@@ -799,6 +802,7 @@
 	power = 40
 	cooldown = TRUE
 	cooldown_time = 120 MINUTES
+	cooldown_category = "mod_litany"
 	success_message = "On the verge of audibility you hear pleasant music, a compartment opens within the altar, a specialized upgrade sliding out."
 
 /datum/ritual/cruciform/factorial/mod_litany/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
