@@ -735,8 +735,8 @@
 	damage_types = list(BRUTE = 65)
 	armor_penetration = 30
 	can_ricochet = FALSE
-	affective_damage_range = 30
-	affective_ap_range = 30
+	affective_damage_range = 18
+	affective_ap_range = 18
 	hitscan = TRUE
 	nocap_structures = TRUE
 
@@ -744,8 +744,8 @@
 /obj/item/projectile/bullet/rail/lv
 	armor_penetration = 15 //but much less AP
 	step_delay = 0.25
-	affective_damage_range = 10
-	affective_ap_range = 10
+	affective_damage_range = 7
+	affective_ap_range = 7
 	hitscan = FALSE //subsonic
 
 /obj/item/projectile/bullet/rail/hv
