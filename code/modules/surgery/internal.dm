@@ -80,7 +80,7 @@
 		if(!owner)
 			return FALSE
 
-		if(!(organ_tag in implant.allowed_organs))
+		if(implant.allowed_organs && implant.allowed_organs.len && !(organ_tag in implant.allowed_organs))
 			to_chat(user, SPAN_WARNING("[implant] doesn't fit in [get_surgery_name()]."))
 			return FALSE
 
