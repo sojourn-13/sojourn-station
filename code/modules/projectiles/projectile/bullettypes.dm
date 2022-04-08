@@ -732,7 +732,7 @@
 /obj/item/projectile/bullet/rail
 	name = "rod"
 	icon_state = "rail"
-	damage_types = list(BRUTE = 75)
+	damage_types = list(BRUTE = 65)
 	armor_penetration = 30
 	can_ricochet = FALSE
 	affective_damage_range = 30
@@ -742,7 +742,6 @@
 
 
 /obj/item/projectile/bullet/rail/lv
-	damage_types = list(BRUTE = 70) //reductor tier damage
 	armor_penetration = 15 //but much less AP
 	step_delay = 0.25
 	affective_damage_range = 10
@@ -753,7 +752,7 @@
 	penetrating = 1
 
 /obj/item/projectile/bullet/rail/uhv
-	damage_types = list(BRUTE = 82.5)
+	damage_types = list(BRUTE = 70)
 	armor_penetration = 60
 	affective_damage_range = 7 //much shorter range, as the projectile starts breaking up mid-air
 	affective_ap_range = 7
