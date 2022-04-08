@@ -203,9 +203,9 @@
 		slot_r_hand_str = "goldilocks_helm",
 		)
 	armor_list = list(
-		melee = 20,
-		bullet = 20,
-		energy = 10,
+		melee = 50,
+		bullet = 25,
+		energy = 25,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -220,9 +220,9 @@
 	icon_state = "goldilocks_suit"
 	slowdown = 0.35
 	armor_list = list(
-		melee = 20,
-		bullet = 20,
-		energy = 10,
+		melee = 50,
+		bullet = 25,
+		energy = 25,
 		bomb = 25,
 		bio = 100,
 		rad = 75
