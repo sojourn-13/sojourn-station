@@ -359,6 +359,7 @@
 	icon_state = "lrifle_short"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_STANMAG
+	w_class = ITEM_SIZE_NORMAL
 	caliber = "lrifle_drum"
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_STEEL = 12)
@@ -479,6 +480,7 @@
 	name = "rifle drum magazine"
 	desc = "A 75 round drum magazine marked for 7.5mm Rifle."
 	icon_state = "rifle_drum"
+	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	caliber = "rifle"
