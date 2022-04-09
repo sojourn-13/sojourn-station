@@ -110,6 +110,7 @@ Moving interrupts
 	if(M.use(2))
 		var/obj/structure/carving_block/CB = new /obj/structure/carving_block(get_turf(src))
 		CB.matter = list(M.material = 2)
+		CB.update_icon
 	else
 		to_chat(user, SPAN_NOTICE("You need 2 sheets of material to make a block."))
 
@@ -223,12 +224,37 @@ Moving interrupts
 	name = "custom statue"
 	icon = 'icons/obj/statue.dmi'
 	icon_state = "base"
+	density = TRUE
 	appearance_flags = TILE_BOUND | PIXEL_SCALE | KEEP_TOGETHER //Added keep together in case targets has weird layering
 	/// primary statue overlay
 	var/mutable_appearance/content_ma
 	var/static/list/greyscale_with_value_bump = list(0,0,0, 0,0,0, 0,0,1, 0,0,-0.05)
+	var/renamedByPlayer = FALSE
 
+/obj/structure/statue/custom/attackby(obj/item/I, mob/user)
+	if(!istype(I, /obj/item/pen))
+		return ..()
+	var/penchoice = input(user, "What would you like to edit?", "Rename or change description?") as null|anything in list("Rename","Change description")
+	if(QDELETED(O))
+		return
+	if(penchoice == "Rename")
+		var/input = stripped_input(user,"What do you want to name \the [name]?", ,"", 128)
+		var/oldname = name
+		if(QDELETED(src))
+			return
+		if(oldname == input)
+			to_chat(user, "<span class='notice'>You changed \the [name] to... well... \the [name].</span>")
+		else
+			name = input
+			to_chat(user, "<span class='notice'>\The [oldname] has been successfully been renamed to \the [input].</span>")
+			renamedByPlayer = TRUE
 
+	if(penchoice == "Change description")
+		var/input = stripped_input(user,"Describe \the [name] here", ,"", 4096)
+		if(QDELETED(src))
+			return
+		desc = input
+		to_chat(user, "<span class='notice'>You have successfully changed \the [name]'s description.</span>")
 
 /obj/structure/statue/custom/Destroy()
 	content_ma = null
@@ -256,6 +282,4 @@ Moving interrupts
 		add_overlay(new_overlays)
 
 /obj/structure/statue/custom/proc/update_overlays()
-	. = ..()
-	if(content_ma)
-		. += content_ma
+	return content_ma
