@@ -162,7 +162,7 @@
 /obj/item/gun/energy/laser/railgun/gauss
 	name = "\"Bat'ko\" gauss rifle"
 	desc = "A rather heavy rifle sporting a cell-loading mount, a adjustable recoil-compensating stock, a hand-crank to manually chamber the next round and a series of coils lining its front. \
-	Placing one's hand towards the heavy-duty coils at the front of the gun is not recomended, but one can simply feel the energy going through the weapon when charged up. \
+	This strange gauss coil rifle has valves along the large, external coil mounts. To fire this gun it requires common venting less it overheat. \
 	At the stock a large script-styled 'M' appears to be engraved into it, a form of signature from its designer along with an artificer Guild logo."
 	icon = 'icons/obj/guns/energy/gauss.dmi'
 	icon_state = "gauss"
@@ -171,9 +171,9 @@
 	w_class = ITEM_SIZE_HUGE
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_STEEL = 15, MATERIAL_SILVER = 10, MATERIAL_GOLD = 6)
 	charge_cost = 1000
-	fire_delay = 20
-	recoil_buildup = 40
-	one_hand_penalty = 80
+	fire_delay = 30
+	recoil_buildup = 30
+	one_hand_penalty = 80 //guh
 	zoom_factor = 1.8
 	extra_damage_mult_scoped = 0.2
 	damage_multiplier = 1.6
@@ -182,7 +182,7 @@
 	slowdown_hold = 1.5
 	brace_penalty = 30
 	init_firemodes = list(
-		list(mode_name="powered-rod", mode_desc="fires a metal rod at light speeds", projectile_type=/obj/item/projectile/plasma/gauss, icon="kill"),
+		list(mode_name="powered-rod", mode_desc="fires a metal rod at incredible speeds", projectile_type=/obj/item/projectile/plasma/gauss, icon="kill"),
 		list(mode_name="fragmented scrap", mode_desc="fires a brittle, sharp piece of scrap-metal", projectile_type=/obj/item/projectile/bullet/grenade/frag, charge_cost=30000, icon="grenade"),
 	)
 	consume_cell = FALSE
@@ -193,13 +193,13 @@
 	var/matter_type = MATERIAL_RSCRAP
 
 	var/projectile_cost = 1
+	var/overheat_damage = 25
 
 /obj/item/gun/energy/laser/railgun/gauss/Initialize()
     ..()
     AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE,  50,  60,  20, 0.01, 2)
     RegisterSignal(src, COMSIG_HEAT_VENT, .proc/ventEvent) //this sould just be a fluff message, proc can be anything
-    RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheat)
-//this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
+    RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheat) //this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
 
 /obj/item/gun/energy/your_gun_path_here/consume_next_projectile()
 	var/datum/component/heat/H = GetComponent(/datum/component/heat)
@@ -241,3 +241,18 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+//Hydrogen gun snowflake variables for the Gauss
+/obj/item/gun/energy/laser/railgun/gauss/proc/ventEvent()
+	src.visible_message("[src]'s vents open valves atop of the exterior coil mounts, cooling itself down.")
+	playsound(usr.loc, 'sound/weapons/guns/interact/gauss_vent.ogg', 50, 1)
+
+/obj/item/gun/energy/laser/railgun/gauss/proc/handleoverheat()
+	src.visible_message(SPAN_DANGER("[src] overheats, its exterior becoming blisteringly hot as a temperature alarm beeps!"))
+	var/mob/living/L = loc
+	if(istype(L))
+		to_chat(L, SPAN_DANGER("[src] is going to explode!"))
+		if(L.hand == L.l_hand) // Are we using the left arm?
+			L.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
+		else // If not then it must be the right arm.
+			L.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
