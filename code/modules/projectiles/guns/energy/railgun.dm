@@ -218,6 +218,14 @@
 	else
 		..()
 
+//No shunts on this gun. It's powerful enough.
+/obj/item/gun/energy/laser/railgun/gauss/attackby(var/obj/item/A as obj, mob/user as mob)
+	if(istype(A,/obj/item/gun_upgrade/mechanism/battery_shunt))
+		to_chat(user, SPAN_WARNING("[src] can not be fitted with an energy shunt"))
+		return
+	else
+		..()
+
 /obj/item/gun/energy/laser/railgun/gauss/consume_next_projectile()
 	if(stored_matter < projectile_cost) return null
 	if(!cell) return null
