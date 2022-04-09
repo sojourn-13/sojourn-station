@@ -46,6 +46,10 @@
 	var/tmp/list/our_overlays	//our local copy of (non-priority) overlays without byond magic. Use procs in SSover-lays to manipulate
 	var/tmp/list/priority_overlays	//over-lays that should remain on top and not normally removed when using cut_overlay functions, like c4.
 
+	var/list/filter_data //filters. epic 514 feature
+		///overlays managed by update_overlays() to prevent removing overlays that weren't added by the same proc, currently obly used for statues because i dont want to rewrte overlays
+	var/list/managed_overlays
+
 	// All physical objects that exist have a somewhat metaphysical representation of their integrity
 	// Why are areas derived from /atom instead of /datum?  They're abstracts!
 	var/health    = 99999 // RPG boss unless  otherwise defined
@@ -670,6 +674,38 @@ its easier to just keep the beam vertical.
 		return TRUE
 	else
 		return FALSE
+
+/atom/proc/add_filter(name,priority,list/params)
+	LAZYINITLIST(filter_data)
+	var/list/p = params.Copy()
+	p["priority"] = priority
+	filter_data[name] = p
+	update_filters()
+
+/atom/proc/update_filters()
+	filters = null
+	filter_data = sortTim(filter_data, /proc/cmp_filter_data_priority, TRUE)
+	for(var/f in filter_data)
+		var/list/data = filter_data[f]
+		var/list/arguments = data.Copy()
+		arguments -= "priority"
+		filters += filter(arglist(arguments))
+	UNSETEMPTY(filter_data)
+
+/atom/proc/get_filter(name)
+	if(filter_data && filter_data[name])
+		return filters[filter_data.Find(name)]
+
+/atom/proc/remove_filter(name_or_names)
+	if(!filter_data)
+		return
+
+	var/list/names = islist(name_or_names) ? name_or_names : list(name_or_names)
+
+	for(var/name in names)
+		if(filter_data[name])
+			filter_data -= name
+	update_filters()
 
 //Multi-z falling procs
 
