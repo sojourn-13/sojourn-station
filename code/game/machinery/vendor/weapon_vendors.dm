@@ -211,7 +211,7 @@
 					/obj/item/storage/backpack/satchel/neotheology = 5,
 					/obj/item/storage/backpack/neotheology = 5,
 					/obj/item/storage/backpack/sport/neotheology = 5,
-					/obj/item/clothing/accessory/fractalrosary = 15,
+					/obj/item/clothing/accessory/necklace/fractalrosary = 15,
 					/obj/item/clothing/suit/storage/neotheosports = 5,
 					/obj/item/clothing/suit/storage/toggle/absolutehoodie = 5,
 					/obj/item/clothing/suit/greatcoat/absolutecoat= 5,
@@ -239,7 +239,8 @@
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns = 2,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns = 2,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms/public = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 3)
+					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 3,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter = 2)
 	contraband = list(/obj/item/tool/knife/neotritual = 3,
 					/obj/item/gun/matter/launcher/nt_sprayer = 3)
 
@@ -255,7 +256,7 @@
 					/obj/item/storage/backpack/satchel/neotheology = 20,
 					/obj/item/storage/backpack/neotheology = 20,
 					/obj/item/storage/backpack/sport/neotheology = 20,
-					/obj/item/clothing/accessory/fractalrosary = 5,
+					/obj/item/clothing/accessory/necklace/fractalrosary = 5,
 					/obj/item/clothing/suit/storage/neotheosports = 40,
 					/obj/item/clothing/suit/storage/toggle/absolutehoodie = 50,
 					/obj/item/clothing/suit/greatcoat/absolutecoat= 45,
@@ -284,6 +285,7 @@
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns = 800,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms/public = 100,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 100,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter = 400,
 					/obj/item/tool/knife/neotritual = 250,
 					/obj/item/gun/matter/launcher/nt_sprayer = 500)
 

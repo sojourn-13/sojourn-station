@@ -71,6 +71,13 @@
 	else
 		..()
 
+/obj/structure/ameridian_crystal/bullet_act(var/obj/item/projectile/Proj)
+	if(istype(Proj, /obj/item/projectile/sonic_bolt))
+		visible_message("[src] shatters.")
+		Destroy()
+	else
+		..()
+
 // This proc is responsible for giving radiation damage to every nearby organics.
 /obj/structure/ameridian_crystal/proc/irradiate()
 	for(var/mob/living/l in range(src, rad_range))
@@ -89,16 +96,29 @@
 /obj/structure/ameridian_crystal/proc/spread()
 	var/list/turf_list = list()
 	for(var/turf/T in orange(spread_range, get_turf(src)))
-		if(locate(/obj/structure/ameridian_crystal) in T) // skip turfs that already have a crystal
+		if(!can_spread_to_turf(T))
 			continue
-		if(istype(T, /turf/simulated/open) || istype(T, /turf/space))
-			continue // Ignore turfs that are actually air
 		if(T.Enter(src)) // If we can "enter" on the tile then we can spread to it.
 			turf_list += T
 
 	if(turf_list.len)
 		var/turf/T = pick(turf_list)
 		new /obj/structure/ameridian_crystal(T) // We spread
+
+// Check the given turf to see if there is any special things that would prevent the spread
+/obj/structure/ameridian_crystal/proc/can_spread_to_turf(var/turf/T)
+	if(T)
+		if(istype(T, /turf/space)) // We can't spread in SPACE!
+			return FALSE
+		if(istype(T, /turf/simulated/open)) // Crystals can't float. Yet.
+			return FALSE
+		if(locate(/obj/structure/ameridian_crystal) in T) // No stacking.
+			return FALSE
+		if(locate(/obj/machinery/shieldwall/ameridian) in T) // Sonic fence block spread.
+			return FALSE
+		if(locate(/obj/machinery/shieldwallgen/ameridian) in T) // Sonic fence block spread. We can't spread in corners
+			return FALSE
+	return TRUE
 
 // This proc handle the spawning of golems
 /obj/structure/ameridian_crystal/proc/handle_golems()

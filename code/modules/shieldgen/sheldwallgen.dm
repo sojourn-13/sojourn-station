@@ -300,7 +300,7 @@
 	update_nearby_tiles()
 	src.gen_primary = A
 	src.gen_secondary = B
-	if(A && B && A.active && B.active)
+	if(A?.active && B?.active)
 		needs_power = 1
 		if(prob(50))
 			A.storedpower -= generate_power_usage

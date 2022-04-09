@@ -170,6 +170,7 @@
 		rad = 0
 	)
 
+
 /obj/item/clothing/suit/armor/vest/botanist
 	name = "botanist attire"
 	desc = "Every rose has its thorns."
@@ -225,6 +226,7 @@
 	options["tangent plate armor"] = "tangent_plate_armor"
 	options["greater heart armor"] = "greater_heart"
 	options["lemniscate armor"] = "lemniscate_armor"
+	options["factorial armor"] = "factorial_armor"
 	options["monomial armor"] = "monomial_armor"
 	options["divisor armor"] = "divisor_armor"
 	options["tessellate armor"] = "tessellate_armor"
@@ -388,7 +390,7 @@
 	item_state = "bulletproof_fullbody"
 
 /obj/item/clothing/suit/armor/laserproof
-	name = "ablative armor vest"
+	name = "reflective armor vest"
 	desc = "A vest that excels in protecting the wearer against energy projectiles."
 	icon_state = "ablative"
 	item_state = "ablative"
@@ -426,7 +428,7 @@
 			return PROJECTILE_CONTINUE // complete projectile permutation
 
 /obj/item/clothing/suit/armor/laserproof/rnd
-	name = "soteria ablative armor vest"
+	name = "soteria reflective armor vest"
 	desc = "A Soteria branded vest that excels in protecting the wearer against energy projectiles. While it is much better at defending against lasers compared to standard ablative armor it lacks as much protection against melee and bullets but can be modified more."
 	icon_state = "ablative_ironhammer"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 15)
@@ -586,6 +588,7 @@
 	pockets.storage_slots = 2	//two slots
 	pockets.max_w_class = ITEM_SIZE_NORMAL		//fits two normal size items as its big pockets
 	pockets.max_storage_space = 8
+	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
 
 //Blackshield armor
 /obj/item/clothing/suit/armor/platecarrier
@@ -749,6 +752,22 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
+/obj/item/clothing/suit/armor/bulletproof/ironhammer/militia
+	name = "Blackshield bulletproof suit"
+	desc = "A set of vest, shoulder guards and leg guards that excel at protecting against high-velocity, solid projectiles. \
+	This particular set seems to have been taken straight from the armory of some low-budget P.D.F or Reserve force, repainted in\
+	blackshield colors and given their I.F.F markings."
+	icon_state = "bulletproof_bs"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
+
+/obj/item/clothing/suit/armor/vest/ablative/militia
+	name = "Blackshield ablative plate"
+	desc = "An outdated set of ablative armor, utilizing advanced materials to absorb rather than reflect energy projeciles and painted in Blackshield's colors.\
+	A distinctive set of equipment, the MK-II 'Energy Defense Gear' sold more for its distinctive, and some would say 'flashy'\
+	appearance than its capabilities. Despite its bad reputation as a tax-payer credit sink it serves as a fairly adequate piece of gear."
+	icon_state = "ablative_bs"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
 /obj/item/clothing/suit/armor/platecarrier/green
 	name = "green plate carrier"
@@ -942,9 +961,9 @@
 	item_state = "commander"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor_list = list(melee = 45, bullet = 50, energy = 25, bomb = 30, bio = 0, rad = 0)
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
+	armor_list = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 	stiffness = MEDIUM_STIFFNESS
@@ -984,18 +1003,21 @@
 obj/item/clothing/suit/armor/commander/militia_overcoat
 	name = "blackshield armored overcoat"
 	desc = "Blackshield greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
+	armor_list = list(melee = 30, bullet = 35, energy = 20, bomb = 10, bio = 0, rad = 0)
 	icon_state = "overcoat_bm"
 	item_state = "overcoat_bm"
 
 obj/item/clothing/suit/armor/commander/marshal_coat
 	name = "marshal officers greatcoat"
 	desc = "Marshal Officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
+	armor_list = list(melee = 35, bullet = 30, energy = 20, bomb = 10, bio = 0, rad = 0)
 	icon_state = "marshal_coat"
 	item_state = "marshal_coat"
 
 obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	name = "supply specialist's jacket"
 	desc = "Supply Specialist's jacket with an armored weave. For formality, protection and style."
+	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 10, bio = 0, rad = 0)
 	icon_state = "marshal_coat_ss"
 	item_state = "marshal_coat_ss"
 

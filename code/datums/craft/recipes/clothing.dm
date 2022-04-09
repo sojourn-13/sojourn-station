@@ -155,6 +155,7 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL), // Bullets
 		list(QUALITY_WELDING, 10, 20),
 		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS), // Reflective plating?
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLATINUM), // Bullets
 		list(QUALITY_ADHESIVE, 15, "time" = 60)
 	)
 
@@ -176,15 +177,6 @@
 		list(/obj/item/clothing, 1, time = 30),
 		list(QUALITY_CUTTING, 10, 60)
 	)
-
-/datum/craft_recipe/clothing/acc_cloak
-	name = "attachable cloak"
-	result = /obj/item/clothing/accessory/cape/black
-	steps = list(
-		list(/obj/item/clothing/suit/hooded/cloak/simple, 1, "time" = 30),
-		list(QUALITY_CUTTING, 10, 30)
-	)
-
 
 /datum/craft_recipe/clothing/sandals
 	name = "wooden sandals"

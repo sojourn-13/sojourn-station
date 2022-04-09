@@ -12,6 +12,7 @@
 		//SMGs
 		/datum/design/autolathe/gun/greasegun = 2,
 		/datum/design/autolathe/gun/buckler = 3,
+		/datum/design/autolathe/gun/triage = 4,
 		//rifles
 		/datum/design/autolathe/gun/boltgun_sa = 0,
 		/datum/design/autolathe/gun/zatvor,
@@ -23,6 +24,7 @@
 		/datum/design/autolathe/gun/strelki = 2,
 		/datum/design/autolathe/gun/watchtower = 3,
 		/datum/design/autolathe/gun/rushing_bull = 4,
+		/datum/design/autolathe/gun/duty = 6,
 		//machinegun
 		/datum/design/autolathe/gun/saw = 4,
 		/datum/design/autolathe/gun/ppv = 5,
@@ -63,6 +65,10 @@
 		/datum/design/autolathe/ammo/magnum_rubber,
 		/datum/design/autolathe/ammo/magnum_practice = 0,
 		/datum/design/autolathe/ammo/magnum_lethal,
+		/datum/design/autolathe/ammo/kurtz_practice = 0,
+		/datum/design/autolathe/ammo/kurtz_rubber,
+		/datum/design/autolathe/ammo/kurtz,
+		/datum/design/autolathe/ammo/kurtz_lethal,
 		/datum/design/autolathe/ammo/hrifle,
 		/datum/design/autolathe/ammo/hrifle_rubber,
 		/datum/design/autolathe/ammo/hrifle_practice = 0,
@@ -177,6 +183,19 @@
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_lethal = 2
 	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/blackshield/triage
+	disk_name = "Blackshield - .40 Triage SMG"
+	icon_state = "blackshield"
+
+	license = 12
+	designs = list(
+		/datum/design/autolathe/gun/triage = 4,
+		/datum/design/autolathe/ammo/smg_magnum_40 = 2,
+		/datum/design/autolathe/ammo/smg_magnum_40_rubber = 1,
+		/datum/design/autolathe/ammo/smg_magnum_40_lethal = 3,
+		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
+		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki
 	disk_name = "NM - 7.5mm \"Strelki\""

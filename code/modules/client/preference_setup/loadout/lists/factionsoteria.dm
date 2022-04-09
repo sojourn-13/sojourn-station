@@ -7,28 +7,28 @@
 
 /datum/gear/factionsoteria/cloakmbo
 	display_name = "cloak, biolab overseer"
-	path = /obj/item/clothing/suit/hooded/cloak/job/mbo
+	path = /obj/item/clothing/accessory/job/cape/mbo
 	allowed_roles = list("Chief Biolab Overseer")
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"
 
 /datum/gear/factionsoteria/cloakmeo
 	display_name = "cloak, research overseer"
-	path = /obj/item/clothing/suit/hooded/cloak/job/meo
+	path = /obj/item/clothing/accessory/job/cape/meo
 	allowed_roles = list("Chief Research Overseer")
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"
 
 /datum/gear/factionsoteria/cloakmedical
 	display_name = "cloak, soteria medical"
-	path = /obj/item/clothing/suit/hooded/cloak/job/medical
+	path = /obj/item/clothing/accessory/job/cape/medical
 	allowed_roles = list("Soteria Doctor","Soteria Biolab Officer","Soteria Orderly","Soteria Trauma Team")
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"
 
 /datum/gear/factionsoteria/cloakscience
 	display_name = "cloak, soteria research"
-	path = /obj/item/clothing/suit/hooded/cloak/job/science
+	path = /obj/item/clothing/accessory/job/cape/science
 	allowed_roles = list("Chief Research Overseer","Soteria Scientist","Soteria Roboticist")
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"

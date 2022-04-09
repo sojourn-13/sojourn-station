@@ -308,7 +308,7 @@
 /obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
 	if(!user || !target) return
 
-	if(world.time < next_fire_time)
+	if((world.time < next_fire_time) || currently_firing)
 		if (!suppress_delay_warning && world.time % 3) //to prevent spam
 			to_chat(user, SPAN_WARNING("[src] is not ready to fire again!"))
 		return
@@ -928,7 +928,9 @@
 /obj/item/gun/zoom(tileoffset, viewsize)
 	..()
 	if(zoom)
+		refresh_upgrades() //Lets not allow some silly stacking exploits
 		init_offset -= scoped_offset_reduction
+		damage_multiplier += extra_damage_mult_scoped
 	else
 		refresh_upgrades()
 

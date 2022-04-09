@@ -10,7 +10,7 @@
 	twohanded = TRUE
 	force = WEAPON_FORCE_NORMAL
 	caliber = CAL_MAGNUM
-	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_ILLEGAL = 5)
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_SMG|MAG_WELL_PISTOL
@@ -23,7 +23,7 @@
 	init_firemodes = list(
 		FULL_AUTO_400,
 		BURST_3_ROUND,
-		BURST_5_ROUND,
+		BURST_5_ROUND
 		)
 
 /obj/item/gun/projectile/automatic/thompson/update_icon()
@@ -46,6 +46,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/gun/projectile/automatic/vector/Initialize()
+/obj/item/gun/projectile/automatic/thompson/Initialize()
 	. = ..()
 	update_icon()
