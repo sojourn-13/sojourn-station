@@ -114,4 +114,4 @@
 	saw_off = FALSE
 	sharp = TRUE //Duh, it's an axe.
 	force = WEAPON_FORCE_ROBUST
-	gun_tags = list(GUN_BAYONET)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG,GUN_BAYONET)
