@@ -164,8 +164,9 @@ Moving interrupts
 
 /obj/structure/carving_block/proc/update_overlays()
 	. = ..()
-	var/material/mat = matter[0]
-	color = mat.icon_colour
+	if(matter.len)
+		var/material/mat = matter[1]
+		color = mat.icon_colour
 	if(!target_appearance_with_filters)
 		return
 	//We're only keeping one instance here that changes in the middle so we have to clone it to avoid managed overlay issues
@@ -216,13 +217,18 @@ Moving interrupts
 	update_icon()
 
 
+
+
 /obj/structure/statue/custom
 	name = "custom statue"
+	icon = 'icons/obj/statue.dmi'
 	icon_state = "base"
 	appearance_flags = TILE_BOUND | PIXEL_SCALE | KEEP_TOGETHER //Added keep together in case targets has weird layering
 	/// primary statue overlay
 	var/mutable_appearance/content_ma
 	var/static/list/greyscale_with_value_bump = list(0,0,0, 0,0,0, 0,0,1, 0,0,-0.05)
+
+
 
 /obj/structure/statue/custom/Destroy()
 	content_ma = null
@@ -231,8 +237,6 @@ Moving interrupts
 /obj/structure/statue/custom/proc/set_visuals(model_appearance)
 	if(content_ma)
 		QDEL_NULL(content_ma)
-	var/material/mat = matter[0]
-	color = mat.icon_colour
 	content_ma = new
 	content_ma.appearance = model_appearance
 	content_ma.pixel_x = 0
@@ -244,6 +248,9 @@ Moving interrupts
 
 /obj/structure/statue/custom/update_icon()
 	..()
+	if(matter.len)
+		var/material/mat = matter[1]
+		color = mat.icon_colour
 	var/list/new_overlays = update_overlays()
 	if(length(new_overlays))
 		add_overlay(new_overlays)
