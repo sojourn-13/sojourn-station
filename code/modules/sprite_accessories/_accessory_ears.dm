@@ -235,6 +235,13 @@
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/kittyalt
+	name = "Alternate Feline Ears"
+	desc = ""
+	icon_state = "cat_alt"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/lizard
 	name = "Lizard Horns"
 	desc = ""

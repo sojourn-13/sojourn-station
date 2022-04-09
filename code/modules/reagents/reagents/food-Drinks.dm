@@ -194,7 +194,7 @@
 	name = "Corn Oil"
 	id = "cornoil"
 	description = "An oil derived from various types of corn."
-	taste_description = "slime"
+	taste_description = "oil"
 	taste_mult = 0.1
 	reagent_state = LIQUID
 	nutriment_factor = 8
@@ -312,7 +312,7 @@
 /datum/reagent/other/sodiumchloride
 	name = "Table Salt"
 	id = "sodiumchloride"
-	description = "A salt made of sodium chloride. Commonly used to season food."
+	description = "Sodium chloride, most commonly known as salt. Commonly used to season food."
 	taste_description = "salt"
 	reagent_state = SOLID
 	color = "#FFFFFF"
@@ -344,7 +344,7 @@
 	name = "Frost Oil"
 	id = "frostoil"
 	description = "A special oil that noticeably chills the body. Extracted from Ice Peppers."
-	taste_description = "mint"
+	taste_description = "oily mint"
 	taste_mult = 1.5
 	reagent_state = LIQUID
 	color = "#B31008"
@@ -878,11 +878,19 @@
 	description = "A strong coffee made by passing nearly boiling water through coffee seeds at high pressure."
 	taste_description = "bitter coffee"
 	taste_mult = 1
+	overdose = 40
 	color = "#664300d3"
+	adj_dizzy = -10
+	adj_drowsy = -5
+	adj_sleepy = -5 // Stronger than coffee
 
 	glass_icon_state = "espresso"
 	glass_name = "shot of espresso"
 	glass_desc = "A strong coffee made by passing nearly boiling water through coffee seeds at high pressure."
+
+/datum/reagent/drink/coffee/espresso/overdose(mob/living/carbon/M, alien)
+	M.make_jittery(10) // Stronger coffee, stronger consequences
+	M.add_chemical_effect(CE_PULSE, 2)
 
 /datum/reagent/drink/coffee/icecoffee
 	name = "Iced Coffee"
@@ -1026,6 +1034,47 @@
 	glass_name = "mocaccino"
 	glass_desc = "Espresso with hot milk and chocolate."
 	glass_center_of_mass = list("x"=15, "y"=9)
+
+/datum/reagent/drink/coffee/atomicoffee // CDDA reference - Seb
+	name = "Atomic coffee"
+	id = "atomicoffee"
+	description = "Every possible microgram of caffeine and flavor has been carefully extracted for your enjoyment, using the power of the atom. The perfect drink for those that wish to stay awake for days."
+	taste_description = "liquid tar"
+	color =  "#393815" // rgb: 57, 56, 21
+	overdose = 31 // A whole cup and a unit more.
+
+	glass_icon_state = "atomicoffee"
+	glass_name = "Atomic Coffee"
+	glass_desc = "A glass of atomically compressed pure caffeine, perfect to stay awake for days fighting off the inevitable cataclysm."
+	glass_center_of_mass = list("x"=15, "y"=9)
+
+/datum/reagent/drink/coffee/atomicoffee/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	M.add_chemical_effect(CE_PULSE, 2) // Watch out for that heart!
+	M.dizziness = 0
+	M.stuttering = 0
+	M.confused = 0
+	M.slurring = 0
+	M.drowsyness = 0 // The ultimate sober up drink
+	M.sleeping = 0 // SLEEPISFORTHEWEAKWHONEEDSTOSLEEP
+
+/datum/reagent/drink/coffee/atomicoffee/overdose(mob/living/carbon/M, alien)
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_HEART) // I said to watch out!!
+		if(istype(C))
+			if(C.is_bruised())
+				M.adjustOxyLoss(0.1)
+			else if(C.is_broken())
+				M.adjustOxyLoss(0.3)
+				M.paralysis = max(M.paralysis, 5) // HEART ATTACK!
+				M.add_chemical_effect(CE_NOPULSE, 1)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.9) // Fry_consumes_100_cups_of_coffee.gif
+	M.make_jittery(20) // Except he's not calm!
+	M.adjustToxLoss(0.1) // An alternative to getting irradiated, nobody wants that.
+
+
 
 /datum/reagent/drink/coffee/sromshine
 	name = "Sromshine"
