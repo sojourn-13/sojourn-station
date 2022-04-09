@@ -197,7 +197,7 @@
 /obj/item/storage/box/vendor_lootbox/oddity_high
 	name = "\"Impossible\" surprise mechanics box"
 	desc = "A prospector branded 'surprise mechanics' box, available at the prospector vending machine. While the practice of loading boxes with random junk and selling it lottery style is questionable, \
-	people do what they will with their money. Triple oddities in this one or a bluecross item! Weird!"
+	people do what they will with their money. Quadruple oddities in this one or a bluecross item! Weird!"
 
 /obj/item/storage/box/vendor_lootbox/oddity_high/populate_contents()
 	if(prob(10)) //Lucky!
