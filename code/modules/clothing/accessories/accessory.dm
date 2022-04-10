@@ -1052,3 +1052,58 @@
 	desc = "An expensive watch with a black band wrapped around your wrist. Snazzy."
 	icon_state = "wristwatch_black"
 	item_state = "wristwatch_black"
+
+/*Waistcoat*/
+/obj/item/clothing/accessory/wcoat
+	name = "red sweatervest"
+	desc = "A sleeveless red sweater."
+	icon_state = "sweatervest_red"
+	item_state = "sweatervest_red"
+	item_state_slots = list(slot_r_hand_str = "wcoat", slot_l_hand_str = "wcoat")
+	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
+	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	slot_flags = SLOT_OCLOTHING|SLOT_ACCESSORY_BUFFER
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	siemens_coefficient = 0.9
+
+/obj/item/clothing/accessory/wcoat/black
+	name = "black waistcoat"
+	desc = "A classy black waistcoat."
+	icon_state = "vest"
+	item_state = "vest"
+
+/obj/item/clothing/accessory/wcoat/brown
+	name = "brown waistcoat"
+	desc = "A classy brown waistcoat."
+	icon_state = "brown_waistcoat"
+	item_state = "brown_waistcoat"
+
+/obj/item/clothing/accessory/wcoat/elegant
+	name = "elegant waistcoat"
+	desc = "A classy elegant waistcoat."
+	icon_state = "elegant_waistcoat"
+	item_state = "elegant_waistcoat"
+
+/obj/item/clothing/accessory/wcoat/grey
+	name = "grey waistcoat"
+	desc = "A classy grey waistcoat."
+	icon_state = "grey_waistcoat"
+	item_state = "grey_waistcoat"
+
+/obj/item/clothing/accessory/wcoat/red
+	name = "red waistcoat"
+	desc = "A classy red waistcoat."
+	icon_state = "red_waistcoat"
+	item_state = "red_waistcoat"
+
+/obj/item/clothing/accessory/wcoat/swvestblack
+	name = "black sweatervest"
+	desc = "A sleeveless black sweater."
+	icon_state = "sweatervest"
+	item_state = "sweatervest"
+
+/obj/item/clothing/accessory/wcoat/swvestblue
+	name = "blue sweatervest"
+	desc = "A sleeveless blue sweater."
+	icon_state = "sweatervest_blue"
+	item_state = "sweatervest_blue"
