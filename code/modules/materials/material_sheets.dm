@@ -439,7 +439,7 @@
 	default_type = MATERIAL_AMERIDIAN
 	novariants = TRUE
 	price_tag = 150 // Ameridian mining is extremly dangerous and very profitable
-	max_amount = 200
+	max_amount = 360
 
 /obj/item/stack/material/ameridian/full
 	amount = 200
