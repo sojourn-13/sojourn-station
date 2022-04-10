@@ -222,7 +222,7 @@
 				P.pixel_x = rand(-7, 7) //random position
 				P.pixel_y = rand(-7, 7)
 				P.icon_state = bottlesprite
-				P.label_icon_state = "[bottlesprite]_label"
+				P.label_icon_state = "label_[bottlesprite]"
 				P.matter = list()
 				reagents.trans_to_obj(P,60)
 				P.toggle_lid()
