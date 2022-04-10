@@ -329,21 +329,18 @@
 	desc = "A fancy holo-mantle made from light fabric and bearing the rank markings of the Soteria CBO. While sleek and sterile, it sadly lacks \
 	protection against man-made horrors beyond our comprehension."
 	icon_state = "half_cbo"
-	slot_flags = SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/halfcape/cro
 	name = "Chief Researcher Overseers holo-mantle"
 	desc = "A fancy holo-mantle made from dark fabric and bearing the rank markings of the Soteria CRO. Black and purple, a color scheme and style to match the \
 	mad scientist in every Overseer."
 	icon_state = "half_cro"
-	slot_flags = SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/halfcape/gm
 	name = "Guildmasters holo-mantle"
 	desc = "A fancy holo-mantle made from dark fabric and bearing the rank markings of the Guildmaster. A snagging hazard sure to cause even the most hardened of safety inspectors\
 	to blanch."
 	icon_state = "half_gm"
-	slot_flags = SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/halfcape/foreman
 	name = "Foreman holo-mantle"
@@ -432,24 +429,20 @@
 	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a tactical camo pattern."
 	icon_state = "blackshieldcloak_camo"
 
-/obj/item/clothing/accessory/cape/sergeant_cape
-	name = "Sergeants mantle"
-	desc = "A shoulder-mantlee made from black and silver fabric, denoting the position of Sergeant. Allows for identification at a glance."
-	icon_state = "half_sarg"
-	slot_flags = SLOT_ACCESSORY_BUFFER
-
-/obj/item/clothing/accessory/cape/blackshield/corpsmans_cape
-	name = "Corpsman mantle"
-	desc = "A half-cape made from blue and black fabric denoting that they are a corpsman, to be easily seen in the jungle."
-	icon_state = "half_corp"
-	slot_flags = SLOT_ACCESSORY_BUFFER
-
-/obj/item/clothing/accessory/cape/trooper_cape
-	name = "Troopers mantle"
+/obj/item/clothing/accessory/halfcape/trooper
+	name = "troopers mantle"
 	desc = "A half-cape made from blue and white fabric denoting the rank of Trooper. Allows for identification at a glance"
 	icon_state = "half_troop"
-	slot_flags = SLOT_ACCESSORY_BUFFER
 
+/obj/item/clothing/accessory/halfcape/sergeant
+	name = "sergeants mantle"
+	desc = "A shoulder-mantlee made from black and silver fabric, denoting the position of Sergeant. Allows for identification at a glance."
+	icon_state = "half_sarg"
+
+/obj/item/clothing/accessory/halfcape/corpsman
+	name = "corpsman mantle"
+	desc = "A half-cape made from blue and black fabric denoting that they are a corpsman, to be easily seen in the jungle."
+	icon_state = "half_corp"
 
 //Kriosan
 /obj/item/clothing/accessory/kricape
