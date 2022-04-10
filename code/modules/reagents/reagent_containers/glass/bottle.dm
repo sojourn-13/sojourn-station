@@ -20,11 +20,6 @@
 		var/mutable_appearance/lid = mutable_appearance(icon, lid_icon)
 		add_overlay(lid)
 
-	if(label_text)
-		var/label_icon = label_icon_state ? label_icon_state : "label_[icon_state]"
-		var/mutable_appearance/label = mutable_appearance(icon, label_icon)
-		add_overlay(label)
-
 	if(reagents.total_volume)
 		if(label_text)
 			var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[icon_state]_labeled-[get_filling_state()]")
@@ -34,6 +29,19 @@
 			var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[icon_state]-[get_filling_state()]")
 			filling.color = reagents.get_color()
 			add_overlay(filling)
+
+	if(label_text)
+		var/label_icon = label_icon_state ? label_icon_state : "label_[icon_state]"
+		var/mutable_appearance/label = mutable_appearance(icon, label_icon)
+		add_overlay(label)
+
+/obj/item/reagent_containers/glass/bottle/potion
+	name = "elegant bottle"
+	desc = "A bottle with a much more sharper and refined look to it."
+	icon_state = "potion"
+	item_state = "potion"
+	label_icon_state = "label_potion"
+	filling_states = "10;20;40;50;60"
 
 /obj/item/reagent_containers/glass/bottle/inaprovaline
 	name = "inaprovaline bottle"

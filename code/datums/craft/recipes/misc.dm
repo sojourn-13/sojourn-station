@@ -6,22 +6,6 @@
 	)
 	related_stats = list(STAT_COG)
 
-/datum/craft_recipe/medical/rag
-	name = "rag"
-	result = /obj/item/reagent_containers/glass/rag
-	icon_state = "clothing"
-	steps = list(
-		list(/obj/item/clothing, 1, "time" = 30)
-	)
-
-/datum/craft_recipe/medical/rag/alt
-	name = "rag"
-	result = /obj/item/reagent_containers/glass/rag
-	icon_state = "clothing"
-	steps = list(
-		list(CRAFT_MATERIAL, 3, MATERIAL_CLOTH, "time" = 15),
-	)
-
 /datum/craft_recipe/tray
 	name = "dinner tray"
 	result = /obj/item/tray
