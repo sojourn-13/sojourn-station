@@ -101,12 +101,6 @@
 	icon_state = "bottle"
 	preloaded_reagents = list("capsaicin" = 60)
 
-/obj/item/reagent_containers/glass/bottle/frostoil
-	name = "frost oil bottle"
-	desc = "A small bottle. Contains cold sauce."
-	icon_state = "bottle"
-	preloaded_reagents = list("frostoil" = 60)
-
 /obj/item/reagent_containers/glass/bottle/tricord
 	name = "tricordrazine bottle"
 	desc = "A small bottle. Contains Tricordrazine, a mild all-around healing agent."
@@ -129,6 +123,44 @@
 	matter = list(MATERIAL_PLASTIC = 1)
 	preloaded_reagents = list("fuel" = 120)
 
+/obj/item/reagent_containers/glass/bottle/honey
+	name = "honey bottle"
+	desc = "Contains delicious honey. Save the bees."
+	icon_state = "bottle"
+	preloaded_reagents = list("honey" = 60)
+
+//frost oil and material chems
+/obj/item/reagent_containers/glass/bottle/frostoil
+	name = "frost oil bottle"
+	desc = "A small bottle. Contains cold sauce."
+	icon_state = "bottle"
+	preloaded_reagents = list("frostoil" = 60)
+
+/obj/item/reagent_containers/glass/bottle/uranium
+	name = "liquid uranium bottle"
+	desc = "A small bottle. Contains liquid uranium."
+	icon_state = "bottle"
+	preloaded_reagents = list(MATERIAL_URANIUM = 60)
+
+/obj/item/reagent_containers/glass/bottle/gold
+	name = "liquid gold bottle"
+	desc = "A small bottle. Contains liquid gold."
+	icon_state = "bottle"
+	preloaded_reagents = list(MATERIAL_GOLD = 60)
+
+/obj/item/reagent_containers/glass/bottle/silver
+	name = "liquid silver bottle"
+	desc = "A small bottle. Contains liquid silver."
+	icon_state = "bottle"
+	preloaded_reagents = list(MATERIAL_SILVER = 60)
+
+/obj/item/reagent_containers/glass/bottle/plasma
+	name = "liquid plasma bottle"
+	desc = "A small bottle. Contains plasma."
+	icon_state = "bottle"
+	preloaded_reagents = list("plasma" = 60)
+
+// Hunters lodge chems
 /obj/item/reagent_containers/glass/bottle/tangu_extract
 	name = "tangu extract bottle"
 	desc = "A small bottle. Contains the extract of a tangu horn, a highly valuable universal healing chemical."
@@ -147,6 +179,7 @@
 	icon_state = "bottle"
 	preloaded_reagents = list("tahcacillin" = 60)
 
+//viroputine chems (These mix with themselves and do weird effects)
 /obj/item/reagent_containers/glass/bottle/nosfernium
 	name = "nosfernium bottle"
 	desc = "A small bottle. Contains the blood based chemical nosfernium. Handle with care."
@@ -159,6 +192,32 @@
 	icon_state = "bottle"
 	preloaded_reagents = list("viroputine" = 60)
 
+// slime based chems below this please.
+/obj/item/reagent_containers/glass/bottle/slimejelly
+	name = "slime jelly bottle"
+	desc = "A horrific replicating chemical. Fruit of questionable virology research."
+	icon_state = "bottle"
+	preloaded_reagents = list("slimejelly" = 60)
+
+/obj/item/reagent_containers/glass/bottle/pureslimejelly
+	name = "pure slime jelly bottle"
+	desc = "A advanced version of slime jelly. Naturally made from certain slimes."
+	icon_state = "bottle"
+	preloaded_reagents = list("pureslimejelly" = 60)
+
+/obj/item/reagent_containers/glass/bottle/slimetoxin
+	name = "slime mutation bottle"
+	desc = "A corruptive toxin produced by slimes."
+	icon_state = "bottle"
+	preloaded_reagents = list("mutationtoxin" = 60)
+
+/obj/item/reagent_containers/glass/bottle/aslimetoxin
+	name = "advanced slime mutation bottle"
+	desc = "An advanced corruptive toxin produced by slimes."
+	icon_state = "bottle"
+	preloaded_reagents = list("amutationtoxin" = 60)
+
+//organic bottled chems
 /obj/item/reagent_containers/glass/bottle/organic
 	name = "resin bottle"
 	desc = "A small bottle made of organic resin with a small bark-like lid."

@@ -120,6 +120,21 @@
 	P.loc = get_turf(holder.my_atom)
 	..()
 
+/datum/chemical_reaction/slime/metal_3
+	result = null
+	required_reagents = list("radium" = 5)
+	result_amount = 1
+	required = /obj/item/slime_extract/metal
+
+/datum/chemical_reaction/slime/metal_3/on_reaction(var/datum/reagents/holder)
+	var/obj/item/stack/material/uranium/U = new /obj/item/stack/material/uranium
+	U.amount = 1
+	U.loc = get_turf(holder.my_atom)
+	for (var/mob/living/M in range(5,U.loc))
+		M.apply_effect(25,IRRADIATE,0)
+		M.updatehealth()
+	..()
+
 //Gold
 /datum/chemical_reaction/slime/wealth
 	result = null
@@ -136,20 +151,11 @@
 	P.loc = get_turf(holder.my_atom)
 	..()
 
-/datum/chemical_reaction/slime/wealth_light
-	result = null
-	required_reagents = list(MATERIAL_URANIUM = 5)
-	result_amount = 1
+/datum/chemical_reaction/slime/honey
+	result = "honey"
+	required_reagents = list("nutriment" = 5)
+	result_amount = 5
 	required = /obj/item/slime_extract/gold
-
-/datum/chemical_reaction/slime/wealth_light/on_reaction(var/datum/reagents/holder)
-	var/obj/item/stack/material/silver/S = new /obj/item/stack/material/silver
-	S.amount = 15
-	S.loc = get_turf(holder.my_atom)
-	var/obj/item/stack/material/glass/G = new /obj/item/stack/material/glass
-	G.amount = 5
-	G.loc = get_turf(holder.my_atom)
-	..()
 
 //Silver
 /datum/chemical_reaction/slime/bork
@@ -176,12 +182,48 @@
 					step(B, pick(NORTH, SOUTH, EAST, WEST))
 	..()
 
+/datum/chemical_reaction/slime/bork2
+	result = "enzyme"
+	required_reagents = list("nutriment" = 5)
+	result_amount = 5
+	required = /obj/item/slime_extract/silver
+
+/datum/chemical_reaction/slime/wealth_light
+	result = null
+	required_reagents = list(MATERIAL_URANIUM = 5)
+	result_amount = 1
+	required = /obj/item/slime_extract/silver
+
+/datum/chemical_reaction/slime/wealth_light/on_reaction(var/datum/reagents/holder)
+	var/obj/item/stack/material/silver/S = new /obj/item/stack/material/silver
+	S.amount = 15
+	S.loc = get_turf(holder.my_atom)
+	var/obj/item/stack/material/tritium/T = new /obj/item/stack/material/tritium
+	T.amount = 5
+	T.loc = get_turf(holder.my_atom)
+	..()
+
 //Blue
 /datum/chemical_reaction/slime/frost
 	result = "frostoil"
-	required_reagents = list("plasma" = 1)
+	required_reagents = list("water" = 1)
 	result_amount = 10
 	required = /obj/item/slime_extract/blue
+
+/datum/chemical_reaction/slime/glass
+	result = null
+	required_reagents = list("plasma" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/blue
+
+/datum/chemical_reaction/slime/glass/on_reaction(var/datum/reagents/holder)
+	var/obj/item/stack/material/glass/G = new /obj/item/stack/material/glass
+	G.amount = 15
+	G.loc = get_turf(holder.my_atom)
+	var/obj/item/stack/material/glass/plasmaglass/P = new /obj/item/stack/material/glass/plasmaglass
+	P.amount = 5
+	P.loc = get_turf(holder.my_atom)
+	..()
 
 //Dark Blue
 /datum/chemical_reaction/slime/freeze
@@ -199,9 +241,16 @@
 		M.bodytemperature -= 140
 		to_chat(M, SPAN_WARNING("You feel a chill!"))
 
+/datum/chemical_reaction/slime/pureslime
+	result = "pureslimejelly"
+	required_reagents = list("honey" = 5)
+	result_amount = 1
+	required = /obj/item/slime_extract/darkblue
+	mix_message = "The core shimmers in gentle light before returning to normal."
+
 //Orange
 /datum/chemical_reaction/slime/casp
-	result = "capsaicin"
+	result = "condensedcapsaicin"
 	required_reagents = list("blood" = 1)
 	result_amount = 10
 	required = /obj/item/slime_extract/orange
@@ -276,13 +325,13 @@
 	P.amount = 10
 	P.loc = get_turf(holder.my_atom)
 
-/datum/chemical_reaction/slime/randomizer
+/datum/chemical_reaction/slime/toolupgrade
 	result = null
-	required_reagents = list(MATERIAL_URANIUM = 1)
+	required_reagents = list(MATERIAL_URANIUM = 1, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/darkpurple
 
-/datum/chemical_reaction/slime/randomizer/on_reaction(var/datum/reagents/holder)
+/datum/chemical_reaction/slime/toolupgrade/on_reaction(var/datum/reagents/holder)
 	..()
 	var/obj/item/tool_upgrade/augment/randomizer/R = new /obj/item/tool_upgrade/augment/randomizer
 	R.loc = get_turf(holder.my_atom)
@@ -351,6 +400,32 @@
 	result_amount = 1
 	required = /obj/item/slime_extract/black
 
+/datum/chemical_reaction/slime/spawn2
+	result = null
+	required_reagents = list("amutationtoxin" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/black
+
+/datum/chemical_reaction/slime/spawn2/on_reaction(var/datum/reagents/holder)
+	holder.my_atom.visible_message(SPAN_WARNING("Infused with slime mutation toxin, the core begins to quiver and grow, and soon a new baby slime emerges from it!"))
+	var/mob/living/carbon/slime/S = new /mob/living/carbon/slime
+	S.loc = get_turf(holder.my_atom)
+	var/list/colors = list("grey" = 10,
+	"purple" = 4,
+	"metal" = 4,
+	"orange" = 4,
+	"blue" = 4,
+	"dark blue" = 2,
+	"dark purple" = 2,
+	"yellow" = 2,
+	"silver" = 2,
+	"pink" = 1,
+	"red" = 1,
+	"gold" = 1,
+	"green" = 1)
+	S.set_mutation(pickweight(colors))
+	..()
+
 //Oil
 /datum/chemical_reaction/slime/explosion
 	result = null
@@ -374,6 +449,18 @@
 	..()
 	var/obj/item/slime_thermals/T = new /obj/item/slime_thermals
 	T.loc = get_turf(holder.my_atom)
+
+/datum/chemical_reaction/slime/noslip
+	result = null
+	required_reagents = list("lube" = 5)
+	result_amount = 1
+	required = /obj/item/slime_extract/oil
+	mix_message = "The slime extract begins to vibrate violently!"
+
+/datum/chemical_reaction/slime/noslip/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/noslipmodule/N = new /obj/item/noslipmodule
+	N.loc = get_turf(holder.my_atom)
 
 //Light Pink
 /datum/chemical_reaction/slime/potion2
@@ -399,3 +486,18 @@
 	var/obj/effect/golemrune/Z = new /obj/effect/golemrune
 	Z.loc = get_turf(holder.my_atom)
 	Z.announce_to_ghosts()
+
+/datum/chemical_reaction/slime/diamond
+	result = null
+	required_reagents = list("pureslimejelly" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/adamantine
+
+/datum/chemical_reaction/slime/diamond/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/stack/material/diamond/D = new /obj/item/stack/material/diamond
+	D.amount = 1
+	D.loc = get_turf(holder.my_atom)
+	var/obj/item/stack/material/biomatter/B = new /obj/item/stack/material/biomatter
+	B.amount = 5
+	B.loc = get_turf(holder.my_atom)
