@@ -112,3 +112,9 @@
 	desc = "A small bottle. Contains lithium."
 	icon_state = "bottle"
 	preloaded_reagents = list("lithium" = 60)
+
+/obj/item/reagent_containers/glass/bottle/ameridian
+	name = "liquid ameridian bottle"
+	desc = "A small bottle. Contains liquid ameridian."
+	icon_state = "bottle"
+	preloaded_reagents = list(MATERIAL_AMERIDIAN = 60)
