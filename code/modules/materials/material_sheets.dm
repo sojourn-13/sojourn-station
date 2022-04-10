@@ -442,4 +442,4 @@
 	max_amount = 360
 
 /obj/item/stack/material/ameridian/full
-	amount = 200
+	amount = 360
