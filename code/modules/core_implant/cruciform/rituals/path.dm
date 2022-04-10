@@ -899,5 +899,5 @@
 		if (response == "Cancel Litany")
 			fail("You decide not to obtain church artifice at this time.", user, C)
 			return FALSE
-		set_personal_cooldown(user)
+	set_personal_cooldown(user)
 	return TRUE
