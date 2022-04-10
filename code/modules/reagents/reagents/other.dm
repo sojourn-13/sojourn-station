@@ -257,7 +257,8 @@
 	description = "A green liquid with small crystals floating in it."
 	taste_description = "crystalline crystals"
 	reagent_state = SOLID
-	color = "#B8B8C0"
+	color = "#5FE45E"
+	metabolism = 5
 
 /datum/reagent/liquid_ameridian/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
 	affect_ingest(M, alien, effect_multiplier)
