@@ -149,6 +149,7 @@
 					/obj/item/storage/box/costume/surplushalloween = 2,
 					/obj/item/storage/box/costume/bonusjustice = 2,
 					/obj/item/storage/box/costume/bonuswrestling = 2,
+					/obj/item/storage/box/costume = 2,
 					//Under
 					/obj/item/clothing/under/colony = 10,
 					//Masks
@@ -208,6 +209,7 @@
 					/obj/item/storage/box/costume/surplushalloween = 200,
 					/obj/item/storage/box/costume/bonusjustice = 200,
 					/obj/item/storage/box/costume/bonuswrestling = 200,
+					/obj/item/storage/box/costume = 200,
 					//Under
 					/obj/item/clothing/under/colony = 15,
 					//Masks

@@ -227,6 +227,12 @@ obj/item/clothing/suit/costume/halloween/web_bindings
 
 /*Misc*/
 
+/obj/item/clothing/suit/mage_suit
+	name = "mage robe"
+	desc = "A rather dark silky robe with bits of blue ribbon to add a bit of contrast, used for people doing magic tricks or slight of hand in style."
+	icon_state = "mage_outfit"
+	item_state = "mage_outfit"
+
 /obj/item/clothing/suit/costume/misc/santa
 	name = "santa suit"
 	desc = "A festive red suit great for handing out presents in."
