@@ -6,15 +6,15 @@
 	icon_state = "box"
 
 // Primary kits
-/obj/item/storage/box/m_kit/thompson
-	name = "\improper Thompson Kit"
-	desc = "The standard Marshal box kit containing a thompson submachine gun. An SMG worthy of main-carry, as long as one doesn't mind looking a bit dated "
+/obj/item/storage/box/m_kit/ppv
+	name = "\improper PPV Kit"
+	desc = "The standard Marshal box kit containing a \"Semyonovich\" assault submachine gun. An SMG worthy of main-carry, as long as one doesn't mind looking a bit dated "
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/thompson(src)
-		new /obj/item/ammo_magazine/smg_magnum_40/rubber(src)
-		new /obj/item/ammo_magazine/smg_magnum_40(src)
-		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/gun/projectile/automatic/ppsh/ppv(src)
+		new /obj/item/ammo_magazine/smg_35/rubber(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/m_kit/breacher
