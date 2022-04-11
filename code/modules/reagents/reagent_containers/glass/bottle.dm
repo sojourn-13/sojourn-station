@@ -43,6 +43,14 @@
 	label_icon_state = "label_potion"
 	filling_states = "10;20;40;50;60"
 
+/obj/item/reagent_containers/glass/bottle/tincture
+	name = "pointed bottle"
+	desc = "A bottle with a much more sharper and refined look to it."
+	icon_state = "tincture"
+	item_state = "tincture"
+	label_icon_state = "label_tincture"
+	filling_states = "3;5;10;15;25;27;30;35;40;45;55;60"
+
 /obj/item/reagent_containers/glass/bottle/inaprovaline
 	name = "inaprovaline bottle"
 	desc = "A small bottle. Contains inaprovaline - used to stabilize patients."
