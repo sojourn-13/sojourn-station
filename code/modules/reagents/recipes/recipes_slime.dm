@@ -373,7 +373,7 @@
 	result_amount = 1
 	required = /obj/item/slime_extract/pink
 
-/datum/chemical_reaction/slime/dobile_baby/on_reaction(var/datum/reagents/holder)
+/datum/chemical_reaction/slime/docile_baby/on_reaction(var/datum/reagents/holder)
 	..()
 	var/obj/item/slime_docile/P = new /obj/item/slime_docile
 	P.loc = get_turf(holder.my_atom)
