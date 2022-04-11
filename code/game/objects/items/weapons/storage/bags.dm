@@ -208,8 +208,8 @@
 		/obj/item/reagent_containers/glass/bottle,
 		/obj/item/stack/material/plasma,
 		/obj/item/slime_thermals,
-		/obj/item/slimepotion,
-		/obj/item/slimepotion2,
+		/obj/item/slime_docile,
+		/obj/item/slime_docile_adult,
 		/obj/item/slimes_speed,
 		/obj/item/slimesteroid,
 		/obj/item/slimesteroid2)

@@ -128,7 +128,7 @@
 
 /datum/chemical_reaction/slime/metal_3/on_reaction(var/datum/reagents/holder)
 	var/obj/item/stack/material/uranium/U = new /obj/item/stack/material/uranium
-	U.amount = 1
+	U.amount = 3
 	U.loc = get_turf(holder.my_atom)
 	for (var/mob/living/M in range(5,U.loc))
 		M.apply_effect(25,IRRADIATE,0)
@@ -146,15 +146,11 @@
 	var/obj/item/stack/material/gold/G = new /obj/item/stack/material/gold
 	G.amount = 15
 	G.loc = get_turf(holder.my_atom)
-	var/obj/item/stack/material/platinum/P = new /obj/item/stack/material/platinum
-	P.amount = 5
-	P.loc = get_turf(holder.my_atom)
-	..()
 
 /datum/chemical_reaction/slime/honey
 	result = "honey"
 	required_reagents = list("nutriment" = 5)
-	result_amount = 5
+	result_amount = 20
 	required = /obj/item/slime_extract/gold
 
 //Silver
@@ -371,15 +367,15 @@
 		slime.visible_message(SPAN_WARNING("The [slime] is driven into a frenzy!"))
 
 //Pink
-/datum/chemical_reaction/slime/ppotion
+/datum/chemical_reaction/slime/docile_baby
 	result = null
 	required_reagents = list("plasma" = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/pink
 
-/datum/chemical_reaction/slime/ppotion/on_reaction(var/datum/reagents/holder)
+/datum/chemical_reaction/slime/dobile_baby/on_reaction(var/datum/reagents/holder)
 	..()
-	var/obj/item/slimepotion/P = new /obj/item/slimepotion
+	var/obj/item/slime_docile/P = new /obj/item/slime_docile
 	P.loc = get_turf(holder.my_atom)
 
 /datum/chemical_reaction/slime/speed_vial
@@ -463,15 +459,15 @@
 	N.loc = get_turf(holder.my_atom)
 
 //Light Pink
-/datum/chemical_reaction/slime/potion2
+/datum/chemical_reaction/slime/docile_adult
 	result = null
 	result_amount = 1
 	required = /obj/item/slime_extract/lightpink
 	required_reagents = list("plasma" = 1)
 
-/datum/chemical_reaction/slime/potion2/on_reaction(var/datum/reagents/holder)
+/datum/chemical_reaction/slime/docile_adult/on_reaction(var/datum/reagents/holder)
 	..()
-	var/obj/item/slimepotion2/P = new /obj/item/slimepotion2
+	var/obj/item/slime_docile_adult/P = new /obj/item/slime_docile_adult
 	P.loc = get_turf(holder.my_atom)
 
 //Adamantine
@@ -496,7 +492,7 @@
 /datum/chemical_reaction/slime/diamond/on_reaction(var/datum/reagents/holder)
 	..()
 	var/obj/item/stack/material/diamond/D = new /obj/item/stack/material/diamond
-	D.amount = 1
+	D.amount = 5
 	D.loc = get_turf(holder.my_atom)
 	var/obj/item/stack/material/biomatter/B = new /obj/item/stack/material/biomatter
 	B.amount = 5

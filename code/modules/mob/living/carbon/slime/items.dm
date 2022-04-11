@@ -1,7 +1,7 @@
 
 ////Pet Slime Creation///
 
-/obj/item/slimepotion
+/obj/item/slime_docile
 	name = "docility potion"
 	desc = "A potent chemical mix that will nullify a slime's powers, causing it to become docile and tame."
 	icon = 'icons/obj/chemical.dmi'
@@ -36,7 +36,7 @@
 		pet.colony_friend = TRUE //Hardcode hack to make sure
 		qdel(src)
 
-/obj/item/slimepotion2
+/obj/item/slime_docile_adult
 	name = "advanced docility potion"
 	desc = "A potent chemical mix that will nullify a slime's powers, causing it to become docile and tame. This one is meant for adult slimes"
 	icon = 'icons/obj/chemical.dmi'
@@ -94,7 +94,7 @@
 		qdel(src)
 
 /obj/item/slimes_speed
-	name = "slime red tonic"
+	name = "pink slime tonic"
 	desc = "A potent chemical mix that will cause any clothing item to move slightly faster."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle16"
