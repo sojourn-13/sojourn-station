@@ -37,14 +37,14 @@
 
 /obj/item/reagent_containers/glass/bottle/potion
 	name = "elegant bottle"
-	desc = "A bottle with a much more sharper and refined look to it."
+	desc = "A bottle with a much more robust and refined look to it."
 	icon_state = "potion"
 	item_state = "potion"
 	label_icon_state = "label_potion"
 	filling_states = "10;20;40;50;60"
 
 /obj/item/reagent_containers/glass/bottle/tincture
-	name = "pointed bottle"
+	name = "tincture bottle"
 	desc = "A bottle with a much more sharper and refined look to it."
 	icon_state = "tincture"
 	item_state = "tincture"
