@@ -72,9 +72,10 @@
 	display_name = "long boots"
 	path = /obj/item/clothing/shoes/jackboots/longboot
 
-/datum/gear/shoes/laced_jackboots
-	display_name = "laced jackboots"
-	path = /obj/item/clothing/shoes/jackboots/laced_jackboots
+/datum/gear/shoes/duty
+	display_name = "duty boots"
+	path = /obj/item/clothing/shoes/dutyboots
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/shoes/leather
 	display_name = "leather shoes"
