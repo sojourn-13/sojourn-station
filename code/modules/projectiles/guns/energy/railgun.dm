@@ -201,30 +201,28 @@
     RegisterSignal(src, COMSIG_HEAT_VENT, .proc/ventEvent) //this sould just be a fluff message, proc can be anything
     RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheat) //this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
 
-/obj/item/gun/energy/your_gun_path_here/consume_next_projectile()
-	var/datum/component/heat/H = GetComponent(/datum/component/heat)
-	if((H.currentHeat > H.heatThresholdSpecial) || !..())
-		return null
-	return ..()
-
 /obj/item/gun/energy/laser/railgun/gauss/attackby(obj/item/I, mob/user)
 
+	if(istype(I,/obj/item/gun_upgrade/mechanism/battery_shunt))
+		to_chat(user, SPAN_WARNING("[src] cannot be fitted with a battery shunt!"))		//No shunts on this gun. It's powerful enough.
+		return FALSE
+	else if(!istype(I,/obj/item/stack/sheet))
+		..()
 	var/obj/item/stack/sheet/M = I
 	if(istype(M) && M.name == matter_type)
 		var/amount = min(M.get_amount(), round(max_stored_matter - stored_matter))
 		if(M.use(amount))
 			stored_matter += amount
-		to_chat(user, "<span class='notice'>You load [amount] [matter_type] into \the [src].</span>")
+		to_chat(user, "<span class='notice>You load [amount] [matter_type] into \the [src].</span>")
 	else
-		..()
+		return ..()
 
-//No shunts on this gun. It's powerful enough.
-/obj/item/gun/energy/laser/railgun/gauss/attackby(var/obj/item/A as obj, mob/user as mob)
-	if(istype(A,/obj/item/gun_upgrade/mechanism/battery_shunt))
-		to_chat(user, SPAN_WARNING("[src] can not be fitted with an energy shunt"))
-		return
-	else
-		..()
+/obj/item/gun/energy/laser/railgun/gauss/consume_next_projectile()
+	var/datum/component/heat/H = GetComponent(/datum/component/heat)
+	if((H.currentHeat > H.heatThresholdSpecial ||stored_matter < projectile_cost || !..()))
+		return null
+	stored_matter -= projectile_cost
+	return..()
 
 /obj/item/gun/energy/laser/railgun/gauss/consume_next_projectile()
 	if(stored_matter < projectile_cost) return null
