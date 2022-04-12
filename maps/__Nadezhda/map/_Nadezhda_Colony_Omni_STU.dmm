@@ -8415,6 +8415,10 @@
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
+"bWb" = (
+/obj/item/reagent_containers/food/snacks/stew,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "bWc" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -54458,6 +54462,7 @@
 "mlS" = (
 /obj/structure/table/bench/steel,
 /obj/random/junkfood/rotten,
+/obj/item/reagent_containers/food/snacks/stew,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "mmb" = (
@@ -67530,7 +67535,6 @@
 /area/nadezhda/hallway/main/stairwell)
 "pjw" = (
 /obj/machinery/microwave/burnbarrel,
-/obj/item/reagent_containers/food/snacks/wishsoup,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "pjA" = (
@@ -137907,7 +137911,7 @@ sFI
 sFI
 kZI
 hsi
-oQV
+bWb
 iAE
 fMX
 pjw

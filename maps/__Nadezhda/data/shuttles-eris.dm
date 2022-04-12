@@ -167,7 +167,7 @@
 
 
 //Merc
-
+/*
 /datum/shuttle/autodock/multi/antag/mercenary
 	name = "Mercenary"
 	warmup_time = 0
@@ -202,7 +202,7 @@
 	var/datum/objective/timed/merc/MO = (locate(/datum/objective/timed/merc) in F.objectives)
 	if (MO)
 		MO.start_mission()
-
+*/
 //Docking controller chooses which of our airlocks should open onto the target location.
 //Merc ship has only one airlock, so set that here
 /obj/effect/shuttle_landmark/merc
