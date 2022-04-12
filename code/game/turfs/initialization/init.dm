@@ -6,7 +6,7 @@
 
 /area/Initialize()
 	. = ..()
-	for(var/turf/simulated/T in src)
+	for(var/turf/simulated/T in contents)
 //		T.Initialize()
 		if(turf_initializer)
 			turf_initializer.Initialize(T)
