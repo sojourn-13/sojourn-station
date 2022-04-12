@@ -1,4 +1,4 @@
-
+/*
 /datum/shuttle/autodock/multi/antag/mercenary
 	name = "Mercenary"
 	warmup_time = 0
@@ -17,7 +17,7 @@
 	home_waypoint = "nav_merc_start"
 	arrival_message = "Attention, unidentified vessel detected on long range sensors. \nVessel is approaching on an intercept course. \nHailing frequencies open."
 	departure_message = "Attention, unknown vessel has departed"
-
+*/
 
 
 
