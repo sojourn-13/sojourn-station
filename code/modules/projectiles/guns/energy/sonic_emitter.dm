@@ -5,7 +5,7 @@
 	icon = 'icons/obj/guns/energy/sonic_emitter.dmi'
 	icon_state = "sonic_emitter"
 	item_state = "sonic_emitter"
-	item_charge_meter = FALSE
+	charge_meter = FALSE
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5)
 	price_tag = 500
 	charge_cost = 100
