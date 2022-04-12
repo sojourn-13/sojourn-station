@@ -3,7 +3,8 @@
 	desc = "A sonic fence generator specially designed to contain and destroy ameridian crystals."
 	shield_type = /obj/machinery/shieldwall/ameridian
 	circuit = /obj/item/circuitboard/ameridianshieldwallgen
-	locked = FALSE // We do not start locked 
+	locked = FALSE // We do not start locked
+	power_draw = 10000 // 10 kW
 	req_access = list()
 
 /obj/machinery/shieldwall/ameridian
