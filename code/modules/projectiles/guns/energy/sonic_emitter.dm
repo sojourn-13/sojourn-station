@@ -16,3 +16,8 @@
 	projectile_type = /obj/item/projectile/sonic_bolt
 	fire_delay = 1000
 	max_upgrades = 0
+
+/obj/item/gun/energy/sonic_emitter/preloaded/New()
+	cell = new /obj/item/cell/large/super(src)
+	. = ..()
+	update_icon()
