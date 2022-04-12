@@ -1030,7 +1030,6 @@
 /obj/item/clothing/suit/radiation,
 /obj/item/clothing/head/radiation,
 /obj/item/gun/energy/sonic_emitter,
-/obj/random/powercell/large_safe,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/mine/hallway)
 "cZ" = (
@@ -8726,6 +8725,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
+"wZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/asteroid,
+/area/mine/hallway)
 "xd" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 4;
@@ -8795,7 +8803,7 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
-"yP" = (
+"yT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -8843,6 +8851,22 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
+"BO" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/mine/hallway)
 "BR" = (
 /obj/machinery/light{
 	dir = 4
@@ -8973,6 +8997,10 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
+"FB" = (
+/obj/structure/sign/warning/hazard_radiation,
+/turf/simulated/wall/r_wall,
+/area/mine/hallway)
 "FT" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 5
@@ -9016,24 +9044,6 @@
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
-"GZ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"HH" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "HL" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4;
@@ -9084,6 +9094,15 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
+"JK" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/asteroid,
+/area/mine/hallway)
 "JM" = (
 /obj/machinery/light,
 /turf/simulated/floor/reinforced,
@@ -9096,22 +9115,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfour)
-"Ki" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/steel,
-/area/mine/hallway)
 "Kn" = (
 /obj/structure/catwalk,
 /obj/structure/window/reinforced/plasma{
@@ -9224,7 +9227,7 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/mine/hallway)
-"MD" = (
+"Mq" = (
 /obj/machinery/camera/network/mining{
 	dir = 1
 	},
@@ -9243,15 +9246,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfive)
-"Nr" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/steel,
-/area/mine/hallway)
 "Oc" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -9374,10 +9368,6 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
-"RQ" = (
-/obj/structure/sign/warning/hazard_radiation,
-/turf/simulated/wall/r_wall,
-/area/mine/hallway)
 "RW" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -9528,6 +9518,15 @@
 	},
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
+"VS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/mine/hallway)
 "VU" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 5;
@@ -9565,20 +9564,6 @@
 /obj/item/device/lighting/toggleable/flashlight,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
-"Wt" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/machinery/shieldwallgen/ameridian{
-	active = 1;
-	anchored = 1;
-	state = 1;
-	storedpower = 50000
-	},
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "WT" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/remote/driver{
@@ -9693,6 +9678,20 @@
 /obj/machinery/portable_atmospherics/powered/pump,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/mixing)
+"ZM" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/machinery/shieldwallgen/ameridian{
+	active = 1;
+	anchored = 1;
+	state = 1;
+	storedpower = 50000
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/asteroid,
+/area/mine/hallway)
 "ZN" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
@@ -38636,7 +38635,7 @@ ai
 ai
 ai
 fL
-MD
+Mq
 gt
 gY
 vo
@@ -38835,10 +38834,10 @@ cW
 aC
 dW
 ar
-Wt
+ZM
 aK
 fM
-yP
+yT
 gt
 gZ
 sa
@@ -39037,7 +39036,7 @@ dY
 dY
 dX
 fs
-HH
+JK
 aK
 fN
 cz
@@ -39239,7 +39238,7 @@ dY
 dY
 dY
 dY
-HH
+JK
 ai
 fO
 gj
@@ -39441,7 +39440,7 @@ dY
 dY
 dY
 fs
-HH
+JK
 aK
 fP
 bo
@@ -39845,7 +39844,7 @@ dY
 fs
 dY
 dX
-HH
+JK
 aK
 bX
 bo
@@ -40247,7 +40246,7 @@ aK
 ar
 cy
 aC
-GZ
+wZ
 ar
 aC
 aK
@@ -41056,7 +41055,7 @@ aK
 ai
 ft
 ec
-RQ
+FB
 ai
 fv
 bX
@@ -41257,7 +41256,7 @@ bo
 cz
 cZ
 Xk
-Nr
+VS
 cz
 cZ
 bo
@@ -41459,7 +41458,7 @@ cl
 cA
 da
 cA
-Ki
+BO
 eC
 da
 cl
