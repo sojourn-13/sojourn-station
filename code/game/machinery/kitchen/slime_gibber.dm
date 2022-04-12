@@ -50,6 +50,7 @@
 	if(do_after(user, 30, src) && victim.Adjacent(src) && user.Adjacent(src) && victim.Adjacent(user))
 		user.visible_message(SPAN_DANGER("\The [user] stuffs \the [victim] into the compresser!"))
 		flick("compressering", src)
+		playsound(loc, 'sound/machines/juicer.ogg', 50, 1)
 		new victim.coretype(user.loc)
 		qdel(victim)
 
