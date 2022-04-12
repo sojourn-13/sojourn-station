@@ -42,7 +42,7 @@
 /datum/objective/timed/merc/check_completion()
 	if (failed)
 		return FALSE
-
+/*
 	var/datum/shuttle/autodock/multi/antag/mercenary/MS = SSshuttle.get_shuttle("Mercenary")
 
 	if (!MS)
@@ -54,7 +54,7 @@
 		//The shuttle still near Eris, fail
 		//This will succeed as long as they're enroute away from eris
 		return FALSE
-
+*/
 	return TRUE
 
 
