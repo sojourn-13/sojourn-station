@@ -137,6 +137,18 @@
 	icon_state = "bottle"
 	preloaded_reagents = list("honey" = 60)
 
+/obj/item/reagent_containers/glass/bottle/nutriment
+	name = "nutriment bottle"
+	desc = "The base of whats needed to get by."
+	icon_state = "bottle"
+	preloaded_reagents = list("nutriment" = 60)
+
+/obj/item/reagent_containers/glass/bottle/protein
+	name = "protein bottle"
+	desc = "Get swoll bro"
+	icon_state = "bottle"
+	preloaded_reagents = list("protein" = 60)
+
 //frost oil and material chems
 /obj/item/reagent_containers/glass/bottle/frostoil
 	name = "frost oil bottle"

@@ -21,8 +21,8 @@
 	T.Uses--
 	if(T.Uses <= 0)
 		T.visible_message("\icon[T]<span class='notice'>\The [T]'s power is consumed in the reaction.</span>")
-		T.name = "used slime extract"
-		T.desc = "This extract has been used up."
+		T.name = "used slime plort"
+		T.desc = "This plort has been used up."
 
 //Grey
 /datum/chemical_reaction/slime/spawn
@@ -37,6 +37,7 @@
 	S.loc = get_turf(holder.my_atom)
 	..()
 
+//
 /datum/chemical_reaction/slime/monkey
 	result = null
 	required_reagents = list("blood" = 1)
@@ -49,6 +50,7 @@
 		M.loc = get_turf(holder.my_atom)
 	..()
 
+//
 /datum/chemical_reaction/slime/roach_cube
 	result = null
 	required_reagents = list("blattedin" = 1)
@@ -61,6 +63,7 @@
 		R.loc = get_turf(holder.my_atom)
 	..()
 
+//
 /datum/chemical_reaction/slime/spider_lings
 	result = null
 	required_reagents = list("pararein" = 1)
@@ -80,6 +83,7 @@
 	result_amount = 1
 	required = /obj/item/slime_extract/green
 
+//
 /datum/chemical_reaction/slime/mutate_clear
 	result = null
 	required_reagents = list("water" = 1)
@@ -108,6 +112,7 @@
 	P.loc = get_turf(holder.my_atom)
 	..()
 
+//
 /datum/chemical_reaction/slime/metal_2
 	result = null
 	required_reagents = list("water" = 1)
@@ -120,6 +125,7 @@
 	P.loc = get_turf(holder.my_atom)
 	..()
 
+//
 /datum/chemical_reaction/slime/metal_3
 	result = null
 	required_reagents = list("radium" = 5)
@@ -147,6 +153,7 @@
 	G.amount = 15
 	G.loc = get_turf(holder.my_atom)
 
+//
 /datum/chemical_reaction/slime/honey
 	result = "honey"
 	required_reagents = list("nutriment" = 5)
@@ -184,6 +191,7 @@
 	result_amount = 5
 	required = /obj/item/slime_extract/silver
 
+//
 /datum/chemical_reaction/slime/wealth_light
 	result = null
 	required_reagents = list(MATERIAL_URANIUM = 5)
@@ -206,6 +214,7 @@
 	result_amount = 10
 	required = /obj/item/slime_extract/blue
 
+//
 /datum/chemical_reaction/slime/glass
 	result = null
 	required_reagents = list("plasma" = 1)
@@ -237,6 +246,7 @@
 		M.bodytemperature -= 140
 		to_chat(M, SPAN_WARNING("You feel a chill!"))
 
+//
 /datum/chemical_reaction/slime/pureslime
 	result = "pureslimejelly"
 	required_reagents = list("honey" = 5)
@@ -251,6 +261,19 @@
 	result_amount = 10
 	required = /obj/item/slime_extract/orange
 
+//
+/datum/chemical_reaction/slime/fire_resist
+	result = null
+	required_reagents = list("water" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/orange
+
+/datum/chemical_reaction/slime/fire_resist/on_reaction(var/datum/reagents/holder, var/created_volume)
+	..()
+	var/obj/item/slimes_fire_resist/P = new /obj/item/slimes_fire_resist
+	P.loc = get_turf(holder.my_atom)
+
+//
 /datum/chemical_reaction/slime/fire
 	result = null
 	required_reagents = list("plasma" = 1)
@@ -278,6 +301,19 @@
 	..()
 	empulse(get_turf(holder.my_atom), 3, 7)
 
+//
+/datum/chemical_reaction/slime/shock_resist
+	result = null
+	required_reagents = list("plasma" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/yellow
+
+/datum/chemical_reaction/slime/shock_resist/on_reaction(var/datum/reagents/holder, var/created_volume)
+	..()
+	var/obj/item/slimes_shock_resist/P = new /obj/item/slimes_shock_resist
+	P.loc = get_turf(holder.my_atom)
+
+//
 /datum/chemical_reaction/slime/glow
 	result = null
 	required_reagents = list("water" = 1)
@@ -302,6 +338,7 @@
 	var/obj/item/slimesteroid/P = new /obj/item/slimesteroid
 	P.loc = get_turf(holder.my_atom)
 
+//
 /datum/chemical_reaction/slime/jam
 	result = "slimejelly"
 	required_reagents = list("sugar" = 1)
@@ -321,6 +358,7 @@
 	P.amount = 10
 	P.loc = get_turf(holder.my_atom)
 
+//
 /datum/chemical_reaction/slime/toolupgrade
 	result = null
 	required_reagents = list(MATERIAL_URANIUM = 1, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1)
@@ -339,6 +377,7 @@
 	result_amount = 8
 	required = /obj/item/slime_extract/red
 
+//
 /datum/chemical_reaction/slime/osmium
 	result = null
 	required_reagents = list("frostoil" = 1)
@@ -354,6 +393,19 @@
 	H.loc = get_turf(holder.my_atom)
 	..()
 
+//
+/datum/chemical_reaction/slime/speed_vial
+	result = null
+	required_reagents = list("water" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/red
+
+/datum/chemical_reaction/slime/speed_vial/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/slimes_speed/P = new /obj/item/slimes_speed
+	P.loc = get_turf(holder.my_atom)
+
+//
 /datum/chemical_reaction/slime/bloodlust
 	result = null
 	required_reagents = list("blood" = 1)
@@ -369,7 +421,7 @@
 //Pink
 /datum/chemical_reaction/slime/docile_baby
 	result = null
-	required_reagents = list("plasma" = 1)
+	required_reagents = list("nutriment" = 5)
 	result_amount = 1
 	required = /obj/item/slime_extract/pink
 
@@ -378,15 +430,16 @@
 	var/obj/item/slime_docile/P = new /obj/item/slime_docile
 	P.loc = get_turf(holder.my_atom)
 
-/datum/chemical_reaction/slime/speed_vial
+//
+/datum/chemical_reaction/slime/docile_adult
 	result = null
-	required_reagents = list("water" = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/pink
+	required_reagents = list("honey" = 5)
 
-/datum/chemical_reaction/slime/speed_vial/on_reaction(var/datum/reagents/holder)
+/datum/chemical_reaction/slime/docile_adult/on_reaction(var/datum/reagents/holder)
 	..()
-	var/obj/item/slimes_speed/P = new /obj/item/slimes_speed
+	var/obj/item/slime_docile_adult/P = new /obj/item/slime_docile_adult
 	P.loc = get_turf(holder.my_atom)
 
 //Black
@@ -396,6 +449,7 @@
 	result_amount = 1
 	required = /obj/item/slime_extract/black
 
+//
 /datum/chemical_reaction/slime/spawn2
 	result = null
 	required_reagents = list("amutationtoxin" = 1)
@@ -435,6 +489,7 @@
 	sleep(50)
 	explosion(get_turf(holder.my_atom), 1, 3, 6)
 
+//
 /datum/chemical_reaction/slime/thermal
 	result = null
 	required_reagents = list("water" = 1)
@@ -446,6 +501,7 @@
 	var/obj/item/slime_thermals/T = new /obj/item/slime_thermals
 	T.loc = get_turf(holder.my_atom)
 
+//
 /datum/chemical_reaction/slime/noslip
 	result = null
 	required_reagents = list("lube" = 5)
@@ -459,16 +515,7 @@
 	N.loc = get_turf(holder.my_atom)
 
 //Light Pink
-/datum/chemical_reaction/slime/docile_adult
-	result = null
-	result_amount = 1
-	required = /obj/item/slime_extract/lightpink
-	required_reagents = list("plasma" = 1)
 
-/datum/chemical_reaction/slime/docile_adult/on_reaction(var/datum/reagents/holder)
-	..()
-	var/obj/item/slime_docile_adult/P = new /obj/item/slime_docile_adult
-	P.loc = get_turf(holder.my_atom)
 
 //Adamantine
 /datum/chemical_reaction/slime/golem
@@ -483,6 +530,7 @@
 	Z.loc = get_turf(holder.my_atom)
 	Z.announce_to_ghosts()
 
+//
 /datum/chemical_reaction/slime/diamond
 	result = null
 	required_reagents = list("pureslimejelly" = 1)
@@ -497,3 +545,16 @@
 	var/obj/item/stack/material/biomatter/B = new /obj/item/stack/material/biomatter
 	B.amount = 5
 	B.loc = get_turf(holder.my_atom)
+
+//
+/datum/chemical_reaction/slime/platinum
+	result = null
+	required_reagents = list(MATERIAL_URANIUM = 1, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/adamantine
+
+/datum/chemical_reaction/slime/platinum/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/stack/material/platinum/P = new /obj/item/stack/material/platinum
+	P.amount = 5
+	P.loc = get_turf(holder.my_atom)

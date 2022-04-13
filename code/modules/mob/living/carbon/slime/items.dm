@@ -94,13 +94,14 @@
 		qdel(src)
 
 /obj/item/slimes_speed
-	name = "pink slime tonic"
+	name = "red slime tonic"
 	desc = "A potent chemical mix that will cause any clothing item to move slightly faster."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle16"
 
-	attack(var/obj/item/clothing/C, mob/user as mob)
-		if(C.slowdown < -0.1)//If target is not a slime.
+	attackby(var/obj/item/clothing/C, mob/user as mob)
+		..()
+		if(C.slowdown < -0.1)//If target isn't already zooming
 			to_chat(user, SPAN_WARNING("The tonic cant speed up this cloathing any more!"))
 			return ..()
 
@@ -128,6 +129,59 @@
 			target.Uses = 3
 			target.enahnced = 1
 			qdel(src)*/
+
+/obj/item/slimes_fire_resist
+	name = "orange slime tonic"
+	desc = "A potent chemical mix that will cause any clothing item to resist heat and pressure."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "bottle17"
+
+	attackby(var/obj/item/clothing/C, mob/user as mob)
+		..()
+		if(C.max_heat_protection_temperature == FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE && C.item_flags == STOPPRESSUREDAMAGE)
+			to_chat(user, SPAN_WARNING("The tonic can't modify this clothing anymore!"))
+			return ..()
+
+		to_chat(user, "The tonic works it magic!")
+		C.max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+		C.item_flags = STOPPRESSUREDAMAGE
+		C.color = "#ff9900"
+		qdel(src)
+
+/obj/item/slimes_shock_resist
+	name = "yellow slime tonic"
+	desc = "A potent chemical mix that will cause any clothing item to resist heat and pressure."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "bottle19"
+
+	attackby(var/obj/item/clothing/gloves/C, mob/user as mob)
+		..()
+		if(C.siemens_coefficient <= 0)
+			to_chat(user, SPAN_WARNING("The tonic can't modify this clothing anymore!"))
+			return ..()
+
+		to_chat(user, "The tonic improves the clothes!")
+		C.siemens_coefficient -= 0.2
+		if(C.siemens_coefficient < 0)
+			C.siemens_coefficient = 0 // Don't want to risk healing from a super resist
+		C.color = "#ffff00"
+		qdel(src)
+
+/obj/item/slimes_reviver
+	name = "compressed jelly blob"
+	desc = "A mass of slime jelly just awaiting to be pressed into a dead slime."
+	icon = 'icons/mob/slimes.dmi'
+	icon_state = "grey baby slime"
+
+/obj/item/slimes_reviver/attack(mob/living/carbon/slime/S, mob/user as mob)
+	..()
+	if(S.cores != 0 && S.stat == 2)
+		S.health = 80
+		S.stat = 0
+		S.update_icon()
+		to_chat(user, SPAN_WARNING("The slime is revived!"))
+		qdel(src)
+	else to_chat(user, SPAN_WARNING("This slime isn't able to be revived."))
 
 /obj/effect/golemrune
 	anchored = 1

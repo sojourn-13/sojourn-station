@@ -369,6 +369,15 @@
 	byproducts= list("redcandyliquor" = 1) //Its called old fastion sleeping agent
 	result_amount = 1
 
+/datum/chemical_reaction/compressedjelly
+	result = null
+	required_reagents = list("slimejelly" = 100)
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/compressedjelly/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var /obj/item/slimes_reviver/R = new /obj/item/slimes_reviver
+	R.loc = get_turf(holder.my_atom)
 
 /* Centrifuge */
 
