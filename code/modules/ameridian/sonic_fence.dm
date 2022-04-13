@@ -4,7 +4,7 @@
 	shield_type = /obj/machinery/shieldwall/ameridian
 	circuit = /obj/item/circuitboard/ameridianshieldwallgen
 	locked = FALSE // We do not start locked
-	power_draw = 10000 // 10 kW
+	power_draw = 15000 // 15 kW
 	req_access = list()
 
 /obj/machinery/shieldwall/ameridian
@@ -13,6 +13,8 @@
 			However, any amount of interference alter the frequency and doesn't damage the crystal, thus allowing \
 			people to carry them through the field."
 	density = FALSE
+	power_usage = 1000
+	generate_power_usage = 2000
 
 /obj/machinery/shieldwall/ameridian/New()
 	..()
