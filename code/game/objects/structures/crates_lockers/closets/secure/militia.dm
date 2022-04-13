@@ -51,6 +51,9 @@
 	icon_state = "armorer"
 
 /obj/structure/closet/secure_closet/armorer/populate_contents()
+	new /obj/item/voucher/blackshield/sargprimary(src)
+	new /obj/item/voucher/blackshield/secondary(src)
+	new /obj/item/voucher/blackshield/armor(src)
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
 	new /obj/item/clothing/accessory/holster/saber/militiasergeant/occupied(src)
 	new /obj/item/clothing/mask/gas(src)
@@ -81,6 +84,9 @@
 	icon_state = "trooper"
 
 /obj/structure/closet/secure_closet/personal/trooper/populate_contents()
+	new /obj/item/voucher/blackshield/primary(src)
+	new /obj/item/voucher/blackshield/secondary(src)
+	new /obj/item/voucher/blackshield/armor(src)
 	new /obj/item/tool/knife/boot/blackshield(src)
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
 	new /obj/item/clothing/glasses/ballistic(src)

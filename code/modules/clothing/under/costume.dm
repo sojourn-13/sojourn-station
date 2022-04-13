@@ -69,6 +69,29 @@ obj/item/clothing/under/costume/history/pirate
 	icon_state = "latexmaid"
 	item_state = "latexmaid"
 
+/obj/item/clothing/under/costume/kinky/latex_maid/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Default Maid"] = "latexmaid"
+	options["Alt Maid"] = "maid_alt" //Sprite by Tori
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your cloathing into [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/costume/kinky/leather
 	name = "leather gear"
 	desc = "A very revealing leather outfit. Kinky."

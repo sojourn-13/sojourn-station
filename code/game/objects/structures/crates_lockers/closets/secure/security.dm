@@ -116,6 +116,7 @@
 		new /obj/item/ammo_magazine/kurtz_50(src)
 		new /obj/item/ammo_magazine/kurtz_50/rubber(src)
 		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
+	new /obj/item/voucher/marshal/specprimary(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
 	new /obj/item/device/holowarrant(src)
@@ -160,6 +161,9 @@
 		new /obj/item/storage/backpack/ironhammer(src)
 	else
 		new /obj/item/storage/backpack/sport/ironhammer(src)
+	new /obj/item/voucher/marshal/primary(src)
+	new /obj/item/voucher/marshal/secondary(src)
+	new /obj/item/voucher/marshal/armor(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/storage/belt/security(src)
@@ -208,6 +212,7 @@
 	icon_state = "cabinetdetective"
 
 /obj/structure/closet/secure_closet/detective/populate_contents()
+	new /obj/item/voucher/marshal/primary(src)
 	new /obj/item/clothing/under/rank/inspector/suit(src)
 	new /obj/item/clothing/under/rank/inspector/black(src)
 	new /obj/item/clothing/under/rank/inspector(src)
