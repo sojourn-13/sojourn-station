@@ -52,7 +52,7 @@
 		new victim.coretype(user.loc)
 		qdel(victim)
 
-*/Dye vat and its various procs and checks --- Currently a work in progress but dosn't break anything ---
+/*Dye vat and its various procs and checks --- Currently a work in progress but dosn't break anything ---
 /obj/machinery/slime_dye_vat
 	name = "slime dye vat"
 	desc = "This machine holds slime that changes color! Makes it easy to apply to clothing."
@@ -119,4 +119,4 @@
 	uses = 0
 	colour = "grey"
 	dirty = 0
-/*
+*/
