@@ -83,15 +83,14 @@
 		new /obj/item/ammo_magazine/smg_35/rubber(src)
 		new /obj/item/ammo_magazine/smg_35(src)
 
-/obj/item/storage/box/m_kit/firefly
-	name = "\improper Firefly Secondary Kit"
-	desc = "The standard Marshal box kit containing a firefly .35 pistol. An all round solid firearm that provides good qualities in every area. Has less recoil than the colt and auto ejects its magazine."
+/obj/item/storage/box/m_kit/taser
+	name = "\improper Counselor Secondary kit"
+	desc = "The standard Marshal box kit containing a counselor stun gun. An all round solid sidearm to round out the Marshals non-lethal kit."
 
 	populate_contents()
-		new /obj/item/gun/projectile/firefly(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35(src)
+		new /obj/item/gun/energy/taser(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
 
 /obj/item/storage/box/m_kit/bronco
 	name = "\improper Bronco Secondary Kit"
