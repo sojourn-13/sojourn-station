@@ -28,7 +28,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		MATERIAL_WOOD = list("amount" = 15, "price" = 15),
 		MATERIAL_PLASTIC = list("amount" = 15, "price" = 50),
 		MATERIAL_GLASS = list("amount" = 15, "price" = 50),
-		MATERIAL_PLASTEEL = list("amount" = 10, "price" = 150)
+		MATERIAL_PLASTEEL = list("amount" = 10, "price" = 250)
 		)
 
 	var/list/parts_list = list(
