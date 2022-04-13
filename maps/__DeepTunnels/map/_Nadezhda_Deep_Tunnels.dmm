@@ -1027,9 +1027,8 @@
 "cY" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/table/steel_reinforced,
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/head/radiation,
-/obj/item/gun/energy/sonic_emitter,
+/obj/item/reagent_containers/glass/bottle/ameridian,
+/obj/item/gun/energy/sonic_emitter/preloaded,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/mine/hallway)
 "cZ" = (
@@ -1655,7 +1654,7 @@
 	dir = 4;
 	pixel_y = 0
 	},
-/obj/random/scrap,
+/obj/machinery/suit_storage_unit/rad_unit,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/mine/hallway)
 "eC" = (
@@ -3049,8 +3048,8 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/mine/power)
 "hX" = (
-/obj/structure/reagent_dispensers/fueltank,
 /obj/structure/catwalk,
+/obj/structure/reagent_dispensers/fueltank/huge,
 /turf/simulated/floor/plating/under,
 /area/mine/power)
 "hY" = (
@@ -8717,6 +8716,10 @@
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/mixing)
+"wn" = (
+/obj/effect/window_lwall_spawn/plasma/reinforced,
+/turf/simulated/floor/plating,
+/area/mine/hallway)
 "wP" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -9368,6 +9371,15 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
+"RN" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/camera/network/mining,
+/turf/simulated/floor/asteroid,
+/area/mine/hallway)
 "RW" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -38828,14 +38840,14 @@ az
 bx
 bx
 bx
-aK
+wn
 ci
 cW
 aC
 dW
 ar
 ZM
-aK
+wn
 fM
 yT
 gt
@@ -39030,14 +39042,14 @@ aB
 bj
 by
 bj
-aK
+wn
 cj
 dY
 dY
 dX
 fs
 JK
-aK
+wn
 fN
 cz
 gt
@@ -39232,8 +39244,8 @@ aB
 bj
 Mm
 bj
-aK
-cj
+ai
+RN
 dY
 dY
 dY
@@ -39434,14 +39446,14 @@ aH
 bw
 bz
 by
-aK
+wn
 cj
 dY
 dY
 dY
 fs
 JK
-aK
+wn
 fP
 bo
 gw
@@ -39636,14 +39648,14 @@ ai
 bk
 bj
 ch
-aK
+wn
 cj
 dY
 dY
 dY
 dY
 eS
-aK
+wn
 bX
 bn
 aK
@@ -39838,14 +39850,14 @@ ai
 bl
 bA
 bS
-aK
+wn
 cj
 dY
 fs
 dY
 dX
 JK
-aK
+wn
 bX
 bo
 aK
@@ -40040,7 +40052,7 @@ ai
 ai
 bB
 bT
-aK
+ai
 ck
 ey
 ey
@@ -40242,14 +40254,14 @@ aI
 ai
 bo
 bU
-aK
+wn
 ar
 cy
 aC
 wZ
 ar
 aC
-aK
+wn
 bX
 bn
 aK
@@ -40444,14 +40456,14 @@ ai
 ai
 BG
 bV
-aK
+wn
 cx
 ar
 dv
 dZ
 dv
 ar
-aK
+wn
 fP
 bo
 aK
@@ -40646,14 +40658,14 @@ ai
 ai
 bC
 bV
-aK
+wn
 aR
 cX
 dw
 ea
 eA
 aR
-aK
+wn
 bX
 bn
 aK
@@ -40849,7 +40861,7 @@ ai
 bD
 bT
 ai
-aK
+wn
 cY
 dx
 eb
@@ -41051,7 +41063,7 @@ bm
 bo
 bV
 kc
-aK
+wn
 ai
 ft
 ec

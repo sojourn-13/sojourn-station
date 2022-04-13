@@ -481,6 +481,9 @@
 /obj/machinery/suit_storage_unit/engineering/atmos
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/atmos
 
+/obj/machinery/suit_storage_unit/rad_unit
+	SUIT_TYPE = /obj/item/clothing/suit/radiation
+	HELMET_TYPE = /obj/item/clothing/head/radiation
 
 /obj/machinery/suit_storage_unit/nt
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/acolyte
