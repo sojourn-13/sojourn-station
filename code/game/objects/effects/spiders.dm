@@ -24,7 +24,8 @@
 	return
 
 /obj/effect/spider/Destroy()
-	STOP_PROCESSING(SSobj, src)
+	if(is_processing)
+		STOP_PROCESSING(SSobj, src)
 	..()
 
 /obj/effect/spider/Crossed(atom/movable/AM)
