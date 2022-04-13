@@ -20771,7 +20771,6 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "eMJ" = (
-/obj/structure/closet/bombcloset/security,
 /obj/machinery/blackshield_teleporter,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory_blackshield)
@@ -39761,6 +39760,11 @@
 /obj/item/reagent_containers/food/condiment/flour,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
+"jbb" = (
+/obj/structure/invislight,
+/obj/random/spider_trap_burrowing/low_chance,
+/turf/simulated/mineral,
+/area/asteroid/cave)
 "jbi" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/tiled/techmaint,
@@ -52255,6 +52259,7 @@
 /obj/item/storage/box/teargas,
 /obj/item/storage/box/flashbangs,
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield,
+/obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "lNf" = (
@@ -107830,14 +107835,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "ydE" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/security{
-	pixel_x = 7;
-	pixel_y = 0
-	},
-/obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo{
-	pixel_x = -6;
-	pixel_y = 1
-	},
+/obj/item/computer_hardware/hard_drive/portable/design/security,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "ydG" = (
@@ -190134,7 +190132,7 @@ wLD
 veZ
 veZ
 veZ
-wLD
+nMu
 wLD
 veZ
 veZ
@@ -190344,7 +190342,7 @@ veZ
 veZ
 veZ
 veZ
-wLD
+nMu
 wLD
 wLD
 wLD
@@ -193181,7 +193179,7 @@ veZ
 veZ
 veZ
 scG
-scG
+qmH
 scG
 veZ
 veZ
@@ -193775,7 +193773,7 @@ veZ
 veZ
 veZ
 veZ
-wLD
+nMu
 veZ
 veZ
 veZ
@@ -194591,7 +194589,7 @@ veZ
 veZ
 veZ
 wLD
-scG
+qmH
 veZ
 veZ
 veZ
@@ -194775,7 +194773,7 @@ hLN
 sUr
 sUr
 veZ
-veZ
+rRe
 veZ
 veZ
 wLD
@@ -194979,7 +194977,7 @@ sUr
 veZ
 veZ
 veZ
-veZ
+rRe
 veZ
 veZ
 veZ
@@ -195383,7 +195381,7 @@ sUr
 veZ
 veZ
 veZ
-veZ
+rRe
 veZ
 veZ
 veZ
@@ -195583,7 +195581,7 @@ wkz
 sUr
 sUr
 veZ
-veZ
+rRe
 veZ
 veZ
 veZ
@@ -195794,7 +195792,7 @@ veZ
 veZ
 veZ
 veZ
-wLD
+nMu
 veZ
 veZ
 veZ
@@ -195988,7 +195986,7 @@ sUr
 sUr
 veZ
 veZ
-veZ
+rRe
 veZ
 veZ
 sUr
@@ -196402,7 +196400,7 @@ sUr
 sUr
 sUr
 veZ
-veZ
+rRe
 veZ
 veZ
 sUr
@@ -226151,7 +226149,7 @@ bIh
 scG
 kIT
 veZ
-mGX
+jbb
 xaW
 tfX
 cJV
@@ -226549,7 +226547,7 @@ bZN
 bZN
 tCl
 hxR
-scG
+etf
 bIh
 kIT
 sUr
@@ -226755,7 +226753,7 @@ bIh
 bIh
 veZ
 veZ
-veZ
+rRe
 veZ
 veZ
 oHS

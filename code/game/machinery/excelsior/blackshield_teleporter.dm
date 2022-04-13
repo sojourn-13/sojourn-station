@@ -14,7 +14,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 	idle_power_usage = 40
 	active_power_usage = 15000
 	circuit = /obj/item/circuitboard/blackshield_teleporter
-	var/energy_gain = 0.1
+	var/energy_gain = 0.2
 
 	var/max_energy = 7500
 	var/processing_order = FALSE
@@ -28,7 +28,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		MATERIAL_WOOD = list("amount" = 15, "price" = 15),
 		MATERIAL_PLASTIC = list("amount" = 15, "price" = 50),
 		MATERIAL_GLASS = list("amount" = 15, "price" = 50),
-		MATERIAL_PLASTEEL = list("amount" = 10, "price" = 250)
+		MATERIAL_PLASTEEL = list("amount" = 10, "price" = 150)
 		)
 
 	var/list/parts_list = list(
@@ -45,6 +45,13 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/ammo_magazine/light_rifle_257 = 30,
 		/obj/item/ammo_magazine/rifle_75 = 35,
 		/obj/item/ammo_magazine/heavy_rifle_408 = 50,
+		/obj/item/ammo_magazine/ammobox/pistol_35 = 75,
+		/obj/item/ammo_magazine/ammobox/kurtz_50 = 200,
+		/obj/item/ammo_magazine/ammobox/magnum_40 = 150,
+		/obj/item/ammo_magazine/ammobox/light_rifle_257 = 300,
+		/obj/item/ammo_magazine/ammobox/heavy_rifle_408 = 400,
+		/obj/item/ammo_magazine/ammobox/shotgun = 500,
+		/obj/item/ammo_magazine/ammobox/rifle_75 = 400,
 		//Guns
 		/obj/item/gun/projectile/automatic/slaught_o_matic = 15, //So blackshiled can trade with propis :P
 		/obj/item/gun/projectile/boltgun/flare_gun = 10, //DAZZLATION!
@@ -67,13 +74,18 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/gun/projectile/automatic/ak47/saiga/NM_colony = 500,
 		/obj/item/gun/projectile/automatic/maxim/NM_colony = 600,
 		/obj/item/gun/projectile/automatic/bull_autoshotgun = 700,
+		/obj/item/shield/buckler = 250,
+		/obj/item/shield/riot = 350,
 		//Armor
 		/obj/item/clothing/suit/space/void/security/odst/mil = 300,
 		/obj/item/clothing/suit/space/void/odst/corps = 300,
+		/obj/item/storage/box/bs_kit/bullet_armor = 500,
+		/obj/item/storage/box/bs_kit/laser_armor = 750,
 		/obj/item/clothing/suit/space/void/SCAF/blackshield = 1250, //One of the best things we can get
 		//misc
 		/obj/item/tool/baton = 200,
-		/obj/item/storage/firstaid/surgery/traitor = 250 //Advanced tools inside
+		/obj/item/storage/firstaid/surgery/traitor = 250, //Advanced tools inside
+		/obj/item/computer_hardware/hard_drive/portable/design/blackshield = 500
 		)
 	var/entropy_value = 1 //It is still bluespace
 
