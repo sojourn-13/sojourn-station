@@ -1,6 +1,7 @@
 //Blackshield
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield
-	disk_name = "Blackshield 'Shall-not-be-Infringed' Pack"
+	disk_name = ""
+	name = "Blackshield 'Shall-not-be-Infringed' Pack"
 	icon_state = "blackshield"
 	license = 20
 
@@ -12,7 +13,7 @@
 		//SMGs
 		/datum/design/autolathe/gun/greasegun = 2,
 		/datum/design/autolathe/gun/buckler = 3,
-		/datum/design/autolathe/gun/triage = 4,
+		/datum/design/autolathe/gun/triage = 3,
 		//rifles
 		/datum/design/autolathe/gun/boltgun_sa = 0,
 		/datum/design/autolathe/gun/zatvor,
@@ -24,7 +25,7 @@
 		/datum/design/autolathe/gun/strelki = 2,
 		/datum/design/autolathe/gun/watchtower = 3,
 		/datum/design/autolathe/gun/rushing_bull = 4,
-		/datum/design/autolathe/gun/duty = 6,
+		/datum/design/autolathe/gun/duty = 3,
 		//machinegun
 		/datum/design/autolathe/gun/saw = 4,
 		/datum/design/autolathe/gun/ppv = 5,
