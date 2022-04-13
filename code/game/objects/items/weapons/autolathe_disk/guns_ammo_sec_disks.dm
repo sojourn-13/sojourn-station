@@ -448,7 +448,7 @@
 
 // .40 SMGS
 /obj/item/computer_hardware/hard_drive/portable/design/guns/vector
-	disk_name = "SA - .40 Trajectory SMG"
+	disk_name = "SA - .40 Vector SMG"
 	icon_state = "sa"
 
 	license = 16
