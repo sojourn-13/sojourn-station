@@ -37,7 +37,15 @@
 		if(burning && prob(50))
 			L.adjust_fire_stacks(2)
 			L.IgniteMob()
-
+	if(istype(AM, /obj/item/projectile))
+		var/obj/item/projectile/proj = AM
+		if(BURN in proj.damage_types)
+			visible_message("<span class='warning'>\The [src] bursts into flame!</span>")
+			ignite()
+			for(var/O in range(1))
+				if(istype(O, /obj/effect/spider) && prob(40))
+					var/obj/effect/spider/webby = O
+					webby.ignite()
 
 /obj/effect/spider/proc/ignite()
 	if(burning)
@@ -48,16 +56,16 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/effect/spider/Process()
-	health--
-	burn_count++
-	healthCheck()
-	if(isturf(loc))
-		var/turf/T = loc
-		T.hotspot_expose(700, 5)
-	for(var/O in view(1))
+	for(var/O in range(1))
 		if(istype(O, /obj/effect/spider))
 			var/obj/effect/spider/webby = O
 			webby.ignite()
+	if(isturf(loc))
+		var/turf/T = loc
+		T.hotspot_expose(700, 5)
+	burn_count++
+	health--
+	healthCheck()
 	if(burn_count > 1)// if it's 2 or greater)
 		if(prob(15))
 			new /obj/effect/decal/cleanable/ash(get_turf(src))
@@ -83,9 +91,9 @@
 	healthCheck()
 
 /obj/effect/spider/proc/attack_ignite(var/mob/user)
-	visible_message("<span class='warning'>\The [src] bursts into flame, quickly igniting other webs nearby!</span>")
+	visible_message("<span class='warning'>\The [src] bursts into flame!</span>")
 	ignite()
-	for(var/O in view(1))
+	for(var/O in range(1))
 		if(istype(O, /obj/effect/spider) && prob(80))
 			var/obj/effect/spider/webby = O
 			webby.ignite()
@@ -93,9 +101,9 @@
 /obj/effect/spider/bullet_act(var/obj/item/projectile/Proj)
 	..()
 	if(BURN in Proj.damage_types)
-		visible_message("<span class='warning'>\The [src] bursts into flame, quickly igniting other webs nearby!</span>")
+		visible_message("<span class='warning'>\The [src] bursts into flame!</span>")
 		ignite()
-		for(var/O in view(1))
+		for(var/O in range(1))
 			if(istype(O, /obj/effect/spider) && prob(40))
 				var/obj/effect/spider/webby = O
 				webby.ignite()
