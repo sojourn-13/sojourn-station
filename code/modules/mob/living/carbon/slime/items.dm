@@ -7,8 +7,6 @@
 	icon = 'icons/obj/xenobio.dmi'
 	icon_state = "slimejar_empty"
 
-	var uses = 0
-
 //gets the location of a usedup bottle and replaces it with a empty one.
 /obj/item/slime_potion/proc/usedup(obj/item/slime_potion/L as obj)
 	var /obj/item/slime_potion/S = new /obj/item/slime_potion
@@ -19,7 +17,6 @@
 	name = "docility potion"
 	desc = "A potent chemical mix that will nullify a slime's powers, causing it to become docile and tame."
 	icon_state = "slimejar"
-	uses = 1
 
 /obj/item/slime_potion/slime_docile/attack(mob/living/carbon/slime/M as mob, mob/user as mob)
 	if(!isslime(M))//If target is not a slime.
@@ -48,8 +45,7 @@
 	pet.name = newname
 	pet.real_name = newname
 	pet.colony_friend = TRUE //Hardcode hack to make sure
-	if (uses <= 0)
-		usedup(src)
+	usedup(src)
 
 /obj/item/slime_potion/slime_docile_adult
 	name = "advanced docility potion"
@@ -80,8 +76,7 @@
 	pet.name = newname
 	pet.real_name = newname
 	pet.colony_friend = TRUE //Hardcode hack to make sure
-	if (uses <= 0)
-		usedup(src)
+	usedup(src)
 
 
 /obj/item/slime_potion/slimesteroid
@@ -105,8 +100,7 @@
 
 	to_chat(user, "You feed the slime the steroid. It now has triple the amount of extract.")
 	M.cores = 3
-	if (uses <= 0)
-		usedup(src)
+	usedup(src)
 
 /obj/item/slime_potion/slimes_speed
 	name = "red slime tonic"
@@ -123,8 +117,7 @@
 	to_chat(user, "The tonic works it magic making the cloathing slightly faster.")
 	C.slowdown -= 0.1
 	C.color = "#FF4444"
-	if (uses <= 0)
-		usedup(src)
+	usedup(src)
 
 
 /obj/item/slimesteroid2
@@ -162,8 +155,7 @@
 	C.max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	C.item_flags = STOPPRESSUREDAMAGE
 	C.color = "#ff9900"
-	if (uses <= 0)
-		usedup(src)
+	usedup(src)
 
 /obj/item/slime_potion/slimes_shock_resist
 	name = "yellow slime tonic"
@@ -182,8 +174,7 @@
 	if(C.siemens_coefficient < 0)
 		C.siemens_coefficient = 0 // Don't want to risk healing from a super resist
 	C.color = "#ffff00"
-	if (uses <= 0)
-		usedup(src)
+	usedup(src)
 
 /obj/item/slime_potion/slimes_reviver
 	name = "compressed jelly jar"
@@ -197,8 +188,7 @@
 		S.stat = 0
 		S.update_icon()
 		to_chat(user, SPAN_WARNING("The slime is revived!"))
-		if (uses <= 0)
-			usedup(src)
+		usedup(src)
 	else to_chat(user, SPAN_WARNING("This slime isn't able to be revived."))
 
 /obj/effect/golemrune
