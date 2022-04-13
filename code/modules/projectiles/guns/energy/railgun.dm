@@ -228,8 +228,7 @@
 	var/datum/component/heat/H = GetComponent(/datum/component/heat)
 	if((H.currentHeat > H.heatThresholdSpecial ||stored_matter < projectile_cost || !..()))
 		return null
-	stored_matter -= projectile_cost
-	return new projectile_type(src)
+	return..()
 
 /obj/item/gun/energy/laser/railgun/gauss/examine(user)
 	. = ..()
