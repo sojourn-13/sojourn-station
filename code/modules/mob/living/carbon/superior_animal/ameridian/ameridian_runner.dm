@@ -1,6 +1,6 @@
 // Smol but fast variant of the golem
 /mob/living/carbon/superior_animal/ameridian_golem/runner
-	name = "ameridian runner"
+	name = "ameridian runtling"
 	desc = "A weird creature made of ameridian. It is smaller and weaker, but numerous and fast."
 	icon_state = "golem_ameridian_blue"
 	health = 75

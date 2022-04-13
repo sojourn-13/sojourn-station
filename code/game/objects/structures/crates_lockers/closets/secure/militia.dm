@@ -119,6 +119,9 @@
 	icon_state = "corpsman"
 
 /obj/structure/closet/secure_closet/personal/corpsman/populate_contents()
+	new /obj/item/voucher/blackshield/corpsprimary(src)
+	new /obj/item/voucher/blackshield/secondary(src)
+	new /obj/item/voucher/blackshield/armorcorpsman(src)
 	new /obj/item/device/scanner/health(src)
 	new /obj/item/roller(src)
 	new /obj/item/tool/knife/boot/blackshield(src)
