@@ -16,6 +16,7 @@
 	camera_networks = list(NETWORK_MERCENARY)
 	light_overlay = "helmet_light_green"
 	obscuration = MEDIUM_OBSCURATION
+	max_upgrades = 0
 
 /obj/item/clothing/suit/space/void/SCAF
 	name = "SCAF suit"
@@ -37,6 +38,7 @@
 	helmet = /obj/item/clothing/head/helmet/space/void/SCAF
 	price_tag = 950
 	stiffness = MEDIUM_STIFFNESS
+	max_upgrades = 0
 
 /obj/item/clothing/suit/space/void/SCAF/voidwolf
 	name = "REAVER-SCAF suit"
@@ -148,6 +150,7 @@
 	species_restricted = list("Human")
 	light_overlay = "helmet_light_white"
 	brightness_on = 8 //luminosity when on
+	max_upgrades = 0
 
 /obj/item/clothing/suit/space/void/crusader
 	name = "crusader 'Deus Vult' power armor"
@@ -167,6 +170,7 @@
 	siemens_coefficient = 0
 	species_restricted = list("Human")
 	helmet = /obj/item/clothing/head/helmet/space/void/crusader
+	max_upgrades = 0
 
 /obj/item/clothing/head/helmet/space/void/peking
 	name = "peking void-hat"
@@ -224,6 +228,7 @@
 	species_restricted = list("Human")
 	camera_networks = list(NETWORK_MERCENARY)
 	light_overlay = "helmet_light_ihs"
+	max_upgrades = 0
 
 /obj/item/clothing/suit/space/void/ronin
 	name = "\"Ronin\" heavy voidsuit"
@@ -245,6 +250,7 @@
 	siemens_coefficient = 0.35
 	species_restricted = list("Human")
 	helmet = /obj/item/clothing/head/helmet/space/void/ronin
+	max_upgrades = 0
 
 /obj/item/clothing/suit/space/void/ronin/equipped
 	boots = /obj/item/clothing/shoes/magboots

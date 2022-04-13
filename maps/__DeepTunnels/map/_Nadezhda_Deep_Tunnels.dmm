@@ -1217,25 +1217,31 @@
 /turf/simulated/mineral/random/high_chance,
 /area/mine/prep)
 "dA" = (
-/obj/machinery/conveyor/southwest/ccw{
-	id = "mining_internal"
-	},
-/obj/landmark/machinery/output,
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
+	},
+/obj/machinery/conveyor/south{
+	id = "mining_internal"
 	},
 /turf/simulated/floor/plating,
 /area/mine/prep)
 "dB" = (
-/obj/machinery/mineral/unloading_machine,
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/mine/prep)
 "dC" = (
-/obj/landmark/machinery/input,
-/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/floor_decal/spline/plain{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/effect/floor_decal/industrial/loading{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/mine/processing)
 "dD" = (
@@ -1422,15 +1428,11 @@
 /obj/machinery/conveyor/south{
 	id = "mining_internal"
 	},
-/obj/structure/plasticflaps/mining,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/mine/processing)
 "eg" = (
 /obj/machinery/light/small{
 	dir = 8
-	},
-/obj/effect/floor_decal/industrial/loading{
-	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/mine/processing)
@@ -1653,7 +1655,6 @@
 /turf/simulated/floor/tiled/steel,
 /area/mine/processing)
 "eI" = (
-/obj/landmark/machinery/input,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1663,24 +1664,14 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/mine/processing)
-"eJ" = (
-/obj/machinery/mineral/unloading_machine,
-/turf/simulated/floor/tiled/steel/gray_platform,
-/area/mine/processing)
-"eK" = (
-/obj/machinery/conveyor/southeast{
+"eL" = (
+/obj/machinery/conveyor/south{
 	id = "mining_internal"
 	},
-/obj/landmark/machinery/output,
 /obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 8
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/gray_platform,
-/area/mine/processing)
-"eL" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
 /area/mine/processing)
 "eM" = (
 /obj/effect/decal/cleanable/rubble,
@@ -8807,10 +8798,6 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/anomalisolfour)
-"Cz" = (
-/obj/structure/lattice,
-/turf/simulated/floor/asteroid/dirt/mud,
-/area/mine/unexplored)
 "CN" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/structure/lattice,
@@ -19845,11 +19832,11 @@ qd
 qd
 ti
 ti
-aa
-aa
-aa
-aa
-aa
+Ek
+Ek
+Ek
+Ek
+Ek
 aa
 "}
 (52,1,1) = {"
@@ -20045,13 +20032,13 @@ jA
 Ek
 Ek
 jA
-aa
-aa
-aa
-aa
-Cz
-Cz
-Cz
+Ek
+Ek
+Ek
+Ek
+EJ
+EJ
+EJ
 aa
 "}
 (53,1,1) = {"
@@ -42926,7 +42913,7 @@ aD
 aD
 aD
 ee
-eJ
+ee
 ee
 fz
 fz
@@ -43127,8 +43114,8 @@ cr
 aD
 db
 dA
+eL
 ef
-eK
 eX
 fA
 fX
@@ -43330,7 +43317,7 @@ aD
 dc
 dB
 ee
-ee
+dC
 ee
 ee
 fY
@@ -43530,9 +43517,9 @@ ce
 aE
 aD
 dd
-dC
+dD
 eg
-eL
+dD
 eY
 fB
 fZ

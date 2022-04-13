@@ -74,7 +74,7 @@
 	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
 	icon_state = "neotheology_testament_u"
 
-	license = 50
+	license = 20
 	designs = list(
 		//products
 		/datum/design/bioprinter/meat,
@@ -131,9 +131,9 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/nt_bioaugment
-	disk_name = "Church of Absolute Bioaugmentation Disk"
-	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
-	icon_state = "neotheology_testament"
+	disk_name = "Strange Disk"
+	desc = "Now,where did this come from?"
+	icon_state = "onestar"
 
 	license = -1
 	designs = list(

@@ -1,7 +1,8 @@
 /obj/item/clothing/suit/storage
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
 	var/obj/item/storage/internal/pockets
-	var/cant_hold = list(/obj/item/clothing/accessory)
+	var/cant_hold = list(/obj/item/clothing/accessory,
+						 /obj/item/tool_upgrade/armor)
 
 /obj/item/clothing/suit/storage/New()
 	..()
@@ -130,6 +131,7 @@
 	pockets.storage_slots = 4
 	pockets.max_w_class = ITEM_SIZE_SMALL
 	pockets.max_storage_space = 8
+	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
 
 /obj/item/clothing/suit/storage/vest/ironhammer/New()
 	..()
@@ -137,6 +139,7 @@
 	pockets.storage_slots = 4
 	pockets.max_w_class = ITEM_SIZE_SMALL
 	pockets.max_storage_space = 8
+	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
 
 /*Puffer Vest*/
 
@@ -951,6 +954,7 @@ obj/item/clothing/suit/sweater/blue
 	pockets.storage_slots = 8
 	pockets.max_w_class = ITEM_SIZE_SMALL
 	pockets.max_storage_space = 16
+	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
 
 /*Suit Jackets*/
 /obj/item/clothing/suit/storage/suitjacket/black

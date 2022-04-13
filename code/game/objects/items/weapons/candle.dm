@@ -7,6 +7,7 @@
 	w_class = ITEM_SIZE_TINY
 	light_color = COLOR_LIGHTING_ORANGE_DARK
 	var/wax = 2000
+	var/endless_burn = FALSE
 
 /obj/item/flame/candle/New()
 	wax = rand(800, 1000) // Enough for 27-33 minutes. 30 minutes on average.
@@ -40,7 +41,7 @@
 			light()
 
 
-/obj/item/flame/candle/proc/light(var/flavor_text = SPAN_NOTICE("\The [usr] lights the [name]."))
+/obj/item/flame/candle/proc/light(flavor_text = SPAN_NOTICE("\The [usr] lights the [name]."))
 	if(!src.lit)
 		src.lit = 1
 		//src.damtype = "fire"
@@ -53,7 +54,8 @@
 /obj/item/flame/candle/Process()
 	if(!lit)
 		return
-	wax--
+	if(!endless_burn)
+		wax--
 	if(!wax)
 		new/obj/item/trash/candle(src.loc)
 		if(ismob(loc))

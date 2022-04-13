@@ -325,3 +325,13 @@
 
 /obj/item/projectile/bullet/flare/choas //MEWHEHEHE, can be any colour
 	chaos = TRUE
+
+// Special projectile that one-shot ameridian-related stuff
+/obj/item/projectile/sonic_bolt
+	name = "sonic bolt"
+	icon_state = "energy2"
+	damage_types = list(BRUTE = 10)
+	armor_penetration = 90 // It is a sound-wave
+	kill_count = 7
+	check_armour = ARMOR_ENERGY
+	var/golem_damage_bonus = 20 // Damage multiplier against ameridians.

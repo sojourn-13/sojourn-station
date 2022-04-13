@@ -20,7 +20,7 @@
 	health = 1000
 	var/active = 0
 	var/list/resource_field = list()
-	var/datum/wurm_controller/WC
+	//var/datum/wurm_controller/WC
 	var/last_use = 0.0
 
 	var/ore_types = list(
@@ -216,13 +216,13 @@
 		if(use_cell_power())
 			active = !active
 			if(active)
-				var/turf/simulated/T = get_turf(loc)
-				WC = new /datum/wurm_controller(location=T, seismic=T.seismic_activity, drill=src)
+				//var/turf/simulated/T = get_turf(loc)
+				//WC = new /datum/wurm_controller(location=T, seismic=T.seismic_activity, drill=src)
 				visible_message(SPAN_NOTICE("\The [src] lurches downwards, grinding noisily."))
 				need_update_field = 1
 			else
-				WC.stop()
-				WC = null
+				//WC.stop()
+				//WC = null
 				visible_message(SPAN_NOTICE("\The [src] shudders to a grinding halt."))
 		else
 			to_chat(user, SPAN_NOTICE("The drill is unpowered."))

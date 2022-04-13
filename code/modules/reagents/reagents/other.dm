@@ -251,6 +251,42 @@
 			return TRUE
 	return TRUE
 
+/datum/reagent/liquid_ameridian
+	name = "Liquid Ameridian"
+	id = MATERIAL_AMERIDIAN
+	description = "A green liquid with small crystals floating in it."
+	taste_description = "crystalline crystals"
+	reagent_state = SOLID
+	color = "#B8B8C0"
+
+/datum/reagent/liquid_ameridian/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
+	affect_ingest(M, alien, effect_multiplier)
+
+/datum/reagent/liquid_ameridian/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.apply_effect(effect_multiplier, IRRADIATE, 0)
+
+/datum/reagent/liquid_ameridian/touch_turf(turf/T)
+	if(volume >= 10)
+		if(can_grow(T))
+			new /obj/structure/ameridian_crystal(T)
+		return TRUE
+	return TRUE
+
+/datum/reagent/liquid_ameridian/proc/can_grow(var/turf/T)
+	if(T)
+		if(T.density)
+			return FALSE
+		if(istype(T, /turf/space)) // We can't spread in SPACE!
+			return FALSE
+		if(istype(T, /turf/simulated/open)) // Crystals can't float. Yet.
+			return FALSE
+		if(locate(/obj/structure/ameridian_crystal) in T) // No stacking.
+			return FALSE
+		if(locate(/obj/machinery/shieldwall/ameridian) in T) // Sonic fence block spread.
+			return FALSE
+		if(locate(/obj/machinery/shieldwallgen/ameridian) in T) // Sonic fence block spread. We can't spread in corners
+			return FALSE
+	return TRUE
 
 /datum/reagent/adrenaline
 	name = "Adrenaline"

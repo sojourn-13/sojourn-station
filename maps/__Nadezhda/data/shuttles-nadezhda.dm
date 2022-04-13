@@ -126,12 +126,14 @@
 	current_location = "nav_mercshuttle_homebase"
 	landmark_transition = "nav_mercshuttle_transit"
 	destination_tags = list("nav_mercshuttle_homebase", "nav_mercshuttle_colony", "nav_mercshuttle_forest", "nav_mercshuttle_river")
+	default_docking_controller = "merc_shuttle"
 
 /obj/effect/shuttle_landmark/mercshuttle_home
 	name = "Mercenary Shuttle Homebase"
 	landmark_tag = "nav_mercshuttle_homebase"
 	base_turf = /turf/space
 	base_area = /area/centcom/merc_base
+	dock_target = "merc_base"
 
 /obj/effect/shuttle_landmark/transit/mercshuttle_transit
 	name = "In transit"

@@ -36,6 +36,8 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/ammo_casing/flare/old = 10, //Rng colour for cheap! - dont want to add a spam list of every type ever
 		/obj/item/ammo_magazine/smg_35 = 35,
 		/obj/item/ammo_magazine/highcap_pistol_35/drum = 125,
+		/obj/item/ammo_magazine/magnum_40 = 40,
+		/obj/item/ammo_magazine/kurtz_50 = 60,
 		/obj/item/ammo_magazine/maxim_75 = 130,
 		/obj/item/ammo_magazine/highcap_pistol_35 = 15, //Idea with this is your sending up the mag more then ammo
 		/obj/item/ammo_magazine/speed_loader_light_rifle_257 = 15,
@@ -58,6 +60,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/gun/projectile/automatic/blackguard = 300,
 		/obj/item/gun/projectile/automatic/drozd/NM_colony = 300,
 		/obj/item/gun/projectile/automatic/buckler = 500,
+		/obj/item/gun/projectile/automatic/triage = 550,
 		/obj/item/gun/projectile/automatic/ak47/NM_colony = 325,
 		/obj/item/gun/projectile/automatic/vintorez/NM_colony = 400,
 		/obj/item/gun/projectile/automatic/ppsh/NM_colony = 450,

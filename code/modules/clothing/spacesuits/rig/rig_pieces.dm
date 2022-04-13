@@ -10,6 +10,7 @@
 	heat_protection =    HEAD|FACE|EYES
 	cold_protection =    HEAD|FACE|EYES
 	brightness_on = 4
+	max_upgrades = 0 //RIG modules are upgraded, not the rig pieces
 
 /obj/item/clothing/gloves/rig
 	name = "gauntlets"
@@ -45,6 +46,7 @@
 	can_breach = 1
 	supporting_limbs = list()
 	retract_while_active = TRUE
+	max_upgrades = 0 //RIG modules are upgraded, not the rig pieces
 
 /obj/item/clothing/suit/space/rig/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack")
 	if(istype(damage_source, /obj/item/projectile/bullet))

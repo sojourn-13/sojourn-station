@@ -12,10 +12,10 @@
 	var/temp
 	var/reqtime = 0 //Cooldown for requisitions - Quarxink
 	var/last_viewed_group = "categories"
-	var/can_order_contraband = FALSE
+	var/can_order_contraband = TRUE
 	var/requestonly = FALSE
-	var/contraband = FALSE
-	var/hacked = FALSE
+	var/contraband = TRUE
+	var/hacked = TRUE
 
 /obj/machinery/computer/supplycomp/attack_hand(mob/user)
 	if(!allowed(user))

@@ -246,7 +246,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
 	new /obj/item/tool/knife/boot/blackshield(src)
-	new /obj/item/voucher/blackshield/primary(src)
+	new /obj/item/voucher/blackshield/corpsprimary(src)
 	new /obj/item/voucher/blackshield/secondary(src)
 	new /obj/item/voucher/blackshield/armorcorpsman(src)
 
