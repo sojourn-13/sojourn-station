@@ -391,7 +391,7 @@
 	color = "#e06270"
 	metabolism = REM
 	overdose = REAGENTS_OVERDOSE/2
-	nerve_system_accumulations = 80
+	nerve_system_accumulations = 40 // Was incredibly unforgiving for its effects, this makes it able to be mixed with painkillers without forcing vomit. - Seb
 	addiction_chance = 30
 
 /datum/reagent/drug/sanguinum/affect_blood(mob/living/carbon/M, alien, effect_multiplier)

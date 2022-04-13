@@ -824,6 +824,7 @@
 				else
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
+			set_personal_cooldown(user)
 			return TRUE
 		if (response == "Overclocked Sanctifier")
 			new /obj/item/tool_upgrade/augment/sanctifier_plus(altar.loc)
@@ -833,6 +834,7 @@
 				else
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
+			set_personal_cooldown(user)
 			return TRUE
 		if (response == "Nature's Blessing")
 			new /obj/item/cruciform_upgrade/natures_blessing(altar.loc)
@@ -842,6 +844,7 @@
 				else
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
+			set_personal_cooldown(user)
 			return TRUE
 		if (response == "Cleansing Presence")
 			new /obj/item/cruciform_upgrade/cleansing_presence(altar.loc)
@@ -851,6 +854,7 @@
 				else
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
+			set_personal_cooldown(user)
 			return TRUE
 		if (response == "Faith's Shield")
 			new /obj/item/cruciform_upgrade/faiths_shield(altar.loc)
@@ -860,6 +864,7 @@
 				else
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
+			set_personal_cooldown(user)
 			return TRUE
 		if (response == "Martyr's Gift")
 			new /obj/item/cruciform_upgrade/martyr_gift(altar.loc)
@@ -869,6 +874,7 @@
 				else
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
+			set_personal_cooldown(user)
 			return TRUE
 		if (response == "Wrath of God")
 			new /obj/item/cruciform_upgrade/wrath_of_god(altar.loc)
@@ -878,6 +884,7 @@
 				else
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
+			set_personal_cooldown(user)
 			return TRUE
 		if (response == "Speed of the Chosen")
 			new /obj/item/cruciform_upgrade/speed_of_the_chosen(altar.loc)
@@ -887,6 +894,7 @@
 				else
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
+			set_personal_cooldown(user)
 			return TRUE
 		if (response == "Cancel Litany")
 			fail("You decide not to obtain church artifice at this time.", user, C)
