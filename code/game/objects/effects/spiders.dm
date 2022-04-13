@@ -6,6 +6,9 @@
 	anchored = 1
 	density = 0
 	health = 5
+	var/burning
+	var/burn_count = 0
+	var/burn_overlay "web_burning"
 
 //similar to weeds, but only barfed out by nurses manually
 /obj/effect/spider/ex_act(severity)
@@ -13,12 +16,49 @@
 		if(1.0)
 			qdel(src)
 		if(2.0)
-			if (prob(50))
+			if (prob(75))
 				qdel(src)
 		if(3.0)
-			if (prob(5))
+			if (prob(50))
 				qdel(src)
 	return
+
+/obj/effect/spider/Destroy()
+	if(processing)
+		STOP_PROCESSING(SSobj, src)
+	..()
+
+/obj/effect/spider/Crossed(atom/movable/AM)
+	if(isliving(AM))
+		var/mob/living/L = AM
+		if(L.on_fire && prob(50))
+			ignite()
+			return
+		if(burning && prob(50))
+			L.adjust_fire_stacks(2)
+			L.IgniteMob()
+
+
+/obj/effect/spider/proc/ignite()
+	if(burning)
+		return
+	set_light(3, l_color = COLOR_RED)
+	burning = TRUE
+	add_overlay(burn_overlay)
+	START_PROCESSING(SSobj, src)
+
+/obj/effect/spider/process()
+	health--
+	burn_count++
+	healthCheck()
+	for(var/O in view(1))
+		if(istype(webby, /obj/effect/spider/webby))
+			var/obj/effect/spider/webby = o
+			webby.ignite()
+	if(burn_count > 1)// if it's 2 or greater)
+		if(prob(15))
+			new /obj/effect/decal/cleanable/ash(get_turf(src))
+		qdel(src)
 
 /obj/effect/spider/attackby(var/obj/item/I, var/mob/user)
 	if(I.attack_verb.len)
@@ -28,15 +68,34 @@
 
 	var/damage = I.force / 4.0
 
+	if(I.damtype == BURN)
+		attack_ignite(user)
+
 	if(QUALITY_WELDING in I.tool_qualities)
 		if(I.use_tool(user, src, WORKTIME_INSTANT, QUALITY_WELDING, FAILCHANCE_ZERO))
+			attack_ignite(user)
 			damage = 15
 
 	health -= damage
 	healthCheck()
 
+/obj/effect/spider/proc/attack_ignite(var/mob/user)
+	visible_message("<span class='warning'>\The [src] bursts into flame, quickly igniting other webs nearby!</span>")
+	ignite()
+	for(var/O in view(1))
+		if(istype(webby, /obj/effect/spider/webby) && prob(80))
+			var/obj/effect/spider/webby = O
+			webby.ignite()
+
 /obj/effect/spider/bullet_act(var/obj/item/projectile/Proj)
 	..()
+	if(BURN in proj.damage_types)
+		visible_message("<span class='warning'>\The [src] bursts into flame, quickly igniting other webs nearby!</span>")
+		ignite()
+		for(var/O in view(1))
+			if(istype(webby, /obj/effect/spider/webby) && prob(40))
+				var/obj/effect/spider/webby = O
+				webby.ignite()
 	health -= Proj.get_structure_damage()
 	healthCheck()
 
@@ -53,12 +112,13 @@
 	health = 1
 	icon_state = "stickyweb1"
 	var/silk_baring = TRUE
-	New()
-		if(prob(50))
-			icon_state = "stickyweb2"
-		if(prob(20) && silk_baring)
-			silk_baring = FALSE
-		..()
+
+/obj/effect/spider/stickyweb/New()
+	if(prob(50))
+		icon_state = "stickyweb2"
+	if(prob(20) && silk_baring)
+		silk_baring = FALSE
+	..()
 
 /obj/effect/spider/stickyweb/chtmant
 	silk_baring = FALSE
@@ -113,6 +173,7 @@
 	name = "egg cluster"
 	desc = "They seem to pulse slightly with an inner life"
 	icon_state = "eggs"
+	burn_overlay "eggs_burning"
 	var/amount_grown = 0
 	var/spiderlings_lower = 2
 	var/spiderlings_upper = 4
@@ -158,6 +219,7 @@
 	anchored = 0
 	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 	health = 3
+	burn_overlay "spiderling_burning"
 	var/last_itch = 0
 	var/amount_grown = -1
 	var/obj/machinery/atmospherics/unary/vent_pump/entry_vent
@@ -305,11 +367,13 @@
 /obj/effect/spider/cocoon/Initialize()
 	. = ..()
 	icon_state = pick("cocoon1","cocoon2","cocoon3")
+	burn_overlay "[icon_state]_burning"
 
 /obj/effect/spider/cocoon/proc/becomeLarge()
 	health = 8
 	is_large_cocoon = 1
 	icon_state = pick("cocoon_large1","cocoon_large2","cocoon_large3")
+	burn_overlay "[icon_state]_burning"
 
 /obj/effect/spider/cocoon/Destroy()
 	src.visible_message(SPAN_WARNING("\The [src] splits open."))
