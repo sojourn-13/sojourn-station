@@ -176,8 +176,8 @@
 	one_hand_penalty = 80 //guh
 	zoom_factor = 1.8
 	extra_damage_mult_scoped = 0.2
-	damage_multiplier = 1.6
-	penetration_multiplier = 2.0
+	damage_multiplier = 1
+	penetration_multiplier = 1
 	twohanded = TRUE
 	slowdown_hold = 1.5
 	brace_penalty = 30
