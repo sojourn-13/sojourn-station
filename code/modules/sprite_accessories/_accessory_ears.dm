@@ -200,6 +200,13 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/frills_big
+	name = "Frills, Big"
+	desc = ""
+	icon_state = "frills_big"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/pharoah
 	name = "Hound Ears"
 	desc = ""
