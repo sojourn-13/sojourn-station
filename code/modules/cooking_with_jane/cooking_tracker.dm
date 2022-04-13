@@ -35,15 +35,32 @@
 
 //Points to a specific step in a recipe while considering the optional paths that recipe can take.
 /datum/cooking_with_jane/recipe_pointer
-	var/datum/cooking_with_jane/recipe/target_recipe //The recipe we are following
+	var/datum/cooking_with_jane/recipe_step/current_step //The current step in the recipe we are following.
 	
 	var/datum/cooking_with_jane/recipe_tracker/parent
 
 	var/tracked_quality //The current level of quality within that recipe.
 
-	var/list/possible_steps //A list detailing the next possible steps in a given recipe
+	var/list/steps_taken //built over the course of following a recipe, tracks what has been done to the object. Format is unique_id:result
 
-	var/list/steps_taken //built over the course of following a recipe, tracks what has been done to the object.
+//A list returning the next possible steps in a given recipe
+/datum/cooking_with_jane/recipe_pointer/get_possible_steps()
+	if(steps_taken["[current_step.unique_id]"])
+		#ifdef JANEDEBUG
+		log_debug("/datum/cooking_with_jane/recipe_pointer/get_possible_steps(): tracked step already taken.")
+		log_debug("Recipe name= [current_step.parent_recipe]")
+		log_debug("Source Item= [parent.holder]")
+		#endif
+		return null
+	if(!current_step)
+		return null
+
+	var/list/return_list = list(current_step)
+	for(var/datum/cooking_with_jane/recipe_step/step in optional_step_list)
+		if(!steps_taken["[step.unique_id]"])
+			return_list += step
+	
+	return return_list
 
 //TODO:
 /datum/cooking_with_jane/recipe_pointer/pointer/New(start_type, recipe_id)

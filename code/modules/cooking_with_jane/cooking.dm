@@ -34,6 +34,8 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 	var/product_type //Type path for the product created by the recipe. An item of this type should ALSO have a recipe_tracker Datum.
 
+	var/product_count = 1 //how much of a thing is made per case of the recipe being followed.
+
 	var/quality_description //A decorator description tacked onto items when the recipe is completed. Used in future recipes. "The Bread looks Handmade."
 
 	var/exclusive_option_mode = FALSE //triggers whether two steps in a process are exclusive- IE: you can do one or the other, but not both.
@@ -261,6 +263,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 			active_exclusive_option_list[ex_step] += step
 	return step
 //-----------------------------------------------------------------------------------
-//placeholder function for creating a product
+//default function for creating a product
 /datum/cooking_with_jane/recipe/proc/create_product(var/datum/cooking_with_jane/recipe_pointer)
-	return new product_type(recipe_pointer.parent.holder.get_turf())
+	for(var/i = 0; i < product_count; i++)
+		new product_type(recipe_pointer.parent.holder.get_turf())
