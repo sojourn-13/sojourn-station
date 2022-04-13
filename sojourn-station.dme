@@ -2734,7 +2734,6 @@
 #include "code\modules\projectiles\guns\projectile\other\protector.dm"
 #include "code\modules\projectiles\guns\projectile\other\RPG.dm"
 #include "code\modules\projectiles\guns\projectile\other\underslung.dm"
-#include "code\modules\projectiles\guns\projectile\pistol\alemao.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\avasarala.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\basilisk.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\clarissa.dm"

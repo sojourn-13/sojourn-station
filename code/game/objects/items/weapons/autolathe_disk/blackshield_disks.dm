@@ -127,23 +127,6 @@
 		/datum/design/autolathe/ammo/pistol,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/alemao
-	disk_name = "NM .35 \"O Alemao\" smg"
-	icon_state = "blackshield"
-	license = 8
-
-	designs = list(
-		/datum/design/autolathe/gun/alemao = 3,
-		/datum/design/autolathe/ammo/pistol_practice = 0,
-		/datum/design/autolathe/ammo/pistol_rubber,
-		/datum/design/autolathe/ammo/pistol,
-		/datum/design/autolathe/ammo/pistol_lethal = 2,
-		/datum/design/autolathe/ammo/hpistol_practice = 1,
-		/datum/design/autolathe/ammo/hpistol_rubber = 2,
-		/datum/design/autolathe/ammo/hpistol = 2,
-		/datum/design/autolathe/ammo/hpistol_lethal = 2,
-		)
-
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/NM_colt
 	disk_name = "NM HG .35 \"Bronco\""
 	icon_state = "blackshield"
