@@ -257,13 +257,11 @@
 	description = "A green liquid with small crystals floating in it."
 	taste_description = "crystalline crystals"
 	reagent_state = SOLID
-	color = "#B8B8C0"
-
-/datum/reagent/liquid_ameridian/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
-	affect_ingest(M, alien, effect_multiplier)
+	color = "#5FE45E"
+	metabolism = 5
 
 /datum/reagent/liquid_ameridian/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.apply_effect(effect_multiplier, IRRADIATE, 0)
+	M.apply_effect(effect_multiplier, IRRADIATE, 0, 0) // We ignore physical protection because we're inside
 
 /datum/reagent/liquid_ameridian/touch_turf(turf/T)
 	if(volume >= 10)
