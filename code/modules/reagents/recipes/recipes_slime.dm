@@ -270,7 +270,7 @@
 
 /datum/chemical_reaction/slime/fire_resist/on_reaction(var/datum/reagents/holder, var/created_volume)
 	..()
-	var/obj/item/slimes_fire_resist/P = new /obj/item/slimes_fire_resist
+	var/obj/item/slime_potion/slimes_fire_resist/P = new /obj/item/slime_potion/slimes_fire_resist
 	P.loc = get_turf(holder.my_atom)
 
 //
@@ -310,7 +310,7 @@
 
 /datum/chemical_reaction/slime/shock_resist/on_reaction(var/datum/reagents/holder, var/created_volume)
 	..()
-	var/obj/item/slimes_shock_resist/P = new /obj/item/slimes_shock_resist
+	var/obj/item/slime_potion/slimes_shock_resist/P = new /obj/item/slime_potion/slimes_shock_resist
 	P.loc = get_turf(holder.my_atom)
 
 //
@@ -335,7 +335,7 @@
 
 /datum/chemical_reaction/slime/psteroid/on_reaction(var/datum/reagents/holder, var/created_volume)
 	..()
-	var/obj/item/slimesteroid/P = new /obj/item/slimesteroid
+	var/obj/item/slime_potion/slimesteroid/P = new /obj/item/slime_potion/slimesteroid
 	P.loc = get_turf(holder.my_atom)
 
 //
@@ -402,7 +402,7 @@
 
 /datum/chemical_reaction/slime/speed_vial/on_reaction(var/datum/reagents/holder)
 	..()
-	var/obj/item/slimes_speed/P = new /obj/item/slimes_speed
+	var/obj/item/slime_potion/slimes_speed/P = new /obj/item/slime_potion/slimes_speed
 	P.loc = get_turf(holder.my_atom)
 
 //
@@ -427,7 +427,7 @@
 
 /datum/chemical_reaction/slime/docile_baby/on_reaction(var/datum/reagents/holder)
 	..()
-	var/obj/item/slime_docile/P = new /obj/item/slime_docile
+	var/obj/item/slime_potion/slime_docile/P = new /obj/item/slime_potion/slime_docile
 	P.loc = get_turf(holder.my_atom)
 
 //
@@ -439,7 +439,7 @@
 
 /datum/chemical_reaction/slime/docile_adult/on_reaction(var/datum/reagents/holder)
 	..()
-	var/obj/item/slime_docile_adult/P = new /obj/item/slime_docile_adult
+	var/obj/item/slime_potion/slime_docile_adult/P = new /obj/item/slime_potion/slime_docile_adult
 	P.loc = get_turf(holder.my_atom)
 
 //Black
@@ -457,7 +457,7 @@
 	required = /obj/item/slime_extract/black
 
 /datum/chemical_reaction/slime/spawn2/on_reaction(var/datum/reagents/holder)
-	holder.my_atom.visible_message(SPAN_WARNING("Infused with slime mutation toxin, the core begins to quiver and grow, and soon a new baby slime emerges from it!"))
+	holder.my_atom.visible_message(SPAN_WARNING("The core begins to quiver and grow, and soon a new baby slime emerges from it!"))
 	var/mob/living/carbon/slime/S = new /mob/living/carbon/slime
 	S.loc = get_turf(holder.my_atom)
 	var/list/colors = list("grey" = 10,
@@ -515,7 +515,7 @@
 	N.loc = get_turf(holder.my_atom)
 
 //Light Pink
-
+// I have no effects and there for am unloved ;-;
 
 //Adamantine
 /datum/chemical_reaction/slime/golem

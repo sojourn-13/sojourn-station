@@ -1,114 +1,130 @@
 
 ////Pet Slime Creation///
 
-/obj/item/slime_docile
+/obj/item/slime_potion //need to redo all the slime potions to be a offshoot of this
+	name = "used slime potion"
+	desc = "A slimy empty bottle."
+	icon = 'icons/obj/xenobio.dmi'
+	icon_state = "slimejar_empty"
+
+	var uses = 0
+
+//gets the location of a usedup bottle and replaces it with a empty one.
+/obj/item/slime_potion/proc/usedup(obj/item/slime_potion/L as obj)
+	var /obj/item/slime_potion/S = new /obj/item/slime_potion
+	S.loc = L.loc
+	qdel(L)
+
+/obj/item/slime_potion/slime_docile
 	name = "docility potion"
 	desc = "A potent chemical mix that will nullify a slime's powers, causing it to become docile and tame."
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "bottle19"
+	icon_state = "slimejar"
+	uses = 1
 
-	attack(mob/living/carbon/slime/M as mob, mob/user as mob)
-		if(!isslime(M))//If target is not a slime.
-			to_chat(user, SPAN_WARNING(" The potion only works on baby slimes!"))
-			return ..()
-		if(M.is_adult) //Can't tame adults
-			to_chat(user, SPAN_WARNING(" Only baby slimes can be tamed!"))
-			return..()
-		if(M.stat)
-			to_chat(user, SPAN_WARNING(" The slime is dead!"))
-			return..()
-		if(M.mind)
-			to_chat(user, SPAN_WARNING(" The slime resists!"))
-			return ..()
-		var/mob/living/simple_animal/slime/pet = new /mob/living/simple_animal/slime(M.loc)
-		pet.icon_state = "[M.colour] baby slime"
-		pet.icon_living = "[M.colour] baby slime"
-		pet.icon_dead = "[M.colour] baby slime dead"
-		pet.colour = "[M.colour]"
-		to_chat(user, "You feed the slime the potion, removing it's powers and calming it.")
-		qdel(M)
-		var/newname = sanitize(input(user, "Would you like to give the slime a name?", "Name your new pet", "pet slime") as null|text, MAX_NAME_LEN)
+/obj/item/slime_potion/slime_docile/attack(mob/living/carbon/slime/M as mob, mob/user as mob)
+	if(!isslime(M))//If target is not a slime.
+		to_chat(user, SPAN_WARNING(" The potion only works on baby slimes!"))
+		return ..()
+	if(M.is_adult) //Can't tame adults
+		to_chat(user, SPAN_WARNING(" Only baby slimes can be tamed!"))
+		return..()
+	if(M.stat)
+		to_chat(user, SPAN_WARNING(" The slime is dead!"))
+		return..()
+	if(M.mind)
+		to_chat(user, SPAN_WARNING(" The slime resists!"))
+		return ..()
+	var/mob/living/simple_animal/slime/pet = new /mob/living/simple_animal/slime(M.loc)
+	pet.icon_state = "[M.colour] baby slime"
+	pet.icon_living = "[M.colour] baby slime"
+	pet.icon_dead = "[M.colour] baby slime dead"
+	pet.colour = "[M.colour]"
+	to_chat(user, "You feed the slime the potion, removing it's powers and calming it.")
+	qdel(M)
+	var/newname = sanitize(input(user, "Would you like to give the slime a name?", "Name your new pet", "pet slime") as null|text, MAX_NAME_LEN)
 
-		if (!newname)
-			newname = "pet slime"
-		pet.name = newname
-		pet.real_name = newname
-		pet.colony_friend = TRUE //Hardcode hack to make sure
-		qdel(src)
+	if (!newname)
+		newname = "pet slime"
+	pet.name = newname
+	pet.real_name = newname
+	pet.colony_friend = TRUE //Hardcode hack to make sure
+	if (uses <= 0)
+		usedup(src)
 
-/obj/item/slime_docile_adult
+/obj/item/slime_potion/slime_docile_adult
 	name = "advanced docility potion"
 	desc = "A potent chemical mix that will nullify a slime's powers, causing it to become docile and tame. This one is meant for adult slimes"
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "bottle19"
+	icon_state = "slimejar"
 
-	attack(mob/living/carbon/slime/M as mob, mob/user as mob)
-		if(!istype(M, /mob/living/carbon/slime/))//If target is not a slime.
-			to_chat(user, SPAN_WARNING(" The potion only works on slimes!"))
-			return ..()
-		if(M.stat)
-			to_chat(user, SPAN_WARNING(" The slime is dead!"))
-			return..()
-		if(M.mind)
-			to_chat(user, SPAN_WARNING(" The slime resists!"))
-			return ..()
-		var/mob/living/simple_animal/adultslime/pet = new /mob/living/simple_animal/adultslime(M.loc)
-		pet.icon_state = "[M.colour] adult slime"
-		pet.icon_living = "[M.colour] adult slime"
-		pet.icon_dead = "[M.colour] baby slime dead"
-		pet.colour = "[M.colour]"
-		to_chat(user, "You feed the slime the potion, removing it's powers and calming it.")
-		qdel(M)
-		var/newname = sanitize(input(user, "Would you like to give the slime a name?", "Name your new pet", "pet slime") as null|text, MAX_NAME_LEN)
+/obj/item/slime_potion/slime_docile_adult/attack(mob/living/carbon/slime/M as mob, mob/user as mob)
+	if(!istype(M, /mob/living/carbon/slime/))//If target is not a slime.
+		to_chat(user, SPAN_WARNING(" The potion only works on slimes!"))
+		return ..()
+	if(M.stat)
+		to_chat(user, SPAN_WARNING(" The slime is dead!"))
+		return..()
+	if(M.mind)
+		to_chat(user, SPAN_WARNING(" The slime resists!"))
+		return ..()
+	var/mob/living/simple_animal/adultslime/pet = new /mob/living/simple_animal/adultslime(M.loc)
+	pet.icon_state = "[M.colour] adult slime"
+	pet.icon_living = "[M.colour] adult slime"
+	pet.icon_dead = "[M.colour] baby slime dead"
+	pet.colour = "[M.colour]"
+	to_chat(user, "You feed the slime the potion, removing it's powers and calming it.")
+	qdel(M)
+	var/newname = sanitize(input(user, "Would you like to give the slime a name?", "Name your new pet", "pet slime") as null|text, MAX_NAME_LEN)
 
-		if (!newname)
-			newname = "pet slime"
-		pet.name = newname
-		pet.real_name = newname
-		pet.colony_friend = TRUE //Hardcode hack to make sure
-		qdel(src)
+	if (!newname)
+		newname = "pet slime"
+	pet.name = newname
+	pet.real_name = newname
+	pet.colony_friend = TRUE //Hardcode hack to make sure
+	if (uses <= 0)
+		usedup(src)
 
 
-/obj/item/slimesteroid
+/obj/item/slime_potion/slimesteroid
 	name = "slime steroid"
 	desc = "A potent chemical mix that will cause a slime to generate more extract."
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "bottle16"
+	icon_state = "slimejar"
 
-	attack(mob/living/carbon/slime/M as mob, mob/user as mob)
-		if(!isslime(M))//If target is not a slime.
-			to_chat(user, SPAN_WARNING(" The steroid only works on baby slimes!"))
-			return ..()
-		if(M.is_adult) //Can't tame adults
-			to_chat(user, SPAN_WARNING(" Only baby slimes can use the steroid!"))
-			return..()
-		if(M.stat)
-			to_chat(user, SPAN_WARNING(" The slime is dead!"))
-			return..()
-		if(M.cores == 3)
-			to_chat(user, SPAN_WARNING(" The slime already has the maximum amount of extract!"))
-			return..()
+/obj/item/slime_potion/slimesteroid/attack(mob/living/carbon/slime/M as mob, mob/user as mob)
+	if(!isslime(M))//If target is not a slime.
+		to_chat(user, SPAN_WARNING(" The steroid only works on baby slimes!"))
+		return ..()
+	if(M.is_adult) //Can't tame adults
+		to_chat(user, SPAN_WARNING(" Only baby slimes can use the steroid!"))
+		return..()
+	if(M.stat)
+		to_chat(user, SPAN_WARNING(" The slime is dead!"))
+		return..()
+	if(M.cores == 3)
+		to_chat(user, SPAN_WARNING(" The slime already has the maximum amount of extract!"))
+		return..()
 
-		to_chat(user, "You feed the slime the steroid. It now has triple the amount of extract.")
-		M.cores = 3
-		qdel(src)
+	to_chat(user, "You feed the slime the steroid. It now has triple the amount of extract.")
+	M.cores = 3
+	if (uses <= 0)
+		usedup(src)
 
-/obj/item/slimes_speed
+/obj/item/slime_potion/slimes_speed
 	name = "red slime tonic"
 	desc = "A potent chemical mix that will cause any clothing item to move slightly faster."
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "bottle16"
+	icon_state = "slimejar"
+	color = "#FF4444"
 
-	attackby(var/obj/item/clothing/C, mob/user as mob)
-		..()
-		if(C.slowdown < -0.1)//If target isn't already zooming
-			to_chat(user, SPAN_WARNING("The tonic cant speed up this cloathing any more!"))
-			return ..()
+/obj/item/slime_potion/slimes_speed/attackby(var/obj/item/clothing/C, mob/user as mob)
+	..()
+	if(C.slowdown < -0.1)//If target isn't already zooming
+		to_chat(user, SPAN_WARNING("The tonic cant speed up this cloathing any more!"))
+		return ..()
 
-		to_chat(user, "The tonic works it magic making the cloathing slightly faster.")
-		C.slowdown -= 0.1
-		C.color = "#FF4444"
-		qdel(src)
+	to_chat(user, "The tonic works it magic making the cloathing slightly faster.")
+	C.slowdown -= 0.1
+	C.color = "#FF4444"
+	if (uses <= 0)
+		usedup(src)
 
 
 /obj/item/slimesteroid2
@@ -130,57 +146,59 @@
 			target.enahnced = 1
 			qdel(src)*/
 
-/obj/item/slimes_fire_resist
+/obj/item/slime_potion/slimes_fire_resist
 	name = "orange slime tonic"
 	desc = "A potent chemical mix that will cause any clothing item to resist heat and pressure."
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "bottle17"
+	icon_state = "slimejar"
+	color = "#ff9900"
 
-	attackby(var/obj/item/clothing/C, mob/user as mob)
-		..()
-		if(C.max_heat_protection_temperature == FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE && C.item_flags == STOPPRESSUREDAMAGE)
-			to_chat(user, SPAN_WARNING("The tonic can't modify this clothing anymore!"))
-			return ..()
+/obj/item/slime_potion/slimes_fire_resist/attackby(var/obj/item/clothing/C, mob/user as mob)
+	..()
+	if(C.max_heat_protection_temperature == FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE && C.item_flags == STOPPRESSUREDAMAGE)
+		to_chat(user, SPAN_WARNING("The tonic can't modify this clothing anymore!"))
+		return ..()
 
-		to_chat(user, "The tonic works it magic!")
-		C.max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
-		C.item_flags = STOPPRESSUREDAMAGE
-		C.color = "#ff9900"
-		qdel(src)
+	to_chat(user, "The tonic works it magic!")
+	C.max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+	C.item_flags = STOPPRESSUREDAMAGE
+	C.color = "#ff9900"
+	if (uses <= 0)
+		usedup(src)
 
-/obj/item/slimes_shock_resist
+/obj/item/slime_potion/slimes_shock_resist
 	name = "yellow slime tonic"
 	desc = "A potent chemical mix that will cause any clothing item to resist heat and pressure."
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "bottle19"
+	icon_state = "slimejar"
+	color = "#ffff00"
 
-	attackby(var/obj/item/clothing/gloves/C, mob/user as mob)
-		..()
-		if(C.siemens_coefficient <= 0)
-			to_chat(user, SPAN_WARNING("The tonic can't modify this clothing anymore!"))
-			return ..()
+/obj/item/slime_potion/slimes_shock_resist/attackby(var/obj/item/clothing/gloves/C, mob/user as mob)
+	..()
+	if(C.siemens_coefficient <= 0)
+		to_chat(user, SPAN_WARNING("The tonic can't modify this clothing anymore!"))
+		return ..()
 
-		to_chat(user, "The tonic improves the clothes!")
-		C.siemens_coefficient -= 0.2
-		if(C.siemens_coefficient < 0)
-			C.siemens_coefficient = 0 // Don't want to risk healing from a super resist
-		C.color = "#ffff00"
-		qdel(src)
+	to_chat(user, "The tonic improves the clothes!")
+	C.siemens_coefficient -= 0.2
+	if(C.siemens_coefficient < 0)
+		C.siemens_coefficient = 0 // Don't want to risk healing from a super resist
+	C.color = "#ffff00"
+	if (uses <= 0)
+		usedup(src)
 
-/obj/item/slimes_reviver
-	name = "compressed jelly blob"
+/obj/item/slime_potion/slimes_reviver
+	name = "compressed jelly jar"
 	desc = "A mass of slime jelly just awaiting to be pressed into a dead slime."
-	icon = 'icons/mob/slimes.dmi'
-	icon_state = "grey baby slime"
+	icon_state = "slimejar"
 
-/obj/item/slimes_reviver/attack(mob/living/carbon/slime/S, mob/user as mob)
+/obj/item/slime_potion/slimes_reviver/attack(mob/living/carbon/slime/S, mob/user as mob)
 	..()
 	if(S.cores != 0 && S.stat == 2)
 		S.health = 80
 		S.stat = 0
 		S.update_icon()
 		to_chat(user, SPAN_WARNING("The slime is revived!"))
-		qdel(src)
+		if (uses <= 0)
+			usedup(src)
 	else to_chat(user, SPAN_WARNING("This slime isn't able to be revived."))
 
 /obj/effect/golemrune

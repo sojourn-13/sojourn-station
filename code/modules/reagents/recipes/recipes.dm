@@ -376,7 +376,7 @@
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/compressedjelly/on_reaction(var/datum/reagents/holder, var/created_volume)
-	var /obj/item/slimes_reviver/R = new /obj/item/slimes_reviver
+	var /obj/item/slime_potion/slimes_reviver/R = new /obj/item/slime_potion/slimes_reviver
 	R.loc = get_turf(holder.my_atom)
 
 /* Centrifuge */
