@@ -25,6 +25,7 @@
 
 /obj/effect/spider/Destroy()
 	if(is_processing)
+		cut_overlays()
 		STOP_PROCESSING(SSobj, src)
 	..()
 
@@ -42,9 +43,8 @@
 		if(BURN in proj.damage_types)
 			visible_message("<span class='warning'>\The [src] bursts into flame!</span>")
 			ignite()
-			for(var/O in range(1))
-				if(istype(O, /obj/effect/spider) && prob(40))
-					var/obj/effect/spider/webby = O
+			for(var/obj/effect/spider/webby in range(1, src))
+				if(prob(40))
 					webby.ignite()
 
 /obj/effect/spider/proc/ignite()
@@ -56,10 +56,8 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/effect/spider/Process()
-	for(var/O in range(1))
-		if(istype(O, /obj/effect/spider))
-			var/obj/effect/spider/webby = O
-			webby.ignite()
+	for(var/obj/effect/spider/webby in range(1, src))
+		webby.ignite()
 	if(isturf(loc))
 		var/turf/T = loc
 		T.hotspot_expose(700, 5)
@@ -91,22 +89,21 @@
 	healthCheck()
 
 /obj/effect/spider/proc/attack_ignite(var/mob/user)
+	for(var/obj/effect/spider/webby in range(1, src))
+		if(prob(80))
+			webby.ignite()
 	visible_message("<span class='warning'>\The [src] bursts into flame!</span>")
 	ignite()
-	for(var/O in range(1))
-		if(istype(O, /obj/effect/spider) && prob(80))
-			var/obj/effect/spider/webby = O
-			webby.ignite()
+
 
 /obj/effect/spider/bullet_act(var/obj/item/projectile/Proj)
 	..()
 	if(BURN in Proj.damage_types)
+		for(var/obj/effect/spider/webby in range(1, src))
+			if(prob(80))
+				webby.ignite()
 		visible_message("<span class='warning'>\The [src] bursts into flame!</span>")
 		ignite()
-		for(var/O in range(1))
-			if(istype(O, /obj/effect/spider) && prob(40))
-				var/obj/effect/spider/webby = O
-				webby.ignite()
 	health -= Proj.get_structure_damage()
 	healthCheck()
 
@@ -120,7 +117,7 @@
 		healthCheck()
 
 /obj/effect/spider/stickyweb
-	health = 1
+	health = 3
 	icon_state = "stickyweb1"
 	var/silk_baring = TRUE
 
