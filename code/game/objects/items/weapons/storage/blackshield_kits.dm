@@ -156,6 +156,8 @@
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
 
 /obj/item/storage/box/bs_kit/buckler
 	name = "\improper Buckler Gun Primary Kit"

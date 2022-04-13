@@ -166,7 +166,7 @@
 	icon_state = "sergeanthelm"
 	item_state = "sergeanthelm"
 	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
-	flags_inv = HIDEMASK|HIDEEARS
+	flags_inv = HIDEMASK
 
 /obj/item/clothing/head/helmet/ballistic/sergeant/verb/toggle_style()
 	set name = "Adjust helmet"
