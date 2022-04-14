@@ -16,10 +16,7 @@
 		/obj/item/storage/box/bs_kit/triage = 2,
 		/obj/item/storage/box/bs_kit/buckler = 3,
 		/obj/item/storage/box/bs_kit/grizzly = 3,
-		/obj/item/storage/box/bs_kit/rushing_bull = 3,
-		/obj/item/storage/box/bs_kit/watchtower = 3,
 		/obj/item/storage/box/bs_kit/stallion = 5,
-		/obj/item/storage/box/bs_kit/lamia = 3,
 		/obj/item/storage/box/bs_kit/rex10 = 3,
 		/obj/item/storage/box/bs_kit/pilgrim = 3,
 		/obj/item/storage/box/bs_kit/colt = 3,
@@ -44,10 +41,7 @@
 		/obj/item/storage/box/bs_kit/triage = 1200,
 		/obj/item/storage/box/bs_kit/buckler = 750,
 		/obj/item/storage/box/bs_kit/grizzly = 750,
-		/obj/item/storage/box/bs_kit/rushing_bull = 750,
-		/obj/item/storage/box/bs_kit/watchtower = 750,
 		/obj/item/storage/box/bs_kit/stallion = 750,
-		/obj/item/storage/box/bs_kit/lamia = 750,
 		/obj/item/storage/box/bs_kit/rex10 = 500,
 		/obj/item/storage/box/bs_kit/pilgrim = 750,
 		/obj/item/storage/box/bs_kit/colt = 500,
@@ -133,9 +127,7 @@
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
 					"Warthog Omni Kit" = /obj/item/storage/box/bs_kit/rds_omnicarbine,
 					"Roe light boltgun Kit" = /obj/item/storage/box/bs_kit/roe,
-					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly,
-					"Rushing Bull Kit" = /obj/item/storage/box/bs_kit/rushing_bull,
-					"Watchtower Kit" = /obj/item/storage/box/bs_kit/watchtower)
+					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly,)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
@@ -147,7 +139,6 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Stallion Kit" = /obj/item/storage/box/bs_kit/stallion,
-					"Lamia Kit" = /obj/item/storage/box/bs_kit/lamia,
 					"Colt Kit" = /obj/item/storage/box/bs_kit/colt,
 					"Makarov Kit" = /obj/item/storage/box/bs_kit/makarov,
 					"Cowboy Kit" = /obj/item/storage/box/bs_kit/rex10,
@@ -202,7 +193,7 @@
 		/obj/item/storage/box/m_kit/bulldog = 5,
 		/obj/item/storage/box/m_kit/gear_lasgun = 5,
 		/obj/item/storage/box/m_kit/wirbelwind = 5,
-		/obj/item/storage/box/m_kit/firefly = 5,
+		/obj/item/storage/box/m_kit/taser = 5,
 		/obj/item/storage/box/m_kit/bronco = 5,
 		/obj/item/storage/box/m_kit/makarov = 5,
 		/obj/item/storage/box/m_kit/ladon = 5,
@@ -219,7 +210,7 @@
 		/obj/item/storage/box/m_kit/bulldog = 750,
 		/obj/item/storage/box/m_kit/gear_lasgun = 750,
 		/obj/item/storage/box/m_kit/wirbelwind = 500,
-		/obj/item/storage/box/m_kit/firefly = 500,
+		/obj/item/storage/box/m_kit/taser = 500,
 		/obj/item/storage/box/m_kit/bronco = 750,
 		/obj/item/storage/box/m_kit/makarov = 750,
 		/obj/item/storage/box/m_kit/glock = 750,
@@ -284,7 +275,7 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Wirbelwind Kit" = /obj/item/storage/box/m_kit/wirbelwind,
-					"Firefly Kit" = /obj/item/storage/box/m_kit/firefly,
+					"Counselor Kit" = /obj/item/storage/box/m_kit/taser,
 					"Bronco Kit" = /obj/item/storage/box/m_kit/bronco,
 					"Makarov Kit" = /obj/item/storage/box/m_kit/makarov,
 					"Ladon Kit" = /obj/item/storage/box/m_kit/ladon,

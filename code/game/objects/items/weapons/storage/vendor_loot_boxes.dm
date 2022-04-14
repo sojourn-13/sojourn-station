@@ -206,4 +206,3 @@
 		new /obj/random/common_oddities/always_spawn(src)
 		new /obj/random/common_oddities/always_spawn(src)
 		new /obj/random/common_oddities/always_spawn(src)
-

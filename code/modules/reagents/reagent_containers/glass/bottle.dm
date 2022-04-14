@@ -37,11 +37,19 @@
 
 /obj/item/reagent_containers/glass/bottle/potion
 	name = "elegant bottle"
-	desc = "A bottle with a much more sharper and refined look to it."
+	desc = "A bottle with a much more robust and refined look to it."
 	icon_state = "potion"
 	item_state = "potion"
 	label_icon_state = "label_potion"
 	filling_states = "10;20;40;50;60"
+
+/obj/item/reagent_containers/glass/bottle/tincture
+	name = "tincture bottle"
+	desc = "A bottle with a much more sharper and refined look to it."
+	icon_state = "tincture"
+	item_state = "tincture"
+	label_icon_state = "label_tincture"
+	filling_states = "3;5;10;15;25;27;30;35;40;45;55;60"
 
 /obj/item/reagent_containers/glass/bottle/inaprovaline
 	name = "inaprovaline bottle"
@@ -136,6 +144,18 @@
 	desc = "Contains delicious honey. Save the bees."
 	icon_state = "bottle"
 	preloaded_reagents = list("honey" = 60)
+
+/obj/item/reagent_containers/glass/bottle/nutriment
+	name = "nutriment bottle"
+	desc = "The base of whats needed to get by."
+	icon_state = "bottle"
+	preloaded_reagents = list("nutriment" = 60)
+
+/obj/item/reagent_containers/glass/bottle/protein
+	name = "protein bottle"
+	desc = "Get swoll bro"
+	icon_state = "bottle"
+	preloaded_reagents = list("protein" = 60)
 
 //frost oil and material chems
 /obj/item/reagent_containers/glass/bottle/frostoil

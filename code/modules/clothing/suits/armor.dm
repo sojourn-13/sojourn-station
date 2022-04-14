@@ -761,6 +761,7 @@
 	icon_state = "bulletproof_bs"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
+
 /obj/item/clothing/suit/armor/vest/ablative/militia
 	name = "Blackshield ablative plate"
 	desc = "An outdated set of ablative armor, utilizing advanced materials to absorb rather than reflect energy projeciles and painted in Blackshield's colors.\
@@ -768,6 +769,8 @@
 	appearance than its capabilities. Despite its bad reputation as a tax-payer credit sink it serves as a fairly adequate piece of gear."
 	icon_state = "ablative_bs"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
+	slowdown = 0.5
+	armor_list = list(melee = 25, bullet = 25, energy = 60, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/platecarrier/green
 	name = "green plate carrier"

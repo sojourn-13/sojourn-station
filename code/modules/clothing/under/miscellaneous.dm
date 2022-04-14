@@ -724,6 +724,7 @@
 		bio = 0,
 		rad = 0
 	)
+
 /obj/item/clothing/under/tribalhide/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"

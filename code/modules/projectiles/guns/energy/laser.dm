@@ -204,7 +204,7 @@
 	icon = 'icons/obj/guns/energy/sunrise.dmi'
 	icon_state = "sunrise"
 	item_state = "sunrise"
-	fire_sound = 'sound/weapons/Laser.ogg'
+	fire_sound = 'sound/weapons/guns/fire/sunrise_fire.ogg'
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BACK
 	item_charge_meter = TRUE

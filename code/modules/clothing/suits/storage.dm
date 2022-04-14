@@ -628,6 +628,14 @@
 	icon_open = "flannel_brown_open"
 	icon_closed = "flannel_brown"
 
+/obj/item/clothing/suit/storage/toggle/flannel/blue
+	name = "blue flannel shirt"
+	desc = "A comfy flannel shirt with a blue design."
+	icon_state = "flannel_blue"
+	item_state = "flannel_blue"
+	icon_open = "flannel_blue_open"
+	icon_closed = "flannel_blue"
+
 /obj/item/clothing/suit/storage/toggle/flannel
 	name = "red flannel shirt"
 	desc = "A comfy flannel shirt with a red design."

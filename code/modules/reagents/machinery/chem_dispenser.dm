@@ -1,5 +1,5 @@
 #define chemical_dispenser_ENERGY_COST (CHEM_SYNTH_ENERGY * CELLRATE) //How many cell charge do we use per unit of chemical?
-#define BOTTLE_SPRITES list("bottle" , "potion") //list of available bottle sprites
+#define BOTTLE_SPRITES list("bottle" , "potion", "tincture") //list of available bottle sprites
 #define SYRETTE_SPRITES list("syrette", "syrette_red", "syrette_orange", \
 "syrette_yellow", "syrette_green", "syrette_cyan", "syrette_blue", "syrette_magenta", \
 "syrette_spacealine", "syrette_hyperzine", "syrette_fun", "syrette_fun1", "syrette_antitox", \

@@ -264,6 +264,10 @@
 		/datum/design/autolathe/ammo/box_10x24 = 5,
 		/datum/design/autolathe/ammo/box_antim = 5,
 		/datum/design/autolathe/container/ammocan_serb = 0,
+		/datum/design/autolathe/ammo/lrifle_drum = 2,
+		/datum/design/autolathe/ammo/rifle_drum = 2,
+		/datum/design/autolathe/ammo/rifle_drum_empty = 1,
+		/datum/design/autolathe/ammo/lrifle_drum_empty = 1,
 		)
 
 // G U N S (minus excelsior and research)
@@ -448,7 +452,7 @@
 
 // .40 SMGS
 /obj/item/computer_hardware/hard_drive/portable/design/guns/vector
-	disk_name = "SA - .40 Trajectory SMG"
+	disk_name = "SA - .40 Vector SMG"
 	icon_state = "sa"
 
 	license = 16

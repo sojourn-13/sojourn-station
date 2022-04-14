@@ -301,7 +301,6 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/effect/decal/cleanable/reagents/splashed,
 /obj/random/material,
 /obj/random/material,
 /turf/simulated/floor/tiled/steel,
