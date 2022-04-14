@@ -253,3 +253,7 @@
 /datum/design/autolathe/tool/isprayer
 	name = "industrial chemical sprayer"
 	build_path = /obj/item/reagent_containers/spray/chemsprayer/industrial
+
+/datum/design/autolathe/tool/manual_charger
+	name = "hand crank charger"
+	build_path = /obj/item/device/manual_charger
