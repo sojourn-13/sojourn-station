@@ -43,6 +43,10 @@
 	name = "stun baton"
 	build_path = /obj/item/tool/baton
 
+/datum/design/autolathe/sec/stunbaton/maul
+	name = "shock maul"
+	build_path = /obj/item/tool/baton/maul
+
 /datum/design/autolathe/sec/stunbaton_small
 	name = "mini stun baton"
 	build_path = /obj/item/tool/baton/mini
