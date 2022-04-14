@@ -169,7 +169,7 @@
 	item_state = "gauss"
 	fire_sound = 'sound/weapons/guns/fire/gaussrifle.ogg'
 	w_class = ITEM_SIZE_HUGE
-	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_STEEL = 15, MATERIAL_SILVER = 10, MATERIAL_GOLD = 6)
+	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_SILVER = 10, MATERIAL_GOLD = 8, MATERIAL_PLATINUM = 4)
 	charge_cost = 1000
 	fire_delay = 30
 	recoil_buildup = 30
