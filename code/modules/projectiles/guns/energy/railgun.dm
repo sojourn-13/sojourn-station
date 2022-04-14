@@ -169,15 +169,15 @@
 	item_state = "gauss"
 	fire_sound = 'sound/weapons/guns/fire/gaussrifle.ogg'
 	w_class = ITEM_SIZE_HUGE
-	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_STEEL = 15, MATERIAL_SILVER = 10, MATERIAL_GOLD = 6)
+	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_SILVER = 10, MATERIAL_GOLD = 8, MATERIAL_PLATINUM = 4)
 	charge_cost = 1000
 	fire_delay = 30
 	recoil_buildup = 30
 	one_hand_penalty = 80 //guh
 	zoom_factor = 1.8
 	extra_damage_mult_scoped = 0.2
-	damage_multiplier = 1
-	penetration_multiplier = 1
+	damage_multiplier = 1.6
+	penetration_multiplier = 2.0
 	twohanded = TRUE
 	slowdown_hold = 1.5
 	brace_penalty = 30
@@ -223,12 +223,11 @@
 	if(!ispath(projectile_type)) return null
 	if(!cell.checked_use(charge_cost)) return null
 	stored_matter -= projectile_cost
-	new projectile_type(src)
 
 	var/datum/component/heat/H = GetComponent(/datum/component/heat)
 	if((H.currentHeat > H.heatThresholdSpecial ||stored_matter < projectile_cost || !..()))
 		return null
-	return..()
+	return new projectile_type(src)
 
 /obj/item/gun/energy/laser/railgun/gauss/examine(user)
 	. = ..()
