@@ -478,7 +478,7 @@
 
 /obj/item/ammo_magazine/rifle_75_drum
 	name = "rifle drum magazine"
-	desc = "A 75 round drum magazine marked for 7.5mm Rifle."
+	desc = "A 50 round drum magazine marked for 7.5mm Rifle."
 	icon_state = "rifle_drum"
 	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
