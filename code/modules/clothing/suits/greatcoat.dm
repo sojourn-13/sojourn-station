@@ -180,19 +180,19 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-/obj/item/clothing/suit/greatcoat/general/overcoatblack
+/obj/item/clothing/suit/storage/greatcoat/overcoatblack
 	name = "black overcoat"
 	desc = "A sturdy overcoat that harkens back to a simpler time."
 	icon_state = "overcoat_black"
 	item_state = "overcoat_black"
 
-/obj/item/clothing/suit/greatcoat/general/overcoatblack/brown
+/obj/item/clothing/suit/storage/greatcoat/overcoatblack/brown
 	name = "brown overcoat"
 	desc = "A sturdy overcoat that harkens back to a simpler time."
 	icon_state = "overcoat_brown"
 	item_state = "overcoat_brown"
 
-/obj/item/clothing/suit/greatcoat/general/overcoatblack/german
+/obj/item/clothing/suit/greatcoat/general/german
 	name = "thalatta overcoat"
 	desc = "A sturdy overcoat from Thalatta, the city-ship filled with people of faith and technology. Not related to the local church, strangely enough, but worn by them sometimes."
 	icon_state = "germancoat"

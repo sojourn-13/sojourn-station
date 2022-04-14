@@ -95,7 +95,7 @@
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/head/rank/trooper/beret(src)
 	new /obj/item/clothing/head/rank/trooper/cap(src)
-	new /obj/item/clothing/suit/armor/commander/militia_overcoat(src)
+	new /obj/item/clothing/storage/suit/armor/commander/militia_overcoat(src)
 	new /obj/item/clothing/accessory/cape/trooper_cape(src)
 	new /obj/item/clothing/under/rank/trooper(src)
 	new /obj/item/storage/belt/webbing/black(src)
