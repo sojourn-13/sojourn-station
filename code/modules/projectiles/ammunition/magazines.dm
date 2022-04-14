@@ -356,11 +356,11 @@
 /obj/item/ammo_magazine/light_rifle_257_drum
 	name = "carbine drum magazine"
 	desc = "A 75 round drum magazine marked for .257 Carbine."
-	icon_state = "lrifle_short"
+	icon_state = "lrifle_drum"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	w_class = ITEM_SIZE_NORMAL
-	caliber = "lrifle_drum"
+	caliber = "lrifle"
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_STEEL = 12)
 	ammo_type = /obj/item/ammo_casing/light_rifle_257
@@ -443,7 +443,7 @@
 	icon_state = "rifle_short"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
-	caliber = "rifle_short"
+	caliber = "rifle"
 	caliber = CAL_RIFLE
 	matter = list(MATERIAL_STEEL = 5)
 	ammo_type = /obj/item/ammo_casing/rifle_75
@@ -491,7 +491,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/rifle_75_drum/empty
-	icon_state = "rifle"
+	icon_state = "rifle_drum"
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/rifle_75_drum/practice

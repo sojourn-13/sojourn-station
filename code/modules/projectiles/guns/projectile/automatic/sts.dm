@@ -192,7 +192,7 @@
 	item_state = "sts"
 	w_class = ITEM_SIZE_HUGE
 	caliber = CAL_HRIFLE
-	mag_well = MAG_WELL_HRIFLE
+	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	penetration_multiplier = 1.1
 	damage_multiplier = 1.1
 	recoil_buildup = 15
