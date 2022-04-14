@@ -88,3 +88,9 @@
 /datum/design/research/item/powercell/small/nuclear/pda
 	name = "Soteria \"Atomcell 50S\""
 	build_path = /obj/item/cell/small/moebius/pda
+
+//Hand crank for cells
+/datum/design/research/item/hand_charger
+	name = "Soteria \"Hand Crank\""
+	build_path = /obj/item/device/manual_charger
+	category = CAT_POWER

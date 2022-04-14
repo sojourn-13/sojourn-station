@@ -470,11 +470,11 @@
 	if(!cell)
 		return
 	user.visible_message(SPAN_NOTICE("[user] starts turning the handle on [src]."), SPAN_NOTICE("You start to turn the handle on [src]."))
-	if(do_after(user, 5 + (20 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
+	if(do_after(user, 7.5 + (17.5 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
 		if(!cell)
 			return
 		if(cell.charge >= cell.maxcharge)
 			user.visible_message(SPAN_NOTICE("The cell can not be charged any more!"))
 			return
 		else
-			cell.charge += 25
+			cell.charge += min(25, cell.maxcharge - cell.charge)
