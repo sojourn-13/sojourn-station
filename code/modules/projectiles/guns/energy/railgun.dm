@@ -223,12 +223,11 @@
 	if(!ispath(projectile_type)) return null
 	if(!cell.checked_use(charge_cost)) return null
 	stored_matter -= projectile_cost
-	new projectile_type(src)
 
 	var/datum/component/heat/H = GetComponent(/datum/component/heat)
 	if((H.currentHeat > H.heatThresholdSpecial ||stored_matter < projectile_cost || !..()))
 		return null
-	return..()
+	return new projectile_type(src)
 
 /obj/item/gun/energy/laser/railgun/gauss/examine(user)
 	. = ..()
