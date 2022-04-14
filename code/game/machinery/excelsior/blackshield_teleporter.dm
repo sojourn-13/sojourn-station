@@ -14,7 +14,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 	idle_power_usage = 40
 	active_power_usage = 15000
 	circuit = /obj/item/circuitboard/blackshield_teleporter
-	var/energy_gain = 0.1
+	var/energy_gain = 0.2
 
 	var/max_energy = 7500
 	var/processing_order = FALSE
@@ -36,6 +36,8 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/ammo_casing/flare/old = 10, //Rng colour for cheap! - dont want to add a spam list of every type ever
 		/obj/item/ammo_magazine/smg_35 = 35,
 		/obj/item/ammo_magazine/highcap_pistol_35/drum = 125,
+		/obj/item/ammo_magazine/magnum_40 = 40,
+		/obj/item/ammo_magazine/kurtz_50 = 60,
 		/obj/item/ammo_magazine/maxim_75 = 130,
 		/obj/item/ammo_magazine/highcap_pistol_35 = 15, //Idea with this is your sending up the mag more then ammo
 		/obj/item/ammo_magazine/speed_loader_light_rifle_257 = 15,
@@ -43,6 +45,13 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/ammo_magazine/light_rifle_257 = 30,
 		/obj/item/ammo_magazine/rifle_75 = 35,
 		/obj/item/ammo_magazine/heavy_rifle_408 = 50,
+		/obj/item/ammo_magazine/ammobox/pistol_35 = 75,
+		/obj/item/ammo_magazine/ammobox/kurtz_50 = 200,
+		/obj/item/ammo_magazine/ammobox/magnum_40 = 150,
+		/obj/item/ammo_magazine/ammobox/light_rifle_257 = 300,
+		/obj/item/ammo_magazine/ammobox/heavy_rifle_408 = 400,
+		/obj/item/ammo_magazine/ammobox/shotgun = 500,
+		/obj/item/ammo_magazine/ammobox/rifle_75 = 400,
 		//Guns
 		/obj/item/gun/projectile/automatic/slaught_o_matic = 15, //So blackshiled can trade with propis :P
 		/obj/item/gun/projectile/boltgun/flare_gun = 10, //DAZZLATION!
@@ -58,19 +67,25 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/gun/projectile/automatic/blackguard = 300,
 		/obj/item/gun/projectile/automatic/drozd/NM_colony = 300,
 		/obj/item/gun/projectile/automatic/buckler = 500,
+		/obj/item/gun/projectile/automatic/triage = 550,
 		/obj/item/gun/projectile/automatic/ak47/NM_colony = 325,
 		/obj/item/gun/projectile/automatic/vintorez/NM_colony = 400,
 		/obj/item/gun/projectile/automatic/ppsh/NM_colony = 450,
 		/obj/item/gun/projectile/automatic/ak47/saiga/NM_colony = 500,
 		/obj/item/gun/projectile/automatic/maxim/NM_colony = 600,
 		/obj/item/gun/projectile/automatic/bull_autoshotgun = 700,
+		/obj/item/shield/buckler = 250,
+		/obj/item/shield/riot = 350,
 		//Armor
 		/obj/item/clothing/suit/space/void/security/odst/mil = 300,
 		/obj/item/clothing/suit/space/void/odst/corps = 300,
+		/obj/item/storage/box/bs_kit/bullet_armor = 500,
+		/obj/item/storage/box/bs_kit/laser_armor = 750,
 		/obj/item/clothing/suit/space/void/SCAF/blackshield = 1250, //One of the best things we can get
 		//misc
 		/obj/item/tool/baton = 200,
-		/obj/item/storage/firstaid/surgery/traitor = 250 //Advanced tools inside
+		/obj/item/storage/firstaid/surgery/traitor = 250, //Advanced tools inside
+		/obj/item/computer_hardware/hard_drive/portable/design/blackshield = 500
 		)
 	var/entropy_value = 1 //It is still bluespace
 

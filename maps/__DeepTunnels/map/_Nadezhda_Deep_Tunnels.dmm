@@ -1235,9 +1235,12 @@
 /turf/simulated/floor/plating,
 /area/mine/prep)
 "dC" = (
-/obj/machinery/mineral/unloading_machine,
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/effect/floor_decal/industrial/loading{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/mine/processing)
@@ -1661,22 +1664,14 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/mine/processing)
-"eK" = (
-/obj/landmark/machinery/output,
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 8
-	},
+"eL" = (
 /obj/machinery/conveyor/south{
 	id = "mining_internal"
 	},
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/steel/gray_platform,
-/area/mine/processing)
-"eL" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/landmark/machinery/input,
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/turf/simulated/floor/plating,
 /area/mine/processing)
 "eM" = (
 /obj/effect/decal/cleanable/rubble,
@@ -1772,9 +1767,6 @@
 "eY" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/rubble,
-/obj/effect/floor_decal/industrial/loading{
-	dir = 1
-	},
 /turf/simulated/floor/plating,
 /area/mine/processing)
 "eZ" = (
@@ -43122,8 +43114,8 @@ cr
 aD
 db
 dA
+eL
 ef
-eK
 eX
 fA
 fX
@@ -43527,7 +43519,7 @@ aD
 dd
 dD
 eg
-eL
+dD
 eY
 fB
 fZ

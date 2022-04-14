@@ -30,6 +30,10 @@
 		filling.color = reagents.get_color()
 		add_overlay(filling)
 
+	if(label_text)
+		var/label_icon = label_icon_state ? label_icon_state : "label_[icon_state]"
+		var/mutable_appearance/label = mutable_appearance(icon, label_icon)
+		add_overlay(label)
 
 //// Subtypes ////
 

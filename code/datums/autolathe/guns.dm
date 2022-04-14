@@ -50,10 +50,6 @@
 	name = "OT HG .35 \"Mk58\""
 	build_path = /obj/item/gun/projectile/mk58
 
-/datum/design/autolathe/gun/alemao
-	name = "BR .35 \"O Alemao\""
-	build_path = /obj/item/gun/projectile/automatic/alemao
-
 /datum/design/autolathe/gun/spring
 	name = "GP .35 \"Spring\""
 	build_path = /obj/item/gun/projectile/spring
@@ -183,8 +179,12 @@
 	build_path = /obj/item/gun/projectile/automatic/vector
 
 /datum/design/autolathe/gun/thompson
-	name = "Unbraded .40 Magnum \"Chicago Typewriter\""
+	name = "SA .40 Magnum \"Chicago Typewriter\""
 	build_path = /obj/item/gun/projectile/automatic/thompson
+
+/datum/design/autolathe/gun/triage
+	name = "BR .40 Magnum \"Triage\""
+	build_path = /obj/item/gun/projectile/automatic/triage
 
 //S H O T G U N S
 

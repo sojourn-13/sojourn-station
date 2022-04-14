@@ -639,6 +639,7 @@
 	name = "shrapnel"
 	icon_state = "birdshot-1"
 	damage_types = list(BRUTE = 18)
+	agony = 5
 	pellets = 4
 	range_step = 1
 	spread_step = 10

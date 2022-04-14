@@ -35,24 +35,30 @@
 
 /datum/gear/factionsecurity/cloak
 	display_name = "cloak, warrant officer"
-	path = /obj/item/clothing/suit/hooded/cloak/job/ihc
+	path = /obj/item/clothing/accessory/job/cape/ihc
 	allowed_roles = list("Warrant Officer")
 	slot = slot_wear_suit
 	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/cloakironhammer
 	display_name = "cloak, security"
-	path = /obj/item/clothing/suit/hooded/cloak/job/ironhammer
-	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	path = /obj/item/clothing/accessory/job/cape/ironhammer
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_wear_suit
 	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/blackshield
 	display_name = "cloak, blackshield"
-	path = /obj/item/clothing/accessory/cape/blackshield
-	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	path = /obj/item/clothing/accessory/job/cape/blackshield
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_wear_suit
 	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/blackcoat
+	display_name = "longcoat, blackshield"
+	path = /obj/item/clothing/accessory/bscloak
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/capfield

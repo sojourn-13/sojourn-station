@@ -71,6 +71,9 @@
 	if(isarmor(A))
 		return check_armor(A, user)
 
+	if(istype(A, /obj/item/rig))
+		return check_rig(A, user)
+
 	return FALSE
 
 /datum/component/item_upgrade/proc/check_robot(var/mob/living/silicon/robot/R, var/mob/living/user)
@@ -156,6 +159,24 @@
 		if(T.cell)
 			if(user)
 				to_chat(user, SPAN_WARNING("Remove the cell from the tool first!"))
+			return FALSE
+
+	return TRUE
+
+/datum/component/item_upgrade/proc/check_rig(var/obj/item/rig/R, var/mob/living/user)
+	if(R.item_upgrades.len >= R.max_upgrades)
+		to_chat(user, SPAN_WARNING("This hardsuit can't fit any more modifications!"))
+		return FALSE
+
+	if(required_qualities.len)
+		var/qmatch = FALSE
+		for (var/q in required_qualities)
+			if (R.has_quality(q))
+				qmatch = TRUE
+				break
+
+		if(!qmatch)
+			to_chat(user, SPAN_WARNING("This hardsuit lacks the required qualities!"))
 			return FALSE
 
 	return TRUE
@@ -250,6 +271,8 @@
 		apply_values_gun(holder)
 	if(isarmor(holder))
 		apply_values_armor(holder)
+	if(istype(holder, /obj/item/rig))
+		apply_values_armor_rig(holder)
 	return TRUE
 
 /datum/component/item_upgrade/proc/add_values(var/atom/holder)
@@ -260,17 +283,31 @@
 
 /datum/component/item_upgrade/proc/apply_values_armor(var/obj/item/clothing/T)
 	if(tool_upgrades[UPGRADE_MELEE_ARMOR])
-		T.armor.melee += tool_upgrades[UPGRADE_MELEE_ARMOR]
+		T.armor = T.armor.modifyRating(melee = tool_upgrades[UPGRADE_MELEE_ARMOR])
 	if(tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
-		T.armor.bullet += tool_upgrades[UPGRADE_BALLISTIC_ARMOR]
+		T.armor = T.armor.modifyRating(bullet = tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
 	if(tool_upgrades[UPGRADE_ENERGY_ARMOR])
-		T.armor.energy += tool_upgrades[UPGRADE_ENERGY_ARMOR]
+		T.armor = T.armor.modifyRating(energy = tool_upgrades[UPGRADE_ENERGY_ARMOR])
 	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
-		T.armor.bomb += tool_upgrades[UPGRADE_BOMB_ARMOR]
+		T.armor = T.armor.modifyRating(bomb = tool_upgrades[UPGRADE_BOMB_ARMOR])
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
 		T.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
 
 	T.prefixes |= prefix
+
+/datum/component/item_upgrade/proc/apply_values_armor_rig(var/obj/item/rig/R)
+	if(tool_upgrades[UPGRADE_MELEE_ARMOR])
+		R.armor = R.armor.modifyRating(melee = tool_upgrades[UPGRADE_MELEE_ARMOR])
+	if(tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
+		R.armor = R.armor.modifyRating(bullet = tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
+	if(tool_upgrades[UPGRADE_ENERGY_ARMOR])
+		R.armor = R.armor.modifyRating(energy = tool_upgrades[UPGRADE_ENERGY_ARMOR])
+	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
+		R.armor = R.armor.modifyRating(bomb = tool_upgrades[UPGRADE_BOMB_ARMOR])
+	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
+		R.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
+	R.prefixes |= prefix
+	R.updateArmor()
 
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/tool/T)
 	if(tool_upgrades[UPGRADE_SANCTIFY])
