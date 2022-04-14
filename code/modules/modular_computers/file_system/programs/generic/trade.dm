@@ -11,7 +11,8 @@
 	size = 21
 	available_on_ntnet = FALSE
 	requires_ntnet = TRUE
-
+	clone_able = FALSE
+	copy_cat = TRUE
 	var/trade_screen = GOODS_SCREEN
 
 	var/list/shoppinglist = list()
@@ -23,6 +24,12 @@
 	var/datum/trade_station/station
 
 	var/datum/money_account/account
+
+/datum/computer_file/program/trade/cargo_download
+	available_on_ntnet = TRUE
+	clone_able = TRUE
+	required_access = access_cargo
+	requires_access_to_run = FALSE
 
 /datum/computer_file/program/trade/proc/set_choosed_category(value)
 	choosed_category = value
