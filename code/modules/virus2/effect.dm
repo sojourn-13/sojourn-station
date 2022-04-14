@@ -166,9 +166,9 @@
 		if(ishuman(mob))
 			var/mob/living/carbon/human/H = mob
 			for (var/obj/item/organ/external/E in H.organs)
-				if (E.status & ORGAN_BROKEN && prob(1))
+				if (E.status & ORGAN_BROKEN && prob(15))
 					E.mend_fracture()
-		var/heal_amt = 1*multiplier
+		var/heal_amt = 3*multiplier
 		mob.heal_overall_damage(heal_amt,heal_amt,heal_amt,heal_amt)
 
 	deactivate(var/mob/living/carbon/mob,var/multiplier)
@@ -176,8 +176,9 @@
 			var/mob/living/carbon/human/H = mob
 			to_chat(H, SPAN_NOTICE("You suddenly feel hurt and old..."))
 			//H.age += 8 we dont use that kinda system of age here
-		var/backlash_amt = 1*multiplier
+		var/backlash_amt = 3*multiplier
 		mob.apply_damages(backlash_amt,backlash_amt,backlash_amt,backlash_amt)
+
 
 /datum/disease2/effect/bones
 	name = "Fragile Bones Syndrome"

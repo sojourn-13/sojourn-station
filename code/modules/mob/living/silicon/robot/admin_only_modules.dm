@@ -183,7 +183,7 @@
 	//Rescue module has built in crew monitor
 	//General medical does not, they're expected to stay in medbay and use the computers
 	subsystems = list(/datum/nano_module/crew_monitor)
-	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,
+	supported_upgrades = list(/obj/item/borg/upgrade/hypospray_medical,
 							  /obj/item/borg/upgrade/jetpack)
 	health = 270 //Tough
 	speed_factor = 1.3 //Turbospeed!

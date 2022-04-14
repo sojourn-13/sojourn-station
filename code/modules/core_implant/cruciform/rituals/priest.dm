@@ -1087,7 +1087,7 @@
 
 	var/obj/machinery/power/eotp/EOTP = locate(/obj/machinery/power/eotp) in OBJS
 	if(!EOTP)
-		fail("You must be in front of the Eye of the Protector.", H, C)
+		fail("You must be in front of the Will of the Protector.", H, C)
 		return FALSE
 
 	eotp.nano_ui_interact(H)

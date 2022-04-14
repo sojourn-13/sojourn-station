@@ -2126,7 +2126,15 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/side/f2section1)
 "axL" = (
-/obj/structure/table/steel,
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/manipulator,
+/obj/item/stack/cable_coil/random,
+/obj/structure/table/steel_reinforced,
+/obj/item/tool/screwdriver,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/pros/prep)
 "axS" = (
@@ -4994,7 +5002,7 @@
 /area/nadezhda/rnd/lab)
 "bgY" = (
 /obj/structure/table/woodentable,
-/obj/item/clothing/accessory/dogtags{
+/obj/item/clothing/accessory/necklace/dogtags{
 	desc = "Never forget their name. Never.";
 	oldified = 1
 	},
@@ -8415,6 +8423,10 @@
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
+"bWb" = (
+/obj/item/reagent_containers/food/snacks/stew,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "bWc" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -9069,9 +9081,6 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "ccU" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -10254,6 +10263,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/rbreakroom)
+"crr" = (
+/obj/structure/table/standard,
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/manipulator,
+/obj/item/stack/cable_coil/random,
+/obj/item/tool/screwdriver,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/absolutism/storage)
 "crv" = (
 /obj/effect/decal/weldable/cracks,
 /obj/item/material/shard/shrapnel/scrap,
@@ -11536,10 +11557,16 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "cFG" = (
 /obj/structure/table/standard,
-/obj/item/storage/fancy/vials,
 /obj/machinery/alarm{
 	pixel_y = 26
 	},
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/manipulator,
+/obj/item/stack/cable_coil/random,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "cFL" = (
@@ -15479,9 +15506,6 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/crew_quarters/fitness)
 "dAM" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -20767,7 +20791,6 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "eMJ" = (
-/obj/structure/closet/bombcloset/security,
 /obj/machinery/blackshield_teleporter,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory_blackshield)
@@ -30982,7 +31005,7 @@
 /area/nadezhda/crew_quarters/cafeteria)
 "gWp" = (
 /obj/structure/table/steel,
-/obj/item/clothing/accessory/dogtags,
+/obj/item/clothing/accessory/necklace/dogtags,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "gWu" = (
@@ -39757,6 +39780,11 @@
 /obj/item/reagent_containers/food/condiment/flour,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
+"jbb" = (
+/obj/structure/invislight,
+/obj/random/spider_trap_burrowing/low_chance,
+/turf/simulated/mineral,
+/area/asteroid/cave)
 "jbi" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/tiled/techmaint,
@@ -52251,6 +52279,7 @@
 /obj/item/storage/box/teargas,
 /obj/item/storage/box/flashbangs,
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield,
+/obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "lNf" = (
@@ -54458,6 +54487,7 @@
 "mlS" = (
 /obj/structure/table/bench/steel,
 /obj/random/junkfood/rotten,
+/obj/item/reagent_containers/food/snacks/stew,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "mmb" = (
@@ -58156,7 +58186,8 @@
 /obj/structure/table/standard,
 /obj/machinery/button/remote/blast_door{
 	id = "Chem";
-	name = "Chemistry shutter control"
+	name = "Chemistry shutter control";
+	pixel_x = -16
 	},
 /obj/machinery/light{
 	dir = 4
@@ -58165,6 +58196,7 @@
 	dir = 4;
 	pixel_x = 30
 	},
+/obj/item/storage/fancy/vials,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "nbU" = (
@@ -60997,7 +61029,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "nIZ" = (
-/obj/structure/closet/l3closet,
 /obj/machinery/atmospherics/pipe/simple/visible,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/cryo)
@@ -63775,8 +63806,16 @@
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/pond)
 "oqO" = (
-/obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/dark/danger,
+/obj/structure/table/standard,
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/manipulator,
+/obj/item/stack/cable_coil/random,
+/obj/item/tool/screwdriver,
+/turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "oqV" = (
 /obj/structure/multiz/stairs/active,
@@ -67530,7 +67569,6 @@
 /area/nadezhda/hallway/main/stairwell)
 "pjw" = (
 /obj/machinery/microwave/burnbarrel,
-/obj/item/reagent_containers/food/snacks/wishsoup,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "pjA" = (
@@ -69519,6 +69557,16 @@
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/circuitboard/vending,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/console_screen,
+/obj/item/stack/cable_coil/random,
+/obj/item/tool/screwdriver,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stack/material/steel{
+	amount = 8
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
@@ -74853,8 +74901,14 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/section4)
 "qQe" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table/reinforced,
+/obj/structure/table/standard,
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/manipulator,
+/obj/item/stack/cable_coil/random,
 /obj/machinery/camera/network/engineering{
 	dir = 1
 	},
@@ -107826,14 +107880,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "ydE" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/security{
-	pixel_x = 7;
-	pixel_y = 0
-	},
-/obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo{
-	pixel_x = -6;
-	pixel_y = 1
-	},
+/obj/item/computer_hardware/hard_drive/portable/design/security,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "ydG" = (
@@ -137907,7 +137954,7 @@ sFI
 sFI
 kZI
 hsi
-oQV
+bWb
 iAE
 fMX
 pjw
@@ -190130,7 +190177,7 @@ wLD
 veZ
 veZ
 veZ
-wLD
+nMu
 wLD
 veZ
 veZ
@@ -190340,7 +190387,7 @@ veZ
 veZ
 veZ
 veZ
-wLD
+nMu
 wLD
 wLD
 wLD
@@ -193177,7 +193224,7 @@ veZ
 veZ
 veZ
 scG
-scG
+qmH
 scG
 veZ
 veZ
@@ -193771,7 +193818,7 @@ veZ
 veZ
 veZ
 veZ
-wLD
+nMu
 veZ
 veZ
 veZ
@@ -194587,7 +194634,7 @@ veZ
 veZ
 veZ
 wLD
-scG
+qmH
 veZ
 veZ
 veZ
@@ -194771,7 +194818,7 @@ hLN
 sUr
 sUr
 veZ
-veZ
+rRe
 veZ
 veZ
 wLD
@@ -194975,7 +195022,7 @@ sUr
 veZ
 veZ
 veZ
-veZ
+rRe
 veZ
 veZ
 veZ
@@ -195379,7 +195426,7 @@ sUr
 veZ
 veZ
 veZ
-veZ
+rRe
 veZ
 veZ
 veZ
@@ -195579,7 +195626,7 @@ wkz
 sUr
 sUr
 veZ
-veZ
+rRe
 veZ
 veZ
 veZ
@@ -195790,7 +195837,7 @@ veZ
 veZ
 veZ
 veZ
-wLD
+nMu
 veZ
 veZ
 veZ
@@ -195984,7 +196031,7 @@ sUr
 sUr
 veZ
 veZ
-veZ
+rRe
 veZ
 veZ
 sUr
@@ -196398,7 +196445,7 @@ sUr
 sUr
 sUr
 veZ
-veZ
+rRe
 veZ
 veZ
 sUr
@@ -217836,7 +217883,7 @@ uUU
 pes
 mZy
 pes
-jXd
+crr
 uVK
 uVK
 tzn
@@ -226147,7 +226194,7 @@ bIh
 scG
 kIT
 veZ
-mGX
+jbb
 xaW
 tfX
 cJV
@@ -226545,7 +226592,7 @@ bZN
 bZN
 tCl
 hxR
-scG
+etf
 bIh
 kIT
 sUr
@@ -226751,7 +226798,7 @@ bIh
 bIh
 veZ
 veZ
-veZ
+rRe
 veZ
 veZ
 oHS

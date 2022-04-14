@@ -200,6 +200,24 @@
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
 
+/datum/craft_recipe/guild/gaussrifle
+	name = "bat'ko gauss rifle"
+	result = /obj/item/gun/energy/laser/railgun/gauss
+	icon_state = "gun"
+	steps = list(
+		list(CRAFT_MATERIAL, 40, MATERIAL_PLASTEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 8, MATERIAL_GOLD, "time" = 20),
+		list(CRAFT_MATERIAL, 10, MATERIAL_SILVER, "time" = 20),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 20),
+		list(QUALITY_CUTTING, 30, "time" = 40),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(/obj/item/stack/cable_coil, 30, "time" = 20),
+		list(QUALITY_WELDING, 40, "time" = 60),
+		list(QUALITY_WIRE_CUTTING, 40, 30),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
+	)
+
 /datum/craft_recipe/guild/railgunpistol
 	name = "myrmidon rail pistol"
 	result = /obj/item/gun/energy/laser/railgun/pistol
@@ -252,6 +270,19 @@
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
 
+/datum/craft_recipe/guild/martinupgraded
+	name = "overclocked martin energy pistol"
+	result = /obj/item/gun/energy/gun/martin/upgraded
+	steps = list(
+		list(/obj/item/gun/energy/gun/martin, 1, time = 60),
+		list(QUALITY_SCREW_DRIVING, 20, "time" = 40),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 30, "time" = 15),
+		list(QUALITY_WELDING, 40, "time" = 30),
+		list(CRAFT_MATERIAL, 1, MATERIAL_URANIUM, "time" = 20),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 20),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 20)
+	)
 //An exspensive but powerful CQC weapon that also can be used as a flar gun
 /datum/craft_recipe/guild/abdicatorshotgun
 	name ="abdicator energy shotgun"

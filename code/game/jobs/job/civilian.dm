@@ -132,7 +132,7 @@
 		STAT_TGH = 30, //basically a punching bag, he can't robust anyone or shoot guns anyway
 	)
 
-	perks = list(/datum/perk/market_prof, PERK_ARTIST)
+	perks = list(/datum/perk/market_prof, PERK_ARTIST, /datum/perk/stalker)
 	software_on_spawn = list(///datum/computer_file/program/supply,
 							 ///datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/scanner,

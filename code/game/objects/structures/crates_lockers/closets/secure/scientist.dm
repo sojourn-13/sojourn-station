@@ -28,6 +28,7 @@
 	new /obj/item/storage/backpack/satchel/leather/withwallet(src)
 	new /obj/item/clothing/suit/bio_suit/scientist(src)
 	new /obj/item/clothing/head/bio_hood/scientist(src)
+	new /obj/item/clothing/accessory/halfcape/cro(src)
 	new /obj/item/clothing/under/rank/expedition_overseer(src)
 	new /obj/item/clothing/suit/storage/toggle/labcoat(src)
 	new /obj/item/clothing/shoes/color(src)

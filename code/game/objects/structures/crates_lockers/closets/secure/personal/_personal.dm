@@ -67,5 +67,5 @@
 					return
 			src.locked = TRUE
 			src.registered_name = null
-			name = initial(name)
+			name = "[initial(name)](used)"
 			update_icon()

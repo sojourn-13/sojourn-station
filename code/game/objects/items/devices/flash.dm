@@ -78,7 +78,7 @@
 				user.visible_message(SPAN_NOTICE("[user] overloads [M]'s sensors with the flash!")) //This IS what we want.
 				return //hacky way to stop miss-messages for the player. but should work
 			else
-				flashfail = 1
+				flashfail = TRUE
 
 	if(iscarbon(M) && !issuperioranimal(M)) //Just in case so we dont double flash are superioranimal friends
 		if(M.stat!=DEAD)
@@ -97,11 +97,15 @@
 				flashfail = 1
 
 	else if(isrobot(M))
-		M.Weaken(rand(5,10))
-		if (M.HUDtech.Find("flash"))
-			flick("e_flash", M.HUDtech["flash"])
+		var/mob/living/silicon/robot/robo = M
+		if(robo.HasTrait(CYBORG_TRAIT_FLASH_RESISTANT))
+			flashfail = TRUE
+		else
+			robo.Weaken(rand(5,10))
+			if (robo.HUDtech.Find("flash"))
+				flick("e_flash", robo.HUDtech["flash"])
 	else
-		flashfail = 1
+		flashfail = TRUE
 
 	if(isrobot(user))
 		spawn(0)

@@ -85,7 +85,7 @@
 	local forces so often put within it."
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	armor_list = list(melee = 15, bullet = 15, energy = 60, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 25, bullet = 25, energy = 60, bomb = 10, bio = 0, rad = 0)
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4
 	light_overlay = "bs_ablative"
@@ -166,7 +166,7 @@
 	icon_state = "sergeanthelm"
 	item_state = "sergeanthelm"
 	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
-	flags_inv = HIDEMASK|HIDEEARS
+	flags_inv = HIDEMASK
 
 /obj/item/clothing/head/helmet/ballistic/sergeant/verb/toggle_style()
 	set name = "Adjust helmet"

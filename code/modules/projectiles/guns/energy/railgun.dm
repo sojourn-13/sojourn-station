@@ -157,6 +157,7 @@
 		list(mode_name="Blast", mode_desc="Fires a slug synth-shell", projectile_type=/obj/item/projectile/bullet/shotgun, charge_cost=null, icon="destroy"),
 	)
 
+
 /obj/item/gun/energy/material_railgun
 	name = "\"Black Arrow\" railgun"
 	desc = "\"Artificer's Guild\"-designed railgun. A \'true\' railgun, utilizing the Lorentz effect and a pair of long conductors to propel solid projectiles. This one is a RG93-E, with integrated scope and variable firing modes."
@@ -215,3 +216,108 @@
 				material_storage += mat_per_stack
 				playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 				to_chat(user, "<span class='notice'>You load a [initial(stack_used.name)] into \the [src]. The [src] now holds [material_storage]/[material_max] [initial(stack_used.name)]s.</span>")
+
+
+//Gauss-rifle type, snowflake launcher mixed with rail rifle and hydrogen gun code. Consumes matter-stack and cell charge to fire. - Rebel0
+/obj/item/gun/energy/laser/railgun/gauss
+	name = "\"Bat'ko\" gauss rifle"
+	desc = "A rather heavy rifle sporting a cell-loading mount, a adjustable recoil-compensating stock, a hand-crank to manually chamber the next round and a series of coils lining its front. \
+	This strange gauss coil rifle has valves along the large, external coil mounts. To fire this gun it requires common venting less it overheat. \
+	At the stock a large script-styled 'M' appears to be engraved into it, a form of signature from its designer along with an artificer Guild logo."
+	icon = 'icons/obj/guns/energy/gauss.dmi'
+	icon_state = "gauss"
+	item_state = "gauss"
+	fire_sound = 'sound/weapons/guns/fire/gaussrifle.ogg'
+	w_class = ITEM_SIZE_HUGE
+	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_STEEL = 15, MATERIAL_SILVER = 10, MATERIAL_GOLD = 6)
+	charge_cost = 1000
+	fire_delay = 30
+	recoil_buildup = 30
+	one_hand_penalty = 80 //guh
+	zoom_factor = 1.8
+	extra_damage_mult_scoped = 0.2
+	damage_multiplier = 1
+	penetration_multiplier = 1
+	twohanded = TRUE
+	slowdown_hold = 1.5
+	brace_penalty = 30
+	init_firemodes = list(
+		list(mode_name="powered-rod", mode_desc="fires a metal rod at incredible speeds", projectile_type=/obj/item/projectile/plasma/gauss, icon="kill"),
+		list(mode_name="fragmented scrap", mode_desc="fires a brittle, sharp piece of scrap-metal", projectile_type=/obj/item/projectile/bullet/grenade/frag, charge_cost=30000, icon="grenade"),
+	)
+	consume_cell = FALSE
+	price_tag = 6000
+
+	var/max_stored_matter = 4
+	var/stored_matter = 0
+	var/matter_type = MATERIAL_RSCRAP
+
+	var/projectile_cost = 1
+	var/overheat_damage = 25
+
+/obj/item/gun/energy/laser/railgun/gauss/Initialize()
+    ..()
+    AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE,  50,  60,  20, 0.01, 2)
+    RegisterSignal(src, COMSIG_HEAT_VENT, .proc/ventEvent) //this sould just be a fluff message, proc can be anything
+    RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheat) //this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
+
+/obj/item/gun/energy/laser/railgun/gauss/attackby(obj/item/I, mob/user)
+
+	if(istype(I,/obj/item/gun_upgrade/mechanism/battery_shunt))
+		to_chat(user, SPAN_WARNING("[src] cannot be fitted with a battery shunt!"))		//No shunts on this gun. It's powerful enough.
+		return FALSE
+	else if(!istype(I,/obj/item/stack/sheet))
+		..()
+	var/obj/item/stack/sheet/M = I
+	if(istype(M) && M.name == matter_type)
+		var/amount = min(M.get_amount(), round(max_stored_matter - stored_matter))
+		if(M.use(amount))
+			stored_matter += amount
+		to_chat(user, "<span class='notice>You load [amount] [matter_type] into \the [src].</span>")
+	else
+		return ..()
+
+/obj/item/gun/energy/laser/railgun/gauss/consume_next_projectile()
+	if(stored_matter < projectile_cost) return null
+	if(!cell) return null
+	if(!ispath(projectile_type)) return null
+	if(!cell.checked_use(charge_cost)) return null
+	stored_matter -= projectile_cost
+	new projectile_type(src)
+
+	var/datum/component/heat/H = GetComponent(/datum/component/heat)
+	if((H.currentHeat > H.heatThresholdSpecial ||stored_matter < projectile_cost || !..()))
+		return null
+	return..()
+
+/obj/item/gun/energy/laser/railgun/gauss/examine(user)
+	. = ..()
+	to_chat(user, "It holds [stored_matter]/[max_stored_matter] [matter_type].")
+
+/obj/item/gun/energy/laser/railgun/gauss/update_icon()
+	cut_overlays()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if(wielded)
+		itemstring += "_doble"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+
+//Hydrogen gun snowflake variables for the Gauss
+/obj/item/gun/energy/laser/railgun/gauss/proc/ventEvent()
+	src.visible_message("[src]'s vents open valves atop of the exterior coil mounts, cooling itself down.")
+	playsound(usr.loc, 'sound/weapons/guns/interact/gauss_vent.ogg', 50, 1)
+
+/obj/item/gun/energy/laser/railgun/gauss/proc/handleoverheat()
+	src.visible_message(SPAN_DANGER("[src] overheats, its exterior becoming blisteringly hot as a temperature alarm beeps!"))
+	var/mob/living/L = loc
+	if(istype(L))
+		to_chat(L, SPAN_DANGER("[src] is going to explode!"))
+		if(L.hand == L.l_hand) // Are we using the left arm?
+			L.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
+		else // If not then it must be the right arm.
+			L.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
+
