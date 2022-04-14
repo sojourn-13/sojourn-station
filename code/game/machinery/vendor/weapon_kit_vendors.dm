@@ -187,7 +187,7 @@
 	desc = "A vendor that can dispense specialized equipment kits for Marshal Officers."
 	icon_state = "trashvend"
 	products = list(
-		/obj/item/storage/box/m_kit/thompson = 5,
+		/obj/item/storage/box/m_kit/ppv = 5,
 		/obj/item/storage/box/m_kit/breacher = 5,
 		/obj/item/storage/box/m_kit/state_auto = 5,
 		/obj/item/storage/box/m_kit/bulldog = 5,
@@ -204,7 +204,7 @@
 		/obj/item/storage/box/m_kit/riot = 5
 		)
 	prices = list( // 500$ for default marshal stuff, 750 for the rest
-		/obj/item/storage/box/m_kit/thompson = 750,
+		/obj/item/storage/box/m_kit/ppv = 1000,
 		/obj/item/storage/box/m_kit/breacher = 750,
 		/obj/item/storage/box/m_kit/state_auto = 750,
 		/obj/item/storage/box/m_kit/bulldog = 750,
@@ -243,7 +243,7 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
-					"Thompson Kit" = /obj/item/storage/box/m_kit/thompson,
+					"PPV Kit" = /obj/item/storage/box/m_kit/ppv,
 					"Breacher-hammer Kit" = /obj/item/storage/box/m_kit/breacher,
 					"State Auto-Shotgun Kit" = /obj/item/storage/box/m_kit/state_auto,
 					"Bulldog Kit" = /obj/item/storage/box/m_kit/bulldog,
@@ -258,7 +258,7 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemSpecPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
-					"Thompson Kit" = /obj/item/storage/box/m_kit/thompson,
+					"PPV Kit" = /obj/item/storage/box/m_kit/ppv,
 					"State Auto-Shotgun Kit" = /obj/item/storage/box/m_kit/state_auto,
 					"Bulldog Kit" = /obj/item/storage/box/m_kit/bulldog,
 					"Gear Lasgun Kit" = /obj/item/storage/box/m_kit/gear_lasgun,
@@ -274,12 +274,12 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
-					"Wirbelwind Kit" = /obj/item/storage/box/m_kit/wirbelwind,
 					"Counselor Kit" = /obj/item/storage/box/m_kit/taser,
 					"Bronco Kit" = /obj/item/storage/box/m_kit/bronco,
 					"Makarov Kit" = /obj/item/storage/box/m_kit/makarov,
 					"Ladon Kit" = /obj/item/storage/box/m_kit/ladon,
-					"Glock Kit" = /obj/item/storage/box/m_kit/glock)
+					"Sky Kit" = /obj/item/storage/box/m_kit/glock,
+					"Wirbelwind Kit" = /obj/item/storage/box/m_kit/wirbelwind)
 	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
