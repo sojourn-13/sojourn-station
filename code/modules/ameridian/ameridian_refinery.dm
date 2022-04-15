@@ -2,22 +2,29 @@
 /obj/machinery/ameridian_refinery
 	name = "ameridian refinery"
 	desc = "Refine raw ameridian crystals into liquid ameridian for further processing."
-	icon = 'icons/obj/machines/grinder.dmi'
-	icon_state = "ameridian_processor"
+	icon = 'icons/obj/machines/ameridian_refinery.dmi'
+	icon_state = "refinery_base"
 	density = TRUE
 	anchored = TRUE
-	layer = BELOW_OBJ_LAYER
+	layer = ABOVE_ALL_MOB_LAYER
 	use_power = IDLE_POWER_USE
 	anchor_type = /obj/structure/reagent_dispensers/bidon
 	anchor_direction = WEST
 	circuit = /obj/item/circuitboard/ameridian_refinery
+	frame_type = FRAME_VERTICAL
 	var/obj/structure/reagent_dispensers/bidon/Container
 	var/crystal_worth = 10 // How much liquid ameridian is each solid crystal worth.
 
 /obj/machinery/ameridian_refinery/New()
 	..()
 	create_reagents(6000)
+	update_icon()
 
+/obj/machinery/ameridian_refinery/update_icon()
+	cut_overlays()
+	overlays += "liquid_overlay"
+	overlays += "refinery_top"
+	overlays += "glass_overlay"
 
 /obj/machinery/ameridian_refinery/attackby(obj/item/I, mob/user)
 
