@@ -29,7 +29,6 @@
 		/obj/item/stack/material/gold = "gold",
 		/obj/item/stack/material/silver = "silver",
 		/obj/item/stack/material/mhydrogen = "hydrogen",
-		/obj/item/stack/material/ameridian = MATERIAL_AMERIDIAN,
 	)
 
 /obj/machinery/reagentgrinder/RefreshParts()
