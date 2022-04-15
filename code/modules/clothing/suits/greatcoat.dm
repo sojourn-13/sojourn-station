@@ -89,7 +89,7 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-/obj/item/clothing/suit/storage/greatcoat/ihc/bmc/toggle_style()
+/obj/item/clothing/suit/storage/greatcoat/ihc/bmc/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
