@@ -114,18 +114,17 @@
 		return
 
 	if(href_list["material"])
-		spawn()
-			var/list/L = list(path=text2path(href_list["material"]), cost=text2num(href_list["cost"]), amount=text2num(href_list["amount"]))
-			var/L_path = L["path"]
+		var/list/L = list(path=text2path(href_list["material"]), cost=text2num(href_list["cost"]), amount=text2num(href_list["amount"]))
+		var/L_path = L["path"]
 
-			if(use_bidon_ameridian(L["cost"] * L["amount"])) // Check if we have enough liquid ameridian
-				if(ispath(L["path"], /obj/item/stack/material)) // Material sheets are handled differently
-					new L_path(get_turf(src), L["amount"])
-				else
-					for(var/i = 0, L["amount"] > i, i++) // Create 1 item at a time
-						new L_path(get_turf(src))
+		if(use_bidon_ameridian(L["cost"] * L["amount"])) // Check if we have enough liquid ameridian
+			if(ispath(L["path"], /obj/item/stack/material)) // Material sheets are handled differently
+				new L_path(get_turf(src), L["amount"])
 			else
-				ping("Not enough liquid ameridian.")
+				for(var/i = 0, L["amount"] > i, i++) // Create 1 item at a time
+					new L_path(get_turf(src))
+		else
+			ping("Not enough liquid ameridian.")
 
 	updateDialog()
 	return
