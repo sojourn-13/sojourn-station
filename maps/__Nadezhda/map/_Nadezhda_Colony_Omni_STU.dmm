@@ -70510,10 +70510,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/engineering/engine_room)
-"pfg" = (
-/obj/machinery/gibber,
-/turf/simulated/floor/tiled/white/brown_platform,
-/area/nadezhda/medical/chemistry)
 "pfo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -70902,7 +70898,6 @@
 /area/nadezhda/hallway/main/stairwell)
 "pjw" = (
 /obj/machinery/microwave/burnbarrel,
-/obj/item/reagent_containers/food/snacks/wishsoup,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "pjA" = (
@@ -111458,7 +111453,6 @@
 	dir = 1;
 	pixel_y = -26
 	},
-/obj/item/toy/plushie/fumo/arcueid,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/courtroom)
 "xLY" = (
@@ -138904,7 +138898,7 @@ dxA
 fnY
 gzW
 iRL
-pfg
+veO
 xFw
 qZl
 fYL
