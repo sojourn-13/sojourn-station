@@ -2240,7 +2240,16 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/side/f2section1)
 "axL" = (
-/obj/structure/table/steel,
+/obj/item/stock_parts/manipulator,
+/obj/item/circuitboard/vending,
+/obj/item/tool/screwdriver,
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stack/cable_coil/white,
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/pros/prep)
 "axS" = (
@@ -5201,10 +5210,6 @@
 /area/nadezhda/rnd/lab)
 "bgY" = (
 /obj/structure/table/woodentable,
-/obj/item/clothing/accessory/dogtags{
-	desc = "Never forget their name. Never.";
-	oldified = 1
-	},
 /obj/item/stamp/hos2,
 /obj/item/storage/secure/safe{
 	pixel_x = -22
@@ -9429,9 +9434,6 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "ccU" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -11972,11 +11974,19 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "cFG" = (
-/obj/structure/table/standard,
-/obj/item/storage/fancy/vials,
+/obj/item/stock_parts/manipulator,
+/obj/item/circuitboard/vending,
+/obj/item/tool/screwdriver,
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/matter_bin,
 /obj/machinery/alarm{
 	pixel_y = 26
 	},
+/obj/item/stack/cable_coil/blue,
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "cFL" = (
@@ -16107,9 +16117,6 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/crew_quarters/fitness)
 "dAM" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -21669,7 +21676,6 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "eMJ" = (
-/obj/structure/closet/bombcloset/security,
 /obj/machinery/blackshield_teleporter,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory_blackshield)
@@ -22630,6 +22636,10 @@
 /obj/item/ammo_magazine/ammobox/rifle_75,
 /obj/item/ammo_magazine/rifle_75/highvelocity,
 /obj/item/ammo_magazine/rifle_75/highvelocity,
+/obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo{
+	pixel_x = -6;
+	pixel_y = 1
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "eWp" = (
@@ -32344,7 +32354,6 @@
 /area/nadezhda/crew_quarters/cafeteria)
 "gWp" = (
 /obj/structure/table/steel,
-/obj/item/clothing/accessory/dogtags,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "gWu" = (
@@ -52543,8 +52552,6 @@
 /obj/item/clothing/head/helmet,
 /obj/item/clothing/head/helmet,
 /obj/item/clothing/head/helmet,
-/obj/item/storage/belt/webbing/ih,
-/obj/item/storage/belt/webbing/ih,
 /obj/item/clothing/suit/armor/vest/ironhammer,
 /obj/item/clothing/suit/armor/vest/ironhammer,
 /obj/item/clothing/suit/armor/vest/ironhammer,
@@ -66985,6 +66992,15 @@
 /area/nadezhda/outside/pond)
 "oqO" = (
 /obj/structure/table/reinforced,
+/obj/item/stock_parts/manipulator,
+/obj/item/circuitboard/vending,
+/obj/item/tool/screwdriver,
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stack/cable_coil/pink,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/research)
 "oqV" = (
@@ -73033,6 +73049,14 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "pHy" = (
+/obj/item/stock_parts/manipulator,
+/obj/item/circuitboard/vending,
+/obj/item/tool/screwdriver,
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/matter_bin,
 /obj/machinery/button/remote/blast_door{
 	id = "shop_armory_blast_door";
 	name = "Shop Front Door";
@@ -73042,6 +73066,8 @@
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
 	},
+/obj/structure/table/steel_reinforced,
+/obj/item/stack/cable_coil/blue,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
 "pHC" = (
@@ -76363,6 +76389,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"qrB" = (
+/obj/structure/table/reinforced,
+/obj/item/stock_parts/manipulator,
+/obj/item/circuitboard/vending,
+/obj/item/tool/screwdriver,
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stack/cable_coil/yellow,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/absolutism/storage)
 "qrF" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1;
@@ -78576,6 +78615,16 @@
 /obj/machinery/camera/network/engineering{
 	dir = 1
 	},
+/obj/item/stock_parts/manipulator,
+/obj/item/circuitboard/vending,
+/obj/item/tool/screwdriver,
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/stock_parts/console_screen,
+/obj/item/stack/cable_coil/orange,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/matter_bin,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/engineering/foyer)
 "qQg" = (
@@ -113041,10 +113090,6 @@
 /obj/item/computer_hardware/hard_drive/portable/design/security{
 	pixel_x = 7;
 	pixel_y = 0
-	},
-/obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo{
-	pixel_x = -6;
-	pixel_y = 1
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
@@ -223081,7 +223126,7 @@ uUU
 pes
 mZy
 pes
-jXd
+qrB
 uVK
 uVK
 tzn
