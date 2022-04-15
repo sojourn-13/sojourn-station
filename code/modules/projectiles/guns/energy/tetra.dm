@@ -35,7 +35,7 @@
 
 /obj/item/gun/energy/tetra/dropped(mob/user)
 	..()
-	if(prob(5))
+	if(prob(5) && cell)
 		visible_message(SPAN_DANGER("The cell falls out of [src]!"))
 		playsound(src.loc, 'sound/weapons/guns/interact/pistol_magout.ogg', 75, 1)
 		cell.forceMove(get_turf(src))
@@ -50,14 +50,12 @@
 	cut_overlays()
 	if(cell)
 		item_state = "[initial(item_state)]_loaded"
-		var/ratio = 0
-		add_overlay(image(icon, "[cell.icon_state]"))
+		add_overlay("[cell.icon_state]")
 		if(cell.charge >= charge_cost)
 			ratio = cell.charge / cell.maxcharge
 			ratio = min(max(round(ratio, 0.25) * 100, 25), 100)
-			world.log << ratio
-		world.log << "[cell.icon_state]_ratio"
-		add_overlay(image(icon, "[cell.icon_state]_ratio"))
+
+		add_overlay("[cell.icon_state]_[ratio]")
 
 /obj/item/gun/energy/tetra/CtrlShiftClick(mob/user)
 	if(currently_firing) // CHEATERS!
