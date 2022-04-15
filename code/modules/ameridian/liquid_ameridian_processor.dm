@@ -1,0 +1,153 @@
+// This machine turn ameridian crystals into liquid ameridian and put it in a bidon connected to it.
+/obj/machinery/liquid_ameridian_processor
+	name = "liquid ameridian processor"
+	desc = "Convert Liquid Ameridian into multiple materials."
+	icon = 'icons/obj/machines/grinder.dmi'
+	icon_state = "ameridian_processor"
+	density = TRUE
+	anchored = TRUE
+	layer = BELOW_OBJ_LAYER
+	use_power = IDLE_POWER_USE
+	anchor_type = /obj/structure/reagent_dispensers/bidon
+	anchor_direction = WEST
+	circuit = /obj/item/circuitboard/liquid_ameridian_processor
+	var/obj/structure/reagent_dispensers/bidon/Container
+	var/outputs = list(
+						list(name="Steel", cost=100, path=/obj/item/stack/material/steel),
+						list(name="Plastic", cost=100, path=/obj/item/stack/material/plastic),
+						list(name="Glass", cost=100, path=/obj/item/stack/material/glass),
+						list(name="Plasteel", cost=350, path=/obj/item/stack/material/plasteel),
+						list(name="Silver", cost=200, path=/obj/item/stack/material/silver),
+						list(name="Gold", cost=200, path=/obj/item/stack/material/gold),
+						list(name="Platinum", cost=250, path=/obj/item/stack/material/platinum),
+						list(name="Uranium", cost=250, path=/obj/item/stack/material/uranium),
+						list(name="Plasma", cost=250, path=/obj/item/stack/material/plasma),
+						list(name="Osmium", cost=400, path=/obj/item/stack/material/osmium),
+						list(name="Diamonds", cost=400, path=/obj/item/stack/material/diamond),
+						list(name="Metallic Hydrogen", cost=400, path=/obj/item/stack/material/mhydrogen),
+						list(name="Tritium", cost=400, path=/obj/item/stack/material/tritium)
+						)
+
+/obj/machinery/liquid_ameridian_processor/New()
+	..()
+	create_reagents(6000)
+
+
+/obj/machinery/liquid_ameridian_processor/attackby(obj/item/I, mob/user)
+
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
+
+	..()
+
+	updateDialog()
+
+/obj/machinery/liquid_ameridian_processor/RefreshParts()
+
+
+/obj/machinery/liquid_ameridian_processor/attack_hand(mob/user as mob)
+	interact(user)
+	return
+
+// Return the amount of ameridian the bidon has.
+/obj/machinery/liquid_ameridian_processor/proc/get_bidon_ameridian()
+	return Container?.reagents.get_reagent_amount(MATERIAL_AMERIDIAN)
+
+// Check if we have at least [amount] amount of liquid ameridian. It is different from get_bidon_ameridian() in that it only return TRUE or FALSE, and not the quantity of ameridian we have
+/obj/machinery/liquid_ameridian_processor/proc/check_bidon_ameridian(var/amount)
+	return Container?.reagents.has_reagent(MATERIAL_AMERIDIAN, amount)
+
+// Use [amount] of liquid ameridian
+/obj/machinery/liquid_ameridian_processor/proc/use_bidon_ameridian(var/amount)
+	return check_bidon_ameridian(amount) ? Container?.reagents.remove_reagent(MATERIAL_AMERIDIAN, amount) : 0
+
+// This proc search for nearby anchored BIDONS
+/obj/machinery/liquid_ameridian_processor/proc/search_bidons()
+	for(var/obj/structure/reagent_dispensers/bidon/B in range(1, src))
+		if(B.anchored_machine == src)
+			Container = B
+			return
+	Container = null // This should only happen if there was no anchored BIDONs nearby
+
+/obj/machinery/liquid_ameridian_processor/interact(mob/user as mob)
+	if((get_dist(src, user) > 1) || (stat & (BROKEN|NOPOWER)))
+		if(!isAI(user))
+			user.unset_machine()
+			user << browse(null, "window=AMcontrol")
+			return
+
+	search_bidons()
+
+	user.set_machine(src)
+
+	var/dat = ""
+	dat += "<head><title>Liquid Ameridian Processor</title></head>"
+	dat += "Liquid Ameridian Processor<BR>"
+	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
+	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
+	if(Container)
+		dat += "Current quantity of liquid ameridian : [get_bidon_ameridian()].<BR><BR>"
+		dat += mats_list_html()
+	else
+		dat += "No bidon detected. Please connect a bidon."
+
+	user << browse(dat, "window=LiquidAmeridianProcessor")
+	onclose(user, "LiquidAmeridianProcessor")
+	return
+
+/obj/machinery/liquid_ameridian_processor/Topic(href, href_list)
+	//Ignore input if we are broken or guy is not touching us, AI can control from a ways away
+	if(stat & (BROKEN|NOPOWER) || (get_dist(src, usr) > 1 && !isAI(usr)))
+		usr.unset_machine()
+		usr << browse(null, "window=LiquidAmeridianProcessor")
+		return
+
+	..()
+
+	if(href_list["close"])
+		usr << browse(null, "window=LiquidAmeridianProcessor")
+		usr.unset_machine()
+		return
+
+	if(href_list["material"])
+		spawn()
+			var/list/L = params2list(href_list["material"])
+			var/L_path = L["path"]
+			var/amount = text2num(href_list["amount"])
+
+			if(use_bidon_ameridian(L["cost"] * amount)) // Check if we have enough liquid ameridian
+				if(ispath(L_path, /obj/item/stack/material)) // Material sheets are handled differently
+					new L_path(get_turf(src), amount)
+				else
+					for(var/i = 0, amount > i, i++) // Create 1 item at a time
+						new L_path(get_turf(src))
+			else
+				ping("Not enough liquid ameridian.")
+
+	updateDialog()
+	return
+
+
+
+// Output list format : list(name=[text], cost=[num], path=[path])
+// name is the visible name of what we're trying to make.
+// cost is how much liquid ameridian is used to make 1 object.
+// path is the actual path of the object
+
+/obj/machinery/liquid_ameridian_processor/proc/mats_list_html()
+	var/dat = ""
+	dat += "List of materials : <BR>"
+	for(var/list/L in outputs)
+		dat += "[L["name"]] : [L["cost"]] Liquid Ameridian.<BR>"
+		dat += "- Print : "
+		dat += "[check_bidon_ameridian(L["cost"]*1) ? "<A href='?src=\ref[src];material=[L];amount=1'>x1</A>" : "Not enough liquid ameridian"]"
+		dat += "[check_bidon_ameridian(L["cost"]*5) ? ", <A href='?src=\ref[src];material=[L];amount=5'>x5</A>" : " "]"
+		dat += "[check_bidon_ameridian(L["cost"]*10) ? ", <A href='?src=\ref[src];material=[L];amount=10'>x10</A>" : " "]"
+		dat += "[check_bidon_ameridian(L["cost"]*20) ? ", <A href='?src=\ref[src];material=[L];amount=20'>x20</A>" : " "]"
+		dat += "[check_bidon_ameridian(L["cost"]*60) ? ", <A href='?src=\ref[src];material=[L];amount=60'>x60</A>" : " "]"
+		dat += "[check_bidon_ameridian(L["cost"]*120) ? ", <A href='?src=\ref[src];material=[L];amount=120'>x120</A>" : " "]"
+		dat += ".<BR><BR>"
+	return dat
