@@ -1516,6 +1516,7 @@
 #include "code\modules\ameridian\_defines.dm"
 #include "code\modules\ameridian\ameridian_crystal.dm"
 #include "code\modules\ameridian\ameridian_processor.dm"
+#include "code\modules\ameridian\ameridian_refinery.dm"
 #include "code\modules\ameridian\ameridian_spire.dm"
 #include "code\modules\ameridian\ameridian_tree.dm"
 #include "code\modules\ameridian\sonic_fence.dm"
