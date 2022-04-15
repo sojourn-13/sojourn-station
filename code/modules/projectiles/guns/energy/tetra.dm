@@ -3,8 +3,8 @@
 	desc = "A overengineered, complex laser SMG. Mounts both a visible-light laser emitter and a near-infrared laser emitter, allowing it to fire both regular, moderate-power beams and quieter, lower-power invisible beams.\
 	Due to the increased internal space used, the cell has to be mounted on the exterior of the weapon which renders it more susceptible to knocks. Has a basic optic fitted."
 	icon = 'icons/obj/guns/energy/tetra.dmi'
-	icon_state = "lasersmg"
-	item_state = "lasersmg"
+	icon_state = "tetra"
+	item_state = "tetra"
 	w_class = ITEM_SIZE_BULKY
 	fire_sound = 'sound/weapons/Laser2.ogg'
 	fire_sound_silenced = 'sound/weapons/quietlaser2.ogg'
@@ -52,10 +52,12 @@
 		item_state = "[initial(item_state)]_loaded"
 		var/ratio = 0
 		add_overlay(image(icon, "[cell.icon_state]"))
-		if(cell && cell.charge >= charge_cost)
+		if(cell.charge >= charge_cost)
 			ratio = cell.charge / cell.maxcharge
 			ratio = min(max(round(ratio, 0.25) * 100, 25), 100)
-			add_overlay(image(icon, "[cell.icon_state]_ratio"))
+			world.log << ratio
+		world.log << "[cell.icon_state]_ratio"
+		add_overlay(image(icon, "[cell.icon_state]_ratio"))
 
 /obj/item/gun/energy/tetra/CtrlShiftClick(mob/user)
 	if(currently_firing) // CHEATERS!
