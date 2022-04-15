@@ -1,8 +1,8 @@
 /obj/item/gun/energy/tetra
 	name = "\"Tetra\" laser SMG"
-	desc = "A overengineered, complex laser SMG. Mounts both a visible-light laser emitter and a far-infrared laser emitter, allowing it to fire both regular, moderate-power beams and quieter, lower-power invisible beams.\
+	desc = "A overengineered, complex laser SMG. Mounts both a visible-light laser emitter and a near-infrared laser emitter, allowing it to fire both regular, moderate-power beams and quieter, lower-power invisible beams.\
 	Due to the increased internal space used, the cell has to be mounted on the exterior of the weapon which renders it more susceptible to knocks. Has a basic optic fitted."
-	icon = 'icons/obj/guns/energy/bison.dmi'
+	icon = 'icons/obj/guns/energy/tetra.dmi'
 	icon_state = "lasersmg"
 	item_state = "lasersmg"
 	w_class = ITEM_SIZE_BULKY
@@ -32,3 +32,35 @@
 		list(mode_name = "IR slow auto",    mode_desc = "Invisible, quieter IR beams at a more controllable automatic firerate",   mode_type = /datum/firemode/automatic, fire_delay = 3.33  , icon="burst", projectile_type = /obj/item/projectile/beam/infrared, silenced = TRUE),
 		list(mode_name = "bake",    mode_desc = "Bake targets in infrared radiation",   mode_type = /datum/firemode/automatic, fire_delay = 1.5, icon="auto", projectile_type = /obj/item/projectile/beam/infrared, silenced = TRUE)
 		)
+
+/obj/item/gun/energy/tetra/dropped(mob/user)
+	..()
+	if(prob(5))
+		visible_message(SPAN_DANGER("The cell falls out of [src]!"))
+		playsound(src.loc, 'sound/weapons/guns/interact/pistol_magout.ogg', 75, 1)
+		cell.forceMove(get_turf(src))
+		cell = null
+
+/obj/item/gun/energy/tetra/examine(mob/user)
+	..()
+	to_chat(user, SPAN_NOTICE("Control-Shift click to switch to the previous firemode."))
+
+/obj/item/gun/energy/tetra/update_icon()
+	..()
+	cut_overlays()
+	if(cell)
+		item_state = "[initial(item_state)]_loaded"
+		var/ratio = 0
+		add_overlay(image(icon, "[cell.icon_state]"))
+		if(cell && cell.charge >= charge_cost)
+			ratio = cell.charge / cell.maxcharge
+			ratio = min(max(round(ratio, 0.25) * 100, 25), 100)
+			add_overlay(image(icon, "[cell.icon_state]_ratio"))
+
+/obj/item/gun/energy/tetra/CtrlShiftClick(mob/user)
+	if(currently_firing) // CHEATERS!
+		return
+	var/datum/firemode/new_mode = switch_firemodes_reverse()
+	if(new_mode)
+		playsound(src.loc, 'sound/weapons/guns/interact/selector.ogg', 100, 1)
+		to_chat(user, SPAN_NOTICE("\The [src] is now set to [new_mode.name]."))

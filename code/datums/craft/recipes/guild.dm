@@ -310,7 +310,7 @@
 		list(QUALITY_WELDING, 40, "time" = 40),
 		list(CRAFT_MATERIAL, 12, MATERIAL_SILVER, "time" = 20),
 		list(/obj/item/stack/cable_coil, 10, "time" = 20),
-		list(CRAFT_MATERIAL, 12, MATERIAL_GOLD, "time" = 20),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD, "time" = 20),
 		list(QUALITY_WIRE_CUTTING, 40, 30),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
