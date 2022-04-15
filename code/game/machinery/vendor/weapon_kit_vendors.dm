@@ -107,9 +107,7 @@
 					"Buckler SMG Kit" = /obj/item/storage/box/bs_kit/buckler,
 					"Triage SMG Kit" = /obj/item/storage/box/bs_kit/triage,
 					"Roe light boltgun Kit" = /obj/item/storage/box/bs_kit/roe,
-					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly,
-					"Rushing Bull Kit" = /obj/item/storage/box/bs_kit/rushing_bull,
-					"Watchtower Kit" = /obj/item/storage/box/bs_kit/watchtower)
+					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
