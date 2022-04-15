@@ -36,6 +36,11 @@
 	path = /obj/item/clothing/suit/greatcoat/general
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/suit/overcoat
+	display_name = "overcoat selection"
+	path = /obj/item/clothing/suit/storage/greatcoat/overcoatblack
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/suit/hazard_vest
 	display_name = "hazard vest"
 	path = /obj/item/clothing/suit/storage/hazardvest

@@ -5078,7 +5078,7 @@
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "bic" = (
 /obj/structure/coatrack,
-/obj/item/clothing/suit/greatcoat/general/overcoatblack/brown,
+/obj/item/clothing/suit/storage/greatcoat/overcoatblack/brown,
 /obj/item/clothing/head/fedora/brown,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
@@ -50196,8 +50196,6 @@
 /obj/item/clothing/head/helmet,
 /obj/item/clothing/head/helmet,
 /obj/item/clothing/head/helmet,
-/obj/item/storage/belt/webbing/ih,
-/obj/item/storage/belt/webbing/ih,
 /obj/item/clothing/suit/armor/vest/ironhammer,
 /obj/item/clothing/suit/armor/vest/ironhammer,
 /obj/item/clothing/suit/armor/vest/ironhammer,

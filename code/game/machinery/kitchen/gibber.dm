@@ -183,9 +183,11 @@
 		return
 	if(!src.occupant)
 		visible_message(SPAN_DANGER("You hear a loud metallic grinding sound."))
+		playsound(loc, 'sound/machines/blender.ogg', 50, 1)
 		return
 	use_power(1000)
 	visible_message(SPAN_DANGER("You hear a loud squelchy grinding sound."))
+	playsound(loc, 'sound/machines/juicer.ogg', 50, 1)
 	src.operating = 1
 	
 

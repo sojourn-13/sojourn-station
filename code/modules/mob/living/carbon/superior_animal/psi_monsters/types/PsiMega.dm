@@ -1,7 +1,7 @@
 /mob/living/carbon/superior_animal/psi_monster/dreaming_king
 	name = "Dreaming King"
-	desc = "The Dreaming King, named by the first psion who saw it through a drug induced haze. Thought to first be merely the creation of a fever dream until sojourns into deep maintenance revealed him \
-	to be a nightmare come to life. Only one may live at any one time, the king of the other world deep maintenance and woe to anyone that would try to take his crown."
+	desc = "The Dreaming King, named by the first psion who saw it through a drug induced haze. Thought first to be merely the creation of a fever dream until sojourns into deep maintenance revealed him \
+	to be a nightmare come to life. Only one may live at any one time, the king of the other world roams deep maintenance and woe to anyone that would try to take his crown."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "crab3"
 	icon_living = "crab3"

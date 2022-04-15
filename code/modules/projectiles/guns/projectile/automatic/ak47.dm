@@ -108,8 +108,9 @@
 	icon_state = "AK"
 	item_state = "AK"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
-	price_tag = 1000
+	price_tag = 1200
 	damage_multiplier = 0.9 //7.5 cal
+	penetration_multiplier = 1.1
 	recoil_buildup = 2
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	saw_off = TRUE
@@ -126,7 +127,7 @@
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
-	price_tag = 650
+	price_tag = 850
 	recoil_buildup = 4
 	one_hand_penalty = 20
 	damage_multiplier = 0.8

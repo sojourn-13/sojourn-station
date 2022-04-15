@@ -643,7 +643,7 @@
 	materials = list(MATERIAL_STEEL = 10)
 
 /datum/design/autolathe/ammo/rifle_drum_empty
-	name = "empty 7.5mm Rifle drum magazine "
+	name = "7.5mm Rifle drum magazine (empty)"
 	build_path = /obj/item/ammo_magazine/rifle_75_drum/empty
 	materials = list(MATERIAL_STEEL = 6)
 

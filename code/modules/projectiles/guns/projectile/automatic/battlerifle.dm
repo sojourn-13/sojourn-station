@@ -64,6 +64,7 @@
 	icon_state = "omnirifle"
 	item_state = "omnirifle"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
+	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	price_tag = 1250
 	zoom_factor = 0.3
 	recoil_buildup = 2.5
@@ -133,6 +134,7 @@
 	item_state = "boar"
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
+	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	price_tag = 1250
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	damage_multiplier = 0.8
@@ -154,6 +156,7 @@
 	icon_state = "warthog"
 	item_state = "warthog"
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
+	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	price_tag = 1500
 	damage_multiplier = 0.8
 	recoil_buildup = 3.25

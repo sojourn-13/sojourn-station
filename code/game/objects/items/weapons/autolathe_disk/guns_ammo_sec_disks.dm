@@ -73,6 +73,7 @@
 		/datum/design/autolathe/gun/sunrise =3,
 		//Misc
 		/datum/design/autolathe/tool/ironhammer,
+		/datum/design/autolathe/sec/stunbaton/maul,
 		/datum/design/autolathe/sec/riot,
 		/datum/design/autolathe/sec/buckler = 0,
 		/datum/design/autolathe/sec/bastion = 0,
@@ -265,9 +266,9 @@
 		/datum/design/autolathe/ammo/box_antim = 5,
 		/datum/design/autolathe/container/ammocan_serb = 0,
 		/datum/design/autolathe/ammo/lrifle_drum = 2,
+		/datum/design/autolathe/ammo/lrifle_drum_empty = 1,
 		/datum/design/autolathe/ammo/rifle_drum = 2,
 		/datum/design/autolathe/ammo/rifle_drum_empty = 1,
-		/datum/design/autolathe/ammo/lrifle_drum_empty = 1,
 		)
 
 // G U N S (minus excelsior and research)
