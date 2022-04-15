@@ -21,7 +21,7 @@
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/clothing/suit/armor/flackvest/commander(src)
 	new /obj/item/clothing/suit/armor/commander/militia(src)
-	new /obj/item/clothing/suit/greatcoat/ihc/bmc(src)
+	new /obj/item/clothing/suit/storage/greatcoat/ihc/bmc(src)
 	new /obj/item/clothing/accessory/halfcape(src)
 	new /obj/item/clothing/under/rank/commander(src)
 	new /obj/item/storage/belt/webbing/black(src)

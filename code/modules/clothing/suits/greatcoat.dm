@@ -76,7 +76,7 @@
 		usr.update_action_buttons()
 		return 1
 
-/obj/item/clothing/suit/greatcoat/ihc/bmc
+/obj/item/clothing/suit/storage/greatcoat/ihc/bmc
 	name = "blackshield commander's greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style."
 	icon_state = "mc_coat"
