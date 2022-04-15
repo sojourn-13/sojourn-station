@@ -1010,7 +1010,7 @@
 	icon_state = "overcoat_bm"
 	item_state = "overcoat_bm"
 
-obj/item/clothing/suit/armor/commander/marshal_coat
+/obj/item/clothing/suit/storage/armor/commander/marshal_coat
 	name = "marshal officers greatcoat"
 	desc = "Marshal Officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
 	armor_list = list(melee = 35, bullet = 30, energy = 20, bomb = 10, bio = 0, rad = 0)

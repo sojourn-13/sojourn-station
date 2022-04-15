@@ -1,4 +1,4 @@
-/obj/item/clothing/suit/greatcoat/ihc
+/obj/item/clothing/suit/storage/greatcoat/ihc
 	name = "warrant officer's greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style."
 	icon_state = "ihc_coat"
@@ -12,7 +12,7 @@
 	siemens_coefficient = 0.7
 	stiffness = LIGHT_STIFFNESS
 
-/obj/item/clothing/suit/greatcoat/ihc/verb/toggle_style()
+/obj/item/clothing/suit/storage/greatcoat/ihc/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -89,7 +89,7 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-/obj/item/clothing/suit/storage/greatcoat/ihc/bmc/verb/toggle_style()
+/obj/item/clothing/suit/storage/greatcoat/ihc/bmc/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr

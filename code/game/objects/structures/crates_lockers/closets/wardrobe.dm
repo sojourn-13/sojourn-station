@@ -211,9 +211,9 @@
 	new /obj/item/clothing/head/rank/ironhammer(src)
 	new /obj/item/clothing/head/rank/ironhammer(src)
 	new /obj/item/clothing/head/rank/ironhammer(src)
-	new /obj/item/clothing/suit/armor/commander/marshal_coat(src)
-	new /obj/item/clothing/suit/armor/commander/marshal_coat(src)
-	new /obj/item/clothing/suit/armor/commander/marshal_coat(src)
+	new /obj/item/clothing/suit/storage/armor/commander/marshal_coat(src)
+	new /obj/item/clothing/suit/storage/armor/commander/marshal_coat(src)
+	new /obj/item/clothing/suit/storage/armor/commander/marshal_coat(src)
 
 /obj/structure/closet/wardrobe/militia
 	name = "blackshield wardrobe"
