@@ -13,6 +13,7 @@
 	light_range = 2
 	light_color = COLOR_LIGHTING_GREEN_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
+	status_flags = CANPUSH // Cannot be stun, weakened or paralyzed
 
 	armor = list(melee = 30, bullet = 20, energy = 35, bomb = 30, bio = 100, rad = 100) //We want to be gunned down, not lasered
 

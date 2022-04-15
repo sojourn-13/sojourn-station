@@ -50,6 +50,7 @@
 	icon_state = "refined"
 	max_amount = 120
 	amount = 1
+	var/matter_type = MATERIAL_RSCRAP
 
 /obj/item/stack/sheet/refined_scrap/random
 	rand_min = 5

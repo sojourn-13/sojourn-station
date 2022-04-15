@@ -73,6 +73,7 @@
 		/datum/design/autolathe/gun/sunrise =3,
 		//Misc
 		/datum/design/autolathe/tool/ironhammer,
+		/datum/design/autolathe/sec/stunbaton/maul,
 		/datum/design/autolathe/sec/riot,
 		/datum/design/autolathe/sec/buckler = 0,
 		/datum/design/autolathe/sec/bastion = 0,
@@ -264,6 +265,10 @@
 		/datum/design/autolathe/ammo/box_10x24 = 5,
 		/datum/design/autolathe/ammo/box_antim = 5,
 		/datum/design/autolathe/container/ammocan_serb = 0,
+		/datum/design/autolathe/ammo/lrifle_drum = 2,
+		/datum/design/autolathe/ammo/lrifle_drum_empty = 1,
+		/datum/design/autolathe/ammo/rifle_drum = 2,
+		/datum/design/autolathe/ammo/rifle_drum_empty = 1,
 		)
 
 // G U N S (minus excelsior and research)
@@ -448,7 +453,7 @@
 
 // .40 SMGS
 /obj/item/computer_hardware/hard_drive/portable/design/guns/vector
-	disk_name = "SA - .40 Trajectory SMG"
+	disk_name = "SA - .40 Vector SMG"
 	icon_state = "sa"
 
 	license = 16
@@ -463,8 +468,8 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/thompson
-	disk_name = "Unbranded - .40 Thompson SMG"
-	icon_state = "blackshield"
+	disk_name = "SA - .40 Thompson SMG"
+	icon_state = "sa"
 
 	license = 12
 	designs = list(

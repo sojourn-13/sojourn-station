@@ -5,10 +5,10 @@
 	icon = 'icons/obj/guns/energy/sonic_emitter.dmi'
 	icon_state = "sonic_emitter"
 	item_state = "sonic_emitter"
-	item_charge_meter = FALSE
+	charge_meter = FALSE
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5)
 	price_tag = 500
-	charge_cost = 100
+	charge_cost = 1000
 	fire_sound = 'sound/effects/basscannon.ogg'
 	suitable_cell = /obj/item/cell/large
 	cell_type = /obj/item/cell/large
@@ -16,3 +16,8 @@
 	projectile_type = /obj/item/projectile/sonic_bolt
 	fire_delay = 1000
 	max_upgrades = 0
+
+/obj/item/gun/energy/sonic_emitter/preloaded/New()
+	cell = new /obj/item/cell/large/super(src)
+	. = ..()
+	update_icon()

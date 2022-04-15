@@ -242,6 +242,7 @@
 #define SPAN_NOTICE(text)  "<span class='notice'>[text]</span>"
 #define SPAN_WARNING(text) "<span class='warning'>[text]</span>"
 #define SPAN_DANGER(text)  "<span class='danger'>[text]</span>"
+#define SPAN_PSION(text)   "<b><font color='purple'>[text]</b></font>"
 #define span(class, text) ("<span class='[class]'>[text]</span>")
 // the thing below allow using SPANning in datum definition, the above can't.
 #define SPAN(class, X) "<span class='" + ##class + "'>" + ##X + "</span>"

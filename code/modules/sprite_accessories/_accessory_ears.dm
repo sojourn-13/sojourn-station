@@ -200,6 +200,13 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/frills_big
+	name = "Frills, Big"
+	desc = ""
+	icon_state = "frills_big"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/pharoah
 	name = "Hound Ears"
 	desc = ""
@@ -232,6 +239,13 @@
 	name = "Feline Ears"
 	desc = ""
 	icon_state = "kitty"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/kittyalt
+	name = "Alternate Feline Ears"
+	desc = ""
+	icon_state = "cat_alt"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 

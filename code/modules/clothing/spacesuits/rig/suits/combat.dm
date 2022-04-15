@@ -20,7 +20,7 @@
 	offline_vision_restriction = 1
 	stiffness = 0
 	obscuration = 0
-
+	max_upgrades = 1
 	helm_type = /obj/item/clothing/head/helmet/space/rig/combat
 
 
@@ -71,7 +71,7 @@
 	drain = 25
 	offline_slowdown = 3
 	offline_vision_restriction = 1
-
+	max_upgrades = 0 //60 armor no plating
 	chest_type = /obj/item/clothing/suit/space/rig/combat/blackshield
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/combat/blackshield
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/combat/blackshield

@@ -1001,7 +1001,7 @@
 	else if(shock_resist)
 		shock_stage = min(shock_stage, 58)
 
-	if(traumatic_shock >= 80)
+	if(traumatic_shock >= 80 && shock_stage <= 160)
 		shock_stage += 1
 	else if(health < health_threshold_softcrit)
 		shock_stage = max(shock_stage, 61)

@@ -252,6 +252,11 @@
 	required_reagents = list("coffee" = 2, "orangejuice" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/atomicoffee
+	result = "atomicoffee"
+	required_reagents = list("uranium" = 0.1, "espresso" = 3)
+	result_amount = 3
+
 /* Alcohol */
 
 /datum/chemical_reaction/goldschlager

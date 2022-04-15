@@ -7,21 +7,21 @@
 
 /datum/gear/factionlonestar/cloakguild
 	display_name = "cloak, lonestar"
-	path = /obj/item/clothing/suit/hooded/cloak/job/guild
+	path = /obj/item/clothing/accessory/job/cape/guild
 	allowed_roles = list("Chief Executive Officer","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor")
 	slot = slot_wear_suit
 	sort_category = "Faction: Lonestar"
 
 /datum/gear/factionlonestar/cloakguildminer
 	display_name = "cloak, lonestar miner"
-	path = /obj/item/clothing/suit/hooded/cloak/job/mining
+	path = /obj/item/clothing/accessory/job/cape/mining
 	allowed_roles = list("Chief Executive Officer","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor")
 	slot = slot_wear_suit
 	sort_category = "Faction: Lonestar"
 
 /datum/gear/factionlonestar/cloakgm
 	display_name = "cloak, CEO"
-	path = /obj/item/clothing/suit/hooded/cloak/job/gm
+	path = /obj/item/clothing/accessory/job/cape/gm
 	allowed_roles = list("Chief Executive Officer")
 	slot = slot_wear_suit
 	sort_category = "Faction: Lonestar"

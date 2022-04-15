@@ -197,7 +197,7 @@
 			if(L.ckey)
 				if(alert(L, "An alien presence touches your mind, offering you power and insight into the very fabric of reality. Do you accept its offer and become a Psion?",
 					"Become Psion", "No", "Yes") != "Yes")
-					to_chat(owner, "They refuses your gift!")
+					to_chat(owner, "They refused your gift!")
 					return
 				else
 					if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))

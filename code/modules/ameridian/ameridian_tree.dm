@@ -1,13 +1,13 @@
 // Ameridian Tree, an tree-like crystal that spawn 3 runner golems when fell
 /obj/structure/ameridian_crystal/tree
-	name = "ameridian tree"
+	name = "blue ameridian crystal"
 	desc = "A strange crystal formation that seems to grow on its own..."
-	icon_state = "ameridian_tree"
+	icon_state = "ameridian_crystal_blue"
 	anchored = TRUE
-	density = TRUE
+	density = FALSE
 	light_range = 5 // Glow in the dark
-	growth = 1 // Bigger than other crystals
-	max_growth = 1 // Doesn't grow
+	growth = 5 // Bigger than other crystals
+	max_growth = 5 // Doesn't grow
 	growth_prob = 2.5 // Spread crystals faster
 	spread_range = 2
 	rad_damage = 0.75
