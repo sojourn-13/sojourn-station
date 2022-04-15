@@ -21,13 +21,25 @@
 	display_name = "locket"
 	path = /obj/item/clothing/accessory/locket
 
-/datum/gear/accessory/metalnecklace
-	display_name = "metal necklace"
+/datum/gear/accessory/necklace
+	display_name = "necklace selection"
 	path = /obj/item/clothing/accessory/necklace
+	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/accessory/fractalrosary
-	display_name = "fractal rosary"
-	path = /obj/item/clothing/accessory/fractalrosary
+/datum/gear/accessory/choker
+	display_name = "choker selection"
+	path = /obj/item/clothing/accessory/choker
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/bracelet
+	display_name = "bracelet selection"
+	path = /obj/item/clothing/accessory/bracelet
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/tacticool_shirt
+	display_name = "UBAC selection"
+	path = /obj/item/clothing/accessory/tacticool
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/neckbrace
 	display_name = "neck brace"
@@ -53,25 +65,10 @@
 	path = /obj/item/clothing/accessory/kneepads
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/accessory/fluffycape
-	display_name = "fluffy cape"
+/datum/gear/accessory/capes
+	display_name = "cape selection"
 	path = /obj/item/clothing/accessory/cape
-
-/datum/gear/accessory/blackcape
-	display_name = "black cloak"
-	path = /obj/item/clothing/accessory/cape/black
-
-/datum/gear/accessory/blackcloak
-	display_name = "heavy black cloak"
-	path = /obj/item/clothing/accessory/cape/blackedge
-
-/datum/gear/accessory/browncloak
-	display_name = "heavy brown cloak"
-	path = /obj/item/clothing/accessory/cape/brown
-
-/datum/gear/accessory/greatcoat
-	display_name = "black greatcoat"
-	path = /obj/item/clothing/accessory/cape/blackalt
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/tacticalponcho
 	display_name = "tactical poncho selection"

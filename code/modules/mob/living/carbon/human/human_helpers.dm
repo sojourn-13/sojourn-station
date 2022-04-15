@@ -87,6 +87,8 @@
 	if(istype(using_scope,/obj/item/gun))
 		process_scope(using_scope)
 
+	psi_blocking += psi_blocking_additive //So we dont null are perks or other sources of psi blocking
+
 /mob/living/carbon/human/proc/process_glasses(var/obj/item/clothing/glasses/G, var/forceActive)
 	if(G && (G.active || forceActive))
 		equipment_darkness_modifier += G.darkness_view

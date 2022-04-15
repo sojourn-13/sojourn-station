@@ -8,6 +8,7 @@
 	new /obj/item/storage/backpack/satchel/captain(src)
 	new /obj/item/clothing/head/rank/captain/cap(src)
 	new /obj/item/clothing/under/rank/captain(src)
+	new /obj/item/clothing/accessory/halfcape/premier(src)
 	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/clothing/head/helmet(src)
 	new /obj/item/clothing/shoes/color/brown(src)
@@ -61,6 +62,7 @@
 	new /obj/item/clothing/suit/armor/hos(src)
 	new /obj/item/clothing/suit/armor/platecarrier/hos(src)
 	new /obj/item/clothing/under/rank/ih_commander(src)
+	new /obj/item/clothing/accessory/halfcape/wo(src)
 	new /obj/item/clothing/glasses/sechud/tactical(src)
 	new /obj/item/clothing/accessory/badge/hos(src)
 	new /obj/item/clothing/suit/greatcoat/ihc(src)
@@ -114,6 +116,7 @@
 		new /obj/item/ammo_magazine/kurtz_50(src)
 		new /obj/item/ammo_magazine/kurtz_50/rubber(src)
 		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
+	new /obj/item/voucher/marshal/specprimary(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
 	new /obj/item/device/holowarrant(src)
@@ -158,6 +161,9 @@
 		new /obj/item/storage/backpack/ironhammer(src)
 	else
 		new /obj/item/storage/backpack/sport/ironhammer(src)
+	new /obj/item/voucher/marshal/primary(src)
+	new /obj/item/voucher/marshal/secondary(src)
+	new /obj/item/voucher/marshal/armor(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/storage/belt/security(src)
@@ -206,6 +212,7 @@
 	icon_state = "cabinetdetective"
 
 /obj/structure/closet/secure_closet/detective/populate_contents()
+	new /obj/item/voucher/marshal/primary(src)
 	new /obj/item/clothing/under/rank/inspector/suit(src)
 	new /obj/item/clothing/under/rank/inspector/black(src)
 	new /obj/item/clothing/under/rank/inspector(src)

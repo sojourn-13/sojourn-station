@@ -323,7 +323,7 @@
 			M.UpdateAppearance()
 	M.apply_effect(1 * effect_multiplier, IRRADIATE, 0)
 
-/datum/reagent/medicine/slimejelly
+/datum/reagent/toxin/slimejelly
 	name = "Slime Jelly"
 	id = "slimejelly"
 	description = "A gooey semi-liquid produced from one of the deadliest lifeforms in existence."
@@ -339,6 +339,24 @@
 		M.adjustToxLoss(rand(10, 30) * effect_multiplier)
 	else if(prob(40))
 		M.heal_organ_damage(2.5 * effect_multiplier, 0)
+
+/datum/reagent/medicine/pureslimejelly
+	name = "Pure Slime Jelly"
+	id = "pureslimejelly"
+	description = "A advanced version of slime jelly. Naturally made from certain slimes."
+	taste_description = "soft and warm slime"
+	taste_mult = 1.3
+	reagent_state = LIQUID
+	color = "#801E28"
+	illegal = TRUE
+
+/datum/reagent/medicine/pureslimejelly/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.adjustToxLoss(rand(15,20) * effect_multiplier)
+	to_chat(M, SPAN_DANGER("slime gushes from your mouth."))
+	M.vomit()
+	var/mob/living/carbon/slime/S = new /mob/living/carbon/slime
+	S.loc = M.loc
+	holder.remove_reagent("pureslimejelly", 30)
 
 /datum/reagent/medicine/soporific
 	name = "Soporific"

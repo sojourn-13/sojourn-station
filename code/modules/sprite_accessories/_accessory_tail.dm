@@ -240,6 +240,13 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/tail/lizard_dt
+	name = "Lizard Tail, Dark Tiger"
+	desc = ""
+	icon_state = "liztail_dtiger"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/tail/mouse
 	name = "Mouse Tail"
 	desc = ""

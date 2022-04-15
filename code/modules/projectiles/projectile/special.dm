@@ -268,7 +268,7 @@
 /obj/item/projectile/bullet/flare
 	name = "flare"
 	icon_state = "flare"
-	damage_types = list(BRUTE = 12) //Legit deadlyest gun that you get in mass
+	damage_types = list(BURN = 12) //Legit deadlyest gun that you get in mass
 	kill_count = 12
 	armor_penetration = 0
 	step_delay = 3

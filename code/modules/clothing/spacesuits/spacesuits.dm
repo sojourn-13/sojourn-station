@@ -27,6 +27,7 @@
 	siemens_coefficient = 0.9
 	species_restricted = list("exclude")
 	flash_protection = FLASH_PROTECTION_MAJOR
+	obscuration = LIGHT_OBSCURATION
 
 	var/obj/machinery/camera/camera
 	var/list/camera_networks
@@ -91,6 +92,8 @@
 	equip_delay = 4 SECONDS
 	var/list/supporting_limbs //If not-null, automatically splints breaks. Checked when removing the suit.
 	stiffness = HEAVY_STIFFNESS
+	tool_qualities = list(QUALITY_ARMOR = 100)
+	max_upgrades = 1
 
 /obj/item/clothing/suit/space/equipped(mob/M)
 	check_limb_support()

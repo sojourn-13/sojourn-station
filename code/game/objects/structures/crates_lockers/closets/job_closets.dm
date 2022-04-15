@@ -79,6 +79,7 @@
 	new /obj/item/storage/pouch/small_generic(src) // Because I feel like poor janitor gets it bad.
 	new /obj/item/newspaper_stack(src)
 	new /obj/item/holyvacuum(src)
+	new /obj/item/clothing/accessory/job/cape/service(src) // Boobles! - Seb
 
 /obj/structure/closet/custodial
 	name = "church custodial closet"

@@ -46,8 +46,8 @@
 	zoom_factor = 0.8
 	recoil_buildup = 14
 	damage_multiplier = 0.9
-	extra_damage_mult_scoped = 0.1
-	penetration_multiplier = 0.8
+	extra_damage_mult_scoped = 0.3
+	penetration_multiplier = 1.0
 	one_hand_penalty = 25
 	see_invisible_gun = -1
 	auto_eject = FALSE

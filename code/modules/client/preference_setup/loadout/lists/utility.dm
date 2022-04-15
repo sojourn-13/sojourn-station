@@ -192,3 +192,9 @@
 	path = /obj/item/clothing/head/psionic/tinfoil
 	cost = 3
 
+/datum/gear/utility/costume
+	display_name = "costume kit"
+	path = /obj/item/storage/box/costume
+	flags = GEAR_HAS_TYPE_SELECTION
+	cost = 2 //Style at a cost! - also cardboard
+

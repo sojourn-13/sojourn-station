@@ -318,7 +318,6 @@
 	materials = list(MATERIAL_PLASTIC = 9)
 	chemicals = list("condensedcapsaicin" = 150)
 
-
 /datum/design/autolathe/ammo/magnum_ammobox_practice
 	name = "ammunition box (.40 Auto-Mag practice)"
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/practice
@@ -480,6 +479,37 @@
 	build_path = /obj/item/ammo_magazine/light_rifle_257_short/lethal
 	materials = list(MATERIAL_STEEL = 2)
 
+//drums
+
+/datum/design/autolathe/ammo/lrifle_drum
+	name = ".257 carbine drum magazine (ball)"
+	build_path = /obj/item/ammo_magazine/light_rifle_257_drum
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/lrifle_drum_practice
+	name = ".257 carbine drum magazine (practice)"
+	build_path = /obj/item/ammo_magazine/light_rifle_257_drum/practice
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/lrifle_drum_rubber
+	name = ".257 carbine drum magazine (rubber)"
+	build_path = /obj/item/ammo_magazine/light_rifle_257_drum/rubber
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/lrifle_drum_lethal
+	name = ".257 carbine drum magazine (hollow point)"
+	build_path = /obj/item/ammo_magazine/light_rifle_257_drum/lethal
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/lrifle_drum_hv
+	name = ".257 carbine drum magazine (high velocity)"
+	build_path = /obj/item/ammo_magazine/light_rifle_257_drum/highvelocity
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/lrifle_drum_empty
+	name = ".257 carbine drum magazine (empty)"
+	build_path = /obj/item/ammo_magazine/light_rifle_257_drum/empty
+	materials = list(MATERIAL_STEEL = 6)
 
 //.257 box and speed loader
 /datum/design/autolathe/ammo/lrifle_ammobox
@@ -584,6 +614,38 @@
 	name = "short 7.5mm Rifle magazine (hollow point)"
 	build_path = /obj/item/ammo_magazine/rifle_75_short/lethal
 	materials = list(MATERIAL_STEEL = 1)
+
+//drum
+
+/datum/design/autolathe/ammo/rifle_drum
+	name = "7.5mm Rifle drum magazine (ball)"
+	build_path = /obj/item/ammo_magazine/rifle_75_drum
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/rifle_drum_rubber
+	name = "7.5mm Rifle drum magazine (rubber)"
+	build_path = /obj/item/ammo_magazine/rifle_75_drum/rubber
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/rifle_drum_practice
+	name = "7.5mm Rifle drum magazine (practice)"
+	build_path = /obj/item/ammo_magazine/rifle_75_drum/practice
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/rifle_drum_hv
+	name = "7.5mm Rifle drum magazine (AP)"
+	build_path = /obj/item/ammo_magazine/rifle_75_drum/highvelocity
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/rifle_drum_lethal
+	name = "7.5mm Rifle drum magazine (hollow point)"
+	build_path = /obj/item/ammo_magazine/rifle_75_drum/lethal
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/rifle_drum_empty
+	name = "7.5mm Rifle drum magazine (empty)"
+	build_path = /obj/item/ammo_magazine/rifle_75_drum/empty
+	materials = list(MATERIAL_STEEL = 6)
 
 ///boxes and stripper clips
 

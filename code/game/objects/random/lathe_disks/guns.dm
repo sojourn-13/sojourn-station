@@ -100,14 +100,15 @@
 
 /obj/random/lathe_disk/smg/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/straylight = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/wirbelwind = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/texan = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/mac = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/bastard = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/greasegun = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/buckler = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/thompson = 1,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/straylight = 5,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/wirbelwind = 5,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/texan = 4,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/mac = 4,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/bastard = 2,
+				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/greasegun = 3,
+				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/buckler = 3,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/thompson = 2,
+				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/triage = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_drozd = 1))
 
 /obj/random/lathe_disk/rifle
@@ -146,7 +147,6 @@
 /obj/random/lathe_disk/pistol/item_to_spawn()
 	return pickweight(list(
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58 = 5,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/alemao = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/NM_colt = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/colt = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/rafale = 2,

@@ -443,3 +443,13 @@
 		src.icon_state = "cake0"
 		src.item_state = "cake0"
 	return
+
+/* Magic! */
+
+/obj/item/clothing/head/mage_hat
+	name = "magic hat"
+	desc = "A dark hat with a blue ribbon warn by people that do magic tricks or other slight of hand."
+	icon_state = "mage_hat"
+	item_state = "mage_hat"
+
+

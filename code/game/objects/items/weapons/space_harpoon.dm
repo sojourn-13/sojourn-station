@@ -56,13 +56,17 @@
 		if(MODE_TRANSMIT)
 			dense_check = AtomTurf.contains_dense_objects(TRUE)
 		if(MODE_RECEIVE)
-			dense_check = UserTurf.contains_dense_objects(TRUE)
+			user.visible_message(
+				SPAN_DANGER("[user] attempts to receive items using the bluespace harpoon!"),
+				SPAN_DANGER("With the harpoon set to receive it seems to ingore its basic warnings!!")
+				)
+			//dense_check = UserTurf.contains_dense_objects(TRUE) //SoJ edit theirs no point in blocking this ways teleportation, it stops many key points of the mode
 	if(dense_check)
 		to_chat(user, SPAN_WARNING("Dense content detected on receiving terrain. Do not \"Telefrag\" any living beings caught in the harpoon. Please disengage."))
 		return //No actual telefragging, wasn't allowed to do that at the time
 	if(!Using)
 		Using = TRUE
-		if(do_after(user, 4 SECONDS - user.stats.getMult(STAT_COG, /*STAT_LEVEL_GODLIKE/20,*/ src)))
+		if(do_after(user, 4 SECONDS - user.stats.getMult(STAT_COG, STAT_LEVEL_EXPERT, src)))
 			Using = FALSE
 			if(!cell || !cell.checked_use(100))
 				to_chat(user, SPAN_WARNING("\The [src]'s battery is dead or missing."))

@@ -1,6 +1,7 @@
 //Blackshield
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield
-	disk_name = "Blackshield 'Shall-not-be-Infringed' Pack"
+	disk_name = ""
+	name = "Blackshield 'Shall-not-be-Infringed' Pack"
 	icon_state = "blackshield"
 	license = 20
 
@@ -12,6 +13,7 @@
 		//SMGs
 		/datum/design/autolathe/gun/greasegun = 2,
 		/datum/design/autolathe/gun/buckler = 3,
+		/datum/design/autolathe/gun/triage = 3,
 		//rifles
 		/datum/design/autolathe/gun/boltgun_sa = 0,
 		/datum/design/autolathe/gun/zatvor,
@@ -23,7 +25,7 @@
 		/datum/design/autolathe/gun/strelki = 2,
 		/datum/design/autolathe/gun/watchtower = 3,
 		/datum/design/autolathe/gun/rushing_bull = 4,
-		/datum/design/autolathe/gun/duty = 6,
+		/datum/design/autolathe/gun/duty = 3,
 		//machinegun
 		/datum/design/autolathe/gun/saw = 4,
 		/datum/design/autolathe/gun/ppv = 5,
@@ -64,6 +66,10 @@
 		/datum/design/autolathe/ammo/magnum_rubber,
 		/datum/design/autolathe/ammo/magnum_practice = 0,
 		/datum/design/autolathe/ammo/magnum_lethal,
+		/datum/design/autolathe/ammo/kurtz_practice = 0,
+		/datum/design/autolathe/ammo/kurtz_rubber,
+		/datum/design/autolathe/ammo/kurtz,
+		/datum/design/autolathe/ammo/kurtz_lethal,
 		/datum/design/autolathe/ammo/hrifle,
 		/datum/design/autolathe/ammo/hrifle_rubber,
 		/datum/design/autolathe/ammo/hrifle_practice = 0,
@@ -122,23 +128,6 @@
 		/datum/design/autolathe/ammo/pistol,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/alemao
-	disk_name = "NM .35 \"O Alemao\" smg"
-	icon_state = "blackshield"
-	license = 8
-
-	designs = list(
-		/datum/design/autolathe/gun/alemao = 3,
-		/datum/design/autolathe/ammo/pistol_practice = 0,
-		/datum/design/autolathe/ammo/pistol_rubber,
-		/datum/design/autolathe/ammo/pistol,
-		/datum/design/autolathe/ammo/pistol_lethal = 2,
-		/datum/design/autolathe/ammo/hpistol_practice = 1,
-		/datum/design/autolathe/ammo/hpistol_rubber = 2,
-		/datum/design/autolathe/ammo/hpistol = 2,
-		/datum/design/autolathe/ammo/hpistol_lethal = 2,
-		)
-
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/NM_colt
 	disk_name = "NM HG .35 \"Bronco\""
 	icon_state = "blackshield"
@@ -195,6 +184,19 @@
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_lethal = 2
 	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/blackshield/triage
+	disk_name = "Blackshield - .40 Triage SMG"
+	icon_state = "blackshield"
+
+	license = 12
+	designs = list(
+		/datum/design/autolathe/gun/triage = 4,
+		/datum/design/autolathe/ammo/smg_magnum_40 = 2,
+		/datum/design/autolathe/ammo/smg_magnum_40_rubber = 1,
+		/datum/design/autolathe/ammo/smg_magnum_40_lethal = 3,
+		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
+		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki
 	disk_name = "NM - 7.5mm \"Strelki\""

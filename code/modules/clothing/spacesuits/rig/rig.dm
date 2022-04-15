@@ -23,7 +23,7 @@
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
 
 	// These values are passed on to all component pieces.
-	armor_list = list(
+	armor = list(
 		melee = 30,
 		bullet = 20,
 		energy = 20,
@@ -39,6 +39,8 @@
 	slowdown = 0
 	stiffness = LIGHT_STIFFNESS
 	obscuration = LIGHT_OBSCURATION
+	tool_qualities = list(QUALITY_ARMOR = 100)
+	max_upgrades = 1
 	var/interface_path = "hardsuit.tmpl"
 	var/ai_interface_path = "hardsuit.tmpl"
 	var/interface_title = "Hardsuit Controller"
@@ -199,6 +201,13 @@
 		if(armor) piece.armor = armor
 
 	update_icon(1)
+
+/obj/item/rig/proc/updateArmor()
+	for(var/obj/item/piece in list(gloves,helmet,boots,chest))
+		if(!istype(piece))
+			continue
+		if(armor_list)
+			piece.armor = armor
 
 /obj/item/rig/Destroy()
 	for(var/obj/item/piece in list(gloves,boots,helmet,chest))

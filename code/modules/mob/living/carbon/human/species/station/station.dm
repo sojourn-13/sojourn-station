@@ -536,12 +536,14 @@
 	permitted_ears  = list("Frills, Aquatic",
 		"Frills, Drake",
 		"Frills, Short",
-		"Frills, Simple"
+		"Frills, Simple",
+		"Frills, Big"
 		)
 	permitted_tail  = list("Render Tail",
 		"Snake Tail",
 		"Lizard Tail",
-		"Lizard Tail, Short"
+		"Lizard Tail, Short",
+		"Lizard Tail, Dark Tiger"
 		)
 	permitted_wings = list("Spines, Aquatic",
 		"Spines, Long",
