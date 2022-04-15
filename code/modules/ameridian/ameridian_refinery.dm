@@ -68,7 +68,7 @@
 // This proc turn solid ameridian into its liquid counterpart.
 /obj/machinery/ameridian_refinery/proc/process_crystals()
 	for(var/obj/item/stack/material/ameridian/AC in contents)
-		for(, AC.amount >= 1,)
+		while(AC.amount >= 1)
 			if(reagents.maximum_volume - reagents.total_volume < crystal_worth)
 				return
 			reagents.add_reagent(MATERIAL_AMERIDIAN, crystal_worth) // Create liquid ameridian
