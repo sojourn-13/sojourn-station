@@ -2,7 +2,7 @@
 /datum/cooking_with_jane/recipe_step
 	var/unique_id //Special ID for a given recipe, allows for referencing later by food objects to save on memory.
 
-	var/class = CWJ_CLASS_OTHER //The classificaiton of the step involved.
+	var/class = CWJ_OTHER //The classificaiton of the step involved.
 
 	var/group_identifier = "None" //Different for every type of recipe.
 
@@ -24,9 +24,8 @@
 	//The previous required step for the current recipe
 	var/datum/cooking_with_jane/recipe_step/previous_step
 
-/datum/cooking_with_jane/recipe_step/New(var/base_quality_award, var/quality_description, var/datum/cooking_with_jane/recipe/our_recipe)
+/datum/cooking_with_jane/recipe_step/New(var/datum/cooking_with_jane/recipe/our_recipe)
 	parent_recipe = our_recipe
-	base_quality_award = base_quality_award
 	unique_id = sequential_id(type)
 
 	//Add the recipe to our dictionary for future reference.
@@ -72,7 +71,7 @@
 //-----------------------------------------------------------------------------------
 //A cooking step that involves adding a reagent to the food.
 /datum/cooking_with_jane/recipe_step/add_reagent
-	class = CWJ_CLASS_ADD_REAGENT
+	class=CWJ_ADD_REAGENT
 	var/required_reagent_id
 	var/required_reagent_amount
 	
@@ -80,7 +79,7 @@
 //amount: The amount of the required reagent that needs to be added.
 //base_quality_award: The quality awarded by following this step.
 //our_recipe: The parent recipe object,
-/datum/cooking_with_jane/recipe_step/add_reagent/New(var/base_quality_award, var/reagent_id,  var/amount, var/datum/cooking_with_jane/recipe/our_recipe)
+/datum/cooking_with_jane/recipe_step/add_reagent/New(var/reagent_id,  var/amount, var/datum/cooking_with_jane/recipe/our_recipe)
 	
 	var/datum/reagent/global_reagent = GLOB.chemical_reagents_list[reagent_id]
 	if(global_reagent)
@@ -93,7 +92,7 @@
 	else
 		CRASH("/datum/cooking_with_jane/recipe_step/add/reagent/New(): Reagent [reagent_id] not found. Recipe: [our_recipe]")
 
-	..(base_quality_award, our_recipe)
+	..(our_recipe)
 
 
 /datum/cooking_with_jane/recipe_step/add_reagent/check_conditions_met(var/reagent_id)
@@ -110,13 +109,13 @@
 //A cooking step that involves adding an item to the food. Is based on Item Type.
 //This basically deletes the food used on it.
 /datum/cooking_with_jane/recipe_step/add_item
-	class = CWJ_CLASS_ADD_ITEM
+	class=CWJ_ADD_ITEM
 	var/required_item_type
 
 //item_type: The type path of the object we are looking for.
 //base_quality_award: The quality awarded by following this step.
 //our_recipe: The parent recipe object,
-/datum/cooking_with_jane/recipe_step/add_item/New(var/item_type, var/base_quality_award, var/datum/cooking_with_jane/recipe/our_recipe)
+/datum/cooking_with_jane/recipe_step/add_item/New(var/item_type, var/datum/cooking_with_jane/recipe/our_recipe)
 	
 	if(!ispath(item_type))
 		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] is not a valid path")
@@ -132,18 +131,18 @@
 	else
 		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] couldn't be created.")
 	
-	..(base_quality_award, our_recipe)
+	..(our_recipe)
 
 //-----------------------------------------------------------------------------------
 //A cooking step that involves using an item on the food.
 /datum/cooking_with_jane/recipe_step/use_item
-	class = CWJ_CLASS_USE_ITEM
+	class=CWJ_USE_ITEM
 	var/required_item_type
 
 //item_type: The type path of the object we are looking for.
 //base_quality_award: The quality awarded by following this step.
 //our_recipe: The parent recipe object
-/datum/cooking_with_jane/recipe_step/use_item/New(var/item_type, var/base_quality_award, var/datum/cooking_with_jane/recipe/our_recipe)
+/datum/cooking_with_jane/recipe_step/use_item/New(var/item_type, var/datum/cooking_with_jane/recipe/our_recipe)
 	
 	if(!ispath(item_type))
 		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] is not a valid path")
@@ -159,4 +158,16 @@
 	else
 		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] couldn't be created.")
 	
+	..(our_recipe)
+
+//-----------------------------------------------------------------------------------
+//A cooking step that involves using SPECIFICALLY Grown foods
+/datum/cooking_with_jane/recipe_step/use_produce
+	class=CWJ_ADD_PRODUCE
+	var/required_produce_type
+
+/datum/cooking_with_jane/recipe_step/use_produce/New(var/produce, var/datum/cooking_with_jane/recipe/our_recipe)
+	required_produce_type = produce
+	group_identifier = produce
+	description = "Add \a [produce] into the recipe."
 	..(base_quality_award, our_recipe)

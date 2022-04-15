@@ -1,12 +1,27 @@
 
 //Step classifications, for easy reference later. 
 //If something falls outside these classifications, why would it?
-#define CWJ_CLASS_OTHER 0
-#define CWJ_CLASS_ADD_ITEM 1		//Adding an item to a recipe (Ex- adding a slice of bread)
-#define CWJ_CLASS_ADD_REAGENT 2	//Adding a reagent to a recipe (Ex- Adding salt)
-#define CWJ_CLASS_USE_ITEM 3 		//Using an item in a recipe (Ex- cutting bread with a knife)
-#define CWJ_CLASS_USE_APPLIANCE 4 //Using a kitchen appliance in a recipe (Ex- cooking a burger on a grill)
+#define CWJ_OTHER 					1		//Custom set class; not premade
+#define CWJ_ADD_ITEM 				2		//Adding an item to a recipe (Ex- adding a slice of bread)
+#define CWJ_ADD_REAGENT 			3		//Adding a reagent to a recipe (Ex- Adding salt)
+#define CWJ_USE_ITEM 				4 		//Using an item in a recipe (Ex- cutting bread with a knife)
+#define CWJ_ADD_PRODUCE				5		//Adding Produce to a recipe
+#define CWJ_USE_APPLIANCE 			6 		//Using a kitchen appliances in a recipe (Ex- cooking a burger on a grill)
 
+
+											
+#define CWJ_OTHER_OPTIONAL 			100		//Optional contexts
+#define CWJ_ADD_ITEM_OPTIONAL		200
+#define CWJ_ADD_REAGENT_OPTIONAL	300
+#define CWJ_USE_ITEM_OPTIONAL		400
+#define CWJ_ADD_PRODUCE_OPTIONAL	500
+#define CWJ_USE_APPLIANCE_OPTIONAL	600
+
+
+#define CWJ_BEGIN_EXCLUSIVE_OPTIONS 1000	//Beginning an exclusive option list
+#define CWJ_END_EXCLUSIVE_OPTIONS 	2000	//Ending an exclusive option list
+#define CWJ_BEGIN_OPTION_CHAIN 		3000	//Beginning an option chain
+#define CWJ_END_OPTION_CHAIN 		4000	//Ending an option chain
 
 //Recipe state flags
 #define CWJ_IS_LAST_STEP 1		//If the step in the recipe is marked as the last step

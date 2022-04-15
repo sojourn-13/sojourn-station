@@ -46,6 +46,13 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 	var/active_exclusive_option_chain //Only needed during the creation process for tracking items in an option chain.
 
+	/*
+		The Step Builder is iterated through to create new steps in the recipe dynamically.
+		_OPTIONAL steps are linked to the previously made REQUIRED step
+		CWJ_BEGIN steps must eventually terminate in a matching CWJ_END step
+	*/
+	var/list/step_builder = NULL
+
 	var/datum/cooking_with_jane/recipe_step/first_step //The first step in the linked list that will result in the final recipe
 
 	var/datum/cooking_with_jane/recipe_step/last_required_step //Reference to the last required step in the cooking process.
@@ -53,15 +60,9 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 	var/datum/cooking_with_jane/recipe_step/last_created_step //Reference to the last step made, regardless of if it was required or not.
 
 /datum/cooking_with_jane/recipe/New()
-
-	if(exclusive_option_mode)
-		CRASH("/datum/cooking_with_jane/recipe/New: Exclusive option active at end of recipe creation process. Recipe name=[name].")
-	
-	if(option_chain_mode)
-		CRASH("/datum/cooking_with_jane/recipe/New: Option Chain active at end of recipe creation process. Recipe name=[name].")
-		
-	var/obj/product_info = new product_type()
-	if(product_info)
+	build_steps()
+	if(ispath(product_type))
+		var/obj/product_info = new product_type()
 		if(!name)
 			name = product_info.name
 		
@@ -71,47 +72,125 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		if(!(recipe_icon && recipe_icon_state))
 			recipe_icon = product_info.icon
 			recipe_icon_state = product_info.icon_state
-	
+		QDEL_NULL(product_info) //We don't need this anymore.
 	unique_id = sequential_id(type)
 	
-	QDEL_NULL(product_info) //We don't need this anymore.
+	
+
+/datum/cooking_with_jane/recipe/proc/build_steps()
+	if(!step_builder)
+		CRASH("/datum/cooking_with_jane/recipe/New: Recipe has no step builder defined! Recipe path=[src.path].")
+	for (var/step in step_builder)
+		if(islist(step) && step.len >= 1)
+			reason = ""
+			switch(step[1])
+				if(CWJ_ADD_ITEM)
+					if(step.len < 2)
+						reason="Bad argument Length for CWJ_ADD_ITEM"
+					else if(!ispath(step[2]))
+						reason="Bad argument type for CWJ_ADD_ITEM at arg 2"
+					else
+						create_step_add_item(step[2], FALSE)
+				if(CWJ_ADD_ITEM_OPTIONAL)
+					if(step.len < 2)
+						reason="Bad argument Length for CWJ_ADD_ITEM_OPTIONAL"
+					else if(!ispath(step[2]))
+						reason="Bad argument type for CWJ_ADD_ITEM_OPTIONAL at arg 2"
+					else
+						create_step_add_item(step[2], TRUE)
+				if(CWJ_ADD_REAGENT)
+					if(step.len < 3)
+						reason="Bad argument Length for CWJ_ADD_REAGENT"
+					else if(!is_reagent_with_id_exist(step[2]))
+						reason="Bad reagent type for CWJ_ADD_REAGENT at arg 2"
+					else
+						create_step_add_item(step[2], step[3], FALSE)
+				if(CWJ_ADD_REAGENT_OPTIONAL)
+					if(step.len < 3)
+						reason="Bad argument Length for CWJ_ADD_REAGENT_OPTIONAL"
+					else if(!is_reagent_with_id_exist(step[2]))
+						reason="Bad reagent type for CWJ_ADD_REAGENT_OPTIONAL at arg 2"
+					else
+						create_step_add_item(step[2], step[3], TRUE)
+				if(CWJ_USE_ITEM)
+					if(step.len < 2)
+						reason="Bad argument Length for CWJ_USE_ITEM"
+					else if(!ispath(step[2]))
+						reason="Bad argument type for CWJ_USE_ITEM at arg 2"
+					else
+						create_step_use_item(step[2], FALSE)
+				if(CWJ_USE_ITEM_OPTIONAL)
+					if(step.len < 2)
+						reason="Bad argument Length for CWJ_USE_ITEM_OPTIONAL"
+					else if(!ispath(step[2]))
+						reason="Bad argument type for CWJ_USE_ITEM_OPTIONAL at arg 2"
+					else
+						create_step_use_item(step[2], TRUE)
+				if(CWJ_ADD_PRODUCE)
+					if(step.len < 2)
+						reason="Bad argument Length for CWJ_ADD_PRODUCE"
+					else
+						create_step_add_produce(step[2], FALSE)
+				if(CWJ_ADD_PRODUCE_OPTIONAL)
+					if(step.len < 2)
+						reason="Bad argument Length for CWJ_ADD_PRODUCE_OPTIONAL"
+					else
+						create_step_add_produce(step[2], TRUE)
+			
+			//Named Arguments modify the recipe in fixed ways
+			if("desc" in step)
+				set_step_desc(step["desc"])
+			
+			if("base" in step)
+				set_step_base_quality(step["base"])
+
+			if("max" in step)
+				set_step_max_quality(step["max"])
+
+			if(reason)
+				CRASH("[src.path]/New: Step Builder failed. Reason: [reason]")
+		else
+			switch(step)
+				if(CWJ_BEGIN_EXCLUSIVE_OPTIONS)
+					begin_exclusive_options()
+				if(CWJ_END_EXCLUSIVE_OPTIONS)
+					end_exclusive_options()
+				if(CWJ_BEGIN_OPTION_CHAIN)
+					begin_option_chain()
+				if(CWJ_END_OPTION_CHAIN)
+					end_option_chain()
+	
+	if(exclusive_option_mode)
+		CRASH("/datum/cooking_with_jane/recipe/New: Exclusive option active at end of recipe creation process. Recipe name=[name].")
+	
+	if(option_chain_mode)
+		CRASH("/datum/cooking_with_jane/recipe/New: Option Chain active at end of recipe creation process. Recipe name=[name].")
+		
 //-----------------------------------------------------------------------------------
 //Commands for interacting with the recipe tracker
 
 
 //-----------------------------------------------------------------------------------
 //Add reagent step shortcut commands
-/datum/cooking_with_jane/recipe/proc/create_step_add_reagent_optional( var/reagent_id, var/amount, var/base_quality_award)
-	return src.create_step_add_reagent(reagent_id, amount, base_quality_award, TRUE)
-
-/datum/cooking_with_jane/recipe/proc/create_step_add_reagent_required( var/reagent_id, var/amount, var/base_quality_award)
-	return src.create_step_add_reagent(reagent_id, amount, base_quality_award, FALSE)
-
-/datum/cooking_with_jane/recipe/proc/create_step_add_reagent( var/reagent_id, var/amount, var/base_quality_award, var/optional)
-	var/datum/cooking_with_jane/recipe_step/add_reagent/step = new (base_quality_award, reagent_id, amount, src)
+/datum/cooking_with_jane/recipe/proc/create_step_add_reagent(var/reagent_id, var/amount, var/optional)
+	var/datum/cooking_with_jane/recipe_step/add_reagent/step = new (reagent_id, amount, src)
 	return src.add_step(step, optional)
 
 //-----------------------------------------------------------------------------------
 //Add item step shortcut commands
-/datum/cooking_with_jane/recipe/proc/create_step_add_item_optional(var/item_type, var/base_quality_award)
-	return src.create_step_add_item(item_type, base_quality_award, TRUE)
-
-/datum/cooking_with_jane/recipe/proc/create_step_add_item_required(var/item_type, var/base_quality_award)
-	return src.create_step_add_item(item_type, base_quality_award, FALSE)
-
-/datum/cooking_with_jane/recipe/proc/create_step_add_item(var/item_type, var/base_quality_award, var/optional)
-	var/datum/cooking_with_jane/recipe_step/add_item/step = new (base_quality_award, item_type, src)
+/datum/cooking_with_jane/recipe/proc/create_step_add_item(var/item_type, var/optional)
+	var/datum/cooking_with_jane/recipe_step/add_item/step = new (item_type, src)
 	return src.add_step(step, optional)
 //-----------------------------------------------------------------------------------
 //Use item step shortcut commands
-/datum/cooking_with_jane/recipe/proc/create_step_use_item_optional(var/item_type, var/base_quality_award)
-	return src.create_step_use_item(item_type, base_quality_award, TRUE)
+/datum/cooking_with_jane/recipe/proc/create_step_use_item(var/item_type, var/optional)
+	var/datum/cooking_with_jane/recipe_step/use_item/step = new (item_type, src)
+	return src.add_step(step, optional)
 
-/datum/cooking_with_jane/recipe/proc/create_step_use_item_required(var/item_type, var/base_quality_award)
-	return src.create_step_use_item(item_type, base_quality_award, FALSE)
-
-/datum/cooking_with_jane/recipe/proc/create_step_use_item(var/item_type, var/base_quality_award, var/optional)
-	var/datum/cooking_with_jane/recipe_step/add_item/step = new (base_quality_award, item_type, src)
+//-----------------------------------------------------------------------------------
+//Use item step shortcut commands
+/datum/cooking_with_jane/recipe/proc/create_step_add_produce(var/produce, var/optional)
+	var/datum/cooking_with_jane/recipe_step/add_produce/step = new (produce, src)
 	return src.add_step(step, optional)
 
 //-----------------------------------------------------------------------------------
