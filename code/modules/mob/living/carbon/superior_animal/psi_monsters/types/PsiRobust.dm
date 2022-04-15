@@ -9,14 +9,14 @@
 	health = 200
 	melee_damage_lower = 14
 	melee_damage_upper = 19
-	emote_see = list("chitters in greeting.", "whispers, \"Let me caress your flesh...\"", "twitches its antenni.")
+	emote_see = list("chitters in greeting.", "whispers, \"Let me caress your flesh...\"", "twitches its antennae.")
 	poison_per_bite = 2
 	turns_per_move = 4 // Slow
 	attacktext = "punched"
 
 /mob/living/carbon/superior_animal/psi_monster/hovering_nightmare
 	name = "hovering nightmare"
-	desc = "The hovering nightmare is a flying creature resembling a misshapen skull. It is fast, remaining low to the ground and moving quickly through the use of psionics and will. It's bite is \
+	desc = "The hovering nightmare is a flying creature resembling a misshapen skull. It is fast, remaining low to the ground and moving quickly through the use of psionics and will. Its bite is \
 	far worse than its bark."
 	icon_state = "regugriator22"
 	icon_living = "regugriator22"
@@ -25,13 +25,13 @@
 	health = 150
 	melee_damage_lower = 20
 	melee_damage_upper = 25
-	emote_see = list("begins to melt, blackened skin sloughing down its form until it pulls taught.", "howls, \"Birth, flesh, death, decay, birth, flesh, death, decay!\"", "howls in agony!")
+	emote_see = list("begins to melt, blackened skin sloughing down its form until it pulls taut.", "howls, \"Birth, flesh, death, decay, birth, flesh, death, decay!\"", "howls in agony!")
 	turns_per_move = 10
 
 /mob/living/carbon/superior_animal/psi_monster/licker
 	name = "licker"
-	desc = "The licker, named for its long venom laced tongue. Some speculate that it was once an insect of some form, given its choice of venom, what is known that while fast it isn't that strong. \
-	What out for the fleshy pink thing it is to eager to touch you with."
+	desc = "The licker, named for its long venom laced tongue. Some speculate that it was once an insect of some form, given its choice of venom, what is known is that while fast, it isn't that strong. \
+	Watch out for the fleshy pink thing it is to eager to touch you with."
 	icon_state = "runner"
 	icon_living = "runner"
 
@@ -55,7 +55,7 @@
 	health = 180
 	melee_damage_lower = 12
 	melee_damage_upper = 31
-	emote_see = list("screams, \"They did this they did this!\"", "howls, \"They could have done something!\"", "whispers, \"I could have done somthing...\"", "groans, \"Kill me, please...\"", "weeps, \"It will never end.\"")
+	emote_see = list("screams, \"They did this they did this!\"", "howls, \"They could have done something!\"", "whispers, \"I could have done something...\"", "groans, \"Kill me, please...\"", "weeps, \"It will never end.\"")
 	speak_chance = 15
 	attacktext = "stroked"
 

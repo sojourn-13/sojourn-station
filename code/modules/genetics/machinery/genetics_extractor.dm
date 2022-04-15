@@ -112,8 +112,8 @@
 	if(pulping)
 		return
 
-	playsound(loc, 'sound/machines/blender.ogg', 50, 1)
 	if(!occupant && meat.len == 0)
+		playsound(loc, 'sound/machines/blender.ogg', 50, 1)
 		visible_message(SPAN_DANGER("You hear a loud metallic grinding sound."))
 		return
 
@@ -121,6 +121,7 @@
 
 	pulping = TRUE
 
+	playsound(loc, 'sound/machines/juicer.ogg', 50, 1)
 	visible_message(SPAN_DANGER("You hear a loud squelchy grinding sound."))
 
 	update_icon()
