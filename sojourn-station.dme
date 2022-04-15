@@ -1519,7 +1519,6 @@
 #include "code\modules\ameridian\ameridian_spire.dm"
 #include "code\modules\ameridian\ameridian_tree.dm"
 #include "code\modules\ameridian\liquid_ameridian_processor.dm"
-#include "code\modules\ameridian\old_ameridian_processor.dm"
 #include "code\modules\ameridian\sonic_fence.dm"
 #include "code\modules\assembly\assembly.dm"
 #include "code\modules\assembly\bomb.dm"
