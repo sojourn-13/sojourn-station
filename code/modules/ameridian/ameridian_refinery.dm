@@ -79,6 +79,7 @@
 	if(Container)
 		var/free_space = Container.reagents.get_free_space()
 		reagents.trans_to_holder(Container.reagents, free_space > reagents.total_volume ? reagents.total_volume : free_space)
+		Container.update_icon()
 	return
 
 // This proc search for nearby anchored BIDONS

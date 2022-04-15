@@ -114,15 +114,14 @@
 
 	if(href_list["material"])
 		spawn()
-			var/list/L = params2list(href_list["material"])
+			var/list/L = list(path=text2path(href_list["material"]), cost=text2num(href_list["cost"]), amount=text2num(href_list["amount"]))
 			var/L_path = L["path"]
-			var/amount = text2num(href_list["amount"])
 
-			if(use_bidon_ameridian(L["cost"] * amount)) // Check if we have enough liquid ameridian
-				if(ispath(L_path, /obj/item/stack/material)) // Material sheets are handled differently
-					new L_path(get_turf(src), amount)
+			if(use_bidon_ameridian(L["cost"] * L["amount"])) // Check if we have enough liquid ameridian
+				if(ispath(L["path"], /obj/item/stack/material)) // Material sheets are handled differently
+					new L_path(get_turf(src), L["amount"])
 				else
-					for(var/i = 0, amount > i, i++) // Create 1 item at a time
+					for(var/i = 0, L["amount"] > i, i++) // Create 1 item at a time
 						new L_path(get_turf(src))
 			else
 				ping("Not enough liquid ameridian.")
@@ -141,13 +140,13 @@
 	var/dat = ""
 	dat += "List of materials : <BR>"
 	for(var/list/L in outputs)
-		dat += "[L["name"]] : [L["cost"]] Liquid Ameridian.<BR>"
+		dat += "[L["name"]], cost : [L["cost"]] Liquid Ameridian.<BR>"
 		dat += "- Print : "
-		dat += "[check_bidon_ameridian(L["cost"]*1) ? "<A href='?src=\ref[src];material=[L];amount=1'>x1</A>" : "Not enough liquid ameridian"]"
-		dat += "[check_bidon_ameridian(L["cost"]*5) ? ", <A href='?src=\ref[src];material=[L];amount=5'>x5</A>" : " "]"
-		dat += "[check_bidon_ameridian(L["cost"]*10) ? ", <A href='?src=\ref[src];material=[L];amount=10'>x10</A>" : " "]"
-		dat += "[check_bidon_ameridian(L["cost"]*20) ? ", <A href='?src=\ref[src];material=[L];amount=20'>x20</A>" : " "]"
-		dat += "[check_bidon_ameridian(L["cost"]*60) ? ", <A href='?src=\ref[src];material=[L];amount=60'>x60</A>" : " "]"
-		dat += "[check_bidon_ameridian(L["cost"]*120) ? ", <A href='?src=\ref[src];material=[L];amount=120'>x120</A>" : " "]"
+		dat += "[check_bidon_ameridian(L["cost"]*1) ? "<A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]];amount=1'>x1</A>" : "Not enough liquid ameridian"]"
+		dat += "[check_bidon_ameridian(L["cost"]*5) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]];amount=5'>x5</A>" : ""]"
+		dat += "[check_bidon_ameridian(L["cost"]*10) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]];amount=10'>x10</A>" : ""]"
+		dat += "[check_bidon_ameridian(L["cost"]*20) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]];amount=20'>x20</A>" : ""]"
+		dat += "[check_bidon_ameridian(L["cost"]*60) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]];amount=60'>x60</A>" : ""]"
+		dat += "[check_bidon_ameridian(L["cost"]*120) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]];amount=120'>x120</A>" : ""]"
 		dat += ".<BR><BR>"
 	return dat
