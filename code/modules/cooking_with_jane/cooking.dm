@@ -206,9 +206,9 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 //-----------------------------------------------------------------------------------
 //Add a custom step to the cooking process not covered by the existing shortcuts.
 //TODO
-/datum/cooking_with_jane/recipe/proc/add_custom_step()
+/datum/cooking_with_jane/recipe/proc/add_custom_step(var/step_type, paramlist)
 	//var/step_type, var/base_quality_award, var/param_list, optional=FALSE
-	var/datum/cooking_with_jane/recipe_step/step = new step_type(base_quality_award, src)
+	var/datum/cooking_with_jane/recipe_step/step = new step_type(src)
 	return src.add_step(step, optional)
 
 //-----------------------------------------------------------------------------------
