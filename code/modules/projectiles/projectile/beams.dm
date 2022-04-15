@@ -230,3 +230,19 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 
 /obj/item/projectile/beam/tesla/shotgun/strong
 	damage_types = list(BURN = 45) // Default slug (/obj/item/projectile/bullet/shotgun) deal 54 damage
+
+/obj/item/projectile/beam/infrared
+	name = "infrared radiation"
+	icon_state = "invisible"
+	armor_penetration = 15 //less ap
+	eyeblur = 0
+	muzzle_type = null
+	tracer_type = null
+	impact_type = null
+	heat = 500
+
+/obj/item/projectile/beam/pulse/on_hit(atom/target)
+	if(isliving(target))
+		var/mob/living/L = target
+		L.bodytemperature += (heat/250) * TEMPERATURE_DAMAGE_COEFFICIENT //1/5th the strength of hell ramen per tick, since you can unload with a smg
+	..()
