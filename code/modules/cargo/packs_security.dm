@@ -234,7 +234,7 @@
 	group = "Enforcement"
 	
 /datum/supply_pack/ammo_disks_1
-	name = "SA "Always prepared" Ammunition Disks Pack"
+	name = "SA Always prepared Ammunition Disks Pack"
 	contains = list(/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
 					/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle)
 	cost = 2200
