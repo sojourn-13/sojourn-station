@@ -468,7 +468,7 @@
 
 
 /obj/item/device/manual_charger/attackby(obj/item/I, mob/user)
-	if(istype(I, suitable_cell) && insert_item(I, user)))
+	if(istype(I, suitable_cell) && insert_item(I, user))
 		cell = I
 		return
 	..()
