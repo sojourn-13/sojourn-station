@@ -51,9 +51,8 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 	for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
 		if (H.z == src.z && get_dist(src, H) <= area_radius)
 			affected.Add(H)
-	active = check_for_faithful(affected)
-
-
+	active = check_for_faithful(affected) || overrideFaithfulCheck
+	update_icon()
 
 	if(force_active > 0)
 		active = TRUE
@@ -80,35 +79,35 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 				if(!burrow.obelisk_around)
 					burrow.obelisk_around = any2ref(src)
 
-	var/list/affected_mobs = SSmobs.mob_living_by_zlevel[(get_turf(src)).z]
+	if(active)
+		var/list/affected_mobs = SSmobs.mob_living_by_zlevel[(get_turf(src)).z]
+		var/to_fire = max_targets
+		for(var/mob/living/A in affected_mobs)
+			if(!(get_dist(src, A) <= area_radius))
+				continue
+			if(istype(A, /mob/living/carbon/superior_animal))
+				var/mob/living/carbon/superior_animal/animal = A
+				if(animal.stat != DEAD &! animal.colony_friend) //got roach, spider, xenos, but not colony pets
+					animal.take_overall_damage(damage)
+					if(animal.stat == DEAD)
+						eotp.addObservation(5)
+					if(!--to_fire)
+						return
+			else if(istype(A, /mob/living/simple_animal/hostile))
+				var/mob/living/simple_animal/hostile/animal = A
+				if(animal.stat != DEAD &! animal.colony_friend) //got misc things like tango but not colony pets
+					animal.take_overall_damage(damage)
+					if(animal.stat == DEAD)
+						eotp.addObservation(1)
+					if(!--to_fire)
+						return
 
-	var/to_fire = max_targets
-	for(var/mob/living/A in affected_mobs)
-		if(!(get_dist(src, A) <= area_radius))
-			continue
-		if(istype(A, /mob/living/carbon/superior_animal))
-			var/mob/living/carbon/superior_animal/animal = A
-			if(animal.stat != DEAD &! animal.colony_friend) //got roach, spider, xenos, but not colony pets
-				animal.take_overall_damage(damage)
-				if(animal.stat == DEAD)
-					eotp.addObservation(5)
-				if(!--to_fire)
-					return
-		else if(istype(A, /mob/living/simple_animal/hostile))
-			var/mob/living/simple_animal/hostile/animal = A
-			if(animal.stat != DEAD &! animal.colony_friend) //got misc things like tango but not colony pets
-				animal.take_overall_damage(damage)
-				if(animal.stat == DEAD)
-					eotp.addObservation(1)
-				if(!--to_fire)
-					return
-
-	if(to_fire)//If there is anything else left, fuck up the plants
-		for(var/obj/effect/plant/shroom in GLOB.all_maintshrooms)
-			if(shroom.z == src.z && get_dist(src, shroom) <= area_radius)
-				qdel(shroom)
-				if(!--to_fire)
-					return
+		if(to_fire)//If there is anything else left, fuck up the plants
+			for(var/obj/effect/plant/shroom in GLOB.all_maintshrooms)
+				if(shroom.z == src.z && get_dist(src, shroom) <= area_radius)
+					qdel(shroom)
+					if(!--to_fire)
+						return
 
 /obj/machinery/power/nt_obelisk/proc/check_for_faithful(list/affected)
 	var/got_neoteo = FALSE

@@ -10,7 +10,8 @@
 
 	var/growth // the growth level of the crystal. The higher it is, the older the crystal is.
 	var/max_growth = GROWTH_HUGE // Maximum growth level, in case we want to do stuff relative to size
-	var/growth_prob = 1 // The % of chance for the crystal to grow every tick
+	var/growth_prob = 1 // The % of chance for the crystal to grow every tickv
+	var/blue_crystal_prob = 5 // % chance of spawning a blue crystal instead of a green one when spreading
 	var/spread_range = 1 // Radius that the crystal can spawn new crystals.
 
 	var/rad_range = 2 // Radius that the crystal irradiate
@@ -103,7 +104,10 @@
 
 	if(turf_list.len)
 		var/turf/T = pick(turf_list)
-		new /obj/structure/ameridian_crystal(T) // We spread
+		if(prob(blue_crystal_prob))
+			new /obj/structure/ameridian_crystal/blue(T)
+		else
+			new /obj/structure/ameridian_crystal(T) // We spread
 
 // Check the given turf to see if there is any special things that would prevent the spread
 /obj/structure/ameridian_crystal/proc/can_spread_to_turf(var/turf/T)
