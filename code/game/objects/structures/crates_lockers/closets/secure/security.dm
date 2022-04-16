@@ -65,7 +65,7 @@
 	new /obj/item/clothing/accessory/halfcape/wo(src)
 	new /obj/item/clothing/glasses/sechud/tactical(src)
 	new /obj/item/clothing/accessory/badge/hos(src)
-	new /obj/item/clothing/suit/storage/greatcoat/ihc(src)
+	new /obj/item/clothing/suit/greatcoat/ihc(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
 	new /obj/item/storage/pouch/pistol_holster(src)
 	new /obj/item/storage/pouch/baton_holster/telebaton(src)

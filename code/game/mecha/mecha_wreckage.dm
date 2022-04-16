@@ -41,9 +41,9 @@
 				to_chat(user, "You don't see anything that can be removed with [I].")
 				return
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-				var/loot_type = prob(70)?pick(wirecutters_salvage):null
-				if(loot_type)
-					var/N = new loot_type(get_turf(user))
+				var/type = prob(70)?pick(wirecutters_salvage):null
+				if(type)
+					var/N = new type(get_turf(user))
 					user.visible_message("[user] cuts [N] from [src].", "You cut [N] from [src].")
 					salvage_num--
 				else

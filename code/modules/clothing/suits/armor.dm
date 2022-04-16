@@ -1003,14 +1003,14 @@
 		usr.update_action_buttons()
 		return 1
 
-/obj/item/clothing/suit/storage/armor/commander/militia_overcoat // Pockets for your hands on the cold.
+obj/item/clothing/suit/armor/commander/militia_overcoat
 	name = "blackshield armored overcoat"
 	desc = "Blackshield greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
 	armor_list = list(melee = 30, bullet = 35, energy = 20, bomb = 10, bio = 0, rad = 0)
 	icon_state = "overcoat_bm"
 	item_state = "overcoat_bm"
 
-/obj/item/clothing/suit/storage/armor/commander/marshal_coat
+obj/item/clothing/suit/armor/commander/marshal_coat
 	name = "marshal officers greatcoat"
 	desc = "Marshal Officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
 	armor_list = list(melee = 35, bullet = 30, energy = 20, bomb = 10, bio = 0, rad = 0)
