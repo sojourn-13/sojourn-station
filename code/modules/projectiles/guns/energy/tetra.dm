@@ -48,6 +48,7 @@
 /obj/item/gun/energy/tetra/update_icon()
 	..()
 	cut_overlays()
+	var/ratio = 0
 	if(cell)
 		item_state = "[initial(item_state)]_loaded"
 		add_overlay("[cell.icon_state]")
