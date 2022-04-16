@@ -213,6 +213,10 @@
 	icon_state = "neckfluff"
 	gender = NEUTER
 
+/datum/sprite_accessory/facial_hair/neck_fluffie
+	name = "Neck Fluff 2"
+	icon_state = "neck_fluffies"
+	gender = NEUTER
 /*
 ///////////////////////////////////
 /  =---------------------------=  /
