@@ -1,5 +1,6 @@
 #define ARMOR_AGONY_COEFFICIENT 0.3
 #define ARMOR_GDR_COEFFICIENT 0.1
+#define ANTI_UNKILLABLE_MOD 0.05 //We will at minium always take 5% of the bullets damage
 
 //This calculation replaces old run_armor_check in favor of more complex and better system
 //If you need to do something else with armor - just use getarmor() proc and do with those numbers all you want
@@ -13,9 +14,13 @@
 	//GDR - guaranteed damage reduction. It's a value that deducted from damage before all calculations
 	var/armor = getarmor(def_zone, attack_flag)
 	var/guaranteed_damage_red = armor * ARMOR_GDR_COEFFICIENT
+	var/guaranteed_damage_blue = damage * ANTI_UNKILLABLE_MOD
 	var/armor_effectiveness = max(0, ( armor - armour_pen ) )
 	var/armor_over_penitration = armour_pen - armor // This basiclly lets us over penitrate to deal extra damage. 20 AP - 10 Armor would give 10, well the reverse would be -10
-	var/effective_damage = damage - guaranteed_damage_red
+	//First we gather are data on damage, this number is raw, so we work with it as is, then we add are armor red with raw armor.
+	//We also have a flat 5% (Lets say a bullet deals 100 damage and they have 200 armor, it still deals 5 damage) we want to have always, this is to avoid people tanking up on 120 armor values and just killdozering the whole game with out ever stopping for short breaks
+	//This also makes LMGs and lower calibers still viable via death form 1000 cuts.
+	var/effective_damage = max(0, damage - (guaranteed_damage_red + armor), guaranteed_damage_blue)
 
 	if(damagetype == HALLOSS)
 		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/))
