@@ -280,7 +280,7 @@
 
 /datum/reagent/organic/nutriment/hot_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.bodytemperature += 5 * TEMPERATURE_DAMAGE_COEFFICIENT
+	M.bodytemperature += 3 * TEMPERATURE_DAMAGE_COEFFICIENT
 
 
 /datum/reagent/organic/nutriment/hell_ramen
