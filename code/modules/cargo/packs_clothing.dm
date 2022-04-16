@@ -14,7 +14,7 @@
 	group = "Clothing"
 
 /datum/supply_pack/goldilocks
-	contains = list(/obj/item/clothing/head/helmet/space/void/goldilocks)
+	contains = list(/obj/item/clothing/suit/space/void/goldilocks)
 	name = "Goldilocks Crate"
 	cost = 5000
 	containertype = /obj/structure/closet
