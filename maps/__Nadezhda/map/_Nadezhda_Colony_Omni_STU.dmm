@@ -1795,8 +1795,8 @@
 /obj/structure/table/glass,
 /obj/structure/cable/yellow{
 	d2 = 4;
-	icon_state = "0-4";
-	dir = 4
+	dir = 4;
+	icon_state = "0-4"
 	},
 /obj/machinery/power/apc{
 	dir = 2;
@@ -4087,8 +4087,8 @@
 /area/nadezhda/command/bridge)
 "aSo" = (
 /obj/structure/bed/chair/sofa/black/corner{
-	icon_state = "sofamiddle";
-	dir = 1
+	dir = 1;
+	icon_state = "sofamiddle"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/cafeteria)
@@ -5233,8 +5233,8 @@
 /area/nadezhda/outside/forest)
 "bhA" = (
 /obj/structure/bed/chair/sofa/black/corner{
-	icon_state = "sofaend_right";
-	dir = 4
+	dir = 4;
+	icon_state = "sofaend_right"
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/bridgebar)
@@ -5364,6 +5364,10 @@
 /obj/structure/cable/yellow{
 	d2 = 4;
 	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -7854,8 +7858,8 @@
 /obj/effect/floor_decal/industrial/warningred/full,
 /obj/structure/cable/yellow{
 	d2 = 4;
-	icon_state = "0-4";
-	dir = 1
+	dir = 1;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
@@ -8533,6 +8537,10 @@
 	icon_state = "0-4"
 	},
 /obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -8569,15 +8577,12 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/construction)
 "bST" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/grille,
-/obj/structure/barricade,
-/obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 0
+/obj/structure/railing,
+/obj/machinery/camera/network/third_section{
+	dir = 9
 	},
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/crew_quarters/hydroponics/garden)
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/meadow)
 "bSZ" = (
 /obj/random/cluster/roaches/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -8846,6 +8851,10 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest)
 "bXf" = (
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /obj/structure/cable/yellow{
 	d2 = 4;
 	icon_state = "0-4"
@@ -11361,8 +11370,8 @@
 	},
 /obj/structure/cable/yellow{
 	d2 = 4;
-	icon_state = "0-4";
-	dir = 1
+	dir = 1;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm2{
@@ -11444,6 +11453,10 @@
 /obj/structure/cable/yellow{
 	d2 = 4;
 	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -12941,7 +12954,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "cRj" = (
 /obj/machinery/camera/network/third_section,
-/turf/simulated/floor/asteroid/dirt/dark,
+/turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "cRo" = (
 /obj/structure/catwalk,
@@ -13001,8 +13014,8 @@
 "cSa" = (
 /obj/structure/railing/grey,
 /obj/structure/bed/chair/sofa/black/corner{
-	icon_state = "sofaend_left";
-	dir = 1
+	dir = 1;
+	icon_state = "sofaend_left"
 	},
 /obj/machinery/light/floor,
 /turf/simulated/floor/carpet/sblucarpet,
@@ -13062,6 +13075,10 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "cSF" = (
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /obj/machinery/power/solar,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
@@ -13882,6 +13899,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/colony)
+"dbS" = (
+/obj/structure/flora/church_tree{
+	density = 0;
+	icon_state = "red_tree"
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/meadow)
 "dck" = (
 /obj/structure/table/woodentable,
 /obj/random/credits,
@@ -15735,8 +15759,8 @@
 /area/nadezhda/maintenance/substation/section3)
 "dwh" = (
 /mob/living/simple_animal/pig{
-	name = "Becka";
-	desc = "This intellegent sow as strangle, pointy ears."
+	desc = "This intellegent sow as strangle, pointy ears.";
+	name = "Becka"
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
@@ -16396,6 +16420,10 @@
 	icon_state = "0-4"
 	},
 /obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -16532,6 +16560,17 @@
 "dEX" = (
 /obj/structure/table/woodentable,
 /obj/item/tool/minihoe,
+/obj/item/bee_pack,
+/obj/item/bee_pack,
+/obj/item/bee_pack,
+/obj/item/bee_pack,
+/obj/item/bee_pack,
+/obj/item/bee_pack,
+/obj/item/beehive_assembly,
+/obj/item/beehive_assembly,
+/obj/item/bee_smoker,
+/obj/item/bee_smoker,
+/obj/item/bee_smoker,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "dEY" = (
@@ -16828,13 +16867,8 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/hallway/main/stairwell)
 "dIF" = (
-/obj/structure/sink{
-	density = 1;
-	desc = "A small fountain of polished stone and has a small pump at the bottom that helps push fresh water.";
-	icon_state = "BaptismFont_Water";
-	name = "Water Fountain"
-	},
-/turf/simulated/floor/asteroid/dirt/dark,
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/turf/simulated/floor/asteroid/dirt/dark/plough,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "dIP" = (
 /obj/structure/grille,
@@ -18444,12 +18478,14 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/eris/crew_quarters/barbackroom)
 "ebB" = (
-/obj/structure/flora/church_tree{
-	density = 0;
-	icon_state = "red_tree"
+/obj/structure/railing{
+	anchored = 1;
+	dir = 4;
+	icon_state = "railing0";
+	tag = "icon-railing0 (EAST)"
 	},
-/turf/simulated/floor/wood,
-/area/nadezhda/outside/meadow)
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "ebD" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
@@ -20142,15 +20178,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"evb" = (
-/obj/structure/grille,
-/obj/structure/barricade,
-/obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 0
-	},
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/crew_quarters/hydroponics/garden)
 "evh" = (
 /obj/structure/table/woodentable,
 /obj/item/paper_bin{
@@ -21789,19 +21816,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
-"eNB" = (
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28;
-	pixel_y = 0
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/wood/wild3,
-/area/nadezhda/crew_quarters/hydroponics/garden)
 "eNC" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/busha1,
@@ -23561,8 +23575,8 @@
 	icon_state = "dogbed"
 	},
 /mob/living/simple_animal/chick{
-	name = "Vilda the Eradicator";
-	desc = "Adorable! - But radiates an energy of destruction and miasma"
+	desc = "Adorable! - But radiates an energy of destruction and miasma";
+	name = "Vilda the Eradicator"
 	},
 /obj/machinery/camera/network/cev_eris,
 /turf/simulated/floor/wood/wild3,
@@ -23848,6 +23862,7 @@
 /obj/machinery/camera/network/third_section{
 	dir = 4
 	},
+/obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "fjX" = (
@@ -24040,6 +24055,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/crematorium)
+"fmX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/smartfridge/drying_rack,
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "fmZ" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -24557,12 +24577,9 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "frU" = (
-/obj/structure/grille,
-/obj/structure/barricade,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/simulated/floor/asteroid/dirt,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "fsb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -25751,6 +25768,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/engineering/foyer)
+"fDv" = (
+/obj/random/flora/jungle_tree,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/meadow)
 "fDx" = (
 /obj/structure/table/rack,
 /obj/item/clothing/gloves/stungloves,
@@ -27528,6 +27549,11 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
+"fWw" = (
+/obj/structure/flora/ausbushes/brflowers,
+/mob/living/simple_animal/chicken,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "fWN" = (
 /obj/machinery/camera/network/command{
 	dir = 8
@@ -32242,11 +32268,13 @@
 	convdir = -1;
 	id = "churchgardenCon"
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/power/apc{
+	cell_type = /obj/item/cell/large/moebius/nuclear;
+	dir = 1;
+	name = "North APC";
+	pixel_y = 28
 	},
+/obj/structure/cable/green,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "gVg" = (
@@ -32628,6 +32656,9 @@
 /area/nadezhda/outside/forest)
 "gYP" = (
 /obj/machinery/camera/network/third_section,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "gYZ" = (
@@ -32874,10 +32905,9 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/security/barracks)
 "hbO" = (
-/obj/machinery/camera/network/third_section{
-	dir = 9
-	},
-/turf/simulated/floor/asteroid/dirt,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "hbP" = (
 /obj/effect/decal/cleanable/rubble,
@@ -32949,6 +32979,15 @@
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/plating,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"hcq" = (
+/obj/structure/sink{
+	density = 1;
+	desc = "A small fountain of polished stone and has a small pump at the bottom that helps push fresh water.";
+	icon_state = "BaptismFont_Water";
+	name = "Water Fountain"
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "hct" = (
 /obj/structure/table/rack/shelf,
 /obj/effect/floor_decal/industrial/hatch,
@@ -33611,6 +33650,12 @@
 /area/nadezhda/security/range{
 	name = "\improper Blackshield - Firing Range"
 	})
+"hlG" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "hlN" = (
 /obj/random/scrap/sparse_weighted/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -33674,10 +33719,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/crew_quarters/pool)
-"hmA" = (
-/obj/structure/flora/big/rocks1,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/crew_quarters/hydroponics/garden)
 "hmE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -38529,6 +38570,13 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"itf" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/meadow)
 "itl" = (
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 1
@@ -39137,11 +39185,6 @@
 "iyP" = (
 /obj/effect/floor_decal/industrial/stand_clear{
 	dir = 8
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/hydroponics/garden)
@@ -41672,8 +41715,8 @@
 /area/eris/crew_quarters/bar)
 "jcf" = (
 /obj/structure/bed/chair/sofa/black/corner{
-	icon_state = "sofaend_right";
-	dir = 8
+	dir = 8;
+	icon_state = "sofaend_right"
 	},
 /obj/machinery/light{
 	dir = 4;
@@ -42857,10 +42900,10 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "jpj" = (
-/obj/structure/grille,
-/obj/structure/barricade,
-/obj/structure/window/reinforced,
-/turf/simulated/floor/asteroid/dirt,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "jpp" = (
 /obj/structure/disposalpipe/trunk,
@@ -43429,6 +43472,15 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest)
+"juE" = (
+/obj/structure/railing{
+	anchored = 1;
+	dir = 4;
+	icon_state = "railing0";
+	tag = "icon-railing0 (EAST)"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "juN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/junk/low_chance,
@@ -46169,7 +46221,8 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/hallway/surface/section1)
 "jZc" = (
-/turf/simulated/floor/asteroid/dirt/dark,
+/obj/machinery/beehive,
+/turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "jZi" = (
 /obj/structure/table/woodentable,
@@ -46397,6 +46450,12 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"kbt" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/meadow)
 "kbv" = (
 /obj/structure/catwalk,
 /obj/structure/invislight,
@@ -47013,6 +47072,13 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/cafeteria)
+"kiC" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "kiD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -47328,6 +47394,10 @@
 	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/crew_quarters/cafeteria)
+"klS" = (
+/obj/machinery/power/nt_obelisk,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "klX" = (
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
@@ -50654,6 +50724,11 @@
 /area/nadezhda/medical/sleeper)
 "kTY" = (
 /obj/structure/flora/ausbushes/grassybush,
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "kTZ" = (
@@ -51732,8 +51807,8 @@
 /area/nadezhda/outside/lakeside)
 "leC" = (
 /obj/structure/bed/chair/sofa/black/corner{
-	icon_state = "sofamiddle";
-	dir = 4
+	dir = 4;
+	icon_state = "sofamiddle"
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/bridgebar)
@@ -52120,9 +52195,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/panic_room)
 "ljw" = (
-/obj/machinery/power/nt_obelisk,
-/turf/simulated/floor/asteroid/dirt/dark,
-/area/nadezhda/crew_quarters/hydroponics/garden)
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "ljB" = (
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techmaint,
@@ -53497,6 +53574,14 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"lyw" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "lyF" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -53880,8 +53965,8 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "lBL" = (
-/obj/machinery/camera/network/third_section{
-	dir = 4
+/obj/structure/railing{
+	dir = 8
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/hydroponics/garden)
@@ -53976,8 +54061,8 @@
 "lDd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair/sofa/black/corner{
-	icon_state = "sofaend_left";
-	dir = 1
+	dir = 1;
+	icon_state = "sofaend_left"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/cafeteria)
@@ -54085,6 +54170,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology)
+"lDX" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing{
+	anchored = 1;
+	dir = 4;
+	icon_state = "railing0";
+	tag = "icon-railing0 (EAST)"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "lEt" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -54250,8 +54345,8 @@
 "lGG" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/penguin/baby{
-	name = "Peepski";
-	desc = "An ungainly, waddling, cute, and VERY well-dressed bird. This baby penguin makes a great drinking buddy."
+	desc = "An ungainly, waddling, cute, and VERY well-dressed bird. This baby penguin makes a great drinking buddy.";
+	name = "Peepski"
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/cafeteria)
@@ -54640,6 +54735,12 @@
 /area/nadezhda/engineering/atmos/surface)
 "lLG" = (
 /obj/structure/flora/small/rock5,
+/obj/structure/railing{
+	anchored = 1;
+	dir = 4;
+	icon_state = "railing0";
+	tag = "icon-railing0 (EAST)"
+	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "lLN" = (
@@ -54884,9 +54985,10 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/disposaldrop)
 "lOl" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/smartfridge/drying_rack,
-/turf/simulated/floor/tiled/dark/golden,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/mob/living/simple_animal/chicken,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "lOo" = (
 /turf/simulated/mineral,
@@ -56382,8 +56484,8 @@
 	pixel_x = -22
 	},
 /obj/structure/bed/chair/sofa/black/corner{
-	icon_state = "sofamiddle";
-	dir = 4
+	dir = 4;
+	icon_state = "sofamiddle"
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/cafeteria)
@@ -58619,8 +58721,8 @@
 /obj/machinery/multistructure/biogenerator_part/generator,
 /obj/structure/cable/yellow{
 	d2 = 4;
-	icon_state = "0-4";
-	dir = 1
+	dir = 1;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
@@ -61059,6 +61161,10 @@
 	icon_state = "0-4"
 	},
 /obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -62166,8 +62272,8 @@
 	},
 /obj/structure/cable/yellow{
 	d2 = 4;
-	icon_state = "0-4";
-	dir = 1
+	dir = 1;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm3{
@@ -64149,8 +64255,8 @@
 "nJY" = (
 /obj/structure/railing/grey,
 /obj/structure/bed/chair/sofa/black/corner{
-	icon_state = "sofaend_right";
-	dir = 1
+	dir = 1;
+	icon_state = "sofaend_right"
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/cafeteria)
@@ -64768,6 +64874,14 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
+"nSD" = (
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "nSF" = (
 /obj/machinery/holoposter{
 	pixel_y = 32
@@ -66709,6 +66823,15 @@
 /obj/effect/window_lwall_spawn,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/campground)
+"onD" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "onJ" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/donut,
@@ -70349,8 +70472,13 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
 "pdx" = (
-/obj/structure/flora/ausbushes/leafybush,
-/turf/simulated/floor/asteroid/dirt,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/railing,
+/turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "pdG" = (
 /obj/machinery/light/small{
@@ -70490,8 +70618,8 @@
 /area/nadezhda/medical/sleeper)
 "peU" = (
 /obj/structure/bed/chair/sofa/black/corner{
-	icon_state = "sofaend_left";
-	dir = 4
+	dir = 4;
+	icon_state = "sofaend_left"
 	},
 /obj/machinery/light{
 	dir = 8;
@@ -71221,7 +71349,12 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/courtroom)
 "pnr" = (
-/obj/machinery/smartfridge/kitchen/church/public,
+/obj/structure/sink{
+	density = 1;
+	desc = "A small fountain of polished stone and has a small pump at the bottom that helps push fresh water.";
+	icon_state = "BaptismFont_Water";
+	name = "Water Fountain"
+	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "pns" = (
@@ -71621,6 +71754,13 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/section1)
+"prG" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "prK" = (
 /obj/machinery/camera/network/research{
 	dir = 4
@@ -71950,6 +72090,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/pros/prep)
+"pwG" = (
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "pwK" = (
 /obj/structure/table/bar_special,
 /obj/random/booze,
@@ -72215,6 +72363,12 @@
 /area/nadezhda/security/range{
 	name = "\improper Blackshield - Firing Range"
 	})
+"pzn" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "pzr" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -73392,6 +73546,9 @@
 "pLd" = (
 /obj/machinery/vending/hydronutrients,
 /obj/structure/invislight,
+/obj/structure/railing{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "pLh" = (
@@ -73637,9 +73794,8 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "pNT" = (
-/obj/structure/flora/small/rock3,
-/obj/random/spider_trap_burrowing/low_chance,
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/railing,
+/turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "pOb" = (
 /obj/structure/table/reinforced,
@@ -74814,8 +74970,8 @@
 /area/nadezhda/command/prime)
 "pZS" = (
 /mob/living/simple_animal/opossum{
-	name = "'Cross-em' Opossum";
-	desc = "The Nedezhda basketball team mascot. - Currently scavenging for rebounds"
+	desc = "The Nedezhda basketball team mascot. - Currently scavenging for rebounds";
+	name = "'Cross-em' Opossum"
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/fitness)
@@ -80479,8 +80635,8 @@
 "rhW" = (
 /obj/structure/cable/yellow{
 	d2 = 4;
-	icon_state = "0-4";
-	dir = 1
+	dir = 1;
+	icon_state = "0-4"
 	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/pros/prep)
@@ -80642,12 +80798,8 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/engineering/construction)
 "rjJ" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/wood/wild3,
+/obj/structure/railing,
+/turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "rjU" = (
 /obj/item/stool/custom/bar_special,
@@ -81018,6 +81170,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai)
+"rof" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "roi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor,
@@ -82629,13 +82787,10 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "rEL" = (
-/obj/structure/grille,
-/obj/structure/barricade,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/structure/railing{
+	dir = 4
 	},
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "rEV" = (
 /obj/effect/decal/cleanable/dirt,
@@ -82984,16 +83139,8 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/cafeteria)
 "rIN" = (
-/obj/structure/grille,
-/obj/structure/barricade,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 0
-	},
-/turf/simulated/floor/asteroid/dirt,
+/obj/structure/flora/small/rock5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "rJc" = (
 /obj/effect/floor_decal/industrial/hatch,
@@ -83251,6 +83398,16 @@
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"rMk" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "rMs" = (
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/tiled/white/cargo,
@@ -83340,6 +83497,12 @@
 /obj/random/cluster/spiders/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest)
+"rNS" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "rNV" = (
 /obj/structure/flora/small/rock5,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -83949,6 +84112,12 @@
 /obj/structure/barricade,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"rTY" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/random/flora/jungle_tree,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "rUi" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
@@ -84191,6 +84360,7 @@
 /area/eris/crew_quarters/bar)
 "rWq" = (
 /obj/machinery/camera/network/third_section,
+/obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "rWw" = (
@@ -84775,6 +84945,17 @@
 	},
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/pros/prep)
+"sdq" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "sds" = (
 /obj/effect/floor_decal/industrial/outline/red,
 /obj/structure/multiz/ladder/up,
@@ -85973,8 +86154,8 @@
 /area/turret_protected/ai)
 "spS" = (
 /obj/structure/bed/chair/sofa/black/corner{
-	icon_state = "sofaend_right";
-	dir = 1
+	dir = 1;
+	icon_state = "sofaend_right"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/cafeteria)
@@ -86107,9 +86288,17 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "srq" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/meadow)
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/solar,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "sru" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -86298,8 +86487,8 @@
 /area/nadezhda/engineering/engine_room)
 "suw" = (
 /obj/structure/bed/chair/sofa/black/corner{
-	icon_state = "sofaend_left";
-	dir = 1
+	dir = 1;
+	icon_state = "sofaend_left"
 	},
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -86525,8 +86714,8 @@
 /area/nadezhda/command/tcommsat/computer)
 "swx" = (
 /obj/structure/bed/chair/sofa/black/corner{
-	icon_state = "sofaend_left";
-	dir = 8
+	dir = 8;
+	icon_state = "sofaend_left"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/bridgebar)
@@ -86535,6 +86724,10 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /obj/machinery/power/solar,
 /turf/simulated/floor/plating/under,
@@ -89650,8 +89843,8 @@
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
 	d2 = 4;
-	icon_state = "0-4";
-	dir = 1
+	dir = 1;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/engineering/atmos/surface)
@@ -90000,9 +90193,9 @@
 /area/nadezhda/security/tactical_blackshield)
 "tjY" = (
 /mob/living/simple_animal/crab{
-	name = "Hector";
+	desc = "Hector is a mascot, he isn't for consumption.";
 	mob_size = 2;
-	desc = "Hector is a mascot, he isn't for consumption."
+	name = "Hector"
 	},
 /obj/structure/sign/neon/sushi{
 	desc = "Hector's favorite sign.";
@@ -90385,8 +90578,8 @@
 	},
 /obj/structure/cable/yellow{
 	d2 = 4;
-	icon_state = "0-4";
-	dir = 1
+	dir = 1;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/bridgebar)
@@ -90474,6 +90667,12 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/podrooms)
+"tqr" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "tqy" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -91733,6 +91932,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest)
+"tEe" = (
+/obj/machinery/smartfridge/kitchen/church/public,
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "tEg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -95333,6 +95536,14 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
+"uuT" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "uuW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -95514,8 +95725,8 @@
 "uwH" = (
 /obj/structure/lattice,
 /obj/machinery/door/window/southleft{
-	req_access = list(35);
-	name = "Crab Crib"
+	name = "Crab Crib";
+	req_access = list(35)
 	},
 /obj/machinery/camera/network/cev_eris{
 	dir = 4
@@ -95671,6 +95882,15 @@
 /obj/structure/bed/chair/comfy/black,
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/cafeteria)
+"uyH" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "uyY" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/effect/decal/cleanable/dirt,
@@ -96005,8 +96225,8 @@
 	})
 "uBu" = (
 /obj/item/contraband/poster/placed/generic/clown{
-	name = "Familiar Clown Poster";
-	desc = "Hector's favorite poster."
+	desc = "Hector's favorite poster.";
+	name = "Familiar Clown Poster"
 	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/crew_quarters/cafeteria)
@@ -96844,8 +97064,8 @@
 /area/nadezhda/command/courtroom)
 "uJb" = (
 /obj/structure/bed/chair/sofa/black/corner{
-	icon_state = "sofaend_left";
-	dir = 8
+	dir = 8;
+	icon_state = "sofaend_left"
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/bridgebar)
@@ -97512,6 +97732,10 @@
 /obj/structure/cable/yellow{
 	d2 = 4;
 	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -98383,6 +98607,9 @@
 "uYF" = (
 /obj/structure/table/woodentable,
 /obj/item/tool/shovel/spade,
+/obj/structure/railing{
+	dir = 8
+	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "uYL" = (
@@ -100555,8 +100782,8 @@
 "vwj" = (
 /obj/item/toy/plushie/fumo/arcueid,
 /obj/structure/barricade{
-	icon_state = "fwindow";
-	dir = 9
+	dir = 9;
+	icon_state = "fwindow"
 	},
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -102890,6 +103117,15 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/pool)
+"vVD" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "vVF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/effect/decal/cleanable/dirt,
@@ -102978,6 +103214,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/structure/railing,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "vWA" = (
@@ -105997,9 +106234,11 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/security/tactical_blackshield)
 "wBb" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/meadow)
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "wBc" = (
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
@@ -106592,7 +106831,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/rock3,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/crew_quarters/hydroponics/garden)
+/area/nadezhda/outside/meadow)
 "wIk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/guestpass{
@@ -106754,8 +106993,8 @@
 /area/nadezhda/command/panic_room)
 "wJF" = (
 /obj/structure/bed/chair/sofa/black/corner{
-	icon_state = "sofamiddle";
-	dir = 8
+	dir = 8;
+	icon_state = "sofamiddle"
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/bridgebar)
@@ -106893,6 +107132,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"wMf" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/random/flora/jungle_tree,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "wMj" = (
 /obj/random/scrap,
 /obj/effect/decal/cleanable/cobweb2,
@@ -108139,7 +108383,13 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/workshop)
 "xbv" = (
-/obj/machinery/portable_atmospherics/hydroponics/soil,
+/obj/structure/railing{
+	anchored = 1;
+	dir = 4;
+	icon_state = "railing0";
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "xbx" = (
@@ -110322,6 +110572,18 @@
 /obj/item/clothing/accessory/armband/cargo,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/quartermaster/hangarsupply)
+"xAC" = (
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/solar,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "xAI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -112688,6 +112950,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"xYx" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "xYC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -218088,7 +218359,7 @@ wVU
 gyc
 wVU
 gyc
-leU
+nAX
 vUJ
 eqh
 eqf
@@ -218290,7 +218561,7 @@ fXR
 vAX
 fXR
 vAX
-leU
+tyn
 vUJ
 eqh
 eqh
@@ -218489,10 +218760,10 @@ iUs
 iUs
 iUs
 rWq
+nAX
+tyn
 leU
-leU
-leU
-leU
+hvW
 vUJ
 vUJ
 sbB
@@ -218684,11 +218955,11 @@ riw
 mVE
 pLt
 qgJ
-leU
+vUJ
 fjS
-leU
-leU
-leU
+tyn
+tyn
+tqr
 vUJ
 vUJ
 vUJ
@@ -218886,11 +219157,11 @@ riw
 koL
 fxv
 jHx
-leU
-leU
-leU
-iXU
-wBb
+vUJ
+vUJ
+vUJ
+vUJ
+nAX
 vUJ
 vUJ
 hvW
@@ -219290,11 +219561,11 @@ riw
 dCC
 yjK
 vUJ
-srq
+vUJ
 leU
+eqh
+eqh
 hvW
-leU
-leU
 iXU
 vUJ
 eqh
@@ -219493,10 +219764,10 @@ eIV
 oqc
 vUJ
 dIp
+leU
 eqh
 eqh
-ebB
-eqh
+leU
 hvW
 vUJ
 ddH
@@ -219696,8 +219967,8 @@ ivC
 vUJ
 leU
 eqh
-eqf
-eqf
+eqh
+dbS
 eqh
 hvW
 vUJ
@@ -220100,8 +220371,8 @@ ivC
 vUJ
 leU
 eqh
-eqh
-eqh
+eqf
+eqf
 eqh
 nMm
 vUJ
@@ -220300,11 +220571,11 @@ oTp
 eIV
 ivC
 vUJ
-dft
-oRu
-uqZ
-pmi
-flK
+mcG
+eqh
+eqh
+eqh
+eqh
 mcG
 vUJ
 ddH
@@ -220502,11 +220773,11 @@ oTp
 eIV
 bwG
 vUJ
-oRu
-hmA
-oRu
-oRu
-uqZ
+leU
+tEB
+leU
+leU
+nAX
 uvO
 vUJ
 eqh
@@ -220704,12 +220975,12 @@ gUk
 wfn
 vFR
 vUJ
-oRu
-oRu
+ebB
+ebB
 lLG
-oRu
-dft
-vUJ
+ebB
+lDX
+wLt
 vUJ
 eqh
 eqh
@@ -220905,18 +221176,18 @@ gUk
 gUk
 wfn
 hvW
-vUJ
+vhs
 rIN
-frU
-txc
-frU
-rEL
+uqZ
+rIN
+oRu
+uOU
+hlG
 vUJ
-tyn
 vgK
 leU
-leU
-hvW
+nAX
+vgK
 sbB
 hvW
 hvW
@@ -221106,21 +221377,21 @@ riw
 gUk
 kVO
 fAA
-leU
 vUJ
-evb
-uOU
+vhs
+uqZ
+frU
 fUv
-oRu
-jpj
+dft
+dft
+hlG
 vUJ
+hvW
+hvW
+nAX
+nAX
 leU
-hvW
-hvW
-nMm
-sbB
-sbB
-sbB
+pIy
 leU
 leU
 hvW
@@ -221309,23 +221580,23 @@ gUk
 oMM
 vIL
 vUJ
-vUJ
 bST
-uOU
-fUv
-uOU
+oRu
 jpj
-wLt
-wak
 oRu
-uOU
-uOU
-uOU
-uOU
-uOU
-uOU
-oRu
+fWw
 wak
+hlG
+vUJ
+leU
+sbB
+rTY
+lyw
+ilm
+nZJ
+sbB
+leU
+hvW
 leU
 ydl
 nAX
@@ -221512,21 +221783,21 @@ gUk
 owa
 gUk
 gUk
-txc
-wJU
+wak
+lOl
 hbO
-uOU
+dft
 uJc
 wLt
-uOU
-uOU
-uOU
-uOU
-uOU
-uOU
-uOU
-uOU
-oRu
+vUJ
+sbB
+sbB
+kiC
+ljw
+fDv
+ljw
+sbB
+sbB
 wIh
 hvW
 xzG
@@ -221714,22 +221985,22 @@ uVK
 kVt
 gUk
 gUk
-txc
-txc
-txc
-txc
+wak
+oRu
+uOU
+uOU
 txc
 cRj
-jZc
-jZc
-jZc
-jZc
-jZc
+vUJ
+sbB
+sbB
+sbB
+ilm
 ljw
-uOU
-dft
-oRu
-wak
+ljw
+sbB
+sbB
+hvW
 hvW
 leU
 leU
@@ -221917,20 +222188,20 @@ sMN
 jZI
 jZI
 pLd
-eNB
+lBL
 lBL
 uYF
 ouz
-jZc
+wLt
+wLt
 xbv
-xbv
-xbv
-xbv
-xbv
-jZc
-uOU
-wJU
-oRu
+juE
+ebB
+ebB
+ebB
+ebB
+juE
+ebB
 wak
 leU
 leU
@@ -222119,25 +222390,25 @@ kJN
 jZI
 jZI
 tRt
-rjJ
+khb
 khb
 mUK
 wAe
-jZc
-xbv
-xbv
-xbv
-xbv
-xbv
-jZc
-uOU
-pNT
-oRu
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+klS
 kTY
 leU
 leU
 leU
-sbB
+fDv
 sbB
 uiw
 ppU
@@ -222321,21 +222592,21 @@ kJN
 jZI
 jZI
 kTZ
-rjJ
+khb
 khb
 khb
 wAe
+wLt
+wLt
 jZc
-jZc
-jZc
-jZc
-jZc
-jZc
-jZc
-uOU
-uOU
-oRu
-oRu
+dIF
+dIF
+dIF
+dIF
+dIF
+wLt
+wLt
+nSD
 hvW
 leU
 leU
@@ -222523,21 +222794,21 @@ ucs
 gUk
 gUk
 gMH
-rjJ
+khb
 mYf
 khb
 aQQ
+wLt
+wLt
 jZc
-jZc
-jZc
-jZc
-jZc
-jZc
-jZc
-uOU
-uOU
-wak
-oRu
+dIF
+dIF
+dIF
+dIF
+dIF
+wLt
+wLt
+nSD
 leU
 leU
 leU
@@ -222729,20 +223000,20 @@ iyP
 gCt
 khb
 dEX
-jZc
-xbv
-xbv
-xbv
-xbv
-xbv
-jZc
-uOU
-uOU
-uOU
-uOU
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+pwG
 leU
 hvW
-leU
+tSB
 leU
 sbB
 fHc
@@ -222931,17 +223202,17 @@ qmQ
 blI
 khb
 pnr
-jZc
-xbv
-xbv
-xbv
-xbv
-xbv
-jZc
-uOU
-uOU
-uOU
-dft
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+uyH
 nAX
 leU
 nAX
@@ -223132,18 +223403,18 @@ mmm
 xjb
 gCt
 khb
-lOl
+oly
+wLt
+wLt
 jZc
-jZc
-jZc
-jZc
-jZc
-jZc
-jZc
-uOU
-uOU
-uOU
-wJU
+dIF
+dIF
+dIF
+dIF
+dIF
+wLt
+wLt
+vVD
 leU
 jYK
 iXU
@@ -223334,18 +223605,18 @@ mmm
 khb
 mUK
 mUK
-lOl
+oly
+wLt
+wLt
 jZc
-jZc
-jZc
-jZc
-jZc
-jZc
-jZc
-uOU
-uOU
-pdx
-wak
+dIF
+dIF
+dIF
+dIF
+dIF
+wLt
+wLt
+onD
 leU
 leU
 tSB
@@ -223536,18 +223807,18 @@ gJe
 pdt
 mUK
 khb
-wAe
-jZc
-xbv
-xbv
-xbv
-xbv
-xbv
-jZc
-uOU
-uOU
-uOU
-uOU
+tEe
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+hcq
+pwG
 leU
 nAX
 kPA
@@ -223738,18 +224009,18 @@ rIc
 sdN
 khb
 khb
-oly
-jZc
-xbv
-xbv
-xbv
-xbv
-xbv
-jZc
+fmX
 wLt
-uOU
-uOU
-uOU
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+wLt
+pwG
 uvO
 leU
 nAX
@@ -223940,18 +224211,18 @@ gYP
 sdN
 khb
 khb
-oly
+fmX
+wLt
+wLt
 jZc
-jZc
-jZc
-jZc
-jZc
-jZc
+dIF
+dIF
+dIF
+dIF
 dIF
 wLt
 wLt
-uOU
-uOU
+pwG
 dIp
 leU
 iXU
@@ -224140,23 +224411,23 @@ gUk
 kHd
 khb
 sdN
-khb
-khb
+rEL
+rEL
 oly
-oRu
-oRu
-oRu
-pmi
 wLt
 wLt
+jZc
+dIF
+dIF
+dIF
+dIF
+dIF
 wLt
 wLt
-wLt
-wLt
-uOU
+pwG
 sbB
 leU
-mcG
+wMf
 leU
 nAX
 uiw
@@ -224341,18 +224612,18 @@ fBw
 gUk
 kHd
 khb
-sdN
+pdx
 utp
 oly
 oly
-wJU
-uqZ
-oRu
-oRu
-oRu
-wLt
-wLt
-wLt
+rNS
+rNS
+rNS
+rNS
+rNS
+rNS
+rNS
+rNS
 wLt
 wLt
 wLt
@@ -224543,8 +224814,8 @@ sRR
 fWi
 xrJ
 rmB
-sdN
-utp
+pdx
+srq
 utp
 oly
 tCs
@@ -224555,9 +224826,9 @@ fZk
 fZk
 fZk
 mNP
-oRu
-wLt
-wLt
+sdq
+rNS
+rNS
 vUJ
 qfd
 leU
@@ -224745,9 +225016,9 @@ pTz
 gUk
 lQG
 rcO
-sdN
-utp
-utp
+pdx
+srq
+xAC
 dnC
 sPY
 rlb
@@ -224760,7 +225031,7 @@ uOR
 uqZ
 oRu
 utp
-vUJ
+kbt
 sbB
 sbB
 iXU
@@ -224947,9 +225218,9 @@ iRu
 gUk
 lQG
 rcO
-sdN
-utp
-utp
+pdx
+srq
+xAC
 mFa
 utp
 utp
@@ -224961,8 +225232,8 @@ flK
 oRu
 oRu
 utp
-utp
-vUJ
+srq
+kbt
 sbB
 sbB
 leU
@@ -225149,9 +225420,9 @@ aQL
 xpb
 jAH
 rcO
-sdN
-utp
-utp
+pdx
+srq
+xAC
 mFa
 xHN
 bsY
@@ -225162,9 +225433,9 @@ mNP
 pmi
 utp
 oRu
-utp
-utp
-vUJ
+srq
+srq
+kbt
 sbB
 sbB
 leU
@@ -225351,9 +225622,9 @@ eip
 gUk
 gUk
 rcO
-sdN
-utp
-utp
+pdx
+srq
+xAC
 mFa
 tFi
 oly
@@ -225362,11 +225633,11 @@ oly
 xHN
 sPY
 aJH
-utp
+srq
 vbl
 bjh
 dDh
-vUJ
+kbt
 sbB
 sbB
 uvO
@@ -225567,8 +225838,8 @@ jId
 oGW
 sPY
 bSz
-utp
-vUJ
+srq
+kbt
 sbB
 sbB
 leU
@@ -225755,9 +226026,9 @@ eip
 npq
 gUk
 rcO
-khb
-utp
-utp
+pNT
+srq
+xAC
 mFa
 qQK
 oly
@@ -225766,11 +226037,11 @@ oly
 dnC
 sPY
 tYy
-utp
+xAC
 uqZ
 uPD
 nbU
-vUJ
+kbt
 sbB
 sbB
 acd
@@ -225957,9 +226228,9 @@ bkH
 npq
 gUk
 rcO
-khb
-utp
-utp
+pNT
+srq
+xAC
 mFa
 dnC
 kHa
@@ -225970,9 +226241,9 @@ mNP
 pmi
 cSF
 oRu
-utp
-utp
-vUJ
+srq
+srq
+kbt
 sbB
 gHe
 leU
@@ -226159,9 +226430,9 @@ eip
 npq
 gUk
 dua
-khb
-utp
-utp
+pNT
+srq
+xAC
 mFa
 cSF
 cSF
@@ -226173,8 +226444,8 @@ flK
 wJU
 oRu
 cSF
-utp
-xqY
+srq
+itf
 sbB
 iXU
 leU
@@ -226361,9 +226632,9 @@ eip
 npq
 gUk
 rcO
-khb
-utp
-utp
+pNT
+srq
+xAC
 xHN
 sPY
 fcc
@@ -226376,7 +226647,7 @@ fFw
 oRu
 oRu
 cSF
-vUJ
+kbt
 sbB
 iXU
 iXU
@@ -226563,10 +226834,10 @@ iRu
 npq
 gUk
 rcO
-khb
-utp
-utp
-dft
+pNT
+srq
+xAC
+uuT
 tCs
 xES
 fZk
@@ -226575,9 +226846,9 @@ fZk
 fZk
 fZk
 mNP
-oRu
-wLt
-wLt
+xYx
+rof
+rof
 dld
 mOB
 tWF
@@ -226765,18 +227036,18 @@ rAI
 nld
 gUk
 bZy
-oly
+rjJ
 cSF
-dft
+rMk
 oRu
-oRu
-oRu
-pmi
-wLt
-wLt
-wLt
-wLt
-wLt
+pzn
+pzn
+prG
+rof
+rof
+rof
+rof
+rof
 wLt
 wLt
 wLt
@@ -226968,7 +227239,7 @@ tJz
 gUk
 wyk
 oly
-oly
+wBb
 oRu
 oRu
 oRu
