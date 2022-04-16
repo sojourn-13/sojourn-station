@@ -23,7 +23,7 @@
 	new /obj/item/tool/wirecutters(src)
 	new /obj/item/reagent_containers/spray/plantbgone(src)
 	new /obj/item/clothing/gloves/botanic_leather(src)
-	new /obj/item/clothing/mask/gas/alternate(src)
+	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/tank/air(src)
 
 /obj/structure/closet/secure_closet/personal/hydroponics/

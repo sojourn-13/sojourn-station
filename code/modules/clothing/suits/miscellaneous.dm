@@ -257,13 +257,13 @@ obj/item/clothing/suit/fluff/kimono
 	body_parts_covered = UPPER_TORSO
 
 
-/obj/item/clothing/suit/ivory
+/obj/item/clothing/suit/tabard
 	name = "ivory tabard"
 	desc = "A somewhat revealing ivory tabard favored by older orders for ceremony, used often for funerals and coupled with dark under clothes."
 	icon_state = "white_tabard"
 	item_state = "white_tabard"
 
-/obj/item/clothing/suit/blacksilk
+/obj/item/clothing/suit/tabard/blacksilk
 	name = "blacksilk tabard"
 	desc = "A somewhat revealing black and gold tabard favored by older orders for ceremony, used often for funerals and coupled with light under clothes."
 	icon_state = "church_blacksilk_suit"
