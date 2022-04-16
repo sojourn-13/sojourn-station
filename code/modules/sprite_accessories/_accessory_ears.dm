@@ -264,7 +264,7 @@
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/sheep
-	name = "Sheep earss"
+	name = "Sheep ears"
 	desc = ""
 	icon_state = "sheep"
 	colored_layers = 1
