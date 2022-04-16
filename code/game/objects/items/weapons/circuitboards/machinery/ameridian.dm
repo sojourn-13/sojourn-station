@@ -18,6 +18,7 @@
 	board_type = "machine"
 	build_path = /obj/machinery/ameridian_refinery
 	origin_tech = list(TECH_DATA = 4, TECH_MATERIAL = 9, TECH_ENGINEERING = 5)
+	frame_type = FRAME_VERTICAL
 	req_components = list(
 		/obj/structure/reagent_dispensers/bidon = 1
 	)
