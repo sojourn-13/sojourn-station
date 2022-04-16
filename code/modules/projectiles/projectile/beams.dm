@@ -241,7 +241,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	impact_type = null
 	heat = 500
 
-/obj/item/projectile/beam/pulse/on_hit(atom/target)
+/obj/item/projectile/beam/infrared/on_hit(atom/target)
 	if(isliving(target))
 		var/mob/living/L = target
 		L.bodytemperature += (heat/250) * TEMPERATURE_DAMAGE_COEFFICIENT //1/5th the strength of hell ramen per tick, since you can unload with a smg
