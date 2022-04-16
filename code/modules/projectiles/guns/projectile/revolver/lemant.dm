@@ -50,6 +50,20 @@
 	price_tag = 550
 	recoil_buildup = 3 // Exceptional weight helps with recoil control, but unwieldy enough to merely match the claw. -Kaz
 
+/obj/item/gun/projectile/revolver/lemant/uppercut
+	name = "\"Pilgrim Hero\" kurtz revolver"
+	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds five .50 kurtz rounds and one single action underslung 20mm shell. \
+	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstaking to reload since it requires removing each spent shell individually. \
+	This model is a conversion, known as the pilgrim hero, its caliber is converted to .50 kurtz but it loses ammo capacity due to the larger shells and lacks the \
+	physical weight to give it better recoil control compared to other revolvers in its weight class. Underslung still works at least."
+	icon = 'icons/obj/guns/projectile/lemant_hero.dmi'
+	icon_state = "lemant_hero"
+	item_state = "lemant_hero"
+	caliber = CAL_MAGNUM
+	max_shells = 6
+	price_tag = 500
+	recoil_buildup = 14 // Massive recoil due to being a kurtz revolver without the weight to compensate for the blast. -Kaz
+
 //Defined here, may be used elsewhere but for now its only used here. -Kaz
 /obj/item/gun/projectile/underslung_shotgun
 	name = "underslung shotgun"
