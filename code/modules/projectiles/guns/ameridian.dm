@@ -1,16 +1,21 @@
 // Ameridian-based Weaponry require an ameridian core to be usable and consume liquid ameridian as ammo.
 
 /obj/item/gun/ameridian
-	name = "ameridian gun"
-	desc = "A gun using liquid ameridian to shoot a beam of deadly radiation. It require an ameridian core & liquid ameridian to work"
-	icon = 'icons/obj/guns/energy/sonic_emitter.dmi'
-	icon_state = "sonic_emitter"
-	item_state = "sonic_emitter"
+	name = "ameridian cog"
+	desc = "A gun using liquid ameridian to shoot a beam of deadly radiation. It require an ameridian core & liquid ameridian to work.\
+			It looks awfully similar to a cog."
+	icon = 'icons/obj/guns/ameridian/ameridian_cog.dmi'
+	icon_state = "ameridian_cog"
+	item_state = "ameridian_cog"
 	fire_delay = 25
 	slot_flags = SLOT_BACK // Can only fit in the back
 	twohanded = FALSE
-	max_upgrades = 0
+	max_upgrades = 3
 	fire_sound = 'sound/weapons/wave.ogg'
+	init_firemodes = list(
+		WEAPON_NORMAL,
+		BURST_3_ROUND
+	)
 	reagent_flags = REFILLABLE |  DRAINABLE | TRANSPARENT
 	var/projectile_type = /obj/item/projectile/beam/ameridian // What does it shoot
 	var/internal_tank_size = 250 // How many reagents can the gun hold.
@@ -31,7 +36,7 @@
 		to_chat(user, SPAN_NOTICE("[src] has no ameridian core."))
 		return
 	if(use_amount) // In case we don't use any ammo
-		to_chat(user, "[src] has [round(reagents.total_volume / use_amount)] shot\s remaining.")
+		to_chat(user, "[src] has [round(reagents.get_reagent_amount(ammo_type) / use_amount)] shot\s remaining.")
 	return
 
 /obj/item/gun/ameridian/MouseDrop(over_object)
