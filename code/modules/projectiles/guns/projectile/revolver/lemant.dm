@@ -59,7 +59,8 @@
 	icon = 'icons/obj/guns/projectile/lemant_hero.dmi'
 	icon_state = "lemant_hero"
 	item_state = "lemant_hero"
-	caliber = CAL_MAGNUM
+	caliber = CAL_50
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
 	max_shells = 6
 	price_tag = 500
 	recoil_buildup = 14 // Massive recoil due to being a kurtz revolver without the weight to compensate for the blast. -Kaz
