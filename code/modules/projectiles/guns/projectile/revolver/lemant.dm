@@ -52,7 +52,7 @@
 
 /obj/item/gun/projectile/revolver/lemant/uppercut
 	name = "\"Pilgrim Hero\" kurtz revolver"
-	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds five .50 kurtz rounds and one single action underslung 20mm shell. \
+	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds six .50 kurtz rounds and one single action underslung 20mm shell. \
 	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstaking to reload since it requires removing each spent shell individually. \
 	This model is a conversion, known as the pilgrim hero, its caliber is converted to .50 kurtz but it loses ammo capacity due to the larger shells and lacks the \
 	physical weight to give it better recoil control compared to other revolvers in its weight class. Underslung still works at least."
