@@ -4,7 +4,6 @@
 	Due to the increased internal space used, the cell has to be mounted on the exterior of the weapon which renders it more susceptible to knocks. Has a basic optic fitted."
 	icon = 'icons/obj/guns/energy/tetra.dmi'
 	icon_state = "tetra"
-	item_state = "tetra"
 	w_class = ITEM_SIZE_BULKY
 	fire_sound = 'sound/weapons/Laser2.ogg'
 	fire_sound_silenced = 'sound/weapons/quietlaser2.ogg'
@@ -46,17 +45,19 @@
 	to_chat(user, SPAN_NOTICE("Control-Shift click to switch to the previous firemode."))
 
 /obj/item/gun/energy/tetra/update_icon()
-	..()
 	cut_overlays()
 	var/ratio = 0
 	if(cell)
-		item_state = "[initial(item_state)]_loaded"
+		item_modifystate = "loaded"
 		add_overlay("[cell.icon_state]")
 		if(cell.charge >= charge_cost)
 			ratio = cell.charge / cell.maxcharge
 			ratio = min(max(round(ratio, 0.25) * 100, 25), 100)
 
 		add_overlay("[cell.icon_state]_[ratio]")
+	else
+		item_modifystate = null
+	..()
 
 /obj/item/gun/energy/tetra/CtrlShiftClick(mob/user)
 	if(currently_firing) // CHEATERS!
