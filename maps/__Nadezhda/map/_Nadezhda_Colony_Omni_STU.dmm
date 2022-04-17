@@ -17404,7 +17404,6 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
-/obj/structure/invislight,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/bridgebar)
@@ -27693,7 +27692,6 @@
 /obj/machinery/light/floor{
 	dir = 8
 	},
-/obj/structure/invislight,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/bridgebar)
 "fYZ" = (
@@ -45252,10 +45250,6 @@
 	icon_state = "monofloor"
 	},
 /area/nadezhda/security/vacantoffice2)
-"jNY" = (
-/obj/structure/invislight,
-/turf/simulated/floor/wood/wild3,
-/area/nadezhda/command/bridgebar)
 "jOr" = (
 /obj/machinery/light{
 	dir = 1
@@ -66718,7 +66712,6 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/hallway/surface/section1)
 "onr" = (
-/obj/structure/invislight,
 /turf/simulated/floor/tiled/white,
 /area/eris/crew_quarters/barbackroom)
 "onu" = (
@@ -72031,7 +72024,6 @@
 /area/nadezhda/quartermaster/underground_to_surface_disposal)
 "pxc" = (
 /obj/machinery/camera/network/cev_eris,
-/obj/structure/invislight,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/bridgebar)
 "pxi" = (
@@ -72115,13 +72107,6 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/storage/primary)
-"pyg" = (
-/obj/machinery/holoposter{
-	pixel_y = 30
-	},
-/obj/structure/invislight,
-/turf/simulated/floor/wood/wild3,
-/area/nadezhda/command/bridgebar)
 "pyj" = (
 /obj/machinery/door_timer{
 	id = "Cell 1";
@@ -75988,7 +75973,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/invislight,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/bridgebar)
 "qlT" = (
@@ -80198,7 +80182,6 @@
 /obj/machinery/light/floor{
 	dir = 4
 	},
-/obj/structure/invislight,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/bridgebar)
 "rek" = (
@@ -85964,7 +85947,6 @@
 	})
 "soV" = (
 /obj/structure/table/glass,
-/obj/structure/cyberplant,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/bridgebar)
 "spb" = (
@@ -102019,7 +102001,6 @@
 /turf/simulated/mineral,
 /area/colony)
 "vKU" = (
-/obj/structure/invislight,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -102032,6 +102013,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/structure/cyberplant,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/bridgebar)
 "vKZ" = (
@@ -166890,7 +166872,7 @@ sFI
 sFI
 sFI
 aAc
-pyg
+kVG
 iqT
 aAc
 aAc
@@ -168304,7 +168286,7 @@ uuI
 sFI
 sFI
 aAc
-jNY
+hKh
 ahx
 peU
 leC
@@ -168708,7 +168690,7 @@ uuI
 sFI
 sFI
 aAc
-jNY
+hKh
 ahx
 jcf
 wJF
