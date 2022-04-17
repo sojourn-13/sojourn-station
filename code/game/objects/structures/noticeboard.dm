@@ -93,7 +93,7 @@
 //add some memos, make sure to break them up so it's relatively readable in code!
 	var/obj/item/paper/P = new()
 	P.name = "Memo RE: Equipment handling"
-	P.info = "<br>Officers and Troopers alike, remember to properly secure lockers and weaponry. This is not a daycare, you should not need to be reminded that lethal weapons are not to be left lying around - Agent Sanja"
+	P.info = "<br>Officers and Troopers alike, remember to properly secure lockers and weaponry. This is not a daycare, you should not need to be reminded that duty-gear is not to be left lying around and unsecured - Agent Sanja"
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
 	src.contents += P
@@ -125,7 +125,7 @@
 /obj/structure/noticeboard/blackshield/New()
 	var/obj/item/paper/P = new()
 	P.name = "Memo RE: Equipment handling"
-	P.info = "<br>Officers and Troopers alike, remember to properly secure lockers and weaponry. This is not a daycare, you should not need to be reminded that lethal weapons are not to be left lying around - Agent Sanja"
+	P.info = "<br>Officers and Troopers alike, remember to properly secure lockers and weaponry. This is not a daycare, you should not need to be reminded that duty-gear is not to be left lying around - Agent Sanja"
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
 	src.contents += P
@@ -162,24 +162,34 @@
 
 /obj/structure/noticeboard/guild
 	name = "Artificers Guild bulletin board"
-	desc = "A board containing vital notices and official memos for the"
+	desc = "A board containing vital notices and official memos for the colonies resident Guild"
 	icon_state = "nboard00"
 	notices = 0
 
 /obj/structure/noticeboard/prospectors
 	name = "Prospectors bulletin board"
-	desc = "A board containing vital notices and official memos for the"
+	desc = "A board containing vital notices and official memos for the colonies most underappreciated trashmen"
 	icon_state = "nboard00"
 	notices = 0
 
 /obj/structure/noticeboard/lonestar
 	name = "Lonestar Shipping bulletin board"
-	desc = "A board containing vital notices and official memos for the"
+	desc = "A board containing vital notices and official memos for Lonestar Employees"
 	icon_state = "nboard00"
 	notices = 0
 
 /obj/structure/noticeboard/church
 	name = "Church of the Absolute bulletin board"
-	desc = "A board containing vital notices and official memos for the"
+	desc = "A board containing vital notices and official memos for the faithful"
 	icon_state = "nboard00"
 	notices = 0
+/*
+/obj/structure/noticeboard/church/New()
+
+	var/obj/item/paper/P = new()  write this later, idr the steps
+	P.name = "Memo RE: Bio-gen troubleshooting"
+	P.info = "<br> "
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+	*/
