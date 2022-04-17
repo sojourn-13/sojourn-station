@@ -1622,6 +1622,7 @@
 #include "code\modules\client\preference_setup\loadout\lists\cosmetics.dm"
 #include "code\modules\client\preference_setup\loadout\lists\earwear.dm"
 #include "code\modules\client\preference_setup\loadout\lists\eyegear.dm"
+#include "code\modules\client\preference_setup\loadout\lists\factionabsolute.dm"
 #include "code\modules\client\preference_setup\loadout\lists\factionartificer.dm"
 #include "code\modules\client\preference_setup\loadout\lists\factioncommand.dm"
 #include "code\modules\client\preference_setup\loadout\lists\factionlonestar.dm"

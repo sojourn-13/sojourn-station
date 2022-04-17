@@ -198,34 +198,6 @@
 	display_name = "leather outfit"
 	path = /obj/item/clothing/under/raider
 
-/datum/gear/uniform/jersey
-	display_name = "church overalls"
-	path = /obj/item/clothing/under/jersey
-
-/datum/gear/uniform/churchsport
-	display_name = "church sport clothes"
-	path = /obj/item/clothing/under/rank/church/sport
-
-/datum/gear/uniform/churchnonrank
-	display_name = "church clothes"
-	path = /obj/item/clothing/under/rank/church
-
-/datum/gear/uniform/mono_belt
-	display_name = "monomial belt"
-	path = /obj/item/clothing/under/monomial_belt
-
-/datum/gear/uniform/lemniscate
-	display_name = "lemniscate skirt"
-	path = /obj/item/clothing/under/rank/lemniscate
-
-/datum/gear/uniform/monashka
-	display_name = "monashka garments"
-	path = /obj/item/clothing/under/rank/monashka
-
-/datum/gear/uniform/ntdress
-	display_name = "Absolutist summmer dress"
-	path = /obj/item/clothing/under/rank/ntdress
-
 /datum/gear/uniform/aerostatic_suit
 	display_name = "dark comfortable clothing"
 	path = /obj/item/clothing/under/aerostatic_suit

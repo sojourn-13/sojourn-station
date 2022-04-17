@@ -27,12 +27,6 @@
 	slot = slot_wear_mask
 	cost = 2
 
-/datum/gear/clothing/gasmask/kriosan
-	display_name = "kriosan gas mask"
-	path = /obj/item/clothing/mask/gas/kriosan
-	slot = slot_wear_mask
-	cost = 2
-
 /datum/gear/clothing/gasmaskenviro
 	display_name = "gas mask, enviro"
 	path = /obj/item/clothing/mask/gas/old

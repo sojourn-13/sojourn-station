@@ -102482,10 +102482,10 @@
 	pixel_y = 32
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber,
-/obj/item/clothing/suit/ivory,
-/obj/item/clothing/suit/ivory,
-/obj/item/clothing/suit/ivory,
-/obj/item/clothing/suit/ivory,
+/obj/item/clothing/suit/tabard,
+/obj/item/clothing/suit/tabard,
+/obj/item/clothing/suit/tabard,
+/obj/item/clothing/suit/tabard,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/crematorium)
 "vOB" = (
