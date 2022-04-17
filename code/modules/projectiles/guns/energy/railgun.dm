@@ -21,7 +21,7 @@
 	one_hand_penalty = 10
 	fire_delay = 14 //Slow, on par with a shotgun pump then fire
 	recoil_buildup = 12 //Big shots, big recoil.
-	damage_multiplier = 1.2
+	damage_multiplier = 1
 	init_firemodes = list(
 		list(mode_name="slug", mode_desc="fires a large metal chunk at light speeds", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
 		list(mode_name="non-lethal", mode_desc="fires a rubber pellet at light speed", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
