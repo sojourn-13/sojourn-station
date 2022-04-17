@@ -122,6 +122,18 @@
 	icon_state = "impact_stun"
 
 //----------------------------
+// Ameridian beam
+//----------------------------
+/obj/effect/projectile/ameridian/tracer
+	icon_state = "xray_old"
+
+/obj/effect/projectile/ameridian/muzzle
+	icon_state = "muzzle_xray_old"
+
+/obj/effect/projectile/ameridian/impact
+	icon_state = "impact_xray_old"
+
+//----------------------------
 // Tesla beam
 //----------------------------
 /obj/effect/projectile/tesla/New()

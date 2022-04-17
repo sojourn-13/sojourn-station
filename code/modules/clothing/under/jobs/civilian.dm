@@ -74,6 +74,35 @@
 	icon_state = "church"
 	item_state = "church"
 
+/obj/item/clothing/under/rank/church/toga
+	desc = "Smells like laurel wreath."
+	name = "church toga"
+	icon_state = "church_toga"
+	item_state = "church_toga"
+
+/obj/item/clothing/under/rank/church/toga/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Red"] = "church_toga"
+	options["Black"] = "church_toga_alt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/rank/chef
 	desc = "A pleasant yet practical suit for professional kitchen staff."
 	name = "chef's uniform"
