@@ -668,10 +668,17 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/helltaker
-	name = "charming outfit"//Helltaker reference
+	name = "black charming outfit" // Helltaker reference
 	desc = "A red shirt with a black tie and black pants. Stylish enough to impress the devil."
 	icon_state = "helltaker"
 	item_state = "helltaker"
+	price_tag = 45
+
+/obj/item/clothing/under/helltaker_m
+	name = "white charming outfit"
+	desc = "A collared, loose red shirt with white pants and a stout belt. Go get your own demon harem, now."
+	icon_state = "helltaker_m" // The Helltaker dude himself - Seb
+	item_state = "helltaker_m"
 	price_tag = 45
 
 /obj/item/clothing/under/colony

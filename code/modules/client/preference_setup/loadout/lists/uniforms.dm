@@ -187,8 +187,12 @@
 	path = /obj/item/clothing/under/cyber
 
 /datum/gear/uniform/helltaker
-	display_name = "charming outfit"
+	display_name = "black charming outfit"
 	path = /obj/item/clothing/under/helltaker
+
+/datum/gear/uniform/helltaker_m
+	display_name = "white charming outfit"
+	path = /obj/item/clothing/under/helltaker_m
 
 /datum/gear/uniform/johnny
 	display_name = "rockerboy clothes"
