@@ -23,17 +23,20 @@
 /datum/gear/factionabsolute/mono_belt
 	display_name = "monomial belt"
 	path = /obj/item/clothing/under/monomial_belt
+	allowed_roles = list("Prime","Vector")
 
 /datum/gear/factionabsolute/lemniscate
 	display_name = "lemniscate skirt"
 	path = /obj/item/clothing/under/rank/lemniscate
+	allowed_roles = list("Prime","Vector")
 
 /datum/gear/factionabsolute/monashka
 	display_name = "monashka garments"
 	path = /obj/item/clothing/under/rank/monashka
+	allowed_roles = list("Prime","Vector")
 
 /datum/gear/factionabsolute/laurel
-	display_name = "tabard selection"
+	display_name = "laurel selection"
 	path = /obj/item/clothing/head/laurel
 	flags = GEAR_HAS_TYPE_SELECTION
 
@@ -41,11 +44,13 @@
 	display_name = "numerical hat"
 	path = /obj/item/clothing/head/numerical_hat
 	slot = slot_head
+	allowed_roles = list("Prime","Vector")
 
 /datum/gear/factionabsolute/numerical_grab
 	display_name = "numerical garb"
 	path = /obj/item/clothing/suit/storage/numericalgarb
 	slot = slot_wear_suit
+	allowed_roles = list("Prime","Vector")
 
 /datum/gear/factionabsolute/tabard
 	display_name = "tabard selection"
