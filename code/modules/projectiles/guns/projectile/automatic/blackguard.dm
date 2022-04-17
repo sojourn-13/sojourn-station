@@ -21,7 +21,7 @@
 	recoil_buildup = 10
 	one_hand_penalty = 15
 
-	max_upgrades = 4 // Trigger, and guards or a laser sight, one less upgrade slot
+	max_upgrades = 3 // Trigger ang a guard; 2 less slots than usual due to its scope, pen and damage.
 
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
