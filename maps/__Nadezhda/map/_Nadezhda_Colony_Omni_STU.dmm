@@ -10257,7 +10257,7 @@
 "cmR" = (
 /obj/machinery/door/airlock{
 	name = "Chef's room";
-	req_access = list(25)
+	req_access = list(28)
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor,
@@ -66601,7 +66601,8 @@
 /area/nadezhda/rnd/rbreakroom)
 "omb" = (
 /obj/machinery/door/airlock/glass{
-	name = "Employee Lounge"
+	name = "Employee Lounge";
+	req_access = list(22,28,26,25,35,43)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -75292,7 +75293,8 @@
 /area/nadezhda/outside/meadow)
 "qfe" = (
 /obj/machinery/door/airlock/glass{
-	name = "Employee Lounge"
+	name = "Employee Lounge";
+	req_access = list(22,28,26,25,35,43)
 	},
 /obj/machinery/door/firedoor/multi_tile{
 	dir = 1
@@ -75642,7 +75644,9 @@
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/command/swo/quarters)
 "qip" = (
-/obj/machinery/door/airlock/multi_tile/metal,
+/obj/machinery/door/airlock/multi_tile/metal{
+	req_access = list(22,28,26,25,35,43)
+	},
 /obj/machinery/door/firedoor,
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -87542,7 +87546,7 @@
 	},
 /obj/machinery/door/airlock{
 	name = "Chef's Bedroom";
-	req_access = list(25)
+	req_access = list(28)
 	},
 /obj/structure/cable/yellow{
 	d1 = 4;
