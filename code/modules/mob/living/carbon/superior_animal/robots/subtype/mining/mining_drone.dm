@@ -193,8 +193,6 @@
 			dat += "- [ore_amount] of [ore_name]\s.<BR>"
 	if(contents.len)
 		dat += "<A href='?src=\ref[src];dropore=1'>Empty Storage Compartment.</A><BR>"
-	else
-		dat += "Storage Compartment is empty.<BR>"
 
 	return dat
 
