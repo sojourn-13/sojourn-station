@@ -140,7 +140,7 @@
 	if(href_list["setfollow"])
 		if(usr in friends)
 			if(following)
-				following = null)
+				following = null
 			else
 				following = input(usr, "Choose who [src] should follow : ", "Set Following", null) as mob in oview(viewRange, src)
 		else
