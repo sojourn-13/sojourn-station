@@ -97,8 +97,6 @@
 	if(ai_flag & FOOD_MODE) // Is Food Mode installed?
 		dat += "- Food Mode : <A href='?src=\ref[src];food=1'>Dispense Food</A><BR>"
 
-
-
 	return dat
 
 /mob/living/carbon/superior_animal/nanobot/Topic(href, href_list)
@@ -110,22 +108,34 @@
 		return
 
 	if(href_list["autodoc"])
-		medbot = !medbot
+		if(creator_check())
+			medbot = !medbot
+		else
+			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
 
 	if(href_list["radio"])
-		Radio.broadcasting = !Radio.broadcasting
+		if(creator_check())
+			Radio.broadcasting = !Radio.broadcasting
+		else
+			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
 
 	if(href_list["console"])
-		if(Console.loc != src) // Console is deployed
-			anchored = FALSE // We can move
-			Console.forceMove(src) // Store the console
+		if(creator_check())
+			if(Console.loc != src) // Console is deployed
+				anchored = FALSE // We can move
+				Console.forceMove(src) // Store the console
+			else
+				anchored = TRUE // The bot can't move
+				following = null
+				Console.forceMove(src.loc) // Deploy the console
 		else
-			anchored = TRUE // The bot can't move
-			following = null
-			Console.forceMove(src.loc) // Deploy the console
+			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
 
 	if(href_list["food"])
-		spawn_food() // The food-spawning and the visible emote is handled in the proc.
+		if(creator_check())
+			spawn_food() // The food-spawning and the visible emote is handled in the proc.
+		else
+			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
 
 	if(href_list["setfollow"])
 		if(usr in friends)
@@ -134,7 +144,7 @@
 			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
 
 	if(href_list["adduser"])
-		if(usr in creator)
+		if(creator_check())
 			var/list/Possible_Choice = oviewers(viewRange, src)
 
 			// We remove mobs that are already allowed
@@ -147,11 +157,16 @@
 			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
 
 	if(href_list["removeuser"])
-		if(usr in creator)
+		if(creator_check())
 			friends -= input(usr, "Remove a user : ", "Remove user", null) as null|mob in friends
 		else
 			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
 
-
 	updateDialog()
 	return
+
+/mob/living/carbon/superior_animal/nanobot/proc/creator_check(var/mob/M)
+	if(usr in creator)
+		return TRUE
+	else
+		return FALSE
