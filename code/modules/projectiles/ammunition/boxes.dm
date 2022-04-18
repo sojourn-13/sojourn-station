@@ -88,6 +88,7 @@
 	name = "ammunition box (.35 Auto)"
 	desc = "A large box of police grade .35 auto."
 	matter = list(MATERIAL_STEEL = 15)
+	w_class = ITEM_SIZE_BULKY
 	max_ammo = 200
 	icon_state = "pistol_large"
 
@@ -166,6 +167,7 @@
 	name = "ammunition box (.40 Magnum)"
 	icon_state = "magbox"
 	matter = list(MATERIAL_STEEL = 15)
+	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_MAGNUM
 	ammo_type = /obj/item/ammo_casing/magnum_40
 	max_ammo = 150
