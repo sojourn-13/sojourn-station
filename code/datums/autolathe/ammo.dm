@@ -233,6 +233,27 @@
 	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/biomatter
 	materials = list(MATERIAL_BIOMATTER = 35)
 
+//.35 large box
+/datum/design/autolathe/ammo/pistol_ammobox/large
+	name = "large ammunition box(.35 Auto)"
+	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/large
+	materials = list(MATERIAL_STEEL = 12)
+
+/datum/design/autolathe/ammo/pistol_ammobox/largelethal
+	name = "large ammunition box(.35 Auto hollow point)"
+	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/large/lethal
+	materials = list(MATERIAL_STEEL = 12)
+
+/datum/design/autolathe/ammo/pistol_ammobox/largerubber
+	name = "large ammunition box(.35 Auto rubber)"
+	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/large/rubber
+	materials = list(MATERIAL_STEEL = 12)
+
+/datum/design/autolathe/ammo/pistol_ammobox/largehv
+	name = "large ammunition box(.35 Auto high-velocity)"
+	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/large/hv
+	materials = list(MATERIAL_STEEL = 12)
+
 // .40 Speed Loaders + mags
 //speed loaders
 
@@ -328,6 +349,27 @@
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/biomatter
 	materials = list(MATERIAL_BIOMATTER = 50)
 
+// .40 magnum large boxes
+/datum/design/autolathe/ammo/magnum_ammobox/large
+	name = "large ammunition box (.40 Auto-Mag)"
+	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/large
+	materials = list(MATERIAL_STEEL = 15)
+
+/datum/design/autolathe/ammo/magnum_ammobox/largehp
+	name = "large ammunition box (.40 Auto-Mag hollow-point)"
+	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/large/lethal
+	materials = list(MATERIAL_STEEL = 15)
+
+/datum/design/autolathe/ammo/magnum_ammobox/largerubber
+	name = "large ammunition box (.40 Auto-Mag rubber)"
+	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/large/rubber
+	materials = list(MATERIAL_STEEL = 15)
+
+/datum/design/autolathe/ammo/magnum_ammobox/largehv
+	name = "large ammunition box (.40 Auto-Mag high-velocity)"
+	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/large/hv
+	materials = list(MATERIAL_STEEL = 15)
+
 //.40 Magnum SMG
 /datum/design/autolathe/ammo/smg_magnum_40
 	name = "SMG magazine (.40 Magnum)"
@@ -353,6 +395,8 @@
 	name = "SMG magazine (.40 Magnum Empty)"
 	build_path = /obj/item/ammo_magazine/smg_magnum_40/empty
 	materials = list(MATERIAL_STEEL = 12)
+
+
 
 // .50 Kurtz mags and speed loaders
 //mags
