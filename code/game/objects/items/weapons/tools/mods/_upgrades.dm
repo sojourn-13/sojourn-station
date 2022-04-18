@@ -63,11 +63,13 @@
 					to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
 				return FALSE
 	//Blacklisting upgrades currently dosnt work, - Trilby
+	/*
 			for(var/obj/item/blacklist in I.blacklist_upgrades)
 				if(blacklist.type == parent.type)
 					if(user)
 						to_chat(user, SPAN_WARNING("An upgrade of this type is cant be installed!"))
 					return FALSE
+	*/
 
 	if(istool(A))
 		return check_tool(A, user)
