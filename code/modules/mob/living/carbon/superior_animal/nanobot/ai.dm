@@ -139,7 +139,10 @@
 
 	if(href_list["setfollow"])
 		if(usr in friends)
-			following = input(usr, "Choose who [src] should follow : ", "Set Following", null) as mob in oview(viewRange, src)
+			if(following)
+				following = null)
+			else
+				following = input(usr, "Choose who [src] should follow : ", "Set Following", null) as mob in oview(viewRange, src)
 		else
 			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
 
