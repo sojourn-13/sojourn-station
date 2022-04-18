@@ -437,7 +437,7 @@
 		/obj/item/towel/random = 10)
 
 /obj/machinery/vending/drink_showcase
-	name = "Club Cocktail Showcase"
+	name = "Bar Cocktail Showcase"
 	desc = "A vending machine to showcase cocktails."
 	icon_state = "showcase"
 	var/icon_fill = "showcase-fill"
