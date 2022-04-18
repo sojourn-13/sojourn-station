@@ -27,6 +27,7 @@
 	// Unique vars
 	var/target // Where we want to go
 	var/mining_modes = 7 // Bitflags for the AI. They start activated
+	var/in_use = FALSE // If someone is currently using the UI
 
 /mob/living/carbon/superior_animal/robot/mining/examine(mob/user)
 	..()
@@ -34,7 +35,7 @@
 /mob/living/carbon/superior_animal/robot/mining/Life()
 	..()
 	if(!client) // If there's anyone controlling the bot, this AI part won't run
-		if(!look_around() && (mining_modes & WANDER_MODE)) // If we didn't find anything of value and can (mining_modes & WANDER_MODE)
+		if(!look_around() && (mining_modes & WANDER_MODE) && !in_use) // If we didn't find anything of value and can (mining_modes & WANDER_MODE) and someoen isn't using our UI
 			target = pick(oview(viewRange + 1, src)) // Go somewhere random
 
 		// Are we going to a minable turf despite not being supposed to?
@@ -232,11 +233,16 @@
 
 // Code taken and modified from /code/game/objects/objs.dm Line 136
 /mob/living/carbon/superior_animal/robot/mining/proc/updateDialog()
-	var/list/nearby = viewers(1, src)
-	for(var/mob/M in nearby)
-		if ((M.client && M.machine == src))
-			src.interact(M)
+	if(in_use)
+		var/list/nearby = viewers(1, src)
+		var/is_in_use = 0
+		for(var/mob/M in nearby)
+			if ((M.client && M.machine == src))
+				is_in_use = 1
+				src.interact(M)
 
+		if(!is_in_use)
+			in_use = 0
 
 // Ghost-specific verbs.
 /mob/living/carbon/superior_animal/robot/mining/verb/mine_nearby()
