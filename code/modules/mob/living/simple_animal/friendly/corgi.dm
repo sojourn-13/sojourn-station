@@ -192,7 +192,7 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
-/mob/living/simple_animal/corgi/E_M/death()
+/mob/living/simple_animal/corgi/E_N/death()
 	..()
 	visible_message("<b>[src]</b> blows apart!")
 	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
@@ -203,7 +203,7 @@
 	return
 
 // For repairing damage to the synths.
-/mob/living/simple_animal/corgi/E_M/attackby(obj/item/W as obj, mob/user as mob)
+/mob/living/simple_animal/corgi/E_N/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
