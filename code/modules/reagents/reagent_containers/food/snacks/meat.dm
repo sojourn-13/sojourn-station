@@ -72,6 +72,10 @@
 /obj/item/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch
 	preloaded_reagents = list("protein" = 4, "seligitillin" = 8, "diplopterum" = 6, "iron" = 5)
 
+/obj/item/reagent_containers/food/snacks/meat/roachmeat/benzin
+	desc = "A slab of sickly-green meat cut from a benzin roach. Stinks of welding fuel. Delicious!"
+	preloaded_reagents = list("protein" = 4, "blattedin" = 6, "fuel" = 30)
+
 /obj/item/reagent_containers/food/snacks/meat/spider
 	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
 	icon_state = "xenomeat"
