@@ -177,8 +177,9 @@
 	response_help  = "pets"
 	response_disarm = "bops"
 	response_harm   = "kicks"
-	autoseek_food = 0
-	beg_for_food = 0
+	autoseek_food = FALSE  //To seek food is to seek meals, we do not have such cares
+	beg_for_food = FALSE   //A good hunting dog never begs
+	hunger_enabled = FALSE //We are made of metal not meals
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	min_oxy = 0
 	max_oxy = 0
