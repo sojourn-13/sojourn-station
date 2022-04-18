@@ -4,7 +4,7 @@
 	target_organ_type = /obj/item/organ/internal
 	allowed_tools = list(
 		/obj/item/stack/medical/advanced/bruise_pack = 100,
-		/obj/item/stack/medical/bruise_pack = 20,
+		/obj/item/stack/medical/bruise_pack = 50, // It was unbelievably unfair and frustrating to have such a low chance, and an abysmal difference of success chance between the two. - Seb
 		/obj/item/stack/medical/advanced/bruise_pack/mending_ichor = 100,
 	)
 

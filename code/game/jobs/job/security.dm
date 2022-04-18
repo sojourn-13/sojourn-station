@@ -312,7 +312,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/medicalexpertise)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/surgical_master) // How the hell is a roboticist more trained at using an ATK to fix organs than a supposed combat surgeon?
 				// /datum/perk/chemist -Thanos Voice: "I'm sorry little one..."
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
@@ -324,7 +324,7 @@
 	Your first duty is that of a field medic. Serve on the back line of any combat situations, treating the wounded and evacuating the critical.<br>\
 	Your second duty is to treat any prisoners and suspects in custody. Wounds from escape and suicide attempts will test your surgical skills.<br>\
 	Your third duty, when faced with strange crimes, is to serve as a scientific analyst - scanning traces and conducting autopsies.<br>\
-	Remember that although you can be armed, the combat is better left to your colleagues. Focus on the tasks only you can do."
+	Remember that although you can be armed, combat is better left to your colleagues. Focus on the tasks only you can do."
 
 	duties = "Minimize casualties in combat situations and treat all related wounds.<br>\
 	Treat any prisoners and suspects, and thoroughly monitor their health.<br>\

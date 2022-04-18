@@ -436,8 +436,8 @@
 	desc = "You've become an excellent appraiser of goods over the years. Just by looking at the item, you can know how much it would sell for in today's market rates."
 
 /datum/perk/surgical_master
-	name = "Surgery Training"
-	desc = "While you may not know the more advanced medical procedures, your mandatory training on surgery for implantation purposes allows you to perform basic surgical procedures with ease."
+	name = "Surgical Training"
+	desc = "While you may not be the most proficient surgeon around, your modest medical knowledge allows you to perform basic surgical procedures with ease."
 
 /datum/perk/advanced_medical
 	name = "Advanced Surgical Techniques"

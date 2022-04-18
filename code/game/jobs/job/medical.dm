@@ -94,7 +94,7 @@
 	description = "The Doctor is a professional medic and surgeon dedicated to healing the sick and injured, at all costs.<br>\
 	A broad range of medical procedures fall under your purview - diagnostics, general treatment, surgery, and virology.<br>\
 	You are not expected to be an expert in all: specializing in an area is fine. Divide tasks amongst colleagues, with CBO guidance.<br>\
-	Remember that chemistry has a dedicated specialist. Avoid this department unless it is notably short-staffed.<br>\
+	Remember that chemistry has shared access. If the Trauma Team isn't mixing chemicals, you may use the lab to do so yourself.<br>\
 	Due to the nature of your work, you may find yourself confined to the department for the shift majority. Don't abandon patients."
 
 	duties = "Heal the sick and injured, whatever their complaint.<br>\
@@ -138,11 +138,11 @@
 	software_on_spawn = list(/datum/computer_file/program/chem_catalog,
 							/datum/computer_file/program/scanner)
 
-	description = "Members of the trauma team are not men of science nor medicine, they are strictly in charge of enforcing the chief biolabs orders and sometimes the chief research overseer's orders.<br>\
+	description = "Members of the trauma team are not men of science nor medicine, they are strictly in charge of enforcing the chief biolab's orders and sometimes the chief research overseer's orders.<br>\
 	Your primary role is that of an armed thug for medical. You make sure that medical remains safe by ensuring people don't trespass or steal items and remove those who shouldn't be there, by force if necessary.<br>\
-	Your secondary responsibility is that of an soteria enforcer. Actions that require in house enforcement such as aiding doctors and security with violent patients in medical, securing the virology lab during an outbreak, and aiding in the destruction of escape slimes or kudzu from science.<br>\
+	Your secondary responsibility is that of an soteria enforcer. Actions that require in house enforcement such as aiding doctors and security with violent patients in medical, securing the virology lab during an outbreak, and aiding in the destruction of escaped slimes or experiments from science.<br>\
 	Your third duty is to aid medical doctors and act as a paramedic in fixing patients and collecting patients, this can include retrieving chemicals, doing basic triage, and going out to recover injured patients.<br>\
-	You are fully licensed to enforce the will of the overseer and to protect the soteria, its staff, and your patients with your personal weapons and armor.<br>\
+	You are fully licensed to enforce the will of the overseer and to protect Soteria, its staff, and your patients with your personal weapons and armor.<br>\
 	It's worth noting that you function heavily as a nurse when not acting as muscle and treatment of patients should be priority, in particular when assisting doctors."
 
 	duties = "Act as a guard for medical, ensuring unneeded colonist leave and nothing is stolen.<br>\

@@ -131,13 +131,13 @@
 	stat_modifiers = list(
 		STAT_MEC = 30,
 		STAT_COG = 25,
-		STAT_BIO = 25,
+		STAT_BIO = 30, // Enough to not flunk surgical operations on the chest for the sake of prosthetic implantation/replacement on fleshy patients. - Seb
 	)
 
-	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert, /datum/perk/si_sci)
+	perks = list(/*/datum/perk/surgical_master,*/ /datum/perk/robotics_expert, /datum/perk/si_sci) // Roboticists don't need knowledge on ATK use for sealing wounds and fixing FLESH organs, which are the only two things this perk granted them. They deal with metal more than flesh. - Seb
 
 	description = "The Roboticist is a specialized scientist with a busy workload - at the forefront of Soteria's service offerings.<br>\
-	You must maintain and upgrade the fleet of synthetics that keep the ship running, as well as constructing new ones on occasion.<br>\
+	You must maintain and upgrade the myriad of synthetics that keep the colony running, as well as constructing new ones on occasion.<br>\
 	In addition, you may be asked to manufacture prosthetic limbs and enhancements. Medical can perform the installation if you lack surgical skills.<br>\
 	Though not requested often you can also construct massive and powerful mechanized vehicles. These have powerful mining, rescue, and military applications.<br>\
 	Remember that you are ultimately running a commercial cybernetic clinic - charge for your valuable services to earn a living."
