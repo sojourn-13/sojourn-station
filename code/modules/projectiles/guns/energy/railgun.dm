@@ -196,6 +196,7 @@
 	var/projectile_cost = 1
 	var/overheat_damage = 25
 
+	//Blacklisting upgrades currently dosnt work, - Trilby
 	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt,
 							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst)
 
