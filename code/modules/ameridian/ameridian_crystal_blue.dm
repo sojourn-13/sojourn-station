@@ -21,6 +21,9 @@
 
 // Spawn golems in groups.
 /obj/structure/ameridian_crystal/blue/handle_golems()
+	if(golem)
+		return FALSE
+
 	if(++golem_timer >= initial(golem_timer))
 		golem_timer = 0
 
@@ -80,4 +83,7 @@
 	sleep((S.len + 4) SECONDS) // 5 Seconds before the golems spawn
 
 	for(var/I = 0, I < runtling_amt, I++)
-		new /mob/living/carbon/superior_animal/ameridian_golem/runtling(pick(turf_list))
+		if(!golem) // Only one goelm out of the pack get to be our main golem
+			golem = new /mob/living/carbon/superior_animal/ameridian_golem/runtling(pick(turf_list))
+		else
+			new /mob/living/carbon/superior_animal/ameridian_golem/runtling(pick(turf_list))
