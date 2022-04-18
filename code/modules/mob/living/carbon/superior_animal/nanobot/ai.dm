@@ -79,7 +79,7 @@
 	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
 
 	dat += "Status: <BR>"
-	dat += "- Following : <A href='?src=\ref[src];setfollow=1'>[following]</A><BR>"
+	dat += "- Following : <A href='?src=\ref[src];setfollow=1'>[following ? "[following]" : "None"]</A><BR>"
 	dat += "- - <A href='?src=\ref[src];adduser=1'>Add User</A> | <A href='?src=\ref[src];removeuser=1'>Remove User</A><BR>"
 	if(ai_flag & AUTODOC_MODE) // Is Autodoc Mode installed?
 		dat += "- Autodoc Mode : <A href='?src=\ref[src];autodoc=1'>[medbot ? "Active" : "Inactive"]</A><BR>"
