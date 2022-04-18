@@ -185,6 +185,13 @@ world
 #define TO_HEX_DIGIT(n) ascii2text((n&15) + ((n&15)<10 ? 48 : 87))
 
 icon
+
+	Destroy()
+
+		SSoverlays.overlay_icon_cache -= src
+
+		. = ..()
+
 	proc/MakeLying()
 		var/icon/I = new(src, dir=SOUTH)
 		I.BecomeLying()

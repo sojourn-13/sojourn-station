@@ -192,6 +192,8 @@
 
 /mob/living/carbon/superior_animal/Destroy()
 	GLOB.superior_animal_list -= src
+
+	friends.Cut()
 	. = ..()
 
 /mob/living/carbon/superior_animal/u_equip(obj/item/W as obj)
