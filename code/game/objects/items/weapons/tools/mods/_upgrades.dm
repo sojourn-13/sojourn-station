@@ -61,10 +61,10 @@
 			if (I.type == parent.type || (exclusive_type && istype(I, exclusive_type)))
 				if(user)
 					to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
-			return FALSE
+				return FALSE
 
-			for(var/blacklist in I.blacklist_upgrades)
-				if(blacklist == parent.type)
+			for(var/obj/item/blacklist in I.blacklist_upgrades)
+				if(blacklist.type == parent.type)
 					if(user)
 						to_chat(user, SPAN_WARNING("An upgrade of this type is cant be installed!"))
 					return FALSE
