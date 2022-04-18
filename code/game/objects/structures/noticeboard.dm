@@ -140,7 +140,7 @@
 
 /obj/structure/noticeboard/medical
 	name = "Medical bulletin board"
-	desc = "A board containing vital notices and official memos for the Blackshield Militia"
+	desc = "A board containing vital notices and official memos for Soteria Medical"
 	icon_state = "nboard01"
 	notices = 1
 
@@ -156,7 +156,7 @@
 
 /obj/structure/noticeboard/research
 	name = "Medical bulletin board"
-	desc = "A board containing vital notices and official memos for the Blackshield Militia"
+	desc = "A board containing vital notices and official memos for the Soteria research"
 	icon_state = "nboard00"
 	notices = 0
 
