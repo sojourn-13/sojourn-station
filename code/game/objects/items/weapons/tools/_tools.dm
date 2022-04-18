@@ -910,7 +910,6 @@
 			message_admins("[key_name_admin(user)] triggered an explosion with a welding tool.")
 			log_game("[key_name(user)] triggered an explosion with a welding tool.")
 			to_chat(user, SPAN_DANGER("You begin welding on the [O] and with a moment of lucidity you realize, this might not have been the smartest thing you've ever done."))
-			var/obj/structure/reagent_dispensers/fueltank/tank = O
 			if(istype(O, /obj/structure/reagent_dispensers/fueltank))
 				var/obj/structure/reagent_dispensers/fueltank/T = O
 				T.explode()
