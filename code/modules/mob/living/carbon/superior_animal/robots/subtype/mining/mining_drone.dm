@@ -27,7 +27,6 @@
 	// Unique vars
 	var/target // Where we want to go
 	var/mining_modes = 7 // Bitflags for the AI. They start activated
-	var/in_use = FALSE // If someone is currently using the UI
 
 /mob/living/carbon/superior_animal/robot/mining/examine(mob/user)
 	..()
@@ -152,7 +151,7 @@
 	updateDialog()
 	return TRUE
 
-/mob/living/carbon/superior_animal/robot/mining/proc/interact(mob/user as mob)
+/mob/living/carbon/superior_animal/robot/mining/interact(mob/user as mob)
 	if((get_dist(src, user) > 1) || (stat & (BROKEN|NOPOWER)))
 		if(!isAI(user))
 			user.unset_machine()
@@ -230,19 +229,6 @@
 
 	updateDialog()
 	return
-
-// Code taken and modified from /code/game/objects/objs.dm Line 136
-/mob/living/carbon/superior_animal/robot/mining/proc/updateDialog()
-	if(in_use)
-		var/list/nearby = viewers(1, src)
-		var/is_in_use = 0
-		for(var/mob/M in nearby)
-			if ((M.client && M.machine == src))
-				is_in_use = 1
-				src.interact(M)
-
-		if(!is_in_use)
-			in_use = 0
 
 // Ghost-specific verbs.
 /mob/living/carbon/superior_animal/robot/mining/verb/mine_nearby()
