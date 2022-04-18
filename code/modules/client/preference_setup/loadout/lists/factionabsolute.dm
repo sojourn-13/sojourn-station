@@ -35,6 +35,11 @@
 	path = /obj/item/clothing/under/rank/monashka
 	allowed_roles = list("Prime","Vector")
 
+/datum/gear/factionabsolute/laurel
+	display_name = "laurel selection"
+	path = /obj/item/clothing/head/laurel
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/factionabsolute/numerical_hat
 	display_name = "numerical hat"
 	path = /obj/item/clothing/head/numerical_hat
@@ -62,6 +67,11 @@
 	display_name = "absolute great coat"
 	slot = slot_wear_suit
 	path = /obj/item/clothing/suit/greatcoat/absolutecoat
+
+/datum/gear/factionabsolute/cloak
+	display_name ="absolutist cloak selection"
+	path = /obj/item/clothing/accessory/job/cape/church
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/factionabsolute/absolute_cloak
 	display_name = "absolutist cloak"

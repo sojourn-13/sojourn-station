@@ -9,6 +9,24 @@
 	siemens_coefficient = 0.9
 	body_parts_covered = 0
 
+
+/obj/item/clothing/head/laurel
+	name = "Laurel wreath"
+	icon_state = "laurel"
+	desc = "A round wreath made of connected branches and leaves of the bay laurel."
+	slot_flags = SLOT_HEAD | SLOT_EARS
+	body_parts_covered = 0
+
+/obj/item/clothing/head/laurel/silver
+	name = "silver Laurel wreath"
+	icon_state = "laurel_s"
+	desc = "A round wreath made of connected branches and leaves of the bay laurel. This one appears to be formed  silver."
+
+/obj/item/clothing/head/laurel/gold
+	name = "golden Laurel wreath"
+	icon_state = "laurel_g"
+	desc = "A round wreath made of connected branches and leaves of the bay laurel. This one appears to be formed of gold."
+
 /obj/item/clothing/head/hairflower
 	name = "red flower pin"
 	icon_state = "hairflower"

@@ -50,17 +50,26 @@
 	return can_apply(A, user) && apply(A, user)
 
 /datum/component/item_upgrade/proc/can_apply(var/atom/A, var/mob/living/user)
+
 	if(isrobot(A))
 		return check_robot(A, user)
 
 	if(isitem(A))
 		var/obj/item/T = A
 		//No using multiples of the same upgrade
-		for (var/obj/item/I in T.item_upgrades)
-			if (I.type == parent.type || (exclusive_type && istype(I.type, exclusive_type)))
+		for(var/obj/item/I in T.item_upgrades)
+			if (I.type == parent.type || (exclusive_type && istype(I, exclusive_type)))
 				if(user)
 					to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
 				return FALSE
+	//Blacklisting upgrades currently dosnt work, - Trilby
+	/*
+			for(var/obj/item/blacklist in I.blacklist_upgrades)
+				if(blacklist.type == parent.type)
+					if(user)
+						to_chat(user, SPAN_WARNING("An upgrade of this type is cant be installed!"))
+					return FALSE
+	*/
 
 	if(istool(A))
 		return check_tool(A, user)
