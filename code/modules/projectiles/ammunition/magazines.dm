@@ -605,7 +605,7 @@
 /obj/item/ammo_magazine/heavy_rifle_408
 	name = "heavy rifle magazine"
 	icon_state = "hrifle"
-	desc = "A 12 round magazine marked for .408 Omni."
+	desc = "A 20 round magazine marked for .408 Omni."
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_HRIFLE
