@@ -424,7 +424,7 @@
 					/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/hv,
 					/obj/item/gun_upgrade/barrel/gauss)
 					
-	cost = 1600
+	cost = 2500
 	crate_name = "Void Wolf Marksman Kit"
 	group = "Xanorath Syndicate"
 	
