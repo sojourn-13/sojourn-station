@@ -8169,7 +8169,9 @@
 /area/nadezhda/outside/fnest)
 "bOW" = (
 /obj/machinery/camera/network/cev_eris,
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "bOZ" = (
 /obj/structure/flora/small/bushc1,
@@ -15895,7 +15897,9 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "dxF" = (
 /obj/structure/lattice,
@@ -22080,7 +22084,9 @@
 /area/nadezhda/outside/forest)
 "eQG" = (
 /obj/random/toy/plushie_onlycarp,
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "eQJ" = (
 /obj/structure/cable/yellow,
@@ -28072,7 +28078,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "gcU" = (
 /obj/structure/cable/yellow,
@@ -34534,7 +34542,9 @@
 /area/nadezhda/crew_quarters/cafeteria)
 "hwV" = (
 /obj/machinery/light,
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "hxe" = (
 /obj/structure/flora/ausbushes/palebush,
@@ -35477,7 +35487,9 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/clownoffice)
 "hJX" = (
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "hKh" = (
 /turf/simulated/floor/wood/wild3,
@@ -38477,7 +38489,9 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "isD" = (
 /obj/effect/meteor/dust,
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "isF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -53511,7 +53525,9 @@
 /area/nadezhda/engineering/atmos)
 "lyP" = (
 /obj/effect/meteor,
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "lyY" = (
 /obj/structure/extinguisher_cabinet{
@@ -57643,7 +57659,9 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "mqQ" = (
 /obj/structure/bed/chair/wood{
@@ -65243,7 +65261,9 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "nYJ" = (
 /obj/structure/cable/green{
@@ -65368,7 +65388,9 @@
 /obj/machinery/camera/network/cev_eris{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "nZM" = (
 /obj/machinery/portable_atmospherics/hydroponics{
@@ -67772,7 +67794,9 @@
 /area/nadezhda/security/tactical_blackshield)
 "oyV" = (
 /obj/effect/floor_decal/asteroid,
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "oyX" = (
 /obj/random/scrap/sparse_even/low_chance,
@@ -69960,7 +69984,9 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "oYD" = (
 /obj/effect/decal/cleanable/dirt,
@@ -71001,7 +71027,9 @@
 "pla" = (
 /obj/effect/meteor,
 /obj/effect/floor_decal/asteroid,
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "plg" = (
 /obj/effect/decal/cleanable/dirt,
@@ -71458,7 +71486,9 @@
 /area/nadezhda/medical/psych)
 "ppN" = (
 /obj/item/toy/junk/spinningtoy,
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "ppR" = (
 /obj/effect/decal/cleanable/dirt,
@@ -89327,7 +89357,9 @@
 /obj/machinery/camera/network/cev_eris{
 	dir = 1
 	},
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "tcR" = (
 /obj/structure/closet/secure_closet/freezer,
@@ -90826,7 +90858,9 @@
 	icon_state = "escpodwall27";
 	tag = "icon-escpodwall27"
 	},
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "tud" = (
 /obj/machinery/recharge_station,
@@ -97889,7 +97923,9 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "uTu" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -99867,7 +99903,9 @@
 /area/nadezhda/engineering/engine_room)
 "vnT" = (
 /obj/effect/meteor/big,
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "vnX" = (
 /obj/machinery/suit_storage_unit,
@@ -107894,7 +107932,9 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "wYm" = (
 /obj/structure/cable/green{
@@ -113668,7 +113708,9 @@
 	icon_state = "escpodwall9";
 	tag = "icon-escpodwall9"
 	},
-/turf/simulated/floor/carpet/space_carpet,
+/turf/simulated/floor/carpet/space_carpet{
+	layer = 0.1
+	},
 /area/nadezhda/command/bridgebar)
 "ykH" = (
 /obj/effect/decal/cleanable/dirt,
