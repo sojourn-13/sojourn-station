@@ -41,6 +41,14 @@
 	icon_state = "oracarpet"
 	initial_flooring = /decl/flooring/carpet/oracarpet
 
+/turf/simulated/floor/carpet/space_carpet
+	name = "space carpet"
+	icon_state = "space_carpet"
+	initial_flooring = /decl/flooring/carpet/space_carpet
+
+/turf/simulated/floor/carpet/space_carpet/New()
+	icon_state = "[((x + y) ^ ~(x * y) + z) % 25]"
+
 /*Grid*/
 
 /turf/simulated/floor/bluegrid

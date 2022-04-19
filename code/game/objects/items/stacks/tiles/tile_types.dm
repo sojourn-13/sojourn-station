@@ -129,6 +129,10 @@
 	name = "orange carpet"
 	icon_state = "tile_oracarpet"
 
+/obj/item/stack/tile/carpet/space_carpet
+	name = "space carpet"
+	icon_state = "tile_space"
+
 /*
  * Flooring parent
  */
@@ -175,7 +179,8 @@
 		"turquoise carpet" = /obj/item/stack/tile/carpet/turcarpet,
 		"silver blue carpet" = /obj/item/stack/tile/carpet/sblucarpet,
 		"purple carpet" = /obj/item/stack/tile/carpet/purcarpet,
-		"orange carpet" = /obj/item/stack/tile/carpet/oracarpet
+		"orange carpet" = /obj/item/stack/tile/carpet/oracarpet,
+		"space carpet" = /obj/item/stack/tile/carpet/space_carpet
 	)
 
 /obj/item/stack/tile/floor/cyborg/afterattack(var/atom/A, var/mob/user, proximity, params)

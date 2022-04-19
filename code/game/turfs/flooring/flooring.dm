@@ -325,7 +325,12 @@ var/list/flooring_types
 	icon_base = "oracarpet"
 	build_type = /obj/item/stack/tile/carpet/oracarpet
 
-//==========TILING==============\\
+/decl/flooring/carpet/space_carpet
+	name = "space carpet"
+	icon_base = "space_carpet"
+	build_type = /obj/item/stack/tile/carpet/space_carpet
+
+//==========TILING==============
 
 /decl/flooring/tiling
 	name = "floor"
