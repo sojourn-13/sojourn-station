@@ -445,7 +445,7 @@
 
 			G.synch()
 			G.affecting = src
-			LAssailant = M
+			LAssailant_weakref = WEAKREF(M)
 
 			M.visible_message("\red [M] has grabbed [src] passively!")
 			M.do_attack_animation(src)

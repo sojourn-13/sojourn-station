@@ -194,6 +194,8 @@
 /mob/living/carbon/superior_animal/Destroy()
 	GLOB.superior_animal_list -= src
 
+	target_mob = null
+
 	friends.Cut()
 	. = ..()
 
@@ -298,7 +300,6 @@
 
 /mob/living/carbon/superior_animal/proc/handle_ai()
 
-	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(ckey)
 		return
@@ -310,6 +311,7 @@
 	if (!check_AI_act())
 		return
 
+	var/atom/targetted_mob = (target_mob?.resolve())
 	switch(stance)
 		if(HOSTILE_STANCE_IDLE)
 			if (!busy) // if not busy with a special task

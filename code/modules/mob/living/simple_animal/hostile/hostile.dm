@@ -35,6 +35,12 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	var/aggro_vision_range = 9 //If a mob is aggro, we search in this radius. Defaults to 9 to keep in line with original simple mob aggro radius
 	var/approaching_target = FALSE //We should dodge now
 
+/mob/living/simple_animal/hostile/Destroy()
+	target_mob = null
+
+	. = ..()
+
+
 /mob/living/simple_animal/hostile/proc/FindTarget()
 	var/atom/T = null
 	stop_automated_movement = 0

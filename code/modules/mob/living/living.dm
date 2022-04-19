@@ -104,7 +104,7 @@ default behaviour is:
 				now_pushing = FALSE
 				return
 
-			tmob.LAssailant = src
+			tmob.LAssailant_weakref = WEAKREF(src)
 
 		now_pushing = FALSE
 		spawn(0)
@@ -807,9 +807,9 @@ mob/living/carbon/human/verb/stopSliding()
 		// them, so don't bother checking that explicitly.
 
 		if(!iscarbon(src))
-			M.LAssailant = null
+			M.LAssailant_weakref = null
 		else
-			M.LAssailant = usr
+			M.LAssailant_weakref = WEAKREF(usr)
 
 	else if(isobj(AM))
 		var/obj/I = AM

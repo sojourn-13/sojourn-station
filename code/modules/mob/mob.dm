@@ -11,6 +11,9 @@
 		client.screen = list()
 
 	ghostize()
+
+	LAssailant_weakref = null
+
 	return ..()
 
 /mob/get_fall_damage(var/turf/from, var/turf/dest)
@@ -601,9 +604,9 @@
 		// them, so don't bother checking that explicitly.
 
 		if(!iscarbon(src))
-			M.LAssailant = null
+			M.LAssailant_weakref = null
 		else
-			M.LAssailant = usr
+			M.LAssailant_weakref = WEAKREF(usr)
 
 	else if(isobj(AM))
 		var/obj/I = AM

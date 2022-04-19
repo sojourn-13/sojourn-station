@@ -28,9 +28,9 @@
 
 	metabolism_effects.parent = null
 
-	qdel(ingested)
-	qdel(touching)
-	qdel(reagents)
+	QDEL_NULL(ingested)
+	QDEL_NULL(touching)
+	QDEL_NULL(reagents)
 	// qdel(metabolism_effects) //not sure why, but this causes a GC failure, maybe this isnt supposed to qdel?
 	// We don't qdel(bloodstr) because it's the same as qdel(reagents) // then why arent you qdeling reagents
 	QDEL_LIST(internal_organs)
