@@ -6,9 +6,9 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	desc = "It's a g-g-g-g-ghooooost!" //jinkies!
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "ghost"
-	canmove = 0
-	blinded = 0
-	anchored = 1	//  don't get pushed around
+	canmove = FALSE
+	blinded = FALSE
+	anchored = TRUE	//  don't get pushed around
 	layer = GHOST_LAYER
 	movement_handlers = list(/datum/movement_handler/mob/incorporeal)
 
@@ -310,12 +310,24 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/observer/ghost/verb/follow(input in getmobs())
 	set category = "Ghost"
-	set name = "Follow" // "Haunt"
+	set name = ".Follow" // "Haunt"
 	set desc = "Follow and haunt a mob."
 
 	var/target = getmobs()[input]
 	if(!target) return
 	ManualFollow(target)
+
+/mob/observer/ghost/verb/follow_player()
+	set category = "Ghost"
+	set name = "Follow player"
+
+	var/list/player_controlled_mobs = list()
+
+	for(var/mob/M in sortNames(SSmobs.mob_list))
+		if(M.ckey && !isnewplayer(M))
+			player_controlled_mobs.Add(M)
+
+	ManualFollow(input("Follow and haunt a player", "Follow player") as anything in player_controlled_mobs)
 
 // This is the ghost's follow verb with an argument
 /mob/observer/ghost/proc/ManualFollow(var/atom/movable/target)

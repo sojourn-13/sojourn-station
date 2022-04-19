@@ -288,6 +288,40 @@
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter = 400,
 					/obj/item/tool/knife/neotritual = 250,
 					/obj/item/gun/matter/launcher/nt_sprayer = 500)
+	custom_vendor = TRUE // So they can sell pouches and other printed goods, if they bother to stock them
+
+/obj/machinery/vending/theomat/proc/check_NT(mob/user)
+	var/bingo = TRUE //SoJ tweak, were always true, sadly for us church likes non-churchies (lame I know)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(is_neotheology_disciple(H))
+			bingo = TRUE
+
+		else if(istype(H.get_active_hand(), /obj/item/clothing/accessory/cross))
+			bingo = TRUE
+
+		else if(istype(H.wear_mask, /obj/item/clothing/accessory/cross))
+			bingo = TRUE
+
+		else if(H.w_uniform && istype(H.w_uniform, /obj/item/clothing))
+			var/obj/item/clothing/C = H.w_uniform
+			for(var/obj/item/I in C.accessories)
+				if(istype(I, /obj/item/clothing/accessory/cross))
+					bingo = TRUE
+					break
+
+	if(bingo)
+		return TRUE
+	to_chat(user, SPAN_WARNING("[src] flashes a message: Unauthorized Access."))
+	return FALSE
+
+/obj/machinery/vending/theomat/vend(datum/data/vending_product/R, mob/user)
+	if(check_NT(user))
+		..()
+
+/obj/machinery/vending/theomat/try_to_buy(obj/item/W, var/datum/data/vending_product/R, var/mob/user)
+	if(check_NT(user))
+		..()
 
 /obj/machinery/vending/serbomat
 	name = "From Serbia with love"

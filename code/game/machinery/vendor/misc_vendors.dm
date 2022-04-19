@@ -884,3 +884,4 @@
 					/obj/item/storage/hcases/cardcarp = 0,
 					/obj/item/card_carp = 0,
 					/obj/item/card_carp/index = 0)
+	always_open = TRUE
