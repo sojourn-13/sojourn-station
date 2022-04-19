@@ -134,7 +134,7 @@
 		STAT_BIO = 30, // Enough to not flunk surgical operations on the chest for the sake of prosthetic implantation/replacement on fleshy patients. - Seb
 	)
 
-	perks = list(/*/datum/perk/surgical_master,*/ /datum/perk/robotics_expert, /datum/perk/si_sci) // Roboticists don't need knowledge on ATK use for sealing wounds and fixing FLESH organs, which are the only two things this perk granted them. They deal with metal more than flesh. - Seb
+	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert, /datum/perk/si_sci) // Robotics gives implants and augmentation for flesh and metal alike, they require the extra perk to help them step in for medical as well as per their SoP
 
 	description = "The Roboticist is a specialized scientist with a busy workload - at the forefront of Soteria's service offerings.<br>\
 	You must maintain and upgrade the myriad of synthetics that keep the colony running, as well as constructing new ones on occasion.<br>\
