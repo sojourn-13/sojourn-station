@@ -11,8 +11,7 @@
 		client.screen = list()
 
 	ghostize()
-	..()
-	return QDEL_HINT_HARDDEL
+	return ..()
 
 /mob/get_fall_damage(var/turf/from, var/turf/dest)
 	return 0
