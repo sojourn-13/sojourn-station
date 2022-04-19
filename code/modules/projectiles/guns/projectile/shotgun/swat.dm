@@ -67,7 +67,7 @@
 /obj/item/gun/projectile/automatic/underslung/pistol
 	name = "built in pistol"
 	desc = "Not much more than a tube and a firing mechanism, this pistol is designed to be fitted to another gun."
-	fire_sound = 'sound/weapons/guns/fire/m41_shot.ogg'
+	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	matter = null
