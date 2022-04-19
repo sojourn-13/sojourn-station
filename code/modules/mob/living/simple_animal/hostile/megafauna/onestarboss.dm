@@ -65,13 +65,15 @@
 		icon_state = initial(icon_state)
 
 /mob/living/simple_animal/hostile/megafauna/one_star/AttackingTarget()
-	if(!Adjacent(target_mob))
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
+	if(!Adjacent(targetted_mob))
 		return
-	if(isliving(target_mob))
-		var/mob/living/L = target_mob
+	if(isliving(targetted_mob))
+		var/mob/living/L = targetted_mob
 		L.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		return L
-	if(istype(target_mob,/obj/mecha))
+	if(istype(targetted_mob,/obj/mecha))
 		var/obj/mecha/M = target_mob
 		M.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		return M
