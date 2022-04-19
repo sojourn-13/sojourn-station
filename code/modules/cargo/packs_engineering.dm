@@ -167,6 +167,64 @@
 	crate_name = "plasteel sheets crate"
 	group = "Engineering"
 
+/datum/supply_pack/diamond15
+	name = "Diamond Sheets Crate (15)"
+	contains = list(/obj/item/stack/material/diamond)
+	amount = 15
+	cost = 4000
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "Diamond sheets crate"
+	group = "Engineering"
+	
+	
+/datum/supply_pack/plasma15
+	name = "Plasma Sheets Crate (15)"
+	contains = list(/obj/item/stack/material/plasma)
+	amount = 15
+	cost = 3200
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "Plasma sheets crate"
+	group = "Engineering"
+	
+/datum/supply_pack/uranium15
+	name = "Uranium Sheets Crate (15)"
+	contains = list(/obj/item/stack/material/uranium)
+	amount = 15
+	cost = 3800
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "Uranium sheets crate"
+	group = "Engineering"
+	
+/datum/supply_pack/gold15
+	name = "Gold Sheets Crate (15)"
+	contains = list(/obj/item/stack/material/gold)
+	amount = 15
+	cost = 3000
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "Gold sheets crate"
+	group = "Engineering"
+	
+/datum/supply_pack/silver15
+	name = "Silver Sheets Crate (15)"
+	contains = list(/obj/item/stack/material/silver)
+	amount = 15
+	cost = 2200
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "Silver sheets crate"
+	group = "Engineering"
+	
+/datum/supply_pack/platinum5
+	name = "Platinum Sheets Crate (5)"
+	contains = list(/obj/item/stack/material/platinum)
+	amount = 5
+	cost = 4500
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "Platinum sheets cratee"
+	group = "Engineering"
+	
+	
+	
+
 /datum/supply_pack/electrical
 	name = "Electrical Maintenance Crate"
 	contains = list (/obj/item/storage/toolbox/electrical,
