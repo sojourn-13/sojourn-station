@@ -329,7 +329,6 @@ var/list/flooring_types
 	name = "space carpet"
 	icon_base = "space_carpet"
 	build_type = /obj/item/stack/tile/carpet/space_carpet
-	layer = 0.11
 
 //==========TILING==============
 
