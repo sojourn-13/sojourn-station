@@ -187,7 +187,6 @@
 	)
 	consume_cell = FALSE
 	price_tag = 6000
-	max_upgrades = 2
 
 	var/max_stored_matter = 4
 	var/stored_matter = 0
@@ -201,7 +200,7 @@
 							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst)
 	
 	//Until blacklisting works, this will be the supliment. You get one attachment - use it wisely....... - Rebel0
-	max_upgrades = 1
+	max_upgrades = 2
 
 /obj/item/gun/energy/laser/railgun/gauss/Initialize()
 	..()
