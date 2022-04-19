@@ -642,6 +642,9 @@
 	damage_types = list(BRUTE = 54)
 	armor_penetration = 40
 	check_armour = ARMOR_BULLET
+	embed = FALSE
+	can_ricochet = FALSE
+	sharp = FALSE
 	affective_damage_range = 12
 	affective_ap_range = 12
 	hitscan = TRUE
