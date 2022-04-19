@@ -20,7 +20,7 @@
 	one_hand_penalty = 5 //smg level
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
 	init_firemodes = list(
-		FULL_AUTO_600,
+		FULL_AUTO_600_NOLOSS,
 		SEMI_AUTO_NODELAY
 		)
 
