@@ -41,7 +41,7 @@
 	options["Green Utility Uniform Alt"] = "greenutility_alt"
 	options["Green Utility Uniform Corpsman"] = "greenutility_Corpsman"
 	options["Green Utility Uniform Corpsman Alt"] = "greenutility_alt_med"
-	options["Green Utility Pans"] = "greenutility_pants"
+	options["Green Utility Pants"] = "greenutility_pants"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

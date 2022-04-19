@@ -86,7 +86,11 @@ obj/item/clothing/under/costume/history/pirate
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
-		to_chat(M, "You adjusted your cloathing into [choice].")
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your clothing into [choice].")
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
@@ -222,8 +226,8 @@ obj/item/clothing/under/costume/history/pirate
 	var/mob/M = usr
 	var/list/options = list()
 	options["mime default"] = "mime"
-	options["mime skirt"] = "mime_d"
-	options["mime default down"] = "mime_skirt"
+	options["mime default down"] = "mime_d"
+	options["mime skirt"] = "mime_skirt"
 	options["mime skirt down"] = "mime_skirt_d"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
@@ -232,7 +236,7 @@ obj/item/clothing/under/costume/history/pirate
 		icon_state = options[choice]
 		item_state = options[choice]
 		item_state_slots = list(
-			slot_w_uniform = options[choice]
+			slot_back_str = options[choice]
 		)
 		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
