@@ -256,6 +256,17 @@
 	group = "Enforcement"
 	
 	
+/datum/supply_pack/sts_75
+	name = "Arms of the Free World pack"
+	contains = list(/obj/item/gun/projectile/automatic/sts/rifle,
+					/obj/item/gun/projectile/automatic/sts/rifle,
+					/obj/item/gun/projectile/automatic/sts/rifle,
+					/obj/item/gun/projectile/automatic/sts/rifle)
+					
+	cost = 3000
+	crate_name = "STS Rifles Crate"
+	group = "Enforcement"
+	
 /datum/supply_pack/Heavyrifle_ammo
 	name = "Heavy Rifle Ammunition Pack"
 	contains = list(/obj/item/ammo_magazine/heavy_rifle_408,
@@ -408,7 +419,7 @@
 	
 	
 /datum/supply_pack/voidwolfmarksman
-	name = "Void Marksman Kit"
+	name = "Void Wolf Marksman Kit"
 	contains = list(/obj/item/gun/projectile/boltgun/scout,
 					/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/hv,
 					/obj/item/gun_upgrade/barrel/gauss)
@@ -416,6 +427,38 @@
 	cost = 1600
 	crate_name = "Void Wolf Marksman Kit"
 	group = "Xanorath Syndicate"
+	
+	
+/datum/supply_pack/voidwolfantimaterial
+	name = "Void Wolf Mecha Hunter Kit"
+	contains = list(/obj/item/gun/projectile/boltgun/heavysniper,
+					/obj/item/ammo_magazine/ammobox/antim,
+					/obj/item/ammo_magazine/ammobox/antim,
+					/obj/item/gun_upgrade/barrel/gauss)
+					
+	cost = 4000
+	crate_name = "Void Wolf Anti-material Kit"
+	group = "Xanorath Syndicate"
+	
+	
+/datum/supply_pack/voidwolfrocketman
+	name = "Void Wolf Rocket-Man Weapons Kit"
+	contains = list(/obj/item/gun/projectile/rpg,
+					/obj/item/ammo_casing/rocket,
+					/obj/item/ammo_casing/rocket,
+					/obj/item/ammo_casing/rocket,
+					/obj/item/ammo_casing/rocket,
+					/obj/item/ammo_casing/rocket,
+					/obj/item/ammo_casing/rocket,
+					/obj/item/ammo_casing/rocket,
+					/obj/item/ammo_casing/rocket)
+					
+	cost = 5500
+	crate_name = "Void Wolf Rocket-Man Kit"
+	group = "Xanorath Syndicate"
+	
+	
+	
 
 /datum/supply_pack/voidwolfflamer_ammo
 	name = "Void Wolf HellFire Canisters Crate"
