@@ -16,9 +16,23 @@
 		germ_level++
 
 /mob/living/carbon/Destroy()
+
+	bloodstr.parent = null //these exist due to a GC failure linked to these vars
+	bloodstr.my_atom = null //while they should be cleared by the qdels, they evidently aren't
+
+	ingested.parent = null
+	ingested.my_atom = null
+
+	touching.parent = null
+	touching.my_atom = null
+
+	metabolism_effects.parent = null
+
 	qdel(ingested)
 	qdel(touching)
-	// We don't qdel(bloodstr) because it's the same as qdel(reagents)
+	qdel(reagents)
+	// qdel(metabolism_effects) //not sure why, but this causes a GC failure, maybe this isnt supposed to qdel?
+	// We don't qdel(bloodstr) because it's the same as qdel(reagents) // then why arent you qdeling reagents
 	QDEL_LIST(internal_organs)
 	QDEL_LIST(hallucinations)
 	return ..()

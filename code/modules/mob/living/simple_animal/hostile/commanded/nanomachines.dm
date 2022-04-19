@@ -29,11 +29,14 @@
 		regen_time = 0
 		health++
 	. = ..()
+
+	var/atom/targetted_mob = (target_mob?.resolve())
+
 	if(.)
 		switch(stance)
 			if(COMMANDED_HEAL)
-				if(!target_mob)
-					target_mob = FindTarget(COMMANDED_HEAL)
+				if(!targetted_mob)
+					targetted_mob = FindTarget(COMMANDED_HEAL)
 				move_to_heal()
 			if(COMMANDED_HEALING)
 				heal()
@@ -43,30 +46,34 @@
 	qdel(src)
 
 /mob/living/simple_animal/hostile/commanded/nanomachine/proc/move_to_heal()
-	if(!target_mob)
+	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if(!targetted_mob)
 		return 0
 	set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-	walk_to(src,target_mob,1,move_to_delay)
-	if(Adjacent(target_mob))
+	walk_to(src,targetted_mob,1,move_to_delay)
+	if(Adjacent(targetted_mob))
 		stance = COMMANDED_HEALING
 
-/mob/living/simple_animal/hostile/commanded/nanomachine/proc/heal()
+/mob/living/simple_animal/hostile/commanded/nanomachine/proc/heal() //how the fuck did this even work before this
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	if(health <= 3 && !emergency_protocols) //dont die doing this.
 		return 0
-	if(!target_mob)
+	if(!targetted_mob)
 		return 0
-	if(!Adjacent(target_mob) || SA_attackable(target_mob))
+	if(!Adjacent(targetted_mob) || SA_attackable(targetted_mob))
 		stance = COMMANDED_HEAL
 		return 0
-	if(target_mob.stat || target_mob.health >= target_mob.maxHealth) //he's either dead or healthy, move along.
-		allowed_targets -= target_mob
-		target_mob = null
+	if(targetted_mob.stat || targetted_mob.health >= targetted_mob.maxHealth) //he's either dead or healthy, move along.
+		allowed_targets -= targetted_mob
+		targetted_mob = null
 		stance = COMMANDED_HEAL
 		return 0
-	src.visible_message("\The [src] glows green for a moment, healing \the [target_mob]'s wounds.")
+	src.visible_message("\The [src] glows green for a moment, healing \the [targetted_mob]'s wounds.")
 	health -= 3
-	target_mob.adjustBruteLoss(-5)
-	target_mob.adjustFireLoss(-5)
+	targetted_mob.adjustBruteLoss(-5)
+	targetted_mob.adjustFireLoss(-5)
 
 /mob/living/simple_animal/hostile/commanded/nanomachine/misc_command(var/mob/speaker,var/text)
 	if(stance != COMMANDED_HEAL || stance != COMMANDED_HEALING) //dont want attack to bleed into heal.

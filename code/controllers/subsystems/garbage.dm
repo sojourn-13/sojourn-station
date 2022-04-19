@@ -193,7 +193,7 @@ SUBSYSTEM_DEF(garbage)
 					INVOKE_ASYNC(D, /datum/proc/find_references)
 					ref_searching = TRUE
 				#ifdef GC_FAILURE_HARD_LOOKUP
-				else if (ispath(D, /mob/living/))
+				else if (ispath(type, /mob/living/))
 					INVOKE_ASYNC(D, /datum/proc/find_references)
 					ref_searching = TRUE
 				#endif

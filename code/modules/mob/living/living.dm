@@ -871,6 +871,10 @@ mob/living/carbon/human/verb/stopSliding()
 /mob/living/Destroy()
 	qdel(stats)
 	stats = null
+
+	unnatural_mutations.holder = null //causes a GC failure if we qdel-and it seems its not SUPPOSED to qdel, oddly
+
+	update_z(null)
 	return ..()
 
 /mob/living/proc/vomit()

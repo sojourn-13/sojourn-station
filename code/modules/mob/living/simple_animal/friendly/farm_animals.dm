@@ -28,6 +28,11 @@
 	udder.my_atom = src
 	..()
 
+/mob/living/simple_animal/hostile/retaliate/goat/Destroy()
+	udder.my_atom = null
+
+	. = ..()
+
 /mob/living/simple_animal/hostile/retaliate/goat/beg(var/atom/thing, var/atom/holder)
 	visible_emote("butts insistently at [holder]'s legs and reaches towards their [thing].")
 
@@ -94,7 +99,6 @@
 		..()
 //cow
 /mob/living/simple_animal/cow
-	name = "cow"
 	desc = "Known for their milk, just don't tip them over."
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "cow"
@@ -123,6 +127,11 @@
 	udder = new(100)
 	udder.my_atom = src
 	..()
+
+/mob/living/simple_animal/cow/Destroy()
+	udder.my_atom = null
+
+	. = ..()
 
 /mob/living/simple_animal/cow/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	var/obj/item/reagent_containers/G = O

@@ -90,7 +90,8 @@
 	var/acceptableTargetDistance = 1 //consider all targets within this range equally
 
 	var/stance = HOSTILE_STANCE_IDLE //current mob AI state
-	var/atom/target_mob //currently chased target
+//	var/atom/target_mob //currently chased target // NIKO DELETE THESE FUCKIN COMMENTS WHEN YOURE DONE
+	var/datum/weakref/target_mob
 	var/attack_same = 0 //whether mob AI should target own faction members for attacks
 	var/list/friends = list() //list of mobs to consider friends, not types
 	var/environment_smash = 1
@@ -297,6 +298,8 @@
 
 /mob/living/carbon/superior_animal/proc/handle_ai()
 
+	var/targetted_mob = (target_mob?.resolve())
+
 	if(ckey)
 		return
 
@@ -311,8 +314,8 @@
 		if(HOSTILE_STANCE_IDLE)
 			if (!busy) // if not busy with a special task
 				stop_automated_movement = FALSE
-			target_mob = findTarget()
-			if (target_mob)
+			targetted_mob = findTarget()
+			if (targetted_mob)
 				stance = HOSTILE_STANCE_ATTACK
 
 		if(HOSTILE_STANCE_ATTACK)
@@ -322,16 +325,16 @@
 				stop_automated_movement = TRUE
 				stance = HOSTILE_STANCE_ATTACKING
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to(src, target_mob, 1, move_to_delay)
+				walk_to(src, targetted_mob, 1, move_to_delay)
 				moved = 1
 			if(ranged)
 				stop_automated_movement = 1
-				if(get_dist(src, target_mob) <= comfy_range)
+				if(get_dist(src, targetted_mob) <= comfy_range)
 					stance = HOSTILE_STANCE_ATTACKING
 					return //We do a safty return
 				else
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, target_mob, 4, move_to_delay)
+					walk_to(src, targetted_mob, 4, move_to_delay)
 				stance = HOSTILE_STANCE_ATTACKING
 
 		if(HOSTILE_STANCE_ATTACKING)
@@ -340,12 +343,12 @@
 			if(!ranged)
 				prepareAttackOnTarget()
 			if(ranged)
-				if(get_dist(src, target_mob) <= 6)
-					OpenFire(target_mob)
+				if(get_dist(src, targetted_mob) <= 6)
+					OpenFire(targetted_mob)
 				else
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, target_mob, 4, move_to_delay)
-					OpenFire(target_mob)
+					walk_to(src, targetted_mob, 4, move_to_delay)
+					OpenFire(targetted_mob)
 
 	//random movement
 	if(wander && !stop_automated_movement && !anchored)
