@@ -21,10 +21,10 @@
 	explosion(target, 0, 1, 2)
 	return TRUE
 
-/obj/item/projectile/bullet/rocket
+/obj/item/projectile/bullet/rocket  
 	name = "high explosive rocket"
 	icon_state = "rocket"
-	damage_types = list(BRUTE = 70)
+	damage_types = list(BRUTE = 95) //please this is a rocket it shouldn't do less damage than an AMR like come on
 	armor_penetration = 100
 	check_armour = ARMOR_BULLET
 
