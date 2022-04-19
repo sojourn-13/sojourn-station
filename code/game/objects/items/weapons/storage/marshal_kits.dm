@@ -6,15 +6,16 @@
 	icon_state = "box"
 
 // Primary kits
-/obj/item/storage/box/m_kit/thompson
-	name = "\improper Thompson Kit"
-	desc = "The standard Marshal box kit containing a thompson submachine gun. An SMG worthy of main-carry, as long as one doesn't mind looking a bit dated "
+/obj/item/storage/box/m_kit/ppv
+	name = "\improper PPV Kit"
+	desc = "The standard Marshal box kit containing a \"Semyonovich\" assault submachine gun. An SMG worthy of main-carry, as long as one doesn't mind looking a bit dated "
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/thompson(src)
-		new /obj/item/ammo_magazine/smg_magnum_40/rubber(src)
-		new /obj/item/ammo_magazine/smg_magnum_40(src)
-		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/gun/projectile/automatic/ppsh/ppv(src)
+		new /obj/item/ammo_magazine/smg_35/rubber(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/m_kit/breacher
 	name = "\improper Breaching Hammer Kit"
@@ -33,6 +34,7 @@
 		new /obj/item/ammo_casing/shotgun/beanbag/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/storage/pouch/tubular(src)
 
 /obj/item/storage/box/m_kit/bulldog
 	name = "\improper Bulldog Kit"
@@ -43,6 +45,7 @@
 		new /obj/item/ammo_magazine/light_rifle_257/rubber(src)
 		new /obj/item/ammo_magazine/light_rifle_257(src)
 		new /obj/item/ammo_magazine/light_rifle_257(src)
+		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/m_kit/gear_lasgun
 	name = "\improper Gear Lasgun Kit"
@@ -52,6 +55,9 @@
 		new /obj/item/gun/energy/cog/gear(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/storage/pouch/tubular(src)
+
 //supply-specs kits
 /obj/item/storage/box/m_kit/typewriter
 	name = "\improper Sunrise Laser SMG kit"
@@ -61,6 +67,8 @@
 		new /obj/item/gun/energy/sunrise(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/storage/pouch/tubular(src)
 
 /obj/item/storage/box/m_kit/pug
 	name = "\improper Pug Kit"
@@ -71,6 +79,7 @@
 		new /obj/item/ammo_magazine/m12/beanbag(src)
 		new /obj/item/ammo_magazine/m12(src)
 		new /obj/item/ammo_magazine/m12(src)
+		new /obj/item/storage/pouch/ammo(src)
 
 // Secondary kits
 /obj/item/storage/box/m_kit/wirbelwind

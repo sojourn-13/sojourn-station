@@ -926,6 +926,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 						user.apply_damage(2, BURN, BP_R_ARM)
 					user.visible_message(SPAN_NOTICE("After a few attempts, [user] manages to light the [src], they however burn their finger in the process."))
 			tool_qualities = list(QUALITY_CAUTERIZING = 10)
+			damtype = BURN
+			force++
 			set_light(2)
 			START_PROCESSING(SSobj, src)
 		else
@@ -939,6 +941,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				playsound(src, 'sound/items/lighter.ogg', 20, 1, 1)
 				user.visible_message(SPAN_NOTICE("[user] quietly shuts off the [src]."))
 			tool_qualities = initial(tool_qualities)
+			damtype = initial(damtype)
+			force--
 			set_light(0)
 			STOP_PROCESSING(SSobj, src)
 	else
@@ -1047,4 +1051,3 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "\improper Liberation Zippo lighter"
 	desc = "A cheap, mass produced Zippo for the working masses, its flame - much like the motto - goes ever upwards."
 	icon_state = "excelsior"
-

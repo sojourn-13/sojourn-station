@@ -1,7 +1,7 @@
 /mob/living/carbon/superior_animal/psi_monster/flesh_behemoth
 	name = "flesh behemoth"
-	desc = "Hunger, hunger for meat. Meat meat meat. It comes, impossibly strong and looking to devour everything in its path, a wicked blade of bone ready to slice you apart. It's ability to regenerate \
-	from even the most disgusting wounds requires you bring light to stall its power."
+	desc = "Hunger, hunger for meat. Meat meat meat. It comes, impossibly strong and looking to devour everything in its path, a wicked blade of bone ready to slice you apart. Its ability to regenerate \
+	from even the most disgusting wounds requires you to bring light to stall its power."
 	icon_state = "vargo"
 	icon_living = "vargo"
 
@@ -20,7 +20,7 @@
 
 /mob/living/carbon/superior_animal/psi_monster/mind_gazer
 	name = "mind gazer"
-	desc = "One of the more twisted creatures in this other world, its origin unknown, but its nightmarish speed and strength greatly feared."
+	desc = "One of the most twisted creatures in this other world, its origin unknown, but its nightmarish speed and strength are to be greatly feared."
 	icon_state = "eelo"
 	icon_living = "eelo"
 
@@ -54,7 +54,7 @@
 
 /mob/living/carbon/superior_animal/psi_monster/cerebral_crusher
 	name = "cerebral crusher"
-	desc = "A hulking creature of bone, powerful and ponderous in its strength, its claws are coated in toxins that weaken the mind, its touching draining and its ability to rend flesh murderous."
+	desc = "A hulking creature of bone, powerful and ponderous in its strength, its claws are coated in toxins that weaken the mind, its touch draining and its ability to rend flesh, murderous."
 	icon_state = "farartbot"
 	icon_living = "farartbot"
 	life_cycles_before_sleep = 60
@@ -63,7 +63,7 @@
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	melee_damage_lower = 30
 	melee_damage_upper = 40
-	emote_see = list("scratches at its bone plates.", "moans, \"We hear your thoughts, we feel your fear.\"", "groans, \"Kill us, end this nightmare.\"")
+	emote_see = list("scratches at its bone plates.", "moans, \"We hear your thoughts, we feel your fear.\"", "groans, \"Kill us! End this nightmare!\"")
 	turns_per_move = 4
 	poison_per_bite = 2
 	healing_factor = 10
@@ -72,7 +72,7 @@
 /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly
 	name = "crimson jelly"
 	desc = "A genetic abomination left to rot, midway through the transformation into something far worse. The end result of horrible creatures left to gestate instead of being properly purged. \
-	It hungers and its body may spread its genetic instability, but at least it is weakened with age."
+	It hungers for form and its body may spread its genetic instability, but at least through it, has weakened over time."
 	icon = 'icons/mob/psi_monsters.dmi'
 	icon_state = "oormat"
 	icon_living = "oormat"
@@ -93,7 +93,7 @@
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror
 	name = "pitch horror"
-	desc = "Left to fester, to grow, to mutate into a terrible thing of eyes and teeth. What never should have been twisted into something unbearable to the minds of men. It comes and brings \
+	desc = "Left to fester, to grow, to mutate into a terrible thing of eyes and teeth. What never should have been, twisted into something unbearable to the minds of men. It comes and brings \
 	mutating horror in its wake. Only the light may halt its unnatural regeneration."
 	icon = 'icons/mob/psi_monsters.dmi'
 	icon_state = "hyper"
@@ -106,18 +106,18 @@
 /mob/living/carbon/superior_animal/psi_monster/flesh_behemoth/baron
 	name = "Baron Wormwood"
 	desc = "He sings for meat, for piles and piles of flesh heaped onto a rotting table for his greedy maw to consume all manner of ripened offal."
-	emote_see = list("chuckles lowly, split bleedings lips cracking into a pleased leer.", "murmurs, \"So troubling, so troubling, more gore for the pile but they bring so many toys...\"", "snorts, \"Too many butchers, not enough bakers.\"")
+	emote_see = list("chuckles lowly, split bleeding lips cracking into a pleased leer.", "murmurs, \"So troubling, so troubling, more gore for the pile but they bring so many toys...\"", "snorts, \"Too many butchers, not enough bakers.\"")
 	death_gasp = "<b><font size='3px'>Baron Wormwood heaves as his body crumbles, wriggling pus maggots bursting from its failing rotted bulk!</font></b>!"
 
 /mob/living/carbon/superior_animal/psi_monster/mind_gazer/viscount
 	name = "Viscount Mannimarcus"
 	desc = "His all seeing eye has let its gaze fall upon you."
-	emote_see = list("chitters in song.", "rasps, \"I told the king they would come but his arrogance lead to nothing being done.\"", "sighs wearily, \"We must be ever vigil.\"")
+	emote_see = list("chitters in song.", "rasps, \"I told the King they would come, but his arrogance led to nothing being done.\"", "sighs wearily, \"We must be ever vigil.\"")
 
 /mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo/duke
 	name = "Duke Ravencroft"
 	desc = "He comes to protect his king. Is it out of loyalty or simply the chance to kill?"
-	emote_see = list("growls quietly.", "hisses, \"The king is dead, long live the king.\"", "yells, \"Ashes! Ashes and dust, all of you!\"")
+	emote_see = list("growls quietly.", "hisses, \"The King is dead, long live the King.\"", "yells, \"Ashes! Ashes and dust, all of you!\"")
 
 /mob/living/carbon/superior_animal/psi_monster/cerebral_crusher/marshal
 	name = "Marshal Benedictus"
@@ -132,9 +132,9 @@
 /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror/steward
 	name = "Steward Kerevork"
 	desc = "Enslavement."
-	emote_see = list("moans, \"There was no escape.\"", "sighs, \"I have no regrets, I went with clear conscience.\"", "groans, \"If only we could have forseen this.\"")
+	emote_see = list("moans, \"There was no escape.\"", "sighs, \"I have no regrets, I went with a clear conscience.\"", "groans, \"If only we could have forseen this.\"")
 
 /mob/living/carbon/superior_animal/psi_monster/licker/pack
 	name = "pack runners"
-	desc = "The hound of the crown's pack, loyal and deadly, they've learned to meld into each other, weaving like smoke between themselves, the hound, and you. Even the hound has his servents."
+	desc = "The hound of the crown's pack, loyal and deadly, they've learned to meld into each other, weaving themselves like smoke between the hound and you. Even the Hound has his servants."
 	density = FALSE

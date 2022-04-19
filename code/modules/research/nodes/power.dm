@@ -113,7 +113,7 @@
 
 /datum/technology/improved_power_generation
 	name = "Improved Power Generation"
-	desc = "PACMAN MK2, uranium based power."
+	desc = "PACMAN MK2, uranium based power, hand crank generator for cells."
 	tech_type = RESEARCH_POWERSTORAGE
 
 	x = 0.25
@@ -125,6 +125,7 @@
 	cost = 450
 
 	unlocks_designs = list(/datum/design/research/circuit/superpacman,
+							/datum/design/research/item/hand_charger,
 							/datum/design/research/circuit/diesel)
 
 /datum/technology/advanced_power_generation

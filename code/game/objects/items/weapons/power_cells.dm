@@ -466,15 +466,26 @@
 	cell = null
 	suitable_cell = /obj/item/cell
 
+
+/obj/item/device/manual_charger/attackby(obj/item/I, mob/user)
+	if(istype(I, suitable_cell) && insert_item(I, user))
+		cell = I
+		return
+	..()
+
+/obj/item/device/manual_charger/MouseDrop(over_object)
+	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
+		cell = null
+
 /obj/item/device/manual_charger/attack_self(mob/user)
-	var/obj/item/cell/cell
-	if(do_after(user, 60 - (1 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
+	if(!cell)
+		return
+	user.visible_message(SPAN_NOTICE("[user] starts turning the handle on [src]."), SPAN_NOTICE("You start to turn the handle on [src]."))
+	if(do_after(user, 7.5 + (17.5 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
 		if(!cell)
 			return
 		if(cell.charge >= cell.maxcharge)
 			user.visible_message(SPAN_NOTICE("The cell can not be charged any more!"))
 			return
 		else
-			user.visible_message(SPAN_NOTICE("[user] have started to turn handle on \the [src]."), SPAN_NOTICE("You started to turn handle on \the [src]."))
-			cell.charge += 10
-			return //Stafy Return
+			cell.charge += min(25, cell.maxcharge - cell.charge)

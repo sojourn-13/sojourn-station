@@ -127,7 +127,7 @@
 /obj/item/device/encryptionkey/headset_cargo
 	name = "lonestar radio encryption key"
 	icon_state = "cargo_cypherkey"
-	channels = list("Supply" = 1)
+	channels = list("Supply" = 1, "Service" = 1)
 
 /obj/item/device/encryptionkey/headset_service
 	name = "lonestar service radio encryption key"

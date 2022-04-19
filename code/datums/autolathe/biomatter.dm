@@ -284,6 +284,14 @@
 	name = "Advanced burn kit"
 	build_path = /obj/item/stack/medical/advanced/ointment
 
+/datum/design/bioprinter/medical/advanced/bruise/nt
+	name = "Absolutist trauma kit"
+	build_path = /obj/item/stack/medical/advanced/bruise_pack/nt
+
+/datum/design/bioprinter/medical/advanced/ointment/nt
+	name = "Absolutist burn kit"
+	build_path = /obj/item/stack/medical/advanced/ointment/nt
+
 /datum/design/bioprinter/lungs
 	name = "Extended Lungs"
 	materials = list(MATERIAL_BIOMATTER = 30)

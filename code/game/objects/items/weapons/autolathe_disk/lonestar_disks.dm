@@ -214,6 +214,7 @@
 		/datum/design/autolathe/clothing/scav_armor,
 		/datum/design/autolathe/clothing/scav_armor_void,
 		/datum/design/autolathe/clothing/scav_helm_void = 0,
+		/datum/design/autolathe/tool/manual_charger
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/scav/forman

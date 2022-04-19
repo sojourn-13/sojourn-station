@@ -400,6 +400,27 @@
 	icon_state = "tactical"
 	storage_slots = 16 //Holds a lot as its bigger
 
+
+/obj/item/storage/belt/security/tactical/marshalert
+
+/obj/item/storage/belt/security/tactical/marshalert/populate_contents()
+	new /obj/item/tool/shovel/combat(src)
+	new /obj/item/gun/energy/gun/martin(src)
+	new /obj/item/cell/small(src)
+	new /obj/item/cell/small(src)
+	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
+	new /obj/item/cell/medium/high(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/device/taperecorder(src)
+	new /obj/item/device/camera(src)
+	new /obj/item/folder(src)
+	new /obj/item/clothing/head/helmet/marshal_full(src)
+	new /obj/item/clothing/mask/gas/ihs(src)
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/grenade/chem_grenade/teargas(src)
+	new /obj/item/grenade/frag/stinger(src)
+
 /obj/item/storage/belt/security/tactical/opifex
 	name = "opifex tactical belt"
 	desc = "A black tactical belt made specifically for opifex to prevent any pulling or ruffling of feathers, slightly uncomfortable for anyone else but none can deny its quality. This harness is built specifically for combat, limiting its versatility."

@@ -73,6 +73,7 @@
 		/datum/design/autolathe/gun/sunrise =3,
 		//Misc
 		/datum/design/autolathe/tool/ironhammer,
+		/datum/design/autolathe/sec/stunbaton/maul,
 		/datum/design/autolathe/sec/riot,
 		/datum/design/autolathe/sec/buckler = 0,
 		/datum/design/autolathe/sec/bastion = 0,
@@ -107,10 +108,12 @@
 		/datum/design/autolathe/ammo/magnum_lethal,
 		/datum/design/autolathe/ammo/pistol_ammobox = 0,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
+		/datum/design/autolathe/ammo/pistol_ammobox/large,
 		/datum/design/autolathe/ammo/magnum_ammobox = 0,
 		/datum/design/autolathe/ammo/magnum_ammobox_rubber,
 		/datum/design/autolathe/ammo/magnum_ammobox_pepperball,
 		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/magnum_ammobox/large,
 		/datum/design/autolathe/ammo/kurtz_ammobox_rubber = 0,
 		/datum/design/autolathe/ammo/kurtz_ammobox = 0,
 		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
@@ -201,10 +204,12 @@
 	license = 20
 	designs = list(
 		/datum/design/autolathe/ammo/pistol_ammobox,
+		/datum/design/autolathe/ammo/pistol_ammobox/large,
 		/datum/design/autolathe/ammo/pistol_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
 		/datum/design/autolathe/ammo/pistol_ammobox_lethal,
 		/datum/design/autolathe/ammo/magnum_ammobox,
+		/datum/design/autolathe/ammo/magnum_ammobox/large,
 		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/magnum_ammobox_rubber,
 		/datum/design/autolathe/ammo/magnum_ammobox_lethal,
