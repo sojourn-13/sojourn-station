@@ -135,7 +135,7 @@
 /mob/living/carbon/superior_animal/giant_spider/nurse/UnarmedAttack()
 	..()
 
-	var/targetted_mob = (target_mob?.resolve())
+	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(ishuman(targetted_mob))
 		var/mob/living/carbon/human/H = targetted_mob

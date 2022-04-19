@@ -64,7 +64,7 @@
 		icon_state = initial(icon_state)
 
 /mob/living/simple_animal/hostile/megafauna/excelsior_cosmonaught/AttackingTarget()
-	var/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(!Adjacent(targetted_mob))
 		return
@@ -97,7 +97,7 @@
 
 
 /mob/living/simple_animal/hostile/megafauna/excelsior_cosmonaught/OpenFire()
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	anger_modifier = CLAMP(((maxHealth - health)/50),0,20)
 	ranged_cooldown = world.time + 30

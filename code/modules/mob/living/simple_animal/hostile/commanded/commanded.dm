@@ -76,7 +76,7 @@
 
 
 /mob/living/simple_animal/hostile/commanded/proc/follow_target()
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	stop_automated_movement = 1
 	if(!targetted_mob)
@@ -159,7 +159,7 @@
 
 /mob/living/simple_animal/hostile/commanded/proc/follow_command(var/mob/speaker,var/text)
 	//we can assume 'stop following' is handled by stop_command
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(findtext(text,"me"))
 		stance = COMMANDED_FOLLOW
@@ -183,7 +183,7 @@
 	//if they attack us, we want to kill them. None of that "you weren't given a command so free kill" bullshit.
 	. = ..()
 
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(!.)
 		stance = HOSTILE_STANCE_ATTACK
@@ -196,7 +196,7 @@
 /mob/living/simple_animal/hostile/commanded/attack_hand(mob/living/carbon/human/M as mob)
 	..()
 
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(M.a_intent == I_HURT) //assume he wants to hurt us.
 		targetted_mob = M

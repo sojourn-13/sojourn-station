@@ -45,7 +45,7 @@
 /mob/living/carbon/superior_animal/roach/support/Life()
 	. = ..()
 
-	var/targetted_mob = (target_mob?.resolve())
+	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(stat != CONSCIOUS)
 		return

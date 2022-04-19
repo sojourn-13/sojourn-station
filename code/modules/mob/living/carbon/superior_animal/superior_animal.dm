@@ -298,7 +298,7 @@
 
 /mob/living/carbon/superior_animal/proc/handle_ai()
 
-	var/targetted_mob = (target_mob?.resolve())
+	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(ckey)
 		return

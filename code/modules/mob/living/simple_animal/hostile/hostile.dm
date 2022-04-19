@@ -90,7 +90,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	return
 
 /mob/living/simple_animal/hostile/proc/MoveToTarget()
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	stop_automated_movement = 1
 	if(!targetted_mob || SA_attackable(targetted_mob))
@@ -126,7 +126,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	return 0
 
 /mob/living/simple_animal/hostile/proc/DestroyPathToTarget()
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(environment_smash)
 		EscapeConfinement()
@@ -161,7 +161,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			return
 
 /mob/living/simple_animal/hostile/proc/AttackTarget()
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	stop_automated_movement = 1
 	if(!targetted_mob || SA_attackable(targetted_mob))
@@ -175,7 +175,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 		return 1
 
 /mob/living/simple_animal/hostile/proc/AttackingTarget()
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(!Adjacent(targetted_mob))
 		return
@@ -296,7 +296,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 		shooter.OpenFire(targetDD)
 
 /mob/living/simple_animal/hostile/proc/DestroySurroundings()
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(istype(src, /mob/living/simple_animal/hostile/megafauna))
 		set_dir(get_dir(src,targetted_mob))

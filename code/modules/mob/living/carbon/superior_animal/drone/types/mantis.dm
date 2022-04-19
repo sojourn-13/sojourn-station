@@ -14,7 +14,7 @@
 	var/already_slashed = FALSE // So that we don't do the round slash twice in a row.
 
 /mob/living/carbon/superior_animal/handmade/mantis/UnarmedAttack()
-	var/targetted_mob = (target_mob?.resolve())
+	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(!Adjacent(targetted_mob))
 		return
@@ -42,7 +42,7 @@
 			UnarmedAttack(target, 1)
 
 /mob/living/carbon/superior_animal/handmade/mantis/proc/stun_with_claw()
-	var/targetted_mob = (target_mob?.resolve())
+	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(isliving(targetted_mob))
 		var/mob/living/victim = targetted_mob

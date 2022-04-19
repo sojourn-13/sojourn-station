@@ -28,7 +28,7 @@
 /mob/living/carbon/superior_animal/roach/bluespace/handle_ai()
 	..()
 
-	var/targetted_mob = (target_mob?.resolve())
+	var/atom/targetted_mob = (target_mob?.resolve())
 
 	var/turf/target
 	if((stance == HOSTILE_STANCE_ATTACK || stance == HOSTILE_STANCE_ATTACKING) && targetted_mob && !Adjacent(targetted_mob) && prob(change_tele_to_mob))
@@ -44,7 +44,7 @@
 		playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
 
 /mob/living/carbon/superior_animal/roach/bluespace/attackby(obj/item/W, mob/user, params)
-	var/targetted_mob = (target_mob?.resolve())
+	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(prob(change_tele_to_mob))
 		var/source = src
@@ -57,7 +57,7 @@
 	. = ..()
 
 /mob/living/carbon/superior_animal/roach/bluespace/attack_hand(mob/living/carbon/M)
-	var/targetted_mob = (target_mob?.resolve())
+	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(M.a_intent != I_HELP && prob(change_tele_to_mob))
 		var/source = src
@@ -70,7 +70,7 @@
 	. = ..()
 
 /mob/living/carbon/superior_animal/roach/bluespace/bullet_act(obj/item/projectile/P, def_zone)
-	var/targetted_mob = (target_mob?.resolve())
+	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(prob(change_tele_to_mob))
 		var/source = src
@@ -83,7 +83,7 @@
 	. = ..()
 
 /mob/living/carbon/superior_animal/roach/bluespace/attack_generic(mob/user, damage, attack_message)
-	var/targetted_mob = (target_mob?.resolve())
+	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(!damage || !istype(user))
 		return FALSE

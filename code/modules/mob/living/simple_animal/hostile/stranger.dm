@@ -59,7 +59,7 @@
 	qdel(src)
 
 /mob/living/simple_animal/hostile/stranger/attack_generic(mob/user, damage, attack_message)
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(!damage || !istype(user))
 		return FALSE
@@ -74,7 +74,7 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/stranger/attackby(obj/item/W, mob/user, params)
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(prob(prob_tele))
 		var/source = src
@@ -87,7 +87,7 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/stranger/attack_hand(mob/living/carbon/M)
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(M.a_intent != I_HELP && prob(prob_tele))
 		var/source = src
@@ -100,7 +100,7 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/stranger/bullet_act(obj/item/projectile/P, def_zone)
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(prob(prob_tele))
 		var/source = src
@@ -113,7 +113,7 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/stranger/Life()
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	. = ..()
 	if(. && prob(prob_tele/2))

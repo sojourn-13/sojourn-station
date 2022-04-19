@@ -29,7 +29,7 @@
 	src.destroySurroundings()
 
 /mob/living/carbon/superior_animal/RangedAttack()
-	var/targetted_mob = (target_mob?.resolve())
+	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(ranged)
 		if(get_dist(src, targetted_mob) <= 6 && !istype(src, /mob/living/simple_animal/hostile/megafauna))

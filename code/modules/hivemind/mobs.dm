@@ -122,7 +122,7 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/proc/speak()
-	var/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(!client && speak_chance && prob(speak_chance) && speak.len)
 		if(targetted_mob && target_speak.len)
@@ -373,7 +373,7 @@
 
 /mob/living/simple_animal/hostile/hivemind/lobber/Life()
 	. = ..()
-	var/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 //checks if cooldown is over and is targeting mob, if so, activates special ability
 	if(targetted_mob && world.time > special_ability_cooldown)
@@ -453,7 +453,7 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/hiborg/AttackingTarget()
-	var/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if (isnull(targetted_mob))
 		return
@@ -483,7 +483,7 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/hiborg/proc/stun_with_claw()
-	var/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if (isnull(targetted_mob))
 		return
@@ -547,7 +547,7 @@
 /mob/living/simple_animal/hostile/hivemind/himan/Life()
 	. = ..()
 
-	var/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	//shriek
 	if(targetted_mob && !fake_dead && world.time > special_ability_cooldown)
@@ -579,7 +579,7 @@
 		..()
 	else
 
-		var/targetted_mob = (target_mob?.resolve())
+		var/mob/living/targetted_mob = (target_mob?.resolve())
 
 		if(!targetted_mob || SA_attackable(targetted_mob))
 			stance = HOSTILE_STANCE_IDLE
@@ -591,7 +591,7 @@
 /mob/living/simple_animal/hostile/hivemind/himan/AttackingTarget()
 	if(fake_dead)
 
-		var/targetted_mob = (target_mob?.resolve())
+		var/mob/living/targetted_mob = (target_mob?.resolve())
 
 		if (isnull(targetted_mob))
 			return
@@ -633,7 +633,7 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/himan/proc/awake()
-	var/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	var/mob/living/L = targetted_mob
 	if(L)
@@ -737,7 +737,7 @@
 		playsound(src, 'sound/effects/clang.ogg', 70, 1)
 
 
-	var/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	//corpse ressurection
 	if(!targetted_mob && !passenger) //may break on null
@@ -754,7 +754,7 @@
 	if(!client && prob(speak_chance) && speak.len)
 		if(pilot)
 
-			var/targetted_mob = (target_mob?.resolve())
+			var/mob/living/targetted_mob = (target_mob?.resolve())
 
 			if(targetted_mob)
 				visible_message("<b>[name]'s pilot</b> says, [pick(pilot_target_speak)]")
@@ -770,7 +770,7 @@
 //updates every life tick
 /mob/living/simple_animal/hostile/hivemind/mechiver/update_icon()
 
-	var/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(targetted_mob && !passenger && (get_dist(targetted_mob, src) <= 4) && !is_on_cooldown())
 		if(!hatch_closed)
@@ -795,7 +795,7 @@
 
 /mob/living/simple_animal/hostile/hivemind/mechiver/AttackingTarget()
 
-	var/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(!Adjacent(targetted_mob))
 		return
@@ -808,7 +808,7 @@
 
 //picking up our victim for good 20 seconds of best road trip ever
 /mob/living/simple_animal/hostile/hivemind/mechiver/special_ability(mob/living/target)
-	var/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(!targetted_mob && hatch_closed) //when we picking up corpses
 		if(pilot)
@@ -922,7 +922,7 @@
 	stop_automated_movement = TRUE
 	. = ..()
 
-	var/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	//special ability using
 	if(world.time > special_ability_cooldown && can_use_special_ability)
@@ -944,7 +944,7 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/phaser/AttackTarget()
-	var/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(targetted_mob && get_dist(src, targetted_mob) > 1)
 		stance = HOSTILE_STANCE_ATTACK
@@ -952,7 +952,7 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/phaser/MoveToTarget()
-	var/targetted_mob = (target_mob?.resolve())
+	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(!targetted_mob || SA_attackable(targetted_mob))
 		stance = HOSTILE_STANCE_IDLE
