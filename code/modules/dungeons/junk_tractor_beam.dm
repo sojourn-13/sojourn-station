@@ -392,7 +392,7 @@
 		// Pick a ruin
 		var/datum/map_template/junk/j25_25/chunk = null
 		var/i_chunk = 1
-		if(pool_25_25?.len)
+		if(pool_25_25?:len)
 			i_chunk = rand(1, (pool_25_25[affinity_ID]):len)
 			chunk = pool_25_25[affinity_ID][i_chunk]
 		else

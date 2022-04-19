@@ -48,6 +48,7 @@
 
 /turf/simulated/floor/carpet/space_carpet/New()
 	icon_state = "[((x + y) ^ ~(x * y) + z) % 25]"
+	layer = 0.1
 
 /*Grid*/
 
