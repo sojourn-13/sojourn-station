@@ -173,6 +173,11 @@
 	// If nothing was ever triggered, continue as normal
 	..()
 
+/mob/living/carbon/superior_animal/nanobot/attack_hand(mob/user as mob)
+	if(user.a_intent == I_HELP) // Are we on help intent?
+		interact(user)
+	else ..()
+
 /mob/living/carbon/superior_animal/nanobot/proc/spawn_food()
 	new /obj/item/storage/ration_pack(src.loc) // Spawn the food
 	visible_emote("state, \"Dispensing emergency ration pack.\"") // Vocal Message
