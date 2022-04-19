@@ -16,8 +16,8 @@
 	mag_well = MAG_WELL_HRIFLE
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	price_tag = 1250
-	penetration_multiplier = 1.2
-	damage_multiplier = 1.1
+	penetration_multiplier = 1.0
+	damage_multiplier = 1.0
 	recoil_buildup = 10
 	one_hand_penalty = 10
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
@@ -158,7 +158,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	price_tag = 1500
-	penetration_multiplier = 1
+	penetration_multiplier = 1.2
 	damage_multiplier = 1.1
 	recoil_buildup = 3.25
 	one_hand_penalty = 23
