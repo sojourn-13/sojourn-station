@@ -26,6 +26,8 @@
 	storage_capacity = (MOB_MEDIUM * 4) - 1 //Holds 6 medium size mob or 11 smalls
 	var/contains_body = 0
 	layer = LOW_OBJ_LAYER+0.01
+	old_lock_odds = -100 // No more ID locked bodybags/stasis bags, please!!!
+	old_chance = -100 // And not old either!! Just to be safe!! - Seb
 
 /obj/structure/closet/body_bag/attackby(W as obj, mob/user as mob)
 	if (istype(W, /obj/item/pen))
@@ -106,6 +108,8 @@
 	var/used = 0
 	var/obj/item/tank/tank = null
 	var/existing_degradation
+	old_lock_odds = -100
+	old_chance = -100  // Making extra sure just in case it doesn't inherit properly.
 
 /obj/structure/closet/body_bag/cryobag/New()
 	tank = new /obj/item/tank/emergency_oxygen(null) //It's in nullspace to prevent ejection when the bag is opened.

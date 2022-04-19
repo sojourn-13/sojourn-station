@@ -21,7 +21,7 @@
 	one_hand_penalty = 10
 	fire_delay = 14 //Slow, on par with a shotgun pump then fire
 	recoil_buildup = 12 //Big shots, big recoil.
-	damage_multiplier = 1.2
+	damage_multiplier = 1
 	init_firemodes = list(
 		list(mode_name="slug", mode_desc="fires a large metal chunk at light speeds", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
 		list(mode_name="non-lethal", mode_desc="fires a rubber pellet at light speed", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
@@ -187,6 +187,7 @@
 	)
 	consume_cell = FALSE
 	price_tag = 6000
+	max_upgrades = 2
 
 	var/max_stored_matter = 4
 	var/stored_matter = 0
@@ -195,38 +196,47 @@
 	var/projectile_cost = 1
 	var/overheat_damage = 25
 
-/obj/item/gun/energy/laser/railgun/gauss/Initialize()
-    ..()
-    AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE,  50,  60,  20, 0.01, 2)
-    RegisterSignal(src, COMSIG_HEAT_VENT, .proc/ventEvent) //this sould just be a fluff message, proc can be anything
-    RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheat) //this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
+	//Blacklisting upgrades currently dosnt work, - Trilby
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt,
+							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst)
 
+/obj/item/gun/energy/laser/railgun/gauss/Initialize()
+	..()
+	AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE,  50,  60,  20, 0.01, 2)
+	RegisterSignal(src, COMSIG_HEAT_VENT, .proc/ventEvent) //this sould just be a fluff message, proc can be anything
+	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheat) //this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
+	update_icon()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/gun/energy/laser/railgun/gauss/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	..()
 /obj/item/gun/energy/laser/railgun/gauss/attackby(obj/item/I, mob/user)
 
-	if(istype(I,/obj/item/gun_upgrade/mechanism/battery_shunt))
-		to_chat(user, SPAN_WARNING("[src] cannot be fitted with a battery shunt!"))		//No shunts on this gun. It's powerful enough.
-		return FALSE
-	else if(!istype(I,/obj/item/stack/sheet))
+	if(!istype(I,/obj/item/stack/sheet))
 		..()
 	var/obj/item/stack/sheet/M = I
 	if(istype(M) && M.name == matter_type)
 		var/amount = min(M.get_amount(), round(max_stored_matter - stored_matter))
 		if(M.use(amount))
 			stored_matter += amount
-		to_chat(user, "<span class='notice>You load [amount] [matter_type] into \the [src].</span>")
+			to_chat(usr, "You load [amount] [matter_type] into \the [src].")
 	else
 		return ..()
 
-/obj/item/gun/energy/laser/railgun/gauss/consume_next_projectile()
+/obj/item/gun/energy/laser/railgun/gauss/consume_next_projectile(mob/user)
 	if(stored_matter < projectile_cost) return null
 	if(!cell) return null
 	if(!ispath(projectile_type)) return null
 	if(!cell.checked_use(charge_cost)) return null
-	stored_matter -= projectile_cost
 
 	var/datum/component/heat/H = GetComponent(/datum/component/heat)
 	if((H.currentHeat > H.heatThresholdSpecial ||stored_matter < projectile_cost || !..()))
+		to_chat(user, "The [src] is currently overheating!")
+		handleoverheat()
 		return null
+
+	stored_matter -= projectile_cost
 	return new projectile_type(src)
 
 /obj/item/gun/energy/laser/railgun/gauss/examine(user)
@@ -251,10 +261,9 @@
 	playsound(usr.loc, 'sound/weapons/guns/interact/gauss_vent.ogg', 50, 1)
 
 /obj/item/gun/energy/laser/railgun/gauss/proc/handleoverheat()
-	src.visible_message(SPAN_DANGER("[src] overheats, its exterior becoming blisteringly hot as a temperature alarm beeps!"))
+	src.visible_message(SPAN_DANGER("[src] overheats, its exterior becoming blisteringly hot burning the skin down to the flesh!!"))
 	var/mob/living/L = loc
 	if(istype(L))
-		to_chat(L, SPAN_DANGER("[src] is going to explode!"))
 		if(L.hand == L.l_hand) // Are we using the left arm?
 			L.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
 		else // If not then it must be the right arm.

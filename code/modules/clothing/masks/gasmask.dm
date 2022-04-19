@@ -36,12 +36,30 @@
 
 	return filtered
 
-//Alt race masks here
-/obj/item/clothing/mask/gas/kriosan
-	name = "kriosan gas mask"
-	desc = "A face-covering mask fitted to a more canine biology connected to an air supply. Filters harmful gases from the air."
-	icon_state = "kriosan_gasmask"
-	siemens_coefficient = 0.7
+
+/obj/item/clothing/mask/gas/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Base"] = "gas_mask"
+	options["Alternative"] = "gas_alt"
+	options["Kriosan"] = "kriosan_gasmask"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1 //Or you could just use this instead of making another subtype just for races
 
 //Payday masks, clown alternatives, they function as gas masks.
 /obj/item/clothing/mask/gas/dal
@@ -137,11 +155,6 @@
 	icon_state = "death_commando_mask"
 	item_state = "death_commando_mask"
 	siemens_coefficient = 0.2
-
-/obj/item/clothing/mask/gas/alternate
-	name = "sleek gas mask"
-	desc = "A face-covering mask that can be connected to an air supply. Filters harmful gases from the air. This one is a close fitting style."
-	icon_state = "gas_alt"
 
 /obj/item/clothing/mask/gas/cyborg
 	name = "cyborg visor"

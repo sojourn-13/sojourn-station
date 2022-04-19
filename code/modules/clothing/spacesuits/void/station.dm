@@ -192,8 +192,7 @@
 //CEO Rig
 /obj/item/clothing/head/helmet/space/void/goldilocks
 	name = "Goldilocks Gilded Helmet"
-	desc = "A helmet designed to look good while watching people you paid to do your work for you. Not the best for personal protection."
-
+	desc = "A helmet designed to look good while watching people you paid to do your work for you. Not the best for personal protection, but lightweight."
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 6 //luminosity when on
 	icon_state = "goldilocks_helmet"
@@ -218,7 +217,7 @@
 	desc = "Grandeur incarnated in a padded suit of armor, fitting for a CEO that would like to boast their wealth at the expense personal safety."
 	item_state = "goldilocks_suit"
 	icon_state = "goldilocks_suit"
-	slowdown = 0.35
+	slowdown = 0
 	armor_list = list(
 		melee = 50,
 		bullet = 25,

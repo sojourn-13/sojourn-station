@@ -1,7 +1,7 @@
 //Manmade horrors beyond my comprehension.
 /mob/living/carbon/superior_animal/roach/plasmaroach
 	name = "Brennbar Roach"
-	desc = "An abomination of an insect, made by infusing Plasma Spider genes with a Gluhend Roach. It likes to explode."
+	desc = "An abomination of an insect, made by infusing Plasma Spider genes with a Gluhend Roach. It likes to explode when hit."
 	icon_state = "plasmaroach"
 
 	meat_amount = 2

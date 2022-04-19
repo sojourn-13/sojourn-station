@@ -212,6 +212,22 @@
 					examine(user)
 	update_icon()
 
+/obj/machinery/constructable_frame/machine_frame/MouseDrop_T(obj/A, mob/user, src_location, over_location, src_control, over_control, params)
+	if(istype(A, /obj/item))
+		attackby(A, user)
+		return
+
+	for(var/CM in req_components)
+		if(istype(A, CM) && (req_components[CM] > 0))
+			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+			A.forceMove(src)
+			components += A
+			req_components[CM]--
+			break
+		else
+			to_chat(user, SPAN_WARNING("You cannot add that component to the machine!"))
+
+
 /obj/machinery/constructable_frame/machine_frame/proc/component_check()
 	var/ready = TRUE
 	for(var/R in req_components)
