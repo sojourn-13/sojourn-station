@@ -436,7 +436,7 @@
 					/obj/item/ammo_magazine/ammobox/antim,
 					/obj/item/gun_upgrade/barrel/gauss)
 					
-	cost = 4000
+	cost = 5200
 	crate_name = "Void Wolf Anti-material Kit"
 	group = "Xanorath Syndicate"
 	
