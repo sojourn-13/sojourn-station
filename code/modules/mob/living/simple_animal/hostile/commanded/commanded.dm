@@ -159,18 +159,17 @@
 
 /mob/living/simple_animal/hostile/commanded/proc/follow_command(var/mob/speaker,var/text)
 	//we can assume 'stop following' is handled by stop_command
-	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(findtext(text,"me"))
 		stance = COMMANDED_FOLLOW
-		targetted_mob = speaker //this wont bite me in the ass later.
+		target_mob = WEAKREF(speaker) //this wont bite me in the ass later.
 		return 1
 	var/list/targets = get_targets_by_name(text)
 	if(targets.len > 1 || !targets.len) //CONFUSED. WHO DO I FOLLOW?
 		return 0
 
 	stance = COMMANDED_FOLLOW //GOT SOMEBODY. BETTER FOLLOW EM.
-	targetted_mob = targets[1] //YEAH GOOD IDEA //niko--i feel like this will cause harddels. dumbass.
+	target_mob = WEAKREF(targets[1]) //YEAH GOOD IDEA //niko--i feel like this will cause harddels. dumbass.
 
 	return 1
 
@@ -183,11 +182,9 @@
 	//if they attack us, we want to kill them. None of that "you weren't given a command so free kill" bullshit.
 	. = ..()
 
-	var/mob/living/targetted_mob = (target_mob?.resolve())
-
 	if(!.)
 		stance = HOSTILE_STANCE_ATTACK
-		targetted_mob = user
+		target_mob = WEAKREF(user)
 		allowed_targets += user //fuck this guy in particular.
 		if(user in friends) //We were buds :'(
 			friends -= user
@@ -196,10 +193,8 @@
 /mob/living/simple_animal/hostile/commanded/attack_hand(mob/living/carbon/human/M as mob)
 	..()
 
-	var/mob/living/targetted_mob = (target_mob?.resolve())
-
 	if(M.a_intent == I_HURT) //assume he wants to hurt us.
-		targetted_mob = M
+		target_mob = WEAKREF(M)
 		allowed_targets += M
 		stance = HOSTILE_STANCE_ATTACK
 		if(M in friends)

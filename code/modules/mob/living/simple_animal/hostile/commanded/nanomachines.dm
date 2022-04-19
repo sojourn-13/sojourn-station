@@ -36,7 +36,7 @@
 		switch(stance)
 			if(COMMANDED_HEAL)
 				if(!targetted_mob)
-					targetted_mob = FindTarget(COMMANDED_HEAL)
+					target_mob = WEAKREF(FindTarget(COMMANDED_HEAL))
 				move_to_heal()
 			if(COMMANDED_HEALING)
 				heal()
@@ -67,7 +67,7 @@
 		return 0
 	if(targetted_mob.stat || targetted_mob.health >= targetted_mob.maxHealth) //he's either dead or healthy, move along.
 		allowed_targets -= targetted_mob
-		targetted_mob = null
+		target_mob = null
 		stance = COMMANDED_HEAL
 		return 0
 	src.visible_message("\The [src] glows green for a moment, healing \the [targetted_mob]'s wounds.")
@@ -76,21 +76,20 @@
 	targetted_mob.adjustFireLoss(-5)
 
 /mob/living/simple_animal/hostile/commanded/nanomachine/misc_command(var/mob/speaker,var/text)
-	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(stance != COMMANDED_HEAL || stance != COMMANDED_HEALING) //dont want attack to bleed into heal.
 		allowed_targets = list()
 		target_mob = null
 	if(findtext(text,"heal")) //heal shit pls
 		if(findtext(text,"me")) //assumed want heals on master.
-			targetted_mob = speaker
+			target_mob = WEAKREF(speaker)
 			stance = COMMANDED_HEAL
 			return 1
 		var/list/targets = get_targets_by_name(text)
 		if(targets.len > 1 || !targets.len)
 			src.say("ERROR. TARGET COULD NOT BE PARSED.")
 			return 0
-		targetted_mob = targets[1]
+		target_mob = WEAKREF(targets[1])
 		stance = COMMANDED_HEAL
 		return 1
 	if(findtext(text,"emergency protocol"))

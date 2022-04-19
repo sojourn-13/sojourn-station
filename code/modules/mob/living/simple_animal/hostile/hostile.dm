@@ -239,7 +239,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 		if(!stat)
 			switch(stance)
 				if(HOSTILE_STANCE_IDLE)
-					targetted_mob = FindTarget()
+					target_mob = WEAKREF(FindTarget())
 
 				if(HOSTILE_STANCE_ATTACK)
 					if(destroy_surroundings)

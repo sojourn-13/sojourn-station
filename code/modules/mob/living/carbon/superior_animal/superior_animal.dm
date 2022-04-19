@@ -314,7 +314,8 @@
 		if(HOSTILE_STANCE_IDLE)
 			if (!busy) // if not busy with a special task
 				stop_automated_movement = FALSE
-			targetted_mob = findTarget()
+			target_mob = WEAKREF(findTarget())
+			targetted_mob = (target_mob?.resolve())
 			if (targetted_mob)
 				stance = HOSTILE_STANCE_ATTACK
 
