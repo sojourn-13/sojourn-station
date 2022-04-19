@@ -175,14 +175,14 @@
 	recoil_buildup = 30
 	one_hand_penalty = 80 //guh
 	zoom_factor = 1.8
-	extra_damage_mult_scoped = 0.2
+	extra_damage_mult_scoped = 0.4
 	damage_multiplier = 1.6
-	penetration_multiplier = 2.0
+	penetration_multiplier = 1.5
 	twohanded = TRUE
 	slowdown_hold = 1.5
 	brace_penalty = 30
 	init_firemodes = list(
-		list(mode_name="powered-rod", mode_desc="fires a metal rod at incredible speeds", projectile_type=/obj/item/projectile/plasma/gauss, icon="kill"),
+		list(mode_name="powered-rod", mode_desc="fires a metal rod at incredible speeds", projectile_type=/obj/item/projectile/bullet/gauss, icon="kill"),
 		list(mode_name="fragmented scrap", mode_desc="fires a brittle, sharp piece of scrap-metal", projectile_type=/obj/item/projectile/bullet/grenade/frag, charge_cost=30000, icon="grenade"),
 	)
 	consume_cell = FALSE
@@ -199,6 +199,9 @@
 	//Blacklisting upgrades currently dosnt work, - Trilby
 	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt,
 							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst)
+	
+	//Until blacklisting works, this will be the supliment. You get one attachment - use it wisely....... - Rebel0
+	max_upgrades = 1
 
 /obj/item/gun/energy/laser/railgun/gauss/Initialize()
 	..()
@@ -242,6 +245,7 @@
 /obj/item/gun/energy/laser/railgun/gauss/examine(user)
 	. = ..()
 	to_chat(user, "It holds [stored_matter]/[max_stored_matter] [matter_type].")
+	to_chat(user, SPAN_NOTICE("Control-Click to manually vent this weapon's heat."))
 
 /obj/item/gun/energy/laser/railgun/gauss/update_icon()
 	cut_overlays()
