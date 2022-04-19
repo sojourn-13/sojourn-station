@@ -24,9 +24,9 @@
 	auto_eject = 1
 	brace_penalty = 5 //Holding the line, not pushing
 	init_firemodes = list(
-		FULL_AUTO_800,
-		BURST_3_ROUND,
-		BURST_8_ROUND,
+		FULL_AUTO_800_NOLOSS,
+		BURST_3_ROUND_NOLOSS,
+		BURST_8_ROUND_NOLOSS,
 		)
 
 /obj/item/gun/projectile/automatic/ppsh/NM_colony

@@ -20,9 +20,9 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
 
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_400_NOLOSS,
 		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND
+		BURST_3_ROUND_NOLOSS
 		)
 
 /obj/item/gun/projectile/automatic/texan/update_icon()
