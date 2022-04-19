@@ -428,19 +428,6 @@
 	crate_name = "Void Wolf Marksman Kit"
 	group = "Xanorath Syndicate"
 	
-	
-/datum/supply_pack/voidwolfantimaterial
-	name = "Void Wolf Mecha Hunter Kit"
-	contains = list(/obj/item/gun/projectile/boltgun/heavysniper,
-					/obj/item/ammo_magazine/ammobox/antim,
-					/obj/item/ammo_magazine/ammobox/antim,
-					/obj/item/gun_upgrade/barrel/gauss)
-					
-	cost = 5200
-	crate_name = "Void Wolf Anti-material Kit"
-	group = "Xanorath Syndicate"
-	
-	
 /datum/supply_pack/voidwolfrocketman
 	name = "Void Wolf Rocket-Man Weapons Kit"
 	contains = list(/obj/item/gun/projectile/rpg,
