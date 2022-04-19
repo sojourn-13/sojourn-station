@@ -113,7 +113,7 @@
 			loading_gun:
 				while(do_after(user, reload_delay, user))
 					for(var/obj/item/ammo_casing/C in AM.stored_ammo)
-						if(loaded.len >= max_shells || AM.stored_ammo.len <= 0) // The gun is full or the box is empty
+						if(loaded.len >= max_shells) // The gun is full or the box is empty
 							break loading_gun // Stop loading at all
 						if(C.caliber == caliber)
 							C.forceMove(src)
@@ -121,7 +121,10 @@
 							AM.stored_ammo -= C //should probably go inside an ammo_magazine proc, but I guess less proc calls this way...
 							count++
 							AM.update_icon()
-							continue loading_gun
+							break
+
+					if(AM.stored_ammo.len <= 0) // The packet is out of bullets
+						break loading_gun // Stop loading at all
 
 		if(count)
 			user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
