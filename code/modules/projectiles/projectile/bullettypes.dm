@@ -633,6 +633,22 @@
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
 
+//Gauss rifle
+/obj/item/projectile/bullet/gauss
+	name = "gauss"
+	icon_state = "gauss"
+	mob_hit_sound = list('sound/effects/gore/sear.ogg')
+	hitsound_wall = 'sound/weapons/guns/misc/ric4.ogg'
+	damage_types = list(BRUTE = 54)
+	armor_penetration = 40
+	check_armour = ARMOR_BULLET
+	embed = FALSE
+	can_ricochet = FALSE
+	sharp = FALSE
+	affective_damage_range = 12
+	affective_ap_range = 12
+	hitscan = TRUE
+
 //Should do about 68 damage at 1 tile distance (adjacent), and 40 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
 /obj/item/projectile/bullet/pellet/shotgun

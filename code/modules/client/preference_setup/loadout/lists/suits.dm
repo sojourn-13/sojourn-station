@@ -6,6 +6,10 @@
 	sort_category = "Suits and Overwear"
 	cost = 1
 
+/datum/gear/suit/hell_apron
+	display_name = "lonestar black apron"
+	path = /obj/item/clothing/suit/storage/helltaker_apron
+
 /datum/gear/suit/bunnysuit
 	display_name = "bunny suit"
 	path = /obj/item/clothing/suit/costume/kinky/alyson
@@ -48,18 +52,6 @@
 /datum/gear/suit/hazard_vest_black
 	display_name = "black hazard vest"
 	path = /obj/item/clothing/suit/storage/hazardvest_black
-
-/datum/gear/suit/ivory
-	display_name = "ivory tabard"
-	path = /obj/item/clothing/suit/ivory
-
-/datum/gear/suit/blacksilk
-	display_name = "blacksilk tabard"
-	path = /obj/item/clothing/suit/blacksilk
-
-/datum/gear/suit/numerical_grab
-	display_name = "numerical garb"
-	path = /obj/item/clothing/suit/storage/numericalgarb
 
 /datum/gear/suit/hoodies
 	display_name = "hoodie selection"
@@ -134,7 +126,7 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/suit/modular
-	display_name = "modular jacket selection"
+	display_name = "suit jacket selection"
 	path = /obj/item/clothing/suit/storage/suitjacket
 	flags = GEAR_HAS_TYPE_SELECTION
 
@@ -147,11 +139,11 @@
 	display_name = "punk vest"
 	path = /obj/item/clothing/suit/punkvest
 
-/datum/gear/suit/punkvest
+/datum/gear/suit/windbreaker
 	display_name = "windbreaker"
 	path = /obj/item/clothing/suit/storage/toggle/windbreaker
 
-/datum/gear/suit/punkvest
+/datum/gear/suit/cyberpunkvest
 	display_name = "cyberpunk vest"
 	path = /obj/item/clothing/suit/punkvest/cyber
 
@@ -170,26 +162,6 @@
 /datum/gear/suit/akira
 	display_name = "red jacket"
 	path = /obj/item/clothing/suit/storage/akira
-
-/datum/gear/suit/absolute_hoodie
-	display_name = "absolute hoodie"
-	path = /obj/item/clothing/suit/storage/toggle/absolutehoodie
-
-/datum/gear/suit/absolute_great_coat
-	display_name = "absolute great coat"
-	path = /obj/item/clothing/suit/greatcoat/absolutecoat
-
-/datum/gear/suit/absolute_cloak
-	display_name = "absolutist cloak"
-	path = /obj/item/clothing/suit/hooded/absolutecloak
-
-/datum/gear/suit/radhat
-	display_name = "radiation hood"
-	path = /obj/item/clothing/head/radiation
-
-/datum/gear/suit/radsuit
-	display_name = "radiation suit"
-	path = /obj/item/clothing/suit/radiation
 
 /datum/gear/suit/radhat
 	display_name = "radiation hood"

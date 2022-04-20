@@ -377,12 +377,12 @@ var/global/chicken_count = 0
 	max_co2 = 0
 	min_n2 = 0
 	max_n2 = 0
-	autoseek_food = 0
-	beg_for_food = 0
+	autoseek_food = FALSE
+	beg_for_food = FALSE
 	hunger_enabled = FALSE
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
-	var/chem_to_egg = 20 // How much of one chem to make an egg. We use 20 because that's the amount one sheet give
+	var/chem_to_egg = 30 // How much of one chem to make an egg. We use 20 for the normallity of the sheet and 10 do to coverting losses...
 
 /mob/living/simple_animal/metal_chicken/New()
 	..()
@@ -421,7 +421,7 @@ var/global/chicken_count = 0
 	. =..()
 	if(!.)
 		return
-	if(!stat && prob(50) && lay_egg())
+	if(!stat && prob(5) && lay_egg()) //We are less likely to lay eggs
 		visible_message("[src] [pick("lays an egg.","squats down and croons.","begins making a huge racket.","begins clucking raucously.")]")
 
 /mob/living/simple_animal/metal_chicken/proc/lay_egg()
@@ -460,6 +460,8 @@ var/global/chicken_count = 0
 				egg_type = /obj/effect/spider/spiderling
 			if("blattedin")
 				egg_type = /obj/item/reagent_containers/food/snacks/cube/roach
+			if("coco")
+				egg_type = /obj/item/reagent_containers/food/snacks/chocolatebar
 			else // Empty bottle that then get filled with left-over chems
 				egg_type = /obj/item/reagent_containers/glass/bottle
 

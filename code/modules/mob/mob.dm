@@ -13,7 +13,7 @@
 	ghostize()
 
 	LAssailant_weakref = null
-
+  
 	return ..()
 
 /mob/get_fall_damage(var/turf/from, var/turf/dest)
@@ -1359,3 +1359,22 @@ mob/proc/yank_out_object()
 		timeinjob = SSjob.JobTimeCheck(usr.ckey, "[J.type]")
 		if(timeinjob > 0)
 			to_chat(src, "You have spent [timeinjob] minutes playing as [J.title].")
+
+
+// Code taken from /code/game/objects/objs.dm Line 136 to allow support for Mob's UIs
+/mob/proc/interact(mob/user as mob)
+	return
+
+/mob/proc/updateDialog()
+	// Check that people are actually using the machine. If not, don't update anymore.
+	if(in_use)
+		var/list/nearby = viewers(1, src)
+		var/is_in_use = 0
+		for(var/mob/M in nearby)
+			if ((M.client && M.machine == src))
+				is_in_use = 1
+				src.interact(M)
+		var/ai_in_use = AutoUpdateAI(src)
+
+		if(!ai_in_use && !is_in_use)
+			in_use = 0

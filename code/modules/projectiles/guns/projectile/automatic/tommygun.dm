@@ -21,9 +21,9 @@
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE)
 	init_firemodes = list(
-		FULL_AUTO_400,
-		BURST_3_ROUND,
-		BURST_5_ROUND
+		FULL_AUTO_400_NOLOSS,
+		BURST_3_ROUND_NOLOSS,
+		BURST_5_ROUND_NOLOSS
 		)
 
 /obj/item/gun/projectile/automatic/thompson/update_icon()

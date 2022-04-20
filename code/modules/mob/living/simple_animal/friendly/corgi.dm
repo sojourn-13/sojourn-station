@@ -177,8 +177,9 @@
 	response_help  = "pets"
 	response_disarm = "bops"
 	response_harm   = "kicks"
-	autoseek_food = 0
-	beg_for_food = 0
+	autoseek_food = FALSE  //To seek food is to seek meals, we do not have such cares
+	beg_for_food = FALSE   //A good hunting dog never begs
+	hunger_enabled = FALSE //We are made of metal not meals
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	min_oxy = 0
 	max_oxy = 0
@@ -191,7 +192,7 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
-/mob/living/simple_animal/corgi/E_M/death()
+/mob/living/simple_animal/corgi/E_N/death()
 	..()
 	visible_message("<b>[src]</b> blows apart!")
 	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
@@ -202,7 +203,7 @@
 	return
 
 // For repairing damage to the synths.
-/mob/living/simple_animal/corgi/E_M/attackby(obj/item/W as obj, mob/user as mob)
+/mob/living/simple_animal/corgi/E_N/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 

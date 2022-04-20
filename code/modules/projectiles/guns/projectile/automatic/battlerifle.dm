@@ -15,9 +15,9 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_HRIFLE
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
-	price_tag = 1000
-	penetration_multiplier = 1.2
-	damage_multiplier = 1.1
+	price_tag = 1250
+	penetration_multiplier = 1.0
+	damage_multiplier = 1.0
 	recoil_buildup = 10
 	one_hand_penalty = 10
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
@@ -64,8 +64,8 @@
 	icon_state = "omnirifle"
 	item_state = "omnirifle"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
-	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
-	price_tag = 1250
+	mag_well = MAG_WELL_HRIFLE
+	price_tag = 1500
 	zoom_factor = 0.3
 	recoil_buildup = 2.5
 	one_hand_penalty = 10
@@ -88,7 +88,7 @@
 	icon_state = "DMR"
 	item_state = "DMR"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
-	price_tag = 1500
+	price_tag = 1750
 	damage_multiplier = 1.2
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
@@ -115,7 +115,7 @@
 	icon_state = "osprey"
 	item_state = "osprey"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_GLASS = 10)
-	price_tag = 1750
+	price_tag = 2000
 	recoil_buildup = 3.25
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.2
@@ -134,12 +134,12 @@
 	item_state = "boar"
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
-	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
+	mag_well = MAG_WELL_HRIFLE
 	price_tag = 1250
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
-	damage_multiplier = 0.8
+	damage_multiplier = 1
 	recoil_buildup = 6
-	penetration_multiplier = 0.8
+	penetration_multiplier = 0.7
 	one_hand_penalty = 25
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -156,9 +156,10 @@
 	icon_state = "warthog"
 	item_state = "warthog"
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
-	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
+	mag_well = MAG_WELL_HRIFLE
 	price_tag = 1500
-	damage_multiplier = 0.8
+	penetration_multiplier = 1.2
+	damage_multiplier = 1.1
 	recoil_buildup = 3.25
 	one_hand_penalty = 23
 	zoom_factor = 0.3

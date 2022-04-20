@@ -14,7 +14,7 @@
 	cell_type = /obj/item/cell/large
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	projectile_type = /obj/item/projectile/sonic_bolt
-	fire_delay = 1000
+	fire_delay = 25
 	max_upgrades = 0
 
 /obj/item/gun/energy/sonic_emitter/preloaded/New()

@@ -305,3 +305,26 @@
 /obj/item/reagent_containers/food/snacks/cube/grestrahlte/on_reagent_change()
 	if(reagents.has_reagent("blood"))
 		Expand()
+
+/obj/item/reagent_containers/food/snacks/cube/benzin
+	name = "Benzin Cube"
+	desc = "Just add Blood!"
+	reagent_flags = REFILLABLE
+	icon = 'icons/obj/roach_cubes.dmi'
+	icon_state = "benzincube"
+	bitesize = 12
+	filling_color = "#ADAC7F"
+	center_of_mass = list("x"=16, "y"=14)
+	preloaded_reagents = list("protein" = 10)
+	//taste_tag = list(MEAT_FOOD,BLAND_FOOD)
+
+/obj/item/reagent_containers/food/snacks/cube/benzin/proc/Expand()
+	src.visible_message(SPAN_NOTICE("\The [src] expands!"))
+	var/turf/T = get_turf(src)
+	new/mob/living/carbon/superior_animal/roach/benzin(T)
+	qdel(src)
+	return TRUE
+
+/obj/item/reagent_containers/food/snacks/cube/benzin/on_reagent_change()
+	if(reagents.has_reagent("blood"))
+		Expand()

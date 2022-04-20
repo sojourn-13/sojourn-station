@@ -148,7 +148,7 @@ var/list/global/organ_rel_size = list(
 	var/miss_chance = 10
 	if (zone in base_miss_chance)
 		miss_chance = base_miss_chance[zone]
-	
+
 	//See-through people are harder to hit
 	if(CLOAKING in target.mutations)
 		miss_chance += 15

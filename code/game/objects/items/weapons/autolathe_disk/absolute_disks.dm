@@ -38,6 +38,8 @@
 		/datum/design/bioprinter/nt_clothes/church_uniform,
 		/datum/design/bioprinter/nt_clothes/hermes_shoes,
 		//medical
+		/datum/design/bioprinter/medical/advanced/bruise/nt,
+		/datum/design/bioprinter/medical/advanced/ointment/nt,
 		/datum/design/autolathe/firstaid/nt,
 		//backpacks
 		/datum/design/bioprinter/leather/storage/backpack/satchel/neotheology,
@@ -100,6 +102,8 @@
 		/datum/design/bioprinter/nt_clothes/church_uniform,
 		/datum/design/bioprinter/nt_clothes/hermes_shoes,
 		//medical
+		/datum/design/bioprinter/medical/advanced/bruise/nt = 2,
+		/datum/design/bioprinter/medical/advanced/ointment/nt = 2,		
 		/datum/design/autolathe/firstaid/nt = 8,
 		//backpacks
 		/datum/design/bioprinter/leather/storage/backpack/satchel/neotheology,

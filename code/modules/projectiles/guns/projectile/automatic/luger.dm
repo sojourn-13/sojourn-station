@@ -16,7 +16,7 @@
 	one_hand_penalty = 20
 	load_method = SINGLE_CASING|MAGAZINE
 	init_firemodes = list(
-		FULL_AUTO_600,
+		FULL_AUTO_600_NOLOSS,
 		SEMI_AUTO_NODELAY,
 		)
 

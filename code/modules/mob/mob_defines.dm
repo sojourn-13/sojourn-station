@@ -64,6 +64,7 @@
 	var/lying = 0
 	var/lying_prev = 0
 	var/canmove = 1
+	var/in_use = FALSE // If we have a user using us, this will be set on. We will check if the user has stopped using us, and thus stop updating and LAGGING EVERYTHING!
 
 /* Is mannquin to be used when we want to make sure character start up beings do not also get the boon of what ever we are adding
    this is current used in magic cups to prevent them form being apart of the faith's list.*/

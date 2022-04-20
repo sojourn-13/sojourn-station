@@ -892,6 +892,15 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	siemens_coefficient = 0.9
 
+/obj/item/clothing/suit/storage/helltaker_apron // Get your Helltaker apron. - Seb
+	name = "lonestar black apron"
+	desc = "Make them chocolate pancakes. Demon girls love chocolate pancakes."
+	icon_state = "nalesnik" // Polish pancakes.
+	item_state = "nalesnik"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	price_tag = 50
+
 //Sweaters.
 obj/item/clothing/suit/sweater/blue
 	name = "blue sweater"
@@ -1019,6 +1028,12 @@ obj/item/clothing/suit/sweater/blue
 	icon_state = "tan_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
+
+/obj/item/clothing/suit/storage/suitjacket/helltaker
+	name = "white suit jacket"
+	desc = "A stylish, opened white suit jacket with a red flower on it. Stylish enough to impress demon girls." // The OG Helltaker jacket drip is here. - Seb
+	icon_state = "white_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/suitjacket/scav
 	name = "frontier jacket"
