@@ -69,7 +69,7 @@
 
 	var/uses = 0
 	var colour = "grey"
-	var dirty = 0
+	var/dirty = 0
 	var/obj/item/clothing/C = null
 	var/list/allowed_devices = list(
 		/obj/item/clothing,
