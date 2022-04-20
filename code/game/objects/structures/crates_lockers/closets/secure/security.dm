@@ -208,7 +208,8 @@
 
 /obj/structure/closet/secure_closet/detective
 	name = "ranger's locker"
-	req_access = list(access_forensics_lockers)
+	req_access = list(access_hos)
+	access_occupy = list(access_forensics_lockers) //So we can claim
 	icon_state = "cabinetdetective"
 
 /obj/structure/closet/secure_closet/detective/populate_contents()
