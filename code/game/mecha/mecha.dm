@@ -100,6 +100,7 @@
 
 	var/list/obj/item/mech_ammo_box/ammo[3] // List to hold the mech's internal ammo.
 
+	var/obj/item/clothing/glasses/hud/hud
 
 /obj/mecha/can_prevent_fall()
 	return TRUE
@@ -2327,3 +2328,10 @@ assassination method if you time it right*/
 		setInternalDamage(MECHA_INT_TANK_BREACH)
 	if (prob(probability))
 		setInternalDamage(MECHA_INT_CONTROL_LOST)
+
+/obj/mecha/proc/hud_deleted(var/obj/item/clothing/glasses/hud/source, var/obj/item/clothing/glasses/hud/placeholder) //2nd arg exists because our signals are outdated
+	SIGNAL_HANDLER
+
+	if (hud == source)
+		UnregisterSignal(source, COMSIG_HUD_DELETED)
+		hud = null

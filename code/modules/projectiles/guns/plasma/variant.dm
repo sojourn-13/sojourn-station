@@ -87,3 +87,11 @@
 						SPAN_NOTICE("[usr] activate the safeties of the [src.name]."),
 						SPAN_NOTICE("You activate the safeties of the [src.name].")
 						)
+
+/obj/item/gun/hydrogen/plasma_torch/Destroy()
+
+	if (welder)
+		welder.gun = null
+		welder = null
+
+	. = ..()

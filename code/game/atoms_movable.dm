@@ -22,16 +22,6 @@
 	var/price_tag = 0 // The item price in credits. atom/movable so we can also assign a price to animals and other thing.
 	var/surplus_tag = FALSE //If true, attempting to export this will net you a greatly reduced amount of credits, but we don't want to affect the actual price tag for selling to others.
 
-/atom/movable/Del()
-	if(isnull(gc_destroyed) && loc)
-		testing("GC: -- [type] was deleted via del() rather than qdel() --")
-		CRASH("GC: -- [type] was deleted via del() rather than qdel() --") // stick a stack trace in the runtime logs
-//	else if(isnull(gcDestroyed))
-//		testing("GC: [type] was deleted via GC without qdel()") //Not really a huge issue but from now on, please qdel()
-//	else
-//		testing("GC: [type] was deleted via GC with qdel()")
-	..()
-
 /atom/movable/Destroy()
 	. = ..()
 	for(var/atom/movable/AM in contents)
