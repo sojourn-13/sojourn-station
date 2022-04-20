@@ -31,7 +31,7 @@
 		BURST_8_ROUND,
 		list(mode_name="suppressing fire", mode_desc = "Long, uncontrolled bursts",  burst=16, burst_delay=1.2, move_delay=11,  icon="burst")
 		)
-	serial_type = ""
+	serial_type = "INDEX"
 
 /obj/item/gun/projectile/automatic/bren/update_icon()
 	..()

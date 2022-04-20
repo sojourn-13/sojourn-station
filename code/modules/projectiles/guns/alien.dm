@@ -11,7 +11,7 @@
 	item_state = "pneumatic"
 	fire_sound_text = "a strange noise"
 	fire_sound = 'sound/weapons/bladeslice.ogg'
-	serial_type = "" //No number
+	serial_type = "INDEX" //No number
 
 
 /obj/item/gun/launcher/spikethrower/New()

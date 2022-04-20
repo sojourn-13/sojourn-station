@@ -18,4 +18,4 @@
 	init_firemodes = list(
 		WEAPON_NORMAL
 	)
-	serial_type = ""
+	serial_type = "INDEX"

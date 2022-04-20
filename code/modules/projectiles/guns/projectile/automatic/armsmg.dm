@@ -25,7 +25,7 @@
 		BURST_3_ROUND_NOLOSS,
 		SEMI_AUTO_NODELAY
 		)
-	serial_type = ""
+	serial_type = "INDEX"
 
 /obj/item/gun/projectile/automatic/armsmg/blackshield
 

@@ -24,7 +24,7 @@
 	projectile_type = /obj/item/projectile/energy/dart
 	safety = FALSE
 	restrict_safety = TRUE
-	serial_type = ""
+	serial_type = "INDEX"
 
 /obj/item/gun/energy/crossbow/largecrossbow
 	name = "\"Themis\" energy crossbow"

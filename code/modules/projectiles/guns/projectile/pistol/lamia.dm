@@ -37,7 +37,7 @@
 	desc = "An M6 \"Naga\" heavy pistol, either a copy, surplus, or stolen. It's impossible to tell with the defaced markings. Uses .50 Kurtz."
 	icon_state = "dark_lamia"
 	item_state = "dark_lamia"
-	serial_type = ""
+	serial_type = "INDEX"
 
 /obj/item/gun/projectile/lamia/dark/sf
 	name = "\"Naga\" heavy pistol"

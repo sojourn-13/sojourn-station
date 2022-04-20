@@ -309,9 +309,19 @@
 		return ..() //Pistolwhippin'
 
 /obj/item/gun/attackby(obj/item/I, mob/living/user, params)
+	//Detectable crime >:T
+	if(istype(I, /obj/item/device/bullet_scanner))
+		if(serial_type)
+			to_chat(user, "<span class='info'>Projectile Serial Caliberation: [serial_type].</span>")
+			return
+		else
+			to_chat(user, "<span class='info'>Projectile Serial Caliberation: ERROR.</span>")
+
+
 	if(!istool(I) || user.a_intent != I_HURT)
 		return FALSE
 
+	//UNDETECTABLE CRIIIIMEEEE!!!!!!!
 	if(I.get_tool_quality(QUALITY_HAMMERING) && serial_type)
 		user.visible_message(SPAN_NOTICE("[user] begins scribbling \the [name]'s gun serial number away."), SPAN_NOTICE("You begin removing the serial number from \the [name]."))
 		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_HAMMERING, FAILCHANCE_EASY, required_stat = STAT_MEC))
@@ -320,6 +330,7 @@
 			serial_type += "-[generate_gun_serial(pick(3,4,5,6,7,8))]"
 			serial_shown = FALSE
 			return FALSE
+
 
 /obj/item/gun/proc/dna_check(user)
 	if(dna_compare_samples)
