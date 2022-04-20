@@ -90,7 +90,7 @@
 	var/acceptableTargetDistance = 1 //consider all targets within this range equally
 
 	var/stance = HOSTILE_STANCE_IDLE //current mob AI state
-//	var/atom/target_mob //currently chased target // NIKO DELETE THESE FUCKIN COMMENTS WHEN YOURE DONE
+	///currently chased target
 	var/datum/weakref/target_mob
 	var/attack_same = 0 //whether mob AI should target own faction members for attacks
 	var/list/friends = list() //list of mobs to consider friends, not types
