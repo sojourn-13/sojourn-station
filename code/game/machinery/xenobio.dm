@@ -67,7 +67,7 @@
 	idle_power_usage = 2
 	active_power_usage = 500
 
-	var uses = 0
+	var/uses = 0
 	var colour = "grey"
 	var dirty = 0
 	var/obj/item/clothing/C = null
