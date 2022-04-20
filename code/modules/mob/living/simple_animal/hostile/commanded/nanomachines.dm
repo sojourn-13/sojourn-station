@@ -55,7 +55,7 @@
 	if(Adjacent(targetted_mob))
 		stance = COMMANDED_HEALING
 
-/mob/living/simple_animal/hostile/commanded/nanomachine/proc/heal() //NIKO--this is where i remembered that we originally had the var as mob/living for hostile mobs BUT NOT SUPERIOR ONES? WHY
+/mob/living/simple_animal/hostile/commanded/nanomachine/proc/heal()
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(health <= 3 && !emergency_protocols) //dont die doing this.
