@@ -11,6 +11,7 @@
 	twohanded = FALSE
 	caliber = CAL_GRENADE
 	handle_casings = EJECT_CASINGS
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/underslung/attack_self()
 	return

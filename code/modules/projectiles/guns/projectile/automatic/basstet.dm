@@ -16,6 +16,7 @@
 	one_hand_penalty = 12 //automatic rifle level
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/basstet/update_icon()
 	..()

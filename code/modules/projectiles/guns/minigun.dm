@@ -15,6 +15,7 @@
 	fire_sound = 'sound/weapons/guns/fire/chaingun_fire.ogg'
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15, MATERIAL_DURASTEEL = 5)
 	init_firemodes = list(BURST_3_ROUND, BURST_8_ROUND, FULL_AUTO_800)
+	serial_type = "Kriosan"
 
 	var/projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/hv
 	var/obj/item/minigun_backpack/connected = null // The backpack the gun is connected to

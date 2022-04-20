@@ -19,6 +19,7 @@
 		FULL_AUTO_600_NOLOSS,
 		SEMI_AUTO_NODELAY,
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/luger/update_icon()
 	..()

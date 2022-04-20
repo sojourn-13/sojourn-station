@@ -23,6 +23,7 @@
 	zoom_factor = 0.4
 	recoil_buildup = 0.5
 	one_hand_penalty = 5 //smg level
+	serial_type = "SA"
 
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_SCOPE, GUN_MAGWELL)
 
@@ -51,6 +52,7 @@
 	damage_multiplier = 1
 	penetration_multiplier = 1
 	price_tag = 500
+	serial_type = "SI"
 
 /obj/item/gun/projectile/automatic/c20r/sci/preloaded
 

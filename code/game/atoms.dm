@@ -786,6 +786,8 @@ its easier to just keep the beam vertical.
 	// offset correction
 	BM.pixel_x--
 	BM.pixel_y--
+	BM.serial_type_index = Proj.serial_type_index_bullet //Nothing to nothing shouldnt be an issue
+
 
 	if(Proj.get_structure_damage() >= WEAPON_FORCE_DANGEROUS)//If it does a lot of damage it makes a nice big black hole.
 		BM.icon_state = "scorch"

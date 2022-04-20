@@ -17,3 +17,4 @@
 	one_hand_penalty = 30
 	sharp = FALSE //no bayonet here
 	saw_off = FALSE //No sawning it down and remaking it into a Kardashev-Mosin
+	serial_type = ""

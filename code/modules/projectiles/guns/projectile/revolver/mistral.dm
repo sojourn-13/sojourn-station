@@ -15,3 +15,4 @@
 	penetration_multiplier = 1.5
 	recoil_buildup = 6
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	serial_type = "SD GmbH"

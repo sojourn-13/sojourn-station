@@ -33,6 +33,7 @@
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/blackguard/update_icon()
 	..()

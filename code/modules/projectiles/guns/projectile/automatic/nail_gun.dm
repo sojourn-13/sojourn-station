@@ -31,6 +31,7 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
+	serial_type = "GP"
 
 /obj/item/gun/projectile/automatic/nail_gun/update_icon()
 	..()

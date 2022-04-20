@@ -25,6 +25,7 @@
 	damage_multiplier = 1.2
 	projectile_type=/obj/item/projectile/bullet/pistol_35/rubber/soporific
 	price_tag = 1750
+	serial_type = "SI"
 
 /obj/item/gun/energy/sst/formatbound
 	name = "\"SST Format Bound\" handgun"
@@ -52,7 +53,7 @@
 	cell = new /obj/item/cell/medium/moebius/high(src)
 	. = ..()
 	update_icon()
-	
+
 
 /obj/item/gun/energy/sst/humility
 	name = "\"SST Humility\" shotgun"

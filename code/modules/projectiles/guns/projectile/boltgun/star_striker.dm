@@ -16,3 +16,4 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
 	fire_sound = 'sound/weapons/Laser.ogg'
 	saw_off = FALSE
+	serial_type = "SI"

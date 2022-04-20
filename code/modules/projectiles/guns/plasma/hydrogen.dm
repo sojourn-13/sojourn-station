@@ -44,6 +44,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	var/overheat = 100 // Max heat before overheating.
 	// Damage dealt when overheating
 	var/overheat_damage = 25 // Applied to the hand holding the gun.
+	serial_type = "SI"
 
 /obj/item/gun/hydrogen/Initialize(mapload = TRUE)
 	..()

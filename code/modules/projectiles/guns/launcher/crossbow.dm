@@ -65,6 +65,7 @@
 	cell = null    // Used for firing superheated rods.
 	var/current_user                        // Used to check if the crossbow has changed hands since being drawn.
 	var/draw_time = 20							// How long it takes to increase the draw on the bow by one "tension"
+	serial_type = ""
 
 /obj/item/gun/launcher/crossbow/update_release_force()
 	release_force = tension*release_speed

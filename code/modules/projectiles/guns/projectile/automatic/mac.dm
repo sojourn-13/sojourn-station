@@ -23,6 +23,7 @@
 		BURST_8_ROUND_NOLOSS,
 		SEMI_AUTO_NODELAY
 		)
+	serial_type = "SA"
 
 /obj/item/gun/projectile/automatic/mac/update_icon()
 	..()

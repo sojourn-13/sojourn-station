@@ -23,6 +23,7 @@
 	penetration_multiplier = 3
 	recoil_buildup = 1.25
 	one_hand_penalty = 15 //smg level
+	serial_type = "GP"
 
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE ,GUN_SCOPE, GUN_MAGWELL)
 

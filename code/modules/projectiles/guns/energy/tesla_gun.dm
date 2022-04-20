@@ -15,3 +15,4 @@
 	w_class = ITEM_SIZE_BULKY
 	can_dual = FALSE
 	projectile_type = /obj/item/projectile/beam/tesla
+	serial_type = ""

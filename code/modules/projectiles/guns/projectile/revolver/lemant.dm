@@ -21,6 +21,7 @@
 		SEMI_AUTO_NODELAY,
 		list(mode_name="fire 20mm shell", mode_desc="Shoot the underbarrel shotgun shell",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
+	serial_type = "Absolute"
 
 	var/obj/item/gun/projectile/underslung_shotgun/shotgun
 	var/reload_delay = 5 // Delay between bullets when reloading from a box.
@@ -173,6 +174,7 @@
 		SEMI_AUTO_NODELAY,
 		list(mode_name="fire grenades", mode_desc="Shoot the underbarrel grenade shell",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/revolver/deacon/Initialize()
 	. = ..()

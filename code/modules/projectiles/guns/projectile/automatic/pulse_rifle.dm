@@ -30,6 +30,7 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
+	serial_type = ""
 
 /obj/item/gun/projectile/automatic/dallas/update_icon()
 	..()

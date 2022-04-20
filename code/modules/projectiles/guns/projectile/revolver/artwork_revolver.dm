@@ -13,6 +13,7 @@
 	penetration_multiplier = 1.4
 	recoil_buildup = 30 //Arbitrary value
 	max_upgrades = 0 //Upgrading this revolver destorys its stats
+	serial_type = ""
 
 /obj/item/gun/projectile/revolver/artwork_revolver/refresh_upgrades()
 	return //Same reason why we dont have max upgrades, refreshing in this case is always bad
