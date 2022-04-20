@@ -38,7 +38,7 @@ SUBSYSTEM_DEF(radiation)
 // Handle all of the radiation stuff
 /datum/controller/subsystem/radiation/proc/handle_radiation()
 	for(var/list/L in rad_producers) // Loop through all the items emitting radiation
-		if(L["Source"].loc == null) // The source was qdel'ed
+		if(L["Source"]:loc == null) // The source was qdel'ed
 			L["Source"] = null // Clear the reference
 			rad_producers -= L // Remove the list
 			continue // Move to the next one
