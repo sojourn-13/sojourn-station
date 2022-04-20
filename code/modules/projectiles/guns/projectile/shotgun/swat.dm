@@ -13,7 +13,7 @@
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
 	price_tag = 1250
 	damage_multiplier = 1.1
-	penetration_multiplier = 1
+	penetration_multiplier = 1.2
 	recoil_buildup = 14
 	one_hand_penalty = 15 //full sized shotgun level
 	saw_off = FALSE //No
@@ -67,10 +67,11 @@
 /obj/item/gun/projectile/automatic/underslung/pistol
 	name = "built in pistol"
 	desc = "Not much more than a tube and a firing mechanism, this pistol is designed to be fitted to another gun."
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	matter = null
+	damage_multiplier = 1.2
 	force = 5
 	max_shells = 9
 	safety = FALSE
