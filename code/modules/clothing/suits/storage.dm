@@ -141,6 +141,20 @@
 	pockets.max_storage_space = 8
 	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
 
+/*Dresscoats*/
+
+/obj/item/clothing/suit/storage/vic_dresscoat
+	name = "black victorian dresscoat"
+	desc = "An elaborate coat to go over an old-Earth Victorian Period dress. Much thinner fabric than you'd expected. This one is black."
+	icon_state = "vickyblack"
+	item_state = "vickyblack"
+
+/obj/item/clothing/suit/storage/vic_dresscoat/red
+	name = "red victorian dresscoat"
+	desc = "An elaborate coat to go over an old-Earth Victorian Period dress. Much thinner fabric than you'd expected. This one is red."
+	icon_state = "vickyred"
+	item_state = "vickyred"
+
 /*Puffer Vest*/
 
 /obj/item/clothing/suit/storage/puffer
