@@ -67,7 +67,7 @@ datum/pipeline
 
 				if(result.len>0)
 					for(var/obj/machinery/atmospherics/pipe/item in result)
-						if(!members.Find(item) && !QDELETED(item))
+						if(!members.Find(item))
 							members += item
 							possible_expansions += item
 
@@ -83,7 +83,7 @@ datum/pipeline
 
 						edge_check--
 
-				if(edge_check>0 && !QDELETED(borderline))
+				if(edge_check>0)
 					edges += borderline
 
 				possible_expansions -= borderline

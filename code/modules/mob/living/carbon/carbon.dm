@@ -30,7 +30,8 @@
 
 	QDEL_NULL(ingested)
 	QDEL_NULL(touching)
-	QDEL_NULL(reagents)
+	QDEL_NULL(reagents) //TODO: test deleting QDEL_NULL(reagents) since QDEL_NULL(bloodstr) might be all we need
+	QDEL_NULL(bloodstr)
 	// qdel(metabolism_effects) //not sure why, but this causes a GC failure, maybe this isnt supposed to qdel?
 	// We don't qdel(bloodstr) because it's the same as qdel(reagents) // then why arent you qdeling reagents
 	QDEL_LIST(internal_organs)

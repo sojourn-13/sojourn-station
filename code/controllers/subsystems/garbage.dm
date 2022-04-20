@@ -193,7 +193,7 @@ SUBSYSTEM_DEF(garbage)
 					INVOKE_ASYNC(D, /datum/proc/find_references)
 					ref_searching = TRUE
 				#ifdef GC_FAILURE_HARD_LOOKUP
-				else if ((ispath(type, /mob/living/)) || (ispath(type, /obj/item/tool/plasma_torch)) || (ispath(type, /obj/item/gun/hydrogen/plasma_torch)))
+				else if (ispath(type, /mob/living) || ispath(type, /datum/radio_frequency))
 					INVOKE_ASYNC(D, /datum/proc/find_references)
 					ref_searching = TRUE
 				#endif
