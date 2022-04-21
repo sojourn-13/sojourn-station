@@ -31,6 +31,7 @@
 		list(mode_name="laser", mode_desc="Weak laser to pierce armor and skin", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Taser3.ogg', charge_cost=80, fire_delay=0.5, icon="kill", projectile_color = "#00AAFF"),
 		list(mode_name="ion shot", mode_desc="An iodizing shot to disable cells, electronics and cybernetics ", projectile_type=/obj/item/projectile/ion, fire_sound='sound/effects/supermatter.ogg', fire_delay=12, charge_cost=300, icon="charge", projectile_color = "#ff7f24"),
 	)
+	serial_type = "NM"
 
 /obj/item/gun/energy/glock/update_icon()
 	var/iconstring = initial(icon_state)

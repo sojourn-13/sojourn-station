@@ -29,6 +29,7 @@
 	init_firemodes = list(
 	SEMI_AUTO_NODELAY
 	)
+	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/automatic/omnirifle/update_icon()
 	..()
@@ -104,6 +105,7 @@
 		BURST_3_ROUND,
 		BURST_2_ROUND
 		)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/automatic/omnirifle/fancy
 	name = "\"Osprey\" precision rifle"
@@ -122,6 +124,7 @@
 	zoom_factor = 1.2
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine
 	name = "\"Boar\" heavy carbine"
@@ -145,6 +148,7 @@
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_600
 		)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/rds
 	name = "\"Warthog\" advanced carbine"

@@ -116,6 +116,7 @@
 		new /obj/item/ammo_magazine/kurtz_50(src)
 		new /obj/item/ammo_magazine/kurtz_50/rubber(src)
 		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
+	new /obj/item/device/bullet_scanner(src)
 	new /obj/item/voucher/marshal/specprimary(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)

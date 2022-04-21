@@ -10,6 +10,7 @@
 	recoil_buildup = 25
 	max_shells = 6
 	price_tag = 750
+	serial_type = "BlueCross"
 
 /obj/item/gun/energy/sniperrifle/saint
 	name = "\"Saint\" laser rifle"
@@ -18,6 +19,7 @@
 	charge_cost = 200
 	fire_delay = 25
 	price_tag = 3750
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/automatic/lmg/saw/unicorn
 	name = "\"Unicorn\" light machinegun"
@@ -27,6 +29,7 @@
 	price_tag = 3550
 	slowdown_hold = 0
 	brace_penalty = 2
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/revolver/mistral/elite
 	name = "\"Elite\" magnum revolver"
@@ -35,6 +38,7 @@
 	max_shells = 60
 	recoil_buildup = 20
 	price_tag = 3000
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/revolver/mistral/elite/New()
 	..()
@@ -52,6 +56,7 @@
 	one_hand_penalty = 50
 	price_tag = 3250
 	gun_tags = list(GUN_PROJECTILE)
+	serial_type = "BlueCross"
 
 /obj/item/gun/energy/ntpistol/mana
 	name = "\"Mana from Heaven\" energy pistol"
@@ -59,6 +64,7 @@
 	A standard issue serenity pistol from the church of absolute, nothing seems different about it, yet it seems to conserve power unusually well."
 	charge_cost = 2
 	price_tag = 2550
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/automatic/maxim/replica
 	name = "\"Maxim\" light machinegun"
@@ -67,6 +73,7 @@
 	price_tag = 1884
 	slowdown_hold = 0
 	brace_penalty = 5
+	serial_type = "BlueCross"
 
 /obj/item/gun/energy/lasersmg/inferno
 	name = "Disco Inferno \"Light Show\""
@@ -74,6 +81,7 @@
 	Someone has inscribed 'inferno' in a stylized multi-color crayon on the side while modifying its internal power capacitor to be much more effeciant."
 	charge_cost = 5
 	price_tag = 1000
+	serial_type = "BlueCross"
 
 /obj/item/gun/energy/lasersmg/chaos_engine
 	name = "Hell's Teeth \"Chaos Engine\""
@@ -88,6 +96,7 @@
 	init_offset = 10 //makeshift laser
 	charge_cost = 5
 	price_tag = 1500
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/silenced/rat
 	name = "\"Rat Man\" silenced pistol"
@@ -99,6 +108,7 @@
 	one_hand_penalty = 3
 	penetration_multiplier = 3.1
 	price_tag = 2350
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/boltgun/bluecross
 	name = "\"Krag Jørgensen\" boltgun"
@@ -117,6 +127,7 @@
 	price_tag = 2750
 	sharp = FALSE
 	saw_off = FALSE
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/clarissa/devil_eye
 	name = "\"Devil Eye\" pistol"
@@ -126,6 +137,7 @@
 	price_tag = 2000
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG
 	damage_multiplier = 1.5
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/boltgun/lever/handcock
 	name = "\"Handcock\" lever action rifle"
@@ -142,6 +154,7 @@
 	recoil_buildup = 60
 	one_hand_penalty = 80
 	price_tag = 3000
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic
 	name = "\"Lockpick-o-Matic\""
@@ -157,6 +170,7 @@
 	recoil_buildup = 3
 	one_hand_penalty = 5 //despine it being handgun, it's better to hold in two hands while shooting. SMG level.
 	price_tag = 300
+	serial_type = "BlueCross"
 
 /obj/item/gun/energy/captain/zapper
 	name = "\"Retro-Funk\" Zapper"
@@ -168,6 +182,7 @@
 	item_charge_meter = FALSE
 	charge_meter = FALSE
 	price_tag = 1500
+	serial_type = "BlueCross"
 
 /obj/item/gun/energy/xray/psychic_cannon
 	name = "\"Manta-RAY\" cannon"
@@ -187,6 +202,7 @@
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	can_dual = TRUE
 	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER
+	serial_type = "BlueCross"
 
 
 /obj/item/gun/projectile/that_gun
@@ -214,6 +230,7 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
 		)
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/that_gun/update_icon()
 	..()
@@ -250,6 +267,7 @@
 	recoil_buildup = 2
 	one_hand_penalty = 3
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
+	serial_type = "BlueCross"
 
 //Melee Weapons
 /obj/item/tool/nailstick/ogre

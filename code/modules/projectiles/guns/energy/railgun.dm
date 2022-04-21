@@ -29,6 +29,7 @@
 	)
 	var/consume_cell = FALSE
 	price_tag = 2250
+	serial_type = "AG"
 
 /obj/item/gun/energy/laser/railgun/consume_next_projectile()
 	if(!cell) return null
@@ -113,6 +114,7 @@
 	)
 	var/consume_cell = FALSE
 	price_tag = 500
+	serial_type = "INDEX"
 
 /obj/item/gun/energy/shrapnel/consume_next_projectile()
 	if(!cell) return null
@@ -156,6 +158,7 @@
 		list(mode_name="Beanbag", mode_desc="Fires a beanbag synth-shell", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag, charge_cost=25, icon="stun"),
 		list(mode_name="Blast", mode_desc="Fires a slug synth-shell", projectile_type=/obj/item/projectile/bullet/shotgun, charge_cost=null, icon="destroy"),
 	)
+	serial_type = "GP"
 
 
 //Gauss-rifle type, snowflake launcher mixed with rail rifle and hydrogen gun code. Consumes matter-stack and cell charge to fire. - Rebel0
@@ -198,7 +201,7 @@
 	//Blacklisting upgrades currently dosnt work, - Trilby
 	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt,
 							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst)
-	
+
 	//Until blacklisting works, this will be the supliment. You get one attachment - use it wisely....... - Rebel0
 	max_upgrades = 2
 

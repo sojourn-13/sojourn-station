@@ -27,12 +27,14 @@
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_400
 		)
+	serial_type = "EXC"
 
 /obj/item/gun/projectile/automatic/vintorez/NM_colony
 	name = "\"Val\" silenced carbine"
 	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.5mm Rifle rounds."
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
 	price_tag = 800
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/vintorez/update_icon()
 	..()

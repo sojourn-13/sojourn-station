@@ -19,6 +19,7 @@
 	recoil_buildup = 2
 	one_hand_penalty = 4
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/silenced/update_icon()
 	..()

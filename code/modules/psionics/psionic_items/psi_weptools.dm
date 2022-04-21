@@ -89,6 +89,7 @@
 	price_tag = 0
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.9
+	serial_shown = FALSE
 
 /obj/item/gun/energy/laser/cult
 	name = "\"Moonrise\" psi-laser rifle"
@@ -101,6 +102,7 @@
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.9
 	price_tag = 0
+	serial_shown = FALSE
 
 /obj/item/gun/energy/plasma/cassad/cult
 	name = "\"Black Sun\" psi-plasma rifle"
@@ -119,6 +121,7 @@
 		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser.ogg', fire_delay=8, icon="stun", projectile_color = "#8d25cc"),
 		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/Laser.ogg', fire_delay=12, icon="kill", projectile_color = "#461266"),
 	)
+	serial_shown = FALSE
 
 /obj/item/gun/energy/gun/martin/cult
 	name = "\"Star\" psi-laser pistol"
@@ -128,6 +131,7 @@
 	origin_tech = list()
 	matter = list()
 	price_tag = 0
+	serial_shown = FALSE
 
 /obj/item/gun/energy/plasma/auretian/cult
 	name = "\"Meteoroid\" psi-energy pistol"
@@ -140,6 +144,7 @@
 	price_tag = 0
 	damage_multiplier = 0.8
 	penetration_multiplier = 0.8
+	serial_shown = FALSE
 
 /obj/item/gun/projectile/automatic/greasegun/cult
 	name = "\"Super Nova\" psi-submachine gun"
@@ -150,6 +155,7 @@
 	price_tag = 0
 	damage_multiplier = 0.9
 	penetration_multiplier = 1
+	serial_shown = FALSE
 
 //////////////////////////////
 //			Psionic Tools

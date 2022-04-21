@@ -33,6 +33,7 @@
 	slowdown_hold = 1.5  //Were entrenched
 	brace_penalty = 30 //No running and gunning
 	pierce_multiplier = 6
+	serial_type = "SA"
 
 /obj/item/weaponparts
 	var/part_color = ""

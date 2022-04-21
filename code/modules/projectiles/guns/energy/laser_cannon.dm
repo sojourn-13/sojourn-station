@@ -20,6 +20,7 @@
 		WEAPON_NORMAL
 		)
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+	serial_type = "H&S"
 
 /obj/item/gun/energy/lasercannon/mounted
 	name = "mounted laser cannon"
@@ -44,3 +45,4 @@
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
 		)
+	serial_type = "SI"

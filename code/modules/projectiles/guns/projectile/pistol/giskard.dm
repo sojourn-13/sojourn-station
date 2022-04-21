@@ -18,6 +18,7 @@
 	damage_multiplier = 1
 	penetration_multiplier = 0.8
 	recoil_buildup = 3
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/giskard/update_icon()
 	..()

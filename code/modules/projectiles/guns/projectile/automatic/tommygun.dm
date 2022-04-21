@@ -25,6 +25,7 @@
 		BURST_3_ROUND_NOLOSS,
 		BURST_5_ROUND_NOLOSS
 		)
+	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/automatic/thompson/update_icon()
 	..()

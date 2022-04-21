@@ -28,6 +28,7 @@
 	init_firemodes = list(
 		list(mode_name="semiauto", mode_desc="Shoot once per pull after chambering", burst=1, fire_delay=5, move_delay=null, icon="semi")
 		)
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/automatic/riot_autoshotgun/robo
 	name = "intergrated \"State\" riot shotgun"

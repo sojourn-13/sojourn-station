@@ -16,6 +16,7 @@
 	recoil_buildup = 2
 	one_hand_penalty = 6
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/revolver/detective/update_icon()
 	..()

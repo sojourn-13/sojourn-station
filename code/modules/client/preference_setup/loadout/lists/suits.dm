@@ -112,6 +112,11 @@
 	path = /obj/item/clothing/suit/storage/puffer
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/suit/dresscoat
+	display_name = "dresscoat selection"
+	path = /obj/item/clothing/suit/storage/vic_dresscoat
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/suit/snowsuit
 	display_name = "snowsuit"
 	path = /obj/item/clothing/suit/storage/snowsuit

@@ -18,3 +18,4 @@
 	fire_sound = 'sound/weapons/Laser.ogg'
 	saw_off = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	serial_type = "SI"
