@@ -15,6 +15,7 @@
 	extra_damage_mult_scoped = 0.2 //scoping this should be rewarded its not that good
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 5)
 	saw_off = FALSE
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/boltgun/lever/custer
 	name = "\"Custer\" repeating rifle"

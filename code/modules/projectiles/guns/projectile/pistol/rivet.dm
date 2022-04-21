@@ -21,7 +21,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
-
+	serial_type = "GP"
 
 /obj/item/gun/projectile/rivet/update_icon()
 	..()

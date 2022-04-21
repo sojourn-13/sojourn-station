@@ -21,6 +21,7 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/automatic/bulldog/update_icon()
 	..()

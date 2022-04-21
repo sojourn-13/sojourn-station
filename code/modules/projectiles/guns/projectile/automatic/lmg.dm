@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/lmg
-	name = "SAW"
-	desc = "A defunct lmg, please ahelp if you're seeing it. Uses 7.5mm Rifle rounds."
+	name = "SA \"SAW\""
+	desc = "A exstreamly rare HMG produced on a commision. Uses 7.5mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/l6.dmi'
 	var/icon_base
 	icon_base = "l6"
@@ -30,6 +30,7 @@
 		BURST_5_ROUND,
 		BURST_8_ROUND
 		)
+	serial_type = "SA"
 
 	var/cover_open = 0
 
@@ -146,6 +147,7 @@
 	damage_multiplier = 1
 	penetration_multiplier = 1
 	recoil_buildup = 1.7 //Why is this so good?
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/automatic/lmg/tk/update_icon()
 //	..() We are rather different then other guns and lmgs.

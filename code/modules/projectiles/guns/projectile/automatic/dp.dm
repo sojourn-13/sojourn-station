@@ -33,6 +33,7 @@
 		list(mode_name="long bursts", mode_desc = "Long, rapid 8 round bursts",  burst=8, burst_delay=4, move_delay=8,  icon="burst"),
 		list(mode_name="suppressing fire", mode_desc = "Suppressing, 16 round bursts",  burst=16, burst_delay=4, move_delay=11,  icon="burst")
 		)
+	serial_type = "NM"
 
 obj/item/gun/projectile/automatic/dp/update_icon()
 	..()

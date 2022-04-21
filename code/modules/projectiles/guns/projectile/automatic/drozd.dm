@@ -23,6 +23,7 @@
 		FULL_AUTO_600_NOLOSS,
 		SEMI_AUTO_NODELAY
 		)
+	serial_type = "EXC"
 
 /obj/item/gun/projectile/automatic/drozd/NM_colony
 	name = "\"Kompleks\" SMG"
@@ -30,6 +31,7 @@
 	icon = 'icons/obj/guns/projectile/drozd.dmi'
 	origin_tech = list(TECH_COMBAT = 4)
 	price_tag = 600
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/drozd/update_icon()
 	..()

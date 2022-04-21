@@ -41,3 +41,4 @@ Own a musket for department defense, since that's what the founding hunters inte
 	eject_animatio = FALSE //Todo: this
 	bolt_training = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_SIGHT)
+	serial_type = "Kriosan"

@@ -21,4 +21,5 @@
 		WEAPON_CHARGE
 	)
 	twohanded = FALSE
+	serial_type = "Absolute"
 

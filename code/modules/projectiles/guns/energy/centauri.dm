@@ -28,3 +28,4 @@
 		SEMI_AUTO_NODELAY,
 		BURST_5_ROUND
 		)
+	serial_type = "SI"
