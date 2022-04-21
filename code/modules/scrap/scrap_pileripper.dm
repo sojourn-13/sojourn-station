@@ -55,7 +55,7 @@
 			while(!pile.clear_if_empty())
 				pile.shuffle_loot()
 				for(var/obj/item/looted_things in pile.loot)
-					loot.remove_from_storage(looted_things, src.loc)
+					pile.loot.remove_from_storage(looted_things, src.loc)
 				if(prob(20))
 					break
 			count++
