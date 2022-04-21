@@ -57,7 +57,6 @@
 				pile.shuffle_loot()
 				for(var/obj/item/looted_things in pile.loot)
 					pile.loot.remove_from_storage(looted_things, src.loc)
-				clear_if_empty()
 				if(prob(20))
 					break
 			count++
@@ -93,6 +92,10 @@
 		emag_act(user)
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 
+	if(panel_open && I.use_tool(user, src, WORKTIME_EXTREMELY_LONG, QUALITY_PULSING, FAILCHANCE_IMPOSSIBLE, required_stat = STAT_MEC))
+		emag_act(user)
+		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+
 	if(default_deconstruction(I, user))
 		return
 
@@ -108,7 +111,7 @@
 			safety_mode = FALSE
 			update_icon()
 		playsound(loc, "sparks", 75, 1, -1)
-		to_chat(user, SPAN_NOTICE("You use the cryptographic sequencer on the [name]."))
+		to_chat(user, SPAN_NOTICE("You use disable the safeties on the [name]."))
 
 /obj/machinery/pile_ripper/update_icon()
 	..()
