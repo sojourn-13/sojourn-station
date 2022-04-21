@@ -52,13 +52,16 @@
 			break
 		if(istype(ripped_item, /obj/structure/scrap))
 			var/obj/structure/scrap/pile = ripped_item
-			while(pile.dig_out_lump(loc, 1))
+			while(!pile.clear_if_empty())
+				pile.shuffle_loot()
+				for(var/obj/item/looted_things in pile.loot)
+					loot.remove_from_storage(looted_things, src.loc)
 				if(prob(20))
 					break
 			count++
 		else if(istype(ripped_item, /obj/item))
 			ripped_item.forceMove(src.loc)
-			if(prob(20))
+			if(emagged)
 				qdel(ripped_item)
 		else if(istype(ripped_item, /obj/structure/scrap_cube))
 			var/obj/structure/scrap_cube/cube = ripped_item
