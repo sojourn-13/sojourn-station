@@ -53,9 +53,11 @@
 		if(istype(ripped_item, /obj/structure/scrap))
 			var/obj/structure/scrap/pile = ripped_item
 			while(!pile.clear_if_empty())
+				pile.dig_out_lump()
 				pile.shuffle_loot()
 				for(var/obj/item/looted_things in pile.loot)
 					pile.loot.remove_from_storage(looted_things, src.loc)
+				clear_if_empty()
 				if(prob(20))
 					break
 			count++
