@@ -635,7 +635,7 @@
 	use_power_cost = 1
 	selectable = 1
 	engage_string = "unload cargo"
-	price_tag = 1000
+	price_tag = 600
 	mutually_exclusive_modules = list(/obj/item/rig_module/mounted, /obj/item/rig_module/held)
 	var/cargo_max = 10//this module has 5 things in contents by default(ui elements), this gives it 5 capacity for other things
 
@@ -682,6 +682,7 @@
 	name = "large hardsuit cargo clamp"
 	desc = "A pair of folding arm-mounted clamps for a hardsuit, meant for loading crates and other large objects. This one is a Lonestar design, capable of holding significantly more cargo."
 	cargo_max = 14
+	price_tag = 1600 //can't be obtained outside of purchasing, so higher price is a detriment
 	mutually_exclusive_modules = list(/obj/item/rig_module/mounted, /obj/item/rig_module/held, /obj/item/rig_module/cargo_clamp)
 
 
