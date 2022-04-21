@@ -20,8 +20,6 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_SILENCER = TRUE,
-		GUN_UPGRADE_RECOIL = 0.9,
-		GUN_UPGRADE_PEN_MULT = 0.9,
 		UPGRADE_BULK = 1
 		)
 	I.gun_loc_tag = GUN_MUZZLE
