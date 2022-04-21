@@ -623,3 +623,103 @@
 
 /obj/item/rig_module/autodoc/commercial
 	autodoc_type = /datum/autodoc/capitalist_autodoc
+
+
+/obj/item/rig_module/cargo_clamp
+	name = "hardsuit cargo clamp"
+	desc = "A pair of folding arm-mounted clamps for a hardsuit, meant for loading crates and other large objects. Due to its bulky nature, precludes the installation of most hardsuit weaponry."
+	icon_state = "rcd"
+	interface_name = "cargo handler"
+	interface_desc = "A set of folding clamps loaded to a counterbalanced storage unit. Can load various large objects."
+	usable = 1
+	engage_string = "unload cargo"
+	price_tag = 1000
+	mutually_exclusive_modules = list(/obj/item/rig_module/mounted, /obj/item/rig_module/held)
+	var/cargo_max = 5
+
+
+/obj/item/rig_module/cargo_clamp/engage(atom/target)
+	if(!..())
+		return FALSE
+
+	if(!target)
+		for(var/obj/structure/struct in contents)
+			struct.forceMove(get_turf(src))
+		return TRUE
+
+	if(contents.len > cargo_max)
+		to_chat(usr, SPAN_WARNING("The cargo compartment on [src] is full!"))
+		return FALSE
+	var/turf/T = get_turf(target)
+	if(istype(T) && !T.Adjacent(get_turf(src)))
+		return FALSE
+
+	if(!istype(target, /obj/structure))
+		return FALSE
+
+	var/obj/structure/loading_item = target
+	if(loading_item.anchored)
+		return FALSE
+	to_chat(usr, SPAN_NOTICE("You begin loading [loading_item] into [src]."))
+	if(do_after(usr, 2 SECONDS, loading_item)
+		loading_item.forceMove(src)
+		to_chat(usr, SPAN_NOTICE("You load [loading_item] into [src]."))
+
+/obj/item/rig_module/cargo_clamp/uninstalled()
+	..()
+	visible_message(SPAN_WARNING("All the loaded cargo falls out of [src]!"))
+	for(var/obj/structure/struct in contents)
+		struct.forceMove(get_turf(src))
+
+/obj/item/rig_module/cargo_clamp/large
+	name = "large hardsuit cargo clamp"
+	desc = "A pair of folding arm-mounted clamps for a hardsuit, meant for loading crates and other large objects. This one is a Lonestar design, capable of holding significantly more cargo."
+	cargo_max = 9
+	mutually_exclusive_modules = list(/obj/item/rig_module/mounted, /obj/item/rig_module/held, /obj/item/rig_module/cargo_clamp)
+
+
+
+
+
+/obj/item/rig_module/grappler
+	name = "hardsuit grappler"
+	desc = "A ten-meter tether connected to a heavy winch and grappling hook. Can pull things towards you, can pull you towards things."
+	icon_state = "rcd" //todo
+	interface_name = "grappler"
+	interface_desc = "Fire the grapple to reel things in."
+	engage_string = "grapple"
+	price_tag = 1000
+	use_power_cost = 100
+	var/max_range = 10
+	var/last_use
+	var/cooldown_time = 1 SECOND
+
+
+/obj/item/rig_module/cargo_clamp/grappler(atom/target)
+	if(!..())
+		return FALSE
+	if(!target)
+		return FALSE
+	if(world.time < last_use + cooldown_time || get_dist(target, usr) > max_range)
+		return FALSE
+	var/reel_in_self = FALSE
+	if(isturf(target))
+		reel_in_self = TRUE
+	if(ismovable(target))
+		var/atom/movable/AM = target
+		reel_in_self = AM.anchored
+
+	last_use = world.time
+	playsound(src, 'sound/machines/hiss.ogg', 50, 0, 0)
+
+	if(reel_in_self)
+		cooldown_time = 1 SECOND
+		usr.throw_at(target, 10, 2, usr)
+		visible_message(SPAN_WARNING("[usr] fires the [src], reeling them towards [target]!"))
+		return TRUE'
+
+	visible_message(SPAN_WARNING("[usr] fires the [src] at [target], reeling them in!"))
+	if(ismob(target))
+		cooldown_time = 10 SECONDS //10x longer cooldown on hooking people, so you can't grapplelock them as easily
+	target.throw_at(usr, get_dist(target, usr), 1, usr) //GET OVER HERE
+	return TRUE
