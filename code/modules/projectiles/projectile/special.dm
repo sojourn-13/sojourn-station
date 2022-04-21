@@ -358,7 +358,6 @@
 		reel_in_self = AM.anchored
 
 	if(reel_in_self)
-		cooldown_time = 1 SECOND
 		original_firer.throw_at(target, 10, 2, original_firer)
 		visible_message(SPAN_WARNING("[src] begins reeling in, pulling [original_firer] towards [target]!"))
 		return
