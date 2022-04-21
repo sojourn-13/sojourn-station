@@ -57452,9 +57452,6 @@
 "mnm" = (
 /obj/structure/table/steel,
 /obj/machinery/camera/network/third_section,
-/obj/structure/sign/neon/bar{
-	pixel_y = 32
-	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "mnp" = (
@@ -90683,6 +90680,9 @@
 	icon_state = "spline_fancy"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/neon/beer{
+	pixel_y = 32
+	},
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/pros/prep)
 "tpn" = (
