@@ -2659,6 +2659,7 @@
 #include "code\modules\projectiles\guns\energy\lasertag.dm"
 #include "code\modules\projectiles\guns\energy\makeshift_carbine.dm"
 #include "code\modules\projectiles\guns\energy\mindflayer.dm"
+#include "code\modules\projectiles\guns\energy\misc.dm"
 #include "code\modules\projectiles\guns\energy\nuclear.dm"
 #include "code\modules\projectiles\guns\energy\plasma.dm"
 #include "code\modules\projectiles\guns\energy\railgun.dm"

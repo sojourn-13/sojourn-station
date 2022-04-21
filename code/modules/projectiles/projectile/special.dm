@@ -335,3 +335,33 @@
 	kill_count = 7
 	check_armour = ARMOR_ENERGY
 	var/golem_damage_bonus = 20 // Damage multiplier against ameridians.
+
+
+/obj/item/projectile/tether
+	name = "tether grappler"
+	icon_state = "tether"
+	nodamage = 1
+	damage_types = list(BRUTE = 0)
+	kill_count = 10
+	muzzle_type = /obj/effect/projectile/line/muzzle
+	tracer_type = /obj/effect/projectile/line/tracer
+	impact_type = /obj/effect/projectile/line/impact
+
+/obj/item/projectile/tether/on_impact(target)
+	..()
+	var/atom/movable/AM
+	var/reel_in_self = FALSE
+	if(isturf(target))
+		reel_in_self = TRUE
+	if(ismovable(target))
+		AM = target
+		reel_in_self = AM.anchored
+
+	if(reel_in_self)
+		cooldown_time = 1 SECOND
+		original_firer.throw_at(target, 10, 2, original_firer)
+		visible_message(SPAN_WARNING("[src] begins reeling in, pulling [original_firer] towards [target]!"))
+		return
+
+	visible_message(SPAN_WARNING("[src] begins reeling in, pulling [target] towards [original_firer]!"))
+	AM.throw_at(original_firer, get_dist(AM, original_firer), 1, original_firer) //GET OVER HERE

@@ -628,7 +628,7 @@
 /obj/item/rig_module/cargo_clamp
 	name = "hardsuit cargo clamp"
 	desc = "A pair of folding arm-mounted clamps for a hardsuit, meant for loading crates and other large objects. Due to its bulky nature, precludes the installation of most hardsuit weaponry."
-	icon_state = "rcd"
+	icon_state = "clamp"
 	interface_name = "cargo handler"
 	interface_desc = "A set of folding clamps loaded to a counterbalanced storage unit. Can load various large objects."
 	usable = 1
@@ -659,9 +659,14 @@
 
 	var/obj/structure/loading_item = target
 	if(loading_item.anchored)
+		if(istype(loading_item, /obj/structure/scrap))
+			var/obj/structure/scrap/tocube = loading_item
+			if(!do_after(usr, 2 SECONDS, tocube))
+				return FALSE
+			tocube.make_cube()
 		return FALSE
 	to_chat(usr, SPAN_NOTICE("You begin loading [loading_item] into [src]."))
-	if(do_after(usr, 2 SECONDS, loading_item)
+	if(do_after(usr, 2 SECONDS, loading_item))
 		loading_item.forceMove(src)
 		to_chat(usr, SPAN_NOTICE("You load [loading_item] into [src]."))
 
@@ -684,7 +689,7 @@
 /obj/item/rig_module/grappler
 	name = "hardsuit grappler"
 	desc = "A ten-meter tether connected to a heavy winch and grappling hook. Can pull things towards you, can pull you towards things."
-	icon_state = "rcd" //todo
+	icon_state = "tether"
 	interface_name = "grappler"
 	interface_desc = "Fire the grapple to reel things in."
 	engage_string = "grapple"
@@ -693,33 +698,23 @@
 	var/max_range = 10
 	var/last_use
 	var/cooldown_time = 1 SECOND
+	var/obj/item/gun/energy/grappler/launcher //we're not a subtype of /mounted/ for cooldown handling reasons mostly
+
+/obj/item/rig_module/grappler/Initialize()
+	..()
+	launcher = new /obj/item/gun/energy/grappler(src)
 
 
-/obj/item/rig_module/cargo_clamp/grappler(atom/target)
+/obj/item/rig_module/grappler/engage(atom/target)
 	if(!..())
 		return FALSE
 	if(!target)
 		return FALSE
 	if(world.time < last_use + cooldown_time || get_dist(target, usr) > max_range)
 		return FALSE
-	var/reel_in_self = FALSE
-	if(isturf(target))
-		reel_in_self = TRUE
-	if(ismovable(target))
-		var/atom/movable/AM = target
-		reel_in_self = AM.anchored
 
+	cooldown_time = 1 SECOND
+	launcher.Fire(target,holder.wearer)
 	last_use = world.time
-	playsound(src, 'sound/machines/hiss.ogg', 50, 0, 0)
-
-	if(reel_in_self)
-		cooldown_time = 1 SECOND
-		usr.throw_at(target, 10, 2, usr)
-		visible_message(SPAN_WARNING("[usr] fires the [src], reeling them towards [target]!"))
-		return TRUE'
-
-	visible_message(SPAN_WARNING("[usr] fires the [src] at [target], reeling them in!"))
 	if(ismob(target))
 		cooldown_time = 10 SECONDS //10x longer cooldown on hooking people, so you can't grapplelock them as easily
-	target.throw_at(usr, get_dist(target, usr), 1, usr) //GET OVER HERE
-	return TRUE
