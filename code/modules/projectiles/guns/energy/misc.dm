@@ -13,3 +13,5 @@
 	charge_cost = 0
 	self_recharge = TRUE
 	twohanded = FALSE
+	safety = FALSE
+	restrict_safety = TRUE
