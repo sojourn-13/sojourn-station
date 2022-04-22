@@ -66,5 +66,5 @@
 #define PART_GUILD_L       "Artificer Guild laser parts"
 #define PART_GP            "greyson gunparts"
 #define PART_GP_L          "greyson laser parts"
-#define PART_EXODUS_L      "advanced gunparts"
+#define PART_EXODUS        "advanced gunparts"
 #define PART_EXODUS_L      "advanced laser parts"
