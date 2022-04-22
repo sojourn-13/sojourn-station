@@ -25,9 +25,9 @@
 /obj/item/gunkit/examine(mob/user)
 	..()
 	if(user.stats.getPerk(perk_to_use) && perk_locked)
-		to_chat(user, "<span class='info'>A stainless steel-plated carrycase with a robust impressive collection of every tool needed and wanted to take apart a gun but has no use outside of that.</span>")
+		to_chat(user, "<span class='info'>A stainless steel-plated carrycase with a robust, impressive collection of every tool needed and wanted to take apart a gun. Has no other use outside of weapon maintenance.</span>")
 	else
-		to_chat(user, "<span class='info'>A stainless steel-plated carrycase with nothing but junk and scrap broken tools inside,..</span>")
+		to_chat(user, "<span class='info'>A stainless steel-plated carrycase with nothing but junk and scrapped, broken tools inside...</span>")
 
 
 /obj/item/gunkit/attackby(obj/item/I, mob/user)

@@ -429,8 +429,8 @@
 
 /datum/perk/gun_wizard
 	name = "Gun Wizard"
-	desc = "You know guns, you REALLY know guns, how to take them apart saving every screw and splinter of wood or steel, and make them anew with a gun smithing kit."
-	gain_text = "The guns themselfs whisper to you how they work."
+	desc = "You know guns, you REALLY know guns, how to take them apart saving every screw and splinter of wood or steel, and make them anew with a gunsmithing kit."
+	gain_text = "The guns themselves whisper to you how they work."
 	lose_text = "The steel and wood fibers of firearms seem so silent now."
 
 /datum/perk/gun_wizard/assign(mob/living/carbon/human/H)

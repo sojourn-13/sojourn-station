@@ -50,14 +50,14 @@
 
 
 //The gun parts
-#define PART_HAND          "horrable handmade gun parts"
-#define PART_HAND_L        "horrable handmade laser parts"
+#define PART_HAND          "horribly handmade gun parts"
+#define PART_HAND_L        "horribly handmade laser parts"
 #define PART_CIV           "cheap civ grade gun parts"
 #define PART_CIV_L         "cheap civ grade laser parts"
 #define PART_POLICE        "police grade gun parts"
 #define PART_POLICE_L      "police grade laser parts"
-#define PART_MILSIM        "highend mili grade gun parts"
-#define PART_MILSIM_L      "highend mili grade laser parts"
+#define PART_MILSIM        "high end mil grade gun parts"
+#define PART_MILSIM_L      "high end mil grade laser parts"
 #define PART_SI            "SI gun parts"
 #define PART_SI_L          "SI advanced laser parts"
 #define PART_CHURCH        "Absolute gunparts"
