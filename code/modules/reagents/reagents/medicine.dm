@@ -374,7 +374,7 @@
 	if(prob(5 - (2 * M.stats.getMult(STAT_TGH))))
 		M.Stun(5)
 
-/* Cruciform litany related painkillers */
+/* Church related chemicals */
 /datum/reagent/medicine/nepenthe  //Monomial super-painkiller
 	name = "Nepenthe"
 	id = "nepenthe"
@@ -453,6 +453,35 @@
 	constant_metabolism = TRUE
 	scannable = 0
 	overdose = 0
+
+/datum/reagent/medicine/aether
+	name = "Aether"
+	id = "aether"
+	description = "Aether, also named quintessence, is one of the chemicals manifestable from the Axis. Once said by medieval science to be the material that fills the regions of the universe, actually it shows to be an analgesic and desloughing agent that greatly improves the rate of wound healing and numbs pain."
+	taste_description = "relief"
+	reagent_state = LIQUID
+	color = "#b4a308"
+	scannable = 0
+	metabolism = 0.5
+	overdose = REAGENTS_OVERDOSE / 2 // This should really just be in hands of a professional not every random person with a cruciform
+	appear_in_default_catalog = FALSE
+
+/datum/reagent/medicine/aether/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return //Bug bad
+	M.adjustOxyLoss(-0.4 * effect_multiplier)
+	M.heal_organ_damage(0.4 * effect_multiplier, 0.4 * effect_multiplier)
+	M.adjustToxLoss(-0.2 * effect_multiplier)
+	M.add_chemical_effect(CE_BLOODRESTORE, 0.4)
+	M.add_chemical_effect(CE_PAINKILLER, 20)
+
+/datum/reagent/medicine/aether/overdose(var/mob/living/carbon/M, var/alien)
+	. = ..()
+	M.adjustToxLoss(5)
+	M.adjustBrainLoss(3)
+	M.hallucination(120, 30)
+	if(M.losebreath < 15)
+		M.losebreath++
 
 /* Other medicine */
 

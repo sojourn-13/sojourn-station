@@ -16210,6 +16210,7 @@
 "dBR" = (
 /obj/structure/table/marble,
 /obj/item/tool/knife/neotritual,
+/obj/item/clothing/gloves/psionic_ring,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
 "dBU" = (
@@ -33640,7 +33641,7 @@
 	pixel_x = 28
 	},
 /obj/structure/table/woodentable,
-/obj/structure/reagent_dispensers/cahorsbarrel,
+/obj/item/device/lighting/toggleable/lantern/censer,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
 "hmu" = (
@@ -35267,6 +35268,7 @@
 /obj/structure/table/woodentable,
 /obj/item/storage/fancy/candle_box,
 /obj/item/storage/box/matches,
+/obj/item/flame/candle/eternal,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
 "hIf" = (
@@ -94097,6 +94099,7 @@
 	dir = 4
 	},
 /obj/structure/table/woodentable,
+/obj/item/reagent_containers/glass/replenishing/chalice,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
 "ugm" = (
@@ -94424,7 +94427,12 @@
 	})
 "ujR" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/box/drinkingglasses,
+/obj/item/reagent_containers/glass/urn/veteran{
+	pixel_x = 7
+	},
+/obj/item/oddity/nt/pyramid{
+	pixel_x = -9
+	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
 "ujT" = (
@@ -110582,7 +110590,7 @@
 	pixel_y = 28
 	},
 /obj/structure/table/standard,
-/obj/random/booze/low_chance,
+/obj/item/oddity/bath,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/pros/foreman)
 "xCN" = (
@@ -113278,6 +113286,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
+"yex" = (
+/obj/structure/table/woodentable,
+/obj/item/clothing/accessory/magatama,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/command/prime)
 "yey" = (
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/maintenance/undergroundfloor1east)
@@ -217386,8 +217399,8 @@ eVP
 cKd
 cxF
 cxF
+cxF
 ujR
-opH
 opH
 iUs
 vUJ
@@ -217589,7 +217602,7 @@ opH
 hHX
 ugj
 hmk
-opH
+yex
 opH
 iUs
 vUJ

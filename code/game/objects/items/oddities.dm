@@ -520,6 +520,19 @@
 	)
 	perk = /datum/perk/guild/blackbox_insight
 
+/obj/item/oddity/bath //Oink
+	name = "Peggy's Bathwater"
+	desc = "A bottle of water that smells a lot of pork and cocaine. Don't let Hogg catch you with this."
+	icon_state = "cursed_hog"
+	random_stats = FALSE
+	oddity_stats = list(
+		STAT_TGH = 8,
+		STAT_ROB = 8,
+		STAT_VIG = 8
+	)
+	price_tag = 2000
+	perk = /datum/perk/oddity/failing_mind //You sure will get brain damage if you get anywhere near this
+
 //A randomized oddity with random stats, meant for artist job project
 /obj/item/oddity/artwork
 	name = "Strange Device"
@@ -557,6 +570,16 @@
 	)
 	price_tag = 8000
 	perk = /datum/perk/nt_oddity/holy_light
+
+/obj/item/oddity/nt/pyramid
+	name = "Pyramid"
+	desc = "A small structure with various triangular bricks and forms a triangular frame. This one seems like a egyptian pyramid in specific, and have various ancient egyptian engravings about forgotten gods that only the today's history researcher may know, considering that various aspects of civilization has been lost over time as the old earth has lost their old history entities from the newer, non-earth born generations, or straight up alien. This lifts the important need to preserve history to never be forgotten. It seems this is supposed to be, more specifically, a figure of the Pyramid which Queen Khentkaus I has been buried. Anubis is the god more present on the arid, golden sand bricks and chiselled by hand."
+	icon_state = "pyramid"
+	oddity_stats = list(
+		STAT_TGH = 16
+	)
+	price_tag = 8000
+	perk = /datum/perk/oddity/strangth
 
 /obj/item/oddity/chimeric_fang_trophy
 	name = "Chimera Fang Trophy"

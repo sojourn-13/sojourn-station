@@ -446,6 +446,11 @@
 	name = "\"Tersus\" Vacuum Cleaner"
 	build_path = /obj/item/holyvacuum
 
+/datum/design/bioprinter/healingstaff
+	name = "\improper Harmony Scepter"
+	build_path = /obj/item/gun/matter/holybook/staff
+	materials = list(MATERIAL_PLASTEEL = 5, MATERIAL_BIOMATTER = 20, MATERIAL_GOLD = 10)
+
 //[CELLS]
 /datum/design/bioprinter/nt_cells/large
 	name = "NT \"Spark 13000L\""
