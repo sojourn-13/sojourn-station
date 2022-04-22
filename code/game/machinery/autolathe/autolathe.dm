@@ -482,7 +482,7 @@
 	auto_input = !auto_input
 	to_chat(user, SPAN_NOTICE("[src] is now [auto_input ? "" : "no longer"] automatically loading."))
 
-/obj/machinery/autolathe/CtrlShiftClick(mob/user)
+/obj/machinery/autolathe/CtrlShiftClick(mob/living/user)
 	..()
 	if(user.incapacitated())
 		to_chat(user, SPAN_WARNING("You can't do that right now!"))
