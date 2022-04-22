@@ -160,7 +160,6 @@ Advanced Voidsuit: Guild Master
 		/obj/item/rig_module/device/rcd,
 		/obj/item/rig_module/vision/meson,
 		/obj/item/rig_module/cargo_clamp,
-		/obj/item/rig_module/grappler,
 		/obj/item/rig_module/storage
 		)
 
@@ -214,7 +213,6 @@ Technomancer RIG
 		/obj/item/rig_module/storage,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/cargo_clamp,
-		/obj/item/rig_module/grappler
 		)
 
 /obj/item/clothing/gloves/rig/techno
