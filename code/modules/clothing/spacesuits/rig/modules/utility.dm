@@ -667,6 +667,10 @@
 				return FALSE
 			tocube.make_cube()
 		return FALSE
+	for(var/O in loading_item.contents)
+		if(istype(O, /mob/living))
+			to_chat(user, SPAN_WARNING("Living creatures detected. Cargo loading stopped."))
+			return
 	to_chat(usr, SPAN_NOTICE("You begin loading [loading_item] into [src]."))
 	if(do_after(usr, 2 SECONDS, loading_item))
 		loading_item.forceMove(src)
