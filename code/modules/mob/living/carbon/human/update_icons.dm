@@ -665,6 +665,32 @@ mob/living/carbon/human/proc/get_wings_image()
 #define WORN_ID		"_id"
 #define WORN_MASK	"_ma"
 
+//gender icons
+/mob/living/carbon/human/proc/get_gender_icon(var/g = MALE, var/slot)
+	var/list/icons = list(
+		"uniform"		= (g == MALE) ? 'icons/inventory/uniform/mob.dmi' : 'icons/inventory/uniform/mob_fem.dmi',
+		"suit"			= (g == MALE) ? 'icons/inventory/suit/mob.dmi' : 'icons/inventory/suit/mob_fem.dmi',
+		"gloves"		= 'icons/inventory/hands/mob.dmi',
+		"glasses"		= 'icons/inventory/eyes/mob.dmi',
+		"ears"			= 'icons/inventory/ears/mob.dmi',
+		"mask"			= 'icons/inventory/face/mob.dmi',
+		"hat"			= 'icons/inventory/head/mob.dmi',
+		"shoes"			= 'icons/inventory/feet/mob.dmi',
+		"misk"			= 'icons/mob/mob.dmi',
+		"belt"			= 'icons/inventory/belt/mob.dmi',
+		"s_store"		= 'icons/inventory/on_suit/mob.dmi',
+		"backpack"		= 'icons/inventory/back/mob.dmi',
+		"underwear"		= 'icons/inventory/underwear/mob.dmi'
+		)
+	return icons[slot]
+
+//contained sprite gender icons
+/mob/living/carbon/human/proc/get_gender_icon_contained(var/g = MALE)
+	if (g == FEMALE)
+		return "_f"
+	else
+		return
+
 //vvvvvv UPDATE_INV PROCS vvvvvv
 
 /mob/living/carbon/human/update_inv_w_uniform(var/update_icons=1)
@@ -680,12 +706,12 @@ mob/living/carbon/human/proc/get_wings_image()
 			else
 				under_icon = w_uniform.icon
 
-			under_state += w_uniform.icon_state + WORN_UNDER
+			under_state += w_uniform.icon_state + WORN_UNDER + get_gender_icon_contained(gender)
 
 		else if(w_uniform.icon_override)
 			under_icon = w_uniform.icon_override
 		else
-			under_icon = form.get_mob_icon("uniform")
+			under_icon = get_gender_icon(gender, "uniform")
 
 		//determine state to use
 		if (!under_state)
