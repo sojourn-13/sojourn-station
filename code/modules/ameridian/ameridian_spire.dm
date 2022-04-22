@@ -13,6 +13,7 @@
 	spread_range = 3
 	rad_damage = 1
 	rad_range = 3
+	blue_crystal_prob = 10 // More chances of spawning a blue crystal
 	var/respawn_distance = 10 // How many tiles do we let the golem get before spawning another
 
 /obj/structure/ameridian_crystal/spire/update_icon()
@@ -47,7 +48,7 @@
 		var/sound/S = sound('sound/synthesized_instruments/chromatic/vibraphone1/c5.ogg')
 		for(var/mob/living/carbon/human/H in viewers(src))
 			if(H.stats.getPerk(PERK_PSION))
-				to_chat(H, "<b><font color='purple'>[src] chimes.")
+				to_chat(H, SPAN_PSION("[src] chimes."))
 				H.playsound_local(get_turf(src), S, 50) // Only psionics can hear that
 
 		sleep((S.len + 6) SECONDS) // 10 Seconds before the beefy golem spawn

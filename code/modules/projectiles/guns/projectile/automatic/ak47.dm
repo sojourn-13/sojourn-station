@@ -28,12 +28,14 @@
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY
 		)
+	serial_type = "EXC"
 
 /obj/item/gun/projectile/automatic/ak47/NM_colony
 	name = "polymer \"Kalashnikov\" carbine"
 	desc = " A copy of the Kalashnikov pattern, shortened into a mid-length carbine and chambered in 7.5. This is an abysmal, printed copy."
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	price_tag = 800
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/ak47/update_icon()
 	..()
@@ -68,12 +70,14 @@
 	mag_well = MAG_WELL_DRUM
 	recoil_buildup = 25
 	one_hand_penalty = 30
+	serial_type = "EXC"
 
 /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony
 	name = "\"Saigini 12\" carbine"
 	desc = "A bulked up and modified version of the kalashnikov made to fire 20mm shotgun slugs, similar to the sol federation SBAW design. Uses 20mm in SBAW magazines."
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1)
 	price_tag = 800
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/ak47/akl
 	name = "\"Legkiy-Kalashnikov\" laser carbine"
@@ -99,6 +103,7 @@
 		BURST_5_ROUND,
 		SEMI_AUTO_NODELAY
 		)
+	serial_type = "SI"
 
 /obj/item/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" carbine"
@@ -115,6 +120,7 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/ak47/sawn
+	serial_type = "SA"
 
 /obj/item/gun/projectile/automatic/ak47/sawn
 	name = "sawn-off \"Kalashnikov\" carbine"
@@ -189,6 +195,7 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	caliber = CAL_SHOTGUN
 	handle_casings = EJECT_CASINGS
+	serial_type = "SA"
 	init_firemodes = list(
 		list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=2.5, move_delay=null, icon="semi"),
 		)

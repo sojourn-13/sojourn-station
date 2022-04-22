@@ -17,6 +17,7 @@
 	pierce_multiplier =  5
 	recoil_buildup = 13
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
+	serial_type = "XSyndi"
 
 /obj/item/gun/projectile/revolver/little_comet/update_icon()
 	..()

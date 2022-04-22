@@ -673,7 +673,7 @@ and which aren't.
 	cloneLog = "\[[stationtime2text()]\] " + string + "<br>" + cloneLog
 
 /obj/machinery/computer/genetics/clone_console/attack_hand(mob/user)
-	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 75))
+	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 75) &&!user.stats?.getPerk(PERK_ADVANCED_MEDICAL) && !usr.stat_check(STAT_BIO, 150))
 		to_chat(usr, SPAN_WARNING("This is a bit beyond your cognitive understanding."))
 		return
 	if(..())

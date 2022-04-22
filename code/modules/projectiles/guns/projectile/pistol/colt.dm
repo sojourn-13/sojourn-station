@@ -16,6 +16,7 @@
 	recoil_buildup = 6
 	one_hand_penalty = 7
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/colt/NM_colt
 	name = "\"Bronco\" pistol"
@@ -28,6 +29,7 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 5)
 	recoil_buildup = 5
+	serial_type = "NM"
 
 /obj/item/gun/projectile/colt/ten
 	name = "\"Delta Elite\" magnum pistol"
@@ -47,6 +49,7 @@
 	recoil_buildup = 6
 	damage_multiplier = 1.1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)
+	serial_type = "SA"
 
 /obj/item/gun/projectile/colt/ten/dark
 	name = "\"Stallion\" magnum pistol"
@@ -55,6 +58,7 @@
 	item_state = "colt"
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
+	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/colt/update_icon()
 	..()

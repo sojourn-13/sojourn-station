@@ -21,8 +21,10 @@
 		SEMI_AUTO_NODELAY,
 		list(mode_name="fire 20mm shell", mode_desc="Shoot the underbarrel shotgun shell",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
+	serial_type = "Absolute"
 
 	var/obj/item/gun/projectile/underslung_shotgun/shotgun
+	var/reload_delay = 5 // Delay between bullets when reloading from a box.
 
 /obj/item/gun/projectile/revolver/lemant/claw
 	name = "\"Pilgrim Claw\" magnum revolver"
@@ -101,6 +103,38 @@
 	else
 		..()
 
+/obj/item/gun/projectile/revolver/lemant/load_ammo(var/obj/item/A, mob/user)
+	if(istype(A, /obj/item/ammo_magazine))
+		var/obj/item/ammo_magazine/AM = A
+		var/count = 0
+		if(AM.reload_delay)
+			to_chat(user, SPAN_NOTICE("It takes some time to reload [src] with [AM]..."))
+
+		if(do_after(user, AM.reload_delay, user)) // Initial delay before the loading start
+			loading_gun:
+				while(do_after(user, reload_delay, user))
+					for(var/obj/item/ammo_casing/C in AM.stored_ammo)
+						if(loaded.len >= max_shells) // The gun is full or the box is empty
+							break loading_gun // Stop loading at all
+						if(C.caliber == caliber)
+							C.forceMove(src)
+							loaded += C
+							AM.stored_ammo -= C //should probably go inside an ammo_magazine proc, but I guess less proc calls this way...
+							count++
+							AM.update_icon()
+							break
+
+					if(AM.stored_ammo.len <= 0) // The packet is out of bullets
+						break loading_gun // Stop loading at all
+
+		if(count)
+			user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
+			if(reload_sound) playsound(src.loc, reload_sound, 75, 1)
+			cock_gun(user)
+			update_firemode()
+	else
+		..()
+
 /obj/item/gun/projectile/revolver/lemant/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
 	var/datum/firemode/cur_mode = firemodes[sel_mode]
 
@@ -140,6 +174,7 @@
 		SEMI_AUTO_NODELAY,
 		list(mode_name="fire grenades", mode_desc="Shoot the underbarrel grenade shell",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/revolver/deacon/Initialize()
 	. = ..()

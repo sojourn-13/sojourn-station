@@ -22,6 +22,7 @@
 	var/use_amount = 10 // How much fuel is used per shot
 	var/ammo_type = MATERIAL_AMERIDIAN // What kind of chem do we use?
 	var/obj/item/ameridian_core/core // The ameridian core the gun need to work
+	serial_type = "GP" //Cog?
 
 /obj/item/gun/ameridian/Initialize(mapload, ...)
 	..()

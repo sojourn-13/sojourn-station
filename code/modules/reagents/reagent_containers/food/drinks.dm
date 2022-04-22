@@ -265,8 +265,8 @@
 // Snowflake shaker code goes here, acting as a NO_REACT "cryostasis beaker" of sorts, reagent mixing enabled by manually shaking it in-hand. - Seb
 
 /obj/item/reagent_containers/food/drinks/shaker
-	name = "shaker"
-	desc = "A metal shaker to mix drinks in."
+	name = "cocktail shaker"
+	desc = "A metal cocktail shaker with a bluespace-infused stasis interior.  Give it a shake to mix its contents into a proper drink!" // Changing description so that people know why the hell their drinks aren't mixing. - Seb
 	icon_state = "shaker"
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,20,30,60,120)

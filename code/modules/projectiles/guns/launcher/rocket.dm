@@ -16,6 +16,7 @@
 	throw_distance = 30
 	var/max_rockets = 1
 	var/list/rockets = new/list()
+	serial_type = "SA"
 
 /obj/item/gun/launcher/rocket/examine(mob/user)
 	if(!..(user, 2))

@@ -64,6 +64,7 @@
 	var/dart_reagent_amount = 15
 	var/beaker_type = /obj/item/reagent_containers/glass/beaker
 	var/list/starting_chems = null
+	serial_type = "SI"
 
 /obj/item/gun/projectile/dartgun/dartgun/New()
 	..()

@@ -18,6 +18,8 @@
 	saw_off = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
 	pumpshotgun_sound = 'sound/weapons/guns/interact/hydra_crossbow_load.ogg'
+	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/projectile/shotgun/pump/hunter_crossbow/handle_post_fire()
 	..()

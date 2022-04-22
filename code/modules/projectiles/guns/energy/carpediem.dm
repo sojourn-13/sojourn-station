@@ -20,4 +20,5 @@
 	init_firemodes = list(
 		WEAPON_CHARGE
 	)
-	twohanded = TRUE //HOW DO YOU ONEHAND A MUSKET
+	twohanded = TRUE // NO YOU DON'T
+	serial_type = "Absolute"

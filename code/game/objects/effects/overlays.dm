@@ -63,6 +63,17 @@
 	icon = 'icons/effects/effects.dmi'
 	layer = WALL_OBJ_LAYER
 	icon_state = "scorch"
+	var/serial_type_index = ""
+
+/obj/effect/overlay/bmark/attackby(obj/item/I, mob/user)
+	..()
+	if(istype(I, /obj/item/device/bullet_scanner))
+		if(serial_type_index)
+			to_chat(user, "<span class='info'>Bullet Hole Caliberation: [serial_type_index].</span>")
+			return
+		else
+			to_chat(user, "<span class='info'>Bullet Hole Caliberation: ERROR.</span>")
+
 
 /obj/effect/overlay/temp
 	anchored = 1
