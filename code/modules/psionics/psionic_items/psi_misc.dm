@@ -117,4 +117,4 @@
 			The ring of Dispel can be used during Psion crisis but the vector or prime using said ring must be safeguarded by other vectors, considering said vector as a artifact as much as the ring is until it is put back to it's place. Holding the ring of dispel is a chore because it basically doubles the expectation for the vector to not die, or lose it."
 	icon_state = "ring_of_dispel"
 	price_tag = 1000
-	psi_blocking = 25
+	psi_blocking = 50

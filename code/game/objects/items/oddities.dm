@@ -520,9 +520,9 @@
 	)
 	perk = /datum/perk/guild/blackbox_insight
 
-/obj/item/oddity/bath //Oink
-	name = "Peggy's Bathwater"
-	desc = "A bottle of water that smells a lot of pork and cocaine. Don't let Hogg catch you with this."
+/obj/item/oddity/bath
+	name = "Lonestar Smelling Salts"
+	desc = "A bottle of water that smells a lot of pork and cocaine. This will kick you back into your seat but don't expect your brain to like it much."
 	icon_state = "cursed_hog"
 	random_stats = FALSE
 	oddity_stats = list(
@@ -530,7 +530,7 @@
 		STAT_ROB = 8,
 		STAT_VIG = 8
 	)
-	price_tag = 2000
+	price_tag = 1000
 	perk = /datum/perk/oddity/failing_mind //You sure will get brain damage if you get anywhere near this
 
 //A randomized oddity with random stats, meant for artist job project

@@ -40,7 +40,7 @@
 	to bash your enemies over the head."
 	icon = 'icons/obj/guns/matter/harmony_scepter.dmi'
 	icon_state = "harmony_scepter"
-	projectile_type = /obj/item/projectile/beam/sniper/harmony
+	projectile_type = /obj/item/projectile/beam/sniper/healing/harmony
 	//Theirs better weapons then this!
 	fire_sound = 'sound/weapons/magical.ogg'
 	force = WEAPON_FORCE_ROBUST
@@ -49,7 +49,7 @@
 	max_stored_matter = 20
 	fire_delay = 15
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_BIOMATTER = 20, MATERIAL_GOLD = 10)
-	price_tag = 1500 //So its worth stealing >:D / Not prime only anymore
+	price_tag = 3000
 	w_class = ITEM_SIZE_HUGE
 
 /obj/item/gun/matter/holybook/staff/attack()

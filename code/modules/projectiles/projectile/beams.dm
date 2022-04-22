@@ -203,23 +203,17 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 		L.adjustBruteLoss(-3)
 		L.adjustFireLoss(-3)
 
-/obj/item/projectile/beam/sniper/harmony
+/obj/item/projectile/beam/sniper/healing/harmony
 	name = "harmony"
-	icon_state = "xray"
-	damage_types = list(TOX = 0)//Shouldnt do anything but just in case its toxin
-	armor_penetration = 0
-	stun = 0
-	weaken = 0
-	eyeblur = 0
-	muzzle_type = /obj/effect/projectile/laser_blue/muzzle
-	tracer_type = /obj/effect/projectile/laser_blue/tracer
-	impact_type = /obj/effect/projectile/laser_blue/impact
 
-/obj/item/projectile/beam/sniper/harmony/on_hit(atom/target, blocked = FALSE)
+/obj/item/projectile/beam/sniper/healing/harmony/on_hit(atom/target, blocked = FALSE)
+	. = ..()
 	if(isliving(target))
 		var/mob/living/L = target
-		if(istype(L) && L.reagents)
-			L.reagents.add_reagent("aether", 5)
+		L.adjustOxyLoss(-4)
+		L.adjustToxLoss(-2)
+		L.adjustBruteLoss(-2)
+		L.adjustFireLoss(-2)
 
 /obj/item/projectile/beam/tesla
 	name = "lightning"

@@ -615,7 +615,6 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/shield/nt_shield,
 		/datum/design/autolathe/nt/shield/nt_buckler,
 		/datum/design/autolathe/gun/plasma/martyr,
-		/datum/design/bioprinter/healingstaff,
 		//armor and clothes
 		/datum/design/bioprinter/nt_clothes/acolyte_armor_helm,
 		/datum/design/bioprinter/nt_clothes/acolyte_armor,
