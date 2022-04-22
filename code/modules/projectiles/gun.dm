@@ -105,6 +105,11 @@
 	//Gun numbers and stuf
 	var/serial_type = "INDEX" // Index will be used for detective scanners, if there is a serial type , the gun will add a number onto its final , if none , it won;'t show on examine
 	var/serial_shown = TRUE
+	//Gun part stuff
+	var/gun_part_list = list()
+
+/obj/item/gun/proc/get_gun_part()
+	return gun_part_list ? gun_part_list : list()
 
 /obj/item/gun/proc/loadAmmoBestGuess()
 	return

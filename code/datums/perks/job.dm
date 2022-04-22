@@ -427,6 +427,19 @@
 /datum/perk/handyman/remove()
 	..()
 
+/datum/perk/gun_wizard
+	name = "Gun Wizard"
+	desc = "You know guns, you REALLY know guns, how to take them apart saving every screw and splinter of wood or steel, and make them anew with a gun smithing kit."
+	gain_text = "The guns themselfs whisper to you how they work."
+	lose_text = "The steel and wood fibers of firearms seem so silent now."
+
+/datum/perk/gun_wizard/assign(mob/living/carbon/human/H)
+	..()
+
+/datum/perk/gun_wizard/remove(mob/living/carbon/human/H)
+	H.sanity.breakdown(TRUE)
+	..()
+
 /datum/perk/stalker
 	name = "Anomaly Hunter"
 	desc = "Special training from senior Prospectors and your own experience has allowed you to instinctively know the effects of greater oddities. By examining an oddity that has become an anomaly, you can tell what its greater boon or curse may be."

@@ -34,6 +34,7 @@
 #define PERK_STRANGTH /datum/perk/oddity/strangth
 
 //roundstart perks (job and racial)
+#define PERK_GUN_WIZ /datum/perk/gun_wizard
 #define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery
 #define PERK_LUNGS_OF_IRON /datum/perk/lungs_of_iron
 #define PERK_BLOOD_OF_LEAD /datum/perk/blood_of_lead

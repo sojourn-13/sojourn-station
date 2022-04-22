@@ -20,6 +20,7 @@
 	)
 	twohanded = TRUE
 	serial_type = "GP"
+	gun_part_list = list(PART_GP_L = 1)
 
 /obj/item/gun/energy/cog/gear
 	name = "\"Gear\" lasgun"
@@ -32,3 +33,4 @@
 		list(mode_name="lethal", mode_desc="fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/Laser4.ogg')
 	)
 	serial_type = "GP"
+	gun_part_list = list(PART_POLICE_L = 1, PART_GP_L = 1)
