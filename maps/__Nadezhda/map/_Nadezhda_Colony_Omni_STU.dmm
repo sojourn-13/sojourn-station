@@ -13257,7 +13257,7 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/janitor)
 "cTH" = (
-/obj/structure/closet/secure_closet/detective,
+/obj/structure/closet/secure_closet/personal/detective,
 /turf/simulated/floor/wood,
 /area/nadezhda/security/detectives_office)
 "cTK" = (
@@ -101683,7 +101683,7 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/pros/proelav)
 "vEa" = (
-/obj/structure/closet/secure_closet/detective,
+/obj/structure/closet/secure_closet/personal/detective,
 /obj/machinery/alarm{
 	pixel_y = 24
 	},

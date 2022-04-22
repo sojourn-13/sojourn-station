@@ -22,6 +22,7 @@
 		list(mode_name="semiauto", mode_desc="Shoot as fast as you can pull the trigger",       burst=1, fire_delay=1.2, move_delay=null, 				icon="semi"),
 		list(mode_name="2-round bursts", mode_desc="Shoots two rounds back to back", burst=2, fire_delay=0.2, move_delay=4,    	icon="burst"),
 		)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/olivaw/update_icon()
 	..()

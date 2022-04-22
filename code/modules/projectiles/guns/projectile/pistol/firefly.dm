@@ -20,6 +20,7 @@
 	recoil_buildup = 5
 	one_hand_penalty = 7
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/firefly/update_icon()
 	..()

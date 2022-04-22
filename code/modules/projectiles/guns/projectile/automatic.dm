@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic
-	name = "automatic projectile gun"
-	desc = "A debug firearm, which should be reported if present in-game. Uses .35 rounds."
+	name = "old automatic projectile gun"
+	desc = "A no longer produced hologram of the base of all moder day smgs. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/generic_smg.dmi'
 	icon_state = "generic_smg"
 	w_class = ITEM_SIZE_NORMAL

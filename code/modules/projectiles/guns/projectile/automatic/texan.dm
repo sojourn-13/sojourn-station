@@ -18,6 +18,7 @@
 	recoil_buildup = 1.25
 	one_hand_penalty = 10
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
+	serial_type = "SA"
 
 	init_firemodes = list(
 		FULL_AUTO_400_NOLOSS,

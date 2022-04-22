@@ -27,6 +27,7 @@
 		BURST_3_ROUND_NOLOSS,
 		FULL_AUTO_400_NOLOSS
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/triage/update_icon()
 	..()

@@ -186,19 +186,19 @@ SUBSYSTEM_DEF(garbage)
 
 		switch (level)
 			if (GC_QUEUE_CHECK)
-				var/type = D.type
-				var/datum/qdel_item/I = items[type]
 				#ifdef REFERENCE_TRACKING
 				if(reference_find_on_fail[refID])
 					INVOKE_ASYNC(D, /datum/proc/find_references)
 					ref_searching = TRUE
 				#ifdef GC_FAILURE_HARD_LOOKUP
-				else if (ispath(type, /mob/living) || ispath(type, /datum/radio_frequency))
+				else
 					INVOKE_ASYNC(D, /datum/proc/find_references)
 					ref_searching = TRUE
 				#endif
 				reference_find_on_fail -= refID
 				#endif
+				var/type = D.type
+				var/datum/qdel_item/I = items[type]
 
 				log_world("## TESTING: GC: -- \ref[D] | [type] was unable to be GC'd --")
 				#ifdef TESTING

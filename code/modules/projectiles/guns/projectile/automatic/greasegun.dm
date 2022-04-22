@@ -23,6 +23,7 @@
 		FULL_AUTO_400_NOLOSS,
 		SEMI_AUTO_NODELAY
 		)
+	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/automatic/greasegun/update_icon()
 	..()

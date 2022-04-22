@@ -23,6 +23,7 @@
 		SEMI_AUTO_NODELAY,
 		list(mode_name="fire 10x24 pistol", mode_desc="Shoot the built in 10x24 pistol",  burst=1, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
+	serial_type = "SD GmbH"
 
 	var/obj/item/gun/projectile/automatic/underslung/pistol/pistol
 
@@ -83,3 +84,4 @@
 	init_firemodes = list(
 		BURST_3_ROUND
 		)
+	serial_type = "SD GmbH"
