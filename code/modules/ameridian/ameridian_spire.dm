@@ -72,7 +72,6 @@
 	if(golem && get_dist(get_turf(src), get_turf(golem)) > respawn_distance) // We have a golem and it is far away
 		golem.node = null // Null the golem's node.
 		golem = null // We can spawn another golem
-		golem_timer = initial(golem_timer) - 5 // We will spawn another golem~
 		return TRUE
 	else
 		return FALSE

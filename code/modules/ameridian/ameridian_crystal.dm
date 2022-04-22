@@ -25,6 +25,7 @@
 /obj/structure/ameridian_crystal/Initialize(mapload, ...)
 	..()
 	START_PROCESSING(SSobj, src)
+	AddRadSource(src, rad_damage, rad_range)
 
 	// If the crystal was mapped in, spawn at full growth, else spawn as a seed.
 	if(!growth) // As long as we didn't manually set a growth level
@@ -40,8 +41,6 @@
 	STOP_PROCESSING(SSobj, src)
 
 /obj/structure/ameridian_crystal/Process()
-	irradiate()
-
 	if(prob(growth_prob))
 		handle_growth()
 		handle_duplicate_crystals()
@@ -78,13 +77,6 @@
 		Destroy()
 	else
 		..()
-
-// This proc is responsible for giving radiation damage to every nearby organics.
-/obj/structure/ameridian_crystal/proc/irradiate()
-	for(var/mob/living/l in range(src, rad_range))
-		if(issynthetic(l)) // Don't irradiate synths
-			continue
-		l.apply_effect(rad_damage, IRRADIATE)
 
 // This proc handle the growth & spread of the crystal
 /obj/structure/ameridian_crystal/proc/handle_growth()

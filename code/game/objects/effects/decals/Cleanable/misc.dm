@@ -21,7 +21,7 @@
 
 /obj/effect/decal/cleanable/greenglow/Initialize(mapload, ...)
 	. = ..()
-	START_PROCESSING(SSobj, src)
+	AddRadSource(src, 2, 4) // Values taken from the process proc below
 	set_light(1.5 ,1, "#00FF7F")
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel, src), 120 SECONDS)
 
