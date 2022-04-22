@@ -76,16 +76,16 @@ SUBSYSTEM_DEF(radiation)
 	rad_sources = rad_producers
 	rad_sinks = rad_detectors
 
-// "Manually" irradiate nearby people. S is the source, P is the amount of rads, and R is the range
-proc/produce_radiation(var/S, var/P, var/R)
-	if(!S || !P || !R)
+// "Manually" irradiate nearby people.
+proc/produce_radiation(var/Source, var/Power, var/Range)
+	if(!Source || !Power || !Range)
 		return
 
-	for(var/mob/living/M in range(R, S))
-		M.apply_effect(P, IRRADIATE)
+	for(var/mob/living/M in range(Range, Source))
+		M.apply_effect(Power, IRRADIATE)
 		M.updatehealth()
 		for(var/obj/item/device/geiger/G in M.contents)
-			G.add_rads(P)
+			G.add_rads(Power)
 
-	for(var/obj/item/device/geiger/G in range(R, S))
-		G.add_rads(P)
+	for(var/obj/item/device/geiger/G in range(Range, Source))
+		G.add_rads(Power)
