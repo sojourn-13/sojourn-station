@@ -745,7 +745,7 @@
 
 //Cross Bolt ammo
 /obj/item/ammo_casing/crossbow_bolts
-	name = "crossbow bolt"
+	name = "crossbaow bolt"
 	desc = "A finely made bolt designed for a crossbow."
 	icon_state = "bolt"
 	caliber = CAL_CROSSBOW
@@ -780,3 +780,18 @@
 	amount = 10
 
 
+/obj/item/ammo_casing/rod_bolt
+	name = "metal rod"
+	desc = "Wait a second, this is a bullet!"
+	icon = 'icons/obj/stack/items.dmi'
+	icon_state = "rods"
+	caliber = "rod" //not a define
+	projectile_type = /obj/item/projectile/bullet/rod_bolt
+	matter = list(MATERIAL_STEEL = 1)
+	maxamount = 1
+	is_caseless = TRUE
+
+/obj/item/ammo_casing/rod_bolt/rcd
+	name = "flashforged rod"
+	desc = "Wait a second, this is a flashforged bullet!"
+	projectile_type = /obj/item/projectile/bullet/rod_bolt/rcd

@@ -84496,7 +84496,7 @@
 "rZf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/gun/launcher/crossbow,
+/obj/item/gun/projectile/crossbow,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest)
 "rZl" = (

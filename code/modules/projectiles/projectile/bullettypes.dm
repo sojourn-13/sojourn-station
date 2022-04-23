@@ -746,3 +746,56 @@
 	affective_ap_range = 9
 	nocap_structures = TRUE //Can do well againt walls and doors
 
+
+/obj/item/projectile/bullet/rod_bolt
+	name = "metal rod"
+	icon_state = "bolt"
+	damage_types = list(BRUTE = 10) //This is multiplied by tension when fired, so it's actually 50 damage.
+	armor_penetration = 15
+	step_delay = 0.9
+	embed = FALSE
+	penetrating = 1
+	affective_damage_range = 7
+	affective_ap_range = 7
+	var/obj/item/create_type = /obj/item/stack/rods
+
+/obj/item/projectile/bullet/rod_bolt/on_impact(atom/A)
+	if(create_type)
+		new create_type(get_turf(src))
+	..()
+
+/obj/item/projectile/bullet/rod_bolt/superheated
+	name = "superheated metal rod"
+	damage_types = list(BRUTE = 10, BURN = 2.5) //This is multiplied by tension when fired, so it's actually 62.5 damage.
+	armor_penetration = 20
+	step_delay = 0.6
+	embed = TRUE
+	penetrating = 0
+	affective_damage_range = 7
+	affective_ap_range = 7
+	create_type = null
+
+
+/obj/item/projectile/bullet/rod_bolt/rcd
+	name = "flashforged rod"
+	icon_state = "bolt"
+	damage_types = list(BRUTE = 9) //This is multiplied by tension when fired, so it's actually 45 damage. Slightly worse, but it's faster and has higher AP.
+	armor_penetration = 30
+	step_delay = 0.6
+	embed = FALSE
+	penetrating = 1
+	affective_damage_range = 7
+	affective_ap_range = 7
+	create_type = /obj/item/arrow/rcd
+
+/obj/item/projectile/bullet/rod_bolt/rcd/superhot
+	name = "flashforged superheated rod"
+	icon_state = "bolt"
+	damage_types = list(BRUTE = 9, BURN = 2.5) //This is multiplied by tension when fired, so it's actually 57.5 damage. Slightly worse, but it's faster and has higher AP.
+	armor_penetration = 30
+	step_delay = 0.2
+	embed = TRUE
+	penetrating = 0
+	affective_damage_range = 7
+	affective_ap_range = 7
+	create_type = null
