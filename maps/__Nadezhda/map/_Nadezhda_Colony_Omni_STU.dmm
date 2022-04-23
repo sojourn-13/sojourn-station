@@ -23726,6 +23726,12 @@
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/engineering/atmos)
+"fid" = (
+/obj/structure/invislight,
+/turf/simulated/floor/holofloor/space{
+	layer = 1
+	},
+/area/space)
 "fig" = (
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -66158,6 +66164,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
+"ogd" = (
+/obj/effect/meteor,
+/turf/simulated/floor/holofloor/space{
+	layer = 1
+	},
+/area/space)
 "oge" = (
 /obj/random/junk/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -82122,9 +82134,8 @@
 /turf/simulated/floor/carpet/sblucarpet)
 "ryP" = (
 /obj/machinery/door/unpowered/simple/wood/saloon{
-	name = "Gardener's Bedroom";
-	req_access = list(35);
-	use_power = 0
+	desc = "A wooden door weighted to always fall closed if left open.";
+	name = "Gardener's Bedroom"
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/colony)
@@ -88745,12 +88756,6 @@
 /obj/effect/floor_decal/industrial/warningwhite,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
-"sVL" = (
-/obj/effect/meteor,
-/turf/simulated/floor/holofloor/space{
-	layer = 1
-	},
-/area/space)
 "sVT" = (
 /obj/item/reagent_containers/food/snacks/stewedsoymeat{
 	desc = "Purrfect for any feline dinning!";
@@ -96972,7 +96977,7 @@
 "uJc" = (
 /obj/machinery/door/unpowered/simple/wood/saloon{
 	desc = "A wooden door weighted to always fall closed if left open.";
-	name = "Chicken Coop"
+	name = "Gardener's Bedroom"
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/crew_quarters/hydroponics/garden)
@@ -97895,12 +97900,6 @@
 /area/nadezhda/rnd/circuitlab{
 	name = "Science Expedition prep"
 	})
-"uSI" = (
-/obj/structure/invislight,
-/turf/simulated/floor/holofloor/space{
-	layer = 1
-	},
-/area/space)
 "uSK" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 30
@@ -165131,7 +165130,7 @@ iak
 ruI
 tUB
 hJX
-uSI
+fid
 oyV
 ldQ
 xGi
@@ -165334,7 +165333,7 @@ ryM
 iuN
 hJX
 oyV
-sVL
+ogd
 ldQ
 xGi
 sFI
