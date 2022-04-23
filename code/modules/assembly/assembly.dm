@@ -32,6 +32,19 @@
 		process_cooldown()
 	return TRUE
 
+/obj/item/device/assembly/Destroy()
+
+	if (holder)
+		if(holder.left_assembly == src) //sanity check-if the holder's destroy is ran after this, or if it isnt, we need to make sure refs are clean
+			holder.left_assembly = null //niko--unfamiliar with how this works, this may be dirty but is the best solution i can think of
+		if (holder.right_assembly == src)
+			holder.right_assembly = null
+
+	holder = null
+
+	. = ..()
+
+
 
 /obj/item/device/assembly/proc/process_cooldown()
 	cooldown--

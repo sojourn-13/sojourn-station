@@ -29,6 +29,7 @@
 		)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/doublebarrel/sawn
+	serial_type = "SA"
 
 /obj/item/gun/projectile/shotgun/doublebarrel/update_icon()
 	..()

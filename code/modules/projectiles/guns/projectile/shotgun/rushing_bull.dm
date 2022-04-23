@@ -33,6 +33,7 @@
 	init_firemodes = list(
 		list(mode_name="semiauto", mode_desc="Shoot once per pull after chambering", burst=1, fire_delay=5, move_delay=null, icon="semi")
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/cattle_autoshotgun
 	name = "\"Cattle Stampede\" tactical shotgun" //With correct mods this can be better then the pug

@@ -71,3 +71,19 @@
 		lit = 0
 		update_icon()
 		set_light(0)
+
+/obj/item/flame/candle/eternal
+	name = "eternal candle"
+	desc = "A curved, comma-shaped jewel made out of precious stone. Simply looking at this stone is enough to make one more calm and confident. It is said Amaterasu herself - one of the absolute's masks - held this specific Magatama herself, and anyone that holds this jewel while meditating long enough, finds inner peace easier than in any other way.  In fact, during times of turmoil it became well know to allow vectors to touch the Magatama before sleeping on monasteries, due to it's non-chemically related, calming properties. It is also said this Jewel was totally unrepaired by the church, and because of time, shows some external damages and scratches."
+	icon_state = "candle_eternal"
+	light_color = COLOR_LIGHTING_CYAN_BRIGHT
+	endless_burn = TRUE
+
+/obj/item/flame/candle/eternal/update_icon()
+	var/i
+	if(wax > 1500)
+		i = 1
+	else if(wax > 800)
+		i = 2
+	else i = 3
+	icon_state = "candle_eternal[i][lit ? "_lit" : ""]"

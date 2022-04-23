@@ -56,7 +56,9 @@
 
 /atom/Destroy()
 	if(light)
-		light.destroy()
+		light.destroy() //wtf is this? why arent we just qdelling it or setting the refs to null? what??
+		light.top_atom = null //i hope this works
+		light.source_atom = null
 		light = null
 	return ..()
 

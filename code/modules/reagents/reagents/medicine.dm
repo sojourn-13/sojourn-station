@@ -374,7 +374,7 @@
 	if(prob(5 - (2 * M.stats.getMult(STAT_TGH))))
 		M.Stun(5)
 
-/* Cruciform litany related painkillers */
+/* Church related chemicals */
 /datum/reagent/medicine/nepenthe  //Monomial super-painkiller
 	name = "Nepenthe"
 	id = "nepenthe"

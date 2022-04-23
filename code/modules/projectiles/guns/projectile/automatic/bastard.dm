@@ -23,6 +23,7 @@
 		BURST_5_ROUND,
 		FULL_AUTO_600
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/bastard/update_icon()
 	var/iconstring = initial(icon_state)

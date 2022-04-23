@@ -78,3 +78,9 @@
 	if (.)
 		for (var/mob/living/carbon/superior_animal/roach/fuhrer/F in range(src,8))
 			F.distress_call()
+
+/mob/living/carbon/superior_animal/roach/Destroy()
+	eat_target = null //should fix the support roach GC fail
+
+	. = ..()
+

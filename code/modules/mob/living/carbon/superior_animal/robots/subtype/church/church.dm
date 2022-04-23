@@ -10,6 +10,7 @@
 	friendly_to_colony = TRUE
 	emp_damage = FALSE // They're golems, not robots, can't be EMP'ed
 	termiation = FALSE
+	cleaning = FALSE
 	meat_type = /obj/item/stack/material/biomatter/random
 
 /mob/living/carbon/superior_animal/robot/church/obey_check(var/mob/living/speaker = null)

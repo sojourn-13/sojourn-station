@@ -24,6 +24,7 @@
 	suitable_cell = /obj/item/cell/large
 	price_tag = 2000 //Only worth 1k in cargo rare and all
 	var/consume_cell = TRUE
+	serial_type = "AG"
 
 /obj/item/gun/energy/laser/heavypulserifle/consume_next_projectile()
 	.=..()

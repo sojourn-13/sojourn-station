@@ -18,6 +18,7 @@
 	one_hand_penalty = 5
 	twohanded = TRUE
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
+	serial_type = "Absolute"
 
 /obj/item/gun/energy/ionrifle/emp_act(severity)
 	..(max(severity, 2)) //so it doesn't EMP itself, I guess
@@ -43,6 +44,7 @@
 	one_hand_penalty = 25 //Ye they can but it can be unwhieldy
 	twohanded = FALSE
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
+	serial_type = "SD GmbH"
 
 /obj/item/gun/energy/ionpistol/emp_act(severity)
 	..(max(severity, 2)) //so it doesn't EMP itself, I guess

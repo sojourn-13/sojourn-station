@@ -18,6 +18,7 @@
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	can_dual = TRUE
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/revolver/rev10/update_icon()
 	..()
@@ -55,6 +56,7 @@
 	one_hand_penalty = 6
 	zoom_factor = 0
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/revolver/rev10/rex10/showdown
 	name = "\"Showdown\" kurtz revolver"
@@ -72,3 +74,4 @@
 	recoil_buildup = 5
 	one_hand_penalty = 8
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_50, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	serial_type = "SA" //Hand made good old gun I guess?

@@ -18,6 +18,7 @@
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/revolver/sixshot/sawn
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	serial_type = "SA"
 
 /obj/item/gun/projectile/revolver/sixshot/conversion
 	name = "\"Ten-Shot\" conversion shotgun"
@@ -31,6 +32,7 @@
 	recoil_buildup = 12 // Added weight for better control.
 	one_hand_penalty = 50 // But now its unwieldy as fuck. -Kaz
 	saw_off = FALSE
+	serial_type = "AG"
 
 /obj/item/gun/projectile/revolver/sixshot/update_icon()
 	var/iconstring = initial(icon_state)

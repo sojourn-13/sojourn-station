@@ -16,6 +16,7 @@
 	one_hand_penalty = 14
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/gladstone/sawn
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/shotgun/pump/gladstone/sawn
 	name = "\"Gladstone\" stakeout shotgun"
@@ -52,3 +53,4 @@
 	recoil_buildup = 12
 	one_hand_penalty = 30 //lets not really reward 1 handing
 	saw_off = FALSE
+	serial_type = "BlueCross"

@@ -104,7 +104,7 @@ default behaviour is:
 				now_pushing = FALSE
 				return
 
-			tmob.LAssailant = src
+			tmob.LAssailant_weakref = WEAKREF(src)
 
 		now_pushing = FALSE
 		spawn(0)
@@ -819,9 +819,9 @@ default behaviour is:
 		// them, so don't bother checking that explicitly.
 
 		if(!iscarbon(src))
-			M.LAssailant = null
+			M.LAssailant_weakref = null
 		else
-			M.LAssailant = usr
+			M.LAssailant_weakref = WEAKREF(usr)
 
 	else if(isobj(AM))
 		var/obj/I = AM
@@ -883,6 +883,10 @@ default behaviour is:
 /mob/living/Destroy()
 	qdel(stats)
 	stats = null
+
+	unnatural_mutations.holder = null //causes a GC failure if we qdel-and it seems its not SUPPOSED to qdel, oddly
+
+	update_z(null)
 	return ..()
 
 /mob/living/proc/vomit()

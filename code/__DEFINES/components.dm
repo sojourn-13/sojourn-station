@@ -49,6 +49,9 @@
 #define COMSIG_RITUAL "ritual"
 #define COMSIG_TRANSATION "transation"          //from transfer_funds()
 
+// /datum/mecha signals
+#define COMSIG_HUD_DELETED "hud_deleted"
+
 // /atom signals
 #define COMSIG_EXAMINE "examine"								//from atom/examine(): (mob/user, distance)
 #define COMSIG_ATOM_UPDATE_OVERLAYS "atom_update_overlays"  //update_overlays()

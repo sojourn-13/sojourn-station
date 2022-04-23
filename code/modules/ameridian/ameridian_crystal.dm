@@ -9,7 +9,7 @@
 	light_color = COLOR_LIGHTING_GREEN_BRIGHT
 
 	var/growth // the growth level of the crystal. The higher it is, the older the crystal is.
-	var/max_growth = GROWTH_HUGE // Maximum growth level, in case we want to do stuff relative to size
+	var/max_growth = 5 // Maximum growth level, in case we want to do stuff relative to size
 	var/growth_prob = 1 // The % of chance for the crystal to grow every tickv
 	var/blue_crystal_prob = 5 // % chance of spawning a blue crystal instead of a green one when spreading
 	var/spread_range = 1 // Radius that the crystal can spawn new crystals.
@@ -25,23 +25,22 @@
 /obj/structure/ameridian_crystal/Initialize(mapload, ...)
 	..()
 	START_PROCESSING(SSobj, src)
+	AddRadSource(src, rad_damage, rad_range)
 
 	// If the crystal was mapped in, spawn at full growth, else spawn as a seed.
 	if(!growth) // As long as we didn't manually set a growth level
 		if(mapload)
 			growth = max_growth
 		else
-			growth = GROWTH_SEED
+			growth = 1
 	golem_timer = 0 // Reset the timer
 	update_icon()
 
 /obj/structure/ameridian_crystal/Destroy()
 	..()
-	STOP_PROCESSING(SSturf, src)
+	STOP_PROCESSING(SSobj, src)
 
 /obj/structure/ameridian_crystal/Process()
-	irradiate()
-
 	if(prob(growth_prob))
 		handle_growth()
 		handle_duplicate_crystals()
@@ -78,13 +77,6 @@
 		Destroy()
 	else
 		..()
-
-// This proc is responsible for giving radiation damage to every nearby organics.
-/obj/structure/ameridian_crystal/proc/irradiate()
-	for(var/mob/living/l in range(src, rad_range))
-		if(issynthetic(l)) // Don't irradiate synths
-			continue
-		l.apply_effect(rad_damage, IRRADIATE)
 
 // This proc handle the growth & spread of the crystal
 /obj/structure/ameridian_crystal/proc/handle_growth()
@@ -148,7 +140,7 @@
 			var/sound/S = sound('sound/synthesized_instruments/chromatic/vibraphone1/c5.ogg')
 			for(var/mob/living/carbon/human/H in view(src))
 				if(H.stats.getPerk(PERK_PSION))
-					to_chat(H, "<b><font color='purple'>[src] chimes.</b></font>")
+					to_chat(H, SPAN_PSION("[src] chimes."))
 					H.playsound_local(get_turf(src), S, 50) // Only psionics can hear that
 
 			sleep((S.len + 1) SECONDS) // Wait until the sound is done, we're using S.len in case the sound change for another with a different duration. We add a second to give a slightly longer warning time.
