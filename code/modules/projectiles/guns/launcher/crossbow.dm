@@ -75,6 +75,9 @@
 		return chambered.BB
 
 
+/obj/item/gun/projectile/crossbow/loadAmmoBestGuess()
+	return
+
 /obj/item/gun/projectile/crossbow/handle_post_fire(mob/user, atom/target)
 	tension = 0
 	update_icon()
@@ -133,7 +136,7 @@
 			superheat_rod(user)
 
 
-	if(istype(I, /obj/item/cell/large))
+	else if(istype(I, /obj/item/cell/large))
 		if(!cell)
 			insert_item(I, user)
 			cell = I
@@ -256,10 +259,9 @@
 	else
 		icon_state = "rxb"
 
-/obj/item/gun/projectile/crossbow/RCD/examine(var/user)
-	. = ..()
-	if(.)
-		to_chat(user, "It currently holds [stored_matter]/[max_stored_matter] matter-units.")
+/obj/item/gun/projectile/crossbow/RCD/examine(mob/user)
+	..()
+	to_chat(user, "It currently holds [stored_matter]/[max_stored_matter] matter-units.")
 
 
 /obj/item/gun/projectile/crossbow/RCD/industrial

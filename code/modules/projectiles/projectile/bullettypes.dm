@@ -760,9 +760,10 @@
 	var/obj/item/create_type = /obj/item/stack/rods
 
 /obj/item/projectile/bullet/rod_bolt/on_impact(atom/A)
+	..()
 	if(create_type)
 		new create_type(get_turf(src))
-	..()
+
 
 /obj/item/projectile/bullet/rod_bolt/superheated
 	name = "superheated metal rod"
