@@ -27,7 +27,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 /mob/living/carbon/superior_animal/termite
 	name = "termite"
 	desc = "A termite, the earth and wood eaters of the colony. Hide your hard-wood kitchen floors and nick-nacks!"
-	icon = 'icons/mob/40x40.dmi'
+	icon = 'icons/mob/40x40.dmi' // Sprites made by Polyushko#0323
 	icon_state = "rabochiy_termite"
 	speak_emote = list("clicks")
 	emote_see = list("rubs its legs")
@@ -132,7 +132,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 /mob/living/carbon/superior_animal/termite/iron
 	name = "worker termite"
 	desc = "A termite that does the hard labor and odd-jobs around its colony. Jeez.. even termites have assistants."
-	icon_state = "rabochiy_termite"
+	icon_state = "rabochiy_termite" // Sprites made by Polyushko#0323
 	icon_dead = "rabochiy_gore"
 	projectilesound = 'sound/effects/creatures/acid_spit.ogg'
 	projectiletype = /obj/item/projectile/goo
@@ -160,7 +160,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 /mob/living/carbon/superior_animal/termite/silver
 	name = "warrior termite"
 	desc = "A larger, scarier termite for when trouble abrews."
-	icon_state = "pekhota_termite"
+	icon_state = "pekhota_termite" // Sprites made by Polyushko#0323
 	icon_dead = "pekhota_gore"
 
 //Health related variables
@@ -186,7 +186,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 /mob/living/carbon/superior_animal/termite/uranium
 	name = "miner termite"
 	desc = "A miner termite that has been hardened by the very surface beneath your feet."
-	icon_state = "smertnik_termite"
+	icon_state = "smertnik_termite" // Sprites made by Polyushko#0323
 	icon_dead = "smertnik_gore"
 	ranged = TRUE
 	comfy_range = 6 //How far we like to be form are targets when we fire!
@@ -216,7 +216,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 /mob/living/carbon/superior_animal/termite/plasma
 	name = "warrior termite"
 	desc = "A larger, scarier termite for when trouble abrews."
-	icon_state = "pushka_termite"
+	icon_state = "pushka_termite" // Sprites made by Polyushko#0323
 	icon_dead = "pushka_gore"
 
 //Health related variables
@@ -242,7 +242,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 /mob/living/carbon/superior_animal/termite/diamond
 	name = "termite crusher"
 	desc = "A huge termite that specializes in crushing rocks. And heads."
-	icon = 'icons/mob/mobs-termite.dmi'
+	icon = 'icons/mob/mobs-termite.dmi' // Sprites made by Polyushko#0323
 	icon_state = "koroleva_termite"
 	icon_dead = "koroleva_gore"
 
@@ -269,7 +269,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 /mob/living/carbon/superior_animal/termite/osmium
 	name = "termite king"
 	desc = "A king termite ready to defend and slay for his queen."
-	icon = 'icons/mob/mobs-termite.dmi'
+	icon = 'icons/mob/mobs-termite.dmi' // Sprites made by Polyushko#0323
 	icon_state = "koroleva_termite"
 	icon_dead = "koroleva_gore"
 	comfy_range = 6 //How far we like to be form are targets when we fire!
