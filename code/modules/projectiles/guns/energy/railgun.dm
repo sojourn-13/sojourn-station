@@ -202,8 +202,8 @@
 	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt,
 							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst)
 
-	//Until blacklisting works, this will be the supliment. You get one attachment - use it wisely. - Rebel0
-	max_upgrades = 2
+	//Until blacklisting works, this will be the supliment. You get three attachments - them it wisely. - Rebel0
+	max_upgrades = 3
 
 /obj/item/gun/energy/laser/railgun/gauss/Initialize()
 	..()
