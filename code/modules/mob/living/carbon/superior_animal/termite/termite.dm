@@ -42,6 +42,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 	destroy_surroundings = TRUE
 	friendly_to_colony = FALSE
+	colony_friend = FALSE
 	// Damage multiplier when destroying surroundings
 	var/surrounds_mult = 0.5
 
