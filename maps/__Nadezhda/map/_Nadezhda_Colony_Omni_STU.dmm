@@ -31172,6 +31172,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"gJl" = (
+/obj/machinery/floodlight,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/colony)
 "gJt" = (
 /obj/structure/table/rack,
 /obj/random/gun_cheap,
@@ -37455,9 +37459,6 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/barracks)
 "igg" = (
-/obj/machinery/newscaster{
-	pixel_y = -34
-	},
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 9;
@@ -44092,6 +44093,10 @@
 	name = "East APC";
 	pixel_x = 28;
 	pixel_y = 0
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai_upload)
@@ -64183,6 +64188,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/guestpass{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/bridgebar)
 "nJY" = (
@@ -67499,6 +67508,11 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/nadezhda/engineering/engine_room)
 "owa" = (
@@ -68369,6 +68383,10 @@
 	icon_state = "term"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
 "oEr" = (
@@ -71550,9 +71568,11 @@
 /area/nadezhda/medical/psych)
 "ppN" = (
 /obj/item/toy/junk/spinningtoy,
+/obj/structure/invislight,
 /turf/simulated/floor/holofloor/space{
 	layer = 1
-	})
+	},
+/area/space)
 "ppR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
@@ -82103,7 +82123,8 @@
 "ryP" = (
 /obj/machinery/door/unpowered/simple/wood/saloon{
 	name = "Gardener's Bedroom";
-	req_access = list(35)
+	req_access = list(35);
+	use_power = 0
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/colony)
@@ -88724,6 +88745,12 @@
 /obj/effect/floor_decal/industrial/warningwhite,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
+"sVL" = (
+/obj/effect/meteor,
+/turf/simulated/floor/holofloor/space{
+	layer = 1
+	},
+/area/space)
 "sVT" = (
 /obj/item/reagent_containers/food/snacks/stewedsoymeat{
 	desc = "Purrfect for any feline dinning!";
@@ -97868,6 +97895,12 @@
 /area/nadezhda/rnd/circuitlab{
 	name = "Science Expedition prep"
 	})
+"uSI" = (
+/obj/structure/invislight,
+/turf/simulated/floor/holofloor/space{
+	layer = 1
+	},
+/area/space)
 "uSK" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 30
@@ -165098,7 +165131,7 @@ iak
 ruI
 tUB
 hJX
-hJX
+uSI
 oyV
 ldQ
 xGi
@@ -165301,7 +165334,7 @@ ryM
 iuN
 hJX
 oyV
-hJX
+sVL
 ldQ
 xGi
 sFI
@@ -174407,7 +174440,7 @@ sFI
 sFI
 xdf
 xdf
-vHf
+gJl
 sFI
 sFI
 sFI
