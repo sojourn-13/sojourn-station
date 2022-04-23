@@ -20,7 +20,7 @@
 	health = 1000
 	var/active = 0
 	var/list/resource_field = list()
-	/var/datum/termite_controller/TC
+	var/datum/termite_controller/TC
 	var/last_use = 0.0
 
 	var/ore_types = list(
