@@ -15,8 +15,8 @@
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 6, TECH_ENGINEERING = 6)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10)
-	charge_cost = 500
-	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+	charge_cost = 1000
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
 	suitable_cell = /obj/item/cell/large
 	one_hand_penalty = 10
 	fire_delay = 14 //Slow, on par with a shotgun pump then fire
@@ -202,7 +202,7 @@
 	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt,
 							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst)
 
-	//Until blacklisting works, this will be the supliment. You get one attachment - use it wisely....... - Rebel0
+	//Until blacklisting works, this will be the supliment. You get one attachment - use it wisely. - Rebel0
 	max_upgrades = 2
 
 /obj/item/gun/energy/laser/railgun/gauss/Initialize()
