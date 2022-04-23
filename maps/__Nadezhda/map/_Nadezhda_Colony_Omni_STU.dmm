@@ -44062,6 +44062,11 @@
 	pixel_x = 28;
 	pixel_y = 0
 	},
+/obj/structure/cable/yellow{
+	d2 = 4;
+	dir = 1;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai_upload)
 "jAU" = (
@@ -58847,8 +58852,8 @@
 /area/nadezhda/medical/sleeper)
 "mDu" = (
 /obj/machinery/door/unpowered/simple/wood/saloon{
-	name = "Gardener's Bedroom";
-	req_access = list(35)
+	desc = "A wooden door weighted to always fall closed if left open.";
+	name = "Gardener's Bedroom"
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/colony)
@@ -67456,6 +67461,11 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/nadezhda/engineering/engine_room)
 "owa" = (
@@ -68333,6 +68343,11 @@
 	icon_state = "term"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	dir = 1;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
 "oEr" = (
@@ -69615,6 +69630,10 @@
 "oSq" = (
 /turf/simulated/mineral,
 /area/nadezhda/dungeon/outside/trashcave)
+"oSu" = (
+/obj/machinery/floodlight,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/colony)
 "oSD" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
@@ -174368,7 +174387,7 @@ sFI
 sFI
 xdf
 xdf
-vHf
+oSu
 sFI
 sFI
 sFI
