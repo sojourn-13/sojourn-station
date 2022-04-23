@@ -52,9 +52,11 @@
 		banana_time = world.time + rand(30,60)
 
 /mob/living/simple_animal/hostile/retaliate/clown/AttackingTarget()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	. = ..()
-	if(attack_reagent && . && isliving(target_mob))
-		var/mob/living/L = target_mob
+	if(attack_reagent && . && isliving(targetted_mob))
+		var/mob/living/L = targetted_mob
 		if(L.reagents)
 			L.reagents.add_reagent(attack_reagent, rand(1,5))
 

@@ -122,8 +122,10 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/proc/speak()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	if(!client && speak_chance && prob(speak_chance) && speak.len)
-		if(target_mob && target_speak.len)
+		if(targetted_mob && target_speak.len)
 			say(pick(target_speak))
 		else
 			say(pick(speak))
@@ -371,8 +373,10 @@
 
 /mob/living/simple_animal/hostile/hivemind/lobber/Life()
 	. = ..()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 //checks if cooldown is over and is targeting mob, if so, activates special ability
-	if(target_mob && world.time > special_ability_cooldown)
+	if(targetted_mob && world.time > special_ability_cooldown)
 		special_ability()
 
 
@@ -449,7 +453,12 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/hiborg/AttackingTarget()
-	if(!Adjacent(target_mob))
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
+	if (isnull(targetted_mob))
+		return
+
+	if(!Adjacent(targetted_mob))
 		return
 
 	//special attacks
@@ -474,8 +483,13 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/hiborg/proc/stun_with_claw()
-	if(isliving(target_mob))
-		var/mob/living/victim = target_mob
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
+	if (isnull(targetted_mob))
+		return
+
+	if(isliving(targetted_mob))
+		var/mob/living/victim = targetted_mob
 		victim.Weaken(5) //decent-length stun
 		src.visible_message(SPAN_WARNING("[src] pins [victim] to the floor with its claw!"))
 		if(!client && prob(speak_chance))
@@ -533,8 +547,10 @@
 /mob/living/simple_animal/hostile/hivemind/himan/Life()
 	. = ..()
 
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	//shriek
-	if(target_mob && !fake_dead && world.time > special_ability_cooldown)
+	if(targetted_mob && !fake_dead && world.time > special_ability_cooldown)
 		special_ability()
 
 
@@ -562,18 +578,27 @@
 	if(!fake_dead)
 		..()
 	else
-		if(!target_mob || SA_attackable(target_mob))
+
+		var/mob/living/targetted_mob = (target_mob?.resolve())
+
+		if(!targetted_mob || SA_attackable(targetted_mob))
 			stance = HOSTILE_STANCE_IDLE
-		if(target_mob in ListTargets(10))
-			if(get_dist(src, target_mob) > 1)
+		if(targetted_mob in ListTargets(10))
+			if(get_dist(src, targetted_mob) > 1)
 				stance = HOSTILE_STANCE_ATTACKING
 
 
 /mob/living/simple_animal/hostile/hivemind/himan/AttackingTarget()
 	if(fake_dead)
-		if(!Adjacent(target_mob))
+
+		var/mob/living/targetted_mob = (target_mob?.resolve())
+
+		if (isnull(targetted_mob))
 			return
-		if(target_mob && (world.time > fake_dead_wait_time))
+
+		if(!Adjacent(targetted_mob))
+			return
+		if(targetted_mob && (world.time > fake_dead_wait_time))
 			awake()
 	else
 		..()
@@ -608,7 +633,9 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/himan/proc/awake()
-	var/mob/living/L = target_mob
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
+	var/mob/living/L = targetted_mob
 	if(L)
 		L.attack_generic(src, rand(15, 25)) //stealth attack
 		L.Weaken(5)
@@ -710,8 +737,10 @@
 		playsound(src, 'sound/effects/clang.ogg', 70, 1)
 
 
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	//corpse ressurection
-	if(!target_mob && !passenger)
+	if(!targetted_mob && !passenger) //may break on null
 		for(var/mob/living/Corpse in view(src))
 			if(Corpse.stat == DEAD)
 				if(get_dist(src, Corpse) <= 1)
@@ -724,7 +753,10 @@
 /mob/living/simple_animal/hostile/hivemind/mechiver/speak()
 	if(!client && prob(speak_chance) && speak.len)
 		if(pilot)
-			if(target_mob)
+
+			var/mob/living/targetted_mob = (target_mob?.resolve())
+
+			if(targetted_mob)
 				visible_message("<b>[name]'s pilot</b> says, [pick(pilot_target_speak)]")
 				say(pick(common_answers))
 			else
@@ -737,7 +769,10 @@
 //animations
 //updates every life tick
 /mob/living/simple_animal/hostile/hivemind/mechiver/update_icon()
-	if(target_mob && !passenger && (get_dist(target_mob, src) <= 4) && !is_on_cooldown())
+
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
+	if(targetted_mob && !passenger && (get_dist(targetted_mob, src) <= 4) && !is_on_cooldown())
 		if(!hatch_closed)
 			return
 		cut_overlays()
@@ -759,18 +794,23 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/mechiver/AttackingTarget()
-	if(!Adjacent(target_mob))
+
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
+	if(!Adjacent(targetted_mob))
 		return
 
 	if(world.time > special_ability_cooldown && !passenger)
-		special_ability(target_mob)
+		special_ability(targetted_mob)
 
 	..()
 
 
 //picking up our victim for good 20 seconds of best road trip ever
 /mob/living/simple_animal/hostile/hivemind/mechiver/special_ability(mob/living/target)
-	if(!target_mob && hatch_closed) //when we picking up corpses
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
+	if(!targetted_mob && hatch_closed) //when we picking up corpses
 		if(pilot)
 			flick("mechiver-opening", src)
 		else
@@ -882,13 +922,15 @@
 	stop_automated_movement = TRUE
 	. = ..()
 
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	//special ability using
 	if(world.time > special_ability_cooldown && can_use_special_ability)
-		if(target_mob && (health <= 120))
+		if(targetted_mob && (health <= 120))
 			special_ability()
 
 	//closet hiding
-	if(!target_mob)
+	if(!targetted_mob)
 		var/obj/structure/closet/C = locate() in get_turf(src)
 		if(C && loc != C)
 			if(!C.opened)
@@ -902,18 +944,22 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/phaser/AttackTarget()
-	if(target_mob && get_dist(src, target_mob) > 1)
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
+	if(targetted_mob && get_dist(src, targetted_mob) > 1)
 		stance = HOSTILE_STANCE_ATTACK
 	..()
 
 
 /mob/living/simple_animal/hostile/hivemind/phaser/MoveToTarget()
-	if(!target_mob || SA_attackable(target_mob))
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
+	if(!targetted_mob || SA_attackable(targetted_mob))
 		stance = HOSTILE_STANCE_IDLE
-	if(target_mob in ListTargets(10))
-		if(get_dist(src, target_mob) > 1)
+	if(targetted_mob in ListTargets(10))
+		if(get_dist(src, targetted_mob) > 1)
 			stance = HOSTILE_STANCE_ATTACK
-			phase_move_to(target_mob, nearby = TRUE)
+			phase_move_to(targetted_mob, nearby = TRUE)
 		else
 			stance = HOSTILE_STANCE_ATTACKING
 

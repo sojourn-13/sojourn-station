@@ -94,11 +94,11 @@
 	desc = "You feel like this helmet is cheap, for some reason."
 	build_path = /obj/item/clothing/head/helmet/soteriasuit
 
-/datum/design/research/item/paramedic_armor
+/datum/design/research/item/clothing/paramedic_armor
 	name = "Paramedic armor"
 	build_path = /obj/item/clothing/suit/armor/paramedic
 
-/datum/design/research/item/paramedic_helmet
+/datum/design/research/item/clothing/paramedic_helmet
 	name = "Advanced paramedic helmet"
 	build_path = /obj/item/clothing/head/helmet/faceshield/paramedic
 

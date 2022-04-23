@@ -22,6 +22,7 @@
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND
 		)
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/glock/update_icon()
 	..()

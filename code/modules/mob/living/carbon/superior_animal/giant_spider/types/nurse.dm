@@ -134,8 +134,11 @@
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/UnarmedAttack()
 	..()
-	if(ishuman(target_mob))
-		var/mob/living/carbon/human/H = target_mob
+
+	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if(ishuman(targetted_mob))
+		var/mob/living/carbon/human/H = targetted_mob
 		if(prob(egg_inject_chance))
 			var/obj/item/organ/external/O = safepick(H.organs)
 			if(O && !BP_IS_ROBOTIC(O))

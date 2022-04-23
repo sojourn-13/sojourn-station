@@ -33,19 +33,29 @@
 	return safepick(nearestObjectsInList(filteredTargets, src, acceptableTargetDistance))
 
 /mob/living/carbon/superior_animal/proc/attemptAttackOnTarget()
-	if (!Adjacent(target_mob))
+	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if(isnull(targetted_mob))
 		return
 
-	return UnarmedAttack(target_mob,1)
+	if (!Adjacent(targetted_mob))
+		return
+
+	return UnarmedAttack(targetted_mob,1)
 
 /mob/living/carbon/superior_animal/proc/prepareAttackOnTarget()
+	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if (isnull(targetted_mob))
+		return
+
 	stop_automated_movement = 1
 
-	if (!target_mob || !isValidAttackTarget(target_mob))
+	if (!(targetted_mob) || !isValidAttackTarget(targetted_mob))
 		loseTarget()
 		return
 
-	if ((get_dist(src, target_mob) >= viewRange) || src.z != target_mob.z && !istype(target_mob, /obj/mecha))
+	if ((get_dist(src, targetted_mob) >= viewRange) || src.z != targetted_mob.z && !istype(targetted_mob, /obj/mecha))
 		loseTarget()
 		return
 

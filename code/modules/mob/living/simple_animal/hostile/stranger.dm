@@ -59,12 +59,14 @@
 	qdel(src)
 
 /mob/living/simple_animal/hostile/stranger/attack_generic(mob/user, damage, attack_message)
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	if(!damage || !istype(user))
 		return FALSE
 	if(prob(prob_tele))
 		var/source = src
-		if(target_mob)
-			source = target_mob
+		if(targetted_mob)
+			source = targetted_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 4, 2)
 		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
@@ -72,10 +74,12 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/stranger/attackby(obj/item/W, mob/user, params)
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	if(prob(prob_tele))
 		var/source = src
-		if(target_mob)
-			source = target_mob
+		if(targetted_mob)
+			source = targetted_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 4, 2)
 		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
@@ -83,10 +87,12 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/stranger/attack_hand(mob/living/carbon/M)
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	if(M.a_intent != I_HELP && prob(prob_tele))
 		var/source = src
-		if(target_mob)
-			source = target_mob
+		if(targetted_mob)
+			source = targetted_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 4, 2)
 		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
@@ -94,10 +100,12 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/stranger/bullet_act(obj/item/projectile/P, def_zone)
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	if(prob(prob_tele))
 		var/source = src
-		if(target_mob)
-			source = target_mob
+		if(targetted_mob)
+			source = targetted_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 4, 2)
 		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
@@ -105,11 +113,13 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/stranger/Life()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	. = ..()
 	if(. && prob(prob_tele/2))
 		var/source = src
-		if(target_mob)
-			source = target_mob
+		if(targetted_mob)
+			source = targetted_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 4, 2)
 		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
@@ -136,6 +146,8 @@
 		list(mode_name="XhddhrdJkJ", mode_desc="uDsfMdPQkm", burst=1, projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/unknown_spacegun_incinerate.ogg', fire_delay=15, move_delay=null, charge_cost=9,  icon="destroy",  projectile_color = "#FFFFFF"),
 		list(mode_name="bP6hfnj3Js", mode_desc="AhG8GjobYa", burst=3, projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/unknown_spacegun_vaporize.ogg',   fire_delay=5,  move_delay=4,    charge_cost=11, icon="vaporize", projectile_color = "#FFFFFF", recoil_buildup=3)
 	)
+	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/energy/plasma/stranger/update_icon(ignore_inhands)
 	if(charge_meter)

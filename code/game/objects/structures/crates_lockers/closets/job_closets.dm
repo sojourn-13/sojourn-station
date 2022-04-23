@@ -47,6 +47,11 @@
 	new /obj/item/storage/box/mousetraps(src)
 	new /obj/item/clothing/under/rank/chef(src)
 	new /obj/item/clothing/head/rank/chef(src)
+	new /obj/item/clothing/shoes/laceup(src)
+	new /obj/item/clothing/shoes/laceup/white(src)
+	new /obj/item/clothing/under/helltaker_m(src)
+	new /obj/item/clothing/under/helltaker(src)
+	new /obj/item/clothing/suit/storage/helltaker_apron(src)
 
 /*
  * Janitor

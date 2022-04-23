@@ -38,6 +38,9 @@
 	var/disabled = FALSE
 	var/shocked = FALSE
 
+	var/auto_input //Are we automatically inputting?
+	var/turf/auto_in_turf
+
 	var/working = FALSE
 	var/paused = FALSE
 	var/error
@@ -57,7 +60,7 @@
 	var/have_disk = TRUE
 	var/have_reagents = TRUE
 	var/have_materials = TRUE
-	var/have_recycling = FALSE
+	var/have_recycling = FALSE //Also dictates auto-input
 	var/have_design_selector = TRUE
 
 	var/list/unsuitable_materials = list(MATERIAL_BIOMATTER)
@@ -87,6 +90,7 @@
 
 	if(have_disk && default_disk)
 		disk = new default_disk(src)
+	auto_in_turf = get_step(get_turf(src), dir)
 
 /obj/machinery/autolathe/Destroy()
 	QDEL_NULL(wires)
@@ -467,8 +471,25 @@
 		return
 	if(!in_range(src, user))
 		return
-	src.eject_disk(user)
+	eject_disk(user)
 
+
+/obj/machinery/autolathe/CtrlClick(mob/living/user)
+	..() //comsig
+	if(!have_recycling)
+		to_chat(user, SPAN_NOTICE("[src] does not support automatic sheet loading!"))
+		return
+	auto_input = !auto_input
+	to_chat(user, SPAN_NOTICE("[src] is now [auto_input ? "" : "no longer"] automatically loading."))
+
+/obj/machinery/autolathe/CtrlShiftClick(mob/living/user)
+	..()
+	if(user.incapacitated())
+		to_chat(user, SPAN_WARNING("You can't do that right now!"))
+		return
+	src.set_dir(turn(src.dir, 90))
+	to_chat(user, SPAN_NOTICE("You rotate the [src]! Now it faces [dir2text(dir)]."))
+	auto_in_turf = get_step(get_turf(src), dir)
 
 /obj/machinery/autolathe/proc/eat(mob/living/user, obj/item/eating)
 	if(!eating && istype(user))
@@ -590,6 +611,89 @@
 		to_chat(user, SPAN_NOTICE("Some liquid flowed to \the [container]."))
 	else if(reagents_filltype == 2)
 		to_chat(user, SPAN_NOTICE("Some liquid flowed to the floor from \the [src]."))
+
+
+
+/obj/machinery/autolathe/proc/eat_stack_only(obj/item/stack/material/eating)
+	var/filltype = 0       // Used to determine message.
+	var/reagents_filltype = 0
+	var/total_used = 0     // Amount of material used.
+	var/mass_per_sheet = 0 // Amount of material constituting one sheet.
+
+	var/list/total_material_gained = list()
+
+	for(var/obj/O in eating.GetAllContents(includeSelf = TRUE))
+		var/obj/item/stack/material/stack = O
+		var/list/_matter = O.get_matter()
+		if(_matter)
+			for(var/material in _matter)
+				if(material in unsuitable_materials)
+					continue
+
+				if(suitable_materials)
+					if(!(material in suitable_materials))
+						continue
+
+				if(!(material in stored_material))
+					stored_material[material] = 0
+
+				if(!(material in total_material_gained))
+					total_material_gained[material] = 0
+
+				if(stored_material[material] + total_material_gained[material] >= storage_capacity)
+					continue
+
+				var/total_material = _matter[material]
+
+				total_material *= stack.get_amount()
+
+				if(stored_material[material] + total_material > storage_capacity)
+					total_material = storage_capacity - stored_material[material]
+					filltype = 1
+				else
+					filltype = 2
+
+				total_material_gained[material] += total_material
+				total_used += total_material
+				mass_per_sheet += O.matter[material]
+
+		if(O.matter_reagents)
+			if(container)
+				var/datum/reagents/RG = new(0)
+				for(var/r in O.matter_reagents)
+					RG.maximum_volume += O.matter_reagents[r]
+					RG.add_reagent(r ,O.matter_reagents[r])
+				reagents_filltype = 1
+				RG.trans_to(container, RG.total_volume)
+
+			else
+				reagents_filltype = 2
+
+		if(O.reagents && container)
+			O.reagents.trans_to(container, O.reagents.total_volume)
+
+	if(!filltype && !reagents_filltype)
+		return
+
+	// Determine what was the main material
+	var/main_material
+	var/main_material_amt = 0
+	for(var/material in total_material_gained)
+		stored_material[material] += total_material_gained[material]
+		if(total_material_gained[material] > main_material_amt)
+			main_material_amt = total_material_gained[material]
+			main_material = material
+
+
+	res_load(get_material_by_name(main_material)) // Play insertion animation.
+	var/obj/item/stack/eatstack = eating
+	var/used_sheets = min(eatstack.get_amount(), round(total_used/mass_per_sheet))
+
+
+	if(!eatstack.use(used_sheets))
+		qdel(eatstack)	// Protects against weirdness
+
+
 
 
 /obj/machinery/autolathe/proc/queue_design(datum/computer_file/binary/design/design_file, amount=1)
@@ -735,6 +839,13 @@
 	special_process()
 	update_icon()
 	SSnano.update_uis(src)
+	if(auto_input)
+		for(var/O in auto_in_turf)
+			if(!istype(O, /obj/item/stack/material))
+				continue
+			var/obj/item/stack/material/M = O
+			eat_stack_only(M)
+			visible_message(SPAN_NOTICE("[src]'s automatic feeder attempts to load [M]!"))
 
 
 /obj/machinery/autolathe/proc/consume_materials(datum/design/design)

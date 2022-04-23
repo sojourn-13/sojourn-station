@@ -6,6 +6,10 @@
 	sort_category = "Suits and Overwear"
 	cost = 1
 
+/datum/gear/suit/hell_apron
+	display_name = "lonestar black apron"
+	path = /obj/item/clothing/suit/storage/helltaker_apron
+
 /datum/gear/suit/bunnysuit
 	display_name = "bunny suit"
 	path = /obj/item/clothing/suit/costume/kinky/alyson
@@ -108,6 +112,11 @@
 	path = /obj/item/clothing/suit/storage/puffer
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/suit/dresscoat
+	display_name = "dresscoat selection"
+	path = /obj/item/clothing/suit/storage/vic_dresscoat
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/suit/snowsuit
 	display_name = "snowsuit"
 	path = /obj/item/clothing/suit/storage/snowsuit
@@ -122,7 +131,7 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/suit/modular
-	display_name = "modular jacket selection"
+	display_name = "suit jacket selection"
 	path = /obj/item/clothing/suit/storage/suitjacket
 	flags = GEAR_HAS_TYPE_SELECTION
 

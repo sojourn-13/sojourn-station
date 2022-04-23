@@ -19,6 +19,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
 	reload_sound 	= 'sound/weapons/guns/interact/reload_silver.ogg'
 	fire_sound = 'sound/weapons/guns/fire/fire_silver.ogg'
+	serial_type = "NM"
 
 /obj/item/gun/projectile/silvereye/update_icon()
 	..()

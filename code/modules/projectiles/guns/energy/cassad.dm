@@ -22,4 +22,5 @@
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 	twohanded = TRUE
 	can_dual = FALSE
+	serial_type = "H&S"
 

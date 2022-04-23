@@ -26,6 +26,7 @@
 		list(mode_name="impact", mode_desc="A relatively light plasma round that knocks people back", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', fire_delay=25, icon="kill", projectile_color = "#FF0000"),
 	)
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
+	serial_type = "Absolute"
 
 /obj/item/gun/energy/plasma/mounted
 	self_recharge = TRUE
@@ -41,6 +42,7 @@
 	desc = "A miniaturized plasma rifle, remounted for robotic use only."
 	icon_state = "plasma_turret"
 	charge_meter = FALSE
+	serial_type = "GP"
 
 /obj/item/gun/energy/plasma/destroyer
 	name = "\"Purger\" plasma rifle"
@@ -103,6 +105,7 @@
 	twohanded = FALSE
 	can_dual = TRUE
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
+	serial_type = "SI"
 
 	var/explode_chance // the % of chance the gun has to explode each time it is fired without coolant. It is random between each gun.
 	var/explode_chance_min = 5 // The mininum of explode_chance

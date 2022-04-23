@@ -17,6 +17,7 @@
 	one_hand_penalty = 15 //full sized shotgun level
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/combat/sawn
+	serial_type = "Absolute"
 
 /obj/item/gun/projectile/shotgun/pump/combat/sawn
 	name = "\"Regulator\" stakeout shotgun"

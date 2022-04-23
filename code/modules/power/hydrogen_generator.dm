@@ -176,7 +176,7 @@
 /obj/machinery/power/hydrogen_gen/proc/handle_ui()
 	var/dat = ""
 	dat += "<head><title>Hydrogen Generator</title></head>"
-	dat += "Liquid Ameridian Processor<BR>"
+	dat += "Hydrogen Generator<BR>"
 	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
 	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
 

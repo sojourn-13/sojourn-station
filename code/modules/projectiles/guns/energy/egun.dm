@@ -21,6 +21,7 @@
 		LETHAL,
 		WEAPON_CHARGE,
 		)
+	serial_type = "H&S"
 
 /obj/item/gun/energy/gun/mounted
 	name = "mounted energy gun"
@@ -101,3 +102,4 @@
 	twohanded = FALSE
 	suitable_cell = /obj/item/cell/small
 	cell_type = /obj/item/cell/small
+	serial_type = "Absolute"

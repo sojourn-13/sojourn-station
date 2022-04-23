@@ -19,6 +19,7 @@
 		BURST_2_ROUND
 	)
 	twohanded = TRUE
+	serial_type = "GP"
 
 /obj/item/gun/energy/cog/gear
 	name = "\"Gear\" lasgun"
@@ -30,3 +31,4 @@
 		list(mode_name="stun", mode_desc="fires a concentrated stun beam", projectile_type=/obj/item/projectile/beam/stun, charge_cost = 50, icon="stun", fire_sound='sound/weapons/Taser3.ogg'),
 		list(mode_name="lethal", mode_desc="fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/Laser4.ogg')
 	)
+	serial_type = "GP"

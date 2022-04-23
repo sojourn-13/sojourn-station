@@ -11,26 +11,27 @@
 	internal_damage_threshold = 35
 	deflect_chance = 15
 	step_energy_drain = 1
-	var/obj/item/clothing/glasses/hud/health/mech/hud
 	max_equip = 5
 	cargo_capacity = 1
-
 
 /obj/mecha/medical/odysseus/Initialize()
 	. = ..()
 	hud = new /obj/item/clothing/glasses/hud/health/mech(src)
+	RegisterSignal(hud, COMSIG_HUD_DELETED, .proc/hud_deleted)
 
 /obj/mecha/medical/odysseus/Destroy()
-	QDEL_NULL(hud)
+	if (hud)
+		QDEL_NULL(hud)
 	return ..()
 
 /obj/mecha/medical/odysseus/moved_inside(mob/living/carbon/human/H)
 	if(..())
 		if(istype(H))
-			if(H.glasses)
-				occupant_message(SPAN_WARNING("[H.glasses] prevent you from using [src] [hud]."))
-			else
-				H.glasses = hud
+			if (!isnull(hud))
+				if(H.glasses)
+					occupant_message(SPAN_WARNING("[H.glasses] prevent you from using [src] [hud]."))
+				else
+					H.glasses = hud
 		return 1
 	else
 		return 0
@@ -38,7 +39,7 @@
 /obj/mecha/medical/odysseus/go_out()
 	if(ishuman(occupant))
 		var/mob/living/carbon/human/H = occupant
-		if(H.glasses == hud)
+		if((H.glasses == hud) && (!isnull(hud)))
 			H.glasses = null
 	..()
 	return
@@ -48,6 +49,13 @@
 //TODO - Check documentation for client.eye and client.perspective...
 /obj/item/clothing/glasses/hud/health/mech
 	name = "integrated medical HUD"
+
+/obj/item/clothing/glasses/hud/health/mech/Destroy()
+
+	SEND_SIGNAL(src, COMSIG_HUD_DELETED, src)
+
+	. = ..()
+
 
 /obj/item/clothing/glasses/hud/health/mech/process_hud(var/mob/M)
 /*
@@ -62,8 +70,12 @@
 		to_chat(world, "[mob]")
 */
 
-	if(!M || M.stat || !(M in view(M)))	return
-	if(!M.client)	return
+	if (isnull(src))
+		return
+	if(!M || M.stat || !(M in view(M)))
+		return
+	if(!M.client)
+		return
 	var/client/C = M.client
 	var/image/holder
 	for(var/mob/living/carbon/human/patient in view(M.loc))

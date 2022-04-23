@@ -24,6 +24,7 @@
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/sawn
 	allow_racking = FALSE
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)

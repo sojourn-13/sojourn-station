@@ -26,6 +26,7 @@
 	gun_tags = list(GUN_SCOPE)
 	allow_racking = FALSE
 	auto_rack = TRUE //so if we get loaded were good
+	serial_type = "SA"
 
 /obj/item/gun/projectile/rpg/update_icon()
 	..()

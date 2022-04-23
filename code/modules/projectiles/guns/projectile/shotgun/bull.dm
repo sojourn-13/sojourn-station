@@ -31,6 +31,7 @@
 		list(mode_name="Single barrel", mode_desc="Shoots one barrel", burst=1, icon="semi"),
 		list(mode_name="Double barrel", mode_desc="Shoots both barrels at once", burst=2, icon="burst"),
 		)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/shotgun/bull/bison
 	name = "\"Bison\" shotgun"
@@ -46,6 +47,7 @@
 	penetration_multiplier = 0.85
 	one_hand_penalty = 14
 	recoil_buildup = 12
+	serial_type = "AG"
 
 
 /obj/item/gun/projectile/shotgun/bull/proc/pump(mob/M as mob)

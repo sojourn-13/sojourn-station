@@ -90,6 +90,7 @@
 	var/affective_ap_range = 50 //How far we can go before we start being negitively impacted, higher is a buffer
 
 	var/range_shot = 1 //How far we been shot so far. We start at 1 to prevent runtimes with deviding by 0
+	var/serial_type_index_bullet = ""
 
 /obj/item/projectile/is_hot()
 	if (damage_types[BURN])
