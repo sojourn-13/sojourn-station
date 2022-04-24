@@ -625,6 +625,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/bioprinter/nt_clothes/custodian_armor_helm,
 		/datum/design/bioprinter/nt_clothes/custodian_armor,
 		/datum/design/bioprinter/nt_clothes/NTvoid,
+		/datum/design/bioprinter/nt_clothes/knight_rig,
 		/datum/design/bioprinter/nt_clothes/hermes_shoes,
 		/datum/design/bioprinter/belt/security/neotheology,
 		//holsters

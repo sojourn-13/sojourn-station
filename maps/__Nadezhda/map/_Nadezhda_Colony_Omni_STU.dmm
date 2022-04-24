@@ -100127,6 +100127,7 @@
 /area/nadezhda/rnd/server)
 "vqG" = (
 /obj/machinery/optable/altar,
+/obj/item/rig/combat/knight/equipped,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
 "vqX" = (
