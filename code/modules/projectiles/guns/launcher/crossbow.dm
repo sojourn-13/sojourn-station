@@ -68,10 +68,12 @@
 	if(tension <= 0)
 		to_chat(user, SPAN_WARNING("\The [src] is not drawn back!"))
 		return null
+	new_damtypes = list()
 	if(chambered)
 		var/obj/item/projectile/bullet/theBB = chambered.BB
 		for(var/damage in theBB.damage_types)
-			theBB.damage_types[damage] = initial(theBB.damage_types[damage]) * tension
+			new_damtypes[damage] = theBB.damage_types[damage] * tension
+		chambered.bb.damage_types = new_damtypes
 		return chambered.BB
 
 
