@@ -745,7 +745,7 @@
 
 //Cross Bolt ammo
 /obj/item/ammo_casing/crossbow_bolts
-	name = "crossbaow bolt"
+	name = "crossbow bolt"
 	desc = "A finely made bolt designed for a crossbow."
 	icon_state = "bolt"
 	caliber = CAL_CROSSBOW
