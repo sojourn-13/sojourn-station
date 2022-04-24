@@ -72,9 +72,7 @@
 	var/list/new_damtypes = list()
 	if(chambered)
 		var/obj/item/projectile/bullet/theBB = chambered.BB
-		for(var/damage in theBB.damage_types)
-			new_damtypes[damage] = theBB.damage_types[damage] * tension
-		theBB.damage_types = new_damtypes
+		theBB.multiply_projectile_damage(tension)
 		return chambered.BB
 
 
