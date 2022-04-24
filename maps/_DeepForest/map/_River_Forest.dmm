@@ -945,7 +945,7 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "oO" = (
-/obj/item/gun/launcher/crossbow,
+/obj/item/gun/projectile/crossbow,
 /obj/structure/table/bench/padded,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
@@ -4250,7 +4250,7 @@
 /area/nadezhda/outside/forest/river_forest_light)
 "ZW" = (
 /obj/item/remains,
-/obj/item/gun/launcher/crossbow,
+/obj/item/gun/projectile/crossbow,
 /obj/item/clothing/under/gorka/camo,
 /obj/random/cloth/shoes,
 /obj/item/oddity/common/old_knife,

@@ -473,6 +473,8 @@
 	unlocks_designs = list(	/datum/design/research/item/storage,
 							/datum/design/research/item/ai_container,
 							/datum/design/research/item/rigjets,
+							/datum/design/research/item/riggrapple,
+							/datum/design/research/item/rig_clamp,
 							/datum/design/research/item/rigrcd
 							)
 
@@ -513,5 +515,3 @@
 
 	unlocks_designs = list("quadultra_micro_laser", "bluespace_matter_bin")
 */
-
-
