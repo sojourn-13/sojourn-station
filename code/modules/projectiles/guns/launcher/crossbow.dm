@@ -60,7 +60,7 @@
 	var/max_tension = 5                     // Highest possible tension.
 	cell = null    // Used for firing superheated rods.
 	var/current_user                        // Used to check if the crossbow has changed hands since being drawn.
-	var/draw_time = 20							// How long it takes to increase the draw on the bow by one "tension"
+	var/draw_time = 10							// How long it takes to increase the draw on the bow by one "tension"
 	serial_type = null //it's a handmade crossbow who's putting serials on it
 	var/superheat_cost = 250
 
@@ -68,12 +68,12 @@
 	if(tension <= 0)
 		to_chat(user, SPAN_WARNING("\The [src] is not drawn back!"))
 		return null
-	new_damtypes = list()
+	var/list/new_damtypes = list()
 	if(chambered)
 		var/obj/item/projectile/bullet/theBB = chambered.BB
 		for(var/damage in theBB.damage_types)
 			new_damtypes[damage] = theBB.damage_types[damage] * tension
-		chambered.bb.damage_types = new_damtypes
+		theBB.damage_types = new_damtypes
 		return chambered.BB
 
 
@@ -193,7 +193,7 @@
 	icon = 'icons/obj/guns/launcher/rxb.dmi'
 	icon_state = "rxb"
 	slot_flags = null
-	draw_time = 5
+	draw_time = 7.5
 	superheat_cost = 150 //guild design, more efficient or something
 	var/stored_matter = 0
 	var/max_stored_matter = 60
@@ -214,6 +214,14 @@
 /obj/item/gun/projectile/crossbow/RCD/attack_self(mob/living/user as mob)
 	if(tension)
 		user.visible_message("[user] relaxes the tension on [src]'s string.","You relax the tension on [src]'s string.")
+		if(chambered)
+			if((stored_matter + 5) > max_stored_matter)
+				to_chat(user, "<span class='notice'>Unable to reclaim flashforged bolt. The RXD can't hold that many additional matter-units.</span>")
+				new /obj/item/arrow/rcd(get_turf(src))
+				return
+			to_chat(user, "<span class='notice'>Reclaimed flashforged bolt.</span>")
+			QDEL_NULL(chambered)
+			stored_matter += 5
 		tension = 0
 		update_icon()
 	else
@@ -264,15 +272,3 @@
 /obj/item/gun/projectile/crossbow/RCD/examine(mob/user)
 	..()
 	to_chat(user, "It currently holds [stored_matter]/[max_stored_matter] matter-units.")
-
-
-/obj/item/gun/projectile/crossbow/RCD/industrial
-	name = "industrial rapid crossbow device"
-	desc = "A hacked together RCD turns an innocent construction tool into the penultimate 'deconstruction' tool. Flashforges projectiles using matter units when the string is drawn back."
-	icon = 'icons/obj/guns/launcher/rxb.dmi' //todo
-	icon_state = "rxb"
-	slot_flags = null
-	draw_time = 4
-	superheat_cost = 100 //guild design, more efficient or something
-	max_stored_matter = 120
-	boltcost = 2

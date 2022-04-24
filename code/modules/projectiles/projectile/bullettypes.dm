@@ -764,7 +764,6 @@
 	if(create_type)
 		new create_type(get_turf(src))
 
-
 /obj/item/projectile/bullet/rod_bolt/superheated
 	name = "superheated metal rod"
 	damage_types = list(BRUTE = 10, BURN = 2.5) //This is multiplied by tension when fired, so it's actually 62.5 damage.
