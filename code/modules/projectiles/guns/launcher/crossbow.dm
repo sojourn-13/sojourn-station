@@ -55,6 +55,7 @@
 	load_method = SINGLE_CASING
 	max_shells = 1
 	ammo_type = /obj/item/ammo_casing/rod_bolt
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
 	var/obj/item/projectile/superheat_type = /obj/item/projectile/bullet/rod_bolt/superheated
 	var/tension = 0                         // Current draw on the bow.
 	var/max_tension = 5                     // Highest possible tension.
