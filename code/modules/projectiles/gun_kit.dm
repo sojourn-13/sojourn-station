@@ -1,4 +1,6 @@
 //GUN KIT
+GLOBAL_LIST_EMPTY(unlocked_gun_replication) //Every unlocked gun
+
 /obj/item/gunkit
 	name = "Marshal Gunsmith Kit"
 	desc = ""
@@ -25,9 +27,9 @@
 /obj/item/gunkit/examine(mob/user)
 	..()
 	if(user.stats.getPerk(perk_to_use) && perk_locked)
-		to_chat(user, "<span class='info'>A stainless steel-plated carrycase with a robust, impressive collection of every tool needed and wanted to take apart a gun. Has no other use outside of weapon maintenance.</span>")
+		to_chat(user, "<span class='info'>A stainless steel-plated carrycase with a robust impressive collection of every tool needed and wanted to take apart a gun but has no use outside of that.</span>")
 	else
-		to_chat(user, "<span class='info'>A stainless steel-plated carrycase with nothing but junk and scrapped, broken tools inside...</span>")
+		to_chat(user, "<span class='info'>A stainless steel-plated carrycase with nothing but junk and scrap broken tools inside,..</span>")
 
 
 /obj/item/gunkit/attackby(obj/item/I, mob/user)
@@ -66,18 +68,87 @@
 		for(var/gun_parts_to_add in total_parts_gained)
 			parts_stored[gun_parts_to_add] += total_parts_gained[gun_parts_to_add]
 
+
+		var/datum/unlocked_gun_replications/RP = new(eating.name, eating.desc, parts_stored, eating, 3)
+		GLOB.unlocked_gun_replication += RP
+
 		to_chat(user, SPAN_NOTICE("You mercilessly disassemble \the [eating] and place the parts in \the [src]."))
 		qdel(eating)
 
+/datum/unlocked_gun_replications
+	var/name
+	var/desc
+	var/parts_needed
+	var/gun_path
+	var/cost_multy = 3
+
+/datum/unlocked_gun_replications/New(name, desc, parts_needed, gun_path, cost_multy)
+	..()
+	name = name
+	desc = desc
+	parts_needed = parts_needed
+	gun_path = gun_path
+	cost_multy = cost_multy
+
+	gun_path *= cost_multy
+
+/obj/item/gunkit/attack_self(mob/user)
+	nano_ui_interact(user)
+
+/obj/item/gunkit/ui_data(mob/user)
+	var/list/list/data = list()
+
+	for(var/datum/unlocked_gun_replications/G in GLOB.unlocked_gun_replication)
+		data["contracts"].Add(list(list(
+			"name" = G.name,
+			"desc" = G.desc,
+			"parts_needed" = G.parts_needed
+		)))
+
+	return data
+
+/obj/item/gunkit/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+//	if(!nano_template)
+//		return
+
+	var/list/data = ui_data()
+
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	if(!ui)
+		ui = new(user, src, ui_key, "gunkit.tmpl", name, 700, 550)
+		ui.set_initial_data(data)
+		ui.open()
 
 
+/*
+/obj/item/gunkit/Topic(href, href_list)
+	if(..())
+		return 1
+
+	if(href_list["craft"])
+		if(!can_launch())
+			return
+
+		for(var/datum/unlocked_gun_replications/G in GLOB.unlocked_gun_replication)
+			if(C.completed)
+				continue
+			C.on_container(src)
+		QDEL_LIST(contents)
+		if(del_on_send)
+			if(ismob(loc))
+				to_chat(loc, SPAN_NOTICE("[src] flickers away in a brief flash of light."))
+			qdel(src)
+
+	else if(href_list["owner"])
+		owner = usr.mind
+		. = 1
+
+	if(.)
+		SSnano.update_uis(src)
 
 
-
-
-
-
-
+/obj/item/gunkit/proc/can_make()
+*/
 
 
 

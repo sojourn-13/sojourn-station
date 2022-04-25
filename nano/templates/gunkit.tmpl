@@ -1,0 +1,11 @@
+<b>Following Blueprints</b>:
+<table style="width:100%">
+
+{{for data.unlocked_gun_replications}}
+	<div class="unlocked_gun_replications">
+		{{:helper.link(value.name, 'gear', {'buy_item' : value.ref}, value.can_buy ? null : 'disabled')}} - <span class="white">{{:value.cost}}</span>
+	</div>
+	<div class="unlocked_gun_replications">
+		{{:value.description}}
+	</div>
+{{/for}}
