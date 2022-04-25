@@ -69,7 +69,6 @@
 	if(tension <= 0)
 		to_chat(user, SPAN_WARNING("\The [src] is not drawn back!"))
 		return null
-	var/list/new_damtypes = list()
 	if(chambered)
 		var/obj/item/projectile/bullet/theBB = chambered.BB
 		theBB.multiply_projectile_damage(tension)
