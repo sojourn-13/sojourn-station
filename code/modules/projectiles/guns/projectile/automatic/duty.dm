@@ -25,6 +25,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/duty/update_icon()
 	..()

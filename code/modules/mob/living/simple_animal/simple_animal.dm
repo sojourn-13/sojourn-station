@@ -445,7 +445,7 @@
 
 			G.synch()
 			G.affecting = src
-			LAssailant = M
+			LAssailant_weakref = WEAKREF(M)
 
 			M.visible_message("\red [M] has grabbed [src] passively!")
 			M.do_attack_animation(src)
@@ -478,7 +478,7 @@
 		..()
 
 	else if(meat_type && (stat == DEAD))	//if the animal has a meat, and if it is dead.
-		if(QUALITY_CUTTING in O.tool_qualities)
+		if((QUALITY_CUTTING in O.tool_qualities) && user.a_intent ==  I_HELP)
 			if(O.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_NORMAL, required_stat = STAT_BIO))
 				harvest(user)
 	else

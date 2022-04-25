@@ -233,6 +233,27 @@
 	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/biomatter
 	materials = list(MATERIAL_BIOMATTER = 35)
 
+//.35 large box
+/datum/design/autolathe/ammo/pistol_ammobox/large
+	name = "large ammunition box(.35 Auto)"
+	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/large
+	materials = list(MATERIAL_STEEL = 12)
+
+/datum/design/autolathe/ammo/pistol_ammobox/largelethal
+	name = "large ammunition box(.35 Auto hollow point)"
+	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/large/lethal
+	materials = list(MATERIAL_STEEL = 12)
+
+/datum/design/autolathe/ammo/pistol_ammobox/largerubber
+	name = "large ammunition box(.35 Auto rubber)"
+	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/large/rubber
+	materials = list(MATERIAL_STEEL = 12)
+
+/datum/design/autolathe/ammo/pistol_ammobox/largehv
+	name = "large ammunition box(.35 Auto high-velocity)"
+	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/large/hv
+	materials = list(MATERIAL_STEEL = 12)
+
 // .40 Speed Loaders + mags
 //speed loaders
 
@@ -328,6 +349,27 @@
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/biomatter
 	materials = list(MATERIAL_BIOMATTER = 50)
 
+// .40 magnum large boxes
+/datum/design/autolathe/ammo/magnum_ammobox/large
+	name = "large ammunition box (.40 Auto-Mag)"
+	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/large
+	materials = list(MATERIAL_STEEL = 15)
+
+/datum/design/autolathe/ammo/magnum_ammobox/largehp
+	name = "large ammunition box (.40 Auto-Mag hollow-point)"
+	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/large/lethal
+	materials = list(MATERIAL_STEEL = 15)
+
+/datum/design/autolathe/ammo/magnum_ammobox/largerubber
+	name = "large ammunition box (.40 Auto-Mag rubber)"
+	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/large/rubber
+	materials = list(MATERIAL_STEEL = 15)
+
+/datum/design/autolathe/ammo/magnum_ammobox/largehv
+	name = "large ammunition box (.40 Auto-Mag high-velocity)"
+	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/large/hv
+	materials = list(MATERIAL_STEEL = 15)
+
 //.40 Magnum SMG
 /datum/design/autolathe/ammo/smg_magnum_40
 	name = "SMG magazine (.40 Magnum)"
@@ -353,6 +395,8 @@
 	name = "SMG magazine (.40 Magnum Empty)"
 	build_path = /obj/item/ammo_magazine/smg_magnum_40/empty
 	materials = list(MATERIAL_STEEL = 12)
+
+
 
 // .50 Kurtz mags and speed loaders
 //mags
@@ -479,6 +523,37 @@
 	build_path = /obj/item/ammo_magazine/light_rifle_257_short/lethal
 	materials = list(MATERIAL_STEEL = 2)
 
+//drums
+
+/datum/design/autolathe/ammo/lrifle_drum
+	name = ".257 carbine drum magazine (ball)"
+	build_path = /obj/item/ammo_magazine/light_rifle_257_drum
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/lrifle_drum_practice
+	name = ".257 carbine drum magazine (practice)"
+	build_path = /obj/item/ammo_magazine/light_rifle_257_drum/practice
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/lrifle_drum_rubber
+	name = ".257 carbine drum magazine (rubber)"
+	build_path = /obj/item/ammo_magazine/light_rifle_257_drum/rubber
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/lrifle_drum_lethal
+	name = ".257 carbine drum magazine (hollow point)"
+	build_path = /obj/item/ammo_magazine/light_rifle_257_drum/lethal
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/lrifle_drum_hv
+	name = ".257 carbine drum magazine (high velocity)"
+	build_path = /obj/item/ammo_magazine/light_rifle_257_drum/highvelocity
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/lrifle_drum_empty
+	name = ".257 carbine drum magazine (empty)"
+	build_path = /obj/item/ammo_magazine/light_rifle_257_drum/empty
+	materials = list(MATERIAL_STEEL = 6)
 
 //.257 box and speed loader
 /datum/design/autolathe/ammo/lrifle_ammobox
@@ -583,6 +658,38 @@
 	name = "short 7.5mm Rifle magazine (hollow point)"
 	build_path = /obj/item/ammo_magazine/rifle_75_short/lethal
 	materials = list(MATERIAL_STEEL = 1)
+
+//drum
+
+/datum/design/autolathe/ammo/rifle_drum
+	name = "7.5mm Rifle drum magazine (ball)"
+	build_path = /obj/item/ammo_magazine/rifle_75_drum
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/rifle_drum_rubber
+	name = "7.5mm Rifle drum magazine (rubber)"
+	build_path = /obj/item/ammo_magazine/rifle_75_drum/rubber
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/rifle_drum_practice
+	name = "7.5mm Rifle drum magazine (practice)"
+	build_path = /obj/item/ammo_magazine/rifle_75_drum/practice
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/rifle_drum_hv
+	name = "7.5mm Rifle drum magazine (AP)"
+	build_path = /obj/item/ammo_magazine/rifle_75_drum/highvelocity
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/rifle_drum_lethal
+	name = "7.5mm Rifle drum magazine (hollow point)"
+	build_path = /obj/item/ammo_magazine/rifle_75_drum/lethal
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/rifle_drum_empty
+	name = "7.5mm Rifle drum magazine (empty)"
+	build_path = /obj/item/ammo_magazine/rifle_75_drum/empty
+	materials = list(MATERIAL_STEEL = 6)
 
 ///boxes and stripper clips
 

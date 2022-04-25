@@ -407,6 +407,26 @@
 	icon_state = "scicloak"
 	desc = "A white cloak with a single black stripe at edge."
 
+/obj/item/clothing/accessory/job/cape/church
+	name = "black Absolutists greatcloak"
+	icon_state = "heavychurchcloakblack"
+	desc = "A thick, luxurious cloak with black trim."
+
+/obj/item/clothing/accessory/job/cape/church/alt
+	name = "red Absolutists greatcloak"
+	icon_state = "heavychurchcloakred"
+	desc = "A thick, luxurious cloak with red trim."
+
+/obj/item/clothing/accessory/job/cape/church/small
+	name = "black Absolutists cloak"
+	icon_state = "churchcloakblack"
+	desc = "A sleek, luxurious cloak with black trim."
+
+/obj/item/clothing/accessory/job/cape/church/smallalt
+	name = "red Absolutists cloak"
+	icon_state = "churchcloakblack"
+	desc = "A sleek, luxurious cloak with red trim."
+
 /obj/item/clothing/accessory/job/cape/ironhammer
 	name = "security cloak"
 	icon_state = "seccloak"

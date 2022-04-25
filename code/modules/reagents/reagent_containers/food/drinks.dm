@@ -11,6 +11,7 @@
 	volume = 50
 	var/base_name = null // Name to put in front of drinks, i.e. "[base_name] of [contents]"
 	var/base_icon = null // Base icon name for fill states
+	var/can_be_opened = TRUE // To distinguish between cans and non-cans
 
 /obj/item/reagent_containers/food/drinks/Initialize()
 	. = ..()
@@ -22,7 +23,7 @@
 	return
 
 /obj/item/reagent_containers/food/drinks/attack_self(mob/user as mob)
-	if(!is_open_container())
+	if(!is_open_container() && can_be_opened) // For any subtype of this parent that doesn't want to be opened like a can.
 		open(user)
 
 /obj/item/reagent_containers/food/drinks/proc/open(mob/user)
@@ -81,7 +82,7 @@
 	set src in view(1)
 
 	if(isghost(usr))
-		to_chat(usr, "You ghost!")
+		to_chat(usr, "You are a ghost! You can't do that!")
 		return
 
 	if(is_drainable())
@@ -261,15 +262,50 @@
 //	itself), in Chemistry-Recipes.dm (for the reaction that changes the components into the drink), and here (for the drinking glass
 //	icon states.
 
+// Snowflake shaker code goes here, acting as a NO_REACT "cryostasis beaker" of sorts, reagent mixing enabled by manually shaking it in-hand. - Seb
+
 /obj/item/reagent_containers/food/drinks/shaker
-	name = "shaker"
-	desc = "A metal shaker to mix drinks in."
+	name = "cocktail shaker"
+	desc = "A metal cocktail shaker with a bluespace-infused stasis interior.  Give it a shake to mix its contents into a proper drink!" // Changing description so that people know why the hell their drinks aren't mixing. - Seb
 	icon_state = "shaker"
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,20,30,60,120)
 	volume = 120
 	center_of_mass = list("x"=17, "y"=10)
+	reagent_flags = OPENCONTAINER | NO_REACT
+	can_be_opened = FALSE
 
+
+/obj/item/reagent_containers/food/drinks/shaker/Initialize()
+	. = ..()
+	verbs += /obj/item/reagent_containers/food/drinks/shaker/proc/shakeshake
+
+/obj/item/reagent_containers/food/drinks/shaker/attack_self(mob/user as mob) // Double method to avoid having it become a soda can. - Seb
+	shakeshake(user)
+	return
+
+/obj/item/reagent_containers/food/drinks/shaker/proc/shakeshake() // QOL action for RP purposes, bartender's shaker now has a true purpose after all! - Seb
+	set category = "Object"
+	set name = "Shake contents"
+	set src in view(1)
+
+	if(isghost(usr))
+		to_chat(usr, "You are a ghost! You can't do that!")
+		return
+
+	if(is_drainable())
+		usr.visible_message(SPAN_NOTICE("[usr] expertly shakes their [src] over their shoulder, thoroughly mixing the drink inside."), SPAN_NOTICE("You vigorously give \the [src] a shake over your shoulder, mixing the drink inside it."))
+		flick("shakeshake", src)
+		playsound(loc, 'sound/effects/shakeshake.ogg', 50, 1)
+		do_after(usr, 30)
+		reagent_flags &= ~NO_REACT
+		icon_state = "shaker" //Just in case
+		reagents.process_reactions() // This will mix one reaction at a time, to avoid bulk-mixing. Simply do the proc again to mix further. - Seb
+		reagent_flags |= NO_REACT // Back to not mix drinks inside of it.
+		icon_state = "shaker"
+		return
+
+// END OF SHAKER
 /obj/item/reagent_containers/food/drinks/teapot
 	name = "teapot"
 	desc = "An elegant teapot. It simply oozes class."

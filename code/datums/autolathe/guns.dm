@@ -50,10 +50,6 @@
 	name = "OT HG .35 \"Mk58\""
 	build_path = /obj/item/gun/projectile/mk58
 
-/datum/design/autolathe/gun/alemao
-	name = "BR .35 \"O Alemao\""
-	build_path = /obj/item/gun/projectile/automatic/alemao
-
 /datum/design/autolathe/gun/spring
 	name = "GP .35 \"Spring\""
 	build_path = /obj/item/gun/projectile/spring

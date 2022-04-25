@@ -585,7 +585,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 //TODO: Make let them send in other things/place items in areas to allow for addionation points
 /datum/antag_contract/blackshield/appropriate
 	name = "Appropriate"
-	reward = 100 //How many points we give for items
+	reward = 200 //How many points we give for items
 	var/target_desc
 	var/target_type
 

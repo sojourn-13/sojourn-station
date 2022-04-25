@@ -349,12 +349,9 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 /obj/machinery/door/airlock/Process()
 	return PROCESS_KILL
 
-/obj/machinery/door/airlock/uranium/Process()
-	if(world.time > last_event+20)
-		if(prob(50))
-			radiate()
-		last_event = world.time
+/obj/machinery/door/airlock/uranium/Initialize()
 	..()
+	AddRadSource(src, 15, 3) // Values taken from the radiate proc below
 
 /obj/machinery/door/airlock/uranium/proc/radiate()
 	for(var/mob/living/L in range (3,src))

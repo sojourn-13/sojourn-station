@@ -38,6 +38,15 @@
 	flask = new /obj/item/hydrogen_fuel_cell(src)
 	..()
 
+/obj/item/tool/plasma_torch/Destroy()
+
+	if(gun)
+		gun.welder = null
+		gun = null
+
+	. = ..()
+
+
 /obj/item/tool/plasma_torch/Process()
 	..()
 	if(switched_on)

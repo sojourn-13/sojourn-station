@@ -18,6 +18,33 @@
 	icon_state = "maid"
 	item_state = "maid"
 
+/obj/item/clothing/under/plaid/maid/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Default Maid"] = "maid"
+	options["Alt Maid"] = "maid_alt" //Sprite by Tori
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your clothing into [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/plaid/orange
 	name = "orange dress"
 	desc = "A fancy orange gown with some leg reveal."

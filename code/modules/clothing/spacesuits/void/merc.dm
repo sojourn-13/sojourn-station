@@ -131,47 +131,6 @@
 	helmet = /obj/item/clothing/head/helmet/space/void/merc/xanorath
 	price_tag = 650
 
-
-//Church Crusader armor, credit to Valterak for the original sprite.
-/obj/item/clothing/head/helmet/space/void/crusader
-	name = "crusader hood"
-	desc = "An armored helmet with a built in light system allowing you to shine heavens grace on heretics before you purge them."
-	icon_state = "inqarmor_hood"
-	item_state = "inqarmor_hood"
-	armor_list = list(
-		melee = 65,
-		bullet = 65,
-		energy = 65,
-		bomb = 70,
-		bio = 100,
-		rad = 100
-	)
-	siemens_coefficient = 0
-	species_restricted = list("Human")
-	light_overlay = "helmet_light_white"
-	brightness_on = 8 //luminosity when on
-	max_upgrades = 0
-
-/obj/item/clothing/suit/space/void/crusader
-	name = "crusader 'Deus Vult' power armor"
-	desc = "The church of absolutes most powerful creation, the Mark I 'Deus Vult' power armor, a void capable ablative durasteel-forged suit with built in power systems linked to a wearers cruciform, recharged by its presence to prevent slow down from the armors weight. The only thing they fear is you."
-	icon_state = "inqarmor"
-	item_state = "inqarmor"
-	slowdown = 0
-	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
-	armor_list = list(
-		melee = 65,
-		bullet = 65,
-		energy = 65,
-		bomb = 70,
-		bio = 100,
-		rad = 100
-	)
-	siemens_coefficient = 0
-	species_restricted = list("Human")
-	helmet = /obj/item/clothing/head/helmet/space/void/crusader
-	max_upgrades = 0
-
 /obj/item/clothing/head/helmet/space/void/peking
 	name = "peking void-hat"
 	desc = "A strange albiet intriguing mask and hat design. The creases at its neck are visible but the field cover appears to be attached to the air-tight mask itself. \

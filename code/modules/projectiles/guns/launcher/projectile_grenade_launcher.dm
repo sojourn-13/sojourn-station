@@ -20,6 +20,7 @@
 	max_shells = 3
 	recoil_buildup = 20
 	twohanded = TRUE
+	serial_type = "SA"
 
 /obj/item/gun/projectile/shotgun/pump/china/handle_post_fire(mob/user)
 	log_and_message_admins("fired a grenade ([chambered.name]) from a grenade launcher ([src.name]).")

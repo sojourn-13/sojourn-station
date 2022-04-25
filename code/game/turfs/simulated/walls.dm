@@ -422,8 +422,9 @@
 	if(!total_radiation)
 		return
 
-	for(var/mob/living/L in range(3,src))
-		L.apply_effect(total_radiation, IRRADIATE,0)
+	/*for(var/mob/living/L in range(3,src))
+		L.apply_effect(total_radiation, IRRADIATE,0)*/
+	PulseRadiation(src, total_radiation, 3) // Too tired to find the proper place to add the radiate proc, so this will do.
 	return total_radiation
 
 /turf/simulated/wall/proc/burn(temperature)

@@ -23,6 +23,7 @@
 		list(mode_name="hot", mode_desc="A burning bolt to warm anything up rapidly", projectile_type=/obj/item/projectile/temp/hot, fire_delay= 6, charge_cost = 500),
 		list(mode_name="boil", mode_desc="A scorching bolt to heat anything up rapidly", projectile_type=/obj/item/projectile/temp/boil, fire_delay= 6, charge_cost = 1000),
 	)
+	serial_type = "SI"
 
 /*
 /obj/item/gun/energy/temperature/Initialize()

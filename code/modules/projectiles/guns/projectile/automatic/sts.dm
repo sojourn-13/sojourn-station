@@ -21,6 +21,7 @@
 	recoil_buildup = 1.75
 	one_hand_penalty = 13 //automatic rifle level
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
+	serial_type = "SA"
 
 
 	init_firemodes = list(
@@ -156,6 +157,7 @@
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield
+	serial_type = "NM"
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -177,6 +179,7 @@
 	one_hand_penalty = 22 //automatic rifle level
 	saw_off = FALSE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
+	serial_type = "NM"
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -192,7 +195,7 @@
 	item_state = "sts"
 	w_class = ITEM_SIZE_HUGE
 	caliber = CAL_HRIFLE
-	mag_well = MAG_WELL_HRIFLE
+	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	penetration_multiplier = 1.1
 	damage_multiplier = 1.1
 	recoil_buildup = 15

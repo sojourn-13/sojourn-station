@@ -28,6 +28,7 @@
 		BURST_8_ROUND,
 		FULL_AUTO_400
 		)
+	serial_type = "INDEX"
 
 /obj/item/gun/energy/lasersmg/alt
 	name = "Disco Vazer \"Lasblender\""

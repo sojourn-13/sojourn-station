@@ -22,9 +22,10 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND,
-		FULL_AUTO_600
+		BURST_3_ROUND_NOLOSS,
+		FULL_AUTO_600_NOLOSS
 		)
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/automatic/wirbelwind/update_icon()
 	..()

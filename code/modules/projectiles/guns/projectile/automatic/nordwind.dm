@@ -29,6 +29,7 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/automatic/nordwind/watchtower
 	name = "\"Watchtower\" DMR"
@@ -46,14 +47,15 @@
 	zoom_factor = 0.8
 	recoil_buildup = 14
 	damage_multiplier = 0.9
-	extra_damage_mult_scoped = 0.1
-	penetration_multiplier = 0.8
+	extra_damage_mult_scoped = 0.3
+	penetration_multiplier = 1.0
 	one_hand_penalty = 25
 	see_invisible_gun = -1
 	auto_eject = FALSE
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/nordwind/strelki
 	name = "\"Strelki\" precision rifle"
@@ -80,6 +82,7 @@
 		)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/nordwind/strelki/sawn
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/nordwind/update_icon()
 	..()
@@ -116,3 +119,4 @@
 	damage_multiplier = 0.7
 	one_hand_penalty = 25
 	saw_off = FALSE
+	serial_type = "NM"

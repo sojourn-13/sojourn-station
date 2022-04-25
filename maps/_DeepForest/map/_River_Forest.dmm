@@ -945,7 +945,7 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "oO" = (
-/obj/item/gun/launcher/crossbow,
+/obj/item/gun/projectile/crossbow,
 /obj/structure/table/bench/padded,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
@@ -4139,8 +4139,8 @@
 /area/nadezhda/outside/forest/river_forest_light)
 "YG" = (
 /obj/item/trash/plate,
-/obj/item/reagent_containers/food/snacks/plump_pie,
 /obj/item/material/kitchen/utensil/fork/plastic,
+/obj/item/reagent_containers/food/snacks/appletart,
 /turf/simulated/floor/carpet/gaycarpet,
 /area/nadezhda/outside/forest/river_forest_light)
 "YK" = (
@@ -4250,7 +4250,7 @@
 /area/nadezhda/outside/forest/river_forest_light)
 "ZW" = (
 /obj/item/remains,
-/obj/item/gun/launcher/crossbow,
+/obj/item/gun/projectile/crossbow,
 /obj/item/clothing/under/gorka/camo,
 /obj/random/cloth/shoes,
 /obj/item/oddity/common/old_knife,

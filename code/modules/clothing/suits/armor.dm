@@ -317,6 +317,29 @@
 	flags_inv = HIDEJUMPSUIT
 	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
+/obj/item/clothing/suit/armor/vest/prime/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["prime dark"] = "prime"
+	options["prime royal"] = "primealt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/armor/vest/technomancersuit
 	name = "'Mark V' environmental protection suit"
 	desc = "For working in hazardous environments. While it is built for most environments, one of those is not space. As a tradeoff, it can be modified more."
@@ -761,6 +784,7 @@
 	icon_state = "bulletproof_bs"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
+
 /obj/item/clothing/suit/armor/vest/ablative/militia
 	name = "Blackshield ablative plate"
 	desc = "An outdated set of ablative armor, utilizing advanced materials to absorb rather than reflect energy projeciles and painted in Blackshield's colors.\
@@ -768,6 +792,8 @@
 	appearance than its capabilities. Despite its bad reputation as a tax-payer credit sink it serves as a fairly adequate piece of gear."
 	icon_state = "ablative_bs"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
+	slowdown = 0.5
+	armor_list = list(melee = 25, bullet = 25, energy = 60, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/platecarrier/green
 	name = "green plate carrier"
@@ -1000,14 +1026,14 @@
 		usr.update_action_buttons()
 		return 1
 
-obj/item/clothing/suit/armor/commander/militia_overcoat
+/obj/item/clothing/suit/storage/armor/commander/militia_overcoat // Pockets for your hands on the cold.
 	name = "blackshield armored overcoat"
 	desc = "Blackshield greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
 	armor_list = list(melee = 30, bullet = 35, energy = 20, bomb = 10, bio = 0, rad = 0)
 	icon_state = "overcoat_bm"
 	item_state = "overcoat_bm"
 
-obj/item/clothing/suit/armor/commander/marshal_coat
+/obj/item/clothing/suit/storage/armor/commander/marshal_coat
 	name = "marshal officers greatcoat"
 	desc = "Marshal Officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
 	armor_list = list(melee = 35, bullet = 30, energy = 20, bomb = 10, bio = 0, rad = 0)

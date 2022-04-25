@@ -19,6 +19,12 @@
 	.=..()
 	gas_sac = new /datum/reagents(100, src)
 
+/mob/living/carbon/superior_animal/roach/support/Destroy()
+	gas_sac.my_atom = null
+
+	. = ..()
+
+
 /mob/living/carbon/superior_animal/roach/support/proc/gas_attack()
 	if (!gas_sac.has_reagent("blattedin", 20) || stat != CONSCIOUS)
 		return
@@ -38,6 +44,9 @@
 
 /mob/living/carbon/superior_animal/roach/support/Life()
 	. = ..()
+
+	var/atom/targetted_mob = (target_mob?.resolve())
+
 	if(stat != CONSCIOUS)
 		return
 
@@ -46,7 +55,7 @@
 
 	gas_sac.add_reagent("blattedin", 1)
 
-	if(!target_mob)
+	if(!targetted_mob)
 		return
 
 	if(prob(7))

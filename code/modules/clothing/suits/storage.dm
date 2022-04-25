@@ -141,6 +141,20 @@
 	pockets.max_storage_space = 8
 	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
 
+/*Dresscoats*/
+
+/obj/item/clothing/suit/storage/vic_dresscoat
+	name = "black victorian dresscoat"
+	desc = "An elaborate coat to go over an old-Earth Victorian Period dress. Much thinner fabric than you'd expected. This one is black."
+	icon_state = "vickyblack"
+	item_state = "vickyblack"
+
+/obj/item/clothing/suit/storage/vic_dresscoat/red
+	name = "red victorian dresscoat"
+	desc = "An elaborate coat to go over an old-Earth Victorian Period dress. Much thinner fabric than you'd expected. This one is red."
+	icon_state = "vickyred"
+	item_state = "vickyred"
+
 /*Puffer Vest*/
 
 /obj/item/clothing/suit/storage/puffer
@@ -628,6 +642,14 @@
 	icon_open = "flannel_brown_open"
 	icon_closed = "flannel_brown"
 
+/obj/item/clothing/suit/storage/toggle/flannel/blue
+	name = "blue flannel shirt"
+	desc = "A comfy flannel shirt with a blue design."
+	icon_state = "flannel_blue"
+	item_state = "flannel_blue"
+	icon_open = "flannel_blue_open"
+	icon_closed = "flannel_blue"
+
 /obj/item/clothing/suit/storage/toggle/flannel
 	name = "red flannel shirt"
 	desc = "A comfy flannel shirt with a red design."
@@ -884,6 +906,15 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	siemens_coefficient = 0.9
 
+/obj/item/clothing/suit/storage/helltaker_apron // Get your Helltaker apron. - Seb
+	name = "lonestar black apron"
+	desc = "Make them chocolate pancakes. Demon girls love chocolate pancakes."
+	icon_state = "nalesnik" // Polish pancakes.
+	item_state = "nalesnik"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	price_tag = 50
+
 //Sweaters.
 obj/item/clothing/suit/sweater/blue
 	name = "blue sweater"
@@ -1011,6 +1042,12 @@ obj/item/clothing/suit/sweater/blue
 	icon_state = "tan_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
+
+/obj/item/clothing/suit/storage/suitjacket/helltaker
+	name = "white suit jacket"
+	desc = "A stylish, opened white suit jacket with a red flower on it. Stylish enough to impress demon girls." // The OG Helltaker jacket drip is here. - Seb
+	icon_state = "white_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/suitjacket/scav
 	name = "frontier jacket"

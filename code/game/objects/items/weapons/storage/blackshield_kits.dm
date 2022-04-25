@@ -95,8 +95,8 @@
 //Sargents
 
 /obj/item/storage/box/bs_kit/sts_para
-	name = "\improper STS Primary Kit"
-	desc = "The standard Blackshield equipment kit containing an STS carbine, a powerful and all round deadly rifle that performs well in any circumstance."
+	name = "\improper STS Para Primary Kit"
+	desc = "The standard Blackshield equipment kit containing an STS Para rifle, a powerful and all round deadly rifle that performs well in any circumstance."
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/sts/rifle/blackshield(src)
@@ -153,6 +153,8 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/triage(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)

@@ -770,7 +770,7 @@
 		else
 			to_chat(user, SPAN_WARNING("Unable to locate a radio."))
 
-	else if(I.GetIdCard() || length(I.GetAccess()))			// trying to unlock the interface with an ID card
+	else if(I.GetIdCard() || length(I.GetAccess()) || istype(I, /obj/item/card/robot))			// trying to unlock the interface with an ID card
 		if(HasTrait(CYBORG_TRAIT_EMAGGED))//still allow them to open the cover
 			to_chat(user, SPAN_WARNING("The interface seems slightly damaged."))
 		if(opened)

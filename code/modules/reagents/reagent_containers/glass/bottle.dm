@@ -37,11 +37,19 @@
 
 /obj/item/reagent_containers/glass/bottle/potion
 	name = "elegant bottle"
-	desc = "A bottle with a much more sharper and refined look to it."
+	desc = "A bottle with a much more robust and refined look to it."
 	icon_state = "potion"
 	item_state = "potion"
 	label_icon_state = "label_potion"
 	filling_states = "10;20;40;50;60"
+
+/obj/item/reagent_containers/glass/bottle/tincture
+	name = "tincture bottle"
+	desc = "A bottle with a much more sharper and refined look to it."
+	icon_state = "tincture"
+	item_state = "tincture"
+	label_icon_state = "label_tincture"
+	filling_states = "3;5;10;15;25;27;30;35;40;45;55;60"
 
 /obj/item/reagent_containers/glass/bottle/inaprovaline
 	name = "inaprovaline bottle"
@@ -136,6 +144,18 @@
 	desc = "Contains delicious honey. Save the bees."
 	icon_state = "bottle"
 	preloaded_reagents = list("honey" = 60)
+
+/obj/item/reagent_containers/glass/bottle/nutriment
+	name = "nutriment bottle"
+	desc = "The base of whats needed to get by."
+	icon_state = "bottle"
+	preloaded_reagents = list("nutriment" = 60)
+
+/obj/item/reagent_containers/glass/bottle/protein
+	name = "protein bottle"
+	desc = "Get swoll bro"
+	icon_state = "bottle"
+	preloaded_reagents = list("protein" = 60)
 
 //frost oil and material chems
 /obj/item/reagent_containers/glass/bottle/frostoil
@@ -388,3 +408,14 @@
 /obj/item/reagent_containers/glass/bottle/trade/kaiseraurum
 	preloaded_reagents = list("kaiseraurum" = 60)
 // ===
+
+/obj/item/reagent_containers/glass/replenishing/chalice
+	name = "Holy Chalice"
+	desc = "One of the important relics of the Church of the Absolute. It was only possible to discover where the Holy Chalice was with the Absolute's guidance, found under debris of an ancient church in Morroco before the exodus to the colony, the Holy Chalice has been repaired and bathed in gold after so many centuries, treated as a common chalice without the knowledge of the prior holders. This chalice was once held by Jesus Christ himself during the Last Supper. Today, to manifest the power of Christ - the chalice has been blessed by absolute's lights to transform air moisture into church's wine. As much as this may provide Wine for the vectors, this is kept for only the gaze to drink - not the mouth - as this liquid is only for the entity or person that belongs to the Christian doctrine of the Trinity, with that said - anyone drinking from that chalice is stealing from Christ himself."
+	icon_state = "holy_chalice"
+	price_tag = 8000
+
+/obj/item/reagent_containers/glass/replenishing/chalice/New()
+	..()
+	START_PROCESSING(SSobj, src)
+	spawning_id = pick("ntcahors")

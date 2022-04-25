@@ -21,6 +21,7 @@
 		)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/sawn
+	serial_type = "Sol Fed"
 
 	var/obj/item/gun/projectile/automatic/underslung/shotgun_3/shotgun
 	var/shotgun_haver = TRUE
@@ -66,6 +67,7 @@
 	init_firemodes = list(
 		list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=2.5, move_delay=null, icon="semi"),
 		)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/sawn
 	name = "sawn down \"Solarian\" carbine"

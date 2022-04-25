@@ -102,6 +102,10 @@
 	var/folded = TRUE //IS are stock folded? - and that is yes we start folded
 	var/currently_firing = FALSE
 
+	//Gun numbers and stuf
+	var/serial_type = "INDEX" // Index will be used for detective scanners, if there is a serial type , the gun will add a number onto its final , if none , it won;'t show on examine
+	var/serial_shown = TRUE
+
 /obj/item/gun/proc/loadAmmoBestGuess()
 	return
 
@@ -137,6 +141,9 @@
 	hud_actions += action
 	refresh_upgrades()
 
+	if(serial_type)
+		serial_type += "-[generate_gun_serial(pick(3,4,5,6,7,8))]"
+
 /obj/item/gun/pickup()
 	..()
 	refresh_upgrades() //Run it again, just in case
@@ -153,6 +160,9 @@
 	..()
 	if(folding_stock)
 		to_chat(user, "<span class='info'>This gun can be folded by Ctrl Shift Clicking it.</span>")
+
+	if(serial_type && serial_shown)
+		to_chat(user, SPAN_WARNING("There is a serial number on this gun, it reads [serial_type]."))
 
 /obj/item/gun/proc/set_item_state(state, hands = FALSE, back = FALSE, onsuit = FALSE)
 	var/wield_state = null
@@ -298,6 +308,30 @@
 	else
 		return ..() //Pistolwhippin'
 
+/obj/item/gun/attackby(obj/item/I, mob/living/user, params)
+	//Detectable crime >:T
+	if(istype(I, /obj/item/device/bullet_scanner))
+		if(serial_type)
+			to_chat(user, "<span class='info'>Projectile Serial Caliberation: [serial_type].</span>")
+			return
+		else
+			to_chat(user, "<span class='info'>Projectile Serial Caliberation: ERROR.</span>")
+
+
+	if(!istool(I) || user.a_intent != I_HURT)
+		return FALSE
+
+	//UNDETECTABLE CRIIIIMEEEE!!!!!!!
+	if(I.get_tool_quality(QUALITY_HAMMERING) && serial_type)
+		user.visible_message(SPAN_NOTICE("[user] begins scribbling \the [name]'s gun serial number away."), SPAN_NOTICE("You begin removing the serial number from \the [name]."))
+		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_HAMMERING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			user.visible_message(SPAN_DANGER("[user] removes \the [name]'s gun serial number."), SPAN_NOTICE("You successfully remove the serial number from \the [name]."))
+			serial_type = "INDEX"
+			serial_type += "-[generate_gun_serial(pick(3,4,5,6,7,8))]"
+			serial_shown = FALSE
+			return FALSE
+
+
 /obj/item/gun/proc/dna_check(user)
 	if(dna_compare_samples)
 		dna_user_sample = usr.real_name
@@ -346,6 +380,7 @@
 		if(istype(projectile, /obj/item/projectile))
 			var/obj/item/projectile/P = projectile
 			P.adjust_damages(proj_damage_adjust)
+			P.serial_type_index_bullet = serial_type
 
 		if(pointblank)
 			process_point_blank(projectile, user, target)
@@ -548,10 +583,10 @@
 		return
 
 /obj/item/gun/proc/gun_brace(mob/living/user, atom/target)
-	if(braceable && user.unstack)
+	if(braceable && !user.is_busy)
 		var/atom/original_loc = user.loc
 		var/brace_direction = get_dir(user, target)
-		user.unstack = FALSE
+		user.is_busy = TRUE
 		user.facing_dir = null
 		to_chat(user, SPAN_NOTICE("You brace your weapon on \the [target]."))
 		braced = TRUE
@@ -559,9 +594,9 @@
 			sleep(2)
 		to_chat(user, SPAN_NOTICE("You stop bracing your weapon."))
 		braced = FALSE
-		user.unstack = TRUE
+		user.is_busy = FALSE
 	else
-		if(!user.unstack)
+		if(user.is_busy)
 			to_chat(user, SPAN_NOTICE("You are already bracing your weapon!"))
 		else
 			to_chat(user, SPAN_WARNING("You can\'t properly place your weapon on \the [target] because of the foregrip!"))

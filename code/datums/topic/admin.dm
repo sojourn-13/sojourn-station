@@ -391,6 +391,8 @@
 	body += source.formatJobGroup(M, "Prospector Positions", "8B4513", "prospectordept", prospector_positions)
 	//Civilian (Grey)
 	body += source.formatJobGroup(M, "Civilian Positions", "dddddd", "civiliandept", civilian_positions)
+	//Lonestar (Grey)
+	body += source.formatJobGroup(M, "Lonestar Positions", "dddddd", "lonestardept", cargo_positions)
 	//Off-colony (Black)
 	body += source.formatJobGroup(M, "Independent Positions", "191919", "offcolonydept", offcolony_positions)
 	//Non-Human (Green)
@@ -467,6 +469,11 @@
 				joblist += temp.title
 		if("civiliandept")
 			for(var/jobPos in civilian_positions)
+				var/datum/job/temp = SSjob.GetJob(jobPos)
+				if(!temp) continue
+				joblist += temp.title
+		if("lonestardept")
+			for(var/jobPos in cargo_positions)
 				var/datum/job/temp = SSjob.GetJob(jobPos)
 				if(!temp) continue
 				joblist += temp.title

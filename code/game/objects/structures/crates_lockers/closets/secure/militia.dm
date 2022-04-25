@@ -21,7 +21,7 @@
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/clothing/suit/armor/flackvest/commander(src)
 	new /obj/item/clothing/suit/armor/commander/militia(src)
-	new /obj/item/clothing/suit/greatcoat/ihc/bmc(src)
+	new /obj/item/clothing/suit/storage/greatcoat/ihc/bmc(src)
 	new /obj/item/clothing/accessory/halfcape(src)
 	new /obj/item/clothing/under/rank/commander(src)
 	new /obj/item/storage/belt/webbing/black(src)
@@ -51,6 +51,9 @@
 	icon_state = "armorer"
 
 /obj/structure/closet/secure_closet/armorer/populate_contents()
+	new /obj/item/voucher/blackshield/sargprimary(src)
+	new /obj/item/voucher/blackshield/secondary(src)
+	new /obj/item/voucher/blackshield/armor(src)
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
 	new /obj/item/clothing/accessory/holster/saber/militiasergeant/occupied(src)
 	new /obj/item/clothing/mask/gas(src)
@@ -81,6 +84,9 @@
 	icon_state = "trooper"
 
 /obj/structure/closet/secure_closet/personal/trooper/populate_contents()
+	new /obj/item/voucher/blackshield/primary(src)
+	new /obj/item/voucher/blackshield/secondary(src)
+	new /obj/item/voucher/blackshield/armor(src)
 	new /obj/item/tool/knife/boot/blackshield(src)
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
 	new /obj/item/clothing/glasses/ballistic(src)
@@ -89,7 +95,7 @@
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/head/rank/trooper/beret(src)
 	new /obj/item/clothing/head/rank/trooper/cap(src)
-	new /obj/item/clothing/suit/armor/commander/militia_overcoat(src)
+	new /obj/item/clothing/suit/storage/armor/commander/militia_overcoat(src)
 	new /obj/item/clothing/accessory/cape/trooper_cape(src)
 	new /obj/item/clothing/under/rank/trooper(src)
 	new /obj/item/storage/belt/webbing/black(src)
@@ -113,6 +119,9 @@
 	icon_state = "corpsman"
 
 /obj/structure/closet/secure_closet/personal/corpsman/populate_contents()
+	new /obj/item/voucher/blackshield/corpsprimary(src)
+	new /obj/item/voucher/blackshield/secondary(src)
+	new /obj/item/voucher/blackshield/armorcorpsman(src)
 	new /obj/item/device/scanner/health(src)
 	new /obj/item/roller(src)
 	new /obj/item/tool/knife/boot/blackshield(src)

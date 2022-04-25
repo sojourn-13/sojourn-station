@@ -14,3 +14,4 @@
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	can_dual = TRUE
 	projectile_type = /obj/item/projectile/slime_death
+	serial_type = "SI"

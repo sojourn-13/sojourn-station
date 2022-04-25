@@ -26,6 +26,7 @@
 	twohanded = TRUE
 	var/consume_cell = TRUE
 	price_tag = 2250
+	serial_type = "Absolute"
 
 /obj/item/gun/energy/plasma/antebellum/consume_next_projectile()
 	if(!cell) return null

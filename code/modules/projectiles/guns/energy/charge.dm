@@ -107,6 +107,7 @@
 	deltimer(overcharge_timer)
 	if(get_holding_mob() == user && get_cell() && cell.checked_use(1))
 		overcharge_level = min(overcharge_max, overcharge_level + get_overcharge_add(user))
+		to_chat(user, SPAN_NOTICE("[src] is now at [overcharge_level]/[overcharge_max] beam charge."))
 		set_light(2, overcharge_level/2, "#ff0d00")
 		if(overcharge_level < overcharge_max)
 			overcharge_timer = addtimer(CALLBACK(src, .proc/add_charge, user), 1 SECONDS, TIMER_STOPPABLE)

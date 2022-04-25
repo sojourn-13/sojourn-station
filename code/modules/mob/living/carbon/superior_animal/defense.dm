@@ -62,12 +62,12 @@
 
 /mob/living/carbon/superior_animal/attackby(obj/item/I, mob/living/user, var/params)
 	activate_ai() //If were attacked by something and havent woken up yet. Were awake now >:T
-	if (meat_type && (stat == DEAD) && (QUALITY_CUTTING in I.tool_qualities))
+	if (meat_type && (stat == DEAD) && (QUALITY_CUTTING in I.tool_qualities) && user.a_intent ==  I_HELP)
 		if (I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_NORMAL, required_stat = STAT_BIO))
 			harvest(user)
 	else
 
-		if(stance == HOSTILE_STANCE_ATTACK)
+		if(stance == HOSTILE_STANCE_ATTACK && stat == CONSCIOUS )
 			if(destroy_surroundings)
 				destroySurroundings()
 		. = ..()
@@ -105,7 +105,7 @@
 
 			M.put_in_active_hand(G)
 			G.synch()
-			LAssailant = M
+			LAssailant_weakref = WEAKREF(M)
 
 			M.do_attack_animation(src)
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)

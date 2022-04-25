@@ -34,7 +34,6 @@
 	needs_environment = FALSE
 	armor = list(melee = 15, bullet = 5, energy = 20, bomb = 25, bio = 100, rad = 25)
 
-
 /mob/living/simple_animal/hostile/hivebot/emp_act(severity)
 	..()
 	adjustFireLoss(rand(20,30))
@@ -205,7 +204,7 @@
 
 				M.put_in_active_hand(G)
 				G.synch()
-				LAssailant = M
+				LAssailant_weakref = WEAKREF(M)
 
 				M.do_attack_animation(src)
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)

@@ -868,6 +868,10 @@
 	name = "Lizard Ram Horns"
 	icon_state = "unathi_ramhorn_s"
 
+/datum/sprite_accessory/hair/liz_curled_horns
+	name = "Lizard Curled Horns"
+	icon_state = "lizard_horns_curled_s"
+
 /datum/sprite_accessory/hair/naramad_fairytail
 	name = "Naramad Fairytail"
 	icon_state = "serg_fairytail_s"

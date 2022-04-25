@@ -25,6 +25,7 @@
 	one_hand_penalty = 30 //not like it's used anyway, but LMG level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	twohanded = TRUE
+	serial_type = "EXC"
 
 	init_firemodes = list(
 		FULL_AUTO_600,
@@ -37,6 +38,7 @@
 	name = "\"Maxim\" machine gun"
 	desc = "An old and surprisingly deprecated gun from the Excelsior. One of their more dangerous weapons, effective at dealing with crowds or suppressing firing lines."
 	price_tag = 1000
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/maxim/update_icon()
 	..()

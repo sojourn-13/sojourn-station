@@ -455,8 +455,8 @@
 /obj/item/clothing/under/leisure
 	name = "leisure outfit"
 	desc = "A leisure outfit with brown jacket. Sometimes you just want to wear what is comfortable."
-	icon_state = "leisuroutfit"
-	item_state = "leisuroutfit"
+	icon_state = "leisureoutfit"
+	item_state = "leisureoutfit"
 
 /obj/item/clothing/under/leisure/white
 	name = "white blouse"
@@ -668,10 +668,17 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/helltaker
-	name = "charming outfit"//Helltaker reference
+	name = "black charming outfit" // Helltaker reference
 	desc = "A red shirt with a black tie and black pants. Stylish enough to impress the devil."
 	icon_state = "helltaker"
 	item_state = "helltaker"
+	price_tag = 45
+
+/obj/item/clothing/under/helltaker_m
+	name = "white charming outfit"
+	desc = "A collared, loose red shirt with white pants and a stout belt. Go get your own demon harem, now."
+	icon_state = "helltaker_m" // The Helltaker dude himself - Seb
+	item_state = "helltaker_m"
 	price_tag = 45
 
 /obj/item/clothing/under/colony
@@ -724,6 +731,7 @@
 		bio = 0,
 		rad = 0
 	)
+
 /obj/item/clothing/under/tribalhide/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"

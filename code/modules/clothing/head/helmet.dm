@@ -85,7 +85,7 @@
 	local forces so often put within it."
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	armor_list = list(melee = 15, bullet = 15, energy = 60, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 25, bullet = 25, energy = 60, bomb = 10, bio = 0, rad = 0)
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4
 	light_overlay = "bs_ablative"
@@ -166,7 +166,7 @@
 	icon_state = "sergeanthelm"
 	item_state = "sergeanthelm"
 	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
-	flags_inv = HIDEMASK|HIDEEARS
+	flags_inv = HIDEMASK
 
 /obj/item/clothing/head/helmet/ballistic/sergeant/verb/toggle_style()
 	set name = "Adjust helmet"
@@ -325,6 +325,31 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 5, MATERIAL_GOLD = 5)
+
+/obj/item/clothing/head/helmet/prime/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["prime dark"] = "prime"
+	options["prime royal"] = "primealt"
+	options["prime royal claric"] = "primealt2"
+	options["prime royal doctor"] = "primealt3"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/custodian
 	name = "custodian helmet"

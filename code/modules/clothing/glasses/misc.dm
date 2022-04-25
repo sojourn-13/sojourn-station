@@ -127,6 +127,15 @@
 	darkness_view = -3
 	obscuration = MEDIUM_OBSCURATION
 
+/obj/item/clothing/glasses/sunglasses/helltaker // Part of the whole Helltaker dude drip. - Seb
+	name = "devilish sunglasses"
+	desc = "A stylish pair of small, circular sunglasses that keeps your eyes surprisingly well hidden."
+	icon_state = "hellgoggles"
+	item_state = "hellgoggles"
+	flash_protection = FLASH_PROTECTION_MAJOR
+	darkness_view = -3
+	obscuration = MEDIUM_OBSCURATION
+
 /obj/item/clothing/glasses/aviator
 	name = "black aviators"
 	desc = "A pair of black-tinted designer sunglasses."

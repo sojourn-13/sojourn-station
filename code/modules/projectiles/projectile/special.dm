@@ -268,7 +268,7 @@
 /obj/item/projectile/bullet/flare
 	name = "flare"
 	icon_state = "flare"
-	damage_types = list(BRUTE = 12) //Legit deadlyest gun that you get in mass
+	damage_types = list(BURN = 12) //Legit deadlyest gun that you get in mass
 	kill_count = 12
 	armor_penetration = 0
 	step_delay = 3
@@ -335,3 +335,81 @@
 	kill_count = 7
 	check_armour = ARMOR_ENERGY
 	var/golem_damage_bonus = 20 // Damage multiplier against ameridians.
+
+
+/obj/item/projectile/tether
+	name = "tether grappler"
+	icon_state = "invisible"
+	nodamage = 1
+	damage_types = list(BRUTE = 0)
+	kill_count = 10
+	step_delay = 0.2
+	muzzle_type = /obj/effect/projectile/line/muzzle
+	tracer_type = /obj/effect/projectile/line/tracer
+	impact_type = /obj/effect/projectile/line/impact
+	var/list/our_tracers
+
+/obj/item/projectile/tether/Initialize()
+	..()
+	our_tracers = list()
+
+/obj/item/projectile/tether/on_impact(target)
+	for(var/obj/effect/tokill in our_tracers)
+		qdel(tokill)
+	..()
+	var/atom/movable/AM
+	var/reel_in_self = FALSE
+	if(isturf(target))
+		reel_in_self = TRUE
+	if(ismovable(target))
+		AM = target
+		reel_in_self = AM.anchored
+
+	if(reel_in_self)
+		original_firer.throw_at(target, 10, 2, original_firer)
+		visible_message(SPAN_WARNING("[src] begins reeling in, pulling [original_firer] towards [target]!"))
+		return
+
+	visible_message(SPAN_WARNING("[src] begins reeling in, pulling [target] towards [original_firer]!"))
+	AM.throw_at(original_firer, 10, 1, original_firer) //GET OVER HERE
+
+/obj/item/projectile/tether/muzzle_effect(var/matrix/T)
+	//This can happen when firing inside a wall, safety check
+	if (!location)
+		return
+
+	if(silenced)
+		return
+
+	if(ispath(muzzle_type))
+		var/obj/effect/projectile/M = new muzzle_type(get_turf(src))
+
+		if(istype(M))
+			if(proj_color)
+				var/icon/I = new(M.icon, M.icon_state)
+				I.Blend(proj_color)
+				M.icon = I
+			M.set_transform(T)
+			M.pixel_x = location.pixel_x
+			M.pixel_y = location.pixel_y
+			M.activate()
+			our_tracers.Add(M)
+
+/obj/item/projectile/tether/tracer_effect(var/matrix/M) //Special tracer handling, since we only want them to disappear after it hits something
+
+	if (!location)
+		return
+
+	if(ispath(tracer_type))
+		var/obj/effect/projectile/P = new tracer_type(location.loc)
+
+		if(istype(P))
+			if(proj_color)
+				var/icon/I = new(P.icon, P.icon_state)
+				I.Blend(proj_color)
+				P.icon = I
+			P.set_transform(M)
+			P.pixel_x = location.pixel_x
+			P.pixel_y = location.pixel_y
+			P.activate()
+			our_tracers.Add(P) //this should be more performant than += since we don't need to be creating a bunch of new lists

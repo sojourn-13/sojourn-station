@@ -15,3 +15,4 @@
 	one_hand_penalty = 10
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
 	twohanded = TRUE
+	serial_type = "LSS"

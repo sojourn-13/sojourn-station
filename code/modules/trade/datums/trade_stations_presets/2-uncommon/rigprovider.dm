@@ -23,6 +23,7 @@
 			/obj/item/rig_module/held/shield,
 			/obj/item/rig_module/datajack,
 			/obj/item/rig_module/modular_injector,
+			/obj/item/rig_module/cargo_clamp/large
 		)
 	)
 	secret_inventory = list(

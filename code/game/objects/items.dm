@@ -83,6 +83,7 @@
 	var/list/item_upgrades = list()
 	var/max_upgrades = 3
 	var/list/prefixes = list()
+	var/list/blacklist_upgrades = list() //Blacklisting upgrades currently dosnt work... - Trilby
 
 
 	var/list/effective_faction = list() // Which faction the item is effective against.

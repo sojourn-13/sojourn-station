@@ -17,6 +17,7 @@
 	recoil_buildup = 3
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 	one_hand_penalty = 5
+	serial_type = "Absolute"
 
 /obj/item/gun/projectile/mk58/update_icon()
 	..()

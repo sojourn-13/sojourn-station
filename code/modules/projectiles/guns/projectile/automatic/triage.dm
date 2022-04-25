@@ -17,16 +17,17 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 14, MATERIAL_PLASTIC = 12, MATERIAL_PLATINUM = 3)
 	price_tag = 1850
 	penetration_multiplier = 1.2
-	damage_multiplier = 0.6
+	damage_multiplier = 0.75
 	recoil_buildup = 4
-	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
+	fire_sound_silenced = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SCOPE, GUN_SILENCABLE)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_2_ROUND,
-		BURST_3_ROUND,
-		FULL_AUTO_400
+		BURST_2_ROUND_NOLOSS,
+		BURST_3_ROUND_NOLOSS,
+		FULL_AUTO_400_NOLOSS
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/triage/update_icon()
 	..()

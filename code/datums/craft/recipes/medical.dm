@@ -56,6 +56,14 @@
 		list(QUALITY_WELDING, 10, 70)
 	)
 
+/datum/craft_recipe/medical/pointy_bottle
+	name = "tincture bottle"
+	result = /obj/item/reagent_containers/glass/bottle/tincture
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS),
+		list(QUALITY_WELDING, 10, 70)
+	)
+
 /datum/craft_recipe/medical/beaker
 	name = "beaker"
 	result = /obj/item/reagent_containers/glass/beaker

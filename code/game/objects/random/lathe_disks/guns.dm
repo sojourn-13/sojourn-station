@@ -147,7 +147,6 @@
 /obj/random/lathe_disk/pistol/item_to_spawn()
 	return pickweight(list(
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58 = 5,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/alemao = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/NM_colt = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/colt = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/rafale = 2,

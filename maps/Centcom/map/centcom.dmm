@@ -3109,7 +3109,7 @@
 /area/shuttle/skipjack_area)
 "iS" = (
 /obj/structure/table/rack,
-/obj/item/gun/launcher/crossbow,
+/obj/item/gun/projectile/crossbow,
 /obj/item/stack/rods{
 	amount = 10
 	},

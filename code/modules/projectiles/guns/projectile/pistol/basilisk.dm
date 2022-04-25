@@ -21,6 +21,7 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	auto_eject = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/basilisk/update_icon()
 	..()
