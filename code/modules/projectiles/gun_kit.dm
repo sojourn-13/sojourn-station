@@ -1,6 +1,8 @@
 //GUN KIT
 GLOBAL_LIST_EMPTY(unlocked_gun_replication) //Every unlocked gun
 
+var/list/name_to_gunpart
+
 /obj/item/gunkit
 	name = "Marshal Gunsmith Kit"
 	desc = ""
@@ -93,10 +95,15 @@ GLOBAL_LIST_EMPTY(unlocked_gun_replication) //Every unlocked gun
 	gun_path *= cost_multy
 
 /obj/item/gunkit/attack_self(mob/user)
+	if(perk_locked && !user.stats.getPerk(perk_to_use))
+		to_chat(user, "<span class='info'>The kit with all its broken scrap tools are useless.</span>")
+		return
 	nano_ui_interact(user)
 
 /obj/item/gunkit/ui_data(mob/user)
 	var/list/list/data = list()
+
+	data |= gunparts_data()
 
 	for(var/datum/unlocked_gun_replications/G in GLOB.unlocked_gun_replication)
 		data["contracts"].Add(list(list(
@@ -119,36 +126,102 @@ GLOBAL_LIST_EMPTY(unlocked_gun_replication) //Every unlocked gun
 		ui.set_initial_data(data)
 		ui.open()
 
+/obj/item/gunkit/proc/gunparts_data()
+	var/list/data = list()
 
-/*
-/obj/item/gunkit/Topic(href, href_list)
-	if(..())
-		return 1
+	var/list/M = list()
+	for(var/mtype in parts_stored)
+		if(parts_stored[mtype] <= 0)
+			continue
 
-	if(href_list["craft"])
-		if(!can_launch())
-			return
+		var/gun_part/MAT = get_gunpart_name(mtype)
+		var/list/ME = list("name" = MAT, "id" = mtype, "amount" = parts_stored[mtype])
 
-		for(var/datum/unlocked_gun_replications/G in GLOB.unlocked_gun_replication)
-			if(C.completed)
-				continue
-			C.on_container(src)
-		QDEL_LIST(contents)
-		if(del_on_send)
-			if(ismob(loc))
-				to_chat(loc, SPAN_NOTICE("[src] flickers away in a brief flash of light."))
-			qdel(src)
+		M.Add(list(ME))
 
-	else if(href_list["owner"])
-		owner = usr.mind
-		. = 1
+	data["gunparts"] = M
 
-	if(.)
-		SSnano.update_uis(src)
+	return data
 
+/gun_part
+	var/name
 
-/obj/item/gunkit/proc/can_make()
-*/
+/proc/get_gunpart_name(name)
+	var/gun_part/gun_part = name// = get_gunpart()
+	if(gun_part)
+		return gun_part
 
+//obj/proc/get_gunpart()
+//	return null
 
+/proc/get_gunpart_by_name(name)
+	if(!name_to_gunpart)
+		populate_gunpart_list()
+	var/gun_part/M = name_to_gunpart[lowertext(name)]
+	if(!M)
+		error("Invalid material given: [name]")
+	return M
 
+/proc/populate_gunpart_list(force_remake=0)
+	if(name_to_gunpart && !force_remake) return // Already set up!
+	name_to_gunpart = list()
+	for(var/type in typesof(/gun_part) - /gun_part)
+		var/gun_part/new_gunpart = new type
+		if(!new_gunpart.name)
+			continue
+		name_to_gunpart[lowertext(new_gunpart.name)] = new_gunpart
+	return 1
+
+/gun_part/handmade
+	name = PART_HAND
+
+/gun_part/handmade_l
+	name = PART_HAND_L
+
+/gun_part/civ
+	name = PART_CIV
+
+/gun_part/civ_l
+	name = PART_CIV_L
+
+/gun_part/police
+	name = PART_POLICE
+
+/gun_part/police_l
+	name = PART_POLICE_L
+
+/gun_part/mil
+	name = PART_MILSIM
+
+/gun_part/mil_l
+	name = PART_MILSIM_L
+
+/gun_part/si
+	name = PART_SI
+
+/gun_part/si_l
+	name = PART_SI_L
+
+/gun_part/church
+	name = PART_CHURCH
+
+/gun_part/church_l
+	name = PART_CHURCH_L
+
+/gun_part/guild
+	name = PART_GUILD
+
+/gun_part/guild_l
+	name = PART_GUILD_L
+
+/gun_part/greyson
+	name = PART_GP
+
+/gun_part/greyson_l
+	name = PART_GP_L
+
+/gun_part/advanced
+	name = PART_EXODUS
+
+/gun_part/advanced_l
+	name = PART_EXODUS_L
