@@ -106,6 +106,12 @@
 	var/serial_type = "INDEX" // Index will be used for detective scanners, if there is a serial type , the gun will add a number onto its final , if none , it won;'t show on examine
 	var/serial_shown = TRUE
 
+	var/overcharge_timer //Holds ref to the timer used for overcharging
+	var/overcharge_timer_step = 1 SECOND
+	var/overcharge_rate = 1 //Base overcharge additive rate for the gun
+	var/overcharge_level = 0 //What our current overcharge level is. Peaks at overcharge_max
+	var/overcharge_max = 10
+
 /obj/item/gun/proc/loadAmmoBestGuess()
 	return
 
@@ -339,7 +345,7 @@
 			return FALSE
 	return TRUE
 
-/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
+/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, extra_proj_damagemult = 0, extra_proj_penmult = 0, extra_proj_wallbangmult = 0, extra_proj_stepdelaymult = 0, multiply_projectile_agony = 0)
 	if(!user || !target) return
 
 	if((world.time < next_fire_time) || currently_firing)
@@ -367,15 +373,31 @@
 			handle_click_empty(user)
 			break
 
+		if(extra_proj_damagemult)
+			projectile.multiply_projectile_damage(extra_proj_damagemult)
+
 		projectile.multiply_projectile_damage(damage_multiplier)
+
+		if(extra_proj_penmult)
+			projectile.multiply_projectile_penetration(extra_proj_penmult)
 
 		projectile.multiply_projectile_penetration(penetration_multiplier + user.stats.getStat(STAT_VIG) * 0.02)
 
+		if(extra_proj_wallbangmult)
+			projectile.multiply_pierce_penetration(extra_proj_wallbangmult)
+
 		projectile.multiply_pierce_penetration(pierce_multiplier)
+
+		if(extra_proj_stepdelaymult)
+			projectile.multiply_projectile_step_delay(extra_proj_stepdelaymult)
 
 		projectile.multiply_projectile_step_delay(proj_step_multiplier)
 
+		if(multiply_projectile_agony)
+			projectile.multiply_projectile_agony(multiply_projectile_agony)
+
 		projectile.multiply_projectile_agony(proj_agony_multiplier)
+
 
 		if(istype(projectile, /obj/item/projectile))
 			var/obj/item/projectile/P = projectile
