@@ -254,7 +254,7 @@
 	amount = 8
 	max_amount = 8
 	heal_brute = 5
-	price_tag = 25
+	price_tag = 10
 
 /obj/item/stack/medical/ointment
 	name = "ointment"

@@ -5,7 +5,8 @@
 	icon_state = "multitool"
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/tool/engimplant
-	price_tag = 575
+	matter = list(MATERIAL_STEEL = 12)
+	price_tag = 48
 
 /obj/item/organ_module/active/simple/engineer/organic
 	name = "embedded organic engineering multitool"
@@ -15,6 +16,7 @@
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/tool/engimplant/organic
 	matter = list(MATERIAL_BIOMATTER = 10)
+	price_tag = 20
 	is_organic_module = TRUE
 
 /obj/item/biogoop/engineer

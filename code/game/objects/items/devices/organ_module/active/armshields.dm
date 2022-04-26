@@ -15,4 +15,4 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 5, MATERIAL_STEEL = 5)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/shield/riot/arm
-	price_tag = 850
+	price_tag = 360

@@ -21,6 +21,7 @@
 	var/amount_per_click = 1 //how many we load per click. Used to
 	var/ammo_type = "mew" //What kinda ammo do we load?
 	matter = list(MATERIAL_STEEL = 35)
+	price_tag = 140
 
 /obj/item/mech_ammo_box/examine(mob/user)
 	..()
@@ -99,7 +100,8 @@
 	ammo_amount_left = 40
 	ammo_max_amout = 40
 	ammo_type = "12g"
-	price_tag = 30
+	matter = list(MATERIAL_STEEL = 35)
+	price_tag = 140
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot
 	name = "\improper LBX AC 10 \"Scattershot\""
@@ -131,7 +133,8 @@
 	projectiles_per_shot = 6
 	deviation = 0.9
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
-	price_tag = 700
+	matter = list(MATERIAL_STEEL = 15)
+	price_tag = 60
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/flak/loaded
 	loaded = TRUE
@@ -145,7 +148,8 @@
 	ammo_max_amout = 300
 	amount_per_click = 3 //Hack to make them impossable to go into negitives
 	ammo_type = "5.56"
-	price_tag = 30
+	matter = list(MATERIAL_STEEL = 35)
+	price_tag = 140
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg
 	name = "\improper Ultra AC 2"

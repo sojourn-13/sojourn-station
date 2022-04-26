@@ -789,7 +789,8 @@ var/global/list/default_medbay_channels = list(
 	canhear_range = 4
 	var/random_hear = 20
 	channels = list("Command" = 1, "Blackshield" = 1, "Marshal" = 1, "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "Prospector" = 1)
-	price_tag = 20000
+	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
+	price_tag = 16
 	origin_tech = list(TECH_DATA = 7, TECH_ENGINEERING = 7, TECH_ILLEGAL = 7)
 	var/list/obj/item/oddity/used_oddity = list()
 	var/last_produce = 0

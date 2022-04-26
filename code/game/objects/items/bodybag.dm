@@ -7,7 +7,7 @@
 	icon_state = "bodybag_folded"
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_PLASTIC = 2)
-	price_tag = 10
+	price_tag = 4
 
 	attack_self(mob/user)
 		var/obj/structure/closet/body_bag/R = new /obj/structure/closet/body_bag(user.loc)
@@ -90,7 +90,7 @@
 	icon_state = "bodybag_folded"
 	origin_tech = list(TECH_BIO = 4)
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 1)
-	price_tag = 50
+	price_tag = 9
 
 /obj/item/bodybag/cryobag/attack_self(mob/user)
 	var/obj/structure/closet/body_bag/cryobag/R = new /obj/structure/closet/body_bag/cryobag(user.loc)

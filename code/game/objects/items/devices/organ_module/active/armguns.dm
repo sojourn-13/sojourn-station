@@ -6,7 +6,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 5, MATERIAL_STEEL = 5)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/gun/projectile/automatic/armsmg
-	price_tag = 780 //Quite costly
+	price_tag = 360 //Quite costly
 
 /obj/item/organ_module/active/simple/armsmg/blackshield
 	holding_type = /obj/item/gun/projectile/automatic/armsmg/blackshield
@@ -20,4 +20,4 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 5, MATERIAL_STEEL = 5)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/gun/projectile/shotgun/pump/hunter_crossbow_implanted
-	price_tag = 800
+	price_tag = 360

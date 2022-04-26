@@ -14,7 +14,7 @@
 	matter = list(MATERIAL_STEEL = 1)
 	max_amount = 120
 	attack_verb = list("hit", "bludgeoned", "whacked")
-	price_tag = 1
+	price_tag = 4
 	novariants = FALSE
 	stacktype_alt = /obj/item/stack/rods/random
 

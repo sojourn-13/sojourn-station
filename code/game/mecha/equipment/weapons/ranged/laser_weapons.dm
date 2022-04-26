@@ -15,6 +15,8 @@
 	name = "general energy weapon"
 	auto_rearm = 1
 	range = MECHA_MELEE | MECHA_RANGED
+	matter = list(MATERIAL_STEEL = 15)
+	price_tag = 60
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser
 	equip_cooldown = 8
@@ -23,7 +25,6 @@
 	energy_drain = 30
 	projectile = /obj/item/projectile/beam
 	fire_sound = 'sound/weapons/Laser.ogg'
-	price_tag = 400
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/riggedlaser
 	equip_cooldown = 15
@@ -34,7 +35,6 @@
 	projectile = /obj/item/projectile/beam
 	fire_sound = 'sound/weapons/Laser.ogg'
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
-	price_tag = 200
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
 	equip_cooldown = 15
@@ -43,7 +43,6 @@
 	energy_drain = 60
 	projectile = /obj/item/projectile/beam/heavylaser
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
-	price_tag = 500
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy/auto
 	equip_cooldown = 5
@@ -64,7 +63,6 @@
 	energy_drain = 120
 	projectile = /obj/item/projectile/ion
 	fire_sound = 'sound/weapons/Laser.ogg'
-	price_tag = 300
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse
 	equip_cooldown = 30
@@ -92,7 +90,7 @@
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 7, TECH_PLASMA = 10)
 	projectile = /obj/item/projectile/hydrogen/cannon/max
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
-	price_tag = 1300 //state of the art
+	price_tag = 320 //state of the art
 
 /* Commenting this out rather than removing it because it may be useful for reference.
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/honker

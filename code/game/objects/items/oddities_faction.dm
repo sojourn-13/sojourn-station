@@ -10,7 +10,7 @@
 	throwforce = WEAPON_FORCE_PAINFUL
 	throw_speed = 1
 	throw_range = 2
-	price_tag = 20000
+	price_tag = 52
 	origin_tech = list(TECH_MATERIAL = 4, TECH_BIO = 13, TECH_POWER = 7) //high bio as it works on making donuts!
 	matter = list(MATERIAL_PLASTIC = 6, MATERIAL_GLASS = 7)
 	var/last_produce = 0
@@ -136,7 +136,7 @@
 	volume = 200
 	w_class = ITEM_SIZE_HUGE
 	reagent_flags = OPENCONTAINER
-	price_tag = 20000
+	price_tag = 190
 	origin_tech = list(TECH_BIO = 9, TECH_MATERIAL = 9, TECH_PLASMA = 3)
 	unacidable = TRUE //glass doesn't dissolve in acid
 	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 2, MATERIAL_PLASMA = 5, MATERIAL_BIOMATTER = 50)
@@ -401,7 +401,7 @@ No more of that.
 	throwforce = WEAPON_FORCE_WEAK
 	throw_speed = 3
 	throw_range = 15
-	price_tag = 20000
+	price_tag = 260
 	origin_tech = list(TECH_MATERIAL = 10)
 	var/affect_radius = 7
 	matter = list(MATERIAL_GLASS = 5, MATERIAL_GOLD = 7, MATERIAL_SILVER = 5, MATERIAL_DIAMOND = 1)
@@ -693,7 +693,7 @@ No more of that.
 	volume = 100 //Average bottle volume
 	reagent_flags = OPENCONTAINER
 
-	price_tag = 4000
+	price_tag = 100
 
 	matter = list(MATERIAL_BIOMATTER = 50)
 	var/ticks

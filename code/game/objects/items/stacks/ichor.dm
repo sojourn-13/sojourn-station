@@ -8,4 +8,4 @@
 	origin_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 3)
 	amount = 5
 	w_class = ITEM_SIZE_SMALL //just so you can place same places that a brute pack would be
-	price_tag = 0
+	price_tag = 4

@@ -7,7 +7,7 @@
 	matter = list(MATERIAL_STEEL = 20)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = null
-	price_tag = 200 //Just some metal
+	price_tag = 80 //Just some metal
 
 /obj/item/organ_module/active/simple/custom/attackby(var/obj/item/O, var/mob/user)
 	if(!holding) // Do we have an item inserted?
