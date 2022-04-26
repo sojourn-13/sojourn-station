@@ -187,6 +187,10 @@
 	name = "Angel Voidsuit"
 	build_path = /obj/item/clothing/suit/space/void/NTvoid
 
+/datum/design/bioprinter/nt_clothes/knight_rig
+	name = "Knight Hardsuit Module"
+	build_path = /obj/item/rig/combat/knight
+
 //[MELEE]
 /datum/design/autolathe/sword/nt_sword
 	name = "NT Short Sword"

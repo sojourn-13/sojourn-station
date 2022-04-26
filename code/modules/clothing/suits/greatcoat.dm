@@ -192,6 +192,18 @@
 	icon_state = "overcoat_brown"
 	item_state = "overcoat_brown"
 
+/obj/item/clothing/suit/storage/greatcoat/overcoatblack/edgy // Purse owner 5 reference.
+	name = "phantom overcoat"
+	desc = "Looking good, edgelord."
+	icon_state = "phantom"
+	item_state = "phantom"
+
+/obj/item/clothing/suit/storage/greatcoat/overcoatblack/crimson // Saint's Row reference.
+	name = "red overcoat"
+	desc = "This coat costed more than Ryan's little crystal there in the vault."
+	icon_state = "morningstar"
+	item_state = "morningstar"
+
 /obj/item/clothing/suit/greatcoat/general/german
 	name = "thalatta overcoat"
 	desc = "A sturdy overcoat from Thalatta, the city-ship filled with people of faith and technology. Not related to the local church, strangely enough, but worn by them sometimes."
