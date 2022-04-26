@@ -57,10 +57,9 @@
 				return
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 				if(type)
-					var/N = new type(get_turf(user))
+					var/P = pick_n_take(welder_salvage)
+					var/N = new P(get_turf(user))
 					user.visible_message("[user] cuts [N] from [src]", "You cut [N] from [src]", "You hear a sound of welder nearby")
-					if(istype(N, /obj/item/mecha_parts/part))
-						welder_salvage -= type
 					salvage_num--
 					return
 				else
