@@ -131,18 +131,21 @@ var/list/name_to_gunpart
 
 	var/list/M = list()
 	for(var/mtype in parts_stored)
-		if(parts_stored[mtype] <= 0)
-			continue
+	//	if(parts_stored[mtype] <= 0)
+	//		continue
 
-		var/gun_part/MAT = get_gunpart_name(mtype)
-		var/list/ME = list("name" = MAT, "id" = mtype, "amount" = parts_stored[mtype])
+//		data["mtype"] = mtype
+		var/list/ME = list("name" = mtype, "amount" = parts_stored[mtype])
 
+//		var/gun_part/MAT = get_gunpart_name(mtype)
+//		var/list/ME = list("name" = MAT, "id" = mtype, "amount" = parts_stored[mtype])
 		M.Add(list(ME))
 
 	data["gunparts"] = M
 
 	return data
 
+/*
 /gun_part
 	var/name
 
@@ -225,3 +228,4 @@ var/list/name_to_gunpart
 
 /gun_part/advanced_l
 	name = PART_EXODUS_L
+*/
