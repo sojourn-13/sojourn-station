@@ -13,6 +13,7 @@
 	projectile_type = /obj/item/projectile/beam/sniper/judgement
 	max_upgrades = 0 //Its a book or staff...
 	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/matter/holybook/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
 	var/obj/item/implant/core_implant/I = user.get_core_implant(/obj/item/implant/core_implant/cruciform)

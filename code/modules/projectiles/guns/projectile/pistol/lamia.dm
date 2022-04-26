@@ -38,6 +38,7 @@
 	icon_state = "dark_lamia"
 	item_state = "dark_lamia"
 	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/projectile/lamia/dark/sf
 	name = "\"Naga\" heavy pistol"
@@ -45,6 +46,7 @@
 	icon_state = "sfdark_lamia"
 	item_state = "sfdark_lamia"
 	serial_type = "Sol Fed"
+	serial_shown = TRUE
 
 /obj/item/gun/projectile/lamia/scoped
 	name = "\"Lamia\" advanced heavy pistol"
