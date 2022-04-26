@@ -76,6 +76,28 @@
 	icon_state = "scaf_wolf"
 	item_state = "scaf_wolf"
 
+/obj/item/clothing/head/helmet/space/void/SCAF/voidwolf/toggle_style()
+	set name = "Adjust Helmet Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard"] = "scaf_wolf"
+
+	var/choice = input(M,"What kind of helmet style do you want to switch to?","Adjust style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's appearance into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/head/helmet/space/void/SCAF/blackshield
 	name = "blackshield SCAF helmet"
 	desc = "A thick airtight helmet designed for planetside warfare retrofitted with seals to act like normal space suit helmet. Features an inbuilt camera feed and helmet light."

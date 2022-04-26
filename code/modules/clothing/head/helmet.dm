@@ -337,9 +337,9 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["prime dark"] = "prime"
-	options["prime royal"] = "primealt"
-	options["prime royal claric"] = "primealt2"
-	options["prime royal doctor"] = "primealt3"
+	options["prime royal"] = "prime_alt"
+	options["prime royal claric"] = "prime_alt2"
+	options["prime royal doctor"] = "prime_alt3"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
