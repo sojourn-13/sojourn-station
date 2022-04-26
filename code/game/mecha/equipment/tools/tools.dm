@@ -22,6 +22,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/tool
 	matter = list(MATERIAL_STEEL = 15)
+	price_tag = 60
 
 /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp
 	name = "hydraulic clamp"
@@ -31,6 +32,8 @@
 	var/dam_force = 20
 	var/obj/mecha/working/ripley/cargo_holder
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
+	matter = list(MATERIAL_STEEL = 15)
+	price_tag = 60
 
 	attach(obj/mecha/M as obj)
 		..()
@@ -108,7 +111,8 @@
 	icon_state = "mecha_drill"
 	equip_cooldown = 30
 	energy_drain = 10
-	price_tag = 150
+	matter = list(MATERIAL_STEEL = 15)
+	price_tag = 60
 	force = WEAPON_FORCE_DANGEROUS
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
@@ -166,6 +170,7 @@
 	icon_state = "mecha_diamond_drill"
 	origin_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 3)
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_DIAMOND = 3)
+	price_tag = 210
 	equip_cooldown = 10 // 3 diamonds for 3x the speed!
 	force = 25 //Lets not be out classed by a wrench...
 
@@ -221,7 +226,8 @@
 	energy_drain = 0
 	range = MECHA_MELEE|MECHA_RANGED
 	required_type = /obj/mecha/working
-	price_tag = 100
+	matter = list(MATERIAL_STEEL = 15)
+	price_tag = 60
 	var/spray_particles = 5
 	var/spray_amount = 5	//units of liquid per particle. 5 is enough to wet the floor - it's a big fire extinguisher, so should be fine
 	var/max_water = 1000
@@ -295,7 +301,7 @@
 	energy_drain = 250
 	range = MECHA_MELEE|MECHA_RANGED
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASMA = 15, MATERIAL_URANIUM = 15)
-	price_tag = 1500
+	price_tag = 860
 	var/mode = 0 //0 - deconstruct, 1 - wall or floor, 2 - airlock.
 	var/disabled = 0 //malf
 
@@ -580,7 +586,7 @@
 	deflect_coeff = 1.15
 	damage_coeff = 0.8
 	melee = 1
-	price_tag = 600
+	price_tag = 130
 
 	activate_boost()
 		if(..())
@@ -605,7 +611,7 @@
 	deflect_coeff = 1.15
 	damage_coeff = 0.8
 	melee = 0
-	price_tag = 600
+	price_tag = 180
 
 	activate_boost()
 		if(..())
@@ -629,7 +635,7 @@
 	energy_drain = 100
 	range = 0
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_GOLD = 10, MATERIAL_SILVER = 2, MATERIAL_GLASS = 5)
-	price_tag = 1200
+	price_tag = 180
 	var/health_boost = 2
 	var/datum/global_iterator/pr_repair_droid
 	var/icon/droid_overlay
@@ -725,7 +731,7 @@
 	equip_cooldown = 10
 	energy_drain = 0
 	range = 0
-	price_tag = 900
+	price_tag = 118
 	var/datum/global_iterator/pr_energy_relay
 	var/coeff = 100
 	var/list/use_channels = list(STATIC_EQUIP,STATIC_ENVIRON,STATIC_LIGHT)
@@ -812,6 +818,7 @@
 	energy_drain = 0
 	range = MECHA_MELEE
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 5, MATERIAL_GLASS = 1)
+	price_tag = 94
 	var/datum/global_iterator/pr_mech_generator
 	var/coeff = 100
 	var/obj/item/stack/material/fuel
