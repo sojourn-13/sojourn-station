@@ -115,6 +115,7 @@
 	var/consume_cell = FALSE
 	price_tag = 500
 	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/energy/shrapnel/consume_next_projectile()
 	if(!cell) return null

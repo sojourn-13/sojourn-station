@@ -29,6 +29,7 @@
 		FULL_AUTO_400
 		)
 	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/energy/lasersmg/alt
 	name = "Disco Vazer \"Lasblender\""

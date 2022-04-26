@@ -19,3 +19,4 @@
 		WEAPON_NORMAL
 	)
 	serial_type = "INDEX"
+	serial_shown = FALSE

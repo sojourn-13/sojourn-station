@@ -16,3 +16,4 @@
 	can_dual = FALSE
 	projectile_type = /obj/item/projectile/beam/tesla
 	serial_type = "INDEX"
+	serial_shown = FALSE
