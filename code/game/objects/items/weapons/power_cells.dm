@@ -6,7 +6,7 @@
 	icon_state = "b_st"
 	maxcharge = 2000
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3)
-	price_tag = 200
+	price_tag = 42
 
 /obj/item/cell/large/high
 	name = "Lonestar \"Robustcell 6000L\""
@@ -64,6 +64,7 @@
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 20000
 	max_chargerate = 0.24
+	price_tag = 162
 
 /obj/item/cell/large/moebius/nuclear
 	name = "Soteria \"Atomcell 14000L\""
@@ -73,7 +74,7 @@
 	origin_tech = list(TECH_POWER = 6)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 6)
 	maxcharge = 14000
-	price_tag = 400
+	price_tag = 162
 
 /obj/item/cell/large/greyson
 	name = "GP-SI \"Posi-cell 16000L\""
@@ -83,7 +84,7 @@
 	autorecharging = TRUE
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_PLATINUM = 3, MATERIAL_URANIUM = 6)
-	price_tag = 600
+	price_tag = 252
 
 /obj/item/cell/large/excelsior
 	name = "Excelsior \"Zarya 18000L\""
@@ -101,6 +102,7 @@
 	maxcharge = 13000
 	max_chargerate = 0
 	created_max_charge = TRUE
+	price_tag = 42
 
 /obj/item/cell/large/neotheology/plasma
 	name = "Absolute \"Radiance 20000L\""
@@ -108,6 +110,7 @@
 	icon_state = "b_nt_pl"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_BIOMATTER = 7.5)
 	maxcharge = 20000
+	price_tag = 27
 
 //Meme cells - for fun
 
@@ -135,7 +138,7 @@
 	throw_range = 7
 	maxcharge = 600
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2)
-	price_tag = 100
+	price_tag = 36
 
 /obj/item/cell/medium/depleted
 	charge = 0
@@ -201,6 +204,7 @@
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 1600
 	max_chargerate = 0.24
+	price_tag = 116
 
 /obj/item/cell/medium/moebius/nuclear
 	name = "Soteria \"Atomcell 1000M\""
@@ -210,7 +214,7 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_URANIUM = 4)
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1000
-	price_tag = 200
+	price_tag = 116
 
 /obj/item/cell/medium/greyson
 	name = "GP-SI \"Posi-cell 1600M\""
@@ -220,7 +224,7 @@
 	autorecharging = TRUE
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_PLATINUM = 2, MATERIAL_URANIUM = 4)
-	price_tag = 300
+	price_tag = 176
 
 /obj/item/cell/medium/excelsior
 	name = "Excelsior \"Zarya 1100M\""
@@ -258,7 +262,7 @@
 	throw_range = 7
 	maxcharge = 100
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1)
-	price_tag = 50
+	price_tag = 18
 
 /obj/item/cell/small/depleted
 	charge = 0
@@ -324,6 +328,7 @@
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 500
 	max_chargerate = 0.24
+	price_tag = 58
 
 /obj/item/cell/small/moebius/nuclear
 	name = "Soteria \"Atomcell 300S\""
@@ -332,7 +337,7 @@
 	autorecharging = TRUE
 	origin_tech = list(TECH_POWER = 6)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1, MATERIAL_URANIUM = 2)
-	maxcharge = 300
+	maxcharge = 58
 	price_tag = 100
 
 /obj/item/cell/small/moebius/pda
@@ -346,7 +351,7 @@
 	autorecharging = TRUE
 	autorecharge_rate = 0.007
 	recharge_time = 1
-	price_tag = 65
+	price_tag = 28
 
 /obj/item/cell/small/greyson
 	name = "GP-SI \"Posi-cell 400S\""
@@ -356,7 +361,7 @@
 	autorecharging = TRUE
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_PLATINUM = 1, MATERIAL_URANIUM = 2)
-	price_tag = 150
+	price_tag = 88
 
 /obj/item/cell/small/excelsior
 	name = "Excelsior \"Zarya 400S\""
@@ -463,6 +468,7 @@
 	icon = 'icons/obj/machines/chemistry.dmi'
 	icon_state = "centrifuge_makeshift"
 	matter = list(MATERIAL_STEEL = 30)
+	price_tag = 120
 	cell = null
 	suitable_cell = /obj/item/cell
 
