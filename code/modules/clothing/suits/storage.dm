@@ -851,6 +851,19 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	body_parts_covered = UPPER_TORSO|ARMS
 	siemens_coefficient = 0.7
 
+/obj/item/clothing/suit/storage/tojo
+	name = "Mad dog jacket" // KIRYU-CHAAAAN!~
+	desc = "Go have fun, and live crazier than anyone else."
+	icon_state = "tojojacket"
+	item_state = "tojojacket"
+	armor_list = list(
+		melee = 5,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 0,
+		rad = 0)
+
 /*Waistcoat*/
 /obj/item/clothing/suit/storage/wcoat/black
 	name = "black waistcoat"
@@ -905,6 +918,12 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	slot_flags = SLOT_OCLOTHING
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	siemens_coefficient = 0.9
+
+/obj/item/clothing/suit/storage/wcoat/helltaker
+	name = "charming waistcoat"
+	desc = "A feminine waistcoat that accentuates one's curves, to be worn with a dapper suit." // Now you can also be Malinka and Cerberus. - Seb
+	icon_state = "hellvest"
+	item_state = "hellvest"
 
 /obj/item/clothing/suit/storage/helltaker_apron // Get your Helltaker apron. - Seb
 	name = "lonestar black apron"
@@ -1045,9 +1064,44 @@ obj/item/clothing/suit/sweater/blue
 
 /obj/item/clothing/suit/storage/suitjacket/helltaker
 	name = "white suit jacket"
-	desc = "A stylish, opened white suit jacket with a red flower on it. Stylish enough to impress demon girls." // The OG Helltaker jacket drip is here. - Seb
+	desc = "A stylish, opened white suit jacket with a red flower on it. Dapper enough to impress demon girls." // The OG Helltaker jacket drip is here. - Seb
 	icon_state = "white_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/helltaker/black
+	name = "devilish black suit jacket"
+	desc = "A stylish, opened black suit jacket with adjustable styles."
+	icon_state = "helljacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/helltaker/black/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default"] = "helljacket"
+	options["default, buttoned"] = "helljacket_closed"
+	options["S & M combo"] = "pandemonium"
+	options["draped over"] = "justicedrip"
+
+	var/choice = input(M,"What kind of style do you want to change to?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your jacket's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/storage/suitjacket/scav
 	name = "frontier jacket"

@@ -71,24 +71,28 @@
 		give_points(1.2) //1000 research points PER size. 300 points per tick per tier of laser. ~1,000-5,000 before mobs spawn.
 		if(prob(3))
 			spawn_monsters(4) //Full Furher retinue
-			return
 
 	else if(istype(area, /area/mine/unexplored))
 		give_points(0.4) //100 points per tick per tier of laser
 		if(prob(2))
 			spawn_monsters(2) //Fewer than deepmaint, since this area is not as dangerous. Need to make a new spacemob spawner!
-			return
 
 	else if(istype(area, /area/awaymission))
 		give_points(0.8) //200 points per tick per tier of laser
 		if(prob(1))
 			spawn_monsters(2)
 
+	else if(istype(area, /area/nadezhda/rnd))
+		give_points(0.1) //Anti-Cheese
+		if(prob(10))
+			spawn_monsters(5)
+			spawn_monsters(1) //Some infighting
+			spawn_monsters(1) //Some infighting
+
 	else
 		give_points(0.2)
 		if(prob(10))
 			src.spawn_monsters(1)//On the station is just calls groups of roaches!
-			return
 
 /obj/machinery/exploration/adms/Destroy()
 	for(var/obj/A in contents)
@@ -147,13 +151,15 @@
 			new /obj/effect/decal/cleanable/rubble(FL)
 		switch(tag)
 			if("Roaches")
-				new /obj/random/cluster/roaches(burstup)
+				new /obj/random/cluster/roaches_hoard(burstup)
 			if("Spiders")
 				new /obj/random/cluster/spiders(burstup)
 			if("Xenomorph")
 				new /obj/random/cluster/xenomorphs(burstup)
 			if("Underground")
 				new /obj/random/mob/undergroundmob(burstup)
+			if("Termite")
+				new /obj/random/cluster/termite_no_despawn_hoard(burstup)
 	return
 
 /obj/item/computer_hardware/hard_drive/portable/research_points/adms //any research disk works in the adms, but it starts with an empty one!

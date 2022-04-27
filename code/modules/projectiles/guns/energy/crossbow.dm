@@ -25,6 +25,7 @@
 	safety = FALSE
 	restrict_safety = TRUE
 	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/energy/crossbow/largecrossbow
 	name = "\"Themis\" energy crossbow"

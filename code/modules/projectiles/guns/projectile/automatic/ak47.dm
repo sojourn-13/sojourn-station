@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/ak47
-	name = "Excelsior \"Kalashnikov\" carbine"
+	name = "Excelsior \"Kalashnikov\" rifle"
 	desc = "\"We stand for organized terror - this should be frankly admitted. Terror is an absolute necessity during times of revolution.\"\
-		 A copy of the Kalashnikov pattern, shortened into a mid-length carbine and chambered in 7.5. This is an abysmal, printed copy."
+		 A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.5. This is an abysmal, printed copy."
 	icon = 'icons/obj/guns/projectile/ak.dmi'
 	icon_state = "AK"
 	item_state = "AK"
@@ -31,8 +31,8 @@
 	serial_type = "EXC"
 
 /obj/item/gun/projectile/automatic/ak47/NM_colony
-	name = "polymer \"Kalashnikov\" carbine"
-	desc = " A copy of the Kalashnikov pattern, shortened into a mid-length carbine and chambered in 7.5. This is an abysmal, printed copy."
+	name = "polymer \"Kalashnikov\" rifle"
+	desc = " A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.5. This is an abysmal, printed copy."
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	price_tag = 800
 	serial_type = "NM"
@@ -58,7 +58,7 @@
 	update_icon()
 
 /obj/item/gun/projectile/automatic/ak47/saiga
-	name = "Excelsior \"Saiga 12\" carbine"
+	name = "Excelsior \"Saiga 12\" shotgun"
 	desc = "\"Let the ruling classes tremble at a Communistic revolution. The proletarians have nothing to lose but their chains. They have a world to win..\"\
 		 A bulked up and modified version of the kalashnikov made to fire 20mm shotgun slugs, similar to the sol federation SBAW design. Uses 20mm in SBAW magazines."
 	icon = 'icons/obj/guns/projectile/saiga12.dmi'
@@ -73,14 +73,14 @@
 	serial_type = "EXC"
 
 /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony
-	name = "\"Saigini 12\" carbine"
+	name = "\"Saigini 12\" shotgun"
 	desc = "A bulked up and modified version of the kalashnikov made to fire 20mm shotgun slugs, similar to the sol federation SBAW design. Uses 20mm in SBAW magazines."
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1)
 	price_tag = 800
 	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/ak47/akl
-	name = "\"Legkiy-Kalashnikov\" laser carbine"
+	name = "\"Legkiy-Kalashnikov\" laser"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
 	A modernized experimental version of an old Kalashnikov design, desginated to take .223 laser ammuniton. The future is now, comrade. This modified type is commonly found in use by void wolves and similar ilk."
 	icon = 'icons/obj/guns/projectile/akl.dmi'
@@ -106,9 +106,9 @@
 	serial_type = "SI"
 
 /obj/item/gun/projectile/automatic/ak47/sa
-	name = "\"Kalashnikov\" carbine"
+	name = "\"Kalashnikov\" rifle"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-		 A copy of the AKM pattern, shortened into a mid-length carbine and chambered in 7.5. The left arm of the unfree world."
+		 A copy of the AKM pattern, shortened into a mid-length rifle and chambered in 7.5. The left arm of the unfree world."
 	icon = 'icons/obj/guns/projectile/ak_wood.dmi'
 	icon_state = "AK"
 	item_state = "AK"
@@ -123,7 +123,7 @@
 	serial_type = "SA"
 
 /obj/item/gun/projectile/automatic/ak47/sawn
-	name = "sawn-off \"Kalashnikov\" carbine"
+	name = "sawn-off \"Kalashnikov\" rifle"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
 	A copy of the AKM pattern chambered in 7.5 and crudely sawed down to a shadow of its former self. Rifle was fine. Was."
 	icon = 'icons/obj/guns/projectile/sawnoff/ak.dmi'
@@ -140,7 +140,7 @@
 	saw_off = FALSE
 
 /obj/item/gun/projectile/automatic/ak47/sa/tac
-	name = "Breacher \"Kalashnikov\" carbine"
+	name = "Breacher \"Kalashnikov\" rifle"
 	desc = "The breacher, or the 'tactical', varient of the AKM pattern Kalash is rather similar to its basic counterparts. \
 	Sporting a polymer frame this Kalash also comes kitted with a internally loaded shotgun attachment to its underbarrel. \
 	Comfortable to shoot, versetile and able to clear a room with ease."

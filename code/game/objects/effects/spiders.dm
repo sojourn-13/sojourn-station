@@ -56,18 +56,19 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/effect/spider/Process()
-	for(var/obj/effect/spider/webby in range(1, src))
-		webby.ignite()
-	if(isturf(loc))
-		var/turf/T = loc
-		T.hotspot_expose(700, 5)
-	burn_count++
-	health--
-	healthCheck()
-	if(burn_count > 1)// if it's 2 or greater)
-		if(prob(15))
-			new /obj/effect/decal/cleanable/ash(get_turf(src))
-		qdel(src)
+	if(burning)
+		for(var/obj/effect/spider/webby in range(1, src))
+			webby.ignite()
+		if(isturf(loc))
+			var/turf/T = loc
+			T.hotspot_expose(700, 5)
+		burn_count++
+		health--
+		healthCheck()
+		if(burn_count > 1)// if it's 2 or greater)
+			if(prob(15))
+				new /obj/effect/decal/cleanable/ash(get_turf(src))
+			qdel(src)
 
 /obj/effect/spider/attackby(var/obj/item/I, var/mob/user)
 	if(I.attack_verb.len)

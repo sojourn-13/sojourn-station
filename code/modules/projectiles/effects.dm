@@ -179,3 +179,20 @@
 
 /obj/effect/projectile/plasma/impact/heavy
 	icon_state = "impact_plasma_blue"
+
+
+//Grappler
+
+/obj/effect/projectile/line/tracer
+	icon_state = "line"
+
+/obj/effect/projectile/line/tracer/activate(kill_delay)//do nothing, only go away once we hit something
+
+/obj/effect/projectile/line/muzzle
+	icon_state = "muzzle_line"
+
+/obj/effect/projectile/line/muzzle/activate(kill_delay)//do nothing, only go away once we hit something
+
+/obj/effect/projectile/line/impact
+	icon_state = "impact_line"
+	lifetime = 1

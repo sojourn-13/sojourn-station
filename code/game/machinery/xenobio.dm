@@ -70,6 +70,7 @@
 	var/uses = 0
 	var/colour = "grey"
 	var/dirty = 0
+	var/running = FALSE
 	var/obj/item/clothing/C = null
 	var/list/allowed_devices = list(
 		/obj/item/clothing,
@@ -78,6 +79,7 @@
 	)
 
 /obj/machinery/slime_dye_vat/update_icon()
+	//checks to see if we need the slime ontop. Updates colours and changes the face plate.
 	if(C == null)
 		cut_overlays()
 		var/mutable_appearance/slime_vat_soup = mutable_appearance('icons/obj/xenobio.dmi', "slime_vat_soup")
@@ -107,7 +109,11 @@
 			return
 		if(istype(I, /obj/item/pen/crayon))
 			var/obj/item/pen/crayon/Holder = I
-			colour = Holder.colourName
+			if (Holder.colourName == "orange")
+				colour = "#FF9300"
+			if (Holder.colourName == "mime")
+				colour = "grey"
+			else colour = Holder.colourName
 			update_icon()
 			user.unEquip(I, src)
 			qdel(I)
@@ -116,8 +122,7 @@
 			return
 		if(istype(I, /obj/item/clothing))
 			C = I
-			user.unEquip(I, src)
-			user.visible_message(SPAN_DANGER("[user] puts [I] into the dye vat!"))
+			insert_item(I, user)
 			update_icon()
 			return
 
@@ -129,12 +134,14 @@
 	add_fingerprint(user)
 	if(C)
 		C.update_icon()
-		user.put_in_hands(C)
+		eject_item(C, user)
 		C = null
 		update_icon()
 
 //the actual proc that colors things and makes slimes when dirty!
 /obj/machinery/slime_dye_vat/proc/dyinginside(mob/user)
+	running = TRUE
+	flick("slime_vat_front", src)
 	if (dirty >= 5)
 		dirty = 0
 		var/mob/living/carbon/slime/S = new /mob/living/carbon/slime
@@ -157,13 +164,13 @@
 		else S.set_mutation(pickweight(colors))
 		uses = 0
 		user.visible_message(SPAN_DANGER("Slime breaks free from the dye vat!"))
-	//colors items!
+	//colors items! And updates our icons.
 	if (uses >= 1 && C != null)
 		C.color = colour
 		uses -= 1
 		C.update_icon()
-		return
-	else return
+	running = FALSE
+	update_icon()
 
 /obj/machinery/slime_dye_vat/examine(mob/user)
 	..()
@@ -176,7 +183,7 @@
 	set name = "Scrub vat"
 	set category = "Object"
 	set src in oview(1)
-	if(!isliving(usr))
+	if(!isliving(usr) || running)
 		return
 	uses = 0
 	colour = "grey"
@@ -191,7 +198,7 @@
 	set name = "Start vat"
 	set category = "Object"
 	set src in oview(1)
-	if(!isliving(usr))
+	if(!isliving(usr) || running)
 		return
 	src.add_fingerprint(user)
 	if(do_after(user, 30, src) && user.Adjacent(src))
