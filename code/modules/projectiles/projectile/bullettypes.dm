@@ -746,3 +746,12 @@
 	affective_ap_range = 9
 	nocap_structures = TRUE //Can do well againt walls and doors
 
+/obj/item/projectile/bullet/arrow
+	name = "arrow"
+	icon_state = "bolt"
+	damage_types = list(BRUTE = 10)
+	armor_penetration = 15
+	check_armour = ARMOR_MELEE
+	step_delay = 0.9
+	affective_damage_range = 7
+	affective_ap_range = 7

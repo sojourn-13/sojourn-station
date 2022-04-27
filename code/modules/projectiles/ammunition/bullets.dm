@@ -779,4 +779,13 @@
 /obj/item/ammo_casing/crossbow_bolts/speed/bulk //Admin spawn stuff
 	amount = 10
 
-
+//arrows
+/obj/item/ammo_casing/arrow
+	name = "arrow"
+	desc = "A crudely made plastic-fletched metal-headed arrow."
+	icon_state = "arrow"
+	caliber = CAL_ARROW
+	projectile_type = /obj/item/projectile/bullet/arrow
+	matter = list(MATERIAL_STEEL = 0.5, MATERIAL_WOOD = 0.5, MATERIAL_PLASTIC= 0.5)
+	maxamount = 10
+	is_caseless = TRUE

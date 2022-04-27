@@ -78,6 +78,9 @@
 	var/matrix/effect_transform			// matrix to rotate and scale projectile effects - putting it here so it doesn't
 										//  have to be recreated multiple times
 
+	var/list/supereffective_factions //the factions we're super-effective against
+	var/supereffective_mult = 2 //damage mult on hitting supereffective factions
+
 	// Ranged issue
 
 	var/has_drop_off = FALSE

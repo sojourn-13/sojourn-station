@@ -99,10 +99,13 @@
 	The actual code
 ******************/
 
-/obj/item/gun/begin_charge(var/mob/living/user)
+/obj/item/gun/proc/begin_charge(var/mob/living/user)
 	return
 
 /obj/item/gun/proc/add_charge(var/mob/living/user)
+	return
+
+/obj/item/gun/proc/release_charge(var/atom/target, var/mob/living/user)
 	return
 
 /obj/item/gun/proc/get_overcharge_add(var/mob/living/user)
@@ -112,11 +115,11 @@
 	return overcharge_level/10
 
 
-/obj/item/gun/energy/begin_charge(var/mob/living/user)
+/obj/item/gun/energy/begin_charge(mob/living/user)
 	to_chat(user, SPAN_NOTICE("You begin charging \the [src]."))
 	overcharge_timer = addtimer(CALLBACK(src, .proc/add_charge, user), overcharge_timer_step, TIMER_STOPPABLE)
 
-/obj/item/gun/energy/add_charge(var/mob/living/user)
+/obj/item/gun/energy/add_charge(mob/living/user)
 	deltimer(overcharge_timer)
 	if(get_holding_mob() == user && get_cell() && cell.checked_use(1))
 		overcharge_level = min(overcharge_max, overcharge_level + get_overcharge_add(user))
@@ -131,7 +134,7 @@
 	visible_message(SPAN_WARNING("\The [src] sputters out."))
 	overcharge_level = 0
 
-/obj/item/gun/energy/release_charge(var/atom/target, var/mob/living/user)
+/obj/item/gun/energy/release_charge(atom/target, mob/living/user)
 	deltimer(overcharge_timer)
 	var/overcharge_add = overcharge_level_to_mult()
 	damage_multiplier += overcharge_add
