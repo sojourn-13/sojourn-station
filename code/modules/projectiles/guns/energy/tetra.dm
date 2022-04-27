@@ -31,6 +31,7 @@
 		list(mode_name = "IR slow auto",    mode_desc = "Invisible, quieter IR beams at a more controllable automatic firerate",   mode_type = /datum/firemode/automatic, fire_delay = 4, icon="burst", projectile_type = /obj/item/projectile/beam/infrared, silenced = TRUE),
 		list(mode_name = "bake",    mode_desc = "Bake targets in infrared radiation",   mode_type = /datum/firemode/automatic, fire_delay = 1.5, icon="auto", projectile_type = /obj/item/projectile/beam/infrared, silenced = TRUE)
 		)
+	serial_type = "AG"
 
 /obj/item/gun/energy/tetra/examine(mob/user)
 	..()
