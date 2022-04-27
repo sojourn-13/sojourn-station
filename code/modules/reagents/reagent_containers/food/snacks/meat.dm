@@ -40,6 +40,13 @@
 	name = "Corgi meat"
 	desc = "Tastes like... well, you know."
 
+/obj/item/reagent_containers/food/snacks/meat/termitemeat
+	desc = "A slab of sickly-green bubbling meat cut from a giant termite. It looks to be rather rich in minerals. Delicious!"
+	icon_state = "xenomeat"
+	filling_color = "#E2FFDE"
+	preloaded_reagents = list("protein" = 5, "iron" = 4)
+	//Todo make each termite meat have their ground up mineral inside
+
 /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	desc = "A slab of sickly-green bubbling meat cut from a giant roach. You swear you can see it still twitching occasionally. Delicious!"
 	icon_state = "xenomeat"
