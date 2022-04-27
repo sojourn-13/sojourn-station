@@ -38,6 +38,7 @@
 		icon_state += "_open"
 		w_class = ITEM_SIZE_NORMAL
 		tool_qualities = list(QUALITY_CUTTING = 20, QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
+		base_parry_chance = 10
 		attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	else
 		force = WEAPON_FORCE_WEAK
@@ -47,6 +48,7 @@
 		icon_state = initial(icon_state)
 		w_class = initial(w_class)
 		tool_qualities = list()
+		base_parry_chance = 0
 		attack_verb = initial(attack_verb)
 
 /obj/item/material/butterfly/switchblade

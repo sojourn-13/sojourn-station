@@ -21,6 +21,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	slot_flags = SLOT_BELT
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
+	base_parry_chance = 10
 	var/backstab_damage = 10
 
 /obj/item/tool/knife/resolve_attackby(atom/target, mob/user)
@@ -62,6 +63,7 @@
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 1)
 	armor_penetration = ARMOR_PEN_MODERATE
 	throwforce = WEAPON_FORCE_LETHAL
+	base_parry_chance = 15 //Tacticool
 	price_tag = 35
 
 /obj/item/tool/knife/hook
@@ -129,6 +131,7 @@
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 5)
 	armor_penetration = ARMOR_PEN_MODERATE
 	throwforce = WEAPON_FORCE_LETHAL
+	base_parry_chance = 15
 	max_upgrades = 3
 	embed_mult = 0.3
 	price_tag = 38

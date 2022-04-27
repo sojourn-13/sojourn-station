@@ -71,6 +71,7 @@
 #define PERK_STAY_HYDRATED /datum/perk/stay_hydrated
 #define PERK_SECOND_SKIN /datum/perk/second_skin
 #define PERK_IRON_FLESH /datum/perk/iron_flesh
+#define PERK_MASTER_SWORDSMAN /datum/perk/swordsman
 #define PERK_SI_SCI /datum/perk/si_sci
 #define PERK_ODD_REROLL /datum/perk/oddity_reroll
 #define PERK_FOLKEN_HEALING /datum/perk/folken_healing

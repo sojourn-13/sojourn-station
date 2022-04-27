@@ -98,7 +98,7 @@ for reference:
 	return material
 
 /obj/structure/barricade/attackby(obj/item/W as obj, mob/user as mob)
-	if(user.a_intent == I_HELP && istype(W, /obj/item/gun))
+	if(user.a_intent == I_HURT && istype(W, /obj/item/gun))
 		var/obj/item/gun/G = W
 		G.gun_brace(user, src)
 		return
@@ -199,7 +199,7 @@ for reference:
 	icon_state = "barrier[locked]"
 
 /obj/machinery/deployable/barrier/attackby(obj/item/W as obj, mob/user as mob)
-	if(user.a_intent == I_HELP && istype(W, /obj/item/gun))
+	if(user.a_intent == I_HURT && istype(W, /obj/item/gun))
 		var/obj/item/gun/G = W
 		G.gun_brace(user, src)
 		return

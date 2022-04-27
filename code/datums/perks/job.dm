@@ -633,3 +633,8 @@
 			F.reagents.add_reagent("nutriment", 15)
 		if(9)
 			F.name = "hearty [F.name]"
+
+/datum/perk/swordsman
+	name = "Master Swordsman"
+	desc = "You trained your entire life with melee weapons, making them become more than a tool but extension of yourself. \
+			You are dexterous enough to be able to withstand most attacks thrown at you."

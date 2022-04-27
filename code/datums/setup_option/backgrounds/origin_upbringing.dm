@@ -227,3 +227,25 @@
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)
+
+/datum/category_item/setup_option/background/bckgrnd/swordsman
+	name = "Swordsman"
+	desc = "You are what comes to mind when somebody mentions 'While you were busy slacking I was studying the blade.' to put it bluntly you are complete and utter nerd when it comes to melee weapons. \
+			Your movements are almost perfectly synchronized with whichever tool you choose as you trained with them your entire life making you able to deflect and evade almost anything thrown against you."
+
+	restricted_to_species = list(
+		FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE,
+		FORM_AKULA, FORM_MARQUA, FORM_NARAMAD //Weeb fish
+		)
+
+	perks = list(/datum/perk/swordsman)
+
+	stat_modifiers = list(
+		STAT_ROB = 5,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+

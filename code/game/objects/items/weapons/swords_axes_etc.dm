@@ -25,15 +25,18 @@
 		damtype = HALLOSS
 		force = WEAPON_FORCE_PAINFUL
 		armor_penetration = ARMOR_PEN_MODERATE
+		base_parry_chance = 15
 
 	if(user.a_intent == I_DISARM)
 		damtype = HALLOSS
 		force = WEAPON_FORCE_PAINFUL
 		armor_penetration = ARMOR_PEN_SHALLOW
+		base_parry_chance = 35 //So there is actually a reason to ever use it on disarm
 
 	if(user.a_intent == I_HURT)
 		damtype = BRUTE
 		force = WEAPON_FORCE_ROBUST
+		base_parry_chance = 15
 
 	if ((CLUMSY in user.mutations) && prob(10))
 		to_chat(user, SPAN_WARNING("You club yourself over the head."))

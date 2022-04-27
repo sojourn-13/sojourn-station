@@ -74,7 +74,7 @@
 
 /obj/structure/shield_deployed/attackby(obj/item/I, mob/living/user)
 	.=..()
-	if(user.a_intent == I_HELP && istype(I, /obj/item/gun))
+	if(user.a_intent == I_HURT && istype(I, /obj/item/gun))
 		var/obj/item/gun/G = I
 		G.gun_brace(user, src)
 		return

@@ -79,6 +79,7 @@
 	var/structure_damage_factor = STRUCTURE_DAMAGE_NORMAL	//Multiplier applied to the damage when attacking structures and machinery
 	//Does not affect damage dealt to mobs
 	//var/attack_distance = 1
+	var/base_parry_chance = 0	// Will allow weapon to parry melee attacks if non-zero
 
 	var/list/item_upgrades = list()
 	var/max_upgrades = 3
@@ -296,7 +297,25 @@
 //For non-projectile attacks this usually means the attack is blocked.
 //Otherwise should return 0 to indicate that the attack is not affected in any way.
 /obj/item/proc/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack")
+	var/parry_chance = get_parry_chance(user)
+	if(parry_chance && user.stat_check(STAT_ROB, STAT_LEVEL_EXPERT) || user.stats.getPerk(PERK_MASTER_SWORDSMAN))
+		if(default_parry_check(user, attacker, damage_source) && prob(parry_chance))
+			user.visible_message("<span class='danger'>\The [user] parries [attack_text] with \the [src]!</span>")
+			admin_attack_log(attacker, user, "Attempted to attack with \a [damage_source] but was parried", "Was targeted with \a [damage_source] but parried the attack", "attempted to use \a [damage_source] to attack but was parried by")
+			playsound(user.loc, 'sound/weapons/parry_metallarge.ogg', 70, 1)
+			on_parry(damage_source)
+			return 1
 	return 0
+
+/obj/item/proc/on_parry(damage_source)
+	return
+
+/obj/item/proc/get_parry_chance(mob/user)
+	. = base_parry_chance
+	if (!wielded && user.a_intent == I_HELP)
+		. = 0
+	if (wielded && user.a_intent == I_HURT)
+		. += ((user.stats.getStat(STAT_ROB) - w_class)/ 2)
 
 /obj/item/proc/get_loc_turf()
 	var/atom/L = loc

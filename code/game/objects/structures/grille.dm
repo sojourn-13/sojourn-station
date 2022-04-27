@@ -93,7 +93,7 @@
 	spawn(0) healthCheck() //spawn to make sure we return properly if the grille is deleted
 
 /obj/structure/grille/attackby(obj/item/I, mob/user)
-	if(user.a_intent == I_HELP && istype(I, /obj/item/gun))
+	if(user.a_intent == I_HURT && istype(I, /obj/item/gun))
 		var/obj/item/gun/G = I
 		G.gun_brace(user, src)
 		return
