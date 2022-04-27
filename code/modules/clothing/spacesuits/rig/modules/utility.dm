@@ -117,7 +117,7 @@
 
 
 /obj/item/rig_module/modular_injector
-	name = "mounted modular injector"
+	name = "mounted modular dispenser"
 	desc = "A specialized system for inserting chemicals"
 	icon_state = "injector"
 	usable = TRUE
@@ -128,8 +128,8 @@
 	price_tag = 2250
 	engage_string = "Inject"
 
-	interface_name = "integrated injector"
-	interface_desc = "A chemical injector"
+	interface_name = "integrated dispenser"
+	interface_desc = "A chemical dispenser"
 	var/list/beakers = list()
 	var/max_beakers = 5
 	var/injection_amount = 5
@@ -252,7 +252,7 @@
 	return TRUE
 
 /obj/item/rig_module/modular_injector/combat
-	name = "mounted combat injector"
+	name = "mounted combat dispenser"
 	desc = "A specialized system for inserting chemicals meant for combat"
 	price_tag = 7250
 	max_injection_amount = 30
@@ -263,6 +263,8 @@
 		list(/obj/item/reagent_containers/glass/beaker/large, "nutriment", 60),
 		list(/obj/item/reagent_containers/glass/beaker/large, "tricordrazine", 60)
 	)
+	interface_name = "integrated chemicalc combat dispenser"
+	interface_desc = "Dispenses loaded chemicals directly into the wearer's bloodstream."
 
 /obj/item/rig_module/modular_injector/medical
 	name = "mounted medical injector"
@@ -280,6 +282,8 @@
 		list(/obj/item/reagent_containers/glass/beaker/large, "anti_toxin", 60),
 		list(/obj/item/reagent_containers/glass/beaker/large, "spaceacillin", 60)
 	)
+	interface_name = "integrated chemical injector"
+	interface_desc = "Dispenses loaded chemicals directly into the wearer's bloodstream or pacients."
 /*
 /obj/item/rig_module/chem_dispenser
 	name = "mounted chemical dispenser"
@@ -423,7 +427,6 @@
 
 
 /obj/item/rig_module/chem_dispenser/injector
-
 	name = "mounted chemical injector"
 	desc = "A complex web of tubing and a large needle suitable for hardsuit use."
 	usable = 0
