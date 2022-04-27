@@ -103,3 +103,23 @@
 	suitable_cell = /obj/item/cell/small
 	cell_type = /obj/item/cell/small
 	serial_type = "Absolute"
+
+/obj/item/gun/energy/zwang
+	name = "\"Zwang\" energy revolver"
+	desc = "The \"Zwang\" is a law enforcer's best friend of a sidearm. Carrying both an extremely effective lethal and non-lethal firemode. \
+	Luckily it does not sacrifice style for effiency neither. The 'revolver' spins its cell while firing, mimicking that of a double-action to make use of multiple connection points."
+	icon = 'icons/obj/guns/energy/zwang.dmi'
+	icon_state = "zwang"
+	item_state = "zwang"
+	item_charge_meter = TRUE
+	can_dual = TRUE
+	fire_sound = 'sound/weapons/Taser.ogg'
+	charge_cost = 160
+	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_PLASTIC = 6, MATERIAL_SILVER = 6)
+	price_tag = 1600
+
+	init_firemodes = list(
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=80, projectile_color = "#8cffff"),
+		list(mode_name="lethal", mode_desc="A ", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Laser.ogg', fire_delay=40, icon="kill", projectile_color = "#ff2600"),
+	)
+	serial_type = "H&S"

@@ -81,6 +81,27 @@
 		new /obj/item/ammo_magazine/m12(src)
 		new /obj/item/storage/pouch/ammo(src)
 
+//Ranger kits
+/obj/item/storage/box/m_kit/armstrong
+	name = "Armstrong Kit"
+	desc = "The standard Marshal box kit containing a Armstrong lever action rifle, a repeating rifle chambered in .40 Magnum."
+
+	populate_contents()
+		new /obj/item/gun/projectile/boltgun/lever
+		new /obj/item/ammo_magazine/ammobox/magnum_40
+		new /obj/item/ammo_magazine/ammobox/magnum_40/rubber
+
+/obj/item/storage/box/m_kit/tommygun
+	name = "Thompson SMG Kit"
+	desc = "The standard Marshal box kit containing a Thompson submachinegun, a powerhouse of old Sol-based police and gangsters alike."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/thompson
+		new /obj/item/ammo_magazine/smg_magnum_40/rubber(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
+
+
 // Secondary kits
 /obj/item/storage/box/m_kit/wirbelwind
 	name = "\improper Wirbelwind Kit"
@@ -143,6 +164,35 @@
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
+
+// Ranger secondary kits
+/obj/item/storage/box/m_kit/deckard
+	name = "Deckards Secondary Kit"
+	desc = "The standard Marshal box kit containing a Deckard revolver. A handcanon in all but name, its cylinder having the capacity of five .50 Kurtz rounds."
+
+	populate_contents()
+		new /obj/item/gun/projectile/revolver/deckard(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
+
+/obj/item/storage/box/m_kit/judge
+	name = "Judge Secondary Kit"
+	desc = "The standard Marshal box kit containing a Judge revolver, a large caliber revolver capable of firing a 7.5 round down range effectively. Highly sought after by police forces."
+
+	populate_contents()
+		new /obj/item/gun/projectile/revolver/judge(src)
+		new /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber(src)
+
+/obj/item/storage/box/m_kit/zwang
+	name = "Zwang Secondary Kit"
+	desc = "The standard Marshal box kit containing a Lawbringer energy revolver. The cylander of this custom-designed revolver has been replaced with space for an energy cell."
+
+	populate_contents()
+		new /obj/item/gun/energy/zwang(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
 
 // Armor Kits
 /obj/item/storage/box/m_kit/standard_armor

@@ -232,8 +232,12 @@
 				RedeemPrimary(I, user)
 			if("Secondary")
 				RedeemSecondary(I, user)
+			if("RangerSecondary")
+				RedeemRangerSecondary(I, user)
 			if("SpecPrimary")
 				RedeemSpecPrimary(I, user)
+			if("RangerPrimary")
+				RedeemRangerPrimary(I, user)
 			if("Armor")
 				RedeemArmor(I, user)
 		return
@@ -270,6 +274,18 @@
 	else
 		voucher.stamped = FALSE
 
+/obj/machinery/vending/marshal_kit/proc/RedeemRangerPrimary(obj/item/voucher/voucher, mob/redeemer)
+	var/items = list(
+					"Thompson Kit" = /obj/item/storage/box/m_kit/tommygun,
+					"Armstrong Kit" = /obj/item/storage/box/m_kit/armstrong)
+	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+	else
+		voucher.stamped = FALSE
+
 /obj/machinery/vending/marshal_kit/proc/RedeemSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Counselor Kit" = /obj/item/storage/box/m_kit/taser,
@@ -278,6 +294,19 @@
 					"Ladon Kit" = /obj/item/storage/box/m_kit/ladon,
 					"Sky Kit" = /obj/item/storage/box/m_kit/glock,
 					"Wirbelwind Kit" = /obj/item/storage/box/m_kit/wirbelwind)
+	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+	else
+		voucher.stamped = FALSE
+
+/obj/machinery/vending/marshal_kit/proc/RedeemRangerSecondary(obj/item/voucher/voucher, mob/redeemer)
+	var/items = list(
+					"Deckard Kit" = /obj/item/storage/box/m_kit/deckard,
+					"Judge Kit" = /obj/item/storage/box/m_kit/judge,
+					"Zwang Kit" = /obj/item/storage/box/m_kit/zwang)
 	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
