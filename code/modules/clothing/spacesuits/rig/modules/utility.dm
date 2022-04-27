@@ -270,6 +270,9 @@
 	price_tag = 3750
 	max_injection_amount = 60
 	max_beakers = 6
+	usable = 0
+	selectable = 1
+	disruptive = 1
 	initial_beakers = list(
 		list(/obj/item/reagent_containers/glass/beaker/large, "bicaridine", 60),
 		list(/obj/item/reagent_containers/glass/beaker/large, "inaprovaline",60),
