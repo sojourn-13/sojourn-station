@@ -451,7 +451,7 @@
 
 /obj/machinery/portable_atmospherics/hydroponics/attackby(obj/item/I, var/mob/user as mob)
 
-	var/tool_type = I.get_tool_type(user, list(QUALITY_SHOVELING, QUALITY_CUTTING,QUALITY_DIGGING, QUALITY_WIRE_CUTTING, QUALITY_BOLT_TURNING), src)
+	var/tool_type = I.get_tool_type(user, list(QUALITY_SHOVELING, QUALITY_CUTTING,QUALITY_DIGGING, QUALITY_WIRE_CUTTING, QUALITY_BOLT_TURNING, QUALITY_PULSING), src)
 	switch(tool_type)
 
 		if(QUALITY_SHOVELING)
@@ -501,6 +501,19 @@
 				force_update = 1
 				Process()
 				return
+			return
+
+
+		if(QUALITY_PULSING)
+			if(!anchored)
+				to_chat(user, "<span class='warning'>Anchor it first!</span>")
+				return
+			if(frozen == -1)
+				to_chat(user, "<span class='warning'>You see no way to use \the [I] on [src].</span>")
+				return
+			to_chat(user, "<span class='notice'>You [frozen ? "disable" : "enable"] the cryogenic freezing.</span>")
+			frozen = !frozen
+			update_icon()
 			return
 
 		if(QUALITY_BOLT_TURNING)
@@ -607,18 +620,6 @@
 		playsound(loc, 'sound/effects/spray3.ogg', 50, 1, -6)
 		qdel(I)
 		check_health()
-
-	else if(istype(I, /obj/item/tool/multitool))
-		if(!anchored)
-			to_chat(user, "<span class='warning'>Anchor it first!</span>")
-			return
-		if(frozen == -1)
-			to_chat(user, "<span class='warning'>You see no way to use \the [I] on [src].</span>")
-			return
-		to_chat(user, "<span class='notice'>You [frozen ? "disable" : "enable"] the cryogenic freezing.</span>")
-		frozen = !frozen
-		update_icon()
-		return
 
 	else if(I.force && seed)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
