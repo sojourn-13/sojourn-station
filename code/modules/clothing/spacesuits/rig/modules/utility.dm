@@ -264,7 +264,7 @@
 		list(/obj/item/reagent_containers/glass/beaker/large, "tricordrazine", 60)
 	)
 	interface_name = "integrated chemicalc combat dispenser"
-	interface_desc = "Dispenses loaded chemicals directly into the wearer's bloodstream."
+	interface_desc = "Dispenses loaded chemicals directly into the user's bloodstream."
 
 /obj/item/rig_module/modular_injector/medical
 	name = "mounted medical injector"
@@ -283,7 +283,7 @@
 		list(/obj/item/reagent_containers/glass/beaker/large, "spaceacillin", 60)
 	)
 	interface_name = "integrated chemical injector"
-	interface_desc = "Dispenses loaded chemicals directly into the wearer's bloodstream or pacients."
+	interface_desc = "Dispenses loaded chemicals directly into the bloodstream of its target. Can be used on the wearer as well."
 /*
 /obj/item/rig_module/chem_dispenser
 	name = "mounted chemical dispenser"
