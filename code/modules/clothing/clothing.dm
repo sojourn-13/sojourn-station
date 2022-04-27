@@ -12,7 +12,6 @@
 	var/list/valid_accessory_slots
 	var/list/restricted_accessory_slots
 	var/equip_delay = 0 //If set to a nonzero value, the item will require that much time to wear and remove
-	var/has_biomatter = TRUE
 	stiffness = 0 // Recoil caused by moving, defined in obj/item
 	obscuration = 0 // Similar to tint, but decreases firearm accuracy instead via giving minimum extra offset, defined in obj/item
 
@@ -32,9 +31,8 @@
 
 	else if(!matter)
 		matter = list()
-
-	if(has_biomatter)
-		matter.Add(list(MATERIAL_BIOMATTER = 5 * w_class))    // based of item size
+	
+	matter.Add(list(MATERIAL_BIOMATTER = 5 * w_class))    // based of item size
 
 /obj/item/clothing/Destroy()
 	for(var/obj/item/clothing/accessory/A in accessories)
