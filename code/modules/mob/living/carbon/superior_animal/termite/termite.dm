@@ -57,7 +57,6 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 /mob/living/carbon/superior_animal/termite/New(loc, obj/machinery/mining/drill/drill, datum/termite_controller/parent)
 	..()
-	var/atom/targetted_mob = (target_mob?.resolve())
 	if(parent)
 		controller = parent  // Link wurms with wurm controller
 		controller.termite += src
