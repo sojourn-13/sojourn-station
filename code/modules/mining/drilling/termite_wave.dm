@@ -18,33 +18,33 @@ GLOBAL_LIST_INIT(termite_waves, list(/datum/termite_wave/dormant,
 /datum/termite_wave/dormant
 	burrow_count = 2
 	burrow_interval = 240 SECONDS
-	termite_spawn = 2
+	termite_spawn = 3
 	spawn_interval = 120 SECONDS
-	special_probability = 0
+	special_probability = 10
 	mineral_multiplier = 1.0
 
 /datum/termite_wave/negligible
 	burrow_count = 3
 	burrow_interval = 200 SECONDS
-	termite_spawn = 2
+	termite_spawn = 3
 	spawn_interval = 100 SECONDS
-	special_probability = 6
+	special_probability = 30
 	mineral_multiplier = 1.4
 
 /datum/termite_wave/typical
 	burrow_count = 3
 	burrow_interval = 180 SECONDS
-	termite_spawn = 3
+	termite_spawn = 4
 	spawn_interval = 90 SECONDS
-	special_probability = 5
+	special_probability = 35
 	mineral_multiplier = 1.7
 
 /datum/termite_wave/substantial
 	burrow_count = 4
 	burrow_interval = 160 SECONDS
-	termite_spawn = 3
+	termite_spawn = 4
 	spawn_interval = 80 SECONDS
-	special_probability = 4
+	special_probability = 40
 	mineral_multiplier = 2
 
 /datum/termite_wave/major
@@ -52,13 +52,13 @@ GLOBAL_LIST_INIT(termite_waves, list(/datum/termite_wave/dormant,
 	burrow_interval = 140 SECONDS
 	termite_spawn = 4
 	spawn_interval = 70 SECONDS
-	special_probability = 3
+	special_probability = 50
 	mineral_multiplier = 2.3
 
 /datum/termite_wave/abnormal
 	burrow_count = 7
 	burrow_interval = 120 SECONDS
-	termite_spawn = 4
+	termite_spawn = 5
 	spawn_interval = 60 SECONDS
-	special_probability = 2
+	special_probability = 65
 	mineral_multiplier = 3.0
