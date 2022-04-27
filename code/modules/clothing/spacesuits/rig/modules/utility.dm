@@ -263,7 +263,7 @@
 		list(/obj/item/reagent_containers/glass/beaker/large, "nutriment", 60),
 		list(/obj/item/reagent_containers/glass/beaker/large, "tricordrazine", 60)
 	)
-	interface_name = "integrated chemicalc combat dispenser"
+	interface_name = "integrated chemical combat dispenser"
 	interface_desc = "Dispenses loaded chemicals directly into the user's bloodstream."
 
 /obj/item/rig_module/modular_injector/medical
