@@ -57,13 +57,14 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 /mob/living/carbon/superior_animal/termite/New(loc, obj/machinery/mining/drill/drill, datum/termite_controller/parent)
 	..()
+	var/atom/targetted_mob = (target_mob?.resolve())
 	if(parent)
 		controller = parent  // Link wurms with wurm controller
 		controller.termite += src
 	if(drill)
 		DD = drill
 		if(prob(50))
-			target_mob  = drill
+			target_mob = WEAKREF(drill)
 			stance = HOSTILE_STANCE_ATTACK
 
 		for(var/O in oview(5, src)) // Check our surroundings.
@@ -106,21 +107,24 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 /mob/living/carbon/superior_animal/termite/destroySurroundings()
 	// Get next turf the golem wants to walk on
-	var/turf/T = get_step_towards(src, target_mob)
+	var/atom/targetted_mob = (target_mob?.resolve())
+	var/turf/T = get_step_towards(src, targetted_mob)
 
 	if(iswall(T))  // Wall breaker attack
 		T.attack_generic(src, rand(surrounds_mult * melee_damage_lower, surrounds_mult * melee_damage_upper), attacktext, TRUE)
 	else
 		var/obj/structure/obstacle = locate(/obj/structure) in T
-		obstacle?.attack_generic(src, rand(surrounds_mult * melee_damage_lower, surrounds_mult * melee_damage_upper), attacktext, TRUE)
+		if(obstacle && !istype(obstacle, /obj/structure/termite_burrow))
+			obstacle.attack_generic(src, rand(surrounds_mult * melee_damage_lower, surrounds_mult * melee_damage_upper), attacktext, TRUE)
 
 /mob/living/carbon/superior_animal/termite/handle_ai()
+	var/atom/targetted_mob = (target_mob?.resolve())
 	// Chance to re-aggro the drill if doing nothing
 	if((stance == HOSTILE_STANCE_IDLE) && prob(10))
 		if(!busy) // if not busy with a special task
 			stop_automated_movement = FALSE
-		target_mob = DD
-		if(target_mob)
+		target_mob = WEAKREF(DD)
+		if(targetted_mob)
 			stance = HOSTILE_STANCE_ATTACK
 	. = ..()
 
