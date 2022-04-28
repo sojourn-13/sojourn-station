@@ -292,11 +292,10 @@
 	damage_multiplier = 1
 	penetration_multiplier = 0.7
 	price_tag = 900
-	charge_cost = 100
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/Taser.ogg', projectile_color = "#8cffff"),
-		list(mode_name="buckshot", projectile_type=/obj/item/projectile/bullet/pellet/shotgun/energy, fire_sound='sound/weapons/guns/fire/sunrise_fire.ogg', icon="kill", projectile_color = "#ff2600"),
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/Taser.ogg', charge_cost = 200, projectile_color = "#8cffff"),
+		list(mode_name="buckshot", projectile_type=/obj/item/projectile/bullet/pellet/shotgun/energy, fire_sound='sound/weapons/guns/fire/sunrise_fire.ogg', charge_cost = 100, icon="kill", projectile_color = "#ff2600"),
 	)
 
 /obj/item/gun/energy/peacekeeper/update_icon()
