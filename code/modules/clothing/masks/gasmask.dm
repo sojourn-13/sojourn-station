@@ -47,7 +47,7 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Base"] = "gas_mask"
+	options["Base"] = initial(icon_state) // This should make it work for every child of the original mask without needing to create verbs for every single one. - Seb
 	options["Alternative"] = "gas_alt"
 	options["Kriosan"] = "kriosan_gasmask"
 
