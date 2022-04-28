@@ -161,6 +161,38 @@
 	desc = "Beep boop."
 	icon_state = "death"
 
+/obj/item/clothing/mask/gas/blackshield_gasmask
+	name = "tactical camo gas mask"
+	desc = "A gas mask that has a paint kit to it to add in a bit of camo."
+	icon_state = "gas_bs"
+
+/obj/item/clothing/mask/gas/blackshield_gasmask/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Base"] = "gas_bs"
+	options["Desert Sands Blue Eyes"] = "gas_bs_alt"
+	options["Green Forest Amber Eyes"] = "gas_mil"
+	options["Desert Sands Amber Eyes"] = "gas_mil_alt"
+	options["Black Night Amber Eyes"] = "gas_black"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1 //Or you could just use this instead of making another subtype just for races
+
+
 //Sprite by INFRARED_BARON
 /obj/item/clothing/mask/gas/big_shot
 	name = "trader mask"
