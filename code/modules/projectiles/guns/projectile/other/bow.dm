@@ -34,7 +34,7 @@
 		var/true_tension = round(overcharge_level/2,1)
 		if(overcharge_level == overcharge_max)
 			true_tension = 6
-		var/mutable_appearance/arrow_overlay = icon('icons/obj/guns/bow.dmi', chambered.icon_state)
+		var/mutable_appearance/arrow_overlay = mutable_appearance('icons/obj/guns/bow.dmi', chambered.icon_state)
 		arrow_overlay.pixel_x = true_tension * arrow_x_offset_per_tension
 		arrow_overlay.pixel_y = true_tension * arrow_y_offset_per_tension
 		add_overlay(arrow_overlay)
@@ -49,6 +49,7 @@
 	deltimer(overcharge_timer)
 	if(get_holding_mob() == user && chambered)
 		overcharge_level = min(overcharge_level + 1 + get_overcharge_add(user), overcharge_max)
+		to_chat(user, SPAN_NOTICE("You continue drawing the bow back..."))
 		update_icon()
 		if(overcharge_level < overcharge_max)
 			overcharge_timer = addtimer(CALLBACK(src, .proc/add_charge, user), overcharge_timer_step, TIMER_STOPPABLE)
@@ -58,7 +59,7 @@
 
 /obj/item/gun/projectile/bow/release_charge(atom/target, mob/living/user)
 	deltimer(overcharge_timer)
-	Fire(target, user, extra_proj_damagemult = overcharge_level, extra_proj_penmult = overcharge_level, extra_proj_wallbangmult = overcharge_level, extra_proj_stepdelaymult = (overcharge_level > 5 ? 1 : 0.5), multiply_projectile_agony = overcharge_level)
+	Fire(target, user, extra_proj_damagemult = overcharge_level, extra_proj_penmult = overcharge_level, extra_proj_stepdelaymult = (overcharge_level > 5 ? 1 : 0.5), multiply_projectile_agony = overcharge_level)
 	overcharge_level = 0
 
 /obj/item/gun/projectile/bow/dropped()
