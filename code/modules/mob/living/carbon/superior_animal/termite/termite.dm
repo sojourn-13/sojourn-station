@@ -57,7 +57,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 /mob/living/carbon/superior_animal/termite/New(loc, obj/machinery/mining/drill/drill, datum/termite_controller/parent)
 	..()
-	if(parent)
+/*	if(parent)
 		controller = parent  // Link wurms with wurm controller
 		controller.termite += src
 	if(drill)
@@ -70,19 +70,19 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 			if(istype(O, /turf/simulated/mineral)) // Is it a minable turf?
 				var/turf/simulated/mineral/M = O
 				mine(M) // Mine the turf
-				continue
+				continue*/
 
 // Mine a tile
 /mob/living/carbon/superior_animal/termite/proc/mine(var/turf/simulated/mineral/M)
 	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
 	M.GetDrilled() // Mine the turf
 	return TRUE
-
+/*
 /mob/living/carbon/superior_animal/temite/isValidAttackTarget(atom/O)
 	// termites can actively try to attack the drill
 	if(istype(O, /obj/machinery/mining/drill))
 		return TRUE
-	return ..()
+	return ..()*/
 
 /mob/living/carbon/superior_animal/termite/Destroy()
 	DD = null
@@ -90,10 +90,11 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 /mob/living/carbon/superior_animal/termite/death(gibbed, message = deathmessage)
 	..()
+/*
 	if(controller) // Unlink from controller
 		controller.termite -= src
 		controller = null
-	. = ..()
+	. = ..()*/
 
 // Spawn ores
 	if(ore)
@@ -192,7 +193,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	name = "miner termite"
 	desc = "A miner termite that has been hardened by the very surface beneath your feet."
 	icon_state = "smertnik_termite" // Sprites made by Polyushko#0323
-	icon_dead = "smertnik_gore"
+	icon_dead = "smertnik_gore_exploded"
 	ranged = TRUE
 	comfy_range = 6 //How far we like to be form are targets when we fire!
 	projectiletype = /obj/item/projectile/bullet/rock
