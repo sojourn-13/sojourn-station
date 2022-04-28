@@ -101,6 +101,13 @@
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 
+/obj/item/storage/box/m_kit/peacekeeper
+	name = "Peacekeeper SMG Kit"
+	desc = "The standard Marshal box kit containing a Peackeeper energy shotgun, a lethal and non-lethal powerhouse of engineering."
+
+	populate_contents()
+		new /obj/item/gun/energy/peacekeeper(src)
+		new /obj/item/cell/medium/high(src)
 
 // Secondary kits
 /obj/item/storage/box/m_kit/wirbelwind

@@ -120,6 +120,5 @@
 
 	init_firemodes = list(
 		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=80, projectile_color = "#8cffff"),
-		list(mode_name="lethal", mode_desc="A ", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Laser.ogg', fire_delay=40, icon="kill", projectile_color = "#ff2600"),
+		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Laser.ogg', fire_delay=40, icon="kill", projectile_color = "#ff2600"),
 	)
-	serial_type = "H&S"

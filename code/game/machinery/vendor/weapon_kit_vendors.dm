@@ -277,7 +277,8 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemRangerPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Thompson Kit" = /obj/item/storage/box/m_kit/tommygun,
-					"Armstrong Kit" = /obj/item/storage/box/m_kit/armstrong)
+					"Armstrong Kit" = /obj/item/storage/box/m_kit/armstrong,
+					"Peacekeeper Kit" = /obj/item/storage/box/m_kit/peacekeeper)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
