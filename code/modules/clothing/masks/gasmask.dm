@@ -48,7 +48,7 @@
 		return
 
 	if(!is_alts)
-		to_chat(M, "This mask has no alt icons or way to change it...")
+		to_chat(M, "This mask has no alt icons or ways to change its filter...")
 		return
 
 
