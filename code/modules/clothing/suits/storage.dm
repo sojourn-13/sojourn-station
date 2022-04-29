@@ -1103,6 +1103,74 @@ obj/item/clothing/suit/sweater/blue
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/suit/storage/suitjacket/longcardigan_brown
+	name = "long cardigan brown coat"
+	desc = "A large brown cardigan coat. Has nice, deep pockets for keeping your hands warm."
+	icon_state = "longcardigan_brown_m"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/longcardigan_brown/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default"] = "longcardigan_brown_m"
+	options["female alt"] = "longcardigan_brown_f"
+
+	var/choice = input(M,"What kind of style do you want to change to?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your jacket's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown
+	name = "blue cardigan coat"
+	desc = "A blue-brown cardigan coat. Has nice pockets and added shades of brown for contrast."
+	icon_state = "longcardigan_brown_m"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default"] = "longcardigan_brown_m"
+	options["default open"] = "longcardigan_blue_open"
+	options["dark blue"] = "longcardigan_blue_alt"
+	options["dark brown open"] = "longcardigan_blue_alt_open"
+
+	var/choice = input(M,"What kind of style do you want to change to?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your jacket's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/storage/suitjacket/scav
 	name = "frontier jacket"
 	desc = "A rough make jacket, patched together from a variety of tough cloth, \

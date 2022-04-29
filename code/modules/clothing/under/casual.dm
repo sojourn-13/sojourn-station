@@ -257,6 +257,12 @@
 	icon_state = "psychturtle"
 	item_state = "b_suit"
 
+/obj/item/clothing/under/turtleneck/greenskirt
+	desc = "A turquoise turtleneck. This one has a plain black skirt, for people who like their neck constrained but their legs free."
+	name = "green turtleneck with skirt"
+	icon_state = "psychturtle_skirt"
+	item_state = "b_suit"
+
 /obj/item/clothing/under/turtleneck/grey
 	name = "grey turtleneck"
 	desc = "A grey turtleneck complete with dark blue slacks."

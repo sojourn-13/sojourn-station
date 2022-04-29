@@ -7844,9 +7844,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warningred/full,
 /obj/structure/cable/yellow{
-	d2 = 4;
-	dir = 1;
-	icon_state = "0-4"
+	dir = 4
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
@@ -11388,9 +11386,7 @@
 	pixel_y = 0
 	},
 /obj/structure/cable/yellow{
-	d2 = 4;
-	dir = 1;
-	icon_state = "0-4"
+	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm2{
@@ -44063,9 +44059,7 @@
 	pixel_y = 0
 	},
 /obj/structure/cable/yellow{
-	d2 = 4;
-	dir = 1;
-	icon_state = "0-4"
+	dir = 4
 	},
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai_upload)
@@ -58655,9 +58649,7 @@
 "mBO" = (
 /obj/machinery/multistructure/biogenerator_part/generator,
 /obj/structure/cable/yellow{
-	d2 = 4;
-	dir = 1;
-	icon_state = "0-4"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
@@ -62165,9 +62157,7 @@
 	pixel_y = 0
 	},
 /obj/structure/cable/yellow{
-	d2 = 4;
-	dir = 1;
-	icon_state = "0-4"
+	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm3{
@@ -68344,9 +68334,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
-	d2 = 4;
-	dir = 1;
-	icon_state = "0-4"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
@@ -80527,14 +80515,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
-"rhW" = (
-/obj/structure/cable/yellow{
-	d2 = 4;
-	dir = 1;
-	icon_state = "0-4"
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/pros/prep)
 "rhX" = (
 /obj/structure/table/steel,
 /obj/random/lowkeyrandom/low_chance,
@@ -89718,9 +89698,7 @@
 "tgW" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
-	d2 = 4;
-	dir = 1;
-	icon_state = "0-4"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/engineering/atmos/surface)
@@ -219772,7 +219750,7 @@ xdv
 xdv
 xdv
 xdv
-rhW
+xdv
 xdv
 xdv
 xdv
