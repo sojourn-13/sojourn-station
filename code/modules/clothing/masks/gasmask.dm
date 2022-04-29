@@ -180,7 +180,7 @@
 
 /obj/item/clothing/mask/gas/blackshield_gasmask
 	name = "tactical camo gas mask"
-	desc = "A gas mask that has a paint kit to it to add in a bit of camo."
+	desc = "A camouflaged gas mask, helps the user blend in with the enviroment while keeping harmful gasses at bay."
 	icon_state = "gas_bs"
 
 /obj/item/clothing/mask/gas/blackshield_gasmask/toggle_style()

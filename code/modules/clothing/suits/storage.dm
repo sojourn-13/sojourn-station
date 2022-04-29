@@ -1105,7 +1105,7 @@ obj/item/clothing/suit/sweater/blue
 
 /obj/item/clothing/suit/storage/suitjacket/longcardigan_brown
 	name = "long cardigan brown coat"
-	desc = "A large brown cardigan coat. Has nice pockets deep pockets for keeping your hands warm."
+	desc = "A large brown cardigan coat. Has nice, deep pockets for keeping your hands warm."
 	icon_state = "longcardigan_brown_m"
 	body_parts_covered = UPPER_TORSO|ARMS
 
@@ -1138,7 +1138,7 @@ obj/item/clothing/suit/sweater/blue
 
 /obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown
 	name = "blue cardigan coat"
-	desc = "A blue brown cardigan coat. Has nice pockets and added shades of brown to contrast it.."
+	desc = "A blue-brown cardigan coat. Has nice pockets and added shades of brown for contrast."
 	icon_state = "longcardigan_brown_m"
 	body_parts_covered = UPPER_TORSO|ARMS
 
