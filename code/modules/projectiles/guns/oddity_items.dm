@@ -17,7 +17,7 @@
 /obj/item/gun/energy/sniperrifle/saint
 	name = "\"Saint\" laser rifle"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	The normal \"Valkyrie\" design meeting the improvements with Lightfall design in an wooden frame with a golden barrel to help conduct the extra little bit of juice to hit as hard as possible."
+	The normal \"Valkyrie\" design meeting the improvements with Lightfall design in a wooden frame with a golden barrel to help conduct the extra little bit of juice to hit as hard as possible."
 	charge_cost = 200
 	fire_delay = 25
 	price_tag = 3750
