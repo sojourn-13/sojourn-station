@@ -90,7 +90,7 @@
 /obj/item/gun/energy/ntpistol/mana
 	name = "\"Mana from Heaven\" energy pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	A blue and black verson of the standered \"Serenity\" energy pistol, somehow dispite looking just like a repainted job it conserves power unusually well."
+	A blue and black version of the standard \"Serenity\" energy pistol, somehow despite looking just like a repainted job it conserves power unusually well."
 	charge_cost = 2
 	price_tag = 2550
 	serial_type = "BlueCross"
