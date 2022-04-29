@@ -241,6 +241,68 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/suit/armor/vest/path //No path ?
+	name = "vinculum cassock"
+	desc = "A heavy Cassock meant for the Vectors that possess no vows. This sturdy armor is made entirely out of biomatter and have no metal inner layer, but at the same time this sturdy armor is the thickest of any other armor made out of cloth, even thicker than a gambeson. But this armor is often used for rituals more than it is using for fighting, keeping the defensive properties only for emergencies."
+	icon_state = "vinculum_cassock"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
+	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/armor/vest/path/divisor
+	name = "divisor breastplate"
+	desc = "One armor that reflects the path of the user. The Divisor Breastplate is a armor/uniform of a faithful Divisor on their way to protect the church and the flock. Differently of the other armors, the metallic parts of the armor stays in the outside layer while the biomatter cloth stays inside, keeping the divisor warm and comfortable without the constant steel plate graze."
+	icon_state = "divisor_breastplate"
+
+/obj/item/clothing/suit/armor/vest/path/tessallate
+	name = "tessallate riding habit"
+	desc = "One armor that reflects the path of the user. The Tessellate Riding Habit is the female version of the Plague Garbs, yet there is no issue for a man to use such piece of equipment. This is a tailored padded defensive Doublet with a reinforced, petticoat. In the mid 17th century, this type of clothes was used for riding sidesaddle, but now better used to the ones who vows to dedicate the life to religious service, under vows of the Tessellate, while staying protected from harm of the everyday upper colonies life."
+	icon_state = "tessellate_riding_habit"
+
+/obj/item/clothing/suit/armor/vest/path/tessallate_m
+	name = "tessallate plague garbs"
+	desc = "A sturdy, padded defensive doublet with chain mail inner layer with buttons that covers the entire body of the user, not allowing any single part of the skin to be intoxicated by biomatter or, by how it was intended, viral agents. It keeps the Vector from falling ill during any pandemic as Absolute wills it. This one can be coloured on a dark cloth, for situations of distress to show that one Tessellate Plague Doctor is acting nearby, and others must be aware."
+	icon_state = "tessellate_plague_garbs"
+
+/obj/item/clothing/suit/armor/vest/path/tessallate_m/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default"] = "tessellate_plague_garbs"
+	options["dark"] = "tessellate_plague_garbs_dark"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/armor/vest/path/lemniscate
+	name = "lemniscate simar"
+	desc = "A very pompous long dress robe and a raised scarf with golden outlines and double hald-sleeves, without a sash. Biomatter is able to make different types of cloth with it's components, either a great silk substitute with a great price or a tough, kevlar-like aramid. This armor possess both alternatives and a light plate inside to protect the user's vital organs, used by Lemniscates during ceremonies and rituals, because such armor is so light it allows them to dance and still look good while doing so. It can even be considered a mixture of formal clothing and armor at the same time."
+	icon_state = "lemniscate_simar"
+
+/obj/item/clothing/suit/armor/vest/path/monomial
+	name = "monomial kasaya"
+	desc = "Kasaya are robes used by the Monks and Nuns of the church of the absolute, and most of the time used by hermits during their path towards the unknown. Used by the Devotees, it was once made for the ones that wanted to let clear their vows of poverty, being made with discarded fabric instead of biomatter. But with how the colony is a dangerous place, the Monomials needed to make do with the new reinforced biomatter cloth ordered by the Church while going on the upper colonies, yet this armor still respects the monomial vows by keeping one arm unprotected, while the other make do by reinforcing the armor rate in double."
+	icon_state = "monomial_kasaya"
+
+/obj/item/clothing/suit/armor/vest/path/factorial
+	name = "factorial_powergarb"
+	desc = "Powergarbs are curious things that aren't made out of circuits but rather have golem hematite foundations, curious technology that almost only the church possess with great variety beyond xenobiology, what explains the EMP-Immune nature of the powergarbs even if, in fact, the arms behind them are alive and are actually living golems that consented (following the Church absolute terms of Free-Will) into becoming the protection of a Factorial, in fact, the reason Church does not possess any borg falls entirely to their lack of free will."
+	icon_state = "factorial_powergarb"
+
 /obj/item/clothing/suit/armor/vest/rosaria
 	name = "rosaria armor"
 	desc = "The Rosaria protects."
