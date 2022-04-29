@@ -22,6 +22,7 @@
 	)
 	price_tag = 20
 	muffle_voice = TRUE
+	var/is_alts = TRUE
 
 /obj/item/clothing/mask/gas/filter_air(datum/gas_mixture/air)
 	var/datum/gas_mixture/filtered = new
@@ -42,10 +43,15 @@
 	set category = "Object"
 	set src in usr
 
+	var/mob/M = usr
 	if(!isliving(loc))
 		return
 
-	var/mob/M = usr
+	if(!is_alts)
+		to_chat(M, "This mask has no alt icons or way to change it...")
+		return
+
+
 	var/list/options = list()
 	options["Base"] = "gas_mask"
 	options["Alternative"] = "gas_alt"
@@ -66,21 +72,25 @@
 	name = "professional clown mask"
 	desc = "A face-covering clown mask that hides your identity and functions as a gas mask. This one inspires great experience and cunning intelligence."
 	icon_state = "dal"
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/wolf
 	name = "psychopathic clown mask"
 	desc = "A face-covering clown mask that hides your identity and functions as a gas mask. This one inspires mood shifts and a desires to use explosives."
 	icon_state = "wolf"
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/hox
 	name = "prisoner clown mask"
 	desc = "A face-covering clown mask that hides your identity and functions as a gas mask. This one makes you feel as if your shackled yet always capable of escaping."
 	icon_state = "hox"
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/cha
 	name = "daredevil clown mask"
 	desc = "A face-covering clown mask that hides your identity and functions as a gas mask. This one makes you feel like you should use bullets, a fuckton of bullets and probably a boot knife too."
 	icon_state = "cha"
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/artist_hat
 	name = "Spooky Rebreather"
@@ -91,6 +101,7 @@
 	"The mime" = "mime", "The Feminist" = "sexyclown", "The Madman" = "joker",
 	"The Rainbow Color" = "rainbow", "The Monkey" = "monkeymask", "The Owl" = "owl")
 	muffle_voice = FALSE
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/artist_hat/attack_self(mob/user)
 	var/choice = input(user, "To what form do you wish to morph this mask?","Morph Mask") as null|anything in states
@@ -106,6 +117,7 @@
 	icon_state = "clown"
 	item_state = "clown_hat"
 	muffle_voice = FALSE
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/clown_hat/attack_self(mob/user)
 	var/list/options = list()
@@ -135,6 +147,7 @@
 	siemens_coefficient = 0.7
 	body_parts_covered = FACE|EYES
 	price_tag = 40
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/tactical
 	name = "tactical mask"
@@ -142,6 +155,7 @@
 	icon_state = "swat"
 	siemens_coefficient = 0.7
 	price_tag = 50
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/germanmask
 	name = "church gas mask"
@@ -149,17 +163,20 @@
 	icon_state = "germangasmask"
 	siemens_coefficient = 0.7
 	price_tag = 50
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/death_commando
 	name = "death commando mask"
 	icon_state = "death_commando_mask"
 	item_state = "death_commando_mask"
 	siemens_coefficient = 0.2
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/cyborg
 	name = "cyborg visor"
 	desc = "Beep boop."
 	icon_state = "death"
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/blackshield_gasmask
 	name = "tactical camo gas mask"
@@ -198,24 +215,28 @@
 	name = "trader mask"
 	desc = "A mask used by salesperson."
 	icon_state = "big_shot"
+	is_alts = FALSE
 
 //Sprite by INFRARED_BARON
 /obj/item/clothing/mask/gas/colony
 	name = "jester mask"
 	desc = "A green wig and colourful mask to make anyone smile."
 	icon_state = "colony"
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/industrial
 	name = "industrial gas mask"
 	desc = "An industrial gas mask designed for heavy usage."
 	icon_state = "gas_wide"
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 80, rad = 0)
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/old
 	name = "enviro gas mask"
 	desc = "An archaic gas mask still widely available due to its mass production."
 	icon_state = "gas_old"
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 70, rad = 0)
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/opifex
 	name = "opifex gas mask"
@@ -226,6 +247,7 @@
 	filtered_gases = list("plasma", "sleeping_agent", "oxygen")
 	var/mask_open = FALSE	// Controls if the Opifex can eat through this mask
 	action_button_name = "Toggle Feeding Port"
+	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/opifex/proc/feeding_port(mob/user)
 	if(user.canmove && !user.stat)
