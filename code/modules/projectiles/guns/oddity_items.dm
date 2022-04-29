@@ -11,7 +11,7 @@
 	recoil_buildup = 25
 	max_shells = 6
 	price_tag = 750
-	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 6)
+	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 6) //Its now made of plasteel to show its whatever
 	serial_type = "BlueCross"
 
 /obj/item/gun/energy/sniperrifle/saint
@@ -21,7 +21,7 @@
 	charge_cost = 200
 	fire_delay = 25
 	price_tag = 3750
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_GOLD = 9, MATERIAL_URANIUM = 6)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_GOLD = 9, MATERIAL_URANIUM = 6) //The normal valk needs silver this is gold plated!
 	icon = 'icons/obj/guns/energy/sniper_saint.dmi'
 	serial_type = "BlueCross"
 
