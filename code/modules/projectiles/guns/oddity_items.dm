@@ -71,7 +71,7 @@
 	icon = 'icons/obj/guns/projectile/sawnoff/bluecross_shotgun.dmi'
 	init_firemodes = list(
 		list(mode_name="King's Wrath", mode_desc="Echos the will of king that onced used it.", burst=1, icon="semi"), //Snowfalk fire mode for snowflake gun
-		list(mode_name="Agust Presence", mode_desc="Fires two of the king's decrees at the same time.", burst=2, icon="semi")
+		list(mode_name="August Presence", mode_desc="Fires two of the king's decrees at the same time.", burst=2, icon="semi")
 		)
 
 
