@@ -1,6 +1,6 @@
 /obj/item/gunbox/church //credit goes to Hestia both for the idea of loadout gun box and for the code, sprite is Polyushko
 	name = "\improper Armor Bundle"
-	desc = "A secure box containing the Warrant Officers primary weapon."
+	desc = "A secure box containing church equipment."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "armor_bundle"
 
