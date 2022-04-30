@@ -235,7 +235,7 @@
 
 /obj/item/gun/energy/sunrise/update_icon()
 	..()
-
+	overlays.Cut()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
@@ -256,10 +256,6 @@
 		iconstring += "_mag"
 		itemstring += "_mag"
 
-
-/obj/item/gun/energy/sunrise/update_icon()
-	overlays.Cut()
-	..()
 	if(istype(cell, /obj/item/cell/medium/moebius/nuclear))
 		overlays += image(icon, "nuke_cell")
 
@@ -299,6 +295,7 @@
 	)
 
 /obj/item/gun/energy/peacekeeper/update_icon()
+	..()
 	overlays.Cut()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
@@ -331,3 +328,31 @@
 		add_overlay("peacekeeper")
 	else
 		add_overlay("lpeacekeeper")
+
+/obj/item/gun/energy/zwang
+	name = "\"Zwang\" energy revolver"
+	desc = "The \"Zwang\" is a law enforcer's best friend of a sidearm. Carrying both an extremely effective lethal and non-lethal firemode. \
+	Luckily it does not sacrifice style for effiency neither. The 'revolver' spins its cell while firing, mimicking that of a double-action to make use of multiple connection points."
+	icon = 'icons/obj/guns/energy/zwang.dmi'
+	icon_state = "zwang"
+	item_state = "zwang"
+	item_charge_meter = TRUE
+	can_dual = TRUE
+	fire_sound = 'sound/weapons/Taser.ogg'
+	charge_cost = 160
+	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_PLASTIC = 6, MATERIAL_SILVER = 6)
+	price_tag = 1600
+
+	init_firemodes = list(
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=80),
+		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Laser.ogg', fire_delay=40, icon="kill"),
+	)
+
+/obj/item/gun/energy/zwang/update_icon()
+	..()
+	overlays.Cut()
+	var/datum/firemode/current_mode = firemodes[sel_mode]
+	if(current_mode.name == "stunshot")
+		add_overlay("tazer_zwang")
+	else
+		add_overlay("laser_zwang")
