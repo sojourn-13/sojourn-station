@@ -290,8 +290,8 @@
 	price_tag = 900
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/Taser.ogg', charge_cost = 200, projectile_color = "#C48A18"),
-		list(mode_name="buckshot", projectile_type=/obj/item/projectile/bullet/pellet/shotgun/energy, fire_sound='sound/weapons/guns/fire/sunrise_fire.ogg', charge_cost = 100, icon="kill", projectile_color = "#ff2600"),
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/Taser.ogg', charge_cost = 200, icon="stun"),
+		list(mode_name="buckshot", projectile_type=/obj/item/projectile/bullet/pellet/shotgun/energy, fire_sound='sound/weapons/guns/fire/sunrise_fire.ogg', charge_cost = 100, icon="kill"),
 	)
 
 /obj/item/gun/energy/peacekeeper/update_icon()
@@ -338,13 +338,12 @@
 	item_state = "zwang"
 	item_charge_meter = TRUE
 	can_dual = TRUE
-	fire_sound = 'sound/weapons/Taser.ogg'
 	charge_cost = 160
 	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_PLASTIC = 6, MATERIAL_SILVER = 6)
 	price_tag = 1600
 
 	init_firemodes = list(
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=80),
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound = 'sound/weapons/Taser.ogg', fire_delay=80, icon="stun"),
 		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Laser.ogg', fire_delay=40, icon="kill"),
 	)
 
