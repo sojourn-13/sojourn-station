@@ -779,24 +779,13 @@
 /obj/item/ammo_casing/crossbow_bolts/speed/bulk //Admin spawn stuff
 	amount = 10
 
-//arrows
-/obj/item/ammo_casing/arrow
-	name = "arrow"
-	desc = "A crudely made plastic-fletched metal-headed arrow."
-	icon_state = "arrow"
-	caliber = CAL_ARROW
-	projectile_type = /obj/item/projectile/bullet/arrow
-	matter = list(MATERIAL_STEEL = 0.5, MATERIAL_WOOD = 0.5, MATERIAL_PLASTIC= 0.5)
-	maxamount = 10
-	is_caseless = TRUE
-  
 /obj/item/ammo_casing/rod_bolt
 	name = "metal rod"
 	desc = "Wait a second, this is a bullet!"
 	icon = 'icons/obj/stack/items.dmi'
 	icon_state = "rods"
 	caliber = "rod" //not a define
-	projectile_type = /obj/item/projectile/bullet/rod_bolt
+	projectile_type = /obj/item/projectile/bullet/reusable/rod_bolt
 	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 1
 	is_caseless = TRUE
@@ -804,4 +793,133 @@
 /obj/item/ammo_casing/rod_bolt/rcd
 	name = "flashforged rod"
 	desc = "Wait a second, this is a flashforged bullet!"
-	projectile_type = /obj/item/projectile/bullet/rod_bolt/rcd
+	projectile_type = /obj/item/projectile/bullet/reusable/rod_bolt/rcd
+
+//arrows
+/obj/item/ammo_casing/arrow
+	name = "arrow"
+	desc = "A crudely made plastic-fletched metal-headed arrow."
+	icon_state = "arrow"
+	caliber = CAL_ARROW
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow
+	matter = list(MATERIAL_STEEL = 0.5, MATERIAL_WOOD = 0.5, MATERIAL_PLASTIC= 0.5)
+	maxamount = 3
+	is_caseless = TRUE
+
+/obj/item/ammo_casing/arrow/hunting
+	name = "hunting arrow"
+	icon_state = "arrow-bone"
+	desc = "A good-quality handmade arrow, with a bone head and plastic fletching. The head is shaped to allow easy removal from an animal's corpse."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/hunting
+
+/obj/item/ammo_casing/arrow/hunting/heavy
+	name = "broadhead hunting arrow"
+	icon_state = "arrow-broadbone"
+	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. The head is shaped to stick fast in wounds- it likely won't be retrievable from a corpse."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/hunting/heavy
+
+/obj/item/ammo_casing/arrow/broadhead
+	name = "broadhead arrow"
+		icon_state = "arrow-broad"
+	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has quite a broad head, letting it stick in wounds easily, but reducing its ability to penetrate armor."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/broadhead
+
+/obj/item/ammo_casing/arrow/serrated
+	name = "serrated arrow"
+	icon_state = "arrow-serrated"
+	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has wicked sharp serrated blades along its head, capable of causing severe damage to unarmored targets."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/serrated
+
+/obj/item/ammo_casing/arrow/reagent
+	name = "vial arrow"
+	icon_state = "arrow-vial"
+	desc = "A fairly basic arrow with a aerodynamic plastic head and a fragile glass vial attached, which should shatter on impact."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/reagent
+	maxamount = 1
+
+/obj/item/ammo_casing/arrow/reagent/attackby(obj/item/I, mob/user)
+	if(I.reagents && BB)
+		BB.attackby(I, user)
+		return
+	..()
+
+/obj/item/ammo_casing/arrow/reagent/hypo
+	name = "injector arrow"
+	icon_state = "arrow-hypo"
+	desc = "A fairly basic arrow with a aerodynamic plastic with a reinforced hypodermic needle sticking out. Looks quite painful."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/reagent/hypo
+
+/obj/item/ammo_casing/arrow/practice
+	name = "training arrow"
+	icon_state = "arrow-practice"
+	desc = "A plastic-fletched training arrow, with a light-coloured plastic tip."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/practice
+	matter = list(MATERIAL_WOOD = 0.5, MATERIAL_PLASTIC = 1)
+	maxamount = 10
+//payload arrows
+
+/obj/item/ammo_casing/arrow/empty_payload
+	name = "streamlined ultralight arrow"
+	desc = "A finely-made arrow with an aerodynamic plastic tip. Looks like it has small mounting points attached along the shaft."
+	icon_state = "arrow-practice"
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/practice/payload
+	var/list/special_crafting_types = list(/obj/item/grenade/explosive = /obj/item/ammo_casing/arrow/explosive,
+	/obj/item/grenade/frag/stinger = /obj/item/ammo_casing/arrow/explosive/frag/sting,
+	/obj/item/grenade/frag = /obj/item/ammo_casing/arrow/explosive/frag,
+	/obj/item/grenade/empgrenade = /obj/item/ammo_casing/arrow/explosive/emp,
+	/obj/item/grenade/flashbang = /obj/item/ammo_casing/arrow/explosive/flashbang,
+	/obj/item/grenade/heatwave = /obj/item/ammo_casing/arrow/explosive/heatwave,
+	/obj/item/grenade/smokebomb = /obj/item/ammo_casing/arrow/explosive/smoke,
+	/obj/item/reagent_containers/hypospray/autoinjector = /obj/item/ammo_casing/arrow/reagent/hypo,
+	/obj/item/reagent_containers/glass/beaker/vial = /obj/item/ammo_casing/arrow/reagent)
+
+/obj/item/ammo_casing/arrow/empty_payload/attackby(obj/item/I, mob/user)
+	if(I in special_crafting_types)
+		to_chat(user, SPAN_NOTICE("You attach [I] to the [src]."))
+		new special_crafting_types[I](get_turf(src))
+		qdel(I)
+		qdel(src)
+		return
+	..()
+
+/obj/item/ammo_casing/arrow/explosive
+	name = "grenade arrow"
+	desc = "Holy shit, there's a bomb taped to this arrow!"
+	maxamount = 2
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/explosive
+
+/obj/item/ammo_casing/arrow/explosive/frag
+	name = "frag grenade arrow"
+	icon_state = "arrow-explosive"
+	desc = "A pared-down frag grenade attached to an arrow. This likely won't go far, or fast."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/explosive/frag
+
+/obj/item/ammo_casing/arrow/explosive/frag/sting
+	name = "stingball grenade arrow"
+	icon_state = "arrow-sting"
+	desc = "A stinger grenade attached to an arrow. This likely won't go far, or fast."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/explosive/frag/sting
+
+/obj/item/ammo_casing/arrow/explosive/emp
+	name = "EMP grenade arrow"
+	icon_state = "arrow-emp"
+	desc = "An aerodynamic plastic-tipped arrow, with some electronics attached."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/explosive/emp
+
+/obj/item/ammo_casing/arrow/explosive/flashbang
+	name = "flashbang arrow"
+	icon_state = "arrow-flashbang"
+	desc = "A fairly unaerodynamic arrow, with a pared-down flashbang grenade attached."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/explosive/flashbang
+
+/obj/item/ammo_casing/arrow/explosive/heatwave
+	name = "heatwave grenade arrow"
+	icon_state = "arrow-heatwave"
+	desc = "A fairly unaerodynamic arrow with a pared-down heatwave grenade attached. Thankfully, the pin's still in."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/explosive/heatwave
+
+/obj/item/ammo_casing/arrow/explosive/smoke
+	name = "smoke grenade arrow"
+	icon_state = "arrow-smoke"
+	desc = "A fairly unaerodynamic arrow, with a pared-down smoke grenade attached."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/explosive/smoke

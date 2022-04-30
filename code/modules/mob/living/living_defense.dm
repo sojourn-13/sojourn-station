@@ -125,8 +125,9 @@
 		hit_impact(P.get_structure_damage(), hit_dir)
 		for(var/damage_type in P.damage_types)
 			var/damage = P.damage_types[damage_type]
-			if(faction in P.supereffective_factions)
-				damage *= P.supereffective_mult
+			if(LAZYLEN(P.supereffective_factions))
+				if(faction in P.supereffective_factions)
+					damage *= P.supereffective_mult
 			damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P))
 
 

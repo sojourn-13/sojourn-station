@@ -1,3 +1,6 @@
+//All bows are in this file.
+
+
 /obj/item/gun/projectile/bow
 	name = "simple bow"
 	desc = "A incredibly basic bow. Fires arrows."
@@ -18,6 +21,8 @@
 			list(mode_name="normal", mode_desc="Draw the bow to fire a shot", mode_type = /datum/firemode/charge, icon="charge")
 			)
 	serial_type = null
+	safety = FALSE
+	restrict_safety = TRUE
 	var/arrow_x_offset_per_tension = -1
 	var/arrow_y_offset_per_tension = 1
 
@@ -39,6 +44,15 @@
 		arrow_overlay.pixel_y = true_tension * arrow_y_offset_per_tension
 		add_overlay(arrow_overlay)
 
+/obj/item/gun/projectile/bow/attackby(obj/item/A , mob/user)
+	..()
+	if(LAZYLEN(loaded))
+		chambered = loaded[1]
+		loaded -= chambered
+
+/obj/item/gun/projectile/bow/consume_next_projectile()
+	if(chambered)
+		return chambered.BB
 
 
 /obj/item/gun/projectile/bow/begin_charge(mob/living/user)
@@ -61,8 +75,20 @@
 	deltimer(overcharge_timer)
 	Fire(target, user, extra_proj_damagemult = overcharge_level, extra_proj_penmult = overcharge_level, extra_proj_stepdelaymult = (overcharge_level > 5 ? 1 : 0.5), multiply_projectile_agony = overcharge_level)
 	overcharge_level = 0
+	update_icon()
 
 /obj/item/gun/projectile/bow/dropped()
 	overcharge_level = 0
 	update_icon()
 	..()
+
+/obj/item/gun/projectile/bow/hunting
+	name = "hunting bow"
+	desc = "A recurve hunting bow, made alternating bands of stalker chitin, animal sinew and wood laminated together."
+	caliber = "arrow"
+	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_WOOD = 10, MATERIAL_PLASTIC = 5) //biomatter is bone and stuff idk no bone material
+	penetration_multiplier = 1.5
+	zoom_factor = 2.0
+	extra_damage_mult_scoped = 0.05//this seems tiny, but is actually really significant on hunting arrows
+	overcharge_timer_step = 10
+	price_tag = 1200

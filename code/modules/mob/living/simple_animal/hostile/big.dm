@@ -213,6 +213,7 @@
 	mob_size = 3
 	leather_amount = 0 //No actual skin
 	bones_amount = 30 //Lots of bone-like chitin
+	special_parts = list(/obj/item/animal_part/stalker_chitin)
 	mob_size = MOB_LARGE
 	armor = list(melee = 15, bullet = 30, energy = 35, bomb = 5, bio = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_COUGHING, MUTATION_NERVOUSNESS, MUTATION_CLOAKING)
@@ -375,4 +376,3 @@
 	special_parts = list(/obj/item/animal_part/slepnir_hoof,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 	armor = list(melee = 5, bullet = 10, energy = 10, bomb = 5, bio = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE)
-

@@ -17,6 +17,7 @@
 	anchored = TRUE //There's a reason this is here, Mport. God fucking damn it -Agouri. Find&Fix by Pete. The reason this is here is to stop the curving of emitter shots.
 	pass_flags = PASSTABLE
 	mouse_opacity = 0
+	embed_mult = 1
 	var/bumped = FALSE		//Prevents it from hitting more than one guy at once
 	var/hitsound_wall = "ricochet"
 	var/list/mob_hit_sound = list('sound/effects/gore/bullethit2.ogg', 'sound/effects/gore/bullethit3.ogg') //Sound it makes when it hits a mob. It's a list so you can put multiple hit sounds there.
@@ -57,6 +58,8 @@
 	var/agony = 0
 	var/embed = 0 // whether or not the projectile can embed itself in the mob
 	var/knockback = 0
+
+	var/shrapnel_type //Do we have a special thing to embed in the target? If this is null, it will embed a generic 'shrapnel' item.
 
 	var/hitscan = FALSE		// whether the projectile should be hitscan
 	var/step_delay = 1	// the delay between iterations if not a hitscan projectile

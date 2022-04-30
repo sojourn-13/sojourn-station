@@ -39,6 +39,14 @@
 				if (!C || !C.check_charge(E.charge_cost))
 					can_fire = FALSE
 
+			//Bullet weapons need to have bullet
+			if(istype(gun, /obj/item/gun/projectile))
+				var/obj/item/gun/projectile/P = gun
+				if(!P.chambered)
+					can_fire = FALSE
+				else
+					can_fire = TRUE
+
 			//TODO: Centralise all this into some can_fire proc
 			if (can_fire)
 				enable = TRUE

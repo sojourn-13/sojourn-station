@@ -746,17 +746,16 @@
 	affective_ap_range = 9
 	nocap_structures = TRUE //Can do well againt walls and doors
 
-/obj/item/projectile/bullet/arrow
-	name = "arrow"
-	icon_state = "bolt"
-	damage_types = list(BRUTE = 10)
-	armor_penetration = 15
-	check_armour = ARMOR_MELEE
-	step_delay = 0.9
-	affective_damage_range = 7
-	affective_ap_range = 7
+//reusable
+/obj/item/projectile/bullet/reusable
+	var/obj/item/create_type
 
-/obj/item/projectile/bullet/rod_bolt
+/obj/item/projectile/bullet/reusable/on_impact(atom/A)
+	..()
+	if(create_type)
+		new create_type(get_turf(src))
+
+/obj/item/projectile/bullet/reusable/rod_bolt
 	name = "metal rod"
 	icon_state = "bolt"
 	damage_types = list(BRUTE = 10) //This is multiplied by tension when fired, so it's actually 50 damage.
@@ -766,14 +765,9 @@
 	penetrating = 1
 	affective_damage_range = 7
 	affective_ap_range = 7
-	var/obj/item/create_type = /obj/item/stack/rods
+	create_type = /obj/item/stack/rods
 
-/obj/item/projectile/bullet/rod_bolt/on_impact(atom/A)
-	..()
-	if(create_type)
-		new create_type(get_turf(src))
-
-/obj/item/projectile/bullet/rod_bolt/superheated
+/obj/item/projectile/bullet/reusable/rod_bolt/superheated
 	name = "superheated metal rod"
 	damage_types = list(BRUTE = 10, BURN = 2.5) //This is multiplied by tension when fired, so it's actually 62.5 damage.
 	armor_penetration = 20
@@ -785,7 +779,7 @@
 	create_type = null
 
 
-/obj/item/projectile/bullet/rod_bolt/rcd
+/obj/item/projectile/bullet/reusable/rod_bolt/rcd
 	name = "flashforged rod"
 	icon_state = "bolt"
 	damage_types = list(BRUTE = 9) //This is multiplied by tension when fired, so it's actually 45 damage. Slightly worse, but it's faster and has higher AP.
@@ -797,14 +791,219 @@
 	affective_ap_range = 7
 	create_type = /obj/item/arrow/rcd
 
-/obj/item/projectile/bullet/rod_bolt/rcd/superhot
+/obj/item/projectile/bullet/reusable/rod_bolt/rcd/superhot
 	name = "flashforged superheated rod"
 	icon_state = "bolt"
 	damage_types = list(BRUTE = 9, BURN = 2.5) //This is multiplied by tension when fired, so it's actually 57.5 damage. Slightly worse, but it's faster and has higher AP.
 	armor_penetration = 30
+	supereffective_factions = list("neutral") //TESTING ONLY, REMOVE LATER
 	step_delay = 0.2
 	embed = TRUE
 	penetrating = 0
 	affective_damage_range = 7
 	affective_ap_range = 7
 	create_type = null
+
+/obj/item/projectile/bullet/reusable/arrow
+	name = "arrow"
+	icon_state = "arrow"
+	damage_types = list(BRUTE = 4) //Multiplied by 10 when fired.
+	supereffective_factions = list("wurm", "roach", "spider", "neutral", "hostile", "friendly") //good against common colony mobs
+	embed = FALSE //don't want to embed and drop an arrow, that would be weird
+	armor_penetration = 3 //..
+	check_armour = ARMOR_MELEE
+	step_delay = 0.9
+	affective_damage_range = 6
+	affective_ap_range = 6
+	create_type = /obj/item/ammo_casing/arrow
+
+/obj/item/projectile/bullet/reusable/arrow/broadhead //Similar base damage, higher embed rate, lower AP. Arrow-hollowpoints type 1.
+	name = "broadhead arrow"
+	icon_state = "arrow-broad"
+	embed = TRUE //we are going to try really hard to embed
+	embed_mult = 3
+	armor_penetration = 2
+	step_delay = 0.9
+	create_type = null
+	shrapnel_type = /obj/item/ammo_casing/arrow/broadhead //the ENTIRE arrow!
+
+/obj/item/projectile/bullet/reusable/arrow/serrated
+	name = "serrated arrow"
+	icon_state = "arrow"
+	agony = 60 //same as baroque, but much, much, much worse AP, less damage
+	damage_types = list(BRUTE = 6.5) //Very good base damage, negligible (5) AP, but no embedding. Think of it as arrow-hollowpoints type 2.
+	embed = FALSE
+	armor_penetration = 0.5
+	step_delay = 0.9
+	create_type = /obj/item/ammo_casing/arrow/serrated
+
+/obj/item/projectile/bullet/reusable/arrow/hunting
+	name = "hunting arrow"
+	icon_state = "arrow-bone"
+	damage_types = list(BRUTE = 2) //Multiplied by 10 when fired.
+	supereffective_factions = list("stalker", "roach", "spider", "tengo", "tengolo_berserker", "xenomorph", "wurm", "vox_tribe", "robot", "greyson", "ameridian", "neutral", "psi_monster", "hostile", "friendly") //this SHOULD be all of them.
+	supereffective_mult = 5 //we do 10 damage base, up to 50 against SE mobs, then with 55 AP on should do ~100. Slow to fire, unwieldly, slow projectiles (but reusable), so I'll say this is fair?
+	armor_penetration = 5 //high ap to take advantage of overpen on mobs
+	step_delay = 0.8
+	affective_damage_range = 14
+	affective_ap_range = 14
+	create_type = /obj/item/ammo_casing/arrow/hunting
+
+/obj/item/projectile/bullet/reusable/arrow/hunting/heavy
+	name = "fragmenting hunting arrow"
+	icon_state = "arrow-bone"
+	damage_types = list(BRUTE = 3) //Multiplied by 10 when fired.
+	embed = TRUE
+	supereffective_mult = 18 //we do 20 damage base, up to 360 against SE mobs, then with 55 (+5 hunting bow) AP on should do ~410. Baroque is around ~430 vs mobs, so roughly baroque-tier vs mobs, with the same wieldliness and different ammo costs (bone/leather/metal/plastic vs metal/cardboard).
+	affective_damage_range = 14
+	affective_ap_range = 14
+	create_type = null //NOT reusable.
+
+/obj/item/projectile/bullet/reusable/arrow/reagent
+	name = "chemical arrow"
+	icon_state = "arrow-reagent"
+	damage_types = list(BRUTE = 0.5) //Low damage, but chem-warfarable.
+	embed = FALSE
+	reagent_flags = INJECTABLE | DRAINABLE | AMOUNT_VISIBLE | REFILLABLE
+	armor_penetration = 0.5
+	step_delay = 1
+	create_type = /obj/item/ammo_casing/arrow
+	var/volume = 15// We only splash the target with reagents, so we hold a little more than syrette arrows. Good for acids, incindiaries, etc.
+
+/obj/item/projectile/bullet/reusable/arrow/reagent/Initialize()
+	..()
+	create_reagents(volume)
+
+/obj/item/projectile/bullet/reusable/arrow/reagent/on_impact(atom/target)
+	visible_message(SPAN_DANGER("The vial attached to [name] bursts, spraying [target] with its contents!"))
+	reagents.splash(target, reagents.total_volume)
+	return ..()
+
+/obj/item/projectile/bullet/reusable/arrow/reagent/hypo
+	name = "injector arrow"
+	volume = 5 //hypo arrows only hold 5u of reagents.
+
+/obj/item/projectile/bullet/reusable/arrow/reagent/hypo/on_impact(atom/target)
+	visible_message(SPAN_DANGER("The hypo attached to [name] hits [target], injecting [target] with its contents!"))
+	if(isliving(target))
+		var/mob/living/injectee = target
+		reagents.trans_to_mob(injectee, 5, CHEM_BLOOD)
+	else
+		reagents.trans_to(target, 5)
+	return TRUE
+
+
+/obj/item/projectile/bullet/reusable/arrow/practice
+	name = "training arrow"
+	icon_state = "arrow-practice"
+	damage_types = list(HALLOSS = 0.1)
+	embed = FALSE
+	nodamage = TRUE
+	armor_penetration = 0
+	step_delay = 1.1
+	create_type = /obj/item/ammo_casing/arrow/practice
+
+/obj/item/projectile/bullet/reusable/arrow/practice/payload
+	name = "ultralight training arrow"
+	step_delay = 0.9
+	create_type = /obj/item/ammo_casing/arrow/empty_payload
+
+
+//spolsives here
+
+/obj/item/projectile/bullet/reusable/arrow/explosive
+	name = "explosive arrow"
+	desc = "Holy shit, there's a bomb taped to this arrow!"
+	icon_state = "arrow-grenade"
+	damage_types = list(HALLOSS = 1)
+	embed = FALSE //impact fuze
+	armor_penetration = 0
+	step_delay = 1.1 //slower
+	affective_damage_range = 6
+	affective_ap_range = 6
+	kill_count = 7 //heavy arrow, worse aerodynamics
+	create_type = null
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/on_impact(atom/target)
+	explosion(target, 0, 1, 3)
+	return ..()
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/frag
+	name = "frag grenade arrow"
+	desc = "Holy shit, there's a military-grade frag grenade taped to this arrow!"
+	var/frag_type = /obj/item/projectile/bullet/pellet/fragment/strong
+	var/frag_damage = 3
+	var/frag_count = 75
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/frag/on_impact(atom/target)
+	fragment_explosion(target, 4, frag_type, frag_count, frag_damage, 2, 100)
+	return ..()
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/frag/sting
+	name = "stinger grenade arrow"
+	desc = "Holy shit, there's a police-grade stinger grenade taped to this arrow!"
+	frag_type = /obj/item/projectile/bullet/pellet/fragment/rubber
+	frag_damage = 1
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/frag/on_impact(atom/target)
+	fragment_explosion(target, 4, frag_type, frag_count, frag_damage, 2, 100)
+	return ..()
+
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/emp
+	name = "electromagnetic pulse grenade arrow"
+	desc = "Holy shit, there's a EMP grenade taped to this arrow!"
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/emp/on_impact(atom/target)
+	empulse(target, 1, 2) //fairly weak
+	return ..()
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/flashbang
+	name = "flashbang arrow"
+	desc = "Holy shit, there's a flashbang taped to this arrow!"
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/flashbang/on_impact(atom/target)
+	for(var/mob/living/carbon/M in hear(2, get_turf(target)))
+		flashbang_bang(get_turf(target), M)
+
+	for(var/mob/living/carbon/human/thermal_user in orange(4, target))
+		if(!thermal_user.glasses)
+			return
+		var/obj/item/clothing/glasses/potential_thermals = thermal_user.glasses
+		if(potential_thermals.overlays == global_hud.thermal)
+			flashbang_without_the_bang(get_turf(target), thermal_user)
+
+	for(var/obj/effect/blob/B in hear(2,get_turf(target)))	//Blob damage here
+		var/damage = round(30/(get_dist(2,get_turf(target))+1))
+		B.health -= damage
+		B.update_icon()
+
+	new /obj/effect/sparks(get_turf(target))
+	return ..()
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/heatwave
+	name = "heatwave arrow"
+	desc = "Holy shit, there's a heatwave grenade taped to this arrow!"
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/heatwave/on_impact(atom/target)
+	heatwave(target, 1, 2, 25, TRUE, 0)
+	return ..()
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/smoke
+	name = "smoke grenade arrow"
+	desc = "Holy shit, there's a smoke grenade taped to this arrow!"
+	var/datum/effect/effect/system/smoke_spread/bad/smoke
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/smoke/Initialize()
+	..()
+	src.smoke = new
+	src.smoke.attach(src)
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/smoke/on_impact(atom/target)
+	src.smoke.set_up(10, 0, usr.loc)
+	src.smoke.start()
+	return ..()
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/smoke/Destroy()
+	..()
+	QDEL_NULL(smoke)
