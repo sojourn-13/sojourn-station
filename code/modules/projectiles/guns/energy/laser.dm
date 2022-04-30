@@ -319,7 +319,7 @@
 			itemstring += "-[item_modifystate][ratio]"
 
 	if (!cell)
-		iconstring += "_slide"
+		iconstring += "-slide"
 
 	if(wielded)
 		itemstring += "_doble"
