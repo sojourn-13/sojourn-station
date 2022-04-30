@@ -1694,28 +1694,27 @@
 "eF" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/lathe_disk,
+/obj/item/tool/wrench,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/processing)
 "eG" = (
-/obj/structure/material_box,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/reagent_dispensers/bidon,
 /turf/simulated/floor/tiled/steel,
 /area/mine/processing)
 "eH" = (
-/obj/effect/floor_decal/industrial/loading{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/material_box,
+/obj/machinery/ameridian_refinery,
 /turf/simulated/floor/tiled/steel,
 /area/mine/processing)
 "eI" = (
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/structure/reagent_dispensers/bidon,
 /turf/simulated/floor/tiled/steel,
 /area/mine/processing)
 "eL" = (
@@ -2497,7 +2496,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/ore_box,
+/obj/structure/material_box,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
 "gz" = (
@@ -2554,6 +2553,9 @@
 	pixel_x = 28
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/loading{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/mine/processing)
 "gI" = (
@@ -2748,14 +2750,11 @@
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
 "hi" = (
-/obj/effect/floor_decal/industrial/loading{
-	dir = 8
-	},
 /obj/machinery/camera/network/mining{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/material_box,
+/obj/machinery/liquid_ameridian_processor,
 /turf/simulated/floor/tiled/steel,
 /area/mine/processing)
 "hj" = (
@@ -9349,7 +9348,7 @@
 /area/nadezhda/rnd/mixing)
 "QN" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/material_box,
+/obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/steel,
 /area/mine/processing)
 "Rq" = (
@@ -9401,6 +9400,11 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
+"RZ" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/material_box,
+/turf/simulated/floor/tiled/steel/cargo,
+/area/mine/hallway)
 "Sa" = (
 /obj/structure/lattice,
 /turf/simulated/floor/fixed/hydrotile/shallowcoolant,
@@ -41476,7 +41480,7 @@ da
 cl
 fQ
 bo
-bR
+RZ
 aK
 hc
 sg
