@@ -19,6 +19,14 @@
 
 /obj/item/device/assembly_holder/Destroy()
 	remove_hearing()
+
+	if(left_assembly)
+		left_assembly.holder = null //no more holder, so set it to null
+	if(right_assembly)
+		right_assembly.holder = null //i COULD do this with weakrefs...
+
+	left_assembly = null
+	right_assembly = null
 	. = ..()
 
 /obj/item/device/assembly_holder/proc/attach(var/obj/item/device/D, var/obj/item/device/D2, var/mob/user)

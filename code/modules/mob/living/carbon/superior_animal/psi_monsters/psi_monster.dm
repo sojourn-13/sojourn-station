@@ -138,7 +138,7 @@
 
 				M.put_in_active_hand(G)
 				G.synch()
-				LAssailant = M
+				LAssailant_weakref = WEAKREF(M)
 
 				M.do_attack_animation(src)
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)

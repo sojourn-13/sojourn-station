@@ -20,6 +20,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
+	serial_type = "SA"
 
 /obj/item/gun/projectile/gyropistol/update_icon()
 	..()

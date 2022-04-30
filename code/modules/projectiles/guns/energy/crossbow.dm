@@ -16,6 +16,7 @@
 	charge_meter = 0
 	charge_cost = 200
 	price_tag = 1250
+	serial_type = "Absolute"
 
 /obj/item/gun/energy/crossbow/ninja
 	name = "energy dart thrower"
@@ -23,6 +24,8 @@
 	projectile_type = /obj/item/projectile/energy/dart
 	safety = FALSE
 	restrict_safety = TRUE
+	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/energy/crossbow/largecrossbow
 	name = "\"Themis\" energy crossbow"

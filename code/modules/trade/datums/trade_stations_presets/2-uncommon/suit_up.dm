@@ -36,6 +36,8 @@
 			/obj/item/rig_module/device/drill,
 			/obj/item/rig_module/device/orescanner,
 			/obj/item/rig_module/device/rcd,
+			/obj/item/rig_module/grappler,
+			/obj/item/rig_module/cargo_clamp,
 			/obj/item/rig_module/modular_injector,
 			/obj/item/rig_module/modular_injector/combat,
 			/obj/item/rig_module/modular_injector/medical,

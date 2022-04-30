@@ -30,17 +30,11 @@
 
 /mob/living/carbon/superior_animal/robot/mining/examine(mob/user)
 	..()
-	to_chat(user, SPAN_NOTICE("[src]'s screen flashes and show \his operating parameters : "))
-	to_chat(user, SPAN_NOTICE("	Wandering : [(mining_modes & WANDER_MODE) ? "Active" : "Not Active"]"))
-	to_chat(user, SPAN_NOTICE("	Ore Gathering : [(mining_modes & GATHER_MODE) ? "Active" : "Not Active"]"))
-	to_chat(user, SPAN_NOTICE("	Mining : [(mining_modes & MINER_MODE) ? "Active" : "Not Active"]"))
-	if(client)
-		to_chat(user, SPAN_NOTICE("	Advanced AI activated."))
 
 /mob/living/carbon/superior_animal/robot/mining/Life()
 	..()
 	if(!client) // If there's anyone controlling the bot, this AI part won't run
-		if(!look_around() && (mining_modes & WANDER_MODE)) // If we didn't find anything of value and can (mining_modes & WANDER_MODE)
+		if(!look_around() && (mining_modes & WANDER_MODE) && !in_use) // If we didn't find anything of value and can (mining_modes & WANDER_MODE) and someoen isn't using our UI
 			target = pick(oview(viewRange + 1, src)) // Go somewhere random
 
 		// Are we going to a minable turf despite not being supposed to?
@@ -70,27 +64,7 @@
 
 /mob/living/carbon/superior_animal/robot/mining/attack_hand(mob/user as mob)
 	if(user.a_intent == I_HELP) // Are we on help intent?
-		var/possible_choices = list("Wandering", "Ore Gathering", "Ore Mining")
-		var/choice = input(user, "Which parameter do you want to toggle in the mining bot?", "Parameters", null) as null|anything in possible_choices
-		switch(choice)
-			if("Wandering")
-				if(mining_modes & WANDER_MODE)
-					mining_modes &= ~WANDER_MODE // Turn off wander mode
-				else
-					mining_modes |= WANDER_MODE // Turn on wander mode
-				to_chat(user, "[src] will [(mining_modes & WANDER_MODE) ? "" : "no longer"] wander.")
-			if("Ore Gathering")
-				if(mining_modes & GATHER_MODE)
-					mining_modes &= ~GATHER_MODE // Turn off gather mode
-				else
-					mining_modes |= GATHER_MODE // Turn on gather mode
-				to_chat(user, "[src] will [(mining_modes & GATHER_MODE) ? "" : "no longer"] take ore on the ground.")
-			if("Ore Mining")
-				if(mining_modes & MINER_MODE)
-					mining_modes &= ~MINER_MODE // Turn off miner mode
-				else
-					mining_modes |= MINER_MODE // Turn on miner mode
-				to_chat(user, "[src] will [(mining_modes & MINER_MODE) ? "" : "no longer"] mine ore.")
+		interact(user)
 	else ..()
 
 /mob/living/carbon/superior_animal/robot/mining/attackby(obj/item/W as obj, mob/user as mob)
@@ -99,10 +73,6 @@
 		// If it is a tool, assign it to the tool variable defined earlier.
 		if(istype(W, /obj/item/tool))
 			T = W
-
-		if(QUALITY_PULSING in T.tool_qualities) // We pulse the drone to get the loot
-			drop_loot() // Drop the loot
-			return
 
 		if(QUALITY_WELDING in T.tool_qualities)
 			if(health < maxHealth)
@@ -115,6 +85,7 @@
 						heal_overall_damage(50, 50)
 					else
 						heal_overall_damage(rand(30, 50), rand(30, 50))
+					updateDialog()
 					return
 				return
 			to_chat(user, "[src] doesn't need repairs.")
@@ -155,6 +126,8 @@
 				target = M // We want to go to M
 				return TRUE
 
+
+
 // Mine a tile
 /mob/living/carbon/superior_animal/robot/mining/proc/mine(var/turf/simulated/mineral/M)
 	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
@@ -166,6 +139,7 @@
 	//visible_message("[src] pick up [O]") // For some reasons the messages do not combine and spam the chat.
 	O.loc = src
 	contents += O // Pick up the item
+	updateDialog()
 	return TRUE
 
 // Drop all the loot that the bot gathered on the ground.
@@ -174,8 +148,87 @@
 	for(var/obj/O in contents) // Empty everything
 		contents -= O
 		O.loc = src.loc
+	updateDialog()
 	return TRUE
 
+/mob/living/carbon/superior_animal/robot/mining/interact(mob/user as mob)
+	if((get_dist(src, user) > 1) || (stat & (BROKEN|NOPOWER)))
+		if(!isAI(user))
+			user.unset_machine()
+			user << browse(null, "window=MiningDrone")
+			return
+
+	user.set_machine(src)
+
+	user << browse(handle_ui(), "window=MiningDrone")
+	onclose(user, "MiningDrone")
+	return
+
+/mob/living/carbon/superior_animal/robot/mining/proc/handle_ui()
+	var/dat = ""
+	dat += "<head><title>[name]</title></head>"
+	dat += "[name]<BR>"
+	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
+	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
+
+	dat += "Status: <BR>"
+	if(!client)
+		dat += "- <A href='?src=\ref[src];togglemode=[WANDER_MODE]'>[(mining_modes & WANDER_MODE) ? "Wandering" : "Not Wandering"].</A><BR>"
+		dat += "- <A href='?src=\ref[src];togglemode=[GATHER_MODE]'>[(mining_modes & GATHER_MODE) ? "Gathering" : "Not Gathering"].</A><BR>"
+		dat += "- <A href='?src=\ref[src];togglemode=[MINER_MODE]'>[(mining_modes & MINER_MODE) ? "Mining" : "Not Mining"].</A><BR>"
+	else
+		dat += "- Advanced AI detected.<BR>"
+	dat += "<BR>"
+
+	dat += "Storage Compartment Contents :<BR>"
+	for(var/ores in typesof(/obj/item/ore)) // Check every ore type.
+		var/ore_amount = 0 // Total amount of sheets of that material type
+		var/ore_name = ""
+		for(var/obj/item/ore/O in contents) // Check everything in the box.
+			if(O.type == ores) // Check if it is the correct type
+				ore_amount += 1
+				if(!ore_name) // Only store the name once.
+					ore_name = O.name
+		if(ore_amount > 0)
+			dat += "- [ore_amount] of [ore_name]\s.<BR>"
+	if(contents.len)
+		dat += "<A href='?src=\ref[src];dropore=1'>Empty Storage Compartment.</A><BR>"
+
+	return dat
+
+/mob/living/carbon/superior_animal/robot/mining/Topic(href, href_list)
+	..()
+
+	if(href_list["close"])
+		usr << browse(null, "window=MiningDrone")
+		usr.unset_machine()
+		return
+
+	if(href_list["togglemode"])
+		switch(text2num(href_list["togglemode"]))
+			if(WANDER_MODE)
+				if(mining_modes & WANDER_MODE)
+					mining_modes &= ~WANDER_MODE // Turn off wander mode
+				else
+					mining_modes |= WANDER_MODE // Turn on wander mode
+
+			if(GATHER_MODE)
+				if(mining_modes & GATHER_MODE)
+					mining_modes &= ~GATHER_MODE
+				else
+					mining_modes |= GATHER_MODE
+
+			if(MINER_MODE)
+				if(mining_modes & MINER_MODE)
+					mining_modes &= ~MINER_MODE // Turn off wander mode
+				else
+					mining_modes |= MINER_MODE // Turn on wander mode
+
+	if(href_list["dropore"])
+		drop_loot()
+
+	updateDialog()
+	return
 
 // Ghost-specific verbs.
 /mob/living/carbon/superior_animal/robot/mining/verb/mine_nearby()

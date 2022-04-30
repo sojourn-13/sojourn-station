@@ -53,7 +53,7 @@
 		new victim.coretype(user.loc)
 		qdel(victim)
 
-/*Dye vat and its various procs and checks --- Currently a work in progress but dosn't break anything ---
+//Dye vat and its various procs and checks
 /obj/machinery/slime_dye_vat
 	name = "slime dye vat"
 	desc = "This machine holds slime that changes color! Makes it easy to apply to clothing."
@@ -67,21 +67,81 @@
 	idle_power_usage = 2
 	active_power_usage = 500
 
-	var uses = 0
-	var colour = "grey"
-	var dirty = 0
-	var effect = "null"
+	var/uses = 0
+	var/colour = "grey"
+	var/dirty = 0
+	var/running = FALSE
+	var/obj/item/clothing/C = null
+	var/list/allowed_devices = list(
+		/obj/item/clothing,
+		/obj/item/pen/crayon,
+		/obj/item/slime_potion
+	)
 
 /obj/machinery/slime_dye_vat/update_icon()
-	// the fun part of mixing the sprite pieces together
-	return
+	//checks to see if we need the slime ontop. Updates colours and changes the face plate.
+	if(C == null)
+		cut_overlays()
+		var/mutable_appearance/slime_vat_soup = mutable_appearance('icons/obj/xenobio.dmi', "slime_vat_soup")
+		slime_vat_soup.color = colour
+		add_overlay(slime_vat_soup)
+		return
+	cut_overlays()
+	var/mutable_appearance/slime_vat_soup_slime = mutable_appearance('icons/obj/xenobio.dmi', "slime_vat_soup_slime")
+	slime_vat_soup_slime.color = colour
+	add_overlay(slime_vat_soup_slime)
 
+/obj/machinery/slime_dye_vat/attackby(obj/item/I, mob/user)
+	if(!user.canUnEquip(I))
+		return
+	if(is_type_in_list(I, allowed_devices))
+		if(C)
+			to_chat(user, SPAN_WARNING("\ [C] is inside! Remove that first!"))
+			return
+		if(!powered())
+			to_chat(user, SPAN_WARNING("[src] isn't powered. You can't access inside it."))
+			return
+		if(istype(I, /obj/item/slime_potion))
+			user.unEquip(I, src)
+			qdel(I)
+			uses += 1
+			user.visible_message(SPAN_DANGER("[user] melts down [I] in the dye vat!"))
+			return
+		if(istype(I, /obj/item/pen/crayon))
+			var/obj/item/pen/crayon/Holder = I
+			if (Holder.colourName == "orange")
+				colour = "#FF9300"
+			if (Holder.colourName == "mime")
+				colour = "grey"
+			else colour = Holder.colourName
+			update_icon()
+			user.unEquip(I, src)
+			qdel(I)
+			dirty += 1
+			user.visible_message(SPAN_DANGER("[user] mixes [I] into the slime!"))
+			return
+		if(istype(I, /obj/item/clothing))
+			C = I
+			insert_item(I, user)
+			update_icon()
+			return
 
-//should be used to "eject" whatever item was placed inside to dye it.
+//should be used to "eject" whatever item was placed inside.
 /obj/machinery/slime_dye_vat/attack_hand(mob/user as mob)
-	return
+	if(issilicon(user))
+		return
 
-/obj/machinery/slime_dye_vat/proc/dyinginside()
+	add_fingerprint(user)
+	if(C)
+		C.update_icon()
+		eject_item(C, user)
+		C = null
+		update_icon()
+
+//the actual proc that colors things and makes slimes when dirty!
+/obj/machinery/slime_dye_vat/proc/dyinginside(mob/user)
+	running = TRUE
+	flick("slime_vat_front", src)
 	if (dirty >= 5)
 		dirty = 0
 		var/mob/living/carbon/slime/S = new /mob/living/carbon/slime
@@ -99,25 +159,48 @@
 		"red" = 1,
 		"gold" = 1,
 		"green" = 1)
-		S.set_mutation(pickweight(colors))
-	//colors items, applies effects if dye color is from potion and uses isn't 0
+		if (colour == "rainbow")
+			S.set_mutation("rainbow")
+		else S.set_mutation(pickweight(colors))
+		uses = 0
+		user.visible_message(SPAN_DANGER("Slime breaks free from the dye vat!"))
+	//colors items! And updates our icons.
+	if (uses >= 1 && C != null)
+		C.color = colour
+		uses -= 1
+		C.update_icon()
+	running = FALSE
+	update_icon()
 
 /obj/machinery/slime_dye_vat/examine(mob/user)
 	..()
 	if(uses >= 1)
-		to_chat(user, SPAN_NOTICE("The dye vat has some slime prepped in it!"))
-	else to_chat(user, SPAN_NOTICE("Only useless jelly remains inside."))
+		to_chat(user, SPAN_NOTICE("The dye vat has some slime prepped in it."))
+	else to_chat(user, SPAN_NOTICE("Only useless fluids remain inside."))
 
-//keep the vat clean or it releases weak slimes. Keeps people from constantly switching out colors or effects.
-/obj/machinery/slime_dye_vat/verb/clean()
-	set name = "Scrub Vat"
+//keep the vat clean or it releases rainbow slimes!
+/obj/machinery/slime_dye_vat/verb/clean(mob/user)
+	set name = "Scrub vat"
 	set category = "Object"
 	set src in oview(1)
-
-	if(!isliving(usr))
+	if(!isliving(usr) || running)
 		return
-
 	uses = 0
 	colour = "grey"
 	dirty = 0
-*/
+	src.add_fingerprint(user)
+	if(do_after(user, 30, src) && user.Adjacent(src))
+		user.visible_message(SPAN_DANGER("[user] scrubs the dye vat clean!"))
+		update_icon()
+
+//The current way to run the machine.
+/obj/machinery/slime_dye_vat/verb/start(mob/user)
+	set name = "Start vat"
+	set category = "Object"
+	set src in oview(1)
+	if(!isliving(usr) || running)
+		return
+	src.add_fingerprint(user)
+	if(do_after(user, 30, src) && user.Adjacent(src))
+		user.visible_message(SPAN_DANGER("[user] starts up the dye vat!"))
+		dyinginside(user)

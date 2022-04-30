@@ -668,10 +668,48 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/helltaker
-	name = "charming outfit"//Helltaker reference
-	desc = "A red shirt with a black tie and black pants. Stylish enough to impress the devil."
+	name = "black charming outfit" // Helltaker reference
+	desc = "A red suit shirt with a black bottom and optional tie. Stylish enough to impress the devil." // Accomodating description for the alt sprites - Seb
 	icon_state = "helltaker"
 	item_state = "helltaker"
+	price_tag = 45
+
+/obj/item/clothing/under/helltaker/verb/toggle_style() // Alt styles to impersonate the most unique ones, made by me. - Seb
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default"] = "helltaker" // Lucy and Cerberus are both this one, no need for more alts. - Seb
+	options["sour gamer"] = "malina"
+	options["tired sadist"] = "pandemonica"
+	options["bratty masochist"] = "zdrada"
+	options["the cool one"] = "justice"
+	options["the lustful one"] = "modeus"
+
+	var/choice = input(M,"What kind of demon do you want to be?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/under/helltaker_m
+	name = "white charming outfit"
+	desc = "A collared, loose red shirt with white pants and a stout belt. Go get your own demon harem, now."
+	icon_state = "helltaker_m" // The Helltaker dude himself - Seb
+	item_state = "helltaker_m"
 	price_tag = 45
 
 /obj/item/clothing/under/colony

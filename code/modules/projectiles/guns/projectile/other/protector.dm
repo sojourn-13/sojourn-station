@@ -21,6 +21,7 @@
 	var/throw_distance = 7
 	var/release_force = 5
 	twohanded = TRUE
+	serial_type = "Absolute"
 
 /* We no longer fire grenades like this. As we now use internal ammo
 /obj/item/gun/projectile/grenade/proc/load_grenade(obj/item/grenade/A, mob/user)  //For loading hand grenades, not ammo

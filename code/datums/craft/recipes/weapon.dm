@@ -44,7 +44,7 @@
 
 /datum/craft_recipe/weapon/crossbow
 	name = "crossbow"
-	result = /obj/item/gun/launcher/crossbow
+	result = /obj/item/gun/projectile/crossbow
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD), //old frame recipe
 		list(/obj/item/stack/rods, 3, "time" = 20),

@@ -176,6 +176,16 @@
 // Preset types - left here for the code that uses them
 /obj/item/material/shard/shrapnel
 	name = "shrapnel" //Needed for crafting
+	var/gun_number = ""
+
+/obj/item/material/shard/shrapnel/attackby(obj/item/I, mob/user)
+	..()
+	if(istype(I, /obj/item/device/bullet_scanner))
+		if(gun_number)
+			to_chat(user, "<span class='info'>Bullet Hole Caliberation: [gun_number].</span>")
+			return
+		else
+			to_chat(user, "<span class='info'>Bullet Hole Caliberation: ERROR.</span>")
 
 /obj/item/material/shard/shrapnel/New(loc)
 

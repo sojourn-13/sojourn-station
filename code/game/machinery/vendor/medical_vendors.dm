@@ -24,6 +24,8 @@
 						/obj/item/reagent_containers/pill/antitox = 6)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	auto_price = FALSE
+	custom_vendor = TRUE // Chemists can load it for MDs
+	can_stock = list(/obj/item/reagent_containers/glass, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/stack/medical, /obj/item/bodybag, /obj/item/device/scanner/health, /obj/item/reagent_containers/hypospray, /obj/item/storage/pill_bottle)
 	vendor_department = DEPARTMENT_MEDICAL
 
 /obj/machinery/vending/wallmed
@@ -67,6 +69,9 @@
 
 		/obj/item/reagent_containers/pill/tox = 100
 		)
+	custom_vendor = TRUE // Chemists can load it for customers
+	can_stock = list(/obj/item/reagent_containers/glass, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/stack/medical, /obj/item/bodybag, /obj/item/device/scanner/health, /obj/item/reagent_containers/hypospray, /obj/item/storage/pill_bottle)
+	vendor_department = DEPARTMENT_MEDICAL
 
 /obj/machinery/vending/wallmed/lobby
 	products = list(
@@ -122,5 +127,4 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/hyperzine = 100,
 		/obj/item/reagent_containers/hypospray/autoinjector/drugs = 100,
 		)
-	vendor_department = DEPARTMENT_MEDICAL
 	auto_price = FALSE

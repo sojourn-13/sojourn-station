@@ -25,6 +25,7 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/automatic/straylight/update_icon()
 	..()

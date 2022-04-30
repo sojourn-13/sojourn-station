@@ -298,8 +298,8 @@
 
 	unlocks_designs = list(/datum/design/research/item/clothing/medarmor,
 							/datum/design/research/item/clothing/armor_laserproof,
-							/datum/design/research/item/paramedic_armor,
-							/datum/design/research/item/paramedic_helmet,
+							/datum/design/research/item/clothing/paramedic_armor,
+							/datum/design/research/item/clothing/paramedic_helmet,
 							/datum/design/research/item/clothing/rig_advhazmat)
 
 /datum/technology/advanced_unstable_plasma_weapons

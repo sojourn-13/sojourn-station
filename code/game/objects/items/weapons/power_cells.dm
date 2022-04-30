@@ -466,6 +466,17 @@
 	cell = null
 	suitable_cell = /obj/item/cell
 
+
+/obj/item/device/manual_charger/attackby(obj/item/I, mob/user)
+	if(istype(I, suitable_cell) && insert_item(I, user))
+		cell = I
+		return
+	..()
+
+/obj/item/device/manual_charger/MouseDrop(over_object)
+	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
+		cell = null
+
 /obj/item/device/manual_charger/attack_self(mob/user)
 	if(!cell)
 		return

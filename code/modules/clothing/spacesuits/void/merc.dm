@@ -18,6 +18,29 @@
 	obscuration = MEDIUM_OBSCURATION
 	max_upgrades = 0
 
+/obj/item/clothing/head/helmet/space/void/SCAF/verb/toggle_style()
+	set name = "Adjust Helmet Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard"] = "scaf"
+	options["Cat eared"] = "skat"
+
+	var/choice = input(M,"What kind of helmet style do you want to switch to?","Adjust style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's appearance into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/space/void/SCAF
 	name = "SCAF suit"
 	desc = "A bulky antique suit of refurbished infantry armour, retrofitted with seals and coatings to make it EVA capable but also reducing mobility."
@@ -53,6 +76,28 @@
 	icon_state = "scaf_wolf"
 	item_state = "scaf_wolf"
 
+/obj/item/clothing/head/helmet/space/void/SCAF/voidwolf/toggle_style()
+	set name = "Adjust Helmet Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard"] = "scaf_wolf"
+
+	var/choice = input(M,"What kind of helmet style do you want to switch to?","Adjust style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's appearance into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/head/helmet/space/void/SCAF/blackshield
 	name = "blackshield SCAF helmet"
 	desc = "A thick airtight helmet designed for planetside warfare retrofitted with seals to act like normal space suit helmet. Features an inbuilt camera feed and helmet light."
@@ -60,6 +105,29 @@
 	item_state = "scaf_mil"
 	camera_networks = list(NETWORK_SECURITY)
 	light_overlay = "helmet_light_white"
+
+/obj/item/clothing/head/helmet/space/void/SCAF/blackshield/toggle_style()
+	set name = "Adjust Helmet Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard"] = "scaf_mil"
+	options["Cat eared"] = "skat_mil"
+
+	var/choice = input(M,"What kind of helmet style do you want to switch to?","Adjust style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's appearance into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/space/void/SCAF/blackshield
 	name = "blackshield SCAF suit"
@@ -130,47 +198,6 @@
 	desc = "A crimson spacesuit sporting clean lines and durable plating. Robust, reliable, and slightly suspicious. This one is branded with a small rune at the collar noting it was made by the Xanorath Syndicate."
 	helmet = /obj/item/clothing/head/helmet/space/void/merc/xanorath
 	price_tag = 650
-
-
-//Church Crusader armor, credit to Valterak for the original sprite.
-/obj/item/clothing/head/helmet/space/void/crusader
-	name = "crusader hood"
-	desc = "An armored helmet with a built in light system allowing you to shine heavens grace on heretics before you purge them."
-	icon_state = "inqarmor_hood"
-	item_state = "inqarmor_hood"
-	armor_list = list(
-		melee = 65,
-		bullet = 65,
-		energy = 65,
-		bomb = 70,
-		bio = 100,
-		rad = 100
-	)
-	siemens_coefficient = 0
-	species_restricted = list("Human")
-	light_overlay = "helmet_light_white"
-	brightness_on = 8 //luminosity when on
-	max_upgrades = 0
-
-/obj/item/clothing/suit/space/void/crusader
-	name = "crusader 'Deus Vult' power armor"
-	desc = "The church of absolutes most powerful creation, the Mark I 'Deus Vult' power armor, a void capable ablative durasteel-forged suit with built in power systems linked to a wearers cruciform, recharged by its presence to prevent slow down from the armors weight. The only thing they fear is you."
-	icon_state = "inqarmor"
-	item_state = "inqarmor"
-	slowdown = 0
-	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
-	armor_list = list(
-		melee = 65,
-		bullet = 65,
-		energy = 65,
-		bomb = 70,
-		bio = 100,
-		rad = 100
-	)
-	siemens_coefficient = 0
-	species_restricted = list("Human")
-	helmet = /obj/item/clothing/head/helmet/space/void/crusader
-	max_upgrades = 0
 
 /obj/item/clothing/head/helmet/space/void/peking
 	name = "peking void-hat"

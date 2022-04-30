@@ -280,7 +280,7 @@
 
 /datum/reagent/organic/nutriment/hot_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.bodytemperature += 5 * TEMPERATURE_DAMAGE_COEFFICIENT
+	M.bodytemperature += 1.5 * TEMPERATURE_DAMAGE_COEFFICIENT
 
 
 /datum/reagent/organic/nutriment/hell_ramen
@@ -295,7 +295,7 @@
 
 /datum/reagent/organic/nutriment/hell_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.bodytemperature += 10 * TEMPERATURE_DAMAGE_COEFFICIENT
+	M.bodytemperature += 5 * TEMPERATURE_DAMAGE_COEFFICIENT
 
 /datum/reagent/organic/nothing
 	name = "Nothing"
@@ -350,7 +350,7 @@
 	color = "#B31008"
 
 /datum/reagent/organic/frostoil/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.bodytemperature = max(M.bodytemperature - 10 * TEMPERATURE_DAMAGE_COEFFICIENT, 0)
+	M.bodytemperature = max(M.bodytemperature - 5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0)
 	if(prob(1))
 		M.emote("shiver")
 	if(isslime(M))
@@ -785,7 +785,7 @@
 	adj_dizzy = -2
 	adj_drowsy = -1
 	adj_sleepy = -3
-	adj_temp = 20
+	adj_temp = 10
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "teaglass"
@@ -845,7 +845,7 @@
 	adj_dizzy = -5
 	adj_drowsy = -3
 	adj_sleepy = -2
-	adj_temp = 25
+	adj_temp = 10
 	overdose = 45
 
 	glass_unique_appearance = TRUE
@@ -2189,7 +2189,7 @@
 	taste_description = "refreshingly cold"
 	color = "#664300d0"
 	strength = 20
-	adj_temp = -20
+	adj_temp = -10
 	targ_temp = 270
 
 	glass_icon_state = "iced_beerglass"
@@ -2442,7 +2442,7 @@
 	taste_description = "hot and spice"
 	color = "#004166d0"
 	strength = 5
-	adj_temp = 50
+	adj_temp = 25
 	targ_temp = 360
 
 	glass_unique_appearance = TRUE

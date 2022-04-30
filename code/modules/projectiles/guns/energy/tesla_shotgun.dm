@@ -19,6 +19,7 @@
 	item_charge_meter = TRUE
 	self_recharge = TRUE
 	use_external_power = TRUE
+	serial_type = "Hellcat" //You only get them form this trade station so idk
 
 /obj/item/gun/energy/tesla_shotgun/manual
 	name = "\"Edison's Lament\" tesla shotgun"

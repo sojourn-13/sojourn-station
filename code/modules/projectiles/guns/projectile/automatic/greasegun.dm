@@ -20,9 +20,10 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
 	one_hand_penalty = 3
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_400_NOLOSS,
 		SEMI_AUTO_NODELAY
 		)
+	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/automatic/greasegun/update_icon()
 	..()

@@ -14,8 +14,8 @@
 	desc = "A pneumatic waste disposal unit."
 	icon = 'icons/obj/pipes/disposal.dmi'
 	icon_state = "disposal"
-	anchored = 1
-	density = 1
+	anchored = TRUE
+	density = TRUE
 	layer = LOW_OBJ_LAYER //This allows disposal bins to be underneath tables
 	var/datum/gas_mixture/air_contents	// internal reservoir
 	var/mode = 1	// item mode 0=off 1=charging 2=charged
@@ -109,8 +109,8 @@
 					var/obj/structure/disposalconstruct/C = new (src.loc)
 					src.transfer_fingerprints_to(C)
 					C.pipe_type = PIPE_TYPE_BIN
-					C.anchored = 1
-					C.density = 1
+					C.anchored = TRUE
+					C.density = TRUE
 					C.update()
 					qdel(src)
 			return
@@ -132,19 +132,16 @@
 		return
 
 	if(user.unEquip(I, src))
-		to_chat(user, "You place \the [I] into the [src].")
-		for(var/mob/M in viewers(src))
-			if(M == user)
-				continue
-			M.show_message("[user.name] places \the [I] into the [src].", 3)
-			playsound(src.loc, 'sound/machines/vending_drop.ogg', 100, 1)
+		user.visible_message("[user.name] places \the [I] into \the [src].", \
+			"You place \the [I] into the [src].")
+		playsound(loc, 'sound/machines/vending_drop.ogg', 100, 1)
 
 		update()
 
 // mouse drop another mob or self
 //
 /obj/machinery/disposal/MouseDrop_T(atom/movable/A, mob/user)
-	if(istype(A, /mob))
+	if(ismob(A))
 		var/mob/target = A
 		if(user.stat || !user.canmove)
 			return
@@ -155,7 +152,7 @@
 		if(isanimal(user) && target != user)
 			return
 
-		if (target.mob_size == 3)
+		if (target.mob_size < MOB_MEDIUM) //We cant stuff in anything bigger then 20
 			return
 
 		src.add_fingerprint(user)
@@ -218,13 +215,9 @@
 
 		I.add_fingerprint(user)
 		I.forceMove(src)
-		to_chat(user, "You place \the [I] into the [src].")
-		for(var/mob/M in viewers(src))
-			if(M == user)
-				continue
-			M.show_message("[user.name] places \the [I] into the [src].", 3)
-			playsound(src.loc, 'sound/machines/vending_drop.ogg', 100, 1)
-
+		user.visible_message("[user.name] places \the [I] into \the [src].", \
+			"You place \the [I] into the [src].")
+		playsound(loc, 'sound/machines/vending_drop.ogg', 100, 1)
 		update()
 		return
 	. = ..()
@@ -502,8 +495,7 @@
 		var/mob/living/carbon/human/H = mover
 		if(H.stats.getPerk(PERK_SPACE_ASSHOLE))
 			H.forceMove(src)
-			for(var/mob/M in viewers(src))
-				M.show_message("[H] dives into \the [src]!", 3)
+			visible_message("[H] dives into \the [src]!")
 			flush = TRUE
 		return
 	else if (istype(mover,/obj/item) && mover.throwing)
@@ -513,11 +505,9 @@
 		else
 			if(prob(75))
 				I.forceMove(src)
-				for(var/mob/M in viewers(src))
-					M.visible_message("\The [I] lands in \the [src].",,3)
+				visible_message("\The [I] lands in \the [src].")
 			else
-				for(var/mob/M in viewers(src))
-					M.visible_message("\The [I] bounces off of \the [src]\'s rim!",,3)
+				visible_message("\The [I] bounces off of \the [src]\'s rim!")
 	else
 		return ..(mover, target, height, air_group)
 
@@ -536,6 +526,7 @@
 	var/tomail = 0 //changes if contains wrapped package
 	var/has_mob = FALSE //If it contains a mob
 	var/from_cloner = FALSE // if the package originates from a genetics cloner
+
 	var/partialTag = "" //set by a partial tagger the first time round, then put in destinationTag if it goes through again.
 
 
@@ -710,8 +701,8 @@
 	desc = "An underfloor disposal pipe."
 	plane = FLOOR_PLANE
 	layer = DISPOSAL_PIPE_LAYER
-	anchored = 1
-	density = 0
+	anchored = TRUE
+	density = FALSE
 
 	level = BELOW_PLATING_LEVEL			// underfloor only
 	var/pipe_dir = 0		// bitmask of pipe directions
@@ -897,14 +888,14 @@
 /obj/structure/disposalpipe/ex_act(severity)
 
 	switch(severity)
-		if(1.0)
+		if(1)
 			broken(0)
 			return
-		if(2.0)
+		if(2)
 			health -= rand(5,15)
 			healthCheck()
 			return
-		if(3.0)
+		if(3)
 			health -= rand(0,15)
 			healthCheck()
 			return
@@ -1358,6 +1349,13 @@
 	update()
 	return
 
+/obj/structure/disposalpipe/trunk/Destroy()
+	// Unlink trunk and disposal so that objets are not sent to nullspace
+	var/obj/machinery/disposal/D = linked
+	D.trunk = null
+	linked = null
+	return ..()
+
 /obj/structure/disposalpipe/trunk/proc/getlinked()
 	linked = null
 	var/obj/machinery/disposal/D = locate() in src.loc
@@ -1382,7 +1380,6 @@
 	var/obj/machinery/disposal/D = locate() in src.loc
 	if(D && D.anchored)
 		return
-
 	//Disposal outlet
 	var/obj/structure/disposaloutlet/O = locate() in src.loc
 	if(O && O.anchored)
@@ -1460,8 +1457,8 @@
 	desc = "An outlet for the pneumatic disposal system."
 	icon = 'icons/obj/pipes/disposal.dmi'
 	icon_state = "outlet"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	layer = BELOW_OBJ_LAYER //So we can see things that are being ejected
 	var/active = 0
 	var/turf/target	// this will be where the output objects are 'thrown' to.
@@ -1535,8 +1532,8 @@
 					var/obj/structure/disposalconstruct/C = new (src.loc)
 					src.transfer_fingerprints_to(C)
 					C.pipe_type = PIPE_TYPE_OUTLET
-					C.anchored = 1
-					C.density = 1
+					C.anchored = TRUE
+					C.density = TRUE
 					C.update()
 					qdel(src)
 			return
@@ -1575,7 +1572,3 @@
 		dirs = alldirs.Copy()
 
 	src.streak(dirs)
-
-#undef SEND_PRESSURE
-#undef PRESSURE_TANK_VOLUME
-#undef PUMP_MAX_FLOW_RATE

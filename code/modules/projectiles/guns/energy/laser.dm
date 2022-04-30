@@ -19,6 +19,7 @@
 		WEAPON_CHARGE
 	)
 	twohanded = TRUE
+	serial_type = "Absolute"
 
 /obj/item/gun/energy/laser/mounted
 	self_recharge = TRUE
@@ -27,6 +28,7 @@
 	restrict_safety = TRUE
 	damage_multiplier = 0.7
 	twohanded = FALSE
+	serial_type = "SI"
 
 /obj/item/gun/energy/laser/mounted/blitz
 	name = "SDF LR \"Strahl\""
@@ -35,6 +37,7 @@
 	damage_multiplier = 0.9
 	charge_meter = FALSE
 	twohanded = FALSE
+	serial_type = "GP"
 
 /obj/item/gun/energy/laser/mounted/cyborg
 	name = "integrated \"Cog\" lasgun"
@@ -75,6 +78,7 @@
 		WEAPON_CHARGE
 	)
 	twohanded = FALSE
+	serial_type = "GP"
 
 /obj/item/gun/energy/firestorm
 	name = "\"Firestorm\" assault SMG"
@@ -105,6 +109,7 @@
 		FULL_AUTO_600
 		)
 	folding_stock = TRUE //we can fold are stocks
+	serial_type = "H&S"
 
 /obj/item/gun/energy/firestorm/update_icon()
 	var/iconstring = initial(icon_state)
@@ -161,6 +166,7 @@
 	)
 	twohanded = TRUE
 	folding_stock = TRUE //we can fold are stocks
+	serial_type = "H&S"
 
 /obj/item/gun/energy/lasercore/update_icon()
 	var/iconstring = initial(icon_state)
@@ -225,6 +231,7 @@
 		BURST_8_ROUND,
 		FULL_AUTO_800
 		)
+	serial_type = "NM"
 
 /obj/item/gun/energy/sunrise/update_icon()
 	..()

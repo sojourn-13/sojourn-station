@@ -899,7 +899,7 @@
 	icon_state = "artmod_1"
 	price_tag = 200
 
-/obj/item/tool_upgrade/augment/artwork_tool_mod/New()
+/obj/item/tool_upgrade/artwork_tool_mod/New()
 	..()
 	name = get_weapon_name(capitalize = TRUE)
 	icon_state = "artmod_[rand(1,16)]"

@@ -16,3 +16,4 @@
 	var/teleporter_spawns = list()
 	var/teleporter
 	var/portal
+	dynamic_lighting = FALSE //Huge profance increases and lag reduction

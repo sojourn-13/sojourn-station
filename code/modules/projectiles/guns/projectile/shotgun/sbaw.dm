@@ -29,6 +29,7 @@
 	init_firemodes = list(
 	SEMI_AUTO_NODELAY
 	)
+	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/automatic/sbaw/update_icon()
 	..()
@@ -66,3 +67,4 @@
 	SEMI_AUTO_NODELAY,
 	FULL_AUTO_400,
 	)
+	serial_type = "BlueCross"

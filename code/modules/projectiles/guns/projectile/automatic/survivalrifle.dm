@@ -24,6 +24,7 @@
 	zoom_factor = 0.6
 	recoil_buildup = 12
 	one_hand_penalty = 20 //automatic rifle level
+	serial_type = "Hunt Inc"
 
 	gun_tags = list(GUN_PROJECTILE, GUN_SIGHT, GUN_MAGWELL)
 

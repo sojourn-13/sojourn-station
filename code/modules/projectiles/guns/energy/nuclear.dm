@@ -21,6 +21,7 @@
 		)
 
 	var/lightfail = 0
+	serial_type = "SI"
 
 //override for failcheck behaviour
 /obj/item/gun/energy/gun/nuclear/Process()

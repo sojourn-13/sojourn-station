@@ -187,6 +187,10 @@
 	name = "Angel Voidsuit"
 	build_path = /obj/item/clothing/suit/space/void/NTvoid
 
+/datum/design/bioprinter/nt_clothes/knight_rig
+	name = "Knight Hardsuit Module"
+	build_path = /obj/item/rig/combat/knight
+
 //[MELEE]
 /datum/design/autolathe/sword/nt_sword
 	name = "NT Short Sword"
@@ -283,6 +287,14 @@
 /datum/design/bioprinter/medical/advanced/ointment
 	name = "Advanced burn kit"
 	build_path = /obj/item/stack/medical/advanced/ointment
+
+/datum/design/bioprinter/medical/advanced/bruise/nt
+	name = "Absolutist trauma kit"
+	build_path = /obj/item/stack/medical/advanced/bruise_pack/nt
+
+/datum/design/bioprinter/medical/advanced/ointment/nt
+	name = "Absolutist burn kit"
+	build_path = /obj/item/stack/medical/advanced/ointment/nt
 
 /datum/design/bioprinter/lungs
 	name = "Extended Lungs"

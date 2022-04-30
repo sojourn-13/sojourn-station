@@ -141,6 +141,20 @@
 	pockets.max_storage_space = 8
 	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
 
+/*Dresscoats*/
+
+/obj/item/clothing/suit/storage/vic_dresscoat
+	name = "black victorian dresscoat"
+	desc = "An elaborate coat to go over an old-Earth Victorian Period dress. Much thinner fabric than you'd expected. This one is black."
+	icon_state = "vickyblack"
+	item_state = "vickyblack"
+
+/obj/item/clothing/suit/storage/vic_dresscoat/red
+	name = "red victorian dresscoat"
+	desc = "An elaborate coat to go over an old-Earth Victorian Period dress. Much thinner fabric than you'd expected. This one is red."
+	icon_state = "vickyred"
+	item_state = "vickyred"
+
 /*Puffer Vest*/
 
 /obj/item/clothing/suit/storage/puffer
@@ -837,6 +851,19 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	body_parts_covered = UPPER_TORSO|ARMS
 	siemens_coefficient = 0.7
 
+/obj/item/clothing/suit/storage/tojo
+	name = "Mad dog jacket" // KIRYU-CHAAAAN!~
+	desc = "Go have fun, and live crazier than anyone else."
+	icon_state = "tojojacket"
+	item_state = "tojojacket"
+	armor_list = list(
+		melee = 5,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 0,
+		rad = 0)
+
 /*Waistcoat*/
 /obj/item/clothing/suit/storage/wcoat/black
 	name = "black waistcoat"
@@ -891,6 +918,21 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	slot_flags = SLOT_OCLOTHING
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	siemens_coefficient = 0.9
+
+/obj/item/clothing/suit/storage/wcoat/helltaker
+	name = "charming waistcoat"
+	desc = "A feminine waistcoat that accentuates one's curves, to be worn with a dapper suit." // Now you can also be Malinka and Cerberus. - Seb
+	icon_state = "hellvest"
+	item_state = "hellvest"
+
+/obj/item/clothing/suit/storage/helltaker_apron // Get your Helltaker apron. - Seb
+	name = "lonestar black apron"
+	desc = "Make them chocolate pancakes. Demon girls love chocolate pancakes."
+	icon_state = "nalesnik" // Polish pancakes.
+	item_state = "nalesnik"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	price_tag = 50
 
 //Sweaters.
 obj/item/clothing/suit/sweater/blue
@@ -1019,6 +1061,115 @@ obj/item/clothing/suit/sweater/blue
 	icon_state = "tan_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
+
+/obj/item/clothing/suit/storage/suitjacket/helltaker
+	name = "white suit jacket"
+	desc = "A stylish, opened white suit jacket with a red flower on it. Dapper enough to impress demon girls." // The OG Helltaker jacket drip is here. - Seb
+	icon_state = "white_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/helltaker/black
+	name = "devilish black suit jacket"
+	desc = "A stylish, opened black suit jacket with adjustable styles."
+	icon_state = "helljacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/helltaker/black/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default"] = "helljacket"
+	options["default, buttoned"] = "helljacket_closed"
+	options["S & M combo"] = "pandemonium"
+	options["draped over"] = "justicedrip"
+
+	var/choice = input(M,"What kind of style do you want to change to?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your jacket's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/storage/suitjacket/longcardigan_brown
+	name = "long cardigan brown coat"
+	desc = "A large brown cardigan coat. Has nice, deep pockets for keeping your hands warm."
+	icon_state = "longcardigan_brown_m"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/longcardigan_brown/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default"] = "longcardigan_brown_m"
+	options["female alt"] = "longcardigan_brown_f"
+
+	var/choice = input(M,"What kind of style do you want to change to?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your jacket's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown
+	name = "blue cardigan coat"
+	desc = "A blue-brown cardigan coat. Has nice pockets and added shades of brown for contrast."
+	icon_state = "longcardigan_brown_m"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default"] = "longcardigan_brown_m"
+	options["default open"] = "longcardigan_blue_open"
+	options["dark blue"] = "longcardigan_blue_alt"
+	options["dark brown open"] = "longcardigan_blue_alt_open"
+
+	var/choice = input(M,"What kind of style do you want to change to?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your jacket's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/storage/suitjacket/scav
 	name = "frontier jacket"

@@ -578,7 +578,7 @@
 	)
 	siemens_coefficient = 0.4
 	light_overlay = "helmet_light_dual"
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_BIOMATTER = 5, MATERIAL_PLASTIC = 5, MATERIAL_GLASS = 5)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_GLASS = 5)
 	obscuration = 0
 
 /obj/item/clothing/suit/space/void/medarmor
@@ -596,10 +596,10 @@
 	)
 	siemens_coefficient = 0.4
 	helmet = /obj/item/clothing/head/space/void/medarmor
-	matter = list(MATERIAL_STEEL = 40, MATERIAL_BIOMATTER = 10, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10, MATERIAL_PLATINUM = 8)
+	matter = list(MATERIAL_STEEL = 40, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10, MATERIAL_PLATINUM = 8)
 	stiffness = MEDIUM_STIFFNESS
 
-/obj/item/clothing/suit/space/void/science/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack")
+/obj/item/clothing/suit/space/void/medarmor/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack")
 	if(istype(damage_source, /obj/item/projectile/energy) || istype(damage_source, /obj/item/projectile/beam))
 		var/obj/item/projectile/P = damage_source
 

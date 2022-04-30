@@ -23,6 +23,8 @@
 	sawn = /obj/item/gun/projectile/boltgun/sawn/scout
 	slowdown_hold = 1
 	brace_penalty = 15
+	serial_type = "H&S"
+
 
 /obj/item/gun/projectile/boltgun/sawn/scout
 	name = "\"obrez\" heavy boltgun"
@@ -38,3 +40,4 @@
 	saw_off = FALSE
 	slowdown_hold = FALSE
 	brace_penalty = FALSE
+	serial_type = "H&S"

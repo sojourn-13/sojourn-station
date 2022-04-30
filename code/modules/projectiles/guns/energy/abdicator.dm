@@ -40,3 +40,4 @@ It also has more matterals then it takes to craft as a way to have a sunk cost.
 	)
 
 	twohanded = TRUE
+	serial_type = "AG"

@@ -24,16 +24,18 @@
 	auto_eject = 1
 	brace_penalty = 5 //Holding the line, not pushing
 	init_firemodes = list(
-		FULL_AUTO_800,
-		BURST_3_ROUND,
-		BURST_8_ROUND,
+		FULL_AUTO_800_NOLOSS,
+		BURST_3_ROUND_NOLOSS,
+		BURST_8_ROUND_NOLOSS,
 		)
+	serial_type = "EXC"
 
 /obj/item/gun/projectile/automatic/ppsh/NM_colony
 	name = "\"Ekaterina\" assault SMG"
 	desc = "An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in 35 Auto; taking only specific drum magizines."
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	price_tag = 800
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/ppsh/update_icon()
 	..()
@@ -60,6 +62,7 @@
 	recoil_buildup = 1.25
 	one_hand_penalty = 20
 	auto_eject = 0
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/ppsh/ppv/update_icon()
 	..()

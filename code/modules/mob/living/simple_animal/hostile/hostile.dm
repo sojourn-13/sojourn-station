@@ -7,7 +7,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 /mob/living/simple_animal/hostile
 	faction = "hostile"
 	var/stance = HOSTILE_STANCE_IDLE	//Used to determine behavior
-	var/mob/living/target_mob
+	var/datum/weakref/target_mob
 
 	var/attack_same = FALSE
 
@@ -34,6 +34,12 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	var/vision_range = 9 //How big of an area to search for targets in, a vision of 9 attempts to find targets as soon as they walk into screen view
 	var/aggro_vision_range = 9 //If a mob is aggro, we search in this radius. Defaults to 9 to keep in line with original simple mob aggro radius
 	var/approaching_target = FALSE //We should dodge now
+
+/mob/living/simple_animal/hostile/Destroy()
+	target_mob = null
+
+	. = ..()
+
 
 /mob/living/simple_animal/hostile/proc/FindTarget()
 	var/atom/T = null
@@ -90,16 +96,18 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	return
 
 /mob/living/simple_animal/hostile/proc/MoveToTarget()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	stop_automated_movement = 1
-	if(!target_mob || SA_attackable(target_mob))
+	if(!targetted_mob || SA_attackable(targetted_mob))
 		stance = HOSTILE_STANCE_IDLE
-	if(target_mob in ListTargets(10))
+	if(targetted_mob in ListTargets(10))
 		if(ranged)
-			if(get_dist(src, target_mob) <= 6 && !istype(src, /mob/living/simple_animal/hostile/megafauna))
-				OpenFire(target_mob)
+			if(get_dist(src, targetted_mob) <= 6 && !istype(src, /mob/living/simple_animal/hostile/megafauna))
+				OpenFire(targetted_mob)
 			else
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to(src, target_mob, 1, move_to_delay)
+				walk_to(src, targetted_mob, 1, move_to_delay)
 			if(ranged && istype(src, /mob/living/simple_animal/hostile/megafauna))
 				var/mob/living/simple_animal/hostile/megafauna/megafauna = src
 				sleep(rand(megafauna.megafauna_min_cooldown,megafauna.megafauna_max_cooldown))
@@ -107,26 +115,28 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 					if(prob(rand(15,25)))
 						stance = HOSTILE_STANCE_ATTACKING
 						set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-						walk_to(src, target_mob, 1, move_to_delay)
+						walk_to(src, targetted_mob, 1, move_to_delay)
 					else
-						OpenFire(target_mob)
+						OpenFire(targetted_mob)
 				else
 					if(prob(45))
 						stance = HOSTILE_STANCE_ATTACKING
 						set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-						walk_to(src, target_mob, 1, move_to_delay)
+						walk_to(src, targetted_mob, 1, move_to_delay)
 					else
-						OpenFire(target_mob)
+						OpenFire(targetted_mob)
 		else
 			stance = HOSTILE_STANCE_ATTACKING
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to(src, target_mob, 1, move_to_delay)
+			walk_to(src, targetted_mob, 1, move_to_delay)
 	return 0
 
 /mob/living/simple_animal/hostile/proc/DestroyPathToTarget()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	if(environment_smash)
 		EscapeConfinement()
-		var/dir_to_target = get_dir(targets_from, target_mob)
+		var/dir_to_target = get_dir(targets_from, targetted_mob)
 		var/dir_list = list()
 		if(dir_to_target in mydirs) //it's diagonal, so we need two directions to hit
 			for(var/direction in mydirs)
@@ -157,41 +167,45 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			return
 
 /mob/living/simple_animal/hostile/proc/AttackTarget()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	stop_automated_movement = 1
-	if(!target_mob || SA_attackable(target_mob))
+	if(!targetted_mob || SA_attackable(targetted_mob))
 		LoseTarget()
 		return 0
-	if(!(target_mob in ListTargets(10)))
+	if(!(targetted_mob in ListTargets(10)))
 		LostTarget()
 		return 0
-	if(get_dist(src, target_mob) <= 1)	//Attacking
+	if(get_dist(src, targetted_mob) <= 1)	//Attacking
 		AttackingTarget()
 		return 1
 
 /mob/living/simple_animal/hostile/proc/AttackingTarget()
-	if(!Adjacent(target_mob))
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
+	if(!Adjacent(targetted_mob))
 		return
-	if(isliving(target_mob))
-		var/mob/living/L = target_mob
-		if(istype(target_mob, /mob/living/carbon/human))
-			var/mob/living/carbon/human/target_human = target_mob
+	if(isliving(targetted_mob))
+		var/mob/living/L = targetted_mob
+		if(istype(targetted_mob, /mob/living/carbon/human))
+			var/mob/living/carbon/human/target_human = targetted_mob
 			if(target_human.check_shields(rand(melee_damage_lower,melee_damage_upper), null, src, null, attacktext)) //Do they block us?
 				return L
 		L.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return L
-	if(istype(target_mob,/obj/mecha))
-		var/obj/mecha/M = target_mob
+	if(istype(targetted_mob,/obj/mecha))
+		var/obj/mecha/M = targetted_mob
 		M.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return M
-	if(istype(target_mob,/obj/machinery/bot))
-		var/obj/machinery/bot/B = target_mob
+	if(istype(targetted_mob,/obj/machinery/bot))
+		var/obj/machinery/bot/B = targetted_mob
 		B.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return B
-	if(istype(target_mob,/obj/machinery/porta_turret))
-		var/obj/machinery/porta_turret/P = target_mob
+	if(istype(targetted_mob,/obj/machinery/porta_turret))
+		var/obj/machinery/porta_turret/P = targetted_mob
 		P.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return P
@@ -216,7 +230,6 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	return L
 
 /mob/living/simple_animal/hostile/Life()
-
 	. = ..()
 
 	if(ckey)
@@ -232,7 +245,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 		if(!stat)
 			switch(stance)
 				if(HOSTILE_STANCE_IDLE)
-					target_mob = FindTarget()
+					target_mob = WEAKREF(FindTarget())
 
 				if(HOSTILE_STANCE_ATTACK)
 					if(destroy_surroundings)
@@ -289,8 +302,10 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 		shooter.OpenFire(targetDD)
 
 /mob/living/simple_animal/hostile/proc/DestroySurroundings()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	if(istype(src, /mob/living/simple_animal/hostile/megafauna))
-		set_dir(get_dir(src,target_mob))
+		set_dir(get_dir(src,targetted_mob))
 		for(var/turf/simulated/wall/obstacle in get_step(src, dir))
 			if(prob(35))
 				obstacle.dismantle_wall(1)

@@ -26,9 +26,10 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND,
-		FULL_AUTO_400
+		BURST_3_ROUND_NOLOSS,
+		FULL_AUTO_400_NOLOSS
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/buckler/update_icon()
 	..()

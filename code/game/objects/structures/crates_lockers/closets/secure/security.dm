@@ -116,6 +116,7 @@
 		new /obj/item/ammo_magazine/kurtz_50(src)
 		new /obj/item/ammo_magazine/kurtz_50/rubber(src)
 		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
+	new /obj/item/device/bullet_scanner(src)
 	new /obj/item/voucher/marshal/specprimary(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
@@ -185,33 +186,13 @@
 	else
 		new /obj/item/clothing/head/helmet/marshal_full(src)
 
-/obj/structure/closet/secure_closet/medspec
-	name = "corpsman's locker"
-	req_access = list(access_medspec)
-	icon_state = "sec"
-
-/obj/structure/closet/secure_closet/medspec/populate_contents()
-	new /obj/item/clothing/glasses/sechud/tactical(src)
-	new /obj/item/clothing/mask/gas/ihs(src)
-	new /obj/item/taperoll/police(src)
-	new /obj/item/clothing/under/rank/medspec(src)
-	new /obj/item/device/radio/headset/headset_sec(src)
-	new /obj/item/storage/belt/security(src)
-	new /obj/item/clothing/shoes/reinforced(src)
-	new /obj/item/clothing/gloves/stungloves(src)
-	new /obj/item/cell/medium/high(src)
-	new /obj/item/clothing/suit/storage/toggle/labcoat/medspec(src)
-	new /obj/item/storage/pouch/pistol_holster(src)
-	new /obj/item/storage/briefcase/crimekit(src)
-	if(prob(5))
-		new /obj/random/rations/crayon(src)
-
-/obj/structure/closet/secure_closet/detective
+/obj/structure/closet/secure_closet/personal/detective
 	name = "ranger's locker"
-	req_access = list(access_forensics_lockers)
+	req_access = list(access_hos)
+	access_occupy = list(access_forensics_lockers) //So we can claim
 	icon_state = "cabinetdetective"
 
-/obj/structure/closet/secure_closet/detective/populate_contents()
+/obj/structure/closet/secure_closet/personal/detective/populate_contents()
 	new /obj/item/voucher/marshal/primary(src)
 	new /obj/item/clothing/under/rank/inspector/suit(src)
 	new /obj/item/clothing/under/rank/inspector/black(src)

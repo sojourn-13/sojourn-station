@@ -27,6 +27,7 @@
 	var/chamber_offset = 0 //how many empty chambers in the cylinder until you hit a round
 	fire_animatio = TRUE
 	allow_racking = FALSE
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/revolver/verb/spin_cylinder()
 	set name = "Spin revolver"
