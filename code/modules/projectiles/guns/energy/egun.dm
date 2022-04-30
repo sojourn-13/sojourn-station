@@ -124,7 +124,7 @@
 		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Laser.ogg', fire_delay=40, icon="kill", projectile_color = "#ff2600"),
 	)
 
-/obj/item/gun/energy/gun/martin/upgraded/update_mode()
+/obj/item/gun/energy/zwang/update_mode()
 	var/datum/firemode/current_mode = firemodes[sel_mode]
 	if(current_mode.name == "stunshot")
 		add_overlay("tazer_zwang")
