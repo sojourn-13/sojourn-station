@@ -324,7 +324,7 @@
 	if(wielded)
 		itemstring += "_doble"
 
-/obj/item/gun/energy/peacekeeper/update_mode()
+/obj/item/gun/energy/peacekeeper/proc/update_mode()
 	var/datum/firemode/current_mode = firemodes[sel_mode]
 	if(current_mode.name == "stunshot")
 		add_overlay("peacekeeper")
