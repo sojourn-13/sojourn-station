@@ -124,6 +124,30 @@
 		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Laser.ogg', fire_delay=40, icon="kill", projectile_color = "#ff2600"),
 	)
 
+/obj/item/gun/energy/zwang/update_icon()
+	overlays.Cut()
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if(charge_meter)
+		var/ratio = 0
+
+		//make sure that rounding down will not give us the empty state even if we have charge for a shot left.
+		if(cell && cell.charge >= charge_cost)
+			ratio = cell.charge / cell.maxcharge
+			ratio = min(max(round(ratio, 0.25) * 100, 25), 100)
+
+		if(modifystate)
+			iconstring = "[modifystate][ratio]"
+		else
+			iconstring = "[initial(icon_state)][ratio]"
+
+		if(item_charge_meter)
+			itemstring += "-[item_modifystate][ratio]"
+
+	if(wielded)
+		itemstring += "_doble"
+
 /obj/item/gun/energy/zwang/proc/update_mode()
 	var/datum/firemode/current_mode = firemodes[sel_mode]
 	if(current_mode.name == "stunshot")
