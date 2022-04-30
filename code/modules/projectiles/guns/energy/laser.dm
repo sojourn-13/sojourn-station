@@ -276,7 +276,7 @@
 	name = "\"Peacekeeper\" energy shotgun"
 	desc = "The \"Peacekeeper\" enegry shotgun is a Marshal made weapon, specializing in blasting high-powered electrodes from its cell's charge.\
 	Despite appearing to be made in a hurry the gun is incredibly versitile, though it risks burning its cell out on lethal firemodes."
-	icon = 'icons/obj/guns/energy/sunrise.dmi'
+	icon = 'icons/obj/guns/energy/peacekeeper.dmi'
 	icon_state = "peacekeeper"
 	item_state = "peacekeeper"
 	w_class = ITEM_SIZE_BULKY
@@ -294,7 +294,7 @@
 	price_tag = 900
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/Taser.ogg', charge_cost = 200, projectile_color = "#8cffff"),
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/Taser.ogg', charge_cost = 200, projectile_color = "#C48A18"),
 		list(mode_name="buckshot", projectile_type=/obj/item/projectile/bullet/pellet/shotgun/energy, fire_sound='sound/weapons/guns/fire/sunrise_fire.ogg', charge_cost = 100, icon="kill", projectile_color = "#ff2600"),
 	)
 
@@ -323,3 +323,10 @@
 
 	if(wielded)
 		itemstring += "_doble"
+
+/obj/item/gun/energy/peacekeeper/update_mode()
+	var/datum/firemode/current_mode = firemodes[sel_mode]
+	if(current_mode.name == "stunshot")
+		add_overlay("peacekeeper")
+	else
+		add_overlay("lpeacekeeper")

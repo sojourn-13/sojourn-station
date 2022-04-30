@@ -69,6 +69,7 @@
 /obj/item/gun/energy/gun/martin/upgraded
 	name = "Overclocked \"Martin\" energy pistol"
 	desc = "An overclocked varient of the Martin energy pistol, allowing for more efficent energy consumption and a slightly intensified lens."
+	icon_state = "PDWU"
 	charge_cost = 25
 	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 4, MATERIAL_SILVER = 2, MATERIAL_URANIUM = 1)
 	price_tag = 450
@@ -122,3 +123,10 @@
 		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=80, projectile_color = "#8cffff"),
 		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Laser.ogg', fire_delay=40, icon="kill", projectile_color = "#ff2600"),
 	)
+
+/obj/item/gun/energy/gun/martin/upgraded/update_mode()
+	var/datum/firemode/current_mode = firemodes[sel_mode]
+	if(current_mode.name == "stunshot")
+		add_overlay("tazer_zwang")
+	else
+		add_overlay("laser_zwang")
