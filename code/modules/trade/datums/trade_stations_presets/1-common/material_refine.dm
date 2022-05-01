@@ -9,10 +9,10 @@
 	base_income = 0		// Needs ore to refine
 	wealth = 0
 	offer_limit = 30
-	secret_inv_threshold = 2000
+	hidden_inv_threshold = 2000
 	recommendation_threshold = 4000
 	stations_recommended = list("trash")
-	assortiment = list(
+	inventory = list(
 		"Flares"  = list(
 			/obj/item/device/lighting/glowstick/flare,
 			/obj/item/ammo_magazine/ammobox/shotgun/flash,
@@ -21,28 +21,39 @@
 			/obj/item/ammo_casing/flare/green/prespawn,
 			/obj/item/ammo_casing/flare/prespawn
 			),
+		"Ore Gathering"  = list(
+			/obj/machinery/mining/drill,
+			/obj/machinery/mining/brace,
+			/obj/structure/ore_box,
+			/obj/item/tool/pickaxe/jackhammer,
+			/obj/item/tool/pickaxe/drill,
+			/obj/item/tool/pickaxe/diamonddrill,
+			/obj/item/device/lighting/toggleable/flashlight/heavy,
+			/obj/machinery/floodlight
+			),
 		"Refined Materials" = list(
-			/obj/item/stack/material/plastic/full = good_data("plastic sheets (x120)", list(4, 5)),
-			/obj/item/stack/material/cardboard/full = good_data("cardboard sheets (x120)", list(2, 5)),
-			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(3, 5)),
-			/obj/item/stack/material/plasteel/full = good_data("plasteel sheets (x120)", list(2, 3)),
-			/obj/item/stack/material/wood/full = good_data("wood planks (x120)", list(2, 5)),
-			/obj/item/stack/material/glass/full = good_data("glass sheets (x120)", list(2, 5)),
-			/obj/item/stack/material/plasma/full = good_data("plasma sheets (x120)", list(1, 2))
+			/obj/item/stack/material/plastic/full = good_data("plastic sheets (x120)", list(4, 5), 3000),
+			/obj/item/stack/material/cardboard/full = good_data("cardboard sheets (x120)", list(2, 5), 4000),
+			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(3, 5), 3000),
+			/obj/item/stack/material/plasteel/full = good_data("plasteel sheets (x120)", list(2, 3), 9000),
+			/obj/item/stack/material/wood/full = good_data("wood planks (x120)", list(2, 5), 3000),
+			/obj/item/stack/material/glass/full = good_data("glass sheets (x120)", list(2, 5), 3000),
+			/obj/item/stack/material/plasma/full = good_data("plasma sheets (x120)", list(1, 2), 12000),
+			/obj/item/stack/material/glass/plasmaglass = good_data("borosilicate glass sheets (x120)", list(3, 5), 5000)
 		)
 	)
 
-	secret_inventory = list(
+	hidden_inventory = list(
 		"Refined Material Stacks" = list(
-			/obj/item/stack/material/iron/full = good_data("iron ingots (x120)", list(1, 2)),
-			/obj/item/stack/material/silver/full = good_data("silver ingots (x120)", list(1, 2)),
-			/obj/item/stack/material/gold/full = good_data("gold ingots (x120)", list(1, 2)),
-			/obj/item/stack/material/diamond/full = good_data("diamond sheets (x120)", list(1, 2)),
-			/obj/item/stack/material/platinum/full = good_data("platinum sheets (x120)", list(1, 2)),
-			/obj/item/stack/material/osmium/full = good_data("osmium ingots (x120)", list(1, 21)),
-			/obj/item/stack/material/mhydrogen/full = good_data("metallic hydrogen sheets (x120)", list(1, 2)),
-			/obj/item/stack/material/tritium/full = good_data("tritium ingots (x120)", list(1, 2)),
-			/obj/item/stack/material/uranium/full = good_data("uranium sheets (x120)", list(1, 2))
+			/obj/item/stack/material/iron/full = good_data("iron ingots (x120)", list(1, 2), 2000),
+			/obj/item/stack/material/silver/full = good_data("silver ingots (x120)", list(1, 2), 4000),
+			/obj/item/stack/material/gold/full = good_data("gold ingots (x120)", list(1, 2), 5000),
+			/obj/item/stack/material/diamond/full = good_data("diamond sheets (x120)", list(1, 2), 20000),
+			/obj/item/stack/material/platinum/full = good_data("platinum sheets (x120)", list(1, 2), 17500),
+			/obj/item/stack/material/osmium/full = good_data("osmium ingots (x120)", list(1, 21), 15000),
+			/obj/item/stack/material/mhydrogen/full = good_data("metallic hydrogen sheets (x120)", list(1, 2), 25000),
+			/obj/item/stack/material/tritium/full = good_data("tritium ingots (x120)", list(1, 2), 25000),
+			/obj/item/stack/material/uranium/full = good_data("uranium sheets (x120)", list(1, 2), 9000)
 		)
 	)
 

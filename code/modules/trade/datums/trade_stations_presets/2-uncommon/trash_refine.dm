@@ -9,11 +9,11 @@
 	offer_limit = 20
 	base_income = 0
 	wealth = 0
-	secret_inv_threshold = 2000
+	hidden_inv_threshold = 2000
 	recommendation_threshold = 4000
 	stations_recommended = list("junker")
 	recommendations_needed = 1
-	assortiment = list(
+	inventory = list(
 		"Trash" = list(/obj/random/scrap/dense_weighted = custom_good_amount_range(list(2, 5)),
 				/obj/random/scrap/dense_even = custom_good_amount_range(list(4, 8)),
 				/obj/random/scrap/sparse_even = custom_good_amount_range(list(5, 9)),
@@ -33,7 +33,7 @@
 		"Refined Scrap" = list(/obj/item/stack/sheet/refined_scrap = custom_good_amount_range(list(50, 75))
 		)
 	)
-	secret_inventory = list(
+	hidden_inventory = list(
 		"Premium Trash" = list(
 			/obj/structure/scrap = custom_good_amount_range(list(2,5)),
 			/obj/structure/scrap/large = custom_good_amount_range(list(2,5)),

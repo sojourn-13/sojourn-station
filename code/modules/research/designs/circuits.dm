@@ -291,16 +291,6 @@
 	build_path = /obj/item/airlock_electronics/secure
 	category = CAT_MISC
 
-/datum/design/research/circuit/ordercomp
-	name = "supply ordering console"
-	build_path = /obj/item/circuitboard/ordercomp
-	category = CAT_COMP
-
-/datum/design/research/circuit/supplycomp
-	name = "supply control console"
-	build_path = /obj/item/circuitboard/supplycomp
-	category = CAT_COMP
-
 /datum/design/research/circuit/biogenerator
 	name = "biogenerator"
 	build_path = /obj/item/circuitboard/biogenerator

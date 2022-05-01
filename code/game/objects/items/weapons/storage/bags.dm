@@ -22,6 +22,7 @@
 	display_contents_with_number = FALSE
 	use_to_pickup = TRUE
 	slot_flags = SLOT_BELT
+	price_tag = 25
 
 // -----------------------------
 //          Trash bag

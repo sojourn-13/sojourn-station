@@ -231,3 +231,7 @@
 				reagents.remove_reagent(R.id, amount)
 				amount_to_transfer = max(0,amount_to_transfer - amount)
 	return TRUE
+
+/obj/item/reagent_containers/get_item_cost(export)
+	. = ..()
+	. += reagents?.get_price()

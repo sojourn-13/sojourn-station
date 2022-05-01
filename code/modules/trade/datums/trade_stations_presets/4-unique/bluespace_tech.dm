@@ -5,7 +5,7 @@
 	markup = UNIQUE_GOODS
 	recommendations_needed = 1
 	name_pool = list("B-42-Alpha" = "Unknown signature, bluespace traces interfere with sensors. Unable to triangulate object.")
-	assortiment = list(
+	inventory = list(
 		"#$285@$532#$@" = list(
 			/obj/item/circuitboard/teleporter,
 			/obj/item/hand_tele,
@@ -18,7 +18,7 @@
 			/obj/item/rig_module/teleporter
 		)
 	)
-	secret_inventory = list(
+	hidden_inventory = list(
 		"25$$5325@$25@$5325323" = list(
 			/obj/item/oddity/broken_necklace = custom_good_amount_range(list(-5,1)),
 			/obj/item/implanter/compressed,

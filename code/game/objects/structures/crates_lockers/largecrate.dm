@@ -90,5 +90,21 @@
 	held_count = 5
 	held_type = /mob/living/simple_animal/chick
 
+/obj/structure/largecrate/animal/giant_spider
+	name = "Giant Spider crate"
+	held_type = /mob/living/carbon/superior_animal/giant_spider
+
+/obj/structure/largecrate/animal/nurse_spider
+	name = "Nurse Spider crate"
+	held_type = /mob/living/carbon/superior_animal/giant_spider/nurse
+
+/obj/structure/largecrate/animal/hunter_spider
+	name = "Hunter Spider crate"
+	held_type = /mob/living/carbon/superior_animal/giant_spider/hunter
+
+/obj/structure/largecrate/animal/welder_roach
+	name = "Benzin Roach crate"
+	held_type = /mob/living/carbon/superior_animal/roach/benzin
+
 /obj/structure/largecrate/animal/piano
 	held_type = /obj/structure/synthesized_instrument/synthesizer/piano
