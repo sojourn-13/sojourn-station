@@ -421,7 +421,7 @@ var/global/chicken_count = 0
 	. =..()
 	if(!.)
 		return
-	if(!stat && prob(5) && lay_egg()) //We are less likely to lay eggs
+	if(!stat && prob(25) && lay_egg()) //We are less likely to lay eggs
 		visible_message("[src] [pick("lays an egg.","squats down and croons.","begins making a huge racket.","begins clucking raucously.")]")
 
 /mob/living/simple_animal/metal_chicken/proc/lay_egg()
