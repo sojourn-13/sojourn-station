@@ -79,7 +79,7 @@
 	name = "church toga"
 	icon_state = "church_toga"
 
-/obj/item/clothing/under/rank/church/toga/verb/toggle_style()
+/obj/item/clothing/rank/church/toga/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -89,15 +89,19 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Red"] = "church_toga"
-	options["Red Pauldronless"] = "church_toga_alt"
-	options["Black"] = "church_toga_black"
-	options["Black Pauldronless"] = "church_toga_black_alt"
+	options["Red"] = ""
+	options["Red no pauldron"] = "_np"
+	options["Black"] = "_b"
+	options["Black no pauldron"] = "_bnp"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+			)
 		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
