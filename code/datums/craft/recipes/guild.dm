@@ -18,6 +18,20 @@
 		list(QUALITY_SAWING, 30, "time" = 5)
 	)
 
+//bullets -----------------------------
+
+/datum/craft_recipe/guild/payload_arrow
+	name = "empty payload arrow"
+	result = /obj/item/ammo_casing/arrow/empty_payload/bulk
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL, "time" = 1),
+		list(QUALITY_WELDING, 40, "time" = 5),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 1),
+		list(QUALITY_CUTTING, 40, "time" = 5)
+	)
+
+
 //Armor mods ----------------------
 /datum/craft_recipe/guild/melee
 	name = "melee plating"

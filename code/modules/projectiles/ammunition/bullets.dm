@@ -864,9 +864,11 @@
 	icon_state = "arrow-practice"
 	desc = "A plastic-fletched training arrow, with a light-coloured plastic tip."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/practice
-	matter = list(MATERIAL_WOOD = 0.5, MATERIAL_PLASTIC = 1)
+	matter = list(MATERIAL_PLASTIC = 0.1)
 	maxamount = 10
 //payload arrows
+/obj/item/ammo_casing/arrow/practice/bulk
+	amount = 10
 
 /obj/item/ammo_casing/arrow/empty_payload
 	name = "streamlined ultralight arrow"
@@ -882,6 +884,9 @@
 	/obj/item/grenade/smokebomb = /obj/item/ammo_casing/arrow/explosive/smoke,
 	/obj/item/reagent_containers/hypospray/autoinjector = /obj/item/ammo_casing/arrow/reagent/hypo,
 	/obj/item/reagent_containers/glass/beaker/vial = /obj/item/ammo_casing/arrow/reagent)
+
+/obj/item/ammo_casing/arrow/empty_payload/bulk
+	amount = 2
 
 /obj/item/ammo_casing/arrow/empty_payload/attackby(obj/item/I, mob/user)
 	for(var/thingy in special_crafting_types)

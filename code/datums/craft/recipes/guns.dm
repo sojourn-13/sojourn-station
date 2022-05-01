@@ -30,6 +30,14 @@
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 60),
 	)
 
+/datum/craft_recipe/gun/arrows/practice
+	name = "training arrows"
+	result = /obj/item/ammo_casing/arrow/practice/bulk
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 60)
+	)
+
 /datum/craft_recipe/gun/arrows/broad
 	name = "broadhead arrow"
 	result = /obj/item/ammo_casing/arrow/broadhead
