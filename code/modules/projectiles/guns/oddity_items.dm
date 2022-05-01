@@ -5,20 +5,24 @@
 	name = "\"Finger of God\" handmade pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	Whoever made this particular model did exceptional work. Unlike lesser handmade pistols, this one jams less and has much better shot capability. This one chambers .60-06 anti material ammo."
+	icon = 'icons/obj/guns/projectile/hm_bluecross.dmi'
 	jam_chance = 5
 	damage_multiplier = 1.36
 	recoil_buildup = 25
 	max_shells = 6
 	price_tag = 750
+	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 6) //Its now made of plasteel to show its whatever
 	serial_type = "BlueCross"
 
 /obj/item/gun/energy/sniperrifle/saint
 	name = "\"Saint\" laser rifle"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	Unlike a standard valkyrie this rifle has an over charged coolant mechanism and redundant power loop to conserve energy between shots."
+	The normal \"Valkyrie\" design meeting the improvements with Lightfall design in a wooden frame with a golden barrel to help conduct the extra little bit of juice to hit as hard as possible."
 	charge_cost = 200
 	fire_delay = 25
 	price_tag = 3750
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_GOLD = 9, MATERIAL_URANIUM = 6) //The normal valk needs silver this is gold plated!
+	icon = 'icons/obj/guns/energy/sniper_saint.dmi'
 	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/automatic/lmg/saw/unicorn
@@ -45,26 +49,52 @@
 	item_flags |= BLUESPACE
 	bluespace_entropy(2, get_turf(src)) //Same as the normal bluespace crystal
 
-/obj/item/gun/projectile/shotgun/pump/obrez/thunderlord
-	name = "\"Thunderlord\" shotgun"
+/obj/item/gun/projectile/shotgun/doublebarrel/bluecross_shotgun
+	name = "\"King's\" shotgun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	The ultimate back up weapon, someone has fitted a hatton gas tube into the chamber, reducing magazine size to one shotgun shell while increasing its power potential through the roof. Good luck using it one handed."
+	The replication of a prized legendary royal shotgun wielded by a king that was once prophesized to have used it for their own undoing."
+	icon_state = "shotgun"
+	load_method = SINGLE_CASING|SPEEDLOADER
+	handle_casings = CYCLE_CASINGS
+	flags = CONDUCT
+	slot_flags = SLOT_BACK
+	caliber = CAL_SHOTGUN
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 10)
 	max_shells = 1
 	damage_multiplier = 2
 	penetration_multiplier = 2
-	recoil_buildup = 75
-	one_hand_penalty = 50
+	recoil_buildup = 50
+	one_hand_penalty = 35 //full sized shotgun level
 	price_tag = 3250
-	gun_tags = list(GUN_PROJECTILE)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG) //Regains its internal mag do to its more annoying way of reloading
 	serial_type = "BlueCross"
+	icon = 'icons/obj/guns/projectile/sawnoff/bluecross_shotgun.dmi'
+	init_firemodes = list(
+		list(mode_name="King's Wrath", mode_desc="Echos the will of king that onced used it.", burst=1, icon="semi"), //Snowfalk fire mode for snowflake gun
+		list(mode_name="August Presence", mode_desc="Fires two of the king's decrees at the same time.", burst=2, icon="semi")
+		)
+
+
+/obj/item/gun/projectile/shotgun/doublebarrel/bluecross_shotgun/bolt_act(mob/living/user)
+	bolt_open = !bolt_open
+	if(bolt_open)
+		playsound(src.loc, 'sound/weapons/guns/interact/shotgun_break.ogg', 75, 1)
+		to_chat(user, SPAN_NOTICE("You snap the barrel open."))
+	else
+		playsound(src.loc, 'sound/weapons/guns/interact/shotgun_close.ogg', 75, 1)
+		to_chat(user, SPAN_NOTICE("You snap the barrel closed"))
+		bolt_open = 0
+	add_fingerprint(user)
+	update_icon()
 
 /obj/item/gun/energy/ntpistol/mana
 	name = "\"Mana from Heaven\" energy pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	A standard issue serenity pistol from the church of absolute, nothing seems different about it, yet it seems to conserve power unusually well."
+	A blue and black version of the standard \"Serenity\" energy pistol, somehow despite looking just like a repainted job it conserves power unusually well."
 	charge_cost = 2
 	price_tag = 2550
 	serial_type = "BlueCross"
+	icon = 'icons/obj/guns/energy/ntpistol_bluecross.dmi'
 
 /obj/item/gun/projectile/automatic/maxim/replica
 	name = "\"Maxim\" light machinegun"

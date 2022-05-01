@@ -96,6 +96,8 @@ var/global/list/image/splatter_cache=list()
 		hasfeet = 0
 	if(perp.shoes && !perp.buckled)//Adding blood to shoes
 		var/obj/item/clothing/shoes/S = perp.shoes
+		if(S.flags & NOBLOODY)
+			return
 		if(istype(S))
 			S.blood_color = basecolor
 			S.track_blood = max(amount,S.track_blood)
