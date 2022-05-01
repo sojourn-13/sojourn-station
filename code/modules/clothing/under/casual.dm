@@ -293,6 +293,73 @@
 	icon_state = "dismas"
 	item_state = "dismas"
 
+/obj/item/clothing/under/bodysuit
+	name = "eva skinsuit"
+	desc = "A EVA skinsuit ideally used underneath voidsuits and hardsuits for extra comfort and mobility."
+	icon_state = "skinsuit"
+	item_state = "skinsuit"
+
+/obj/item/clothing/under/bodysuit/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Skinsuit Masculine"] = ""
+	options["Skinsuit Feminine"] = "_f"
+	options["Grey Skinsuit Masculine"] = "_gm"
+	options["Grey Skinsuit Feminine"] = "_gf"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/under/greyturtleneck
+	name = "grey turtleneck"
+	desc = "A grey turtleneck complete with matching grey jeans."
+	icon_state = "quillturtleneck"
+	item_state = "quillturtleneck"
+
+/obj/item/clothing/under/greyturtleneck/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Grey jeans"] = ""
+	options["Grey skirt"] = "_s"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /* Church */
 /obj/item/clothing/under/rank/monashka

@@ -89,16 +89,20 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Red"] = "church_toga"
-	options["Red Pauldronless"] = "church_toga_alt"
-	options["Black"] = "church_toga_black"
-	options["Black Pauldronless"] = "church_toga_black_alt"
+	options["Red"] = ""
+	options["Red Pauldronless"] = "_alt"
+	options["Black"] = "_black"
+	options["Black Pauldronless"] = "blackalt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()

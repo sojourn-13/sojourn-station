@@ -220,6 +220,14 @@
 	display_name = "neon tracksuits, color presets"
 	path = /obj/item/clothing/under/neon
 	flags = GEAR_HAS_TYPE_SELECTION
+	
+/datum/gear/uniform/bodysuit
+	display_name = "eva skinsuit"
+	path = /obj/item/clothing/under/bodysuit
+
+/datum/gear/uniform/greyturtleneck
+	display_name = "grey turtleneck"
+	path = /obj/item/clothing/under/greyturtleneck
 
 /datum/gear/uniform/generic
 	display_name = "generic outfit, color presets"

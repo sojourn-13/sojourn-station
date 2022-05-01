@@ -78,6 +78,34 @@
 	desc = "Military style turtleneck, made of a slightly sturdier material than standard jumpsuits, to allow for robust protection"
 	icon_state = "securityrturtle"
 
+/obj/item/clothing/under/rank/security/turtleneck/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Turtleneck Default"] = ""
+	options["Skirt"] = "_s"
+	options["Skirt rolled sleeves"] = "_sr"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/rank/medspec
 	name = "militia corpmen's jumpsuit"
 	desc = "A durable corpsman's jumpsuit, designed to provide moderate combat protection."
