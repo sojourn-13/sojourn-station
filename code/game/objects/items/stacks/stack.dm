@@ -77,7 +77,7 @@
 		if(!istype(crossing, /obj/item/stack))
 			return
 		var/obj/item/stack/crostack = crossing
-		crostack.transfer_to(src)
+		src.transfer_to(crostack)
 	. = ..()
 
 /obj/item/stack/examine(mob/user)
