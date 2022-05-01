@@ -79,7 +79,7 @@
 	name = "church toga"
 	icon_state = "church_toga"
 
-/obj/item/clothing/rank/church/toga/verb/toggle_style()
+/obj/item/clothing/under/rank//church/toga/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
