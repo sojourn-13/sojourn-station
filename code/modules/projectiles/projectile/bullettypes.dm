@@ -926,7 +926,7 @@
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/on_impact(atom/target)
 	explosion(target, 0, 1, 3)
-	return ..()
+	return TRUE
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/frag
 	name = "frag grenade arrow"
@@ -937,7 +937,7 @@
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/frag/on_impact(atom/target)
 	fragment_explosion(target, 4, frag_type, frag_count, frag_damage, 2, 100)
-	return ..()
+	return TRUE
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/frag/sting
 	name = "stinger grenade arrow"
@@ -947,7 +947,7 @@
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/frag/on_impact(atom/target)
 	fragment_explosion(target, 4, frag_type, frag_count, frag_damage, 2, 100)
-	return ..()
+	return TRUE
 
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/emp
@@ -956,7 +956,7 @@
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/emp/on_impact(atom/target)
 	empulse(target, 1, 2) //fairly weak
-	return ..()
+	return TRUE
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/flashbang
 	name = "flashbang arrow"
@@ -979,7 +979,7 @@
 		B.update_icon()
 
 	new /obj/effect/sparks(get_turf(target))
-	return ..()
+	return TRUE
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/heatwave
 	name = "heatwave arrow"
@@ -987,7 +987,7 @@
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/heatwave/on_impact(atom/target)
 	heatwave(target, 1, 2, 25, TRUE, 0)
-	return ..()
+	return TRUE
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/smoke
 	name = "smoke grenade arrow"

@@ -820,7 +820,7 @@
 
 /obj/item/ammo_casing/arrow/broadhead
 	name = "broadhead arrow"
-		icon_state = "arrow-broad"
+	icon_state = "arrow-broad"
 	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has quite a broad head, letting it stick in wounds easily, but reducing its ability to penetrate armor."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/broadhead
 
@@ -838,9 +838,10 @@
 	maxamount = 1
 
 /obj/item/ammo_casing/arrow/reagent/attackby(obj/item/I, mob/user)
-	if(I.reagents && BB)
-		BB.attackby(I, user)
-		return
+	if(istype(I, /obj/item/reagent_containers) && BB)
+		var/obj/item/reagent_containers/the_inpcontainer = I
+		var/trans = the_inpcontainer.reagents.trans_to_obj(BB, the_inpcontainer.amount_per_transfer_from_this)
+		to_chat(user, SPAN_NOTICE("You fill the [BB.name] with [trans] units of the solution."))
 	..()
 
 /obj/item/ammo_casing/arrow/reagent/hypo
@@ -874,12 +875,14 @@
 	/obj/item/reagent_containers/glass/beaker/vial = /obj/item/ammo_casing/arrow/reagent)
 
 /obj/item/ammo_casing/arrow/empty_payload/attackby(obj/item/I, mob/user)
-	if(I in special_crafting_types)
-		to_chat(user, SPAN_NOTICE("You attach [I] to the [src]."))
-		new special_crafting_types[I](get_turf(src))
-		qdel(I)
-		qdel(src)
-		return
+	for(var/thingy in special_crafting_types)
+		if(ispath(I, thingy))
+			to_chat(user, SPAN_NOTICE("You attach [I] to the [src]."))
+			var/obj/item/craft_out = special_crafting_types[I]
+			new craft_out(get_turf(src))
+			qdel(I)
+			qdel(src)
+			return
 	..()
 
 /obj/item/ammo_casing/arrow/explosive

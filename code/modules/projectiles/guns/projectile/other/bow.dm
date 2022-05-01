@@ -6,17 +6,17 @@
 	desc = "A incredibly basic bow. Fires arrows."
 	icon = 'icons/obj/guns/bow.dmi'
 	icon_state = "bow"
-	item_state = "pneumatic"
+	item_state = "bow"
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	silenced = TRUE
-	caliber = "arrow"
-	matter = list(MATERIAL_PLASTIC = 10)
+	caliber = CAL_ARROW
+	matter = list(MATERIAL_WOOD = 10)
 	fire_sound_silenced = 'sound/weapons/guns/fire/GLfire.ogg' //todo,, real sounds
 	bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'   //Placeholder, could use a new sound
 	fire_sound_text = "a dull twang"
 	overcharge_timer_step = 5
-	price_tag = 1200
+	price_tag = 100
 	init_firemodes = list(
 			list(mode_name="normal", mode_desc="Draw the bow to fire a shot", mode_type = /datum/firemode/charge, icon="charge")
 			)
@@ -44,11 +44,12 @@
 		arrow_overlay.pixel_y = true_tension * arrow_y_offset_per_tension
 		add_overlay(arrow_overlay)
 
-/obj/item/gun/projectile/bow/attackby(obj/item/A , mob/user)
+/obj/item/gun/projectile/bow/attackby(obj/item/A, mob/user)
 	..()
 	if(LAZYLEN(loaded))
 		chambered = loaded[1]
 		loaded -= chambered
+	update_icon()
 
 /obj/item/gun/projectile/bow/consume_next_projectile()
 	if(chambered)
@@ -85,10 +86,20 @@
 /obj/item/gun/projectile/bow/hunting
 	name = "hunting bow"
 	desc = "A recurve hunting bow, made alternating bands of stalker chitin, animal sinew and wood laminated together."
-	caliber = "arrow"
-	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_WOOD = 10, MATERIAL_PLASTIC = 5) //biomatter is bone and stuff idk no bone material
+	matter = list(MATERIAL_BONE = 10, MATERIAL_WOOD = 10, MATERIAL_PLASTIC = 5)
 	penetration_multiplier = 1.5
 	zoom_factor = 2.0
-	extra_damage_mult_scoped = 0.05//this seems tiny, but is actually really significant on hunting arrows
+	extra_damage_mult_scoped = 0.2
 	overcharge_timer_step = 10
 	price_tag = 1200
+
+/obj/item/gun/projectile/bow/xbow
+	name = "\"Whaler\" heavy compound bow"
+	desc = "A heavy compound bow made from plastic, with a plasteel riser. Not originally an Artificer's Guild design, but the tight tolerances and high skill required to construct means that they remain the only group capable of manufacturing them. \
+	A modified \"Watchman\" scope is attached to the riser, with arrow drop markers for various weights of arrow present."
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 40, MATERIAL_PLASMAGLASS = 2)
+	damage_multiplier = 1.2
+	penetration_multiplier = 1.2
+	zoom_factor = 1.4
+	extra_damage_mult_scoped = 0.1
+	overcharge_timer_step = 6
