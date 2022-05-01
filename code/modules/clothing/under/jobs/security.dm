@@ -88,9 +88,9 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Turtleneck Default"] = "securityrturtle"
-	options["Skirt"] = "securityskirtleneck"
-	options["Skirt rolled sleeves"] = "securityskirtleneckrolled"
+	options["Turtleneck Default"] = ""
+	options["Skirt"] = "_s"
+	options["Skirt rolled sleeves"] = "_sr"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
