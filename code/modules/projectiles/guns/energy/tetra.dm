@@ -21,7 +21,7 @@
 	zoom_factor = 0.2
 	projectile_type = /obj/item/projectile/beam
 	suitable_cell = /obj/item/cell/medium
-	charge_cost = 25
+	charge_cost = 40
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
 		list(mode_name = "focused",     mode_desc = "Fire a focused, higher damage beam", burst = 1, fire_delay = 5, damage_mult_add = 0.75, move_delay=null, icon="semi", projectile_type = /obj/item/projectile/beam, silenced = FALSE),
