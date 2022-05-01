@@ -272,6 +272,7 @@
 	if (!get_amount())
 		return 0
 	if(!istype(S))
+		return FALSE
 	if ((stacktype != S.stacktype) && !type_verified)
 		if((stacktype != S.stacktype_alt) && !type_verified)
 			return 0
