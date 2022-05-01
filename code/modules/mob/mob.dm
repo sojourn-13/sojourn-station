@@ -13,7 +13,7 @@
 	ghostize()
 
 	LAssailant_weakref = null
-  
+
 	return ..()
 
 /mob/get_fall_damage(var/turf/from, var/turf/dest)
@@ -278,6 +278,18 @@
 		return
 
 	T.UnloadSlide(get_dir(T, src), src, 1)
+
+/mob/proc/haul_all_objs_proc(turf/T)
+	if(!src || !isturf(src.loc) || !(T in oview(1, src.loc)))
+		return 0
+	if(ismouse(src))
+		return
+	if(!src || !isturf(src.loc))
+		return
+	if(src.stat || src.restrained())
+		return
+	T.UnloadSlide(get_dir(T, src), src, 1)
+
 
 /mob/proc/ret_grab(obj/effect/list_container/mobl/L as obj, flag)
 	if(!istype(l_hand, /obj/item/grab) && !istype(r_hand, /obj/item/grab))

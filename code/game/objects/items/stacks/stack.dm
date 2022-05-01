@@ -72,6 +72,14 @@
 
 	return ..()
 
+/obj/item/stack/Crossed(atom/movable/crossing)
+	if(!crossing.throwing)
+		if(!istype(crossing, /obj/item/stack))
+			return
+		var/obj/item/stack/crostack = crossing
+		src.transfer_to(crostack)
+	. = ..()
+
 /obj/item/stack/examine(mob/user)
 	if(..(user, 1))
 		if(!uses_charge)
@@ -263,6 +271,8 @@
 /obj/item/stack/proc/transfer_to(obj/item/stack/S, var/tamount=null, var/type_verified)
 	if (!get_amount())
 		return 0
+	if(!istype(S))
+		return FALSE
 	if ((stacktype != S.stacktype) && !type_verified)
 		if((stacktype != S.stacktype_alt) && !type_verified)
 			return 0
@@ -441,6 +451,3 @@
 	New(title, recipes)
 		src.title = title
 		src.recipes = recipes
-
-
-
