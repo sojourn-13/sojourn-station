@@ -608,7 +608,7 @@
 
 /obj/item/gun_upgrade/scope/acog
 	name = "H&S \"AGOG\" scope"
-	desc = "In the age of 3d printing, the design of a scope one can rely on is common, but a scope that is special is a rarity. This is not one such scope. Mass produced, lathe machined and incredibly cheap. These often misalligned optics are truly ubuiquitous."
+	desc = "In the age of 3D printing, the design of a scope one can rely on is common, but a scope that is special is a rarity. This is not one such scope. Mass produced, lathe machined and incredibly cheap. These often misaligned optics are truly ubiquitous."
 	icon_state = "agog"
 	matter = list(MATERIAL_GLASS = 2, MATERIAL_STEEL = 1)
 	price_tag = 20
