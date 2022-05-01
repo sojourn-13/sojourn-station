@@ -292,7 +292,7 @@
 	desc = "A set of clothes for a man of dubious morals who seeks redemption on the old road."
 	icon_state = "dismas"
 	item_state = "dismas"
-	
+
 /obj/item/clothing/under/bodysuit
 	name = "eva skinsuit"
 	desc = "A EVA skinsuit ideally used underneath voidsuits and hardsuits for extra comfort and mobility."
@@ -317,17 +317,17 @@
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		item_state = options[choice]
-		item_state_slots = list(
-			slot_back_str = options[choice]
-			)
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
-		
+
 /obj/item/clothing/under/greyturtleneck
 	name = "grey turtleneck"
 	desc = "A grey turtleneck complete with matching grey jeans."
@@ -335,7 +335,7 @@
 	item_state = "quillturtleneck"
 
 /obj/item/clothing/under/greyturtleneck/verb/toggle_style()
-	set name = "Adjust Style"
+	set name = "Adjust style"
 	set category = "Object"
 	set src in usr
 
@@ -350,12 +350,12 @@
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		item_state = options[choice]
-		item_state_slots = list(
-			slot_back_str = options[choice]
-			)
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()

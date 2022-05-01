@@ -77,7 +77,7 @@
 	name = "Marshal officers turtleneck"
 	desc = "Military style turtleneck, made of a slightly sturdier material than standard jumpsuits, to allow for robust protection"
 	icon_state = "securityrturtle"
-	
+
 /obj/item/clothing/under/rank/security/turtleneck/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
@@ -95,9 +95,12 @@
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		item_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
