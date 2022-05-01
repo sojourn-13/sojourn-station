@@ -887,6 +887,7 @@
 	visible_message(SPAN_DANGER("The hypo attached to [name] hits [target], injecting [target] with its contents!"))
 	if(isliving(target))
 		var/mob/living/injectee = target
+		admin_inject_log(original_firer, target, src, reagents.log_list(), 5)
 		reagents.trans_to_mob(injectee, 5, CHEM_BLOOD)
 	else
 		reagents.trans_to(target, 5)

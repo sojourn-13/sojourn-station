@@ -19,6 +19,38 @@
 		list(QUALITY_SAWING, 15, "time" = 30)
 	)
 
+/datum/craft_recipe/gun/arrows
+	name = "crude arrows"
+	result = /obj/item/ammo_casing/arrow/bulk
+	icon_state = "woodworking"
+	flags = CRAFT_BATCH
+	steps = list(
+		list(/obj/item/stack/rods, 3, "time" = 20),
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 60),
+	)
+
+/datum/craft_recipe/gun/arrows/broad
+	name = "broadhead arrow"
+	result = /obj/item/ammo_casing/arrow/broadhead
+	steps = list(
+		list(/obj/item/stack/rods, 1, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 20),
+		list(QUALITY_DRILLING, 10, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 20),
+	)
+
+/datum/craft_recipe/gun/arrows/serrated
+	name = "serrated arrow"
+	result = /obj/item/ammo_casing/arrow/serrated
+	steps = list(
+		list(/obj/item/stack/rods, 1, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 20),
+		list(QUALITY_CUTTING, 10, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 20),
+	)
+
+
 /datum/craft_recipe/gun/pistol
 	name = "handmade pistol"
 	result = /obj/item/gun/projectile/handmade_pistol

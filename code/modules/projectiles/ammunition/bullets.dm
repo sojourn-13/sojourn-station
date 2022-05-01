@@ -798,7 +798,7 @@
 //arrows
 /obj/item/ammo_casing/arrow
 	name = "arrow"
-	desc = "A crudely made plastic-fletched metal-headed arrow."
+	desc = "A crudely made cardboard-fletched metal-headed arrow."
 	icon_state = "arrow"
 	caliber = CAL_ARROW
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow
@@ -806,17 +806,26 @@
 	maxamount = 3
 	is_caseless = TRUE
 
+/obj/item/ammo_casing/arrow/bulk
+	amount = 3
+
 /obj/item/ammo_casing/arrow/hunting
 	name = "hunting arrow"
 	icon_state = "arrow-bone"
 	desc = "A good-quality handmade arrow, with a bone head and plastic fletching. The head is shaped to allow easy removal from an animal's corpse."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/hunting
 
+/obj/item/ammo_casing/arrow/hunting/bulk
+	amount = 3
+
 /obj/item/ammo_casing/arrow/hunting/heavy
 	name = "broadhead hunting arrow"
 	icon_state = "arrow-broadbone"
 	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. The head is shaped to stick fast in wounds- it likely won't be retrievable from a corpse."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/hunting/heavy
+
+/obj/item/ammo_casing/arrow/hunting/heavy/bulk
+	amount = 3
 
 /obj/item/ammo_casing/arrow/broadhead
 	name = "broadhead arrow"

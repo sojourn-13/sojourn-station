@@ -32,6 +32,26 @@
 		list(CRAFT_MATERIAL, 1, MATERIAL_LEATHER, "time" = 1) //Takes a second
 	)
 
+/datum/craft_recipe/lodge/arrow_hunting
+	name = "hunting arrows"
+	result = /obj/item/ammo_casing/arrow/hunting/bulk
+	time = 0
+	flags = CRAFT_BATCH
+	steps = list(
+		list(/obj/item/stack/rods, 3),
+		list(CRAFT_MATERIAL, 2, MATERIAL_BONE, "time" = 1), //Takes a second
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 1) //Takes a second
+	)
+
+/datum/craft_recipe/lodge/arrow_hunting/heavy
+	name = "broadhead hunting arrows"
+	result = /obj/item/ammo_casing/arrow/hunting/heavy/bulk
+	steps = list(
+		list(/obj/item/stack/rods, 3),
+		list(CRAFT_MATERIAL, 3, MATERIAL_BONE, "time" = 1), //Takes a second
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 1) //Takes a second
+	)
+
 /datum/craft_recipe/lodge/baroqe
 	name = "Baroque Bone Rifle"
 	result = /obj/item/gun/projectile/boltgun/baroque
