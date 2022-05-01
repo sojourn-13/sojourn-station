@@ -28,7 +28,7 @@
 // Primary Weapon Kits
 /obj/item/storage/box/bs_kit/mosin
 	name = "\improper Mosin Primary Kit"
-	desc = "The standard Blackshield equipment kit containing a mosin bolt action rifle and generic optic. The most powerful weapon any trooper can get from their kit vendor, but often neglected given its age and style."
+	desc = "The standard Blackshield equipment kit containing a mosin bolt action rifle and a basic scope. The most powerful weapon any trooper can get from their kit vendor, but often neglected given its age and style."
 
 	populate_contents()
 		new /obj/item/gun/projectile/boltgun(src)
