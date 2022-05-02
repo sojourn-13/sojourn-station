@@ -279,6 +279,75 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/head/helmet/path //No path ?
+	name = "vinculum mitre"
+	desc = "A steel Mitre with golden outlines represents the duty of the Vector in leading the flock to a better fate."
+	icon_state = "vinculum_mitre"
+	action_button_name = "Toggle Helmet Light"
+	light_overlay = "helmet_light"
+	brightness_on = 4
+	armor_list = list(melee = 30, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
+	body_parts_covered = HEAD|EARS
+	obscuration = LIGHT_OBSCURATION
+
+/obj/item/clothing/head/helmet/path/divisor
+	name = "divisor bascinet"
+	desc = "One helmet that reflects the path of the user. The Divisor Bascinet is a metal helmet that extends at the read and sides to afford protection for the neck as much as it protects the face, it has a pointed apex on the upper skullcap and a face guard that protects the exposed face. Inside the helmet, there is chain mail that enhances the protection even more."
+	icon_state = "divisor_bascinet"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+
+/obj/item/clothing/head/helmet/path/tessallate
+	name = "tessellate veil"
+	desc = "A hood that reflects the path of the user. It's both a tough, metal-infused yet light biomatter cloth wimple and a white veil that keeps the symbol of the cruciform on the forehead. Normally used to manifest the vows of chastity before, now such veils embraces other vows as well, such as the vows of Tessellate as itself."
+	icon_state = "tessellate_veil"
+	flags_inv = BLOCKHAIR
+
+/obj/item/clothing/head/helmet/path/tessallate_m
+	name = "tessellate plague hat"
+	desc = "A sturdy, metal mask that covers the entire face with golden coloured steel showing a crow or raven beak for intimidation purposes, since it relates to how serious pandemics are. The beak possess sweet herbs normally used for incenses inside that calms the plague doctor that may be or not in stress during these times. Thankfully, the needs of plague doctors against diseases has lowered down on this colony, whatever, they still have their uses in surgery for the faithful and are normally saw on the lower colonies providing free medical care to the poor and rejected alike."
+	icon_state = "tessellate_plaguehat"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+
+/obj/item/clothing/head/helmet/path/tessallate_m/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default"] = "tessellate_plaguehat"
+	options["dark"] = "tessellate_plaguehat_dark"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/head/helmet/path/lemniscate
+	name = "lemniscate hood"
+	desc = "A flexible, tough and resilient cloth that covers the Vector's entire face with a inner metal mask that shows the sign of infinity, and possess a light plate extension that protects the neck from impact. It possess light chainmail as a reinforced measure to cover the ears without making it more difficult for the Vector to hear."
+	icon_state = "lemniscate_hood"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+
+/obj/item/clothing/head/helmet/path/monomial
+	name = "monomial ajirogasa"
+	desc = "Ajirogasa was before made with shaven bamboo or wood, used to protect the eyes from the sun. Now it's a sturdy helmet made out of secrets, that somehow folds the steel like straw in a manner that science still gags to understand. For years one could tell it was possible to sharpen the edges just to use these Ajirogasa as a throwing weapon, probably some kind of running gag that only hermits understands."
+	icon_state = "monomial_ajirogasa"
+
+/obj/item/clothing/head/helmet/path/factorial
+	name = "factorial powerhood"
+	desc = "The Powerhoods are curious things that aren't made out of circuits but rather have golem hematite foundations. What truly explains why these armors are EMP-immune, and possess the face structure of a living golem always on watch and protecting the factorial, communicating with the factorial itself and providing guidance and vice-versa as some type of mutualism, almost as if the Factorial armor possess an AI."
+	icon_state = "factorial_powerhood"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+
 /obj/item/clothing/head/helmet/rosaria
 	name = "rosaria great helm"
 	desc = "The rosaria protects. Deus Vult."

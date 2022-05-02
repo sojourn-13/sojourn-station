@@ -74,7 +74,7 @@
 
 /obj/item/flame/candle/eternal
 	name = "eternal candle"
-	desc = "A curved, comma-shaped jewel made out of precious stone. Simply looking at this stone is enough to make one more calm and confident. It is said Amaterasu herself - one of the absolute's masks - held this specific Magatama herself, and anyone that holds this jewel while meditating long enough, finds inner peace easier than in any other way.  In fact, during times of turmoil it became well know to allow vectors to touch the Magatama before sleeping on monasteries, due to it's non-chemically related, calming properties. It is also said this Jewel was totally unrepaired by the church, and because of time, shows some external damages and scratches."
+	desc = "A very costy, singular candle that represents immortal life of a soul after being embraced by the absolute on the afterlife, the moment the fire is lit - it never stops. Each shift it is replaced to keep their symbolic value, and it is where the major part of the church's investment and budget go, way above buying gold from Lonestar. With that reason in mind, the eternal candle is only lit during ceremonies, but it is not unknown of Vectors igniting it for fun and getting yelled at for two weeks in a row from different primes."
 	icon_state = "candle_eternal"
 	light_color = COLOR_LIGHTING_CYAN_BRIGHT
 	endless_burn = TRUE
