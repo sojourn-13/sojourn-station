@@ -15,6 +15,6 @@
 	recoil_buildup = 14
 	one_hand_penalty = 18
 	zoom_factor = 0.2
-	fire_sound = 'sound/weapons/guns/fire/batrifle_fire'
+	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "NM"
