@@ -247,7 +247,18 @@
 		list(/obj/item/stack/cable_coil, 2, "time" = 10)
 	)
 
-
+/datum/craft_recipe/gun/bow
+	name = "simple bow"
+	result = /obj/item/gun/projectile/bow
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 20),
+		list(QUALITY_SAWING, 10, "time" = 20),
+		list(QUALITY_HAMMERING, 10, "time" = 20),
+		list(QUALITY_CUTTING, 10, "time" = 20),
+		list(CRAFT_MATERIAL, 2, MATERIAL_CLOTH, "time" = 40),
+		list(QUALITY_WIRE_CUTTING, 10, "time" = 10)
+	)
 
 /datum/craft_recipe/gun/multi_laser
 	name = "Multi-Laser Cannon"

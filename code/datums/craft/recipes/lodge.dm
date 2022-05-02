@@ -95,7 +95,7 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 20),
 		list(QUALITY_SAWING, 30, "time" = 40),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
-		list(CRAFT_MATERIAL, 2, MATERIAL_BONE, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_BONE, "time" = 60),
 		list(QUALITY_ADHESIVE, 30, "time" = 60),
 		list(QUALITY_CUTTING, 30, "time" = 40),
 		list(CRAFT_MATERIAL, 2, MATERIAL_CLOTH, "time" = 1),

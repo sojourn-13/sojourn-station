@@ -796,7 +796,6 @@
 	icon_state = "bolt"
 	damage_types = list(BRUTE = 9, BURN = 2.5) //This is multiplied by tension when fired, so it's actually 57.5 damage. Slightly worse, but it's faster and has higher AP.
 	armor_penetration = 30
-	supereffective_factions = list("neutral") //TESTING ONLY, REMOVE LATER
 	step_delay = 0.2
 	embed = TRUE
 	penetrating = 0
@@ -808,9 +807,10 @@
 	name = "arrow"
 	icon_state = "arrow"
 	damage_types = list(BRUTE = 4) //Multiplied by 10 when fired.
-	supereffective_factions = list("wurm", "roach", "spider", "neutral", "hostile", "friendly") //good against common colony mobs
+	armor_penetration = 2 //..
+	effective_faction = list("wurm", "roach", "spider") //good against common colony mobs
+	damage_mult = 1.5 //but not too good
 	embed = FALSE //don't want to embed and drop an arrow, that would be weird
-	armor_penetration = 3 //..
 	check_armour = ARMOR_MELEE
 	step_delay = 0.9
 	affective_damage_range = 6
@@ -822,7 +822,7 @@
 	icon_state = "arrow-broad"
 	embed = TRUE //we are going to try really hard to embed
 	embed_mult = 3
-	armor_penetration = 2
+	armor_penetration = 1.5
 	step_delay = 0.9
 	create_type = null
 	shrapnel_type = /obj/item/ammo_casing/arrow/broadhead //the ENTIRE arrow!
@@ -840,13 +840,13 @@
 /obj/item/projectile/bullet/reusable/arrow/hunting
 	name = "hunting arrow"
 	icon_state = "arrow-bone"
-	damage_types = list(BRUTE = 2) //Multiplied by 10 when fired.
-	supereffective_factions = list("stalker", "roach", "spider", "tengo", "tengolo_berserker", "xenomorph", "wurm", "vox_tribe", "robot", "greyson", "ameridian", "neutral", "psi_monster", "hostile", "friendly") //this SHOULD be all of them.
+	damage_types = list(BRUTE = 1) //Multiplied by 10 when fired.
+	supereffective_types = list(/mob/living/carbon/human = FALSE, /mob/living = TRUE)
 	supereffective_mult = 5 //we do 10 damage base, up to 50 against SE mobs, then with 55 AP on should do ~100. Slow to fire, unwieldly, slow projectiles (but reusable), so I'll say this is fair?
 	armor_penetration = 5 //high ap to take advantage of overpen on mobs
 	step_delay = 0.8
-	affective_damage_range = 14
-	affective_ap_range = 14
+	affective_damage_range = 8 //worse than the baroque, but better than regular arrows
+	affective_ap_range = 8
 	create_type = /obj/item/ammo_casing/arrow/hunting
 
 /obj/item/projectile/bullet/reusable/arrow/hunting/heavy
@@ -855,13 +855,14 @@
 	damage_types = list(BRUTE = 3) //Multiplied by 10 when fired.
 	embed = TRUE
 	supereffective_mult = 18 //we do 20 damage base, up to 360 against SE mobs, then with 55 (+5 hunting bow) AP on should do ~410. Baroque is around ~430 vs mobs, so roughly baroque-tier vs mobs, with the same wieldliness and different ammo costs (bone/leather/metal/plastic vs metal/cardboard).
-	affective_damage_range = 14
-	affective_ap_range = 14
+	affective_damage_range = 8
+	affective_ap_range = 8
 	create_type = null //NOT reusable.
 
 /obj/item/projectile/bullet/reusable/arrow/reagent
 	name = "chemical arrow"
 	icon_state = "arrow-reagent"
+	effective_faction = list()
 	damage_types = list(BRUTE = 0.5) //Low damage, but chem-warfarable.
 	embed = FALSE
 	reagent_flags = INJECTABLE | DRAINABLE | AMOUNT_VISIBLE | REFILLABLE
@@ -916,6 +917,7 @@
 	name = "explosive arrow"
 	desc = "Holy shit, there's a bomb taped to this arrow!"
 	icon_state = "arrow-grenade"
+	effective_faction = list()
 	damage_types = list(HALLOSS = 1)
 	embed = FALSE //impact fuze
 	armor_penetration = 0
@@ -945,6 +947,7 @@
 	desc = "Holy shit, there's a police-grade stinger grenade taped to this arrow!"
 	frag_type = /obj/item/projectile/bullet/pellet/fragment/rubber
 	frag_damage = 1
+	frag_count = 50
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/frag/on_impact(atom/target)
 	fragment_explosion(target, 4, frag_type, frag_count, frag_damage, 2, 100)

@@ -122,12 +122,23 @@
 	return FALSE
 
 //Checks for specific types in a list
-/proc/is_type_in_list(atom/A, list/L)
-	if(!LAZYLEN(L) || !A)
+//Zebra is used if the list is associative (/type/ = TRUE, /type = FALSE) and returns a value based on that true/false value
+/proc/is_type_in_list(datum/type_to_check, list/list_to_check, zebra = FALSE)
+	if(!LAZYLEN(list_to_check) || !type_to_check)
 		return FALSE
-	for(var/type in L)
-		if(istype(A, type))
-			return TRUE
+	for(var/type in list_to_check)
+		if(istype(type_to_check, type))
+			return !zebra || list_to_check[type] // Subtypes must come first in zebra lists.
+	return FALSE
+
+//checks for specific paths in list
+//Zebra is used if the list is associative (/type/ = TRUE, /type = FALSE) and returns a value based on that true/false value
+/proc/is_path_in_list(path_to_check, list/list_to_check, zebra = FALSE)
+	if(!LAZYLEN(list_to_check) || !path_to_check)
+		return FALSE
+	for(var/path in list_to_check)
+		if(ispath(path_to_check, path))
+			return !zebra || list_to_check[path]
 	return FALSE
 
 /proc/instances_of_type_in_list(var/atom/A, var/list/L)
@@ -806,13 +817,6 @@ Checks if a list has the same entries and values as an element of big.
 			. |= value
 		else
 			checked += value
-
-//Checks for specific paths in a list
-/proc/is_path_in_list(var/path, var/list/L)
-	for(var/type in L)
-		if(ispath(path, type))
-			return 1
-	return 0
 
 /proc/parse_for_paths(list/data)
 	if(!islist(data) || !data.len)
