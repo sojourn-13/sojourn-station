@@ -77,7 +77,7 @@
 /obj/item/clothing/under/rank/church/toga
 	desc = "Smells like laurel wreath."
 	name = "church toga"
-	icon_state = "church_toga"
+	icon_state = "numerical_garbs_red"
 
 /obj/item/clothing/under/rank/church/toga/verb/toggle_style()
 	set name = "Adjust Style"
@@ -89,10 +89,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Red"] = ""
-	options["Red Pauldronless"] = "_alt"
-	options["Black"] = "_black"
-	options["Black Pauldronless"] = "blackalt"
+	options["Red"] = "numerical_garbs_red"
+	options["Red Pauldronless"] = "churchtoga_alt"
+	options["Black"] = "churchtoga_black"
+	options["Black Pauldronless"] = "churchtoga_blackalt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
