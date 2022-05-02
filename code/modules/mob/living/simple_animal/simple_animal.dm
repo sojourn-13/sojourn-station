@@ -397,8 +397,14 @@
 
 	for(var/damage_type in Proj.damage_types)
 		var/damage = Proj.damage_types[damage_type]
-		if(faction in Proj.supereffective_factions)
-			damage *= Proj.supereffective_mult
+		var/dmult = 1
+		if(LAZYLEN(Proj.effective_faction))
+			if(faction in Proj.effective_faction)
+				dmult += Proj.damage_mult
+		if(LAZYLEN(Proj.supereffective_types))
+			if(is_type_in_list(src, Proj.supereffective_types, TRUE))
+				dmult += Proj.supereffective_mult
+		damage *= dmult
 		damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj))
 	return 0
 

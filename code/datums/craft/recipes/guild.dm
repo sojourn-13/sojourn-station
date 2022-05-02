@@ -584,6 +584,32 @@
 		list(QUALITY_SCREW_DRIVING, 25, "time" = 90)
 	)
 
+//Gun Mods
+/datum/craft_recipe/guild/tensioner
+	name =  "weighted pulley kit"
+	result = /obj/item/gun_upgrade/mechanism/tensioner
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL, "time" = 30),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 20, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(/obj/item/stack/cable_coil, 5, "time" = 30),
+		list(QUALITY_WIRE_CUTTING, 25, "time" = 90)
+	)
+
+//Gun Mods
+/datum/craft_recipe/guild/detensioner
+	name =  "compound pulley kit"
+	result = /obj/item/gun_upgrade/mechanism/detensioner
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 20, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 30),
+		list(QUALITY_WIRE_CUTTING, 25, "time" = 90)
+	)
+
 /datum/craft_recipe/guild/overshooter
 	name = "\"Overshooter\" internal magazine kit"
 	result = /obj/item/gun_upgrade/mechanism/overshooter

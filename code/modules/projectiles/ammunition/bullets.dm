@@ -800,7 +800,10 @@
 	name = "arrow"
 	desc = "A crudely made cardboard-fletched metal-headed arrow."
 	icon_state = "arrow"
+	w_class = ITEM_SIZE_SMALL
 	caliber = CAL_ARROW
+	force = WEAPON_FORCE_NORMAL
+	armor_penetration = ARMOR_PEN_GRAZING
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow
 	matter = list(MATERIAL_STEEL = 0.5, MATERIAL_WOOD = 0.5, MATERIAL_PLASTIC= 0.5)
 	maxamount = 3
@@ -821,7 +824,7 @@
 /obj/item/ammo_casing/arrow/hunting/heavy
 	name = "broadhead hunting arrow"
 	icon_state = "arrow-broadbone"
-	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. The head is shaped to stick fast in wounds- it likely won't be retrievable from a corpse."
+	desc = "A good-quality handmade arrow, with a bone head and plastic fletching. The head is shaped to stick fast in wounds- it likely won't be retrievable from a corpse."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/hunting/heavy
 
 /obj/item/ammo_casing/arrow/hunting/heavy/bulk
@@ -830,12 +833,16 @@
 /obj/item/ammo_casing/arrow/broadhead
 	name = "broadhead arrow"
 	icon_state = "arrow-broad"
+	force = WEAPON_FORCE_PAINFUL
+	armor_penetration = 0
 	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has quite a broad head, letting it stick in wounds easily, but reducing its ability to penetrate armor."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/broadhead
 
 /obj/item/ammo_casing/arrow/serrated
 	name = "serrated arrow"
 	icon_state = "arrow-serrated"
+	force = WEAPON_FORCE_PAINFUL
+	armor_penetration = 0
 	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has wicked sharp serrated blades along its head, capable of causing severe damage to unarmored targets."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/serrated
 
@@ -862,6 +869,7 @@
 /obj/item/ammo_casing/arrow/practice
 	name = "training arrow"
 	icon_state = "arrow-practice"
+	force = WEAPON_FORCE_HARMLESS
 	desc = "A plastic-fletched training arrow, with a light-coloured plastic tip."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/practice
 	matter = list(MATERIAL_PLASTIC = 0.1)
@@ -873,6 +881,7 @@
 /obj/item/ammo_casing/arrow/empty_payload
 	name = "streamlined ultralight arrow"
 	desc = "A finely-made arrow with an aerodynamic plastic tip. Looks like it has small mounting points attached along the shaft."
+	force = WEAPON_FORCE_HARMLESS
 	icon_state = "arrow-practice"
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/practice/payload
 	var/list/special_crafting_types = list(/obj/item/grenade/explosive = /obj/item/ammo_casing/arrow/explosive,
@@ -902,6 +911,7 @@
 /obj/item/ammo_casing/arrow/explosive
 	name = "grenade arrow"
 	desc = "Holy shit, there's a bomb taped to this arrow!"
+	force = WEAPON_FORCE_HARMLESS
 	maxamount = 2
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/explosive
 

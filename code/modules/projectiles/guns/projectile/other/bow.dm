@@ -15,7 +15,9 @@
 	fire_sound_silenced = 'sound/weapons/guns/fire/GLfire.ogg' //todo,, real sounds
 	bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'   //Placeholder, could use a new sound
 	fire_sound_text = "a dull twang"
-	overcharge_timer_step = 5
+	gun_tags = list(GUN_SCOPE, ARROW_FIRING)
+	max_upgrades = 2
+	overcharge_timer_step = 7.5
 	price_tag = 100
 	init_firemodes = list(
 			list(mode_name="normal", mode_desc="Draw the bow to fire a shot", mode_type = /datum/firemode/charge, icon="charge")
@@ -88,9 +90,10 @@
 	desc = "A recurve hunting bow, made alternating bands of stalker chitin, animal sinew and wood laminated together."
 	matter = list(MATERIAL_BONE = 10, MATERIAL_WOOD = 10, MATERIAL_PLASTIC = 5)
 	penetration_multiplier = 1.5
+	gun_tags = list(ARROW_FIRING)
 	zoom_factor = 2.0
 	extra_damage_mult_scoped = 0.2
-	overcharge_timer_step = 10
+	overcharge_timer_step = 4
 	price_tag = 1200
 
 /obj/item/gun/projectile/bow/xbow
@@ -100,6 +103,7 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 40, MATERIAL_PLASMAGLASS = 2)
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.2
+	gun_tags = list(ARROW_FIRING)
+	max_upgrades = 4
 	zoom_factor = 1.4
 	extra_damage_mult_scoped = 0.1
-	overcharge_timer_step = 6
