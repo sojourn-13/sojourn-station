@@ -749,6 +749,7 @@
 //reusable
 /obj/item/projectile/bullet/reusable
 	var/obj/item/create_type
+	muzzle_type = null
 
 /obj/item/projectile/bullet/reusable/on_impact(atom/A)
 	..()
@@ -830,8 +831,8 @@
 /obj/item/projectile/bullet/reusable/arrow/serrated
 	name = "serrated arrow"
 	icon_state = "arrow"
-	agony = 60 //same as baroque, but much, much, much worse AP, less damage
-	damage_types = list(BRUTE = 6.5) //Very good base damage, negligible (5) AP, but no embedding. Think of it as arrow-hollowpoints type 2.
+	agony = 32 //same as .40mag HPs
+	damage_types = list(BRUTE = 5.5) //Very good base damage, negligible (5) AP, but no embedding. Think of it as arrow-hollowpoints type 2.
 	embed = FALSE
 	armor_penetration = 0.5
 	step_delay = 0.9
@@ -842,7 +843,7 @@
 	icon_state = "arrow-bone"
 	damage_types = list(BRUTE = 1) //Multiplied by 10 when fired.
 	supereffective_types = list(/mob/living/carbon/human = FALSE, /mob/living = TRUE)
-	supereffective_mult = 5 //we do 10 damage base, up to 50 against SE mobs, then with 55 AP on should do ~100. Slow to fire, unwieldly, slow projectiles (but reusable), so I'll say this is fair?
+	supereffective_mult = 5 //we do 10 damage base, up to 50 against SE mobs, then with 50 AP on should do ~100. Slow to fire, unwieldly, slow projectiles (but reusable), so I'll say this is fair?
 	armor_penetration = 5 //high ap to take advantage of overpen on mobs
 	step_delay = 0.8
 	affective_damage_range = 8 //worse than the baroque, but better than regular arrows
