@@ -2116,6 +2116,10 @@
 	RCon_tag = "Shield capacitor 1"
 	},
 /obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/shield_generator)
 "awq" = (
@@ -18862,6 +18866,10 @@
 	icon_state = "0-4"
 	},
 /obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/shield_generator)
 "efo" = (
@@ -36307,6 +36315,10 @@
 /area/nadezhda/storage/primary)
 "hTt" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "hTw" = (
@@ -71806,13 +71818,13 @@
 	icon_state = "term"
 	},
 /obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/bioreactor)
@@ -77617,6 +77629,10 @@
 	RCon_tag = "Service Substation Bypass"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation{
 	name = "Residential District Substation"
@@ -82041,6 +82057,10 @@
 /area/nadezhda/maintenance/substation/section1)
 "ryg" = (
 /obj/machinery/power/port_gen/pacman/anchored,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_room)
 "ryi" = (
@@ -82197,6 +82217,10 @@
 /area/nadezhda/engineering/engine_room)
 "rzM" = (
 /obj/machinery/power/port_gen/pacman/diesel/anchored,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_room)
 "rzR" = (
@@ -85852,6 +85876,21 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/crew_quarters/pool)
+"snj" = (
+/obj/machinery/power/terminal{
+	dir = 1;
+	icon_state = "term"
+	},
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/absolutism/bioreactor)
 "snk" = (
 /obj/structure/table/marble,
 /obj/random/booze/low_chance,
@@ -222426,7 +222465,7 @@ vaT
 nvI
 beK
 meA
-dYM
+snj
 qfx
 vAx
 eyI
