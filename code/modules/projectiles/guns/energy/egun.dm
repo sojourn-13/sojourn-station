@@ -69,6 +69,7 @@
 /obj/item/gun/energy/gun/martin/upgraded
 	name = "Overclocked \"Martin\" energy pistol"
 	desc = "An overclocked varient of the Martin energy pistol, allowing for more efficent energy consumption and a slightly intensified lens."
+	icon_state = "PDWU"
 	charge_cost = 25
 	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 4, MATERIAL_SILVER = 2, MATERIAL_URANIUM = 1)
 	price_tag = 450

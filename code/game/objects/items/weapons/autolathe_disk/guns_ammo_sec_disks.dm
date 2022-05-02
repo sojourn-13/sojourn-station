@@ -46,6 +46,7 @@
 		/datum/design/autolathe/gun/rev10,
 		/datum/design/autolathe/gun/firefly,
 		/datum/design/autolathe/gun/glock,
+		/datum/design/autolathe/gun/judge = 2,
 		//SMGs
 		/datum/design/autolathe/gun/wirbelwind = 2,
 		/datum/design/autolathe/gun/straylight,
@@ -71,6 +72,8 @@
 		/datum/design/autolathe/gun/flare_gun,
 		//laser
 		/datum/design/autolathe/gun/sunrise =3,
+		/datum/design/autolathe/gun/peacekeeper =3,
+		/datum/design/autolathe/gun/zwang =2,
 		//Misc
 		/datum/design/autolathe/tool/ironhammer,
 		/datum/design/autolathe/sec/stunbaton/maul,

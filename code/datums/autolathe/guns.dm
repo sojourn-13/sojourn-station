@@ -345,6 +345,10 @@
 	name = "SA AK 7.5 \"Breacher\""
 	build_path = /obj/item/gun/projectile/automatic/ak47/sa/tac
 
+/datum/design/autolathe/gun/judge
+	name = "NM \"Judge\""
+	build_path = /obj/item/gun/projectile/revolver/judge
+
 // . 4 0 8 H E A V Y  R I F L E S
 
 /datum/design/autolathe/gun/standard_omnirifle
@@ -526,6 +530,14 @@
 /datum/design/autolathe/gun/carpediem
 	name = "NT LM \"Carpediem\""
 	build_path = /obj/item/gun/energy/carpediem
+
+/datum/design/autolathe/gun/peacekeeper
+	name = "NM \"Peacekeeper\""
+	build_path = /obj/item/gun/energy/peacekeeper
+
+/datum/design/autolathe/gun/zwang
+	name = "NM \"Zwang\""
+	build_path = /obj/item/gun/energy/zwang
 
 // Gun mods
 

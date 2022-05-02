@@ -219,15 +219,12 @@
 	new /obj/item/device/taperecorder(src)
 	new /obj/item/clipboard(src)
 	new /obj/item/device/camera(src)
-	new /obj/item/gun/projectile/revolver/deckard(src)
 	new /obj/item/clothing/accessory/holster/armpit(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
 	new /obj/item/storage/pouch/pistol_holster(src)
 	new /obj/item/implantpad(src)
 	new /obj/item/device/t_scanner/advanced(src)
+	new /obj/item/voucher/marshal/rangerprimary(src)
+	new /obj/item/voucher/marshal/rangersecondary(src)
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections locker"
