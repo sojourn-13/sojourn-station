@@ -331,6 +331,9 @@ SUBSYSTEM_DEF(trade)
 
 	var/cost = get_sell_price(thing, station)
 
+	if(cost <= 0)
+		cost = get_import_cost(thing, station)
+
 	if(account)
 		qdel(thing)
 		senderBeacon.activate()
