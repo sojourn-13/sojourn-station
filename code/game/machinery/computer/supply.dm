@@ -8,16 +8,16 @@
 	icon_screen = "supply"
 	light_color = COLOR_LIGHTING_ORANGE_MACHINERY
 	req_access = list(access_cargo)
-	//circuit = /obj/item/electronics/circuitboard/supplycomp
+	circuit = /obj/item/circuitboard/supplycomp
 	var/temp
 	var/reqtime = 0 //Cooldown for requisitions - Quarxink
 	var/last_viewed_group = "categories"
 	var/can_order_contraband = FALSE
 	var/requestonly = FALSE
-	var/contraband = FALSE
-	var/hacked = FALSE
+	var/contraband = TRUE
+	var/hacked = TRUE
 
-/*
+
 /obj/machinery/computer/supplycomp/attack_hand(mob/user)
 	if(!allowed(user))
 		to_chat(user, SPAN_WARNING("Access Denied."))
@@ -57,11 +57,11 @@
 			dat += "<BR>\n<BR>"
 		if(!requestonly)
 			dat += "<HR>\n"
-			dat += "<b>Guild Credits: [get_account_credits(department_accounts[DEPARTMENT_GUILD])][CREDS]</b><BR><BR>"
+			dat += "<b>Guild Credits: [get_account_credits(department_accounts[DEPARTMENT_LSS])][CREDS]</b><BR><BR>"
 		dat += "<A href='?src=\ref[src];order=categories'>[requestonly ? "Request" : "Order"] items</A><BR>"
 		if(!requestonly)
 			dat += "<A href='?src=\ref[src];viewmes=1'>View messages</A><BR>"
-			dat += "<A href='?src=\ref[src];viewaccount=\ref[department_accounts[DEPARTMENT_GUILD]]'>View banking data</A><BR>"
+			dat += "<A href='?src=\ref[src];viewaccount=\ref[department_accounts[DEPARTMENT_LSS]]'>View banking data</A><BR>"
 		dat += {"
 		<A href='?src=\ref[src];viewrequests=1'>View requests</A><BR>
 		<A href='?src=\ref[src];vieworders=1'>View orders</A>"}
@@ -80,7 +80,7 @@
 		return
 	if(..())
 		return TRUE
-	var/datum/money_account/supply_account = department_accounts[DEPARTMENT_GUILD]
+	var/datum/money_account/supply_account = department_accounts[DEPARTMENT_LSS]
 	if(isturf(loc) && ( in_range(src, usr) || issilicon(usr) ) )
 		usr.set_machine(src)
 	//Calling the shuttle
@@ -273,7 +273,6 @@
 /obj/machinery/computer/supplycomp/order
 	name = "supply ordering console"
 	icon_screen = "request"
-	circuit = /obj/item/electronics/circuitboard/ordercomp
+	circuit = /obj/item/circuitboard/ordercomp
 	requestonly = TRUE
 	req_access = list()
-*/

@@ -458,3 +458,15 @@
 	name = "Bioballistic Delivery System"
 	build_path = /obj/item/circuitboard/editor
 	category = CAT_MACHINE
+
+
+// Cargo
+/datum/design/research/circuit/ordercomp
+	name = "supply ordering console"
+	build_path = /obj/item/circuitboard/ordercomp
+	category = CAT_COMP
+
+/datum/design/research/circuit/supplycomp
+	name = "supply control console"
+	build_path = /obj/item/circuitboard/supplycomp
+	category = CAT_COMP
