@@ -6,18 +6,18 @@
 	markup = 5				// High markup, low base price to prevent export abuse
 	base_income = 0
 	wealth = 0
-	secret_inv_threshold = 2000
+	hidden_inv_threshold = 2000
 	recommendation_threshold = 4000
 	stations_recommended = list("illegal1", "serbian", "greyson")
 	recommendations_needed = 1
-	assortiment = list(
+	inventory = list(
 		"Assorted Goods" = list(
 			//obj/item/storage/deferred/gun_parts = custom_good_amount_range(list(2, 4)),
 			/obj/item/storage/deferred/powercells = custom_good_amount_range(list(2, 4)),
 			/obj/item/storage/deferred/electronics = custom_good_amount_range(list(2, 4))
 		)
 	)
-	secret_inventory = list(
+	hidden_inventory = list(
 			/obj/item/storage/deferred/disks = custom_good_amount_range(list(2, 4))
 	)
 	offer_types = list(

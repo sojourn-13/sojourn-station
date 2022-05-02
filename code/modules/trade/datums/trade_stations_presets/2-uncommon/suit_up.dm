@@ -9,10 +9,22 @@
 	offer_limit = 20
 	base_income = 3200
 	wealth = 0
-	secret_inv_threshold = 24000
+	hidden_inv_threshold = 24000
 	recommendations_needed = 1
 	stations_recommended = list("rigs", "mecha")
-	assortiment = list(
+	inventory = list(
+		"Armor" = list(
+			/obj/item/clothing/head/helmet/faceshield/riot = custom_good_amount_range(list(3, 5)),
+			/obj/item/clothing/suit/armor/heavy/riot = custom_good_amount_range(list(3, 5)),
+			/obj/item/clothing/suit/armor/bulletproof = custom_good_amount_range(list(3, 5)),
+			/obj/item/clothing/head/helmet = custom_good_amount_range(list(3, 5)),
+			/obj/item/clothing/suit/armor/laserproof = custom_good_amount_range(list(1, 5)),
+			/obj/item/clothing/shoes/ablasive = custom_good_amount_range(list(1, 5)),
+			/obj/item/clothing/gloves/thick/ablasive = custom_good_amount_range(list(1, 5)),
+			/obj/item/clothing/head/helmet/laserproof = custom_good_amount_range(list(1, 5)),
+			/obj/item/clothing/head/helmet/faceshield/altyn = custom_good_amount_range(list(1, 5)),
+			/obj/item/clothing/suit/armor/flackvest/full = custom_good_amount_range(list(1, 5))
+		),
 		"Voidsuits" = list(
 			/obj/item/clothing/suit/space/void,
 			/obj/item/clothing/suit/space/void/atmos = custom_good_amount_range(list(1, 5)),
@@ -58,6 +70,16 @@
 			/obj/item/rig_module/vision/medhud,
 			/obj/item/rig_module/vision/thermal,
 			/obj/item/rig_module/storage
+		)
+	)
+
+	hidden_inventory = list(
+		"Unitity Suits" = list(
+			/obj/item/clothing/suit/space/bomb,
+			/obj/item/clothing/head/helmet/space/bomb,
+			/obj/item/clothing/suit/fire,
+			/obj/item/clothing/suit/radiation,
+			/obj/item/clothing/head/radiation
 		)
 	)
 

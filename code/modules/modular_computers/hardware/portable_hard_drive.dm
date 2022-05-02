@@ -16,6 +16,11 @@
 	var/disk_name
 	var/license = 0
 
+/obj/item/computer_hardware/hard_drive/get_item_cost(export)
+	. = ..()
+	for(var/datum/computer_file/wealth_of_file in stored_files)
+		. += (wealth_of_file.added_wealth * wealth_of_file.size)
+
 /obj/item/computer_hardware/hard_drive/portable/basic
 	name = "basic data disk"
 	icon_state = "yellow"

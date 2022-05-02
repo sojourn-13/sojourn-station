@@ -341,6 +341,12 @@
 			qdel(src)
 	On_Consume(user)
 
+/obj/item/reagent_containers/food/snacks/sliceable/get_item_cost(export)
+	. = ..() + SStrade.get_import_cost(slice_path) * slices_num
+
+/obj/item/pizzabox/get_item_cost() //Lets not make a loops
+	. = pizza?.get_item_cost()
+
 //////////////////////////////////////////////////
 ////////////////////////////////////////////Snacks
 //////////////////////////////////////////////////
