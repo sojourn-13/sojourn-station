@@ -46578,12 +46578,12 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/command/swo/quarters)
 "kdT" = (
-/obj/machinery/computer/supplycomp{
-	dir = 8
-	},
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
+	},
+/obj/item/modular_computer/console/preset/trade{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/quartermaster/office)
@@ -103301,6 +103301,9 @@
 	name = "\improper Outdoors - Pad"
 	})
 "vYj" = (
+/obj/item/modular_computer/console/preset/trade_catalog{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/quartermaster/office)
 "vYl" = (
@@ -107605,10 +107608,6 @@
 	name = "murky water"
 	},
 /area/nadezhda/maintenance/undergroundfloor1north)
-"wUn" = (
-/obj/machinery/computer/supplycomp,
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/quartermaster/hangarsupply)
 "wUu" = (
 /obj/structure/table/woodentable,
 /obj/item/device/camera,
@@ -131473,7 +131472,7 @@ hIn
 eMl
 nSQ
 grV
-wUn
+njf
 iax
 hdF
 wdJ
