@@ -172,11 +172,34 @@
 	icon_state = "nboard00"
 	notices = 0
 
-/obj/structure/noticeboard/lonestar
+/obj/structure/noticeboard/lonestar_service
 	name = "Lonestar Shipping bulletin board"
-	desc = "A board containing vital notices and official memos for Lonestar Employees"
+	desc = "A board containing vital notices and official memos for Lonestar-Service Employees"
 	icon_state = "nboard00"
 	notices = 0
+
+/obj/structure/noticeboard/lonestar_supply
+	name = "Lonestar Shipping bulletin board"
+	desc = "A board containing vital notices and official memos for Lonestar-Supply Employees"
+	icon_state = "nboard00"
+	notices = 0
+
+/obj/structure/noticeboard/lonestar_supply/New()
+	var/obj/item/paper/P = new()
+	P.name = "Memo RE: Mining Drills"
+	P.info = "<ul><li>seismic activity 1: The lowest possible pretty much. Should be a cakewalk even if you've got basic equipment or don't quite know what you're doing just yet. \
+	The scariest you'll run into is a spitter or two, at worst maybe a singular warrior. It'll also be only two burrows per drill, each spewing out groups of three until you smash'em. \
+	<li>Seismic activity 2: The biggest difference between 1 and 2 is the fact that the chances for warriors, spitters or worse is higher. Otherwise it is just three burrows that spit out groups of three. \
+	<li> Seismic activity 3: While we stay with only three burrows, each of them will now spew out four termites up until you break it, also at a faster rate. \
+	<li>Seismic activity 4: Four burrows, four termites and a relatively high chance for beefier termites to show up. \
+	<li> Seismic activity 5: Five burrows, four termites. At this point you can expect termites almost every minute out of a burrow, and a burrow every two minutes. Should have some serious firepower if you wanna tackle that. \
+	<li> Seismic activity 6: SEVEN BURROWS. FIVE TERMITES. Expect basically ONLY the beefy motherfuckers and get ready to BEAT SHIT DOWN FAST. THEY ARE COMING, AND THERE ARE MANY. Now it's literally two minutes between burrows and only sixty seconds between large groups coming from them. \
+	<b>Do not put your drill on an activity 6 spot if you ain't prepared for it, stuff WILL get out of hand, you WILL be overrun.</b></ul><br>Yeah that's about it, see ya'.<br>\
+P.S - <u><h1>Don't leave the drills running unattended!</u></h1>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
 
 /obj/structure/noticeboard/church
 	name = "Church of the Absolute bulletin board"
