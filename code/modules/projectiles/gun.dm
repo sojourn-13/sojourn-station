@@ -711,6 +711,15 @@
 		sel_mode = 1
 	return set_firemode(sel_mode)
 
+/obj/item/gun/proc/switch_firemodes_reverse()
+	if(firemodes.len <= 1)
+		return null
+	update_firemode(FALSE) //Disable the old firing mode before we switch away from it
+	sel_mode--
+	if(sel_mode < 1)
+		sel_mode = firemodes.len
+	return set_firemode(sel_mode)
+
 /// Set firemode , but without a refresh_upgrades at the start
 /obj/item/gun/proc/very_unsafe_set_firemode(index)
 	if(index > firemodes.len)
@@ -737,7 +746,7 @@
 
 	toggle_firemode(user)
 
-/obj/item/gun/proc/toggle_firemode(mob/living/user)
+/obj/item/gun/proc/toggle_firemode(mob/living/user, forward = TRUE)
 	if(currently_firing) // CHEATERS!
 		return
 	var/datum/firemode/new_mode = switch_firemodes()

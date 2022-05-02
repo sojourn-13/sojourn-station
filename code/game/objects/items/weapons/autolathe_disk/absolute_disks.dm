@@ -11,7 +11,6 @@
 	disk_name = "Church of Absolute Bioprinter Products and Utilities Plus"
 	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
 	icon_state = "neotheology_testament_u"
-
 	license = -1
 	designs = list(
 		//products
@@ -21,26 +20,25 @@
 		/datum/design/bioprinter/ez,
 		/datum/design/bioprinter/l4z,
 		/datum/design/bioprinter/rh,
-		//general clothes
-		/datum/design/bioprinter/wallet,
-		/datum/design/bioprinter/botanic_leather,
-		/datum/design/bioprinter/leather/leather_jacket,
-		/datum/design/bioprinter/belt/utility,
-		/datum/design/bioprinter/belt/medical,
-		/datum/design/bioprinter/belt/security,
-		/datum/design/bioprinter/belt/medical/emt,
-		/datum/design/bioprinter/belt/misc/champion,
-		//church clothes
-		/datum/design/bioprinter/belt/utility/neotheology,
-		/datum/design/bioprinter/nt_clothes/sports_jacket,
-		/datum/design/bioprinter/nt_clothes/acolyte_uniform,
-		/datum/design/bioprinter/nt_clothes/sports_uniform,
-		/datum/design/bioprinter/nt_clothes/church_uniform,
-		/datum/design/bioprinter/nt_clothes/hermes_shoes,
+		//utilities
+		/datum/design/bioprinter/holyvacuum,
+		/datum/design/autolathe/gun/nt_sprayer,
+		/datum/design/autolathe/device/grenade/nt_cleaner,
+		/datum/design/autolathe/device/grenade/nt_weedkiller,
 		//medical
 		/datum/design/bioprinter/medical/advanced/bruise/nt,
 		/datum/design/bioprinter/medical/advanced/ointment/nt,
 		/datum/design/autolathe/firstaid/nt,
+		//church clothes
+		/datum/design/bioprinter/belt/utility/neotheology,
+		/datum/design/bioprinter/belt/security/neotheology,
+		/datum/design/bioprinter/nt_clothes/church_uniform,
+		/datum/design/bioprinter/nt_clothes/acolyte_uniform,
+		/datum/design/bioprinter/nt_clothes/sports_uniform,
+		/datum/design/bioprinter/nt_clothes/sports_jacket,
+		/datum/design/bioprinter/sling,
+		/datum/design/bioprinter/botanic_leather,
+		/datum/design/bioprinter/nt_clothes/hermes_shoes,
 		//backpacks
 		/datum/design/bioprinter/leather/storage/backpack/satchel/neotheology,
 		/datum/design/bioprinter/leather/storage/backpack/neotheology,
@@ -54,109 +52,14 @@
 		/datum/design/bioprinter/pouch/medium_generic,
 		/datum/design/bioprinter/pouch/large_generic,
 		/datum/design/bioprinter/pouch/tubular,
-		/datum/design/bioprinter/pouch/tubular/vial,
-		/datum/design/bioprinter/sling,
-		//power cells
-		/datum/design/bioprinter/nt_cells/large,
-		/datum/design/bioprinter/nt_cells/large/plasma,
-		/datum/design/bioprinter/nt_cells/medium,
-		/datum/design/bioprinter/nt_cells/medium/plasma,
-		/datum/design/bioprinter/nt_cells/small,
-		/datum/design/bioprinter/nt_cells/small/plasma,
-		//utilities
-		/datum/design/autolathe/gun/nt_sprayer,
-		/datum/design/autolathe/device/grenade/nt_cleaner,
-		/datum/design/autolathe/device/grenade/nt_weedkiller,
-		/datum/design/bioprinter/holyvacuum
+		/datum/design/bioprinter/pouch/tubular/vial
 	)
-
 
 /obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter
 	disk_name = "Church of Absolute Bioprinter Products and Utilities"
 	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
 	icon_state = "neotheology_testament_u"
-
 	license = 20
-	designs = list(
-		//products
-		/datum/design/bioprinter/meat,
-		/datum/design/bioprinter/milk,
-		/datum/design/bioprinter/soap,
-		/datum/design/bioprinter/ez,
-		/datum/design/bioprinter/l4z,
-		/datum/design/bioprinter/rh,
-		//general clothes
-		/datum/design/bioprinter/wallet,
-		/datum/design/bioprinter/botanic_leather,
-		/datum/design/bioprinter/leather/leather_jacket,
-		/datum/design/bioprinter/belt/utility,
-		/datum/design/bioprinter/belt/medical,
-		/datum/design/bioprinter/belt/security,
-		/datum/design/bioprinter/belt/medical/emt,
-		/datum/design/bioprinter/belt/misc/champion,
-		//church clothes
-		/datum/design/bioprinter/belt/utility/neotheology,
-		/datum/design/bioprinter/nt_clothes/sports_jacket,
-		/datum/design/bioprinter/nt_clothes/acolyte_uniform,
-		/datum/design/bioprinter/nt_clothes/sports_uniform,
-		/datum/design/bioprinter/nt_clothes/church_uniform,
-		/datum/design/bioprinter/nt_clothes/hermes_shoes,
-		//medical
-		/datum/design/bioprinter/medical/advanced/bruise/nt = 2,
-		/datum/design/bioprinter/medical/advanced/ointment/nt = 2,		
-		/datum/design/autolathe/firstaid/nt = 8,
-		//backpacks
-		/datum/design/bioprinter/leather/storage/backpack/satchel/neotheology,
-		/datum/design/bioprinter/leather/storage/backpack/neotheology,
-		/datum/design/bioprinter/leather/storage/backpack/sport/neotheology,
-		//pouches
-		/datum/design/bioprinter/pouch/engineering_supply,
-		/datum/design/bioprinter/pouch/engineering_tools,
-		/datum/design/bioprinter/pouch/janitor_supply,
-		/datum/design/bioprinter/pouch/small_generic/purple = 2,
-		/datum/design/bioprinter/pouch/small_generic = 2,
-		/datum/design/bioprinter/pouch/medium_generic = 4,
-		/datum/design/bioprinter/pouch/large_generic = 8,
-		/datum/design/bioprinter/pouch/tubular,
-		/datum/design/bioprinter/pouch/tubular/vial,
-		/datum/design/bioprinter/sling,
-		//power cells
-		/datum/design/bioprinter/nt_cells/large = 4,
-		/datum/design/bioprinter/nt_cells/large/plasma = 5,
-		/datum/design/bioprinter/nt_cells/medium = 3,
-		/datum/design/bioprinter/nt_cells/medium/plasma = 4,
-		/datum/design/bioprinter/nt_cells/small = 1,
-		/datum/design/bioprinter/nt_cells/small/plasma = 2,
-		//utilities
-		/datum/design/autolathe/gun/nt_sprayer,
-		/datum/design/autolathe/device/grenade/nt_cleaner,
-		/datum/design/autolathe/device/grenade/nt_weedkiller,
-		/datum/design/bioprinter/holyvacuum
-	)
-
-/obj/item/computer_hardware/hard_drive/portable/design/nt_bioaugment
-	disk_name = "Strange Disk"
-	desc = "Now,where did this come from?"
-	icon_state = "onestar"
-
-	license = -1
-	designs = list(
-		/datum/design/bioprinter/bioimplant/osurgical,
-		/datum/design/bioprinter/bioimplant/oengineering,
-		/datum/design/bioprinter/bioimplant/oscythe,
-		/datum/design/bioprinter/bioimplant/oarmor,
-		/datum/design/bioprinter/bioimplant/omuscle,
-		/datum/design/research/item/mechfab/modules/hud/welder_bio,
-		/datum/design/research/item/mechfab/modules/hud/night_bio,
-		/datum/design/research/item/mechfab/modules/hud/thermal_bio
-	)
-
-// Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
-/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter_public
-	disk_name = "Church of Absolute Basic Bioprinter Pack"
-	icon_state = "neotheology_testament_u"
-
-	license = -1
 	designs = list(
 		/datum/design/bioprinter/meat,
 		/datum/design/bioprinter/milk,
@@ -175,6 +78,29 @@
 		/datum/design/bioprinter/belt/security,
 		/datum/design/bioprinter/belt/medical/emt,
 		/datum/design/bioprinter/belt/misc/champion,
+	)	
+
+// Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
+/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public
+	disk_name = "Church of Absolute Basic Bioprinter Pack"
+	icon_state = "neotheology_testament_u"
+	license = -1
+
+/obj/item/computer_hardware/hard_drive/portable/design/nt_bioaugment
+	disk_name = "Strange Disk"
+	desc = "Now,where did this come from?"
+	icon_state = "onestar"
+
+	license = -1
+	designs = list(
+		/datum/design/bioprinter/bioimplant/osurgical,
+		/datum/design/bioprinter/bioimplant/oengineering,
+		/datum/design/bioprinter/bioimplant/oscythe,
+		/datum/design/bioprinter/bioimplant/oarmor,
+		/datum/design/bioprinter/bioimplant/omuscle,
+		/datum/design/research/item/mechfab/modules/hud/welder_bio,
+		/datum/design/research/item/mechfab/modules/hud/night_bio,
+		/datum/design/research/item/mechfab/modules/hud/thermal_bio
 	)
 
 // Thorn and Rose Pack - both .40 and .35
@@ -612,22 +538,21 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/sword/nt_spear,
 		/datum/design/autolathe/sword/nt_warhammer,
 		/datum/design/autolathe/sword/nt_flanged,
-		/datum/design/autolathe/shield/nt_shield,
 		/datum/design/autolathe/nt/shield/nt_buckler,
+		/datum/design/autolathe/shield/nt_shield,
 		/datum/design/autolathe/gun/plasma/martyr,
-		//armor and clothes
+		//armor
+		/datum/design/bioprinter/nt_clothes/armor_kit,
 		/datum/design/bioprinter/nt_clothes/acolyte_armor_helm,
 		/datum/design/bioprinter/nt_clothes/acolyte_armor,
-		/datum/design/bioprinter/nt_clothes/rosaria_armor_helm,
-		/datum/design/bioprinter/nt_clothes/rosaria_armor,
 		/datum/design/bioprinter/nt_clothes/agrolyte_armor_helm,
 		/datum/design/bioprinter/nt_clothes/agrolyte_armor,
 		/datum/design/bioprinter/nt_clothes/custodian_armor_helm,
 		/datum/design/bioprinter/nt_clothes/custodian_armor,
+		/datum/design/bioprinter/nt_clothes/rosaria_armor_helm,
+		/datum/design/bioprinter/nt_clothes/rosaria_armor,		
 		/datum/design/bioprinter/nt_clothes/NTvoid,
 		/datum/design/bioprinter/nt_clothes/knight_rig,
-		/datum/design/bioprinter/nt_clothes/hermes_shoes,
-		/datum/design/bioprinter/belt/security/neotheology,
 		//holsters
 		/datum/design/bioprinter/leather/holster/saber/greatsword/churchprint,
 		/datum/design/bioprinter/leather/holster,
@@ -641,7 +566,14 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/bioprinter/pouch/pistol_holster,
 		//mods
 		/datum/design/autolathe/tool_upgrade/sanctifier,
-		/datum/design/autolathe/gun_upgrade/barrel/excruciator
+		/datum/design/autolathe/gun_upgrade/barrel/excruciator,
+		//power cells
+		/datum/design/bioprinter/nt_cells/small,
+		/datum/design/bioprinter/nt_cells/small/plasma,
+		/datum/design/bioprinter/nt_cells/medium,
+		/datum/design/bioprinter/nt_cells/medium/plasma,
+		/datum/design/bioprinter/nt_cells/large,
+		/datum/design/bioprinter/nt_cells/large/plasma
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms/public
