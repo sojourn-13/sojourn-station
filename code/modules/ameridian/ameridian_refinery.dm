@@ -26,6 +26,11 @@
 	overlays += "refinery_top"
 	overlays += "glass_overlay"
 
+/obj/machinery/ameridian_refinery/examine(mob/user)
+	..()
+	if(isghost(user))
+		interact(user)
+
 /obj/machinery/ameridian_refinery/attackby(obj/item/I, mob/user)
 
 	if(default_deconstruction(I, user))
@@ -125,7 +130,7 @@
 
 /obj/machinery/ameridian_refinery/interact(mob/user as mob)
 	if((get_dist(src, user) > 1) || (stat & (BROKEN|NOPOWER)))
-		if(!isAI(user))
+		if(!isAI(user) && !isghost(user))
 			user.unset_machine()
 			user << browse(null, "window=AMcontrol")
 			return
@@ -161,6 +166,9 @@
 	return
 
 /obj/machinery/ameridian_refinery/Topic(href, href_list)
+	if(isghost(usr)) // Ghosts can't do shit
+		return
+
 	//Ignore input if we are broken or guy is not touching us, AI can control from a ways away
 	if(stat & (BROKEN|NOPOWER) || (get_dist(src, usr) > 1 && !isAI(usr)))
 		usr.unset_machine()

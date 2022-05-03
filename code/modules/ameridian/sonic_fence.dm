@@ -22,8 +22,16 @@
 		for(var/obj/structure/ameridian_crystal/AC in get_turf(src))
 			if(istype(AC, /obj/structure/ameridian_crystal/spire)) // Don't destroy spires.
 				continue
-			AC.visible_message("[AC] shatters.")
+			AC.visible_message("[AC] shatter into dust under the sonic field.")
 			AC.Destroy()
+
+		for(var/obj/item/stack/material/ameridian/A in get_turf(src))
+			A.visible_message("[A] shatter into dust under the sonic field.")
+			qdel(A)
+
+		for(var/mob/living/carbon/superior_animal/ameridian_golem/G in get_turf(src))
+			G.drop_amount = 0 // The crystal golem is obliterated, don't drop any loot.
+			G.death() // Golem die.
 
 /obj/machinery/shieldwall/ameridian/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	return TRUE // Everything can go through, it's a sound barrier, not a physical thing

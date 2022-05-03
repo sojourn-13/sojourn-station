@@ -7,9 +7,7 @@
 	icon_state = "ameridian_crystal_blue"
 	anchored = TRUE
 	density = FALSE
-	light_range = 5 // Glow in the dark
-	growth = 5 // Start at max growth
-	max_growth = 5 // Doesn't grow
+	light_range = 5 // Glow brighter in the dark
 	growth_prob = 2.5 // Spread crystals faster
 	blue_crystal_prob = 0 // Cannot spawn more blue crystal
 	rad_damage = 0.75
@@ -69,7 +67,7 @@
 /obj/structure/ameridian_crystal/blue/proc/spawn_runtling(var/runtling_amt = 1)
 	var/list/turf_list = list()
 	for(var/turf/T in view(1, src))
-		if(istype(T, /turf/simulated/open) || istype(T, /turf/space))
+		if(istype(T, /turf/simulated/open) || istype(T, /turf/space) || locate(/obj/machinery/shieldwall/ameridian) in T || locate(/obj/machinery/shieldwallgen/ameridian) in T)
 			continue // Ignore turfs that are actually air
 		if(T.Enter(src)) // If we can "enter" on the tile then we can spread to it.
 			turf_list += T
@@ -83,7 +81,10 @@
 	sleep((S.len + 4) SECONDS) // 5 Seconds before the golems spawn
 
 	for(var/I = 0, I < runtling_amt, I++)
-		if(!golem) // Only one goelm out of the pack get to be our main golem
+		if(!golem) // Only one golem out of the pack get to be our main golem
 			golem = new /mob/living/carbon/superior_animal/ameridian_golem/runtling(pick(turf_list))
+			golem.node = src
 		else
 			new /mob/living/carbon/superior_animal/ameridian_golem/runtling(pick(turf_list))
+
+	return runtling_amt
