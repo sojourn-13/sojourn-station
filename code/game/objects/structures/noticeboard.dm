@@ -182,7 +182,7 @@
 	name = "Lonestar Shipping bulletin board"
 	desc = "A board containing vital notices and official memos for Lonestar-Supply Employees"
 	icon_state = "nboard00"
-	notices = 0
+	notices = 1
 
 /obj/structure/noticeboard/lonestar_supply/New()
 	var/obj/item/paper/P = new()
