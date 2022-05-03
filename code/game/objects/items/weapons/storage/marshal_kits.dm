@@ -102,7 +102,7 @@
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 
 /obj/item/storage/box/m_kit/peacekeeper
-	name = "Peacekeeper SMG Kit"
+	name = "Peacekeeper ESG Kit"
 	desc = "The standard Marshal box kit containing a Peackeeper energy shotgun, a lethal and non-lethal powerhouse of engineering."
 
 	populate_contents()
