@@ -3,7 +3,7 @@
 	icon_state = "beacon"
 	anchored = TRUE
 	density = TRUE
-	var/entropy_value = 2
+	var/entropy_value = 0.2
 
 /obj/machinery/trade_beacon/attackby(obj/item/I, mob/user)
 	if(default_deconstruction(I, user))
