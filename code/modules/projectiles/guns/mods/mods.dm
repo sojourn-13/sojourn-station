@@ -10,7 +10,7 @@
 //Silences the weapon, reduces damage multiplier slightly, Legacy port.
 /obj/item/gun_upgrade/muzzle/silencer
 	name = "Silencer"
-	desc = "A threaded silencer that can be attached to the muzzle of certain guns. Vastly reduces noise, but impedes muzzle velocity."
+	desc = "A threaded silencer that can be attached to the muzzle of certain guns. Vastly reduces noise, but increases bulk."
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
 	icon_state = "silencer"
 	price_tag = 100
@@ -145,7 +145,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.3,
-		GUN_UPGRADE_CHARGECOST = 1.15,
+		GUN_UPGRADE_CHARGECOST = 1.3,
 		UPGRADE_BULK = 0.5,
 		)
 	I.gun_loc_tag = GUN_BARREL
@@ -164,7 +164,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.45,
-		GUN_UPGRADE_CHARGECOST = 1.25,
+		GUN_UPGRADE_CHARGECOST = 1.45,
 		UPGRADE_BULK = 0.75,
 		)
 	I.gun_loc_tag = GUN_BARREL
@@ -390,7 +390,8 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 2,
-	GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
+	GUN_UPGRADE_PEN_MULT = 0.5,
+	GUN_UPGRADE_FIRE_DELAY_MULT = 2.5,
 	GUN_UPGRADE_DAMAGE_MULT = 2,
 	GUN_UPGRADE_CHARGECOST = 2)
 	I.req_fuel_cell = REQ_CELL
@@ -559,7 +560,7 @@
 		GUN_UPGRADE_DAMAGE_BRUTE = 5,
 		GUN_UPGRADE_PEN_MULT = 1.2,
 		GUN_UPGRADE_PIERC_MULT = 1,
-		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1.4,
 		GUN_UPGRADE_RECOIL = 1.2,
 		)
 	I.removal_time *= 10

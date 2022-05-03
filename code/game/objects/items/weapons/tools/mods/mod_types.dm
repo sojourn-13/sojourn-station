@@ -150,7 +150,7 @@
 	UPGRADE_WORKSPEED = 0.15
 	)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.85,
 		UPGRADE_BULK = 1
 	)
 	I.gun_loc_tag = GUN_UNDERBARREL
@@ -338,7 +338,7 @@
 	)
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_DAMAGE_MULT = 1.25,
-	GUN_UPGRADE_CHARGECOST = 1.35
+	GUN_UPGRADE_CHARGECOST = 1.3
 	)
 	I.prefix = "boosted"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
