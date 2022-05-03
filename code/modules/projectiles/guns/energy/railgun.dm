@@ -200,8 +200,8 @@
 	var/overheat_damage = 25
 
 	//Blacklisting upgrades currently dosnt work, - Trilby
-	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt,
-							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst)
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt = TRUE,
+							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 	//Until blacklisting works, this will be the supliment. You get one attachment - use it wisely....... - Rebel0
 	max_upgrades = 2
