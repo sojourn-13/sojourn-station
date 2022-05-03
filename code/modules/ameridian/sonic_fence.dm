@@ -7,6 +7,11 @@
 	power_draw = 15000 // 15 kW
 	req_access = list()
 
+/obj/machinery/shieldwallgen/ameridian/New()
+	..()
+	spawn(10)
+		update_icon()
+
 /obj/machinery/shieldwall/ameridian
 	name = "sonic fence"
 	desc = "A sonic fence specially designed to destroy ameridian crystals by targeting its resonant frequency. \
