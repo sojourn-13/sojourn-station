@@ -17492,7 +17492,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/security{
-	name = "Special equipment storage";
+	name = "E.Y.E Pod storage";
 	req_access = list(2)
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
@@ -21054,6 +21054,17 @@
 /obj/structure/flora/big/rocks2,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
+"eFS" = (
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/box/white/corners,
+/obj/effect/floor_decal/industrial/box/white/corners{
+	dir = 1;
+	icon_state = "box_corners_white"
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/tactical)
 "eGd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/liquid_fuel,
@@ -71816,7 +71827,7 @@
 /area/nadezhda/command/tcommsat/computer)
 "psz" = (
 /obj/machinery/surveillance_pod,
-/obj/effect/floor_decal/industrial/box/white,
+/obj/machinery/camera/network/security,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/tactical)
 "psK" = (
@@ -124561,7 +124572,7 @@ qPK
 qPK
 jIp
 psz
-lGg
+eFS
 lGg
 dPr
 wrN
