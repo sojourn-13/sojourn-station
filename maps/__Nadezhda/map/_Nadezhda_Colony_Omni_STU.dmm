@@ -17489,10 +17489,13 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "dPr" = (
-/obj/machinery/flasher/portable,
-/obj/effect/floor_decal/industrial/box/white,
-/obj/machinery/camera/network/security,
-/turf/simulated/floor/tiled/steel/techfloor_grid,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/security{
+	name = "Special equipment storage";
+	req_access = list(2)
+	},
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/tactical)
 "dPs" = (
 /obj/structure/table/steel_reinforced,
@@ -21180,7 +21183,8 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
+	dir = 9;
+	pixel_y = -1
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
@@ -24214,6 +24218,13 @@
 /obj/random/contraband/low_chance,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/office)
+"foo" = (
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/tactical)
 "fow" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
@@ -36467,6 +36478,14 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/colony)
+"hUG" = (
+/obj/structure/table/rack/shelf,
+/obj/item/tank/oxygen,
+/obj/item/clothing/mask/breath{
+	pixel_y = 4
+	},
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/security/tactical)
 "hUK" = (
 /obj/structure/table/woodentable,
 /obj/random/lowkeyrandom/low_chance,
@@ -48909,6 +48928,17 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/pros/prep)
+"kAk" = (
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/under/cyber{
+	pixel_y = -3
+	},
+/obj/item/clothing/head/helmet/visor/cyberpunkgoggle{
+	pixel_y = 5;
+	pixel_x = -1
+	},
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/security/tactical)
 "kAs" = (
 /obj/structure/curtain/open,
 /obj/machinery/shower{
@@ -71784,6 +71814,11 @@
 	temperature = 80
 	},
 /area/nadezhda/command/tcommsat/computer)
+"psz" = (
+/obj/machinery/surveillance_pod,
+/obj/effect/floor_decal/industrial/box/white,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/security/tactical)
 "psK" = (
 /obj/machinery/light,
 /obj/structure/table/standard,
@@ -111053,6 +111088,13 @@
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/main/stairwell)
+"xDH" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/tactical)
 "xDI" = (
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/chapel)
@@ -124113,10 +124155,10 @@ gLP
 gLP
 eNE
 qPK
-sFI
-sFI
-sFI
-sFI
+jIp
+jIp
+jIp
+jIp
 jIp
 tht
 qAa
@@ -124315,10 +124357,10 @@ kZw
 eNE
 eNE
 qPK
-sFI
-sFI
-sFI
-sFI
+jIp
+lGg
+xDH
+kAk
 jIp
 ejB
 qAa
@@ -124517,14 +124559,14 @@ qPK
 qPK
 qPK
 qPK
-sFI
-sFI
-sFI
-sFI
 jIp
+psz
+lGg
+lGg
 dPr
-qAa
-qAa
+wrN
+wrN
+wrN
 dVg
 iLG
 tku
@@ -124719,10 +124761,10 @@ sFI
 sFI
 sFI
 sFI
-sFI
-sFI
-sFI
-sFI
+jIp
+lGg
+foo
+hUG
 jIp
 ejB
 rXP
@@ -124921,10 +124963,10 @@ sFI
 sFI
 sFI
 sFI
-sFI
-sFI
-sFI
-sFI
+jIp
+jIp
+jIp
+jIp
 jIp
 tht
 rXP
