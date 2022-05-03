@@ -97,10 +97,8 @@
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
-		var/base = initial(icon_state)
-		base += options[choice]
-		icon_state = base
-		item_state = base
+		icon_state = options[choice]
+		item_state = options[choice]
 		item_state_slots = null
 		to_chat(M, "You roll your [choice].")
 		update_icon()
