@@ -404,6 +404,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/cobweb2,
+/obj/structure/noticeboard/lonestar_supply{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/steel/panels,
 /area/mine/prep)
 "bv" = (
@@ -843,6 +846,9 @@
 /obj/item/ammo_magazine/ammobox/shotgun/flashshells,
 /obj/item/ammo_magazine/ammobox/shotgun/flashshells,
 /obj/item/ammo_magazine/ammobox/shotgun/flashshells,
+/obj/structure/noticeboard/lonestar_supply{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/mine/lockers)
 "cv" = (
@@ -989,6 +995,9 @@
 /area/mine/atmos)
 "cS" = (
 /obj/machinery/atmospherics/portables_connector,
+/obj/structure/noticeboard/lonestar_supply{
+	pixel_y = 32
+	},
 /turf/simulated/floor/plating,
 /area/mine/atmos)
 "cT" = (
@@ -3085,6 +3094,9 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/structure/noticeboard/research{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "ic" = (
@@ -3967,6 +3979,9 @@
 "jX" = (
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/noticeboard/research{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostgeneral)
@@ -6305,6 +6320,9 @@
 /area/nadezhda/rnd/mixing)
 "pe" = (
 /obj/machinery/camera/network/research,
+/obj/structure/noticeboard/research{
+	pixel_y = 32
+	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
 "pf" = (
@@ -8845,6 +8863,9 @@
 "BG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/mining,
+/obj/structure/noticeboard/lonestar_supply{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/steel/danger,
 /area/mine/hallway)
 "BN" = (
@@ -8990,6 +9011,12 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/cafe,
 /area/mine/medical)
+"Fr" = (
+/obj/structure/noticeboard/lonestar_supply{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/mine/hallway)
 "FA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 10
@@ -9087,6 +9114,23 @@
 /obj/item/device/lighting/toggleable/lamp,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfive)
+"JH" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/noticeboard/lonestar_supply{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/steel,
+/area/mine/hallway)
 "JI" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -9602,6 +9646,15 @@
 	},
 /turf/simulated/floor/asteroid,
 /area/nadezhda/rnd/outpostgeneral)
+"Xq" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/noticeboard/research{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "XA" = (
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/outpostgeneral)
@@ -9616,6 +9669,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
+"XW" = (
+/obj/structure/noticeboard/research{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "Ya" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/reinforced,
@@ -13119,7 +13178,7 @@ if
 ja
 jo
 ih
-jH
+XW
 nl
 nE
 jJ
@@ -14349,7 +14408,7 @@ ih
 ih
 ih
 ih
-jN
+Xq
 jH
 Sr
 ih
@@ -37437,7 +37496,7 @@ dp
 dR
 er
 cw
-fl
+JH
 cz
 ed
 gv
@@ -39038,7 +39097,7 @@ ti
 np
 np
 ai
-by
+Fr
 by
 by
 by
