@@ -198,6 +198,9 @@
 	options["Green Forest Amber Eyes"] = "gas_mil"
 	options["Desert Sands Amber Eyes"] = "gas_mil_alt"
 	options["Black Night Amber Eyes"] = "gas_black"
+	options["Industeral Black"] = "s10_plain"
+	options["Industeral Black Blue Eyes"] = "s10_blue"
+	options["Industeral Black Red Eyes"] = "s10_red"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
