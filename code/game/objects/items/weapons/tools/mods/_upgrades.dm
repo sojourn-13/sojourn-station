@@ -58,7 +58,7 @@
 		var/obj/item/T = A
 		if(is_type_in_list(parent, T.blacklist_upgrades, TRUE))
 			if(user)
-				to_chat(user, SPAN_WARNING("[parent.name] cannot be installed on [T]!"))
+				to_chat(user, SPAN_WARNING("[parent] cannot be installed on [T]!"))
 			return FALSE
 		//No using multiples of the same upgrade
 		for(var/obj/item/I in T.item_upgrades)
