@@ -420,6 +420,11 @@
 	build_path = /obj/item/circuitboard/tesla_turret
 	category = CAT_POWER
 
+/datum/design/research/circuit/ameridianshieldwallgen
+	name = "sonic fence generator"
+	build_path = /obj/item/circuitboard/ameridianshieldwallgen
+	category = CAT_MISC
+
 //Industrial Printing
 
 /datum/design/research/circuit/industrial_chems
