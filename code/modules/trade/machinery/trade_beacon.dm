@@ -3,7 +3,7 @@
 	icon_state = "beacon"
 	anchored = TRUE
 	density = TRUE
-	var/entropy_value = 2
+	var/entropy_value = 0.2
 
 /obj/machinery/trade_beacon/attackby(obj/item/I, mob/user)
 	if(default_deconstruction(I, user))
@@ -36,7 +36,7 @@
 	return ..()
 
 /obj/machinery/trade_beacon/sending/proc/get_objects()
-	var/list/objects = range(2, src) - src		// So the beacon won't send itself in the list of objects
+	var/list/objects = range(1, src) - src		// So the beacon won't send itself in the list of objects
 	return objects
 
 /obj/machinery/trade_beacon/sending/proc/start_export()
