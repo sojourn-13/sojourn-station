@@ -7,8 +7,6 @@
 	name = "ore box"
 	desc = "A heavy box used for storing ore."
 	density = 1
-	var/last_update = 0
-	var/list/stored_ore = list()
 
 /obj/structure/ore_box/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/stack/ore))
@@ -27,17 +25,6 @@
 	update_ore_count()
 
 	return
-
-/obj/structure/ore_box/proc/update_ore_count()
-
-	stored_ore = list()
-
-	for(var/obj/item/stack/ore/O in contents)
-
-		if(stored_ore[O.name])
-			stored_ore[O.name]++
-		else
-			stored_ore[O.name] = 1
 
 /obj/structure/ore_box/examine(mob/user)
 	..()

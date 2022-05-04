@@ -276,7 +276,7 @@
 					for (, mined_ore < mineral.result_amount, mined_ore++)
 						var/obj/item/stack/ore/O = DropMineral()
 						if(box)
-							box.contents += O
+							O.forceMove(box)
 						else
 							if(bag.can_be_inserted(O, TRUE))
 								at_least_one = TRUE
@@ -325,7 +325,8 @@
 		return
 
 	clear_ore_effects()
-	var/obj/item/stack/ore/O = new mineral.ore (src)
+	var/obj/item/stack/ore/O = new mineral.ore(src)
+	O.forceMove(src)
 	return O
 
 /turf/simulated/mineral/proc/GetDrilled(var/artifact_fail = 0)
