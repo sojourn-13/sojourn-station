@@ -22,7 +22,6 @@
 			user.visible_message(SPAN_NOTICE("[user.name] empties the [S] into the box"), SPAN_NOTICE("You empty the [S] into the box."), SPAN_NOTICE("You hear a rustling sound"))
 		else
 			to_chat(user, SPAN_WARNING("There's no ore inside the [S] to empty into here"))
-	update_ore_count()
 
 	return
 
