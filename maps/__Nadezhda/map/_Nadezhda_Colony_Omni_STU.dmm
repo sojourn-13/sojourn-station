@@ -24914,14 +24914,14 @@
 /area/nadezhda/command/bridge)
 "fuS" = (
 /obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/section3)
@@ -65383,6 +65383,11 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/section3)
 "nYK" = (
@@ -83012,6 +83017,16 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/storage)
 "rGz" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/section3)
 "rGB" = (
@@ -131653,9 +131668,9 @@ cfM
 esY
 dic
 iLC
-rGz
 drN
 lXd
+rGz
 ogM
 dwc
 irf
@@ -134454,9 +134469,9 @@ gWX
 gWX
 gWX
 gWX
-gWX
-gWX
-gWX
+dQP
+dQP
+dQP
 eUv
 dQP
 tzu
