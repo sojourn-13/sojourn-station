@@ -1520,6 +1520,7 @@
 #include "code\modules\alarm\fire_alarm.dm"
 #include "code\modules\alarm\motion_alarm.dm"
 #include "code\modules\alarm\power_alarm.dm"
+#include "code\modules\ameridian\ameridian_analyzer.dm"
 #include "code\modules\ameridian\ameridian_core.dm"
 #include "code\modules\ameridian\ameridian_crystal.dm"
 #include "code\modules\ameridian\ameridian_crystal_blue.dm"

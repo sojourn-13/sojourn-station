@@ -81,7 +81,7 @@
 	if((get_dist(src, user) > 1) || (stat & (BROKEN|NOPOWER)))
 		if(!isAI(user) && !isghost(user))
 			user.unset_machine()
-			user << browse(null, "window=AMcontrol")
+			user << browse(null, "window=LiquidAmeridianProcessor")
 			return
 
 	search_bidons()
