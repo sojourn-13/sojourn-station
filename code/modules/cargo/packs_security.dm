@@ -57,6 +57,7 @@
 	crate_name = "long revolver crate"
 	group = "Enforcement"
 
+/* - To op for common getting
 /datum/supply_pack/littlecomet
 	name = "Little Comet Sidearm Crate"
 	contains = list(/obj/item/gun/projectile/revolver/little_comet)
@@ -64,6 +65,7 @@
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Little Comet Sidearm Crate"
 	group = "Enforcement"
+*/
 
 //Specialty packs that have a theme, these come with a single handgun, ammo, and something thematic. -Kaz
 /datum/supply_pack/westernshootercrate
@@ -232,7 +234,7 @@
 	cost = 750
 	crate_name = "HS .50 Kurtz Non-Lethal ammunition crate"
 	group = "Enforcement"
-	
+
 /datum/supply_pack/ammo_disks_1
 	name = "SA Always prepared Ammunition Disks Pack"
 	contains = list(/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
@@ -240,8 +242,8 @@
 	cost = 2200
 	crate_name = "Standard Ammunition Disks Crate"
 	group = "Enforcement"
-	
-	
+
+
 /datum/supply_pack/rifle_75and257
 	name = "Rifle and Carbine Ammunition Pack"
 	contains = list(/obj/item/ammo_magazine/rifle_75,
@@ -250,27 +252,27 @@
 					/obj/item/ammo_magazine/ammobox/light_rifle_257,
 					/obj/item/ammo_magazine/light_rifle_257,
 					/obj/item/ammo_magazine/light_rifle_257)
-					
+
 	cost = 980
 	crate_name = "7.5 and .257 Ammunition Crate"
 	group = "Enforcement"
-	
-	
+
+
 /datum/supply_pack/Heavyrifle_ammo
 	name = "Heavy Rifle Ammunition Pack"
 	contains = list(/obj/item/ammo_magazine/heavy_rifle_408,
 					/obj/item/ammo_magazine/heavy_rifle_408,
 					/obj/item/ammo_magazine/ammobox/heavy_rifle_408,
 					/obj/item/ammo_magazine/ammobox/heavy_rifle_408)
-					
+
 	cost = 1200
 	crate_name = ".408 Ammunition Crate"
 	group = "Enforcement"
-	
+
 /datum/supply_pack/exotic_ammo_disk
 	name = "SA Exotic Ammunition Disk Pack"
 	contains = list(/obj/item/computer_hardware/hard_drive/portable/design/exotic_ammo)
-					
+
 	cost = 1500
 	crate_name = "Exotic Ammunition Disk Crate"
 	group = "Enforcement"
@@ -405,14 +407,14 @@
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Void Wolf HellFire Crate"
 	group = "Xanorath Syndicate"
-	
-	
+
+
 /datum/supply_pack/voidwolfmarksman
 	name = "Void Marksman Kit"
 	contains = list(/obj/item/gun/projectile/boltgun/scout,
 					/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/hv,
 					/obj/item/gun_upgrade/barrel/gauss)
-					
+
 	cost = 1600
 	crate_name = "Void Wolf Marksman Kit"
 	group = "Xanorath Syndicate"

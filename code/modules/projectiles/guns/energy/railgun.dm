@@ -200,8 +200,8 @@
 	var/overheat_damage = 25
 
 	//Blacklisting upgrades currently dosnt work, - Trilby
-	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt,
-							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst)
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt = TRUE,
+							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 	//Blackisting currently does not work, but as the rail-rifle itself has been nerfed (needly) to no longer take energy/laser attachments for the time, Bat'ko can take a few extra ballistics. - Rebel0
 	max_upgrades = 4

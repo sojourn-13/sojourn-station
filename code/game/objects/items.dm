@@ -83,7 +83,7 @@
 	var/list/item_upgrades = list()
 	var/max_upgrades = 3
 	var/list/prefixes = list()
-	var/list/blacklist_upgrades = list() //Blacklisting upgrades currently dosnt work... - Trilby
+	var/list/blacklist_upgrades = list() //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
 
 
 	var/list/effective_faction = list() // Which faction the item is effective against.
@@ -589,4 +589,3 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 /obj/item/device
 	icon = 'icons/obj/device.dmi'
-

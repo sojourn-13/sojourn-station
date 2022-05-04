@@ -56,6 +56,10 @@
 	name = "Prototype: \"Ranch\" core stopper gun"
 	build_path = /obj/item/gun/energy/slimegun
 
+/datum/design/research/item/weapon/sonic_gun
+	name = "Prototype: handheld sonic emitter"
+	build_path = /obj/item/gun/energy/sonic_emitter
+
 /datum/design/research/item/weapon/chemsprayer
 	name = "Chemical Sprayer"
 	desc = "An advanced chem spraying device."

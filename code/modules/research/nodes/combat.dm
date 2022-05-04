@@ -30,6 +30,8 @@
 
 	unlocks_designs = list(/datum/design/research/item/flash)
 
+
+
 /datum/technology/weapon_recharging //You know... Its really not logical that this is even here...
 	name = "Weapon Recharging"
 	desc = "Weapon Recharging"
@@ -49,6 +51,27 @@
 							/datum/design/research/circuit/recharger
 							///datum/design/research/item/hand_charger //Not yet
 							)
+
+/datum/technology/weapon_sonic
+	name = "Sonic Weaponry And Defence"
+	desc = "The advanced sonic crystal destoryer and a shield wall of same calibration"
+	tech_type = RESEARCH_COMBAT
+
+	x = 0.5
+	y = 0.7
+	icon = "sonic"
+
+	required_technologies = list(
+								/datum/technology/weapon_recharging
+								)
+	required_tech_levels = list()
+	cost = 1000 //cheap
+
+	unlocks_designs = list(
+							/datum/design/research/item/weapon/sonic_gun,
+							/datum/design/research/circuit/ameridianshieldwallgen
+							)
+
 
 /datum/technology/advanced_nonlethal
 	name = "Advanced Non-Lethal"
