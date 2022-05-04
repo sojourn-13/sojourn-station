@@ -18524,7 +18524,7 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "aOH" = (
-/obj/item/ore/strangerock,
+/obj/item/stack/ore/strangerock,
 /turf/simulated/floor/rock/dark,
 /area/colony)
 "aOI" = (

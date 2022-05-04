@@ -23361,7 +23361,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/colony)
 "fdo" = (
-/obj/item/ore/slag,
+/obj/item/stack/ore/slag,
 /obj/random/mob/roaches/low_chance,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/dungeon/outside/burned_outpost)
@@ -29233,7 +29233,7 @@
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/bridgebar)
 "gnz" = (
-/obj/item/ore/glass,
+/obj/item/stack/ore/glass,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/colony)
 "gnA" = (
@@ -33477,7 +33477,7 @@
 "hiI" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
-/obj/item/ore,
+/obj/item/stack/ore,
 /obj/structure/flora/small/busha2,
 /turf/simulated/floor/asteroid/grass/colonialjungle3,
 /area/colony)
@@ -36114,7 +36114,7 @@
 /area/nadezhda/hallway/side/f2section1)
 "hQE" = (
 /obj/effect/decal/cleanable/rubble,
-/obj/item/ore,
+/obj/item/stack/ore,
 /obj/machinery/floodlight,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/colony)
@@ -42609,7 +42609,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/hangarsupply)
 "jkK" = (
-/obj/item/ore/slag,
+/obj/item/stack/ore/slag,
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/dungeon/outside/burned_outpost)
@@ -43799,7 +43799,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "jxq" = (
-/obj/item/ore/strangerock,
+/obj/item/stack/ore/strangerock,
 /turf/simulated/floor/rock/dark,
 /area/colony)
 "jxH" = (
@@ -54153,7 +54153,7 @@
 /area/nadezhda/hallway/surface/section1)
 "lDA" = (
 /obj/effect/decal/cleanable/rubble,
-/obj/item/ore/glass,
+/obj/item/stack/ore/glass,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/colony)
 "lDC" = (
@@ -58095,7 +58095,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "mtO" = (
-/obj/item/ore,
+/obj/item/stack/ore,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/colony)
 "mtQ" = (
@@ -67125,7 +67125,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "ory" = (
-/obj/item/ore/slag,
+/obj/item/stack/ore/slag,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "orI" = (
@@ -75387,7 +75387,7 @@
 /area/nadezhda/quartermaster/disposaldrop)
 "qeQ" = (
 /obj/effect/decal/cleanable/rubble,
-/obj/item/ore,
+/obj/item/stack/ore,
 /turf/simulated/floor/asteroid/grass,
 /area/colony)
 "qeR" = (
@@ -83505,7 +83505,7 @@
 /turf/simulated/floor/pool,
 /area/nadezhda/crew_quarters/pool)
 "rMR" = (
-/obj/item/ore,
+/obj/item/stack/ore,
 /obj/item/frame/apc,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/colony)
@@ -94053,7 +94053,7 @@
 /area/nadezhda/absolutism/storage)
 "ucx" = (
 /obj/effect/decal/cleanable/rubble,
-/obj/item/ore,
+/obj/item/stack/ore,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/colony)
 "ucH" = (
@@ -96288,7 +96288,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/server)
 "uBd" = (
-/obj/item/ore,
+/obj/item/stack/ore,
 /turf/simulated/mineral,
 /area/colony)
 "uBg" = (

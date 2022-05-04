@@ -24,16 +24,16 @@
 	var/last_use = 0.0
 
 	var/ore_types = list(
-		MATERIAL_IRON  = /obj/item/ore/iron,
-		MATERIAL_URANIUM = /obj/item/ore/uranium,
-		MATERIAL_GOLD = /obj/item/ore/gold,
-		MATERIAL_SILVER = /obj/item/ore/silver,
-		MATERIAL_DIAMOND = /obj/item/ore/diamond,
-		MATERIAL_PLASMA  = /obj/item/ore/plasma,
-		MATERIAL_OSMIUM  = /obj/item/ore/osmium,
-		MATERIAL_TRITIUM  = /obj/item/ore/hydrogen,
-		MATERIAL_GLASS  = /obj/item/ore/glass,
-		MATERIAL_PLASTIC  = /obj/item/ore/coal
+		MATERIAL_IRON  = /obj/item/stack/ore/iron,
+		MATERIAL_URANIUM = /obj/item/stack/ore/uranium,
+		MATERIAL_GOLD = /obj/item/stack/ore/gold,
+		MATERIAL_SILVER = /obj/item/stack/ore/silver,
+		MATERIAL_DIAMOND = /obj/item/stack/ore/diamond,
+		MATERIAL_PLASMA  = /obj/item/stack/ore/plasma,
+		MATERIAL_OSMIUM  = /obj/item/stack/ore/osmium,
+		MATERIAL_TRITIUM  = /obj/item/stack/ore/hydrogen,
+		MATERIAL_GLASS  = /obj/item/stack/ore/glass,
+		MATERIAL_PLASTIC  = /obj/item/stack/ore/coal
 		)
 
 	//Upgrades
@@ -354,7 +354,7 @@
 
 	var/obj/structure/ore_box/B = locate() in orange(1)
 	if(B)
-		for(var/obj/item/ore/O in contents)
+		for(var/obj/item/stack/ore/O in contents)
 			O.loc = B
 		to_chat(usr, SPAN_NOTICE("You unload the drill's storage cache into the ore box."))
 	else

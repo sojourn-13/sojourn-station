@@ -71,7 +71,7 @@
 	armor = list(melee = 20, bullet = 35, energy = 35, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/iron
+	ore = /obj/item/stack/ore/iron
 
 
 //Silver Termite - melee, slow, high-damage
@@ -97,7 +97,7 @@
 	armor = list(melee = 35, bullet = 59, energy = 20, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/silver
+	ore = /obj/item/stack/ore/silver
 
 
 //Uranium Termite - ranged, slow, med-health, low damage
@@ -127,7 +127,7 @@
 	armor = list(melee = 50, bullet = 35, energy = 20, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/uranium
+	ore = /obj/item/stack/ore/uranium
 
 
 //Plasma Termite - melee, fast, med-damage
@@ -153,7 +153,7 @@
 	armor = list(melee = 20, bullet = 30, energy = 50, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/plasma
+	ore = /obj/item/stack/ore/plasma
 
 
 //Diamond Wurm - melee, doesn't give a fuck, high-damage
@@ -180,7 +180,7 @@
 	armor = list(melee = 25, bullet = 40, energy = 50, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/diamond
+	ore = /obj/item/stack/ore/diamond
 
 
 //Osmium Termite - melee, doesn't give a fuck, high-damage
@@ -210,4 +210,4 @@
 	armor = list(melee = 50, bullet = 30, energy = 40, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/osmium
+	ore = /obj/item/stack/ore/osmium

@@ -236,9 +236,7 @@
 					next_rock += excavation_amount * 10
 					while(next_rock > 100)
 						next_rock -= 100
-						var/obj/item/ore/O = new(src)
-						geologic_data.UpdateNearbyArtifactInfo(src)
-						O.geologic_data = geologic_data
+						new /obj/item/stack/ore(src)
 				return
 			return
 
@@ -276,7 +274,7 @@
 					var/obj/item/storage/bag/ore/bag = user.get_inactive_hand()
 					var/at_least_one = FALSE
 					for (, mined_ore < mineral.result_amount, mined_ore++)
-						var/obj/item/ore/O = DropMineral()
+						var/obj/item/stack/ore/O = DropMineral()
 						if(box)
 							box.contents += O
 						else
@@ -327,10 +325,7 @@
 		return
 
 	clear_ore_effects()
-	var/obj/item/ore/O = new mineral.ore (src)
-	if(istype(O) && geologic_data)
-		geologic_data.UpdateNearbyArtifactInfo(src)
-		O.geologic_data = geologic_data
+	var/obj/item/stack/ore/O = new mineral.ore (src)
 	return O
 
 /turf/simulated/mineral/proc/GetDrilled(var/artifact_fail = 0)
@@ -376,7 +371,7 @@
 	if(prob_clean)
 		X = new /obj/item/archaeological_find(src, new_item_type = F.find_type)
 	else
-		X = new /obj/item/ore/strangerock(src, inside_item_type = F.find_type)
+		X = new /obj/item/stack/ore/strangerock(src, inside_item_type = F.find_type)
 		geologic_data.UpdateNearbyArtifactInfo(src)
 		X:geologic_data = geologic_data
 
@@ -520,8 +515,8 @@
 		return
 
 	for(var/i=0;i<(rand(3)+2);i++)
-		new/obj/item/ore/glass(src)
-		new/obj/item/ore(src)
+		new/obj/item/stack/ore/glass(src)
+		new/obj/item/stack/ore(src)
 
 	dug = 1
 	desc = "A hole has been dug here." //so we can tell from looking
