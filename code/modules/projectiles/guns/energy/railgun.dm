@@ -16,7 +16,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 6, TECH_ENGINEERING = 6)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10)
 	charge_cost = 500
-	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_ENERGY, GUN_SCOPE)
 	suitable_cell = /obj/item/cell/large
 	one_hand_penalty = 10
 	fire_delay = 14 //Slow, on par with a shotgun pump then fire
@@ -30,6 +30,10 @@
 	var/consume_cell = FALSE
 	price_tag = 2250
 	serial_type = "AG"
+
+	//Blacklisting now works!
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt = TRUE,
+							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 /obj/item/gun/energy/laser/railgun/consume_next_projectile()
 	if(!cell) return null
@@ -73,7 +77,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 4, MATERIAL_SILVER = 5)
 	fire_delay = 7
 	charge_cost = 100
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_50)
+	gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
 	recoil_buildup = 6 //Still a railgun.
 	can_dual = TRUE
 	twohanded = FALSE
@@ -199,11 +203,7 @@
 	var/projectile_cost = 1
 	var/overheat_damage = 25
 
-	//Blacklisting upgrades currently dosnt work, - Trilby
-	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt = TRUE,
-							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
-
-	//Blackisting currently does not work, but as the rail-rifle itself has been nerfed (needly) to no longer take energy/laser attachments for the time, Bat'ko can take a few extra ballistics. - Rebel0
+	//Upgrades nerfed to avoid kitting the gun out TOO much. -Rebel0
 	max_upgrades = 4
 
 /obj/item/gun/energy/laser/railgun/gauss/Initialize()
