@@ -67,6 +67,7 @@
 	var/obj/item/clothing/head/helmet/space/rig/helmet = null	// Deployable helmet, if any.
 	var/obj/item/clothing/gloves/rig/gloves = null				// Deployable gauntlets, if any.
 	cell = null								// Power supply, if any.
+	var/removable_cell = TRUE // Can you remove the cell?
 	var/obj/item/rig_module/selected_module = null				// Primary system (used with middle-click)
 	var/obj/item/rig_module/vision/visor						// Kinda shitty to have a var for a module, but saves time.
 	var/obj/item/rig_module/voice/speech						// As above.
