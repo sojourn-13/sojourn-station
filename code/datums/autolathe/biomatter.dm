@@ -193,7 +193,7 @@
 
 /datum/design/bioprinter/nt_clothes/knight_rig
 	name = "Knight Hardsuit Module"
-	materials = list(MATERIAL_BIOMATTER = 50, MATERIAL_GOLD = 5, MATERIAL_SILVER = 5, MATERIAL_PLASTEEL = 10)
+	materials = list(MATERIAL_BIOMATTER = 100, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_PLASTEEL = 100)
 	build_path = /obj/item/rig/combat/knight
 
 //[MELEE]
