@@ -299,7 +299,7 @@
 	icon_state = "monomial_kasaya"
 
 /obj/item/clothing/suit/armor/vest/path/factorial
-	name = "factorial_powergarb"
+	name = "factorial power garb"
 	desc = "Powergarbs are curious things that aren't made out of circuits but rather have golem hematite foundations, curious technology that almost only the church possess with great variety beyond xenobiology, what explains the EMP-Immune nature of the powergarbs even if, in fact, the arms behind them are alive and are actually living golems that consented (following the Church absolute terms of Free-Will) into becoming the protection of a Factorial, in fact, the reason Church does not possess any borg falls entirely to their lack of free will."
 	icon_state = "factorial_powergarb"
 
