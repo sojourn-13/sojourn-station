@@ -96,10 +96,17 @@
 
 	if(turf_list.len)
 		var/turf/T = pick(turf_list)
-		if(prob(blue_crystal_prob))
-			new /obj/structure/ameridian_crystal/blue(T)
+		var/crystal
+
+		if(blue_crystal_prob == -1)
+			crystal = /obj/structure/ameridian_crystal/red
+		else if(prob(blue_crystal_prob))
+			crystal = /obj/structure/ameridian_crystal/blue
 		else
-			new /obj/structure/ameridian_crystal(T) // We spread
+			crystal = /obj/structure/ameridian_crystal // We spread
+
+		if(crystal)
+			new crystal(T) // We spread
 
 // Check the given turf to see if there is any special things that would prevent the spread
 /obj/structure/ameridian_crystal/proc/can_spread_to_turf(var/turf/T)

@@ -33,6 +33,10 @@
 	..()
 	create_reagents(6000)
 
+/obj/machinery/liquid_ameridian_processor/examine(mob/user)
+	..()
+	if(isghost(user))
+		interact(user)
 
 /obj/machinery/liquid_ameridian_processor/attackby(obj/item/I, mob/user)
 
@@ -75,9 +79,9 @@
 
 /obj/machinery/liquid_ameridian_processor/interact(mob/user as mob)
 	if((get_dist(src, user) > 1) || (stat & (BROKEN|NOPOWER)))
-		if(!isAI(user))
+		if(!isAI(user) && !isghost(user))
 			user.unset_machine()
-			user << browse(null, "window=AMcontrol")
+			user << browse(null, "window=LiquidAmeridianProcessor")
 			return
 
 	search_bidons()
@@ -100,6 +104,9 @@
 	return
 
 /obj/machinery/liquid_ameridian_processor/Topic(href, href_list)
+	if(isghost(usr)) // Ghosts can't do shit
+		return
+
 	//Ignore input if we are broken or guy is not touching us, AI can control from a ways away
 	if(stat & (BROKEN|NOPOWER) || (get_dist(src, usr) > 1 && !isAI(usr)))
 		usr.unset_machine()
