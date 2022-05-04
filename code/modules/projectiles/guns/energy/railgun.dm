@@ -16,7 +16,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 6, TECH_ENGINEERING = 6)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10)
 	charge_cost = 500
-	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_ENERGY, GUN_SCOPE)
 	suitable_cell = /obj/item/cell/large
 	one_hand_penalty = 10
 	fire_delay = 14 //Slow, on par with a shotgun pump then fire
@@ -30,6 +30,10 @@
 	var/consume_cell = FALSE
 	price_tag = 2250
 	serial_type = "AG"
+
+	//Blacklisting now works!
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt = TRUE,
+							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 /obj/item/gun/energy/laser/railgun/consume_next_projectile()
 	if(!cell) return null
@@ -73,7 +77,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 4, MATERIAL_SILVER = 5)
 	fire_delay = 7
 	charge_cost = 100
-	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
+	gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
 	recoil_buildup = 6 //Still a railgun.
 	can_dual = TRUE
 	twohanded = FALSE
@@ -174,7 +178,7 @@
 	fire_sound = 'sound/weapons/guns/fire/gaussrifle.ogg'
 	w_class = ITEM_SIZE_HUGE
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_SILVER = 10, MATERIAL_GOLD = 8, MATERIAL_PLATINUM = 4)
-	charge_cost = 1000
+	charge_cost = 750
 	fire_delay = 30
 	recoil_buildup = 30
 	one_hand_penalty = 80 //guh
@@ -192,19 +196,15 @@
 	consume_cell = FALSE
 	price_tag = 6000
 
-	var/max_stored_matter = 4
+	var/max_stored_matter = 6
 	var/stored_matter = 0
 	var/matter_type = MATERIAL_RSCRAP
 
 	var/projectile_cost = 1
 	var/overheat_damage = 25
 
-	//Blacklisting upgrades currently dosnt work, - Trilby
-	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt = TRUE,
-							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
-
-	//Until blacklisting works, this will be the supliment. You get one attachment - use it wisely....... - Rebel0
-	max_upgrades = 2
+	//Upgrades nerfed to avoid kitting the gun out TOO much. -Rebel0
+	max_upgrades = 4
 
 /obj/item/gun/energy/laser/railgun/gauss/Initialize()
 	..()
