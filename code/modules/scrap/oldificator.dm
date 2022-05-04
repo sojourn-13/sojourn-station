@@ -201,7 +201,7 @@
 /obj/item/stack/rods/make_old()
 	return
 
-/obj/item/ore/make_old()
+/obj/item/stack/ore/make_old()
 	return
 
 /obj/item/computer_hardware/hard_drive/portable/design/make_old()

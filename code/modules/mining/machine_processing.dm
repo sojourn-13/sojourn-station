@@ -164,11 +164,11 @@
 	var/list/tick_alloys = list()
 
 	//Grab some more ore to process this tick.
-	for(var/obj/item/ore/O in get_step(src, input_dir))
+	for(var/obj/item/stack/ore/O in get_step(src, input_dir))
 		if(!isnull(ores_stored[O.material]))
-			ores_stored[O.material] += O.sheet_amout
+			ores_stored[O.material] += O.sheet_amout * O.amount
 		else
-			ores_stored[O.material] = O.sheet_amout
+			ores_stored[O.material] = O.sheet_amout * O.amount
 		if(isnull(ores_processing[O.material]))
 			ores_processing[O.material] = 0
 		qdel(O)
@@ -251,7 +251,7 @@
 			else
 				ores_stored[metal]--
 				sheets++
-				new /obj/item/ore/slag(get_step(src, output_dir))
+				new /obj/item/stack/ore/slag(get_step(src, output_dir))
 		else
 			continue
 

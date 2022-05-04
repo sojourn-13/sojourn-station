@@ -48,7 +48,7 @@
 		/obj/item/wrapping_paper = 2,
 		/obj/item/implanter = 3,
 		/obj/item/newspaper = 5,
-		/obj/item/ore/glass = 3,
+		/obj/item/stack/ore/glass = 3,
 		/obj/item/pen = 3,
 		/obj/item/reagent_containers/glass/beaker = 1,
 		/obj/item/reagent_containers/glass/bucket = 1,

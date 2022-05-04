@@ -150,7 +150,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	armor = list(melee = 20, bullet = 35, energy = 35, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/iron
+	ore = /obj/item/stack/ore/iron
 
 
 //Silver Wurm - melee, slow, tanky, low damage
@@ -176,7 +176,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	armor = list(melee = 50, bullet = 35, energy = 20, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/silver
+	ore = /obj/item/stack/ore/silver
 
 
 //Osmium Wurm - melee, fast, med-damage
@@ -203,7 +203,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 
 
 //Loot related variables
-	ore = /obj/item/ore/osmium
+	ore = /obj/item/stack/ore/osmium
 
 
 //Diamond Wurm - melee, doesn't give a fuck, high-damage
@@ -231,6 +231,6 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 
 
 //Loot related variables
-	ore = /obj/item/ore/osmium
+	ore = /obj/item/stack/ore/osmium
 
 

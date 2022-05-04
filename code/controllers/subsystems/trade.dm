@@ -1,4 +1,4 @@
-#define TRADE_SYSTEM_IC_NAME "Asters Automated Trading System"
+#define TRADE_SYSTEM_IC_NAME "LS Automated Trading System"
 GLOBAL_LIST_EMPTY(price_cache)
 SUBSYSTEM_DEF(trade)
 	name = "Trade"

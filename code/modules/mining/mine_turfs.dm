@@ -236,9 +236,7 @@
 					next_rock += excavation_amount * 10
 					while(next_rock > 100)
 						next_rock -= 100
-						var/obj/item/ore/O = new(src)
-						geologic_data.UpdateNearbyArtifactInfo(src)
-						O.geologic_data = geologic_data
+						new /obj/item/stack/ore(src)
 				return
 			return
 
@@ -275,18 +273,15 @@
 					var/obj/structure/ore_box/box = istype(user.pulling, /obj/structure/ore_box) ? user.pulling : FALSE
 					var/obj/item/storage/bag/ore/bag = user.get_inactive_hand()
 					var/at_least_one = FALSE
-					for (, mined_ore < mineral.result_amount, mined_ore++)
-						var/obj/item/ore/O = DropMineral()
-						if(box)
-							box.contents += O
-						else
-							if(bag.can_be_inserted(O, TRUE))
-								at_least_one = TRUE
-								bag.handle_item_insertion(O, suppress_warning = TRUE)
-							else break
+					var/obj/item/stack/ore/O = DropMineral(mineral.result_amount - mined_ore)
+					if(box && O)
+						O.forceMove(box)
+					else
+						if(bag.can_be_inserted(O, TRUE))
+							at_least_one = TRUE
+							bag.handle_item_insertion(O, suppress_warning = TRUE)
 					if(at_least_one)
 						to_chat(usr, SPAN_NOTICE("You put an assortment of ores in \the [src]."))
-					if(box) box.update_ore_count()
 				if(B)
 					GetDrilled(0)
 				else
@@ -322,15 +317,13 @@
 	for(var/obj/effect/mineral/M in contents)
 		qdel(M)
 
-/turf/simulated/mineral/proc/DropMineral()
+/turf/simulated/mineral/proc/DropMineral(mineralamount = 1)
 	if(!mineral)
 		return
 
 	clear_ore_effects()
-	var/obj/item/ore/O = new mineral.ore (src)
-	if(istype(O) && geologic_data)
-		geologic_data.UpdateNearbyArtifactInfo(src)
-		O.geologic_data = geologic_data
+	var/obj/item/stack/ore/O = new mineral.ore(src)
+	O.amount = mineralamount
 	return O
 
 /turf/simulated/mineral/proc/GetDrilled(var/artifact_fail = 0)
@@ -338,8 +331,7 @@
 	if (mineral && mineral.result_amount)
 
 		//if the turf has already been excavated, some of it's ore has been removed
-		for (var/i = 1 to mineral.result_amount - mined_ore)
-			DropMineral()
+		DropMineral(mineral.result_amount - mined_ore)
 
 	//destroyed artifacts have weird, unpleasant effects
 	//make sure to destroy them before changing the turf though
@@ -376,7 +368,7 @@
 	if(prob_clean)
 		X = new /obj/item/archaeological_find(src, new_item_type = F.find_type)
 	else
-		X = new /obj/item/ore/strangerock(src, inside_item_type = F.find_type)
+		X = new /obj/item/stack/ore/strangerock(src, inside_item_type = F.find_type)
 		geologic_data.UpdateNearbyArtifactInfo(src)
 		X:geologic_data = geologic_data
 
@@ -519,9 +511,10 @@
 	if(dug)
 		return
 
-	for(var/i=0;i<(rand(3)+2);i++)
-		new/obj/item/ore/glass(src)
-		new/obj/item/ore(src)
+	var/obj/item/stack/ore/newsand = new /obj/item/stack/ore/glass(src)
+	newsand.amount = rand(3)+2
+	newsand = new /obj/item/stack/ore(src)
+	newsand.amount = rand(3)+2
 
 	dug = 1
 	desc = "A hole has been dug here." //so we can tell from looking

@@ -19539,7 +19539,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
 "aTP" = (
-/obj/item/ore/slag,
+/obj/item/stack/ore/slag,
 /obj/random/mob/roaches/low_chance,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/dungeon/outside/burned_outpost)
@@ -19564,7 +19564,7 @@
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "aTV" = (
-/obj/item/ore/slag,
+/obj/item/stack/ore/slag,
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/dungeon/outside/burned_outpost)
@@ -19602,7 +19602,7 @@
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "aUe" = (
-/obj/item/ore/slag,
+/obj/item/stack/ore/slag,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "aUf" = (
