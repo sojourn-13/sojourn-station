@@ -81,6 +81,34 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/bnnuy
+	name = "Bunny Ears, Short"
+	desc = ""
+	icon_state = "bnnuy"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/bnnuy
+	name = "Bunny Ears, Long"
+	desc = ""
+	icon_state = "bnnuy_long"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/jackalope
+	name = "Jackalope ears and horns"
+	desc = ""
+	icon_state = "jackalope"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/jackalopeh
+	name = "Jackalope horns"
+	desc = ""
+	icon_state = "jackalopehorns" //wouldn't these just be deer antlers?
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/caprahorns
 	name = "Caprine Horns"
 	desc = ""
