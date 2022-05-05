@@ -57715,6 +57715,9 @@
 /obj/machinery/camera/network/research{
 	dir = 8
 	},
+/obj/structure/noticeboard/research{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology)
 "moI" = (
@@ -100523,9 +100526,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
-	},
-/obj/structure/noticeboard/research{
-	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/rnd/xenobiology)
