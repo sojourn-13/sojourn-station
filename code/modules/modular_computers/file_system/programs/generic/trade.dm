@@ -96,12 +96,12 @@
 			return TRUE
 
 	if(href_list["PRG_receiving"])
-		var/obj/machinery/trade_beacon/receiving/B = LAZYACCESS(SStrade.beacons_receiving, text2num(href_list["PRG_receiving"]))
+		var/obj/machinery/trade_beacon/receiving/B = input("Select receiving beacon", "Receiving Beacon", null) as null|anything in SStrade.receiving_list
 		receiving = B
 		return TRUE
 
 	if(href_list["PRG_sending"])
-		var/obj/machinery/trade_beacon/sending/B = LAZYACCESS(SStrade.beacons_sending, text2num(href_list["PRG_sending"]))
+		var/obj/machinery/trade_beacon/sending/B = input("Select sending beacon", "Sending Beacon", null) as null|anything in SStrade.sending_list
 		sending = B
 		return TRUE
 
