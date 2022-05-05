@@ -27,12 +27,18 @@
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific
 	name = "soporific coated rubber bullet"
+	var/spray = "stoxin"
+
+/obj/item/projectile/bullet/pistol_35/rubber/soporific/New()
+	..()
+	create_reagents(2)
+	reagents.add_reagent(spray, 2)
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)
-			L.reagents.add_reagent("stoxin", 2)
+			reagents.trans_to_mob(L, 2, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo
 	name = "soporific condensed plastic bullet"
@@ -156,12 +162,18 @@
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific
 	name = "soporific coated rubber bullet"
+	var/spray = "stoxin"
+
+/obj/item/projectile/bullet/magnum_40/rubber/soporific/New()
+	..()
+	create_reagents(3)
+	reagents.add_reagent(spray, 3)
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)
-			L.reagents.add_reagent("stoxin", 3)
+			reagents.trans_to_mob(L, 3, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
@@ -351,12 +363,19 @@
 
 /obj/item/projectile/bullet/rifle_75/rubber/soporific
 	name = "soporific coated rubber bullet"
+	var/spray = "stoxin"
+
+/obj/item/projectile/bullet/rifle_75/rubber/soporific/New()
+	..()
+	create_reagents(1)
+	reagents.add_reagent(spray, 1)
 
 /obj/item/projectile/bullet/rifle_75/rubber/soporific/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)
-			L.reagents.add_reagent("stoxin", 1)
+			reagents.trans_to_mob(L, 1, CHEM_TOUCH, copy = FALSE)
+
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
@@ -517,17 +536,24 @@
 	embed = FALSE
 	sharp = FALSE
 	step_delay = 1.65
-	affective_damage_range = 1
+	affective_damage_range = 5
 	affective_ap_range = 2
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific
 	name = "soporific coated beanbag"
+	var/spray = "stoxin"
+
+/obj/item/projectile/bullet/shotgun/beanbag/soporific/New()
+	..()
+	create_reagents(5)
+	reagents.add_reagent(spray, 5)
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)
-			L.reagents.add_reagent("stoxin", 5)
+			reagents.trans_to_mob(L, 5, CHEM_TOUCH, copy = FALSE)
+
 
 /obj/item/projectile/bullet/shotgun/practice
 	name = "practice slug"
