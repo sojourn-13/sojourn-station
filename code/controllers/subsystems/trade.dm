@@ -180,10 +180,19 @@ SUBSYSTEM_DEF(trade)
 
 		return FALSE
 
+
 	if(ispath(offer_path, /datum/reagent))		// If item is not of the types checked and the offer is for a reagent, fail
 		return FALSE
 
+	if(istype(item, /obj/item/stack))						// Check if item is an item stack
+		var/obj/item/stack/item_stack = item
+		if(item_stack.amount == item_stack.max_amount)
+			return TRUE										// You can only sell items when they are at max stacks
+		return FALSE
+
 	return TRUE
+
+
 
 /datum/controller/subsystem/trade/proc/assess_offer(obj/machinery/trade_beacon/sending/beacon, datum/trade_station/station, offer_path)
 	if(QDELETED(beacon) || !station)

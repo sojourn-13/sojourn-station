@@ -3,7 +3,7 @@
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "ore2"
 	w_class = ITEM_SIZE_SMALL
-	max_amount = 1200
+	max_amount = 120
 	var/crushable = TRUE
 	var/datum/geosample/geologic_data
 	var/material
