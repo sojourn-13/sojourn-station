@@ -336,6 +336,9 @@
 	check_armour = ARMOR_ENERGY
 	var/golem_damage_bonus = 20 // Damage multiplier against ameridians.
 
+/obj/item/projectile/sonic_bolt/heavy
+	damage_types = list(BRUTE = 30)
+	kill_count = 14
 
 /obj/item/projectile/tether
 	name = "tether grappler"
