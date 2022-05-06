@@ -279,7 +279,7 @@ No more of that.
 			else
 				CRASH("[W], incompatible department")
 
-		else if(istype(W, /obj/item/tool))
+		else if(istype(W, /obj/item/tool) && !istype(W, /obj/item/tool/psionic_omnitool))
 			var/useful = FALSE
 			if(W.tool_qualities)
 
@@ -356,7 +356,7 @@ No more of that.
 		else
 			to_chat(user, SPAN_WARNING("The [W] is not suitable for [src]!"))
 			return
-
+		if(insert_item(src, user))
 		to_chat(user, SPAN_NOTICE("You feed [W] to [src]."))
 		SEND_SIGNAL(user, COMSIG_OBJ_TECHNO_TRIBALISM, W)
 		items_count += 1
