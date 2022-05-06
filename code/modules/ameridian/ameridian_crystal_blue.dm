@@ -45,12 +45,7 @@
 	if(user.a_intent == I_HELP && user.Adjacent(src) && (I.has_quality(QUALITY_EXCAVATION) || I.has_quality(QUALITY_DIGGING) || I.has_quality(QUALITY_SHOVELING)))
 		src.visible_message(SPAN_NOTICE("[user] starts start digging [src] up."), SPAN_NOTICE("You start digging [src] up."))
 		if(do_after(user, WORKTIME_SLOW, src))
-			visible_message("[src] crumbles into a pile of crystals...")
-			icon_state = ""
-			spawn_runtling(amount_runtling_destruction)
-			visible_message(SPAN_DANGER("[src] reforms into multiple golems!"))
-			activate_mobs_in_range(src, 15) // Wake up the nearby golems
-			qdel(src)
+			harvest_crystals()
 		else
 			to_chat(user, SPAN_WARNING("You must stay still to finish excavation."))
 	else
@@ -88,3 +83,11 @@
 			new /mob/living/carbon/superior_animal/ameridian_golem/runtling(pick(turf_list))
 
 	return runtling_amt
+
+/obj/structure/ameridian_crystal/blue/harvest_crystals()
+	visible_message("[src] crumbles into a pile of crystals...")
+	icon_state = ""
+	spawn_runtling(amount_runtling_destruction)
+	visible_message(SPAN_DANGER("[src] reforms into multiple golems!"))
+	activate_mobs_in_range(src, 15) // Wake up the nearby golems
+	qdel(src)
