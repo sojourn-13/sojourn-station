@@ -269,7 +269,7 @@
 	steps = list(
 		list(/obj/item/clothing/head/helmet/ballistic/militia, 1, "time" = 30),
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
-		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS),
 		list(QUALITY_WELDING, 15, 30),
 		list(QUALITY_ADHESIVE, 15, 30)
 	)
