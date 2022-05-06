@@ -2,8 +2,8 @@
 /obj/machinery/ameridian_analyzer
 	name = "liquid ameridian analyzer"
 	desc = "Analyze & Consume liquid ameridian to produce research points."
-	icon = 'icons/obj/machines/grinder.dmi'
-	icon_state = "ameridian_processor"
+	icon = 'icons/obj/genetics/dna_machine_samples.dmi'
+	icon_state = "dna_machine"
 	density = TRUE
 	anchored = TRUE
 	layer = ABOVE_ALL_MOB_LAYER
@@ -39,7 +39,25 @@
 	updateDialog()
 
 /obj/machinery/ameridian_analyzer/RefreshParts()
+	var/man_rating = 0
+	var/man_amount = 0
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		man_rating += M.rating
+		man_amount++
+	man_rating /= man_amount
 
+	point_worth = initial(point_worth) * man_rating // 10 points at T1, 20 points at T2, 30 points at T3, e.t.c.
+
+	var/mb_rating = 0
+	var/mb_amount = 0
+	for(var/obj/item/stock_parts/matter_bin/MB in component_parts)
+		mb_rating += MB.rating
+		mb_amount++
+	mb_rating /= mb_amount
+
+	consume_rate = initial(consume_rate) * mb_rating
+
+	updateDialog()
 
 /obj/machinery/ameridian_analyzer/attack_hand(mob/user as mob)
 	interact(user)
