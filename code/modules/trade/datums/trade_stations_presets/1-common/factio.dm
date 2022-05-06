@@ -14,13 +14,13 @@
 	stations_recommended = list("greyson")
 	inventory = list(
 		"Disk Designs" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/misc = good_data("Lonestar Miscellaneous Pack", list(1, 10), 150),
-			/obj/item/computer_hardware/hard_drive/portable/design/robustcells = good_data("Lonestar Robustcells", list(1, 10), 130),
-			/obj/item/computer_hardware/hard_drive/portable/design/janitor = good_data("Lonestar Janitor Pack", list(1, 10), 60),
-			/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = good_data("H&S Nonlethal Magazines Pack", list(1, 10), 750),
-			/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo = good_data("H&S Lethal Magazines Pack", list(1, 10), 950),
-			/obj/item/computer_hardware/hard_drive/portable/design/security = good_data("Security Miscellaneous Pack", list(1, 10), 450),
-			/obj/item/computer_hardware/hard_drive/portable = good_data("Blank Disk", list(1, 10), 15)
+			/obj/item/computer_hardware/hard_drive/portable/design/misc = good_data("Lonestar Miscellaneous Pack", list(1, 10)),
+			/obj/item/computer_hardware/hard_drive/portable/design/robustcells = good_data("Lonestar Robustcells", list(1, 10)),
+			/obj/item/computer_hardware/hard_drive/portable/design/janitor = good_data("Lonestar Janitor Pack", list(1, 10)),
+			/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = good_data("H&S Nonlethal Magazines Pack", list(1, 10)),
+			/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo = good_data("H&S Lethal Magazines Pack", list(1, 10)),
+			/obj/item/computer_hardware/hard_drive/portable/design/security = good_data("Security Miscellaneous Pack", list(1, 10)),
+			/obj/item/computer_hardware/hard_drive/portable = good_data("Blank Disk", list(1, 10))
 		),
 		"Printed Goods" = list(
 			/obj/item/cell/large = good_data("Large Power Cell", list(-9900, -9850), 60),
@@ -44,7 +44,6 @@
 			/obj/item/shield = good_data("Shield", list(-9900, -850), 250),
 			/obj/item/gun_upgrade = good_data("Gun Upgrade", list(-9900, -9850), 350),
 			/obj/item/tool/baton = good_data("Stun Baton", list(-9900, -9850), 250),
-			/obj/item/gun_upgrade = good_data("Gun Upgrade", list(-9900, -9850), 350),
 			/obj/item/extinguisher = good_data("Extinguisher", list(-9900, -9850), 30)
 		)
 	)
