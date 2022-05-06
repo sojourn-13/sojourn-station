@@ -35,6 +35,8 @@
 
 	var/markup = WHOLESALE_GOODS
 	var/markdown = 0.8				// Default markdown is 20% - SoJ edit they get less markdown
+	var/favour_purchase_ratio = 0.25
+
 
 	var/list/inventory = list()
 	var/list/offer_types = list()	// Defines special offers
@@ -275,7 +277,7 @@
 	if(!isnum(income))
 		return
 	wealth += income
-	favor += income * (is_offer ? 1 : 0.125)
+	favor += income * (is_offer ? 1 : favour_purchase_ratio)
 
 	// Unlocks without needing to wait for update tick
 	if(!hidden_inv_unlocked)

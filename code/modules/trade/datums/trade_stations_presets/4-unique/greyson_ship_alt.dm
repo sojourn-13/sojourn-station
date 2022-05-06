@@ -16,25 +16,25 @@
 			/obj/item/computer_hardware/hard_drive/portable/design/onestar = good_data("GP Tool Disk", list(-2, 1), 1200)
 		),
 		"Gongju" = list(
-			/obj/item/tool/crowbar/onestar = good_data("GP Crowbar", list(-100, -50), 500),
-			/obj/item/tool/onestar_multitool = good_data("GP Multitool", list(-100, -50), 600),
-			/obj/item/tool/weldingtool/onestar = good_data("GP Welding Tool", list(-100, -50), 500),
-			/obj/item/tool/screwdriver/combi_driver/onestar = good_data("GP Combination Drill", list(-100, -50), 700),
-			/obj/item/tool/hammer/powered_hammer/onestar_hammer = good_data("GP Sledgehammer", list(-100, -50), 800),
-			/obj/item/tool/pickaxe/jackhammer/onestar = good_data("GP Jackhammer", list(-100, -50), 600),
-			/obj/item/tool/pickaxe/drill/onestar = good_data("GP Mining Drill", list(-100, -50), 600),
-			/obj/item/tool/pickaxe/onestar = good_data("GP Pickaxe", list(-100, -50), 500),
-			/obj/item/tool/shovel/onestar_shovel = good_data("GP Shovel", list(-100, -50), 450),
-			/obj/item/tool/saw/onestar_saw = good_data("GP Handsaw", list(-100, -50), 700),
-			/obj/item/tool/medmultitool = good_data("GP Medical Multitool", list(-100, -50), 800),
-			/obj/item/tool/wirecutters/onestar_pliers = good_data("GP Pliers", list(-100, -50), 700)
+			/obj/item/tool/crowbar/onestar = good_data("GP Crowbar", list(-100, -50)),
+			/obj/item/tool/onestar_multitool = good_data("GP Multitool", list(-100, -50)),
+			/obj/item/tool/weldingtool/onestar = good_data("GP Welding Tool", list(-100, -50)),
+			/obj/item/tool/screwdriver/combi_driver/onestar = good_data("GP Combination Drill", list(-100, -50)),
+			/obj/item/tool/hammer/powered_hammer/onestar_hammer = good_data("GP Sledgehammer", list(-100, -50)),
+			/obj/item/tool/pickaxe/jackhammer/onestar = good_data("GP Jackhammer", list(-100, -50)),
+			/obj/item/tool/pickaxe/drill/onestar = good_data("GP Mining Drill", list(-100, -50)),
+			/obj/item/tool/pickaxe/onestar = good_data("GP Pickaxe", list(-100, -500),
+			/obj/item/tool/shovel/onestar_shovel = good_data("GP Shovel", list(-100, -50)),
+			/obj/item/tool/saw/onestar_saw = good_data("GP Handsaw", list(-100, -50)),
+			/obj/item/tool/medmultitool = good_data("GP Medical Multitool", list(-100, -50)),
+			/obj/item/tool/wirecutters/onestar_pliers = good_data("GP Pliers", list(-100, -50))
 		),
 		"Beijian" = list(
-			/obj/item/stock_parts/micro_laser/one_star = good_data("GP Micro Laser", list(-100, -50), 575),
-			/obj/item/stock_parts/matter_bin/one_star = good_data("GP Matter Bin", list(-100, -50), 575),
-			/obj/item/stock_parts/scanning_module/one_star = good_data("GP Scanning Module", list(-100, -50), 575),
-			/obj/item/stock_parts/capacitor/one_star = good_data("GP Capacitor", list(-100, -50), 575),
-			/obj/item/stock_parts/manipulator/one_star = good_data("GP Manipulator", list(-100, -50), 575)
+			/obj/item/stock_parts/micro_laser/one_star = good_data("GP Micro Laser", list(-100, -50)),
+			/obj/item/stock_parts/matter_bin/one_star = good_data("GP Matter Bin", list(-100, -50)),
+			/obj/item/stock_parts/scanning_module/one_star = good_data("GP Scanning Module", list(-100, -50)),
+			/obj/item/stock_parts/capacitor/one_star = good_data("GP Capacitor", list(-100, -50)),
+			/obj/item/stock_parts/manipulator/one_star = good_data("GP Manipulator", list(-100, -50))
 		)
 	)
 	hidden_inventory = list(
@@ -54,12 +54,12 @@
 			/obj/item/clothing/suit/armor/vest/iron_lock_security = good_data("ILS Ablasive Vest", list(-100, -50), 475)
 		),
 		"Gongju mo zu" = list(
-			/obj/item/tool_upgrade/augment/holding_tank = good_data("GP Welder Fule Holding Tank", list(-100, -50), 1000),
-			/obj/item/tool_upgrade/augment/repair_nano = good_data("GP Nano Repair", list(-100, -50), 1275),
-			/obj/item/tool_upgrade/augment/ai_tool = good_data("GP Nano AI", list(-100, -50), 1375),
+			/obj/item/tool_upgrade/augment/holding_tank = good_data("GP Welder Fule Holding Tank", list(-100, -50)),
+			/obj/item/tool_upgrade/augment/repair_nano = good_data("GP Nano Repair", list(-100, -50)),
+			/obj/item/tool_upgrade/augment/ai_tool = good_data("GP Nano AI", list(-100, -50)),
 			//Guns are tools too
-			/obj/item/gun_upgrade/mechanism/glass_widow = good_data("GP Glass Widow", list(-100, -50), 1200),
-			/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = good_data("GP \"Master Unmaker\" infuser", list(-100, -50), 15000)
+			/obj/item/gun_upgrade/mechanism/glass_widow = good_data("GP Glass Widow", list(-100, -50)),
+			/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = good_data("GP \"Master Unmaker\" infuser", list(-100, -50))
 		)
 	)
 
