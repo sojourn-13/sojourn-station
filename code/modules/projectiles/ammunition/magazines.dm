@@ -355,7 +355,7 @@
 
 /obj/item/ammo_magazine/light_rifle_257_drum
 	name = "carbine drum magazine"
-	desc = "A 75 round drum magazine marked for .257 Carbine."
+	desc = "A 50 round drum magazine marked for .257 Carbine."
 	icon_state = "lrifle_drum"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_STANMAG
@@ -364,7 +364,7 @@
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_STEEL = 12)
 	ammo_type = /obj/item/ammo_casing/light_rifle_257
-	max_ammo = 75
+	max_ammo = 50
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/light_rifle_257_drum/empty
@@ -478,7 +478,7 @@
 
 /obj/item/ammo_magazine/rifle_75_drum
 	name = "rifle drum magazine"
-	desc = "A 50 round drum magazine marked for 7.5mm Rifle."
+	desc = "A 40 round drum magazine marked for 7.5mm Rifle."
 	icon_state = "rifle_drum"
 	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
@@ -487,7 +487,7 @@
 	caliber = CAL_RIFLE
 	matter = list(MATERIAL_STEEL = 12)
 	ammo_type = /obj/item/ammo_casing/rifle_75
-	max_ammo = 50
+	max_ammo = 40
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/rifle_75_drum/empty
@@ -607,6 +607,7 @@
 	icon_state = "hrifle"
 	desc = "A 20 round magazine marked for .408 Omni."
 	origin_tech = list(TECH_COMBAT = 2)
+	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_HRIFLE
 	caliber = CAL_HRIFLE
@@ -647,7 +648,7 @@
 /obj/item/ammo_magazine/heavy_rifle_408_drum
 	name = "heavy rifle drum magazine"
 	icon_state = "hdrum"
-	desc = "A 38 round drum magazine marked for .408 Heavy Rifle."
+	desc = "A 36 round drum magazine marked for .408 Heavy Rifle."
 	origin_tech = list(TECH_COMBAT = 2)
 	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
