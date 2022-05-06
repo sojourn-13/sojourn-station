@@ -67,8 +67,8 @@
 	department = DEPARTMENT_ENGINEERING
 	department_flag = ENGINEERING
 	faction = MAP_FACTION
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Guild Master"
 	difficulty = "Medium."
 	selection_color = "#d5c88f"

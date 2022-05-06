@@ -343,8 +343,8 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	alt_titles = list("Blackshield Cadet", "Blackshield Militiamen")
@@ -393,8 +393,8 @@
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
 	faction = MAP_FACTION
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
 	alt_titles = list("Marshal Junior Officer")

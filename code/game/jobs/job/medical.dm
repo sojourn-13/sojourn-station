@@ -64,8 +64,8 @@
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
 	faction = MAP_FACTION
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Chief Biolab Overseer"
 	difficulty = "Boring to Overwhelming."
 	selection_color = "#a8b69a"
@@ -112,8 +112,8 @@
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
 	faction = MAP_FACTION
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the Chief Biolab Overseer"
 	difficulty = "Ungratifying."
 	selection_color = "#a8b69a"

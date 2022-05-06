@@ -4,8 +4,8 @@
 	department = DEPARTMENT_CIVILIAN
 	department_flag = CIVILIAN
 	faction = MAP_FACTION
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 6
+	spawn_positions = 6
 	supervisors = "anyone who pays you"
 	difficulty = "Very Easy."
 	selection_color = "#dddddd"

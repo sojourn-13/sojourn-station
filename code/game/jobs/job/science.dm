@@ -64,8 +64,8 @@
 	department = DEPARTMENT_SCIENCE
 	department_flag = SCIENCE
 	faction = MAP_FACTION
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Chief Research Overseer"
 	difficulty = "Medium."
 	selection_color = "#bdb1bb"

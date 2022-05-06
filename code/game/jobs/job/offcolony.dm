@@ -41,8 +41,8 @@
 
 /datum/job/off_colony_hunter
 	title = "Lodge Hunter"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	flag = LODGEHUNTER
 	faction = MAP_FACTION
 	department = DEPARTMENT_INDEPENDENT

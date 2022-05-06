@@ -31,7 +31,7 @@
 		STAT_TGH = 10,
 	)
 
-	perks = list(/datum/perk/neat, /datum/perk/greenthumb, /datum/perk/channeling 
+	perks = list(/datum/perk/neat, /datum/perk/greenthumb, /datum/perk/channeling
 		//, /datum/perk/chemist -Thanos Voice: "A small price to pay for salvation."
 	)
 
@@ -67,8 +67,8 @@
 	department = DEPARTMENT_CHURCH
 	department_flag = CHURCH
 	faction = MAP_FACTION
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Prime"
 	difficulty = "Easy to Medium."
 	selection_color = "#ecd37d"

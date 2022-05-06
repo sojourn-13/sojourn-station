@@ -62,8 +62,8 @@ Counsel the council on directing the colony towards profitable opportunities."
 	department = DEPARTMENT_LSS
 	department_flag = LSS
 	faction = MAP_FACTION
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	alt_titles = list("Cargo Specialist","Lonestar Junior Technician")
@@ -113,8 +113,8 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 	department = DEPARTMENT_LSS
 	department_flag = LSS
 	faction = MAP_FACTION
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	alt_titles = list("Lonestar Drill Technician","Lonestar Digger","Mining Specialist","Junior Lonestar Miner")

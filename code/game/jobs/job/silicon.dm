@@ -46,8 +46,8 @@
 	department = "Colony-Bound"
 	department_flag = MISC
 	faction = MAP_FACTION
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	//alt_titles = list("Drone", "Cyborg")
 	supervisors = "your laws and the AI"
 	difficulty = "Medium to Hard."
