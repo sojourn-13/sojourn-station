@@ -20,10 +20,9 @@ SUBSYSTEM_DEF(trade)
 
 	// For tracking/logging
 	var/export_invoice_number = 0
-	var/order_number = 0
+	var/shipping_invoice_number = 0
 	var/offer_invoice_number = 0
-	var/sell_receipt_number = 0		// Unused
-	var/sell_receipt_contents		// Unused
+	var/sell_invoice_number = 0
 
 	var/list/export_log = list()
 	var/list/order_log = list()
@@ -132,7 +131,6 @@ SUBSYSTEM_DEF(trade)
 				station.recommendations_needed -= 1
 				if(!station.recommendations_needed)
 					discovered_stations |= station
-					GLOB.entered_event.unregister(station.overmap_location, station, /datum/trade_station/proc/discovered)
 
 // === PRICING ===
 
@@ -244,17 +242,7 @@ SUBSYSTEM_DEF(trade)
 		var/credits_to_account = round(offer_price * 0.8)
 		var/credits_to_lonestar = round(offer_price * 0.2)
 
-		var/obj/item/paper/invoice/I = new(beacon.loc)
-
-		I.name = "special offer invoice - #[id] ([station.name])"
-		I.type += "Special Offer"
-		I.invoice_id = "[++SStrade.offer_invoice_number]SO"
-		I.destination = station.name
-		I.invoice_contents = invoice_contents_info
-		I.paid_to_account = "([account.get_name()]): [credits_to_account]"
-		I.paid_to_lonestar = credits_to_lonestar
-		I.total_payout = cost
-		I.build_invoice()
+		create_log_entry("Special Offer", account.get_name(), invoice_contents_info, offer_price)
 
 		beacon.activate()
 		var/datum/transaction/T = new(credits_to_account, account.get_name(), "Special deal", station.name)
@@ -319,22 +307,12 @@ SUBSYSTEM_DEF(trade)
 				var/item_name = initial(AM.name)
 				if(islist(good_packet))
 					item_name = good_packet["name"] ? good_packet["name"] : item_name
-				order_contents_info += "<li>[count_of_good]x [item_name], [get_import_cost(AM)] credits per unit</li>"
+				order_contents_info += "<li>[count_of_good]x [item_name]</li>"
 
 	if(count_of_all > 1)
 		invoice_location = C
 
-	var/obj/item/paper/invoice/I = new(invoice_location)
-
-	// For sanity, station.name is the trade station name and station_name() is the colony name
-	I.name = "shipping invoice - #[id] ([station.name])"
-	I.invoice_type = "Shipping"
-	I.invoice_id = "[++SStrade.order_number]S"
-	I.destination = station_name()
-	I.order_name = "[station.name] Order"
-	I.invoice_contents = order_contents_info
-	I.total_payout = price_for_all
-	I.build_invoice()
+	create_log_entry("Shipping", account.get_name(), order_contents_info, price_for_all, TRUE, invoice_location)
 
 	station.add_to_wealth(price_for_all)	// can only buy from one station at a time
 	charge_to_account(account.account_number, account.get_name(), "Purchase", station.name, price_for_all)
@@ -350,7 +328,7 @@ SUBSYSTEM_DEF(trade)
 		cost = get_import_cost(thing, station)
 
 	if(account)
-		log_sold_item(account.get_name(), thing.name, cost)
+		create_log_entry("Individial Sale", account.get_name(), "<li>[thing.name]</li>", cost)
 		qdel(thing)
 		senderBeacon.activate()
 
@@ -373,7 +351,8 @@ SUBSYSTEM_DEF(trade)
 		if(isliving(AM))
 			var/mob/living/L = AM
 			L.apply_damages(0,5,0,0,0,5)
-			// TODO: Small chance to export players to deepmaint hive import beacon
+			continue
+		if(AM.anchored)
 			continue
 
 		var/list/contents_incl_self = AM.GetAllContents(5, TRUE)
@@ -391,20 +370,10 @@ SUBSYSTEM_DEF(trade)
 				SEND_SIGNAL(src, COMSIG_TRADE_BEACON, item)
 				qdel(item)
 			else
-				if(istype(AM, /obj/item/storage))
-					var/obj/item/storage/parent_item = AM
-					parent_item.remove_from_storage(item, AM.loc)
+				item.forceMove(get_turf(AM))		// Should be the same tile
 
 	if(invoice_contents_info)	// If no info, then nothing was exported
-		var/obj/item/paper/invoice/I = new(senderBeacon.loc)
-
-		I.name = "export invoice - #[id]E ([station_name()])"
-		I.invoice_type = "Export"
-		I.invoice_id = "[++SStrade.order_number]E"
-		I.account_name = lonestar_account.get_name()
-		I.invoice_contents = invoice_contents_info
-		I.total_payout = cost
-		I.build_invoice()
+		create_log_entry("Export", account.get_name(), invoice_contents_info, cost, TRUE, senderBeacon.loc)
 
 	senderBeacon.start_export()
 	var/datum/money_account/lonestar_account = department_accounts[DEPARTMENT_LSS]
@@ -419,65 +388,83 @@ SUBSYSTEM_DEF(trade)
 	var/list/target_junk_tags = target_spawn_tags & junk_tags
 	var/list/target_hockable_tags = target_spawn_tags & hockable_tags
 
+	if(istype(AM, /obj/item/paper/invoice))	// Don't export our invoices!
+		return NONEXPORTABLE
+
 	// Junk tags override hockable tags and offer types override both
 	if(target_hockable_tags.len)
 		. = HOCKABLE
 	if(target_junk_tags.len)
 		. = JUNK
-	if(istype(AM, /obj/item/paper/invoice))	// Don't export our invoices!
-		return NONEXPORTABLE
 	for(var/offer_type in offer_types)
 		if(istype(target, offer_type))
 			return NONEXPORTABLE
 
 // === LOGGING ===
 
-/datum/controller/subsystem/trade/proc/add_invoice_to_log(obj/item/paper/invoice/I)
-	if(!I)
-		return
+/datum/controller/subsystem/trade/proc/create_log_entry(type, ordering_account, contents, total_paid, create_invoice = FALSE, invoice_location = null)
+	var/log_id
 
-	switch(I.invoice_type)
+	switch(type)
 		if("Shipping")
-			order_log += list(invoice_id, destination, order_name, invoice_contents, payout, time2text(world.time, "hh:mm"))
+			log_id = "[++shipping_invoice_number]-S"
+			order_log += list(log_id, ordering_account, contents, total_paid, time2text(world.time, "hh:mm"))
 		if("Export")
-			export_log += list(invoice_id, account_name, invoice_contents, total_payout, time2text(world.time, "hh:mm"))
+			log_id = "[++export_invoice_number]-E"
+			export_log += list(log_id, ordering_account, contents, total_paid * 0.8, total_paid * 0.2, time2text(world.time, "hh:mm"))
 		if("Special Offer")
-			offer_log += list(invoice_id, destination, paid_to_account, time2text(world.time, "hh:mm"))
+			log_id = "[++offer_invoice_number]-SO"
+			offer_log += list(log_id, ordering_account, contents, total_paid, time2text(world.time, "hh:mm"))
+		if("Individial Sale")
+			log_id = "[++sell_invoice_number]-IS"
+			sell_log += list(log_id, ordering_account, contents, total_paid, time2text(world.time, "hh:mm"))
 		else
 			return
 
-/datum/controller/subsystem/trade/proc/log_sold_item(account_name, item_name, cost)
-	if(!account_name || !item_name)
-		return
-	sell_log += list(account_name, item_name, cost, time2text(world.time, "hh:mm"))
+	if(create_invoice && invoice_location && log_id)
+		var/obj/item/paper/invoice/I = new(invoice_location)
+
+		I.invoice_type = type
+		I.invoice_id = log_id
+		I.recipient = ordering_account
+		I.invoice_contents = contents
+		I.total_paid = total_paid
+		I.build_invoice()
+
+		if(type == "Shipping")
+			var/obj/item/paper/invoice/internal_copy = I
+			new internal_copy(invoice_location)
+			internal_copy.is_internal_copy = TRUE
+			internal_copy.build_invoice()
 
 // === INVOICE ===
 
 /obj/item/paper/invoice
 	var/invoice_type
 	var/invoice_id
-	var/destination
-	var/account_name
-	var/order_name
+	var/recipient
 	var/invoice_contents
-	var/paid_to_account
-	var/paid_to_lonestar
-	var/total_payout
+	var/total_paid
+	var/is_internal_copy
 
 /obj/item/paper/invoice/proc/build_invoice()
+	name = "[lowertext(invoice_type)] invoice - #[invoice_id]"
+	name += is_internal_copy ? " (internal)" : null
+
 	info += "<h2>[invoice_type] Invoice</h2>"
 	info += "<hr/>"
 	info += "Invoice #[invoice_id]<br/>"
-	info += destination ? "Destination: [destination]<br/>" : null
-	info += account_name ? "Account: [account_name]<br/>" : null
-	info += order_name ? "Item: [order_name]<br/>" : null
+	info += is_internal_copy ? "--- FOR INTERNAL USE ONLY ---<br/>" : null
+	info += invoice_type != "Shipping" && invoice_type ? "Recipient: [recipient]<br/>" : "Recipient: \[field\]<br/>"
+	info += invoice_type == "Shipping" ? "Package Name: \[field\]<br/>" : null
 	info += "Contents: <br/>"
 	info += "<ul>"
 	info += invoice_contents
 	info += "</ul>"
-	info += paid_to_account ? "Credits Paid To Account [paid_to_account]<br/>" : null
-	info += paid_to_lonestar ? "Credits Paid To Lonestar: [paid_to_lonestar]<br/>" : null
-	info += "Total Credits: [total_payout]<br/>"
+	info += invoice_type == "Individial Sale" ? "Credits Paid To Recipient: [total_paid * 0.8]<br/>" : null
+	info += invoice_type == "Individial Sale" ? "Credits Paid To Lonestar: [total_paid * 0.2]<br/>" : null
+	info += is_internal_copy ? "Order Cost: [total_paid] credits<br/>" : null
+	info += invoice_type == "Shipping" ? "Total Credits Paid: \[field\] credits<br/>" : null
 	info += invoice_type == "Shipping" ? "<h4>Stamp below to confirm receipt of goods:</h4>" : null
 	update_icon()
 
