@@ -7,11 +7,11 @@
 	icon = 'icons/obj/ameridian.dmi'
 	icon_state = "golem_ameridian_purple" // Sprite from Eris, I don't know who made them. -R4d6
 	faction = "ameridian"
-	attacktext = "smack"
+	attacktext = "smacked"
 	mob_size = MOB_SMALL
 	speak_chance = 0
 	hunger_enabled = FALSE
-	turns_per_move = 1
+	turns_per_move = 3
 	move_to_delay = 10
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
@@ -44,6 +44,10 @@
 	var/obj/structure/ameridian_crystal/target_crystal
 	var/spread_threshold = 3 // How many crystals need to be near a mature crystal for it to be available to harvest?
 
+/mob/living/simple_animal/ameridian_tender/New()
+	..()
+	update_icons()
+
 /mob/living/simple_animal/ameridian_tender/update_icons()
 	..()
 	transform = initial(transform)
@@ -53,8 +57,7 @@
 	..()
 
 /mob/living/simple_animal/ameridian_tender/Life()
-	..()
-	if(!AI_inactive)
+	if(..())
 		tend_crystal()
 
 // Harvest nearby crystals
@@ -81,7 +84,7 @@
 
 // Look around for crystals that are ready to harvest
 /mob/living/simple_animal/ameridian_tender/proc/get_target_crystal()
-	for(var/obj/structure/ameridian_crystal/AC in view())
+	for(var/obj/structure/ameridian_crystal/AC in view(scan_range, src))
 		if(istype(AC, /obj/structure/ameridian_crystal/spire))
 			continue
 
