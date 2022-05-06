@@ -111,7 +111,7 @@
 	icon_state = "bs_fullhelm"
 	item_state = "bs_fullhelm"
 	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	obscuration = LIGHT_OBSCURATION
 	action_button_name = "Toggle Headlamp"
@@ -140,6 +140,7 @@
 	options["Standard fullhelm"] = ""
 	options["Tan fullhelm"] = "_tan"
 	options["Green fullhelm"] = "_green"
+	options["Anthromorphic fullhelm"] = "_anthro"
 	options["Grey hooded fullhelm"] = "_gp"
 	options["Green hooeded fullhelm"] = "_grp"
 	options["Tan hooded fullhelm"] = "_tp"

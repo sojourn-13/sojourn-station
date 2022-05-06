@@ -299,7 +299,7 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/platecarrier/militia(src)
-		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
+		new /obj/item/clothing/head/helmet/ballistic/militia(src)
 
 /obj/item/storage/box/bs_kit/flak_armor
 	name = "\improper Flak Armor Kit"
@@ -307,7 +307,7 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/flackvest/militia(src)
-		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
+		new /obj/item/clothing/head/helmet/ballistic/militia(src)
 
 /obj/item/storage/box/bs_kit/bullet_armor
 	name = "\improper Bullet Armor Kit"
