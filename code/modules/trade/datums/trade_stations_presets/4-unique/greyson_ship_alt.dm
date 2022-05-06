@@ -23,7 +23,7 @@
 			/obj/item/tool/hammer/powered_hammer/onestar_hammer = custom_good_nameprice("GP Sledgehammer", list(-100, -50)),
 			/obj/item/tool/pickaxe/jackhammer/onestar = custom_good_nameprice("GP Jackhammer", list(-100, -50)),
 			/obj/item/tool/pickaxe/drill/onestar = custom_good_nameprice("GP Mining Drill", list(-100, -50)),
-			/obj/item/tool/pickaxe/onestar = custom_good_nameprice("GP Pickaxe", list(-100, -500),
+			/obj/item/tool/pickaxe/onestar = custom_good_nameprice("GP Pickaxe", list(-100, -500)),
 			/obj/item/tool/shovel/onestar_shovel = custom_good_nameprice("GP Shovel", list(-100, -50)),
 			/obj/item/tool/saw/onestar_saw = custom_good_nameprice("GP Handsaw", list(-100, -50)),
 			/obj/item/tool/medmultitool = custom_good_nameprice("GP Medical Multitool", list(-100, -50)),
@@ -34,7 +34,7 @@
 			/obj/item/stock_parts/matter_bin/one_star = custom_good_nameprice("GP Matter Bin", list(-100, -50)),
 			/obj/item/stock_parts/scanning_module/one_star = custom_good_nameprice("GP Scanning Module", list(-100, -50)),
 			/obj/item/stock_parts/capacitor/one_star = custom_good_nameprice("GP Capacitor", list(-100, -50)),
-			/obj/item/stock_parts/manipulator/one_star = good_data("GP Manipulator", list(-100, -50))
+			/obj/item/stock_parts/manipulator/one_star = custom_good_nameprice("GP Manipulator", list(-100, -50))
 		)
 	)
 	hidden_inventory = list(

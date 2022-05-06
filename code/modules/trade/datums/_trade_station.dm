@@ -1,7 +1,7 @@
 #define good_data(nam, randList, price) list("name" = nam, "amount_range" = randList, "price" = price)
 #define custom_good_name(nam) good_data(nam, null, null)
-#define custom_good_nameprice(nam, randList) good_data(nam, randList, null)
 #define custom_good_amount_range(randList) good_data(null, randList, null)
+#define custom_good_nameprice(nam, randList) good_data(nam, randList, null)
 #define custom_good_price(price) good_data(null, null, price)
 
 #define offer_data(name, price, amount) list("name" = name, "price" = price, "amount" = amount)
