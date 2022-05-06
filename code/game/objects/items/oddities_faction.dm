@@ -356,7 +356,6 @@ No more of that.
 		else
 			to_chat(user, SPAN_WARNING("The [W] is not suitable for [src]!"))
 			return
-		if(insert_item(src, user))
 		to_chat(user, SPAN_NOTICE("You feed [W] to [src]."))
 		SEND_SIGNAL(user, COMSIG_OBJ_TECHNO_TRIBALISM, W)
 		items_count += 1
