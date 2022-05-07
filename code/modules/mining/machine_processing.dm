@@ -153,7 +153,7 @@
 	var/points = 0
 	var/static/list/ore_values = list(
 		"sand" = 1,
-		MAT_HEMATITE = 1,
+		"hematite" = 1,
 		"carbon" = 1,
 		MATERIAL_PLASMA = 15,
 		MATERIAL_SILVER = 16,

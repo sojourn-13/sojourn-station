@@ -61,9 +61,9 @@
 		available_chemicals += level1
 	if(man_rating >= 4) //Needs both manips to be level 3 - Pico (6 - 2)
 		available_chemicals += level2
-	if(man_rating >= 6) //Needs both manips to be level 4 - Exl (8 - 2)
+	if(man_rating >= 6) //Needs both manips to be level 4 - Greyson (8 - 2)
 		available_chemicals += level3
-	if(man_rating >= 8) //Needs both manips to be level 5 - Greyson (10 - 2)
+	if(man_rating >= 8) //Needs both manips to be level 5 - Excel (10 - 2)
 		available_chemicals += level4
 	if(man_rating >= 10) //Needs both manips to be level 6 - Alien (12 - 2)
 		available_chemicals += level5
