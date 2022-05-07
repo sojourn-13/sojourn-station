@@ -144,7 +144,7 @@
 		if(isturf(A) && held_item)
 			visible_message(SPAN_NOTICE("[src] drops [held_item]."), \
 							SPAN_NOTICE("You drop [held_item]."))
-			held_item.loc = A
+			held_item.Move(A)
 			held_item = null
 			return TRUE
 	..()
@@ -168,12 +168,14 @@
 /mob/living/simple_animal/ameridian_tender/do_possession(var/mob/observer/ghost/possessor)
 	. = ..()
 	if(.)
-		to_chat(src, SPAN_NOTICE("As an Ameridian Tender, your purpose is to cultivate and harvest & spread ameridian crystals. \
-								Golems will not attack you, and neither will the colony's defences, \
+		to_chat(src, SPAN_NOTICE("As an Ameridian Tender, your purpose is to cultivate and harvest & spread ameridian crystals."))
+		to_chat(src, SPAN_NOTICE("Golems will not attack you, and neither will the colony's defences, \
 								but that will not prevent the colony's inhabitants from destroying you."))
-
-		to_chat(src, SPAN_NOTICE("You can harvest crystals by clicking them when next to them. Be sure to let them grow and spread to not remove your purpose, as you cannot seed more crystals. \
-								You can also pick up one normal sized item or lower by clicking on it. You can drop it by clicking on a turf. \
-								You can hear, but cannot talk."))
+		to_chat(src, SPAN_NOTICE("You can harvest crystals by clicking them when next to them. Be sure to let them grow and spread to not remove your purpose, as you cannot seed more crystals."))
+		to_chat(src, SPAN_NOTICE("You can also pick up one normal sized item or lower by clicking on it. You can drop it by clicking on a turf."))
+		to_chat(src, SPAN_NOTICE("You can hear, but cannot talk."))
 
 		to_chat(src, SPAN_WARNING("You can change your name once. Choose carefully."))
+
+/mob/living/simple_animal/ameridian_tender/toggle_AI()
+	set hidden = TRUE // We don't need this cluttering our screen
