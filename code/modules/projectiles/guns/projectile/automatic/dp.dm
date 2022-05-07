@@ -7,8 +7,9 @@
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
 	slot_flags = 0
-	max_shells = 63
-	damage_multiplier = 0.9 //7.5 is really good
+	max_shells = 96
+	damage_multiplier = 1.0
+	penetration_multiplier = 0.9
 	caliber = CAL_RIFLE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BACK
@@ -21,11 +22,11 @@
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/dp_fire.ogg'
-	recoil_buildup = 0.25
+	recoil_buildup = 0.5
 	twohanded = TRUE
 	one_hand_penalty = 30 //not like it's used anyway, but LMG level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
-	slowdown_hold = 1
+	slowdown_hold = 0.5
 	brace_penalty = 10 //wellmade
 	init_firemodes = list(
 		FULL_AUTO_400,
