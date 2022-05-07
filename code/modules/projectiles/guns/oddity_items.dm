@@ -325,7 +325,7 @@
 		BURST_3_ROUND,
 		FULL_AUTO_400
 		)
-	serial_type = "BlueCross"
+	serial_type = "Crimson Cross"
 
 /obj/item/gun/energy/lasersmg/p9evil/consume_next_projectile(mob/user)
 	visible_message(SPAN_WARNING("\The gun draws the life of the user!"))
