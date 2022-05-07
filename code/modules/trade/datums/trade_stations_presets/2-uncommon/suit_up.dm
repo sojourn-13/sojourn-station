@@ -9,7 +9,7 @@
 	offer_limit = 20
 	base_income = 3200
 	wealth = 0
-	hidden_inv_threshold = 6000//was previously 24,000 which is absurd for bomb and radiation suits
+	hidden_inv_threshold = 2000
 	recommendations_needed = 1
 	stations_recommended = list("rigs", "mecha")
 	inventory = list(
