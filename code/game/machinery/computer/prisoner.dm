@@ -29,7 +29,6 @@
 			dat += "<HR><A href='?src=\ref[src];lock=1'>Unlock Console</A>"
 		else if(screen == 1)
 			dat += "<HR>Chemical Implants<BR>"
-			var/turf/Tr = null
 			for(var/obj/item/implant/chem/C in world)
 				if(!C.implanted) continue
 				dat += "[C.wearer.name] | Remaining Units: [C.reagents.total_volume] | Inject: "
