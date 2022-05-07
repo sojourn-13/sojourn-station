@@ -311,7 +311,7 @@
 	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_STEEL = 25)
 	price_tag = 2500
 	projectile_type = /obj/item/projectile/beam/weak/pistol_35
-	charge_cost = 999999999999999999999999999999999999
+	charge_cost = 1000000000000000000000000000000000000
 	suitable_cell = null
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	can_dual = TRUE
