@@ -573,7 +573,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 								but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!"))
 		return FALSE
 
-	var/response = input(src, "Are you -sure- you want to become an ameridian tender? This will not affect your crew or drone respawn time. You will appear near an ameridian spire","Ameridian Tender Choise", null) as null|anything in list("Yes", "No")
+	var/response = input(src, "Are you -sure- you want to become an ameridian tender? This will not affect your crew or drone respawn time","Ameridian Tender Choise", null) as null|anything in list("Yes", "No")
 	if(response == "No")
 		response = null
 
