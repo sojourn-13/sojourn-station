@@ -43,12 +43,12 @@
 		),
 		"Autoinjectors II" = list(
 			// Autoinjectors defined in hypospray.dm
-			/obj/item/reagent_containers/hypospray/autoinjector/polystem = custom_good_amount_range(list(10, 20)),
-			/obj/item/reagent_containers/hypospray/autoinjector/meralyne = custom_good_amount_range(list(10, 20)),
-			/obj/item/reagent_containers/hypospray/autoinjector/dermaline = custom_good_amount_range(list(10, 20)),
-			/obj/item/reagent_containers/hypospray/autoinjector/dexalinplus = custom_good_amount_range(list(10, 20)),
-			/obj/item/reagent_containers/hypospray/autoinjector/oxycodone = custom_good_amount_range(list(10, 20)),
-			/obj/item/reagent_containers/hypospray/autoinjector/ryetalyn = custom_good_amount_range(list(10, 20))
+			/obj/item/reagent_containers/hypospray/autoinjector/polystem = good_data("polystem autoinjector", list(10, 20), 40),
+			/obj/item/reagent_containers/hypospray/autoinjector/meralyne = good_data("meralyne autoinjector", list(10, 20), 65),
+			/obj/item/reagent_containers/hypospray/autoinjector/dermaline = good_data("dermaline autoinjector", list(10, 20), 60),
+			/obj/item/reagent_containers/hypospray/autoinjector/dexalinplus = good_data("dexalin plus autoinjector", list(10, 20), 65),
+			/obj/item/reagent_containers/hypospray/autoinjector/oxycodone = good_data("oxycodone autoinjector", list(10, 20), 40),
+			/obj/item/reagent_containers/hypospray/autoinjector/ryetalyn = good_data("ryetalyn autoinjector", list(10, 20), 40)
 		)
 	)
 	offer_types = list(

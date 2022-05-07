@@ -9,7 +9,7 @@
 	offer_limit = 20
 	base_income = 3200
 	wealth = 0
-	hidden_inv_threshold = 24000
+	hidden_inv_threshold = 2000
 	recommendations_needed = 1
 	stations_recommended = list("rigs", "mecha")
 	inventory = list(
@@ -74,7 +74,7 @@
 	)
 
 	hidden_inventory = list(
-		"Unitity Suits" = list(
+		"Utility Suits" = list(
 			/obj/item/clothing/suit/space/bomb,
 			/obj/item/clothing/head/helmet/space/bomb,
 			/obj/item/clothing/suit/fire,
