@@ -8,7 +8,7 @@
 	force = WEAPON_FORCE_NORMAL
 	caliber = CAL_RIFLE
 	max_shells = 20
-	damage_multiplier = 1.2
+	damage_multiplier = 0.8
 	penetration_multiplier  = 1.0
 	slot_flags = SLOT_BELT|SLOT_BACK
 	recoil_buildup = 10

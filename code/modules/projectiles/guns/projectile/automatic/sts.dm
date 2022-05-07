@@ -56,7 +56,6 @@
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
-	price_tag = 1250
 	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE, GUN_MAGWELL)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 12)
 	saw_off = TRUE
@@ -106,12 +105,10 @@
 	icon = 'icons/obj/guns/projectile/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
-	price_tag = 1500
 	w_class = ITEM_SIZE_HUGE
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 1
-	penetration_multiplier = 1.2
 	recoil_buildup = 2
 	one_hand_penalty = 20
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
@@ -133,8 +130,8 @@
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
-	penetration_multiplier = 1.0
-	recoil_buildup = 3
+	damage_multiplier = 0.8
+	recoil_buildup = 2.5
 	one_hand_penalty = 20 //automatic rifle level
 	saw_off = FALSE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
@@ -154,8 +151,8 @@
 	w_class = ITEM_SIZE_HUGE
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
-	damage_multiplier = 1.2 //Well oiled
-	recoil_buildup = 1.75
+	damage_multiplier = 1.1 //Well oiled
+	recoil_buildup = 1.25
 	one_hand_penalty = 18
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	saw_off = TRUE
@@ -177,7 +174,7 @@
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
-	damage_multiplier = 1.0 //Rifle was fine
+	damage_multiplier = 0.9 //Rifle was fine
 	recoil_buildup = 2.5
 	one_hand_penalty = 22 //automatic rifle level
 	saw_off = FALSE
@@ -199,10 +196,9 @@
 	w_class = ITEM_SIZE_HUGE
 	caliber = CAL_HRIFLE
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
-	price_tag = 1750
 	penetration_multiplier = 1.1
 	damage_multiplier = 1.1
-	recoil_buildup = 12
+	recoil_buildup = 15
 	one_hand_penalty = 25
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/batrifle_cock.ogg'
