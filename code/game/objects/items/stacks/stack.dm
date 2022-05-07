@@ -71,12 +71,12 @@
 
 
 	return ..()
-
+/*
 /obj/item/stack/Crossed(atom/movable/crossing)
 	if(can_merge(crossing) && !crossing.throwing)
 		merge(crossing)
 	. = ..()
-
+*/
 /obj/item/stack/examine(mob/user)
 	if(..(user, 1))
 		if(!uses_charge)
