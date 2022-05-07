@@ -154,17 +154,14 @@
 	var/static/list/ore_values = list(
 		"sand" = 1,
 		MAT_HEMATITE = 1,
-		MAT_CARBON = 1,
-		MAT_PHORON = 15,
-		MAT_COPPER = 15,
-		MAT_SILVER = 16,
-		MAT_GOLD = 18,
-		MAT_MARBLE = 20,
-		MAT_URANIUM = 30,
-		MAT_DIAMOND = 50,
-		MAT_PLATINUM = 40,
-		MAT_LEAD = 40,
-		MAT_METALHYDROGEN = 40)
+		"carbon" = 1,
+		MATERIAL_PLASMA = 15,
+		MATERIAL_SILVER = 16,
+		MATERIAL_GOLD = 18,
+		MATERIAL_URANIUM = 30,
+		MATERIAL_DIAMOND = 50,
+		MATERIAL_PLATINUM = 40,
+		MATERIAL_MHYDROGEN = 40)
 
 /obj/machinery/mineral/processing_unit/laber
 	name = "labor material processor"
