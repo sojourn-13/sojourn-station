@@ -45,6 +45,14 @@
 	to_chat(user, SPAN_NOTICE("You loosen your grip on [src], and prepare to remove debris."))
 	..()
 
+/obj/item/tool/pickaxe/upgraded
+	name = "plasteel-head pickaxe"
+	desc = "A normal-looking pickaxe with the head replaced with plasteel."
+	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 2)
+	tool_qualities = list(QUALITY_EXCAVATION = 20, QUALITY_PRYING = 20)
+	switched_off_qualities = list(QUALITY_EXCAVATION = 20, QUALITY_PRYING = 20)
+	switched_on_qualities = list(QUALITY_DIGGING = 40, QUALITY_PRYING = 20)
+	workspeed = 1.1
 
 /obj/item/tool/pickaxe/onestar
 	name = "Greyson Positronic Pickaxe"
