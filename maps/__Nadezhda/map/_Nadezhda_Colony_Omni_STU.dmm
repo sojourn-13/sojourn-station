@@ -112019,9 +112019,6 @@
 	name = "Evidence Closet"
 	},
 /obj/random/contraband,
-/obj/machinery/light/small{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/sechall)
 "xLS" = (
