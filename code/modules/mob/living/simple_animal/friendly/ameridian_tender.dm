@@ -3,15 +3,16 @@
 
 /mob/living/simple_animal/ameridian_tender
 	name = "ameridian tender"
-	desc = "A weird creature made of ameridian"
+	desc = "An automaton powered by an ameridian core. It instinctively care for ameridian crystals, letting them grow and spread before harvesting them. \
+			Its unique nature mean that it doesn't get attacked by other ameridian-based lifeform or get damaged by anti-ameridian sonic weaponry."
 	icon = 'icons/obj/ameridian.dmi'
-	icon_state = "golem_ameridian_purple" // Sprite from Eris, I don't know who made them. -R4d6
+	icon_state = "golem_ameridian_purple"
 	faction = "ameridian"
 	attacktext = "smacked"
 	mob_size = MOB_SMALL
 	speak_chance = 0
 	hunger_enabled = FALSE
-	turns_per_move = 3
+	turns_per_move = 10
 	move_to_delay = 10
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
@@ -57,7 +58,7 @@
 	..()
 
 /mob/living/simple_animal/ameridian_tender/Life()
-	if(..())
+	if(..() && !client)
 		tend_crystal()
 
 // Harvest nearby crystals
@@ -78,6 +79,7 @@
 	// We got a crystal, and it is right next to us.
 	if(is_crystal_ready(target_crystal)) // Safety check
 		target_crystal.harvest_crystals()
+		visible_emote("harvest an ameridian crystal.")
 		target_crystal = null
 	else // The crystal wasn't ready yet.
 		target_crystal = null
@@ -94,7 +96,7 @@
 
 // Check if the crystal is mature and has spread
 /mob/living/simple_animal/ameridian_tender/proc/is_crystal_ready(var/obj/structure/ameridian_crystal/AC)
-	if(AC?.growth == AC?.max_growth)
+	if(AC?.growth >= AC?.max_growth)
 		var/num_crystal = 0
 		for(var/obj/structure/ameridian_crystal/Crystal in orange(AC.spread_range, AC))
 			if(Crystal == AC)
