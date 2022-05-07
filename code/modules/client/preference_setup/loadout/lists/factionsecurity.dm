@@ -48,7 +48,7 @@
 	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/blackshield
-	display_name = "cloak, blackshield"
+	display_name = "cloak selection, blackshield"
 	path = /obj/item/clothing/accessory/job/cape/blackshield
 	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_wear_suit
