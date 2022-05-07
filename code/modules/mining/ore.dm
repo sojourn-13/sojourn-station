@@ -5,7 +5,6 @@
 	w_class = ITEM_SIZE_SMALL
 	max_amount = 120
 	var/crushable = TRUE
-	var/datum/geosample/geologic_data
 	var/material
 	var/material_randomly_has = TRUE
 	var/sheet_amout = 1 //How many sheets do we give?
@@ -63,6 +62,9 @@
 	var/turf/simulated/floor/F = get_turf(src)
 	if(loc != F)
 		return ..()
+	if(istype(AM, /obj/structure/ore_box))
+		forceMove(AM)
+		return
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
 		for(var/thing in H.get_body_slots())

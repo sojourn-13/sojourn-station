@@ -46,6 +46,11 @@
 	desc = "Deploys a swarm of floating robots that will attack animals and non-colony humanoids nearby. "
 	spawner_type = /mob/living/simple_animal/hostile/viscerator/opifex
 
+/obj/item/grenade/spawnergrenade/manhacks/colony
+	name = "colony-locked manhack grenade"
+	desc = "Deploys a swarm of floating robots that will attack animals and non-colony humanoids nearby. "
+	spawner_type = /mob/living/simple_animal/hostile/viscerator/colony
+
 //Troll grenade
 /obj/item/grenade/spawnergrenade/blob
 	name = "bioweapon sample"

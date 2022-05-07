@@ -73,11 +73,8 @@
 	return ..()
 
 /obj/item/stack/Crossed(atom/movable/crossing)
-	if(!crossing.throwing)
-		if(!istype(crossing, /obj/item/stack))
-			return
-		var/obj/item/stack/crostack = crossing
-		src.transfer_to(crostack)
+	if(can_merge(crossing) && !crossing.throwing)
+		merge(crossing)
 	. = ..()
 
 /obj/item/stack/examine(mob/user)
@@ -225,6 +222,18 @@
 		return 0
 	return 1
 
+/obj/item/stack/proc/can_merge(obj/item/stack/other)
+	if(!istype(other))
+		return FALSE
+	if(QDELETED(src) || QDELETED(other))
+		return FALSE
+	return ((other.stacktype == stacktype) || (other.stacktype = stacktype_alt))
+
+/obj/item/stack/proc/force_stack_all_from_loc()
+	for(var/obj/item/stack/S in loc)
+		if(can_merge(S))
+			merge(S)
+
 /obj/item/stack/proc/use(var/used)
 	if (!can_use(used))
 		return 0
@@ -293,6 +302,20 @@
 				S.blood_DNA |= blood_DNA
 		return transfer
 	return 0
+
+/obj/item/stack/proc/merge(obj/item/stack/S) //Merge src into S, as much as possible
+	if(QDELETED(S) || QDELETED(src) || (S == src)) //amusingly this can cause a stack to consume itself, let's not allow that.
+		return
+	var/transfer = get_amount()
+	if(S.uses_charge)
+		transfer = min(transfer, S.get_max_amount() - S.get_amount())
+	else
+		transfer = min(transfer, S.max_amount - S.amount)
+	if(pulledby)
+		pulledby.start_pulling(S)
+	use(transfer, TRUE)
+	S.add(transfer)
+	return transfer
 
 //creates a new stack with the specified amount
 /obj/item/stack/proc/split(var/tamount)
