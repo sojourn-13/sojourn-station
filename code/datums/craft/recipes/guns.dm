@@ -236,16 +236,3 @@
 		list(QUALITY_WELDING, 25, "time" = 30),
 		list(QUALITY_HAMMERING, 30, "time" = 10)
 	)
-
-/datum/craft_recipe/gun/scope
-	name = "Gun mod: handmade ACOG scope" // This version uses twice the ammount of materials to make lathe printing better, easier and faster.
-	result = /obj/item/gun_upgrade/scope/acog
-	steps = list(
-		list(/obj/item/stack/rods, 1, "time" = 60),
-		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 10),
-		list(QUALITY_HAMMERING, 15, "time" = 40),
-		list(CRAFT_MATERIAL, 4, MATERIAL_GLASS, "time" = 10),
-		list(QUALITY_BOLT_TURNING, 20, "time" = 40),
-		list(QUALITY_WELDING, 10, "time" = 30),
-	)
-
