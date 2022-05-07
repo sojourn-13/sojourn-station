@@ -569,8 +569,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return FALSE
 
 	if(!BC_IsKeyAllowedToConnect(usr.ckey) && !usr.client.holder)
-		usr  << SPAN_DANGER("Border Control is enabled, and you haven't been whitelisted!  You're welcome to observe, \
-			    but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!")
+		to_chat(user, SPAN_DANGER("Border Control is enabled, and you haven't been whitelisted!  You're welcome to observe, \
+								but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!"))
 		return FALSE
 
 	var/response = input(src, "Are you -sure- you want to become an ameridian tender? This will not affect your crew or drone respawn time. You will appear near an ameridian spire","Ameridian Tender Choise", null) as null|anything in list("Yes", "No")
@@ -578,14 +578,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		response = null
 
 	if(response)
-		var/obj/structure/ameridian_crystal/spire/Spire = locate()
-		if(!Spire)
-			to_chat(src, "<span class='warning'>There are no spires for you to spawn.</span>")
-			return FALSE
-
-		var/mob/living/simple_animal/ameridian_tender/AT = new(Spire.loc)
-		AT.do_possession(src)
-		return TRUE
+		for(var/mob/living/simple_animal/ameridian_tender/AT in world)
+			if(AT.can_be_possessed_by(src))
+				return AT.do_possession(src)
+		to_chat(usr, SPAN_WARNING("There are no valid ameridian tender."))
+		return FALSE
 	else return FALSE
 
 /mob/observer/ghost/verb/view_manfiest()
