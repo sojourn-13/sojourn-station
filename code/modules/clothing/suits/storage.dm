@@ -864,66 +864,18 @@ obj/item/clothing/suit/storage/toggle/peacoat
 		bio = 0,
 		rad = 0)
 
-/*Waistcoat*/
-/obj/item/clothing/suit/storage/wcoat/black
-	name = "black waistcoat"
-	desc = "A classy black waistcoat."
-	icon_state = "vest"
-	item_state = "vest"
-
-/obj/item/clothing/suit/storage/wcoat/brown
-	name = "brown waistcoat"
-	desc = "A classy brown waistcoat."
-	icon_state = "brown_waistcoat"
-	item_state = "brown_waistcoat"
-
-/obj/item/clothing/suit/storage/wcoat/elegant
-	name = "elegant waistcoat"
-	desc = "A classy elegant waistcoat."
-	icon_state = "elegant_waistcoat"
-	item_state = "elegant_waistcoat"
-
-/obj/item/clothing/suit/storage/wcoat/grey
-	name = "grey waistcoat"
-	desc = "A classy grey waistcoat."
-	icon_state = "grey_waistcoat"
-	item_state = "grey_waistcoat"
-
-/obj/item/clothing/suit/storage/wcoat/red
-	name = "red waistcoat"
-	desc = "A classy red waistcoat."
-	icon_state = "red_waistcoat"
-	item_state = "red_waistcoat"
-
-/obj/item/clothing/suit/storage/wcoat/swvestblack
-	name = "black sweatervest"
-	desc = "A sleeveless black sweater."
-	icon_state = "sweatervest"
-	item_state = "sweatervest"
-
-/obj/item/clothing/suit/storage/wcoat/swvestblue
-	name = "blue sweatervest"
-	desc = "A sleeveless blue sweater."
-	icon_state = "sweatervest_blue"
-	item_state = "sweatervest_blue"
-
-/obj/item/clothing/suit/storage/wcoat
-	name = "red sweatervest"
-	desc = "A sleeveless red sweater."
-	icon_state = "sweatervest_red"
-	item_state = "sweatervest_red"
+/*Helltaker drip - Seb*/
+/obj/item/clothing/suit/storage/wcoat/helltaker // Refactoring waistcoat stats into this one as it's meant to be more a worn suit than an attachable waistcoat. - Seb
+	name = "charming waistcoat"
+	desc = "A feminine waistcoat that accentuates one's curves, to be worn with a dapper suit." // Now you can also be Malinka and Cerberus. - Seb
+	icon_state = "hellvest"
+	item_state = "hellvest"
 	item_state_slots = list(slot_r_hand_str = "wcoat", slot_l_hand_str = "wcoat")
 	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
 	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 	slot_flags = SLOT_OCLOTHING
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	siemens_coefficient = 0.9
-
-/obj/item/clothing/suit/storage/wcoat/helltaker
-	name = "charming waistcoat"
-	desc = "A feminine waistcoat that accentuates one's curves, to be worn with a dapper suit." // Now you can also be Malinka and Cerberus. - Seb
-	icon_state = "hellvest"
-	item_state = "hellvest"
 
 /obj/item/clothing/suit/storage/helltaker_apron // Get your Helltaker apron. - Seb
 	name = "lonestar black apron"

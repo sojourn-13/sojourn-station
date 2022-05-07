@@ -16,17 +16,30 @@
 	force = WEAPON_FORCE_HARMLESS
 	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 25, rad = 0)
 	siemens_coefficient = 0.6
-	can_hold_knife = 1
+	can_hold_knife = TRUE
 
 /obj/item/clothing/shoes/jackboots/german
 	name = "brown jackboots"
 	desc = "A pair of standard-issue jackboots typically worn by people who need to stomp things. These ones are brown."
 	icon_state = "germanboots"
 
-/obj/item/clothing/shoes/jackboots/laced_jackboots
-	name = "laced jackboots"
-	desc = "Old military boots designed to make look you tacticool."
-	icon_state = "laced_jackboots"
+/obj/item/clothing/shoes/jackboots/duty
+	name = "duty jackboots"
+	desc = "A pair of standard-issue police steel-toed boots. For when you really need to remind the criminals what the law is."
+	icon_state = "duty"
+	armor_list = list(melee = 15, bullet = 10, energy = 10, bomb = 0, bio = 25, rad = 0)
+	siemens_coefficient = 0.8
+	can_hold_knife = TRUE
+
+/obj/item/clothing/shoes/jackboots/duty/long
+	name = "knee-high duty boots"
+	desc = "A pair of standard-issue police steel-toed boots. These reach up all the way to the knees for god knows what reason."
+	icon_state = "duty_long"
+
+/obj/item/clothing/shoes/jackboots/duty/heel
+	name = "knee-high heeled duty boots"
+	desc = "A pair of standard-issue police steel-toed boots. They look like they were designed for a different kind of service."
+	icon_state = "duty_heel"
 
 /obj/item/clothing/shoes/reinforced
 	name = "reinforced boots"

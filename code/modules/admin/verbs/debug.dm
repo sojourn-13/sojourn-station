@@ -618,7 +618,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/clothing/gloves/thick(M), slot_gloves)
 			M.equip_to_slot_or_del(new /obj/item/device/radio/headset(M), slot_l_ear)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(M), slot_glasses)
-			M.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/wcoat/black(M), slot_accessory_buffer)
+			M.equip_to_slot_or_del(new /obj/item/clothing/accessory/waistcoat(M), slot_accessory_buffer)
 			M.equip_to_slot_or_del(new /obj/item/melee/energy/sword(M), slot_l_store)
 
 			var/obj/item/storage/secure/briefcase/sec_briefcase = new(M)
