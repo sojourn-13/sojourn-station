@@ -299,6 +299,41 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "BlueCross"
 
+/obj/item/gun/energy/lasersmg/p9evil
+	name = "P9 \"Evil\" smg"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a crimson cross, these weapons are known to vanish and reappear when left alone. \
+			An odd looking tool-made smg of sorts, made completely out of stamped metal and hatred. You wonder by looking at this how many people have used this worn weapon of war. \
+			Looking at it long enough appears to make you see red.. feeling as if its draining your life force just to fire it! Let the hatred RISE!"
+	icon = 'icons/obj/guns/energy/p9evil.dmi'
+	icon_state = "evil"
+	item_state = "evil"
+	origin_tech = list(TECH_ILLEGAL = 5)
+	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_STEEL = 25)
+	price_tag = 2500
+	projectile_type = /obj/item/projectile/beam/weak/pistol_35
+	charge_cost = 999999999999999999999999999999999999
+	suitable_cell = null
+	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	can_dual = TRUE
+	damage_multiplier = 1.2
+	penetration_multiplier = 1.2
+	recoil_buildup = 2
+	one_hand_penalty = 10
+	gun_tags = list(GUN_ENERGY, GUN_LASER, GUN_SILENCABLE)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND,
+		FULL_AUTO_400
+		)
+	serial_type = "BlueCross"
+
+/obj/item/gun/energy/lasersmg/p9evil/consume_next_projectile(mob/user)
+	visible_message(SPAN_WARNING("\The gun draws the life of the user!"))
+	playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
+	user.maxHealth -=0.1
+	user.health -=0.1
+	return new projectile_type(src)
+
 //Melee Weapons
 /obj/item/tool/nailstick/ogre
 	name = "\"Oni\" Greatclub"
