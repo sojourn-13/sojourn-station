@@ -301,7 +301,7 @@
 
 /obj/item/gun/energy/lasersmg/p9evil
 	name = "P9 \"Evil\" smg"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a crimson cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these weapons are known to vanish and reappear when left alone. \
 			An odd looking tool-made smg of sorts, made completely out of stamped metal and hatred. You wonder by looking at this how many people have used this worn weapon of war. \
 			Looking at it long enough appears to make you see red.. feeling as if its draining your life force just to fire it! Let the hatred RISE!"
 	icon = 'icons/obj/guns/energy/p9evil.dmi'
