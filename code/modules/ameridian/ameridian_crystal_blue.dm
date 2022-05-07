@@ -41,16 +41,6 @@
 			return TRUE
 		return FALSE
 
-/obj/structure/ameridian_crystal/blue/attackby(obj/item/I, mob/user)
-	if(user.a_intent == I_HELP && user.Adjacent(src) && (I.has_quality(QUALITY_EXCAVATION) || I.has_quality(QUALITY_DIGGING) || I.has_quality(QUALITY_SHOVELING)))
-		src.visible_message(SPAN_NOTICE("[user] starts start digging [src] up."), SPAN_NOTICE("You start digging [src] up."))
-		if(do_after(user, WORKTIME_SLOW, src))
-			harvest_crystals()
-		else
-			to_chat(user, SPAN_WARNING("You must stay still to finish excavation."))
-	else
-		..()
-
 /obj/structure/ameridian_crystal/blue/spread()
 	..()
 	for(var/obj/structure/ameridian_crystal/AC in range(boost_range))
