@@ -3,6 +3,7 @@
 	name = "red ameridian crystal"
 	desc = "A strange crystal formation that seems to grow on its own... However it seems to grow slower than the others."
 	icon_state = "ameridian_crystal_red"
+	growth_prob = 2.5
 	blue_crystal_prob = -1
 	rad_damage = 1
 	max_growth = 10 // Take longer to grow, but give twice as many crystals

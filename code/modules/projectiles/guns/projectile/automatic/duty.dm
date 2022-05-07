@@ -17,6 +17,7 @@
 	load_method = SINGLE_CASING|SPEEDLOADER|MAGAZINE
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 25)
 	damage_multiplier = 1.1
+	penetration_multiplier = 1.1
 	recoil_buildup = 1 //Using this should be a breaze
 	one_hand_penalty = 7 //Light caliber + well balanced
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
