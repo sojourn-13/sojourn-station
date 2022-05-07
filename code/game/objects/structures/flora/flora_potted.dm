@@ -301,7 +301,7 @@
 //Shard
 /obj/structure/flora/pottedplant/green_rock
 	name = "contained ameridian shard"
-	desc = "A contained shiney shard of ameridian, uses a posi sound for its power and has some osium for emp shielding making it super safe.."
+	desc = "A contained shiny shard of ameridian, uses a positronic cell for its power and has some osium for emp shielding making it super safe."
 	icon = 'icons/obj/plants.dmi'
 	icon_state = "ameridian_pot_shield_powered"
 	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
