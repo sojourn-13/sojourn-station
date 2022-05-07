@@ -132,7 +132,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	max_storage_space = 100
 	max_w_class = ITEM_SIZE_NORMAL
-	can_hold = list(/obj/item/ore)
+	can_hold = list(/obj/item/stack/ore)
 	var/stored_ore = list()
 	var/last_update = 0
 
@@ -144,7 +144,7 @@
 	max_w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_GOLD = 4, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
 	origin_tech = list(TECH_BLUESPACE = 4)
-	can_hold = list(/obj/item/ore,
+	can_hold = list(/obj/item/stack/ore,
 	                /obj/item/reagent_containers/food/snacks/grown,
 	                /obj/item/seeds,
 	                /obj/item/grown,

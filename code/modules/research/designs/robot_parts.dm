@@ -71,7 +71,6 @@
 	build_path = /obj/item/robot_parts/robot_component/jetpack
 	starts_unlocked = FALSE
 
-
 // Robot updates
 /datum/design/research/item/robot_upgrade
 	build_type = AUTOLATHE | MECHFAB

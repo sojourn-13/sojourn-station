@@ -160,8 +160,7 @@
 	price_tag = 900
 
 /obj/item/tool/pickaxe/diamonddrill/rig
-	switched_off_qualities = list(QUALITY_DIGGING = 50, QUALITY_DRILLING = 50)
-	switched_on_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_DRILLING = 20)
+	tool_qualities = list(QUALITY_DIGGING = 50, QUALITY_DRILLING = 50)
 	use_fuel_cost = 0
 	passive_fuel_cost = 0
 

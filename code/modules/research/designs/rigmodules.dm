@@ -182,3 +182,9 @@
 	build_path = /obj/item/rig_module/cargo_clamp
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 15)
 	category = "RIG"
+
+/datum/design/research/item/ion_jaunt
+	name = "Ion Jaunter"
+	desc = "A special device designed to reduce the impact of EMPs on electrical systems."
+	build_path = /obj/item/robot_parts/robot_component/ion_jaunt
+	category = "RIG"

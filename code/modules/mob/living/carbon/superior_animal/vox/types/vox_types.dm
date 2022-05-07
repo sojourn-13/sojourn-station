@@ -10,7 +10,7 @@
 	limited_ammo = TRUE
 	mag_drop = FALSE
 	rounds_left = 1
-	mag_type = /obj/item/ore
+	mag_type = /obj/item/stack/ore
 	mags_left = 3
 	rounds_per_fire = 1
 	reload_message = "picks up a hidden spear!"
@@ -28,7 +28,7 @@
 	limited_ammo = TRUE
 	mag_drop = FALSE
 	rounds_left = 2
-	mag_type = /obj/item/ore
+	mag_type = /obj/item/stack/ore
 	mags_left = 2
 	rounds_per_fire = 2
 	reload_message = "picks up a hidden spear!"

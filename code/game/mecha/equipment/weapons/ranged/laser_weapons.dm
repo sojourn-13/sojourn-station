@@ -94,6 +94,17 @@
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	price_tag = 1300 //state of the art
 
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/sonic
+	equip_cooldown = 15
+	name = "mech-mounted sonic emitter"
+	desc = "An upscaled version of the handheld sonic emitter, designed to be mounted on an exosuit. Being bigger, it is more efficient than the handheld version, packing a bigger punch for less power."
+	icon_state = "mecha_pulse"
+	energy_drain = 50
+	projectile = /obj/item/projectile/sonic_bolt/heavy
+	fire_sound = 'sound/weapons/Laser.ogg'
+	required_type = list(/obj/mecha/combat, /obj/mecha/working)
+	price_tag = 200
+
 /* Commenting this out rather than removing it because it may be useful for reference.
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/honker
 	name = "\improper HoNkER BlAsT 5000"

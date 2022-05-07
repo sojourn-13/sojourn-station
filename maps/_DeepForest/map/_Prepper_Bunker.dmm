@@ -7308,7 +7308,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "vf" = (
 /obj/structure/table/rack,
-/obj/item/ore/plasma,
+/obj/item/stack/ore/plasma,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "vg" = (
