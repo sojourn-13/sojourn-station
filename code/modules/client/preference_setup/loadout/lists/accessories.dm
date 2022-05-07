@@ -80,6 +80,16 @@
 	path = /obj/item/clothing/head/tacticalhood
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/accessory/sweatervest
+	display_name = "sweater vest selection"
+	path = /obj/item/clothing/accessory/swvest
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/waistcoat
+	display_name = "waistcoat selection"
+	path = /obj/item/clothing/accessory/waistcoat
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/accessory/blackshieldpatch
 	display_name = "blackshield arm patch"
 	path = /obj/item/clothing/accessory/patches/blackshield

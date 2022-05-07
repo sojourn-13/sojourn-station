@@ -350,6 +350,35 @@
 	desc = "A small collection of circuit boards"
 	initial_contents = list(/obj/random/circuitboard = 7)
 
+/obj/item/storage/deferred/science
+	name = "scientific things box"
+	desc = "A small collection of scientific items."
+	initial_contents = list(/obj/random/science = 7)
+
+/obj/item/storage/deferred/rig
+	name = "hardsuit box"
+	desc = "They put a RIG in a box."
+	price_tag = 200 //*5 at casino beacon
+	initial_contents = list(/obj/random/rig = 1)
+
+/obj/item/storage/deferred/toolmods
+	name = "toolmod box"
+	desc = "An assortment of some toolmods."
+	price_tag = 150
+	initial_contents = list(/obj/random/tool_upgrade = 5)
+
+/obj/item/storage/deferred/medical
+	name = "medical supply box"
+	desc = "An assortment of some bandages, medicines."
+	initial_contents = list(/obj/random/medical/always_spawn = 7)
+
+/obj/item/storage/deferred/tools
+	name = "tools box"
+	desc = "A small collection of tools."
+	price_tag = 120
+	initial_contents = list(/obj/random/tool = 7)
+
+
 // Kitchen supply
 /obj/item/storage/deferred/kitchen
 	name = "galley supply box"

@@ -3129,19 +3129,17 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "aIm" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
+/obj/effect/floor_decal/industrial/arrows/white{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "aIn" = (
 /obj/structure/flora/small/trailrocka5,
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
@@ -3321,6 +3319,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security)
 "aJQ" = (
@@ -6633,27 +6632,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/bridge)
 "bwL" = (
-/obj/structure/closet{
-	name = "Evidence Closet"
-	},
-/obj/random/contraband/low_chance,
-/obj/item/contraband/poster,
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /obj/machinery/camera/network/security{
 	dir = 4
 	},
-/obj/machinery/power/apc{
-	cell_type = /obj/item/cell/large/high;
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28;
-	pixel_y = 0
-	},
+/obj/machinery/surveillance_pod,
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "bwP" = (
 /obj/structure/table/standard,
 /obj/item/device/lighting/toggleable/flashlight,
@@ -7893,7 +7877,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warningred/full,
 /obj/structure/cable/yellow{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
@@ -8355,14 +8340,17 @@
 /turf/simulated/floor/wood/wild3,
 /area/eris/crew_quarters/barbackroom)
 "bQt" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/box/white/corners,
+/obj/effect/floor_decal/industrial/box/white/corners{
+	dir = 8;
+	icon_state = "box_corners_white"
+	},
 /turf/simulated/floor/tiled/dark/monofloor,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "bQx" = (
 /obj/structure/closet/secure_closet/personal/salvager,
 /turf/simulated/floor/tiled/steel/techfloor,
@@ -10879,8 +10867,11 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
 "cts" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/plating,
+/obj/machinery/door/airlock/security{
+	name = "Evidence Storage";
+	req_access = list(1)
+	},
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/sechall)
 "ctt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -11474,7 +11465,8 @@
 	pixel_y = 0
 	},
 /obj/structure/cable/yellow{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm2{
@@ -13694,11 +13686,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "cXu" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -15574,7 +15561,7 @@
 /area/nadezhda/engineering/atmos)
 "dsi" = (
 /turf/simulated/floor/tiled/dark/monofloor,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "dsj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet,
@@ -19176,11 +19163,6 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -19679,13 +19661,13 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "enp" = (
@@ -26937,13 +26919,13 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "fML" = (
-/obj/machinery/door/airlock/security{
-	name = "Evidence Storage";
-	req_access = list(1)
-	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/security{
+	name = "E.Y.E Pod storage";
+	req_access = list(4)
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "fMX" = (
 /obj/structure/table/steel,
 /obj/item/reagent_containers/food/snacks/tomatomeat,
@@ -30874,6 +30856,10 @@
 /obj/structure/flora/small/trailrockb2,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"gFg" = (
+/obj/effect/floor_decal/industrial/arrows/white,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/nadezhda/security/detectives_office)
 "gFl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -35027,12 +35013,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "hAS" = (
-/obj/machinery/hologram/holopad,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -30
-	},
-/obj/effect/floor_decal/industrial/warningred,
-/turf/simulated/floor/tiled/dark/gray_perforated,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "hBd" = (
 /obj/structure/sign/departmentold/botany,
@@ -36670,12 +36654,9 @@
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/genetics)
 "hVt" = (
-/obj/structure/closet{
-	name = "Evidence Closet"
-	},
-/obj/random/contraband,
+/obj/effect/floor_decal/industrial/warningwhite,
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "hVu" = (
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
@@ -39519,10 +39500,12 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/cafeteria)
 "iAW" = (
-/obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/reinforced/polarized{
+	id = "EYE"
+	},
 /turf/simulated/floor/plating,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "iBc" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -44302,7 +44285,8 @@
 	pixel_y = 0
 	},
 /obj/structure/cable/yellow{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai_upload)
@@ -47625,12 +47609,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "kmr" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -28
+/obj/effect/floor_decal/industrial/arrows/white{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/sechall)
@@ -58896,7 +58876,8 @@
 "mBO" = (
 /obj/machinery/multistructure/biogenerator_part/generator,
 /obj/structure/cable/yellow{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
@@ -62385,7 +62366,8 @@
 	pixel_y = 0
 	},
 /obj/structure/cable/yellow{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm3{
@@ -64704,9 +64686,7 @@
 /area/nadezhda/command/captain)
 "nNZ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/sechall)
 "nOb" = (
@@ -65679,12 +65659,9 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/bar)
 "nZZ" = (
-/obj/structure/table/standard,
-/obj/item/folder/red,
-/obj/item/folder/red,
-/obj/item/device/taperecorder,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/sechall)
 "oaa" = (
@@ -68569,7 +68546,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
@@ -73769,15 +73747,11 @@
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/cafeteria)
 "pLO" = (
-/obj/structure/closet{
-	name = "Evidence Closet"
-	},
-/obj/random/contraband,
 /obj/machinery/light/small{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "pLP" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "10,15"
@@ -77797,18 +77771,16 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/security/prisoncells)
 "qDO" = (
-/obj/structure/closet{
-	name = "Evidence Closet"
-	},
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/random/contraband/low_chance,
-/obj/random/contraband/low_chance,
-/obj/random/contraband/low_chance,
-/obj/item/contraband/poster,
+/obj/machinery/button/windowtint{
+	id = "BARA";
+	pixel_y = 21;
+	range = 5
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "qDS" = (
 /obj/structure/bed,
 /obj/effect/decal/cleanable/cobweb2,
@@ -81297,7 +81269,7 @@
 "rnp" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monofloor,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "rnr" = (
 /obj/machinery/light_switch{
 	dir = 1;
@@ -82350,7 +82322,10 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "ryl" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/gray_perforated,
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/security/sechall)
 "ryn" = (
 /obj/effect/window_lwall_spawn/reinforced,
@@ -83631,9 +83606,11 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/hallway/surface/section1)
 "rMv" = (
-/obj/effect/floor_decal/industrial/arrows/white,
+/obj/effect/floor_decal/industrial/arrows/white{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/monofloor,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "rMH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
@@ -86806,14 +86783,10 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/medical/cryo)
 "svu" = (
+/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/security{
-	name = "Evidence Storage";
-	req_access = list(1)
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	name = "E.Y.E Pod storage";
+	req_access = list(4)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -86821,9 +86794,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "svx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -88456,8 +88428,19 @@
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/unary/vent_pump,
+/obj/structure/table/standard,
+/obj/item/clothing/mask/breath{
+	pixel_x = 4
+	},
+/obj/item/clothing/mask/breath{
+	pixel_y = 4;
+	pixel_x = -4
+	},
+/obj/item/clothing/mask/breath{
+	pixel_x = 4
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "sPG" = (
 /obj/machinery/computer/arcade,
 /turf/simulated/floor/wood,
@@ -88655,11 +88638,11 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/triage_blackshield)
 "sRL" = (
-/obj/structure/bed/chair/office/dark{
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/gray_perforated,
+/turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/security/sechall)
 "sRM" = (
 /turf/simulated/floor/beach/water/coastwater{
@@ -89124,8 +89107,13 @@
 "sWE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/standard,
+/obj/item/clothing/head/helmet/visor/cyberpunkgoggle{
+	pixel_y = 5;
+	pixel_x = -1
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "sWF" = (
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment{
@@ -90093,7 +90081,8 @@
 "tgW" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/engineering/atmos/surface)
@@ -90139,11 +90128,6 @@
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
-"tht" = (
-/obj/machinery/flasher/portable,
-/obj/effect/floor_decal/industrial/box/white,
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/security/tactical)
 "thu" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -91428,15 +91412,15 @@
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/cafeteria)
 "tvC" = (
-/obj/structure/closet{
-	name = "Evidence Closet"
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 1
 	},
-/obj/random/contraband/low_chance,
-/obj/random/contraband/low_chance,
-/obj/random/contraband/low_chance,
-/obj/item/contraband/poster,
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -22
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "tvG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -92274,6 +92258,14 @@
 /area/nadezhda/command/bridgebar)
 "tFf" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9;
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/sechall)
 "tFg" = (
@@ -94651,7 +94643,7 @@
 /obj/structure/noticeboard/marshal{
 	pixel_x = -32
 	},
-/turf/simulated/floor/tiled/dark/gray_perforated,
+/turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/security/sechall)
 "uhI" = (
 /obj/structure/flora/small/trailrockb3,
@@ -97149,8 +97141,12 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "uHe" = (
-/turf/simulated/wall/r_wall,
-/area/nadezhda/security/evidencestorage)
+/obj/machinery/door/airlock/security{
+	name = "Evidence Storage";
+	req_access = list(1)
+	},
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/security/detectives_office)
 "uHf" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -100036,14 +100032,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
-"vlz" = (
-/obj/effect/floor_decal/industrial/box/white,
-/obj/machinery/flasher/portable,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/security/tactical)
 "vlF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/holoposter{
@@ -100486,8 +100474,16 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
 "vpX" = (
-/obj/structure/table/standard,
-/obj/item/device/lighting/toggleable/lamp,
+/obj/machinery/door/airlock/security{
+	name = "Evidence Storage";
+	req_access = list(1)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/sechall)
 "vqd" = (
@@ -101342,11 +101338,12 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "vxW" = (
-/obj/structure/table/standard,
-/obj/item/device/eftpos{
-	eftpos_name = "Marshal EFTPOS scanner"
+/obj/structure/closet{
+	name = "Evidence Closet"
 	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/obj/random/contraband,
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/sechall)
 "vxX" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -102833,8 +102830,16 @@
 "vPk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/standard,
+/obj/item/tank/oxygen{
+	pixel_y = 4
+	},
+/obj/item/tank/oxygen{
+	pixel_x = 3;
+	pixel_y = -2
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "vPo" = (
 /obj/effect/floor_decal/industrial/box/white/corners{
 	dir = 8;
@@ -105357,7 +105362,8 @@
 /obj/machinery/button/windowtint{
 	id = "WO";
 	pixel_x = -6;
-	pixel_y = 4
+	pixel_y = 4;
+	range = 5
 	},
 /obj/item/folder/red,
 /obj/item/folder/red,
@@ -105415,9 +105421,15 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/armory_blackshield)
 "wpM" = (
-/obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/security/sechall)
 "wpN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -107118,8 +107130,12 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/standard,
+/obj/item/clothing/under/cyber{
+	pixel_y = -3
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/evidencestorage)
+/area/nadezhda/security/detectives_office)
 "wHT" = (
 /obj/effect/decal/cleanable/cobweb2,
 /obj/random/lowkeyrandom,
@@ -109445,11 +109461,8 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "xjp" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/gray_perforated,
+/turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/security/sechall)
 "xjr" = (
 /obj/structure/table/reinforced,
@@ -112002,8 +112015,10 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/disposaldrop)
 "xLI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
+/obj/structure/closet{
+	name = "Evidence Closet"
+	},
+/obj/random/contraband,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/sechall)
 "xLS" = (
@@ -113887,11 +113902,7 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "ygO" = (
-/obj/structure/table/standard,
-/obj/machinery/atm{
-	dir = 4;
-	pixel_x = 30
-	},
+/obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/sechall)
 "ygV" = (
@@ -123307,13 +123318,13 @@ puh
 puh
 puh
 puh
-uHe
-uHe
-uHe
-uHe
-uHe
-uHe
-uHe
+puh
+puh
+puh
+puh
+puh
+puh
+puh
 ivh
 lvO
 bgD
@@ -123509,13 +123520,13 @@ aen
 nvy
 aFJ
 vQu
-uHe
+puh
 qDO
 hVt
 bwL
 tvC
 pLO
-uHe
+puh
 pUX
 kgC
 bgD
@@ -123712,7 +123723,7 @@ xqR
 xds
 xqR
 khY
-rMv
+gFg
 dsi
 bQt
 rnp
@@ -123913,7 +123924,7 @@ lUT
 kaC
 ctt
 dZf
-uHe
+puh
 sPE
 vPk
 aIm
@@ -124115,13 +124126,13 @@ puh
 puh
 ofA
 puh
-uHe
+puh
 iAW
 iAW
 svu
 iAW
 iAW
-uHe
+puh
 yiX
 nTQ
 bgD
@@ -124300,7 +124311,7 @@ sFI
 sFI
 sFI
 jIp
-tht
+ctK
 qAa
 qAa
 rcP
@@ -124502,7 +124513,7 @@ sFI
 sFI
 sFI
 jIp
-vlz
+ejB
 qAa
 qAa
 skN
@@ -125525,7 +125536,7 @@ vJt
 pwk
 puh
 puh
-puh
+uHe
 puh
 puh
 puh
@@ -125929,7 +125940,7 @@ pGK
 rAb
 nZZ
 sRL
-atB
+xLI
 faZ
 fau
 wPn
@@ -126330,7 +126341,7 @@ ilM
 qEU
 rzv
 eng
-rAb
+hAS
 tFf
 ryl
 xLI
@@ -126535,7 +126546,7 @@ jmM
 rAb
 ygO
 xjp
-hAS
+kmr
 faZ
 xlw
 xCH
@@ -126736,7 +126747,7 @@ rzv
 vJt
 oXb
 bgD
-cts
+bgD
 cts
 faZ
 fyp

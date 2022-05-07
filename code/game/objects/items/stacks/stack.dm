@@ -43,7 +43,7 @@
 /obj/item/stack/Initialize()
 	.=..()
 	if (!stacktype)
-		stacktype = type
+		stacktype = src
 
 	if (rand_min || rand_max)
 		amount = rand(rand_min, rand_max)
@@ -71,12 +71,12 @@
 
 
 	return ..()
-
+/*
 /obj/item/stack/Crossed(atom/movable/crossing)
 	if(can_merge(crossing) && !crossing.throwing)
 		merge(crossing)
 	. = ..()
-
+*/
 /obj/item/stack/examine(mob/user)
 	if(..(user, 1))
 		if(!uses_charge)
@@ -226,6 +226,8 @@
 	if(!istype(other))
 		return FALSE
 	if(QDELETED(src) || QDELETED(other))
+		return FALSE
+	if((other == src) || (other == src.stacktype_alt))
 		return FALSE
 	return ((other.stacktype == stacktype) || (other.stacktype = stacktype_alt))
 
