@@ -7877,7 +7877,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warningred/full,
 /obj/structure/cable/yellow{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
@@ -10870,7 +10871,7 @@
 	name = "Evidence Storage";
 	req_access = list(1)
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/sechall)
 "ctt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -11464,7 +11465,8 @@
 	pixel_y = 0
 	},
 /obj/structure/cable/yellow{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm2{
@@ -44283,7 +44285,8 @@
 	pixel_y = 0
 	},
 /obj/structure/cable/yellow{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai_upload)
@@ -58873,7 +58876,8 @@
 "mBO" = (
 /obj/machinery/multistructure/biogenerator_part/generator,
 /obj/structure/cable/yellow{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
@@ -62362,7 +62366,8 @@
 	pixel_y = 0
 	},
 /obj/structure/cable/yellow{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm3{
@@ -68541,7 +68546,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
@@ -90075,7 +90081,8 @@
 "tgW" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/engineering/atmos/surface)
@@ -90121,11 +90128,6 @@
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
-"tht" = (
-/obj/machinery/flasher/portable,
-/obj/effect/floor_decal/industrial/box/white,
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/security/tactical)
 "thu" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -100030,14 +100032,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
-"vlz" = (
-/obj/effect/floor_decal/industrial/box/white,
-/obj/machinery/flasher/portable,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/security/tactical)
 "vlF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/holoposter{
@@ -124320,7 +124314,7 @@ sFI
 sFI
 sFI
 jIp
-tht
+ctK
 qAa
 qAa
 rcP
@@ -124522,7 +124516,7 @@ sFI
 sFI
 sFI
 jIp
-vlz
+ejB
 qAa
 qAa
 skN
