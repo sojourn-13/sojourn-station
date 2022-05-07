@@ -102,7 +102,7 @@
 	matter = list(MATERIAL_STEEL = 7, MATERIAL_PLATINUM = 2)
 	tool_qualities = list(QUALITY_EXCAVATION = 35)
 	switched_off_qualities = list(QUALITY_EXCAVATION = 35)
-	switched_on_qualities = list(QUALITY_DIGGING = 60)
+	switched_on_qualities = list(QUALITY_DIGGING = 75)
 	origin_tech = list(TECH_MATERIAL = 4, TECH_POWER = 2, TECH_ENGINEERING = 3)
 	degradation = 0.6
 	workspeed = 1.7

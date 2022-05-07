@@ -90,7 +90,7 @@
 	desc = "It's the ultra-heavy-duty yellow polymer kind. Time to take out the trash!"
 	icon_state = "superbag0"
 	item_state = "trashbag"
-	max_storage_space = DEFAULT_BULKY_STORAGE * 1.25
+	max_storage_space = DEFAULT_BULKY_STORAGE * 1.5
 	price_tag = 60
 
 /obj/item/storage/bag/trash/big/update_icon()
@@ -130,7 +130,7 @@
 	icon_state = "satchel"
 	slot_flags = SLOT_BELT | SLOT_POCKET
 	w_class = ITEM_SIZE_NORMAL
-	max_storage_space = 100
+	max_storage_space = 240 //So they can hold a full stack of ore
 	max_w_class = ITEM_SIZE_NORMAL
 	can_hold = list(/obj/item/stack/ore)
 	var/stored_ore = list()
