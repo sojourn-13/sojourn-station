@@ -3,11 +3,13 @@
 /datum/chemical_reaction/inaprovaline
 	result = "inaprovaline"
 	required_reagents = list("acetone" = 1, "carbon" = 1, "sugar" = 1)
+	//byproducts = list("water" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/dylovene
 	result = "anti_toxin"
 	required_reagents = list("silicon" = 1, "potassium" = 1, "ammonia" = 1)
+	//byproducts = list("water" = 1, "sugar" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/carthatoline
@@ -361,6 +363,22 @@
 	required_reagents = list("mindbreaker" = 1, "acetone" = 1, "inaprovaline" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/lean
+	result = "lean"
+	required_reagents = list("tramadol" = 1, "chloralhydrate" = 1, "stoxin" = 1, "sodawater" = 1)
+	byproducts= list("redcandyliquor" = 1) //Its called old fastion sleeping agent
+	result_amount = 1
+
+/datum/chemical_reaction/compressedjelly
+	result = null
+	required_reagents = list("slimejelly" = 100)
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/compressedjelly/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var /obj/item/slime_potion/slimes_reviver/R = new /obj/item/slime_potion/slimes_reviver
+	R.loc = get_turf(holder.my_atom)
+
 /* Centrifuge */
 
 /datum/chemical_reaction/curing
@@ -505,11 +523,13 @@
 
 /datum/chemical_reaction/nitroglycerin/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/datum/effect/effect/system/reagents_explosion/e = new()
-	e.set_up(round (created_volume/2, 1), holder.my_atom, 0, 0)
-	//at created_volume/10, doble 120 beaker bomb is 5,
-	//at created_volume/4,  doble 120 beaker bomb is 21,
-	//at created_volume/2,  doble 120 beaker bomb is 43,
-	//Given the effort it takes and hydr needed for this 2 is fine.
+	e.set_up(round (created_volume/10, 1), holder.my_atom, 0, 0)
+	//None of this account for BS beakers or 2 buckets... - Same as old water + poss but hey this takes more effert even tho it still has no counter
+	//at created_volume/10, doble 240 beaker bomb is 24,
+	//at created_volume/6,  doble 240 beaker bomb is 40,
+	//at created_volume/4,  doble 240 beaker bomb is 60,
+	//at created_volume/2,  doble 240 beaker bomb is 120,
+	//Given the effort it takes and hydr needed for this 10 is fine, it requires BS beakers to make a max cap.
 	if(isliving(holder.my_atom))
 		e.amount *= 0.5
 		var/mob/living/L = holder.my_atom
@@ -709,6 +729,23 @@
 	required_reagents = list("bicaridine" = 1, "spaceacillin" = 1, "mercury" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/nosfernium // yes I'm aware of the cancer that the mix is. Its meant to be annoying for reasons.
+	result = "nosfernium" // reagent/drug
+	required_reagents = list("sanguinum" = 27, "bicaridine" = 34, "milk" = 1, "iron" = 29, "lithium" = 16, "sugar" = 8)
+	catalysts = list("plasma" = 21)
+	result_amount = 1
+	byproducts= list("viroputine" = 1) // reagent/other
+	minimum_temperature = 358
+	maximum_temperature = 373
+
+/datum/chemical_reaction/nosfernium2
+	result = "nosfernium" // reagent/drug
+	required_reagents = list("viroputine" = 1, "nosfernium" = 1, "milk" = 5, "blood" = 5)
+	result_amount = 2
+	byproducts= list("viroputine" = 1) // reagent/other
+	minimum_temperature = 358
+	maximum_temperature = 373
+
 /datum/chemical_reaction/kyphotorin
 	result = "kyphotorin"
 	required_reagents = list("peridaxon" = 1, "mutagen" = 1, "clonexadone" = 1)
@@ -860,3 +897,22 @@
 	result = "chemweapon1"
 	required_reagents = list("hydrazine" = 1, "cyanide" = 1, "potassium_chloride" = 1, "lexorin" = 1)
 	result_amount = 2
+
+/datum/chemical_reaction/sterilizer
+	result = "sterilizer"
+	required_reagents = list("dermaline" = 1, "sodium" = 1, "sterilizine" = 1)
+	result_amount = 3
+	catalysts = list("clonexadone" = 5)
+
+/datum/chemical_reaction/sterilizer_crystal
+	result = null
+	required_reagents = list("sterilizer" = 20, "sulfur" = 20, "tungsten" = 20)
+	result_amount = 1
+	maximum_temperature = 40
+	minimum_temperature = 0
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/sterilizer_crystal/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/stack/sterilizer_crystal(location)

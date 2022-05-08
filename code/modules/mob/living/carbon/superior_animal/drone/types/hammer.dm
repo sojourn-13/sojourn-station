@@ -12,7 +12,9 @@
 	exam_message = "This one appears to wield a stellar-grade engine shaped into a hammer."
 
 /mob/living/carbon/superior_animal/handmade/hammer/UnarmedAttack()
-	if(!Adjacent(target_mob))
+	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if(!Adjacent(targetted_mob))
 		return
 
 	//special attacks

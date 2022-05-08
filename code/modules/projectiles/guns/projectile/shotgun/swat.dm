@@ -13,7 +13,7 @@
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
 	price_tag = 1250
 	damage_multiplier = 1.1
-	penetration_multiplier = 1
+	penetration_multiplier = 1.2
 	recoil_buildup = 14
 	one_hand_penalty = 15 //full sized shotgun level
 	saw_off = FALSE //No
@@ -23,6 +23,7 @@
 		SEMI_AUTO_NODELAY,
 		list(mode_name="fire 10x24 pistol", mode_desc="Shoot the built in 10x24 pistol",  burst=1, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
+	serial_type = "SD GmbH"
 
 	var/obj/item/gun/projectile/automatic/underslung/pistol/pistol
 
@@ -53,7 +54,7 @@
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
-	if(folded)
+	if(!folded)
 		iconstring += "-stock"
 
 	if(wielded)
@@ -67,10 +68,11 @@
 /obj/item/gun/projectile/automatic/underslung/pistol
 	name = "built in pistol"
 	desc = "Not much more than a tube and a firing mechanism, this pistol is designed to be fitted to another gun."
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	matter = null
+	damage_multiplier = 1.2
 	force = 5
 	max_shells = 9
 	safety = FALSE
@@ -82,3 +84,4 @@
 	init_firemodes = list(
 		BURST_3_ROUND
 		)
+	serial_type = "SD GmbH"

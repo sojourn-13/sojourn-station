@@ -16,7 +16,7 @@
 	name = "Cyborg Remote Access & Monitor"
 	available_to_ai = TRUE
 
-/datum/nano_module/program/remote_cyborg_controle/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/remote_cyborg_controle/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	var/data[0]
 	var/safety = 1
 	data["robots"] = get_cyborgs(user)
@@ -57,7 +57,7 @@
 			return
 
 		// Antagonistic cyborgs? Left here for downstream
-		if(target.mind && player_is_antag(target.mind) && target.emagged)
+		if(target.mind && player_is_antag(target.mind) && target.HasTrait(CYBORG_TRAIT_EMAGGED))
 			to_chat(target, "Extreme danger.  Termination codes detected.  Scrambling security codes and automatic AI unlink triggered.")
 			target.ResetSecurityCodes()
 		else
@@ -111,7 +111,7 @@
 			to_chat(user, "Access Denied")
 			return
 
-		if(target.emagged)
+		if(target.HasTrait(CYBORG_TRAIT_EMAGGED))
 			to_chat(user, "Robot is already hacked.")
 			return
 
@@ -124,7 +124,7 @@
 
 		message_admins(SPAN_NOTICE("[key_name_admin(usr)] emagged [target.name] using robotic console!"))
 		log_game("[key_name(usr)] emagged [target.name] using robotic console!")
-		target.emagged = 1
+		target.AddTrait(CYBORG_TRAIT_EMAGGED)
 		to_chat(target, SPAN_NOTICE("Failsafe protocols overriden. New tools available."))
 
 	// Arms the emergency self-destruct system
@@ -193,10 +193,10 @@
 		robot["module"] = R.module ? R.module.name : "None"
 		robot["master_ai"] = R.connected_ai ? R.connected_ai.name : "None"
 		robot["hackable"] = 0
-		// Antag AIs know whether linked cyborgs are hacked or not.
+		/* Antag AIs know whether linked cyborgs are hacked or not.
 		if(operator && isAI(operator) && (R.connected_ai == operator) && (operator.mind.antagonist.len && operator.mind.original == operator))
-			robot["hacked"] = R.emagged ? 1 : 0
-			robot["hackable"] = R.emagged? 0 : 1
+			robot["hacked"] = HasTrait(CYBORG_TRAIT_EMAGGED) ? 1 : 0
+			robot["hackable"] = HasTrait(CYBORG_TRAIT_EMAGGED) ? 0 : 1*/
 		robots.Add(list(robot))
 	return robots
 

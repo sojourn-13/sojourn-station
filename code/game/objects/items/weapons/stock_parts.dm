@@ -4,12 +4,16 @@
 	gender = PLURAL
 	icon = 'icons/obj/stock_parts.dmi'
 	w_class = ITEM_SIZE_SMALL
+	price_tag = 100
 	var/rating = 1
 
 /obj/item/stock_parts/New()
 	src.pixel_x = rand(-5.0, 5)
 	src.pixel_y = rand(-5.0, 5)
 	..()
+
+/obj/item/stock_parts/get_item_cost(export)
+	. = ..() * rating
 
 //Rank 1
 

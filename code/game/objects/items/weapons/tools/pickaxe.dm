@@ -6,6 +6,7 @@
 	force = WEAPON_FORCE_DANGEROUS
 	armor_penetration = ARMOR_PEN_EXTREME // It's a pickaxe. It's destined to poke holes in things, even armor.
 	throwforce = WEAPON_FORCE_NORMAL
+	worksound = WORKSOUND_PICKAXE
 	icon_state = "pickaxe"
 	item_state = "pickaxe"
 	max_health = 500
@@ -44,6 +45,14 @@
 	to_chat(user, SPAN_NOTICE("You loosen your grip on [src], and prepare to remove debris."))
 	..()
 
+/obj/item/tool/pickaxe/upgraded
+	name = "plasteel-head pickaxe"
+	desc = "A normal-looking pickaxe with the head replaced with plasteel."
+	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 2)
+	tool_qualities = list(QUALITY_EXCAVATION = 20, QUALITY_PRYING = 20)
+	switched_off_qualities = list(QUALITY_EXCAVATION = 20, QUALITY_PRYING = 20)
+	switched_on_qualities = list(QUALITY_DIGGING = 40, QUALITY_PRYING = 20)
+	workspeed = 1.1
 
 /obj/item/tool/pickaxe/onestar
 	name = "Greyson Positronic Pickaxe"
@@ -101,7 +110,7 @@
 	matter = list(MATERIAL_STEEL = 7, MATERIAL_PLATINUM = 2)
 	tool_qualities = list(QUALITY_EXCAVATION = 35)
 	switched_off_qualities = list(QUALITY_EXCAVATION = 35)
-	switched_on_qualities = list(QUALITY_DIGGING = 60)
+	switched_on_qualities = list(QUALITY_DIGGING = 75)
 	origin_tech = list(TECH_MATERIAL = 4, TECH_POWER = 2, TECH_ENGINEERING = 3)
 	degradation = 0.6
 	workspeed = 1.7
@@ -159,8 +168,7 @@
 	price_tag = 900
 
 /obj/item/tool/pickaxe/diamonddrill/rig
-	switched_off_qualities = list(QUALITY_DIGGING = 50, QUALITY_DRILLING = 50)
-	switched_on_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_DRILLING = 20)
+	tool_qualities = list(QUALITY_DIGGING = 50, QUALITY_DRILLING = 50)
 	use_fuel_cost = 0
 	passive_fuel_cost = 0
 

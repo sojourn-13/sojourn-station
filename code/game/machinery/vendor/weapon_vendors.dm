@@ -31,7 +31,7 @@
 	/obj/item/gun/projectile/revolver/rev10 = 2,
 	/obj/item/gun/projectile/revolver/mistral = 2,
 	//Automatic
-	/obj/item/gun/projectile/automatic/basstet = 2,
+	/obj/item/gun/projectile/automatic/ppsh/ppv = 2,
 	/obj/item/gun/projectile/automatic/greasegun = 2,
 	/obj/item/gun/projectile/automatic/mac = 2,
 	/obj/item/gun/projectile/automatic/wirbelwind = 2,
@@ -103,7 +103,7 @@
 	/obj/item/gun/projectile/revolver/rev10 = 800,
 	/obj/item/gun/projectile/revolver/mistral = 900,
 	//Automatic
-	/obj/item/gun/projectile/automatic/basstet = 850,
+	/obj/item/gun/projectile/automatic/ppsh/ppv = 1200,
 	/obj/item/gun/projectile/automatic/greasegun = 950,
 	/obj/item/gun/projectile/automatic/mac = 1000,
 	/obj/item/gun/projectile/automatic/wirbelwind = 1500,
@@ -171,13 +171,13 @@
 					/obj/item/ammo_magazine/pistol_35/rubber = 8,
 					/obj/item/ammo_magazine/highcap_pistol_35/rubber = 8,
 					/obj/item/ammo_magazine/smg_35/rubber = 8,
-					/obj/item/ammo_magazine/light_rifle_257_short/rubber = 8,
-					/obj/item/ammo_magazine/rifle_75/rubber = 8,
-					/obj/item/ammo_magazine/heavy_rifle_408/rubber = 8,
 					/obj/item/ammo_magazine/magnum_40/rubber = 8,
 					/obj/item/ammo_magazine/speed_loader_magnum_40/rubber = 6,
 					/obj/item/ammo_magazine/kurtz_50/rubber = 6,
 					/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 6,
+					/obj/item/ammo_magazine/light_rifle_257_short/rubber = 8,
+					/obj/item/ammo_magazine/rifle_75/rubber = 8,
+					/obj/item/ammo_magazine/heavy_rifle_408/rubber = 8,
 					/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 2,
 					/obj/item/ammo_casing/flare/prespawn = 5,
 					/obj/item/ammo_casing/flare/blue/prespawn = 5,
@@ -211,7 +211,7 @@
 					/obj/item/storage/backpack/satchel/neotheology = 5,
 					/obj/item/storage/backpack/neotheology = 5,
 					/obj/item/storage/backpack/sport/neotheology = 5,
-					/obj/item/clothing/accessory/fractalrosary = 15,
+					/obj/item/clothing/accessory/necklace/fractalrosary = 15,
 					/obj/item/clothing/suit/storage/neotheosports = 5,
 					/obj/item/clothing/suit/storage/toggle/absolutehoodie = 5,
 					/obj/item/clothing/suit/greatcoat/absolutecoat= 5,
@@ -224,8 +224,8 @@
 					/obj/item/stack/medical/bruise_pack = 8,
 					/obj/item/stack/medical/ointment = 8,
 					/obj/item/stack/medical/splint = 5,
-					/obj/item/stack/medical/advanced/bruise_pack = 4,
-					/obj/item/stack/medical/advanced/ointment = 4,
+					/obj/item/stack/medical/advanced/bruise_pack/nt = 4,
+					/obj/item/stack/medical/advanced/ointment/nt = 4,
 					/obj/item/storage/pouch/small_generic = 2,
 					/obj/item/storage/pouch/medium_generic = 2,
 					/obj/item/storage/pouch/medical_supply = 2,
@@ -239,7 +239,8 @@
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns = 2,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns = 2,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms/public = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 3)
+					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public = 3,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter = 2)
 	contraband = list(/obj/item/tool/knife/neotritual = 3,
 					/obj/item/gun/matter/launcher/nt_sprayer = 3)
 
@@ -255,7 +256,7 @@
 					/obj/item/storage/backpack/satchel/neotheology = 20,
 					/obj/item/storage/backpack/neotheology = 20,
 					/obj/item/storage/backpack/sport/neotheology = 20,
-					/obj/item/clothing/accessory/fractalrosary = 5,
+					/obj/item/clothing/accessory/necklace/fractalrosary = 5,
 					/obj/item/clothing/suit/storage/neotheosports = 40,
 					/obj/item/clothing/suit/storage/toggle/absolutehoodie = 50,
 					/obj/item/clothing/suit/greatcoat/absolutecoat= 45,
@@ -283,9 +284,44 @@
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns = 950,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns = 800,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms/public = 100,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 100,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public = 100,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter = 400,
 					/obj/item/tool/knife/neotritual = 250,
 					/obj/item/gun/matter/launcher/nt_sprayer = 500)
+	custom_vendor = TRUE // So they can sell pouches and other printed goods, if they bother to stock them
+
+/obj/machinery/vending/theomat/proc/check_NT(mob/user)
+	var/bingo = TRUE //SoJ tweak, were always true, sadly for us church likes non-churchies (lame I know)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(is_neotheology_disciple(H))
+			bingo = TRUE
+
+		else if(istype(H.get_active_hand(), /obj/item/clothing/accessory/cross))
+			bingo = TRUE
+
+		else if(istype(H.wear_mask, /obj/item/clothing/accessory/cross))
+			bingo = TRUE
+
+		else if(H.w_uniform && istype(H.w_uniform, /obj/item/clothing))
+			var/obj/item/clothing/C = H.w_uniform
+			for(var/obj/item/I in C.accessories)
+				if(istype(I, /obj/item/clothing/accessory/cross))
+					bingo = TRUE
+					break
+
+	if(bingo)
+		return TRUE
+	to_chat(user, SPAN_WARNING("[src] flashes a message: Unauthorized Access."))
+	return FALSE
+
+/obj/machinery/vending/theomat/vend(datum/data/vending_product/R, mob/user)
+	if(check_NT(user))
+		..()
+
+/obj/machinery/vending/theomat/try_to_buy(obj/item/W, var/datum/data/vending_product/R, var/mob/user)
+	if(check_NT(user))
+		..()
 
 /obj/machinery/vending/serbomat
 	name = "From Serbia with love"
@@ -363,8 +399,8 @@
 		/obj/item/storage/box/vendor_lootbox/medicine_moderate = 250,
 		/obj/item/storage/box/vendor_lootbox/medicine_high = 500,
 		/obj/item/storage/box/vendor_lootbox/oddity_low = 150,
-		/obj/item/storage/box/vendor_lootbox/oddity_moderate = 300,
-		/obj/item/storage/box/vendor_lootbox/oddity_high = 600,
+		/obj/item/storage/box/vendor_lootbox/oddity_moderate = 275,
+		/obj/item/storage/box/vendor_lootbox/oddity_high = 400,
 		/obj/item/grenade/spawnergrenade/manhacks/junkbot = 100,
 		/obj/item/ammo_kit = 25,
 		/obj/item/gun/projectile/handmade_pistol = 50,

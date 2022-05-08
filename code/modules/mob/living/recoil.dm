@@ -1,8 +1,17 @@
 /mob/living/proc/handle_recoil(var/obj/item/gun/G)
+	if(!ishuman(src)) //Soj edit, if your not human you dont have recoil. saves on preformance when mobs shoot
+		return
 	deltimer(recoil_reduction_timer)
 	if(G.one_hand_penalty)//If the gun has a two handed penalty and is not weilded.
 		if(!G.wielded && !usr.stats.getPerk(PERK_PERFECT_SHOT))
-			recoil += G.one_hand_penalty //Then the one hand penalty will be added to the recoil.
+			recoil += G.one_hand_penalty // Then the one hand penalty will be added to the recoil.
+
+	if(G.braced)
+		recoil--
+		if(G.braceable > 1)
+			recoil--
+	else if(G.brace_penalty)
+		recoil += G.brace_penalty
 
 	var/debug_recoil = min(0.3, G.fire_delay)
 	if(G.fire_delay == 0)
@@ -16,35 +25,40 @@
 	deltimer(recoil_reduction_timer)
 	add_recoil(recoil_buildup)
 
-mob/proc/handle_movement_recoil() // Used in movement/mob.dm
+/mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 	return // Only the living have recoil
 
+//proc is edited a lot by SoJ
 /mob/living/handle_movement_recoil()
+	if(!ishuman(src)) //Soj edit, if your not human you dont have recoil. saves on preformance when mobs shoot
+		return
 	deltimer(recoil_reduction_timer)
 
 	var/base_recoil = 1
 
-	if(ishuman(src))
-		var/mob/living/carbon/human/H = src
-		var/suit_stiffness = 0
-		var/uniform_stiffness = 0
-		if(H.wear_suit)
-			suit_stiffness = H.wear_suit.stiffness
-		if(H.w_uniform)
-			uniform_stiffness = H.w_uniform.stiffness
-		base_recoil += suit_stiffness + suit_stiffness * uniform_stiffness // Wearing it under actual armor, or anything too thick is extremely uncomfortable.
+	var/mob/living/carbon/human/H = src
+	var/suit_stiffness = 0
+	var/uniform_stiffness = 0
+	if(H.wear_suit)
+		suit_stiffness = H.wear_suit.stiffness
+	if(H.w_uniform)
+		uniform_stiffness = H.w_uniform.stiffness
+	base_recoil += suit_stiffness + suit_stiffness * uniform_stiffness // Wearing it under actual armor, or anything too thick is extremely uncomfortable.
 	add_recoil(base_recoil)
 
 /mob/living/proc/add_recoil(var/recoil_buildup)
+	if(!ishuman(src)) //Soj edit, if your not human you dont have recoil. saves on preformance when mobs shoot
+		return
 	if(recoil_buildup)
 		recoil += recoil_buildup
 		update_recoil()
 
 /mob/living/proc/calc_recoil()
-
+	if(!ishuman(src)) //Soj edit, if your not human you dont have recoil. saves on preformance when mobs shoot
+		return
 	var/minimum = 0.4
 	var/scale = 0.8
-	var/limit = minimum / (1 - scale)
+	var/limit = 2 //minimum / (1 - scale) - Soj edit smallest bit of profrmance, eris will prob change this soon anyways
 
 	if(recoil >= limit)
 		recoil *= scale
@@ -56,19 +70,22 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 	update_recoil()
 
 /mob/living/proc/calculate_offset(var/offset = 0)
+	if(!ishuman(src)) //Soj edit, if your not human you dont have recoil. saves on preformance when mobs shoot
+		return
 	if(recoil)
 		offset += recoil
-	if(ishuman(src))
-		var/mob/living/carbon/human/H = src
-		if(H.head)
-			offset += H.head.obscuration
-		offset -= CLAMP(H.stats.getStat(STAT_VIG), 0, STAT_LEVEL_PROF) * 0.1 // Up to max -6 offset
+	var/mob/living/carbon/human/H = src
+	if(H.head)
+		offset += H.head.obscuration
+	offset -= CLAMP(H.stats.getStat(STAT_VIG), 0, STAT_LEVEL_PROF) * 0.1 // Up to max -6 offset
 	offset = round(offset)
 	offset = CLAMP(offset, 0, MAX_ACCURACY_OFFSET)
 	return offset
 
 //Called after setting recoil
 /mob/living/proc/update_recoil()
+	if(!ishuman(src)) //Soj edit, if your not human you dont have recoil. saves on preformance when mobs shoot
+		return
 	var/obj/item/gun/G = get_active_hand()
 	if(istype(G) && G)
 		G.check_safety_cursor(src)

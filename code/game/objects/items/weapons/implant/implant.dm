@@ -30,7 +30,7 @@
 		if(!M.implant && user.unEquip(src, M))
 			M.implant = src
 			M.update_icon()
-
+		return TRUE
 
 /obj/item/implant/proc/trigger(emote, mob/living/source)
 /obj/item/implant/proc/activate()
@@ -91,7 +91,8 @@
 /obj/item/implant/proc/uninstall()
 	on_uninstall()
 	forceMove(get_turf(wearer))
-	part.implants.Remove(src)
+	if(part)
+		part.implants.Remove(src)
 	part = null
 	implanted = FALSE
 	if(ishuman(wearer))

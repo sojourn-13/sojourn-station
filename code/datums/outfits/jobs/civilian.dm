@@ -58,7 +58,7 @@
 	glasses = /obj/item/clothing/glasses/artist
 	mask = /obj/item/clothing/mask/gas/artist_hat
 	l_pocket = /obj/item/bikehorn
-	backpack_contents = list(/obj/item/bananapeel = 1, /obj/item/storage/fancy/crayons = 1, /obj/item/toy/weapon/waterflower = 1, /obj/item/stamp/clown = 1, /obj/item/handcuffs/fake = 1)
+	backpack_contents = list(/obj/item/storage/hcases/scrap/job_artist = 1)
 
 /decl/hierarchy/outfit/job/cargo/artist/clown/post_equip(var/mob/living/carbon/human/H)
 	..()

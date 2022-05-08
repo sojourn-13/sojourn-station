@@ -63,25 +63,27 @@
 /obj/item/tool/hammer/telekinetic_fist/attack(atom/movable/target, mob/user)
 	var/whack_speed = 0
 
-	if(user.stats.getStat(STAT_ROB) <= 0)
-		force = WEAPON_FORCE_HARMLESS
-		whack_speed = 2
-	else if(user.stats.getStat(STAT_ROB) <= 15)
-		force = WEAPON_FORCE_NORMAL // As strong as a kitchen knife
-		whack_speed = 4
-	else if(user.stats.getStat(STAT_ROB) <= 25)
-		force = WEAPON_FORCE_DANGEROUS // As strong as a butcher cleaver
-		whack_speed = 6
-	else if(user.stats.getStat(STAT_ROB) <= 35)
-		force = WEAPON_FORCE_ROBUST // As strong as a machete
-		whack_speed = 6
-	else if(user.stats.getStat(STAT_ROB) > 35)
-		force = WEAPON_FORCE_BRUTAL
-		whack_speed = 6
+	switch(user.stats.getStat(STAT_ROB))
+		if(1 to 14)
+			force = WEAPON_FORCE_NORMAL // As strong as a kitchen knife
+			whack_speed = 4
+		if(15 to 24)
+			force = WEAPON_FORCE_DANGEROUS // As strong as a butcher cleaver
+			whack_speed = 6
+		if(25 to 34)
+			force = WEAPON_FORCE_ROBUST // As strong as a machete
+			whack_speed = 6
+		if(35 to INFINITY)
+			force = WEAPON_FORCE_BRUTAL
+			whack_speed = 6
+		else
+			force = WEAPON_FORCE_HARMLESS
+			whack_speed = 2
 
 	if(user.stats.getPerk(PERK_PSI_MANIA))
 		force = WEAPON_FORCE_BRUTAL
 		whack_speed = 6
+		armor_penetration = ARMOR_PEN_HALF
 
 	var/throwdir = get_dir(user,target)
 	target.throw_at(get_edge_target_turf(target, throwdir),whack_speed,whack_speed)
@@ -123,18 +125,22 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/item/tool/knife/psionic_blade/attack(atom/target, mob/user)
-	if(user.stats.getStat(STAT_ROB) <= 0)
-		force = WEAPON_FORCE_HARMLESS
-	else if(user.stats.getStat(STAT_ROB) <= 15)
-		force = WEAPON_FORCE_NORMAL // As strong as a kitchen knife
-	else if(user.stats.getStat(STAT_ROB) <= 25)
-		force = WEAPON_FORCE_DANGEROUS // As strong as a butcher cleaver
-	else if(user.stats.getStat(STAT_ROB) <= 35)
-		force = WEAPON_FORCE_ROBUST // As strong as a machete
-	else if(user.stats.getStat(STAT_ROB) > 35)
-		force = WEAPON_FORCE_BRUTAL
+	switch(user.stats.getStat(STAT_ROB))
+		if(1 to 14)
+			force = WEAPON_FORCE_NORMAL // As strong as a kitchen knife
+		if(15 to 24)
+			force = WEAPON_FORCE_DANGEROUS // As strong as a butcher cleaver
+		if(25 to 34)
+			force = WEAPON_FORCE_ROBUST // As strong as a machete
+		if(35 to INFINITY)
+			force = WEAPON_FORCE_BRUTAL
+		else
+			force = WEAPON_FORCE_HARMLESS
+
 	if(user.stats.getPerk(PERK_PSI_MANIA))
 		force = WEAPON_FORCE_BRUTAL
+		armor_penetration = ARMOR_PEN_HALF
+
 	..()
 	force = initial(force) // Reset the damage just in case
 
@@ -161,7 +167,7 @@
 	max_durability = 100 //Can be made on mass and is meant to to be a light weak shield
 	durability = 100
 	slowdown_time = 0 //Were crappy and mass made by the mind
-	armor = list(melee = 10, bullet = 10, energy = 5, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 10, bullet = 10, energy = 5, bomb = 10, bio = 0, rad = 0)
 	base_block_chance = 40
 	var/mob/living/carbon/holder // The one that prevent the blade from fading
 
@@ -172,6 +178,198 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/item/shield/riot/crusader/psionic/Process()
+	if(loc != holder) // We're no longer in the psionic's hand.
+		visible_message("The [src.name] fades into nothingness.")
+		STOP_PROCESSING(SSobj, src)
+		qdel(src)
+		return
+
+// Psionic gun.
+/obj/item/gun/kinetic_blaster
+	name = "psychokinetic orb"
+	desc = "A kinetic orb, a roiling ball of force that is a projection of a psion's will. It disappears if dropped and uses a single point of essence per shot to fire a \
+	bolt of pure force that harms anything it hits. It's strength scales with the user's cognition."
+	icon = 'icons/obj/guns/energy/kinetic_blaster.dmi'
+	icon_state = "kinetic"
+	item_state = "kinetic"
+	fire_sound = 'sound/weapons/wave.ogg'
+	fire_sound_text = "kinetic blast"
+	max_upgrades = 0
+	var/projectile_type = /obj/item/projectile/kinetic_blast // What does it shoot
+	var/use_amount = 1 // How many psi-points is used per shot
+	var/mob/living/carbon/holder // The one that prevent the fist from fading
+	var/obj/item/organ/internal/psionic_tumor/PT // The psionic organ of the holder.
+	var/changes_projectile = TRUE
+	serial_shown = FALSE
+
+/obj/item/gun/kinetic_blaster/New(var/loc, var/mob/living/carbon/maker, var/obj/item/organ/internal/psionic_tumor/tumor)
+	..()
+	holder = maker
+	PT = tumor
+	var/force
+	var/cog = holder.stats.getStat(STAT_COG)
+	if(changes_projectile)
+		switch(cog)
+			if(1 to 14)
+				force = /obj/item/projectile/kinetic_blast/normal // As strong as a kitchen knife
+			if(15 to 24)
+				force = /obj/item/projectile/kinetic_blast/dangerous // As strong as a butcher cleaver
+			if(25 to 34)
+				force = /obj/item/projectile/kinetic_blast/robust // As strong as a machete
+			if(35 to INFINITY)
+				force = /obj/item/projectile/kinetic_blast/brutal
+			else
+				force = /obj/item/projectile/kinetic_blast
+
+		if(holder.stats.getPerk(PERK_PSI_MANIA))
+			force = /obj/item/projectile/kinetic_blast/brutal
+			armor_penetration = ARMOR_PEN_HALF
+
+		projectile_type = force
+
+	START_PROCESSING(SSobj, src)
+
+/obj/item/gun/kinetic_blaster/consume_next_projectile()
+	if(!ispath(projectile_type)) // Do we actually shoot something?
+		return null
+	if(!PT.pay_power_cost(use_amount)) // Do we have enough psi-points?
+		return null
+	return new projectile_type(src)
+
+/obj/item/gun/kinetic_blaster/Process()
+	if(loc != holder) // We're no longer in the psionic's hand.
+		visible_message("[src] fades into nothingness.")
+		STOP_PROCESSING(SSobj, src)
+		qdel(src)
+		return
+
+/obj/item/gun/kinetic_blaster/cryo
+	name = "cryo-kinetic orb"
+	desc = "A cryo-kinetic orb, a roiling ball of frost that is a projection of a psion's will. It disappears if dropped and uses four points of essence per shot to fire a \
+	bolt of pure ice that stuns whoever it hits. Deals no damage on its own."
+	icon_state = "cryo"
+	item_state = "cryo"
+	projectile_type = /obj/item/projectile/kinetic_blast_cryo
+	use_amount = 4
+	changes_projectile = FALSE
+
+/obj/item/gun/kinetic_blaster/pyro
+	name = "pyro-kinetic orb"
+	desc = "A pyro-kinetic orb, a roiling ball of flames that is a projection of a psion's will. It disappears if dropped and uses three points of essence per shot to fire a \
+	destructive ball of fire. The impact happens too fast to let anything catch fire, but the sudden expansion of heat causes an explosion like a rocket propelled grenade."
+	icon_state = "pryo"
+	item_state = "pryo"
+	projectile_type = /obj/item/projectile/kinetic_blast_pyro
+	use_amount = 3
+	changes_projectile = FALSE
+
+/obj/item/gun/kinetic_blaster/electro
+	name = "electro-kinetic orb"
+	desc = "An electro-kinetic orb, a roiling ball of lightning that is a projection of a psion's will. It disappears if dropped and uses two points of essence per shot to fire a \
+	bolt of pure lightning at unmeasurable speed. Scales in power with the user's cognition."
+	icon_state = "electro"
+	item_state = "electro"
+	fire_sound = 'sound/effects/lightningshock.ogg'
+	projectile_type = /obj/item/projectile/kinetic_blast_electro
+	use_amount = 2
+
+/obj/item/gun/kinetic_blaster/electro/New(var/loc, var/mob/living/carbon/maker, var/obj/item/organ/internal/psionic_tumor/tumor)
+	..()
+	holder = maker
+	PT = tumor
+	var/force
+	var/cog = holder.stats.getStat(STAT_COG)
+	if(changes_projectile)
+		switch(cog)
+			if(1 to 14)
+				force = /obj/item/projectile/kinetic_blast_electro/normal // As strong as a kitchen knife
+			if(15 to 24)
+				force = /obj/item/projectile/kinetic_blast_electro/dangerous // As strong as a butcher cleaver
+			if(25 to 34)
+				force = /obj/item/projectile/kinetic_blast_electro/robust // As strong as a machete
+			if(35 to INFINITY)
+				force = /obj/item/projectile/kinetic_blast_electro/brutal
+			else
+				force = /obj/item/projectile/kinetic_blast_electro
+
+		if(holder.stats.getPerk(PERK_PSI_MANIA))
+			force = /obj/item/projectile/kinetic_blast_electro/brutal
+			armor_penetration = ARMOR_PEN_HALF
+
+		projectile_type = force
+
+	START_PROCESSING(SSobj, src)
+
+// Psionic Projectiles
+/obj/item/projectile/kinetic_blast
+	name = "kinetic blast"
+	icon_state = "magicm"
+	damage_types = list(BRUTE = WEAPON_FORCE_HARMLESS)
+
+/obj/item/projectile/kinetic_blast/normal
+	damage_types = list(BRUTE = WEAPON_FORCE_NORMAL)
+
+/obj/item/projectile/kinetic_blast/dangerous
+	damage_types = list(BRUTE = WEAPON_FORCE_DANGEROUS)
+
+/obj/item/projectile/kinetic_blast/robust
+	damage_types = list(BRUTE = WEAPON_FORCE_ROBUST)
+
+/obj/item/projectile/kinetic_blast/brutal
+	damage_types = list(BRUTE = WEAPON_FORCE_BRUTAL)
+
+/obj/item/projectile/kinetic_blast_cryo
+	name = "cryo-kinetic blast"
+	icon_state = "ice_1"
+	nodamage = TRUE //Determines if the projectile will skip any damage inflictions
+	taser_effect = TRUE //If set then the projectile will apply it's agony damage using stun_effect_act() to mobs it hits, and other damage will be ignored
+
+/obj/item/projectile/kinetic_blast_pyro
+	name = "pyro-kinetic blast"
+	icon_state = "fireball"
+	var/list/explosion_values = list(0, 1, 2, 4) // Explosions strengths, same value as a regular missile.
+
+/obj/item/projectile/kinetic_blast_pyro/on_impact(atom/target)
+	explosion(loc, explosion_values[1], explosion_values[2], explosion_values[3], explosion_values[4])
+	return TRUE
+
+/obj/item/projectile/kinetic_blast_electro
+	name = "electro-kinetic blast"
+	icon_state = "invisible"
+	hitscan = TRUE
+	damage_types = list(BRUTE = WEAPON_FORCE_HARMLESS * 1.5)
+	invisibility = 101	//beam projectiles are invisible as they are rendered by the effect engine
+
+	muzzle_type = /obj/effect/projectile/tesla/muzzle
+	tracer_type = /obj/effect/projectile/tesla/tracer
+	impact_type = /obj/effect/projectile/tesla/impact
+
+/obj/item/projectile/kinetic_blast_electro/normal
+	damage_types = list(BURN = WEAPON_FORCE_NORMAL * 1.5)
+
+/obj/item/projectile/kinetic_blast_electro/dangerous
+	damage_types = list(BURN = WEAPON_FORCE_DANGEROUS * 1.5)
+
+/obj/item/projectile/kinetic_blast_electro/robust
+	damage_types = list(BURN = WEAPON_FORCE_ROBUST * 1.5)
+
+/obj/item/projectile/kinetic_blast_electro/brutal
+	damage_types = list(BURN = WEAPON_FORCE_BRUTAL * 1.5)
+
+/obj/item/device/lighting/toggleable/lantern/psionics
+	name = "lantern"
+	icon_state = "lantern"
+	item_state = "lantern"
+	desc = "A psionic lantern."
+	brightness_on = 4            // luminosity when on
+	var/mob/living/carbon/holder
+
+/obj/item/device/lighting/toggleable/lantern/psionics/New(var/loc, var/mob/living/carbon/Maker)
+	..()
+	holder = Maker
+	START_PROCESSING(SSobj, src)
+
+/obj/item/device/lighting/toggleable/lantern/psionics/Process()
 	if(loc != holder) // We're no longer in the psionic's hand.
 		visible_message("The [src.name] fades into nothingness.")
 		STOP_PROCESSING(SSobj, src)

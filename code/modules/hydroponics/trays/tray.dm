@@ -127,7 +127,7 @@
 		)
 
 	var/global/list/potency_reagents = list(
-		"diethylamine" =    2
+		"diethylamine" =    1
 	)
 
 /obj/machinery/portable_atmospherics/hydroponics/AltClick()
@@ -218,7 +218,7 @@
 			if(potency_reagents[R.id])
 				//While I myself would love to see this limit removed, 400 potency bluespace tomato's are a little to powerfull
 				if(seed.get_trait(TRAIT_POTENCY) < 100)
-					seed.set_trait(TRAIT_POTENCY, seed.get_trait(TRAIT_POTENCY) + (potency_reagents[R.id] * reagent_total * 0.5))
+					seed.set_trait(TRAIT_POTENCY, min(100, seed.get_trait(TRAIT_POTENCY) + potency_reagents[R.id] * reagent_total))
 				else
 					seed.set_trait(TRAIT_POTENCY, 100)
 
@@ -263,7 +263,7 @@
 	if(user)
 		seed.harvest(user,yield_mod)
 	else
-		seed.harvest(get_turf(src),yield_mod)
+		seed.selfharvest(get_turf(src),yield_mod)
 	// Reset values.
 	harvest = 0
 	lastproduce = age
@@ -330,7 +330,7 @@
 			if (seed.evolutions && seed.evolutions.len)
 				for(var/rid in seed.evolutions)
 
-					var/list/checkEvoChems = seed.evolutions[rid].Copy()
+					var/list/checkEvoChems = seed.evolutions[rid]?:Copy()
 
 					if (checkEvoChems ~= (checkEvoChems & seed.chems))
 						evolve_species(rid)
@@ -451,7 +451,7 @@
 
 /obj/machinery/portable_atmospherics/hydroponics/attackby(obj/item/I, var/mob/user as mob)
 
-	var/tool_type = I.get_tool_type(user, list(QUALITY_SHOVELING, QUALITY_CUTTING,QUALITY_DIGGING, QUALITY_WIRE_CUTTING, QUALITY_BOLT_TURNING), src)
+	var/tool_type = I.get_tool_type(user, list(QUALITY_SHOVELING, QUALITY_CUTTING,QUALITY_DIGGING, QUALITY_WIRE_CUTTING, QUALITY_BOLT_TURNING, QUALITY_PULSING), src)
 	switch(tool_type)
 
 		if(QUALITY_SHOVELING)
@@ -501,6 +501,19 @@
 				force_update = 1
 				Process()
 				return
+			return
+
+
+		if(QUALITY_PULSING)
+			if(!anchored)
+				to_chat(user, "<span class='warning'>Anchor it first!</span>")
+				return
+			if(frozen == -1)
+				to_chat(user, "<span class='warning'>You see no way to use \the [I] on [src].</span>")
+				return
+			to_chat(user, "<span class='notice'>You [frozen ? "disable" : "enable"] the cryogenic freezing.</span>")
+			frozen = !frozen
+			update_icon()
 			return
 
 		if(QUALITY_BOLT_TURNING)
@@ -607,18 +620,6 @@
 		playsound(loc, 'sound/effects/spray3.ogg', 50, 1, -6)
 		qdel(I)
 		check_health()
-
-	else if(istype(I, /obj/item/tool/multitool))
-		if(!anchored)
-			to_chat(user, "<span class='warning'>Anchor it first!</span>")
-			return
-		if(frozen == -1)
-			to_chat(user, "<span class='warning'>You see no way to use \the [I] on [src].</span>")
-			return
-		to_chat(user, "<span class='notice'>You [frozen ? "disable" : "enable"] the cryogenic freezing.</span>")
-		frozen = !frozen
-		update_icon()
-		return
 
 	else if(I.force && seed)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)

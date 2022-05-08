@@ -55,7 +55,7 @@
 
 /datum/chemical_reaction/chocolate_bar2
 	result = null
-	required_reagents = list("milk" = 2, "coco" = 2, "sugar" = 2)
+	required_reagents = list("chocolatemilk" = 2, "coco" = 1, "sugar" = 2) // Not the prettiest fix but the most practical. -Seb
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
@@ -86,9 +86,9 @@
 	required_reagents = list("water" = 5, "coco" = 1)
 	result_amount = 5
 
-/datum/chemical_reaction/soysauce
+/datum/chemical_reaction/soysauce // Fermented soy, with the addition of wheat in a salt brine is a method for making Shoyu. Makes more sense than mixing soy "milk" with fucking SULPHURIC ACID. - Seb
 	result = "soysauce"
-	required_reagents = list("soymilk" = 4, "sacid" = 1)
+	required_reagents = list("soymilk" = 1, "sodiumchloride" = 1, "flour" = 1)
 	result_amount = 5
 
 /datum/chemical_reaction/ketchup
@@ -252,6 +252,11 @@
 	required_reagents = list("coffee" = 2, "orangejuice" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/atomicoffee
+	result = "atomicoffee"
+	required_reagents = list("uranium" = 0.1, "espresso" = 3)
+	result_amount = 3
+
 /* Alcohol */
 
 /datum/chemical_reaction/goldschlager
@@ -393,6 +398,12 @@
 	result = "gargleblaster"
 	required_reagents = list("vodka" = 2, "gin" = 1, "whiskey" = 1, "cognac" = 1, "limejuice" = 1)
 	result_amount = 6
+//Eris "lore frendly" verson, commited out do to being unsupported  with pressure
+//datum/chemical_reaction/gargle_blaster
+//	result = "gargleblaster"
+//	required_reagents = list("sbiten" = 1, "carpotoxin" = 1, "singulo" = 1, "pwine" = 1, "fuhrerole" = 1, "limejuice" = 1)
+//	result_amount = 2
+//	maximum_pressure = 80
 
 /datum/chemical_reaction/brave_bull
 	result = "bravebull"

@@ -48,9 +48,9 @@
 
 /obj/machinery/disease2/incubator/attack_hand(mob/user as mob)
 	if(stat & (NOPOWER|BROKEN)) return
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/disease2/incubator/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/disease2/incubator/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	user.set_machine(src)
 
 	var/data[0]
@@ -104,14 +104,14 @@
 			SSnano.update_uis(src)
 
 		if(radiation)
-			if(radiation > 50 & prob(5))
+			if(radiation > 50 & prob(5+max(radiation,50)))
 				dish.virus2.majormutate()
 				if(dish.info)
 					dish.info = "OUTDATED : [dish.info]"
 					dish.basic_info = "OUTDATED: [dish.basic_info]"
 					dish.analysed = 0
 				ping("\The [src] pings, \"Mutant viral strain detected.\"")
-			else if(prob(5))
+			else if(radiation < 50 & prob(5+max(radiation,50)))
 				dish.virus2.minormutate()
 			radiation -= 1
 			SSnano.update_uis(src)
@@ -128,12 +128,9 @@
 		SSnano.update_uis(src)
 
 	if(beaker)
-		if(foodsupply < 100 && beaker.reagents.remove_reagent("virusfood",5))
-			if(foodsupply + 10 <= 100)
-				foodsupply += 10
-			else
-				beaker.reagents.add_reagent("virusfood",(100 - foodsupply)/2)
-				foodsupply = 100
+		if(foodsupply < 100 && (foodsupply + 5) <= 100 && (beaker.reagents.has_reagent("virusfood", 1)))
+			beaker.reagents.remove_reagent("virusfood", 1)
+			foodsupply += 5
 			SSnano.update_uis(src)
 
 		if (locate(/datum/reagent/toxin) in beaker.reagents.reagent_list && toxins < 100)

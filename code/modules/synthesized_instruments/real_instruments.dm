@@ -1,7 +1,7 @@
 //This is the combination of logic pertaining music
 //An atom should use the logic and call it as it wants
 /datum/real_instrument
-	var/datum/instrument/instruments
+	var/list/instruments
 	var/datum/sound_player/player
 	var/datum/nano_module/song_editor/song_editor
 	var/datum/nano_module/usage_info/usage_info
@@ -16,7 +16,7 @@
 	owner = who
 	maximum_lines = GLOB.musical_config.max_lines
 	maximum_line_length = GLOB.musical_config.max_line_length
-	instruments = what //This can be a list, or it can also not be one
+	instruments = what //This can be a list, and only a list. Any item using this should have it be a list.
 
 /datum/real_instrument/proc/Topic_call(href, href_list, usr)
 	var/target = href_list["target"]
@@ -72,12 +72,12 @@
 		if ("show_song_editor")
 			if (!src.song_editor)
 				src.song_editor = new (host = src.owner, song = src.player.song)
-			src.song_editor.ui_interact(usr)
+			src.song_editor.nano_ui_interact(usr)
 
 		if ("show_usage")
 			if (!src.usage_info)
 				src.usage_info = new (owner, src.player)
-			src.usage_info.ui_interact(usr)
+			src.usage_info.nano_ui_interact(usr)
 		if ("volume")
 			src.player.volume = min(max(min(player.volume+text2num(value), 100), 0), player.max_volume)
 		if ("transposition")
@@ -123,14 +123,14 @@
 			if (GLOB.musical_config.env_settings_available)
 				if (!src.env_editor)
 					src.env_editor = new (src.player)
-				src.env_editor.ui_interact(usr)
+				src.env_editor.nano_ui_interact(usr)
 			else
 				to_chat(usr, "Virtual environment is disabled")
 
 		if ("show_echo_editor")
 			if (!src.echo_editor)
 				src.echo_editor = new (src.player)
-			src.echo_editor.ui_interact(usr)
+			src.echo_editor.nano_ui_interact(usr)
 
 		if ("select_env")
 			if (value in -1 to 26)
@@ -200,7 +200,7 @@
 	var/datum/real_instrument/real_instrument
 	icon = 'icons/obj/musician.dmi'
 	//Initialization data
-	var/datum/instrument/instruments = list()
+	var/list/instruments = list()
 	var/path = /datum/instrument
 	var/sound_player = /datum/sound_player
 
@@ -235,10 +235,10 @@
 
 
 /obj/structure/synthesized_instrument/interact(mob/user) // CONDITIONS ..(user) that shit in subclasses
-	src.ui_interact(user)
+	src.nano_ui_interact(user)
 
 
-/obj/structure/synthesized_instrument/ui_interact(mob/user, ui_key = "instrument", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/structure/synthesized_instrument/nano_ui_interact(mob/user, ui_key = "instrument", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	real_instrument.ui_call(user,ui_key,ui,force_open)
 
 
@@ -261,7 +261,7 @@
 /obj/item/device/synthesized_instrument
 	var/datum/real_instrument/real_instrument
 	icon = 'icons/obj/musician.dmi'
-	var/datum/instrument/instruments = list()
+	var/list/instruments = list()
 	var/path = /datum/instrument
 	var/sound_player = /datum/sound_player
 
@@ -287,10 +287,10 @@
 
 
 /obj/item/device/synthesized_instrument/interact(mob/user) // CONDITIONS ..(user) that shit in subclasses
-	src.ui_interact(user)
+	src.nano_ui_interact(user)
 
 
-/obj/item/device/synthesized_instrument/ui_interact(mob/user, ui_key = "instrument", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/item/device/synthesized_instrument/nano_ui_interact(mob/user, ui_key = "instrument", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	real_instrument.ui_call(user,ui_key,ui,force_open)
 
 

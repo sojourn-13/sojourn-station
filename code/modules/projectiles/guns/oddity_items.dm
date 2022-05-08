@@ -5,19 +5,25 @@
 	name = "\"Finger of God\" handmade pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	Whoever made this particular model did exceptional work. Unlike lesser handmade pistols, this one jams less and has much better shot capability. This one chambers .60-06 anti material ammo."
+	icon = 'icons/obj/guns/projectile/hm_bluecross.dmi'
 	jam_chance = 5
 	damage_multiplier = 1.36
 	recoil_buildup = 25
 	max_shells = 6
 	price_tag = 750
+	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 6) //Its now made of plasteel to show its whatever
+	serial_type = "BlueCross"
 
 /obj/item/gun/energy/sniperrifle/saint
 	name = "\"Saint\" laser rifle"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	Unlike a standard valkyrie this rifle has an over charged coolant mechanism and redundant power loop to conserve energy between shots."
+	The normal \"Valkyrie\" design meeting the improvements with Lightfall design in a wooden frame with a golden barrel to help conduct the extra little bit of juice to hit as hard as possible."
 	charge_cost = 200
 	fire_delay = 25
 	price_tag = 3750
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_GOLD = 9, MATERIAL_URANIUM = 6) //The normal valk needs silver this is gold plated!
+	icon = 'icons/obj/guns/energy/sniper_saint.dmi'
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/automatic/lmg/saw/unicorn
 	name = "\"Unicorn\" light machinegun"
@@ -25,6 +31,9 @@
 	A small carved inscription of a unicorn has been cut into place near some additional added weights, giving this rifle amazing recoil control."
 	recoil_buildup = 1
 	price_tag = 3550
+	slowdown_hold = 0
+	brace_penalty = 2
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/revolver/mistral/elite
 	name = "\"Elite\" magnum revolver"
@@ -33,36 +42,68 @@
 	max_shells = 60
 	recoil_buildup = 20
 	price_tag = 3000
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/revolver/mistral/elite/New()
 	..()
 	item_flags |= BLUESPACE
 	bluespace_entropy(2, get_turf(src)) //Same as the normal bluespace crystal
 
-/obj/item/gun/projectile/shotgun/pump/obrez/thunderlord
-	name = "\"Thunderlord\" shotgun"
+/obj/item/gun/projectile/shotgun/doublebarrel/bluecross_shotgun
+	name = "\"King's\" shotgun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	The ultimate back up weapon, someone has fitted a hatton gas tube into the chamber, reducing magazine size to one shotgun shell while increasing its power potential through the roof. Good luck using it one handed."
+	The replication of a prized legendary royal shotgun wielded by a king that was once prophesized to have used it for their own undoing."
+	icon_state = "shotgun"
+	load_method = SINGLE_CASING|SPEEDLOADER
+	handle_casings = CYCLE_CASINGS
+	flags = CONDUCT
+	slot_flags = SLOT_BACK
+	caliber = CAL_SHOTGUN
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 10)
 	max_shells = 1
 	damage_multiplier = 2
 	penetration_multiplier = 2
-	recoil_buildup = 75
-	one_hand_penalty = 50
+	recoil_buildup = 50
+	one_hand_penalty = 35 //full sized shotgun level
 	price_tag = 3250
-	gun_tags = list(GUN_PROJECTILE)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG) //Regains its internal mag do to its more annoying way of reloading
+	serial_type = "BlueCross"
+	icon = 'icons/obj/guns/projectile/sawnoff/bluecross_shotgun.dmi'
+	init_firemodes = list(
+		list(mode_name="King's Wrath", mode_desc="Echos the will of king that onced used it.", burst=1, icon="semi"), //Snowfalk fire mode for snowflake gun
+		list(mode_name="August Presence", mode_desc="Fires two of the king's decrees at the same time.", burst=2, icon="semi")
+		)
+
+
+/obj/item/gun/projectile/shotgun/doublebarrel/bluecross_shotgun/bolt_act(mob/living/user)
+	bolt_open = !bolt_open
+	if(bolt_open)
+		playsound(src.loc, 'sound/weapons/guns/interact/shotgun_break.ogg', 75, 1)
+		to_chat(user, SPAN_NOTICE("You snap the barrel open."))
+	else
+		playsound(src.loc, 'sound/weapons/guns/interact/shotgun_close.ogg', 75, 1)
+		to_chat(user, SPAN_NOTICE("You snap the barrel closed"))
+		bolt_open = 0
+	add_fingerprint(user)
+	update_icon()
 
 /obj/item/gun/energy/ntpistol/mana
 	name = "\"Mana from Heaven\" energy pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	A standard issue serenity pistol from the church of absolute, nothing seems different about it, yet it seems to conserve power unusually well."
+	A blue and black version of the standard \"Serenity\" energy pistol, somehow despite looking just like a repainted job it conserves power unusually well."
 	charge_cost = 2
 	price_tag = 2550
+	serial_type = "BlueCross"
+	icon = 'icons/obj/guns/energy/ntpistol_bluecross.dmi'
 
 /obj/item/gun/projectile/automatic/maxim/replica
 	name = "\"Maxim\" light machinegun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A common design used by certain nefarious political groups, this model however has been stripped of its fellows evil machinations, making it safe to use by anyone."
 	price_tag = 1884
+	slowdown_hold = 0
+	brace_penalty = 5
+	serial_type = "BlueCross"
 
 /obj/item/gun/energy/lasersmg/inferno
 	name = "Disco Inferno \"Light Show\""
@@ -70,6 +111,7 @@
 	Someone has inscribed 'inferno' in a stylized multi-color crayon on the side while modifying its internal power capacitor to be much more effeciant."
 	charge_cost = 5
 	price_tag = 1000
+	serial_type = "BlueCross"
 
 /obj/item/gun/energy/lasersmg/chaos_engine
 	name = "Hell's Teeth \"Chaos Engine\""
@@ -84,17 +126,19 @@
 	init_offset = 10 //makeshift laser
 	charge_cost = 5
 	price_tag = 1500
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/silenced/rat
 	name = "\"Rat Man\" silenced pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A spray painted decal of a rat man with a grinning face has been placed on the grip, the deadliest killers are often those ignored or underestimated by others after all. \
 	This particular pistol has been oiled, cleaned, and appears to be so well maintenanced that its become 110% of its normal potential."
-	damage_multiplier = 1.4
-	recoil_buildup = 4
-	one_hand_penalty = 6
-	penetration_multiplier = 1.1
+	damage_multiplier = 1.8
+	recoil_buildup = 2
+	one_hand_penalty = 3
+	penetration_multiplier = 3.1
 	price_tag = 2350
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/boltgun/bluecross
 	name = "\"Krag Jørgensen\" boltgun"
@@ -113,6 +157,7 @@
 	price_tag = 2750
 	sharp = FALSE
 	saw_off = FALSE
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/clarissa/devil_eye
 	name = "\"Devil Eye\" pistol"
@@ -122,6 +167,7 @@
 	price_tag = 2000
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG
 	damage_multiplier = 1.5
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/boltgun/lever/handcock
 	name = "\"Handcock\" lever action rifle"
@@ -138,6 +184,7 @@
 	recoil_buildup = 60
 	one_hand_penalty = 80
 	price_tag = 3000
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic
 	name = "\"Lockpick-o-Matic\""
@@ -153,6 +200,7 @@
 	recoil_buildup = 3
 	one_hand_penalty = 5 //despine it being handgun, it's better to hold in two hands while shooting. SMG level.
 	price_tag = 300
+	serial_type = "BlueCross"
 
 /obj/item/gun/energy/captain/zapper
 	name = "\"Retro-Funk\" Zapper"
@@ -164,6 +212,7 @@
 	item_charge_meter = FALSE
 	charge_meter = FALSE
 	price_tag = 1500
+	serial_type = "BlueCross"
 
 /obj/item/gun/energy/xray/psychic_cannon
 	name = "\"Manta-RAY\" cannon"
@@ -183,6 +232,7 @@
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	can_dual = TRUE
 	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER
+	serial_type = "BlueCross"
 
 
 /obj/item/gun/projectile/that_gun
@@ -210,6 +260,7 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
 		)
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/that_gun/update_icon()
 	..()
@@ -246,6 +297,42 @@
 	recoil_buildup = 2
 	one_hand_penalty = 3
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
+	serial_type = "BlueCross"
+
+/obj/item/gun/energy/lasersmg/p9evil
+	name = "P9 \"Evil\" smg"
+	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these weapons are known to vanish and reappear when left alone. \
+			An odd looking tool-made smg of sorts, made completely out of stamped metal and hatred. You wonder by looking at this how many people have used this worn weapon of war. \
+			Looking at it long enough appears to make you see red.. feeling as if its draining your life force just to fire it! Let the hatred RISE!"
+	icon = 'icons/obj/guns/energy/p9evil.dmi'
+	icon_state = "evil"
+	item_state = "evil"
+	origin_tech = list(TECH_ILLEGAL = 5)
+	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_STEEL = 25)
+	price_tag = 2500
+	projectile_type = /obj/item/projectile/beam/weak/pistol_35
+	charge_cost = 1000000000000000000000000000000000000
+	suitable_cell = null
+	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	can_dual = TRUE
+	damage_multiplier = 1.2
+	penetration_multiplier = 1.2
+	recoil_buildup = 2
+	one_hand_penalty = 10
+	gun_tags = list(GUN_ENERGY, GUN_LASER, GUN_SILENCABLE)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND,
+		FULL_AUTO_400
+		)
+	serial_type = "Crimson Cross"
+
+/obj/item/gun/energy/lasersmg/p9evil/consume_next_projectile(mob/user)
+	visible_message(SPAN_WARNING("\The gun draws the life of the user!"))
+	playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
+	user.maxHealth -=0.1
+	user.health -=0.1
+	return new projectile_type(src)
 
 //Melee Weapons
 /obj/item/tool/nailstick/ogre

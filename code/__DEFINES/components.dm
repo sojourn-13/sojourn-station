@@ -2,6 +2,10 @@
 
 #define SEND_GLOBAL_SIGNAL(sigtype, arguments...) ( SEND_SIGNAL(SSdcs, sigtype, ##arguments) )
 
+/// Signifies that this proc is used to handle signals.
+/// Every proc you pass to RegisterSignal must have this.
+#define SIGNAL_HANDLER SHOULD_NOT_SLEEP(TRUE)
+
 //shorthand
 #define GET_COMPONENT_FROM(varname, path, target) var##path/##varname = ##target.GetComponent(##path)
 #define GET_COMPONENT(varname, path) GET_COMPONENT_FROM(varname, path, src)
@@ -42,8 +46,13 @@
 #define COMSIG_PARENT_QDELETED "parent_qdeleted"				//after a datum's Destroy() is called: (force, qdel_hint), at this point none of the other components chose to interrupt qdel and Destroy has been called
 
 #define COMSIG_SHUTTLE_SUPPLY "shuttle_supply"  //form sell()
+#define COMSIG_TRADE_BEACON "trade_beacon"
+
 #define COMSIG_RITUAL "ritual"
 #define COMSIG_TRANSATION "transation"          //from transfer_funds()
+
+// /datum/mecha signals
+#define COMSIG_HUD_DELETED "hud_deleted"
 
 // /atom signals
 #define COMSIG_EXAMINE "examine"								//from atom/examine(): (mob/user, distance)

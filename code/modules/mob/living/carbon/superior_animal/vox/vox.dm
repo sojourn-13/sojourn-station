@@ -26,6 +26,7 @@
 
 	armor = list(melee = 10, bullet = 15, energy = 5, bomb = 20, bio = 20, rad = 0)
 
+	fire_verb = "flings a rock"
 
 	melee_damage_lower = 12
 	melee_damage_upper = 16
@@ -38,7 +39,7 @@
 	mag_drop = FALSE
 	ranged = TRUE
 	rounds_left = 1
-	mag_type = /obj/item/ore
+	mag_type = /obj/item/stack/ore
 	mags_left = 6 //each vox has 6 rocks normally
 	rounds_per_fire = 1
 	reload_message = "picks up a rock!"

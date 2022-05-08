@@ -5,7 +5,7 @@
 	icon_state = "bulldog"
 	item_state = "bulldog"
 	w_class = ITEM_SIZE_BULKY
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	caliber = CAL_LRIFLE
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
@@ -21,6 +21,7 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/automatic/bulldog/update_icon()
 	..()

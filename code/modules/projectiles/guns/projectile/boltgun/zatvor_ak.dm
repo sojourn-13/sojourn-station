@@ -8,7 +8,7 @@
 	force = WEAPON_FORCE_NORMAL
 	caliber = CAL_RIFLE
 	max_shells = 20
-	damage_multiplier = 0.8
+	damage_multiplier = 1.2
 	penetration_multiplier  = 1.0
 	slot_flags = SLOT_BELT|SLOT_BACK
 	recoil_buildup = 10
@@ -17,3 +17,4 @@
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 20, MATERIAL_WOOD = 5)
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 3)
 	saw_off = FALSE
+	serial_type = "NM"

@@ -23,7 +23,7 @@
 	id_type = /obj/item/card/id/hos
 	head = /obj/item/clothing/head/rank/commander
 	pda_type = /obj/item/modular_computer/pda/heads/hos
-	backpack_contents = list(/obj/item/handcuffs = 1,/obj/item/ammo_magazine/kurtz_50/rubber = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/cell/small/high = 1, /obj/item/gun/energy/gun/martin/preloaded = 1)
+	backpack_contents = list(/obj/item/storage/hcases/ammo/ih/wo = 1)
 
 /decl/hierarchy/outfit/job/security/smc
 	name = OUTFIT_JOB_NAME("Blackshield - Blackshield Commander")
@@ -37,7 +37,7 @@
 	id_type = /obj/item/card/id/hos
 	head = /obj/item/clothing/head/rank/milcom
 	pda_type = /obj/item/modular_computer/pda/heads/hos
-	backpack_contents = list(/obj/item/handcuffs = 1,/obj/item/ammo_magazine/kurtz_50 = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/cell/small/high = 1, /obj/item/gun/energy/gun/martin/preloaded = 1, /obj/item/tool/knife/boot/blackshield = 1)
+	backpack_contents = list(/obj/item/storage/hcases/ammo/blackmarket/co = 1)
 
 
 /decl/hierarchy/outfit/job/security/gunserg
@@ -48,7 +48,7 @@
 	glasses = /obj/item/clothing/glasses/hud/security
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/stungloves
-	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/cell/small/high = 1, /obj/item/gun/energy/gun/martin/preloaded = 1)
+	backpack_contents = list(/obj/item/storage/hcases/ammo/ih/spec_officer = 1)
 
 /decl/hierarchy/outfit/job/security/serg
 	name = OUTFIT_JOB_NAME("Blackshield - Sergeant")
@@ -58,7 +58,7 @@
 	glasses = /obj/item/clothing/glasses/ballistic
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/thick
-	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/tool/knife/boot/blackshield = 1, /obj/item/storage/box/blackshield_voucher_sarg = 1)
+	backpack_contents = list(/obj/item/storage/hcases/ammo/blackmarket/serg = 1)
 
 /decl/hierarchy/outfit/job/security/inspector
 	name = OUTFIT_JOB_NAME("Marshal - Ranger")
@@ -73,7 +73,7 @@
 	r_hand = /obj/item/storage/briefcase/crimekit
 	id_type = /obj/item/card/id/det
 	pda_type = /obj/item/modular_computer/pda/forensics
-	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 2, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/cell/small/high = 1)
+	backpack_contents = list(/obj/item/storage/hcases/ammo/ih/ranger_officer = 1)
 
 /decl/hierarchy/outfit/job/security/detective/New()
 	..()
@@ -86,11 +86,11 @@
 	id_type = /obj/item/card/id/medcpec
 	uniform = /obj/item/clothing/under/rank/corpsman
 	head = /obj/item/clothing/head/rank/corpsman/beret
-	pda_type = /obj/item/modular_computer/pda/forensics
+	pda_type = /obj/item/modular_computer/pda/corpsman
 	belt = /obj/item/storage/belt/medical/emt
 	gloves = /obj/item/clothing/gloves/thick
 	l_hand = /obj/item/storage/firstaid/blackshield
-	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/storage/box/blackshield_voucher_corps = 1, /obj/item/tool/knife/boot/blackshield = 1)
+	backpack_contents = list(/obj/item/storage/hcases/ammo/blackmarket/medspec = 1)
 
 /decl/hierarchy/outfit/job/security/ihoper
 	name = OUTFIT_JOB_NAME("Marshal - Marshal Officer")
@@ -100,7 +100,7 @@
 	glasses = /obj/item/clothing/glasses/sechud/tactical
 	head = /obj/item/clothing/head/helmet
 	gloves = /obj/item/clothing/gloves/stungloves
-	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/cell/small/high = 1, /obj/item/gun/energy/gun/martin/preloaded = 1, /obj/item/storage/box/marshal_voucher = 1)
+	backpack_contents = list(/obj/item/storage/hcases/ammo/ih/marshal_officer = 1)
 
 /decl/hierarchy/outfit/job/security/troop
 	name = OUTFIT_JOB_NAME("Blackshield - Trooper")
@@ -111,4 +111,4 @@
 	glasses = /obj/item/clothing/glasses/ballistic
 	head = /obj/item/clothing/head/rank/trooper/cap
 	gloves = /obj/item/clothing/gloves/thick/swat
-	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/storage/box/blackshield_voucher = 1, /obj/item/tool/knife/boot/blackshield = 1)
+	backpack_contents = list(/obj/item/storage/hcases/ammo/blackmarket/trooper = 1)

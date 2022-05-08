@@ -5,12 +5,13 @@
 	extended_desc = "An online tax filing software. It is a few years out of date."
 	size = 0 // it is cloud based
 	requires_ntnet = 0
+	available_on_ntnet = FALSE // We don't have any antag that use it and we have a working tax program, we don't need to use it. -R4d6
 	usage_flags = PROGRAM_PDA
 	nanomodule_path = /datum/nano_module/program/uplink
 	var/authenticated = FALSE
 
 /datum/nano_module/program/uplink
-	name = "TaxQuickly 2559"
+	name = "TaxQuickly 2545"
 	var/error = FALSE
 	var/stored_login = ""
 
@@ -44,7 +45,7 @@
 		return 1
 	return 1
 
-/datum/nano_module/program/uplink/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/uplink/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 	var/datum/computer_file/program/uplink/PRG = program
 	data["error"] = error

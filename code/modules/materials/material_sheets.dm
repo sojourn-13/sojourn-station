@@ -12,17 +12,15 @@
 	var/material/material
 	var/apply_colour //temp pending icon rewrite
 
-/obj/item/stack/material/New(var/loc, var/material_count=null)
+/obj/item/stack/material/New(loc, material_count=null)
 	.=..(loc, material_count)
 	//Make shards if there is a remainder for any reason. If it rounds down to zero, remove it.'
-	var/remainder = src.amount - round(src.amount, 1)
+	var/remainder = amount - round(amount, 1)
 	if(remainder != 0)
-		#ifdef JANEDEBUG
-		log_debug("Item: [src.type] Initial amount:[src.amount] Remainder: [remainder]")
-		#endif JANEDEBUG
-		src.amount -= remainder
+		log_debug("Item: [type] Initial amount:[amount] Remainder: [remainder]")
+		amount -= remainder
 		new /obj/item/material/shard(get_turf(src), default_type, remainder)
-		if(src.amount == 0)
+		if(amount == 0)
 			qdel(src)
 			return
 
@@ -323,6 +321,9 @@
 	rand_min = 2
 	rand_max = 7
 
+/obj/item/stack/material/cloth/soteria
+	amount = 4
+
 /obj/item/stack/material/silk
 	name = "silk"
 	icon_state = "sheet_silk_bundle"
@@ -428,3 +429,17 @@
 
 /obj/item/stack/material/compressed_matter/full
 	amount = 120
+
+/obj/item/stack/material/ameridian
+	name = "ameridian shard"
+	desc = "A weird green crystal that seems to grow on its own."
+	singular_name = "ameridian crystal"
+	icon = 'icons/obj/ameridian.dmi'
+	icon_state = "ameridian_crystal_item"
+	default_type = MATERIAL_AMERIDIAN
+	novariants = TRUE
+	price_tag = 50 // Ameridian mining is extremly dangerous and very profitable
+	max_amount = 360
+
+/obj/item/stack/material/ameridian/full
+	amount = 360

@@ -20,11 +20,6 @@
 		var/mutable_appearance/lid = mutable_appearance(icon, lid_icon)
 		add_overlay(lid)
 
-	if(label_text)
-		var/label_icon = label_icon_state ? label_icon_state : "label_[icon_state]"
-		var/mutable_appearance/label = mutable_appearance(icon, label_icon)
-		add_overlay(label)
-
 	if(reagents.total_volume)
 		if(label_text)
 			var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[icon_state]_labeled-[get_filling_state()]")
@@ -34,6 +29,27 @@
 			var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[icon_state]-[get_filling_state()]")
 			filling.color = reagents.get_color()
 			add_overlay(filling)
+
+	if(label_text)
+		var/label_icon = label_icon_state ? label_icon_state : "label_[icon_state]"
+		var/mutable_appearance/label = mutable_appearance(icon, label_icon)
+		add_overlay(label)
+
+/obj/item/reagent_containers/glass/bottle/potion
+	name = "elegant bottle"
+	desc = "A bottle with a much more robust and refined look to it."
+	icon_state = "potion"
+	item_state = "potion"
+	label_icon_state = "label_potion"
+	filling_states = "10;20;40;50;60"
+
+/obj/item/reagent_containers/glass/bottle/tincture
+	name = "tincture bottle"
+	desc = "A bottle with a much more sharper and refined look to it."
+	icon_state = "tincture"
+	item_state = "tincture"
+	label_icon_state = "label_tincture"
+	filling_states = "3;5;10;15;25;27;30;35;40;45;55;60"
 
 /obj/item/reagent_containers/glass/bottle/inaprovaline
 	name = "inaprovaline bottle"
@@ -101,12 +117,6 @@
 	icon_state = "bottle"
 	preloaded_reagents = list("capsaicin" = 60)
 
-/obj/item/reagent_containers/glass/bottle/frostoil
-	name = "frost oil bottle"
-	desc = "A small bottle. Contains cold sauce."
-	icon_state = "bottle"
-	preloaded_reagents = list("frostoil" = 60)
-
 /obj/item/reagent_containers/glass/bottle/tricord
 	name = "tricordrazine bottle"
 	desc = "A small bottle. Contains Tricordrazine, a mild all-around healing agent."
@@ -129,6 +139,56 @@
 	matter = list(MATERIAL_PLASTIC = 1)
 	preloaded_reagents = list("fuel" = 120)
 
+/obj/item/reagent_containers/glass/bottle/honey
+	name = "honey bottle"
+	desc = "Contains delicious honey. Save the bees."
+	icon_state = "bottle"
+	preloaded_reagents = list("honey" = 60)
+
+/obj/item/reagent_containers/glass/bottle/nutriment
+	name = "nutriment bottle"
+	desc = "The base of whats needed to get by."
+	icon_state = "bottle"
+	preloaded_reagents = list("nutriment" = 60)
+
+/obj/item/reagent_containers/glass/bottle/protein
+	name = "protein bottle"
+	desc = "Get swoll bro"
+	icon_state = "bottle"
+	preloaded_reagents = list("protein" = 60)
+
+//frost oil and material chems
+/obj/item/reagent_containers/glass/bottle/frostoil
+	name = "frost oil bottle"
+	desc = "A small bottle. Contains cold sauce."
+	icon_state = "bottle"
+	preloaded_reagents = list("frostoil" = 60)
+
+/obj/item/reagent_containers/glass/bottle/uranium
+	name = "liquid uranium bottle"
+	desc = "A small bottle. Contains liquid uranium."
+	icon_state = "bottle"
+	preloaded_reagents = list(MATERIAL_URANIUM = 60)
+
+/obj/item/reagent_containers/glass/bottle/gold
+	name = "liquid gold bottle"
+	desc = "A small bottle. Contains liquid gold."
+	icon_state = "bottle"
+	preloaded_reagents = list(MATERIAL_GOLD = 60)
+
+/obj/item/reagent_containers/glass/bottle/silver
+	name = "liquid silver bottle"
+	desc = "A small bottle. Contains liquid silver."
+	icon_state = "bottle"
+	preloaded_reagents = list(MATERIAL_SILVER = 60)
+
+/obj/item/reagent_containers/glass/bottle/plasma
+	name = "liquid plasma bottle"
+	desc = "A small bottle. Contains plasma."
+	icon_state = "bottle"
+	preloaded_reagents = list("plasma" = 60)
+
+// Hunters lodge chems
 /obj/item/reagent_containers/glass/bottle/tangu_extract
 	name = "tangu extract bottle"
 	desc = "A small bottle. Contains the extract of a tangu horn, a highly valuable universal healing chemical."
@@ -147,6 +207,45 @@
 	icon_state = "bottle"
 	preloaded_reagents = list("tahcacillin" = 60)
 
+//viroputine chems (These mix with themselves and do weird effects)
+/obj/item/reagent_containers/glass/bottle/nosfernium
+	name = "nosfernium bottle"
+	desc = "A small bottle. Contains the blood based chemical nosfernium. Handle with care."
+	icon_state = "bottle"
+	preloaded_reagents = list("nosfernium" = 60)
+
+/obj/item/reagent_containers/glass/bottle/viroputine
+	name = "viroputine bottle"
+	desc = "A horrific replicating chemical. Fruit of questionable virology research."
+	icon_state = "bottle"
+	preloaded_reagents = list("viroputine" = 60)
+
+// slime based chems below this please.
+/obj/item/reagent_containers/glass/bottle/slimejelly
+	name = "slime jelly bottle"
+	desc = "A horrific replicating chemical. Fruit of questionable virology research."
+	icon_state = "bottle"
+	preloaded_reagents = list("slimejelly" = 60)
+
+/obj/item/reagent_containers/glass/bottle/pureslimejelly
+	name = "pure slime jelly bottle"
+	desc = "A advanced version of slime jelly. Naturally made from certain slimes."
+	icon_state = "bottle"
+	preloaded_reagents = list("pureslimejelly" = 60)
+
+/obj/item/reagent_containers/glass/bottle/slimetoxin
+	name = "slime mutation bottle"
+	desc = "A corruptive toxin produced by slimes."
+	icon_state = "bottle"
+	preloaded_reagents = list("mutationtoxin" = 60)
+
+/obj/item/reagent_containers/glass/bottle/aslimetoxin
+	name = "advanced slime mutation bottle"
+	desc = "An advanced corruptive toxin produced by slimes."
+	icon_state = "bottle"
+	preloaded_reagents = list("amutationtoxin" = 60)
+
+//organic bottled chems
 /obj/item/reagent_containers/glass/bottle/organic
 	name = "resin bottle"
 	desc = "A small bottle made of organic resin with a small bark-like lid."
@@ -195,6 +294,7 @@
 
 /obj/item/reagent_containers/glass/bottle/organic/dermatane
 	preloaded_reagents = list("dermaline" = 30, "kelotane" = 30)
+
 
 // === Used by trade stations
 /obj/item/reagent_containers/glass/bottle/carpotoxin
@@ -252,3 +352,70 @@
 	preloaded_reagents = list("fuhrerole" = 60)
 
 // ===
+
+/obj/item/reagent_containers/glass/bottle/trade
+
+/obj/item/reagent_containers/glass/bottle/trade/New()
+	for(var/reagent_id in preloaded_reagents)
+		var/reagent_name = lowertext(get_reagent_name_by_id(reagent_id))
+		name = "[reagent_name] bottle"
+		desc = "A small bottle. Contains [reagent_name]."
+	..()
+
+// === Used by trade stations
+/obj/item/reagent_containers/glass/bottle/trade/clonexadone
+	preloaded_reagents = list("clonexadone" = 60)
+
+/obj/item/reagent_containers/glass/bottle/trade/imidazoline
+	preloaded_reagents = list("imidazoline" = 60)
+
+/obj/item/reagent_containers/glass/bottle/trade/alkysine
+	preloaded_reagents = list("alkysine" = 60)
+
+/obj/item/reagent_containers/glass/bottle/trade/bicaridine
+	preloaded_reagents = list("bicaridine" = 60)
+
+/obj/item/reagent_containers/glass/bottle/trade/kelotane
+	preloaded_reagents = list("kelotane" = 60)
+
+/obj/item/reagent_containers/glass/bottle/trade/carpotoxin
+	preloaded_reagents = list("carpotoxin" = 60)
+
+/obj/item/reagent_containers/glass/bottle/trade/pararein
+	preloaded_reagents = list("pararein" = 60)
+
+/obj/item/reagent_containers/glass/bottle/trade/aranecolmin
+	preloaded_reagents = list("aranecolmin" = 60)
+
+/obj/item/reagent_containers/glass/bottle/trade/blattedin
+	preloaded_reagents = list("blattedin" = 60)
+
+/obj/item/reagent_containers/glass/bottle/trade/diplopterum
+	preloaded_reagents = list("diplopterum" = 60)
+
+/obj/item/reagent_containers/glass/bottle/trade/seligitillin
+	preloaded_reagents = list("seligitillin" = 60)
+
+/obj/item/reagent_containers/glass/bottle/trade/starkellin
+	preloaded_reagents = list("starkellin" = 60)
+
+/obj/item/reagent_containers/glass/bottle/trade/gewaltine
+	preloaded_reagents = list("gewaltine" = 60)
+
+/obj/item/reagent_containers/glass/bottle/trade/fuhrerole
+	preloaded_reagents = list("fuhrerole" = 60)
+
+/obj/item/reagent_containers/glass/bottle/trade/kaiseraurum
+	preloaded_reagents = list("kaiseraurum" = 60)
+// ===
+
+/obj/item/reagent_containers/glass/replenishing/chalice
+	name = "Holy Chalice"
+	desc = "One of the important relics of the Church of the Absolute. It was only possible to discover where the Holy Chalice was with the Absolute's guidance, found under debris of an ancient church in Morroco before the exodus to the colony, the Holy Chalice has been repaired and bathed in gold after so many centuries, treated as a common chalice without the knowledge of the prior holders. This chalice was once held by Jesus Christ himself during the Last Supper. Today, to manifest the power of Christ - the chalice has been blessed by absolute's lights to transform air moisture into church's wine. As much as this may provide Wine for the vectors, this is kept for only the gaze to drink - not the mouth - as this liquid is only for the entity or person that belongs to the Christian doctrine of the Trinity, with that said - anyone drinking from that chalice is stealing from Christ himself."
+	icon_state = "holy_chalice"
+	price_tag = 8000
+
+/obj/item/reagent_containers/glass/replenishing/chalice/New()
+	..()
+	START_PROCESSING(SSobj, src)
+	spawning_id = pick("ntcahors")

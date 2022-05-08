@@ -49,9 +49,8 @@
 	var/stiffness = 0 // How much recoil is caused by moving
 	var/obscuration = 0 // How much firearm accuracy is decreased
 
-	var/datum/armor/armor // Ref to the armor datum
-	var/datum/armor/armor_up // Ref to the armor datum
-	var/datum/armor/armor_down // Ref to the armor datum
+	var/list/armor_list  = list() //A list version of the armor datum, for initialization.
+	var/datum/armor/armor// Ref to the armor datum
 
 	var/list/allowed = list() //suit storage stuff.
 	var/obj/item/device/uplink/hidden/hidden_uplink = null // All items can have an uplink hidden inside, just remember to add the triggers.
@@ -84,6 +83,7 @@
 	var/list/item_upgrades = list()
 	var/max_upgrades = 3
 	var/list/prefixes = list()
+	var/list/blacklist_upgrades = list() //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
 
 
 	var/list/effective_faction = list() // Which faction the item is effective against.
@@ -98,14 +98,14 @@
 	var/use_stock_cost = 0
 	var/stock = 0
 	var/sparks_on_use = FALSE
+	//Used for stashes
+	var/start_hidden = FALSE
 
 /obj/item/Initialize()
-	if(islist(armor))
-		armor = getArmor(arglist(armor))
-	else if(!armor)
+	if(armor_list)
+		armor = getArmor(arglist(armor_list))
+	else
 		armor = getArmor()
-	else if(!istype(armor, /datum/armor))
-		error("Invalid type [armor.type] found in .armor during /obj Initialize()")
 	. = ..()
 
 /obj/item/Destroy()
@@ -497,7 +497,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 				usr.client.pixel_y = 0
 
 		usr.visible_message("[usr] peers through the [zoomdevicename ? "[zoomdevicename] of the [name]" : "[name]"].")
-
+		var/mob/living/carbon/human/H = usr
+		H.using_scope = src
 	else
 		usr.client.view = world.view
 		//if(!usr.hud_used.hud_shown)
@@ -509,6 +510,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 		if(!cannotzoom)
 			usr.visible_message("[zoomdevicename ? "[usr] looks up from the [name]" : "[usr] lowers the [name]"].")
+		var/mob/living/carbon/human/H = usr
+		H.using_scope = null
 	usr.parallax.update()
 	return
 
@@ -546,7 +549,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	return
 
 /obj/item/proc/on_embed_removal(mob/living/user)
-	return
+	if(!hud_actions)
+		return
 
 	for(var/action in hud_actions)
 		user.client.screen -= action
@@ -585,4 +589,3 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 /obj/item/device
 	icon = 'icons/obj/device.dmi'
-

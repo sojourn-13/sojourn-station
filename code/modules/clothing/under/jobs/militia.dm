@@ -41,7 +41,7 @@
 	options["Green Utility Uniform Alt"] = "greenutility_alt"
 	options["Green Utility Uniform Corpsman"] = "greenutility_Corpsman"
 	options["Green Utility Uniform Corpsman Alt"] = "greenutility_alt_med"
-	options["Green Utility Pans"] = "greenutility_pants"
+	options["Green Utility Pants"] = "greenutility_pants"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -196,6 +196,58 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/under/rank/fatigues/kav //My beautiful baby boi Kavrick, thank u for the sprites.
+	name = "grey Blackshield fatigues"
+	desc = "A robust, grey utility suit bearing the markings of the Nadezhda Blackshield Militia.comes with EZ roll sleeves, roll-down shirt, including optional corpsman patch and skirt! "
+	icon_state = "bsgrey"
+	item_state = "bsgrey"
+
+/obj/item/clothing/under/rank/fatigues/kav/green
+	name = "green Blackshield fatigues"
+	desc = "A robust, geen grey utility suit bearing the markings of the Nadezhda Blackshield Militia.comes with EZ roll sleeves, roll-down shirt, including optional corpsman patch and skirt! "
+	icon_state = "bsgreen"
+	item_state = "bsgreen"
+
+/obj/item/clothing/under/rank/fatigues/kav/tan
+	name = "tan Blackshield fatigues"
+	desc = "A robust, tan utility suit bearing the markings of the Nadezhda Blackshield Militia.comes with EZ roll sleeves, roll-down shirt, including optional corpsman patch and skirt! "
+	icon_state = "bstan"
+	item_state = "bstan"
+
+/obj/item/clothing/under/rank/fatigues/kav/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["standard"] = ""
+	options["Sleeves rolled up"] = "_rolled"
+	options["Shirt rolled down"] = "_pant"
+	options["Medic patch"] = "_corps"
+	options["Medic patch, sleeves rolled up"] = "_corpsrolled"
+	options["Skirt"] = "_skirt"
+	options["Skirt, sleeves rolled up"] = "_skirtrolled"
+	options["Skirt, shirt rolled down"] = "_skirtpant"
+
+	var/choice = input(M,"How would you like to wear your suit?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
 /*
  * Trooper/Corpsman
  */
@@ -247,10 +299,27 @@
 	icon_state = "gorka_ih_med_b"
 	item_state = "gorka_ih_med_b"
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 	siemens_coefficient = 0.9
 
+/obj/item/clothing/under/rank/bdu/trooper
+	name = "Blackshield BDU"
+	desc = "A rugged militia Battle Dress Uniform, made with robust materials and wearing the insignia of the Blackshield."
+	icon_state = "bdubsstandard"
+	item_state = "bdubsstandard"
+
+/obj/item/clothing/under/rank/bdu/troopergreen
+	name = "Blackshield green BDU"
+	desc = "A rugged militia Battle Dress Uniform, made with robust materials and wearing the insignia of the Blackshield. This one is in a lovely olive drab."
+	icon_state = "bdubsgreen"
+	item_state = "bdubsgreen"
+
+/obj/item/clothing/under/rank/bdu/troopertan
+	name = "Blackshield tan BDU"
+	desc = "A rugged militia Battle Dress Uniform, made with robust materials and wearing the insignia of the Blackshield. This one is in shades of tan."
+	icon_state = "bdubstan"
+	item_state = "bdubstan"
 
 /*
  * Sergeant
@@ -271,7 +340,7 @@
 	name = "tactical turtleneck"
 	desc = "A reinforced military turtleneck, designed to provide moderate combat protection."
 	icon_state = "syndicate"
-	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/instructor
@@ -306,7 +375,7 @@
 	name = "commander's combat uniform"
 	desc = "It's a uniform worn by those few with the dedication to achieve the position of \"Blackshield Commander\". It has additional armor to protect the wearer."
 	icon_state = "gorka_ih"
-	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0) // Let's not lie anymore about the armored aspect of it.
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0) // Let's not lie anymore about the armored aspect of it.
 
 	siemens_coefficient = 0.8
 

@@ -15,6 +15,16 @@
 	crate_name = "internals crate"
 	group = "Engineering"
 
+/datum/supply_pack/geiger_counter
+	name = "Geiger Counter Crate"
+	contains = list(/obj/item/device/geiger,
+					/obj/item/device/geiger,
+					/obj/item/device/geiger)
+	cost = 350
+	containertype = /obj/structure/closet/crate/internals
+	crate_name = "geiger counter crate"
+	group = "Engineering"
+
 /datum/supply_pack/sleeping_agent
 	name = "Canister: \[N2O\]"
 	contains = list(/obj/machinery/portable_atmospherics/canister/sleeping_agent)
@@ -138,6 +148,17 @@
 	cost = 600
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "glass sheet crate"
+	group = "Engineering"
+	
+/datum/supply_pack/glass480
+	name = "Bulk Glass Sheets Crate"
+	contains = list(/obj/item/stack/material/glass/full,
+	/obj/item/stack/material/glass/full,
+	/obj/item/stack/material/glass/full,
+	/obj/item/stack/material/glass/full)
+	cost = 1740
+	containertype = /obj/structure/largecrate
+	crate_name = "Bulk glass crate"
 	group = "Engineering"
 
 /datum/supply_pack/borosilicate_glass120
@@ -283,6 +304,15 @@
 	crate_name = "omnitool crate"
 	group = "Engineering"
 
+/datum/supply_pack/industrial_rcd
+	contains = list(/obj/item/rcd/industrial,
+					/obj/item/rcd/industrial)
+	name = "Industrial RCD Crate"
+	cost = 4000
+	containertype = /obj/structure/closet/crate
+	crate_name = "industrial RCD crate"
+	group = "Engineering"
+
 /datum/supply_pack/fueltank
 	name = "Fuel Tank Crate"
 	contains = list(/obj/structure/reagent_dispensers/fueltank)
@@ -377,7 +407,7 @@
 					/obj/structure/particle_accelerator/end_cap)
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "particle accelerator crate"
-/*
+
 /datum/supply_pack/engine/am_control
 	name = "Antimatter Control Unit"
 	cost = 1000
@@ -408,7 +438,7 @@
 					/obj/item/am_containment)
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "antimatter fuel jar crate"
-*/
+
 /datum/supply_pack/mecha_ripley
 	name = "Exosuit Assembly Crate (\"Ripley\" APLU)"
 	contains = list(

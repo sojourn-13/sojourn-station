@@ -310,6 +310,7 @@ SUBSYSTEM_DEF(job)
 	var/datum/job/job = GetJob(rank)
 	var/list/spawn_in_storage = list()
 
+
 	if(job)
 		H.job = rank
 
@@ -329,7 +330,6 @@ SUBSYSTEM_DEF(job)
 
 		job.add_stats(H)
 
-		job.add_knownCraftRecipes(H)
 
 		job.add_additiional_language(H)
 
@@ -371,8 +371,6 @@ SUBSYSTEM_DEF(job)
 				if("Robot")
 					return H.Robotize()
 				if("AI")
-					var/sound/announce_sound = (SSticker.current_state <= GAME_STATE_SETTING_UP)? null : sound('sound/ai/newAI.ogg', volume=20)
-					global_announcer.autosay(new_sound=announce_sound)
 					return H
 				if("Premier")
 					var/sound/announce_sound = (SSticker.current_state <= GAME_STATE_SETTING_UP)? null : sound('sound/misc/boatswain.ogg', volume=20)
@@ -410,6 +408,15 @@ SUBSYSTEM_DEF(job)
 			C.access.Add(job.cruciform_access)
 			C.install_default_modules_by_path(job)
 			C.security_clearance = job.security_clearance
+
+		//Occulus Edit, Right here! Custom skills.
+		H.stats.changeStat(STAT_BIO, H.client.prefs.BIOMOD)
+		H.stats.changeStat(STAT_COG, H.client.prefs.COGMOD)
+		H.stats.changeStat(STAT_MEC, H.client.prefs.MECMOD)
+		H.stats.changeStat(STAT_ROB, H.client.prefs.ROBMOD)
+		H.stats.changeStat(STAT_TGH, H.client.prefs.TGHMOD)
+		H.stats.changeStat(STAT_VIG, H.client.prefs.VIGMOD)
+		// This could be cleaner and better, however it should apply your stats once on spawn properly if here. If anyone wants to do this in a cleaner manner be my guest.
 
 		BITSET(H.hud_updateflag, ID_HUD)
 		BITSET(H.hud_updateflag, SPECIALROLE_HUD)

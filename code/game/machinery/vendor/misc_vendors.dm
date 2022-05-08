@@ -1,21 +1,4 @@
 
-//This one's from bay12
-/obj/machinery/vending/cart
-	name = "PTech"
-	desc = "PDAs and hardware."
-	product_slogans = "PDAs for everyone!;You get a PDA! And you get a PDA!;You lost it again?;"
-	icon_state = "cart"
-	icon_deny = "cart-deny"
-	products = list(/obj/item/modular_computer/pda = 10,
-					/obj/item/computer_hardware/scanner/medical = 6,
-					/obj/item/computer_hardware/scanner/reagent = 6,
-					/obj/item/computer_hardware/scanner/atmos = 6,
-					/obj/item/computer_hardware/scanner/paper = 10,
-					/obj/item/computer_hardware/printer = 10,
-					/obj/item/computer_hardware/card_slot = 3,
-					/obj/item/computer_hardware/ai_slot = 4,
-					/obj/item/computer_hardware/hard_drive/portable/advanced/coin = 10)
-	auto_price = FALSE
 
 /obj/machinery/vending/cigarette
 	name = "Smooth Cigarettes" //OCD had to be uppercase to look nice with the new formating
@@ -166,6 +149,7 @@
 					/obj/item/storage/box/costume/surplushalloween = 2,
 					/obj/item/storage/box/costume/bonusjustice = 2,
 					/obj/item/storage/box/costume/bonuswrestling = 2,
+					/obj/item/storage/box/costume = 2,
 					//Under
 					/obj/item/clothing/under/colony = 10,
 					//Masks
@@ -225,6 +209,7 @@
 					/obj/item/storage/box/costume/surplushalloween = 200,
 					/obj/item/storage/box/costume/bonusjustice = 200,
 					/obj/item/storage/box/costume/bonuswrestling = 200,
+					/obj/item/storage/box/costume = 200,
 					//Under
 					/obj/item/clothing/under/colony = 15,
 					//Masks
@@ -294,7 +279,7 @@
 		/obj/item/clothing/shoes/jackboots/redboot = 4,
 		/obj/item/clothing/shoes/jackboots/longboot = 3,
 		/obj/item/clothing/shoes/jackboots/german = 4,
-		/obj/item/clothing/shoes/jackboots/laced_jackboots = 4,
+		/obj/item/clothing/shoes/jackboots/duty = 4,
 		/obj/item/clothing/shoes/leather = 3,
 		/obj/item/clothing/shoes/laceup = 3,
 		/obj/item/clothing/shoes/laceup/white = 3,
@@ -459,6 +444,19 @@
 		/obj/item/clothing/suit/gorka/toggle/gorka/crew_y = 10,
 		/obj/item/clothing/suit/gorka/toggle/gorka/standard = 10,
 		/obj/item/clothing/suit/gorka/toggle/gorka/dark = 10,
+		/obj/item/clothing/suit/storage/suitjacket = 10,
+		/obj/item/clothing/suit/storage/suitjacket/black = 10,
+		/obj/item/clothing/suit/storage/suitjacket/blue = 10,
+		/obj/item/clothing/suit/storage/suitjacket/burgundy = 10,
+		/obj/item/clothing/suit/storage/suitjacket/charcoal = 10,
+		/obj/item/clothing/suit/storage/suitjacket/checkered = 10,
+		/obj/item/clothing/suit/storage/suitjacket/green = 10,
+		/obj/item/clothing/suit/storage/suitjacket/navy = 10,
+		/obj/item/clothing/suit/storage/suitjacket/purple = 10,
+		/obj/item/clothing/suit/storage/suitjacket/helltaker = 10,
+		/obj/item/clothing/suit/storage/suitjacket/helltaker/black = 10,
+		/obj/item/clothing/suit/storage/suitjacket/longcardigan_brown = 10,
+		/obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown = 10,
 		/obj/item/clothing/suit/storage/toggle/leather/blackjacket = 2,
 		/obj/item/clothing/suit/storage/toggle/leather/blackvest = 2,
 		/obj/item/clothing/suit/storage/toggle/leather/brownjacket = 2,
@@ -528,7 +526,7 @@
 		/obj/item/clothing/shoes/jackboots/redboot = 45,
 		/obj/item/clothing/shoes/jackboots/longboot = 55,
 		/obj/item/clothing/shoes/jackboots/german = 45,
-		/obj/item/clothing/shoes/jackboots/laced_jackboots = 45,
+		/obj/item/clothing/shoes/jackboots/duty = 45,
 		/obj/item/clothing/shoes/leather = 40,
 		/obj/item/clothing/shoes/laceup = 50,
 		/obj/item/clothing/shoes/laceup/white = 50,
@@ -693,6 +691,19 @@
 		/obj/item/clothing/suit/gorka/toggle/gorka/crew_y = 130,
 		/obj/item/clothing/suit/gorka/toggle/gorka/standard = 130,
 		/obj/item/clothing/suit/gorka/toggle/gorka/dark = 130,
+		/obj/item/clothing/suit/storage/suitjacket = 130,
+		/obj/item/clothing/suit/storage/suitjacket/black = 130,
+		/obj/item/clothing/suit/storage/suitjacket/blue = 130,
+		/obj/item/clothing/suit/storage/suitjacket/burgundy = 130,
+		/obj/item/clothing/suit/storage/suitjacket/charcoal = 130,
+		/obj/item/clothing/suit/storage/suitjacket/checkered = 130,
+		/obj/item/clothing/suit/storage/suitjacket/green = 130,
+		/obj/item/clothing/suit/storage/suitjacket/navy = 130,
+		/obj/item/clothing/suit/storage/suitjacket/purple = 130,
+		/obj/item/clothing/suit/storage/suitjacket/helltaker = 150,
+		/obj/item/clothing/suit/storage/suitjacket/helltaker/black = 150,
+		/obj/item/clothing/suit/storage/suitjacket/longcardigan_brown = 130,
+		/obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown = 130,
 		/obj/item/clothing/suit/storage/toggle/leather/blackjacket = 550,
 		/obj/item/clothing/suit/storage/toggle/leather/blackvest = 550,
 		/obj/item/clothing/suit/storage/toggle/leather/brownjacket = 550,
@@ -719,8 +730,8 @@
 	vend_reply = "Have fun, you shameless pervert!"
 	products = list(
 				/obj/item/clothing/suit/costume/kinky/alyson = 5,
-				/obj/item/clothing/suit/ivory = 5,
-				/obj/item/clothing/suit/blacksilk = 5,
+				/obj/item/clothing/suit/tabard = 5,
+				/obj/item/clothing/suit/tabard/blacksilk = 5,
 				/obj/item/clothing/under/costume/kinky/latex_maid = 5,
 				/obj/item/clothing/under/sexymaid = 5,
 				/obj/item/clothing/under/costume/kinky/leather = 5,
@@ -748,8 +759,8 @@
 				/obj/item/legcuffs/fuzzy = 5)
 	prices = list(
 				/obj/item/clothing/suit/costume/kinky/alyson = 100,
-				/obj/item/clothing/suit/ivory = 100,
-				/obj/item/clothing/suit/blacksilk = 100,
+				/obj/item/clothing/suit/tabard = 100,
+				/obj/item/clothing/suit/tabard/blacksilk = 100,
 				/obj/item/clothing/under/costume/kinky/latex_maid = 100,
 				/obj/item/clothing/under/sexymaid = 100,
 				/obj/item/clothing/under/costume/kinky/leather = 100,
@@ -797,7 +808,7 @@
 
 /obj/machinery/vending/gamers
 	name = "Game Emporium"
-	desc = "A one time stop for all your card or board game needs!"
+	desc = "A one stop shop for all your card or board game needs!"
 	icon_state = "nutrimat"
 	icon_vend = "nutrimat-vend"
 	vendor_department = DEPARTMENT_CHURCH
@@ -806,64 +817,98 @@
 	"Buying any product makes you liable for its conduction!")
 	product_ads = "Emporium of fun games!"
 	products = list(
-					/obj/item/board = 7,
+					/obj/item/storage/pill_bottle/dice = 7,
+					/obj/item/storage/pill_bottle/dice_nerd = 5,
 					/obj/item/storage/pill_bottle/chechker = 7,
+					/obj/item/board = 7,
 					/obj/item/deck/tarot = 4,
 					/obj/item/deck = 10,
-					/obj/item/pack = 50,
+					/obj/item/pack/cardemon = 50,
 					/obj/item/pack/spaceball = 44,
 					/obj/item/deck/cah = 7,
 					/obj/item/deck/cah/black = 7,
 					/obj/item/scale = 12,
+					/obj/item/bone_counter = 12,
 					/obj/item/pack_card_carp = 90,
 					/obj/item/cardholder = 40,
 					/obj/item/cardholder/squirl = 20,
-					/obj/item/card_carp = 50
+					/obj/item/cardholder/ratbox = 20,
+					/obj/item/cardholder/beebox = 20,
+					/obj/item/cardholder/rabbit = 20,
+					/obj/item/storage/hcases/cardcarp = 20,
+					/obj/item/card_carp = 50,
+					/obj/item/card_carp/index = 50
 					)
 	prices = list(
-					/obj/item/board = 35,
+					/obj/item/storage/pill_bottle/dice = 20,
+					/obj/item/storage/pill_bottle/dice_nerd = 35,
 					/obj/item/storage/pill_bottle/chechker = 40,
+					/obj/item/board = 35,
 					/obj/item/deck/tarot = 60,
 					/obj/item/deck = 50,
-					/obj/item/pack = 35,
+					/obj/item/pack/cardemon = 35,
 					/obj/item/pack/spaceball = 30,
 					/obj/item/deck/cah = 17,
 					/obj/item/deck/cah/black = 23,
 					/obj/item/scale = 65,
+					/obj/item/bone_counter = 85,
 					/obj/item/pack_card_carp = 35,
 					/obj/item/cardholder = 42,
 					/obj/item/cardholder/squirl = 30,
-					/obj/item/card_carp = 1)
+					/obj/item/cardholder/ratbox = 30,
+					/obj/item/cardholder/beebox = 30,
+					/obj/item/cardholder/rabbit = 30,
+					/obj/item/storage/hcases/cardcarp = 20,
+					/obj/item/card_carp = 1,
+					/obj/item/card_carp/index = 1)
 
 /obj/machinery/vending/gamers/hunters
 	name = "Pre-Payed Game Emporium"
 	desc = "A one time stop for all your card or board game needs! This one has been already payed for in full."
 	products = list(
-					/obj/item/board = 4,
+					/obj/item/storage/pill_bottle/dice = 3,
+					/obj/item/storage/pill_bottle/dice_nerd = 2,
 					/obj/item/storage/pill_bottle/chechker = 4,
+					/obj/item/board = 4,
 					/obj/item/deck/tarot = 3,
 					/obj/item/deck = 5,
-					/obj/item/pack = 10,
+					/obj/item/pack/cardemon = 10,
 					/obj/item/pack/spaceball = 22,
 					/obj/item/deck/cah = 3,
 					/obj/item/deck/cah/black = 3,
-					/obj/item/scale = 2,
+					/obj/item/scale = 4,
+					/obj/item/bone_counter = 2,
 					/obj/item/pack_card_carp = 9,
 					/obj/item/cardholder = 8,
 					/obj/item/cardholder/squirl = 4,
-					/obj/item/card_carp = 4
+					/obj/item/cardholder/ratbox = 4,
+					/obj/item/cardholder/beebox = 4,
+					/obj/item/cardholder/rabbit = 4,
+					/obj/item/storage/hcases/cardcarp = 4,
+					/obj/item/card_carp = 4,
+					/obj/item/card_carp/index = 4
 					)
 	prices = list(
-					/obj/item/board = 0,
+					/obj/item/storage/pill_bottle/dice = 0,
+					/obj/item/storage/pill_bottle/dice_nerd = 0,
 					/obj/item/storage/pill_bottle/chechker = 0,
+					/obj/item/board = 0,
 					/obj/item/deck/tarot = 0,
 					/obj/item/deck = 0,
-					/obj/item/pack = 0,
+					/obj/item/pack/cardemon = 0,
 					/obj/item/pack/spaceball = 0,
 					/obj/item/deck/cah = 0,
 					/obj/item/deck/cah/black = 0,
 					/obj/item/scale = 0,
+					/obj/item/bone_counter = 0,
 					/obj/item/pack_card_carp = 0,
 					/obj/item/cardholder = 0,
 					/obj/item/cardholder/squirl = 0,
-					/obj/item/card_carp = 0)
+					/obj/item/cardholder/ratbox = 0,
+					/obj/item/cardholder/beebox = 0,
+					/obj/item/cardholder/rabbit = 0,
+					/obj/item/storage/hcases/cardcarp = 0,
+					/obj/item/card_carp = 0,
+					/obj/item/card_carp/index = 0)
+	always_open = TRUE
+

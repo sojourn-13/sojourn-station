@@ -15,7 +15,7 @@
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
-	playtimerequired = 1200
+	playtimerequired = 2500
 
 	outfit_type = /decl/hierarchy/outfit/job/security/smc
 
@@ -78,7 +78,7 @@
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
-	playtimerequired = 1200
+	playtimerequired = 2500
 
 	outfit_type = /decl/hierarchy/outfit/job/security/swo
 
@@ -137,13 +137,14 @@
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
+	playtimerequired = 1200
 
 	outfit_type = /decl/hierarchy/outfit/job/security/gunserg
 
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
-		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen, access_medical_suits, access_sec_shop
+		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen, access_medical_suits, access_sec_shop, access_forensics_lockers
 	)
 
 	stat_modifiers = list(
@@ -187,8 +188,10 @@
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
+	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
+	playtimerequired = 1200
 
 	outfit_type = /decl/hierarchy/outfit/job/security/serg
 
@@ -236,8 +239,10 @@
 	spawn_positions = 2
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
+	alt_titles = list("Detective","Forensics Specialist")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
+	playtimerequired = 1200
 
 	outfit_type = /decl/hierarchy/outfit/job/security/inspector
 
@@ -289,6 +294,7 @@
 	spawn_positions = 2
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
+	alt_titles = list("Combat Medic","Combat Surgeon")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 
@@ -341,7 +347,7 @@
 	spawn_positions = 4
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	alt_titles = list("Blackshield Cadet")
+	alt_titles = list("Blackshield Cadet", "Blackshield Militiamen")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 

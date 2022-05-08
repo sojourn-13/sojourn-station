@@ -12,66 +12,6 @@
 /mob/living/carbon/superior_animal/nanobot/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	..()
 
-	if(speaker in creator) // Is it the creator speaking?
-
-		// Autodoc mode.
-		if(ai_flag & AUTODOC_MODE) // Is Autodoc Mode installed?
-			if(findtext(message, "Toggle Medibot") && findtext(message, "[src.name]"))
-				medbot = !medbot
-				visible_emote("state, \"[medbot ? "Activating" : "Deactivating"] Medibot Mode.\"")
-				return
-
-		// Radio mode.
-		if(ai_flag & RADIO_MODE) // Is Radio Mode installed?
-			if(findtext(message, "Toggle Radio") && findtext(message, "[src.name]"))
-				Radio.broadcasting = !Radio.broadcasting
-				visible_emote("state, \"[Radio.broadcasting ? "Activating" : "Deactivating"] Radio Transmissions.\"")
-				return
-
-		// Console Mode
-		if(ai_flag & CONSOLE_MODE)
-			if(!Console && findtext(message, "Console")) // Check if the console wasn't deleted
-				visible_emote("state, \"Error. No Console Detected\"")
-				return
-			if(findtext(message, "Deploy Console") && findtext(message, "[src.name]") && Console.loc == src)
-				anchored = TRUE // The bot can't move
-				following = null
-				Console.forceMove(src.loc) // Deploy the console
-				visible_emote("state, \"Deploying console and terminating follow protocol.\"")
-			else if(findtext(message, "Store Console") && findtext(message, "[src.name]") && Console.loc != src)
-				anchored = FALSE // We can move
-				Console.forceMove(src) // Store the console
-
-		// Opifex Food mode.
-		if(ai_flag & FOOD_MODE) // Is Food Mode installed?
-			if(findtext(message, "Dispense Food") && findtext(message, "[src.name]"))
-				spawn_food() // The food-spawning and the visible emote is handled in the proc.
-				return
-
-		// Add mobs as friends
-		if(findtext(message, "Add User") && findtext(message, "[src.name]")) // Do we say the magic words with the bot's name?
-			for(var/mob/target in orange(viewRange, src)) // Check every mob that it can see
-				if(target != src) // Not include the bot
-					if(findtext(message, target.name)) // Was the mob named in the order?
-						if(friends.Find(target)) // Is it already a user?
-							visible_emote("state, \"Error, [target.name] is already a registered user.\"")
-						else
-							visible_emote("state, \"Registering [target.name] as a new user.\"")
-							friends += target // Add the mob as a user
-				return
-
-		// Remove mobs as friends
-		if(findtext(message, "Remove User") && findtext(message, "[src.name]")) // Do we say the magic words with the bot's name?
-			for(var/mob/target in orange(viewRange, src)) // Check every mob that it can see
-				if(target != src) // Not include the bot
-					if(findtext(message, target.name)) // Was the mob named in the order?
-						if(friends.Find(target)) // Is the user in the list?
-							visible_emote("state, \"Removing [target.name] as a user.\"")
-							friends -= target // Remove the mob as a user
-						else
-							visible_emote("state, \"Error, [target.name] is not a registered user.\"")
-			return
-
 /mob/living/carbon/superior_animal/nanobot/UnarmedAttack(var/mob/living/carbon/human/H, var/proximity)
 	if(medbot) // Are we in healing mode?
 		if(H == patient) // Are we "attacking" our patient?
@@ -118,3 +58,118 @@
 		return
 	return ..()
 
+/mob/living/carbon/superior_animal/nanobot/interact(mob/user as mob)
+	if((get_dist(src, user) > 1) || (stat & (BROKEN|NOPOWER)))
+		if(!isAI(user))
+			user.unset_machine()
+			user << browse(null, "window=Nanobot")
+			return
+
+	user.set_machine(src)
+
+	user << browse(handle_ui(), "window=Nanobot")
+	onclose(user, "Nanobot")
+	return
+
+/mob/living/carbon/superior_animal/nanobot/proc/handle_ui()
+	var/dat = ""
+	dat += "<head><title>[name]</title></head>"
+	dat += "[name]<BR>"
+	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
+	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
+
+	dat += "Status: <BR>"
+	dat += "- Following : <A href='?src=\ref[src];setfollow=1'>[following ? "[following]" : "None"]</A><BR>"
+	dat += "- - <A href='?src=\ref[src];adduser=1'>Add User</A> | <A href='?src=\ref[src];removeuser=1'>Remove User</A><BR>"
+	if(ai_flag & AUTODOC_MODE) // Is Autodoc Mode installed?
+		dat += "- Autodoc Mode : <A href='?src=\ref[src];autodoc=1'>[medbot ? "Active" : "Inactive"]</A><BR>"
+
+	if(ai_flag & RADIO_MODE) // Is Radio Mode installed?
+		dat += "- Radio Mode : <A href='?src=\ref[src];radio=1'>[Radio.broadcasting ? "Active" : "Inactive"]</A><BR>"
+
+	if(ai_flag & CONSOLE_MODE)
+		dat += "- Console : "
+		if(Console)
+			dat += "<A href='?src=\ref[src];console=1'>[Console.loc != src ? "Deployed" : "Retracted"]</A><BR>"
+		else
+			dat += "- ERROR : No Console Detected.<BR>"
+
+	if(ai_flag & FOOD_MODE) // Is Food Mode installed?
+		dat += "- Food Mode : <A href='?src=\ref[src];food=1'>Dispense Food</A><BR>"
+
+	return dat
+
+/mob/living/carbon/superior_animal/nanobot/Topic(href, href_list)
+	..()
+
+	if(href_list["close"])
+		usr << browse(null, "window=Nanobot")
+		usr.unset_machine()
+		return
+
+	if(href_list["autodoc"])
+		if(creator_check())
+			medbot = !medbot
+		else
+			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
+
+	if(href_list["radio"])
+		if(creator_check())
+			Radio.broadcasting = !Radio.broadcasting
+		else
+			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
+
+	if(href_list["console"])
+		if(creator_check())
+			if(Console.loc != src) // Console is deployed
+				anchored = FALSE // We can move
+				Console.forceMove(src) // Store the console
+			else
+				anchored = TRUE // The bot can't move
+				following = null
+				Console.forceMove(src.loc) // Deploy the console
+		else
+			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
+
+	if(href_list["food"])
+		if(creator_check())
+			spawn_food() // The food-spawning and the visible emote is handled in the proc.
+		else
+			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
+
+	if(href_list["setfollow"])
+		if(usr in friends)
+			if(following)
+				following = null
+			else
+				following = input(usr, "Choose who [src] should follow : ", "Set Following", null) as mob in oview(viewRange, src)
+		else
+			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
+
+	if(href_list["adduser"])
+		if(creator_check())
+			var/list/Possible_Choice = oviewers(viewRange, src)
+
+			// We remove mobs that are already allowed
+			for(var/mob/M in Possible_Choice)
+				if(friends.Find(M))
+					Possible_Choice -= M
+
+			friends += input(usr, "Add a user : ", "Add user", null) as null|mob in Possible_Choice
+		else
+			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
+
+	if(href_list["removeuser"])
+		if(creator_check())
+			friends -= input(usr, "Remove a user : ", "Remove user", null) as null|mob in friends
+		else
+			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
+
+	updateDialog()
+	return
+
+/mob/living/carbon/superior_animal/nanobot/proc/creator_check(var/mob/M)
+	if(usr in creator)
+		return TRUE
+	else
+		return FALSE

@@ -1,5 +1,5 @@
 
-#define isweakref(A) istype(A, /weakref)
+#define isweakref(D) (istype(D, /datum/weakref))
 
 #define islist(A) istype(A, /list)
 
@@ -44,6 +44,8 @@
 
 #define isburrow(A) istype(A, /obj/structure/burrow)
 //---------------------------------------------------
+
+#define issynthetic(A) istype(A, /mob) && A.mob_classification == CLASSIFICATION_SYNTHETIC //For when we really, really don't want any robots
 
 #define issilicon(A) istype(A, /mob/living/silicon)
 

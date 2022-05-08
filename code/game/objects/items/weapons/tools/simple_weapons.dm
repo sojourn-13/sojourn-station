@@ -376,7 +376,7 @@
 	desc = "A weapon designed by the Hunting Lodge, this massive sword is especially effective against tengolos, xenomorphs, and tengolo berserkers, dealing double its normal damage with every strike."
 	icon = 'icons/obj/weapons-blades.dmi'
 	icon_state = "cleaver"
-	item_state = "cleaver"
+	item_state = "cleaver_back"
 	tool_qualities = list(QUALITY_CUTTING = 30)
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_SHALLOW

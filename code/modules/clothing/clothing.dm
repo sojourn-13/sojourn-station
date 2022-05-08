@@ -12,7 +12,6 @@
 	var/list/valid_accessory_slots
 	var/list/restricted_accessory_slots
 	var/equip_delay = 0 //If set to a nonzero value, the item will require that much time to wear and remove
-
 	stiffness = 0 // Recoil caused by moving, defined in obj/item
 	obscuration = 0 // Similar to tint, but decreases firearm accuracy instead via giving minimum extra offset, defined in obj/item
 
@@ -32,7 +31,7 @@
 
 	else if(!matter)
 		matter = list()
-
+	
 	matter.Add(list(MATERIAL_BIOMATTER = 5 * w_class))    // based of item size
 
 /obj/item/clothing/Destroy()
@@ -122,7 +121,8 @@
 		var/body_part_string = body_part_coverage_to_string(body_parts_covered)
 		data["body_coverage"] = body_part_string
 	data["slowdown"] = slowdown
-	data["stiffness "] = stiffness
+	data["stiffness"] = stiffness
+	data["obscuration"] = obscuration
 	if(heat_protection)
 		data["heat_protection"] = body_part_coverage_to_string(heat_protection)
 		data["heat_protection_temperature"] = max_heat_protection_temperature
@@ -132,7 +132,7 @@
 	data["equip_delay"] = equip_delay
 	return data
 
-/obj/item/clothing/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
+/obj/item/clothing/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
 	var/list/data = ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -144,7 +144,7 @@
 
 /obj/item/clothing/ui_action_click(mob/living/user, action_name)
 	if(action_name == "Clothing information")
-		ui_interact(user)
+		nano_ui_interact(user)
 		return TRUE
 	return ..()
 
@@ -329,7 +329,7 @@ BLIND     // can't see anything
 	var/wired = 0
 	var/clipped = 0
 	body_parts_covered = ARMS
-	armor = list(melee = 10, bullet = 0, energy = 15, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 10, bullet = 0, energy = 15, bomb = 0, bio = 0, rad = 0)
 	slot_flags = SLOT_GLOVES
 	attack_verb = list("challenged")
 
@@ -456,7 +456,8 @@ BLIND     // can't see anything
 	slot_flags = SLOT_MASK
 	body_parts_covered = FACE|EYES
 
-	var/voicechange = 0
+	var/muffle_voice = FALSE
+	var/voicechange = FALSE
 	var/list/say_messages
 	var/list/say_verbs
 
@@ -479,7 +480,7 @@ BLIND     // can't see anything
 	var/noslip = 0
 	var/module_inside = 0
 
-	armor = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	permeability_coefficient = 0.50
 	slowdown = SHOES_SLOWDOWN
 	force = 2
@@ -609,7 +610,8 @@ BLIND     // can't see anything
 		/obj/item/device/scanner,
 		/obj/item/reagent_containers/spray,
 		/obj/item/device/radio,
-		/obj/item/clothing/mask)
+		/obj/item/clothing/mask,
+		/obj/item/implant/carrion_spider/holographic)
 	slot_flags = SLOT_OCLOTHING
 	var/blood_overlay_type = "suit"
 	siemens_coefficient = 0.9

@@ -2,7 +2,7 @@
 	category = "Lodge"
 	time = 100
 	related_stats = list(STAT_BIO)
-	avaliableToEveryone = FALSE
+	requiredPerk = PERK_BUTCHER
 
 // Weaponry -----------------
 /datum/craft_recipe/lodge/crossbow_bolts
@@ -19,7 +19,7 @@
 	result = /obj/item/ammo_casing/crossbow_bolts/fragment/bulk
 	steps = list(
 		list(/obj/item/stack/rods, 10),
-		list(/obj/item/ore, 1)
+		list(/obj/item/stack/ore, 1)
 	)
 
 /datum/craft_recipe/lodge/crossbow_bolts/speed
@@ -257,7 +257,7 @@
 	result = /obj/item/stack/medical/advanced/ointment/powder_pouch
 	icon_state = "clothing"
 	steps = list(
-		list(CRAFT_MATERIAL, 2, MATERIAL_LEATHER, "time" = 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_LEATHER, "time" = 60),
 		list(/obj/item/animal_part/tatonka_horn, 1, "time" = 20),
 		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)
@@ -298,7 +298,7 @@
 	name = "Handmade Soap"
 	result = /obj/item/soap/hunters
 	steps = list(
-		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 60),
+		list(CRAFT_MATERIAL, 3, MATERIAL_WOOD, "time" = 60),
 		list(/obj/item/animal_part/cerberus_snout, 1, "time" = 20),
 		list(/obj/item/reagent_containers/food/snacks/egg/clucker, 1, "time" = 20),
 		list(QUALITY_HAMMERING, 15, "time" = 40)
@@ -309,7 +309,7 @@
 	result = /obj/item/tool/tape_roll
 	icon_state = "clothing"
 	steps = list(
-		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 60),
+		list(CRAFT_MATERIAL, 3, MATERIAL_WOOD, "time" = 60),
 		list(/obj/item/animal_part/cerberus_snout, 1, "time" = 20),
 		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)
@@ -319,7 +319,7 @@
 	result = /obj/item/tool/tape_roll/flextape
 	icon_state = "clothing"
 	steps = list(
-		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 60),
+		list(CRAFT_MATERIAL, 3, MATERIAL_WOOD, "time" = 60),
 		list(/obj/item/animal_part/slepnir_hoof, 1, "time" = 20),
 		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)

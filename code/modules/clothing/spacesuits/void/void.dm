@@ -5,7 +5,7 @@
 	icon_state = "void"
 
 	heat_protection = HEAD
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 20,
 		energy = 10,
@@ -23,7 +23,7 @@
 	item_state = "void"
 	desc = "A high-tech dark red space suit."
 	slowdown = 1
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 20,
 		energy = 10,
@@ -46,8 +46,6 @@
 	valid_accessory_slots = list()
 	restricted_accessory_slots = list()
 
-	tool_qualities = list()
-	max_upgrades = 0
 
 /obj/item/clothing/suit/space/void/Initialize()
 	if(boots && ispath(boots))
@@ -233,7 +231,7 @@
 		to_chat(user, SPAN_WARNING("You cannot modify \the [src] while it is being worn."))
 		return
 
-	if(istype(W,/obj/item/tool/screwdriver))
+	if(istype(W,/obj/item/tool/wrench))
 		if(boots || tank || helmet)
 			var/choice = input("What component would you like to remove?") as null|anything in list(boots,tank,helmet)
 			if(!choice) return

@@ -15,9 +15,13 @@
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 160
 	var/working_range = 30 // how far this turret operates from excelsior teleporter
-	health = 160
+	health = 300
+	maxHealth = 300
 	auto_repair = 1
 	shot_delay = 0.3
+
+/obj/machinery/porta_turret/excelsior/preloaded
+	ammo = 160
 
 /obj/machinery/porta_turret/excelsior/proc/has_power_source_nearby()
 	for (var/a in excelsior_teleporters)
@@ -48,7 +52,7 @@
 		return 0
 	return 1
 
-/obj/machinery/porta_turret/excelsior/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/porta_turret/excelsior/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 	data["access"] = !isLocked(user)
 	data["locked"] = locked
@@ -112,6 +116,9 @@
 		return TURRET_NOT_TARGET
 
 	if(is_excelsior(L))
+		return TURRET_NOT_TARGET
+
+	if(L.faction == "excelsior") //Dont target colony pets if were allied with them
 		return TURRET_NOT_TARGET
 
 	if(L.lying)
@@ -203,7 +210,7 @@
 		return 0
 	return 1
 
-/obj/machinery/porta_turret/artificer/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/porta_turret/artificer/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 	data["access"] = !isLocked(user)
 	data["locked"] = locked
@@ -295,7 +302,7 @@
 				to_chat(user, "<span class='notice'>You install a cell in \the [src].</span>")
 			return TRUE //No whacking the turret with cells on help intent
 
-		else if(istype(I, ammo_box) && I:stored_ammo.len)
+		else if(istype(I, ammo_box) && I?:stored_ammo?:len)
 			var/obj/item/ammo_magazine/A = I
 			if(ammo >= ammo_max)
 				to_chat(user, SPAN_NOTICE("You cannot load more than [ammo_max] ammo."))
@@ -465,7 +472,7 @@
 				cell = I
 				to_chat(user, "<span class='notice'>You install a cell in \the [src].</span>")
 
-		else if(istype(I, ammo_box) && I:stored_ammo.len)
+		else if(istype(I, ammo_box) && I?:stored_ammo?:len)
 			var/obj/item/ammo_magazine/A = I
 			if(ammo >= ammo_max)
 				to_chat(user, SPAN_NOTICE("You cannot load more than [ammo_max] ammo."))

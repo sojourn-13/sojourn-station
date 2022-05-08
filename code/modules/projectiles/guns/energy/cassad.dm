@@ -22,7 +22,5 @@
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 	twohanded = TRUE
 	can_dual = FALSE
+	serial_type = "H&S"
 
-/obj/item/gun/energy/pulse/cassad/update_icon()
-	..()
-	set_item_state(null, back = TRUE)

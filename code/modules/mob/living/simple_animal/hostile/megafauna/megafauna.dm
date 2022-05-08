@@ -155,11 +155,13 @@
 			shoot_projectile(T, pick(GLOB.alldirs))
 
 /mob/living/simple_animal/hostile/megafauna/proc/wave_shots()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	ranged_cooldown = world.time + 30
 	var/turf/U = get_turf(src)
 	for(var/T in RANGE_TURFS(12, U) - U)
-		set_dir(get_dir(T, target_mob))
-		if(get_dir(T, U) == get_dir(T, target_mob))
+		set_dir(get_dir(T, targetted_mob))
+		if(get_dir(T, U) == get_dir(T, targetted_mob))
 			if(prob(15))
 				sleep(rand(0,1))
 				shoot_projectile(T)

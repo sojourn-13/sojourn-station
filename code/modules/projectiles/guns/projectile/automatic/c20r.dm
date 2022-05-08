@@ -9,7 +9,7 @@
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_SMG
 	auto_eject = TRUE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
@@ -23,13 +23,14 @@
 	zoom_factor = 0.4
 	recoil_buildup = 0.5
 	one_hand_penalty = 5 //smg level
+	serial_type = "SA"
 
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_SCOPE, GUN_MAGWELL)
 
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_400_NOLOSS,
 		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND
+		BURST_3_ROUND_NOLOSS
 		)
 
 /obj/item/gun/projectile/automatic/c20r/update_icon()
@@ -51,6 +52,7 @@
 	damage_multiplier = 1
 	penetration_multiplier = 1
 	price_tag = 500
+	serial_type = "SI"
 
 /obj/item/gun/projectile/automatic/c20r/sci/preloaded
 

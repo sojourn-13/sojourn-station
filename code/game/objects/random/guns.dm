@@ -12,7 +12,6 @@
 				/obj/item/gun/energy/shrapnel = 4,\
 				/obj/item/gun/energy/lasersmg = 3,\
 				/obj/item/ammo_kit = 3,\
-				/obj/item/gun/projectile/automatic/alemao = 2,\
 				/obj/item/gun/projectile/giskard = 2,\
 				/obj/item/gun/projectile/automatic/luger = 1,\
 				/obj/item/gun/projectile/boltgun/sa = 3,\
@@ -31,7 +30,6 @@
 				/obj/item/gun/projectile/boltgun/sawn/sa = 1,\
 				/obj/item/gun/projectile/boltgun/sawn/scout = 0.5,\
 				/obj/item/gun/projectile/handmade_pistol = 2,\
-				/obj/item/gun/projectile/automatic/alemao = 2, \
 				/obj/item/gun/projectile/automatic/luger = 0.1, \
 				/obj/item/gun/projectile/boltgun/zatvor = 2, \
 				//obj/item/gun/projectile/ladon/sa = 1,
@@ -84,7 +82,6 @@
 				/obj/item/gun/projectile/boltgun/sa = 2,\
 				//obj/item/gun/projectile/boltgun/scout/light = 2,
 				//obj/item/gun/projectile/boltgun/scout/light/wood = 2,
-				/obj/item/gun/projectile/firefly = 2,
 				/obj/item/ammo_kit = 2,
 				/obj/item/gun_upgrade/trigger/dangerzone = 1,
 				/obj/item/gun_upgrade/trigger/cop_block = 1,
@@ -301,10 +298,11 @@
 				/obj/item/gun_upgrade/trigger/honker = 0.1,
 				/obj/item/gun_upgrade/barrel/toxin_coater = 1,
 				/obj/item/gun_upgrade/barrel/gauss = 1,
-				/obj/item/gun_upgrade/mechanism/gun_rail = 1,
+				///obj/item/gun_upgrade/mechanism/gun_rail = 1,
 				/obj/item/gun_upgrade/trigger/boom = 0.5,
 				/obj/item/gun_upgrade/scope/watchman = 0.7,
 				/obj/item/gun_upgrade/scope/killer = 0.7,
+				/obj/item/gun_upgrade/underbarrel/bipod = 1,
 				/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = 0.01))
 
 /obj/random/dungeon_gun_mods/low_chance

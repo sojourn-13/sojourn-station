@@ -11,3 +11,4 @@
 	charge_cost = 100
 	matter = list(MATERIAL_STEEL = 20)
 	price_tag = 100
+	serial_type = "SI"

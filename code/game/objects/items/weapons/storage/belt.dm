@@ -336,9 +336,12 @@
 		/obj/item/device/radio/headset,
 		/obj/item/device/hailer,
 		/obj/item/device/megaphone,
+		/obj/item/device/t_scanner/advanced,
+		/obj/item/device/holowarrant,
 		/obj/item/melee,
 		/obj/item/device/radio,
 		/obj/item/tool/knife,
+		/obj/item/tool/shovel/combat,
 		/obj/item/gun/projectile/mk58,
 		/obj/item/gun/projectile/revolver/lemant,
 		/obj/item/gun/energy/gun,
@@ -351,6 +354,10 @@
 		/obj/item/ammo_casing/flare,
 		/obj/item/taperoll,
 		/obj/item/pen,
+		/obj/item/device/taperecorder,
+		/obj/item/clipboard,
+		/obj/item/device/camera,
+		/obj/item/folder,
 		/obj/item/reagent_containers/food/snacks,
 		/obj/item/reagent_containers/food/drinks
 	)
@@ -393,6 +400,27 @@
 	icon_state = "tactical"
 	storage_slots = 16 //Holds a lot as its bigger
 
+
+/obj/item/storage/belt/security/tactical/marshalert
+
+/obj/item/storage/belt/security/tactical/marshalert/populate_contents()
+	new /obj/item/tool/shovel/combat(src)
+	new /obj/item/gun/energy/gun/martin(src)
+	new /obj/item/cell/small(src)
+	new /obj/item/cell/small(src)
+	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
+	new /obj/item/cell/medium/high(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/device/taperecorder(src)
+	new /obj/item/device/camera(src)
+	new /obj/item/folder(src)
+	new /obj/item/clothing/head/helmet/marshal_full(src)
+	new /obj/item/clothing/mask/gas/ihs(src)
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/grenade/chem_grenade/teargas(src)
+	new /obj/item/grenade/frag/stinger(src)
+
 /obj/item/storage/belt/security/tactical/opifex
 	name = "opifex tactical belt"
 	desc = "A black tactical belt made specifically for opifex to prevent any pulling or ruffling of feathers, slightly uncomfortable for anyone else but none can deny its quality. This harness is built specifically for combat, limiting its versatility."
@@ -412,7 +440,7 @@
 	new /obj/item/grenade/chem_grenade/teargas(src)
 
 /obj/item/storage/belt/security/neotheology
-	name = "tactical absolutism belt"
+	name = "Absolutism tactical belt"
 	desc = "Can hold various military and security equipment for the awakened crusader or skilled divisor. Deus Vult."
 	icon_state = "tactical_neotheology"
 	can_hold_extra = list(
@@ -432,7 +460,7 @@
 /obj/item/storage/belt/champion
 	name = "championship belt"
 	desc = "Proves to the world that you are the strongest!"
-	icon_state = "championbelt"
+	icon_state = "champion"
 	item_state = "champion"
 	storage_slots = 1
 	can_hold = list(

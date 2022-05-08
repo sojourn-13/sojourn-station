@@ -18,6 +18,13 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD)
 	)
 
+/datum/craft_recipe/furniture/table
+	name = "table frame"
+	result = /obj/structure/table
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
+	)
+
 //Custom chairs
 /datum/craft_recipe/furniture/bar_chair
 	name = "chair, bar"

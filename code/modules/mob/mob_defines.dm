@@ -54,7 +54,6 @@
 	var/hand = null
 	var/real_name = null
 
-	var/bhunger = 0			//Carbon
 	var/ajourn = 0
 	var/seer = 0 //for cult//Carbon, probably Human
 
@@ -65,6 +64,7 @@
 	var/lying = 0
 	var/lying_prev = 0
 	var/canmove = 1
+	var/in_use = FALSE // If we have a user using us, this will be set on. We will check if the user has stopped using us, and thus stop updating and LAGGING EVERYTHING!
 
 /* Is mannquin to be used when we want to make sure character start up beings do not also get the boon of what ever we are adding
    this is current used in magic cups to prevent them form being apart of the faith's list.*/
@@ -147,8 +147,8 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/blinded = null
 	var/ear_deaf = null		//Carbon
 
-//The last mob/living/carbon to push/drag/grab this mob (mostly used by slimes friend recognition)
-	var/mob/living/carbon/LAssailant = null
+/// The last mob/living/carbon to push/drag/grab this mob (mostly used by slimes friend recognition)
+	var/datum/weakref/LAssailant_weakref
 
 //Wizard mode, but can be used in other modes thanks to the brand new "Give Spell" badmin button
 	var/spell/list/spell_list = list()

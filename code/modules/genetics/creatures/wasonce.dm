@@ -151,16 +151,24 @@ Has ability of every roach.
 				to_chat(captive, SPAN_DANGER(pick("The immense strength of the creature is crushing. Wasn't... Flesh supposed to be weak?")))
 				captive.adjustBruteLossByPart(15, pick(captive.organs))
 			else
-				injector.inject_mutations(captive, TRUE)
 				to_chat(captive, SPAN_DANGER(pick(
 					"The mass changes you...", "Veins slip into your flesh and merge with your own", "Parts of yourself fuse to the roiling flesh surrounding you.",
 					"You feel yourself breathing through multiple lungs.", "You feel yourself assimilating with the whole.")))
+				injector.inject_mutations(captive, TRUE)
 		injector.removeAllMutations()
 	if(lethal_to_captive && captives.len && prob(15))
 		for(var/mob/living/captive in captives)
 			captive.adjustBruteLoss(5)
 			captive.adjustFireLoss(5)
 	..()
+
+/mob/living/carbon/superior_animal/psi_monster/wasonce/return_air_for_internal_lifeform()
+	//assume that the cryo cell has some kind of breath mask or something that
+	//draws from the cryo tube's environment, instead of the cold internal air.
+	if(loc)
+		return loc.return_air()
+	else
+		return null
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/findTarget()
 	var/atom/best_target = null

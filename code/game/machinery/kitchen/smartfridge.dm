@@ -250,7 +250,7 @@
 	return ..()
 
 /obj/machinery/smartfridge/proc/accept_check(var/obj/item/O as obj)
-	if(istype(O,/obj/item/reagent_containers/food/snacks/grown/) || istype(O,/obj/item/seeds/) || istype(O,/obj/item/reagent_containers/food/snacks/meat/) || istype(O,/obj/item/reagent_containers/food/snacks/egg/))
+	if(istype(O,/obj/item/reagent_containers/food/snacks/grown/) || istype(O,/obj/item/seeds/) || istype(O,/obj/item/reagent_containers/food/snacks/meat/) || istype(O,/obj/item/reagent_containers/food/snacks/egg/ || istype(O,/obj/item/reagent_containers/food/snacks/chickenbreast)))
 		return 1
 	return 0
 
@@ -355,7 +355,7 @@
 	if(stat & (NOPOWER|BROKEN))
 		return
 	wires.Interact(user)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 
 /obj/machinery/smartfridge/proc/update_contents()
@@ -366,7 +366,7 @@
 *   SmartFridge Menu
 ********************/
 
-/obj/machinery/smartfridge/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/smartfridge/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	user.set_machine(src)
 
 	var/data[0]

@@ -141,11 +141,11 @@
 	var/tipbroken = FALSE
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK | SLOT_BELT
-	throwforce = 75 //We 2 shot anyone!
+	throwforce = WEAPON_FORCE_LETHAL * 1.5
 	armor_penetration = ARMOR_PEN_HALF
 	throw_speed = 3
 	price_tag = 150
-	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_STEEL = 5) // easy to mass-produce and arm the faithful
+	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_PLASTEEL = 10) // More expensive, high-end spear
 
 /obj/item/tool/sword/nt/spear/equipped(mob/living/W)
 	. = ..()
@@ -169,6 +169,13 @@
 	. = ..()
 	if (tipbroken)
 		to_chat(user, SPAN_WARNING("\The [src] is broken. It looks like it could be repaired with a hammer."))
+
+/obj/item/tool/sword/nt/spear/attackby(obj/item/I, var/mob/user)
+	. = ..()
+	if (I.has_quality(QUALITY_HAMMERING))
+		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_HAMMERING, FAILCHANCE_EASY, STAT_MEC))
+			to_chat(user, SPAN_NOTICE("You repair \the damaged spear-tip."))
+			tipbroken = FALSE
 
 /obj/item/tool/sword/nt/flanged
 	name = "flanged mace"
@@ -248,14 +255,6 @@
 		target.throw_at(get_edge_target_turf(target, throwdir),whack_speed,whack_speed)
 	..()
 
-
-/obj/item/tool/sword/nt/spear/attackby(obj/item/I, var/mob/user)
-	. = ..()
-	if (I.has_quality(QUALITY_HAMMERING))
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_HAMMERING, FAILCHANCE_EASY, STAT_MEC))
-			to_chat(user, SPAN_NOTICE("You repair \the damaged spear-tip."))
-			tipbroken = FALSE
-
 /obj/item/shield/riot/nt
 	name = "shield"
 	desc = "A saintly looking shield, let the God protect you. \
@@ -265,7 +264,7 @@
 	icon_state = "nt_shield"
 	item_state = "nt_shield"
 	force = WEAPON_FORCE_DANGEROUS
-	armor = list(melee = 20, bullet = 30, energy = 30, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 20, bullet = 30, energy = 30, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 10, MATERIAL_GOLD = 5)
 	price_tag = 1000
 	base_block_chance = 60
@@ -286,6 +285,7 @@
 		/obj/item/tool/knife/dagger/nt,
 		/obj/item/tool/knife/neotritual,
 		/obj/item/book/ritual/cruciform,
+		/obj/item/stack/thrown/nt/verutum
 		)
 
 /obj/item/shield/riot/nt/New()
@@ -340,7 +340,7 @@
 	max_durability = 110 //So we can brake and need healing time to time
 	durability = 110
 	var/obj/item/storage/internal/container
-	var/storage_slots = 2
+	var/storage_slots = 1
 	var/max_w_class = ITEM_SIZE_HUGE
 	var/list/can_hold = list(
 		/obj/item/tool/sword/nt/shortsword,
@@ -348,6 +348,7 @@
 		/obj/item/tool/knife/dagger/nt,
 		/obj/item/tool/knife/neotritual,
 		/obj/item/book/ritual/cruciform,
+		/obj/item/stack/thrown/nt/verutum
 		)
 
 /obj/item/shield/buckler/nt/New()
@@ -396,3 +397,48 @@
 	armor_penetration = ARMOR_PEN_HALF
 	matter = list(MATERIAL_DURASTEEL = 25, MATERIAL_GOLD = 3)
 	price_tag = 10000
+
+//Throwables
+
+/obj/item/stack/thrown/nt
+	name = "Faithful Throwing knife"
+	desc = "A saintly-looking sword forged to do God\'s distant work."
+	icon_state = "nt_shortsword"
+	item_state = "nt_shortsword"
+	force = WEAPON_FORCE_DANGEROUS
+	throwforce = WEAPON_FORCE_WEAK
+	armor_penetration = ARMOR_PEN_DEEP
+	//aspects = list(SANCTIFIED) todo:port this
+	price_tag = 300
+	matter = list(MATERIAL_BIOMATTER = 25, MATERIAL_STEEL = 5)
+
+/obj/item/stack/thrown/nt/equipped(mob/living/M)
+	..()
+	if(is_held() && is_neotheology_disciple(M))
+		embed_mult = 0.1
+	else
+		embed_mult = initial(embed_mult)
+
+/obj/item/stack/thrown/nt/verutum
+	name = "verutum"
+	desc = "A short, saintly-looking javelin for throwing or use with a shield. They are small enough to allow holding multiple in one hand."
+	icon_state = "nt_verutum"
+	item_state = "nt_verutum"
+	singular_name = "verutum"
+	plural_name = "veruta"
+	wielded_icon = "nt_verutum_wielded"
+	force = 20
+
+	w_class = ITEM_SIZE_HUGE
+	slot_flags = SLOT_BACK | SLOT_BELT
+	throwforce = WEAPON_FORCE_LETHAL
+	armor_penetration = ARMOR_PEN_DEEP
+	throw_speed = 3
+	price_tag = 150
+	allow_spin = FALSE
+	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_STEEL = 5) // Easy to mass-produce and arm the faithful
+	//style_damage = 30 - todo port this maybe?
+
+/obj/item/stack/thrown/nt/verutum/launchAt()
+	embed_mult = 300
+	..()

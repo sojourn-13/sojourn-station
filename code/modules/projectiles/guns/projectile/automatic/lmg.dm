@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/lmg
-	name = "SAW"
-	desc = "A defunct lmg, please ahelp if you're seeing it. Uses 7.5mm Rifle rounds."
+	name = "SA \"SAW\""
+	desc = "A exstreamly rare HMG produced on a commision. Uses 7.5mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/l6.dmi'
 	var/icon_base
 	icon_base = "l6"
@@ -11,7 +11,7 @@
 	slot_flags = 0
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_BOX
 	caliber = CAL_RIFLE
 	tac_reloads = FALSE
@@ -23,12 +23,14 @@
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	recoil_buildup = 0.25
 	one_hand_penalty = 30 //you're not Stallone. LMG level.
-
+	slowdown_hold = 1
+	brace_penalty = 20
 	init_firemodes = list(
 		FULL_AUTO_400,
 		BURST_5_ROUND,
 		BURST_8_ROUND
 		)
+	serial_type = "SA"
 
 	var/cover_open = 0
 
@@ -102,7 +104,7 @@
 	icon_base = "pk"
 	icon_state = "pk_closed"
 	item_state = "pk_closed"
-	damage_multiplier = 0.8
+	damage_multiplier = 0.9
 	init_firemodes = list(
 		FULL_AUTO_400,
 		BURST_5_ROUND,
@@ -121,7 +123,7 @@
 	mag_well = MAG_WELL_BOX|MAG_WELL_STANMAG
 	caliber = CAL_LRIFLE
 	penetration_multiplier = 0.85
-	damage_multiplier = 0.6
+	damage_multiplier = 1.0
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10)
 	price_tag = 1500
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
@@ -142,9 +144,10 @@
 	item_state = "tk"
 	mag_well = MAG_WELL_BOX|MAG_WELL_STANMAG
 	caliber = CAL_LRIFLE
-	damage_multiplier = 1
-	penetration_multiplier = 1
-	recoil_buildup = 1.7 //Why is this so good?
+	damage_multiplier = 1.2
+	penetration_multiplier = 1.2
+	recoil_buildup = 0.75
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/automatic/lmg/tk/update_icon()
 //	..() We are rather different then other guns and lmgs.

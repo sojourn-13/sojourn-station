@@ -110,6 +110,19 @@
 		list(QUALITY_SCREW_DRIVING, 10)
 	)
 
+/datum/craft_recipe/gun/axedoublebarrel
+	name = "axe double barrel shotgun"
+	result = /obj/item/gun/projectile/shotgun/doublebarrel/axe
+	steps = list(
+		list(/obj/item/gun/projectile/shotgun/doublebarrel, 1, time = 60),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL),
+		list(QUALITY_ADHESIVE, 15, 70),
+		list(QUALITY_WELDING, 10, 20),
+		list(QUALITY_SCREW_DRIVING, 10),
+		list(QUALITY_BOLT_TURNING, 20, 30)
+	)
+
 /datum/craft_recipe/gun/motherfucker
 	name = "\"Punch Hole\" motherfucker"
 	result = /obj/item/gun/projectile/automatic/motherfucker
@@ -184,7 +197,7 @@
 
 /datum/craft_recipe/gun/rxd
 	name = "RXD - rapid crossbow device"
-	result = /obj/item/gun/launcher/crossbow/RCD
+	result = /obj/item/gun/projectile/crossbow/RCD
 	steps = list(
 		list(/obj/item/rcd, 1, "time" = 30),
 		list(QUALITY_SCREW_DRIVING, 10, 30),
@@ -193,6 +206,8 @@
 		list(QUALITY_WELDING, 10, "time" = 30),
 		list(/obj/item/stack/cable_coil, 2, "time" = 10)
 	)
+
+
 
 /datum/craft_recipe/gun/multi_laser
 	name = "Multi-Laser Cannon"
@@ -208,5 +223,16 @@
 	steps = list(
 		list(/obj/item/gun/projectile/revolver/lemant, 1, "time" = 20),
 		list(/obj/item/tool_upgrade/augment/spikes, 1, "time" = 20),
+		list(QUALITY_HAMMERING, 30, "time" = 10)
+	)
+
+/datum/craft_recipe/gun/pilgrim_uppercut
+	name = "Pilgrim Hero"
+	result = /obj/item/gun/projectile/revolver/lemant/uppercut
+	steps = list(
+		list(/obj/item/gun/projectile/revolver/lemant, 1, "time" = 20),
+		list(QUALITY_SAWING, 20, "time" = 60),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 10),
+		list(QUALITY_WELDING, 25, "time" = 30),
 		list(QUALITY_HAMMERING, 30, "time" = 10)
 	)

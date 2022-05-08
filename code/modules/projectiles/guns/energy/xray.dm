@@ -12,3 +12,5 @@
 	fire_delay = 1
 	twohanded = TRUE
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+	serial_type = "INDEX"
+	serial_shown = FALSE

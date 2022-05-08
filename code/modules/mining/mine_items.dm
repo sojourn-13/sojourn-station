@@ -29,6 +29,7 @@
 	new /obj/item/gun/projectile/boltgun/flare_gun(src)
 	new /obj/item/ammo_casing/flare(src)
 	new /obj/item/device/ore_sonar(src)
+	new /obj/item/clothing/accessory/job/cape/mining(src) // ROCK AND STONE, BRUDDAH!
 
 /******************************Lantern*******************************/
 
@@ -39,6 +40,13 @@
 	desc = "A mining lantern."
 	brightness_on = 4			// luminosity when on
 
+/obj/item/device/lighting/toggleable/lantern/censer
+	name = "censer"
+	icon_state = "censer"
+	item_state = "censer"
+	desc = "A silver-gold incense burner that releases a sweet, comforting perfume with clear spiritual connotations. Vectors are entitled to swung throught the air to spread the incense widely with purifying intentions and to represent the prayers of the church rising towards Heaven and into absolute's ears. It is common to say Psalm 51 during so."
+	brightness_on = 3			// luminosity when on
+	turn_on_sound = 'sound/effects/Custom_flare.ogg'
 
 /*****************************Pickaxe********************************/
 

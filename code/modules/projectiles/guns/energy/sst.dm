@@ -14,7 +14,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
 	origin_tech = list(TECH_COMBAT = 10)
-	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_STEEL = 8, MATERIAL_SILVER = 8, MATERIAL_PLATINUM = 2)
+	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_STEEL = 8, MATERIAL_SILVER = 8, MATERIAL_PLATINUM = 0.1)
 	charge_cost = 100
 	twohanded = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_CALIBRE_35)
@@ -25,6 +25,7 @@
 	damage_multiplier = 1.2
 	projectile_type=/obj/item/projectile/bullet/pistol_35/rubber/soporific
 	price_tag = 1750
+	serial_type = "SI"
 
 /obj/item/gun/energy/sst/formatbound
 	name = "\"SST Format Bound\" handgun"
@@ -43,7 +44,7 @@
 	damage_multiplier = 1.3
 	w_class = ITEM_SIZE_NORMAL
 	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/soporific
-	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 10,  MATERIAL_SILVER = 12, MATERIAL_PLATINUM = 5)
+	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 10,  MATERIAL_SILVER = 12, MATERIAL_PLATINUM = 0.2)
 	price_tag = 1600
 
 /obj/item/gun/energy/sst/formatbound/preloaded
@@ -52,7 +53,7 @@
 	cell = new /obj/item/cell/medium/moebius/high(src)
 	. = ..()
 	update_icon()
-	
+
 
 /obj/item/gun/energy/sst/humility
 	name = "\"SST Humility\" shotgun"
@@ -71,7 +72,7 @@
 	twohanded = TRUE
 	suitable_cell = /obj/item/cell/large
 	slot_flags = SLOT_BACK
-	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_STEEL = 20, MATERIAL_SILVER = 15, MATERIAL_GOLD = 12, MATERIAL_PLATINUM = 10)
+	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_STEEL = 20, MATERIAL_SILVER = 15, MATERIAL_GOLD = 12, MATERIAL_PLATINUM = 0.5)
 	price_tag = 2500
 	recoil_buildup = 15
 	projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/soporific
@@ -112,7 +113,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
-	matter = list(MATERIAL_PLASTEEL = 35, MATERIAL_STEEL = 25, MATERIAL_SILVER = 15, MATERIAL_GOLD = 12, MATERIAL_PLATINUM = 12, MATERIAL_URANIUM = 8)
+	matter = list(MATERIAL_PLASTEEL = 35, MATERIAL_STEEL = 25, MATERIAL_SILVER = 15, MATERIAL_GOLD = 12, MATERIAL_PLATINUM = 0.5)
 	damage_multiplier = 1.2
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,

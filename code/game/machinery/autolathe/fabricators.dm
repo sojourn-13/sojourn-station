@@ -83,6 +83,13 @@
 			list(name="SMG Magazine (.40 Magnum rubber)", cost=1080, path= /obj/item/ammo_magazine/smg_magnum_40/rubber),
 			list(name="SMG Magazine (.40 Magnum practice)", cost=420, path= /obj/item/ammo_magazine/smg_magnum_40/practice),
 			list(name="SMG Magazine (.40 Magnum empty)", cost=420, path= /obj/item/ammo_magazine/smg_magnum_40/empty),
+		".257 Carbine Drum",
+			list(name="Carbine Drum Magazine (Standard)", cost=1080, path= /obj/item/ammo_magazine/light_rifle_257_drum),
+			list(name="Carbine Drum Magazine (High velocity)", cost=1080, path= /obj/item/ammo_magazine/light_rifle_257_drum/highvelocity),
+			list(name="Carbine Drum Magazine (Hollow-point)", cost=1080, path= /obj/item/ammo_magazine/light_rifle_257_drum/lethal),
+			list(name="Carbine Drum Magazine (Rubber)", cost=680, path= /obj/item/ammo_magazine/light_rifle_257_drum/rubber),
+			list(name="Carbine Drum Magazine (Practice)", cost=420, path= /obj/item/ammo_magazine/light_rifle_257_drum/practice),
+			list(name="Carbine Drum Magazine (Empty)", cost=420, path= /obj/item/ammo_magazine/light_rifle_257_drum/empty),
 		".257 Carbine Long",
 			list(name="Carbine Magazine (Standard)", cost=300, path=/obj/item/ammo_magazine/light_rifle_257),
 			list(name="Carbine Magazine (High velocity)", cost=300, path=/obj/item/ammo_magazine/light_rifle_257/highvelocity),
@@ -95,6 +102,13 @@
 			list(name="Short Carbine Magazine (Hollow-point)", cost=200, path=/obj/item/ammo_magazine/light_rifle_257_short/lethal),
 			list(name="Short Carbine Magazine (Rubber)", cost=200, path=/obj/item/ammo_magazine/light_rifle_257_short/rubber),
 			list(name="Short Carbine Magazine (Practice)", cost=50, path=/obj/item/ammo_magazine/light_rifle_257_short/practice),
+		"7.5 Rifle Drum",
+			list(name="Rifle Drum Magazine (7.5 Standard)", cost=1080, path=/obj/item/ammo_magazine/rifle_75_drum),
+			list(name="Rifle Drum Magazine (7.5 High velocity)", cost=1080, path=/obj/item/ammo_magazine/rifle_75_drum/highvelocity),
+			list(name="Rifle Drum Magazine (7.5 Hollow point)", cost=1080, path=/obj/item/ammo_magazine/rifle_75_drum/lethal),
+			list(name="Rifle Drum Magazine (7.5 Rubber)", cost=680, path=/obj/item/ammo_magazine/rifle_75_drum/rubber),
+			list(name="Rifle Drum Magazine (7.5 Practice)", cost=420, path=/obj/item/ammo_magazine/rifle_75_drum/practice),
+			list(name="Rifle Drum Magazine (7.5 Empty)", cost=420, path=/obj/item/ammo_magazine/rifle_75_drum/empty),
 		"7.5 Rifle",
 			list(name="Rifle Magazine (7.5 Standard)", cost=400, path=/obj/item/ammo_magazine/rifle_75),
 			list(name="Rifle Magazine (7.5 High velocity)", cost=400, path=/obj/item/ammo_magazine/rifle_75/highvelocity),
@@ -154,12 +168,20 @@
 			list(name="Packet (.35 Auto hollow-point)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35/lethal),
 			list(name="Packet (.35 Auto rubber)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35/rubber),
 			list(name="Packet (.35 Auto practice)", cost=100, path=/obj/item/ammo_magazine/ammobox/pistol_35/practice),
+			list(name="Box    (.35 auto)", cost=1155, path=/obj/item/ammo_magazine/ammobox/pistol_35/large),
+			list(name="Box    (.35 auto high-velocity)", cost=1155, path=/obj/item/ammo_magazine/ammobox/pistol_35/large/hv),
+			list(name="Box    (.35 auto hollow-point)", cost=1155, path=/obj/item/ammo_magazine/ammobox/pistol_35/large/lethal),
+			list(name="Box    (.35 auto rubber)", cost=1155, path=/obj/item/ammo_magazine/ammobox/pistol_35/large/rubber),
 		".40 Ammo Packets",
 			list(name="Packet (.40 Magnum standard)", cost=250, path=/obj/item/ammo_magazine/ammobox/magnum_40),
 			list(name="Packet (.40 Magnum high velocity)", cost=250, path=/obj/item/ammo_magazine/ammobox/magnum_40/hv),
 			list(name="Packet (.40 Magnum hollow-point)", cost=250, path=/obj/item/ammo_magazine/ammobox/magnum_40/lethal),
 			list(name="Packet (.40 Magnum rubber)", cost=250, path=/obj/item/ammo_magazine/ammobox/magnum_40/rubber),
 			list(name="Packet (.40 Magnum practice)", cost=100, path=/obj/item/ammo_magazine/ammobox/magnum_40/practice),
+			list(name="Box    (.40 Magnum)", cost=1250, path=/obj/item/ammo_magazine/ammobox/magnum_40/large),
+			list(name="Box    (.40 Magnum high-velocity)", cost=1250, path=/obj/item/ammo_magazine/ammobox/magnum_40/large/hv),
+			list(name="Box    (.40 Magnum hollow-point)", cost=1250, path=/obj/item/ammo_magazine/ammobox/magnum_40/large/lethal),
+			list(name="Box    (.40 Magnum rubber)", cost=1250, path=/obj/item/ammo_magazine/ammobox/magnum_40/large/rubber),
 		".50 Ammo Boxes",
 			list(name="Box (.50 Standard)", cost=330, path=/obj/item/ammo_magazine/ammobox/kurtz_50),
 			list(name="Box (.50 High velocity)", cost=330, path=/obj/item/ammo_magazine/ammobox/kurtz_50/hv),
@@ -179,21 +201,21 @@
 			list(name="Packet (7.5 Rubber)", cost=990, path=/obj/item/ammo_magazine/ammobox/rifle_75_small/rubber),
 			list(name="Packet (7.5 Practice)", cost=850, path=/obj/item/ammo_magazine/ammobox/rifle_75_small/practice),
 		".257 Ammo Box",
-			list(name="Box (.257 Standard)", cost=3300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257),
-			list(name="Box (.257 High velocity)", cost=4300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/highvelocity),
-			list(name="Box (.257 Hollow-point)", cost=4300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/lethal),
-			list(name="Box (.257 Rubber)", cost=3300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber),
-			list(name="Box (.257 Practice)", cost=2600, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/practice),
+			list(name="Box (.257 Standard)", cost=2800, path=/obj/item/ammo_magazine/ammobox/light_rifle_257),
+			list(name="Box (.257 High velocity)", cost=3300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/highvelocity),
+			list(name="Box (.257 Hollow-point)", cost=3300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/lethal),
+			list(name="Box (.257 Rubber)", cost=2800, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber),
+			list(name="Box (.257 Practice)", cost=200, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/practice),
 			list(name="Linked Ammunition Box (.257 Standard)", cost=1000, path=/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257),
 			list(name="Linked Ammunition Box (.257 High velocity)", cost=1000, path=/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/highvelocity),
 			list(name="Linked Ammunition Box (.257 Hollow-point)", cost=1000, path=/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/lethal),
 			list(name="Linked Ammunition Box (.257 Rubber)", cost=675, path=/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/rubber),
 			list(name="Linked Ammunition Box (.257 Empty)", cost=200, path=/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/empty),
 		"7.5 Ammo Boxes",
-			list(name="Box (7.5 Standard)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75),
-			list(name="Box (7.5 High velocity)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75/hv),
-			list(name="Box (7.5 Hollow point)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75/lethal),
-			list(name="Box (7.5 Rubber)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75/rubber),
+			list(name="Box (7.5 Standard)", cost=3500, path=/obj/item/ammo_magazine/ammobox/rifle_75),
+			list(name="Box (7.5 High velocity)", cost=4000, path=/obj/item/ammo_magazine/ammobox/rifle_75/hv),
+			list(name="Box (7.5 Hollow point)", cost=4000, path=/obj/item/ammo_magazine/ammobox/rifle_75/lethal),
+			list(name="Box (7.5 Rubber)", cost=3500, path=/obj/item/ammo_magazine/ammobox/rifle_75/rubber),
 			list(name="Box (7.5 Practice)", cost=200, path=/obj/item/ammo_magazine/ammobox/rifle_75/practice),
 			list(name="Linked Ammunition Box (7.5mm Rifle)", cost=1000, path=/obj/item/ammo_magazine/rifle_75_linked_box),
 			list(name="Linked Ammunition Box (7.5mm High velocity)", cost=1300, path=/obj/item/ammo_magazine/rifle_75_linked_box/highvelocity),
@@ -270,7 +292,7 @@
 	update_icon()
 	return
 
-/obj/machinery/bulletfabricator/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
+/obj/machinery/bulletfabricator/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
 	user.set_machine(src)
 	var/list/data = list()
 	data["points"] = points
@@ -316,7 +338,7 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/bulletfabricator/proc/activate()
 	if (usr.stat)

@@ -2,7 +2,7 @@
 	name = "linear combat shield"
 	desc = "A shield generator that forms a rectangular, unidirectionally projectile-blocking wall in front of the exosuit."
 	icon_state = "shield_droid"
-	origin_tech = list(TECH_PHORON = 3, TECH_MAGNET = 6, TECH_ILLEGAL = 4)
+	origin_tech = list(TECH_PLASMA = 3, TECH_MAGNET = 6, TECH_ILLEGAL = 4)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_GOLD = 6, MATERIAL_SILVER = 6, MATERIAL_URANIUM = 4, MATERIAL_PLATINUM = 4, MATERIAL_DIAMOND = 2)
 	equip_cooldown = 5
 	energy_drain = 20
@@ -68,7 +68,7 @@
 	return
 
 /obj/item/mecha_parts/mecha_equipment/combat_shield/proc/toggle_shield()
-	..()
+	//..()
 	if(chassis)
 		my_shield.attack_self(chassis.occupant)
 		if(my_shield.active)

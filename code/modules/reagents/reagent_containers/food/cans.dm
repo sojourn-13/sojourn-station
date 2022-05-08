@@ -101,10 +101,19 @@
 	desc = "Cahors in a can. Not nearly as good as from a bottle or keg but pleasent none the less. For the faithful on the go."
 	icon_state = "cahors_can"
 	center_of_mass = list("x"=16, "y"=10)
-	preloaded_reagents = list("cahors" = 30)
+	preloaded_reagents = list("ntcahors" = 30)
+
+/obj/item/reagent_containers/food/drinks/cans/cahors/lemniscate
+	name = "cahors classic can"
+	desc = "Cahors in a can. Not nearly as good as from a bottle or keg but pleasent none the less. For the faithful on the go. This one is a classic can, larger, aged, and fermented to provide additional \
+	benefits like helping the drinker fight off diseases as well as toxins."
+	icon_state = "cahors_can"
+	center_of_mass = list("x"=16, "y"=10)
+	preloaded_reagents = list("ntcahors" = 45, "holycilin" = 15)
+	volume = 60
+
 
 //CLAW ENERGY DRINKS
-
 /obj/item/reagent_containers/food/drinks/cans/monster
 	name = "\"Nitro\" Claw Energy"
 	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore."

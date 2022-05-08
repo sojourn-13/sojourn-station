@@ -342,7 +342,7 @@
 	..()
 
 
-
+/*
 #define OBSESSION_COOLDOWN rand(30 SECONDS, 120 SECONDS)
 
 /datum/breakdown/common/obsession
@@ -421,7 +421,7 @@
 	for(var/stat in ALL_STATS)
 		holder.owner.stats.removeTempStat(stat, "Obsession")
 	..()
-
+*/
 #define KLEPTOMANIA_COOLDOWN rand(30 SECONDS, 60 SECONDS)
 
 /datum/breakdown/common/kleptomania

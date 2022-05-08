@@ -75,6 +75,7 @@
 	new /obj/item/device/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/suit/fire(src)
+	new /obj/item/clothing/accessory/halfcape/ceo(src)
 	new /obj/item/tank/emergency_oxygen(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/glasses/powered/meson(src)
@@ -92,7 +93,7 @@
 	name = "prospector locker"
 	req_access = list(access_foreman)
 	access_occupy = list(access_prospector)
-	icon_state = "mining"
+	icon_state = "prospector" // Mixed dirt/jungle camo for the soul, since they usually brave the jungle a lot. - Seb
 
 /obj/structure/closet/secure_closet/personal/prospector/populate_contents()
 	new /obj/item/device/radio/headset/headset_pro(src)
@@ -207,7 +208,7 @@
 	name = "salvager locker"
 	req_access = list(access_foreman)
 	access_occupy = list(access_prospector)
-	icon_state = "med"
+	icon_state = "oldstyle" // Placeholder for lack of a better salvage-oriented looking locker.
 
 /obj/structure/closet/secure_closet/personal/salvager/populate_contents()
 	new /obj/item/device/radio/headset/headset_pro(src)
@@ -290,10 +291,8 @@
 	else
 		new /obj/item/storage/belt/utility/handmade/full(src)
 	new /obj/item/storage/firstaid/regular(src)
-	if(prob(90))
+	if(prob(95))
 		new /obj/item/storage/firstaid/ifak(src)
-	if(prob(80))
-		new /obj/item/storage/firstaid/adv(src)
 	else
 		new /obj/item/storage/firstaid/combat(src)
 	new /obj/item/grenade/spawnergrenade/manhacks/junkbot(src)
@@ -308,11 +307,12 @@
 /obj/structure/closet/secure_closet/reinforced/foreman
 	name = "foreman's locker"
 	req_access = list(access_foreman)
-	icon_state = "qm"
+	icon_state = "foreman"
 
 /obj/structure/closet/secure_closet/reinforced/foreman/populate_contents()
 	new /obj/item/device/radio/headset/heads/foreman(src)
 	new /obj/item/clothing/accessory/cape/scav(src)
+	new /obj/item/clothing/accessory/halfcape/foreman(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/scav/forman(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/guns/vector(src)
 	if(prob(60))
@@ -387,10 +387,8 @@
 	//Salvager improved
 	new /obj/item/storage/belt/utility/full(src)
 	new /obj/item/storage/firstaid/regular(src)
-	if(prob(60))
+	if(prob(70))
 		new /obj/item/storage/firstaid/ifak(src)
-	else if(prob(70))
-		new /obj/item/storage/firstaid/adv(src)
 	else
 		new /obj/item/storage/firstaid/combat(src)
 	if(prob(40))

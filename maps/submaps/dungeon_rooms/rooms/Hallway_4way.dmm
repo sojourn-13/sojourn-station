@@ -2,10 +2,6 @@
 "a" = (
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
-"b" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
 "c" = (
 /turf/simulated/floor/asteroid/grass,
 /area/crawler)
@@ -99,9 +95,9 @@ a
 a
 d
 a
-b
 e
-b
+e
+e
 a
 d
 p
@@ -109,11 +105,11 @@ p
 (6,1,1) = {"
 p
 e
-b
+e
 e
 h
 e
-b
+e
 e
 p
 "}
@@ -131,11 +127,11 @@ p
 (8,1,1) = {"
 p
 e
-b
 e
 e
 e
-b
+e
+e
 e
 p
 "}
@@ -143,9 +139,9 @@ p
 a
 f
 a
-b
 e
-b
+e
+e
 a
 f
 p

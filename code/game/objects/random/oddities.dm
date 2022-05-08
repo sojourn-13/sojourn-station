@@ -35,12 +35,14 @@
 				/obj/item/oddity/common/lighter = 3,
 				/obj/item/oddity/common/mirror = 3,
 				/obj/item/oddity/common/disk = 2,
+				/obj/item/oddity/common/redbrick = 2,
 				/obj/item/oddity/rare/eldritch_tie = 0.01 //SO RARE
 				))
 
 /obj/random/common_oddities/always_spawn
 	name = "random always spawn common odities"
 	icon_state = "techloot-black"
+	spawn_nothing_percentage = 0
 
 /obj/random/common_oddities/low_chance
 	name = "low chance random common odities"
@@ -58,7 +60,7 @@
 				/obj/item/gun/projectile/deaglebolt = 1,
 				/obj/item/gun/projectile/automatic/lmg/saw/unicorn = 1,
 				/obj/item/gun/projectile/revolver/mistral/elite = 1,
-				/obj/item/gun/projectile/shotgun/pump/obrez/thunderlord = 1,
+				/obj/item/gun/projectile/shotgun/doublebarrel/bluecross_shotgun = 1,
 				/obj/item/gun/projectile/automatic/pulse_rifle = 1,
 				/obj/item/gun/projectile/silenced/rat = 1,
 				/obj/item/gun/projectile/automatic/maxim/replica = 1,
@@ -107,6 +109,7 @@
 /obj/random/lonestar_oddities
 	name = "lonestar curios"
 	icon_state = "techloot-grey"
+	spawn_nothing_percentage = 0
 
 /obj/random/lonestar_oddities/item_to_spawn()
 	return pickweight(list(

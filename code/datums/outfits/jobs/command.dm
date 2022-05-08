@@ -7,7 +7,7 @@
 	shoes = /obj/item/clothing/shoes/color/brown
 	id_type = /obj/item/card/id/gold
 	pda_type = /obj/item/modular_computer/pda/captain
-	backpack_contents = list(/obj/item/storage/box/ids = 1, /obj/item/tool/knife/dagger/ceremonial = 1, /obj/item/clothing/accessory/cross = 1)
+	backpack_contents = list(/obj/item/storage/hcases/preimer = 1)
 
 /decl/hierarchy/outfit/job/captain/New()
 	..()
@@ -36,4 +36,4 @@
 	gloves = /obj/item/clothing/gloves/thick
 	id_type = /obj/item/card/id/hop
 	pda_type = /obj/item/modular_computer/pda/heads/hop
-	backpack_contents = list(/obj/item/storage/box/ids = 1, /obj/item/tool/knife/dagger/ceremonial = 1, /obj/item/clothing/accessory/cross = 1)
+	backpack_contents = list(/obj/item/storage/hcases/preimer = 1)

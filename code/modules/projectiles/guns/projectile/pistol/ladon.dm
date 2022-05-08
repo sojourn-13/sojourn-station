@@ -10,7 +10,7 @@
 	price_tag = 600
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	can_dual = TRUE
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.2
 	recoil_buildup = 4
@@ -18,6 +18,7 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	auto_eject = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/ladon/update_icon()
 	..()
@@ -37,6 +38,7 @@
 	damage_multiplier = 1
 	recoil_buildup = 3
 	one_hand_penalty = 7
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/ladon/sa
 	name = "\"Sigia\" magnum pistol"
@@ -46,3 +48,4 @@
 	damage_multiplier = 1.1
 	recoil_buildup = 4
 	one_hand_penalty = 8
+	serial_type = "SA"

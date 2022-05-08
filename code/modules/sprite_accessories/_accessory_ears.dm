@@ -81,6 +81,34 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/bnnuy
+	name = "Bunny Ears, Short"
+	desc = ""
+	icon_state = "bnnuy"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/bnnuy
+	name = "Bunny Ears, Long"
+	desc = ""
+	icon_state = "bnnuy_long"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/jackalope
+	name = "Jackalope ears and horns"
+	desc = ""
+	icon_state = "jackalope"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/jackalopeh
+	name = "Jackalope horns"
+	desc = ""
+	icon_state = "jackalopehorns" //wouldn't these just be deer antlers?
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/caprahorns
 	name = "Caprine Horns"
 	desc = ""
@@ -200,6 +228,13 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/frills_big
+	name = "Frills, Big"
+	desc = ""
+	icon_state = "frills_big"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/pharoah
 	name = "Hound Ears"
 	desc = ""
@@ -235,6 +270,13 @@
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/kittyalt
+	name = "Alternate Feline Ears"
+	desc = ""
+	icon_state = "cat_alt"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/lizard
 	name = "Lizard Horns"
 	desc = ""
@@ -242,6 +284,19 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/ram
+	name = "Ram Horns"
+	desc = ""
+	icon_state = "ram-horns"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/sheep
+	name = "Sheep ears"
+	desc = ""
+	icon_state = "sheep"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
 /datum/sprite_accessory/ears/mousehc
 	name = "Mouse Ears"
 	desc = ""

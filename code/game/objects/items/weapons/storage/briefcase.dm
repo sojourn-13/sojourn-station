@@ -12,6 +12,7 @@
 	max_w_class = ITEM_SIZE_NORMAL //We can fit anything smaller then us
 	max_storage_space = 20 //Its a big case
 	matter = list(MATERIAL_BIOMATTER = 8, MATERIAL_PLASTIC = 4)
+	price_tag = 90
 
 /obj/item/storage/briefcase/rifle
 	name = "gun case"

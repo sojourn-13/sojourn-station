@@ -18,3 +18,5 @@
 	recoil_buildup = 20 //makin it a bit more than most shotguns
 	one_hand_penalty = 5 //compact shotgun level, so same as sawn off
 	price_tag = 250 //cheap as they get
+	serial_type = "INDEX"
+	serial_shown = FALSE

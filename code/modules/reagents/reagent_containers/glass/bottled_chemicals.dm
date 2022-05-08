@@ -100,3 +100,21 @@
 	desc = "A small bottle. Contains ethanol."
 	icon_state = "bottle"
 	preloaded_reagents = list("ethanol" = 60)
+
+/obj/item/reagent_containers/glass/bottle/iron
+	name = "iron bottle"
+	desc = "A small bottle. Contains liquid iron."
+	icon_state = "bottle"
+	preloaded_reagents = list("iron" = 60)
+
+/obj/item/reagent_containers/glass/bottle/lithium
+	name = "lithium bottle"
+	desc = "A small bottle. Contains lithium."
+	icon_state = "bottle"
+	preloaded_reagents = list("lithium" = 60)
+
+/obj/item/reagent_containers/glass/bottle/ameridian
+	name = "liquid ameridian bottle"
+	desc = "A small bottle. Contains liquid ameridian."
+	icon_state = "bottle"
+	preloaded_reagents = list(MATERIAL_AMERIDIAN = 60)

@@ -20,6 +20,8 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_CALIBRE_35)
 	max_upgrades = 0
 	price_tag = 50
+	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/projectile/handmade_pistol/magnum
 	name = "handmade magnum"

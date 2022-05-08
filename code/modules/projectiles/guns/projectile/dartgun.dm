@@ -53,7 +53,7 @@
 	fire_sound_text = "a metallic click"
 	recoil_buildup = 0
 	silenced = TRUE
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/chemdart
 	auto_eject = 0
 	mag_well = MAG_WELL_DART
@@ -64,6 +64,7 @@
 	var/dart_reagent_amount = 15
 	var/beaker_type = /obj/item/reagent_containers/glass/beaker
 	var/list/starting_chems = null
+	serial_type = "SI"
 
 /obj/item/gun/projectile/dartgun/dartgun/New()
 	..()

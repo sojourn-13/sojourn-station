@@ -85,6 +85,8 @@
 #define GUN_UPGRADE_CELLMINUS "small cell adapter"
 #define GUN_UPGRADE_THERMAL "thermal scope"
 #define GUN_UPGRADE_DNALOCK "biocoded"
+#define GUN_UPGRADE_FOREGRIP "foregrip"
+#define GUN_UPGRADE_BIPOD "bipod"
 //Location Tag defines
 
 #define GUN_UNDERBARREL "underbarrel slot"
@@ -115,7 +117,7 @@
 					/obj/random/common_oddities/always_spawn = 6,\
 					/obj/random/material_rare/always_spawn = 3,\
 					/obj/random/tool/advanced/always_spawn = 5,\
-					/obj/item/storage/firstaid/adv = 2,\
+					/obj/item/storage/firstaid/regular = 2,\
 					/obj/random/medical/always_spawn = 5,\
 					/obj/random/gun_normal/always_spawn = 3,\
 					/obj/random/gun_fancy/alawys_spawn = 2,\

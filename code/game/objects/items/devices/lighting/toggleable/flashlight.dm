@@ -78,7 +78,7 @@
 			for(var/i = 1,i <= light_spot_range, i++)
 				var/turf/T = locate(L.x,L.y - i,L.z)
 				if (lightSpotPassable(T))
-					if(T.is_space())
+					if(T?.is_space())
 						break
 					NT = T
 				else
@@ -337,9 +337,9 @@
 	desc = "A hand-held security flashlight."
 	icon_state = "seclite"
 	item_state = "seclite"
-	light_spot_radius = 3
 	light_spot_power = 2.5
 	price_tag = 8
+	tick_cost = 0.2
 
 /obj/item/device/lighting/toggleable/flashlight/seclite/update_icon()
 	. = ..()

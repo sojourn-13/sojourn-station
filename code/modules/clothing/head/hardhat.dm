@@ -6,7 +6,7 @@
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4 //luminosity when on
 	light_overlay = "hardhat_light"
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 10,
 		energy = 10,
@@ -55,7 +55,7 @@
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 6 //luminosity when on
 	light_overlay = "hardhat_light"
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 20,
 		energy = 20,
@@ -77,7 +77,7 @@
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 8 //luminosity when on
 	light_overlay = "hardhat_light"
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 60,
 		energy = 50,

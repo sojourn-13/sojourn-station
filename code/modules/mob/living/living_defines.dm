@@ -38,6 +38,7 @@
 	var/mob_push_flags = 0
 	var/mob_always_swap = 0
 	var/move_to_delay = 4 //delay for the automated movement.
+	var/livmomentum = 0 //Used for advanced movement options.
 	var/can_burrow = FALSE //If true, this mob can travel around using the burrow network.
 	//When this mob spawns at roundstart, a burrow will be created near it if it can't find one
 
@@ -46,7 +47,8 @@
 	var/step_count = 0
 
 	var/tod = null // Time of death
-	var/update_slimes = 1
+	var/update_slimes = 0
+	var/is_busy = FALSE // Prevents stacking of certain actions, like resting and diving
 	var/silent = 0 		// Can't talk. Value goes down every life proc.
 	var/on_fire = 0 //The "Are we on fire?" var
 	var/fire_stacks
@@ -73,7 +75,7 @@
 
 	//Mutations populated through horrendous genetic tampering.
 	var/datum/genetics/genetics_holder/unnatural_mutations
-	
+
 	//How much material is used by the cloning process
 	var/clone_difficulty = CLONE_MEDIUM
 

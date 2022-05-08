@@ -8,7 +8,7 @@
 	mask = /obj/item/clothing/mask/gas/tactical
 	head = /obj/item/clothing/head/helmet/huntmaster_helmet
 	l_ear = null
-	pda_type = null
+	pda_type = FALSE
 	id_type = /obj/item/card/id/lodge
 	backpack_contents = list(/obj/item/tool/knife/dagger/skinning = 1)
 
@@ -23,7 +23,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots/german
 	l_ear = null
 	id_type = /obj/item/card/id/lodge
-	pda_type = null
+	pda_type = FALSE
 	backpack_contents = list(/obj/item/tool/knife/dagger/skinning = 1)
 
 /decl/hierarchy/outfit/job/off_colony/herbalist
@@ -37,7 +37,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	l_ear = null
 	id_type = /obj/item/card/id/lodge
-	pda_type = null
+	pda_type = FALSE
 	backpack_contents = list(/obj/item/tool/knife/dagger/skinning = 1, /obj/item/device/scanner/health = 1)
 
 /decl/hierarchy/outfit/job/outsider
@@ -49,7 +49,7 @@
 	gloves = /obj/item/clothing/gloves/thick/brown
 	shoes = /obj/item/clothing/shoes/workboots
 	l_ear = /obj/item/tool/knife/shiv // Let's see if this frees up backpack content space.
-	id_type = null
-	pda_type = null
+	id_type = FALSE
+	pda_type = FALSE
 	backpack_contents = list(/obj/item/storage/firstaid/outsider = 1, /obj/item/reagent_containers/food/drinks/flask/lithium = 1)
 

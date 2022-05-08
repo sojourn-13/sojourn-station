@@ -9,7 +9,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_SHOTGUN
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1750
@@ -20,6 +20,7 @@
 	damage_multiplier = 0.8
 	recoil_buildup = 3.25
 	one_hand_penalty = 20 //automatic shotgun level
+	serial_type = "SA"
 
 	//while also preserving ability to shoot as fast as you can click and maintain recoil good enough
 	init_firemodes = list(

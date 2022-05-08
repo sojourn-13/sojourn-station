@@ -15,6 +15,7 @@
 	var/useramount = 30 // Last used amount
 	var/pillamount = 10
 	var/bottlesprite = "bottle"
+	var/syrettesprite = "syrette"
 	var/pillsprite = "1"
 	var/client/has_sprites = list()
 	var/max_pill_count = 24 //max of pills that can be made in a bottle
@@ -61,6 +62,10 @@
 		return
 
 	if(default_part_replacement(B, user))
+		return
+
+	if(!user.stats?.getPerk(PERK_NERD) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !simple_machinery && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs 15 bio so 30 to bypass
+		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
 	if(istype(B, /obj/item/reagent_containers/glass))
@@ -195,6 +200,7 @@
 			if(create_pill_bottle)
 				PB = new(get_turf(src))
 				PB.name = "[PB.name] ([name])"
+				PB.matter = list()
 			while (reagents.total_volume)
 				var/obj/item/reagent_containers/pill/P = new/obj/item/reagent_containers/pill(src.loc)
 				if(!name) name = reagents.get_master_reagent_name()
@@ -216,11 +222,32 @@
 				P.pixel_x = rand(-7, 7) //random position
 				P.pixel_y = rand(-7, 7)
 				P.icon_state = bottlesprite
+				if(bottlesprite == "potion")
+					P.filling_states = "10;20;40;50;60"
+				if(bottlesprite == "tincture")
+					P.filling_states = "3;5;10;15;25;27;30;35;40;45;55;60"
+				P.label_icon_state = "label_[bottlesprite]"
+				P.matter = list()
 				reagents.trans_to_obj(P,60)
 				P.toggle_lid()
 			else
 				var/obj/item/reagent_containers/food/condiment/P = new/obj/item/reagent_containers/food/condiment(src.loc)
 				reagents.trans_to_obj(P,50)
+
+		else if(href_list["createsyrette"])
+			if(!condi)
+				var/name = sanitizeSafe(input(usr,"Name:","Name your syrette!",reagents.get_master_reagent_name()), MAX_NAME_LEN)
+				var/obj/item/reagent_containers/hypospray/autoinjector/chemmaters/P = new/obj/item/reagent_containers/hypospray/autoinjector/chemmaters(src.loc)
+				if(!name) name = reagents.get_master_reagent_name()
+				P.name = "[name] syrette"
+				P.pixel_x = rand(-7, 7) //random position
+				P.pixel_y = rand(-7, 7)
+				P.matter = list()
+				P.icon_state = syrettesprite
+				P.item_state = syrettesprite
+				P.baseline_sprite = syrettesprite
+				reagents.trans_to_obj(P,5)
+				P.update_icon()
 		else if(href_list["change_pill"])
 			#define MAX_PILL_SPRITE 20 //max icon state of the pill sprites
 			var/dat = "<table>"
@@ -236,10 +263,19 @@
 			dat += "</table>"
 			usr << browse(dat, "window=chem_master")
 			return
+		else if(href_list["change_syrette"])
+			var/dat = "<table>"
+			for(var/sprite in SYRETTE_SPRITES)
+				dat += "<tr><td><a href=\"?src=\ref[src]&syrette_sprite=[sprite]\"><img src=\"[sprite].png\" /></a></td></tr>"
+			dat += "</table>"
+			usr << browse(dat, "window=chem_master")
+			return
 		else if(href_list["pill_sprite"])
 			pillsprite = href_list["pill_sprite"]
 		else if(href_list["bottle_sprite"])
 			bottlesprite = href_list["bottle_sprite"]
+		else if(href_list["syrette_sprite"])
+			syrettesprite = href_list["syrette_sprite"]
 
 	playsound(loc, 'sound/machines/button.ogg', 100, 1)
 	src.updateUsrDialog()
@@ -249,7 +285,7 @@
 	if(inoperable())
 		return
 
-	if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !simple_machinery && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs 15 bio so 30 to bypass
+	if(!user.stats?.getPerk(PERK_NERD) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !simple_machinery && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs 15 bio so 30 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
@@ -261,6 +297,8 @@
 				usr << browse_rsc(icon('icons/obj/chemical.dmi', "pill" + num2text(i)), "pill[i].png")
 			for(var/sprite in BOTTLE_SPRITES)
 				usr << browse_rsc(icon('icons/obj/chemical.dmi', sprite), "[sprite].png")
+			for(var/sprite in SYRETTE_SPRITES)
+				usr << browse_rsc(icon('icons/obj/syringe.dmi', sprite), "[sprite].png")
 	var/dat = ""
 	if(!beaker)
 		dat = "Please insert beaker.<BR>"
@@ -301,7 +339,8 @@
 		if(!condi)
 			dat += "<HR><BR><A href='?src=\ref[src];createpill=1'>Create pill ([max_pill_count] units max)</A><a href=\"?src=\ref[src]&change_pill=1\"><img src=\"pill[pillsprite].png\" /></a><BR>"
 			dat += "<A href='?src=\ref[src];createpill_multiple=1'>Create multiple pills</A><BR>"
-			dat += "<A href='?src=\ref[src];createbottle=1'>Create bottle (60 units max)<a href=\"?src=\ref[src]&change_bottle=1\"><img src=\"[bottlesprite].png\" /></A>"
+			dat += "<A href='?src=\ref[src];createbottle=1'>Create bottle (60 units max)<a href=\"?src=\ref[src]&change_bottle=1\"><img src=\"[bottlesprite].png\" /></A><BR>"
+			dat += "<A href='?src=\ref[src];createsyrette=1'>Create syrette (5 units max)<a href=\"?src=\ref[src]&change_syrette=1\"><img src=\"[syrettesprite].png\" /></A>"
 		else
 			dat += "<A href='?src=\ref[src];createbottle=1'>Create bottle (50 units max)</A>"
 	if(!condi)

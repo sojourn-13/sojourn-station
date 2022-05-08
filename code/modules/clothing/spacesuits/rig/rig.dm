@@ -39,6 +39,8 @@
 	slowdown = 0
 	stiffness = LIGHT_STIFFNESS
 	obscuration = LIGHT_OBSCURATION
+	tool_qualities = list(QUALITY_ARMOR = 100)
+	max_upgrades = 1
 	var/interface_path = "hardsuit.tmpl"
 	var/ai_interface_path = "hardsuit.tmpl"
 	var/interface_title = "Hardsuit Controller"
@@ -65,6 +67,7 @@
 	var/obj/item/clothing/head/helmet/space/rig/helmet = null	// Deployable helmet, if any.
 	var/obj/item/clothing/gloves/rig/gloves = null				// Deployable gauntlets, if any.
 	cell = null								// Power supply, if any.
+	var/removable_cell = TRUE // Can you remove the cell?
 	var/obj/item/rig_module/selected_module = null				// Primary system (used with middle-click)
 	var/obj/item/rig_module/vision/visor						// Kinda shitty to have a var for a module, but saves time.
 	var/obj/item/rig_module/voice/speech						// As above.
@@ -98,7 +101,7 @@
 	var/airtight = 1 //If set, will adjust AIRTIGHT and STOPPRESSUREDAMAGE flags on components. Otherwise it should leave them untouched.
 
 	var/emp_protection = 0
-
+	// 2022- Just so everyone knows , this doesn't get checked at all down the line. It only checks if its on the back , regardles of its value.
 	var/rig_wear_slot = slot_back //Changing this allows for rigs that are worn as a belt or a tie or something
 
 	// Wiring! How exciting.
@@ -110,6 +113,12 @@
 	//allowed = list(/obj/item/storage/backpack) // nope
 	var/list/extra_allowed = list()
 
+/obj/item/rig/New()
+	..()
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "[initial(icon_state)]")
 
 /obj/item/rig/proc/getCurrentGlasses()
 	if(wearer && visor && visor && visor.vision && visor.vision.glasses && (!helmet || (wearer.head && helmet == wearer.head)))
@@ -193,6 +202,13 @@
 		if(armor) piece.armor = armor
 
 	update_icon(1)
+
+/obj/item/rig/proc/updateArmor()
+	for(var/obj/item/piece in list(gloves,helmet,boots,chest))
+		if(!istype(piece))
+			continue
+		if(armor_list)
+			piece.armor = armor
 
 /obj/item/rig/Destroy()
 	for(var/obj/item/piece in list(gloves,boots,helmet,chest))
@@ -446,7 +462,7 @@
 	cell.use(cost*10)
 	return 1
 
-/obj/item/rig/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/nano_state =GLOB.inventory_state)
+/obj/item/rig/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/nano_state =GLOB.inventory_state)
 	if(!user)
 		return
 
@@ -597,6 +613,9 @@
 	else if(href_list["toggle_suit_lock"])
 		if (locked != -1)
 			locked = !locked
+
+	// Makes it so the UI instantly updates, instead of using the MC tick, way faster at high stress.
+	nano_ui_interact(usr)
 
 	usr.set_machine(src)
 	src.add_fingerprint(usr)

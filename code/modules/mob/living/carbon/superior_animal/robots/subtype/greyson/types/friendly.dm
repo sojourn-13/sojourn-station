@@ -16,6 +16,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	mob_size = MOB_SMALL
 	stop_automated_movement_when_pulled = 1
 	density = FALSE
+	cant_be_pulled = FALSE
 
 // For repairing damage to the synths.
 /mob/living/carbon/superior_animal/robot/greyson/roomba/allied/attackby(obj/item/W as obj, mob/user as mob)
@@ -56,6 +57,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	mob_size = MOB_SMALL
 	stop_automated_movement_when_pulled = TRUE
 	density = FALSE
+	cant_be_pulled = FALSE
 
 // For repairing damage to the synths.
 /mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored/allied/attackby(obj/item/W as obj, mob/user as mob)
@@ -102,6 +104,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	wander = FALSE
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	cant_be_pulled = FALSE
 
 // For repairing damage to the synths.
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/attackby(obj/item/W as obj, mob/user as mob)
@@ -158,21 +161,3 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	melee_damage_upper = 25
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
-
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/rook
-	name = "Rook Golem"
-	desc = "A massive gold gilded robotic golem designed by Augustine to help protect the church and guard areas of hostile local wildlife. Strong and heavily suited for melee combat, but easily \
-	destroyed by bullets or energy blasts." //Todo: Have kaz rewrite this and better lore, maybe Greyson AI helped make it?
-	faction = "neutral"
-	icon = 'icons/mob/mobs-humanoid.dmi'
-	icon_state = "rook"
-	attacktext = "pumbles"
-	move_to_delay = 2
-	turns_per_move = 2
-	health = 550
-	maxHealth = 550
-	melee_damage_lower = 30 //Big slow things dont deal a lot do to bullet sponges
-	melee_damage_upper = 40
-	drop1 = /obj/item/stack/material/gold/random
-	drop2 = /obj/item/book/ritual/cruciform
-	armor = list(melee = 75, bullet = 25, energy = 20, bomb = 30, bio = 100, rad = 100, agony = 100)

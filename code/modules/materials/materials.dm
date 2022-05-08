@@ -521,7 +521,7 @@ var/list/name_to_material
 	hardness = 40
 	weight = 30
 	stack_origin_tech = "materials=2"
-	composite_material = list(MATERIAL_STEEL = 2,MATERIAL_GLASS = 3)
+	composite_material = list(MATERIAL_STEEL = 1,MATERIAL_GLASS = 1)
 	window_options = list("One Direction" = 1, "Full Window" = 6, "Windoor" = 5)
 	created_window = /obj/structure/window/reinforced
 	created_window_full = /obj/structure/window/reinforced/full
@@ -811,3 +811,18 @@ var/list/name_to_material
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+232
 	melting_point = T0C+300
+
+/material/ameridian
+	name = MATERIAL_AMERIDIAN
+	stack_type = /obj/item/stack/material/ameridian
+	icon_colour = "#007A00"
+	sheet_singular_name = "shard"
+	sheet_plural_name = "shards"
+	stack_origin_tech = list(TECH_MATERIAL = 9)
+
+/material/refined_scrap
+	name = MATERIAL_RSCRAP
+	stack_type = /obj/item/stack/sheet/refined_scrap
+	icon_colour = "B7410E"
+	sheet_singular_name = "piece"
+	sheet_plural_name = "pieces"

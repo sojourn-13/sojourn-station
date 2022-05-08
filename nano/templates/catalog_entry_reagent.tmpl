@@ -91,6 +91,13 @@
 						{{for value.catalyst :val:val_i}}
 							In presense of {{:val.units}}u of {{:helper.catalogEntryLink(val.type)}}<br>
 						{{/for}}
+						{{for value.inhibitors :val:val_i}}
+							Without presense of {{:helper.catalogEntryLink(val.type)}}<br>
+						{{/for}}
+
+						{{for value.byproducts :val:val_i}}
+							Addition Creation of {{:val.units}}u of {{:helper.catalogEntryLink(val.type)}}<br>
+						{{/for}}
 
 						{{if value.minimum_temperature && value.maximum_temperature}}
 							At temperatures between {{:value.minimum_temperature}}K and {{:value.maximum_temperature}}K<br>

@@ -20,10 +20,16 @@
 	voucher_type = "Primary"
 
 /obj/item/voucher/blackshield/sargprimary
-	name = "\improper sergeant armor voucher"
+	name = "\improper sergeant weapon voucher"
 	desc = "A token to redeem sergeant equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "SargPrimary"
+
+/obj/item/voucher/blackshield/corpsprimary
+	name = "\improper corpsperson weapon voucher"
+	desc = "A token to redeem corpsperson equipment from a vendor."
+	icon_state = "voucher"
+	voucher_type = "CorpsPrimary"
 
 /obj/item/voucher/blackshield/secondary
 	name = "\improper blackshield secondary weapon voucher"
@@ -56,11 +62,29 @@
 	icon_state = "voucher"
 	voucher_type = "Primary"
 
+/obj/item/voucher/marshal/specprimary
+	name = "\improper Specialist primary weapon voucher"
+	desc = "A token to redeem marshal equipment from a vendor."
+	icon_state = "voucher"
+	voucher_type = "SpecPrimary"
+
+/obj/item/voucher/marshal/rangerprimary
+	name = "Ranger primary weapon voucher"
+	desc = "A token to redeem marshal equipment from a vendor."
+	icon_state = "voucher"
+	voucher_type = "RangerPrimary"
+
 /obj/item/voucher/marshal/secondary
 	name = "\improper marshal secondary weapon voucher"
 	desc = "A token to redeem marshal equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "Secondary"
+
+/obj/item/voucher/marshal/rangersecondary
+	name = "Ranger secondary weapon voucher"
+	desc = "A token to redeem marshal equipment from a vendor."
+	icon_state = "voucher"
+	voucher_type = "RangerSecondary"
 
 /obj/item/voucher/marshal/armor
 	name = "\improper marshal armor voucher"

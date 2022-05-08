@@ -152,3 +152,18 @@
 			)
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 		usr.put_in_active_hand(fist)
+
+/obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster()
+	set category = "Psionic powers"
+	set name = "Kinetic Orb (0)"
+	set desc = "Expend none of your essence to create a kinetic orb in hand, a ranged weapon that grows in power with your cognition and expends a single psi point per shot."
+	psi_point_cost = 0
+
+	if(pay_power_cost(psi_point_cost))
+		var/obj/item/gun/kinetic_blaster/KB = new(src, owner, src)
+		owner.visible_message(
+			"[owner] clenches their hand into a fist, electric energy crackling around it before a kinetic blaster forms over it!",
+			"You clench your hand into a fist, electric energy crackling around your fingers before a kinetic blaster forms over it!"
+			)
+		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
+		usr.put_in_active_hand(KB)

@@ -52,8 +52,12 @@
 
 
 /obj/item/storage/backpack/proc/worn_check(var/no_message = FALSE)
+	var/mob/living/L = loc
+	if(istype(L, /mob/living/carbon/human) && L:species:reagent_tag == IS_SLIME) // Slimes don't have joints.
+		// TODO, special messages
+		return TRUE
+
 	if(!equip_access && is_equipped())
-		var/mob/living/L = loc
 		if (istype(L))
 			if(!no_message)
 				to_chat(L, "<span class='warning'>The [src] is too cumbersome to handle with one hand, you're going to have to set it down somewhere!</span>")
@@ -62,7 +66,6 @@
 		return FALSE
 
 	else if(!worn_access && is_worn())
-		var/mob/living/L = loc
 		if (istype(L))
 			if(!no_message)
 				to_chat(L, "<span class='warning'>Oh no! Your arms are not long enough to open [src] while it is on your back!</span>")
@@ -377,3 +380,11 @@
 	name = "leather duffel"
 	desc = "A big duffel made of leather"
 	icon_state = "duffel_leather"
+
+/obj/item/storage/backpack/duffelbag/loot
+	name = "lootbag"
+	desc = "You wear this on your back and put items into it."
+	icon_state = "lootbag" //Sprite by CeUvi
+	max_storage_space = DEFAULT_HUGE_STORAGE * 1.5
+	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_PLASTIC = 3)
+	equip_access = FALSE

@@ -8,7 +8,7 @@
 	item_state = "bastard"
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_BOX
 	caliber = CAL_LRIFLE
 	tac_reloads = FALSE
@@ -23,6 +23,7 @@
 		BURST_5_ROUND,
 		FULL_AUTO_600
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/bastard/update_icon()
 	var/iconstring = initial(icon_state)

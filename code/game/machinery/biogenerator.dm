@@ -20,18 +20,19 @@
 		"Food",
 			list(name="Milk, 30u", cost=60, reagent="milk"),
 			list(name="Soy Milk, 30u", cost=60, reagent="soymilk"),
-			list(name="Black Pepper, 30u", cost=60, reagent="blackpepper"),
+			list(name="Black Pepper, 30u", cost=30, reagent="blackpepper"), //Cost reduced to be in line with Sugar
 			list(name="Flour, 30u", cost=600, reagent="flour"), //Got to be really lazy
 			list(name="Rice, 30u", cost=600, reagent="rice"), //Got to be really lazy
-			list(name="Salt, 30u", cost=600, reagent="sodiumchloride"), //Got to be really lazy
+			list(name="Salt, 30u", cost=30, reagent="sodiumchloride"), //Cost reduced to be in line with Sugar
 			list(name="Sugar, 30u", cost=30, reagent="sugar"),
-			list(name="Box of eggs", cost=6400, path=/obj/item/storage/fancy/egg_box), //lets not completely replace hens
+			list(name="Box of eggs", cost=3200, path=/obj/item/storage/fancy/egg_box), //lets not completely replace hens, but at a more reasonable price.
 			list(name="Slab of meat", cost=50, path=/obj/item/reagent_containers/food/snacks/meat),
 		"Nutrient",
 			list(name="EZ-Nutrient, 30u", cost=30, reagent="eznutrient"),
 			list(name="Left4Zed, 30u", cost=60, reagent="left4zed"),
 			list(name="Robust Harvest, 30u", cost=75, reagent="robustharvest"),
 			list(name="Mineral Water", cost=80, path=/obj/item/plantspray/water),
+			list(name="Diethylamine, 30u", cost=150, reagent="diethylamine"), //Obtainable with a silver coin, but this is more for Hunters than Gardeners anyway.
 		"Weedkillers",
 			list(name="Weed Killer", cost=30, path=/obj/item/plantspray/weeds),
 			list(name="Pest Killer", cost=60, path=/obj/item/plantspray/pests),
@@ -56,7 +57,9 @@
 		"Medicine",
 			list(name="Medical splints", cost=100, path=/obj/item/stack/medical/splint),
 			list(name="Roll of gauze", cost=100, path=/obj/item/stack/medical/bruise_pack),
+			list(name="Roll of gauze * 5", cost=560, path=/obj/item/storage/box/gauzebulk),
 			list(name="Ointment", cost=100, path=/obj/item/stack/medical/ointment),
+			list(name="Ointment * 5", cost=560, path=/obj/item/storage/box/ointmentbulk),
 			list(name="Advanced trauma kit", cost=200, path=/obj/item/stack/medical/advanced/bruise_pack),
 			list(name="Advanced trauma kit x5", cost=1060, path=/obj/item/storage/box/advancedtraumakit),
 			list(name="Advanced burn kit", cost=200, path=/obj/item/stack/medical/advanced/ointment),
@@ -150,7 +153,7 @@
 	update_icon()
 	return
 
-/obj/machinery/biogenerator/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
+/obj/machinery/biogenerator/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
 	user.set_machine(src)
 	var/list/data = list()
 	data["points"] = points
@@ -196,7 +199,7 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/biogenerator/proc/activate()
 	if (usr.stat)

@@ -10,9 +10,9 @@
 	twohanded = TRUE
 	force = WEAPON_FORCE_NORMAL
 	caliber = CAL_MAGNUM
-	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_ILLEGAL = 5)
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_SMG|MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 14, MATERIAL_WOOD = 12)
 	price_tag = 1500
@@ -21,10 +21,11 @@
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE)
 	init_firemodes = list(
-		FULL_AUTO_400,
-		BURST_3_ROUND,
-		BURST_5_ROUND,
+		FULL_AUTO_400_NOLOSS,
+		BURST_3_ROUND_NOLOSS,
+		BURST_5_ROUND_NOLOSS
 		)
+	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/automatic/thompson/update_icon()
 	..()
@@ -46,6 +47,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/gun/projectile/automatic/vector/Initialize()
+/obj/item/gun/projectile/automatic/thompson/Initialize()
 	. = ..()
 	update_icon()

@@ -90,6 +90,7 @@
 		recoil_buildup+= rand(0,10)
 		damage_multiplier = damage_multiplier*(rand(8,10)/10) //20% less damage max
 		penetration_multiplier = penetration_multiplier*(rand(8,10)/10) //20% less damage penetration
+	refresh_upgrades() //So we dont null upgrades.
 
 /obj/item/gun/make_young()
 	if(!oldified)
@@ -163,7 +164,7 @@
 
 
 //Sealed survival food, always edible
-/obj/item/reagent_containers/food/snacks/liquidfood/make_old()
+/obj/item/reagent_containers/food/snacks/openable/liquidfood/make_old()
 	return
 
 /obj/item/ammo_magazine/make_old()
@@ -200,7 +201,7 @@
 /obj/item/stack/rods/make_old()
 	return
 
-/obj/item/ore/make_old()
+/obj/item/stack/ore/make_old()
 	return
 
 /obj/item/computer_hardware/hard_drive/portable/design/make_old()
@@ -258,10 +259,10 @@
 		if(prob(30))
 			slowdown += pick(0.5, 0.5, 1, 1.5)
 		if(prob(40))
-			if(islist(armor)) //Possible to run before the initialize proc, thus having to modify the armor list
-				for(var/i in armor)
-					armor[i] = rand(0, armor[i])
-			else if(is_proper_datum(armor))
+			if(!armor) //Possible to run before the initialize proc, thus having to modify the armor list
+				for(var/i in armor_list)
+					armor_list[i] = rand(0, armor_list[i])
+			else
 				armor = armor.setRating(melee = rand(0, armor.getRating(ARMOR_MELEE)), bullet =  rand(0, armor.getRating(ARMOR_BULLET)), energy = rand(0, armor.getRating(ARMOR_ENERGY)), bomb = rand(0, armor.getRating(ARMOR_BOMB)), bio = rand(0, armor.getRating(ARMOR_BIO)), rad = rand(0, armor.getRating(ARMOR_RAD)))
 		if(prob(40))
 			heat_protection = rand(0, round(heat_protection * 0.5))
@@ -279,10 +280,14 @@
 /obj/item/clothing/make_young()
 	if(!oldified)
 		return
+	var/obj/item/clothing/referencecarmor = new type()
+	armor = referencecarmor.armor
+	qdel(referencecarmor)
 	slowdown = initial(slowdown)
 	heat_protection = initial(heat_protection)
 	cold_protection = initial(cold_protection)
 	equip_delay = initial(equip_delay)
+	refresh_upgrades() //So we dont null upgrades.
 	..()
 
 
@@ -533,3 +538,11 @@
 		process_warnings()
 		*/
 */
+
+
+// OCCULUS EDIT: Required check for nanite reconstitution apparatus; checks if old without youngifying it
+/obj/proc/is_old()
+	if(oldified)
+		return TRUE
+	return FALSE
+// OCCULUS EDIT END

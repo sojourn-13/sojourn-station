@@ -1,20 +1,24 @@
 /mob/living/carbon/superior_animal/proc/harvest(var/mob/user)
-	var/actual_meat_amount = max(1,(meat_amount/2))
 	drop_embedded()
-	if(user.stats.getPerk(PERK_BUTCHER))
-		var/actual_leather_amount = max(0,(leather_amount/2))
-		if(actual_leather_amount > 0 && (stat == DEAD))
-			for(var/i=0;i<actual_leather_amount;i++)
-				new /obj/item/stack/material/leather(get_turf(src))
+	var/actual_meat_amount = max(1,(meat_amount/2))
+	var/actual_leather_amount = max(0,(leather_amount/2))
+	var/actual_bones_amount = max(0,(bones_amount/2))
 
-		var/actual_bones_amount = max(0,(bones_amount/2))
-		if(actual_bones_amount > 0 && (stat == DEAD))
-			for(var/i=0;i<actual_bones_amount;i++)
-				new /obj/item/stack/material/bone(get_turf(src))
-
+	if(user.stats.getPerk(PERK_BUTCHER)) // Master Butcher will now give full amounts defined in the creature's variables. Otherwise, it's only half, and no special items.
+		actual_leather_amount = max(0,(leather_amount))
+		actual_meat_amount = max(1,(meat_amount))
+		actual_bones_amount = max(0,(bones_amount))
 		if(has_special_parts)
 			for(var/animal_part in special_parts)
 				new animal_part(get_turf(src))
+
+	if(actual_leather_amount > 0 && (stat == DEAD))
+		for(var/i=0;i<actual_leather_amount;i++)
+			new /obj/item/stack/material/leather(get_turf(src))
+
+	if(actual_bones_amount > 0 && (stat == DEAD))
+		for(var/i=0;i<actual_bones_amount;i++)
+			new /obj/item/stack/material/bone(get_turf(src))
 
 	if(meat_type && actual_meat_amount > 0 && (stat == DEAD))
 		for(var/i=0;i<actual_meat_amount;i++)
@@ -58,12 +62,12 @@
 
 /mob/living/carbon/superior_animal/attackby(obj/item/I, mob/living/user, var/params)
 	activate_ai() //If were attacked by something and havent woken up yet. Were awake now >:T
-	if (meat_type && (stat == DEAD) && (QUALITY_CUTTING in I.tool_qualities))
+	if (meat_type && (stat == DEAD) && (QUALITY_CUTTING in I.tool_qualities) && user.a_intent ==  I_HELP)
 		if (I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_NORMAL, required_stat = STAT_BIO))
 			harvest(user)
 	else
 
-		if(stance == HOSTILE_STANCE_ATTACK)
+		if(stance == HOSTILE_STANCE_ATTACK && stat == CONSCIOUS )
 			if(destroy_surroundings)
 				destroySurroundings()
 		. = ..()
@@ -101,7 +105,7 @@
 
 			M.put_in_active_hand(G)
 			G.synch()
-			LAssailant = M
+			LAssailant_weakref = WEAKREF(M)
 
 			M.do_attack_animation(src)
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
@@ -437,5 +441,5 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 
 
 /mob/living/carbon/superior_animal/proc/pick_armor()
-	..()
+	return
 

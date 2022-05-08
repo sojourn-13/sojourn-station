@@ -1,4 +1,4 @@
-#define ARMOR_AGONY_COEFFICIENT 0.6
+#define ARMOR_AGONY_COEFFICIENT 0.3
 #define ARMOR_GDR_COEFFICIENT 0.1
 
 //This calculation replaces old run_armor_check in favor of more complex and better system
@@ -33,11 +33,11 @@
 
 	if(armor_over_penitration > 0 && damagetype == BRUTE) //did we even over-penitrate?
 		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
-			effective_damage += max(0,round(armor_over_penitration - src.getarmor(def_zone, "bullet") / 2)) //We re-check are armor we over-pentrated, this counts both melee and bullets. We reduce are over AP as bullets tend to have a lot
+			effective_damage += max(0,round(armor_over_penitration - src.getarmor(def_zone, "bullet"))) //We re-check are armor we over-pentrated, this counts both melee and bullets. We reduce are over AP as bullets tend to have a lot
 
 	if(armor_over_penitration > 0 && damagetype == BURN) //did we even over-penitrate?
 		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
-			effective_damage += max(0,round(armor_over_penitration - src.getarmor(def_zone, "energy") * 2)) //We re-check are armor we over-pentrated, and then deal 2x damage do to being a laser, thus weaker then most bullets and most mobs having less engery armor.
+			effective_damage += max(0,round((armor_over_penitration - src.getarmor(def_zone, "energy")) * 2)) //We re-check are armor we over-pentrated, and then deal 2x damage do to being a laser, thus weaker then most bullets and most mobs having less engery armor.
 
 
 	//Here we can remove edge or sharpness from the blow
@@ -201,7 +201,7 @@
 	if(istype(AM,/obj/))
 		var/obj/O = AM
 		var/dtype = O.damtype
-		var/throw_damage = O.throwforce*max(1, speed/THROWFORCE_SPEED_DIVISOR) //Are minium damage we do is baseline in cases were we do more damage we do more
+		var/throw_damage = O.throwforce //Are minium damage we do is baseline in cases were we do more damage we do more
 
 		var/miss_chance = 15
 		if (O.throw_source)

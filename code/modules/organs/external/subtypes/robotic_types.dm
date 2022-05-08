@@ -115,14 +115,17 @@
 /obj/item/organ/external/robotic/technomancer/groin
 	name = "\"Artificer Guild\" Groin"
 	default_description = /datum/organ_description/groin
+	max_damage = 200
 
 /obj/item/organ/external/robotic/technomancer/torso
 	name = "\"Artificer Guild\" Torso"
 	default_description = /datum/organ_description/chest
+	max_damage = 200
 
 /obj/item/organ/external/robotic/technomancer/head
 	name = "\"Artificer Guild\" Head"
 	default_description = /datum/organ_description/head
+	max_damage = 200
 
 // synthskin
 /obj/item/organ/external/robotic/synthskin
@@ -134,14 +137,17 @@
 obj/item/organ/external/robotic/synthskin/groin
 	name = "Full Body Prosthetic \"Synth-Skin\" Groin"
 	default_description = /datum/organ_description/groin
+	max_damage = 200
 
 /obj/item/organ/external/robotic/synthskin/torso
 	name = "Full Body Prosthetic \"Synth-Skin\" Torso"
 	default_description = /datum/organ_description/chest
+	max_damage = 200
 
 /obj/item/organ/external/robotic/synthskin/head
 	name = "Full Body Prosthetic \"Synth-Skin\" Head"
 	default_description = /datum/organ_description/head
+	max_damage = 200
 
 // FBPs
 /obj/item/organ/external/robotic/full_body_prosthetic
@@ -150,17 +156,20 @@ obj/item/organ/external/robotic/synthskin/groin
 	force_icon = 'icons/mob/human_races/cyberlimbs/unmarked_1.dmi'
 	model = "fbp"
 
-obj/item/organ/external/robotic/full_body_prosthetic/groin
+/obj/item/organ/external/robotic/full_body_prosthetic/groin
 	name = "Prosthetic Groin"
 	default_description = /datum/organ_description/groin
+	max_damage = 200
 
 /obj/item/organ/external/robotic/full_body_prosthetic/torso
 	name = "Prosthetic Torso"
 	default_description = /datum/organ_description/chest
+	max_damage = 200
 
 /obj/item/organ/external/robotic/full_body_prosthetic/head
 	name = "Prosthetic Head"
 	default_description = /datum/organ_description/head
+	max_damage = 200
 
 // Junktech
 /obj/item/organ/external/robotic/junktech
@@ -168,7 +177,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	desc = "Custom tooled and held together by hope and duct tape."
 	force_icon = 'icons/mob/human_races/cyberlimbs/advanced_ghetto.dmi'
 	model = "ghetto"
-	armor = list(melee = 10, bullet = 10, energy = 10, bomb = -5, bio = 100, rad = 100)
+	armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = -5, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
 	min_broken_damage = 30
 	min_malfunction_damage = 15
@@ -192,7 +201,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	desc = "Reinforced purple and white prosthesis designed for space exploration and light combat."
 	force_icon = 'icons/mob/human_races/cyberlimbs/moebius.dmi'
 	model = "moebius"
-	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 30, bio = 100, rad = 100)
+	armor_list = list(melee = 30, bullet = 30, energy = 30, bomb = 30, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1)
 	max_damage = 60
 	min_broken_damage = 40
@@ -213,14 +222,17 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 
 /obj/item/organ/external/robotic/moebius/groin
 	default_description = /datum/organ_description/groin
+	max_damage = 200
 
 /obj/item/organ/external/robotic/moebius/torso
 	name = "\"Soteria\" Torso"
 	default_description = /datum/organ_description/chest
+	max_damage = 200
 
 /obj/item/organ/external/robotic/moebius/head
 	name = "\"Soteria\" Head"
 	default_description = /datum/organ_description/head
+	max_damage = 200
 
 // Blackshied
 /obj/item/organ/external/robotic/blackshield
@@ -228,7 +240,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	desc = "Reinforced dark prosthesis designed for heavy combat."
 	force_icon = 'icons/mob/human_races/cyberlimbs/blackshield.dmi'
 	model = "blackshield"
-	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 35, bio = 100, rad = 100)
+	armor_list = list(melee = 35, bullet = 35, energy = 35, bomb = 35, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_PLASTEEL = 10)
 	max_damage = 60
 	min_broken_damage = 40
@@ -249,14 +261,17 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 
 /obj/item/organ/external/robotic/blackshield/groin
 	default_description = /datum/organ_description/groin
+	max_damage = 200
 
 /obj/item/organ/external/robotic/blackshield/torso
 	name = "\"Blackshield\" Torso"
 	default_description = /datum/organ_description/chest
+	max_damage = 200
 
 /obj/item/organ/external/robotic/blackshield/head
 	name = "\"Blackshield\" Head"
 	default_description = /datum/organ_description/head
+	max_damage = 200
 
 // Church of the Absolute
 /obj/item/organ/external/robotic/church
@@ -281,14 +296,17 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 
 /obj/item/organ/external/robotic/church/groin
 	default_description = /datum/organ_description/groin
+	max_damage = 200
 
 /obj/item/organ/external/robotic/church/torso
 	name = "\"Absolute\" Torso"
 	default_description = /datum/organ_description/chest
+	max_damage = 200
 
 /obj/item/organ/external/robotic/church/head
 	name = "\"Absolute\" Head"
 	default_description = /datum/organ_description/head
+	max_damage = 200
 
 // Excelsior
 /obj/item/organ/external/robotic/excelsior
@@ -296,7 +314,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	desc = "Plasma reinforced black prosthesis designed for heavy combat."
 	force_icon = 'icons/mob/human_races/cyberlimbs/excelsior.dmi'
 	model = "excelsior"
-	armor = list(melee = 50, bullet = 50, energy = 50, bomb = 50, bio = 0, rad = 100)
+	armor_list = list(melee = 50, bullet = 50, energy = 50, bomb = 50, bio = 0, rad = 100)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 1, MATERIAL_PLASMA = 0.5) //Plasma needed as a material that excelsiors can't teleport in
 	max_damage = 65
 	min_broken_damage = 45
@@ -320,7 +338,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	desc = "Advanced, extremely resilient and mobile prosthetic. Inscribed with \"Made in\" followed by gibberish, must have been lost to time."
 	force_icon = 'icons/mob/human_races/cyberlimbs/one_star.dmi'
 	model = "one_star"
-	armor = list(melee = 65, bullet = 65, energy = 65, bomb = 65, bio = 0, rad = 100)
+	armor_list = list(melee = 65, bullet = 65, energy = 65, bomb = 65, bio = 0, rad = 100)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 4, MATERIAL_PLATINUM = 2)
 	max_damage = 70
 	min_broken_damage = 50
@@ -344,7 +362,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	desc = "A robotic limb crafted from metallic hydrogen and gold"
 	force_icon = 'icons/mob/human_races/cyberlimbs/nashef-agunabi.dmi'
 	model = "nashef-agunabi"
-	armor = list(melee = 20, bullet = 20, energy = 35, bomb = 30, bio = 0, rad = 100)
+	armor_list = list(melee = 20, bullet = 20, energy = 35, bomb = 30, bio = 0, rad = 100)
 	matter = list(MATERIAL_HYDROGEN = 5, MATERIAL_GOLD = 4, MATERIAL_PLATINUM = 2)
 	max_damage = 70
 	min_broken_damage = 50

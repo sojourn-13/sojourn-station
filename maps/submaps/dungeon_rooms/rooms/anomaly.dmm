@@ -20,13 +20,6 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/plating/under,
 /area/crawler)
-"f" = (
-/obj/structure/catwalk,
-/obj/machinery/light/built{
-	dir = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/crawler)
 "g" = (
 /turf/simulated/floor/tiled/dark/cargo,
 /area/crawler)
@@ -81,27 +74,9 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/crawler)
-"o" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/obj/machinery/light/small/built{
-	dir = 8
-	},
-/turf/simulated/floor/plating/under,
-/area/crawler)
 "p" = (
 /obj/structure/inflatable/wall,
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/crawler)
-"r" = (
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/obj/machinery/light/small/built{
-	dir = 4
-	},
-/turf/simulated/floor/plating/under,
 /area/crawler)
 "s" = (
 /obj/structure/railing/grey,
@@ -161,7 +136,7 @@ a
 c
 i
 i
-o
+i
 i
 i
 c
@@ -191,7 +166,7 @@ a
 "}
 (5,1,1) = {"
 a
-f
+j
 j
 j
 p
@@ -235,7 +210,7 @@ b
 "}
 (9,1,1) = {"
 a
-f
+j
 j
 j
 p
@@ -271,7 +246,7 @@ a
 c
 k
 k
-r
+k
 k
 k
 c

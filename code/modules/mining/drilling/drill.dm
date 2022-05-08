@@ -1,3 +1,6 @@
+#define RADIUS 7
+#define DRILL_COOLDOWN 1 MINUTE
+
 /obj/machinery/mining
 	icon = 'icons/obj/mining_drill.dmi'
 	anchored = 0
@@ -13,20 +16,24 @@
 	var/braces_needed = 2
 	var/list/supports = list()
 	var/supported = 0
+	var/max_health = 1000
+	health = 1000
 	var/active = 0
 	var/list/resource_field = list()
+	var/datum/termite_controller/TC
+	var/last_use = 0.0
 
 	var/ore_types = list(
-		MATERIAL_IRON  = /obj/item/ore/iron,
-		MATERIAL_URANIUM = /obj/item/ore/uranium,
-		MATERIAL_GOLD = /obj/item/ore/gold,
-		MATERIAL_SILVER = /obj/item/ore/silver,
-		MATERIAL_DIAMOND = /obj/item/ore/diamond,
-		MATERIAL_PLASMA  = /obj/item/ore/plasma,
-		MATERIAL_OSMIUM  = /obj/item/ore/osmium,
-		MATERIAL_TRITIUM  = /obj/item/ore/hydrogen,
-		MATERIAL_GLASS  = /obj/item/ore/glass,
-		MATERIAL_PLASTIC  = /obj/item/ore/coal
+		MATERIAL_IRON  = /obj/item/stack/ore/iron,
+		MATERIAL_URANIUM = /obj/item/stack/ore/uranium,
+		MATERIAL_GOLD = /obj/item/stack/ore/gold,
+		MATERIAL_SILVER = /obj/item/stack/ore/silver,
+		MATERIAL_DIAMOND = /obj/item/stack/ore/diamond,
+		MATERIAL_PLASMA  = /obj/item/stack/ore/plasma,
+		MATERIAL_OSMIUM  = /obj/item/stack/ore/osmium,
+		MATERIAL_TRITIUM  = /obj/item/stack/ore/hydrogen,
+		MATERIAL_GLASS  = /obj/item/stack/ore/glass,
+		MATERIAL_PLASTIC  = /obj/item/stack/ore/coal
 		)
 
 	//Upgrades
@@ -157,7 +164,31 @@
 			component_parts += I
 			to_chat(user, "You install \the [I].")
 		return
+
+	if (user.a_intent == I_HURT && user.Adjacent(src))
+		if(!(I.flags & NOBLUDGEON))
+			user.do_attack_animation(src)
+			var/damage = I.force * I.structure_damage_factor
+			var/volume =  min(damage * 3.5, 15)
+			if (I.hitsound)
+				playsound(src, I.hitsound, volume, 1, -1)
+			visible_message(SPAN_DANGER("[src] has been hit by [user] with [I]."))
+			take_damage(damage)
+			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN * 1.5)
+
+	var/damage = max_health - health
+	if(damage && (QUALITY_WELDING in I.tool_qualities))
+		if(active)
+			to_chat(user, SPAN_WARNING("Turn \the [src] off first!"))
+			return
+		to_chat(user, "<span class='notice'>You start repairing the damage to [src].</span>")
+		if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_ROB))
+			playsound(src, 'sound/items/Welder.ogg', 100, 1)
+			to_chat(user, "<span class='notice'>You finish repairing the damage to [src].</span>")
+			take_damage(-damage)
+		return
 	..()
+
 
 /obj/machinery/mining/drill/attack_hand(mob/user as mob)
 	check_supports()
@@ -176,12 +207,22 @@
 		update_icon()
 		return
 	else if(supported && !panel_open)
+		if(health == 0)
+			to_chat(user, SPAN_NOTICE("The drill is too damaged to be turned on."))
+		else if (!active && check_surroundings())
+			to_chat(user, SPAN_NOTICE("The space around the drill has to be clear of obstacles!"))
+		else if(world.time - last_use < DRILL_COOLDOWN)
+			to_chat(user, SPAN_WARNING("\The [src] needs some time to cool down! [round((last_use + DRILL_COOLDOWN - world.time) / 10)] seconds remaining."))
 		if(use_cell_power())
 			active = !active
 			if(active)
+				var/turf/simulated/T = get_turf(loc)
+				TC = new /datum/termite_controller(location=T, seismic=T.seismic_activity, drill=src)
 				visible_message(SPAN_NOTICE("\The [src] lurches downwards, grinding noisily."))
 				need_update_field = 1
 			else
+				TC.stop()
+				TC = null
 				visible_message(SPAN_NOTICE("\The [src] shudders to a grinding halt."))
 		else
 			to_chat(user, SPAN_NOTICE("The drill is unpowered."))
@@ -206,7 +247,7 @@
 	harvest_speed = 0
 	capacity = 0
 	charge_use = 37
-	radius = 0
+	radius = RADIUS
 
 	for(var/obj/item/stock_parts/P in component_parts)
 		if(istype(P, /obj/item/stock_parts/micro_laser))
@@ -217,7 +258,7 @@
 			charge_use -= 8 * (P.rating - harvest_speed)
 			charge_use = max(charge_use, 0)
 		if(istype(P, /obj/item/stock_parts/scanning_module))
-			radius = 1 + P.rating
+			radius = RADIUS + P.rating
 	cell = locate(/obj/item/cell/large) in component_parts
 
 /obj/machinery/mining/drill/proc/check_supports()
@@ -258,6 +299,51 @@
 		return 1
 	return 0
 
+/obj/machinery/mining/drill/proc/check_surroundings()
+	// Check if there is no dense obstacles around the drill to avoid blocking access to it
+	for(var/turf/F in block(locate(x - 1, y - 1, z), locate(x + 1, y + 1, z)))
+		if(F != loc)
+			if(F.density)
+				return TRUE
+			for(var/atom/A in F)
+				if(A.density && !(A.flags & ON_BORDER) && !ismob(A))
+					return TRUE
+	return FALSE
+
+/obj/machinery/mining/drill/attack_generic(mob/user, damage)
+	user.do_attack_animation(src)
+	visible_message(SPAN_DANGER("\The [user] smashes into \the [src]!"))
+	take_damage(damage)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN * 1.5)
+
+/obj/machinery/mining/drill/bullet_act(obj/item/projectile/Proj)
+	..()
+	var/damage = Proj.get_structure_damage()
+	take_damage(damage)
+
+/obj/machinery/mining/drill/proc/take_damage(value)
+	health = min(max(health - value, 0), max_health)
+	if(0 >= health)
+		system_error("critical damage")
+		var/turf/O = get_turf(src)
+		if(O)
+			explosion(O, -1, 1, 4, 10)
+			qdel(src)
+			return
+		else
+			qdel(src)
+
+/obj/machinery/mining/drill/examine(mob/user)
+	. = ..()
+	if(health <= 0)
+		to_chat(user, "\The [src] is wrecked.")
+	else if(health < max_health * 0.25)
+		to_chat(user, "<span class='danger'>\The [src] looks like it's about to break!</span>")
+	else if(health < max_health * 0.5)
+		to_chat(user, "<span class='danger'>\The [src] looks seriously damaged!</span>")
+	else if(health < max_health * 0.75)
+		to_chat(user, "\The [src] shows signs of damage!")
+
 /obj/machinery/mining/drill/verb/unload()
 	set name = "Unload Drill"
 	set category = "Object"
@@ -268,7 +354,7 @@
 
 	var/obj/structure/ore_box/B = locate() in orange(1)
 	if(B)
-		for(var/obj/item/ore/O in contents)
+		for(var/obj/item/stack/ore/O in contents)
 			O.loc = B
 		to_chat(usr, SPAN_NOTICE("You unload the drill's storage cache into the ore box."))
 	else
@@ -391,3 +477,6 @@
 
 	set_dir(turn(dir, 90))
 	return
+
+#undef RADIUS
+#undef DRILL_COOLDOWN

@@ -11,7 +11,7 @@
 	icon_state = "bonedog"
 	siemens_coefficient = 1 // Non-conductive
 	matter = list(MATERIAL_BONE = 5, MATERIAL_BIOMATTER = 2)
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 20,
 		energy = 5,

@@ -27,8 +27,13 @@
 	eject_animatio = FALSE //Todo: this
 	bolt_training = FALSE
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
+	scoped_offset_reduction = 8
 	extra_damage_mult_scoped = 0.2
 	gun_tags = list(GUN_AMR, GUN_PROJECTILE) //AMR tag atm does nothing
+	slowdown_hold = 1.5  //Were entrenched
+	brace_penalty = 30 //No running and gunning
+	pierce_multiplier = 6
+	serial_type = "SA"
 
 /obj/item/weaponparts
 	var/part_color = ""

@@ -93,7 +93,7 @@
 /obj/effect/mob_spawn/human/si_medical_ert
 	name = "deployment sleeper"
 	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in SI medical equipment."
-	mob_name = "a scavenger"
+	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/si_medical_ert
@@ -111,4 +111,46 @@
 		STAT_COG = 35
 	)
 
+/obj/effect/mob_spawn/human/marshal_ert
+	name = "deployment sleeper"
+	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a Nadezhda Colonial Marshal"
+	mob_name = "a human"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/marshal_ert
+	ghost_role_perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/bolt_reflect, /datum/perk/codespeak, /datum/perk/chem_contraband)
+	short_desc = "You are a Marshal agent."
+	flavour_text = "Something has happend to the upper colony to warrant your deployment. Uphold the word of law and ensure peace is upkept in Nadezhda."
+	assignedrole = "Marshal Agent"
+	title = "Marshal Agent"
+	stat_modifiers = list(
+		STAT_ROB = 50,
+		STAT_TGH = 45,
+		STAT_BIO = 10,
+		STAT_MEC = 5,
+		STAT_VIG = 45,
+		STAT_COG = 10
+	)
+
+
+/obj/effect/mob_spawn/human/kriosan_trooper
+	name = "deployment sleeper"
+	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a Kriosan trooper."
+	mob_name = "a scavenger"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/doggo
+	ghost_role_perks = list(/datum/perk/exceptional_aim, /datum/perk/enhancedsenses)
+	short_desc = "You are a kriosan trooper."
+	flavour_text = "*bark."
+	assignedrole = "Kriosan Trooper"
+	title = "Kriosan Trooper"
+	stat_modifiers = list(
+		STAT_ROB = 28,
+		STAT_TGH = 32,
+		STAT_BIO = 27,
+		STAT_MEC = 16,
+		STAT_VIG = 46,
+		STAT_COG = 18
+	)
 

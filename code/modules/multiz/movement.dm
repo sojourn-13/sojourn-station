@@ -231,6 +231,15 @@
 
 
 /mob/living/carbon/human/can_fall(turf/below, turf/simulated/open/dest = src.loc)
+	// can't fall on walls anymore
+	var/turf/true_below = GetBelow(src)
+	for(var/obj/structure/possible_blocker in true_below.contents)
+		if(possible_blocker.density)
+			if(possible_blocker.climbable)
+				continue
+			else
+				return FALSE
+
 	// Special condition for jetpack mounted folk!
 	if (!restrained())
 		if (CanAvoidGravity())

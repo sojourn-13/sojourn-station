@@ -97,7 +97,7 @@
 				pref.real_name = random_name(pref.gender, pref.species)
 	*/
 /datum/category_item/player_setup_item/physical/basic/content()
-	if(global.all_species[pref.species]?.obligate_name)
+	if(global.all_species[pref.species]?:obligate_name)
 		pref.custom_species = global.all_species[pref.species]
 	if ((pref.species == "Human") && (pref.custom_species in global.all_species))
 		pref.custom_species = "Human"
@@ -189,7 +189,7 @@
 		return TOPIC_REFRESH
 
 	else if(href_list["species_name"])
-		if(global.all_species[pref.species]?.obligate_name)
+		if(global.all_species[pref.species]?:obligate_name)
 			return TOPIC_NOACTION
 		var/new_species_name = input(user, "Choose your character's species name. This is cosmetic.") as text|null
 		if(CanUseTopic(user))
@@ -201,13 +201,13 @@
 				to_chat(user, SPAN_WARNING("Invalid species name. Either it's a single character, or more than [MAX_NAME_LEN] characters long. Aside from letters, it can only contain _, ' and ."))
 				return TOPIC_NOACTION
 	else if(href_list["species_aan"])
-		if(global.all_species[pref.species]?.obligate_name)
+		if(global.all_species[pref.species]?:obligate_name)
 			return TOPIC_NOACTION
 		if(CanUseTopic(user))
 			pref.species_aan = pref.species_aan == "n" ? "" : "n"
 			return TOPIC_REFRESH
 	else if(href_list["species_name_color"])
-		if(global.all_species[pref.species]?.obligate_name)
+		if(global.all_species[pref.species]?:obligate_name)
 			return TOPIC_NOACTION
 		var/new_color = input(user, "Choose your species name's color. This should be shared with others using that species if you propagate it.", CHARACTER_PREFERENCE_INPUT_TITLE, pref.species_color) as color|null
 		if(new_color && CanUseTopic(user))

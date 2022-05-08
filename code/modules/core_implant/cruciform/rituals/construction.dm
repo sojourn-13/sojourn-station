@@ -9,6 +9,12 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			continue
 		if(blueprint_type == /datum/nt_blueprint/machinery)
 			continue
+		if(blueprint_type == /datum/nt_blueprint/mob)
+			continue
+		if(blueprint_type == /datum/nt_blueprint/cruciform_upgrade)
+			continue
+		if(blueprint_type == /datum/nt_blueprint/weapons)
+			continue
 		var/datum/nt_blueprint/pb = new blueprint_type()
 		list[pb.name] = pb
 	return list
@@ -140,11 +146,11 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 
 /datum/nt_blueprint/mob/rook
 	name = "Rook Golem"
-	build_path = /mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/rook
+	build_path = /mob/living/carbon/superior_animal/robot/church/rook
 	materials = list(
 		/obj/item/stack/material/steel = 15,
 		/obj/item/stack/material/plastic = 10,
-		/obj/item/stack/material/gold = 10,
+		/obj/item/stack/material/gold = 16,
 		/obj/item/stack/cable_coil = 15,
 		/obj/item/stack/material/plasteel = 5,
 		/obj/item/stack/material/biomatter = 30,
@@ -152,6 +158,52 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/book/ritual/cruciform = 1 //Limiting factor
 	)
 	build_time = 20 SECONDS //We dont want to make these in combat
+
+/datum/nt_blueprint/mob/knight
+	name = "Knight Golem"
+	build_path = /mob/living/carbon/superior_animal/robot/church/knight
+	materials = list(
+		/obj/item/stack/material/steel = 15,
+		/obj/item/stack/material/plastic = 10,
+		/obj/item/stack/material/gold = 10,
+		/obj/item/stack/cable_coil = 15,
+		/obj/item/stack/material/plasteel = 5,
+		/obj/item/stack/material/biomatter = 20,
+		/obj/item/tool/sword/nt/longsword = 1,
+		/obj/item/book/ritual/cruciform = 1 //Limiting factor
+	)
+	build_time = 20 SECONDS //We dont want to make these in combat
+
+/datum/nt_blueprint/mob/pawn
+	name = "Pawn Golem"
+	build_path = /mob/living/carbon/superior_animal/robot/church/pawm
+	materials = list(
+		/obj/item/stack/material/steel = 10,
+		/obj/item/stack/material/plastic = 5,
+		/obj/item/stack/material/silver = 8,
+		/obj/item/stack/cable_coil = 15,
+		/obj/item/stack/material/plasteel = 3,
+		/obj/item/stack/material/biomatter = 15,
+		/obj/item/tool/sword/nt/longsword = 1,
+		/obj/item/tool/sword/nt/shortsword = 1,
+		/obj/item/paper = 1 //Limiting factor
+	)
+	build_time = 1 SECONDS //We do want to mid-comat summan these
+
+/datum/nt_blueprint/mob/bishop
+	name = "Bishop Golem"
+	build_path = /mob/living/carbon/superior_animal/robot/church/bishop
+	materials = list(
+		/obj/item/stack/material/steel = 15,
+		/obj/item/stack/material/plastic = 15,
+		/obj/item/stack/material/gold = 8,
+		/obj/item/stack/cable_coil = 15,
+		/obj/item/stack/material/plasteel = 10,
+		/obj/item/stack/material/biomatter = 60,
+		/obj/item/book/ritual/cruciform/priest = 1 //Limiting factor
+	)
+	build_time = 60 SECONDS //These need a lot of prep
+
 
 //For making machinery
 /datum/nt_blueprint/machinery
@@ -167,8 +219,8 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	build_time = 8 SECONDS
 
 /datum/nt_blueprint/machinery/eotp
-	name = "Eye of the Absolute"
-	build_path = /obj/machinery/power/nt_obelisk/eotp
+	name = "Will of the Protector"
+	build_path = /obj/machinery/power/eotp
 	materials = list(
 		/obj/item/stack/material/plasteel = 15,
 		/obj/item/stack/material/biomatter = 10,
@@ -188,6 +240,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/storage/toolbox = 1
 	)
 	build_time = 5 SECONDS
+
 /datum/nt_blueprint/machinery/solidifier
 	name = "Biomatter Solidifier"
 	build_path = /obj/machinery/biomatter_solidifier
@@ -444,5 +497,45 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/material/silver = 10,
 		/obj/item/stack/material/gold = 3,
 		/obj/item/stack/material/plasma = 1
+	)
+	build_time = 8 SECONDS
+
+
+//Church weapons, faster but more exspensive way for vectors to get their armorments without a disk
+/datum/nt_blueprint/weapons
+
+/datum/nt_blueprint/weapons/antebellum
+	name = "\"Antebellum\" Blunderbuss lasgun"
+	build_path = /obj/item/gun/energy/plasma/antebellum
+	materials = list(
+		/obj/item/stack/material/plasteel = 10,
+		/obj/item/stack/material/wood = 15,
+		/obj/item/stack/material/biomatter = 20,
+		/obj/item/stack/material/gold = 2,
+		/obj/item/stack/material/silver = 2
+	)
+	build_time = 3 SECONDS
+
+/datum/nt_blueprint/weapons/carpediem
+	name = "\"Carpediem\" lasgun"
+	build_path = /obj/item/gun/energy/carpediem
+	materials = list(
+		/obj/item/stack/material/plasteel = 5,
+		/obj/item/stack/material/wood = 10,
+		/obj/item/stack/material/glass = 3,
+		/obj/item/stack/material/gold = 1,
+		/obj/item/stack/material/silver = 2
+	)
+	build_time = 6 SECONDS
+
+/datum/nt_blueprint/weapons/concillium
+	name = "\"Concillium\" las-machinegun"
+	build_path = /obj/item/gun/energy/concillium
+	materials = list(
+		/obj/item/stack/material/plasteel = 30,
+		/obj/item/stack/material/wood = 25,
+		/obj/item/stack/material/glass = 15,
+		/obj/item/stack/material/gold = 3,
+		/obj/item/stack/material/silver = 5
 	)
 	build_time = 8 SECONDS

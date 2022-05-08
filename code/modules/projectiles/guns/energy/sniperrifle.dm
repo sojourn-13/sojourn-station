@@ -23,3 +23,4 @@
 	)
 	twohanded = TRUE
 	gun_tags = list(GUN_ENERGY)
+	serial_type = "Absolute"

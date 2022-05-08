@@ -137,7 +137,7 @@
 	var/locked = TRUE
 	var/datum/money_account/machine_vendor_account //Owner of this vendomat. Used for access.
 	var/datum/money_account/earnings_account //Money flows in and out of this account.
-	var/vendor_department = null //If set, members can manage this vendomat. earnings_account is set to the department's account automatically.
+	var/vendor_department = DEPARTMENT_LSS  //If set, members can manage this vendomat. earnings_account is set to the department's account automatically.
 	var/buying_percentage = 0 //If set, the vendomat will accept people selling items to it, and in return will give (percentage * listed item price) in cash
 	var/scan_id = 1
 	var/auto_price = TRUE //The vendomat will automatically set prices on products if their price is not specified.
@@ -564,14 +564,14 @@
 			return
 
 	wires.Interact(user)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /**
  * Display the NanoUI window for the vending machine.
  *
  * See NanoUI documentation for details.
  */
-/obj/machinery/vending/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/vending/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	user.set_machine(src)
 
 	var/list/data = list()
@@ -795,16 +795,15 @@
 
 	//Pitch to the people! Really sell it!
 	if(((last_slogan + slogan_delay) <= world.time) && (slogan_list.len > 0 || custom_vendor) && (!shut_up) && prob(5))
-		if(custom_vendor && product_records.len)
+		if(slogan_list.len)
+			var/slogan = pick(slogan_list)
+			speak(slogan)
+			last_slogan = world.time
+		else if(custom_vendor && product_records.len)
 			var/datum/data/vending_product/advertised = pick(product_records)
 			if(advertised)
 				var/advertisement = "[pick("Come get","Come buy","Buy","Sale on","We have")] \an [advertised.product_name], [pick("for only","only","priced at")] [advertised.price] credits![pick(" What a deal!"," Can you believe it?","")]"
 				speak(advertisement)
-				last_slogan = world.time
-		else
-			if(slogan_list.len)
-				var/slogan = pick(slogan_list)
-				speak(slogan)
 				last_slogan = world.time
 
 	if(shoot_inventory && prob(2))
@@ -910,6 +909,7 @@
 /obj/machinery/vending/custom
 	name = "Custom Vendomat"
 	desc = "A custom vending machine."
+	vendor_department = null //Anyone can make a custom vendor
 	custom_vendor = TRUE
 	locked = TRUE
 	can_stock = list(/obj/item)

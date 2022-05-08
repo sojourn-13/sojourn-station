@@ -6,7 +6,7 @@
 	var/flags = 0
 	var/list/fingerprints
 	var/list/fingerprintshidden
-	var/fingerprintslast = null
+	var/fingerprintslast
 	var/list/blood_DNA
 	var/was_bloodied
 	var/blood_color
@@ -14,14 +14,14 @@
 	var/pass_flags = 0
 	var/throwpass = 0
 	var/germ_level = GERM_LEVEL_AMBIENT // The higher the germ level, the more germ on the atom.
-	var/simulated = TRUE //filter for actions - used by lighting over-lays
+	var/simulated = TRUE //filter for actions - used by lighting overlays
 	var/fluorescent // Shows up under a UV light.
 	var/allow_spin = TRUE
 	var/used_now = FALSE //For tools system, check for it should forbid to work on atom for more than one user at time
 
 	///Chemistry.
 	var/reagent_flags = NONE
-	var/datum/reagents/reagents = null
+	var/datum/reagents/reagents
 
 	//Detective Work, used for the duplicate data points kept in the scanners
 	var/list/original_atom
@@ -30,19 +30,26 @@
 
 	var/initialized = FALSE
 
-	var/list/preloaded_reagents = null
+	var/list/preloaded_reagents
 
 	var/sanity_damage = 0
+
+		/**
+	  * used to store the different colors on an atom
+	  *
+	  * its inherent color, the colored paint applied on it, special color effect etc...
+	  */
+	var/list/atom_colours
+
 
 	// over-lays
 	var/tmp/list/our_overlays	//our local copy of (non-priority) overlays without byond magic. Use procs in SSover-lays to manipulate
 	var/tmp/list/priority_overlays	//over-lays that should remain on top and not normally removed when using cut_overlay functions, like c4.
 
 	// All physical objects that exist have a somewhat metaphysical representation of their integrity
-    // Why are areas derived from /atom instead of /datum?  They're abstracts!
+	// Why are areas derived from /atom instead of /datum?  They're abstracts!
 	var/health    = 99999 // RPG boss unless  otherwise defined
 	var/maxHealth = 99999
-
 	// And a status
 	var/stat = 0
 
@@ -57,39 +64,59 @@
 			return
 	return
 
-atom/proc/breakObject()
+/atom/proc/breakObject()
 	if(!(stat & BROKEN))
 		stat |= BROKEN
-
-	return
-
-
 
 /atom/New(loc, ...)
 	init_plane()
 	update_plane()
-	var/do_initialize = SSatoms.init_state
-	if(do_initialize > INITIALIZATION_INSSATOMS)
+//	init_light()
+
+	var/do_initialize = SSatoms.initialized
+	if(do_initialize != INITIALIZATION_INSSATOMS)
 		args[1] = do_initialize == INITIALIZATION_INNEW_MAPLOAD
-		if(SSatoms.InitAtom(src, args))
+		if(SSatoms.InitAtom(src, FALSE, args))
 			//we were deleted
 			return
 
-	var/list/created = SSatoms.created_atoms
-	if(created)
-		created += src
-
-
-//Called after New if the map is being loaded. mapload = TRUE
-//Called from base of New if the map is not being loaded. mapload = FALSE
-//This base must be called or derivatives must set initialized to TRUE
-//must not sleep
-//Other parameters are passed from New (excluding loc), this does not happen if mapload is TRUE
-//Must return an Initialize hint. Defined in __DEFINES/subsystems.dm
-
+/**
+ * The primary method that objects are setup in SS13 with
+ *
+ * we don't use New as we have better control over when this is called and we can choose
+ * to delay calls or hook other logic in and so forth
+ *
+ * During roundstart map parsing, atoms are queued for intialization in the base atom/New(),
+ * After the map has loaded, then Initalize is called on all atoms one by one. NB: this
+ * is also true for loading map templates as well, so they don't Initalize until all objects
+ * in the map file are parsed and present in the world
+ *
+ * If you're creating an object at any point after SSInit has run then this proc will be
+ * immediately be called from New.
+ *
+ * mapload: This parameter is true if the atom being loaded is either being intialized during
+ * the Atom subsystem intialization, or if the atom is being loaded from the map template.
+ * If the item is being created at runtime any time after the Atom subsystem is intialized then
+ * it's false.
+ *
+ * You must always call the parent of this proc, otherwise failures will occur as the item
+ * will not be seen as initalized (this can lead to all sorts of strange behaviour, like
+ * the item being completely unclickable)
+ *
+ * You must not sleep in this proc, or any subprocs
+ *
+ * Any parameters from new are passed through (excluding loc), naturally if you're loading from a map
+ * there are no other arguments
+ *
+ * Must return an [initialization hint][INITIALIZE_HINT_NORMAL] or a runtime will occur.
+ *
+ * Note: the following functions don't call the base for optimization and must copypasta handling:
+ * * [/turf/proc/Initialize]
+ * * [/turf/open/space/proc/Initialize]
+ */
 /atom/proc/Initialize(mapload, ...)
 	if(initialized)
-		crash_with("Warning: [src]([type]) initialized multiple times!")
+		CRASH("Warning: [src]([type]) initialized multiple times!")
 	initialized = TRUE
 
 	if(light_power && light_range)
@@ -109,15 +136,37 @@ atom/proc/breakObject()
 
 	return INITIALIZE_HINT_NORMAL
 
-//called if Initialize returns INITIALIZE_HINT_LATELOAD
+/**
+ * Late Intialization, for code that should run after all atoms have run Intialization
+ *
+ * To have your LateIntialize proc be called, your atoms [Initalization][/atom/proc/Initialize]
+ *  proc must return the hint
+ * [INITIALIZE_HINT_LATELOAD] otherwise you will never be called.
+ *
+ * useful for doing things like finding other machines on GLOB.machines because you can guarantee
+ * that all atoms will actually exist in the "WORLD" at this time and that all their Intialization
+ * code has been run
+ */
 /atom/proc/LateInitialize()
-	return
+	set waitfor = FALSE
 
+/**
+ * Top level of the destroy chain for most atoms
+ *
+ * Cleans up the following:
+ * * Removes alternate apperances from huds that see them
+ * * qdels the reagent holder from atoms if it exists
+ * * clears the orbiters list
+ * * clears overlays and priority overlays
+ * * clears the light object
+ */
 /atom/Destroy()
-	QDEL_NULL(reagents)
+	if(reagents)
+		QDEL_NULL(reagents)
+
 	spawn()
 		update_openspace()
-	. = ..()
+	return ..()
 
 /atom/proc/reveal_blood()
 	return
@@ -172,7 +221,7 @@ atom/proc/breakObject()
 /atom/proc/HasProximity(atom/movable/AM as mob|obj)
 	return
 
-/atom/proc/emp_act(var/severity)
+/atom/proc/emp_act(severity)
 	return
 
 
@@ -224,7 +273,6 @@ atom/proc/breakObject()
 
 /*
 Beam code by Gunbuddy
-
 Beam() proc will only allow one beam to come from a source at a time.  Attempting to call it more than
 once at a time per source will cause graphical errors.
 Also, the icon used for the beam will have to be vertical and 32x32.
@@ -314,7 +362,7 @@ its easier to just keep the beam vertical.
 
 	if(desc)
 		to_chat(user, desc)
-
+//Soj Edits
 	if(reagents)
 		if(reagent_flags & TRANSPARENT)
 			to_chat(user, SPAN_NOTICE("It contains:"))
@@ -356,6 +404,7 @@ its easier to just keep the beam vertical.
 					to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of what looks like [master_reagent.name]."))
 				else
 					to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of various reagents."))
+// End of SoJ changes
 		else
 			if(reagent_flags & AMOUNT_VISIBLE)
 				if(reagents.total_volume)
@@ -412,7 +461,7 @@ its easier to just keep the beam vertical.
 		AM.throwing = FALSE
 	return
 
-/atom/proc/add_hiddenprint(mob/living/M as mob)
+/atom/proc/add_hiddenprint(mob/living/M)
 	if(isnull(M)) return
 	if(isnull(M.key)) return
 	if (ishuman(M))
@@ -435,7 +484,7 @@ its easier to just keep the beam vertical.
 			src.fingerprintslast = M.key
 	return
 
-/atom/proc/add_fingerprint(mob/living/M as mob, ignoregloves = FALSE)
+/atom/proc/add_fingerprint(mob/living/M, ignoregloves = FALSE)
 	if(isnull(M)) return
 	if(isAI(M)) return
 	if(isnull(M.key)) return
@@ -561,7 +610,7 @@ its easier to just keep the beam vertical.
 
 
 //returns 1 if made bloody, returns 0 otherwise
-/atom/proc/add_blood(mob/living/carbon/human/M as mob)
+/atom/proc/add_blood(mob/living/carbon/human/M)
 
 	if(flags & NOBLOODY)
 		return FALSE
@@ -577,11 +626,11 @@ its easier to just keep the beam vertical.
 			M.dna.real_name = M.real_name
 		M.check_dna()
 		if (M.species)
-			blood_color = M.blood_color
+			blood_color = M.species.blood_color
 	. = TRUE
 	return TRUE
 
-/atom/proc/add_vomit_floor(mob/living/carbon/M as mob, var/toxvomit = FALSE)
+/atom/proc/add_vomit_floor(mob/living/carbon/M, var/toxvomit = FALSE)
 	if( istype(src, /turf/simulated) )
 		var/obj/effect/decal/cleanable/vomit/this = new /obj/effect/decal/cleanable/vomit(src)
 
@@ -600,9 +649,9 @@ its easier to just keep the beam vertical.
 
 /atom/proc/get_global_map_pos()
 	if(!islist(global_map) || isemptylist(global_map)) return
-	var/cur_x = null
-	var/cur_y = null
-	var/list/y_arr = null
+	var/cur_x
+	var/cur_y
+	var/list/y_arr
 	for(cur_x=1, cur_x<=global_map.len, cur_x++)
 		y_arr = global_map[cur_x]
 		cur_y = y_arr.Find(src.z)
@@ -626,10 +675,10 @@ its easier to just keep the beam vertical.
 
 
 //Execution by grand piano!
-/atom/movable/proc/get_fall_damage(var/turf/from, var/turf/dest)
+/atom/movable/proc/get_fall_damage(turf/from, turf/dest)
 	return 42
 
-/atom/movable/proc/fall_impact(var/turf/from, var/turf/dest)
+/atom/movable/proc/fall_impact(turf/from, turf/dest)
 
 //If atom stands under open space, it can prevent fall, or not
 /atom/proc/can_prevent_fall()
@@ -639,49 +688,45 @@ its easier to just keep the beam vertical.
 // Use for objects performing visible actions
 // message is output to anyone who can see, e.g. "The [src] does something!"
 // blind_message (optional) is what blind people will hear e.g. "You hear something!"
-/atom/proc/visible_message(var/message, var/blind_message, var/viewing_distance)
+/atom/proc/visible_message(var/message, var/blind_message, var/range = world.view)
+	var/turf/T = get_turf(src)
+	var/list/mobs = list()
+	var/list/objs = list()
+	get_mobs_and_objs_in_view_fast(T,range, mobs, objs, ONLY_GHOSTS_IN_VIEW)
 
-	var/range = viewing_distance || world.view
-	var/list/see = get_mobs_and_objs_in_view_fast(get_turf(src),range,remote_ghosts = FALSE)
+	for(var/o in objs)
+		var/obj/O = o
+		O.show_message(message,1,blind_message,2)
 
-
-	var/list/seeing_mobs = see["mobs"]
-	var/list/seeing_objs = see["objs"]
-
-	for(var/obj in seeing_objs)
-		var/obj/O = obj
-		O.show_message(message, 1, blind_message, 2)
-	for(var/mob in seeing_mobs)
-		var/mob/M = mob
-		if(M.see_invisible >= invisibility /*&& MOB_CAN_SEE_PLANE(M, plane)*/)
-			M.show_message(message, 1, blind_message, 2)
+	for(var/m in mobs)
+		var/mob/M = m
+		if(M.see_invisible >= invisibility)
+			M.show_message(message,1,blind_message,2)
 		else if(blind_message)
 			M.show_message(blind_message, 2)
 
-// Show a message to all mobs and objects in earshot of this one
-// This would be for audible actions by the src mob
+
+// Show a message to all mobs and objects in earshot of this atom
+// Use for objects performing audible actions
 // message is the message output to anyone who can hear.
-// self_message (optional) is what the src mob hears.
 // deaf_message (optional) is what deaf people will see.
 // hearing_distance (optional) is the range, how many tiles away the message can be heard.
-/atom/proc/audible_message(var/message, var/deaf_message, var/hearing_distance, var/self_message)
+/atom/proc/audible_message(var/message, var/deaf_message, var/hearing_distance)
 
-	var/range = hearing_distance || world.view
-	var/list/hear = get_mobs_and_objs_in_view_fast(get_turf(src),range,remote_ghosts = FALSE)
+	var/range = world.view
+	if(hearing_distance)
+		range = hearing_distance
+	var/turf/T = get_turf(src)
+	var/list/mobs = list()
+	var/list/objs = list()
+	get_mobs_and_objs_in_view_fast(T, range, mobs, objs, ONLY_GHOSTS_IN_VIEW)
 
-	var/list/hearing_mobs = hear["mobs"]
-	var/list/hearing_objs = hear["objs"]
-
-	for(var/obj in hearing_objs)
-		var/obj/O = obj
-		O.show_message(message, 2, deaf_message, 1)
-
-	for(var/mob in hearing_mobs)
-		var/mob/M = mob
-		var/msg = message
-		if(self_message && M==src)
-			msg = self_message
-		M.show_message(msg, 2, deaf_message, 1)
+	for(var/m in mobs)
+		var/mob/M = m
+		M.show_message(message,2,deaf_message,1)
+	for(var/o in objs)
+		var/obj/O = o
+		O.show_message(message,2,deaf_message,1)
 
 /atom/Entered(var/atom/movable/AM, var/atom/old_loc, var/special_event)
 	if(loc)
@@ -725,11 +770,7 @@ its easier to just keep the beam vertical.
 /atom/proc/get_coords()
 	var/turf/T = get_turf(src)
 	if (T)
-		var/datum/coords/C = new
-		C.x_pos = T.x
-		C.y_pos = T.y
-		C.z_pos = T.z
-		return C
+		return new /datum/coords(T)
 
 /atom/proc/change_area(var/area/old_area, var/area/new_area)
 	return
@@ -745,6 +786,8 @@ its easier to just keep the beam vertical.
 	// offset correction
 	BM.pixel_x--
 	BM.pixel_y--
+	BM.serial_type_index = Proj.serial_type_index_bullet //Nothing to nothing shouldnt be an issue
+
 
 	if(Proj.get_structure_damage() >= WEAPON_FORCE_DANGEROUS)//If it does a lot of damage it makes a nice big black hole.
 		BM.icon_state = "scorch"
@@ -777,6 +820,49 @@ its easier to just keep the beam vertical.
 	if(!L)
 		return null
 	return L.AllowDrop() ? L : L.drop_location()
+
+///Adds an instance of colour_type to the atom's atom_colours list
+/atom/proc/add_atom_colour(coloration, colour_priority)
+	if(!atom_colours || !atom_colours.len)
+		atom_colours = list()
+		atom_colours.len = COLOUR_PRIORITY_AMOUNT //four priority levels currently.
+	if(!coloration)
+		return
+	if(colour_priority > atom_colours.len)
+		return
+	atom_colours[colour_priority] = coloration
+	update_atom_colour()
+
+///Resets the atom's color to null, and then sets it to the highest priority colour available
+/atom/proc/update_atom_colour()
+	color = null
+	if(!atom_colours)
+		return
+	for(var/C in atom_colours)
+		if(islist(C))
+			var/list/L = C
+			if(L.len)
+				color = L
+				return
+		else if(C)
+			color = C
+			return
+
+//Return flags that may be added as part of a mobs sight
+/atom/proc/additional_sight_flags()
+	return 0
+
+/atom/proc/additional_see_invisible()
+	return 0
+
+/atom/proc/lava_act()
+	visible_message("<span class='danger'>\The [src] sizzles and melts away, consumed by the lava!</span>")
+//	playsound(src, 'sound/effects/flare.ogg', 100, 3)
+	if(ismob(src))
+		var/mob/M = src
+		M.death(FALSE, FALSE)
+	qdel(src)
+	. = TRUE
 
 /atom/proc/get_sex()
 	return gender

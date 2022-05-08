@@ -28,6 +28,40 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 1, MATERIAL_PLASTIC = 10)
 
+/obj/item/tool/baton/maul
+	name = "shock maul"
+	desc = "A heavy duty stun-baton designed for riot control and in rare cases - coralling oversized faunda"
+	icon_state = "stunmaul"
+	icon = 'icons/obj/weapons.dmi'
+	item_state = "stunmaul"
+	wielded_icon = "stunmaul_wielded"
+	slot_flags = SLOT_BELT
+	toggleable = TRUE
+	force = WEAPON_FORCE_ROBUST
+	throwforce = WEAPON_FORCE_PAINFUL
+	w_class = ITEM_SIZE_HUGE
+	origin_tech = list(TECH_COMBAT = 2)
+	attack_verb = list("subjugated", "battered", "oppressed", "persecuted")
+	effective_faction = list("spider") // Spiders are weak to crushing.
+	price_tag = 800
+	stunforce = 0
+	agonyforce = 60
+	hitcost = 1000
+	switched_on_qualities = list(QUALITY_HAMMERING = 20, QUALITY_PULSING = 30)
+	switched_off_qualities = list(QUALITY_HAMMERING = 20)
+	use_power_cost = 0.8
+	suitable_cell = /obj/item/cell/large
+	glow_color = COLOR_LIGHTING_ORANGE_BRIGHT
+	cell = /obj/item/cell/large/high
+	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
+	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 15, MATERIAL_SILVER = 10)
+
+/obj/item/tool/baton/maul/attack()
+	..()
+	usr.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*1.5)
+
+
+
 /obj/item/tool/baton/mini
 	name = "mini stun baton"
 	desc = "A small stun baton for self defence on a buget."

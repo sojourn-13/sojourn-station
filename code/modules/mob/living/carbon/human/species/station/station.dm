@@ -49,7 +49,7 @@
 	num_alternate_languages = 2
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
-	max_age = 400 //Effectively ageless, but human history is only so long.
+	max_age = 200 //Effectively ageless, but human history is only so long.
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.1
 
 	dark_color = "#ffffff"
@@ -100,7 +100,6 @@
 	name_plural = "Sablekynes"
 	default_form = FORM_SABLEKYNE
 	obligate_form = TRUE
-	reagent_tag = IS_CARNIVORE
 	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/strong, /datum/unarmed_attack/horns)
 	darksight = 8
 	num_alternate_languages = 2
@@ -118,13 +117,13 @@
 	dark_color = "#00ff00"
 	light_color = "#008000"
 
-	cold_level_1 = 200 //Default 260
-	cold_level_2 = 140 //Default 200
-	cold_level_3 = 80  //Default 120
+	cold_level_1 = 240 //Default 270
+	cold_level_2 = 215 //Default 230
+	cold_level_3 = 190  //Default 200
 
-	heat_level_1 = 420 //Default 360
-	heat_level_2 = 460 //Default 400
-	heat_level_3 = 1200 //Default 1000
+	heat_level_1 = 340 //Default 330
+	heat_level_2 = 400 //Default 380
+	heat_level_3 = 480 //Default 460
 
 	heat_discomfort_level = 340
 	heat_discomfort_strings = list(
@@ -133,7 +132,7 @@
 		"Your overheated skin itches."
 		)
 
-	cold_discomfort_level = 275
+	cold_discomfort_level = 240
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
@@ -156,7 +155,7 @@
 	permitted_tail  = list("Sablekyne Tail")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/laststand,/datum/perk/bone, /datum/perk/brawn)
+	perks = list(/datum/perk/laststand,/datum/perk/bone, /datum/perk/brawn, /datum/perk/carnivore)
 
 /datum/species/sablekyne/get_bodytype()
 	return "Sablekyne"
@@ -179,11 +178,11 @@
 	dark_color = "#afeeee"
 	light_color = "#20b2aa"
 
-	cold_level_1 = 140 //Default 260
-	cold_level_2 = 80 //Default 200
-	cold_level_3 = 20  //Default 120
+	cold_level_1 = 230 //Default 270
+	cold_level_2 = 210 //Default 230
+	cold_level_3 = 190  //Default 200
 
-	cold_discomfort_level = 200
+	cold_discomfort_level = 230
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
@@ -282,11 +281,11 @@
 	taste_sensitivity = TASTE_DULL
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.25
 
-	cold_level_1 = 200 //Default 260
-	cold_level_2 = 140 //Default 200
-	cold_level_3 = 80  //Default 120
+	cold_level_1 = 240 //Default 270
+	cold_level_2 = 200 //Default 230
+	cold_level_3 = 170  //Default 200
 
-	cold_discomfort_level = 200
+	cold_discomfort_level = 240
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
@@ -305,7 +304,7 @@
 	permitted_tail  = list("Akula Tail")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/recklessfrenzy, /datum/perk/iron_flesh)
+	perks = list(/datum/perk/recklessfrenzy, /datum/perk/iron_flesh, /datum/perk/carnivore)
 
 /datum/species/akula/get_bodytype()
 	return "Akula"
@@ -497,15 +496,15 @@
 		STAT_TGH = 2
 	)
 
-	cold_level_1 = 280 //Default 260
-	cold_level_2 = 220 //Default 200
-	cold_level_3 = 140  //Default 120
+	cold_level_1 = 290 //Default 270
+	cold_level_2 = 265 //Default 230
+	cold_level_3 = 240  //Default 200
 
-	heat_level_1 = 450 //Default 360
-	heat_level_2 = 520 //Default 400
-	heat_level_3 = 1400 //Default 1000
+	heat_level_1 = 370 //Default 330
+	heat_level_2 = 410 //Default 380
+	heat_level_3 = 500 //Default 460
 
-	heat_discomfort_level = 400
+	heat_discomfort_level = 370
 	heat_discomfort_strings = list(
 		"Your scales prickles in the heat.",
 		"You feel uncomfortably warm.",
@@ -515,7 +514,7 @@
 	dark_color = "#660066"
 	light_color = "#660066"
 
-	cold_discomfort_level = 300
+	cold_discomfort_level = 290
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
@@ -537,12 +536,14 @@
 	permitted_ears  = list("Frills, Aquatic",
 		"Frills, Drake",
 		"Frills, Short",
-		"Frills, Simple"
+		"Frills, Simple",
+		"Frills, Big"
 		)
 	permitted_tail  = list("Render Tail",
 		"Snake Tail",
 		"Lizard Tail",
-		"Lizard Tail, Short"
+		"Lizard Tail, Short",
+		"Lizard Tail, Dark Tiger"
 		)
 	permitted_wings = list("Spines, Aquatic",
 		"Spines, Long",
@@ -659,6 +660,7 @@
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
+	total_health = 75
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
@@ -707,6 +709,7 @@
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
+	total_health = 75
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
@@ -761,6 +764,7 @@
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	slowdown = 0.3
 	radiation_mod = 0
+	total_health = 75
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
@@ -825,6 +829,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
+	total_health = 75
 
 	dark_color = "#FA8128"
 	light_color = "#FCAE1E"
@@ -884,7 +889,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
-
+	total_health = 75
 	dark_color = "#FFFFFF"
 	light_color = "#000000"
 
@@ -943,6 +948,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
+	total_health = 75
 
 	dark_color = "#FFFFFF"
 	light_color = "#000000"
@@ -1038,3 +1044,54 @@
 	)
 
 	spawn_flags = IS_RESTRICTED
+
+/datum/species/slime
+	name = "Slime"
+	name_plural = "slimes"
+
+	default_form = FORM_SLIME
+	obligate_form = TRUE
+	reagent_tag = IS_SLIME
+	unarmed_types = list(/datum/unarmed_attack/slime_glomp)
+	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_MINOR_CUT
+	siemens_coefficient = 3 //conductive
+	darksight = 3
+	virus_immune = TRUE
+	breath_type = null
+	poison_type = null
+	hunger_factor = DEFAULT_HUNGER_FACTOR * 2
+	spawn_flags = IS_RESTRICTED
+
+	burn_mod = 1.15
+	brute_mod = 1.15
+	toxins_mod = -1 // This is dumb. I hope it works. -R4d6
+	oxy_mod = 0
+
+	has_process = list(
+		BP_BRAIN = /obj/item/organ/internal/brain/slime
+		)
+
+	breath_type = null
+	poison_type = null
+
+	bump_flag = SLIME
+	swap_flags = MONKEY|SLIME|SIMPLE_ANIMAL
+	push_flags = MONKEY|SLIME|SIMPLE_ANIMAL
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/slime,
+		BP_GROIN =  new /datum/organ_description/groin/slime,
+		BP_HEAD =   new /datum/organ_description/head/slime,
+		BP_L_ARM =  new /datum/organ_description/arm/left/slime,
+		BP_R_ARM =  new /datum/organ_description/arm/right/slime,
+		BP_L_LEG =  new /datum/organ_description/leg/left/slime,
+		BP_R_LEG =  new /datum/organ_description/leg/right/slime
+	)
+
+	perks = list(PERK_SPEED, PERK_LIMB_REGEN, PERK_MIND_BOOST, PERK_BODY_BOOST)
+
+/datum/species/slime/handle_death(var/mob/living/carbon/human/H)
+	spawn(1)
+		if(H)
+			H.gib()
+

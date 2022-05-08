@@ -1,7 +1,11 @@
 //wrapper macros for easier grepping
 #define DIRECT_OUTPUT(A, B) A << B
+#define DIRECT_INPUT(A, B) A >> B
+#define SEND_IMAGE(target, image) DIRECT_OUTPUT(target, image)
+#define SEND_SOUND(target, sound) DIRECT_OUTPUT(target, sound)
 #define SEND_TEXT(target, text) DIRECT_OUTPUT(target, text)
 #define WRITE_FILE(file, text) DIRECT_OUTPUT(file, text)
+#define READ_FILE(file, text) DIRECT_INPUT(file, text)
 //print an error message to world.log
 
 
@@ -11,6 +15,12 @@
 
 /var/global/log_end= world.system_type == UNIX ? ascii2text(13) : ""
 
+#if defined(UNIT_TESTS) || defined(SPACEMAN_DMM)
+/proc/log_test(text)
+	// WRITE_LOG(GLOB.test_log, text)
+	log_world("## CI: [text]")
+	SEND_TEXT(world.log, text)
+#endif
 
 /proc/error(msg)
 	log_world("## ERROR: [msg][log_end]")
@@ -85,6 +95,9 @@
 	if (config.log_pda)
 		game_log("PDA", text)
 
+/proc/log_href_exploit(atom/user)
+	log_admin("[key_name_admin(user)] has potentially attempted an href exploit.")
+
 /proc/log_to_dd(text)
 	log_world(text)
 	if(config.log_world_output)
@@ -92,6 +105,9 @@
 
 /proc/log_misc(text)
 	game_log("MISC", text)
+
+/proc/log_harddel(text)
+	game_log("HARDDEL", text)
 
 /proc/log_unit_test(text)
 	log_world("## UNIT_TEST ##: [text]")
@@ -227,3 +243,11 @@
 		return "[a.loc] ([t.x],[t.y],[t.z]) ([a.loc.type])"
 	else if(a.loc)
 		return "[a.loc] (0,0,0) ([a.loc.type])"
+
+//From tg
+#if defined(REFERENCE_TRACKING) // Doing it locally
+#define log_reftracker(msg) log_harddel("## REF SEARCH [msg]")
+
+#else //Not tracking at all
+#define log_reftracker(msg)
+#endif

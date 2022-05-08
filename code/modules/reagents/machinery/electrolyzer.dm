@@ -145,7 +145,7 @@
 
 
 /obj/machinery/electrolyzer/attack_hand(mob/user)
-	if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !user.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs bio 15 so cog 30 to bypass
+	if(!user.stats?.getPerk(PERK_NERD) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !user.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs bio 15 so cog 30 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
@@ -153,9 +153,9 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/electrolyzer/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/electrolyzer/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
@@ -291,7 +291,7 @@
 
 /obj/item/device/makeshift_electrolyser/attack_self(mob/user as mob)
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 	add_fingerprint(user)
 
 /obj/item/device/makeshift_electrolyser/MouseDrop(over_object)
@@ -320,7 +320,7 @@
 		return
 	return ..()
 
-/obj/item/device/makeshift_electrolyser/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/item/device/makeshift_electrolyser/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
@@ -351,7 +351,7 @@
 	if(loc != user && ..())
 		return TRUE
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/item/device/makeshift_electrolyser/Topic(href, href_list)
 	if(..())

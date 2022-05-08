@@ -13,6 +13,22 @@
 	path = /obj/item/storage/secure/briefcase
 	cost = 2
 
+/datum/gear/lunchbox
+	display_name = "lunch box"
+	path = /obj/item/storage/lunchbox
+
+/datum/gear/lunchbox_cat
+	display_name = "cat lunch box"
+	path = /obj/item/storage/lunchbox/cat
+
+/datum/gear/lunchbox_rainbow
+	display_name = "rainbow lunch box"
+	path = /obj/item/storage/lunchbox/rainbow
+
+/datum/gear/lunchbox_church
+	display_name = "church lunch box"
+	path = /obj/item/storage/lunchbox/lemniscate
+
 /datum/gear/utility/hand_radio
 	display_name = "station bound radio"
 	path = /obj/item/device/radio
@@ -58,10 +74,12 @@
 /datum/gear/utility/clipboard
 	display_name = "clipboard"
 	path = /obj/item/clipboard
+	cost = 0
 
 /datum/gear/utility/corpreg
-	display_name = "corporate regulations"
+	display_name = "colony law"
 	path = /obj/item/book/manual/security_space_law
+	cost = 0
 
 /datum/gear/utility/crowbar
 	display_name = "crowbar"
@@ -75,6 +93,7 @@
 	display_name = "folder selection"
 	path = /obj/item/folder
 	flags = GEAR_HAS_TYPE_SELECTION
+	cost = 0
 
 /datum/gear/utility/advancedlaptop
 	display_name = "laptop, advanced"
@@ -172,4 +191,10 @@
 	display_name = "anti-psion hat"
 	path = /obj/item/clothing/head/psionic/tinfoil
 	cost = 3
+
+/datum/gear/utility/costume
+	display_name = "costume kit"
+	path = /obj/item/storage/box/costume
+	flags = GEAR_HAS_TYPE_SELECTION
+	cost = 2 //Style at a cost! - also cardboard
 

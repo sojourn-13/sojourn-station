@@ -46,6 +46,7 @@
 	max_storage_space = DEFAULT_SMALL_STORAGE * 0.5
 	max_w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_BIOMATTER = 5)
+	level = BELOW_PLATING_LEVEL //We can hide under tiles :D
 
 /obj/item/storage/pouch/small_generic/purple
 	icon_state = "small_generic_p"
@@ -65,6 +66,7 @@
 	max_storage_space = DEFAULT_SMALL_STORAGE
 	max_w_class = ITEM_SIZE_NORMAL
 	price_tag = 400
+	level = BELOW_PLATING_LEVEL //As we can
 
 /obj/item/storage/pouch/medium_generic/leather
 	icon_state = "medium_leather"
@@ -251,7 +253,8 @@
 		/obj/item/tank/emergency_oxygen,
 		/obj/item/tank/emergency_nitgen,
 		/obj/item/gun/projectile/boltgun/flare_gun,
-		/obj/item/ammo_casing/flare
+		/obj/item/ammo_casing/flare,
+		/obj/item/ammo_casing/shotgun
 		)
 
 /obj/item/storage/pouch/tubular/vial
@@ -306,7 +309,6 @@
 	can_hold = list(
 		/obj/item/gun/projectile/clarissa,
 		/obj/item/gun/projectile/colt,
-		/obj/item/gun/projectile/firefly,
 		/obj/item/gun/projectile/basilisk,
 		/obj/item/gun/projectile/giskard,
 		/obj/item/gun/projectile/gyropistol,
@@ -316,6 +318,10 @@
 		/obj/item/gun/projectile/revolver/lemant,
 		/obj/item/gun/projectile/olivaw,
 		/obj/item/gun/projectile/silenced,
+		/obj/item/gun/projectile/ladon,
+		/obj/item/gun/projectile/glock,
+		/obj/item/gun/energy/glock,
+		/obj/item/gun/energy/ionpistol,
 		/obj/item/gun/energy/gun,
 		/obj/item/gun/energy/chameleon,
 		//obj/item/gun/energy/captain, //too unwieldy, use belt/suit slot or other storage
@@ -355,7 +361,7 @@
 		/obj/item/tank/emergency_oxygen,
 		/obj/item/tank/emergency_nitgen,
 		/obj/item/device/lighting/toggleable/flashlight,
-		/obj/item/reagent_containers/food/snacks/tastybread,
+		/obj/item/reagent_containers/food/snacks/openable/tastybread,
 		/obj/item/reagent_containers/food/snacks/baguette,
 		/obj/item/reagent_containers/glass/bottle,
 		/obj/item/reagent_containers/food/drinks/cans,

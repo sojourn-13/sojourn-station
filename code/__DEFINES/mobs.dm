@@ -19,6 +19,7 @@
 
 // Grab levels.
 #define GRAB_PASSIVE    1
+#define GRAB_SECURING 1.5
 #define GRAB_AGGRESSIVE 2
 #define GRAB_NECK       3
 #define GRAB_UPGRADING  4
@@ -53,6 +54,12 @@
 #define I_DISARM	"disarm"
 #define I_GRAB		"grab"
 #define I_HURT		"harm"
+
+//Used in mob/proc/get_input
+
+#define MOB_INPUT_TEXT "text"
+#define MOB_INPUT_MESSAGE "message"
+#define MOB_INPUT_NUM "num"
 
 //These are used Bump() code for living mobs, in the mob_bump_flag, mob_swap_flags, and mob_push_flags vars to determine whom can bump/swap with whom.
 #define HUMAN 1

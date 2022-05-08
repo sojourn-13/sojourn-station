@@ -33,19 +33,29 @@
 	return safepick(nearestObjectsInList(filteredTargets, src, acceptableTargetDistance))
 
 /mob/living/carbon/superior_animal/proc/attemptAttackOnTarget()
-	if (!Adjacent(target_mob))
+	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if(isnull(targetted_mob))
 		return
 
-	return UnarmedAttack(target_mob,1)
+	if (!Adjacent(targetted_mob))
+		return
+
+	return UnarmedAttack(targetted_mob,1)
 
 /mob/living/carbon/superior_animal/proc/prepareAttackOnTarget()
+	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if (isnull(targetted_mob))
+		return
+
 	stop_automated_movement = 1
 
-	if (!target_mob || !isValidAttackTarget(target_mob))
+	if (!(targetted_mob) || !isValidAttackTarget(targetted_mob))
 		loseTarget()
 		return
 
-	if ((get_dist(src, target_mob) >= viewRange) || src.z != target_mob.z && !istype(target_mob, /obj/mecha))
+	if ((get_dist(src, targetted_mob) >= viewRange) || src.z != targetted_mob.z && !istype(targetted_mob, /obj/mecha))
 		loseTarget()
 		return
 
@@ -58,6 +68,7 @@
 	stance = HOSTILE_STANCE_IDLE
 
 /mob/living/carbon/superior_animal/proc/isValidAttackTarget(var/atom/O)
+
 	if (isliving(O))
 		var/mob/living/L = O
 		if((L.stat != CONSCIOUS) || (L.health <= (ishuman(L) ? HEALTH_THRESHOLD_CRIT : 0)) || (!attack_same && (L.faction == src.faction)) || (L in friends))
@@ -69,6 +80,9 @@
 	if (istype(O, /obj/mecha))
 		var/obj/mecha/M = O
 		return isValidAttackTarget(M.occupant)
+
+	if (istype(O, /obj/machinery/mining/drill))
+		return isValidAttackTarget(O)
 
 /mob/living/carbon/superior_animal/proc/destroySurroundings() //todo: make this better - Trilby
 /*
@@ -145,29 +159,35 @@
 				if(obstacle.density == TRUE)
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
+
+			for(var/obj/structure/plasticflaps/obstacle in get_step(src,dir)) //Weak plastic will not bar us
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
+
 			for(var/obj/structure/shield_deployed/obstacle in get_step(src,dir))
 				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 				return
 
-/mob/living/carbon/superior_animal/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
+/mob/living/carbon/superior_animal/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/living/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	..()
-	if(obey_friends) // Are we only obeying friends?
-		if(speaker in friends) // Is the one talking a friend?
-			if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following && !anchored) // Is he telling us to follow?
-				following = speaker
-				visible_emote("[follow_message]")
-
-			if(findtext(message, "Stop") && findtext(message, "[src.name]") && following) // Else, is he telling us to stop?
-				following = null
-				visible_emote("[stop_message]")
-	else // We are obeying everyone
+	if(obey_check(speaker)) // Are we only obeying the one talking?
 		if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following && !anchored) // Is he telling us to follow?
 			following = speaker
 			visible_emote("[follow_message]")
-
 		if(findtext(message, "Stop") && findtext(message, "[src.name]") && following) // Else, is he telling us to stop?
 			following = null
 			visible_emote("[stop_message]")
+
+// Check if we obey the person talking.
+/mob/living/carbon/superior_animal/proc/obey_check(var/mob/living/speaker = null)
+	if(!obey_friends) // Are we following anyone who ask?
+		return TRUE // We obey them
+
+	if(speaker in friends) // Is the one talking a friend?
+		return TRUE
+
+	return FALSE
 
 //Putting this here do to no idea were it would fit other then here
 /mob/living/carbon/superior_animal/verb/toggle_AI()

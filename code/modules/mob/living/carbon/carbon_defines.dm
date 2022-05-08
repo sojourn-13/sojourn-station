@@ -5,7 +5,6 @@
 	var/species_aan = ""
 	var/species_color_key = "#000000"
 	var/species_name = "Carbon Lifeform"
-	var/list/stomach_contents = list()
 	var/list/datum/disease2/disease/virus2 = list()
 	var/list/antibodies = list()
 

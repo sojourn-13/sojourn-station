@@ -12,10 +12,6 @@
 "d" = (
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
-"e" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
 "f" = (
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/wall/untinted/onestar_reinforced,
@@ -77,11 +73,11 @@ a
 (2,1,1) = {"
 a
 c
-e
+d
 h
 h
 h
-e
+d
 x
 a
 "}
@@ -191,7 +187,7 @@ c
 j
 h
 h
-e
+d
 n
 a
 "}

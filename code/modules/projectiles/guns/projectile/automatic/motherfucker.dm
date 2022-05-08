@@ -27,6 +27,8 @@
 		)
 	var/recentpumpmsg = 0
 	var/pumped = FALSE
+	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/projectile/automatic/motherfucker/attack_self(mob/living/user)
 	if(world.time >= recentpumpmsg + 10)

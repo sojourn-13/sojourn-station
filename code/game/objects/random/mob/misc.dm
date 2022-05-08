@@ -14,20 +14,20 @@
 	spawn_nothing_percentage = 90
 
 //Genetic Ambusher
-
+/*
 /obj/random/mob/ambusher
 	name = "random ambusher"
 	icon_state = "hostilemob-brown-low"
 	alpha = 128
 
 /obj/random/mob/ambusher/item_to_spawn()
-	return pickweight(list(/mob/living/simple_animal/hostile/shadow))
+	return pickweight(list(/mob/living/carbon/superior_animal/shadow))
 
 /obj/random/mob/ambusher/low_chance
 	name = "low chance ambusher"
 	icon_state = "hostilemob-brown-low"
-	spawn_nothing_percentage = 99 // These things should not be escaping from science often.
-
+	spawn_nothing_percentage = 95 // These things should not be escaping from science often.
+*/
 //Carps
 
 /obj/random/mob/carp
@@ -201,7 +201,7 @@
 	icon_state = "hostilemob-brown"
 	alpha = 128
 
-/obj/random/cluster/xenomorphs/screache_removed/item_to_spawn()
+/obj/random/cluster/xenomorphs/screacher_removed_and_megafuna/item_to_spawn()
 	return pickweight(list(/mob/living/carbon/superior_animal/xenomorph = 9,
 				//trash
 				/mob/living/carbon/superior_animal/xenomorph/sentinel = 8,
@@ -212,7 +212,6 @@
 				//robust
 				/mob/living/carbon/superior_animal/xenomorph/warrior = 6,
 				/mob/living/carbon/superior_animal/xenomorph/defender = 6,
-				/mob/living/carbon/superior_animal/xenomorph/warrior/shrike = 6,
 				/mob/living/carbon/superior_animal/xenomorph/warrior/bull = 6,
 				/mob/living/carbon/superior_animal/xenomorph/spitter/boiler = 6,
 				//impressive
@@ -340,8 +339,9 @@
 	alpha = 128
 
 /obj/random/mob/undergroundmob/item_to_spawn()
-	return pickweight(list(/mob/living/simple_animal/hostile/wurm = 20,
-		/mob/living/simple_animal/hostile/wurm/adult = 10,
+	return pickweight(list(/mob/living/carbon/superior_animal/wurm = 20,
+		/mob/living/carbon/superior_animal/wurm/silver = 15,
+		/mob/living/carbon/superior_animal/wurm/osmium = 10,
 		/mob/living/simple_animal/hostile/sargoyle = 20,
 		/mob/living/simple_animal/hostile/helldiver = 10,
 		/obj/random/mob/nightmare = 1

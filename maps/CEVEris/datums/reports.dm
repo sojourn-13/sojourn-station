@@ -1,5 +1,5 @@
 //Report datums for use with the report editor and other programs.
-
+/* - These are eris's unused by SoJ see Maps\Nadezhda\data\reports.dm for are reports
 /datum/computer_file/report/recipient/crew_transfer
 	form_name = "CTA-AG-01"
 	title = "Crew Transfer Application"
@@ -517,3 +517,4 @@
 	add_field(/datum/report_field/signature, "Recipient of ID or PDA")
 	add_field(/datum/report_field/options/yes_no, "Approved")
 	temp_field.set_access(access_edit = access_heads)
+*/

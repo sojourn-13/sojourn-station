@@ -84,7 +84,7 @@
 		return 1
 
 
-/datum/nano_module/program/coin_miner/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/coin_miner/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	if(!ntnet_global)
 		return
 	var/datum/computer_file/program/coin_miner/PRG = program

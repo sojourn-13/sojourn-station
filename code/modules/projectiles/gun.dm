@@ -45,6 +45,10 @@
 	var/rigged = FALSE
 	var/recoil_buildup = 2 //How quickly recoil builds up
 
+	var/braced = FALSE //for gun_brace proc.
+	var/brace_penalty = FALSE//penalty if not braced.
+	var/braceable = 1 //can the gun be used for gun_brace proc, modifies recoil. If the gun has foregrip mod installed, it's not braceable. Bipod mod increases value by 1.
+
 	var/muzzle_flash = 3
 	var/dual_wielding
 	var/can_dual = FALSE // Controls whether guns can be dual-wielded (firing two at once).
@@ -67,7 +71,7 @@
 	var/init_offset = 0
 
 	var/mouthshoot = FALSE //To stop people from suiciding twice... >.>
-
+	var/scoped_offset_reduction = 3
 	var/list/gun_tags = list() //Attributes of the gun, used to see if an upgrade can be applied to this weapon.
 	/*	SILENCER HANDLING */
 	var/silenced = FALSE
@@ -95,7 +99,12 @@
 	var/pumpshotgun_sound = 'sound/weapons/shotgunpump.ogg'
 
 	var/folding_stock = FALSE //Can we fold are stock?
-	var/folded = FALSE //IS are stock folded?
+	var/folded = TRUE //IS are stock folded? - and that is yes we start folded
+	var/currently_firing = FALSE
+
+	//Gun numbers and stuf
+	var/serial_type = "INDEX" // Index will be used for detective scanners, if there is a serial type , the gun will add a number onto its final , if none , it won;'t show on examine
+	var/serial_shown = TRUE
 
 /obj/item/gun/proc/loadAmmoBestGuess()
 	return
@@ -130,6 +139,15 @@
 	var/obj/screen/item_action/action = new /obj/screen/item_action/top_bar/weapon_info
 	action.owner = src
 	hud_actions += action
+	refresh_upgrades()
+
+	if(serial_type)
+		serial_type += "-[generate_gun_serial(pick(3,4,5,6,7,8))]"
+
+/obj/item/gun/pickup()
+	..()
+	refresh_upgrades() //Run it again, just in case
+	update_icon()
 
 /obj/item/gun/Destroy()
 	for(var/i in firemodes)
@@ -142,6 +160,9 @@
 	..()
 	if(folding_stock)
 		to_chat(user, "<span class='info'>This gun can be folded by Ctrl Shift Clicking it.</span>")
+
+	if(serial_type && serial_shown)
+		to_chat(user, SPAN_WARNING("There is a serial number on this gun, it reads [serial_type]."))
 
 /obj/item/gun/proc/set_item_state(state, hands = FALSE, back = FALSE, onsuit = FALSE)
 	var/wield_state = null
@@ -287,6 +308,30 @@
 	else
 		return ..() //Pistolwhippin'
 
+/obj/item/gun/attackby(obj/item/I, mob/living/user, params)
+	//Detectable crime >:T
+	if(istype(I, /obj/item/device/bullet_scanner))
+		if(serial_type)
+			to_chat(user, "<span class='info'>Projectile Serial Caliberation: [serial_type].</span>")
+			return
+		else
+			to_chat(user, "<span class='info'>Projectile Serial Caliberation: ERROR.</span>")
+
+
+	if(!istool(I) || user.a_intent != I_HURT)
+		return FALSE
+
+	//UNDETECTABLE CRIIIIMEEEE!!!!!!!
+	if(I.get_tool_quality(QUALITY_HAMMERING) && serial_type)
+		user.visible_message(SPAN_NOTICE("[user] begins scribbling \the [name]'s gun serial number away."), SPAN_NOTICE("You begin removing the serial number from \the [name]."))
+		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_HAMMERING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			user.visible_message(SPAN_DANGER("[user] removes \the [name]'s gun serial number."), SPAN_NOTICE("You successfully remove the serial number from \the [name]."))
+			serial_type = "INDEX"
+			serial_type += "-[generate_gun_serial(pick(3,4,5,6,7,8))]"
+			serial_shown = FALSE
+			return FALSE
+
+
 /obj/item/gun/proc/dna_check(user)
 	if(dna_compare_samples)
 		dna_user_sample = usr.real_name
@@ -297,7 +342,7 @@
 /obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
 	if(!user || !target) return
 
-	if(world.time < next_fire_time)
+	if((world.time < next_fire_time) || currently_firing)
 		if (!suppress_delay_warning && world.time % 3) //to prevent spam
 			to_chat(user, SPAN_WARNING("[src] is not ready to fire again!"))
 		return
@@ -307,6 +352,8 @@
 
 	if(!special_check(user))
 		return
+
+	currently_firing = TRUE
 
 	var/shoot_time = (burst - 1)* burst_delay
 	user.setClickCooldown(shoot_time) //no clicking on things while shooting
@@ -333,6 +380,7 @@
 		if(istype(projectile, /obj/item/projectile))
 			var/obj/item/projectile/P = projectile
 			P.adjust_damages(proj_damage_adjust)
+			P.serial_type_index_bullet = serial_type
 
 		if(pointblank)
 			process_point_blank(projectile, user, target)
@@ -358,8 +406,6 @@
 			target = targloc
 			pointblank = 0
 
-
-
 	//update timing
 	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 	user.set_move_cooldown(move_delay)
@@ -380,7 +426,7 @@
 			handle_click_empty(user)
 		return FALSE
 
-		next_fire_time = world.time + fire_delay
+	currently_firing = FALSE
 
 	if(muzzle_flash)
 		set_light(0)
@@ -445,6 +491,9 @@
 					to_chat(user, "<span class='warning'>You have trouble keeping \the [src] on target with just one hand.</span>")
 				if(4 to INFINITY)
 					to_chat(user, "<span class='warning'>You struggle to keep \the [src] on target with just one hand!</span>")
+
+	if(brace_penalty && !braced)
+		to_chat(user, "<span class='warning'>You struggle to keep \the [src] on target while carrying it!</span>")
 
 	user.handle_recoil(src)
 	update_icon()
@@ -533,6 +582,25 @@
 		mouthshoot = FALSE
 		return
 
+/obj/item/gun/proc/gun_brace(mob/living/user, atom/target)
+	if(braceable && !user.is_busy)
+		var/atom/original_loc = user.loc
+		var/brace_direction = get_dir(user, target)
+		user.is_busy = TRUE
+		user.facing_dir = null
+		to_chat(user, SPAN_NOTICE("You brace your weapon on \the [target]."))
+		braced = TRUE
+		while(user.loc == original_loc && user.dir == brace_direction)
+			sleep(2)
+		to_chat(user, SPAN_NOTICE("You stop bracing your weapon."))
+		braced = FALSE
+		user.is_busy = FALSE
+	else
+		if(user.is_busy)
+			to_chat(user, SPAN_NOTICE("You are already bracing your weapon!"))
+		else
+			to_chat(user, SPAN_WARNING("You can\'t properly place your weapon on \the [target] because of the foregrip!"))
+
 /obj/item/gun/proc/toggle_scope(mob/living/user)
 	//looking through a scope limits your periphereal vision
 	//still, increase the view size by a tiny amount so that sniping isn't too restricted to NSEW
@@ -561,13 +629,17 @@
 		to_chat(user, SPAN_NOTICE("This gun can be duel-wielded effectively, if you're skilled enough."))
 
 	if(iscarbon(user) || issilicon(user))
+		if(twohanded)
+			to_chat(user, SPAN_NOTICE("This gun would need to be wielded in both hands."))
+			return
 		if(one_hand_penalty && !user.stats.getPerk(PERK_PERFECT_SHOT))
 			to_chat(user, SPAN_WARNING("This gun needs to be wielded in both hands to be used most effectively."))
-		else if((one_hand_penalty && user.stats.getPerk(PERK_PERFECT_SHOT)))
-			to_chat(user, SPAN_NOTICE("This gun would need to be wielded in both hands, if you weren't such a skilled shot."))
+			return
+		if((one_hand_penalty && user.stats.getPerk(PERK_PERFECT_SHOT)))
+			to_chat(user, SPAN_NOTICE("This gun would need to be wielded in both hands to stablize the recoil, but your skill overcomes such things."))
 
 /obj/item/gun/proc/initialize_firemodes()
-	QDEL_CLEAR_LIST(firemodes)
+	QDEL_LIST(firemodes)
 
 	for(var/i in 1 to init_firemodes.len)
 		var/list/L = init_firemodes[i]
@@ -617,6 +689,15 @@
 		sel_mode = 1
 	return set_firemode(sel_mode)
 
+/obj/item/gun/proc/switch_firemodes_reverse()
+	if(firemodes.len <= 1)
+		return null
+	update_firemode(FALSE) //Disable the old firing mode before we switch away from it
+	sel_mode--
+	if(sel_mode < 1)
+		sel_mode = firemodes.len
+	return set_firemode(sel_mode)
+
 /// Set firemode , but without a refresh_upgrades at the start
 /obj/item/gun/proc/very_unsafe_set_firemode(index)
 	if(index > firemodes.len)
@@ -632,7 +713,6 @@
 	if(index > firemodes.len)
 		index = 1
 	var/datum/firemode/new_mode = firemodes[sel_mode]
-	new_mode.apply_to(src)
 	new_mode.update()
 	update_hud_actions()
 	return new_mode
@@ -644,7 +724,9 @@
 
 	toggle_firemode(user)
 
-/obj/item/gun/proc/toggle_firemode(mob/living/user)
+/obj/item/gun/proc/toggle_firemode(mob/living/user, forward = TRUE)
+	if(currently_firing) // CHEATERS!
+		return
 	var/datum/firemode/new_mode = switch_firemodes()
 	if(new_mode)
 		playsound(src.loc, 'sound/weapons/guns/interact/selector.ogg', 100, 1)
@@ -712,28 +794,17 @@
 	return 0
 
 /obj/item/gun/proc/fold(user, span_chat)
-//Were going to do some insainly dumb things to not doup or brake anything with storage or gun mods, well being modular
 	if(folding_stock)
 		if(!folded)
-			refresh_upgrades() //First we grab are upgrades to not do anything silly
 			if(span_chat)
 				to_chat(usr, SPAN_NOTICE("You unfold the stock on \the [src]."))
-			extra_bulk += 6 //Simular to 6 plates, your getting a lot out of this tho
-			//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
-			recoil_buildup *= 0.5 //50% less recoil
-			one_hand_penalty *= 0.5 //50% less recoil
-			damage_multiplier += 0.1 //10% more damage
-			proj_step_multiplier  -= 0.4 //40% more sped on the bullet
-			penetration_multiplier += 0.2 //Makes the gun have more AP when shooting
-			extra_damage_mult_scoped += 0.2 //Gives 20% more damage when its scoped. Makes folding stock snipers more viable
 			folded = TRUE
 		else
-			refresh_upgrades() //First we grab are upgrades to not do anything silly
 			if(span_chat)
 				to_chat(usr, SPAN_NOTICE("You fold the stock on \the [src]."))
 			folded = FALSE
-
-		update_icon() //Likely has alt icons for being folded or not so we refresh are icon
+	refresh_upgrades() //First we grab are upgrades to not do anything silly
+	update_icon() //Likely has alt icons for being folded or not so we refresh are icon
 
 //Updating firing modes at appropriate times
 /obj/item/gun/pickup(mob/user)
@@ -882,25 +953,32 @@
 	for (var/prefix in prefixes)
 		name = "[prefix] [name]"
 
+	if(folding_stock)// TODO: make this somehow modular - (it prob will be a massive line if var/stock_name_of_change
+		if(!folded) //Exstended! This means are stock is out
+			extra_bulk += 6 //Simular to 6 plates, your getting a lot out of this tho
+			//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
+			recoil_buildup *= 0.5 //50% less recoil
+			one_hand_penalty *= 0.5 //50% less recoil
+			damage_multiplier += 0.1 //10% more damage
+			proj_step_multiplier  -= 0.4 //40% more sped on the bullet
+			penetration_multiplier += 0.2 //Makes the gun have more AP when shooting
+			extra_damage_mult_scoped += 0.2 //Gives 20% more damage when its scoped. Makes folding stock snipers more viable
+
+
 	update_icon()
 	//then update any UIs with the new stats
 	SSnano.update_uis(src)
 
 /obj/item/gun/zoom(tileoffset, viewsize)
 	..()
-	if(!ishuman(usr))
-		return
-	var/mob/living/carbon/human/H = usr
 	if(zoom)
-		H.using_scope = src
+		refresh_upgrades() //Lets not allow some silly stacking exploits
+		init_offset -= scoped_offset_reduction
 		damage_multiplier += extra_damage_mult_scoped
 	else
-		H.using_scope = null
 		refresh_upgrades()
-		if(folding_stock)
-			fold(span_chat = FALSE) //If we have a stock lets not remove all are boons cuz we looked down a scope
 
-/* //Eris has this but it, unsurpriingly, has issues, just gonna comment it out for now incase I use the code for something else later.
+/* //Eris has this but it, unsurpringly, has issues, just gonna comment it out for now incase I use the code for something else later.
 /obj/item/gun/proc/generate_guntags()
 	if(!zoom_factor && !(slot_flags & SLOT_HOLSTER))
 		gun_tags |= GUN_SCOPE

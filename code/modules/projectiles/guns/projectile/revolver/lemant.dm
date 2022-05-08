@@ -6,6 +6,7 @@
 	icon_state = "lemant"
 	item_state = "lemant"
 	caliber = CAL_MAGNUM
+	load_method = SINGLE_CASING
 	drawChargeMeter = FALSE
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	max_shells = 9
@@ -20,8 +21,10 @@
 		SEMI_AUTO_NODELAY,
 		list(mode_name="fire 20mm shell", mode_desc="Shoot the underbarrel shotgun shell",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
+	serial_type = "Absolute"
 
 	var/obj/item/gun/projectile/underslung_shotgun/shotgun
+	var/reload_delay = 5 // Delay between bullets when reloading from a box.
 
 /obj/item/gun/projectile/revolver/lemant/claw
 	name = "\"Pilgrim Claw\" magnum revolver"
@@ -31,9 +34,38 @@
 	icon = 'icons/obj/guns/projectile/lemant_claw.dmi'
 	icon_state = "lemant_claw"
 	item_state = "lemant_claw"
-	force = WEAPON_FORCE_PAINFUL // Up from 10, essentially a knife by harder to mod. -Kaz
+	force = WEAPON_FORCE_PAINFUL // Up from 10, essentially a knife but harder to mod. -Kaz
 	recoil_buildup = 3 //Addded weight, better control. -Kaz
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_BAYONET)
+	price_tag = 475 // Still an upgrade.
+
+/obj/item/gun/projectile/revolver/lemant/belt
+	name = "\"Pilgrim Devout\" magnum revolver"
+	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds seventeen .40 rounds and one single action underslung 20mm shell. \
+	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstaking to reload since it requires removing each spent shell individually. \
+	This model is a conversion by the Artificer Guild, known as the pilgrim devout, it uses a belt fed rotation instead of a cylinder, increasing the number of shots before needing to reload. \
+	Reloading still takes ages, even with speed loaders."
+	icon = 'icons/obj/guns/projectile/lemant_way.dmi'
+	icon_state = "lemant_way"
+	item_state = "lemant_way"
+	max_shells = 17
+	price_tag = 550
+	recoil_buildup = 3 // Exceptional weight helps with recoil control, but unwieldy enough to merely match the claw. -Kaz
+
+/obj/item/gun/projectile/revolver/lemant/uppercut
+	name = "\"Pilgrim Hero\" kurtz revolver"
+	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds six .50 kurtz rounds and one single action underslung 20mm shell. \
+	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstaking to reload since it requires removing each spent shell individually. \
+	This model is a conversion, known as the pilgrim hero, its caliber is converted to .50 kurtz but it loses ammo capacity due to the larger shells and lacks the \
+	physical weight to give it better recoil control compared to other revolvers in its weight class. Underslung still works at least."
+	icon = 'icons/obj/guns/projectile/lemant_hero.dmi'
+	icon_state = "lemant_hero"
+	item_state = "lemant_hero"
+	caliber = CAL_50
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
+	max_shells = 6
+	price_tag = 500
+	recoil_buildup = 14 // Massive recoil due to being a kurtz revolver without the weight to compensate for the blast. -Kaz
 
 //Defined here, may be used elsewhere but for now its only used here. -Kaz
 /obj/item/gun/projectile/underslung_shotgun
@@ -71,6 +103,38 @@
 	else
 		..()
 
+/obj/item/gun/projectile/revolver/lemant/load_ammo(var/obj/item/A, mob/user)
+	if(istype(A, /obj/item/ammo_magazine))
+		var/obj/item/ammo_magazine/AM = A
+		var/count = 0
+		if(AM.reload_delay)
+			to_chat(user, SPAN_NOTICE("It takes some time to reload [src] with [AM]..."))
+
+		if(do_after(user, AM.reload_delay, user)) // Initial delay before the loading start
+			loading_gun:
+				while(do_after(user, reload_delay, user))
+					for(var/obj/item/ammo_casing/C in AM.stored_ammo)
+						if(loaded.len >= max_shells) // The gun is full or the box is empty
+							break loading_gun // Stop loading at all
+						if(C.caliber == caliber)
+							C.forceMove(src)
+							loaded += C
+							AM.stored_ammo -= C //should probably go inside an ammo_magazine proc, but I guess less proc calls this way...
+							count++
+							AM.update_icon()
+							break
+
+					if(AM.stored_ammo.len <= 0) // The packet is out of bullets
+						break loading_gun // Stop loading at all
+
+		if(count)
+			user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
+			if(reload_sound) playsound(src.loc, reload_sound, 75, 1)
+			cock_gun(user)
+			update_firemode()
+	else
+		..()
+
 /obj/item/gun/projectile/revolver/lemant/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
 	var/datum/firemode/cur_mode = firemodes[sel_mode]
 
@@ -100,7 +164,7 @@
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	max_shells = 9
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
-	price_tag = 450
+	price_tag = 700
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.1
 	recoil_buildup = 4
@@ -110,6 +174,7 @@
 		SEMI_AUTO_NODELAY,
 		list(mode_name="fire grenades", mode_desc="Shoot the underbarrel grenade shell",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
+	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/revolver/deacon/Initialize()
 	. = ..()

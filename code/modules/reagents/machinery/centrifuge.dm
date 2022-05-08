@@ -33,7 +33,7 @@
 
 /obj/machinery/centrifuge/Destroy()
 	QDEL_NULL(mainBeaker)
-	QDEL_NULL_LIST(separationBeakers)
+	QDEL_LIST(separationBeakers)
 	return ..()
 
 /obj/machinery/centrifuge/update_icon()
@@ -133,9 +133,9 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/centrifuge/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/centrifuge/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
@@ -252,7 +252,7 @@
 
 /obj/item/device/makeshift_centrifuge/Destroy()
 	QDEL_NULL(mainBeaker)
-	QDEL_NULL_LIST(separationBeakers)
+	QDEL_LIST(separationBeakers)
 	return ..()
 
 /obj/item/device/makeshift_centrifuge/attack_self(mob/user)
@@ -310,9 +310,9 @@
 	if(loc != user && ..())
 		return TRUE
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/item/device/makeshift_centrifuge/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/item/device/makeshift_centrifuge/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found

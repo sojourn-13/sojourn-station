@@ -109,7 +109,7 @@
 
 /obj/item/storage/box/vendor_lootbox/medicine_basic/populate_contents()
 	if(prob(10)) //Lucky!
-		new /obj/item/storage/firstaid/adv(src)
+		new /obj/item/storage/firstaid/regular(src)
 		new /obj/item/storage/firstaid/fire(src)
 		new /obj/item/storage/firstaid/toxin(src)
 		new /obj/item/storage/firstaid/o2(src)
@@ -132,7 +132,7 @@
 
 /obj/item/storage/box/vendor_lootbox/medicine_moderate/populate_contents()
 	if(prob(10)) //Lucky!
-		new /obj/item/storage/firstaid/adv(src)
+		new /obj/item/storage/firstaid/regular(src)
 		new /obj/item/storage/firstaid/fire(src)
 		new /obj/item/storage/firstaid/toxin(src)
 		new /obj/item/storage/firstaid/o2(src)
@@ -155,7 +155,7 @@
 
 /obj/item/storage/box/vendor_lootbox/medicine_high/populate_contents()
 	if(prob(10)) //Lucky!
-		new /obj/item/storage/firstaid/adv(src)
+		new /obj/item/storage/firstaid/regular(src)
 		new /obj/item/storage/firstaid/fire(src)
 		new /obj/item/storage/firstaid/toxin(src)
 		new /obj/item/storage/firstaid/o2(src)
@@ -206,4 +206,3 @@
 		new /obj/random/common_oddities/always_spawn(src)
 		new /obj/random/common_oddities/always_spawn(src)
 		new /obj/random/common_oddities/always_spawn(src)
-

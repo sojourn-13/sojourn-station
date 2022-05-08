@@ -54,6 +54,9 @@
 
 					switch(to_remove)
 						if("cell")
+							if(cell && !removable_cell)
+								to_chat(user, "[src]'s power cell cannot be removed")
+								return TRUE
 							if(cell)
 								to_chat(user, "You detatch \the [cell] from \the [src]'s battery mount.")
 								for(var/obj/item/rig_module/module in installed_modules)

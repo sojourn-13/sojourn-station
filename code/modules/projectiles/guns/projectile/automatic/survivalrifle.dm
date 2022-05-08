@@ -9,7 +9,7 @@
 	ammo_type =  /obj/item/ammo_casing/c10x24
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
 	price_tag = 1250
@@ -24,6 +24,7 @@
 	zoom_factor = 0.6
 	recoil_buildup = 12
 	one_hand_penalty = 20 //automatic rifle level
+	serial_type = "Hunt Inc"
 
 	gun_tags = list(GUN_PROJECTILE, GUN_SIGHT, GUN_MAGWELL)
 

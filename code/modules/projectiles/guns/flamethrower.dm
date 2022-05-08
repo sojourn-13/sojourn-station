@@ -11,6 +11,8 @@
 	var/use_amount = 10 // How much fuel is used per shot
 	var/fuel_type = "fuel" // What kind of chem do we use?
 	var/obj/item/weldpack/canister/fuel_can = null // The canister the gun use for ammo
+	serial_type = "XSyndi"
+	fire_sound = 'sound/weapons/flamethrower_fire.ogg'
 
 /obj/item/gun/flamethrower/Initialize()
 	..()

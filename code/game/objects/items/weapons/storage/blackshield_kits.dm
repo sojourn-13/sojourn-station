@@ -28,10 +28,11 @@
 // Primary Weapon Kits
 /obj/item/storage/box/bs_kit/mosin
 	name = "\improper Mosin Primary Kit"
-	desc = "The standard Blackshield equipment kit containing a mosin bolt action rifle. The most powerful weapon any trooper can get from their kit vendor, but often neglected given its age and style."
+	desc = "The standard Blackshield equipment kit containing a mosin bolt action rifle and a basic scope. The most powerful weapon any trooper can get from their kit vendor, but often neglected given its age and style."
 
 	populate_contents()
 		new /obj/item/gun/projectile/boltgun(src)
+		new /obj/item/gun_upgrade/scope/acog(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
@@ -52,6 +53,20 @@
 		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
 		new /obj/item/storage/pouch/ammo(src)
 
+/obj/item/storage/box/bs_kit/duty
+	name = "\improper Duty Primary Kit"
+	desc = "The standard Blackshield equipment kit containing a Duty heavy carbine, a locally made rifle with a sharp knife at the end, good for just about any trooper. Can even be speed loaded to quickly reload the mag inside."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/duty(src)
+		new /obj/item/ammo_magazine/light_rifle_257_short(src)
+		new /obj/item/ammo_magazine/light_rifle_257_short(src)
+		new /obj/item/ammo_magazine/light_rifle_257_short(src)
+		new /obj/item/ammo_magazine/light_rifle_257_short(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/storage/pouch/ammo(src)
+
+
 /obj/item/storage/box/bs_kit/sts
 	name = "\improper STS Primary Kit"
 	desc = "The standard Blackshield equipment kit containing an STS carbine, a powerful and all round deadly rifle that performs well in any circumstance."
@@ -65,9 +80,24 @@
 		new /obj/item/ammo_magazine/light_rifle_257_short(src)
 		new /obj/item/storage/pouch/ammo(src)
 
+/obj/item/storage/box/bs_kit/watchtower
+	name = "\improper DMR watchtower Kit"
+	desc = "The standard Blackshield equipment kit containing an Watchtower DMR, a longer range rifle simular to the Strelki but with much better recoil controle at the cost of penitration power and scope range."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/nordwind/watchtower(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/storage/pouch/ammo(src)
+
+//Sargents
+
 /obj/item/storage/box/bs_kit/sts_para
-	name = "\improper STS Primary Kit"
-	desc = "The standard Blackshield equipment kit containing an STS carbine, a powerful and all round deadly rifle that performs well in any circumstance."
+	name = "\improper STS Para Primary Kit"
+	desc = "The standard Blackshield equipment kit containing an STS Para rifle, a powerful and all round deadly rifle that performs well in any circumstance."
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/sts/rifle/blackshield(src)
@@ -77,6 +107,7 @@
 		new /obj/item/ammo_magazine/rifle_75_short(src)
 		new /obj/item/ammo_magazine/rifle_75_short(src)
 		new /obj/item/storage/pouch/ammo(src)
+
 
 /obj/item/storage/box/bs_kit/rds_omnicarbine
 	name = "\improper Warthog Omni Primary Kit"
@@ -117,6 +148,32 @@
 		new /obj/item/ammo_magazine/smg_35(src)
 		new /obj/item/storage/pouch/ammo(src)
 
+/obj/item/storage/box/bs_kit/triage
+	name = "\improper Triage Kit"
+	desc = "A box containing a standard issue Triage Smg issued uniquely to corpsmen. Boasting a compact frame, low rate of fire but decent stopping power to deal with armored threats."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/triage(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
+
+/obj/item/storage/box/bs_kit/buckler
+	name = "\improper Buckler Gun Primary Kit"
+	desc = "The standard Blackshield equipment kit containing a buckler smg, a choice for speed with its rather high rate of fire and good recoil controle comes with a folding stock."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/buckler(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/storage/pouch/ammo(src)
+
+
 /obj/item/storage/box/bs_kit/grizzly
 	name = "\improper Grizzly Primary Kit"
 	desc = "The standard Blackshield equipment kit containing a grizzly shotgun. While outshone by most other shotguns, standard slug and buckshot are a powerful choice even in this. \
@@ -124,6 +181,19 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/shotgun/pump(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/storage/pouch/ammo(src)
+
+/obj/item/storage/box/bs_kit/rushing_bull
+	name = "\improper Rushing Bull Primary Kit"
+	desc = "The standard Blackshield equipment kit containing a tactical shotgun. While a higher powered weapon by most other issued geared, standard slug are a powerful choice even in this."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/bull_autoshotgun(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
@@ -191,6 +261,16 @@
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
 
+/obj/item/storage/box/bs_kit/makarov
+	name = "\improper Makarov Secondary Kit"
+	desc = "The standard Blackshield equipment kit containing a standard makarov. Its power comes form its size making a good holdout pistol or able to be placed in almost any storage container making it deal for a overloaded trooper."
+
+	populate_contents()
+		new /obj/item/gun/projectile/clarissa/makarov(src)
+		new /obj/item/ammo_magazine/highcap_pistol_35(src) //Highcaps
+		new /obj/item/ammo_magazine/highcap_pistol_35(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
+
 /obj/item/storage/box/bs_kit/martin
 	name = "\improper Martin Secondary Kit"
 	desc = "A kit designed for energy-based weaponry containing a martin. A largely terrible choice for a member of blackshield but the only option with a non-lethal variant."
@@ -219,7 +299,7 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/platecarrier/militia(src)
-		new /obj/item/clothing/head/helmet/ballistic/militia(src)
+		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
 
 /obj/item/storage/box/bs_kit/flak_armor
 	name = "\improper Flak Armor Kit"
@@ -227,25 +307,25 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/flackvest/militia(src)
-		new /obj/item/clothing/head/helmet/ballistic/militia(src)
+		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
 
 /obj/item/storage/box/bs_kit/bullet_armor
 	name = "\improper Bullet Armor Kit"
-	desc = "An armor kit containing a kevlar reinforced vest and ballistic helmet."
+	desc = "An armor kit containing a kevlar reinforced suit and ballistic helmet."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/bulletproof(src)
-		new /obj/item/clothing/head/helmet/ballistic/militia(src)
+		new /obj/item/clothing/suit/armor/bulletproof/ironhammer/militia(src)
+		new /obj/item/clothing/head/helmet/ballistic/bulletproof/militia(src)
+		new /obj/item/clothing/gloves/thick/swat/militia(src)
 
 /obj/item/storage/box/bs_kit/laser_armor
 	name = "\improper Ablative Armor Kit"
 	desc = "An armor kit containing an ablative full body suit designed to counter laser weaponry."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/vest/ablative(src)
-		new /obj/item/clothing/head/helmet/laserproof(src)
-		new /obj/item/clothing/gloves/thick/ablasive(src)
-		new /obj/item/clothing/shoes/ablasive(src)
+		new /obj/item/clothing/suit/armor/vest/ablative/militia(src)
+		new /obj/item/clothing/head/helmet/laserproof/militia(src)
+		new /obj/item/clothing/gloves/thick/ablasive/militia(src)
 
 /obj/item/storage/box/bs_kit/standard_armor_corpsman
 	name = "\improper Standard Corpsman Armor Kit"
@@ -253,4 +333,4 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/platecarrier/corpsman(src)
-		new /obj/item/clothing/head/helmet/ballistic/militia(src)
+		new /obj/item/clothing/head/helmet/ballistic/shieldfull/corpsman(src)

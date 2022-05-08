@@ -43,7 +43,7 @@
 	melee_damage_upper = 15
 	can_burrow = FALSE
 	acceptableTargetDistance = 5
-	flash_resistances = 50 //No eyes.
+	flash_resistances = 100 //No eyes.
 
 	breath_required_type = 0 // Doesn't need to breath, in a space suit
 	breath_poison_type = 0 // Can't be poisoned
@@ -138,7 +138,7 @@
 
 				M.put_in_active_hand(G)
 				G.synch()
-				LAssailant = M
+				LAssailant_weakref = WEAKREF(M)
 
 				M.do_attack_animation(src)
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)

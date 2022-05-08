@@ -5,7 +5,7 @@
 /datum/reagent/medicine/inaprovaline
 	name = "Inaprovaline"
 	id = "inaprovaline"
-	description = "Inaprovaline is a synaptic stimulant and cardiostimulant. Commonly used to stabilize patients."
+	description = "Inaprovaline is a weak yet broad synaptic stimulant and cardiostimulant. Commonly used to stabilize patients in critical condition."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#00BFFF"
@@ -17,10 +17,13 @@
 	id = "holyinaprovaline"
 	scannable = 0
 
-/datum/reagent/medicine/inaprovaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_STABLE)
-	M.add_chemical_effect(CE_PAINKILLER, 25 * effect_multiplier, TRUE)
+/datum/reagent/medicine/inaprovaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier) // No more useless chem of leftover baycode with no inference on health due to pulse not affecting anything. - Seb
 	M.add_chemical_effect(CE_PULSE, 1)
+	M.add_chemical_effect(CE_STABLE) // Keeping these useless effects for the sake of RP.
+	M.add_chemical_effect(CE_PAINKILLER, 25 * effect_multiplier, TRUE)
+	M.adjustOxyLoss(-0.5 * effect_multiplier) // Should help stall for time against oxyloss killing you to heavy bloodloss or lung/heart damage until your eventual rescue, but won't heal it outright.
+	M.add_chemical_effect(CE_OXYGENATED, 1)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.1) // Emergency stop bleeding, still lowest tier
 
 /datum/reagent/medicine/bicaridine
 	name = "Bicaridine"
@@ -128,8 +131,9 @@
 	M.adjustToxLoss(-((0.2 + (M.getToxLoss() * 0.05)) * effect_multiplier))
 	M.add_chemical_effect(CE_ANTITOX, 1)
 	holder.remove_reagent("pararein", 0.8 * effect_multiplier)
-	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Gonna be good for fish recipes
+	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Fish recipes no longer contain carpotoxin, but good in cases of poisoning.
 	holder.remove_reagent("toxin", 0.4 * effect_multiplier)
+	holder.remove_reagent("blattedin", 0.4 * effect_multiplier) // Massive complains about its slow metabolization rate + poisoning actually working, plus dylo originally purged it, so I'm bringing it back. - Seb
 
 /datum/reagent/medicine/carthatoline
 	name = "Carthatoline"
@@ -150,11 +154,12 @@
 			if(L.damage > 0)
 				L.damage = max(L.damage - 2 * removed, 0)
 	holder.remove_reagent("pararein", 0.8 * effect_multiplier)
-	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Gonna be good for fish recipes
+	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Gonna be good for fish recipes // Copypasting even my commentary? tsk tsk - Seb
 	holder.remove_reagent("toxin", 0.4 * effect_multiplier)
 	holder.remove_reagent("stoxin", 0.4 * effect_multiplier)     //Fuck mobs and injectables
 	holder.remove_reagent("zombiepowder", 0.4 * effect_multiplier)
 	holder.remove_reagent("xenotoxin", 0.4 * effect_multiplier)
+	holder.remove_reagent("blattedin", 0.8 * effect_multiplier) // Consistency with Dylovene, making it a straight upgrade worth mixing.
 
 /datum/reagent/medicine/cordradaxon
 	name = "Cordradaxon"
@@ -200,13 +205,6 @@
 	color = "#0040FF"
 	overdose = REAGENTS_OVERDOSE * 0.5
 	scannable = 1
-
-/datum/reagent/medicine/dexalinp/holy
-	name = "Helaxin Negative"
-	description = "A chemical of unknown origin capable of treating oxygen deprivation and repairing muscles, highly effective but difficult to detect."
-	id = "holydexalinp"
-	scannable = 0
-	appear_in_default_catalog = FALSE
 
 /datum/reagent/medicine/dexalinp/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
 	M.adjustOxyLoss(-30 * effect_multiplier)
@@ -376,7 +374,7 @@
 	if(prob(5 - (2 * M.stats.getMult(STAT_TGH))))
 		M.Stun(5)
 
-/* Cruciform litany related painkillers */
+/* Church related chemicals */
 /datum/reagent/medicine/nepenthe  //Monomial super-painkiller
 	name = "Nepenthe"
 	id = "nepenthe"
@@ -387,6 +385,7 @@
 	overdose = 0
 	scannable = 0
 	metabolism = 0.2
+	appear_in_default_catalog = FALSE
 	nerve_system_accumulations = 0
 
 /datum/reagent/medicine/nepenthe/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
@@ -403,6 +402,7 @@
 	scannable = 0
 	metabolism = 0.2
 	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
 
 /datum/reagent/medicine/anodyne/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 90) // Tweaking the numbers here so that they are closer to what litanies used to do, this one is a flat -10 loss to what it used to be...
@@ -418,9 +418,41 @@
 	scannable = 0
 	metabolism = 0.5
 	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
 
 /datum/reagent/medicine/laudanum/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 40) // ...yet this one is a buff, making it an acceptably low painkiller range while keeping a 50 difference between tiers like Tram-to-Para ratio - Seb
+
+/datum/reagent/medicine/dexalinp/holy
+	name = "Helaxin Negative"
+	description = "A chemical of unknown origin capable of treating oxygen deprivation and repairing muscles, highly effective but difficult to detect."
+	id = "holydexalinp"
+	scannable = 0
+	appear_in_default_catalog = FALSE
+	overdose = 0
+
+/datum/reagent/medicine/cindpetamol/holy
+	name = "Alignitol"
+	id = "alignitol"
+	description = "A chemical of unknown origin that purges toxins and addictions from the body, making it highly effective at aiding others, but has the side effect of putting users unconcious."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#FF3300"
+	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
+	constant_metabolism = TRUE
+	scannable = 0
+	overdose = 0
+
+/datum/reagent/medicine/spaceacillin/holy
+	name = "Holycilin"
+	id = "holycilin"
+	description = "A chemical of unknown origin, believed to be derived from cahors and spaceacillin that functions identical to the latter."
+	taste_description = "sweetness"
+	appear_in_default_catalog = FALSE
+	constant_metabolism = TRUE
+	scannable = 0
+	overdose = 0
 
 /* Other medicine */
 
@@ -733,7 +765,7 @@
 	taste_description = "sickness"
 	reagent_state = SOLID
 	color = "#669900"
-	overdose = REAGENTS_OVERDOSE
+	overdose = REAGENTS_OVERDOSE * 0.4 // Should OD at 12 units, you still shouldn't ever use more than 2u at a time anyways. - Seb
 	scannable = 1
 
 /datum/reagent/medicine/rezadone/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
@@ -782,29 +814,18 @@
 /datum/reagent/medicine/ossisine
 	name = "Ossisine"
 	id = "ossisine"
-	description = "Paralyzes user and restores broken bones. Medicate in critical conditions only."
+	description = "Restores broken bones. Medicate in critical conditions only. Overdose makes cellular failure and paralyses the user."
 	taste_description = "calcium"
 	reagent_state = LIQUID
 	color = "#660679"
-	overdose = REAGENTS_OVERDOSE/2
+	overdose = 11 //Can be used in hypos and the like
 	metabolism = REM * 1.5 // Hard stun, impractical use for the situations it's used, and healing per removed unit, this was needed.
 	scannable = 1
 
 /datum/reagent/medicine/ossisine/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
-	M.paralysis = max(M.paralysis, 5)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(dose >= overdose) //Less gaming, do surgery you lazy butt. // Love you too Seb <3
-			var/list/brokenBP = list()
-			for(var/obj/item/organ/external/E in H.organs)
-				if(E.is_broken())
-					brokenBP += E
-			if(brokenBP.len)
-				var/obj/item/organ/external/E = pick(brokenBP)
-				E.mend_fracture()
-				M.pain(E.name, 60, TRUE)
-				dose = 0
 		var/obj/item/organ/internal/bone/B = H.random_organ_by_process(OP_BONE)
 		if(H && istype(H))
 			if(BP_IS_ROBOTIC(B))
@@ -814,7 +835,21 @@
 
 
 /datum/reagent/medicine/ossisine/overdose(mob/living/carbon/M, alien)
+	M.paralysis = max(M.paralysis, 5)
 	M.adjustCloneLoss(2)
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		//if(dose >= overdose) //Less gaming, do surgery you lazy butt. // Love you too Seb <3
+		var/list/brokenBP = list()
+		for(var/obj/item/organ/external/E in H.organs)
+			if(E.is_broken())
+				brokenBP += E
+		if(brokenBP.len)
+			var/obj/item/organ/external/E = pick(brokenBP)
+			E.mend_fracture()
+			M.pain(E.name, 60, TRUE)
+			dose = 0
 
 /datum/reagent/medicine/noexcutite
 	name = "Noexcutite"
@@ -1078,3 +1113,15 @@
 	description = "An all-purpose antiviral agent derived from tahca horns crushed into a blood mixed extract."
 	constant_metabolism = TRUE
 
+/datum/reagent/medicine/sterilizer
+	name = "sterilizer"
+	id = "sterilizer"
+	description = "Sterilizing solution used in making medical supplies. Don't.. drink it."
+	taste_description = "soap"
+	reagent_state = LIQUID
+	color = "#00FFFF"
+	scannable = 1
+
+/datum/reagent/medicine/sterilizer/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(prob(10 * effect_multiplier))
+		M.vomit()

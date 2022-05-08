@@ -2,6 +2,8 @@
 	name = "HS smoke grenade \"Reynolds\""
 	desc = "Smoke grenade, used to create a cloud of smoke providing cover and hiding movement."
 	det_time = 20
+	icon_state = "smokegrenade"
+	item_state = "smokegrenade" //Sprites by hyperioo
 	var/datum/effect/effect/system/smoke_spread/bad/smoke
 
 /obj/item/grenade/smokebomb/New()

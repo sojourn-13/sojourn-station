@@ -9,7 +9,7 @@
 	taste_mult = 4
 	reagent_state = SOLID
 	metabolism = REM * 2
-	var/nutriment_factor = 6 // Per metabolism tick
+	var/nutriment_factor = 5 // Per metabolism tick
 	var/regen_factor = 0.8 //Used for simple animal health regeneration
 	var/injectable = 0
 	color = "#664330"
@@ -43,9 +43,11 @@
 	affect_ingest(M, alien, effect_multiplier * 1.2)
 
 /datum/reagent/organic/nutriment/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	if(M.species.reagent_tag == IS_CARNIVORE)
-		M.adjustNutrition(nutriment_factor * 0.25)
-		return
+	if(ishuman(M))
+		if(M.stats.getPerk(PERK_HERBIVORE))
+			nutriment_factor = 7
+		else if(M.stats.getPerk(PERK_CARNIVORE))
+			nutriment_factor = 1
 
 	// Small bodymass, more effect from lower volume.
 	M.adjustNutrition(nutriment_factor * (issmall(M) ? effect_multiplier * 2 : effect_multiplier)) // For hunger and fatness
@@ -61,7 +63,7 @@
 	common = TRUE //It's basically sugar
 
 /datum/reagent/organic/nutriment/protein
-	name = "Animal Protein"
+	name = "Protein"
 	taste_description = "some sort of protein"
 	id = "protein"
 	description = "Essential nutrient for the human body."
@@ -69,10 +71,34 @@
 	common = TRUE //Protein Shake
 
 /datum/reagent/organic/nutriment/protein/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	if(M.species.reagent_tag == IS_CARNIVORE)
-		M.adjustNutrition(nutriment_factor * 1.50)
+	if(ishuman(M))
+		if(M.stats.getPerk(PERK_CARNIVORE))
+			nutriment_factor = 7
+		else if(M.stats.getPerk(PERK_HERBIVORE))
+			nutriment_factor = 1
+
 	return ..()
 
+/datum/reagent/organic/nutriment/preservatives
+	name = "Preservatives"
+	taste_description = "bland preservatives"
+	id = "preservatives"
+	description = "A slurry of bland chemical preservatives that takes years, if not decades, to go bad."
+	color = "#440000"
+	common = TRUE //Snacks
+	nutriment_factor = 1
+	regen_factor = 0.2
+
+/datum/reagent/organic/nutriment/preservatives/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(ishuman(M))
+		if(M.stats.getPerk(PERK_SNACKIVORE))
+			M.adjustNutrition(nutriment_factor * 10)
+			M.adjustOxyLoss(-0.3 * effect_multiplier)
+			M.heal_organ_damage(0.1 * effect_multiplier, 0.1 * effect_multiplier)
+			M.adjustToxLoss(-0.1 * effect_multiplier)
+			M.add_chemical_effect(CE_BLOODCLOT, 0.1)
+
+	return ..()
 
 /datum/reagent/organic/nutriment/protein/egg
 	name = "Egg Yolk"
@@ -168,7 +194,7 @@
 	name = "Corn Oil"
 	id = "cornoil"
 	description = "An oil derived from various types of corn."
-	taste_description = "slime"
+	taste_description = "oil"
 	taste_mult = 0.1
 	reagent_state = LIQUID
 	nutriment_factor = 8
@@ -254,7 +280,7 @@
 
 /datum/reagent/organic/nutriment/hot_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.bodytemperature += 5 * TEMPERATURE_DAMAGE_COEFFICIENT
+	M.bodytemperature += 1.5 * TEMPERATURE_DAMAGE_COEFFICIENT
 
 
 /datum/reagent/organic/nutriment/hell_ramen
@@ -269,7 +295,7 @@
 
 /datum/reagent/organic/nutriment/hell_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.bodytemperature += 10 * TEMPERATURE_DAMAGE_COEFFICIENT
+	M.bodytemperature += 5 * TEMPERATURE_DAMAGE_COEFFICIENT
 
 /datum/reagent/organic/nothing
 	name = "Nothing"
@@ -286,7 +312,7 @@
 /datum/reagent/other/sodiumchloride
 	name = "Table Salt"
 	id = "sodiumchloride"
-	description = "A salt made of sodium chloride. Commonly used to season food."
+	description = "Sodium chloride, most commonly known as salt. Commonly used to season food."
 	taste_description = "salt"
 	reagent_state = SOLID
 	color = "#FFFFFF"
@@ -318,13 +344,13 @@
 	name = "Frost Oil"
 	id = "frostoil"
 	description = "A special oil that noticeably chills the body. Extracted from Ice Peppers."
-	taste_description = "mint"
+	taste_description = "oily mint"
 	taste_mult = 1.5
 	reagent_state = LIQUID
 	color = "#B31008"
 
 /datum/reagent/organic/frostoil/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.bodytemperature = max(M.bodytemperature - 10 * TEMPERATURE_DAMAGE_COEFFICIENT, 0)
+	M.bodytemperature = max(M.bodytemperature - 5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0)
 	if(prob(1))
 		M.emote("shiver")
 	if(isslime(M))
@@ -759,7 +785,7 @@
 	adj_dizzy = -2
 	adj_drowsy = -1
 	adj_sleepy = -3
-	adj_temp = 20
+	adj_temp = 10
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "teaglass"
@@ -819,7 +845,7 @@
 	adj_dizzy = -5
 	adj_drowsy = -3
 	adj_sleepy = -2
-	adj_temp = 25
+	adj_temp = 10
 	overdose = 45
 
 	glass_unique_appearance = TRUE
@@ -852,11 +878,19 @@
 	description = "A strong coffee made by passing nearly boiling water through coffee seeds at high pressure."
 	taste_description = "bitter coffee"
 	taste_mult = 1
+	overdose = 40
 	color = "#664300d3"
+	adj_dizzy = -10
+	adj_drowsy = -5
+	adj_sleepy = -5 // Stronger than coffee
 
 	glass_icon_state = "espresso"
 	glass_name = "shot of espresso"
 	glass_desc = "A strong coffee made by passing nearly boiling water through coffee seeds at high pressure."
+
+/datum/reagent/drink/coffee/espresso/overdose(mob/living/carbon/M, alien)
+	M.make_jittery(10) // Stronger coffee, stronger consequences
+	M.add_chemical_effect(CE_PULSE, 2)
 
 /datum/reagent/drink/coffee/icecoffee
 	name = "Iced Coffee"
@@ -1000,6 +1034,47 @@
 	glass_name = "mocaccino"
 	glass_desc = "Espresso with hot milk and chocolate."
 	glass_center_of_mass = list("x"=15, "y"=9)
+
+/datum/reagent/drink/coffee/atomicoffee // CDDA reference - Seb
+	name = "Atomic coffee"
+	id = "atomicoffee"
+	description = "Every possible microgram of caffeine and flavor has been carefully extracted for your enjoyment, using the power of the atom. The perfect drink for those that wish to stay awake for days."
+	taste_description = "liquid tar"
+	color =  "#393815" // rgb: 57, 56, 21
+	overdose = 31 // A whole cup and a unit more.
+
+	glass_icon_state = "atomicoffee"
+	glass_name = "Atomic Coffee"
+	glass_desc = "A glass of atomically compressed pure caffeine, perfect to stay awake for days fighting off the inevitable cataclysm."
+	glass_center_of_mass = list("x"=15, "y"=9)
+
+/datum/reagent/drink/coffee/atomicoffee/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	M.add_chemical_effect(CE_PULSE, 2) // Watch out for that heart!
+	M.dizziness = 0
+	M.stuttering = 0
+	M.confused = 0
+	M.slurring = 0
+	M.drowsyness = 0 // The ultimate sober up drink
+	M.sleeping = 0 // SLEEPISFORTHEWEAKWHONEEDSTOSLEEP
+
+/datum/reagent/drink/coffee/atomicoffee/overdose(mob/living/carbon/M, alien)
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_HEART) // I said to watch out!!
+		if(istype(C))
+			if(C.is_bruised())
+				M.adjustOxyLoss(0.1)
+			else if(C.is_broken())
+				M.adjustOxyLoss(0.3)
+				M.paralysis = max(M.paralysis, 5) // HEART ATTACK!
+				M.add_chemical_effect(CE_NOPULSE, 1)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.9) // Fry_consumes_100_cups_of_coffee.gif
+	M.make_jittery(20) // Except he's not calm!
+	M.adjustToxLoss(0.1) // An alternative to getting irradiated, nobody wants that.
+
+
 
 /datum/reagent/drink/coffee/sromshine
 	name = "Sromshine"
@@ -2114,7 +2189,7 @@
 	taste_description = "refreshingly cold"
 	color = "#664300d0"
 	strength = 20
-	adj_temp = -20
+	adj_temp = -10
 	targ_temp = 270
 
 	glass_icon_state = "iced_beerglass"
@@ -2367,7 +2442,7 @@
 	taste_description = "hot and spice"
 	color = "#004166d0"
 	strength = 5
-	adj_temp = 50
+	adj_temp = 25
 	targ_temp = 360
 
 	glass_unique_appearance = TRUE
@@ -2811,3 +2886,54 @@
 	glass_icon_state = "antidepresant"
 	glass_name = "Antidepressant"
 	glass_desc = "A Bright red cocktail, chill as an empty chimney, yet bright and soothing as a smile. Non-alcoholic. A soul lightener, you can't stay sad at the taste of this."
+
+
+/datum/reagent/drink/blendedmint
+	name = "Blended Mint"
+	id = "blendedmint"
+	description = "A common condiment to mix with cocktails or other foods. It's just a cup of leaves innit."
+	taste_description = "dry mint leaves"
+	taste_mult = 0.5
+	color = "#98CD49"
+
+
+	glass_icon_state = "booger"
+	glass_name = "blended mint leaves"
+	glass_desc = "Very dry and bland, but with a minty aftertaste! Not the best thing to be \"drinking\" though."
+
+/datum/reagent/drink/cinnamonpowder
+	name = "Cinnamon Powder"
+	id = "cinnamonpowder"
+	description = "A common condiment to mix with milkshakes or desserts. Not to be used for challenges."
+	taste_description = "dry cinnamon powder"
+	taste_mult = 0.5
+	color = "#D78F5F"
+
+
+	glass_icon_state = "glass_brown"
+	glass_name = "cinnamon powder"
+	glass_desc = "Pure grinded up cinnamon powder. Delicious when used as a condiment, but a cough hazard when taken by itself."
+
+/datum/reagent/drink/blueberryjuice
+	name = "Blueberry Juice"
+	id = "blueberryjuice"
+	description = "Used to mix with cocktails, milkshakes or if you just want some refreshing blueberry juice."
+	taste_description = "fresh fruity blueberry"
+	taste_mult = 1.1
+	color = "#4D0121"
+
+	glass_icon_state = "grapejuice"
+	glass_name = "blueberry juice"
+	glass_desc = "Rather simple when it comes to fruit juices, but still refreshing!"
+
+/datum/reagent/drink/strawberryjuice
+	name = "Strawberry Juice"
+	id = "strawberryjuice"
+	description = "Used to mix with cocktails, milkshakes or if you just want some sweet refreshing strawberry juice."
+	taste_description = "sweet fruity strawberry"
+	taste_mult = 1.1
+	color = "#C20032"
+
+	glass_icon_state = "berryjuice"
+	glass_name = "strawberry juice"
+	glass_desc = "Sweet and sugary, but also very refreshing!"

@@ -12,6 +12,7 @@
 	var/shadow_overlay = "shadow_overlay" //Are shadow underlay, looks nice
 	var/stump_type = /obj/structure/flora/stump //What type stump do we have
 	var/modular_shadow = TRUE //Are rng picker var, yes or no basiclly
+	var/infested = FALSE //Is this tree infested?
 
 /obj/structure/flora/tree/New()
 	..()
@@ -20,6 +21,14 @@
 	var/image/shadow_overlay_grabber = image(src.icon, src.shadow_overlay, layer = HIDE_LAYER-0.01) //So we dont hide landmines
 	underlays.Cut() //I guess we use this?
 	underlays += shadow_overlay_grabber
+	if(prob(5))
+		infested = TRUE
+		desc = "An unsettling feeling comes from this tree. Webs criss-cross the branches."
+
+	//This code is only added to the compiler when 'JANEDEBUG' is defined. We can use it this way this for bugtesting.
+	#ifdef JANEDEBUG
+	infested = TRUE
+	#endif
 
 /obj/structure/flora/stump
 	icon = 'icons/obj/flora/jungletree.dmi'
@@ -79,6 +88,11 @@
 			new /obj/plant_spawner/towercaps(get_turf(src))
 			new /obj/plant_spawner/towercaps(get_turf(src))
 			new stump_type(get_turf(src))
+			if(infested)
+				visible_message(SPAN_DANGER("A pack of spiders erupt from the Tree's bark, burrowing out to attack!"))
+				new /mob/living/carbon/superior_animal/giant_spider/hunter(get_turf(src))
+				new /mob/living/carbon/superior_animal/giant_spider/hunter(get_turf(src))
+				new /mob/living/carbon/superior_animal/giant_spider/hunter/viper(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You cut down a tree."))
 			qdel(src)
 			return

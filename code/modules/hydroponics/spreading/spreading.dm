@@ -123,7 +123,7 @@
 	spread_distance = ((growth_type>0) ? round(spread_chance*1.0) : round(spread_chance*0.5))
 	update_icon()
 
-	if(seed.get_trait(TRAIT_CHEMS) > 0)
+	if(seed.get_trait(TRAIT_CHEMS)?:len)
 		src.create_reagents(5*(seed.chems.len))
 		for (var/reagent in seed.chems)
 			src.reagents.add_reagent(reagent, 5)

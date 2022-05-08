@@ -185,10 +185,10 @@
 
 
 /obj/structure/closet/crate/freezer/rations/populate_contents()
-	new /obj/item/reagent_containers/food/snacks/liquidfood(src)
-	new /obj/item/reagent_containers/food/snacks/liquidfood(src)
-	new /obj/item/reagent_containers/food/snacks/liquidfood(src)
-	new /obj/item/reagent_containers/food/snacks/liquidfood(src)
+	new /obj/item/reagent_containers/food/snacks/openable/liquidfood(src)
+	new /obj/item/reagent_containers/food/snacks/openable/liquidfood(src)
+	new /obj/item/reagent_containers/food/snacks/openable/liquidfood(src)
+	new /obj/item/reagent_containers/food/snacks/openable/liquidfood(src)
 
 /obj/structure/closet/crate/bin
 	name = "large bin"

@@ -109,9 +109,9 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/chem_heater/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/chem_heater/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found

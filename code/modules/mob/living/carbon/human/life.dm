@@ -784,7 +784,7 @@
 		if(stats.getPerk(PERK_FOLKEN_HEALING) || stats.getPerk(PERK_FOLKEN_HEALING_YOUNG)) // Folken will have this perk
 			if(light_amount >= species.light_dam) // Enough light threshold
 				if(stats.getPerk(PERK_FOLKEN_HEALING_YOUNG)) // They are young Folken and will heal faster
-					heal_overall_damage(3,3)
+					heal_overall_damage(2,2)
 					adjustNutrition(2)
 				else
 					heal_overall_damage(1,1)
@@ -792,7 +792,7 @@
 
 		else if(stats.getPerk(PERK_DARK_HEAL)) // Is the species a Mycus?
 			if(light_amount <= species.light_dam) // Enough light threshold
-				heal_overall_damage(2,2)
+				heal_overall_damage(1,1)
 
 		else if(light_amount > species.light_dam) //if there's enough light, start dying
 			take_overall_damage(1,1)
@@ -1001,7 +1001,7 @@
 	else if(shock_resist)
 		shock_stage = min(shock_stage, 58)
 
-	if(traumatic_shock >= 80)
+	if(traumatic_shock >= 80 && shock_stage <= 160)
 		shock_stage += 1
 	else if(health < health_threshold_softcrit)
 		shock_stage = max(shock_stage, 61)
@@ -1236,7 +1236,7 @@
 		else if((mRemote in mutations) && remoteview_target)
 			if(remoteview_target.stat == CONSCIOUS)
 				isRemoteObserve = TRUE
-		if(!isRemoteObserve && client && !client.adminobs)
+		if(!isRemoteObserve && client && !client.adminobs && !using_scope)
 			remoteview_target = null
 			reset_view(null, FALSE)
 
@@ -1249,5 +1249,7 @@
 		return
 	if(XRAY in mutations)
 		sight |= SEE_TURFS|SEE_MOBS|SEE_OBJS
+	if(unnatural_mutations.getMutation("MUTATION_CAT_EYES", TRUE))
+		see_invisible = SEE_INVISIBLE_NOLIGHTING
 	if(CE_DARKSIGHT in chem_effects)//TODO: Move this to where it belongs, doesn't work without being right here for now. -Kaz/k5.
 		see_invisible = min(see_invisible, chem_effects[CE_DARKSIGHT])

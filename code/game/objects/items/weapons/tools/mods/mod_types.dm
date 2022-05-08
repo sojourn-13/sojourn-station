@@ -21,10 +21,10 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 		UPGRADE_DEGRADATION_MULT = 0.65,
-		UPGRADE_FORCE_MOD = 1,
+		UPGRADE_FORCE_MOD = 1
 		)
 
-	I.required_qualities = list(QUALITY_BOLT_TURNING,QUALITY_PRYING, QUALITY_SAWING,QUALITY_SHOVELING,QUALITY_DIGGING,QUALITY_EXCAVATION)
+	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PRYING, QUALITY_SAWING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION)
 	I.prefix = "braced"
 
 //Heatsink can be attached to any tool that uses fuel or power
@@ -88,7 +88,7 @@
 	GUN_UPGRADE_RECOIL = 0.85,
 	UPGRADE_BULK = 1
 	)
-	I.required_qualities = list(QUALITY_CUTTING,QUALITY_DRILLING, QUALITY_SAWING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_WELDING, QUALITY_HAMMERING)
+	I.required_qualities = list(QUALITY_CUTTING,QUALITY_DRILLING, QUALITY_SAWING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_WELDING, QUALITY_HAMMERING, QUALITY_BONE_SETTING)
 	I.prefix = "shielded"
 
 // Plasmablock can be attached to any tool that uses fuel or power
@@ -131,14 +131,14 @@
 	UPGRADE_DEGRADATION_MULT = 0.7,
 	UPGRADE_HEALTH_THRESHOLD = 5
 	)
-	I.required_qualities = list(QUALITY_CUTTING,QUALITY_DRILLING, QUALITY_SAWING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_WELDING, QUALITY_HAMMERING)
+	I.required_qualities = list(QUALITY_CUTTING, QUALITY_DRILLING, QUALITY_SAWING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_WELDING, QUALITY_HAMMERING)
 	I.prefix = "rubber-wrapped"
 
 // 	 PRODUCTIVITY: INCREASES WORKSPEED
 //------------------------------------------------
 /obj/item/tool_upgrade/productivity/ergonomic_grip
 	name = "ergonomic grip"
-	desc = "A replacement grip for a tool which allows it to be more precisely controlled with one hand."
+	desc = "A replacement grip for a tool which allows it to be more precisely controlled with one hand. Can be placed under a gun\'s barrel to reduce recoil. However, it also makes bracing impossible."
 	icon_state = "ergonomic"
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 5)
 	price_tag = 120
@@ -153,7 +153,7 @@
 		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
 		UPGRADE_BULK = 1
 	)
-	I.gun_loc_tag = GUN_GRIP
+	I.gun_loc_tag = GUN_UNDERBARREL
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING, QUALITY_WEAVING)
 	I.prefix = "ergonomic"
 
@@ -219,7 +219,7 @@
 	)
 	I.req_gun_tags = list(GUN_BAYONET)
 	I.gun_loc_tag = GUN_KNIFE
-	I.required_qualities = list(QUALITY_CUTTING,QUALITY_SAWING, QUALITY_SHOVELING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING)
+	I.required_qualities = list(QUALITY_CUTTING, QUALITY_SAWING, QUALITY_SHOVELING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING)
 	I.prefix = "sharpened"
 
 /obj/item/tool_upgrade/productivity/diamond_blade
@@ -374,10 +374,29 @@
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_ENERGY)
 
+// Wax coating- shrinks tool and give it anti-staining properties, can be applied to clothes
+/obj/item/tool_upgrade/productivity/waxcoat
+	name = "Wax Coating"
+	desc = "A bucket of filtered beeswax, to be applied to tools or clothes; preventing stains, and preventing minor knicks and damage."
+	icon_state = "waxcoat"
+	matter = list(MATERIAL_BIOMATTER = 2, MATERIAL_PLASTIC = 5)
+	can_remove = FALSE
+	price_tag = 380
+
+/obj/item/tool_upgrade/productivity/waxcoat/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_BULK = -2,
+	UPGRADE_DEGRADATION_MULT = 0.90,
+	UPGRADE_ITEMFLAGPLUS = NOBLOODY
+	)
+	I.prefix = "waxed"
+
 // 	 REFINEMENT: INCREASES PRECISION
 //------------------------------------------------
 /obj/item/tool_upgrade/refinement/laserguide
-	name = "Lonestars \"Guiding Light\" laser guide"
+	name = "\improper Lonestars \"Guiding Light\" laser guide"
 	desc = "A small visible laser which can be strapped onto any tool, giving an accurate representation of its target. Helps improve precision."
 	icon_state = "laser_guide"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_URANIUM = 1)
@@ -389,7 +408,7 @@
 	I.tool_upgrades = list(
 	UPGRADE_PRECISION = 10)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL = 0.9,
+	GUN_UPGRADE_RECOIL = 0.8,
 	UPGRADE_BULK = 1
 	)
 	I.gun_loc_tag = GUN_SIGHT
@@ -414,7 +433,7 @@
 		GUN_UPGRADE_RECOIL = 0.8,
 	)
 	I.gun_loc_tag = GUN_GRIP
-	I.required_qualities = list(QUALITY_CUTTING,QUALITY_WIRE_CUTTING, QUALITY_SCREW_DRIVING, QUALITY_WELDING,QUALITY_PULSING, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_BONE_SETTING, QUALITY_LASER_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_WEAVING)
+	I.required_qualities = list(QUALITY_CUTTING, QUALITY_WIRE_CUTTING, QUALITY_SCREW_DRIVING, QUALITY_WELDING,QUALITY_PULSING, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_BONE_SETTING, QUALITY_LASER_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_WEAVING, QUALITY_BONE_GRAFTING)
 	I.prefix = "stabilized"
 
 /obj/item/tool_upgrade/refinement/magbit
@@ -511,7 +530,7 @@
 		UPGRADE_BULK = 0.5
 	)
 	I.gun_loc_tag = GUN_GRIP
-	I.required_qualities = list(QUALITY_CUTTING, QUALITY_WIRE_CUTTING, QUALITY_SCREW_DRIVING, QUALITY_WELDING ,QUALITY_PULSING, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_BONE_SETTING, QUALITY_LASER_CUTTING)
+	I.required_qualities = list(QUALITY_CUTTING, QUALITY_WIRE_CUTTING, QUALITY_SCREW_DRIVING, QUALITY_WELDING ,QUALITY_PULSING, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_BONE_SETTING, QUALITY_LASER_CUTTING, QUALITY_BONE_GRAFTING)
 	I.prefix = "vibration-compensated"
 
 // 		AUGMENTS: MISCELLANEOUS AND UTILITY
@@ -687,6 +706,35 @@
 	I.prefix = "sanctified"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
 
+/obj/item/tool_upgrade/augment/sanctifier_plus
+	name = "overclocked sanctifier"
+	icon_state = "sanctifier_plus"
+	desc = "Recommended for crusades against mutants, wild life, and heretics. Does this device actually make a better weapon or is it something else? Regardless, it makes one more thoughtful during labor. \
+	This one has been overclocked by members of the factortial path, increasing both its benefits and its drawbacks."
+	matter = list(MATERIAL_BIOMATTER = 3, MATERIAL_PLASTEEL = 2)
+	price_tag = 20
+
+/obj/item/tool_upgrade/augment/sanctifier_plus/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_SANCTIFY = TRUE,
+	UPGRADE_FORCE_MOD = 12,
+	UPGRADE_PRECISION = 15,
+	UPGRADE_HEALTH_THRESHOLD = 15,
+	UPGRADE_DEGRADATION_MULT = 0.7,
+	UPGRADE_WORKSPEED = -0.75
+	)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_RECOIL = 0.6,
+	GUN_UPGRADE_FIRE_DELAY_MULT = 1.3,
+	GUN_UPGRADE_MOVE_DELAY_MULT = 1.3,
+	GUN_UPGRADE_CHARGECOST = 0.7
+	)
+	I.gun_loc_tag = GUN_MECHANISM
+	I.prefix = "over sanctified"
+	I.req_fuel_cell = REQ_FUEL_OR_CELL
+
 /*
 /obj/item/tool_upgrade/augment/hammer_addon
 	name = "flat surface"
@@ -731,7 +779,7 @@
 		A powerful AI will integrate itself into this tool with the aid of nanotechnology and improve it in every way possible."
 	icon_state = "ai_tool"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 3, MATERIAL_GOLD = 3, MATERIAL_DIAMOND = 1)
-	price_tag = 225
+	price_tag = 725
 
 /obj/item/tool_upgrade/augment/ai_tool/New()
 	..()
@@ -790,7 +838,7 @@
 	desc = "Very rare tool mod from Greyson powered by their nanomachines. It repairs the tool while in use and makes it near unbreakable."
 	icon_state = "repair_nano"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 1, MATERIAL_PLATINUM = 1)
-	price_tag = 100
+	price_tag = 325
 
 /obj/item/tool_upgrade/augment/repair_nano/New()
 	..()
@@ -822,71 +870,6 @@
 	I.prefix = "hydraulic"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
 
-//Armor mods
-/obj/item/tool_upgrade/armor/melee
-	name = "melee plating"
-	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its melee resistance."
-	icon_state = "melee"
-	matter = list(MATERIAL_STEEL = 30)
-	price_tag = 275
-
-/obj/item/tool_upgrade/armor/melee/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.tool_upgrades = list(
-	UPGRADE_MELEE_ARMOR = 20
-	)
-	I.prefix = "reinforced"
-	I.required_qualities = list(QUALITY_ARMOR)
-
-/obj/item/tool_upgrade/armor/bullet
-	name = "ballistic plating"
-	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its ballistic resistance."
-	icon_state = "bullet"
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 10)
-	price_tag = 750
-
-/obj/item/tool_upgrade/armor/bullet/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.tool_upgrades = list(
-	UPGRADE_BALLISTIC_ARMOR = 20
-	)
-	I.prefix = "kevlar-plated"
-	I.required_qualities = list(QUALITY_ARMOR)
-
-/obj/item/tool_upgrade/armor/energy
-	name = "energy plating"
-	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its energy resistance."
-	icon_state = "energy"
-	matter = list(MATERIAL_PLATINUM = 3, MATERIAL_PLASTIC = 12)
-	price_tag = 1000
-
-/obj/item/tool_upgrade/armor/energy/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.tool_upgrades = list(
-	UPGRADE_ENERGY_ARMOR = 20
-	)
-	I.prefix = "ablative-plated"
-	I.required_qualities = list(QUALITY_ARMOR)
-
-/obj/item/tool_upgrade/armor/bomb
-	name = "bomb proofing"
-	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its bomb resistance."
-	icon_state = "bomb"
-	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 20)
-	price_tag = 450
-
-/obj/item/tool_upgrade/armor/bomb/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.tool_upgrades = list(
-	UPGRADE_BOMB_ARMOR = 40
-	)
-	I.prefix = "bomb-proofed"
-	I.required_qualities = list(QUALITY_ARMOR)
-
 // Randomizes a bunch of weapon stats on application - stats are set on creation of the item to prevent people from re-rolling until they get what they want
 /obj/item/tool_upgrade/augment/randomizer
 	name = "BSL \"Randomizer\" tool polish"
@@ -916,44 +899,30 @@
 	icon_state = "artmod_1"
 	price_tag = 200
 
-/obj/item/tool_upgrade/artwork_tool_mod/Initialize(mapload, prob_rare = 33)
-	. = ..()
+/obj/item/tool_upgrade/artwork_tool_mod/New()
+	..()
 	name = get_weapon_name(capitalize = TRUE)
 	icon_state = "artmod_[rand(1,16)]"
-	var/sanity_value = 0.2 + pick(0,0.1,0.2)
-	AddComponent(/datum/component/atom_sanity, sanity_value, "")
-	var/obj/randomcatcher/CATCH = new(src)
-	var/obj/item/tool_upgrade/spawn_type = pickweight(list(/obj/random/tool_upgrade = max(100-prob_rare,0), /obj/random/tool_upgrade/rare = prob_rare), 0)
-	spawn_type = CATCH.get_item(spawn_type)
-	spawn_type.TransferComponents(src)
-	GET_COMPONENT(tool_comp, /datum/component/item_upgrade)
-	for(var/upgrade in (tool_comp.tool_upgrades - GLOB.tool_aspects_blacklist))
-		if(isnum(tool_comp.tool_upgrades[upgrade]))
-			tool_comp.tool_upgrades[upgrade] = tool_comp.tool_upgrades[upgrade] * rand(5,15)/10
-	tool_comp.tool_upgrades[UPGRADE_BULK] = rand(-1,2)
-	QDEL_NULL(spawn_type)
-	QDEL_NULL(CATCH)
-	price_tag += rand(0, 1000)
 
-/obj/item/tool_upgrade/artwork_tool_mod/get_item_cost(export)
-	. = ..()
-	GET_COMPONENT(comp_sanity, /datum/component/atom_sanity)
-	. += comp_sanity.affect * 100
-// Wax coating- shrinks tool and give it anti-staining properties, can be applied to clothes
-/obj/item/tool_upgrade/productivity/waxcoat
-	name = "Wax Coating"
-	desc = "A bucket of filtered beeswax, to be applied to tools or clothes; preventing stains, and preventing minor knicks and damage."
-	icon_state = "waxcoat"
-	matter = list(MATERIAL_BIOMATTER = 2, MATERIAL_PLASTIC = 5)
-	can_remove = FALSE
-	price_tag = 380
-
-/obj/item/tool_upgrade/productivity/waxcoat/New()
-	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_BULK = -2,
-	UPGRADE_DEGRADATION_MULT = 0.90,
-	UPGRADE_ITEMFLAGPLUS = NOBLOODY
+	UPGRADE_DEGRADATION_MULT = rand(-1,3),
+	UPGRADE_HEALTH_THRESHOLD = rand(-5,10),
+	UPGRADE_WORKSPEED = rand(-1,3),
+	UPGRADE_PRECISION = rand(-3,15),
+	UPGRADE_FORCE_MOD = rand(-2,5),
+	UPGRADE_BULK = rand(-1,1),
+	price_tag += rand(100, 3000)
 	)
-	I.prefix = "waxed"
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_RECOIL = rand(-0.4,0.2),
+	GUN_UPGRADE_DAMAGE_MULT = rand(-0.2,0.4),
+	GUN_UPGRADE_PEN_MULT = rand(-0.2,0.4),
+	GUN_UPGRADE_FIRE_DELAY_MULT = rand(-0.4,0.2),
+	GUN_UPGRADE_MOVE_DELAY_MULT = rand(-0.4,0.2),
+	GUN_UPGRADE_MUZZLEFLASH = rand(-0.4,0.2),
+	GUN_UPGRADE_CHARGECOST = rand(-0.4,0.2),
+	GUN_UPGRADE_OVERCHARGE_MAX = rand(-0.4,0.2),
+	GUN_UPGRADE_OVERCHARGE_RATE = rand(-0.4,0.2)
+	)
+	I.prefix = "artistic"

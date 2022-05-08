@@ -9,7 +9,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_SHOTGUN
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_DRUM
 	origin_tech = list(TECH_COMBAT = 11, TECH_MATERIAL = 3) //So rnd has a use to get their hands on one
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
@@ -29,6 +29,7 @@
 	init_firemodes = list(
 	SEMI_AUTO_NODELAY
 	)
+	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/automatic/sbaw/update_icon()
 	..()
@@ -66,3 +67,4 @@
 	SEMI_AUTO_NODELAY,
 	FULL_AUTO_400,
 	)
+	serial_type = "BlueCross"

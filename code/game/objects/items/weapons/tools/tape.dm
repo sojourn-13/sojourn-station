@@ -51,7 +51,7 @@
 	name = "repair goo"
 	desc = "A wad of sticky gray goo capable of repairing tools and sealing cracks."
 	icon_state = "repair_goo"
-	tool_qualities = list(QUALITY_ADHESIVE = 50, QUALITY_SEALING = 50, QUALITY_CAUTERIZING = 5, QUALITY_BONE_GRAFTING = 25)
+	tool_qualities = list(QUALITY_ADHESIVE = 50, QUALITY_SEALING = 50, QUALITY_CAUTERIZING = 5, QUALITY_BONE_GRAFTING = 65)
 	matter = list(MATERIAL_PLASTIC = 20)
 	use_stock_cost = 0.10
 	max_stock = 100
@@ -79,8 +79,8 @@
 	matter = list(MATERIAL_PLASTIC = 20)
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 3)
 	preloaded_reagents = list("milk" = 5)
-	tool_qualities = list(QUALITY_BONE_GRAFTING = 30)
-	max_stock = 100
+	tool_qualities = list(QUALITY_BONE_GRAFTING = 80)
+	max_stock = 200
 	use_stock_cost = 1
 	price_tag = 20
 
@@ -90,7 +90,8 @@
 	icon = 'icons/obj/stack/items.dmi'
 	icon_state = "bonegel_SI"
 	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 3)
-	tool_qualities = list(QUALITY_BONE_GRAFTING = 50)
+	tool_qualities = list(QUALITY_BONE_GRAFTING = 150)
+	max_stock = 500
 	preloaded_reagents = null
 	price_tag = 200
 

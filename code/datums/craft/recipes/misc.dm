@@ -6,22 +6,6 @@
 	)
 	related_stats = list(STAT_COG)
 
-/datum/craft_recipe/medical/rag
-	name = "rag"
-	result = /obj/item/reagent_containers/glass/rag
-	icon_state = "clothing"
-	steps = list(
-		list(/obj/item/clothing, 1, "time" = 30)
-	)
-
-/datum/craft_recipe/medical/rag/alt
-	name = "rag"
-	result = /obj/item/reagent_containers/glass/rag
-	icon_state = "clothing"
-	steps = list(
-		list(CRAFT_MATERIAL, 3, MATERIAL_CLOTH, "time" = 15),
-	)
-
 /datum/craft_recipe/tray
 	name = "dinner tray"
 	result = /obj/item/tray
@@ -58,6 +42,14 @@
 	name = "folder, yellow"
 	result = /obj/item/folder/yellow
 
+/datum/craft_recipe/plasticflaps
+	name = "plastic flaps"
+	result = /obj/structure/plasticflaps
+	steps = list(
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTIC) //I can see people abusing this a lot
+	)
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
+
 /datum/craft_recipe/metal_rod
 	name = "metal rod"
 	result = /obj/item/stack/rods
@@ -85,4 +77,22 @@
 	steps = list(
 		list(/obj/item/clothing/under, 1, "time" = 25),
 		list(QUALITY_CUTTING, 10, "time" = 30)
+	)
+
+/datum/craft_recipe/ameridian_seed
+	name = "ameridian growth"
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
+	result = /obj/structure/ameridian_crystal
+	icon_state = "device"
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_AMERIDIAN, "time" = 25)
+	)
+
+/datum/craft_recipe/ameridian_seed_red
+	name = "red ameridian growth"
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
+	result = /obj/structure/ameridian_crystal/red
+	icon_state = "device"
+	steps = list(
+		list(/obj/item/ameridian_core, 1, "time" = 25)
 	)

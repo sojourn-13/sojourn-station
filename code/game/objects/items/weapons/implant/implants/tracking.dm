@@ -45,3 +45,7 @@
 	name = "glass case - 'tracking'"
 	desc = "A case containing a tracking implant."
 	implant = /obj/item/implant/tracking
+
+/obj/item/implanter/tracking
+	name = "implanter (tracking)"
+	implant = /obj/item/implant/tracking

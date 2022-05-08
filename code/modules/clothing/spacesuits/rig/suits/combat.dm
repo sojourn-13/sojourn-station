@@ -6,7 +6,7 @@
 	desc = "A sleek and dangerous hardsuit for active combat."
 	icon_state = "security_rig"
 	suit_type = "combat hardsuit"
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 45,
 		energy = 30,
@@ -20,7 +20,7 @@
 	offline_vision_restriction = 1
 	stiffness = 0
 	obscuration = 0
-
+	max_upgrades = 1
 	helm_type = /obj/item/clothing/head/helmet/space/rig/combat
 
 
@@ -32,7 +32,7 @@
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/electrowarfare_suite,
-		/obj/item/rig_module/chem_dispenser/combat
+		/obj/item/rig_module/modular_injector/combat
 		)
 
 
@@ -59,7 +59,7 @@
 	desc = "A Blackshield RIG module that has been tailored for CQC. Due to its plating, it's slightly bulkier than normal standard security hardsuits."
 	icon_state = "blackshield_rig"
 	suit_type = "light suit"
-	armor = list(
+	armor_list = list(
 		melee = 60,
 		bullet = 55,
 		energy = 40,
@@ -71,7 +71,7 @@
 	drain = 25
 	offline_slowdown = 3
 	offline_vision_restriction = 1
-
+	max_upgrades = 0 //60 armor no plating
 	chest_type = /obj/item/clothing/suit/space/rig/combat/blackshield
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/combat/blackshield
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/combat/blackshield
@@ -98,10 +98,64 @@
 /obj/item/clothing/head/helmet/space/rig/combat/blackshield
 	name = "blackshield hazard hood"
 	desc = "A hazard hood modded to help against CQC combat."
-	armor = list(
+	armor_list = list(
 		melee = 65,
 		bullet = 55,
 		energy = 40,
+		bomb = 50,
+		bio = 100,
+		rad = 50
+	)
+
+/obj/item/rig/combat/knight
+	name = "knight hardsuit control module"
+	desc = "A RIG module for a \"Knight\" model hardsuit, jointly manufactured by Divisors and Numericals of the New Testament. \
+	The Tau Cross shining brightly upon its shoulder, it offers moderate combat protection against many a type of threat to the Absolute."
+	icon_state = "knight_rig"
+	suit_type = "knight rig"
+	armor_list = list(
+		melee = 50,
+		bullet = 45,
+		energy = 30,
+		bomb = 50,
+		bio = 100,
+		rad = 50
+	)
+	slowdown = 0.3
+	drain = 4
+	offline_slowdown = 3
+	offline_vision_restriction = 1
+	max_upgrades = 1
+	chest_type = /obj/item/clothing/suit/space/rig/combat/knight
+	helm_type =  /obj/item/clothing/head/helmet/space/rig/combat/knight
+	boot_type =  /obj/item/clothing/shoes/magboots/rig/combat/knight
+	glove_type = /obj/item/clothing/gloves/rig/combat/knight
+
+/obj/item/rig/combat/knight/equipped
+	initial_modules = list(
+		/obj/item/rig_module/storage,
+		/obj/item/rig_module/device/flash,
+		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/held/shield
+		)
+
+/obj/item/clothing/suit/space/rig/combat/knight
+	name = "knight hardsuit breastplate"
+
+/obj/item/clothing/gloves/rig/combat/knight
+	name = "knight hardsuit gauntlets"
+
+/obj/item/clothing/shoes/magboots/rig/combat/knight
+	name = "knight hardsuit greaves"
+
+/obj/item/clothing/head/helmet/space/rig/combat/knight
+	name = "knight hardsuit full helm"
+	desc = "One's spirit is generally the greatest shield."
+	light_overlay = "helmet_light_dual"
+	armor_list = list(
+		melee = 50,
+		bullet = 40,
+		energy = 30,
 		bomb = 50,
 		bio = 100,
 		rad = 50

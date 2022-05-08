@@ -167,3 +167,58 @@
 				for(var/i in list(1,2,4,8,4,2,1,2,4,8,4,2,1,2,4,8,4,2))
 					set_dir(i)
 					sleep(1)
+
+/mob/living/simple_animal/corgi/E_N
+	name = "E-N"
+	real_name = "E-N"
+	gender = FEMALE
+	desc = "It's a robot corgi."
+	icon_state = "E-N"
+	response_help  = "pets"
+	response_disarm = "bops"
+	response_harm   = "kicks"
+	autoseek_food = FALSE  //To seek food is to seek meals, we do not have such cares
+	beg_for_food = FALSE   //A good hunting dog never begs
+	hunger_enabled = FALSE //We are made of metal not meals
+	mob_classification = CLASSIFICATION_SYNTHETIC
+	min_oxy = 0
+	max_oxy = 0
+	min_tox = 0
+	max_tox = 0
+	min_co2 = 0
+	max_co2 = 0
+	min_n2 = 0
+	max_n2 = 0
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
+
+/mob/living/simple_animal/corgi/E_N/death()
+	..()
+	visible_message("<b>[src]</b> blows apart!")
+	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
+	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+	s.set_up(3, 1, src)
+	s.start()
+	qdel(src)
+	return
+
+// For repairing damage to the synths.
+/mob/living/simple_animal/corgi/E_N/attackby(obj/item/W as obj, mob/user as mob)
+	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+	if(user.a_intent == I_HELP) // Are we helping ?
+
+		// If it is a tool, assign it to the tool variable defined earlier.
+		if(istype(W, /obj/item/tool))
+			T = W
+
+		if(QUALITY_WELDING in T?.tool_qualities)
+			if(health < maxHealth)
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					health = maxHealth
+					to_chat(user, "You repair the damage to [src].")
+					return
+				return
+			to_chat(user, "[src] doesn't need repairs.")
+			return
+	// If nothing was ever triggered, continue as normal
+	..()

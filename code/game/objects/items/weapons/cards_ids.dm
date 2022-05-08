@@ -116,12 +116,16 @@ var/const/NO_EMAG_ACT = -50
 	var/rank = null			//actual job
 	var/dorm = 0			// determines if this ID has claimed a dorm already
 
+	var/mining_points = 0 //mining points on the ID
+
 	var/formal_name_prefix
 	var/formal_name_suffix
 	var/claimed_locker = FALSE
 
 /obj/item/card/id/examine(mob/user)
 	set src in oview(1)
+	if(mining_points)
+		to_chat(usr, "There are [mining_points] mining points on the card.")
 	if(in_range(usr, src))
 		show(usr)
 		to_chat(usr, desc)
@@ -131,6 +135,7 @@ var/const/NO_EMAG_ACT = -50
 		to_chat(usr, "The fingerprint hash on the card is [fingerprint_hash].")
 	else
 		to_chat(usr, SPAN_WARNING("It is too far away."))
+
 
 /obj/item/card/id/proc/prevent_tracking()
 	return 0
@@ -300,6 +305,17 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/card/id/hos
 	icon_state = "id_hos"
+
+/obj/item/card/id/secert
+	name = "Marshal ID card"
+	desc = "An ID straight from the Nadezhda Marshals"
+	registered_name = "Marshal Agent"
+	assignment = "Marshal Agent"
+	icon_state = "id_hos_all-access"
+
+/obj/item/card/id/secert/New()
+	access = get_all_station_access()
+	..()
 
 /obj/item/card/id/hop
 	icon_state = "id_hop"

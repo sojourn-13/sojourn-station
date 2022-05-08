@@ -1,10 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/simulated/wall,
+/turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "b" = (
 /obj/crawler/crawler_wallbreaker,
-/turf/simulated/wall,
+/turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "c" = (
 /turf/simulated/floor/tiled/derelict,
@@ -14,7 +14,7 @@
 /area/crawler)
 "e" = (
 /obj/crawler/crawler_wallbreaker/vertical,
-/turf/simulated/wall,
+/turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "f" = (
 /obj/rogue/telebeacon,
@@ -56,12 +56,6 @@
 /obj/item/tool_upgrade/augment/ai_tool,
 /obj/item/tool_upgrade/augment/ai_tool,
 /obj/item/tool_upgrade/augment/ai_tool,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
-"m" = (
-/obj/machinery/light,
-/obj/structure/closet/onestar/tier3/special,
-/obj/random/credits/c1000,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "n" = (
@@ -177,7 +171,7 @@ c
 f
 c
 d
-m
+h
 b
 "}
 (8,1,1) = {"

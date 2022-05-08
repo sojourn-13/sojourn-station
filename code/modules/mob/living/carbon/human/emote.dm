@@ -913,10 +913,41 @@
 		if ("squeal")
 			message = "squeals."
 			playsound(loc, 'sound/voice/LizardSqueal.ogg', 50, 1, -1)
-
+		if ("moo")
+			m_type = 2
+			message = "moos."
+			playsound(loc, 'sound/voice/moo1.ogg', 50, 1, -1) //credit to minecraft for the sound effect!
+		if ("bleat")
+			m_type = 2
+			message = "bleats."
+			playsound(loc, 'sound/voice/bleat.ogg', 50, 1, -1) //credit to bigsoundbank for the effect.
+		if ("warble")
+			m_type = 2
+			message = "warbles."
+			playsound(loc, 'sound/voice/warble.ogg', 50, 1, -1)
+		if ("lwarble")
+			m_type = 2
+			message = "warbles."
+			playsound(loc, 'sound/voice/lowwarble.ogg', 50, 1, -1)
+		if ("croon1")
+			m_type = 2
+			message = "croons."
+			playsound(loc, 'sound/voice/croon1.ogg', 50, 1, -1)
+		if ("croon2")
+			m_type = 2
+			message = "croons."
+			playsound(loc, 'sound/voice/croon2.ogg', 50, 1, -1)
+		if ("croak")
+			m_type = 2
+			message = "croaks."
+			playsound(loc, 'sound/voice/croak.ogg', 50, 1, -1)
+		if ("chitter")
+			m_type = 2
+			message = "chitters."
+			playsound(loc, 'sound/voice/chitter1.ogg', 50, 1, -1)
 		if ("help")
-			to_chat(src, "awoo, aslap-(none)/mob, bark, bellow, blink, blink_r, blush, bow-(none)/mob, burp, chirp, choke, chuckle, clap, collapse, cough, cry, custom, deathgasp, drool, eyebrow, fastsway/qwag, \
-					flip, frown, gasp, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, mumble, nod, nya, pale, peep, point-atom, \
+			to_chat(src, "awoo, aslap-(none)/mob, bark, bellow, blink, blink_r, blush, bow-(none)/mob, burp, chirp, chitter, choke, chuckle, clap, croon1, croon2, croak, collapse, cough, cry, custom, deathgasp, drool, eyebrow, fastsway/qwag, \
+					flip, frown, gasp, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, moo, mumble, nod, nya, pale, peep, point-atom, \
 					raise, salute, scream, sneeze, shake, shiver, shriek, shrug, sigh, signal-#1-10, slap-(none)/mob, smile, sneeze, sniff, snore, stare-(none)/mob, stopsway/swag, squeak, squeal, sway/wag, swish, tremble, twitch, \
 					twitch_v, vomit, weh, whimper, wink, yawn, ycackle. Synthetics: beep, buzz, yes, no, rcough, rsneeze, ping")
 

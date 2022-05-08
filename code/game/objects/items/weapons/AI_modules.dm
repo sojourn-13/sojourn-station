@@ -60,7 +60,7 @@ AI MODULES
 			to_chat(usr, "You haven't selected a robot to transmit laws to!")
 			return
 
-		if (comp.current.stat == 2 || comp.current.emagged)
+		if (comp.current.stat == 2 || comp.current.HasTrait(CYBORG_TRAIT_EMAGGED))
 			to_chat(usr, "Upload failed. No signal is being detected from the robot.")
 		else if (comp.current.connected_ai)
 			to_chat(usr, "Upload failed. The robot is slaved to an AI.")
@@ -282,8 +282,8 @@ AI MODULES
 /******************** NanoTrasen ********************/
 
 /obj/item/aiModule/eris // -- TLE
-	name = "'Eris Default' Core AI Module"
-	desc = "An 'NT Default' Core AI Module: 'Reconfigures the AI's core laws.'"
+	name = "'Colony Alinement' Core AI Module"
+	desc = "An 'Colony Alinement' Core AI Module: 'Reconfigures the AI's core laws.'"
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
 	laws = new/datum/ai_laws/eris
 

@@ -3,7 +3,7 @@
 	desc = "Even the most devout deserve head protection."
 	icon_state = "acolyte"
 	item_state = "acolyte"
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 25,
 		energy = 25,
@@ -19,7 +19,7 @@
 	item_state = "acolyte"
 	slowdown = 0.15
 	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 25, MATERIAL_BIOMATTER = 40)
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 25,
 		energy = 25,
@@ -34,7 +34,7 @@
 	desc = "Don't want anything getting in your eyes."
 	icon_state = "botanist"
 	item_state = "botanist"
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 25,
 		energy = 25,
@@ -50,7 +50,7 @@
 	item_state = "botanist"
 	slowdown = 0
 	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 15, MATERIAL_BIOMATTER = 40)
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 25,
 		energy = 25,
@@ -65,7 +65,7 @@
 	desc = "Cleaning floors is more dangerous than it looks."
 	icon_state = "custodian"
 	item_state = "custodian"
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 25,
 		energy = 25,
@@ -82,7 +82,7 @@
 	item_state = "custodian"
 	slowdown = 0.05
 	matter = list(MATERIAL_PLASTIC = 40, MATERIAL_STEEL = 15, MATERIAL_BIOMATTER = 40)
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 25,
 		energy = 25,
@@ -93,34 +93,6 @@
 	unacidable = TRUE
 	helmet = /obj/item/clothing/head/helmet/space/void/custodian
 
-/obj/item/clothing/head/helmet/space/void/prime
-	name = "prime hood"
-	desc = "A visored helmet with a cloth hood covering it."
-	icon_state = "prime"
-	armor = list(
-		melee = 40,
-		bullet = 40,
-		energy = 40,
-		bomb = 50,
-		bio = 100,
-		rad = 100
-	)
-
-/obj/item/clothing/suit/space/void/prime
-	name = "prime armor"
-	desc = "Trust in god but keep your armor on."
-	icon_state = "prime"
-	slowdown = 0.15
-	armor = list(
-		melee = 40,
-		bullet = 40,
-		energy = 40,
-		bomb = 50,
-		bio = 100,
-		rad = 100
-	)
-	helmet = /obj/item/clothing/head/helmet/space/void/prime
-
 /obj/item/clothing/head/helmet/space/void/NTvoid
 	name = "angel voidsuit helmet"
 	desc = "A voidsuit helmet designed by the church with a most holy mix of biomatter and inorganic matter."
@@ -129,7 +101,7 @@
 	action_button_name = "Toggle Helmet Light"
 	brightness_on = 4 //luminosity when on
 	light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT //Holyer then thou!
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 30,
 		energy = 30,
@@ -147,7 +119,7 @@
 	item_state = "ntvoid"
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_STEEL = 10, MATERIAL_BIOMATTER = 29)
 	slowdown = 0.15
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 30,
 		energy = 30,
@@ -167,3 +139,99 @@
 	flash_protection = FLASH_PROTECTION_MAJOR
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+
+
+
+//Church Crusader armor, credit to Valterak for the original sprite.
+/obj/item/clothing/head/helmet/space/void/crusader
+	name = "crusader hood"
+	desc = "An armored helmet with a built in light system allowing you to shine heavens grace on heretics before you purge them."
+	icon_state = "inqarmor_hood"
+	item_state = "inqarmor_hood"
+	armor_list = list(
+		melee = 65,
+		bullet = 65,
+		energy = 65,
+		bomb = 70,
+		bio = 100,
+		rad = 100
+	)
+	siemens_coefficient = 0
+	species_restricted = list("Human")
+	light_overlay = "helmet_light_white"
+	brightness_on = 8 //luminosity when on
+	max_upgrades = 0
+
+/obj/item/clothing/head/helmet/space/void/crusader/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["standard"] = ""
+	options["alternate"] = "_alt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You change to the [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/space/void/crusader
+	name = "crusader 'Deus Vult' power armor"
+	desc = "The church of absolutes most powerful creation, the Mark I 'Deus Vult' power armor, a void capable ablative durasteel-forged suit with built in power systems linked to a wearers cruciform, recharged by its presence to prevent slow down from the armors weight. The only thing they fear is you."
+	icon_state = "inqarmor"
+	item_state = "inqarmor"
+	slowdown = 0
+	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
+	armor_list = list(
+		melee = 65,
+		bullet = 65,
+		energy = 65,
+		bomb = 70,
+		bio = 100,
+		rad = 100
+	)
+	siemens_coefficient = 0
+	species_restricted = list("Human")
+	helmet = /obj/item/clothing/head/helmet/space/void/crusader
+	max_upgrades = 0
+
+/obj/item/clothing/suit/space/void/crusader/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["standard"] = ""
+	options["alternate"] = "_alt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You change to the [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1

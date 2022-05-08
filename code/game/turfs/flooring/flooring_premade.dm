@@ -467,7 +467,12 @@
 // Placeholders
 /turf/simulated/floor/airless/lava
 /turf/simulated/floor/light
+
 /turf/simulated/floor/snow
+	name = "fake snow"
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "snow"
+
 /turf/simulated/floor/beach/coastline
 /turf/simulated/floor/plating/snow
 /turf/simulated/floor/airless/ceiling

@@ -15,7 +15,7 @@
 		slot_l_hand_str = "eng_helm",
 		slot_r_hand_str = "eng_helm",
 		)
-	armor = list(
+	armor_list = list(
 		melee = 35,
 		bullet = 30,
 		energy =30,
@@ -55,7 +55,7 @@
 	desc = "A special suit that protects against hazardous, low pressure environments. Has radiation shielding."
 	icon_state = "technosuit_void"
 	item_state = "technosuit_void"
-	armor = list(
+	armor_list = list(
 		melee = 35,
 		bullet = 30,
 		energy = 30,
@@ -88,8 +88,8 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 4, MATERIAL_PLASTIC = 3)
-	armor = list(
-		melee = 40,
+	armor_list = list(
+		melee = 25,
 		bullet = 20,
 		energy = 20,
 		bomb = 25,
@@ -98,6 +98,7 @@
 	)
 	light_overlay = "helmet_light_dual"
 	siemens_coefficient = 0.8
+	obscuration = MEDIUM_OBSCURATION
 
 /obj/item/clothing/head/space/void/riggedvoidsuit/verb/toggle_style()
 	set name = "Adjust Style"
@@ -129,8 +130,8 @@
 	icon_state = "makeshift_void"
 	item_state = "makeshift_void"
 	siemens_coefficient = 0.4
-	armor = list(
-		melee = 40,
+	armor_list = list(
+		melee = 30,
 		bullet = 20,
 		energy = 20,
 		bomb = 25,
@@ -162,7 +163,7 @@
 		slot_l_hand_str = "mining_helm",
 		slot_r_hand_str = "mining_helm",
 		)
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 25,
 		energy = 25,
@@ -178,7 +179,7 @@
 	item_state = "miner_suit"
 	icon_state = "miner_suit"
 	slowdown = 0.35
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 25,
 		energy = 25,
@@ -187,6 +188,48 @@
 		rad = 75
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/mining
+
+//CEO Rig
+/obj/item/clothing/head/helmet/space/void/goldilocks
+	name = "Goldilocks Gilded Helmet"
+	desc = "A helmet designed to look good while watching people you paid to do your work for you. Not the best for personal protection, but lightweight."
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 6 //luminosity when on
+	icon_state = "goldilocks_helmet"
+	item_state = "goldilocks_helmet"
+	item_state_slots = list(
+		slot_l_hand_str = "goldilocks_helm",
+		slot_r_hand_str = "goldilocks_helm",
+		)
+	armor_list = list(
+		melee = 50,
+		bullet = 25,
+		energy = 25,
+		bomb = 25,
+		bio = 100,
+		rad = 75
+	)
+	light_overlay = "helmet_light_dual"
+	siemens_coefficient = 2 //Guess what gold conducts?
+
+/obj/item/clothing/suit/space/void/goldilocks
+	name = "Goldilocks Gilded Voidsuit"
+	desc = "Grandeur incarnated in a padded suit of armor, fitting for a CEO that would like to boast their wealth at the expense personal safety."
+	item_state = "goldilocks_suit"
+	icon_state = "goldilocks_suit"
+	slowdown = 0
+	armor_list = list(
+		melee = 50,
+		bullet = 25,
+		energy = 25,
+		bomb = 25,
+		bio = 100,
+		rad = 75
+	)
+	helmet = /obj/item/clothing/head/helmet/space/void/goldilocks
+	boots = /obj/item/clothing/shoes/magboots
+	tank = /obj/item/tank/jetpack/void/cope
+	siemens_coefficient = 2 //Guess what gold conducts?
 
 //Medical Rig
 /obj/item/clothing/head/helmet/space/void/medical
@@ -198,7 +241,7 @@
 		slot_l_hand_str = "medical_helm",
 		slot_r_hand_str = "medical_helm",
 		)
-	armor = list(
+	armor_list = list(
 		melee = 20, // It's a literal glass cube
 		bullet = 10,
 		energy = 35,
@@ -220,7 +263,7 @@
 		/obj/item/stack/medical,
 		/obj/item/roller
 	)
-	armor = list(
+	armor_list = list(
 		melee = 35,
 		bullet = 10,
 		energy = 35,
@@ -245,7 +288,7 @@
 		)
 	obscuration = MEDIUM_OBSCURATION
 
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 40,
 		energy = 40,
@@ -263,7 +306,7 @@
 	desc = "A bulky suit that protects against hazardous, low pressure environments. Sacrifices mobility for protection"
 	item_state = "ihvoidsuit"
 	slowdown = 1
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 40,
 		energy = 40,
@@ -293,7 +336,7 @@
 		slot_r_hand_str = "sec_helm",
 		)
 
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 40,
 		energy = 40,
@@ -311,7 +354,7 @@
 	icon_state = "odst"
 	item_state = "odst"
 	slowdown = 1
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 40,
 		energy = 40,
@@ -409,7 +452,7 @@
 		slot_l_hand_str = "atmos_helm",
 		slot_r_hand_str = "atmos_helm",
 		)
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 10,
 		energy = 10,
@@ -426,7 +469,7 @@
 	icon_state = "rig-atmos"
 	name = "atmos voidsuit"
 	item_state = "atmos_voidsuit"
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 10,
 		energy = 10,
@@ -456,7 +499,7 @@
 		)
 	obscuration = MEDIUM_OBSCURATION
 
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 65,
 		energy = 50,
@@ -494,7 +537,7 @@
 	desc = "A specialty import from the Kriosan Confederacy, usually imported by Lonestar LLC thanks to the companies' long standing trade agreement. It costs a king's ransom, albeit for a good reason \
 	given its sturdy craftmenship and reinforced armor layers."
 	item_state = "assaultsuit"
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 75,
 		energy = 60,
@@ -525,7 +568,7 @@
 		slot_r_hand_str = "assaulthelm",
 		)
 
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 30,
 		energy = 20,
@@ -535,7 +578,7 @@
 	)
 	siemens_coefficient = 0.4
 	light_overlay = "helmet_light_dual"
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_BIOMATTER = 5, MATERIAL_PLASTIC = 5, MATERIAL_GLASS = 5)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_GLASS = 5)
 	obscuration = 0
 
 /obj/item/clothing/suit/space/void/medarmor
@@ -543,7 +586,7 @@
 	icon_state = "armor_medical"
 	desc = "A suit of all purpose soteria medical void armor. Used for operations where oxygen is a rarity and protection is needed."
 	item_state = "armor_medical"
-	armor = list(
+	armor_list = list(
 		melee = 35,
 		bullet = 35,
 		energy = 55,
@@ -553,10 +596,10 @@
 	)
 	siemens_coefficient = 0.4
 	helmet = /obj/item/clothing/head/space/void/medarmor
-	matter = list(MATERIAL_STEEL = 40, MATERIAL_BIOMATTER = 10, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10, MATERIAL_PLATINUM = 8)
+	matter = list(MATERIAL_STEEL = 40, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10, MATERIAL_PLATINUM = 8)
 	stiffness = MEDIUM_STIFFNESS
 
-/obj/item/clothing/suit/space/void/science/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack")
+/obj/item/clothing/suit/space/void/medarmor/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack")
 	if(istype(damage_source, /obj/item/projectile/energy) || istype(damage_source, /obj/item/projectile/beam))
 		var/obj/item/projectile/P = damage_source
 

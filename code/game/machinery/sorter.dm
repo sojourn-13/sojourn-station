@@ -192,7 +192,7 @@
 	..()
 
 /obj/machinery/sorter/attack_hand(mob/user as mob)
-	return ui_interact(user)
+	return nano_ui_interact(user)
 
 
 //UI
@@ -224,7 +224,7 @@
 	return data
 
 
-/obj/machinery/sorter/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, datum/topic_state/state = GLOB.default_state)
+/obj/machinery/sorter/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, datum/topic_state/state = GLOB.default_state)
 	var/list/data = ui_data()
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)

@@ -71,8 +71,6 @@
 	build_path = /obj/item/robot_parts/robot_component/jetpack
 	starts_unlocked = FALSE
 
-
-
 // Robot updates
 /datum/design/research/item/robot_upgrade
 	build_type = AUTOLATHE | MECHFAB
@@ -131,12 +129,12 @@
 /datum/design/research/item/robot_upgrade/medical_hypo_upgrade
 	name = "Expanded Medical Hypo Upgrade"
 	desc = "A smarter hypo synthesizer to make more complex chemicals. Made for medical modules."
-	build_path = /obj/item/borg/upgrade/hypospray/medical
+	build_path = /obj/item/borg/upgrade/hypospray_medical
 
 /datum/design/research/item/robot_upgrade/rescue_hypo_upgrade
 	name = "Expanded Rescue Hypo Upgrade"
 	desc = "A smarter hypo synthesizer to make more complex chemicals. Made for rescue modules."
-	build_path = /obj/item/borg/upgrade/hypospray/rescue
+	build_path = /obj/item/borg/upgrade/hypospray_rescue
 
 /datum/design/research/item/robot_upgrade/syndicate
 	name = "Illegal upgrade"

@@ -86,6 +86,7 @@
 
 //--------------------------------------------------GRAB---------------------------------------------------------
 /obj/screen/grab
+	icon = 'icons/mob/grab_icons.dmi'
 	name = "grab"
 
 /obj/screen/grab/Click()

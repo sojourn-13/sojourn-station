@@ -10,7 +10,7 @@
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_SMG
 	matter = list(MATERIAL_PLASTEEL = 28, MATERIAL_PLASTIC = 10)
 	price_tag = 950
@@ -18,11 +18,12 @@
 	recoil_buildup = 1.25
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
-	one_hand_penalty = 25
+	one_hand_penalty = 3
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_400_NOLOSS,
 		SEMI_AUTO_NODELAY
 		)
+	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/automatic/greasegun/update_icon()
 	..()

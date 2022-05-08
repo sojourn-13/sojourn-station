@@ -28,6 +28,8 @@
 
 	var/turn_on_sound = 'sound/effects/Custom_flashlight.ogg'
 
+	//Advanced T-rays can find hidden stashes and boxes
+	var/advanced = FALSE
 	/*Enabled and active are seperate things.
 	Enabled determines the power status. Is the scanner turned on or not?
 	The scanner is enabled as long as it has power, and the power switch is turned on. While enabled it will use power
@@ -51,6 +53,13 @@
 	var/global/list/overlay_cache = list() //cache recent over-lays
 	var/datum/event_source //When listening for movement, this is the source we're listening to
 	var/mob/current_user //The last mob who interacted with us. We'll try to fetch the client from them
+
+/obj/item/device/t_scanner/advanced
+	name = "\improper High-Power T-ray scanner"
+	desc = "A terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes. This one scans deeper and more clearly showing hidden storage objects."
+	advanced = TRUE
+	active_power_usage = 75 //3x the Watts of a normal one
+	icon_swap_to_old = FALSE // We start looking soj fancy
 
 /obj/item/device/t_scanner/verb/toggle_style()
 	set name = "Adjust Sprite"
@@ -181,7 +190,11 @@ are technically visible but obscured, for example by catwalks or trash sitting o
 				continue
 			if(!O.invisibility && !O.hides_under_flooring())
 				continue //if it's already visible don't need an overlay for it
+			//Hiding contraband just got a lot easyer >:D, and stashes. Still can see the skull and bones tho on many spawns of stashs
+			if(istype(O, /obj/item/storage) && !advanced)
+				continue
 			. += O
+
 
 
 
@@ -191,7 +204,7 @@ are technically visible but obscured, for example by catwalks or trash sitting o
 ***************************************/
 /obj/item/device/t_scanner/attack_self(mob/user)
 	set_user(user)
-	ui_interact(user)
+	nano_ui_interact(user)
 	//set_enabled(!enabled)
 
 /obj/item/device/t_scanner/New()
@@ -207,7 +220,7 @@ are technically visible but obscured, for example by catwalks or trash sitting o
 	if (loc == M)
 		set_enabled(!enabled)
 
-/obj/item/device/t_scanner/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/item/device/t_scanner/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	// this is the data which will be sent to the ui
 	var/data[0]
 	data["enabled"] = enabled ? 1 : 0
@@ -243,7 +256,7 @@ are technically visible but obscured, for example by catwalks or trash sitting o
 	playsound(loc, 'sound/machines/machine_switch.ogg', 40, 1, -2)
 	add_fingerprint(usr)
 	spawn()
-		ui_interact(usr)
+		nano_ui_interact(usr)
 
 
 /obj/item/device/t_scanner/examine(var/mob/user)

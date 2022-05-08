@@ -85,11 +85,12 @@
 
 	if(M && invalidFeedTarget(M)) // This means that the slime drained the victim
 		if(!client)
-			if(Victim && !rabid && !attacked && Victim.LAssailant && Victim.LAssailant != Victim && prob(50))
-				if(!(Victim.LAssailant in Friends))
-					Friends[Victim.LAssailant] = 1
+			var/mob/living/carbon/LAssailant = (Victim.LAssailant_weakref?.resolve())
+			if(Victim && !rabid && !attacked && LAssailant && LAssailant != Victim && prob(50))
+				if(!(LAssailant in Friends))
+					Friends[LAssailant] = 1
 				else
-					++Friends[Victim.LAssailant]
+					++Friends[LAssailant]
 
 		else
 			to_chat(src, SPAN_NOTICE("This subject does not have a strong enough life energy anymore..."))

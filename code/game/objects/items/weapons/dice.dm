@@ -5,6 +5,7 @@
 	icon_state = "d66"
 	w_class = ITEM_SIZE_TINY
 	var/sides = 6
+	var/allow_alt_sprites = TRUE
 	attack_verb = list("diced")
 
 /obj/item/dice/New()
@@ -50,7 +51,8 @@
 /obj/item/dice/d100
 	name = "d100"
 	desc = "A dice with hundred sides. Can be used as a golf ball."
-	icon_state = "d10010"
+	icon_state = "d100"
+	allow_alt_sprites = FALSE
 	sides = 100
 
 /*
@@ -97,7 +99,8 @@ Another builds like baystation12 also have a duplication.
 		comment = "Ouch, bad luck."
 	else if (result == 20 && sides == 20)
 		comment = "Nat 20!"
-	icon_state = "[name][result]"
+	if(allow_alt_sprites)
+		icon_state = "[name][result]"
 	user.visible_message(SPAN_NOTICE("[user] has thrown [src]. It lands on [result]. [comment]"), \
 						 SPAN_NOTICE("You throw [src]. It lands on a [result]. [comment]"), \
 						 SPAN_NOTICE("You hear [src] landing on a [result]. [comment]"))

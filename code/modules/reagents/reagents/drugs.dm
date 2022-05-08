@@ -45,6 +45,44 @@
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "spacedrugs")
 	..()
 
+/datum/reagent/drug/lean
+	name = "antihistamine hydrochloride"
+	id = "lean"
+	description = "A weak sleeping agent mixed with carbondated water to make it into a drinkable substaince, but unstable in the blood. Oftin mixed with soda or coffee to get a high."
+	taste_description = "bitter sweetness"
+	taste_mult = 3
+	reagent_state = LIQUID
+	color = "#B33DE2"
+	metabolism = REM * 0.5
+	overdose = REAGENTS_OVERDOSE
+	addiction_chance = 0 //its not an addiction they can stop at any time, its a life style!
+	sanity_gain = 1.5
+	illegal = TRUE
+	glass_icon_state = "lean"
+	glass_name = "Suspect Solo Cup"
+	glass_desc = "A suspect looking solo cup of a sleeping agent mixed with soda water to be drinkable."
+
+/datum/reagent/drug/lean/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.adjustToxLoss(2) //a strong toxin when injected
+	..()
+
+/datum/reagent/drug/lean/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.sleeping = max(M.sleeping, 3) //Meant to put you to sleep but can be over powerd by coffee
+	M.drowsyness = max(M.drowsyness, 20)
+	M.hallucination(120, 30)
+	M.druggy = max(M.druggy, 15 * effect_multiplier)
+	M.add_chemical_effect(CE_PAINKILLER, 25)
+	if(prob(10 * effect_multiplier) && isturf(M.loc) && !istype(M.loc, /turf/space) && M.canmove && !M.restrained())
+		step(M, pick(cardinal))
+	if(prob(7 * effect_multiplier))
+		M.emote(pick("yawn", "drool"))
+	M.add_chemical_effect(CE_PULSE, -1)
+	if(sanity_gain)
+		var/mob/living/carbon/human/H = M
+		if(istype(H))
+			H.sanity.onDrug(src, effect_multiplier)
+		SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
+	..()
 
 /datum/reagent/drug/serotrotium
 	name = "Serotrotium"
@@ -353,7 +391,7 @@
 	color = "#e06270"
 	metabolism = REM
 	overdose = REAGENTS_OVERDOSE/2
-	nerve_system_accumulations = 80
+	nerve_system_accumulations = 40 // Was incredibly unforgiving for its effects, this makes it able to be mixed with painkillers without forcing vomit. - Seb
 	addiction_chance = 30
 
 /datum/reagent/drug/sanguinum/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
@@ -367,7 +405,7 @@
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "sanguinum_w")
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "sanguinum_w")
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "sanguinum_w")
-
+/*
 /datum/reagent/drug/sanguinum/overdose(var/mob/living/carbon/M, var/alien)
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
@@ -381,3 +419,33 @@
 			//var/list/obj/item/organ/external/unluckyPart = pick(bodyParts)
 			//var/datum/wound/internal_bleeding/I = new (15)
 			//unluckyPart.wounds += I
+*/
+/datum/reagent/drug/nosfernium
+	name = "Nosfernium"
+	id = "nosfernium"
+	description = "A chemical for when the body is bleed dry, and if its not will ensure you are left a skeleton."
+	taste_description = "teeth"
+	reagent_state = LIQUID
+	color = "#e06270"
+	metabolism = REM
+	overdose = REAGENTS_OVERDOSE/6
+	nerve_system_accumulations = 80
+	addiction_chance = 30
+
+/datum/reagent/drug/nosfernium/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_BLOODRESTORE, 3 * effect_multiplier)
+	M.adjustToxLoss(1.5)
+	M.adjustNutrition(-10)
+	if(prob(10 * effect_multiplier))
+		M.vomit()
+	if(prob(5))
+		spawn
+			M.emote("me", 1, "pukes up blood!")
+		M.drip_blood(20)
+
+/datum/reagent/drug/nosfernium/withdrawal_act(mob/living/carbon/M)
+	M.add_chemical_effect(CE_SLOWDOWN, 1)
+	M.adjustNutrition(-25)
+
+datum/reagent/drug/sanguinum/overdose(var/mob/living/carbon/M, var/alien)
+	M.adjustBrainLoss(5) // This is meant to be lethal. If you survive this give your doctor a pat on the back.

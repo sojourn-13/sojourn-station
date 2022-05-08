@@ -8,7 +8,7 @@
 	desc = "A blood-red hardsuit featuring some fairly advanced technology."
 	icon_state = "merc_rig"
 	suit_type = "crimson hardsuit"
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 40,
 		energy = 30,
@@ -33,7 +33,7 @@
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/electrowarfare_suite,
-		/obj/item/rig_module/chem_dispenser/combat,
+		/obj/item/rig_module/modular_injector/combat,
 		/obj/item/rig_module/fabricator/energy_net,
 		/obj/item/rig_module/storage
 		)

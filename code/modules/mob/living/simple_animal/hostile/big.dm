@@ -331,7 +331,7 @@
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 	mob_size = MOB_LARGE
 	armor = list(melee = 15, bullet = 10, energy = 20, bomb = 5, bio = 10, rad = 25)
-	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_BLINDNESS, MUTATION_NO_PAIN)
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_BLINDNESS, MUTATION_NO_PAIN, MUTATION_HYPERION)
 
 /mob/living/simple_animal/hostile/hell_pig/wendigo
 	name = "wendigo"

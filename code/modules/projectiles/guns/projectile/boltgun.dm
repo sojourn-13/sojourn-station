@@ -13,7 +13,7 @@
 	fire_delay = 2
 	damage_multiplier = 1.1
 	penetration_multiplier  = 1.5
-	recoil_buildup = 40 //same as AMR
+	recoil_buildup = 15 //FORMERLY same as AMR, whos idea was this?
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING|SPEEDLOADER
 	max_shells = 10
@@ -31,6 +31,8 @@
 	sawn = /obj/item/gun/projectile/boltgun/sawn/true
 	var/bolt_training = TRUE
 	eject_animatio = TRUE //we infact have bullet animations
+	allow_racking = FALSE
+	serial_type = "Hunter Inc"
 
 /obj/item/gun/projectile/boltgun/sawn //subtype for code
 	name = "\"obrez\" mosin boltgun"

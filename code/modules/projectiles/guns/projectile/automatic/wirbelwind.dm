@@ -8,7 +8,7 @@
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_SMG|MAG_WELL_H_PISTOL|MAG_WELL_DRUM
 	auto_eject = 1
 	can_dual = TRUE
@@ -22,9 +22,10 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND,
-		FULL_AUTO_600
+		BURST_3_ROUND_NOLOSS,
+		FULL_AUTO_600_NOLOSS
 		)
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/automatic/wirbelwind/update_icon()
 	..()
