@@ -22,10 +22,6 @@
 	name = "Excelsior .35 \"Makarov\""
 	build_path = /obj/item/gun/projectile/clarissa/makarov
 
-/datum/design/autolathe/gun/firefly
-	name = "Seinemetall Defense GmbH HG .35 \"Firefly\""
-	build_path = /obj/item/gun/projectile/firefly
-
 /datum/design/autolathe/gun/colt
 	name = "H&S HG .35 \"Colt\""
 	build_path = /obj/item/gun/projectile/colt
@@ -140,10 +136,6 @@
 	name = "SA SMG .35 \"MAC\""
 	build_path = /obj/item/gun/projectile/automatic/mac
 
-/datum/design/autolathe/gun/straylight
-	name = "H&S SMG .35 \"Straylight\""
-	build_path = /obj/item/gun/projectile/automatic/straylight
-
 /datum/design/autolathe/gun/wirbelwind
 	name = "Seinemetall Defense GmbH SMG ,35 \"Wirbelwind\""
 	build_path = /obj/item/gun/projectile/automatic/wirbelwind
@@ -241,10 +233,6 @@
 /datum/design/autolathe/gun/bulldog_rds
 	name = "Seinemetall Defense GmbH CAR .257 \"Bulldog\" Dot Sight"
 	build_path = /obj/item/gun/projectile/automatic/bulldog/rds
-
-/datum/design/autolathe/gun/basstet
-	name = "NM CAR .257 \"Basstet\""
-	build_path = /obj/item/gun/projectile/automatic/basstet
 
 /datum/design/autolathe/gun/pitbull
 	name = "H&S AR .257 \"Pitbull\""

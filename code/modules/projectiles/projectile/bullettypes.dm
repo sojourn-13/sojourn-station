@@ -326,18 +326,17 @@
 	armor_penetration = 20
 	penetrating = 1
 	can_ricochet = TRUE
-	step_delay = 0.5
-	affective_damage_range = 5
-	affective_ap_range = 5
-
-/obj/item/projectile/bullet/rifle_75/hv
-	damage_types = list(BRUTE = 20)
-	armor_penetration = 35
-	penetrating = 2
-	can_ricochet = TRUE
 	step_delay = 0.3
 	affective_damage_range = 7
 	affective_ap_range = 7
+
+/obj/item/projectile/bullet/rifle_75/hv
+	damage_types = list(BRUTE = 22)
+	armor_penetration = 36
+	penetrating = 2
+	hitscan = TRUE
+	affective_damage_range = 8
+	affective_ap_range = 8
 	nocap_structures = TRUE //Helps against walls and doors
 
 /obj/item/projectile/bullet/rifle_75/practice
@@ -391,8 +390,8 @@
 /obj/item/projectile/bullet/rifle_75/scrap
 	damage_types = list(BRUTE = 22)
 	armor_penetration = 10
-	affective_damage_range = 2
-	affective_ap_range = 2
+	affective_damage_range = 3
+	affective_ap_range = 3
 
 /// .408 OMNI ///
 

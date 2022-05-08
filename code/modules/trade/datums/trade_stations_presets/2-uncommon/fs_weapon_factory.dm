@@ -60,7 +60,7 @@
 			/obj/item/grenade/frag,
 			/obj/item/grenade/explosive,
 			/obj/item/grenade/anti_photon,
-			/obj/item/plastique
+			/obj/item/plastique = good_data("plastic explosive", (list(2, 4)), 1500)
 		),
 		"Top Class Firearms" = list(
 			/obj/item/gun/projectile/boltgun/scout,

@@ -19,7 +19,6 @@
 /datum/supply_pack/pistol_35_pack
 	name = "35 Pistol Pack Weapons Crate"
 	contains = list(/obj/item/gun/projectile/glock, //400
-				/obj/item/gun/projectile/firefly, //375
 				/obj/item/gun/projectile/giskard, //150
 				/obj/item/gun/projectile/olivaw, //225
 				/obj/item/gun/projectile/mk58) //325
