@@ -297,3 +297,35 @@
 	desc = "This is a tiny well lit decorative christmas tree."
 	icon_state = "plant-xmas"
 	needs_to_maintain = TRUE
+
+//Shard
+/obj/structure/flora/pottedplant/green_rock
+	name = "contained ameridian shard"
+	desc = "A contained shiny shard of ameridian, uses a positronic cell for its power and has some osium for emp shielding making it super safe."
+	icon = 'icons/obj/plants.dmi'
+	icon_state = "ameridian_pot_shield_powered"
+	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
+	needs_to_maintain = FALSE
+	light_range = 2
+	light_power = 0.6
+	light_color = "#43BA69" //Green!
+	var/shield_level = 3
+
+/obj/structure/flora/pottedplant/green_rock/attack_hand(mob/living/user as mob)
+	if(shield_level >= 3)
+		shield_level -= 1
+	if(shield_level <= -1)
+		shield_level += 1
+	if(shield_level == 3)
+		icon_state = "ameridian_pot_shield_powered"
+		desc = "A contained shiney shard of ameridian, uses a posi sound for its power and has some osium for emp shielding making it super safe.."
+		return
+	if(shield_level == 2)
+		icon_state = "ameridian_pot_shield_unpowered"
+		desc = "A contained shiney shard of ameridian, uses a posi sound for its power and has some osium for emp shielding making it super safe.."
+		return
+	if(shield_level == 1)
+		icon_state = "ameridian_pot_shieldless"
+		desc = "A contained shiney shard of ameridian, uses a posi sound for its power and has some osium for emp shielding making it super safe. Its shield light level is set to its lowest level making it still contained but look nice."
+		return
+	shield_level = 3 //Reset out of bound list

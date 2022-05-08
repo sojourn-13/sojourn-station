@@ -7768,6 +7768,10 @@
 	pixel_x = 0;
 	pixel_y = -32
 	},
+/mob/living/simple_animal/hostile/ratking{
+	colony_friend = 1;
+	friendly_to_colony = 1
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/mine/medical)
 "sC" = (
@@ -8699,17 +8703,16 @@
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "vo" = (
-/mob/living/simple_animal/hostile/ratking{
-	colony_friend = 1;
-	friendly_to_colony = 1
+/obj/effect/floor_decal/corner/paleblue/diagonal{
+	dir = 4
 	},
+/mob/living/simple_animal/mouse/hooded,
 /turf/simulated/floor/tiled/cafe,
-/area/mine/livingarea)
+/area/mine/medical)
 "vp" = (
 /obj/machinery/camera/network/mining{
 	dir = 1
 	},
-/mob/living/simple_animal/mouse/hooded,
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "vq" = (
@@ -35482,7 +35485,7 @@ ed
 ff
 gL
 ho
-gN
+vo
 sA
 gr
 gr
@@ -38713,7 +38716,7 @@ fL
 Mq
 gt
 gY
-vo
+gV
 gV
 vp
 gt
