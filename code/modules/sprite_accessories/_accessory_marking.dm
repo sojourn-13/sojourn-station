@@ -1048,3 +1048,17 @@
 		icon_state = "bandage"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_R_FOOT)
+
+/*Jackal*/
+
+	jackal_bare
+		name = "Jackal Back"
+		icon_state = "jackal_bareback"
+		body_parts = list(BP_CHEST, BP_GROIN, BP_L_ARM, BP_R_ARM)
+		blend = ICON_MULTIPLY
+
+	jackal_spotted
+		name = "Jackal Markings"
+		icon_state = "jackal_backpattern"
+		body_parts = list(BP_CHEST, BP_L_ARM, BP_R_ARM)
+		blend = ICON_MULTIPLY
