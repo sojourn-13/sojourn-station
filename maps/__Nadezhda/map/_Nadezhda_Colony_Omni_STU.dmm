@@ -11704,32 +11704,6 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
 "cCd" = (
-/obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/automatic/nordwind/strelki{
-	pixel_y = 8
-	},
-/obj/item/ammo_magazine/rifle_75/rubber{
-	pixel_x = 7;
-	pixel_y = -5
-	},
-/obj/item/ammo_magazine/rifle_75/rubber{
-	pixel_x = 7;
-	pixel_y = -5
-	},
-/obj/item/ammo_magazine/rifle_75/lethal{
-	pixel_y = -5
-	},
-/obj/item/ammo_magazine/rifle_75/lethal{
-	pixel_y = -5
-	},
-/obj/item/ammo_magazine/rifle_75{
-	pixel_x = -7;
-	pixel_y = -5
-	},
-/obj/item/ammo_magazine/rifle_75{
-	pixel_x = -7;
-	pixel_y = -5
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -11913,7 +11887,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "cDR" = (
-/obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -12871,11 +12844,20 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "cOJ" = (
 /obj/structure/table/rack/shelf,
-/obj/item/ammo_magazine/ammobox/light_rifle_257,
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/ammo_magazine/light_rifle_257,
+/obj/item/gun/projectile/automatic/omnirifle{
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/item/gun/projectile/automatic/omnirifle/omnicarbine{
+	pixel_x = -4
+	},
+/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/rds{
+	pixel_x = -4;
+	pixel_y = -6
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "cOK" = (
@@ -17289,14 +17271,6 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "dNb" = (
-/obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/automatic/sts/rifle/blackshield{
-	pixel_y = 6
-	},
-/obj/item/gun/projectile/automatic/sts/rifle/blackshield{
-	pixel_y = -6
-	},
-/obj/item/gun/projectile/automatic/sts/rifle/blackshield,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -22753,12 +22727,11 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "eWl" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/ammo_magazine/ammobox/rifle_75,
-/obj/item/ammo_magazine/rifle_75/highvelocity,
-/obj/item/ammo_magazine/rifle_75/highvelocity,
+/obj/item/computer_hardware/hard_drive/portable/design/blackshield{
+	pixel_x = 8
+	},
 /obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo{
-	pixel_x = -6;
-	pixel_y = 1
+	pixel_x = -6
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
@@ -23764,6 +23737,13 @@
 "fhu" = (
 /obj/structure/table/rack/shelf,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/projectile/automatic/sts/rifle/blackshield{
+	pixel_y = 6
+	},
+/obj/item/gun/projectile/automatic/sts/rifle/blackshield,
+/obj/item/gun/projectile/automatic/sts/rifle/blackshield{
+	pixel_y = -6
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "fhy" = (
@@ -38105,6 +38085,13 @@
 	pixel_x = -26;
 	req_access = list(3)
 	},
+/obj/structure/table/steel_reinforced,
+/obj/item/storage/box/frag{
+	pixel_x = 6
+	},
+/obj/item/storage/box/explosive{
+	pixel_x = -10
+	},
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/security/armory_blackshield)
 "ilM" = (
@@ -46906,7 +46893,7 @@
 	dir = 1;
 	pixel_y = -28
 	},
-/obj/machinery/recharge_station/upgraded_t_three,
+/obj/machinery/mech_recharger,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "keT" = (
@@ -46950,9 +46937,6 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/bridgebar)
 "kfj" = (
-/obj/structure/table/standard,
-/obj/item/extinguisher/mini,
-/obj/item/gun/flamethrower,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -54123,6 +54107,17 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "lBM" = (
 /obj/structure/table/rack/shelf,
+/obj/item/gun/projectile/automatic/nordwind/watchtower{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/item/gun/projectile/automatic/blackguard{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/item/gun/projectile/boltgun/scout{
+	pixel_y = -6
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "lBQ" = (
@@ -55032,10 +55027,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/pros/prep)
 "lNd" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/storage/box/teargas,
-/obj/item/storage/box/flashbangs,
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield,
+/obj/machinery/recharge_station/upgraded_t_three,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "lNf" = (
@@ -61432,13 +61424,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/hallway/surface/section1)
 "nev" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/storage/box/explosive{
-	pixel_x = -10
-	},
-/obj/item/storage/box/frag{
-	pixel_x = 6
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "nez" = (
@@ -64506,15 +64492,8 @@
 	name = "\improper Outdoors - Pad"
 	})
 "nLB" = (
-/obj/structure/table/standard,
-/obj/item/gun/projectile/automatic/blackguard{
-	pixel_x = 12
-	},
-/obj/item/gun/projectile/automatic/blackguard{
-	pixel_x = 12;
-	pixel_y = 8
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "nLK" = (
@@ -70670,9 +70649,6 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/gmaster)
 "peh" = (
-/obj/item/gun/projectile/automatic/omnirifle{
-	pixel_y = 1
-	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -71990,10 +71966,6 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/security/detectives_office)
 "pun" = (
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine{
-	pixel_y = 4
-	},
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/rds,
 /obj/structure/closet/crate/serbcrate,
 /obj/random/gun_combat/low_chance,
 /obj/random/gun_combat/low_chance,
@@ -88432,8 +88404,8 @@
 	pixel_x = 4
 	},
 /obj/item/clothing/mask/breath{
-	pixel_y = 4;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 4
 	},
 /obj/item/clothing/mask/breath{
 	pixel_x = 4
@@ -89108,8 +89080,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/standard,
 /obj/item/clothing/head/helmet/visor/cyberpunkgoggle{
-	pixel_y = 5;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/detectives_office)
@@ -89179,7 +89151,6 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "sXw" = (
 /obj/structure/table/rack/shelf,
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv,
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 8
 	},
@@ -89197,8 +89168,21 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/item/ammo_magazine/heavy_rifle_408/hv,
-/obj/item/ammo_magazine/heavy_rifle_408/hv,
+/obj/item/gun/flamethrower{
+	pixel_y = 10
+	},
+/obj/item/weldpack/canister/flamethrower{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/item/weldpack/canister/flamethrower{
+	pixel_x = -2;
+	pixel_y = -8
+	},
+/obj/item/extinguisher/mini{
+	pixel_x = 8;
+	pixel_y = -8
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "sXy" = (
@@ -104301,6 +104285,7 @@
 "weM" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/security/armory_blackshield)
 "weP" = (
@@ -112059,13 +112044,6 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/bar)
 "xMv" = (
-/obj/structure/table/standard,
-/obj/item/weldpack/canister/flamethrower{
-	pixel_x = -5
-	},
-/obj/item/weldpack/canister/flamethrower{
-	pixel_x = 5
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;

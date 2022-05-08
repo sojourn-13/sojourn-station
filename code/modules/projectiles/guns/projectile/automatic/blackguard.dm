@@ -12,7 +12,7 @@
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
+	mag_well = MAG_WELL_HRIFLE //Haha, no
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_STEEL = 25, MATERIAL_GLASS = 5)
 	zoom_factor = 0.5 //5 more tiles
 	price_tag = 2500
@@ -20,6 +20,7 @@
 	damage_multiplier = 1.35 //Really hard to upgrade
 	recoil_buildup = 10
 	one_hand_penalty = 15
+	brace_penalty = 15 //So this isn't literally better long arm in every way also it has a damn bayonet
 
 	max_upgrades = 3 // Trigger ang a guard; 2 less slots than usual due to its scope, pen and damage.
 
