@@ -300,8 +300,8 @@
 
 //Shard
 /obj/structure/flora/pottedplant/green_rock
-	name = "contained ameridian shard"
-	desc = "A contained shiny shard of ameridian, uses a positronic cell for its power and has some osium for emp shielding making it super safe."
+	name = "potted ameridian shard"
+	desc = "An ameridian shard in a plant pot, contained using a small sonic fence powered by a duo of Atomcells. It has a small knob to set the fence's opacity level."
 	icon = 'icons/obj/plants.dmi'
 	icon_state = "ameridian_pot_shield_powered"
 	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
@@ -312,20 +312,16 @@
 	var/shield_level = 3
 
 /obj/structure/flora/pottedplant/green_rock/attack_hand(mob/living/user as mob)
-	if(shield_level >= 3)
-		shield_level -= 1
-	if(shield_level <= -1)
-		shield_level += 1
-	if(shield_level == 3)
-		icon_state = "ameridian_pot_shield_powered"
-		desc = "A contained shiney shard of ameridian, uses a posi sound for its power and has some osium for emp shielding making it super safe.."
-		return
-	if(shield_level == 2)
-		icon_state = "ameridian_pot_shield_unpowered"
-		desc = "A contained shiney shard of ameridian, uses a posi sound for its power and has some osium for emp shielding making it super safe.."
-		return
-	if(shield_level == 1)
-		icon_state = "ameridian_pot_shieldless"
-		desc = "A contained shiney shard of ameridian, uses a posi sound for its power and has some osium for emp shielding making it super safe. Its shield light level is set to its lowest level making it still contained but look nice."
-		return
-	shield_level = 3 //Reset out of bound list
+	switch(shield_level)
+		if(3)
+			shield_level = 2
+			icon_state = "ameridian_pot_shield_powered"
+			to_chat(user, "You turn the knob and make the fence translucent.")
+		if(2)
+			shield_level = 1
+			icon_state = "ameridian_pot_shield_unpowered"
+			to_chat(user, "You turn the knob and make the fence opaque.")
+		if(1)
+			shield_level = 3
+			icon_state = "ameridian_pot_shieldless"
+			to_chat(user, "You turn the knob and make the fence almost invisible.")
