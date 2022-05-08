@@ -319,7 +319,7 @@
 			to_chat(user, "You turn the knob and make the fence translucent."
 		if(2)
 			shield_level = 1
-		icon_state = "ameridian_pot_shield_unpowered"
+			icon_state = "ameridian_pot_shield_unpowered"
 			to_chat(user, "You turn the knob and make the fence opaque."
 		if(1)
 			shield_level = 3
