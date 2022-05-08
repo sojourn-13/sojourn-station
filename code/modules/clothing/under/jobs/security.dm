@@ -178,6 +178,33 @@
 	icon_state = "detective"
 	item_state = "det"
 	siemens_coefficient = 0.8
+	
+/obj/item/clothing/under/rank/inspector/suit/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Pants"] = ""
+	options["Skirt"] = "_f"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/under/rank/inspector/uniform
 	name = "patrol uniform"
