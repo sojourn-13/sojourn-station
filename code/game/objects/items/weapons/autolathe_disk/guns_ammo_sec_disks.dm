@@ -44,14 +44,12 @@
 	license = 20 //1:1 with blackshield guns
 	designs = list(
 		/datum/design/autolathe/gun/rev10,
-		/datum/design/autolathe/gun/firefly,
 		/datum/design/autolathe/gun/glock,
 		/datum/design/autolathe/gun/judge = 2,
 		//SMGs
 		/datum/design/autolathe/gun/wirbelwind = 2,
-		/datum/design/autolathe/gun/straylight,
+		/obj/item/gun/projectile/automatic/ppsh/ppv = 2,
 		//rifles
-		/datum/design/autolathe/gun/basstet,
 		/datum/design/autolathe/gun/strelki,
 		/datum/design/autolathe/gun/ostwind = 3,
 		/datum/design/autolathe/gun/bulldog = 3,
@@ -319,20 +317,6 @@
 		/datum/design/autolathe/ammo/hpistol_practice = 1,
 		/datum/design/autolathe/ammo/hpistol_rubber = 2,
 		/datum/design/autolathe/ammo/hpistol = 2,
-		/datum/design/autolathe/ammo/hpistol_lethal = 2,
-	)
-
-
-/obj/item/computer_hardware/hard_drive/portable/design/guns/firefly
-	disk_name = "Seinemetall Defense GmbH - .35 Firefly Pistol"
-	icon_state = "frozenstar"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/firefly = 3,
-		/datum/design/autolathe/ammo/hpistol_practice = 0,
-		/datum/design/autolathe/ammo/hpistol_rubber,
-		/datum/design/autolathe/ammo/hpistol,
 		/datum/design/autolathe/ammo/hpistol_lethal = 2,
 	)
 
@@ -652,19 +636,6 @@
 	license = 12
 	designs = list(
 		/datum/design/autolathe/gun/wirbelwind = 3,
-		/datum/design/autolathe/ammo/smg_practice = 0,
-		/datum/design/autolathe/ammo/smg_rubber,
-		/datum/design/autolathe/ammo/smg,
-		/datum/design/autolathe/ammo/smg_lethal = 2,
-	)
-
-/obj/item/computer_hardware/hard_drive/portable/design/guns/straylight
-	disk_name = "H&S - .35 Straylight SMG"
-	icon_state = "frozenstar"
-
-	license = 12
-	designs = list(
-		/datum/design/autolathe/gun/straylight = 3,
 		/datum/design/autolathe/ammo/smg_practice = 0,
 		/datum/design/autolathe/ammo/smg_rubber,
 		/datum/design/autolathe/ammo/smg,

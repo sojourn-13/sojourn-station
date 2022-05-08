@@ -63,7 +63,6 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/gun/projectile/automatic/nordwind/watchtower = 600,
 		/obj/item/gun/projectile/automatic/nordwind/strelki = 550,
 		/obj/item/gun/projectile/automatic/sts/hrifle = 500,
-		/obj/item/gun/projectile/automatic/basstet = 250,
 		/obj/item/gun/projectile/automatic/duty = 350,
 		/obj/item/gun/projectile/automatic/blackguard = 1000,
 		/obj/item/gun/projectile/automatic/drozd/NM_colony = 300,
