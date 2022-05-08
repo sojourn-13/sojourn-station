@@ -8805,13 +8805,13 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "bWs" = (
-/obj/structure/table/reinforced,
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 6
 	},
 /obj/structure/sink{
 	pixel_y = -22
 	},
+/obj/machinery/chemical_dispenser,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "bWz" = (
@@ -11339,7 +11339,7 @@
 /turf/simulated/open,
 /area/nadezhda/engineering/atmos/surface)
 "cyG" = (
-/obj/machinery/chemical_dispenser,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "cyH" = (
@@ -12045,6 +12045,9 @@
 /obj/item/stack/cable_coil/blue,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/rack/shelf,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/chemistry)
 "cFL" = (
@@ -19095,8 +19098,7 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/medical/genetics)
 "egs" = (
-/obj/structure/table/marble,
-/obj/item/tool/knife,
+/obj/machinery/chem_master/condimaster,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "egx" = (
@@ -19787,7 +19789,6 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "epp" = (
-/obj/structure/table/standard,
 /obj/item/reagent_containers/dropper{
 	pixel_y = -4
 	},
@@ -19797,7 +19798,6 @@
 	},
 /obj/item/storage/box/beakers,
 /obj/item/reagent_containers/glass/beaker/large,
-/obj/machinery/light/floor,
 /obj/machinery/light/small,
 /obj/machinery/light_switch{
 	dir = 2;
@@ -19810,6 +19810,7 @@
 	name = "Chemistry shutter control";
 	pixel_y = -37
 	},
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "eps" = (
@@ -61257,10 +61258,6 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/bioreactor)
 "nbP" = (
-/obj/machinery/newscaster{
-	dir = 4;
-	pixel_x = 30
-	},
 /obj/structure/reagent_dispensers/bidon,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
@@ -71865,8 +71862,8 @@
 /turf/simulated/open,
 /area/nadezhda/medical/reception)
 "prM" = (
-/obj/structure/table/standard,
 /obj/machinery/chem_heater,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "psc" = (
@@ -86634,13 +86631,13 @@
 /turf/simulated/floor/plating,
 /area/colony)
 "stx" = (
-/obj/structure/table/reinforced,
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 5
 	},
 /obj/structure/sink{
 	pixel_y = -22
 	},
+/obj/machinery/chemical_dispenser,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "sty" = (
@@ -102239,6 +102236,9 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/chemistry)
 "vJk" = (
@@ -107131,6 +107131,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/guestpass{
 	pixel_y = 32
+	},
+/obj/machinery/light/small{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
@@ -129932,8 +129935,8 @@ cud
 aFc
 cud
 cud
-uTx
 egs
+uTx
 vwf
 smm
 jdf
@@ -138420,7 +138423,7 @@ weY
 iDR
 vJh
 jUp
-cyG
+tFj
 stx
 iDR
 wIk
@@ -138825,7 +138828,7 @@ iDR
 uMF
 eKt
 prM
-tFj
+cyG
 oIN
 xCR
 cJk
@@ -139228,7 +139231,7 @@ iOI
 iDR
 nEB
 jUp
-cyG
+tFj
 bWs
 iDR
 xCR
