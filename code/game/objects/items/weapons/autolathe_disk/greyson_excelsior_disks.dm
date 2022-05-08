@@ -167,6 +167,9 @@
 		/datum/design/autolathe/prosthesis/excelsior/r_arm,
 		/datum/design/autolathe/prosthesis/excelsior/l_leg,
 		/datum/design/autolathe/prosthesis/excelsior/r_leg,
+		/datum/design/autolathe/prosthesis/excelsior/groin,
+		/datum/design/autolathe/prosthesis/excelsior/chest,
+		/datum/design/autolathe/prosthesis/excelsior/head,
 		/datum/design/autolathe/device/implanter,					//misc
 		/datum/design/autolathe/device/propaganda_chip,
 		/datum/design/autolathe/clothing/excelsior_armor,
