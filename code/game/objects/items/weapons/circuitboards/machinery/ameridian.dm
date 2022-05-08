@@ -37,7 +37,7 @@
 /obj/item/circuitboard/ameridian_analyzer
 	name = "liquid ameridian analyzer"
 	board_type = "machine"
-	build_path = /obj/machinery/liquid_ameridian_analyzer
+	build_path = /obj/machinery/ameridian_analyzer
 	origin_tech = list(TECH_DATA = 4, TECH_MATERIAL = 9, TECH_ENGINEERING = 5)
 	req_components = list(
 		/obj/item/stock_parts/matter_bin = 1,
