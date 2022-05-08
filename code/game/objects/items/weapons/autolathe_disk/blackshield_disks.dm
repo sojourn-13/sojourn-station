@@ -269,23 +269,6 @@
 
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/basstet
-	disk_name = "NM - .257 Basstet Rifle"
-	icon_state = "blackshield"
-
-	license = 16
-	designs = list(
-		/datum/design/autolathe/gun/basstet = 6,
-		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_short_rubber,
-		/datum/design/autolathe/ammo/lrifle_short,
-		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
-		/datum/design/autolathe/ammo/lrifle_practice = 1,
-		/datum/design/autolathe/ammo/lrifle_rubber = 2,
-		/datum/design/autolathe/ammo/lrifle = 2,
-		/datum/design/autolathe/ammo/lrifle_lethal = 4
-	)
-
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/blackguard
 	disk_name = "NM - .408 Blackguard Omni Rifle"
 	icon_state = "blackshield"
