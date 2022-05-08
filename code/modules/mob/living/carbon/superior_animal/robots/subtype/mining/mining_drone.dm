@@ -23,6 +23,7 @@
 	cleaning = FALSE // It isn't a roomba
 	wander = FALSE // We got the wandering handled manually
 	stop_automated_movement_when_pulled = TRUE
+	possession_candidate = TRUE
 
 	// Unique vars
 	var/target // Where we want to go
