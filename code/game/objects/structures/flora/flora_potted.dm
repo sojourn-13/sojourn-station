@@ -316,12 +316,12 @@
 		if(3)
 			shield_level = 2
 			icon_state = "ameridian_pot_shield_powered"
-			to_chat(user, "You turn the knob and make the fence translucent."
+			to_chat(user, "You turn the knob and make the fence translucent.")
 		if(2)
 			shield_level = 1
 			icon_state = "ameridian_pot_shield_unpowered"
-			to_chat(user, "You turn the knob and make the fence opaque."
+			to_chat(user, "You turn the knob and make the fence opaque.")
 		if(1)
 			shield_level = 3
 			icon_state = "ameridian_pot_shieldless"
-			to_chat(user, "You turn the knob and make the fence almost invisible."
+			to_chat(user, "You turn the knob and make the fence almost invisible.")
