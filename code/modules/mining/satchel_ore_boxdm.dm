@@ -67,7 +67,6 @@
 /obj/structure/ore_box/proc/dump_box_contents(drop_loc = null)
 	var/drop = drop_loc ? drop_loc : drop_location()
 	for(var/obj/item/stack/ore/O in src)
-		O.force_stack_all_from_loc()
 		if(QDELETED(O))
 			continue
 		if(QDELETED(src))

@@ -222,9 +222,10 @@
 			ores_stored[O.material] += O.sheet_amout * O.amount
 		else
 			ores_stored[O.material] = O.sheet_amout * O.amount
+		points += ore_values[O.material] * O.amount // Give Points!
 		if(isnull(ores_processing[O.material]))
 			ores_processing[O.material] = 0
-		points += ore_values[O.material] // Give Points!
+
 		qdel(O)
 
 	if(!active)
