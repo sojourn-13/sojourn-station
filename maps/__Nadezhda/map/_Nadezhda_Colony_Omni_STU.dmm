@@ -52825,6 +52825,10 @@
 /obj/item/clothing/suit/armor/vest/security,
 /obj/item/clothing/suit/armor/vest/security,
 /obj/item/clothing/suit/armor/vest/security,
+/obj/item/clothing/head/helmet/marshal_full,
+/obj/item/clothing/head/helmet/marshal_full,
+/obj/item/clothing/head/helmet/marshal_full,
+/obj/item/clothing/head/helmet/marshal_full,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security)
 "lob" = (
@@ -88432,8 +88436,8 @@
 	pixel_x = 4
 	},
 /obj/item/clothing/mask/breath{
-	pixel_y = 4;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 4
 	},
 /obj/item/clothing/mask/breath{
 	pixel_x = 4
@@ -89108,8 +89112,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/standard,
 /obj/item/clothing/head/helmet/visor/cyberpunkgoggle{
-	pixel_y = 5;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/detectives_office)
