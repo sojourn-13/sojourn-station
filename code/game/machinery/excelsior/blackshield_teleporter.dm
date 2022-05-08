@@ -60,6 +60,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/gun/projectile/colt/NM_colt = 70,
 		/obj/item/gun/projectile/automatic/sts/lrifle = 200,
 		/obj/item/gun/projectile/automatic/sts/rifle = 300,
+		/obj/item/gun/projectile/automatic/lmg/saw = 500,
 		/obj/item/gun/projectile/automatic/nordwind/watchtower = 600,
 		/obj/item/gun/projectile/automatic/nordwind/strelki = 550,
 		/obj/item/gun/projectile/automatic/sts/hrifle = 500,
