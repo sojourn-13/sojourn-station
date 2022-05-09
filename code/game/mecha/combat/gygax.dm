@@ -34,6 +34,7 @@
 	deflect_chance = 10
 	price_tag = 10000
 	internal_damage_threshold = 45
+	wreckage = /obj/effect/decal/mecha_wreckage/gygax/marshals
 
 /obj/mecha/combat/gygax/marshals/New()
 	..()//Let it equip whatever is needed.
