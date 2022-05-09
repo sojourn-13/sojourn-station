@@ -32,6 +32,19 @@
 	damage_types = list(BURN = 30)
 	armor_penetration = 30
 
+
+/obj/item/projectile/plasma/marquafast
+	step_delay = 0.25
+	affective_damage_range = 8
+	affective_ap_range = 8
+	kill_count = 8
+
+/obj/item/projectile/plasma/heavy/marqua
+	step_delay = 0.50
+	affective_damage_range = 8
+	affective_ap_range = 8
+	kill_count = 8
+
 /obj/item/projectile/plasma/heavy/shell
 	damage_types = list(BURN = 42)
 

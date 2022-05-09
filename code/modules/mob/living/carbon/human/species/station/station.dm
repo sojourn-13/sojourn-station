@@ -165,6 +165,7 @@
 	name_plural = "Mar'quas"
 	default_form = FORM_MARQUA
 	obligate_form = TRUE
+	reagent_tag = IS_MARQUA
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick)
 	darksight = 4
 	num_alternate_languages = 2
