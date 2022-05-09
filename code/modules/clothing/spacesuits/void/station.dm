@@ -622,7 +622,7 @@
 /obj/item/clothing/head/helmet/space/void/marqua
 	name = "Mar'Qua voidsuit helmet"
 	desc = "A standard issue helmet of Mar'Qua make, relatively lightly armored compared to other issue gear but made of advanced materials."
-	icon_state = "marquahelmet"
+	icon_state = "marquahelm"
 	armor_list = list(
 		melee = 25,
 		bullet = 40,
@@ -654,8 +654,9 @@
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/marqua
 
+/*
 /obj/item/clothing/suit/space/void/marqua/equipped(mob/living/carbon/M)
 	if(M.species.reagent_tag != IS_MARQUA)
 		to_chat(SPAN_WARNING("[src] won't seem to fit!"))
 		return FALSE
-	..()
+	..() */ //super doesn't work lol
