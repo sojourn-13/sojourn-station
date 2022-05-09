@@ -17,6 +17,7 @@
 		//rifles
 		/datum/design/autolathe/gun/boltgun_sa = 0,
 		/datum/design/autolathe/gun/zatvor,
+		/datum/design/autolathe/gun/roe = 2,
 		/datum/design/autolathe/gun/sol = 3,
 		/datum/design/autolathe/gun/omnirifle = 2,
 		/datum/design/autolathe/gun/standard_omnirifle,
@@ -76,6 +77,8 @@
 		/datum/design/autolathe/ammo/lrifle,
 		/datum/design/autolathe/ammo/lrifle_rubber,
 		/datum/design/autolathe/ammo/lrifle_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_drum = 2,
+		/datum/design/autolathe/ammo/lrifle_drum_empty = 1,
 		/datum/design/autolathe/ammo/sl_rifle,
 		/datum/design/autolathe/ammo/rifle_short,
 		/datum/design/autolathe/ammo/rifle_short_lethal,
@@ -88,6 +91,8 @@
 		/datum/design/autolathe/ammo/hrifle_lethal,
 		/datum/design/autolathe/ammo/hrifle_rubber,
 		/datum/design/autolathe/ammo/hrifle_practice = 0,
+		/datum/design/autolathe/ammo/hrifle_drum = 2
+		/datum/design/autolathe/ammo/hrifle_drum_empty = 1
 		//Boxes
 		/datum/design/autolathe/ammo/pistol_ammobox,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,

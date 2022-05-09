@@ -134,7 +134,8 @@
 					"Stallion Kit" = /obj/item/storage/box/bs_kit/stallion,
 					"Cowboy Kit" = /obj/item/storage/box/bs_kit/rex10,
 					"Pilgrim Kit" = /obj/item/storage/box/bs_kit/pilgrim,
-					"Sawn-Off Shotgun Kit" = /obj/item/storage/box/bs_kit/sawn_shotgun)
+					"Sawn-Off Shotgun Kit" = /obj/item/storage/box/bs_kit/sawn_shotgun,
+					"Martin Kit" = /obj/item/storage/box/bs_kit/martin)
 	var/selection = items[input(redeemer, "Pick your side-arm kit", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
