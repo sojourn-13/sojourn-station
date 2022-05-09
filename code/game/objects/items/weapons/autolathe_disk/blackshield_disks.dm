@@ -91,8 +91,8 @@
 		/datum/design/autolathe/ammo/hrifle_lethal,
 		/datum/design/autolathe/ammo/hrifle_rubber,
 		/datum/design/autolathe/ammo/hrifle_practice = 0,
-		/datum/design/autolathe/ammo/hrifle_drum = 2
-		/datum/design/autolathe/ammo/hrifle_drum_empty = 1
+		/datum/design/autolathe/ammo/hrifle_drum = 2,
+		/datum/design/autolathe/ammo/hrifle_drum_empty = 1,
 		//Boxes
 		/datum/design/autolathe/ammo/pistol_ammobox,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
