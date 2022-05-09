@@ -2961,7 +2961,7 @@
 
 
 /datum/reagent/ethanol/southern_saki
-	name = "Southern Saki"
+	name = "Southern Sake"
 	id = "southern_saki"
 	description = "Best served warm and in a shallow bowl for lapping."
 	taste_description = "unbearable bitterness"
@@ -2970,7 +2970,7 @@
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "sake"
-	glass_name = "Southern Saki"
+	glass_name = "Southern Sake"
 	glass_desc = "Best served warm and in a shallow bowl for lapping."
 
 /datum/reagent/ethanol/nothern_mead
