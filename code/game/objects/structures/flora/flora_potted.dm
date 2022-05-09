@@ -325,3 +325,13 @@
 			shield_level = 3
 			icon_state = "ameridian_pot_shieldless"
 			to_chat(user, "You turn the knob and make the fence almost invisible.")
+
+/obj/structure/flora/pottedplant/green_rock/emp_act(severity)
+	if(severity) // Just a safety check. We don't need to check for the kind of severity, because fucking everything EMP-related always fire at full blast anyway.
+		visible_message(SPAN_DANGER("[src] fizzles as the containment fail.")
+		new /obj/structure/ameridian_crystal(get_turf(src))
+		new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
+		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+		s.set_up(3, 1, src)
+		s.start()
+		qdel(src)
