@@ -46,6 +46,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo
+	name = ""
 	disk_name = "Blackshield Ammo Sovereignty Pack"
 	icon_state = "blackshield"
 	license = 30
@@ -121,6 +122,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/luger
+	name = ""
 	disk_name = "NM .35 \"Vintovka Lyugera\" carbine"
 	icon_state = "blackshield"
 	license = 15
@@ -139,6 +141,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/NM_colt
+	name = ""
 	disk_name = "NM HG .35 \"Bronco\""
 	icon_state = "blackshield"
 	license = 8
@@ -156,6 +159,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/semyonovich
+	name = ""
 	disk_name = "Blackshield .35 Auto \"Semyonovich\""
 	icon_state = "blackshield"
 	license = 8
@@ -170,6 +174,7 @@
 
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/greasegun
+	name = ""
 	disk_name = "Blackshield - .35 Auto \"Grease Gun\""
 	icon_state = "blackshield"
 
@@ -183,6 +188,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/buckler
+	name = ""
 	disk_name = "Blackshield - .35 Buckler SMG"
 	icon_state = "blackshield"
 
@@ -196,6 +202,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/triage
+	name = ""
 	disk_name = "Blackshield - .40 Triage SMG"
 	icon_state = "blackshield"
 
@@ -209,6 +216,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki
+	name = ""
 	disk_name = "NM - 7.5mm \"Strelki\""
 	icon_state = "blackshield"
 	license = 8
@@ -222,6 +230,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/watchtower
+	name = ""
 	disk_name = "NM - 7.5mm \"Watchtower\""
 	icon_state = "blackshield"
 	license = 8
@@ -235,6 +244,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/zatvor
+	name = ""
 	disk_name = "NM 7.5 bolt \"Zatvor\" rifle"
 	icon_state = "blackshield"
 	license = 8
@@ -249,6 +259,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/dp
+	name = ""
 	disk_name = "NM - \"Pulemyot Degtyaryova\" LMG"
 	icon_state = "ironhammer"
 	license = 8
@@ -259,6 +270,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/duty
+	name = ""
 	disk_name = "NM - .257 Duty Rifle"
 	icon_state = "blackshield"
 
@@ -278,6 +290,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/blackguard
+	name = ""
 	disk_name = "NM - .408 Blackguard Omni Rifle"
 	icon_state = "blackshield"
 
@@ -291,6 +304,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/rushingbull
+	name = ""
 	disk_name = "NA - 20mm Rushingbull Shotgun"
 	icon_state = "blackshield"
 
