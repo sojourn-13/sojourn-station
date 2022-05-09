@@ -11763,9 +11763,6 @@
 /area/nadezhda/quartermaster/office)
 "cCd" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/automatic/nordwind/strelki{
-	pixel_y = 8
-	},
 /obj/item/ammo_magazine/rifle_75/rubber{
 	pixel_x = 7;
 	pixel_y = -5
@@ -11802,6 +11799,9 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/item/gun/projectile/automatic/nordwind/watchtower{
+	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
@@ -12933,11 +12933,12 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "cOJ" = (
 /obj/structure/table/rack/shelf,
-/obj/item/ammo_magazine/ammobox/light_rifle_257,
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/ammo_magazine/light_rifle_257,
+/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv,
+/obj/item/ammo_magazine/heavy_rifle_408/hv,
+/obj/item/ammo_magazine/heavy_rifle_408/hv,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "cOK" = (
@@ -22833,12 +22834,12 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "eWl" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/ammo_magazine/ammobox/rifle_75,
-/obj/item/ammo_magazine/rifle_75/highvelocity,
-/obj/item/ammo_magazine/rifle_75/highvelocity,
 /obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo{
 	pixel_x = -6;
 	pixel_y = 1
+	},
+/obj/item/computer_hardware/hard_drive/portable/design/blackshield{
+	pixel_x = 8
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
@@ -23844,6 +23845,8 @@
 "fhu" = (
 /obj/structure/table/rack/shelf,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_magazine/ammobox/light_rifle_257,
+/obj/item/ammo_magazine/light_rifle_257,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "fhy" = (
@@ -54255,6 +54258,9 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "lBM" = (
 /obj/structure/table/rack/shelf,
+/obj/item/ammo_magazine/ammobox/rifle_75,
+/obj/item/ammo_magazine/rifle_75/highvelocity,
+/obj/item/ammo_magazine/rifle_75/highvelocity,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "lBQ" = (
@@ -55165,9 +55171,12 @@
 /area/nadezhda/pros/prep)
 "lNd" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/storage/box/teargas,
-/obj/item/storage/box/flashbangs,
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield,
+/obj/item/storage/box/teargas{
+	pixel_x = 8
+	},
+/obj/item/storage/box/flashbangs{
+	pixel_x = -8
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "lNf" = (
@@ -89381,7 +89390,6 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "sXw" = (
 /obj/structure/table/rack/shelf,
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv,
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 8
 	},
@@ -89399,8 +89407,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/item/ammo_magazine/heavy_rifle_408/hv,
-/obj/item/ammo_magazine/heavy_rifle_408/hv,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "sXy" = (
