@@ -12,7 +12,7 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_BOX
+	mag_well = MAG_WELL_LINKED_BOX
 	caliber = CAL_RIFLE
 	tac_reloads = FALSE
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 5)
@@ -120,7 +120,7 @@
 	icon_base = "saw"
 	icon_state = "saw_closed"
 	item_state = "saw_closed"
-	mag_well = MAG_WELL_BOX|MAG_WELL_STANMAG
+	mag_well = MAG_WELL_LINKED_BOX|MAG_WELL_STANMAG
 	caliber = CAL_LRIFLE
 	penetration_multiplier = 0.85
 	damage_multiplier = 1.0
@@ -142,7 +142,7 @@
 	icon_base = "tk"
 	icon_state = "tk"
 	item_state = "tk"
-	mag_well = MAG_WELL_BOX|MAG_WELL_STANMAG
+	mag_well = MAG_WELL_LINKED_BOX|MAG_WELL_STANMAG
 	caliber = CAL_LRIFLE
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.2

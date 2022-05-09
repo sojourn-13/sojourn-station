@@ -124,6 +124,13 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/rifle_ammobox = 1,
 		/datum/design/autolathe/ammo/rifle_ammobox_lethal = 1,
+		/datum/design/autolathe/ammo/rifle_pk_empty = 0,
+		/datum/design/autolathe/ammo/rifle_pk,
+		/datum/design/autolathe/ammo/lrifle_belt,
+		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,
+		/datum/design/autolathe/ammo/hrifle_ammobox_linked,
+		/datum/design/autolathe/ammo/hrifle_ammobox_linked_rubber,
+		/datum/design/autolathe/ammo/hrifle_ammobox_linked_empty = 0,
 		/datum/design/autolathe/ammo/grenade,
 		/datum/design/autolathe/ammo/grenade/flash,
 		/datum/design/autolathe/ammo/flare_shell = 0,
@@ -259,6 +266,7 @@
 		/datum/design/autolathe/ammo/hrifle_drum_empty = 0,
 		/datum/design/autolathe/ammo/rifle_pk_empty = 0,
 		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,
+		/datum/design/autolathe/ammo/hrifle_ammobox_linked_empty = 0,
 		/datum/design/autolathe/ammo/maxim_empty = 0,
 		/datum/design/autolathe/ammo/c10x24 = 3,
 		/datum/design/autolathe/ammo/lrifle_ammobox,
@@ -677,10 +685,8 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/bastard = 3,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_belt,
+		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sol
@@ -767,6 +773,7 @@
 		/datum/design/autolathe/gun/saw = 3,
 		/datum/design/autolathe/ammo/lrifle_ammobox = 2,
 		/datum/design/autolathe/ammo/lrifle_belt, //This is its linked ammo
+		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox_rubber,
 	)
@@ -961,6 +968,7 @@
 	designs = list(
 		/datum/design/autolathe/gun/mg_pk = 3,
 		/datum/design/autolathe/ammo/rifle_pk,
+		/datum/design/autolathe/ammo/rifle_pk_empty = 0,
 	)
 
 // Grenade Launchers

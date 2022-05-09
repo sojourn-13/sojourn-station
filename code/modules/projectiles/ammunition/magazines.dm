@@ -522,7 +522,7 @@
 	icon_state = "pk_box"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	mag_well = MAG_WELL_BOX
+	mag_well = MAG_WELL_LINKED_BOX
 	caliber = CAL_RIFLE
 	matter = list(MATERIAL_STEEL = 2)
 	ammo_type = /obj/item/ammo_casing/rifle_75
@@ -562,7 +562,7 @@
 /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257
 	name = "linked ammunition box (.257 Carbine)"
 	desc = "A 100 round linked box marked for .257 Carbine."
-	icon_state = "pk_box"
+	icon_state = "pkl_box"
 	caliber = CAL_LRIFLE
 	ammo_type = /obj/item/ammo_casing/light_rifle_257
 	matter = list(MATERIAL_STEEL = 2)
@@ -581,6 +581,31 @@
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
 
 /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/empty
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408
+	name = "linked ammunition box (.408 Omni)"
+	desc = "A 64 round linked box marked for .408 Omni."
+	max_ammo = 64
+	icon_state = "pkh_box"
+	caliber = CAL_HRIFLE
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
+	matter = list(MATERIAL_STEEL = 2)
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/highvelocity
+	name = "linked ammunition box (.408 Omni highvelocity)"
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/hv
+
+/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/rubber
+	name = "linked ammunition box (.408 Omni rubber)"
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
+
+/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/lethal
+	name = "linked ammunition box (.408 Omni hollowpoint)"
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
+
+/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/empty
 	initial_ammo = 0
 
 //Pan 7.5

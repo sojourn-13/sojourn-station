@@ -136,6 +136,7 @@
 	one_hand_penalty = 20
 	damage_multiplier = 1
 	saw_off = FALSE
+	serial_type = "SA"
 
 /obj/item/gun/projectile/automatic/ak47/sa/tac
 	name = "Breacher \"Kalashnikov\" rifle"
@@ -148,6 +149,7 @@
 	price_tag = 1250
 	recoil_buildup = 3
 	saw_off = FALSE
+	serial_type = "SA"
 
 	var/obj/item/gun/projectile/automatic/underslung/shotgun_3/shotgun
 	init_firemodes = list(
