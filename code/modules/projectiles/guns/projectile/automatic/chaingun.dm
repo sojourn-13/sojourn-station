@@ -17,7 +17,7 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_BOX|MAG_WELL_DRUM
+	mag_well = MAG_WELL_LINKED_BOX|MAG_WELL_DRUM
 	caliber = CAL_HRIFLE
 	tac_reloads = FALSE
 	penetration_multiplier = 0.85
@@ -36,8 +36,8 @@
 	slowdown_hold = 1 //Heavy massive gun, slow down
 	brace_penalty = 5
 	init_firemodes = list(
-		FULL_AUTO_400,
-		list(mode_name="hyper-burst", mode_desc = "Short, rapid shot 3 round burst to stop any unarmed target", burst=3,    burst_delay=0.5, move_delay=2,  icon="burst"),
+		FULL_LMG_2,
+		list(mode_name="hyper-burst", mode_desc = "Short, rapid shot 3 round burst to stop any unarmed target", burst=3,    burst_delay=0.3, move_delay=2,  icon="burst"),
 		)
 	serial_type = "Sol Fed"
 

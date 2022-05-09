@@ -814,6 +814,31 @@
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408/lethal
 	materials = list(MATERIAL_STEEL = 20)
 
+/datum/design/autolathe/ammo/hrifle_ammobox_linked
+	name = "linked ammunition box .408 H-Rifle (ball)"
+	build_path = /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/hrifle_ammobox_linked_rubber
+	name = "linked ammunition box .408 H-Rifle(rubber)"
+	build_path = /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/rubber
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/hrifle_ammobox_linked_lethal
+	name = "linked ammunition box .408 H-Rifle (hollow point)"
+	build_path = /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/lethal
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/autolathe/ammo/hrifle_ammobox_linked_hv
+	name = "linked ammunition box .408 H-Rifle (SLAP)"
+	build_path = /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/highvelocity
+	materials = list(MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 4)
+
+/datum/design/autolathe/ammo/hrifle_ammobox_linked_empty
+	name = "linked ammunition box .408 H-Rifle (empty)"
+	build_path = /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/empty
+	materials = list(MATERIAL_STEEL = 5)
+
 ///.408 packets
 /datum/design/autolathe/ammo/hrifle_ammobox_small
 	name = "ammunition packet .408 Heavy Rifle (ball)"
