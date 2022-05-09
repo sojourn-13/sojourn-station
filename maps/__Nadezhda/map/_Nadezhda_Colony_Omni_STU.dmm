@@ -55485,6 +55485,7 @@
 "lPF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/super{
+	dir = 1;
 	pixel_y = 28
 	},
 /obj/structure/cable/green{
