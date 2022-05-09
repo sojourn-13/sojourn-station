@@ -123,7 +123,7 @@
 // Ghost stuff
 /mob/living/simple_animal/ameridian_tender/UnarmedAttack(var/atom/A, var/proximity)
 	if(A.Adjacent(src))
-		if(istype(A, /obj/structure/ameridian_crystal))
+		if(istype(A, /obj/structure/ameridian_crystal) && !istype(A, /obj/structure/ameridian_crystal/spire))
 			var/obj/structure/ameridian_crystal/AC = A
 			if(do_after(src, 1 SECOND, AC))
 				AC.harvest_crystals()
