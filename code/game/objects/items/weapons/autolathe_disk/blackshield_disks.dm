@@ -261,7 +261,7 @@
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/dp
 	name = ""
 	disk_name = "NM - \"Pulemyot Degtyaryova\" LMG"
-	icon_state = "ironhammer"
+	icon_state = "blackshield"
 	license = 8
 
 	designs = list(
@@ -305,7 +305,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/rushingbull
 	name = ""
-	disk_name = "NA - 20mm Rushingbull Shotgun"
+	disk_name = "NM - 20mm Rushingbull Shotgun"
 	icon_state = "blackshield"
 
 	license = 8
