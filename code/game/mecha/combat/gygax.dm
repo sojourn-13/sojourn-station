@@ -23,7 +23,7 @@
 /obj/mecha/combat/gygax/marshals
 	name = "M.A.I.D Exosuit"
 	desc = "The Marshals Armored Impeller Device, a fancy name for a visibly aging exosuit that has visibly been collecting dust in some unused corner of the Marshals offices. \
-	It appears to have much lighter armor than even a standard gygax and despite still bearing the charictaristic angled plates of its Gygax cousin, is unlikely to stand up under extended\
+	It appears to have much lighter armor than even a standard gygax and despite still bearing the characteristic angled plates of its Gygax cousin, is unlikely to stand up under extended\
 	small-arms fire."
 	icon_state = "maid"
 	initial_icon = "maid"
