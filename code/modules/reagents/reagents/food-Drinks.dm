@@ -3120,7 +3120,7 @@
 	name = "Western Escargot"
 	id = "western_escargot"
 	description = "The kinda slugs a free man can appreciate."
-	taste_description = "an explosion of flavours and a nice kick after taste"
+	taste_description = "an explosion of flavors and a nice kick on its aftertaste"
 	color = "#E0CE8A" // rgb(88, 81, 54)
 	strength = 60
 
