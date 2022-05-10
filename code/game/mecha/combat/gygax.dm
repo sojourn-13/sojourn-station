@@ -32,6 +32,7 @@
 	armor_level = MECHA_ARMOR_LIGHT
 	health = 500
 	deflect_chance = 10
+	damage_absorption = list("brute"=0.85,"fire"=1,"bullet"=0.9,"energy"=0.95,"bomb"=1)
 	price_tag = 10000
 	internal_damage_threshold = 45
 	wreckage = /obj/effect/decal/mecha_wreckage/gygax/marshals
