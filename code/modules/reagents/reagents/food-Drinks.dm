@@ -3013,7 +3013,7 @@
 	glass_desc = "The only drink that is shockingly annonying to make in and out of house."
 
 /datum/reagent/ethanol/nickle_n_dime
-	name = "Nickle And Dime"
+	name = "Nickel And Dime"
 	id = "nickle_n_dime"
 	description = "For those with a rich taste."
 	taste_description = "Nothing." //Nothing
