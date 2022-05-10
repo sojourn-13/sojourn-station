@@ -2715,7 +2715,7 @@
 
 	glass_unique_appearance = TRUE
 	glass_name = "Daiquiri"
-	glass_desc = "Refreshing rum and citrus. Time for a tropical get away."
+	glass_desc = "Refreshing rum and citrus. Time for a tropical getaway."
 
 /datum/reagent/ethanol/daiquiri_strawberry
 	name = "Daiquiri Pink"
