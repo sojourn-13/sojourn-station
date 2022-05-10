@@ -3041,7 +3041,7 @@
 /datum/reagent/ethanol/whiskey_rocks
 	name = "Whiskey Rocks"
 	id = "whiskey_rocks"
-	description = "Whiske but for people that like things cold and waterd down."
+	description = "Whiskey but for people that like things cold and watered down."
 	taste_description = "cold classic"
 	color = "#E0CE8A" // rgb(88, 81, 54)
 	strength = 23
