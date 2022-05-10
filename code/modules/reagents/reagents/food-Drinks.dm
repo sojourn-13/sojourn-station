@@ -3010,7 +3010,7 @@
 	glass_unique_appearance = TRUE
 	glass_icon_state = "posicell"
 	glass_name = "Posicell"
-	glass_desc = "The only drink that is shockingly annonying to make in and out of house."
+	glass_desc = "The only drink that is shockingly annoying to make in and out of the house."
 
 /datum/reagent/ethanol/nickle_n_dime
 	name = "Nickel And Dime"
