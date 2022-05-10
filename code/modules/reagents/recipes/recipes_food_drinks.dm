@@ -853,12 +853,12 @@
 
 /datum/chemical_reaction/drinks/rusty_special
 	result = "rusty_special"
-	required_reagents = list("tequila" = 2, "berryjuice" = 1, "potassium" = 1)
+	required_reagents = list("tequilla" = 2, "berryjuice" = 1, "potassium" = 1)
 	result_amount = 4
 
 /datum/chemical_reaction/drinks/western_escargot
 	result = "western_escargot"
-	required_reagents = list("tequila" = 1, "rum" = 1, "potassium" = 1, "vodka" = 1, "grapejuice" = 1)
+	required_reagents = list("tequilla" = 1, "rum" = 1, "potassium" = 1, "vodka" = 1, "grapejuice" = 1)
 	result_amount = 5
 
 /datum/chemical_reaction/drinks/prospie
