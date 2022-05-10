@@ -3061,7 +3061,7 @@
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "nior"
-	glass_name = "Nior"
+	glass_name = "Noir"
 	glass_desc = "For when things aren't always black and white."
 
 /datum/reagent/ethanol/duress
