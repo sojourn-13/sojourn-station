@@ -2728,7 +2728,7 @@
 	strength = 23 //Washed down with FLAVOUR
 
 	glass_name = "Daiquiri Pink"
-	glass_desc = "Refreshing rum and strawberry juice. Time for a tropical get away, even if its to fruity."
+	glass_desc = "Refreshing rum and strawberry juice. Time for a tropical get away, even if its too fruity."
 
 /datum/reagent/ethanol/whiskeysour
 	name = "Whiskey Sour"
