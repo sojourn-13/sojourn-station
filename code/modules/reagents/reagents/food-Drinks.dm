@@ -2720,7 +2720,7 @@
 /datum/reagent/ethanol/daiquiri_strawberry
 	name = "Daiquiri Pink"
 	id = "daiquiri_strawberry"
-	description = "Refreshing rum and strawberry juice. Time for a tropical get away, even if its to fruity."
+	description = "Refreshing rum and strawberry juice. Time for a tropical get away, even if its too fruity."
 	taste_description = "refreshing strawberry and rum"
 	color = "#d1ff49d0" // rgb(209, 255, 73
 	glass_unique_appearance = TRUE
