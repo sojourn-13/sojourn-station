@@ -48,7 +48,7 @@
 		/datum/design/autolathe/gun/judge = 2,
 		//SMGs
 		/datum/design/autolathe/gun/wirbelwind = 2,
-		/obj/item/gun/projectile/automatic/ppsh/ppv = 2,
+		/datum/design/autolathe/gun/ppv = 2,
 		//rifles
 		/datum/design/autolathe/gun/strelki,
 		/datum/design/autolathe/gun/ostwind = 3,
