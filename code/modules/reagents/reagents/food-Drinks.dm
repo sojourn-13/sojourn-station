@@ -3068,7 +3068,7 @@
 	name = "Duress"
 	id = "duress"
 	description = "A good way to get people talking."
-	taste_description = "stunglove fiber"
+	taste_description = "stunglove fibers"
 	color = "#E0CE8A" // rgb(88, 81, 54)
 	strength = 40 //Same amount as a stubbaton
 
