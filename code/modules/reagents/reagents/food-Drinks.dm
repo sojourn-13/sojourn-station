@@ -3052,7 +3052,7 @@
 	glass_desc = "Whiskey but for people that like things cold and watered down."
 
 /datum/reagent/ethanol/nior
-	name = "Nior"
+	name = "Noir"
 	id = "nior"
 	description = "For when things aren't always black and white."
 	taste_description = "a cold case"
