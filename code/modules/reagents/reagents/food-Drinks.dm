@@ -3002,7 +3002,7 @@
 /datum/reagent/ethanol/posicell
 	name = "Posicell"
 	id = "posicell"
-	description = "The only drink that is shockingly annonying to make in and out of house."
+	description = "The only drink that is shockingly annoying to make in and out of the house."
 	taste_description = "rouge hardware and annoyed labcoats"
 	color = "#E0CE8A" // rgb(88, 81, 54)
 	strength = 60
