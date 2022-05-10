@@ -1,3 +1,5 @@
+#define when_we_end (config.automatic_restart_time + world.time)
+
 SUBSYSTEM_DEF(ticker)
 	name = "Ticker"
 	init_order = INIT_ORDER_TICKER
@@ -132,7 +134,7 @@ SUBSYSTEM_DEF(ticker)
 			if(!process_empty_server())
 				return
 
-			if(automatic_restart_allowed && config.automatic_restart_time && config.automatic_restart_time < world.time)
+			if(automatic_restart_allowed && config.automatic_restart_time && when_we_end <= world.time)
 				shift_end()
 
 			var/game_finished = (evacuation_controller.round_over() || ship_was_nuked  || universe_has_ended || (scheduled_restart && scheduled_restart < world.time))
