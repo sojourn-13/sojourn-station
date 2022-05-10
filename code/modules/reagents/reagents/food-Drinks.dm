@@ -3094,7 +3094,7 @@
 	name = "Saint Pio"
 	id = "saint_pio"
 	description = "An absolutely perfect choice."
-	taste_description = "crusade of flavours"
+	taste_description = "a crusade of flavors"
 	color = "#E0CE8A" // rgb(88, 81, 54)
 	strength = 50
 
