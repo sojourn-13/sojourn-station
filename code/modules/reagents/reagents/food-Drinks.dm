@@ -3049,7 +3049,7 @@
 	glass_unique_appearance = TRUE
 	glass_icon_state = "noirbase"
 	glass_name = "Whiskey Rocks"
-	glass_desc = "Whiskey but for people that like things cold and waterd down."
+	glass_desc = "Whiskey but for people that like things cold and watered down."
 
 /datum/reagent/ethanol/nior
 	name = "Nior"
