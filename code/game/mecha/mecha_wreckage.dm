@@ -118,6 +118,10 @@
 				parts -= part
 		return
 
+/obj/effect/decal/mecha_wreckage/gygax/marshals
+	name = "M.A.I.D Exosuit wreckage"
+	icon_state = "maid-broken"
+
 /obj/effect/decal/mecha_wreckage/gygax/dark
 	name = "Dark Gygax wreckage"
 	icon_state = "darkgygax-broken"

@@ -12671,7 +12671,7 @@
 	dir = 4
 	},
 /obj/machinery/mech_recharger,
-/obj/mecha/combat/durand/security,
+/obj/mecha/combat/gygax/marshals,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "cMF" = (
