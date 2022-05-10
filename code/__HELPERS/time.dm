@@ -20,7 +20,7 @@ var/next_station_date_change = 1 DAYS
 
 #define station_adjusted_time(time) time2text(time + station_time_in_ticks, "hh:mm")
 #define worldtime2stationtime(time) time2text(roundstart_hour HOURS + time, "hh:mm")
-#define roundduration2text_in_ticks (round_start_time ? world.time - round_start_time : 0)
+#define roundduration2text_in_ticks (round_start_time ? world.realtime - round_start_time : 0)
 #define station_time_in_ticks (roundstart_hour HOURS + roundduration2text_in_ticks)
 
 /proc/stationtime2text()
@@ -43,7 +43,7 @@ var/next_station_date_change = 1 DAYS
 
 
 //Returns the world time in english
-/proc/worldtime2text(time = world.time, timeshift = 1)
+/proc/worldtime2text(time = world.realtime, timeshift = 1)
 	if(!roundstart_hour) roundstart_hour = rand(0, 23)
 	return timeshift ? time2text(time+(roundstart_hour HOURS), "hh:mm") : time2text(time, "hh:mm")
 
@@ -76,13 +76,13 @@ var/endtime
 var/round_start_time = 0
 
 /hook/roundstart/proc/start_timer()
-	round_start_time = world.time
+	round_start_time = world.realtime
 	return 1
 
 /proc/roundduration2text()
 	if(!round_start_time)
 		return "00:00"
-	if(last_roundduration2text && world.time < next_duration_update)
+	if(last_roundduration2text && world.realtime < next_duration_update)
 		return last_roundduration2text
 
 	var/mills = roundduration2text_in_ticks // 1/10 of a second, not real milliseconds but whatever
@@ -94,13 +94,13 @@ var/round_start_time = 0
 	hours = hours < 10 ? add_zero(hours, 1) : hours
 
 	last_roundduration2text = "[hours]:[mins]"
-	next_duration_update = world.time + 1 MINUTES
+	next_duration_update = world.realtime + 1 MINUTES
 	return last_roundduration2text
 
 /proc/rounddurationcountdown2text(delay)
 	if(!round_start_time)
 		return "00:00"
-	if(last_rounddurationcountdown2text && world.time < last_rounddurationcountdown2text_update)
+	if(last_rounddurationcountdown2text && world.realtime < last_rounddurationcountdown2text_update)
 		return last_rounddurationcountdown2text
 	//var/secs = ((mills % 36000) % 600) / 10 //Not really needed, but I'll leave it here for refrence.. or something
 	if(delay && !endtime)
@@ -109,7 +109,7 @@ var/round_start_time = 0
 		return "N/A"
 	endtime = endtime - 1 MINUTE
 	last_rounddurationcountdown2text = "[endtime/600] minutes left until round end!"
-	last_rounddurationcountdown2text_update = world.time + 1 MINUTES
+	last_rounddurationcountdown2text_update = world.realtime + 1 MINUTES
 	return last_rounddurationcountdown2text
 
 var/global/midnight_rollovers = 0
