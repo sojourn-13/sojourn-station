@@ -30,12 +30,82 @@
 		do_after_cooldown()
 		return 1
 
+
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword
 	name = "mech sword"
 	desc = "A huge sword designed to be wielded by an exosuit. Somehow can't hit walls."
 	icon_state = "mech_sword"
 	var/icon/melee_overlay
 	dam_force = 40 // Big sword make big boo boo - R4d6
+
+
+/obj/item/mecha_parts/mecha_equipment/melee_weapon/sword/action(atom/target)
+	if(!action_checks(target)) return
+
+	if(isliving(target))
+		var/mob/living/M = target
+		if(M.stat > 1)
+			return
+		if(chassis.occupant.a_intent != I_HELP) // So that the help intent act as a kind of safety
+			M.take_overall_damage(dam_force)
+			M.updatehealth()
+			occupant_message(SPAN_WARNING("You swing at [target] with [src.name], slicing their flesh."))
+			chassis.visible_message(SPAN_WARNING("[chassis] attacked [target]."))
+			log_message("Attacked [target.name] with [name]")
+		else
+			step_away(M,chassis)
+			occupant_message("You push [target] out of the way.")
+			chassis.visible_message("[chassis] pushes [target] out of the way.")
+		set_ready_state(0)
+		chassis.use_power(energy_drain)
+		do_after_cooldown()
+
+	else // For attacking non living targets
+		if(isobj(target)) 
+			var/obj/target_obj = target
+			if(!target_obj.vars.Find("unacidable") || target_obj.unacidable)	return
+			var/C = chassis.loc
+			var/T = target.loc
+			if(T == chassis.loc && src == chassis.selected)
+				if istype(target, /turf/simulated/wall)
+				chassis.visible_message(SPAN_DANGER("\The [chassis] starts to cut into \the [target]"), SPAN_WARNING("You hear loud slashing."))
+				occupant_message(SPAN_DANGER("You start to cut through \the [target]"))
+					set_ready_state(0)
+					chassis.use_power(energy_drain)
+					do_after_cooldown()
+					var/turf/simulated/wall/W = target
+					if(W.reinf_material)
+						occupant_message(SPAN_WARNING("\The [target] is too durable to cut apart."))
+						log_message("The [name] bounces off [target]")
+					else
+						log_message("Slashed through \the [target]")
+						target.ex_act(2)
+				if istype(target, /obj/machinery/door/airlock)
+					chassis.visible_message(SPAN_DANGER("\The [chassis] starts to cut into \the [target]"), SPAN_WARNING("You hear loud slashing."))
+					occupant_message(SPAN_DANGER("You start to cut through \the [target]"))
+					var/obj/machinery/door/airlock/A = target
+					set_ready_state(0)
+					chassis.use_power(energy_drain)
+					do_after_cooldown()
+					A.take_overall_damage(dam_force)
+				else if istype(target, /obj/effect/blob) // Blob combat
+					var/obj/effect/blob/B = target
+					if(istype(target, /obj/effect/blob/core) // Solely for flavor
+						B.take_overall_damage(dam_force)
+						occupant_message(SPAN_WARNING("\The [chassis] starts to cut apart the [target]."))
+						log_message("The [name] strikes \the [target], causing golden ichor to spray out of it!")
+					else
+						B.take_overall_damage(dam_force)
+						occupant_message(SPAN_WARNING("\The [chassis] starts to cut apart the [target]."))
+						log_message("The [name] strikes \the [target]")
+					set_ready_state(0)
+					chassis.use_power(energy_drain)
+					do_after_cooldown()
+				else if(target.loc == C)
+					log_message("Cut through \the [target]")
+					target.ex_act(2)
+	return 1
+
 
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/shockmaul
 	name = "mech shock maul"
@@ -65,7 +135,31 @@
 		set_ready_state(0)
 		chassis.use_power(energy_drain)
 		do_after_cooldown()
-		return 1
+		
+
+	else // For attacking non living targets
+		if(isobj(target)) 
+			var/obj/target_obj = target
+			if(!target_obj.vars.Find("unacidable") || target_obj.unacidable)	return
+			var/C = chassis.loc
+			var/T = target.loc
+			if istype(target, /obj/effect/blob) // Blob combat
+				var/obj/effect/blob/B = target
+				if(istype(target, /obj/effect/blob/core) // Solely for flavor
+					B.take_overall_damage(dam_force)
+					occupant_message(SPAN_WARNING("\The [chassis] bashing the [target] into a pulp."))
+					log_message("The [name] strikes \the [target], cracking its shell.")
+				else
+					B.take_overall_damage(dam_force)
+					occupant_message(SPAN_WARNING("\The [chassis] bashing the [target] into a pulp."))
+					log_message("The [name] strikes \the [target]")
+				set_ready_state(0)
+				chassis.use_power(energy_drain)
+				do_after_cooldown()
+			else if(target.loc == C)
+				log_message("Bashed through \the [target]")
+				target.ex_act(2)
+	return 1
 
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword/attach(obj/mecha/M as obj)
 	..()
