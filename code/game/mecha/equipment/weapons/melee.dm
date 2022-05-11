@@ -91,7 +91,7 @@
 					A.take_overall_damage(dam_force)
 				else if istype(target, /obj/effect/blob) // Blob combat
 					var/obj/effect/blob/B = target
-					if(istype(target, /obj/effect/blob/core) // Solely for flavor
+					if(istype(target, /obj/effect/blob/core)) // Solely for flavor
 						B.take_overall_damage(dam_force)
 						occupant_message(SPAN_WARNING("The [chassis] starts to cut apart the [target]."))
 						chassis.visible_message("The [chassis] strikes \the [target] with \the [name], causing golden ichor to spray out of it!")
@@ -146,7 +146,7 @@
 			var/T = target.loc
 			if istype(target, /obj/effect/blob) // Blob combat
 				var/obj/effect/blob/B = target
-				if(istype(target, /obj/effect/blob/core) // Solely for flavor
+				if(istype(target, /obj/effect/blob/core)) // Solely for flavor
 					B.take_overall_damage(dam_force)
 					occupant_message(SPAN_WARNING("You bash \the [target] with [src.name]."))
 					chassis.visible_message("The [chassis] strikes \the [target]  with \the [name], cracking its shell.")
