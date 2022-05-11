@@ -3053,7 +3053,7 @@
 
 /datum/reagent/ethanol/nior
 	name = "Noir"
-	id = "nior"
+	id = "noir"
 	description = "For when things aren't always black and white."
 	taste_description = "a cold case"
 	color = "#E0CE8A" // rgb(88, 81, 54)
