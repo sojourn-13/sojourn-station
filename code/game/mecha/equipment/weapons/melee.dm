@@ -68,7 +68,7 @@
 			var/T = target.loc
 			if(T == chassis.loc && src == chassis.selected)
 				if istype(target, /turf/simulated/wall)
-				chassis.visible_message(SPAN_DANGER("\The [chassis] starts to cut into \the [target]"), SPAN_WARNING("You hear loud slashing."))
+				chassis.visible_message(SPAN_DANGER("\The [chassis] starts to cut into \the [target]"))
 				occupant_message(SPAN_DANGER("You start to cut through \the [target]"))
 					set_ready_state(0)
 					chassis.use_power(energy_drain)
@@ -82,7 +82,7 @@
 						chassis.visible_message("Slashed through \the [target]")
 						target.ex_act(2)
 				if istype(target, /obj/machinery/door/airlock)
-					chassis.visible_message(SPAN_DANGER("\The [chassis] starts to cut into \the [target]"), SPAN_WARNING("You hear loud slashing."))
+					chassis.visible_message(SPAN_DANGER("\The [chassis] starts to cut into \the [target]"))
 					occupant_message(SPAN_DANGER("You start to cut through \the [target]"))
 					var/obj/machinery/door/airlock/A = target
 					set_ready_state(0)
