@@ -76,9 +76,9 @@
 					var/turf/simulated/wall/W = target
 					if(W.reinf_material)
 						occupant_message(SPAN_WARNING("\The [target] is too durable to cut apart."))
-						log_message("The [name] bounces off [target]")
+						chassis.visible_message("\The [name] bounces off [target]")
 					else
-						log_message("Slashed through \the [target]")
+						chassis.visible_message("Slashed through \the [target]")
 						target.ex_act(2)
 				if istype(target, /obj/machinery/door/airlock)
 					chassis.visible_message(SPAN_DANGER("\The [chassis] starts to cut into \the [target]"), SPAN_WARNING("You hear loud slashing."))
@@ -92,12 +92,12 @@
 					var/obj/effect/blob/B = target
 					if(istype(target, /obj/effect/blob/core) // Solely for flavor
 						B.take_overall_damage(dam_force)
-						occupant_message(SPAN_WARNING("\The [chassis] starts to cut apart the [target]."))
-						log_message("The [name] strikes \the [target], causing golden ichor to spray out of it!")
+						occupant_message(SPAN_WARNING("The [chassis] starts to cut apart the [target]."))
+						chassis.visible_message("The [chassis] strikes \the [target] with \the [name], causing golden ichor to spray out of it!")
 					else
 						B.take_overall_damage(dam_force)
-						occupant_message(SPAN_WARNING("\The [chassis] starts to cut apart the [target]."))
-						log_message("The [name] strikes \the [target]")
+						occupant_message(SPAN_WARNING("The [chassis] starts to cut apart the [target]."))
+						chassis.visible_message("The [chassis] strikes \the [target] with \the [name]")
 					set_ready_state(0)
 					chassis.use_power(energy_drain)
 					do_after_cooldown()
@@ -147,12 +147,12 @@
 				var/obj/effect/blob/B = target
 				if(istype(target, /obj/effect/blob/core) // Solely for flavor
 					B.take_overall_damage(dam_force)
-					occupant_message(SPAN_WARNING("\The [chassis] bashing the [target] into a pulp."))
-					log_message("The [name] strikes \the [target], cracking its shell.")
+					occupant_message(SPAN_WARNING("You bash \the [target] with [src.name]."))
+					chassis.visible_message("The [chassis] strikes \the [target]  with \the [name], cracking its shell.")
 				else
 					B.take_overall_damage(dam_force)
-					occupant_message(SPAN_WARNING("\The [chassis] bashing the [target] into a pulp."))
-					log_message("The [name] strikes \the [target]")
+					occupant_message(SPAN_WARNING("You bash \the [target] with [src.name]."))
+					chassis.visible_message("The [chassis] strikes \the [target]  with \the [name]")
 				set_ready_state(0)
 				chassis.use_power(energy_drain)
 				do_after_cooldown()
