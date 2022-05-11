@@ -46,7 +46,7 @@
 	if(ishuman(M))
 		if(M.stats.getPerk(PERK_HERBIVORE))
 			nutriment_factor = 7
-		else if(M.stats.getPerk(PERK_CARNIVORE))
+		if(M.stats.getPerk(PERK_CARNIVORE))
 			nutriment_factor = 1
 
 	// Small bodymass, more effect from lower volume.
@@ -74,10 +74,12 @@
 	if(ishuman(M))
 		if(M.stats.getPerk(PERK_CARNIVORE))
 			nutriment_factor = 7
-		else if(M.stats.getPerk(PERK_HERBIVORE))
+		if(M.stats.getPerk(PERK_HERBIVORE))
 			nutriment_factor = 1
 
-	return ..()
+	// Small bodymass, more effect from lower volume.
+	M.adjustNutrition(nutriment_factor * (issmall(M) ? effect_multiplier * 2 : effect_multiplier)) // For hunger and fatness
+	M.add_chemical_effect(CE_BLOODRESTORE, 0.1 * (issmall(M) ? effect_multiplier * 2 : effect_multiplier))
 
 /datum/reagent/organic/nutriment/preservatives
 	name = "Preservatives"
