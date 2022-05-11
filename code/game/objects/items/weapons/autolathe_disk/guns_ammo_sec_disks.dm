@@ -16,6 +16,7 @@
 		/datum/design/autolathe/tool/combat_shovel,
 		/datum/design/autolathe/sec/beartrap,
 		/datum/design/autolathe/sec/silencer,
+		/datum/design/autolathe/sec/acog,
 		/datum/design/autolathe/sec/gun_case,
 		/datum/design/research/item/light_replacer,
 		/datum/design/autolathe/sec/hailer,
