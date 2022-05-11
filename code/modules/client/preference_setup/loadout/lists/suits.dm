@@ -129,6 +129,10 @@
 	display_name = "winter coat"
 	path = /obj/item/clothing/suit/hooded/wintercoat
 
+/datum/gear/suit/htwaistcoat
+	display_name = "charming waistcoat"
+	path = /obj/item/clothing/suit/storage/wcoat/helltaker
+
 /datum/gear/suit/modular
 	display_name = "suit jacket selection"
 	path = /obj/item/clothing/suit/storage/suitjacket

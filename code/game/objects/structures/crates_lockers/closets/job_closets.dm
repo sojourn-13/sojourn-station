@@ -52,6 +52,7 @@
 	new /obj/item/clothing/under/helltaker_m(src)
 	new /obj/item/clothing/under/helltaker(src)
 	new /obj/item/clothing/suit/storage/helltaker_apron(src)
+	new /obj/item/clothing/suit/storage/wcoat/helltaker(src)
 
 /*
  * Janitor

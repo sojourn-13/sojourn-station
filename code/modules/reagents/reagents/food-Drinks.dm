@@ -2710,16 +2710,33 @@
 	description = "Refreshing rum and citrus. Time for a tropical get away."
 	taste_description = "refreshing citrus and rum"
 	color = "#d1ff49d0" // rgb(209, 255, 73
+	glass_icon_state = "daiquiri"
 	strength = 25
 
+	glass_unique_appearance = TRUE
 	glass_name = "Daiquiri"
-	glass_desc = "Refreshing rum and citrus. Time for a tropical get away."
+	glass_desc = "Refreshing rum and citrus. Time for a tropical getaway."
+
+/datum/reagent/ethanol/daiquiri_strawberry
+	name = "Daiquiri Pink"
+	id = "daiquiri_strawberry"
+	description = "Refreshing rum and strawberry juice. Time for a tropical get away, even if its too fruity."
+	taste_description = "refreshing strawberry and rum"
+	color = "#d1ff49d0" // rgb(209, 255, 73
+	glass_unique_appearance = TRUE
+	glass_icon_state = "daiquiristrawberry"
+	strength = 23 //Washed down with FLAVOUR
+
+	glass_name = "Daiquiri Pink"
+	glass_desc = "Refreshing rum and strawberry juice. Time for a tropical get away, even if its too fruity."
 
 /datum/reagent/ethanol/whiskeysour
 	name = "Whiskey Sour"
 	id = "whiskeysour"
 	description = "A smokey, refreshing lemon whiskey."
 	taste_description = "smoke and citrus"
+	glass_icon_state = "whiskeysour"
+	glass_unique_appearance = TRUE
 	color = "#a0692ed0" // rgb(160, 105, 46)
 	strength = 20
 
@@ -2743,9 +2760,11 @@
 	id = "balloon"
 	description = "A strange drink invented in the aerostats of Venus."
 	taste_description = "strange alcohol"
+	glass_icon_state = "balloon"
 	color = "#FAEBD7d0"
 	strength = 66
 
+	glass_unique_appearance = TRUE
 	glass_name = "Balloon"
 	glass_desc = "A strange drink invented in the aerostats of Venus."
 
@@ -2937,3 +2956,201 @@
 	glass_icon_state = "berryjuice"
 	glass_name = "strawberry juice"
 	glass_desc = "Sweet and sugary, but also very refreshing!"
+
+//SoJ based drinks
+
+
+/datum/reagent/ethanol/southern_saki
+	name = "Southern Sake"
+	id = "southern_saki"
+	description = "Best served warm and in a shallow bowl for lapping."
+	taste_description = "unbearable bitterness"
+	color = "#F9F9F9" // rgb(98, 98, 98)
+	strength = 50 //rice wine stronk
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "sake"
+	glass_name = "Southern Sake"
+	glass_desc = "Best served warm and in a shallow bowl for lapping."
+
+/datum/reagent/ethanol/nothern_mead
+	name = "Nothern Mead"
+	id = "nothern_mead"
+	description = "Said to make even the strongest of accents all the more unintelligible."
+	taste_description = "robust hops and carbon"
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 140 //stronk
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "tankardlidfull"
+	glass_name = "Nothern Mead"
+	glass_desc = "Said to make even the strongest of accents all the more unintelligible."
+
+/datum/reagent/ethanol/life_line
+	name = "Life Line"
+	id = "life_line"
+	description = "A perfect drink for mass casualties."
+	taste_description = "liquid painkillers"
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 35 //weak painkiller
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "lifeline"
+	glass_name = "Life Line"
+	glass_desc = "A perfect drink for mass casualties."
+
+/datum/reagent/ethanol/posicell
+	name = "Posicell"
+	id = "posicell"
+	description = "The only drink that is shockingly annoying to make in and out of the house."
+	taste_description = "rouge hardware and annoyed labcoats"
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 60
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "posicell"
+	glass_name = "Posicell"
+	glass_desc = "The only drink that is shockingly annoying to make in and out of the house."
+
+/datum/reagent/ethanol/nickle_n_dime
+	name = "Nickel And Dime"
+	id = "nickle_n_dime"
+	description = "For those with a rich taste."
+	taste_description = "Nothing." //Nothing
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 120
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "nickleanddime"
+	glass_name = "Nickle And Dime"
+	glass_desc = "For those with a rich taste."
+
+/datum/reagent/ethanol/arcscrewdriver
+	name = "Arc screwdriver"
+	id = "arcscrewdriver"
+	description = "For one a regular one doesn't cut it."
+	taste_description = "electrooptic discussion"
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 75
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "arcscrewdriver"
+	glass_name = "Arc screwdriver"
+	glass_desc = "For one a regular one doesn't cut it."
+
+/datum/reagent/ethanol/whiskey_rocks
+	name = "Whiskey Rocks"
+	id = "whiske_rocks"
+	description = "Whiskey but for people that like things cold and watered down."
+	taste_description = "cold classic"
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 23
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "noirbase"
+	glass_name = "Whiskey Rocks"
+	glass_desc = "Whiskey but for people that like things cold and watered down."
+
+/datum/reagent/ethanol/nior
+	name = "Noir"
+	id = "noir"
+	description = "For when things aren't always black and white."
+	taste_description = "a cold case"
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 38 //.38 subnose if only!
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "nior"
+	glass_name = "Noir"
+	glass_desc = "For when things aren't always black and white."
+
+/datum/reagent/ethanol/duress
+	name = "Duress"
+	id = "duress"
+	description = "A good way to get people talking."
+	taste_description = "stunglove fibers"
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 40 //Same amount as a stubbaton
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "buzzkill"
+	glass_name = "Duress"
+	glass_desc = "A good way to get people talking."
+
+/datum/reagent/ethanol/ocular
+	name = "Ocular"
+	id = "ocular"
+	description = "Don't make eye contact, a favorite of the Mar qua."
+	taste_description = "fresh mint and inspiration"
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 30
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "marquadrink"
+	glass_name = "Ocular"
+	glass_desc = "Don't make eye contact, a favorite of the Mar qua."
+
+/datum/reagent/ethanol/saint_pio
+	name = "Saint Pio"
+	id = "saint_pio"
+	description = "An absolutely perfect choice."
+	taste_description = "a crusade of flavors"
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 50
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "saint_pio"
+	glass_name = "Saint Pio"
+	glass_desc = "An absolutely perfect choice."
+
+/datum/reagent/ethanol/rusty_special
+	name = "Rusty Special"
+	id = "rusty_special"
+	description = "Both Barrels."
+	taste_description = "pellets of iron dancing in smooth whiskey"
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 60
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "buckshot"
+	glass_name = "Rusty Special"
+	glass_desc = "Both Barrels."
+
+/datum/reagent/ethanol/western_escargot
+	name = "Western Escargot"
+	id = "western_escargot"
+	description = "The kinda slugs a free man can appreciate."
+	taste_description = "an explosion of flavors and a nice kick on its aftertaste"
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 60
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "slug"
+	glass_name = "Western Escargot"
+	glass_desc = "The kinda slugs a free man can appreciate."
+
+/datum/reagent/ethanol/prospie
+	name = "Prospie"
+	id = "prospie"
+	description = "Tastes how it looks, like it's namesake"
+	taste_description = "a mix of blood sweets and tears."
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 60
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "prospie"
+	glass_name = "Prospie"
+	glass_desc = "Tastes how it looks, like it's namesake."
+
+/datum/reagent/ethanol/friendlyfire
+	name = "Friendly Fire"
+	id = "friendlyfire"
+	description = "Watch your back when you take a swig."
+	taste_description = "002"
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 60
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "friendlyfire"
+	glass_name = "Friendly Fire"
+	glass_desc = "Watch your back when you take a swig."

@@ -210,7 +210,7 @@
 		if(L.name == LANGUAGE_CULT)
 			M.remove_language(LANGUAGE_CULT)
 		if(L.name == LANGUAGE_OCCULT)
-			M.remove_language(LANGUAGE_CULT)
+			M.remove_language(LANGUAGE_OCCULT)
 	return
 
 /obj/effect/decal/cleanable/crayon/proc/voice_spell(var/mob/living/carbon/human/M)
