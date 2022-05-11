@@ -76,7 +76,8 @@
 					var/turf/simulated/wall/W = target
 					if(W.reinf_material)
 						occupant_message(SPAN_WARNING("\The [target] is too durable to cut apart."))
-						chassis.visible_message("\The [name] bounces off [target]")
+						chassis.visible_message("\The [name] lightly dents \the [target]")
+						W.take_overall_damage(dam_force)
 					else
 						chassis.visible_message("Slashed through \the [target]")
 						target.ex_act(2)
