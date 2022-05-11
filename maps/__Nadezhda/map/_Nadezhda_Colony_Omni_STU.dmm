@@ -6489,6 +6489,12 @@
 /obj/effect/window_lwall_spawn,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/substation/section2)
+"buU" = (
+/obj/item/contraband/poster/placed/generic/shork{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/crew_quarters/pool)
 "bvg" = (
 /mob/living/simple_animal/crab/Coffee,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -139501,7 +139507,7 @@ sFI
 sFI
 sFI
 wpA
-cJW
+buU
 qTJ
 pyP
 pyP

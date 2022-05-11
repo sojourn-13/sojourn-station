@@ -8,6 +8,7 @@
 	desc = "As a sablekyne your body is a tank, through will and biology you can ignore pain entirely for a short amount of time."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "sable"
 
 /datum/perk/laststand/activate()
 	var/mob/living/carbon/human/user = usr
@@ -25,12 +26,12 @@
 /datum/perk/bone
 	name = "Bone Plated"
 	desc = "All sablekyne are covered in bone-like plating across various parts of the body, this layer of natural armor along the shins, thighs, fore-arms, and shoulders allow you to absorb impacts better than anyone, adding a further tolerance to pain."
-	//icon_state = "" // - No icon, suggestion - Riot Shield?
+	icon_state = "sable"
 
 /datum/perk/brawn
 	name = "Brawny Build"
 	desc = "All sablekyne are stocky and built wide, your brawny build and low center of gravity gives you exceptional balance. Few beasts can knock you down and not even the strongest men can push you over."
-	//icon_state = "muscular" // https://game-icons.net
+	icon_state = "sable"
 
 /datum/perk/brawn/assign(mob/living/carbon/human/H)
 	..()
@@ -46,6 +47,7 @@
 	desc = "Your intelligence is above the 'lesser races' and even the humblest of Mar'qua can prove it easily in moments of focus. Use this to center your thoughts and increase all your mental abilities."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "frog"
 
 /datum/perk/suddenbrilliance/activate()
 	var/mob/living/carbon/human/user = usr
@@ -63,10 +65,12 @@
 /datum/perk/inspired
 	name = "Inspired Intellect"
 	desc = "Even the most humble Mar'qua is capable of study and extrapolation, your natural intellect allows you to become gain inspiration more easily."
+	icon_state = "frog"
 
 /datum/perk/alien_nerves
 	name = "Adapted Nervous System"
 	desc = "A mar'qua's nervous system has long since adapted to the use of stimulants, chemicals, and different toxins. Unlike lesser races, you can handle a wide variety of chemicals before showing any side effects and you'll never become addicted."
+	icon_state = "frog"
 
 /datum/perk/alien_nerves/assign(mob/living/carbon/human/H)
 	..()
@@ -86,6 +90,7 @@
 	desc = "When everything looks grim, you can muster a moment of bravado, reminding yourself that you ain't got time to bleed. You toughen up your metabolism, allowing you to ignore some of your pain, while stopping your bleeding and slightly healing your wounds."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "revival"
 
 /datum/perk/tenacity/activate()
 	var/mob/living/carbon/human/user = usr
@@ -105,6 +110,7 @@
 	desc = "You push your primal desire to keep living to its limit, letting your body recover slightly from any internal damage out of sheer force of will at the cost of becoming extremely exhausted while it works."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "revival"
 
 /datum/perk/iwillsurvive/activate()
 	var/mob/living/carbon/human/user = usr
@@ -125,6 +131,7 @@
 	desc = "Life has taught you that beyond sheer force of will, what made your kind conquer the stars was also a sense of camaraderie and cooperation among your battle brothers and sisters. Your heroic warcry can inspire yourself and others to better performance in combat."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "revival"
 
 /datum/perk/slymarbo/activate()
 	var/mob/living/carbon/human/user = usr
@@ -165,6 +172,7 @@
 	desc = "You're a predator at heart and have the senses to match, for a short time your body toughens and your aim improves drastically as your senses enhance."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "krios"
 
 /datum/perk/enhancedsenses/activate()
 	var/mob/living/carbon/human/user = usr
@@ -182,6 +190,7 @@
 /datum/perk/exceptional_aim
 	name = "Instinctual Skill"
 	desc = "All kriosans understand the dynamics of shooting, to such a degree that guns are more extensions to one's hand than weapon. You take no penalty when firing any range weapon one handed."
+	icon_state = "krios"
 
 ////////////////////////////////////////Akula perks
 /datum/perk/recklessfrenzy
@@ -190,6 +199,7 @@
 	and often times will leave your body weaker for a short time."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "akula"
 
 /datum/perk/recklessfrenzy/activate()
 	var/mob/living/carbon/human/user = usr
@@ -208,7 +218,7 @@
 /datum/perk/iron_flesh
 	name = "Iron Flesh"
 	desc = "Akula scales are not only tough and resistant to damage but exceptionally skilled at naturally forcing out embedded objects that somehow punch through. You'll never get a bullet nor object stuck inside when hit."
-
+	icon_state = "akula"
 
 ////////////////////////////////////////Naramad perks
 /datum/perk/adrenalineburst
@@ -216,6 +226,7 @@
 	desc = "Naramads are built for extreme speed, be it for charging forward and retreating back."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "cheese"
 
 /datum/perk/adrenalineburst/activate()
 	var/mob/living/carbon/human/user = usr
@@ -234,10 +245,12 @@
 /datum/perk/stay_hydrated
 	name = "Hydration Reliance"
 	desc = "Naramad have adapted biology heavily reliant on the intake of fluids, in particular clean clear water. Drinking purified water, even tap water, heals your body slowly, as if you drank tricordizine!"
+	icon_state = "cheese"
 
 /datum/perk/born_warrior
 	name = "Born Warrior"
 	desc = "No matter their background all naramadi are capable bringing any object to bear as a weapon, be it bladed or blunt. Unlike other races your grip is iron and you'll never lose your weapon through embedding it in an enemy."
+	icon_state = "cheese"
 
 /////////////////////////////////////////Cindarite perks
 /datum/perk/purgetoxins
@@ -245,6 +258,7 @@
 	desc = "You force your body to begin the process of removing toxins from your blood. All toxins, addictions, and stimulants are slowly purged while any toxin damage to your liver or body is healed but the effect leaves you exhausted."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "golem"
 
 /datum/perk/purgetoxins/activate()
 	var/mob/living/carbon/human/user = usr
@@ -264,6 +278,7 @@
 	desc = "Your body is adept not only at curing toxins and regulating its blood flow but also fighting off infections and disease in any form. All infections within you are slowly cured and diseases progression slowed if not outright cured, similar to as if you were injected with spaceacillin. Severe infections or late stage diseases may still need additional medical aid and this cannot restore necrotic tissue."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "golem"
 
 /datum/perk/purgeinfections/activate()
 	var/mob/living/carbon/human/user = usr
@@ -281,6 +296,7 @@
 /datum/perk/second_skin
 	name = "Second Skin"
 	desc = "Cindarites, be they bunker born or spacers, are used to wearing bulky enviromental suits. This life time of being acclimated to heavy clothing has become a second skin for many, allowing you to remove clothing instantly and never suffer slowdown from heavy armor."
+	icon_state = "golem"
 
 ///////////////////////////////////////////Opifex perks
 /datum/perk/opifex_backup
@@ -288,6 +304,7 @@
 	desc = "You retrieve your custom made quality tools hidden on your person somewhere, along with the opifex-made black webbing vest that holds them. As every opifex is told, never go anywhere without your kit. This kit is also yours alone and a specialized suite of tools, unless you're upgrading to new tools you should not ever sell or give these away."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "opifex"
 
 /datum/perk/opifex_backup/activate()
 	var/mob/living/carbon/human/user = usr
@@ -308,6 +325,7 @@
 	desc = "You retrieve your custom kitted medical webbing hidden on your person somewhere, along with the opifex-made black webbing vest that holds them. As every opifex is told, never go anywhere without your kit. This tool belt is yours alone and you should not allow any non-opifex to use it."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "opifex"
 
 
 /datum/perk/opifex_backup_medical/activate()
@@ -330,6 +348,7 @@
 	desc = "You retrieve your custom kitted combat belt hidden on your person somewhere, along with the opifex-made black webbing vest that holds them. As every opifex is told, never go anywhere without your kit. This tool belt is yours alone and you should not allow any non-opifex to use it, nor the weapons within."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "opifex"
 
 /datum/perk/opifex_backup_combat/activate()
 	var/mob/living/carbon/human/user = usr
@@ -350,6 +369,7 @@
 	desc = "Opifex are scavengers at heart and rely heavily on machines and AI as a result, as such, each opifex keeps a specially designed circuit on their person to build a make shift defense platform when needed to secure their safety. Sadly, you only managed to smuggle the circuit on your person."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "opifex"
 
 /datum/perk/opifex_turret/activate()
 	var/mob/living/carbon/human/user = usr
@@ -370,6 +390,7 @@
 	desc = "Every opifex carries their own personal IFAK stashed somewhere. Being practical is the best option, after all, and the colony is a dangerous place."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "opifex"
 
 /datum/perk/opifex_patchkit/activate()
 	var/mob/living/carbon/human/user = usr
@@ -390,7 +411,7 @@
 	name = "Kin to the Spiders"
 	desc = "Through a combination of pheromones, appearance, and an innate understanding of spider behavior all spiders are friendly to you, they won't attack you even if you attack them. This change \
 	in your biology and pheromones however make you an enemy to roaches. As a side effect of dealing with spiders so often, you can't be slowed or stuck by webbing."
-	//icon_state = "muscular" // https://game-icons.net
+	icon_state = "bug"
 
 /datum/perk/spiderfriend/assign(mob/living/carbon/human/H)
 	..()
@@ -405,6 +426,7 @@
 	desc = "You can spin webs, spreading them around a location as a form of snaring barricade."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "bug"
 
 /datum/perk/webmaker/activate()
 	var/mob/living/carbon/human/user = usr
@@ -424,6 +446,7 @@
 	desc = "As a member of the Ru caste your ability to produce chemicals is well known, though it takes an hour to recover and much of your nutritional in-take you can produce clumped ichors that function as medical kits."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "bug"
 
 /datum/perk/ichor/activate()
 	var/mob/living/carbon/human/user = usr
@@ -448,7 +471,7 @@
 /datum/perk/chitinarmor
 	name = "Chitin Armor"
 	desc = "Unlike other caste in the cht'mant hive you are built for combat, while not as naturally tough as other species you can tank a few more blows than your softer insectile brethren."
-	//icon_state = "" // - No icon, suggestion - Riot Shield?
+	icon_state = "bug"
 
 /datum/perk/chitinarmor/assign(mob/living/carbon/human/H)
 	..()
@@ -465,13 +488,14 @@
 /datum/perk/scuttlebug
 	name = "Scuttlebug"
 	desc = "While your definitive purpose is not as clearly defined as other castes within the cht'mant hive your constant movement and labors have made you quite used to the hustle and bustle, letting you run faster than most races."
-	//icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
+	icon_state = "bug"
 
 /datum/perk/repair_goo
 	name = "Produce Repair Goo"
 	desc = "Fixing things is apart of your caste as it is scuttling around keeping yourself busy. As such you can vomit out glue-like goo that functions exceptionally well for tool and general repairs."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "bug"
 
 /datum/perk/repair_goo/activate()
 	var/mob/living/carbon/human/user = usr
@@ -498,6 +522,7 @@
 	desc = "You reach into your understanding of this natural world to alter the latent effects of an oddity, enhancing the properties it has."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "folk"
 
 /datum/perk/oddity_reroll/activate()
 	var/mob/living/carbon/human/user = usr
@@ -522,11 +547,13 @@
 	name = "Folken Photo-Healing"
 	desc = "As a Folken, you can use the light to heal wounds, standing in areas of bright light will increase your natural regeneration."
 	passivePerk = TRUE
+	icon_state = "folk"
 
 /datum/perk/folken_healing/young
 	name = "Folken Photo-Healing"
 	desc = "As a Folken, you can use the light to heal wounds, standing in areas of bright light will increase your natural regeneration. Due to your comparitively young age, you heal much faster than older folken."
 	var/replaced = FALSE // Did it replace the normal folken healing?
+	icon_state = "folk"
 
 /datum/perk/folken_healing/young/assign(mob/living/carbon/human/H)
 	..()
@@ -545,6 +572,7 @@
 	name = "Mycus Regeneration"
 	desc = "As a mycus, you heal as long as you are in the darkness, increasing your natural regeneration."
 	passivePerk = TRUE
+	icon_state = "shroom"
 
 /datum/perk/mushroom_follower
 	name = "Spawn Shroomling"
@@ -552,6 +580,7 @@
 	major benefit of having one is they may turn any food you feed into them into useful healing chemicals contained in bottles of resin."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "shroom"
 	var/used = FALSE // Not deleting after use since the description is useful.
 	var/follower_type = /mob/living/carbon/superior_animal/fungi/shroom
 
@@ -575,6 +604,7 @@
 	incredibly sturdy and physically strong, able to regenerate even the worst wounds. Unfortunately they suffer from poor eyesight, requiring threats to get close before they notice them."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "shroom"
 	var/used = FALSE // Not deleting after use since the description is useful.
 	var/follower_type = /mob/living/carbon/superior_animal/fungi/slime
 
@@ -599,17 +629,20 @@
 	desc = "For whatever reason, be it genetics or racial inclination, you are an obligate carnivore. You get very little nutrition from standard nutriment, but gain alot from meat and protein \
 	based products."
 	passivePerk = TRUE
+	icon_state = "snack_carn"
 
 /datum/perk/herbivore
 	name = "Herbivore"
 	desc = "For whatever reason, be it genetics or racial inclination, you are an obligate herbivore. You get very little nutrition from standard protein, but gain alot from grown foods and glucose \
 	based products."
 	passivePerk = TRUE
+	icon_state = "snack_herb"
 
 ///////////////////////////////////// Slime perks
 /datum/perk/speed_boost
 	name = "Gelatinous speed"
 	desc = "Increase your speed for a short amount of time."
+	icon_state = "slime"
 	var/cooldown = 10 MINUTES
 	passivePerk = FALSE
 	var/nutrition_cost = 100
@@ -626,6 +659,7 @@
 /datum/perk/limb_regen
 	name = "Gelatinous Regeneration"
 	desc = "Spend nutrition in exchange of regenerating your limbs"
+	icon_state = "slime"
 	var/cooldown = 30 MINUTES
 	passivePerk = FALSE
 	var/nutrition_cost = 500 // I don't know if nutrition even goes that high, but that's Possum's problem. -R4d6
@@ -642,6 +676,7 @@
 /datum/perk/slime_stat_boost
 	name = "Gelatinous Stat Boost"
 	desc = "Spend nutrition in exchange of \[INSERT DESCRIPTION HERE\]"
+	icon_state = "slime"
 	var/cooldown = 15 MINUTES
 	passivePerk = FALSE
 	var/nutrition_cost = 100
@@ -660,10 +695,12 @@
 
 /datum/perk/slime_stat_boost/mental
 	name = "Gelatinous Mental Stat Boost"
+	icon_state = "slime"
 	desc = "Spend nutrition in exchange of \[INSERT DESCRIPTION HERE\]"
 	stats_to_boost = list(STAT_BIO, STAT_MEC, STAT_COG)
 
 /datum/perk/slime_stat_boost/physical
 	name = "Gelatinous Physical Stat Boost"
+	icon_state = "slime"
 	desc = "Spend nutrition in exchange of \[INSERT DESCRIPTION HERE\]"
 	stats_to_boost = list(STAT_ROB, STAT_TGH, STAT_VIG)

@@ -1141,10 +1141,7 @@ mob/proc/yank_out_object()
 	set category	= "IC"
 	set src			= usr
 
-	if(iscarbon(usr) || issilicon(usr))
-		browse_src_stats(src)
-	else
-		to_chat(usr, "You do not have the capability to have stats or perks!")
+	browse_src_stats(src)
 
 /mob/proc/browse_src_stats(mob/user)
 	var/additionalcss = {"
@@ -1177,26 +1174,21 @@ mob/proc/yank_out_object()
 	"}
 	// Perks
 	var/list/Plist = list()
-	var/column = 1
-	for(var/perk in stats.perks)
-		var/datum/perk/P = perk
-		//var/filename = sanitizeFileName("[P.type].png")
-		//var/asset = asset_cache.cache[filename] // this is definitely a hack, but getAtomCacheFilename accepts only atoms for no fucking reason whatsoever.
-		//if(asset)
-		if( column == 1)
-			Plist += "<td valign='middle'><span style='text-align:center'>[P.name]<br>[P.desc]</span></td>"
-			column = 2
-		else
-			Plist += "<td valign='middle'><span style='text-align:center'>[P.name]<br>[P.desc]</span></td><tr></tr>"
-			column = 1
+	if (stats) // Check if mob has stats. Otherwise we cannot read null.perks
+		for(var/perk in stats.perks)
+			var/datum/perk/P = perk
+			var/filename = sanitizeFileName("[P.type].png")
+			var/asset = asset_cache.cache[filename] // this is definitely a hack, but getAtomCacheFilename accepts only atoms for no fucking reason whatsoever.
+			if(asset)
+				Plist += "<td valign='middle'><img src=[filename]></td><td><span style='text-align:center'>[P.name]<br>[P.desc]</span></td>"
 	data += {"
 		<table width=80%>
 			<th colspan=2>Perks</th>
-			<tr>[Plist.Join()]</tr>
+			<tr>[Plist.Join("</tr><tr>")]</tr>
 		</table>
 	"}
 
-	var/datum/browser/B = new(src, "StatsBrowser","[user == src ? "Your stats:" : "[name]'s stats"]", 1000, 400)
+	var/datum/browser/B = new(src, "StatsBrowser","[user == src ? "Your stats:" : "[name]'s stats"]", 1000, 345)
 	B.set_content(data)
 	B.set_window_options("can_minimize=0")
 	B.open()

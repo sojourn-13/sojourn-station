@@ -7,18 +7,21 @@
 	it detects in the body, which can be harmful when combined with fast-acting genetic modifications."
 	gain_text = "Your head aches for a moment, the effects of your spine having been seperated and an advanced machine slotted inbetween leaving you with a dull pain that is quickly cured \
 	by your nanites."
+	icon_state = "dual_shot"
 
 /datum/perk/nanite_regen
 	name = "Nanite Regeneration"
 	desc = "You configure your nanite matrix to begin aiding in your natural healing."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	var/regen_rate = 0.5 //This seems low but this is per human handle_chemicals_in_body meaning this is rather robust
+	icon_state = "regrowth"
 
 /datum/perk/nanite_muscle
 	name = "Nanofiber Muscle Therapy"
 	desc = "Through the use of pain killers, implanted nanofibers, and small dispersed drug therapy to critical areas your nanogate has enhanced your physical movement speed and endurance, allowing you to run for \
 	longer stretches at a faster pace without tiring."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
+	icon_state = "fast"
 
 /datum/perk/nanite_armor
 	name = "Nanite Skin-Weave"
@@ -26,6 +29,7 @@
 	mesh weave shield just before a strike connects. Effective, but only against physical brute damage."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	var/armor_mod = 0.2
+	icon_state = "golem"
 
 /datum/perk/nanite_armor/assign(mob/living/carbon/human/H)
 	..()
@@ -44,6 +48,7 @@
 	var/chem_id = "nanites"
 	var/chem_amount = 15
 	var/anti_cheat = FALSE //Used to prevent multy stacking clicking
+	icon_state = "selfmedicated"
 
 /datum/perk/nanite_chem/activate()
 	..()
@@ -92,6 +97,7 @@
 	passivePerk = FALSE
 	var/cooldown = 60 MINUTES
 	var/anti_cheat = FALSE //No more spaming...
+	icon_state = "ammo_box"
 
 /datum/perk/nanite_ammo/activate()
 	if(world.time < cooldown_time)

@@ -478,6 +478,11 @@
 	desc = "A poster of a white rabbit with a blue science coat asking the all imporant question of WHY? Of course the answer is Why not!"
 	icon_state = "poster36_legit"
 
+/obj/item/contraband/poster/placed/generic/shork
+	name = "Pool Safety"
+	desc = "A poster of a cartoonish akula with POOL SAFETY! slapped right under it's tail."
+	icon_state = "poster37_legit"
+
 /*Advert*/
 
 /obj/item/contraband/poster/placed/advertisement/ion_rifle
