@@ -795,3 +795,11 @@
 	name = "flashforged rod"
 	desc = "Wait a second, this is a flashforged bullet!"
 	projectile_type = /obj/item/projectile/bullet/rod_bolt/rcd
+/obj/item/ammo_casing/jdj
+	name = ".950 JDJ cartridge"
+	desc = "A cartridge for an elephant rifle"
+	icon_state = "jdj_standard"
+	spent_icon = "jdj_spent"
+	caliber = CAL_ELEPH
+	projectile_type = /obj/item/projectile/bullet/jdj
+	maxamount = 1

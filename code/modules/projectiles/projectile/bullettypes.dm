@@ -824,3 +824,13 @@
 	affective_damage_range = 7
 	affective_ap_range = 7
 	create_type = null
+/obj/item/projectile/bullet/jdj //combat hunting for fun and profit
+	damage_types = list(BRUTE = 130)
+	armor_penetration = 45
+	nocap_structures = TRUE
+	//stun = 5
+	//weaken = 10
+	penetrating = 3
+	hitscan = TRUE 
+	affective_damage_range = 10
+	affective_ap_range = 10
