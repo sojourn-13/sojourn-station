@@ -126,6 +126,10 @@
 	M.stats.addTempStat(STAT_BIO, -100, STIM_TIME, "robustitol")
 	M.stats.addTempStat(STAT_VIG, -100, STIM_TIME, "robustitol")
 	M.stats.addTempStat(STAT_MEC, -100, STIM_TIME, "robustitol")
+	M.add_chemical_effect(CE_BLOODCLOT, 0.2)
+	M.add_chemical_effect(CE_PAINKILLER, 100, TRUE) //Weaker Tramadol
+	M.add_chemical_effect(CE_PULSE, 2)
+	M.add_chemical_effect(CE_SPEECH_VOLUME, rand(3,4)) //Angery
 
 /datum/reagent/drug/robustitol/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "robustitol_w")

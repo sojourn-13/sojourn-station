@@ -200,7 +200,7 @@
 		return FALSE
 	cooldown_time = world.time + 15 MINUTES
 	user.visible_message("<b><font color='red'>[user] lets out deep guttural growl as their eyes glaze over!</font><b>", "<b><font size='3px'><font color='red'>You abandon all reason as your sink into a blood thirsty frenzy!</font><b>", "<b><font color='red'>You hear a terrifying roar!</font><b>")
-	playsound(usr.loc, 'sound/voice/akularoar.ogg', 50, 1)
+	playsound(usr.loc, 'sound/voice/akularoar.ogg', 70, 1)
 	log_and_message_admins("used their [src] perk.")
 	user.reagents.add_reagent("robustitol", 5)
 	return ..()
@@ -208,7 +208,6 @@
 /datum/perk/iron_flesh
 	name = "Iron Flesh"
 	desc = "Akula scales are not only tough and resistant to damage but exceptionally skilled at naturally forcing out embedded objects that somehow punch through. You'll never get a bullet nor object stuck inside when hit."
-
 
 ////////////////////////////////////////Naramad perks
 /datum/perk/adrenalineburst

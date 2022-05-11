@@ -221,7 +221,7 @@
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.25
 	radiation_mod = 0.5
 	toxins_mod = 0.75
-	brute_mod = 0.75
+	brute_mod = 0.90 //A war dog, metallic prickles help but doesn't mean you get to facetank a rocket.
 	siemens_coefficient = 2
 
 	dark_color = "#ff0000"
@@ -272,6 +272,7 @@
 	name_plural = "Akulas"
 	default_form = FORM_AKULA
 	obligate_form = TRUE
+	aan = "n"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/tail, /datum/unarmed_attack/bite/strong)
 	darksight = 4
 	num_alternate_languages = 2
@@ -281,6 +282,8 @@
 	blurb = "How did you find this? Report this to Kazkin if you're reading it."
 	taste_sensitivity = TASTE_DULL
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.25
+	brute_mod = 0.85 //Thick skin perk kind of points at this being a thing
+	oxy_mod = 0.85 //They can stay under water for longer than humans
 
 	cold_level_1 = 240 //Default 270
 	cold_level_2 = 200 //Default 230
