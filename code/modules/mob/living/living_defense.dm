@@ -5,7 +5,7 @@
 //If you need to do something else with armor - just use getarmor() proc and do with those numbers all you want
 //Random absorb system was a cancer, and was removed from all across the codebase. Don't recreate it. Clockrigger 2019
 
-/mob/living/proc/damage_through_armor(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/attack_flag = ARMOR_MELEE, var/armour_pen = 0, var/used_weapon = null, var/sharp = 0, var/edge = 0)
+/mob/living/proc/damage_through_armor(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/attack_flag = ARMOR_MELEE, var/armour_pen = 0, var/used_weapon = null, var/sharp = 0, var/edge = 0, var/post_pen_mult = 1)
 
 	if(damage == 0)
 		return FALSE
@@ -63,7 +63,7 @@
 
 	//No armor? Damage as usual
 	if(armor_effectiveness == 0)
-		apply_damage(effective_damage, damagetype, def_zone, used_weapon, sharp, edge)
+		apply_damage(effective_damage * post_pen_mult, damagetype, def_zone, used_weapon, sharp, edge)
 
 	//Here we split damage in two parts, where armor value will determine how much damage will get through
 	else
@@ -75,7 +75,7 @@
 
 		//Actual part of the damage that passed through armor
 		var/actual_damage = round ( ( effective_damage * ( 100 - armor_effectiveness ) ) / 100 )
-		apply_damage(actual_damage, damagetype, def_zone, used_weapon, sharp, edge)
+		apply_damage(actual_damage * post_pen_mult, damagetype, def_zone, used_weapon, sharp, edge)
 		return actual_damage
 	return effective_damage
 
@@ -125,7 +125,7 @@
 		hit_impact(P.get_structure_damage(), hit_dir)
 		for(var/damage_type in P.damage_types)
 			var/damage = P.damage_types[damage_type]
-			damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P))
+			damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P), post_pen_mult = P.post_penetration_dammult)
 
 
 	if(P.agony > 0 && istype(P,/obj/item/projectile/bullet))
