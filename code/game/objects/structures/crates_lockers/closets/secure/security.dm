@@ -193,7 +193,6 @@
 	icon_state = "cabinetdetective"
 
 /obj/structure/closet/secure_closet/personal/detective/populate_contents()
-	new /obj/item/voucher/marshal/primary(src)
 	new /obj/item/clothing/under/rank/inspector/suit(src)
 	new /obj/item/clothing/under/rank/inspector/black(src)
 	new /obj/item/clothing/under/rank/inspector(src)
@@ -225,6 +224,7 @@
 	new /obj/item/device/t_scanner/advanced(src)
 	new /obj/item/voucher/marshal/rangerprimary(src)
 	new /obj/item/voucher/marshal/rangersecondary(src)
+	new /obj/item/voucher/marshal/armor(src)
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections locker"
