@@ -15,7 +15,7 @@
 	icon_state = "mech_sword"
 	sharp = TRUE
 	edge = TRUE
-	tool_qualities = list(QUALITY_CUTTING = 35, QUALITY_SAWING = 20) // It's a literal mech sized blade, what did you expect?
+	tool_qualities = list(QUALITY_CUTTING = 35, QUALITY_SAWING = 20) // It's a literal mech sized blade
 	armor_penetration = ARMOR_PEN_DEEP
 	tructure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	hitsound = 'sound/weapons/bladeslice.ogg'
