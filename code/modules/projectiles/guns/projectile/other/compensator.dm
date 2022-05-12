@@ -25,7 +25,7 @@
 	burst_delay = 0
 	saw_off = FALSE
 	serial_type = "SA"
-    brace_penalty = 80 //-15 (fired without table)
+    brace_penalty = 80 //-15 fired without table
 
 /obj/item/gun/projectile/other/compensator/update_icon()
 	..()
