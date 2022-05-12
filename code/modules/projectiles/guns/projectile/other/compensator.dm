@@ -24,8 +24,8 @@
 	var/bolt_open = 0
 	burst_delay = 0
 	saw_off = FALSE
+	brace_penalty = 80 //-15 mood, fired without table
 	serial_type = "SA"
-	brace_penalty = 80 //-15 fired without table
 
 /obj/item/gun/projectile/other/compensator/update_icon()
 	..()
