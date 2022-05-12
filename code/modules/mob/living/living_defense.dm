@@ -217,8 +217,11 @@
 			IgniteMob()
 
 		src.visible_message(SPAN_WARNING("[src] has been hit by [O]."))
-
-		damage_through_armor(throw_damage, dtype, null, ARMOR_MELEE, null, used_weapon = O, sharp = is_sharp(O), edge = has_edge(O), O.post_penetration_dammult)
+		var/ppd = 1
+		if(isitem(O))
+			var/obj/item/thingytocheck = O
+			ppd = thingytocheck.post_penetration_dammult
+		damage_through_armor(throw_damage, dtype, null, ARMOR_MELEE, null, used_weapon = O, sharp = is_sharp(O), edge = has_edge(O), ppd)
 
 		O.throwing = 0		//it hit, so stop moving
 
