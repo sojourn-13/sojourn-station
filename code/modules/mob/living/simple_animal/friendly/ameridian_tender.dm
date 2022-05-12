@@ -6,7 +6,7 @@
 	desc = "An automaton powered by an ameridian core. It instinctively care for ameridian crystals, letting them grow and spread before harvesting them. \
 			Its unique nature mean that it doesn't get attacked by other ameridian-based lifeform or get damaged by anti-ameridian sonic weaponry."
 	icon = 'icons/obj/ameridian.dmi'
-	icon_state = "golem_ameridian_purple"
+	icon_state = "tender" // Sprites by Quill#6000
 	faction = "ameridian"
 	attacktext = "smacked"
 	mob_size = MOB_MEDIUM // Small mobs can't open doors.
