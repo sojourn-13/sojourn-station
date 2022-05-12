@@ -15,6 +15,10 @@
 	var/cache_key = BP_EYES
 	w_class =  ITEM_SIZE_TINY
 
+/obj/item/organ/internal/eyes
+	name = "eyeball"
+	desc = "A single, alien eye. It allows Mar'Qua to see."
+
 /obj/item/organ/internal/eyes/prosthetic
 	name = "prosthetic eyes"
 	desc = "Eyes. They allow you to see. These one are made of metal."
