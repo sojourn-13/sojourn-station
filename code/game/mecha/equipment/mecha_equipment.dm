@@ -106,11 +106,13 @@
 		M.attack_log += "\[[time_stamp()]\]<font color='orange'> Attacked by [user.name] ([user.ckey]) with [name] (INTENT: [uppertext(user.a_intent)]) (DAMTYE: [uppertext(damtype)])</font>"
 		msg_admin_attack("[key_name(user)] attacked [key_name(M)] with [name] (INTENT: [uppertext(user.a_intent)]) (DAMTYE: [uppertext(damtype)])" )
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-
 	var/hit_zone = M.resolve_item_attack(src, user, target_zone)
 	if(hit_zone)
 		apply_hit_effect(M, user, hit_zone)
+
+	set_ready_state(0)
+	chassis.use_power(energy_drain)
+	do_after_cooldown()
 
 	return TRUE
 
