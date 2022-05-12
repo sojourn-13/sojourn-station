@@ -91,6 +91,43 @@
 /obj/item/mecha_parts/mecha_equipment/proc/action(atom/target)
 	return
 
+/obj/item/mecha_parts/mecha_equipment/attack(mob/living/M, mob/living/user, target_zone) // Copy of item_attack code, modified to not take into account user stats or health since the mech's doing all the hard work
+	if(!force || (flags & NOBLUDGEON))
+		return FALSE
+
+	if(!user)
+		return FALSE
+
+	user.lastattacked = M
+	M.lastattacker = user
+
+	if(!no_attack_log)
+		user.attack_log += "\[[time_stamp()]\]<font color='red'> Attacked [M.name] ([M.ckey]) with [name] (INTENT: [uppertext(user.a_intent)]) (DAMTYE: [uppertext(damtype)])</font>"
+		M.attack_log += "\[[time_stamp()]\]<font color='orange'> Attacked by [user.name] ([user.ckey]) with [name] (INTENT: [uppertext(user.a_intent)]) (DAMTYE: [uppertext(damtype)])</font>"
+		msg_admin_attack("[key_name(user)] attacked [key_name(M)] with [name] (INTENT: [uppertext(user.a_intent)]) (DAMTYE: [uppertext(damtype)])" )
+
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+
+	var/hit_zone = M.resolve_item_attack(src, user, target_zone)
+	if(hit_zone)
+		apply_hit_effect(M, user, hit_zone)
+
+	return TRUE
+
+//Called when a mech's melee weapon is used to make a successful melee attack on a mob. Returns the blocked result
+/obj/item/mecha_parts/mecha_equipment/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
+	if(hitsound)
+		playsound(loc, hitsound, 50, 1, -1)
+
+	if (is_hot() >= HEAT_MOBIGNITE_THRESHOLD)
+		target.IgniteMob()
+
+	var/power = force
+	if(effective_faction.Find(target.faction)) // Is the mob's in our list of factions we're effective against?
+		power *= damage_mult // Increase the damage
+	target.hit_with_weapon(src, user, power, hit_zone)
+	return
+
 /obj/item/mecha_parts/mecha_equipment/proc/can_attach(obj/mecha/M)
 	if(M.equipment.len >= M.max_equip)
 		return 0

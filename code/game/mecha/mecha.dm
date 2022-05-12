@@ -391,7 +391,7 @@
 			selected.action(target)
 	else if(selected)
 		if(selected.is_melee())
-			selected.action(target)
+			selected.attack(target, user, user.targeted_organ)
 		else
 			occupant_message("<font color='red'>You cannot fire this weapon in close quarters!</font>")
 	else
