@@ -423,7 +423,17 @@
 /datum/design/research/circuit/ameridianshieldwallgen
 	name = "sonic fence generator"
 	build_path = /obj/item/circuitboard/ameridianshieldwallgen
-	category = CAT_MISC
+	category = CAT_AMERIDIAN
+
+/datum/design/research/circuit/ameridian_refinery
+	name = "ameridian refinery"
+	build_path = /obj/item/circuitboard/ameridian_refinery
+	category = CAT_AMERIDIAN
+
+/datum/design/research/circuit/liquid_ameridian_processor
+	name = "liquid ameridian processor"
+	build_path = /obj/item/circuitboard/liquid_ameridian_processor
+	category = CAT_AMERIDIAN
 
 //Industrial Printing
 

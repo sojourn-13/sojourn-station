@@ -457,6 +457,24 @@
 							)
 
 
+/datum/technology/ameridian
+	name = "Ameridian Refindment"
+	desc = "Advanced ."
+	tech_type = RESEARCH_ENGINEERING
+
+	x = 0.9
+	y = 0.7
+	icon = "ameridian"
+
+	required_technologies = list(/datum/technology/industrial_printing)
+	required_tech_levels = list()
+	cost = 1500 //Cheap-ish I guess?
+
+	unlocks_designs = list(/datum/design/research/circuit/ameridian_refinery,
+							/datum/design/research/circuit/liquid_ameridian_processor,
+							)
+
+
 /datum/technology/rig_industeral
 	name = "Hardsuit Integration"
 	desc = "Integrated tools and gear used by hardsuit rigs for day to day work."
