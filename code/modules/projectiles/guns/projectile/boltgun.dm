@@ -112,7 +112,8 @@
 						flick("bullet_eject_s", src)
 					else
 						flick("bullet_eject", src)
-				if(B.is_caseless && !B.BB)
+				if(chambered.is_caseless && !chambered.BB)
+					loaded -= chambered
 					QDEL_NULL(chambered)
 				else
 					print_string = "You work the bolt open, ejecting [chambered]!"
@@ -128,6 +129,7 @@
 				if(LAZYLEN(loaded))
 					var/obj/item/ammo_casing/B = loaded[loaded.len]
 					if(B.is_caseless && !B.BB)
+						loaded -= B
 						QDEL_NULL(B)
 					else
 						print_string = "You work the bolt open, ejecting [B]!"
