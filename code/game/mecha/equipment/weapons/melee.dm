@@ -6,7 +6,7 @@
 	equip_cooldown = 15
 	energy_drain = 10
 	structure_damage_factor = 2
-	var/dam_force = 20
+	force = 20
 	required_type = /obj/mecha
 
 
@@ -21,7 +21,7 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/icon/melee_overlay
-	dam_force = 60 // Big sword make big boo boo - R4d6 / Upped further because delay - Wizard
+	force = 60 // Big sword make big boo boo - R4d6 / Upped further because delay - Wizard
 
 
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/shockmaul
