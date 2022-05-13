@@ -1429,3 +1429,8 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		digit_numbers--
 		generated_code += "[generate_single_gun_number()]" // cast to string
 	return generated_code
+
+// Proc concept stolen from https://www.arduino.cc/reference/en/language/functions/math/map/
+// It convert a number from one range to another range.
+/proc/map(value, fromLow, fromHigh, toLow, toHigh)
+	return round((value - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow)
