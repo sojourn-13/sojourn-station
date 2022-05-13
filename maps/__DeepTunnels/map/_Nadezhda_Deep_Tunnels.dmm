@@ -940,10 +940,15 @@
 /obj/machinery/camera/network/mining{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/ratking{
+	colony_friend = 1;
+	friendly_to_colony = 1
+	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/mine/lockers)
 "cJ" = (
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/mouse/hooded,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/mine/lockers)
 "cK" = (
@@ -7731,10 +7736,6 @@
 	pixel_x = 0;
 	pixel_y = -32
 	},
-/mob/living/simple_animal/hostile/ratking{
-	colony_friend = 1;
-	friendly_to_colony = 1
-	},
 /turf/simulated/floor/tiled/cafe,
 /area/mine/medical)
 "sC" = (
@@ -8665,13 +8666,6 @@
 /obj/random/traps/low_chance,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
-"vo" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal{
-	dir = 4
-	},
-/mob/living/simple_animal/mouse/hooded,
-/turf/simulated/floor/tiled/cafe,
-/area/mine/medical)
 "vp" = (
 /obj/machinery/camera/network/mining{
 	dir = 1
@@ -35448,7 +35442,7 @@ ed
 ff
 gL
 ho
-vo
+gN
 sA
 gr
 np
