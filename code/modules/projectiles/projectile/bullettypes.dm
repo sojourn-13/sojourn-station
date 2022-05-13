@@ -72,7 +72,7 @@
 
 /obj/item/projectile/bullet/pistol_35/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 22)
+	damage_types = list(BRUTE = 17)
 	agony = 6
 	post_penetration_dammult = 2
 	armor_penetration = 0
@@ -178,7 +178,7 @@
 
 /obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 29)
+	damage_types = list(BRUTE = 24)
 	agony = 11
 	armor_penetration = 0
 	post_penetration_dammult = 2
@@ -237,7 +237,7 @@
 
 /obj/item/projectile/bullet/kurtz_50/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 40)
+	damage_types = list(BRUTE = 30)
 	agony = 12
 	post_penetration_dammult = 2
 	armor_penetration = 0
@@ -304,7 +304,7 @@
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 26)
+	damage_types = list(BRUTE = 18)
 	agony = 6
 	post_penetration_dammult = 2
 	armor_penetration = 0
@@ -382,7 +382,7 @@
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 30)
+	damage_types = list(BRUTE = 24)
 	agony = 9
 	post_penetration_dammult = 2
 	armor_penetration = 0
@@ -443,7 +443,7 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 40)
+	damage_types = list(BRUTE = 29)
 	agony = 12
 	post_penetration_dammult = 2
 	armor_penetration = 0 //Half of normal
