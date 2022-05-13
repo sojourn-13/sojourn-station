@@ -9,6 +9,5 @@
 	throwforce = 0
 	throw_speed = 3
 	throw_range = 6
-	origin_tech = list(TECH_MATERIAL = 30)
-	matter_reagents = list(MATERIAL_AMERIDIAN = 1800) // 180 crystals worth of liquid ameridian
+	origin_tech = list(TECH_MATERIAL = 15)
 	price_tag = 10000 // Worth more than the ameridian crystals used to make it
