@@ -5,7 +5,7 @@
 	icon_state = "ameridian_crystal"
 	anchored = TRUE
 	density = FALSE // We can walk through them
-	light_range = 3 // Glow in the dark
+	light_range = 1 // Glow in the dark
 	light_color = COLOR_LIGHTING_GREEN_BRIGHT
 
 	var/growth // the growth level of the crystal. The higher it is, the older the crystal is.
@@ -52,7 +52,7 @@
 /obj/structure/ameridian_crystal/update_icon()
 	transform = initial(transform)
 	transform *= ((1/max_growth) * growth) // So the crystal is at 20% size at growth 1, 40% at growth 2, e.t.c.
-
+	set_light(growth, growth)
 	for(var/U in underlays)
 		underlays -= U
 	underlays += ("crystal_floor_[clamp(growth, 1, 5)]")
