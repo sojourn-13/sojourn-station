@@ -64,7 +64,7 @@
 	equip_cooldown = 40 //this is fine. This is a very dangerous tool.
 	name = "mkIV ion heavy cannon"
 	icon_state = "mecha_ion"
-	/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
 	equip_cooldown = 15
 	name = "\improper CH-LC \"Solaris\" laser cannon"
 	icon_state = "mecha_laser"
