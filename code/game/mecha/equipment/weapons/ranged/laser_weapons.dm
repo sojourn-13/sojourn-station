@@ -53,7 +53,7 @@
 	desc = "Four solaris laser cannons welded together to achieve a higher firerate."
 	icon_state = "mecha_auto_laser"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER  =1)
-	energy_drain = 500
+	energy_drain = 600 //less efficient than its constituent parts but more punchy per burst
 	projectile = /obj/item/projectile/beam/heavylaser
 	projectiles = 8
 	projectiles_per_shot = 2
@@ -61,18 +61,13 @@
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
-	equip_cooldown = 40 //this is fine. This is a very dangerous tool.
+	equip_cooldown = 40 //this is fine.
 	name = "mkIV ion heavy cannon"
 	icon_state = "mecha_ion"
-/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
-	equip_cooldown = 15
-	name = "\improper CH-LC \"Solaris\" laser cannon"
-	icon_state = "mecha_laser"
-	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15, MATERIAL_SILVER  =10)
-	energy_drain = 500 //same as multi-laser, VERY dangerous and VERY powerful
-	projectile = /obj/item/projectile/beam/heavylaser
-	fire_sound = 'sound/weapons/lasercannonfire.ogg'
-	price_tag = 500
+	energy_drain = 500 //VERY strong, expensive to fire!
+	projectile = /obj/item/projectile/ion
+	fire_sound = 'sound/weapons/Laser.ogg'
+	price_tag = 300
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse
 	equip_cooldown = 30 //this is fine.
