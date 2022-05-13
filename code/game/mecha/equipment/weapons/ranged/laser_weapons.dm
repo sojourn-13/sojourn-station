@@ -52,7 +52,7 @@
 	name = "\improper Multi-laser Cannon"
 	desc = "Four solaris laser cannons welded together to achieve a higher firerate."
 	icon_state = "mecha_auto_laser"
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER  =1)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 1)
 	energy_drain = 600 //less efficient than its constituent parts but more punchy per burst
 	projectile = /obj/item/projectile/beam/heavylaser
 	projectiles = 8
