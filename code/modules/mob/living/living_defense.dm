@@ -221,7 +221,7 @@
 		if(isitem(O))
 			var/obj/item/thingytocheck = O
 			ppd = thingytocheck.post_penetration_dammult
-		damage_through_armor(throw_damage, dtype, null, ARMOR_MELEE, null, used_weapon = O, sharp = is_sharp(O), edge = has_edge(O), ppd)
+		damage_through_armor(throw_damage, dtype, null, ARMOR_MELEE, null, used_weapon = O, sharp = is_sharp(O), edge = has_edge(O), post_pen_mult = ppd)
 
 		O.throwing = 0		//it hit, so stop moving
 
