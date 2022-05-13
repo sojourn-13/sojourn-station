@@ -391,7 +391,10 @@
 			selected.action(target)
 	else if(selected)
 		if(selected.is_melee())
-			selected.attack(target, user, user.targeted_organ)
+			if(istype(target, /mob/living))
+				selected.attack(target, user, user.targeted_organ)
+			else if(istype(target, /obj) || istype(target, /turf/simulated))
+				target.attackby(selected, user)
 		else
 			occupant_message("<font color='red'>You cannot fire this weapon in close quarters!</font>")
 	else

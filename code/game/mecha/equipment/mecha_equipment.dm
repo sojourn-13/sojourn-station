@@ -128,6 +128,8 @@
 	if(effective_faction.Find(target.faction)) // Is the mob's in our list of factions we're effective against?
 		power *= damage_mult // Increase the damage
 	target.hit_with_weapon(src, user, power, hit_zone)
+	var/turf/simulated/location = get_turf(src)
+	location.clean_ultimate // Quick fix to prevent bloodied pilots inside mechs, probably a better way to do this - Wizard
 	return
 
 /obj/item/mecha_parts/mecha_equipment/proc/can_attach(obj/mecha/M)
