@@ -459,7 +459,7 @@
 
 /datum/technology/ameridian
 	name = "Ameridian Refindment"
-	desc = "Advanced ."
+	desc = "Advanced refindments of ameridian to liquid and then soild again."
 	tech_type = RESEARCH_ENGINEERING
 
 	x = 0.9
@@ -472,6 +472,7 @@
 
 	unlocks_designs = list(/datum/design/research/circuit/ameridian_refinery,
 							/datum/design/research/circuit/liquid_ameridian_processor,
+							/datum/design/research/circuit/ameridian_analyzer
 							)
 
 
