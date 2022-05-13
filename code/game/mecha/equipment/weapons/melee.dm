@@ -30,8 +30,12 @@
 	hitsound = 'sound/weapons/Egloves.ogg'
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 2)
 	var/icon/melee_overlay
-	agonyforce = 80 // Big ouch, it's a mech sized stunbaton - Wizard
+	var/agonyforce = 80
+	var/stunforce = 0
 
+/obj/item/mecha_parts/mecha_equipment/melee_weapon/shockmaul/attack(mob/living/M, mob/living/user, target_zone)
+	M.stun_effect_act(stunforce, agonyforce, hit_zone, src)
+	return ..()
 
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword/attach(obj/mecha/M as obj)
 	..()
