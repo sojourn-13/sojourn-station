@@ -102,7 +102,7 @@
 		else
 			M.occupant_message("<font color='red'><b>[user] hits [M] with [src].</b></font>")
 			user.visible_message("<font color='red'><b>[user] hits [M] with [src].</b></font>", "<font color='red'><b>You hit [M] with [src].</b></font>")
-			M.hit_damage(src.force, src.damtype, is_melee=1)
+			M.hit_damage(force, damtype, is_melee=1)
 			M.check_for_internal_damage(list(MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST))
 			user.setClickCooldown(equip_cooldown)
 			user.do_attack_animation(M)
@@ -112,6 +112,9 @@
 /obj/item/mecha_parts/mecha_equipment/attack(mob/living/M, mob/living/user, target_zone) // Copy of item_attack code, modified to not take into account user stats or health since the mech's doing all the hard work
 	if(!force || (flags & NOBLUDGEON))
 		return FALSE
+
+	if(!chassis) //If you're not in the mech
+		to_chat(user, SPAN_DANGER("You cannot use this weapon by hand!"))
 
 	if(!user)
 		return FALSE
