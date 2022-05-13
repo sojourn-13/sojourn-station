@@ -28,6 +28,7 @@
 	desc = "A massive, plasteel maul designed to be wielded by an exosuit"
 	icon_state = "mech_maul"
 	hitsound = 'sound/weapons/Egloves.ogg'
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 2)
 	var/icon/melee_overlay
 	agonyforce = 80 // Big ouch, it's a mech sized stunbaton - Wizard
 
