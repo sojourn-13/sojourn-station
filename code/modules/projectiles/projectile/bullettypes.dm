@@ -693,6 +693,14 @@
 	. = ..()
 	icon_state = "birdshot-[rand(1,4)]"
 
+/obj/item/projectile/bullet/pellet/shotgun/scattershot //VERY dangerous, the weapon has a low refire rate for a reason. DO NOT use this for non exo weapons without tweaking.
+	name = "heavy shrapnel"
+	damage_types = list(BRUTE = 20) //we hit harder
+	agony = 0 //No.
+	pellets = 6 // and more times
+	range_step = 2 //we take a little bit longer to lose pellets
+	step_delay = 1.1 //we travel a bit slower
+
 //'Laser' buckshot. Effectively just burn buckshot used for the Abdication.
 /obj/item/projectile/bullet/pellet/shotgun/energy
 	name = "Unstable energy bolt"

@@ -17,10 +17,11 @@
 	range = MECHA_MELEE | MECHA_RANGED
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser
-	equip_cooldown = 8
+	equip_cooldown = 5
 	name = "\improper CH-PS \"Immolator\" laser"
 	icon_state = "mecha_laser"
-	energy_drain = 30
+	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_SILVER  =10)
+	energy_drain = 150
 	projectile = /obj/item/projectile/beam
 	fire_sound = 'sound/weapons/Laser.ogg'
 	price_tag = 400
@@ -30,17 +31,18 @@
 	name = "jury-rigged welder-laser"
 	desc = "While not regulation, this inefficient weapon can be attached to working exo-suits in desperate, or malicious, times."
 	icon_state = "mecha_laser"
-	energy_drain = 80
+	energy_drain = 250
 	projectile = /obj/item/projectile/beam
 	fire_sound = 'sound/weapons/Laser.ogg'
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
 	price_tag = 200
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
-	equip_cooldown = 15
+	equip_cooldown = 10
 	name = "\improper CH-LC \"Solaris\" laser cannon"
 	icon_state = "mecha_laser"
-	energy_drain = 60
+	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15, MATERIAL_SILVER  =10)
+	energy_drain = 250
 	projectile = /obj/item/projectile/beam/heavylaser
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	price_tag = 500
@@ -50,27 +52,34 @@
 	name = "\improper Multi-laser Cannon"
 	desc = "Four solaris laser cannons welded together to achieve a higher firerate."
 	icon_state = "mecha_auto_laser"
-	energy_drain = 180
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER  =1)
+	energy_drain = 500
 	projectile = /obj/item/projectile/beam/heavylaser
 	projectiles = 8
 	projectiles_per_shot = 2
-	fire_cooldown = 1
+	fire_cooldown = 5 //so we dont fire all our beams at the exact same instant. Remember! We track once a target is clicked!
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
-	equip_cooldown = 40
+	equip_cooldown = 40 //this is fine. This is a very dangerous tool.
 	name = "mkIV ion heavy cannon"
 	icon_state = "mecha_ion"
-	energy_drain = 120
-	projectile = /obj/item/projectile/ion
-	fire_sound = 'sound/weapons/Laser.ogg'
-	price_tag = 300
+	/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
+	equip_cooldown = 15
+	name = "\improper CH-LC \"Solaris\" laser cannon"
+	icon_state = "mecha_laser"
+	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15, MATERIAL_SILVER  =10)
+	energy_drain = 500 //same as multi-laser, VERY dangerous and VERY powerful
+	projectile = /obj/item/projectile/beam/heavylaser
+	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	price_tag = 500
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse
-	equip_cooldown = 30
+	equip_cooldown = 30 //this is fine.
 	name = "eZ-13 mk2 heavy pulse rifle"
 	icon_state = "mecha_pulse"
-	energy_drain = 120
+	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_URANIUM  =5)
+	energy_drain = 300 //more expensive than a heavy, less than a multi-las, highly advanced laser!
 	origin_tech = list(TECH_MATERIAL = 3, TECH_COMBAT = 6, TECH_POWER = 4)
 	projectile = /obj/item/projectile/beam/pulse
 	fire_sound = 'sound/weapons/marauder.ogg'
@@ -78,6 +87,7 @@
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser
 	name = "\improper PBT \"Pacifier\" mounted taser"
 	icon_state = "mecha_taser"
+	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_SILVER  =5)
 	energy_drain = 20
 	equip_cooldown = 8
 	projectile = /obj/item/projectile/beam/stun

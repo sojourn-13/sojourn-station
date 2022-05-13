@@ -33,6 +33,7 @@
 	chassis.visible_message(SPAN_WARNING("[chassis] fires [src]!"))
 	occupant_message(SPAN_WARNING("You fire [src]!"))
 	log_message("Fired from [src], targeting [target].")
+	set_ready_state(0)
 	for(var/i = 1 to min(projectiles, projectiles_per_shot))
 		var/turf/aimloc = targloc
 		if(deviation)
@@ -47,7 +48,6 @@
 			sleep(fire_cooldown)
 	if(auto_rearm)
 		projectiles = projectiles_per_shot
-	set_ready_state(0)
 	do_after_cooldown()
 	return
 
