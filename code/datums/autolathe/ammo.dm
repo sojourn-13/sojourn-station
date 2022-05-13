@@ -867,12 +867,12 @@
 
 //snowflake caseless
 /datum/design/autolathe/ammo/c10x24
-	name = "box magazine (10x24mm Caseless)"
+	name = "pulse rifle magazine (10x24mm Caseless)"
 	build_path = /obj/item/ammo_magazine/c10x24
 	materials = list(MATERIAL_STEEL = 12)
 
 /datum/design/autolathe/ammo/box_10x24_small
-	name = "ammo box (10x24mm Caseless)"
+	name = "ammo packet (10x24mm Caseless)"
 	build_path = /obj/item/ammo_magazine/ammobox/c10x24_small
 	materials = list(MATERIAL_STEEL = 5)
 
@@ -882,7 +882,7 @@
 	materials = list(MATERIAL_STEEL = 25)
 
 /datum/design/autolathe/ammo/mag_10x24
-	name = "magazine (10x24mm Caseless)"
+	name = "rifle magazine (10x24mm Caseless)"
 	build_path = /obj/item/ammo_magazine/rifle_10x24
 	materials = list(MATERIAL_STEEL = 2)
 
