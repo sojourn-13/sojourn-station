@@ -110,13 +110,14 @@
 		T.attackby(src, user)
 
 /obj/item/mecha_parts/mecha_equipment/attack(mob/living/M, mob/living/user, target_zone) // Copy of item_attack code, modified to not take into account user stats or health since the mech's doing all the hard work
+	if(!user)
+		return FALSE
+	
 	if(!force || (flags & NOBLUDGEON))
 		return FALSE
 
 	if(!chassis) //If you're not in the mech
 		to_chat(user, SPAN_DANGER("You cannot use this weapon by hand!"))
-
-	if(!user)
 		return FALSE
 
 	user.lastattacked = M
