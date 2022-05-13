@@ -5,6 +5,7 @@
 	matter = list(MATERIAL_STEEL = 15)
 	equip_cooldown = 15
 	energy_drain = 10
+	structure_damage_factor = 2
 	var/dam_force = 20
 	required_type = /obj/mecha
 
