@@ -82,7 +82,7 @@
 			var/atom/movable/AM = get_pin_data(IC_INPUT, 1)
 			if(isturf(AM))
 				var/turf/T = AM
-				for(var/obj/item/ore/O in T.contents)
+				for(var/obj/item/stack/ore/O in T.contents)
 					if(!box.can_be_inserted(O))
 						return
 					box.handle_item_insertion(O)
@@ -95,7 +95,7 @@
 				var/obj/structure/ore_box/OB = AM
 				OB.attackby(box, src)
 			else if(isturf(AM))
-				for(var/obj/item/ore/O in box.return_inv())
+				for(var/obj/item/stack/ore/O in box.return_inv())
 					box.remove_from_storage(O, AM)
 
 /obj/item/integrated_circuit/mining/mining_drill

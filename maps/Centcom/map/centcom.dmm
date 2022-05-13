@@ -3109,7 +3109,7 @@
 /area/shuttle/skipjack_area)
 "iS" = (
 /obj/structure/table/rack,
-/obj/item/gun/launcher/crossbow,
+/obj/item/gun/projectile/crossbow,
 /obj/item/stack/rods{
 	amount = 10
 	},
@@ -6578,7 +6578,8 @@
 /area/centcom/evac)
 "PJ" = (
 /obj/machinery/photocopier/faxmachine{
-	pixel_y = 6
+	pixel_y = 6;
+	tag = "Admin Fax"
 	},
 /obj/structure/table/woodentable,
 /turf/simulated/floor/tiled/dark/golden,

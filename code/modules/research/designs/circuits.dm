@@ -291,16 +291,6 @@
 	build_path = /obj/item/airlock_electronics/secure
 	category = CAT_MISC
 
-/datum/design/research/circuit/ordercomp
-	name = "supply ordering console"
-	build_path = /obj/item/circuitboard/ordercomp
-	category = CAT_COMP
-
-/datum/design/research/circuit/supplycomp
-	name = "supply control console"
-	build_path = /obj/item/circuitboard/supplycomp
-	category = CAT_COMP
-
 /datum/design/research/circuit/biogenerator
 	name = "biogenerator"
 	build_path = /obj/item/circuitboard/biogenerator
@@ -430,6 +420,11 @@
 	build_path = /obj/item/circuitboard/tesla_turret
 	category = CAT_POWER
 
+/datum/design/research/circuit/ameridianshieldwallgen
+	name = "sonic fence generator"
+	build_path = /obj/item/circuitboard/ameridianshieldwallgen
+	category = CAT_MISC
+
 //Industrial Printing
 
 /datum/design/research/circuit/industrial_chems
@@ -468,3 +463,15 @@
 	name = "Bioballistic Delivery System"
 	build_path = /obj/item/circuitboard/editor
 	category = CAT_MACHINE
+
+
+// Cargo
+/datum/design/research/circuit/ordercomp
+	name = "supply ordering console"
+	build_path = /obj/item/circuitboard/ordercomp
+	category = CAT_COMP
+
+/datum/design/research/circuit/supplycomp
+	name = "supply control console"
+	build_path = /obj/item/circuitboard/supplycomp
+	category = CAT_COMP

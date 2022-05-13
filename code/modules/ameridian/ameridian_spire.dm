@@ -23,7 +23,7 @@
 /obj/structure/ameridian_crystal/spire/examine(mob/user)
 	..()
 	if(user.stats?.getPerk(PERK_PSION)) // Are we a psion and is there something to see?
-		to_chat(user, "<b><font color='purple'> You have the feeling this spire goes deep. Very deep...")
+		to_chat(user, SPAN_PSION("You have the feeling this spire goes deep. Very deep..."))
 
 /obj/structure/ameridian_crystal/spire/attackby(obj/item/I, mob/user)
 	src.visible_message(SPAN_NOTICE("[user] cannot make a dent into [src]."), SPAN_NOTICE("You cannot make a dent into [src]."))

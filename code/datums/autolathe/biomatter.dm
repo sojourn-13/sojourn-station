@@ -130,6 +130,10 @@
 	materials = list(MATERIAL_BIOMATTER = 50)
 
 // This separates regular clothes designs from NT clothes designs //
+/datum/design/bioprinter/nt_clothes/armor_kit
+	name = "Armor Bundle"
+	build_path = /obj/item/gunbox/church
+	materials = list(MATERIAL_BIOMATTER = 20)
 
 /datum/design/bioprinter/nt_clothes/acolyte_armor
 	name = "Vector Armor"
@@ -186,6 +190,11 @@
 /datum/design/bioprinter/nt_clothes/NTvoid
 	name = "Angel Voidsuit"
 	build_path = /obj/item/clothing/suit/space/void/NTvoid
+
+/datum/design/bioprinter/nt_clothes/knight_rig
+	name = "Knight Hardsuit Module"
+	materials = list(MATERIAL_BIOMATTER = 100, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_PLASTEEL = 100)
+	build_path = /obj/item/rig/combat/knight
 
 //[MELEE]
 /datum/design/autolathe/sword/nt_sword

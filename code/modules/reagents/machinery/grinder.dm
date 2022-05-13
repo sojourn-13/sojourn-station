@@ -436,7 +436,7 @@
 	if(istype(I, /obj/item/reagent_containers))
 		var/obj/item/reagent_containers/container = I
 		if(!container.standard_pour_into(user, src)) . = ..()
-	else if (LAZYLEN(I.reagents)) . = ..()
+	else if (I.reagents?.total_volume) . = ..()
 	else to_chat(user, SPAN_NOTICE("\icon[I] \the [I] seems that it is not suitable for a \icon[src] [src]."))
 	update_icon()
 

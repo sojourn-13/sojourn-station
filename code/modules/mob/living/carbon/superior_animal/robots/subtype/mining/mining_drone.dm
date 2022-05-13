@@ -23,6 +23,7 @@
 	cleaning = FALSE // It isn't a roomba
 	wander = FALSE // We got the wandering handled manually
 	stop_automated_movement_when_pulled = TRUE
+	possession_candidate = TRUE
 
 	// Unique vars
 	var/target // Where we want to go
@@ -42,7 +43,7 @@
 			target = null // reset the target
 
 		// Are we going to ores on the ground despite not being supposed to?
-		if(istype(target, /obj/item/ore && !(mining_modes & GATHER_MODE)))
+		if(istype(target, /obj/item/stack/ore && !(mining_modes & GATHER_MODE)))
 			target = null // reset the target
 
 		// We shouldn't target the floor if we are not wandering
@@ -59,7 +60,7 @@
 
 /mob/living/carbon/superior_animal/robot/mining/death()
 	drop_loot()
-	new /obj/item/tool/pickaxe/diamonddrill(loc) // So we can use the drill to make another one
+	//new /obj/item/tool/pickaxe/diamonddrill(loc) // So we can use the drill to make another one // Miners destroy the bot round-start to get the drill...
 	..()
 
 /mob/living/carbon/superior_animal/robot/mining/attack_hand(mob/user as mob)
@@ -104,8 +105,8 @@
 				. = TRUE // We'll return later, keep looping.
 				continue
 
-		if((mining_modes & GATHER_MODE) && istype(O, /obj/item/ore)) // Is it ore on the ground?
-			var/obj/item/ore/Ore = O
+		if((mining_modes & GATHER_MODE) && istype(O, /obj/item/stack/ore)) // Is it ore on the ground?
+			var/obj/item/stack/ore/Ore = O
 			pick_ore(Ore) // Pick it up
 			target = null
 			. = TRUE // We'll return later, keep looping.
@@ -115,8 +116,8 @@
 		return . // return TRUE
 
 	for(var/O in oview(viewRange, src)) // Check everything we can see
-		if((mining_modes & GATHER_MODE) && istype(O, /obj/item/ore)) // Is it ore on the ground?
-			var/obj/item/ore/Ore = O
+		if((mining_modes & GATHER_MODE) && istype(O, /obj/item/stack/ore)) // Is it ore on the ground?
+			var/obj/item/stack/ore/Ore = O
 			target = Ore // Let's go there
 			return TRUE
 
@@ -135,7 +136,7 @@
 	return TRUE
 
 // Pick an ore and put it in the contents.
-/mob/living/carbon/superior_animal/robot/mining/proc/pick_ore(var/obj/item/ore/O)
+/mob/living/carbon/superior_animal/robot/mining/proc/pick_ore(var/obj/item/stack/ore/O)
 	//visible_message("[src] pick up [O]") // For some reasons the messages do not combine and spam the chat.
 	O.loc = src
 	contents += O // Pick up the item
@@ -181,10 +182,10 @@
 	dat += "<BR>"
 
 	dat += "Storage Compartment Contents :<BR>"
-	for(var/ores in typesof(/obj/item/ore)) // Check every ore type.
+	for(var/ores in typesof(/obj/item/stack/ore)) // Check every ore type.
 		var/ore_amount = 0 // Total amount of sheets of that material type
 		var/ore_name = ""
-		for(var/obj/item/ore/O in contents) // Check everything in the box.
+		for(var/obj/item/stack/ore/O in contents) // Check everything in the box.
 			if(O.type == ores) // Check if it is the correct type
 				ore_amount += 1
 				if(!ore_name) // Only store the name once.
@@ -248,8 +249,8 @@
 	set category = "Mining Bot"
 
 	for(var/O in oview(1, src)) // Check our surroundings.
-		if(istype(O, /obj/item/ore)) // Is it ore on the ground?
-			var/obj/item/ore/Ore = O
+		if(istype(O, /obj/item/stack/ore)) // Is it ore on the ground?
+			var/obj/item/stack/ore/Ore = O
 			pick_ore(Ore) // Pick it up
 			continue
 

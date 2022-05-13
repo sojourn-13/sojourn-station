@@ -9,10 +9,10 @@
 	base_income = 0		// Needs ore to refine
 	wealth = 0
 	offer_limit = 30
-	secret_inv_threshold = 2000
+	hidden_inv_threshold = 2000
 	recommendation_threshold = 4000
 	stations_recommended = list("trash")
-	assortiment = list(
+	inventory = list(
 		"Flares"  = list(
 			/obj/item/device/lighting/glowstick/flare,
 			/obj/item/ammo_magazine/ammobox/shotgun/flash,
@@ -21,28 +21,39 @@
 			/obj/item/ammo_casing/flare/green/prespawn,
 			/obj/item/ammo_casing/flare/prespawn
 			),
+		"Ore Gathering"  = list(
+			/obj/machinery/mining/drill,
+			/obj/machinery/mining/brace,
+			/obj/structure/ore_box,
+			/obj/item/tool/pickaxe/jackhammer,
+			/obj/item/tool/pickaxe/drill,
+			/obj/item/tool/pickaxe/diamonddrill,
+			/obj/item/device/lighting/toggleable/flashlight/heavy,
+			/obj/machinery/floodlight
+			),
 		"Refined Materials" = list(
-			/obj/item/stack/material/plastic/full = good_data("plastic sheets (x120)", list(4, 5)),
-			/obj/item/stack/material/cardboard/full = good_data("cardboard sheets (x120)", list(2, 5)),
-			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(3, 5)),
-			/obj/item/stack/material/plasteel/full = good_data("plasteel sheets (x120)", list(2, 3)),
-			/obj/item/stack/material/wood/full = good_data("wood planks (x120)", list(2, 5)),
-			/obj/item/stack/material/glass/full = good_data("glass sheets (x120)", list(2, 5)),
-			/obj/item/stack/material/plasma/full = good_data("plasma sheets (x120)", list(1, 2))
+			/obj/item/stack/material/plastic/full = good_data("plastic sheets (x120)", list(4, 5), 720),
+			/obj/item/stack/material/cardboard/full = good_data("cardboard sheets (x120)", list(2, 5), 720),
+			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(3, 5), 720),
+			/obj/item/stack/material/plasteel/full = good_data("plasteel sheets (x120)", list(2, 3), 2880),
+			/obj/item/stack/material/wood/full = good_data("wood planks (x120)", list(2, 5), 360),
+			/obj/item/stack/material/glass/full = good_data("glass sheets (x120)", list(2, 5), 720),
+			/obj/item/stack/material/plasma/full = good_data("plasma sheets (x120)", list(1, 2), 3600),
+			/obj/item/stack/material/glass/plasmaglass = good_data("borosilicate glass sheets (x120)", list(3, 5), 3600)
 		)
 	)
 
-	secret_inventory = list(
+	hidden_inventory = list(
 		"Refined Material Stacks" = list(
-			/obj/item/stack/material/iron/full = good_data("iron ingots (x120)", list(1, 2)),
-			/obj/item/stack/material/silver/full = good_data("silver ingots (x120)", list(1, 2)),
-			/obj/item/stack/material/gold/full = good_data("gold ingots (x120)", list(1, 2)),
-			/obj/item/stack/material/diamond/full = good_data("diamond sheets (x120)", list(1, 2)),
-			/obj/item/stack/material/platinum/full = good_data("platinum sheets (x120)", list(1, 2)),
-			/obj/item/stack/material/osmium/full = good_data("osmium ingots (x120)", list(1, 21)),
-			/obj/item/stack/material/mhydrogen/full = good_data("metallic hydrogen sheets (x120)", list(1, 2)),
-			/obj/item/stack/material/tritium/full = good_data("tritium ingots (x120)", list(1, 2)),
-			/obj/item/stack/material/uranium/full = good_data("uranium sheets (x120)", list(1, 2))
+			/obj/item/stack/material/iron/full = good_data("iron ingots (x120)", list(1, 2), 360),
+			/obj/item/stack/material/silver/full = good_data("silver ingots (x120)", list(1, 2), 1800),
+			/obj/item/stack/material/gold/full = good_data("gold ingots (x120)", list(1, 2), 3600),
+			/obj/item/stack/material/diamond/full = good_data("diamond sheets (x120)", list(1, 2), 9000),
+			/obj/item/stack/material/platinum/full = good_data("platinum sheets (x120)", list(1, 2), 7200),
+			/obj/item/stack/material/osmium/full = good_data("osmium ingots (x120)", list(1, 21), 4320),
+			/obj/item/stack/material/mhydrogen/full = good_data("metallic hydrogen sheets (x120)", list(1, 2), 10800),
+			/obj/item/stack/material/tritium/full = good_data("tritium ingots (x120)", list(1, 2), 7200),
+			/obj/item/stack/material/uranium/full = good_data("uranium sheets (x120)", list(1, 2), 3600)
 		)
 	)
 
@@ -51,14 +62,14 @@
 		/obj/item/trash/material/metal = offer_data("scrap metal", 120, 20),
 		/obj/item/trash/material/circuit = offer_data("burnt circuit", 90, 20),
 		/obj/item/trash/material/device = offer_data("broken device", 205, 20),
-		/obj/item/ore/iron = offer_data("hematite", 20, 0),
-		/obj/item/ore/coal = offer_data("raw carbon", 20, 0),
-		/obj/item/ore/glass = offer_data("sand", 5, 0),
-		/obj/item/ore/silver = offer_data("native silver ore", 125, 0),
-		/obj/item/ore/gold = offer_data("native gold ore", 160, 0),
-		/obj/item/ore/diamond = offer_data("diamonds", 225, 0),
-		/obj/item/ore/osmium = offer_data("raw platinum", 160, 0),
-		/obj/item/ore/hydrogen = offer_data("raw hydrogen", 125, 0),
-		/obj/item/ore/uranium = offer_data("pitchblende", 225, 0),
-		/obj/item/ore/plasma = offer_data("plasma crystals", 80, 0)
+		/obj/item/stack/ore/iron = offer_data("full stack of hematite", 2400, 2),
+		/obj/item/stack/ore/coal = offer_data("full stack of raw carbon", 2400, 2),
+		/obj/item/stack/ore/glass = offer_data("full stack of sand", 1200, 4),
+		/obj/item/stack/ore/silver = offer_data("full stack of native silver ore", 15000, 1),
+		/obj/item/stack/ore/gold = offer_data("full stack of native gold ore", 19200, 1),
+		/obj/item/stack/ore/diamond = offer_data("full stack of diamonds", 27000, 1),
+		/obj/item/stack/ore/osmium = offer_data("full stack of raw platinum", 19200, 1),
+		/obj/item/stack/ore/hydrogen = offer_data("full stack of raw hydrogen", 15000, 1),
+		/obj/item/stack/ore/uranium = offer_data("full stack of pitchblende", 27000, 1),
+		/obj/item/stack/ore/plasma = offer_data("full stack of plasma crystals", 9600, 1)
 	)

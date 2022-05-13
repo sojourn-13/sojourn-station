@@ -13529,7 +13529,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "ioY" = (
-/obj/item/ore/slag,
+/obj/item/stack/ore/slag,
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/dungeon/outside/burned_outpost)
@@ -13781,7 +13781,7 @@
 "iBW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/gun/launcher/crossbow,
+/obj/item/gun/projectile/crossbow,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest)
 "iCe" = (
@@ -20898,7 +20898,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "pKY" = (
-/obj/item/ore/slag,
+/obj/item/stack/ore/slag,
 /obj/random/mob/roaches/low_chance,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/dungeon/outside/burned_outpost)
@@ -28382,7 +28382,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/bioreactor)
 "xbx" = (
-/obj/item/ore/slag,
+/obj/item/stack/ore/slag,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "xcO" = (

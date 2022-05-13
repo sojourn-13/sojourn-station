@@ -327,18 +327,16 @@
 
 // TRADE
 
-// Gambling - markup = 10
+// Gambling
 /obj/item/storage/deferred/disks
 	name = "autolathe disk box"
 	desc = "A small collection of autolathe disks"
 	initial_contents = list(/obj/random/lathe_disk = 7)
-	price_tag = 300
 
 ///obj/item/storage/deferred/gun_parts
 //	name = "gun part box"
 //	desc = "Uppers, lowers, and everything in between"
 //	initial_contents = list(/obj/spawner/gun_parts = 7)
-//	price_tag = 300
 
 /obj/item/storage/deferred/powercells
 	name = "powercell box"
@@ -346,15 +344,42 @@
 	initial_contents = list(/obj/random/powercell/large_safe = 2,
 							/obj/random/powercell/medium_safe = 2,
 							/obj/random/powercell/small_safe = 3)
-	price_tag = 500
 
 /obj/item/storage/deferred/electronics
 	name = "circuit board box"
 	desc = "A small collection of circuit boards"
 	initial_contents = list(/obj/random/circuitboard = 7)
-	price_tag = 500
 
-// Kitchen supply - markup = 1.2
+/obj/item/storage/deferred/science
+	name = "scientific things box"
+	desc = "A small collection of scientific items."
+	initial_contents = list(/obj/random/science = 7)
+
+/obj/item/storage/deferred/rig
+	name = "hardsuit box"
+	desc = "They put a RIG in a box."
+	price_tag = 200 //*5 at casino beacon
+	initial_contents = list(/obj/random/rig = 1)
+
+/obj/item/storage/deferred/toolmods
+	name = "toolmod box"
+	desc = "An assortment of some toolmods."
+	price_tag = 150
+	initial_contents = list(/obj/random/tool_upgrade = 5)
+
+/obj/item/storage/deferred/medical
+	name = "medical supply box"
+	desc = "An assortment of some bandages, medicines."
+	initial_contents = list(/obj/random/medical/always_spawn = 7)
+
+/obj/item/storage/deferred/tools
+	name = "tools box"
+	desc = "A small collection of tools."
+	price_tag = 120
+	initial_contents = list(/obj/random/tool = 7)
+
+
+// Kitchen supply
 /obj/item/storage/deferred/kitchen
 	name = "galley supply box"
 	desc = "A small collection of kitchen essentials"
@@ -368,9 +393,8 @@
 		/obj/item/reagent_containers/food/condiment/cookingoil = 1,
 		/obj/item/reagent_containers/food/condiment/sugar = 1
 	)
-	price_tag = 350
 
-// MoeSci supply - markup = 3.6
+// MoeSci supply
 /obj/item/storage/deferred/slime
 	name = "slime supply box"
 	desc = "A slime startup kit"
@@ -379,7 +403,6 @@
 		/obj/item/extinguisher = 1,
 		/obj/item/storage/box/monkeycubes = 1
 	)
-	price_tag = 5000
 
 /obj/item/storage/deferred/xenobotany
 	name = "xenobotany supply box"
@@ -387,27 +410,25 @@
 	initial_contents = list(
 		/obj/item/seeds/random = 7
 	)
-	price_tag = 200
 
 /obj/item/storage/deferred/rnd
 	name = "research box"
 	desc = "A small collection of intellectual curiosities"
 	initial_contents = list(
-		/obj/item/computer_hardware/hard_drive/portable/research_points = 3,
 		/obj/item/computer_hardware/hard_drive/portable/research_points/rare = 1
 	)
-	price_tag = 10000
 
-// Trapper - markup = 4.8
+// Trapper
 /obj/item/storage/deferred/roacheggs
 	name = "roach egg box"
 	desc = "A carton for eggs of the roach variety"
+	icon = 'icons/obj/food.dmi'
+	icon_state = "eggbox"
 	initial_contents = list(
 		/obj/item/roach_egg = 12
 	)
-	price_tag = 100
 
-// Serb - markup = 3.6
+// Serb
 /obj/item/storage/deferred/serb_rifle
 	name = "SA rifle pack"
 	desc = "A small collection of SA disks"
@@ -416,4 +437,3 @@
 		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 1,
 		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk = 1
 	)
-	price_tag = 9000

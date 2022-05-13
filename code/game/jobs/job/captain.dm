@@ -78,7 +78,7 @@ Treat your command officers with respect, and listen to their council. Try not t
 	difficulty = "Hard."
 	selection_color = "#ddddff"
 	req_admin_notify = 1
-	playtimerequired = 2500
+	playtimerequired = 1200
 	wage = WAGE_COMMAND
 	ideal_character_age = 35
 	minimum_character_age = 30

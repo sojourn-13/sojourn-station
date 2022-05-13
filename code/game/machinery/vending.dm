@@ -909,6 +909,7 @@
 /obj/machinery/vending/custom
 	name = "Custom Vendomat"
 	desc = "A custom vending machine."
+	vendor_department = null //Anyone can make a custom vendor
 	custom_vendor = TRUE
 	locked = TRUE
 	can_stock = list(/obj/item)

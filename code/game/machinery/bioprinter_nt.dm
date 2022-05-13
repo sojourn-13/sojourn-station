@@ -30,4 +30,4 @@
 	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter
 
 /obj/machinery/autolathe/bioprinter/public
-	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter_public
+	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public

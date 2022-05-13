@@ -68,6 +68,7 @@
 	restrict_safety = TRUE // Can't change the safety on something that doesn't have any. Look here ^ - R4d6
 	var/obj/item/tool/plasma_torch/welder = null // Hold the welder the gun turns into.
 	serial_type = "INDEX"
+	serial_shown = FALSE
 
 
 // This is where the gun turn into a welder

@@ -42,6 +42,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 
 	software_on_spawn = list(///datum/computer_file/program/supply,
 							 ///datum/computer_file/program/deck_management,
+							 /datum/computer_file/program/trade,
 							 /datum/computer_file/program/scanner,
 							 /datum/computer_file/program/wordprocessor,
 							 /datum/computer_file/program/reports)

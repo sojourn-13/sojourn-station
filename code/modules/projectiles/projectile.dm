@@ -22,6 +22,7 @@
 	var/list/mob_hit_sound = list('sound/effects/gore/bullethit2.ogg', 'sound/effects/gore/bullethit3.ogg') //Sound it makes when it hits a mob. It's a list so you can put multiple hit sounds there.
 	var/def_zone = ""	//Aiming at
 	var/mob/firer = null//Who shot it
+	var/mob/original_firer //Who shot it. Never changes, even after ricochet.
 	var/silenced = FALSE	//Attack message
 	var/yo = null
 	var/xo = null
@@ -222,6 +223,7 @@
 				loc = get_turf(blanker)
 
 	firer = user
+	original_firer = firer
 	shot_from = launcher.name
 	silenced = launcher.item_flags & SILENT
 

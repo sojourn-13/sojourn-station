@@ -11,7 +11,6 @@
 		/obj/item/storage/box/bs_kit/sts_para = 2,
 		/obj/item/storage/box/bs_kit/rds_omnicarbine = 2,
 		/obj/item/storage/box/bs_kit/cog = 3,
-		/obj/item/storage/box/bs_kit/roe = 3,
 		/obj/item/storage/box/bs_kit/greasegun = 3,
 		/obj/item/storage/box/bs_kit/triage = 2,
 		/obj/item/storage/box/bs_kit/buckler = 3,
@@ -36,7 +35,6 @@
 		/obj/item/storage/box/bs_kit/sts_para = 1200,
 		/obj/item/storage/box/bs_kit/rds_omnicarbine = 1200,
 		/obj/item/storage/box/bs_kit/cog = 750,
-		/obj/item/storage/box/bs_kit/roe = 750,
 		/obj/item/storage/box/bs_kit/greasegun = 750,
 		/obj/item/storage/box/bs_kit/triage = 1200,
 		/obj/item/storage/box/bs_kit/buckler = 750,
@@ -86,10 +84,7 @@
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
 					"Grease Gun Kit" = /obj/item/storage/box/bs_kit/greasegun,
 					"Buckler SMG Kit" = /obj/item/storage/box/bs_kit/buckler,
-					"Roe light boltgun Kit" = /obj/item/storage/box/bs_kit/roe,
-					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly,
-					"Rushing Bull Kit" = /obj/item/storage/box/bs_kit/rushing_bull,
-					"Watchtower Kit" = /obj/item/storage/box/bs_kit/watchtower)
+					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
@@ -106,7 +101,6 @@
 					"Grease Gun Kit" = /obj/item/storage/box/bs_kit/greasegun,
 					"Buckler SMG Kit" = /obj/item/storage/box/bs_kit/buckler,
 					"Triage SMG Kit" = /obj/item/storage/box/bs_kit/triage,
-					"Roe light boltgun Kit" = /obj/item/storage/box/bs_kit/roe,
 					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
@@ -124,7 +118,6 @@
 					"STS Para Kit" = /obj/item/storage/box/bs_kit/sts_para,
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
 					"Warthog Omni Kit" = /obj/item/storage/box/bs_kit/rds_omnicarbine,
-					"Roe light boltgun Kit" = /obj/item/storage/box/bs_kit/roe,
 					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly,)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
@@ -136,9 +129,9 @@
 
 /obj/machinery/vending/blackshield_kit/proc/RedeemSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
-					"Stallion Kit" = /obj/item/storage/box/bs_kit/stallion,
 					"Colt Kit" = /obj/item/storage/box/bs_kit/colt,
-					"Makarov Kit" = /obj/item/storage/box/bs_kit/makarov,
+					"Makarov Kit" = /obj/item/storage/box/bs_kit/makarov,		
+					"Stallion Kit" = /obj/item/storage/box/bs_kit/stallion,
 					"Cowboy Kit" = /obj/item/storage/box/bs_kit/rex10,
 					"Pilgrim Kit" = /obj/item/storage/box/bs_kit/pilgrim,
 					"Sawn-Off Shotgun Kit" = /obj/item/storage/box/bs_kit/sawn_shotgun,
@@ -232,8 +225,12 @@
 				RedeemPrimary(I, user)
 			if("Secondary")
 				RedeemSecondary(I, user)
+			if("RangerSecondary")
+				RedeemRangerSecondary(I, user)
 			if("SpecPrimary")
 				RedeemSpecPrimary(I, user)
+			if("RangerPrimary")
+				RedeemRangerPrimary(I, user)
 			if("Armor")
 				RedeemArmor(I, user)
 		return
@@ -270,6 +267,19 @@
 	else
 		voucher.stamped = FALSE
 
+/obj/machinery/vending/marshal_kit/proc/RedeemRangerPrimary(obj/item/voucher/voucher, mob/redeemer)
+	var/items = list(
+					"Thompson Kit" = /obj/item/storage/box/m_kit/tommygun,
+					"Armstrong Kit" = /obj/item/storage/box/m_kit/armstrong,
+					"Peacekeeper Kit" = /obj/item/storage/box/m_kit/peacekeeper)
+	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+	else
+		voucher.stamped = FALSE
+
 /obj/machinery/vending/marshal_kit/proc/RedeemSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Counselor Kit" = /obj/item/storage/box/m_kit/taser,
@@ -278,6 +288,19 @@
 					"Ladon Kit" = /obj/item/storage/box/m_kit/ladon,
 					"Sky Kit" = /obj/item/storage/box/m_kit/glock,
 					"Wirbelwind Kit" = /obj/item/storage/box/m_kit/wirbelwind)
+	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+	else
+		voucher.stamped = FALSE
+
+/obj/machinery/vending/marshal_kit/proc/RedeemRangerSecondary(obj/item/voucher/voucher, mob/redeemer)
+	var/items = list(
+					"Deckard Kit" = /obj/item/storage/box/m_kit/deckard,
+					"Judge Kit" = /obj/item/storage/box/m_kit/judge,
+					"Zwang Kit" = /obj/item/storage/box/m_kit/zwang)
 	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)

@@ -60,6 +60,7 @@
 	damage_types = list(BURN = 5)
 	taser_effect = 1
 	agony = 80
+	affective_damage_range = 2
 
 /obj/item/projectile/energy/declone
 	name = "declone"

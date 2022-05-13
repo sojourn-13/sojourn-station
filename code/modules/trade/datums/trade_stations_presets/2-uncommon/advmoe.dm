@@ -9,39 +9,46 @@
 	offer_limit = 1
 	base_income = 1600
 	wealth = 0
-	secret_inv_threshold = 2000
+	hidden_inv_threshold = 2000
 	recommendation_threshold = 4000
 	stations_recommended = list("trapper", "bluespace")
 	recommendations_needed = 1
-	assortiment = list(
+	inventory = list(
 		"Scientific Surplus" = list(
 			/obj/item/storage/deferred/slime = custom_good_amount_range(list(1, 3)),
 			/obj/item/storage/deferred/xenobotany = custom_good_amount_range(list(1, 3)),
-			/obj/item/storage/deferred/rnd = custom_good_amount_range(list(-1, 2))
+			/obj/item/storage/deferred/rnd = custom_good_amount_range(list(-1, 2)),
+			/obj/item/storage/part_replacer/mini,
+			/obj/item/device/geiger
+		),
+		"Cryo-Sealed Hydrogen" = list(
+			/obj/item/hydrogen_fuel_cell,
+			/obj/item/hydrogen_fuel_cell/backpack
 		),
 		"Chemical Surplus" = list(
 			/obj/item/reagent_containers/glass/bottle/inaprovaline = custom_good_amount_range(list(1, 3)),
 			/obj/item/reagent_containers/glass/bottle/antitoxin = custom_good_amount_range(list(1, 3)),
-			/obj/item/reagent_containers/glass/bottle/trade/kelotane = good_data("kelotane bottle", list(1, 3)),
-			/obj/item/reagent_containers/glass/bottle/trade/bicaridine = good_data("bicaridine bottle", list(1, 3)),
-			/obj/item/reagent_containers/glass/bottle/trade/clonexadone = good_data("clonexadone bottle", list(1, 3)),
-			/obj/item/reagent_containers/glass/bottle/trade/imidazoline = good_data("imidazoline bottle", list(1, 3)),
-			/obj/item/reagent_containers/glass/bottle/trade/alkysine = good_data("alkysine bottle", list(1, 3))
+			/obj/item/reagent_containers/glass/bottle/trade/kelotane = good_data("kelotane bottle", list(1, 3), 200),
+			/obj/item/reagent_containers/glass/bottle/trade/bicaridine = good_data("bicaridine bottle", list(1, 3), 200),
+			/obj/item/reagent_containers/glass/bottle/trade/clonexadone = good_data("clonexadone bottle", list(1, 3), 800),
+			/obj/item/reagent_containers/glass/bottle/trade/imidazoline = good_data("imidazoline bottle", list(1, 3), 400),
+			/obj/item/reagent_containers/glass/bottle/trade/alkysine = good_data("alkysine bottle", list(1, 3), 400)
 		)
 	)
-	secret_inventory = list(
+	hidden_inventory = list(
 		"Upgraded Organs" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/surgery = good_data("back alley organs disk", list(1, 2)),
+			/obj/item/computer_hardware/hard_drive/portable/design/surgery = good_data("back alley organs disk", list(1, 2), 1200),
+			/obj/item/computer_hardware/hard_drive/portable/research_points= good_data("research data disk", list(1, 2), 2000),
 			/obj/item/organ_module/active/simple/armshield
 		),
 		"Autoinjectors II" = list(
 			// Autoinjectors defined in hypospray.dm
-			/obj/item/reagent_containers/hypospray/autoinjector/polystem = custom_good_amount_range(list(10, 20)),
-			/obj/item/reagent_containers/hypospray/autoinjector/meralyne = custom_good_amount_range(list(10, 20)),
-			/obj/item/reagent_containers/hypospray/autoinjector/dermaline = custom_good_amount_range(list(10, 20)),
-			/obj/item/reagent_containers/hypospray/autoinjector/dexalinplus = custom_good_amount_range(list(10, 20)),
-			/obj/item/reagent_containers/hypospray/autoinjector/oxycodone = custom_good_amount_range(list(10, 20)),
-			/obj/item/reagent_containers/hypospray/autoinjector/ryetalyn = custom_good_amount_range(list(10, 20))
+			/obj/item/reagent_containers/hypospray/autoinjector/polystem = good_data("polystem autoinjector", list(10, 20), 40),
+			/obj/item/reagent_containers/hypospray/autoinjector/meralyne = good_data("meralyne autoinjector", list(10, 20), 65),
+			/obj/item/reagent_containers/hypospray/autoinjector/dermaline = good_data("dermaline autoinjector", list(10, 20), 60),
+			/obj/item/reagent_containers/hypospray/autoinjector/dexalinplus = good_data("dexalin plus autoinjector", list(10, 20), 65),
+			/obj/item/reagent_containers/hypospray/autoinjector/oxycodone = good_data("oxycodone autoinjector", list(10, 20), 40),
+			/obj/item/reagent_containers/hypospray/autoinjector/ryetalyn = good_data("ryetalyn autoinjector", list(10, 20), 40)
 		)
 	)
 	offer_types = list(

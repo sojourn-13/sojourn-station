@@ -17,7 +17,7 @@
 	new /obj/item/clothing/accessory/holster/saber/militiacommander/occupied(src)
 	new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
 	new /obj/item/clothing/head/rank/milcom(src)
-	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/clothing/mask/gas/blackshield_gasmask(src)
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/clothing/suit/armor/flackvest/commander(src)
 	new /obj/item/clothing/suit/armor/commander/militia(src)
@@ -27,7 +27,6 @@
 	new /obj/item/storage/belt/webbing/black(src)
 	new /obj/item/storage/belt/security(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
-	new /obj/item/storage/backpack/militia(src)
 	new /obj/item/storage/pouch/ammo(src)
 	new /obj/item/storage/firstaid/ifak(src)
 	new /obj/item/storage/box/trackimp(src)
@@ -44,6 +43,10 @@
 	new /obj/item/clothing/gloves/thick/combat(src)
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
+	if(prob(35))
+		new /obj/item/storage/backpack/militia(src)
+	else
+		new /obj/item/storage/backpack/military(src)
 
 /obj/structure/closet/secure_closet/armorer
 	name = "sergeant's locker"
@@ -56,7 +59,7 @@
 	new /obj/item/voucher/blackshield/armor(src)
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
 	new /obj/item/clothing/accessory/holster/saber/militiasergeant/occupied(src)
-	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/clothing/mask/gas/blackshield_gasmask(src)
 	new /obj/item/clothing/gloves/thick/combat(src)
 	new /obj/item/clothing/head/helmet/ballistic/sergeant(src)
 	new /obj/item/clothing/head/rank/armorer/beret(src)
@@ -66,7 +69,6 @@
 	new /obj/item/storage/belt/webbing/black(src)
 	new /obj/item/storage/belt/security(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
-	new /obj/item/storage/backpack/militia(src)
 	new /obj/item/storage/pouch/ammo(src)
 	new /obj/item/storage/firstaid/ifak(src)
 	new /obj/item/melee/telebaton(src)
@@ -76,6 +78,11 @@
 		new /obj/item/gun_upgrade/muzzle/silencer(src)
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
+	if(prob(35))
+		new /obj/item/storage/backpack/militia(src)
+	else
+		new /obj/item/storage/backpack/military(src)
+
 
 /obj/structure/closet/secure_closet/personal/trooper
 	name = "blackshield trooper's locker"
@@ -90,18 +97,18 @@
 	new /obj/item/tool/knife/boot/blackshield(src)
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
 	new /obj/item/clothing/glasses/ballistic(src)
-	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/clothing/mask/gas/blackshield_gasmask(src)
 	new /obj/item/clothing/mask/balaclava/tactical(src)
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/head/rank/trooper/beret(src)
 	new /obj/item/clothing/head/rank/trooper/cap(src)
 	new /obj/item/clothing/suit/storage/armor/commander/militia_overcoat(src)
-	new /obj/item/clothing/accessory/cape/trooper_cape(src)
+	new /obj/item/clothing/accessory/halfcape/trooper_cape(src)
 	new /obj/item/clothing/under/rank/trooper(src)
 	new /obj/item/storage/belt/webbing/black(src)
 	new /obj/item/storage/belt/security(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
-	new /obj/item/storage/backpack/militia(src)
+	new /obj/item/storage/backpack/ironhammer(src)
 	new /obj/item/storage/firstaid/ifak(src)
 	new /obj/item/melee/telebaton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
@@ -111,6 +118,10 @@
 		new /obj/item/gun_upgrade/muzzle/silencer(src)
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
+	if(prob(35))
+		new /obj/item/storage/backpack/militia(src)
+	else
+		new /obj/item/storage/backpack/military(src)
 
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"
@@ -127,13 +138,12 @@
 	new /obj/item/tool/knife/boot/blackshield(src)
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
 	new /obj/item/clothing/glasses/ballistic/med(src)
-	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/clothing/mask/gas/blackshield_gasmask(src)
 	new /obj/item/clothing/head/rank/corpsman/beret(src)
 	new /obj/item/clothing/head/rank/corpsman/cap(src)
 	new /obj/item/clothing/under/rank/corpsman(src)
 	new /obj/item/storage/belt/webbing/black(src)
 	new /obj/item/storage/belt/security(src)
-	new /obj/item/storage/backpack/militia(src)
 	new /obj/item/storage/backpack/duffelbag(src)
 	new /obj/item/storage/firstaid/ifak(src)
 	new /obj/item/storage/firstaid/regular(src)
@@ -142,13 +152,18 @@
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/box/trooperuniform(src)
 	new /obj/item/storage/hcases/ammo/serb(src)
-	new /obj/item/clothing/accessory/cape/blackshield/corpsmans_cape(src)
+	new /obj/item/clothing/accessory/halfcape/corpsman(src)
 	if(prob(50))
 		new /obj/item/storage/firstaid/blackshield/large(src)
 	if(prob(50))
 		new /obj/item/gun_upgrade/muzzle/silencer(src)
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
+	if(prob(35))
+		new /obj/item/storage/backpack/militia(src)
+	else
+		new /obj/item/storage/backpack/military(src)
+
 
 /obj/structure/closet/secure_closet/militia/armor
 	name = "blackshield armor locker"
@@ -182,3 +197,8 @@
 	new /obj/item/storage/hcases/ammo/serb(src)
 	new /obj/item/storage/hcases/ammo/serb(src)
 	new /obj/item/storage/hcases/ammo/serb(src)
+//Masks!
+	new /obj/item/clothing/mask/gas/blackshield_gasmask(src)
+	new /obj/item/clothing/mask/gas/blackshield_gasmask(src)
+	new /obj/item/clothing/mask/gas/blackshield_gasmask(src)
+	new /obj/item/clothing/mask/gas/blackshield_gasmask(src)

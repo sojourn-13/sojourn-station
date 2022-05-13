@@ -606,6 +606,24 @@
 	I.req_gun_tags = list(GUN_SCOPE)
 	I.prefix = "scoped"
 
+/obj/item/gun_upgrade/scope/acog
+	name = "H&S \"AGOG\" scope"
+	desc = "In the age of 3D printing, the design of a scope one can rely on is common, but a scope that is special is a rarity. This is not one such scope. Mass produced, lathe machined and incredibly cheap. These often misaligned optics are truly ubiquitous."
+	icon_state = "agog"
+	matter = list(MATERIAL_GLASS = 2, MATERIAL_STEEL = 1)
+	price_tag = 20
+
+/obj/item/gun_upgrade/scope/acog/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_OFFSET = 0.9,
+		GUN_UPGRADE_ZOOM = 1.1
+		)
+	I.gun_loc_tag = GUN_SCOPE
+	I.req_gun_tags = list(GUN_SCOPE)
+	I.prefix = "scoped"
+
 /obj/item/gun_upgrade/scope/killer
 	name = "Void Wolf \"Contract Killer\" scope"
 	desc = "A digital scope machine printed by void wolf reavers, often combined with gauss weaponry and thermal scanners to cause breaches to ships and dead pilots in void-based dog fights."

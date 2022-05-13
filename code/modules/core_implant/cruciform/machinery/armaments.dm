@@ -236,9 +236,3 @@
 	cost = 50
 	min_cost = 25
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns
-
-/datum/armament/item/gun/firstaid
-	name = "Absolutism Medkit"
-	path = /obj/item/storage/firstaid/nt
-	cost = 35
-	min_cost = 10

@@ -72,6 +72,15 @@
 
 	return ..()
 
+/obj/item/stack/Crossed(atom/movable/crossing)
+	if(!crossing.throwing)
+		if(!istype(crossing, /obj/item/stack))
+			return ..()
+		if(isturf(loc) && isturf(crossing.loc))
+			var/obj/item/stack/crostack = crossing
+			src.transfer_to(crostack)
+	. = ..()
+
 /obj/item/stack/examine(mob/user)
 	if(..(user, 1))
 		if(!uses_charge)
@@ -210,6 +219,15 @@
 			return
 	return
 
+/obj/item/stack/proc/can_merge(obj/item/stack/other)
+	if(!istype(other))
+		return FALSE
+	if(QDELETED(src) || QDELETED(other))
+		return FALSE
+	if((other == src))
+		return FALSE
+	return other.stacktype == stacktype
+
 //Return 1 if an immediate subsequent call to use() would succeed.
 //Ensures that code dealing with stacks uses the same logic
 /obj/item/stack/proc/can_use(var/used)
@@ -263,6 +281,8 @@
 /obj/item/stack/proc/transfer_to(obj/item/stack/S, var/tamount=null, var/type_verified)
 	if (!get_amount())
 		return 0
+	if(!istype(S))
+		return FALSE
 	if ((stacktype != S.stacktype) && !type_verified)
 		if((stacktype != S.stacktype_alt) && !type_verified)
 			return 0
@@ -283,6 +303,19 @@
 				S.blood_DNA |= blood_DNA
 		return transfer
 	return 0
+
+/obj/item/stack/proc/merge(obj/item/stack/S) //Merge src into S, as much as possible
+	if(QDELETED(S) || QDELETED(src) || (S == src)) //amusingly this can cause a stack to consume itself, let's not allow that.
+		return
+	var/transfer = get_amount()
+	if(S.uses_charge)
+		transfer = min(transfer, S.get_max_amount() - S.get_amount())
+	else
+		transfer = min(transfer, S.max_amount - S.amount)
+	if(pulledby)
+		pulledby.start_pulling(S)
+	src.transfer_to(S, transfer)
+	return transfer
 
 //creates a new stack with the specified amount
 /obj/item/stack/proc/split(var/tamount)
@@ -406,6 +439,8 @@
 			//If that fails, leave it beside the original stack
 			S.forceMove(get_turf(src))
 
+/obj/item/stack/get_item_cost(export)
+	return amount * ..()
 
 /*
  * Recipe datum
@@ -441,6 +476,3 @@
 	New(title, recipes)
 		src.title = title
 		src.recipes = recipes
-
-
-

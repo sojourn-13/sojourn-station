@@ -383,7 +383,6 @@
 	maxcharge = 500
 
 // One cell to rule them all!
-// More seriously this is the hydrogen cell used to power the Hydrogen Knight rig, using an actual hydrogen fuel cell
 /obj/item/cell/large/hydrogen
 	name = "hydrogen cell adapter"
 	desc = "An advanced device designed to convert the power held within regular cryo-sealed hydrogen fuel cell into power suitable for most electronic systems."
@@ -456,6 +455,59 @@
 	fuel_cell = new(src)
 	update_charge()
 
+// A cell powered by an ameridian core. It is self-charging and used in the Ameridian Knight Rig, where it cannot be removed.
+/obj/item/cell/large/ameridian
+	name = "ameridian power cell"
+	desc = "An advanced device designed to extract power from ameridian cores. However it can only extract power while not in use."
+	icon_state = "hydrogen"
+	maxcharge = 20000
+	autorecharging = TRUE
+	autorecharge_rate = 0.1
+	price_tag = 600
+	origin_tech = list(TECH_POWER = 15)
+	var/obj/item/ameridian_core/core
+
+/obj/item/cell/large/ameridian/New()
+	..()
+	update_core()
+
+/obj/item/cell/large/ameridian/examine(mob/user)
+	..()
+	if(!core)
+		to_chat(user, SPAN_NOTICE("[src] doesn't have an ameridian core installed."))
+
+/obj/item/cell/large/ameridian/attackby(obj/item/W, mob/user)
+	..()
+	if(istype(W, /obj/item/ameridian_core) && !core)
+		insert_item(W, user) // Insert the fuel cell into the adapter
+		core = W
+		update_core() // Update the charge
+		return
+
+/obj/item/cell/large/ameridian/MouseDrop(over_object)
+	if(core)
+		usr.visible_message(
+								SPAN_NOTICE("[usr] remove [core] from [src]."),
+								SPAN_NOTICE("You remove [core] from [src].")
+									)
+		eject_item(core, usr)
+		core = null
+		update_core() // Update the charge
+	else
+		to_chat(usr, SPAN_NOTICE("[src] doesn't have an ameridian core."))
+
+/obj/item/cell/large/ameridian/update_icon()
+	icon_state = "[initial(icon_state)]_[core ? "1" : "0"]" // hydrogen_1 if it has a core, hydrogen_0 if it doesn't.
+
+/obj/item/cell/large/ameridian/proc/update_core()
+	autorecharging = core ? TRUE : FALSE
+	update_icon()
+
+/obj/item/cell/large/ameridian/loaded/New()
+	..()
+	core = new(src)
+	update_core()
+
 // Hand crank
 /obj/item/device/manual_charger
 	name = "manual recharger"
@@ -481,11 +533,11 @@
 	if(!cell)
 		return
 	user.visible_message(SPAN_NOTICE("[user] starts turning the handle on [src]."), SPAN_NOTICE("You start to turn the handle on [src]."))
-	if(do_after(user, 7.5 + (17.5 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
+	if(do_after(user, 12 + (30 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
 		if(!cell)
 			return
 		if(cell.charge >= cell.maxcharge)
 			user.visible_message(SPAN_NOTICE("The cell can not be charged any more!"))
 			return
 		else
-			cell.charge += min(25, cell.maxcharge - cell.charge)
+			cell.charge += min(15, cell.maxcharge - cell.charge)

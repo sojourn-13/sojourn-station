@@ -8,6 +8,8 @@
 	density = 0
 	anchored = 1
 
+	var/obj/item/card/id/inserted_id	// Inserted ID card, for points
+
 	var/obj/machinery/mineral/processing_unit/machine = null
 	var/show_all_ores = 0
 
@@ -41,8 +43,16 @@
 
 	user.set_machine(src)
 
+
 	var/dat = "<h1>Ore processor console</h1>"
 
+	dat += "Current unclaimed points: [machine.points]<br>"
+	if(istype(inserted_id))
+		dat += "You have [inserted_id.mining_points] mining points collected. <A href='?src=\ref[src];choice=eject'>Eject ID.</A><br>"
+		dat += "<A href='?src=\ref[src];choice=claim'>Claim points.</A><br>"
+	else
+		dat += "No ID inserted.  <A href='?src=\ref[src];choice=insert'>Insert ID.</A><br>"
+	dat += "High-speed processing is <A href='?src=\ref[src];toggle_speed=1'>[(machine.speed_process ? "<font color='green'>active</font>" : "<font color='red'>inactive</font>")]."
 	dat += "<hr><table>"
 
 	for(var/ore in machine.ores_processing)
@@ -89,11 +99,32 @@
 
 		machine.ores_processing[href_list["toggle_smelting"]] = choice
 
+	if(href_list["toggle_speed"])
+
+		machine.toggle_speed()
+
 	if(href_list["toggle_power"])
 		machine.active = !machine.active
 
 	if(href_list["toggle_ores"])
 		show_all_ores = !show_all_ores
+
+	if(href_list["choice"])
+		if(istype(inserted_id))
+			if(href_list["choice"] == "eject")
+				usr.put_in_hands(inserted_id)
+				inserted_id = null
+			if(href_list["choice"] == "claim")
+				inserted_id.mining_points += machine.points
+				machine.points = 0
+		else if(href_list["choice"] == "insert")
+			var/obj/item/card/id/I = usr.get_active_hand()
+			if(istype(I))
+				usr.drop_item()
+				I.forceMove(src)
+				inserted_id = I
+			else
+				to_chat(usr, "<span class='warning'>No valid ID.</span>")
 
 	playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
 	src.updateUsrDialog()
@@ -118,6 +149,19 @@
 	var/active = 0
 	var/input_dir = 0
 	var/output_dir = 0
+	var/speed_process = FALSE
+	var/points = 0
+	var/static/list/ore_values = list(
+		"sand" = 1,
+		"hematite" = 1,
+		"carbon" = 1,
+		MATERIAL_PLASMA = 15,
+		MATERIAL_SILVER = 16,
+		MATERIAL_GOLD = 18,
+		MATERIAL_URANIUM = 30,
+		MATERIAL_DIAMOND = 50,
+		MATERIAL_PLATINUM = 40,
+		MATERIAL_MHYDROGEN = 40)
 
 /obj/machinery/mineral/processing_unit/laber
 	name = "labor material processor"
@@ -156,6 +200,15 @@
 		if(marker)
 			output_dir = get_dir(src, marker)
 
+/obj/machinery/mineral/processing_unit/proc/toggle_speed()
+	speed_process = !speed_process // switching gears
+	if(speed_process) // high gear
+		STOP_PROCESSING(SSmachines, src)
+		START_PROCESSING(SSfastprocess, src)
+	else // low gear
+		STOP_PROCESSING(SSfastprocess, src)
+		START_PROCESSING(SSmachines, src)
+
 /obj/machinery/mineral/processing_unit/Process()
 
 	if (!output_dir || !input_dir)
@@ -164,13 +217,15 @@
 	var/list/tick_alloys = list()
 
 	//Grab some more ore to process this tick.
-	for(var/obj/item/ore/O in get_step(src, input_dir))
+	for(var/obj/item/stack/ore/O in get_step(src, input_dir))
 		if(!isnull(ores_stored[O.material]))
-			ores_stored[O.material] += O.sheet_amout
+			ores_stored[O.material] += O.sheet_amout * O.amount
 		else
-			ores_stored[O.material] = O.sheet_amout
+			ores_stored[O.material] = O.sheet_amout * O.amount
+		points += ore_values[O.material] * O.amount // Give Points!
 		if(isnull(ores_processing[O.material]))
 			ores_processing[O.material] = 0
+
 		qdel(O)
 
 	if(!active)
@@ -251,7 +306,7 @@
 			else
 				ores_stored[metal]--
 				sheets++
-				new /obj/item/ore/slag(get_step(src, output_dir))
+				new /obj/item/stack/ore/slag(get_step(src, output_dir))
 		else
 			continue
 

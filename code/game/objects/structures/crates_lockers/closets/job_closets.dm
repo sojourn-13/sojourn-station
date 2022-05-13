@@ -23,8 +23,8 @@
 	new /obj/item/clothing/suit/storage/toggle/club(src)
 	new /obj/item/clothing/under/rank/bartender(src)
 	new /obj/item/clothing/under/rank/bartender(src)
-	new /obj/item/clothing/suit/storage/wcoat/black(src)
-	new /obj/item/clothing/suit/storage/wcoat/black(src)
+	new /obj/item/clothing/accessory/waistcoat(src)
+	new /obj/item/clothing/accessory/waistcoat(src)
 	new /obj/item/clothing/shoes/color/black(src)
 	new /obj/item/clothing/shoes/color/black(src)
 	new /obj/item/clothing/under/rank/bartender/skirt(src)
@@ -52,6 +52,7 @@
 	new /obj/item/clothing/under/helltaker_m(src)
 	new /obj/item/clothing/under/helltaker(src)
 	new /obj/item/clothing/suit/storage/helltaker_apron(src)
+	new /obj/item/clothing/suit/storage/wcoat/helltaker(src)
 
 /*
  * Janitor
@@ -127,8 +128,7 @@
 	new /obj/item/clothing/mask/gas/germanmask(src)
 	new /obj/item/device/radio/headset/church(src)
 	new /obj/item/clothing/gloves/thick(src)
-	new /obj/item/clothing/suit/armor/vest/acolyte(src)
-	new /obj/item/clothing/head/helmet/acolyte(src)
+	new /obj/item/gunbox/church(src)
 	new /obj/item/clothing/under/rank/church/sport(src)
 	new /obj/item/clothing/suit/storage/neotheosports(src)
 	new /obj/item/gun/energy/ntpistol(src)

@@ -73,7 +73,7 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/hunting_lodge)
 "as" = (
-/obj/item/ore,
+/obj/item/stack/ore,
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/ocean,
@@ -86,7 +86,7 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "av" = (
-/obj/item/ore,
+/obj/item/stack/ore,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ax" = (
@@ -186,7 +186,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aO" = (
-/obj/item/ore,
+/obj/item/stack/ore,
 /turf/unsimulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aP" = (
@@ -565,7 +565,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/grey,
-/obj/item/ore/coal,
+/obj/item/stack/ore/coal,
 /obj/structure/bonfire/permanent,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -573,7 +573,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/grey,
-/obj/item/ore/coal,
+/obj/item/stack/ore/coal,
 /obj/structure/bonfire/permanent,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -587,8 +587,8 @@
 /obj/item/stack/material/wood/random,
 /obj/item/stack/material/wood/random,
 /obj/structure/table/rack,
-/obj/item/ore/coal,
-/obj/item/ore/coal,
+/obj/item/stack/ore/coal,
+/obj/item/stack/ore/coal,
 /obj/item/newspaper,
 /obj/item/newspaper,
 /turf/simulated/floor/tiled/dark,

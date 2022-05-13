@@ -37,6 +37,36 @@
 	var/icon/melee_overlay
 	dam_force = 40 // Big sword make big boo boo - R4d6
 
+/obj/item/mecha_parts/mecha_equipment/melee_weapon/shockmaul
+	name = "mech shock maul"
+	desc = "A massive, plasteel maul designed to be wielded by an exosuit"
+	icon_state = "mech_maul"
+	var/icon/melee_overlay
+
+
+/obj/item/mecha_parts/mecha_equipment/melee_weapon/shockmaul/action(atom/target)
+	if(!action_checks(target)) return
+
+	if(isliving(target))
+		var/mob/living/M = target
+		if(M.stat > 1)
+			return
+		if(chassis.occupant.a_intent != I_HELP) // So that the help intent act as a kind of safety
+			M.damage_through_armor(80, HALLOSS, BP_CHEST)
+			M.damage_through_armor(20, BURN, BP_CHEST,ARMOR_ENERGY)
+			M.updatehealth()
+			occupant_message(SPAN_WARNING("You bash [target] with [src.name], sizzling their flesh."))
+			chassis.visible_message(SPAN_WARNING("[chassis] attacked [target]."))
+			log_message("Attacked [target.name] with [name]")
+		else
+			step_away(M,chassis)
+			occupant_message("You shove [target] out of the way.")
+			chassis.visible_message("[chassis] pushes [target] out of the way.")
+		set_ready_state(0)
+		chassis.use_power(energy_drain)
+		do_after_cooldown()
+		return 1
+
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword/attach(obj/mecha/M as obj)
 	..()
 	if(istype(M, /obj/mecha/combat/durand))

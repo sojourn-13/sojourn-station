@@ -16,6 +16,7 @@
 		/datum/design/autolathe/tool/combat_shovel,
 		/datum/design/autolathe/sec/beartrap,
 		/datum/design/autolathe/sec/silencer,
+		/datum/design/autolathe/sec/acog,
 		/datum/design/autolathe/sec/gun_case,
 		/datum/design/research/item/light_replacer,
 		/datum/design/autolathe/sec/hailer,
@@ -44,13 +45,12 @@
 	license = 20 //1:1 with blackshield guns
 	designs = list(
 		/datum/design/autolathe/gun/rev10,
-		/datum/design/autolathe/gun/firefly,
 		/datum/design/autolathe/gun/glock,
+		/datum/design/autolathe/gun/judge = 2,
 		//SMGs
 		/datum/design/autolathe/gun/wirbelwind = 2,
-		/datum/design/autolathe/gun/straylight,
+		/datum/design/autolathe/gun/ppv = 2,
 		//rifles
-		/datum/design/autolathe/gun/basstet,
 		/datum/design/autolathe/gun/strelki,
 		/datum/design/autolathe/gun/ostwind = 3,
 		/datum/design/autolathe/gun/bulldog = 3,
@@ -71,6 +71,8 @@
 		/datum/design/autolathe/gun/flare_gun,
 		//laser
 		/datum/design/autolathe/gun/sunrise =3,
+		/datum/design/autolathe/gun/peacekeeper =3,
+		/datum/design/autolathe/gun/zwang =2,
 		//Misc
 		/datum/design/autolathe/tool/ironhammer,
 		/datum/design/autolathe/sec/stunbaton/maul,
@@ -123,6 +125,13 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/rifle_ammobox = 1,
 		/datum/design/autolathe/ammo/rifle_ammobox_lethal = 1,
+		/datum/design/autolathe/ammo/rifle_pk_empty = 0,
+		/datum/design/autolathe/ammo/rifle_pk,
+		/datum/design/autolathe/ammo/lrifle_belt,
+		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,
+		/datum/design/autolathe/ammo/hrifle_ammobox_linked,
+		/datum/design/autolathe/ammo/hrifle_ammobox_linked_rubber,
+		/datum/design/autolathe/ammo/hrifle_ammobox_linked_empty = 0,
 		/datum/design/autolathe/ammo/grenade,
 		/datum/design/autolathe/ammo/grenade/flash,
 		/datum/design/autolathe/ammo/flare_shell = 0,
@@ -258,6 +267,7 @@
 		/datum/design/autolathe/ammo/hrifle_drum_empty = 0,
 		/datum/design/autolathe/ammo/rifle_pk_empty = 0,
 		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,
+		/datum/design/autolathe/ammo/hrifle_ammobox_linked_empty = 0,
 		/datum/design/autolathe/ammo/maxim_empty = 0,
 		/datum/design/autolathe/ammo/c10x24 = 3,
 		/datum/design/autolathe/ammo/lrifle_ammobox,
@@ -316,20 +326,6 @@
 		/datum/design/autolathe/ammo/hpistol_practice = 1,
 		/datum/design/autolathe/ammo/hpistol_rubber = 2,
 		/datum/design/autolathe/ammo/hpistol = 2,
-		/datum/design/autolathe/ammo/hpistol_lethal = 2,
-	)
-
-
-/obj/item/computer_hardware/hard_drive/portable/design/guns/firefly
-	disk_name = "Seinemetall Defense GmbH - .35 Firefly Pistol"
-	icon_state = "frozenstar"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/firefly = 3,
-		/datum/design/autolathe/ammo/hpistol_practice = 0,
-		/datum/design/autolathe/ammo/hpistol_rubber,
-		/datum/design/autolathe/ammo/hpistol,
 		/datum/design/autolathe/ammo/hpistol_lethal = 2,
 	)
 
@@ -655,19 +651,6 @@
 		/datum/design/autolathe/ammo/smg_lethal = 2,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/straylight
-	disk_name = "H&S - .35 Straylight SMG"
-	icon_state = "frozenstar"
-
-	license = 12
-	designs = list(
-		/datum/design/autolathe/gun/straylight = 3,
-		/datum/design/autolathe/ammo/smg_practice = 0,
-		/datum/design/autolathe/ammo/smg_rubber,
-		/datum/design/autolathe/ammo/smg,
-		/datum/design/autolathe/ammo/smg_lethal = 2,
-	)
-
 /obj/item/computer_hardware/hard_drive/portable/design/guns/texan
 	disk_name = "SA - .35 Texan SMG"
 	icon_state = "sa"
@@ -703,10 +686,8 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/bastard = 3,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_belt,
+		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sol
@@ -793,6 +774,7 @@
 		/datum/design/autolathe/gun/saw = 3,
 		/datum/design/autolathe/ammo/lrifle_ammobox = 2,
 		/datum/design/autolathe/ammo/lrifle_belt, //This is its linked ammo
+		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox_rubber,
 	)
@@ -987,6 +969,7 @@
 	designs = list(
 		/datum/design/autolathe/gun/mg_pk = 3,
 		/datum/design/autolathe/ammo/rifle_pk,
+		/datum/design/autolathe/ammo/rifle_pk_empty = 0,
 	)
 
 // Grenade Launchers

@@ -6,24 +6,27 @@
 	start_discovered = TRUE
 	uid = "moe_basic"
 	spawn_always = TRUE
-	markup = COMMON_GOODS
+	markup = UNIQUE_GOODS
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
-	secret_inv_threshold = 2000
+	hidden_inv_threshold = 2000
 	recommendation_threshold = 4000
 	stations_recommended = list("moe_adv")
 	forced_overmap_zone = list(
 		list(20, 22),
 		list(20, 25)
 	)
-	assortiment = list(
+	inventory = list(
 		"First Aid" = list(
 			/obj/item/storage/firstaid/regular,
 			/obj/item/storage/firstaid/fire,
 			/obj/item/storage/firstaid/toxin,
 			/obj/item/storage/firstaid/o2,
 			/obj/item/storage/firstaid/adv,
+			/obj/item/reagent_containers/glass/bottle/antitoxin = good_data("dylovene bottle", list(-1, 1), 700),
+			/obj/item/reagent_containers/glass/bottle/inaprovaline = good_data("inaprovaline bottle", list(-1, 1), 700),
+			/obj/item/reagent_containers/glass/bottle/stoxin = good_data("soporific bottle", list(-1, 1), 900),
 			/obj/item/stack/medical/bruise_pack,
 			/obj/item/stack/medical/ointment,
 			/obj/item/stack/medical/splint
@@ -57,11 +60,20 @@
 			/obj/item/reagent_containers/syringe,
 			/obj/item/reagent_containers/hypospray/autoinjector,
 			/obj/item/bodybag,
+			/obj/item/storage/box/syringes,
+			/obj/item/storage/box/autoinjectors,
+			/obj/item/storage/box/masks,
+			/obj/item/storage/box/gloves,
+			/obj/item/storage/box/rxglasses,
+			/obj/item/storage/box/bodybags,
 			/obj/machinery/suspension_gen,
-			/obj/item/computer_hardware/hard_drive/portable/design/medical = custom_good_amount_range(list(3, 6))
+			/obj/item/computer_hardware/hard_drive/portable/design/medical = custom_good_amount_range(list(3, 6)),
+			/obj/item/device/defib_kit,
+			/obj/item/reagent_containers/glass/beaker/vial/nanites = good_data("Raw Nanites Vial", list(-2, 2), 1200),
+			/obj/item/reagent_containers/glass/beaker/vial/nanites = good_data("Raw Uncapped Nanites Vial", list(-1, 1), 1500)
 		)
 	)
-	secret_inventory = list(
+	hidden_inventory = list(
 		"Autoinjectors" = list(
 			// Autoinjectors defined in hypospray.dm
 			/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = custom_good_amount_range(list(10, 20)),

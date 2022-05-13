@@ -110,3 +110,12 @@
 		"Gray"		=	/obj/item/clothing/head/armor/helmet/tanker/gray,
 	)
 	gear_tweaks += new /datum/gear_tweak/path(tanker_helmet)
+
+/datum/gear/head/ribbon
+	display_name = "hair ribbon selection"
+	path = /obj/item/clothing/head/ribbon
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/head/maid
+	display_name = "maid headdress"
+	path = /obj/item/clothing/head/maid

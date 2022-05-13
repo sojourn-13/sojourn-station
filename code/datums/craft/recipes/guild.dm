@@ -1,7 +1,7 @@
 /datum/craft_recipe/guild
 	category = "Guild"
 	time = 100
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_MEC)
 	requiredPerk = PERK_HANDYMAN
 
 //Materal Craft ------------------
@@ -295,6 +295,26 @@
 		list(CRAFT_MATERIAL, 15, MATERIAL_PLASTIC, "time" = 20),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL, "time" = 5),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 5)
+	)
+
+/datum/craft_recipe/guild/tetrasmg
+	name = "tetra laser smg"
+	result = /obj/item/gun/energy/tetra
+	icon_state = "gun"
+	steps = list(
+		list(CRAFT_MATERIAL, 18, MATERIAL_PLASTEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 8, MATERIAL_STEEL, "time" = 20),
+		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTIC, "time" = 20),
+		list(QUALITY_CUTTING, 30, "time" = 40),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(CRAFT_MATERIAL, 12, MATERIAL_SILVER, "time" = 20),
+		list(/obj/item/stack/cable_coil, 10, "time" = 20),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 40, 30),
+		list(/obj/item/stock_parts/micro_laser, 2, "time" = 80),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
 
 /datum/craft_recipe/guild/ten_shot_conversion

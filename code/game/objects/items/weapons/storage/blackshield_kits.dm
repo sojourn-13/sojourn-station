@@ -28,28 +28,16 @@
 // Primary Weapon Kits
 /obj/item/storage/box/bs_kit/mosin
 	name = "\improper Mosin Primary Kit"
-	desc = "The standard Blackshield equipment kit containing a mosin bolt action rifle. The most powerful weapon any trooper can get from their kit vendor, but often neglected given its age and style."
+	desc = "The standard Blackshield equipment kit containing a mosin bolt action rifle and a basic scope. The most powerful weapon any trooper can get from their kit vendor, but often neglected given its age and style."
 
 	populate_contents()
 		new /obj/item/gun/projectile/boltgun(src)
+		new /obj/item/gun_upgrade/scope/acog(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
-		new /obj/item/storage/pouch/ammo(src)
-
-/obj/item/storage/box/bs_kit/roe
-	name = "\improper Roe Primary Kit"
-	desc = "The standard Blackshield equipment kit containing a roe boltgun, a bolt gun with less penetration and damage than a mosin, but with far better recoil control and built in scope."
-
-	populate_contents()
-		new /obj/item/gun/projectile/boltgun/light_wood(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/bs_kit/duty
