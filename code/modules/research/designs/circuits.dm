@@ -436,7 +436,7 @@
 	category = CAT_AMERIDIAN
 
 /datum/design/research/circuit/ameridian_analyzer
-	name = "liquid ameridian processor"
+	name = "liquid ameridian analyzer"
 	build_path = /obj/item/circuitboard/ameridian_analyzer
 	category = CAT_AMERIDIAN
 
