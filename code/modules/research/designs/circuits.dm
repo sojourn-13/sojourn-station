@@ -435,6 +435,11 @@
 	build_path = /obj/item/circuitboard/liquid_ameridian_processor
 	category = CAT_AMERIDIAN
 
+/datum/design/research/circuit/ameridian_analyzer
+	name = "liquid ameridian processor"
+	build_path = /obj/item/circuitboard/ameridian_analyzer
+	category = CAT_AMERIDIAN
+
 //Industrial Printing
 
 /datum/design/research/circuit/industrial_chems
