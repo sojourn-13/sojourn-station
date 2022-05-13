@@ -112,21 +112,27 @@
 						flick("bullet_eject_s", src)
 					else
 						flick("bullet_eject", src)
-				print_string = "You work the bolt open, ejecting [chambered]!"
-				chambered.forceMove(get_turf(src))
-				loaded -= chambered
-				chambered = null
+				if(B.is_caseless && !B.BB)
+					QDEL_NULL(chambered)
+				else
+					print_string = "You work the bolt open, ejecting [chambered]!"
+					chambered.forceMove(get_turf(src))
+					loaded -= chambered
+					chambered = null
 			else
 				if(eject_animatio && loaded.len) //Are bullet amination check
 					if(silenced)
 						flick("bullet_eject_s", src)
 					else
 						flick("bullet_eject", src)
-				var/obj/item/ammo_casing/B = loaded[loaded.len]
-				if(!B.BB)//lol
-					print_string = "You work the bolt open, ejecting [B]!"
-					B.forceMove(get_turf(src))
-					loaded -= B
+				if(LAZYLEN(loaded))
+					var/obj/item/ammo_casing/B = loaded[loaded.len]
+					if(B.is_caseless && !B.BB)
+						QDEL_NULL(B)
+					else
+						print_string = "You work the bolt open, ejecting [B]!"
+						B.forceMove(get_turf(src))
+						loaded -= B
 
 		to_chat(user, SPAN_NOTICE(print_string))
 	else
@@ -136,6 +142,7 @@
 	if(user)
 		add_fingerprint(user)
 	update_icon()
+
 
 /obj/item/gun/projectile/boltgun/special_check(mob/user)
 	if(bolt_open)
