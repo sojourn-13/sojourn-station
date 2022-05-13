@@ -101,22 +101,23 @@
 	user.lastattacked = M
 	M.lastattacker = user
 
-	if(!no_attack_log)
+	if(!no_attack_log) // Entirely for logging purposes
 		user.attack_log += "\[[time_stamp()]\]<font color='red'> Attacked [M.name] ([M.ckey]) with [name] (INTENT: [uppertext(user.a_intent)]) (DAMTYE: [uppertext(damtype)])</font>"
 		M.attack_log += "\[[time_stamp()]\]<font color='orange'> Attacked by [user.name] ([user.ckey]) with [name] (INTENT: [uppertext(user.a_intent)]) (DAMTYE: [uppertext(damtype)])</font>"
 		msg_admin_attack("[key_name(user)] attacked [key_name(M)] with [name] (INTENT: [uppertext(user.a_intent)]) (DAMTYE: [uppertext(damtype)])" )
 
-	var/hit_zone = M.resolve_item_attack(src, user, target_zone)
+	var/hit_zone = M.resolve_item_attack(src, user, target_zone) // Zone targetting
 	if(hit_zone)
-		apply_hit_effect(M, user, hit_zone)
+		apply_hit_effect(M, user, hit_zone) 
 
+	// Mech equipment delay, not going to use click speed for mechs, I don't think it would be too balanced - Wizard
 	set_ready_state(0)
 	chassis.use_power(energy_drain)
 	do_after_cooldown()
 
 	return TRUE
 
-//Called when a mech's melee weapon is used to make a successful melee attack on a mob. Returns the blocked result
+// Called when a mech's melee weapon is used to make a successful melee attack on a mob. Returns the blocked result
 /obj/item/mecha_parts/mecha_equipment/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
 	if(hitsound)
 		playsound(loc, hitsound, 50, 1, -1)

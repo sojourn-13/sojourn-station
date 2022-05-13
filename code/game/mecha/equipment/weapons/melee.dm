@@ -17,7 +17,7 @@
 	edge = TRUE
 	tool_qualities = list(QUALITY_CUTTING = 35, QUALITY_SAWING = 20) // It's a literal mech sized blade
 	armor_penetration = ARMOR_PEN_DEEP
-	tructure_damage_factor = STRUCTURE_DAMAGE_HEAVY
+	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/icon/melee_overlay
 	dam_force = 40 // Big sword make big boo boo - R4d6
@@ -29,6 +29,7 @@
 	icon_state = "mech_maul"
 	hitsound = 'sound/weapons/Egloves.ogg'
 	var/icon/melee_overlay
+	agonyforce = 80 // Big ouch, it's a mech sized stunbaton - Wizard
 
 
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword/attach(obj/mecha/M as obj)
