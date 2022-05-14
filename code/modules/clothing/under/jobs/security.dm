@@ -88,7 +88,8 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Turtleneck Default"] = ""
+	options["Turtleneck Masculine"] = ""
+	options["Turtleneck Feminine"] = "_f"
 	options["Skirt"] = "_s"
 	options["Skirt rolled sleeves"] = "_sr"
 
