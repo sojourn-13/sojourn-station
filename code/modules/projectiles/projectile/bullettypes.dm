@@ -704,6 +704,7 @@
 /obj/item/projectile/bullet/pellet/shotgun/flak //Devastating at point blank, but worthless past
 	name = "jagged shrapnel"
 	damage_types = list(BRUTE = 11) //Fired in bursts of three, for a total of 12 pellets at touch distances.
+	pellets = 3
 	agony = 0 //No.
 
 //'Laser' buckshot. Effectively just burn buckshot used for the Abdication.
