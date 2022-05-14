@@ -170,7 +170,7 @@
 /datum/gear/suit/akira
 	display_name = "red jacket"
 	path = /obj/item/clothing/suit/storage/akira
-
+/*
 /datum/gear/suit/radhat
 	display_name = "radiation hood"
 	path = /obj/item/clothing/head/radiation
@@ -188,3 +188,4 @@
 	display_name = "expedition suit"
 	path = /obj/item/clothing/suit/space/anomaly
 	cost = 2 //Some good armor but slowdown
+*/

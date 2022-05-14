@@ -80,7 +80,7 @@
 	permeability_coefficient = 0.5
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	extra_allowed = list(/obj/item/clothing/head/radiation)
-	slowdown = 0.4
+	//slowdown = 0.4
 	armor_list = list(
 		melee = 0,
 		bullet = 0,
