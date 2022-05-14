@@ -578,7 +578,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		response = null
 
 	if(response)
-		for(var/mob/living/simple_animal/ameridian_tender/AT in world)
+		for(var/mob/living/simple_animal/ameridian_tender/AT in GLOB.living_mob_list)
 			if(AT.can_be_possessed_by(src))
 				return AT.do_possession(src)
 		to_chat(usr, SPAN_WARNING("There are no valid ameridian tender."))

@@ -77,6 +77,7 @@
 /obj/structure/ameridian_crystal/blue/harvest_crystals()
 	visible_message("[src] crumbles into a pile of crystals...")
 	icon_state = ""
+	underlays.Cut()
 	spawn_runtling(amount_runtling_destruction)
 	visible_message(SPAN_DANGER("[src] reforms into multiple golems!"))
 	activate_mobs_in_range(src, 15) // Wake up the nearby golems
