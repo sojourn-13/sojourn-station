@@ -591,14 +591,8 @@
 			for(var/mob/living/H in src)
 				if(isdrone(H)) //Drones use the mailing code to move through the disposal system,
 					continue
-				if(H.stats.getPerk(PERK_SPACE_ASSHOLE)) //Assholes gain disposal immunity
-					continue
 				// Hurt any living creature jumping down disposals
 				var/multiplier = 1
-
-				// STAT_MEC or STAT_TGH help you reduce disposal damage, with no damage being recieved at all at STAT_LEVEL_EXPERT
-				if(H.stats)
-					multiplier = min(H.stats.getMult(STAT_MEC, STAT_LEVEL_EXPERT), H.stats.getMult(STAT_TGH, STAT_LEVEL_EXPERT))
 
 				if(multiplier > 0)
 					H.take_overall_damage(8 * multiplier, 0, "Blunt Trauma")
