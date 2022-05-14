@@ -21,7 +21,7 @@
 
 	init_firemodes = list(
 		BURST_5_ROUND,
-		FULL_AUTO_700
+		FULL_LMG_1
 		)
 	serial_type = "NM"
 

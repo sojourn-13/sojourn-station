@@ -710,14 +710,14 @@
 
 /obj/item/ammo_magazine/rifle_10x24
 	name = "light rifle magazine"
-	desc = "A 40 round magazine marked for 10x24 rounds."
+	desc = "A 20 round magazine marked for 10x24 rounds."
 	icon_state = "rifle"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_STEEL = 8)
 	caliber = "10x24"
 	ammo_type = /obj/item/ammo_casing/c10x24
-	max_ammo = 40
+	max_ammo = 20
 	multiple_sprites = 1
 
 ////.50 kurtz////
