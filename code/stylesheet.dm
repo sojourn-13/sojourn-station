@@ -99,7 +99,7 @@ h1.alert, h2.alert		{color: #000000;}
 .jana					{color: #993399}
 .latin					{color: #deb63d}
 .esperanto				{color: #ed7961}
-.yassari				{color: #5fbf4e}
+.yassari				{color: #96d18c}
 
 .interface				{color: #330033;}
 
