@@ -128,9 +128,15 @@
 		M.attack_log += "\[[time_stamp()]\]<font color='orange'> Attacked by [user.name] ([user.ckey]) with [name] (INTENT: [uppertext(user.a_intent)]) (DAMTYE: [uppertext(damtype)])</font>"
 		msg_admin_attack("[key_name(user)] attacked [key_name(M)] with [name] (INTENT: [uppertext(user.a_intent)]) (DAMTYE: [uppertext(damtype)])" )
 
-	var/hit_zone = M.resolve_item_attack(src, user, target_zone) // Zone targetting
-	if(hit_zone)
-		apply_hit_effect(M, user, hit_zone) 
+	if(user.a_intent == I_HELP) // Checks if you have help intent on
+		step_away(M, chassis)
+		occupant_message("You push [M] out of the way.")
+		chassis.visible_message("[chassis] pushes [M] out of the way.")
+	else
+		var/hit_zone = M.resolve_item_attack(src, user, target_zone) // Zone targetting
+		if(hit_zone)
+			apply_hit_effect(M, user, hit_zone)
+
 
 	// Mech equipment delay, not going to use click speed for mechs, I don't think it would be too balanced - Wizard
 	user.setClickCooldown(equip_cooldown)
