@@ -43,7 +43,7 @@
 /obj/item/stack/Initialize()
 	.=..()
 	if (!stacktype)
-		stacktype = src
+		stacktype = type
 
 	if (rand_min || rand_max)
 		amount = rand(rand_min, rand_max)
@@ -71,12 +71,16 @@
 
 
 	return ..()
-/*
+
 /obj/item/stack/Crossed(atom/movable/crossing)
-	if(can_merge(crossing) && !crossing.throwing)
-		merge(crossing)
+	if(!crossing.throwing)
+		if(!istype(crossing, /obj/item/stack))
+			return ..()
+		if(isturf(loc) && isturf(crossing.loc))
+			var/obj/item/stack/crostack = crossing
+			src.transfer_to(crostack)
 	. = ..()
-*/
+
 /obj/item/stack/examine(mob/user)
 	if(..(user, 1))
 		if(!uses_charge)
@@ -215,26 +219,21 @@
 			return
 	return
 
+/obj/item/stack/proc/can_merge(obj/item/stack/other)
+	if(!istype(other))
+		return FALSE
+	if(QDELETED(src) || QDELETED(other))
+		return FALSE
+	if((other == src))
+		return FALSE
+	return other.stacktype == stacktype
+
 //Return 1 if an immediate subsequent call to use() would succeed.
 //Ensures that code dealing with stacks uses the same logic
 /obj/item/stack/proc/can_use(var/used)
 	if (get_amount() < used)
 		return 0
 	return 1
-
-/obj/item/stack/proc/can_merge(obj/item/stack/other)
-	if(!istype(other))
-		return FALSE
-	if(QDELETED(src) || QDELETED(other))
-		return FALSE
-	if((other == src) || (other == src.stacktype_alt))
-		return FALSE
-	return ((other.stacktype == stacktype) || (other.stacktype = stacktype_alt))
-
-/obj/item/stack/proc/force_stack_all_from_loc()
-	for(var/obj/item/stack/S in loc)
-		if(can_merge(S))
-			merge(S)
 
 /obj/item/stack/proc/use(var/used)
 	if (!can_use(used))
@@ -315,8 +314,7 @@
 		transfer = min(transfer, S.max_amount - S.amount)
 	if(pulledby)
 		pulledby.start_pulling(S)
-	use(transfer, TRUE)
-	S.add(transfer)
+	src.transfer_to(S, transfer)
 	return transfer
 
 //creates a new stack with the specified amount

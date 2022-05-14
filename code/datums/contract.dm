@@ -31,7 +31,6 @@ GLOBAL_LIST_INIT(excel_item_targets,list(
 		"a Spider Rose energy gun" = /obj/item/gun/energy/gun,
 		"a Hustler omni rifle" = /obj/item/gun/projectile/automatic/omnirifle,
 		"a MAC sub machine gun" = /obj/item/gun/projectile/automatic/mac,
-		"a Straylight sub machine gun" = /obj/item/gun/projectile/automatic/straylight,
 		"a STS carbine" = /obj/item/gun/projectile/automatic/sts,
 		"a Colt handgun" = /obj/item/gun/projectile/colt,
 		//"a Lenar granade launcher" = /datum/design/autolathe/gun/grenade_launcher_lenar, What in the god damn?
@@ -52,7 +51,6 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"Spider Rose energy gun" = /obj/item/gun/energy/gun,
 		"Hustler omni rifle" = /obj/item/gun/projectile/automatic/omnirifle,
 		"MAC sub machine gun" = /obj/item/gun/projectile/automatic/mac,
-		"Straylight sub machine gun" = /obj/item/gun/projectile/automatic/straylight,
 		"STS carbine" = /obj/item/gun/projectile/automatic/sts,
 		"M1911 .40 Auto mag handgun" = /obj/item/gun/projectile/colt/ten,
 		"Lenar granade launcher" = /obj/item/gun/projectile/grenade/lenar,

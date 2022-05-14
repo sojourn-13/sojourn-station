@@ -176,3 +176,7 @@
 	name = "Bandage Shirt"
 	icon_state = "bandage_shirt"
 	has_color = TRUE
+	
+/datum/category_item/underwear/undershirt/midriffkeyhole
+	name = "Midriff keyhole Shirt"
+	icon_state = "midriffkeyhole"

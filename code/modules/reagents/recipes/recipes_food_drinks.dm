@@ -698,6 +698,11 @@
 	required_reagents = list("rum" = 3, "limejuice" = 2, "sugar" = 1)
 	result_amount = 5
 
+/datum/chemical_reaction/drinks/daiquiri_strawberry
+	result = "daiquiri_strawberry"
+	required_reagents = list("daiquiri" = 1, "strawberryjuice" = 1)
+	result_amount = 2
+
 /datum/chemical_reaction/drinks/whiskeysour
 	result = "whiskeysour"
 	required_reagents = list("whiskey" = 2, "lemonjuice" = 1, "sugar" = 1)
@@ -785,3 +790,83 @@
 	catalysts = list("enzyme" = 5) // Almost every homemade alcohol recipe has this
 	result_amount = 2
 
+//SoJ Based drinks
+
+/datum/chemical_reaction/drinks/southern_saki
+	result = "southern_saki"
+	required_reagents = list("rice" = 2, "berryjuice" = 1)
+	catalysts = list("enzyme" = 5)
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/nothern_mead
+	result = "nothern_mead"
+	required_reagents = list("rice" = 2, "honey" = 1)
+	catalysts = list("enzyme" = 5)
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/life_line
+	result = "life_line"
+	required_reagents = list("rum" = 2, "inaprovaline" = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/posicell
+	result = "posicell"
+	required_reagents = list("manhattan" = 1, "copper" = 2, "pineapplejuice" = 2, "lemonjuice" = 2) //annoying to make
+	catalysts = list("sugar" = 3, "ice" = 2) //annoying to make
+	byproducts = list("sugarrush" = 30)
+	result_amount = 5
+
+/datum/chemical_reaction/drinks/nickle_n_dime
+	result = "nickle_n_dime"
+	required_reagents = list("vodka" = 3, "lemon_lime" = 3, MATERIAL_GOLD = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/arcscrewdriver
+	result = "arcscrewdriver"
+	required_reagents = list("screwdrivercocktail" = 4, "carbon" = 1, "iron" = 1, MATERIAL_PLASMA = 1)
+	result_amount = 5 //carbon iron and plasma makes plasteel materal wise
+
+/datum/chemical_reaction/drinks/whiske_rocks
+	result = "whiske_rocks"
+	required_reagents = list("whiskey" = 2, "ice" = 1)
+	result_amount = 4 //Is is dence
+
+/datum/chemical_reaction/drinks/nior
+	result = "nior"
+	required_reagents = list("whiske_rocks" = 2, "rum" = 1)
+	result_amount = 3 //Is is dence
+
+/datum/chemical_reaction/drinks/duress
+	result = "duress"
+	required_reagents = list("bluecuracao" = 2, "orangejuice" = 1)
+	result_amount = 4
+
+/datum/chemical_reaction/drinks/ocular
+	result = "ocular"
+	required_reagents = list("vodka" = 2, "blendedmint" = 1, "protein" = 1)
+	result_amount = 4
+
+/datum/chemical_reaction/drinks/saint_pio
+	result = "saint_pio"
+	required_reagents = list("water" = 3, "blood" = 1, "ntcahors" = 1)
+	result_amount = 5
+
+/datum/chemical_reaction/drinks/rusty_special
+	result = "rusty_special"
+	required_reagents = list("tequilla" = 2, "berryjuice" = 1, "potassium" = 1)
+	result_amount = 4
+
+/datum/chemical_reaction/drinks/western_escargot
+	result = "western_escargot"
+	required_reagents = list("tequilla" = 1, "rum" = 1, "potassium" = 1, "vodka" = 1, "grapejuice" = 1)
+	result_amount = 5
+
+/datum/chemical_reaction/drinks/prospie
+	result = "prospie"
+	required_reagents = list("mead" = 3, "blood" = 1, "water" = 1, "sodiumchloride" = 1)
+	result_amount = 5
+
+/datum/chemical_reaction/drinks/friendlyfire
+	result = "friendlyfire"
+	required_reagents = list("rum" = 2, "iron" = 1, "vodka" = 1)
+	result_amount = 3

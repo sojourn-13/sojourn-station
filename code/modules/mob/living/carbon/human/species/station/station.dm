@@ -257,7 +257,8 @@
 		"Vulpkanin Tail",
 		"Vulpkanin Tail 2",
 		"Vulpkanin Tail 3",
-		"Wolf Tail"
+		"Wolf Tail",
+		"Jackal Tail"
 		)
 	permitted_wings = list()
 

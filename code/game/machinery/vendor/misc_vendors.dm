@@ -734,6 +734,7 @@
 				/obj/item/clothing/suit/tabard/blacksilk = 5,
 				/obj/item/clothing/under/costume/kinky/latex_maid = 5,
 				/obj/item/clothing/under/sexymaid = 5,
+				/obj/item/clothing/head/maid = 5,
 				/obj/item/clothing/under/costume/kinky/leather = 5,
 				/obj/item/clothing/under/costume/kinky/sexy_clown = 5,
 				/obj/item/clothing/under/costume/kinky/sexy_mime = 5,
@@ -757,12 +758,20 @@
 				/obj/item/stack/cable_coil/random = 5,
 				/obj/item/clothing/suit/straight_jacket = 5,
 				/obj/item/legcuffs/fuzzy = 5)
+
+	contraband = list(/obj/item/clothing/under/costume/maid = 5, // plain, modest, humble clothing, you sick freak
+				/obj/item/clothing/suit/costume/job/nun = 5,
+				/obj/item/clothing/head/costume/job/nun = 5,
+				/obj/item/clothing/under/bride_white = 5,
+				/obj/item/clothing/glasses/regular = 5,
+				/obj/item/book/manual/religion/c_bible = 5)
 	prices = list(
 				/obj/item/clothing/suit/costume/kinky/alyson = 100,
 				/obj/item/clothing/suit/tabard = 100,
 				/obj/item/clothing/suit/tabard/blacksilk = 100,
 				/obj/item/clothing/under/costume/kinky/latex_maid = 100,
 				/obj/item/clothing/under/sexymaid = 100,
+				/obj/item/clothing/head/maid = 100,
 				/obj/item/clothing/under/costume/kinky/leather = 100,
 				/obj/item/clothing/under/costume/kinky/sexy_clown = 100,
 				/obj/item/clothing/under/costume/kinky/sexy_mime = 100,
@@ -785,7 +794,13 @@
 				/obj/item/tool/tape_roll = 50,
 				/obj/item/stack/cable_coil/random = 50,
 				/obj/item/clothing/suit/straight_jacket = 100,
-				/obj/item/legcuffs/fuzzy = 100)
+				/obj/item/legcuffs/fuzzy = 100,
+				/obj/item/clothing/under/costume/maid = 100,
+				/obj/item/clothing/suit/costume/job/nun = 100,
+				/obj/item/clothing/head/costume/job/nun = 100,
+				/obj/item/clothing/under/bride_white = 100,
+				/obj/item/clothing/glasses/regular = 100,
+				/obj/item/book/manual/religion/c_bible = 5)
 
 /obj/machinery/vending/fortune
 	name = "The Great Zoltan"

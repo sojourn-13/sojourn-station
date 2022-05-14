@@ -45,8 +45,8 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10)
 	price_tag = 750
 	zoom_factor = 0.8
-	recoil_buildup = 14
-	damage_multiplier = 0.9
+	recoil_buildup = 12
+	damage_multiplier = 1 //Little bit better Strelki
 	extra_damage_mult_scoped = 0.3
 	penetration_multiplier = 1.0
 	one_hand_penalty = 25
@@ -73,7 +73,7 @@
 	zoom_factor = 0.6
 	recoil_buildup = 14
 	damage_multiplier = 0.9
-	extra_damage_mult_scoped = 0.1
+	extra_damage_mult_scoped = 0.3
 	one_hand_penalty = 25
 	see_invisible_gun = -1
 	auto_eject = FALSE
@@ -116,7 +116,7 @@
 	price_tag = 450
 	zoom_factor = 0.0
 	recoil_buildup = 15
-	damage_multiplier = 0.7
+	damage_multiplier = 0.8
 	one_hand_penalty = 25
 	saw_off = FALSE
 	serial_type = "NM"

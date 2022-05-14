@@ -1,12 +1,12 @@
 /obj/machinery/mineral/equipment_vendor
 	name = "mining equipment vendor"
-	desc = "An equipment vendor for miners, points collected at an ore redemption machine can be spent here."
-	icon = 'icons/obj/machines/mining_machines.dmi'
-	icon_state = "mining"
+	desc = "An equipment vendor for miners, points collected at a material processor can be spent here."
+	icon = 'icons/obj/vending.dmi'
+	icon_state = "engi"
+	var/icon_deny = "engi-deny"
 	density = TRUE
 	anchored = TRUE
 	circuit = /obj/item/circuitboard/mining_equipment_vendor
-	var/icon_deny = "mining-deny"
 	var/obj/item/card/id/inserted_id
 	var/list/prize_list = list(
 		new /datum/data/mining_equipment("Ale",						/obj/item/reagent_containers/food/drinks/bottle/small/ale,		50),
