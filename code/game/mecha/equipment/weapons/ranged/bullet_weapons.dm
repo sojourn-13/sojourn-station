@@ -111,9 +111,9 @@
 	fire_volume = 80
 	projectiles = 40
 	max_ammo = 40
-	projectiles_per_shot = 1
+	projectiles_per_shot = 1 //each 'projectile' carries 8 pellets
 	fire_cooldown = 1
-	deviation = 5
+	deviation = 8 //kinda innacurate, but a horribly deudly firearm none the less.
 	ammo_type = "12g"
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/loaded
@@ -159,7 +159,7 @@
 	projectiles = 300
 	max_ammo = 300
 	projectiles_per_shot = 3
-	deviation = 0.3
+	deviation = 5 //little bit innacurate, but still able to consistently lay down fire on targets
 	fire_cooldown = 1.75
 	ammo_type = "5.56"
 

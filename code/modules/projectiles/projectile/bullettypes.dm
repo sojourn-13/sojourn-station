@@ -697,8 +697,8 @@
 	name = "heavy shrapnel"
 	damage_types = list(BRUTE = 16) //We hit slightly softer than buckshot
 	agony = 0 //No.
-	pellets = 8 // but far more times
-	range_step = 2 //and at longer ranger
+	pellets = 6 // but more times
+	range_step = 2 //and at longer range
 	step_delay = 1.1 //we travel a bit slower
 
 /obj/item/projectile/bullet/pellet/shotgun/flak //Devastating at point blank, but worthless past
