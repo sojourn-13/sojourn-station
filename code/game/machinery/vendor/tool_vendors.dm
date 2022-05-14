@@ -207,7 +207,7 @@
 				 /obj/item/computer_hardware/hard_drive/portable/design/guns/armstrong = 600,
 				 /obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 350,
 				 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki = 850,
-				 /obj/item/computer_hardware/hard_drive/portable/design/guns/survivalrifle = 750,
+				 /obj/item/computer_hardware/hard_drive/portable/design/guns/survivalrifle = 450,
 				 /obj/item/computer_hardware/hard_drive/portable/advanced/coin = 60,
 				 /obj/item/computer_hardware/hard_drive/portable/design/powerwork = 300,
 				 /obj/item/circuitboard/autolathe = 350,
@@ -304,4 +304,3 @@
 					/obj/item/storage/box/mantis_drone_kit = 750)
 
 	auto_price = FALSE
-
