@@ -14,6 +14,7 @@
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 12, MATERIAL_GOLD = 2)
 	price_tag = 1500
+	fire_delay = 7.5
 	silenced = FALSE
 	damage_multiplier = 0.6
 	recoil_buildup = 1
