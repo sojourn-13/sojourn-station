@@ -104,7 +104,6 @@
 	playsound(src.loc, 'sound/weapons/guns/interact/rifle_boltback.ogg', 75, 1)
 	bolt_open = !bolt_open
 	if(bolt_open)
-		var/print_string = "You work the bolt open."
 		if(contents.len || loaded.len)
 			if(chambered)
 				if(eject_animatio && loaded.len) //Are bullet amination check
@@ -112,31 +111,22 @@
 						flick("bullet_eject_s", src)
 					else
 						flick("bullet_eject", src)
-				if(chambered.is_caseless && !chambered.BB)
-					loaded -= chambered
-					QDEL_NULL(chambered)
-				else
-					print_string = "You work the bolt open, ejecting [chambered]!"
-					chambered.forceMove(get_turf(src))
-					loaded -= chambered
-					chambered = null
+				to_chat(user, SPAN_NOTICE("You work the bolt open, ejecting [chambered]!"))
+				chambered.forceMove(get_turf(src))
+				loaded -= chambered
+				chambered = null
 			else
 				if(eject_animatio && loaded.len) //Are bullet amination check
 					if(silenced)
 						flick("bullet_eject_s", src)
 					else
 						flick("bullet_eject", src)
-				if(LAZYLEN(loaded))
-					var/obj/item/ammo_casing/B = loaded[loaded.len]
-					if(B.is_caseless && !B.BB)
-						loaded -= B
-						QDEL_NULL(B)
-					else
-						print_string = "You work the bolt open, ejecting [B]!"
-						B.forceMove(get_turf(src))
-						loaded -= B
-
-		to_chat(user, SPAN_NOTICE(print_string))
+				var/obj/item/ammo_casing/B = loaded[loaded.len]
+				to_chat(user, SPAN_NOTICE("You work the bolt open, ejecting [B]!"))
+				B.forceMove(get_turf(src))
+				loaded -= B
+		else
+			to_chat(user, SPAN_NOTICE("You work the bolt open."))
 	else
 		to_chat(user, SPAN_NOTICE("You work the bolt closed."))
 		playsound(src.loc, 'sound/weapons/guns/interact/rifle_boltforward.ogg', 75, 1)
@@ -144,7 +134,6 @@
 	if(user)
 		add_fingerprint(user)
 	update_icon()
-
 
 /obj/item/gun/projectile/boltgun/special_check(mob/user)
 	if(bolt_open)
@@ -156,6 +145,12 @@
 	if(!bolt_open)
 		to_chat(user, SPAN_WARNING("You add in ammo [src] while the bolt is closed!"))
 		return
+	//Prevents a bug, banaid-fix
+	if(istype(A, /obj/item/ammo_casing))
+		var/obj/item/ammo_casing/C = A
+		if(C.is_caseless)
+			to_chat(user, SPAN_WARNING("Adding in caseless ammo into [src] would trigger a chain reaction in the chamber!"))
+			return
 	..()
 
 /obj/item/gun/projectile/boltgun/unload_ammo(mob/user, var/allow_dump=1)

@@ -1163,7 +1163,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 	designs = list(
 		/datum/design/autolathe/gun/survivalrifle = 3,
 		/datum/design/autolathe/ammo/mag_10x24,
-		/datum/design/autolathe/ammo/box_10x24_small = 1,
+		/datum/design/autolathe/ammo/box_10x24 = 2,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/rex10
