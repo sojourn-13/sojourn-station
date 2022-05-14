@@ -21,7 +21,7 @@
 	name = "\improper CH-PS \"Immolator\" laser"
 	icon_state = "mecha_laser"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_SILVER  =10)
-	energy_drain = 150
+	energy_drain = 90
 	projectile = /obj/item/projectile/beam
 	fire_sound = 'sound/weapons/Laser.ogg'
 	price_tag = 400
@@ -31,7 +31,7 @@
 	name = "jury-rigged welder-laser"
 	desc = "While not regulation, this inefficient weapon can be attached to working exo-suits in desperate, or malicious, times."
 	icon_state = "mecha_laser"
-	energy_drain = 250
+	energy_drain = 150
 	projectile = /obj/item/projectile/beam
 	fire_sound = 'sound/weapons/Laser.ogg'
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
@@ -42,7 +42,7 @@
 	name = "\improper CH-LC \"Solaris\" laser cannon"
 	icon_state = "mecha_laser"
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15, MATERIAL_SILVER  =10)
-	energy_drain = 250
+	energy_drain = 150
 	projectile = /obj/item/projectile/beam/heavylaser
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	price_tag = 500
@@ -53,7 +53,7 @@
 	desc = "Four solaris laser cannons welded together to achieve a higher firerate."
 	icon_state = "mecha_auto_laser"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 1)
-	energy_drain = 600 //less efficient than its constituent parts but more punchy per burst
+	energy_drain = 330 //less efficient than its constituent parts but more punchy per burst
 	projectile = /obj/item/projectile/beam/heavylaser
 	projectiles = 8
 	projectiles_per_shot = 2
@@ -74,7 +74,7 @@
 	name = "eZ-13 mk2 heavy pulse rifle"
 	icon_state = "mecha_pulse"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_URANIUM  =5)
-	energy_drain = 300 //more expensive than a heavy, less than a multi-las, highly advanced laser!
+	energy_drain = 150 //more expensive than a heavy, less than a multi-las, highly advanced laser!
 	origin_tech = list(TECH_MATERIAL = 3, TECH_COMBAT = 6, TECH_POWER = 4)
 	projectile = /obj/item/projectile/beam/pulse
 	fire_sound = 'sound/weapons/marauder.ogg'
@@ -83,7 +83,7 @@
 	name = "\improper PBT \"Pacifier\" mounted taser"
 	icon_state = "mecha_taser"
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_SILVER  =5)
-	energy_drain = 20
+	energy_drain = 90
 	equip_cooldown = 8
 	projectile = /obj/item/projectile/beam/stun
 	fire_sound = 'sound/weapons/Taser.ogg'
