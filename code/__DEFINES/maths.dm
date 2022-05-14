@@ -98,6 +98,10 @@
 // Returns the nth root of x.
 #define ROOT(n, x) ((x) ** (1 / (n)))
 
+// Proc concept stolen from https://www.arduino.cc/reference/en/language/functions/math/map/
+// It convert a number from one range to another range.
+#define MAP(value, fromLow, fromHigh, toLow, toHigh) (round((value - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow))
+
 // The quadratic formula. Returns a list with the solutions, or an empty list
 // if they are imaginary.
 /proc/SolveQuadratic(a, b, c)

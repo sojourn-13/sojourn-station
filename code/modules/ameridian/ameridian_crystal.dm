@@ -53,9 +53,8 @@
 	transform = initial(transform)
 	transform *= ((1/max_growth) * growth) // So the crystal is at 20% size at growth 1, 40% at growth 2, e.t.c.
 	set_light(growth, growth)
-	for(var/U in underlays)
-		underlays -= U
-	underlays += ("crystal_floor_[map(growth, 1, max_growth, 1, 5)]")
+	underlays.Cut()
+	underlays += ("crystal_floor_[MAP(growth, 1, max_growth, 1, 5)]")
 
 /obj/structure/ameridian_crystal/attackby(obj/item/I, mob/user)
 	if(user.a_intent == I_HELP && user.Adjacent(src))
