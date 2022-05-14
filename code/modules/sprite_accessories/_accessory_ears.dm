@@ -88,7 +88,7 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/ears/bnnuy
+/datum/sprite_accessory/ears/bnnuy_long
 	name = "Bunny Ears, Long"
 	desc = ""
 	icon_state = "bnnuy_long"
