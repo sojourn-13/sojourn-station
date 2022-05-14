@@ -56,4 +56,4 @@
 		var/mob/living/carbon/human/H = chassis.occupant
 		def_zone = H.targeted_organ
 		P.firer = H
-	P.launch(target, def_zone, x_offset = 0, y_offset = 0, angle_offset = CLAMP(GaussRand(deviation), -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET), fire_sound)
+	P.launch(target, def_zone, x_offset = 0, y_offset = 0, angle_offset = CLAMP(GaussRand(deviation), -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET))
