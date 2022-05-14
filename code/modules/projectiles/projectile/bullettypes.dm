@@ -695,11 +695,16 @@
 
 /obj/item/projectile/bullet/pellet/shotgun/scattershot //VERY dangerous, the weapon has a low refire rate for a reason. DO NOT use this for non exo weapons without tweaking.
 	name = "heavy shrapnel"
-	damage_types = list(BRUTE = 20) //we hit harder
+	damage_types = list(BRUTE = 16) //We hit slightly softer than buckshot
 	agony = 0 //No.
-	pellets = 6 // and more times
-	range_step = 2 //we take a little bit longer to lose pellets
+	pellets = 8 // but far more times
+	range_step = 2 //and at longer ranger
 	step_delay = 1.1 //we travel a bit slower
+
+/obj/item/projectile/bullet/pellet/shotgun/flak //Devastating at point blank, but worthless past
+	name = "jagged shrapnel"
+	damage_types = list(BRUTE = 11) //Fired in bursts of three, for a total of 12 pellets at touch distances.
+	agony = 0 //No.
 
 //'Laser' buckshot. Effectively just burn buckshot used for the Abdication.
 /obj/item/projectile/bullet/pellet/shotgun/energy

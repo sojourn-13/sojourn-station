@@ -10,7 +10,7 @@
 	var/projectile //Type of projectile fired.
 	var/projectiles = 1 //Amount of projectiles loaded.
 	var/projectiles_per_shot = 1 //Amount of projectiles fired per single shot.
-	var/deviation = 0 //Inaccuracy of shots.
+	var/deviation = 0 //Inaccuracy of shots, essentially applies an angle deviation between negative MAX_ACCURACY_OFFSET and positive by using GaussRand to create a very random number using deviation as the basis.
 	var/fire_cooldown = 0 //Duration of sleep between firing projectiles in single shot.
 	var/fire_sound //Sound played while firing.
 	var/fire_volume = 50 //How loud it is played.
@@ -36,8 +36,6 @@
 	set_ready_state(0)
 	for(var/i = 1 to min(projectiles, projectiles_per_shot))
 		var/turf/aimloc = targloc
-		if(deviation)
-			aimloc = locate(targloc.x+GaussRandRound(deviation,1),targloc.y+GaussRandRound(deviation,1),targloc.z)
 		if(!aimloc || aimloc == curloc)
 			break
 		playsound(chassis, fire_sound, fire_volume, 1)
@@ -58,4 +56,4 @@
 		var/mob/living/carbon/human/H = chassis.occupant
 		def_zone = H.targeted_organ
 		P.firer = H
-	P.launch(target, def_zone)
+	P.launch(target, def_zone, angle_offset=CLAMP(GaussRand(deviation), -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET))

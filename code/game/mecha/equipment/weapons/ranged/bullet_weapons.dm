@@ -113,7 +113,7 @@
 	max_ammo = 40
 	projectiles_per_shot = 1
 	fire_cooldown = 1
-	deviation = 0.7 //currently DOES NOT work, will adjust later if it is fixed.
+	deviation = 5
 	ammo_type = "12g"
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/loaded
@@ -123,14 +123,15 @@
 	name = "\improper jury-rigged flak cannon"
 	desc = "The design of this weapon brings a whole new meaning to the term scrap cannon."
 	icon_state = "mecha_makeshift_scatter"
-	equip_cooldown = 15
-	projectile = /obj/item/projectile/bullet/pellet/shotgun
+	equip_cooldown = 25 //fairly slow firing, but utterly devastating against the unarmored.
+	projectile = /obj/item/projectile/bullet/pellet/shotgun/flak
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	fire_volume = 80
 	projectiles = 30
 	max_ammo = 30
-	projectiles_per_shot = 1
-	deviation = 0.9
+	projectiles_per_shot = 3
+	fire_cooldown = 0 // we fire a huge burst of pellets all over the place!
+	deviation = 15 //emphasis on ALL OVER the place
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
 	price_tag = 700
 
@@ -174,8 +175,8 @@
 	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	projectiles = 60
 	max_ammo = 60
-	projectiles_per_shot = 3
-	deviation = 0.4
+	projectiles_per_shot = 5
+	deviation = 10 //heavy deviation, its cheap casing rattles with each shot
 	fire_cooldown = 3
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
 
