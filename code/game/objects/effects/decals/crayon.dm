@@ -62,6 +62,14 @@
 					ignorance_spell(M)
 					continue
 
+				if(spell.message == "Flux." && candle_amount >= 1)
+					flux_spell(M)
+					continue
+
+				if(spell.message == "Negentropy." && candle_amount >= 1)
+					negentropy_spell(M)
+					continue
+
 				if(spell.message == "Life." && candle_amount >= 5)
 					life_spell(M)
 					continue
@@ -212,6 +220,46 @@
 		if(L.name == LANGUAGE_OCCULT)
 			M.remove_language(LANGUAGE_OCCULT)
 	return
+
+/obj/effect/decal/cleanable/crayon/proc/flux_spell(var/mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	var/area/my_area = get_area(src)
+	to_chat(M, "<span class='info'>The echos of smashing glass and splinting wood pound against the mind as the body drys heaving.</span>")
+	my_area.bluespace_hazard_threshold -= 1
+	GLOB.bluespace_hazard_threshold -= 1
+	bluespace_entropy(1, get_turf(src), TRUE)
+	B.remove_self(50)
+	M.sanity.breakdown(TRUE) //You have to be insain to do this
+	for(var/datum/language/L in M.languages)
+		if(L.name == LANGUAGE_CULT)
+			my_area.bluespace_hazard_threshold -= 5
+			GLOB.bluespace_hazard_threshold -= 5
+			bluespace_entropy(5, get_turf(src), TRUE)
+		if(L.name == LANGUAGE_OCCULT)
+			my_area.bluespace_hazard_threshold -= 5
+			GLOB.bluespace_hazard_threshold -= 5
+			bluespace_entropy(5, get_turf(src), TRUE)
+	return
+
+/obj/effect/decal/cleanable/crayon/proc/negentropy_spell(var/mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	var/area/my_area = get_area(src)
+	to_chat(M, "<span class='info'>Soft echos of trees rustle, wind blowing and trickingly of water dance around your ears, a calmness even if only a minor one feels present.</span>")
+	my_area.bluespace_hazard_threshold += 1
+	GLOB.bluespace_hazard_threshold += 1
+	bluespace_entropy(-5, get_turf(src), TRUE)
+	B.remove_self(60) //Takes more to heal then harm
+	for(var/datum/language/L in M.languages)
+		if(L.name == LANGUAGE_CULT)
+			my_area.bluespace_hazard_threshold += 5
+			GLOB.bluespace_hazard_threshold += 5
+			bluespace_entropy(-5, get_turf(src), TRUE)
+		if(L.name == LANGUAGE_OCCULT)
+			my_area.bluespace_hazard_threshold += 5
+			GLOB.bluespace_hazard_threshold += 5
+			bluespace_entropy(-5, get_turf(src), TRUE)
+	return
+
 
 /obj/effect/decal/cleanable/crayon/proc/voice_spell(var/mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()

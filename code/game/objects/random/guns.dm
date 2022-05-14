@@ -150,7 +150,7 @@
 				/obj/item/gun/projectile/ladon = 1,\
 				/obj/item/gun/projectile/lamia/akurra = 1,\
 				/obj/item/gun/projectile/basilisk = 2,\
-				/obj/item/gun/projectile/automatic/survivalrifle = 1,\
+				/obj/item/gun/projectile/boltgun/survivalrifle = 1,\
 				/obj/item/gun/projectile/revolver/tacticool_revolver = 1,\
 				/obj/item/gun/projectile/revolver/mateba = 1,\
 				/obj/item/gun/projectile/silenced = 2,\
