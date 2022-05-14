@@ -15,7 +15,7 @@
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 12, MATERIAL_GOLD = 2)
 	price_tag = 1500
 	silenced = FALSE
-	damage_multiplier = 0.8
+	damage_multiplier = 1.0
 	recoil_buildup = 1
 	one_hand_penalty = 5
 	zoom_factor = 0.2
