@@ -3,8 +3,8 @@
 
 /mob/living/simple_animal/ameridian_tender
 	name = "ameridian tender"
-	desc = "An automaton powered by an ameridian core. It instinctively care for ameridian crystals, letting them grow and spread before harvesting them. \
-			Its unique nature mean that it doesn't get attacked by other ameridian-based lifeform or get damaged by anti-ameridian sonic weaponry."
+	desc = "An automaton powered by an ameridian core. It instinctively cares for ameridian crystals, letting them grow and spread before harvesting them. \
+			Its unique nature means that it doesn't get attacked by other ameridian-based lifeform or get damaged by anti-ameridian sonic weaponry."
 	icon = 'icons/obj/ameridian.dmi'
 	icon_state = "tender" // Sprites by Quill#6000
 	faction = "ameridian"
