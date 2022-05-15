@@ -274,7 +274,7 @@
 	..()
 	if(!stored_ammo.len)
 		return
-	if(get_dist(get_turf(src), get_turf(user) > 1))
+	if(get_dist(get_turf(src), get_turf(user)) > 1)
 		return
 	if(user.get_active_hand()) //if they're holdign somethingwe cant do it
 		return
