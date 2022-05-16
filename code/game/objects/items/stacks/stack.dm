@@ -32,6 +32,8 @@
 	var/rand_max = 0
 	var/stacktype_alt = null
 
+/// bandaid until new inventorycode
+	var/mid_delete = FALSE
 
 
 
@@ -68,7 +70,7 @@
 		//return 1
 	if (src && usr && usr.machine == src)
 		usr << browse(null, "window=stack")
-
+	mid_delete = TRUE
 
 	return ..()
 
@@ -78,6 +80,8 @@
 			return ..()
 		if(isturf(loc) && isturf(crossing.loc))
 			var/obj/item/stack/crostack = crossing
+			if(mid_delete || crostack.mid_delete)	// bandaid until new inventory code
+				return FALSE
 			src.transfer_to(crostack)
 	. = ..()
 
@@ -241,8 +245,10 @@
 	if(!uses_charge)
 		amount -= used
 		if (amount <= 0 && consumable)	// Only proceed with deletion if the item is supposed to disappear entirely after being used up
-			if(usr)
-				usr.remove_from_mob(src)
+			mid_delete = TRUE
+			if(ismob(loc))
+				var/mob/M = loc
+				M.remove_from_mob(src, null)
 			qdel(src) //should be safe to qdel immediately since if someone is still using this stack it will persist for a little while longer
 		update_icon()
 		return 1
@@ -286,6 +292,8 @@
 	if ((stacktype != S.stacktype) && !type_verified)
 		if((stacktype != S.stacktype_alt) && !type_verified)
 			return 0
+	if(mid_delete || S.mid_delete)	// bandaid until new inventory code
+		return FALSE
 	if (isnull(tamount))
 		tamount = src.get_amount()
 
@@ -305,7 +313,7 @@
 	return 0
 
 /obj/item/stack/proc/merge(obj/item/stack/S) //Merge src into S, as much as possible
-	if(QDELETED(S) || QDELETED(src) || (S == src)) //amusingly this can cause a stack to consume itself, let's not allow that.
+	if(mid_delete || S.mid_delete || (S == src)) //amusingly this can cause a stack to consume itself, let's not allow that.
 		return
 	var/transfer = get_amount()
 	if(S.uses_charge)
