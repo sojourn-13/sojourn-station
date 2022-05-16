@@ -135,6 +135,7 @@
 	else
 		var/hit_zone = M.resolve_item_attack(src, user, target_zone) // Zone targetting
 		if(hit_zone)
+			do_attack_animation(chassis)
 			apply_hit_effect(M, user, hit_zone)
 
 
