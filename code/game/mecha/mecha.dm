@@ -389,16 +389,14 @@
 	if(!target.Adjacent(src))
 		if(selected && selected.is_ranged())
 			selected.action(target)
-	else if(selected)
-		if(istype(selected, /obj/item/mecha_parts/mecha_equipment/melee_weapon))
+	else if(selected) // If target is adjacent
+		if(istype(selected, /obj/item/mecha_parts/mecha_equipment/melee_weapon) || istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon)) // This makes it so you can atleast melee with your ranged weapon
 			if(istype(target, /mob/living))
 				selected.attack(target, user, user.targeted_organ)
 			else if(istype(target, /obj))
 				selected.attack_object(target, user)
 			else if(istype(target, /turf/simulated/wall))
 				target.attackby(selected, user)
-		else if(istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon))
-			target.attackby(selected, user) // This makes it so you can atleast melee with your ranged weapon
 		else if(selected.is_melee())
 			selected.action(target)
 	else
