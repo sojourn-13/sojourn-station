@@ -138,7 +138,9 @@ List of powers in this page :
 						/obj/item/gun_upgrade/barrel/faulty,
 						/obj/item/gun_upgrade/muzzle/faulty,
 						/obj/item/gun_upgrade/mechanism/faulty,
-						/obj/item/gun_upgrade/scope/faulty
+						/obj/item/gun_upgrade/scope/faulty,
+						/obj/item/gun_upgrade/barrel/excruciator_plus,
+						/obj/item/tool_upgrade/augment/sanctifier_plus
 						)
 
 	var/obj/item/choice = input(owner, "Which modification do you want?", "Mod Choice", null) as null|anything in choices_mods
