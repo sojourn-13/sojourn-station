@@ -26,7 +26,7 @@
 						list(name = "Diamonds", cost = 400, path = /obj/item/stack/material/diamond),
 						list(name = "Metallic Hydrogen", cost = 400, path=/obj/item/stack/material/mhydrogen),
 						list(name = "Tritium", cost = 400, path = /obj/item/stack/material/tritium),
-						list(name = "Ameridian Core", cost = 1800, path=/obj/item/ameridian_core)
+						list(name = "Ameridian Core", cost = 3600, path=/obj/item/ameridian_core)
 						)
 	var/cost_modifier = 1
 

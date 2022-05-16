@@ -55,7 +55,10 @@
 	return organ_efficiency[process_define] - (organ_efficiency[process_define] * (damage / max_damage))
 
 /obj/item/organ/internal/take_damage(amount, silent)	//Deals damage to the organ itself
-	damage = between(0, src.damage + (amount * (100 / parent.limb_efficiency)), max_damage)
+	if( parent.limb_efficiency == 0)
+		damage = between(0, src.damage + (amount * 100 ), max_damage)
+	else
+		damage = between(0, src.damage + (amount * (100 / parent.limb_efficiency)), max_damage)
 	if(!(BP_IS_ROBOTIC(src)))
 		//only show this if the organ is not robotic
 		if(owner && parent && amount > 0 && !silent)

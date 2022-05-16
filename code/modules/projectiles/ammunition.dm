@@ -32,8 +32,11 @@
 /obj/item/ammo_casing/proc/expend()
 	. = BB
 	BB = null
+	if(is_caseless)
+		qdel(src)
 	set_dir(pick(cardinal)) //spin spent casings
 	update_icon()
+
 
 /obj/item/ammo_casing/attack_hand(mob/user)
 	if((src.amount > 1) && (src == user.get_inactive_hand()))
@@ -245,7 +248,8 @@
 		return
 	..()
 
-/obj/item/ammo_magazine/AltClick(var/mob/living/user)
+/obj/item/ammo_magazine/CtrlClick(mob/living/user)
+	. = ..()
 	var/obj/item/W = user.get_active_hand()
 	if(istype(W, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/C = W
@@ -265,6 +269,29 @@
 			var/obj/item/ammo_casing/AC = removeCasing()
 			if(AC)
 				user.put_in_active_hand(AC)
+
+/obj/item/ammo_magazine/AltClick(mob/living/user)
+	..()
+	if(!stored_ammo.len)
+		return
+	if(get_dist(get_turf(src), get_turf(user)) > 1)
+		return
+	if(user.get_active_hand()) //if they're holdign somethingwe cant do it
+		return
+	var/obj/item/ammo_casing/stack = removeCasing()
+	if(stack)
+		if(stored_ammo.len)
+			// We end on -1 since we already removed one
+			for(var/i = 1, i <= stack.maxamount - 1, i++)
+				if(!stored_ammo.len)
+					break
+				var/obj/item/ammo_casing/AC = removeCasing()
+				if(!stack.mergeCasing(AC, null, user, noIconUpdate = TRUE))
+					insertCasing(AC)
+					break
+		stack.update_icon()
+		user.put_in_active_hand(stack)
+	return
 
 /obj/item/ammo_magazine/proc/insertCasing(var/obj/item/ammo_casing/C)
 	if(!istype(C))

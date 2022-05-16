@@ -239,8 +239,8 @@
 	icon_state = "fireball"
 	damage_types = list(BURN = 16)
 	check_armour = ARMOR_MELEE
-	var/life = 3
-	var/fire_stacks = 1 //10 pain a fire proc through ALL armor!
+	kill_count = 3
+	var/fire_stacks = 3
 
 /obj/item/projectile/flamer_lob/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -249,21 +249,15 @@
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
 
-/obj/item/projectile/flamer_lob/New()
-	.=..()
-
 /obj/item/projectile/flamer_lob/Move(atom/A)
-	.=..()
-	life--
+	..()
 	var/turf/T = get_turf(src)
 	if(T)
 		new/obj/effect/decal/cleanable/liquid_fuel(T, 1 , 1)
 		T.hotspot_expose((T20C*2) + 380,500)
-	if(!life)
-		qdel(src)
 
 /obj/item/projectile/flamer_lob/flamethrower
-	life = 5
+	kill_count = 5
 
 /obj/item/projectile/bullet/flare
 	name = "flare"
@@ -331,7 +325,7 @@
 	name = "sonic bolt"
 	icon_state = "energy2"
 	damage_types = list(BRUTE = 10)
-	armor_penetration = 90 // It is a sound-wave
+	armor_penetration = 30 // It is a sound-wave liquifing organs I guess
 	kill_count = 7
 	check_armour = ARMOR_ENERGY
 	var/golem_damage_bonus = 20 // Damage multiplier against ameridians.

@@ -445,9 +445,9 @@
 
 	if(stat & NOPOWER)
 		return
-	else if(istype(I, /obj/item/clothing/suit/space))
+	else if(istype(I, /obj/item/clothing/suit))
 		load(I, user, LOAD_SLOT_SUIT)
-	else if(istype(I, /obj/item/clothing/head/helmet))
+	else if(istype(I, /obj/item/clothing/head))
 		load(I, user, LOAD_SLOT_HELMET)
 	else if(istype(I, /obj/item/clothing/mask))
 		load(I, user, LOAD_SLOT_MASK)
