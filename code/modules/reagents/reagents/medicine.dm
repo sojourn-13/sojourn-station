@@ -136,7 +136,6 @@
 	holder.remove_reagent("blattedin", 0.4 * effect_multiplier) // Massive complains about its slow metabolization rate + poisoning actually working, plus dylo originally purged it, so I'm bringing it back. - Seb
 
 /datum/reagent/medicine/dylovene/overdose(var/mob/living/carbon/M, var/alien)
-	. = ..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/kidney/K = H.random_organ_by_process(OP_KIDNEYS)
