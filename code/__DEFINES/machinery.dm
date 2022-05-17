@@ -44,7 +44,7 @@ var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called
 #define NETWORK_CEV_ERIS "Nadzedha Colony"
 #define NETWORK_MEDICAL "Medical"
 #define NETWORK_MERCENARY "MercurialNet"
-#define NETWORK_MINE "Prospector Shuttle - The Wilbur"
+#define NETWORK_MINE "Prospector Shuttle - The Rocinante"
 #define NETWORK_RESEARCH "Research"
 #define NETWORK_RESEARCH_OUTPOST "Research Outpost"
 #define NETWORK_ROBOTS "Robots"
