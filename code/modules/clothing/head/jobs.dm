@@ -158,6 +158,30 @@
 	desc = "A faded black beret with its old SolFed badge replaced with that of the Blackshield."
 	icon_state = "beret_militia"
 
+/obj/item/clothing/head/rank/trooper/beret/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Standard"] = "beret_militia"
+	options["Olive drab"] = "beret_militia_drab"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your beret's style into [choice] color.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/head/rank/trooper/cap
 	name = "blackshield cap"
 	desc = "A faded black cap with the badge of the Blackshield."
@@ -176,7 +200,31 @@
 /obj/item/clothing/head/rank/corpsman/beret
 	name = "Corpsman beret"
 	desc = "A faded black beret with the badge of a Medical Corpsman."
-	icon_state = "beret_militia"
+	icon_state = "corpsman" // New hat, new alt styles. - Seb
+
+/obj/item/clothing/head/rank/corpsman/beret/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Standard"] = "corpsman"
+	options["Olive drab"] = "corpsman_drab"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your beret's style into [choice] colors.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/rank/armorer/cap
 	name = "Sergeant's cap"
