@@ -163,7 +163,7 @@
 	icon_state = "escpodwall1"
 
 /turf/simulated/shuttle/wall/mining
-	name = "Mining Barge"
+	name = "The Rocinante"
 	icon = 'icons/turf/shuttlemining.dmi'
 	icon_state = "11,23"
 
