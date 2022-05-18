@@ -225,7 +225,6 @@ note dizziness decrements automatically in the mob's Life() proc.
 
 /obj/mecha/do_attack_animation(atom/A, var/use_item = TRUE)
 	..()
-	is_floating = 0 // If we were without gravity, the bouncing animation got stopped, so we make sure we restart the bouncing after the next movement.
 
 	if (!use_item)
 		//The use item flag governs whether or not we'll add a little weapon image to the animation
