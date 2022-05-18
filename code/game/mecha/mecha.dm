@@ -887,7 +887,8 @@ assassination method if you time it right*/
 	if(prob(src.deflect_chance))
 		severity++
 		src.log_append_to_last("Armor saved, changing severity to [severity].")
-	// This formula does the same raw damage (aside from one-shotting) as the previous formula against a Durand, but deals more final damage due to being unmitigated by damage resistance.
+	// This formula is designed to one-shot anything less armored than a Phazon taking a severity 1 explosion.
+	// This formula also does the same raw damage (aside from one-shotting) as the previous formula against a Durand, but deals more final damage due to being unmitigated by damage resistance.
 	var/damage_proportion = 1 / max(1, (severity + max(0, armor_level - 2)))
 	src.take_flat_damage(initial(src.health) * damage_proportion)
 	src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT),1)
