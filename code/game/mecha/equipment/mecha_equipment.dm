@@ -141,7 +141,7 @@
 
 	// Mech equipment delay, not going to use click speed for mechs, I don't think it would be too balanced - Wizard
 	user.setClickCooldown(equip_cooldown)
-	user.do_attack_animation(M)
+	chassis.do_attack_animation(M)
 
 	return TRUE
 
