@@ -124,6 +124,7 @@
 	reagent_state = LIQUID
 	color = "#00A000"
 	scannable = 1
+	overdose = REAGENTS_OVERDOSE
 
 /datum/reagent/medicine/dylovene/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
