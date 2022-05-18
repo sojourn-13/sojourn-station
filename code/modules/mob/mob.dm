@@ -18,8 +18,6 @@
 		handler.host = null
 		handler.mob = null
 
-		movement_handlers -= handler
-
 	return ..()
 
 /mob/get_fall_damage(var/turf/from, var/turf/dest)
