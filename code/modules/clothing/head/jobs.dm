@@ -124,7 +124,7 @@
 /obj/item/clothing/head/beret/german
 	name = "brown beret"
 	desc = "A light brown beret."
-	icon_state = "beretblack"
+	icon_state = "germanberet"
 
 /obj/item/clothing/head/seccap
 	name = "blue patrol cap"
@@ -187,11 +187,6 @@
 	desc = "A faded black cap with the badge of the Blackshield."
 	icon_state = "milsoft"
 
-/obj/item/clothing/head/rank/trooper/radiohat
-	name = "blackshield radio cap"
-	desc = "A faded black cap with the badge of the Blackshield. Comes attached with a industrial radio headset for long-range communiction."
-	icon_state = "radiohat"
-
 /obj/item/clothing/head/rank/corpsman/cap
 	name = "Corpsman cap"
 	desc = "A faded black cap with the badge of a Medical Corpsman."
@@ -234,7 +229,60 @@
 /obj/item/clothing/head/rank/armorer/beret
 	name = "Sergeant's beret"
 	desc = "A faded black beret with the badge of a Blackshield Sergeant."
-	icon_state = "beret_militia"
+	icon_state = "sarge_beret"
+
+/obj/item/clothing/head/rank/armorer/beret/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Standard"] = "sarge_beret"
+	options["Olive drab"] = "sarge_beret_drab"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your beret's style into [choice] colors.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/head/rank/armorer/pilotka
+	name = "Sergeant's pilotka"
+	desc = "A folded side cap with the badge of a Blackshield Sergeant."
+	icon_state = "sargecap"
+
+/obj/item/clothing/head/rank/armorer/pilotka/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Standard"] = "sargecap"
+	options["Olive drab"] = "sargecap_olive"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your headgear's style into [choice] colors.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/rank/milcom
 	name = "blackshield commander's cap"
@@ -289,7 +337,7 @@
 	icon_state = "greenutility"
 	item_state = "greenutility"
 
-/obj/item/clothing/head/rank/fatigue/grey
+/obj/item/clothing/head/rank/fatigue
 	name = "grey utility cover"
 	desc = "A grey camo cover, fit for a soldier. The markings of a removed patch linger."
 	icon_state = "greyutility"

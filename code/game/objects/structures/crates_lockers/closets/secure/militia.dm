@@ -64,6 +64,7 @@
 	new /obj/item/clothing/head/helmet/ballistic/sergeant(src)
 	new /obj/item/clothing/head/rank/armorer/beret(src)
 	new /obj/item/clothing/head/rank/armorer/cap(src)
+	new /obj/item/clothing/head/rank/armorer/pilotka(src)
 	new /obj/item/clothing/accessory/cape/sergeant_cape(src)
 	new /obj/item/clothing/under/rank/armorer(src)
 	new /obj/item/storage/belt/webbing/black(src)

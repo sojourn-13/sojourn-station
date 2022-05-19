@@ -577,34 +577,21 @@
 
 /obj/item/clothing/accessory/bscloak
 	name = "Blackshield longcoat"
-	desc = "A simple, durable longcoat intended to be worn over armored vests for protection in inclement weather. Comes in many styles."
+	desc = "A simple, durable longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
 	icon_state = "bs_longcoat"
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
-/obj/item/clothing/accessory/bscloak/verb/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
+/obj/item/clothing/accessory/bscloak/tan
+	name = "Blackshield tan longcoat"
+	desc = "A simple, durable tan longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
+	icon_state = "bs_longcoat_tan"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER // Made them children of longcoat so should inherit but juuust in case...
 
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["Blackshield Standard"] = "bs_longcoat"
-	options["Drab Green"] = "bs_longcoat_green"
-	options["Desert Tan"] = "bs_longcoat_tan"
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		item_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] colors.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
+/obj/item/clothing/accessory/bscloak/olive
+	name = "Blackshield tan longcoat"
+	desc = "A simple, durable drab longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
+	icon_state = "bs_longcoat_green"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /*Scarves*/
 

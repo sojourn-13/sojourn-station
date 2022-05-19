@@ -56,10 +56,11 @@
 	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/blackcoat
-	display_name = "longcoat, blackshield"
+	display_name = "longcoat selection, blackshield"
 	path = /obj/item/clothing/accessory/bscloak
 	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	sort_category = "Faction: Security"
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/factionsecurity/capfield
 	display_name = "cap, field"
@@ -87,9 +88,22 @@
 	allowed_roles = list("Supply Specialist", "Sergeant")
 	sort_category = "Faction: Security"
 
+/datum/gear/factionsecurity/sidecapsarge
+	display_name = "pilotka, sergeant"
+	path = /obj/item/clothing/head/rank/armorer/pilotka
+	allowed_roles = list("Supply Specialist", "Sergeant")
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/captrooper
 	display_name = "cap, blackshield"
 	path = /obj/item/clothing/head/rank/trooper/cap
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_head
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/radiohat // THINK FAST CHUCKLENUTS!
+	display_name = "radio cap, blackshield"
+	path = /obj/item/device/radio/headset/radiohat_blackshield
 	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_head
 	sort_category = "Faction: Security"
