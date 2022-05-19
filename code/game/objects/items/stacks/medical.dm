@@ -253,7 +253,8 @@
 	disinfectant  = TRUE
 	amount = 8
 	max_amount = 8
-	heal_brute = 5
+	heal_brute = 10
+	heal_toxin = 5
 	price_tag = 25
 
 /obj/item/stack/medical/ointment
