@@ -68,23 +68,25 @@ datum/pipeline
 				if(result.len>0)
 					for(var/obj/machinery/atmospherics/pipe/item in result)
 						if(!members.Find(item))
-							members += item
-							possible_expansions += item
+							if(!((QDELETED(item) || (QDESTROYING(item)))))
+								members += item
+								possible_expansions += item
 
-							volume += item.volume
-							item.parent = src
+								volume += item.volume
+								item.parent = src
 
-							alert_pressure = min(alert_pressure, item.alert_pressure)
+								alert_pressure = min(alert_pressure, item.alert_pressure)
 
-							if(item.air_temporary)
-								air.merge(item.air_temporary)
-								qdel(item.air_temporary)
-								item.air_temporary = null
+								if(item.air_temporary)
+									air.merge(item.air_temporary)
+									qdel(item.air_temporary)
+									item.air_temporary = null
 
 						edge_check--
 
 				if(edge_check>0)
-					edges += borderline
+					if(!((QDELETED(borderline) || (QDESTROYING(borderline)))))
+						edges += borderline
 
 				possible_expansions -= borderline
 
@@ -93,7 +95,10 @@ datum/pipeline
 	proc/network_expand(datum/pipe_network/new_network, obj/machinery/atmospherics/pipe/reference)
 
 		if(new_network.line_members.Find(src))
-			return 0
+			return FALSE
+
+		if (QDELETED(src) || (QDESTROYING(src))) //i hope this doesnt break shit
+			return FALSE
 
 		new_network.line_members += src
 
@@ -104,7 +109,7 @@ datum/pipeline
 				if(!istype(result,/obj/machinery/atmospherics/pipe) && (result!=reference))
 					result.network_expand(new_network, edge)
 
-		return 1
+		return TRUE
 
 	proc/return_network(obj/machinery/atmospherics/reference)
 		if(!network)
