@@ -14,8 +14,9 @@
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 12, MATERIAL_GOLD = 2)
 	price_tag = 1500
+	fire_delay = 7.5
 	silenced = FALSE
-	damage_multiplier = 1.0
+	damage_multiplier = 0.6
 	recoil_buildup = 1
 	one_hand_penalty = 5
 	zoom_factor = 0.2
@@ -24,10 +25,12 @@
 	charge_cost = 40
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
-		WEAPON_NORMAL,
-		BURST_3_ROUND,
-		FULL_AUTO_600,
-		list(mode_name = "Infared overclock",    mode_desc = "Invisible, quieter IR beams that bake the target from the inside.",   mode_type = /datum/firemode/automatic, charge_cost = 80, fire_delay = 4, icon="burst", projectile_type = /obj/item/projectile/beam/infrared, silenced = TRUE)
+		list(mode_name = "focused",     mode_desc = "Fire a focused, higher damage beam", burst = 1, fire_delay = 7.5, damage_mult_add = 0.4, move_delay=null, icon="semi", projectile_type = /obj/item/projectile/beam, silenced = FALSE),
+		list(mode_name = "slow auto",    mode_desc = "A more controllable automatic firerate",   mode_type = /datum/firemode/automatic, fire_delay = 4, icon="burst", projectile_type = /obj/item/projectile/beam, silenced = FALSE),
+		list(mode_name = "full auto",    mode_desc = "Higher volume automatic fire",   mode_type = /datum/firemode/automatic, fire_delay = 1.5, icon="auto", projectile_type = /obj/item/projectile/beam, silenced = FALSE),
+		list(mode_name = "IR focused",     mode_desc = "Fire invisible, quieter focused IR beams", burst = 1, fire_delay = 7.5, damage_mult_add = 0.4, move_delay=null, icon="semi", projectile_type = /obj/item/projectile/beam/infrared, silenced = TRUE),
+		list(mode_name = "IR slow auto",    mode_desc = "Invisible, quieter IR beams at a more controllable automatic firerate",   mode_type = /datum/firemode/automatic, fire_delay = 4, icon="burst", projectile_type = /obj/item/projectile/beam/infrared, silenced = TRUE),
+		list(mode_name = "bake",    mode_desc = "Bake targets in infrared radiation",   mode_type = /datum/firemode/automatic, fire_delay = 1.5, icon="auto", projectile_type = /obj/item/projectile/beam/infrared, silenced = TRUE)
 		)
 	serial_type = "AG"
 

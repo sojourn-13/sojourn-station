@@ -93,21 +93,15 @@
 // Performs a linear interpolation between a and b.
 // Note that amount=0 returns a, amount=1 returns b, and
 // amount=0.5 returns the mean of a and b.
-#define LERP(a, b, amount) ( amount ? ((a) + ((b) - (a)) * (amount)) : a )
+// amount outside of [0, 1] produces values outside of [a, b] linearly.
+#define LERP(a, b, amount) ((a) + ((b) - (a)) * (amount))
+// Inverse of the linear interpolation given the same a and b.
+#define UNLERP(amount, a, b) (((amount) - (a)) / ((b) - (a)))
+//
+#define REMAP(amount, a1, b1, a2, b2) (((amount) - (a1)) / ((b1) - (a1)) * ((b2) - (a2)) + (a2))
 
 // Returns the nth root of x.
 #define ROOT(n, x) ((x) ** (1 / (n)))
-
-// Proc concept stolen from https://www.arduino.cc/reference/en/language/functions/math/map/
-// It convert a number from one range to another range.
-/*
-Re-maps a number from one range to another. That is, a value of fromLow would get mapped to toLow, a value of fromHigh to toHigh, values in-between to values in-between, etc.
-
-Does not constrain values to within the range, because out-of-range values are sometimes intended and useful.
-
-Note that the "lower bounds" of either range may be larger or smaller than the "upper bounds" so the map() function may be used to reverse a range of numbers, for example
-*/
-#define MAP(value, fromLow, fromHigh, toLow, toHigh) (round((value - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow))
 
 // The quadratic formula. Returns a list with the solutions, or an empty list
 // if they are imaginary.

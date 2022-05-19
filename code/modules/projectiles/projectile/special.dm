@@ -325,7 +325,7 @@
 	name = "sonic bolt"
 	icon_state = "energy2"
 	damage_types = list(BRUTE = 10)
-	armor_penetration = 90 // It is a sound-wave
+	armor_penetration = 30 // It is a sound-wave liquifing organs I guess
 	kill_count = 7
 	check_armour = ARMOR_ENERGY
 	var/golem_damage_bonus = 20 // Damage multiplier against ameridians.

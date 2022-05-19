@@ -87,16 +87,16 @@
 	desc = "The standard Marshal box kit containing a Armstrong lever action rifle, a repeating rifle chambered in .40 Magnum."
 
 	populate_contents()
-		new /obj/item/gun/projectile/boltgun/lever
-		new /obj/item/ammo_magazine/ammobox/magnum_40
-		new /obj/item/ammo_magazine/ammobox/magnum_40/rubber
+		new /obj/item/gun/projectile/boltgun/lever(src)
+		new /obj/item/ammo_magazine/ammobox/magnum_40(src)
+		new /obj/item/ammo_magazine/ammobox/magnum_40/rubber(src)
 
 /obj/item/storage/box/m_kit/tommygun
 	name = "Thompson SMG Kit"
 	desc = "The standard Marshal box kit containing a Thompson submachinegun, a powerhouse of old Sol-based police and gangsters alike."
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/thompson
+		new /obj/item/gun/projectile/automatic/thompson(src)
 		new /obj/item/ammo_magazine/smg_magnum_40/rubber(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)

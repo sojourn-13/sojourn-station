@@ -214,6 +214,9 @@
 	new /obj/item/clothing/suit/storage/armor/commander/marshal_coat(src)
 	new /obj/item/clothing/suit/storage/armor/commander/marshal_coat(src)
 	new /obj/item/clothing/suit/storage/armor/commander/marshal_coat(src)
+	new /obj/item/clothing/under/rank/bdu/marshal(src)
+	new /obj/item/clothing/under/rank/bdu/marshal(src)
+	new /obj/item/clothing/under/rank/bdu/marshal(src)
 
 /obj/structure/closet/wardrobe/militia
 	name = "blackshield wardrobe"

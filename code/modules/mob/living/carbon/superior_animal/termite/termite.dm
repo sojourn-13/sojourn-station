@@ -40,6 +40,10 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	fire_verb = "spits"
 	see_in_dark = 10
 
+	fleshcolor = "#7C90B8"
+	bloodcolor = "#7C90B8"
+
+
 	destroy_surroundings = TRUE
 	friendly_to_colony = FALSE
 	colony_friend = FALSE

@@ -832,7 +832,7 @@
 	result_amount = 4 //Is is dence
 
 /datum/chemical_reaction/drinks/nior
-	result = "nior"
+	result = "noir"
 	required_reagents = list("whiske_rocks" = 2, "rum" = 1)
 	result_amount = 3 //Is is dence
 

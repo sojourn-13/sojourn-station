@@ -17,6 +17,9 @@
 	fire_verb = "spits"
 	see_in_dark = 10
 
+	fleshcolor = "#7C90B8"
+	bloodcolor = "#7C90B8"
+
 	destroy_surroundings = TRUE
 	friendly_to_colony = FALSE
 	colony_friend = FALSE
@@ -105,7 +108,7 @@
 	name = "miner termite"
 	desc = "A miner termite that has been hardened by the very surface beneath your feet."
 	icon_state = "smertnik_termite" // Sprites made by Polyushko#0323
-	icon_dead = "smertnik_gore"
+	icon_dead = "smertnik_gore_exploded"
 	ranged = TRUE
 	comfy_range = 6 //How far we like to be form are targets when we fire!
 	projectiletype = /obj/item/projectile/bullet/rock
