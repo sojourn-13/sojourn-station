@@ -25,9 +25,10 @@
 		target.attached_meter = src
 
 /obj/machinery/meter/Destroy()
-	target.attached_meter = null
 
-	target = null
+	if(target)
+		target.attached_meter = null
+		target = null
 
 	. = ..()
 
