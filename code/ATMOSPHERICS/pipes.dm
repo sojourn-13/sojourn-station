@@ -1,5 +1,8 @@
 /obj/machinery/atmospherics/pipe
 
+	/// Used for destroying meter references
+	var/obj/machinery/meter/attached_meter
+
 	var/datum/gas_mixture/air_temporary // used when reconstructing a pipeline that broke
 	var/datum/pipeline/parent
 	var/volume = 0
@@ -35,35 +38,28 @@
 	return 1
 
 /obj/machinery/atmospherics/pipe/return_air()
-	if(!parent)
-		parent = new /datum/pipeline()
-		parent.build_pipeline(src)
-
-	return parent.air
+	if(pipeline_check())
+		return parent.air
 
 /obj/machinery/atmospherics/pipe/build_network()
-	if(!parent)
-		parent = new /datum/pipeline()
-		parent.build_pipeline(src)
-
-	return parent.return_network()
+	if(pipeline_check())
+		return parent.return_network()
 
 /obj/machinery/atmospherics/pipe/network_expand(datum/pipe_network/new_network, obj/machinery/atmospherics/pipe/reference)
-	if(!parent)
-		parent = new /datum/pipeline()
-		parent.build_pipeline(src)
-
-	return parent.network_expand(new_network, reference)
+	if(pipeline_check())
+		return parent.network_expand(new_network, reference)
 
 /obj/machinery/atmospherics/pipe/return_network(obj/machinery/atmospherics/reference)
-	if (QDELETED(src) || QDESTROYING(src)) //i also hope this doesnt break shit
-		return
+	if(pipeline_check())
+		return parent.return_network(reference)
 
-	if(!parent)
+/obj/machinery/atmospherics/pipe/proc/pipeline_check()
+	if (QDELETED(src) || QDESTROYING(src))
+		return FALSE
+
+	if (!parent)
 		parent = new /datum/pipeline()
 		parent.build_pipeline(src)
-
-	return parent.return_network(reference)
 
 /obj/machinery/atmospherics/pipe/Destroy()
 
@@ -71,6 +67,10 @@
 	if(air_temporary)
 		loc.assume_air(air_temporary)
 		QDEL_NULL(air_temporary)
+
+	if (attached_meter)
+		attached_meter.target = null
+		attached_meter = null
 
 	. = ..()
 
