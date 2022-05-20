@@ -88,12 +88,6 @@
 	allowed_roles = list("Supply Specialist", "Sergeant")
 	sort_category = "Faction: Security"
 
-/datum/gear/factionsecurity/sidecapsarge
-	display_name = "pilotka, sergeant"
-	path = /obj/item/clothing/head/rank/armorer/pilotka
-	allowed_roles = list("Supply Specialist", "Sergeant")
-	sort_category = "Faction: Security"
-
 /datum/gear/factionsecurity/captrooper
 	display_name = "cap, blackshield"
 	path = /obj/item/clothing/head/rank/trooper/cap

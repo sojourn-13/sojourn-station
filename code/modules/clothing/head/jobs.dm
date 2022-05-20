@@ -255,35 +255,6 @@
 		usr.update_action_buttons()
 		return 1
 
-/obj/item/clothing/head/rank/armorer/pilotka
-	name = "Sergeant's pilotka"
-	desc = "A folded side cap with the badge of a Blackshield Sergeant."
-	icon_state = "sargecap"
-
-/obj/item/clothing/head/rank/armorer/pilotka/verb/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["Blackshield Standard"] = "sargecap"
-	options["Olive drab"] = "sargecap_olive"
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		item_state = options[choice]
-		to_chat(M, "You adjusted your headgear's style into [choice] colors.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
 /obj/item/clothing/head/rank/milcom
 	name = "blackshield commander's cap"
 	desc = "A crisp peaked cap signifying the distinguished martial position of the Commander of the Blackshield."
