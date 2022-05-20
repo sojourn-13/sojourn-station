@@ -77,6 +77,7 @@
 	desc = "A bulked up and modified version of the kalashnikov made to fire 20mm shotgun slugs, similar to the sol federation SBAW design. Uses 20mm in SBAW magazines."
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1)
 	price_tag = 800
+	damage_multiplier = 1.0
 	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/ak47/akl

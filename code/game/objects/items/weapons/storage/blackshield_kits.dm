@@ -168,11 +168,10 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/shotgun/pump(src)
-		new /obj/item/ammo_casing/shotgun/prespawned(src)
-		new /obj/item/ammo_casing/shotgun/prespawned(src)
-		new /obj/item/ammo_casing/shotgun/prespawned(src)
-		new /obj/item/ammo_casing/shotgun/prespawned(src)
-		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/bs_kit/rushing_bull
@@ -181,11 +180,10 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/bull_autoshotgun(src)
-		new /obj/item/ammo_casing/shotgun/prespawned(src)
-		new /obj/item/ammo_casing/shotgun/prespawned(src)
-		new /obj/item/ammo_casing/shotgun/prespawned(src)
-		new /obj/item/ammo_casing/shotgun/prespawned(src)
-		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 // Side-arms Kits

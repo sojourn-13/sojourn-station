@@ -940,6 +940,33 @@
 	. = ..()
 	update_icon()
 
+//////// SHOTGUN SPEEDLOADERS ////////
+/obj/item/ammo_magazine/speed_loader_shotgun
+	name = "20mm loader tube (sabot slug)"
+	desc = "A 6 round speed loader marked for 20mm Shells."
+	icon = 'icons/obj/ammo_speed.dmi'
+	icon_state = "shot_tube_s"
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun
+	matter = list(MATERIAL_STEEL = 8)
+	max_ammo = 6
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/speed_loader_shotgun/empty
+	name = "20mm loader tube (shells)"
+	initial_ammo = 0
+	icon_state = "shot_tube"
+
+/obj/item/ammo_magazine/speed_loader_shotgun/pellet
+	name = "20mm loader tube (buckshot)"
+	icon_state = "shot_tube_l"
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+
+/obj/item/ammo_magazine/speed_loader_shotgun/beanbag
+	name = "20mm loader tube (beanbag)"
+	icon_state = "shot_tube_r"
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+
 ////other////
 
 /obj/item/ammo_magazine/caps
@@ -974,14 +1001,15 @@
 
 /obj/item/ammo_magazine/m12
 	name = "20mm ammo drum (sabot slug)"
-	desc = "A 20mm ammo drum for the Pug Shotgun or Payload Rifle, holds 8 shells"
+	desc = "A 20mm ammo drum for the Pug Shotgun or Payload Rifle, holds 15 shells"
 	icon_state = "m12_hv"
+	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_DRUM
 	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_STEEL = 2)
-	max_ammo = 8
+	max_ammo = 15
 	ammo_color = "-hv"
 
 /obj/item/ammo_magazine/m12/update_icon()
@@ -1015,6 +1043,7 @@
 	name = "20mm SBAW magazine (sabot slug)"
 	desc = "A 10 magazine for 20mm shotgun shells."
 	icon_state = "sbaw"
+	w_class = ITEM_SIZE_SMALL
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_DRUM
 	caliber = CAL_SHOTGUN

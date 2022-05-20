@@ -22,9 +22,9 @@
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 600
-	penetration_multiplier = 2
+	penetration_multiplier = 1.15 //2 ?????????????????????????????????????
 	pierce_multiplier = 2
-	damage_multiplier = 0.6 //Pug has 0.7 do to its fire normal modes
+	damage_multiplier = 0.7
 	recoil_buildup = 13
 	one_hand_penalty = 15 //full sized shotgun level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
@@ -67,5 +67,3 @@
 	init_firemodes = list(
 		list(mode_name="semiauto", mode_desc="Shoot once per pull after chambering", burst=1, fire_delay=5, move_delay=null, icon="semi")
 		)
-
-

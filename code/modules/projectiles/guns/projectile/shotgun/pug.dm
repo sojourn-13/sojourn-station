@@ -17,14 +17,14 @@
 	unload_sound = 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound = 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/ltrifle_cock.ogg'
-	damage_multiplier = 0.8
+	damage_multiplier = 0.85
 	recoil_buildup = 3.25
 	one_hand_penalty = 20 //automatic shotgun level
 	serial_type = "SA"
 
 	//while also preserving ability to shoot as fast as you can click and maintain recoil good enough
 	init_firemodes = list(
-		FULL_AUTO_400, //0.7 damage_multiplier
+		FULL_AUTO_300_NOLOSS, //Cmon it's literally an autoshotgun
 		SEMI_AUTO_NODELAY
 		)
 

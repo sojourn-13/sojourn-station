@@ -57,22 +57,22 @@
 /datum/design/autolathe/ammo/m12beanbag
 	name = "ammo drum (20mm beanbag)"
 	build_path = /obj/item/ammo_magazine/m12/beanbag
-	materials = list(MATERIAL_STEEL = 8)
+	materials = list(MATERIAL_STEEL = 14)
 
 /datum/design/autolathe/ammo/m12pellet
 	name = "ammo drum (20mm pellet)"
 	build_path = /obj/item/ammo_magazine/m12/pellet
-	materials = list(MATERIAL_STEEL = 8)
+	materials = list(MATERIAL_STEEL = 14)
 
 /datum/design/autolathe/ammo/m12slug
 	name = "ammo drum (20mm slug)"
 	build_path = /obj/item/ammo_magazine/m12
-	materials = list(MATERIAL_STEEL = 8)
+	materials = list(MATERIAL_STEEL = 14)
 
 /datum/design/autolathe/ammo/sbaw_slug
 	name = "SBAW magazine (20mm slug)"
 	build_path = /obj/item/ammo_magazine/sbaw
-	materials = list(MATERIAL_STEEL = 10) //Unlike the pug this one holds 10
+	materials = list(MATERIAL_STEEL = 10)
 
 /datum/design/autolathe/ammo/sbaw_pellet
 	name = "SBAW magazine (20mm buckshot)"
