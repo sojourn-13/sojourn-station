@@ -88,7 +88,7 @@ SUBSYSTEM_DEF(vote)
 /datum/controller/subsystem/vote/proc/interface(client/C)
 	if(!C)
 		return
-	var/data = "<html><head><title>Voting Panel</title></head><body>"
+	var/data = "<html><meta charset=\"UTF-8\"><head><title>Voting Panel</title></head><body>"
 
 	var/admin = check_rights(R_ADMIN, FALSE, C)
 
