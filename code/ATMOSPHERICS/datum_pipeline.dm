@@ -92,6 +92,10 @@ datum/pipeline
 
 		air.volume = volume
 
+		if (QDELETED(base) || QDESTROYING(base))
+			members -= base
+			edges -= base
+
 	proc/network_expand(datum/pipe_network/new_network, obj/machinery/atmospherics/pipe/reference)
 
 		if(new_network.line_members.Find(src))
@@ -107,7 +111,8 @@ datum/pipeline
 		for(var/obj/machinery/atmospherics/pipe/edge in edges)
 			for(var/obj/machinery/atmospherics/result in edge.pipeline_expansion())
 				if(!istype(result,/obj/machinery/atmospherics/pipe) && (result!=reference))
-					result.network_expand(new_network, edge)
+					if (!(QDELETED(edge) || QDESTROYING(edge)))
+						result.network_expand(new_network, edge)
 
 		return TRUE
 
