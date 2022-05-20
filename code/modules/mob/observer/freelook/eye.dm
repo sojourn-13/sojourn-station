@@ -83,7 +83,7 @@
 	var/max_sprint = 70
 
 	var/delay = 0.5
-	set_glide_size(DELAY2GLIDESIZE(delay))
+	set_glide_size(DELAY_TO_GLIDE_SIZE(delay))
 
 	if (cooldown && cooldown < world.timeofday)
 		sprint = initial

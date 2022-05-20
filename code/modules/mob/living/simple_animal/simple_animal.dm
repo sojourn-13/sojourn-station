@@ -324,7 +324,7 @@
 							var/moving_to = 0 // otherwise it always picks 4, fuck if I know.   Did I mention fuck BYOND
 							moving_to = pick(cardinal)
 							set_dir(moving_to)			//How about we turn them the direction they are moving, yay.
-							step_glide(src, moving_to, DELAY2GLIDESIZE(0.5 SECONDS))
+							step_glide(src, moving_to, DELAY_TO_GLIDE_SIZE(0.5 SECONDS))
 							turns_since_move = 0
 
 	return TRUE
@@ -513,7 +513,7 @@
 		stat(null, "Health: [round((health / maxHealth) * 100)]%")
 
 /mob/living/simple_animal/death(gibbed, deathmessage = "dies!")
-	walk_to(src,0)
+	SSmove_manager.stop_looping()
 	movement_target = null
 	icon_state = icon_dead
 	density = 0
@@ -619,7 +619,7 @@
 				foodtarget = 0
 				stop_automated_movement = 0
 			if( !movement_target || !(movement_target.loc in oview(src, 7)) )
-				walk_to(src,0)
+				SSmove_manager.stop_looping()
 				movement_target = null
 				foodtarget = 0
 				stop_automated_movement = 0
@@ -650,9 +650,9 @@
 				stop_automated_movement = 1
 
 				if (istype(movement_target.loc, /turf))
-					walk_to(src,movement_target,0, seek_move_delay)//Stand ontop of food
+					SSmove_manager.move_to(src,movement_target,0, seek_move_delay)//Stand ontop of food
 				else
-					walk_to(src,movement_target.loc,1, seek_move_delay)//Don't stand ontop of people
+					SSmove_manager.move_to(src,movement_target.loc,1, seek_move_delay)//Don't stand ontop of people
 
 
 
@@ -714,7 +714,7 @@
 		stat = UNCONSCIOUS
 		canmove = FALSE
 		wander = FALSE
-		walk_to(src,0)
+		SSmove_manager.stop_looping()
 		update_icons()
 
 //Wakes the mob up from sleeping

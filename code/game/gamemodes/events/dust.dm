@@ -124,7 +124,7 @@ The "dust" will damage the hull of the station causin minor hull breaches.
 		src.y = starty
 		src.z = z_level
 		spawn(0)
-			walk_towards(src, goal, 1)
+			SSmove_manager.move_to(src, goal, 1)
 		return
 
 	touch_map_edge()
@@ -149,7 +149,7 @@ The "dust" will damage the hull of the station causin minor hull breaches.
 
 				life--
 				if(life <= 0)
-					walk(src,0)
+					SSmove_manager.stop_looping()
 					qdel(src)
 					return 0
 		return

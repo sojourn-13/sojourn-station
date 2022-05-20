@@ -45,7 +45,7 @@
 	..()
 	if(hive_ender)
 		delhivetech()
-	walk(src, 0)
+	SSmove_manager.stop_looping()
 
 /mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/proc/telenode()
 	var/list/atom/NODES = list()
@@ -67,7 +67,7 @@
 
 	. = ..()
 	if(!.)
-		walk(src, 0)
+		SSmove_manager.stop_looping()
 		return 0
 	if(client)
 		return 0
@@ -87,7 +87,7 @@
 /mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/OpenFire()
 	anger_modifier = CLAMP(((maxHealth - health)/50),0,20)
 	ranged_cooldown = world.time + 120
-	walk(src, 0)
+	SSmove_manager.stop_looping()
 	telegraph()
 	spawn(rand(megafauna_min_cooldown, megafauna_max_cooldown))
 		if(prob(50))

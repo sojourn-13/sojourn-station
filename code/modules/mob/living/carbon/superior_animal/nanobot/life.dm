@@ -11,9 +11,9 @@
 			if(Adjacent(patient))
 				if(!currently_healing)
 					UnarmedAttack(patient)
-				walk_to(src, 0) // Stop walking
+				SSmove_manager.stop_looping() // Stop walking
 			else
-				walk_to(src, patient, 1, move_to_delay)
+				SSmove_manager.move_to(src, patient, 1, move_to_delay)
 		else
 			for(var/mob/friendtest in view(7,src)) // Time to find a patient!
 				if(valid_healing_target(friendtest))

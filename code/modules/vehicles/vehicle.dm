@@ -71,7 +71,7 @@
 		//Dummy loads do not have to be moved as they are just an overlay
 		//See load_object() proc in cargo_trains.dm for an example
 		if(load && !istype(load, /datum/vehicle_dummy_load))
-			load.forceMove(loc, glide_size_override=DELAY2GLIDESIZE(move_delay))
+			load.forceMove(loc, glide_size_override=DELAY_TO_GLIDE_SIZE(move_delay))
 			load.set_dir(dir)
 
 		return 1

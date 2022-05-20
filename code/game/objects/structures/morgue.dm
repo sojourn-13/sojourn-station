@@ -108,7 +108,7 @@
 
 	sleep(1)//Things need to exist for some time, in order to animate correctly
 
-	var/glidesize = DELAY2GLIDESIZE(5)
+	var/glidesize = DELAY_TO_GLIDE_SIZE(5)
 	connected.forceMove(T, glide_size_override=glidesize)
 	for(var/atom/movable/A in loc)
 		if (!A.anchored)
@@ -121,7 +121,7 @@
 /obj/structure/morgue/proc/close(var/mob/living/user)
 	//We only allow one mob or bodybag containing a mob, per morgue drawer
 	occupant = null
-	var/glidesize = DELAY2GLIDESIZE(5)
+	var/glidesize = DELAY_TO_GLIDE_SIZE(5)
 	for(var/atom/movable/A in connected.loc)
 		if (!A.anchored)
 			A.forceMove(loc,glide_size_override=glidesize)

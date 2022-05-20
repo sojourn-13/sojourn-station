@@ -274,7 +274,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 		target_mob = null
 		stance = initial(stance)
 		stop_automated_movement = initial(stop_automated_movement)
-		walk(src, 0)
+		SSmove_manager.stop_looping()
 
 		density = 0
 		layer = LYING_MOB_LAYER

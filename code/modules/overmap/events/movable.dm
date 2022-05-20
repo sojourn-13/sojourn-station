@@ -83,7 +83,7 @@
 
 /obj/effect/overmap_event/movable/Process()
 	if(movable == 1)
-		walk(src,moving_vector,170,0)
+		SSmove_manager.move(src,moving_vector,170,1)
 		//handle_wraparound()
 
 /obj/effect/overmap_event/movable/Initialize()
@@ -156,7 +156,7 @@
 
 	if(!config.use_overmap)
 		return
-	walk(src,turn(moving_vector, pick(45,-45,90,-90)),rand(100,160),0)
+	SSmove_manager.move(src,turn(moving_vector, pick(45,-45,90,-90)),rand(100,160),1)
 
 	spawn(350)
 		var/obj/effect/overmap_event/movable/comet/comettail/CT = new /obj/effect/overmap_event/movable/comet/comettail()

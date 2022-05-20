@@ -188,7 +188,7 @@
 	/*
 	SMOOTH MOVEMENT
 	*/
-	mob.set_glide_size(DELAY2GLIDESIZE(delay), 0, INFINITY)
+	mob.set_glide_size(DELAY_TO_GLIDE_SIZE(delay), 0, INFINITY)
 
 
 /datum/movement_handler/mob/delay/MayMove(var/mover, var/is_external)

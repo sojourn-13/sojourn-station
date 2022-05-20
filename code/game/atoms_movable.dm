@@ -14,9 +14,12 @@
 	var/moved_recently = 0
 	var/mob/pulledby = null
 	var/item_state = null // Used to specify the item state for the on-mob over-lays.
-	var/inertia_dir = 0
+	///Are we moving with inertia? Mostly used as an optimization
+	var/inertia_moving = FALSE
 	var/can_anchor = TRUE
 	var/cant_be_pulled = FALSE //Used for things that cant be anchored, but also shouldnt be pullable
+	///Holds information about any movement loops currently running/waiting to run on the movable. Lazy, will be null if nothing's going on
+	var/datum/movement_packet/move_packet
 
 	//spawn_values
 	var/price_tag = 0 // The item price in credits. atom/movable so we can also assign a price to animals and other thing.
@@ -36,6 +39,11 @@
 		if (pulledby.pulling == src)
 			pulledby.pulling = null
 		pulledby = null
+
+	if(move_packet)
+		if(!QDELETED(move_packet))
+			qdel(move_packet)
+		move_packet = null
 
 	for (var/datum/movement_handler/handler in movement_handlers)
 		handler.host = null
@@ -405,3 +413,20 @@
 
 /atom/movable/proc/preventsTurfInteractions()
 	return FALSE
+
+	/// Only moves the object if it's under no gravity
+/// Accepts the direction to move
+/atom/movable/proc/newtonian_move(direction)
+	if(!isturf(loc))
+		return FALSE
+	var/turf/ourloc = loc
+	if(ourloc.has_gravity())
+		return FALSE
+
+	if(SEND_SIGNAL(src, COMSIG_MOVABLE_NEWTONIAN_MOVE, direction) & COMPONENT_MOVABLE_NEWTONIAN_BLOCK)
+		return TRUE
+
+	set_glide_size(MOVEMENT_ADJUSTED_GLIDE_SIZE(inertia_move_delay, SSspacedrift.visual_delay))
+	AddComponent(/datum/component/drift, direction)
+
+	return TRUE

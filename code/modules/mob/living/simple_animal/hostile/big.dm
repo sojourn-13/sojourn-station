@@ -71,7 +71,7 @@
 		playsound(src, 'sound/voice/deathclaw_roar.ogg', 200, 1, -3)
 
 /mob/living/simple_animal/hostile/render/death(gibbed, deathmessage = "lets out a gutteral snarl before it crumbles to the ground dead!")
-	walk_to(src,0)
+	SSmove_manager.stop_looping()
 	movement_target = null
 	icon_state = icon_dead
 	density = 0

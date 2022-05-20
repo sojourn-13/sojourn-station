@@ -57,7 +57,7 @@
 /mob/living/simple_animal/hostile/hivemind/proc/mulfunction()
 	stance = HOSTILE_STANCE_IDLE //it give us some kind of stun effect
 	target_mob = null
-	walk(src, FALSE)
+	SSmove_manager.stop_looping()
 	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
 	sparks.set_up(3, 3, loc)
 	sparks.start()
@@ -627,7 +627,7 @@
 	src.visible_message("<b>[src]</b> dies!")
 	destroy_surroundings = FALSE
 	fake_dead = TRUE
-	walk(src, FALSE)
+	SSmove_manager.stop_looping()
 	icon_state = icon_dead
 	fake_dead_wait_time = world.time + 10 SECONDS
 
@@ -746,7 +746,7 @@
 				if(get_dist(src, Corpse) <= 1)
 					special_ability(Corpse)
 				else
-					walk_to(src, Corpse, 1, 1, 4)
+					SSmove_manager.move_to(src, Corpse, 1, 4)
 				break
 
 

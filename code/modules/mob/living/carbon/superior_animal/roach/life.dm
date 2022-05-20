@@ -35,8 +35,8 @@
 					eat_target = safepick(nearestObjectsInList(eatTargets,src,1))
 					if (eat_target)
 						busy = MOVING_TO_TARGET
-						set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-						walk_to(src, eat_target, 1, move_to_delay)
+						set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
+						SSmove_manager.move_to(src, eat_target, 1, move_to_delay)
 						GiveUp(eat_target) //give up if we can't reach target
 						return
 				else if(prob(probability_egg_laying)) // chance to lay an egg
@@ -53,7 +53,7 @@
 
 					else if(fed <= 0)
 						return
-						
+
 					busy = LAYING_EGG
 					src.visible_message(SPAN_NOTICE("\The [src] begins to lay an egg."))
 					stop_automated_movement = 1
@@ -64,7 +64,7 @@
 						busy = EATING_TARGET
 						stop_automated_movement = 1
 						src.visible_message(SPAN_NOTICE("\The [src] begins to eat \the [eat_target]."))
-						walk(src,0)
+						SSmove_manager.stop_looping()
 						busy_start_time = world.timeofday
 						if (istype(eat_target, /mob/living/carbon/human))
 							eating_time = 15 MINUTES

@@ -86,9 +86,9 @@
 	animate(mopimage, alpha = 50, time = sweep_time*1.5)
 	var/sweep_step = (sweep_time - 1) * 0.5
 	spawn(1)
-		mopimage.forceMove(target, glide_size_override=DELAY2GLIDESIZE(sweep_step))
+		mopimage.forceMove(target, glide_size_override=DELAY_TO_GLIDE_SIZE(sweep_step))
 		sleep(sweep_step)
-		mopimage.forceMove(end, glide_size_override=DELAY2GLIDESIZE(sweep_step))
+		mopimage.forceMove(end, glide_size_override=DELAY_TO_GLIDE_SIZE(sweep_step))
 	spawn(sweep_time+1)
 		qdel(mopimage)
 

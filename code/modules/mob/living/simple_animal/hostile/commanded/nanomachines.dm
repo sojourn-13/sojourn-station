@@ -50,8 +50,8 @@
 
 	if(!targetted_mob)
 		return 0
-	set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-	walk_to(src,targetted_mob,1,move_to_delay)
+	set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
+	SSmove_manager.move_to(src,targetted_mob,1,move_to_delay)
 	if(Adjacent(targetted_mob))
 		stance = COMMANDED_HEALING
 

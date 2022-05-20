@@ -1429,3 +1429,6 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		digit_numbers--
 		generated_code += "[generate_single_gun_number()]" // cast to string
 	return generated_code
+
+/proc/return_typenames(type)
+	return splittext("[type]", "/")

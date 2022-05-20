@@ -63,7 +63,7 @@
 
 /mob/living/carbon/superior_animal/proc/loseTarget()
 	stop_automated_movement = 0
-	walk(src, 0)
+	SSmove_manager.stop_looping()
 	target_mob = null
 	stance = HOSTILE_STANCE_IDLE
 

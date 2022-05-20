@@ -73,7 +73,7 @@
 	if(..())
 
 		if(client)
-			walk_to(src,0)
+			SSmove_manager.stop_looping()
 
 			//Player-animals don't do random speech normally, so this is here
 			//Player-controlled mice will still squeak, but less often than NPC mice

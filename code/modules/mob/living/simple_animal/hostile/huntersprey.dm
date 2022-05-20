@@ -80,7 +80,7 @@
 		melee_damage_upper = initial(melee_damage_upper) - fatigue * 2
 
 /mob/living/simple_animal/hostile/renderpatriarch/death(gibbed, deathmessage = "lets out a gutteral snarl before it crumbles to the ground dead!")
-	walk_to(src,0)
+	SSmove_manager.stop_looping()
 	movement_target = null
 	icon_state = icon_dead
 	density = 0
@@ -103,7 +103,7 @@
 	if(!T)
 		return
 	DestroySurroundings()
-	walk(src, 0)
+	SSmove_manager.stop_looping()
 	src.dir=dir
 	animate(src, alpha = 255, color = "#FF0000", transform = matrix()*1.2, time = 2)
 	sleep(2)
@@ -123,10 +123,10 @@
 	animate(src, alpha = 255, color = "#FF0000", transform = matrix()*1.2, time = 3)
 	sleep(1)
 	var/movespeed = 0.7
-	walk_towards(src, T, movespeed)
+	SSmove_manager.move_towards_legacy(src, T, movespeed)
 	charging = 1
 	sleep(get_dist(src, T)* movespeed)
-	walk(src, 0)
+	SSmove_manager.stop_looping()
 	animate(src, alpha = 255, color = initial(color), transform = matrix()*1, time = 3)
 	charging = 0
 	fatigue = 0
@@ -545,7 +545,7 @@
 		J.throw_at(get_edge_target_turf(src,pick(alldirs)),rand(3,6),30)
 
 /mob/living/simple_animal/hostile/poporavtomat/death(gibbed, deathmessage = "buzzes out and teleports out of its current location!")
-	walk_to(src,0)
+	SSmove_manager.stop_looping()
 	movement_target = null
 	icon_state = icon_dead
 	density = 0

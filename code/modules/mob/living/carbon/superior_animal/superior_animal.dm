@@ -334,8 +334,8 @@
 			if(!ranged)
 				stop_automated_movement = TRUE
 				stance = HOSTILE_STANCE_ATTACKING
-				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to(src, targetted_mob, 1, move_to_delay)
+				set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
+				SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 				moved = 1
 			if(ranged)
 				stop_automated_movement = 1
@@ -343,8 +343,8 @@
 					stance = HOSTILE_STANCE_ATTACKING
 					return //We do a safty return
 				else
-					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, targetted_mob, 4, move_to_delay)
+					set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
+					SSmove_manager.move_to(src, targetted_mob, 4, move_to_delay)
 				stance = HOSTILE_STANCE_ATTACKING
 
 		if(HOSTILE_STANCE_ATTACKING)
@@ -356,8 +356,8 @@
 				if(get_dist(src, targetted_mob) <= 6)
 					OpenFire(targetted_mob)
 				else
-					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, targetted_mob, 4, move_to_delay)
+					set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
+					SSmove_manager.move_to(src, targetted_mob, 4, move_to_delay)
 					OpenFire(targetted_mob)
 
 	//random movement
@@ -368,7 +368,7 @@
 				if(!(stop_automated_movement_when_pulled && pulledby))
 					var/moving_to = pick(cardinal)
 					set_dir(moving_to)
-					step_glide(src, moving_to, DELAY2GLIDESIZE(0.5 SECONDS))
+					step_glide(src, moving_to, DELAY_TO_GLIDE_SIZE(0.5 SECONDS))
 					turns_since_move = 0
 
 	//Speaking
@@ -448,10 +448,10 @@
 			visible_emote(emote_see)
 
 		if((following) && !(findTarget())) // Are we following someone and not attacking something?
-			walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
+			SSmove_manager.move_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
 
 		if(!following && !(findTarget())) // Stop following
-			walk_to(src, 0)
+			SSmove_manager.stop_looping()
 
 	if(life_cycles_before_sleep)
 		life_cycles_before_sleep--

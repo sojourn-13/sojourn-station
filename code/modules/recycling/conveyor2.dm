@@ -195,7 +195,7 @@ GLOBAL_LIST_EMPTY(conveyor_switches)
 		return
 	use_power(100)
 	//The () around get_turf are there because it's a macro.
-	(get_turf(src)).UnloadSlide(forwards, src, DELAY2GLIDESIZE(wait)) //Now handled by turfs.
+	(get_turf(src)).UnloadSlide(forwards, src, DELAY_TO_GLIDE_SIZE(wait)) //Now handled by turfs.
 
 /obj/machinery/conveyor/proc/can_conveyor_run()
 	if(stat & BROKEN)

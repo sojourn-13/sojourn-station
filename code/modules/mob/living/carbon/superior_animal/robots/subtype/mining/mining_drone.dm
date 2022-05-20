@@ -51,11 +51,11 @@
 			target = null // reset the target
 
 		if(target) // Do we have a destination?
-			walk_to(src, target, 1, move_to_delay) // Go there
+			SSmove_manager.move_to(src, target, 1, move_to_delay) // Go there
 		else
-			walk_to(src, 0) // Or else stop
+			SSmove_manager.stop_looping() // Or else stop
 	else // We got someone controlling the drone.
-		walk_to(src, 0) // Stop automated movement
+		SSmove_manager.stop_looping() // Stop automated movement
 		target = null // No targets to go to
 
 /mob/living/carbon/superior_animal/robot/mining/death()

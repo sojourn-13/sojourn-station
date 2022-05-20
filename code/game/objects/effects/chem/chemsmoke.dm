@@ -28,14 +28,14 @@
 	//float over to our destination, if we have one
 	destination = dest_turf
 	if(destination)
-		walk_to(src, destination)
+		SSmove_manager.move_to(src, destination)
 
 
 /obj/effect/effect/smoke/chem/Destroy()
 	if (reagents)
 		reagents.my_atom = null
 		QDEL_NULL(reagents)
-	walk(src, 0)
+	SSmove_manager.stop_looping()
 	return ..()
 
 /obj/effect/effect/smoke/chem/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
