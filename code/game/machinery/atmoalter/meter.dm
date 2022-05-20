@@ -15,7 +15,7 @@
 /obj/machinery/meter/New()
 	..()
 	target = locate(/obj/machinery/atmospherics/pipe) in loc
-	if (target)
+	if (target) //for some reason, this caused a runtime without this check
 		target.attached_meter = src
 
 	return 1
