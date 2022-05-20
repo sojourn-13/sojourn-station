@@ -68,6 +68,8 @@
 	for(var/organ in organs)
 		qdel(organ)
 	organs.Cut()
+
+	QDEL_NULL(sanity)
 	return ..()
 
 /mob/living/carbon/human/Stat()

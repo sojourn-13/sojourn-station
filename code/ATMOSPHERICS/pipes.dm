@@ -56,6 +56,9 @@
 	return parent.network_expand(new_network, reference)
 
 /obj/machinery/atmospherics/pipe/return_network(obj/machinery/atmospherics/reference)
+	if (QDELETED(src) || QDESTROYING(src)) //i also hope this doesnt break shit
+		return
+
 	if(!parent)
 		parent = new /datum/pipeline()
 		parent.build_pipeline(src)
@@ -63,12 +66,15 @@
 	return parent.return_network(reference)
 
 /obj/machinery/atmospherics/pipe/Destroy()
+
 	QDEL_NULL(parent)
 	if(air_temporary)
 		loc.assume_air(air_temporary)
 		QDEL_NULL(air_temporary)
 
 	. = ..()
+
+	return QDEL_HINT_QUEUE
 
 /obj/machinery/atmospherics/pipe/attackby(obj/item/I, mob/user)
 	if (istype(src, /obj/machinery/atmospherics/pipe/tank))
