@@ -38,28 +38,40 @@
 	return 1
 
 /obj/machinery/atmospherics/pipe/return_air()
-	if(pipeline_check())
-		return parent.air
+	if(!parent)
+		parent = new /datum/pipeline()
+		parent.build_pipeline(src)
+
+	return parent.air
 
 /obj/machinery/atmospherics/pipe/build_network()
-	if(pipeline_check())
-		return parent.return_network()
+	if(!parent)
+		parent = new /datum/pipeline()
+		parent.build_pipeline(src)
+
+	return parent.return_network()
 
 /obj/machinery/atmospherics/pipe/network_expand(datum/pipe_network/new_network, obj/machinery/atmospherics/pipe/reference)
-	if(pipeline_check())
-		return parent.network_expand(new_network, reference)
+	if(!parent)
+		parent = new /datum/pipeline()
+		parent.build_pipeline(src)
+
+	return parent.network_expand(new_network, reference)
 
 /obj/machinery/atmospherics/pipe/return_network(obj/machinery/atmospherics/reference)
-	if(pipeline_check())
-		return parent.return_network(reference)
+	if(!parent)
+		parent = new /datum/pipeline()
+		parent.build_pipeline(src)
 
-/obj/machinery/atmospherics/pipe/proc/pipeline_check()
+	return parent.return_network(reference)
+
+/*/obj/machinery/atmospherics/pipe/proc/pipeline_check()
 	if (QDELETED(src) || QDESTROYING(src))
 		return FALSE
 
 	if (!parent)
 		parent = new /datum/pipeline()
-		parent.build_pipeline(src)
+		parent.build_pipeline(src)*/
 
 /obj/machinery/atmospherics/pipe/Destroy()
 
