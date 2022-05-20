@@ -37,6 +37,10 @@
 			pulledby.pulling = null
 		pulledby = null
 
+	for (var/datum/movement_handler/handler in movement_handlers)
+		handler.host = null
+		movement_handlers -= handler //likely unneeded but just in case
+
 /atom/movable/Bump(var/atom/A, yes)
 	if(src.throwing)
 		src.throw_impact(A)

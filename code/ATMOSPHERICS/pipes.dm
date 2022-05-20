@@ -50,6 +50,7 @@
 		return parent.network_expand(new_network, reference)
 
 /obj/machinery/atmospherics/pipe/return_network(obj/machinery/atmospherics/reference)
+
 	if(pipeline_check())
 		return parent.return_network(reference)
 
@@ -58,8 +59,6 @@
 		return FALSE
 
 	if (!parent)
-		parent = new /datum/pipeline()
-		parent.build_pipeline(src)
 
 /obj/machinery/atmospherics/pipe/Destroy()
 
