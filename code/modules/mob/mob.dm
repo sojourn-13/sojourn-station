@@ -539,8 +539,8 @@
 	if(href_list["flavor_more"])
 		//if(src in view(usr)) //Flavor at any range
 		var/dat = {"
-			<html><head><title>[name]</title></head>
-			<body><tt>[replacetext(flavor_text, "\n", "<br>")]</tt></body>
+			<html><meta charset=\"UTF-8\"><head><title>[name]</title></head>
+			<body><tt>[replacetext_char(flavor_text, "\n", "<br>")]</tt></body>
 			</html>
 		"}
 		usr << browse(dat, "window=[name]_flavor;size=500x200")
@@ -550,7 +550,7 @@
 	if(href_list["ooc_text"])
 		var/dat = {"
 				<html><meta charset=\"UTF-8\"<head><title>[name]</title></head>
-				<body><tt>[replacetext(ooc_text, "\n", "<br>")]</tt></body>
+				<body><tt>[replacetext_char(ooc_text, "\n", "<br>")]</tt></body>
 				</html>
 			"}
 		usr << browse(dat, "window=[name]_ooc;size=500x200")
