@@ -262,7 +262,7 @@
 	license = 20
 
 	designs = list(
-		/obj/item/ammo_magazine/speed_loader_shotgun/empty = 0,
+		/datum/design/autolathe/ammo/shotgun_speedloader_empty= 0,
 		/datum/design/autolathe/ammo/sbaw_empty = 0,
 		/datum/design/autolathe/ammo/m12empty = 0,
 		/datum/design/autolathe/ammo/hrifle_drum_empty = 0,
