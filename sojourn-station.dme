@@ -2690,7 +2690,6 @@
 #include "code\modules\projectiles\guns\energy\tesla_gun.dm"
 #include "code\modules\projectiles\guns\energy\tesla_shotgun.dm"
 #include "code\modules\projectiles\guns\energy\tetra.dm"
-#include "code\modules\projectiles\guns\energy\thalkor.dm"
 #include "code\modules\projectiles\guns\energy\xray.dm"
 #include "code\modules\projectiles\guns\launcher\crossbow.dm"
 #include "code\modules\projectiles\guns\launcher\makeshift.dm"

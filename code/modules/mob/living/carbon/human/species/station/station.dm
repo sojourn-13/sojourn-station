@@ -197,6 +197,18 @@
 		STAT_MEC = 10
 	)
 
+	has_process = list(    // which required-organ checks are conducted.
+		OP_HEART        = /obj/item/organ/internal/heart,
+		OP_LUNGS        = /obj/item/organ/internal/lungs,
+		OP_STOMACH      = /obj/item/organ/internal/stomach,
+		OP_LIVER        = /obj/item/organ/internal/liver,
+		OP_KIDNEY_LEFT  = /obj/item/organ/internal/kidney,
+		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney,
+		BP_BRAIN        = /obj/item/organ/internal/brain,
+		OP_APPENDIX     = /obj/item/organ/internal/appendix,
+		OP_EYES         = /obj/item/organ/internal/eyes/marqua
+	)
+
 	permitted_ears  = list()
 	permitted_tail  = list()
 	permitted_wings = list()
@@ -205,6 +217,9 @@
 
 /datum/species/marqua/get_bodytype()
 	return "Mar'Qua"
+
+
+
 
 /datum/species/kriosan
 	name = "Kriosan"
