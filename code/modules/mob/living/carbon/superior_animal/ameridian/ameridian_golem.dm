@@ -52,8 +52,11 @@
 	if(drop_amount)
 		var/obj/item/stack/material/ameridian/loot = new /obj/item/stack/material/ameridian(get_turf(src))
 		loot.amount = drop_amount
-	node?.golem = null // Remove the golem from the node since for some reason it doesn't do it with qdel()
 	qdel(src)
+
+/mob/living/carbon/superior_animal/ameridian_golem/Destroy()
+	..()
+	node?.golem = null
 
 /mob/living/carbon/superior_animal/ameridian_golem/update_icon()
 	transform = initial(transform)
