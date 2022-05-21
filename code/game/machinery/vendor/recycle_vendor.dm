@@ -29,7 +29,7 @@
 	var/stored_item_value = 0
 	var/stored_item_fluff = ""
 	var/sales_paused = FALSE
-	var/vagabond_charity_budget = 2000
+	var/vagabond_charity_budget = 5000 //SoJ edit 3000 more as many people will want to use this
 	var/datum/money_account/merchants_pocket
 	var/datum/wires/recycle_vendor/wires
 	var/wire_flags = 0
