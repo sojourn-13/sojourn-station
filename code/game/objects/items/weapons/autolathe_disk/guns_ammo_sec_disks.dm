@@ -16,6 +16,7 @@
 		/datum/design/autolathe/tool/combat_shovel,
 		/datum/design/autolathe/sec/beartrap,
 		/datum/design/autolathe/sec/silencer,
+		/datum/design/autolathe/sec/acog,
 		/datum/design/autolathe/sec/gun_case,
 		/datum/design/research/item/light_replacer,
 		/datum/design/autolathe/sec/hailer,
@@ -48,7 +49,7 @@
 		/datum/design/autolathe/gun/judge = 2,
 		//SMGs
 		/datum/design/autolathe/gun/wirbelwind = 2,
-		/obj/item/gun/projectile/automatic/ppsh/ppv = 2,
+		/datum/design/autolathe/gun/ppv = 2,
 		//rifles
 		/datum/design/autolathe/gun/strelki,
 		/datum/design/autolathe/gun/ostwind = 3,
@@ -1162,7 +1163,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 	designs = list(
 		/datum/design/autolathe/gun/survivalrifle = 3,
 		/datum/design/autolathe/ammo/mag_10x24,
-		/datum/design/autolathe/ammo/box_10x24 = 2,
+		/datum/design/autolathe/ammo/box_10x24_small = 1,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/rex10

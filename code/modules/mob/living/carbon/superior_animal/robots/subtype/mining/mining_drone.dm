@@ -60,7 +60,7 @@
 
 /mob/living/carbon/superior_animal/robot/mining/death()
 	drop_loot()
-	new /obj/item/tool/pickaxe/diamonddrill(loc) // So we can use the drill to make another one
+	//new /obj/item/tool/pickaxe/diamonddrill(loc) // So we can use the drill to make another one // Miners destroy the bot round-start to get the drill...
 	..()
 
 /mob/living/carbon/superior_animal/robot/mining/attack_hand(mob/user as mob)

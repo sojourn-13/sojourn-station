@@ -40,19 +40,6 @@
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/storage/pouch/ammo(src)
 
-/obj/item/storage/box/bs_kit/roe
-	name = "\improper Roe Primary Kit"
-	desc = "The standard Blackshield equipment kit containing a roe boltgun, a bolt gun with less penetration and damage than a mosin, but with far better recoil control and built in scope."
-
-	populate_contents()
-		new /obj/item/gun/projectile/boltgun/light_wood(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
-		new /obj/item/storage/pouch/ammo(src)
-
 /obj/item/storage/box/bs_kit/duty
 	name = "\improper Duty Primary Kit"
 	desc = "The standard Blackshield equipment kit containing a Duty heavy carbine, a locally made rifle with a sharp knife at the end, good for just about any trooper. Can even be speed loaded to quickly reload the mag inside."

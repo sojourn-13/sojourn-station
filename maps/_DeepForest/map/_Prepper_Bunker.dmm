@@ -8591,11 +8591,6 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"yA" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "yB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -8652,15 +8647,6 @@
 	locked = 1
 	},
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"yL" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/door/airlock/highsecurity{
-	id_tag = "preppermaints";
-	locked = 1
-	},
-/turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "yM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -12658,9 +12644,9 @@
 /obj/machinery/button/remote/airlock{
 	dir = 4;
 	id = "prepperdoorinternal";
+	pixel_x = -21;
 	pixel_y = 4;
-	specialfunctions = 4;
-	pixel_x = -21
+	specialfunctions = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
@@ -16344,8 +16330,8 @@ wM
 wM
 wM
 yz
-yL
-yL
+yc
+yc
 yB
 zv
 zL
@@ -16851,8 +16837,8 @@ wN
 wN
 yb
 yb
-yA
-yA
+wN
+wN
 wN
 wN
 wN
@@ -16978,8 +16964,8 @@ wM
 wM
 yc
 yc
-yB
-yB
+wM
+wM
 wM
 wM
 zw

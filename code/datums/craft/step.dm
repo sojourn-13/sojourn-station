@@ -152,7 +152,7 @@
 			return
 
 	else if(reqed_quality)
-		if(!istype(I,/obj/item/tool))
+		if(!istype(I,/obj/item/tool) && !istype(I,/obj/item/mecha_parts/mecha_equipment)) //Making it so mech equipment can also craft
 			to_chat(user, SPAN_WARNING("You need to use a tool to complete this step."))
 			building = FALSE
 			return

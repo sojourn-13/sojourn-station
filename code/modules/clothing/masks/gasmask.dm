@@ -21,8 +21,13 @@
 		rad = 0
 	)
 	price_tag = 20
-	muffle_voice = TRUE
+	muffle_voice = FALSE
 	var/is_alts = TRUE
+
+/obj/item/clothing/mask/gas/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/tool/screwdriver))
+		to_chat(user, SPAN_NOTICE("[user] alters the voice transmitter in [src]."))
+		src.muffle_voice = !src.muffle_voice
 
 /obj/item/clothing/mask/gas/filter_air(datum/gas_mixture/air)
 	var/datum/gas_mixture/filtered = new

@@ -35,6 +35,7 @@
 
 
 // Design categories
+#define CAT_AMERIDIAN    "Ameridian"
 #define CAT_MISC        "Misc"
 #define CAT_COMP        "Computers"
 #define CAT_AI          "AI"

@@ -99,6 +99,7 @@
 		..()
 //cow
 /mob/living/simple_animal/cow
+	name = "Cow"
 	desc = "Known for their milk, just don't tip them over."
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "cow"

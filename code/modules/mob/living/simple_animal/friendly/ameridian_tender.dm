@@ -3,10 +3,10 @@
 
 /mob/living/simple_animal/ameridian_tender
 	name = "ameridian tender"
-	desc = "An automaton powered by an ameridian core. It instinctively care for ameridian crystals, letting them grow and spread before harvesting them. \
-			Its unique nature mean that it doesn't get attacked by other ameridian-based lifeform or get damaged by anti-ameridian sonic weaponry."
+	desc = "An automaton powered by an ameridian core. It instinctively cares for ameridian crystals, letting them grow and spread before harvesting them. \
+			Its unique nature means that it doesn't get attacked by other ameridian-based lifeform or get damaged by anti-ameridian sonic weaponry."
 	icon = 'icons/obj/ameridian.dmi'
-	icon_state = "golem_ameridian_purple"
+	icon_state = "tender" // Sprites by Quill#6000
 	faction = "ameridian"
 	attacktext = "smacked"
 	mob_size = MOB_MEDIUM // Small mobs can't open doors.
@@ -33,12 +33,9 @@
 	mob_push_flags = SIMPLE_ANIMAL
 	mob_always_swap = TRUE
 	pass_flags = PASSTABLE
-	possession_candidate = TRUE
-
+	possession_candidate = FALSE
 	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 100, rad = 100) // Fragile fren
-
 	attack_sound = 'sound/weapons/heavysmash.ogg' //So we dont make bite sounds
-
 	maxHealth = 125 //Lets not die to a single roach bit
 	health = 125 //Most things deal 40 at a time
 	melee_damage_lower = 5
@@ -46,6 +43,9 @@
 	var/obj/item/held_item = null //Storage for single item they can hold.
 	var/obj/structure/ameridian_crystal/target_crystal
 	var/spread_threshold = 3 // How many crystals need to be near a mature crystal for it to be available to harvest?
+
+/mob/living/simple_animal/ameridian_tender/ghost_control
+	possession_candidate = TRUE
 
 /mob/living/simple_animal/ameridian_tender/New()
 	..()
@@ -123,7 +123,7 @@
 // Ghost stuff
 /mob/living/simple_animal/ameridian_tender/UnarmedAttack(var/atom/A, var/proximity)
 	if(A.Adjacent(src))
-		if(istype(A, /obj/structure/ameridian_crystal))
+		if(istype(A, /obj/structure/ameridian_crystal) && !istype(A, /obj/structure/ameridian_crystal/spire))
 			var/obj/structure/ameridian_crystal/AC = A
 			if(do_after(src, 1 SECOND, AC))
 				AC.harvest_crystals()

@@ -6,6 +6,7 @@
 	anchored = TRUE
 	density = TRUE
 	light_range = 7 // Glow in the dark
+	light_power = 7
 	light_color = COLOR_LIGHTING_PURPLE_BRIGHT
 	growth = 6 // Bigger than other crystals
 	growth_prob = 5 // Spread crystals faster

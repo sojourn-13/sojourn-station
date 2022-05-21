@@ -234,6 +234,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 /obj/item/projectile/beam/infrared
 	name = "infrared radiation"
 	icon_state = "invisible"
+	damage_types = list(BURN = 15)
 	armor_penetration = 15 //less ap
 	eyeblur = 0
 	muzzle_type = null

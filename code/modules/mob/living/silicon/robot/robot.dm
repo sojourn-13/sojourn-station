@@ -145,6 +145,8 @@
 	add_language(LANGUAGE_JANA, 1)
 	add_language(LANGUAGE_CYRILLIC, 1)
 	add_language(LANGUAGE_LATIN, 1)
+	add_language(LANGUAGE_ESPERANTO, 1)
+	add_language(LANGUAGE_YASSARI, 1)
 
 	wires = new(src)
 
