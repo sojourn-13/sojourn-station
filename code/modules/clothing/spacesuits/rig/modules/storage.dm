@@ -20,12 +20,20 @@
 	var/max_storage_space = DEFAULT_HUGE_STORAGE * 0.7 //This is a entire satchel of storage
 	var/storage_slots = null //The number of storage slots in this container.
 
+
 /obj/item/rig_module/storage/expanded
+	name = "large internal storage compartment"
+	desc = "A storage container designed to be installed in a RIG suit. Allows many items to be stored inside"
+	interface_name = "large internal storage compartment"
+	interface_desc = "A storage compartment built directly into the suits back module, accessed through a latching compartment."
+	price_tag = 100
+	max_storage_space = DEFAULT_HUGE_STORAGE // Holds the same as a backpack.
+
+/obj/item/rig_module/storage/expanded/tt
 	name = "Large medical storage compartment"
 	desc = "A storage container designed to be installed in a RIG suit and capable of holding a great deal of medical supplies within."
 	interface_name = "large internal storage compartment"
 	interface_desc = "A storage compartment built directly into the suits back module, accessed through a latching compartment."
-	price_tag = 100
 	can_hold = list( //starts with medical storage by default, to prevent it being useless on shift start.
 	/obj/item/device/scanner/health,
 	/obj/item/dnainjector,
