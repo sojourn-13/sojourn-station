@@ -590,7 +590,7 @@
 
 /obj/item/gun_upgrade/scope/watchman
 	name = "Artificer's Guild \"Watchman\" scope"
-	desc = "In the age of 3D printing, the design of a scope one can rely on is common, but a scope that is special is a rarity. Hand-made scopes forged by the Artificer's Guild are known across the entire terran federation for the quality they have and this one is no diffrent."
+	desc = "In the age of 3D printing, the design of a scope one can rely on is common, but a scope that is special is a rarity. Hand-made scopes forged by the Artificer's Guild are known across the entire Solarian Federation for the quality they have and this one is no different."
 	icon_state = "Watchman"
 	matter = list(MATERIAL_GLASS = 2, MATERIAL_PLASTEEL = 1)
 	price_tag = 40
