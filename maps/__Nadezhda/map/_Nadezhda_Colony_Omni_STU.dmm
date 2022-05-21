@@ -10792,6 +10792,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai)
+"cpL" = (
+/obj/structure/catwalk,
+/obj/machinery/craftingstation,
+/obj/effect/spider/stickyweb,
+/turf/simulated/floor/plating/under,
+/area/colony)
 "cpU" = (
 /obj/structure/table/marble,
 /obj/item/storage/box/donkpockets,
@@ -32882,20 +32888,7 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/hallway/surface/section1)
 "gPO" = (
-/obj/structure/closet/wall_mounted/firecloset{
-	pixel_x = 32
-	},
-/obj/effect/floor_decal/industrial/box/red/corners{
-	dir = 4;
-	icon_state = "box_corners_red"
-	},
-/obj/effect/floor_decal/industrial/box/red/corners{
-	dir = 1;
-	icon_state = "box_corners_red"
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 4
-	},
+/obj/machinery/recycle_vendor,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
 "gPR" = (
@@ -44463,7 +44456,6 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/pros/prep)
 "jqG" = (
-/obj/structure/table/steel_reinforced,
 /obj/item/stack/material/cardboard/random,
 /obj/item/stack/material/cardboard/random,
 /obj/item/stack/material/plasteel/random,
@@ -44471,6 +44463,7 @@
 /obj/item/stack/material/glass/full,
 /obj/item/stack/material/plastic/full,
 /obj/item/stack/material/steel/full,
+/obj/machinery/craftingstation,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "jqH" = (
@@ -55075,6 +55068,20 @@
 /area/nadezhda/security/range{
 	name = "\improper Blackshield - Firing Range"
 	})
+"lxs" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 1;
+	icon_state = "box_corners_red"
+	},
+/obj/effect/floor_decal/industrial/box/red/corners,
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/hallway/side/f2section1)
 "lxz" = (
 /obj/machinery/door/airlock/glass_security{
 	id_tag = "BrigFoyer";
@@ -135346,7 +135353,7 @@ vsn
 gPO
 hsr
 frq
-jVE
+lxs
 atv
 bwh
 gWX
@@ -138705,7 +138712,7 @@ bHx
 bEO
 mfF
 hoz
-nHq
+cpL
 xGi
 hSx
 "}
