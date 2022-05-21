@@ -3533,7 +3533,6 @@
 /area/nadezhda/command/armory)
 "aLt" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/structure/disposalpipe/junction{
 	dir = 1;
@@ -4720,9 +4719,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -11563,11 +11559,11 @@
 	icon_state = "tube1"
 	},
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 8;
-	pixel_x = 27;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = 27;
+	req_one_access = list()
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -13830,7 +13826,6 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "cVH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock{
 	name = "Church";
@@ -17722,11 +17717,11 @@
 "dMD" = (
 /obj/structure/bed/chair,
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 8;
-	pixel_x = 27;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = 27;
+	req_one_access = list()
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
@@ -21334,11 +21329,11 @@
 	dir = 8
 	},
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 4;
-	pixel_x = -32;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = -32;
+	req_one_access = list()
 	},
 /turf/simulated/floor,
 /area/shuttle/rocinante_shuttle_area)
@@ -23742,11 +23737,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/crematorium)
-"eZD" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/wall,
-/area/nadezhda/maintenance/undergroundfloor1east)
 "eZG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment{
@@ -42658,11 +42648,11 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "iWY" = (
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 4;
-	pixel_x = -32;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = -32;
+	req_one_access = list()
 	},
 /obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/white,
@@ -66068,11 +66058,11 @@
 /area/nadezhda/security/armory)
 "nKG" = (
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 4;
-	pixel_x = -32;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = -32;
+	req_one_access = list()
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
@@ -73919,11 +73909,11 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "pvr" = (
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 8;
-	pixel_x = 27;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = 27;
+	req_one_access = list()
 	},
 /obj/machinery/camera/network/mining{
 	dir = 9
@@ -74849,11 +74839,11 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 4;
-	pixel_x = -32;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = -32;
+	req_one_access = list()
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
@@ -81452,10 +81442,10 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/multi_tile/glass{
+	dir = 2;
 	id_tag = "shuttle_checkpoint";
 	name = "Shuttle Airlock";
-	req_one_access = list(78,19,1);
-	dir = 2
+	req_one_access = list(78,19,1)
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/hallway/side/f2section1)
@@ -85722,11 +85712,11 @@
 	dir = 8
 	},
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 4;
-	pixel_x = -32;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = -32;
+	req_one_access = list()
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
@@ -99812,11 +99802,11 @@
 "uKs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 8;
-	pixel_x = 27;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = 27;
+	req_one_access = list()
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
@@ -102471,20 +102461,17 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
 "vlH" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
 	},
 /obj/structure/table/marble,
 /obj/item/material/ashtray,
 /obj/machinery/door/blast/shutters/glass{
 	id = "bar2";
 	name = "glass shutter"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/bar)
@@ -114932,7 +114919,6 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -116534,11 +116520,11 @@
 	dir = 1
 	},
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 8;
-	pixel_x = 27;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = 27;
+	req_one_access = list()
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
@@ -149166,7 +149152,7 @@ tjP
 hKB
 hKB
 hKB
-eZD
+kZI
 sSS
 hKB
 kZI
