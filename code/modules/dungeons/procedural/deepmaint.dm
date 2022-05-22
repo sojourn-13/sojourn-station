@@ -74,7 +74,7 @@ var/global/list/big_deepmaint_room_templates = list()
 */
 
 /obj/procedural/jp_DungeonGenerator/deepmaint/proc/makeLadders()
-	var/ladders_to_place = 3
+	var/ladders_to_place = 20
 	if(numRooms < ladders_to_place)
 		return
 	var/list/obj/procedural/jp_DungeonRoom/done_rooms = list()
@@ -160,16 +160,16 @@ var/global/list/big_deepmaint_room_templates = list()
 		return FALSE
 
 /obj/procedural/jp_DungeonGenerator/deepmaint/proc/findNicheTurfs(var/list/turfs)
-    var/list/L = list()
-    for(var/turf/F in turfs)
-        if(F.is_wall || !(F in path_turfs))
-            if(L.len < 3)
-                L = list()
-            break
-        else
-            L += F
+	var/list/L = list()
+	for(var/turf/F in turfs)
+		if(F.is_wall || !(F in path_turfs))
+			if(L.len < 3)
+				L = list()
+			break
+		else
+			L += F
 
-    return L
+	return L
 
 
 /obj/procedural/jp_DungeonGenerator/deepmaint/proc/populateCorridors()
@@ -187,7 +187,10 @@ var/global/list/big_deepmaint_room_templates = list()
 		trap_count = trap_count - 1
 		var/turf/N = pick(path_turfs_copy)
 		path_turfs_copy -= N
-		new /obj/random/traps(N)
+		if(prob(90))
+			new /obj/random/traps(N)
+		else
+			new /obj/random/mob/psi_monster(N)
 	for(var/turf/T in path_turfs)
 		if(prob(30))
 			new /obj/effect/decal/cleanable/dirt(T) //Wanted to put rust on the floors in deep maint, but by god, the overlay looks like ASS
@@ -210,17 +213,17 @@ var/global/list/big_deepmaint_room_templates = list()
 		var/obj/procedural/jp_DungeonGenerator/deepmaint/generate = new /obj/procedural/jp_DungeonGenerator/deepmaint(src)
 		testing("Beginning procedural generation of [name] -  Z-level [z].")
 		generate.name = name
-		generate.setArea(locate(50, 50, z), locate(110, 110, z))
+		generate.setArea(locate(30, 30, z), locate(140, 140, z))
 		generate.setWallType(/turf/simulated/wall)
-		generate.setLightChance(2)
+		generate.setLightChance(1)
 		generate.setFloorType(/turf/simulated/floor/tiled/techmaint_perforated)
 		generate.setAllowedRooms(list(/obj/procedural/jp_DungeonRoom/preexist/square/submap/deepmaint/big))
-		generate.setNumRooms(3) //3 deepmaints "core" rooms
-		generate.setExtraPaths(0)
-		generate.setMinPathLength(0)
-		generate.setMaxPathLength(0)
-		generate.setMinLongPathLength(0)
-		generate.setLongPathChance(0)
+		generate.setNumRooms(6) //6 deepmaints "core" rooms
+		generate.setExtraPaths(2)
+		generate.setMinPathLength(5)
+		generate.setMaxPathLength(80)
+		generate.setMinLongPathLength(5)
+		generate.setLongPathChance(10)
 		generate.setPathEndChance(100)
 		generate.setRoomMinSize(10)
 		generate.setRoomMaxSize(10)
@@ -229,15 +232,15 @@ var/global/list/big_deepmaint_room_templates = list()
 
 		sleep(90)
 
-		generate.setArea(locate(20, 20, z), locate(150, 150, z))
+		generate.setArea(locate(10, 19, z), locate(165, 165, z))
 		generate.setAllowedRooms(list(/obj/procedural/jp_DungeonRoom/preexist/square/submap/deepmaint))
-		generate.setNumRooms(25) // 25 smaller rooms
-		generate.setExtraPaths(5)
-		generate.setMinPathLength(0)
-		generate.setMaxPathLength(60) //Small Rooms are 60 at most appart
-		generate.setMinLongPathLength(0)
-		generate.setLongPathChance(0)
-		generate.setPathEndChance(100)
+		generate.setNumRooms(30) // 30 or so smaller rooms
+		generate.setExtraPaths(3)
+		generate.setMinPathLength(3)
+		generate.setMaxPathLength(65) //Small Rooms are 65 at most appart
+		generate.setMinLongPathLength(5)
+		generate.setLongPathChance(10)
+		generate.setPathEndChance(80)
 		generate.setRoomMinSize(5)
 		generate.setRoomMaxSize(5)
 		generate.setPathWidth(2)

@@ -8,8 +8,8 @@
 	unacidable = 1
 	simulated = 0
 	invisibility = 101
-	var/max_x = 12 //if we ever make more than 4x4 dungeon run map, instead of making new procs for generation, we can just edit those vars - edit 16 x 16
-	var/max_y = 12
+	var/max_x = 16 //if we ever make more than 4x4 dungeon run map, instead of making new procs for generation, we can just edit those vars - edit 16 x 16
+	var/max_y = 16
 	var/generating = 0
 	var/area/crawler/myarea
 	var/rooms = list()
@@ -302,16 +302,16 @@
 	var/datum/map_template/dungeon_template/init_template = starting_room.template
 	var/list/bounds = list(1.#INF, 1.#INF, 1.#INF, -1.#INF, -1.#INF, -1.#INF)
 	bounds[MAP_MINX] = 1
-	bounds[MAP_MINY] = 146
+	bounds[MAP_MINY] = 200
 	bounds[MAP_MINZ] = z
-	bounds[MAP_MAXX] = 210
+	bounds[MAP_MAXX] = 2
 	bounds[MAP_MAXY] = 1
 	bounds[MAP_MAXZ] = z
 	init_template.initTemplateBounds(bounds)
 	testing("finished dungeon initialization!")
 
 	sleep(1)
-	for(var/turf/simulated/wall/W in block(locate(1, 1, z), locate(210, 146, z)))
+	for(var/turf/simulated/wall/W in block(locate(1, 1, z), locate(210, 200, z)))
 		W.update_connections(1)
 
 
@@ -379,9 +379,9 @@
 				if(c_room.above)
 					if(prob(60))
 						r_template = pick(above_room_templates)
-			/*	if(c_room.under)
-					if(prob(60))
-						r_template = pick(under_room_templates)**/
+				//if(c_room.under)
+				//	if(prob(60))
+				//		r_template = pick(under_room_templates)
 				else if (!c_room.above)
 					if(prob(40))
 						r_template = pick(horizontal_room_templates)
