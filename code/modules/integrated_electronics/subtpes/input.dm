@@ -731,7 +731,6 @@
 	SSradio.remove_object(src, frequency)
 	frequency = new_frequency
 	radio_connection = SSradio.add_object(src, frequency, RADIO_CHAT)
-	radio_connection.linked_devices += src
 
 /obj/item/integrated_circuit/input/signaler/proc/signal_good(datum/signal/signal)
 	if(!signal || signal.source == src)

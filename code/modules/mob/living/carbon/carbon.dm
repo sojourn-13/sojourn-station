@@ -36,9 +36,6 @@
 	// We don't qdel(bloodstr) because it's the same as qdel(reagents) // then why arent you qdeling reagents
 	QDEL_LIST(internal_organs)
 	QDEL_LIST(hallucinations)
-	if(vessel)
-		vessel.my_atom = null //sanity check
-		QDEL_NULL(vessel)
 	return ..()
 
 /mob/living/carbon/rejuvenate()

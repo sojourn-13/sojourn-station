@@ -25,9 +25,6 @@ datum/pipe_network
 		for(var/datum/pipeline/line_member in line_members)
 			line_member.network = null
 
-		for(var/datum/gas_mixture/gas in gases)
-			gas.networks -= src
-
 		gases.Cut()
 		normal_members.Cut()
 		line_members.Cut()
@@ -57,7 +54,7 @@ datum/pipe_network
 		update_network_gases()
 
 		if((normal_members.len>0)||(line_members.len>0))
-			START_PROCESSING(SSmachines, src) //TODO: check to see if this even fucking WORKS
+			START_PROCESSING(SSmachines, src)
 		else
 			qdel(src)
 
@@ -84,14 +81,10 @@ datum/pipe_network
 		volume = 0
 
 		for(var/obj/machinery/atmospherics/normal_member in normal_members)
-			var/list/result = normal_member.return_network_air(src)
-			if(result)
-				for (var/datum/gas_mixture/gas in result)
-					gas.networks += result
-				gases += result
+			var/result = normal_member.return_network_air(src)
+			if(result) gases += result
 
 		for(var/datum/pipeline/line_member in line_members)
-			line_member.air.networks += src
 			gases += line_member.air
 
 		for(var/datum/gas_mixture/air in gases)

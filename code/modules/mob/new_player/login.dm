@@ -21,10 +21,3 @@
 
 	GLOB.lobbyScreen.play_music(client)
 	GLOB.lobbyScreen.show_titlescreen(client)
-
-/mob/new_player/Destroy()
-
-	GLOB.player_list &= ~src
-
-	. = ..()
-
