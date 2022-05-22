@@ -250,18 +250,6 @@ var/const/RADIO_MAGNETS = "radio_magnet"
 /datum/radio_frequency
 	var/frequency as num
 	var/list/list/obj/devices = list()
-	/// My solution to remove the radio harddel - niko
-	var/list/linked_devices = list()
-
-/datum/radio_frequency/Destroy()
-
-	for(var/obj/item/integrated_circuit/input/signaler/connected_item in linked_devices)
-		connected_item.radio_connection = null
-		linked_devices -= connected_item
-
-	devices.Cut()
-
-	. = ..()
 
 /datum/radio_frequency/proc/post_signal(obj/source as obj|null, datum/signal/signal, var/filter = null as text|null, var/range = null as num|null)
 	var/turf/start_point

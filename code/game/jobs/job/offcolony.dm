@@ -136,7 +136,6 @@
 	outfit_type = /decl/hierarchy/outfit/job/outsider
 	difficulty = "Impossible!"
 	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
-	has_id = FALSE
 
 	stat_modifiers = list(
 		STAT_BIO = 5,

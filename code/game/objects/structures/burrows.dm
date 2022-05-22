@@ -109,12 +109,6 @@
 	population = list()
 	plantspread_burrows = list()
 	plant = null
-
-	if(target)
-		target = null
-	if (recieving)
-		recieving.target = null
-		recieving = null
 	.=..()
 
 //This is called from the migration subsystem. It scans for nearby creatures

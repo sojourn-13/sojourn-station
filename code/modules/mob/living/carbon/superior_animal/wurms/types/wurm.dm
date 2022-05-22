@@ -115,11 +115,9 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 		var/nb_ores = rand(3, 5)
 		for(var/i in 1 to nb_ores)
 			new ore(loc)
-
-	..() //THIS MUST BE BEFORE QDEL!! OTHERWISE YOU END UP ADDING THE MOB TO THE DEAD MOB LIST POST-DESTROY!!!
-
 	qdel(src)
 
+	..()
 	//new /obj/effect/gibspawner/generic(src.loc) - This one is just anti-lag not really needed to giv these
 
 //////////////////
