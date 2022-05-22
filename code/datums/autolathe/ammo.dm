@@ -76,17 +76,17 @@
 /datum/design/autolathe/ammo/m12beanbag
 	name = "ammo drum (20mm beanbag)"
 	build_path = /obj/item/ammo_magazine/m12/beanbag
-	materials = list(MATERIAL_STEEL = 14)
+	materials = list(MATERIAL_STEEL = 8)
 
 /datum/design/autolathe/ammo/m12pellet
 	name = "ammo drum (20mm pellet)"
 	build_path = /obj/item/ammo_magazine/m12/pellet
-	materials = list(MATERIAL_STEEL = 14)
+	materials = list(MATERIAL_STEEL = 8)
 
 /datum/design/autolathe/ammo/m12slug
 	name = "ammo drum (20mm slug)"
 	build_path = /obj/item/ammo_magazine/m12
-	materials = list(MATERIAL_STEEL = 14)
+	materials = list(MATERIAL_STEEL = 8)
 
 /datum/design/autolathe/ammo/sbaw_slug
 	name = "SBAW magazine (20mm slug)"

@@ -22,9 +22,9 @@
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 600
-	penetration_multiplier = 1.15 //2 ?????????????????????????????????????
+	penetration_multiplier = 2
 	pierce_multiplier = 2
-	damage_multiplier = 0.7
+	damage_multiplier = 0.6
 	recoil_buildup = 13
 	one_hand_penalty = 15 //full sized shotgun level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
