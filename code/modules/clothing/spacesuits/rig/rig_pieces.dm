@@ -49,6 +49,7 @@
 	can_breach = 1
 	supporting_limbs = list()
 	retract_while_active = TRUE
+	extra_allowed = list(/obj/item/storage/backpack)
 	max_upgrades = 0 //RIG modules are upgraded, not the rig pieces
 	matter = list(MATERIAL_STEEL = 1)
 
