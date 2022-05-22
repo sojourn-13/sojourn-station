@@ -302,16 +302,16 @@
 	var/datum/map_template/dungeon_template/init_template = starting_room.template
 	var/list/bounds = list(1.#INF, 1.#INF, 1.#INF, -1.#INF, -1.#INF, -1.#INF)
 	bounds[MAP_MINX] = 1
-	bounds[MAP_MINY] = 200
+	bounds[MAP_MINY] = 146
 	bounds[MAP_MINZ] = z
-	bounds[MAP_MAXX] = 2
+	bounds[MAP_MAXX] = 210
 	bounds[MAP_MAXY] = 1
 	bounds[MAP_MAXZ] = z
 	init_template.initTemplateBounds(bounds)
 	testing("finished dungeon initialization!")
 
 	sleep(1)
-	for(var/turf/simulated/wall/W in block(locate(1, 1, z), locate(210, 200, z)))
+	for(var/turf/simulated/wall/W in block(locate(1, 1, z), locate(210, 146, z)))
 		W.update_connections(1)
 
 
