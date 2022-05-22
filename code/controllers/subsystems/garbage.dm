@@ -30,7 +30,6 @@ SUBSYSTEM_DEF(garbage)
 	var/gcedlasttick = 0 // number of things that gc'ed last tick
 	var/totaldels = 0
 	var/totalgcs = 0
-	var/list/tested = list()
 
 	var/highest_del_ms = 0
 	var/highest_del_type_string = ""
@@ -187,26 +186,19 @@ SUBSYSTEM_DEF(garbage)
 
 		switch (level)
 			if (GC_QUEUE_CHECK)
-				var/type = D.type
-				var/datum/qdel_item/I = items[type]
-				var/can_check = TRUE
 				#ifdef REFERENCE_TRACKING
 				if(reference_find_on_fail[refID])
 					INVOKE_ASYNC(D, /datum/proc/find_references)
 					ref_searching = TRUE
 				#ifdef GC_FAILURE_HARD_LOOKUP
-				else if ((ispath(type, /mob/living/carbon/human)) || (ispath(type, /mob/living/carbon/brain)) || (ispath(type, /datum/radio_frequency)))
-					for (var/atom/a in tested)
-						if (ispath(type, a.type))
-							can_check = FALSE
-							break
-					if (can_check)
-						INVOKE_ASYNC(D, /datum/proc/find_references)
-						ref_searching = TRUE
-						tested += type
+				else
+					INVOKE_ASYNC(D, /datum/proc/find_references)
+					ref_searching = TRUE
 				#endif
 				reference_find_on_fail -= refID
 				#endif
+				var/type = D.type
+				var/datum/qdel_item/I = items[type]
 
 				log_world("## TESTING: GC: -- \ref[D] | [type] was unable to be GC'd --")
 				#ifdef TESTING
