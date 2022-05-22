@@ -7773,16 +7773,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"wA" = (
-/obj/machinery/atmospherics/pipe/simple/visible,
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 4
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "wB" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
@@ -18862,7 +18852,7 @@ vj
 vL
 vL
 wk
-wA
+wz
 wT
 Qy
 XD
