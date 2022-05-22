@@ -265,7 +265,7 @@
 	activate_string = "Deploy Shield"
 	deactivate_string = "Retract Shield"
 
-	interface_name = "frozen star shield"
+	interface_name = "H&S star shield"
 	interface_desc = "A reinforced ballistic shield for use against high-velocity projectiles and energy weapons."
 
 	usable = 0
