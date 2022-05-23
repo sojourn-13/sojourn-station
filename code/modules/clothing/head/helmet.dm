@@ -834,6 +834,7 @@
 	name = "marshal full helmet"
 	desc = "A full helmet with a built in glow visor. While a weak light its better than nothing and the full cover design makes it ideal for general protection."
 	icon_state = "ironhammer_reg_full"
+	item_state = "ironhammer_reg_full"
 	armor_list = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
@@ -854,6 +855,7 @@
 	name = "warrant officer full helmet"
 	desc = "A full helmet with a built in glow visor. This one appears to be fitted with new visor servos internally to protect from flashes as well as a bullet-proof reinforced mouth guard!"
 	icon_state = "ironhammer_full"
+	item_state = "ironhammer_full"
 	flash_protection = FLASH_PROTECTION_MAJOR
 	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 100, rad = 0) 
 
