@@ -212,7 +212,7 @@
 		list(/obj/item/ameridian_core, 1, "time" = 30),
 		list(/obj/item/stock_parts/manipulator/pico, 2, "time" = 30),
 		list(/obj/item/gun_upgrade/mechanism/battery_shunt, 1, "time" = 30),
-		list(/obj/item/rocket_engine, 1, "time" = 30),
+		list(/obj/item/tool_upgrade/productivity/rocket_engine, 1, "time" = 30),
 		list(/obj/item/tool_upgrade/reinforcement/guard, 3, "time" = 30),
 		list(/obj/item/cell/large/moebius/omega, 1, "time" = 30),
 		list(QUALITY_PULSING, 10, "time" = 60),
