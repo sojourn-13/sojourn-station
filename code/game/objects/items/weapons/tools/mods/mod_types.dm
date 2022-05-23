@@ -357,9 +357,11 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.75,
-	UPGRADE_DEGRADATION_MULT = 1.3,
-	UPGRADE_POWERCOST_MULT = 1.3,
-	UPGRADE_FUELCOST_MULT = 1.3,
+	UPGRADE_FORCE_MULT = 1.25,
+	UPGRADE_DEGRADATION_MULT = 3,
+	UPGRADE_POWERCOST_MULT = 2,
+	UPGRADE_FUELCOST_MULT = 2,
+	UPGRADE_PRECISION = -15,
 	UPGRADE_HEALTH_THRESHOLD = -10
 	)
 	I.weapon_upgrades = list(
@@ -372,7 +374,36 @@
 	I.prefix = "plasma-fueled"
 	I.req_fuel_cell = REQ_FUEL
 	I.gun_loc_tag = GUN_BARREL
-	I.req_gun_tags = list(GUN_ENERGY)
+	I.req_gun_tags = list(GUN_PROJECTILE)
+
+/obj/item/tool_upgrade/productivity/rocket_engine
+	name = "rocket engine"
+	desc = "A singular rocket engine, used in assisted ballistics, tools, and once in a blue moon its intended purpose."
+	icon = 'icons/obj/items.dmi'
+	icon_state = "rocket_engine"
+	origin_tech = list(TECH_ENGINEERING = 3, TECH_POWER = 4)
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_GOLD = 1)
+
+/obj/item/tool_upgrade/productivity/injector/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_WORKSPEED = 0.75,
+	UPGRADE_DEGRADATION_MULT = 1.3,
+	UPGRADE_POWERCOST_MULT = 1.3,
+	UPGRADE_FUELCOST_MULT = 1.3,
+	UPGRADE_HEALTH_THRESHOLD = -10
+	)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_STEPDELAY_MULT = 0.1,
+		UPGRADE_BULK = 2,
+		GUN_UPGRADE_RECOIL = 1.5,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.75
+		)
+	I.prefix = "rocket-assisted "
+	I.req_fuel_cell = REQ_FUEL_OR_CELL
+	I.gun_loc_tag = GUN_MECHANISM
+	I.req_gun_tags = list(GUN_PROJECTILE)
 
 // Wax coating- shrinks tool and give it anti-staining properties, can be applied to clothes
 /obj/item/tool_upgrade/productivity/waxcoat
