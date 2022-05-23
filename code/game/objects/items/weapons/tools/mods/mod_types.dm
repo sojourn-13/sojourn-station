@@ -357,11 +357,9 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.75,
-	UPGRADE_FORCE_MULT = 1.25,
-	UPGRADE_DEGRADATION_MULT = 3,
-	UPGRADE_POWERCOST_MULT = 2,
-	UPGRADE_FUELCOST_MULT = 2,
-	UPGRADE_PRECISION = -15,
+	UPGRADE_DEGRADATION_MULT = 1.3,
+	UPGRADE_POWERCOST_MULT = 1.3,
+	UPGRADE_FUELCOST_MULT = 1.3,
 	UPGRADE_HEALTH_THRESHOLD = -10
 	)
 	I.weapon_upgrades = list(
@@ -374,7 +372,7 @@
 	I.prefix = "plasma-fueled"
 	I.req_fuel_cell = REQ_FUEL
 	I.gun_loc_tag = GUN_BARREL
-	I.req_gun_tags = list(GUN_PROJECTILE)
+	I.req_gun_tags = list(GUN_ENERGY)
 
 /obj/item/tool_upgrade/productivity/rocket_engine
 	name = "rocket engine"
@@ -384,14 +382,16 @@
 	origin_tech = list(TECH_ENGINEERING = 3, TECH_POWER = 4)
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_GOLD = 1)
 
-/obj/item/tool_upgrade/productivity/injector/New()
+/obj/item/tool_upgrade/productivity/rocket_engine/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.75,
-	UPGRADE_DEGRADATION_MULT = 1.3,
-	UPGRADE_POWERCOST_MULT = 1.3,
-	UPGRADE_FUELCOST_MULT = 1.3,
+	UPGRADE_FORCE_MULT = 1.25,
+	UPGRADE_DEGRADATION_MULT = 3,
+	UPGRADE_POWERCOST_MULT = 2,
+	UPGRADE_FUELCOST_MULT = 2,
+	UPGRADE_PRECISION = -15,
 	UPGRADE_HEALTH_THRESHOLD = -10
 	)
 	I.weapon_upgrades = list(
