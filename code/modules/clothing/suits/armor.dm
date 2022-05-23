@@ -774,7 +774,7 @@
 
 /obj/item/clothing/suit/armor/platecarrier/corpsman
 	name = "Corpsman plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with Corpsman liverly and has a stain resistant coating."
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with Corpsman livery and has a stain resistant coating."
 	icon_state = "platecarrier_corpsman"
 	item_state = "platecarrier_corpsman"
 	armor_list = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 20, rad = 0)
@@ -806,7 +806,7 @@
 
 /obj/item/clothing/suit/armor/platecarrier/corpsman/full
 	name = "Corpsman full body plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with corpsman liverly and has a stain resistant coating as well as additional shoulderpads and kneepads for added protection."
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with corpsman livery and has a stain resistant coating as well as additional shoulderpads and kneepads for added protection."
 	icon_state = "platecarrier_corpsman_fullbody"
 	item_state = "platecarrier_corpsman_fullbody"
 	armor_list = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 20, rad = 0) // Just in case it doesn't inherit armor qualities
@@ -841,17 +841,17 @@
 /obj/item/clothing/suit/armor/bulletproof/ironhammer/militia
 	name = "Blackshield bulletproof suit"
 	desc = "A set of vest, shoulder guards and leg guards that excel at protecting against high-velocity, solid projectiles. \
-	This particular set seems to have been taken straight from the armory of some low-budget P.D.F or Reserve force, repainted in\
-	blackshield colors and given their I.F.F markings."
+			This particular set seems to have been taken straight from the armory of some low-budget P.D.F or Reserve force, repainted in \
+			Blackshield colors and given their I.F.F markings."
 	icon_state = "bulletproof_bs"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
 
 /obj/item/clothing/suit/armor/vest/ablative/militia
 	name = "Blackshield ablative plate"
-	desc = "An outdated set of ablative armor, utilizing advanced materials to absorb rather than reflect energy projeciles and painted in Blackshield's colors.\
-	A distinctive set of equipment, the MK-II 'Energy Defense Gear' sold more for its distinctive, and some would say 'flashy'\
-	appearance than its capabilities. Despite its bad reputation as a tax-payer credit sink it serves as a fairly adequate piece of gear."
+	desc = "An outdated set of ablative armor, utilizing advanced materials to absorb rather than reflect energy projeciles and painted in Blackshield's colors. \
+			A distinctive set of equipment, the MK-II 'Energy Defense Gear' sold more for its distinctive, and some would say 'flashy' \
+			appearance than its capabilities. Despite its bad reputation as a tax-payer credit sink, it serves as a fairly adequate piece of gear."
 	icon_state = "ablative_bs"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 	slowdown = 0.5

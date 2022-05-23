@@ -1295,7 +1295,9 @@
 	outputs = list(
 		"brain activity" = IC_PINTYPE_BOOLEAN,
 		"pulse" = IC_PINTYPE_NUMBER,
-		"is conscious" = IC_PINTYPE_BOOLEAN
+		"is conscious" = IC_PINTYPE_BOOLEAN,
+		"Total Health" = IC_PINTYPE_NUMBER,
+		"Body Temperature" = IC_PINTYPE_NUMBER
 		)
 	activators = list("scan" = IC_PINTYPE_PULSE_IN, "on scanned" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
@@ -1308,8 +1310,10 @@
 	if(H.Adjacent(get_turf(src))) // Like normal analysers, it can't be used at range.
 		var/obj/item/organ/internal/brain/brain = H.random_organ_by_process(BP_BRAIN)
 		set_pin_data(IC_OUTPUT, 1, (brain && H.stat != DEAD))
-		set_pin_data(IC_OUTPUT, 2, H.pulse())
+		set_pin_data(IC_OUTPUT, 2, text2num(H.get_pulse(GETPULSE_TOOL)))
 		set_pin_data(IC_OUTPUT, 3, (H.stat == 0))
+		set_pin_data(IC_OUTPUT, 4, round(H.health/H.maxHealth*100))
+		set_pin_data(IC_OUTPUT, 5, H.bodytemperature-T0C)
 
 	push_data()
 	activate_pin(2)
@@ -1322,34 +1326,25 @@
 	complexity = 12
 	inputs = list("target" = IC_PINTYPE_REF)
 	outputs = list(
-		"brain activity"		= IC_PINTYPE_BOOLEAN,
-		"is conscious"	        = IC_PINTYPE_BOOLEAN,
-		"brute damage"			= IC_PINTYPE_NUMBER,
-		"burn damage"			= IC_PINTYPE_NUMBER,
-		"tox damage"			= IC_PINTYPE_NUMBER,
-		"oxy damage"			= IC_PINTYPE_NUMBER,
-		"clone damage"			= IC_PINTYPE_NUMBER,
-		"pulse"                 = IC_PINTYPE_NUMBER,
-		"oxygenation level"     = IC_PINTYPE_NUMBER,
-		"radiation"             = IC_PINTYPE_NUMBER,
-		"name"                  = IC_PINTYPE_STRING,
+		"brain activity"		= IC_PINTYPE_BOOLEAN,//1
+		"is conscious"	        = IC_PINTYPE_BOOLEAN,//2
+		"brute damage"			= IC_PINTYPE_NUMBER,//3
+		"burn damage"			= IC_PINTYPE_NUMBER,//4
+		"tox damage"			= IC_PINTYPE_NUMBER,//5
+		"oxy damage"			= IC_PINTYPE_NUMBER,//6
+		"clone damage"			= IC_PINTYPE_NUMBER,//7
+		"pulse"                 = IC_PINTYPE_NUMBER,//8
+		"blood volume percent"	= IC_PINTYPE_NUMBER,//9
+		"radiation"             = IC_PINTYPE_NUMBER,//10
+		"name"                  = IC_PINTYPE_STRING,//11
+		"total health"			= IC_PINTYPE_NUMBER,//12
+		"body temperature"		= IC_PINTYPE_NUMBER,//13
+		"NSA"					= IC_PINTYPE_NUMBER,//14
 	)
 	activators = list("scan" = IC_PINTYPE_PULSE_IN, "on scanned" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_RESEARCH
 	power_draw_per_use = 80
 
-/obj/item/integrated_circuit/input/adv_med_scanner/proc/damage_to_severity(value)
-	if(value < 1)
-		return 0
-	if(value < 25)
-		return 1
-	if(value < 50)
-		return 2
-	if(value < 75)
-		return 3
-	if(value < 100)
-		return 4
-	return 5
 
 /obj/item/integrated_circuit/input/adv_med_scanner/do_work()
 	var/mob/living/carbon/human/H = get_pin_data_as_type(IC_INPUT, 1, /mob/living/carbon/human)
@@ -1359,15 +1354,19 @@
 		var/obj/item/organ/internal/brain/brain = H.random_organ_by_process(BP_BRAIN)
 		set_pin_data(IC_OUTPUT, 1, (brain && H.stat != DEAD))
 		set_pin_data(IC_OUTPUT, 2, (H.stat == 0))
-		set_pin_data(IC_OUTPUT, 3, damage_to_severity(100 * H.getBruteLoss() / H.maxHealth))
-		set_pin_data(IC_OUTPUT, 4, damage_to_severity(100 * H.getFireLoss() / H.maxHealth))
-		set_pin_data(IC_OUTPUT, 5, damage_to_severity(100 * H.getToxLoss() / H.maxHealth))
-		set_pin_data(IC_OUTPUT, 6, damage_to_severity(100 * H.getOxyLoss() / H.maxHealth))
-		set_pin_data(IC_OUTPUT, 7, damage_to_severity(100 * H.getCloneLoss() / H.maxHealth))
-		set_pin_data(IC_OUTPUT, 8, H.pulse())
-		set_pin_data(IC_OUTPUT, 9, H.get_blood_oxygenation())
+		set_pin_data(IC_OUTPUT, 3, H.getBruteLoss())
+		set_pin_data(IC_OUTPUT, 4, H.getFireLoss())
+		set_pin_data(IC_OUTPUT, 5, H.getToxLoss())
+		set_pin_data(IC_OUTPUT, 6, H.getOxyLoss())
+		set_pin_data(IC_OUTPUT, 7, H.getCloneLoss())
+		set_pin_data(IC_OUTPUT, 8, text2num(H.get_pulse(GETPULSE_TOOL)))
+		set_pin_data(IC_OUTPUT, 9, round((H.vessel.get_reagent_amount("blood") / H.species.blood_volume)*100))
 		set_pin_data(IC_OUTPUT, 10, H.radiation)
 		set_pin_data(IC_OUTPUT, 11, H.name)
+		set_pin_data(IC_OUTPUT, 12, round(H.health/H.maxHealth*100))
+		set_pin_data(IC_OUTPUT, 13, H.bodytemperature-T0C)
+		set_pin_data(IC_OUTPUT, 14, max(0, H.metabolism_effects.get_nsa()))
+
 
 	push_data()
 	activate_pin(2)
