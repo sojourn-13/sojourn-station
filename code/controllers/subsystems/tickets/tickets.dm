@@ -142,8 +142,7 @@ SUBSYSTEM_DEF(tickets)
 	var/datum/ticket/T = new(url_title, title, passedContent, new_ticket_num)
 	allTickets += T
 	T.client_ckey = C.ckey
-	if (C.mob.loc.name) //sanity check - some locs, such as title screen, have no name or position
-		T.locationSent = C.mob.loc.name
+	T.locationSent = C.mob.loc.name
 	T.mobControlled = C.mob
 
 	//Inform the user that they have opened a ticket
