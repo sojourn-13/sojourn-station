@@ -89363,10 +89363,10 @@
 	dir = 4;
 	pixel_x = 0
 	},
-/obj/item/gun/projectile/automatic/bulldog/rds{
+/obj/item/gun/projectile/automatic/mamba{
 	pixel_y = 2
 	},
-/obj/item/gun/projectile/automatic/bulldog/rds{
+/obj/item/gun/projectile/automatic/mamba{
 	pixel_y = -4
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,

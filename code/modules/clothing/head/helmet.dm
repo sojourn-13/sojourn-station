@@ -704,6 +704,10 @@
 	price_tag = 150
 	obscuration = LIGHT_OBSCURATION
 
+/obj/item/clothing/head/helmet/laserproof/marshal
+	icon_state = "ironhammer_ablative"
+	item_state = "ironhammer_ablative"
+
 /obj/item/clothing/head/helmet/laserproof/iron_lock_security
 	name = "outdated ablative helmet"
 	desc = "A \"Iron Lock Security\" helmet that excels in protecting the wearer against energy projectiles this even after all these years still is the base of ablative helmet design. Produced by Greyson Positronic"
@@ -828,16 +832,32 @@
 
 /obj/item/clothing/head/helmet/marshal_full
 	name = "marshal full helmet"
-	desc = "A full helmet with a built in glow visor. While a weak light its better than nothing and the full cover design makes it ideal for bullet protection."
-	icon_state = "ironhammer_full"
-	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 100, rad = 0)
+	desc = "A full helmet with a built in glow visor. While a weak light its better than nothing and the full cover design makes it ideal for general protection."
+	icon_state = "ironhammer_reg_full"
+	armor_list = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	flash_protection = FLASH_PROTECTION_MAJOR
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4
 
 /obj/item/clothing/head/helmet/marshal_full/update_icon()
+	if(on)
+		icon_state = "ironhammer_reg_full_on"
+		set_light(2, 2, COLOR_LIGHTING_ORANGE_MACHINERY)
+	else
+		icon_state = "ironhammer_reg_full"
+		set_light(0, 0)
+	update_wear_icon()
+	..()
+
+/obj/item/clothing/head/helmet/marshal_full/warrant
+	name = "warrant officer full helmet"
+	desc = "A full helmet with a built in glow visor. This one appears to be fitted with new visor servos internally to protect from flashes as well as a bullet-proof reinforced mouth guard!"
+	icon_state = "ironhammer_full"
+	flash_protection = FLASH_PROTECTION_MAJOR
+	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 100, rad = 0) 
+
+/obj/item/clothing/head/helmet/marshal_full/warrant/update_icon()
 	if(on)
 		icon_state = "ironhammer_full_on"
 		set_light(2, 2, COLOR_LIGHTING_ORANGE_MACHINERY)
@@ -1112,17 +1132,6 @@
 			to_chat(usr, "You flip the [src] down to protect your face.")
 
 		usr.update_action_buttons()
-
-/obj/item/clothing/head/helmet/faceshield/helmet_visor
-	name = "marshal helmet"
-	desc = "It's a helmet specifically designed for general police work. Comes with a visor face cover and extra padding for dealing with criminal scum in melee."
-	icon_state = "helmet_visor"
-	armor_up = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
-	armor_list = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	price_tag = 150
-	tint = TINT_NONE
-	obscuration = LIGHT_OBSCURATION
 
 // S E R B I A //
 

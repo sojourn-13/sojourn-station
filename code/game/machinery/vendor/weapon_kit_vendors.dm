@@ -130,7 +130,6 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Colt Kit" = /obj/item/storage/box/bs_kit/colt,
-					"Makarov Kit" = /obj/item/storage/box/bs_kit/makarov,		
 					"Stallion Kit" = /obj/item/storage/box/bs_kit/stallion,
 					"Cowboy Kit" = /obj/item/storage/box/bs_kit/rex10,
 					"Pilgrim Kit" = /obj/item/storage/box/bs_kit/pilgrim,
@@ -178,16 +177,14 @@
 	desc = "A vendor that can dispense specialized equipment kits for Marshal Officers."
 	icon_state = "trashvend"
 	products = list(
-		/obj/item/storage/box/m_kit/ppv = 5,
+		/obj/item/storage/box/m_kit/freedom = 5,
 		/obj/item/storage/box/m_kit/breacher = 5,
-		/obj/item/storage/box/m_kit/state_auto = 5,
-		/obj/item/storage/box/m_kit/bulldog = 5,
+		/obj/item/storage/box/m_kit/operator = 5,
+		/obj/item/storage/box/m_kit/mamba = 5,
 		/obj/item/storage/box/m_kit/gear_lasgun = 5,
 		/obj/item/storage/box/m_kit/wirbelwind = 5,
 		/obj/item/storage/box/m_kit/taser = 5,
-		/obj/item/storage/box/m_kit/bronco = 5,
-		/obj/item/storage/box/m_kit/makarov = 5,
-		/obj/item/storage/box/m_kit/ladon = 5,
+		/obj/item/storage/box/m_kit/liberty = 5,
 		/obj/item/storage/box/m_kit/glock = 5,
 		/obj/item/storage/box/m_kit/standard_armor = 5,
 		/obj/item/storage/box/m_kit/bullet_proof = 5,
@@ -195,17 +192,15 @@
 		/obj/item/storage/box/m_kit/riot = 5
 		)
 	prices = list( // 500$ for default marshal stuff, 750 for the rest
-		/obj/item/storage/box/m_kit/ppv = 1000,
+		/obj/item/storage/box/m_kit/freedom = 750,
 		/obj/item/storage/box/m_kit/breacher = 750,
-		/obj/item/storage/box/m_kit/state_auto = 750,
-		/obj/item/storage/box/m_kit/bulldog = 750,
+		/obj/item/storage/box/m_kit/operator = 750,
+		/obj/item/storage/box/m_kit/mamba = 750,
 		/obj/item/storage/box/m_kit/gear_lasgun = 750,
 		/obj/item/storage/box/m_kit/wirbelwind = 500,
 		/obj/item/storage/box/m_kit/taser = 500,
-		/obj/item/storage/box/m_kit/bronco = 750,
-		/obj/item/storage/box/m_kit/makarov = 750,
+		/obj/item/storage/box/m_kit/liberty = 1000,
 		/obj/item/storage/box/m_kit/glock = 750,
-		/obj/item/storage/box/m_kit/ladon = 750,
 		/obj/item/storage/box/m_kit/standard_armor = 500,
 		/obj/item/storage/box/m_kit/bullet_proof = 850,
 		/obj/item/storage/box/m_kit/riot = 750,
@@ -238,10 +233,10 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
-					"PPV Kit" = /obj/item/storage/box/m_kit/ppv,
+					"Freedom Kit" = /obj/item/storage/box/m_kit/freedom,
 					"Breacher-hammer Kit" = /obj/item/storage/box/m_kit/breacher,
-					"State Auto-Shotgun Kit" = /obj/item/storage/box/m_kit/state_auto,
-					"Bulldog Kit" = /obj/item/storage/box/m_kit/bulldog,
+					"Operator Kit" = /obj/item/storage/box/m_kit/operator,
+					"Mamba Kit" = /obj/item/storage/box/m_kit/mamba,
 					"Gear Lasgun Kit" = /obj/item/storage/box/m_kit/gear_lasgun)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
@@ -253,11 +248,10 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemSpecPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
-					"PPV Kit" = /obj/item/storage/box/m_kit/ppv,
+					"Spec-Op Kit" = /obj/item/storage/box/m_kit/specop,
 					"State Auto-Shotgun Kit" = /obj/item/storage/box/m_kit/state_auto,
-					"Bulldog Kit" = /obj/item/storage/box/m_kit/bulldog,
+					"Viper Kit" = /obj/item/storage/box/m_kit/viper,
 					"Gear Lasgun Kit" = /obj/item/storage/box/m_kit/gear_lasgun,
-					"Pug shotgun Kit" = /obj/item/storage/box/m_kit/pug,
 					"Sunrise Las-SMG Kit" = /obj/item/storage/box/m_kit/typewriter)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
@@ -269,7 +263,7 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemRangerPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
-					"Thompson Kit" = /obj/item/storage/box/m_kit/tommygun,
+					"Spec-Op Kit" = /obj/item/storage/box/m_kit/specop,
 					"Armstrong Kit" = /obj/item/storage/box/m_kit/armstrong,
 					"Peacekeeper Kit" = /obj/item/storage/box/m_kit/peacekeeper)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
@@ -283,9 +277,7 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Counselor Kit" = /obj/item/storage/box/m_kit/taser,
-					"Bronco Kit" = /obj/item/storage/box/m_kit/bronco,
-					"Makarov Kit" = /obj/item/storage/box/m_kit/makarov,
-					"Ladon Kit" = /obj/item/storage/box/m_kit/ladon,
+					"Liberty Kit" = /obj/item/storage/box/m_kit/liberty,
 					"Sky Kit" = /obj/item/storage/box/m_kit/glock,
 					"Wirbelwind Kit" = /obj/item/storage/box/m_kit/wirbelwind)
 	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]

@@ -170,6 +170,9 @@
 		rad = 0
 	)
 
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer
+	icon_state = "ablative_ironhammer"
+	item_state = "ablative_ironhammer"
 
 /obj/item/clothing/suit/armor/vest/botanist
 	name = "botanist attire"
