@@ -1,7 +1,7 @@
 /datum/language/german
 	name = LANGUAGE_GERMAN
 	desc = "Language used by the descendants of Europe."
-	colour = "german"
+	colour = "blue"
 	key = "q"
 	space_chance = 80
 	shorthand = "GE"
