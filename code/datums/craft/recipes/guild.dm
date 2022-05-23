@@ -155,7 +155,7 @@
 
 /datum/craft_recipe/guild/rocket_engine
 	name = "rocket engine"
-	result = /obj/item/rocket_engine
+	result = /obj/item/tool_upgrade/productivity/rocket_engine
 	icon_state = "electronic"
 	steps = list(
 		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL, "time" = 60),

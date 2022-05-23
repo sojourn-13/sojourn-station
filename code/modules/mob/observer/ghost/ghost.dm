@@ -78,8 +78,6 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	ghost_multitool = new(src)
 	..()
 
-	AddComponent(/datum/component/fabric)
-
 /mob/observer/ghost/Destroy()
 	stop_following()
 	qdel(ghost_multitool)

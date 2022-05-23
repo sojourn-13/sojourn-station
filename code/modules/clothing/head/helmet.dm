@@ -68,8 +68,8 @@
 /obj/item/clothing/head/helmet/ballistic/bulletproof/militia
 	name = "Blackshield bulletproof helmet"
 	icon_state = "bulletproof_bs"
-	desc = "Standard military gear. Protects exceptionally well from high-velocity solid projectiles\
-	This one bears the IFF stripes of the blackshield."
+	desc = "Standard military gear. Protects exceptionally well from high-velocity solid projectiles \
+	This one bears the IFF stripes of the Blackshield."
 	flags_inv = HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 0, rad = 0)
@@ -81,8 +81,8 @@
 /obj/item/clothing/head/helmet/laserproof/militia
 	name = "Blackshield ablative helmet"
 	icon_state = "ablative_bs"
-	desc = "An outdated, energy resistant helmet in a distinctive style. Loved by politicians, loathed by taxpayers and tollerated by the \
-	local forces so often put within it."
+	desc = "An outdated, energy resistant helmet in a distinctive style. Loved by politicians, loathed by taxpayers and tolerated by the \
+			local forces so often outfitted with it."
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	armor_list = list(melee = 25, bullet = 25, energy = 60, bomb = 10, bio = 0, rad = 0)
