@@ -45,12 +45,11 @@
 
 //Resets blood data
 /mob/living/carbon/human/proc/fixblood()
-	if (!QDELETED(src))
-		for(var/datum/reagent/organic/blood/B in vessel.reagent_list)
-			if(B.id == "blood")
-				B.data = list(	"donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= blood_color,"blood_type"=dna.b_type,	\
-								"resistances"=null,"trace_chem"=null, "virus2" = null, "antibodies" = list())
-				B.initialize_data(get_blood_data())
+	for(var/datum/reagent/organic/blood/B in vessel.reagent_list)
+		if(B.id == "blood")
+			B.data = list(	"donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= blood_color,"blood_type"=dna.b_type,	\
+							"resistances"=null,"trace_chem"=null, "virus2" = null, "antibodies" = list())
+			B.initialize_data(get_blood_data())
 
 // Takes care blood loss and regeneration
 /mob/living/carbon/human/handle_blood()
