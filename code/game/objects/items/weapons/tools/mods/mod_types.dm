@@ -387,7 +387,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 	UPGRADE_WORKSPEED = 0.75,
-	UPGRADE_FORCE_MULT = 1.25,
+	UPGRADE_FORCE_MULT = 1.2,
 	UPGRADE_DEGRADATION_MULT = 3,
 	UPGRADE_POWERCOST_MULT = 2,
 	UPGRADE_FUELCOST_MULT = 2,
