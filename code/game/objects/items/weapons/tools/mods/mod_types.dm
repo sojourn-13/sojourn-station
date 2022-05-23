@@ -408,7 +408,7 @@
 // Wax coating- shrinks tool and give it anti-staining properties, can be applied to clothes
 /obj/item/tool_upgrade/productivity/waxcoat
 	name = "Wax Coating"
-	desc = "A bucket of filtered beeswax, to be applied to tools or clothes; preventing stains, and preventing minor knicks and damage."
+	desc = "A bucket of filtered beeswax, to be applied to tools or clothes to prevent stains, minor nicks, and damage."
 	icon_state = "waxcoat"
 	matter = list(MATERIAL_BIOMATTER = 2, MATERIAL_PLASTIC = 5)
 	can_remove = FALSE
