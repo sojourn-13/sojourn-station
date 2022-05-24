@@ -44,29 +44,33 @@
 	icon_state = "ironhammer"
 	license = 20 //1:1 with blackshield guns
 	designs = list(
-		/datum/design/autolathe/gun/rev10,
 		/datum/design/autolathe/gun/glock,
+		/datum/design/autolathe/gun/liberty,
+		/datum/design/autolathe/gun/rev10,
+		/datum/design/autolathe/gun/amnesty = 2,
 		/datum/design/autolathe/gun/judge = 2,
 		//SMGs
 		/datum/design/autolathe/gun/wirbelwind = 2,
-		/datum/design/autolathe/gun/ppv = 2,
+		/datum/design/autolathe/gun/freedom = 2,
+		/datum/design/autolathe/gun/specop = 3,
 		//rifles
-		/datum/design/autolathe/gun/strelki,
-		/datum/design/autolathe/gun/ostwind = 3,
-		/datum/design/autolathe/gun/bulldog = 3,
-		/datum/design/autolathe/gun/bulldog_rds = 3,
+		/datum/design/autolathe/gun/mamba = 3,
+		/datum/design/autolathe/gun/viper = 4,
+		/datum/design/autolathe/gun/ostwind = 5,
+		/datum/design/autolathe/gun/copperhead = 4,
 		//shotguns
+		/datum/design/autolathe/gun/operator = 4,
 		/datum/design/autolathe/gun/riot_shotgun = 4,
 		//machinegun
 		/datum/design/autolathe/gun/dp = 2,
-		/datum/design/autolathe/gun/bastard = 2,
+		/datum/design/autolathe/gun/bastard = 3,
 		//ion
 		/datum/design/autolathe/gun/ion_pistol = 5,
 		//launcher
 		/datum/design/autolathe/gun/grenade_launcher_lenar = 7,
 		//sniper
+		/datum/design/autolathe/gun/python = 5,
 		/datum/design/autolathe/gun/nordwind = 7,
-		/datum/design/autolathe/device/landmine = 0,
 		//flaregun
 		/datum/design/autolathe/gun/flare_gun,
 		//laser
@@ -77,6 +81,7 @@
 		/datum/design/autolathe/tool/ironhammer,
 		/datum/design/autolathe/sec/stunbaton/maul,
 		/datum/design/autolathe/sec/riot,
+		/datum/design/autolathe/device/landmine = 0,
 		/datum/design/autolathe/sec/buckler = 0,
 		/datum/design/autolathe/sec/bastion = 0,
 		/datum/design/autolathe/container/ammocan_ih = 0,
@@ -710,23 +715,6 @@
 		/datum/design/autolathe/ammo/shotgun_beanbag = 1,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/pitbull
-	disk_name = "H&S - .257 Pitbull Carbine"
-	icon_state = "frozenstar"
-
-	license = 16
-	designs = list(
-		/datum/design/autolathe/gun/pitbull = 6,
-		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_short_rubber,
-		/datum/design/autolathe/ammo/lrifle_short,
-		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
-		/datum/design/autolathe/ammo/lrifle_practice = 1,
-		/datum/design/autolathe/ammo/lrifle_rubber = 2,
-		/datum/design/autolathe/ammo/lrifle = 2,
-		/datum/design/autolathe/ammo/lrifle_lethal = 4,
-	)
-
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ostwind
 	disk_name = "Seinemetall Defense GmbH - .257 Ostwind Carbine"
 	icon_state = "frozenstar"
@@ -734,25 +722,6 @@
 	license = 16
 	designs = list(
 		/datum/design/autolathe/gun/ostwind = 6,
-		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_short_rubber,
-		/datum/design/autolathe/ammo/lrifle_short,
-		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
-		/datum/design/autolathe/ammo/lrifle_practice = 1,
-		/datum/design/autolathe/ammo/lrifle_rubber = 2,
-		/datum/design/autolathe/ammo/lrifle = 2,
-		/datum/design/autolathe/ammo/lrifle_lethal = 4,
-	)
-
-
-/obj/item/computer_hardware/hard_drive/portable/design/guns/bulldog
-	disk_name = "Seinemetall Defense GmbH - .257 Bulldog Carbine"
-	icon_state = "frozenstar"
-
-	license = 16
-	designs = list(
-		/datum/design/autolathe/gun/bulldog = 6,
-		/datum/design/autolathe/gun/bulldog_rds = 7,
 		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
 		/datum/design/autolathe/ammo/lrifle_short,
