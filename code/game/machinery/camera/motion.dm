@@ -33,6 +33,7 @@
 		detectTime = world.time // start the clock
 	if (!(target in motionTargets))
 		motionTargets += target
+		target.tracking_cameras += src
 	return 1
 
 /obj/machinery/camera/proc/lostTarget(var/mob/target)

@@ -100,6 +100,9 @@
 //Lets remove ourselves from the global list and cleanup any held references
 /obj/structure/burrow/Destroy()
 	GLOB.all_burrows.Remove(src)
+	populated_burrows -= src
+	unpopulated_burrows -= src //-= is safe to use on lists, even if the item we're removing isn't in the list
+	distressed_burrows -= src
 	//Eject any mobs that tunnelled through us
 	for (var/atom/movable/a in sending_mobs)
 		if (a.loc == src)
