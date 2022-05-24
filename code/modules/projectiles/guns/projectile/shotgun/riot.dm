@@ -70,6 +70,7 @@
 	recoil_buildup = 18
 	one_hand_penalty = 15 //full sized shotgun level
 	folding_stock = TRUE //we can fold are stocks
+	can_dual = FALSE
 
 /obj/item/gun/projectile/automatic/riot_autoshotgun/operator/update_icon()
 	..()
