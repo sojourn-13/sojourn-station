@@ -53,6 +53,9 @@
 	icon_state = "pistol_s"
 	ammo_type = /obj/item/ammo_casing/pistol_35/scrap
 
+/obj/item/ammo_magazine/pistol_35/scrap/empty
+	initial_ammo = 0
+
 /obj/item/ammo_magazine/highcap_pistol_35/drum
 	name = "standard auto drum magazine"
 	icon_state = "ldrum"
@@ -312,6 +315,9 @@
 	icon_state = "srifle_long_s"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/scrap
 
+/obj/item/ammo_magazine/light_rifle_257/scrap/empty
+	initial_ammo = 0
+
 ////short////
 
 /obj/item/ammo_magazine/light_rifle_257_short
@@ -434,6 +440,9 @@
 	name = "old rifle magazine (ball)"
 	icon_state = "rifle_s"
 	ammo_type = /obj/item/ammo_casing/rifle_75/scrap
+
+/obj/item/ammo_magazine/rifle_75_short/scrap/empty
+	initial_ammo = 0
 
 ////short////
 
@@ -669,6 +678,9 @@
 	name = "old heavy rifle magazine (ball)"
 	icon_state = "hrifle_s"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/scrap
+
+/obj/item/ammo_magazine/heavy_rifle_408/scrap/empty
+	initial_ammo = 0
 
 /obj/item/ammo_magazine/heavy_rifle_408_drum
 	name = "heavy rifle drum magazine"

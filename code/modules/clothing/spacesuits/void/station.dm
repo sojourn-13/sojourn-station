@@ -618,3 +618,46 @@
 			P.redirect(new_x, new_y, curloc, user)
 
 			return PROJECTILE_CONTINUE // complete projectile permutation
+
+/* commented out till i can get the 'race restriction' stuff to work - CDB
+/obj/item/clothing/head/helmet/space/void/marqua
+	name = "Mar'Qua voidsuit helmet"
+	desc = "A standard issue helmet of Mar'Qua make, relatively lightly armored compared to other issue gear but made of advanced materials."
+	icon_state = "marquahelm"
+	armor_list = list(
+		melee = 25,
+		bullet = 40,
+		energy = 40,
+		bomb = 20,
+		bio = 100,
+		rad = 75
+	)
+
+/obj/item/clothing/head/helmet/space/void/marqua/equipped(mob/living/carbon/M)
+	if(M.species.reagent_tag != IS_MARQUA)
+		to_chat(SPAN_WARNING("[src] won't seem to fit!"))
+		return FALSE
+	..()
+
+/obj/item/clothing/suit/space/void/marqua
+	icon_state = "marquasuit"
+	name = "Mar'Qua hardsuit"
+	desc = "A relatively standard, if advanced suit of void protective gear, commonly seen among Mar'Qua vessels. The unusual anatomy of the Mar'Qua make fitting into this surprisingly light suit impossible for none Mar'Qua."
+	slowdown = 0
+	stiffness = LIGHT_STIFFNESS
+	armor_list = list(
+		melee = 25,
+		bullet = 40,
+		energy = 40,
+		bomb = 20,
+		bio = 100,
+		rad = 75
+	)
+	helmet = /obj/item/clothing/head/helmet/space/void/marqua
+
+
+/obj/item/clothing/suit/space/void/marqua/equipped(mob/living/carbon/M)
+	if(M.species.reagent_tag != IS_MARQUA)
+		to_chat(SPAN_WARNING("[src] won't seem to fit!"))
+		return FALSE
+	..() */ //super doesn't work lol

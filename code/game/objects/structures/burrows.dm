@@ -109,6 +109,12 @@
 	population = list()
 	plantspread_burrows = list()
 	plant = null
+
+	if(target)
+		target = null
+	if (recieving)
+		recieving.target = null
+		recieving = null
 	.=..()
 
 //This is called from the migration subsystem. It scans for nearby creatures
@@ -498,6 +504,20 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 								audio('sound/effects/impacts/thud_break.ogg', 100)
 								spawn_rubble(loc, 1, 100)//And make some rubble
 								invisibility = 0
+		if (I.has_quality(QUALITY_HAMMERING))
+			user.visible_message("[user] starts hammering [src] with \the [I]", "You start hammering out [src] with \the [I]")
+			if(I.use_tool(user, src, WORKTIME_DELAYED, QUALITY_HAMMERING, FAILCHANCE_NORMAL, required_stat = STAT_ROB) && isSealed) //You are quite literally hammering the floor, slow and tedious
+				user.visible_message("[user] seals [src] with \the [I].", "You seal [src] with \the [I].")
+				if(recieving)
+					if(prob(33))
+						qdel(src)
+					else	// false hammering, critters will create new cracks
+						invisibility = 101
+						spawn(rand(3,10) SECONDS)
+							if(isSealed)
+								audio('sound/effects/impacts/thud_break.ogg', 100)
+								spawn_rubble(loc, 1, 100)//And make some rubble
+								invisibility = 0								
 				else
 					qdel(src)
 	else
