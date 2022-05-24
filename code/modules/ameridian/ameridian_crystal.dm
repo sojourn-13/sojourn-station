@@ -37,10 +37,10 @@
 	update_icon()
 
 /obj/structure/ameridian_crystal/Destroy()
-	..()
 	STOP_PROCESSING(SSobj, src)
 	golem?.node = null
 	golem = null
+	. = ..()
 
 /obj/structure/ameridian_crystal/Process()
 	if(prob(growth_prob))

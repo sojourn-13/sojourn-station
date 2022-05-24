@@ -114,7 +114,7 @@
 	if (recieving)
 		recieving.target = null
 		recieving = null
-	.=..()
+	. = ..()
 
 //This is called from the migration subsystem. It scans for nearby creatures
 //Any kind of simple or superior animal is valid, all of them are treated as population for this burrow
