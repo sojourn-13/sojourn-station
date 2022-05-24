@@ -23,7 +23,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
-		FULL_AUTO_600
+		FULL_AUTO_400
 		)
 
 /obj/item/gun/projectile/automatic/mamba/update_icon()
@@ -93,7 +93,7 @@
 	folding_stock = FALSE
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		FULL_AUTO_600,
+		FULL_AUTO_400,
 		list(mode_name="fire 40mm grenade", mode_desc="Shoot the built in underbarrel grenade launcher",  burst=1, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 
