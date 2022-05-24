@@ -17,11 +17,11 @@
 
 /obj/effect/statclick/perk/Destroy()
 
-	target_perk.statclick = null
-	target_perk = null
+	if (target_perk)
+		target_perk.statclick = null
+		target_perk = null
 
 	. = ..()
-
 
 /obj/effect/statclick/perk/update()
 	if(target_perk.cooldown_time > world.time)
@@ -65,9 +65,10 @@
 		to_chat(holder, SPAN_NOTICE("[lose_text]"))
 	holder = null
 
-	statclick.target_perk = null
-	statclick = null
-	return ..()
+	if (statclick)
+		statclick.target_perk = null
+		statclick = null
+	. = ..()
 
 /datum/perk/proc/on_process()
 	SHOULD_CALL_PARENT(TRUE)
