@@ -51,6 +51,10 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
+/obj/item/gun/projectile/automatic/mamba/Initialize()
+	. = ..()
+	update_icon()
+
 //////////////////
 //.257 Viper DMR//
 //////////////////
