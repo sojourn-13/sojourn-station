@@ -109,11 +109,9 @@
 	plant = null
 
 	if(target)
-		target.recieving = null
-		target = null
+		abort_migration()
 	if (recieving)
-		recieving.target = null
-		recieving = null
+		recieving.abort_migration()
 	. = ..()
 
 //This is called from the migration subsystem. It scans for nearby creatures
@@ -393,7 +391,9 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 /obj/structure/burrow/proc/abort_migration()
 	STOP_PROCESSING(SSobj, src)
 	processing = FALSE
+	target.recieving = null
 	target = null
+	recieving.target = null
 	recieving = null
 
 	sending_mobs = list()
