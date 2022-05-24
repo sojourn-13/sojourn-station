@@ -62,12 +62,11 @@
 var/list/portal_cache = list()
 
 /obj/effect/portal/proc/blend_icon(turf/T)
-	if (T)
-		if(!("icon[initial(T.icon)]_iconstate[T.icon_state]_[type]" in portal_cache))//If the icon has not been added yet
-			var/icon/I1 = icon(icon,mask)//Generate it.
-			var/icon/I2 = icon(initial(T.icon),T.icon_state)
-			I1.Blend(I2,ICON_MULTIPLY)
-			portal_cache["icon[initial(T.icon)]_iconstate[T.icon_state]_[type]"] = I1 //And cache it!
+	if(!("icon[initial(T.icon)]_iconstate[T.icon_state]_[type]" in portal_cache))//If the icon has not been added yet
+		var/icon/I1 = icon(icon,mask)//Generate it.
+		var/icon/I2 = icon(initial(T.icon),T.icon_state)
+		I1.Blend(I2,ICON_MULTIPLY)
+		portal_cache["icon[initial(T.icon)]_iconstate[T.icon_state]_[type]"] = I1 //And cache it!
 
 	overlays += portal_cache["icon[initial(T.icon)]_iconstate[T.icon_state]_[type]"]
 
