@@ -15,6 +15,8 @@
 
 	LAssailant_weakref = null
 
+	QDEL_NULL(mind)
+
 	for (var/datum/movement_handler/mob/handler in movement_handlers)
 		handler.host = null
 		handler.mob = null
