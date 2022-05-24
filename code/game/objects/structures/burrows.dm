@@ -100,8 +100,6 @@
 //Lets remove ourselves from the global list and cleanup any held references
 /obj/structure/burrow/Destroy()
 	GLOB.all_burrows.Remove(src)
-	target = null
-	recieving = null
 	//Eject any mobs that tunnelled through us
 	for (var/atom/movable/a in sending_mobs)
 		if (a.loc == src)
@@ -111,6 +109,7 @@
 	plant = null
 
 	if(target)
+		target.recieving = null
 		target = null
 	if (recieving)
 		recieving.target = null
@@ -517,7 +516,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 							if(isSealed)
 								audio('sound/effects/impacts/thud_break.ogg', 100)
 								spawn_rubble(loc, 1, 100)//And make some rubble
-								invisibility = 0								
+								invisibility = 0
 				else
 					qdel(src)
 	else

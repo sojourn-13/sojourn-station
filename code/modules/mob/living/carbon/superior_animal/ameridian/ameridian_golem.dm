@@ -57,6 +57,7 @@
 /mob/living/carbon/superior_animal/ameridian_golem/Destroy()
 	..()
 	node?.golem = null
+	node = null
 
 /mob/living/carbon/superior_animal/ameridian_golem/update_icon()
 	transform = initial(transform)

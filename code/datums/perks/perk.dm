@@ -15,6 +15,14 @@
 	target_perk = perk
 	return ..(_, perk.name, perk)
 
+/obj/effect/statclick/perk/Destroy()
+
+	target_perk.statclick = null
+	target_perk = null
+
+	. = ..()
+
+
 /obj/effect/statclick/perk/update()
 	if(target_perk.cooldown_time > world.time)
 		name = "[target_perk.name] ([(target_perk.cooldown_time - world.time)/10] seconds)"
@@ -57,6 +65,7 @@
 		to_chat(holder, SPAN_NOTICE("[lose_text]"))
 	holder = null
 
+	statclick.target_perk = null
 	statclick = null
 	return ..()
 

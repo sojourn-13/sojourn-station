@@ -120,6 +120,14 @@
 	generate_junk_field_pool()
 	return
 
+/obj/jtb_generator/Destroy()
+
+	QDEL_NULL(ship_portal)
+	QDEL_NULL(jtb_portal)
+
+	. = ..()
+
+
 /obj/jtb_generator/proc/generate_junk_field_pool()
 	if(nb_in_pool > 0)
 		for(var/i in 1 to nb_in_pool)
