@@ -140,7 +140,11 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/kidney/K = H.random_organ_by_process(OP_KIDNEYS)
-		K.damage = max(K.damage + 2 * REM, 0)
+		if(istype(K))
+			if(BP_IS_ROBOTIC(K))
+				return
+			else
+				K.damage = 2 * REM
 	M.adjustToxLoss(2)
 	if(M.losebreath < 10)
 		M.losebreath++
