@@ -835,7 +835,7 @@
 	desc = "A full helmet with a built in glow visor. While a weak light its better than nothing and the full cover design makes it ideal for general protection."
 	icon_state = "ironhammer_reg_full"
 	item_state = "ironhammer_reg_full"
-	armor_list = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
+	armor_list = list(melee = 30, bullet = 30,energy = 25, bomb = 25, bio = 70, rad = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	action_button_name = "Toggle Headlamp"
@@ -1151,6 +1151,10 @@
 
 /obj/item/clothing/head/helmet/faceshield/altyn/black
 	icon_state = "altyn_black"
+
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer
+	icon_state = "ironhammer_altyn"
+	item_state = "ironhammer_altyn"
 
 /obj/item/clothing/head/helmet/faceshield/altyn/maska
 	name = "maska helmet"
