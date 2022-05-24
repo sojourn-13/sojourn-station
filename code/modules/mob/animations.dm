@@ -223,6 +223,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 	// And animate the attack!
 	animate(I, alpha = 175, pixel_x = 0, pixel_y = 0, pixel_z = 0, time = 3)
 
+/* // TODO - Wizard
 /obj/mecha/do_attack_animation(atom/A, var/use_item = TRUE)
 	..()
 
@@ -264,7 +265,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 
 	// And animate the attack!
 	animate(I, alpha = 175, pixel_x = 0, pixel_y = 0, pixel_z = 0, time = 3)
-
+*/
 
 /atom/proc/SpinAnimation(speed = 10, loops = -1)
 	var/matrix/m120 = matrix(transform)
