@@ -13960,10 +13960,10 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "cWT" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/armor/bulletproof,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "cWU" = (
@@ -29007,9 +29007,18 @@
 /area/nadezhda/outside/forest)
 "gcL" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/space/void/security,
-/obj/item/clothing/suit/space/void/security,
-/obj/item/clothing/suit/space/void/security,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "gcR" = (
@@ -56913,7 +56922,10 @@
 "lQL" = (
 /obj/machinery/door/window/southleft,
 /obj/structure/table/rack,
-/obj/item/gun/projectile/shotgun/pump/swat,
+/obj/item/gun/projectile/automatic/riot_autoshotgun,
+/obj/item/gun/projectile/automatic/riot_autoshotgun{
+	pixel_y = 8
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "lQR" = (
@@ -65429,21 +65441,22 @@
 /area/nadezhda/security/prisoncells)
 "nFC" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
 /obj/machinery/camera/network/security{
 	dir = 8
 	},
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "nFH" = (
@@ -73254,11 +73267,11 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "png" = (
-/obj/item/clothing/suit/armor/flackvest/green,
-/obj/item/clothing/suit/armor/flackvest/green,
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/head/helmet/faceshield/altyn,
-/obj/item/clothing/head/helmet/faceshield/altyn/maska,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "pnh" = (
@@ -88455,6 +88468,12 @@
 /obj/item/rig/combat/ironhammer/equipped{
 	pixel_x = 5
 	},
+/obj/item/rig/combat/ironhammer/equipped{
+	pixel_x = -5
+	},
+/obj/item/rig/combat/ironhammer/equipped{
+	pixel_x = 5
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "soq" = (
@@ -89360,11 +89379,14 @@
 	dir = 4;
 	pixel_x = 0
 	},
-/obj/item/gun/projectile/automatic/bulldog/rds{
+/obj/item/gun/projectile/automatic/mamba{
 	pixel_y = 2
 	},
-/obj/item/gun/projectile/automatic/bulldog/rds{
+/obj/item/gun/projectile/automatic/mamba{
 	pixel_y = -4
+	},
+/obj/item/gun/projectile/automatic/mamba/copperhead{
+	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
@@ -93662,17 +93684,18 @@
 /area/nadezhda/medical/genetics)
 "tvq" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/heavy/riot,
-/obj/item/clothing/suit/armor/heavy/riot,
-/obj/item/clothing/suit/armor/heavy/riot,
-/obj/item/clothing/suit/armor/heavy/riot,
-/obj/item/clothing/suit/armor/heavy/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "tvt" = (
@@ -105168,12 +105191,10 @@
 /area/nadezhda/crew_quarters/pool)
 "vNF" = (
 /obj/structure/table/rack,
-/obj/item/rig/combat/ironhammer{
-	pixel_x = -5
-	},
-/obj/item/rig/combat/ironhammer{
-	pixel_x = 6
-	},
+/obj/item/clothing/suit/space/void/security,
+/obj/item/clothing/suit/space/void/security,
+/obj/item/clothing/suit/space/void/security,
+/obj/item/clothing/suit/space/void/security,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "vNG" = (
@@ -105688,11 +105709,11 @@
 	name = "DMR crate";
 	req_access = list(3)
 	},
-/obj/item/gun/projectile/boltgun/scout,
 /obj/structure/window/reinforced{
 	dir = 1;
 	pixel_y = 0
 	},
+/obj/item/gun/projectile/automatic/mamba/copperhead/python,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "vTg" = (
@@ -112874,13 +112895,11 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "xrN" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/riot_autoshotgun{
-	pixel_y = -3
+/obj/item/gun/projectile/automatic/riot_autoshotgun/operator,
+/obj/item/gun/projectile/automatic/riot_autoshotgun/operator{
+	pixel_y = -8
 	},
-/obj/item/gun/projectile/automatic/riot_autoshotgun{
-	pixel_y = 3
-	},
-/obj/item/gun/projectile/automatic/riot_autoshotgun{
+/obj/item/gun/projectile/automatic/riot_autoshotgun/operator{
 	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/techmaint,

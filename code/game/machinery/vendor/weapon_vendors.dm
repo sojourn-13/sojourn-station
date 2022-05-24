@@ -35,7 +35,6 @@
 	/obj/item/gun/projectile/automatic/greasegun = 2,
 	/obj/item/gun/projectile/automatic/mac = 2,
 	/obj/item/gun/projectile/automatic/wirbelwind = 2,
-	/obj/item/gun/projectile/automatic/bulldog = 2,
 	//Shotgun
 	/obj/item/gun/projectile/shotgun/pump = 2,
 	/obj/item/gun/projectile/boltgun/lever = 2,
@@ -107,7 +106,6 @@
 	/obj/item/gun/projectile/automatic/greasegun = 950,
 	/obj/item/gun/projectile/automatic/mac = 1000,
 	/obj/item/gun/projectile/automatic/wirbelwind = 1500,
-	/obj/item/gun/projectile/automatic/bulldog = 1650,
 	//Shotgun
 	/obj/item/gun/projectile/shotgun/pump = 600,
 	/obj/item/gun/projectile/boltgun/lever = 650,

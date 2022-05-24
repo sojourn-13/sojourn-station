@@ -170,6 +170,9 @@
 		rad = 0
 	)
 
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer
+	icon_state = "ablative_ironhammer"
+	item_state = "ablative_ironhammer"
 
 /obj/item/clothing/suit/armor/vest/botanist
 	name = "botanist attire"
@@ -1041,6 +1044,15 @@
 		bio = 0,
 		rad = 0
 		)
+
+/obj/item/clothing/suit/armor/flackvest/marshal/full
+	name = "marshal full flak vest"
+	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
+			This one sports Marshal matte-grey finish along with a few stamped pieces of visible metal and cloth indicating its production numnber and tours of service."
+	icon_state = "flakvest_ironhammer"
+	item_state = "flakvest_ironhammer"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	slowdown = 0.6 // Bulkier due to protecting more
 
 /obj/item/clothing/suit/armor/commander
 	name = "commander's armored coat"
