@@ -205,15 +205,15 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/bulletproof/ironhammer(src)
-		new /obj/item/clothing/head/helmet/marshal_full(src)
+		new /obj/item/clothing/head/helmet/faceshield/altyn/ironhammer(src)
 
 /obj/item/storage/box/m_kit/laser_armor
 	name = "\improper Ablative Armor Kit"
 	desc = "An standard Marshal armor kit containing a full ablative marshal branded suit for countering laser weaponry."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/vest/ablative(src)
-		new /obj/item/clothing/head/helmet/laserproof(src)
+		new /obj/item/clothing/suit/armor/vest/ablative/ironhammer(src)
+		new /obj/item/clothing/head/helmet/laserproof/marshal(src)
 		new /obj/item/clothing/gloves/thick/ablasive(src)
 		new /obj/item/clothing/shoes/ablasive(src)
 
