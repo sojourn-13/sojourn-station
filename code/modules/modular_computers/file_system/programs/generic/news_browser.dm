@@ -10,6 +10,7 @@
 	size = 4
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE
+	usage_flags = PROGRAM_ALL
 
 	nanomodule_path = /datum/nano_module/program/computer_newsbrowser/
 	var/datum/computer_file/data/news_article/loaded_article
