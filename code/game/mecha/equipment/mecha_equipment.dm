@@ -10,9 +10,9 @@
 	force = 5
 	origin_tech = list(TECH_MATERIAL = 2)
 	matter = list(MATERIAL_STEEL = 20)
-	var/equip_cooldown = 0
+	var/equip_cooldown = 0 //time between 'uses'
 	var/equip_ready = 1
-	var/energy_drain = 0
+	var/energy_drain = 0 //Duh. How much energy is used per shot.
 	var/obj/mecha/chassis = null
 	var/range = MECHA_MELEE //bitflags
 	var/salvageable = 1
