@@ -62,7 +62,7 @@
 
 /datum/perk/Destroy()
 	if(holder)
-		if !((QDELETED(holder)) || (QDESTROYING(holder))) //since this can happen during the destroy of the holder
+		if (!((QDELETED(holder)) || (QDESTROYING(holder)))) //since this can happen during the destroy of the holder
 			to_chat(holder, SPAN_NOTICE("[lose_text]"))
 	holder = null
 
