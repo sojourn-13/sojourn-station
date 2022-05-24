@@ -23,6 +23,11 @@
 		set_frequency(frequency)
 	return
 
+/obj/item/device/assembly/signaler/Destroy()
+
+	radio_connection = null
+
+	. = ..()
 
 /obj/item/device/assembly/signaler/activate()
 	if(cooldown > 0)	return 0
