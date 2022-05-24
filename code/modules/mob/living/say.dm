@@ -1,22 +1,22 @@
 var/list/department_radio_keys = list(
-	"r" = "right ear",
-	"l" = "left ear",
-	"i" = "intercom",
-	"h" = "department",
-	"+" = "special",	 //activate radio-specific special functions
-	"c" = "Command",
-	"n" = "Science",
-	"m" = "Medical",
-	"e" = "Engineering",
-	"s" = "Marshal",
-	"b" = "Blackshield",
-	"w" = "whisper",
-	"y" = "Mercenary",
-	"u" = "Supply",
-	"v" = "Service",
-	"p" = "AI Private",
-	"t" = "Church",
-	"k" = "Prospector",
+	"r", "к" = "right ear",
+	"l", "д" = "left ear",
+	"i", "ш" = "intercom",
+	"h", "р" = "department",
+	"+", "=" = "special",	 //activate radio-specific special functions
+	"c", "с" = "Command",
+	"n", "т" = "Science",
+	"m", "ь" = "Medical",
+	"e", "у" = "Engineering",
+	"s", "ы" = "Marshal",
+	"b", "и" = "Blackshield",
+	"w", "ц" = "whisper",
+	"y", "н" = "Mercenary",
+	"u", "г" = "Supply",
+	"v", "м" = "Service",
+	"p", "з" = "AI Private",
+	"t", "е" = "Church",
+	"k", "л" = "Prospector",
 	"1" = "Plasmatag B",
 	"2" = "Plasmatag R",
 	"3" = "Plasmatag Y",
@@ -142,9 +142,9 @@ var/list/channel_to_radio_key = new
 
 	var/prefix = copytext_char(message,1,2)
 	if(prefix == get_prefix_key(/decl/prefix/custom_emote))
-		return emote(copytext(message,2))
+		return emote(copytext_char(message,2))
 	if(prefix == get_prefix_key(/decl/prefix/visible_emote))
-		return custom_emote(1, copytext(message,2))
+		return custom_emote(1, copytext_char(message,2))
 
 	//parse the radio code and consume it
 	var/message_mode = parse_message_mode(message, "headset")

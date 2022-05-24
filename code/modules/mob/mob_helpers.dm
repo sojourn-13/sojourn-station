@@ -174,7 +174,7 @@ var/list/global/organ_rel_size = list(
 	var/block = list()
 	. = list()
 	for(var/i = 1, i <= length(n), i++)
-		var/char = copytext(n, i, i+1)
+		var/char = copytext_char(n, i, i+1)
 		if(!intag && (char == "<"))
 			intag = 1
 			. += stars_no_html(JOINTEXT(block), pr, re_encode) //stars added here
@@ -193,7 +193,7 @@ var/list/global/organ_rel_size = list(
 	text = html_decode(text) //We don't want to screw up escaped characters
 	. = list()
 	for(var/i = 1, i <= length(text), i++)
-		var/char = copytext(text, i, i+1)
+		var/char = copytext_char(text, i, i+1)
 		if(char == " " || prob(pr))
 			. += char
 		else
