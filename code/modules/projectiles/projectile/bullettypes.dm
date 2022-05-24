@@ -701,7 +701,7 @@
 
 
 /obj/item/projectile/bullet/pellet/shotgun/blunderbuss
-	damage_types = list(BRUTE = 12)
+	damage_types = list(BRUTE = 10)
 	agony = 5
 	pellets = 1 //variable
 	range_step = 1

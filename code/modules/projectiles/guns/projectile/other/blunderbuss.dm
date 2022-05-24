@@ -1,9 +1,9 @@
 /obj/item/gun/blunderbuss
 	name = "blunderbuss"
 	desc = "A tube with a flared end. Has a small tank attached to a fuel injector leading into the barrel."
-	icon = 'icons/obj/guns/launcher/backburner.dmi'
-	icon_state = "backburner" //todo
-	fire_delay = 25
+	icon = 'icons/obj/guns/projectile/blunderbuss.dmi'
+	icon_state = "blunderbuss"
+	fire_delay = 15
 	slot_flags = SLOT_BACK
 	twohanded = TRUE // Need two hands to shoot.
 	var/scrap_count = 0 //how much crap do we have loaded?

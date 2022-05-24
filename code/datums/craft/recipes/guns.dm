@@ -110,6 +110,17 @@
 		list(QUALITY_SCREW_DRIVING, 10)
 	)
 
+/datum/craft_recipe/gun/blunderbuss
+	name = "trash blunderbuss"
+	result = /obj/item/gun/blunderbuss
+	steps = list(,
+		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL),
+		list(QUALITY_ADHESIVE, 15, 70),
+		list(QUALITY_WELDING, 10, 20),
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
+		list(QUALITY_SCREW_DRIVING, 10)
+	)
+
 /datum/craft_recipe/gun/axedoublebarrel
 	name = "axe double barrel shotgun"
 	result = /obj/item/gun/projectile/shotgun/doublebarrel/axe
