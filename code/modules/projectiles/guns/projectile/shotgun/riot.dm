@@ -19,8 +19,8 @@
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
-	price_tag = 600
-	damage_multiplier = 0.8 //Pug has 0.7 do to its fire normal modes
+	price_tag = 1250
+	damage_multiplier = 1.2 //Pug has 0.7 do to its fire normal modes
 	recoil_buildup = 13
 	one_hand_penalty = 15 //full sized shotgun level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
@@ -51,3 +51,37 @@
 	item_state = "miner_shotgun"
 	damage_multiplier = 1
 	max_shells = 1
+
+/obj/item/gun/projectile/automatic/riot_autoshotgun/operator
+	name = "\"Operator\" combat shotgun"
+	desc = "The \"Operator\" shotgun appears to be a well designed model of shotgun complete with a polymer grip, holographic sights and a collapsing stock.  \
+			Designed by Nadezhda Marshal gunsmiths and surplus parts of the \"Mamba\" series of firearms this shotgun appears to be perfect for both close and medium range engagements."
+	icon = 'icons/obj/guns/projectile/operator.dmi'
+	icon_state = "operator"
+	item_state = "oporator"
+	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 4)
+	max_shells = 7
+	ammo_type = /obj/item/ammo_casing/shotgun
+	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
+	price_tag = 1000
+	damage_multiplier = 0.8
+	penetration_multiplier = 1.0
+	zoom_factor = 0.2
+	recoil_buildup = 18
+	one_hand_penalty = 15 //full sized shotgun level
+	folding_stock = TRUE //we can fold are stocks
+
+/obj/item/gun/projectile/automatic/riot_autoshotgun/operator/update_icon()
+	..()
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if(!folded)
+		iconstring += "_stock"
+
+	if(wielded)
+		itemstring += "_doble"
+
+
+	icon_state = iconstring
+	set_item_state(itemstring)

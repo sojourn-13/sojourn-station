@@ -3533,7 +3533,6 @@
 /area/nadezhda/command/armory)
 "aLt" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/structure/disposalpipe/junction{
 	dir = 1;
@@ -4720,9 +4719,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -10796,6 +10792,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai)
+"cpL" = (
+/obj/structure/catwalk,
+/obj/machinery/craftingstation,
+/obj/effect/spider/stickyweb,
+/turf/simulated/floor/plating/under,
+/area/colony)
 "cpU" = (
 /obj/structure/table/marble,
 /obj/item/storage/box/donkpockets,
@@ -11563,11 +11565,11 @@
 	icon_state = "tube1"
 	},
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 8;
-	pixel_x = 27;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = 27;
+	req_one_access = list()
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -13831,7 +13833,6 @@
 "cVH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock{
 	name = "Church";
 	req_access = list(27)
@@ -13959,10 +13960,10 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "cWT" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/armor/bulletproof,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "cWU" = (
@@ -17722,11 +17723,11 @@
 "dMD" = (
 /obj/structure/bed/chair,
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 8;
-	pixel_x = 27;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = 27;
+	req_one_access = list()
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
@@ -21334,11 +21335,11 @@
 	dir = 8
 	},
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 4;
-	pixel_x = -32;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = -32;
+	req_one_access = list()
 	},
 /turf/simulated/floor,
 /area/shuttle/rocinante_shuttle_area)
@@ -23742,11 +23743,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/crematorium)
-"eZD" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/wall,
-/area/nadezhda/maintenance/undergroundfloor1east)
 "eZG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment{
@@ -29011,9 +29007,18 @@
 /area/nadezhda/outside/forest)
 "gcL" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/space/void/security,
-/obj/item/clothing/suit/space/void/security,
-/obj/item/clothing/suit/space/void/security,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "gcR" = (
@@ -32892,20 +32897,7 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/hallway/surface/section1)
 "gPO" = (
-/obj/structure/closet/wall_mounted/firecloset{
-	pixel_x = 32
-	},
-/obj/effect/floor_decal/industrial/box/red/corners{
-	dir = 4;
-	icon_state = "box_corners_red"
-	},
-/obj/effect/floor_decal/industrial/box/red/corners{
-	dir = 1;
-	icon_state = "box_corners_red"
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 4
-	},
+/obj/machinery/recycle_vendor,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
 "gPR" = (
@@ -42658,11 +42650,11 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "iWY" = (
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 4;
-	pixel_x = -32;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = -32;
+	req_one_access = list()
 	},
 /obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/white,
@@ -44473,7 +44465,6 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/pros/prep)
 "jqG" = (
-/obj/structure/table/steel_reinforced,
 /obj/item/stack/material/cardboard/random,
 /obj/item/stack/material/cardboard/random,
 /obj/item/stack/material/plasteel/random,
@@ -44481,6 +44472,7 @@
 /obj/item/stack/material/glass/full,
 /obj/item/stack/material/plastic/full,
 /obj/item/stack/material/steel/full,
+/obj/machinery/craftingstation,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "jqH" = (
@@ -55085,6 +55077,20 @@
 /area/nadezhda/security/range{
 	name = "\improper Blackshield - Firing Range"
 	})
+"lxs" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 1;
+	icon_state = "box_corners_red"
+	},
+/obj/effect/floor_decal/industrial/box/red/corners,
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/hallway/side/f2section1)
 "lxz" = (
 /obj/machinery/door/airlock/glass_security{
 	id_tag = "BrigFoyer";
@@ -56916,7 +56922,10 @@
 "lQL" = (
 /obj/machinery/door/window/southleft,
 /obj/structure/table/rack,
-/obj/item/gun/projectile/shotgun/pump/swat,
+/obj/item/gun/projectile/automatic/riot_autoshotgun,
+/obj/item/gun/projectile/automatic/riot_autoshotgun{
+	pixel_y = 8
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "lQR" = (
@@ -65432,21 +65441,22 @@
 /area/nadezhda/security/prisoncells)
 "nFC" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
 /obj/machinery/camera/network/security{
 	dir = 8
 	},
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "nFH" = (
@@ -66068,11 +66078,11 @@
 /area/nadezhda/security/armory)
 "nKG" = (
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 4;
-	pixel_x = -32;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = -32;
+	req_one_access = list()
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
@@ -73257,11 +73267,11 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "png" = (
-/obj/item/clothing/suit/armor/flackvest/green,
-/obj/item/clothing/suit/armor/flackvest/green,
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/head/helmet/faceshield/altyn,
-/obj/item/clothing/head/helmet/faceshield/altyn/maska,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "pnh" = (
@@ -73919,11 +73929,11 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "pvr" = (
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 8;
-	pixel_x = 27;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = 27;
+	req_one_access = list()
 	},
 /obj/machinery/camera/network/mining{
 	dir = 9
@@ -74849,11 +74859,11 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 4;
-	pixel_x = -32;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = -32;
+	req_one_access = list()
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
@@ -81452,10 +81462,10 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/multi_tile/glass{
+	dir = 2;
 	id_tag = "shuttle_checkpoint";
 	name = "Shuttle Airlock";
-	req_one_access = list(78,19,1);
-	dir = 2
+	req_one_access = list(78,19,1)
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/hallway/side/f2section1)
@@ -85722,11 +85732,11 @@
 	dir = 8
 	},
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 4;
-	pixel_x = -32;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = -32;
+	req_one_access = list()
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
@@ -88458,6 +88468,12 @@
 /obj/item/rig/combat/ironhammer/equipped{
 	pixel_x = 5
 	},
+/obj/item/rig/combat/ironhammer/equipped{
+	pixel_x = -5
+	},
+/obj/item/rig/combat/ironhammer/equipped{
+	pixel_x = 5
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "soq" = (
@@ -89363,11 +89379,14 @@
 	dir = 4;
 	pixel_x = 0
 	},
-/obj/item/gun/projectile/automatic/bulldog/rds{
+/obj/item/gun/projectile/automatic/mamba{
 	pixel_y = 2
 	},
-/obj/item/gun/projectile/automatic/bulldog/rds{
+/obj/item/gun/projectile/automatic/mamba{
 	pixel_y = -4
+	},
+/obj/item/gun/projectile/automatic/mamba/copperhead{
+	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
@@ -93665,17 +93684,18 @@
 /area/nadezhda/medical/genetics)
 "tvq" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/heavy/riot,
-/obj/item/clothing/suit/armor/heavy/riot,
-/obj/item/clothing/suit/armor/heavy/riot,
-/obj/item/clothing/suit/armor/heavy/riot,
-/obj/item/clothing/suit/armor/heavy/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "tvt" = (
@@ -99812,11 +99832,11 @@
 "uKs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 8;
-	pixel_x = 27;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = 27;
+	req_one_access = list()
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
@@ -102471,20 +102491,17 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
 "vlH" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
 	},
 /obj/structure/table/marble,
 /obj/item/material/ashtray,
 /obj/machinery/door/blast/shutters/glass{
 	id = "bar2";
 	name = "glass shutter"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/bar)
@@ -105174,12 +105191,10 @@
 /area/nadezhda/crew_quarters/pool)
 "vNF" = (
 /obj/structure/table/rack,
-/obj/item/rig/combat/ironhammer{
-	pixel_x = -5
-	},
-/obj/item/rig/combat/ironhammer{
-	pixel_x = 6
-	},
+/obj/item/clothing/suit/space/void/security,
+/obj/item/clothing/suit/space/void/security,
+/obj/item/clothing/suit/space/void/security,
+/obj/item/clothing/suit/space/void/security,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "vNG" = (
@@ -105694,11 +105709,11 @@
 	name = "DMR crate";
 	req_access = list(3)
 	},
-/obj/item/gun/projectile/boltgun/scout,
 /obj/structure/window/reinforced{
 	dir = 1;
 	pixel_y = 0
 	},
+/obj/item/gun/projectile/automatic/mamba/copperhead/python,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "vTg" = (
@@ -112880,13 +112895,11 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "xrN" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/riot_autoshotgun{
-	pixel_y = -3
+/obj/item/gun/projectile/automatic/riot_autoshotgun/operator,
+/obj/item/gun/projectile/automatic/riot_autoshotgun/operator{
+	pixel_y = -8
 	},
-/obj/item/gun/projectile/automatic/riot_autoshotgun{
-	pixel_y = 3
-	},
-/obj/item/gun/projectile/automatic/riot_autoshotgun{
+/obj/item/gun/projectile/automatic/riot_autoshotgun/operator{
 	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -114932,7 +114945,6 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -116534,11 +116546,11 @@
 	dir = 1
 	},
 /obj/machinery/alarm{
+	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 8;
-	pixel_x = 27;
-	req_one_access = list();
 	name = "no-access needed alarm";
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed."
+	pixel_x = 27;
+	req_one_access = list()
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
@@ -135360,7 +135372,7 @@ vsn
 gPO
 hsr
 frq
-jVE
+lxs
 atv
 bwh
 gWX
@@ -138719,7 +138731,7 @@ bHx
 bEO
 mfF
 hoz
-nHq
+cpL
 xGi
 hSx
 "}
@@ -144373,7 +144385,7 @@ glY
 hlU
 kBn
 glY
-sFI
+hSx
 sFI
 sFI
 sFI
@@ -144575,7 +144587,7 @@ glY
 hlU
 ivy
 glY
-sFI
+hSx
 sFI
 sFI
 sFI
@@ -144777,7 +144789,7 @@ glY
 drO
 eWZ
 glY
-sFI
+hSx
 sFI
 sFI
 sFI
@@ -144979,7 +144991,7 @@ glY
 hlU
 hlU
 glY
-sFI
+hSx
 sFI
 sFI
 sFI
@@ -145181,7 +145193,7 @@ fIT
 cVW
 fTl
 glY
-sFI
+hSx
 sFI
 sFI
 sFI
@@ -145366,7 +145378,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+hSx
 glY
 rHq
 oxO
@@ -145383,7 +145395,7 @@ hsT
 hlU
 rZd
 glY
-sFI
+hSx
 sFI
 sFI
 sFI
@@ -145568,7 +145580,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+hSx
 glY
 glY
 glY
@@ -145585,7 +145597,7 @@ glY
 glY
 glY
 glY
-sFI
+hSx
 sFI
 sFI
 sFI
@@ -145770,24 +145782,24 @@ trc
 trc
 trc
 trc
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
 sFI
 sFI
 sFI
@@ -149166,7 +149178,7 @@ tjP
 hKB
 hKB
 hKB
-eZD
+kZI
 sSS
 hKB
 kZI

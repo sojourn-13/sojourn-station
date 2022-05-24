@@ -517,10 +517,11 @@
 	matter = list(MATERIAL_STEEL = 30)
 	cell = null
 	suitable_cell = /obj/item/cell
+	var/charge_per_cycle = 15
 
 
 /obj/item/device/manual_charger/attackby(obj/item/I, mob/user)
-	if(istype(I, suitable_cell) && insert_item(I, user))
+	if(istype(I, suitable_cell) && insert_item(I, user) && !cell)
 		cell = I
 		return
 	..()
@@ -540,4 +541,11 @@
 			user.visible_message(SPAN_NOTICE("The cell can not be charged any more!"))
 			return
 		else
-			cell.charge += min(15, cell.maxcharge - cell.charge)
+			cell.charge += min(charge_per_cycle, cell.maxcharge - cell.charge)
+			
+			
+// Improv crank
+/obj/item/device/manual_charger/improv
+	name = "handmade manual recharger"
+	desc = "A handmade manual crank charger. Barely capable of charging cells."
+	charge_per_cycle = 4

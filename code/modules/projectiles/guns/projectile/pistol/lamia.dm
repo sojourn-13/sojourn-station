@@ -102,3 +102,21 @@
 	penetration_multiplier = 1.2
 	price_tag = 1250
 	serial_type = "SA"
+
+/obj/item/gun/projectile/lamia/amnesty
+	name = "\"Amnesty\" heavy pistol"
+	desc = "The \"Amnesty\" pistol started as a prototype as parts from advanced heavy pistols found themselves converted to a cheaper, easier to procude format alongside improvements made to Marshal firearms. Chambered in .50 Kurtz."
+	icon = 'icons/obj/guns/projectile/amnesty.dmi'
+	icon_state = "amnesty"
+	item_state = "amnesty"
+	price_tag = 1200
+	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 8, MATERIAL_GLASS = 4)
+	damage_multiplier = 1.4
+	penetration_multiplier = 1.2
+	zoom_factor = 0.2
+	recoil_buildup = 8
+	one_hand_penalty = 12
+	unload_sound 	= 'sound/weapons/guns/interact/avasarala_unload.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
+	cocked_sound 	= 'sound/weapons/guns/interact/avasarala_cock.ogg'
+	fire_sound 	= 'sound/weapons/guns/fire/avasarala_fire.ogg'

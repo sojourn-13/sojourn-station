@@ -56,6 +56,8 @@
 	if(holder)
 		to_chat(holder, SPAN_NOTICE("[lose_text]"))
 	holder = null
+
+	statclick = null
 	return ..()
 
 /datum/perk/proc/on_process()

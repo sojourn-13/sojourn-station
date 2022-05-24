@@ -96,6 +96,10 @@
 	name = "GP .40 Magnum \"Rivet\""
 	build_path = /obj/item/gun/projectile/rivet
 
+/datum/design/autolathe/gun/liberty
+	name = "NM .40 Magnum \"Liberty\""
+	build_path = /obj/item/gun/projectile/colt/liberty
+
 //. 5 0 K U R T Z
 
 /datum/design/autolathe/gun/revolver/mateba
@@ -125,6 +129,10 @@
 /datum/design/autolathe/gun/akurra
 	name = "SA SHG .50 Kurtz \"Akurra\""
 	build_path = /obj/item/gun/projectile/lamia/akurra
+
+/datum/design/autolathe/gun/amnesty
+	name = "NM .50 Kurtz Amnesty"
+	build_path = /obj/item/gun/projectile/lamia/amnesty
 
 /// S M G S
 
@@ -178,6 +186,10 @@
 	name = "BR .40 Magnum \"Triage\""
 	build_path = /obj/item/gun/projectile/automatic/triage
 
+/datum/design/autolathe/gun/freedom
+	name = "NM .40 Magnum \"Freedom\""
+	build_path = /obj/item/gun/projectile/automatic/freedom
+
 //S H O T G U N S
 
 /datum/design/autolathe/gun/doublebarrel
@@ -216,6 +228,10 @@
 	name = "BR \"Rushing Bull\" tactical shotgun"
 	build_path = /obj/item/gun/projectile/automatic/bull_autoshotgun
 
+/datum/design/autolathe/gun/operator
+	name = "NM \"Operator\" tactical shotgun"
+	build_path = /obj/item/gun/projectile/automatic/riot_autoshotgun/operator
+
 //C A R B I N E S
 
 /datum/design/autolathe/gun/bastard
@@ -225,18 +241,6 @@
 /datum/design/autolathe/gun/sol
 	name = "H&S CAR .257 \"Solarian\""
 	build_path = /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine
-
-/datum/design/autolathe/gun/bulldog
-	name = "Seinemetall Defense GmbH CAR .257 \"Bulldog\""
-	build_path = /obj/item/gun/projectile/automatic/bulldog
-
-/datum/design/autolathe/gun/bulldog_rds
-	name = "Seinemetall Defense GmbH CAR .257 \"Bulldog\" Dot Sight"
-	build_path = /obj/item/gun/projectile/automatic/bulldog/rds
-
-/datum/design/autolathe/gun/pitbull
-	name = "H&S AR .257 \"Pitbull\""
-	build_path = /obj/item/gun/projectile/automatic/pitbull
 
 /datum/design/autolathe/gun/ostwind
 	name = "Seinemetall Defense GmbH AR .257 \"Ostwind\""
@@ -269,6 +273,14 @@
 /datum/design/autolathe/gun/duty
 	name = "BR .257 \"Duty\" heavy rifle"
 	build_path = /obj/item/gun/projectile/automatic/duty
+
+/datum/design/autolathe/gun/mamba
+	name = "NM .257 \"Mamba\" carbine"
+	build_path = /obj/item/gun/projectile/automatic/mamba
+
+/datum/design/autolathe/gun/viper
+	name = "NM .257 \"Viper\" DMR"
+	build_path = /obj/item/gun/projectile/automatic/mamba/viper
 
 ///R I F L E S
 //7 . 5 m m
@@ -332,6 +344,14 @@
 /datum/design/autolathe/gun/ak47_tac
 	name = "SA AK 7.5 \"Breacher\""
 	build_path = /obj/item/gun/projectile/automatic/ak47/sa/tac
+
+/datum/design/autolathe/gun/copperhead
+	name = "NM 7.5 \"Copperhead\" rifle"
+	build_path = /obj/item/gun/projectile/automatic/mamba/copperhead
+
+/datum/design/autolathe/gun/python
+	name = "NM 7.5 \"Python\" heavy sniper"
+	build_path = /obj/item/gun/projectile/automatic/mamba/copperhead/python
 
 /datum/design/autolathe/gun/judge
 	name = "NM \"Judge\""
@@ -406,6 +426,10 @@
 /datum/design/autolathe/gun/flare_gun
 	name = "H&S .22 \"Dazzlation\" light pistol"
 	build_path = /obj/item/gun/projectile/boltgun/flare_gun
+
+/datum/design/autolathe/gun/specop
+	name = "NM 10mm Caseless \"Spec-Op\" SMG"
+	build_path = /obj/item/gun/projectile/automatic/specop
 
 //L A U N C H E R S
 
