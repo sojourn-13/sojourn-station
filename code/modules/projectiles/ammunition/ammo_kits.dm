@@ -78,7 +78,7 @@
 			".40 ammo pile (6 ammo, 3 points)" = list(3, /obj/item/ammo_casing/magnum_40/scrap/prespawned),
 			".40 speedloader (6 ammo, 5 points)" = list(5, /obj/item/ammo_magazine/speed_loader_magnum_40/scrap),
 			".40 standard magazine (empty, 10 ammo, 5 points)" = list(5, /obj/item/ammo_magazine/magnum_40/empty),
-			".40 ammo box (30 ammo, 15 points)" = list(15, /obj/item/ammo_magazine/magnum_40/old)),
+			".40 ammo box (30 ammo, 15 points)" = list(15, /obj/item/ammo_magazine/ammobox/magnum_40/scrap)),
 		CAL_SHOTGUN = list(
 			"20mm slug pile (5 ammo, 3 points)" = list(3, /obj/item/ammo_casing/shotgun/scrap/prespawned),
 			"20mm pellet pile (5 ammo, 3 points)" = list(3, /obj/item/ammo_casing/shotgun/pellet/scrap/prespawned),

@@ -27,7 +27,7 @@
 		FULL_AUTO_600_NOLOSS
 		)
 
-/obj/item/gun/projectile/automatic/vector/update_icon()
+/obj/item/gun/projectile/automatic/freedom/update_icon()
 	..()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
