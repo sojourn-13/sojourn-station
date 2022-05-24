@@ -877,6 +877,7 @@
 	name = "marshal riot helmet"
 	desc = "Standard-issue marshal helmet with a basic HUD and targeting system included, produced by Seinemetall Defense GmbH after more classic riot helmets were not able to handle the day to day riots."
 	icon_state = "light_riot"
+	flags_inv = HIDEEARS|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	armor_list = list(
 		melee = 75,
