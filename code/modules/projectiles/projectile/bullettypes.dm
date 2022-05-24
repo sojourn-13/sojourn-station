@@ -699,6 +699,17 @@
 	. = ..()
 	icon_state = "birdshot-[rand(1,4)]"
 
+
+/obj/item/projectile/bullet/pellet/shotgun/blunderbuss
+	damage_types = list(BRUTE = 12)
+	agony = 5
+	pellets = 1 //variable
+	range_step = 1
+	spread_step = 10
+	step_delay = 0.9
+	affective_damage_range = 1
+	affective_ap_range = 1
+
 //'Laser' buckshot. Effectively just burn buckshot used for the Abdication.
 /obj/item/projectile/bullet/pellet/shotgun/energy
 	name = "Unstable energy bolt"
