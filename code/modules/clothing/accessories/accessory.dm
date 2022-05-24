@@ -783,7 +783,18 @@
 	desc = "A lightweight polymer frame designed to hold a neck upright comfortably."
 	icon_state = "neckbrace"
 	item_state = "neckbrace"
-
+	
+/obj/item/clothing/accessory/pilotwebbing
+	name = "basic pilot harness"
+	desc = "A basic harness commonly used through out the galaxy from shuttle pilots to mech pilots. The harness itself has minimal safety strapping however would still ensure you're safely strapped into whatever cockpit you may be seated in."
+	icon_state = "basicpilot"
+	item_state = "basicpilot"
+	
+/obj/item/clothing/accessory/pilotwebbing/military
+	name = "military pilot harness"
+	desc = "A military harness commonly seen being used by pilots within military or paramilitary forces for their fighter pilots and combat mech pilots. The harness itself has extra safety strapping and buckles allowing for the attaching of safety ane EVA equipment in case of an emergency however would still ensure you're safely strapped into whatever cockpit you may be seated in."
+	icon_state = "militarypilot"
+	item_state = "militarypilot"
 
 /* Kneepads */
 

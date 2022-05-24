@@ -93,3 +93,8 @@
 /datum/gear/accessory/blackshieldpatch
 	display_name = "blackshield arm patch"
 	path = /obj/item/clothing/accessory/patches/blackshield
+	
+/datum/gear/accessory/pilotharness
+	display_name = "pilot harness"
+	path = /obj/item/clothing/accessory/pilotwebbing
+	flags = GEAR_HAS_TYPE_SELECTION
