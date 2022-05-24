@@ -32,11 +32,11 @@
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
+	if(!folded)
+		iconstring += "_stock"
+
 	if (ammo_magazine)
 		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
-
-	if(!folded)
-		iconstring += "_folded"
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
