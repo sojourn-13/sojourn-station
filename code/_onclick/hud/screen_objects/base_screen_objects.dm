@@ -40,6 +40,7 @@
 
 /obj/screen/Destroy()
 	master = null
+	parentmob = null
 	return ..()
 
 /obj/screen/update_plane()

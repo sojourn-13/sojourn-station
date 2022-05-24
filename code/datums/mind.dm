@@ -105,6 +105,18 @@
 		if(istype(new_character, /mob/living/silicon/robot))
 			winset(new_character.client, null, "mainwindow.macro=borgmacro")
 
+/datum/mind/Destroy()
+
+	if (current)
+		current.mind = null
+		current = null
+
+	if (original)
+		original.mind = null
+		original = null
+
+	. = ..()
+
 /datum/mind/proc/store_memory(new_text)
 	memory += "[new_text]<BR>"
 

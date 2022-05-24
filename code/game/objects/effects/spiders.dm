@@ -27,7 +27,7 @@
 	if(is_processing)
 		cut_overlays()
 		STOP_PROCESSING(SSobj, src)
-	..()
+	. = ..()
 
 /obj/effect/spider/Crossed(atom/movable/AM)
 	if(isliving(AM))
