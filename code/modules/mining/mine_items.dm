@@ -29,6 +29,7 @@
 	new /obj/item/gun/projectile/boltgun/flare_gun(src)
 	new /obj/item/ammo_casing/flare(src)
 	new /obj/item/device/ore_sonar(src)
+	new /obj/item/ammo_magazine/speed_loader_shotgun/empty(src)
 	new /obj/item/clothing/accessory/job/cape/mining(src) // ROCK AND STONE, BRUDDAH!
 
 /******************************Lantern*******************************/

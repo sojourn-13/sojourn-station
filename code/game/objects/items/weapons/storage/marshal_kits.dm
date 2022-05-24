@@ -53,9 +53,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/riot_autoshotgun/operator(src)
-		new /obj/item/ammo_casing/shotgun/beanbag/prespawned(src)
-		new /obj/item/ammo_casing/shotgun/prespawned(src)
-		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun/beanbag(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/storage/pouch/tubular(src)
 
 //supply-specs kits
