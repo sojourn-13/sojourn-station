@@ -128,7 +128,6 @@
 	new /obj/item/clothing/mask/gas/germanmask(src)
 	new /obj/item/device/radio/headset/church(src)
 	new /obj/item/clothing/gloves/thick(src)
-	new /obj/item/gunbox/church(src)
 	new /obj/item/clothing/under/rank/church/sport(src)
 	new /obj/item/clothing/suit/storage/neotheosports(src)
 	new /obj/item/gun/energy/ntpistol(src)
