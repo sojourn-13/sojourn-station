@@ -13960,10 +13960,10 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "cWT" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/flackvest/full,
-/obj/item/clothing/suit/armor/flackvest/full,
-/obj/item/clothing/suit/armor/flackvest/full,
-/obj/item/clothing/suit/armor/flackvest/full,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "cWU" = (
@@ -73272,8 +73272,6 @@
 /obj/item/clothing/head/helmet/riot_hud,
 /obj/item/clothing/head/helmet/riot_hud,
 /obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "pnh" = (
@@ -88464,6 +88462,12 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "son" = (
 /obj/structure/table/rack/shelf,
+/obj/item/rig/combat/ironhammer/equipped{
+	pixel_x = -5
+	},
+/obj/item/rig/combat/ironhammer/equipped{
+	pixel_x = 5
+	},
 /obj/item/rig/combat/ironhammer/equipped{
 	pixel_x = -5
 	},
