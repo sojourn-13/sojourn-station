@@ -504,6 +504,8 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 								audio('sound/effects/impacts/thud_break.ogg', 100)
 								spawn_rubble(loc, 1, 100)//And make some rubble
 								invisibility = 0
+				else
+					qdel(src)
 		if (I.has_quality(QUALITY_HAMMERING))
 			user.visible_message("[user] starts hammering [src] with \the [I]", "You start hammering out [src] with \the [I]")
 			if(I.use_tool(user, src, WORKTIME_DELAYED, QUALITY_HAMMERING, FAILCHANCE_NORMAL, required_stat = STAT_ROB) && isSealed) //You are quite literally hammering the floor, slow and tedious
