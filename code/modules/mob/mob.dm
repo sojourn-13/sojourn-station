@@ -20,12 +20,6 @@
 
 	LAssailant_weakref = null
 
-	if (mind) // QDEL_NULL may cause issues, especially if we're transferring a mind between mobs
-		mind.current = null
-		if (mind.original == src) //maybe this isnt the original mob?
-			mind.original = null
-		mind = null
-
 	for (var/datum/movement_handler/mob/handler in movement_handlers)
 		handler.host = null
 		handler.mob = null
