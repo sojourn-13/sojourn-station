@@ -51,8 +51,7 @@
 /obj/machinery/mining/drill/Destroy()
 	for(var/obj/machinery/mining/brace/b in supports)
 		b.disconnect()
-	qdel(soul)
-	soul = null
+	QDEL_NULL(soul)
 	return ..()
 
 /obj/machinery/mining/drill/Initialize()
