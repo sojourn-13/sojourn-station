@@ -3,6 +3,15 @@
 	var/required_slot_flags
 	var/required_free_body_parts
 
+/obj/item/underwear/Destroy()
+
+	if (istype(loc, /mob/living/carbon/human) && !QDELETED(loc))
+		var/mob/living/carbon/human/wearer = loc
+
+		wearer.worn_underwear -= src
+
+	. = ..()
+
 /obj/item/underwear/afterattack(var/atom/target, var/mob/user, var/proximity)
 	if(!proximity)
 		return // Might as well check

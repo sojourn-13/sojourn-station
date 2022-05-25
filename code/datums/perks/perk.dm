@@ -17,7 +17,7 @@
 
 /obj/effect/statclick/perk/Destroy()
 
-	if (target_perk.holder && target_perk)
+	if (target_perk.holder && target_perk && target_perk.holder.stats)
 		var/datum/stat_holder/parent_stat_holder = target_perk.holder.stats
 
 		parent_stat_holder.perk_stats -= src
@@ -67,7 +67,7 @@
 
 /datum/perk/Destroy()
 	if(holder)
-		if (holder.stats)
+		if (holder.stats && holder.stats.perks)
 			holder.stats.perks -= src
 		if (!((QDELETED(holder)) || (QDESTROYING(holder)))) //since this can happen during the destroy of the holder
 			to_chat(holder, SPAN_NOTICE("[lose_text]"))

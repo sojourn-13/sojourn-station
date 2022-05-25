@@ -13,7 +13,6 @@
 
 	for (var/obj/machinery/camera/camera in tracking_cameras)
 		camera.lostTarget(src)
-		tracking_cameras -= camera
 	tracking_cameras.Cut()
 
 	ghostize()
