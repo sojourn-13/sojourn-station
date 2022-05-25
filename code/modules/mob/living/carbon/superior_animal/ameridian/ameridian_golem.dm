@@ -71,7 +71,7 @@
 
 	..()
 
-	addtimer(CALLBACK(src, /mob/living/carbon/superior_animal/ameridian_golem/.proc/maintain_drop_amount), 1 SECOND) //consider converting this to ticks?
+	addtimer(CALLBACK(src, /mob/living/carbon/superior_animal/ameridian_golem/.proc/maintain_drop_amount), 100 MILLISECONDS) //consider converting this to ticks?
 
 /mob/living/carbon/superior_animal/ameridian_golem/proc/maintain_drop_amount()
 	if (!is_dead()) // We're still alive!
