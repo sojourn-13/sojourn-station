@@ -224,11 +224,17 @@
 				TC = new /datum/termite_controller(location=T, seismic=T.seismic_activity, drill=src)
 				visible_message(SPAN_NOTICE("\The [src] lurches downwards, grinding noisily."))
 				need_update_field = 1
+				if(!soul)
+					var/mob/living/simple_animal/soul/S = new(src)
+					soul = S
 				soul.loc = src.loc
 			else
 				TC.stop()
 				TC = null
 				visible_message(SPAN_NOTICE("\The [src] shudders to a grinding halt."))
+				if(!soul)
+					var/mob/living/simple_animal/soul/S = new(src)
+					soul = S
 				soul.loc = src.contents
 		else
 			to_chat(user, SPAN_NOTICE("The drill is unpowered."))
