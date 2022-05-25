@@ -19,3 +19,70 @@
 // NEWS DEFINITIONS BELOW THIS LINE
 
 //TODO: Make this more modular so new entries don't require a PR, perhaps SQL Database integration.
+
+//SOJ ADDS - All from discord
+/datum/computer_file/data/news_article/Psionic_Ascension
+	filename = "Psionic Ascension"
+	server_file_path = 'news_articles/Psionic_Ascension.html'
+	archived = 1
+
+/datum/computer_file/data/news_article/Psionic_Medicine
+	filename = "Psionic Medicine"
+	server_file_path = 'news_articles/Psionic_Medicine.html'
+	archived = 1
+
+/datum/computer_file/data/news_article/Progress
+	filename = "Progress!"
+	server_file_path = 'news_articles/Progress.html'
+	archived = 1
+
+/datum/computer_file/data/news_article/Call_to_Action
+	filename = "Call to Action"
+	server_file_path = 'news_articles/Call_to_Action.html'
+	archived = 1
+
+/datum/computer_file/data/news_article/Morning_Star
+	filename = "Morning Star"
+	server_file_path = 'news_articles/Morning_Star.html'
+	archived = 1
+
+/datum/computer_file/data/news_article/Scrap_Haven
+	filename = "Scrap Haven"
+	server_file_path = 'news_articles/Scrap_Haven.html'
+
+/datum/computer_file/data/news_article/Catastrophic_Outbreak
+	filename = "Catastrophic Outbreak"
+	server_file_path = 'news_articles/Catastrophic_Outbreak.html'
+	archived = 1
+
+/datum/computer_file/data/news_article/Deep_Maint_Psychosis
+	filename = "Deep Maint Psychosis"
+	server_file_path = 'news_articles/Deep_Maint_Psychosis.html'
+	archived = 1
+
+/datum/computer_file/data/news_article/Didnt_think_to_ask_if_they_should
+	filename = "Didn't think to ask if they should"
+	server_file_path = 'news_articles/Didnt_think_to_ask_if_they_should.html'
+	archived = 1
+
+/datum/computer_file/data/news_article/Agent_Captured
+	filename = "Agent Captured"
+	server_file_path = 'news_articles/Agent_Captured.html'
+	archived = 1
+
+/datum/computer_file/data/news_article/Gatehouse_Clusterfuck
+	filename = "Gatehouse Clusterfuck"
+	server_file_path = 'news_articles/Gatehouse_Clusterfuck.html'
+	archived = 1
+
+/datum/computer_file/data/news_article/CardCarp
+	filename = "CardCarp"
+	server_file_path = 'news_articles/CardCarp.html'
+
+/datum/computer_file/data/news_article/Whoever_fights_monsters
+	filename = "Whoever fights monsters"
+	server_file_path = 'news_articles/Whoever_fights_monsters.html'
+
+/datum/computer_file/data/news_article/Official_Marshal_communique
+	filename = "Official Marshal communique"
+	server_file_path = 'news_articles/Official_Marshal_communique.html'

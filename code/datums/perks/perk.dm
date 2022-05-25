@@ -15,6 +15,14 @@
 	target_perk = perk
 	return ..(_, perk.name, perk)
 
+/obj/effect/statclick/perk/Destroy()
+
+	if (target_perk)
+		target_perk.statclick = null
+		target_perk = null
+
+	. = ..()
+
 /obj/effect/statclick/perk/update()
 	if(target_perk.cooldown_time > world.time)
 		name = "[target_perk.name] ([(target_perk.cooldown_time - world.time)/10] seconds)"
@@ -54,11 +62,14 @@
 
 /datum/perk/Destroy()
 	if(holder)
-		to_chat(holder, SPAN_NOTICE("[lose_text]"))
+		if (!((QDELETED(holder)) || (QDESTROYING(holder)))) //since this can happen during the destroy of the holder
+			to_chat(holder, SPAN_NOTICE("[lose_text]"))
 	holder = null
 
-	statclick = null
-	return ..()
+	if (statclick)
+		statclick.target_perk = null
+		statclick = null
+	. = ..()
 
 /datum/perk/proc/on_process()
 	SHOULD_CALL_PARENT(TRUE)

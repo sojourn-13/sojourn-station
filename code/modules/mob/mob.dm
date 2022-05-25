@@ -4,19 +4,33 @@
 	GLOB.living_mob_list -= src
 	GLOB.mob_list -= src
 	unset_machine()
-	qdel(hud_used)
+	QDEL_NULL(hud_used)
+	QDEL_NULL(parallax)
 	if(client)
 		for(var/atom/movable/AM in client.screen)
 			qdel(AM)
 		client.screen = list()
 
+	for (var/obj/machinery/camera/camera in tracking_cameras)
+		camera.lostTarget(src)
+		tracking_cameras -= camera
+	tracking_cameras.Cut()
+
 	ghostize()
 
 	LAssailant_weakref = null
 
+	if (mind) // QDEL_NULL may cause issues, especially if we're transferring a mind between mobs
+		mind.current = null
+		if (mind.original == src) //maybe this isnt the original mob?
+			mind.original = null
+		mind = null
+
 	for (var/datum/movement_handler/mob/handler in movement_handlers)
 		handler.host = null
 		handler.mob = null
+
+	movement_handlers.Cut()
 
 	return ..()
 

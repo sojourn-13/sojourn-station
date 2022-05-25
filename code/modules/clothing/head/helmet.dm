@@ -765,8 +765,8 @@
 /obj/item/clothing/head/helmet/marshal_full
 	name = "marshal full helmet"
 	desc = "A full helmet with a built in glow visor. While a weak light its better than nothing and the full cover design makes it ideal for general protection."
-	icon_state = "ironhammer_reg_full"
-	item_state = "ironhammer_reg_full"
+	icon_state = "ironhammer_full"
+	item_state = "ironhammer_full"
 	armor_list = list(melee = 30, bullet = 30,energy = 25, bomb = 25, bio = 70, rad = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
@@ -775,10 +775,10 @@
 
 /obj/item/clothing/head/helmet/marshal_full/update_icon()
 	if(on)
-		icon_state = "ironhammer_reg_full_on"
+		icon_state = "ironhammer_full_on"
 		set_light(2, 2, COLOR_LIGHTING_ORANGE_MACHINERY)
 	else
-		icon_state = "ironhammer_reg_full"
+		icon_state = "ironhammer_full"
 		set_light(0, 0)
 	update_wear_icon()
 	..()
@@ -786,17 +786,17 @@
 /obj/item/clothing/head/helmet/marshal_full/warrant
 	name = "warrant officer full helmet"
 	desc = "A full helmet with a built in glow visor. This one appears to be fitted with new visor servos internally to protect from flashes as well as a bullet-proof reinforced mouth guard!"
-	icon_state = "ironhammer_full"
-	item_state = "ironhammer_full"
+	icon_state = "ironhammer_wo_full"
+	item_state = "ironhammer_wo_full"
 	flash_protection = FLASH_PROTECTION_MAJOR
 	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 100, rad = 0)
 
 /obj/item/clothing/head/helmet/marshal_full/warrant/update_icon()
 	if(on)
-		icon_state = "ironhammer_full_on"
+		icon_state = "ironhammer_wo_full_on"
 		set_light(2, 2, COLOR_LIGHTING_ORANGE_MACHINERY)
 	else
-		icon_state = "ironhammer_full"
+		icon_state = "ironhammer_wo_full"
 		set_light(0, 0)
 	update_wear_icon()
 	..()

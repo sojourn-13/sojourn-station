@@ -66,10 +66,14 @@
 	deactivate(null, 0) //kick anyone viewing out
 	taped = 0
 	if(assembly)
-		qdel(assembly)
-		assembly = null
-	qdel(wires)
-	wires = null
+		QDEL_NULL(assembly)
+	QDEL_NULL(wires)
+
+	for (var/mob/tracked_mob in motionTargets) //get rid of any references for anything we're tracking
+		tracked_mob.tracking_cameras -= src
+		motionTargets -= tracked_mob
+	motionTargets.Cut()
+
 	return ..()
 
 /obj/machinery/camera/Process()

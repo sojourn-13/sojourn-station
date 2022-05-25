@@ -182,7 +182,7 @@
 //Scav shuttle
 /datum/shuttle/autodock/multi/rocinante
 	name = "The Rocinante"
-	move_time = (15 MINUTES) / (1 SECOND)
+	move_time = (7 MINUTES) / (1 SECOND)
 	shuttle_area = /area/shuttle/rocinante_shuttle_area
 	current_location = "nav_rocinante_homebase"
 	landmark_transition = "nav_rocinante_transit"

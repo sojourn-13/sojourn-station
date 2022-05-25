@@ -389,16 +389,14 @@
 	if(!target.Adjacent(src))
 		if(selected && selected.is_ranged())
 			selected.action(target)
-	else if(selected)
-		if(istype(selected, /obj/item/mecha_parts/mecha_equipment/melee_weapon))
+	else if(selected) // If target is adjacent
+		if(istype(selected, /obj/item/mecha_parts/mecha_equipment/melee_weapon) || istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon)) // This makes it so you can atleast melee with your ranged weapon
 			if(istype(target, /mob/living))
 				selected.attack(target, user, user.targeted_organ)
 			else if(istype(target, /obj))
 				selected.attack_object(target, user)
 			else if(istype(target, /turf/simulated/wall))
 				target.attackby(selected, user)
-		else if(istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon))
-			target.attackby(selected, user) // This makes it so you can atleast melee with your ranged weapon
 		else if(selected.is_melee())
 			selected.action(target)
 	else
@@ -890,7 +888,7 @@ assassination method if you time it right*/
 		severity++
 		src.log_append_to_last("Armor saved, changing severity to [severity].")
 	// This formula is designed to one-shot anything less armored than a Phazon taking a severity 1 explosion.
-	// This formula does the same raw damage (aside from one-shotting) as the previous formula against a Durand, but deals more final damage due to being unmitigated by damage resistance.
+	// This formula also does the same raw damage (aside from one-shotting) as the previous formula against a Durand, but deals more final damage due to being unmitigated by damage resistance.
 	var/damage_proportion = 1 / max(1, (severity + max(0, armor_level - 2)))
 	src.take_flat_damage(initial(src.health) * damage_proportion)
 	src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT),1)
@@ -1474,28 +1472,6 @@ assassination method if you time it right*/
 		return
 
 	//Eject for AI in mecha
-	if(mob_container.forceMove(src.loc))//ejecting mob container
-
-		src.log_message("[mob_container] moved out.")
-		occupant.reset_view()
-		/*
-		if(src.occupant.client)
-			src.occupant.client.eye = src.occupant.client.mob
-			src.occupant.client.perspective = MOB_PERSPECTIVE
-		*/
-		src.occupant << browse(null, "window=exosuit")
-		if(istype(mob_container, /obj/item/device/mmi))
-			var/obj/item/device/mmi/mmi = mob_container
-			if(mmi.brainmob)
-				occupant.loc = mmi
-			mmi.mecha = null
-			src.occupant.canmove = 0
-			src.verbs += /obj/mecha/verb/eject
-		src.occupant = null
-		src.update_icon()
-		src.set_dir(dir_in)
-
-
 	if(mob_container.forceMove(src.loc))//ejecting mob container
 	/*
 		if(ishuman(occupant) && (return_pressure() > HAZARD_HIGH_PRESSURE))

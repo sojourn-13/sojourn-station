@@ -19,6 +19,7 @@
 	zoom_factor = 0.4
 	recoil_buildup = 10
 	folding_stock = TRUE
+	can_dual = FALSE //please god please please NO MORE NO MORE GOD, PLEASE
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL, GUN_SIGHT)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
