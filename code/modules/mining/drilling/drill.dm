@@ -22,7 +22,7 @@
 	var/list/resource_field = list()
 	var/datum/termite_controller/TC
 	var/last_use = 0.0
-
+	var/mob/living/soul = null
 	var/ore_types = list(
 		MATERIAL_IRON  = /obj/item/stack/ore/iron,
 		MATERIAL_URANIUM = /obj/item/stack/ore/uranium,
@@ -51,10 +51,14 @@
 /obj/machinery/mining/drill/Destroy()
 	for(var/obj/machinery/mining/brace/b in supports)
 		b.disconnect()
+	qdel(soul)
+	soul = null
 	return ..()
 
 /obj/machinery/mining/drill/Initialize()
 	. = ..()
+	var/mob/living/simple_animal/soul/S = new(src)
+	soul = S
 	var/obj/item/cell/large/high/C = new(src)
 	component_parts += C
 	cell = C
@@ -220,15 +224,16 @@
 				TC = new /datum/termite_controller(location=T, seismic=T.seismic_activity, drill=src)
 				visible_message(SPAN_NOTICE("\The [src] lurches downwards, grinding noisily."))
 				need_update_field = 1
+				soul.loc = src.loc
 			else
 				TC.stop()
 				TC = null
 				visible_message(SPAN_NOTICE("\The [src] shudders to a grinding halt."))
+				soul.loc = src.contents
 		else
 			to_chat(user, SPAN_NOTICE("The drill is unpowered."))
 	else
 		to_chat(user, SPAN_NOTICE("Turning on a piece of industrial machinery without sufficient bracing or wires exposed is a bad idea."))
-
 	update_icon()
 
 /obj/machinery/mining/drill/update_icon()

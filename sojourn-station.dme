@@ -2307,6 +2307,7 @@
 #include "code\modules\mob\living\silicon\robot\drone\drone_say.dm"
 #include "code\modules\mob\living\simple_animal\parrot.dm"
 #include "code\modules\mob\living\simple_animal\simple_animal.dm"
+#include "code\modules\mob\living\simple_animal\soul.dm"
 #include "code\modules\mob\living\simple_animal\spider_core.dm"
 #include "code\modules\mob\living\simple_animal\worm.dm"
 #include "code\modules\mob\living\simple_animal\borer\borer.dm"
