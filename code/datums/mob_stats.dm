@@ -12,7 +12,14 @@
 		stat_list[S.name] = S
 
 /datum/stat_holder/Destroy()
-	holder = null
+	if(holder)
+		holder.stats = null
+		holder = null
+
+	QDEL_LIST(perks) //i dont know if this is needed but hey
+	QDEL_LIST(perk_stats)
+
+	stat_list.Cut()
 	return ..()
 
 /datum/stat_holder/proc/check_for_shared_perk(ability_bitflag)

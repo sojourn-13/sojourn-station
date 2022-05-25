@@ -881,8 +881,7 @@ default behaviour is:
 		update_z(T.z)
 
 /mob/living/Destroy()
-	qdel(stats)
-	stats = null
+	QDEL_NULL(stats)
 
 	unnatural_mutations.holder = null //causes a GC failure if we qdel-and it seems its not SUPPOSED to qdel, oddly
 

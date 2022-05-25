@@ -6,7 +6,7 @@
 	item_state = "slideshotgun"
 	max_shells = 1
 	caliber = CAL_SHOTGUN
-	load_method = SINGLE_CASING
+	load_method = SINGLE_CASING|SPEEDLOADER
 	handle_casings = HOLD_CASINGS
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	can_dual = TRUE

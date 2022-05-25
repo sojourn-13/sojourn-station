@@ -61,32 +61,23 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 /mob/living/carbon/superior_animal/termite/New(loc, obj/machinery/mining/drill/drill, datum/termite_controller/parent)
 	..()
-/*	if(parent)
+	if(parent)
 		controller = parent  // Link wurms with wurm controller
 		controller.termite += src
 	if(drill)
-		DD = drill
-		if(prob(50))
-			target_mob = WEAKREF(drill)
-			stance = HOSTILE_STANCE_ATTACK
 
 		for(var/O in oview(5, src)) // Check our surroundings.
 			if(istype(O, /turf/simulated/mineral)) // Is it a minable turf?
 				var/turf/simulated/mineral/M = O
 				mine(M) // Mine the turf
-				continue*/
+				continue
+
 
 // Mine a tile
 /mob/living/carbon/superior_animal/termite/proc/mine(var/turf/simulated/mineral/M)
 	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
 	M.GetDrilled() // Mine the turf
 	return TRUE
-/*
-/mob/living/carbon/superior_animal/temite/isValidAttackTarget(atom/O)
-	// termites can actively try to attack the drill
-	if(istype(O, /obj/machinery/mining/drill))
-		return TRUE
-	return ..()*/
 
 /mob/living/carbon/superior_animal/termite/Destroy()
 	DD = null
@@ -94,11 +85,11 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 /mob/living/carbon/superior_animal/termite/death(gibbed, message = deathmessage)
 	..()
-/*
+
 	if(controller) // Unlink from controller
 		controller.termite -= src
 		controller = null
-	. = ..()*/
+	. = ..()
 
 // Spawn ores
 	if(ore)
@@ -114,6 +105,12 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	var/atom/targetted_mob = (target_mob?.resolve())
 	var/turf/T = get_step_towards(src, targetted_mob)
 
+	for (var/dir in alldirs) // All 8 directions
+		for(var/obj/machinery/mining/drill/obstacle in get_step(src, dir))//A locker as a block? We will brake it.
+			if(obstacle.density == TRUE)
+				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+				return
+
 	if(iswall(T))  // Wall breaker attack
 		T.attack_generic(src, rand(surrounds_mult * melee_damage_lower, surrounds_mult * melee_damage_upper), attacktext, TRUE)
 	else
@@ -121,13 +118,14 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 		if(obstacle && !istype(obstacle, /obj/structure/termite_burrow))
 			obstacle.attack_generic(src, rand(surrounds_mult * melee_damage_lower, surrounds_mult * melee_damage_upper), attacktext, TRUE)
 
+
+
 /mob/living/carbon/superior_animal/termite/handle_ai()
 	var/atom/targetted_mob = (target_mob?.resolve())
 	// Chance to re-aggro the drill if doing nothing
 	if((stance == HOSTILE_STANCE_IDLE) && prob(10))
 		if(!busy) // if not busy with a special task
 			stop_automated_movement = FALSE
-		target_mob = WEAKREF(DD)
 		if(targetted_mob)
 			stance = HOSTILE_STANCE_ATTACK
 	. = ..()
