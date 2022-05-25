@@ -85,7 +85,7 @@
 	new /obj/item/device/camera(src)
 	new /obj/item/melee/classic_baton(src)
 	new /obj/item/oddity/code_book(src)
-	new /obj/item/clothing/head/helmet/marshal_full/warrant(src)
+	new /obj/item/clothing/head/helmet/warrant_officer(src)
 
 /obj/structure/closet/secure_closet/warden
 	name = "supply specialist's locker"
