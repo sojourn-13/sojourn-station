@@ -16,6 +16,10 @@
 		holder.stats = null
 		holder = null
 
+	for (var/datum/perk/perk in perks) //should be enough to clear refs
+		qdel(perk)
+		perks -= perk
+
 	perks.Cut()
 	perk_stats.Cut()
 	stat_list.Cut()
