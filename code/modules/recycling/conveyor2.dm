@@ -27,9 +27,6 @@ GLOBAL_LIST_EMPTY(conveyor_switches)
 	var/reversed = FALSE	// set to TRUE to have the conveyor belt be reversed
 	var/id					// ID of the connected lever
 
-	/// Connected lever to this conveyor. Ideally, we will only have one, so it doesnt have to be a list.
-	var/obj/machinery/conveyor_switch/connected_lever = null
-
 
 // create a conveyor
 /obj/machinery/conveyor/New(loc, new_dir, new_id)
@@ -44,13 +41,9 @@ GLOBAL_LIST_EMPTY(conveyor_switches)
 		var/obj/machinery/conveyor_switch/S = I
 		if(id == S.id)
 			S.conveyors += src
-			connected_lever = S
 
 /obj/machinery/conveyor/Destroy()
 	GLOB.conveyor_belts -= src
-	if(connected_lever)
-		connected_lever.conveyors -= src
-		connected_lever = null
 	return ..()
 
 // attack with item, place item on conveyor
@@ -91,7 +84,6 @@ GLOBAL_LIST_EMPTY(conveyor_switches)
 		for(var/obj/machinery/conveyor_switch/CS in GLOB.conveyor_switches)
 			if(CS.id == id)
 				CS.conveyors -= src
-				connected_lever = null
 		id = S.id
 		to_chat(user, SPAN_NOTICE("You link [I] with [src]."))
 	else if(user.a_intent != I_HURT)
@@ -266,19 +258,9 @@ GLOBAL_LIST_EMPTY(conveyor_switches)
 		var/obj/machinery/conveyor/C = I
 		if(C.id == id)
 			conveyors += C
-			C.connected_lever = src
 
 /obj/machinery/conveyor_switch/Destroy()
 	GLOB.conveyor_switches -= src
-
-	for (var/obj/machinery/conveyor/connected_conveyor in conveyors)
-		var/obj/machinery/conveyor_switch/target_lever = (connected_conveyor.connected_lever)
-
-		if (target_lever == src) //theres a chance we dont own this conveyor (maybe)
-			target_lever = null
-
-	conveyors.Cut()
-
 	return ..()
 
 /obj/machinery/conveyor_switch/update_icon()
