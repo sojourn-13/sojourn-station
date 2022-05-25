@@ -783,7 +783,7 @@
 	update_wear_icon()
 	..()
 
-/obj/item/clothing/head/helmet/marshal_full/warrant
+/obj/item/clothing/head/helmet/warrant_officer
 	name = "warrant officer full helmet"
 	desc = "A full helmet with a built in glow visor. This one appears to be fitted with new visor servos internally to protect from flashes as well as a bullet-proof reinforced mouth guard!"
 	icon_state = "ironhammer_wo_full"
@@ -791,7 +791,7 @@
 	flash_protection = FLASH_PROTECTION_MAJOR
 	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 100, rad = 0)
 
-/obj/item/clothing/head/helmet/marshal_full/warrant/update_icon()
+/obj/item/clothing/head/helmet/warrant_officer/update_icon()
 	if(on)
 		icon_state = "ironhammer_wo_full_on"
 		set_light(2, 2, COLOR_LIGHTING_ORANGE_MACHINERY)
