@@ -10,10 +10,11 @@
 	limited_ammo = TRUE
 	mag_drop = FALSE
 	rounds_left = 1
-	mag_type = /obj/item/ore
+	mag_type = /obj/item/stack/ore
 	mags_left = 3
 	rounds_per_fire = 1
 	reload_message = "picks up a hidden spear!"
+	fire_verb = "flings a makeshift spear"
 
 /mob/living/carbon/superior_animal/vox/thrower_spear
 	name = "Sararin samaniya"
@@ -27,10 +28,11 @@
 	limited_ammo = TRUE
 	mag_drop = FALSE
 	rounds_left = 2
-	mag_type = /obj/item/ore
+	mag_type = /obj/item/stack/ore
 	mags_left = 2
 	rounds_per_fire = 2
 	reload_message = "picks up a hidden spear!"
+	fire_verb = "flings a makeshift spear"
 
 /mob/living/carbon/superior_animal/vox/armord
 	name = "Garkuwar bango"
@@ -118,3 +120,20 @@
 	melee_damage_upper = 35
 
 	knock_over_odds = 25
+
+/mob/living/carbon/superior_animal/vox/scout
+	name = "karfe kafafu"
+	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one is caked with dirt and grime, with a shank in its hands and plates of crude scrap armor on its chest."
+	icon_state = "vox_brave"
+
+	melee_damage_lower = 23
+	melee_damage_upper = 20
+
+	attacktext = "slashes"
+
+	knock_over_odds = 30
+
+	armor = list(melee = 50, bullet = 40,  bomb = 60, bio = 0, rad = 0)
+	ranged = FALSE
+
+	can_burrow = TRUE

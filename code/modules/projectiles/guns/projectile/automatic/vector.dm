@@ -16,7 +16,7 @@
 	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 3)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_SMG|MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3, MATERIAL_PLASMA = 2, MATERIAL_GOLD = 1) //Some rare ones so they dont just mass make this shift start without some good rng
 	price_tag = 1100
@@ -30,16 +30,17 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND,
-		FULL_AUTO_400
+		BURST_3_ROUND_NOLOSS,
+		FULL_AUTO_400_NOLOSS
 		)
+	serial_type = "SA"
 
 /obj/item/gun/projectile/automatic/vector/update_icon()
 	..()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
-	if(folded)
+	if(!folded)
 		iconstring += "_stock"
 
 	if (ammo_magazine)

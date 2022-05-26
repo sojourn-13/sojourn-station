@@ -15,8 +15,7 @@
 	icon = 'icons/obj/dice.dmi'
 	icon_state = "dicebag"
 
-/obj/item/storage/pill_bottle/chechker/New()
-	..()
+/obj/item/storage/pill_bottle/chechker/populate_contents()
 	for(var/i = 1 to 16)
 		new /obj/item/checker(src.loc)
 		new /obj/item/checker/red(src.loc)

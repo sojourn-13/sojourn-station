@@ -22,8 +22,8 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 
 	var/table_options = " align='center'"
 	var/row_options1 = " width='80px'"
-	var/row_options2 = " width='280px'"
-	var/window_x = 450
+	var/row_options2 = " width='260px'"
+	var/window_x = 370
 	var/window_y = 470
 
 	var/list/descriptions // Descriptions of wires (datum/wire_description) for use with examining.
@@ -90,11 +90,11 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 /datum/wires/proc/add_log_entry(mob/user, message)
 	wire_log += "\[[time_stamp()]\] [user.name] ([user.ckey]) [message]"
 
-/datum/wires/proc/Interact(var/mob/living/user)
+/datum/wires/proc/Interact(mob/living/user)
 
 	var/html = null
 	if(holder && CanUse(user))
-		html = GetInteractWindow()
+		html = GetInteractWindow(user)
 	if(html)
 		user.set_machine(holder)
 	else
@@ -108,19 +108,32 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 	popup.set_title_image(user.browse_rsc_icon(holder.icon, holder.icon_state))
 	popup.open()
 
-/datum/wires/proc/GetInteractWindow()
+/datum/wires/proc/GetInteractWindow(mob/living/user)
+	var/user_skill
 	var/html = "<div class='block'>"
 	html += "<h3>Exposed Wires</h3>"
 	html += "<table[table_options]>"
 
+	if(!user)
+		user = usr
+
+	if(istype(user))
+		user_skill = user.stats.getStat(STAT_MEC)
+
 	for(var/colour in wires)
 		html += "<tr>"
-		html += "<td[row_options1]><font color='[colour]'>[capitalize(colour)]</font></td>"
+		var/datum/wire_description/wd = get_description(GetIndex(colour))
+		if(wd)
+			if(user.stats && user.stats.getPerk(PERK_HANDYMAN) || user_skill && (wd.skill_level <= user_skill))
+				html += "<td[row_options1]><font color='[colour]'>[wd.description]</font></td>"
+			else
+				html += "<td[row_options1]><font color='[colour]'>[capitalize(colour)]</font></td>"
+		else
+			html += "<td[row_options1]><font color='[colour]'>[capitalize(colour)]</font></td>"
 		html += "<td[row_options2]>"
 		html += "<A href='?src=\ref[src];action=1;cut=[colour]'>[IsColourCut(colour) ? "Mend" :  "Cut"]</A>"
 		html += " <A href='?src=\ref[src];action=1;pulse=[colour]'>Pulse</A>"
 		html += " <A href='?src=\ref[src];action=1;attach=[colour]'>[IsAttached(colour) ? "Detach" : "Attach"] Signaller</A>"
-		html += " <A href='?src=\ref[src];action=1;examine=[colour]'>Examine</A></td></tr>"
 	html += "</table>"
 	html += "</div>"
 
@@ -172,17 +185,12 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 
 				// Attach
 				else
-					if(istype(I, /obj/item/device/assembly/signaler))
+					if(istype(I, /obj/item/device/assembly/signaler) || istype(I, /obj/item/implant/carrion_spider/spark))
 						L.drop_item()
 						add_log_entry(L, "has attached [I] to the <font color='[colour]'>[capitalize(colour)]</font> wire")
 						Attach(colour, I)
 					else
 						to_chat(L, SPAN_WARNING("You need a remote signaller!"))
-
-			else if(href_list["examine"])
-				var/colour = href_list["examine"]
-				to_chat(usr, examine(GetIndex(colour), usr))
-
 
 		// Update Window
 			Interact(usr)
@@ -208,12 +216,10 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 
 // Example of use:
 /*
-
 var/const/BOLTED= 1
 var/const/SHOCKED = 2
 var/const/SAFETY = 4
 var/const/POWER = 8
-
 /datum/wires/door/UpdateCut(var/index, var/mended)
 	var/obj/machinery/door/airlock/A = holder
 	switch(index)
@@ -224,7 +230,6 @@ var/const/POWER = 8
 		A.shock()
 	if(SAFETY )
 		A.safety()
-
 */
 
 
@@ -273,17 +278,19 @@ var/const/POWER = 8
 	return null
 
 /datum/wires/proc/Attach(var/colour, var/obj/item/device/assembly/signaler/S)
-	if(colour && S)
-		if(!IsAttached(colour))
-			signallers[colour] = S
-			S.loc = holder
-			S.connected = src
-			return S
+    var/obj/item/implant/carrion_spider/spark/I = S
+    if(istype(S) || istype(I))
+        if(!IsAttached(colour))
+            signallers[colour] = S
+            S.loc = holder
+            S.connected = src
+            return S
 
 /datum/wires/proc/Detach(var/colour)
 	if(colour)
 		var/obj/item/device/assembly/signaler/S = GetAttached(colour)
-		if(S)
+		var/obj/item/implant/carrion_spider/spark/I = S
+		if(istype(S) || istype(I))
 			signallers -= colour
 			S.connected = null
 			S.loc = holder.loc
@@ -291,11 +298,12 @@ var/const/POWER = 8
 
 
 /datum/wires/proc/Pulse(var/obj/item/device/assembly/signaler/S)
-
-	for(var/colour in signallers)
-		if(S == signallers[colour])
-			PulseColour(colour)
-			break
+	var/obj/item/implant/carrion_spider/spark/I = S
+	if(istype(S) || istype(I))
+		for(var/colour in signallers)
+			if(S == signallers[colour])
+				PulseColour(colour)
+				break
 
 
 //

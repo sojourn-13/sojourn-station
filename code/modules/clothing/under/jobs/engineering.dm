@@ -4,7 +4,7 @@
 	name = "guild master's jumpsuit"
 	icon_state = "chiefengineer"
 	item_state = "g_suit"
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,
@@ -18,7 +18,7 @@
 	name = "guild master's skirt"
 	icon_state = "artificer_jumpskirt_master"
 	item_state = "artificer_jumpskirt_master"
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,
@@ -32,7 +32,7 @@
 	name = "adept's jumpsuit"
 	icon_state = "engine"
 	item_state = "engi_suit"
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,
@@ -46,7 +46,7 @@
 	name = "adept's jumpsuit"
 	icon_state = "artificer_armored_jumpsuit"
 	item_state = "artificer_armored_jumpsuit"
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,
@@ -60,7 +60,7 @@
 	name = "adept's skirt"
 	icon_state = "artificer_apprentice_skirt"
 	item_state = "artificer_apprentice_skirt"
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,
@@ -74,7 +74,7 @@
 	name = "adept's padded skirt"
 	icon_state = "artificer_jumpskirt_adept"
 	item_state = "artificer_jumpskirt_adept"
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,
@@ -94,7 +94,7 @@
 	name = "adept's padded emergency suit"
 	icon_state = "engineadv"
 	item_state = "engineadv"
-	armor = list(
+	armor_list = list(
 		melee = 20, //if they are not waring any armor over this then we give *something*
 		bullet = 20,
 		energy = 25,
@@ -108,7 +108,7 @@
 	name = "adept's padded emergency suit"
 	icon_state = "chiefengineeradv"
 	item_state = "chiefengineeradv"
-	armor = list(
+	armor_list = list(
 		melee = 30, //if they are not waring any armor over this then we give *something*
 		bullet = 30,
 		energy = 45,

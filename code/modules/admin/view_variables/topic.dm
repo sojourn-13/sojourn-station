@@ -8,7 +8,7 @@
 
 	//~CARN: for renaming mobs (updates their name, real_name, mind.name, their ID/PDA and datacore records).
 	else if(href_list["rename"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_DEBUG|R_ADMIN))
 			return
 
 		var/mob/M = locate(href_list["rename"])
@@ -25,7 +25,7 @@
 		href_list["datumrefresh"] = href_list["rename"]
 
 	else if(href_list["varnameedit"] && href_list["datumedit"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_DEBUG|R_ADMIN))
 			return
 
 		var/D = locate(href_list["datumedit"])
@@ -36,7 +36,7 @@
 		modify_variables(D, href_list["varnameedit"], 1)
 
 	else if(href_list["varnamechange"] && href_list["datumchange"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_DEBUG|R_ADMIN))
 			return
 
 		var/D = locate(href_list["datumchange"])
@@ -47,7 +47,7 @@
 		modify_variables(D, href_list["varnamechange"], 0)
 
 	else if(href_list["varnamemass"] && href_list["datummass"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_ADMIN|R_DEBUG))
 			return
 
 		var/atom/A = locate(href_list["datummass"])
@@ -226,7 +226,7 @@
 			to_chat(usr, "This can only be done to instances of type /datum")
 			return
 
-		src.holder.marked_datum_weak = weakref(D)
+		src.holder.marked_datum_weak = WEAKREF(D)
 		href_list["datumrefresh"] = href_list["mark_object"]
 
 	else if(href_list["perkadd"])
@@ -459,7 +459,7 @@
 
 
 	else if(href_list["saveTemplate"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_DEBUG|R_ADMIN))
 			return
 
 		var/mob/living/carbon/human/H = locate(href_list["saveTemplate"])

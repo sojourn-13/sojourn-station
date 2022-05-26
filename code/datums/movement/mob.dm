@@ -295,10 +295,14 @@
 	direction = mob.AdjustMovementDirection(direction)
 	var/old_turf = get_turf(mob)
 	step(mob, direction)
+	mob.add_momentum(direction)
 
 	// Something with pulling things
 	var/extra_delay = HandleGrabs(direction, old_turf)
 	mob.add_move_cooldown(extra_delay)
+
+	if(!MOVING_DELIBERATELY(mob) && ishuman(mob)) //Do humans not have their own?
+		mob.handle_movement_recoil()
 
 	/* TODO: Bay grab system
 	for (var/obj/item/grab/G in mob)

@@ -29,6 +29,9 @@
 	var/datum/artifact_effect/my_effect
 	var/datum/artifact_effect/secondary_effect
 	var/being_used = 0
+	var/psi_power_chance = 100 // Chance in % for a given artifact to hold a psionic power.
+	var/psi_power // The holder of the power we give
+	var/psi_text // Description that only psions can see.
 
 /obj/machinery/artifact/New()
 	..()
@@ -71,6 +74,54 @@
 		name = "sealed alien pod"
 		if(prob(75))
 			my_effect.trigger = rand(1,4)
+
+	if(prob(psi_power_chance)) // Roll of the dice to decide if we get a power
+		turn_psion()
+
+// Turn the artifact into a psionic artifact, here for modularity.
+/obj/machinery/artifact/proc/turn_psion()
+	psi_power = pick(RESEARCH_POWER)
+	switch(psi_power) // TODO : Better names and description, but do keep the purple text, I think it is neat. -R4d6
+		if(CRYO_BLASTER)
+			name = "Cryo-Blaster"
+			desc = "[desc]" // Placeholder
+			psi_text = "You hear a very faint voice in the back of your mind : \
+						[SPAN_PSION(" The cold and the winter are what has seperated the living from the doomed.")]"
+		if(PYRO_BLASTER)
+			name = "Pyro-Blaster"
+			desc = "[desc]" // Placeholder
+			psi_text = "You hear a very faint voice in the back of your mind : \
+						[SPAN_PSION(" Fire often destroys everything it touches, even if we wish it did not.")]"
+		if(ELECTRO_BLASTER)
+			name = "Electro-Blaster"
+			desc = "[desc]" // Placeholder
+			psi_text = "You hear a very faint voice in the back of your mind : \
+						[SPAN_PSION(" How shocking.")]"
+		if(KINETIC_BARRIER)
+			name = "Kinetic Barrier"
+			desc = "[desc]" // Placeholder
+			psi_text = "You hear a very faint voice in the back of your mind : \
+						[SPAN_PSION(" Protection of body and mind.")]"
+		if(CHOSEN_CONTROL)
+			name = "Chosen Control"
+			desc = "[desc]" // Placeholder
+			psi_text = "You hear a very faint voice in the back of your mind : \
+						[SPAN_PSION(" The universe bends to your will alone and at times, it must be reminded.")]"
+		if(DETECT_THOUGHTS)
+			name = "Detect Thoughts"
+			desc = "[desc]" // Placeholder
+			psi_text = "You hear a very faint voice in the back of your mind : \
+						[SPAN_PSION(" We all have some spark.")]"
+		if(PSYCHOACTIVE_MANIPULATION)
+			name = "Psychoactive Manipulation"
+			desc = "[desc]" // Placeholder
+			psi_text = "You hear a very faint voice in the back of your mind : \
+						[SPAN_PSION(" Are we truly changing anything?")]"
+
+/obj/machinery/artifact/examine(mob/user)
+	..()
+	if(psi_text && user.stats?.getPerk(PERK_PSION)) // Are we a psion and is there something to see?
+		to_chat(user, psi_text)
 
 /obj/machinery/artifact/Process()
 

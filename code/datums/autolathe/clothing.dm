@@ -38,7 +38,7 @@
 /datum/design/autolathe/clothing/scav_armor
 	name = "Scavenger Armor"
 	build_path = /obj/item/clothing/suit/storage/scavengerarmor
-	materials = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_PLASTEEL = 10) //so hand crafting is better
+	materials = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_PLASTEEL = 10, MATERIAL_PLATINUM = 1) //so hand crafting is better
 
 /datum/design/autolathe/clothing/scav_armor_void
 	name = "Void Scavenger Armor"

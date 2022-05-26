@@ -36,6 +36,10 @@
 	//So we dont have meat
 	meat_amount = 3
 	meat_type = /obj/item/scrap_lump
+	reagent_immune = TRUE
+	toxin_immune = TRUE
+	cold_protection = 1
+	heat_protection = 1
 
 	do_gibs = FALSE
 	colony_friend = TRUE
@@ -43,8 +47,8 @@
 
 	known_languages = list(LANGUAGE_COMMON)
 
-	follow_message = "state, \"Beginning Escort Protocol.\""
-	stop_message = "state, \"Ending Escort Protocol.\""
+	follow_message = "states, \"Beginning Escort Protocol.\""
+	stop_message = "states, \"Ending Escort Protocol.\""
 	follow_distance = 2
 	var/list/creator = list() // Who's the bot's creator.
 	var/repair_rate = 0 // How fast does the bot repair itself.
@@ -87,7 +91,7 @@
 
 /mob/living/carbon/superior_animal/nanobot/rejuvenate()
 	..()
-	//We trgain are consol and radio if revived!
+	//We regain our console and radio if revived!
 	Radio = new/obj/item/device/radio(src)
 	Console = new /obj/item/modular_computer/console/preset/nanobot(src)
 
@@ -159,7 +163,7 @@
 										SPAN_NOTICE("You start to reactivate [src.name]..")
 										)
 				if(T.use_tool(user, src, WORKTIME_EXTREMELY_LONG, QUALITY_PULSING, FAILCHANCE_EASY, required_stat = STAT_COG)) // Bring the bot back. It's long as fuck. Bit faster if it's your job.
-					revive() // That proc fully heal the bot, but we don't care because we make sure it is fully healed before calling it.
+					rejuvenate() // That proc fully heal the bot, but we don't care because we make sure it is fully healed before calling it.
 			else if(user.stats.getPerk(PERK_ROBOTICS_EXPERT))
 				to_chat(user, "[src] need to be fully repaired before reactivation is possible.")
 			else
@@ -168,6 +172,11 @@
 
 	// If nothing was ever triggered, continue as normal
 	..()
+
+/mob/living/carbon/superior_animal/nanobot/attack_hand(mob/user as mob)
+	if(user.a_intent == I_HELP) // Are we on help intent?
+		interact(user)
+	else ..()
 
 /mob/living/carbon/superior_animal/nanobot/proc/spawn_food()
 	new /obj/item/storage/ration_pack(src.loc) // Spawn the food

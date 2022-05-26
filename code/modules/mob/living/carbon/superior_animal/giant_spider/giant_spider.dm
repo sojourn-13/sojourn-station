@@ -36,12 +36,14 @@
 	min_breath_required_type = 3
 	min_air_pressure = 15 //below this, brute damage is dealt
 
-	fleshcolor = "#666600"
-	bloodcolor = "#666600"
+	fleshcolor = "#1E536E"
+	bloodcolor = "#1E536E"
 
 	var/poison_per_bite = 2
 	var/poison_type = "pararein"
 	faction = "spiders"
+
+	price_tag = 250 //in case you sell these???
 
 	colony_friend = FALSE
 	friendly_to_colony = FALSE

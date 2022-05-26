@@ -211,6 +211,26 @@
 	for(var/i in 1 to 5)
 		new /obj/item/stack/medical/advanced/ointment (src)
 
+/obj/item/storage/box/gauzebulk
+	name = "box of gauze"
+	desc = "A box containing five rolls of gauze."
+	w_class = ITEM_SIZE_NORMAL
+	cant_hold = list(/obj/item)
+
+/obj/item/storage/box/gauzebulk/populate_contents()
+	for(var/i in 1 to 5)
+		new /obj/item/stack/medical/bruise_pack (src)
+
+/obj/item/storage/box/ointmentbulk
+	name = "box of ointment"
+	desc = "A box containing five bottles of ointment."
+	w_class = ITEM_SIZE_NORMAL
+	cant_hold = list(/obj/item)
+
+/obj/item/storage/box/ointmentbulk/populate_contents()
+	for(var/i in 1 to 5)
+		new /obj/item/stack/medical/ointment (src)
+
 /obj/item/storage/box/leatherbulk
 	name = "Box of leather"
 	desc = "A box containing five workable sheets of leather."
@@ -703,6 +723,9 @@
 	for(var/i in 1 to 7)
 		new /obj/item/computer_hardware/hard_drive/portable/basic(src)
 
+/obj/item/storage/box/data_disk/basic/empty/populate_contents()
+	return
+
 /obj/item/storage/box/trooperuniform
 	name = "Trooper/Corpsman Service and Dress Kit"
 	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
@@ -716,6 +739,8 @@
 		new /obj/item/clothing/head/rank/trooperdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
+		new /obj/item/clothing/accessory/armband/militia(src)
+		new /obj/item/clothing/accessory/armband/corpsman(src)
 
 /obj/item/storage/box/sergeantuniform
 	name = "Sergeant Service and Dress Kit"

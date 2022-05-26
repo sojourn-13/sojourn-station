@@ -12,7 +12,7 @@
 	price_tag = 1600
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	unload_sound 	= 'sound/weapons/guns/interact/batrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/batrifle_magin.ogg'
@@ -23,6 +23,7 @@
 	zoom_factor = 0.2
 	one_hand_penalty = 10 //bullpup rifle level
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
+	serial_type = "H&S"
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,

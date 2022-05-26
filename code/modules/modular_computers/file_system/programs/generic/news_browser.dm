@@ -10,6 +10,7 @@
 	size = 4
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE
+	usage_flags = PROGRAM_ALL
 
 	nanomodule_path = /datum/nano_module/program/computer_newsbrowser/
 	var/datum/computer_file/data/news_article/loaded_article
@@ -82,7 +83,7 @@
 /datum/nano_module/program/computer_newsbrowser
 	name = "News Browser"
 
-/datum/nano_module/program/computer_newsbrowser/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/computer_newsbrowser/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 
 	var/datum/computer_file/program/newsbrowser/PRG
 	var/list/data = list()

@@ -77,7 +77,7 @@
 	var/internal_damage = 0 //contains bitflags
 
 	var/list/operation_req_access = list()//required access level for mecha operation
-	var/list/internals_req_access = list(access_engine,access_robotics)//required access level to open cell compartment
+	var/list/internals_req_access = list()//required access level to open cell compartment
 	var/list/dna_req_access = list(access_heads)
 
 	var/datum/global_iterator/pr_int_temp_processor //normalizes internal air mixture temperature
@@ -100,6 +100,7 @@
 
 	var/list/obj/item/mech_ammo_box/ammo[3] // List to hold the mech's internal ammo.
 
+	var/obj/item/clothing/glasses/hud/hud
 
 /obj/mecha/can_prevent_fall()
 	return TRUE
@@ -388,11 +389,16 @@
 	if(!target.Adjacent(src))
 		if(selected && selected.is_ranged())
 			selected.action(target)
-	else if(selected)
-		if(selected.is_melee())
+	else if(selected) // If target is adjacent
+		if(istype(selected, /obj/item/mecha_parts/mecha_equipment/melee_weapon) || istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon)) // This makes it so you can atleast melee with your ranged weapon
+			if(istype(target, /mob/living))
+				selected.attack(target, user, user.targeted_organ)
+			else if(istype(target, /obj))
+				selected.attack_object(target, user)
+			else if(istype(target, /turf/simulated/wall))
+				target.attackby(selected, user)
+		else if(selected.is_melee())
 			selected.action(target)
-		else
-			occupant_message("<font color='red'>You cannot fire this weapon in close quarters!</font>")
 	else
 		src.melee_action(target)
 	return
@@ -404,7 +410,7 @@
 		target.attack_hand(src.occupant)
 		return 1
 	if(istype(target, /obj/machinery/embedded_controller))
-		target.ui_interact(src.occupant)
+		target.nano_ui_interact(src.occupant)
 		return 1
 	return 0
 
@@ -882,7 +888,7 @@ assassination method if you time it right*/
 		severity++
 		src.log_append_to_last("Armor saved, changing severity to [severity].")
 	// This formula is designed to one-shot anything less armored than a Phazon taking a severity 1 explosion.
-	// This formula does the same raw damage (aside from one-shotting) as the previous formula against a Durand, but deals more final damage due to being unmitigated by damage resistance.
+	// This formula also does the same raw damage (aside from one-shotting) as the previous formula against a Durand, but deals more final damage due to being unmitigated by damage resistance.
 	var/damage_proportion = 1 / max(1, (severity + max(0, armor_level - 2)))
 	src.take_flat_damage(initial(src.health) * damage_proportion)
 	src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT),1)
@@ -941,7 +947,7 @@ assassination method if you time it right*/
 		usable_qualities.Add(QUALITY_SCREW_DRIVING)
 	if(state == 2 || state == 3)
 		usable_qualities.Add(QUALITY_PRYING)
-	if(state >= 3 && src.occupant)
+	if((state >= 3 && src.occupant) || src.dna)
 		usable_qualities.Add(QUALITY_PULSING)
 
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
@@ -1045,6 +1051,14 @@ assassination method if you time it right*/
 						src.occupant_message(SPAN_WARNING("An attempt to eject you was made using the maintenance controls."))
 						src.log_message("Eject attempt made using maintenance controls - rejected.")
 					return
+			if(src.dna)
+				if(I.use_tool(user, src, WORKTIME_LONG, tool_type, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
+					src.dna = null
+					to_chat(user, SPAN_WARNING("You have reset the mech's DNA lock forcefuly."))
+					src.log_message("DNA lock was forcefuly removed.")
+				else
+					to_chat(user, SPAN_WARNING("You failed to reset the mech's DNA lock."))
+					src.log_message("A failed attempt at reseting the DNA lock has been logged.")
 			return
 
 		if(ABORT_CHECK)
@@ -1311,6 +1325,10 @@ assassination method if you time it right*/
 		to_chat(user, SPAN_WARNING("You can't climb into the exosuit while buckled!"))
 		return
 
+	if(istype(user.get_equipped_item(slot_back), /obj/item/rig/ameridian_knight))
+		to_chat(user, SPAN_WARNING("Your armor is too bulky to fit in the exosuit!"))
+		return
+
 	src.log_message("[user] tries to move in.")
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
@@ -1454,28 +1472,6 @@ assassination method if you time it right*/
 		return
 
 	//Eject for AI in mecha
-	if(mob_container.forceMove(src.loc))//ejecting mob container
-
-		src.log_message("[mob_container] moved out.")
-		occupant.reset_view()
-		/*
-		if(src.occupant.client)
-			src.occupant.client.eye = src.occupant.client.mob
-			src.occupant.client.perspective = MOB_PERSPECTIVE
-		*/
-		src.occupant << browse(null, "window=exosuit")
-		if(istype(mob_container, /obj/item/device/mmi))
-			var/obj/item/device/mmi/mmi = mob_container
-			if(mmi.brainmob)
-				occupant.loc = mmi
-			mmi.mecha = null
-			src.occupant.canmove = 0
-			src.verbs += /obj/mecha/verb/eject
-		src.occupant = null
-		src.update_icon()
-		src.set_dir(dir_in)
-
-
 	if(mob_container.forceMove(src.loc))//ejecting mob container
 	/*
 		if(ishuman(occupant) && (return_pressure() > HAZARD_HIGH_PRESSURE))
@@ -2315,3 +2311,10 @@ assassination method if you time it right*/
 		setInternalDamage(MECHA_INT_TANK_BREACH)
 	if (prob(probability))
 		setInternalDamage(MECHA_INT_CONTROL_LOST)
+
+/obj/mecha/proc/hud_deleted(var/obj/item/clothing/glasses/hud/source, var/obj/item/clothing/glasses/hud/placeholder) //2nd arg exists because our signals are outdated
+	SIGNAL_HANDLER
+
+	if (hud == source)
+		UnregisterSignal(source, COMSIG_HUD_DELETED)
+		hud = null

@@ -108,11 +108,11 @@
 
 	if(isliving(user))
 		var/mob/living/M = user
-		if ((CLUMSY in M.mutations) && prob(50))
+		if ((CLUMSY in M.mutations) && prob(8))
 			to_chat(user, SPAN_DANGER("[src] blows up in your face."))
 			M.drop_item()
 			Fire(get_turf(M))
-			del(src)
+			qdel(src)
 			return
 
 	if (use_charge())
@@ -292,6 +292,3 @@
 
 /obj/structure/cable/hatton_act()
 	return
-
-
-

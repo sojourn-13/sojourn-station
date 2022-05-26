@@ -3,7 +3,8 @@
 /datum/perk/nanogate
 	name = "Nanogate Implant"
 	desc = "At some point you chose to have a nanogate installed in your body, the metallic nanite based implant goes directly at the base of your skull right where your spine connects. While \
-	quite powerful and widely useful, the effects of having one has made it far more difficult to become inspired."
+	quite powerful and widely useful, but there are side effects. Those with a nanogate find it far more difficult to become inspired. On top of this, nanogates violently attack any mutations \
+	it detects in the body, which can be harmful when combined with fast-acting genetic modifications."
 	gain_text = "Your head aches for a moment, the effects of your spine having been seperated and an advanced machine slotted inbetween leaving you with a dull pain that is quickly cured \
 	by your nanites."
 
@@ -11,7 +12,7 @@
 	name = "Nanite Regeneration"
 	desc = "You configure your nanite matrix to begin aiding in your natural healing."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
-	var/regen_rate = 1
+	var/regen_rate = 0.5 //This seems low but this is per human handle_chemicals_in_body meaning this is rather robust
 
 /datum/perk/nanite_muscle
 	name = "Nanofiber Muscle Therapy"
@@ -28,11 +29,11 @@
 
 /datum/perk/nanite_armor/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk -= armor_mod
+	holder?.brute_mod_perk -= armor_mod
 
 /datum/perk/nanite_armor/remove()
 	..()
-	holder.brute_mod_perk += armor_mod
+	holder?.brute_mod_perk += armor_mod
 
 /datum/perk/nanite_chem
 	name = "Nanite Chemicals"
@@ -42,9 +43,14 @@
 	passivePerk = FALSE
 	var/chem_id = "nanites"
 	var/chem_amount = 15
+	var/anti_cheat = FALSE //Used to prevent multy stacking clicking
 
 /datum/perk/nanite_chem/activate()
 	..()
+	if(anti_cheat)
+		to_chat(holder, "Something feels cold.")
+		return
+	anti_cheat = TRUE
 	to_chat(holder, "You feel a sudden rush as the pre-programed nanites enter your bloodstream.")
 	holder.reagents.add_reagent(chem_id, chem_amount)
 	spawn(20) holder.stats.removePerk(src.type) // Delete the perk
@@ -85,14 +91,21 @@
 	active = FALSE
 	passivePerk = FALSE
 	var/cooldown = 60 MINUTES
+	var/anti_cheat = FALSE //No more spaming...
 
 /datum/perk/nanite_ammo/activate()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("Your nanites didn't ready an ammo box yet."))
 		return FALSE
 
+	if(anti_cheat)
+		to_chat(holder, "Something feels cold.")
+		return
+	anti_cheat = TRUE
+
 	var/list/ammo_boxes = typesof(/obj/item/ammo_magazine/ammobox)
-	//We cant print everything under the sun sadly, so we limet are options a small bit! No SI laser ammo, explosives, some higher end boxes/ammo, and church biomatter boxes
+	//We cant print everything under the sun sadly, so we limit are options a small bit!
+	//No SI laser ammo, explosives, some higher end boxes/ammo, and church biomatter boxes
 	ammo_boxes -= list(	/obj/item/ammo_magazine/ammobox,
 						/obj/item/ammo_magazine/ammobox/pistol_35/laser,
 						/obj/item/ammo_magazine/ammobox/pistol_35/biomatter,
@@ -114,4 +127,6 @@
 	var/obj/item/choice = input(usr, "Which type of ammo do you want?", "Ammo Choice", null) as null|anything in ammo_boxes
 	usr.put_in_hands(new choice(usr.loc))
 	cooldown_time = world.time + cooldown
+
+	anti_cheat = FALSE
 	return ..()

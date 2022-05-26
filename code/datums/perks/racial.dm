@@ -308,7 +308,7 @@
 	desc = "You retrieve your custom kitted medical webbing hidden on your person somewhere, along with the opifex-made black webbing vest that holds them. As every opifex is told, never go anywhere without your kit. This tool belt is yours alone and you should not allow any non-opifex to use it."
 	active = FALSE
 	passivePerk = FALSE
-	
+
 
 /datum/perk/opifex_backup_medical/activate()
 	var/mob/living/carbon/human/user = usr
@@ -516,7 +516,7 @@
 	if(O.oddity_stats)
 		if(O.random_stats)
 			for(var/stat in O.oddity_stats)
-				O.oddity_stats[stat] = (rand(1, O.oddity_stats[stat]) + 5)
+				O.oddity_stats[stat] = (rand(1, O.oddity_stats[stat]) + 3)
 
 /datum/perk/folken_healing
 	name = "Folken Photo-Healing"
@@ -592,3 +592,78 @@
 	mushroom.friends += user
 	mushroom.following = user
 	..()
+
+// Food related perks
+/datum/perk/carnivore
+	name = "Carnivore"
+	desc = "For whatever reason, be it genetics or racial inclination, you are an obligate carnivore. You get very little nutrition from standard nutriment, but gain alot from meat and protein \
+	based products."
+	passivePerk = TRUE
+
+/datum/perk/herbivore
+	name = "Herbivore"
+	desc = "For whatever reason, be it genetics or racial inclination, you are an obligate herbivore. You get very little nutrition from standard protein, but gain alot from grown foods and glucose \
+	based products."
+	passivePerk = TRUE
+
+///////////////////////////////////// Slime perks
+/datum/perk/speed_boost
+	name = "Gelatinous speed"
+	desc = "Increase your speed for a short amount of time."
+	var/cooldown = 10 MINUTES
+	passivePerk = FALSE
+	var/nutrition_cost = 100
+
+/datum/perk/speed_boost/activate()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("TODO Error Message"))
+		return FALSE
+	cooldown_time = world.time + cooldown
+
+	holder.nutrition -= nutrition_cost
+	// TODO : Add Speedy Chemical Injection here -R4d6
+
+/datum/perk/limb_regen
+	name = "Gelatinous Regeneration"
+	desc = "Spend nutrition in exchange of regenerating your limbs"
+	var/cooldown = 30 MINUTES
+	passivePerk = FALSE
+	var/nutrition_cost = 500 // I don't know if nutrition even goes that high, but that's Possum's problem. -R4d6
+	var/list/limbs = list(BP_HEAD, BP_GROIN, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
+
+/datum/perk/limb_regen/activate()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("TODO Error Message"))
+		return FALSE
+	cooldown_time = world.time + cooldown
+	holder.nutrition -= nutrition_cost
+	holder.restore_all_organs() // Function located in 'code/modules/mob/living/carbon/human/human_damage.dm' Line 334. I couldn't find anything better for regenerating missing limbs and I'm too tired to try and code it in, so it will have to do. -R4d6
+
+/datum/perk/slime_stat_boost
+	name = "Gelatinous Stat Boost"
+	desc = "Spend nutrition in exchange of \[INSERT DESCRIPTION HERE\]"
+	var/cooldown = 15 MINUTES
+	passivePerk = FALSE
+	var/nutrition_cost = 100
+	var/list/stats_to_boost = list() // Which stats we boost
+	var/amount_to_boost = 90 // How much the stats are boosted
+	var/duration = 0.5 MINUTES // How long the stats are boosted for
+
+/datum/perk/slime_stat_boost/activate()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("TODO Error Message"))
+		return FALSE
+	cooldown_time = world.time + cooldown
+	holder.nutrition -= nutrition_cost
+	for(var/I in stats_to_boost)
+		holder.stats.addTempStat(I, amount_to_boost, duration, "Slime Biology")
+
+/datum/perk/slime_stat_boost/mental
+	name = "Gelatinous Mental Stat Boost"
+	desc = "Spend nutrition in exchange of \[INSERT DESCRIPTION HERE\]"
+	stats_to_boost = list(STAT_BIO, STAT_MEC, STAT_COG)
+
+/datum/perk/slime_stat_boost/physical
+	name = "Gelatinous Physical Stat Boost"
+	desc = "Spend nutrition in exchange of \[INSERT DESCRIPTION HERE\]"
+	stats_to_boost = list(STAT_ROB, STAT_TGH, STAT_VIG)

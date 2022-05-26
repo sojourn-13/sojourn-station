@@ -10,7 +10,7 @@
 	price_tag = 800
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	can_dual = TRUE
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_H_PISTOL|MAG_WELL_PISTOL|MAG_WELL_DRUM
 	damage_multiplier = 1.15
 	penetration_multiplier = 1
@@ -18,11 +18,11 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 	one_hand_penalty = 8
 	auto_eject = TRUE
-
 	init_firemodes = list(
-		list(mode_name="semiauto", mode_desc="Shoot as fast as you can pull the trigger",       burst=1, fire_delay=1.2, move_delay=null, 	icon="semi"),
-		list(mode_name="3-round bursts", mode_desc="Shoot three bullets almost instantly", burst=3, fire_delay=0.2, move_delay=4,    	icon="burst"),
+		SEMI_AUTO_NODELAY,
+		BURST_2_ROUND
 		)
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/glock/update_icon()
 	..()

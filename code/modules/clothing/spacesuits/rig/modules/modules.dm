@@ -32,9 +32,9 @@
 	var/active                          // Basic module status
 	var/disruptable                     // Will deactivate if some other powers are used.
 
-	var/use_power_cost = 0              // Power used when single-use ability called.
+	use_power_cost = 0              // Power used when single-use ability called.
 	var/active_power_cost = 0           // Power used when turned on.
-	var/passive_power_cost = 0        // Power used when turned off.
+	passive_power_cost = 0        // Power used when turned off.
 
 	var/list/charges                    // Associative list of charge types and remaining numbers.
 	var/charge_selected                 // Currently selected option used for charge dispensing.
@@ -51,6 +51,8 @@
 	var/engage_string = "Engage"
 	var/activate_string = "Activate"
 	var/deactivate_string = "Deactivate"
+
+	var/list/mutually_exclusive_modules
 
 	var/list/stat_rig_module/stat_modules = new()
 
@@ -146,6 +148,11 @@
 //Called before the module is installed in a suit
 //Return FALSE to deny the installation
 /obj/item/rig_module/proc/can_install(var/obj/item/rig/rig, var/mob/user, var/feedback = FALSE)
+	for(var/obj/item/rig_module/RIM in rig.installed_modules)
+		if(RIM in mutually_exclusive_modules)
+			return FALSE
+		if(src in RIM.mutually_exclusive_modules)
+			return FALSE
 	return TRUE
 
 //Called before the module is removed from a suit

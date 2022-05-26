@@ -5,6 +5,9 @@
 	//Temperature in Kelvin of this gas mix.
 	var/temperature = 0
 
+	/// List of networks this gas mixture should be in. SHOULD NEVER. EVER. BE IN MORE THAN ONE.
+	var/list/datum/pipe_network/networks = list()
+
 	//Sum of all the gas moles in this mix.  Updated by update_values()
 	var/total_moles = 0
 	//Volume of this mix.
@@ -21,6 +24,13 @@
 /datum/gas_mixture/Destroy()
 	gas = null
 	graphic = null
+
+//	ASSERT(networks.len >= 1) //something is terribly wrong if this is false, so we assert to generate a runtime if it is false
+
+	for(var/datum/pipe_network/network in networks)
+		network.gases -= src
+		networks -= network
+
 	return ..()
 
 /datum/gas_mixture/proc/get_total_moles()

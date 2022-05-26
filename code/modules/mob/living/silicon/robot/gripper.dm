@@ -23,6 +23,8 @@
 		/obj/item/device/assembly,//Primarily for making improved cameras, but opens many possibilities
 		/obj/item/computer_hardware,
 		/obj/item/tool_upgrade,
+		/obj/item/am_containment,
+		/obj/item/am_shielding_container,
 		/obj/item/stack/tile //Repair floors yay
 		)
 
@@ -201,6 +203,8 @@
 	can_hold = list(
 		/obj/item/cell,
 		/obj/item/stock_parts,
+		/obj/item/am_containment,
+		/obj/item/am_shielding_container,
 		/obj/item/circuitboard/miningdrill
 	)
 
@@ -239,12 +243,17 @@
 		/obj/item/slime_extract,
 		/obj/item/reagent_containers/glass,
 		/obj/item/reagent_containers/food/snacks/monkeycube,
+		/obj/item/reagent_containers/blood,
 		/obj/item/device/assembly,//For building bots and similar complex R&D devices
 		/obj/item/device/scanner/health,//For building medibots
 		/obj/item/disk,
 		/obj/item/device/scanner/plant,//For farmbot construction
 		/obj/item/tool/minihoe,//Farmbots and xenoflora
+		/obj/item/seeds,
+		/obj/item/tank,
 		/obj/item/computer_hardware,
+		/obj/item/am_containment,
+		/obj/item/am_shielding_container,
 		/obj/item/device/integrated_electronics,
 		/obj/item/integrated_circuit
 		)
@@ -258,8 +267,11 @@
 		/obj/item/reagent_containers/glass,
 		/obj/item/reagent_containers/pill,
 		/obj/item/reagent_containers/spray,
+		/obj/item/reagent_containers/blood,
 		/obj/item/storage/pill_bottle,
 		/obj/item/hand_labeler,
+		/obj/item/am_containment,
+		/obj/item/am_shielding_container,
 		/obj/item/stack/material/plasma
 		)
 
@@ -278,6 +290,8 @@
 		/obj/item/paper,
 		/obj/item/newspaper,
 		/obj/item/circuitboard/broken,
+		/obj/item/am_containment,
+		/obj/item/am_shielding_container,
 		/obj/item/clothing/mask/smokable/cigarette,
 		///obj/item/reagent_containers/cooking_container //PArt of cooking overhaul, not yet ported
 		)
@@ -291,6 +305,8 @@
 		/obj/item/ammo_casing,
 		/obj/item/ammo_kit,
 		/obj/item/ammo_magazine,
+		/obj/item/am_containment,
+		/obj/item/am_shielding_container,
 		/obj/item/mech_ammo_box
 		)
 

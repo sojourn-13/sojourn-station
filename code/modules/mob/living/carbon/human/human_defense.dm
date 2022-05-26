@@ -36,6 +36,7 @@ meteor_act
 			SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
 			SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
 			SP.loc = organ
+			SP.gun_number = P.serial_type_index_bullet //"" to "" shouldnt be an issue
 			organ.embed(SP)
 
 
@@ -327,7 +328,7 @@ meteor_act
 					return
 
 		var/dtype = O.damtype
-		var/throw_damage = O.throwforce * (speed / THROWFORCE_SPEED_DIVISOR)
+		var/throw_damage = O.throwforce
 
 		var/zone
 		if (isliving(O.thrower))

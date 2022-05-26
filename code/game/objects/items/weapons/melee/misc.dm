@@ -9,6 +9,7 @@
 	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_COMBAT = 3)
 	attack_verb = list("robusted", "slammed")
+	hitsound = 'sound/weapons/smash.ogg'
 	var/reinforced = FALSE
 	var/obj/item/storage/toolbox/toolbox = null
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY

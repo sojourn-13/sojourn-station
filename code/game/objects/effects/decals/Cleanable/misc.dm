@@ -21,7 +21,7 @@
 
 /obj/effect/decal/cleanable/greenglow/Initialize(mapload, ...)
 	. = ..()
-	START_PROCESSING(SSobj, src)
+	AddRadSource(src, 2, 4) // Values taken from the process proc below
 	set_light(1.5 ,1, "#00FF7F")
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel, src), 120 SECONDS)
 
@@ -41,6 +41,16 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "dirt"
 	mouse_opacity = 0
+
+/obj/effect/decal/cleanable/dirt/Initialize(mapload, ...)
+	. = ..()
+	if(prob(66)) //66% to just delete areself to help against effect/decal lag
+		qdel(src)
+
+/obj/effect/decal/cleanable/dirt/snow
+	name = "snow"
+	desc = "A low dusting of the dark blue snow."
+	icon_state = "snow"
 
 /obj/effect/decal/cleanable/reagents
 	desc = "Someone should clean that up."

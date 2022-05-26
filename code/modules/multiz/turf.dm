@@ -163,7 +163,12 @@ see multiz/movement.dm for some info.
 			var/fall_damage = mover.get_fall_damage()
 			if(M == mover)
 				continue
-			M.Weaken(10)
+			if(ishuman(M))
+				if(!M.stats.getPerk(PERK_PARKOUR))
+					M.Weaken(10)
+			else
+				M.Weaken(10)
+				continue
 			if(fall_damage >= FALL_GIB_DAMAGE)
 				M.gib()
 			else

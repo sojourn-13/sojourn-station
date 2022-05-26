@@ -50,17 +50,23 @@
 	return can_apply(A, user) && apply(A, user)
 
 /datum/component/item_upgrade/proc/can_apply(var/atom/A, var/mob/living/user)
+
 	if(isrobot(A))
 		return check_robot(A, user)
 
 	if(isitem(A))
 		var/obj/item/T = A
+		if(is_type_in_list(parent, T.blacklist_upgrades, TRUE))
+			if(user)
+				to_chat(user, SPAN_WARNING("[parent] cannot be installed on [T]!"))
+			return FALSE
 		//No using multiples of the same upgrade
-		for (var/obj/item/I in T.item_upgrades)
-			if (I.type == parent.type || (exclusive_type && istype(I.type, exclusive_type)))
+		for(var/obj/item/I in T.item_upgrades)
+			if (I.type == parent.type || (exclusive_type && istype(I, exclusive_type)))
 				if(user)
 					to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
 				return FALSE
+
 
 	if(istool(A))
 		return check_tool(A, user)
@@ -70,6 +76,9 @@
 
 	if(isarmor(A))
 		return check_armor(A, user)
+
+	if(istype(A, /obj/item/rig))
+		return check_rig(A, user)
 
 	return FALSE
 
@@ -156,6 +165,24 @@
 		if(T.cell)
 			if(user)
 				to_chat(user, SPAN_WARNING("Remove the cell from the tool first!"))
+			return FALSE
+
+	return TRUE
+
+/datum/component/item_upgrade/proc/check_rig(var/obj/item/rig/R, var/mob/living/user)
+	if(R.item_upgrades.len >= R.max_upgrades)
+		to_chat(user, SPAN_WARNING("This hardsuit can't fit any more modifications!"))
+		return FALSE
+
+	if(required_qualities.len)
+		var/qmatch = FALSE
+		for (var/q in required_qualities)
+			if (R.has_quality(q))
+				qmatch = TRUE
+				break
+
+		if(!qmatch)
+			to_chat(user, SPAN_WARNING("This hardsuit lacks the required qualities!"))
 			return FALSE
 
 	return TRUE
@@ -250,6 +277,8 @@
 		apply_values_gun(holder)
 	if(isarmor(holder))
 		apply_values_armor(holder)
+	if(istype(holder, /obj/item/rig))
+		apply_values_armor_rig(holder)
 	return TRUE
 
 /datum/component/item_upgrade/proc/add_values(var/atom/holder)
@@ -260,15 +289,31 @@
 
 /datum/component/item_upgrade/proc/apply_values_armor(var/obj/item/clothing/T)
 	if(tool_upgrades[UPGRADE_MELEE_ARMOR])
-		T.armor.melee += tool_upgrades[UPGRADE_MELEE_ARMOR]
+		T.armor = T.armor.modifyRating(melee = tool_upgrades[UPGRADE_MELEE_ARMOR])
 	if(tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
-		T.armor.bullet += tool_upgrades[UPGRADE_BALLISTIC_ARMOR]
+		T.armor = T.armor.modifyRating(bullet = tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
 	if(tool_upgrades[UPGRADE_ENERGY_ARMOR])
-		T.armor.energy += tool_upgrades[UPGRADE_ENERGY_ARMOR]
+		T.armor = T.armor.modifyRating(energy = tool_upgrades[UPGRADE_ENERGY_ARMOR])
 	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
-		T.armor.bomb += tool_upgrades[UPGRADE_BOMB_ARMOR]
+		T.armor = T.armor.modifyRating(bomb = tool_upgrades[UPGRADE_BOMB_ARMOR])
+	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
+		T.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
 
 	T.prefixes |= prefix
+
+/datum/component/item_upgrade/proc/apply_values_armor_rig(var/obj/item/rig/R)
+	if(tool_upgrades[UPGRADE_MELEE_ARMOR])
+		R.armor = R.armor.modifyRating(melee = tool_upgrades[UPGRADE_MELEE_ARMOR])
+	if(tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
+		R.armor = R.armor.modifyRating(bullet = tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
+	if(tool_upgrades[UPGRADE_ENERGY_ARMOR])
+		R.armor = R.armor.modifyRating(energy = tool_upgrades[UPGRADE_ENERGY_ARMOR])
+	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
+		R.armor = R.armor.modifyRating(bomb = tool_upgrades[UPGRADE_BOMB_ARMOR])
+	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
+		R.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
+	R.prefixes |= prefix
+	R.updateArmor()
 
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/tool/T)
 	if(tool_upgrades[UPGRADE_SANCTIFY])
@@ -364,12 +409,18 @@
 		G.proj_damage_adjust[HALLOSS] += weapon_upgrades[GUN_UPGRADE_DAMAGE_HALLOSS]
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION])
 		G.proj_damage_adjust[IRRADIATE] += weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION]
+	if(weapon_upgrades[UPGRADE_MAXUPGRADES])
+		G.max_upgrades += weapon_upgrades[UPGRADE_MAXUPGRADES]
 	if(weapon_upgrades[GUN_UPGRADE_HONK])
 		G.fire_sound = 'sound/items/bikehorn.ogg'
 	if(weapon_upgrades[GUN_UPGRADE_RIGGED])
 		G.rigged = TRUE
 	if(weapon_upgrades[GUN_UPGRADE_EXPLODE])
 		G.rigged = 2
+	if(weapon_upgrades[GUN_UPGRADE_FOREGRIP])
+		G.braceable = 0
+	if(weapon_upgrades[GUN_UPGRADE_BIPOD])
+		G.braceable = 2
 	if(weapon_upgrades[GUN_UPGRADE_RAIL])
 		G.gun_tags.Add(GUN_SCOPE)
 	if(weapon_upgrades[UPGRADE_COLOR])
@@ -648,8 +699,10 @@
 			else
 				to_chat(user, SPAN_WARNING("Decreases scope zoom by x[amount]"))
 
-		to_chat(user, SPAN_WARNING("Requires a weapon with the following properties"))
+		to_chat(user, SPAN_WARNING("Requires a weapon with the following properties:"))
 		to_chat(user, english_list(req_gun_tags))
+		to_chat(user, SPAN_WARNING("When applied to a weapon, this takes the following slot:"))
+		to_chat(user, "[gun_loc_tag]")
 
 /datum/component/item_upgrade/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_IATTACK)

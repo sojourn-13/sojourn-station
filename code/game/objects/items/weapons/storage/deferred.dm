@@ -104,6 +104,7 @@
 		/obj/item/tool/retractor/adv,
 		/obj/item/tool/scalpel/laser,
 		/obj/item/tool/tape_roll/bonegel,
+		/obj/item/tool/surgicaldrill,
 		/obj/item/reagent_containers/syringe/stim/ultra_surgeon,
 		/obj/item/storage/pill_bottle/tramadol,
 		/obj/item/stack/medical/advanced/bruise_pack
@@ -114,6 +115,7 @@
 		/obj/item/tool/hemostat,
 		/obj/item/tool/retractor,
 		/obj/item/tool/scalpel,
+		/obj/item/tool/surgicaldrill,
 		/obj/item/tool/tape_roll/bonegel,
 		/obj/item/reagent_containers/syringe, //We hold any syringe.
 		/obj/item/storage/pill_bottle, //We hold pill bottles as well
@@ -174,7 +176,8 @@
 	name = "demolitions crate"
 	icon_state = "serbcrate_deferred_black"
 	desc = "A crate containing one \"RPG-7\" launcher, and twelve 40mm PG-7VL warheads."
-	initial_contents = list(/obj/item/ammo_casing/rocket = 12,
+	initial_contents = list(/obj/item/ammo_casing/rocket = 9,
+	/obj/item/ammo_casing/rocket/emp = 3,
 	/obj/item/storage/pouch/tubular = 1,
 	/obj/item/gun/projectile/rpg = 1,
 	/obj/item/storage/pouch/tubular = 1)
@@ -312,7 +315,6 @@
 	/obj/item/clothing/under/excelsior = 1,
 	/obj/item/gun/matter/launcher/reclaimer = 1,
 	/obj/item/storage/toolbox/syndicate = 1,
-	/obj/item/device/radio/headset/uplink = 1,
 	/obj/item/storage/toolbox/electrical = 1,
 	/obj/item/clothing/shoes/combat = 1,
 	/obj/item/clothing/gloves/thick/combat = 1,
@@ -322,3 +324,116 @@
 	/obj/item/storage/backpack = 1,
 	/obj/item/storage/backpack/satchel = 1)
 
+
+// TRADE
+
+// Gambling
+/obj/item/storage/deferred/disks
+	name = "autolathe disk box"
+	desc = "A small collection of autolathe disks"
+	initial_contents = list(/obj/random/lathe_disk = 7)
+
+///obj/item/storage/deferred/gun_parts
+//	name = "gun part box"
+//	desc = "Uppers, lowers, and everything in between"
+//	initial_contents = list(/obj/spawner/gun_parts = 7)
+
+/obj/item/storage/deferred/powercells
+	name = "powercell box"
+	desc = "A small collection of powercells"
+	initial_contents = list(/obj/random/powercell/large_safe = 2,
+							/obj/random/powercell/medium_safe = 2,
+							/obj/random/powercell/small_safe = 3)
+
+/obj/item/storage/deferred/electronics
+	name = "circuit board box"
+	desc = "A small collection of circuit boards"
+	initial_contents = list(/obj/random/circuitboard = 7)
+
+/obj/item/storage/deferred/science
+	name = "scientific things box"
+	desc = "A small collection of scientific items."
+	initial_contents = list(/obj/random/science = 7)
+
+/obj/item/storage/deferred/rig
+	name = "hardsuit box"
+	desc = "They put a RIG in a box."
+	price_tag = 200 //*5 at casino beacon
+	initial_contents = list(/obj/random/rig = 1)
+
+/obj/item/storage/deferred/toolmods
+	name = "toolmod box"
+	desc = "An assortment of some toolmods."
+	price_tag = 150
+	initial_contents = list(/obj/random/tool_upgrade = 5)
+
+/obj/item/storage/deferred/medical
+	name = "medical supply box"
+	desc = "An assortment of some bandages, medicines."
+	initial_contents = list(/obj/random/medical/always_spawn = 7)
+
+/obj/item/storage/deferred/tools
+	name = "tools box"
+	desc = "A small collection of tools."
+	price_tag = 120
+	initial_contents = list(/obj/random/tool = 7)
+
+
+// Kitchen supply
+/obj/item/storage/deferred/kitchen
+	name = "galley supply box"
+	desc = "A small collection of kitchen essentials"
+	initial_contents = list(
+		/obj/item/tool/knife = 1,
+		/obj/item/tool/knife/butch = 1,
+		/obj/item/material/kitchen/rollingpin = 1,
+		/obj/item/packageWrap = 1,
+		/obj/item/reagent_containers/food/condiment/saltshaker = 1,
+		/obj/item/reagent_containers/food/condiment/peppermill = 1,
+		/obj/item/reagent_containers/food/condiment/cookingoil = 1,
+		/obj/item/reagent_containers/food/condiment/sugar = 1
+	)
+
+// MoeSci supply
+/obj/item/storage/deferred/slime
+	name = "slime supply box"
+	desc = "A slime startup kit"
+	initial_contents = list(
+		/obj/item/slime_extract/grey = 4,
+		/obj/item/extinguisher = 1,
+		/obj/item/storage/box/monkeycubes = 1
+	)
+
+/obj/item/storage/deferred/xenobotany
+	name = "xenobotany supply box"
+	desc = "A small collection of interesting seeds"
+	initial_contents = list(
+		/obj/item/seeds/random = 7
+	)
+
+/obj/item/storage/deferred/rnd
+	name = "research box"
+	desc = "A small collection of intellectual curiosities"
+	initial_contents = list(
+		/obj/item/computer_hardware/hard_drive/portable/research_points/rare = 1
+	)
+
+// Trapper
+/obj/item/storage/deferred/roacheggs
+	name = "roach egg box"
+	desc = "A carton for eggs of the roach variety"
+	icon = 'icons/obj/food.dmi'
+	icon_state = "eggbox"
+	initial_contents = list(
+		/obj/item/roach_egg = 12
+	)
+
+// Serb
+/obj/item/storage/deferred/serb_rifle
+	name = "SA rifle pack"
+	desc = "A small collection of SA disks"
+	initial_contents = list(
+		/obj/item/computer_hardware/hard_drive/portable/design/guns/sts40 = 1,
+		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 1,
+		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk = 1
+	)

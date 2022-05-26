@@ -6,6 +6,7 @@
 /datum/genetics/mutation_recipe/irradiation/roach/get_result()
 	var/list/random_roach = pick(
 		list("type" = /mob/living/carbon/superior_animal/roach, "name" = "Kampfer Roach"),
+		list("type" = /mob/living/carbon/superior_animal/roach/fat, "name" = "Obese Kampfer Roach"),
 		list("type" = /mob/living/carbon/superior_animal/roach/tank, "name" = "Panzer Roach"),
 		list("type" = /mob/living/carbon/superior_animal/roach/toxic, "name" = "Gestrahlte Roach"),
 		list("type" = /mob/living/carbon/superior_animal/roach/glowing, "name" = "Gluhend Roach"),
@@ -26,6 +27,11 @@
 	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/roach/kaiser, "kaiser roach")
 
 
+//=======================
+//gold roach
+/datum/genetics/mutation_recipe/combination/golden_roach
+	required_on_clone_types = list(/mob/living/carbon/superior_animal/roach, /mob/living/carbon/superior_animal/roach)
+	result_path = MUTATION_GOLD_ROACH
 //======================================================================
 //Spider Combinations
 /datum/genetics/mutation_recipe/irradiation/spider
@@ -37,6 +43,7 @@
 		list("type" = /mob/living/carbon/superior_animal/giant_spider/nurse/carrier, "name" = "carrier spider"),
 		list("type" = /mob/living/carbon/superior_animal/giant_spider/nurse, "name" = "nurse spider"),
 		list("type" = /mob/living/carbon/superior_animal/giant_spider/nurse/midwife, "name" = "midwife spider"),
+		list("type" = /mob/living/carbon/superior_animal/giant_spider/nurse/cave_spider, "name" = "cave spider"),
 		list("type" = /mob/living/carbon/superior_animal/giant_spider/nurse/orb_weaver, "name" = "orb weaver spider"),
 		list("type" = /mob/living/carbon/superior_animal/giant_spider/nurse/recluse, "name" = "recluse spider"),
 		list("type" = /mob/living/carbon/superior_animal/giant_spider/plasma, "name" = "plasma spider"),
@@ -68,6 +75,19 @@
 
 /datum/genetics/mutation_recipe/combination/emperor_spider/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor, "emperor spider")
+
+//=======================
+//Commented out for now pending discussion, but reaper spiders are supposed to be insanely rare and hyper intelligent. Cloning them ruins there fear factor.
+//Reaper
+/*
+/datum/genetics/mutation_recipe/combination/reaper
+	required_on_clone_types = list(
+		/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor,
+		/mob/living/carbon/superior_animal/giant_spider/nurse/queen
+	)
+/datum/genetics/mutation_recipe/combination/reaper/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/reaper_spider, "reaper spider")
+*/
 //======================================================================
 //Increase Cow.
 /datum/genetics/mutation_recipe/combination/tatonka_1
@@ -206,9 +226,71 @@
 
 //======================================================================
 //Nightmare Stalkers
-/datum/genetics/mutation_recipe/combination/nightmare
+/datum/genetics/mutation_recipe/combination/dream_daemon
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/nightmare)
 	required_mutations = list(MUTATION_EMP)
 
-/datum/genetics/mutation_recipe/combination/nightmare/get_result()
-	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/nightmare, "nightmare stalker")
+/datum/genetics/mutation_recipe/combination/dream_daemon/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/nightmare/dream_daemon, "dream daemon")
+
+//======================================================================
+//Bears
+/datum/genetics/mutation_recipe/combination/bear_brown
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/bear)
+	required_mutations = list(MUTATION_CHOC_MILK)
+
+/datum/genetics/mutation_recipe/combination/bear_brown/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/bear/brown, "brown bear")
+
+//=======================
+/datum/genetics/mutation_recipe/combination/bear_polar
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/bear)
+	required_mutations = list(MUTATION_ROBUST_MILK)
+
+/datum/genetics/mutation_recipe/combination/bear_polar/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/bear/polar, "polar bear")
+
+//=======================
+//chicks to chickens
+/datum/genetics/mutation_recipe/combination/chicken
+	required_on_clone_types = list(/mob/living/simple_animal/chick)
+	required_mutations = list(MUTATION_GIGANTISM)
+
+/datum/genetics/mutation_recipe/combination/chicken/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/chick, "chicken")
+
+//=======================
+//chickens to bat
+/datum/genetics/mutation_recipe/combination/bat
+	required_on_clone_types = list(/mob/living/simple_animal/chicken)
+	required_mutations = list(MUTATION_COW_SKIN)
+
+/datum/genetics/mutation_recipe/combination/bat/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/scarybat, "bats")
+
+//=======================
+//bat to sargoyle
+/datum/genetics/mutation_recipe/combination/sargoyle
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/scarybat)
+	required_mutations = list(MUTATION_GIGANTISM)
+
+/datum/genetics/mutation_recipe/combination/sargoyle/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/sargoyle, "sargoyle")
+
+//======================================================================
+//Snake
+/datum/genetics/mutation_recipe/combination/snake
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/snake)
+	required_mutations = list(MUTATION_GIGANTISM)
+
+/datum/genetics/mutation_recipe/combination/snake/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/giant_snake, "giant snake")
+
+//======================================================================
+//mouse to possom
+/datum/genetics/mutation_recipe/combination/mouse
+	required_on_clone_types = list(/mob/living/simple_animal/mouse)
+	required_mutations = list(MUTATION_GIGANTISM)
+
+/datum/genetics/mutation_recipe/combination/mouse/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/opossum, "opossom")

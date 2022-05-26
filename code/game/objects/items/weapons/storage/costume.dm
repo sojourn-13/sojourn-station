@@ -1,5 +1,11 @@
 /obj/item/storage/box/costume
+	name = "mage outfit kit"
+	desc = "A box containing a set of magical robes and hat for magic tricks and slight of hand."
 	illustration = "actor"
+
+/obj/item/storage/box/costume/populate_contents()
+	new /obj/item/clothing/head/mage_hat(src)
+	new /obj/item/clothing/suit/mage_suit(src)
 
 /obj/item/storage/box/costume/bandit
 	name = "bandit costume kit"
@@ -485,3 +491,4 @@
 	new /obj/item/clothing/under/shorts/athleticred(src)
 	new /obj/item/clothing/under/shorts/athleticblue(src)
 	new /obj/item/clothing/under/shorts/athleticblack(src)
+

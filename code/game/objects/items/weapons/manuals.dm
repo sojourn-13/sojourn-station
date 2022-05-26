@@ -1304,7 +1304,7 @@
 	author = "Victoria Ponsonby"
 	title = "Chef Recipes"
 	page_link = "Guide_to_Food_and_Drinks"
-	
+
 /obj/item/book/manual/religion/c_bible
 	name = "Christian Bible"
 	desc = "A book with a silver bolder and a golden crucifix in the middle. The glass in the middle seems to shimmer and shine."
@@ -1347,12 +1347,12 @@
 				1:11 And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the earth: and it was so.
 
 				1:12 And the earth brought forth grass, and herb yielding seed after his kind, and the tree yielding fruit, whose seed was in itself, after his kind: and God saw that it was good.
-				
+
 				</ol>
 				</body>
 			</html>
 			"}
-				
+
 /obj/item/book/manual/religion/h_book
 	name = "Holy Book"
 	desc = "An undescript book for an unnamed religion."
@@ -1839,3 +1839,127 @@
 		</body>
 		</html>
 		"}
+
+/obj/item/book/manual/xenobio_recipies
+	name = "Slime cores and reactions"
+	icon_state ="book_rnd"
+	author = "Leoric M."		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
+	title = "Slime cores and reactions"
+
+	dat = {"<html>
+				<head>
+				<style>
+				h1 {font-size: 21px; margin: 15px 0px 5px;}
+				h2 {font-size: 18px; margin: 15px 0px 5px;}
+				h3 {font-size: 15px; margin: 15px 0px 5px;}
+				li {margin: 2px 0px 2px 15px;}
+				ul {margin: 5px; padding: 0px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				body {font-size: 13px; font-family: Verdana;}
+				</style>
+				</head>
+				<body>
+				<H1>Reactions and YOU!</H1>
+				So assuming you have never used a slime core before. The process is simple! One of your still living monkeys could do it.
+				Ideally youll want a dropper, syringe and something to store chemicals in for this. Make sure you have these ready!
+				Some reactions take 1 unit of chemicals. Others take 5 units. With slime jelly being unique in compressing at 100 units.
+				<ol>
+					<li><a href='#1'>Grey</a></li>
+					<li><a href='#2'>Green</a></li>
+					<li><a href='#3'>Metal</a></li>
+					<li><a href='#4'>Gold</a></li>
+					<li><a href='#5'>Silver</a></li>
+					<li><a href='#6'>Blue</a></li>
+					<li><a href='#7'>Dark Blue</a></li>
+					<li><a href='#8'>Orange</a></li>
+					<li><a href='#9'>Yellow</a></li>
+					<li><a href='#10'>Purple</a></li>
+					<li><a href='#11'>Dark Purple</a></li>
+					<li><a href='#12'>Red</a></li>
+					<li><a href='#13'>Pink</a></li>
+					<li><a href='#14'>Black</a></li>
+					<li><a href='#15'>Oil</a></li>
+					<li><a href='#16'>Light Pink</a></li>
+					<li><a href='#17'>Adamantine</a></li>
+					<li><a href='#18'>Rainbow</a></li>
+				</ol>
+				<a name='1'><H3>Grey</H3>
+				Grey slimes are the starting bread and butter of xenobio. Their reactions allow us to keep making monkeys and are vital to keeping the feeding process going.
+				blood is used to create monkey cubes
+				blattadin is used to make roach cubes
+				spider venom is used to make spiderlings.
+				<a name='2'><H3>Green</H3>
+				Ideally greens will be made when you have someone doing genetics. They are useful for purgers.
+				water will create a ready to use genetics purger
+				plasma (more units at once the better) will create mutation toxin. This will turn people into slime people!
+				<a name='3'><h3>Metal</h3>
+				Metal slimes are a workhorse of the material production process. The first step in getting raw mats for our department.
+				plasma will produce metal sheets and the wonderous plasteel! Used in mass quantities by those seeking armaments or a mech.
+				water will produce some plastics. Ready to be molded into various shapes by lathes.
+				radium will produce uranium. Useful for batteries and such. Be careful of the initial burst of radiation. Protection is needed!
+				<a name='4'><h3>Gold</h3>
+				Gold slimes are the gateway to adamantine slimes and produce the wonderous bars that every dragon dreams of.
+				plasma will produce gold! Wonderous gold.
+				nutriment in 5 units will produce honey. Delicious and useful for other reactions.
+				<a name='5'><h3>Silver</h3>
+				Silver slimes are a strange breed. They produce food based items. Not quite sure why. But it tends to be tasty. They can also produce silver! For batteries and such.
+				plasma will create a bright (eye protection suggested) flash before food appears! I've yet to figure out how it can cook such a strange abundance.
+				nutriment will create universal enzyme. A favorite of mine to make my favorite drinks. Sweet sweet curacoa.
+				liquid uranium will create silver bars. Useful and generally needed in decent quantities.
+				<a name='6'><h3>Blue</h3>
+				Blue slimes are lesser used slime. They are generally used for glass.
+				water will result in frost oil. In large quantities they can make quite a bit. But generally xenoflora grows its own plants for it.
+				plasma will create glass and borosilicate glass. Borosilicate is harder to come by in a reliable manner so it does help with that if really needed.
+				<a name='7'><h3>Dark Blue</h3>
+				Dark blue slimes are a gateway slime to diamonds. Creating a unique jelly inside.
+				plasma results in a time delayed freezing effect that drastically lowers the temperature.
+				honey in 5 units results in the rarer pure slime jelly. A vary small amount is produced per reaction.
+				<a name='8'><h3>Orange</h3>
+				Orange slimes are the way to upgrade clothing of various kinds. They lead to red slimes which in turn lead to oil.
+				water will create a slime jar. This one in particular makes clothing resistant to high temps (Not Flames!) and even pressure resistant.
+				plasma will create a violent reaction that results in mass fire. Be vary careful about doing this. Least you roast yourself or others.
+				blood will create pepper spray! Useful for would be wife poachers or spiders.
+				<a name='9'><h3>Yellow</h3>
+				Easily one of my favorite slimes just for the light it creates. Altho dangerous if given blood.
+				blood causes a emp effect with quite a decent size to it. This can kill people with mechanical organs.
+				water creates slime lights! Its like having a floodlight in your pocket that never runs out!
+				plasma will create a slime jar. This one gives clothing a higher resistance to shocks. It might take more then one jar to make it shock proof tho.
+				<a name='10'><h3>Purple</h3>
+				Purple slimes can be a core slime if people want to use slime steroids to produce more cores.
+				plasma creates a slime jar. This one causes baby slimes to split thier core into 3 but only while still alive.
+				suger creates more slime jelly. Usefull if you need to make more slime revival jars.
+				<a name='11'><h3>Dark Purple</h3>
+				Dark purple slimes are a staple. YOU NEED THESE! They are the only way to make more plasma without external shopping, trading or looting.
+				plasma creates more plasma sheets! Grind these down!
+				liquid uranium, gold and silver all at once will create a random tool mod. I havn't figured out how they go about this reaction yet. But its like a roulette on what you get.
+				<a name='12'><h3>Red</h3>
+				A valuable yet vary dangerous slime. They have alot of reactions tho.
+				plasma makes glycerol. A chemical used in nitroglycerin... explosives.
+				frostoil creates the rarely used materials of osmium and metallic hydrogen.
+				water creates a slime jar. This is one of the most wanted things xenobio produces. SPEED jars make armour easier to move in. But it takes alot of them.
+				blood... Never use this. It enrages all the slimes around. They become nothing short of rabid and completly hostile to everything.
+				<a name='13'><h3>Pink</h3>
+				A slime coveted for making friends.
+				nutriment in 5 units will create a slime jar useful for taming baby slimes
+				honey in 5 units will create a simular slime jar but for adults.
+				<a name='14'><h3>Black</h3>
+				plasma will create a mutation toxin thats stronger then greens... It will fully turn someone into a slime... Vary dangerous.
+				advanced mutation toxin will cause a reaction like grey slimes with plasma. Except it can create a wide verity of colors instead of just grey!
+				<a name='15'><h3>Oil</h3>
+				Oil slimes are a strange mix. They have few reactions most of which are nothing short of illigal. But the nonslipping power of them makes them wonderful.
+				plasma... This is nothing short of a hellishly strong hand grenade. Blackshield wishes they had fire power like this thing.
+				water will create a intresting mod for weapons. When applied to scopes it gives them thermal vision... which sadly is illigal.
+				lubricant in 5 units will create a reverse friction substance for shoes! NON SLIP SOLES! No more slipping on wet floors!
+				<a name='16'><h3>Light Pink</h3>
+				At one time these slimes created slime jars for taming adult slimes. But recently they have shown no reactions. Changes may be coming about with them.
+				<a name='17'><h3>Adamantine</h3>
+				The only source of renewable diamonds. They take alot of work to create regardless due to needing dark blue slimes.
+				plasma will create various strange runes upon the floor. I've worked on deciphering them but havn't fully been able to do so. I've seen golems appear from these runes however.
+				pure slime jelly will create diamonds! This creates some biomatter too leading me to believe the pure slime jelly is actually seperating the core into various aspects somehow.
+				liquid uranium, gold and silver will create platinum. Useful for posicells and a few stronger goods in RnD
+				<a name='18'><h3>Rainbow</h3>
+				A rare slime that I have been unable to make split and have had difficulty keeping from making a mess. Fun at parties tho.
+				<p>Hopefully these notes can be condenced someday into something that will better help someone. Someday they too will be outdated im sure.
+				</body>
+				</html>
+				"}

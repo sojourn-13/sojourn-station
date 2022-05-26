@@ -9,11 +9,11 @@ var/global/list/robot_modules = list(
 	"Engineering"					= /obj/item/robot_module/engineering/general,
 //	"Construction"					= /obj/item/robot_module/engineering/construction, Removed and condenced into contruction - todo, admin only
 	"Custodial" 					= /obj/item/robot_module/custodial,
-	"Soteria Medihound"				= /obj/item/robot_module/robot/medihound,
-	"Security K9 Unit"				= /obj/item/robot_module/robot/knine,
-	"Custodial Hound"				= /obj/item/robot_module/robot/scrubpup,
-	"Soteria Scihound"				= /obj/item/robot_module/robot/science,
-	"Guild Engihound"				= /obj/item/robot_module/robot/engiedog,
+	"Soteria Medical Creature Module"		= /obj/item/robot_module/robot/medihound,
+	"Security Creature-Class Module"		= /obj/item/robot_module/robot/knine,
+	"Custodial Creature"				= /obj/item/robot_module/robot/scrubpup,
+	"Soteria Science Creature Module"		= /obj/item/robot_module/robot/science,
+	"Guild Creature Module"				= /obj/item/robot_module/robot/engiedog,
 	//"Combat" 					= /obj/item/robot_module/combat,
 	)
 
@@ -50,7 +50,8 @@ var/global/list/robot_modules = list(
 	// Bookkeeping
 	var/list/original_languages = list()
 	var/list/added_networks = list()
-
+	// A list of robot traits , these can be found at cyborg_traits.dm
+	var/robot_traits = null
 	//Module stats, these are applied to the robot
 	health = 200 //Max health. Apparently this is already defined in item.dm
 	var/speed_factor = 1.3 //Speed factor, applied as a divisor on movement delay
@@ -73,6 +74,9 @@ var/global/list/robot_modules = list(
 		return
 
 	R.module = src
+
+	if(robot_traits)
+		R.AddTrait(robot_traits)
 
 	add_camera_networks(R)
 	remove_languages(R) //So we dont stack languages
@@ -100,14 +104,14 @@ var/global/list/robot_modules = list(
 
 	R.set_module_sprites(sprites)
 	R.icon_selected = 0
-	spawn()
+	spawn() // For future coders , this "corrupts" the USR reference, so for good practice ,don't make the proc use USR if its called with a spawn.
 		R.choose_icon() //Choose icon recurses and blocks new from completing, so spawn it off
 
 
 /obj/item/robot_module/Initialize()
 	. = ..()
 	for(var/obj/item/I in modules)
-		I.canremove = 0
+		I.canremove = FALSE
 		I.set_plane(ABOVE_HUD_PLANE)
 		I.layer = ABOVE_HUD_LAYER
 
@@ -116,11 +120,14 @@ var/global/list/robot_modules = list(
 
 	for (var/obj/item/I in modules)
 		for (var/obj/item/cell/C in I)
-			C.charge = 999999999 //A quick hack to stop robot modules running out of power
+			C.autorecharging = TRUE //A quick hack to stop robot modules running out of power
 			//Later they'll be wired to the robot's central battery once we code functionality for that
 			//Setting it to infinity causes errors, so just a high number is fine
+			//Setting this to be infinity power isnt as good of a fix do to guns that cost power getting endless free shots, so auto charging is better - Trilby
 
 /obj/item/robot_module/proc/Reset(var/mob/living/silicon/robot/R)
+	if(robot_traits) // removes module-only traits
+		R.RemoveTrait(robot_traits)
 	remove_camera_networks(R)
 	remove_languages(R)
 	add_languages(R) //So we dont lose common and are normal languages of being basic
@@ -137,7 +144,10 @@ var/global/list/robot_modules = list(
 		R.radio.recalculateChannels()
 
 	R.handle_regular_hud_updates()
-	R.emagged_items_given = TRUE
+	R.stats.removeAllPerks() //Dont stack perks fix 1
+	R.stats.perks =  list() //READ BELOW COMMENT
+	R.stats.perk_stats =  list() //EMERGENCY BACKUP INCASE THE NEW FIX BREAKS DUE TO BUS - GENERALLY DO NOT DO THIS PLEASE.
+
 
 	R.pixel_x = initial(pixel_x)
 	R.pixel_y = initial(pixel_y)
@@ -149,9 +159,9 @@ var/global/list/robot_modules = list(
 	R.choose_icon()
 
 /obj/item/robot_module/Destroy()
-	QDEL_NULL_LIST(modules)
-	QDEL_NULL_LIST(synths)
-	QDEL_NULL_LIST(emag)
+	QDEL_LIST(modules)
+	QDEL_LIST(synths)
+	QDEL_LIST(emag)
 	qdel(jetpack)
 	qdel(malfAImodule)
 	malfAImodule = null
@@ -175,7 +185,7 @@ var/global/list/robot_modules = list(
 	var/obj/item/device/flash/F = locate() in src.modules
 	if(F)
 		if(F.broken)
-			F.broken = 0
+			F.broken = FALSE
 			F.times_used = 0
 			F.icon_state = "flash"
 		else if(F.times_used)
@@ -341,7 +351,7 @@ var/global/list/robot_modules = list(
 	health = 180 //bit weaker
 	speed_factor = 1.3 //normal speed
 	power_efficiency = 0.9 //Very poor, shackled to a charger
-	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,
+	supported_upgrades = list(/obj/item/borg/upgrade/hypospray_medical,
 							  /obj/item/borg/upgrade/jetpack)
 
 	stat_modifiers = list(
@@ -563,7 +573,7 @@ var/global/list/robot_modules = list(
 		KBG.reagents.add_reagent("silicate", 2 * amount)
 	..()
 
-	if(R.emagged)
+	if(R.HasTrait(CYBORG_TRAIT_EMAGGED))
 		var/obj/item/tool/baton/robot/B = locate() in src.modules
 		if(B && B.cell)
 			B.cell.give(amount)
@@ -659,7 +669,7 @@ var/global/list/robot_modules = list(
 	else
 		T.charge_tick = 0
 
-	if(R.emagged)
+	if(R.HasTrait(CYBORG_TRAIT_EMAGGED))
 		var/obj/item/gun/energy/laser/mounted/cyborg/L = locate() in src.modules
 		if(L.cell.charge < L.cell.maxcharge)
 			L.cell.give(T.charge_cost * amount)
@@ -692,7 +702,7 @@ var/global/list/robot_modules = list(
 	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,
 							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
-
+	robot_traits = CYBORG_TRAIT_CLEANING_WALK
 	stat_modifiers = list(
 		STAT_ROB = 25,
 		STAT_TGH = 25,
@@ -954,7 +964,6 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/storage/part_replacer(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag += new /obj/item/hand_tele(src) //Why
 	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
 
 	var/datum/matter_synth/nanite = new /datum/matter_synth/nanite(10000)
@@ -981,6 +990,7 @@ var/global/list/robot_modules = list(
 	no_slip = 1
 	networks = list(NETWORK_ENGINEERING)
 	channels = list("Engineering" = 1, "Common" = 1)
+	health = 35 //Basic colony drones and the like should have 35 health as they are not meant for combat
 	stat_modifiers = list(
 		STAT_COG = 120,
 		STAT_MEC = 40
@@ -1078,16 +1088,17 @@ var/global/list/robot_modules = list(
 		var/obj/item/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
 		if(KBG)
 			KBG.reagents.add_reagent("silicate", 2 * amount)
-		
+
 		var/obj/item/device/lightreplacer/LR = locate() in src.modules
 		if(LR)
 			LR.Charge(R, amount)
-			
+
 	..()
 
 /obj/item/robot_module/drone/construction
 	name = "construction drone module"
 	channels = list("Engineering" = 1)
+	health = 75 //These spawn in high combat areas and zones, 1 shot by a random person mob isnt fun
 	languages = list()
 
 /obj/item/robot_module/drone/construction/New(var/mob/living/silicon/robot/R)

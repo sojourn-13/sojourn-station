@@ -1,8 +1,8 @@
 /obj/item/device/lighting/toggleable/flashlight
 	action_button_name = "Toggle Flashlight"
 	var/tick_cost = 0.2
-	var/obj/item/cell/cell = null
-	var/suitable_cell = /obj/item/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 	dir = WEST
 
 	var/obj/effect/effect/light/light_spot
@@ -78,7 +78,7 @@
 			for(var/i = 1,i <= light_spot_range, i++)
 				var/turf/T = locate(L.x,L.y - i,L.z)
 				if (lightSpotPassable(T))
-					if(T.is_space())
+					if(T?.is_space())
 						break
 					NT = T
 				else
@@ -261,7 +261,7 @@
 	add_fingerprint(user)
 	if(on && user.targeted_organ == BP_EYES)
 
-		if((CLUMSY in user.mutations) && prob(50))	//too dumb to use flashlight properly
+		if((CLUMSY in user.mutations) && prob(15))	//too dumb to use flashlight properly
 			return ..()	//just hit them in the head
 
 		var/mob/living/carbon/human/H = M	//mob has protective eyewear
@@ -337,9 +337,9 @@
 	desc = "A hand-held security flashlight."
 	icon_state = "seclite"
 	item_state = "seclite"
-	light_spot_radius = 3
 	light_spot_power = 2.5
 	price_tag = 8
+	tick_cost = 0.2
 
 /obj/item/device/lighting/toggleable/flashlight/seclite/update_icon()
 	. = ..()

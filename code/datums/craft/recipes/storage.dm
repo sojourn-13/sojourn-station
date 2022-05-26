@@ -118,15 +118,6 @@
 		list(QUALITY_ADHESIVE, 10, "time" = 60)
 	)
 
-/datum/craft_recipe/box/adv
-	icon_state = "clothing"
-	avaliableToEveryone = FALSE
-	steps = list(
-		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
-		list(QUALITY_ADHESIVE, 10, "time" = 60)
-	)
-	related_stats = list(STAT_COG)
-
 /datum/craft_recipe/box
 	category = "Storage"
 	name = "box"
@@ -136,30 +127,45 @@
 	)
 	related_stats = list(STAT_COG)
 
-/datum/craft_recipe/box/adv/syringes
+/datum/craft_recipe/box/syringes
 	name = "box - syringes"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
 	result = /obj/item/storage/box/syringes/empty
-	avaliableToEveryone = TRUE
 
-/datum/craft_recipe/box/adv/bodybags
+/datum/craft_recipe/box/bodybags
 	name = "box - bodybags"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
 	result = /obj/item/storage/box/bodybags/empty
-	avaliableToEveryone = TRUE
 
-/datum/craft_recipe/box/adv/condimentbottles
+/datum/craft_recipe/box/condimentbottles
 	name = "box - condiment bottles"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
 	result = /obj/item/storage/box/condimentbottles/empty
-	avaliableToEveryone = TRUE
 
-/datum/craft_recipe/box/adv/mixed_lights
+/datum/craft_recipe/box/mixed_lights
 	name = "box - light storage"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
 	result = /obj/item/storage/box/lights/mixed/empty
-	avaliableToEveryone = TRUE
 
-/datum/craft_recipe/box/adv/pillbottles
+/datum/craft_recipe/box/pillbottles
 	name = "box - pill bottles"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
 	result = /obj/item/storage/box/pillbottles/empty
-	avaliableToEveryone = TRUE
 
 /datum/craft_recipe/storage/bookshelf
 	name = "book shelf"
@@ -198,30 +204,6 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL)
 	)
 
-/datum/craft_recipe/storage/bottle
-	name = "bottle"
-	result = /obj/item/reagent_containers/glass/bottle
-	steps = list(
-		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS),
-		list(QUALITY_WELDING, 10, 70)
-	)
-
-/datum/craft_recipe/storage/beaker
-	name = "beaker"
-	result = /obj/item/reagent_containers/glass/beaker
-	steps = list(
-		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS),
-		list(QUALITY_WELDING, 10, 70)
-	)
-
-/datum/craft_recipe/storage/beaker_large
-	name = "large beaker"
-	result = /obj/item/reagent_containers/glass/beaker/large
-	steps = list(
-		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS),
-		list(QUALITY_WELDING, 10, 70)
-	)
-
 /datum/craft_recipe/storage/rack
 	name = "rack"
 	result = /obj/structure/table/rack
@@ -232,13 +214,6 @@
 /datum/craft_recipe/storage/shelf
 	name = "shelf"
 	result = /obj/structure/table/rack/shelf
-	steps = list(
-		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
-	)
-
-/datum/craft_recipe/storage/table
-	name = "table frame"
-	result = /obj/structure/table
 	steps = list(
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
 	)

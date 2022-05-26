@@ -33,7 +33,7 @@
 	name = "shield"
 	var/base_block_chance = 35
 	var/slowdown_time = 1
-	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	var/max_durability = 250 //So we can brake and need healing time to time
 	var/durability = 250
 
@@ -177,9 +177,9 @@
 	throw_range = 6
 	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_MATERIAL = 2)
-	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_GLASS = 5, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 12)
-	price_tag = 500
+	price_tag = 100
 	attack_verb = list("shoved", "bashed")
 	max_durability = 150 //So we can brake and need healing time to time
 	durability = 150
@@ -234,10 +234,10 @@
 	w_class = ITEM_SIZE_HUGE
 	origin_tech = list(TECH_MATERIAL = 2)
 	matter = list(MATERIAL_GLASS = 10, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 15)
-	price_tag = 500
+	price_tag = 230
 	base_block_chance = 60
 	attack_verb = list("shoved", "bashed")
-	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	var/cooldown = 0 //shield bash cooldown. based on world.time
 	var/picked_by_human = FALSE
 	var/mob/living/carbon/human/picking_human
@@ -247,6 +247,11 @@
 		slot_back_str = "riot"
 		)
 
+/obj/item/shield/riot/damaged
+
+/obj/item/shield/riot/damaged/Initialize()
+	. = ..()
+	durability -= rand(230, 50)
 
 /obj/item/shield/riot/handle_shield(mob/user)
 	. = ..()
@@ -356,7 +361,7 @@
 	price_tag = 0
 	base_block_chance = 70
 	attack_verb = list("smashed", "bashed")
-	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	max_durability = 250 //So we can brake and need healing time to time
 	durability = 250
 	var/cooldown = 0 //shield bash cooldown. based on world.time
@@ -434,7 +439,7 @@
 	throw_range = 6
 	matter = list(MATERIAL_STEEL = 6)
 	base_block_chance = 40
-	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	max_durability = 100 //So we can brake and need healing time to time
 	durability = 100
 
@@ -456,7 +461,7 @@
 	flags = null
 	throw_speed = 2
 	throw_range = 6
-	armor = list(melee = 15, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_BONE = 6)
 	base_block_chance = 50
 
@@ -495,7 +500,7 @@
 	price_tag = 2000
 	max_durability = 800 //Well clearly made to last it should require some repair post crusade
 	durability = 800
-	armor = list(melee = 10, bullet = 10, energy = 15, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 10, bullet = 10, energy = 15, bomb = 10, bio = 0, rad = 0)
 	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 10, MATERIAL_DURASTEEL = 20)
 	item_icons = list(
 		slot_back_str = 'icons/inventory/back/mob.dmi')
@@ -523,7 +528,7 @@
 	throw_speed = 1
 	throw_range = 4
 	w_class = ITEM_SIZE_SMALL
-	origin_tech = list(TECH_MATERIAL = 4, TECH_MAGNET = 3, TECH_COVERT = 4)
+	origin_tech = list(TECH_MATERIAL = 4, TECH_MAGNET = 3, TECH_ILLEGAL = 4)
 	attack_verb = list("shoved", "bashed")
 	var/active = 0
 	max_durability = 150 //So we can brake and need healing time to time
@@ -545,13 +550,14 @@
 	if(istype(damage_source, /obj/item/projectile))
 		var/obj/item/projectile/P = damage_source
 		if((is_sharp(P) && damage > 10) || istype(P, /obj/item/projectile/beam))
-			return (base_block_chance - round(damage / 3)) //block bullets and beams using the old block chance
+			return (base_block_chance - round(damage)) //This way are lasers and bullets that deal 35~ damage cant be blocked.
 	return base_block_chance
 
 /obj/item/shield/buckler/energy/attack_self(mob/living/user as mob)
-	if ((CLUMSY in user.mutations) && prob(50))
-		to_chat(user, SPAN_WARNING("You beat yourself in the head with [src]."))
-		user.take_organ_damage(5)
+	if ((CLUMSY in user.mutations) && prob(15))
+		to_chat(user, SPAN_WARNING("You accidentally bash yourself with the [src]."))
+		user.damage_through_armor(10, BURN, user.hand)
+		user.Weaken(1 * force)
 	active = !active
 	if (active)
 		force = WEAPON_FORCE_PAINFUL
@@ -584,6 +590,12 @@
 	desc = "A shield capable of stopping most projectile and melee attacks. It can be retracted, expanded, and stored anywhere. This one was created for void wolves, generally employed by reavers."
 	icon_state = "voidwolfshield0" // eshield1 for expanded
 	item_state = "voidwolfshield"
+
+/obj/item/shield/buckler/energy/reaver/damaged
+
+/obj/item/shield/buckler/energy/reaver/damaged/Initialize()
+	. = ..()
+	durability -= rand(130, 90)
 
 /obj/item/shield/buckler/energy/reaver/update_icon()
 	icon_state = "voidwolfshield[active]"

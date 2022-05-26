@@ -42,6 +42,10 @@
 	update_icon()
 
 /obj/item/reagent_containers/syringe/attack_self(mob/user as mob)
+	if(user.stats.getStat(STAT_BIO) < 15 && !usr.stat_check(STAT_COG, 30) && !usr.stats.getPerk(PERK_ADDICT))
+		to_chat(user, SPAN_WARNING("You have no idea how to properly use this syringe!"))
+		return
+
 	switch(mode)
 		if(SYRINGE_DRAW)
 			mode = SYRINGE_INJECT
@@ -66,8 +70,12 @@
 		to_chat(user, SPAN_WARNING("This syringe is broken!"))
 		return
 
+	if(user.stats.getStat(STAT_BIO) < 15 && !usr.stat_check(STAT_COG, 30) && !usr.stats.getPerk(PERK_ADDICT))
+		to_chat(user, SPAN_WARNING("You have no idea how to properly use this syringe!"))
+		return
+
 	if(user.a_intent == I_HURT && ismob(target))
-		if((CLUMSY in user.mutations) && prob(50))
+		if((CLUMSY in user.mutations) && prob(10))
 			target = user
 		syringestab(target, user)
 		return
@@ -225,27 +233,26 @@
 		return
 
 	var/rounded_vol
-	if(/obj/item/reagent_containers/syringe)
-		if(reagents && reagents.total_volume)
-			rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 15)
-			var/image/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "syringe[rounded_vol]")
-			filling_overlay.color = reagents.get_color()
-			add_overlay(filling_overlay)
-		else
-			rounded_vol = 0
+	if(reagents && reagents.total_volume)
+		rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 15)
+		var/image/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "syringe[rounded_vol]")
+		filling_overlay.color = reagents.get_color()
+		add_overlay(filling_overlay)
+	else
+		rounded_vol = 0
 
-		icon_state = "[rounded_vol]"
-		item_state = "syringe_[rounded_vol]"
+	icon_state = "[rounded_vol]"
+	item_state = "syringe_[rounded_vol]"
 
-		if(ismob(loc))
-			var/injoverlay
-			switch(mode)
-				if (SYRINGE_DRAW)
-					injoverlay = "draw"
-				if (SYRINGE_INJECT)
-					injoverlay = "inject"
-			add_overlay(injoverlay)
-			update_wear_icon()
+	if(ismob(loc))
+		var/injoverlay
+		switch(mode)
+			if (SYRINGE_DRAW)
+				injoverlay = "draw"
+			if (SYRINGE_INJECT)
+				injoverlay = "inject"
+		add_overlay(injoverlay)
+		update_wear_icon()
 
 /obj/item/reagent_containers/syringe/large/update_icon()
 	cut_overlays()
@@ -255,27 +262,26 @@
 		return
 
 	var/rounded_vol
-	if(/obj/item/reagent_containers/syringe/large)
-		if(reagents && reagents.total_volume)
-			rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 30)
-			var/image/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "syringe-[rounded_vol]")
-			filling_overlay.color = reagents.get_color()
-			add_overlay(filling_overlay)
-		else
-			rounded_vol = 0
+	if(reagents && reagents.total_volume)
+		rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 30)
+		var/image/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "syringe-[rounded_vol]")
+		filling_overlay.color = reagents.get_color()
+		add_overlay(filling_overlay)
+	else
+		rounded_vol = 0
 
-		icon_state = "-[rounded_vol]"
-		item_state = "syringe_-[rounded_vol]"
+	icon_state = "-[rounded_vol]"
+	item_state = "syringe_-[rounded_vol]"
 
-		if(ismob(loc))
-			var/injoverlay
-			switch(mode)
-				if (SYRINGE_DRAW)
-					injoverlay = "draw"
-				if (SYRINGE_INJECT)
-					injoverlay = "inject"
-			add_overlay(injoverlay)
-			update_wear_icon()
+	if(ismob(loc))
+		var/injoverlay
+		switch(mode)
+			if (SYRINGE_DRAW)
+				injoverlay = "draw"
+			if (SYRINGE_INJECT)
+				injoverlay = "inject"
+		add_overlay(injoverlay)
+		update_wear_icon()
 
 /obj/item/reagent_containers/syringe/blitzshell
 	name = "blitzshell syringe"
@@ -442,7 +448,7 @@
 
 /obj/item/reagent_containers/syringe/stim/menace
 	name = "syringe (MENACE)"
-	desc = "A syringe containing a dose of the powerful electrolyte based stimulant known as menace. A drug made famous for being used by suicidal naramadi shock troops employed by the Terran Federation."
+	desc = "A syringe containing a dose of the powerful electrolyte based stimulant known as menace. A drug made famous for being used by suicidal naramadi shock troops employed by the Solarian Federation."
 	preloaded_reagents = list("menace" = 15)
 
 ////////////////////////////////////////////////////////////////////////////////

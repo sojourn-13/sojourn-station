@@ -23,7 +23,7 @@
 /datum/category_item/setup_option/background/homeworld/newdamascus
 	name = "New Damascus"
 	desc = "Once a bustling manufacturing world that was rich in oxygen and low in moisture, New Damascus is an arid world slowly bringing itself back from the brink of economic collapse. \
-	Originally boasting three resource rich moons, this world produced a large amount of ships, weapons, and other metallic goods for the Terran Federation. Unfortunately the mines eventually \
+	Originally boasting three resource rich moons, this world produced a large amount of ships, weapons, and other metallic goods for the Solarian Federation. Unfortunately the mines eventually \
 	ran dry and it left New Damascus in a state of stagnation with local rulers growing more draconian and desperate as they watched their reserves and their populations slowly drop. Since \
 	the bluespace crash however, New Damascus has seen a resurgence in it's forges with neighboring systems diverting resources to them due to their proximity. Today, New Damascus has tried to \
 	cultivate a reputation for openness and quality of life to draw back expats, however their outlying colonies and stations are still known for being extremely restrictive. Individuals from \
@@ -44,17 +44,19 @@
 	by most major powers. Neapolis is covered with endless plains of Vermillion grass, migratory forests, and deep violet colored oceans and it's marble white settlements have proven to be \
 	highly attractive destinations for tourists and vacationers, but the planet does have a number of drawbacks. The primary issue facing the residents of Neapolis is the lack of settle-able \
 	land with only a smattering of plateaus being safe enough for permanent settlements in the face of the ever transient forests. Fortunately the second issue- a lack of valuable ores \
-	or gasses, has so far been a boon for Neapolitians who have managed to evade major interest from their large- sometimes hostile, neighbors. Individuals from Neapolis are often \
+	or gasses, has so far been a boon for Neapolitians who have managed to evade major interest from their large sometimes hostile neighbors. Individuals from Neapolis are often \
 	idealistic, artistic, and sometimes a little naive. As a lush garden world that boasts a highly productive and often self reliance on growable food, those from Neapolis are often \
-	described as having a green thumb."
+	described as having a green thumb. Decades of living on a garden world have also made many of Neapolis obligate herbivores, preferring organic diets, but the lack of protein makes them \
+	weaker on average."
 
-	perks = list(/datum/perk/greenthumb)
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_KRIOSAN, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_CHTMANT)
+	perks = list(/datum/perk/greenthumb, /datum/perk/herbivore)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
+		STAT_ROB = -5,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 0,
+		STAT_BIO = 5,
 		STAT_MEC = 0,
 		STAT_COG = 5
 	)
@@ -182,7 +184,7 @@
 
 /datum/category_item/setup_option/background/homeworld/earthandmars
 	name = "Earth and Mars"
-	desc = "Earth and Mars are the political seat of power for the Terran Federation and considered the wealthiest and most heavily protected planets in the known universe. \
+	desc = "Earth and Mars are the political seat of power for the Solarian Federation and considered the wealthiest and most heavily protected planets in the known universe. \
 	People from earth and mars are almost universally wealthy and worldly, with access to broad educations and understandings in philosophies that help them at every step in life. \
 	The melting pot of cultures have made Sol born extremely knowledgeable of other cultures and varied even among themselves, anyone of any race could have once been born and bred in the \
 	Sol system. However, most are still commonly human or abhuman even with the numerous exceptions. As a result of the clean living, free of pollution, drugs, or heavily processed foods \
@@ -205,7 +207,7 @@
 	fringes of civilization. The conditions on Onkarth are brutal with long blazingly hot days and freezing ice cold nights in even the hottest regions. The planet is also plagued with common \
 	and vicious animals that often attempt to make a meal of anything they find. Native fauna to the planet also have evolved with chitinous or bone-like growths that create a durable layer of \
 	natural armor that require either great strength to break or superior firepower. Due to the planets hostility few other than sablekyne choose to live on the planet, those that do are often \
-	family members to humans, abhumans, or naramads stationed there as part of the Terran Federation planetary defense force. "
+	family members to humans, abhumans, or naramads stationed there as part of the Solarian Federation planetary defense force. "
 
 	restricted_to_species = list(FORM_SABLEKYNE, FORM_HUMAN, FORM_EXALT_HUMAN, FORM_NARAMAD)
 
@@ -239,7 +241,7 @@
 
 /datum/category_item/setup_option/background/homeworld/marquahomeworlds
 	name = "Marqua Homeworlds"
-	desc = "The mar'qua homeworlds are a massive collection of varied star systems controlled by the mar'qua empire and its allies within the Terran Federation. While the mar'qua homeworlds are \
+	desc = "The mar'qua homeworlds are a massive collection of varied star systems controlled by the mar'qua empire and its allies within the Solarian Federation. While the mar'qua homeworlds are \
 	largely self sufficient they follow a strict caste system and each world is largely similar to one another. Concepts of family, friendship, and leisure time are foreign ideas to  \
 	worlds controlled by the mar'qua empire and people growing up here may be relocated by the government to new areas or even new worlds far from family or friends at a moments notice. \
 	Mar'qua are practical above all else and as such employ the use of humans and cindarites greatly for their broader skills, allowing them to live within their borders, yet they refuse \
@@ -277,7 +279,7 @@
 	desc = "The world of Norian is home to the physically powerful race of the Naramadi. The naramad live amongst the ruins of another civilization long forgotten with the passage of time \
 	who's only remaining mark on the world is many dangerous ruins dotting the landscape. Many areas of Norian remain largely pristine and often treated as sacred locations by the local \
 	naramad tribes who often plunder the location at great risk for what they consider worthwhile rewards. Norian does boast a decent human, abhuman, and sablekyne population as those races of \
-	the Terran Federation are uniquely capable of adapting to the harsh world. Unfortunately Norian has next to nothing in the way of proper education, even among the Terran planetary defense forces. \
+	the Solarian Federation are uniquely capable of adapting to the harsh world. Unfortunately Norian has next to nothing in the way of proper education, even among the Solarian planetary defense forces. \
 	People from this planet tend to be the hardiest of individuals, but just as often they prove to be dull and lacking in attention to detail."
 
 	restricted_to_species = list(FORM_NARAMAD, FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_AKULA)
@@ -294,7 +296,7 @@
 /datum/category_item/setup_option/background/homeworld/scavengerfleet
 	name = "Scavenger Fleet"
 	desc = "The scavenger fleets of the Opifex are a mix of massive ships miles long and smaller skip jacks housing clans of populi and dominus opifex. Scavenger fleets are always on the move \
-	and rarely stay in one place for long as they make prey of enemies of the Terran Federation, pirates, or unaligned colonies just trying to make a living. Due to the opifex superiority  \
+	and rarely stay in one place for long as they make prey of enemies of the Solarian Federation, pirates, or unaligned colonies just trying to make a living. Due to the opifex superiority  \
 	complexes they absolutely and resolutely refuse to allow anyone besides their own kind and synthetic life forms to even visit the various fleets they call home. Opifex fleets are strangely  \
 	lawful places despite their subsistence largely based upon raiding and every opifex is trained on maintaining their various ships and robots."
 
@@ -329,8 +331,8 @@
 
 /datum/category_item/setup_option/background/homeworld/krios
 	name = "Krios"
-	desc = "Krios is a land steeped in conflict in the last few decades with the arrival of the Terran Federation and a subsequent rebellion after the bluespace crash. \
-	Krios is now formerly owned by itself, having opportunistically thrown off Terran rule, though much of their society is left scarred by the conflict and citizens now spend more time \
+	desc = "Krios is a land steeped in conflict in the last few decades with the arrival of the Solarian Federation and a subsequent rebellion after the bluespace crash. \
+	Krios is now formerly owned by itself, having opportunistically thrown off Solarian rule, though much of their society is left scarred by the conflict and citizens now spend more time \
 	training and drilling themselves should the federation ever come back. Krios itself is still a toxic and hostile planet with poisonous fauna, as such few federation races choose to live there \
 	except for the cindarite, who due to their own world being even worse, thrive in the conditions of krios better than the natives."
 

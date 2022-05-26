@@ -18,6 +18,7 @@
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/boltgun/sawn/light
+	serial_type = "Hunt Inc"
 
 /obj/item/gun/projectile/boltgun/sawn/light
 	name = "\"obrez\" light boltgun"
@@ -32,8 +33,9 @@
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 5)
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	saw_off = FALSE
+	serial_type = "Hunt Inc"
 
-//Wood verson
+//Wood version
 /obj/item/gun/projectile/boltgun/light_wood
 	name = "\"Roe\" light boltgun"
 	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .257, it's a common varmint and plinking rifle."
@@ -42,6 +44,7 @@
 	item_state = "boltgun"
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	max_shells = 10
+	recoil_buildup = 15
 	one_hand_penalty = 20 //maybe some trick shots
 	zoom_factor = 2.0
 	price_tag = 1000
@@ -53,6 +56,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/boltgun/sawn/light_wood
+	serial_type = "Hunt Inc"
 
 /obj/item/gun/projectile/boltgun/sawn/light_wood
 	name = "\"obrez\" light boltgun"
@@ -65,3 +69,4 @@
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_WOOD = 5)
 	max_shells = 10
 	saw_off = FALSE
+	serial_type = "Hunt Inc"

@@ -218,7 +218,11 @@
 /obj/item/organ/external/proc/make_nerves()
 	var/obj/item/organ/internal/nerve/nerve
 	if(nature == MODIFICATION_SUPERIOR)
-		nerve = new /obj/item/organ/internal/nerve/sensitive_nerve/exalt
+		if(organ_tag != BP_L_LEG && organ_tag != BP_R_LEG)
+			nerve = new /obj/item/organ/internal/nerve/sensitive_nerve/exalt
+		else
+			nerve = new /obj/item/organ/internal/nerve/sensitive_nerve/exalt_leg
+		
 	else if(nature < MODIFICATION_SILICON)
 		nerve = new /obj/item/organ/internal/nerve
 	else
@@ -234,6 +238,8 @@
 		muscle = new /obj/item/organ/internal/muscle
 	else
 		muscle = new /obj/item/organ/internal/muscle/robotic
+		muscle?.replaced(src)
+		muscle = new /obj/item/organ/internal/muscle/robotic
 
 	muscle?.replaced(src)
 
@@ -247,12 +253,11 @@
 	blood_vessel?.replaced(src)
 
 /obj/item/organ/external/proc/update_limb_efficiency()
-	limb_efficiency = 0
-	limb_efficiency += owner.get_specific_organ_efficiency(OP_NERVE, organ_tag) + owner.get_specific_organ_efficiency(OP_MUSCLE, organ_tag)
-	if(BP_IS_ROBOTIC(src))
-		limb_efficiency = limb_efficiency / 2
-		return
-	limb_efficiency = (limb_efficiency + owner.get_specific_organ_efficiency(OP_BLOOD_VESSEL, organ_tag)) / 3
+	var/raw_efficiency = 0
+	raw_efficiency += owner.get_specific_organ_efficiency(OP_NERVE, organ_tag) + owner.get_specific_organ_efficiency(OP_MUSCLE, organ_tag)
+	if(!BP_IS_ROBOTIC(src))
+		raw_efficiency = raw_efficiency + owner.get_specific_organ_efficiency(OP_BLOOD_VESSEL, organ_tag)
+	limb_efficiency = round(((raw_efficiency/(240+((2*raw_efficiency)/10))) * 100)) //Diminishing returns as total limb efficiency increases.
 
 /obj/item/organ/external/proc/update_bionics_hud()
 	switch(organ_tag)
@@ -334,11 +339,12 @@
 	if(status & ORGAN_SPLINTED)
 		. += 0.5
 
-	var/muscle_eff = owner.get_specific_organ_efficiency(OP_MUSCLE, organ_tag)
 
 	var/nerve_eff = max(owner.get_specific_organ_efficiency(OP_NERVE, organ_tag),1)
-	muscle_eff = (muscle_eff/100) - (muscle_eff/nerve_eff) //Need more nerves to control those new muscles
-	. += max(-(muscle_eff/2), MAX_MUSCLE_SPEED)
+	var/limb_eff = owner.get_limb_efficiency()
+	var/leg_eff = (limb_eff/100) - (limb_eff / nerve_eff)//Need more nerves to control those new muscles
+
+	. += max(-(leg_eff/2), MAX_MUSCLE_SPEED)
 
 	. += tally
 
@@ -421,16 +427,6 @@ This function completely restores a damaged organ to perfect condition.
 
 	if(damage == 0)
 		return
-
-	//moved this before the open_wound check
-	// so that having many small wounds for example doesn't somehow protect you from taking internal damage
-	// (because of the return)
-	//Possibly trigger an internal wound, too.
-	//var/local_damage = brute_dam + burn_dam + damage
-	//if(damage > 15 && type != BURN && local_damage > 30 && prob(damage) && !BP_IS_ROBOTIC(src))
-		//var/datum/wound/internal_bleeding/I = new (min(damage - 15, 15))
-		//wounds += I
-		//owner.custom_pain("You feel something rip in your [name]!", 1)
 
 	// first check whether we can widen an existing wound
 	if(wounds.len > 0 && prob(max(50+(number_wounds-1)*10,90)))

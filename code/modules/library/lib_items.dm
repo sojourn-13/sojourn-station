@@ -20,43 +20,62 @@
 	anchored = TRUE
 	density = TRUE
 	opacity = TRUE
+	var/list/allowed_book_items = list(
+	/obj/item/book,
+	/obj/item/oddity/common/blueprint,
+	/obj/item/oddity/common/book_eyes,
+	/obj/item/oddity/common/book_omega,
+	/obj/item/oddity/common/book_bible,
+	/obj/item/oddity/common/book_log,
+	/obj/item/oddity/common/book_unholy,
+	/obj/item/oddity/chem_book,
+	/obj/item/oddity/code_book,
+	/obj/item/oddity/ls/manual)
 
 /obj/structure/bookcase/Initialize()
 	. = ..()
 	for(var/obj/item/I in loc)
-		if(istype(I, /obj/item/book))
+		if(LAZYLEN(allowed_book_items))
+			if(!is_type_in_list(I,allowed_book_items))
+				return
 			I.loc = src
+
 	update_icon()
 
-/obj/structure/bookcase/attackby(obj/O as obj, mob/user as mob)
-	if(istype(O, /obj/item/book))
-		user.drop_item()
-		O.loc = src
-		update_icon()
-	else if(istype(O, /obj/item/pen))
+/obj/structure/bookcase/attackby(obj/item/O, mob/user)
+	if(LAZYLEN(allowed_book_items))
+		if(is_type_in_list(O,allowed_book_items))
+			user.drop_item()
+			O.loc = src
+			update_icon()
+	if(istype(O, /obj/item/pen))
 		var/newname = sanitizeSafe(input("What would you like to title this bookshelf?"), MAX_NAME_LEN)
 		if(!newname)
 			return
 		else
 			name = ("bookcase ([newname])")
-	else if(istype(O,/obj/item/tool/wrench))
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 100, 1)
-		to_chat(user, (anchored ? SPAN_NOTICE("You unfasten \the [src] from the floor.") : SPAN_NOTICE("You secure \the [src] to the floor.")))
-		anchored = !anchored
-	else if(istype(O,/obj/item/tool/screwdriver))
-		playsound(loc, 'sound/items/Screwdriver.ogg', 75, 1)
-		to_chat(user, SPAN_NOTICE("You begin dismantling \the [src]."))
-		if(do_after(user,25,src))
-			to_chat(user, SPAN_NOTICE("You dismantle \the [src]."))
-			drop_materials(drop_location())
-			for(var/obj/item/book/b in contents)
-				b.loc = (get_turf(src))
-			qdel(src)
 
-	else
-		..()
+	var/tool_type = O.get_tool_type(user, list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING), src)
+	switch(tool_type)
+		if(QUALITY_SCREW_DRIVING)
+			to_chat(user, SPAN_NOTICE("You begin dismantling \the [src]."))
+			if(O.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				to_chat(user, SPAN_NOTICE("You dismantle \the [src]."))
+				drop_materials(drop_location())
+				for(var/obj/item/book/b in contents)
+					b.loc = (get_turf(src))
+				qdel(src)
+		if(QUALITY_BOLT_TURNING)
+			to_chat(user, SPAN_NOTICE("You begin unwrenching \the [src]."))
+			if(O.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				playsound(src.loc, 'sound/items/Ratchet.ogg', 100, 1)
+				to_chat(user, (anchored ? SPAN_NOTICE("You unfasten \the [src] from the floor.") : SPAN_NOTICE("You secure \the [src] to the floor.")))
+				anchored = !anchored
+	add_fingerprint(user)
 
-/obj/structure/bookcase/attack_hand(var/mob/user as mob)
+	..()
+
+/obj/structure/bookcase/attack_hand(mob/user)
 	if(contents.len)
 		var/obj/item/book/choice = input("Which book would you like to remove from the shelf?") as null|obj in contents
 		if(choice)
@@ -71,18 +90,18 @@
 
 /obj/structure/bookcase/ex_act(severity)
 	switch(severity)
-		if(1.0)
+		if(1)
 			for(var/obj/item/book/b in contents)
 				qdel(b)
 			qdel(src)
 			return
-		if(2.0)
+		if(2)
 			for(var/obj/item/book/b in contents)
 				if (prob(50)) b.loc = (get_turf(src))
 				else qdel(b)
 			qdel(src)
 			return
-		if(3.0)
+		if(3)
 			if (prob(50))
 				for(var/obj/item/book/b in contents)
 					b.loc = (get_turf(src))
@@ -163,7 +182,7 @@
 	var/obj/item/store	//What's in the book?
 	var/window_size = null // Specific window size for the book, i.e: "1920x1080", Size x Width
 
-/obj/item/book/attack_self(var/mob/user as mob)
+/obj/item/book/attack_self(mob/user)
 	playsound(src.loc, pick('sound/items/BOOK_Turn_Page_1.ogg',\
 		'sound/items/BOOK_Turn_Page_2.ogg',\
 		'sound/items/BOOK_Turn_Page_3.ogg',\
@@ -291,7 +310,7 @@
 	var/obj/item/book/book	 //  Currently scanned book
 	var/mode = 0 					// 0 - Scan only, 1 - Scan and Set Buffer, 2 - Scan and Attempt to Check In, 3 - Scan and Attempt to Add to Inventory
 
-	attack_self(mob/user as mob)
+	attack_self(mob/user)
 		mode += 1
 		if(mode > 3)
 			mode = 0

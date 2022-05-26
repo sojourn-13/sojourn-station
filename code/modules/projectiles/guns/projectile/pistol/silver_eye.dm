@@ -10,7 +10,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_SILVER = 6, MATERIAL_WOOD = 6, MATERIAL_STEEL = 6)
 	price_tag = 1250
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.2
 	recoil_buildup = 5
@@ -19,6 +19,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
 	reload_sound 	= 'sound/weapons/guns/interact/reload_silver.ogg'
 	fire_sound = 'sound/weapons/guns/fire/fire_silver.ogg'
+	serial_type = "NM"
 
 /obj/item/gun/projectile/silvereye/update_icon()
 	..()

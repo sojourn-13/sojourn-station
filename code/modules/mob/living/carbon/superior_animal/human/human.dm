@@ -8,6 +8,7 @@
 	speak_chance = 5
 	turns_per_move = 5
 	randpixel = 0
+	cant_be_pulled = TRUE
 
 	attack_sound = 'sound/weapons/slice.ogg'
 

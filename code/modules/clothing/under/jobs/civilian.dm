@@ -74,6 +74,38 @@
 	icon_state = "church"
 	item_state = "church"
 
+/obj/item/clothing/under/rank/church/toga
+	desc = "Smells like laurel wreath."
+	name = "church toga"
+	icon_state = "numerical_garbs_red"
+
+/obj/item/clothing/under/rank/church/toga/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Red"] = "numerical_garbs_red"
+	options["Red Pauldronless"] = "churchtoga_alt"
+	options["Black"] = "churchtoga_black"
+	options["Black Pauldronless"] = "churchtoga_blackalt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/rank/chef
 	desc = "A pleasant yet practical suit for professional kitchen staff."
 	name = "chef's uniform"
@@ -111,7 +143,7 @@
 	icon_state = "janitor"
 	item_state = "janitor"
 	permeability_coefficient = 0.50
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,
@@ -130,12 +162,17 @@
 	desc = "A snappy Lonestar jumpsuit complete with sturdy mining overalls."
 	name = "lonestar miner's jumpsuit"
 	icon_state = "miner"
-	item_state = "lb_suit"
+	item_state = "miner"
 
 /obj/item/clothing/under/outcast
 	name = "tactical baggy rags"
 	desc = "A jury rugged set of baggy pants with leather reinforcement paddings and other fibers, as comfortable as clothes can get when made by whatever you scavenged off the land."
 	icon_state = "tactical_rags"
 	item_state = "tactical_rags"
-	armor = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 5)
+	armor_list = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 5)
 
+/obj/item/clothing/under/rank/lonestar_gorka
+	name = "lonestar gorka jumpsuit"
+	desc = "A gorka suit painted over with Lonestar orange and black."
+	icon_state = "ls_gorka"
+	item_state = "ls_gorka"

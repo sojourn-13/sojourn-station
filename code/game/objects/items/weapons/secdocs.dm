@@ -3,11 +3,11 @@
 	desc = "A folder containing some papers with important scientific data."
 	icon = 'icons/obj/oddities.dmi'
 	price_tag = 2500
-
+	prob_perk = 0 //The data is quite clear...
 	oddity_stats = list(
-		STAT_MEC = 8,
-		STAT_COG = 8,
-		STAT_BIO = 8,
+		STAT_MEC = 7,
+		STAT_COG = 7,
+		STAT_BIO = 7,
 	)
 
 	//var/static/inv_spawn_count = 3

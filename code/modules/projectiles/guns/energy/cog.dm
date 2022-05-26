@@ -19,13 +19,16 @@
 		BURST_2_ROUND
 	)
 	twohanded = TRUE
+	serial_type = "GP"
 
-/obj/item/gun/energy/cog/New()
-	..()
-	if(prob(50))
-		icon = 'icons/obj/guns/energy/cog_alt.dmi'
-	return
-
-/obj/item/gun/energy/cog/update_icon()
-	..()
-	set_item_state(null, back = TRUE)
+/obj/item/gun/energy/cog/gear
+	name = "\"Gear\" lasgun"
+	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous. \
+	This model has been modified to use wider range of projectiles at cost of it's fire rate."
+	fire_delay = 15
+	projectile_type = /obj/item/projectile/beam/stun
+	init_firemodes = list(
+		list(mode_name="stun", mode_desc="fires a concentrated stun beam", projectile_type=/obj/item/projectile/beam/stun, charge_cost = 50, icon="stun", fire_sound='sound/weapons/Taser3.ogg'),
+		list(mode_name="lethal", mode_desc="fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/Laser4.ogg')
+	)
+	serial_type = "GP"

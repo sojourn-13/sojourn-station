@@ -11,7 +11,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	caliber = "10x24"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PULSE
 	auto_eject = 1
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 15)
@@ -30,6 +30,8 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
+	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/projectile/automatic/dallas/update_icon()
 	..()

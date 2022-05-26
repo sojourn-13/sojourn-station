@@ -26,39 +26,35 @@ SUBSYSTEM_DEF(economy)
 	var/paid_external = 0
 
 	// Departments pay to departments first
-	for(var/datum/money_account/A in department_accounts)
+	for(var/i in department_accounts)
+		var/datum/money_account/A = department_accounts[i]
+		var/datum/department/D = GLOB.all_departments[A.department_id]
+		var/datum/department/ED = GLOB.all_departments[D.funding_source]
+
 		if(!A.employer)
 			continue
 
-		var/datum/department/D = GLOB.all_departments[A.department_id]
-		var/datum/department/ED = GLOB.all_departments[A.employer]
-		var/datum/money_account/EA = get_account(ED.account_number)
-
-		if(D && (D.funding_type != FUNDING_NONE) && !A.wage_manual)
-			A.wage = (D.budget_base + D.budget_personnel)
+		if(D && !A.wage_manual)
+			A.wage = D.get_total_budget()
 
 		var/amount_to_pay = A.debt + A.wage
-
 		if(amount_to_pay <= 0)
 			continue
 
-		switch(D.funding_type)
-			if(FUNDING_NONE)
-				continue
-
-			if(FUNDING_EXTERNAL)
-				deposit_to_account(A, D.funding_source, "Payroll Funding", "Hansa payroll system", amount_to_pay)
-				paid_external += amount_to_pay
-
-			if(FUNDING_INTERNAL)
-				if(amount_to_pay <= EA.money)
-					transfer_funds(EA, A, "Payroll Funding", "Nadezhda colony payroll system", amount_to_pay)
-					paid_internal += amount_to_pay
-					ED.total_debt -= A.debt
-					A.debt = 0
-				else
-					A.debt += A.wage
-					ED.total_debt += A.wage
+		if(!ED) // If no employer department found - payment is external
+			deposit_to_account(A, A.employer, "Payroll Funding", "Hansa payroll system", amount_to_pay)
+			paid_external += amount_to_pay
+			continue
+		else
+			var/datum/money_account/EA = get_account(ED.account_number)
+			if(amount_to_pay <= EA.money)
+				transfer_funds(EA, A, "Payroll Funding", "CEV Eris payroll system", amount_to_pay)
+				paid_internal += amount_to_pay
+				ED.total_debt -= A.debt
+				A.debt = 0
+			else
+				A.debt += A.wage
+				ED.total_debt += A.wage
 
 
 	// Departments pay to the crew
@@ -66,22 +62,22 @@ SUBSYSTEM_DEF(economy)
 		if(!A.employer)
 			continue
 
-		
+
 		var/datum/computer_file/report/crew_record/R = get_crewmember_record(A.owner_name)
 
 		//Modify their wage based on nepotism modifier
 		var/nepotism = 1
 		if(R)
 			nepotism = R.get_nepotismMod()
-		
+
 		var/amount_to_pay = A.debt + (A.wage * nepotism)
-		
+
 		if(amount_to_pay <= 0)
 			continue
 
 		var/datum/department/ED = GLOB.all_departments[A.employer]
 		var/datum/money_account/EA = department_accounts[ED.id]
-		
+
 
 
 		if(amount_to_pay <= EA.money)
@@ -108,7 +104,7 @@ SUBSYSTEM_DEF(economy)
 					payroll_failure_mail(R, A, D.total_debt)
 
 	total_paid = paid_internal + paid_external
-	command_announcement.Announce("Hourly crew wages have been paid, please check your email for details. In total the crew of Nadezhda colony have earned [total_paid] credits, including [paid_external] credits from external sources.\n Please contact your Department Heads in case of errors or missing payments.", "Dispensation")
+	command_announcement.Announce("Hourly colonist wages have been paid, please check your email for details. In total the crew of Nadezhda colony have earned [total_paid] credits, including [paid_external] credits from external sources.\n Please contact your Department Heads in case of errors or missing payments.", "Dispensation", new_sound = 'sound/misc/notice2.ogg')
 
 
 //Sent to a head of staff when their department account fails to pay out wages

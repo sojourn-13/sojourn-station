@@ -53,6 +53,8 @@
 	var/fed = 0 // roach gets fed after eating a corpse
 	var/probability_egg_laying = 75 // probability to lay an egg
 
+	var/snacker = FALSE
+
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
@@ -76,3 +78,9 @@
 	if (.)
 		for (var/mob/living/carbon/superior_animal/roach/fuhrer/F in range(src,8))
 			F.distress_call()
+
+/mob/living/carbon/superior_animal/roach/Destroy()
+	eat_target = null //should fix the support roach GC fail
+
+	. = ..()
+

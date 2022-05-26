@@ -21,6 +21,7 @@
 		LETHAL,
 		WEAPON_CHARGE,
 		)
+	serial_type = "H&S"
 
 /obj/item/gun/energy/gun/mounted
 	name = "mounted energy gun"
@@ -46,6 +47,13 @@
 	suitable_cell = /obj/item/cell/small
 	cell_type = /obj/item/cell/small
 
+/obj/item/gun/energy/gun/martin/preloaded
+
+/obj/item/gun/energy/gun/martin/preloaded/New()
+	cell = new /obj/item/cell/small/high(src)
+	. = ..()
+	update_icon()
+
 /obj/item/gun/energy/gun/martin/proc/update_mode()
 	var/datum/firemode/current_mode = firemodes[sel_mode]
 	if(current_mode.name == "stun")
@@ -57,6 +65,21 @@
 	cut_overlays()
 	if(cell && cell.charge >= charge_cost) //no overlay if we dont have any power
 		update_mode()
+
+/obj/item/gun/energy/gun/martin/upgraded
+	name = "Overclocked \"Martin\" energy pistol"
+	desc = "An overclocked varient of the Martin energy pistol, allowing for more efficent energy consumption and a slightly intensified lens."
+	icon_state = "PDWU"
+	charge_cost = 25
+	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 4, MATERIAL_SILVER = 2, MATERIAL_URANIUM = 1)
+	price_tag = 450
+
+/obj/item/gun/energy/gun/martin/upgraded/update_mode()
+	var/datum/firemode/current_mode = firemodes[sel_mode]
+	if(current_mode.name == "stun")
+		add_overlay("taser_pdwu")
+	else
+		add_overlay("lazer_pdwu")
 
 /obj/item/gun/energy/ntpistol
 	name = "\"Serenity\" energy pistol"
@@ -75,8 +98,9 @@
 	price_tag = 150
 	init_firemodes = list(
 		LETHAL,
- 		WEAPON_CHARGE
+		WEAPON_CHARGE
 	)
 	twohanded = FALSE
 	suitable_cell = /obj/item/cell/small
 	cell_type = /obj/item/cell/small
+	serial_type = "Absolute"

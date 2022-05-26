@@ -15,8 +15,8 @@
 	origin_tech = list(TECH_MAGNET = 2, TECH_BIO = 1, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 	var/mode = 1;
-	var/obj/item/cell/cell = null
-	var/suitable_cell = /obj/item/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 
 /obj/item/device/robotanalyzer/New()
 	..()
@@ -30,7 +30,7 @@
 	if(!usr.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
 		to_chat(usr, SPAN_WARNING("Your mechanical understanding isn't high enough to use this!"))
 		return
-	if((CLUMSY in user.mutations) && prob(50))
+	if((CLUMSY in user.mutations) && prob(15))
 		to_chat(user, text("\red You try to analyze the floor's vitals!"))
 		for(var/mob/O in viewers(M, null))
 			O.show_message(text("\red [user] has analyzed the floor's vitals!"), 1)
@@ -73,7 +73,7 @@
 					(org.powered)	?	"Power ON"		:	"<font color='red'>Power OFF</font>"),1)
 			else
 				user.show_message("\blue \t Components are OK.",1)
-			if(H.emagged && prob(5))
+			if(H.HasTrait(CYBORG_TRAIT_EMAGGED) && prob(5))
 				user.show_message("\red \t ERROR: INTERNAL SYSTEMS COMPROMISED",1)
 			user.show_message("\blue Operating Temperature: [M.bodytemperature-T0C]&deg;C ([M.bodytemperature*1.8-459.67]&deg;F)", 1)
 

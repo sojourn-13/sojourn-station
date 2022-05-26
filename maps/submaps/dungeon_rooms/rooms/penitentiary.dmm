@@ -25,10 +25,6 @@
 "g" = (
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/crawler)
-"h" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/dark/brown_platform,
-/area/crawler)
 "i" = (
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -61,10 +57,6 @@
 "o" = (
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/wall/untinted/onestar_reinforced,
-/area/crawler)
-"p" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "q" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -119,7 +111,6 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/crawler)
 "C" = (
-/obj/structure/low_wall/onestar,
 /obj/effect/window_lwall_spawn/smartspawn/onestar,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/crawler)
@@ -172,7 +163,7 @@ e
 a
 s
 u
-p
+u
 a
 a
 a
@@ -201,11 +192,11 @@ b
 "}
 (7,1,1) = {"
 b
-h
+g
 m
 C
 u
-p
+u
 a
 a
 b
@@ -238,7 +229,7 @@ a
 a
 s
 u
-p
+u
 a
 a
 a

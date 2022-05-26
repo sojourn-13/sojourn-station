@@ -1276,25 +1276,25 @@ I said no!
 		/obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer,
 		/obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer,
 	)
-	result = /obj/item/reagent_containers/food/snacks/cube/fuhrer
+	result = /obj/item/reagent_containers/food/snacks/cube/roach/fuhrer
 
 /datum/recipe/cube/jager
 	fruit = list("potato" = 1)
 	reagents = list("protein" = 10, "blattedin" = 5)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/jager)
-	result = /obj/item/reagent_containers/food/snacks/cube/jager
+	result = /obj/item/reagent_containers/food/snacks/cube/roach/jager
 
 /datum/recipe/cube/kraftwerk
 	fruit = list("potato" = 1)
 	reagents = list("protein" = 10, "gewaltine" = 5)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/kraftwerk)
-	result = /obj/item/reagent_containers/food/snacks/cube/kraftwerk
+	result = /obj/item/reagent_containers/food/snacks/cube/roach/kraftwerk
 
 /datum/recipe/cube/elektromagnetisch
 	fruit = list("potato" = 1)
 	reagents = list("protein" = 10, "iron" = 5)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch)
-	result = /obj/item/reagent_containers/food/snacks/cube/elektromagnetisch
+	result = /obj/item/reagent_containers/food/snacks/cube/roach/elektromagnetisch
 
 /datum/recipe/cube/glowing
 	fruit = list("potato" = 1)
@@ -1306,13 +1306,13 @@ I said no!
 	fruit = list("potato" = 1)
 	reagents = list("protein" = 5, "seligitillin" = 1)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat)
-	result = /obj/item/reagent_containers/food/snacks/cube/roachling
+	result = /obj/item/reagent_containers/food/snacks/cube/roach/roachling
 
 /datum/recipe/cube/seuche
 	fruit = list("potato" = 1)
 	reagents = list("protein" = 10, "diplopterum" = 5)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/seuche)
-	result = /obj/item/reagent_containers/food/snacks/cube/seuche
+	result = /obj/item/reagent_containers/food/snacks/cube/roach/seuche
 
 /datum/recipe/cube/panzer
 	fruit = list("potato" = 1)
@@ -1321,10 +1321,10 @@ I said no!
 		/obj/item/reagent_containers/food/snacks/meat/roachmeat/panzer,
 		/obj/item/reagent_containers/food/snacks/meat/roachmeat/panzer,
 	)
-	result = /obj/item/reagent_containers/food/snacks/cube/panzer
+	result = /obj/item/reagent_containers/food/snacks/cube/roach/panzer
 
 /datum/recipe/cube/gestrahlte
 	fruit = list("potato" = 1)
 	reagents = list("protein" = 10, "toxin" = 5)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat)
-	result = /obj/item/reagent_containers/food/snacks/cube/grestrahlte
+	result = /obj/item/reagent_containers/food/snacks/cube/roach/grestrahlte

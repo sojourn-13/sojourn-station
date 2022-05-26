@@ -108,8 +108,8 @@
 	cooldown_time = 300
 	power = 45
 	category = "Vitae"
-	nutri_cost = 50//high cost
-	blood_cost = 50//high cost
+	nutri_cost = 50
+	blood_cost = 50
 
 /datum/ritual/cruciform/priest/heal_other/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
@@ -1071,3 +1071,133 @@
 
 	CI.security_clearance = CLEARANCE_NONE
 	return TRUE
+
+//Etops
+
+/datum/ritual/cruciform/priest/offering/buy_item
+	name = "Order armaments"
+	phrase = "Et qui non habet, vendat tunicam suam et emat gladium."
+	desc = "Allows you to spend favor to unlock disks from the lower temples through the will of the protector."
+	success_message = "Your prayers have been heard."
+	fail_message = "Your prayers have not been answered."
+	power = 20
+
+/datum/ritual/cruciform/priest/offering/buy_item/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C, targets)
+	var/list/OBJS = get_front(H)
+
+	var/obj/machinery/power/eotp/EOTP = locate(/obj/machinery/power/eotp) in OBJS
+	if(!EOTP)
+		fail("You must be in front of the Will of the Protector.", H, C)
+		return FALSE
+
+	eotp.nano_ui_interact(H)
+	return TRUE
+
+
+/datum/ritual/cruciform/priest/offering
+	name = "Offerings"
+	category = "Offerings"
+	success_message = "Tus plegarais han sido escuchadas."
+	fail_message = "Your offerings are not worthy."
+	power = 30
+	var/list/req_offerings = list()
+	var/list/miracles = list(ALERT, INSPIRATION, STAT_BUFF, ENERGY_REWARD)
+
+/datum/ritual/cruciform/priest/offering/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C, targets)
+	var/list/OBJS = get_front(H)
+
+	var/obj/machinery/power/eotp/EOTP = locate(/obj/machinery/power/eotp) in OBJS
+	if(!EOTP)
+		fail("You must be in front of the Will of the Protector.", H, C)
+		return FALSE
+
+	var/list/obj/item/item_targets = list()
+	var/turf/source_t = get_turf(EOTP)
+	for(var/turf/T in RANGE_TURFS(7, source_t))
+		for(var/obj/item/A in T)
+			item_targets.Add(A)
+
+	if(!make_offerings(item_targets))
+		fail("Your offerings are not worthy.", H, C)
+		return FALSE
+
+	EOTP.current_rewards = miracles
+	EOTP.armaments_points = min(EOTP.armaments_points + 5, EOTP.max_armaments_points)
+	return TRUE
+
+/datum/ritual/cruciform/priest/offering/proc/make_offerings(list/offerings)
+	var/num_check = 0
+	var/list/true_offerings = list()
+	for(var/path in req_offerings)
+		var/req_num = req_offerings[path]
+		var/num_item = 0
+		for(var/obj/item/I in offerings)
+			if(istype(I, path))
+				if(num_item >= req_num)
+					break
+				if(istype(I, /obj/item/stack))
+					var/obj/item/stack/S = I
+					num_item += S.amount
+				else
+					num_item++
+				true_offerings.Add(I)
+
+		if(num_item < req_num)
+			break
+		else
+			num_check++
+
+	if(num_check >= req_offerings.len)
+		for(var/path in req_offerings)
+			var/req_num = req_offerings[path]
+			for(var/obj/item/I in true_offerings)
+				if(req_num <= 0)
+					break
+				if(istype(I, path))
+					if(istype(I, /obj/item/stack))
+						var/obj/item/stack/S = I
+						if(S.amount <= req_num)
+							var/num = S.amount
+							S.use(num)
+							req_num -= num
+						else
+							S.use(req_num)
+							req_num = 0
+					else
+						qdel(I)
+						req_num--
+		return TRUE
+
+	return FALSE
+
+/datum/ritual/cruciform/priest/offering/call_for_arms
+	name = "Inspiration"
+	phrase = "Pater da mihi fortitudinem cladem ad malum."
+	desc = "Make an appeal to the Will of the Protector by offering ten plasteel, twenty steel, and sixty biomatter to guide its power towards inspiring disciples. \
+	Your offering also increases the protectors armanents reserves."
+	req_offerings = list(/obj/item/stack/material/plasteel = 10, /obj/item/stack/material/steel = 20, /obj/item/stack/material/biomatter = 60)
+	miracles = list(INSPIRATION)
+
+/datum/ritual/cruciform/priest/offering/divine_intervention
+	name = "Divine intervention"
+	phrase = "Auxilium instaurarent domum tuam."
+	desc = "Make an appeal to the Will of the Protector by offering two hundred and forty biomatter to guide its power towards enhancing the abilities of disciples. \
+	Your offering also increases the protectors armanents reserves."
+	req_offerings = list(/obj/item/stack/material/biomatter = 240)
+	miracles = list(STAT_BUFF)
+
+/datum/ritual/cruciform/priest/offering/holy_guidance
+	name = "Holy guidance"
+	phrase = "Domine deus, lux via."
+	desc = "Make an appeal to the Will of the Protector by offering an oddity and forty grown fruits to guide its power towards enhancing cruciform power restoration among disciples. \
+	Your offering also increases the protectors armanents reserves."
+	req_offerings = list(/obj/item/oddity = 1, /obj/item/reagent_containers/food/snacks/grown = 40)
+	miracles = list(ENERGY_REWARD)
+
+/datum/ritual/cruciform/priest/offering/alert
+	name = "Discern Malcontents"
+	phrase = "E tenebris educ."
+	desc = "Make an appeal to the Will of the Protector by offering one hundred and twenty biomatter and twenty grown fruits to guide its power towards potentially discovering evil creatures. \
+	Your offering also increases the protectors armanents reserves."
+	req_offerings = list(/obj/item/stack/material/biomatter = 120, /obj/item/reagent_containers/food/snacks/grown = 20)
+	miracles = list(ALERT)

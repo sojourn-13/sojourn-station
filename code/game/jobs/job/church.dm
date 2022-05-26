@@ -31,7 +31,9 @@
 		STAT_TGH = 10,
 	)
 
-	perks = list(/datum/perk/neat, /datum/perk/greenthumb, /datum/perk/channeling, /datum/perk/chemist)
+	perks = list(/datum/perk/neat, /datum/perk/greenthumb, /datum/perk/channeling 
+		//, /datum/perk/chemist -Thanos Voice: "A small price to pay for salvation."
+	)
 
 	software_on_spawn = list(/datum/computer_file/program/records,
 							 /datum/computer_file/program/reports)
@@ -50,7 +52,7 @@
 
 	duties = "Represent the interests of church disciples on the colony. Protect them from persecution and speak for them.<br>\
 		Hold mass, give sermons, preach to the faithful, and lead group ritual sessions.<br>\
-		Recover and clone the faithful dead. Hold funerals for those who cannot be saved."
+		Hold funerals for those who cannot be saved."
 
 	setup_restricted = TRUE
 

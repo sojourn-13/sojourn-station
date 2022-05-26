@@ -63,7 +63,7 @@
 			to_chat(user, SPAN_NOTICE("[src]'s slots is full."))
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 	update_icon()
 
 
@@ -91,7 +91,7 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 	update_icon()
 
 
@@ -112,7 +112,7 @@
 	return data
 
 
-/obj/machinery/autolathe_disk_cloner/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/autolathe_disk_cloner/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = ui_data()
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)

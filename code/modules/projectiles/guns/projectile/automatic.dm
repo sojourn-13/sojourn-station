@@ -1,11 +1,11 @@
 /obj/item/gun/projectile/automatic
-	name = "automatic projectile gun"
-	desc = "A debug firearm, which should be reported if present in-game. Uses .35 rounds."
+	name = "old automatic projectile gun"
+	desc = "A no longer produced hologram of the base of all moder day smgs. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/generic_smg.dmi'
 	icon_state = "generic_smg"
 	w_class = ITEM_SIZE_NORMAL
-	load_method = SPEEDLOADER //Default is speedloader because all might not have magazine sprites.
-	max_shells = 22
+	load_method = SINGLE_CASING|SPEEDLOADER //Default is speedloader because all might not have magazine sprites.
+	max_shells = 1 //Automatic quick fix idk why this was set to 22 but it was. Issue fixed
 	caliber = CAL_35A
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
@@ -17,6 +17,7 @@
 	cocked_sound = 'sound/weapons/guns/interact/smg_cock.ogg'
 	zoom_factor = 0 //Default zoom factor you want on all automatic weapons.
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	auto_rack = TRUE
 	init_firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY,

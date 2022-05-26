@@ -9,11 +9,13 @@
 	New()
 		block=MONKEYBLOCK
 
+/* Just in case we want to use this again
 	deactivate(var/mob/M, var/connected, var/flags)
 		..(M,connected,flags)
 		if(istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = M
 			H.humanize()
+*/
 
 /datum/dna/gene/basic/nobreath
 	name="No Breathing"
@@ -177,7 +179,6 @@
 			return "hulk_[fat]_s"
 		else
 			return "hulk_[g]_s"
-		return 0
 
 	OnMobLife(var/mob/living/carbon/human/M)
 		if(!istype(M)) return

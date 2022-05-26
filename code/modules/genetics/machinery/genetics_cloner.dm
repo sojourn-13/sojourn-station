@@ -139,6 +139,11 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		return container_west
 	return null
 
+/obj/machinery/genetics/cloner/proc/addLog(var/message)
+	if(reader)
+		reader.addLog(message)
+	
+
 /obj/machinery/genetics/cloner/proc/find_reader()
 	//every direction but west and north
 	var/list/check_directions = list(SOUTHWEST, SOUTH, SOUTHEAST, EAST, NORTHWEST, NORTH, NORTHEAST)
@@ -196,33 +201,33 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	reader_loc = reader.loc
 
 	if(cloning)
-		reader.addLog("Error, Cloning already in progress~!")
+		addLog("Error, Cloning already in progress~!")
 		return
 
 	if(embryo)
-		reader.addLog("Error, Please vacate the dead embryo from the chamber~!")
+		addLog("Error, Please vacate the dead embryo from the chamber~!")
 		return
 
 	container = find_container()
 	if(!container)
-		reader.addLog("Error, Protein canister not detected~!")
+		addLog("Error, Protein canister not detected~!")
 		return
 
 	container_loc = container.loc
 
 	trunk = locate() in src.loc
 	if(!trunk)
-		reader.addLog("Error, Pipe trunk not detected~!")
+		addLog("Error, Pipe trunk not detected~!")
 		return
 
 	if(!clone_info)
-		reader.addLog("Error, Genetic Sample Plate not detected~!")
+		addLog("Error, Genetic Sample Plate not detected~!")
 		return
 
 	clone_mutation = clone_info.findCloneMutation()
 
 	if(!clone_mutation)
-		reader.addLog("Error, Cloning data not found~!")
+		addLog("Error, Cloning data not found~!")
 		return
 
 	progress = 0
@@ -317,7 +322,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	embryo = null
 
 	if(!trunk)
-		reader.addLog("Pipe not conected. Aborting Cloning proceedure.")
+		addLog("Pipe not conected. Aborting Cloning proceedure.")
 		return
 
 	holder.forceMove(trunk)
@@ -351,7 +356,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 			if(embryo_stage >= 5)
 				clone_ready = TRUE
 
-			reader.addLog("Dispensing Protein to the Test Subject.")
+			addLog("Dispensing Protein to the Test Subject.")
 
 			//Feed the beast.
 			if(progress <= breakout_point)
@@ -369,24 +374,24 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 								//TODO: SPECIAL BREAKOUT EVENT
 								breakout()
 						else
-							reader.addLog("Protein not available~, The Embryo has starved to death.")
+							addLog("Protein not available~, The Embryo has starved to death.")
 							stop() //The clone is dead.
 					else if(clone_ready)
 						visible_message(SPAN_DANGER("The creature inside the cloning vat begins to stir..."))
 				else
-					reader.addLog("Protein container not found~, The Embryo has starved to death.")
+					addLog("Protein container not found~, The Embryo has starved to death.")
 					stop()
 			else
 				breakout()
 
 	if (clone_ready && !ready_message)
-		reader.addLog("The Test Subject has Matured~!")
+		addLog("The Test Subject has Matured~!")
 		ready_message = TRUE
 		embryo = null
 
 	//Disposal loop
 	if(flush && air_contents.return_pressure() >= SEND_PRESSURE )	// flush can happen even without power
-		reader.addLog("Flushed the Test Subject down the disposal pipe~")
+		addLog("Flushed the Test Subject down the disposal pipe~")
 		flush()
 	if(mode != 1) //if off or ready, no need to charge
 		update_use_power(1)
@@ -456,6 +461,10 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	protein_consumption = round(BASE_PROTEIN_CONSUMPTION * (2 / (bin_rating))) * (cloning_speed/5)
 
 /obj/machinery/genetics/cloner/attackby(obj/item/I, mob/user)
+	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 90) &&!user.stats?.getPerk(PERK_NERD) && !usr.stat_check(STAT_BIO, 180))
+		to_chat(usr, SPAN_WARNING("The console pityingly suggests: \"Sorry hun, you were pressing some weird buttons so I locked you out~ Maybe have a scientist help~?\""))
+		return
+
 	if(default_deconstruction(I, user))
 		return
 	if(default_part_replacement(I, user))
@@ -586,7 +595,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	I.layer = 5.02
 	I.pixel_z = 32
 	add_overlay(I)
-	
+
 /*
 //Debugging
 /obj/machinery/genetics/cloner/verb/eject_cloneling()
@@ -669,14 +678,17 @@ and which aren't.
 	cloneLog = "\[[stationtime2text()]\] " + string + "<br>" + cloneLog
 
 /obj/machinery/computer/genetics/clone_console/attack_hand(mob/user)
+	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 75) &&!user.stats?.getPerk(PERK_NERD) && !usr.stat_check(STAT_BIO, 150))
+		to_chat(usr, SPAN_WARNING("This is a bit beyond your cognitive understanding."))
+		return
 	if(..())
 		return TRUE
-	ui_interact(user)
+	nano_ui_interact(user)
 
  /**
-  * The ui_interact proc is used to open and update Nano UIs
-  * If ui_interact is not used then the UI will not update correctly
-  * ui_interact is currently defined for /atom/movable (which is inherited by /obj and /mob)
+  * The nano_ui_interact proc is used to open and update Nano UIs
+  * If nano_ui_interact is not used then the UI will not update correctly
+  * nano_ui_interact is currently defined for /atom/movable (which is inherited by /obj and /mob)
   *
   * @param user /mob The mob who is interacting with this ui
   * @param ui_key string A string key to use for this ui. Allows for multiple unique uis on one obj/mob (defaut value "main")
@@ -684,7 +696,7 @@ and which aren't.
   *
   * @return nothing
   */
-/obj/machinery/computer/genetics/clone_console/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/computer/genetics/clone_console/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	// this is the data which will be sent to the ui
 	var/list/data = form_data()
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)

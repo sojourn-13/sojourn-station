@@ -150,6 +150,14 @@
 	crate_name = "exotic seeds crate"
 	group = "Hydroponics"
 
+/datum/supply_pack/hydro_tray
+	name = "Hydroponics Tray Crate"
+	contains = list(/obj/machinery/portable_atmospherics/hydroponics)
+	cost = 340
+	containertype = /obj/structure/largecrate
+	crate_name = "hydroponics tray crate"
+	group = "Hydroponics"
+
 /datum/supply_pack/watertank
 	name = "Water Tank Crate"
 	contains = list(/obj/structure/reagent_dispensers/watertank)

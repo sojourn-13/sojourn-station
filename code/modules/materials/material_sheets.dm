@@ -12,6 +12,18 @@
 	var/material/material
 	var/apply_colour //temp pending icon rewrite
 
+/obj/item/stack/material/New(loc, material_count=null)
+	.=..(loc, material_count)
+	//Make shards if there is a remainder for any reason. If it rounds down to zero, remove it.'
+	var/remainder = amount - round(amount, 1)
+	if(remainder != 0)
+		log_debug("Item: [type] Initial amount:[amount] Remainder: [remainder]")
+		amount -= remainder
+		new /obj/item/material/shard(get_turf(src), default_type, remainder)
+		if(amount == 0)
+			qdel(src)
+			return
+
 /obj/item/stack/material/Initialize()
 	. = ..()
 	pixel_x = rand(0,10)-5
@@ -35,7 +47,14 @@
 
 	matter = material.get_matter()
 	update_strings()
-
+/*
+/obj/item/stack/material/get_matter()
+	. = list()
+	if(matter)
+		for(var/i in matter)
+			matter[i] = amount
+		. = matter
+*/
 /obj/item/stack/material/attack_self(mob/living/user)
 	user.craft_menu()
 
@@ -65,7 +84,7 @@
 
 /obj/item/stack/material/transfer_to(obj/item/stack/S, var/tamount=null, var/type_verified)
 	var/obj/item/stack/material/M = S
-	if(!istype(M) || material.name != M.material.name)
+	if(!M || !istype(M) || material.name != M.material.name)
 		return 0
 	var/transfer = ..(S,tamount,1)
 	if(src) update_strings()
@@ -101,6 +120,9 @@
 	rand_min = 3
 	rand_max = 8
 
+/obj/item/stack/material/iron/full
+	amount = 120
+
 /obj/item/stack/material/sandstone
 	name = "sandstone brick"
 	icon_state = "sheet-sandstone"
@@ -119,11 +141,8 @@
 	price_tag = 25
 	novariants = FALSE
 
-/obj/item/stack/material/durasteel
-	name = "durasteel"
-	icon_state = "sheet-durasteel"
-	default_type = MATERIAL_DURASTEEL
-	price_tag = 1000
+/obj/item/stack/material/diamond/full
+	amount = 120
 
 /obj/item/stack/material/diamond/random
 	rand_min = 1
@@ -133,12 +152,21 @@
 	rand_min = 10
 	rand_max = 12
 
+/obj/item/stack/material/durasteel
+	name = "durasteel"
+	icon_state = "sheet-durasteel"
+	default_type = MATERIAL_DURASTEEL
+	price_tag = 1000
+
 /obj/item/stack/material/uranium
 	name = MATERIAL_URANIUM
 	icon_state = "sheet-uranium"
 	default_type = MATERIAL_URANIUM
 	price_tag = 10
 	novariants = FALSE
+
+/obj/item/stack/material/uranium/full
+	amount = 120
 
 /obj/item/stack/material/uranium/random
 	rand_min = 2
@@ -154,6 +182,9 @@
 /obj/item/stack/material/plasma/random
 	rand_min = 3
 	rand_max = 5
+
+/obj/item/stack/material/plasma/full
+	amount = 120
 
 /obj/item/stack/material/plastic
 	name = "plastic"
@@ -176,6 +207,9 @@
 	price_tag = 10
 	novariants = FALSE
 
+/obj/item/stack/material/gold/full
+	amount = 120
+
 /obj/item/stack/material/gold/random
 	rand_min = 2
 	rand_max = 6
@@ -191,6 +225,9 @@
 	rand_min = 3
 	rand_max = 8
 
+/obj/item/stack/material/silver/full
+	amount = 120
+
 //Valuable resource, cargo can sell it.
 /obj/item/stack/material/platinum
 	name = "platinum"
@@ -203,6 +240,9 @@
 	rand_min = 1
 	rand_max = 6
 
+/obj/item/stack/material/platinum/full
+	amount = 120
+
 //Extremely valuable to Research.
 /obj/item/stack/material/mhydrogen
 	name = "metallic hydrogen"
@@ -210,6 +250,9 @@
 	default_type = MATERIAL_MHYDROGEN
 	price_tag = 10
 	novariants = FALSE
+
+/obj/item/stack/material/mhydrogen/full
+	amount = 120
 
 //Fuel for MRSPACMAN generator.
 /obj/item/stack/material/tritium
@@ -219,12 +262,18 @@
 	apply_colour = 1
 	price_tag = 10
 
+/obj/item/stack/material/tritium/full
+	amount = 120
+
 /obj/item/stack/material/osmium
 	name = "osmium"
 	icon_state = "sheet-silver"
 	default_type = MATERIAL_OSMIUM
 	apply_colour = 1
 	price_tag = 12
+
+/obj/item/stack/material/osmium/full
+	amount = 120
 
 /obj/item/stack/material/steel
 	name = MATERIAL_STEEL
@@ -278,6 +327,9 @@
 /obj/item/stack/material/cloth/random
 	rand_min = 2
 	rand_max = 7
+
+/obj/item/stack/material/cloth/soteria
+	amount = 4
 
 /obj/item/stack/material/silk
 	name = "silk"
@@ -384,3 +436,17 @@
 
 /obj/item/stack/material/compressed_matter/full
 	amount = 120
+
+/obj/item/stack/material/ameridian
+	name = "ameridian shard"
+	desc = "A weird green crystal that seems to grow on its own."
+	singular_name = "ameridian crystal"
+	icon = 'icons/obj/ameridian.dmi'
+	icon_state = "ameridian_crystal_item"
+	default_type = MATERIAL_AMERIDIAN
+	novariants = TRUE
+	price_tag = 50 // Ameridian mining is extremly dangerous and very profitable
+	max_amount = 360
+
+/obj/item/stack/material/ameridian/full
+	amount = 360

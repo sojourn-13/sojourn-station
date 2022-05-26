@@ -96,14 +96,12 @@
 
 // For when you want everything in a single arm.
 /datum/craft_recipe/tool/toolimplant
-	name = "Multitool implant"
-	result = /obj/item/organ_module/active/multitool/improvised
+	name = "Improvised multitool implant"
+	result = /obj/item/organ_module/active/simple/makeshift
 	steps = list(
 		list(/obj/item/storage/toolbox, 1),
 		list(/obj/item/circuitboard, 1),
-		list(/obj/item/organ/external/robotic, 1),
 		list(/obj/item/stack/cable_coil, 5, "time" = 20),
-		list(/obj/item/tool/knife/shiv, 1),
 		list(/obj/item/tool/screwdriver/improvised, 1),
 		list(/obj/item/tool/wirecutters/improvised, 1),
 		list(/obj/item/tool/crowbar/improvised, 1),
@@ -163,6 +161,19 @@
 		list(/obj/item/stack/cable_coil, 30, "time" = 10),
 		list(QUALITY_WIRE_CUTTING, 10, 20),
 		list(/obj/item/stack/rods, 2, 30)
+	)
+	
+/datum/craft_recipe/tool/improv_charger
+	name = "improvised crank charger"
+	result = /obj/item/device/manual_charger/improv
+	steps = list(
+		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_WELDING, 20, 30),
+		list(/obj/item/stack/rods, 10, 10),
+		list(QUALITY_WELDING, 10, 20),
+		list(/obj/item/stack/cable_coil, 10, "time" = 10),
+		list(QUALITY_WIRE_CUTTING, 10, 10),
+		list(QUALITY_ADHESIVE, 15, 20)
 	)
 
 /datum/craft_recipe/tool/handmade_handtele
@@ -256,4 +267,13 @@
 		list(QUALITY_WELDING, 10, 150),
 		list(QUALITY_HAMMERING, 15, 150),
 		list(QUALITY_SAWING, 15, 150)
+	)
+//A bucket of wax to be applied to tools
+/datum/craft_recipe/tool/waxcoat
+	name = "tool mod: wax coating"
+	result = /obj/item/tool_upgrade/productivity/waxcoat
+	steps = list(
+			list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),
+			list(QUALITY_WIRE_CUTTING, 10, 50),
+			list(/obj/item/stack/wax, 4, 4)
 	)

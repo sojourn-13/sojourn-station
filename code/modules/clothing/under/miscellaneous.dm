@@ -63,7 +63,7 @@
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 100, bullet = 100, energy = 100, bomb = 100, bio = 100, rad = 100)
+	armor_list = list(melee = 100, bullet = 100, energy = 100, bomb = 100, bio = 100, rad = 100)
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0
@@ -74,6 +74,11 @@
 	name = "loincloth"
 	desc = "A sturdy cloth that covers the private areas."
 	icon_state = "loincloth"
+
+/obj/item/clothing/under/chestwrap
+	name = "chest wrap"
+	desc = "A sturdy cloth that covers the private areas of females."
+	icon_state = "chestwrap"
 
 /obj/item/clothing/under/gharness
 	name = "gear harness"
@@ -213,7 +218,7 @@
 	icon_state = "gorka_ih_med_b"
 	item_state = "gorka_ih_med_b"
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/medspec/gorka_ih_med_g
 	name = "medical specialist gorka"
@@ -221,7 +226,7 @@
 	icon_state = "gorka_ih_med_g"
 	item_state = "gorka_ih_med_g"
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/medical/gorka_crew_med
 	name = "medical crew gorka"
@@ -271,6 +276,39 @@
 	desc = "An uniform that was produced by Greyson Positronics, cleaning to enginering this over engineered suit was used. Surprisingly the suit senors still work."
 	icon_state = "os_jumpsuit"
 
+/obj/item/clothing/under/os_jumpsuit/bdu
+	name = "Greyson Positronic jumpsuit"
+	desc = "A Battle Dress Uniform produced by Greyson Positronics for their more style oriented personnel"
+	icon_state = "bdugreyson"
+
+/obj/item/clothing/under/os_jumpsuit/bdu/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["suit up"] = ""
+	options["suit down"] = "_pants"
+	options["sleeves up"] = "_rolled"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 //Excelsior
 /obj/item/clothing/under/excelsior
 	name = "white excelsior jumpsuit"
@@ -300,6 +338,101 @@
 	item_state = "bl_suit"
 	has_sensor = 0
 
+/obj/item/clothing/under/excelsior/bdu
+	name = "excelsior BDU"
+	desc = "A somewhat dated Excelsior styled Battle Dress Uniform, spread the revolution in style!"
+	icon_state = "bduexcel"
+	item_state = "bduexcel"
+	has_sensor = 0
+/obj/item/clothing/under/excelsior/bdu/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["suit up"] = ""
+	options["suit down"] = "_pants"
+	options["sleeves up"] = "_rolled"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(usr, SPAN_NOTICE("You roll your [choice]."))
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+//*BDUs*//
+
+/obj/item/clothing/under/bdu
+	name = "standard BDU"
+	desc = "A baggy, dated Battle Dress Uniform in slavic tow tone."
+	icon_state = "bdustandard"
+	item_state = "bdustandard"
+
+/obj/item/clothing/under/bdu/tan
+	name = "tan BDU"
+	desc = "A baggy, dated Battle Dress Uniform in desert shades."
+	icon_state = "bdutan"
+	item_state = "bdutan"
+
+/obj/item/clothing/under/bdu/black
+	name = "black BDU"
+	desc = "A baggy, dated Battle Dress Uniform in dark colours."
+	icon_state = "bdublack"
+	item_state = "bdublack"
+
+/obj/item/clothing/under/bdu/grey
+	name = "grey BDU"
+	desc = "A baggy, dated Battle Dress Uniform in station-grey."
+	icon_state = "bdugrey"
+	item_state = "bdugrey"
+
+/obj/item/clothing/under/bdu/camo
+	name = "camo BDU"
+	desc = "A baggy, dated Battle Dress Uniform in classic camo pattern."
+	icon_state = "bducamo"
+	item_state = "bducamo"
+
+/obj/item/clothing/under/bdu/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["suit up"] = ""
+	options["suit down"] = "_pants"
+	options["sleeves up"] = "_rolled"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
 //Dresses
 /obj/item/clothing/under/dress
 	name = "gray summerdress"
@@ -322,8 +455,8 @@
 /obj/item/clothing/under/leisure
 	name = "leisure outfit"
 	desc = "A leisure outfit with brown jacket. Sometimes you just want to wear what is comfortable."
-	icon_state = "leisuroutfit"
-	item_state = "leisuroutfit"
+	icon_state = "leisureoutfit"
+	item_state = "leisureoutfit"
 
 /obj/item/clothing/under/leisure/white
 	name = "white blouse"
@@ -535,10 +668,48 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/helltaker
-	name = "charming outfit"//Helltaker reference
-	desc = "A red shirt with a black tie and black pants. Stylish enough to impress the devil."
+	name = "black charming outfit" // Helltaker reference
+	desc = "A red suit shirt with a black bottom and optional tie. Stylish enough to impress the devil." // Accomodating description for the alt sprites - Seb
 	icon_state = "helltaker"
 	item_state = "helltaker"
+	price_tag = 45
+
+/obj/item/clothing/under/helltaker/verb/toggle_style() // Alt styles to impersonate the most unique ones, made by me. - Seb
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default"] = "helltaker" // Lucy and Cerberus are both this one, no need for more alts. - Seb
+	options["sour gamer"] = "malina"
+	options["tired sadist"] = "pandemonica"
+	options["bratty masochist"] = "zdrada"
+	options["the cool one"] = "justice"
+	options["the lustful one"] = "modeus"
+
+	var/choice = input(M,"What kind of demon do you want to be?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/under/helltaker_m
+	name = "white charming outfit"
+	desc = "A collared, loose red shirt with white pants and a stout belt. Go get your own demon harem, now."
+	icon_state = "helltaker_m" // The Helltaker dude himself - Seb
+	item_state = "helltaker_m"
 	price_tag = 45
 
 /obj/item/clothing/under/colony
@@ -554,7 +725,7 @@
 	icon_state = "johnny"
 	item_state = "johnny"
 	price_tag = 60
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 5,
 		energy = 5,
@@ -569,7 +740,7 @@
 	icon_state = "raider"
 	item_state = "raider"
 	price_tag = 60
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 5,
 		energy = 5,
@@ -583,7 +754,7 @@
 	icon_state = "tribalm"
 	item_state = "tribalm"
 	price_tag = 50
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 5,
 		energy = 5,
@@ -591,6 +762,7 @@
 		bio = 0,
 		rad = 0
 	)
+
 /obj/item/clothing/under/tribalhide/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"

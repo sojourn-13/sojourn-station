@@ -23,8 +23,8 @@
 	new /obj/item/clothing/suit/storage/toggle/club(src)
 	new /obj/item/clothing/under/rank/bartender(src)
 	new /obj/item/clothing/under/rank/bartender(src)
-	new /obj/item/clothing/suit/storage/wcoat/black(src)
-	new /obj/item/clothing/suit/storage/wcoat/black(src)
+	new /obj/item/clothing/accessory/waistcoat(src)
+	new /obj/item/clothing/accessory/waistcoat(src)
 	new /obj/item/clothing/shoes/color/black(src)
 	new /obj/item/clothing/shoes/color/black(src)
 	new /obj/item/clothing/under/rank/bartender/skirt(src)
@@ -47,6 +47,12 @@
 	new /obj/item/storage/box/mousetraps(src)
 	new /obj/item/clothing/under/rank/chef(src)
 	new /obj/item/clothing/head/rank/chef(src)
+	new /obj/item/clothing/shoes/laceup(src)
+	new /obj/item/clothing/shoes/laceup/white(src)
+	new /obj/item/clothing/under/helltaker_m(src)
+	new /obj/item/clothing/under/helltaker(src)
+	new /obj/item/clothing/suit/storage/helltaker_apron(src)
+	new /obj/item/clothing/suit/storage/wcoat/helltaker(src)
 
 /*
  * Janitor
@@ -79,25 +85,15 @@
 	new /obj/item/storage/pouch/small_generic(src) // Because I feel like poor janitor gets it bad.
 	new /obj/item/newspaper_stack(src)
 	new /obj/item/holyvacuum(src)
+	new /obj/item/clothing/accessory/job/cape/service(src) // Boobles! - Seb
 
 /obj/structure/closet/custodial
 	name = "church custodial closet"
-	desc = "It's a storage unit for janitorial clothes and gear."
+	desc = "It's a storage unit for janitorial equipment."
 	icon_state = "custodian"
 
 /obj/structure/closet/custodial/populate_contents()
-	if(prob(25))
-		new /obj/item/storage/backpack/neotheology(src)
-	else if(prob(25))
-		new /obj/item/storage/backpack/sport/neotheology(src)
-	else
-		new /obj/item/storage/backpack/satchel/neotheology(src)
-	new /obj/item/clothing/under/rank/church(src)
 	new /obj/item/storage/belt/utility/neotheology(src)
-	new /obj/item/device/radio/headset/church(src)
-	new /obj/item/clothing/gloves/thick(src)
-	new /obj/item/clothing/head/soft/purple(src)
-	new /obj/item/clothing/head/beret/purple(src)
 	new /obj/item/device/lighting/toggleable/flashlight(src)
 	new /obj/item/gun/matter/launcher/nt_sprayer(src)
 	new /obj/item/caution(src)
@@ -106,9 +102,8 @@
 	new /obj/item/caution(src)
 	new /obj/item/device/lightreplacer(src)
 	new /obj/item/storage/bag/trash(src)
-	new /obj/item/clothing/shoes/galoshes(src)
 	new /obj/item/mop(src)
-	new /obj/item/soap/deluxe(src)
+	new /obj/item/soap/church(src)
 	new /obj/item/storage/pouch/small_generic(src) // Because I feel like poor janitor gets it bad.
 	new /obj/item/tool/knife/dagger/nt(src)
 	new /obj/item/clothing/suit/armor/vest/custodian(src)
@@ -133,10 +128,10 @@
 	new /obj/item/clothing/mask/gas/germanmask(src)
 	new /obj/item/device/radio/headset/church(src)
 	new /obj/item/clothing/gloves/thick(src)
-	new /obj/item/clothing/suit/armor/vest/acolyte(src)
-	new /obj/item/clothing/head/helmet/acolyte(src)
 	new /obj/item/clothing/under/rank/church/sport(src)
 	new /obj/item/clothing/suit/storage/neotheosports(src)
 	new /obj/item/gun/energy/ntpistol(src)
 	new /obj/item/cell/small(src)
 	new /obj/item/tool/knife/dagger/nt(src)
+	new /obj/item/clothing/head/helmet/acolyte(src)
+	new /obj/item/clothing/suit/armor/vest/acolyte(src)

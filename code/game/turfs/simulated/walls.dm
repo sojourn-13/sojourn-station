@@ -228,7 +228,7 @@
 			Proj.damage_types[BRUTE] = round(Proj.damage_types[BRUTE] / 2 + Proj.damage_types[BRUTE] * ricochetchance / 200)
 			Proj.damage_types[BURN] = round(Proj.damage_types[BURN] / 2 + Proj.damage_types[BURN] * ricochetchance / 200)
 			take_damage(min(proj_damage - damagediff, 100))
-			visible_message("<span class='danger'>The [Proj] ricochets from the surface of wall!</span>")
+			visible_message("<span class='danger'>\The [Proj] ricochets from the surface of wall!</span>")
 			projectile_reflection(Proj)
 			new /obj/effect/sparks(get_turf(Proj))
 			return PROJECTILE_CONTINUE // complete projectile permutation
@@ -422,8 +422,9 @@
 	if(!total_radiation)
 		return
 
-	for(var/mob/living/L in range(3,src))
-		L.apply_effect(total_radiation, IRRADIATE,0)
+	/*for(var/mob/living/L in range(3,src))
+		L.apply_effect(total_radiation, IRRADIATE,0)*/
+	PulseRadiation(src, total_radiation, 3) // Too tired to find the proper place to add the radiate proc, so this will do.
 	return total_radiation
 
 /turf/simulated/wall/proc/burn(temperature)

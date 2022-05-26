@@ -28,6 +28,11 @@
 	udder.my_atom = src
 	..()
 
+/mob/living/simple_animal/hostile/retaliate/goat/Destroy()
+	udder.my_atom = null
+
+	. = ..()
+
 /mob/living/simple_animal/hostile/retaliate/goat/beg(var/atom/thing, var/atom/holder)
 	visible_emote("butts insistently at [holder]'s legs and reaches towards their [thing].")
 
@@ -94,7 +99,7 @@
 		..()
 //cow
 /mob/living/simple_animal/cow
-	name = "cow"
+	name = "Cow"
 	desc = "Known for their milk, just don't tip them over."
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "cow"
@@ -123,6 +128,11 @@
 	udder = new(100)
 	udder.my_atom = src
 	..()
+
+/mob/living/simple_animal/cow/Destroy()
+	udder.my_atom = null
+
+	. = ..()
 
 /mob/living/simple_animal/cow/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	var/obj/item/reagent_containers/G = O
@@ -207,7 +217,7 @@
 			new /mob/living/simple_animal/chicken(src.loc)
 			qdel(src)
 
-var/const/MAX_CHICKENS = 10
+var/const/MAX_CHICKENS = 20
 var/global/chicken_count = 0
 
 /mob/living/simple_animal/chicken
@@ -277,7 +287,7 @@ var/global/chicken_count = 0
 		var/obj/item/reagent_containers/food/snacks/egg/E = new(get_turf(src))
 		E.pixel_x = rand(-6,6)
 		E.pixel_y = rand(-6,6)
-		if(chicken_count < MAX_CHICKENS && prob(10))
+		if(chicken_count < MAX_CHICKENS && prob(25)) //Statistically, one out of four eggs will be capable of hatching
 			START_PROCESSING(SSobj, E)
 
 
@@ -336,3 +346,143 @@ var/global/chicken_count = 0
 				to_chat(M, pick(responses))
 	else
 		..()
+
+/mob/living/simple_animal/metal_chicken
+	name = "\improper C.H.I.C.K"
+	desc = "The Chemical Housing Internal Combustion Ki, or CHICK, is a biomechanical robot that can convert useless organic material into more useful metallic material using an internalized combustion and chemical processor."
+	icon = 'icons/mob/mobs-domestic.dmi'
+	icon_state = "robot_chicken"
+	speak = list("cluck!","BWAAAAARK BWAK BWAK BWAK!","bwaak bwak.")
+	emote_see = list("pecks at the ground","flaps its wings viciously")
+	speak_chance = 2
+	turns_per_move = 3
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_amount = 0
+	leather_amount = 0
+	bones_amount = 0
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "kicks"
+	attacktext = "kicked"
+	health = 50
+	maxHealth = 50
+	var/eggsleft = 0
+	pass_flags = PASSTABLE
+	mob_size = MOB_SMALL
+	mob_classification = CLASSIFICATION_SYNTHETIC
+	min_oxy = 0
+	max_oxy = 0
+	min_tox = 0
+	max_tox = 0
+	min_co2 = 0
+	max_co2 = 0
+	min_n2 = 0
+	max_n2 = 0
+	autoseek_food = FALSE
+	beg_for_food = FALSE
+	hunger_enabled = FALSE
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
+	var/chem_to_egg = 30 // How much of one chem to make an egg. We use 20 for the normallity of the sheet and 10 do to coverting losses...
+
+/mob/living/simple_animal/metal_chicken/New()
+	..()
+	reagents.maximum_volume = 6000 // So that they can hold enough chem, same quantity as a bidon
+
+/mob/living/simple_animal/metal_chicken/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+	if(user.a_intent == I_HELP) // Are we helping ?
+		// If it is a tool, assign it to the tool variable defined earlier.
+		if(istype(O, /obj/item/tool))
+			T = O
+
+		if(QUALITY_WELDING in T?.tool_qualities)
+			if(health < maxHealth)
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					health = maxHealth
+					to_chat(user, "You repair the damage to [src].")
+					return
+				return
+			to_chat(user, "[src] doesn't need repairs.")
+			return
+
+	if(istype(O, /obj/item/reagent_containers/food)) //feedin' dem chickens
+		var/obj/item/reagent_containers/food/snacks/grown/G = O
+		if(G.reagents.total_volume >= reagents.maximum_volume - reagents.total_volume)
+			to_chat(user, "\blue [name] is completly full!")
+			return
+		user.visible_message("\blue [user] feeds [O] to [name]! She clucks happily.","\blue You feed [O] to [name]! She clucks happily.")
+		user.drop_item()
+		G.reagents.trans_to_mob(src, G.reagents.total_volume, CHEM_BLOOD)
+		qdel(O)
+	else
+		..()
+
+/mob/living/simple_animal/metal_chicken/Life()
+	. =..()
+	if(!.)
+		return
+	if(!stat && prob(25) && lay_egg()) //We are less likely to lay eggs
+		visible_message("[src] [pick("lays an egg.","squats down and croons.","begins making a huge racket.","begins clucking raucously.")]")
+
+/mob/living/simple_animal/metal_chicken/proc/lay_egg()
+	if(!reagents.reagent_list.len)
+		return FALSE
+	var/chem = pick(reagents.reagent_list):id
+	var/egg_type
+	if(reagents.remove_reagent(chem, chem_to_egg, TRUE))
+		switch(chem)
+			// Turn liquid metal into solids
+			if(MATERIAL_IRON) // Steel isn't a chem, so we use the next best thing
+				egg_type = /obj/item/stack/material/steel
+			if(MATERIAL_SILVER)
+				egg_type = /obj/item/stack/material/silver
+			if(MATERIAL_GOLD)
+				egg_type = /obj/item/stack/material/gold
+			if(MATERIAL_PLASMA)
+				egg_type = /obj/item/stack/material/plasma
+			if(MATERIAL_URANIUM)
+				egg_type = /obj/item/stack/material/uranium
+			if("plasticide")
+				egg_type = /obj/item/stack/material/plastic
+			if("woodpulp")
+				egg_type = /obj/item/stack/material/wood
+			if("crayon_dust")
+				egg_type = /obj/random/rations/crayon
+			if("slimejelly")
+				egg_type = /obj/item/slime_extract/grey
+			if("milk")
+				egg_type = /obj/item/reagent_containers/food/snacks/sliceable/cheesewheel
+			if("silicate")
+				egg_type = /obj/item/stack/material/glass
+			if("nicotine")
+				egg_type = /obj/item/clothing/mask/smokable/cigarette
+			if("pararein")
+				egg_type = /obj/effect/spider/spiderling
+			if("blattedin")
+				egg_type = /obj/item/reagent_containers/food/snacks/cube/roach
+			if("coco")
+				egg_type = /obj/item/reagent_containers/food/snacks/chocolatebar
+			else // Empty bottle that then get filled with left-over chems
+				egg_type = /obj/item/reagent_containers/glass/bottle
+
+	if(!egg_type) // In case we don't have something to lay.
+		return FALSE
+
+	var/egg = new egg_type(get_turf(src))
+	if(!(istype(egg, /obj/item/reagent_containers/food/snacks/cube/roach) || istype(egg, /obj/item/reagent_containers/food/snacks/sliceable/cheesewheel)) && istype(egg, /obj/item/reagent_containers))
+		var/obj/item/reagent_containers/RC = egg
+		RC.reagents.clear_reagents() // Remove all of the previous chem, just in case
+		RC.reagents.add_reagent(chem, chem_to_egg) // Add the reagent in quantity it is supposed to have.
+	return TRUE
+
+/mob/living/simple_animal/metal_chicken/death()
+	..()
+	visible_message("<b>[src]</b> blows apart!")
+	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
+	new /obj/item/circuitboard/chicken(src.loc)
+	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+	s.set_up(3, 1, src)
+	s.start()
+	qdel(src)
+	return

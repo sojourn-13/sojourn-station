@@ -18,8 +18,8 @@
 *
 * ".Copy() just works"
 *
-* Example of an inherant_mutations list:
-* inherant_mutations= List(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MKNEWAIFUHAIR)
+* Example of an inherent_mutations list:
+* inherent_mutations= List(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MKNEWAIFUHAIR)
 **/
 //#define JANEDEBUG 1
 
@@ -76,7 +76,7 @@
 	log_debug("func initializeFromMob called. Mob: [source]")
 	#endif
 	//No robots allowed.
-	if(issilicon(source))
+	if(issynthetic(source))
 		return
 	addInherentMutations(source.inherent_mutations, source.type, source.name)
 	addUnnaturalMutations(source.unnatural_mutations.mutation_pool)
@@ -147,11 +147,14 @@
 	#ifdef JANEDEBUG
 	log_debug("findCloneMutation: getting a random active clone mutation for cloning")
 	#endif
-	var/list/clone_mutation_pool
+	var/list/clone_mutation_pool = list()
 	for (var/datum/genetics/mutation/selected_mutation in mutation_pool)
 		if(selected_mutation.clone_gene && selected_mutation.active)
 			clone_mutation_pool += selected_mutation
-	return pick(clone_mutation_pool)
+	if(clone_mutation_pool.len)
+		return pick(clone_mutation_pool)
+	else
+		return null
 
 //Randomly toggle random mutations in a holder as active; helps obfuscate unidentified mutations.
 /datum/genetics/genetics_holder/proc/randomizeActivations()
@@ -327,7 +330,7 @@
 	#ifdef JANEDEBUG
 	log_debug("getRecipeResult: resulting recipe- [recipe.type]")
 	#endif
-	
+
 	var/datum/genetics/mutation/new_mutation = recipe.get_result()
 	new_mutation.active = pick(TRUE,FALSE)
 	return(new_mutation)
@@ -430,19 +433,29 @@
 
 //Inject a mutagen into a living person.
 //MAKE SURE HOLDER IS SET FIRST.
-/datum/genetics/genetics_holder/proc/inject_mutations(var/mob/living/target)
+/datum/genetics/genetics_holder/proc/inject_mutations(var/mob/living/target, var/activate_all=FALSE)
 	#ifdef JANEDEBUG
 	log_debug("beginning implant: [target.name] ->[target.key], [target.ckey]")
 	#endif
 
 	//No robots allowed.
-	if(issilicon(target))
+	if(issynthetic(target))
 		return FALSE
+
+	//Opifex or Nanogate can't use genetics. If they try, their body begins removing the affected cells- manually.
+	if(ishuman(target))
+		var/mob/living/carbon/human/human_target = target
+		if(human_target.random_organ_by_process(BP_NANOGATE))
+			to_chat(human_target, SPAN_DANGER("You hear a synthetic voice, \"FOREIGN ORGANISM DETECTED. NEUTRALIZING\" before you feel something eating away at you on a celluar level."))
+			target.adjustCloneLoss(10)
+			return FALSE
 
 	//Add the mutations in a separate loop from the activation step.
 	for(var/datum/genetics/mutation/injected_mutation in mutation_pool)
 		var/datum/genetics/mutation/new_mutation = injected_mutation.copy()
 		new_mutation.implanted = FALSE //Sanity checking for activation loop.
+		if(activate_all)
+			new_mutation.active=TRUE
 		target.unnatural_mutations.addMutation(new_mutation)
 
 	//Process individual mutations, set them to implanted, and apply their effects to the target.
@@ -487,7 +500,7 @@
 /datum/genetics/genetics_holder/proc/check_destabilize()
 	//check if the holder is a valid mob. Sometimes it's not set, so we use this instead.
 	if(!holder_is_living())
-		return
+		return "not living"
 
 	if(processing_destabilization)
 		//Stop processing if we fall below the base value, or if the holder is already dead- Since we won't be needing it anymore
@@ -495,15 +508,15 @@
 			STOP_PROCESSING(SSprocessing, src)
 			stage = 0
 			processing_destabilization = FALSE
-			return
+			return "turning off destabilization"
 	else
 		//Start the process if we hit the threshold base value
 		if(total_instability >= DESTABILIZE_LEVEL_BASE)
 			last_destability_check = world.time
 			START_PROCESSING(SSprocessing, src)
 			processing_destabilization = TRUE
-			return
-	return
+			return "turning on destabilization"
+	return "None of the above happened."
 
 //Function for processing destabilization, it will only start if total_instability in a valid holder exceeds DESTABILIZE_LEVEL_BASE.
 //Doesn't start OR stop unless check_destabilize() tells it to.

@@ -14,7 +14,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	difficulty = "Very Hard."
 	selection_color = "#ccccff"
 	req_admin_notify = 1
-	playtimerequired = 1200
+	playtimerequired = 2500
 	wage = WAGE_COMMAND
 
 	ideal_character_age = 50 // Old geezer captains ftw

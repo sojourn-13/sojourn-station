@@ -19,7 +19,7 @@
 /datum/category_item/setup_option/background/ethnicity/vorhut
 	name = "Former Vorhut Soldier"
 	desc = "All Vorhut technically are soldiers, but a very real distinction is drawn between the civilians and the dedicated soldiers who serve as their empire's career storm troopers. \
-	Vorhut battalions were originally formed and trained by the survivors of the rebellion with experience fighting the Terran military, and were seen as fanatical and violent extremists. \
+	Vorhut battalions were originally formed and trained by the survivors of the rebellion with experience fighting the Solarian military, and were seen as fanatical and violent extremists. \
 	Nowadays, Vorhut are far more focused on military superiority than racial, and have a reputation for following orders ruthlessly and without question. They often hold the belief that \
 	their deaths are predetermined, and that if their time has come, they must face it with courage and dignity. If it has not, then their Corpsmen will see to it they live to battle another \
 	day."

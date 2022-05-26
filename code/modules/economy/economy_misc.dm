@@ -93,11 +93,10 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 		create_department_account(GLOB.all_departments[d])
 
 	station_account = department_accounts[DEPARTMENT_COMMAND]
-	vendor_account = department_accounts[DEPARTMENT_LSS] //Vendors are operated by the guild and purchases pay into their stock
 
 	for(var/obj/machinery/vending/V in GLOB.machines)
-		if(!V.custom_vendor)
-			V.earnings_account = V.vendor_department ? department_accounts[V.vendor_department] : vendor_account
+		if(V.vendor_department)
+			V.earnings_account = department_accounts[V.vendor_department]
 
 	current_date_string = "[num2text(rand(1,31))] [pick("January","February","March","April","May","June","July","August","September","October","November","December")], [game_year]"
 
@@ -115,12 +114,12 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 	department_account.wage = (department.budget_base + department.budget_personnel)
 	department_account.remote_access_pin = rand(1111, 111111)
 	department.account_pin = department_account.remote_access_pin
+	department_account.employer = department.funding_source
+	department_account.wage = department.get_total_budget()
 
 	department_account.department_id = department.id
 	if(department.id in DEPARTMENT_LSS)
 		department_account.can_make_accounts = TRUE
-	if(department.funding_type != FUNDING_NONE)
-		department_account.employer = department.funding_source
 
 	//create an entry in the account transaction log for when it was created
 	var/datum/transaction/T = new(department.account_initial_balance, department_account.owner_name, "Account creation", "Lonestar Shipping Solutions Terminal #277")

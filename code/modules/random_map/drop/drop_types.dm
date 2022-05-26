@@ -44,8 +44,7 @@ var/global/list/datum/supply_drop_loot/supply_drop
 		/obj/item/gun/projectile/mk58,
 		/obj/item/gun/projectile/shotgun/doublebarrel,
 		/obj/item/gun/projectile/shotgun/pump/combat,
-		/obj/item/gun/projectile/automatic/texan,
-		/obj/item/gun/projectile/automatic/pitbull)
+		/obj/item/gun/projectile/automatic/texan)
 
 /datum/supply_drop_loot/seeds
 	name = "Seeds"
@@ -136,7 +135,6 @@ var/global/list/datum/supply_drop_loot/supply_drop
 		/obj/item/storage/firstaid/fire,
 		/obj/item/storage/firstaid/toxin,
 		/obj/item/storage/firstaid/o2,
-		/obj/item/storage/firstaid/adv,
 		/obj/item/reagent_containers/glass/bottle/antitoxin,
 		/obj/item/reagent_containers/glass/bottle/inaprovaline,
 		/obj/item/reagent_containers/glass/bottle/stoxin,

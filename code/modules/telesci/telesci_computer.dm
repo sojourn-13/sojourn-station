@@ -51,6 +51,7 @@
 	var/totalProgress
 	var/list/delayStages = list()
 	var/obj/effect/telesci_portal_telegraph/telegraph
+	var/obj/effect/telesci_portal_construct/construct
 
 /obj/machinery/computer/telesci_console/Initialize()
 	. = ..()
@@ -60,7 +61,10 @@
 	if(istype(W, /obj/item/tool/multitool))
 		var/obj/item/tool/multitool/M = W
 		if(M.buffer_object && istype(M.buffer_object, /obj/machinery/telesci_pad))
+			if(istype(telepad))
+				closePortal()
 			telepad = M.buffer_object
+			telepad.boundComputer = src
 			M.buffer_object = null
 			to_chat(user, SPAN_WARNING("You upload the data from the [W.name]'s buffer."))
 	else
@@ -110,6 +114,8 @@
 		for(var/i in 1 to numPings)
 			var/turf/randTurf = get_random_turf_in_range(telegraph, 7, 1)
 			new /obj/effect/telesci_ping(randTurf)
+		playsound(telegraph,'sound/effects/telesci_ping.ogg',50,FALSE, 7, extrarange = 10, is_global = FALSE, ignore_walls = TRUE)
+		playsound(src,'sound/effects/telesci_process.ogg',50,FALSE, 7, is_global = FALSE)
 
 /obj/machinery/computer/telesci_console/proc/addLog(string)
 	teleLog = "\[[stationtime2text()]\] " + string + "<br>" + teleLog
@@ -117,21 +123,45 @@
 /obj/machinery/computer/telesci_console/proc/openPortal()
 	portalOpened = TRUE
 	telepad.openPortal(targetX, targetY, targetZ)
-	if(dangerous)
+	var/area/portalarea = get_area(get_turf(locate(targetX,targetY,targetZ)))
+	if(portalarea.tele_inhibited())
 		for(var/obj/machinery/telesci_relay/relay in telepad.relaysInUse)
 			relay.chanceExplode()
-	qdel(telegraph)
-	telegraph = null
+		var/inhibitorExploded = FALSE
+		for(var/obj/machinery/telesci_inhibitor/blocker in portalarea.tele_inhibitors)
+			if(!istype(blocker))
+				continue
+			inhibitorExploded = TRUE
+			playsound(blocker,'sound/effects/telesci_inhibitor_alarm.ogg', 80, FALSE, 7, extrarange = 10, is_global = FALSE, ignore_walls = TRUE)
+			blocker.visible_message(SPAN_DANGER("\The [src] sparks violently and begins to shake!"))
+			do_sparks(6, FALSE, get_turf(blocker))
+			addtimer(CALLBACK(blocker, /obj/machinery/telesci_inhibitor/proc/explode), 1 SECOND)
+
+		if(inhibitorExploded)
+			var/obj/item/device/radio/headset/a = new /obj/item/device/radio/headset(null)
+			a.autosay("ALERT: Extreme bluespace disruption detected in [loc]. Equipment failure imm-m-...", "Bluespace Inhibition Node")
+			qdel(a)
+
+
+	QDEL_NULL(telegraph)
+	QDEL_NULL(construct)
 	menuOption = BS_MENU_PORTAL
 
 /obj/machinery/computer/telesci_console/proc/closePortal()
 	portalOpened = FALSE
-	telepad.closePortal()
+	if(istype(telepad))
+		telepad.calculating = FALSE
+		telepad.update_icon()
+		for(var/obj/machinery/telesci_relay/relay in telepad.relaysInUse)
+			telepad.relaysInUse -= relay
+			relay.inUse = FALSE
+			relay.update_icon()
+		telepad.closePortal()
 	resetMenus()
 
 /obj/machinery/computer/telesci_console/proc/getDigitRequirement()
 	var/turf/target = get_turf(locate(targetX,targetY,targetZ))
-	var/area/targetArea = get_area(target)
+	var/area/targetArea = target.loc
 	var/turf/origin = get_turf(telepad)
 	if(!isPlayerLevel(targetZ))
 		return BS_DISTANCE_INVALID //Invalid area.
@@ -178,7 +208,7 @@
 	inputKey = list()
 	for(var/i in 1 to length(input))
 		var/guesschar = copytext(input, i, i+1)
-		if(!guesschar in digits)
+		if(!(guesschar in digits))
 			return FALSE
 		if(guesschar == "0")
 			guesschar = "1"
@@ -269,8 +299,12 @@
 	delayStages = null
 	ticking = FALSE
 	menuOption = BS_MENU_SELECT
-	qdel(telegraph)
-	telegraph = null
+	QDEL_NULL(telegraph)
+	QDEL_NULL(construct)
+	for(var/obj/machinery/telesci_relay/relay in telepad.relaysInUse)
+		telepad.relaysInUse -= relay
+		relay.inUse = FALSE
+		relay.update_icon()
 
 /obj/machinery/computer/telesci_console/proc/startTimer(var/baseDelay = BS_PATHING_DELAY)
 	var/list/obj/machinery/telesci_relay/workingRelays = telepad.findWorkingRelays()
@@ -286,26 +320,30 @@
 	totalProgress = 0
 	totalDelay += baseDelay
 	delayStages += baseDelay
-	if(!tracking_beacon)
+	if(!tracking_beacon || dangerous)
 		for(var/i in 1 to min(getDigitRequirement(), workingRelays.len))
 			delayStages += totalDelay + workingRelays[i].pathfinding_speed
 			totalDelay += workingRelays[i].pathfinding_speed
 			telepad.relaysInUse += workingRelays[i]
 			workingRelays[i].inUse = TRUE
+			workingRelays[i].update_icon()
 	if(dangerous)
 		delayStages += totalDelay + 2 * baseDelay
 		totalDelay += 2 * baseDelay
 	ticking = TRUE
+	telepad.calculating = TRUE
+	telepad.update_icon()
 	telegraph = new(get_turf(locate(targetX,targetY,targetZ)))
+	construct = new(get_turf(telepad))
 	progressMessage = "Initializing gateway pathing calculations..."
 	return TRUE
 
 /obj/machinery/computer/telesci_console/attack_hand(mob/user)
 	if(..())
 		return TRUE
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/computer/telesci_console/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/computer/telesci_console/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = form_data()
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -507,11 +545,11 @@
 			addLog("Closing bluespace tunnel by user request.")
 			closePortal()
 
-	ui_interact(user)
+	nano_ui_interact(user)
 	return FALSE
 
 /obj/machinery/computer/telesci_console/Destroy()
-	resetMenus()
+	closePortal()
 	return ..()
 
 // Effects that telegraph the portal to onlookers.
@@ -524,17 +562,20 @@
 /obj/effect/telesci_ping/New(turf/loc)
 	. = ..(loc)
 	flick("calc-attempt",src)
-	QDEL_IN(src, 1 SECONDS)
+	playsound(src,'sound/effects/telesci_sparkles.ogg',20,FALSE, 7, is_global = FALSE, ignore_walls = FALSE)
+	QDEL_IN(src, 1 SECOND)
 
 /obj/effect/telesci_portal_telegraph
 	name = "bluespace rift"
 	icon = 'icons/obj/telescience.dmi'
-	icon_state = "portal-telegraph"
+	icon_state = "portal-telegraph-startup"
 	layer = ABOVE_LIGHTING_LAYER
 
-/obj/effect/telesci_portal_telegraph/New(turf/loc)
-	. = ..(loc)
-	flick("portal-telegraph-startup",src)
+/obj/effect/telesci_portal_construct
+	name = "bluespace rift"
+	icon = 'icons/obj/telescience.dmi'
+	icon_state = "portal-telegraph"
+	layer = ABOVE_LIGHTING_LAYER
 
 #undef BS_MENU_SELECT
 #undef BS_MENU_MASTERMIND

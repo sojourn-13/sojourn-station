@@ -147,12 +147,14 @@ var/list/mob_hat_cache = list()
 
 	flavor_text = "It's a tiny little repair drone. The casing is stamped with an corporate logo and the subscript: '[company_name] Recursive Repair Systems: Fixing Tomorrow's Problem, Today!'"
 	playsound(src.loc, 'sound/machines/twobeep.ogg', 50, 0)
+	recalibrate_hotkeys()
 
 //Redefining some robot procs...
 /mob/living/silicon/robot/drone/SetName(pickedName as text)
 	// Would prefer to call the grandparent proc but this isn't possible, so..
 	real_name = pickedName
 	name = real_name
+	recalibrate_hotkeys()
 
 /mob/living/silicon/robot/drone/updatename()
 	if(controlling_ai)
@@ -206,7 +208,7 @@ var/list/mob_hat_cache = list()
 
 		if(stat == 2)
 
-			if(!config.allow_drone_spawn || emagged || health < -35) //It's dead, Dave.
+			if(!config.allow_drone_spawn || HasTrait(CYBORG_TRAIT_EMAGGED) || health < -35) //It's dead, Dave.
 				to_chat(user, SPAN_DANGER("The interface is fried, and a distressing burned smell wafts from the robot's interior. You're not rebooting this one."))
 				return
 
@@ -227,7 +229,7 @@ var/list/mob_hat_cache = list()
 		else
 			user.visible_message(SPAN_DANGER("\The [user] swipes \his ID card through \the [src], attempting to shut it down."), SPAN_DANGER("You swipe your ID card through \the [src], attempting to shut it down."))
 
-			if(emagged)
+			if(HasTrait(CYBORG_TRAIT_EMAGGED))
 				return
 
 			if(allowed(usr))
@@ -244,7 +246,7 @@ var/list/mob_hat_cache = list()
 		to_chat(user, SPAN_DANGER("There's not much point subverting this heap of junk."))
 		return
 
-	if(emagged)
+	if(HasTrait(CYBORG_TRAIT_EMAGGED))
 		to_chat(src, SPAN_DANGER("\The [user] attempts to load subversive software into you, but your hacked subroutines ignore the attempt."))
 		to_chat(user, SPAN_DANGER("You attempt to subvert [src], but the sequencer has no effect."))
 		return
@@ -257,7 +259,7 @@ var/list/mob_hat_cache = list()
 	var/time = time2text(world.realtime,"hh:mm:ss")
 	lawchanges.Add("[time] <B>:</B> [user.name]([user.key]) emagged [name]([key])")
 
-	emagged = 1
+	AddTrait(CYBORG_TRAIT_EMAGGED)
 	lawupdate = 0
 	connected_ai = null
 	clear_supplied_laws()
@@ -300,7 +302,7 @@ var/list/mob_hat_cache = list()
 //CONSOLE PROCS
 /mob/living/silicon/robot/drone/proc/law_resync()
 	if(stat != 2)
-		if(emagged)
+		if(HasTrait(CYBORG_TRAIT_EMAGGED))
 			to_chat(src, SPAN_DANGER("You feel something attempting to modify your programming, but your hacked subroutines are unaffected."))
 		else
 			to_chat(src, SPAN_DANGER("A reset-to-factory directive packet filters through your data connection, and you obediently modify your programming to suit it."))
@@ -309,7 +311,7 @@ var/list/mob_hat_cache = list()
 
 /mob/living/silicon/robot/drone/proc/shut_down()
 	if(stat != 2)
-		if(emagged)
+		if(HasTrait(CYBORG_TRAIT_EMAGGED))
 			to_chat(src, SPAN_DANGER("You feel a system kill order percolate through your tiny brain, but it doesn't seem like a good idea to you."))
 		else
 			to_chat(src, SPAN_DANGER("You feel a system kill order percolate through your tiny brain, and you obediently destroy yourself."))
@@ -324,7 +326,9 @@ var/list/mob_hat_cache = list()
 //Reboot procs.
 
 /mob/living/silicon/robot/drone/proc/we_live_again(var/mob/living/silicon/robot/R) //we shall live again!
-	..() //Can never go wrong with one of these!
+	//..() //Can never go wrong with one of these!
+	//Hex: Yes you can! STOP MAKING LINTER CHAN CRY!
+
 	R.stat = CONSCIOUS //We live again!
 	GLOB.dead_mob_list -= R //Were not dead...
 	GLOB.living_mob_list |= R //Were infact alive

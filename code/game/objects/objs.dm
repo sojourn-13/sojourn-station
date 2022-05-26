@@ -148,7 +148,7 @@
 			in_use = 0
 
 /obj/attack_ghost(mob/user)
-	ui_interact(user)
+	nano_ui_interact(user)
 	..()
 
 /obj/proc/interact(mob/user)
@@ -157,12 +157,12 @@
 /mob/proc/unset_machine()
 	src.machine = null
 
-/mob/proc/set_machine(var/obj/O)
+/mob/proc/set_machine(var/O)
 	if(src.machine)
 		unset_machine()
 	src.machine = O
-	if(istype(O))
-		O.in_use = 1
+	if(istype(O, /obj) || istype(O, /mob))
+		O:in_use = 1 // At this point, O is either a mob or an object, both of which have the in_use var, so it should be safe to do this. -R4d6
 
 /obj/item/proc/updateSelfDialog()
 	var/mob/M = src.loc

@@ -27,16 +27,34 @@
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific
 	name = "soporific coated rubber bullet"
+	var/spray = "stoxin"
+
+/obj/item/projectile/bullet/pistol_35/rubber/soporific/New()
+	..()
+	create_reagents(2)
+	reagents.add_reagent(spray, 2)
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)
-			L.reagents.add_reagent("stoxin", 2)
+			reagents.trans_to_mob(L, 2, CHEM_TOUCH, copy = FALSE)
+
+/obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo
+	name = "soporific condensed plastic bullet"
+	damage_types = list(BRUTE = 0)
+	agony = 25
+
+/obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(istype(L) && L.reagents)
+			L.reagents.add_reagent("stoxin", 5)
+
 
 /obj/item/projectile/bullet/pistol_35/hv
-	damage_types = list(BRUTE = 20)
-	armor_penetration = 10
+	damage_types = list(BRUTE = 10)
+	armor_penetration = 20
 	step_delay = 0.5
 	affective_damage_range = 4
 	affective_ap_range = 4
@@ -54,8 +72,9 @@
 
 /obj/item/projectile/bullet/pistol_35/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 18)
-	agony = 20
+	damage_types = list(BRUTE = 17)
+	agony = 6
+	post_penetration_dammult = 2
 	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
@@ -106,8 +125,8 @@
 	step_delay = 0.4
 
 /obj/item/projectile/bullet/magnum_40/hv
-	damage_types = list(BRUTE = 28)
-	armor_penetration = 25
+	damage_types = list(BRUTE = 20)
+	armor_penetration = 33
 	penetrating = 1
 	step_delay = 0.25
 	nocap_structures = TRUE //Door breaching
@@ -124,20 +143,45 @@
 	sharp = FALSE
 	step_delay = 0.5
 
+/obj/item/projectile/bullet/magnum_40/rubber/pepperball
+	name = "pepperball"
+	damage_types = list(brute = 0)
+	agony = 0
+	step_delay = 0.6 //a little slower than rubber rounds - these are just pepperspray balls
+	var/spray = "condensedcapsaicin"
+
+/obj/item/projectile/bullet/magnum_40/rubber/pepperball/New()
+	..()
+	create_reagents(5)
+	reagents.add_reagent(spray, 5)
+
+/obj/item/projectile/bullet/magnum_40/rubber/pepperball/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(istype(L) && L.reagents)
+			reagents.trans_to_mob(L, 5, CHEM_TOUCH, copy = FALSE)
+
 /obj/item/projectile/bullet/magnum_40/rubber/soporific
 	name = "soporific coated rubber bullet"
+	var/spray = "stoxin"
+
+/obj/item/projectile/bullet/magnum_40/rubber/soporific/New()
+	..()
+	create_reagents(3)
+	reagents.add_reagent(spray, 3)
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)
-			L.reagents.add_reagent("stoxin", 3)
+			reagents.trans_to_mob(L, 3, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 26)
-	agony = 32
-	armor_penetration = 5
+	damage_types = list(BRUTE = 24)
+	agony = 11
+	armor_penetration = 0
+	post_penetration_dammult = 2
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
@@ -164,8 +208,8 @@
 
 /// .50 Kurtz ///
 /obj/item/projectile/bullet/kurtz_50
-	damage_types = list(BRUTE = 30)
-	armor_penetration = 20
+	damage_types = list(BRUTE = 35)
+	armor_penetration = 15
 	can_ricochet = TRUE
 	embed = TRUE
 	step_delay = 0.65
@@ -193,17 +237,18 @@
 
 /obj/item/projectile/bullet/kurtz_50/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 35)
-	agony = 35
-	armor_penetration = 5
+	damage_types = list(BRUTE = 30)
+	agony = 12
+	post_penetration_dammult = 2
+	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
 	step_delay = 0.8
 
 /obj/item/projectile/bullet/kurtz_50/hv
 	name = "AV bullet"
-	damage_types = list(BRUTE = 40)
-	armor_penetration = 25
+	damage_types = list(BRUTE = 30)
+	armor_penetration = 35
 	penetrating = 2
 	can_ricochet = FALSE
 	step_delay = 0.45
@@ -237,8 +282,8 @@
 	step_delay = 0.5
 
 /obj/item/projectile/bullet/light_rifle_257/hv
-	damage_types = list(BRUTE = 26)
-	armor_penetration = 24
+	damage_types = list(BRUTE = 20)
+	armor_penetration = 30
 	penetrating = 2
 	hitscan = TRUE
 	affective_damage_range = 8 //Can snipe
@@ -259,9 +304,10 @@
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 24)
-	agony = 20
-	armor_penetration = 5
+	damage_types = list(BRUTE = 18)
+	agony = 6
+	post_penetration_dammult = 2
+	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
@@ -280,22 +326,21 @@
 ///7.5 Rifle///
 
 /obj/item/projectile/bullet/rifle_75
-	damage_types = list(BRUTE = 26)
+	damage_types = list(BRUTE = 25)
 	armor_penetration = 20
 	penetrating = 1
-	can_ricochet = TRUE
-	step_delay = 0.5
-	affective_damage_range = 5
-	affective_ap_range = 5
-
-/obj/item/projectile/bullet/rifle_75/hv
-	damage_types = list(BRUTE = 25)
-	armor_penetration = 30
-	penetrating = 2
 	can_ricochet = TRUE
 	step_delay = 0.3
 	affective_damage_range = 7
 	affective_ap_range = 7
+
+/obj/item/projectile/bullet/rifle_75/hv
+	damage_types = list(BRUTE = 22)
+	armor_penetration = 36
+	penetrating = 2
+	hitscan = TRUE
+	affective_damage_range = 8
+	affective_ap_range = 8
 	nocap_structures = TRUE //Helps against walls and doors
 
 /obj/item/projectile/bullet/rifle_75/practice
@@ -321,18 +366,26 @@
 
 /obj/item/projectile/bullet/rifle_75/rubber/soporific
 	name = "soporific coated rubber bullet"
+	var/spray = "stoxin"
+
+/obj/item/projectile/bullet/rifle_75/rubber/soporific/New()
+	..()
+	create_reagents(1)
+	reagents.add_reagent(spray, 1)
 
 /obj/item/projectile/bullet/rifle_75/rubber/soporific/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)
-			L.reagents.add_reagent("stoxin", 1)
+			reagents.trans_to_mob(L, 1, CHEM_TOUCH, copy = FALSE)
+
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 25)
-	agony = 28
-	armor_penetration = 5
+	damage_types = list(BRUTE = 24)
+	agony = 9
+	post_penetration_dammult = 2
+	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
@@ -342,8 +395,8 @@
 /obj/item/projectile/bullet/rifle_75/scrap
 	damage_types = list(BRUTE = 22)
 	armor_penetration = 10
-	affective_damage_range = 2
-	affective_ap_range = 2
+	affective_damage_range = 3
+	affective_ap_range = 3
 
 /// .408 OMNI ///
 
@@ -380,8 +433,8 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/hv
 	name = "sabot penetrator"
-	damage_types = list(BRUTE = 32)
-	armor_penetration = 40
+	damage_types = list(BRUTE = 24)
+	armor_penetration = 48
 	penetrating = 3
 	hitscan = TRUE
 	affective_damage_range = 9 //Sniping cal
@@ -390,9 +443,10 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 30)
-	agony = 32
-	armor_penetration = 15 //Half of normal
+	damage_types = list(BRUTE = 29)
+	agony = 12
+	post_penetration_dammult = 2
+	armor_penetration = 0 //Half of normal
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
@@ -405,11 +459,11 @@
 	affective_damage_range = 3
 	affective_ap_range = 3
 
-///Snowflake caseless///
+///Snowflake  ///
 
 /obj/item/projectile/bullet/c10x24
 	damage_types = list(BRUTE = 18)
-	armor_penetration = 15
+	armor_penetration = 18
 	penetrating = 2
 	can_ricochet = TRUE
 	sharp = TRUE
@@ -433,10 +487,11 @@
 	damage_types = list(BRUTE = 60)
 	embed = TRUE
 	armor_penetration = 60
-	agony = 70
+	agony = 100
 	penetrating = 2
 	affective_damage_range = 9
 	affective_ap_range = 9
+	penetrating = -5
 
 /obj/item/projectile/bullet/antim/scrap
 	damage_types = list(BRUTE = 63)
@@ -486,17 +541,24 @@
 	embed = FALSE
 	sharp = FALSE
 	step_delay = 1.65
-	affective_damage_range = 1
+	affective_damage_range = 5
 	affective_ap_range = 2
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific
 	name = "soporific coated beanbag"
+	var/spray = "stoxin"
+
+/obj/item/projectile/bullet/shotgun/beanbag/soporific/New()
+	..()
+	create_reagents(5)
+	reagents.add_reagent(spray, 5)
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)
-			L.reagents.add_reagent("stoxin", 5)
+			reagents.trans_to_mob(L, 5, CHEM_TOUCH, copy = FALSE)
+
 
 /obj/item/projectile/bullet/shotgun/practice
 	name = "practice slug"
@@ -602,12 +664,29 @@
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
 
+//Gauss rifle
+/obj/item/projectile/bullet/gauss
+	name = "gauss"
+	icon_state = "gauss"
+	mob_hit_sound = list('sound/effects/gore/sear.ogg')
+	hitsound_wall = 'sound/weapons/guns/misc/ric4.ogg'
+	damage_types = list(BRUTE = 54)
+	armor_penetration = 40
+	check_armour = ARMOR_BULLET
+	embed = FALSE
+	can_ricochet = FALSE
+	sharp = FALSE
+	affective_damage_range = 12
+	affective_ap_range = 12
+	hitscan = TRUE
+
 //Should do about 68 damage at 1 tile distance (adjacent), and 40 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	icon_state = "birdshot-1"
 	damage_types = list(BRUTE = 18)
+	agony = 5
 	pellets = 4
 	range_step = 1
 	spread_step = 10
@@ -619,6 +698,20 @@
 /obj/item/projectile/bullet/pellet/shotgun/Initialize()
 	. = ..()
 	icon_state = "birdshot-[rand(1,4)]"
+
+/obj/item/projectile/bullet/pellet/shotgun/scattershot //VERY dangerous, the weapon has a low refire rate for a reason. DO NOT use this for non exo weapons without tweaking.
+	name = "heavy shrapnel"
+	damage_types = list(BRUTE = 16) //We hit slightly softer than buckshot
+	agony = 0 //No.
+	pellets = 6 // but more times
+	range_step = 2 //and at longer range
+	step_delay = 1.1 //we travel a bit slower
+
+/obj/item/projectile/bullet/pellet/shotgun/flak //Devastating at point blank, but worthless past
+	name = "jagged shrapnel"
+	damage_types = list(BRUTE = 11) //Fired in bursts of three, for a total of 12 pellets at touch distances.
+	pellets = 3
+	agony = 0 //No.
 
 //'Laser' buckshot. Effectively just burn buckshot used for the Abdication.
 /obj/item/projectile/bullet/pellet/shotgun/energy
@@ -649,11 +742,11 @@
 
 /obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
 	explosion(target, 0, 0, 3)
-	return TRUE
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
+	return TRUE
 
 //Miscellaneous
 /obj/item/projectile/bullet/blank
@@ -671,8 +764,8 @@
 /obj/item/projectile/bullet/crossbow_bolt
 	name = "bolt"
 	icon_state = "bolt"
-	damage_types = list(BRUTE = 54)
-	armor_penetration = 10
+	damage_types = list(BRUTE = 45)
+	armor_penetration = 15
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9
 	affective_damage_range = 7
@@ -682,18 +775,72 @@
 /obj/item/projectile/bullet/crossbow_bolt/lethal
 	name = "bolt"
 	icon_state = "bolt"
-	damage_types = list(BRUTE = 56)
-	agony = 22
+	damage_types = list(BRUTE = 47)
+	agony = 29
 	armor_penetration = 5
 	step_delay = 0.9
 
 /obj/item/projectile/bullet/crossbow_bolt/hv
 	name = "bolt"
 	icon_state = "bolt"
-	damage_types = list(BRUTE = 58)
-	armor_penetration = 40
+	damage_types = list(BRUTE = 45)
+	armor_penetration = 55
 	penetrating = 3
 	hitscan = TRUE
 	affective_damage_range = 9
 	affective_ap_range = 9
 	nocap_structures = TRUE //Can do well againt walls and doors
+
+
+/obj/item/projectile/bullet/rod_bolt
+	name = "metal rod"
+	icon_state = "bolt"
+	damage_types = list(BRUTE = 10) //This is multiplied by tension when fired, so it's actually 50 damage.
+	armor_penetration = 15
+	step_delay = 0.9
+	embed = FALSE
+	penetrating = 1
+	affective_damage_range = 7
+	affective_ap_range = 7
+	var/obj/item/create_type = /obj/item/stack/rods
+
+/obj/item/projectile/bullet/rod_bolt/on_impact(atom/A)
+	..()
+	if(create_type)
+		new create_type(get_turf(src))
+
+/obj/item/projectile/bullet/rod_bolt/superheated
+	name = "superheated metal rod"
+	damage_types = list(BRUTE = 10, BURN = 2.5) //This is multiplied by tension when fired, so it's actually 62.5 damage.
+	armor_penetration = 20
+	step_delay = 0.6
+	embed = TRUE
+	penetrating = 0
+	affective_damage_range = 7
+	affective_ap_range = 7
+	create_type = null
+
+
+/obj/item/projectile/bullet/rod_bolt/rcd
+	name = "flashforged rod"
+	icon_state = "bolt"
+	damage_types = list(BRUTE = 9) //This is multiplied by tension when fired, so it's actually 45 damage. Slightly worse, but it's faster and has higher AP.
+	armor_penetration = 30
+	step_delay = 0.6
+	embed = FALSE
+	penetrating = 1
+	affective_damage_range = 7
+	affective_ap_range = 7
+	create_type = /obj/item/arrow/rcd
+
+/obj/item/projectile/bullet/rod_bolt/rcd/superhot
+	name = "flashforged superheated rod"
+	icon_state = "bolt"
+	damage_types = list(BRUTE = 9, BURN = 2.5) //This is multiplied by tension when fired, so it's actually 57.5 damage. Slightly worse, but it's faster and has higher AP.
+	armor_penetration = 30
+	step_delay = 0.2
+	embed = TRUE
+	penetrating = 0
+	affective_damage_range = 7
+	affective_ap_range = 7
+	create_type = null

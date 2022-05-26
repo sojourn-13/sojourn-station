@@ -20,8 +20,6 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_SILENCER = TRUE,
-		GUN_UPGRADE_RECOIL = 0.9,
-		GUN_UPGRADE_PEN_MULT = 0.9,
 		UPGRADE_BULK = 1
 		)
 	I.gun_loc_tag = GUN_MUZZLE
@@ -154,6 +152,25 @@
 	I.req_gun_tags = list(GUN_ENERGY)
 	I.prefix = "focused"
 
+/obj/item/gun_upgrade/barrel/excruciator_plus
+	name = "Factorial \"EXCRUCIATOR\" hyper lens"
+	desc = "It's time for us to shine. This device has been modified by members of the factorial path, doubling its strength and drawbacks, for better or worse."
+	icon_state = "Excruciator_plus"
+	matter = list(MATERIAL_BIOMATTER = 3, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1, MATERIAL_GLASS = 1)
+	price_tag = 160
+
+/obj/item/gun_upgrade/barrel/excruciator_plus/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_MULT = 1.45,
+		GUN_UPGRADE_CHARGECOST = 1.25,
+		UPGRADE_BULK = 0.75,
+		)
+	I.gun_loc_tag = GUN_BARREL
+	I.req_gun_tags = list(GUN_ENERGY)
+	I.prefix = "hyper focused"
+
 /obj/item/gun_upgrade/trigger
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1)
 
@@ -172,7 +189,7 @@
 		GUN_UPGRADE_FORCESAFETY = FALSE,
 		)
 	I.gun_loc_tag = GUN_TRIGGER
-	I.prefix = "lose trigger"
+	I.prefix = "feather trigger"
 
 //Disables the ability to toggle the safety, toggles the safety permanently on, takes 2 minutes to remove (yikes). Acquired through loot spawns
 /obj/item/gun_upgrade/trigger/cop_block
@@ -191,7 +208,7 @@
 	I.removal_time *= 10
 	I.gun_loc_tag = GUN_TRIGGER
 	I.breakable = FALSE
-	I.prefix = "locked"
+	I.prefix = "Locked"
 
 /obj/item/gun_upgrade/trigger/dnalock
 	name = "Soteria \"DNA lock\" Finger Imprinter Trigger"
@@ -243,7 +260,7 @@
 	desc = "An old technology from the Greyson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits .35 caliber weapons only and coats the bullets in dangerous caustic toxins."
 	icon_state = "Glass_Widow"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 4, MATERIAL_PLATINUM = 4)
-	price_tag = 250
+	price_tag = 800
 
 /obj/item/gun_upgrade/mechanism/glass_widow/New()
 	..()
@@ -341,7 +358,7 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_MECHANISM
 	I.breakable = FALSE
-	I.prefix = "lose trigger"
+	I.prefix = "feather trigger"
 
 //obj/item/gun_upgrade/underbarrel
 
@@ -396,7 +413,7 @@
 	GUN_UPGRADE_FIRE_DELAY_MULT = 0.25)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
-	I.prefix = "overloaded"
+	I.prefix = "overclocked"
 
 //Just massively reduces recoil like a grip but in the mechanism. Meh tear at best
 /obj/item/gun_upgrade/mechanism/clock_block //Real deal, but admin only atm
@@ -483,6 +500,7 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_MECHANISM
 */
+/* //The handholder rail and its consequences have been a disaster for Sojournkind.
 /obj/item/gun_upgrade/mechanism/gun_rail
 	name = "H&S \"HandHolder\" Barrel Rail"
 	desc = "A simple magnetic barrel rail, designed to fit onto a variety of weapons. Easy to attach, impossible to remove."
@@ -504,13 +522,13 @@
 	I.breakable = FALSE
 	I.unique_removal = TRUE
 	I.unique_removal_type = GUN_SCOPE
-
+*/
 /obj/item/gun_upgrade/mechanism/greyson_master_catalyst
 	name = "Greyson \"Master Unmaker\" infuser"
 	desc = "One of the rarest and most powerful weapon modification ever made by Greyson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
 	icon_state = "psionic_catalyst"
 	matter = list(MATERIAL_PLATINUM = 5, MATERIAL_PLASTEEL = 3, MATERIAL_DIAMOND = 10)
-	price_tag = 450
+	price_tag = 4500
 
 /obj/item/gun_upgrade/mechanism/greyson_master_catalyst/New()
 	..()
@@ -526,7 +544,7 @@
 	)
 	I.removal_time *= 10
 	I.gun_loc_tag = GUN_MECHANISM
-	I.prefix = "catalysted"
+	I.prefix = "catalytic"
 
 /obj/item/gun_upgrade/barrel/gauss
 	name = "Void Wolf \"Gauss Coil\" barrel"
@@ -565,14 +583,14 @@
 	I.gun_loc_tag = GUN_TRIGGER
 	I.req_gun_tags = list(GUN_ENERGY)
 	I.breakable = FALSE
-	I.prefix = "lose trigger"
+	I.prefix = "feather trigger"
 
 /obj/item/gun_upgrade/scope
 //	bad_type = /obj/item/gun_upgrade/scope
 
 /obj/item/gun_upgrade/scope/watchman
 	name = "Artificer's Guild \"Watchman\" scope"
-	desc = "In the age of 3D printing, the design of a scope one can rely on is common, but a scope that is special is a rarity. Hand-made scopes forged by the Artificer's Guild are known across the entire terran federation for the quality they have and this one is no diffrent."
+	desc = "In the age of 3D printing, the design of a scope one can rely on is common, but a scope that is special is a rarity. Hand-made scopes forged by the Artificer's Guild are known across the entire Solarian Federation for the quality they have and this one is no different."
 	icon_state = "Watchman"
 	matter = list(MATERIAL_GLASS = 2, MATERIAL_PLASTEEL = 1)
 	price_tag = 40
@@ -583,6 +601,24 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_OFFSET = 0.9,
 		GUN_UPGRADE_ZOOM = 1.2
+		)
+	I.gun_loc_tag = GUN_SCOPE
+	I.req_gun_tags = list(GUN_SCOPE)
+	I.prefix = "scoped"
+
+/obj/item/gun_upgrade/scope/acog
+	name = "H&S \"AGOG\" scope"
+	desc = "In the age of 3D printing, the design of a scope one can rely on is common, but a scope that is special is a rarity. This is not one such scope. Mass produced, lathe machined and incredibly cheap. These often misaligned optics are truly ubiquitous."
+	icon_state = "agog"
+	matter = list(MATERIAL_GLASS = 2, MATERIAL_STEEL = 1)
+	price_tag = 20
+
+/obj/item/gun_upgrade/scope/acog/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_OFFSET = 0.9,
+		GUN_UPGRADE_ZOOM = 1.1
 		)
 	I.gun_loc_tag = GUN_SCOPE
 	I.req_gun_tags = list(GUN_SCOPE)
@@ -629,7 +665,29 @@
 	GUN_UPGRADE_AUTOEJECT = TRUE)
 	I.req_gun_tags = list(GUN_MAGWELL)
 	I.gun_loc_tag = GUN_MAGWELL
-	I.prefix = "auto droppered"
+	I.prefix = "auto dropped"
+
+//Underbarrel aka bipods
+
+/obj/item/gun_upgrade/underbarrel
+
+/obj/item/gun_upgrade/underbarrel/bipod
+	name = "H&S \"Stand\" bipod"
+	desc = "A simple set of telescopic poles to keep a weapon stabilized during firing. It greatly reduces recoil when deployed, but also increases the gun\'s weight, making it unwieldy unless braced."
+	icon_state = "bipod"
+	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3)
+	price_tag = 130
+
+/obj/item/gun_upgrade/underbarrel/bipod/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_BIPOD = TRUE,
+		GUN_UPGRADE_RECOIL = 0.9,
+		UPGRADE_BULK = 1
+		)
+	I.gun_loc_tag = GUN_UNDERBARREL
+	I.prefix = "stablized"
 
 //Trash mods, for putting on old guns
 
@@ -650,7 +708,7 @@
 	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_TRIGGER
-	I.prefix = "lose trigger"
+	I.prefix = "feather trigger"
 
 /obj/item/gun_upgrade/barrel/faulty
 	name = "Warped Barrel"
@@ -742,7 +800,7 @@
 	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_MECHANISM
-	I.prefix = "lose trigger"
+	I.prefix = "feather trigger"
 
 #define TRASH_GUNMODS list(/obj/item/gun_upgrade/trigger/faulty, /obj/item/gun_upgrade/barrel/faulty, \
 		/obj/item/gun_upgrade/muzzle/faulty, /obj/item/gun_upgrade/mechanism/faulty, \

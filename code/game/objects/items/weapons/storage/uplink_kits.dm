@@ -1,8 +1,8 @@
 /obj/item/storage/box/syndicate/populate_contents()
 	switch (pickweight(list("bloodyspai" = 1, "stealth" = 1, "screwed" = 1, "guns" = 1, "murder" = 1, "freedom" = 1, "hacker" = 1, /*"lordsingulo" = 1,*/ "smoothoperator" = 1)))
 		if("bloodyspai")
-			new /obj/item/clothing/under/admin/chameleon(src)
-			new /obj/item/clothing/mask/gas/voice(src)
+			new /obj/item/clothing/under/chameleon(src)
+			new /obj/item/clothing/mask/chameleon/voice(src)
 			new /obj/item/card/id/syndicate(src)
 			new /obj/item/clothing/shoes/syndigaloshes(src)
 			return
@@ -62,13 +62,13 @@
 			return
 */
 
-			if("smoothoperator")
-				new /obj/item/storage/box/syndie_kit/pistol(src)
-				new /obj/item/storage/bag/trash(src)
-				new /obj/item/soap/syndie(src)
-				new /obj/item/bodybag(src)
-				new /obj/item/clothing/shoes/reinforced(src)
-				return
+		if("smoothoperator")
+			new /obj/item/storage/box/syndie_kit/pistol(src)
+			new /obj/item/storage/bag/trash(src)
+			new /obj/item/soap/syndie(src)
+			new /obj/item/bodybag(src)
+			new /obj/item/clothing/shoes/reinforced(src)
+			return
 
 /obj/item/storage/box/syndie_kit
 	name = "box"
@@ -125,18 +125,19 @@
 
 /obj/item/storage/box/syndie_kit/chameleon
 	name = "chameleon kit"
-	desc = "Comes with all the clothes you need to impersonate most people. Acting lessons sold separately. The box itself is made of plasteel."
-	matter = list(MATERIAL_PLASTEEL = 1)
+	desc = "Comes with all the clothes you need to impersonate most people. Acting lessons sold seperately. Wearing the uniform will allow fot quick switching between appearances."
 
 /obj/item/storage/box/syndie_kit/chameleon/populate_contents()
-	new /obj/item/clothing/under/admin/chameleon(src)
-	new /obj/item/clothing/head/admin/chameleon(src)
-	new /obj/item/clothing/suit/admin/chameleon(src)
-	new /obj/item/clothing/shoes/admin/chameleon(src)
+	new /obj/item/clothing/under/chameleon(src)
+	new /obj/item/clothing/head/chameleon(src)
+	new /obj/item/clothing/suit/chameleon(src)
+	new /obj/item/clothing/shoes/chameleon(src)
 	new /obj/item/storage/backpack/chameleon(src)
-	new /obj/item/clothing/gloves/admin/chameleon(src)
-	new /obj/item/clothing/mask/admin/chameleon(src)
-	new /obj/item/clothing/glasses/admin/chameleon(src)
+	new /obj/item/storage/backpack/satchel/chameleon(src)
+	new /obj/item/clothing/gloves/chameleon(src)
+	new /obj/item/clothing/mask/chameleon(src)
+	new /obj/item/clothing/glasses/chameleon(src)
+	new /obj/item/device/radio/headset/chameleon(src)
 	new /obj/item/gun/energy/chameleon(src)
 
 /obj/item/storage/box/syndie_kit/clerical
@@ -315,6 +316,15 @@
 	new /obj/item/device/spy_sensor(src)
 	new /obj/item/device/spy_sensor(src)
 
+
+/obj/item/storage/box/syndie_kit/exl_revolver
+	name = "\"Wayfarer\" caseless revolver kit"
+	desc = "A well made 10x24 claseless revolver and some ammo."
+
+/obj/item/storage/box/syndie_kit/exl_revolver/populate_contents()
+	new /obj/item/gun/projectile/revolver/wayfarer(src)
+	new /obj/item/ammo_magazine/ammobox/c10x24_small(src)
+	new /obj/item/ammo_magazine/ammobox/c10x24_small(src)
 
 /obj/item/storage/secure/briefcase/money
 	name = "suspicious briefcase"

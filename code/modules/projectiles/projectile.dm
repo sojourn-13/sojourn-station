@@ -22,6 +22,7 @@
 	var/list/mob_hit_sound = list('sound/effects/gore/bullethit2.ogg', 'sound/effects/gore/bullethit3.ogg') //Sound it makes when it hits a mob. It's a list so you can put multiple hit sounds there.
 	var/def_zone = ""	//Aiming at
 	var/mob/firer = null//Who shot it
+	var/mob/original_firer //Who shot it. Never changes, even after ricochet.
 	var/silenced = FALSE	//Attack message
 	var/yo = null
 	var/xo = null
@@ -90,6 +91,14 @@
 	var/affective_ap_range = 50 //How far we can go before we start being negitively impacted, higher is a buffer
 
 	var/range_shot = 1 //How far we been shot so far. We start at 1 to prevent runtimes with deviding by 0
+	var/serial_type_index_bullet = ""
+
+/obj/item/projectile/Destroy()
+
+	QDEL_NULL(attached_effect)
+
+	. = ..()
+
 
 /obj/item/projectile/is_hot()
 	if (damage_types[BURN])
@@ -221,6 +230,7 @@
 				loc = get_turf(blanker)
 
 	firer = user
+	original_firer = firer
 	shot_from = launcher.name
 	silenced = launcher.item_flags & SILENT
 
@@ -656,7 +666,13 @@
 	var/tempLoc = get_turf(A)
 
 	bumped = TRUE
-
+	if(istype(A, /obj/structure/multiz/stairs/active))
+		var/obj/structure/multiz/stairs/active/S = A
+		if(S.target)
+			forceMove(get_turf(S.target))
+			trajectory.loc_z = loc.z
+			bumped = FALSE
+			return FALSE
 	if(iscarbon(A))
 		var/mob/living/carbon/C = A
 		var/obj/item/shield/S
@@ -868,7 +884,7 @@
 		attached_effect.Move(src.loc)
 
 	else if(luminosity_range && luminosity_power && luminosity_color)
-		attached_effect = new /obj/effect/effect/light(src.loc, luminosity_range, luminosity_power, luminosity_color, lifetime=20)
+		attached_effect = new /obj/effect/effect/light(src.loc, luminosity_range, luminosity_power, luminosity_color, 20)
 
 /obj/item/projectile/proc/impact_effect(var/matrix/M)
 	//This can happen when firing inside a wall, safety check
@@ -907,7 +923,7 @@
 	result = 1
 	return
 
-/obj/item/projectile/test/launch(atom/target)
+/obj/item/projectile/test/launch(atom/target, angle_offset = 0, x_offset = 0, y_offset = 0)
 	var/turf/curloc = get_turf(src)
 	var/turf/targloc = get_turf(target)
 	if(!curloc || !targloc)

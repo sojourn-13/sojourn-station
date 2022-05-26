@@ -162,7 +162,7 @@
 			tile.clean_blood()
 			for(var/A in tile)
 				if(istype(A, /obj/effect))
-					if(istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay))
+					if(istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay) && !istype(A, /obj/effect/overlay/water))
 						qdel(A)
 				else if(istype(A, /obj/item))
 					var/obj/item/cleaned_item = A
@@ -397,7 +397,7 @@
 
 	for(var/damage_type in Proj.damage_types)
 		var/damage = Proj.damage_types[damage_type]
-		damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj))
+		damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj), post_pen_mult = Proj.post_penetration_dammult)
 	return 0
 
 /mob/living/simple_animal/rejuvenate()
@@ -445,7 +445,7 @@
 
 			G.synch()
 			G.affecting = src
-			LAssailant = M
+			LAssailant_weakref = WEAKREF(M)
 
 			M.visible_message("\red [M] has grabbed [src] passively!")
 			M.do_attack_animation(src)
@@ -478,7 +478,7 @@
 		..()
 
 	else if(meat_type && (stat == DEAD))	//if the animal has a meat, and if it is dead.
-		if(QUALITY_CUTTING in O.tool_qualities)
+		if((QUALITY_CUTTING in O.tool_qualities) && user.a_intent ==  I_HELP)
 			if(O.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_NORMAL, required_stat = STAT_BIO))
 				harvest(user)
 	else
@@ -737,7 +737,7 @@
 /mob/living/simple_animal/lay_down()
 	set name = "Rest"
 	set category = "Abilities"
-	if(resting && can_stand_up())
+	if(resting)
 		wake_up()
 	else if (!resting)
 		fall_asleep()

@@ -30,7 +30,7 @@
 	)
 
 /obj/machinery/petrel_maker/proc/try_to_make_petrel(mob/user)
-	..()
+	//..()
 	if(petrel_form_plastic <= stored_plastic)
 //		sleep(convert_speed)//So its not istant
 		stored_plastic -= petrel_form_plastic

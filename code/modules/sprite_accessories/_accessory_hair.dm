@@ -868,6 +868,10 @@
 	name = "Lizard Ram Horns"
 	icon_state = "unathi_ramhorn_s"
 
+/datum/sprite_accessory/hair/liz_curled_horns
+	name = "Lizard Curled Horns"
+	icon_state = "lizard_horns_curled_s"
+
 /datum/sprite_accessory/hair/naramad_fairytail
 	name = "Naramad Fairytail"
 	icon_state = "serg_fairytail_s"
@@ -932,25 +936,43 @@
 	name = "Yasu Quills"
 	icon_state = "yasuquills"
 
-/datum/sprite_accessory/hair/marqua_veryshort
-	name = "Mar'Qua Very Short Headtails"
-	icon_state = "marqua_hair_veryshort_s"
+/datum/sprite_accessory/hair/marquafrill
+	name = "Mar'Qua pointed frills"
+	icon_state = "sidespikes"
 	species_allowed = list(FORM_MARQUA)
+
+/datum/sprite_accessory/hair/marqua_short_frill
+	name = "Mar'Qua short frills"
+	icon_state = "longears"
+	species_allowed = list(FORM_MARQUA)
+
+/datum/sprite_accessory/hair/marqua_witchhat
+	name = "Mar'Qua Erudite"
+	icon_state = "witchhat"
+	species_allowed = list(FORM_MARQUA)
+
+/datum/sprite_accessory/hair/marqua_cat
+	name = "Mar'Qua Tipped frills"
+	icon_state = "catear"
+	species_allowed = list(FORM_MARQUA)
+
+
+/datum/sprite_accessory/hair/marqua_veryshort
+	name = "Very Short Headtails"
+	icon_state = "marqua_hair_veryshort_s"
 
 /datum/sprite_accessory/hair/marqua_short
-	name = "Mar'Qua Short Headtails"
+	name = "Short Headtails"
 	icon_state = "marqua_hair_short_s"
-	species_allowed = list(FORM_MARQUA)
 
 /datum/sprite_accessory/hair/marqua_average
-	name = "Mar'Qua Average Headtails"
+	name = "Average Headtails"
 	icon_state = "marqua_hair_average_s"
-	species_allowed = list(FORM_MARQUA)
 
 /datum/sprite_accessory/hair/marqua_long
-	name = "Mar'Qua Long Headtails"
+	name = "Long Headtails"
 	icon_state = "marqua_hair_verylong_s"
-	species_allowed = list(FORM_MARQUA)
+
 
 /datum/sprite_accessory/hair/folken
 	species_allowed = list(FORM_FOLKEN)

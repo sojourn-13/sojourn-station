@@ -132,7 +132,85 @@ This is a bugtesting item, please forgive the memes.
 	to_chat(usr, SPAN_NOTICE("\The [usr] combines some mutations!"))
 	held_mutations.combine(combined_mutations, MUT_TYPE_COMBINATION)
 
+/*
+================="Petite" Mutagenic Scanner=================
+A more player-friendly version of the Belvoix scanner, reports basic information that can tell someone what tf is up with a person's genes.
 
+*/
+/obj/item/device/scanner/petite_scanner
+	name = "Small Mutagenic Scanner"
+	desc = "A compact device for monitoring the basics of a creature's genetic makeup."
+	icon = 'icons/obj/genetics/dna_scanner.dmi'
+	icon_state = "dna_scanner"
+	item_state = "analyzer"
+	origin_tech = list(TECH_BIO = 10, TECH_PLASMA = 5)
+	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_STEEL = 1, MATERIAL_GLASS = 1, MATERIAL_PLASMA = 1)
+	charge_per_use = 0
+	var/datum/genetics/genetics_holder/held_mutations
+
+/obj/item/device/scanner/petite_scanner/is_valid_scan_target(atom/target)
+	if(!istype(target, /mob/living) && !istype(target, /obj/item/reagent_containers/food/snacks/meat))
+		to_chat(usr, SPAN_WARNING("A red dot blips, the scan target [target] is invalid."))
+		return FALSE
+	return TRUE
+
+/obj/item/device/scanner/petite_scanner/afterattack(atom/A, mob/user, proximity)
+	if(!proximity)
+		return
+	if(!can_use(user))
+		return
+
+	//Play the animation
+	flick("scanning", src)
+
+	if(is_valid_scan_target(A) && A.simulated)
+		if(!is_virtual)
+			user.visible_message(SPAN_NOTICE("[user] runs \the [src] over \the [A]."), range = 2)
+			if(scan_sound)
+				playsound(src, scan_sound, 30)
+		else
+			user.visible_message(SPAN_NOTICE("[user] focuses on \the [A] for a moment."), range = 2)
+		if(use_delay && !do_after(user, use_delay, A))
+			if(!is_virtual)
+				to_chat(user, "You stop scanning \the [A] with \the [src].")
+			else
+				to_chat(user, "You stop focusing on \the [A].")
+			return
+		scan(A, user)
+		if(!scan_title)
+			scan_title = "[capitalize(name)] scan - [A]"
+
+/obj/item/device/scanner/petite_scanner/scan(atom/target, mob/user)
+	held_mutations = new /datum/genetics/genetics_holder()
+
+	if(istype(target, /mob/living))
+		var/mob/living/living_target = target
+		held_mutations = living_target.unnatural_mutations.Copy()
+	else if (istype(target, /obj/item/reagent_containers/food/snacks/meat))
+		var/obj/item/reagent_containers/food/snacks/meat/meat_target = target
+		held_mutations.initializeFromMeat(meat_target)
+	scan_title = "Mutagenic Data - [target]"
+	scan_data = petite_scan()
+	show_results(user)
+
+/obj/item/device/scanner/petite_scanner/proc/petite_scan()
+	if(held_mutations.mutation_pool.len == 0 && held_mutations.total_instability == 0)
+		return SPAN_WARNING("No genetic info found.")
+	else
+		var/list/dat = list("===[scan_title]===")
+		var/total_mutation_count = 0
+		var/unique_mutation_count = 0
+		for(var/datum/genetics/mutation/mutagen in held_mutations.mutation_pool)
+			unique_mutation_count++
+			total_mutation_count += mutagen.count
+		dat += "Total number of mutagenic strains: [total_mutation_count]"
+		dat += "Total number of unique mutagenic strains: [unique_mutation_count]"
+		if(held_mutations.total_instability < 90)
+			dat += "Total level of instability: [held_mutations.total_instability]%"
+		else
+			dat += "<span class = 'danger'>Total level of instability: [held_mutations.total_instability]%</span>"
+
+		return jointext(dat, "<br>")
 
 
 
@@ -163,6 +241,10 @@ It also resets instability to 0 so bad things don't happen.
 
 	if(target.body_part_covered(user.targeted_organ))
 		to_chat(user, SPAN_WARNING("The needle can't pierce through clothes."))
+		return
+
+	if(issynthetic(target))
+		to_chat(user, SPAN_WARNING("The needle can't pierce synthetic casing- and anything held inside probably wouldn't work on a robot."))
 		return
 
 	if(used)
@@ -242,6 +324,10 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 
 	if(target.body_part_covered(user.targeted_organ))
 		to_chat(user, SPAN_WARNING("The needle can't pierce through clothes."))
+		return
+
+	if(issynthetic(target))
+		to_chat(user, SPAN_WARNING("The needle can't pierce synthetic casing- and anything held inside probably wouldn't work on a robot."))
 		return
 
 	if(!loaded_sample)
@@ -407,25 +493,29 @@ Circuit boards for different Genetics Machines.
 
 /obj/item/computer_hardware/hard_drive/portable/design/genetics_kit
 	disk_name = "Genetics Studio Design Kit"
+	desc = "A disc containing patented designs for the Xenogenetics lab. Contains additional licensed products from the lab's creator."
 	icon = 'icons/obj/genetics/genetics_disks.dmi'
 	icon_state = "genetics_factory"
-	license = 6
+	license = 10
 	designs = list(
 		/datum/design/autolathe/genetics/pulper = 1,
 		/datum/design/autolathe/genetics/cloner = 1,
 		/datum/design/autolathe/genetics/clone_console = 1,
 		/datum/design/autolathe/genetics/purger = 0,
-		/datum/design/autolathe/genetics/mut_injector = 0
+		/datum/design/autolathe/genetics/mut_injector = 0,
+		/datum/design/autolathe/genetics/petite_scanner = 1
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/genetics_kit_public
 	disk_name = "Genetics Studio Resupply Kit"
+	desc = "A disc containing quality-of-life designs for the Xenogenetics lab."
 	icon = 'icons/obj/genetics/genetics_disks.dmi'
 	icon_state = "genetics_purger"
-	license = 1
+	license = 3
 	designs = list(
 		/datum/design/autolathe/genetics/purger = 0,
-		/datum/design/autolathe/genetics/mut_injector = 0
+		/datum/design/autolathe/genetics/mut_injector = 0,
+		/datum/design/autolathe/genetics/petite_scanner = 1
 	)
 
 /*
@@ -439,3 +529,64 @@ Circuit boards for different Genetics Machines.
 		/obj/item/stock_parts/scanning_module = 1
 	)
 */
+
+/*
+=================Xenogenetics Poster=================
+Poster in R&D that gives helpful tips about Mutation Recipes.
+Neglects to mention where to find its pieces.
+*/
+
+/obj/structure/sign/genetics
+	name = "Xenogenetics Informational poster"
+	desc = "Contains helpful device on Genetics. Unless you're reading this placeholder text, at least."
+	icon = 'icons/obj/genetics/genetic_poster.dmi'
+	icon_state = "genetic_poster"
+
+
+/obj/structure/sign/genetics/Initialize()
+	var/blurb = pick(list(
+		"Roach DNA can be irradiated into a plethora of different breeds!",
+		"Warning- The Gigantism gene combined with roach DNA can have hazardous results!",
+		"Spider DNA can be irradiated into a plethora of different breeds!",
+		"The Gigantism gene only produces an Empress spider when combined with egg-laying spider DNA",
+		"The Gigantism gene only produces an Emperor spider when combined with Tarantula-type spider DNA.",
+		"Do NOT, under ANY CIRCUMSTANCES, clone the combination of an emperor and an empress spider.",
+		"When you get right down to it, Tatonkas are really just two cows stitched together.",
+		"Tangu are like tatonka, only the DNA to clone them has been combined with 2 layers of cow skin.",
+		"Mukwah are bears that have been irradiated by the planet's anomalous energy.",
+		"Cerberus are formerly pigs, irradiated by the planet's anomalous energy.",
+		"Chimera are Cerberus that develop with an accelerated heart beat. Combining their DNA with the Nervousness mutation should do the trick.",
+		"Cluckers are chickens irradiated by the planet's anomalous energy.",
+		"Tengolo Brutes, Chargers, and Stalkers are the Diyaabs' closest relatives.",
+		"Hell Pigs can be created from a combination of Pig DNA and Tengolo Charger DNA.",
+		"Hell Pigs can be created from a combination of Tahca DNA and Tengolo Charger DNA.",
+		"Hell Pigs can be made with a Tengolo Charger and the gigantism mutation.",
+		"Slepnir can be created from a combination of Pig DNA and Tengolo Brute DNA.",
+		"Slepnir can be created from a combination of Tahca DNA and Tengolo Brute DNA.",
+		"Slepnir can be made with a Tengolo Brute and the gigantism mutation.",
+		"Wendigo can be created from a combination of Pig DNA and Tengolo Stalker DNA.",
+		"Wendigo can be created from a combination of Tahca DNA and Tengolo Stalker DNA.",
+		"Wendigo can be made with a Tengolo Stalker and the gigantism mutation.",
+		"Croaker lords are frogs with gigantism.",
+		"Dream Deamons surpass Nightmare Stalkers in size and stealth thanks to an electromagnetic field surrounding them.",
+		"Bears can be stained brown with chocolate milk.",
+		"Bears can be stained white with robust milk.",
+		"A bat is kind of like a chicken with leathery skin.",
+		"Sargoyle can be created by giving bats gigantism",
+		"Giant snakes have snake DNA combined with gigantism.",
+		"Opossum have mouse DNA combined with gigantism.",
+		"You can increase milk production in cows by combining two copies of the 'Moo' mutation.",
+		"Protein Milk, achievable by mixing the 'Moo' and 'Imbecile' mutation!",
+		"Chocolate Milk, achievable by irradiating the 'Moo' mutation!",
+		"The Hyperion mutation can enhance cloned organs, like the Heart.",
+		"The Hyperion mutation can enhance cloned organs, like the Lungs.",
+		"The Hyperion mutation can enhance cloned organs, like the Liver.",
+		"The Hyperion mutation can enhance cloned organs, like the Blood Vessels.",
+		"The Hyperion mutation can enhance cloned organs, like the Nerves.",
+		"The Hyperion mutation can enhance cloned organs, like the Muscles.",
+		"Flesh sacs can be achieved through irradiated human DNA- if you're a bad person.",
+		"Flesh sacs can be achieved through irradiated vatgrown DNA- if you're a morally ambiguous person.",
+		"Flesh sacs can be achieved through irradiated monkey DNA with only limited moral quandaries!",
+		"If you combine the mutations that make roaches and spiders accept you, you can create a mutation that will cause them to ignore you."))
+	desc = "Xenogenetics fact of the day: [blurb]"
+

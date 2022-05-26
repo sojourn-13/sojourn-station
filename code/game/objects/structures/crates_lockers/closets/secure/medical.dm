@@ -72,8 +72,6 @@
 	new /obj/item/device/radio/headset/headset_med(src)
 	new /obj/item/taperoll/medical(src)
 	new /obj/item/storage/belt/medical/emt(src)
-	new /obj/item/storage/belt/medical/emt(src)
-	new /obj/item/storage/belt/medical/(src)
 	new /obj/item/storage/belt/medical/(src)
 	new /obj/item/clothing/suit/storage/surgical_apron(src)
 
@@ -175,6 +173,8 @@
 	new /obj/item/clothing/under/rank/moebius_biolab_officer(src)
 	new /obj/item/clothing/suit/storage/toggle/labcoat/cmo(src)
 	new /obj/item/clothing/gloves/latex(src)
+	new /obj/item/clothing/accessory/halfcape/cbo(src)
+	new /obj/item/clothing/accessory/job/cape/mbo(src) // Both versions of capes for consistency - Seb
 	new /obj/item/storage/belt/medical(src)
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/device/radio/headset/heads/cmo(src)
@@ -185,7 +185,7 @@
 	new /obj/item/clothing/gloves/latex/nitrile(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/medical/advanced/cmo(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/xenobio/rd(src)
-	new /obj/item/device/defib_kit/compact/combat/adv(src)
+	new /obj/item/device/defib_kit/compact/combat/adv/loaded/cbo(src)
 	new /obj/item/oddity/chem_book(src)
 	new /obj/item/storage/hcases/med(src)
 

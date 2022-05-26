@@ -19,6 +19,9 @@
 	var/jam_chance = 15
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_CALIBRE_35)
 	max_upgrades = 0
+	price_tag = 50
+	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/projectile/handmade_pistol/magnum
 	name = "handmade magnum"
@@ -27,6 +30,7 @@
 	caliber = CAL_MAGNUM
 	max_shells = 4
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	price_tag = 60
 
 /obj/item/gun/projectile/handmade_pistol/shotgun
 	name = "handmade slugger"
@@ -38,6 +42,7 @@
 	recoil_buildup = 18 //Still a shotgun
 	jam_chance = 25
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	price_tag = 70
 
 /obj/item/gun/projectile/handmade_pistol/anti_material
 	name = "handmade man-opener"
@@ -50,6 +55,7 @@
 	recoil_buildup = 30 //still a massive bullet
 	jam_chance = 35
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	price_tag = 75
 
 obj/item/gun/projectile/handmade_pistol/New()
 	..()

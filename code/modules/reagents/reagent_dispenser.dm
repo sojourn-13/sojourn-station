@@ -21,14 +21,14 @@
 
 /obj/structure/reagent_dispensers/New()
 	create_reagents(volume)
-		
+
 	if (starting_reagent)
 		//If a starting volume is not 0, use that for the volume amount
 		if(starting_volume)
 			reagents.add_reagent(starting_reagent, starting_volume)
 		else
 			reagents.add_reagent(starting_reagent, volume)
-		
+
 	if (!possible_transfer_amounts)
 		src.verbs -= /obj/structure/reagent_dispensers/verb/set_APTFT
 	..()
@@ -59,9 +59,10 @@
 			if (prob(5))
 				explode()
 				return
-
-
-
+/obj/structure/reagent_dispensers/get_item_cost(export)
+	if(export)
+		return ..() + round(reagents.total_volume * 0.125)
+	return ..() + contents_cost
 
 //Dispensers
 /obj/structure/reagent_dispensers/watertank
@@ -287,7 +288,7 @@
 /obj/structure/reagent_dispensers/beerkeg
 	name = "beer keg"
 	desc = "A beer keg"
-	icon_state = "beertankTEMP"
+	icon_state = "beer_keg" //Sprite by greenteaguzzler
 	amount_per_transfer_from_this = 10
 	volume = 1000
 	starting_reagent = "beer"
@@ -297,7 +298,7 @@
 /obj/structure/reagent_dispensers/meadkeg
 	name = "mead keg"
 	desc = "A keg of honey and beer"
-	icon_state = "premiumwhiskey"
+	icon_state = "barrel"
 	amount_per_transfer_from_this = 10
 	volume = 1000
 	starting_reagent = "mead"
@@ -307,7 +308,7 @@
 /obj/structure/reagent_dispensers/cahorsbarrel
 	name = "Absolutism Cahors barrel"
 	desc = "Barrel a day - keeps liver away."
-	icon_state = "barrel"
+	icon_state = "barrel_alt"
 	volume = 1000
 	starting_reagent = "ntcahors"
 	price_tag = 25

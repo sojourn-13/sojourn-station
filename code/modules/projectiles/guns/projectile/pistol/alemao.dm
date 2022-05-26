@@ -14,11 +14,12 @@
 	damage_multiplier = 0.9
 	recoil_buildup = 3
 	one_hand_penalty = 10
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	init_firemodes = list(
 		list(mode_name="semiauto", mode_desc="Shoot as fast as you can pull the trigger", burst=1, fire_delay=1.5, move_delay=null, 	icon="semi"),
 		list(mode_name="2-round bursts", mode_desc="Shoot two rounds back to back", burst=2, fire_delay=2, move_delay=2,    	icon="burst"),
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/alemao/update_icon()
 	..()

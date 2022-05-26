@@ -5,6 +5,7 @@
 
 /obj/random/mob/roaches/item_to_spawn()
 	return pickweight(list(/mob/living/carbon/superior_animal/roach = 9,
+				// /mob/living/carbon/superior_animal/roach/fat = 2,
 				/mob/living/carbon/superior_animal/roach/tank = 2,
 				/mob/living/carbon/superior_animal/roach/toxic = 2,
 				/mob/living/carbon/superior_animal/roach/glowing = 2,
@@ -28,6 +29,17 @@
 	spread_range = 0
 
 /obj/random/cluster/roaches/item_to_spawn()
+	return /obj/random/mob/roaches
+
+/obj/random/cluster/roaches_hoard
+	name = "hoard of roaches"
+	icon_state = "hostilemob-brown-cluster"
+	alpha = 128
+	min_amount = 20
+	max_amount = 30
+	spread_range = 0
+
+/obj/random/cluster/roaches_hoard/item_to_spawn()
 	return /obj/random/mob/roaches
 
 /obj/random/cluster/roaches/low_chance

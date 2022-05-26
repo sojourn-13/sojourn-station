@@ -58,7 +58,7 @@
 	var/active = FALSE
 	var/area_radius = 7
 
-	var/buff_power = 5
+	var/buff_power = 15 //Makes it viable to have around
 
 	var/stats_buff = list(STAT_BIO, STAT_COG, STAT_MEC)
 	var/list/mob/living/carbon/human/currently_affected = list()
@@ -216,7 +216,18 @@
 	var/list/oddity_stats = list(STAT_MEC = 0, STAT_COG = 0, STAT_BIO = 0, STAT_ROB = 0, STAT_TGH = 0, STAT_VIG = 0)
 	var/last_produce = -30 MINUTES
 	var/items_count = 0
-	var/max_count = 5
+/*
+Z:/FloppyDisk/TRILBYMOD: //It had to be done.
+Z:/FloppyDisk/TRILBYMOD: var/max_count = 5
+Z:/FloppyDisk/TRILBYMOD: DEPLOY CUBE NERF
+*/
+	var/max_count = 3
+/*
+Trilby... Did you?
+You tampered with my cube
+You thought it too powerful no doubt. But Please...
+No more of that.
+*/
 	var/cooldown = 30 MINUTES
 
 /obj/item/device/techno_tribalism/New()
@@ -266,9 +277,9 @@
 				oddity_stats[STAT_VIG] += 3
 				oddity_stats[STAT_COG] += 1
 			else
-				crash_with("[W], incompatible department")
+				CRASH("[W], incompatible department")
 
-		else if(istype(W, /obj/item/tool))
+		else if(istype(W, /obj/item/tool) && !istype(W, /obj/item/tool/psionic_omnitool))
 			var/useful = FALSE
 			if(W.tool_qualities)
 
@@ -345,7 +356,6 @@
 		else
 			to_chat(user, SPAN_WARNING("The [W] is not suitable for [src]!"))
 			return
-
 		to_chat(user, SPAN_NOTICE("You feed [W] to [src]."))
 		SEND_SIGNAL(user, COMSIG_OBJ_TECHNO_TRIBALISM, W)
 		items_count += 1
@@ -601,7 +611,7 @@
 	icon_state = "nt_pedestal[sword?"1":"0"]"
 
 /obj/item/storage/sheath/joyeuse
-	name = "Joyeuse sheath"
+	name = "\improper Joyeuse sheath"
 	desc = "A specially designed sheathe for the joyeuse, which is the only object that shall fit in it."
 	can_hold = list(
 		/obj/item/tool/sword/crusader/nt_sword_truth

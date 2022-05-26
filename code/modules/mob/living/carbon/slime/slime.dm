@@ -282,7 +282,7 @@
 
 			G.synch()
 
-			LAssailant = M
+			LAssailant_weakref = WEAKREF(M)
 
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 			visible_message(SPAN_WARNING("[M] has grabbed [src] passively!"))

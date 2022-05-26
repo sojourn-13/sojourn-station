@@ -93,7 +93,10 @@
 	spawn(0) healthCheck() //spawn to make sure we return properly if the grille is deleted
 
 /obj/structure/grille/attackby(obj/item/I, mob/user)
-
+	if(user.a_intent == I_HELP && istype(I, /obj/item/gun))
+		var/obj/item/gun/G = I
+		G.gun_brace(user, src)
+		return
 	var/list/usable_qualities = list(QUALITY_WIRE_CUTTING)
 	if(anchored)
 		usable_qualities.Add(QUALITY_SCREW_DRIVING)

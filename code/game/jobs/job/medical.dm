@@ -18,7 +18,8 @@
 		access_moebius, access_medical_equip, access_morgue, access_genetics, access_heads,
 		access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
 		access_keycard_auth, access_sec_doors, access_psychiatrist, access_eva, access_maint_tunnels,
-		access_external_airlocks, access_paramedic, access_research_equipment, access_medical_suits
+		access_external_airlocks, access_paramedic, access_research_equipment, access_medical_suits,
+		access_robotics, access_xenobiology
 	)
 
 	ideal_character_age = 40
@@ -70,12 +71,13 @@
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	minimum_character_age = 25
-	alt_titles = list("Soteria Nurse", "Soteria Emergency Physician", "Soteria Surgeon", "Soteria Medical Intern")
+	alt_titles = list("Soteria Nurse", "Soteria Emergency Physician", "Soteria Surgeon", "Soteria Medical Student")
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
+	department_account_access = TRUE
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
-		access_genetics, access_external_airlocks, access_research_equipment, access_medical_suits
+		access_genetics, access_external_airlocks, access_research_equipment, access_medical_suits, access_xenobiology
 	)
 
 	stat_modifiers = list(
@@ -173,7 +175,6 @@
 	selection_color = "#a8b69a"
 	alt_titles = list("Soteria Psychologist", "Soteria Empath")
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
-	alt_titles = (null)
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits
 	)

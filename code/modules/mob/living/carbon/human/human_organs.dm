@@ -22,9 +22,11 @@
 		for(var/obj/item/organ/external/Ex in organs)
 			bad_external_organs |= Ex
 
-	//processing internal organs is pretty cheap, do that first.
+	//Processing internal organs, shutting them off if the process returns with the classic Kill return value.
 	for(var/obj/item/organ/I in internal_organs)
-		I.Process()
+		if(I.inserted_and_processing && I.Process() == PROCESS_KILL)
+			I.inserted_and_processing = FALSE
+			
 
 	handle_stance()
 	handle_grasp()

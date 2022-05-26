@@ -12,9 +12,9 @@
 	display_name = "card traditional selection"
 	path = /obj/item/deck
 	flags = GEAR_HAS_TYPE_SELECTION
-	
+
 /datum/gear/c_bible
-	display_name = "Christian Bible"
+	display_name = "christian bible"
 	path = /obj/item/book/manual/religion/c_bible
 
 /datum/gear/cardholder
@@ -42,9 +42,9 @@
 /datum/gear/flask
 	display_name = "flask"
 	path = /obj/item/reagent_containers/food/drinks/flask/barflask
-	
+
 /datum/gear/h_book
-	display_name = "Holy Book"
+	display_name = "holy book"
 	path = /obj/item/book/manual/religion/h_book
 
 /datum/gear/pitcher
@@ -57,8 +57,12 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/neotheologybook
-	display_name = "Absolutism ritual book"
+	display_name = "absolutism ritual book"
 	path = /obj/item/book/ritual/cruciform
+
+/datum/gear/psi_juice
+	display_name = "cerebrix inhaler"
+	path = /obj/item/psi_injector
 
 /datum/gear/pipe
 	display_name = "pipe selection"
@@ -77,3 +81,7 @@
 /datum/gear/vacflask
 	display_name = "vacuum flask"
 	path = /obj/item/reagent_containers/food/drinks/flask/vacuumflask
+
+/datum/gear/trackingimplanter
+	display_name = "implanter (tracking)"
+	path = /obj/item/implanter/tracking

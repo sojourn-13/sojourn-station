@@ -10,7 +10,7 @@
 	caliber = CAL_RIFLE //needs a new caliber type?
 	origin_tech = list(TECH_COMBAT = 6, TECH_ILLEGAL = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE //need a new magwell type?
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 5)
 	price_tag = 2000
@@ -27,6 +27,14 @@
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_400
 		)
+	serial_type = "EXC"
+
+/obj/item/gun/projectile/automatic/vintorez/NM_colony
+	name = "\"Val\" silenced carbine"
+	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.5mm Rifle rounds."
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
+	price_tag = 800
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/vintorez/update_icon()
 	..()

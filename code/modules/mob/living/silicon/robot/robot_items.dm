@@ -422,6 +422,7 @@
 						  QUALITY_SAWING = 30,
 						  QUALITY_DIGGING = 40,
 						  QUALITY_SCREW_DRIVING = 40)
+	force = WEAPON_FORCE_PAINFUL
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
@@ -437,6 +438,7 @@
 						  QUALITY_SAWING = 30,
 						  QUALITY_DIGGING = 40,
 						  QUALITY_SCREW_DRIVING = 40)
+	force = WEAPON_FORCE_PAINFUL
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
@@ -451,6 +453,7 @@
 						  QUALITY_CUTTING = 150, //So were faster at cutting up boddies
 						  QUALITY_SAWING = 30,
 						  QUALITY_SCREW_DRIVING = 40)
+	force = WEAPON_FORCE_PAINFUL
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
@@ -460,11 +463,12 @@
 	desc = "Omni tool for Security borgs, mostly just for cutting up body and clearing borrows."
 	icon_state = "engimplant"
 	tool_qualities = list(QUALITY_PRYING = 20,
-						  QUALITY_HAMMERING = 10, //For undoing random things like barrer placements
+						  QUALITY_HAMMERING = 35, //For undoing random things like barrer placements
 						  QUALITY_BOLT_TURNING = 10,
 						  QUALITY_SAWING = 15, //Sawing for guns
 						  QUALITY_CUTTING = 150, //So were faster at cutting up boddies
 						  QUALITY_DIGGING = 40)
+	force = WEAPON_FORCE_PAINFUL
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
@@ -474,11 +478,12 @@
 	desc = "Omni tool for Janitor borgs, mostly just for cutting up body and clearing borrows."
 	icon_state = "engimplant"
 	tool_qualities = list(QUALITY_PRYING = 20,
-						  QUALITY_HAMMERING = 10, //For undoing random things like barrer placements
+						  QUALITY_HAMMERING = 35, //For undoing random things like barrer placements
 						  QUALITY_BOLT_TURNING = 30,
 						  QUALITY_CUTTING = 150, //So were faster at cutting up boddies
 						  QUALITY_DIGGING = 40,
 						  QUALITY_SCREW_DRIVING = 40) //Tiles and the like
+	force = WEAPON_FORCE_PAINFUL
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
@@ -488,7 +493,7 @@
 	desc = "Omni tool for Science borgs, has a bit of everything but also leaves a lot to be wanted."
 	icon_state = "engimplant"
 	tool_qualities = list(QUALITY_PRYING = 30,
-						  QUALITY_HAMMERING = 10, //For undoing random things like barrer placements
+						  QUALITY_HAMMERING = 35, //For undoing random things like barrer placements
 						  QUALITY_BOLT_TURNING = 30,
 						  QUALITY_CUTTING = 150, //So were faster at cutting up boddies
 						  QUALITY_WIRE_CUTTING = 40,
@@ -534,14 +539,16 @@
 	name = "Surgery omni tool"
 	desc = "A surgery omni tool for borgs, uses internal power cell rather then its own."
 	icon_state = "medimplant_sci"
-	tool_qualities = list(QUALITY_CLAMPING = 30,
-						  QUALITY_RETRACTING = 30,
-						  QUALITY_BONE_SETTING = 30,
-						  QUALITY_CAUTERIZING = 30,
-						  QUALITY_SAWING = 15,
-						  QUALITY_CUTTING = 30,
-						  QUALITY_WIRE_CUTTING = 25,
-						  QUALITY_BONE_GRAFTING = 50)
+	tool_qualities = list(QUALITY_CLAMPING = 60,
+						  QUALITY_RETRACTING = 60,
+						  QUALITY_BONE_SETTING = 60,
+						  QUALITY_CAUTERIZING = 60,
+						  QUALITY_SAWING = 45,
+						  QUALITY_CUTTING = 60,
+						  QUALITY_WIRE_CUTTING = 55,
+						  QUALITY_BONE_GRAFTING = 80,
+						  QUALITY_DRILLING = 40)
+	force = WEAPON_FORCE_PAINFUL
 	use_power_cost = 0 //Dosnt legitmently use power
 	suitable_cell = null
 	degradation = 0
@@ -679,7 +686,7 @@
 		to_chat(user, "<span class='notice'>You put everything in [src].</span>")
 	else if(!silent) //If transfer didn't succeed, it means no item can be picked up, we notify user here.
 		to_chat(user, "<span class='notice'>There is nothing to pick up with \the [src].</span>")
-	if(istype(user.pulling, /obj/structure/ore_box/) && src.contains(/obj/item/ore))
+	if(istype(user.pulling, /obj/structure/ore_box/) && src.contains(/obj/item/stack/ore))
 		//This is mainly used for ore bag, there is no point in making this bit universal, so it is only for ores.
 		//If the user is pulling an ore box, the ores from the ore bag will be transferred to it automatically.
 		var/obj/structure/ore_box/O = user.pulling
@@ -740,7 +747,7 @@
 	max_storage_space = 500 //Bonus capacity because of specialization.
 	max_w_class = ITEM_SIZE_NORMAL
 	can_hold = list (
-		/obj/item/ore
+		/obj/item/stack/ore
 	)
 
 /obj/item/storage/bag/robotic/produce
@@ -803,7 +810,7 @@
 	max_w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_GOLD = 4, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
 	origin_tech = list(TECH_BLUESPACE = 4)
-	can_hold = list(/obj/item/ore,
+	can_hold = list(/obj/item/stack/ore,
 	                /obj/item/reagent_containers/food/snacks/grown,
 	                /obj/item/seeds,
 	                /obj/item/grown,

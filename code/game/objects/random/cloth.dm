@@ -25,7 +25,7 @@
 				/obj/item/clothing/mask/costume/job/clown/joker = 10,
 				/obj/item/clothing/mask/gas/ihs = 10,
 				/obj/item/clothing/mask/gas/tactical = 2,
-				/obj/item/clothing/mask/gas/voice = 2,
+				/obj/item/clothing/mask/chameleon/voice = 2,
 				/obj/item/clothing/mask/costume/job/luchador = 2,
 				/obj/item/clothing/mask/costume/job/luchador/rudos = 2,
 				/obj/item/clothing/mask/costume/job/luchador/tecnicos = 2,

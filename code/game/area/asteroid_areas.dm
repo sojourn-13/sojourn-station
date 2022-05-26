@@ -71,6 +71,12 @@
 	icon_state = "yellow"
 	requires_power = FALSE
 
+/area/outpost/abandoned_fortress/powered_lit
+	name = "Excelsior Fortress"
+	icon_state = "yellow"
+	requires_power = FALSE
+	dynamic_lighting = 0
+
 // Main mining outpost
 /area/outpost/mining_main
 	icon_state = "outpost_mine_main"

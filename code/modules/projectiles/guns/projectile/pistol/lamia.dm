@@ -8,7 +8,7 @@
 	caliber = CAL_50
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
 	can_dual = TRUE
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 1000
@@ -20,6 +20,7 @@
 	recoil_buildup = 6
 	one_hand_penalty = 8
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/lamia/update_icon()
 	..()
@@ -36,12 +37,16 @@
 	desc = "An M6 \"Naga\" heavy pistol, either a copy, surplus, or stolen. It's impossible to tell with the defaced markings. Uses .50 Kurtz."
 	icon_state = "dark_lamia"
 	item_state = "dark_lamia"
+	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/projectile/lamia/dark/sf
 	name = "\"Rattler\" heavy pistol"
 	desc = "An M6 \"Rattler\" heavy pistol, the mainline heavy sidearm of the galaxy. This one still bears SolFed markings either lost or stolen. Uses .50 Kurtz."
 	icon_state = "sfdark_lamia"
 	item_state = "sfdark_lamia"
+	serial_type = "Sol Fed"
+	serial_shown = TRUE
 
 /obj/item/gun/projectile/lamia/scoped
 	name = "\"Argos\" advanced heavy pistol"
@@ -54,6 +59,7 @@
 	zoom_factor = 0.4
 	recoil_buildup = 7
 	price_tag = 1250
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/lamia/scoped/dark
 	name = "\"Apollo\" advanced heavy pistol"
@@ -68,7 +74,7 @@
 	price_tag = 1100
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-
+	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/lamia/socom
 	name = "\"SOCOM\" silenced heavy pistol"
@@ -82,6 +88,7 @@
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.2
 	price_tag = 1250
+	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/lamia/akurra
 	name = "\"Akurra\" silenced heavy pistol"
@@ -94,3 +101,22 @@
 	damage_multiplier = 0.95
 	penetration_multiplier = 1.2
 	price_tag = 1250
+	serial_type = "SA"
+
+/obj/item/gun/projectile/lamia/amnesty
+	name = "\"Amnesty\" heavy pistol"
+	desc = "The \"Amnesty\" pistol started as a prototype as parts from advanced heavy pistols found themselves converted to a cheaper, easier to procude format alongside improvements made to Marshal firearms. Chambered in .50 Kurtz."
+	icon = 'icons/obj/guns/projectile/amnesty.dmi'
+	icon_state = "amnesty"
+	item_state = "amnesty"
+	price_tag = 1200
+	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 8, MATERIAL_GLASS = 4)
+	damage_multiplier = 1.4
+	penetration_multiplier = 1.2
+	zoom_factor = 0.2
+	recoil_buildup = 8
+	one_hand_penalty = 12
+	unload_sound 	= 'sound/weapons/guns/interact/avasarala_unload.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
+	cocked_sound 	= 'sound/weapons/guns/interact/avasarala_cock.ogg'
+	fire_sound 	= 'sound/weapons/guns/fire/avasarala_fire.ogg'

@@ -24,6 +24,7 @@
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	var/egg_inject_chance = 0 //AHAHAHAHAHAHAHAAHAHAH, no
 	life_cycles_before_sleep = 3000 //We need more time to eat and web
+	inherent_mutations = list(MUTATION_PROT_MILK, MUTATION_SPIDER_FRIEND, MUTATION_NERVOUSNESS, MUTATION_DEAF)
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/midwife
 	name = "midwife spider"
@@ -37,6 +38,20 @@
 	poison_per_bite = 4
 	egg_inject_chance = 5 //Yes
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/midwife
+
+/mob/living/carbon/superior_animal/giant_spider/nurse/cave_spider
+	name = "cave spider"
+	desc = "Furry and white, it makes you shudder to look at it. This one has brilliant blue eyes and a pale cold body."
+	icon_state = "nurse_E"
+	icon_living = "nurse_E"
+	maxHealth = 140 // Slow but tanky
+	health = 140
+	melee_damage_lower = 10
+	melee_damage_upper = 15
+	poison_per_bite = 4
+	poison_type = "frostoil"
+	move_to_delay = 6 // Very slow
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/cave_spider
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier
 	name = "carrier spider"
@@ -110,7 +125,7 @@
 	//Giving the queen her own meat type which contains MENACE.
 	mob_size = MOB_LARGE
 	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
-	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_SPIDER_FRIEND, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen/New()
 	..()
@@ -119,8 +134,11 @@
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/UnarmedAttack()
 	..()
-	if(ishuman(target_mob))
-		var/mob/living/carbon/human/H = target_mob
+
+	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if(ishuman(targetted_mob))
+		var/mob/living/carbon/human/H = targetted_mob
 		if(prob(egg_inject_chance))
 			var/obj/item/organ/external/O = safepick(H.organs)
 			if(O && !BP_IS_ROBOTIC(O))

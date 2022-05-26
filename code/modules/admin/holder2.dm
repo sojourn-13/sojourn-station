@@ -6,7 +6,7 @@ var/list/admin_datums = list()
 	var/rights = 0
 	var/fakekey			= null
 
-	var/weakref/marked_datum_weak
+	var/datum/weakref/marked_datum_weak
 
 	var/admincaster_screen = 0	//See newscaster.dm under machinery for a full description
 	var/datum/feed_message/admincaster_feed_message = new /datum/feed_message   //These two will act as holders.
@@ -71,7 +71,7 @@ NOTE: It checks usr by default. Supply the "user" argument if you wish to check 
 		return FALSE
 	if(!C.holder)
 		if(show_msg)
-			C << "<span class='warning'>Error: You are not an admin.</span>"
+			to_chat(C, "<span class='warning'>Error: You are not an admin.</span>")
 		return FALSE
 
 	if(rights_required)
@@ -79,7 +79,7 @@ NOTE: It checks usr by default. Supply the "user" argument if you wish to check 
 			return TRUE
 		else
 			if(show_msg)
-				C << "<span class='warning'>Error: You do not have sufficient rights to do that. You require one of the following flags:[rights2text(rights_required," ")].</span>"
+				to_chat(C, "<span class='warning'>Error: You do not have sufficient rights to do that. You require one of the following flags:[rights2text(rights_required," ")].</span>")
 			return FALSE
 	else
 		return TRUE

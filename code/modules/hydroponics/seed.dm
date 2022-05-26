@@ -756,6 +756,58 @@
 					var/mob/living/simple_animal/mushroom/mush = product
 					mush.seed = src
 
+/datum/seed/proc/selfharvest(turf/location,yield_mod,harvest_sample,force_amount)
+	if(!location)
+		return
+
+
+		//This may be a new line. Update the global if it is.
+	if(name == "new line" || !(name in plant_controller.seeds))
+		uid = plant_controller.seeds.len + 1
+		name = "[uid]"
+		plant_controller.seeds[name] = src
+
+	var/total_yield = 0
+	if(!isnull(force_amount))
+		total_yield = force_amount
+	else
+		if(get_trait(TRAIT_YIELD) > -1)
+			if(isnull(yield_mod) || yield_mod < 1)
+				yield_mod = 0
+				total_yield = get_trait(TRAIT_YIELD)
+			else
+				total_yield = get_trait(TRAIT_YIELD) + rand(yield_mod)
+			total_yield = max(1,total_yield)
+
+			total_yield = max(2,total_yield)
+
+	for(var/i = 0;i<total_yield;i++)
+		var/obj/item/product
+
+		if(has_mob_product)
+			product = new has_mob_product(location,name)
+
+		else
+			product = new /obj/item/reagent_containers/food/snacks/grown(get_turf(location),name)
+		if(get_trait(TRAIT_PRODUCT_COLOUR))
+			if(!ismob(product))
+				product.color = get_trait(TRAIT_PRODUCT_COLOUR)
+				if(istype(product,/obj/item/reagent_containers/food))
+					var/obj/item/reagent_containers/food/food = product
+					food.filling_color = get_trait(TRAIT_PRODUCT_COLOUR)
+		if(mysterious)
+			product.name += "?"
+			product.desc += " On second thought, something about this one looks strange."
+
+		if(get_trait(TRAIT_BIOLUM))
+			var/clr
+			if(get_trait(TRAIT_BIOLUM_COLOUR))
+				clr = get_trait(TRAIT_BIOLUM_COLOUR)
+			product.set_light(get_trait(TRAIT_BIOLUM), l_color = clr)
+			//Handle spawning in living, mobile products.
+		if(isliving(product))
+			product.visible_message(SPAN_NOTICE("The pod disgorges [product]!"))
+
 // When the seed in this machine mutates/is modified, the tray seed value
 // is set to a new datum copied from the original. This datum won't actually
 // be put into the global datum list until the product is harvested, though.

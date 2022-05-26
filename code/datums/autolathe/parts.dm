@@ -165,6 +165,15 @@
 /datum/design/autolathe/prosthesis/excelsior/r_leg
 	build_path = /obj/item/organ/external/robotic/excelsior/r_leg
 
+/datum/design/autolathe/prosthesis/excelsior/groin
+	build_path = /obj/item/organ/external/robotic/excelsior/groin
+
+/datum/design/autolathe/prosthesis/excelsior/chest
+	build_path = /obj/item/organ/external/robotic/excelsior/chest
+
+/datum/design/autolathe/prosthesis/excelsior/head
+	build_path = /obj/item/organ/external/robotic/excelsior/head
+
 //Greyson Positronics
 
 /datum/design/autolathe/part/greyson/ai

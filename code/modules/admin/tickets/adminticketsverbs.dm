@@ -1,12 +1,12 @@
 //Verbs
 
-ADMIN_VERB_ADD(/client/proc/openAdminTicketUI, R_ADMIN|R_MOD|R_MENTOR, FALSE)
+ADMIN_VERB_ADD(/client/proc/openAdminTicketUI, R_ADMIN|R_MOD|R_MENTOR|R_DEBUG, FALSE)
 /client/proc/openAdminTicketUI()
 
 	set name = "Open Admin Ticket Interface"
 	set category = "Admin"
 
-	if(!check_rights(R_ADMIN|R_MOD|R_MENTOR))
+	if(!check_rights(R_ADMIN|R_MOD|R_MENTOR|R_DEBUG))
 		return
 
 	SStickets.showUI(usr)

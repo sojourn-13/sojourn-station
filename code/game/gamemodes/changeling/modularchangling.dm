@@ -19,8 +19,8 @@ var/list/datum/power/carrion/powerinstances = list()
 
 /datum/power/carrion/control_spider
 	name = "Control spider"
-	desc = "Creates a mind controling spider with a neural link to you, giving you the abilty to control the host, but also making you feel any trauma the host has, and than some."
-	genomecost = 10
+	desc = "Creates a mind controling spider with a neural link to you, giving you the abilty to control a weak minded host."
+	genomecost = 5
 	spiderpath = /obj/item/implant/carrion_spider/control
 
 /datum/power/carrion/infection_spider
@@ -36,6 +36,12 @@ var/list/datum/power/carrion/powerinstances = list()
 	genomecost = 4
 	spiderpath = /obj/item/implant/carrion_spider/healing
 
+/datum/power/carrion/blight_spider
+	name = "Blight spider"
+	desc = "Evolves a spider filled with a sickening venom."
+	genomecost = 7
+	spiderpath = /obj/item/implant/carrion_spider/blight
+
 /datum/power/carrion/breeding_spider
 	name = "Breeding spider"
 	desc = "Creates a spider carrying eggs, when it will be put inside a dead host and activated, the eggs will give birth to many lesser ones of your kin."
@@ -48,11 +54,23 @@ var/list/datum/power/carrion/powerinstances = list()
 	genomecost = 10
 	spiderpath = /obj/item/implant/carrion_spider/explosive
 
+/datum/power/carrion/spark_spider
+	name = "Spark spider"
+	desc = "Creates a spider that can pulse wires in machines or make a small spark."
+	genomecost = 1
+	spiderpath = /obj/item/implant/carrion_spider/spark
+
 /datum/power/carrion/toxic_spider
 	name = "Toxin bomb spider"
 	desc = "Creates a spider filled with dangerous lexorin gas, explodes on activation."
 	genomecost = 5
 	spiderpath = /obj/item/implant/carrion_spider/toxicbomb
+
+/datum/power/carrion/smoke_spider
+	name = "Smoke spider"
+	desc = "Creates a spider filled with smoke that is released on activation."
+	genomecost = 3
+	spiderpath = /obj/item/implant/carrion_spider/smokebomb
 /*
 /datum/power/carrion/mindboil_spider
 	name = "Mindboil spider"
@@ -61,6 +79,12 @@ var/list/datum/power/carrion/powerinstances = list()
 	genomecost = 5
 	spiderpath = /obj/item/implant/carrion_spider/mindboil
 */
+/datum/power/carrion/talking_spider
+	name = "Talking spider"
+	desc = "Creates a spider that can hijack someones vocal cords, giving you the ability to talk through them."
+	genomecost = 5
+	spiderpath = /obj/item/implant/carrion_spider/talking
+
 /datum/power/carrion/observer_spider
 	name = "Observer spider"
 	desc = "Creates a spider with a large monocular eye, useful for spying on others."
@@ -69,20 +93,32 @@ var/list/datum/power/carrion/powerinstances = list()
 	spiderpath = /obj/item/implant/carrion_spider/observer
 
 /datum/power/carrion/identity_spider
-	name = "Identity spider"
+	name = "Idenitity spider"
 	desc = "Creates a spider with the ability to extract and transmit human DNA to you."
 	genomecost = 3
 	spiderpath = /obj/item/implant/carrion_spider/identity
 
+/datum/power/carrion/holographic_spider
+	name = "Holographic spider"
+	desc = "Creates a spider with the ability to mimic appearances. Not always able to create a perfect copy. Use in hand to toggle modes."
+	genomecost = 3
+	spiderpath = /obj/item/implant/carrion_spider/holographic
+
+/datum/power/carrion/smooth_spider
+	name = "Smooth spider"
+	desc = "Evolves a spider of pure horror."
+	genomecost = 3
+	spiderpath = /obj/item/implant/carrion_spider/smooth
+
 /datum/power/carrion/maw
 	name = "Carrion Maw"
-	desc = "Unlocks and expands your jaw, giving you the ability to spit acid and call upon spiders."
+	desc = "Unlocks and expands your jaw, giving you the ability to spit acid, call upon spiders and tear off limbs."
 	genomecost = 0
 	organpath = /obj/item/organ/internal/carrion/maw
 
 /datum/power/carrion/spinneret
 	name = "Carrion Spinneret"
-	desc = "Grows a spinneret inside your lower body, making you able to create a spider nest and filter your blood from all chemicals."
+	desc = "Grows a spinneret inside your lower body, making you able to create a spider nest, filter your blood from all chemicals and make webs."
 	genomecost = 7
 	organpath = /obj/item/organ/internal/carrion/spinneret
 
@@ -338,6 +374,7 @@ var/list/datum/power/carrion/powerinstances = list()
 		var/obj/item/organ/internal/organ = new Thepower.organpath
 		var/obj/item/organ/external/parentorgan =  owner.get_organ(organ.parent_organ_base)
 		parentorgan.add_item(organ, owner, FALSE)
+		add_to_associated_organs(organ)
 
 	if(Thepower.spiderpath)
 		spiderlist |= Thepower.spiderpath

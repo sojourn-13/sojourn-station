@@ -105,6 +105,30 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#7A5454")
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.35)
 
+/datum/seed/blueberry
+	name = "blueberries"
+	seed_name = "blueberry"
+	display_name = "blueberry bush"
+	chems = list("nutriment" = list(1,10), "blueberryjuice" = list(10,10))
+	kitchen_tag = "blueberries"
+
+
+/datum/seed/blueberry/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_JUICY,1)
+	set_trait(TRAIT_MATURATION,5)
+	set_trait(TRAIT_PRODUCTION,5)
+	set_trait(TRAIT_YIELD,2)
+	set_trait(TRAIT_POTENCY,10)
+	set_trait(TRAIT_PRODUCT_ICON,"berry")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#3BA4EC")
+	set_trait(TRAIT_PLANT_ICON,"bush")
+	set_trait(TRAIT_IDEAL_HEAT, 298)
+	set_trait(TRAIT_IDEAL_LIGHT, 7)
+	set_trait(TRAIT_WATER_CONSUMPTION, 6)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
 // Nettles/variants.
 /datum/seed/nettle
 	name = "nettle"
@@ -172,7 +196,7 @@
 	name = "bloodtomato"
 	seed_name = "blood tomato"
 	display_name = "blood tomato plant"
-	mutants = list("killer")
+	mutants = list("killertomato")
 	chems = list("nutriment" = list(1,10), "blood" = list(1,5))
 	splat_type = /obj/effect/decal/cleanable/blood/splatter
 
@@ -1539,3 +1563,121 @@
 	set_trait(TRAIT_SPREAD,3)
 	set_trait(TRAIT_POTENCY,50)
 	set_trait(TRAIT_INVASIVE,1)
+
+
+///////////////////
+// The following were lovingly stolen/ported from Occulus-Eris
+// Coding: ShadzFen
+// Spriting: Sigmasquad
+
+/datum/seed/blueberry
+	name = "blueberries"
+	seed_name = "blueberry"
+	display_name = "blueberry bush"
+	chems = list("nutriment" = list(1,10), "blueberryjuice" = list(10,10))
+	kitchen_tag = "blueberries"
+
+
+/datum/seed/blueberry/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_JUICY,1)
+	set_trait(TRAIT_MATURATION,5)
+	set_trait(TRAIT_PRODUCTION,5)
+	set_trait(TRAIT_YIELD,2)
+	set_trait(TRAIT_POTENCY,10)
+	set_trait(TRAIT_PRODUCT_ICON,"berry")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#3BA4EC")
+	set_trait(TRAIT_PLANT_ICON,"bush")
+	set_trait(TRAIT_IDEAL_HEAT, 298)
+	set_trait(TRAIT_IDEAL_LIGHT, 7)
+	set_trait(TRAIT_WATER_CONSUMPTION, 6)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
+
+/datum/seed/strawberry
+	name = "strawberries"
+	seed_name = "strawberries"
+	display_name = "strawberry bush"
+	chems = list("nutriment" = list(1,10), "strawberryjuice" = list(10,10))
+	kitchen_tag = "strawberries"
+
+/datum/seed/strawberry/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_JUICY,1)
+	set_trait(TRAIT_MATURATION,5)
+	set_trait(TRAIT_PRODUCTION,5)
+	set_trait(TRAIT_YIELD,2)
+	set_trait(TRAIT_POTENCY,10)
+	set_trait(TRAIT_PRODUCT_ICON,"strawberry")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#FF0606")
+	set_trait(TRAIT_PLANT_ICON,"bush")
+	set_trait(TRAIT_IDEAL_HEAT, 298)
+	set_trait(TRAIT_IDEAL_LIGHT, 7)
+	set_trait(TRAIT_WATER_CONSUMPTION, 6)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
+/datum/seed/pineapple
+	name = "pineapple"
+	seed_name = "pineapple"
+	display_name = "pineapple shrub"
+	chems = list("nutriment" = list(10,20), "pineapplejuice" = list(20,30))
+	kitchen_tag = "pineapples"
+
+/datum/seed/pineapple/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT,2)
+	set_trait(TRAIT_MATURATION,6)
+	set_trait(TRAIT_PRODUCTION,6)
+	set_trait(TRAIT_YIELD,1)
+	set_trait(TRAIT_PRODUCT_ICON,"pineapple")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#FBFBFB")
+	set_trait(TRAIT_PLANT_COLOUR,"#69AD50")
+	set_trait(TRAIT_PLANT_ICON,"pineapple")
+	set_trait(TRAIT_IDEAL_HEAT, 298)
+	set_trait(TRAIT_IDEAL_LIGHT, 7)
+	set_trait(TRAIT_WATER_CONSUMPTION, 6)
+
+/datum/seed/cinnamon
+	name = "cinnamon"
+	seed_name = "cinnamon"
+	display_name = "cinnamon"
+	chems = list("cinnamonpowder" = list(6,12))
+
+/datum/seed/cinnamon/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_MATURATION,3)
+	set_trait(TRAIT_PRODUCTION,6)
+	set_trait(TRAIT_YIELD,4)
+	set_trait(TRAIT_POTENCY,10)
+	set_trait(TRAIT_PRODUCT_ICON,"cinnamon")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#e4a073")
+	set_trait(TRAIT_PLANT_COLOUR,"#4bbc46")
+	set_trait(TRAIT_PLANT_ICON,"stalk3")
+	set_trait(TRAIT_IDEAL_HEAT, 298)
+
+/datum/seed/mint
+	name = "mint"
+	seed_name = "mint"
+	display_name = "mint plant"
+	chems = list("blendedmint" = list(10,10))
+	kitchen_tag = "mint"
+
+/datum/seed/mint/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_MATURATION,6)
+	set_trait(TRAIT_PRODUCTION,6)
+	set_trait(TRAIT_YIELD,5)
+	set_trait(TRAIT_PRODUCT_ICON,"mint")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#8AFF24")
+	set_trait(TRAIT_PLANT_COLOUR,"#749733")
+	set_trait(TRAIT_PLANT_ICON,"mint")
+	set_trait(TRAIT_IDEAL_HEAT, 299)
+	set_trait(TRAIT_IDEAL_LIGHT, 7)
+	set_trait(TRAIT_WATER_CONSUMPTION, 6)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
+/////////////////

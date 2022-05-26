@@ -85,6 +85,7 @@
 
 	var/flash_protection = 0				// Total level of flash protection
 	var/psi_blocking = 0					// Total level of psi protection
+	var/psi_blocking_additive = 0			// Added level of psi protection, form things like perks or other such things.
 	var/equipment_tint_total = 0			// Total level of visualy impairing items
 	var/equipment_darkness_modifier			// Darkvision modifier from equipped items
 	var/equipment_vision_flags				// Extra vision flags from equipped items
@@ -109,3 +110,7 @@
 
 	var/language_blackout = 0
 	var/suppress_communication = 0
+
+	var/momentum_speed = 0 // The amount of run-up
+	var/momentum_dir = 0 // Direction of run-up
+	var/momentum_reduction_timer

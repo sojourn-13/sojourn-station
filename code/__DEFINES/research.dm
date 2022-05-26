@@ -1,4 +1,4 @@
-//#define SHEET_MATERIAL_AMOUNT 1
+#define SHEET_MATERIAL_AMOUNT 1
 
 #define TECH_MATERIAL "materials"
 #define TECH_ENGINEERING "engineering"
@@ -35,6 +35,7 @@
 
 
 // Design categories
+#define CAT_AMERIDIAN    "Ameridian"
 #define CAT_MISC        "Misc"
 #define CAT_COMP        "Computers"
 #define CAT_AI          "AI"

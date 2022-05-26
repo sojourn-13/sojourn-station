@@ -5,7 +5,7 @@
 	spider_price = 10
 	var/owner_loc
 	var/active = FALSE
-
+	ignore_activate_all = TRUE
 	var/observing = FALSE
 	var/datum/mind/owner_mind
 	var/list/obj/item/implant/carrion_spider/observer/group

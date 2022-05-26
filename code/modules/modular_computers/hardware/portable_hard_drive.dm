@@ -16,6 +16,11 @@
 	var/disk_name
 	var/license = 0
 
+/obj/item/computer_hardware/hard_drive/get_item_cost(export)
+	. = ..()
+	for(var/datum/computer_file/wealth_of_file in stored_files)
+		. += (wealth_of_file.added_wealth * wealth_of_file.size)
+
 /obj/item/computer_hardware/hard_drive/portable/basic
 	name = "basic data disk"
 	icon_state = "yellow"
@@ -53,6 +58,15 @@
 	disk_name = "nuke"
 	default_files = list(
 		/datum/computer_file/program/revelation/primed
+	)
+
+/obj/item/computer_hardware/hard_drive/portable/advanced/coin
+	name = "data disk"
+	icon_state = "ruined"
+	disk_name = "Key-Authenticated Zipped K-oin"
+	max_capacity = 60 //50 x 60 = 3000
+	default_files = list(
+		/datum/computer_file/program/coin_miner/disk //Fancy anticheat verson
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/Initialize()

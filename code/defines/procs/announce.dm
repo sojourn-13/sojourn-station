@@ -50,19 +50,19 @@
 	Log(message, message_title)
 
 datum/announcement/proc/Message(message as text, message_title as text)
-	global_announcer.autosay("<span class='warning'>[title]:</span> [message]", announcer ? announcer : ANNOUNSER_NAME)
+	global_announcer.autosay("<span class='warning'>[title]:</span> [message]", announcer ? announcer : ANNOUNCER_NAME)
 
 datum/announcement/minor/Message(message as text, message_title as text)
-	global_announcer.autosay(message, ANNOUNSER_NAME)
+	global_announcer.autosay(message, ANNOUNCER_NAME)
 
 datum/announcement/priority/Message(message as text, message_title as text)
-	global_announcer.autosay("<span class='alert'>[message_title]:</span> [message]", announcer ? announcer : ANNOUNSER_NAME)
+	global_announcer.autosay("<span class='alert'>[message_title]:</span> [message]", announcer ? announcer : ANNOUNCER_NAME)
 
 datum/announcement/priority/command/Message(message as text, message_title as text)
-	global_announcer.autosay("<span class='warning'>[message_title]:</span> [message]", ANNOUNSER_NAME)
+	global_announcer.autosay("<span class='warning'>[message_title]:</span> [message]", ANNOUNCER_NAME)
 
 datum/announcement/priority/security/Message(message as text, message_title as text)
-	global_announcer.autosay("<font color='red'>[message_title]:</span> [message]", ANNOUNSER_NAME)
+	global_announcer.autosay("<font color='red'>[message_title]:</span> [message]", ANNOUNCER_NAME)
 
 datum/announcement/proc/NewsCast(message as text, message_title as text)
 	if(!newscast)
@@ -118,7 +118,7 @@ datum/announcement/proc/Log(message as text, message_title as text)
 /proc/AnnounceArrival(var/mob/living/character, var/rank, var/join_message)
 	if (join_message && SSticker.current_state == GAME_STATE_PLAYING && SSjob.ShouldCreateRecords(rank))
 		if(issilicon(character))
-			global_announcer.autosay("A new [rank] [join_message].", ANNOUNSER_NAME)
+			global_announcer.autosay("A new [rank] [join_message].", ANNOUNCER_NAME)
 		else
 			if (character.client)
 				if (character.client.prefs)
@@ -128,6 +128,6 @@ datum/announcement/proc/Log(message as text, message_title as text)
 					if (rank == "Outsider")
 						message_admins("[character.real_name], has joined the round silently.")
 					else
-						global_announcer.autosay("[character.real_name], [rank], [join_message].", ANNOUNSER_NAME)
+						global_announcer.autosay("[character.real_name], [rank], [join_message].", ANNOUNCER_NAME)
 			else
-				global_announcer.autosay("[character.real_name], [rank], [join_message].", ANNOUNSER_NAME)	// This should not trigger -- but it's here as an emergency fallback
+				global_announcer.autosay("[character.real_name], [rank], [join_message].", ANNOUNCER_NAME)	// This should not trigger -- but it's here as an emergency fallback

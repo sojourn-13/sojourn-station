@@ -17,13 +17,13 @@
 /datum/design/research/item/chem_dispenser
 	name = "mounted chemical dispenser"
 	desc = "A complex web of tubing and needles suitable for hardsuit use."
-	build_path = /obj/item/rig_module/chem_dispenser
+	build_path = /obj/item/rig_module/modular_injector
 	category = "RIG"
 
 /datum/design/research/item/chem_injector
 	name = "mounted chemical injector"
 	desc = "A complex web of tubing and needles suitable for hardsuit use."
-	build_path = /obj/item/rig_module/chem_dispenser/injector
+	build_path = /obj/item/rig_module/modular_injector/medical
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 10, MATERIAL_PLASTIC = 10, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1, MATERIAL_DIAMOND = 1)
 	category = "RIG"
 
@@ -36,7 +36,7 @@
 /datum/design/research/item/combat_injector
 	name = "mounted combat injector"
 	desc = "A complex web of tubing and needles suitable for hardsuit use."
-	build_path = /obj/item/rig_module/chem_dispenser/combat
+	build_path = /obj/item/rig_module/modular_injector/combat
 	materials = list(MATERIAL_STEEL = 25, MATERIAL_GLASS = 15, MATERIAL_PLASTIC = 15, MATERIAL_GOLD = 2, MATERIAL_SILVER = 2, MATERIAL_DIAMOND = 1)
 	category = "RIG"
 
@@ -166,4 +166,25 @@
 	name = "Advanced AMI control module"
 	build_path = /obj/item/rig/advhazmat
 	build_type = MECHFAB
+	category = "RIG"
+
+//misc rig things
+/datum/design/research/item/riggrapple
+	name = "hardsuit integrated grappler"
+	desc = "Integrated grappling hook into a hardsuit."
+	build_path = /obj/item/rig_module/grappler
+	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 50)
+	category = "RIG"
+
+/datum/design/research/item/rig_clamp
+	name = "hardsuit integrated cargo clamp"
+	desc = "Integrated cargo handling system into a hardsuit."
+	build_path = /obj/item/rig_module/cargo_clamp
+	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 15)
+	category = "RIG"
+
+/datum/design/research/item/ion_jaunt
+	name = "Ion Jaunt"
+	desc = "A special device designed to reduce the impact of EMPs on electrical systems."
+	build_path = /obj/item/robot_parts/robot_component/ion_jaunt
 	category = "RIG"

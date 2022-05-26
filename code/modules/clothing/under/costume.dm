@@ -69,6 +69,33 @@ obj/item/clothing/under/costume/history/pirate
 	icon_state = "latexmaid"
 	item_state = "latexmaid"
 
+/obj/item/clothing/under/costume/kinky/latex_maid/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Default Maid"] = "latexmaid"
+	options["Alt Maid"] = "maid_alt" //Sprite by Tori
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your clothing into [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/costume/kinky/leather
 	name = "leather gear"
 	desc = "A very revealing leather outfit. Kinky."
@@ -187,6 +214,35 @@ obj/item/clothing/under/costume/history/pirate
 	desc = "The outfit of a mime. It's not very colorful."
 	icon_state = "mime"
 	item_state = "ba_suit"
+
+/obj/item/clothing/under/costume/job/mime/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["mime default"] = "mime"
+	options["mime default down"] = "mime_d"
+	options["mime skirt"] = "mime_skirt"
+	options["mime skirt down"] = "mime_skirt_d"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/under/costume/job/nurse
 	name = "nurse dress"

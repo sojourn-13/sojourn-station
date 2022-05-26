@@ -11,7 +11,13 @@
 	/obj/item/implant/core_implant/cruciform/lemniscate,
 	/obj/item/implant/core_implant/cruciform/monomial,
 	/obj/item/implant/core_implant/cruciform/divisor,
-	/obj/item/cruciform_upgrade
+	/obj/item/cruciform_upgrade,
+	/obj/item/cruciform_upgrade/natures_blessing,
+	/obj/item/cruciform_upgrade/faiths_shield,
+	/obj/item/cruciform_upgrade/cleansing_presence,
+	/obj/item/cruciform_upgrade/martyr_gift,
+	/obj/item/cruciform_upgrade/wrath_of_god,
+	/obj/item/cruciform_upgrade/speed_of_the_chosen
 	)
 	var/list/available_slots = list()
 
@@ -21,6 +27,7 @@
 	//bottom right
 	available_slots += list(list("offset" = list("x" = 8 , "y" = -3), "item" = null))
 	..()
+
 /obj/machinery/optable/altar/attackby(obj/item/I, mob/user)
 	if(!istype(I) || !(I.type in acceptable_items))
 		return

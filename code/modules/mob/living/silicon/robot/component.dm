@@ -11,7 +11,8 @@
 	var/max_damage = 30  // HP of this component.
 	var/mob/living/silicon/robot/owner
 	var/installed_by_default = TRUE
-
+	var/robot_trait = null // a cyborg trait to add when this is installed
+	var/powered_trait = FALSE // does this module need to be powered for its trait to be active ?
 
 // The actual device object that has to be installed for this.
 /datum/robot_component/var/external_type = null
@@ -23,7 +24,13 @@
 	src.owner = R
 
 /datum/robot_component/proc/install()
+	if(!powered_trait)
+		owner.AddTrait(robot_trait)
+	else
+		update_power_state()
+
 /datum/robot_component/proc/uninstall()
+	owner.RemoveTrait(robot_trait)
 
 /datum/robot_component/proc/destroy()
 	// The thing itself isn't there anymore, but some fried remains are.
@@ -47,7 +54,7 @@
 	uninstall()
 
 /datum/robot_component/proc/take_damage(brute, electronics, sharp, edge)
-	if(installed != 1) return
+	if(installed != TRUE) return
 
 	brute_damage += brute
 	electronics_damage += electronics
@@ -56,7 +63,7 @@
 		destroy()
 
 /datum/robot_component/proc/heal_damage(brute, electronics)
-	if(installed != 1)
+	if(installed != TRUE)
 		// If it's not installed, can't repair it.
 		return 0
 
@@ -64,17 +71,23 @@
 	electronics_damage = max(0, electronics_damage - electronics)
 
 /datum/robot_component/proc/is_powered()
-	return (installed == 1) && (brute_damage + electronics_damage < max_damage) && (!idle_usage || powered)
+	return (installed == TRUE) && (brute_damage + electronics_damage < max_damage) && (!idle_usage || powered)
 
 /datum/robot_component/proc/update_power_state()
-	if(toggled == 0)
-		powered = 0
+	if(toggled == FALSE)
+		powered = FALSE
+		if(powered_trait && robot_trait)
+			owner.RemoveTrait(robot_trait)
 		return
 	if(owner.cell && owner.cell.charge >= idle_usage)
 		owner.cell_use_power(idle_usage)
-		powered = 1
+		powered = TRUE
+		if(powered_trait && robot_trait)
+			owner.AddTrait(robot_trait)
 	else
-		powered = 0
+		powered = FALSE
+		if(powered_trait && robot_trait)
+			owner.RemoveTrait(robot_trait)
 
 
 // ARMOUR
@@ -335,3 +348,12 @@
 	icon_state = "jetpack-black"
 	icon_state_broken = "jetpack-black"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASMA = 10, MATERIAL_SILVER = 20)
+
+/obj/item/robot_parts/robot_component/ion_jaunt
+	name = "ion jaunt"
+	desc = "A special device designed to reduce the impact of EMPs on electrical systems." // TODO : Bother
+	icon_state = "ion_jaunt_stock"
+	icon_state_broken = "ion_jaunt_stock"
+	w_class = ITEM_SIZE_HUGE // Very big
+	matter_reagents = list(MATERIAL_PLASMA = 20, MATERIAL_URANIUM = 20, MATERIAL_IRON = 20) // To force people to use a stasis beaker
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 5, MATERIAL_PLASMAGLASS = 1, MATERIAL_DIAMOND = 1, MATERIAL_TRITIUM = 1, MATERIAL_OSMIUM = 1, MATERIAL_MHYDROGEN = 1)

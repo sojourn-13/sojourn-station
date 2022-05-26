@@ -10,6 +10,7 @@
 					/obj/item/reagent_containers/glass/bottle/stoxin = 4,
 					/obj/item/reagent_containers/glass/bottle/toxin = 4,
 					/obj/item/reagent_containers/syringe/spaceacillin = 4,
+					/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 10,
 					/obj/item/stack/medical/splint = 30,
 					/obj/item/reagent_containers/syringe = 12,
 					/obj/item/device/scanner/health = 5,
@@ -23,6 +24,8 @@
 						/obj/item/reagent_containers/pill/antitox = 6)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	auto_price = FALSE
+	custom_vendor = TRUE // Chemists can load it for MDs
+	can_stock = list(/obj/item/reagent_containers/glass, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/stack/medical, /obj/item/bodybag, /obj/item/device/scanner/health, /obj/item/reagent_containers/hypospray, /obj/item/storage/pill_bottle)
 	vendor_department = DEPARTMENT_MEDICAL
 
 /obj/machinery/vending/wallmed
@@ -43,6 +46,7 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 4,
 		/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine = 8,
 		/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 5,
+		/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 20,
 
 		/obj/item/device/scanner/health = 1
 		)
@@ -61,9 +65,13 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 50,
 		/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine = 75,
 		/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 50,
+		/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 20,
 
 		/obj/item/reagent_containers/pill/tox = 100
 		)
+	custom_vendor = TRUE // Chemists can load it for customers
+	can_stock = list(/obj/item/reagent_containers/glass, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/stack/medical, /obj/item/bodybag, /obj/item/device/scanner/health, /obj/item/reagent_containers/hypospray, /obj/item/storage/pill_bottle)
+	vendor_department = DEPARTMENT_MEDICAL
 
 /obj/machinery/vending/wallmed/lobby
 	products = list(
@@ -82,6 +90,7 @@
 		/obj/item/reagent_containers/syringe/tricordrazine = 5,
 		/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 3,
 		/obj/item/reagent_containers/syringe/spaceacillin = 3,
+		/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 20,
 
 		/obj/item/implantcase/death_alarm = 4,
 		/obj/item/implanter = 4,
@@ -108,6 +117,7 @@
 		/obj/item/reagent_containers/syringe/tricordrazine = 125,
 		/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 50,
 		/obj/item/reagent_containers/syringe/spaceacillin = 100,
+		/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 20,
 
 		/obj/item/implantcase/death_alarm = 25,
 		/obj/item/implanter = 25,
@@ -117,5 +127,4 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/hyperzine = 100,
 		/obj/item/reagent_containers/hypospray/autoinjector/drugs = 100,
 		)
-	vendor_department = DEPARTMENT_MEDICAL
 	auto_price = FALSE

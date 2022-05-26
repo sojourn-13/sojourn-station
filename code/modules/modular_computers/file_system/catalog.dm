@@ -171,6 +171,8 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	var/list/recipe_data
 	var/list/result_of_decomposition_in
 	var/list/can_be_used_in
+	var/list/also_gives
+	var/list/cant_be_made_with
 
 /datum/catalog_entry/reagent/search_value(var/value)
 	if(..())
@@ -193,6 +195,22 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 		if(V == reagent_type)
 			return
 	can_be_used_in.Add(reagent_type)
+
+/datum/catalog_entry/reagent/proc/add_also_gives(var/reagent_type)
+	if(!also_gives)
+		also_gives = list()
+	for(var/V in also_gives)
+		if(V == reagent_type)
+			return
+	also_gives.Add(reagent_type)
+
+/datum/catalog_entry/reagent/proc/add_cant_be_made_with(var/reagent_type)
+	if(!cant_be_made_with)
+		cant_be_made_with = list()
+	for(var/V in cant_be_made_with)
+		if(V == cant_be_made_with)
+			return
+	cant_be_made_with.Add(reagent_type)
 
 /datum/catalog_entry/reagent/New(datum/reagent/V)
 	if(!istype(V))
@@ -233,10 +251,19 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 		for(var/datum/chemical_reaction/R in recipes)
 			recipe_data += list(R.ui_data())
 	var/list/used_in = GLOB.chemical_reactions_list[V.id]
+	if(also_gives)
+		for(var/datum/chemical_reaction/R in also_gives)
+			if(R.byproducts)
+				add_also_gives(get_reagent_type_by_id(R.byproducts))
+	if(cant_be_made_with)
+		for(var/datum/chemical_reaction/R in cant_be_made_with)
+			if(R.inhibitors)
+				add_cant_be_made_with(get_reagent_type_by_id(R.inhibitors))
 	if(used_in)
 		for(var/datum/chemical_reaction/R in used_in)
 			if(R.result)
 				add_can_be_used_in(get_reagent_type_by_id(R.result))
+
 	// DESCRIPTION
 	description = V.description
 	taste = "Has [V.taste_mult > 1 ? "strong" : V.taste_mult < 1 ? "weak" : ""] taste of [V.taste_description]."
@@ -268,7 +295,10 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	data["scannable"] = scannable
 	data["overdose"] = overdose
 	data["result_of_decomposition_in"] = result_of_decomposition_in
+	data["cant_be_made_with"] = cant_be_made_with
+	data["also_gives"] = also_gives
 	data["can_be_used_in"] = can_be_used_in
+
 
 	data["recipe_data"] = recipe_data
 

@@ -31,6 +31,10 @@
 	/obj/item/rig/hazard/equipped = 2,
 	))
 
+/obj/random/rig/always_spawn
+	name = "random always spawn rig suit"
+	spawn_nothing_percentage = 0
+
 /obj/random/rig/low_chance
 	name = "low chance random rig suit"
 	icon_state = "armor-blue-low"
@@ -54,6 +58,10 @@
 	name = "random damaged rig suit"
 	icon_state = "armor-red"
 	has_postspawn = TRUE
+
+/obj/random/rig/damaged/always_spawn
+	name = "random always spawn damaged rig suit"
+	spawn_nothing_percentage = 0
 
 /obj/random/rig/damaged/post_spawn(var/list/spawns)
 	for (var/obj/item/rig/module in spawns)
@@ -110,10 +118,9 @@
 	/obj/item/rig_module/device/anomaly_scanner = 2,
 	/obj/item/rig_module/device/orescanner = 2,
 	/obj/item/rig_module/device/rcd = 0.5,
-	/obj/item/rig_module/chem_dispenser = 0.8,
-	/obj/item/rig_module/chem_dispenser/ninja = 2, //This version is same as normal but has much less of each chem
-	/obj/item/rig_module/chem_dispenser/combat = 0.8,
-	/obj/item/rig_module/chem_dispenser/injector = 0.5, //Like normal but can be used on other people as well as yourself
+	/obj/item/rig_module/modular_injector = 0.8,
+	/obj/item/rig_module/modular_injector/combat = 0.8,
+	/obj/item/rig_module/modular_injector/medical = 0.5, //Like normal but can be used on other people as well as yourself
 	/obj/item/rig_module/voice = 3,
 	/obj/item/rig_module/maneuvering_jets = 8, //Useful but common
 
@@ -141,6 +148,10 @@
 	icon_state = "box-red"
 	spawn_nothing_percentage = 60
 
+/obj/random/rig_module/rare/always_spawn
+	name = "random always spawn rare hardsuit module"
+	spawn_nothing_percentage = 0
+
 /obj/random/rig_module/rare/item_to_spawn()
 	return pickweight(list(
 	//Storage
@@ -161,8 +172,8 @@
 	//Utility
 	/obj/item/rig_module/device/drill = 1,
 	/obj/item/rig_module/device/rcd = 1,
-	/obj/item/rig_module/chem_dispenser/combat = 1,
-	/obj/item/rig_module/chem_dispenser/injector = 1, //Like normal but can be used on other people as well as yourself
+	/obj/item/rig_module/modular_injector/combat = 1,
+	/obj/item/rig_module/modular_injector/medical = 1, //Like normal but can be used on other people as well as yourself
 	/obj/item/rig_module/voice = 1,
 	/obj/item/rig_module/held/shield = 1,
 	//Vision

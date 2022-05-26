@@ -3,11 +3,13 @@
 	icon_state = "meds-green"
 	spawn_nothing_percentage = 60
 
+/obj/random/medical/always_spawn
+	name = "random always spawn medicine"
+	spawn_nothing_percentage = 0
+
 /obj/random/medical/item_to_spawn()
 	return pickweight(list(/obj/item/stack/medical/bruise_pack = 4,\
 				/obj/item/stack/medical/ointment = 4,\
-				/obj/item/stack/medical/advanced/bruise_pack = 1,\
-				/obj/item/stack/medical/advanced/ointment = 1,\
 				/obj/item/stack/medical/splint = 1,\
 				/obj/item/bodybag = 2,\
 				/obj/item/bodybag/cryobag = 1,\
@@ -20,6 +22,10 @@
 				/obj/item/reagent_containers/syringe/tricordrazine = 1,\
 				/obj/item/reagent_containers/syringe/spaceacillin = 1,\
 				/obj/item/reagent_containers/glass/beaker/vial/nanites = 0.5,\
+				/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 2,\
+				/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 3,\
+				/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine = 3,\
+				/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 3,\
 				/obj/item/stack/nanopaste = 0.5,\
 				/obj/item/reagent_containers/syringe/stim/mbr = 0.5,\
 				/obj/item/reagent_containers/syringe/stim/cherrydrops = 0.5,\
@@ -52,7 +58,8 @@
 				/obj/item/stack/medical/ointment = 4,\
 				/obj/item/reagent_containers/syringe/antitoxin = 2,\
 				/obj/item/reagent_containers/syringe/inaprovaline = 2,\
-				/obj/item/reagent_containers/syringe/tricordrazine = 1))
+				/obj/item/reagent_containers/syringe/tricordrazine = 1,\
+				/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 2))
 
 /obj/random/medical_lowcost/low_chance
 	name = "low chance random low tier medicine"
@@ -68,10 +75,24 @@
 	return pickweight(list(/obj/item/storage/firstaid/regular = 3,\
 				/obj/item/storage/firstaid/toxin = 1,\
 				/obj/item/storage/firstaid/o2 = 1,\
-				/obj/item/storage/firstaid/adv = 0.5,\
 				/obj/item/storage/firstaid/fire = 1))
 
 /obj/random/firstaid/low_chance
 	name = "low chance random first aid kit"
 	icon_state = "meds-red-low"
 	spawn_nothing_percentage = 80
+
+//Handmade stuff
+/obj/random/medical_lowcost_handmade
+	name = "random low tier handmade medicine"
+	icon_state = "meds-grey"
+	spawn_nothing_percentage = 30
+
+/obj/random/medical_lowcost_handmade/item_to_spawn()
+	return pickweight(list(/obj/item/stack/medical/bruise_pack/handmade = 4,\
+				/obj/item/stack/medical/ointment/handmade = 4,\
+				/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 2,\
+				/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 1,\
+				/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine = 3,
+				/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 2,\
+				/obj/item/stack/medical/splint/improvised = 1))

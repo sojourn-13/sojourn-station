@@ -55,24 +55,24 @@ datum/preferences
 	var/counter
 	if(!istype(pref.ears_colors)) pref.ears_colors = list()
 	if(GLOB.ears_styles_list[pref.ears_style])
-		for(counter = 1, counter <= GLOB.ears_styles_list[pref.ears_style].colored_layers, counter++)
+		for(counter = 1, counter <= GLOB.ears_styles_list[pref.ears_style]?:colored_layers, counter++)
 			if(counter > pref.ears_colors.len) pref.ears_colors.Add(counter ? (counter == 1 ? "#000000" : "#777777") : "#ffffff")
 			else if(!iscolor(pref.ears_colors[counter])) pref.ears_colors[counter] = counter ? (counter == 1 ? "#000000" : "#777777") : "#ffffff"
 	if(!istype(pref.tail_colors)) pref.tail_colors = list()
 	if(GLOB.tail_styles_list[pref.tail_style])
-		for(counter = 1, counter <= GLOB.tail_styles_list[pref.tail_style].colored_layers, counter++)
+		for(counter = 1, counter <= GLOB.tail_styles_list[pref.tail_style]?:colored_layers, counter++)
 			if(counter > pref.tail_colors.len) pref.tail_colors.Add(counter ? (counter == 1 ? "#000000" : "#777777") : "#ffffff")
 			else if(!iscolor(pref.tail_colors[counter])) pref.tail_colors[counter] = counter ? (counter == 1 ? "#000000" : "#777777") : "#ffffff"
 	if(!istype(pref.wings_colors)) pref.wings_colors = list()
 	if(GLOB.wings_styles_list[pref.wings_style])
-		for(counter = 1, counter <= GLOB.wings_styles_list[pref.wings_style].colored_layers, counter++)
+		for(counter = 1, counter <= GLOB.wings_styles_list[pref.wings_style]?:colored_layers, counter++)
 			if(counter > pref.wings_colors.len) pref.wings_colors.Add(counter ? (counter == 1 ? "#000000" : "#777777") : "#ffffff")
 			else if(!iscolor(pref.wings_colors[counter])) pref.wings_colors[counter] = counter ? (counter == 1 ? "#000000" : "#777777") : "#ffffff"
 	pref.blood_color = iscolor(pref.blood_color) ? pref.blood_color : initial(pref.blood_color)
 
 	if(!istype(pref.body_markings)) pref.body_markings = list()
 	for(var/item in pref.body_markings)
-		if(!item in GLOB.body_marking_list)
+		if(!(item in GLOB.body_marking_list))
 			pref.body_markings.Remove(item)
 		if(!iscolor(pref.body_markings[item]))
 			pref.body_markings[item] = "#000000"
@@ -90,19 +90,19 @@ datum/preferences
 	. += "<b>Ears:</b><br>"
 	. += "Type: <a href='?src=\ref[src];ears_type=1'>[pref.ears_style]</a><br>"
 	if(GLOB.ears_styles_list[pref.ears_style])
-		for(counter = 1, counter <= GLOB.ears_styles_list[pref.ears_style].colored_layers, counter++)
+		for(counter = 1, counter <= GLOB.ears_styles_list[pref.ears_style]?:colored_layers, counter++)
 			. += "<a href='?src=\ref[src];ears_color=[counter]'><span class='color_holder_box' style='background-color:[pref.ears_colors[counter]]'></span></a>"
 	. += "<br>"
 	. += "<b>Tail:</b><br>"
 	. += "Type: <a href='?src=\ref[src];tail_type=1'>[pref.tail_style]</a><br>"
 	if(GLOB.tail_styles_list[pref.tail_style])
-		for(counter = 1, counter <= GLOB.tail_styles_list[pref.tail_style].colored_layers, counter++)
+		for(counter = 1, counter <= GLOB.tail_styles_list[pref.tail_style]?:colored_layers, counter++)
 			. += "<a href='?src=\ref[src];tail_color=[counter]'><span class='color_holder_box' style='background-color:[pref.tail_colors[counter]]'></span></a>"
 	. += "<br>"
 	. += "<b>Wings:</b><br>"
 	. += "Type: <a href='?src=\ref[src];wings_type=1'>[pref.wings_style]</a><br>"
 	if(GLOB.wings_styles_list[pref.wings_style])
-		for(counter = 1, counter <= GLOB.wings_styles_list[pref.wings_style].colored_layers, counter++)
+		for(counter = 1, counter <= GLOB.wings_styles_list[pref.wings_style]?:colored_layers, counter++)
 			. += "<a href='?src=\ref[src];wings_color=[counter]'><span class='color_holder_box' style='background-color:[pref.wings_colors[counter]]'></span></a>"
 	. += "<br>"
 	. += "<b>Markings:</b><br>"
@@ -134,7 +134,7 @@ datum/preferences
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["ears_color"])
 		var/colornum = text2num(href_list["ears_color"])
-		if(colornum && colornum >= 1 && colornum <= GLOB.ears_styles_list[pref.ears_style].colored_layers)
+		if(colornum && colornum >= 1 && colornum <= GLOB.ears_styles_list[pref.ears_style]?:colored_layers)
 			var/color = input(user, "Choose your character's ear color:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.ears_colors[colornum]) as color|null
 			if(color && CanUseTopic(user))
 				pref.ears_colors[colornum] = color
@@ -147,7 +147,7 @@ datum/preferences
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["tail_color"])
 		var/colornum = text2num(href_list["tail_color"])
-		if(colornum && colornum >= 1 && colornum <= GLOB.tail_styles_list[pref.tail_style].colored_layers)
+		if(colornum && colornum >= 1 && colornum <= GLOB.tail_styles_list[pref.tail_style]?:colored_layers)
 			var/color = input(user, "Choose your character's tail color:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.tail_colors[colornum]) as color|null
 			if(color && CanUseTopic(user))
 				pref.tail_colors[colornum] = color
@@ -160,7 +160,7 @@ datum/preferences
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 	if(href_list["wings_color"])
 		var/colornum = text2num(href_list["wings_color"])
-		if(colornum && colornum >= 1 && colornum <= GLOB.wings_styles_list[pref.wings_style].colored_layers)
+		if(colornum && colornum >= 1 && colornum <= GLOB.wings_styles_list[pref.wings_style]?:colored_layers)
 			var/color = input(user, "Choose your character's wings color:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.wings_colors[colornum]) as color|null
 			if(color && CanUseTopic(user))
 				pref.wings_colors[colornum] = color
@@ -189,7 +189,7 @@ datum/preferences
 	if(href_list["marking_color"])
 		var/pos = text2num(href_list["marking_color"])
 		pos = pref.body_markings[pos]
-		if(pos && pos in pref.body_markings)
+		if(pos && (pos in pref.body_markings))
 			var/color = input(user, "Choose the marking color:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.body_markings[pos]) as color|null
 			if(color && (pos in pref.body_markings) && CanUseTopic(user))
 				pref.body_markings[pos] = color

@@ -37,7 +37,7 @@
 		return
 	..()
 
-/mob/living/carbon/human/me_verb(message as text)
+/mob/living/carbon/human/me_verb(message as message) //SoJ edit.
 	if(suppress_communication)
 		to_chat(src, get_suppressed_message())
 		return
@@ -124,7 +124,7 @@
 
 	return ..()
 
-/mob/living/carbon/human/GetVoice()
+/mob/living/carbon/human/GetVoice(mask_check)
 
 	var/voice_sub
 	if(istype(back, /obj/item/rig))
@@ -133,6 +133,13 @@
 		if(rig.speech && rig.speech.voice_holder && rig.speech.voice_holder.active && rig.speech.voice_holder.voice)
 			voice_sub = rig.speech.voice_holder.voice
 	else
+		if(mask_check && wear_mask)
+			var/obj/item/clothing/mask/mask = wear_mask
+			if(istype(mask) && mask.muffle_voice)
+				voice_sub = "Unknown"
+				if(GetIdCard())
+					var/obj/item/card/id/gotcard = src.GetIdCard()
+					voice_sub += " as [gotcard.registered_name]"
 		for(var/obj/item/gear in list(wear_mask, wear_suit, head))
 			if(!gear)
 				continue
@@ -226,6 +233,10 @@
 				var/obj/item/device/radio/R = r_ear
 				R.talk_into(src, message, null, verb, speaking, speech_volume)
 				used_radios += r_ear
+			else if(head && istype(head, /obj/item/device/radio)) // Snowflake code for radio hat
+				var/obj/item/device/radio/R = head
+				R.talk_into(src, message, null, verb, speaking, speech_volume)
+				used_radios += head
 		if("right ear")
 			var/obj/item/device/radio/R
 			if(r_hand && istype(r_hand, /obj/item/device/radio))

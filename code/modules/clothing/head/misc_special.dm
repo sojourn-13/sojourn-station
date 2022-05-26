@@ -11,7 +11,7 @@
 		)
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_GLASS = 2)
 	var/up = 0
-	armor = list(
+	armor_list = list(
 		melee = 20,
 		bullet = 5,
 		energy = 10,
@@ -26,7 +26,8 @@
 	w_class = ITEM_SIZE_NORMAL
 	var/base_state
 	flash_protection = FLASH_PROTECTION_MAJOR
-	tint = TINT_HEAVY
+	tint = TINT_MODERATE
+	obscuration = HEAVY_OBSCURATION
 
 /obj/item/clothing/head/welding/attack_self()
 	if(!base_state)
@@ -84,6 +85,7 @@
 			flags_inv |= (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
 			flash_protection = initial(flash_protection)
 			tint = initial(tint)
+			obscuration = initial(obscuration)
 			icon_state = base_state
 			to_chat(usr, "You flip the [src] down to protect your eyes.")
 		else
@@ -91,6 +93,7 @@
 			body_parts_covered &= ~(EYES|FACE)
 			flash_protection = FLASH_PROTECTION_NONE
 			tint = TINT_NONE
+			obscuration = 0
 			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
 			icon_state = "[base_state]up"
 			to_chat(usr, "You push the [src] up out of your face.")
@@ -175,4 +178,4 @@
 			is none other than the Matriarch of the Hunting Lodge."
 	icon_state = "matriarch_cape"
 	item_state = "matriarch_cape"
-	armor = list(melee = 45, bullet = 25, energy = 25, bomb = 25, bio = 20, rad = 15)
+	armor_list = list(melee = 45, bullet = 25, energy = 25, bomb = 25, bio = 20, rad = 15)

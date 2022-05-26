@@ -12,12 +12,12 @@
 	caliber = CAL_HRIFLE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_HRIFLE
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
-	price_tag = 1000
-	penetration_multiplier = 1.2
-	damage_multiplier = 1.1
+	price_tag = 1250
+	penetration_multiplier = 1.0
+	damage_multiplier = 1.0
 	recoil_buildup = 10
 	one_hand_penalty = 10
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
@@ -29,6 +29,7 @@
 	init_firemodes = list(
 	SEMI_AUTO_NODELAY
 	)
+	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/automatic/omnirifle/update_icon()
 	..()
@@ -64,7 +65,8 @@
 	icon_state = "omnirifle"
 	item_state = "omnirifle"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
-	price_tag = 1250
+	mag_well = MAG_WELL_HRIFLE
+	price_tag = 1500
 	zoom_factor = 0.3
 	recoil_buildup = 2.5
 	one_hand_penalty = 10
@@ -87,7 +89,7 @@
 	icon_state = "DMR"
 	item_state = "DMR"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
-	price_tag = 1500
+	price_tag = 1750
 	damage_multiplier = 1.2
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
@@ -96,12 +98,14 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	recoil_buildup = 3.25
 	penetration_multiplier = 1.2
+	brace_penalty = 10 //So we have a reason to entrench rather then charge every combat
 	one_hand_penalty = 15
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
 		BURST_2_ROUND
 		)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/automatic/omnirifle/fancy
 	name = "\"Osprey\" precision rifle"
@@ -113,13 +117,14 @@
 	icon_state = "osprey"
 	item_state = "osprey"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_GLASS = 10)
-	price_tag = 1750
+	price_tag = 2000
 	recoil_buildup = 3.25
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.2
 	zoom_factor = 1.2
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine
 	name = "\"Boar\" heavy carbine"
@@ -132,16 +137,18 @@
 	item_state = "boar"
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
+	mag_well = MAG_WELL_HRIFLE
 	price_tag = 1250
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
-	damage_multiplier = 0.8
+	damage_multiplier = 1
 	recoil_buildup = 6
-	penetration_multiplier = 0.8
+	penetration_multiplier = 0.7
 	one_hand_penalty = 25
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_600
 		)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/rds
 	name = "\"Warthog\" advanced carbine"
@@ -153,8 +160,10 @@
 	icon_state = "warthog"
 	item_state = "warthog"
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
+	mag_well = MAG_WELL_HRIFLE
 	price_tag = 1500
-	damage_multiplier = 0.8
+	penetration_multiplier = 1.2
+	damage_multiplier = 1.1
 	recoil_buildup = 3.25
 	one_hand_penalty = 23
 	zoom_factor = 0.3
@@ -162,41 +171,3 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
-
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine
-	name = "\"Solarian\" carbine"
-	desc = "An ancient looking rifle found commonly in the Sol Federation's old military stockpiles. Reliable but heavily dated. \
-		 It appears to have been converted at some point to chamber in .257, possibly having taken different rounds at some point."
-	icon = 'icons/obj/guns/projectile/solmarine.dmi'
-	icon_state = "solmarine"
-	item_state = "solmarine"
-	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 6)
-	mag_well = MAG_WELL_STANMAG
-	caliber = CAL_LRIFLE
-	price_tag = 1000
-	damage_multiplier = 1.0
-	penetration_multiplier = 1.2
-	recoil_buildup = 2
-	one_hand_penalty = 25
-	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND
-		)
-	saw_off = TRUE
-	sawn = /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/sawn
-
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/sawn
-	name = "sawn down \"Solarian\" carbine"
-	desc = "An ancient looking rifle found commonly in the Sol Federation's old military stockpiles. Reliable but heavily dated. \
-		 It appears to have been converted at some point to chamber in .257, possibly having taken different rounds at some point. \
-		 Someone butchered this thing beyond recognition! At least it fits in a holster."
-	icon = 'icons/obj/guns/projectile/sawnoff/solmarine.dmi'
-	icon_state = "solmarine"
-	item_state = "solmarine"
-	damage_multiplier = 0.8
-	price_tag = 650
-	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	w_class = ITEM_SIZE_SMALL
-	can_dual = TRUE
-	recoil_buildup = 4
-	one_hand_penalty = 20

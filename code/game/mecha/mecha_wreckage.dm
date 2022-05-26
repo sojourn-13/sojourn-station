@@ -37,13 +37,13 @@
 	switch(tool_type)
 
 		if(QUALITY_WIRE_CUTTING)
-			if(salvage_num <= 0 || !isemptylist(wirecutters_salvage))
+			if(salvage_num <= 0 || isemptylist(wirecutters_salvage))
 				to_chat(user, "You don't see anything that can be removed with [I].")
 				return
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-				var/type = prob(70)?pick(wirecutters_salvage):null
-				if(type)
-					var/N = new type(get_turf(user))
+				var/loot_type = prob(70)?pick(wirecutters_salvage):null
+				if(loot_type)
+					var/N = new loot_type(get_turf(user))
 					user.visible_message("[user] cuts [N] from [src].", "You cut [N] from [src].")
 					salvage_num--
 				else
@@ -52,15 +52,14 @@
 			return
 
 		if(QUALITY_WELDING)
-			if(salvage_num <= 0 || !isemptylist(welder_salvage))
+			if(salvage_num <= 0 || isemptylist(welder_salvage))
 				to_chat(user, "You don't see anything that can be cut with [I].")
 				return
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 				if(type)
-					var/N = new type(get_turf(user))
+					var/P = pick_n_take(welder_salvage)
+					var/N = new P(get_turf(user))
 					user.visible_message("[user] cuts [N] from [src]", "You cut [N] from [src]", "You hear a sound of welder nearby")
-					if(istype(N, /obj/item/mecha_parts/part))
-						welder_salvage -= type
 					salvage_num--
 					return
 				else
@@ -69,7 +68,7 @@
 			return
 
 		if(QUALITY_PRYING)
-			if(!isemptylist(crowbar_salvage))
+			if(isemptylist(crowbar_salvage))
 				to_chat(user, "You don't see anything that can be pried with [I].")
 				return
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
@@ -118,6 +117,10 @@
 				welder_salvage += part
 				parts -= part
 		return
+
+/obj/effect/decal/mecha_wreckage/gygax/marshals
+	name = "M.A.I.D Exosuit wreckage"
+	icon_state = "maid-broken"
 
 /obj/effect/decal/mecha_wreckage/gygax/dark
 	name = "Dark Gygax wreckage"

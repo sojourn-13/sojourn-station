@@ -9,7 +9,7 @@ var/global/list/default_internal_channels = list(
 	num2text(MED_I_FREQ)=list(access_medical_equip),
 	num2text(SEC_FREQ) = list(access_security),
 	num2text(BLS_FREQ) = list(access_security),
-	num2text(MAR_FREQ) = list(access_security),
+	num2text(MAR_FREQ) = list(access_forensics_lockers),
 	num2text(SEC_I_FREQ)=list(access_security),
 	num2text(SCI_FREQ) = list(access_tox,access_robotics,access_xenobiology),
 	num2text(SUP_FREQ) = list(access_cargo),
@@ -60,8 +60,6 @@ var/global/list/default_medbay_channels = list(
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
 	var/const/FREQ_LISTENING = 1
 	var/list/internal_channels
-
-/obj/item/device/radio
 	var/datum/radio_frequency/radio_connection
 	var/list/datum/radio_frequency/secure_radio_connections = new
 
@@ -110,9 +108,9 @@ var/global/list/default_medbay_channels = list(
 	if(b_stat)
 		wires.Interact(user)
 
-	return ui_interact(user)
+	return nano_ui_interact(user)
 
-/obj/item/device/radio/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/item/device/radio/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 
 	data["mic_status"] = broadcasting
@@ -540,9 +538,17 @@ var/global/list/default_medbay_channels = list(
 		if (!accept)
 			for (var/ch_name in channels)
 				var/datum/radio_frequency/RF = secure_radio_connections[ch_name]
-				if (RF.frequency==freq && (channels[ch_name]&FREQ_LISTENING))
+				if (RF && RF.frequency==freq && (channels[ch_name]&FREQ_LISTENING))
 					accept = 1
 					break
+				#ifdef JANEDEBUG
+				else if(!RF)
+					log_debug("radio.receive_range(): Channel name found in channels no secure_radio_connection analog set.")
+					log_debug("radio.receive_range(): ch_name: [ch_name]")
+					log_debug("radio.receive_range(): freq: [freq]")
+					log_debug("radio.receive_range(): level: [level]")
+					log_debug("radio.receive_range(): Is ch_name listening?: [channels[ch_name]&FREQ_LISTENING]")
+				#endif
 		if (!accept)
 			return -1
 	return canhear_range
@@ -636,7 +642,6 @@ var/global/list/default_medbay_channels = list(
 					keyslot.loc = T
 					keyslot = null
 
-			recalculateChannels()
 			to_chat(user, "You pop out the encryption key in the radio!")
 
 		else
@@ -652,7 +657,7 @@ var/global/list/default_medbay_channels = list(
 			W.loc = src
 			keyslot = W
 
-		recalculateChannels()
+	recalculateChannels()
 
 	return
 
@@ -720,7 +725,7 @@ var/global/list/default_medbay_channels = list(
 
 	. = ..()
 
-/obj/item/device/radio/borg/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/item/device/radio/borg/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 
 	data["mic_status"] = broadcasting

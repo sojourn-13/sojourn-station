@@ -6,7 +6,7 @@
 	body_parts_covered = FACE
 	w_class = ITEM_SIZE_SMALL
 	gas_transfer_coefficient = 0.90
-	voicechange = 1
+	muffle_voice = FALSE
 
 /obj/item/clothing/mask/muzzle/tape
 	name = "length of tape"
@@ -27,6 +27,15 @@
 		return 0
 	..()
 
+/obj/item/clothing/mask/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/device/assembly/voice))
+		if(src.muffle_voice == TRUE)
+			to_chat(user, SPAN_NOTICE("[src] already has a voice transmitter in it!"))
+			return
+		to_chat(user, SPAN_NOTICE("[user] installs a voice transmitter in [src]."))
+		src.muffle_voice = TRUE
+		qdel(W)
+
 /obj/item/clothing/mask/surgical
 	name = "sterile mask"
 	desc = "A sterile mask designed to help prevent the spread of diseases."
@@ -37,7 +46,7 @@
 	item_flags = FLEXIBLEMATERIAL
 	gas_transfer_coefficient = 0.90
 	permeability_coefficient = 0.01
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,
@@ -108,6 +117,7 @@
 	item_flags = FLEXIBLEMATERIAL
 	w_class = ITEM_SIZE_SMALL
 	price_tag = 20
+	muffle_voice = FALSE
 
 /obj/item/clothing/mask/bandana/equipped(var/mob/user, var/slot)
 	switch(slot)

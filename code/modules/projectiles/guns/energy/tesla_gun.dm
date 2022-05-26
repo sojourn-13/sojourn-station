@@ -11,7 +11,9 @@
 	suitable_cell = /obj/item/cell/medium
 	cell_type = /obj/item/cell/medium/moebius
 	slot_flags = SLOT_BELT|SLOT_HOLSTER|SLOT_BACK
-	twohanded = FALSE
+	twohanded = TRUE
 	w_class = ITEM_SIZE_BULKY
 	can_dual = FALSE
 	projectile_type = /obj/item/projectile/beam/tesla
+	serial_type = "INDEX"
+	serial_shown = FALSE

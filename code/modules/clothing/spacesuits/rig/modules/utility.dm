@@ -116,7 +116,175 @@
 	return 1
 
 
+/obj/item/rig_module/modular_injector
+	name = "mounted modular dispenser"
+	desc = "A specialized system for inserting chemicals"
+	icon_state = "injector"
+	usable = TRUE
+	selectable = FALSE
+	toggleable = FALSE
+	disruptive = FALSE
 
+	price_tag = 2250
+	engage_string = "Inject"
+
+	interface_name = "integrated dispenser"
+	interface_desc = "A chemical dispenser"
+	var/list/beakers = list()
+	var/max_beakers = 5
+	var/injection_amount = 5
+	var/max_injection_amount = 20
+	var/empties = 0
+	var/initial_beakers = null
+	/// ^ Used for initializing with beakers , the format used is list(beaker_type, beaker_reagent_id, beaker_reagent_amount)
+
+	charges = list()
+
+/obj/item/rig_module/modular_injector/Initialize()
+	. = ..()
+	if(initial_beakers)
+		for(var/list/bdata in initial_beakers)
+			var/btype = bdata[1]
+			var/obj/item/reagent_containers/beaker = new btype(src)
+			beaker.reagents.add_reagent(bdata[2], bdata[3])
+			accepts_item(beaker, null , TRUE)
+	//Just to update us
+	rebuild_charges()
+
+/obj/item/rig_module/modular_injector/New()
+	..()
+	//Just to update us
+	rebuild_charges()
+
+// Rebuilds charges , sad but necesarry due to how rig UI's get its data
+/obj/item/rig_module/modular_injector/proc/rebuild_charges()
+	empties = 0
+	if(beakers && beakers.len)
+		var/list/processed_charges = list()
+		for(var/obj/item/reagent_containers/beaker in beakers)
+			var/datum/rig_charge/charge_dat = new
+			var/reag_name = beaker.reagents.get_master_reagent_name()
+			empties++;
+
+			charge_dat.short_name   = reag_name ? reag_name : "Empty[empties]"
+			charge_dat.display_name = reag_name ? reag_name : "Empty[empties]"
+			charge_dat.product_type = ref(beaker)
+			charge_dat.charges      = beaker.reagents.total_volume
+
+			if(!charge_selected) charge_selected = charge_dat.short_name
+			processed_charges[charge_dat.short_name] = charge_dat
+
+		charges = processed_charges
+
+
+/obj/item/rig_module/modular_injector/accepts_item(obj/item/reagent_containers/item, mob/living/user, userless = FALSE)
+	if(!istype(item))
+		return FALSE
+	if(beakers.len == max_beakers)
+		to_chat(user, "\The [src] has all its beaker slots filled, remove one of them!")
+		return FALSE
+	if(userless)
+		beakers += item
+		rebuild_charges()
+		item.forceMove(src)
+		return TRUE
+	if(user.unEquip(item))
+		// Gotta keep it for later when we remove the beaker.
+		beakers += item
+		rebuild_charges()
+		item.forceMove(src)
+
+
+/obj/item/rig_module/modular_injector/attackby(obj/item/W, mob/user)
+	if(..())
+		return FALSE
+	if(istype(W, /obj/item/reagent_containers))
+		accepts_item(W, user)
+		return FALSE
+	if(W.get_tool_quality(QUALITY_SCREW_DRIVING))
+		var/obj/item/reagent_containers/sel_ref = input(user, "Choose a beaker to remove", null) in beakers
+		if(sel_ref)
+			beakers -= sel_ref
+			charge_selected = null
+			rebuild_charges()
+			user.visible_message("[user] removes \the [sel_ref.name] from \the [src]")
+			if(!user.put_in_active_hand(sel_ref))
+				sel_ref.loc = get_turf(src)
+	if(W.get_tool_quality(QUALITY_BOLT_TURNING))
+		var/amount = input(user, "Choose reagent injection amount", null) in list(0, initial(injection_amount), max_injection_amount * 0.5, max_injection_amount)
+		if(amount != null)
+			injection_amount = amount
+			to_chat(user, "You set the injection amount to [amount] on \the [src]")
+			user.visible_message("[user] tweaks the injection amount on \the [src]")
+
+/obj/item/rig_module/modular_injector/engage(atom/target)
+
+	if(!..())
+		return FALSE
+
+	var/mob/living/carbon/human/H = holder.wearer
+
+	if(!charge_selected)
+		to_chat(H, SPAN_DANGER("You have not selected a beaker to inject from!"))
+		return FALSE
+
+	var/datum/rig_charge/charge = charges[charge_selected]
+	var/obj/item/reagent_containers/beaker = locate(charge.product_type)
+	if(beaker.reagents.total_volume < injection_amount)
+		to_chat(H, SPAN_DANGER("Insufficient chems!"))
+		return FALSE
+
+	var/mob/living/carbon/target_mob
+	if(target)
+		if(iscarbon(target))
+			target_mob = target
+		else
+			return FALSE
+	else
+		target_mob = H
+
+	if(target_mob != H)
+		to_chat(H, SPAN_DANGER("You inject [target_mob] with [injection_amount] unit\s of [beaker.name]."))
+	to_chat(target_mob, "<span class='danger'>You feel a rushing in your veins as [injection_amount] unit\s are injected in your bloodstream.</span>")
+	// Update display
+	beaker.reagents.trans_to_mob(target_mob, injection_amount, CHEM_BLOOD)
+	rebuild_charges()
+	return TRUE
+
+/obj/item/rig_module/modular_injector/combat
+	name = "mounted combat dispenser"
+	desc = "A specialized system for inserting chemicals meant for combat"
+	price_tag = 7250
+	max_injection_amount = 30
+	max_beakers = 6
+	initial_beakers = list(
+		list(/obj/item/reagent_containers/glass/beaker/large, "hyperzine", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "tramadol", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "nutriment", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "tricordrazine", 60)
+	)
+	interface_name = "integrated chemical combat dispenser"
+	interface_desc = "Dispenses loaded chemicals directly into the user's bloodstream."
+
+/obj/item/rig_module/modular_injector/medical
+	name = "mounted medical injector"
+	desc = "A specialized system for inserting chemicals to pacients"
+	price_tag = 3750
+	max_injection_amount = 60
+	max_beakers = 6
+	usable = 0
+	selectable = 1
+	disruptive = 1
+	initial_beakers = list(
+		list(/obj/item/reagent_containers/glass/beaker/large, "bicaridine", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "inaprovaline",60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "kelotane",60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "anti_toxin", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "spaceacillin", 60)
+	)
+	interface_name = "integrated chemical injector"
+	interface_desc = "Dispenses loaded chemicals directly into the bloodstream of its target. Can be used on the wearer as well."
+/*
 /obj/item/rig_module/chem_dispenser
 	name = "mounted chemical dispenser"
 	desc = "A complex web of tubing and needles suitable for hardsuit use."
@@ -259,7 +427,6 @@
 
 
 /obj/item/rig_module/chem_dispenser/injector
-
 	name = "mounted chemical injector"
 	desc = "A complex web of tubing and a large needle suitable for hardsuit use."
 	usable = 0
@@ -270,7 +437,7 @@
 
 	interface_name = "mounted chem injector"
 	interface_desc = "Dispenses loaded chemicals via an arm-mounted injector."
-
+*/
 /obj/item/rig_module/voice
 
 	name = "hardsuit voice synthesiser"
@@ -433,7 +600,7 @@
 	if(autodoc_processor.active)
 		autodoc_processor.stop()
 	autodoc_processor.set_patient(holder.wearer)
-	ui_interact(usr)
+	nano_ui_interact(usr)
 	return 1
 /obj/item/rig_module/autodoc/Topic(href, href_list)
 	return autodoc_processor.Topic(href, href_list)
@@ -453,8 +620,8 @@
 		passive_power_cost = 0
 		wearer_loc = null
 
-/obj/item/rig_module/autodoc/ui_interact(mob/user, ui_key, datum/nanoui/ui, force_open, datum/nanoui/master_ui, datum/topic_state/state = GLOB.deep_inventory_state)
-	autodoc_processor.ui_interact(user, ui_key, ui, force_open, state = GLOB.deep_inventory_state)
+/obj/item/rig_module/autodoc/nano_ui_interact(mob/user, ui_key, datum/nanoui/ui, force_open, datum/nanoui/master_ui, datum/topic_state/state = GLOB.deep_inventory_state)
+	autodoc_processor.nano_ui_interact(user, ui_key, ui, force_open, state = GLOB.deep_inventory_state)
 /obj/item/rig_module/autodoc/activate()
 	return
 /obj/item/rig_module/autodoc/deactivate()
@@ -462,3 +629,106 @@
 
 /obj/item/rig_module/autodoc/commercial
 	autodoc_type = /datum/autodoc/capitalist_autodoc
+
+
+/obj/item/rig_module/cargo_clamp
+	name = "hardsuit cargo clamp"
+	desc = "A pair of folding arm-mounted clamps for a hardsuit, meant for loading crates and other large objects. Due to its bulky nature, precludes the installation of most hardsuit weaponry."
+	icon_state = "clamp"
+	interface_name = "cargo handler"
+	interface_desc = "A set of folding clamps loaded to a counterbalanced storage unit. Can load various large objects."
+	usable = 1
+	use_power_cost = 1
+	selectable = 1
+	engage_string = "unload cargo"
+	price_tag = 600
+	mutually_exclusive_modules = list(/obj/item/rig_module/mounted, /obj/item/rig_module/held)
+	var/cargo_max = 6//this module has 5 things in contents by default(ui elements), this gives it 5 capacity for other things
+
+
+/obj/item/rig_module/cargo_clamp/engage(atom/target)
+	if(!..())
+		return FALSE
+
+	if(!target)
+		for(var/obj/structure/struct in contents)
+			struct.forceMove(get_turf(src))
+		return TRUE
+
+	if(contents.len > cargo_max)
+		to_chat(usr, SPAN_WARNING("The cargo compartment on [src] is full!"))
+		return FALSE
+	var/turf/T = get_turf(target)
+	if(istype(T) && !T.Adjacent(get_turf(src)))
+		return FALSE
+
+	if(!istype(target, /obj/structure))
+		return FALSE
+
+	var/obj/structure/loading_item = target
+	if(loading_item.anchored)
+		if(istype(loading_item, /obj/structure/scrap))
+			var/obj/structure/scrap/tocube = loading_item
+			if(!do_after(usr, 2 SECONDS, tocube))
+				return FALSE
+			tocube.make_cube()
+		return FALSE
+	for(var/O in loading_item.contents)
+		if(istype(O, /mob/living))
+			to_chat(usr, SPAN_WARNING("Living creatures detected. Cargo loading stopped."))
+			return
+	to_chat(usr, SPAN_NOTICE("You begin loading [loading_item] into [src]."))
+	if(do_after(usr, 2 SECONDS, loading_item))
+		loading_item.forceMove(src)
+		to_chat(usr, SPAN_NOTICE("You load [loading_item] into [src]."))
+
+/obj/item/rig_module/cargo_clamp/uninstalled()
+	..()
+	visible_message(SPAN_WARNING("All the loaded cargo falls out of [src]!"))
+	for(var/obj/structure/struct in contents)
+		struct.forceMove(get_turf(src))
+
+/obj/item/rig_module/cargo_clamp/large
+	name = "large hardsuit cargo clamp"
+	desc = "A pair of folding arm-mounted clamps for a hardsuit, meant for loading crates and other large objects. This one is a Lonestar design, capable of holding a little more cargo."
+	cargo_max = 8
+	price_tag = 1600 //can't be obtained outside of purchasing, so higher price is a detriment
+	mutually_exclusive_modules = list(/obj/item/rig_module/mounted, /obj/item/rig_module/held, /obj/item/rig_module/cargo_clamp)
+
+
+
+
+
+/obj/item/rig_module/grappler
+	name = "hardsuit grappler"
+	desc = "A ten-meter tether connected to a heavy winch and grappling hook. Can pull things towards you, can pull you towards things."
+	icon_state = "tether"
+	interface_name = "grappler"
+	interface_desc = "Fire the grapple to reel things in."
+	engage_string = "grapple"
+	selectable = 1
+	price_tag = 1000
+	use_power_cost = 10
+	var/max_range = 10
+	var/last_use
+	var/cooldown_time = 1 SECOND
+	var/obj/item/gun/energy/grappler/launcher //we're not a subtype of /mounted/ for cooldown handling reasons mostly
+
+/obj/item/rig_module/grappler/Initialize()
+	..()
+	launcher = new /obj/item/gun/energy/grappler(src)
+
+
+/obj/item/rig_module/grappler/engage(atom/target)
+	if(!..())
+		return FALSE
+	if(!target)
+		return FALSE
+	if(world.time < last_use + cooldown_time || get_dist(target, usr) > max_range)
+		return FALSE
+
+	cooldown_time = 1 SECOND
+	launcher.Fire(target,holder.wearer)
+	last_use = world.time
+	if(ismob(target))
+		cooldown_time = 10 SECONDS //10x longer cooldown on hooking people, so you can't grapplelock them as easily

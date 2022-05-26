@@ -63,7 +63,6 @@
 			"Implanted with \the [src.name] ([implant.name])",
 			"used an implanter, [src.name] ([implant.name]), on"
 			)
+			log_and_message_admins(" - [implant.name] injected into [M] at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 			implant = null
 			update_icon()
-			log_and_message_admins(" - [implant.name] injected into [M] at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
-

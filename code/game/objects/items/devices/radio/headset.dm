@@ -60,7 +60,7 @@
 		return ..(freq, level)
 	if(ishuman(src.loc))
 		var/mob/living/carbon/human/H = src.loc
-		if(H.l_ear == src || H.r_ear == src)
+		if(H.l_ear == src || H.r_ear == src || H.head == src) // Hotfix for the hat headset hat
 			playsound(loc, 'sound/effects/radio_common.ogg', 25, 1, 1)
 			return ..(freq, level)
 	return -1
@@ -88,6 +88,17 @@
 	icon_state = "bs_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
+	ks2type = /obj/item/device/encryptionkey/headset_bs
+
+/obj/item/device/radio/headset/radiohat_blackshield // No longer a cap, a honest to god cap with a FUNCTIONAL headset. - Seb
+	name = "blackshield radio hat"
+	desc = "A faded black cap with the badge of the Blackshield. Comes attached with an industrial radio headset for long-range communication."
+	icon = 'icons/inventory/head/icon.dmi'
+	icon_state = "radiohat"
+	item_state = "radiohat"
+	adhoc_fallback = TRUE
+	slot_flags = SLOT_HEAD // No wearing this on your ears and a cap on top, we're not TF2
+	body_parts_covered = HEAD|EARS // Half cap, half headset
 	ks2type = /obj/item/device/encryptionkey/headset_bs
 
 /obj/item/device/radio/headset/headset_eng
@@ -303,8 +314,6 @@
 				if(T)
 					keyslot2.loc = T
 					keyslot2 = null
-
-			recalculateChannels()
 			to_chat(user, "You pop out the encryption keys in the headset!")
 
 		else
@@ -326,7 +335,7 @@
 			keyslot2 = W
 
 
-		recalculateChannels()
+	recalculateChannels()
 
 	return
 

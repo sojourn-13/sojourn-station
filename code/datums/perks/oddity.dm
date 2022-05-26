@@ -21,16 +21,15 @@
 	if(world.time < initial_time + cooldown)
 		return
 	initial_time = world.time
-	for(var/mob/living/L in viewers(holder, 5))
-		if(!L)
+	for(var/mob/living/carbon/human/H in viewers(5, holder))
+		if(H.stat == DEAD || H.internal || H.stats.getPerk(PERK_TOXIC_REVENGER) || H.species.flags & NO_BREATHE)
 			continue
-		if(ishuman(L))
-			var/mob/living/carbon/human/H = L
-			if(H.stat == DEAD || H.internal || H.stats.getPerk(PERK_TOXIC_REVENGER) || (H.species.flags & NO_BREATHE))
-				continue
-		L.emote("cough")
-		to_chat(L, SPAN_WARNING("[holder] emits a fungal smell."))
-		usr.reagents?.add_reagent("toxin", 5)
+		if(H.head?.item_flags & BLOCK_GAS_SMOKE_EFFECT || H.wear_mask?.item_flags & BLOCK_GAS_SMOKE_EFFECT || BP_IS_ROBOTIC(H.get_organ(BP_CHEST)))
+			continue
+
+		H.reagents?.add_reagent("toxin", 5)
+		H.emote("cough")
+		to_chat(H, SPAN_WARNING("[holder] emits a strange smell."))
 
 /datum/perk/oddity/gunslinger
 	name = "Gunslinger"
@@ -136,6 +135,12 @@
 	holder.stats.changeStat(STAT_BIO, 5)
 	..()
 
+/datum/perk/oddity/snackivore
+	name = "Snackivore"
+	desc = "The secret of the lounge lizards! Your body adapts to eating the worse kind of food in existence, allowing you to draw an exceptional amount of nutrition from snack foods. More so \
+	it passively heals you like tricord, with pure toxins healing you the most. Rejoice trash mammals!"
+	passivePerk = TRUE
+
 /datum/perk/oddity/sharp_mind
 	name = "Sharpened Mind"
 	desc = "Narrowing in and extrapolating the inner workings of the world has never felt so much easier."
@@ -170,6 +175,38 @@
 	holder.stats.changeStat(STAT_ROB, -5)
 	holder.stats.changeStat(STAT_TGH, -5)
 	holder.stats.changeStat(STAT_VIG, -5)
+	..()
+
+/datum/perk/oddity/iron_will
+	name = "Will of Iron"
+	desc = "The body is able to succumb to many negative affects but the mind can simply ignore them. Getting addicted to things is much harder and you can stomach more chemicals."
+	//icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
+
+/datum/perk/oddity/iron_will/assign(mob/living/carbon/human/H)
+	..()
+	holder.metabolism_effects.addiction_chance_multiplier = 0.2
+	holder.metabolism_effects.nsa_bonus += 20
+	holder.metabolism_effects.calculate_nsa()
+
+/datum/perk/oddity/iron_will/remove()
+	holder.metabolism_effects.addiction_chance_multiplier = 1
+	holder.metabolism_effects.nsa_bonus -= 20
+	holder.metabolism_effects.calculate_nsa()
+	..()
+
+/datum/perk/oddity/mind_of_matter
+	name = "Will to Power"
+	desc = "The mind protects the body by imposing limits to prevent severe harm to the self. With enough focus, you can push yourself past that limit."
+	//icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
+
+/datum/perk/oddity/mind_of_matter/assign(mob/living/carbon/human/H)
+	..()
+	holder.maxHealth += 20
+	holder.health += 20
+
+/datum/perk/oddity/mind_of_matter/remove()
+	holder.maxHealth -= 20
+	holder.health -= 20
 	..()
 
 ///////////////////////////////////////
@@ -235,6 +272,8 @@
 	..()
 
 /datum/perk/bluespace/on_process()
+	if(!..())
+		return
 	if(cooldown_time <= world.time)
 		holder.stats.removePerk(type)
 		to_chat(holder, SPAN_NOTICE("[lose_text]"))

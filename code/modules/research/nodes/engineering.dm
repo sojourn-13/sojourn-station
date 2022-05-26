@@ -55,7 +55,8 @@
 	cost = 375
 
 	unlocks_designs = list(/datum/design/research/circuit/gas_heater,
-						   /datum/design/research/circuit/gas_cooler)
+						   /datum/design/research/circuit/gas_cooler,
+						   /datum/design/research/item/computer_part/gas)
 
 // TO ADD: idcardconsole
 /datum/technology/adv_replication
@@ -124,6 +125,8 @@
 	unlocks_designs = list(
 							/datum/design/research/item/wirer,
 							/datum/design/research/item/debugger,
+							/datum/design/research/item/detailer,
+							/datum/design/research/item/analyzer,
 							/datum/design/research/item/custom_circuit_assembly,
 							/datum/design/research/item/custom_circuit_assembly/medium,
 							/datum/design/research/item/custom_circuit_assembly/drone,
@@ -145,7 +148,12 @@
 	required_tech_levels = list()
 	cost = 1500
 
-	unlocks_designs = list(/datum/design/research/item/custom_circuit_assembly/advanced_designs)
+	unlocks_designs = list(
+							/datum/design/research/item/custom_circuit_assembly/advanced_designs,
+							/datum/design/research/item/detailer,
+							/datum/design/research/item/analyzer,
+							/datum/design/research/item/custom_circuit_assembly/cloning
+							)
 
 /* No tesla engine?
 /datum/technology/tesla
@@ -179,7 +187,8 @@
 	cost = 375
 
 	unlocks_designs = list(/datum/design/research/circuit/ordercomp,
-						   /datum/design/research/circuit/supplycomp)
+						   /datum/design/research/circuit/supplycomp,
+						   /datum/design/research/item/computer_part/price)
 
 //TOOLS BRANCH
 // TO ADD: ore_redemption, mining_equipment_vendor, mining_fabricator?
@@ -448,6 +457,25 @@
 							)
 
 
+/datum/technology/ameridian
+	name = "Ameridian Refindment"
+	desc = "Advanced refindments of ameridian to liquid and then soild again."
+	tech_type = RESEARCH_ENGINEERING
+
+	x = 0.9
+	y = 0.7
+	icon = "ameridian"
+
+	required_technologies = list(/datum/technology/industrial_printing)
+	required_tech_levels = list()
+	cost = 1500 //Cheap-ish I guess?
+
+	unlocks_designs = list(/datum/design/research/circuit/ameridian_refinery,
+							/datum/design/research/circuit/liquid_ameridian_processor,
+							/datum/design/research/circuit/ameridian_analyzer
+							)
+
+
 /datum/technology/rig_industeral
 	name = "Hardsuit Integration"
 	desc = "Integrated tools and gear used by hardsuit rigs for day to day work."
@@ -464,6 +492,8 @@
 	unlocks_designs = list(	/datum/design/research/item/storage,
 							/datum/design/research/item/ai_container,
 							/datum/design/research/item/rigjets,
+							/datum/design/research/item/riggrapple,
+							/datum/design/research/item/rig_clamp,
 							/datum/design/research/item/rigrcd
 							)
 
@@ -504,5 +534,3 @@
 
 	unlocks_designs = list("quadultra_micro_laser", "bluespace_matter_bin")
 */
-
-

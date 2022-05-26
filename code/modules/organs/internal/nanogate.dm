@@ -13,6 +13,7 @@
 	throw_speed = 3
 	throw_range = 5
 	layer = ABOVE_MOB_LAYER
+	nature = MODIFICATION_SILICON //Why wasn't this done by default?
 	origin_tech = list(TECH_ENGINEERING = 15, TECH_BIO = 5, TECH_DATA = 10)
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_GOLD = 4, MATERIAL_SILVER = 4, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 15, MATERIAL_DIAMOND = 1)
 	attack_verb = list("attacked", "slapped", "whacked")
@@ -21,21 +22,12 @@
 	var/nano_point_cost
 	var/mob/living/carbon/superior_animal/nanobot/Stand // The personal robot of the owner. I wonder how many people will get the reference... -R4d6
 	var/obj/item/rig/nanite/nanite_rig // The nanite rig you can make
+	var/list/perk_list = list() //List of activated perks for later removal
 
 	owner_verbs = list(
-		/obj/item/organ/internal/nanogate/proc/nanite_message,
+		/obj/item/organ/internal/nanogate/proc/nanite_antenna,
 		// Creation and upgrade of the bot
 		/obj/item/organ/internal/nanogate/proc/create_nanobot,
-		/obj/item/organ/internal/nanogate/proc/stand_damage,
-		/obj/item/organ/internal/nanogate/proc/stand_health,
-		/obj/item/organ/internal/nanogate/proc/stand_armor,
-		/obj/item/organ/internal/nanogate/proc/stand_repair,
-
-		// Activation of vocal protocols for the bots
-		/obj/item/organ/internal/nanogate/proc/autodoc_mode,
-		/obj/item/organ/internal/nanogate/proc/radio_mode,
-		/obj/item/organ/internal/nanogate/proc/console_mode,
-		/obj/item/organ/internal/nanogate/proc/control_bot,
 
 		// Upgrades of the user.
 		/obj/item/organ/internal/nanogate/proc/nanite_regen,
@@ -44,11 +36,7 @@
 		/obj/item/organ/internal/nanogate/proc/nanite_chem,
 
 		// Rig Upgrades
-		/obj/item/organ/internal/nanogate/proc/nanite_rig,
-		/obj/item/organ/internal/nanogate/proc/nanite_rig_storage,
-		/obj/item/organ/internal/nanogate/proc/nanite_rig_laser,
-		/obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc,
-		/obj/item/organ/internal/nanogate/proc/nanite_rig_eva
+		/obj/item/organ/internal/nanogate/proc/nanite_rig
 
 		)
 
@@ -75,20 +63,9 @@ obj/item/organ/internal/nanogate/artificer
 	origin_tech = list(TECH_ENGINEERING = 25, TECH_BIO = 15, TECH_DATA = 10)
 
 	owner_verbs = list(
-		/obj/item/organ/internal/nanogate/proc/nanite_message,
+		/obj/item/organ/internal/nanogate/proc/nanite_antenna,
 		// Creation and upgrade of the bot
 		/obj/item/organ/internal/nanogate/proc/create_nanobot,
-		/obj/item/organ/internal/nanogate/proc/stand_damage,
-		/obj/item/organ/internal/nanogate/proc/stand_health,
-		/obj/item/organ/internal/nanogate/proc/stand_armor,
-		/obj/item/organ/internal/nanogate/proc/stand_repair,
-
-		// Activation of vocal protocols for the bots
-		/obj/item/organ/internal/nanogate/proc/autodoc_mode,
-		/obj/item/organ/internal/nanogate/proc/radio_mode,
-		/obj/item/organ/internal/nanogate/proc/console_mode,
-		/obj/item/organ/internal/nanogate/proc/food_mode,
-		/obj/item/organ/internal/nanogate/proc/control_bot,
 
 		// Upgrades of the user.
 		/obj/item/organ/internal/nanogate/proc/nanite_regen,
@@ -99,9 +76,5 @@ obj/item/organ/internal/nanogate/artificer
 		/obj/item/organ/internal/nanogate/proc/nanite_ammo,
 
 		// Rig Upgrades
-		/obj/item/organ/internal/nanogate/proc/nanite_rig_opifex,
-		/obj/item/organ/internal/nanogate/proc/nanite_rig_storage,
-		/obj/item/organ/internal/nanogate/proc/nanite_rig_laser,
-		/obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc,
-		/obj/item/organ/internal/nanogate/proc/nanite_rig_eva
+		/obj/item/organ/internal/nanogate/proc/nanite_rig_opifex
 		)

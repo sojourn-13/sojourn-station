@@ -77,7 +77,7 @@
 			var/obj/item/card/id/C = W
 
 			// Check for robotic access
-			if(!access_robotics in C.access)
+			if(!(access_robotics in C.access))
 				to_chat(user, "You do not have access.")
 				return
 

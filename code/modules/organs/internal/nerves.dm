@@ -51,3 +51,11 @@
 	name = "exalt nerve synapses"
 	desc = "Extra sensitive to poorness. This exalted organ is bigger and more complex than standard nerves.\
 	Likely worth more on the black market."
+	organ_efficiency = list(OP_NERVE = 120)
+	price_tag = 125
+
+/obj/item/organ/internal/nerve/sensitive_nerve/exalt_leg
+	name = "exalt nerve synapses (legs)"
+	desc = "Tooled for quick movement and extra sensitive to poorness. This exalted organ is bigger and more complex than standard nerves.\
+	Likely worth more on the black market."
+	price_tag = 500

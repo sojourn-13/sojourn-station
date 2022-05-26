@@ -21,21 +21,23 @@ List of powers in this page :
 			to_chat(owner, "You permanently assign some of your nanites to repairing your body.")
 			owner.stats.addPerk(PERK_NANITE_REGEN)
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_regen
+			perk_list += PERK_NANITE_REGEN
 	else
 		to_chat(owner, "Assigning more nanites to repairing your body wouldn't give you a boost in regeneration rate.")
 
 // Give the user a perk that make him move faster
 /obj/item/organ/internal/nanogate/proc/nanite_muscle()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Nanofiber Muscles (3)"
+	set name = "Nanite Augment - Nanofiber Muscles (5)"
 	set desc = "Spend some of your nanites to create nanite muscle to allow you to move faster."
-	nano_point_cost = 3 // Install two augments on both legs
+	nano_point_cost = 5 // Install two augments on both legs
 
 	if(!owner.stats.getPerk(PERK_NANITE_MUSCLE)) // Do they already have the perk?
 		if(pay_power_cost(nano_point_cost))
 			to_chat(owner, "You permanently assign some of your nanites to enhancing your physical movement.")
 			owner.stats.addPerk(PERK_NANITE_MUSCLE)
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_muscle
+			perk_list += PERK_NANITE_MUSCLE
 	else
 		to_chat(owner, "Assigning more nanites to enhance your muscles wouldn't offer any benefit.")
 
@@ -51,6 +53,7 @@ List of powers in this page :
 			to_chat(owner, "You permanently assign some of your nanites to act as a reactive nano-weave armor, allowing you to resist physical brute damage.")
 			owner.stats.addPerk(PERK_NANITE_ARMOR)
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_armor
+			perk_list += PERK_NANITE_ARMOR
 	else
 		to_chat(owner, "Your nanites are already providing as much armor as they can.")
 
@@ -61,13 +64,19 @@ List of powers in this page :
 	set desc = "Convert some of your nanites into more specialized nanites. Only works for biological entities."
 	nano_point_cost = 1
 
-	var/list/choices_perk = typesof(PERK_NANITE_CHEM)
-	choices_perk -= PERK_NANITE_CHEM
+	var/list/choices_perk = list(	"Implantoids" = PERK_NANITE_CHEM_IMPLANT,
+									"Trauma Control System" = PERK_NANITE_CHEM_TCS,
+									"Control Booster Utility" = PERK_NANITE_CHEM_CBU,
+									"Control Booster Combat" = PERK_NANITE_CHEM_CBC,
+									"Purgers" = PERK_NANITE_CHEM_PURGER,
+									"Oxyrush" = PERK_NANITE_CHEM_OXYRUSH,
+									"Nantidotes" = PERK_NANITE_CHEM_NANTIDOTE)
 
-	var/datum/perk/nanite_chem/choice = input(owner, "Which nanite chem do you want?", "Chem Choice", null) as null|anything in choices_perk
+	var/datum/perk/nanite_chem/choice = choices_perk[input(owner, "Which nanite chem do you want?", "Chem Choice", null) as null|anything in choices_perk]
 
 	if(choice && owner.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(nano_point_cost)) // Check if the user actually made a choice, and if they did, check if they have the points.
 		owner.stats.addPerk(choice)
+		perk_list += choice
 		to_chat(owner, "You permanently convert some of your nanites into specialized variants.")
 		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_chem
 
@@ -111,6 +120,7 @@ List of powers in this page :
 						/obj/item/tool_upgrade/armor/bullet,
 						/obj/item/tool_upgrade/armor/energy,
 						/obj/item/tool_upgrade/armor/bomb,
+						/obj/item/tool_upgrade/productivity/waxcoat, //Biomatter
 						/obj/item/gun_upgrade/barrel/forged,
 						/obj/item/gun_upgrade/barrel/bore,
 						/obj/item/gun_upgrade/barrel/excruciator,	//Sadly has biomatter
@@ -148,4 +158,5 @@ List of powers in this page :
 		if(pay_power_cost(nano_point_cost))
 			to_chat(owner, "You permanently assign some of your nanites to create ammunition boxes.")
 			owner.stats.addPerk(PERK_NANITE_AMMO)
+			perk_list += PERK_NANITE_AMMO
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_ammo

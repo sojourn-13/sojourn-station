@@ -1,7 +1,7 @@
 /mob/living/carbon/superior_animal/psi_monster/dreaming_king
 	name = "Dreaming King"
-	desc = "The Dreaming King, named by the first psion who saw it through a drug induced haze. Thought to first be merely the creation of a fever dream until sojourns into deep maintenance revealed him \
-	to be a nightmare come to life. Only one may live at any one time, the king of the other world deep maintenance and woe to anyone that would try to take his crown."
+	desc = "The Dreaming King, named by the first psion who saw it through a drug induced haze. Thought first to be merely the creation of a fever dream until sojourns into deep maintenance revealed him \
+	to be a nightmare come to life. Only one may live at any one time, the king of the other world roams deep maintenance and woe to anyone that would try to take his crown."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "crab3"
 	icon_living = "crab3"
@@ -21,8 +21,10 @@
 	default_pixel_y = 0
 	size_pixel_offset_x = -16
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/king
-	first_teleport_callout = "<b><font size='3px'>\the Dreaming King looses a terrible scream before journeying to nowhere, his words bellowing in rage, \"Only the king may wear the crown!\"</font></b>"
-	second_teleport_callout = "<b><font size='3px'>\the Dreaming King looses an agonized howl before journeying to nowhere, his words bellowing in rage, \"I will never die!\"</font></b>"
+	first_teleport_callout = "<b><font size='3px'>\the Dreaming King looses a terrible scream before journeying to nowhere, his words bellowing in rage, \"Only the king may wear the crown!\" The answering calls of his court echoing through the realm!</font></b>"
+	second_teleport_callout = "<b><font size='3px'>\the Dreaming King looses an agonized howl before journeying to nowhere, his words bellowing in rage, \"I will never die!\" The strongest of his court heard affirming his call!</font></b>"
+	var/dreaming_king = TRUE
+	var/hound_of_the_crown = FALSE
 
 /mob/living/carbon/superior_animal/psi_monster/dreaming_king/hound_crown
 	name = "Hound of the Crown"
@@ -35,8 +37,11 @@
 	poison_per_bite = 5
 	turns_per_move = 12
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/hound
-	first_teleport_callout = "<b><font size='3px'>\the Hound of the Crown looses a terrible scream before journeying to nowhere, the thing screaming in pure blackened hate!</font></b>"
-	second_teleport_callout = "<b><font size='3px'>\the Hound of the Crown looses an agonized howl before journeying to nowhere, its words echoing, \"Nobody stands before the king!\"</font></b>"
+	first_teleport_callout = "<b><font size='3px'>\the Hound of the Crown looses a terrible scream before journeying to nowhere, the thing screaming in pure blackened hate! Distant howls can be heard echoing through the halls in answer!</font></b>"
+	second_teleport_callout = "<b><font size='3px'>\the Hound of the Crown looses an agonized howl before journeying to nowhere, its words echoing, \"Nobody stands before the king!\" Nearby howls can be heard echoing through the halls in answer!</font></b>"
+	dreaming_king = FALSE
+	hound_of_the_crown = TRUE
+
 
 /obj/random/psi_megafauna
 	name = "random calamity"

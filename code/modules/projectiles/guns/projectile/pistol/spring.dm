@@ -14,13 +14,14 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6, MATERIAL_PLATINUM = 6)
 	price_tag = 850
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_DRUM
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
+	serial_type = "GP"
 
 /obj/item/gun/projectile/spring/update_icon()
 	..()

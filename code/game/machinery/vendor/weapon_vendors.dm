@@ -31,11 +31,10 @@
 	/obj/item/gun/projectile/revolver/rev10 = 2,
 	/obj/item/gun/projectile/revolver/mistral = 2,
 	//Automatic
-	/obj/item/gun/projectile/automatic/basstet = 2,
+	/obj/item/gun/projectile/automatic/ppsh/ppv = 2,
 	/obj/item/gun/projectile/automatic/greasegun = 2,
 	/obj/item/gun/projectile/automatic/mac = 2,
 	/obj/item/gun/projectile/automatic/wirbelwind = 2,
-	/obj/item/gun/projectile/automatic/bulldog = 2,
 	//Shotgun
 	/obj/item/gun/projectile/shotgun/pump = 2,
 	/obj/item/gun/projectile/boltgun/lever = 2,
@@ -103,11 +102,10 @@
 	/obj/item/gun/projectile/revolver/rev10 = 800,
 	/obj/item/gun/projectile/revolver/mistral = 900,
 	//Automatic
-	/obj/item/gun/projectile/automatic/basstet = 850,
+	/obj/item/gun/projectile/automatic/ppsh/ppv = 1200,
 	/obj/item/gun/projectile/automatic/greasegun = 950,
 	/obj/item/gun/projectile/automatic/mac = 1000,
 	/obj/item/gun/projectile/automatic/wirbelwind = 1500,
-	/obj/item/gun/projectile/automatic/bulldog = 1650,
 	//Shotgun
 	/obj/item/gun/projectile/shotgun/pump = 600,
 	/obj/item/gun/projectile/boltgun/lever = 650,
@@ -171,13 +169,13 @@
 					/obj/item/ammo_magazine/pistol_35/rubber = 8,
 					/obj/item/ammo_magazine/highcap_pistol_35/rubber = 8,
 					/obj/item/ammo_magazine/smg_35/rubber = 8,
-					/obj/item/ammo_magazine/light_rifle_257_short/rubber = 8,
-					/obj/item/ammo_magazine/rifle_75/rubber = 8,
-					/obj/item/ammo_magazine/heavy_rifle_408/rubber = 8,
 					/obj/item/ammo_magazine/magnum_40/rubber = 8,
 					/obj/item/ammo_magazine/speed_loader_magnum_40/rubber = 6,
 					/obj/item/ammo_magazine/kurtz_50/rubber = 6,
 					/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 6,
+					/obj/item/ammo_magazine/light_rifle_257_short/rubber = 8,
+					/obj/item/ammo_magazine/rifle_75/rubber = 8,
+					/obj/item/ammo_magazine/heavy_rifle_408/rubber = 8,
 					/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 2,
 					/obj/item/ammo_casing/flare/prespawn = 5,
 					/obj/item/ammo_casing/flare/blue/prespawn = 5,
@@ -211,8 +209,11 @@
 					/obj/item/storage/backpack/satchel/neotheology = 5,
 					/obj/item/storage/backpack/neotheology = 5,
 					/obj/item/storage/backpack/sport/neotheology = 5,
-					/obj/item/clothing/accessory/fractalrosary = 15,
+					/obj/item/clothing/accessory/necklace/fractalrosary = 15,
 					/obj/item/clothing/suit/storage/neotheosports = 5,
+					/obj/item/clothing/suit/storage/toggle/absolutehoodie = 5,
+					/obj/item/clothing/suit/greatcoat/absolutecoat= 5,
+					/obj/item/clothing/suit/hooded/absolutecloak = 5,
 					/obj/item/clothing/under/rank/church/sport = 5,
 					/obj/item/clothing/under/rank/church = 5,
 					/obj/item/clothing/under/rank/acolyte = 5,
@@ -221,8 +222,8 @@
 					/obj/item/stack/medical/bruise_pack = 8,
 					/obj/item/stack/medical/ointment = 8,
 					/obj/item/stack/medical/splint = 5,
-					/obj/item/stack/medical/advanced/bruise_pack = 4,
-					/obj/item/stack/medical/advanced/ointment = 4,
+					/obj/item/stack/medical/advanced/bruise_pack/nt = 4,
+					/obj/item/stack/medical/advanced/ointment/nt = 4,
 					/obj/item/storage/pouch/small_generic = 2,
 					/obj/item/storage/pouch/medium_generic = 2,
 					/obj/item/storage/pouch/medical_supply = 2,
@@ -236,7 +237,8 @@
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns = 2,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns = 2,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms/public = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 3)
+					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public = 3,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter = 2)
 	contraband = list(/obj/item/tool/knife/neotritual = 3,
 					/obj/item/gun/matter/launcher/nt_sprayer = 3)
 
@@ -252,8 +254,11 @@
 					/obj/item/storage/backpack/satchel/neotheology = 20,
 					/obj/item/storage/backpack/neotheology = 20,
 					/obj/item/storage/backpack/sport/neotheology = 20,
-					/obj/item/clothing/accessory/fractalrosary = 5,
+					/obj/item/clothing/accessory/necklace/fractalrosary = 5,
 					/obj/item/clothing/suit/storage/neotheosports = 40,
+					/obj/item/clothing/suit/storage/toggle/absolutehoodie = 50,
+					/obj/item/clothing/suit/greatcoat/absolutecoat= 45,
+					/obj/item/clothing/suit/hooded/absolutecloak = 35,
 					/obj/item/clothing/under/rank/acolyte = 25,
 					/obj/item/clothing/under/rank/church/sport = 15,
 					/obj/item/clothing/under/rank/church = 15,
@@ -277,9 +282,44 @@
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns = 950,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns = 800,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms/public = 100,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 100,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public = 100,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter = 400,
 					/obj/item/tool/knife/neotritual = 250,
 					/obj/item/gun/matter/launcher/nt_sprayer = 500)
+	custom_vendor = TRUE // So they can sell pouches and other printed goods, if they bother to stock them
+
+/obj/machinery/vending/theomat/proc/check_NT(mob/user)
+	var/bingo = TRUE //SoJ tweak, were always true, sadly for us church likes non-churchies (lame I know)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(is_neotheology_disciple(H))
+			bingo = TRUE
+
+		else if(istype(H.get_active_hand(), /obj/item/clothing/accessory/cross))
+			bingo = TRUE
+
+		else if(istype(H.wear_mask, /obj/item/clothing/accessory/cross))
+			bingo = TRUE
+
+		else if(H.w_uniform && istype(H.w_uniform, /obj/item/clothing))
+			var/obj/item/clothing/C = H.w_uniform
+			for(var/obj/item/I in C.accessories)
+				if(istype(I, /obj/item/clothing/accessory/cross))
+					bingo = TRUE
+					break
+
+	if(bingo)
+		return TRUE
+	to_chat(user, SPAN_WARNING("[src] flashes a message: Unauthorized Access."))
+	return FALSE
+
+/obj/machinery/vending/theomat/vend(datum/data/vending_product/R, mob/user)
+	if(check_NT(user))
+		..()
+
+/obj/machinery/vending/theomat/try_to_buy(obj/item/W, var/datum/data/vending_product/R, var/mob/user)
+	if(check_NT(user))
+		..()
 
 /obj/machinery/vending/serbomat
 	name = "From Serbia with love"
@@ -322,17 +362,31 @@
 	product_slogans = list("Imagine the rare stuff and buy more!", "Rare stuff if you buy more!", "Buy and get random items!", "Don't quit, buy more!", "Its not a lootbox, its surprise mechanics!")
 	vendor_department = DEPARTMENT_PROSPECTOR
 	products = list(
-		/obj/item/storage/box/vendor_lootbox = 3,
-		/obj/item/storage/box/vendor_lootbox/combat_basic_light = 3,
-		/obj/item/storage/box/vendor_lootbox/combat_basic_medium = 3,
-		/obj/item/storage/box/vendor_lootbox/combat_basic_high = 3,
-		/obj/item/storage/box/vendor_lootbox/medicine_basic = 3,
-		/obj/item/storage/box/vendor_lootbox/medicine_moderate = 3,
-		/obj/item/storage/box/vendor_lootbox/medicine_high = 3,
-		/obj/item/storage/box/vendor_lootbox/oddity_low = 3,
-		/obj/item/storage/box/vendor_lootbox/oddity_moderate = 3,
-		/obj/item/storage/box/vendor_lootbox/oddity_high = 3,
-		/obj/item/grenade/spawnergrenade/manhacks/junkbot = 3
+		/obj/item/storage/box/vendor_lootbox = 4,
+		/obj/item/storage/box/vendor_lootbox/combat_basic_light = 4,
+		/obj/item/storage/box/vendor_lootbox/combat_basic_medium = 4,
+		/obj/item/storage/box/vendor_lootbox/combat_basic_high = 4,
+		/obj/item/storage/box/vendor_lootbox/medicine_basic = 4,
+		/obj/item/storage/box/vendor_lootbox/medicine_moderate = 4,
+		/obj/item/storage/box/vendor_lootbox/medicine_high = 4,
+		/obj/item/storage/box/vendor_lootbox/oddity_low = 4,
+		/obj/item/storage/box/vendor_lootbox/oddity_moderate = 4,
+		/obj/item/storage/box/vendor_lootbox/oddity_high = 4,
+		/obj/item/grenade/spawnergrenade/manhacks/junkbot = 4,
+		/obj/item/ammo_kit = 5,
+		/obj/item/gun/projectile/handmade_pistol = 3,
+		/obj/item/gun/projectile/handmade_pistol/magnum = 3,
+		/obj/item/gun/projectile/handmade_pistol/shotgun = 3,
+		/obj/item/gun/projectile/handmade_pistol/anti_material = 3,
+		/obj/item/gun/projectile/revolver/handmade = 3,
+		/obj/item/gun/projectile/boltgun/handmade = 3,
+		/obj/item/gun/projectile/shotgun/slidebarrel = 3,
+		/obj/item/gun/projectile/shotgun/pump/china/makeshift = 3,
+		/obj/item/gun/projectile/automatic/motherfucker = 3,
+		/obj/item/gun/energy/laser/makeshift = 3,
+		/obj/item/gun/energy/shrapnel = 3,
+		/obj/item/gun/projectile/shotgun/doublebarrel = 2,
+		/obj/item/gun/projectile/automatic/vector = 2
 		)
 	prices = list(
 		/obj/item/storage/box/vendor_lootbox = 50,
@@ -343,105 +397,23 @@
 		/obj/item/storage/box/vendor_lootbox/medicine_moderate = 250,
 		/obj/item/storage/box/vendor_lootbox/medicine_high = 500,
 		/obj/item/storage/box/vendor_lootbox/oddity_low = 150,
-		/obj/item/storage/box/vendor_lootbox/oddity_moderate = 300,
-		/obj/item/storage/box/vendor_lootbox/oddity_high = 600,
-		/obj/item/grenade/spawnergrenade/manhacks/junkbot = 100
+		/obj/item/storage/box/vendor_lootbox/oddity_moderate = 275,
+		/obj/item/storage/box/vendor_lootbox/oddity_high = 400,
+		/obj/item/grenade/spawnergrenade/manhacks/junkbot = 100,
+		/obj/item/ammo_kit = 25,
+		/obj/item/gun/projectile/handmade_pistol = 50,
+		/obj/item/gun/projectile/handmade_pistol/magnum = 60,
+		/obj/item/gun/projectile/handmade_pistol/shotgun = 70,
+		/obj/item/gun/projectile/handmade_pistol/anti_material = 75,
+		/obj/item/gun/projectile/revolver/handmade = 100,
+		/obj/item/gun/projectile/boltgun/handmade = 150,
+		/obj/item/gun/projectile/shotgun/slidebarrel = 250,
+		/obj/item/gun/projectile/shotgun/pump/china/makeshift = 400,
+		/obj/item/gun/projectile/automatic/motherfucker = 300,
+		/obj/item/gun/energy/laser/makeshift = 400,
+		/obj/item/gun/energy/shrapnel = 500,
+		/obj/item/gun/projectile/shotgun/doublebarrel = 650,
+		/obj/item/gun/projectile/automatic/vector = 1100 // Pricy
 		)
 	product_ads = "Imagine the rare stuff and buy more!;Rare stuff if you buy more!;Buy and get random items!;Don't quit, buy more!;Its not a lootbox, its surprise mechanics!"
 	auto_price = FALSE
-
-//For Blackshield Kits
-/obj/machinery/vending/blackshield_kit
-	name = "\improper Blackshield Kit Vendor"
-	desc = "A vendor that can dispense specialized equipment kits for Blackshield Troopers."
-	icon_state = "trashvend"
-	products = list( // 5 in stock for the default blackshield kit, 3 for the rest
-		/obj/item/storage/box/bs_kit/mosin = 5,
-		/obj/item/storage/box/bs_kit/sts = 3,
-		/obj/item/storage/box/bs_kit/cog = 3,
-		/obj/item/storage/box/bs_kit/roe = 3,
-		/obj/item/storage/box/bs_kit/greasegun = 3,
-		/obj/item/storage/box/bs_kit/grizzly = 3,
-		/obj/item/storage/box/bs_kit/stallion = 5,
-		/obj/item/storage/box/bs_kit/lamia = 3,
-		/obj/item/storage/box/bs_kit/colt = 3,
-		/obj/item/storage/box/bs_kit/martin = 5,
-		/obj/item/storage/box/bs_kit/sawn_shotgun = 5,
-		/obj/item/storage/box/bs_kit/standard_armor = 5,
-		/obj/item/storage/box/bs_kit/flak_armor = 3,
-		/obj/item/storage/box/bs_kit/bullet_armor = 3,
-		/obj/item/storage/box/bs_kit/laser_armor = 3
-		)
-	prices = list( // 500$ for default Blackshield stuff, 750 for the rest
-		/obj/item/storage/box/bs_kit/mosin = 500,
-		/obj/item/storage/box/bs_kit/sts = 750,
-		/obj/item/storage/box/bs_kit/cog = 750,
-		/obj/item/storage/box/bs_kit/roe = 750,
-		/obj/item/storage/box/bs_kit/greasegun = 750,
-		/obj/item/storage/box/bs_kit/grizzly = 750,
-		/obj/item/storage/box/bs_kit/stallion = 500,
-		/obj/item/storage/box/bs_kit/lamia = 750,
-		/obj/item/storage/box/bs_kit/colt = 750,
-		/obj/item/storage/box/bs_kit/martin = 500,
-		/obj/item/storage/box/bs_kit/sawn_shotgun = 500,
-		/obj/item/storage/box/bs_kit/standard_armor = 500,
-		/obj/item/storage/box/bs_kit/flak_armor = 750,
-		/obj/item/storage/box/bs_kit/bullet_armor = 750,
-		/obj/item/storage/box/bs_kit/laser_armor = 1250
-		)
-	auto_price = FALSE
-
-/obj/machinery/vending/blackshield_kit/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/voucher/blackshield))
-		var/obj/item/voucher/blackshield/Voucher = I
-		switch(Voucher.voucher_type)
-			if("Primary")
-				RedeemPrimary(I, user)
-			if("Secondary")
-				RedeemSecondary(I, user)
-			if("Armor")
-				RedeemArmor(I, user)
-		return
-	return ..()
-
-/obj/machinery/vending/blackshield_kit/proc/RedeemPrimary(obj/item/voucher, mob/redeemer)
-	var/items = list(
-					/obj/item/storage/box/bs_kit/mosin = "Mosin",
-					/obj/item/storage/box/bs_kit/sts = "STS",
-					/obj/item/storage/box/bs_kit/cog = "Cog",
-					/obj/item/storage/box/bs_kit/greasegun = "Grease Gun",
-					/obj/item/storage/box/bs_kit/roe = "Roe light boltgun",
-					/obj/item/storage/box/bs_kit/grizzly = "Grizzly"
-					)
-	var/selection = input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items
-	if(selection)
-		new selection(loc)
-		qdel(voucher)
-		return TRUE
-
-/obj/machinery/vending/blackshield_kit/proc/RedeemSecondary(obj/item/voucher, mob/redeemer)
-	var/items = list(
-					/obj/item/storage/box/bs_kit/stallion = "Stallion",
-					/obj/item/storage/box/bs_kit/lamia = "Lamia",
-					/obj/item/storage/box/bs_kit/colt = "Colt",
-					/obj/item/storage/box/bs_kit/sawn_shotgun = "Sawn-Off Shotgun",
-					/obj/item/storage/box/bs_kit/martin = "Martin"
-					)
-	var/selection = input(redeemer, "Pick your side-arm", "Blackshield Voucher Redemption") as null|anything in items
-	if(selection)
-		new selection(loc)
-		qdel(voucher)
-		return TRUE
-
-/obj/machinery/vending/blackshield_kit/proc/RedeemArmor(obj/item/voucher, mob/redeemer)
-	var/items = list(
-					/obj/item/storage/box/bs_kit/standard_armor = "Plate",
-					/obj/item/storage/box/bs_kit/flak_armor = "Flak",
-					/obj/item/storage/box/bs_kit/laser_armor = "Ablative",
-					/obj/item/storage/box/bs_kit/bullet_armor = "Bullet-Proof"
-					)
-	var/selection = input(redeemer, "Pick your armor", "Blackshield Voucher Redemption") as null|anything in items
-	if(selection)
-		new selection(loc)
-		qdel(voucher)
-		return TRUE

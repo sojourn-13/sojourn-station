@@ -90,6 +90,10 @@
 	name = "hammer"
 	build_path = /obj/item/tool/hammer
 
+/datum/design/autolathe/tool/deadblow_hammer
+	name = "deadblow hammer"
+	build_path = /obj/item/tool/hammer/deadblow
+
 /datum/design/autolathe/tool/powered_hammer
 	name = "powered sledgehammer"
 	build_path = /obj/item/tool/hammer/powered_hammer
@@ -249,3 +253,7 @@
 /datum/design/autolathe/tool/isprayer
 	name = "industrial chemical sprayer"
 	build_path = /obj/item/reagent_containers/spray/chemsprayer/industrial
+
+/datum/design/autolathe/tool/manual_charger
+	name = "hand crank charger"
+	build_path = /obj/item/device/manual_charger

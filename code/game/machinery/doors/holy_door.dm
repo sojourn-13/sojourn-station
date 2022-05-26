@@ -26,6 +26,15 @@
 	slot_flags = SLOT_ACCESSORY_BUFFER | SLOT_MASK
 	w_class = ITEM_SIZE_NORMAL // Chonky cross
 
+/obj/item/clothing/accessory/magatama
+	name = "magatama necklace"
+	desc = "A curved, comma-shaped jewel made out of precious stone. Simply looking at this stone is enough to make one more calm and confident. It is said Amaterasu herself - one of the absolute's masks - held this specific Magatama herself, and anyone that holds this jewel while meditating long enough, finds inner peace easier than in any other way.  In fact, during times of turmoil it became well know to allow vectors to touch the Magatama before sleeping on monasteries, due to it's non-chemically related, calming properties. It is also said this Jewel was totally unrepaired by the church, and because of time, shows some external damages and scratches."
+	icon = 'icons/inventory/accessory/icon.dmi'
+	icon_state = "magatama"
+	item_state = "magatama"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+	w_class = ITEM_SIZE_NORMAL // Chonky cross
+
 /obj/machinery/door/holy/New()
 	GLOB.nt_doors += src
 	..()
@@ -395,7 +404,7 @@
 	var/cache_string = "[wedged_item.icon]||[wedged_item.icon_state]||[wedged_item.overlays.len]||[wedged_item.underlays.len]"
 
 	if(!GLOB.wedge_icon_cache[cache_string])
-		var/icon/I = getFlatIcon(wedged_item, SOUTH, always_use_defdir = TRUE)
+		var/icon/I = getFlatIcon(wedged_item, SOUTH)
 
 		I.Shift(SOUTH, 6)
 		I.Shift(EAST, 14)

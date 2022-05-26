@@ -3,11 +3,11 @@
 	icon_state = "food-green"
 
 /obj/random/rations/item_to_spawn()
-	return pickweight(list(/obj/item/reagent_containers/food/snacks/chips = 2,\
+	return pickweight(list(/obj/item/reagent_containers/food/snacks/openable/chips = 2,\
 				/obj/item/reagent_containers/food/snacks/candy = 2,\
-				/obj/item/reagent_containers/food/snacks/tastybread = 2,\
-				/obj/item/reagent_containers/food/snacks/no_raisin = 2,\
-				/obj/item/reagent_containers/food/snacks/liquidfood = 4,
+				/obj/item/reagent_containers/food/snacks/openable/tastybread = 2,\
+				/obj/item/reagent_containers/food/snacks/openable/no_raisin = 2,\
+				/obj/item/reagent_containers/food/snacks/openable/liquidfood = 4,
 				/obj/item/reagent_containers/food/snacks/donkpocket/sinpocket = 1,\
 				/obj/item/storage/fancy/crayons = 0.1))
 
@@ -21,15 +21,15 @@
 	icon_state = "food-red"
 
 /obj/random/junkfood/item_to_spawn()
-	return pickweight(list(/obj/item/reagent_containers/food/snacks/chips = 3,
+	return pickweight(list(/obj/item/reagent_containers/food/snacks/openable/chips = 3,
 				/obj/item/reagent_containers/food/snacks/candy = 3,
 				/obj/item/reagent_containers/food/snacks/cheesiehonkers = 3,
-				/obj/item/reagent_containers/food/snacks/tastybread = 3,
-				/obj/item/reagent_containers/food/snacks/no_raisin = 3,
-				/obj/item/reagent_containers/food/snacks/spacetwinkie = 3,
+				/obj/item/reagent_containers/food/snacks/openable/tastybread = 3,
+				/obj/item/reagent_containers/food/snacks/openable/no_raisin = 3,
+				/obj/item/reagent_containers/food/snacks/openable/spacetwinkie = 3,
 				/obj/item/reagent_containers/food/drinks/dry_ramen = 2,
 				/obj/item/reagent_containers/food/snacks/hotdog = 1,
-				/obj/item/reagent_containers/food/snacks/liquidfood = 2,
+				/obj/item/reagent_containers/food/snacks/openable/liquidfood = 2,
 				/obj/item/reagent_containers/food/snacks/pie = 1,
 				/obj/item/reagent_containers/food/snacks/sandwich = 1))
 
@@ -113,15 +113,15 @@
 
 /obj/random/rations/roachcube/item_to_spawn()
 	return pickweight(list(/obj/item/reagent_containers/food/snacks/cube/roach = 4,\
-						/obj/item/reagent_containers/food/snacks/cube/fuhrer = 1,\
-						/obj/item/reagent_containers/food/snacks/cube/jager = 3,\
-						/obj/item/reagent_containers/food/snacks/cube/kraftwerk = 2,\
-						/obj/item/reagent_containers/food/snacks/cube/roachling = 5,\
-						/obj/item/reagent_containers/food/snacks/cube/seuche = 2,\
-						/obj/item/reagent_containers/food/snacks/cube/panzer = 4,\
-						/obj/item/reagent_containers/food/snacks/cube/elektromagnetisch = 1,\
-						/obj/item/reagent_containers/food/snacks/cube/glowing = 2,\
-						/obj/item/reagent_containers/food/snacks/cube/grestrahlte = 2))
+						/obj/item/reagent_containers/food/snacks/cube/roach/fuhrer = 1,\
+						/obj/item/reagent_containers/food/snacks/cube/roach/jager = 3,\
+						/obj/item/reagent_containers/food/snacks/cube/roach/kraftwerk = 2,\
+						/obj/item/reagent_containers/food/snacks/cube/roach/roachling = 5,\
+						/obj/item/reagent_containers/food/snacks/cube/roach/seuche = 2,\
+						/obj/item/reagent_containers/food/snacks/cube/roach/panzer = 4,\
+						/obj/item/reagent_containers/food/snacks/cube/roach/elektromagnetisch = 1,\
+						/obj/item/reagent_containers/food/snacks/cube/roach/glowing = 2,\
+						/obj/item/reagent_containers/food/snacks/cube/roach/grestrahlte = 2))
 
 
 

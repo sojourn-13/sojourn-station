@@ -28,6 +28,10 @@
 	armor_penetration = 100
 	check_armour = ARMOR_BULLET
 
+/obj/item/projectile/bullet/rocket/railgun
+	name = "chemical shunted power cell"
+	icon_state = "emitter"
+
 /obj/item/projectile/bullet/rocket/launch(atom/target, target_zone, x_offset, y_offset, angle_offset)
 	set_light(2.5, 0.5, "#dddd00")
 	..(target, target_zone, x_offset, y_offset, angle_offset)
@@ -36,6 +40,41 @@
 	explosion(loc, 0, 1, 2, 4)
 	set_light(0)
 	return TRUE
+
+/obj/item/projectile/bullet/rocket/emp
+	name = "EMP rocket"
+	icon_state = "rocket_e"
+	damage_types = list(BRUTE = 10, BURN = 30)
+	armor_penetration = 100
+	check_armour = ARMOR_BULLET
+	var/heavy_emp_range = 3
+	var/light_emp_range = 8
+
+/obj/item/projectile/bullet/rocket/emp/launch(atom/target, target_zone, x_offset, y_offset, angle_offset)
+	set_light(2.5, 0.5, "#dddd00")
+	..(target, target_zone, x_offset, y_offset, angle_offset)
+
+/obj/item/projectile/bullet/rocket/emp/on_impact(atom/target)
+	..()
+	for(var/obj/structure/closet/L in hear(7, get_turf(src)))
+		if(locate(/mob/living/carbon/, L))
+			for(var/mob/living/carbon/M in L)
+				flashbang_bang(get_turf(src), M)
+
+
+	for(var/mob/living/carbon/M in hear(7, get_turf(src)))
+		flashbang_bang(get_turf(src), M)
+
+	for(var/obj/effect/blob/B in hear(8,get_turf(src)))       		//Blob damage here
+		var/damage = round(30/(get_dist(B,get_turf(src))+1))
+		B.health -= damage
+		B.update_icon()
+
+	new/obj/effect/sparks(src.loc)
+	new/obj/effect/effect/smoke/illumination(src.loc, brightness=15)
+	empulse(target, heavy_emp_range, light_emp_range)
+	qdel(src)
+	return
 
 /obj/item/projectile/temp
 	name = "freeze beam"
@@ -200,8 +239,8 @@
 	icon_state = "fireball"
 	damage_types = list(BURN = 16)
 	check_armour = ARMOR_MELEE
-	var/life = 3
-	var/fire_stacks = 1 //10 pain a fire proc through ALL armor!
+	kill_count = 3
+	var/fire_stacks = 3
 
 /obj/item/projectile/flamer_lob/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -210,26 +249,20 @@
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
 
-/obj/item/projectile/flamer_lob/New()
-	.=..()
-
 /obj/item/projectile/flamer_lob/Move(atom/A)
-	.=..()
-	life--
+	..()
 	var/turf/T = get_turf(src)
 	if(T)
 		new/obj/effect/decal/cleanable/liquid_fuel(T, 1 , 1)
 		T.hotspot_expose((T20C*2) + 380,500)
-	if(!life)
-		qdel(src)
 
 /obj/item/projectile/flamer_lob/flamethrower
-	life = 5
+	kill_count = 5
 
 /obj/item/projectile/bullet/flare
 	name = "flare"
 	icon_state = "flare"
-	damage_types = list(BRUTE = 12) //Legit deadlyest gun that you get in mass
+	damage_types = list(BURN = 12) //Legit deadlyest gun that you get in mass
 	kill_count = 12
 	armor_penetration = 0
 	step_delay = 3
@@ -286,3 +319,94 @@
 
 /obj/item/projectile/bullet/flare/choas //MEWHEHEHE, can be any colour
 	chaos = TRUE
+
+// Special projectile that one-shot ameridian-related stuff
+/obj/item/projectile/sonic_bolt
+	name = "sonic bolt"
+	icon_state = "energy2"
+	damage_types = list(BRUTE = 10)
+	armor_penetration = 30 // It is a sound-wave liquifing organs I guess
+	kill_count = 7
+	check_armour = ARMOR_ENERGY
+	var/golem_damage_bonus = 20 // Damage multiplier against ameridians.
+
+/obj/item/projectile/sonic_bolt/heavy
+	damage_types = list(BRUTE = 30)
+	kill_count = 14
+
+/obj/item/projectile/tether
+	name = "tether grappler"
+	icon_state = "invisible"
+	nodamage = 1
+	damage_types = list(BRUTE = 0)
+	kill_count = 10
+	step_delay = 0.2
+	muzzle_type = /obj/effect/projectile/line/muzzle
+	tracer_type = /obj/effect/projectile/line/tracer
+	impact_type = /obj/effect/projectile/line/impact
+	var/list/our_tracers
+
+/obj/item/projectile/tether/Initialize()
+	..()
+	our_tracers = list()
+
+/obj/item/projectile/tether/on_impact(target)
+	for(var/obj/effect/tokill in our_tracers)
+		qdel(tokill)
+	..()
+	var/atom/movable/AM
+	var/reel_in_self = FALSE
+	if(isturf(target))
+		reel_in_self = TRUE
+	if(ismovable(target))
+		AM = target
+		reel_in_self = AM.anchored
+
+	if(reel_in_self)
+		original_firer.throw_at(target, 10, 2, original_firer)
+		visible_message(SPAN_WARNING("[src] begins reeling in, pulling [original_firer] towards [target]!"))
+		return
+
+	visible_message(SPAN_WARNING("[src] begins reeling in, pulling [target] towards [original_firer]!"))
+	AM.throw_at(original_firer, 10, 1, original_firer) //GET OVER HERE
+
+/obj/item/projectile/tether/muzzle_effect(var/matrix/T)
+	//This can happen when firing inside a wall, safety check
+	if (!location)
+		return
+
+	if(silenced)
+		return
+
+	if(ispath(muzzle_type))
+		var/obj/effect/projectile/M = new muzzle_type(get_turf(src))
+
+		if(istype(M))
+			if(proj_color)
+				var/icon/I = new(M.icon, M.icon_state)
+				I.Blend(proj_color)
+				M.icon = I
+			M.set_transform(T)
+			M.pixel_x = location.pixel_x
+			M.pixel_y = location.pixel_y
+			M.activate()
+			our_tracers.Add(M)
+
+/obj/item/projectile/tether/tracer_effect(var/matrix/M) //Special tracer handling, since we only want them to disappear after it hits something
+
+	if (!location)
+		return
+
+	if(ispath(tracer_type))
+		var/obj/effect/projectile/P = new tracer_type(location.loc)
+
+		if(istype(P))
+			if(proj_color)
+				var/icon/I = new(P.icon, P.icon_state)
+				I.Blend(proj_color)
+				P.icon = I
+			P.set_transform(M)
+			P.pixel_x = location.pixel_x
+			P.pixel_y = location.pixel_y
+			P.activate()
+			our_tracers.Add(P) //this should be more performant than += since we don't need to be creating a bunch of new lists

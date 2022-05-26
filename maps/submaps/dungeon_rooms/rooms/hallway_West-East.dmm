@@ -20,10 +20,6 @@
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
-"g" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
 "h" = (
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
@@ -75,9 +71,9 @@ a
 a
 c
 e
-g
 h
-g
+h
+h
 e
 c
 a
@@ -108,9 +104,9 @@ b
 b
 c
 e
-g
 h
-g
+h
+h
 e
 c
 b
@@ -141,9 +137,9 @@ b
 a
 c
 e
-g
 h
-g
+h
+h
 e
 c
 a

@@ -13,7 +13,7 @@
 		/obj/random/costume/head_generic				= 2,
 		/obj/random/costume/head_animals				= 2,
 		/obj/random/toy/arcadejunk						= 1,
-		/obj/item/toy/figure							= 1,
+		/obj/random/toy/action_figure					= 1,
 		/obj/random/toy/mecha							= 1,
 		/obj/random/toy/plushie							= 1,
 	)
@@ -148,7 +148,7 @@
 					  "Pasotel", "Pauper", "Paul", "Popsy", "Prax", "Praxen", "Pierce", "Phayne", "Phoenix", "Preston", "Patrick", "Piper", "Peter",
 					  "Quentin", "Quinn", "Quincy", "Quillon", "Quinton", "Quintavius", "Quimby", "Quade", "Queenie", "Quinta", "Quinlan",
 					  "Raere", "Raeschen", "Ray", "Resca", "Rex", "Ricardo", "Robbie", "Robinson", "Roosevelt", "Rotten", "Ru", "Rose", "Remington",
-					  "Samantha", "Sanders", "Sarah", "Shyne", "Sari", "Sans", "Seeking", "Stall", "Stellar", "Steam", "Schrödinger", "Steven", "Szandor", "Sydney", "Strelle", //best character
+					  "Samantha", "Sanders", "Sarah", "Shyne", "Sari", "Sans", "Seeking", "Stall", "Stellar", "Steam", "SchrÃ¶dinger", "Steven", "Szandor", "Sydney", "Strelle", //best character
 					  "Tasald", "Trevor", "Tamoka", "Tarmane", "Todd", "Torvo", "Thompson", "Thomas", "Trump", "Tommy", "Thor", "Timothy", "Tony",
 					  "Uriel", "Undine", "Uri", "Universe", "Ulysses", "Uriah", "Usher", "Ursel", "Uziel", "Ursula", "Ursule", "Ulva",
 					  "Victoria", "Vanessa", "Veer", "Verity", "Vixen", "Violet", "Victor", "Valentine", "Valentino", "Vaughn", "Vivek",

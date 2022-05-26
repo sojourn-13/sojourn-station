@@ -443,10 +443,18 @@
 	//This should guarantee that ghosts don't spawn.
 	occupant.ckey = null
 
+	// Remove the mob's record.
+	var/datum/computer_file/report/crew_record/record
+	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records) // loop through the records
+		if(occupant.mind.name == CR.get_name()) // Check the mind's name to the record's name
+			record = CR
+			break
+
+	record?.Destroy() // Delete the crew record
+
 	// Delete the mob.
 	qdel(occupant)
 	set_occupant(null)
-
 
 /obj/machinery/cryopod/affect_grab(var/mob/user, var/mob/target)
 	try_put_inside(target, user)
@@ -605,10 +613,10 @@
 				if(A.employer && A.wage_original) // Dicrease personnel budget of our department, if have one
 					var/datum/money_account/EA = department_accounts[A.employer]
 					var/datum/department/D = GLOB.all_departments[A.employer]
-					if(D && EA)
+					if(EA && D) // Don't bother if department have no employer
 						D.budget_personnel -= A.wage_original
 						if(!EA.wage_manual) // Update department account's wage if it's not in manual mode
-							EA.wage = (D.budget_base + D.budget_personnel)
+							EA.wage = D.get_total_budget()
 		new_occupant.forceMove(src)
 		icon_state = occupied_icon_state
 

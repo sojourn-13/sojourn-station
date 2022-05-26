@@ -10,12 +10,13 @@
 	price_tag = 450
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	can_dual = TRUE
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	damage_multiplier = 1.2
 	recoil_buildup = 6
 	one_hand_penalty = 7
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/colt/NM_colt
 	name = "\"Bronco\" pistol"
@@ -28,6 +29,7 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 5)
 	recoil_buildup = 5
+	serial_type = "NM"
 
 /obj/item/gun/projectile/colt/ten
 	name = "\"Delta Elite\" magnum pistol"
@@ -37,7 +39,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_MAGNUM
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 8)
 	price_tag = 900
@@ -47,14 +49,34 @@
 	recoil_buildup = 6
 	damage_multiplier = 1.1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)
+	serial_type = "SA"
 
 /obj/item/gun/projectile/colt/ten/dark
 	name = "\"Stallion\" magnum pistol"
-	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A5 standard and produced by SolFed armories across the galaxy, this one bears  defaced serial numbers and the insignia of the Blackshield. Uses .40 Auto-Mag."
+	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A5 standard and produced by SolFed armories across the galaxy, this one bears defaced serial numbers and the insignia of the Blackshield. Uses .40 Auto-Mag."
 	icon_state = "dark_delta"
 	item_state = "colt"
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
+	serial_type = "Sol Fed"
+
+/obj/item/gun/projectile/colt/liberty
+	name = "\"Liberty\" magnum pistol"
+	desc = "A common Nadezhda Marshal issue pistol chambered in .40 Magnum. It appears to be loosely based off a Colt model, albeit with a changed slide and polymer grip and a built-in holographic scope."
+	icon = 'icons/obj/guns/projectile/liberty.dmi'
+	icon_state = "liberty"
+	item_state = "liberty"
+	caliber = CAL_MAGNUM
+	price_tag = 750
+	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
+	damage_multiplier = 1.0
+	penetration_multiplier = 1.3
+	zoom_factor = 0.2
+	recoil_buildup = 5.5
+	one_hand_penalty = 10
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)
+	serial_type = "NM"
+
 
 /obj/item/gun/projectile/colt/update_icon()
 	..()

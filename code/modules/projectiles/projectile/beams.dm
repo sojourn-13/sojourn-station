@@ -23,6 +23,11 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 
 	heat = 100
 
+/obj/item/projectile/beam/musket
+	name = "charged laser"
+	armor_penetration = 30 //Good AP, its for slow firing weapon
+	eyeblur = 1
+
 /obj/item/projectile/beam/drone
 	damage_types = list(BURN = 15)
 	armor_penetration = 10 //Some AP
@@ -161,7 +166,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	agony = 5
 	damage_types = list(BURN = 10)
 	armor_penetration = 0
-
+	eyeblur = 0
 
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
@@ -172,7 +177,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	icon_state = "xray"
 	damage_types = list(TOX = 10)
 	armor_penetration = 0
-
+	eyeblur = 0
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer
 	impact_type = /obj/effect/projectile/xray/impact
@@ -184,7 +189,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	armor_penetration = 0
 	stun = 0
 	weaken = 0
-
+	eyeblur = 0
 	muzzle_type = /obj/effect/projectile/laser_blue/muzzle
 	tracer_type = /obj/effect/projectile/laser_blue/tracer
 	impact_type = /obj/effect/projectile/laser_blue/impact
@@ -193,10 +198,22 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	. = ..()
 	if(isliving(target))
 		var/mob/living/L = target
-		L.adjustOxyLoss(-10)
-		L.adjustToxLoss(-5)
-		L.adjustBruteLoss(-5)
-		L.adjustFireLoss(-5)
+		L.adjustOxyLoss(-5)
+		L.adjustToxLoss(-3)
+		L.adjustBruteLoss(-3)
+		L.adjustFireLoss(-3)
+
+/obj/item/projectile/beam/sniper/healing/harmony
+	name = "harmony"
+
+/obj/item/projectile/beam/sniper/healing/harmony/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/L = target
+		L.adjustOxyLoss(-4)
+		L.adjustToxLoss(-2)
+		L.adjustBruteLoss(-2)
+		L.adjustFireLoss(-2)
 
 /obj/item/projectile/beam/tesla
 	name = "lightning"
@@ -213,3 +230,20 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 
 /obj/item/projectile/beam/tesla/shotgun/strong
 	damage_types = list(BURN = 45) // Default slug (/obj/item/projectile/bullet/shotgun) deal 54 damage
+
+/obj/item/projectile/beam/infrared
+	name = "infrared radiation"
+	icon_state = "invisible"
+	damage_types = list(BURN = 15)
+	armor_penetration = 15 //less ap
+	eyeblur = 0
+	muzzle_type = null
+	tracer_type = null
+	impact_type = null
+	heat = 500
+
+/obj/item/projectile/beam/infrared/on_hit(atom/target)
+	if(isliving(target))
+		var/mob/living/L = target
+		L.bodytemperature += (heat/250) * TEMPERATURE_DAMAGE_COEFFICIENT //1/5th the strength of hell ramen per tick, since you can unload with a smg
+	..()

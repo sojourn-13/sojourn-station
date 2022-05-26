@@ -88,11 +88,13 @@
 	..()
 	if(parent)
 		parent.nanite_swarms.Remove(src)
+		parent.friends.Remove(src)
 	new /obj/effect/decal/cleanable/blood/oil(get_turf(src))
 	qdel(src)
 
 /mob/living/simple_animal/hostile/naniteswarm/Destroy()
 	if(parent)
 		parent.nanite_swarms.Remove(src)
+		parent.friends.Remove(src)
 		parent = null
 	.=..()

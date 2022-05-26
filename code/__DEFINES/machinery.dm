@@ -44,7 +44,7 @@ var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called
 #define NETWORK_CEV_ERIS "Nadzedha Colony"
 #define NETWORK_MEDICAL "Medical"
 #define NETWORK_MERCENARY "MercurialNet"
-#define NETWORK_MINE "Prospector Shuttle - The Wilbur"
+#define NETWORK_MINE "Prospector Shuttle - The Rocinante"
 #define NETWORK_RESEARCH "Research"
 #define NETWORK_RESEARCH_OUTPOST "Research Outpost"
 #define NETWORK_ROBOTS "Robots"
@@ -176,3 +176,12 @@ var/list/restricted_camera_networks = list(NETWORK_MERCENARY, "Secret")
 
 //AUTOLATHE
 #define SANITIZE_LATHE_COST(n) round(n * mat_efficiency, 0.01)
+
+//EOTP
+#define ARMAMENTS "Armaments"
+#define ALERT "Antag Alert"
+#define INSPIRATION "Inspiration"
+#define ODDITY "Oddity"
+#define STAT_BUFF "Stat Buff"
+#define MATERIAL_REWARD "Materials"
+#define ENERGY_REWARD "Energy"

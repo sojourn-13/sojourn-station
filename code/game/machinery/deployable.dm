@@ -98,6 +98,10 @@ for reference:
 	return material
 
 /obj/structure/barricade/attackby(obj/item/W as obj, mob/user as mob)
+	if(user.a_intent == I_HELP && istype(W, /obj/item/gun))
+		var/obj/item/gun/G = W
+		G.gun_brace(user, src)
+		return
 	if(istype(W, /obj/item/stack))
 		var/obj/item/stack/D = W
 		if(D.get_material_name() != material.name)
@@ -163,14 +167,14 @@ for reference:
 
 /obj/machinery/deployable/barrier
 	name = "deployable barrier"
-	desc = "A deployable barrier. Swipe your ID card to lock/unlock it."
+	desc = "A deployable barrier. Swipe your ID card to lock/unlock it, can even brace guns on it."
 	icon = 'icons/obj/objects.dmi'
-	anchored = 0.0
-	density = 1.0
+	anchored = 0
+	density = 1
 	icon_state = "barrier0"
-	health = 100.0
-	maxHealth = 100.0
-	var/locked = 0.0
+	health = 100
+	maxHealth = 100
+	var/locked = 0
 //	req_access = list(access_maint_tunnels)
 
 /obj/machinery/deployable/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
@@ -195,6 +199,10 @@ for reference:
 	icon_state = "barrier[locked]"
 
 /obj/machinery/deployable/barrier/attackby(obj/item/W as obj, mob/user as mob)
+	if(user.a_intent == I_HELP && istype(W, /obj/item/gun))
+		var/obj/item/gun/G = W
+		G.gun_brace(user, src)
+		return
 	if(W.GetIdCard())
 		if(allowed(user))
 			if	(emagged < 2.0)
@@ -258,12 +266,16 @@ for reference:
 		icon_state = "barrier[locked]"
 
 /obj/machinery/deployable/barrier/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)//So bullets will fly over and stuff.
+//	if(istype(mover,/obj/item/projectile)) //Eris stuff for cover trash
+//		return (check_cover(mover,target))
+
 	if(air_group || (height==0))
-		return 1
-	if(istype(mover) && mover.checkpass(PASSTABLE))
-		return 1
-	else
-		return 0
+		return TRUE
+
+	if(ishuman(mover))
+		var/mob/living/carbon/human/H = mover
+		if(H.checkpass(PASSTABLE) && H.stats?.getPerk(PERK_PARKOUR))
+			return TRUE
 
 /obj/machinery/deployable/barrier/proc/explode()
 

@@ -12,6 +12,8 @@ var/datum/xenomorph/xenomorph_ai
 	icon_gib = "drone_gibbed"
 	pass_flags = PASSTABLE
 
+	cant_be_pulled = TRUE
+
 	mob_size = MOB_LARGE
 	viewRange = 12
 	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
@@ -97,6 +99,10 @@ var/datum/xenomorph/xenomorph_ai
 	pixel_x = 0
 	pixel_y = 0
 
+/mob/living/carbon/superior_animal/xenomorph/start_pulling(var/atom/movable/AM)
+	to_chat(src, SPAN_WARNING("Your hand gets slashed away from \the [src]. !"))
+	return
+
 /mob/living/carbon/superior_animal/xenomorph/attack_hand(mob/living/carbon/M as mob)
 	..()
 	var/mob/living/carbon/human/H = M
@@ -131,7 +137,7 @@ var/datum/xenomorph/xenomorph_ai
 
 				M.put_in_active_hand(G)
 				G.synch()
-				LAssailant = M
+				LAssailant_weakref = WEAKREF(M)
 
 				M.do_attack_animation(src)
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)

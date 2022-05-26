@@ -71,15 +71,35 @@
 	desc = "A navy blue marshal beret."
 	icon_state = "policeberet"
 
-/obj/item/clothing/head/rank/commander/beret
+/obj/item/clothing/head/rank/commander
 	name = "warrant officer beret"
 	desc = "A grey warrant officer beret signifying a command position."
 	icon_state = "beret_navy_hos"
 
-/obj/item/clothing/head/rank/commander/cap
-	name = "warrant officer cap"
-	desc = "A marshal cap signifying a command position."
-	icon_state = "ihc_cap"
+/obj/item/clothing/head/rank/commander/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["WO Beret"] = "beret_navy_hos"
+	options["WO Cap"] = "ihc_cap"
+	options["WO Default"] = "hoshat"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/rank/warden/beret
 	name = "supply specialist beret"
@@ -104,7 +124,7 @@
 /obj/item/clothing/head/beret/german
 	name = "brown beret"
 	desc = "A light brown beret."
-	icon_state = "beretblack"
+	icon_state = "germanberet"
 
 /obj/item/clothing/head/seccap
 	name = "blue patrol cap"
@@ -138,15 +158,34 @@
 	desc = "A faded black beret with its old SolFed badge replaced with that of the Blackshield."
 	icon_state = "beret_militia"
 
+/obj/item/clothing/head/rank/trooper/beret/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Standard"] = "beret_militia"
+	options["Olive drab"] = "beret_militia_drab"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your beret's style into [choice] color.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/head/rank/trooper/cap
 	name = "blackshield cap"
 	desc = "A faded black cap with the badge of the Blackshield."
 	icon_state = "milsoft"
-
-/obj/item/clothing/head/rank/trooper/radiohat
-	name = "blackshield radio cap"
-	desc = "A faded black cap with the badge of the Blackshield. Comes attached with a industrial radio headset for long-range communiction."
-	icon_state = "radiohat"
 
 /obj/item/clothing/head/rank/corpsman/cap
 	name = "Corpsman cap"
@@ -156,7 +195,31 @@
 /obj/item/clothing/head/rank/corpsman/beret
 	name = "Corpsman beret"
 	desc = "A faded black beret with the badge of a Medical Corpsman."
-	icon_state = "beret_militia"
+	icon_state = "corpsman" // New hat, new alt styles. - Seb
+
+/obj/item/clothing/head/rank/corpsman/beret/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Standard"] = "corpsman"
+	options["Olive drab"] = "corpsman_drab"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your beret's style into [choice] colors.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/rank/armorer/cap
 	name = "Sergeant's cap"
@@ -166,17 +229,61 @@
 /obj/item/clothing/head/rank/armorer/beret
 	name = "Sergeant's beret"
 	desc = "A faded black beret with the badge of a Blackshield Sergeant."
-	icon_state = "beret_militia"
+	icon_state = "sarge_beret"
 
-/obj/item/clothing/head/rank/milcom/beret
-	name = "blackshield commander's beret"
-	desc = "A faded black beret with its old SolFed badge replaced with that of the Blackshield Commander."
-	icon_state = "beret_militia"
+/obj/item/clothing/head/rank/armorer/beret/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Standard"] = "sarge_beret"
+	options["Olive drab"] = "sarge_beret_drab"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your beret's style into [choice] colors.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/rank/milcom
 	name = "blackshield commander's cap"
 	desc = "A crisp peaked cap signifying the distinguished martial position of the Commander of the Blackshield."
 	icon_state = "commander_cap"
+
+/obj/item/clothing/head/rank/milcom/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["BC Beret"] = "beret_militia"
+	options["BC Cap"] = "commander_cap"
+	options["BC Default"] = "hoshat"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/rank/instructor_hat
 	name = "campaign cover"
@@ -201,7 +308,7 @@
 	icon_state = "greenutility"
 	item_state = "greenutility"
 
-/obj/item/clothing/head/rank/fatigue/grey
+/obj/item/clothing/head/rank/fatigue
 	name = "grey utility cover"
 	desc = "A grey camo cover, fit for a soldier. The markings of a removed patch linger."
 	icon_state = "greyutility"

@@ -14,7 +14,9 @@
 	var/already_slashed = FALSE // So that we don't do the round slash twice in a row.
 
 /mob/living/carbon/superior_animal/handmade/mantis/UnarmedAttack()
-	if(!Adjacent(target_mob))
+	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if(!Adjacent(targetted_mob))
 		return
 
 	if(!(already_slashed)) // So that we don't do two splash slash in a row
@@ -40,7 +42,9 @@
 			UnarmedAttack(target, 1)
 
 /mob/living/carbon/superior_animal/handmade/mantis/proc/stun_with_claw()
-	if(isliving(target_mob))
-		var/mob/living/victim = target_mob
+	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if(isliving(targetted_mob))
+		var/mob/living/victim = targetted_mob
 		victim.Weaken(5) //decent-length stun
 		src.visible_message(SPAN_WARNING("[src] pins [victim] to the floor with its blades!"))

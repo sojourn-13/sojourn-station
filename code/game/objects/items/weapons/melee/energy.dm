@@ -5,12 +5,13 @@
 	var/active_w_class
 	sharp = 0
 	edge = 0
-	armor_penetration = ARMOR_PEN_HALF
+	armor_penetration = ARMOR_PEN_MASSIVE
 	flags = NOBLOODY
-	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
+	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	heat = 3800
 	embed_mult = 0 //No physical matter to catch onto things
 	hitsound = "sound/weapons/blade1.ogg" //Make these lightsaber thingies do the sound they're intended to do on attack.
+	eye_hazard = TRUE
 
 /obj/item/melee/energy/is_hot()
 	if (active)
@@ -44,7 +45,7 @@
 
 /obj/item/melee/energy/attack_self(mob/living/user as mob)
 	if (active)
-		if ((CLUMSY in user.mutations) && prob(50))
+		if ((CLUMSY in user.mutations) && prob(15))
 			user.visible_message(SPAN_DANGER("\The [user] accidentally cuts \himself with \the [src]."),\
 			SPAN_DANGER("You accidentally cut yourself with \the [src]."))
 			user.take_organ_damage(5,5)
@@ -94,15 +95,15 @@
 	desc = "May the Force be with you."
 	icon_state = "sword0"
 	icon = 'icons/obj/weapons.dmi'
-	active_force = WEAPON_FORCE_LETHAL // Go forth and slay, padawan
-	active_throwforce = WEAPON_FORCE_LETHAL
+	active_force = WEAPON_FORCE_BRUTAL // Go forth and slay, padawan
+	active_throwforce = WEAPON_FORCE_BRUTAL
 	active_w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_HARMLESS
 	throwforce = WEAPON_FORCE_HARMLESS
 	throw_speed = 1
 	throw_range = 5
 	w_class = ITEM_SIZE_SMALL
-	price_tag = 1000
+	price_tag = 300
 	flags = NOBLOODY
 	origin_tech = list(TECH_MAGNET = 3, TECH_ILLEGAL = 4)
 	sharp = 1
@@ -142,7 +143,7 @@
 	icon_state = "sword[blade_color]"
 	..()
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	tool_qualities = list(QUALITY_CUTTING = 30,  QUALITY_WIRE_CUTTING = 20, QUALITY_LASER_CUTTING = 20, QUALITY_WELDING = 10, QUALITY_CAUTERIZING = 10)
+	tool_qualities = list(QUALITY_CUTTING = 30,  QUALITY_WIRE_CUTTING = 20, QUALITY_WELDING = 1, QUALITY_CAUTERIZING = 1)
 
 /obj/item/melee/energy/sword/deactivate(mob/living/user)
 	if(active)
@@ -192,7 +193,7 @@
 	..()
 	icon_state = "daggergreen" //So we dont use sword icons
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "strikes", "cut")
-	tool_qualities = list(QUALITY_CUTTING = 35,  QUALITY_WIRE_CUTTING = 25, QUALITY_LASER_CUTTING = 25, QUALITY_WELDING = 20, QUALITY_CAUTERIZING = 30)
+	tool_qualities = list(QUALITY_CUTTING = 25,  QUALITY_WIRE_CUTTING = 15, QUALITY_LASER_CUTTING = 1, QUALITY_WELDING = 10, QUALITY_CAUTERIZING = 10)
 
 /*
  *Energy Blade
@@ -203,10 +204,11 @@
 	name = "energy blade"
 	desc = "A concentrated beam of energy in the shape of a blade. Very stylish... and lethal."
 	icon_state = "blade"
-	force = WEAPON_FORCE_BRUTAL //Normal attacks deal very high damage - about the same as wielded fire axe
-	armor_penetration = 100
+	icon = 'icons/obj/weapons.dmi'
+	armor_penetration = 30
 	sharp = 1
 	edge = 1
+	force = WEAPON_FORCE_BRUTAL
 	anchored = 1    // Never spawned outside of inventory, should be fine.
 	throwforce = 1  //Throwing or dropping the item deletes it.
 	throw_speed = 1

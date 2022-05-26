@@ -1,4 +1,5 @@
-/*/obj/item/circuitboard/autodoc
+
+/obj/item/circuitboard/autodoc
 	build_name = "autodoc"
 	build_path = /obj/machinery/autodoc
 	board_type = "machine"
@@ -8,7 +9,8 @@
 		/obj/item/stock_parts/manipulator = 4,
 		/obj/item/stock_parts/console_screen = 2,
 		/obj/item/stock_parts/micro_laser = 2
-)*/
+		)
+
 /obj/item/circuitboard/sleeper
 	build_name = "sleeper"
 	build_path = /obj/machinery/sleeper

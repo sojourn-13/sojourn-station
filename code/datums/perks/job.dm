@@ -90,7 +90,7 @@
 
 /datum/perk/klutz
 	name = "Klutz"
-	desc = "You find a lot of tasks a little beyond your ability to perform, but being accident prone has at least made you used to getting hurt."
+	desc = "You find a lot of tasks a little beyond your ability to perform such is using any type of weaponry, but being accident prone has at least made you used to getting hurt."
 	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
 
 /datum/perk/klutz/assign(mob/living/carbon/human/H)
@@ -180,7 +180,7 @@
 
 /datum/perk/space_asshole
 	name = "Rough Life"
-	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body."
+	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body and can dive into disposal chutes. Disposals deal no damage to you as well."
 	//icon_state = "bomb" // https://game-icons.net
 
 /datum/perk/space_asshole/assign(mob/living/carbon/human/H)
@@ -191,6 +191,39 @@
 /datum/perk/space_asshole/remove()
 	holder.mob_bomb_defense -= 25
 	holder.falls_mod += 0.4
+	..()
+
+/datum/perk/linguist
+	name = "Linguist"
+	desc = "Having dedicated time and learning to foreign tongues, you find yourself knowing an extra language. Be it from your upbringing or schooling, you're fluent in not one, not two, but three languages!"
+	active = FALSE
+	passivePerk = FALSE
+	var/anti_cheat = FALSE
+
+/datum/perk/linguist/activate()
+	..()
+	if(anti_cheat)
+		to_chat(holder, "Recalling more then one babble is not as easy for someone unskilled as you.")
+		return FALSE
+	anti_cheat = TRUE
+	var/mob/M = usr
+	var/list/options = list()
+	options["German"] = LANGUAGE_GERMAN
+	options["Jive"] = LANGUAGE_JIVE
+	options["Jana"] = LANGUAGE_JANA
+	options["Serbian"] = LANGUAGE_SERBIAN
+	options["Techno-Russian"] = LANGUAGE_CYRILLIC
+	options["Esperanto"] = LANGUAGE_ESPERANTO
+	options["Yassari"] = LANGUAGE_YASSARI
+	options["Ancient Latin"] = LANGUAGE_LATIN
+	var/choice = input(M,"What language do you know?","Linguist Choice") as null|anything in options
+	if(src && choice)
+		M.add_language(choice)
+		M.stats.removePerk(/datum/perk/linguist)
+	anti_cheat = FALSE
+	return TRUE
+
+/datum/perk/linguist/remove()
 	..()
 
 /datum/perk/chemist
@@ -224,15 +257,18 @@
 
 /datum/perk/parkour
 	name = "Raiders Leap"
-	desc = "You can climb some objects faster than normal thanks to a life of raiding ships, settlements, and anywhere plunder was."
+	desc = "A life as a void wolf has given you amazing agility. You can climb railings, walls, and ladders much faster than others. In addition you can dodge, combat roll, and stand up from prone much \
+	faster. Finally, your rough and tumble movement makes falling from high heights deal alot less damage compared to others and you always land on your feet."
 	//icon_state = "parkour" //https://game-icons.net/1x1/delapouite/jump-across.html
 
 /datum/perk/parkour/assign(mob/living/carbon/human/H)
 	..()
 	holder.mod_climb_delay -= 0.95
+	holder.falls_mod -= 0.8
 
 /datum/perk/parkour/remove()
 	holder.mod_climb_delay += 0.95
+	holder.falls_mod += 0.8
 	..()
 
 /datum/perk/chaingun_smoker
@@ -371,6 +407,8 @@
 	..()
 
 /datum/perk/rezsickness/on_process()
+	if(!..())
+		return
 	if(cooldown_time <= world.time)
 		holder.stats.removePerk(type)
 		to_chat(holder, SPAN_NOTICE("[lose_text]"))
@@ -381,73 +419,13 @@
 /datum/perk/handyman
 	name = "Handyman"
 	desc = "Training by the Artificer's Guild has granted you the knowledge of how to take apart machines in the most efficient way possible, finding materials and supplies most people would miss. This training is taken further the more mechanically skilled or cognitively capable you are."
-	var/known_recipes = list(
-			/datum/craft_recipe/guild/melee,
-			/datum/craft_recipe/guild/bullet,
-			/datum/craft_recipe/guild/energy,
-			/datum/craft_recipe/guild/bomb,
-			/datum/craft_recipe/guild/robotmelee,
-			/datum/craft_recipe/guild/plasma_glass,
-			/datum/craft_recipe/guild/arcwelder,
-			/datum/craft_recipe/guild/polytool,
-			/datum/craft_recipe/guild/combat_shovel,
-			/datum/craft_recipe/guild/supermop,
-			/datum/craft_recipe/guild/railgunpistol,
-			/datum/craft_recipe/guild/railgunrifle,
-			/datum/craft_recipe/guild/heavypulserifle,
-			/datum/craft_recipe/guild/guild_bull,
-			/datum/craft_recipe/guild/abdicatorshotgun,
-			/datum/craft_recipe/guild/ten_shot_conversion,
-			/datum/craft_recipe/guild/mace,
-			/datum/craft_recipe/guild/claymore,
-			/datum/craft_recipe/guild/machete,
-			/datum/craft_recipe/guild/katana,
-			/datum/craft_recipe/guild/firebrand,
-			/datum/craft_recipe/guild/bastion,
-			/datum/craft_recipe/guild/technosuit,
-			/datum/craft_recipe/guild/technohelmet,
-			/datum/craft_recipe/guild/webbing,
-			/datum/craft_recipe/guild/sheet_stacker,
-			/datum/craft_recipe/guild/plasmablock,
-			/datum/craft_recipe/guild/rubbermesh,
-			/datum/craft_recipe/guild/booster,
-			/datum/craft_recipe/guild/injector,
-			/datum/craft_recipe/guild/weintraub,
-			/datum/craft_recipe/guild/overshooter,
-			/datum/craft_recipe/guild/dangerzone,
-			/datum/craft_recipe/guild/forged,
-			/datum/craft_recipe/guild/heavy_barrel,
-			/datum/craft_recipe/guild/silencer,
-			/datum/craft_recipe/guild/kit,
-			/datum/craft_recipe/guild/turretcircuit,
-			/datum/craft_recipe/guild/rocket_engine,
-			/datum/craft_recipe/guild/watchman,
-			/datum/craft_recipe/guild/matter_nanoforge,
-			/datum/craft_recipe/guild/matter_nanoforge_blackbox,
-			/datum/craft_recipe/guild/guild_bin,
-			/datum/craft_recipe/guild/guild_manip,
-			/datum/craft_recipe/guild/guild_laser,
-			/datum/craft_recipe/guild/guild_scanner,
-			/datum/craft_recipe/guild/guild_capacitor,
-			//datum/craft_recipe/guild/guild_bin_alt,
-			//datum/craft_recipe/guild/guild_manip_alt,
-			//datum/craft_recipe/guild/guild_laser_alt,
-			//datum/craft_recipe/guild/guild_scanner_alt,
-			//datum/craft_recipe/guild/guild_capacitor_alt,
-			//datum/craft_recipe/guild/guild_mine_trap,
-			/datum/craft_recipe/guild/guild_bin_box,
-			/datum/craft_recipe/guild/guild_manip_box,
-			/datum/craft_recipe/guild/guild_laser_box,
-			/datum/craft_recipe/guild/guild_scanner_box,
-			/datum/craft_recipe/guild/guild_capacitor_box
-			)
 
 /datum/perk/handyman/assign(mob/living/carbon/human/H)
 	..()
-	holder.mind.knownCraftRecipes.Add(known_recipes)
+
 
 /datum/perk/handyman/remove()
-    holder.mind.knownCraftRecipes.Remove(known_recipes)
+	..()
 
 /datum/perk/stalker
 	name = "Anomaly Hunter"
@@ -468,29 +446,13 @@
 /datum/perk/robotics_expert
 	name = "Robotics Expert"
 	desc = "Your formal training and experience in advanced mech construction and complex devices has made you more adept at working with them."
-	var/known_recipes = list(
-			/datum/craft_recipe/robotic/custom_board,
-			/datum/craft_recipe/robotic/roomba_frame,
-			/datum/craft_recipe/robotic/roomba_treads,
-			/datum/craft_recipe/robotic/roomba_knife,
-			/datum/craft_recipe/robotic/roomba_armor,
-			/datum/craft_recipe/robotic/roomba_armor/heavy,
-			/datum/craft_recipe/robotic/sword_frame,
-			/datum/craft_recipe/robotic/mantis_frame,
-			/datum/craft_recipe/robotic/head_frame,
-			/datum/craft_recipe/robotic/left_arm_frame,
-			/datum/craft_recipe/robotic/right_arm_frame,
-			/datum/craft_recipe/robotic/left_leg_frame,
-			/datum/craft_recipe/robotic/right_leg_frame,
-			/datum/craft_recipe/robotic/mining_bot
-			)
+
 
 /datum/perk/robotics_expert/assign(mob/living/carbon/human/H)
 	..()
-	holder.mind.knownCraftRecipes.Add(known_recipes)
 
 /datum/perk/robotics_expert/remove()
-	holder.mind.knownCraftRecipes.Remove(known_recipes)
+	..()
 
 /datum/perk/job/bolt_reflect
 	name = "Bolt Action Rifle Training"
@@ -512,6 +474,7 @@
 /datum/perk/blackshield_conditioning/remove()
 	holder.brute_mod_perk += 0.15
 	holder.burn_mod_perk += 0.10
+	..()
 
 /datum/perk/job/prospector_conditioning
 	name = "Rough and Tumble"
@@ -529,61 +492,28 @@
 	holder.burn_mod_perk += 0.05
 	holder.oxy_mod_perk += 0.10
 	holder.toxin_mod_perk += 0.15
+	..()
 
 /datum/perk/job/butcher
 	name = "Master Butcher"
 	desc = "Your skill as a butcher is unmatched, be it through your training or accumulated field experience. You can harvest additional valuable parts from animals you cut up, nothing shall be wasted."
-	var/known_recipes = list(
-			/datum/craft_recipe/lodge/baroqe,
-			/datum/craft_recipe/lodge/hunter_crossbow,
-			/datum/craft_recipe/lodge/hunting_halberd,
-			/datum/craft_recipe/lodge/render_gauntlet,
-			/datum/craft_recipe/lodge/skinning_knife,
-			/datum/craft_recipe/lodge/woodsmans_axe,
-			/datum/craft_recipe/lodge/bone_shield,
-			/datum/craft_recipe/lodge/hunter_hood,
-			/datum/craft_recipe/lodge/hunter_armor_basic,
-			/datum/craft_recipe/lodge/hunter_armor_bonedaddy,
-			/datum/craft_recipe/lodge/hunter_armor_metalman,
-			/datum/craft_recipe/lodge/hunter_armor_leatherdom,
-			/datum/craft_recipe/lodge/blood_tongue,
-			/datum/craft_recipe/lodge/powder_pouch,
-			/datum/craft_recipe/lodge/tangu_juice,
-			/datum/craft_recipe/lodge/clucker_juice,
-			/datum/craft_recipe/lodge/tahca_antiviral,
-			/datum/craft_recipe/lodge/crossbow_bolts,
-			/datum/craft_recipe/lodge/crossbow_bolts/lethal,
-			/datum/craft_recipe/lodge/crossbow_bolts/speed,
-			/datum/craft_recipe/lodge/duct_tape_weak,
-			/datum/craft_recipe/lodge/duct_tape,
-			/datum/craft_recipe/lodge/chimera_fang,
-			/datum/craft_recipe/lodge/soap,
-			/datum/craft_recipe/lodge/hunting_claw,
-			/datum/craft_recipe/lodge/sun_cleaver,
-			/datum/craft_recipe/lodge/hunter_boots,
-			/datum/craft_recipe/lodge/hunter_gloves,
-			/datum/craft_recipe/lodge/sheath,
-			/datum/craft_recipe/lodge/hunting_belt,
-			/datum/craft_recipe/lodge/leather_medium_pouch,
-			/datum/craft_recipe/lodge/leather_large_pouch
-			)
+
 
 /datum/perk/job/butcher/assign(mob/living/carbon/human/H)
 	..()
-	holder.mind.knownCraftRecipes.Add(known_recipes)
 
 /datum/perk/job/butcher/remove()
-	holder.mind.knownCraftRecipes.Remove(known_recipes)
+	..()
 
 /datum/perk/job/master_herbalist
 	name = "Naturalist"
 	desc = "The secrets of natural remedies have been unlocked by the lodge after special training from folken tribes, given their alliance. This has granted you the ability to make better \
 	use of grown plants to harvest more fruit and more properly manage the use of medical supplies like blood tongues or powder pouches. As an added bonus, when harvesting soil \
-	or plant trays you always harvest an additional bonus!"
+	or plant trays you always harvest an additional bonus! You are also a capable surgeon, able to alot more easily perform surgical steps to the point of rivaling real surgeons."
 	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
 
 /datum/perk/si_sci
-	name = "SI Science Trainning"
+	name = "SI Science Training"
 	desc = "You know how to use RnD core consoles and Exosuit Fabs."
 
 /datum/perk/greenthumb
@@ -633,14 +563,17 @@
 		/mob/living/carbon/human/proc/codespeak_criminal,
 		/mob/living/carbon/human/proc/codespeak_unknown,
 		/mob/living/carbon/human/proc/codespeak_status,
+		/mob/living/carbon/human/proc/codespeak_detaining,
 		/mob/living/carbon/human/proc/codespeak_shutup,
 		/mob/living/carbon/human/proc/codespeak_understood,
 		/mob/living/carbon/human/proc/codespeak_yes,
 		/mob/living/carbon/human/proc/codespeak_no,
+		/mob/living/carbon/human/proc/codespeak_detain_local,
 		/mob/living/carbon/human/proc/codespeak_understood_local,
 		/mob/living/carbon/human/proc/codespeak_yes_local,
 		/mob/living/carbon/human/proc/codespeak_no_local,
 		/mob/living/carbon/human/proc/codespeak_warcrime_local,
+		/mob/living/carbon/human/proc/codespeak_rules_of_engagmentn_local,
 		/mob/living/carbon/human/proc/codespeak_run_local
 		)
 

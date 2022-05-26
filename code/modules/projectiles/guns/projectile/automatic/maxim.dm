@@ -7,10 +7,12 @@
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
 	slot_flags = 0
-	max_shells = 96
+	max_shells = 1
+	slowdown_hold = 1
+	brace_penalty = 20
 	caliber = CAL_RIFLE
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PAN
 	tac_reloads = FALSE
 	matter = list(MATERIAL_PLASTEEL = 42, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 5)
@@ -23,13 +25,20 @@
 	one_hand_penalty = 30 //not like it's used anyway, but LMG level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	twohanded = TRUE
+	serial_type = "EXC"
 
 	init_firemodes = list(
-		FULL_AUTO_600,
+		FULL_AUTO_700,
 		list(mode_name="short bursts", mode_desc="dakka 5 shots in quick succession", burst=5,    burst_delay=2, move_delay=6,  icon="burst"),
 		list(mode_name="long bursts", mode_desc="Dakka 8 shots in succession",  burst=8, burst_delay=4, move_delay=8,  icon="burst"),
 		list(mode_name="suppressing fire", mode_desc="DAKKA 16 shots back to back to keep targets inside cover",  burst=16, burst_delay=4, move_delay=11,  icon="burst")
 		)
+
+/obj/item/gun/projectile/automatic/maxim/NM_colony
+	name = "\"Maxim\" machine gun"
+	desc = "An old and surprisingly deprecated gun from the Excelsior. One of their more dangerous weapons, effective at dealing with crowds or suppressing firing lines."
+	price_tag = 1000
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/maxim/update_icon()
 	..()

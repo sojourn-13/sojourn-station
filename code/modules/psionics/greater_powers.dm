@@ -205,10 +205,10 @@
 	if(pay_power_cost(psi_point_cost))
 		playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
 		owner.visible_message(
-			SPAN_DANGER("[src]'s flesh and clothing contort and shimmer, reforming into flowing, black and bronze robes!"),
+			SPAN_DANGER("[src.owner]'s flesh and clothing contort and shimmer, reforming into flowing, black and bronze robes!"),
 			SPAN_DANGER("Your flesh and clothing meld painfully, shimmering out of this reality as they are replaced with a set of armored robes!")
 			)
 		owner.replace_in_slot(new /obj/item/clothing/shoes/occultgreaves, slot_shoes, skip_covering_check = TRUE)
 		owner.replace_in_slot(new /obj/item/clothing/suit/space/occultist, slot_wear_suit, skip_covering_check = TRUE)
 		owner.replace_in_slot(new /obj/item/clothing/gloves/occultgloves, slot_gloves, skip_covering_check = TRUE)
-		owner.replace_in_slot(new /obj/item/clothing/head/space/occulthood, slot_head, skip_covering_check = TRUE)
+		owner.replace_in_slot(new /obj/item/clothing/head/helmet/space/occulthood, slot_head, skip_covering_check = TRUE)

@@ -1,8 +1,9 @@
 /obj/item/robot_module/robot/knine
-	name = "Security K9 Module"
+	name = "Security K-Class Module"
 	sprites = list(
-					"K9 Hound" = "k9",
-					"V2 K9 Hound" = "ihsechound",
+					"K-C Hound" = "k9",
+					"V2 K-C Hound" = "ihsechound",
+					"Drake K-C" = "drakesec",
 					)
 	channels = list("Marshal" = 1, "Blackshield" = 1)
 	networks = list(NETWORK_SECURITY)
@@ -24,7 +25,7 @@
 		STAT_MEC = 35 //weldering cracks
 	)
 
-	desc = "Focused on keeping the peace and fighting off threats to the colony, the IH K9 Module is a \
+	desc = "Focused on keeping the peace and fighting off threats to the colony, the IH K-Class Module is a \
 	heavily armored, though lightly armed battle unit."
 
 /obj/item/robot_module/robot/knine/New(var/mob/living/silicon/robot/R)
@@ -76,16 +77,17 @@
 	..()
 
 /obj/item/robot_module/robot/medihound
-	name = "Soteria Medihound Module"
+	name = "Soteria Med-Creature Module"
 	sprites = list(
 					"Medical Hound" = "medihound",
 					"Dark Medical Hound (Static)" = "medihounddark",
 					"V2 Medihound" = "vale",
+					"Med-Creature Drake" = "drakemed",
 					)
 	channels = list("Medical" = 1)
 	networks = list(NETWORK_MEDICAL)
 	can_be_pushed = 0
-	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,
+	supported_upgrades = list(/obj/item/borg/upgrade/hypospray_medical,
 							  /obj/item/borg/upgrade/jetpack,
 							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 	health = 120 //Fragile
@@ -98,9 +100,9 @@
 		STAT_MEC = 35 //weldering cracks
 	)
 
-	desc = "A versatile medical hound, equipped with all the tools necessary for surgery, chemistry, and \
-	 general patient treatments. Medihound has a vast array of items, but this comes at a hefty cost. \
-	 The medihound is essentially shackled to the medbay and can't afford to stray too far. \
+	desc = "A versatile medical creature, equipped with all the tools necessary for surgery, chemistry, and \
+	 general patient treatments. Med-creature modules have a vast array of items, but this comes at a hefty cost. \
+	 The creature of choice is essentially shackled to the medbay and can't afford to stray too far. \
 	 Its low power efficiency means it needs to charge regularly"
 
 /obj/item/robot_module/robot/medihound/New(var/mob/living/silicon/robot/R)
@@ -181,9 +183,10 @@
 	..()
 
 /obj/item/robot_module/robot/scrubpup
-	name = "Custodial Hound Module"
+	name = "Custodial Creature Module"
 	sprites = list(
 					"Custodial Hound" = "scrubpup",
+					"Custodial Drake" = "drakejanit",
 					)
 	channels = list("Service" = 1)
 	can_be_pushed = 0
@@ -193,7 +196,7 @@
 	health = 175 //Bulky
 	speed_factor = 1.4 //Slow
 	power_efficiency = 0.8 //Poor
-
+	robot_traits = CYBORG_TRAIT_CLEANING_WALK
 	stat_modifiers = list(
 		STAT_ROB = 25,
 		STAT_TGH = 25,
@@ -254,6 +257,7 @@
 	name = "Soteria Science Hound Module"
 	sprites = list(
 					"Research Hound" = "science",
+					"Research Drake" = "drakesci",
 					)
 	channels = list("Science" = 1)
 	can_be_pushed = 0
@@ -300,7 +304,6 @@
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/storage/part_replacer(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag += new /obj/item/hand_tele(src) //Why
 	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
 
 	var/datum/matter_synth/nanite = new /datum/matter_synth/nanite(10000)
@@ -326,11 +329,12 @@
 	..()
 
 /obj/item/robot_module/robot/engiedog
-	name = "Artificer Hound Module"
+	name = "Artificer H-C Module"
 	sprites = list(
 					"V2 Engihound" = "thottbot",
 					"Pupdozer" = "pupdozer",
-					"Artificer Safty Hound" = "kg",
+					"Artificer Safety Hound" = "kg",
+					"V1 Engi-Drake" = "drakeeng",
 					)
 	channels = list("Engineering" = 1)
 	networks = list(NETWORK_ENGINEERING)

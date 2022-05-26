@@ -26,7 +26,6 @@
 
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
-
 //They are all waring space suits
 	breath_required_type = NONE
 	breath_poison_type = NONE
@@ -40,7 +39,7 @@
 	meat_amount = 4
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 
-	drop_items = list(/obj/item/melee/energy/sword/pirate, /obj/item/shield/riot)
+	drop_items = list(/obj/item/trash/material/e_sword_cutlass, /obj/item/shield/riot/damaged)
 	faction = "pirate"
 
 /mob/living/carbon/superior_animal/human/voidwolf/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
@@ -53,6 +52,10 @@
 	return
 
 /mob/living/carbon/superior_animal/human/voidwolf/handle_cheap_environment(datum/gas_mixture/environment as anything)
+	return
+
+/mob/living/carbon/superior_animal/human/voidwolf/start_pulling(var/atom/movable/AM)
+	to_chat(src, SPAN_WARNING("Your hand gets pushed away from \the [src]. !"))
 	return
 
 /mob/living/carbon/superior_animal/human/voidwolf/death()
@@ -115,7 +118,7 @@
 	rapid = FALSE
 	projectiletype = /obj/item/projectile/beam
 	projectilesound = 'sound/weapons/laser.ogg'
-	drop_items = list(/obj/item/melee/energy/sword/pirate, /obj/item/gun/energy/gun/martin)
+	drop_items = list(/obj/item/tool/weldingtool/advanced, /obj/item/gun/energy/gun/martin)
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 4
@@ -161,7 +164,7 @@
 	ranged = TRUE
 	rapid = FALSE
 	projectiletype = /obj/item/projectile/beam
-	drop_items = list(/obj/item/melee/energy/sword/pirate, /obj/item/gun/energy/gun)
+	drop_items = list(/obj/item/trash/material/e_sword_cutlass, /obj/item/gun/energy/gun)
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 8
@@ -237,7 +240,7 @@
 	ranged = FALSE
 	rapid = FALSE
 	limited_ammo = FALSE
-	drop_items = list(/obj/item/tool/sword/saber/cutlass, /obj/item/shield/buckler/energy/reaver)
+	drop_items = list(/obj/item/tool/sword/saber/cutlass, /obj/item/shield/buckler/energy/reaver/damaged)
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/New()
 	..()
@@ -251,7 +254,6 @@
 		visible_message("\red \b [src] blocks the [O]!")
 		return
 	..()
-
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/bullet_act(var/obj/item/projectile/Proj)
 	if(!Proj)	return

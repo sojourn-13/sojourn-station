@@ -19,12 +19,14 @@
 	recoil_buildup = 0.9 //pulse weapons have a bit more recoil
 	one_hand_penalty = 5
 	twohanded = TRUE
+	can_dual = FALSE
 	damage_multiplier = 0.9
 	init_firemodes = list(
 		list(mode_name="destroy", mode_desc="An armor-stripping plasma round", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
 		list(mode_name="impact", mode_desc="A relatively light plasma round that knocks people back", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', fire_delay=25, icon="kill", projectile_color = "#FF0000"),
 	)
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
+	serial_type = "Absolute"
 
 /obj/item/gun/energy/plasma/mounted
 	self_recharge = TRUE
@@ -40,6 +42,7 @@
 	desc = "A miniaturized plasma rifle, remounted for robotic use only."
 	icon_state = "plasma_turret"
 	charge_meter = FALSE
+	serial_type = "GP"
 
 /obj/item/gun/energy/plasma/destroyer
 	name = "\"Purger\" plasma rifle"
@@ -80,6 +83,7 @@
 	recoil_buildup = 1
 	one_hand_penalty = 0
 	twohanded = FALSE
+	can_dual = TRUE
 	gun_tags = list(GUN_ENERGY)
 
 	init_firemodes = list(
@@ -98,6 +102,10 @@
 	charge_cost = 100
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 20, MATERIAL_SILVER = 5, MATERIAL_PLASMA = 10)
 	damage_multiplier = 1
+	twohanded = FALSE
+	can_dual = TRUE
+	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
+	serial_type = "SI"
 
 	var/explode_chance // the % of chance the gun has to explode each time it is fired without coolant. It is random between each gun.
 	var/explode_chance_min = 5 // The mininum of explode_chance
@@ -130,7 +138,7 @@
 
 	if(istype(W, /obj/item/tool)) // Is it a tool?
 		var/obj/item/tool/T = W // To use tool-only checks
-		if(QUALITY_BOLT_TURNING) // Can we turn bolts with the tool?
+		if(QUALITY_BOLT_TURNING in T.tool_qualities) // Can we turn bolts with the tool?
 			if(container) // Do we have something to remove?
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 					to_chat(user, "You remove the [container.name] from the [src.name].")

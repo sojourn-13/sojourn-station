@@ -82,6 +82,11 @@
 	desc = "A pair of trendy jeans."
 	icon_state = "jeansyoungfolks"
 
+/obj/item/clothing/under/jeans/tojo
+	name = "tojo clan jeans"
+	desc = "A pair of flashy jeans belonging to an asian gangster of sorts."
+	icon_state = "tojopants"
+
 /obj/item/clothing/under/jeans
 	name = "trendy baggy jeans"
 	desc = "A pair of baggy trendy jeans."

@@ -30,7 +30,10 @@
 	//Used for the /random subtypes of material stacks. any stack works
 	var/rand_min = 0
 	var/rand_max = 0
+	var/stacktype_alt = null
 
+/// bandaid until new inventorycode
+	var/mid_delete = FALSE
 
 
 
@@ -67,9 +70,20 @@
 		//return 1
 	if (src && usr && usr.machine == src)
 		usr << browse(null, "window=stack")
-
+	mid_delete = TRUE
 
 	return ..()
+
+/obj/item/stack/Crossed(atom/movable/crossing)
+	if(!crossing.throwing)
+		if(!istype(crossing, /obj/item/stack))
+			return ..()
+		if(isturf(loc) && isturf(crossing.loc))
+			var/obj/item/stack/crostack = crossing
+			if(mid_delete || crostack.mid_delete)	// bandaid until new inventory code
+				return FALSE
+			src.transfer_to(crostack)
+	. = ..()
 
 /obj/item/stack/examine(mob/user)
 	if(..(user, 1))
@@ -187,7 +201,9 @@
 		list_recipes(usr, text2num(href_list["sublist"]))
 
 	if (href_list["make"])
-		if (src.get_amount() < 1) qdel(src) //Never should happen
+		if (src.get_amount() < 1)
+			if(consumable)
+				qdel(src) //Never should happen
 
 		var/list/recipes_list = recipes
 		if (href_list["sublist"])
@@ -207,6 +223,15 @@
 			return
 	return
 
+/obj/item/stack/proc/can_merge(obj/item/stack/other)
+	if(!istype(other))
+		return FALSE
+	if(QDELETED(src) || QDELETED(other))
+		return FALSE
+	if((other == src))
+		return FALSE
+	return other.stacktype == stacktype
+
 //Return 1 if an immediate subsequent call to use() would succeed.
 //Ensures that code dealing with stacks uses the same logic
 /obj/item/stack/proc/can_use(var/used)
@@ -220,8 +245,10 @@
 	if(!uses_charge)
 		amount -= used
 		if (amount <= 0 && consumable)	// Only proceed with deletion if the item is supposed to disappear entirely after being used up
-			if(usr)
-				usr.remove_from_mob(src)
+			mid_delete = TRUE
+			if(ismob(loc))
+				var/mob/M = loc
+				M.remove_from_mob(src, null)
 			qdel(src) //should be safe to qdel immediately since if someone is still using this stack it will persist for a little while longer
 		update_icon()
 		return 1
@@ -234,7 +261,7 @@
 		return 1
 
 /obj/item/stack/proc/add(var/extra)
-	if(amount < 1)
+	if(amount < 1 && consumable)
 		qdel(src)
 	if(!uses_charge)
 		if(amount + extra > get_max_amount())
@@ -260,8 +287,13 @@
 /obj/item/stack/proc/transfer_to(obj/item/stack/S, var/tamount=null, var/type_verified)
 	if (!get_amount())
 		return 0
+	if(!istype(S))
+		return FALSE
 	if ((stacktype != S.stacktype) && !type_verified)
-		return 0
+		if((stacktype != S.stacktype_alt) && !type_verified)
+			return 0
+	if(mid_delete || S.mid_delete)	// bandaid until new inventory code
+		return FALSE
 	if (isnull(tamount))
 		tamount = src.get_amount()
 
@@ -273,10 +305,25 @@
 		if (prob(transfer/orig_amount * 100))
 			transfer_fingerprints_to(S)
 			if(blood_DNA)
+				if(!S.blood_DNA || !istype(S.blood_DNA, /list))	//if our list of DNA doesn't exist yet (or isn't a list) initialise it.
+					S.blood_DNA = list()
 				LAZYINITLIST(S.blood_DNA)
 				S.blood_DNA |= blood_DNA
 		return transfer
 	return 0
+
+/obj/item/stack/proc/merge(obj/item/stack/S) //Merge src into S, as much as possible
+	if(mid_delete || S.mid_delete || (S == src)) //amusingly this can cause a stack to consume itself, let's not allow that.
+		return
+	var/transfer = get_amount()
+	if(S.uses_charge)
+		transfer = min(transfer, S.get_max_amount() - S.get_amount())
+	else
+		transfer = min(transfer, S.max_amount - S.amount)
+	if(pulledby)
+		pulledby.start_pulling(S)
+	src.transfer_to(S, transfer)
+	return transfer
 
 //creates a new stack with the specified amount
 /obj/item/stack/proc/split(var/tamount)
@@ -291,13 +338,15 @@
 
 	var/orig_amount = src.amount
 	if (transfer && src.use(transfer))
-		var/obj/item/stack/newstack = new src.type(loc, transfer)
-		newstack.color = color
+		var/obj/item/stack/S = new src.type(loc, transfer)
+		S.color = color
 		if (prob(transfer/orig_amount * 100))
-			transfer_fingerprints_to(newstack)
+			transfer_fingerprints_to(S)
 			if(blood_DNA)
-				newstack.blood_DNA = blood_DNA.Copy()
-		return newstack
+				if(!S.blood_DNA || !istype(S.blood_DNA, /list))	//if our list of DNA doesn't exist yet (or isn't a list) initialise it.
+					S.blood_DNA = list()
+				S.blood_DNA |= blood_DNA
+		return S
 	return null
 
 /obj/item/stack/proc/get_amount()
@@ -398,6 +447,8 @@
 			//If that fails, leave it beside the original stack
 			S.forceMove(get_turf(src))
 
+/obj/item/stack/get_item_cost(export)
+	return amount * ..()
 
 /*
  * Recipe datum
@@ -433,6 +484,3 @@
 	New(title, recipes)
 		src.title = title
 		src.recipes = recipes
-
-
-

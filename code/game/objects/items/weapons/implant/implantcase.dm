@@ -25,8 +25,6 @@
 		add_overlay("implant_[implant:overlay_icon]")
 	return
 
-	..()
-
 /obj/item/implantcase/attackby(obj/item/I as obj, mob/user as mob)
 	..()
 	if (istype(I, /obj/item/pen))

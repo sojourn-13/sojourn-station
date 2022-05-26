@@ -14,26 +14,39 @@
 	icon_state = "jackboots"
 	item_state = "jackboots"
 	force = WEAPON_FORCE_HARMLESS
-	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 25, rad = 0)
+	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 25, rad = 0)
 	siemens_coefficient = 0.6
-	can_hold_knife = 1
+	can_hold_knife = TRUE
 
 /obj/item/clothing/shoes/jackboots/german
 	name = "brown jackboots"
 	desc = "A pair of standard-issue jackboots typically worn by people who need to stomp things. These ones are brown."
 	icon_state = "germanboots"
 
-/obj/item/clothing/shoes/jackboots/laced_jackboots
-	name = "laced jackboots"
-	desc = "Old military boots designed to make look you tacticool."
-	icon_state = "laced_jackboots"
+/obj/item/clothing/shoes/jackboots/duty
+	name = "duty jackboots"
+	desc = "A pair of standard-issue police steel-toed boots. For when you really need to remind the criminals what the law is."
+	icon_state = "duty"
+	armor_list = list(melee = 15, bullet = 10, energy = 10, bomb = 0, bio = 25, rad = 0)
+	siemens_coefficient = 0.8
+	can_hold_knife = TRUE
+
+/obj/item/clothing/shoes/jackboots/duty/long
+	name = "knee-high duty boots"
+	desc = "A pair of standard-issue police steel-toed boots. These reach up all the way to the knees for god knows what reason."
+	icon_state = "duty_long"
+
+/obj/item/clothing/shoes/jackboots/duty/heel
+	name = "knee-high heeled duty boots"
+	desc = "A pair of standard-issue police steel-toed boots. They look like they were designed for a different kind of service."
+	icon_state = "duty_heel"
 
 /obj/item/clothing/shoes/reinforced
 	name = "reinforced boots"
 	desc = "A pair of metallic boots designed for industrial environments."
 	icon_state = "reinforced"
 	item_state = "reinforced"
-	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.5
 
 /obj/item/clothing/shoes/reinforced/medical
@@ -47,7 +60,7 @@
 	desc = "A pair of steel-toed utility workboots."
 	icon_state = "workboots"
 	item_state = "workboots"
-	armor = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0) //Worse than jackboots and reinforced boots due to granting shock immunity to legs
+	armor_list = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0) //Worse than jackboots and reinforced boots due to granting shock immunity to legs
 	siemens_coefficient = 0
 	can_hold_knife = 1
 
@@ -82,7 +95,7 @@
 /obj/item/clothing/shoes/hermes_shoes
 	name = "Hermes Boots"
 	desc = "Boots used by the faithful to spread the word of God more quickly by small hidden wheels under the heels. Sadly not all that good at protecting your feet as other more robust boots."
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_GOLD = 3)
 	icon_state = "hermes"
 	item_state = "hermes"
@@ -97,7 +110,7 @@
     icon_state = "hunterboots"
     item_state = "hunterboots"
     force = WEAPON_FORCE_HARMLESS
-    armor = list(melee = 20, bullet = 5, energy = 10, bomb = 5, bio = 25, rad = 5)
+    armor_list = list(melee = 20, bullet = 5, energy = 10, bomb = 5, bio = 25, rad = 5)
     siemens_coefficient = 0.6
     price_tag = 200
     can_hold_knife = 1

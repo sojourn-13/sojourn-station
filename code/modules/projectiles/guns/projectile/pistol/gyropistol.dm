@@ -11,7 +11,7 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	price_tag = 1500
 	ammo_type = "/obj/item/ammo_casing/a75"
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE //Nothing bad will happen
 	mag_well = MAG_WELL_PISTOL
 	magazine_type = /obj/item/ammo_magazine/a75
 	auto_eject = 1
@@ -20,6 +20,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
+	serial_type = "SA"
 
 /obj/item/gun/projectile/gyropistol/update_icon()
 	..()

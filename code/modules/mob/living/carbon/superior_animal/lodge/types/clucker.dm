@@ -1,3 +1,6 @@
+var/const/MAX_CLUCKERS = 10
+var/global/clucker_count = 0
+
 //clucker
 //Basically a mutant chicken that produces feathers, meat, and a single bit of bones if butchered by a hunter. Credit to scar#1579 for the sprite.
 /mob/living/carbon/superior_animal/lodge/clucker
@@ -10,7 +13,7 @@
 	emote_see = list("pecks at the ground","flaps its wings viciously")
 	speak_chance = 2
 	turns_per_move = 3
-	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/food/snacks/chickenbreast //So hunters can eat mor chikin
 	meat_amount = 4
 	health = 10
 	var/eggsleft = 0
@@ -26,16 +29,21 @@
 	..()
 	pixel_x = rand(-6, 6)
 	pixel_y = rand(0, 10)
+	clucker_count += 1
+
+/mob/living/carbon/superior_animal/lodge/clucker/death()
+	..()
+	clucker_count -= 1
 
 /mob/living/carbon/superior_animal/lodge/clucker/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens
 		var/obj/item/reagent_containers/food/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "poppy")
-			if(!stat && eggsleft < 2)
+			if(!stat && eggsleft < 8)
 				user.visible_message("\blue [user] feeds [O] to [name]! It clucks happily.","\blue You feed [O] to [name]! It clucks happily.")
 				user.drop_item()
 				qdel(O)
-				eggsleft += rand(1, 2)
+				eggsleft += rand(1, 4)
 			else
 				to_chat(user, "\blue [name] doesn't seem hungry!")
 		else
@@ -53,7 +61,8 @@
 		var/obj/item/reagent_containers/food/snacks/egg/clucker/E = new(get_turf(src))
 		E.pixel_x = rand(-6,6)
 		E.pixel_y = rand(-6,6)
-		START_PROCESSING(SSobj, E)
+		if(clucker_count < MAX_CLUCKERS && prob(34)) //Statistically, one out of four eggs will be capable of hatching //A little over one in three, so as not to cuck the Lodge, but not make them OP either
+			START_PROCESSING(SSobj, E)
 
 
 /obj/item/reagent_containers/food/snacks/egg/clucker/amount_grown = 0

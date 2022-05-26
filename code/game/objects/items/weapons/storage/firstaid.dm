@@ -15,7 +15,7 @@
 	throw_speed = 2
 	throw_range = 8
 	matter = list(MATERIAL_PLASTIC = 5)
-	max_storage_space = 15
+	max_storage_space = 10
 	price_tag = 200
 	var/empty = FALSE
 
@@ -29,9 +29,8 @@
 	if (empty) return
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/bruise_pack(src)
-	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/ointment(src)
-	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
 	new /obj/item/device/scanner/health(src)
 
@@ -49,7 +48,6 @@
 
 	if (empty) return
 	new /obj/item/stack/medical/ointment(src)
-	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/pill/kelotane(src)
 	new /obj/item/reagent_containers/pill/kelotane(src)
 	new /obj/item/reagent_containers/pill/kelotane(src) //Replaced ointment with these since they actually work --Errorage
@@ -65,8 +63,6 @@
 	if (empty) return
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/bruise_pack(src)
-	new /obj/item/stack/medical/bruise_pack(src)
-	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/spaceacillin(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
@@ -112,6 +108,8 @@
 	new /obj/item/reagent_containers/pill/dexalin(src)
 	new /obj/item/reagent_containers/pill/dexalin(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/quickclot(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/quickclot(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
 
@@ -129,8 +127,6 @@
 	if (empty) return
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
@@ -157,7 +153,7 @@
 	desc = "Contains tools for surgery. Has precise foam fitting for safe transport."
 	icon_state = "surgeon"
 	item_state = "firstaid-surgeon"
-	max_storage_space = 18
+	max_storage_space = 19
 	matter = list(MATERIAL_PLASTIC = 10) //holds more
 	can_hold = list(
 		/obj/item/tool/bonesetter,
@@ -167,6 +163,7 @@
 		/obj/item/tool/retractor,
 		/obj/item/tool/scalpel,
 		/obj/item/tool/tape_roll/bonegel,
+		/obj/item/tool/surgicaldrill,
 		/obj/item/device/scanner,
 		/obj/item/storage/pill_bottle,
 		/obj/item/stack/medical,
@@ -181,6 +178,7 @@
 	new /obj/item/tool/retractor(src)
 	new /obj/item/tool/scalpel(src)
 	new /obj/item/tool/tape_roll/bonegel(src)
+	new /obj/item/tool/surgicaldrill(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	make_exact_fit()
 
@@ -194,6 +192,7 @@
 	new /obj/item/tool/scalpel/advanced(src)
 	new /obj/item/tool/tape_roll/bonegel(src)
 	new /obj/item/device/scanner/health(src)
+	new /obj/item/tool/surgicaldrill/adv(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/storage/pill_bottle/prosurgeon(src)
@@ -206,7 +205,7 @@
 	icon_state = "surgery_box_SI"
 	item_state = "combat_surgery_kit"
 	icon = 'icons/obj/storage/deferred.dmi'
-	max_storage_space = 18
+	max_storage_space = 19
 
 /obj/item/storage/firstaid/surgery/si/empty
 	empty = TRUE
@@ -220,6 +219,7 @@
 	new /obj/item/tool/scalpel/advanced/si(src)
 	new /obj/item/tool/cautery/adv/si(src)
 	new /obj/item/tool/tape_roll/bonegel/si(src)
+	new /obj/item/tool/surgicaldrill/adv/si(src)
 	new /obj/item/tool/surgicaldrill/adv/si(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 
@@ -296,8 +296,8 @@
 	..()
 	if (empty) return
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/pill/bicaridine(src)
 
 	return
@@ -347,15 +347,14 @@
 		/obj/item/reagent_containers/dropper,
 		/obj/item/tool/medmultitool,
 		/obj/item/clothing/gloves/latex,
-		/obj/item/tool/medmultitool/medimplant
+		/obj/item/tool/medmultitool/medimplant,
+		/obj/item/bodybag/cryobag
 		)
 
 /obj/item/storage/firstaid/soteria/populate_contents()
 	if (empty) return
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
@@ -381,15 +380,13 @@
 		/obj/item/reagent_containers/glass/beaker,
 		/obj/item/reagent_containers/dropper,
 		/obj/item/clothing/gloves/latex,
-		/obj/item/bodybag/cryobag,
+		/obj/item/bodybag/cryobag
 		)
 
 /obj/item/storage/firstaid/soteria/large/populate_contents()
 	if (empty) return
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
@@ -404,7 +401,7 @@
 	desc = "A compact version of Soteria creation, this high-capacity CBT Kit allows a Corpsman to carry all the necessary tools for battlefield triage." //Yes, it's exactly what you're thinking.
 	icon_state = "cbtk"
 	item_state = "cbtk"
-	storage_slots = 12 //Having to perform medicine in non-ideal situations, it's apt that they are able to carry more equipment around.
+	storage_slots = 14 //Having to perform medicine in non-ideal situations, it's apt that they are able to carry more equipment around.
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 	can_hold = list(
@@ -417,17 +414,18 @@
 		/obj/item/reagent_containers/glass/beaker,
 		/obj/item/reagent_containers/dropper,
 		/obj/item/clothing/gloves/latex,
-		/obj/item/tool/medmultitool, //They get to perform field surgery so they deserve space inside their kits to store a med multitool.
+		/obj/item/bodybag/cryobag,
+		/obj/item/tool/medmultitool //They get to perform field surgery so they deserve space inside their kits to store a med multitool.
 		)
 
 /obj/item/storage/firstaid/blackshield/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/blacshield(src)
+	new /obj/item/stack/medical/bruise_pack/blacshield(src)
+	new /obj/item/stack/medical/bruise_pack/blacshield(src)
+	new /obj/item/stack/medical/ointment/blacshield(src)
+	new /obj/item/stack/medical/ointment/blacshield(src)
+	new /obj/item/stack/medical/ointment/blacshield(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/reagent_containers/glass/bottle/stoxin(src)
 	new /obj/item/reagent_containers/glass/bottle/tricord(src)
@@ -441,7 +439,7 @@
 	icon_state = "cbtk_large"
 	item_state = "cbtk_large"
 	w_class = ITEM_SIZE_BULKY //Big boy meds
-	storage_slots = 18 //Having to perform medicine in non-ideal situations, it's apt that they are able to carry more equipment around.
+	storage_slots = 20 //Having to perform medicine in non-ideal situations, it's apt that they are able to carry more equipment around.
 
 	can_hold = list(
 		/obj/item/stack/medical,
@@ -453,21 +451,24 @@
 		/obj/item/reagent_containers/glass/beaker,
 		/obj/item/reagent_containers/dropper,
 		/obj/item/clothing/gloves/latex,
-		/obj/item/tool/medmultitool, //They get to perform field surgery so they deserve space inside their kits to store a med multitool.
+		/obj/item/bodybag/cryobag,
+		/obj/item/tool/medmultitool //They get to perform field surgery so they deserve space inside their kits to store a med multitool.
 		)
 
 /obj/item/storage/firstaid/blackshield/large/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/blacshield(src)
+	new /obj/item/stack/medical/bruise_pack/blacshield(src)
+	new /obj/item/stack/medical/bruise_pack/blacshield(src)
+	new /obj/item/stack/medical/bruise_pack/blacshield(src)
+	new /obj/item/stack/medical/bruise_pack/blacshield(src)
+	new /obj/item/stack/medical/bruise_pack/blacshield(src)
+	new /obj/item/stack/medical/ointment/blacshield(src)
+	new /obj/item/stack/medical/ointment/blacshield(src)
+	new /obj/item/stack/medical/ointment/blacshield(src)
+	new /obj/item/stack/medical/ointment/blacshield(src)
+	new /obj/item/stack/medical/ointment/blacshield(src)
+	new /obj/item/stack/medical/ointment/blacshield(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/storage/pill_bottle/bicaridine(src)
 	new /obj/item/storage/pill_bottle/dermaline(src)
@@ -487,6 +488,7 @@
 	icon = 'icons/obj/chemical.dmi'
 	item_state = "contsolid"
 	w_class = ITEM_SIZE_SMALL
+	level = BELOW_PLATING_LEVEL //sneaky
 	can_hold = list(/obj/item/reagent_containers/pill,
 		/obj/item/dice,
 		/obj/item/checker,

@@ -100,6 +100,8 @@ Class Procs:
 	icon = 'icons/obj/stationobjs.dmi'
 	w_class = ITEM_SIZE_GARGANTUAN
 
+	price_tag = 100
+
 	var/emagged = FALSE
 	var/use_power = IDLE_POWER_USE
 		//0 = dont run the auto
@@ -438,3 +440,8 @@ Class Procs:
 // Unwrenching = unpluging from a power source
 /obj/machinery/wrenched_change()
 	update_power_use()
+
+/obj/machinery/get_item_cost(export)
+	. = ..()
+	for(var/atom/movable/i in component_parts)
+		. += SStrade.get_new_cost(i)

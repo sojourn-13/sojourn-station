@@ -67,6 +67,7 @@
 
 	var/rotation_required = FALSE
 
+	//var/maximum_pressure = INFINITY - Soj Edit unused added for 1:1ing with eris
 	// if true then chemical can be decomposed to initial reagents
 	var/supports_decomposition_by_electrolysis = TRUE
 
@@ -107,7 +108,17 @@
 
 	if(rotation_required && !holder.rotating)
 		return FALSE
-
+/* - Soj Edit unused added for 1:1ing with eris
+	if(maximum_pressure)
+		var/turf/location = get_turf(holder.my_atom)
+		var/datum/gas_mixture/GM = location.return_air()
+		if(location)
+			var/datum/gas_mixture/GM = location.return_air()
+			if(GM.return_pressure() > maximum_pressure)
+				return FALSE
+		else
+			return FALSE
+*/
 	return TRUE
 
 /datum/chemical_reaction/proc/calc_reaction_progress(var/datum/reagents/holder, var/reaction_limit)
@@ -219,6 +230,14 @@
 		dat["catalyst"] = list()
 		for(var/id in catalysts)
 			dat["catalyst"] += list(list("type" = get_reagent_type_by_id(id), "reagent" = get_reagent_name_by_id(id), "units" = catalysts[id]))
+	if(inhibitors)
+		dat["inhibitors"] = list()
+		for(var/id in inhibitors)
+			dat["inhibitors"] += list(list("type" = get_reagent_type_by_id(id), "reagent" = get_reagent_name_by_id(id), "units" = inhibitors[id]))
+	if(byproducts)
+		dat["byproducts"] = list()
+		for(var/id in byproducts)
+			dat["byproducts"] += list(list("type" = get_reagent_type_by_id(id), "reagent" = get_reagent_name_by_id(id), "units" = byproducts[id]))
 
 	dat["minimum_temperature"] = minimum_temperature
 	if(maximum_temperature != INFINITY)

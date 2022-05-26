@@ -28,7 +28,7 @@
 	grenade_effect(target)
 
 
-/obj/item/projectile/bullet/grenade/
+/obj/item/projectile/bullet/grenade
 	name = "blast shell"
 	var/devastation_range = 0
 	var/heavy_impact_range = 0
@@ -49,6 +49,13 @@
 
 /obj/item/projectile/bullet/grenade/frag/grenade_effect(target)
 	fragment_explosion(target, range, f_type, f_amount, f_damage, f_step, same_turf_hit_chance)
+
+//Weaker do to being used in a strong gun
+/obj/item/projectile/bullet/grenade/frag/nt
+	range = 5
+	f_type = /obj/item/projectile/bullet/pellet/fragment
+	f_amount = 50
+	f_damage = 2
 
 /obj/item/projectile/bullet/grenade/emp
 	var/heavy_emp_range = 3

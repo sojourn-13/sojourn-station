@@ -40,6 +40,13 @@
 	name = "Corgi meat"
 	desc = "Tastes like... well, you know."
 
+/obj/item/reagent_containers/food/snacks/meat/termitemeat
+	desc = "A slab of sickly-green bubbling meat cut from a giant termite. It looks to be rather rich in minerals. Delicious!"
+	icon_state = "xenomeat"
+	filling_color = "#E2FFDE"
+	preloaded_reagents = list("protein" = 5, "iron" = 4)
+	//Todo make each termite meat have their ground up mineral inside
+
 /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	desc = "A slab of sickly-green bubbling meat cut from a giant roach. You swear you can see it still twitching occasionally. Delicious!"
 	icon_state = "xenomeat"
@@ -71,6 +78,10 @@
 
 /obj/item/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch
 	preloaded_reagents = list("protein" = 4, "seligitillin" = 8, "diplopterum" = 6, "iron" = 5)
+
+/obj/item/reagent_containers/food/snacks/meat/roachmeat/benzin
+	desc = "A slab of sickly-green meat cut from a benzin roach. Stinks of welding fuel. Delicious!"
+	preloaded_reagents = list("protein" = 4, "blattedin" = 6, "fuel" = 30)
 
 /obj/item/reagent_containers/food/snacks/meat/spider
 	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
@@ -135,6 +146,14 @@
 
 	bitesize = 6
 	preloaded_reagents = list("protein" = 8, "pararein" = 8, "mutagen" = 8)
+
+/obj/item/reagent_containers/food/snacks/meat/spider/cave_spider
+	desc = "A bloated slab of sickly-green meat cut from a spider. It seems to always be cold and even when warmed by flames it cools quickly."
+	icon_state = "xenomeat"
+	filling_color = "#E2FFDE"
+
+	bitesize = 6
+	preloaded_reagents = list("protein" = 8, "pararein" = 8, "frostoil" = 8)
 
 /obj/item/reagent_containers/food/snacks/meat/spider/recluse
 	desc = "A bloated slab of sickly-green meat cut from a spider. The smell from this one makes your nose go numb."

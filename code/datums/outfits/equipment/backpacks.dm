@@ -29,6 +29,14 @@
 	name = "Duffel Bag"
 	path = /obj/item/storage/backpack/duffelbag
 
+/decl/backpack_outfit/lootbag
+	name = "Lootbag"
+	path = /obj/item/storage/backpack/duffelbag/loot
+
+/decl/backpack_outfit/Leather_satchel
+	name = "Leather satchel"
+	path = /obj/item/storage/backpack/satchel/leather
+
 /* Code */
 /decl/backpack_outfit
 	var/flags

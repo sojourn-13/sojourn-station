@@ -12,8 +12,8 @@
 
 	origin_tech = null
 
-	var/obj/item/cell/cell = null
-	var/suitable_cell = /obj/item/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 
 	var/scan_title
 	var/scan_data
@@ -33,6 +33,8 @@
 
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 	origin_tech = list(TECH_BIO = 1)
+
+	price_tag = 100
 
 /obj/item/device/scanner/attack_self(mob/user)
 	if(!scan_data)

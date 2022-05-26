@@ -22,8 +22,8 @@
 	hard_drive.store_file(new /datum/computer_file/program/wordprocessor())
 	hard_drive.store_file(new /datum/computer_file/program/records())
 	hard_drive.store_file(new /datum/computer_file/program/bounty_board_app())
-	if(prob(30)) //harmless tax software
-		hard_drive.store_file(new /datum/computer_file/program/uplink())
+	//if(prob(30)) //harmless tax software // We don't have antags that can use it and it can get confused with the other one. -R4d6
+	//	hard_drive.store_file(new /datum/computer_file/program/uplink())
 	if(prob(60))
 		hard_drive.store_file(new /datum/computer_file/program/tax())
 
@@ -40,6 +40,9 @@
 	icon_state = "pda-s"
 	scanner_type = /obj/item/computer_hardware/scanner/reagent
 
+/obj/item/modular_computer/pda/corpsman
+	icon_state = "pda-s"
+	scanner_type = /obj/item/computer_hardware/scanner/medical
 
 /obj/item/modular_computer/pda/science
 	hard_drive_type = /obj/item/computer_hardware/hard_drive/small/adv
