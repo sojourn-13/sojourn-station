@@ -62,8 +62,8 @@
 	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/lamia/scoped/dark
-	name = "\"Apollo\" advanced heavy pistol"
-	desc = "The M6D \"Apollo\", a heavy pistol manufactured on Mars and often used by SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
+	name = "\"Gemini\" advanced heavy pistol"
+	desc = "The M6D \"Gemini\", a heavy pistol manufactured on Mars and often used by SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
 	icon_state = "scoped_dark_lamia"
 	item_state = "scoped_dark_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
