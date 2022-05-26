@@ -10,17 +10,17 @@
 	caliber = CAL_SHOTGUN
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_DRUM
+	mag_well = MAG_WELL_RIFLE //Not supposed to have drums, get out of here
 	origin_tech = list(TECH_COMBAT = 11, TECH_MATERIAL = 3) //So rnd has a use to get their hands on one
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 2000
 	penetration_multiplier = 1.5 //50% more ap
-	damage_multiplier = 1.1
+	damage_multiplier = 1.1 //Payload "rifle" has a scope so fair enough
 	zoom_factor = 0.3
 	fire_delay = 12
 	recoil_buildup = 15
 	one_hand_penalty = 20
-	fire_sound = 'sound/weapons/guns/fire/heavy_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/payload_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/batrifle_cock.ogg'

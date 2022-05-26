@@ -24,7 +24,7 @@
 	price_tag = 600
 	penetration_multiplier = 2
 	pierce_multiplier = 2
-	damage_multiplier = 0.6
+	damage_multiplier = 0.6 //Most AP and pens walls but least damage out of any shotgun
 	recoil_buildup = 13
 	one_hand_penalty = 15 //full sized shotgun level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
@@ -59,7 +59,7 @@
 	price_tag = 600
 	penetration_multiplier = 1.5
 	pierce_multiplier = 1.5
-	damage_multiplier = 0.6 //Pug has 0.7 do to its fire normal modes
+	damage_multiplier = 0.6 //Worse rushing bull
 	recoil_buildup = 13
 	one_hand_penalty = 15 //full sized shotgun level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)

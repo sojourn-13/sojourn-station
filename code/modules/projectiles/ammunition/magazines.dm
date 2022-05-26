@@ -1055,7 +1055,7 @@
 	desc = "A 10 magazine for 20mm shotgun shells."
 	icon_state = "sbaw"
 	mag_type = MAGAZINE
-	mag_well = MAG_WELL_DRUM
+	mag_well = MAG_WELL_RIFLE
 	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun
 	multiple_sprites = 1
