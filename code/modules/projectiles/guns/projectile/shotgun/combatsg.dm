@@ -7,12 +7,12 @@
 	item_state = "cshotgun"
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
-	max_shells = 6 //less ammo and regular recoil, decided not to give 1.2 because Gladstone would be anyhow better in this case
+	max_shells = 6 //less ammo and regular recoil
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
 	price_tag = 1250
 	damage_multiplier = 1.1
-	penetration_multiplier = 1
+	penetration_multiplier = 1 //Little worse than gladstone
 	recoil_buildup = 13
 	one_hand_penalty = 15 //full sized shotgun level
 	saw_off = TRUE

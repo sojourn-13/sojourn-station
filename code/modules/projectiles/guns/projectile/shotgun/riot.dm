@@ -20,7 +20,7 @@
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1250
-	damage_multiplier = 1.2 //Pug has 0.7 do to its fire normal modes
+	damage_multiplier = 1.2 //More damage less AP than gladstone
 	recoil_buildup = 13
 	one_hand_penalty = 15 //full sized shotgun level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)

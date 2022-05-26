@@ -67,7 +67,7 @@
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1, TECH_ILLEGAL = 4)
-	mag_well = MAG_WELL_DRUM
+	mag_well = MAG_WELL_RIFLE //Have you ever seen saiga with drum magazine because I haven't
 	recoil_buildup = 25
 	one_hand_penalty = 30
 	serial_type = "EXC"
