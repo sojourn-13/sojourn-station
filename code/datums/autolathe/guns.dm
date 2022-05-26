@@ -115,7 +115,7 @@
 	build_path = /obj/item/gun/projectile/lamia/dark
 
 /datum/design/autolathe/gun/scoped_naga
-	name = "SolFed HG .50 Kurtz \"Apollo\" Advanced"
+	name = "SolFed HG .50 Kurtz \"Gemini\" Advanced"
 	build_path = /obj/item/gun/projectile/lamia/scoped/dark
 
 /datum/design/autolathe/gun/scoped_lamia
