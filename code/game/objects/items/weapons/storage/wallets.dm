@@ -76,7 +76,7 @@
 			if("engineers")
 				icon_state = "walletid_sepia"
 				return
-			if("centcomm")
+			if("centcom")
 				icon_state = "walletid_centcom"
 				return
 

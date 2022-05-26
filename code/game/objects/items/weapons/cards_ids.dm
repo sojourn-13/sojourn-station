@@ -208,7 +208,7 @@ var/const/NO_EMAG_ACT = -50
 	registered_name = "Syndicate"
 	assignment = "Syndicate Overlord"
 	access = list(access_syndicate, access_external_airlocks)
-	group = "centcomm"
+	group = "centcom"
 
 /obj/item/card/id/medical_command
 	name = "Medical ID card"
@@ -251,7 +251,7 @@ var/const/NO_EMAG_ACT = -50
 	item_state = "tdgreen"
 	registered_name = "Administrator"
 	assignment = "Administrator"
-	group = "centcomm"
+	group = "centcom"
 
 /obj/item/card/id/all_access/New()
 	access = get_access_ids()
