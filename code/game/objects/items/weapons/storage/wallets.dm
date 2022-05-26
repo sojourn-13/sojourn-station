@@ -57,20 +57,31 @@
 /obj/item/storage/wallet/update_icon()
 
 	if(front_id)
-		switch(front_id.icon_state)
-			if("id")
+		switch(front_id.group)
+			if("colony")
 				icon_state = "walletid"
 				return
-			if(MATERIAL_SILVER)
+			if("whitesilver")
 				icon_state = "walletid_silver"
 				return
-			if(MATERIAL_GOLD)
+			if("golden")
 				icon_state = "walletid_gold"
 				return
-			if("centcom")
+			if("greenone")
+				icon_state = "walletid_green"
+				return
+			if("secblue")
+				icon_state = "walletid_sec"
+				return
+			if("engineers")
+				icon_state = "walletid_sepia"
+				return
+			if("centcomm")
 				icon_state = "walletid_centcom"
 				return
-	icon_state = "wallet"
+
+	else
+		icon_state = "wallet"
 
 
 /obj/item/storage/wallet/GetIdCard()
