@@ -72,7 +72,8 @@
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	matter = null
-	damage_multiplier = 1.2
+	damage_multiplier = 1.4
+	penetration_multiplier = 1.2
 	force = 5
 	max_shells = 9
 	safety = FALSE
