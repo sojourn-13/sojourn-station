@@ -119,7 +119,10 @@
 	M.Weaken(3)
 	var/mob/living/carbon/superior_animal/temp_ref
 	temp_ref = new /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor(src.loc)
+	temp_ref.Paralyse(20)
 	temp_ref.target_mob = WEAKREF(M)
+	temp_ref.stance = HOSTILE_STANCE_ATTACKING
+	temp_ref = null
 	qdel(src)
 
 /obj/item/spider_shadow_trap/burrowing
@@ -146,7 +149,10 @@
 	M.Weaken(3)
 	var/mob/living/carbon/superior_animal/temp_ref
 	temp_ref = new /mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing(src.loc)
+	temp_ref.Paralyse(20)
 	temp_ref.target_mob = M
+	temp_ref.stance = HOSTILE_STANCE_ATTACKING
+	temp_ref = null
 	qdel(src)
 
 /obj/item/spider_shadow_trap/burrowing/New()
