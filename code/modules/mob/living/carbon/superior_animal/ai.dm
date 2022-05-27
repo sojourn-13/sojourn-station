@@ -59,7 +59,7 @@
 		loseTarget()
 		return
 	if (check_if_alive())
-		attemptAttackOnTarget() //no need for a timer since its an instant attack
+		prepareAttackPrecursor(targetted_mob, .proc/attemptAttackOnTarget, MELEE_TYPE)
 
 /mob/living/carbon/superior_animal/proc/loseTarget()
 	stop_automated_movement = 0

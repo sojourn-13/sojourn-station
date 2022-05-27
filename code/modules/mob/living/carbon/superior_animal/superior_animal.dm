@@ -344,14 +344,8 @@
 	var/atom/targetted_mob = (target_mob?.resolve())
 	if (!targetted_mob)
 		loseTarget()
-	else if (istype(targetted_mob, /mob/))
-		var/mob/temp = targetted_mob
-		if (is_dead(temp))
-			loseTarget()
-		else if (!temp.check_if_alive())
-			loseTarget()
-
-	debug_check++
+	else if (!targetted_mob.check_if_alive()) //else if because we dont want a runtime
+		loseTarget()
 
 	switch(stance)
 		if(HOSTILE_STANCE_IDLE)
@@ -401,17 +395,17 @@
 		walk_to(src, targetted_mob, (comfy_range - 1), move_to_delay) //lets get a little closer than our optimal range
 		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
 			if (issuperiorhuman(src)) //TODO: convert to switch
-				visible_message(SPAN_DANGER("[src] snaps their attention to [targetted_mob], fumbling to ready their weapon!"))
+				visible_message(SPAN_WARNING("[src] snaps their attention to [targetted_mob], fumbling to ready their weapon!"))
 			else
-				visible_message(SPAN_DANGER("[src] prepares to fire at [targetted_mob]!"))
+				visible_message(SPAN_WARNING("[src] prepares to fire at [targetted_mob]!"))
 			delayed = delay_amount
 			retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we dont need this right now, uncomment if we do
 			return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
 		else
 			if (issuperiorhuman(src))
-				visible_message(SPAN_DANGER("[src] quickly snaps their aim toward [targetted_mob]!"))
+				visible_message(SPAN_WARNING("[src] quickly snaps their aim toward [targetted_mob]!"))
 			else
-				visible_message(SPAN_DANGER("[src] shifts its attention to [targetted_mob]!"))
+				visible_message(SPAN_WARNING("[src] shifts its attention to [targetted_mob]!"))
 
 	else if (!ranged)
 		stop_automated_movement = TRUE
@@ -436,7 +430,7 @@
 			walk_to(src, targetted_mob, 4, move_to_delay)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 
-/mob/proc/check_if_alive() //A simple yes no if were alive
+/atom/proc/check_if_alive() //A simple yes no if were alive
 	if(health > 0)
 		return TRUE
 	return FALSE
@@ -575,5 +569,8 @@
 						visible_message(telegraph_override_text)
 
 // 			if (ALL_TYPE) //unused
-
-		addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
+		switch(attack_type)
+			if (MELEE_TYPE)
+				addtimer(CALLBACK(src, proctocall), time_to_expire) //awful hack because melee attacks are handled differently
+			if (RANGED_TYPE || RANGED_RAPID_TYPE)
+				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
