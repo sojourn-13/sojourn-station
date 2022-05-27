@@ -330,12 +330,12 @@
 		if(HOSTILE_STANCE_IDLE)
 			if (!busy) // if not busy with a special task
 				stop_automated_movement = FALSE
-			target_mob = WEAKREF(findTarget())
-			if (target_mob)
+			if (!targetted_mob)
+				target_mob = WEAKREF(findTarget()) //no target? try to find one
 				targetted_mob = (target_mob?.resolve())
-				if (targetted_mob)
-					stance = HOSTILE_STANCE_ATTACK
-					handle_hostile_stance(targetted_mob)
+			if (targetted_mob) // is it still null?
+				stance = HOSTILE_STANCE_ATTACK
+				handle_hostile_stance(targetted_mob)
 
 		if(HOSTILE_STANCE_ATTACK)
 			handle_hostile_stance(targetted_mob)
