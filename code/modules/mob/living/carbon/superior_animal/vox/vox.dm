@@ -9,7 +9,7 @@
 
 	faction = "vox_tribe" //In case of different tribes
 	turns_per_move = 3 //Ditto. No.
-	move_to_delay = 3 //This is added to prevent them from being menaces to EVERYONE
+	move_to_delay = 6 //This is added to prevent them from being menaces to EVERYONE
 	see_in_dark = 10
 	speak_emote = list("grumbles")
 	emote_see = list("looks around for a target.")
