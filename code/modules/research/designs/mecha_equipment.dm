@@ -122,7 +122,6 @@
 /datum/design/research/item/mecha/weapon/ion
 	name = "MkIV ion heavy cannon"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
-	
 /datum/design/research/item/mecha/weapon/sonic
 	name = "mech-mounted sonic emitter"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/sonic
