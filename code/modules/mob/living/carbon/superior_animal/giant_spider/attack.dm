@@ -5,5 +5,5 @@
 
 	if(isliving(A))
 		var/mob/living/L = A
-		if(istype(L) && L.reagents)
+		if(istype(L) && L.reagents && L.can_inject(src))
 			L.reagents.add_reagent(poison_type, poison_per_bite)
