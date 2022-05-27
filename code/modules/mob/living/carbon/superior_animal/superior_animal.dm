@@ -324,7 +324,7 @@
 				stop_automated_movement = FALSE
 			if (!targetted_mob)
 				target_mob = WEAKREF(findTarget()) //no target? try to find one
-					targetted_mob = (target_mob?.resolve())
+				targetted_mob = (target_mob?.resolve())
 			if (targetted_mob) // is it still null?
 				stance = HOSTILE_STANCE_ATTACK
 				handle_hostile_stance(targetted_mob)
