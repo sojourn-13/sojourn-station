@@ -327,8 +327,8 @@
 	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
 		R.armor = R.armor.modifyRating(bomb = tool_upgrades[UPGRADE_BOMB_ARMOR] * -1)
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
-		R.item_flags ~= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
-	R.prefixes ~= prefix
+		R.item_flags &= ~tool_upgrades[UPGRADE_ITEMFLAGPLUS]
+	R.prefixes -= prefix
 	R.updateArmor()
 
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/tool/T)
