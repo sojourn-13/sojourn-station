@@ -58,9 +58,9 @@
 		else
 			return
 
-/mob/living/carbon/superior_animal/proc/OpenFire(firing_target)
+/mob/living/carbon/superior_animal/proc/OpenFire(var/atom/firing_target)
 	if(!check_if_alive()) return
-	var/target = firing_target
+	var/atom/target = firing_target
 
 	if(rapid)
 		for(var/shotsfired = 0, shotsfired < rapid_fire_shooting_amount, shotsfired++)
@@ -72,8 +72,9 @@
 		Shoot(target, loc, src)
 		handle_ammo_check()
 
-	stance = HOSTILE_STANCE_IDLE
-	firing_target = null
+	if (!firing_target.check_if_alive())
+		stance = HOSTILE_STANCE_IDLE
+		firing_target = null
 	return
 
 /mob/living/carbon/superior_animal/proc/handle_ammo_check()
