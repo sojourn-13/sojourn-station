@@ -58,9 +58,8 @@
 	if ((get_dist(src, targetted_mob) >= viewRange) || src.z != targetted_mob.z && !istype(targetted_mob, /obj/mecha))
 		loseTarget()
 		return
-	spawn(delay_for_melee)
 	if(check_if_alive())
-		attemptAttackOnTarget()
+		addtimer(CALLBACK(src, .proc/attemptAttackOnTarget), delay_for_melee)
 	return
 
 /mob/living/carbon/superior_animal/proc/loseTarget()
