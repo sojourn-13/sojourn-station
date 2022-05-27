@@ -41,16 +41,16 @@
 	serial_shown = FALSE
 
 /obj/item/gun/projectile/lamia/dark/sf
-	name = "\"Naga\" heavy pistol"
-	desc = "An M6 \"Naga\" heavy pistol, the mainline heavy sidearm of the galaxy. This one still bears SolFed markings either lost or stolen. Uses .50 Kurtz."
+	name = "\"Rattler\" heavy pistol"
+	desc = "An M6 \"Rattler\" heavy pistol, the mainline heavy sidearm of the galaxy. This one still bears SolFed markings either lost or stolen. Uses .50 Kurtz."
 	icon_state = "sfdark_lamia"
 	item_state = "sfdark_lamia"
 	serial_type = "Sol Fed"
 	serial_shown = TRUE
 
 /obj/item/gun/projectile/lamia/scoped
-	name = "\"Lamia\" advanced heavy pistol"
-	desc = "Seinemetall Defense GmbH handgun .50 \"Lamia\" Based on the \"Naga\" heavy pistol, it's fit for high ranking enforcers; fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
+	name = "\"Argos\" advanced heavy pistol"
+	desc = "Seinemetall Defense GmbH handgun .50 \"Argos\" Based on the \"Lamia\" heavy pistol, it's fit for high ranking enforcers; fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
 	icon_state = "scoped_lamia"
 	item_state = "scoped_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 5)
@@ -62,8 +62,8 @@
 	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/lamia/scoped/dark
-	name = "\"Naga\" advanced heavy pistol"
-	desc = "The M6D \"Naga\", a heavy pistol manufactured on Mars and often used by SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
+	name = "\"Gemini\" advanced heavy pistol"
+	desc = "The M6D \"Gemini\", a heavy pistol manufactured on Mars and often used by SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
 	icon_state = "scoped_dark_lamia"
 	item_state = "scoped_dark_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
