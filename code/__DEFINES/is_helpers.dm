@@ -42,6 +42,8 @@
 
 #define issuperioranimal(A) istype(A, /mob/living/carbon/superior_animal)
 
+#define issuperiorhuman(A) istype(A, /mob/living/carbon/superior_animal/human)
+
 #define isburrow(A) istype(A, /obj/structure/burrow)
 //---------------------------------------------------
 

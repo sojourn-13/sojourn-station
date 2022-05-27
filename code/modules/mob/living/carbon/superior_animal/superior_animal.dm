@@ -15,6 +15,15 @@
 
 	var/eating_time = 900
 
+	/// Number of delayed AI ticks, used for delaying ranged attacks. At 9, ranged mobs will be delayed by one tick after target. TODO: Create a override.
+	var/delayed = 0
+	/// How much we increment this mob's delayed var each time.
+	var/delay_amount = 0
+	/// If this is more than the world timer, and we retarget, we will immediately attack.
+	var/retarget_rush_timer = 0
+	/// For this amount of time after a retarget, any retargets will cause a instant attack.
+	var/retarget_rush_timer_increment = 8 SECONDS //arbitrary value for now
+
 	var/moved = FALSE
 	var/move_attack_mult = 0.6
 	universal_understand = TRUE //QoL to admins controling mobs
@@ -333,7 +342,10 @@
 			handle_hostile_stance(targetted_mob)
 
 		if(HOSTILE_STANCE_ATTACKING)
-			handle_attacking_stance(targetted_mob)
+			if (delayed == 0)
+				handle_attacking_stance(targetted_mob)
+			else
+				delayed--
 
 	//random movement
 	if(wander && !stop_automated_movement && !anchored)
@@ -356,8 +368,21 @@
 		destroySurroundings()
 		already_destroying_surroundings = TRUE
 	if(ranged)
+
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
+		if(!(get_dist(src, targetted_mob) <= comfy_range)) //Not in our optimal range.
+			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+			walk_to(src, targetted_mob, (comfy_range - 1), move_to_delay) //lets get a little closer than our optimal range
+		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
+			if (issuperiorhuman(src)) //TODO: convert to switch
+				visible_message(SPAN_DANGER("[src] snaps their attention to [targetted_mob], fumbling to ready their weapon!"))
+			else
+				visible_message(SPAN_DANGER("[src] prepares to fire at [targetted_mob]!"))
+			delayed = delay_amount
+//			retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we dont need this right now, uncomment if we do
+			return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
+
 	else if (!ranged)
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
