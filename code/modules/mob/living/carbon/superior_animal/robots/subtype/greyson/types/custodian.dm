@@ -82,6 +82,7 @@
 	comfy_range = 3 //We fire a projectile thats only 3 tiles far
 	ranged = TRUE
 	cleaning = FALSE
+	range_telegraph = "lurks back getting ready to splash flaming oil at"
 
 /mob/living/carbon/superior_animal/robot/greyson/custodian/chef/New()
 	. = ..()
@@ -112,6 +113,7 @@
 	melee_damage_lower = 7
 	melee_damage_upper = 15
 	cleaning = FALSE
+	range_telegraph = "turns the laser welder at"
 
 /mob/living/carbon/superior_animal/robot/greyson/custodian/engineer/emp_act(severity)
 	..()

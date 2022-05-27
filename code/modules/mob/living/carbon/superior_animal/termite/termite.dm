@@ -58,6 +58,9 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	//Controller that spawns the termites
 	var/datum/termite_controller/controller
 
+
+	range_telegraph = "chitin begins to crack and spikes emerge, as it prepares to launch them at"
+
 /mob/living/carbon/superior_animal/termite/New(loc, obj/machinery/mining/drill/drill, datum/termite_controller/parent)
 	..()
 	if(parent)

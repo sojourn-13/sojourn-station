@@ -24,10 +24,10 @@
 	/// For this amount of time after a retarget, any retargets will cause a instant attack.
 	var/retarget_rush_timer_increment = 10 SECONDS //arbitrary value for now
 
-	/// Editable by admins to force a mob's messages to be different.
-	var/telegraph_override = FALSE
-	/// Editable by admins to, when telegraph_override is true, force a mob to telegraph differently.
-	var/telegraph_override_text
+	/// Telegraph message base for mobs that are range
+	var/range_telegraph = "aims their weapon at"
+	/// Telegraph message base for mobs that are melee
+	var/melee_telegraph = "readies to strike"
 
 	var/debug_check = 0
 
@@ -546,27 +546,15 @@
 			if (MELEE_TYPE)
 				time_to_expire = delay_for_melee
 				if (telegraph && (time_to_expire > 0)) //no telegraph needed if the attack is instant
-					if (!telegraph_override)
-						visible_message(SPAN_WARNING("[src] readies to strike [targetted_mob]!")) //TODO: Type specific telegraphs
-					else
-						visible_message(telegraph_override_text)
+					visible_message(SPAN_WARNING("[src] [melee_telegraph] [targetted_mob]!"))
 			if (RANGED_TYPE)
 				time_to_expire = delay_for_range
 				if (telegraph && (time_to_expire > 0))
-					if (!telegraph_override)
-						if (issuperiortermite(src))
-							visible_message(SPAN_WARNING("[src]'s chitin begins to crack and spikes emerge, as it prepares to launch them at [targetted_mob]!"))
-						else
-							visible_message(SPAN_WARNING("[src] aims their weapon at [targetted_mob], lining up a shot!"))
-					else
-						visible_message(telegraph_override_text)
+					visible_message(SPAN_WARNING("[src] [range_telegraph] [targetted_mob]!"))
 			if (RANGED_RAPID_TYPE)
 				time_to_expire = delay_for_rapid_range
 				if (telegraph && (time_to_expire > 0))
-					if (!telegraph_override)
-						visible_message(SPAN_WARNING("[src] aims their weapon at [targetted_mob], lining up a shot!"))
-					else
-						visible_message(telegraph_override_text)
+					visible_message(SPAN_WARNING("[src] [range_telegraph] [targetted_mob]!"))
 
 // 			if (ALL_TYPE) //unused
 		switch(attack_type)
