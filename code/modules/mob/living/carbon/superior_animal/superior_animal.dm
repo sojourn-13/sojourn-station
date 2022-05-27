@@ -22,7 +22,14 @@
 	/// If this is more than the world timer, and we retarget, we will immediately attack.
 	var/retarget_rush_timer = 0
 	/// For this amount of time after a retarget, any retargets will cause a instant attack.
-	var/retarget_rush_timer_increment = 8 SECONDS //arbitrary value for now
+	var/retarget_rush_timer_increment = 10 SECONDS //arbitrary value for now
+
+	/// Editable by admins to force a mob's messages to be different.
+	var/telegraph_override = FALSE
+	/// Editable by admins to, when telegraph_override is true, force a mob to telegraph differently.
+	var/telegraph_override_text
+
+	var/debug_check = 0
 
 	var/moved = FALSE
 	var/move_attack_mult = 0.6
@@ -160,7 +167,7 @@
 	var/casingtype      //Do we leave casings after shooting?
 	var/ranged_cooldown //What is are modular cooldown, in seconds.
 	var/ranged_middlemouse_cooldown = 0 //For when people are controling them and firing, do we have a cooldown? Modular for admins to tweak.
-	var/fire_verb       //what does it do when it shoots?
+	var/fire_verb = "fires"      //what does it do when it shoots?
 	//ammo stuff
 	var/limited_ammo = FALSE //Do we run out of ammo?
 	var/mag_drop = FALSE //Do we drop are mags?
@@ -184,7 +191,7 @@
 	//This makes it so they wait in seconds seconds before doing their attack
 	delay_for_range = 0.8 SECONDS
 	delay_for_rapid_range = 0.75 SECONDS
-	delay_for_melee = 1 SECONDS
+	delay_for_melee = 0 SECONDS
 	delay_for_all = 0.5 SECONDS
 
 /mob/living/carbon/superior_animal/New()
@@ -335,6 +342,17 @@
 		return
 
 	var/atom/targetted_mob = (target_mob?.resolve())
+	if (!targetted_mob)
+		loseTarget()
+	else if (istype(targetted_mob, /mob/))
+		var/mob/temp = targetted_mob
+		if (is_dead(temp))
+			loseTarget()
+		else if (!temp.check_if_alive())
+			loseTarget()
+
+	debug_check++
+
 	switch(stance)
 		if(HOSTILE_STANCE_IDLE)
 			if (!busy) // if not busy with a special task
@@ -378,24 +396,22 @@
 	if(ranged)
 
 		stop_automated_movement = TRUE
-		if(get_dist(src, targetted_mob) <= comfy_range)
-			stance = HOSTILE_STANCE_ATTACKING
-			return //We do a safty return
-		else
-			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to(src, targetted_mob, comfy_range, move_to_delay)
 		stance = HOSTILE_STANCE_ATTACKING
-		if(!(get_dist(src, targetted_mob) <= comfy_range)) //Not in our optimal range.
-			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to(src, targetted_mob, (comfy_range - 1), move_to_delay) //lets get a little closer than our optimal range
+		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+		walk_to(src, targetted_mob, (comfy_range - 1), move_to_delay) //lets get a little closer than our optimal range
 		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
 			if (issuperiorhuman(src)) //TODO: convert to switch
 				visible_message(SPAN_DANGER("[src] snaps their attention to [targetted_mob], fumbling to ready their weapon!"))
 			else
 				visible_message(SPAN_DANGER("[src] prepares to fire at [targetted_mob]!"))
 			delayed = delay_amount
-//			retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we dont need this right now, uncomment if we do
+			retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we dont need this right now, uncomment if we do
 			return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
+		else
+			if (issuperiorhuman(src))
+				visible_message(SPAN_DANGER("[src] quickly snaps their aim toward [targetted_mob]!"))
+			else
+				visible_message(SPAN_DANGER("[src] shifts its attention to [targetted_mob]!"))
 
 	else if (!ranged)
 		stop_automated_movement = TRUE
@@ -414,13 +430,13 @@
 		if(!check_if_alive())
 			return
 		if(get_dist(src, targetted_mob) <= 6)
-			addtimer(CALLBACK(src, .proc/OpenFire, targetted_mob), delay_for_range)
+			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 		else
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 			walk_to(src, targetted_mob, 4, move_to_delay)
-			addtimer(CALLBACK(src, .proc/OpenFire, targetted_mob), delay_for_range)
+			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 
-/mob/living/carbon/superior_animal/proc/check_if_alive() //A simple yes no if were alive
+/mob/proc/check_if_alive() //A simple yes no if were alive
 	if(health > 0)
 		return TRUE
 	return FALSE
@@ -518,3 +534,46 @@
 		return TRUE
 	life_cycles_before_scan = initial(life_cycles_before_scan)
 	return FALSE
+
+/**
+ *  To be used when, instead of raw attack procs, you want to add a timer.
+ *  Will telegraph this attack to any within range, visually.
+ *
+ *	Args:
+ *	atom/targetted_mob-Atom this timer will be targetted to, and the target of the telegraphs.
+ *	proctocall: The proc the timer will call.
+ *	attack_type-The delay that will be used for this timer. Defines used by this defined in mobs.dm. Example: MELEE_TYPE.
+ *	telegraph-Boolean. If false, no visual emote will be made.
+ **/
+/mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(var/atom/targetted_mob, proctocall, var/attack_type, var/telegraph = TRUE)
+	if (check_if_alive()) //sanity
+		var/time_to_expire
+		switch(attack_type)
+			if (MELEE_TYPE)
+				time_to_expire = delay_for_melee
+				if (telegraph && (time_to_expire > 0)) //no telegraph needed if the attack is instant
+					if (!telegraph_override)
+						visible_message(SPAN_WARNING("[src] readies to strike [targetted_mob]!")) //TODO: Type specific telegraphs
+					else
+						visible_message(telegraph_override_text)
+			if (RANGED_TYPE)
+				time_to_expire = delay_for_range
+				if (telegraph && (time_to_expire > 0))
+					if (!telegraph_override)
+						if (issuperiortermite(src))
+							visible_message(SPAN_WARNING("[src]'s chitin begins to crack and spikes emerge, as it prepares to launch them at [targetted_mob]!"))
+						else
+							visible_message(SPAN_WARNING("[src] aims their weapon at [targetted_mob], lining up a shot!"))
+					else
+						visible_message(telegraph_override_text)
+			if (RANGED_RAPID_TYPE)
+				time_to_expire = delay_for_rapid_range
+				if (telegraph && (time_to_expire > 0))
+					if (!telegraph_override)
+						visible_message(SPAN_WARNING("[src] aims their weapon at [targetted_mob], lining up a shot!"))
+					else
+						visible_message(telegraph_override_text)
+
+// 			if (ALL_TYPE) //unused
+
+		addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
