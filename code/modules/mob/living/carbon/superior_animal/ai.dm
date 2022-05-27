@@ -58,8 +58,9 @@
 	if ((get_dist(src, targetted_mob) >= viewRange) || src.z != targetted_mob.z && !istype(targetted_mob, /obj/mecha))
 		loseTarget()
 		return
-
-	attemptAttackOnTarget()
+	if(check_if_alive())
+		addtimer(CALLBACK(src, .proc/attemptAttackOnTarget), delay_for_melee)
+	return
 
 /mob/living/carbon/superior_animal/proc/loseTarget()
 	stop_automated_movement = 0

@@ -153,7 +153,8 @@
 	)
 
 	var/ranged = FALSE  //Do we have a range based attack?
-	var/rapid = FALSE   //Do we shoot in 3s?
+	var/rapid = FALSE   //Do we shoot in groups?
+	var/rapid_fire_shooting_amount = 3 //By default will rapid fire in 3 shots per.
 	var/projectiletype  //What are we shooting?
 	var/projectilesound //What sound do we make when firing
 	var/casingtype      //Do we leave casings after shooting?
@@ -178,6 +179,13 @@
 	var/stop_message = "nods and stop following." // Message that the mob emote when they stop following. Include the name of the one who follow at the end
 
 	var/list/known_languages = list() // The languages that the superior mob know.
+
+	//Simple delays for mobs, only for super mobs at this time, simple can stay much more deadly.
+	//This makes it so they wait in seconds seconds before doing their attack
+	delay_for_range = 0.8 SECONDS
+	delay_for_rapid_range = 0.75 SECONDS
+	delay_for_melee = 1 SECONDS
+	delay_for_all = 0.5 SECONDS
 
 /mob/living/carbon/superior_animal/New()
 	..()
@@ -331,12 +339,12 @@
 		if(HOSTILE_STANCE_IDLE)
 			if (!busy) // if not busy with a special task
 				stop_automated_movement = FALSE
-			target_mob = WEAKREF(findTarget())
-			if (target_mob)
+			if (!targetted_mob)
+				target_mob = WEAKREF(findTarget()) //no target? try to find one
 				targetted_mob = (target_mob?.resolve())
-				if (targetted_mob)
-					stance = HOSTILE_STANCE_ATTACK
-					handle_hostile_stance(targetted_mob)
+			if (targetted_mob) // is it still null?
+				stance = HOSTILE_STANCE_ATTACK
+				handle_hostile_stance(targetted_mob)
 
 		if(HOSTILE_STANCE_ATTACK)
 			handle_hostile_stance(targetted_mob)
@@ -370,6 +378,12 @@
 	if(ranged)
 
 		stop_automated_movement = TRUE
+		if(get_dist(src, targetted_mob) <= comfy_range)
+			stance = HOSTILE_STANCE_ATTACKING
+			return //We do a safty return
+		else
+			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+			walk_to(src, targetted_mob, comfy_range, move_to_delay)
 		stance = HOSTILE_STANCE_ATTACKING
 		if(!(get_dist(src, targetted_mob) <= comfy_range)) //Not in our optimal range.
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
@@ -397,12 +411,19 @@
 	if(!ranged)
 		prepareAttackOnTarget()
 	else if(ranged)
+		if(!check_if_alive())
+			return
 		if(get_dist(src, targetted_mob) <= 6)
-			OpenFire(targetted_mob)
+			addtimer(CALLBACK(src, .proc/OpenFire, targetted_mob), delay_for_range)
 		else
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 			walk_to(src, targetted_mob, 4, move_to_delay)
-			OpenFire(targetted_mob)
+			addtimer(CALLBACK(src, .proc/OpenFire, targetted_mob), delay_for_range)
+
+/mob/living/carbon/superior_animal/proc/check_if_alive() //A simple yes no if were alive
+	if(health > 0)
+		return TRUE
+	return FALSE
 
 // Same as overridden proc but -3 instead of -1 since its 3 times less frequently envoked, if checks removed
 /mob/living/carbon/superior_animal/handle_status_effects()

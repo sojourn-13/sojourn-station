@@ -29,6 +29,7 @@
 	src.destroySurroundings()
 
 /mob/living/carbon/superior_animal/RangedAttack()
+	if(!check_if_alive()) return
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(ranged)
@@ -58,25 +59,17 @@
 			return
 
 /mob/living/carbon/superior_animal/proc/OpenFire(firing_target)
+	if(!check_if_alive()) return
 	var/target = firing_target
-	visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"), 1)
 
 	if(rapid)
-		spawn(6)
-			Shoot(target, loc, src)
-			sleep(1) //Lets make sure we shoot so we add a small stop gap to not go to fast
-			handle_ammo_check()
-		spawn(10)
-			Shoot(target, loc, src)
-			sleep(1)
-			handle_ammo_check()
-		spawn(14)
-			Shoot(target, loc, src)
-			sleep(1)
+		for(var/shotsfired = 0, shotsfired < rapid_fire_shooting_amount, shotsfired++)
+			if(!check_if_alive())
+				break
+			addtimer(CALLBACK(src, .proc/Shoot, target, loc, src), (delay_for_rapid_range * shotsfired))
 			handle_ammo_check()
 	else
 		Shoot(target, loc, src)
-		sleep(1)
 		handle_ammo_check()
 
 	stance = HOSTILE_STANCE_IDLE
@@ -105,6 +98,7 @@
 		return
 
 	var/obj/item/projectile/A = new projectiletype(user:loc)
+	visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"), 1)
 	if(casingtype)
 		new casingtype(get_turf(src))
 	playsound(user, projectilesound, 100, 1)
