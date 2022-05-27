@@ -212,7 +212,7 @@
 	loaded = TRUE
 	
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon/scrap
-	name = "\improper Anncient Mech Rifle"
+	name = "\improper Ancient Mech Rifle"
 	desc = "A weapon once wielded by anncient mechs once more finding service, however clearly showing its age."
 	icon_state = "mecha_makeshift_cannon"
 	equip_cooldown = 20
