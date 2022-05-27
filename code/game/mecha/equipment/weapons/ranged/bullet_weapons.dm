@@ -223,7 +223,7 @@
 	projectiles_per_shot = 2
 	deviation = 3
 	fire_cooldown = 3
-	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
+	required_type = list(/obj/mecha/combat, /obj/mecha/working)
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon/scrap/loaded
 	loaded = TRUE
