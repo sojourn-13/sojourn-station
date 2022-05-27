@@ -23,6 +23,8 @@
 	needs_environment = FALSE
 	density = 0
 	status_flags = GODMODE // ghooost!
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 	min_oxy = 0
 	minbodytemp = 0
 	maxbodytemp = INFINITY
