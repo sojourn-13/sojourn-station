@@ -9,7 +9,16 @@
 	force = 20
 	required_type = /obj/mecha
 	embed_mult = 0 // Mech mounted weapons, shouldn't embed
-
+	
+/obj/item/mecha_parts/mecha_equipment/melee_weapon/fist
+	name = "mech melee plating"
+	desc = "Plating design to cover and reinforce the limbs of the mech to allow the pilot to punch or kick foes without inflicting damage upon the mech."
+	icon_state = "mecha_fist"
+	armor_penetration = ARMOR_PEN_DEEP
+	structure_damage_factor = 2
+	hitsound = 'sound/weapons/heavysmash.ogg'
+	var/icon/melee_overlay
+	force = 30
 
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword
 	name = "mech sword"
@@ -23,7 +32,19 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/icon/melee_overlay
 	force = 60 // Big sword make big boo boo - R4d6 / Upped further because delay - Wizard
-
+	
+/obj/item/mecha_parts/mecha_equipment/melee_weapon/cutlass
+	name = "mech energy cutlass"
+	desc = "A huge energy cutlass designed to be wielded by an exosuit."
+	icon_state = "mecha_cutlass"
+	sharp = TRUE
+	edge = TRUE
+	tool_qualities = list(QUALITY_CUTTING = 35, QUALITY_SAWING = 20) // It's a literal mech sized blade
+	armor_penetration = ARMOR_PEN_DEEP
+	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	var/icon/melee_overlay
+	force = 65 
 
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/shockmaul
 	name = "mech shock maul"
