@@ -4,11 +4,12 @@
 	icon_state = "vox_marsmud"
 	icon = 'icons/mob/mobs-voxy.dmi'
 
-	maxHealth = 75
-	health = 75
+	maxHealth = 50 //No. This is being nerfed until Niko fixes his AI stuff
+	health = 50 //Ditto
 
 	faction = "vox_tribe" //In case of different tribes
-	turns_per_move = 5
+	turns_per_move = 3 //Ditto. No.
+	move_to_delay = 3 //This is added to prevent them from being menaces to EVERYONE
 	see_in_dark = 10
 	speak_emote = list("grumbles")
 	emote_see = list("looks around for a target.")
@@ -28,8 +29,8 @@
 
 	fire_verb = "flings a rock"
 
-	melee_damage_lower = 12
-	melee_damage_upper = 16
+	melee_damage_lower = 8 //They attack faster.
+	melee_damage_upper = 10 //They attack faster.
 
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
@@ -40,7 +41,7 @@
 	ranged = TRUE
 	rounds_left = 1
 	mag_type = /obj/item/stack/ore
-	mags_left = 6 //each vox has 6 rocks normally
+	mags_left = 4 //each vox has 4 rocks normally - Nerfed
 	rounds_per_fire = 1
 	reload_message = "picks up a rock!"
 
