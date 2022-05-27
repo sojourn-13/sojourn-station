@@ -136,7 +136,7 @@
 	starts_unlocked = TRUE
 
 /datum/design/research/item/mecha/cannon/scrap
-	name = "Anncient Mech Rifle"
+	name = "Ancient Mech Rifle"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon/scrap
 	starts_unlocked = TRUE
 
