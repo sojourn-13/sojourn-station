@@ -399,7 +399,7 @@
 			else
 				visible_message(SPAN_WARNING("[src] prepares to fire at [targetted_mob]!"))
 			delayed = delay_amount
-			retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we dont need this right now, uncomment if we do
+			retarget_rush_timer += ((world.time) + retarget_rush_timer_increment)
 			return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
 		else
 			if (issuperiorhuman(src))
