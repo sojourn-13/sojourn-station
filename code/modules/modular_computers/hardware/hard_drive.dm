@@ -89,6 +89,9 @@
 	install_default_files()
 
 /obj/item/computer_hardware/hard_drive/Destroy()
+
+	for(var/datum/computer_file/program/program in stored_files)
+		program.holder = null
 	stored_files = null
 	return ..()
 

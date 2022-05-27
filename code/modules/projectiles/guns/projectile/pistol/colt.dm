@@ -66,6 +66,7 @@
 	icon = 'icons/obj/guns/projectile/liberty.dmi'
 	icon_state = "liberty"
 	item_state = "liberty"
+	caliber = CAL_MAGNUM
 	price_tag = 750
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	damage_multiplier = 1.0

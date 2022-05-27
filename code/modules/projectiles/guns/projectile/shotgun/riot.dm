@@ -13,14 +13,14 @@
 	slot_flags = SLOT_BACK
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
-	load_method = SINGLE_CASING
+	load_method = SINGLE_CASING|SPEEDLOADER
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	handle_casings = EJECT_CASINGS
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1250
-	damage_multiplier = 1.2 //Pug has 0.7 do to its fire normal modes
+	damage_multiplier = 1.2 //More damage less AP than gladstone
 	recoil_buildup = 13
 	one_hand_penalty = 15 //full sized shotgun level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
@@ -70,6 +70,7 @@
 	recoil_buildup = 18
 	one_hand_penalty = 15 //full sized shotgun level
 	folding_stock = TRUE //we can fold are stocks
+	can_dual = FALSE
 
 /obj/item/gun/projectile/automatic/riot_autoshotgun/operator/update_icon()
 	..()
@@ -77,7 +78,7 @@
 	var/itemstring = ""
 
 	if(!folded)
-		iconstring += "_fold"
+		iconstring += "_stock"
 
 	if(wielded)
 		itemstring += "_doble"

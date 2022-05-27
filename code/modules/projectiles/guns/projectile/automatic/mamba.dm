@@ -19,6 +19,7 @@
 	zoom_factor = 0.4
 	recoil_buildup = 10
 	folding_stock = TRUE
+	can_dual = FALSE //please god please please NO MORE NO MORE GOD, PLEASE
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL, GUN_SIGHT)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -32,11 +33,11 @@
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
+	if(!folded)
+		iconstring += "_stock"
+
 	if (ammo_magazine)
 		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
-
-	if(!folded)
-		iconstring += "_folded"
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
@@ -50,6 +51,10 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+/obj/item/gun/projectile/automatic/mamba/Initialize()
+	. = ..()
+	update_icon()
 
 //////////////////
 //.257 Viper DMR//

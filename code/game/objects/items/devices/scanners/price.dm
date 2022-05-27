@@ -17,6 +17,10 @@
 /obj/item/device/scanner/price/scan(atom/movable/target, mob/user)
 	scan_title = "Price estimations"
 
+	if(!istype(target, /atom/movable))
+		to_chat(user, SPAN_WARNING("This is a invalid target for scanning."))
+		return
+
 	if(!scan_data)
 		scan_data = price_scan_results(target)
 	else

@@ -27,11 +27,13 @@
 
 /obj/item/gun/projectile/automatic/specop/update_icon()
 	..()
+
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
 	if (ammo_magazine)
-		iconstring += "_full"
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
+		itemstring += "_full"
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_slide"
@@ -41,3 +43,7 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+/obj/item/gun/projectile/automatic/specop/Initialize()
+	. = ..()
+	update_icon()

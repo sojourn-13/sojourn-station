@@ -10,9 +10,9 @@
 	force = 5
 	origin_tech = list(TECH_MATERIAL = 2)
 	matter = list(MATERIAL_STEEL = 20)
-	var/equip_cooldown = 0
+	var/equip_cooldown = 0 //time between 'uses'
 	var/equip_ready = 1
-	var/energy_drain = 0
+	var/energy_drain = 0 //Duh. How much energy is used per shot.
 	var/obj/mecha/chassis = null
 	var/range = MECHA_MELEE //bitflags
 	var/salvageable = 1
@@ -134,13 +134,12 @@
 		chassis.visible_message("[chassis] pushes [M] out of the way.")
 	else
 		var/hit_zone = M.resolve_item_attack(src, user, target_zone) // Zone targetting
-		if(hit_zone)
-			apply_hit_effect(M, user, hit_zone)
-
+		if(hit_zone) 
+		//	do_attack_animation(chassis) // TODO - Make mech animation happen
+			apply_hit_effect(M, user, hit_zone) 
 
 	// Mech equipment delay, not going to use click speed for mechs, I don't think it would be too balanced - Wizard
 	user.setClickCooldown(equip_cooldown)
-	user.do_attack_animation(M)
 
 	return TRUE
 
@@ -156,8 +155,6 @@
 	if(effective_faction.Find(target.faction)) // Is the mob's in our list of factions we're effective against?
 		power *= damage_mult // Increase the damage
 	target.hit_with_weapon(src, user, power, hit_zone)
-	var/turf/simulated/location = get_turf(src)
-	location.clean_ultimate(user) // Quick fix to prevent bloodied pilots inside mechs, probably a better way to do this - Wizard
 	return
 
 /obj/item/mecha_parts/mecha_equipment/proc/can_attach(obj/mecha/M)

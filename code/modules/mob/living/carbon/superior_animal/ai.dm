@@ -81,8 +81,6 @@
 		var/obj/mecha/M = O
 		return isValidAttackTarget(M.occupant)
 
-	if (istype(O, /obj/machinery/mining/drill))
-		return isValidAttackTarget(O)
 
 /mob/living/carbon/superior_animal/proc/destroySurroundings() //todo: make this better - Trilby
 /*

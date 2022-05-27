@@ -50,6 +50,25 @@
 	build_path = /obj/item/ammo_casing/shotgun/payload/prespawned
 	chemicals = list("phosphorus" = 2)
 
+/datum/design/autolathe/ammo/shotgun_speedloader_slug
+	name = "20mm loader tube (slug)"
+	build_path = /obj/item/ammo_magazine/speed_loader_shotgun
+	materials = list(MATERIAL_STEEL = 8)
+
+/datum/design/autolathe/ammo/shotgun_speedloader_buckshot
+	name = "20mm loader tube (buckshot)"
+	build_path = /obj/item/ammo_magazine/speed_loader_shotgun/pellet
+	materials = list(MATERIAL_STEEL = 8)
+
+/datum/design/autolathe/ammo/shotgun_speedloader_beanbag
+	name = "20mm loader tube (beanbag)"
+	build_path = /obj/item/ammo_magazine/speed_loader_shotgun/beanbag
+	materials = list(MATERIAL_STEEL = 8)
+
+/datum/design/autolathe/ammo/shotgun_speedloader_empty
+	name = "20mm loader tube (empty)"
+	build_path = /obj/item/ammo_magazine/speed_loader_shotgun/empty
+
 /datum/design/autolathe/ammo/m12empty
 	name = "20mm ammo drum (empty)"
 	build_path = /obj/item/ammo_magazine/m12/empty
@@ -72,7 +91,7 @@
 /datum/design/autolathe/ammo/sbaw_slug
 	name = "SBAW magazine (20mm slug)"
 	build_path = /obj/item/ammo_magazine/sbaw
-	materials = list(MATERIAL_STEEL = 10) //Unlike the pug this one holds 10
+	materials = list(MATERIAL_STEEL = 10)
 
 /datum/design/autolathe/ammo/sbaw_pellet
 	name = "SBAW magazine (20mm buckshot)"

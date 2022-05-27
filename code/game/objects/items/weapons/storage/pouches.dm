@@ -254,7 +254,8 @@
 		/obj/item/tank/emergency_nitgen,
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
-		/obj/item/ammo_casing/shotgun
+		/obj/item/ammo_casing/shotgun,
+		/obj/item/ammo_magazine/speed_loader_shotgun
 		)
 
 /obj/item/storage/pouch/tubular/vial

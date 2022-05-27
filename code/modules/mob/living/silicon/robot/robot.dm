@@ -270,8 +270,8 @@
 		mmi = null
 	if(connected_ai)
 		connected_ai.connected_robots -= src
-	qdel(wires)
-	wires = null
+	QDEL_NULL(wires)
+	QDEL_NULL(cell)
 	return ..()
 
 /mob/living/silicon/robot/proc/set_module_sprites(var/list/new_sprites)

@@ -952,6 +952,33 @@
 	. = ..()
 	update_icon()
 
+//////// SHOTGUN SPEEDLOADERS ////////
+/obj/item/ammo_magazine/speed_loader_shotgun
+	name = "20mm loader tube (sabot slug)"
+	desc = "A 6 round speed loader marked for 20mm Shells."
+	icon = 'icons/obj/ammo_speed.dmi'
+	icon_state = "shot_tube_s"
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun
+	matter = list(MATERIAL_STEEL = 4)
+	max_ammo = 6
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/speed_loader_shotgun/empty
+	name = "20mm loader tube (shells)"
+	initial_ammo = 0
+	icon_state = "shot_tube"
+
+/obj/item/ammo_magazine/speed_loader_shotgun/pellet
+	name = "20mm loader tube (buckshot)"
+	icon_state = "shot_tube_l"
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+
+/obj/item/ammo_magazine/speed_loader_shotgun/beanbag
+	name = "20mm loader tube (beanbag)"
+	icon_state = "shot_tube_r"
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+
 ////other////
 
 /obj/item/ammo_magazine/caps
@@ -1028,7 +1055,7 @@
 	desc = "A 10 magazine for 20mm shotgun shells."
 	icon_state = "sbaw"
 	mag_type = MAGAZINE
-	mag_well = MAG_WELL_DRUM
+	mag_well = MAG_WELL_RIFLE
 	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun
 	multiple_sprites = 1

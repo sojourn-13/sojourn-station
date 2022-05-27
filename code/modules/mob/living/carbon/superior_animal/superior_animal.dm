@@ -307,7 +307,6 @@
 
 /mob/living/carbon/superior_animal/proc/handle_ai()
 
-
 	if(ckey)
 		return
 
@@ -324,41 +323,17 @@
 			if (!busy) // if not busy with a special task
 				stop_automated_movement = FALSE
 			target_mob = WEAKREF(findTarget())
-			targetted_mob = (target_mob?.resolve())
-			if (targetted_mob)
-				stance = HOSTILE_STANCE_ATTACK
+			if (target_mob)
+				targetted_mob = (target_mob?.resolve())
+				if (targetted_mob)
+					stance = HOSTILE_STANCE_ATTACK
+					handle_hostile_stance(targetted_mob)
 
 		if(HOSTILE_STANCE_ATTACK)
-			if(destroy_surroundings)
-				destroySurroundings()
-			if(!ranged)
-				stop_automated_movement = TRUE
-				stance = HOSTILE_STANCE_ATTACKING
-				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to(src, targetted_mob, 1, move_to_delay)
-				moved = 1
-			if(ranged)
-				stop_automated_movement = 1
-				if(get_dist(src, targetted_mob) <= comfy_range)
-					stance = HOSTILE_STANCE_ATTACKING
-					return //We do a safty return
-				else
-					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, targetted_mob, 4, move_to_delay)
-				stance = HOSTILE_STANCE_ATTACKING
+			handle_hostile_stance(targetted_mob)
 
 		if(HOSTILE_STANCE_ATTACKING)
-			if(destroy_surroundings)
-				destroySurroundings()
-			if(!ranged)
-				prepareAttackOnTarget()
-			if(ranged)
-				if(get_dist(src, targetted_mob) <= 6)
-					OpenFire(targetted_mob)
-				else
-					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, targetted_mob, 4, move_to_delay)
-					OpenFire(targetted_mob)
+			handle_attacking_stance(targetted_mob)
 
 	//random movement
 	if(wander && !stop_automated_movement && !anchored)
@@ -374,6 +349,35 @@
 	//Speaking
 	if(speak_chance && prob(speak_chance))
 		visible_emote(emote_see)
+
+/mob/living/carbon/superior_animal/proc/handle_hostile_stance(var/atom/targetted_mob) //here so we can jump instantly to it if hostile stance is established
+	var/already_destroying_surroundings = FALSE
+	if(destroy_surroundings)
+		destroySurroundings()
+		already_destroying_surroundings = TRUE
+	if(ranged)
+		stop_automated_movement = TRUE
+		stance = HOSTILE_STANCE_ATTACKING
+	else if (!ranged)
+		stop_automated_movement = TRUE
+		stance = HOSTILE_STANCE_ATTACKING
+		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+		walk_to(src, targetted_mob, 1, move_to_delay)
+		moved = 1
+	handle_attacking_stance(targetted_mob, already_destroying_surroundings)
+
+/mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE)
+	if(destroy_surroundings && !already_destroying_surroundings)
+		destroySurroundings()
+	if(!ranged)
+		prepareAttackOnTarget()
+	else if(ranged)
+		if(get_dist(src, targetted_mob) <= 6)
+			OpenFire(targetted_mob)
+		else
+			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+			walk_to(src, targetted_mob, 4, move_to_delay)
+			OpenFire(targetted_mob)
 
 // Same as overridden proc but -3 instead of -1 since its 3 times less frequently envoked, if checks removed
 /mob/living/carbon/superior_animal/handle_status_effects()
