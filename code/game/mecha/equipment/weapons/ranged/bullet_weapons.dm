@@ -182,6 +182,51 @@
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg/scrap/loaded
 	loaded = TRUE
+	
+/obj/item/mech_ammo_box/cannon
+	name = "Autocannon ammunition box"
+	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label."
+	icon = 'icons/obj/ammo.dmi'
+	icon_state = "boxhrifle-practice"
+	ammo_amount_left = 10
+	ammo_max_amout = 10
+	amount_per_click = 3
+	ammo_type = ".460"
+	price_tag = 30
+	
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon
+	name = "\improper Autocannon"
+	icon_state = "mecha_cannon"
+	equip_cooldown = 10
+	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15)
+	projectile = /obj/item/projectile/bullet/shotgun
+	fire_sound = 'sound/weapons/guns/fire/chaingun_fire.ogg'
+	projectiles = 10
+	max_ammo = 10
+	projectiles_per_shot = 1
+	deviation = 1 
+	fire_cooldown = 2
+	ammo_type = ".460"
+
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon/loaded
+	loaded = TRUE
+	
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon/scrap
+	name = "\improper Anncient Auto Repeater"
+	desc = "A weapon once wielded by anncient mechs once more finding service, however clearly showing its age."
+	icon_state = "mecha_makeshift_cannon"
+	equip_cooldown = 20
+	projectile = /obj/item/projectile/bullet/heavy_rifle_408
+	fire_sound = 'sound/weapons/guns/fire/payload_fire.ogg'
+	projectiles = 20
+	max_ammo = 20
+	projectiles_per_shot = 2
+	deviation = 3
+	fire_cooldown = 3
+	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
+
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon/scrap/loaded
+	loaded = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack
 	var/missile_speed = 2
