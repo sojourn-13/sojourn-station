@@ -41,20 +41,21 @@ SUBSYSTEM_DEF(economy)
 		if(amount_to_pay <= 0)
 			continue
 
-		if(!ED) // If no employer department found - payment is external
-			deposit_to_account(A, A.employer, "Payroll Funding", "Hansa payroll system", amount_to_pay)
-			paid_external += amount_to_pay
-			continue
-		else
-			var/datum/money_account/EA = get_account(ED.account_number)
-			if(amount_to_pay <= EA.money)
-				transfer_funds(EA, A, "Payroll Funding", "CEV Eris payroll system", amount_to_pay)
-				paid_internal += amount_to_pay
-				ED.total_debt -= A.debt
-				A.debt = 0
+		if(D.bailout)
+			if(!ED) // If no employer department found - payment is external
+				deposit_to_account(A, A.employer, "Payroll Funding", "Hansa payroll system", amount_to_pay)
+				paid_external += amount_to_pay
+				continue
 			else
-				A.debt += A.wage
-				ED.total_debt += A.wage
+				var/datum/money_account/EA = get_account(ED.account_number)
+				if(amount_to_pay <= EA.money)
+					transfer_funds(EA, A, "Payroll Funding", "CEV Eris payroll system", amount_to_pay)
+					paid_internal += amount_to_pay
+					ED.total_debt -= A.debt
+					A.debt = 0
+				else
+					A.debt += A.wage
+					ED.total_debt += A.wage
 
 
 	// Departments pay to the crew

@@ -25,6 +25,9 @@
 	// How much account failed to pay to employees. Used for emails
 	var/total_debt = 0
 
+	// Are we to big to fail? - I.e if we pay are checks out do we give areself same credits paying out.
+	var/bailout = FALSE
+
 /datum/department/proc/get_total_budget()
 	if(funding_source)
 		return budget_base + budget_personnel
