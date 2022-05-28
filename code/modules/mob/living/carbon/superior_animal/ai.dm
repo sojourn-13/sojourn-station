@@ -61,9 +61,10 @@
 	if (check_if_alive())
 		prepareAttackPrecursor(targetted_mob, .proc/attemptAttackOnTarget, MELEE_TYPE)
 
-/mob/living/carbon/superior_animal/proc/loseTarget()
-	stop_automated_movement = 0
-	walk(src, 0)
+/mob/living/carbon/superior_animal/proc/loseTarget(var/stop_pursuit = TRUE)
+	if (stop_pursuit)
+		stop_automated_movement = 0
+		walk(src, 0)
 	target_mob = null
 	stance = HOSTILE_STANCE_IDLE
 

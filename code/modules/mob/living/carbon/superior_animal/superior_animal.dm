@@ -23,6 +23,8 @@
 	var/retarget_rush_timer = 0
 	/// For this amount of time after a retarget, any retargets will cause a instant attack.
 	var/retarget_rush_timer_increment = 10 SECONDS //arbitrary value for now
+	/// Will this mob continue to fire even if LOS has been broken?
+	var/fire_through_wall = FALSE
 
 	/// Telegraph message base for mobs that are range
 	var/range_telegraph = "aims their weapon at"
