@@ -82,7 +82,7 @@
 		loseTarget()
 
 	else if ((!can_see(src, firing_target, get_dist(src, firing_target))) && !fire_through_wall)
-		loseTarget() //why should we stop chasing them?
+		loseTarget()
 
 	return
 
