@@ -72,9 +72,18 @@
 		Shoot(target, loc, src)
 		handle_ammo_check()
 
-	if (!firing_target.check_if_alive())
-		stance = HOSTILE_STANCE_IDLE
-		firing_target = null
+	if (!firing_target)
+		loseTarget()
+
+	else if (!firing_target.check_if_alive())
+		loseTarget()
+
+	else if (target.z != src.z) //reasoning for else if: i want to use the minimum amount of procs possible, so if one of these is true the others wont happen at all
+		loseTarget()
+
+	else if ((!can_see(src, firing_target, get_dist(src, firing_target))) && !fire_through_wall)
+		loseTarget()
+
 	return
 
 /mob/living/carbon/superior_animal/proc/handle_ammo_check()
