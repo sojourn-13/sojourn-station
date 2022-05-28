@@ -85,4 +85,4 @@
 	limited_ammo = FALSE
 	mag_drop = FALSE
 	attacktext = "slapped"
-	range_telegraph = "lurks back getting ready to lob acids at"
+	range_telegraph = "lurks back, getting ready to lob acids at"
