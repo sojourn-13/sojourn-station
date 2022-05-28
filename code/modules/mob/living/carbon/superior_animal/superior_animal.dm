@@ -189,7 +189,7 @@
 
 	//Simple delays for mobs, only for super mobs at this time, simple can stay much more deadly.
 	//This makes it so they wait in seconds seconds before doing their attack
-	delay_for_range = 0.8 SECONDS
+	delay_for_range = 1.5 SECONDS
 	delay_for_rapid_range = 0.75 SECONDS
 	delay_for_melee = 0 SECONDS
 	delay_for_all = 0.5 SECONDS
@@ -341,8 +341,10 @@
 	if (!check_AI_act())
 		return
 
-	var/atom/targetted_mob = (target_mob?.resolve())
-	if (!targetted_mob)
+	var/atom/targetted_mob
+	if (target_mob)
+		targetted_mob = (target_mob?.resolve())
+	if (!targetted_mob) //will be false if there is no target_mob or if the resolved value is null
 		loseTarget()
 	else if (!targetted_mob.check_if_alive()) //else if because we dont want a runtime
 		loseTarget()
@@ -552,7 +554,7 @@
 				if (telegraph && (time_to_expire > 0))
 					visible_message(SPAN_WARNING("[src] [range_telegraph] [targetted_mob]!"))
 			if (RANGED_RAPID_TYPE)
-				time_to_expire = delay_for_rapid_range
+				time_to_expire = delay_for_range //fun fact, this rapid range delay is used for delaying shots in a burst
 				if (telegraph && (time_to_expire > 0))
 					visible_message(SPAN_WARNING("[src] [range_telegraph] [targetted_mob]!"))
 
