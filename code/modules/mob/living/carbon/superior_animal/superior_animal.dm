@@ -449,8 +449,12 @@
 			walk_to(src, targetted_mob, 4, move_to_delay)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 
-/atom/proc/check_if_alive() //A simple yes no if were alive
-	if(health > 0)
+/// This is terrible. THis is so awful. We should be using is_dead() but its inexplicably broken.
+/atom/proc/check_if_alive()
+	if(ishuman())
+		if (health > -100)
+			return TRUE
+	else if (health > 0)
 		return TRUE
 	return FALSE
 
