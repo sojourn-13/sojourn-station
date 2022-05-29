@@ -399,17 +399,17 @@
 		walk_to(src, targetted_mob, (comfy_range - 1), move_to_delay) //lets get a little closer than our optimal range
 		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
 			if (issuperiorhuman(src)) //TODO: convert to switch
-				visible_message(SPAN_WARNING("[src] snaps their attention to <font color = 'green'>[targetted_mob]</font>, fumbling to ready their weapon!"))
+				visible_message(SPAN_WARNING("[src] snaps their attention to [targetted_mob], fumbling to ready their weapon!"))
 			else
-				visible_message(SPAN_WARNING("[src] prepares to fire at <font color = 'green'>[targetted_mob]</font>!"))
+				visible_message(SPAN_WARNING("[src] prepares to fire at [targetted_mob]!"))
 			delayed = delay_amount
 			retarget_rush_timer += ((world.time) + retarget_rush_timer_increment)
 			return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
 		else
 			if (issuperiorhuman(src))
-				visible_message(SPAN_WARNING("[src] quickly snaps their aim toward <font color = 'green'>[targetted_mob]</font>!"))
+				visible_message(SPAN_WARNING("[src] quickly snaps their aim toward [targetted_mob]!"))
 			else
-				visible_message(SPAN_WARNING("[src] shifts its attention to <font color = 'green'>[targetted_mob]</font>!"))
+				visible_message(SPAN_WARNING("[src] shifts its attention to [targetted_mob]!"))
 
 	else if (!ranged)
 		stop_automated_movement = TRUE
@@ -550,19 +550,19 @@
 			if (MELEE_TYPE)
 				time_to_expire = delay_for_melee
 				if (telegraph && (time_to_expire > 0)) //no telegraph needed if the attack is instant
-					visible_message(SPAN_WARNING("[src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+					visible_message(SPAN_WARNING("[src] [melee_telegraph] [targetted_mob]!"))
 				addtimer(CALLBACK(src, proctocall), time_to_expire) //awful hack because melee attacks are handled differently
 
 			if (RANGED_TYPE)
 				time_to_expire = delay_for_range
 				if (telegraph && (time_to_expire > 0))
-					visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+					visible_message(SPAN_WARNING("[src] [range_telegraph] [targetted_mob]!"))
 					Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=50, color_arg = COLOR_YELLOW)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
 
 			if (RANGED_RAPID_TYPE)
 				time_to_expire = delay_for_range //fun fact, this rapid range delay is used for delaying shots in a burst
 				if (telegraph && (time_to_expire > 0))
-					visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+					visible_message(SPAN_WARNING("[src] [range_telegraph] [targetted_mob]!"))
 					Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=50, color_arg = COLOR_YELLOW)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
