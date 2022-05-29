@@ -41,7 +41,7 @@ SUBSYSTEM_DEF(economy)
 		if(amount_to_pay <= 0)
 			continue
 
-		if(!ED && D.bailout) // If no employer department found - payment is external
+		if(!ED) // If no employer department found - payment is external
 			deposit_to_account(A, A.employer, "Payroll Funding", "Hansa payroll system", amount_to_pay)
 			paid_external += amount_to_pay
 			continue

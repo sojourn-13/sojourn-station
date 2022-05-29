@@ -13,10 +13,11 @@
 	var/list/jobs_in_department = list()
 
 	// With external, this is the name of an organisation
+	// Adding a funding source makes the game pay them out of thin air.
 	var/funding_source
 
 	// Budget for misc department expenses, paid regardless of it being manned or not
-	var/budget_base = 500
+	var/budget_base = 0
 
 	// Budget for crew salaries. Summed up initial wages of department's personnel
 	var/budget_personnel = 0
@@ -25,8 +26,6 @@
 	// How much account failed to pay to employees. Used for emails
 	var/total_debt = 0
 
-	// Are we to big to fail? - I.e if we pay are checks out do we give areself same credits paying out.
-	var/bailout = FALSE
 
 /datum/department/proc/get_total_budget()
 	if(funding_source)
@@ -50,7 +49,6 @@
 	*/
 	account_initial_balance = 50000
 
-
 /*************
 	Retainers
 **************/
@@ -59,7 +57,6 @@
 	name = "Marshal and Blackshield Division"
 	id = DEPARTMENT_SECURITY
 	account_initial_balance = 25000 //25k do to being state funded
-	funding_source = DEPARTMENT_COMMAND
 
 /datum/department/technomancers
 	name = "Artificer's Guild"
@@ -74,7 +71,6 @@
 	account_initial_balance = 0
 	//No standing balance is kept in the account, this is just for paying gardener, janitor and actor
 
-
 /******************
 	Benefactors
 *******************/
@@ -83,22 +79,16 @@
 	name = "Soteria Institution: Medical Division"
 	id = DEPARTMENT_MEDICAL
 	account_initial_balance = 15000 //For buying medical and items and payments
-	funding_source = "Soteria Institution."
-	bailout = TRUE
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
 	account_initial_balance = 10000 //For buying materials and components and things of scientific value as well as pay the demanding staff
-	funding_source = "Soteria Institution."
 
 /datum/department/church
 	name = "Church of Absolute"
 	id = DEPARTMENT_CHURCH
 	account_initial_balance = 25000 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
-	funding_source = "Church of Absolute"
-
-
 
 /******************
 	Independant
