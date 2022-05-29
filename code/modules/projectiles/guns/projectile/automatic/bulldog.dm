@@ -51,4 +51,4 @@
 	icon_state = "bulldog_rds"
 	item_state = "bulldog_rds"
 	price_tag = 1225
-	zoom_factor = 0.3
+	zoom_factor = 0.4
