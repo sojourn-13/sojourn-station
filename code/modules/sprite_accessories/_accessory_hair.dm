@@ -28,6 +28,7 @@
 		FORM_NASHEF,
 		FORM_UNBRANDED
 		)
+	var/flags
 
 /datum/sprite_accessory/hair/bald
 	name = "Bald"
@@ -48,10 +49,12 @@
 /datum/sprite_accessory/hair/amazon
 	name = "Amazon"
 	icon_state = "amazon"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/angelique
 	name = "Angelique"
 	icon_state = "angelique"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/asymmetrical
 	name = "Asymmetrical Bob"
@@ -64,6 +67,7 @@
 /datum/sprite_accessory/hair/beachwave
 	name = "Beach Wave"
 	icon_state = "beachwave"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/bedhead
 	name = "Bedhead"
@@ -80,26 +84,32 @@
 /datum/sprite_accessory/hair/bedhead_long
 	name = "Bedhead Long"
 	icon_state = "long_bedhead"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/bedhead_floor
 	name = "Bedhead Floor Long"
 	icon_state = "floorlength_bedhead"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/beehive
 	name = "Beehive"
 	icon_state = "beehive"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/beehive2
 	name = "Beehive 2"
 	icon_state = "beehive2"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/begone
 	name = "Begone"
 	icon_state = "begone"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/belle
 	name = "Belle"
 	icon_state = "belle"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/birdnest
 	name = "Birdnest"
@@ -148,18 +158,22 @@
 /datum/sprite_accessory/hair/bun
 	name = "Bun"
 	icon_state = "bun"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/bun2
 	name = "Bun 2"
 	icon_state = "bun2"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/bun3
 	name = "Bun 3"
 	icon_state = "bun3"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/bun4
 	name = "Bun 4"
 	icon_state = "bunalt"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/buzz
 	name = "Buzzcut"
@@ -168,6 +182,7 @@
 /datum/sprite_accessory/hair/celebcurls
 	name = "Celeb Curls"
 	icon_state = "celebcurls"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/chop
 	name = "Chop"
@@ -180,14 +195,17 @@
 /datum/sprite_accessory/hair/country
 	name = "Country"
 	icon_state = "country"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/combed
 	name = "Combed"
 	icon_state = "hbangs"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/combedalt
 	name = "Combed 2"
 	icon_state = "hbangs_alt"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/combover
 	name = "Combover"
@@ -229,14 +247,17 @@
 /datum/sprite_accessory/hair/doublebun
 	name = "Double-Bun"
 	icon_state = "doublebun"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/dreadlocks
 	name = "Dreadlocks"
 	icon_state = "dreads"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/drillruru
 	name = "Drillruru"
 	icon_state = "drillruru"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/eighties
 	name = "Eighties"
@@ -281,10 +302,12 @@
 /datum/sprite_accessory/hair/floorlength
 	name = "Floorlength Braid"
 	icon_state = "braid"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/fringetail
 	name = "Fringetail"
 	icon_state = "fringetail"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/gelled
 	name = "Gelled Back"
@@ -293,6 +316,7 @@
 /datum/sprite_accessory/hair/gentle
 	name = "Gentle"
 	icon_state = "gentle"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/glossy
 	name = "Glossy"
@@ -325,6 +349,7 @@
 /datum/sprite_accessory/hair/highpony
 	name = "High Ponytail"
 	icon_state = "highponytail"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/himecut
 	name = "Hime Cut"
@@ -337,14 +362,17 @@
 /datum/sprite_accessory/hair/himecutponytail
 	name = "himecut ponytail"
 	icon_state = "himecut_ponytail"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/himecutponytailup
 	name = "Himecut high ponytail"
 	icon_state = "himecut_ponytail_up"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/himecutlongponytail
 	name = "Himecut long ponytail"
 	icon_state = "himecut_long_ponytail"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/himecutshort
 	name = "Himecut short"
@@ -361,6 +389,7 @@
 /datum/sprite_accessory/hair/jessica
 	name = "Jessica"
 	icon_state = "jessica"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/joestar
 	name = "Joestar"
@@ -369,6 +398,7 @@
 /datum/sprite_accessory/hair/kagami
 	name = "Pigtails"
 	icon_state = "kagami"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/kanaya
 	name = "Kanaya"
@@ -389,10 +419,12 @@
 /datum/sprite_accessory/hair/ladylike
 	name = "Ladylike"
 	icon_state = "ladylike"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/ladylike2
 	name = "Ladylike 2"
 	icon_state = "ladylike2"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/longemo
 	name = "Long Emo"
@@ -401,50 +433,62 @@
 /datum/sprite_accessory/hair/longer
 	name = "Long"
 	icon_state = "vlong"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/longeralt2
 	name = "Long 2"
 	icon_state = "longeralt2"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/longeralt3
 	name = "Long 3"
 	icon_state = "longeralt3"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/longest
 	name = "Longer"
 	icon_state = "longest"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/longbraid
 	name = "Long Braid"
 	icon_state = "hbraid"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/longfringe
 	name = "Long Fringe"
 	icon_state = "longfringe"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/longestalt
 	name = "Longer Fringe"
 	icon_state = "vlongfringe"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/longovereye
 	name = "Long Overeye"
 	icon_state = "longovereye"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/manbun
 	name = "Man Bun"
 	icon_state = "manbun"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/marysue
 	name = "Mary Sue"
 	icon_state = "marysue"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/mbraid
 	name = "Medium Braid"
 	icon_state = "shortbraid"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/mbraidalt
 	name = "Medium Braid Alt"
 	icon_state = "mediumbraid"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/mercenary
 	name = "Mercenary"
@@ -473,6 +517,7 @@
 /datum/sprite_accessory/hair/messy_bun
 	name = "Messy Bun"
 	icon_state = "messybun"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/mia
 	name = "Mia"
@@ -485,6 +530,7 @@
 /datum/sprite_accessory/hair/modern
 	name = "Modern"
 	icon_state = "modern"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/mohawk
 	name = "Mohawk"
@@ -501,18 +547,22 @@
 /datum/sprite_accessory/hair/newyou
 	name = "New You"
 	icon_state = "newyou"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/nia
 	name = "Nia"
 	icon_state = "nia"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/nitori
 	name = "Nitori"
 	icon_state = "nitori"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/odango
 	name = "Odango"
 	icon_state = "odango"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/ombre
 	name = "Ombre"
@@ -537,30 +587,37 @@
 /datum/sprite_accessory/hair/ponytail1
 	name = "Ponytail"
 	icon_state = "ponytail"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/ponytail2
 	name = "Ponytail 2"
 	icon_state = "ponytail2"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/ponytail3
 	name = "Ponytail 3"
 	icon_state = "ponytail3"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/ponytail4
 	name = "Ponytail 4"
 	icon_state = "ponytail4"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/ponytail5
 	name = "Ponytail 5"
 	icon_state = "ponytail5"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/ponytail6
 	name = "Ponytail 6"
 	icon_state = "ponytail6"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/ponytail7
 	name = "Ponytail 7"
 	icon_state = "ponytail7"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/poofy
 	name = "Poofy"
@@ -589,6 +646,7 @@
 /datum/sprite_accessory/hair/ronin
 	name = "Ronin"
 	icon_state = "ronin"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/rows
 	name = "Rows"
@@ -601,6 +659,7 @@
 /datum/sprite_accessory/hair/rows3
 	name = "Rows Bun"
 	icon_state = "rows3"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/sargeant
 	name = "Flat Top"
@@ -617,6 +676,7 @@
 /datum/sprite_accessory/hair/sharppony
 	name = "Sharp Ponytail"
 	icon_state = "sharp_ponytail"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/shavedmohawk
 	name = "Shaved Mohawk"
@@ -669,10 +729,12 @@
 /datum/sprite_accessory/hair/sideponytail
 	name = "Side Ponytail"
 	icon_state = "stail"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/sideponytail4
 	name = "Side Ponytail 2"
 	icon_state = "ponytailf"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/sideswept
 	name = "Side Swipe"
@@ -693,6 +755,7 @@
 /datum/sprite_accessory/hair/spikyponytail
 	name = "Spiky Ponytail"
 	icon_state = "spikyponytail"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/stylo
 	name = "Stylo"
@@ -725,14 +788,17 @@
 /datum/sprite_accessory/hair/topknot
 	name = "Top Knot"
 	icon_state = "topknot"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/sideponytail3
 	name = "Tress Shoulder"
 	icon_state = "tressshoulder"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/tribalbraid
 	name = "Tribal Braid"
 	icon_state = "tribalbraid"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/vegeta
 	name = "Vegeta"
@@ -749,14 +815,17 @@
 /datum/sprite_accessory/hair/unkept
 	name = "Unkept"
 	icon_state = "unkept"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/updo
 	name = "Updo"
 	icon_state = "updo"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/vivi
 	name = "Vivi"
 	icon_state = "vivi"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/volaju
 	name = "Volaju"
@@ -765,14 +834,17 @@
 /datum/sprite_accessory/hair/wisp
 	name = "Wisp"
 	icon_state = "wisp"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/zieglertail
 	name = "Zieglertail"
 	icon_state = "ziegler"
+	flags = HAIR_TIEABLE
 
 /datum/sprite_accessory/hair/zone
 	name = "Zone Braid"
 	icon_state = "zone"
+	flags = HAIR_TIEABLE
 
 /*
 /datum/sprite_accessory/hair/teshari_default

@@ -204,6 +204,9 @@
 #define SUIT_SENSOR_VITAL    2
 #define SUIT_SENSOR_TRACKING 3
 
+// Hair Flag
+#define HAIR_TIEABLE 1
+
 //default item on-mob icons
 #define INV_HEAD_DEF_ICON 'icons/inventory/head/mob.dmi'
 #define INV_BACK_DEF_ICON 'icons/inventory/back/mob.dmi'

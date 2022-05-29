@@ -1706,3 +1706,36 @@ var/list/rank_prefix = list(\
 								cleaned_human.update_inv_shoes(0)
 							cleaned_human.clean_blood(1)
 							to_chat(cleaned_human, SPAN_DANGER("[src] cleans your face!"))
+
+//No better place to put this I guess
+/mob/living/carbon/human/verb/tie_hair()
+	set name = "Tie Hair"
+	set desc = "Style your hair."
+	set category = "IC"
+
+	if(incapacitated())
+		to_chat(src, "<span class='warning'>You can't mess with your hair right now!</span>")
+		return
+
+	if(h_style)
+		var/datum/sprite_accessory/hair/hair_style = GLOB.hair_styles_list[h_style]
+		var/selected_string
+		if(!(hair_style.flags & HAIR_TIEABLE))
+			to_chat(src, "<span class ='warning'>Your hair isn't long enough to tie.</span>")
+			return
+		else
+			var/list/datum/sprite_accessory/hair/valid_hairstyles = list()
+			for(var/hair_string in GLOB.hair_styles_list)
+				var/datum/sprite_accessory/hair/test = GLOB.hair_styles_list[hair_string]
+				if(test.flags & HAIR_TIEABLE)
+					valid_hairstyles.Add(hair_string)
+			selected_string = input("Select a new hairstyle", "Your hairstyle", hair_style) as null|anything in valid_hairstyles
+		if(incapacitated())
+			to_chat(src, "<span class='warning'>You can't mess with your hair right now!</span>")
+			return
+		else if(selected_string && h_style != selected_string)
+			h_style = selected_string
+			regenerate_icons()
+			visible_message("<span class='notice'>[src] pauses a moment to style their hair.</span>")
+		else
+			to_chat(src, "<span class ='notice'>You're already using that style.</span>")
