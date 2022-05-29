@@ -73,8 +73,8 @@ I said no!
 	fruit = list("cabbage" = 1) // A recipe that ACTUALLY uses cabbage.
 	reagents = list("soysauce" = 5, "sodiumchloride" = 1, "blackpepper" = 1, "cornoil" = 1) // No sesame oil, corn will have to do.
 	items = list(
-		/obj/item/reagent_containers/food/snacks/rawcutlet,
-		/obj/item/reagent_containers/food/snacks/rawcutlet,
+		/obj/item/reagent_containers/food/snacks/rawbacon,
+		/obj/item/reagent_containers/food/snacks/rawbacon, // Substitute for minced pork.
 		/obj/item/reagent_containers/food/snacks/doughslice,
 	)
 	result = /obj/item/reagent_containers/food/snacks/dumplings
@@ -557,17 +557,21 @@ I said no!
 	items = list(/obj/item/reagent_containers/food/snacks/chickenbreast)
 	result = /obj/item/reagent_containers/food/snacks/friedchikin
 
+/datum/recipe/porkchops
+	reagents = list("bbqsauce" = 5, "sodiumchloride" = 1, "blackpepper" = 1)
+	items = list(/obj/item/reagent_containers/food/snacks/meat/pork)
+	result = /obj/item/reagent_containers/food/snacks/porkchops
+
 /datum/recipe/patty
 	items = list(/obj/item/reagent_containers/food/snacks/patty_raw)
 	result = /obj/item/reagent_containers/food/snacks/patty
 
 /datum/recipe/bacon // BACON? BACON.
 	reagents = list("sodiumchloride" = 5, "cornoil" = 1)
-	items = list(/obj/item/reagent_containers/food/snacks/rawcutlet)
+	items = list(/obj/item/reagent_containers/food/snacks/rawbacon)
 	result = /obj/item/reagent_containers/food/snacks/bacon
 
 /datum/recipe/baconegg
-	reagents = list("cornoil" = 3)
 	items = list(
 		/obj/item/reagent_containers/food/snacks/bacon,
 		/obj/item/reagent_containers/food/snacks/friedegg,
@@ -592,7 +596,7 @@ I said no!
 /datum/recipe/tonkatsu
 	reagents = list("sodiumchloride" = 1, "flour" = 5, "egg" = 3, "cornoil" = 2)
 	items = list(
-		/obj/item/reagent_containers/food/snacks/rawcutlet,
+		/obj/item/reagent_containers/food/snacks/meat/pork,
 	)
 	result = /obj/item/reagent_containers/food/snacks/tonkatsu
 
@@ -1032,7 +1036,7 @@ I said no!
 	reagents = list("sodiumchloride" = 1, "blackpepper" = 1)
 	items = list(
 		/obj/item/reagent_containers/food/snacks/rawmeatball,
-		/obj/item/reagent_containers/food/snacks/rawcutlet,
+		/obj/item/reagent_containers/food/snacks/rawbacon,
 	)
 	result = /obj/item/reagent_containers/food/snacks/sausage
 

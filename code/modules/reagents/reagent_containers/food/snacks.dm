@@ -583,7 +583,7 @@
 	filling_color = "#FFDEFE"
 	bitesize = 3
 	center_of_mass = list("x"=16, "y"=13)
-	preloaded_reagents = list("protein" = 6)
+	preloaded_reagents = list("protein" = 8)
 	matter = list(MATERIAL_BIOMATTER = 8)
 	cooked = TRUE
 
@@ -873,7 +873,7 @@
 	filling_color = "#7A3D11"
 	bitesize = 3
 	center_of_mass = list("x"=16, "y"=13)
-	preloaded_reagents = list("protein" = 4, "sodiumchloride" = 1, "blackpepper" = 1)
+	preloaded_reagents = list("protein" = 9, "sodiumchloride" = 1, "blackpepper" = 1)
 	matter = list(MATERIAL_BIOMATTER = 11)
 	cooked = TRUE
 
@@ -885,7 +885,7 @@
 	filling_color = "#7A3D11"
 	bitesize = 3
 	center_of_mass = list("x"=16, "y"=13)
-	preloaded_reagents = list("protein" = 6, "sodiumchloride" = 1, "blackpepper" = 1)
+	preloaded_reagents = list("protein" = 8, "sodiumchloride" = 1, "blackpepper" = 1)
 	nutriment_desc = list("juicy poultry" = 10, "salt" = 2, "pepper" = 2)
 	matter = list(MATERIAL_BIOMATTER = 11)
 	cooked = TRUE
@@ -906,18 +906,32 @@
 	desc = "Crunchy on the exterior but juicy and soft on the inside, a piece of poultry that has been fried to mouthwatering perfection."
 	icon_state = "friedchicken"
 	bitesize = 3
-	preloaded_reagents = list("protein" = 6, "cornoil" = 5)
+	preloaded_reagents = list("protein" = 8, "cornoil" = 5)
 	nutriment_desc = list("fried poultry" = 10, "spicy fried batter" = 3)
 	matter = list(MATERIAL_BIOMATTER = 11)
 	cooked = TRUE
 
 /obj/item/reagent_containers/food/snacks/bacon
-	name = "fried bacon" // My spritework might look uncooked but doing two states given our cooking system is cluttering IMO. - Seb
+	name = "fried bacon" // Now has a raw state.
 	desc = "When it comes to bacon, always be prepared." // Time to find 38 spots on the colony to hide it
+	icon = 'icons/obj/food_ingredients.dmi' // Refactored into here for consistency.
 	icon_state = "bacon"
 	bitesize = 2
 	preloaded_reagents = list("protein" = 3, "cornoil" = 5)
-	nutriment_desc = list("freedom" = 10, "bacon fat" = 3)
+	nutriment_desc = list("artery clogging freedom" = 10, "bacon fat" = 3)
+
+/obj/item/reagent_containers/food/snacks/porkchops
+	name = "glazed pork chops"
+	desc = "Perfectly grilled pork chops that are still a shade of pink on the inside, slathered generously with barbecue sauce."
+	icon_state = "porkchops"
+	bitesize = 3
+	trash = /obj/item/trash/plate
+	filling_color = "#7A3D11"
+	bitesize = 3
+	center_of_mass = list("x"=16, "y"=13)
+	preloaded_reagents = list("protein" = 8, "sodiumchloride" = 1, "blackpepper" = 1, "bbqsauce" = 5)
+	matter = list(MATERIAL_BIOMATTER = 11)
+	cooked = TRUE
 
 /obj/item/reagent_containers/food/snacks/baconeggs
 	name = "eggs and bacon"
@@ -940,7 +954,7 @@
 	desc = "Salted cutlets covered in breadcrumbs and deep fried, presented into thick slices. Crispy outside, juicy and tender inside."
 	icon_state = "katsu"
 	bitesize = 2
-	preloaded_reagents = list("protein" = 8, "sodiumchloride" = 1)
+	preloaded_reagents = list("protein" = 10, "sodiumchloride" = 1)
 	nutriment_desc = list("fried pork" = 5, "panko breadcrumb" = 2)
 
 /obj/item/reagent_containers/food/snacks/spacylibertyduff
@@ -1037,7 +1051,7 @@
 	center_of_mass = list("x"=16, "y"=16)
 	nutriment_desc = list("salt" = 1, "chips" = 3)
 	nutriment_amt = 3
-	preloaded_reagents = list("protein" = 6)
+	preloaded_reagents = list("protein" = 10)
 	cooked = TRUE
 
 /obj/item/reagent_containers/food/snacks/rofflewaffles
@@ -1159,6 +1173,7 @@
 	bitesize = 5
 	nutriment_desc = list("a mother's cooking" = 10, "rice" = 5, "katsu sauce" = 2)
 	nutriment_amt = 10
+	preloaded_reagents = list("protein" = 12, "soysauce" =5, "egg" = 3)
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 20)
 
@@ -1690,6 +1705,15 @@
 		new /obj/item/reagent_containers/food/snacks/patty_raw(src)
 		to_chat(user, "You pound the meat into a patty.") // You can finally pound your own meat.
 		qdel(src)
+
+/obj/item/reagent_containers/food/snacks/rawbacon
+	name = "raw bacon strips"
+	desc = "Tasty strips of raw porcine back meat. Uncured, unsalted, and ready to be turned into delicious bacon."
+	icon = 'icons/obj/food_ingredients.dmi'
+	icon_state = "rawbacon"
+	bitesize = 2
+	preloaded_reagents = list("protein" = 2)
+	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/reagent_containers/food/snacks/patty_raw
 	name = "raw patty"

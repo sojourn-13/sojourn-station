@@ -63,6 +63,11 @@
 					desc = "You feel more American already."
 					icon_state = "ketchup"
 					center_of_mass = list("x"=16, "y"=6)
+				if("bbqsauce")
+					name = "Barbecue sauce"
+					desc = "Pass the ribs!"
+					icon_state = "bbqsauce"
+					center_of_mass = list("x"=17, "y"=8)
 				if("capsaicin")
 					name = "Hotsauce"
 					desc = "You can almost TASTE the stomach ulcers now!"
@@ -105,6 +110,11 @@
 					name = "Cooking Oil Bottle"
 					icon_state = "oliveoil"
 					desc = "A bottle of corn oil, for all your deep frying needs."
+					center_of_mass = list("x"=16, "y"=6)
+				if("vinegar")
+					name = "Vinegar Bottle"
+					icon_state = "vinegar" // Ugly placeholder.
+					desc = "A bottle of red wine vinegar, a great condiment for many a salad and more."
 					center_of_mass = list("x"=16, "y"=6)
 				else
 					name = "Misc Condiment Bottle"
@@ -183,7 +193,12 @@
 				if("ketchup")
 					name = "Ketchup"
 					desc = "Mixed up with blood all the time."
-					icon_state = "condi_ketchup"
+					icon_state = "condi_hotsauce" // I'm sorry little one...
+					center_of_mass = list("x"=16, "y"=6)
+				if("bbqsauce")
+					name = "Barbecue sauce"
+					desc = "Get those ribs ready."
+					icon_state = "condi_bbq"
 					center_of_mass = list("x"=16, "y"=6)
 				if("capsaicin")
 					name = "Hotsauce"

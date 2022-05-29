@@ -96,6 +96,15 @@
 	required_reagents = list("tomatojuice" = 2, "water" = 1, "sugar" = 1)
 	result_amount = 4
 
+/datum/chemical_reaction/vinegar
+	result = "vinegar"
+	required_reagents = list("wine" = 1, "water" = 1, "flour" = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/barbecue
+	result = "bbqsauce"
+	required_reagents = list("ketchup" = 1, "vinegar" = 1, "sugar" = 1)
+
 /datum/chemical_reaction/cheesewheel
 	result = null
 	required_reagents = list("milk" = 40)
