@@ -14,6 +14,8 @@
 
 	// With external, this is the name of an organisation
 	// Adding a funding source makes the game pay them out of thin air.
+	// Adding in a department flag (see sojourn-station/code/__DEFINES/jobs.dm) will make it draw form said account to wire funds for payment of wages.
+	// This is takes form the source budget_bage + wages per person
 	var/funding_source
 
 	// Budget for misc department expenses, paid regardless of it being manned or not
