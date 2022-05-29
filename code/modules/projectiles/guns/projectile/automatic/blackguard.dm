@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/blackguard
 	name = "\"Blackguard\" heavy marksman rifle"
 	desc = "A heavily modded and  \"improved\" omnirifle platform design made by the Marshals but used by Blackshield, chambered in .408, \
-	With an extended barrel, standard bayonet, and integrated ACOG scope this rifle has less customization than other weapons, but lends itself to a good all \
+	With an extended barrel, standard bayonet, and a reflex scope this rifle has less customization than other weapons, but lends itself to a good all \
 	round design and function. Unlike other omni rifles, this one can take standard mags or drum mags of .408 ammo."
 	icon = 'icons/obj/guns/projectile/blackguard.dmi'
 	icon_state = "sts_blackguard"
@@ -14,7 +14,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_STEEL = 25, MATERIAL_GLASS = 5)
-	zoom_factor = 1 // In line with the Longarm omnirifle, less than the Osprey, and half of specialized sniper rifles like the Scout. - Seb
+	zoom_factor = 0.8 // Now it does have 5 more tiles as originally intended.
 	price_tag = 2500
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.35 //Really hard to upgrade
@@ -22,7 +22,7 @@
 	one_hand_penalty = 15
 	brace_penalty = 15 //So this isn't literally better long arm in every way also it has a damn bayonet
 
-	max_upgrades = 3 // Trigger ang a guard; 2 less slots than usual due to its scope, pen and damage.
+	max_upgrades = 3 // Trigger and a guard; 2 less slots than usual due to its scope, pen and damage.
 
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
