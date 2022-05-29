@@ -7,8 +7,8 @@ SUBSYSTEM_DEF(economy)
 	init_order = INIT_ORDER_LATELOAD
 
 	wait = 300 //Ticks once per 30 seconds
-	var/payday_interval = 1 HOURS
-	var/next_payday = 1 HOURS
+	var/payday_interval = 1 MINUTES
+	var/next_payday = 1 MINUTES
 
 /datum/controller/subsystem/economy/Initialize()
 	.=..()
@@ -41,22 +41,20 @@ SUBSYSTEM_DEF(economy)
 		if(amount_to_pay <= 0)
 			continue
 
-		if(D.bailout)
-			if(!ED) // If no employer department found - payment is external
-				deposit_to_account(A, A.employer, "Payroll Funding", "Hansa payroll system", amount_to_pay)
-				paid_external += amount_to_pay
-				continue
+		if(!ED && D.bailout) // If no employer department found - payment is external
+			deposit_to_account(A, A.employer, "Payroll Funding", "Hansa payroll system", amount_to_pay)
+			paid_external += amount_to_pay
+			continue
+		else
+			var/datum/money_account/EA = get_account(ED.account_number)
+			if(amount_to_pay <= EA.money)
+				transfer_funds(EA, A, "Payroll Funding", "CEV Eris payroll system", amount_to_pay)
+				paid_internal += amount_to_pay
+				ED.total_debt -= A.debt
+				A.debt = 0
 			else
-				var/datum/money_account/EA = get_account(ED.account_number)
-				if(amount_to_pay <= EA.money)
-					transfer_funds(EA, A, "Payroll Funding", "CEV Eris payroll system", amount_to_pay)
-					paid_internal += amount_to_pay
-					ED.total_debt -= A.debt
-					A.debt = 0
-				else
-					A.debt += A.wage
-					ED.total_debt += A.wage
-
+				A.debt += A.wage
+				ED.total_debt += A.wage
 
 	// Departments pay to the crew
 	for(var/datum/money_account/A in personal_accounts)

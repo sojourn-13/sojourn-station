@@ -84,6 +84,7 @@
 	id = DEPARTMENT_MEDICAL
 	account_initial_balance = 15000 //For buying medical and items and payments
 	funding_source = "Soteria Institution."
+	bailout = TRUE
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
