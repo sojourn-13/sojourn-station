@@ -470,6 +470,24 @@
 	step_delay = 0.3
 	affective_damage_range = 9
 	affective_ap_range = 9
+	
+/obj/item/projectile/bullet/460
+	damage_types = list(BRUTE = 50)
+	armor_penetration = 25
+	penetrating = 2
+	can_ricochet = TRUE
+	step_delay = 0.3
+	affective_damage_range = 8
+	affective_ap_range = 8
+	
+/obj/item/projectile/bullet/460/scrap
+	damage_types = list(BRUTE = 25)
+	armor_penetration = 15
+	penetrating = 1
+	can_ricochet = TRUE
+	step_delay = 0.3
+	affective_damage_range = 5
+	affective_ap_range = 5
 
 //Sniper rifles
 /obj/item/projectile/bullet/antim
