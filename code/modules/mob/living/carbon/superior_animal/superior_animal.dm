@@ -451,7 +451,7 @@
 
 /// This is terrible. THis is so awful. We should be using is_dead() but its inexplicably broken.
 /atom/proc/check_if_alive()
-	if(ishuman())
+	if(ishuman(src))
 		if (health > -100)
 			return TRUE
 	else if (health > 0)
