@@ -44,4 +44,5 @@
 	rounds_per_fire = 1
 	reload_message = "picks up a rock!"
 	range_telegraph = "starts to spin their sling around, orienting it towards"
+	bones_amount = 1
 	var/knock_over_odds = 5
