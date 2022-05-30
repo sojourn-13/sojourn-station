@@ -356,7 +356,7 @@
 		targetted_mob = (target_mob?.resolve())
 	if (!targetted_mob) //will be false if there is no target_mob or if the resolved value is null
 		loseTarget()
-	else if (!targetted_mob.check_if_alive()) //else if because we dont want a runtime
+	else if (!targetted_mob.check_if_alive(TRUE)) //else if because we dont want a runtime
 		loseTarget()
 
 	switch(stance)
@@ -441,7 +441,7 @@
 	if(!ranged)
 		prepareAttackOnTarget()
 	else if(ranged)
-		if (!(targetted_mob.check_if_alive()))
+		if (!(targetted_mob.check_if_alive(TRUE)))
 			loseTarget()
 			return
 		if (!check_if_alive())
@@ -453,7 +453,14 @@
 			walk_to(src, targetted_mob, 4, move_to_delay)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 
-/atom/proc/check_if_alive() //A simple yes no if were alive
+/// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
+/atom/proc/check_if_alive(var/critcheck = FALSE) //A simple yes no if were alive
+	if (critcheck)
+		if (istype(src, /mob/living/carbon/human))
+			if(health > HEALTH_THRESHOLD_CRIT) //only matters for humans
+				return TRUE
+			else
+				return FALSE
 	if(health > 0)
 		return TRUE
 	return FALSE
