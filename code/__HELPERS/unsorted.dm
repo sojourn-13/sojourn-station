@@ -600,6 +600,10 @@ proc/GaussRandRound(var/sigma, var/roundto)
 			return FALSE
 		if(current.opacity)
 			return FALSE
+		var/list/contents = current.contents
+		for (var/obj/object in contents) //only /obj because we only have opaque objs right now, !!!UPDATE THIS IF WE FUCKING CHANGE IT!!!
+			if (object.opacity)
+				return FALSE
 		current = get_step_towards(current, target_turf)
 		steps++
 	return TRUE
