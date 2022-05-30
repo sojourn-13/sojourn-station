@@ -14,13 +14,24 @@
 /mob/get_mob()
 	return src
 
-/proc/mobs_in_view(var/range, var/source)
+/**
+ * Returns a list of mobs within view(), using given arguments to determine the range of the search
+ * and the source of the proc.
+ *
+ * Args:
+ * range - How far, in a square, around this mob, will we search.
+ * source - The source of the search.
+ */
+/proc/mobs_in_view(var/range, var/source, var/search_type = /mob, var/search_mechs = FALSE)
 	var/list/mobs = list()
-	for(var/atom/movable/AM in view(range, source))
-		var/M = AM.get_mob()
-		if(M)
-			mobs += M
-
+	for(search_type in view(range, source))
+		if (target_mob)
+			mobs += target_mob
+	if (search_mechs)
+		for(var/obj/mecha/mech in view(range, source))
+			var/mob/occupant = mech.get_mob()
+			if(occupant)
+				mobs += occupant
 	return mobs
 
 /proc/random_hair_style(gender, species = "Human")
