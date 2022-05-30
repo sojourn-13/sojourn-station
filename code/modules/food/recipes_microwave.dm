@@ -567,7 +567,7 @@ I said no!
 	result = /obj/item/reagent_containers/food/snacks/patty
 
 /datum/recipe/bacon // BACON? BACON.
-	reagents = list("sodiumchloride" = 5, "cornoil" = 1)
+	reagents = list("sodiumchloride" = 1, "cornoil" = 1)
 	items = list(/obj/item/reagent_containers/food/snacks/rawbacon)
 	result = /obj/item/reagent_containers/food/snacks/bacon
 

@@ -113,7 +113,7 @@
 					center_of_mass = list("x"=16, "y"=6)
 				if("vinegar")
 					name = "Vinegar Bottle"
-					icon_state = "vinegar" // Ugly placeholder.
+					icon_state = "vinegar"
 					desc = "A bottle of red wine vinegar, a great condiment for many a salad and more."
 					center_of_mass = list("x"=16, "y"=6)
 				else
@@ -193,7 +193,12 @@
 				if("ketchup")
 					name = "Ketchup"
 					desc = "Mixed up with blood all the time."
-					icon_state = "condi_hotsauce" // I'm sorry little one...
+					icon_state = "condi_ketchup"
+					center_of_mass = list("x"=16, "y"=6)
+				if("vinegar")
+					name = "Vinegar"
+					desc = "Perfect to season your salad."
+					icon_state = "condi_vinegar"
 					center_of_mass = list("x"=16, "y"=6)
 				if("bbqsauce")
 					name = "Barbecue sauce"
@@ -307,3 +312,14 @@
 /obj/item/reagent_containers/food/condiment/pack/hotsauce
 	name = "hotsauce pack"
 	preloaded_reagents = list("capsaicin" = 10)
+
+// Barbecue sauce
+/obj/item/reagent_containers/food/condiment/pack/bbq
+	name = "bbq sauce pack"
+	preloaded_reagents = list("bbqsauce" = 10)
+
+// Vinegar pack
+/obj/item/reagent_containers/food/condiment/pack/vinegar
+	name = "vinegar pack"
+	preloaded_reagents = list("vinegar" = 10)
+

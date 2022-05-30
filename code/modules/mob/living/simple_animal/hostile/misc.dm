@@ -302,7 +302,7 @@
 	emote_see = list("scratches at the ground.","gives a small snuffle.","hops back and forth.")
 	emote_hear = list("chitters.")
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork
-	meat_amount = 2
+	meat_amount = 2 // Undomesticated, and underfed compared to a lodge cerberus, thus less meat.
 	mob_size = 5
 	resistance = 10
 	//Feed to lead

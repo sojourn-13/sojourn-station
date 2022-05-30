@@ -923,7 +923,7 @@
 /obj/item/reagent_containers/food/snacks/porkchops
 	name = "glazed pork chops"
 	desc = "Perfectly grilled pork chops that are still a shade of pink on the inside, slathered generously with barbecue sauce."
-	icon_state = "porkchops"
+	icon_state = "porkchop"
 	bitesize = 3
 	trash = /obj/item/trash/plate
 	filling_color = "#7A3D11"
@@ -1708,7 +1708,7 @@
 		qdel(src)
 
 /obj/item/reagent_containers/food/snacks/rawbacon
-	name = "raw bacon strips"
+	name = "raw bacon strip"
 	desc = "Tasty strips of raw porcine back meat. Uncured, unsalted, and ready to be turned into delicious bacon."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "rawbacon"

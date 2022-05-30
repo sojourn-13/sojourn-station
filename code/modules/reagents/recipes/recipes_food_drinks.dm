@@ -104,6 +104,7 @@
 /datum/chemical_reaction/barbecue
 	result = "bbqsauce"
 	required_reagents = list("ketchup" = 1, "vinegar" = 1, "sugar" = 1)
+	result_amount = 3
 
 /datum/chemical_reaction/cheesewheel
 	result = null

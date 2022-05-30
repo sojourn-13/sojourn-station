@@ -185,6 +185,7 @@
 	id = "bbqsauce"
 	description = "Slather it on pork or chicken to greatly enhance its flavor. Or to whatever food you like, to make it taste better. You are, after all, the big boss of your barbecue sauce." // No cayenne pepper though.
 	color = "#731008" // Ketchup's old color, to distinguish between the two.
+	taste_description = "barbecue sauce"
 	reagent_state = LIQUID
 	nutriment_factor = 2
 	common = TRUE
