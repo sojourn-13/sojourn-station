@@ -91,7 +91,7 @@
 		var/mob/living/carbon/human/defender = user
 		if(check_shield_arc(defender, bad_arc, damage_source, attacker))
 			if(defender.halloss >= 40 || (defender.halloss + damage_received) >= 50) //THIS HAS PROVEN TO BE FAR TOO DANGEROUS AT 50, YOU /WILL/ PAINCRIT.
-				defender.visible_message(SPAN_DANGER("\The [defender] is too tired to block!"))
+				defender.visible_message(SPAN_DANGER("\The [defender] is too weak to block!"))
 				return 0
 			else
 				src.durability = src.durability -  CLAMP(damage_received,10,100) // Shields still take some damage, can't have it go unscathed
