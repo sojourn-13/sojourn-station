@@ -97,7 +97,7 @@
 	if(owner.mob.in_throw_mode || (owner.mob.Adjacent(location) && owner.mob.a_intent != "harm"))
 		return TRUE
 	var/list/click_params = params2list(params)
-	if(!click_params || !click_params["left"]) // Only angry clicky.
+	if(!click_params || !click_params["left"]) // Only left click
 		return TRUE 
 
 	object = resolve_world_target(object)
