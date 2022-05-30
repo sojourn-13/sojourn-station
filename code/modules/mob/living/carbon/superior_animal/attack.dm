@@ -76,7 +76,7 @@
 		loseTarget()
 		return
 
-	if (!firing_target.check_if_alive())
+	if (!firing_target.check_if_alive(TRUE))
 		loseTarget()
 		return
 
