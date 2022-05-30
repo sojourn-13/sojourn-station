@@ -94,6 +94,12 @@
 	if(time_since_last_init > world.time)
 		return FALSE
 
+	if(owner.mob.in_throw_mode || (owner.mob.Adjacent(location) && owner.mob.a_intent != "harm"))
+		return TRUE
+	var/list/click_params = params2list(params)
+	if(!click_params || !click_params["left"]) // Only angry clicky.
+		return TRUE 
+
 	object = resolve_world_target(object)
 	if(object)
 		target = object
