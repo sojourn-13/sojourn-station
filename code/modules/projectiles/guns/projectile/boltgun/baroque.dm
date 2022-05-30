@@ -13,7 +13,7 @@ Own a musket for department defense, since that's what the founding hunters inte
 /obj/item/gun/projectile/boltgun/baroque
 	name = "\"Baroque\" bone rifle"
 	desc = "A heavy smoothbore lever-action rifle made from dense bones fitted with a plasteel barrel. One of the few rifles produced and widely distributed by Kriosan Jaegers, this \
-	particular design imparted by kriosan's favoring the hunting lodge. Fires a single devistating shot which can fell most animals in a single blow, though it struggles to do the same \
+	particular design imparted by kriosan's favoring the hunting lodge. Fires a single devastating shot which can fell most animals in a single blow, though it struggles to do the same \
 	to people as it was designed primarily for game hunting. Still packs a hell of a punch. Uses 30mm rolled shot."
 	icon = 'icons/obj/guns/projectile/baroque.dmi'
 	icon_state = "baroque"
@@ -34,7 +34,7 @@ Own a musket for department defense, since that's what the founding hunters inte
 	price_tag = 750
 	extra_damage_mult_scoped = 0.4
 	one_hand_penalty = 80
-	zoom_factor = 1.3
+	zoom_factor = 1.4
 	twohanded = TRUE
 	sharp = FALSE
 	saw_off = FALSE //Todo. Pistole verson
