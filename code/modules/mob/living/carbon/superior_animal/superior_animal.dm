@@ -441,7 +441,7 @@
 	if(!ranged)
 		prepareAttackOnTarget()
 	else if(ranged)
-		if (!(check_if_alive.targetted_mob))
+		if (!(targetted_mob.check_if_alive()))
 			loseTarget()
 			return
 		if (!check_if_alive())
