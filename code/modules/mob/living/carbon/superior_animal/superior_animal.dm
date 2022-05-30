@@ -31,6 +31,12 @@
 	/// Telegraph message base for mobs that are melee
 	var/melee_telegraph = "readies to strike"
 
+	/// What color is our telegraph beam?
+	var/telegraph_beam_color = COLOR_YELLOW
+
+	/// Alpha value of our telegraph beam.
+	var/telegraph_beam_alpha = 50
+
 	var/debug_check = 0
 
 	var/moved = FALSE
@@ -535,13 +541,14 @@
 
 /**
  *  To be used when, instead of raw attack procs, you want to add a timer.
- *  Will telegraph this attack to any within range, visually.
+ *  Will telegraph this attack to any within range, visually, with a message and a beam effect.
  *
  *	Args:
  *	atom/targetted_mob-Atom this timer will be targetted to, and the target of the telegraphs.
  *	proctocall: The proc the timer will call.
  *	attack_type-The delay that will be used for this timer. Defines used by this defined in mobs.dm. Example: MELEE_TYPE.
  *	telegraph-Boolean. If false, no visual emote will be made.
+ *	cast_beam-Boolean. If true, a beam will be cast from src to targetted_mob as a visual telegraph.
  **/
 /mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(var/atom/targetted_mob, proctocall, var/attack_type, var/telegraph = TRUE)
 	if (check_if_alive()) //sanity
@@ -557,12 +564,14 @@
 				time_to_expire = delay_for_range
 				if (telegraph && (time_to_expire > 0))
 					visible_message(SPAN_WARNING("[src] [range_telegraph] [targetted_mob]!"))
-					Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=50, color_arg = COLOR_YELLOW)
+					if (cast_beam)
+						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
 
 			if (RANGED_RAPID_TYPE)
 				time_to_expire = delay_for_range //fun fact, this rapid range delay is used for delaying shots in a burst
 				if (telegraph && (time_to_expire > 0))
 					visible_message(SPAN_WARNING("[src] [range_telegraph] [targetted_mob]!"))
-					Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=50, color_arg = COLOR_YELLOW)
+					if (cast_beam)
+						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
