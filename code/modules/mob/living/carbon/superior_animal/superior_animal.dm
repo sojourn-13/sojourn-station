@@ -35,8 +35,6 @@
 	/// Telegraph message base for mobs that are melee
 	var/melee_telegraph = "readies to strike"
 
-	var/debug_check = 0
-
 	var/moved = FALSE
 	var/move_attack_mult = 0.6
 	universal_understand = TRUE //QoL to admins controling mobs
