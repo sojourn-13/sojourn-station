@@ -89,7 +89,7 @@
 	if(istype(attacker, /mob/living/simple_animal/hostile) || istype(attacker, /mob/living/carbon/superior_animal/))
 		var/mob/living/carbon/human/defender = user
 		if(check_shield_arc(defender, bad_arc, damage_source, attacker))
-			if(defender.halloss >= 50)
+			if(defender.halloss >= 30) //THIS HAS PROVEN TO BE FAR TOO DANGEROUS AT 50, YOU /WILL/ PAINCRIT.
 				defender.visible_message(SPAN_DANGER("\The [defender] is too tired to block!"))
 				return 0
 			else
