@@ -399,17 +399,17 @@
 		walk_to(src, targetted_mob, (comfy_range - 1), move_to_delay) //lets get a little closer than our optimal range
 		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
 			if (issuperiorhuman(src)) //TODO: convert to switch
-				visible_message(SPAN_WARNING("[src] snaps their attention to [targetted_mob], fumbling to ready their weapon!"))
+				visible_message(SPAN_WARNING("[src] snaps their attention to <font color = 'green'>[targetted_mob]</font>, fumbling to ready their weapon!"))
 			else
-				visible_message(SPAN_WARNING("[src] prepares to fire at [targetted_mob]!"))
+				visible_message(SPAN_WARNING("[src] prepares to fire at <font color = 'green'>[targetted_mob]</font>!"))
 			delayed = delay_amount
 			retarget_rush_timer += ((world.time) + retarget_rush_timer_increment)
 			return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
 		else
 			if (issuperiorhuman(src))
-				visible_message(SPAN_WARNING("[src] quickly snaps their aim toward [targetted_mob]!"))
+				visible_message(SPAN_WARNING("[src] quickly snaps their aim toward <font color = 'green'>[targetted_mob]</font>!"))
 			else
-				visible_message(SPAN_WARNING("[src] shifts its attention to [targetted_mob]!"))
+				visible_message(SPAN_WARNING("[src] shifts its attention to <font color = 'green'>[targetted_mob]</font>!"))
 
 	else if (!ranged)
 		stop_automated_movement = TRUE

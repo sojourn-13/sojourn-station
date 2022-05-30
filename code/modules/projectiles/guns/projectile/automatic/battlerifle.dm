@@ -67,7 +67,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
 	mag_well = MAG_WELL_HRIFLE
 	price_tag = 1500
-	zoom_factor = 0.3
+	zoom_factor = 0.4
 	recoil_buildup = 2.5
 	one_hand_penalty = 10
 	penetration_multiplier = 1
@@ -84,7 +84,7 @@
 	desc = "A heavy front line designated marksman rifle manufactured by H&S, also known as the M13A2 Special Purpose Rifle in its generic military form. \
 		 Either a copy or 'liberated' example, it fires a variety of utility and specialized munitions. \
 		 Chambered in .408, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
-		 This example is fitted with an advanced combat sight and limited to semiautomatic and two-round burst."
+		 This example is fitted with an advanced combat sight and limited to semiautomatic and burst modes."
 	icon = 'icons/obj/guns/projectile/DMR.dmi'
 	icon_state = "DMR"
 	item_state = "DMR"
@@ -166,7 +166,7 @@
 	damage_multiplier = 1.1
 	recoil_buildup = 3.25
 	one_hand_penalty = 23
-	zoom_factor = 0.3
+	zoom_factor = 0.4
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
