@@ -570,10 +570,10 @@
 			if (RANGED_TYPE)
 				time_to_expire = delay_for_range
 				if (telegraph && (time_to_expire > 0))
-					visible_message(SPAN_WARNING("[src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+					visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
 			if (RANGED_RAPID_TYPE)
 				time_to_expire = delay_for_range //fun fact, this rapid range delay is used for delaying shots in a burst
 				if (telegraph && (time_to_expire > 0))
-					visible_message(SPAN_WARNING("[src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+					visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
