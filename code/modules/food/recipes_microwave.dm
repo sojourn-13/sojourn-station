@@ -326,7 +326,7 @@ I said no!
 	result = /obj/item/reagent_containers/food/snacks/sliceable/bananabread
 
 /datum/recipe/cinnamonroll
-	reagents = list("woodpulp" = 5, "sugar" = 10, "milk" = 5, "egg" = 3) // Due to lack of cinnamon, let's use tower caps bark - Seb
+	reagents = list("cinnamonpowder" = 5, "sugar" = 10, "milk" = 5, "egg" = 3) // We have cinnamon now! Updating this recipe, thank you MikieRPG - Seb
 	items = list(
 		/obj/item/reagent_containers/food/snacks/doughslice,
 		/obj/item/reagent_containers/food/snacks/butterslice,

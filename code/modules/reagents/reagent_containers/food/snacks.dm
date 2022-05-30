@@ -1543,6 +1543,7 @@
 	bitesize = 3
 	nutriment_amt = 6
 	nutriment_desc = list("cinnamon" = 10, "buttery goodness" = 5, "cream cheese" = 3)
+	preloaded_reagents = list("cinnamonpowder" = 5, "sugar" = 10)
 
 
 ///////////////////////////////////////////
