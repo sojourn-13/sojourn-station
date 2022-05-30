@@ -85,15 +85,15 @@
 		return 0
 
 	//block as long as they are not directly behind us
+	var/damage_received = CLAMP(damage * (CLAMP(100-user.stats.getStat(STAT_TGH)/2,0,100) / 100) - user.stats.getStat(STAT_TGH)/5,1,100) //Move this here, because... Well. It was dumb.
 	var/bad_arc = reverse_direction(user.dir) //arc of directions from which we cannot block
 	if(istype(attacker, /mob/living/simple_animal/hostile) || istype(attacker, /mob/living/carbon/superior_animal/))
 		var/mob/living/carbon/human/defender = user
 		if(check_shield_arc(defender, bad_arc, damage_source, attacker))
-			if(defender.halloss >= 30) //THIS HAS PROVEN TO BE FAR TOO DANGEROUS AT 50, YOU /WILL/ PAINCRIT.
+			if(defender.halloss >= 40 || (defender.halloss + damage_recieved) >= 50) //THIS HAS PROVEN TO BE FAR TOO DANGEROUS AT 50, YOU /WILL/ PAINCRIT.
 				defender.visible_message(SPAN_DANGER("\The [defender] is too tired to block!"))
 				return 0
 			else
-				var/damage_received = CLAMP(damage * (CLAMP(100-user.stats.getStat(STAT_TGH)/2,0,100) / 100) - user.stats.getStat(STAT_TGH)/5,1,100)
 				src.durability = src.durability -  CLAMP(damage_received,10,100) // Shields still take some damage, can't have it go unscathed
 				defender.adjustHalLoss(damage_received)
 				defender.visible_message(SPAN_DANGER("\The [defender] blocks [attack_text] with \the [src]!"))
