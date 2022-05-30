@@ -25,6 +25,10 @@
 	var/retarget_rush_timer_increment = 10 SECONDS //arbitrary value for now
 	/// Will this mob continue to fire even if LOS has been broken?
 	var/fire_through_wall = FALSE
+	/// Initial value of patience, make sure to match it with patience.
+	var/patience_initial = 10
+	/// How many ticks are we willing to wait before untargetting a mob that we can't see?
+	var/patience = 10
 
 	/// Telegraph message base for mobs that are range
 	var/range_telegraph = "aims their weapon at"
@@ -36,8 +40,6 @@
 
 	/// Alpha value of our telegraph beam.
 	var/telegraph_beam_alpha = 50
-
-	var/debug_check = 0
 
 	var/moved = FALSE
 	var/move_attack_mult = 0.6
@@ -409,7 +411,6 @@
 			else
 				visible_message(SPAN_WARNING("[src] prepares to fire at <font color = 'green'>[targetted_mob]</font>!"))
 			delayed = delay_amount
-			retarget_rush_timer += ((world.time) + retarget_rush_timer_increment)
 			return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
 		else
 			if (issuperiorhuman(src))
@@ -426,12 +427,24 @@
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings)
 
 /mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE)
+	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
 	if(destroy_surroundings && !already_destroying_surroundings)
 		destroySurroundings()
+	if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !fire_through_wall)) //why attack if we can't even see the enemy
+		if (patience <= 0)
+			loseTarget()
+			patience = patience_initial
+		else
+			patience--
+		return
+	patience = patience_initial
 	if(!ranged)
 		prepareAttackOnTarget()
 	else if(ranged)
-		if(!check_if_alive())
+		if (!check_if_alive(targetted_mob))
+			loseTarget()
+			return
+		if (!check_if_alive())
 			return
 		if(get_dist(src, targetted_mob) <= 6)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
@@ -563,7 +576,7 @@
 			if (RANGED_TYPE)
 				time_to_expire = delay_for_range
 				if (telegraph && (time_to_expire > 0))
-					visible_message(SPAN_WARNING("[src] [range_telegraph] [targetted_mob]!"))
+					visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
 					if (cast_beam)
 						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
@@ -571,7 +584,7 @@
 			if (RANGED_RAPID_TYPE)
 				time_to_expire = delay_for_range //fun fact, this rapid range delay is used for delaying shots in a burst
 				if (telegraph && (time_to_expire > 0))
-					visible_message(SPAN_WARNING("[src] [range_telegraph] [targetted_mob]!"))
+					visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
 					if (cast_beam)
 						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
