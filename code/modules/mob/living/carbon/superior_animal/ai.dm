@@ -79,8 +79,9 @@
 		return 1
 
 	if (istype(O, /obj/mecha))
-		var/obj/mecha/M = O
-		return isValidAttackTarget(M.occupant)
+		if (can_see(src, O, get_dist(src, O))) //can we even see it?
+			var/obj/mecha/M = O
+			return isValidAttackTarget(M.occupant)
 
 
 /mob/living/carbon/superior_animal/proc/destroySurroundings() //todo: make this better - Trilby
