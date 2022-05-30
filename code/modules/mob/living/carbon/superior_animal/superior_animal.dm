@@ -453,7 +453,12 @@
 			walk_to(src, targetted_mob, 4, move_to_delay)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 
-/atom/proc/check_if_alive() //A simple yes no if were alive
+/// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
+/atom/proc/check_if_alive(var/critcheck = FALSE) //A simple yes no if were alive
+	if (critcheck)
+		if (istype(src, /mob/living/carbon/human))
+			if(health < HEALTH_THRESHOLD_CRIT) //only matters for humans
+				return TRUE
 	if(health > 0)
 		return TRUE
 	return FALSE
