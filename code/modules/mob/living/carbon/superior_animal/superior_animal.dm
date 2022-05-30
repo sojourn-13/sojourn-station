@@ -570,7 +570,7 @@
 			if (MELEE_TYPE)
 				time_to_expire = delay_for_melee
 				if (telegraph && (time_to_expire > 0)) //no telegraph needed if the attack is instant
-					visible_message(SPAN_WARNING("[src] [melee_telegraph] [targetted_mob]!"))
+					visible_message(SPAN_WARNING("[src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
 				addtimer(CALLBACK(src, proctocall), time_to_expire) //awful hack because melee attacks are handled differently
 
 			if (RANGED_TYPE)
