@@ -22,7 +22,7 @@
  * range - How far, in a square, around this mob, will we search.
  * source - The source of the search.
 **/
-/proc/mobs_in_view(var/range, var/source)
+/proc/mobs_in_view(var/range, var/atom/source)
 	var/list/mobs = list()
 	for(var/mob/target_mob in view(range, source))
 		if (target_mob)
@@ -37,7 +37,7 @@
  * range - How far, in a square, around this mob, will we search.
  * source - The source of the search.
 **/
-/proc/living_mobs_in_view(var/range, var/source)
+/proc/living_mobs_in_view(var/range, var/atom/source)
 	var/list/mobs = list()
 	for(var/mob/living/target_mob in view(range, source))
 		if (target_mob)
@@ -53,13 +53,13 @@
  * range - How far, in a square, around this mob, will we search.
  * source - The source of the search.
 **/
-/proc/all_mobs_in_view(var/range, var/source)
-    var/list/mobs = list()
-    for(var/mob/target_mob in view(range, source))
-        if (target_mob)
+/proc/all_mobs_in_view(var/range, var/atom/source)
+	var/list/mobs = list()
+	for(var/mob/target_mob in view(range, source))
+		if (target_mob)
 			mobs += target_mob
 	for(var/atom/potential_mech in GLOB.mechas_list)
-		if (potential_mech.z == z) //z-level check
+		if (potential_mech.z == source.z) //z-level check
 			if((get_dist(potential_mech, source) < range) && can_see(source, potential_mech, range))
 				var/obj/mecha/mech = potential_mech
 				var/mob/living/occupant = mech.get_mob()
