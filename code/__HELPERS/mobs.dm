@@ -22,7 +22,7 @@
  * range - How far, in a square, around this mob, will we search.
  * source - The source of the search.
 **/
-/proc/mobs_in_view(var/range, var/atom/source)
+/proc/mobs_in_view(range, atom/source)
 	var/list/mobs = list()
 	for(var/mob/target_mob in view(range, source))
 		mobs += target_mob
