@@ -58,7 +58,7 @@
 	if(is_on_cooldown())
 		return
 	if(master.health <= (hp_percent * 60))
-		for(var/mob/living/T in mobs_in_view(attack_range, master))
+		for(var/mob/living/T in living_mobs_in_view(attack_range, master))
 			if(T.stat == CONSCIOUS && T.faction != HIVE_FACTION)
 				execute()
 				break
@@ -68,7 +68,7 @@
 	. = ..()
 	master.visible_message("[master] emmits an energy wave!")
 	playsound(master, 'sound/effects/EMPulse.ogg', 90, 1)
-	var/list/targets = mobs_in_view(attack_range, master)
+	var/list/targets = living_mobs_in_view(attack_range, master)
 	for(var/mob/living/victim in targets)
 		if(victim.stat == CONSCIOUS && victim.faction != HIVE_FACTION)
 			victim.Weaken(5)

@@ -15,24 +15,52 @@
 	return src
 
 /**
- * Returns a list of mobs within view(), using given arguments to determine the range of the search
+ * Returns a list of all mobs within view(), using given arguments to determine the range of the search
  * and the source of the proc.
  *
  * Args:
  * range - How far, in a square, around this mob, will we search.
  * source - The source of the search.
- */
-/proc/mobs_in_view(var/range, var/source, var/search_type = /mob, var/search_mechs = FALSE)
+**/
+/proc/mobs_in_view(var/range, var/source)
 	var/list/mobs = list()
-	for(search_type in view(range, source))
+	for(var/mob/target_mob in view(range, source))
 		if (target_mob)
 			mobs += target_mob
-	if (search_mechs)
-		for(var/obj/mecha/mech in view(range, source))
-			var/mob/occupant = mech.get_mob()
-			if(occupant)
-				mobs += occupant
 	return mobs
+
+/**
+ * Returns a list of all LIVING mobs within view(), using given arguments to determine the range of the search
+ * and the source of the proc.
+ *
+ * Args:
+ * range - How far, in a square, around this mob, will we search.
+ * source - The source of the search.
+**/
+/proc/living_mobs_in_view(var/range, var/source)
+	var/list/mobs = list()
+	for(var/mob/living/target_mob in view(range, source))
+		if (target_mob)
+			mobs += target_mob
+	return mobs
+
+
+/**
+ * Returns a list of all mobs within view(), even those within containers, using given arguments to determine the range of the search
+ * and the source of the proc. Ideally, we won't use this, but if you want mechs and such to be attacked use it.
+ *
+ * Args:
+ * range - How far, in a square, around this mob, will we search.
+ * source - The source of the search.
+**/
+/proc/all_mobs_in_view(var/range, var/source)
+    var/list/mobs = list()
+    for(var/atom/movable/AM in view(range, source)) //i hate how inefficient this is
+        var/M = AM.get_mob()
+        if(M)
+            mobs += M
+
+    return mobs
 
 /proc/random_hair_style(gender, species = "Human")
 	var/h_style = "Bald"
