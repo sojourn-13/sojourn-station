@@ -480,7 +480,7 @@
 	affective_damage_range = 8
 	affective_ap_range = 8
 	
-/obj/item/projectile/bullet/Auto_460/scrap
+/obj/item/projectile/bullet/auto_460/scrap
 	damage_types = list(BRUTE = 25)
 	armor_penetration = 15
 	penetrating = 1
