@@ -61,7 +61,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	var/shot_delay = 70		//7 seconds between each shot by default, made better with parts
 
 	/// How far we will fire at mobs from. 7 by default.
-	var/firing_range = 7
+	var/firing_range = 6
 
 // Used to not target allied mobs
 	var/colony_allied_turret = FALSE //Are we allied with the colony?
@@ -520,7 +520,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	if(L.stat)		//if the perp is dead/dying, no need to bother really
 		return TURRET_NOT_TARGET	//move onto next potential victim!
 
-	if(get_dist(src, L) > 6)	//if it's too far away, why bother?
+	if(get_dist(src, L) > firing_range)	//if it's too far away, why bother?
 		return TURRET_NOT_TARGET
 
 	/*
