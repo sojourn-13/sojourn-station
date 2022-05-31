@@ -486,12 +486,11 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		assess_and_assign(M, targets, secondarytargets) //might want to not use a proc due to proc overhead cost
 
 	for(var/atom/A in GLOB.mechas_list)
-		if (A.z == z) //z-level check
-			if((get_dist(A, src) < firing_range) && can_see(src, A, firing_range))
-				var/obj/mecha/mech = A
-				var/mob/living/occupant = mech.get_mob()
-				if (occupant)
-					assess_and_assign(occupant, targets, secondarytargets)
+		if (A.z == z && (get_dist(A, src) < firing_range) && can_see(src, A, firing_range))
+			var/obj/mecha/mech = A
+			var/mob/living/occupant = mech.get_mob()
+			if (occupant)
+				assess_and_assign(occupant, targets, secondarytargets)
 
 	if(!tryToShootAt(targets))
 		tryToShootAt(secondarytargets) // if no valid targets, go for secondary targets

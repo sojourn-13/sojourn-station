@@ -563,11 +563,10 @@ var/list/turret_icons
 		assess_and_assign(M, targets, secondarytargets) //might want to not use a proc due to proc overhead cost
 
 	for(var/obj/mecha/mech in GLOB.mechas_list)
-		if (mech.z == z) //z-level check
-			if((get_dist(mech, src) < firing_range) && can_see(src, mech, firing_range))
-				var/mob/living/occupant = mech.get_mob()
-				if (occupant)
-					assess_and_assign(occupant, targets, secondarytargets)
+		if (mech.z == z && (get_dist(mech, src) < firing_range) && can_see(src, mech, firing_range))
+			var/mob/living/occupant = mech.get_mob()
+			if (occupant)
+				assess_and_assign(occupant, targets, secondarytargets)
 
 	if(!tryToShootAt(targets))
 		if(!tryToShootAt(secondarytargets)) // if no valid targets, go for secondary targets

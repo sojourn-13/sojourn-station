@@ -55,13 +55,11 @@
 	var/list/mobs = list()
 	for(var/mob/target_mob in view(range, source))
 		mobs += target_mob
-	for(var/atom/potential_mech in GLOB.mechas_list)
-		if (potential_mech.z == source.z) //z-level check
-			if((get_dist(potential_mech, source) < range) && can_see(source, potential_mech, range))
-				var/obj/mecha/mech = potential_mech
-				var/mob/living/occupant = mech.get_mob()
-				if (occupant)
-					mobs += occupant
+	for(var/obj/mecha/mech in GLOB.mechas_list)
+		if(potential_mech.z == source.z && get_dist(potential_mech, source) < range && can_see(source, potential_mech, range))
+			var/mob/living/occupant = mech.get_mob()
+			if (occupant)
+				mobs += occupant
     return mobs
 
 /proc/random_hair_style(gender, species = "Human")
