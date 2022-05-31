@@ -46,8 +46,8 @@
 
 
 /**
- * Returns a list of all mobs within view(), even those within containers, using given arguments to determine the range of the search
- * and the source of the proc. Ideally, we won't use this, but if you want mechs and such to be attacked use it.
+ * Returns a list of all mobs within view(), even those within mechs, using given arguments to determine the range of the search
+ * and the source of the proc.
  *
  * Args:
  * range - How far, in a square, around this mob, will we search.
@@ -55,11 +55,16 @@
 **/
 /proc/all_mobs_in_view(var/range, var/source)
     var/list/mobs = list()
-    for(var/atom/movable/AM in view(range, source)) //i hate how inefficient this is
-        var/M = AM.get_mob()
-        if(M)
-            mobs += M
-
+    for(var/mob/target_mob in view(range, source))
+        if (target_mob)
+			mobs += target_mob
+	for(var/atom/potential_mech in GLOB.mechas_list)
+		if (potential_mech.z == z) //z-level check
+			if((get_dist(potential_mech, source) < range) && can_see(source, potential_mech, range))
+				var/obj/mecha/mech = potential_mech
+				var/mob/living/occupant = mech.get_mob()
+				if (occupant)
+					mobs += occupant
     return mobs
 
 /proc/random_hair_style(gender, species = "Human")
