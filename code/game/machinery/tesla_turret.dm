@@ -479,7 +479,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	var/list/targets = list()			//list of primary targets
 	var/list/secondarytargets = list()	//targets that are least important
 
-	for(var/mob/living/M in all_mobs_in_view(world.view, src))	// Why do we check every mob in an 15x15 area (Or radius of 7) if we later limit it to a radius of 6 (or area of 13x13) -R4d6
+	for(var/mob/living/M in all_mobs_in_view(7, src))	// Why do we check every mob in an 15x15 area (Or radius of 7) if we later limit it to a radius of 6 (or area of 13x13) -R4d6 well now we dont -niko
 		assess_and_assign(M, targets, secondarytargets)
 
 	if(!tryToShootAt(targets))

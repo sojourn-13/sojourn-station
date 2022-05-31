@@ -556,7 +556,7 @@ var/list/turret_icons
 	var/list/targets = list()			//list of primary targets
 	var/list/secondarytargets = list()	//targets that are least important
 
-	for(var/mob/living/M in living_mobs_in_view(7, src)) //WE USED WORLD.VIEW BEFORE THATS FUCKING PSYCHOPATHIC
+	for(var/mob/living/M in all_mobs_in_view(7, src)) //WE USED WORLD.VIEW BEFORE THATS FUCKING PSYCHOPATHIC
 		assess_and_assign(M, targets, secondarytargets)
 
 	if(!tryToShootAt(targets))
