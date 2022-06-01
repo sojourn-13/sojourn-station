@@ -35,6 +35,8 @@
 /mob/living/carbon/superior_animal/proc/attemptAttackOnTarget()
 	var/atom/targetted_mob = (target_mob?.resolve())
 
+	if(weakened) return
+
 	if(isnull(targetted_mob))
 		return
 
@@ -45,6 +47,8 @@
 
 /mob/living/carbon/superior_animal/proc/prepareAttackOnTarget()
 	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if(weakened) return
 
 	if (isnull(targetted_mob))
 		return
