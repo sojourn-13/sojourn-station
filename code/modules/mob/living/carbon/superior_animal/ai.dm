@@ -23,23 +23,14 @@
 	var/list/filteredTargets = new
 
 	var/turf/our_turf = get_turf(src)
-	if (our_turf)
-		for(var/atom/target_atom as anything in hearers(src, viewRange))
-			if (isliving(target_atom))
-				var/mob/living/target = target_atom
-				var/boolean = FALSE
-				ISVALIDATTACKTARGET(target)
+	if (our_turf) //If we're not in anything, continue
+		for(var/mob/living/target_mob in hearers(src, viewRange))
+			if (isValidAttackTarget(target_mob))
+				filteredTargets += target_mob
 
-				if (boolean)
-					filteredTargets += target_atom
-
-	for (var/obj/mecha/target_mech in GLOB.mechas_list)
-		if ((target_mech.z == src.z) && (get_dist(src, target_mech) <= viewRange) && (can_see(src, target_mech, viewRange)) && (target_mech.occupant))
-			var/mob/living/occupant = target_mech.occupant
-			var/boolean = FALSE
-			ISVALIDATTACKTARGET(occupant)
-			if (boolean)
-				filteredTargets += target_mech
+	for (var/obj/mecha/M in GLOB.mechas_list)
+		if ((M.z == src.z) && (get_dist(src, M) <= viewRange) && isValidAttackTarget(M))
+			filteredTargets += M
 
 	return safepick(nearestObjectsInList(filteredTargets, src, acceptableTargetDistance))
 
