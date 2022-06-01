@@ -26,6 +26,7 @@
 		BURST_2_ROUND,
 		FULL_AUTO_400
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/mamba/update_icon()
 	..()
@@ -167,3 +168,6 @@
 	init_firemodes = list(
 		list(mode_name="semi-automatic", mode_desc = "A semi-automatic firemode.", mode_type = /datum/firemode/automatic, fire_delay=15, icon="auto"
 		))
+
+/obj/item/gun/projectile/automatic/mamba/copperhead/python/Initialize()
+	. = ..()
