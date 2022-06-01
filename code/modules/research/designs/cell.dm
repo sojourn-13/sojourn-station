@@ -89,6 +89,13 @@
 	name = "Soteria \"Atomcell 50S\""
 	build_path = /obj/item/cell/small/moebius/pda
 
+//Magic rock cell
+
+/datum/design/research/item/powercell/large/ameridian
+	name = "Soteria \"Ameridian 20000L\""
+	build_path = /obj/item/cell/large/ameridian
+	chemicals = list("MATERIAL_AMERIDIAN" = 120) //Beakers worth on top of normal cell costs
+
 //Hand crank for cells
 /datum/design/research/item/hand_charger
 	name = "Soteria \"Hand Crank\""
