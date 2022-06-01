@@ -537,10 +537,10 @@
 		if(speak_chance && prob(speak_chance))
 			visible_emote(emote_see)
 
-		if((following) && !(findTarget())) // Are we following someone and not attacking something?
-			walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
-
-		if(!following && !(findTarget())) // Stop following
+		if((following)
+			if (!target_mob)) // Are we following someone and not attacking something?
+				walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
+		else if (!target_mob)
 			walk_to(src, 0)
 
 	if(life_cycles_before_sleep)
