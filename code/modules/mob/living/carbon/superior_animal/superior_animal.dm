@@ -191,6 +191,8 @@
 	// Variables for the following AI
 	var/obey_friends = TRUE // Do we obey only friends ?
 	var/mob/following = null // Who are we following?
+	/// The last mob this mob has followed, nulled on the first tick the mob is not following anymore. Make sure to assign this to the same value as following.
+	var/mob/last_followed = null // Who did we follow last?
 	var/follow_distance = 2 // How close do we stay?
 	var/follow_message = "nods and start following." // Message that the mob emote when they start following. Include the name of the one who follow at the end
 	var/stop_message = "nods and stop following." // Message that the mob emote when they stop following. Include the name of the one who follow at the end
@@ -537,11 +539,12 @@
 		if(speak_chance && prob(speak_chance))
 			visible_emote(emote_see)
 
-		if((following)
-			if (!target_mob)) // Are we following someone and not attacking something?
+		if (following)
+			if (!target_mob) // Are we following someone and not attacking something?
 				walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
-		else if (!target_mob)
+		else if (!target_mob && last_followed)
 			walk_to(src, 0)
+			last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
 
 	if(life_cycles_before_sleep)
 		life_cycles_before_sleep--
