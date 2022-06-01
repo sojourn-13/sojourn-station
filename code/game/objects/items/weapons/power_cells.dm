@@ -382,6 +382,132 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_BIOMATTER = 2.5)
 	maxcharge = 500
 
+// One cell to rule them all!
+/obj/item/cell/large/hydrogen
+	name = "hydrogen cell adapter"
+	desc = "An advanced device designed to convert the power held within regular cryo-sealed hydrogen fuel cell into power suitable for most electronic systems."
+	icon_state = "hydrogen"
+	max_chargerate = 0 // Cannot be charged
+	origin_tech = list(TECH_POWER = 2)
+	var/ratio = 200 // How much power does 1 unit of hydrogen give. At 150 plasma per cell, a single cell would provide 200 * 150 = 30000 total power, or 10k more than the best cells
+	var/obj/item/hydrogen_fuel_cell/fuel_cell // The fuel cell that we drain power from
+
+/obj/item/cell/large/hydrogen/Initialize()
+	. = ..()
+	update_charge() // Update the charge
+
+// Update the current max charge and charge so that we don't have to keep manually referencing the fuel cell.
+/obj/item/cell/large/hydrogen/proc/update_charge()
+	maxcharge = fuel_cell?.max_plasma * ratio
+	charge = fuel_cell?.plasma * ratio
+
+	if(!maxcharge) // If the max charge is somehow null
+		maxcharge = 1 // Set to 1 to prevent divisions by 0.
+	if(!charge)
+		charge = 0
+
+	update_icon()
+
+/obj/item/cell/large/hydrogen/drain_power(var/drain_check, var/surge, var/power = 0)
+	..()
+
+/obj/item/cell/large/hydrogen/use(var/amount)
+	charge_tick = max(charge_delay, charge_tick) //The cooldown could be shorter than the refresh time.
+	if(rigged && amount > 0)
+		explode()
+		return 0
+	var/used = fuel_cell.use(amount / ratio) ? amount : 0
+	update_charge()
+	update_icon()
+	return used
+
+/obj/item/cell/large/hydrogen/give(var/amount)
+	..()
+	update_charge() // Do the normal stuff, then update the charge.
+
+/obj/item/cell/large/hydrogen/attackby(obj/item/W, mob/user)
+	..()
+	if(istype(W, /obj/item/hydrogen_fuel_cell))
+		var/obj/item/hydrogen_fuel_cell/H = W
+		insert_item(H, user) // Insert the fuel cell into the adapter
+		fuel_cell = H
+		update_charge() // Update the charge
+		return
+
+/obj/item/cell/large/hydrogen/MouseDrop(over_object)
+	if(fuel_cell)
+		usr.visible_message(
+								SPAN_NOTICE("[usr] detach [fuel_cell] from [src]."),
+								SPAN_NOTICE("You detach [fuel_cell] from [src].")
+									)
+		eject_item(fuel_cell, usr)
+		fuel_cell = null
+		update_charge() // Update the charge
+	else
+		to_chat(usr, SPAN_NOTICE("[src] doesn't have an hydrogen fuel cell."))
+
+/obj/item/cell/large/hydrogen/update_icon()
+	icon_state = "[initial(icon_state)]_[fuel_cell ? "1" : "0"]" // hydrogen_1 if it has a fuel cell, hydrogen_0 if it doesn't.
+
+// Subtype that start loaded
+/obj/item/cell/large/hydrogen/loaded/New()
+	..()
+	fuel_cell = new(src)
+	update_charge()
+
+// A cell powered by an ameridian core. It is self-charging and used in the Ameridian Knight Rig, where it cannot be removed.
+/obj/item/cell/large/ameridian
+	name = "ameridian power cell"
+	desc = "An advanced device designed to extract power from ameridian cores. However it can only extract power while not in use."
+	icon_state = "hydrogen"
+	maxcharge = 20000
+	autorecharging = TRUE
+	autorecharge_rate = 0.1
+	price_tag = 600
+	origin_tech = list(TECH_POWER = 15)
+	var/obj/item/ameridian_core/core
+
+/obj/item/cell/large/ameridian/New()
+	..()
+	update_core()
+
+/obj/item/cell/large/ameridian/examine(mob/user)
+	..()
+	if(!core)
+		to_chat(user, SPAN_NOTICE("[src] doesn't have an ameridian core installed."))
+
+/obj/item/cell/large/ameridian/attackby(obj/item/W, mob/user)
+	..()
+	if(istype(W, /obj/item/ameridian_core) && !core)
+		insert_item(W, user) // Insert the fuel cell into the adapter
+		core = W
+		update_core() // Update the charge
+		return
+
+/obj/item/cell/large/ameridian/MouseDrop(over_object)
+	if(core)
+		usr.visible_message(
+								SPAN_NOTICE("[usr] remove [core] from [src]."),
+								SPAN_NOTICE("You remove [core] from [src].")
+									)
+		eject_item(core, usr)
+		core = null
+		update_core() // Update the charge
+	else
+		to_chat(usr, SPAN_NOTICE("[src] doesn't have an ameridian core."))
+
+/obj/item/cell/large/ameridian/update_icon()
+	icon_state = "[initial(icon_state)]_[core ? "1" : "0"]" // hydrogen_1 if it has a core, hydrogen_0 if it doesn't.
+
+/obj/item/cell/large/ameridian/proc/update_core()
+	autorecharging = core ? TRUE : FALSE
+	update_icon()
+
+/obj/item/cell/large/ameridian/loaded/New()
+	..()
+	core = new(src)
+	update_core()
+
 // Hand crank
 /obj/item/device/manual_charger
 	name = "manual recharger"
@@ -391,16 +517,35 @@
 	matter = list(MATERIAL_STEEL = 30)
 	cell = null
 	suitable_cell = /obj/item/cell
+	var/charge_per_cycle = 15
+
+
+/obj/item/device/manual_charger/attackby(obj/item/I, mob/user)
+	if(istype(I, suitable_cell) && insert_item(I, user) && !cell)
+		cell = I
+		return
+	..()
+
+/obj/item/device/manual_charger/MouseDrop(over_object)
+	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
+		cell = null
 
 /obj/item/device/manual_charger/attack_self(mob/user)
-	var/obj/item/cell/cell
-	if(do_after(user, 60 - (1 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
+	if(!cell)
+		return
+	user.visible_message(SPAN_NOTICE("[user] starts turning the handle on [src]."), SPAN_NOTICE("You start to turn the handle on [src]."))
+	if(do_after(user, 12 + (30 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
 		if(!cell)
 			return
 		if(cell.charge >= cell.maxcharge)
 			user.visible_message(SPAN_NOTICE("The cell can not be charged any more!"))
 			return
 		else
-			user.visible_message(SPAN_NOTICE("[user] have started to turn handle on \the [src]."), SPAN_NOTICE("You started to turn handle on \the [src]."))
-			cell.charge += 10
-			return //Stafy Return
+			cell.charge += min(charge_per_cycle, cell.maxcharge - cell.charge)
+			
+			
+// Improv crank
+/obj/item/device/manual_charger/improv
+	name = "handmade manual recharger"
+	desc = "A handmade manual crank charger. Barely capable of charging cells."
+	charge_per_cycle = 4

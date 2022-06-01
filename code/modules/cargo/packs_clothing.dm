@@ -6,18 +6,26 @@
 					/obj/item/clothing/shoes/color/black,
 					/obj/item/clothing/shoes/color/black,
 					/obj/item/clothing/shoes/leather,
-					/obj/item/clothing/suit/storage/wcoat/black)
+					/obj/item/clothing/accessory/waistcoat)
 	name = "Formalwear Crate"
 	cost = 300
 	containertype = /obj/structure/closet
 	crate_name = "formalwear crate"
 	group = "Clothing"
 
+/datum/supply_pack/goldilocks
+	contains = list(/obj/item/clothing/suit/space/void/goldilocks)
+	name = "Goldilocks Crate"
+	cost = 5000
+	containertype = /obj/structure/closet
+	crate_name = "goldilocks crate"
+	group = "Clothing"
+
 /datum/supply_pack/costume
 	name = "Actor Costumes Crate"
 	contains = list(/obj/item/clothing/suit/costume/history/pirate,
 					/obj/item/clothing/suit/costume/job/judge,
-					/obj/item/clothing/suit/storage/wcoat/black,
+					/obj/item/clothing/accessory/waistcoat,
 					/obj/item/clothing/suit/costume/job/nun,
 					/obj/item/clothing/under/rank/first_officer/suit,
 					/obj/item/clothing/suit/costume/history/plaguedoctor,

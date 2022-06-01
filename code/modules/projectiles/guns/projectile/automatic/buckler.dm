@@ -13,7 +13,7 @@
 	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 3)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_SMG|MAG_WELL_PISTOL|MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_GLASS = 5)
 	price_tag = 700
@@ -26,9 +26,10 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND,
-		FULL_AUTO_400
+		BURST_3_ROUND_NOLOSS,
+		FULL_AUTO_400_NOLOSS
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/buckler/update_icon()
 	..()

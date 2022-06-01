@@ -149,6 +149,7 @@
 					/obj/item/storage/box/costume/surplushalloween = 2,
 					/obj/item/storage/box/costume/bonusjustice = 2,
 					/obj/item/storage/box/costume/bonuswrestling = 2,
+					/obj/item/storage/box/costume = 2,
 					//Under
 					/obj/item/clothing/under/colony = 10,
 					//Masks
@@ -208,6 +209,7 @@
 					/obj/item/storage/box/costume/surplushalloween = 200,
 					/obj/item/storage/box/costume/bonusjustice = 200,
 					/obj/item/storage/box/costume/bonuswrestling = 200,
+					/obj/item/storage/box/costume = 200,
 					//Under
 					/obj/item/clothing/under/colony = 15,
 					//Masks
@@ -277,7 +279,7 @@
 		/obj/item/clothing/shoes/jackboots/redboot = 4,
 		/obj/item/clothing/shoes/jackboots/longboot = 3,
 		/obj/item/clothing/shoes/jackboots/german = 4,
-		/obj/item/clothing/shoes/jackboots/laced_jackboots = 4,
+		/obj/item/clothing/shoes/jackboots/duty = 4,
 		/obj/item/clothing/shoes/leather = 3,
 		/obj/item/clothing/shoes/laceup = 3,
 		/obj/item/clothing/shoes/laceup/white = 3,
@@ -442,6 +444,19 @@
 		/obj/item/clothing/suit/gorka/toggle/gorka/crew_y = 10,
 		/obj/item/clothing/suit/gorka/toggle/gorka/standard = 10,
 		/obj/item/clothing/suit/gorka/toggle/gorka/dark = 10,
+		/obj/item/clothing/suit/storage/suitjacket = 10,
+		/obj/item/clothing/suit/storage/suitjacket/black = 10,
+		/obj/item/clothing/suit/storage/suitjacket/blue = 10,
+		/obj/item/clothing/suit/storage/suitjacket/burgundy = 10,
+		/obj/item/clothing/suit/storage/suitjacket/charcoal = 10,
+		/obj/item/clothing/suit/storage/suitjacket/checkered = 10,
+		/obj/item/clothing/suit/storage/suitjacket/green = 10,
+		/obj/item/clothing/suit/storage/suitjacket/navy = 10,
+		/obj/item/clothing/suit/storage/suitjacket/purple = 10,
+		/obj/item/clothing/suit/storage/suitjacket/helltaker = 10,
+		/obj/item/clothing/suit/storage/suitjacket/helltaker/black = 10,
+		/obj/item/clothing/suit/storage/suitjacket/longcardigan_brown = 10,
+		/obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown = 10,
 		/obj/item/clothing/suit/storage/toggle/leather/blackjacket = 2,
 		/obj/item/clothing/suit/storage/toggle/leather/blackvest = 2,
 		/obj/item/clothing/suit/storage/toggle/leather/brownjacket = 2,
@@ -511,7 +526,7 @@
 		/obj/item/clothing/shoes/jackboots/redboot = 45,
 		/obj/item/clothing/shoes/jackboots/longboot = 55,
 		/obj/item/clothing/shoes/jackboots/german = 45,
-		/obj/item/clothing/shoes/jackboots/laced_jackboots = 45,
+		/obj/item/clothing/shoes/jackboots/duty = 45,
 		/obj/item/clothing/shoes/leather = 40,
 		/obj/item/clothing/shoes/laceup = 50,
 		/obj/item/clothing/shoes/laceup/white = 50,
@@ -676,6 +691,19 @@
 		/obj/item/clothing/suit/gorka/toggle/gorka/crew_y = 130,
 		/obj/item/clothing/suit/gorka/toggle/gorka/standard = 130,
 		/obj/item/clothing/suit/gorka/toggle/gorka/dark = 130,
+		/obj/item/clothing/suit/storage/suitjacket = 130,
+		/obj/item/clothing/suit/storage/suitjacket/black = 130,
+		/obj/item/clothing/suit/storage/suitjacket/blue = 130,
+		/obj/item/clothing/suit/storage/suitjacket/burgundy = 130,
+		/obj/item/clothing/suit/storage/suitjacket/charcoal = 130,
+		/obj/item/clothing/suit/storage/suitjacket/checkered = 130,
+		/obj/item/clothing/suit/storage/suitjacket/green = 130,
+		/obj/item/clothing/suit/storage/suitjacket/navy = 130,
+		/obj/item/clothing/suit/storage/suitjacket/purple = 130,
+		/obj/item/clothing/suit/storage/suitjacket/helltaker = 150,
+		/obj/item/clothing/suit/storage/suitjacket/helltaker/black = 150,
+		/obj/item/clothing/suit/storage/suitjacket/longcardigan_brown = 130,
+		/obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown = 130,
 		/obj/item/clothing/suit/storage/toggle/leather/blackjacket = 550,
 		/obj/item/clothing/suit/storage/toggle/leather/blackvest = 550,
 		/obj/item/clothing/suit/storage/toggle/leather/brownjacket = 550,
@@ -702,10 +730,11 @@
 	vend_reply = "Have fun, you shameless pervert!"
 	products = list(
 				/obj/item/clothing/suit/costume/kinky/alyson = 5,
-				/obj/item/clothing/suit/ivory = 5,
-				/obj/item/clothing/suit/blacksilk = 5,
+				/obj/item/clothing/suit/tabard = 5,
+				/obj/item/clothing/suit/tabard/blacksilk = 5,
 				/obj/item/clothing/under/costume/kinky/latex_maid = 5,
 				/obj/item/clothing/under/sexymaid = 5,
+				/obj/item/clothing/head/maid = 5,
 				/obj/item/clothing/under/costume/kinky/leather = 5,
 				/obj/item/clothing/under/costume/kinky/sexy_clown = 5,
 				/obj/item/clothing/under/costume/kinky/sexy_mime = 5,
@@ -729,12 +758,20 @@
 				/obj/item/stack/cable_coil/random = 5,
 				/obj/item/clothing/suit/straight_jacket = 5,
 				/obj/item/legcuffs/fuzzy = 5)
+
+	contraband = list(/obj/item/clothing/under/costume/maid = 5, // plain, modest, humble clothing, you sick freak
+				/obj/item/clothing/suit/costume/job/nun = 5,
+				/obj/item/clothing/head/costume/job/nun = 5,
+				/obj/item/clothing/under/bride_white = 5,
+				/obj/item/clothing/glasses/regular = 5,
+				/obj/item/book/manual/religion/c_bible = 5)
 	prices = list(
 				/obj/item/clothing/suit/costume/kinky/alyson = 100,
-				/obj/item/clothing/suit/ivory = 100,
-				/obj/item/clothing/suit/blacksilk = 100,
+				/obj/item/clothing/suit/tabard = 100,
+				/obj/item/clothing/suit/tabard/blacksilk = 100,
 				/obj/item/clothing/under/costume/kinky/latex_maid = 100,
 				/obj/item/clothing/under/sexymaid = 100,
+				/obj/item/clothing/head/maid = 100,
 				/obj/item/clothing/under/costume/kinky/leather = 100,
 				/obj/item/clothing/under/costume/kinky/sexy_clown = 100,
 				/obj/item/clothing/under/costume/kinky/sexy_mime = 100,
@@ -757,7 +794,13 @@
 				/obj/item/tool/tape_roll = 50,
 				/obj/item/stack/cable_coil/random = 50,
 				/obj/item/clothing/suit/straight_jacket = 100,
-				/obj/item/legcuffs/fuzzy = 100)
+				/obj/item/legcuffs/fuzzy = 100,
+				/obj/item/clothing/under/costume/maid = 100,
+				/obj/item/clothing/suit/costume/job/nun = 100,
+				/obj/item/clothing/head/costume/job/nun = 100,
+				/obj/item/clothing/under/bride_white = 100,
+				/obj/item/clothing/glasses/regular = 100,
+				/obj/item/book/manual/religion/c_bible = 5)
 
 /obj/machinery/vending/fortune
 	name = "The Great Zoltan"
@@ -882,3 +925,5 @@
 					/obj/item/storage/hcases/cardcarp = 0,
 					/obj/item/card_carp = 0,
 					/obj/item/card_carp/index = 0)
+	always_open = TRUE
+

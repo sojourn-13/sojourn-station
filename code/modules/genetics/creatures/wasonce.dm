@@ -151,10 +151,10 @@ Has ability of every roach.
 				to_chat(captive, SPAN_DANGER(pick("The immense strength of the creature is crushing. Wasn't... Flesh supposed to be weak?")))
 				captive.adjustBruteLossByPart(15, pick(captive.organs))
 			else
-				injector.inject_mutations(captive, TRUE)
 				to_chat(captive, SPAN_DANGER(pick(
 					"The mass changes you...", "Veins slip into your flesh and merge with your own", "Parts of yourself fuse to the roiling flesh surrounding you.",
 					"You feel yourself breathing through multiple lungs.", "You feel yourself assimilating with the whole.")))
+				injector.inject_mutations(captive, TRUE)
 		injector.removeAllMutations()
 	if(lethal_to_captive && captives.len && prob(15))
 		for(var/mob/living/captive in captives)

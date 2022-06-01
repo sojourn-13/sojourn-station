@@ -253,7 +253,9 @@
 		/obj/item/tank/emergency_oxygen,
 		/obj/item/tank/emergency_nitgen,
 		/obj/item/gun/projectile/boltgun/flare_gun,
-		/obj/item/ammo_casing/flare
+		/obj/item/ammo_casing/flare,
+		/obj/item/ammo_casing/shotgun,
+		/obj/item/ammo_magazine/speed_loader_shotgun
 		)
 
 /obj/item/storage/pouch/tubular/vial
@@ -308,7 +310,6 @@
 	can_hold = list(
 		/obj/item/gun/projectile/clarissa,
 		/obj/item/gun/projectile/colt,
-		/obj/item/gun/projectile/firefly,
 		/obj/item/gun/projectile/basilisk,
 		/obj/item/gun/projectile/giskard,
 		/obj/item/gun/projectile/gyropistol,
@@ -320,7 +321,6 @@
 		/obj/item/gun/projectile/silenced,
 		/obj/item/gun/projectile/ladon,
 		/obj/item/gun/projectile/glock,
-		/obj/item/gun/projectile/automatic/straylight,
 		/obj/item/gun/energy/glock,
 		/obj/item/gun/energy/ionpistol,
 		/obj/item/gun/energy/gun,

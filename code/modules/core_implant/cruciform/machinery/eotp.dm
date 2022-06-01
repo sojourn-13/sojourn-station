@@ -3,9 +3,11 @@ var/global/obj/machinery/power/eotp/eotp
 
 /obj/machinery/power/eotp
 	name = "Will of the Protector"
-	desc = "A large shard of biomatter that is able to float around when a crusiform is present."
+	desc = "A specialized obelisk designed to supply the surface church with absolutist design disks and blessings from the lower temples. By making offerings of supplies or materials readily produced \
+	by the church, disciples can obtain disks and other goods. The obelisk also provides various blessings and monitors areas protected by obelisks for potential threats to the colony, marked by its \
+	observation level, letting it warn primes and vectors ahead of time. Additionally, it passively gains power before unleashing various blessings to followers."
 	icon = 'icons/obj/eotp.dmi'
-	icon_state = "Eye_of_the_Protector"
+	icon_state = "wotp"
 
 	density = TRUE
 	anchored = TRUE
@@ -15,15 +17,15 @@ var/global/obj/machinery/power/eotp/eotp
 	idle_power_usage = 30
 	active_power_usage = 2500
 
-	var/list/rewards = list(ARMAMENTS, ALERT, INSPIRATION, ODDITY, STAT_BUFF, MATERIAL_REWARD, ENERGY_REWARD)
+	var/list/rewards = list(ALERT, INSPIRATION, STAT_BUFF, ENERGY_REWARD)
 	var/list/current_rewards
 
-	var/list/materials = list(/obj/item/stack/material/gold = 60,
-							/obj/item/stack/material/uranium = 30,
-							/obj/item/stack/material/plasma = 30,
-							/obj/item/stack/material/diamond = 30,
-							/obj/item/stack/material/plasteel = 120,
-							/obj/item/stack/material/silver = 60)
+	var/list/materials = list(/obj/item/stack/material/gold = 20,
+							/obj/item/stack/material/uranium = 10,
+							/obj/item/stack/material/plasma = 10,
+							/obj/item/stack/material/diamond = 5,
+							/obj/item/stack/material/plasteel = 30,
+							/obj/item/stack/material/silver = 20)
 
 
 	var/list/mob/living/carbon/human/scanned = list()
@@ -42,9 +44,9 @@ var/global/obj/machinery/power/eotp/eotp
 	var/last_rescan = 0
 	var/list/armaments = list()
 	var/armaments_points = 0
-	var/max_armaments_points = 1200 //Upped form 100
-	var/armaments_rate = 100
-	var/static/list/unneeded_armaments = list(/datum/armament/item/gun, /datum/armament/item, /datum/armament/item/disk)
+	var/max_armaments_points = 100
+	var/armaments_rate = 10
+	var/static/list/unneeded_armaments = list(/datum/armament/item, /datum/armament/item/disk)
 
 /obj/machinery/power/eotp/New()
 	..()
@@ -64,7 +66,7 @@ var/global/obj/machinery/power/eotp/eotp
 		if(I && I.active && I.wearer)
 			var/comment = "Power level: [power]/[max_power]."
 			comment += "\nObservation level: [observation]/[max_observation]."
-			comment += "\nArmement level: [armaments_points]/[max_armaments_points]"
+			comment += "\nArmament level: [armaments_points]/[max_armaments_points]"
 			to_chat(user, SPAN_NOTICE(comment))
 
 /obj/machinery/power/eotp/Process()
@@ -147,13 +149,13 @@ var/global/obj/machinery/power/eotp/eotp
 
 		if(!antagonist_area)
 			for(var/mob/living/carbon/human/H in disciples)
-				to_chat(H, SPAN_NOTICE("You feel a wave of calm pass over you. The Angels are watching with their benevolent Eye."))
 				if(H.sanity && prob(50))
 					//H.sanity.changeLevel(20)
 					H.adjustOxyLoss(-50)
 					H.adjustToxLoss(-15)
 					H.adjustBruteLoss(-15)
 					H.adjustFireLoss(-15)
+					to_chat(H, SPAN_NOTICE("You feel a wave of calm pass over you. Your cruciform does a quick routine maintenance, patching any potential minor wounds across your body."))
 
 		else
 			for(var/mob/living/carbon/human/H in disciples)
@@ -164,7 +166,7 @@ var/global/obj/machinery/power/eotp/eotp
 				preacher = pick(disciples)
 
 			if(preacher)
-				to_chat(preacher, SPAN_DANGER("You feel an evil presence lurking in [antagonist_area].")) // will say 'you feel an evil presence lurking in the Kitchen' or whatever
+				to_chat(preacher, SPAN_DANGER("You feel a strange presence lurking in [antagonist_area].")) // will say 'you feel an evil presence lurking in the Kitchen' or whatever
 
 	else if(type_release == INSPIRATION)
 		for(var/mob/living/carbon/human/H in disciples)
@@ -174,34 +176,36 @@ var/global/obj/machinery/power/eotp/eotp
 				H.adjustToxLoss(-15)
 				H.adjustBruteLoss(-15)
 				H.adjustFireLoss(-15)
-
+				to_chat(H, SPAN_NOTICE("You feel a wave of calm pass over you. Your cruciform does a quick routine maintenance, patching any potential minor wounds across your body."))
+/*
 	else if(type_release == ODDITY)
 		var/oddity_reward = pick(subtypesof(/obj/item/oddity/nt))
 		var/obj/item/_item = new oddity_reward(get_turf(src))
-		visible_message(SPAN_NOTICE("The [_item.name] appers out of bluespace near the [src]!"))
+		visible_message(SPAN_NOTICE("The [_item.name] appears out of bluespace near the [src]!"))
 		rewards -= ODDITY
-
+*/
 	else if(type_release == STAT_BUFF)
 		var/random_stat = pick(ALL_STATS)
 		for(var/mob/living/carbon/human/H in disciples)
 			if(H.stats)
-				to_chat(H, SPAN_NOTICE("You feel the gaze of [src] pierce your mind, body, and soul. You are enlightened, and gain deeper knowledge in [random_stat]; however, you can already feel this newfound knowledge beginning to slip away.."))
+				to_chat(H, SPAN_NOTICE("You feel the blessing of the church upon you. You are enlightened, and gain deeper knowledge in [random_stat]; however, you can already feel this new-found knowledge is temporary."))
 				H.stats.addTempStat(random_stat, stat_buff_power, 20 MINUTES, "Eye_of_the_Protector")
-
+/*
 	else if(type_release == MATERIAL_REWARD)
 		var/materials_reward = pick(materials)
-		var/reward_min_amount = materials[materials_reward]
+		//var/reward_min_amount = materials[materials_reward] - Soj Edit we use a pick system
 		var/obj/item/stack/material/_item = new materials_reward(get_turf(src))
-		_item.amount = rand(reward_min_amount, _item.max_amount)
-		visible_message(SPAN_NOTICE("The [_item.name] appers out of bluespace near the [src]!"))
-
+		//4 10s, 5 15s, 2 20s, were likely to get get lower then higher
+		_item.amount = pick(10, 10, 10, 10, 15, 15, 15, 15, 15, 20, 20)
+		visible_message(SPAN_NOTICE("The [_item.name] appears out of the base of the  [src]!"))
+*/
 	else if(type_release == ENERGY_REWARD)
 		for(var/mob/living/carbon/human/H in disciples)
 			var/obj/item/implant/core_implant/cruciform/C = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
 			C.power_regen += initial(C.power_regen)
-			to_chat(H, SPAN_NOTICE("Your cruciform vibrates."))
+			to_chat(H, SPAN_NOTICE("Your cruciform vibrates, its power regeneration enhancing temporarily."))
 
-	for(var/disciple in disciples)
-		to_chat(disciple, SPAN_NOTICE("A miracle has occured at the [src]! May the Angels live forever!"))
+	//for(var/disciple in disciples)
+	//	to_chat(disciple, SPAN_NOTICE("A miracle has occured at the [src]! May the Angels live forever!"))
 
 	GLOB.miracle_points++

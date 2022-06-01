@@ -117,13 +117,13 @@
 	dark_color = "#00ff00"
 	light_color = "#008000"
 
-	cold_level_1 = 200 //Default 260
-	cold_level_2 = 140 //Default 200
-	cold_level_3 = 80  //Default 120
+	cold_level_1 = 240 //Default 270
+	cold_level_2 = 215 //Default 230
+	cold_level_3 = 190  //Default 200
 
-	heat_level_1 = 420 //Default 360
-	heat_level_2 = 460 //Default 400
-	heat_level_3 = 1200 //Default 1000
+	heat_level_1 = 340 //Default 330
+	heat_level_2 = 400 //Default 380
+	heat_level_3 = 480 //Default 460
 
 	heat_discomfort_level = 340
 	heat_discomfort_strings = list(
@@ -132,7 +132,7 @@
 		"Your overheated skin itches."
 		)
 
-	cold_discomfort_level = 275
+	cold_discomfort_level = 240
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
@@ -165,6 +165,7 @@
 	name_plural = "Mar'quas"
 	default_form = FORM_MARQUA
 	obligate_form = TRUE
+	reagent_tag = IS_MARQUA
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick)
 	darksight = 4
 	num_alternate_languages = 2
@@ -178,11 +179,11 @@
 	dark_color = "#afeeee"
 	light_color = "#20b2aa"
 
-	cold_level_1 = 140 //Default 260
-	cold_level_2 = 80 //Default 200
-	cold_level_3 = 20  //Default 120
+	cold_level_1 = 230 //Default 270
+	cold_level_2 = 210 //Default 230
+	cold_level_3 = 190  //Default 200
 
-	cold_discomfort_level = 200
+	cold_discomfort_level = 230
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
@@ -196,6 +197,18 @@
 		STAT_MEC = 10
 	)
 
+	has_process = list(    // which required-organ checks are conducted.
+		OP_HEART        = /obj/item/organ/internal/heart,
+		OP_LUNGS        = /obj/item/organ/internal/lungs,
+		OP_STOMACH      = /obj/item/organ/internal/stomach,
+		OP_LIVER        = /obj/item/organ/internal/liver,
+		OP_KIDNEY_LEFT  = /obj/item/organ/internal/kidney,
+		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney,
+		BP_BRAIN        = /obj/item/organ/internal/brain,
+		OP_APPENDIX     = /obj/item/organ/internal/appendix,
+		OP_EYES         = /obj/item/organ/internal/eyes/marqua
+	)
+
 	permitted_ears  = list()
 	permitted_tail  = list()
 	permitted_wings = list()
@@ -204,6 +217,9 @@
 
 /datum/species/marqua/get_bodytype()
 	return "Mar'Qua"
+
+
+
 
 /datum/species/kriosan
 	name = "Kriosan"
@@ -257,7 +273,8 @@
 		"Vulpkanin Tail",
 		"Vulpkanin Tail 2",
 		"Vulpkanin Tail 3",
-		"Wolf Tail"
+		"Wolf Tail",
+		"Jackal Tail"
 		)
 	permitted_wings = list()
 
@@ -281,11 +298,11 @@
 	taste_sensitivity = TASTE_DULL
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.25
 
-	cold_level_1 = 200 //Default 260
-	cold_level_2 = 140 //Default 200
-	cold_level_3 = 80  //Default 120
+	cold_level_1 = 240 //Default 270
+	cold_level_2 = 200 //Default 230
+	cold_level_3 = 170  //Default 200
 
-	cold_discomfort_level = 200
+	cold_discomfort_level = 240
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
@@ -496,15 +513,15 @@
 		STAT_TGH = 2
 	)
 
-	cold_level_1 = 280 //Default 260
-	cold_level_2 = 220 //Default 200
-	cold_level_3 = 140  //Default 120
+	cold_level_1 = 290 //Default 270
+	cold_level_2 = 265 //Default 230
+	cold_level_3 = 240  //Default 200
 
-	heat_level_1 = 450 //Default 360
-	heat_level_2 = 520 //Default 400
-	heat_level_3 = 1400 //Default 1000
+	heat_level_1 = 370 //Default 330
+	heat_level_2 = 410 //Default 380
+	heat_level_3 = 500 //Default 460
 
-	heat_discomfort_level = 400
+	heat_discomfort_level = 370
 	heat_discomfort_strings = list(
 		"Your scales prickles in the heat.",
 		"You feel uncomfortably warm.",
@@ -514,7 +531,7 @@
 	dark_color = "#660066"
 	light_color = "#660066"
 
-	cold_discomfort_level = 300
+	cold_discomfort_level = 290
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
@@ -536,12 +553,14 @@
 	permitted_ears  = list("Frills, Aquatic",
 		"Frills, Drake",
 		"Frills, Short",
-		"Frills, Simple"
+		"Frills, Simple",
+		"Frills, Big"
 		)
 	permitted_tail  = list("Render Tail",
 		"Snake Tail",
 		"Lizard Tail",
-		"Lizard Tail, Short"
+		"Lizard Tail, Short",
+		"Lizard Tail, Dark Tiger"
 		)
 	permitted_wings = list("Spines, Aquatic",
 		"Spines, Long",

@@ -11,7 +11,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	price_tag = 750
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	proj_step_multiplier = 0.8
 	damage_multiplier = 1.6
@@ -19,6 +19,7 @@
 	recoil_buildup = 2
 	one_hand_penalty = 4
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/silenced/update_icon()
 	..()

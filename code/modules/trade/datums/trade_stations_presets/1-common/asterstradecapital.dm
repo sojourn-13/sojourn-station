@@ -9,13 +9,13 @@
 	uid = "asterstradecapital"
 	start_discovered = TRUE
 	spawn_always = TRUE
-	markup = COMMON_GOODS
+	markup = WHOLESALE_GOODS
 	base_income = 1600
 	wealth = 0
-	secret_inv_threshold = 2000
+	hidden_inv_threshold  = 2000
 	recommendation_threshold = 4000
-	stations_recommended = list("casino" , "kriosanconfederacy")
-	assortiment = list(
+	stations_recommended = list("casino", "kriosanconfederacy")
+	inventory  = list(
 		"Tools and Equipment" = list(
 			/obj/item/clothing/suit/storage/hazardvest,
 			/obj/item/storage/pouch/small_generic,
@@ -23,14 +23,16 @@
 			/obj/item/storage/belt/utility,
 			/obj/item/device/lighting/toggleable/flashlight,
 			/obj/item/device/lighting/toggleable/flashlight/heavy,
-			/obj/item/tool/omnitool = good_data("Lonestar \"Munchkin 5000\"", list(1, 3)),
+			/obj/item/tool/omnitool = good_data("Lonestar \"Munchkin 5000\"", list(1, 3), 1000),
 			/obj/item/tool/crowbar,
 			/obj/item/tool/screwdriver,
 			/obj/item/tool/shovel,
 			/obj/item/tool/wirecutters,
 			/obj/item/tool/wrench,
 			/obj/item/tool/weldingtool,
-			/obj/item/tool/tape_roll
+			/obj/item/tool/tape_roll,
+			/obj/item/device/geiger,
+			/obj/item/device/toner
 		),
 		"Lonestar Cells" = list(
 			/obj/item/cell/small,
@@ -43,8 +45,13 @@
 			/obj/item/cell/large/high,
 			/obj/item/cell/large/super
 		),
+		"Lonestar Grenade" = list(
+			/obj/item/grenade/chem_grenade/antiweed,
+			/obj/item/grenade/chem_grenade/cleaner,
+			/obj/item/grenade/chem_grenade/metalfoam
+		),
 		"Toys" = list(
-			/obj/item/toy/junk/balloon = good_data("Water Balloon", list(1, 50)),
+			/obj/item/toy/junk/balloon = good_data("Water Balloon", list(1, 50), 5),
 			/obj/item/toy/junk/blink,
 			/obj/item/toy/junk/inflatable_duck,
 			/obj/item/toy/junk/eight_ball,
@@ -89,28 +96,50 @@
 			/obj/item/storage/photo_album,
 			/obj/item/wrapping_paper,
 			/obj/item/packageWrap,
-			/obj/item/reagent_containers/glass/paint/red = good_data("Red Paint", list(1, 10)),
-			/obj/item/reagent_containers/glass/paint/green = good_data("Green Paint", list(1, 10)),
-			/obj/item/reagent_containers/glass/paint/blue = good_data("Blue Paint", list(1, 10)),
-			/obj/item/reagent_containers/glass/paint/yellow = good_data("Yellow Paint", list(1, 10)),
-			/obj/item/reagent_containers/glass/paint/purple = good_data("Purple Paint", list(1, 10)),
-			/obj/item/reagent_containers/glass/paint/black = good_data("Black Paint", list(1, 10)),
-			/obj/item/reagent_containers/glass/paint/white = good_data("White Paint", list(1, 10)),
-			/obj/item/storage/lunchbox = good_data("Lunchbox", list(1, 10)),
-			/obj/item/storage/lunchbox/rainbow = good_data("Rainbow Lunchbox", list(1, 10)),
-			/obj/item/storage/lunchbox/cat = good_data("Cat Lunchbox", list(1, 10))
+			/obj/item/reagent_containers/glass/paint/red = good_data("Red Paint", list(1, 10), 50),
+			/obj/item/reagent_containers/glass/paint/green = good_data("Green Paint", list(1, 10), 50),
+			/obj/item/reagent_containers/glass/paint/blue = good_data("Blue Paint", list(1, 10), 50),
+			/obj/item/reagent_containers/glass/paint/yellow = good_data("Yellow Paint", list(1, 10), 50),
+			/obj/item/reagent_containers/glass/paint/purple = good_data("Purple Paint", list(1, 10), 50),
+			/obj/item/reagent_containers/glass/paint/black = good_data("Black Paint", list(1, 10), 50),
+			/obj/item/reagent_containers/glass/paint/white = good_data("White Paint", list(1, 10), 45),
+			/obj/item/storage/lunchbox = good_data("Lunchbox", list(1, 10), 30),
+			/obj/item/storage/lunchbox/rainbow = good_data("Rainbow Lunchbox", list(1, 10), 30),
+			/obj/item/storage/lunchbox/cat = good_data("Cat Lunchbox", list(1, 10), 30)
 		)
 	)
 
-	secret_inventory = list(
+	hidden_inventory = list(
 		"Robustcell-X" = list(
 			/obj/item/cell/large/hyper,
 			/obj/item/cell/medium/hyper,
 			/obj/item/cell/small/hyper
 		),
+		"Imported Liquids" = list(
+			/obj/item/weldpack,
+			/obj/item/weldpack/canister,
+			/obj/structure/reagent_dispensers/fueltank,
+			/obj/structure/reagent_dispensers/watertank,
+			/obj/structure/reagent_dispensers/watertank/huge
+		),
+		"LSS Novelties" = list(
+			/obj/item/gun/projectile/revolver/longboi,
+			/obj/item/gun_upgrade/trigger/honker,
+			/obj/item/clothing/glasses/sunglasses/big,
+			/obj/item/gun/projectile/avasarala,
+		),
 		"LSS Toolmods" = list(
 			/obj/item/tool_upgrade/productivity/diamond_blade,
 			/obj/item/tool_upgrade/refinement/laserguide
+		),
+		"LSS Music" = list(
+			/obj/item/device/synthesized_instrument/guitar,
+			/obj/item/device/synthesized_instrument/guitar/multi,
+			/obj/item/device/synthesized_instrument/synthesizer,
+			/obj/item/device/synthesized_instrument/trumpet,
+			/obj/item/device/synthesized_instrument/violin,
+			/obj/structure/synthesized_instrument/synthesizer/piano = good_data("Piano", list(-4, 2), 1200),
+			/obj/item/media/boombox = good_data("Boom Box", list(-400000000, -399999999), 300) //When will K5 fix this???
 		),
 		"Nicknacks & Bobbles" = list(
 			/obj/item/oddity/ls/collector_coin = custom_good_amount_range(list(3, 6)),
@@ -132,58 +161,6 @@
 			/obj/item/oddity/ls/inertdetonator = custom_good_amount_range(list(3, 6))
 		)
 	)
-
-/* - Why mech stuff, also this isnt compatable in SoJ
-	secret_inventory = list(
-		"Exosuits" = list(
-			/mob/living/exosuit/premade/powerloader/firefighter,
-			/mob/living/exosuit/premade/powerloader/flames_blue,
-			/mob/living/exosuit/premade/powerloader/flames_red,
-			/mob/living/exosuit/premade/light,
-			/mob/living/exosuit/premade/heavy,
-			/mob/living/exosuit/premade/combat/slayer,
-		),
-		"Mech Armor" = list(
-			/obj/item/robot_parts/robot_component/armour/exosuit/plain,
-			/obj/item/robot_parts/robot_component/armour/exosuit/radproof,
-			/obj/item/robot_parts/robot_component/armour/exosuit/ablative,
-			/obj/item/robot_parts/robot_component/armour/exosuit/combat,
-		),
-		"Parts" = list(
-			/obj/item/mech_component/chassis,
-			/obj/item/mech_component/manipulators,
-			/obj/item/mech_component/sensors,
-			/obj/item/mech_component/propulsion,
-		),
-		"Soft" = list(
-			/obj/item/electronics/circuitboard/exosystem/engineering,
-			/obj/item/electronics/circuitboard/exosystem/utility,
-			/obj/item/electronics/circuitboard/exosystem/medical,
-			/obj/item/electronics/circuitboard/exosystem/weapons,
-		),
-		"Equipment" = list(
-			/obj/item/mech_equipment/mounted_system/taser,
-			/obj/item/mech_equipment/mounted_system/taser/ion,
-			/obj/item/mech_equipment/mounted_system/taser/plasma,
-			/obj/item/mech_equipment/mounted_system/rcd,
-			/obj/item/mech_equipment/clamp,
-			/obj/item/mech_equipment/light,
-			/obj/item/mech_equipment/drill,
-			/obj/item/mech_equipment/mounted_system/extinguisher,
-			/obj/item/mech_equipment/sleeper,
-		),
-	)
-
-	offer_types = list(
-		/obj/item/mech_component/ = offer_data("mech component", 150, 10),															// base price: 150
-		/obj/item/mech_equipment/ = offer_data("mech equipment", 200, 10),															// base price: 200
-		/obj/item/robot_parts/robot_component/armour/exosuit/plain = offer_data("exosuit armor plating", 300, 8),					// base price: 300
-		/obj/item/robot_parts/robot_component/armour/exosuit/radproof = offer_data("rad-proof exosuit armor plating", 500, 8),		// base price: 500
-		/obj/item/robot_parts/robot_component/armour/exosuit/ablative = offer_data("ablative exosuit armor plating", 550, 8),		// base price: 550
-		/obj/item/robot_parts/robot_component/armour/exosuit/combat = offer_data("combat exosuit armor plating", 1000, 8),			// base price: 1000
-		/obj/item/organ/external/robotic/one_star = offer_data("onestar external prosthetic", 1800, 4),								// base price: 900
-		/obj/item/organ/external/robotic/serbian = offer_data("serbian external prosthetic", 600, 8),								// base price: 600; roundstart item, but you'd be giving up an arm and a leg for cash
-	)*/
 
 	offer_types = list(
 		/obj/item/tool/knife = offer_data("spare knifes", 150, 30),

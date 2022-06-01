@@ -12,7 +12,6 @@
 				/obj/item/gun/energy/shrapnel = 4,\
 				/obj/item/gun/energy/lasersmg = 3,\
 				/obj/item/ammo_kit = 3,\
-				/obj/item/gun/projectile/automatic/alemao = 2,\
 				/obj/item/gun/projectile/giskard = 2,\
 				/obj/item/gun/projectile/automatic/luger = 1,\
 				/obj/item/gun/projectile/boltgun/sa = 3,\
@@ -31,7 +30,6 @@
 				/obj/item/gun/projectile/boltgun/sawn/sa = 1,\
 				/obj/item/gun/projectile/boltgun/sawn/scout = 0.5,\
 				/obj/item/gun/projectile/handmade_pistol = 2,\
-				/obj/item/gun/projectile/automatic/alemao = 2, \
 				/obj/item/gun/projectile/automatic/luger = 0.1, \
 				/obj/item/gun/projectile/boltgun/zatvor = 2, \
 				//obj/item/gun/projectile/ladon/sa = 1,
@@ -84,7 +82,6 @@
 				/obj/item/gun/projectile/boltgun/sa = 2,\
 				//obj/item/gun/projectile/boltgun/scout/light = 2,
 				//obj/item/gun/projectile/boltgun/scout/light/wood = 2,
-				/obj/item/gun/projectile/firefly = 2,
 				/obj/item/ammo_kit = 2,
 				/obj/item/gun_upgrade/trigger/dangerzone = 1,
 				/obj/item/gun_upgrade/trigger/cop_block = 1,
@@ -153,7 +150,7 @@
 				/obj/item/gun/projectile/ladon = 1,\
 				/obj/item/gun/projectile/lamia/akurra = 1,\
 				/obj/item/gun/projectile/basilisk = 2,\
-				/obj/item/gun/projectile/automatic/survivalrifle = 1,\
+				/obj/item/gun/projectile/boltgun/survivalrifle = 1,\
 				/obj/item/gun/projectile/revolver/tacticool_revolver = 1,\
 				/obj/item/gun/projectile/revolver/mateba = 1,\
 				/obj/item/gun/projectile/silenced = 2,\

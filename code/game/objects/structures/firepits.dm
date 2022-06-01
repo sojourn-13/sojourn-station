@@ -55,7 +55,7 @@
 		current_steak = W // Start cooking the steak
 		insert_item(W, user) // insert the steak inside the fire
 
-	else if(istype(W, MATERIAL_WOOD)) // If it's wood, use it as fuel
+	else if(istype(W, /obj/item/stack/material/wood)) // If it's wood, use it as fuel
 		add_fuel(W, user)
 
 	else if(isflamesource(W))

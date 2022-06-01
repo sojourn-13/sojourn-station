@@ -12,6 +12,8 @@
 	projectile_cost = 1
 	projectile_type = /obj/item/projectile/beam/sniper/judgement
 	max_upgrades = 0 //Its a book or staff...
+	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/matter/holybook/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
 	var/obj/item/implant/core_implant/I = user.get_core_implant(/obj/item/implant/core_implant/cruciform)
@@ -39,15 +41,16 @@
 	to bash your enemies over the head."
 	icon = 'icons/obj/guns/matter/harmony_scepter.dmi'
 	icon_state = "harmony_scepter"
-	projectile_type = /obj/item/projectile/beam/sniper/healing/staff
+	projectile_type = /obj/item/projectile/beam/sniper/healing/harmony
 	//Theirs better weapons then this!
+	fire_sound = 'sound/weapons/magical.ogg'
 	force = WEAPON_FORCE_ROBUST
 	armor_penetration = ARMOR_PEN_EXTREME
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	max_stored_matter = 20
-	fire_delay = 5
+	fire_delay = 15
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_BIOMATTER = 20, MATERIAL_GOLD = 10)
-	price_tag = 3000 //So its worth stealing >:D
+	price_tag = 3000
 	w_class = ITEM_SIZE_HUGE
 
 /obj/item/gun/matter/holybook/staff/attack()

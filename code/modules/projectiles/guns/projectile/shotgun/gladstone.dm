@@ -8,7 +8,8 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	max_shells = 7
 	caliber = CAL_SHOTGUN
-	damage_multiplier = 1
+	damage_multiplier = 1.1
+	penetration_multiplier = 1.1 //Combat shotgun shouldn't be worse than makeshift shotgun
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	price_tag = 850
@@ -16,6 +17,7 @@
 	one_hand_penalty = 14
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/gladstone/sawn
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/shotgun/pump/gladstone/sawn
 	name = "\"Gladstone\" stakeout shotgun"
@@ -26,6 +28,7 @@
 	max_shells = 4
 	w_class = ITEM_SIZE_BULKY
 	damage_multiplier = 0.8
+	penetration_multiplier = 0.9
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 6)
 	price_tag = 450
 	recoil_buildup = 22
@@ -52,3 +55,4 @@
 	recoil_buildup = 12
 	one_hand_penalty = 30 //lets not really reward 1 handing
 	saw_off = FALSE
+	serial_type = "BlueCross"

@@ -819,3 +819,10 @@ var/list/name_to_material
 	sheet_singular_name = "shard"
 	sheet_plural_name = "shards"
 	stack_origin_tech = list(TECH_MATERIAL = 9)
+
+/material/refined_scrap
+	name = MATERIAL_RSCRAP
+	stack_type = /obj/item/stack/sheet/refined_scrap
+	icon_colour = "B7410E"
+	sheet_singular_name = "piece"
+	sheet_plural_name = "pieces"

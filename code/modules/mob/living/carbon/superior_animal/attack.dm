@@ -29,12 +29,15 @@
 	src.destroySurroundings()
 
 /mob/living/carbon/superior_animal/RangedAttack()
+	if(!check_if_alive()) return
+	var/atom/targetted_mob = (target_mob?.resolve())
+
 	if(ranged)
-		if(get_dist(src, target_mob) <= 6 && !istype(src, /mob/living/simple_animal/hostile/megafauna))
-			OpenFire(target_mob)
+		if(get_dist(src, targetted_mob) <= 6 && !istype(src, /mob/living/simple_animal/hostile/megafauna))
+			OpenFire(targetted_mob)
 		else
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to(src, target_mob, 1, move_to_delay)
+			walk_to(src, targetted_mob, 1, move_to_delay)
 		if(ranged && istype(src, /mob/living/simple_animal/hostile/megafauna))
 			var/mob/living/simple_animal/hostile/megafauna/megafauna = src
 			sleep(rand(megafauna.megafauna_min_cooldown,megafauna.megafauna_max_cooldown))
@@ -42,43 +45,45 @@
 				if(prob(rand(15,25)))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, target_mob, 1, move_to_delay)
+					walk_to(src, targetted_mob, 1, move_to_delay)
 				else
-					OpenFire(target_mob)
+					OpenFire(targetted_mob)
 			else
 				if(prob(45))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, target_mob, 1, move_to_delay)
+					walk_to(src, targetted_mob, 1, move_to_delay)
 				else
-					OpenFire(target_mob)
+					OpenFire(targetted_mob)
 		else
 			return
 
-/mob/living/carbon/superior_animal/proc/OpenFire(target_mob)
-	var/target = target_mob
-	visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"), 1)
+/mob/living/carbon/superior_animal/proc/OpenFire(var/atom/firing_target)
+	if(!check_if_alive()) return
+	var/atom/target = firing_target
 
 	if(rapid)
-		spawn(6)
-			Shoot(target, loc, src)
-			sleep(1) //Lets make sure we shoot so we add a small stop gap to not go to fast
-			handle_ammo_check()
-		spawn(10)
-			Shoot(target, loc, src)
-			sleep(1)
-			handle_ammo_check()
-		spawn(14)
-			Shoot(target, loc, src)
-			sleep(1)
+		for(var/shotsfired = 0, shotsfired < rapid_fire_shooting_amount, shotsfired++)
+			if(!check_if_alive())
+				break
+			addtimer(CALLBACK(src, .proc/Shoot, target, loc, src), (delay_for_rapid_range * shotsfired))
 			handle_ammo_check()
 	else
 		Shoot(target, loc, src)
-		sleep(1)
 		handle_ammo_check()
 
-	stance = HOSTILE_STANCE_IDLE
-	target_mob = null
+	if (!firing_target)
+		loseTarget()
+		return
+
+	if (!firing_target.check_if_alive(TRUE))
+		loseTarget()
+		return
+
+	if (firing_target.z != src.z)
+		loseTarget()
+		return
+
 	return
 
 /mob/living/carbon/superior_animal/proc/handle_ammo_check()
@@ -103,6 +108,7 @@
 		return
 
 	var/obj/item/projectile/A = new projectiletype(user:loc)
+	visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"), 1)
 	if(casingtype)
 		new casingtype(get_turf(src))
 	playsound(user, projectilesound, 100, 1)

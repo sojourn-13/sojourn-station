@@ -16,6 +16,11 @@
 		list(mode_name="stunbolt", mode_desc="Fires a ball of condenced energy to disable people", projectile_type=/obj/item/projectile/energy/electrode, fire_delay=25, charge_cost = 300, icon="destroy"),
 		list(mode_name="stunshot", mode_desc="Fires a ball of highly condenced energy to disable people almost instantly", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=50, charge_cost = 600, icon="vaporize"), //Takes 1 full level 1 M cell
 	)
+	serial_type = "Absolute"
+
+/obj/item/gun/energy/taser/make_old()
+	. = ..()
+	serial_type = "SD GmbH"
 
 /obj/item/gun/energy/taser/mounted
 	name = "mounted taser gun"
@@ -63,6 +68,7 @@
 	desc = "Also know as stun revolver. Seinemetall Defense GmbH with Soteria Institute solution for non-lethal takedowns, its rather simple deisign has a smaller capacity in exchange for S-cells use. \
 			The now outdated design was the base for the much more successfull \"Counselor\". This verson is almost identical to the \"Zeus\" only being repainted after Seinemetall Defense GmbH moved to ballistics based manufacturing."
 	icon = 'icons/obj/guns/energy/si_stunrevolver.dmi'
+	serial_type = "SI"
 
 /obj/item/gun/energy/taser/blackshield
 

@@ -6,7 +6,7 @@
 	item_state = "basilisk"
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_50
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 800
@@ -21,6 +21,7 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	auto_eject = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/basilisk/update_icon()
 	..()

@@ -12,12 +12,12 @@
 	caliber = CAL_HRIFLE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_HRIFLE
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
-	price_tag = 1000
-	penetration_multiplier = 1.2
-	damage_multiplier = 1.1
+	price_tag = 1250
+	penetration_multiplier = 1.0
+	damage_multiplier = 1.0
 	recoil_buildup = 10
 	one_hand_penalty = 10
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
@@ -29,6 +29,7 @@
 	init_firemodes = list(
 	SEMI_AUTO_NODELAY
 	)
+	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/automatic/omnirifle/update_icon()
 	..()
@@ -64,8 +65,9 @@
 	icon_state = "omnirifle"
 	item_state = "omnirifle"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
-	price_tag = 1250
-	zoom_factor = 0.3
+	mag_well = MAG_WELL_HRIFLE
+	price_tag = 1500
+	zoom_factor = 0.4
 	recoil_buildup = 2.5
 	one_hand_penalty = 10
 	penetration_multiplier = 1
@@ -82,12 +84,12 @@
 	desc = "A heavy front line designated marksman rifle manufactured by H&S, also known as the M13A2 Special Purpose Rifle in its generic military form. \
 		 Either a copy or 'liberated' example, it fires a variety of utility and specialized munitions. \
 		 Chambered in .408, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
-		 This example is fitted with an advanced combat sight and limited to semiautomatic and two-round burst."
+		 This example is fitted with an advanced combat sight and limited to semiautomatic and burst modes."
 	icon = 'icons/obj/guns/projectile/DMR.dmi'
 	icon_state = "DMR"
 	item_state = "DMR"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
-	price_tag = 1500
+	price_tag = 1750
 	damage_multiplier = 1.2
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
@@ -103,6 +105,7 @@
 		BURST_3_ROUND,
 		BURST_2_ROUND
 		)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/automatic/omnirifle/fancy
 	name = "\"Osprey\" precision rifle"
@@ -114,13 +117,14 @@
 	icon_state = "osprey"
 	item_state = "osprey"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_GLASS = 10)
-	price_tag = 1750
+	price_tag = 2000
 	recoil_buildup = 3.25
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.2
 	zoom_factor = 1.2
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine
 	name = "\"Boar\" heavy carbine"
@@ -133,16 +137,18 @@
 	item_state = "boar"
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
+	mag_well = MAG_WELL_HRIFLE
 	price_tag = 1250
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
-	damage_multiplier = 0.8
+	damage_multiplier = 1
 	recoil_buildup = 6
-	penetration_multiplier = 0.8
+	penetration_multiplier = 0.7
 	one_hand_penalty = 25
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_600
 		)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/rds
 	name = "\"Warthog\" advanced carbine"
@@ -154,11 +160,13 @@
 	icon_state = "warthog"
 	item_state = "warthog"
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
+	mag_well = MAG_WELL_HRIFLE
 	price_tag = 1500
-	damage_multiplier = 0.8
+	penetration_multiplier = 1.2
+	damage_multiplier = 1.1
 	recoil_buildup = 3.25
 	one_hand_penalty = 23
-	zoom_factor = 0.3
+	zoom_factor = 0.4
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND

@@ -353,6 +353,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 
 /obj/item/card/id/bst
 	icon_state = "centcom"
+	group = "secblue"
 	desc = "An ID straight from Central Command. This one looks highly classified."
 
 /obj/item/card/id/bst/New()

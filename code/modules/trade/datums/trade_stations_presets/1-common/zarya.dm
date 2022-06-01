@@ -9,10 +9,10 @@
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
-	secret_inv_threshold = 1000
+	hidden_inv_threshold = 1000
 	recommendation_threshold = 3000
 	stations_recommended = list("techno_adv")
-	assortiment = list(
+	inventory = list(
 		"Vozduh" = list(
 			/obj/machinery/portable_atmospherics/canister/sleeping_agent,
 			/obj/machinery/portable_atmospherics/canister/nitrogen,
@@ -42,20 +42,50 @@
 			/obj/item/storage/briefcase/inflatable/empty,
 			/obj/item/inflatable/door,
 			/obj/item/inflatable/wall,
-			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(3, 5)),
+			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(3, 5), 660), //Better deal here
+			/obj/item/stack/material/glass/plasmaglass = good_data("borosilicate glass sheets (x120)", list(3, 5), 3200),
 			/obj/item/storage/belt/utility/full,
 			/obj/item/clothing/head/welding,
 			/obj/item/tool/omnitool,
+			/obj/item/device/geiger,
 			/obj/structure/reagent_dispensers/fueltank,
 			/obj/machinery/floodlight
 		)
 	)
 
-	secret_inventory = list(
+	hidden_inventory = list(
 		"Sverkhmateriya" = list(
 			/obj/machinery/power/supermatter
+		),
+
+		"Bystroye Stroitel'stvo" = list(
+			/obj/item/rcd/industrial = good_data("Industrial RCD", list(-1, 1), 4500),
+			/obj/item/rcd = good_data("RCD", list(1, 2), 2500)
+		),
+
+		"Antiveshchestvo" = list(
+			/obj/item/am_containment = good_data("Antimatter Fuel Jar", list(3, 5), 500),
+			/obj/item/am_shielding_container = good_data("Antimatter Sheilding Kit", list(3, 5), 300)
+		),
+		"Plokhiye Idei" = list(
+			/obj/item/am_containment = good_data("Antimatter Fuel Jar", list(3, 5), 500),
+			/obj/item/am_shielding_container = good_data("Antimatter Sheilding Kit", list(3, 5), 300),
+			/obj/machinery/power/emitter,
+			/obj/machinery/field_generator,
+			/obj/machinery/shieldwallgen,
+			/obj/machinery/the_singularitygen,
+			/obj/machinery/power/rad_collector,
+			/obj/structure/particle_accelerator/fuel_chamber,
+			/obj/machinery/particle_accelerator/control_box,
+			/obj/structure/particle_accelerator/particle_emitter/center,
+			/obj/structure/particle_accelerator/particle_emitter/left,
+			/obj/structure/particle_accelerator/particle_emitter/right,
+			/obj/structure/particle_accelerator/power_box,
+			/obj/structure/particle_accelerator/end_cap
 		)
 	)
+
+
 
 	offer_types = list(
 		//obj/item/tool_upgrade = offer_data("tool upgrade", 200, 0),				// base price: 200 exploitable with other trade stations

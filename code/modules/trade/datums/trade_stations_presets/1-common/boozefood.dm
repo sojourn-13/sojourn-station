@@ -8,10 +8,10 @@
 	base_income = 1600
 	markup = COMMON_GOODS
 	wealth = 0
-	secret_inv_threshold = 2000
+	hidden_inv_threshold = 2000
 	recommendation_threshold = 4000
 	stations_recommended = list("mcronalds", "serbian")
-	assortiment = list(
+	inventory = list(
 		"Basic Ingredients" = list(
 			/obj/item/reagent_containers/food/condiment/flour,
 			/obj/item/reagent_containers/food/drinks/milk,
@@ -75,7 +75,7 @@
 		)
 	)
 
-	secret_inventory = list(
+	hidden_inventory = list(
 		"Drinks II" = list(
 			/obj/item/reagent_containers/food/drinks/bottle/goldschlager,
 			/obj/item/reagent_containers/food/drinks/bottle/pwine,

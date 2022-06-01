@@ -30,6 +30,10 @@
 		filling.color = reagents.get_color()
 		add_overlay(filling)
 
+	if(label_text)
+		var/label_icon = label_icon_state ? label_icon_state : "label_[icon_state]"
+		var/mutable_appearance/label = mutable_appearance(icon, label_icon)
+		add_overlay(label)
 
 //// Subtypes ////
 
@@ -154,3 +158,10 @@
 	possible_transfer_amounts = list(1) //No
 	volume = 30
 	can_be_placed_into = null
+
+/obj/item/reagent_containers/glass/urn/veteran
+	name = "Veteran Saint Urn"
+	desc = "Here lies the unnamed or unknown warriors of the church that sacrificed themselves for the greater good and protection of their brothers and sisters during the exodus. The low quantity of bodies recovered after the infight - mostly gathered during risk, sneaky attempts to recover the dead to be properly buried under SolFed's gaze, is enough to make any vector's compassionate heart throb in pain, but the ones that was recovered has been cremated and kept on this urn, for everyone to pray for their soul. \
+	Until someone not that compassionate attempts to remove the lid and tip it over. What a terrible fate! Just don't expect the church to take it kindly for the ones who disrespects the dead - worse fate may come to the ones that disrespects their cultural heroes. Do you feel lucky, punk?"
+	icon_state = "saint_urn"
+	preloaded_reagents = list("carbon" = 30)

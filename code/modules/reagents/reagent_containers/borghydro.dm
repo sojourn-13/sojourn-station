@@ -21,8 +21,16 @@
 	reagent_ids = list("bicaridine", "kelotane", "anti_toxin", "dexalin", "inaprovaline", "tramadol", "spaceacillin", "stoxin")
 	accepts_reagent_upgrades = TRUE
 
+/obj/item/reagent_containers/borghypo/medical_adv
+	reagent_ids = list("dermaline", "meralyne", "tricordrazine", "dexalinp")
+	accepts_reagent_upgrades = TRUE
+
 /obj/item/reagent_containers/borghypo/rescue
 	reagent_ids = list("tricordrazine", "inaprovaline", "tramadol")
+	accepts_reagent_upgrades = TRUE
+
+/obj/item/reagent_containers/borghypo/rescue_adv
+	reagent_ids = list("bicaridine", "kelotane", "anti_toxin", "dexalin") //Basic
 	accepts_reagent_upgrades = TRUE
 
 /obj/item/reagent_containers/borghypo/proc/Reindex()

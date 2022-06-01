@@ -46,8 +46,13 @@
 #define COMSIG_PARENT_QDELETED "parent_qdeleted"				//after a datum's Destroy() is called: (force, qdel_hint), at this point none of the other components chose to interrupt qdel and Destroy has been called
 
 #define COMSIG_SHUTTLE_SUPPLY "shuttle_supply"  //form sell()
+#define COMSIG_TRADE_BEACON "trade_beacon"
+
 #define COMSIG_RITUAL "ritual"
 #define COMSIG_TRANSATION "transation"          //from transfer_funds()
+
+// /datum/mecha signals
+#define COMSIG_HUD_DELETED "hud_deleted"
 
 // /atom signals
 #define COMSIG_EXAMINE "examine"								//from atom/examine(): (mob/user, distance)

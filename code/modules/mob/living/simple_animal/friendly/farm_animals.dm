@@ -28,6 +28,11 @@
 	udder.my_atom = src
 	..()
 
+/mob/living/simple_animal/hostile/retaliate/goat/Destroy()
+	udder.my_atom = null
+
+	. = ..()
+
 /mob/living/simple_animal/hostile/retaliate/goat/beg(var/atom/thing, var/atom/holder)
 	visible_emote("butts insistently at [holder]'s legs and reaches towards their [thing].")
 
@@ -94,7 +99,7 @@
 		..()
 //cow
 /mob/living/simple_animal/cow
-	name = "cow"
+	name = "Cow"
 	desc = "Known for their milk, just don't tip them over."
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "cow"
@@ -123,6 +128,11 @@
 	udder = new(100)
 	udder.my_atom = src
 	..()
+
+/mob/living/simple_animal/cow/Destroy()
+	udder.my_atom = null
+
+	. = ..()
 
 /mob/living/simple_animal/cow/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	var/obj/item/reagent_containers/G = O
@@ -207,7 +217,7 @@
 			new /mob/living/simple_animal/chicken(src.loc)
 			qdel(src)
 
-var/const/MAX_CHICKENS = 10
+var/const/MAX_CHICKENS = 20
 var/global/chicken_count = 0
 
 /mob/living/simple_animal/chicken
@@ -332,7 +342,7 @@ var/global/chicken_count = 0
 				var/list/responses = list(	"[src] looks at you imploringly.",
 											"[src] looks at you pleadingly",
 											"[src] looks at you with a resigned expression.",
-											"[src] seems resigned to her fate.")
+											"[src] seems resigned to their fate.")
 				to_chat(M, pick(responses))
 	else
 		..()
@@ -368,12 +378,12 @@ var/global/chicken_count = 0
 	max_co2 = 0
 	min_n2 = 0
 	max_n2 = 0
-	autoseek_food = 0
-	beg_for_food = 0
+	autoseek_food = FALSE
+	beg_for_food = FALSE
 	hunger_enabled = FALSE
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
-	var/chem_to_egg = 20 // How much of one chem to make an egg. We use 20 because that's the amount one sheet give
+	var/chem_to_egg = 30 // How much of one chem to make an egg. We use 20 for the normallity of the sheet and 10 do to coverting losses...
 
 /mob/living/simple_animal/metal_chicken/New()
 	..()
@@ -412,7 +422,7 @@ var/global/chicken_count = 0
 	. =..()
 	if(!.)
 		return
-	if(!stat && prob(50) && lay_egg())
+	if(!stat && prob(25) && lay_egg()) //We are less likely to lay eggs
 		visible_message("[src] [pick("lays an egg.","squats down and croons.","begins making a huge racket.","begins clucking raucously.")]")
 
 /mob/living/simple_animal/metal_chicken/proc/lay_egg()
@@ -451,6 +461,8 @@ var/global/chicken_count = 0
 				egg_type = /obj/effect/spider/spiderling
 			if("blattedin")
 				egg_type = /obj/item/reagent_containers/food/snacks/cube/roach
+			if("coco")
+				egg_type = /obj/item/reagent_containers/food/snacks/chocolatebar
 			else // Empty bottle that then get filled with left-over chems
 				egg_type = /obj/item/reagent_containers/glass/bottle
 

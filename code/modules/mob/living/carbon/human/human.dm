@@ -68,6 +68,11 @@
 	for(var/organ in organs)
 		qdel(organ)
 	organs.Cut()
+
+	QDEL_NULL(sanity)
+	QDEL_NULL(vessel)
+
+	worn_underwear.Cut()
 	return ..()
 
 /mob/living/carbon/human/Stat()
@@ -107,7 +112,7 @@
 
 		var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
 		if(C)
-			stat("Cruciform", "[C.power]/[C.max_power]")
+			stat("Axis Power", "[C.power]/[C.max_power]")
 			stat("Channeling Boost", "[C.channeling_boost]")
 
 		var/obj/item/organ/internal/psionic_tumor/B = random_organ_by_process(BP_PSION)
@@ -1134,13 +1139,14 @@ var/list/rank_prefix = list(\
 
 	spawn(0)
 		regenerate_icons()
-		if(vessel.total_volume < species.blood_volume)
-			vessel.maximum_volume = species.blood_volume
-			vessel.add_reagent("blood", species.blood_volume - vessel.total_volume)
-		else if(vessel.total_volume > species.blood_volume)
-			vessel.remove_reagent("blood", vessel.total_volume - species.blood_volume)
-			vessel.maximum_volume = species.blood_volume
-		fixblood()
+		if(!QDELETED(src))
+			if(vessel.total_volume < species.blood_volume)
+				vessel.maximum_volume = species.blood_volume
+				vessel.add_reagent("blood", species.blood_volume - vessel.total_volume)
+			else if(vessel.total_volume > species.blood_volume)
+				vessel.remove_reagent("blood", vessel.total_volume - species.blood_volume)
+				vessel.maximum_volume = species.blood_volume
+			fixblood()
 
 
 	// Rebuild the HUD. If they aren't logged in then login() should reinstantiate it for them.

@@ -29,14 +29,18 @@
 /obj/machinery/camera/proc/newTarget(var/mob/target)
 	if (isAI(target))
 		return 0
+	if (QDELETED(target) || QDESTROYING(target)) //sanity
+		return FALSE
 	if (detectTime == 0)
 		detectTime = world.time // start the clock
 	if (!(target in motionTargets))
 		motionTargets += target
+		target.tracking_cameras += src
 	return 1
 
 /obj/machinery/camera/proc/lostTarget(var/mob/target)
 	if (target in motionTargets)
+		target.tracking_cameras -= src
 		motionTargets -= target
 	if (motionTargets.len == 0)
 		cancelAlarm()

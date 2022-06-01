@@ -53,7 +53,7 @@
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_TGH = 10,
-		STAT_VIG = 5,
+		STAT_BIO = 10, // They need it to butcher animals without hurting themselves.
 	)
 
 	perks = list(/datum/perk/market_prof, /datum/perk/bartender, /datum/perk/foodappraise)
@@ -129,10 +129,11 @@
 	wage = WAGE_LABOUR_DUMB	//Barely a retaining fee. Actor can busk for credits to keep themselves fed
 	alt_titles = list("Artist","Clown","Entertainer","Mime")
 	stat_modifiers = list(
-		STAT_TGH = 30, //basically a punching bag, he can't robust anyone or shoot guns anyway
+		STAT_TGH = 20, //basically a punching bag, he can't robust anyone or shoot guns anyway
+		STAT_MEC = 10  //They often deal with tool mods guns and other things that need these
 	)
 
-	perks = list(/datum/perk/market_prof, PERK_ARTIST)
+	perks = list(/datum/perk/market_prof, PERK_ARTIST, /datum/perk/stalker)
 	software_on_spawn = list(///datum/computer_file/program/supply,
 							 ///datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/scanner,

@@ -240,6 +240,13 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/tail/lizard_dt
+	name = "Lizard Tail, Dark Tiger"
+	desc = ""
+	icon_state = "liztail_dtiger"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/tail/mouse
 	name = "Mouse Tail"
 	desc = ""
@@ -663,3 +670,9 @@
 	blend = ICON_MULTIPLY
 	extra_overlay = "buggofirefly_vass_markings"
 	extra_overlay_w = "buggofatfirefly_vass_markings"
+
+/datum/sprite_accessory/tail/jackal
+	name = "Jackal Tail"
+	icon_state = "jackal"
+	colored_layers = 2
+	blend = ICON_MULTIPLY

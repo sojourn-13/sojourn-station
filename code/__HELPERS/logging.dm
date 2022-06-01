@@ -106,6 +106,9 @@
 /proc/log_misc(text)
 	game_log("MISC", text)
 
+/proc/log_harddel(text)
+	game_log("HARDDEL", text)
+
 /proc/log_unit_test(text)
 	log_world("## UNIT_TEST ##: [text]")
 	log_debug(text)
@@ -240,3 +243,11 @@
 		return "[a.loc] ([t.x],[t.y],[t.z]) ([a.loc.type])"
 	else if(a.loc)
 		return "[a.loc] (0,0,0) ([a.loc.type])"
+
+//From tg
+#if defined(REFERENCE_TRACKING) // Doing it locally
+#define log_reftracker(msg) log_harddel("## REF SEARCH [msg]")
+
+#else //Not tracking at all
+#define log_reftracker(msg)
+#endif

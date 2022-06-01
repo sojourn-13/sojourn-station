@@ -5,12 +5,13 @@
 	icon_state = "ameridian_crystal"
 	anchored = TRUE
 	density = FALSE // We can walk through them
-	light_range = 3 // Glow in the dark
+	light_range = 1 // Glow in the dark
 	light_color = COLOR_LIGHTING_GREEN_BRIGHT
 
 	var/growth // the growth level of the crystal. The higher it is, the older the crystal is.
-	var/max_growth = GROWTH_HUGE // Maximum growth level, in case we want to do stuff relative to size
-	var/growth_prob = 1 // The % of chance for the crystal to grow every tick
+	var/max_growth = 5 // Maximum growth level, in case we want to do stuff relative to size
+	var/growth_prob = 1 // The % of chance for the crystal to grow every tickv
+	var/blue_crystal_prob = 5 // % chance of spawning a blue crystal instead of a green one when spreading
 	var/spread_range = 1 // Radius that the crystal can spawn new crystals.
 
 	var/rad_range = 2 // Radius that the crystal irradiate
@@ -24,23 +25,24 @@
 /obj/structure/ameridian_crystal/Initialize(mapload, ...)
 	..()
 	START_PROCESSING(SSobj, src)
+	AddRadSource(src, rad_damage, rad_range)
 
 	// If the crystal was mapped in, spawn at full growth, else spawn as a seed.
 	if(!growth) // As long as we didn't manually set a growth level
 		if(mapload)
 			growth = max_growth
 		else
-			growth = GROWTH_SEED
+			growth = 1
 	golem_timer = 0 // Reset the timer
 	update_icon()
 
 /obj/structure/ameridian_crystal/Destroy()
-	..()
-	STOP_PROCESSING(SSturf, src)
+	STOP_PROCESSING(SSobj, src)
+	golem?.node = null
+	golem = null
+	. = ..()
 
 /obj/structure/ameridian_crystal/Process()
-	irradiate()
-
 	if(prob(growth_prob))
 		handle_growth()
 		handle_duplicate_crystals()
@@ -52,31 +54,28 @@
 /obj/structure/ameridian_crystal/update_icon()
 	transform = initial(transform)
 	transform *= ((1/max_growth) * growth) // So the crystal is at 20% size at growth 1, 40% at growth 2, e.t.c.
-
-	for(var/U in underlays)
-		underlays -= U
-	underlays += ("crystal_floor_[clamp(growth, 1, 5)]")
+	set_light(growth, growth)
+	underlays.Cut()
+	underlays += ("crystal_floor_[clamp(round(REMAP(growth, 1, max_growth, 1, 5)), 1, 5)]")
 
 /obj/structure/ameridian_crystal/attackby(obj/item/I, mob/user)
-	if(user.a_intent == I_HELP && user.Adjacent(src) && (I.has_quality(QUALITY_EXCAVATION) || I.has_quality(QUALITY_DIGGING) || I.has_quality(QUALITY_SHOVELING)))
-		src.visible_message(SPAN_NOTICE("[user] starts excavating crystals from [src]."), SPAN_NOTICE("You start excavating crystal from [src]."))
-		if(do_after(user, WORKTIME_NORMAL, src))
-			var/obj/item/stack/material/ameridian/T = new(get_turf(src))
-			T.amount = growth // Drop more crystal the further along we are
-			src.visible_message(SPAN_NOTICE("[user] excavates a crystal from [src]."), SPAN_NOTICE("You excavate a crystal from [src]."))
-			activate_mobs_in_range(src, 15) // Wake up the nearby golems
-			qdel(src)
-		else
-			to_chat(user, SPAN_WARNING("You must stay still to finish excavation."))
+	if(user.a_intent == I_HELP && user.Adjacent(src))
+		var/tool_type = I.get_tool_type(user, list(QUALITY_EXCAVATION, QUALITY_DIGGING, QUALITY_SHOVELING), src)
+		if(tool_type)
+			visible_message(SPAN_NOTICE("[user] starts digging [src] up."), SPAN_NOTICE("You start digging [src] up."))
+			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_ROB))
+				harvest_crystals()
+			else
+				to_chat(user, SPAN_WARNING("You must stay still to finish excavation."))
 	else
 		..()
 
-// This proc is responsible for giving radiation damage to every nearby organics.
-/obj/structure/ameridian_crystal/proc/irradiate()
-	for(var/mob/living/l in range(src, rad_range))
-		if(issynthetic(l)) // Don't irradiate synths
-			continue
-		l.apply_effect(rad_damage, IRRADIATE)
+/obj/structure/ameridian_crystal/bullet_act(var/obj/item/projectile/Proj)
+	if(istype(Proj, /obj/item/projectile/sonic_bolt))
+		visible_message("[src] shatters.")
+		Destroy()
+	else
+		..()
 
 // This proc handle the growth & spread of the crystal
 /obj/structure/ameridian_crystal/proc/handle_growth()
@@ -89,16 +88,39 @@
 /obj/structure/ameridian_crystal/proc/spread()
 	var/list/turf_list = list()
 	for(var/turf/T in orange(spread_range, get_turf(src)))
-		if(locate(/obj/structure/ameridian_crystal) in T) // skip turfs that already have a crystal
+		if(!can_spread_to_turf(T))
 			continue
-		if(istype(T, /turf/simulated/open) || istype(T, /turf/space))
-			continue // Ignore turfs that are actually air
 		if(T.Enter(src)) // If we can "enter" on the tile then we can spread to it.
 			turf_list += T
 
 	if(turf_list.len)
 		var/turf/T = pick(turf_list)
-		new /obj/structure/ameridian_crystal(T) // We spread
+		var/crystal
+
+		if(blue_crystal_prob == -1)
+			crystal = /obj/structure/ameridian_crystal/red
+		else if(prob(blue_crystal_prob))
+			crystal = /obj/structure/ameridian_crystal/blue
+		else
+			crystal = /obj/structure/ameridian_crystal // We spread
+
+		if(crystal)
+			new crystal(T) // We spread
+
+// Check the given turf to see if there is any special things that would prevent the spread
+/obj/structure/ameridian_crystal/proc/can_spread_to_turf(var/turf/T)
+	if(T)
+		if(istype(T, /turf/space)) // We can't spread in SPACE!
+			return FALSE
+		if(istype(T, /turf/simulated/open)) // Crystals can't float. Yet.
+			return FALSE
+		if(locate(/obj/structure/ameridian_crystal) in T) // No stacking.
+			return FALSE
+		if(locate(/obj/machinery/shieldwall/ameridian) in T) // Sonic fence block spread.
+			return FALSE
+		if(locate(/obj/machinery/shieldwallgen/ameridian) in T) // Sonic fence block spread. We can't spread in corners
+			return FALSE
+	return TRUE
 
 // This proc handle the spawning of golems
 /obj/structure/ameridian_crystal/proc/handle_golems()
@@ -124,7 +146,7 @@
 			var/sound/S = sound('sound/synthesized_instruments/chromatic/vibraphone1/c5.ogg')
 			for(var/mob/living/carbon/human/H in view(src))
 				if(H.stats.getPerk(PERK_PSION))
-					to_chat(H, "<b><font color='purple'>[src] chimes.</b></font>")
+					to_chat(H, SPAN_PSION("[src] chimes."))
 					H.playsound_local(get_turf(src), S, 50) // Only psionics can hear that
 
 			sleep((S.len + 1) SECONDS) // Wait until the sound is done, we're using S.len in case the sound change for another with a different duration. We add a second to give a slightly longer warning time.
@@ -151,3 +173,9 @@
 
 /obj/structure/ameridian_crystal/proc/handle_golem_distance()
 	return
+
+/obj/structure/ameridian_crystal/proc/harvest_crystals()
+	var/obj/item/stack/material/ameridian/T = new(get_turf(src))
+	T.amount = growth // Drop more crystal the further along we are
+	activate_mobs_in_range(src, 15) // Wake up the nearby golems
+	qdel(src)

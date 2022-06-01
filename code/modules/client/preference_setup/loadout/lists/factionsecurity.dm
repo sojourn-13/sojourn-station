@@ -35,17 +35,32 @@
 
 /datum/gear/factionsecurity/cloak
 	display_name = "cloak, warrant officer"
-	path = /obj/item/clothing/suit/hooded/cloak/job/ihc
+	path = /obj/item/clothing/accessory/job/cape/ihc
 	allowed_roles = list("Warrant Officer")
 	slot = slot_wear_suit
 	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/cloakironhammer
 	display_name = "cloak, security"
-	path = /obj/item/clothing/suit/hooded/cloak/job/ironhammer
-	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	path = /obj/item/clothing/accessory/job/cape/ironhammer
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_wear_suit
 	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/blackshield
+	display_name = "cloak selection, blackshield"
+	path = /obj/item/clothing/accessory/job/cape/blackshield
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_wear_suit
+	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/blackcoat
+	display_name = "longcoat selection, blackshield"
+	path = /obj/item/clothing/accessory/bscloak
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	sort_category = "Faction: Security"
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/factionsecurity/capfield
 	display_name = "cap, field"
@@ -80,6 +95,13 @@
 	slot = slot_head
 	sort_category = "Faction: Security"
 
+/datum/gear/factionsecurity/radiohat // THINK FAST CHUCKLENUTS!
+	display_name = "radio cap, blackshield"
+	path = /obj/item/device/radio/headset/radiohat_blackshield
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_head
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/bdu
 	display_name = "security BDU selection"
 	path = /obj/item/clothing/under/rank/bdu
@@ -91,6 +113,13 @@
 /datum/gear/factionsecurity/turtleneck
 	display_name = "Marshal turtleneck"
 	path = /obj/item/clothing/under/rank/security/turtleneck
+	allowed_roles = list("Warrant Officer","Supply Specialist","Ranger","Marshal Officer")
+	slot = slot_w_uniform
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/juniormarshal
+	display_name = "Junior Marshals uniform"
+	path = /obj/item/clothing/under/rank/security/cadet
 	allowed_roles = list("Warrant Officer","Supply Specialist","Ranger","Marshal Officer")
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"

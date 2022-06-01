@@ -71,7 +71,7 @@
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
 
-	alt_titles = list("Soteria Xenobiologist", "Soteria Xenoarcheologist", "Soteria Xenobotanist", "Soteria Research Assistant", "Soteria Geneticist")
+	alt_titles = list("Soteria Xenobiologist", "Soteria Xenoarcheologist", "Soteria Xenobotanist", "Soteria Research Fabricator", "Soteria Geneticist", "Soteria Research Student")
 	outfit_type = /decl/hierarchy/outfit/job/science/scientist
 
 	software_on_spawn = list(/datum/computer_file/program/signaller, /datum/computer_file/program/chem_catalog)
@@ -115,7 +115,7 @@
 	spawn_positions = 2
 	supervisors = "the Chief Research Overseer"
 	difficulty = "Medium."
-	alt_titles = list("Soteria Junior Roboticist","Soteria Cyberneticist","Soteria Mechanist","Soteria Biomechanical Engineer")
+	alt_titles = list("Soteria Roboticist Fabricator", "Soteria Cyberneticist", "Soteria Mechanist", "Soteria Biomechanical Engineer", "Soteria Roboticist Trainee")
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
 	department_account_access = TRUE

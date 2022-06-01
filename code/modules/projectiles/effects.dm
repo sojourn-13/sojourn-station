@@ -122,6 +122,18 @@
 	icon_state = "impact_stun"
 
 //----------------------------
+// Ameridian beam
+//----------------------------
+/obj/effect/projectile/ameridian/tracer
+	icon_state = "xray_old"
+
+/obj/effect/projectile/ameridian/muzzle
+	icon_state = "muzzle_xray_old"
+
+/obj/effect/projectile/ameridian/impact
+	icon_state = "impact_xray_old"
+
+//----------------------------
 // Tesla beam
 //----------------------------
 /obj/effect/projectile/tesla/New()
@@ -167,3 +179,20 @@
 
 /obj/effect/projectile/plasma/impact/heavy
 	icon_state = "impact_plasma_blue"
+
+
+//Grappler
+
+/obj/effect/projectile/line/tracer
+	icon_state = "line"
+
+/obj/effect/projectile/line/tracer/activate(kill_delay)//do nothing, only go away once we hit something
+
+/obj/effect/projectile/line/muzzle
+	icon_state = "muzzle_line"
+
+/obj/effect/projectile/line/muzzle/activate(kill_delay)//do nothing, only go away once we hit something
+
+/obj/effect/projectile/line/impact
+	icon_state = "impact_line"
+	lifetime = 1

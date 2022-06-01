@@ -9,7 +9,7 @@
 	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL|MAG_WELL_SMG|MAG_WELL_H_PISTOL
 	auto_eject = 1
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 3)
@@ -25,6 +25,7 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/automatic/straylight/update_icon()
 	..()

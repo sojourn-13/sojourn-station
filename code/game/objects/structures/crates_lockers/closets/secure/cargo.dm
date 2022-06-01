@@ -31,7 +31,7 @@
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 	if(prob(25))
 		new /obj/item/gun/projectile/shotgun/pump(src)
-		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun/pellet(src)
 		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
 	if(prob(45))
 		new /obj/item/storage/pouch/small_generic(src)
@@ -75,6 +75,7 @@
 	new /obj/item/device/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/suit/fire(src)
+	new /obj/item/clothing/accessory/halfcape/ceo(src)
 	new /obj/item/tank/emergency_oxygen(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/glasses/powered/meson(src)
@@ -92,7 +93,7 @@
 	name = "prospector locker"
 	req_access = list(access_foreman)
 	access_occupy = list(access_prospector)
-	icon_state = "mining"
+	icon_state = "prospector" // Mixed dirt/jungle camo for the soul, since they usually brave the jungle a lot. - Seb
 
 /obj/structure/closet/secure_closet/personal/prospector/populate_contents()
 	new /obj/item/device/radio/headset/headset_pro(src)
@@ -140,6 +141,7 @@
 	else if(prob(50))
 		new /obj/item/gun/projectile/shotgun/pump(src)
 		new /obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun/empty(src)		
 	else if(prob(25))
 		new /obj/item/gun/projectile/automatic/vector(src)
 		new /obj/item/ammo_magazine/smg_magnum_40/old(src)
@@ -207,7 +209,7 @@
 	name = "salvager locker"
 	req_access = list(access_foreman)
 	access_occupy = list(access_prospector)
-	icon_state = "med"
+	icon_state = "oldstyle" // Placeholder for lack of a better salvage-oriented looking locker.
 
 /obj/structure/closet/secure_closet/personal/salvager/populate_contents()
 	new /obj/item/device/radio/headset/headset_pro(src)
@@ -306,11 +308,12 @@
 /obj/structure/closet/secure_closet/reinforced/foreman
 	name = "foreman's locker"
 	req_access = list(access_foreman)
-	icon_state = "qm"
+	icon_state = "foreman"
 
 /obj/structure/closet/secure_closet/reinforced/foreman/populate_contents()
 	new /obj/item/device/radio/headset/heads/foreman(src)
 	new /obj/item/clothing/accessory/cape/scav(src)
+	new /obj/item/clothing/accessory/halfcape/foreman(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/scav/forman(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/guns/vector(src)
 	if(prob(60))

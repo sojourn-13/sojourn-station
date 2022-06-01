@@ -220,6 +220,11 @@
 	faction = "neutral"
 	colony_friend = TRUE
 
+/mob/living/simple_animal/hostile/viscerator/colony
+	name = "colony-locked viscerator"
+	desc = "A small, twin-bladed machine capable of inflicting very deadly lacerations. This model has functional colony-locked IFF and thus only targets non-colony humanoids and animals."
+	faction = "neutral"
+	colony_friend = TRUE
 
 /mob/living/simple_animal/hostile/elitemercenary
 	name = "\improper Elite operative"

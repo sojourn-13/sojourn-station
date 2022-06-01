@@ -127,6 +127,15 @@
 	darkness_view = -3
 	obscuration = MEDIUM_OBSCURATION
 
+/obj/item/clothing/glasses/sunglasses/helltaker // Part of the whole Helltaker dude drip. - Seb
+	name = "devilish sunglasses"
+	desc = "A stylish pair of small, circular sunglasses that keeps your eyes surprisingly well hidden."
+	icon_state = "hellgoggles"
+	item_state = "hellgoggles"
+	flash_protection = FLASH_PROTECTION_MAJOR
+	darkness_view = -3
+	obscuration = MEDIUM_OBSCURATION
+
 /obj/item/clothing/glasses/aviator
 	name = "black aviators"
 	desc = "A pair of black-tinted designer sunglasses."
@@ -174,6 +183,7 @@
 	desc = "Protects the eyes from sudden flashes, debris, and light shrapnel."
 	icon_state = "ballistic"
 	item_state = "ballistic"
+	prescription = TRUE
 	action_button_name = "Switch Polarization"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 2)
 	flash_protection = FLASH_PROTECTION_MODERATE
@@ -211,6 +221,9 @@
 	desc = "A mediHUD visor constructed with more durable materials to protect your eyes against sudden flashes, debris and shrapnel."
 	icon_state = "ballisticmed"
 	item_state = "ballisticmed"
+
+/obj/item/clothing/glasses/ballistic/med/process_hud(var/mob/M)
+	process_med_hud(M, 1)
 
 /obj/item/clothing/glasses/ballistic/perscription
 	name = "perscription ballistic goggles"

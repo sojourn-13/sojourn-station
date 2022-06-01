@@ -13,6 +13,7 @@
 	light_range = 2
 	light_color = COLOR_LIGHTING_GREEN_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
+	status_flags = CANPUSH // Cannot be stun, weakened or paralyzed
 
 	armor = list(melee = 30, bullet = 20, energy = 35, bomb = 30, bio = 100, rad = 100) //We want to be gunned down, not lasered
 
@@ -47,12 +48,38 @@
 
 /mob/living/carbon/superior_animal/ameridian_golem/death()
 	..()
+	playsound(get_turf(src), "sound/effects/crumble[pick(1, 2, 3, 4, 5)].ogg", 50)
 	if(drop_amount)
 		var/obj/item/stack/material/ameridian/loot = new /obj/item/stack/material/ameridian(get_turf(src))
 		loot.amount = drop_amount
-	node?.golem = null // Remove the golem from the node since for some reason it doesn't do it with qdel()
 	qdel(src)
+
+/mob/living/carbon/superior_animal/ameridian_golem/Destroy()
+	node?.golem = null
+	node = null
+	. = ..()
 
 /mob/living/carbon/superior_animal/ameridian_golem/update_icon()
 	transform = initial(transform)
-	transform *= size_factor // So the crystal is at 20% size at growth 1, 40% at growth 2, e.t.c.
+	transform *= size_factor
+
+/mob/living/carbon/superior_animal/ameridian_golem/bullet_act(var/obj/item/projectile/P, var/def_zone)
+	if(istype(P, /obj/item/projectile/sonic_bolt))
+		var/obj/item/projectile/sonic_bolt/SB = P
+		SB.multiply_projectile_damage(SB.golem_damage_bonus)
+		drop_amount = 0 // No loot
+
+	..()
+
+	addtimer(CALLBACK(src, /mob/living/carbon/superior_animal/ameridian_golem/.proc/maintain_drop_amount), 100 MILLISECONDS) //consider converting this to ticks?
+
+/mob/living/carbon/superior_animal/ameridian_golem/proc/maintain_drop_amount()
+	if (!is_dead()) // We're still alive!
+		drop_amount = initial(drop_amount) // So we still have loot
+
+// Stole this code from 'code/__HELPERS/matrices.dm' because otherwise the golems shrink during the shake animation. -R4d6
+/mob/living/carbon/superior_animal/ameridian_golem/shake_animation(var/intensity = 8)
+	var/init_px = pixel_x
+	var/shake_dir = pick(-1, 1)
+	animate(src, transform=turn(matrix(), intensity*shake_dir)*size_factor, pixel_x=init_px + 2*shake_dir, time=1)
+	animate(transform=matrix().Translate(0,16*(size_factor-1))*size_factor, pixel_x=init_px, time=6, easing=ELASTIC_EASING) //We're using the size multiplier on a matrix translated to make sure we are *all* on the same height on a tile.

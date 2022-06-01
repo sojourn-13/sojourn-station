@@ -740,6 +740,14 @@
 	icon_state = "bar"
 	sound_env = LARGE_SOFTFLOOR
 
+/area/nadezhda/crew_quarters/bar/vip
+	name = "\improper VIP Room"
+	icon_state = "bar"
+
+/area/nadezhda/crew_quarters/outerspess
+	name = "\improper Shuttle Room"
+	icon_state = "Sleep"
+
 /area/nadezhda/crew_quarters/barbackroom
 	name = "Bar Backroom"
 	icon_state = "erisgreen"
@@ -1488,6 +1496,10 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/rnd/xenobiology/xenoflora
 	name = "\improper Xenoflora Lab"
 	icon_state = "xeno_f_lab"
+
+/area/nadezhda/rnd/xenobiology/ameridian
+	name = "\improper Ameridian Lab"
+	icon_state = "xeno_lab"
 
 /area/nadezhda/rnd/storage
 	name = "\improper Toxins Storage"

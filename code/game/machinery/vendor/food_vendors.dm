@@ -281,6 +281,7 @@
 					/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass = 30,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/doble = 15,
 					/obj/item/clothing/suit/rank/chef/classic = 2,
+					/obj/item/clothing/suit/storage/helltaker_apron = 2,
 					/obj/item/storage/lunchbox = 3,
 					/obj/item/storage/lunchbox/rainbow = 3,
 					/obj/item/storage/lunchbox/cat = 3,
@@ -302,9 +303,12 @@
 					/obj/item/reagent_containers/food/condiment/pack/ketchup = 10,
 					/obj/item/reagent_containers/food/condiment/pack/milk = 10,
 					/obj/item/reagent_containers/food/condiment/pack/sugar = 10,
-					/obj/item/reagent_containers/food/condiment/pack/hotsauce = 10)
+					/obj/item/reagent_containers/food/condiment/pack/hotsauce = 10,
+					/obj/item/reagent_containers/food/condiment/pack/bbq = 10,
+					/obj/item/reagent_containers/food/condiment/pack/vinegar = 10)
 	contraband = list(/obj/item/tool/knife/butch = 2)
 	auto_price = FALSE
+	always_open = TRUE
 
 /obj/machinery/vending/dinnerware/cost //So we can place these around and charge people
 	name = "Dinnerware Express"
@@ -325,6 +329,7 @@
 					/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass = 30,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/doble = 8,
 					/obj/item/clothing/suit/rank/chef/classic = 2,
+					/obj/item/clothing/suit/storage/helltaker_apron = 2,
 					/obj/item/storage/lunchbox = 3,
 					/obj/item/storage/lunchbox/rainbow = 3,
 					/obj/item/storage/lunchbox/cat = 3,
@@ -346,7 +351,9 @@
 					/obj/item/reagent_containers/food/condiment/pack/ketchup = 10,
 					/obj/item/reagent_containers/food/condiment/pack/milk = 10,
 					/obj/item/reagent_containers/food/condiment/pack/sugar = 10,
-					/obj/item/reagent_containers/food/condiment/pack/hotsauce = 10)
+					/obj/item/reagent_containers/food/condiment/pack/hotsauce = 10,
+					/obj/item/reagent_containers/food/condiment/pack/bbq = 10,
+					/obj/item/reagent_containers/food/condiment/pack/vinegar = 10)
 	contraband = list(/obj/item/tool/knife/butch = 2)
 	prices = list(/obj/item/tray = 35,
 					/obj/item/material/kitchen/utensil/fork = 3,
@@ -361,6 +368,7 @@
 					/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass = 3,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/doble = 2,
 					/obj/item/clothing/suit/rank/chef/classic = 50,
+					/obj/item/clothing/suit/storage/helltaker_apron = 50,
 					/obj/item/storage/lunchbox = 8,
 					/obj/item/storage/lunchbox/rainbow = 8,
 					/obj/item/storage/lunchbox/cat = 8,
@@ -382,8 +390,11 @@
 					/obj/item/reagent_containers/food/condiment/pack/milk = 3,
 					/obj/item/reagent_containers/food/condiment/pack/sugar = 3,
 					/obj/item/reagent_containers/food/condiment/pack/hotsauce = 3,
+					/obj/item/reagent_containers/food/condiment/pack/bbq = 3,
+					/obj/item/reagent_containers/food/condiment/pack/vinegar = 3,
 					/obj/item/tool/knife/butch = 55)
 	auto_price = TRUE
+	always_open = FALSE
 
 
 /obj/machinery/vending/sovietsoda
@@ -433,3 +444,19 @@
 		/obj/item/reagent_containers/food/snacks/candy_drop_blue = 90,
 		/obj/item/reagent_containers/food/snacks/candy/energybar = 90,
 		/obj/item/towel/random = 10)
+
+/obj/machinery/vending/drink_showcase
+	name = "Bar Cocktail Showcase"
+	desc = "A vending machine to showcase cocktails."
+	icon_state = "showcase"
+	var/icon_fill = "showcase-fill"
+	vend_delay = 15
+	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
+	vendor_department = DEPARTMENT_LSS
+	custom_vendor = TRUE
+	can_stock = list(/obj/item/reagent_containers/glass, /obj/item/reagent_containers/food/drinks, /obj/item/reagent_containers/food/condiment)
+
+/obj/machinery/vending/drink_showcase/update_icon()
+	..()
+	if(contents.len && !(stat & NOPOWER))
+		overlays += image(icon, icon_fill)

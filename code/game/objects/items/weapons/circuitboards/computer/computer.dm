@@ -132,11 +132,6 @@
 	build_name = "navigation console"
 	build_path = /obj/machinery/computer/navigation
 
-/obj/item/circuitboard/ordercomp
-	build_name = "supply ordering console"
-	build_path = /obj/machinery/computer/supplycomp/order
-	origin_tech = list(TECH_DATA = 2)
-
 /*
 /obj/item/circuitboard/mining_shuttle
 	build_name = "mining shuttle console"

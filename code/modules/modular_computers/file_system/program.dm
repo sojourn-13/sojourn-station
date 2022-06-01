@@ -33,6 +33,7 @@
 
 /datum/computer_file/program/Destroy()
 	computer = null
+	holder = null
 	. = ..()
 
 /datum/computer_file/program/clone()

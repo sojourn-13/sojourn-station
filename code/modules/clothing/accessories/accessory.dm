@@ -243,135 +243,310 @@
 	desc = "An extremely rare golden medal awarded only by faction woners. To recieve such a medal is the highest honor and as such, very few exist. This medal is almost never awarded to anybody but commanders."
 
 /*Capes*/
-/obj/item/clothing/accessory/ccape
-	name = "holographic capitoleum cape"
-	desc = "A electronic cloak with a holographic interface lining it's stiff wiring. This cape is the only one feared by Castellans, not because of any might or power, but because it signifies one status of being from the capitol, and thus, one's ability to back-stab and lie."
-	icon_state = "capital_cape"
-	slot_flags = SLOT_ACCESSORY_BUFFER
-
-/obj/item/clothing/accessory/ccape/soldier
-	name = "soldier-lord trench cape"
-	desc = "A faded grey cape for the nobles-of-the-sword from the land of the Midnight Sun - Reichsritters who forsook high officership billets instead to lead infantry. They are a fading footnote of Kriosian aristocracy, brought to extinction numbers during the Battle of Krios by their leadership methods and the irrelevance of height and physique against the application of 6.5mm Creedmoor to the head by Solfed Scout-Snipers. Without anyone young or willing enough to sire enough to replace the dead, the cape has become the signature of exiled Castellans and the formal apparel of a few notable mercenary-men and duelists, and shall mean nothing in the next few generations."
-	icon_state = "krieg_cape"
 
 /obj/item/clothing/accessory/cape
-	name = "fluffy cape"
-	desc = "A cloak of old money, comfy, furred, and decadent to all hell, for those who believe your worth as a man is the worth that you bring."
-	icon_state = "erp_cape"
-	slot_flags = SLOT_ACCESSORY_BUFFER
-
-/obj/item/clothing/accessory/ccape/rural
-	name = "farmer barons olive cape"
-	desc = "A cloak that define's one status as humble, as humble as a feudal land lord can try. This green, copper clad cloak is commonly worn by échevins-lord houses, those who own great swathes of colonial and rural territory. It's in actuality a self-defence mechanism, the knowledge that if they don't conceal their wealth, the vorhut countryvolk and jaeger frontiersmen they rule over will burn their estates and steal from their coffers."
-	icon_state = "pelinal_cape"
-
-/obj/item/clothing/accessory/ccape/bleublood
-	name = "admirals dress cape"
-	desc = "A blue-gold-cape flecked upon with the smell of expensive cologne and spilt wine - signatures of maritime nobility donned upon what is a cape of Kriosian naval colors.  The naval houses pride (and live upon) their contributions in academy-trained officers, and to see someone else in their colors is an active to passive insult varying on the distance from Kriosian space and proximity to common men."
-	icon_state = "bleu_cape"
-
-/obj/item/clothing/accessory/cape/outsider
-	name = "outcast's cloak"
-	desc = "A raggedy cloak made of leather and reclaimed materials, can be worn over one's armor as a sign of pride for their outcast nature."
-	icon_state = "outsider"
-	slot_flags = SLOT_ACCESSORY_BUFFER
-
-/obj/item/clothing/accessory/cape/scav
-	name = "makeshift cape"
-	desc = "A cape haphazardly cut from a large bolt of water resistant fabric, while some may wear it for the style, others would prefer it's use as a quick poncho, if it'll every rain."
-	icon_state = "scav_mantle"
-	slot_flags = SLOT_ACCESSORY_BUFFER
-
-/obj/item/clothing/accessory/cape/corpsmans_cape
-	name = "corpsman cape"
-	desc = "A cape made from blue and white fabric denoting that they are a corpsman, to be easily seen in the jungle."
-	icon_state = "corpsman_cape"
-	slot_flags = SLOT_ACCESSORY_BUFFER
-
-/obj/item/clothing/accessory/cape/black
-	name = "attachable black cloak"
+	name = "black cloak"
 	desc = "A simple black cloak you can attach to your suit for all your edgy needs."
 	icon_state = "cloak"
-	slot_flags = SLOT_ACCESSORY_BUFFER
-
-/obj/item/clothing/accessory/cape/blackedge
-	name = "heavy black cloak"
-	desc = "A rough and heavy black cloak for draping over yourself like some kind of cave dwelling royal."
-	icon_state = "blackcloak"
-	slot_flags = SLOT_ACCESSORY_BUFFER
-
-/obj/item/clothing/accessory/cape/brown
-	name = "heavy brown cloak"
-	desc = "A rough and heavy brown cloak, perfectly suited to marching through the cold to the front door of an old friend."
-	icon_state = "browncloak"
-	slot_flags = SLOT_ACCESSORY_BUFFER
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/cape/blackalt
 	name = "black greatcloak"
 	desc = "A comfortable black greatcoat, perfect for winter, or simply showing off ones archaic fashion sense."
 	icon_state = "cloakalt"
+
+/obj/item/clothing/accessory/cape/fluffy
+	name = "fluffy cape"
+	desc = "A cloak of old money, comfy, furred, and decadent to all hell, for those who believe your worth as a man is the worth that you bring."
+	icon_state = "erp_cape"
+
+/obj/item/clothing/accessory/cape/outsider
+	name = "outcast's cloak"
+	desc = "A raggedy cloak made of leather and reclaimed materials, can be worn over one's armor as a sign of pride for their outcast nature."
+	icon_state = "outcast_cloak"
+
+/obj/item/clothing/accessory/cape/scav
+	name = "makeshift cape"
+	desc = "A cape haphazardly cut from a large bolt of water resistant fabric, while some may wear it for the style, others would prefer it's use as a quick poncho, if it'll every rain."
+	icon_state = "scav_mantle"
+
+/obj/item/clothing/accessory/cape/blackedge
+	name = "heavy black cloak"
+	desc = "A rough and heavy black cloak for draping over yourself like some kind of cave dwelling royal."
+	icon_state = "blackcloak"
+
+/obj/item/clothing/accessory/cape/brown
+	name = "heavy brown cloak"
+	desc = "A rough and heavy brown cloak, perfectly suited to marching through the cold to the front door of an old friend."
+	icon_state = "browncloak"
+
+// Head of Departments
+/obj/item/clothing/accessory/job/cape
+	name = "premier's cloak"
+	icon_state = "capcloak"
+	desc = "A green-ish cloak with golden lining."
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/job/cape/fo
+	name = "premier guard's cloak"
+	icon_state = "focloak"
+	desc = "A blue cloak with red epaulette."
+
+/obj/item/clothing/accessory/job/cape/meo
+	name = "research overseer's cloak"
+	icon_state = "meocloak"
+	desc = "A white cloak with black double stripe at edge."
+
+/obj/item/clothing/accessory/job/cape/mbo
+	name = "biolab overseer's cloak"
+	icon_state = "mbocloak"
+	desc = "A neon-cyan cloak with nanoleds on its animated medical cross pattern."
+
+/obj/item/clothing/accessory/job/cape/ihc
+	name = "warrant officer's cloak"
+	icon_state = "ihccloak"
+	desc = "A black cloak with dark-blue lining."
+
+/obj/item/clothing/accessory/job/cape/gm
+	name = "executive officer's cloak"
+	icon_state = "gmcloak"
+	desc = "A brown cloak with yellow lining."
+
+/obj/item/clothing/accessory/job/cape/te
+	name = "guild master's cloak"
+	icon_state = "cecloak"
+	desc = "A brown cloak with blue and orange lining."
+
+/obj/item/clothing/accessory/halfcape
+	name = "Blackshield Commanders holo-mantle"
+	desc = "A fancy holographic mantle cape made from dark fabric and bearing the rank markings of the Blackshield Commander. Despite skillful repair, the signs of multiple back-facing \
+	perforations give no doubt as to who this cloak belongs to."
+	icon_state = "half_co"
 	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/halfcape/cbo
+	name = "Chief Biolab Officers holo-mantle"
+	desc = "A fancy holo-mantle made from light fabric and bearing the rank markings of the Soteria CBO. While sleek and sterile, it sadly lacks \
+	protection against man-made horrors beyond our comprehension."
+	icon_state = "half_cbo"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/halfcape/cro
+	name = "Chief Researcher Overseers holo-mantle"
+	desc = "A fancy holo-mantle made from dark fabric and bearing the rank markings of the Soteria CRO. Black and purple, a color scheme and style to match the \
+	mad scientist in every Overseer."
+	icon_state = "half_cro"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/halfcape/gm
+	name = "Guildmasters holo-mantle"
+	desc = "A fancy holo-mantle made from dark fabric and bearing the rank markings of the Guildmaster. A snagging hazard sure to cause even the most hardened of safety inspectors\
+	to blanch."
+	icon_state = "half_gm"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/halfcape/foreman
+	name = "Foreman holo-mantle"
+	desc = "A fancy holo-mantle made from dark fabric and bearing the rank markings of the Foreman. The question hangs as to whether or not the color is from dyes, \
+	or the blood of countless voidwolves."
+	icon_state = "half_fm"
+
+/obj/item/clothing/accessory/halfcape/wo
+	name = "Warrant Officers holo-mantle"
+	desc = "A fancy holo-mantle made from dark fabric and bearing the rank markings of the Warrant Officer. A wonderful ostentateous accessory to suit the inflated ego of many a \
+	frontier mall-cop."
+	icon_state = "half_wo"
+
+/obj/item/clothing/accessory/halfcape/prime
+	name = "Primes holo-mantle"
+	desc = "A fancy holo-mantle made from dark fabric and bearing the rank markings of the Prime. Muted browns and golds, a perfectly subdued tone to compliment the \
+	usual flare of the church."
+	icon_state = "half_nt"
+
+/obj/item/clothing/accessory/halfcape/ceo
+	name = "CEOs holo-mantle"
+	desc = "A fancy holo-mantle made from light-toned silk and bearing the rank markings of the Prime. Fine alabaster silks and gold trim, despite its seemingly similar\
+	 make to similar cloaks, its quality cannot be contested."
+	icon_state = "half_ceo"
+
+
+/obj/item/clothing/accessory/halfcape/premier
+	name = "Premiers holo-mantle"
+	desc = "A fancy, holo-mantle made from fine silk and bearing the rank markings of the Premier. The classic color scheme, coniferous green and tinsel gold. "
+	icon_state = "half_prem"
+
+
+// Department
+/obj/item/clothing/accessory/job/cape/service
+	name = "service cloak"
+	icon_state = "servicecloak"
+	desc = "A purple cloak with nanoleds creating sparkling bubbles."
+
+/obj/item/clothing/accessory/job/cape/guild
+	name = "lonestar cloak"
+	icon_state = "cargocloak"
+	desc = "A light-brown cloak."
+
+/obj/item/clothing/accessory/job/cape/mining
+	name = "mining cloak"
+	icon_state = "miningcloak"
+	desc = "A brown cloak with fancy nanoleds displaying an animation of rock being picked."
+
+/obj/item/clothing/accessory/job/cape/technomancer
+	name = "adept cloak"
+	icon_state = "engicloak"
+	desc = "A yellow cloak with orange lining."
+
+/obj/item/clothing/accessory/job/cape/medical
+	name = "medical cloak"
+	icon_state = "medcloak"
+	desc = "A white cloak with a single dark-cyan stripe at edge."
+
+/obj/item/clothing/accessory/job/cape/science
+	name = "science cloak"
+	icon_state = "scicloak"
+	desc = "A white cloak with a single black stripe at edge."
+
+/obj/item/clothing/accessory/job/cape/church
+	name = "black Absolutists greatcloak"
+	icon_state = "heavychurchcloakblack"
+	desc = "A thick, luxurious cloak with black trim."
+
+/obj/item/clothing/accessory/job/cape/church/alt
+	name = "red Absolutists greatcloak"
+	icon_state = "heavychurchcloakred"
+	desc = "A thick, luxurious cloak with red trim."
+
+/obj/item/clothing/accessory/job/cape/church/small
+	name = "black Absolutists cloak"
+	icon_state = "churchcloakblack"
+	desc = "A sleek, luxurious cloak with black trim."
+
+/obj/item/clothing/accessory/job/cape/church/smallalt
+	name = "red Absolutists cloak"
+	icon_state = "churchcloakblack"
+	desc = "A sleek, luxurious cloak with red trim."
+
+/obj/item/clothing/accessory/job/cape/ironhammer
+	name = "security cloak"
+	icon_state = "seccloak"
+	desc = "A blue, navy cloak."
+
+/obj/item/clothing/accessory/job/cape/blackshield
+	name = "grey Blackshield cloak"
+	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a brooding grey."
+	icon_state = "blackshieldcloak"
+
+/obj/item/clothing/accessory/job/cape/blackshield/green
+	name = "green Blackshield cloak"
+	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a fetching green."
+	icon_state = "blackshieldcloak_green"
+
+/obj/item/clothing/accessory/job/cape/blackshield/tan
+	name = "tan Blackshield cloak"
+	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a light tan."
+	icon_state = "blackshieldcloak_tan"
+
+/obj/item/clothing/accessory/job/cape/blackshield/camo
+	name = "camo Blackshield cloak"
+	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a tactical camo pattern."
+	icon_state = "blackshieldcloak_camo"
+
+/obj/item/clothing/accessory/cape/sergeant_cape
+	name = "Sergeants mantle"
+	desc = "A shoulder-mantlee made from black and silver fabric, denoting the position of Sergeant. Allows for identification at a glance."
+	icon_state = "half_sarg"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/halfcape/corpsman
+	name = "Corpsman mantle"
+	desc = "A half-cape made from blue and black fabric denoting that they are a corpsman, to be easily seen in the jungle."
+	icon_state = "half_corp"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/halfcape/trooper_cape
+	name = "Troopers mantle"
+	desc = "A half-cape made from blue and white fabric denoting the rank of Trooper. Allows for identification at a glance"
+	icon_state = "half_troop"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+
+//Kriosan
+/obj/item/clothing/accessory/kricape
+	name = "holographic capitoleum cape"
+	desc = "A electronic cloak with a holographic interface lining it's stiff wiring. This cape is the only one feared by Castellans, not because of any might or power, but because it signifies one status of being from the capitol, and thus, one's ability to back-stab and lie."
+	icon_state = "capital_cape"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/kricape/soldier
+	name = "soldier-lord trench cape"
+	desc = "A faded grey cape for the nobles-of-the-sword from the land of the Midnight Sun - Reichsritters who forsook high officership billets instead to lead infantry. They are a fading footnote of Kriosian aristocracy, brought to extinction numbers during the Battle of Krios by their leadership methods and the irrelevance of height and physique against the application of 6.5mm Creedmoor to the head by Solfed Scout-Snipers. Without anyone young or willing enough to sire enough to replace the dead, the cape has become the signature of exiled Castellans and the formal apparel of a few notable mercenary-men and duelists, and shall mean nothing in the next few generations."
+	icon_state = "krieg_cape"
+
+/obj/item/clothing/accessory/kricape/rural
+	name = "farmer barons olive cape"
+	desc = "A cloak that define's one status as humble, as humble as a feudal land lord can try. This green, copper clad cloak is commonly worn by échevins-lord houses, those who own great swathes of colonial and rural territory. It's in actuality a self-defence mechanism, the knowledge that if they don't conceal their wealth, the vorhut countryvolk and jaeger frontiersmen they rule over will burn their estates and steal from their coffers."
+	icon_state = "pelinal_cape"
+
+/obj/item/clothing/accessory/kricape/bleublood
+	name = "admirals dress cape"
+	desc = "A blue-gold-cape flecked upon with the smell of expensive cologne and spilt wine - signatures of maritime nobility donned upon what is a cape of Kriosian naval colors.  The naval houses pride (and live upon) their contributions in academy-trained officers, and to see someone else in their colors is an active to passive insult varying on the distance from Kriosian space and proximity to common men."
+	icon_state = "bleu_cape"
+
+/* Ponchos */
 
 /obj/item/clothing/accessory/tacticalponcho
 	name = "brown tactical poncho"
 	desc = "A sleek brown poncho. Great for gunfights at high noon or hiding in the underbrush."
 	icon_state = "tacpon_brown"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/tacticalponcho/green
 	name = "green tactical poncho"
 	desc = "A sleek, green poncho. Tactical and stylish!"
 	icon_state = "tacpon_green"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/tacticalponcho/camo
 	name = "camo tactical poncho"
 	desc = "A sleek, tactical camo poncho. Great for remaining inconspicuous in even the most densely  wooded combat enviroments"
 	icon_state = "tacpon_camo"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/tacticalponcho/ghillie
 	name = "ghillie poncho"
 	desc = "A highly tactical partial ghillie suit adjusted for the upper body, it only makes you look a little goofy when not lying down!"
 	icon_state = "tacpon_ghillie"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
 
 /*Shirts*/
 /obj/item/clothing/accessory/hawaiian
 	name = "black Hawaiian shirt"
 	desc = "A cool Hawaiian pattern shirt in dark black. Beach Goth 2620 is written on the inner tag."
 	icon_state = "hawaiiblack"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/hawaiian/fuschia
 	name = "fuschia Hawaiian shirt"
 	desc = "A Hawaiian pattern shirt in brilliant fuschia. You'll be saying 'Mahalo' when someone takes it out of your sight."
 	icon_state = "hawaiifuchs"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/hawaiian/jade
 	name = "jade Hawaiian shirt"
 	desc = "A Hawaiian pattern shirt of jade and silver. The vine pattern is really pleasing to the eyes!"
 	icon_state = "hawaiivine"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/hawaiian/orange
 	name = "orange Hawaiian shirt"
 	desc = "A Hawaiian pattern shirt in stunning orange and blue. A true masterpiece that straddles the line between tacky and ageless."
 	icon_state = "hawaiiorange"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/hawaiian/motu
 	name = "questionable Hawaiian shirt"
 	desc = "A Hawaiian pattern shirt in - wait a minute...hawaii shirts don't have skulls, lightning, or beloved cartoon character he-man on them, you've been had!."
 	icon_state = "hawaiimotu"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/hawaiian/vice
 	name = "teal Hawaiian shirt"
 	desc = "A Hawaiian shirt with palm-tree pattern and a fetching teal shade. The designer tag reads 'Malibu Club Merch' and has an obviously stamped signature from the presumed designer, 'Tony'"
 	icon_state = "hawaiivice"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/hawaiian/verb/toggle_style()
 	set name = "Adjust style"
@@ -400,7 +575,23 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/accessory/bscloak
+	name = "Blackshield longcoat"
+	desc = "A simple, durable longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
+	icon_state = "bs_longcoat"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
+/obj/item/clothing/accessory/bscloak/tan
+	name = "Blackshield tan longcoat"
+	desc = "A simple, durable tan longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
+	icon_state = "bs_longcoat_tan"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER // Made them children of longcoat so should inherit but juuust in case...
+
+/obj/item/clothing/accessory/bscloak/olive
+	name = "Blackshield tan longcoat"
+	desc = "A simple, durable drab longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
+	icon_state = "bs_longcoat_green"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /*Scarves*/
 
@@ -419,7 +610,7 @@
 	desc = "A stylish dark blue scarf."
 	icon_state = "darkbluescarf"
 
-obj/item/clothing/accessory/scarf/green
+/obj/item/clothing/accessory/scarf/green
 	name = "green scarf"
 	desc = "A stylish green scarf."
 	icon_state = "greenscarf"
@@ -574,30 +765,12 @@ obj/item/clothing/accessory/scarf/green
 	siemens_coefficient = 0
 
 /*One-Off Stuff*/
-/obj/item/clothing/accessory/necklace
-	name = "metal necklace"
-	desc = "A shiny steel chain with a vague metallic object dangling off it."
-	icon_state = "tronket"
-	item_state = "tronket"
 
 /obj/item/clothing/accessory/dropstraps
 	name = "drop straps"
 	desc = "White suspenders worn over the shoulders."
 	icon_state = "flops"
 	item_state = "flops"
-
-/obj/item/clothing/accessory/dogtags
-	name = "dog tags"
-	desc = "A pair of engraved metal identification tags."
-	icon_state = "tags"
-	item_state = "tags"
-
-/obj/item/clothing/accessory/fractalrosary
-	name = "Fractal Rosary"
-	desc = "This is an insignia given out by the Church of Absolute to people who consider themself to be a Fractal: \
-			An individual who believes and follows the Church but has not yet or cannot be inducted to full membership."
-	icon_state = "fractal_rosary"
-	item_state = "fractal_rosary"
 
 /obj/item/clothing/accessory/legbrace
 	name = "leg brace"
@@ -610,7 +783,20 @@ obj/item/clothing/accessory/scarf/green
 	desc = "A lightweight polymer frame designed to hold a neck upright comfortably."
 	icon_state = "neckbrace"
 	item_state = "neckbrace"
+	
+/obj/item/clothing/accessory/pilotwebbing
+	name = "basic pilot harness"
+	desc = "A basic harness commonly used through out the galaxy from shuttle pilots to mech pilots. The harness itself has minimal safety strapping however would still ensure you're safely strapped into whatever cockpit you may be seated in."
+	icon_state = "basicpilot"
+	item_state = "basicpilot"
+	
+/obj/item/clothing/accessory/pilotwebbing/military
+	name = "military pilot harness"
+	desc = "A military harness commonly seen being used by pilots within military or paramilitary forces for their fighter pilots and combat mech pilots. The harness itself has extra safety strapping and buckles allowing for the attaching of safety ane EVA equipment in case of an emergency however would still ensure you're safely strapped into whatever cockpit you may be seated in."
+	icon_state = "militarypilot"
+	item_state = "militarypilot"
 
+/* Kneepads */
 
 /obj/item/clothing/accessory/kneepads
 	name = "cheap kneepads"
@@ -740,3 +926,252 @@ obj/item/clothing/accessory/scarf/green
 	desc = "A black, blue, and silver patch made to represent the Blackshield regiment. For use on uniforms when active, or other clothing in other positions."
 	icon_state = "bs_brigadier"
 	item_state = "bs_brigadier"
+
+/* Tacticool Shirts / UBACs */
+
+/obj/item/clothing/accessory/tacticool
+	name = "black UBAC shirt"
+	desc = "A tactical shirt meant to be worn under armor to protect from unpleasant chaffing. Original solfed design in black."
+	icon_state = "ubacblack"
+	item_state = "ubacblack"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/tacticool/navy
+	name = "navy blue UBAC shirt"
+	desc = "A tactical shirt meant to be worn under armor to protect from unpleasant chaffing. Original solfed design in navy blue."
+	icon_state = "ubacblue"
+	item_state = "ubacblue"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/tacticool/tan
+	name = "tan UBAC shirt"
+	desc = "A tactical shirt meant to be worn under armor to protect from unpleasant chaffing. Original solfed design in tan."
+	icon_state = "ubactan"
+	item_state = "ubactan"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/tacticool/green
+	name = "green UBAC shirt"
+	desc = "A tactical shirt meant to be worn under armor to protect from unpleasant chaffing. Original solfed design in green."
+	icon_state = "ubacgreen"
+	item_state = "ubacgreen"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+
+/* Necklaces and ....chokers (I blame Moon) */
+
+/obj/item/clothing/accessory/necklace
+	name = "metal necklace"
+	desc = "A shiny steel chain with a vague metallic object dangling off it."
+	icon_state = "tronket"
+	item_state = "tronket"
+	slot_flags = SLOT_MASK | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/necklace/dogtags
+	name = "dog tags"
+	desc = "A pair of engraved metal identification tags."
+	icon_state = "tags"
+	item_state = "tags"
+
+/obj/item/clothing/accessory/necklace/fractalrosary
+	name = "Fractal Rosary"
+	desc = "This is an insignia given out by the Church of Absolute to people who consider themself to be a Fractal: \
+			An individual who believes and follows the Church but has not yet or cannot be inducted to full membership."
+	icon_state = "fractal_rosary"
+	item_state = "fractal_rosary"
+
+/obj/item/clothing/accessory/choker
+	name = "blue choker"
+	desc = "A small blue band tied around your neck. You probably don't want to be wearing this if you want to be taken seriously."
+	icon_state = "choker"
+	overlay_state = "choker"
+	slot_flags = SLOT_MASK | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/choker/red
+	name = "red choker"
+	desc = "A small red band tied around your neck. You probably don't want to be wearing this if you want to be taken seriously."
+	icon_state = "choker_red"
+	overlay_state = "choker_red"
+
+/obj/item/clothing/accessory/choker/goth
+	name = "gothic choker"
+	desc = "A small black band tied around your neck. Makes you look like you either worship satan or just hate your life."
+	icon_state = "choker_goth"
+	overlay_state = "choker_goth"
+
+/obj/item/clothing/accessory/choker/gold_bell
+	name = "Leather Collar (Gold Bell)"
+	desc = "A band of supple leather with a locked clasp. A golden cow bell has been attached to reflect a more \"agricultural\" lifestyle."
+	icon_state = "collar_gold_bell"
+	overlay_state = "collar_gold"
+
+/obj/item/clothing/accessory/choker/silver_bell
+	name = "Leather Collar (Silver Bell)"
+	desc = "A band of supple leather with a locked clasp. A silver cow bell has been attached to reflect a more \"agricultural\" lifestyle."
+	icon_state = "collar_silver_bell"
+	overlay_state = "collar_silver"
+
+/obj/item/clothing/accessory/choker/gold_bell_small
+	name = "Leather Collar (Small Gold Bell)"
+	desc = "A band of supple leather with a locked clasp. A golden sleigh bell has been attached to publically announce the wearer's \"holiday spirit.\""
+	icon_state = "collar_gold_bell_small"
+	overlay_state = "collar_gold"
+
+/obj/item/clothing/accessory/choker/silver_bell_small
+	name = "Leather Collar (Small Silver Bell)"
+	desc = "A band of supple leather with a locked clasp. A silver sleigh bell has been attached to publically announce the wearer's \"holiday spirit.\""
+	icon_state = "collar_silver_bell_small"
+	overlay_state = "collar_silver"
+
+/obj/item/clothing/accessory/choker/gold_tag
+	name = "Leather Collar (Gold Tag)"
+	desc = "A band of supple leather with a locked clasp. A gold-plated dogtag has been attached to show solidarity with our strong, proud, Blackshield militia."
+	icon_state = "collar_gold_tag"
+	overlay_state = "collar_gold"
+
+/obj/item/clothing/accessory/choker/silver_tag
+	name = "Leather Collar (Silver Tag)"
+	desc = "A band of supple leather with a locked clasp. A silver-plated dogtag has been attached to show solidarity with our strong, proud, Blackshield militia."
+	icon_state = "collar_silver_tag"
+	overlay_state = "collar_silver"
+
+/obj/item/clothing/accessory/choker/gold_bell_goth
+	name = "Gothic Collar (Gold Bell)"
+	desc = "A black band of studded leather with a locked clasp. A golden cowbell has been attached to chime the song of herbivorous rebellion."
+	icon_state = "collar_gold_bell_goth"
+	overlay_state = "collar_gold_goth"
+
+/obj/item/clothing/accessory/choker/silver_bell_goth
+	name = "Gothic Collar (Silver Bell)"
+	desc = "A black band of studded leather with a locked clasp. A silver cowbell has been attached to chime the song of herbivorous rebellion."
+	icon_state = "collar_silver_bell_goth"
+	overlay_state = "collar_silver_goth"
+
+/obj/item/clothing/accessory/choker/gold_bell_small_goth
+	name = "Gothic Collar (Small Gold Bell)"
+	desc = "A black band of studded leather with a locked clasp. A golden jingle bell has been attached to announce that a true sleigher has arrived."
+	icon_state = "collar_gold_bell_small_goth"
+	overlay_state = "collar_gold_goth"
+
+/obj/item/clothing/accessory/choker/silver_bell_small_goth
+	name = "Gothic Collar (Small Silver Bell)"
+	desc = "A black band of studded leather with a locked clasp. A silver jingle bell has been attached to announce that a true sleigher has arrived."
+	icon_state = "collar_silver_bell_small_goth"
+	overlay_state = "collar_silver_goth"
+
+/obj/item/clothing/accessory/choker/gold_tag_goth
+	name = "Gothic Collar (Gold Tag)"
+	desc = "A black band of studded leather with a locked clasp. A golden dogtag has been attached- making it suitable for Kriosans, Naramad and other kinds of dog."
+	icon_state = "collar_gold_tag_goth"
+	overlay_state = "collar_gold_goth"
+
+/obj/item/clothing/accessory/choker/silver_tag_goth
+	name = "Gothic Collar (Silver Tag)"
+	desc = "A black band of studded leather with a locked clasp. A silver dogtag has been attached- making it suitable for Kriosans, Naramad and other kinds of dog."
+	icon_state = "collar_silver_tag_goth"
+	overlay_state = "collar_silver_goth"
+
+/* Bracelets and watches */
+
+/obj/item/clothing/accessory/bracelet
+	name = "bracelet"
+	desc = "A simple red band wrapped around your wrist. Snazzy."
+	icon_state = "bracelet"
+	item_state = "bracelet"
+	slot_flags = SLOT_GLOVES | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/bracelet/watch
+	name = "fancy watch"
+	desc = "An expensive watch with a red band wrapped around your wrist. Snazzy."
+	icon_state = "wristwatch_fancy"
+	item_state = "wristwatch_fancy"
+
+/obj/item/clothing/accessory/bracelet/watch
+	name = "fancy watch"
+	desc = "An expensive watch with a red band wrapped around your wrist. Snazzy."
+	icon_state = "wristwatch_fancy"
+	item_state = "wristwatch_fancy"
+
+/obj/item/clothing/accessory/bracelet/watch/leather
+	name = "fancy leather watch"
+	desc = "An expensive watch with a leather brown band wrapped around your wrist. Snazzy."
+	icon_state = "wristwatch_leather"
+	item_state = "wristwatch_leather"
+
+/obj/item/clothing/accessory/bracelet/watch/black
+	name = "fancy black watch"
+	desc = "An expensive watch with a black band wrapped around your wrist. Snazzy."
+	icon_state = "wristwatch_black"
+	item_state = "wristwatch_black"
+
+/* Waistcoat refactor into attachable accesories */
+
+/obj/item/clothing/accessory/waistcoat
+	name = "black waistcoat"
+	desc = "A classy black waistcoat."
+	icon_state = "vest"
+	item_state = "vest"
+	overlay_state = "vest"
+	item_state_slots = list(slot_r_hand_str = "wcoat", slot_l_hand_str = "wcoat")
+	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
+	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	slot_flags = SLOT_OCLOTHING|SLOT_ACCESSORY_BUFFER
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	siemens_coefficient = 0.9
+
+/obj/item/clothing/accessory/waistcoat/grey
+	name = "grey waistcoat"
+	desc = "A classy grey waistcoat."
+	icon_state = "grey_waistcoat"
+	item_state = "grey_waistcoat"
+	overlay_state = "grey_waistcoat"
+
+/obj/item/clothing/accessory/waistcoat/red
+	name = "red waistcoat"
+	desc = "A classy red waistcoat."
+	icon_state = "red_waistcoat"
+	item_state = "red_waistcoat"
+	overlay_state = "red_waistcoat"
+
+/obj/item/clothing/accessory/waistcoat/brown
+	name = "brown waistcoat"
+	desc = "A classy brown waistcoat."
+	icon_state = "brown_waistcoat"
+	item_state = "brown_waistcoat"
+	overlay_state = "brown_waistcoat"
+
+/obj/item/clothing/accessory/waistcoat/elegant
+	name = "elegant waistcoat"
+	desc = "A classy elegant waistcoat."
+	icon_state = "elegant_waistcoat"
+	item_state = "elegant_waistcoat"
+	overlay_state = "elegant_waistcoat"
+
+/* Attachable sweater vests for suits */
+
+/obj/item/clothing/accessory/swvest
+	name = "black sweatervest"
+	desc = "A sleeveless black sweater."
+	icon_state = "sweatervest"
+	item_state = "sweatervest"
+	overlay_state = "sweatervest"
+	item_state_slots = list(slot_r_hand_str = "wcoat", slot_l_hand_str = "wcoat")
+	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
+	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	slot_flags = SLOT_OCLOTHING|SLOT_ACCESSORY_BUFFER
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	siemens_coefficient = 0.9
+
+/obj/item/clothing/accessory/swvest/blue
+	name = "blue sweatervest"
+	desc = "A sleeveless blue sweater."
+	icon_state = "sweatervest_blue"
+	item_state = "sweatervest_blue"
+	overlay_state = "sweatervest_blue"
+
+/obj/item/clothing/accessory/swvest/red
+	name = "red sweatervest"
+	desc = "A sleeveless red sweater."
+	icon_state = "sweatervest_red"
+	item_state = "sweatervest_red"
+	overlay_state = "sweatervest_red"
+

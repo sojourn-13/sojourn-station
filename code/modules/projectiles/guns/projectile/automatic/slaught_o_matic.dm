@@ -7,7 +7,7 @@
 	w_class = ITEM_SIZE_SMALL
 	can_dual = TRUE
 	caliber = CAL_PISTOL
-	max_shells = 0
+	max_shells = 1
 	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	ammo_type = "/obj/item/ammo_casing/pistol"
@@ -17,6 +17,7 @@
 	magazine_type = /obj/item/ammo_magazine/smg_35
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 9)
 	price_tag = 10
+	serial_type = "H&S"
 
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 

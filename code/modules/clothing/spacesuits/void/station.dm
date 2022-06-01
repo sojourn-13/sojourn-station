@@ -89,7 +89,7 @@
 
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 4, MATERIAL_PLASTIC = 3)
 	armor_list = list(
-		melee = 40,
+		melee = 25,
 		bullet = 20,
 		energy = 20,
 		bomb = 25,
@@ -98,6 +98,7 @@
 	)
 	light_overlay = "helmet_light_dual"
 	siemens_coefficient = 0.8
+	obscuration = MEDIUM_OBSCURATION
 
 /obj/item/clothing/head/space/void/riggedvoidsuit/verb/toggle_style()
 	set name = "Adjust Style"
@@ -130,7 +131,7 @@
 	item_state = "makeshift_void"
 	siemens_coefficient = 0.4
 	armor_list = list(
-		melee = 40,
+		melee = 30,
 		bullet = 20,
 		energy = 20,
 		bomb = 25,
@@ -187,6 +188,48 @@
 		rad = 75
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/mining
+
+//CEO Rig
+/obj/item/clothing/head/helmet/space/void/goldilocks
+	name = "Goldilocks Gilded Helmet"
+	desc = "A helmet designed to look good while watching people you paid to do your work for you. Not the best for personal protection, but lightweight."
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 6 //luminosity when on
+	icon_state = "goldilocks_helmet"
+	item_state = "goldilocks_helmet"
+	item_state_slots = list(
+		slot_l_hand_str = "goldilocks_helm",
+		slot_r_hand_str = "goldilocks_helm",
+		)
+	armor_list = list(
+		melee = 50,
+		bullet = 25,
+		energy = 25,
+		bomb = 25,
+		bio = 100,
+		rad = 75
+	)
+	light_overlay = "helmet_light_dual"
+	siemens_coefficient = 2 //Guess what gold conducts?
+
+/obj/item/clothing/suit/space/void/goldilocks
+	name = "Goldilocks Gilded Voidsuit"
+	desc = "Grandeur incarnated in a padded suit of armor, fitting for a CEO that would like to boast their wealth at the expense personal safety."
+	item_state = "goldilocks_suit"
+	icon_state = "goldilocks_suit"
+	slowdown = 0
+	armor_list = list(
+		melee = 50,
+		bullet = 25,
+		energy = 25,
+		bomb = 25,
+		bio = 100,
+		rad = 75
+	)
+	helmet = /obj/item/clothing/head/helmet/space/void/goldilocks
+	boots = /obj/item/clothing/shoes/magboots
+	tank = /obj/item/tank/jetpack/void/cope
+	siemens_coefficient = 2 //Guess what gold conducts?
 
 //Medical Rig
 /obj/item/clothing/head/helmet/space/void/medical
@@ -535,7 +578,7 @@
 	)
 	siemens_coefficient = 0.4
 	light_overlay = "helmet_light_dual"
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_BIOMATTER = 5, MATERIAL_PLASTIC = 5, MATERIAL_GLASS = 5)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_GLASS = 5)
 	obscuration = 0
 
 /obj/item/clothing/suit/space/void/medarmor
@@ -553,10 +596,10 @@
 	)
 	siemens_coefficient = 0.4
 	helmet = /obj/item/clothing/head/space/void/medarmor
-	matter = list(MATERIAL_STEEL = 40, MATERIAL_BIOMATTER = 10, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10, MATERIAL_PLATINUM = 8)
+	matter = list(MATERIAL_STEEL = 40, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10, MATERIAL_PLATINUM = 8)
 	stiffness = MEDIUM_STIFFNESS
 
-/obj/item/clothing/suit/space/void/science/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack")
+/obj/item/clothing/suit/space/void/medarmor/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack")
 	if(istype(damage_source, /obj/item/projectile/energy) || istype(damage_source, /obj/item/projectile/beam))
 		var/obj/item/projectile/P = damage_source
 
@@ -575,3 +618,46 @@
 			P.redirect(new_x, new_y, curloc, user)
 
 			return PROJECTILE_CONTINUE // complete projectile permutation
+
+/* commented out till i can get the 'race restriction' stuff to work - CDB
+/obj/item/clothing/head/helmet/space/void/marqua
+	name = "Mar'Qua voidsuit helmet"
+	desc = "A standard issue helmet of Mar'Qua make, relatively lightly armored compared to other issue gear but made of advanced materials."
+	icon_state = "marquahelm"
+	armor_list = list(
+		melee = 25,
+		bullet = 40,
+		energy = 40,
+		bomb = 20,
+		bio = 100,
+		rad = 75
+	)
+
+/obj/item/clothing/head/helmet/space/void/marqua/equipped(mob/living/carbon/M)
+	if(M.species.reagent_tag != IS_MARQUA)
+		to_chat(SPAN_WARNING("[src] won't seem to fit!"))
+		return FALSE
+	..()
+
+/obj/item/clothing/suit/space/void/marqua
+	icon_state = "marquasuit"
+	name = "Mar'Qua hardsuit"
+	desc = "A relatively standard, if advanced suit of void protective gear, commonly seen among Mar'Qua vessels. The unusual anatomy of the Mar'Qua make fitting into this surprisingly light suit impossible for none Mar'Qua."
+	slowdown = 0
+	stiffness = LIGHT_STIFFNESS
+	armor_list = list(
+		melee = 25,
+		bullet = 40,
+		energy = 40,
+		bomb = 20,
+		bio = 100,
+		rad = 75
+	)
+	helmet = /obj/item/clothing/head/helmet/space/void/marqua
+
+
+/obj/item/clothing/suit/space/void/marqua/equipped(mob/living/carbon/M)
+	if(M.species.reagent_tag != IS_MARQUA)
+		to_chat(SPAN_WARNING("[src] won't seem to fit!"))
+		return FALSE
+	..() */ //super doesn't work lol

@@ -351,6 +351,12 @@
 	P.pixel_x = rand(-7, 7)
 	P.pixel_y = rand(-7, 7)
 	P.icon_state = pick(BOTTLE_SPRITES)
+	if(P.icon_state == "potion")
+		P.filling_states = "10;20;40;50;60"
+		P.label_icon_state = "label_potion"
+	if(P.icon_state == "tincture")
+		P.filling_states = "3;5;10;15;25;27;30;35;40;45;55;60"
+		P.label_icon_state = "label_tincture"
 	P.toggle_lid()
 
 /obj/machinery/reagentgrinder/industrial/proc/grind()
@@ -430,7 +436,7 @@
 	if(istype(I, /obj/item/reagent_containers))
 		var/obj/item/reagent_containers/container = I
 		if(!container.standard_pour_into(user, src)) . = ..()
-	else if (LAZYLEN(I.reagents)) . = ..()
+	else if (I.reagents?.total_volume) . = ..()
 	else to_chat(user, SPAN_NOTICE("\icon[I] \the [I] seems that it is not suitable for a \icon[src] [src]."))
 	update_icon()
 

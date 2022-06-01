@@ -64,22 +64,24 @@
 		icon_state = initial(icon_state)
 
 /mob/living/simple_animal/hostile/megafauna/excelsior_cosmonaught/AttackingTarget()
-	if(!Adjacent(target_mob))
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
+	if(!Adjacent(targetted_mob))
 		return
-	if(isliving(target_mob))
-		var/mob/living/L = target_mob
+	if(isliving(targetted_mob))
+		var/mob/living/L = targetted_mob
 		L.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		return L
-	if(istype(target_mob,/obj/mecha))
-		var/obj/mecha/M = target_mob
+	if(istype(targetted_mob,/obj/mecha))
+		var/obj/mecha/M = targetted_mob
 		M.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		return M
-	if(istype(target_mob,/obj/machinery/bot))
-		var/obj/machinery/bot/B = target_mob
+	if(istype(targetted_mob,/obj/machinery/bot))
+		var/obj/machinery/bot/B = targetted_mob
 		B.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		return B
-	if(istype(target_mob,/obj/machinery/porta_turret))
-		var/obj/machinery/porta_turret/P = target_mob
+	if(istype(targetted_mob,/obj/machinery/porta_turret))
+		var/obj/machinery/porta_turret/P = targetted_mob
 		P.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		return P
 
@@ -95,13 +97,15 @@
 
 
 /mob/living/simple_animal/hostile/megafauna/excelsior_cosmonaught/OpenFire()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	anger_modifier = CLAMP(((maxHealth - health)/50),0,20)
 	ranged_cooldown = world.time + 30
 	walk(src, 0)
 	telegraph()
 	icon_state = "excelatomiton"
 	if(prob(35))
-		shoot_rocket(target_mob.loc, rand(0,90))
+		shoot_rocket(targetted_mob.loc, rand(0,90))
 		move_to_delay = initial(move_to_delay)
 		MoveToTarget()
 		return
@@ -110,13 +114,13 @@
 		move_to_delay = initial(move_to_delay)
 		MoveToTarget()
 		return
-	if(target_mob)
+	if(targetted_mob)
 		if(prob(75))
 			wave_shots()
 			move_to_delay = initial(move_to_delay)
 			MoveToTarget()
 			return
 		else
-			shoot_projectile(target_mob.loc, rand(0,90))
+			shoot_projectile(targetted_mob.loc, rand(0,90))
 			MoveToTarget()
 	move_to_delay = initial(move_to_delay)

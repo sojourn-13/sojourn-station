@@ -16,11 +16,22 @@
 	var/body_parts = list() //A list of bodyparts this covers, in organ_tag defines
 	//Reminder: BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_TORSO,BP_GROIN,BP_HEAD
 
-	alurane
+	alraune
 		name = "Alraune Body"
-		icon_state = "alurane"
+		icon_state = "alraune"
 		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
 
+	mooscles
+		name = "Toned Muscles (Male)"
+		icon_state = "poomp_male"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_TORSO, BP_GROIN, BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM) // I don't know if the arms and legs are THAT affected but let's not skip biceps and leg day. - Seb
+
+	mooscles_f
+		name = "Toned Muscles (Female)"
+		icon_state = "poomp_female"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_TORSO, BP_GROIN, BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM)
 
 /*Anime Eyes*/
 
@@ -199,6 +210,12 @@
 	deer_face
 		name = "Deer Face"
 		icon_state = "deerface"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
+	ram_horns
+		name = "Ram Horns"
+		icon_state = "ram-horns"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
 
@@ -975,7 +992,7 @@
 		icon_state = "bandage"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_ARM)
-		
+
 //Left Hand
 
 	bandage_l_hand
@@ -1007,7 +1024,7 @@
 		icon_state = "bandage"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_R_ARM)
-		
+
 //Right Hand
 
 	bandage_r_hand
@@ -1031,3 +1048,17 @@
 		icon_state = "bandage"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_R_FOOT)
+
+/*Jackal*/
+
+	jackal_bare
+		name = "Jackal Back"
+		icon_state = "jackal_bareback"
+		body_parts = list(BP_CHEST, BP_GROIN, BP_L_ARM, BP_R_ARM)
+		blend = ICON_MULTIPLY
+
+	jackal_spotted
+		name = "Jackal Markings"
+		icon_state = "jackal_backpattern"
+		body_parts = list(BP_CHEST, BP_L_ARM, BP_R_ARM)
+		blend = ICON_MULTIPLY

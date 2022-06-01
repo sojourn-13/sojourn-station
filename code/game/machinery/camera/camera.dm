@@ -66,10 +66,14 @@
 	deactivate(null, 0) //kick anyone viewing out
 	taped = 0
 	if(assembly)
-		qdel(assembly)
-		assembly = null
-	qdel(wires)
-	wires = null
+		QDEL_NULL(assembly)
+	QDEL_NULL(wires)
+
+	for (var/mob/tracked_mob in motionTargets) //get rid of any references for anything we're tracking
+		tracked_mob.tracking_cameras -= src
+		motionTargets -= tracked_mob
+	motionTargets.Cut()
+
 	return ..()
 
 /obj/machinery/camera/Process()
@@ -142,7 +146,7 @@
 	update_coverage()
 	// DECONSTRUCTION
 
-	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING)
+	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING,QUALITY_SEALING)
 	if((wires.CanDeconstruct() || (stat & BROKEN)))
 		usable_qualities.Add(QUALITY_WELDING)
 
@@ -181,6 +185,19 @@
 				return
 			return
 
+		if(QUALITY_SEALING)
+			if(taped)
+				return
+			var/obj/item/tool/our_tape = I
+			if(our_tape.check_tool_effects(user, 70))
+				our_tape.consume_resources(70, user) //70 = 10.5 units of tape , normally
+				set_status(0)
+				taped = TRUE
+				icon_state = "camera_taped"
+				to_chat(user, "You taped the camera.")
+				desc = "It's used to monitor rooms. Its lens is covered with sticky tape."
+				return
+
 		if(ABORT_CHECK)
 			return
 
@@ -192,9 +209,9 @@
 	else if (can_use() && isliving(user) && user.a_intent != I_HURT)
 		var/mob/living/U = user
 		var/list/mob/viewers = list()
-		if(istype(I, /obj/item/ducttape )|| istype(I, /obj/item/tool/tape_roll))
+		if(istype(I, /obj/item/ducttape))
 			set_status(0)
-			taped = 1
+			taped = TRUE
 			icon_state = "camera_taped"
 			to_chat(U, "You taped the camera")
 			desc = "It's used to monitor rooms. It's covered with something sticky."

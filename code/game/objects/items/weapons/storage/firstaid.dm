@@ -347,7 +347,8 @@
 		/obj/item/reagent_containers/dropper,
 		/obj/item/tool/medmultitool,
 		/obj/item/clothing/gloves/latex,
-		/obj/item/tool/medmultitool/medimplant
+		/obj/item/tool/medmultitool/medimplant,
+		/obj/item/bodybag/cryobag
 		)
 
 /obj/item/storage/firstaid/soteria/populate_contents()
@@ -379,7 +380,7 @@
 		/obj/item/reagent_containers/glass/beaker,
 		/obj/item/reagent_containers/dropper,
 		/obj/item/clothing/gloves/latex,
-		/obj/item/bodybag/cryobag,
+		/obj/item/bodybag/cryobag
 		)
 
 /obj/item/storage/firstaid/soteria/large/populate_contents()
@@ -413,7 +414,8 @@
 		/obj/item/reagent_containers/glass/beaker,
 		/obj/item/reagent_containers/dropper,
 		/obj/item/clothing/gloves/latex,
-		/obj/item/tool/medmultitool, //They get to perform field surgery so they deserve space inside their kits to store a med multitool.
+		/obj/item/bodybag/cryobag,
+		/obj/item/tool/medmultitool //They get to perform field surgery so they deserve space inside their kits to store a med multitool.
 		)
 
 /obj/item/storage/firstaid/blackshield/populate_contents()
@@ -449,7 +451,8 @@
 		/obj/item/reagent_containers/glass/beaker,
 		/obj/item/reagent_containers/dropper,
 		/obj/item/clothing/gloves/latex,
-		/obj/item/tool/medmultitool, //They get to perform field surgery so they deserve space inside their kits to store a med multitool.
+		/obj/item/bodybag/cryobag,
+		/obj/item/tool/medmultitool //They get to perform field surgery so they deserve space inside their kits to store a med multitool.
 		)
 
 /obj/item/storage/firstaid/blackshield/large/populate_contents()

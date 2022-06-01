@@ -56,6 +56,7 @@
 
 	req_access = list()
 	req_one_access = list()
+	max_upgrades = 1
 
 /obj/item/rig/industrial/equipped
 
@@ -63,6 +64,7 @@
 		/obj/item/rig_module/device/drill,
 		/obj/item/rig_module/device/orescanner,
 		/obj/item/rig_module/device/rcd,
+		/obj/item/rig_module/cargo_clamp/large,
 		/obj/item/rig_module/vision/meson
 		)
 
@@ -96,6 +98,8 @@
 		/obj/item/rcd
 	)
 
+	max_upgrades = 1
+
 	req_access = list()
 	req_one_access = list()
 
@@ -103,6 +107,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/rcd,
+		/obj/item/rig_module/cargo_clamp,
 		/obj/item/rig_module/vision/meson
 		)
 
@@ -143,6 +148,8 @@ Advanced Voidsuit: Guild Master
 		/obj/item/rcd
 	)
 
+	max_upgrades = 1
+
 	req_access = list(access_ce)
 	req_one_access = list()
 
@@ -152,6 +159,7 @@ Advanced Voidsuit: Guild Master
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/rcd,
 		/obj/item/rig_module/vision/meson,
+		/obj/item/rig_module/cargo_clamp,
 		/obj/item/rig_module/storage
 		)
 
@@ -198,10 +206,13 @@ Technomancer RIG
 		/obj/item/rcd
 	)
 
+	max_upgrades = 1
+
 /obj/item/rig/techno/equipped
 	initial_modules = list(
 		/obj/item/rig_module/storage,
 		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/cargo_clamp,
 		)
 
 /obj/item/clothing/gloves/rig/techno
@@ -249,6 +260,7 @@ Technomancer RIG
 		/obj/item/device/radio/beacon,
 		/obj/item/storage/bag/fossils
 	)
+	max_upgrades = 1
 
 	req_access = list()
 	req_one_access = list()
@@ -304,7 +316,7 @@ Technomancer RIG
 		/obj/item/device/radio/beacon,
 		/obj/item/storage/bag/fossils
 	)
-
+	max_upgrades = 1
 	req_access = list()
 
 /obj/item/clothing/suit/space/rig/advhazmat
@@ -340,7 +352,7 @@ Technomancer RIG
 	offline_vision_restriction = 1
 	stiffness = MEDIUM_STIFFNESS
 	helm_type = /obj/item/clothing/head/helmet/space/rig/medical
-
+	max_upgrades = 1
 	extra_allowed = list(
 		/obj/item/storage/firstaid,
 		/obj/item/device/scanner/health,
@@ -385,6 +397,7 @@ Technomancer RIG
 		/obj/item/roller
 	)
 
+
 /obj/item/rig/trauma_suit/equipped
 	req_access = list()
 	req_one_access = list()
@@ -395,7 +408,7 @@ Technomancer RIG
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/vision/medhud,
-		/obj/item/rig_module/storage/expanded
+		/obj/item/rig_module/storage/expanded/tt
 		)
 
 /***************************************
@@ -420,7 +433,7 @@ Technomancer RIG
 	offline_vision_restriction = 1
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/hazard
-
+	max_upgrades = 1
 	req_access = list()
 	req_one_access = list()
 

@@ -520,6 +520,19 @@
 	)
 	perk = /datum/perk/guild/blackbox_insight
 
+/obj/item/oddity/bath
+	name = "Lonestar Smelling Salts"
+	desc = "A bottle of water that smells a lot of pork and cocaine. This will kick you back into your seat but don't expect your brain to like it much."
+	icon_state = "cursed_hog"
+	random_stats = FALSE
+	oddity_stats = list(
+		STAT_TGH = 8,
+		STAT_ROB = 8,
+		STAT_VIG = 8
+	)
+	price_tag = 1000
+	perk = /datum/perk/oddity/failing_mind //You sure will get brain damage if you get anywhere near this
+
 //A randomized oddity with random stats, meant for artist job project
 /obj/item/oddity/artwork
 	name = "Strange Device"
@@ -557,6 +570,16 @@
 	)
 	price_tag = 8000
 	perk = /datum/perk/nt_oddity/holy_light
+
+/obj/item/oddity/nt/pyramid
+	name = "Pyramid"
+	desc = "A small structure with various triangular bricks and forms a triangular frame. This one seems like a egyptian pyramid in specific, and have various ancient egyptian engravings about forgotten gods that only the today's history researcher may know, considering that various aspects of civilization has been lost over time as the old earth has lost their old history entities from the newer, non-earth born generations, or straight up alien. This lifts the important need to preserve history to never be forgotten. It seems this is supposed to be, more specifically, a figure of the Pyramid which Queen Khentkaus I has been buried. Anubis is the god more present on the arid, golden sand bricks and chiselled by hand."
+	icon_state = "pyramid"
+	oddity_stats = list(
+		STAT_TGH = 16
+	)
+	price_tag = 8000
+	perk = /datum/perk/oddity/strangth
 
 /obj/item/oddity/chimeric_fang_trophy
 	name = "Chimera Fang Trophy"
@@ -810,7 +833,7 @@
 		return
 	if(prob(openchance))
 		new /mob/living/simple_animal/hostile/stranger(user.loc)
-		new /obj/item/oddity/nt/openedpuzzlebox(user.loc)
+		new /obj/item/oddity/rare/openedpuzzlebox(user.loc)
 		to_chat(user, SPAN_WARNING("[src] clicks and lights up!"))
 		qdel(src)
 	else
@@ -865,7 +888,7 @@
 //Lonestar Special
 //For unique oddities that don't fit into other categories
 
-/obj/item/oddity/nt/openedpuzzlebox
+/obj/item/oddity/rare/openedpuzzlebox
 	name = "Opened Puzzlebox" //todo add cool sound; make sure path is correct
 	desc = "The box... it's been opened."
 	icon_state = "puzzlebox_open"

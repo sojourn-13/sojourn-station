@@ -33,3 +33,4 @@
 	new /obj/item/device/uv_light(src)
 	new /obj/item/forensics/sample_kit(src)
 	new /obj/item/forensics/sample_kit/powder(src)
+	new /obj/item/device/bullet_scanner(src)

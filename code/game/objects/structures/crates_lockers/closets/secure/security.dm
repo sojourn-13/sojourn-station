@@ -8,6 +8,7 @@
 	new /obj/item/storage/backpack/satchel/captain(src)
 	new /obj/item/clothing/head/rank/captain/cap(src)
 	new /obj/item/clothing/under/rank/captain(src)
+	new /obj/item/clothing/accessory/halfcape/premier(src)
 	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/clothing/head/helmet(src)
 	new /obj/item/clothing/shoes/color/brown(src)
@@ -51,19 +52,18 @@
 
 /obj/structure/closet/secure_closet/reinforced/hos/populate_contents()
 	new /obj/item/storage/backpack/ironhammer(src)
-	if(prob(50))
-		new /obj/item/storage/backpack/satchel/ironhammer(src)
-	else
-		new /obj/item/storage/backpack/sport/ironhammer(src)
+	new /obj/item/storage/backpack/satchel/ironhammer(src)
+	new /obj/item/storage/backpack/sport/ironhammer(src)
 	new /obj/item/device/t_scanner/advanced(src)
 	new /obj/item/clothing/head/rank/commander(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/clothing/suit/armor/hos(src)
 	new /obj/item/clothing/suit/armor/platecarrier/hos(src)
 	new /obj/item/clothing/under/rank/ih_commander(src)
+	new /obj/item/clothing/accessory/halfcape/wo(src)
 	new /obj/item/clothing/glasses/sechud/tactical(src)
 	new /obj/item/clothing/accessory/badge/hos(src)
-	new /obj/item/clothing/suit/greatcoat/ihc(src)
+	new /obj/item/clothing/suit/storage/greatcoat/ihc(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
 	new /obj/item/storage/pouch/pistol_holster(src)
 	new /obj/item/storage/pouch/baton_holster/telebaton(src)
@@ -84,12 +84,8 @@
 	new /obj/item/clipboard(src)
 	new /obj/item/device/camera(src)
 	new /obj/item/melee/classic_baton(src)
-
 	new /obj/item/oddity/code_book(src)
-	if(prob(50))
-		new /obj/item/clothing/head/helmet/faceshield/helmet_visor(src)
-	else
-		new /obj/item/clothing/head/helmet/marshal_full(src)
+	new /obj/item/clothing/head/helmet/warrant_officer(src)
 
 /obj/structure/closet/secure_closet/warden
 	name = "supply specialist's locker"
@@ -97,30 +93,22 @@
 	icon_state = "warden"
 
 /obj/structure/closet/secure_closet/warden/populate_contents()
-	if(prob(50))
-		new /obj/item/storage/backpack/ironhammer(src)
-	else
-		new /obj/item/storage/backpack/sport/ironhammer(src)
-	if(prob(50))
-		new /obj/item/gun/projectile/revolver/rev10(src)
-		new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
-		new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
-		new /obj/item/ammo_magazine/speed_loader_magnum_40/rubber(src)
-		new /obj/item/ammo_magazine/speed_loader_magnum_40/rubber(src)
-		new /obj/item/ammo_magazine/ammobox/magnum_40(src)
-	else
-		new /obj/item/gun/projectile/lamia(src)
-		new /obj/item/ammo_magazine/kurtz_50(src)
-		new /obj/item/ammo_magazine/kurtz_50(src)
-		new /obj/item/ammo_magazine/kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
+	new /obj/item/storage/backpack/ironhammer(src)
+	new /obj/item/storage/backpack/sport/ironhammer(src)
+	new /obj/item/gun/projectile/revolver/rev10(src)
+	new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
+	new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
+	new /obj/item/ammo_magazine/speed_loader_magnum_40/rubber(src)
+	new /obj/item/ammo_magazine/speed_loader_magnum_40/rubber(src)
+	new /obj/item/ammo_magazine/ammobox/magnum_40(src)
+	new /obj/item/device/bullet_scanner(src)
+	new /obj/item/voucher/marshal/specprimary(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
 	new /obj/item/device/holowarrant(src)
 	new /obj/item/clothing/under/rank/warden(src)
 	new /obj/item/clothing/head/rank/warden/beret(src)
 	new /obj/item/clothing/suit/storage/vest/ironhammer(src)
-	new /obj/item/clothing/under/rank/security/turtleneck(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/exotic_ammo(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
@@ -142,10 +130,7 @@
 	new /obj/item/storage/box/trackimp(src)
 	new /obj/item/oddity/code_book(src)
 	new /obj/item/device/t_scanner/advanced(src)
-	if(prob(50))
-		new /obj/item/clothing/head/helmet/faceshield/helmet_visor(src)
-	else
-		new /obj/item/clothing/head/helmet/marshal_full(src)
+	new /obj/item/clothing/head/helmet/marshal_full(src)
 
 /obj/structure/closet/secure_closet/personal/security
 	name = "marshal officer's locker"
@@ -159,12 +144,14 @@
 		new /obj/item/storage/backpack/ironhammer(src)
 	else
 		new /obj/item/storage/backpack/sport/ironhammer(src)
+	new /obj/item/voucher/marshal/primary(src)
+	new /obj/item/voucher/marshal/secondary(src)
+	new /obj/item/voucher/marshal/armor(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/storage/belt/security(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
 	new /obj/item/clothing/suit/storage/vest/ironhammer(src)
-	new /obj/item/clothing/under/rank/security/turtleneck(src)
 	new /obj/item/device/holowarrant(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/clothing/glasses/sechud/tactical(src)
@@ -176,38 +163,15 @@
 	new /obj/item/clipboard(src)
 	new /obj/item/device/camera(src)
 	new /obj/item/device/t_scanner/advanced(src)
-	if(prob(50))
-		new /obj/item/clothing/head/helmet/faceshield/helmet_visor(src)
-	else
-		new /obj/item/clothing/head/helmet/marshal_full(src)
+	new /obj/item/clothing/head/helmet/marshal_full(src)
 
-/obj/structure/closet/secure_closet/medspec
-	name = "corpsman's locker"
-	req_access = list(access_medspec)
-	icon_state = "sec"
-
-/obj/structure/closet/secure_closet/medspec/populate_contents()
-	new /obj/item/clothing/glasses/sechud/tactical(src)
-	new /obj/item/clothing/mask/gas/ihs(src)
-	new /obj/item/taperoll/police(src)
-	new /obj/item/clothing/under/rank/medspec(src)
-	new /obj/item/device/radio/headset/headset_sec(src)
-	new /obj/item/storage/belt/security(src)
-	new /obj/item/clothing/shoes/reinforced(src)
-	new /obj/item/clothing/gloves/stungloves(src)
-	new /obj/item/cell/medium/high(src)
-	new /obj/item/clothing/suit/storage/toggle/labcoat/medspec(src)
-	new /obj/item/storage/pouch/pistol_holster(src)
-	new /obj/item/storage/briefcase/crimekit(src)
-	if(prob(5))
-		new /obj/random/rations/crayon(src)
-
-/obj/structure/closet/secure_closet/detective
+/obj/structure/closet/secure_closet/personal/detective
 	name = "ranger's locker"
-	req_access = list(access_forensics_lockers)
+	req_access = list(access_hos)
+	access_occupy = list(access_forensics_lockers) //So we can claim
 	icon_state = "cabinetdetective"
 
-/obj/structure/closet/secure_closet/detective/populate_contents()
+/obj/structure/closet/secure_closet/personal/detective/populate_contents()
 	new /obj/item/clothing/under/rank/inspector/suit(src)
 	new /obj/item/clothing/under/rank/inspector/black(src)
 	new /obj/item/clothing/under/rank/inspector(src)
@@ -233,15 +197,13 @@
 	new /obj/item/device/taperecorder(src)
 	new /obj/item/clipboard(src)
 	new /obj/item/device/camera(src)
-	new /obj/item/gun/projectile/revolver/deckard(src)
 	new /obj/item/clothing/accessory/holster/armpit(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
 	new /obj/item/storage/pouch/pistol_holster(src)
 	new /obj/item/implantpad(src)
 	new /obj/item/device/t_scanner/advanced(src)
+	new /obj/item/voucher/marshal/rangerprimary(src)
+	new /obj/item/voucher/marshal/rangersecondary(src)
+	new /obj/item/voucher/marshal/armor(src)
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections locker"

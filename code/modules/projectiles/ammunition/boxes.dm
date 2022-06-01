@@ -83,6 +83,33 @@
 	icon_state = "pistol_bio"
 	ammo_type = /obj/item/ammo_casing/pistol_35/biomatter
 
+// .35 BIG BAWKS
+/obj/item/ammo_magazine/ammobox/pistol_35/large
+	name = "ammunition box (.35 Auto)"
+	desc = "A large box of police grade .35 auto."
+	matter = list(MATERIAL_STEEL = 15)
+	w_class = ITEM_SIZE_BULKY
+	max_ammo = 200
+	icon_state = "pistol_large"
+
+/obj/item/ammo_magazine/ammobox/pistol_35/large/lethal
+	name = "ammunition box (.35 Auto hollow-point)"
+	desc = "A large box of self defense grade .35 auto hollow-point rounds."
+	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
+	icon_state = "pistol_large_hp"
+
+/obj/item/ammo_magazine/ammobox/pistol_35/large/rubber
+	name = "ammunition box (.35 Auto rubber)"
+	desc = "A large box of police grade .35 auto rubber rounds."
+	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
+	icon_state = "pistol_large_rubber"
+
+/obj/item/ammo_magazine/ammobox/pistol_35/large/hv
+	name = "ammunition box (.35 Auto high-velocity)"
+	desc = "A large box of high velocity .35 auto rounds"
+	ammo_type = /obj/item/ammo_casing/pistol_35/hv
+	icon_state = "pistol_large_hv"
+
 //// . 40 ////
 
 /obj/item/ammo_magazine/ammobox/magnum_40
@@ -134,6 +161,32 @@
 	desc = "A box of caustic caseless .40 Magnum."
 	icon_state = "magnum_bio"
 	ammo_type = /obj/item/ammo_casing/magnum_40/biomatter
+
+//.40 big boxes
+/obj/item/ammo_magazine/ammobox/magnum_40/large
+	name = "ammunition box (.40 Magnum)"
+	icon_state = "magbox"
+	matter = list(MATERIAL_STEEL = 15)
+	w_class = ITEM_SIZE_BULKY
+	caliber = CAL_MAGNUM
+	ammo_type = /obj/item/ammo_casing/magnum_40
+	max_ammo = 150
+
+/obj/item/ammo_magazine/ammobox/magnum_40/large/lethal
+	name = "ammunition box (.40 Magnum hollow-point)"
+	icon_state = "magboxhp"
+	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
+
+/obj/item/ammo_magazine/ammobox/magnum_40/large/rubber
+	name = "ammunition box (.40 Magnum rubber)"
+	icon_state = "magboxrubber"
+	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
+
+/obj/item/ammo_magazine/ammobox/magnum_40/large/hv
+	name = "ammunition box (.40 Magnum high-velocity)"
+	icon_state = "magboxhv"
+	ammo_type = /obj/item/ammo_casing/magnum_40/hv
+
 
 //// .257 carbine ////
 
@@ -320,13 +373,13 @@
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = "10x24"
 	ammo_type = /obj/item/ammo_casing/c10x24
-	max_ammo = 36 //3+1 reloads of the SWAT 2.6 of the bond, around 0.29 for smgs
+	max_ammo = 80 //6.6 reloads of the SWAT, 2 of the bond, almost 1 full pulse mag
 
 //// .223 laser shot!
 
 /obj/item/ammo_magazine/ammobox/laser_223
 	name = "ammunition packet (.223 L)"
-	icon_state = "box223-laser"
+	icon_state = "223-laser"
 	desc = "A packet of .223 laser round."
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_SCI
@@ -335,13 +388,35 @@
 
 /obj/item/ammo_magazine/ammobox/laser_223/ap
 	name = "ammunition packet (.223 PL)"
-	icon_state = "box223-ap-laser"
+	icon_state = "223-ap-laser"
 	ammo_type = /obj/item/ammo_casing/beam/ap
 
 /obj/item/ammo_magazine/ammobox/laser_223/lethal
 	name = "ammunition packet (.223 DL)"
+	icon_state = "223-lethal-laser"
+	ammo_type = /obj/item/ammo_casing/beam
+
+/obj/item/ammo_magazine/ammobox/laser_223/box
+	name = "ammunition box (.223 L)"
+	icon_state = "box223-laser"
+	desc = "A large box of .223 laser round."
+	matter = list(MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SCI
+	ammo_type = /obj/item/ammo_casing/beam
+	max_ammo = 200
+	w_class = ITEM_SIZE_BULKY
+
+/obj/item/ammo_magazine/ammobox/laser_223/ap/box
+	name = "ammunition box (.223 PL)"
+	icon_state = "box223-ap-laser"
+	ammo_type = /obj/item/ammo_casing/beam/ap
+	max_ammo = 200
+
+/obj/item/ammo_magazine/ammobox/laser_223/lethal/box
+	name = "ammunition box (.223 DL)"
 	icon_state = "box223-lethal-laser"
 	ammo_type = /obj/item/ammo_casing/beam
+	max_ammo = 200
 
 ////.50 kurtz
 

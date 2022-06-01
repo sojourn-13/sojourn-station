@@ -204,9 +204,11 @@
 	name = "energy blade"
 	desc = "A concentrated beam of energy in the shape of a blade. Very stylish... and lethal."
 	icon_state = "blade"
+	icon = 'icons/obj/weapons.dmi'
 	armor_penetration = 30
 	sharp = 1
 	edge = 1
+	force = WEAPON_FORCE_BRUTAL
 	anchored = 1    // Never spawned outside of inventory, should be fine.
 	throwforce = 1  //Throwing or dropping the item deletes it.
 	throw_speed = 1

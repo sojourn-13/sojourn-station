@@ -199,8 +199,7 @@
 					radiation = rand() * 15 + 85
 					if(!rad_shield)
 						//irradiate nearby mobs
-						for(var/mob/living/M in view(7,src))
-							M.apply_effect(radiation / 25, IRRADIATE, 0)
+						PulseRadiation(src, radiation / 25, 7)
 				else
 					t_left_radspike = pick(10,15,25)
 
@@ -281,10 +280,6 @@
 		var/data = " - Mundane object: [scanned_item.desc ? scanned_item.desc : "No information on record."]<br>"
 		var/datum/geosample/G
 		switch(scanned_item.type)
-			if(/obj/item/ore)
-				var/obj/item/ore/O = scanned_item
-				if(O.geologic_data)
-					G = O.geologic_data
 
 			if(/obj/item/rocksliver)
 				var/obj/item/rocksliver/O = scanned_item

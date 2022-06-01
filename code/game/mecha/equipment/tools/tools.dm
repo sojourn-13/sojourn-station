@@ -141,7 +141,7 @@
 					if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment)
 						var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
 						if(ore_box)
-							for(var/obj/item/ore/ore in range(chassis,1))
+							for(var/obj/item/stack/ore/ore in range(chassis,1))
 								if(get_dir(chassis,ore)&chassis.dir)
 									ore.Move(ore_box)
 				else if(istype(target, /turf/simulated/floor/asteroid))
@@ -152,7 +152,7 @@
 					if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment)
 						var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
 						if(ore_box)
-							for(var/obj/item/ore/ore in range(chassis,1))
+							for(var/obj/item/stack/ore/ore in range(chassis,1))
 								if(get_dir(chassis,ore)&chassis.dir)
 									ore.Move(ore_box)
 				else if(target.loc == C)
@@ -196,7 +196,7 @@
 					if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment)
 						var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
 						if(ore_box)
-							for(var/obj/item/ore/ore in range(chassis,1))
+							for(var/obj/item/stack/ore/ore in range(chassis,1))
 								if(get_dir(chassis,ore)&chassis.dir)
 									ore.Move(ore_box)
 				else if(istype(target,/turf/simulated/floor/asteroid))
@@ -206,7 +206,7 @@
 					if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment)
 						var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
 						if(ore_box)
-							for(var/obj/item/ore/ore in range(target,1))
+							for(var/obj/item/stack/ore/ore in range(target,1))
 								ore.Move(ore_box)
 				else if(target.loc == C)
 					log_message("Drilled through \the [target]")
@@ -576,7 +576,7 @@
 	desc = "Close-combat armor booster. Boosts exosuit armor against armed melee attacks. Requires energy to operate."
 	icon_state = "mecha_abooster_ccw"
 	origin_tech = list(TECH_MATERIAL = 4)
-	matter = list(MATERIAL_STEEL = 20, MATERIAL_SILVER = 5)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_SILVER = 5)
 	deflect_coeff = 1.15
 	damage_coeff = 0.8
 	melee = 1
@@ -601,7 +601,7 @@
 	desc = "Ranged-weaponry armor booster. Boosts exosuit armor against ranged attacks. Completely blocks taser shots, but requires energy to operate."
 	icon_state = "mecha_abooster_proj"
 	origin_tech = list(TECH_MATERIAL = 4)
-	matter = list(MATERIAL_STEEL = 20, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_GOLD = 5)
 	deflect_coeff = 1.15
 	damage_coeff = 0.8
 	melee = 0

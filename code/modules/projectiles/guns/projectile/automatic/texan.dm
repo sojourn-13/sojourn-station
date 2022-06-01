@@ -9,7 +9,7 @@
 	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_SMG
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_WOOD = 4)
 	price_tag = 800
@@ -18,11 +18,12 @@
 	recoil_buildup = 1.25
 	one_hand_penalty = 10
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
+	serial_type = "SA"
 
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_400_NOLOSS,
 		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND
+		BURST_3_ROUND_NOLOSS
 		)
 
 /obj/item/gun/projectile/automatic/texan/update_icon()

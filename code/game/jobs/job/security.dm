@@ -15,7 +15,7 @@
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
-	playtimerequired = 1200
+	playtimerequired = 2500
 
 	outfit_type = /decl/hierarchy/outfit/job/security/smc
 
@@ -78,7 +78,7 @@
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
-	playtimerequired = 1200
+	playtimerequired = 2500
 
 	outfit_type = /decl/hierarchy/outfit/job/security/swo
 
@@ -137,6 +137,7 @@
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
+	playtimerequired = 1200
 
 	outfit_type = /decl/hierarchy/outfit/job/security/gunserg
 
@@ -190,6 +191,7 @@
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
+	playtimerequired = 1200
 
 	outfit_type = /decl/hierarchy/outfit/job/security/serg
 
@@ -240,6 +242,7 @@
 	alt_titles = list("Detective","Forensics Specialist")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
+	playtimerequired = 1200
 
 	outfit_type = /decl/hierarchy/outfit/job/security/inspector
 
@@ -394,7 +397,7 @@
 	spawn_positions = 4
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	alt_titles = list("Marshal Junior Officer")
+	alt_titles = list("Marshal Civil Servant", "Field Training Marshal")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 

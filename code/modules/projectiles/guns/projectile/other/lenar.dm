@@ -1,5 +1,5 @@
 /obj/item/gun/projectile/grenade/lenar
-	name = "GmbH GL \"Lenar\""
+	name = "SD GmbH GL \"Lenar\""
 	desc = "A more than bulky pump-action grenade launcher used by Police during riots. Holds up to 6 grenade shells in a revolving magazine."
 	icon = 'icons/obj/guns/launcher/grenadelauncher.dmi'
 	icon_state = "Grenadelauncher_PMC"
@@ -11,6 +11,7 @@
 	bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'   //Placeholder, could use a new sound
 	fire_sound_text = "a metallic thunk"
 	price_tag = 1200
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/grenade/lenar/proc/update_charge()
 	var/ratio = loaded.len / max_shells

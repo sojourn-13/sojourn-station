@@ -17,7 +17,7 @@
 #define WURM_SPEED_LOW 7
 #define WURM_SPEED_MED 5
 #define WURM_SPEED_HIGH 3
-
+/*
 // Normal types of wurms
 GLOBAL_LIST_INIT(wurms_normal, list(/mob/living/carbon/superior_animal/wurm/iron,
 									/mob/living/carbon/superior_animal/wurm/silver))
@@ -25,7 +25,7 @@ GLOBAL_LIST_INIT(wurms_normal, list(/mob/living/carbon/superior_animal/wurm/iron
 // Special types of wurms
 GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osmium,
 									/mob/living/carbon/superior_animal/wurm/diamond))
-
+*/
 /mob/living/carbon/superior_animal/wurm
 	name = "wurm youngling"
 	desc = "A plasma eating wurm capable of firing volatile globs of electric acid if they spot prey. Hated by lonestar miners as many do not know it is there until they are hit by acid. This one is merely a youngling and not nearly as dangerous as an adult."
@@ -41,7 +41,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 
 	destroy_surroundings = TRUE
 
-	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_DWARFISM, MUTATION_NERVOUSNESS, MUTATION_DEAF, MUTATION_IMBECILE)
+	//inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_DWARFISM, MUTATION_NERVOUSNESS, MUTATION_DEAF, MUTATION_IMBECILE) - Cant be used so dont track these
 
 	contaminant_immunity = TRUE
 	cold_protection = 1
@@ -70,17 +70,18 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	var/ore
 
 	// The ennemy of all wurmkind
-	var/obj/machinery/mining/drill/DD
+	//var/obj/machinery/mining/drill/DD
 
 	//Controller that spawned the wurm
-	var/datum/wurm_controller/controller
+	//var/datum/wurm_controller/controller
 
-/mob/living/carbon/superior_animal/wurm/New(loc, obj/machinery/mining/drill/drill, datum/wurm_controller/parent)
+	range_telegraph = "starts to wobble at"
+/mob/living/carbon/superior_animal/wurm/New(loc, obj/machinery/mining/drill/drill) //datum/wurm_controller/parent
 	..()
-	if(parent)
+	/*iif(parent)
 		controller = parent  // Link wurms with wurm controller
 		controller.wurm += src
-	if(drill)
+	f(drill)
 		DD = drill
 		if(prob(50))
 			target_mob  = drill
@@ -90,7 +91,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 			if(istype(O, /turf/simulated/mineral)) // Is it a minable turf?
 				var/turf/simulated/mineral/M = O
 				mine(M) // Mine the turf
-				continue
+				continue*/
 
 // Mine a tile
 /mob/living/carbon/superior_animal/wurm/proc/mine(var/turf/simulated/mineral/M)
@@ -100,25 +101,27 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 
 /mob/living/carbon/superior_animal/wurm/isValidAttackTarget(atom/O)
 	// wurms can actively try to attack the drill
-	if(istype(O, /obj/machinery/mining/drill))
-		return TRUE
+	//if(istype(O, /obj/machinery/mining/drill))
+	//	return TRUE
 	return ..()
 
-/mob/living/carbon/superior_animal/wurm/death(gibbed, deathmessage = "explodes in a shower of ichor and gore!")
+/mob/living/carbon/superior_animal/wurm/death(gibbed, deathmessage = "explodes in a shower of acidic ichor and gore that quickly melts into the ground!")
 
-	if(controller) // Unlink from controller
-		controller.wurm -= src
-		controller = null
+	//if(controller) // Unlink from controller
+	//	controller.wurm -= src
+	//	controller = null
 
 	// Spawn ores
 	if(ore)
 		var/nb_ores = rand(3, 5)
 		for(var/i in 1 to nb_ores)
 			new ore(loc)
+
+	..() //THIS MUST BE BEFORE QDEL!! OTHERWISE YOU END UP ADDING THE MOB TO THE DEAD MOB LIST POST-DESTROY!!!
+
 	qdel(src)
 
-	..()
-	new /obj/effect/gibspawner/generic(src.loc)
+	//new /obj/effect/gibspawner/generic(src.loc) - This one is just anti-lag not really needed to giv these
 
 //////////////////
 //Types of Wurms//
@@ -150,7 +153,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	armor = list(melee = 20, bullet = 35, energy = 35, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/iron
+	ore = /obj/item/stack/ore/iron
 
 
 //Silver Wurm - melee, slow, tanky, low damage
@@ -176,7 +179,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	armor = list(melee = 50, bullet = 35, energy = 20, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/silver
+	ore = /obj/item/stack/ore/silver
 
 
 //Osmium Wurm - melee, fast, med-damage
@@ -203,7 +206,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 
 
 //Loot related variables
-	ore = /obj/item/ore/osmium
+	ore = /obj/item/stack/ore/osmium
 
 
 //Diamond Wurm - melee, doesn't give a fuck, high-damage
@@ -231,4 +234,6 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 
 
 //Loot related variables
-	ore = /obj/item/ore/osmium
+	ore = /obj/item/stack/ore/osmium
+
+

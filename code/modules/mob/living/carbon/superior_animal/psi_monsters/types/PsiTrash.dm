@@ -28,14 +28,14 @@
 	health = 90
 	melee_damage_lower = 12
 	melee_damage_upper = 14
-	emote_see = list("garbles inane speech.", "howls with laughter!", "growls foul unintelligable words.")
+	emote_see = list("garbles inane speech.", "howls with laughter!", "growls foul unintelligible words.")
 	speak_chance = 10
 	poison_per_bite = 1
 	attacktext = "caressed"
 
 /mob/living/carbon/superior_animal/psi_monster/pus_maggot
 	name = "pus maggot"
-	desc = "Of all the things down here, the pus maggot is one of the most reviled, its tumerous squirming rear filled with a toxic and vile acid it tries to engorge onto its victims."
+	desc = "Of all the things down here, the pus maggot is one of the most reviled, its tumorous squirming rear filled with a toxic and vile acid it tries to engorge onto its victims."
 	icon_state = "parasite"
 	icon_living = "parasite"
 

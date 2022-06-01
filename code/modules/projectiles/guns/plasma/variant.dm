@@ -52,6 +52,7 @@
 		list(mode_name = "standard", mode_desc="A large ball of hydrogen to blow up bulwarks or weak targets", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay = 30, icon = "destroy", use_plasma_cost = 10, icon_state = "prifle"),
 		list(mode_name = "overclock", mode_desc="A large ball of volatile hydrogen to blow up cover or targets", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound = 'sound/effects/supermatter.ogg', fire_delay = 50, icon = "kill", use_plasma_cost = 20, icon_state = "prifle_crit")
 	)
+	serial_type = "BlueCross"
 
 /obj/item/gun/hydrogen/plasma_torch
 	name = "\improper Welder Gun"
@@ -66,6 +67,9 @@
 	safety = FALSE // It's a welder turned into a gun, it doesn't have any nifty safeties, and even if it did, the player had to deactivate them to turn the welder into a gun in the first place.
 	restrict_safety = TRUE // Can't change the safety on something that doesn't have any. Look here ^ - R4d6
 	var/obj/item/tool/plasma_torch/welder = null // Hold the welder the gun turns into.
+	serial_type = "INDEX"
+	serial_shown = FALSE
+
 
 // This is where the gun turn into a welder
 /obj/item/gun/hydrogen/plasma_torch/verb/switch_to_welder()
@@ -87,3 +91,11 @@
 						SPAN_NOTICE("[usr] activate the safeties of the [src.name]."),
 						SPAN_NOTICE("You activate the safeties of the [src.name].")
 						)
+
+/obj/item/gun/hydrogen/plasma_torch/Destroy()
+
+	if (welder)
+		welder.gun = null
+		welder = null
+
+	. = ..()

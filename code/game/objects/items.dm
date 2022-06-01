@@ -77,12 +77,15 @@
 	var/force = 0	//How much damage the weapon deals
 	var/embed_mult = 0.5 //Multiplier for the chance of embedding in mobs. Set to zero to completely disable embedding
 	var/structure_damage_factor = STRUCTURE_DAMAGE_NORMAL	//Multiplier applied to the damage when attacking structures and machinery
+
+	var/post_penetration_dammult = 1 //how much damage do we do post-armor-penetation
 	//Does not affect damage dealt to mobs
 	//var/attack_distance = 1
 
 	var/list/item_upgrades = list()
 	var/max_upgrades = 3
 	var/list/prefixes = list()
+	var/list/blacklist_upgrades = list() //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
 
 
 	var/list/effective_faction = list() // Which faction the item is effective against.
@@ -588,4 +591,3 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 /obj/item/device
 	icon = 'icons/obj/device.dmi'
-

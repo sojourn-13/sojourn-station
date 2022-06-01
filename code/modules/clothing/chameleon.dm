@@ -65,14 +65,13 @@
 	/obj/item/device/radio/headset)
 
 	var/list/loadout_2 = list(/obj/item/clothing/under/rank/security,
-	/obj/item/clothing/head/helmet/faceshield/helmet_visor,
+	/obj/item/clothing/head/helmet/marshal_full,
 	/obj/item/clothing/suit/armor/platecarrier/ih,
 	/obj/item/clothing/shoes/jackboots,
 	/obj/item/storage/backpack/satchel/security,
 	/obj/item/clothing/gloves/stungloves,
 	/obj/item/clothing/mask/balaclava/tactical,
 	/obj/item/clothing/glasses/sechud/tactical,
-	/obj/item/gun/projectile/automatic/bulldog,
 	/obj/item/device/radio/headset/headset_sec)
 
 	var/list/loadout_3 = list(/obj/item/clothing/under/rank/scientist,
@@ -633,6 +632,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
 	matter = list()
+	serial_shown = FALSE
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 	projectile_type = /obj/item/projectile/chameleon

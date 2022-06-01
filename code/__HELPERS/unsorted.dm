@@ -584,24 +584,29 @@ proc/GaussRandRound(var/sigma, var/roundto)
 
 	return toReturn
 
-//Step-towards method of determining whether one atom can see another. Similar to viewers()
-/proc/can_see(var/atom/source, var/atom/target, var/length=5) // I couldn't be arsed to do actual raycasting :I This is horribly inaccurate.
+///Step-towards method of determining whether one atom can see another. Similar to viewers()
+///note: this is a line of sight algorithm, view() does not do any sort of raycasting and cannot be emulated by it accurately
+/proc/can_see(atom/source, atom/target, length=5) // I couldnt be arsed to do actual raycasting :I This is horribly inaccurate.
 	var/turf/current = get_turf(source)
 	var/turf/target_turf = get_turf(target)
-	var/steps = 0
-
-	if(!current || !target_turf)
-		return 0
-
+	if(get_dist(source, target) > length)
+		return FALSE
+	var/steps = 1
+	if(current == target_turf)//they are on the same turf, source can see the target
+		return TRUE
+	current = get_step_towards(current, target_turf)
 	while(current != target_turf)
-		if(steps > length) return 0
-		if(current.opacity) return 0
-		for(var/atom/A in current)
-			if(A.opacity) return 0
+		if(steps > length)
+			return FALSE
+		if(current.opacity)
+			return FALSE
+		var/list/contents = current.contents
+		for (var/obj/object in contents) //only /obj because we only have opaque objs right now, !!!UPDATE THIS IF WE FUCKING CHANGE IT!!!
+			if (object.opacity)
+				return FALSE
 		current = get_step_towards(current, target_turf)
 		steps++
-
-	return 1
+	return TRUE
 
 /proc/is_blocked_turf(var/turf/T)
 	var/cant_pass = 0
@@ -1419,3 +1424,13 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	// 	D.vv_edit_var(var_name, var_value) //same result generally, unless badmemes
 	// else
 	D.vars[var_name] = var_value
+
+/proc/generate_single_gun_number()
+	return pick(1,2,3,4,5,6,7,8,9,0)
+
+/proc/generate_gun_serial(digit_numbers)
+	var/generated_code = ""
+	while(digit_numbers)
+		digit_numbers--
+		generated_code += "[generate_single_gun_number()]" // cast to string
+	return generated_code

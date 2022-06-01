@@ -39,9 +39,10 @@
 	mag_drop = FALSE
 	ranged = TRUE
 	rounds_left = 1
-	mag_type = /obj/item/ore
+	mag_type = /obj/item/stack/ore
 	mags_left = 6 //each vox has 6 rocks normally
 	rounds_per_fire = 1
 	reload_message = "picks up a rock!"
-
+	range_telegraph = "starts to spin their sling around, orienting it towards"
+	bones_amount = 1
 	var/knock_over_odds = 5

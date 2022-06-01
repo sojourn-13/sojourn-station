@@ -9,7 +9,7 @@
 	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	auto_eject = TRUE
 	matter = list(MATERIAL_PLASTEEL = 14, MATERIAL_PLASTIC = 4)
@@ -20,6 +20,7 @@
 	recoil_buildup = 5
 	one_hand_penalty = 7
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
+	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/firefly/update_icon()
 	..()

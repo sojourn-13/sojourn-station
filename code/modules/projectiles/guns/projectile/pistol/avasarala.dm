@@ -6,7 +6,7 @@
 	item_state = "avasarala"
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_50
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 1200 //Still worth alot despite being shit.
@@ -20,6 +20,7 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/avasarala_cock.ogg'
 	fire_sound 	= 'sound/weapons/guns/fire/avasarala_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
+	serial_type = "SA"
 
 /obj/item/gun/projectile/avasarala/update_icon()
 	..()

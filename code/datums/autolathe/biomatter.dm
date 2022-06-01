@@ -129,8 +129,6 @@
 	build_path = /obj/item/storage/belt/champion
 	materials = list(MATERIAL_BIOMATTER = 50)
 
-// This separates regular clothes designs from NT clothes designs //
-
 /datum/design/bioprinter/nt_clothes/acolyte_armor
 	name = "Vector Armor"
 	build_path = /obj/item/clothing/suit/armor/vest/acolyte
@@ -186,6 +184,11 @@
 /datum/design/bioprinter/nt_clothes/NTvoid
 	name = "Angel Voidsuit"
 	build_path = /obj/item/clothing/suit/space/void/NTvoid
+
+/datum/design/bioprinter/nt_clothes/knight_rig
+	name = "Knight Hardsuit Module"
+	materials = list(MATERIAL_BIOMATTER = 100, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_PLASTEEL = 100)
+	build_path = /obj/item/rig/combat/knight
 
 //[MELEE]
 /datum/design/autolathe/sword/nt_sword
@@ -283,6 +286,14 @@
 /datum/design/bioprinter/medical/advanced/ointment
 	name = "Advanced burn kit"
 	build_path = /obj/item/stack/medical/advanced/ointment
+
+/datum/design/bioprinter/medical/advanced/bruise/nt
+	name = "Absolutist trauma kit"
+	build_path = /obj/item/stack/medical/advanced/bruise_pack/nt
+
+/datum/design/bioprinter/medical/advanced/ointment/nt
+	name = "Absolutist burn kit"
+	build_path = /obj/item/stack/medical/advanced/ointment/nt
 
 /datum/design/bioprinter/lungs
 	name = "Extended Lungs"

@@ -12,11 +12,13 @@
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_PLASTIC = 6)
 	price_tag = 250
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_DRUM
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
 	damage_multiplier = 0.7
 	recoil_buildup = 2 //weakest gun in the damn game
+	serial_type = "H&S"
+
 
 /obj/item/gun/projectile/clarissa/update_icon()
 	..()
@@ -49,12 +51,14 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
+	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/clarissa/moebius
 	name = "SI HG .35 Auto \"Malpractice\"" // SI stands for Soteria Institution
 	desc = "A small, easily concealable, but somewhat underpowered gun produced by SI as based off the \"Little Commit\" but ended up being a copy of the \"Clarissa\" with white paint. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/clarissa_white.dmi'
 	price_tag = 200
+	serial_type = "SI"
 
 /obj/item/gun/projectile/clarissa/moebius/preloaded_cbo
 

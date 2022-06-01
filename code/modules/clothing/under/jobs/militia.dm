@@ -41,7 +41,7 @@
 	options["Green Utility Uniform Alt"] = "greenutility_alt"
 	options["Green Utility Uniform Corpsman"] = "greenutility_Corpsman"
 	options["Green Utility Uniform Corpsman Alt"] = "greenutility_alt_med"
-	options["Green Utility Pans"] = "greenutility_pants"
+	options["Green Utility Pants"] = "greenutility_pants"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -75,7 +75,7 @@
 	var/list/options = list()
 	options["Grey Utility Uniform"] = "greyutility"
 	options["Grey Utility Uniform Alt"] = "greyutility_alt"
-	options["Grey Utility Pans"] = "greyutility_pants"
+	options["Grey Utility Pants"] = "greyutility_pants"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -109,8 +109,8 @@
 	var/list/options = list()
 	options["Navy Utility Uniform"] = "navyutility"
 	options["Navy Utility Uniform Alt"] = "navyutility_alt"
-	options["Navy Utility Pans"] = "navyutility_pants"
-	options["Dark Utility Pans"] = "blackutility_pants"
+	options["Navy Utility Pants"] = "navyutility_pants"
+	options["Dark Utility Pants"] = "blackutility_pants"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -144,7 +144,7 @@
 	var/list/options = list()
 	options["Tan Utility Uniform"] = "tanutility"
 	options["Tan Utility Uniform Alt"] = "tanutility_alt"
-	options["Tan Utility Pans"] = "tanutility_pants"
+	options["Tan Utility Pants"] = "tanutility_pants"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -179,7 +179,7 @@
 	options["Camo Utility Uniform"] = "camoutility"
 	options["Camo Utility Uniform Corpsman Alt"] = "camoutility_alt_med"
 	options["Camo Utility Uniform Alt"] = "camoutility_alt"
-	options["Camo Utility Pans"] = "camoutility_pants"
+	options["Camo Utility Pants"] = "camoutility_pants"
 	options["Camo Utility Corpsman"] = "camoutility_med"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
@@ -195,6 +195,58 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
+/obj/item/clothing/under/rank/fatigues/kav //My beautiful baby boi Kavrick, thank u for the sprites.
+	name = "grey Blackshield fatigues"
+	desc = "A robust, grey utility suit bearing the markings of the Nadezhda Blackshield Militia.comes with EZ roll sleeves, roll-down shirt, including optional corpsman patch and skirt! "
+	icon_state = "bsgrey"
+	item_state = "bsgrey"
+
+/obj/item/clothing/under/rank/fatigues/kav/green
+	name = "green Blackshield fatigues"
+	desc = "A robust, geen grey utility suit bearing the markings of the Nadezhda Blackshield Militia.comes with EZ roll sleeves, roll-down shirt, including optional corpsman patch and skirt! "
+	icon_state = "bsgreen"
+	item_state = "bsgreen"
+
+/obj/item/clothing/under/rank/fatigues/kav/tan
+	name = "tan Blackshield fatigues"
+	desc = "A robust, tan utility suit bearing the markings of the Nadezhda Blackshield Militia.comes with EZ roll sleeves, roll-down shirt, including optional corpsman patch and skirt! "
+	icon_state = "bstan"
+	item_state = "bstan"
+
+/obj/item/clothing/under/rank/fatigues/kav/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["standard"] = ""
+	options["Sleeves rolled up"] = "_rolled"
+	options["Shirt rolled down"] = "_pant"
+	options["Medic patch"] = "_corps"
+	options["Medic patch, sleeves rolled up"] = "_corpsrolled"
+	options["Skirt"] = "_skirt"
+	options["Skirt, sleeves rolled up"] = "_skirtrolled"
+	options["Skirt, shirt rolled down"] = "_skirtpant"
+
+	var/choice = input(M,"How would you like to wear your suit?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 /*
  * Trooper/Corpsman

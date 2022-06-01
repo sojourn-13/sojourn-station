@@ -15,13 +15,13 @@
 	silenced = FALSE
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 6, MATERIAL_PLATINUM = 9)
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL)
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
-
+	serial_type = "GP"
 
 /obj/item/gun/projectile/rivet/update_icon()
 	..()

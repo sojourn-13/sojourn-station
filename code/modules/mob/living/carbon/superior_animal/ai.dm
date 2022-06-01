@@ -33,27 +33,38 @@
 	return safepick(nearestObjectsInList(filteredTargets, src, acceptableTargetDistance))
 
 /mob/living/carbon/superior_animal/proc/attemptAttackOnTarget()
-	if (!Adjacent(target_mob))
+	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if(isnull(targetted_mob))
 		return
 
-	return UnarmedAttack(target_mob,1)
+	if (!Adjacent(targetted_mob))
+		return
+
+	return UnarmedAttack(targetted_mob,1)
 
 /mob/living/carbon/superior_animal/proc/prepareAttackOnTarget()
+	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if (isnull(targetted_mob))
+		return
+
 	stop_automated_movement = 1
 
-	if (!target_mob || !isValidAttackTarget(target_mob))
+	if (!(targetted_mob) || !isValidAttackTarget(targetted_mob))
 		loseTarget()
 		return
 
-	if ((get_dist(src, target_mob) >= viewRange) || src.z != target_mob.z && !istype(target_mob, /obj/mecha))
+	if ((get_dist(src, targetted_mob) >= viewRange) || src.z != targetted_mob.z && !istype(targetted_mob, /obj/mecha))
 		loseTarget()
 		return
+	if (check_if_alive())
+		prepareAttackPrecursor(targetted_mob, .proc/attemptAttackOnTarget, MELEE_TYPE)
 
-	attemptAttackOnTarget()
-
-/mob/living/carbon/superior_animal/proc/loseTarget()
-	stop_automated_movement = 0
-	walk(src, 0)
+/mob/living/carbon/superior_animal/proc/loseTarget(var/stop_pursuit = TRUE)
+	if (stop_pursuit)
+		stop_automated_movement = 0
+		walk(src, 0)
 	target_mob = null
 	stance = HOSTILE_STANCE_IDLE
 
@@ -68,11 +79,10 @@
 		return 1
 
 	if (istype(O, /obj/mecha))
-		var/obj/mecha/M = O
-		return isValidAttackTarget(M.occupant)
+		if (can_see(src, O, get_dist(src, O))) //can we even see it?
+			var/obj/mecha/M = O
+			return isValidAttackTarget(M.occupant)
 
-	if (istype(O, /obj/machinery/mining/drill))
-		return isValidAttackTarget(O)
 
 /mob/living/carbon/superior_animal/proc/destroySurroundings() //todo: make this better - Trilby
 /*

@@ -10,7 +10,7 @@
 	caliber = CAL_LRIFLE
 	origin_tech = list(TECH_COMBAT = 12, TECH_MATERIAL = 10)
 	slot_flags = SLOT_BELT|SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	auto_eject = TRUE
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 25, MATERIAL_PLATINUM = 20)
@@ -31,6 +31,7 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
+	serial_type = "GP"
 
 /obj/item/gun/projectile/automatic/nail_gun/update_icon()
 	..()

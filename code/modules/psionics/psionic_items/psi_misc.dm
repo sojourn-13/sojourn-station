@@ -110,3 +110,11 @@
         else
             return TRUE
     return FALSE
+
+/obj/item/clothing/gloves/psionic_ring
+	name = "Ring of Dispel"
+	desc = "A ring belonging from the old poems of Le Chevalier de la Charrette, given to Sir Lancelot by the Lady of the Lake. This ring is, supposedly, able to dispel any enchantment, but one can't say for sure considering the story of this ring to be false. Whatever the reason, numericals theorize this ring may have come from Chrétien de Troyes (the writer of the poem) himself and noticed the curious, anomalitic nature was a good reference to write a book about.\
+			The ring of Dispel can be used during Psion crisis but the vector or prime using said ring must be safeguarded by other vectors, considering said vector as a artifact as much as the ring is until it is put back to it's place. Holding the ring of dispel is a chore because it basically doubles the expectation for the vector to not die, or lose it."
+	icon_state = "ring_of_dispel"
+	price_tag = 1000
+	psi_blocking = 50

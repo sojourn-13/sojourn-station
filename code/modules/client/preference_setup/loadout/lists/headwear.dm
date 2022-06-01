@@ -97,10 +97,6 @@
 	display_name = "ranger hat"
 	path = /obj/item/clothing/head/ranger
 
-/datum/gear/head/numerical_hat
-	display_name = "numerical hat"
-	path = /obj/item/clothing/head/numerical_hat
-
 /datum/gear/head/tanker_helmet/color_presets
 	display_name = "tanker helmet, color presets"
 	path = /obj/item/clothing/head/armor/helmet/tanker
@@ -114,3 +110,12 @@
 		"Gray"		=	/obj/item/clothing/head/armor/helmet/tanker/gray,
 	)
 	gear_tweaks += new /datum/gear_tweak/path(tanker_helmet)
+
+/datum/gear/head/ribbon
+	display_name = "hair ribbon selection"
+	path = /obj/item/clothing/head/ribbon
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/head/maid
+	display_name = "maid headdress"
+	path = /obj/item/clothing/head/maid

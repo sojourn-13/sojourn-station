@@ -12,6 +12,14 @@
 	var/sticker = null
 	var/closed = TRUE
 
+/obj/item/storage/hcases/Destroy()
+
+	for (var/obj/held_item in contents) //if we find storage is harddelling move this down to that destroy
+		qdel(held_item)
+
+	..()
+	return QDEL_HINT_QUEUE //just to be safe
+
 /obj/item/storage/hcases/proc/can_interact(mob/user)
 	if((!ishuman(user) && (loc != user)) || user.stat || user.restrained())
 		return 1
@@ -179,7 +187,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
-	new /obj/item/voucher/marshal/specprimary(src)
+
 
 /obj/item/storage/hcases/ammo/ih/ranger_officer
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -189,7 +197,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
-	new /obj/item/voucher/marshal/primary(src)
 	new /obj/item/cell/small/high(src)
 
 /obj/item/storage/hcases/ammo/ih/marshal_officer
@@ -200,9 +207,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
-	new /obj/item/voucher/marshal/primary(src)
-	new /obj/item/voucher/marshal/secondary(src)
-	new /obj/item/voucher/marshal/armor(src)
 
 /obj/item/storage/hcases/ammo/serb
 	icon_state = "ammo_case_serb"
@@ -233,9 +237,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
 	new /obj/item/tool/knife/boot/blackshield(src)
-	new /obj/item/voucher/blackshield/sargprimary(src)
-	new /obj/item/voucher/blackshield/secondary(src)
-	new /obj/item/voucher/blackshield/armor(src)
+
 
 /obj/item/storage/hcases/ammo/blackmarket/medspec
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -246,9 +248,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
 	new /obj/item/tool/knife/boot/blackshield(src)
-	new /obj/item/voucher/blackshield/primary(src)
-	new /obj/item/voucher/blackshield/secondary(src)
-	new /obj/item/voucher/blackshield/armorcorpsman(src)
 
 /obj/item/storage/hcases/ammo/blackmarket/trooper
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -259,9 +258,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
 	new /obj/item/tool/knife/boot/blackshield(src)
-	new /obj/item/voucher/blackshield/primary(src)
-	new /obj/item/voucher/blackshield/secondary(src)
-	new /obj/item/voucher/blackshield/armor(src)
 
 /obj/item/storage/hcases/ammo/excel
 	icon_state = "ammo_case_excel"

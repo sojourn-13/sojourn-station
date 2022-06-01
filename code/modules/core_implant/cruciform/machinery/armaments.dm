@@ -1,16 +1,16 @@
 /datum/armament
 	var/name = "Virtue of coding"
 	var/desc = "God made it quite clear this should not exist, Perhaps inform those above."
-	var/cost = 100
+	var/cost = 20
 	var/min_cost = 10 //absolute minimum it should cost
 	var/path = /obj/item/computer_hardware/hard_drive/portable/design/nt/bioprinter //path to spawn
 	var/purchase_count = 0 //how many times its bought
-	var/discount_increase = 25 //discount increase per purchase
+	var/discount_increase = 5 //discount increase per purchase
 	var/discount = 0 //total discount to apply to the cost
 	var/max_discount = 0 //max amount of discounts
 	var/rate_increase = 0 //rate increase per purchase
 	var/max_rate_increase = 0 //max rate increase from buying this
-	var/max_increase = 25 //increase of eotp max armament points per purchase
+	var/max_increase = 20 //increase of eotp max armament points per purchase
 
 //modifiers in the future? maybe some rituals to reduce cost for certain subtype
 /datum/armament/proc/get_cost()
@@ -77,7 +77,7 @@
 	if (!ui)
 		// the ui does not exist, so we'll create a new() one
 		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "eopt.tmpl", "Eye of the protector", 550, 655)
+		ui = new(user, src, ui_key, "eopt.tmpl", "Will of the Protector", 550, 655)
 		// when the ui is first opened this is the data it will use
 		ui.set_initial_data(data)
 		// open the new ui window
@@ -111,9 +111,9 @@
 
 /datum/armament/item/disk
 	name = "disk"
-	cost = 75
-	discount_increase = 100
-	min_cost = 25
+	cost = 15
+	discount_increase = 10
+	min_cost = 5
 
 /datum/armament/item/disk/New()
 	if (desc == initial(desc))
@@ -124,163 +124,115 @@
 
 
 /datum/armament/item/disk/cells
-	name = "Power Cells disk"
-	cost = 75
-	min_cost = 50
+	name = "Disk - Power Cells"
+	cost = 10
+	min_cost = 5
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/cells
 
-/datum/armament/item/disk/pouches
-	name = "Bioprinter disk"
-	cost = 75
-	min_cost = 25
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/bioprinter
-
 /datum/armament/item/disk/mk58
-	name = "Rose and Thorn disk"
-	cost = 125
-	min_cost = 75
+	name = "Disk - Rose and Thorn"
+	cost = 10
+	min_cost = 5
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/mk58
 
 /datum/armament/item/disk/nt_counselor
-	name = "Serenity disk"
-	cost = 125
-	min_cost = 75
+	name = "Disk - Serenity"
+	cost = 5
+	min_cost = 5
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/nt_counselor
 
-/datum/armament/item/disk/nt_protector
-	name = "Protector disk"
-	cost = 175
-	min_cost = 125
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/protector
-
 /datum/armament/item/disk/counselor
-	name = "Counselor disk"
-	cost = 175
-	min_cost = 125
+	name = "Disk - Counselor"
+	cost = 5
+	min_cost = 5
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/counselor
 
 /datum/armament/item/disk/antebellum
-	name = "Antebellum disk"
-	cost = 175
-	min_cost = 125
+	name = "Disk - Antebellum"
+	cost = 10
+	min_cost = 5
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/antebellum
 
 /datum/armament/item/disk/carpedie
-	name = "Carpedie disk"
-	cost = 225
-	min_cost = 125
+	name = "Disk - Carpedie"
+	cost = 15
+	min_cost = 10
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/carpedie
 
 /datum/armament/item/disk/regulator
-	name = "Regulator disk"
-	cost = 225
-	min_cost = 125
+	name = "Disk - Regulator"
+	cost = 20
+	min_cost = 15
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/regulator
 
 /datum/armament/item/disk/halicon
-	name = "Halicon disk"
-	cost = 225
-	min_cost = 125
+	name = "Disk - Halicon"
+	cost = 15
+	min_cost = 10
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/halicon
 
 /datum/armament/item/disk/halicon
-	name = "Halicon disk"
-	cost = 225
-	min_cost = 125
+	name = "Disk - Halicon"
+	cost = 15
+	min_cost = 10
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/halicon
 
 /datum/armament/item/disk/protector
-	name = "Protector disk"
-	cost = 225
-	min_cost = 125
+	name = "Disk - Protector"
+	cost = 15
+	min_cost = 10
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/protector
 
-/datum/armament/item/disk/grenades
-	name = "Grenades disk"
-	cost = 225
-	min_cost = 175
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/grenades
-
 /datum/armament/item/disk/lemant
-	name = "Lemant disk"
-	cost = 225
-	min_cost = 175
+	name = "Disk - Pilgrim"
+	cost = 10
+	min_cost = 5
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/lemant
 
 /datum/armament/item/disk/nt_lightfall
-	name = "Lightfall disk"
-	cost = 275
-	min_cost = 200
+	name = "Disk - Lightfall"
+	cost = 15
+	min_cost = 10
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/lightfall
 
 /datum/armament/item/disk/nukes
-	name = "Grenades disk"
-	cost = 275
-	min_cost = 200
+	name = "Disk - Holy Grenades"
+	cost = 25
+	min_cost = 20
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/grenades
 
 /datum/armament/item/disk/plasma_shell
-	name = "Plasma disk"
-	cost = 275
-	min_cost = 200
+	name = "Disk - Plasma Ammo"
+	cost = 30
+	min_cost = 20
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/plasma_shells
 
 /datum/armament/item/disk/themis
-	name = "Themis disk"
-	cost = 325
-	min_cost = 225
+	name = "Disk - Themis"
+	cost = 35
+	min_cost = 25
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/themis
 
 /datum/armament/item/disk/purger
-	name = "Purger disk"
-	cost = 325
-	min_cost = 225
+	name = "Disk - Purger"
+	cost = 40
+	min_cost = 25
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/purger
 
 /datum/armament/item/disk/dominion
-	name = "Dominion disk"
-	cost = 325
-	min_cost = 225
+	name = "Disk - Dominion"
+	cost = 80
+	min_cost = 80
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/dominion
 
 /datum/armament/item/disk/old_test_disk
-	name = "Old Testiment disk"
-	cost = 375
-	min_cost = 250
+	name = "Disk - Old Testament"
+	cost = 50
+	min_cost = 25
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns
 
 /datum/armament/item/disk/new_test_disk
-	name = "New Testiment disk"
-	cost = 400
-	min_cost = 350
+	name = "Disk - New Testament"
+	cost = 50
+	min_cost = 25
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns
-
-/datum/armament/item/grenade
-	name = "Grenade"
-	desc = "Summoning of boom booms"
-	path = /obj/item/grenade/explosive/nt
-	cost = 275
-	min_cost = 200
-	discount_increase = 100
-
-/datum/armament/item/gun
-	name = "gun"
-	discount_increase = 100
-
-/datum/armament/item/gun/largecrossobw
-	name = "Large crossbow"
-	path = /obj/item/gun/energy/crossbow/largecrossbow
-	cost = 125
-	min_cost = 50
-
-/datum/armament/item/gun/destroyer
-	name = "Destroyer"
-	path = /obj/item/gun/energy/plasma/destroyer
-	cost = 325
-	min_cost = 200
-
-/datum/armament/item/gun/firstaid
-	name = "Absolutism Medkit"
-	path = /obj/item/storage/firstaid/nt
-	cost = 325
-	min_cost = 200

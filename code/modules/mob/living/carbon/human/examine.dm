@@ -46,7 +46,7 @@
 	var/has  = gender_word("has", T)
 	var/does = gender_word("does",T)
 
-	msg += "<EM>[src.name]</EM>, <b><font color='[species_color_key]'>a[species_aan] [species_name]</font></b>"
+	msg += "<EM>[src.get_visible_name()]</EM>, <b><font color='[species_color_key]'>a[species_aan] [species_name]</font></b>"
 	msg += "!\n"
 
 	//uniform

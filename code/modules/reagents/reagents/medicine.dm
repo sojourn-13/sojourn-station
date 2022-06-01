@@ -5,7 +5,7 @@
 /datum/reagent/medicine/inaprovaline
 	name = "Inaprovaline"
 	id = "inaprovaline"
-	description = "Inaprovaline is a synaptic stimulant and cardiostimulant. Commonly used to stabilize patients."
+	description = "Inaprovaline is a weak yet broad synaptic stimulant and cardiostimulant. Commonly used to stabilize patients in critical condition."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#00BFFF"
@@ -17,10 +17,13 @@
 	id = "holyinaprovaline"
 	scannable = 0
 
-/datum/reagent/medicine/inaprovaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_STABLE)
-	M.add_chemical_effect(CE_PAINKILLER, 25 * effect_multiplier, TRUE)
+/datum/reagent/medicine/inaprovaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier) // No more useless chem of leftover baycode with no inference on health due to pulse not affecting anything. - Seb
 	M.add_chemical_effect(CE_PULSE, 1)
+	M.add_chemical_effect(CE_STABLE) // Keeping these useless effects for the sake of RP.
+	M.add_chemical_effect(CE_PAINKILLER, 25 * effect_multiplier, TRUE)
+	M.adjustOxyLoss(-0.5 * effect_multiplier) // Should help stall for time against oxyloss killing you to heavy bloodloss or lung/heart damage until your eventual rescue, but won't heal it outright.
+	M.add_chemical_effect(CE_OXYGENATED, 1)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.1) // Emergency stop bleeding, still lowest tier
 
 /datum/reagent/medicine/bicaridine
 	name = "Bicaridine"
@@ -121,6 +124,7 @@
 	reagent_state = LIQUID
 	color = "#00A000"
 	scannable = 1
+	overdose = REAGENTS_OVERDOSE
 
 /datum/reagent/medicine/dylovene/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
@@ -128,8 +132,22 @@
 	M.adjustToxLoss(-((0.2 + (M.getToxLoss() * 0.05)) * effect_multiplier))
 	M.add_chemical_effect(CE_ANTITOX, 1)
 	holder.remove_reagent("pararein", 0.8 * effect_multiplier)
-	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Gonna be good for fish recipes
+	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Fish recipes no longer contain carpotoxin, but good in cases of poisoning.
 	holder.remove_reagent("toxin", 0.4 * effect_multiplier)
+	holder.remove_reagent("blattedin", 0.4 * effect_multiplier) // Massive complains about its slow metabolization rate + poisoning actually working, plus dylo originally purged it, so I'm bringing it back. - Seb
+
+/datum/reagent/medicine/dylovene/overdose(var/mob/living/carbon/M, var/alien)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/kidney/K = H.random_organ_by_process(OP_KIDNEYS)
+		if(istype(K))
+			if(BP_IS_ROBOTIC(K))
+				return
+			else
+				K.damage = 2 * REM
+	M.adjustToxLoss(2)
+	if(M.losebreath < 10)
+		M.losebreath++
 
 /datum/reagent/medicine/carthatoline
 	name = "Carthatoline"
@@ -150,11 +168,12 @@
 			if(L.damage > 0)
 				L.damage = max(L.damage - 2 * removed, 0)
 	holder.remove_reagent("pararein", 0.8 * effect_multiplier)
-	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Gonna be good for fish recipes
+	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Gonna be good for fish recipes // Copypasting even my commentary? tsk tsk - Seb
 	holder.remove_reagent("toxin", 0.4 * effect_multiplier)
 	holder.remove_reagent("stoxin", 0.4 * effect_multiplier)     //Fuck mobs and injectables
 	holder.remove_reagent("zombiepowder", 0.4 * effect_multiplier)
 	holder.remove_reagent("xenotoxin", 0.4 * effect_multiplier)
+	holder.remove_reagent("blattedin", 0.8 * effect_multiplier) // Consistency with Dylovene, making it a straight upgrade worth mixing.
 
 /datum/reagent/medicine/cordradaxon
 	name = "Cordradaxon"
@@ -369,7 +388,7 @@
 	if(prob(5 - (2 * M.stats.getMult(STAT_TGH))))
 		M.Stun(5)
 
-/* Cruciform litany related painkillers */
+/* Church related chemicals */
 /datum/reagent/medicine/nepenthe  //Monomial super-painkiller
 	name = "Nepenthe"
 	id = "nepenthe"
@@ -760,7 +779,7 @@
 	taste_description = "sickness"
 	reagent_state = SOLID
 	color = "#669900"
-	overdose = REAGENTS_OVERDOSE
+	overdose = REAGENTS_OVERDOSE * 0.4 // Should OD at 12 units, you still shouldn't ever use more than 2u at a time anyways. - Seb
 	scannable = 1
 
 /datum/reagent/medicine/rezadone/affect_blood(mob/living/carbon/M, alien, effect_multiplier)

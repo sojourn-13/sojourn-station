@@ -39,6 +39,7 @@ List of powers in this page :
 			verbs += /obj/item/organ/internal/nanogate/proc/autodoc_mode
 			verbs += /obj/item/organ/internal/nanogate/proc/radio_mode
 			verbs += /obj/item/organ/internal/nanogate/proc/console_mode
+			verbs += /obj/item/organ/internal/nanogate/proc/control_bot
 
 			//Add to owner_verbs so it can be removed properly should the need arise.
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/stand_damage
@@ -47,7 +48,8 @@ List of powers in this page :
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/stand_repair
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/autodoc_mode
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/radio_mode
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/console_mode 
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/console_mode
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/control_bot
 
 			//Add in the Opifex specific procs
 			if(istype(src, /obj/item/organ/internal/nanogate/opifex))
@@ -55,7 +57,6 @@ List of powers in this page :
 				owner_verbs += /obj/item/organ/internal/nanogate/proc/food_mode
 
 			verbs -= /obj/item/organ/internal/nanogate/proc/create_nanobot
-			
 	else
 		to_chat(owner, "Your nanogate is already as its limit controlling one Nanobot. Making more would end badly.")
 
@@ -137,6 +138,7 @@ List of powers in this page :
 			to_chat(owner, "You permanently assign some of your nanites to have your nanobot act as a medibot.")
 			Stand.ai_flag |= AUTODOC_MODE
 			verbs -= /obj/item/organ/internal/nanogate/proc/autodoc_mode
+			Stand.updateDialog()
 	else
 		to_chat(owner, "You do not have a nanobot to upgrade!")
 
@@ -151,6 +153,7 @@ List of powers in this page :
 			to_chat(owner, "You permanently assign some of your nanites to shape into a ham radio for communication.")
 			Stand.ai_flag |= RADIO_MODE
 			verbs -= /obj/item/organ/internal/nanogate/proc/radio_mode
+			Stand.updateDialog()
 	else
 		to_chat(owner, "You do not have a nanobot to upgrade!")
 
@@ -165,6 +168,7 @@ List of powers in this page :
 			to_chat(owner, "You permanently assign some of your nanites function as a modular console.")
 			Stand.ai_flag |= CONSOLE_MODE
 			verbs -= /obj/item/organ/internal/nanogate/proc/console_mode
+			Stand.updateDialog()
 	else
 		to_chat(owner, "You do not have a nanobot to upgrade!")
 
@@ -179,6 +183,7 @@ List of powers in this page :
 			to_chat(owner, "You permanently assign some of your nanites to activate the food dispencer system in your nanobot.")
 			Stand.ai_flag |= FOOD_MODE
 			verbs -= /obj/item/organ/internal/nanogate/proc/food_mode
+			Stand.updateDialog()
 	else
 		to_chat(owner, "You do not have a nanobot to upgrade!")
 

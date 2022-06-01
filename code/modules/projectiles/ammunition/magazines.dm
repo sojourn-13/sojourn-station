@@ -53,6 +53,9 @@
 	icon_state = "pistol_s"
 	ammo_type = /obj/item/ammo_casing/pistol_35/scrap
 
+/obj/item/ammo_magazine/pistol_35/scrap/empty
+	initial_ammo = 0
+
 /obj/item/ammo_magazine/highcap_pistol_35/drum
 	name = "standard auto drum magazine"
 	icon_state = "ldrum"
@@ -304,13 +307,16 @@
 
 /obj/item/ammo_magazine/light_rifle_257/lethal
 	name = "carbine magazine (hollow-point)"
-	icon_state = "lrifle_long_r"
+	icon_state = "lrifle_long_l"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
 
 /obj/item/ammo_magazine/light_rifle_257/scrap
 	name = "old carbine magazine (ball)"
 	icon_state = "srifle_long_s"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/scrap
+
+/obj/item/ammo_magazine/light_rifle_257/scrap/empty
+	initial_ammo = 0
 
 ////short////
 
@@ -349,6 +355,46 @@
 /obj/item/ammo_magazine/light_rifle_257_short/lethal
 	name = "short carbine magazine (hollow-point)"
 	icon_state = "lrifle_short_l"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
+
+////.257 Drum ////
+
+/obj/item/ammo_magazine/light_rifle_257_drum
+	name = "carbine drum magazine"
+	desc = "A 50 round drum magazine marked for .257 Carbine."
+	icon_state = "lrifle_drum"
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_STANMAG
+	w_class = ITEM_SIZE_NORMAL
+	caliber = "lrifle"
+	caliber = CAL_LRIFLE
+	matter = list(MATERIAL_STEEL = 12)
+	ammo_type = /obj/item/ammo_casing/light_rifle_257
+	max_ammo = 50
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/light_rifle_257_drum/empty
+	icon_state = "lrifle_drum"
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/light_rifle_257_drum/practice
+	name = "carbine drum magazine (practice)"
+	icon_state = "lrifle_drum_p"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/practice
+
+/obj/item/ammo_magazine/light_rifle_257_drum/highvelocity
+	name = "carbine drum magazine (high-velocity)"
+	icon_state = "lrifle_drum_hv"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/hv
+
+/obj/item/ammo_magazine/light_rifle_257_drum/rubber
+	name = "carbine drum magazine (rubber)"
+	icon_state = "lrifle_drum_r"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber
+
+/obj/item/ammo_magazine/light_rifle_257_drum/lethal
+	name = "carbine drum magazine (hollow-point)"
+	icon_state = "lrifle_drum_l"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
 
 ///////// 7.5 RIFLE /////////
@@ -395,6 +441,9 @@
 	icon_state = "rifle_s"
 	ammo_type = /obj/item/ammo_casing/rifle_75/scrap
 
+/obj/item/ammo_magazine/rifle_75_short/scrap/empty
+	initial_ammo = 0
+
 ////short////
 
 /obj/item/ammo_magazine/rifle_75_short
@@ -403,7 +452,7 @@
 	icon_state = "rifle_short"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
-	caliber = "rifle_short"
+	caliber = "rifle"
 	caliber = CAL_RIFLE
 	matter = list(MATERIAL_STEEL = 5)
 	ammo_type = /obj/item/ammo_casing/rifle_75
@@ -434,6 +483,46 @@
 	icon_state = "rifle_short_l"
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
+//// Drum 7.5 ////
+
+/obj/item/ammo_magazine/rifle_75_drum
+	name = "rifle drum magazine"
+	desc = "A 40 round drum magazine marked for 7.5mm Rifle."
+	icon_state = "rifle_drum"
+	w_class = ITEM_SIZE_NORMAL
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_RIFLE
+	caliber = "rifle"
+	caliber = CAL_RIFLE
+	matter = list(MATERIAL_STEEL = 12)
+	ammo_type = /obj/item/ammo_casing/rifle_75
+	max_ammo = 40
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/rifle_75_drum/empty
+	icon_state = "rifle_drum"
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/rifle_75_drum/practice
+	name = "rifle drum magazine (practice)"
+	icon_state = "rifle_drum_p"
+	ammo_type = /obj/item/ammo_casing/rifle_75/practice
+
+/obj/item/ammo_magazine/rifle_75_drum/highvelocity
+	name = "rifle drum magazine (high-velocity)"
+	icon_state = "rifle_drum_hv"
+	ammo_type = /obj/item/ammo_casing/rifle_75/hv
+
+/obj/item/ammo_magazine/rifle_75_drum/rubber
+	name = "rifle drum magazine (rubber)"
+	icon_state = "rifle_drum_r"
+	ammo_type = /obj/item/ammo_casing/rifle_75/rubber
+
+/obj/item/ammo_magazine/rifle_75_drum/lethal
+	name = "rifle drum magazine (hollow-point)"
+	icon_state = "rifle_drum_l"
+	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
+
 //Linked 7.5
 
 /obj/item/ammo_magazine/rifle_75_linked_box
@@ -442,7 +531,7 @@
 	icon_state = "pk_box"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	mag_well = MAG_WELL_BOX
+	mag_well = MAG_WELL_LINKED_BOX
 	caliber = CAL_RIFLE
 	matter = list(MATERIAL_STEEL = 2)
 	ammo_type = /obj/item/ammo_casing/rifle_75
@@ -482,7 +571,7 @@
 /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257
 	name = "linked ammunition box (.257 Carbine)"
 	desc = "A 100 round linked box marked for .257 Carbine."
-	icon_state = "pk_box"
+	icon_state = "pkl_box"
 	caliber = CAL_LRIFLE
 	ammo_type = /obj/item/ammo_casing/light_rifle_257
 	matter = list(MATERIAL_STEEL = 2)
@@ -501,6 +590,31 @@
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
 
 /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/empty
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408
+	name = "linked ammunition box (.408 Omni)"
+	desc = "A 64 round linked box marked for .408 Omni."
+	max_ammo = 64
+	icon_state = "pkh_box"
+	caliber = CAL_HRIFLE
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
+	matter = list(MATERIAL_STEEL = 2)
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/highvelocity
+	name = "linked ammunition box (.408 Omni highvelocity)"
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/hv
+
+/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/rubber
+	name = "linked ammunition box (.408 Omni rubber)"
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
+
+/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/lethal
+	name = "linked ammunition box (.408 Omni hollowpoint)"
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
+
+/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/empty
 	initial_ammo = 0
 
 //Pan 7.5
@@ -527,10 +641,11 @@
 	icon_state = "hrifle"
 	desc = "A 20 round magazine marked for .408 Omni."
 	origin_tech = list(TECH_COMBAT = 2)
+	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_HRIFLE
 	caliber = CAL_HRIFLE
-	matter = list(MATERIAL_STEEL = 2)
+	matter = list(MATERIAL_STEEL = 4)
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
 	max_ammo = 20
 	multiple_sprites = 1
@@ -564,24 +679,27 @@
 	icon_state = "hrifle_s"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/scrap
 
+/obj/item/ammo_magazine/heavy_rifle_408/scrap/empty
+	initial_ammo = 0
+
 /obj/item/ammo_magazine/heavy_rifle_408_drum
 	name = "heavy rifle drum magazine"
 	icon_state = "hdrum"
-	desc = "A 64 round drum magazine marked for .408 Heavy Rifle."
+	desc = "A 36 round drum magazine marked for .408 Heavy Rifle."
 	origin_tech = list(TECH_COMBAT = 2)
 	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_DRUM
 	caliber = CAL_HRIFLE
-	matter = list(MATERIAL_STEEL = 4)
+	matter = list(MATERIAL_STEEL = 12)
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
-	max_ammo = 64
+	max_ammo = 36
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/heavy_rifle_408_drum/empty
 	name = "heavy rifle magazine"
 	icon_state = "hdrum"
-	matter = list(MATERIAL_STEEL = 4)
+	matter = list(MATERIAL_STEEL = 12)
 	initial_ammo = 0
 
 ////10mm caseless////
@@ -604,14 +722,14 @@
 
 /obj/item/ammo_magazine/rifle_10x24
 	name = "light rifle magazine"
-	desc = "A 20 round magazine marked for 10x24 rounds."
+	desc = "A 40 round magazine marked for 10x24 rounds."
 	icon_state = "rifle"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_STEEL = 8)
 	caliber = "10x24"
 	ammo_type = /obj/item/ammo_casing/c10x24
-	max_ammo = 20
+	max_ammo = 40
 	multiple_sprites = 1
 
 ////.50 kurtz////
@@ -834,6 +952,33 @@
 	. = ..()
 	update_icon()
 
+//////// SHOTGUN SPEEDLOADERS ////////
+/obj/item/ammo_magazine/speed_loader_shotgun
+	name = "20mm loader tube (sabot slug)"
+	desc = "A 6 round speed loader marked for 20mm Shells."
+	icon = 'icons/obj/ammo_speed.dmi'
+	icon_state = "shot_tube_s"
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun
+	matter = list(MATERIAL_STEEL = 4)
+	max_ammo = 6
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/speed_loader_shotgun/empty
+	name = "20mm loader tube (shells)"
+	initial_ammo = 0
+	icon_state = "shot_tube"
+
+/obj/item/ammo_magazine/speed_loader_shotgun/pellet
+	name = "20mm loader tube (buckshot)"
+	icon_state = "shot_tube_l"
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+
+/obj/item/ammo_magazine/speed_loader_shotgun/beanbag
+	name = "20mm loader tube (beanbag)"
+	icon_state = "shot_tube_r"
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+
 ////other////
 
 /obj/item/ammo_magazine/caps
@@ -910,7 +1055,7 @@
 	desc = "A 10 magazine for 20mm shotgun shells."
 	icon_state = "sbaw"
 	mag_type = MAGAZINE
-	mag_well = MAG_WELL_DRUM
+	mag_well = MAG_WELL_RIFLE
 	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun
 	multiple_sprites = 1

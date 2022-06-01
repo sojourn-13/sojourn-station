@@ -8,7 +8,7 @@
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	can_dual = TRUE
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 6)
 	price_tag = 450
@@ -22,6 +22,7 @@
 		list(mode_name="semiauto", mode_desc="Shoot as fast as you can pull the trigger",       burst=1, fire_delay=1.2, move_delay=null, 				icon="semi"),
 		list(mode_name="2-round bursts", mode_desc="Shoots two rounds back to back", burst=2, fire_delay=0.2, move_delay=4,    	icon="burst"),
 		)
+	serial_type = "H&S"
 
 /obj/item/gun/projectile/olivaw/update_icon()
 	..()

@@ -24,7 +24,7 @@
 	price_tag = 600
 	penetration_multiplier = 2
 	pierce_multiplier = 2
-	damage_multiplier = 0.6 //Pug has 0.7 do to its fire normal modes
+	damage_multiplier = 0.6 //Most AP and pens walls but least damage out of any shotgun
 	recoil_buildup = 13
 	one_hand_penalty = 15 //full sized shotgun level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
@@ -33,6 +33,7 @@
 	init_firemodes = list(
 		list(mode_name="semiauto", mode_desc="Shoot once per pull after chambering", burst=1, fire_delay=5, move_delay=null, icon="semi")
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/cattle_autoshotgun
 	name = "\"Cattle Stampede\" tactical shotgun" //With correct mods this can be better then the pug
@@ -58,7 +59,7 @@
 	price_tag = 600
 	penetration_multiplier = 1.5
 	pierce_multiplier = 1.5
-	damage_multiplier = 0.6 //Pug has 0.7 do to its fire normal modes
+	damage_multiplier = 0.6 //Worse rushing bull
 	recoil_buildup = 13
 	one_hand_penalty = 15 //full sized shotgun level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
@@ -66,5 +67,3 @@
 	init_firemodes = list(
 		list(mode_name="semiauto", mode_desc="Shoot once per pull after chambering", burst=1, fire_delay=5, move_delay=null, icon="semi")
 		)
-
-

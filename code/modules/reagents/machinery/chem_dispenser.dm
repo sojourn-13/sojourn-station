@@ -1,5 +1,5 @@
 #define chemical_dispenser_ENERGY_COST (CHEM_SYNTH_ENERGY * CELLRATE) //How many cell charge do we use per unit of chemical?
-#define BOTTLE_SPRITES list("bottle") //list of available bottle sprites
+#define BOTTLE_SPRITES list("bottle" , "potion", "tincture") //list of available bottle sprites
 #define SYRETTE_SPRITES list("syrette", "syrette_red", "syrette_orange", \
 "syrette_yellow", "syrette_green", "syrette_cyan", "syrette_blue", "syrette_magenta", \
 "syrette_spacealine", "syrette_hyperzine", "syrette_fun", "syrette_fun1", "syrette_antitox", \
@@ -262,14 +262,14 @@
 	simple_machinery = TRUE
 	level0 = list(
 		"water","ice","icetea","icegreentea","cola","spacemountainwind","dr_gibb","space_up",
-		"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice","lemonjuice", "pineapplejuice")
+		"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice","lemonjuice", "pineapplejuice", "berryjuice","grapesoda","watermelonjuice")
 
 	level1 = list("capsaicin", "carbon")
-	level2 = list("banana", "berryjuice")
+	level2 = list("banana")
 	level3 = list("soymilk") //Commie stock part gives this
 	level4 = list("enzyme")
 
-	hacked_reagents = list("thirteenloko","grapesoda")
+	hacked_reagents = list("thirteenloko")
 	circuit = /obj/item/circuitboard/chemical_dispenser/soda
 
 /obj/machinery/chemical_dispenser/soda/hacked(mob/user)
@@ -307,12 +307,12 @@
 	density = FALSE
 	simple_machinery = TRUE
 	level0 = list(
-		"coffee","cream","tea","greentea","sugar","hot_coco","espresso")
+		"coffee","cream","tea","greentea","sugar","hot_coco","espresso","milk")
 	hacked_reagents = list("ice")
 	level1 = list("cappuccino","coco")
 	level2 = list("macchiato")
 	level3 = list("soymilk") //Commie stock part gives this
-	level4 = list("milk","kahlua")
+	level4 = list("kahlua")
 	circuit = /obj/item/circuitboard/chemical_dispenser/coffee_master
 
 /obj/machinery/chemical_dispenser/beer
@@ -336,7 +336,7 @@
 	level3 = list("alliescocktail") //Commie stock part gives this
 	level4 = list("enzyme")
 
-	hacked_reagents = list("goldschlager","patron","watermelonjuice","berryjuice")
+	hacked_reagents = list("goldschlager","patron","berryjuice")
 	circuit = /obj/item/circuitboard/chemical_dispenser/beer
 
 /obj/machinery/chemical_dispenser/beer/hacked(mob/user)

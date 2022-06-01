@@ -1,4 +1,4 @@
-/obj/item/clothing/suit/greatcoat/ihc
+/obj/item/clothing/suit/storage/greatcoat/ihc
 	name = "warrant officer's greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style."
 	icon_state = "ihc_coat"
@@ -12,7 +12,7 @@
 	siemens_coefficient = 0.7
 	stiffness = LIGHT_STIFFNESS
 
-/obj/item/clothing/suit/greatcoat/ihc/verb/toggle_style()
+/obj/item/clothing/suit/storage/greatcoat/ihc/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -76,7 +76,7 @@
 		usr.update_action_buttons()
 		return 1
 
-/obj/item/clothing/suit/greatcoat/ihc/bmc
+/obj/item/clothing/suit/storage/greatcoat/ihc/bmc
 	name = "blackshield commander's greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style."
 	icon_state = "mc_coat"
@@ -89,7 +89,7 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-/obj/item/clothing/suit/greatcoat/ihc/bmc/toggle_style()
+/obj/item/clothing/suit/storage/greatcoat/ihc/bmc/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -180,19 +180,31 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-/obj/item/clothing/suit/greatcoat/general/overcoatblack
+/obj/item/clothing/suit/storage/greatcoat/overcoatblack
 	name = "black overcoat"
 	desc = "A sturdy overcoat that harkens back to a simpler time."
 	icon_state = "overcoat_black"
 	item_state = "overcoat_black"
 
-/obj/item/clothing/suit/greatcoat/general/overcoatblack/brown
+/obj/item/clothing/suit/storage/greatcoat/overcoatblack/brown
 	name = "brown overcoat"
 	desc = "A sturdy overcoat that harkens back to a simpler time."
 	icon_state = "overcoat_brown"
 	item_state = "overcoat_brown"
 
-/obj/item/clothing/suit/greatcoat/general/overcoatblack/german
+/obj/item/clothing/suit/storage/greatcoat/overcoatblack/edgy // Purse owner 5 reference.
+	name = "phantom overcoat"
+	desc = "Looking good, edgelord."
+	icon_state = "phantom"
+	item_state = "phantom"
+
+/obj/item/clothing/suit/storage/greatcoat/overcoatblack/crimson // Saint's Row reference.
+	name = "red overcoat"
+	desc = "This coat costed more than Ryan's little crystal there in the vault."
+	icon_state = "morningstar"
+	item_state = "morningstar"
+
+/obj/item/clothing/suit/greatcoat/general/german
 	name = "thalatta overcoat"
 	desc = "A sturdy overcoat from Thalatta, the city-ship filled with people of faith and technology. Not related to the local church, strangely enough, but worn by them sometimes."
 	icon_state = "germancoat"

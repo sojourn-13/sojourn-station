@@ -65,6 +65,32 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/head/helmet/ballistic/bulletproof/militia
+	name = "Blackshield bulletproof helmet"
+	icon_state = "bulletproof_bs"
+	desc = "Standard military gear. Protects exceptionally well from high-velocity solid projectiles \
+	This one bears the IFF stripes of the Blackshield."
+	flags_inv = HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 0, rad = 0)
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 4
+	light_overlay = "bs_bulletproof"
+
+
+/obj/item/clothing/head/helmet/laserproof/militia
+	name = "Blackshield ablative helmet"
+	icon_state = "ablative_bs"
+	desc = "An outdated, energy resistant helmet in a distinctive style. Loved by politicians, loathed by taxpayers and tolerated by the \
+			local forces so often outfitted with it."
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	armor_list = list(melee = 25, bullet = 25, energy = 60, bomb = 10, bio = 0, rad = 0)
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 4
+	light_overlay = "bs_ablative"
+
+
 
 /obj/item/clothing/head/helmet/ballistic/green
 	name = "green ballistic helmet"
@@ -77,6 +103,102 @@
 	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
 			Smells like sweat."
 	icon_state = "helmet_tan"
+
+/obj/item/clothing/head/helmet/ballistic/shieldfull
+	name = "Blackshield full helm"
+	desc = "Standard military gear. A full-faced variant of the common ballistic helmet. This one bears a few\
+	key upgrades, notably the inclusion of a face-protecting plate and lit eyeshield."
+	icon_state = "bs_fullhelm"
+	item_state = "bs_fullhelm"
+	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	obscuration = LIGHT_OBSCURATION
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 4
+	light_overlay = "bsfullhelm_light"
+
+/obj/item/clothing/head/helmet/ballistic/shieldfull/corpsman
+	name = "Corpsmans full helm"
+	desc = "Standard military gear. A full-faced vasriant of the common ballistic helmet. This one bears a few\
+	key upgrades, including sterile materials and contaminant resistant sealing."
+	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 20, rad = 0)
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 4
+	light_overlay = "corpsmanfullhelm_light"
+
+/obj/item/clothing/head/helmet/ballistic/shieldfull/verb/toggle_style()
+	set name = "Adjust helmet"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard fullhelm"] = ""
+	options["Tan fullhelm"] = "_tan"
+	options["Green fullhelm"] = "_green"
+	options["Grey hooded fullhelm"] = "_gp"
+	options["Green hooeded fullhelm"] = "_grp"
+	options["Tan hooded fullhelm"] = "_tp"
+	options["camo hooded fullhelm"] = "_cp"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You adjust to the [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/head/helmet/ballistic/sergeant
+	name = "Sergeants ballistic gorget"
+	desc = "Standard military gear. A somewhat uncommon piece of equipment, despite its unusual appearance\
+	this piece of headgear provides much-needed protection to oft-neglected locations while not interfering unduly\
+	with the users range of motion or ability to communicate."
+	icon_state = "sergeanthelm"
+	item_state = "sergeanthelm"
+	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
+	flags_inv = HIDEMASK
+
+/obj/item/clothing/head/helmet/ballistic/sergeant/verb/toggle_style()
+	set name = "Adjust helmet"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["gorget standard"] = ""
+	options["goggles on"] = "_goggle"
+	options["cap on"] = "_cap"
+	options["beret on"] = "_beret"
+	options["head-strap on"] = "_bane"
+	var/choice = input(M,"What do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You put your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
+
 
 /obj/item/clothing/head/helmet/botanist
 	name = "botanist hood"
@@ -142,6 +264,7 @@
 	options["tangent ridge helmet open"] = "tangent_ridge_helmet"
 	options["greater heart helmet"] = "greater_heart"
 	options["tessellate helmet"] = "tessellate_helmet"
+	options["factorial armor"] = "factorial_helmet"
 	options["lemniscate helmet"] = "lemniscate_helmet"
 	options["divisor helmet"] = "divisor_helmet"
 	options["monomial helmet"] = "monomial_helmet"
@@ -155,6 +278,7 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
 
 /obj/item/clothing/head/helmet/rosaria
 	name = "rosaria great helm"
@@ -202,6 +326,31 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 5, MATERIAL_GOLD = 5)
+
+/obj/item/clothing/head/helmet/prime/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["prime dark"] = "prime"
+	options["prime royal"] = "prime_alt"
+	options["prime royal claric"] = "prime_alt2"
+	options["prime royal doctor"] = "prime_alt3"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/custodian
 	name = "custodian helmet"
@@ -487,6 +636,10 @@
 	price_tag = 150
 	obscuration = LIGHT_OBSCURATION
 
+/obj/item/clothing/head/helmet/laserproof/marshal
+	icon_state = "ironhammer_ablative"
+	item_state = "ironhammer_ablative"
+
 /obj/item/clothing/head/helmet/laserproof/iron_lock_security
 	name = "outdated ablative helmet"
 	desc = "A \"Iron Lock Security\" helmet that excels in protecting the wearer against energy projectiles this even after all these years still is the base of ablative helmet design. Produced by Greyson Positronic"
@@ -611,12 +764,12 @@
 
 /obj/item/clothing/head/helmet/marshal_full
 	name = "marshal full helmet"
-	desc = "A full helmet with a built in glow visor. While a weak light its better than nothing and the full cover design makes it ideal for bullet protection."
+	desc = "A full helmet with a built in glow visor. While a weak light its better than nothing and the full cover design makes it ideal for general protection."
 	icon_state = "ironhammer_full"
-	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 100, rad = 0)
+	item_state = "ironhammer_full"
+	armor_list = list(melee = 30, bullet = 30,energy = 25, bomb = 25, bio = 70, rad = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	flash_protection = FLASH_PROTECTION_MAJOR
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4
 
@@ -630,6 +783,24 @@
 	update_wear_icon()
 	..()
 
+/obj/item/clothing/head/helmet/warrant_officer
+	name = "warrant officer full helmet"
+	desc = "A full helmet with a built in glow visor. This one appears to be fitted with new visor servos internally to protect from flashes as well as a bullet-proof reinforced mouth guard!"
+	icon_state = "ironhammer_wo_full"
+	item_state = "ironhammer_wo_full"
+	flash_protection = FLASH_PROTECTION_MAJOR
+	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 100, rad = 0)
+
+/obj/item/clothing/head/helmet/warrant_officer/update_icon()
+	if(on)
+		icon_state = "ironhammer_wo_full_on"
+		set_light(2, 2, COLOR_LIGHTING_ORANGE_MACHINERY)
+	else
+		icon_state = "ironhammer_wo_full"
+		set_light(0, 0)
+	update_wear_icon()
+	..()
+
 /*
  * Special helmets with HUDs
  */
@@ -638,6 +809,7 @@
 	name = "marshal riot helmet"
 	desc = "Standard-issue marshal helmet with a basic HUD and targeting system included, produced by Seinemetall Defense GmbH after more classic riot helmets were not able to handle the day to day riots."
 	icon_state = "light_riot"
+	flags_inv = HIDEEARS|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	armor_list = list(
 		melee = 75,
@@ -896,17 +1068,6 @@
 
 		usr.update_action_buttons()
 
-/obj/item/clothing/head/helmet/faceshield/helmet_visor
-	name = "marshal helmet"
-	desc = "It's a helmet specifically designed for general police work. Comes with a visor face cover and extra padding for dealing with criminal scum in melee."
-	icon_state = "helmet_visor"
-	armor_up = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
-	armor_list = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	price_tag = 150
-	tint = TINT_NONE
-	obscuration = LIGHT_OBSCURATION
-
 // S E R B I A //
 
 /obj/item/clothing/head/helmet/faceshield/altyn
@@ -923,6 +1084,10 @@
 
 /obj/item/clothing/head/helmet/faceshield/altyn/black
 	icon_state = "altyn_black"
+
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer
+	icon_state = "ironhammer_altyn"
+	item_state = "ironhammer_altyn"
 
 /obj/item/clothing/head/helmet/faceshield/altyn/maska
 	name = "maska helmet"

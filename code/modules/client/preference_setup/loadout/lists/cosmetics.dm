@@ -21,3 +21,9 @@
 	sort_category = "Cosmetics"
 	path = /obj/item/clothing/head/hairflower
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/cosmetic/pin
+	display_name = "hairpin selection"
+	sort_category = "Cosmetics"
+	path = /obj/item/clothing/head/pin
+	flags = GEAR_HAS_TYPE_SELECTION

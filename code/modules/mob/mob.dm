@@ -4,15 +4,28 @@
 	GLOB.living_mob_list -= src
 	GLOB.mob_list -= src
 	unset_machine()
-	qdel(hud_used)
+	QDEL_NULL(hud_used)
+	QDEL_NULL(parallax)
 	if(client)
 		for(var/atom/movable/AM in client.screen)
 			qdel(AM)
 		client.screen = list()
 
+	for (var/obj/machinery/camera/camera in tracking_cameras)
+		camera.lostTarget(src)
+	tracking_cameras.Cut()
+
 	ghostize()
-	..()
-	return QDEL_HINT_HARDDEL
+
+	LAssailant_weakref = null
+
+	for (var/datum/movement_handler/mob/handler in movement_handlers)
+		handler.host = null
+		handler.mob = null
+
+	movement_handlers.Cut()
+
+	return ..()
 
 /mob/get_fall_damage(var/turf/from, var/turf/dest)
 	return 0
@@ -276,6 +289,18 @@
 		return
 
 	T.UnloadSlide(get_dir(T, src), src, 1)
+
+/mob/proc/haul_all_objs_proc(turf/T)
+	if(!src || !isturf(src.loc) || !(T in oview(1, src.loc)))
+		return 0
+	if(ismouse(src))
+		return
+	if(!src || !isturf(src.loc))
+		return
+	if(src.stat || src.restrained())
+		return
+	T.UnloadSlide(get_dir(T, src), src, 1)
+
 
 /mob/proc/ret_grab(obj/effect/list_container/mobl/L as obj, flag)
 	if(!istype(l_hand, /obj/item/grab) && !istype(r_hand, /obj/item/grab))
@@ -602,9 +627,9 @@
 		// them, so don't bother checking that explicitly.
 
 		if(!iscarbon(src))
-			M.LAssailant = null
+			M.LAssailant_weakref = null
 		else
-			M.LAssailant = usr
+			M.LAssailant_weakref = WEAKREF(usr)
 
 	else if(isobj(AM))
 		var/obj/I = AM
@@ -642,7 +667,9 @@
 	return (0 >= usr.stat)
 
 /mob/proc/is_dead()
-	return stat == DEAD
+	if (stat == DEAD) //attempted fix to this proc
+		return TRUE
+	return FALSE
 
 /mob/proc/is_mechanical()
 	if(mind && (mind.assigned_role == "Robot" || mind.assigned_role == "AI"))
@@ -1357,3 +1384,22 @@ mob/proc/yank_out_object()
 		timeinjob = SSjob.JobTimeCheck(usr.ckey, "[J.type]")
 		if(timeinjob > 0)
 			to_chat(src, "You have spent [timeinjob] minutes playing as [J.title].")
+
+
+// Code taken from /code/game/objects/objs.dm Line 136 to allow support for Mob's UIs
+/mob/proc/interact(mob/user as mob)
+	return
+
+/mob/proc/updateDialog()
+	// Check that people are actually using the machine. If not, don't update anymore.
+	if(in_use)
+		var/list/nearby = viewers(1, src)
+		var/is_in_use = 0
+		for(var/mob/M in nearby)
+			if ((M.client && M.machine == src))
+				is_in_use = 1
+				src.interact(M)
+		var/ai_in_use = AutoUpdateAI(src)
+
+		if(!ai_in_use && !is_in_use)
+			in_use = 0
