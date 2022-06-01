@@ -293,6 +293,7 @@
 		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/Taser.ogg', charge_cost = 200, icon="stun"),
 		list(mode_name="buckshot", projectile_type=/obj/item/projectile/bullet/pellet/shotgun/energy, fire_sound='sound/weapons/guns/fire/sunrise_fire.ogg', charge_cost = 100, icon="kill"),
 	)
+	serial_type = "NM"
 
 /obj/item/gun/energy/peacekeeper/update_icon()
 	..()
@@ -346,6 +347,7 @@
 		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound = 'sound/weapons/Taser.ogg', fire_delay=80, icon="stun"),
 		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Laser.ogg', fire_delay=40, icon="kill"),
 	)
+	serial_type = "NM"
 
 /obj/item/gun/energy/zwang/update_icon()
 	..()
