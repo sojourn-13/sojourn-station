@@ -94,7 +94,7 @@
 /datum/design/research/item/powercell/large/ameridian
 	name = "Soteria \"Ameridian 20000L\""
 	build_path = /obj/item/cell/large/ameridian
-	chemicals = list("MATERIAL_AMERIDIAN" = 120) //Beakers worth on top of normal cell costs
+	chemicals = list("liquid_ameridian" = 120) //Beakers worth on top of normal cell costs
 
 //Hand crank for cells
 /datum/design/research/item/hand_charger
