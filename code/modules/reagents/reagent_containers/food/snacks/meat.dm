@@ -34,11 +34,24 @@
 	//same as plain meat
 
 /obj/item/reagent_containers/food/snacks/meat/pork
-	//Same as plain meat
+	name = "porcine meat"
+	desc = "A raw slab of meat from pig or otherwise porcine animal, which you hopefully slaughtered without cruelty." // Always remember to pray Bismillah before, keep it halal.
+	icon_state = "sus" // It's the name of genus of the pig, don't give me that look.
+	preloaded_reagents = list("protein" = 8)
+	filling_color = "#C28585"
+	slice_path = /obj/item/reagent_containers/food/snacks/rawbacon
+	slices_num = 4 // Since 2u protein each
 
 /obj/item/reagent_containers/food/snacks/meat/corgi
 	name = "Corgi meat"
 	desc = "Tastes like... well, you know."
+
+/obj/item/reagent_containers/food/snacks/meat/termitemeat
+	desc = "A slab of sickly-green bubbling meat cut from a giant termite. It looks to be rather rich in minerals. Delicious!"
+	icon_state = "xenomeat"
+	filling_color = "#E2FFDE"
+	preloaded_reagents = list("protein" = 5, "iron" = 4)
+	//Todo make each termite meat have their ground up mineral inside
 
 /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	desc = "A slab of sickly-green bubbling meat cut from a giant roach. You swear you can see it still twitching occasionally. Delicious!"

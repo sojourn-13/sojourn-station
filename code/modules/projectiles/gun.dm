@@ -53,6 +53,25 @@
 	var/dual_wielding
 	var/can_dual = FALSE // Controls whether guns can be dual-wielded (firing two at once).
 	var/zoom_factor = 0 //How much to scope in when using weapon
+	
+/*
+
+NOTE: For the sake of standardizing guns and extra vision range, here's a general guideline for zooming factor.
+		  Do keep in mind that a normal player's view is seven tiles of vision in each direction.
+
+						Minimum value is 0.2 which gives 1 extra tile of vision.
+				From there, increases are mostly linear, with the following shared exceptions:
+									0.3 and 0.4 = 2 extra tiles
+									0.6 and 0.7 = 4 extra tiles
+			0.9 gives 6 extra tiles, from there jumps straight to 8 extra tiles at both 1 and 1.1
+						1.3 and 1.4 = 10 extra tiles (Character no longer seen on screen)
+									1.6 and 1.7 = 12 extra tiles
+					Largest zooming factor being 2, increases tile vision by 16 extra tiles.
+
+
+For the sake of consistency, I suggest always rounding up on even values when applicable. - Seb (ThePainkiller)
+
+*/
 
 	var/suppress_delay_warning = FALSE
 
@@ -694,6 +713,15 @@
 		sel_mode = 1
 	return set_firemode(sel_mode)
 
+/obj/item/gun/proc/switch_firemodes_reverse()
+	if(firemodes.len <= 1)
+		return null
+	update_firemode(FALSE) //Disable the old firing mode before we switch away from it
+	sel_mode--
+	if(sel_mode < 1)
+		sel_mode = firemodes.len
+	return set_firemode(sel_mode)
+
 /// Set firemode , but without a refresh_upgrades at the start
 /obj/item/gun/proc/very_unsafe_set_firemode(index)
 	if(index > firemodes.len)
@@ -720,7 +748,7 @@
 
 	toggle_firemode(user)
 
-/obj/item/gun/proc/toggle_firemode(mob/living/user)
+/obj/item/gun/proc/toggle_firemode(mob/living/user, forward = TRUE)
 	if(currently_firing) // CHEATERS!
 		return
 	var/datum/firemode/new_mode = switch_firemodes()
@@ -907,6 +935,8 @@
 	pierce_multiplier = initial(pierce_multiplier)
 	proj_step_multiplier = initial(proj_step_multiplier)
 	proj_agony_multiplier = initial(proj_agony_multiplier)
+	extra_damage_mult_scoped = initial(extra_damage_mult_scoped)
+	scoped_offset_reduction  = initial(scoped_offset_reduction)
 	fire_delay = initial(fire_delay)
 	move_delay = initial(move_delay)
 	recoil_buildup = initial(recoil_buildup)

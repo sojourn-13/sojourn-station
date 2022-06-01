@@ -184,11 +184,13 @@ var/global/list/modifications_types = list(
 	id = "prosthesis_asters"
 	replace_limb = /obj/item/organ/external/robotic/asters
 	icon = 'icons/mob/human_races/cyberlimbs/asters.dmi'
+	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_CHEST, BP_GROIN, BP_HEAD)
 
 /datum/body_modification/limb/prosthesis/serbian
 	id = "prosthesis_serbian"
 	replace_limb = /obj/item/organ/external/robotic/serbian
 	icon = 'icons/mob/human_races/cyberlimbs/serbian.dmi'
+	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_CHEST, BP_GROIN, BP_HEAD)
 
 /datum/body_modification/limb/prosthesis/frozen_star
 	id = "prosthesis_frozen_star"
@@ -204,6 +206,7 @@ var/global/list/modifications_types = list(
 	id = "prosthesis_ghetto"
 	replace_limb = /obj/item/organ/external/robotic/junktech
 	icon = 'icons/mob/human_races/cyberlimbs/advanced_ghetto.dmi'
+	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_CHEST, BP_GROIN)
 
 /datum/body_modification/limb/prosthesis/synthskin
 	id = "prosthesis_full_body_prosthetic"

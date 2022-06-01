@@ -233,6 +233,10 @@
 				var/obj/item/device/radio/R = r_ear
 				R.talk_into(src, message, null, verb, speaking, speech_volume)
 				used_radios += r_ear
+			else if(head && istype(head, /obj/item/device/radio)) // Snowflake code for radio hat
+				var/obj/item/device/radio/R = head
+				R.talk_into(src, message, null, verb, speaking, speech_volume)
+				used_radios += head
 		if("right ear")
 			var/obj/item/device/radio/R
 			if(r_hand && istype(r_hand, /obj/item/device/radio))

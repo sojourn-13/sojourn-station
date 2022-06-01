@@ -53,7 +53,7 @@
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_TGH = 10,
-		STAT_VIG = 5,
+		STAT_BIO = 10, // They need it to butcher animals without hurting themselves.
 	)
 
 	perks = list(/datum/perk/market_prof, /datum/perk/bartender, /datum/perk/foodappraise)

@@ -4,12 +4,12 @@
 	spawn_always = TRUE
 	markup = UNIQUE_GOODS
 	recommendations_needed = 2
-	secret_inv_threshold = 2000
+	hidden_inv_threshold = 2000
 	recommendation_threshold = 4000
 	stations_recommended = list("greyson_printer")
 	name_pool = list("Tuixiaoayuan" = "A still functioning, heavily armed greyson ship that still produces and offers wares, likely entirely unaware of Greyson Positronics collapse given its \
 	automated. It's a wonder it hasn't been raided, but then again it has guns that could level a planet on it. Plus, it hardly offers things of real value...")
-	assortiment = list(
+	inventory = list(
 		"Fuzhuang" = list(
 			/obj/item/clothing/head/helmet/space/os,
 			/obj/item/clothing/suit/space/os,
@@ -18,7 +18,7 @@
 			/obj/item/clothing/under/os_jumpsuit
 		)
 	)
-	secret_inventory = list(
+	hidden_inventory = list(
 		"Jiguang Kuijia" = list(
 			/obj/item/clothing/under/iron_lock_security = custom_good_name("ILS Security Uniform"),
 			/obj/item/clothing/head/soft/iron_lock_security = custom_good_name("ILS Security Cap"),

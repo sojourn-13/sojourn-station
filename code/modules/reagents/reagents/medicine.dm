@@ -124,6 +124,7 @@
 	reagent_state = LIQUID
 	color = "#00A000"
 	scannable = 1
+	overdose = REAGENTS_OVERDOSE
 
 /datum/reagent/medicine/dylovene/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
@@ -134,6 +135,19 @@
 	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Fish recipes no longer contain carpotoxin, but good in cases of poisoning.
 	holder.remove_reagent("toxin", 0.4 * effect_multiplier)
 	holder.remove_reagent("blattedin", 0.4 * effect_multiplier) // Massive complains about its slow metabolization rate + poisoning actually working, plus dylo originally purged it, so I'm bringing it back. - Seb
+
+/datum/reagent/medicine/dylovene/overdose(var/mob/living/carbon/M, var/alien)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/kidney/K = H.random_organ_by_process(OP_KIDNEYS)
+		if(istype(K))
+			if(BP_IS_ROBOTIC(K))
+				return
+			else
+				K.damage = 2 * REM
+	M.adjustToxLoss(2)
+	if(M.losebreath < 10)
+		M.losebreath++
 
 /datum/reagent/medicine/carthatoline
 	name = "Carthatoline"
@@ -374,7 +388,7 @@
 	if(prob(5 - (2 * M.stats.getMult(STAT_TGH))))
 		M.Stun(5)
 
-/* Cruciform litany related painkillers */
+/* Church related chemicals */
 /datum/reagent/medicine/nepenthe  //Monomial super-painkiller
 	name = "Nepenthe"
 	id = "nepenthe"

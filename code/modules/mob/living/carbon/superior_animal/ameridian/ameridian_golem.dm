@@ -52,8 +52,12 @@
 	if(drop_amount)
 		var/obj/item/stack/material/ameridian/loot = new /obj/item/stack/material/ameridian(get_turf(src))
 		loot.amount = drop_amount
-	node?.golem = null // Remove the golem from the node since for some reason it doesn't do it with qdel()
 	qdel(src)
+
+/mob/living/carbon/superior_animal/ameridian_golem/Destroy()
+	node?.golem = null
+	node = null
+	. = ..()
 
 /mob/living/carbon/superior_animal/ameridian_golem/update_icon()
 	transform = initial(transform)
@@ -67,9 +71,11 @@
 
 	..()
 
-	spawn(10) // Wait 0.1 seconds to see if we died
-		if(stat != DEAD) // We're still alive!
-			drop_amount = initial(drop_amount) // So we still have loot
+	addtimer(CALLBACK(src, /mob/living/carbon/superior_animal/ameridian_golem/.proc/maintain_drop_amount), 100 MILLISECONDS) //consider converting this to ticks?
+
+/mob/living/carbon/superior_animal/ameridian_golem/proc/maintain_drop_amount()
+	if (!is_dead()) // We're still alive!
+		drop_amount = initial(drop_amount) // So we still have loot
 
 // Stole this code from 'code/__HELPERS/matrices.dm' because otherwise the golems shrink during the shake animation. -R4d6
 /mob/living/carbon/superior_animal/ameridian_golem/shake_animation(var/intensity = 8)

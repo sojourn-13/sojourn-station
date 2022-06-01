@@ -103,7 +103,8 @@
 		return
 
 	GET_COMPONENT_FROM(C, /datum/component/inspiration, inserted_oddity)
-	if(!C || !C.perk)
+	if(!C || !C.perk) //Balance I guess it needs a perk
+		to_chat(user, SPAN_NOTICE("\the [inserted_oddity] has no strange aura for inspiration!."))
 		return
 
 	if(istype(user) && (inserted_oddity in user))

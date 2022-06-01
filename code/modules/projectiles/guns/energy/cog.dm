@@ -25,7 +25,7 @@
 /obj/item/gun/energy/cog/gear
 	name = "\"Gear\" lasgun"
 	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous. \
-	This model has been modified to use wider range of projectiles at cost of it's fire rate."
+	This model has been modified by the Marshals to allow for non-lethal electrodes to be discharged as well as lasers, but at the cost of its cell-usage effifency."
 	fire_delay = 15
 	projectile_type = /obj/item/projectile/beam/stun
 	init_firemodes = list(

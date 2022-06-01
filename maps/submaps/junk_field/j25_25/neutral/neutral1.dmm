@@ -113,10 +113,6 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
-"az" = (
-/obj/machinery/atmospherics/pipe/simple/hidden,
-/turf/simulated/wall,
-/area/template_noop)
 "aA" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -821,7 +817,7 @@ ab
 Xz
 ax
 ax
-az
+at
 aH
 aB
 aw

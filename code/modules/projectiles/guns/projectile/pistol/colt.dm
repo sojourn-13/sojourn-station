@@ -60,6 +60,24 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	serial_type = "Sol Fed"
 
+/obj/item/gun/projectile/colt/liberty
+	name = "\"Liberty\" magnum pistol"
+	desc = "A common Nadezhda Marshal issue pistol chambered in .40 Magnum. It appears to be loosely based off a Colt model, albeit with a changed slide and polymer grip and a built-in holographic scope."
+	icon = 'icons/obj/guns/projectile/liberty.dmi'
+	icon_state = "liberty"
+	item_state = "liberty"
+	caliber = CAL_MAGNUM
+	price_tag = 750
+	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
+	damage_multiplier = 1.0
+	penetration_multiplier = 1.3
+	zoom_factor = 0.2
+	recoil_buildup = 5.5
+	one_hand_penalty = 10
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)
+	serial_type = "NM"
+
+
 /obj/item/gun/projectile/colt/update_icon()
 	..()
 

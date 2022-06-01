@@ -8,7 +8,7 @@
 	item_state = "boltgun"
 	max_shells = 5
 	price_tag = 300
-	recoil_buildup = 20
+	recoil_buildup = 12 //Slightly lower than the Kardeshev but not a 50% difference like the other.
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/boltgun/sawn/sa

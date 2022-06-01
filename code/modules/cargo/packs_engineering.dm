@@ -15,6 +15,16 @@
 	crate_name = "internals crate"
 	group = "Engineering"
 
+/datum/supply_pack/geiger_counter
+	name = "Geiger Counter Crate"
+	contains = list(/obj/item/device/geiger,
+					/obj/item/device/geiger,
+					/obj/item/device/geiger)
+	cost = 350
+	containertype = /obj/structure/closet/crate/internals
+	crate_name = "geiger counter crate"
+	group = "Engineering"
+
 /datum/supply_pack/sleeping_agent
 	name = "Canister: \[N2O\]"
 	contains = list(/obj/machinery/portable_atmospherics/canister/sleeping_agent)
@@ -138,6 +148,17 @@
 	cost = 600
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "glass sheet crate"
+	group = "Engineering"
+	
+/datum/supply_pack/glass480
+	name = "Bulk Glass Sheets Crate"
+	contains = list(/obj/item/stack/material/glass/full,
+	/obj/item/stack/material/glass/full,
+	/obj/item/stack/material/glass/full,
+	/obj/item/stack/material/glass/full)
+	cost = 1740
+	containertype = /obj/structure/largecrate
+	crate_name = "Bulk glass crate"
 	group = "Engineering"
 
 /datum/supply_pack/borosilicate_glass120

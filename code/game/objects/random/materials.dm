@@ -78,16 +78,16 @@
 				/obj/item/stack/material/plasteel/random = 2))
 
 /obj/random/material_ore/item_to_spawn()
-	return pickweight(list(/obj/item/ore/coal = 4,\
-				/obj/item/ore/glass = 5,\
-				/obj/item/ore/gold = 3,\
-				/obj/item/ore/hydrogen = 0.1,\
-				/obj/item/ore/iron = 4,\
-				/obj/item/ore/osmium = 1,\
-				/obj/item/ore/plasma = 2,\
-				/obj/item/ore/silver = 3,\
-				/obj/item/ore/uranium = 1,\
-				/obj/item/ore/diamond = 0.1))
+	return pickweight(list(/obj/item/stack/ore/coal = 4,\
+				/obj/item/stack/ore/glass = 5,\
+				/obj/item/stack/ore/gold = 3,\
+				/obj/item/stack/ore/hydrogen = 0.1,\
+				/obj/item/stack/ore/iron = 4,\
+				/obj/item/stack/ore/osmium = 1,\
+				/obj/item/stack/ore/plasma = 2,\
+				/obj/item/stack/ore/silver = 3,\
+				/obj/item/stack/ore/uranium = 1,\
+				/obj/item/stack/ore/diamond = 0.1))
 
 
 /obj/random/material_ore/low_chance
@@ -101,13 +101,13 @@
 	spawn_nothing_percentage = 0
 
 /obj/random/material_ore_small/item_to_spawn()
-	return pickweight(list(/obj/item/ore/coal/small = 2,\
-				/obj/item/ore/glass = 12,\
-				/obj/item/ore/gold/small = 2,\
-				/obj/item/ore/hydrogen/small = 1,\
-				/obj/item/ore/iron/small = 2,\
-				/obj/item/ore/osmium/small = 2,\
-				/obj/item/ore/plasma/small = 1,\
-				/obj/item/ore/silver/small = 2,\
-				/obj/item/ore/uranium/small = 1,\
-				/obj/item/ore/diamond/small = 1))
+	return pickweight(list(/obj/item/stack/ore/coal/small = 2,\
+				/obj/item/stack/ore/glass = 12,\
+				/obj/item/stack/ore/gold/small = 2,\
+				/obj/item/stack/ore/hydrogen/small = 1,\
+				/obj/item/stack/ore/iron/small = 2,\
+				/obj/item/stack/ore/osmium/small = 2,\
+				/obj/item/stack/ore/plasma/small = 1,\
+				/obj/item/stack/ore/silver/small = 2,\
+				/obj/item/stack/ore/uranium/small = 1,\
+				/obj/item/stack/ore/diamond/small = 1))

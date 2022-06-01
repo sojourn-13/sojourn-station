@@ -364,7 +364,7 @@
 	if(!..())
 		return
 
-	var/mob/living/carbon/human/target = locate() in mobs_in_view(world.view, src)
+	var/mob/living/carbon/human/target = locate() in all_mobs_in_view(world.view, src)
 	if(target)
 		if(get_dist(src, target) <= 1)
 			icon_state = "core-fear"
@@ -437,7 +437,7 @@
 	if(!..())
 		return
 
-	var/mob/living/target = locate() in mobs_in_view(world.view, src)
+	var/mob/living/target = locate() in all_mobs_in_view(world.view, src)
 	if(target && is_attackable(target) && target.faction != HIVE_FACTION)
 		use_ability(target)
 		set_cooldown()

@@ -99,6 +99,7 @@
 		..()
 //cow
 /mob/living/simple_animal/cow
+	name = "Cow"
 	desc = "Known for their milk, just don't tip them over."
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "cow"
@@ -341,7 +342,7 @@ var/global/chicken_count = 0
 				var/list/responses = list(	"[src] looks at you imploringly.",
 											"[src] looks at you pleadingly",
 											"[src] looks at you with a resigned expression.",
-											"[src] seems resigned to her fate.")
+											"[src] seems resigned to their fate.")
 				to_chat(M, pick(responses))
 	else
 		..()
@@ -421,7 +422,7 @@ var/global/chicken_count = 0
 	. =..()
 	if(!.)
 		return
-	if(!stat && prob(5) && lay_egg()) //We are less likely to lay eggs
+	if(!stat && prob(25) && lay_egg()) //We are less likely to lay eggs
 		visible_message("[src] [pick("lays an egg.","squats down and croons.","begins making a huge racket.","begins clucking raucously.")]")
 
 /mob/living/simple_animal/metal_chicken/proc/lay_egg()

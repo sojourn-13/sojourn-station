@@ -303,3 +303,7 @@ var/const/enterloopsanity = 100
 			if(!obj.anchored && obj.loc == src)// prevents the object from being affected if it's not currently here.
 				step_glide(obj, where, speed)
 			CHECK_TICK
+
+/turf/CtrlClick(mob/user)
+	user.haul_all_objs_proc(src)
+	..()

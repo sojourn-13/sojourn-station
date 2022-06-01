@@ -44,7 +44,7 @@
 
 /datum/craft_recipe/weapon/crossbow
 	name = "crossbow"
-	result = /obj/item/gun/launcher/crossbow
+	result = /obj/item/gun/projectile/crossbow
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD), //old frame recipe
 		list(/obj/item/stack/rods, 3, "time" = 20),
@@ -264,7 +264,7 @@
 	steps = list(
 		list(/obj/item/tool/hammer/homewrecker, 1, "time" = 120), //Get a homewrecker
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL), //Shore it up with some plasteel
-		list(/obj/item/rocket_engine, 1, "time" = 30),	//Attach a rocket engine
+		list(/obj/item/tool_upgrade/productivity/rocket_engine, 1, "time" = 30),	//Attach a rocket engine
 		list(QUALITY_WELDING, 10, "time" = 30),//Weld it on
 		list(CRAFT_MATERIAL, 2, MATERIAL_PLASMA),//Fuel it up
 		list(/obj/item/tool_upgrade/augment/cell_mount, 1, "time" = 30),//Attach a cell-mount

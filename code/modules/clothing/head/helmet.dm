@@ -68,8 +68,8 @@
 /obj/item/clothing/head/helmet/ballistic/bulletproof/militia
 	name = "Blackshield bulletproof helmet"
 	icon_state = "bulletproof_bs"
-	desc = "Standard military gear. Protects exceptionally well from high-velocity solid projectiles\
-	This one bears the IFF stripes of the blackshield."
+	desc = "Standard military gear. Protects exceptionally well from high-velocity solid projectiles \
+	This one bears the IFF stripes of the Blackshield."
 	flags_inv = HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 0, rad = 0)
@@ -81,8 +81,8 @@
 /obj/item/clothing/head/helmet/laserproof/militia
 	name = "Blackshield ablative helmet"
 	icon_state = "ablative_bs"
-	desc = "An outdated, energy resistant helmet in a distinctive style. Loved by politicians, loathed by taxpayers and tollerated by the \
-	local forces so often put within it."
+	desc = "An outdated, energy resistant helmet in a distinctive style. Loved by politicians, loathed by taxpayers and tolerated by the \
+			local forces so often outfitted with it."
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	armor_list = list(melee = 25, bullet = 25, energy = 60, bomb = 10, bio = 0, rad = 0)
@@ -279,6 +279,7 @@
 		usr.update_action_buttons()
 		return 1
 
+
 /obj/item/clothing/head/helmet/rosaria
 	name = "rosaria great helm"
 	desc = "The rosaria protects. Deus Vult."
@@ -337,9 +338,9 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["prime dark"] = "prime"
-	options["prime royal"] = "primealt"
-	options["prime royal claric"] = "primealt2"
-	options["prime royal doctor"] = "primealt3"
+	options["prime royal"] = "prime_alt"
+	options["prime royal claric"] = "prime_alt2"
+	options["prime royal doctor"] = "prime_alt3"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -635,6 +636,10 @@
 	price_tag = 150
 	obscuration = LIGHT_OBSCURATION
 
+/obj/item/clothing/head/helmet/laserproof/marshal
+	icon_state = "ironhammer_ablative"
+	item_state = "ironhammer_ablative"
+
 /obj/item/clothing/head/helmet/laserproof/iron_lock_security
 	name = "outdated ablative helmet"
 	desc = "A \"Iron Lock Security\" helmet that excels in protecting the wearer against energy projectiles this even after all these years still is the base of ablative helmet design. Produced by Greyson Positronic"
@@ -759,12 +764,12 @@
 
 /obj/item/clothing/head/helmet/marshal_full
 	name = "marshal full helmet"
-	desc = "A full helmet with a built in glow visor. While a weak light its better than nothing and the full cover design makes it ideal for bullet protection."
+	desc = "A full helmet with a built in glow visor. While a weak light its better than nothing and the full cover design makes it ideal for general protection."
 	icon_state = "ironhammer_full"
-	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 100, rad = 0)
+	item_state = "ironhammer_full"
+	armor_list = list(melee = 30, bullet = 30,energy = 25, bomb = 25, bio = 70, rad = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	flash_protection = FLASH_PROTECTION_MAJOR
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4
 
@@ -778,6 +783,24 @@
 	update_wear_icon()
 	..()
 
+/obj/item/clothing/head/helmet/warrant_officer
+	name = "warrant officer full helmet"
+	desc = "A full helmet with a built in glow visor. This one appears to be fitted with new visor servos internally to protect from flashes as well as a bullet-proof reinforced mouth guard!"
+	icon_state = "ironhammer_wo_full"
+	item_state = "ironhammer_wo_full"
+	flash_protection = FLASH_PROTECTION_MAJOR
+	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 100, rad = 0)
+
+/obj/item/clothing/head/helmet/warrant_officer/update_icon()
+	if(on)
+		icon_state = "ironhammer_wo_full_on"
+		set_light(2, 2, COLOR_LIGHTING_ORANGE_MACHINERY)
+	else
+		icon_state = "ironhammer_wo_full"
+		set_light(0, 0)
+	update_wear_icon()
+	..()
+
 /*
  * Special helmets with HUDs
  */
@@ -786,6 +809,7 @@
 	name = "marshal riot helmet"
 	desc = "Standard-issue marshal helmet with a basic HUD and targeting system included, produced by Seinemetall Defense GmbH after more classic riot helmets were not able to handle the day to day riots."
 	icon_state = "light_riot"
+	flags_inv = HIDEEARS|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	armor_list = list(
 		melee = 75,
@@ -1044,17 +1068,6 @@
 
 		usr.update_action_buttons()
 
-/obj/item/clothing/head/helmet/faceshield/helmet_visor
-	name = "marshal helmet"
-	desc = "It's a helmet specifically designed for general police work. Comes with a visor face cover and extra padding for dealing with criminal scum in melee."
-	icon_state = "helmet_visor"
-	armor_up = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
-	armor_list = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	price_tag = 150
-	tint = TINT_NONE
-	obscuration = LIGHT_OBSCURATION
-
 // S E R B I A //
 
 /obj/item/clothing/head/helmet/faceshield/altyn
@@ -1071,6 +1084,10 @@
 
 /obj/item/clothing/head/helmet/faceshield/altyn/black
 	icon_state = "altyn_black"
+
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer
+	icon_state = "ironhammer_altyn"
+	item_state = "ironhammer_altyn"
 
 /obj/item/clothing/head/helmet/faceshield/altyn/maska
 	name = "maska helmet"

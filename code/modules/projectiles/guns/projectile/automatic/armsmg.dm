@@ -26,6 +26,7 @@
 		SEMI_AUTO_NODELAY
 		)
 	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/projectile/automatic/armsmg/blackshield
 

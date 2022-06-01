@@ -7308,7 +7308,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "vf" = (
 /obj/structure/table/rack,
-/obj/item/ore/plasma,
+/obj/item/stack/ore/plasma,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "vg" = (
@@ -7768,16 +7768,6 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "wz" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 4
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"wA" = (
-/obj/machinery/atmospherics/pipe/simple/visible,
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
 	},
@@ -8591,16 +8581,6 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"yA" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"yB" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "yC" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/dark,
@@ -8652,15 +8632,6 @@
 	locked = 1
 	},
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"yL" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/door/airlock/highsecurity{
-	id_tag = "preppermaints";
-	locked = 1
-	},
-/turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "yM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -12658,9 +12629,9 @@
 /obj/machinery/button/remote/airlock{
 	dir = 4;
 	id = "prepperdoorinternal";
+	pixel_x = -21;
 	pixel_y = 4;
-	specialfunctions = 4;
-	pixel_x = -21
+	specialfunctions = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
@@ -16344,9 +16315,9 @@ wM
 wM
 wM
 yz
-yL
-yL
-yB
+yc
+yc
+wM
 zv
 zL
 wM
@@ -16851,8 +16822,8 @@ wN
 wN
 yb
 yb
-yA
-yA
+wN
+wN
 wN
 wN
 wN
@@ -16978,8 +16949,8 @@ wM
 wM
 yc
 yc
-yB
-yB
+wM
+wM
 wM
 wM
 zw
@@ -18876,7 +18847,7 @@ vj
 vL
 vL
 wk
-wA
+wz
 wT
 Qy
 XD

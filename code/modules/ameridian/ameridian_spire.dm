@@ -6,6 +6,7 @@
 	anchored = TRUE
 	density = TRUE
 	light_range = 7 // Glow in the dark
+	light_power = 7
 	light_color = COLOR_LIGHTING_PURPLE_BRIGHT
 	growth = 6 // Bigger than other crystals
 	growth_prob = 5 // Spread crystals faster
@@ -23,7 +24,7 @@
 /obj/structure/ameridian_crystal/spire/examine(mob/user)
 	..()
 	if(user.stats?.getPerk(PERK_PSION)) // Are we a psion and is there something to see?
-		to_chat(user, "<b><font color='purple'> You have the feeling this spire goes deep. Very deep...")
+		to_chat(user, SPAN_PSION("You have the feeling this spire goes deep. Very deep..."))
 
 /obj/structure/ameridian_crystal/spire/attackby(obj/item/I, mob/user)
 	src.visible_message(SPAN_NOTICE("[user] cannot make a dent into [src]."), SPAN_NOTICE("You cannot make a dent into [src]."))
@@ -72,7 +73,6 @@
 	if(golem && get_dist(get_turf(src), get_turf(golem)) > respawn_distance) // We have a golem and it is far away
 		golem.node = null // Null the golem's node.
 		golem = null // We can spawn another golem
-		golem_timer = initial(golem_timer) - 5 // We will spawn another golem~
 		return TRUE
 	else
 		return FALSE

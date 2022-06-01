@@ -686,7 +686,7 @@
 		to_chat(user, "<span class='notice'>You put everything in [src].</span>")
 	else if(!silent) //If transfer didn't succeed, it means no item can be picked up, we notify user here.
 		to_chat(user, "<span class='notice'>There is nothing to pick up with \the [src].</span>")
-	if(istype(user.pulling, /obj/structure/ore_box/) && src.contains(/obj/item/ore))
+	if(istype(user.pulling, /obj/structure/ore_box/) && src.contains(/obj/item/stack/ore))
 		//This is mainly used for ore bag, there is no point in making this bit universal, so it is only for ores.
 		//If the user is pulling an ore box, the ores from the ore bag will be transferred to it automatically.
 		var/obj/structure/ore_box/O = user.pulling
@@ -747,7 +747,7 @@
 	max_storage_space = 500 //Bonus capacity because of specialization.
 	max_w_class = ITEM_SIZE_NORMAL
 	can_hold = list (
-		/obj/item/ore
+		/obj/item/stack/ore
 	)
 
 /obj/item/storage/bag/robotic/produce
@@ -810,7 +810,7 @@
 	max_w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_GOLD = 4, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
 	origin_tech = list(TECH_BLUESPACE = 4)
-	can_hold = list(/obj/item/ore,
+	can_hold = list(/obj/item/stack/ore,
 	                /obj/item/reagent_containers/food/snacks/grown,
 	                /obj/item/seeds,
 	                /obj/item/grown,

@@ -14,8 +14,8 @@
 /datum/individual_objective/repossession/assign()
 	..()
 	target = pick_faction_item(mind_holder)
-	desc = "Sold \the [target] item of other faction via cargo."
-	RegisterSignal(SSsupply.shuttle, COMSIG_SHUTTLE_SUPPLY, .proc/task_completed)
+	desc = "Export or sell \the [target] item of another faction via trade beacon."
+	RegisterSignal(SStrade, COMSIG_TRADE_BEACON, .proc/task_completed)
 
 /datum/individual_objective/repossession/task_completed(atom/movable/AM)
 	if(target.type == AM.type)
@@ -23,19 +23,19 @@
 
 /datum/individual_objective/repossession/completed()
 	if(completed) return
-	UnregisterSignal(SSsupply.shuttle, COMSIG_SHUTTLE_SUPPLY)
+	UnregisterSignal(SStrade, COMSIG_TRADE_BEACON)
 	..()
 */
 /datum/individual_objective/museum
-	name = "It belongs in a Museum"
-	desc = "Ensure that 3-4 oddities were sold via cargo."
+	name = "It Belongs in a Museum"
+	desc = "Ensure that 3-4 oddities are exported or sold via trade beacon."
 	req_department = list(DEPARTMENT_LSS)
 
 /datum/individual_objective/museum/assign()
 	..()
 	units_requested = rand(3,4)
-	desc = "Ensure that [units_requested] oddities were sold via cargo."
-	RegisterSignal(SSsupply.shuttle, COMSIG_SHUTTLE_SUPPLY, .proc/task_completed)
+	desc = "Ensure that [units_requested] oddities are exported or sold via trade beacon."
+	RegisterSignal(SStrade, COMSIG_TRADE_BEACON, .proc/task_completed)
 
 /datum/individual_objective/museum/task_completed(atom/movable/AM)
 	if(AM.GetComponent(/datum/component/inspiration))
@@ -43,7 +43,7 @@
 
 /datum/individual_objective/museum/completed()
 	if(completed) return
-	UnregisterSignal(SSsupply.shuttle, COMSIG_SHUTTLE_SUPPLY)
+	UnregisterSignal(SStrade, COMSIG_TRADE_BEACON)
 	..()
 
 /datum/individual_objective/order
@@ -83,8 +83,8 @@
 	..()
 	target = pick_candidates()
 	target = new target()
-	desc = "A contact of yours on the other side on the LS trade station is waiting for a [target]. Ensure it will be sold via cargo."
-	RegisterSignal(SSsupply.shuttle, COMSIG_SHUTTLE_SUPPLY, .proc/task_completed)
+	desc = "A friend of yours on the other side on trade teleporter is waiting for a [target]. Ensure it will be exported or sold via trade beacon."
+	RegisterSignal(SStrade, COMSIG_TRADE_BEACON, .proc/task_completed)
 
 /datum/individual_objective/order/task_completed(atom/movable/AM)
 	if(AM.type == target.type)
@@ -92,12 +92,13 @@
 
 /datum/individual_objective/order/completed()
 	if(completed) return
-	UnregisterSignal(SSsupply.shuttle, COMSIG_SHUTTLE_SUPPLY)
+	UnregisterSignal(SStrade, COMSIG_TRADE_BEACON)
 	..()
 
 /datum/individual_objective/stripping
 	name = "Stripping Operation"
 	req_department = list(DEPARTMENT_LSS)
+	limited_antag = TRUE
 	rarity = 4
 	var/price_target = 2000
 	var/area/target
@@ -119,10 +120,12 @@
 			continue
 		valied_areas += A
 	target = pick(valied_areas)
-	desc = "Ensure that [target] does not have cumulative price of items inside it that is higher than [price_target][CREDITS]. Either pay someone or strip it clean of everything valuable yourself."
+	desc = "Ensure that [target] does not have cumulative price of items inside it that is higher than [price_target][CREDITS]."
 	RegisterSignal(mind_holder, COMSIG_MOB_LIFE, .proc/task_completed)
 
 /datum/individual_objective/stripping/task_completed()
+	if(mind_holder.stat == DEAD)
+		return
 	units_completed = 0
 	for(var/obj/item/I in target.contents)
 		units_completed += I.get_item_cost()
@@ -160,8 +163,8 @@
 	valids_targets -= owner.initial_account
 	target = pick(valids_targets)
 	units_requested = rand(2000, 5000)
-	desc = "A questionable contact asked you to procure and provide this account number: \"[target.account_number]\" with the sum of [units_requested][CREDITS]. \
-			You dont know exactly why, but this is quite beneficial for you."
+	desc = "Some of your relative asked you to procure and provide this account number: \"[target.account_number]\" with sum of [units_requested][CREDITS]. \
+			You dont know exactly why, but this is important."
 	RegisterSignal(owner.initial_account, COMSIG_TRANSATION, .proc/task_completed)
 
 /datum/individual_objective/transfer/task_completed(datum/money_account/S, datum/money_account/T, amount)

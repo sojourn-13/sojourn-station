@@ -32,7 +32,7 @@
 				/obj/item/circuitboard/message_monitor = 1,
 				/obj/item/circuitboard/ntnet_relay = 1,
 				/obj/item/circuitboard/operating = 2,
-				/obj/item/circuitboard/ordercomp = 1,
+				//obj/item/circuitboard/ordercomp = 1,
 				/obj/item/circuitboard/pacman = 4,
 				/obj/item/circuitboard/powermonitor = 2,
 				/obj/item/circuitboard/repair_station = 2,

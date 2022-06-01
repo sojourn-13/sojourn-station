@@ -200,6 +200,7 @@
 	var/mob/living/carbon/holder // The one that prevent the fist from fading
 	var/obj/item/organ/internal/psionic_tumor/PT // The psionic organ of the holder.
 	var/changes_projectile = TRUE
+	serial_shown = FALSE
 
 /obj/item/gun/kinetic_blaster/New(var/loc, var/mob/living/carbon/maker, var/obj/item/organ/internal/psionic_tumor/tumor)
 	..()

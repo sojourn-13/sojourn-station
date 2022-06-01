@@ -31,11 +31,10 @@
 	/obj/item/gun/projectile/revolver/rev10 = 2,
 	/obj/item/gun/projectile/revolver/mistral = 2,
 	//Automatic
-	/obj/item/gun/projectile/automatic/basstet = 2,
+	/obj/item/gun/projectile/automatic/ppsh/ppv = 2,
 	/obj/item/gun/projectile/automatic/greasegun = 2,
 	/obj/item/gun/projectile/automatic/mac = 2,
 	/obj/item/gun/projectile/automatic/wirbelwind = 2,
-	/obj/item/gun/projectile/automatic/bulldog = 2,
 	//Shotgun
 	/obj/item/gun/projectile/shotgun/pump = 2,
 	/obj/item/gun/projectile/boltgun/lever = 2,
@@ -103,11 +102,10 @@
 	/obj/item/gun/projectile/revolver/rev10 = 800,
 	/obj/item/gun/projectile/revolver/mistral = 900,
 	//Automatic
-	/obj/item/gun/projectile/automatic/basstet = 850,
+	/obj/item/gun/projectile/automatic/ppsh/ppv = 1200,
 	/obj/item/gun/projectile/automatic/greasegun = 950,
 	/obj/item/gun/projectile/automatic/mac = 1000,
 	/obj/item/gun/projectile/automatic/wirbelwind = 1500,
-	/obj/item/gun/projectile/automatic/bulldog = 1650,
 	//Shotgun
 	/obj/item/gun/projectile/shotgun/pump = 600,
 	/obj/item/gun/projectile/boltgun/lever = 650,
@@ -239,7 +237,7 @@
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns = 2,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns = 2,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms/public = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 3,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public = 3,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter = 2)
 	contraband = list(/obj/item/tool/knife/neotritual = 3,
 					/obj/item/gun/matter/launcher/nt_sprayer = 3)
@@ -284,7 +282,7 @@
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns = 950,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns = 800,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms/public = 100,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter_public = 100,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public = 100,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter = 400,
 					/obj/item/tool/knife/neotritual = 250,
 					/obj/item/gun/matter/launcher/nt_sprayer = 500)

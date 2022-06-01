@@ -62,7 +62,7 @@
 	armor_list = list(
 		melee = 0,
 		bullet = 0,
-		energy = 30,
+		energy = 25,
 		bomb = 0,
 		bio = 90,
 		rad = 100
@@ -80,11 +80,11 @@
 	permeability_coefficient = 0.5
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	extra_allowed = list(/obj/item/clothing/head/radiation)
-	slowdown = 0.4
+	//slowdown = 0.4
 	armor_list = list(
 		melee = 0,
 		bullet = 0,
-		energy = 30,
+		energy = 25,
 		bomb = 0,
 		bio = 90,
 		rad = 100

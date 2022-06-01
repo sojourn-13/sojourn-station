@@ -440,7 +440,7 @@
 	new /obj/item/grenade/chem_grenade/teargas(src)
 
 /obj/item/storage/belt/security/neotheology
-	name = "tactical absolutism belt"
+	name = "Absolutism tactical belt"
 	desc = "Can hold various military and security equipment for the awakened crusader or skilled divisor. Deus Vult."
 	icon_state = "tactical_neotheology"
 	can_hold_extra = list(

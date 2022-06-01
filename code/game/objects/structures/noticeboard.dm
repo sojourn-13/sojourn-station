@@ -155,10 +155,27 @@
 
 
 /obj/structure/noticeboard/research
-	name = "Medical bulletin board"
+	name = "Research bulletin board"
 	desc = "A board containing vital notices and official memos for the Soteria research"
 	icon_state = "nboard00"
-	notices = 0
+	notices = 1
+
+/obj/structure/noticeboard/research/New()
+	var/obj/item/paper/P = new()
+	P = new()
+	P.name = "Memo RE: Ameridian handling"
+	P.info = "Remember, when dealing with Ameridian Crystals, to :<ol> \
+	<li> Wear a Radiation Suit. The crystals are radioactive with a radius of 2 meters, and the small ones are as radioactive as the grown ones.\
+	<li> Let the crystals grow. Only a fully grown crystal will spread and allow for a sustainable field.\
+	<li> Not let it grow out of control. If enough fully matured crystals are close enough together, golems can appear.\
+	<li> Retreat past the Sonic Fence if golems appear. The Sonic Fence will instantly destroy the golems that touches it. You can also use the Handheld Sonic emitter to destroy the golem.\
+	<li> Not turn off the Sonic Fence or allow it to be turned off. The Sonic Fence is a perfect containment to Ameridian, when it is active. If it turned off, the crystal will be able to spread out of control. If it needs to be turned off for whatever reason, either keep an eye on the crystals, or harvest them all to prevent unwanted spread.\
+	<li> Reseed the field. In case the field get removed completely, more crystals can be seeded with either 5 ameridian shard, or by splashing at least 10u of Liquid Ameridian on the floor.\
+	<li> Refine the shards. While Ameridian is valuable on its own, it's true value can only be used when refining it into Liquid Ameridian using an Ameridian Refinery, after which it can be further transformed into regular materials in the Liquid Ameridian Processor.\
+	<li> Carry the shards through the fence. Your body interfere with the Sonic Fence, allowing you to carry ameridian shards through the fence. The same cannot be said for dragged or thrown crystals, which will get destroyed on contact. Do not throw money away.</ol> "
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
 
 /obj/structure/noticeboard/guild
 	name = "Artificers Guild bulletin board"
@@ -172,11 +189,49 @@
 	icon_state = "nboard00"
 	notices = 0
 
-/obj/structure/noticeboard/lonestar
+/obj/structure/noticeboard/lonestar_service
 	name = "Lonestar Shipping bulletin board"
-	desc = "A board containing vital notices and official memos for Lonestar Employees"
+	desc = "A board containing vital notices and official memos for Lonestar-Service Employees"
 	icon_state = "nboard00"
 	notices = 0
+
+/obj/structure/noticeboard/lonestar_supply
+	name = "Lonestar Shipping bulletin board"
+	desc = "A board containing vital notices and official memos for Lonestar-Supply Employees"
+	icon_state = "nboard00"
+	notices = 2
+
+/obj/structure/noticeboard/lonestar_supply/New()
+	var/obj/item/paper/P = new()
+	P.name = "Memo RE: Mining Drills"
+	P.info = "<ul><li>seismic activity 1: The lowest possible pretty much. Should be a cakewalk even if you've got basic equipment or don't quite know what you're doing just yet. \
+	The scariest you'll run into is a spitter or two, at worst maybe a singular warrior. It'll also be only two burrows per drill, each spewing out groups of three until you smash'em. \
+	<li>Seismic activity 2: The biggest difference between 1 and 2 is the fact that the chances for warriors, spitters or worse is higher. Otherwise it is just three burrows that spit out groups of three. \
+	<li> Seismic activity 3: While we stay with only three burrows, each of them will now spew out four termites up until you break it, also at a faster rate. \
+	<li>Seismic activity 4: Four burrows, four termites and a relatively high chance for beefier termites to show up. \
+	<li> Seismic activity 5: Five burrows, four termites. At this point you can expect termites almost every minute out of a burrow, and a burrow every two minutes. Should have some serious firepower if you wanna tackle that. \
+	<li> Seismic activity 6: SEVEN BURROWS. FIVE TERMITES. Expect basically ONLY the beefy motherfuckers and get ready to BEAT SHIT DOWN FAST. THEY ARE COMING, AND THERE ARE MANY. Now it's literally two minutes between burrows and only sixty seconds between large groups coming from them. \
+	<b>Do not put your drill on an activity 6 spot if you ain't prepared for it, stuff WILL get out of hand, you WILL be overrun.</b></ul><br>Yeah that's about it, see ya'.<br>\
+P.S - <u><h1>Don't leave the drills running unattended!</u></h1>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
+	P = new()
+	P.name = "Memo RE: Ameridian handling"
+	P.info = "Remember, when dealing with Ameridian Crystals, to :<ol> \
+	<li> Wear a Radiation Suit. The crystals are radioactive with a radius of 2 meters, and the small ones are as radioactive as the grown ones.\
+	<li> Let the crystals grow. Only a fully grown crystal will spread and allow for a sustainable field.\
+	<li> Not let it grow out of control. If enough fully matured crystals are close enough together, golems can appear.\
+	<li> Retreat past the Sonic Fence if golems appear. The Sonic Fence will instantly destroy the golems that touches it. You can also use the Handheld Sonic emitter to destroy the golem.\
+	<li> Not turn off the Sonic Fence or allow it to be turned off. The Sonic Fence is a perfect containment to Ameridian, when it is active. If it turned off, the crystal will be able to spread out of control. If it needs to be turned off for whatever reason, either keep an eye on the crystals, or harvest them all to prevent unwanted spread.\
+	<li> Reseed the field. In case the field get removed completely, more crystals can be seeded with either 5 ameridian shard, or by splashing at least 10u of Liquid Ameridian on the floor.\
+	<li> Refine the shards. While Ameridian is valuable on its own, it's true value can only be used when refining it into Liquid Ameridian using an Ameridian Refinery, after which it can be further transformed into regular materials in the Liquid Ameridian Processor.\
+	<li> Carry the shards through the fence. Your body interfere with the Sonic Fence, allowing you to carry ameridian shards through the fence. The same cannot be said for dragged or thrown crystals, which will get destroyed on contact. Do not throw money away.</ol> "
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
 
 /obj/structure/noticeboard/church
 	name = "Church of the Absolute bulletin board"

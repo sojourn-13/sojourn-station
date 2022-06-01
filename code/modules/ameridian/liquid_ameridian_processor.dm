@@ -28,11 +28,15 @@
 						list(name = "Tritium", cost = 400, path = /obj/item/stack/material/tritium),
 						list(name = "Ameridian Core", cost = 3600, path=/obj/item/ameridian_core)
 						)
+	var/cost_modifier = 1
 
 /obj/machinery/liquid_ameridian_processor/New()
 	..()
-	create_reagents(6000)
 
+/obj/machinery/liquid_ameridian_processor/examine(mob/user)
+	..()
+	if(isghost(user))
+		interact(user)
 
 /obj/machinery/liquid_ameridian_processor/attackby(obj/item/I, mob/user)
 
@@ -47,7 +51,16 @@
 	updateDialog()
 
 /obj/machinery/liquid_ameridian_processor/RefreshParts()
+	var/man_rating = 0
+	var/man_amount = 0
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		man_rating += M.rating
+		man_amount++
+	man_rating /= man_amount
 
+	cost_modifier = man_rating
+
+	updateDialog()
 
 /obj/machinery/liquid_ameridian_processor/attack_hand(mob/user as mob)
 	interact(user)
@@ -75,9 +88,9 @@
 
 /obj/machinery/liquid_ameridian_processor/interact(mob/user as mob)
 	if((get_dist(src, user) > 1) || (stat & (BROKEN|NOPOWER)))
-		if(!isAI(user))
+		if(!isAI(user) && !isghost(user))
 			user.unset_machine()
-			user << browse(null, "window=AMcontrol")
+			user << browse(null, "window=LiquidAmeridianProcessor")
 			return
 
 	search_bidons()
@@ -100,6 +113,9 @@
 	return
 
 /obj/machinery/liquid_ameridian_processor/Topic(href, href_list)
+	if(isghost(usr)) // Ghosts can't do shit
+		return
+
 	//Ignore input if we are broken or guy is not touching us, AI can control from a ways away
 	if(stat & (BROKEN|NOPOWER) || (get_dist(src, usr) > 1 && !isAI(usr)))
 		usr.unset_machine()
@@ -117,7 +133,7 @@
 		var/list/L = list(path=text2path(href_list["material"]), cost=text2num(href_list["cost"]), amount=text2num(href_list["amount"]))
 		var/L_path = L["path"]
 
-		if(use_bidon_ameridian(L["cost"] * L["amount"])) // Check if we have enough liquid ameridian
+		if(use_bidon_ameridian((L["cost"]) * L["amount"])) // Check if we have enough liquid ameridian
 			if(ispath(L["path"], /obj/item/stack/material)) // Material sheets are handled differently
 				new L_path(get_turf(src), L["amount"])
 			else
@@ -140,13 +156,13 @@
 	var/dat = ""
 	dat += "List of materials : <BR>"
 	for(var/list/L in outputs)
-		dat += "[L["name"]], cost : [L["cost"]] Liquid Ameridian.<BR>"
+		dat += "[L["name"]], cost : [L["cost"] / cost_modifier] Liquid Ameridian.<BR>"
 		dat += "- Print : "
-		dat += "[check_bidon_ameridian(L["cost"]*1) ? "<A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]];amount=1'>x1</A>" : "Not enough liquid ameridian"]"
-		dat += "[check_bidon_ameridian(L["cost"]*5) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]];amount=5'>x5</A>" : ""]"
-		dat += "[check_bidon_ameridian(L["cost"]*10) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]];amount=10'>x10</A>" : ""]"
-		dat += "[check_bidon_ameridian(L["cost"]*20) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]];amount=20'>x20</A>" : ""]"
-		dat += "[check_bidon_ameridian(L["cost"]*60) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]];amount=60'>x60</A>" : ""]"
-		dat += "[check_bidon_ameridian(L["cost"]*120) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]];amount=120'>x120</A>" : ""]"
+		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*1) ? "<A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=1'>x1</A>" : "Not enough liquid ameridian"]"
+		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*5) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=5'>x5</A>" : ""]"
+		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*10) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=10'>x10</A>" : ""]"
+		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*20) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=20'>x20</A>" : ""]"
+		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*60) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=60'>x60</A>" : ""]"
+		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*120) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=120'>x120</A>" : ""]"
 		dat += ".<BR><BR>"
 	return dat

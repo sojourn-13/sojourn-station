@@ -64,6 +64,7 @@
 		/obj/item/rig_module/device/drill,
 		/obj/item/rig_module/device/orescanner,
 		/obj/item/rig_module/device/rcd,
+		/obj/item/rig_module/cargo_clamp/large,
 		/obj/item/rig_module/vision/meson
 		)
 
@@ -106,6 +107,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/rcd,
+		/obj/item/rig_module/cargo_clamp,
 		/obj/item/rig_module/vision/meson
 		)
 
@@ -157,6 +159,7 @@ Advanced Voidsuit: Guild Master
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/rcd,
 		/obj/item/rig_module/vision/meson,
+		/obj/item/rig_module/cargo_clamp,
 		/obj/item/rig_module/storage
 		)
 
@@ -209,6 +212,7 @@ Technomancer RIG
 	initial_modules = list(
 		/obj/item/rig_module/storage,
 		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/cargo_clamp,
 		)
 
 /obj/item/clothing/gloves/rig/techno
@@ -404,7 +408,7 @@ Technomancer RIG
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/vision/medhud,
-		/obj/item/rig_module/storage/expanded
+		/obj/item/rig_module/storage/expanded/tt
 		)
 
 /***************************************

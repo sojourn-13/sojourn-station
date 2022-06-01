@@ -58,6 +58,10 @@
 	path = /obj/item/clothing/suit/storage/toggle/hoodie
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/suit/majima
+	display_name = "Tojo jacket"
+	path = /obj/item/clothing/suit/storage/tojo
+
 /datum/gear/suit/jacketbasic
 	display_name = "jacket basic selection"
 	path = /obj/item/clothing/suit/storage/toggle/leather
@@ -125,10 +129,9 @@
 	display_name = "winter coat"
 	path = /obj/item/clothing/suit/hooded/wintercoat
 
-/datum/gear/suit/waistcoat
-	display_name = "waistcoat selection"
-	path = /obj/item/clothing/suit/storage/wcoat
-	flags = GEAR_HAS_TYPE_SELECTION
+/datum/gear/suit/htwaistcoat
+	display_name = "charming waistcoat"
+	path = /obj/item/clothing/suit/storage/wcoat/helltaker
 
 /datum/gear/suit/modular
 	display_name = "suit jacket selection"
@@ -167,7 +170,7 @@
 /datum/gear/suit/akira
 	display_name = "red jacket"
 	path = /obj/item/clothing/suit/storage/akira
-
+/*
 /datum/gear/suit/radhat
 	display_name = "radiation hood"
 	path = /obj/item/clothing/head/radiation
@@ -185,3 +188,4 @@
 	display_name = "expedition suit"
 	path = /obj/item/clothing/suit/space/anomaly
 	cost = 2 //Some good armor but slowdown
+*/

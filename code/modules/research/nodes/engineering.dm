@@ -457,6 +457,25 @@
 							)
 
 
+/datum/technology/ameridian
+	name = "Ameridian Refindment"
+	desc = "Advanced refindments of ameridian to liquid and then soild again."
+	tech_type = RESEARCH_ENGINEERING
+
+	x = 0.9
+	y = 0.7
+	icon = "ameridian"
+
+	required_technologies = list(/datum/technology/industrial_printing)
+	required_tech_levels = list()
+	cost = 1500 //Cheap-ish I guess?
+
+	unlocks_designs = list(/datum/design/research/circuit/ameridian_refinery,
+							/datum/design/research/circuit/liquid_ameridian_processor,
+							/datum/design/research/circuit/ameridian_analyzer
+							)
+
+
 /datum/technology/rig_industeral
 	name = "Hardsuit Integration"
 	desc = "Integrated tools and gear used by hardsuit rigs for day to day work."
@@ -473,6 +492,8 @@
 	unlocks_designs = list(	/datum/design/research/item/storage,
 							/datum/design/research/item/ai_container,
 							/datum/design/research/item/rigjets,
+							/datum/design/research/item/riggrapple,
+							/datum/design/research/item/rig_clamp,
 							/datum/design/research/item/rigrcd
 							)
 
@@ -513,5 +534,3 @@
 
 	unlocks_designs = list("quadultra_micro_laser", "bluespace_matter_bin")
 */
-
-

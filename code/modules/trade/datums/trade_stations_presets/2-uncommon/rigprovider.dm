@@ -8,11 +8,11 @@
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
-	secret_inv_threshold = 2000
+	hidden_inv_threshold = 2000
 	recommendation_threshold = 4000
 	stations_recommended = list("illegal1", "mecha")
 	recommendations_needed = 1
-	assortiment = list(
+	inventory = list(
 		"RIGs II" =  list(
 			/obj/item/rig/light = custom_good_amount_range(list(1, 5)),
 			/obj/item/rig/combat = custom_good_amount_range(list(1, 5))
@@ -23,9 +23,10 @@
 			/obj/item/rig_module/held/shield,
 			/obj/item/rig_module/datajack,
 			/obj/item/rig_module/modular_injector,
+			/obj/item/rig_module/cargo_clamp/large
 		)
 	)
-	secret_inventory = list(
+	hidden_inventory = list(
 		"RIG Specialized Modules III" = list(
 			/obj/item/rig_module/electrowarfare_suite,
 			/obj/item/rig_module/modular_injector/combat,

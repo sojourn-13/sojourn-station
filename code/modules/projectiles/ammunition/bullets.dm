@@ -227,7 +227,7 @@
 	projectile_type = /obj/item/projectile/bullet/rifle_75/lethal
 
 /obj/item/ammo_casing/rifle_75/scrap
-	desc = "An old 7.5 Caseless Rifle bullet casing."
+	desc = "An old 7.5mm bullet casing."
 	icon_state = "srifle_c_s"
 	spent_icon = "srifle_c_s-spent"
 	shell_color = "p"
@@ -780,3 +780,18 @@
 	amount = 10
 
 
+/obj/item/ammo_casing/rod_bolt
+	name = "metal rod"
+	desc = "Wait a second, this is a bullet!"
+	icon = 'icons/obj/stack/items.dmi'
+	icon_state = "rods"
+	caliber = "rod" //not a define
+	projectile_type = /obj/item/projectile/bullet/rod_bolt
+	matter = list(MATERIAL_STEEL = 1)
+	maxamount = 1
+	is_caseless = TRUE
+
+/obj/item/ammo_casing/rod_bolt/rcd
+	name = "flashforged rod"
+	desc = "Wait a second, this is a flashforged bullet!"
+	projectile_type = /obj/item/projectile/bullet/rod_bolt/rcd

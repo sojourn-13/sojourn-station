@@ -811,7 +811,7 @@
 
 	return
 
-/obj/machinery/vending/proc/speak(var/message)
+/obj/machinery/proc/speak(message)
 	if(stat & NOPOWER)
 		return
 
@@ -845,7 +845,7 @@
 	return
 
 //Somebody cut an important wire and now we're following a new definition of "pitch."
-/obj/machinery/vending/proc/throw_item()
+/obj/machinery/proc/throw_item()
 	var/mob/living/target = locate() in view(7,src)
 	if(!target)
 		return FALSE
@@ -909,6 +909,7 @@
 /obj/machinery/vending/custom
 	name = "Custom Vendomat"
 	desc = "A custom vending machine."
+	vendor_department = null //Anyone can make a custom vendor
 	custom_vendor = TRUE
 	locked = TRUE
 	can_stock = list(/obj/item)

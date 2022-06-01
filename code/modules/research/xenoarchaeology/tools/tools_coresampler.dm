@@ -46,9 +46,6 @@
 		var/turf/simulated/mineral/T = item_to_sample
 		T.geologic_data.UpdateNearbyArtifactInfo(T)
 		geo_data = T.geologic_data
-	else if(istype(item_to_sample, /obj/item/ore))
-		var/obj/item/ore/O = item_to_sample
-		geo_data = O.geologic_data
 
 	if(geo_data)
 		if(filled_bag)

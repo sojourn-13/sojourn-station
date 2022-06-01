@@ -12,6 +12,14 @@
 	var/sticker = null
 	var/closed = TRUE
 
+/obj/item/storage/hcases/Destroy()
+
+	for (var/obj/held_item in contents) //if we find storage is harddelling move this down to that destroy
+		qdel(held_item)
+
+	..()
+	return QDEL_HINT_QUEUE //just to be safe
+
 /obj/item/storage/hcases/proc/can_interact(mob/user)
 	if((!ishuman(user) && (loc != user)) || user.stat || user.restrained())
 		return 1

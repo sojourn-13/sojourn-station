@@ -397,7 +397,7 @@
 
 	for(var/damage_type in Proj.damage_types)
 		var/damage = Proj.damage_types[damage_type]
-		damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj))
+		damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj), post_pen_mult = Proj.post_penetration_dammult)
 	return 0
 
 /mob/living/simple_animal/rejuvenate()

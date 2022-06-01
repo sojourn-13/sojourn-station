@@ -103,8 +103,8 @@
 	w_class = ITEM_SIZE_SMALL
 	complexity = 10
 	max_allowed = 4
-	cooldown_per_use = 3
-	ext_cooldown = 3 // 0.3 second
+	cooldown_per_use = 1
+	ext_cooldown = 1
 	inputs = list("direction" = IC_PINTYPE_DIR)
 	outputs = list("obstacle" = IC_PINTYPE_REF)
 	activators = list("step towards dir" = IC_PINTYPE_PULSE_IN,"on step"=IC_PINTYPE_PULSE_OUT,"blocked"=IC_PINTYPE_PULSE_OUT)

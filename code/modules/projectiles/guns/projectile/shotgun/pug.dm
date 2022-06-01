@@ -10,10 +10,10 @@
 	caliber = CAL_SHOTGUN
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_DRUM
+	mag_well = MAG_WELL_DRUM //Made for drums, this way it can't be OP despite being literal traitor shotgun
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1750
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/riot_shotgun.ogg' //Meatier sound
 	unload_sound = 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound = 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/ltrifle_cock.ogg'
@@ -24,7 +24,7 @@
 
 	//while also preserving ability to shoot as fast as you can click and maintain recoil good enough
 	init_firemodes = list(
-		FULL_AUTO_400, //0.7 damage_multiplier
+		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY
 		)
 

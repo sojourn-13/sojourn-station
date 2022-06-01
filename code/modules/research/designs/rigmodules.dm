@@ -167,3 +167,24 @@
 	build_path = /obj/item/rig/advhazmat
 	build_type = MECHFAB
 	category = "RIG"
+
+//misc rig things
+/datum/design/research/item/riggrapple
+	name = "hardsuit integrated grappler"
+	desc = "Integrated grappling hook into a hardsuit."
+	build_path = /obj/item/rig_module/grappler
+	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 50)
+	category = "RIG"
+
+/datum/design/research/item/rig_clamp
+	name = "hardsuit integrated cargo clamp"
+	desc = "Integrated cargo handling system into a hardsuit."
+	build_path = /obj/item/rig_module/cargo_clamp
+	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 15)
+	category = "RIG"
+
+/datum/design/research/item/ion_jaunt
+	name = "Ion Jaunt"
+	desc = "A special device designed to reduce the impact of EMPs on electrical systems."
+	build_path = /obj/item/robot_parts/robot_component/ion_jaunt
+	category = "RIG"

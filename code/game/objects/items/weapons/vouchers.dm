@@ -68,11 +68,23 @@
 	icon_state = "voucher"
 	voucher_type = "SpecPrimary"
 
+/obj/item/voucher/marshal/rangerprimary
+	name = "Ranger primary weapon voucher"
+	desc = "A token to redeem marshal equipment from a vendor."
+	icon_state = "voucher"
+	voucher_type = "RangerPrimary"
+
 /obj/item/voucher/marshal/secondary
 	name = "\improper marshal secondary weapon voucher"
 	desc = "A token to redeem marshal equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "Secondary"
+
+/obj/item/voucher/marshal/rangersecondary
+	name = "Ranger secondary weapon voucher"
+	desc = "A token to redeem marshal equipment from a vendor."
+	icon_state = "voucher"
+	voucher_type = "RangerSecondary"
 
 /obj/item/voucher/marshal/armor
 	name = "\improper marshal armor voucher"

@@ -47,7 +47,14 @@
 
 	matter = material.get_matter()
 	update_strings()
-
+/*
+/obj/item/stack/material/get_matter()
+	. = list()
+	if(matter)
+		for(var/i in matter)
+			matter[i] = amount
+		. = matter
+*/
 /obj/item/stack/material/attack_self(mob/living/user)
 	user.craft_menu()
 
@@ -77,7 +84,7 @@
 
 /obj/item/stack/material/transfer_to(obj/item/stack/S, var/tamount=null, var/type_verified)
 	var/obj/item/stack/material/M = S
-	if(!istype(M) || material.name != M.material.name)
+	if(!M || !istype(M) || material.name != M.material.name)
 		return 0
 	var/transfer = ..(S,tamount,1)
 	if(src) update_strings()
