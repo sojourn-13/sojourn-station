@@ -22,13 +22,24 @@
 /mob/living/carbon/superior_animal/proc/findTarget()
 	var/list/filteredTargets = new
 
-	for(var/atom/O in getPotentialTargets())
-		if (isValidAttackTarget(O))
-			filteredTargets += O
+	var/turf/our_turf = get_turf(src)
+	if (our_turf)
+		for(var/atom/target_atom as anything in hearers(src, viewRange))
+			if (isliving(target_atom))
+				var/mob/living/target = target_atom
+				var/boolean = FALSE
+				ISVALIDATTACKTARGET(target)
 
-	for (var/obj/mecha/M in GLOB.mechas_list)
-		if ((M.z == src.z) && (get_dist(src, M) <= viewRange) && isValidAttackTarget(M))
-			filteredTargets += M
+				if (boolean)
+					filteredTargets += target_atom
+
+	for (var/obj/mecha/target_mech in GLOB.mechas_list)
+		if ((target_mech.z == src.z) && (get_dist(src, target_mech) <= viewRange) && (can_see(src, target_mech, viewRange)) && (target_mech.occupant))
+			var/mob/living/occupant = target_mech.occupant
+			var/boolean = FALSE
+			ISVALIDATTACKTARGET(occupant)
+			if (boolean)
+				filteredTargets += target_mech
 
 	return safepick(nearestObjectsInList(filteredTargets, src, acceptableTargetDistance))
 

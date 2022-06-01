@@ -1,3 +1,12 @@
+#define ISVALIDATTACKTARGET(atom) \
+	if (isliving(atom)) \
+		if((atom.stat != CONSCIOUS) || (atom.health <= (ishuman(atom) ? HEALTH_THRESHOLD_CRIT : 0)) || (!attack_same && (atom.faction == src.faction)) || (atom in friends)) \
+			boolean = FALSE; \
+		else if(atom.friendly_to_colony && src.friendly_to_colony) \
+			boolean = FALSE; \
+		else \
+			boolean = TRUE; \
+
 // /mob/var/stat things.
 #define CONSCIOUS   0
 #define UNCONSCIOUS 1
