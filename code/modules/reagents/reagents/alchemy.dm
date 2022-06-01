@@ -22,7 +22,7 @@
 /datum/reagent/iron_skin_brew/on_mob_add(mob/living/L)
 	. = ..()
 	var/mob/living/carbon/human/ironskin = L
-	if(!istype(L))
+	if(!ishuman(L))
 		return
 	ironskin.mob_bomb_defense += 25
 	ironskin.falls_mod -= 0.4
@@ -33,7 +33,7 @@
 /datum/reagent/iron_skin_brew/on_mob_delete(mob/living/L)
 	. = ..()
 	var/mob/living/carbon/human/ironskin = L
-	if(!istype(L))
+	if(!ishuman(L))
 		return
 	ironskin.mob_bomb_defense -= 25
 	ironskin.falls_mod += 0.4
@@ -65,7 +65,7 @@
 
 /datum/reagent/toxin_draft/on_mob_add(mob/living/L)
 	. = ..()
-	if(!istype(L))
+	if(!ishuman(L))
 		L.adjustToxLoss(180)
 		L.adjustCloneLoss(120)
 		return
@@ -98,7 +98,7 @@
 		var/obj/item/organ/internal/eyes/E = H.random_organ_by_process(OP_EYES)
 		if(E && istype(E))
 			if(E.damage > 0)
-				E.damage = max(E.damage - (0.5 * effect_multiplier), 0)
+				E.damage = max(E.damage - (5), 0)
 
 
 /datum/reagent/lively_concoxion
@@ -191,7 +191,7 @@
 
 /datum/reagent/harms/on_mob_add(mob/living/L)
 	. = ..()
-	if(!istype(L))
+	if(!ishuman(L))
 		L.damage_through_armor(230, BRUTE, attack_flag = ARMOR_BIO)
 		return
 	L.damage_through_armor(20, BRUTE, attack_flag = ARMOR_BIO)
@@ -219,7 +219,7 @@
 
 /datum/reagent/burns/on_mob_add(mob/living/L)
 	. = ..()
-	if(!istype(L))
+	if(!ishuman(L))
 		L.damage_through_armor(230, BURN, attack_flag = ARMOR_BIO)
 		return
 	L.damage_through_armor(20, BURN, attack_flag = ARMOR_BIO)
