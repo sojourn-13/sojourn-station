@@ -36,6 +36,11 @@
 #define HOSTILE_STANCE_ATTACKING 4
 #define HOSTILE_STANCE_TIRED     5
 
+#define ALL_TYPE 1
+#define MELEE_TYPE 2
+#define RANGED_TYPE 3
+#define RANGED_RAPID_TYPE 4
+
 #define LEFT  1
 #define RIGHT 2
 

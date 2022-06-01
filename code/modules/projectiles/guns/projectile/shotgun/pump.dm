@@ -18,7 +18,7 @@
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 600
-	damage_multiplier = 1.1
+	damage_multiplier = 1 //Baseline shotgun
 	recoil_buildup = 15
 	one_hand_penalty = 10 //full sized shotgun level
 	saw_off = TRUE

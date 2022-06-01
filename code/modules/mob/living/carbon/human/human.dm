@@ -72,12 +72,7 @@
 	QDEL_NULL(sanity)
 	QDEL_NULL(vessel)
 
-	if (stats.perks)
-		for (var/datum/perk/perk in stats.perks) //TODO: see if this needs to be done on a lower level
-			qdel(perk)
-			stats.perks -= perk
-		stats.perks.Cut()
-
+	worn_underwear.Cut()
 	return ..()
 
 /mob/living/carbon/human/Stat()

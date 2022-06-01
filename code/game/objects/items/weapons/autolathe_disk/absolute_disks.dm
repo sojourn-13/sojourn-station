@@ -503,6 +503,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/gun/mk58_wood = 2,
 		/datum/design/autolathe/gun/regulator = 3,
 		/datum/design/autolathe/gun/taser,
+		/datum/design/autolathe/gun/laser = 2,
 		/datum/design/autolathe/gun/sniperrifle = 6,
 		/datum/design/autolathe/ammo/pistol_ammobox_biomatter,
 		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2
@@ -633,7 +634,6 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/gun/energy_crossbow = 10,
 		/datum/design/autolathe/gun/large_energy_crossbow = 12,
 		/datum/design/autolathe/gun/ntpistol,
-		/datum/design/autolathe/gun/laser = 2,
 		/datum/design/autolathe/gun/pulse = 5,
 		/datum/design/autolathe/gun/pulse_destroyer = 8,
 		/datum/design/autolathe/gun/ionrifle = 3,

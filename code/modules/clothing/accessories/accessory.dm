@@ -263,7 +263,7 @@
 /obj/item/clothing/accessory/cape/outsider
 	name = "outcast's cloak"
 	desc = "A raggedy cloak made of leather and reclaimed materials, can be worn over one's armor as a sign of pride for their outcast nature."
-	icon_state = "outsider"
+	icon_state = "outcast_cloak"
 
 /obj/item/clothing/accessory/cape/scav
 	name = "makeshift cape"
