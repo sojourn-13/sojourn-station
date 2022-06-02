@@ -174,14 +174,16 @@ Has ability of every roach.
 	var/atom/best_target = null
 	var/distance_weighting = 0
 
-	for(var/atom/O in getPotentialTargets())
-		var/priority = isValidAttackTarget(O)
-		if (priority)
-			var/temp_weighting = priority * get_dist(src, O)
-			if(!distance_weighting || distance_weighting < temp_weighting)
-				distance_weighting = temp_weighting
-				best_target = O
-	return best_target
+	var/turf/our_turf = get_turf(src)
+	if (our_turf) //If we're not in anything, continue
+		for(var/mob/living/O in hearers(src, viewRange))
+			var/priority = isValidAttackTarget(O)
+			if (priority)
+				var/temp_weighting = priority * get_dist(src, O)
+				if(!distance_weighting || distance_weighting < temp_weighting)
+					distance_weighting = temp_weighting
+					best_target = O
+		return best_target
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/isValidAttackTarget(var/atom/O)
 	if (isliving(O))

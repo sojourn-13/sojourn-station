@@ -162,60 +162,62 @@
 		if(!busy && prob(web_activity))
 			//first, check for potential food nearby to cocoon
 			var/list/cocoonTargets = new
-			for(var/mob/living/C in getPotentialTargets())
-				if(C.stat != CONSCIOUS)
-					cocoonTargets += C
+			var/turf/our_turf = get_turf(src)
+			if (our_turf) //If we're not in anything, continue
+				for(var/mob/living/C in hearers(src, viewRange))
+					if(C.stat != CONSCIOUS)
+						cocoonTargets += C
 
-			cocoon_target = safepick(nearestObjectsInList(cocoonTargets,src,1))
-			if (cocoon_target)
-				busy = MOVING_TO_TARGET
-				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to(src, cocoon_target, 1, move_to_delay)
-				GiveUp(cocoon_target) //give up if we can't reach target
-				return
+				cocoon_target = safepick(nearestObjectsInList(cocoonTargets,src,1))
+				if (cocoon_target)
+					busy = MOVING_TO_TARGET
+					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+					walk_to(src, cocoon_target, 1, move_to_delay)
+					GiveUp(cocoon_target) //give up if we can't reach target
+					return
 
-				//second, spin a sticky spiderweb on this tile
-			if(!(locate(/obj/effect/spider/stickyweb) in get_turf(src)))
-				busy = SPINNING_WEB
-				src.visible_message(SPAN_NOTICE("\The [src] begins to secrete a sticky substance."))
-				stop_automated_movement = 1
-				spawn(40)
-					if(busy == SPINNING_WEB)
-						if(!(locate(/obj/effect/spider/stickyweb) in get_turf(src)))
-							new /obj/effect/spider/stickyweb(src.loc)
-							update_openspace()
-						busy = 0
-						stop_automated_movement = 0
-			else
-				//third, lay an egg cluster there, takes 2 feds
-				if((fed > 1) && !(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
-					busy = LAYING_EGGS
-					src.visible_message(SPAN_NOTICE("\The [src] begins to lay a cluster of eggs."))
+					//second, spin a sticky spiderweb on this tile
+				if(!(locate(/obj/effect/spider/stickyweb) in get_turf(src)))
+					busy = SPINNING_WEB
+					src.visible_message(SPAN_NOTICE("\The [src] begins to secrete a sticky substance."))
 					stop_automated_movement = 1
-					spawn(50)
-						if(busy == LAYING_EGGS)
-							if(!(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
-								new /obj/effect/spider/eggcluster(loc, src)
-								fed -= 2
+					spawn(40)
+						if(busy == SPINNING_WEB)
+							if(!(locate(/obj/effect/spider/stickyweb) in get_turf(src)))
+								new /obj/effect/spider/stickyweb(src.loc)
 								update_openspace()
 							busy = 0
 							stop_automated_movement = 0
 				else
-					//fourthly, cocoon any nearby items so those pesky pinkskins can't use them
-					var/list/nearestObjects = nearestObjectsInList(getObjectsInView(),src,1)
-					for(var/obj/O in nearestObjects)
-						if(O.anchored)
-							continue
-						if(istype(O, /obj/item) || istype(O, /obj/structure) || istype(O, /obj/machinery))
-							cocoonTargets += O
-
-					cocoon_target = safepick(cocoonTargets)
-					if (cocoon_target)
-						busy = MOVING_TO_TARGET
+					//third, lay an egg cluster there, takes 2 feds
+					if((fed > 1) && !(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
+						busy = LAYING_EGGS
+						src.visible_message(SPAN_NOTICE("\The [src] begins to lay a cluster of eggs."))
 						stop_automated_movement = 1
-						set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-						walk_to(src, cocoon_target, 1, move_to_delay)
-						GiveUp(cocoon_target) //give up if we can't reach target
+						spawn(50)
+							if(busy == LAYING_EGGS)
+								if(!(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
+									new /obj/effect/spider/eggcluster(loc, src)
+									fed -= 2
+									update_openspace()
+								busy = 0
+								stop_automated_movement = 0
+					else
+						//fourthly, cocoon any nearby items so those pesky pinkskins can't use them
+						var/list/nearestObjects = nearestObjectsInList(getObjectsInView(),src,1)
+						for(var/obj/O in nearestObjects)
+							if(O.anchored)
+								continue
+							if(istype(O, /obj/item) || istype(O, /obj/structure) || istype(O, /obj/machinery))
+								cocoonTargets += O
+
+						cocoon_target = safepick(cocoonTargets)
+						if (cocoon_target)
+							busy = MOVING_TO_TARGET
+							stop_automated_movement = 1
+							set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+							walk_to(src, cocoon_target, 1, move_to_delay)
+							GiveUp(cocoon_target) //give up if we can't reach target
 
 		else if(busy == MOVING_TO_TARGET && cocoon_target)
 			if(get_dist(src, cocoon_target) <= 1)

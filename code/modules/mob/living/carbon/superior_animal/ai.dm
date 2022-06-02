@@ -22,9 +22,11 @@
 /mob/living/carbon/superior_animal/proc/findTarget()
 	var/list/filteredTargets = new
 
-	for(var/atom/O in getPotentialTargets())
-		if (isValidAttackTarget(O))
-			filteredTargets += O
+	var/turf/our_turf = get_turf(src)
+	if (our_turf) //If we're not in anything, continue
+		for(var/mob/living/target_mob in hearers(src, viewRange))
+			if (isValidAttackTarget(target_mob))
+				filteredTargets += target_mob
 
 	for (var/obj/mecha/M in GLOB.mechas_list)
 		if ((M.z == src.z) && (get_dist(src, M) <= viewRange) && isValidAttackTarget(M))
