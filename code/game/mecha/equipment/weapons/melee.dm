@@ -19,6 +19,7 @@
 	hitsound = 'sound/weapons/heavysmash.ogg'
 	var/icon/melee_overlay //Currently dosnt do anything but is here for sake of constancey
 	force = 30
+	matter = list(MATERIAL_STEEL = 5) //Its only 30 damage compared to the 15 steel 60 damage sword
 
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword
 	name = "mech sword"
@@ -50,22 +51,26 @@
 	sharp = TRUE
 	edge = TRUE
 	tool_qualities = list(QUALITY_CUTTING = 30,  QUALITY_WIRE_CUTTING = 20, QUALITY_WELDING = 1, QUALITY_CAUTERIZING = 1) //Same as E-cutlasses
+	origin_tech = list(TECH_MAGNET = 5, TECH_POWER = 6, TECH_COMBAT = 3) //Same as E-cutlasses
+	matter = list(MATERIAL_STEEL = 15, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1) //WAY LESS then normal E-cutlasses do to the only being 5 more damage
 	armor_penetration = ARMOR_PEN_DEEP
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/icon/melee_overlay
 	force = 65 //5 more for all its extra costs is the balancing
 
+
+//Todo: "cutless" based icons for this rather then base.
+/*
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/cutlass/attach(obj/mecha/M as obj)
 	..()
-	//Todo: "cutless" based icons for this rather then base.
 	if(istype(M, /obj/mecha/combat/durand))
-		melee_overlay = new(src.icon, icon_state = "durand_mech_sword")
+		melee_overlay = new(src.icon, icon_state = "durand_mech_sword_cutlass")
 		M.add_overlay(melee_overlay)
 	else if(istype(M, /obj/mecha/combat/gygax))
-		melee_overlay = new(src.icon, icon_state = "gygax_mech_sword")
+		melee_overlay = new(src.icon, icon_state = "gygax_mech_sword_cutlass")
 		M.add_overlay(melee_overlay)
-	return
+	return*/
 
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/shockmaul
 	name = "mech shock maul"
