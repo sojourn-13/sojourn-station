@@ -912,6 +912,38 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/suit/armor/flackvest/corpsman
+	name = "corpsman flak vest"
+	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
+			This one bears a cross to distinguish medical personnel in heavily hazardous situations."
+	icon_state = "flakvest_corps"
+	item_state = "flakvest_corps"
+	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 40, rad = 0) // In line with corpsmen gear being sterile (bio protection)
+
+/obj/item/clothing/suit/armor/flackvest/corpsman/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "flakvest_corps"
+	options["Woodlands Blackshield Combat"] = "flakvest_corps_green"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/armor/flackvest/militia/full
 	name = "blackshield full flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
@@ -946,6 +978,40 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/suit/armor/flackvest/corpsman/full
+	name = "corpsman full flak vest"
+	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
+			This one bears a cross to distinguish medical personnel in heavily hazardous situations, and offers additional coverage through shoulderpads and kneepads."
+	icon_state = "flakvest_corps_fullbody"
+	item_state = "flakvest_corps_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	slowdown = 0.6 // Bulkier due to protecting more
+	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 50, rad = 0) // In case it doesn't inherit
+	stiffness = LIGHT_STIFFNESS
+
+/obj/item/clothing/suit/armor/flackvest/corpsman/full/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "flakvest_corps_fullbody"
+	options["Woodlands Blackshield Combat"] = "flakvest_green_corps_fullbody"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/armor/flackvest/green
 	name = "flak vest"

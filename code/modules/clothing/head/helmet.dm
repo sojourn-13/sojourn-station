@@ -143,7 +143,7 @@
 	options["Grey hooded fullhelm"] = "_gp"
 	options["Green hooeded fullhelm"] = "_grp"
 	options["Tan hooded fullhelm"] = "_tp"
-	options["camo hooded fullhelm"] = "_cp"
+	options["Camo hooded fullhelm"] = "_cp"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))

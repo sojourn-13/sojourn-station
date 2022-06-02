@@ -280,7 +280,7 @@
 // Armor Kits
 /obj/item/storage/box/bs_kit/standard_armor
 	name = "\improper Standard Armor Kit"
-	desc = "An armor kit containg a blackshield plate carrier and a ballistic helmet."
+	desc = "An armor kit containg a Blackshield plate carrier and a ballistic helmet."
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/platecarrier/militia(src)
@@ -288,7 +288,7 @@
 
 /obj/item/storage/box/bs_kit/flak_armor
 	name = "\improper Flak Armor Kit"
-	desc = "An armor kit containing a blackshield flack vest and ballistic helmet."
+	desc = "An armor kit containing a Blackshield flak vest and ballistic helmet."
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/flackvest/militia(src)
@@ -305,7 +305,7 @@
 
 /obj/item/storage/box/bs_kit/laser_armor
 	name = "\improper Ablative Armor Kit"
-	desc = "An armor kit containing an ablative full body suit designed to counter laser weaponry."
+	desc = "An armor kit containing an ablative body suit and helmet designed to counter laser weaponry."
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/vest/ablative/militia(src)
@@ -314,8 +314,17 @@
 
 /obj/item/storage/box/bs_kit/standard_armor_corpsman
 	name = "\improper Standard Corpsman Armor Kit"
-	desc = "An armor kit containg a corpsman plate carrier and a ballistic helmet."
+	desc = "An armor kit containing a corpsman plate carrier and a ballistic helmet."
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/platecarrier/corpsman(src)
 		new /obj/item/clothing/head/helmet/ballistic/shieldfull/corpsman(src)
+
+/obj/item/storage/box/bs_kit/flak_armor_corpsman
+	name = "\improper Corpsman Flak Armor Kit"
+	desc = "An armor kit containing a corpsman Flak vest and a ballistic helmet."
+
+	populate_contents()
+		new /obj/item/clothing/suit/armor/flackvest/corpsman(src)
+		new /obj/item/clothing/head/helmet/ballistic/shieldfull/corpsman(src)
+

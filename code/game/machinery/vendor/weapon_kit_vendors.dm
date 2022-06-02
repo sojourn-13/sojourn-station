@@ -160,7 +160,7 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemCorpsmanArmor(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Plate Armor Kit" = /obj/item/storage/box/bs_kit/standard_armor_corpsman,
-					"Flak Armor Kit" = /obj/item/storage/box/bs_kit/flak_armor,
+					"Flak Armor Kit" = /obj/item/storage/box/bs_kit/flak_armor_corpsman,
 					"Ablative Armor Kit" = /obj/item/storage/box/bs_kit/laser_armor,
 					"Bullet-Proof Armor Kit" = /obj/item/storage/box/bs_kit/bullet_armor)
 	var/selection = items[input(redeemer, "Pick your armor Kit", "Blackshield Voucher Redemption") as null|anything in items]
