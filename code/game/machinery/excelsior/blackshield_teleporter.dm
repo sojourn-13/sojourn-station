@@ -66,7 +66,8 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/gun/projectile/boltgun = 50,
 		/obj/item/gun/projectile/automatic/duty = 350,
 		/obj/item/gun/projectile/automatic/nordwind/watchtower = 600,
-		/obj/item/gun/projectile/automatic/blackguard = 1000,
+		/obj/item/gun/projectile/automatic/sts/rifle/blackshield = 550,
+		/obj/item/gun/projectile/automatic/blackguard = 700, // Still expensive, but not as overpriced.
 		/obj/item/gun/projectile/automatic/drozd/NM_colony = 300,
 		/obj/item/gun/projectile/automatic/ppsh/NM_colony = 450,
 		/obj/item/gun/projectile/automatic/ak47/NM_colony = 325,
