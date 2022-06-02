@@ -25,10 +25,8 @@
 	var/retarget_rush_timer_increment = 10 SECONDS //arbitrary value for now
 	/// Will this mob continue to fire even if LOS has been broken?
 	var/fire_through_wall = FALSE
-	/// Initial value of patience, make sure to match it with patience.
-	var/patience_initial = 10
 	/// How many ticks are we willing to wait before untargetting a mob that we can't see?
-	var/patience = 10
+	var/patience = 5
 
 	/// Telegraph message base for mobs that are range
 	var/range_telegraph = "aims their weapon at"
@@ -435,11 +433,11 @@
 	if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !fire_through_wall)) //why attack if we can't even see the enemy
 		if (patience <= 0)
 			loseTarget()
-			patience = patience_initial
+			patience = initial(patience)
 		else
 			patience--
 		return
-	patience = patience_initial
+	patience = initial(patience)
 	if(!ranged)
 		prepareAttackOnTarget()
 	else if(ranged)
