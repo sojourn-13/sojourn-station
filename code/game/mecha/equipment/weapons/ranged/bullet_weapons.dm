@@ -197,7 +197,7 @@
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon
 	name = "\improper Autocannon"
 	icon_state = "mecha_cannon"
-	equip_cooldown = 10
+	equip_cooldown = 25
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15)
 	projectile = /obj/item/projectile/bullet/auto_460
 	fire_sound = 'sound/weapons/guns/fire/chaingun_fire.ogg'
