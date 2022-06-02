@@ -542,8 +542,8 @@
 			visible_emote(emote_see)
 
 		if(following)
-			if(!target_mob) // Are we following someone and not attacking something?
       		if(weakened) return
+			if(!target_mob) // Are we following someone and not attacking something?
 				walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
 		else if (!target_mob && last_followed)
 		  if(weakened) return
