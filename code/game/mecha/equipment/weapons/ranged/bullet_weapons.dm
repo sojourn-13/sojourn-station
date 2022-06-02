@@ -216,7 +216,7 @@
 	desc = "A weapon once wielded by anncient mechs once more finding service, however clearly showing its age."
 	icon_state = "mecha_makeshift_cannon"
 	equip_cooldown = 20
-	projectile = /obj/item/projectile/bullet/heavy_rifle_408
+	projectile = /obj/item/projectile/bullet/auto_460/scrap
 	fire_sound = 'sound/weapons/guns/fire/payload_fire.ogg'
 	projectiles = 20
 	max_ammo = 20
