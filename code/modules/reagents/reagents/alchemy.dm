@@ -1,7 +1,7 @@
 /datum/reagent/iron_skin_brew
 	name = "Fe Na of NaCl"
 	id = "iron_skin_brew"
-	description = "A mix of metals and salts boiled into one a other said to make people able to take more physical damage but being of metal makes you weak to fire. Also makes breathing harder..."
+	description = "A mix of metals and salts boiled into one another, said to be able to make people take more physical punishment, with the drawback of making your metallic coating more vulnerable to fire. It also makes breathing harder..."
 	taste_description = "salt of metal"
 	reagent_state = LIQUID
 	color = "#660000"
@@ -45,7 +45,7 @@
 /datum/reagent/toxin_draft
 	name = "Toxic Draft"
 	id = "toxin_draft"
-	description = " A horrable brew that is toxic to almost all beings."
+	description = " A horrible brew that is toxic to almost all beings."
 	taste_description = "bitter demise"
 	reagent_state = LIQUID
 	color = "#660000"
@@ -138,7 +138,7 @@
 /datum/reagent/nervs
 	name = "Nervs"
 	id = "nervs"
-	description = "A uniquic mix that makes the users able to withstand more chemicals."
+	description = "A unique mix that makes the users' brain able to withstand more chemical accumulation in their system."
 	taste_description = "shivers"
 	reagent_state = LIQUID
 	color = "#660000"
@@ -171,7 +171,7 @@
 /datum/reagent/harms
 	name = "Painful Powerders"
 	id = "harms"
-	description = "A mix of soild sharp sands designed to cut down who ever they are thrown at."
+	description = "A mix of solid sharp sands designed to cut down whoever they are thrown at." // POCKET SAND!
 	taste_description = "bitter demise"
 	reagent_state = SOLID //for sake of simple
 	color = "#660000"
@@ -199,7 +199,7 @@
 /datum/reagent/burns
 	name = "Burning Oils"
 	id = "burns"
-	description = "Heated oils with fibers of iron and salt. Well its cold to the glass to your skin it burns..."
+	description = "Heated oils with fibers of iron and salt. While it's cold inside the glass, contact with skin, chitin or any dermis tissue makes its temperature violently react..."
 	taste_description = "liquid fire"
 	reagent_state = LIQUID //for sake of simple
 	color = "#660000"
