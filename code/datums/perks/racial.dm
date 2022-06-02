@@ -567,6 +567,7 @@
 	var/mob/living/carbon/superior_animal/fungi/mushroom = new follower_type(user.loc)
 	mushroom.friends += user
 	mushroom.following = user
+	mushroom.last_followed = user
 	..()
 
 /datum/perk/slime_follower
@@ -591,6 +592,7 @@
 	var/mob/living/carbon/superior_animal/fungi/mushroom = new follower_type(user.loc)
 	mushroom.friends += user
 	mushroom.following = user
+	mushroom.last_followed = user
 	..()
 
 // Food related perks

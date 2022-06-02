@@ -174,6 +174,7 @@
 	if(obey_check(speaker)) // Are we only obeying the one talking?
 		if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following && !anchored) // Is he telling us to follow?
 			following = speaker
+			last_followed = speaker
 			visible_emote("[follow_message]")
 		if(findtext(message, "Stop") && findtext(message, "[src.name]") && following) // Else, is he telling us to stop?
 			following = null
