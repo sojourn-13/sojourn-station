@@ -143,6 +143,7 @@
 				following = null
 			else
 				following = input(usr, "Choose who [src] should follow : ", "Set Following", null) as mob in oview(viewRange, src)
+				last_followed = following //not really sure if this works
 		else
 			visible_emote("state, \"Error, User doesn't have permission to perform this action.\"")
 

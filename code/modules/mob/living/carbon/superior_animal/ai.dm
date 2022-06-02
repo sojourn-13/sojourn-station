@@ -22,9 +22,11 @@
 /mob/living/carbon/superior_animal/proc/findTarget()
 	var/list/filteredTargets = new
 
-	for(var/atom/O in getPotentialTargets())
-		if (isValidAttackTarget(O))
-			filteredTargets += O
+	var/turf/our_turf = get_turf(src)
+	if (our_turf) //If we're not in anything, continue
+		for(var/mob/living/target_mob in hearers(src, viewRange))
+			if (isValidAttackTarget(target_mob))
+				filteredTargets += target_mob
 
 	for (var/obj/mecha/M in GLOB.mechas_list)
 		if ((M.z == src.z) && (get_dist(src, M) <= viewRange) && isValidAttackTarget(M))
@@ -178,6 +180,7 @@
 	if(obey_check(speaker)) // Are we only obeying the one talking?
 		if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following && !anchored) // Is he telling us to follow?
 			following = speaker
+			last_followed = speaker
 			visible_emote("[follow_message]")
 		if(findtext(message, "Stop") && findtext(message, "[src.name]") && following) // Else, is he telling us to stop?
 			following = null
