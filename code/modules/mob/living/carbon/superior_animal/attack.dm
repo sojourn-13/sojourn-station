@@ -4,6 +4,7 @@
 /mob/living/carbon/superior_animal/UnarmedAttack(var/atom/A, var/proximity)
 	if(!..())
 		return
+	if(weakened) return
 
 	var/damage = rand(melee_damage_lower, melee_damage_upper)
 
@@ -30,6 +31,7 @@
 
 /mob/living/carbon/superior_animal/RangedAttack()
 	if(!check_if_alive()) return
+	if(weakened) return
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(ranged)
@@ -60,6 +62,7 @@
 
 /mob/living/carbon/superior_animal/proc/OpenFire(var/atom/firing_target)
 	if(!check_if_alive()) return
+	if(weakened) return
 	var/atom/target = firing_target
 
 	if(rapid)
@@ -104,6 +107,7 @@
 		rapid = FALSE
 
 /mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0)
+	if(weakened) return
 	if(target == start)
 		return
 
@@ -117,6 +121,7 @@
 	A.launch(target, def_zone)
 
 /mob/living/carbon/superior_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
+	if(weakened) return
 	var /mob/living/carbon/superior_animal/shooter = src //TODO: Make it work for alt click in perfs like rig code
 	if(ranged_middlemouse_cooldown >= world.time) //Modula for admins to set them at different things
 		to_chat(src, "You gun isnt ready to fire!.")

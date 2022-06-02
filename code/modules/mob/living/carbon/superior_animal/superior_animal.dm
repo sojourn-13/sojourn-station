@@ -396,6 +396,7 @@
 
 /mob/living/carbon/superior_animal/proc/handle_hostile_stance(var/atom/targetted_mob) //here so we can jump instantly to it if hostile stance is established
 	var/already_destroying_surroundings = FALSE
+	if(weakened) return
 	if(destroy_surroundings)
 		destroySurroundings()
 		already_destroying_surroundings = TRUE
@@ -449,6 +450,7 @@
 		if(get_dist(src, targetted_mob) <= 6)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 		else
+			if(weakened) return
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 			walk_to(src, targetted_mob, 4, move_to_delay)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
@@ -537,10 +539,12 @@
 		if(speak_chance && prob(speak_chance))
 			visible_emote(emote_see)
 
-		if (following)
-			if (!target_mob) // Are we following someone and not attacking something?
+		if(following)
+			if(weakened) return
+			if(!target_mob) // Are we following someone and not attacking something?
 				walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
 		else if (!target_mob && last_followed)
+			if(weakened) return
 			walk_to(src, 0)
 			last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
 
