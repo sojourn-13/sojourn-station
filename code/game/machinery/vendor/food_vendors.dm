@@ -303,7 +303,9 @@
 					/obj/item/reagent_containers/food/condiment/pack/ketchup = 10,
 					/obj/item/reagent_containers/food/condiment/pack/milk = 10,
 					/obj/item/reagent_containers/food/condiment/pack/sugar = 10,
-					/obj/item/reagent_containers/food/condiment/pack/hotsauce = 10)
+					/obj/item/reagent_containers/food/condiment/pack/hotsauce = 10,
+					/obj/item/reagent_containers/food/condiment/pack/bbq = 10,
+					/obj/item/reagent_containers/food/condiment/pack/vinegar = 10)
 	contraband = list(/obj/item/tool/knife/butch = 2)
 	auto_price = FALSE
 	always_open = TRUE
@@ -349,7 +351,9 @@
 					/obj/item/reagent_containers/food/condiment/pack/ketchup = 10,
 					/obj/item/reagent_containers/food/condiment/pack/milk = 10,
 					/obj/item/reagent_containers/food/condiment/pack/sugar = 10,
-					/obj/item/reagent_containers/food/condiment/pack/hotsauce = 10)
+					/obj/item/reagent_containers/food/condiment/pack/hotsauce = 10,
+					/obj/item/reagent_containers/food/condiment/pack/bbq = 10,
+					/obj/item/reagent_containers/food/condiment/pack/vinegar = 10)
 	contraband = list(/obj/item/tool/knife/butch = 2)
 	prices = list(/obj/item/tray = 35,
 					/obj/item/material/kitchen/utensil/fork = 3,
@@ -386,6 +390,8 @@
 					/obj/item/reagent_containers/food/condiment/pack/milk = 3,
 					/obj/item/reagent_containers/food/condiment/pack/sugar = 3,
 					/obj/item/reagent_containers/food/condiment/pack/hotsauce = 3,
+					/obj/item/reagent_containers/food/condiment/pack/bbq = 3,
+					/obj/item/reagent_containers/food/condiment/pack/vinegar = 3,
 					/obj/item/tool/knife/butch = 55)
 	auto_price = TRUE
 	always_open = FALSE

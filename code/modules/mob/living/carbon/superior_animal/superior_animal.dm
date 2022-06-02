@@ -15,6 +15,32 @@
 
 	var/eating_time = 900
 
+	/// Number of delayed AI ticks, used for delaying ranged attacks. At 9, ranged mobs will be delayed by one tick after target. TODO: Create a override.
+	var/delayed = 0
+	/// How much we increment this mob's delayed var each time.
+	var/delay_amount = 0
+	/// If this is more than the world timer, and we retarget, we will immediately attack.
+	var/retarget_rush_timer = 0
+	/// For this amount of time after a retarget, any retargets will cause a instant attack.
+	var/retarget_rush_timer_increment = 10 SECONDS //arbitrary value for now
+	/// Will this mob continue to fire even if LOS has been broken?
+	var/fire_through_wall = FALSE
+	/// Initial value of patience, make sure to match it with patience.
+	var/patience_initial = 10
+	/// How many ticks are we willing to wait before untargetting a mob that we can't see?
+	var/patience = 10
+
+	/// Telegraph message base for mobs that are range
+	var/range_telegraph = "aims their weapon at"
+	/// Telegraph message base for mobs that are melee
+	var/melee_telegraph = "readies to strike"
+
+	/// What color is our telegraph beam?
+	var/telegraph_beam_color = COLOR_YELLOW
+
+	/// Alpha value of our telegraph beam.
+	var/telegraph_beam_alpha = 50
+
 	var/moved = FALSE
 	var/move_attack_mult = 0.6
 	universal_understand = TRUE //QoL to admins controling mobs
@@ -144,13 +170,14 @@
 	)
 
 	var/ranged = FALSE  //Do we have a range based attack?
-	var/rapid = FALSE   //Do we shoot in 3s?
+	var/rapid = FALSE   //Do we shoot in groups?
+	var/rapid_fire_shooting_amount = 3 //By default will rapid fire in 3 shots per.
 	var/projectiletype  //What are we shooting?
 	var/projectilesound //What sound do we make when firing
 	var/casingtype      //Do we leave casings after shooting?
 	var/ranged_cooldown //What is are modular cooldown, in seconds.
 	var/ranged_middlemouse_cooldown = 0 //For when people are controling them and firing, do we have a cooldown? Modular for admins to tweak.
-	var/fire_verb       //what does it do when it shoots?
+	var/fire_verb = "fires"      //what does it do when it shoots?
 	//ammo stuff
 	var/limited_ammo = FALSE //Do we run out of ammo?
 	var/mag_drop = FALSE //Do we drop are mags?
@@ -169,6 +196,13 @@
 	var/stop_message = "nods and stop following." // Message that the mob emote when they stop following. Include the name of the one who follow at the end
 
 	var/list/known_languages = list() // The languages that the superior mob know.
+
+	//Simple delays for mobs, only for super mobs at this time, simple can stay much more deadly.
+	//This makes it so they wait in seconds seconds before doing their attack
+	delay_for_range = 1.5 SECONDS
+	delay_for_rapid_range = 0.75 SECONDS
+	delay_for_melee = 0 SECONDS
+	delay_for_all = 0.5 SECONDS
 
 /mob/living/carbon/superior_animal/New()
 	..()
@@ -307,7 +341,6 @@
 
 /mob/living/carbon/superior_animal/proc/handle_ai()
 
-
 	if(ckey)
 		return
 
@@ -318,47 +351,33 @@
 	if (!check_AI_act())
 		return
 
-	var/atom/targetted_mob = (target_mob?.resolve())
+	var/atom/targetted_mob
+	if (target_mob)
+		targetted_mob = (target_mob?.resolve())
+	if (!targetted_mob) //will be false if there is no target_mob or if the resolved value is null
+		loseTarget()
+	else if (!targetted_mob.check_if_alive(TRUE)) //else if because we dont want a runtime
+		loseTarget()
+
 	switch(stance)
 		if(HOSTILE_STANCE_IDLE)
 			if (!busy) // if not busy with a special task
 				stop_automated_movement = FALSE
-			target_mob = WEAKREF(findTarget())
-			targetted_mob = (target_mob?.resolve())
-			if (targetted_mob)
+			if (!targetted_mob)
+				target_mob = WEAKREF(findTarget()) //no target? try to find one
+				targetted_mob = (target_mob?.resolve())
+			if (targetted_mob) // is it still null?
 				stance = HOSTILE_STANCE_ATTACK
+				handle_hostile_stance(targetted_mob)
 
 		if(HOSTILE_STANCE_ATTACK)
-			if(destroy_surroundings)
-				destroySurroundings()
-			if(!ranged)
-				stop_automated_movement = TRUE
-				stance = HOSTILE_STANCE_ATTACKING
-				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to(src, targetted_mob, 1, move_to_delay)
-				moved = 1
-			if(ranged)
-				stop_automated_movement = 1
-				if(get_dist(src, targetted_mob) <= comfy_range)
-					stance = HOSTILE_STANCE_ATTACKING
-					return //We do a safty return
-				else
-					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, targetted_mob, 4, move_to_delay)
-				stance = HOSTILE_STANCE_ATTACKING
+			handle_hostile_stance(targetted_mob)
 
 		if(HOSTILE_STANCE_ATTACKING)
-			if(destroy_surroundings)
-				destroySurroundings()
-			if(!ranged)
-				prepareAttackOnTarget()
-			if(ranged)
-				if(get_dist(src, targetted_mob) <= 6)
-					OpenFire(targetted_mob)
-				else
-					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, targetted_mob, 4, move_to_delay)
-					OpenFire(targetted_mob)
+			if (delayed == 0)
+				handle_attacking_stance(targetted_mob)
+			else
+				delayed--
 
 	//random movement
 	if(wander && !stop_automated_movement && !anchored)
@@ -374,6 +393,77 @@
 	//Speaking
 	if(speak_chance && prob(speak_chance))
 		visible_emote(emote_see)
+
+/mob/living/carbon/superior_animal/proc/handle_hostile_stance(var/atom/targetted_mob) //here so we can jump instantly to it if hostile stance is established
+	var/already_destroying_surroundings = FALSE
+	if(destroy_surroundings)
+		destroySurroundings()
+		already_destroying_surroundings = TRUE
+	if(ranged)
+
+		stop_automated_movement = TRUE
+		stance = HOSTILE_STANCE_ATTACKING
+		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+		walk_to(src, targetted_mob, (comfy_range - 1), move_to_delay) //lets get a little closer than our optimal range
+		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
+			if (issuperiorhuman(src)) //TODO: convert to switch
+				visible_message(SPAN_WARNING("[src] snaps their attention to <font color = 'green'>[targetted_mob]</font>, fumbling to ready their weapon!"))
+			else
+				visible_message(SPAN_WARNING("[src] prepares to fire at <font color = 'green'>[targetted_mob]</font>!"))
+			delayed = delay_amount
+			return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
+		else
+			if (issuperiorhuman(src))
+				visible_message(SPAN_WARNING("[src] quickly snaps their aim toward <font color = 'green'>[targetted_mob]</font>!"))
+			else
+				visible_message(SPAN_WARNING("[src] shifts its attention to <font color = 'green'>[targetted_mob]</font>!"))
+
+	else if (!ranged)
+		stop_automated_movement = TRUE
+		stance = HOSTILE_STANCE_ATTACKING
+		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+		walk_to(src, targetted_mob, 1, move_to_delay)
+		moved = 1
+	handle_attacking_stance(targetted_mob, already_destroying_surroundings)
+
+/mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE)
+	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
+	if(destroy_surroundings && !already_destroying_surroundings)
+		destroySurroundings()
+	if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !fire_through_wall)) //why attack if we can't even see the enemy
+		if (patience <= 0)
+			loseTarget()
+			patience = patience_initial
+		else
+			patience--
+		return
+	patience = patience_initial
+	if(!ranged)
+		prepareAttackOnTarget()
+	else if(ranged)
+		if (!(targetted_mob.check_if_alive(TRUE)))
+			loseTarget()
+			return
+		if (!check_if_alive())
+			return
+		if(get_dist(src, targetted_mob) <= 6)
+			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
+		else
+			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+			walk_to(src, targetted_mob, 4, move_to_delay)
+			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
+
+/// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
+/atom/proc/check_if_alive(var/critcheck = FALSE) //A simple yes no if were alive
+	if (critcheck)
+		if (istype(src, /mob/living/carbon/human))
+			if(health > HEALTH_THRESHOLD_CRIT) //only matters for humans
+				return TRUE
+			else
+				return FALSE
+	if(health > 0)
+		return TRUE
+	return FALSE
 
 // Same as overridden proc but -3 instead of -1 since its 3 times less frequently envoked, if checks removed
 /mob/living/carbon/superior_animal/handle_status_effects()
@@ -468,3 +558,40 @@
 		return TRUE
 	life_cycles_before_scan = initial(life_cycles_before_scan)
 	return FALSE
+
+/**
+ *  To be used when, instead of raw attack procs, you want to add a timer.
+ *  Will telegraph this attack to any within range, visually, with a message and a beam effect.
+ *
+ *	Args:
+ *	atom/targetted_mob-Atom this timer will be targetted to, and the target of the telegraphs.
+ *	proctocall: The proc the timer will call.
+ *	attack_type-The delay that will be used for this timer. Defines used by this defined in mobs.dm. Example: MELEE_TYPE.
+ *	telegraph-Boolean. If false, no visual emote will be made.
+ *	cast_beam-Boolean. If true, a beam will be cast from src to targetted_mob as a visual telegraph.
+**/
+/mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(var/atom/targetted_mob, proctocall, var/attack_type, var/telegraph = TRUE, var/cast_beam = TRUE)
+	if (check_if_alive()) //sanity
+		var/time_to_expire
+		switch(attack_type)
+			if (MELEE_TYPE)
+				time_to_expire = delay_for_melee
+				if (telegraph && (time_to_expire > 0)) //no telegraph needed if the attack is instant
+					visible_message(SPAN_WARNING("[src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+				addtimer(CALLBACK(src, proctocall), time_to_expire) //awful hack because melee attacks are handled differently
+
+			if (RANGED_TYPE)
+				time_to_expire = delay_for_range
+				if (telegraph && (time_to_expire > 0))
+					visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+					if (cast_beam)
+						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
+				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
+
+			if (RANGED_RAPID_TYPE)
+				time_to_expire = delay_for_range //fun fact, this rapid range delay is used for delaying shots in a burst
+				if (telegraph && (time_to_expire > 0))
+					visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+					if (cast_beam)
+						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
+				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)

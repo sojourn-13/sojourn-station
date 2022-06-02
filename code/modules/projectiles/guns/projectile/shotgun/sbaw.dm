@@ -16,7 +16,7 @@
 	price_tag = 2000
 	penetration_multiplier = 1.5 //50% more ap
 	damage_multiplier = 1.1 //Payload "rifle" has a scope so fair enough
-	zoom_factor = 0.3
+	zoom_factor = 0.4
 	fire_delay = 12
 	recoil_buildup = 15
 	one_hand_penalty = 20

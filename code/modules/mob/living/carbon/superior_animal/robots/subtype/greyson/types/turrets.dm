@@ -53,6 +53,7 @@
 	fire_verb = "fires"
 	acceptableTargetDistance = 6
 	comfy_range = 5
+	range_telegraph = "'s servos begin to spool up, aiming at"
 
 /mob/living/carbon/superior_animal/robot/greyson/stalker/New()
 	..()

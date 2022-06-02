@@ -181,6 +181,7 @@
 	cost = 750
 
 	unlocks_designs = list(
+							/datum/design/research/item/powercell/large/ameridian,
 							/datum/design/research/item/powercell/large/omega,
 							/datum/design/research/item/powercell/medium/omega,
 							/datum/design/research/item/powercell/small/omega

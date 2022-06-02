@@ -520,7 +520,7 @@
 	. = ..()
 
 /obj/effect/decal/cleanable/carrion_puddle/Process()
-	for(var/mob/living/creature in mobs_in_view(1, src))
+	for(var/mob/living/creature in living_mobs_in_view(1, src))
 		if(creature.faction == "spiders")
 			continue
 		toxin_attack(creature, rand(1, 3))
