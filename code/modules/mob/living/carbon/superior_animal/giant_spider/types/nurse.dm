@@ -25,6 +25,7 @@
 	var/egg_inject_chance = 0 //AHAHAHAHAHAHAHAAHAHAH, no
 	life_cycles_before_sleep = 3000 //We need more time to eat and web
 	inherent_mutations = list(MUTATION_PROT_MILK, MUTATION_SPIDER_FRIEND, MUTATION_NERVOUSNESS, MUTATION_DEAF)
+	armor_penetration = 30
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/midwife
 	name = "midwife spider"
@@ -38,6 +39,7 @@
 	poison_per_bite = 4
 	egg_inject_chance = 5 //Yes
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/midwife
+	armor_penetration = 35
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/cave_spider
 	name = "cave spider"
@@ -52,6 +54,7 @@
 	poison_type = "frostoil"
 	move_to_delay = 6 // Very slow
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/cave_spider
+	armor_penetration = 5
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier
 	name = "carrier spider"
@@ -61,6 +64,7 @@
 	deathmessage = "splits open! Several wriggling spiders crawl from its gore!"
 	egg_inject_chance = 2 //maybe...
 	var/has_made_spiderlings = FALSE
+	armor_penetration = 20
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)
@@ -89,6 +93,7 @@
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.","bounces happily in place!")
 	web_activity = 90
 	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
+	armor_penetration = 40
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/recluse
 	name = "recluse spider"
@@ -105,6 +110,7 @@
 	egg_inject_chance = 15 //Defiently
 	//Giving the recluse its own special meat that has zombie powder. Reducing the amount of meat made since this is some hard stuff and the recluse is easy to kill.
 	poison_type = "zombiepowder"
+	armor_penetration = 70
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen
 	name = "empress spider"
@@ -126,6 +132,7 @@
 	mob_size = MOB_LARGE
 	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_SPIDER_FRIEND, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
+	armor_penetration = 35
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen/New()
 	..()

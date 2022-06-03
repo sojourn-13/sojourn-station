@@ -22,6 +22,7 @@
 
 	min_air_pressure = 0
 	min_bodytemperature = 0
+	armor_penetration = 50
 
 	var/list/nanite_swarms = list()
 	var/max_swarms = 5

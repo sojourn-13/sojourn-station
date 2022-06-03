@@ -42,6 +42,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 	fleshcolor = "#7C90B8"
 	bloodcolor = "#7C90B8"
+	armor_penetration = 5
 
 	destroy_surroundings = TRUE
 	friendly_to_colony = FALSE
@@ -255,6 +256,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	icon = 'icons/mob/mobs-termite.dmi' // Sprites made by Polyushko#0323
 	icon_state = "koroleva_termite"
 	icon_dead = "koroleva_gore"
+	armor_penetration = 35
 
 //Health related variables
 	maxHealth = TERMITE_HEALTH_HIGH
@@ -285,6 +287,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	comfy_range = 6 //How far we like to be form are targets when we fire!
 	projectiletype = /obj/item/projectile/bullet/spear
 	contaminant_immunity = TRUE
+	armor_penetration = 35
 
 //Health related variables
 	maxHealth = TERMITE_HEALTH_HIGH
