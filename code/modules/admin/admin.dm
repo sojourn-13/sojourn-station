@@ -975,7 +975,38 @@ ADMIN_VERB_ADD(/datum/admins/proc/spawn_atom, R_DEBUG, FALSE)
 
 	log_and_message_admins("spawned [chosen] at ([usr.x],[usr.y],[usr.z])")
 
+ADMIN_VERB_ADD(/datum/admins/proc/remove_var_copy, R_ADMIN|R_DEBUG, TRUE)
+/datum/admins/proc/remove_var_copy()
+	set name = "Remove Copy"
+	set category = "Fun"
 
+	if(!check_rights(R_ADMIN || R_DEBUG))
+		return
+
+	var/target_copy = stripped_input(usr, "What is the name of the slot you want to delete?")
+	if (target_copy in GLOB.var_copies)
+		GLOB.var_copies -= target_copy
+		to_chat(usr, "<span class='warning'>[target_copy] deleted.</span>")
+	else
+		to_chat(usr, "<span class='warning'>[target_copy] does not exist. Did you type it correctly?</span>")
+
+ADMIN_VERB_ADD(/datum/admins/proc/spawn_var_copy, R_ADMIN|R_DEBUG, TRUE)
+/datum/admins/proc/spawn_var_copy()
+	set name = "Spawn Copy"
+	set category = "Fun"
+
+	if(!check_rights(R_ADMIN || R_DEBUG))
+		return
+
+	var/target_copy = stripped_input(usr, "What is the name of the copy you want to spawn?")
+	if (target_copy in GLOB.var_copies)
+		var/atom/spawn_target = GLOB.var_copies[target_copy[type]]
+
+		var/atom/newItem = new spawn_target(usr.loc)
+
+		newItem.vars = GLOB.var_copies[target_copy]
+	else
+		to_chat(usr, "<span class='warning'>[target_copy] does not exist. Did you type it correctly?</span>")
 // -Removed due to rare practical use. Moved to debug verbs ~Errorage,
 //ADMIN_VERB_ADD(/datum/admins/proc/show_traitor_panel, R_ADMIN, TRUE)
 //interface which shows a mob's mind

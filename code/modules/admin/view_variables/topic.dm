@@ -688,6 +688,19 @@
 
 		usr.forceMove(get_turf(A))
 
+	else if (href_list["saveCopy"])
+		if(!check_rights(R_DEBUG|R_ADMIN))
+			return
+
+		var/atom/copy_target = locate(href_list["saveCopy"])
+
+		var/name = stripped_input(usr, "What will the name of this save slot be?")
+		if (name in GLOB.var_copies)
+			to_chat(usr, "<span class='warning'>A save with that name already exists! Try the remove save verb if you really want the name.</span>")
+			return
+		GLOB.var_copies[name] = copy_target.vars //IDEA: make it so you have to type out the vars you want to add instead of adding all
+		to_chat(usr, "<span class='warning'>Copy creation successful.</span>")
+
 	if(href_list["datumrefresh"])
 		var/datum/DAT = locate(href_list["datumrefresh"])
 		if(istype(DAT, /datum) || istype(DAT, /client))
