@@ -22,3 +22,4 @@
 	drop1 = /obj/item/book/ritual/cruciform/priest
 	drop2 = /obj/item/stack/material/gold/random
 	armor = list(melee = 15, bullet = 15, energy = 10, bomb = 5, bio = 100, rad = 100, agony = 100)
+	range_telegraph = "starts to hum ominously while staring at"

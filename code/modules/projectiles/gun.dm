@@ -53,6 +53,25 @@
 	var/dual_wielding
 	var/can_dual = FALSE // Controls whether guns can be dual-wielded (firing two at once).
 	var/zoom_factor = 0 //How much to scope in when using weapon
+	
+/*
+
+NOTE: For the sake of standardizing guns and extra vision range, here's a general guideline for zooming factor.
+		  Do keep in mind that a normal player's view is seven tiles of vision in each direction.
+
+						Minimum value is 0.2 which gives 1 extra tile of vision.
+				From there, increases are mostly linear, with the following shared exceptions:
+									0.3 and 0.4 = 2 extra tiles
+									0.6 and 0.7 = 4 extra tiles
+			0.9 gives 6 extra tiles, from there jumps straight to 8 extra tiles at both 1 and 1.1
+						1.3 and 1.4 = 10 extra tiles (Character no longer seen on screen)
+									1.6 and 1.7 = 12 extra tiles
+					Largest zooming factor being 2, increases tile vision by 16 extra tiles.
+
+
+For the sake of consistency, I suggest always rounding up on even values when applicable. - Seb (ThePainkiller)
+
+*/
 
 	var/suppress_delay_warning = FALSE
 

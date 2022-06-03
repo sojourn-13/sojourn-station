@@ -75,6 +75,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	//Controller that spawned the wurm
 	//var/datum/wurm_controller/controller
 
+	range_telegraph = "starts to wobble at"
 /mob/living/carbon/superior_animal/wurm/New(loc, obj/machinery/mining/drill/drill) //datum/wurm_controller/parent
 	..()
 	/*iif(parent)

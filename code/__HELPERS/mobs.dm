@@ -14,14 +14,53 @@
 /mob/get_mob()
 	return src
 
-/proc/mobs_in_view(var/range, var/source)
+/**
+ * Returns a list of all mobs within view(), using given arguments to determine the range of the search
+ * and the source of the proc.
+ *
+ * Args:
+ * range - How far, in a square, around this mob, will we search.
+ * source - The source of the search.
+**/
+/proc/mobs_in_view(range, atom/source)
 	var/list/mobs = list()
-	for(var/atom/movable/AM in view(range, source))
-		var/M = AM.get_mob()
-		if(M)
-			mobs += M
-
+	for(var/mob/target_mob in view(range, source))
+		mobs += target_mob
 	return mobs
+
+/**
+ * Returns a list of all LIVING mobs within view(), using given arguments to determine the range of the search
+ * and the source of the proc.
+ *
+ * Args:
+ * range - How far, in a square, around this mob, will we search.
+ * source - The source of the search.
+**/
+/proc/living_mobs_in_view(var/range, var/atom/source)
+	var/list/mobs = list()
+	for(var/mob/living/target_mob in view(range, source))
+		mobs += target_mob
+	return mobs
+
+
+/**
+ * Returns a list of all mobs within view(), even those within mechs, using given arguments to determine the range of the search
+ * and the source of the proc.
+ *
+ * Args:
+ * range - How far, in a square, around this mob, will we search.
+ * source - The source of the search.
+**/
+/proc/all_mobs_in_view(var/range, var/atom/source)
+	var/list/mobs = list()
+	for(var/mob/target_mob in view(range, source))
+		mobs += target_mob
+	for(var/obj/mecha/potential_mech in GLOB.mechas_list)
+		if(potential_mech.z == source.z && get_dist(potential_mech, source) < range && can_see(source, potential_mech, range))
+			var/mob/living/occupant = potential_mech.get_mob()
+			if (occupant)
+				mobs += occupant
+    return mobs
 
 /proc/random_hair_style(gender, species = "Human")
 	var/h_style = "Bald"

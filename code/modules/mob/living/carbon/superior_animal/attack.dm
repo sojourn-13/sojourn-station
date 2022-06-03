@@ -4,6 +4,7 @@
 /mob/living/carbon/superior_animal/UnarmedAttack(var/atom/A, var/proximity)
 	if(!..())
 		return
+	if(weakened) return
 
 	var/damage = rand(melee_damage_lower, melee_damage_upper)
 
@@ -29,6 +30,8 @@
 	src.destroySurroundings()
 
 /mob/living/carbon/superior_animal/RangedAttack()
+	if(!check_if_alive()) return
+	if(weakened) return
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(ranged)
@@ -57,30 +60,33 @@
 		else
 			return
 
-/mob/living/carbon/superior_animal/proc/OpenFire(firing_target)
-	var/target = firing_target
-	visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"), 1)
+/mob/living/carbon/superior_animal/proc/OpenFire(var/atom/firing_target)
+	if(!check_if_alive()) return
+	if(weakened) return
+	var/atom/target = firing_target
 
 	if(rapid)
-		spawn(6)
-			Shoot(target, loc, src)
-			sleep(1) //Lets make sure we shoot so we add a small stop gap to not go to fast
-			handle_ammo_check()
-		spawn(10)
-			Shoot(target, loc, src)
-			sleep(1)
-			handle_ammo_check()
-		spawn(14)
-			Shoot(target, loc, src)
-			sleep(1)
+		for(var/shotsfired = 0, shotsfired < rapid_fire_shooting_amount, shotsfired++)
+			if(!check_if_alive())
+				break
+			addtimer(CALLBACK(src, .proc/Shoot, target, loc, src), (delay_for_rapid_range * shotsfired))
 			handle_ammo_check()
 	else
 		Shoot(target, loc, src)
-		sleep(1)
 		handle_ammo_check()
 
-	stance = HOSTILE_STANCE_IDLE
-	firing_target = null
+	if (!firing_target)
+		loseTarget()
+		return
+
+	if (!firing_target.check_if_alive(TRUE))
+		loseTarget()
+		return
+
+	if (firing_target.z != src.z)
+		loseTarget()
+		return
+
 	return
 
 /mob/living/carbon/superior_animal/proc/handle_ammo_check()
@@ -101,10 +107,12 @@
 		rapid = FALSE
 
 /mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0)
+	if(weakened) return
 	if(target == start)
 		return
 
 	var/obj/item/projectile/A = new projectiletype(user:loc)
+	visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"), 1)
 	if(casingtype)
 		new casingtype(get_turf(src))
 	playsound(user, projectilesound, 100, 1)
@@ -113,6 +121,7 @@
 	A.launch(target, def_zone)
 
 /mob/living/carbon/superior_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
+	if(weakened) return
 	var /mob/living/carbon/superior_animal/shooter = src //TODO: Make it work for alt click in perfs like rig code
 	if(ranged_middlemouse_cooldown >= world.time) //Modula for admins to set them at different things
 		to_chat(src, "You gun isnt ready to fire!.")

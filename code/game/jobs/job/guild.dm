@@ -66,7 +66,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 	spawn_positions = 4
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
-	alt_titles = list("Cargo Specialist","Lonestar Junior Technician")
+	alt_titles = list("Cargo Specialist", "Lonestar Sales Technician", "Lonestar Salesclerk")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_DUMB
 	department_account_access = TRUE
@@ -117,7 +117,7 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 	spawn_positions = 4
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
-	alt_titles = list("Lonestar Drill Technician","Lonestar Digger","Mining Specialist","Junior Lonestar Miner")
+	alt_titles = list("Lonestar Drill Technician","Lonestar Digger","Mining Specialist","Junior Lonestar Miner","Ameridian Gatherer")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_HAZARD //The miners union is stubborn
 

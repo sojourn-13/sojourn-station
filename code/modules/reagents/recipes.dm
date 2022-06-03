@@ -49,6 +49,7 @@
 	var/result = null
 	var/list/required_reagents = list()
 	var/list/catalysts = list()
+	var/list/alchemy_catalysts = list()
 	var/list/inhibitors = list()
 	var/result_amount = 0
 	var/list/byproducts= list()

@@ -394,10 +394,14 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 /obj/structure/burrow/proc/abort_migration()
 	STOP_PROCESSING(SSobj, src)
 	processing = FALSE
-	target.recieving = null
-	target = null
-	recieving.target = null
-	recieving = null
+
+	if (target)
+		target.recieving = null
+		target = null
+
+	if (recieving)
+		recieving.target = null
+		recieving = null
 
 	sending_mobs = list()
 	migration_initiated = 0
@@ -406,8 +410,6 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 
 	for (var/mob/M in contents)
 		M.forceMove(loc)
-
-
 
 //Called when an area becomes uninhabitable
 /obj/structure/burrow/proc/evacuate(force_nonmaint = TRUE)

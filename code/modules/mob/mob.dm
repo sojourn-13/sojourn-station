@@ -13,7 +13,6 @@
 
 	for (var/obj/machinery/camera/camera in tracking_cameras)
 		camera.lostTarget(src)
-		tracking_cameras -= camera
 	tracking_cameras.Cut()
 
 	ghostize()
@@ -668,7 +667,9 @@
 	return (0 >= usr.stat)
 
 /mob/proc/is_dead()
-	return stat == DEAD
+	if (stat == DEAD) //attempted fix to this proc
+		return TRUE
+	return FALSE
 
 /mob/proc/is_mechanical()
 	if(mind && (mind.assigned_role == "Robot" || mind.assigned_role == "AI"))
