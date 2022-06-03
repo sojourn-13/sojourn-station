@@ -71,8 +71,8 @@
 	if (stop_pursuit)
 		stop_automated_movement = 0
 		walk(src, 0)
-	fire_delay = initial(fire_delay)
-	melee_delay = initial(melee_delay)
+	fire_delay = fire_delay_initial
+	melee_delay = melee_delay_initial
 	target_mob = null
 	stance = HOSTILE_STANCE_IDLE
 
