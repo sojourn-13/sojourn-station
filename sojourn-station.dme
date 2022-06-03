@@ -1090,6 +1090,7 @@
 #include "code\game\objects\items\weapons\autolathe_disk\guild_disks.dm"
 #include "code\game\objects\items\weapons\autolathe_disk\guns_ammo_sec_disks.dm"
 #include "code\game\objects\items\weapons\autolathe_disk\lonestar_disks.dm"
+#include "code\game\objects\items\weapons\autolathe_disk\marshal.dm"
 #include "code\game\objects\items\weapons\autolathe_disk\soteria_disks.dm"
 #include "code\game\objects\items\weapons\circuitboards\broken.dm"
 #include "code\game\objects\items\weapons\circuitboards\circuitboard.dm"
