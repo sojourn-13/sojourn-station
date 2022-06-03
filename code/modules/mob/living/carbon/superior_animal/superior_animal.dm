@@ -533,7 +533,7 @@
 	if (can_burrow && bad_environment)
 		evacuate()
 
-	if(!AI_inactive && !weakened)
+	if(!AI_inactive || !weakened)
 		handle_ai()
 		//Speaking
 
