@@ -15,6 +15,9 @@
 
 	var/eating_time = 900
 
+	///How delayed are our ranged attacks, in ticks? Reduces DPS.
+	var/fire_delay = 0
+
 	/// Number of delayed AI ticks, used for delaying ranged attacks. At 9, ranged mobs will be delayed by one tick after target. TODO: Create a override.
 	var/delayed = 0
 	/// How much we increment this mob's delayed var each time.
@@ -443,6 +446,7 @@
 	if(!ranged)
 		prepareAttackOnTarget()
 	else if(ranged)
+		if (fire_delay > 0)
 		if (!(targetted_mob.check_if_alive(TRUE)))
 			loseTarget()
 			return
