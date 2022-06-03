@@ -1,3 +1,10 @@
+/**
+ * Associative list of var copies, key being their name, value being the list of vars they hold.
+ *
+ * Used with the "var saving" system, where admins can use VV to save a "var copy" of an atom, and later use the Spawn Copy verb to
+ * first spawn the type of the original atom, and then apply any vars the admin chose to add to the var copy. This is a method of
+ * copypasting varedited atoms with ease.
+**/
 GLOBAL_LIST_EMPTY(var_copies)
 
 #define TOPIC_NOACTION 0

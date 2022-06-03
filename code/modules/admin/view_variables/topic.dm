@@ -689,17 +689,44 @@
 		usr.forceMove(get_turf(A))
 
 	else if (href_list["saveCopy"])
-		if(!check_rights(R_DEBUG|R_ADMIN))
+		if(!check_rights(R_DEBUG|R_ADMIN|R_FUN))
 			return
 
 		var/atom/copy_target = locate(href_list["saveCopy"])
+		if (!istype(copy_target, /atom)) //we NEED to make sure we aren't spawning datums or clients, the consequences if we were could be godawful
+			return
 
-		var/name = stripped_input(usr, "What will the name of this save slot be?")
+		var/name = stripped_input(usr, "What will the name of this save slot be?") //stripped_input is arbitrary, replace if needed
 		if (name in GLOB.var_copies)
 			to_chat(usr, "<span class='warning'>A save with that name already exists! Try the remove save verb if you really want the name.</span>")
 			return
-		GLOB.var_copies[name] = copy_target.vars //IDEA: make it so you have to type out the vars you want to add instead of adding all
-		to_chat(usr, "<span class='warning'>Copy creation successful.</span>")
+		var/stop = FALSE
+		var/list/vars_to_add = list()
+		while(!stop) // this while loop was made out of me, niko, not understanding the optimal implementation of a loop like this, please replace if able
+			var/var_to_copy = input(usr, "What is the exact name of the var you want to copy, case sensitive? Type stop to continue.")
+			if (var_to_copy == "stop")
+				stop = TRUE
+				break
+			if (var_to_copy in GLOB.banned_vars) //prevents any naughty vars from being copied
+				to_chat(usr, "<span class='warning'>You cannot add [var_to_copy] as a copied var! It has been determined to be too dangerous/unstable.</span>")
+				continue
+
+			if (!(var_to_copy in copy_target.vars)) //causes a runtime otherwise
+				to_chat(usr, "<span class='warning'>[var_to_copy] does not exist within [copy_target]!</span>")
+				continue
+
+			if (!(var_to_copy in vars_to_add))
+				vars_to_add[var_to_copy] += copy_target.vars[var_to_copy] //we assign the value of vars[var_to_copy] to our temporary list's key of the same name
+
+		var/typepath = "type" //keys are stored as text, usually, as is the case with most vars
+		if (!vars_to_add[typepath]) //do we have a typepath?
+			vars_to_add["type"] = copy_target.vars["type"] //we add the type now, because otherwise, we wouldn't know what to spawn
+			// You may ask: Why not just forbid admins from assigning their own type? I didnt because it lets admins specify the type of thing they spawn in a roundabout way.
+
+		GLOB.var_copies[name] += vars_to_add //This is where we create the var copy
+
+		to_chat(usr, "<span class='warning'>Copy creation, named [name] successful.</span>")
+		log_and_message_admins("created a new var copy, named [name] and with a var list of [vars_to_add.len] vars.</span>")
 
 	if(href_list["datumrefresh"])
 		var/datum/DAT = locate(href_list["datumrefresh"])
