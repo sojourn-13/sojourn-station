@@ -51,7 +51,7 @@
 	melee_damage_upper = 15
 	poison_per_bite = 4
 	poison_type = "frostoil"
-	move_to_delay = 6 // Very slow
+	move_to_delay = 5 // Very slow
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/cave_spider
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier
