@@ -96,6 +96,8 @@
 
 	var/list/drop_items = list() //Held items a creature can drop when they die. Accessed through drop_death_loot()
 
+	var/target_dummy = FALSE // Simple yes no if we are when spotted targeted over **everything** esle, used for simple and super mobs.
+
 	//Redays to make mobs faster or slower on attacking
 	var/delay_for_range = 0 SECONDS
 	var/delay_for_rapid_range = 0 SECONDS

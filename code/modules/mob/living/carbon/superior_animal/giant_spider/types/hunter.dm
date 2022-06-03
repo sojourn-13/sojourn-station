@@ -228,7 +228,7 @@
 	health = 400
 	move_to_delay = 1
 	turns_per_move = 7
-	viewRange = 12
+	viewRange = 9
 	melee_damage_lower = 20
 	melee_damage_upper = 30
 	poison_per_bite = 4
