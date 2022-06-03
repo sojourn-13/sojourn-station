@@ -543,14 +543,15 @@
 	if (can_burrow && bad_environment)
 		evacuate()
 
-	if(!AI_inactive && !weakened) //we dont need to handle ai if we're disabled
-		handle_ai()
-		//Speaking
+	if (!weakened)
 
-	if(speak_chance && prob(speak_chance))
-		visible_emote(emote_see)
+		if(!AI_inactive) //we dont need to handle ai if we're disabled
+			handle_ai()
+			//Speaking
 
-	if(!weakened)
+		if(speak_chance && prob(speak_chance))
+			visible_emote(emote_see)
+
 		if (following)
 			if (!target_mob) // Are we following someone and not attacking something?
 				walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
