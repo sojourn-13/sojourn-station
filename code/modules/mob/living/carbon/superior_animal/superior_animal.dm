@@ -543,10 +543,10 @@
 	if(!weakened)
 		if (following)
 			if (!target_mob) // Are we following someone and not attacking something?
-			walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
+				walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
 		else if (!target_mob && last_followed)
-		walk_to(src, 0)
-		last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
+			walk_to(src, 0)
+			last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
 
 	if(life_cycles_before_sleep)
 		life_cycles_before_sleep--
