@@ -65,12 +65,14 @@
 		loseTarget()
 		return
 	if (check_if_alive())
-		prepareAttackPrecursor(targetted_mob, .proc/attemptAttackOnTarget, MELEE_TYPE)
+		prepareAttackPrecursor(targetted_mob, .proc/attemptAttackOnTarget, MELEE_TYPE, FALSE, FALSE)
 
 /mob/living/carbon/superior_animal/proc/loseTarget(var/stop_pursuit = TRUE)
 	if (stop_pursuit)
 		stop_automated_movement = 0
 		walk(src, 0)
+	fire_delay = initial(fire_delay)
+	melee_delay = initial(melee_delay)
 	target_mob = null
 	stance = HOSTILE_STANCE_IDLE
 

@@ -4,7 +4,8 @@
 /mob/living/carbon/superior_animal/UnarmedAttack(var/atom/A, var/proximity)
 	if(!..())
 		return
-	if(weakened) return
+	if(weakened)
+		return
 
 	var/damage = rand(melee_damage_lower, melee_damage_upper)
 
@@ -61,8 +62,11 @@
 			return
 
 /mob/living/carbon/superior_animal/proc/OpenFire(var/atom/firing_target)
-	if(!check_if_alive()) return
-	if(weakened) return
+	if(!check_if_alive())
+		return
+	if(weakened)
+		return
+
 	var/atom/target = firing_target
 
 	if(rapid)
