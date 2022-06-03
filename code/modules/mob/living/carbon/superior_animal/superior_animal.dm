@@ -28,10 +28,8 @@
 	var/retarget_rush_timer_increment = 10 SECONDS //arbitrary value for now
 	/// Will this mob continue to fire even if LOS has been broken?
 	var/fire_through_wall = FALSE
-	/// Initial value of patience, make sure to match it with patience.
-	var/patience_initial = 10
 	/// How many ticks are we willing to wait before untargetting a mob that we can't see?
-	var/patience = 10
+	var/patience = 5
 
 	/// Telegraph message base for mobs that are range
 	var/range_telegraph = "aims their weapon at"
@@ -282,14 +280,24 @@
 
 /mob/living/carbon/superior_animal/examine(mob/user)
 	..()
-	if (health < maxHealth * 0.25)
+	if (health < maxHealth * 0.10)
+		to_chat(user, SPAN_DANGER("It looks like they are on their last legs!"))
+	else if (health < maxHealth * 0.20)
 		to_chat(user, SPAN_DANGER("It's grievously wounded!"))
-	else if (health < maxHealth * 0.50)
+	else if (health < maxHealth * 0.30)
 		to_chat(user, SPAN_DANGER("It's badly wounded!"))
-	else if (health < maxHealth * 0.75)
-		to_chat(user, SPAN_WARNING("It's wounded."))
+	else if (health < maxHealth * 0.40)
+		to_chat(user, SPAN_WARNING("Its wounds are mounting."))
+	else if (health < maxHealth * 0.50)
+		to_chat(user, SPAN_WARNING("It looks half dead."))
+	else if (health < maxHealth * 0.60)
+		to_chat(user, SPAN_WARNING("It looks like its been beaten up quite badly"))
+	else if (health < maxHealth * 0.70)
+		to_chat(user, SPAN_WARNING("It has accrued some lasting injuries."))
+	else if (health < maxHealth * 0.80)
+		to_chat(user, SPAN_WARNING("It has had minor damage done to it."))
 	else if (health < maxHealth)
-		to_chat(user, SPAN_WARNING("It's a bit wounded."))
+		to_chat(user, SPAN_WARNING("It has a few cuts and bruses."))
 
 
 // Same as breath but with innecesarry code removed and damage tripled. Environment pressure damage moved here since we handle moles.
@@ -401,6 +409,7 @@
 
 /mob/living/carbon/superior_animal/proc/handle_hostile_stance(var/atom/targetted_mob) //here so we can jump instantly to it if hostile stance is established
 	var/already_destroying_surroundings = FALSE
+	if(weakened) return
 	if(destroy_surroundings)
 		destroySurroundings()
 		already_destroying_surroundings = TRUE
@@ -438,11 +447,11 @@
 	if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !fire_through_wall)) //why attack if we can't even see the enemy
 		if (patience <= 0)
 			loseTarget()
-			patience = patience_initial
+			patience = initial(patience)
 		else
 			patience--
 		return
-	patience = patience_initial
+	patience = initial(patience)
 	if(!ranged)
 		prepareAttackOnTarget()
 	else if(ranged)
@@ -455,6 +464,7 @@
 		if(get_dist(src, targetted_mob) <= 6)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 		else
+			if(weakened) return
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 			walk_to(src, targetted_mob, 4, move_to_delay)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
@@ -537,18 +547,21 @@
 	if (can_burrow && bad_environment)
 		evacuate()
 
-	if(!AI_inactive)
-		handle_ai()
-		//Speaking
-		if(speak_chance && prob(speak_chance))
-			visible_emote(emote_see)
+	if (!weakened)
 
-		if (following)
-			if (!target_mob) // Are we following someone and not attacking something?
-				walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
-		else if (!target_mob && last_followed)
-			walk_to(src, 0)
-			last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
+		if(!AI_inactive) //we dont need to handle ai if we're disabled
+			handle_ai()
+			//Speaking
+
+			if(speak_chance && prob(speak_chance))
+				visible_emote(emote_see)
+
+			if (following)
+				if (!target_mob) // Are we following someone and not attacking something?
+					walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
+			else if (!target_mob && last_followed)
+				walk_to(src, 0)
+				last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
 
 	if(life_cycles_before_sleep)
 		life_cycles_before_sleep--
