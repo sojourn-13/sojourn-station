@@ -25,6 +25,8 @@
 	var/turf/our_turf = get_turf(src)
 	if (our_turf) //If we're not in anything, continue
 		for(var/mob/living/target_mob in hearers(src, viewRange))
+			if(target_mob.target_dummy) //Target me over anyone else
+				return target_mob
 			if (isValidAttackTarget(target_mob))
 				filteredTargets += target_mob
 
@@ -78,8 +80,6 @@
 
 	if (isliving(O))
 		var/mob/living/L = O
-		if(L.target_dummy) //Target me over anyone else
-			return 1
 		if((L.stat != CONSCIOUS) || (L.health <= (ishuman(L) ? HEALTH_THRESHOLD_CRIT : 0)) || (!attack_same && (L.faction == src.faction)) || (L in friends))
 			return
 		if(L.friendly_to_colony && src.friendly_to_colony) //If are target and areselfs have the friendly to colony tag, used for chtmant protection
