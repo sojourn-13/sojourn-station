@@ -21,6 +21,7 @@
 	var/fed = 0
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.")
 	var/web_activity = 30
+	move_to_delay = 4 //slightly faster than guardians but slower than hunters
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	var/egg_inject_chance = 0 //AHAHAHAHAHAHAHAAHAHAH, no
 	life_cycles_before_sleep = 3000 //We need more time to eat and web
@@ -61,6 +62,7 @@
 	deathmessage = "splits open! Several wriggling spiders crawl from its gore!"
 	egg_inject_chance = 2 //maybe...
 	var/has_made_spiderlings = FALSE
+	move_to_delay = 5 //Has babys on it!
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)
@@ -103,6 +105,7 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/recluse
 	meat_amount = 2
 	egg_inject_chance = 15 //Defiently
+	move_to_delay = 6 // Very slow do to being 1 hit unfun
 	//Giving the recluse its own special meat that has zombie powder. Reducing the amount of meat made since this is some hard stuff and the recluse is easy to kill.
 	poison_type = "zombiepowder"
 
