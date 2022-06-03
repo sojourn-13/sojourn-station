@@ -26,6 +26,8 @@
 	if (our_turf) //If we're not in anything, continue
 		for(var/mob/living/target_mob in hearers(src, viewRange))
 			if (isValidAttackTarget(target_mob))
+				if(target_mob.target_dummy) //Target me over anyone else
+					return target_mob
 				filteredTargets += target_mob
 
 	for (var/obj/mecha/M in GLOB.mechas_list)
