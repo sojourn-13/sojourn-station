@@ -280,7 +280,8 @@
 	unlocks_designs = list(
 							/datum/design/research/item/mecha/weapon/laser_heavy,
 							/datum/design/research/item/mecha/weapon/ion,
-							/datum/design/research/item/mecha/weapon/mecha_sword
+							/datum/design/research/item/mecha/weapon/mecha_sword,
+							/datum/design/research/item/mecha/weapon/mecha_cutlass
 							)
 
 //AI BRANCH
