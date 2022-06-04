@@ -17,8 +17,7 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.3
-	recoil_buildup = 6
-	one_hand_penalty = 8
+	init_recoil = HANDGUN_RECOIL(1.3)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
 	serial_type = "H&S"
 
@@ -57,7 +56,7 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	zoom_factor = 0.4
-	recoil_buildup = 7
+	init_recoil = HANDGUN_RECOIL(1)
 	price_tag = 1250
 	serial_type = "SD GmbH"
 
@@ -68,7 +67,7 @@
 	item_state = "scoped_dark_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
 	zoom_factor = 0.4
-	recoil_buildup = 5
+	init_recoil = HANDGUN_RECOIL(0.7)
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.2
 	price_tag = 1100
@@ -84,7 +83,7 @@
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
 	zoom_factor = 0.5
 	silenced = TRUE
-	recoil_buildup = 4 //highly OP SolFed specwar weapon
+	init_recoil = HANDGUN_RECOIL(0.1)
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.2
 	price_tag = 1250
@@ -96,7 +95,7 @@
 	icon_state = "akurra"
 	item_state = "akurra"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
-	recoil_buildup = 6
+	init_recoil = HANDGUN_RECOIL(0.4)
 	silenced = TRUE
 	damage_multiplier = 0.95
 	penetration_multiplier = 1.2
@@ -114,9 +113,9 @@
 	damage_multiplier = 1.4
 	penetration_multiplier = 1.2
 	zoom_factor = 0.2
-	recoil_buildup = 8
-	one_hand_penalty = 12
+	init_recoil = HANDGUN_RECOIL(1.1)
 	unload_sound 	= 'sound/weapons/guns/interact/avasarala_unload.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/avasarala_cock.ogg'
 	fire_sound 	= 'sound/weapons/guns/fire/avasarala_fire.ogg'
+	serial_type = "NM"

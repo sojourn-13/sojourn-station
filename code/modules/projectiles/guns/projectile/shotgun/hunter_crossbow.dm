@@ -13,8 +13,7 @@
 	ammo_type = /obj/item/ammo_casing/crossbow_bolts
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	price_tag = 750
-	recoil_buildup = 1
-	one_hand_penalty = 14
+	init_recoil = RIFLE_RECOIL(0.3)
 	saw_off = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
 	pumpshotgun_sound = 'sound/weapons/guns/interact/hydra_crossbow_load.ogg'
@@ -56,8 +55,7 @@
 	ammo_type = /obj/item/ammo_casing/crossbow_bolts
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	price_tag = 750
-	recoil_buildup = 1
-	one_hand_penalty = 0
+	init_recoil = EMBEDDED_RECOIL(0.1)
 	saw_off = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
 	pumpshotgun_sound = 'sound/weapons/guns/interact/hydra_crossbow_load.ogg'

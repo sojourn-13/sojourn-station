@@ -17,7 +17,7 @@
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.0
 	zoom_factor = 0.4
-	recoil_buildup = 10
+	init_recoil = CARBINE_RECOIL(1)
 	folding_stock = TRUE
 	can_dual = FALSE //please god please please NO MORE NO MORE GOD, PLEASE
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL, GUN_SIGHT)
@@ -70,7 +70,7 @@
 	penetration_multiplier = 1.2
 	extra_damage_mult_scoped = 0.2
 	zoom_factor = 0.8
-	recoil_buildup = 6
+	init_recoil = CARBINE_RECOIL(1.1)
 	folding_stock = FALSE
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
@@ -95,7 +95,7 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.1
 	zoom_factor = 0.4
-	recoil_buildup = 6
+	init_recoil = CARBINE_RECOIL(1)
 	folding_stock = FALSE
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -162,7 +162,7 @@
 	penetration_multiplier = 1.4
 	zoom_factor = 1.2
 	extra_damage_mult_scoped = 0.4
-	recoil_buildup = 12
+	init_recoil = CARBINE_RECOIL(1.2)
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
 	init_firemodes = list(

@@ -22,12 +22,10 @@
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/dp_fire.ogg'
-	recoil_buildup = 0.5
 	twohanded = TRUE
-	one_hand_penalty = 30 //not like it's used anyway, but LMG level
+	init_recoil = LMG_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	slowdown_hold = 0.5
-	brace_penalty = 10 //wellmade
 	init_firemodes = list(
 		FULL_AUTO_400,
 		list(mode_name="short bursts", mode_desc = "Short, rapid 5 round bursts", burst=5,    burst_delay=2, move_delay=6,  icon="burst"),

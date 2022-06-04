@@ -78,7 +78,23 @@
 #define STUNBOLT			list(mode_name="stun", mode_desc="Stun bolt until they're eating the floortiles", projectile_type=/obj/item/projectile/beam/stun, item_modifystate="stun", fire_sound='sound/weapons/Taser.ogg', icon="stun")
 #define LETHAL				list(mode_name="kill", mode_desc="To defeat the Vagabond, shoot it until it dies", projectile_type=/obj/item/projectile/beam, item_modifystate="kill", fire_sound='sound/weapons/Laser.ogg', icon="kill")
 
+
+#define VIG_OVERCHARGE_GEN 0.05
+
+// recoil
+
 #define MAX_ACCURACY_OFFSET  30 //It's both how big gun recoil can build up, and how hard you can miss
 #define RECOIL_REDUCTION_TIME 1 SECOND
 
-#define VIG_OVERCHARGE_GEN 0.05
+// _recoil_buildup, _brace_penalty, _one_hand_penalty
+// So 0.8x for recoil, 0.1x for brace penalty and 0.5x for one hand penalty
+#define FOLDING_RECOIL(x)      list(0.8*x, 0.1*x, 0.5*x )
+#define OLDIFED_RECOIL(x)      list(1*x, 1*x, 1*x )
+//As above same goes for below.
+#define EMBEDDED_RECOIL(x)     list(1.3 *x, 0  *x, 0  *x )
+#define HANDGUN_RECOIL(x)      list(1.15*x, 0.1*x, 0.6*x )
+#define SMG_RECOIL(x)          list(1   *x, 0.2*x, 1.2*x )
+#define CARBINE_RECOIL(x)      list(0.85*x, 0.3*x, 1.8*x )
+#define RIFLE_RECOIL(x)        list(0.7 *x, 0.4*x, 2.4*x )
+#define LMG_RECOIL(x)          list(0.55*x, 0.5*x, 3*x   )
+#define HMG_RECOIL(x)          list(0.4 *x, 0.6*x, 3.6*x )

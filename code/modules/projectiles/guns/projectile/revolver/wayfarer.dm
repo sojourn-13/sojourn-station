@@ -18,8 +18,7 @@
 	price_tag = 1750
 	damage_multiplier = 1.6
 	penetration_multiplier = 2
-	recoil_buildup = 2
-	one_hand_penalty = 0 //Like a glove
+	init_recoil = RIFLE_RECOIL(0.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	max_upgrades = 7 //Holds more slots do to being exl gun and not that good cal wise/easy to get
 	serial_type = "INDEX"

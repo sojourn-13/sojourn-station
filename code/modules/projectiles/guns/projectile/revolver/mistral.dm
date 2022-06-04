@@ -13,6 +13,6 @@
 	price_tag = 900
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.5
-	recoil_buildup = 6
+	init_recoil = RIFLE_RECOIL(0.6)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "SD GmbH"

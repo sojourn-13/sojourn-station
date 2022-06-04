@@ -18,10 +18,7 @@
 	price_tag = 2500
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.35 //Really hard to upgrade
-	recoil_buildup = 10
-	one_hand_penalty = 15
-	brace_penalty = 15 //So this isn't literally better long arm in every way also it has a damn bayonet
-
+	init_recoil = RIFLE_RECOIL(1.15)
 	max_upgrades = 3 // Trigger and a guard; 2 less slots than usual due to its scope, pen and damage.
 
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'

@@ -21,9 +21,8 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3, MATERIAL_PLASMA = 2, MATERIAL_GOLD = 1) //Some rare ones so they dont just mass make this shift start without some good rng
 	price_tag = 1100
 	damage_multiplier = 0.7 //Not the best gun in the world
-	recoil_buildup = 1
+	init_recoil = SMG_RECOIL(1)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE)
-	one_hand_penalty = 3 //smg level
 	folding_stock = TRUE //we can fold are stocks
 
 	auto_eject = TRUE //Eather a blessing or a curse, always can be fixed with a gunmod tho
