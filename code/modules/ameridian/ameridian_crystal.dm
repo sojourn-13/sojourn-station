@@ -24,6 +24,7 @@
 	var/golem_timer = 100 // How many ticks between golem spawning
 	var/golem_range = 2 // Radius that the crystal check for the above threshold
 	var/mob/living/carbon/superior_animal/ameridian_golem/golem // The golem that the growth spawned
+	var/shooter_prob = 10 // % chance of spawning the ranged golem instead of the regular one.
 
 /obj/structure/ameridian_crystal/Initialize(mapload, ...)
 	..()
@@ -155,7 +156,10 @@
 
 			sleep((S.len + 1) SECONDS) // Wait until the sound is done, we're using S.len in case the sound change for another with a different duration. We add a second to give a slightly longer warning time.
 
-			golem = new(get_turf(src)) // Spawn a golem
+			if(prob(shooter_prob))
+				golem = new /mob/living/carbon/superior_animal/ameridian_golem/ameridian_shooter(get_turf(src))
+			else
+				golem = new(get_turf(src)) // Spawn a golem
 			golem.node = src
 			src.visible_message("[src] create a crystal golem to defend itself.")
 			return TRUE

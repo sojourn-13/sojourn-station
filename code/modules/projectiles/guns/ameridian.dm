@@ -66,7 +66,6 @@
 		return null
 	return new projectile_type(src)
 
-
 // Ameridian shard launcher. Launches solid fragment of ameridian that can embed
 /obj/item/gun/matter/ameridian
 	name = "ameridian shard launcher"
