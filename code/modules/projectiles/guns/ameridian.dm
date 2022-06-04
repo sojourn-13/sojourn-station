@@ -71,5 +71,8 @@
 /obj/item/gun/matter/ameridian
 	name = "ameridian shard launcher"
 	desc = "A gun that fire shards of solid ameridian."
+	icon = 'icons/obj/guns/ameridian/ameridian_cog.dmi'
+	icon_state = "ameridian_cog"
+	item_state = "ameridian_cog"
 	matter_type = MATERIAL_AMERIDIAN
 	projectile_type = /obj/item/projectile/ameridian_shard
