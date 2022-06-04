@@ -17,6 +17,9 @@
 	var/rad_range = 2 // Radius that the crystal irradiate
 	var/rad_damage = 0.5 // How much rad damage the crystal inflict per tick
 
+	var/hallucination_power = 10 // Power of the hallucinations that psions receive.
+	var/hallucination_duration = 5 SECONDS // Duration of the hallucinations
+
 	var/golem_threshold = 10 // How many fully-grown ameridian crystals need to be in a location for a golem to spawn
 	var/golem_timer = 100 // How many ticks between golem spawning
 	var/golem_range = 2 // Radius that the crystal check for the above threshold
@@ -148,6 +151,7 @@
 				if(H.stats.getPerk(PERK_PSION))
 					to_chat(H, SPAN_PSION("[src] chimes."))
 					H.playsound_local(get_turf(src), S, 50) // Only psionics can hear that
+					H.adjust_hallucination(hallucination_duration, hallucination_power)
 
 			sleep((S.len + 1) SECONDS) // Wait until the sound is done, we're using S.len in case the sound change for another with a different duration. We add a second to give a slightly longer warning time.
 

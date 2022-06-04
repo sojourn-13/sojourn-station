@@ -32,11 +32,12 @@ meteor_act
 	if(P.can_embed() && (check_absorb < 2) && !src.stats.getPerk(PERK_IRON_FLESH))
 		var/armor = getarmor_organ(organ, ARMOR_BULLET)
 		if(prob(20 + max(P.damage_types[BRUTE] - armor, -10)))
-			var/obj/item/material/shard/shrapnel/SP = new()
+			var/obj/item/material/shard/SP = new P.shrapnel_type()
 			SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
 			SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
 			SP.loc = organ
-			SP.gun_number = P.serial_type_index_bullet //"" to "" shouldnt be an issue
+			if(istype(SP, /obj/item/material/shard/shrapnel))
+				SP.gun_number = P.serial_type_index_bullet //"" to "" shouldnt be an issue
 			organ.embed(SP)
 
 

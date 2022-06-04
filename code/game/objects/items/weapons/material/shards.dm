@@ -197,3 +197,9 @@
 
 /obj/item/material/shard/plasma/New(loc)
 	..(loc, MATERIAL_PLASMAGLASS)
+
+/obj/item/material/shard/ameridian
+	name = "ameridian"
+
+/obj/item/material/shard/ameridian/New(loc)
+	..(loc, MATERIAL_AMERIDIAN)

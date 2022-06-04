@@ -13,3 +13,16 @@
 	tracer_type = /obj/effect/projectile/ameridian/tracer
 	impact_type = /obj/effect/projectile/ameridian/impact
 	kill_count = 15 // How long until they disapear
+
+/obj/item/projectile/ameridian_shard
+	name = "ameridian shard"
+	damage_types = list(BRUTE = 40)
+	armor_penetration = 25
+	check_armour = ARMOR_BULLET
+	shrapnel_type = /obj/item/material/shard/ameridian
+
+/obj/item/projectile/ameridian_shard/golem/attack_mob(mob/living/target_mob, distance, miss_modifier=0)
+	if(target_mob.faction == "ameridian")
+		return FALSE
+	else
+		return ..()
