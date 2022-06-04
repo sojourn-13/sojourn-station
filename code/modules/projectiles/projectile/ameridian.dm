@@ -17,8 +17,10 @@
 /obj/item/projectile/ameridian_shard
 	name = "ameridian shard"
 	damage_types = list(BRUTE = 40)
+	irradiate = 10
 	armor_penetration = 25
 	check_armour = ARMOR_BULLET
+	embed = TRUE
 	shrapnel_type = /obj/item/material/shard/ameridian
 
 /obj/item/projectile/ameridian_shard/golem/attack_mob(mob/living/target_mob, distance, miss_modifier=0)

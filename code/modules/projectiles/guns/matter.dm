@@ -25,9 +25,3 @@
 /obj/item/gun/matter/examine(user)
 	. = ..()
 	to_chat(user, "It holds [stored_matter]/[max_stored_matter] [matter_type].")
-
-/obj/item/gun/matter/ameridian
-	name = "ameridian shard launcher"
-	desc = "A gun that fire shards of solid ameridian."
-	matter_type = MATERIAL_AMERIDIAN
-	projectile_type = /obj/item/projectile/ameridian_shard
