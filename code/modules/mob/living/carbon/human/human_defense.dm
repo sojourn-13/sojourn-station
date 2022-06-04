@@ -37,7 +37,7 @@ meteor_act
 			SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
 			SP.loc = organ
 			if(istype(SP, /obj/item/material/shard/shrapnel))
-				SP.gun_number = P.serial_type_index_bullet //"" to "" shouldnt be an issue
+				SP:gun_number = P.serial_type_index_bullet //"" to "" shouldnt be an issue
 			organ.embed(SP)
 
 
