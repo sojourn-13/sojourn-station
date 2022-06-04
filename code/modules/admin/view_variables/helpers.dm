@@ -84,6 +84,8 @@
 	. = ..()
 	if(reagents)
 		. += "<option value='?_src_=vars;addreagent=\ref[src]'>Add reagent</option>"
+	. += "<option value='?_src_=vars;saveCopy=\ref[src]'>Save as Copy</option>"
+
 
 
 /atom/movable/get_view_variables_options()
