@@ -4,7 +4,8 @@ GLOBAL_LIST_INIT(banned_vars, list(
 	"ckey",
 	"key",
 	"lastKnownIP",
-	"loc"
+	"loc",
+	"locs"
 ))
 
 //A set of constants used to determine which type of mute an admin wishes to apply:
