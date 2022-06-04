@@ -1,3 +1,12 @@
+/// Vars that are strictly forbidden from being used when making a var copy.
+GLOBAL_LIST_INIT(banned_vars, list(
+	"client",
+	"ckey",
+	"key",
+	"lastKnownIP",
+	"loc"
+))
+
 //A set of constants used to determine which type of mute an admin wishes to apply:
 //Please read and understand the muting/automuting stuff before changing these. MUTE_IC_AUTO etc = (MUTE_IC << 1)
 //Therefore there needs to be a gap between the flags for the automute flags
