@@ -459,7 +459,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	currently_firing = FALSE
 
-	spawn(10) //gives us time to light up the area as we shoot
+	spawn(5) //gives us time to light up the area as we shoot
 
 	if(muzzle_flash)
 		set_light(0)
