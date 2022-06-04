@@ -15,6 +15,21 @@
 
 	var/eating_time = 900
 
+	///How delayed are our ranged attacks, in ticks. Reduces DPS.
+	var/fire_delay = 0
+
+	/// Value used when resetting fire_delay. initial() works but breaks vareditting.
+	var/fire_delay_initial = 0
+
+	///How delayed are our melee attacks, in ticks. Reduces DPS.
+	var/melee_delay = 0
+
+	/// Value used when resetting melee_delay. initial() works but breaks vareditting.
+	var/melee_delay_initial = 0
+
+	/// Do we charge our melee attacks if we aren't adjacent?
+	var/do_melee_if_not_adjacent = TRUE
+
 	/// Number of delayed AI ticks, used for delaying ranged attacks. At 9, ranged mobs will be delayed by one tick after target. TODO: Create a override.
 	var/delayed = 0
 	/// How much we increment this mob's delayed var each time.
@@ -32,6 +47,15 @@
 	var/range_telegraph = "aims their weapon at"
 	/// Telegraph message base for mobs that are melee
 	var/melee_telegraph = "readies to strike"
+
+	/// Telegraph message base for mobs that are targetting
+	var/target_telegraph = "prepares to fire at"
+	/// Telegraph message base for mobs that are retargetting shortly after losing target
+	var/rush_target_telegraph = "shifts its attention to"
+
+	/// Telegraph messages for when a mob is ticking down it's attack delays
+	var/range_charge_telegraph = "steadies their aim apon"
+	var/melee_charge_telegraph = "gathers their strength to attack"
 
 	/// What color is our telegraph beam?
 	var/telegraph_beam_color = COLOR_YELLOW
@@ -417,17 +441,11 @@
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 		walk_to(src, targetted_mob, (comfy_range - 1), move_to_delay) //lets get a little closer than our optimal range
 		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
-			if (issuperiorhuman(src)) //TODO: convert to switch
-				visible_message(SPAN_WARNING("[src] snaps their attention to <font color = 'green'>[targetted_mob]</font>, fumbling to ready their weapon!"))
-			else
-				visible_message(SPAN_WARNING("[src] prepares to fire at <font color = 'green'>[targetted_mob]</font>!"))
+			visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"))
 			delayed = delay_amount
 			return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
 		else
-			if (issuperiorhuman(src))
-				visible_message(SPAN_WARNING("[src] quickly snaps their aim toward <font color = 'green'>[targetted_mob]</font>!"))
-			else
-				visible_message(SPAN_WARNING("[src] shifts its attention to <font color = 'green'>[targetted_mob]</font>!"))
+			visible_message(SPAN_WARNING("[src] [rush_target_telegraph] <font color = 'green'>[targetted_mob]</font>!"))
 
 	else if (!ranged)
 		stop_automated_movement = TRUE
@@ -591,23 +609,34 @@
 		var/time_to_expire
 		switch(attack_type)
 			if (MELEE_TYPE)
-				time_to_expire = delay_for_melee
-				if (telegraph && (time_to_expire > 0)) //no telegraph needed if the attack is instant
-					visible_message(SPAN_WARNING("[src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
-				addtimer(CALLBACK(src, proctocall), time_to_expire) //awful hack because melee attacks are handled differently
+				if (do_melee_if_not_adjacent || Adjacent(targetted_mob))
+					time_to_expire = delay_for_melee
+					if (telegraph)
 
-			if (RANGED_TYPE)
+						if (!(melee_delay == 0)) //are we still charging our attack?
+							melee_delay--
+							visible_message(SPAN_WARNING("[src] [melee_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"))
+							return
+						else
+							melee_delay = melee_delay_initial
+
+						if (time_to_expire > 0)
+							visible_message(SPAN_WARNING("[src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+					addtimer(CALLBACK(src, proctocall), time_to_expire) //awful hack because melee attacks are handled differently
+
+			if (RANGED_TYPE || RANGED_RAPID_TYPE)
 				time_to_expire = delay_for_range
-				if (telegraph && (time_to_expire > 0))
-					visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
-					if (cast_beam)
-						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
-				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
+				if (telegraph) //no telegraph needed if the attack is instant
 
-			if (RANGED_RAPID_TYPE)
-				time_to_expire = delay_for_range //fun fact, this rapid range delay is used for delaying shots in a burst
-				if (telegraph && (time_to_expire > 0))
-					visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+					if (!(fire_delay == 0)) //are we still charging our attack?
+						fire_delay--
+						visible_message(SPAN_WARNING("[src] [range_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"))
+						return
+					else
+						fire_delay = fire_delay_initial
+
+					if (time_to_expire > 0)
+						visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
 					if (cast_beam)
 						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
