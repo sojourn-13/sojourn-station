@@ -18,8 +18,7 @@
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.2
 	extra_damage_mult_scoped = 0.3
-	recoil_buildup = 5
-	one_hand_penalty = 10 //automatic rifle level
+	init_recoil = RIFLE_RECOIL(1.2)
 	silenced = TRUE
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 

@@ -21,8 +21,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1250
 	damage_multiplier = 1.2 //More damage less AP than gladstone
-	recoil_buildup = 13
-	one_hand_penalty = 15 //full sized shotgun level
+	init_recoil = RIFLE_RECOIL(1.3)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 
 	init_firemodes = list(
@@ -39,8 +38,7 @@
 	icon_state = "riot_shotgun"
 	item_state = "riot_shotgun"
 	damage_multiplier = 0.7 //Pug has 0.7 do to its fire normal modes
-	recoil_buildup = 0
-	one_hand_penalty = 0
+	init_recoil = RIFLE_RECOIL(0)
 	max_shells = 6
 	load_method = SINGLE_CASING|SPEEDLOADER //So boxes of ammo work
 
@@ -67,8 +65,7 @@
 	damage_multiplier = 0.8
 	penetration_multiplier = 1.0
 	zoom_factor = 0.2
-	recoil_buildup = 18
-	one_hand_penalty = 15 //full sized shotgun level
+	init_recoil = RIFLE_RECOIL(1.4)
 	folding_stock = TRUE //we can fold are stocks
 	can_dual = FALSE
 

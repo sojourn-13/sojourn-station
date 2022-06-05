@@ -17,7 +17,7 @@
 	price_tag = 300
 	damage_multiplier = 1
 	penetration_multiplier = 0.8
-	recoil_buildup = 3
+	init_recoil = HANDGUN_RECOIL(1)
 	serial_type = "H&S"
 
 /obj/item/gun/projectile/giskard/update_icon()

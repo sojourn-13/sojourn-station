@@ -21,8 +21,7 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.5
 	zoom_factor = 0.4
-	recoil_buildup = 0.5
-	one_hand_penalty = 5 //smg level
+	init_recoil = SMG_RECOIL(0.9)
 	serial_type = "SA"
 
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_SCOPE, GUN_MAGWELL)

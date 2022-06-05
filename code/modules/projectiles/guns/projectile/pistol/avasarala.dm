@@ -13,8 +13,7 @@
 	can_dual = TRUE
 	damage_multiplier = 1
 	penetration_multiplier = 0.9
-	recoil_buildup = 8
-	one_hand_penalty = 12
+	init_recoil = HANDGUN_RECOIL(1.8)
 	unload_sound 	= 'sound/weapons/guns/interact/avasarala_unload.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/avasarala_cock.ogg'

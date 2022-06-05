@@ -21,10 +21,8 @@
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
-	recoil_buildup = 0.25
-	one_hand_penalty = 30 //you're not Stallone. LMG level.
+	init_recoil = HMG_RECOIL(1)
 	slowdown_hold = 1
-	brace_penalty = 20
 	init_firemodes = list(
 		FULL_AUTO_400,
 		BURST_5_ROUND,
@@ -127,7 +125,7 @@
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10)
 	price_tag = 1500
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
-	recoil_buildup = 0.5
+	init_recoil = LMG_RECOIL(0.7)
 
 	init_firemodes = list(
 		FULL_AUTO_600,
@@ -146,7 +144,7 @@
 	caliber = CAL_LRIFLE
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.2
-	recoil_buildup = 0.75
+	init_recoil = LMG_RECOIL(0.8)
 	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/automatic/lmg/tk/update_icon()

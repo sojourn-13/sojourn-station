@@ -13,7 +13,7 @@
 	price_tag = 800
 	damage_multiplier = 1.4
 	penetration_multiplier = 1.3
-	recoil_buildup = 8
+	init_recoil = HANDGUN_RECOIL(1.2)
 	zoom_factor = 0.2
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
@@ -52,8 +52,7 @@
 	price_tag = 350
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.3
-	recoil_buildup = 3.5
-	one_hand_penalty = 6
+	init_recoil = HANDGUN_RECOIL(1.1)
 	zoom_factor = 0
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "H&S"
@@ -71,7 +70,6 @@
 	price_tag = 900
 	damage_multiplier = 1
 	penetration_multiplier = 1.5
-	recoil_buildup = 5
-	one_hand_penalty = 8
+	init_recoil = HANDGUN_RECOIL(1)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_50, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "SA" //Hand made good old gun I guess?

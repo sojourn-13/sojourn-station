@@ -11,7 +11,6 @@
 	price_tag = 1000
 	damage_multiplier = 1.4 //From havelock.dm
 	penetration_multiplier = 1.4
-	recoil_buildup = 30 //Arbitrary value
 	max_upgrades = 0 //Upgrading this revolver destorys its stats
 	serial_type = "INDEX" //We live in a suscity
 	serial_shown = FALSE
@@ -36,11 +35,10 @@
 	AddComponent(/datum/component/atom_sanity, sanity_value, "")
 
 	//var/gun_pattern = pick("pistol","magnum","shotgun","rifle","sniper","gyro","cap","rocket","grenade")
-
+	var/random_recoil = rand(0.8, 1.2)
+	recoil = recoil.modifyAllRatings(random_recoil)
 	damage_multiplier += pick(-0.2,-0.1,0,0.1,0.2)
 	penetration_multiplier += pick(-0.2,-0.1,0,0.1,0.2)
-	recoil_buildup += rand(-(recoil_buildup / 5),(recoil_buildup / 5))
-
 	. = ..()
 
 /obj/item/gun/projectile/revolver/artwork_revolver/get_item_cost(export)

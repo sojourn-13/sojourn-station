@@ -13,8 +13,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.2
-	recoil_buildup = 4
-	one_hand_penalty = 7
+	init_recoil = HANDGUN_RECOIL(1.3)
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	auto_eject = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
@@ -36,8 +35,7 @@
 	icon_state = "ladon"
 	item_state = "ladon"
 	damage_multiplier = 1
-	recoil_buildup = 3
-	one_hand_penalty = 7
+	init_recoil = HANDGUN_RECOIL(1.2)
 	serial_type = "H&S"
 
 /obj/item/gun/projectile/ladon/sa
@@ -46,6 +44,5 @@
 	icon_state = "ladon_alt"
 	item_state = "ladon_alt"
 	damage_multiplier = 1.1
-	recoil_buildup = 4
-	one_hand_penalty = 8
+	init_recoil = HANDGUN_RECOIL(1.1)
 	serial_type = "SA"

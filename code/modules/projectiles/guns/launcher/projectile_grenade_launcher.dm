@@ -18,7 +18,7 @@
 	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'   //Placeholder, could use a new sound
 	max_shells = 3
-	recoil_buildup = 20
+	init_recoil = HANDGUN_RECOIL(3)
 	twohanded = TRUE
 	serial_type = "SA"
 

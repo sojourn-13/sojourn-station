@@ -20,7 +20,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_CALIBRE_35)
 	suitable_cell = /obj/item/cell/medium
 	fire_delay = 5
-	recoil_buildup = 2
+	init_recoil = CARBINE_RECOIL(1)
 	can_dual = TRUE
 	damage_multiplier = 1.2
 	projectile_type=/obj/item/projectile/bullet/pistol_35/rubber/soporific
@@ -39,7 +39,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	suitable_cell = /obj/item/cell/medium
 	fire_delay = 12
-	recoil_buildup = 6
+	init_recoil = CARBINE_RECOIL(1.1)
 	can_dual = TRUE
 	damage_multiplier = 1.3
 	w_class = ITEM_SIZE_NORMAL
@@ -74,7 +74,7 @@
 	slot_flags = SLOT_BACK
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_STEEL = 20, MATERIAL_SILVER = 15, MATERIAL_GOLD = 12, MATERIAL_PLATINUM = 0.5)
 	price_tag = 2500
-	recoil_buildup = 15
+	init_recoil = CARBINE_RECOIL(1.3)
 	projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/soporific
 	can_dual = FALSE
 	damage_multiplier = 1.2
@@ -107,7 +107,7 @@
 	slot_flags = SLOT_BACK
 	charge_cost = 300
 	suitable_cell = /obj/item/cell/large
-	recoil_buildup = 2
+	init_recoil = CARBINE_RECOIL(1.2)
 	can_dual = FALSE
 	twohanded = TRUE
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
