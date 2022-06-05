@@ -14,9 +14,8 @@
 	mag_well = MAG_WELL_H_PISTOL|MAG_WELL_PISTOL
 	damage_multiplier = 1.1
 	penetration_multiplier = 0.9
-	recoil_buildup = 3
+	init_recoil = HANDGUN_RECOIL(0.9)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
-	one_hand_penalty = 5
 	serial_type = "Absolute"
 
 /obj/item/gun/projectile/mk58/update_icon()
@@ -47,7 +46,7 @@
 	mag_well = MAG_WELL_PISTOL
 	caliber = CAL_MAGNUM
 	damage_multiplier = 0.9
-	recoil_buildup = 4
+	init_recoil = HANDGUN_RECOIL(0.8)
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL)
 
 /obj/item/gun/projectile/mk58/wood/update_icon()

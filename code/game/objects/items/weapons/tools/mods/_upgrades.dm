@@ -400,11 +400,13 @@
 	if(weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT])
 		G.move_delay *= weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_RECOIL])
-		G.recoil_buildup *= weapon_upgrades[GUN_UPGRADE_RECOIL]
+		G.recoil = G.recoil.modifyAllRatings(weapon_upgrades[GUN_UPGRADE_RECOIL])
 	if(weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH])
 		G.muzzle_flash *= weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]
 	if(tool_upgrades[UPGRADE_BULK])
 		G.extra_bulk += weapon_upgrades[UPGRADE_BULK]
+	if(weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
+		G.recoil = G.recoil.modifyRating(_one_hand_penalty = weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
 	if(weapon_upgrades[GUN_UPGRADE_SILENCER])
 		G.silenced = weapon_upgrades[GUN_UPGRADE_SILENCER]
 	if(weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE])
@@ -638,6 +640,7 @@
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION])
 			to_chat(user, SPAN_NOTICE("Modifies projectile radiation damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION]] damage points"))
+
 
 		if(weapon_upgrades[GUN_UPGRADE_RECOIL])
 			var/amount = weapon_upgrades[GUN_UPGRADE_RECOIL]-1

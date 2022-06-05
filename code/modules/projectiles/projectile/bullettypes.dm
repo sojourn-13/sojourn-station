@@ -15,6 +15,7 @@
 
 	affective_damage_range = 2
 	affective_ap_range = 2
+	recoil = 3
 
 /obj/item/projectile/bullet/pistol_35/rubber
 	name = "rubber bullet"
@@ -24,6 +25,7 @@
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
+	recoil = 2
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific
 	name = "soporific coated rubber bullet"
@@ -59,6 +61,7 @@
 	affective_damage_range = 4
 	affective_ap_range = 4
 	can_ricochet = TRUE
+	recoil = 5
 
 /obj/item/projectile/bullet/pistol_35/practice
 	name = "practice bullet"
@@ -69,6 +72,7 @@
 	sharp = FALSE
 	step_delay = 0.75
 	can_ricochet = FALSE
+	recoil = 2
 
 /obj/item/projectile/bullet/pistol_35/lethal
 	name = "hollow-point bullet"
@@ -81,6 +85,7 @@
 	embed = TRUE
 	sharp = TRUE
 	step_delay = 0.65
+	recoil = 2
 
 /obj/item/projectile/bullet/pistol_35/scrap
 	damage_types = list(BRUTE = 12)
@@ -88,6 +93,7 @@
 
 	affective_damage_range = 1
 	affective_ap_range = 1
+	recoil = 1
 
 /obj/item/projectile/bullet/pistol_35/biomatter
 	name = "biomatter bullet"
@@ -100,6 +106,7 @@
 	sharp = FALSE
 	step_delay = 0.65
 	check_armour = ARMOR_BIO
+	recoil = 1
 
 //Revolvers and high-caliber pistols
 //*********************************//
@@ -113,6 +120,7 @@
 
 	affective_damage_range = 3
 	affective_ap_range = 3
+	recoil = 4
 
 /obj/item/projectile/bullet/magnum_40/practice
 	name = "practice bullet"
@@ -123,6 +131,7 @@
 	sharp = FALSE
 	can_ricochet = FALSE
 	step_delay = 0.4
+	recoil = 2
 
 /obj/item/projectile/bullet/magnum_40/hv
 	damage_types = list(BRUTE = 20)
@@ -132,6 +141,7 @@
 	nocap_structures = TRUE //Door breaching
 	affective_damage_range = 4
 	affective_ap_range = 4
+	recoil = 6
 
 /obj/item/projectile/bullet/magnum_40/rubber
 	name = "rubber bullet"
@@ -142,6 +152,7 @@
 	embed = FALSE
 	sharp = FALSE
 	step_delay = 0.5
+	recoil = 2
 
 /obj/item/projectile/bullet/magnum_40/rubber/pepperball
 	name = "pepperball"
@@ -187,12 +198,14 @@
 	embed = TRUE
 	sharp = TRUE
 	step_delay = 0.5
+	recoil = 2
 
 /obj/item/projectile/bullet/magnum_40/scrap
 	damage_types = list(BRUTE = 20)
 	armor_penetration = 5
 	affective_damage_range = 1
 	affective_ap_range = 1
+	recoil = 1
 
 /obj/item/projectile/bullet/magnum_40/biomatter
 	name = "biomatter bullet"
@@ -205,6 +218,7 @@
 	sharp = FALSE
 	step_delay = 0.65
 	check_armour = ARMOR_BIO
+	recoil = 2
 
 /// .50 Kurtz ///
 /obj/item/projectile/bullet/kurtz_50
@@ -215,6 +229,7 @@
 	step_delay = 0.65
 	affective_damage_range = 3
 	affective_ap_range = 3
+	recoil = 7
 
 /obj/item/projectile/bullet/kurtz_50/rubber
 	name = "rubber bullet"
@@ -225,6 +240,7 @@
 	armor_penetration = 0
 	can_ricochet = TRUE
 	step_delay = 0.75
+	recoil = 5
 
 /obj/item/projectile/bullet/kurtz_50/practice
 	name = "practice bullet"
@@ -234,6 +250,7 @@
 	embed = FALSE
 	can_ricochet = FALSE
 	step_delay = 0.75
+	recoil = 5
 
 /obj/item/projectile/bullet/kurtz_50/lethal
 	name = "hollow-point bullet"
@@ -244,6 +261,7 @@
 	penetrating = 0
 	can_ricochet = FALSE
 	step_delay = 0.8
+	recoil = 6
 
 /obj/item/projectile/bullet/kurtz_50/hv
 	name = "AV bullet"
@@ -255,6 +273,7 @@
 	affective_damage_range = 4
 	affective_ap_range = 4
 	nocap_structures = TRUE //We can breach doors rather well
+	recoil = 10
 
 
 //Carbines and rifles
@@ -270,6 +289,7 @@
 	step_delay = 0.3
 	affective_damage_range = 7
 	affective_ap_range = 7
+	recoil = 2
 
 /obj/item/projectile/bullet/light_rifle_257/practice
 	name = "practice bullet"
@@ -280,6 +300,7 @@
 	sharp = FALSE
 	can_ricochet = FALSE
 	step_delay = 0.5
+	recoil = 1
 
 /obj/item/projectile/bullet/light_rifle_257/hv
 	damage_types = list(BRUTE = 20)
@@ -289,6 +310,7 @@
 	affective_damage_range = 8 //Can snipe
 	affective_ap_range = 8
 	nocap_structures = TRUE //RATARATARAT down a door
+	recoil = 4
 
 /obj/item/projectile/bullet/light_rifle_257/rubber
 	name = "rubber bullet"
@@ -301,6 +323,7 @@
 	sharp = FALSE
 	can_ricochet = TRUE
 	step_delay = 0.9
+	recoil = 1
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
@@ -313,12 +336,14 @@
 	embed = TRUE
 	sharp = TRUE
 	step_delay = 0.6
+	recoil = 1
 
 /obj/item/projectile/bullet/light_rifle_257/scrap
 	damage_types = list(BRUTE = 18)
 	armor_penetration = 7
 	affective_damage_range = 4
 	affective_ap_range = 4
+	recoil = 1
 
 /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 	muzzle_type = null
@@ -333,6 +358,7 @@
 	step_delay = 0.3
 	affective_damage_range = 7
 	affective_ap_range = 7
+	recoil = 8
 
 /obj/item/projectile/bullet/rifle_75/hv
 	damage_types = list(BRUTE = 22)
@@ -342,6 +368,7 @@
 	affective_damage_range = 8
 	affective_ap_range = 8
 	nocap_structures = TRUE //Helps against walls and doors
+	recoil = 12
 
 /obj/item/projectile/bullet/rifle_75/practice
 	name = "practice bullet"
@@ -351,6 +378,7 @@
 	embed = FALSE
 	sharp = FALSE
 	can_ricochet = FALSE
+	recoil = 4
 
 /obj/item/projectile/bullet/rifle_75/rubber
 	name = "rubber bullet"
@@ -363,6 +391,7 @@
 	sharp = FALSE
 	can_ricochet = TRUE
 	step_delay = 0.9
+	recoil = 4
 
 /obj/item/projectile/bullet/rifle_75/rubber/soporific
 	name = "soporific coated rubber bullet"
@@ -391,12 +420,14 @@
 	embed = TRUE
 	sharp = TRUE
 	step_delay = 0.8
+	recoil = 6
 
 /obj/item/projectile/bullet/rifle_75/scrap
 	damage_types = list(BRUTE = 22)
 	armor_penetration = 10
 	affective_damage_range = 3
 	affective_ap_range = 3
+	recoil = 3
 
 /// .408 OMNI ///
 
@@ -408,6 +439,7 @@
 	step_delay = 0.3
 	affective_damage_range = 8
 	affective_ap_range = 8
+	recoil = 10
 
 /obj/item/projectile/bullet/heavy_rifle_408/rubber
 	name = "rubber bullet"
@@ -420,6 +452,7 @@
 	sharp = FALSE
 	can_ricochet = TRUE
 	step_delay = 0.9
+	recoil = 8
 
 /obj/item/projectile/bullet/heavy_rifle_408/practice
 	name = "practice bullet"
@@ -430,6 +463,7 @@
 	sharp = FALSE
 	can_ricochet = FALSE
 	step_delay = 0.5
+	recoil = 7
 
 /obj/item/projectile/bullet/heavy_rifle_408/hv
 	name = "sabot penetrator"
@@ -440,6 +474,7 @@
 	affective_damage_range = 9 //Sniping cal
 	affective_ap_range = 9
 	nocap_structures = TRUE //anit-wall/door
+	recoil = 14
 
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
@@ -452,12 +487,14 @@
 	embed = TRUE
 	sharp = TRUE
 	step_delay = 0.5
+	recoil = 8
 
 /obj/item/projectile/bullet/heavy_rifle_408/scrap
 	damage_types = list(BRUTE = 20)
 	armor_penetration = 15 //half  of normal
 	affective_damage_range = 3
 	affective_ap_range = 3
+	recoil = 6
 
 ///Snowflake  ///
 
@@ -470,6 +507,27 @@
 	step_delay = 0.3
 	affective_damage_range = 9
 	affective_ap_range = 9
+	recoil = 5
+
+/obj/item/projectile/bullet/auto_460
+	damage_types = list(BRUTE = 50)
+	armor_penetration = 25
+	penetrating = 2
+	can_ricochet = TRUE
+	step_delay = 0.3
+	affective_damage_range = 8
+	affective_ap_range = 8
+	recoil = 12
+
+/obj/item/projectile/bullet/auto_460/scrap
+	damage_types = list(BRUTE = 25)
+	armor_penetration = 15
+	penetrating = 1
+	can_ricochet = TRUE
+	step_delay = 0.3
+	affective_damage_range = 5
+	affective_ap_range = 5
+	recoil = 10
 
 //Sniper rifles
 /obj/item/projectile/bullet/antim
@@ -482,6 +540,7 @@
 	hitscan = TRUE //so the PTR isn't useless as a sniper weapon
 	affective_damage_range = 10
 	affective_ap_range = 10
+	recoil = 40
 
 /obj/item/projectile/bullet/antim/lethal
 	damage_types = list(BRUTE = 60)
@@ -492,16 +551,19 @@
 	affective_damage_range = 9
 	affective_ap_range = 9
 	penetrating = -5
+	recoil = 20
 
 /obj/item/projectile/bullet/antim/scrap
 	damage_types = list(BRUTE = 63)
 	armor_penetration = 50
 	affective_damage_range = 8
 	affective_ap_range = 8
+	recoil = 30
 
 /obj/item/projectile/bullet/antim/ion
 	damage_types = list(BRUTE = 40)
 	armor_penetration = 40
+	recoil = 15
 
 /obj/item/projectile/bullet/antim/ion/on_impact(atom/target, blocked = FALSE)
 	. = ..()
@@ -517,6 +579,7 @@
 	hitscan = TRUE //It's a bullet, but its hitscan as its only used by snipers.
 	affective_damage_range = 12
 	affective_ap_range = 12 //Good rifling!
+	recoil = 35
 
 //Shotguns
 //*********************************//
@@ -531,6 +594,7 @@
 	//Slugs are meant for long range shooting
 	affective_damage_range = 5
 	affective_ap_range = 8
+	recoil = 16
 
 /obj/item/projectile/bullet/shotgun/beanbag
 	name = "beanbag"
@@ -543,6 +607,7 @@
 	step_delay = 1.65
 	affective_damage_range = 5
 	affective_ap_range = 2
+	recoil = 8
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific
 	name = "soporific coated beanbag"
@@ -568,11 +633,13 @@
 	embed = FALSE
 	affective_damage_range = 1
 	affective_ap_range = 1
+	recoil = 5
 
 /obj/item/projectile/bullet/shotgun/incendiary
 	//This is the best ammo for pvp in a shotgun, beating the stunshell with its pain and cooks anyone in any armor!
 	damage_types = list(BURN = 45) //We deal most of are damage with fire stacks
 	var/fire_stacks = 4 //40 pain a fire proc through ALL armor!
+	recoil = 38
 
 /obj/item/projectile/bullet/shotgun/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -586,17 +653,20 @@
 	armor_penetration = 5
 	affective_damage_range = 3
 	affective_ap_range = 4
+	recoil = 8
 
 /obj/item/projectile/bullet/shotgun/beanbag/scrap
 	damage_types = list(BRUTE = 9)
 	agony = 55
 	affective_damage_range = 1
 	affective_ap_range = 1
+	recoil = 6
 
 /obj/item/projectile/bullet/pellet/shotgun/scrap
 	damage_types = list(BRUTE = 9)
 	affective_damage_range = 4
 	affective_ap_range = 4
+	recoil = 4
 
 //Railgun
 /obj/item/projectile/bullet/shotgun/railgun
@@ -605,27 +675,32 @@
 	can_ricochet = FALSE
 	affective_damage_range = 10
 	affective_ap_range = 10
+	recoil = 16
 
 /obj/item/projectile/bullet/shotgun/beanbag/railgun
 	hitscan = TRUE
 	can_ricochet = FALSE
 	affective_damage_range = 10
 	affective_ap_range = 10
+	recoil = 12
 
 /obj/item/projectile/bullet/shotgun/incendiary/railgun
 	hitscan = TRUE
 	can_ricochet = FALSE
 	affective_damage_range = 10
 	affective_ap_range = 10
+	recoil = 18
 
 /obj/item/projectile/bullet/kurtz_50/railgun
 	nocap_structures = TRUE
 	hitscan = TRUE
 	can_ricochet = FALSE
+	recoil = 11
 
 /obj/item/projectile/bullet/kurtz_50/rubber/railgun
 	hitscan = TRUE
 	can_ricochet = FALSE
+	recoil = 7
 
 /obj/item/projectile/bullet/kurtz_50/incendiary
 	damage_types = list(BRUTE = 10)
@@ -635,6 +710,7 @@
 	can_ricochet = FALSE
 	knockback = 0
 	var/fire_stacks = 4
+	recoil = 17
 
 /obj/item/projectile/bullet/kurtz_50/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -646,6 +722,7 @@
 /obj/item/projectile/bullet/heavy_rifle_408/railgun
 	can_ricochet = FALSE
 	icon_state = "toxin"
+	recoil = 21
 
 /obj/item/projectile/bullet/lrifle/incendiary
 	icon_state = "fireball"
@@ -655,6 +732,7 @@
 	embed = FALSE
 	can_ricochet = FALSE
 	knockback = 0
+	recoil = 18
 	var/fire_stacks = 4
 
 /obj/item/projectile/bullet/lrifle/incendiary/on_hit(atom/target, blocked = FALSE)
@@ -679,6 +757,7 @@
 	affective_damage_range = 12
 	affective_ap_range = 12
 	hitscan = TRUE
+	recoil = 38
 
 //Should do about 68 damage at 1 tile distance (adjacent), and 40 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
@@ -694,6 +773,7 @@
 	step_delay = 0.9
 	affective_damage_range = 1
 	affective_ap_range = 1
+	recoil = 11
 
 /obj/item/projectile/bullet/pellet/shotgun/Initialize()
 	. = ..()
@@ -706,12 +786,14 @@
 	pellets = 6 // but more times
 	range_step = 2 //and at longer range
 	step_delay = 1.1 //we travel a bit slower
+	recoil = 13
 
 /obj/item/projectile/bullet/pellet/shotgun/flak //Devastating at point blank, but worthless past
 	name = "jagged shrapnel"
 	damage_types = list(BRUTE = 11) //Fired in bursts of three, for a total of 12 pellets at touch distances.
 	pellets = 3
 	agony = 0 //No.
+	recoil = 5
 
 //'Laser' buckshot. Effectively just burn buckshot used for the Abdication.
 /obj/item/projectile/bullet/pellet/shotgun/energy
@@ -724,6 +806,7 @@
 	sharp = FALSE
 	muzzle_type = /obj/effect/projectile/plasma/muzzle/red
 	check_armour = ARMOR_ENERGY
+	recoil = 7
 
 //For the love of God don't make this common.
 /obj/item/projectile/bullet/shotgun/payload
@@ -739,6 +822,7 @@
 	sharp = TRUE
 	edge = TRUE
 	step_delay = 0.9
+	recoil = 25
 
 /obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
 	explosion(target, 0, 0, 3)
@@ -753,6 +837,7 @@
 	invisibility = 101
 	damage_types = list(BRUTE = 1)
 	embed = FALSE
+	recoil = 2
 
 /obj/item/projectile/bullet/cap
 	name = "cap"
@@ -760,6 +845,7 @@
 	nodamage = TRUE
 	embed = FALSE
 	sharp = FALSE
+	recoil = 1
 
 /obj/item/projectile/bullet/crossbow_bolt
 	name = "bolt"
@@ -770,7 +856,7 @@
 	step_delay = 0.9
 	affective_damage_range = 7
 	affective_ap_range = 7
-
+	recoil = 2
 
 /obj/item/projectile/bullet/crossbow_bolt/lethal
 	name = "bolt"
@@ -779,6 +865,7 @@
 	agony = 29
 	armor_penetration = 5
 	step_delay = 0.9
+	recoil = 1
 
 /obj/item/projectile/bullet/crossbow_bolt/hv
 	name = "bolt"
@@ -790,6 +877,7 @@
 	affective_damage_range = 9
 	affective_ap_range = 9
 	nocap_structures = TRUE //Can do well againt walls and doors
+	recoil = 5
 
 
 /obj/item/projectile/bullet/rod_bolt
@@ -803,6 +891,7 @@
 	affective_damage_range = 7
 	affective_ap_range = 7
 	var/obj/item/create_type = /obj/item/stack/rods
+	recoil = 8 //Its op
 
 /obj/item/projectile/bullet/rod_bolt/on_impact(atom/A)
 	..()
@@ -819,6 +908,7 @@
 	affective_damage_range = 7
 	affective_ap_range = 7
 	create_type = null
+	recoil = 10
 
 
 /obj/item/projectile/bullet/rod_bolt/rcd
@@ -832,6 +922,7 @@
 	affective_damage_range = 7
 	affective_ap_range = 7
 	create_type = /obj/item/arrow/rcd
+	recoil = 6 //Scrap verson
 
 /obj/item/projectile/bullet/rod_bolt/rcd/superhot
 	name = "flashforged superheated rod"
@@ -844,3 +935,4 @@
 	affective_damage_range = 7
 	affective_ap_range = 7
 	create_type = null
+	recoil = 8

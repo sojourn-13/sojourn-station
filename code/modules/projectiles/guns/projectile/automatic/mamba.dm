@@ -17,7 +17,7 @@
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.0
 	zoom_factor = 0.4
-	recoil_buildup = 10
+	init_recoil = CARBINE_RECOIL(1)
 	folding_stock = TRUE
 	can_dual = FALSE //please god please please NO MORE NO MORE GOD, PLEASE
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL, GUN_SIGHT)
@@ -26,6 +26,7 @@
 		BURST_2_ROUND,
 		FULL_AUTO_400
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/mamba/update_icon()
 	..()
@@ -69,7 +70,7 @@
 	penetration_multiplier = 1.2
 	extra_damage_mult_scoped = 0.2
 	zoom_factor = 0.8
-	recoil_buildup = 6
+	init_recoil = CARBINE_RECOIL(1.1)
 	folding_stock = FALSE
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
@@ -94,7 +95,7 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.1
 	zoom_factor = 0.4
-	recoil_buildup = 6
+	init_recoil = CARBINE_RECOIL(1)
 	folding_stock = FALSE
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -161,9 +162,12 @@
 	penetration_multiplier = 1.4
 	zoom_factor = 1.2
 	extra_damage_mult_scoped = 0.4
-	recoil_buildup = 12
+	init_recoil = CARBINE_RECOIL(1.2)
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
 	init_firemodes = list(
 		list(mode_name="semi-automatic", mode_desc = "A semi-automatic firemode.", mode_type = /datum/firemode/automatic, fire_delay=15, icon="auto"
 		))
+
+/obj/item/gun/projectile/automatic/mamba/copperhead/python/Initialize()
+	. = ..()

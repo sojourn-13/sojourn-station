@@ -18,8 +18,7 @@
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 25)
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.1
-	recoil_buildup = 1 //Using this should be a breaze
-	one_hand_penalty = 7 //Light caliber + well balanced
+	init_recoil = CARBINE_RECOIL(0.9)
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	force = WEAPON_FORCE_ROBUST
 	gun_tags = list(GUN_PROJECTILE, GUN_BAYONET, GUN_SCOPE)

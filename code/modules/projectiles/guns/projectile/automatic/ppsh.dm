@@ -16,13 +16,11 @@
 	matter = list(MATERIAL_PLASTEEL = 28, MATERIAL_PLASTIC = 10)
 	price_tag = 1500
 	penetration_multiplier = 1.2
-	recoil_buildup = 0.75
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
-	one_hand_penalty = 20
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	auto_eject = 1
-	brace_penalty = 5 //Holding the line, not pushing
+	init_recoil = SMG_RECOIL(1.2)
 	init_firemodes = list(
 		FULL_AUTO_800_NOLOSS,
 		BURST_3_ROUND_NOLOSS,
@@ -59,8 +57,7 @@
 	price_tag = 1200
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.0
-	recoil_buildup = 1.25
-	one_hand_penalty = 20
+	init_recoil = SMG_RECOIL(1.3)
 	auto_eject = 0
 	serial_type = "NM"
 

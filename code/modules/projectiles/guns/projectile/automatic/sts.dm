@@ -18,8 +18,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	damage_multiplier = 1.2
-	recoil_buildup = 1.75
-	one_hand_penalty = 13 //automatic rifle level
+	init_recoil = RIFLE_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 	serial_type = "SA"
 
@@ -96,8 +95,7 @@
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 6)
 	price_tag = 600
-	recoil_buildup = 4
-	one_hand_penalty = 20
+	init_recoil = RIFLE_RECOIL(1.2)
 	saw_off = FALSE
 
 /obj/item/gun/projectile/automatic/sts/rifle
@@ -112,8 +110,7 @@
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 1
 	penetration_multiplier = 1.2
-	recoil_buildup = 2
-	one_hand_penalty = 20
+	init_recoil = RIFLE_RECOIL(1.3)
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn
@@ -134,8 +131,7 @@
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	penetration_multiplier = 1.0
-	recoil_buildup = 3
-	one_hand_penalty = 20 //automatic rifle level
+	init_recoil = RIFLE_RECOIL(1.4)
 	saw_off = FALSE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	init_firemodes = list(
@@ -155,8 +151,7 @@
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 1.2 //Well oiled
-	recoil_buildup = 1.75
-	one_hand_penalty = 18
+	init_recoil = RIFLE_RECOIL(1.5)
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield
@@ -178,8 +173,7 @@
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 1.0 //Rifle was fine
-	recoil_buildup = 2.5
-	one_hand_penalty = 22 //automatic rifle level
+	init_recoil = RIFLE_RECOIL(1.6)
 	saw_off = FALSE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	serial_type = "NM"
@@ -202,8 +196,7 @@
 	price_tag = 1750
 	penetration_multiplier = 1.1
 	damage_multiplier = 1.1
-	recoil_buildup = 12
-	one_hand_penalty = 25
+	init_recoil = RIFLE_RECOIL(1.7)
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/batrifle_cock.ogg'
 	saw_off = TRUE
@@ -221,7 +214,6 @@
 	w_class = ITEM_SIZE_BULKY
 	penetration_multiplier = 0.8
 	damage_multiplier = 1
-	recoil_buildup = 20
-	one_hand_penalty = 30
+	init_recoil = RIFLE_RECOIL(1.8)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	saw_off = FALSE

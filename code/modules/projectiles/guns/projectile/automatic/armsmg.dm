@@ -18,8 +18,7 @@
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.5
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
-	recoil_buildup = 2 // Low damage, low recoil, on par with the wirbelwind but less damage and can be used 1 handed.
-	one_hand_penalty = 0
+	init_recoil = EMBEDDED_RECOIL(0.8)
 	init_firemodes = list(
 		FULL_AUTO_400_NOLOSS,
 		BURST_3_ROUND_NOLOSS,

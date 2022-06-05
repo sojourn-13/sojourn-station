@@ -12,8 +12,7 @@
 	price_tag = 1250
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.2
-	recoil_buildup = 2
-	one_hand_penalty = 25
+	init_recoil = CARBINE_RECOIL(1.1)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
@@ -57,7 +56,7 @@
 	matter = null
 	force = 5
 	max_shells = 3
-	recoil_buildup = 8
+	init_recoil = RIFLE_RECOIL(1.2)
 	safety = FALSE
 	twohanded = FALSE
 	load_method = SINGLE_CASING
@@ -82,8 +81,7 @@
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	w_class = ITEM_SIZE_SMALL
 	can_dual = TRUE
-	recoil_buildup = 4
-	one_hand_penalty = 20
+	init_recoil = CARBINE_RECOIL(1.2)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND

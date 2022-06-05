@@ -497,7 +497,7 @@
 	overdose = REAGENTS_OVERDOSE/3
 	addiction_chance = 0.01 //Will STILL likely always be addicting
 	nerve_system_accumulations = 10
-	strength = 0.1
+	strength = 0.5 //VERY poisonous, better get treated!
 	heating_point = 523
 	heating_products = list("toxin")
 

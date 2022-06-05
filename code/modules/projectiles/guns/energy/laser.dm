@@ -98,8 +98,7 @@
 	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GLASS = 4)
 	price_tag = 1100
 	damage_multiplier = 0.8
-	recoil_buildup = 2
-	one_hand_penalty = 3
+	init_recoil = CARBINE_RECOIL(0.2)
 	projectile_type = /obj/item/projectile/beam
 	cell_type = /obj/item/cell/small
 	charge_cost = 40
@@ -221,7 +220,7 @@
 	cell_type = /obj/item/cell/medium
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 4, MATERIAL_GLASS = 10, MATERIAL_URANIUM = 2)
-	recoil_buildup = 2
+	init_recoil = CARBINE_RECOIL(0.1)
 	damage_multiplier = 0.75
 	penetration_multiplier = 1.0
 	price_tag = 3000
@@ -284,7 +283,7 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_STEEL = 8, MATERIAL_WOOD = 10, MATERIAL_SILVER = 4)
 	fire_delay = 30
-	recoil_buildup = 12
+	init_recoil = CARBINE_RECOIL(1)
 	damage_multiplier = 1
 	penetration_multiplier = 0.7
 	price_tag = 900
@@ -293,6 +292,7 @@
 		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/Taser.ogg', charge_cost = 200, icon="stun"),
 		list(mode_name="buckshot", projectile_type=/obj/item/projectile/bullet/pellet/shotgun/energy, fire_sound='sound/weapons/guns/fire/sunrise_fire.ogg', charge_cost = 100, icon="kill"),
 	)
+	serial_type = "NM"
 
 /obj/item/gun/energy/peacekeeper/update_icon()
 	..()
@@ -346,6 +346,7 @@
 		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound = 'sound/weapons/Taser.ogg', fire_delay=80, icon="stun"),
 		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Laser.ogg', fire_delay=40, icon="kill"),
 	)
+	serial_type = "NM"
 
 /obj/item/gun/energy/zwang/update_icon()
 	..()

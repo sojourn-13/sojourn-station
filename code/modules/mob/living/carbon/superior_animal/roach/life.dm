@@ -18,18 +18,20 @@
 				if(prob(35))	// 35 percents chance that the roach is hungry
 					//first, check for potential food nearby
 					var/list/eatTargets = new
-					for(var/mob/living/carbon/C in getPotentialTargets())
-						if ((C.stat == DEAD) && ((istype(C, /mob/living/carbon/human)) || (istype(C, /mob/living/carbon/superior_animal))))
-							eatTargets += C
+					var/turf/our_turf = get_turf(src)
+					if (our_turf) //If we're not in anything, continue
+						for(var/mob/living/carbon/C as anything in hearers(src, viewRange))
+							if ((C.stat == DEAD) && ((istype(C, /mob/living/carbon/human)) || (istype(C, /mob/living/carbon/superior_animal))))
+								eatTargets += C
 
-					for(var/obj/effect/spider/S in getPotentialTargets()) //S for Spider
-						if (((istype(S, /obj/effect/spider/eggcluster)) || (istype(S, /obj/effect/spider/spiderling))))
-							eatTargets += S
+						for(var/obj/effect/spider/S in view(src, viewRange)) //S for Spider
+							if (((istype(S, /obj/effect/spider/eggcluster)) || (istype(S, /obj/effect/spider/spiderling))))
+								eatTargets += S
 
-					if(snacker)
-						for(var/obj/item/reagent_containers/food/snacks/food in oview(src,3))
-							if(istype(food.loc, /turf))
-								eatTargets += food
+						if(snacker)
+							for(var/obj/item/reagent_containers/food/snacks/food in view(src,3))
+								if(istype(food.loc, /turf))
+									eatTargets += food
 
 
 					eat_target = safepick(nearestObjectsInList(eatTargets,src,1))
@@ -53,7 +55,7 @@
 
 					else if(fed <= 0)
 						return
-						
+
 					busy = LAYING_EGG
 					src.visible_message(SPAN_NOTICE("\The [src] begins to lay an egg."))
 					stop_automated_movement = 1

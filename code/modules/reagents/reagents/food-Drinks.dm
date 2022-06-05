@@ -3082,7 +3082,7 @@
 	strength = 38 //.38 subnose if only!
 
 	glass_unique_appearance = TRUE
-	glass_icon_state = "nior"
+	glass_icon_state = "noir"
 	glass_name = "Noir"
 	glass_desc = "For when things aren't always black and white."
 

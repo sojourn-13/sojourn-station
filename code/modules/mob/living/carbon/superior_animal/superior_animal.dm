@@ -15,6 +15,21 @@
 
 	var/eating_time = 900
 
+	///How delayed are our ranged attacks, in ticks. Reduces DPS.
+	var/fire_delay = 0
+
+	/// Value used when resetting fire_delay. initial() works but breaks vareditting.
+	var/fire_delay_initial = 0
+
+	///How delayed are our melee attacks, in ticks. Reduces DPS.
+	var/melee_delay = 0
+
+	/// Value used when resetting melee_delay. initial() works but breaks vareditting.
+	var/melee_delay_initial = 0
+
+	/// Do we charge our melee attacks if we aren't adjacent?
+	var/do_melee_if_not_adjacent = TRUE
+
 	/// Number of delayed AI ticks, used for delaying ranged attacks. At 9, ranged mobs will be delayed by one tick after target. TODO: Create a override.
 	var/delayed = 0
 	/// How much we increment this mob's delayed var each time.
@@ -25,15 +40,22 @@
 	var/retarget_rush_timer_increment = 10 SECONDS //arbitrary value for now
 	/// Will this mob continue to fire even if LOS has been broken?
 	var/fire_through_wall = FALSE
-	/// Initial value of patience, make sure to match it with patience.
-	var/patience_initial = 10
 	/// How many ticks are we willing to wait before untargetting a mob that we can't see?
-	var/patience = 10
+	var/patience = 5
 
 	/// Telegraph message base for mobs that are range
 	var/range_telegraph = "aims their weapon at"
 	/// Telegraph message base for mobs that are melee
 	var/melee_telegraph = "readies to strike"
+
+	/// Telegraph message base for mobs that are targetting
+	var/target_telegraph = "prepares to fire at"
+	/// Telegraph message base for mobs that are retargetting shortly after losing target
+	var/rush_target_telegraph = "shifts its attention to"
+
+	/// Telegraph messages for when a mob is ticking down it's attack delays
+	var/range_charge_telegraph = "steadies their aim apon"
+	var/melee_charge_telegraph = "gathers their strength to attack"
 
 	/// What color is our telegraph beam?
 	var/telegraph_beam_color = COLOR_YELLOW
@@ -191,6 +213,8 @@
 	// Variables for the following AI
 	var/obey_friends = TRUE // Do we obey only friends ?
 	var/mob/following = null // Who are we following?
+	/// The last mob this mob has followed, nulled on the first tick the mob is not following anymore. Make sure to assign this to the same value as following.
+	var/mob/last_followed = null // Who did we follow last?
 	var/follow_distance = 2 // How close do we stay?
 	var/follow_message = "nods and start following." // Message that the mob emote when they start following. Include the name of the one who follow at the end
 	var/stop_message = "nods and stop following." // Message that the mob emote when they stop following. Include the name of the one who follow at the end
@@ -277,14 +301,24 @@
 
 /mob/living/carbon/superior_animal/examine(mob/user)
 	..()
-	if (health < maxHealth * 0.25)
+	if (health < maxHealth * 0.10)
+		to_chat(user, SPAN_DANGER("It looks like they are on their last legs!"))
+	else if (health < maxHealth * 0.20)
 		to_chat(user, SPAN_DANGER("It's grievously wounded!"))
-	else if (health < maxHealth * 0.50)
+	else if (health < maxHealth * 0.30)
 		to_chat(user, SPAN_DANGER("It's badly wounded!"))
-	else if (health < maxHealth * 0.75)
-		to_chat(user, SPAN_WARNING("It's wounded."))
+	else if (health < maxHealth * 0.40)
+		to_chat(user, SPAN_WARNING("Its wounds are mounting."))
+	else if (health < maxHealth * 0.50)
+		to_chat(user, SPAN_WARNING("It looks half dead."))
+	else if (health < maxHealth * 0.60)
+		to_chat(user, SPAN_WARNING("It looks like its been beaten up quite badly"))
+	else if (health < maxHealth * 0.70)
+		to_chat(user, SPAN_WARNING("It has accrued some lasting injuries."))
+	else if (health < maxHealth * 0.80)
+		to_chat(user, SPAN_WARNING("It has had minor damage done to it."))
 	else if (health < maxHealth)
-		to_chat(user, SPAN_WARNING("It's a bit wounded."))
+		to_chat(user, SPAN_WARNING("It has a few cuts and bruses."))
 
 
 // Same as breath but with innecesarry code removed and damage tripled. Environment pressure damage moved here since we handle moles.
@@ -396,6 +430,7 @@
 
 /mob/living/carbon/superior_animal/proc/handle_hostile_stance(var/atom/targetted_mob) //here so we can jump instantly to it if hostile stance is established
 	var/already_destroying_surroundings = FALSE
+	if(weakened) return
 	if(destroy_surroundings)
 		destroySurroundings()
 		already_destroying_surroundings = TRUE
@@ -406,17 +441,11 @@
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 		walk_to(src, targetted_mob, (comfy_range - 1), move_to_delay) //lets get a little closer than our optimal range
 		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
-			if (issuperiorhuman(src)) //TODO: convert to switch
-				visible_message(SPAN_WARNING("[src] snaps their attention to <font color = 'green'>[targetted_mob]</font>, fumbling to ready their weapon!"))
-			else
-				visible_message(SPAN_WARNING("[src] prepares to fire at <font color = 'green'>[targetted_mob]</font>!"))
+			visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"))
 			delayed = delay_amount
 			return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
 		else
-			if (issuperiorhuman(src))
-				visible_message(SPAN_WARNING("[src] quickly snaps their aim toward <font color = 'green'>[targetted_mob]</font>!"))
-			else
-				visible_message(SPAN_WARNING("[src] shifts its attention to <font color = 'green'>[targetted_mob]</font>!"))
+			visible_message(SPAN_WARNING("[src] [rush_target_telegraph] <font color = 'green'>[targetted_mob]</font>!"))
 
 	else if (!ranged)
 		stop_automated_movement = TRUE
@@ -433,11 +462,11 @@
 	if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !fire_through_wall)) //why attack if we can't even see the enemy
 		if (patience <= 0)
 			loseTarget()
-			patience = patience_initial
+			patience = initial(patience)
 		else
 			patience--
 		return
-	patience = patience_initial
+	patience = initial(patience)
 	if(!ranged)
 		prepareAttackOnTarget()
 	else if(ranged)
@@ -449,6 +478,7 @@
 		if(get_dist(src, targetted_mob) <= 6)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 		else
+			if(weakened) return
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 			walk_to(src, targetted_mob, 4, move_to_delay)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
@@ -531,17 +561,21 @@
 	if (can_burrow && bad_environment)
 		evacuate()
 
-	if(!AI_inactive)
-		handle_ai()
-		//Speaking
-		if(speak_chance && prob(speak_chance))
-			visible_emote(emote_see)
+	if (!weakened)
 
-		if((following) && !(findTarget())) // Are we following someone and not attacking something?
-			walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
+		if(!AI_inactive) //we dont need to handle ai if we're disabled
+			handle_ai()
+			//Speaking
 
-		if(!following && !(findTarget())) // Stop following
-			walk_to(src, 0)
+			if(speak_chance && prob(speak_chance))
+				visible_emote(emote_see)
+
+			if (following)
+				if (!target_mob) // Are we following someone and not attacking something?
+					walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
+			else if (!target_mob && last_followed)
+				walk_to(src, 0)
+				last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
 
 	if(life_cycles_before_sleep)
 		life_cycles_before_sleep--
@@ -569,29 +603,40 @@
  *	attack_type-The delay that will be used for this timer. Defines used by this defined in mobs.dm. Example: MELEE_TYPE.
  *	telegraph-Boolean. If false, no visual emote will be made.
  *	cast_beam-Boolean. If true, a beam will be cast from src to targetted_mob as a visual telegraph.
- **/
+**/
 /mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(var/atom/targetted_mob, proctocall, var/attack_type, var/telegraph = TRUE, var/cast_beam = TRUE)
 	if (check_if_alive()) //sanity
 		var/time_to_expire
 		switch(attack_type)
 			if (MELEE_TYPE)
-				time_to_expire = delay_for_melee
-				if (telegraph && (time_to_expire > 0)) //no telegraph needed if the attack is instant
-					visible_message(SPAN_WARNING("[src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
-				addtimer(CALLBACK(src, proctocall), time_to_expire) //awful hack because melee attacks are handled differently
+				if (do_melee_if_not_adjacent || Adjacent(targetted_mob))
+					time_to_expire = delay_for_melee
+					if (telegraph)
 
-			if (RANGED_TYPE)
+						if (!(melee_delay == 0)) //are we still charging our attack?
+							melee_delay--
+							visible_message(SPAN_WARNING("[src] [melee_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"))
+							return
+						else
+							melee_delay = melee_delay_initial
+
+						if (time_to_expire > 0)
+							visible_message(SPAN_WARNING("[src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+					addtimer(CALLBACK(src, proctocall), time_to_expire) //awful hack because melee attacks are handled differently
+
+			if (RANGED_TYPE || RANGED_RAPID_TYPE)
 				time_to_expire = delay_for_range
-				if (telegraph && (time_to_expire > 0))
-					visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
-					if (cast_beam)
-						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
-				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
+				if (telegraph) //no telegraph needed if the attack is instant
 
-			if (RANGED_RAPID_TYPE)
-				time_to_expire = delay_for_range //fun fact, this rapid range delay is used for delaying shots in a burst
-				if (telegraph && (time_to_expire > 0))
-					visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+					if (!(fire_delay == 0)) //are we still charging our attack?
+						fire_delay--
+						visible_message(SPAN_WARNING("[src] [range_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"))
+						return
+					else
+						fire_delay = fire_delay_initial
+
+					if (time_to_expire > 0)
+						visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
 					if (cast_beam)
 						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)

@@ -14,7 +14,7 @@
 	max_shells = 1
 	matter = list(MATERIAL_PLASTIC = 4, MATERIAL_STEEL = 2)
 	ammo_type = /obj/item/ammo_casing/flare
-	recoil_buildup = 1 //best gun in the game but its .22
+	init_recoil = HMG_RECOIL(0.01)
 	force = WEAPON_FORCE_WEAK
 	saw_off = FALSE
 	sharp = FALSE

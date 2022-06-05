@@ -1667,6 +1667,7 @@ var/list/rank_prefix = list(\
 
 /mob/living/carbon/human/gender_word(var/position, var/datum/gender/G = null) //Humans can adopt gender identities other than their own.
 	. = ..(position, G ? G : get_gender())
+
 /mob/living/carbon/human/need_breathe()
 	if(!(mNobreath in mutations))
 		return TRUE
