@@ -12,7 +12,6 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_STEEL = 1)
-	recoil_buildup = 1
 
 	//Racking and chambering
 	var/allow_racking = TRUE //Do we allow the racking of the shot?

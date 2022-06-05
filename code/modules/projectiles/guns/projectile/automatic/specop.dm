@@ -18,8 +18,7 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.15
 	zoom_factor = 0.2
-	recoil_buildup = 8
-	one_hand_penalty = 12
+	init_recoil = LMG_RECOIL(0.1)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_400_NOLOSS

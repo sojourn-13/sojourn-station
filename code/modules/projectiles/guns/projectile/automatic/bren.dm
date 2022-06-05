@@ -19,8 +19,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
-	recoil_buildup = 2
-	one_hand_penalty = 10 //automatic rifle level
+	init_recoil = LMG_RECOIL(1)
 	twohanded = TRUE
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 

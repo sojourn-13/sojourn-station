@@ -14,7 +14,7 @@
 	fire_delay = 20
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_SILVER = 6)
 	price_tag = 500
-	one_hand_penalty = 5
+	init_recoil = CARBINE_RECOIL(1)
 	twohanded = TRUE
 	init_firemodes = list(
 		WEAPON_NORMAL
@@ -30,7 +30,6 @@
 	recharge_time = 10
 	safety = FALSE
 	restrict_safety = TRUE
-	one_hand_penalty = 0 // It's mounted on the arm and there's no way to wield it.
 	twohanded = FALSE
 
 /obj/item/gun/energy/lasercannon/rnd

@@ -13,8 +13,7 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	price_tag = 850
-	recoil_buildup = 12
-	one_hand_penalty = 14
+	init_recoil = RIFLE_RECOIL(1.2)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/gladstone/sawn
 	serial_type = "H&S"
@@ -31,8 +30,7 @@
 	penetration_multiplier = 0.9
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 6)
 	price_tag = 450
-	recoil_buildup = 22
-	one_hand_penalty = 27 //full sized shotgun level
+	init_recoil = RIFLE_RECOIL(2.4)
 	saw_off = FALSE
 
 /obj/item/gun/projectile/shotgun/pump/gladstone/queen
@@ -52,7 +50,6 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 26)
 	price_tag = 20000 //Its amazing!
-	recoil_buildup = 12
-	one_hand_penalty = 30 //lets not really reward 1 handing
+	init_recoil = RIFLE_RECOIL(1.1)
 	saw_off = FALSE
 	serial_type = "BlueCross"

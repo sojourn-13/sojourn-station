@@ -9,7 +9,7 @@
 	desc = "If you're seeing this outside of a hardsuit, please report it and have fun."
 	fire_sound = 'sound/machines/hiss.ogg'
 	projectile_type = /obj/item/projectile/tether
-	fire_delay = 1
+	init_recoil = CARBINE_RECOIL(1)
 	charge_cost = 0
 	self_recharge = TRUE
 	twohanded = FALSE

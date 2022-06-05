@@ -13,7 +13,7 @@
 	fire_delay = 2
 	damage_multiplier = 1.1
 	penetration_multiplier  = 1.5
-	recoil_buildup = 15 //FORMERLY same as AMR, whos idea was this?
+	init_recoil = HMG_RECOIL(0.6)
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING|SPEEDLOADER
 	max_shells = 10
@@ -22,7 +22,6 @@
 	fire_sound_silenced = 'sound/weapons/guns/fire/hpistol_fire.ogg' //It makes it more quite but still a high caliber
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 500
-	one_hand_penalty = 15 //full sized rifle with bayonet is hard to keep on target
 	var/bolt_open = 0
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut") // Considering attached bayonet
 	sharp = TRUE //We have a knife!
@@ -45,11 +44,10 @@
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	price_tag = 75
 	sharp = 0
-	recoil_buildup = 50
+	init_recoil = HMG_RECOIL(0.8)
 	penetration_multiplier = 0.5
 	damage_multiplier = 0.9
 	fire_delay = 4
-	one_hand_penalty = 10
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
 	saw_off = FALSE

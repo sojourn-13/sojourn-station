@@ -93,6 +93,8 @@
 	var/range_shot = 1 //How far we been shot so far. We start at 1 to prevent runtimes with deviding by 0
 	var/serial_type_index_bullet = ""
 
+	var/recoil = 0
+
 /obj/item/projectile/Destroy()
 
 	QDEL_NULL(attached_effect)

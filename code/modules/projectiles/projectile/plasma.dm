@@ -10,6 +10,7 @@
 	affective_damage_range = 3
 	affective_ap_range = 5
 
+	recoil = 8
 	has_drop_off = TRUE
 
 	muzzle_type = /obj/effect/projectile/plasma/muzzle
@@ -17,29 +18,34 @@
 
 /obj/item/projectile/plasma/shell
 	damage_types = list(BURN = 36)
+	recoil = 12
 
 /obj/item/projectile/plasma/light
 	name = "light plasma bolt"
 	damage_types = list(BURN = 28)
 	armor_penetration = 0
+	recoil = 7
 
 /obj/item/projectile/plasma/heavy
 	name = "heavy plasma bolt"
 
 	affective_damage_range = 2
 	affective_ap_range = 3
+	recoil = 10
 
 	damage_types = list(BURN = 30)
 	armor_penetration = 30
 
 /obj/item/projectile/plasma/heavy/shell
 	damage_types = list(BURN = 42)
+	recoil = 24
 
 /obj/item/projectile/plasma/heavy/super_heavy
 	name = "superheavy plasma bolt"
 	damage_types = list(BURN = 50)
 	affective_damage_range = 1
 	affective_ap_range = 2
+	recoil = 30
 
 /obj/item/projectile/plasma/impact
 	name = "plasma impact bolt"
@@ -47,6 +53,7 @@
 	stun = 1
 	weaken = 5
 	knockback = 2
+	recoil = 60
 
 /obj/item/projectile/plasma/stun
 	name = "stun plasma bolt"
@@ -54,6 +61,7 @@
 	agony = 30
 	damage_types = list(HALLOS = 0)
 	impact_type = /obj/effect/projectile/stun/impact
+	recoil = 7
 
 //laser tag stuff
 /obj/item/projectile/plasma/lastertag/blue
@@ -63,6 +71,7 @@
 	damage_types = list(BURN = 0)
 	no_attack_log = 1
 	check_armour = ARMOR_ENERGY
+	recoil = 1
 
 /obj/item/projectile/plasma/lastertag/blue/on_hit(atom/target)
 	if(ishuman(target))
@@ -81,6 +90,7 @@
 	damage_types = list(BURN = 0)
 	no_attack_log = 1
 	check_armour = ARMOR_ENERGY
+	recoil = 1
 
 /obj/item/projectile/plasma/lastertag/red/on_hit(atom/target)
 	if(ishuman(target))
@@ -99,6 +109,7 @@
 	damage_types = list(BURN = 0)
 	no_attack_log = 1
 	check_armour = ARMOR_ENERGY
+	recoil = 1
 
 /obj/item/projectile/plasma/lastertag/green/on_hit(atom/target)
 	if(ishuman(target))
@@ -117,6 +128,7 @@
 	damage_types = list(BURN = 0)
 	no_attack_log = 1
 	check_armour = ARMOR_ENERGY
+	recoil = 1
 
 /obj/item/projectile/plasma/lastertag/yellow/on_hit(atom/target)
 	if(ishuman(target))
@@ -134,6 +146,7 @@
 	icon_state = "lasertag"
 	damage_types = list(BURN = 0)
 	check_armour = ARMOR_ENERGY
+	recoil = 1
 
 	muzzle_type = /obj/effect/projectile/laser_omni/muzzle
 	tracer_type = /obj/effect/projectile/laser_omni/tracer
@@ -163,3 +176,4 @@
 	affective_damage_range = 16
 	affective_ap_range = 16
 	hitscan = TRUE
+	recoil = 50

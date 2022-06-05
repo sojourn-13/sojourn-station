@@ -9,7 +9,7 @@
 	price_tag = 2000
 	projectile_type = /obj/item/projectile/beam/xray
 	charge_cost = 100
-	fire_delay = 1
+	init_recoil = CARBINE_RECOIL(0.1)
 	twohanded = TRUE
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	serial_type = "INDEX"

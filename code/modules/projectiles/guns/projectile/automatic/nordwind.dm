@@ -20,8 +20,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	zoom_factor = 0.6
-	recoil_buildup = 2.25
-	one_hand_penalty = 15 //automatic rifle level
+	init_recoil = RIFLE_RECOIL(1.2)
 	extra_damage_mult_scoped = 0.5 //High class gun
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
@@ -45,11 +44,10 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10)
 	price_tag = 750
 	zoom_factor = 0.8
-	recoil_buildup = 12
 	damage_multiplier = 1 //Little bit better Strelki
 	extra_damage_mult_scoped = 0.3
 	penetration_multiplier = 1.0
-	one_hand_penalty = 25
+	init_recoil = RIFLE_RECOIL(1.1)
 	see_invisible_gun = -1
 	auto_eject = FALSE
 	init_firemodes = list(
@@ -71,10 +69,9 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_WOOD = 10)
 	price_tag = 750
 	zoom_factor = 0.6
-	recoil_buildup = 14
 	damage_multiplier = 0.9
 	extra_damage_mult_scoped = 0.3
-	one_hand_penalty = 25
+	init_recoil = RIFLE_RECOIL(1)
 	see_invisible_gun = -1
 	auto_eject = FALSE
 	init_firemodes = list(
@@ -115,8 +112,7 @@
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 6, MATERIAL_WOOD = 5)
 	price_tag = 450
 	zoom_factor = 0.0
-	recoil_buildup = 15
+	init_recoil = SMG_RECOIL(2.3)
 	damage_multiplier = 0.8
-	one_hand_penalty = 25
 	saw_off = FALSE
 	serial_type = "NM"

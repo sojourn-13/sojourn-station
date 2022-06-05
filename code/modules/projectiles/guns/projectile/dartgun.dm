@@ -51,7 +51,7 @@
 	caliber = "dart"
 	fire_sound = 'sound/weapons/empty.ogg'
 	fire_sound_text = "a metallic click"
-	recoil_buildup = 0
+	init_recoil = HANDGUN_RECOIL(0)
 	silenced = TRUE
 	load_method = SINGLE_CASING|MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/chemdart
