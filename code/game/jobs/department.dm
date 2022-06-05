@@ -16,7 +16,7 @@
 	var/funding_source
 
 	// Budget for misc department expenses, paid regardless of it being manned or not
-	var/budget_base = 500
+	var/budget_base = 0
 
 	// Budget for crew salaries. Summed up initial wages of department's personnel
 	var/budget_personnel = 0
@@ -55,20 +55,21 @@
 /datum/department/ironhammer
 	name = "Marshal and Blackshield Division"
 	id = DEPARTMENT_SECURITY
-	account_initial_balance = 25000 //25k do to being state funded
+	account_initial_balance = 2500
 	funding_source = DEPARTMENT_COMMAND
 
 /datum/department/technomancers
 	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
-	account_initial_balance = 17500 //15k do to being state funded
+	account_initial_balance = 1750
 	//A full crew GM + 4 adpets is 1700 an hour, takes 10~ hours to drain the department funds
-
+	funding_source = "Artificer Guild."
 
 /datum/department/civilian
 	name = "Nadezhda Contractors"
 	id = DEPARTMENT_CIVILIAN
 	account_initial_balance = 0
+	funding_source = "Lonestar Employment Sector." // They need this because the account has no way of getting money
 	//No standing balance is kept in the account, this is just for paying gardener, janitor and actor
 
 
@@ -79,19 +80,19 @@
 /datum/department/moebius_medical
 	name = "Soteria Institution: Medical Division"
 	id = DEPARTMENT_MEDICAL
-	account_initial_balance = 15000 //For buying medical and items and payments
+	account_initial_balance = 1500 //For buying medical and items and payments
 	funding_source = "Soteria Institution."
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
-	account_initial_balance = 10000 //For buying materials and components and things of scientific value as well as pay the demanding staff
+	account_initial_balance = 1000 //For buying materials and components and things of scientific value as well as pay the demanding staff
 	funding_source = "Soteria Institution."
 
 /datum/department/church
 	name = "Church of Absolute"
 	id = DEPARTMENT_CHURCH
-	account_initial_balance = 25000 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
+	account_initial_balance = 2500 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
 	funding_source = "Church of Absolute"
 
 
@@ -110,12 +111,14 @@
 	/* if you want to change this remember to do so in code\game\gamemodes\score.dm as well,
 	if you manage to get this variable refferenced there you're a better man than me. godspeed
 	*/
-	account_initial_balance = 25000 //has a lot of workers thus needs a higher starting to off-set its paychecks if no one actively runs the cargo shuttle
+	account_initial_balance = 2500 //has a lot of workers thus needs a higher starting to off-set its paychecks if no one actively runs the cargo shuttle
+	funding_source = "Lonestar Employment Sector."
 
 /datum/department/prospector
 	name = "Prospectors"
 	id = DEPARTMENT_PROSPECTOR
-	account_initial_balance = 10000 //Has a lot of workers and people
+	account_initial_balance = 1000 //Has a lot of workers and people
+	funding_source = "Lonestar Employment Sector."
 
 /datum/department/independent
 	name = "Independent Allied Factions"
