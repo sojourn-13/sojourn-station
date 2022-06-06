@@ -4,12 +4,12 @@
 	base_income = 1600
 	wealth = 0
 	markup = UNCOMMON_GOODS
-	secret_inv_threshold = 32000
+	hidden_inv_threshold = 32000
 	start_discovered = TRUE
 	spawn_always = TRUE
 	uid = "mecha"
 	recommendations_needed = 2
-	assortiment = list(
+	inventory = list(
 		"Exosuit Parts" = list(
 			/obj/item/mecha_parts/chassis/ripley,
 			/obj/item/mecha_parts/part/ripley_torso,
@@ -65,7 +65,7 @@
 			/obj/item/mecha_parts/mecha_equipment/thruster
 		)
 	)
-	secret_inventory = list(
+	hidden_inventory = list(
 		"Pre-Made Mechs" = list(
 			/obj/mecha/working/hoverpod/cargo_imported = custom_good_amount_range(list(1, 2)),
 			/obj/mecha/working/ripley/cargo_imported = custom_good_amount_range(list(-2, 3)),

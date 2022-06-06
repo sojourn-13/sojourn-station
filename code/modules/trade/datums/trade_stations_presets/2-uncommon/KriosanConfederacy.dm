@@ -8,16 +8,16 @@
 	base_income = 1600
 	wealth = 0
 	markup = COMMON_GOODS * 1.5
-	secret_inv_threshold = 32000
+	hidden_inv_threshold = 32000
 	start_discovered = TRUE //WE KNOW WERE ARE OVERHOUNDS ARE
 	spawn_always = TRUE //Were right next door
-	assortiment = list(
+	inventory = list(
 		"Hunting Gear" = list(
 			/obj/item/gun/projectile/boltgun/light,
 			/obj/item/gun/projectile/boltgun/light_wood,
 			/obj/item/gun/projectile/boltgun/sa,
 			/obj/item/gun/projectile/automatic/nordwind/strelki,
-			/obj/item/gun/projectile/automatic/survivalrifle,
+			/obj/item/gun/projectile/boltgun/survivalrifle,
 			/obj/item/gun/projectile/shotgun/doublebarrel,
 			/obj/item/gun/projectile/shotgun/pump,
 			/obj/item/tool/knife/dagger
@@ -30,13 +30,13 @@
 			/obj/item/ammo_magazine/ammobox/shotgun
 		),
 		"Pets" = list(
-			/mob/living/simple_animal/corgi = good_data("Noble Corgi", list(4, 5)),
-			/mob/living/simple_animal/corgi/puppy = good_data("Young Corgi", list(3, 5)),
-			/mob/living/simple_animal/lizard = good_data("Crate Pusher", list(2, 5)),
-			/mob/living/simple_animal/cat = good_data("Rat Slayer", list(4, 5))
+			/mob/living/simple_animal/corgi = good_data("Noble Corgi", list(4, 5), 500),
+			/mob/living/simple_animal/corgi/puppy = good_data("Young Corgi", list(3, 5), 250),
+			/mob/living/simple_animal/lizard = good_data("Crate Pusher", list(2, 5), 100),
+			/mob/living/simple_animal/cat = good_data("Rat Slayer", list(4, 5), 150)
 		)
 	)
-	secret_inventory = list(
+	hidden_inventory = list(
 		"Basic Gun Mods" = list(
 			/obj/item/gun_upgrade/barrel/forged,
 			/obj/item/tool_upgrade/productivity/ergonomic_grip,

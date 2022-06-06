@@ -71,6 +71,7 @@
 	emote_see = list("scratches the ground.","shakes out it's mane.","tinkles gently.")
 	mob_size = 5
 	resistance = 3
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork
 	meat_amount = 6 //Pigs are known for giving meat
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
@@ -200,6 +201,7 @@
 	speak = list("Hruuugh!","Hrunnph")
 	emote_see = list("paws the ground.","shakes its mane.","stomps.")
 	emote_hear = list("snuffles")
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork // Since half warthog.
 	meat_amount = 3
 	mob_size = 10
 	resistance = 5
@@ -263,6 +265,7 @@
 	speak = list("Hruuugh!","Hrunnph")
 	emote_see = list("paws the ground.","shakes its mane.","stomps.")
 	emote_hear = list("snuffles")
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork // Since half warthog, and its evolutions are pig-oriented. Don't make me code/sprite venison meat next, please... - Seb
 	meat_amount = 3
 	mob_size = 10
 	resistance = 3
@@ -298,7 +301,8 @@
 	speak = list("chitters!","chitter")
 	emote_see = list("scratches at the ground.","gives a small snuffle.","hops back and forth.")
 	emote_hear = list("chitters.")
-	meat_amount = 2
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork
+	meat_amount = 2 // Undomesticated, and underfed compared to a lodge cerberus, thus less meat.
 	mob_size = 5
 	resistance = 10
 	//Feed to lead

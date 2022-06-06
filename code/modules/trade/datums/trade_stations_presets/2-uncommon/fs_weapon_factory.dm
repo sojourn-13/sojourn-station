@@ -10,14 +10,13 @@
 	recommendation_threshold = 4000
 	stations_recommended = list("illegal1")
 	recommendations_needed = 1
-	assortiment = list(
+	inventory = list(
 		"Projectiles" = list(
 			/obj/item/gun/projectile/automatic/mac,
 			/obj/item/gun/projectile/automatic/c20r,
 			/obj/item/gun/projectile/automatic/sts/lrifle,
 			/obj/item/gun/projectile/automatic/sts/rifle,
 			/obj/item/gun/projectile/automatic/sts/hrifle,
-			/obj/item/gun/projectile/automatic/pitbull,
 			/obj/item/gun/projectile/boltgun/lever,
 			/obj/item/gun/projectile/boltgun/sa,
 			/obj/item/gun/projectile/shotgun/pump/gladstone,
@@ -42,8 +41,7 @@
 		),
 		"Energy" = list(
 			/obj/item/gun/energy/gun,
-			/obj/item/gun/energy/gun/martin,
-			/obj/item/gun/energy/pulse/cassad
+			/obj/item/gun/energy/gun/martin
 		),
 		"Grenades" = list(
 			/obj/item/gun/projectile/shotgun/pump/china,
@@ -55,13 +53,14 @@
 			/obj/item/grenade/smokebomb
 		)
 	)
-	secret_inventory = list(
+	hidden_inventory = list(
 		"High-End Grenades" = list(
 			/obj/item/grenade/empgrenade,
 			/obj/item/grenade/frag,
 			/obj/item/grenade/explosive,
 			/obj/item/grenade/anti_photon,
-			/obj/item/plastique
+			/obj/item/grenade/heatwave,
+			/obj/item/plastique = good_data("plastic explosive", (list(2, 4)), 1500)
 		),
 		"Top Class Firearms" = list(
 			/obj/item/gun/projectile/boltgun/scout,
@@ -69,6 +68,11 @@
 			/obj/item/gun/projectile/basilisk,
 			/obj/item/gun/projectile/revolver/mateba,
 			/obj/item/gun/projectile/revolver/tacticool_revolver
+		),
+		"High End Laser Guns" = list(
+			/obj/item/gun/energy/firestorm,
+			/obj/item/gun/energy/lasercore,
+			/obj/item/gun/energy/pulse/cassad
 		)
 	)
 

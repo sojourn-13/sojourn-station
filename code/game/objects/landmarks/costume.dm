@@ -33,7 +33,7 @@
 	new /obj/item/clothing/glasses/blindfold(src.loc)
 
 /obj/landmark/costume/butler/New()
-	new /obj/item/clothing/suit/storage/wcoat/black(src.loc)
+	new /obj/item/clothing/accessory/waistcoat(src.loc)
 	new /obj/item/clothing/head/tophat(src.loc)
 
 /obj/landmark/costume/highlander/New()
@@ -41,7 +41,7 @@
 	new /obj/item/clothing/head/beret(src.loc)
 
 /obj/landmark/costume/prig/New()
-	new /obj/item/clothing/suit/storage/wcoat/black(src.loc)
+	new /obj/item/clothing/accessory/waistcoat(src.loc)
 	new /obj/item/clothing/glasses/monocle(src.loc)
 	var/CHOICE= pick( /obj/item/clothing/head/bowler, /obj/item/clothing/head/tophat)
 	new CHOICE(src.loc)

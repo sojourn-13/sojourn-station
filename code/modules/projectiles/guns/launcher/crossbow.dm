@@ -46,7 +46,7 @@
 	icon = 'icons/obj/guns/launcher/crossbow-solid.dmi'
 	icon_state = "crossbow"
 	item_state = "crossbow-solid"
-	fire_sound = 'sound/weapons/punchmiss.ogg' // TODO: Decent THWOK noise.
+	fire_sound = 'sound/weapons/xbow_fire.ogg' // Royalty free crossbow sound. - Seb
 	fire_sound_text = "a solid thunk"
 	fire_delay = 25
 	slot_flags = SLOT_BACK
@@ -101,6 +101,7 @@
 		return
 
 	current_user = user
+	playsound(loc, 'sound/weapons/bow_draw.ogg', 50, 1)
 	user.visible_message("[user] begins to draw back the string of [src].",SPAN_NOTICE("You begin to draw back the string of [src]."))
 	tension = 1
 
@@ -190,6 +191,7 @@
 	desc = "A hacked together RCD turns an innocent construction tool into the penultimate 'deconstruction' tool. Flashforges projectiles using matter units when the string is drawn back."
 	icon = 'icons/obj/guns/launcher/rxb.dmi'
 	icon_state = "rxb"
+	fire_sound = 'sound/weapons/rail.ogg' // Basically a downgraded myrmidon.
 	slot_flags = null
 	draw_time = 7.5
 	superheat_cost = 150 //guild design, more efficient or something
@@ -204,6 +206,7 @@
 		chambered = new flashforge_type(src)
 		stored_matter -= boltcost
 		to_chat(user, "<span class='notice'>The RXD flashforges a new bolt!</span>")
+		playsound(loc, 'sound/weapons/guns/interact/hydra_crossbow_load.ogg', 50, 1) // Fitting considering the mechanism at play. - Seb
 		update_icon()
 	else
 		to_chat(user, "<span class='warning'>The \'Low Ammo\' light on the device blinks yellow.</span>")

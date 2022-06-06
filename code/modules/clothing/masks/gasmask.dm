@@ -21,8 +21,13 @@
 		rad = 0
 	)
 	price_tag = 20
-	muffle_voice = TRUE
+	muffle_voice = FALSE
 	var/is_alts = TRUE
+
+/obj/item/clothing/mask/gas/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/tool/screwdriver))
+		to_chat(user, SPAN_NOTICE("[user] alters the voice transmitter in [src]."))
+		src.muffle_voice = !src.muffle_voice
 
 /obj/item/clothing/mask/gas/filter_air(datum/gas_mixture/air)
 	var/datum/gas_mixture/filtered = new
@@ -198,6 +203,9 @@
 	options["Green Forest Amber Eyes"] = "gas_mil"
 	options["Desert Sands Amber Eyes"] = "gas_mil_alt"
 	options["Black Night Amber Eyes"] = "gas_black"
+	options["Industrial Black"] = "s10_plain"
+	options["Industrial Black Blue Eyes"] = "s10_blue"
+	options["Industrial Black Red Eyes"] = "s10_red"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

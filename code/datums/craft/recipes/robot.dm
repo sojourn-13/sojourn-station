@@ -178,11 +178,11 @@
 		list(QUALITY_SCREW_DRIVING, 10, "time" = 90)
 	)
 
-/* Commented out until balanced.
-// Hydrogen Knight Rig recipe
-/datum/craft_recipe/robotic/hydrogen_knight
-	name = "Hydrogen Knight Rigsuit"
-	result = /obj/item/rig/hydrogen_knight
+
+// Ameridian Knight Rig recipe
+/datum/craft_recipe/robotic/ameridian_knight
+	name = "Ameridian Knight Rigsuit"
+	result = /obj/item/rig/ameridian_knight
 	icon_state = "device"
 	steps = list(
 		list(/obj/item/rig, 1, "time" = 20), // Any rig as base
@@ -209,10 +209,10 @@
 		list(/obj/item/stock_parts/capacitor/super, 1, "time" = 30),
 		list(/obj/item/tool_upgrade/productivity/booster, 1, "time" = 30),
 		list(/obj/item/stock_parts/matter_bin/super, 1, "time" = 30),
-		list(/obj/item/hydrogen_fuel_cell, 1, "time" = 30),
+		list(/obj/item/ameridian_core, 1, "time" = 30),
 		list(/obj/item/stock_parts/manipulator/pico, 2, "time" = 30),
 		list(/obj/item/gun_upgrade/mechanism/battery_shunt, 1, "time" = 30),
-		list(/obj/item/rocket_engine, 1, "time" = 30),
+		list(/obj/item/tool_upgrade/productivity/rocket_engine, 1, "time" = 30),
 		list(/obj/item/tool_upgrade/reinforcement/guard, 3, "time" = 30),
 		list(/obj/item/cell/large/moebius/omega, 1, "time" = 30),
 		list(QUALITY_PULSING, 10, "time" = 60),
@@ -229,4 +229,4 @@
 		list(/obj/item/robot_parts/robot_component/ion_jaunt, 1, "time" = 30),
 		list(QUALITY_HAMMERING, 30, "time" = 90),
 		list(QUALITY_WELDING, 60, "time" = WORKTIME_EXTREMELY_LONG)
-	)*/
+	)

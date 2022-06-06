@@ -9,9 +9,9 @@
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
-	secret_inv_threshold = 6000
+	hidden_inv_threshold = 6000
 	recommendations_needed = 3
-	assortiment = list(
+	inventory = list(
 		// TEST: pricing should be tested. Guideline is 775 credits per TC.
 		"RIG Accessories" = list(
 			/obj/item/rig_module/vision/thermal,
@@ -30,7 +30,7 @@
 			/obj/item/gun/projectile/revolver/tacticool_revolver
 		)
 	)
-	secret_inventory = list(
+	hidden_inventory = list(
 		"Firearms" = list(
 			/obj/item/gun/projectile/automatic/c20r = custom_good_amount_range(list(1, 1)),
 			/obj/item/gun/projectile/automatic/sts/hrifle = custom_good_amount_range(list(1, 1))
@@ -42,7 +42,7 @@
 			/obj/item/rig_module/fabricator/energy_net
 		),
 		"Software" = list(
-			/obj/item/computer_hardware/hard_drive/portable/advanced/shady = good_data("old data disk", list(1, 1))
+			/obj/item/computer_hardware/hard_drive/portable/advanced/shady = good_data("old data disk", list(1, 1), 900)
 		)
 	)
 	offer_types = list(

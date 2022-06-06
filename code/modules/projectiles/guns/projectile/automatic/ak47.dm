@@ -19,9 +19,8 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
-	damage_multiplier = 1 //the uncheap
-	recoil_buildup = 1.25
-	one_hand_penalty = 10 //automatic rifle level
+	damage_multiplier = 1.2 //the uncheap
+	init_recoil = RIFLE_RECOIL(0.8)
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
 	init_firemodes = list(
@@ -67,9 +66,8 @@
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1, TECH_ILLEGAL = 4)
-	mag_well = MAG_WELL_DRUM
-	recoil_buildup = 25
-	one_hand_penalty = 30
+	mag_well = MAG_WELL_RIFLE //Have you ever seen saiga with drum magazine because I haven't
+	init_recoil = RIFLE_RECOIL(1.3)
 	serial_type = "EXC"
 
 /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony
@@ -91,8 +89,7 @@
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10, MATERIAL_GOLD = 5)
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_MAGNET = 3, TECH_POWER = 5)
 	price_tag = 2000
-	recoil_buildup = 0.75
-	one_hand_penalty = 10
+	init_recoil = RIFLE_RECOIL(0.4)
 	damage_multiplier = 1.2 //We hold less ammo but deal about the same damage
 	saw_off = FALSE
 	caliber = CAL_SCI
@@ -114,9 +111,7 @@
 	item_state = "AK"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 1200
-	damage_multiplier = 0.9 //7.5 cal
-	penetration_multiplier = 1.1
-	recoil_buildup = 2
+	init_recoil = RIFLE_RECOIL(0.9)
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/ak47/sawn
@@ -134,10 +129,10 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	price_tag = 850
-	recoil_buildup = 4
-	one_hand_penalty = 20
-	damage_multiplier = 0.8
+	init_recoil = RIFLE_RECOIL(1)
+	damage_multiplier = 1
 	saw_off = FALSE
+	serial_type = "SA"
 
 /obj/item/gun/projectile/automatic/ak47/sa/tac
 	name = "Breacher \"Kalashnikov\" rifle"
@@ -148,8 +143,9 @@
 	icon_state = "AK"
 	item_state = "AK"
 	price_tag = 1250
-	recoil_buildup = 2.25
+	init_recoil = RIFLE_RECOIL(0.8)
 	saw_off = FALSE
+	serial_type = "SA"
 
 	var/obj/item/gun/projectile/automatic/underslung/shotgun_3/shotgun
 	init_firemodes = list(
@@ -188,7 +184,7 @@
 	matter = null
 	force = 5
 	max_shells = 3
-	recoil_buildup = 8
+	init_recoil = RIFLE_RECOIL(1.2)
 	safety = FALSE
 	twohanded = FALSE
 	load_method = SINGLE_CASING

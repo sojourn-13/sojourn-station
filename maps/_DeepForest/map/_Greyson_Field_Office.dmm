@@ -6512,6 +6512,10 @@
 /obj/item/storage/deferred/crate/iron_lock_security_uniform,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_outside)
+"Yk" = (
+/obj/effect/shuttle_landmark/rocinante_field_office,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "Yq" = (
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,
 /turf/simulated/floor/carpet,
@@ -69259,7 +69263,7 @@ hm
 hm
 hm
 hm
-hm
+Yk
 hm
 hm
 hm

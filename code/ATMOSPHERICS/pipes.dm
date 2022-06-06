@@ -1,5 +1,8 @@
 /obj/machinery/atmospherics/pipe
 
+	/// Used for destroying meter references
+	var/obj/machinery/meter/attached_meter
+
 	var/datum/gas_mixture/air_temporary // used when reconstructing a pipeline that broke
 	var/datum/pipeline/parent
 	var/volume = 0
@@ -62,13 +65,28 @@
 
 	return parent.return_network(reference)
 
+/*/obj/machinery/atmospherics/pipe/proc/pipeline_check()
+	if (QDELETED(src) || QDESTROYING(src))
+		return FALSE
+
+	if (!parent)
+		parent = new /datum/pipeline()
+		parent.build_pipeline(src)*/
+
 /obj/machinery/atmospherics/pipe/Destroy()
+
 	QDEL_NULL(parent)
 	if(air_temporary)
 		loc.assume_air(air_temporary)
 		QDEL_NULL(air_temporary)
 
+	if (attached_meter)
+		attached_meter.target = null
+		attached_meter = null
+
 	. = ..()
+
+	return QDEL_HINT_QUEUE
 
 /obj/machinery/atmospherics/pipe/attackby(obj/item/I, mob/user)
 	if (istype(src, /obj/machinery/atmospherics/pipe/tank))

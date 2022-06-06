@@ -15,7 +15,7 @@
 	damage_multiplier = 1.1 //because pistol round
 	penetration_multiplier = 20
 	pierce_multiplier =  5
-	recoil_buildup = 13
+	init_recoil = RIFLE_RECOIL(0.3)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
 	serial_type = "XSyndi"
 

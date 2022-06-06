@@ -105,5 +105,6 @@
 				/obj/structure/flora/pottedplant/bush_tall,\
 				/obj/structure/flora/pottedplant/bush_bullet,\
 				/obj/structure/flora/pottedplant/star_root,\
-				/obj/structure/flora/pottedplant/water_root)
+				/obj/structure/flora/pottedplant/water_root,\
+				/obj/structure/flora/pottedplant/green_rock)
 

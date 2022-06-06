@@ -9,7 +9,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
 	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_BOX
+	mag_well = MAG_WELL_LINKED_BOX
 	caliber = CAL_LRIFLE
 	tac_reloads = FALSE
 	penetration_multiplier = 0.8
@@ -17,11 +17,11 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 4, MATERIAL_STEEL = 15)
 	price_tag = 1000
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
-	recoil_buildup = 1
+	init_recoil = LMG_RECOIL(0.7)
 
 	init_firemodes = list(
 		BURST_5_ROUND,
-		FULL_AUTO_600
+		FULL_AUTO_700
 		)
 	serial_type = "NM"
 

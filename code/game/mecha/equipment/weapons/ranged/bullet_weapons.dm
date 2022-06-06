@@ -104,15 +104,16 @@
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot
 	name = "\improper LBX AC 10 \"Scattershot\""
 	icon_state = "mecha_scatter"
-	equip_cooldown = 15
-	projectile = /obj/item/projectile/bullet/magnum_40
+	equip_cooldown = 25 // we fire fairly slow, but do a LOT of damage up close.
+	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15)
+	projectile = /obj/item/projectile/bullet/pellet/shotgun/scattershot //snoflaek projectile. works similarly to regular shotgun rounds with 2 more pellets and 2 more damage per pellet
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	fire_volume = 80
 	projectiles = 40
 	max_ammo = 40
-	projectiles_per_shot = 4
-	fire_cooldown = 2 //The scatter shot is meant to be fast but doing it all at once makes it a bit buggy and leaves flying bullets
-	deviation = 0.7
+	projectiles_per_shot = 1 //each 'projectile' carries 8 pellets
+	fire_cooldown = 1
+	deviation = 8 //kinda innacurate, but a horribly deudly firearm none the less.
 	ammo_type = "12g"
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/loaded
@@ -122,14 +123,15 @@
 	name = "\improper jury-rigged flak cannon"
 	desc = "The design of this weapon brings a whole new meaning to the term scrap cannon."
 	icon_state = "mecha_makeshift_scatter"
-	equip_cooldown = 15
-	projectile = /obj/item/projectile/bullet/magnum_40/scrap
+	equip_cooldown = 25 //fairly slow firing, but utterly devastating against the unarmored.
+	projectile = /obj/item/projectile/bullet/pellet/shotgun/flak
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	fire_volume = 80
 	projectiles = 30
 	max_ammo = 30
-	projectiles_per_shot = 6
-	deviation = 0.9
+	projectiles_per_shot = 3
+	fire_cooldown = 0 // we fire a huge burst of pellets all over the place!
+	deviation = 15 //emphasis on ALL OVER the place
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
 	price_tag = 700
 
@@ -150,14 +152,15 @@
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg
 	name = "\improper Ultra AC 2"
 	icon_state = "mecha_uac2"
-	equip_cooldown = 20
+	equip_cooldown = 10
+	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15)
 	projectile = /obj/item/projectile/bullet/rifle_75
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	projectiles = 300
 	max_ammo = 300
 	projectiles_per_shot = 3
-	deviation = 0.3
-	fire_cooldown = 3
+	deviation = 5 //little bit innacurate, but still able to consistently lay down fire on targets
+	fire_cooldown = 1.75
 	ammo_type = "5.56"
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg/loaded
@@ -172,12 +175,57 @@
 	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	projectiles = 60
 	max_ammo = 60
-	projectiles_per_shot = 3
-	deviation = 0.4
+	projectiles_per_shot = 5
+	deviation = 10 //heavy deviation, its cheap casing rattles with each shot
 	fire_cooldown = 3
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg/scrap/loaded
+	loaded = TRUE
+	
+/obj/item/mech_ammo_box/cannon
+	name = "Autocannon ammunition box"
+	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label."
+	icon = 'icons/obj/ammo.dmi'
+	icon_state = "boxhrifle-practice"
+	ammo_amount_left = 10
+	ammo_max_amout = 10
+	amount_per_click = 3
+	ammo_type = ".460"
+	price_tag = 30
+	
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon
+	name = "\improper Autocannon"
+	icon_state = "mecha_cannon"
+	equip_cooldown = 25
+	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15)
+	projectile = /obj/item/projectile/bullet/auto_460
+	fire_sound = 'sound/weapons/guns/fire/chaingun_fire.ogg'
+	projectiles = 10
+	max_ammo = 10
+	projectiles_per_shot = 1
+	deviation = 1 
+	fire_cooldown = 2
+	ammo_type = ".460"
+
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon/loaded
+	loaded = TRUE
+	
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon/scrap
+	name = "\improper Ancient Mech Rifle"
+	desc = "A weapon once wielded by anncient mechs once more finding service, however clearly showing its age."
+	icon_state = "mecha_makeshift_cannon"
+	equip_cooldown = 20
+	projectile = /obj/item/projectile/bullet/auto_460/scrap
+	fire_sound = 'sound/weapons/guns/fire/payload_fire.ogg'
+	projectiles = 20
+	max_ammo = 20
+	projectiles_per_shot = 2
+	deviation = 3
+	fire_cooldown = 3
+	required_type = list(/obj/mecha/combat, /obj/mecha/working)
+
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon/scrap/loaded
 	loaded = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack
@@ -234,6 +282,7 @@
 	name = "\improper SRM-8 missile rack"
 	icon_state = "mecha_missilerack"
 	projectile = /obj/item/missile
+	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_SILVER = 5)
 	fire_sound = 'sound/effects/bang.ogg'
 	projectiles = 8
 	projectile_energy_cost = 2000
@@ -262,6 +311,7 @@
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang
 	name = "\improper SGL-6 grenade launcher"
 	icon_state = "mecha_grenadelnchr"
+	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
 	projectile = /obj/item/grenade/flashbang
 	fire_sound = 'sound/effects/bang.ogg'
 	projectiles = 6

@@ -124,8 +124,8 @@
 
 
 /obj/machinery/smelter/proc/result_materials(obj/O)
-	if(istype(O, /obj/item/ore))
-		var/obj/item/ore/ore = O
+	if(istype(O, /obj/item/stack/ore))
+		var/obj/item/stack/ore/ore = O
 		var/ore/data = ore_data[ore.material]
 		if(data.smelts_to)
 			return list(data.smelts_to = 1)
@@ -138,7 +138,7 @@
 	if(istype(smelting, /obj/item/stack))
 		return 30
 
-	if(istype(smelting, /obj/item/ore))
+	if(istype(smelting, /obj/item/stack/ore))
 		return 20
 
 	if(istype(smelting, /obj/item/material/shard))

@@ -99,6 +99,15 @@
 	var/range_shot = 1 //How far we been shot so far. We start at 1 to prevent runtimes with deviding by 0
 	var/serial_type_index_bullet = ""
 
+	var/recoil = 0
+
+/obj/item/projectile/Destroy()
+
+	QDEL_NULL(attached_effect)
+
+	. = ..()
+
+
 /obj/item/projectile/is_hot()
 	if (damage_types[BURN])
 		return damage_types[BURN] * heat
@@ -922,7 +931,7 @@
 	result = 1
 	return
 
-/obj/item/projectile/test/launch(atom/target)
+/obj/item/projectile/test/launch(atom/target, angle_offset = 0, x_offset = 0, y_offset = 0)
 	var/turf/curloc = get_turf(src)
 	var/turf/targloc = get_turf(target)
 	if(!curloc || !targloc)

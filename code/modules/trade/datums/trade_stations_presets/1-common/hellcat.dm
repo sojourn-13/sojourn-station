@@ -9,14 +9,14 @@
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
-	secret_inv_threshold = 2000
+	hidden_inv_threshold = 2000
 	recommendation_threshold = 4000
 	stations_recommended = list("fs_guns", "illegal2")
 	forced_overmap_zone = list(
 		list(15, 20),
 		list(20, 25)
 	)
-	assortiment = list(
+	inventory = list(
 		"Enforcer Equipment" = list(
 			/obj/item/handcuffs,
 			/obj/item/shield/riot,
@@ -37,6 +37,10 @@
 			/obj/item/gun/projectile/revolver/detective,
 			/obj/item/gun/projectile/automatic/ak47/sa,
 			/obj/item/gun/projectile/automatic/mac
+		),
+		"Flame Thrower" = list(
+			/obj/item/gun/flamethrower,
+			/obj/item/weldpack/canister/flamethrower
 		),
 		"Ammunition" = list(
 			/obj/item/grenade/empgrenade/low_yield,
@@ -66,11 +70,30 @@
 			/obj/item/clothing/suit/armor/laserproof
 		)
 	)
-	secret_inventory = list(
+	hidden_inventory = list(
 		"Basic Gun Mods" = list(
 			/obj/item/gun_upgrade/barrel/gauss,
 			/obj/item/tool_upgrade/productivity/ergonomic_grip,
-			/obj/item/tool_upgrade/refinement/laserguide
+			/obj/item/tool_upgrade/refinement/laserguide,
+			/obj/item/gun_upgrade/scope/killer,
+			/obj/item/gun_upgrade/trigger/boom,
+			/obj/item/gun_upgrade/mechanism/reverse_loader,
+			/obj/item/gun_upgrade/trigger/dangerzone
+		),
+		"Xanorath Smugged Gear" = list(
+			/obj/item/clothing/suit/space/void/merc/xanorath,
+			/obj/item/melee/energy/sword/pirate,
+			/obj/item/gun/projectile/gyropistol,
+			/obj/item/ammo_magazine/a75,
+			/obj/item/reagent_containers/hypospray/autoinjector/drugs,
+			/obj/item/reagent_containers/syringe/drugs,
+			/obj/item/reagent_containers/pill/zoom,
+			/obj/item/reagent_containers/pill/happy,
+			/obj/item/seeds/ambrosiadeusseed,
+			/obj/item/seeds/ambrosiavulgarisseed,
+			/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus = good_data("Ambrosiadeus", list(1, 3), 200),
+			/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris = good_data("Ambrosiavulgaris", list(1, 3), 400)
+
 		)
 	)
 	offer_types = list(

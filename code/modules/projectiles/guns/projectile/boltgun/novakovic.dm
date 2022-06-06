@@ -8,7 +8,6 @@
 	item_state = "boltgun"
 	max_shells = 5
 	price_tag = 300
-	recoil_buildup = 20
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/boltgun/sawn/sa
@@ -20,7 +19,7 @@
 	icon_state = "obrez"
 	item_state = "obrez"
 	max_shells = 5
-	one_hand_penalty = 10
+	init_recoil = HMG_RECOIL(0.8)
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_WOOD = 4)
 	saw_off = FALSE
 	serial_type = "Hunt Inc."

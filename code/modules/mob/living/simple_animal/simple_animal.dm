@@ -219,14 +219,24 @@
 			to_chat(user, SPAN_NOTICE("It looks hungry."))
 		else if ((reagents.total_volume > 0 && nutrition > max_nutrition *0.75) || nutrition > max_nutrition *0.9)
 			to_chat(user, "It looks full and contented.")
-	if (health < maxHealth * 0.25)
+	if (health < maxHealth * 0.10)
+		to_chat(user, SPAN_DANGER("It looks like they are on their last legs!"))
+	else if (health < maxHealth * 0.20)
 		to_chat(user, SPAN_DANGER("It's grievously wounded!"))
-	else if (health < maxHealth * 0.50)
+	else if (health < maxHealth * 0.30)
 		to_chat(user, SPAN_DANGER("It's badly wounded!"))
-	else if (health < maxHealth * 0.75)
-		to_chat(user, SPAN_WARNING("It's wounded."))
+	else if (health < maxHealth * 0.40)
+		to_chat(user, SPAN_WARNING("Its wounds are mounting."))
+	else if (health < maxHealth * 0.50)
+		to_chat(user, SPAN_WARNING("It looks half dead."))
+	else if (health < maxHealth * 0.60)
+		to_chat(user, SPAN_WARNING("It looks like its been beaten up quite badly"))
+	else if (health < maxHealth * 0.70)
+		to_chat(user, SPAN_WARNING("It has accrued some lasting injuries."))
+	else if (health < maxHealth * 0.80)
+		to_chat(user, SPAN_WARNING("It has had minor damage done to it."))
 	else if (health < maxHealth)
-		to_chat(user, SPAN_WARNING("It's a bit wounded."))
+		to_chat(user, SPAN_WARNING("It has a few cuts and bruses."))
 
 /mob/living/simple_animal/Life()
 	.=..()
@@ -405,7 +415,7 @@
 			if(is_type_in_list(src, Proj.supereffective_types, TRUE))
 				dmult += Proj.supereffective_mult
 		damage *= dmult
-		damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj))
+		damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj), post_pen_mult = Proj.post_penetration_dammult)
 	return 0
 
 /mob/living/simple_animal/rejuvenate()

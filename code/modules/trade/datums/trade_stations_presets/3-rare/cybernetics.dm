@@ -1,7 +1,7 @@
 /datum/trade_station/cybermoebus
 	spawn_probability = 0 //were bugged
 	name_pool = list("FTS 'PentaOptium'" = "Free Trade Station 'PentaOptium'. \"Oh, you, I think I can sell you some cybernetics.\"")
-	assortiment = list(
+	inventory = list(
 		"Soteria" = list(
 			/obj/item/organ/external/robotic/moebius/l_arm,
 			/obj/item/organ/external/robotic/moebius/r_arm,

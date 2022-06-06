@@ -203,7 +203,7 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 		visible_message("[src] beeps, \"Error transmitting message.\"")
 		return
 
-	rcvdcopy.loc = null //hopefully this shouldn't cause trouble
+	rcvdcopy.loc = locate("Admin Fax"):loc //hopefully this shouldn't cause trouble // We use tags so that admins can move the destination around -R4d6
 	adminfaxes += rcvdcopy
 
 	//message badmins that a fax has arrived

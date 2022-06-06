@@ -13,8 +13,7 @@
 	price_tag = 250 //cheap civ peashooter revolver, something similar to olivav
 	damage_multiplier = 1.15 //because pistol round
 	penetration_multiplier = 1.2
-	recoil_buildup = 2
-	one_hand_penalty = 6
+	init_recoil = HANDGUN_RECOIL(0.5) //Rule of Cool
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
 	serial_type = "H&S"
 

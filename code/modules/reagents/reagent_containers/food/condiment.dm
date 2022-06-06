@@ -63,6 +63,11 @@
 					desc = "You feel more American already."
 					icon_state = "ketchup"
 					center_of_mass = list("x"=16, "y"=6)
+				if("bbqsauce")
+					name = "Barbecue sauce"
+					desc = "Pass the ribs!"
+					icon_state = "bbqsauce"
+					center_of_mass = list("x"=17, "y"=8)
 				if("capsaicin")
 					name = "Hotsauce"
 					desc = "You can almost TASTE the stomach ulcers now!"
@@ -105,6 +110,11 @@
 					name = "Cooking Oil Bottle"
 					icon_state = "oliveoil"
 					desc = "A bottle of corn oil, for all your deep frying needs."
+					center_of_mass = list("x"=16, "y"=6)
+				if("vinegar")
+					name = "Vinegar Bottle"
+					icon_state = "vinegar"
+					desc = "A bottle of red wine vinegar, a great condiment for many a salad and more."
 					center_of_mass = list("x"=16, "y"=6)
 				else
 					name = "Misc Condiment Bottle"
@@ -184,6 +194,16 @@
 					name = "Ketchup"
 					desc = "Mixed up with blood all the time."
 					icon_state = "condi_ketchup"
+					center_of_mass = list("x"=16, "y"=6)
+				if("vinegar")
+					name = "Vinegar"
+					desc = "Perfect to season your salad."
+					icon_state = "condi_vinegar"
+					center_of_mass = list("x"=16, "y"=6)
+				if("bbqsauce")
+					name = "Barbecue sauce"
+					desc = "Get those ribs ready."
+					icon_state = "condi_bbq"
 					center_of_mass = list("x"=16, "y"=6)
 				if("capsaicin")
 					name = "Hotsauce"
@@ -292,3 +312,14 @@
 /obj/item/reagent_containers/food/condiment/pack/hotsauce
 	name = "hotsauce pack"
 	preloaded_reagents = list("capsaicin" = 10)
+
+// Barbecue sauce
+/obj/item/reagent_containers/food/condiment/pack/bbq
+	name = "bbq sauce pack"
+	preloaded_reagents = list("bbqsauce" = 10)
+
+// Vinegar pack
+/obj/item/reagent_containers/food/condiment/pack/vinegar
+	name = "vinegar pack"
+	preloaded_reagents = list("vinegar" = 10)
+

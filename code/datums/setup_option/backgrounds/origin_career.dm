@@ -101,7 +101,7 @@
 
 /datum/category_item/setup_option/background/career/military
 	name = "Former Military"
-	desc = "The Terran Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
+	desc = "The Solarian Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
 	to serve their nation. Some individuals may come from their own planetary defense forces, serving as a combination of planetary guard and soldier. Military training has the benefit \
 	of physical conditioning and marksmanship training, but the stamping out of the individual makes most lose their creativity."
 
@@ -116,7 +116,7 @@
 
 /datum/category_item/setup_option/background/career/militarymedical
 	name = "Former Military (Medical)"
-	desc = "The Terran Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
+	desc = "The Solarian Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
 	to serve their nation. Some individuals may come from their own planetary defense forces, serving as a combination of planetary guard and soldier. Military training has the benefit \
 	of physical conditioning and as a combat medic you got the benefit of additional medical training, though not as good as what you'd get in a hospital, it has its benefits."
 
@@ -133,7 +133,7 @@
 
 /datum/category_item/setup_option/background/career/militaryengineer
 	name = "Former Military (Engineering)"
-	desc = "The Terran Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
+	desc = "The Solarian Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
 	to serve their nation. Some individuals may come from their own planetary defense forces, serving as a combination of planetary guard and soldier. Military training has the benefit \
 	of physical conditioning and as a member of the logistics/armor core you've gained a few tips and tricks when dealing with machines."
 

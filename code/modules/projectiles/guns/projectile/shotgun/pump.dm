@@ -11,16 +11,15 @@
 	slot_flags = SLOT_BACK
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
-	load_method = SINGLE_CASING
+	load_method = SINGLE_CASING|SPEEDLOADER
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	handle_casings = HOLD_CASINGS
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 600
-	damage_multiplier = 1.1
-	recoil_buildup = 15
-	one_hand_penalty = 10 //full sized shotgun level
+	damage_multiplier = 1 //Baseline shotgun
+	init_recoil = RIFLE_RECOIL(1.1)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/sawn
 	allow_racking = FALSE
@@ -63,8 +62,7 @@
 	price_tag = 450
 	damage_multiplier = 1
 	penetration_multiplier = 0.9
-	recoil_buildup = 20
-	one_hand_penalty = 15 //full sized shotgun level
+	init_recoil = RIFLE_RECOIL(1.2)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/obrez
 
@@ -82,6 +80,5 @@
 	price_tag = 350
 	damage_multiplier = 0.8
 	penetration_multiplier = 0.8
-	recoil_buildup = 24
-	one_hand_penalty = 23 //full sized shotgun level
+	init_recoil = RIFLE_RECOIL(1.3)
 	saw_off = FALSE

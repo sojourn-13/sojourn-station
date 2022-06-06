@@ -34,6 +34,8 @@
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 	origin_tech = list(TECH_BIO = 1)
 
+	price_tag = 100
+
 /obj/item/device/scanner/attack_self(mob/user)
 	if(!scan_data)
 		to_chat(user, SPAN_NOTICE("[src]\'s data buffer is empty."))

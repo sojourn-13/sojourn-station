@@ -57,6 +57,8 @@
 //-----------------Objects
 #define ismovable(A) istype(A, /atom/movable)
 
+#define ismech(target) istype(target, /obj/mecha)
+
 #define isitem(A) istype(A, /obj/item)
 
 #define istool(A) istype(A, /obj/item/tool)

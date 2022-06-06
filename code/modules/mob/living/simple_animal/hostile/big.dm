@@ -326,6 +326,8 @@
 	faction = "tengolo_berserker"
 	mob_size =  3  // The same as Hivemind Tyrant
 	wander = 1
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork
+	meat_amount = 8
 	leather_amount = 20
 	bones_amount = 10
 	has_special_parts = TRUE

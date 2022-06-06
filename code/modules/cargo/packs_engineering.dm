@@ -149,6 +149,17 @@
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "glass sheet crate"
 	group = "Engineering"
+	
+/datum/supply_pack/glass480
+	name = "Bulk Glass Sheets Crate"
+	contains = list(/obj/item/stack/material/glass/full,
+	/obj/item/stack/material/glass/full,
+	/obj/item/stack/material/glass/full,
+	/obj/item/stack/material/glass/full)
+	cost = 1740
+	containertype = /obj/structure/largecrate
+	crate_name = "Bulk glass crate"
+	group = "Engineering"
 
 /datum/supply_pack/borosilicate_glass120
 	name = "Borosilicate Glass Sheets Crate (120)"

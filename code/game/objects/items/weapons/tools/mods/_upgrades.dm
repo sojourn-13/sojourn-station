@@ -56,20 +56,17 @@
 
 	if(isitem(A))
 		var/obj/item/T = A
+		if(is_type_in_list(parent, T.blacklist_upgrades, TRUE))
+			if(user)
+				to_chat(user, SPAN_WARNING("[parent] cannot be installed on [T]!"))
+			return FALSE
 		//No using multiples of the same upgrade
 		for(var/obj/item/I in T.item_upgrades)
 			if (I.type == parent.type || (exclusive_type && istype(I, exclusive_type)))
 				if(user)
 					to_chat(user, SPAN_WARNING("An upgrade of this type is already installed!"))
 				return FALSE
-	//Blacklisting upgrades currently dosnt work, - Trilby
-	/*
-			for(var/obj/item/blacklist in I.blacklist_upgrades)
-				if(blacklist.type == parent.type)
-					if(user)
-						to_chat(user, SPAN_WARNING("An upgrade of this type is cant be installed!"))
-					return FALSE
-	*/
+
 
 	if(istool(A))
 		return check_tool(A, user)
@@ -267,6 +264,8 @@
 		UnregisterSignal(I, COMSIG_APPVAL)
 		qdel(P)
 		return
+	if(istype(I, /obj/item/rig))
+		remove_values_armor_rig(I)
 	P.forceMove(get_turf(I))
 	UnregisterSignal(I, COMSIG_ADDVAL)
 	UnregisterSignal(I, COMSIG_APPVAL)
@@ -316,6 +315,20 @@
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
 		R.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
 	R.prefixes |= prefix
+	R.updateArmor()
+
+/datum/component/item_upgrade/proc/remove_values_armor_rig(var/obj/item/rig/R)
+	if(tool_upgrades[UPGRADE_MELEE_ARMOR])
+		R.armor = R.armor.modifyRating(melee = tool_upgrades[UPGRADE_MELEE_ARMOR] * -1)
+	if(tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
+		R.armor = R.armor.modifyRating(bullet = tool_upgrades[UPGRADE_BALLISTIC_ARMOR] * -1)
+	if(tool_upgrades[UPGRADE_ENERGY_ARMOR])
+		R.armor = R.armor.modifyRating(energy = tool_upgrades[UPGRADE_ENERGY_ARMOR] * -1)
+	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
+		R.armor = R.armor.modifyRating(bomb = tool_upgrades[UPGRADE_BOMB_ARMOR] * -1)
+	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
+		R.item_flags &= ~tool_upgrades[UPGRADE_ITEMFLAGPLUS]
+	R.prefixes -= prefix
 	R.updateArmor()
 
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/tool/T)
@@ -387,11 +400,13 @@
 	if(weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT])
 		G.move_delay *= weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_RECOIL])
-		G.recoil_buildup *= weapon_upgrades[GUN_UPGRADE_RECOIL]
+		G.recoil = G.recoil.modifyAllRatings(weapon_upgrades[GUN_UPGRADE_RECOIL])
 	if(weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH])
 		G.muzzle_flash *= weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]
 	if(tool_upgrades[UPGRADE_BULK])
 		G.extra_bulk += weapon_upgrades[UPGRADE_BULK]
+	if(weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
+		G.recoil = G.recoil.modifyRating(_one_hand_penalty = weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
 	if(weapon_upgrades[GUN_UPGRADE_SILENCER])
 		G.silenced = weapon_upgrades[GUN_UPGRADE_SILENCER]
 	if(weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE])
@@ -625,6 +640,7 @@
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION])
 			to_chat(user, SPAN_NOTICE("Modifies projectile radiation damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION]] damage points"))
+
 
 		if(weapon_upgrades[GUN_UPGRADE_RECOIL])
 			var/amount = weapon_upgrades[GUN_UPGRADE_RECOIL]-1

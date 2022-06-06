@@ -445,9 +445,9 @@
 
 	if(stat & NOPOWER)
 		return
-	else if(istype(I, /obj/item/clothing/suit/space))
+	else if(istype(I, /obj/item/clothing/suit))
 		load(I, user, LOAD_SLOT_SUIT)
-	else if(istype(I, /obj/item/clothing/head/helmet))
+	else if(istype(I, /obj/item/clothing/head))
 		load(I, user, LOAD_SLOT_HELMET)
 	else if(istype(I, /obj/item/clothing/mask))
 		load(I, user, LOAD_SLOT_MASK)
@@ -481,6 +481,9 @@
 /obj/machinery/suit_storage_unit/engineering/atmos
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/atmos
 
+/obj/machinery/suit_storage_unit/rad_unit
+	SUIT_TYPE = /obj/item/clothing/suit/radiation
+	HELMET_TYPE = /obj/item/clothing/head/radiation
 
 /obj/machinery/suit_storage_unit/nt
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/acolyte

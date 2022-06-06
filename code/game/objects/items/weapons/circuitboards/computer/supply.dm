@@ -4,6 +4,11 @@
 	origin_tech = list(TECH_DATA = 3)
 	var/contraband_enabled = 0
 
+/obj/item/circuitboard/ordercomp
+	build_name = "supply ordering console"
+	build_path = /obj/machinery/computer/supplycomp/order
+	origin_tech = list(TECH_DATA = 2)
+
 /obj/item/circuitboard/supplycomp/construct(var/obj/machinery/computer/supplycomp/SC)
 	if (..(SC))
 		SC.can_order_contraband = contraband_enabled

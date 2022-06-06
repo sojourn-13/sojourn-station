@@ -17,12 +17,17 @@
 	fire_verb = "spits"
 	see_in_dark = 10
 
+	fleshcolor = "#7C90B8"
+	bloodcolor = "#7C90B8"
+
 	destroy_surroundings = TRUE
 	friendly_to_colony = FALSE
 	colony_friend = FALSE
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/termitemeat
 	meat_amount = 3
+
+	range_telegraph = "chitin begins to crack and spikes emerge, as it prepares to launch them at"
 
 	// Type of ore to spawn when the termite dies, even in maints we still drop ore correct
 	var/ore
@@ -71,7 +76,7 @@
 	armor = list(melee = 20, bullet = 35, energy = 35, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/iron
+	ore = /obj/item/stack/ore/iron
 
 
 //Silver Termite - melee, slow, high-damage
@@ -97,7 +102,7 @@
 	armor = list(melee = 35, bullet = 59, energy = 20, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/silver
+	ore = /obj/item/stack/ore/silver
 
 
 //Uranium Termite - ranged, slow, med-health, low damage
@@ -105,7 +110,7 @@
 	name = "miner termite"
 	desc = "A miner termite that has been hardened by the very surface beneath your feet."
 	icon_state = "smertnik_termite" // Sprites made by Polyushko#0323
-	icon_dead = "smertnik_gore"
+	icon_dead = "smertnik_gore_exploded"
 	ranged = TRUE
 	comfy_range = 6 //How far we like to be form are targets when we fire!
 	projectiletype = /obj/item/projectile/bullet/rock
@@ -127,7 +132,7 @@
 	armor = list(melee = 50, bullet = 35, energy = 20, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/uranium
+	ore = /obj/item/stack/ore/uranium
 
 
 //Plasma Termite - melee, fast, med-damage
@@ -153,7 +158,7 @@
 	armor = list(melee = 20, bullet = 30, energy = 50, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/plasma
+	ore = /obj/item/stack/ore/plasma
 
 
 //Diamond Wurm - melee, doesn't give a fuck, high-damage
@@ -180,7 +185,7 @@
 	armor = list(melee = 25, bullet = 40, energy = 50, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/diamond
+	ore = /obj/item/stack/ore/diamond
 
 
 //Osmium Termite - melee, doesn't give a fuck, high-damage
@@ -210,4 +215,4 @@
 	armor = list(melee = 50, bullet = 30, energy = 40, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
-	ore = /obj/item/ore/osmium
+	ore = /obj/item/stack/ore/osmium

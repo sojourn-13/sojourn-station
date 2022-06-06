@@ -10,6 +10,7 @@
 	var/emp_strength = 0 // Divides the effects by this amount, FALSE or 0 to disable
 
 	var/fire_stacks = FALSE
+	recoil = 30
 
 /obj/item/projectile/plasma/aoe/on_hit(atom/target)
 	if(emp_strength)
@@ -28,6 +29,7 @@
 	aoe_weak = 1
 	heat_damage = 20
 	emp_strength = 2
+	recoil = 5
 
 	fire_stacks = FALSE
 
@@ -40,6 +42,7 @@
 	aoe_weak = 1
 	heat_damage = 20
 	emp_strength = 3
+	recoil = 3
 
 	fire_stacks = FALSE
 
@@ -52,6 +55,7 @@
 	aoe_weak = 1
 	heat_damage = 20
 	emp_strength = 0
+	recoil = 12
 
 	fire_stacks = TRUE
 
@@ -64,5 +68,6 @@
 	aoe_weak = 2
 	heat_damage = 30
 	emp_strength = 0
+	recoil = 80
 
 	fire_stacks = TRUE

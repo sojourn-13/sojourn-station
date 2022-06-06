@@ -58,6 +58,50 @@
 	icon_state = "hairflower_white"
 	name = "white flower pin"
 
+/*Hair Pins*/
+
+/obj/item/clothing/head/pin
+	name = "hairpin"
+	icon_state = "pin"
+	desc = "A small metal hair pin."
+	slot_flags = SLOT_HEAD | SLOT_EARS
+	body_parts_covered = 0
+
+/obj/item/clothing/head/pin/butterfly
+	name = "blue butterfly pin"
+	icon_state = "butterflypin"
+	desc = "A decorative hairpin with a blue plastic butterfly on it."
+
+/obj/item/clothing/head/pin/clover
+	name = "clover hairpin"
+	icon_state = "cloverpin"
+	desc = "A hairpin with a clover on it. Lucky you!"
+
+/obj/item/clothing/head/pin/magnet
+	name = "hair magnets"
+	icon_state = "magnetpin"
+	desc = "A small metal hair pin with a magnet attached. Popular among the tiny demographic of fashionable robots."
+
+/*Hair Ribbons*/
+
+/obj/item/clothing/head/ribbon
+	name = "white hair ribbon"
+	icon_state = "whiteribbon"
+	desc = "A big white ribbon tied in a bow. Cute!"
+
+obj/item/clothing/head/ribbon/red
+	name = "red hair ribbon"
+	icon_state = "redribbon"
+	desc = "A big red ribbon tied in a bow. Somehow, this one reminds you of Jana cartoons."
+
+/*Maid Headdress*/
+
+/obj/item/clothing/head/maid
+	name = "maid headdress"
+	icon_state = "maid"
+	desc = "A frilly headdress, for keeping your hair away from the mess you're cleaning."
+
+
 /*Top Hats*/
 
 /obj/item/clothing/head/tophat

@@ -21,6 +21,7 @@
 	//spawn_values
 	var/price_tag = 0 // The item price in credits. atom/movable so we can also assign a price to animals and other thing.
 	var/surplus_tag = FALSE //If true, attempting to export this will net you a greatly reduced amount of credits, but we don't want to affect the actual price tag for selling to others.
+	var/spawn_tags
 
 /atom/movable/Destroy()
 	. = ..()
@@ -35,6 +36,10 @@
 		if (pulledby.pulling == src)
 			pulledby.pulling = null
 		pulledby = null
+
+	for (var/datum/movement_handler/handler in movement_handlers)
+		handler.host = null
+		movement_handlers -= handler //likely unneeded but just in case
 
 /atom/movable/Bump(var/atom/A, yes)
 	if(src.throwing)

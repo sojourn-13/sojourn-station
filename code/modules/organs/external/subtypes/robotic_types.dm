@@ -51,14 +51,14 @@
 /obj/item/organ/external/robotic/asters
 	name = "Lonestars \"Movement Lock\""
 	desc = "Generic gray prostesis for everyday use."
-	force_icon = 'icons/mob/human_races/cyberlimbs/asters.dmi'
+	force_icon = 'icons/mob/human_races/cyberlimbs/asters.dmi' //Sprites were done by Kirov on request
 	model = "asters"
 	price_tag = 300
 
 /obj/item/organ/external/robotic/serbian
 	name = "\"Voidwolf Arms\""
 	desc = "Battle hardened green and brown prosthesis rebranded several times."
-	force_icon = 'icons/mob/human_races/cyberlimbs/serbian.dmi'
+	force_icon = 'icons/mob/human_races/cyberlimbs/serbian.dmi' //Sprites were done by Kirov on request
 	model = "serbian"
 	price_tag = 400
 
@@ -96,7 +96,7 @@
 /obj/item/organ/external/robotic/technomancer
 	name = "Artificer Guild \"Homebrew\""
 	desc = "Artificer Guild \"branded\" \"functional\" prosthesis."
-	force_icon = 'icons/mob/human_races/cyberlimbs/technomancer.dmi'
+	force_icon = 'icons/mob/human_races/cyberlimbs/technomancer.dmi' //Sprites were done by Kirov on request
 	model = "technomancer"
 	price_tag = 300
 
@@ -175,7 +175,7 @@ obj/item/organ/external/robotic/synthskin/groin
 /obj/item/organ/external/robotic/junktech
 	name = "\"Junktech\""
 	desc = "Custom tooled and held together by hope and duct tape."
-	force_icon = 'icons/mob/human_races/cyberlimbs/advanced_ghetto.dmi'
+	force_icon = 'icons/mob/human_races/cyberlimbs/advanced_ghetto.dmi' //Sprites were done by Kirov on request
 	model = "ghetto"
 	armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = -5, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
@@ -194,6 +194,12 @@ obj/item/organ/external/robotic/synthskin/groin
 
 /obj/item/organ/external/robotic/junktech/r_leg
 	default_description = /datum/organ_description/leg/right
+
+/obj/item/organ/external/robotic/makeshift/groin
+	default_description = /datum/organ_description/groin
+
+/obj/item/organ/external/robotic/makeshift/chest
+	default_description = /datum/organ_description/chest
 
 // Soteria
 /obj/item/organ/external/robotic/moebius
@@ -312,7 +318,7 @@ obj/item/organ/external/robotic/synthskin/groin
 /obj/item/organ/external/robotic/excelsior
 	name = "Excelsior"
 	desc = "Plasma reinforced black prosthesis designed for heavy combat."
-	force_icon = 'icons/mob/human_races/cyberlimbs/excelsior.dmi'
+	force_icon = 'icons/mob/human_races/cyberlimbs/excelsior.dmi' //Sprites were done by Kirov on request
 	model = "excelsior"
 	armor_list = list(melee = 50, bullet = 50, energy = 50, bomb = 50, bio = 0, rad = 100)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 1, MATERIAL_PLASMA = 0.5) //Plasma needed as a material that excelsiors can't teleport in
@@ -331,6 +337,15 @@ obj/item/organ/external/robotic/synthskin/groin
 
 /obj/item/organ/external/robotic/excelsior/r_leg
 	default_description = /datum/organ_description/leg/right
+
+/obj/item/organ/external/robotic/excelsior/groin
+	default_description = /datum/organ_description/groin
+
+/obj/item/organ/external/robotic/excelsior/chest
+	default_description = /datum/organ_description/chest
+
+/obj/item/organ/external/robotic/excelsior/head
+	default_description = /datum/organ_description/head
 
 // Greyson
 /obj/item/organ/external/robotic/one_star

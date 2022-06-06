@@ -100,8 +100,9 @@
 //Lets remove ourselves from the global list and cleanup any held references
 /obj/structure/burrow/Destroy()
 	GLOB.all_burrows.Remove(src)
-	target = null
-	recieving = null
+	populated_burrows -= src
+	unpopulated_burrows -= src //-= is safe to use on lists, even if the item we're removing isn't in the list
+	distressed_burrows -= src
 	//Eject any mobs that tunnelled through us
 	for (var/atom/movable/a in sending_mobs)
 		if (a.loc == src)
@@ -109,7 +110,12 @@
 	population = list()
 	plantspread_burrows = list()
 	plant = null
-	.=..()
+
+	if(target)
+		abort_migration()
+	if (recieving)
+		recieving.abort_migration()
+	. = ..()
 
 //This is called from the migration subsystem. It scans for nearby creatures
 //Any kind of simple or superior animal is valid, all of them are treated as population for this burrow
@@ -388,8 +394,14 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 /obj/structure/burrow/proc/abort_migration()
 	STOP_PROCESSING(SSobj, src)
 	processing = FALSE
-	target = null
-	recieving = null
+
+	if (target)
+		target.recieving = null
+		target = null
+
+	if (recieving)
+		recieving.target = null
+		recieving = null
 
 	sending_mobs = list()
 	migration_initiated = 0
@@ -398,8 +410,6 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 
 	for (var/mob/M in contents)
 		M.forceMove(loc)
-
-
 
 //Called when an area becomes uninhabitable
 /obj/structure/burrow/proc/evacuate(force_nonmaint = TRUE)
@@ -492,6 +502,22 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 					if(prob(33))
 						qdel(src)
 					else	// false welding, critters will create new cracks
+						invisibility = 101
+						spawn(rand(3,10) SECONDS)
+							if(isSealed)
+								audio('sound/effects/impacts/thud_break.ogg', 100)
+								spawn_rubble(loc, 1, 100)//And make some rubble
+								invisibility = 0
+				else
+					qdel(src)
+		if (I.has_quality(QUALITY_HAMMERING))
+			user.visible_message("[user] starts hammering [src] with \the [I]", "You start hammering out [src] with \the [I]")
+			if(I.use_tool(user, src, WORKTIME_DELAYED, QUALITY_HAMMERING, FAILCHANCE_NORMAL, required_stat = STAT_ROB) && isSealed) //You are quite literally hammering the floor, slow and tedious
+				user.visible_message("[user] seals [src] with \the [I].", "You seal [src] with \the [I].")
+				if(recieving)
+					if(prob(33))
+						qdel(src)
+					else	// false hammering, critters will create new cracks
 						invisibility = 101
 						spawn(rand(3,10) SECONDS)
 							if(isSealed)

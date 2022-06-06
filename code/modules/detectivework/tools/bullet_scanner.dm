@@ -2,7 +2,8 @@
 
 /obj/item/device/bullet_scanner
 	name = "\improper Bullet Scanner"
-	desc = "A small device used to scan bullet holes or laser marks to get more data on the gun that fire it."
+	desc = "A small device used to scan bullet holes or laser marks to get more data on the gun that fired it."
+
 	icon = 'icons/obj/device.dmi'
 	icon_state = "ano_scanner"
 	item_state = "lampgreen"

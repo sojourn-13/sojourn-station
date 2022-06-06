@@ -25,9 +25,9 @@ It also has more matterals then it takes to craft as a way to have a sunk cost.
 	origin_tech = list(TECH_COMBAT = 6, TECH_MAGNET = 8, TECH_ENGINEERING = 8) //With how hard it is to make? High value.
 	fire_delay = 20
 	charge_cost = 150
-	recoil_buildup = 12 //Big blast of heated shot, got some recoil to it.
+	init_recoil = HANDGUN_RECOIL(0.3)
 	damage_multiplier = 1 //already quite a bit lethal and dangerous with the burn damage and 'close range spray'.
-	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE) //essentially a scattershot reductor.
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE) //essentially a scattershot reductor.
 
 	proj_step_multiplier = 0.5 //2x bullet speed, mostly for flares so they dont crawl
 

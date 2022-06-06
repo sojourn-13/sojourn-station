@@ -60,6 +60,9 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	var/last_fired = 0		//1: if the turret is cooling down from a shot, 0: turret is ready to fire
 	var/shot_delay = 70		//7 seconds between each shot by default, made better with parts
 
+	/// How far we will fire at mobs from. 7 by default.
+	var/firing_range = 6
+
 // Used to not target allied mobs
 	var/colony_allied_turret = FALSE //Are we allied with the colony?
 	var/lethal = FALSE
@@ -479,8 +482,15 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	var/list/targets = list()			//list of primary targets
 	var/list/secondarytargets = list()	//targets that are least important
 
-	for(var/mob/M in mobs_in_view(world.view, src))	// Why do we check every mob in an 15x15 area (Or radius of 7) if we later limit it to a radius of 6 (or area of 13x13) -R4d6
-		assess_and_assign(M, targets, secondarytargets)
+	for(var/mob/living/M in view(firing_range, src)) //WE USED WORLD.VIEW BEFORE THATS FUCKING PSYCHOPATHIC
+		assess_and_assign(M, targets, secondarytargets) //might want to not use a proc due to proc overhead cost
+
+	for(var/atom/A in GLOB.mechas_list)
+		if (A.z == z && (get_dist(A, src) < firing_range) && can_see(src, A, firing_range))
+			var/obj/mecha/mech = A
+			var/mob/living/occupant = mech.get_mob()
+			if (occupant)
+				assess_and_assign(occupant, targets, secondarytargets)
 
 	if(!tryToShootAt(targets))
 		tryToShootAt(secondarytargets) // if no valid targets, go for secondary targets
@@ -509,7 +519,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	if(L.stat)		//if the perp is dead/dying, no need to bother really
 		return TURRET_NOT_TARGET	//move onto next potential victim!
 
-	if(get_dist(src, L) > 6)	//if it's too far away, why bother?
+	if(get_dist(src, L) > firing_range)	//if it's too far away, why bother?
 		return TURRET_NOT_TARGET
 
 	/*

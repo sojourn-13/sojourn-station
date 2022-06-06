@@ -19,7 +19,7 @@
 	result = /obj/item/ammo_casing/crossbow_bolts/fragment/bulk
 	steps = list(
 		list(/obj/item/stack/rods, 10),
-		list(/obj/item/ore, 1)
+		list(/obj/item/stack/ore, 1)
 	)
 
 /datum/craft_recipe/lodge/crossbow_bolts/speed

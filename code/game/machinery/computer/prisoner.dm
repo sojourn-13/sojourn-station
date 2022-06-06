@@ -29,10 +29,7 @@
 			dat += "<HR><A href='?src=\ref[src];lock=1'>Unlock Console</A>"
 		else if(screen == 1)
 			dat += "<HR>Chemical Implants<BR>"
-			var/turf/Tr = null
 			for(var/obj/item/implant/chem/C in world)
-				Tr = get_turf(C)
-				if((Tr) && (Tr.z != src.z))	continue//Out of range
 				if(!C.implanted) continue
 				dat += "[C.wearer.name] | Remaining Units: [C.reagents.total_volume] | Inject: "
 				dat += "<A href='?src=\ref[src];inject1=\ref[C]'>(<font color=red>(1)</font>)</A>"
@@ -41,8 +38,6 @@
 				dat += "********************************<BR>"
 			dat += "<HR>Tracking Implants<BR>"
 			for(var/obj/item/implant/tracking/T in world)
-				Tr = get_turf(T)
-				if((Tr) && (Tr.z != src.z))	continue//Out of range
 				if(!T.implanted) continue
 				var/loc_display = "Unknown"
 				var/mob/living/carbon/M = T.wearer

@@ -121,8 +121,20 @@
 		return TRUE
 	return FALSE
 
-//Checks for specific types in a list
-//Zebra is used if the list is associative (/type/ = TRUE, /type = FALSE) and returns a value based on that true/false value
+/**
+ * Checks for specific types in a list.
+ *
+ * If using zebra mode the list should be an assoc list with truthy/falsey values.
+ * The check short circuits so earlier entries in the input list will take priority.
+ * Ergo, subtypes should come before parent types.
+ * Notice that this is the opposite priority of [/proc/typecacheof].
+ *
+ * Arguments:
+ * - [type_to_check][/datum]: An instance to check.
+ * - [list_to_check][/list]: A list of typepaths to check the type_to_check against.
+ * - zebra: Whether to use the value of the mathing type in the list instead of just returning true when a match is found.
+ */
+
 /proc/is_type_in_list(datum/type_to_check, list/list_to_check, zebra = FALSE)
 	if(!LAZYLEN(list_to_check) || !type_to_check)
 		return FALSE
@@ -139,8 +151,8 @@
 	for(var/path in list_to_check)
 		if(ispath(path_to_check, path))
 			return !zebra || list_to_check[path]
-	return FALSE
 
+	return FALSE
 /proc/instances_of_type_in_list(var/atom/A, var/list/L)
 	var/instances = 0
 	for(var/type in L)

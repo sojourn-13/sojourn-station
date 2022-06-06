@@ -178,3 +178,68 @@
 	requires_power = FALSE
 	dynamic_lighting = TRUE
 	base_turf = /turf/space
+
+//Scav shuttle
+/datum/shuttle/autodock/multi/rocinante
+	name = "The Rocinante"
+	move_time = (7 MINUTES) / (1 SECOND)
+	shuttle_area = /area/shuttle/rocinante_shuttle_area
+	current_location = "nav_rocinante_homebase"
+	landmark_transition = "nav_rocinante_transit"
+	destination_tags = list("nav_rocinante_homebase", "nav_rocinante_river", "nav_rocinante_swamp", "nav_rocinante_graysonfield") // "nav_skipjack_spacefortress" - lost, "nav_rocinante_forest" - for later
+
+/obj/effect/shuttle_landmark/rocinante_home
+	name = "The Rocinante Home Pad "
+	landmark_tag = "nav_rocinante_homebase"
+	base_turf = /turf/simulated/floor/reinforced
+	base_area = /area/skipjack_station
+
+/obj/effect/shuttle_landmark/transit/rocinante_transit
+	name = "In transit"
+	landmark_tag = "nav_rocinante_transit"
+	base_turf = /turf/space
+	autoset = TRUE
+/*
+/obj/effect/shuttle_landmark/rocinante_colony
+	name = "Rocinante Landing Zone"
+	landmark_tag = "nav_rocinante_colony"
+	base_turf = /turf/simulated/floor/asteroid/dirt
+	autoset = TRUE
+
+/obj/effect/shuttle_landmark/rocinante_deepforest
+	name = "Deep Forest Landing Zone"
+	landmark_tag = "nav_rocinante_forest"
+	base_turf = /turf/simulated/floor/asteroid/dirt
+	autoset = TRUE
+*/
+/obj/effect/shuttle_landmark/rocinante_riverforest
+	name = "River Forest Landing Zone"
+	landmark_tag = "nav_rocinante_river"
+	base_turf = /turf/simulated/floor/asteroid/dirt
+	autoset = TRUE
+
+/obj/effect/shuttle_landmark/rocinante_swamp
+	name = "Swamp Dock"
+	landmark_tag = "nav_rocinante_swamp"
+	base_turf = /turf/simulated/floor/asteroid/grass
+	autoset = TRUE
+
+/obj/effect/shuttle_landmark/rocinante_field_office
+	name = "Greyson Field Office Dock"
+	landmark_tag = "nav_rocinante_graysonfield"
+	base_turf = /turf/simulated/floor/reinforced
+	autoset = TRUE
+
+//Rocinante console
+/obj/machinery/computer/shuttle_control/multi/rocinante
+	name = "The Rocinante shuttle console"
+	shuttle_tag = "The Rocinante"
+	req_one_access = null
+
+//Area code
+/area/shuttle/rocinante_shuttle_area
+	name = "The Rocinante Landing Pad"
+	icon_state = "shuttle"
+	requires_power = FALSE
+	dynamic_lighting = FALSE
+	base_turf = /turf/simulated/floor/reinforced

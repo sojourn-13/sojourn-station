@@ -263,7 +263,7 @@
 /obj/item/clothing/accessory/cape/outsider
 	name = "outcast's cloak"
 	desc = "A raggedy cloak made of leather and reclaimed materials, can be worn over one's armor as a sign of pride for their outcast nature."
-	icon_state = "outsider"
+	icon_state = "outcast_cloak"
 
 /obj/item/clothing/accessory/cape/scav
 	name = "makeshift cape"
@@ -458,13 +458,13 @@
 	icon_state = "half_sarg"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
-/obj/item/clothing/accessory/cape/blackshield/corpsmans_cape
+/obj/item/clothing/accessory/halfcape/corpsman
 	name = "Corpsman mantle"
 	desc = "A half-cape made from blue and black fabric denoting that they are a corpsman, to be easily seen in the jungle."
 	icon_state = "half_corp"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
-/obj/item/clothing/accessory/cape/trooper_cape
+/obj/item/clothing/accessory/halfcape/trooper_cape
 	name = "Troopers mantle"
 	desc = "A half-cape made from blue and white fabric denoting the rank of Trooper. Allows for identification at a glance"
 	icon_state = "half_troop"
@@ -577,8 +577,20 @@
 
 /obj/item/clothing/accessory/bscloak
 	name = "Blackshield longcoat"
-	desc = "A simple, durable longcoat intended to be worn under armored vests for protection in incliment weather."
+	desc = "A simple, durable longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
 	icon_state = "bs_longcoat"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/bscloak/tan
+	name = "Blackshield tan longcoat"
+	desc = "A simple, durable tan longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
+	icon_state = "bs_longcoat_tan"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER // Made them children of longcoat so should inherit but juuust in case...
+
+/obj/item/clothing/accessory/bscloak/olive
+	name = "Blackshield tan longcoat"
+	desc = "A simple, durable drab longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
+	icon_state = "bs_longcoat_green"
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /*Scarves*/
@@ -771,7 +783,18 @@
 	desc = "A lightweight polymer frame designed to hold a neck upright comfortably."
 	icon_state = "neckbrace"
 	item_state = "neckbrace"
-
+	
+/obj/item/clothing/accessory/pilotwebbing
+	name = "basic pilot harness"
+	desc = "A basic harness commonly used through out the galaxy from shuttle pilots to mech pilots. The harness itself has minimal safety strapping however would still ensure you're safely strapped into whatever cockpit you may be seated in."
+	icon_state = "basicpilot"
+	item_state = "basicpilot"
+	
+/obj/item/clothing/accessory/pilotwebbing/military
+	name = "military pilot harness"
+	desc = "A military harness commonly seen being used by pilots within military or paramilitary forces for their fighter pilots and combat mech pilots. The harness itself has extra safety strapping and buckles allowing for the attaching of safety ane EVA equipment in case of an emergency however would still ensure you're safely strapped into whatever cockpit you may be seated in."
+	icon_state = "militarypilot"
+	item_state = "militarypilot"
 
 /* Kneepads */
 
@@ -1079,3 +1102,76 @@
 	desc = "An expensive watch with a black band wrapped around your wrist. Snazzy."
 	icon_state = "wristwatch_black"
 	item_state = "wristwatch_black"
+
+/* Waistcoat refactor into attachable accesories */
+
+/obj/item/clothing/accessory/waistcoat
+	name = "black waistcoat"
+	desc = "A classy black waistcoat."
+	icon_state = "vest"
+	item_state = "vest"
+	overlay_state = "vest"
+	item_state_slots = list(slot_r_hand_str = "wcoat", slot_l_hand_str = "wcoat")
+	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
+	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	slot_flags = SLOT_OCLOTHING|SLOT_ACCESSORY_BUFFER
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	siemens_coefficient = 0.9
+
+/obj/item/clothing/accessory/waistcoat/grey
+	name = "grey waistcoat"
+	desc = "A classy grey waistcoat."
+	icon_state = "grey_waistcoat"
+	item_state = "grey_waistcoat"
+	overlay_state = "grey_waistcoat"
+
+/obj/item/clothing/accessory/waistcoat/red
+	name = "red waistcoat"
+	desc = "A classy red waistcoat."
+	icon_state = "red_waistcoat"
+	item_state = "red_waistcoat"
+	overlay_state = "red_waistcoat"
+
+/obj/item/clothing/accessory/waistcoat/brown
+	name = "brown waistcoat"
+	desc = "A classy brown waistcoat."
+	icon_state = "brown_waistcoat"
+	item_state = "brown_waistcoat"
+	overlay_state = "brown_waistcoat"
+
+/obj/item/clothing/accessory/waistcoat/elegant
+	name = "elegant waistcoat"
+	desc = "A classy elegant waistcoat."
+	icon_state = "elegant_waistcoat"
+	item_state = "elegant_waistcoat"
+	overlay_state = "elegant_waistcoat"
+
+/* Attachable sweater vests for suits */
+
+/obj/item/clothing/accessory/swvest
+	name = "black sweatervest"
+	desc = "A sleeveless black sweater."
+	icon_state = "sweatervest"
+	item_state = "sweatervest"
+	overlay_state = "sweatervest"
+	item_state_slots = list(slot_r_hand_str = "wcoat", slot_l_hand_str = "wcoat")
+	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
+	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	slot_flags = SLOT_OCLOTHING|SLOT_ACCESSORY_BUFFER
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	siemens_coefficient = 0.9
+
+/obj/item/clothing/accessory/swvest/blue
+	name = "blue sweatervest"
+	desc = "A sleeveless blue sweater."
+	icon_state = "sweatervest_blue"
+	item_state = "sweatervest_blue"
+	overlay_state = "sweatervest_blue"
+
+/obj/item/clothing/accessory/swvest/red
+	name = "red sweatervest"
+	desc = "A sleeveless red sweater."
+	icon_state = "sweatervest_red"
+	item_state = "sweatervest_red"
+	overlay_state = "sweatervest_red"
+

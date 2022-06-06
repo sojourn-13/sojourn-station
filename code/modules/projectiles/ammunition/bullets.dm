@@ -227,7 +227,7 @@
 	projectile_type = /obj/item/projectile/bullet/rifle_75/lethal
 
 /obj/item/ammo_casing/rifle_75/scrap
-	desc = "An old 7.5 Caseless Rifle bullet casing."
+	desc = "An old 7.5mm bullet casing."
 	icon_state = "srifle_c_s"
 	spent_icon = "srifle_c_s-spent"
 	shell_color = "p"

@@ -8,8 +8,8 @@
 	markup = UNCOMMON_GOODS
 	base_income = 3200
 	wealth = -48000		// REALLY good gear so were in det
-	secret_inv_threshold = 32000
-	assortiment = list(
+	hidden_inv_threshold = 32000
+	inventory = list(
 		"Spare Parts" = list(
 			/obj/item/stock_parts/capacitor/adv = custom_good_amount_range(list(1, 3)),
 			/obj/item/stock_parts/scanning_module/adv = custom_good_amount_range(list(1, 3)),
@@ -18,10 +18,10 @@
 			/obj/item/stock_parts/matter_bin/adv = custom_good_amount_range(list(1, 3))
 		),
 		"Spare Boards" = list(
-			/obj/item/circuitboard = good_data("Spare Boards", list(-5, -1)),
-			/obj/item/circuitboard/vending = good_data("Custom Vendor Board", list(4, 5)),
-			/obj/item/circuitboard/autolathe = good_data("Autolathe Boards", list(-5, 1)),
-			/obj/item/aiModule = good_data("Spare AI Module Board", list(-5, -1))
+			/obj/item/circuitboard = good_data("Spare Boards", list(-9999999, -8999999), 70),
+			/obj/item/circuitboard/vending = good_data("Custom Vendor Board", list(4, 5), 30),
+			/obj/item/circuitboard/autolathe = good_data("Autolathe Boards", list(-5, 1), 200),
+			/obj/item/aiModule = good_data("Spare AI Module Board", list(-9999999, -8999999), 300)
 		),
 		"Telecoms Parts" = list(
 			/obj/item/stock_parts/subspace/ansible,
@@ -34,7 +34,7 @@
 		)
 	)
 
-	secret_inventory = list(
+	hidden_inventory = list(
 		"\"Treaser\"" = list(
 			/obj/structure/salvageable/bliss = custom_good_amount_range(list(-1, 2)),
 			/obj/item/noslipmodule = custom_good_amount_range(list(-1, 2)),
@@ -44,7 +44,7 @@
 		)
 	)
 /*
-	secret_inventory = list(
+	hidden_inventory = list(
 		"\"Trash\"" = list(
 			/obj/item/oddity/common/blueprint = custom_good_amount_range(list(-1, 2)),
 			/obj/item/oddity/common/coin = custom_good_amount_range(list(-1, 2)),

@@ -670,3 +670,9 @@
 	blend = ICON_MULTIPLY
 	extra_overlay = "buggofirefly_vass_markings"
 	extra_overlay_w = "buggofatfirefly_vass_markings"
+
+/datum/sprite_accessory/tail/jackal
+	name = "Jackal Tail"
+	icon_state = "jackal"
+	colored_layers = 2
+	blend = ICON_MULTIPLY

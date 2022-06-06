@@ -62,7 +62,8 @@
 	activators = list(
 		"collect ore" = IC_PINTYPE_PULSE_IN,
 		"drop ore" = IC_PINTYPE_PULSE_IN,
-		"pulse out" = IC_PINTYPE_PULSE_OUT
+		"pulse out" = IC_PINTYPE_PULSE_OUT,
+		"on fail" = IC_PINTYPE_PULSE_OUT
 		)
 	spawn_flags = IC_SPAWN_RESEARCH
 	power_draw_per_use = 20
@@ -77,26 +78,29 @@
 	QDEL_NULL(box)
 
 /obj/item/integrated_circuit/mining/mining_satchel/do_work(ord)
+	var/atom/movable/AM = get_pin_data(IC_INPUT, 1)
+	if(!src.Adjacent(AM)) //no more infinit range deposits
+		activate_pin(4)
+		return
 	switch(ord)
 		if(1)
-			var/atom/movable/AM = get_pin_data(IC_INPUT, 1)
 			if(isturf(AM))
 				var/turf/T = AM
-				for(var/obj/item/ore/O in T.contents)
+				for(var/obj/item/stack/ore/O in T.contents)
 					if(!box.can_be_inserted(O))
+						activate_pin(4)
 						return
 					box.handle_item_insertion(O)
-			set_pin_data(IC_OUTPUT, 1, length(box.return_inv()))
-			push_data()
-			activate_pin(3)
 		if(2)
-			var/atom/movable/AM = get_pin_data(IC_INPUT, 1)
 			if(istype(AM, /obj/structure/ore_box))
 				var/obj/structure/ore_box/OB = AM
 				OB.attackby(box, src)
 			else if(isturf(AM))
-				for(var/obj/item/ore/O in box.return_inv())
+				for(var/obj/item/stack/ore/O in box.return_inv())
 					box.remove_from_storage(O, AM)
+	set_pin_data(IC_OUTPUT, 1, length(box.return_inv()))
+	push_data()
+	activate_pin(3)
 
 /obj/item/integrated_circuit/mining/mining_drill
 	name = "mining drill"

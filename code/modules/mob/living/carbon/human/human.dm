@@ -68,6 +68,11 @@
 	for(var/organ in organs)
 		qdel(organ)
 	organs.Cut()
+
+	QDEL_NULL(sanity)
+	QDEL_NULL(vessel)
+
+	worn_underwear.Cut()
 	return ..()
 
 /mob/living/carbon/human/Stat()
@@ -1134,13 +1139,14 @@ var/list/rank_prefix = list(\
 
 	spawn(0)
 		regenerate_icons()
-		if(vessel.total_volume < species.blood_volume)
-			vessel.maximum_volume = species.blood_volume
-			vessel.add_reagent("blood", species.blood_volume - vessel.total_volume)
-		else if(vessel.total_volume > species.blood_volume)
-			vessel.remove_reagent("blood", vessel.total_volume - species.blood_volume)
-			vessel.maximum_volume = species.blood_volume
-		fixblood()
+		if(!QDELETED(src))
+			if(vessel.total_volume < species.blood_volume)
+				vessel.maximum_volume = species.blood_volume
+				vessel.add_reagent("blood", species.blood_volume - vessel.total_volume)
+			else if(vessel.total_volume > species.blood_volume)
+				vessel.remove_reagent("blood", vessel.total_volume - species.blood_volume)
+				vessel.maximum_volume = species.blood_volume
+			fixblood()
 
 
 	// Rebuild the HUD. If they aren't logged in then login() should reinstantiate it for them.
@@ -1661,6 +1667,7 @@ var/list/rank_prefix = list(\
 
 /mob/living/carbon/human/gender_word(var/position, var/datum/gender/G = null) //Humans can adopt gender identities other than their own.
 	. = ..(position, G ? G : get_gender())
+
 /mob/living/carbon/human/need_breathe()
 	if(!(mNobreath in mutations))
 		return TRUE

@@ -13,8 +13,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	damage_multiplier = 1.2
-	recoil_buildup = 6
-	one_hand_penalty = 7
+	init_recoil = HANDGUN_RECOIL(0.4)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "H&S"
 
@@ -28,7 +27,7 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 5)
-	recoil_buildup = 5
+	init_recoil = HANDGUN_RECOIL(0.3)
 	serial_type = "NM"
 
 /obj/item/gun/projectile/colt/ten
@@ -46,7 +45,7 @@
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
-	recoil_buildup = 6
+	init_recoil = HANDGUN_RECOIL(0.5)
 	damage_multiplier = 1.1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)
 	serial_type = "SA"
@@ -59,6 +58,23 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	serial_type = "Sol Fed"
+
+/obj/item/gun/projectile/colt/liberty
+	name = "\"Liberty\" magnum pistol"
+	desc = "A common Nadezhda Marshal issue pistol chambered in .40 Magnum. It appears to be loosely based off a Colt model, albeit with a changed slide and polymer grip and a built-in holographic scope."
+	icon = 'icons/obj/guns/projectile/liberty.dmi'
+	icon_state = "liberty"
+	item_state = "liberty"
+	caliber = CAL_MAGNUM
+	price_tag = 750
+	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
+	damage_multiplier = 1.0
+	penetration_multiplier = 1.3
+	zoom_factor = 0.2
+	init_recoil = HANDGUN_RECOIL(0.6)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)
+	serial_type = "NM"
+
 
 /obj/item/gun/projectile/colt/update_icon()
 	..()
