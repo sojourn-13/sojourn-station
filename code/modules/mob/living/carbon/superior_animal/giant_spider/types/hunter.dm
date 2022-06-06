@@ -9,7 +9,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 20
 	poison_per_bite = 4
-	move_to_delay = 4
+	move_to_delay = 3
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/hunter
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","bounces in place.")
@@ -234,7 +234,7 @@
 	health = 400
 	move_to_delay = 1
 	turns_per_move = 7
-	viewRange = 12
+	viewRange = 9
 	melee_damage_lower = 20
 	melee_damage_upper = 30
 	poison_per_bite = 4
@@ -247,7 +247,7 @@
 	give_randomized_armor = FALSE //Were not getting armor
 
 	//Giving the emperor spider his own meat that has party drops. Reducing dropped meat to 3 from 4.
-	meat_amount = 3
+	meat_amount = 4 //So its more worth killing these
 	emote_see = list("chitters.","rubs its legs.","chitters in something that sounds like speech.")
 	mob_size = MOB_LARGE
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)

@@ -13,7 +13,7 @@
 	load_method = SINGLE_CASING
 	max_shells = 6
 	damage_multiplier = 1.36
-	recoil_buildup = 2
+	init_recoil = HANDGUN_RECOIL(0.5)
 	var/chamber_open = FALSE
 	var/jammed = FALSE
 	var/jam_chance = 15
@@ -29,6 +29,7 @@
 	Reloading, clearing jams, and opening or closing the chamber is done with a screwdriver. This one chambers up to four .40 magnum ammo."
 	caliber = CAL_MAGNUM
 	max_shells = 4
+	init_recoil = HANDGUN_RECOIL(0.7)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	price_tag = 60
 
@@ -39,7 +40,7 @@
 	and recoil as a result of its caliber."
 	caliber = CAL_SHOTGUN
 	max_shells = 2
-	recoil_buildup = 18 //Still a shotgun
+	init_recoil = HANDGUN_RECOIL(1.5)
 	jam_chance = 25
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	price_tag = 70
@@ -52,7 +53,7 @@
 	caliber = CAL_ANTIM
 	max_shells = 1
 	damage_multiplier = 1
-	recoil_buildup = 30 //still a massive bullet
+	init_recoil = HANDGUN_RECOIL(3.5)
 	jam_chance = 35
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	price_tag = 75

@@ -17,7 +17,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 14, MATERIAL_WOOD = 12)
 	price_tag = 1500
 	penetration_multiplier = 0.8
-	recoil_buildup = 2
+	init_recoil = SMG_RECOIL(0.8)
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE)
 	init_firemodes = list(

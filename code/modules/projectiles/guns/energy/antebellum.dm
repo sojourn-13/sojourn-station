@@ -15,8 +15,7 @@
 	projectile_type = /obj/item/projectile/plasma/light
 	fire_delay = 10
 	charge_cost = 100 //10 shots with basic 15 with level 2
-	recoil_buildup = 4
-	one_hand_penalty = 8
+	init_recoil = HANDGUN_RECOIL(1)
 	price_tag = 900
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(

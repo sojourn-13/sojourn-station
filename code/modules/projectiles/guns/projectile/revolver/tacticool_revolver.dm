@@ -13,7 +13,6 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.25
 	zoom_factor = 1.4
-	recoil_buildup = 4 //Less recoil due to the weight of the scope.
-	one_hand_penalty = 15
+	init_recoil = HANDGUN_RECOIL(1.2)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
 	serial_type = "SA"

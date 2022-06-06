@@ -7,7 +7,7 @@
 	slot_flags = SLOT_BELT|SLOT_BACK
 	item_charge_meter = TRUE
 	twohanded = TRUE
-	one_hand_penalty = 5
+	init_recoil = CARBINE_RECOIL(1)
 	matter = list(MATERIAL_PLASTIC = 6)
 	fire_sound = 'sound/weapons/Laser.ogg'
 	projectile_type = /obj/item/projectile/plasma/lastertag/blue
@@ -40,8 +40,6 @@
 	can_dual = TRUE
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
 	charge_cost = 100
-	one_hand_penalty = 2 //No wall of shots
-	recoil_buildup = 0.1
 	init_firemodes = list(
 		list(mode_name="semiauto", mode_desc="Standered one shot",       burst=1, fire_delay=1.2, move_delay=null, icon="semi"),
 		list(mode_name="3-round bursts", mode_desc="Three shots back to back", burst=3, fire_delay=0.2, move_delay=6, icon="burst"),
