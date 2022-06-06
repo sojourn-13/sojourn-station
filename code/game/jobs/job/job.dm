@@ -113,6 +113,8 @@
 	if(H && H.stats.getPerk(PERK_DEBTOR))
 		nepotism -= 0.5
 
+	wage *= nepotism // I have no idea if wages is used anywhere else, so we just increase it here instead of in the create_account proc, just in case. -R4d6
+
 	var/money_amount = one_time_payment(nepotism)
 	var/datum/money_account/M = create_account(H.real_name, money_amount, null, department, wage, aster_guild_member)
 	if(H.mind)
