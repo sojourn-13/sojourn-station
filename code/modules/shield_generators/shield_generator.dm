@@ -651,14 +651,15 @@
 	if (report_scheduled)
 		return
 
-	report_scheduled = TRUE
-	addtimer(CALLBACK(src, .proc/report_damage), report_delay)
+	if (reportDamage)
+		report_scheduled = TRUE
+
+		addtimer(CALLBACK(src, .proc/report_damage), report_delay)
+
+
 
 //This proc sends reports for shield damage
 /obj/machinery/power/shield_generator/proc/report_damage()
-
-	if (!reportDamage)
-		return
 
 	var/do_report = FALSE //We only report if this is true
 	report_scheduled = FALSE //Reset this regardless of what we do here
