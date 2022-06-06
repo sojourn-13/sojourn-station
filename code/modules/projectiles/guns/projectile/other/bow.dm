@@ -23,7 +23,6 @@
 			list(mode_name="normal", mode_desc="Draw the bow to fire a shot", mode_type = /datum/firemode/charge, icon="charge")
 			)
 	serial_type = null
-	one_hand_penalty = 30
 	twohanded = TRUE
 	safety = FALSE
 	restrict_safety = TRUE

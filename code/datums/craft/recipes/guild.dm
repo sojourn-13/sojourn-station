@@ -312,26 +312,6 @@
 	)
 
 
-/datum/craft_recipe/guild/whalerbow
-	name = "\"Whaler\" heavy composite bow"
-	result = /obj/item/gun/projectile/bow/xbow
-	steps = list(
-		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTEEL, "time" = 15),
-		list(QUALITY_HAMMERING, 40, "time" = 20),
-		list(QUALITY_WELDING, 40, "time" = 60),
-		list(QUALITY_SAWING, 60, "time" = 20),
-		list(CRAFT_MATERIAL, 40, MATERIAL_PLASTIC, "time" = 15),
-		list(QUALITY_WELDING, 40, "time" = 20),
-		list(QUALITY_CUTTING, 40, "time" = 20),
-		list(/obj/item/gun_upgrade/scope/watchman, 1, "time" = 10),
-		list(CRAFT_MATERIAL, 2, MATERIAL_PLASMAGLASS, "time" = 15),
-		list(QUALITY_SCREW_DRIVING, 40, "time" = 10),
-		list(QUALITY_CUTTING, 40, "time" = 60),
-		list(QUALITY_WELDING, 40, "time" = 60)
-	)
-
-
-
 /datum/craft_recipe/guild/tetrasmg
 	name = "tetra laser smg"
 	result = /obj/item/gun/energy/tetra
