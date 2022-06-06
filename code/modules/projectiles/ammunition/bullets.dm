@@ -849,7 +849,7 @@
 /obj/item/ammo_casing/arrow/reagent
 	name = "vial arrow"
 	icon_state = "arrow-vial"
-	desc = "A fairly basic arrow with a aerodynamic plastic head and a fragile glass vial attached, which should shatter on impact."
+	desc = "An arrow with a aerodynamic plastic head and a fragile glass vial attached, which should shatter on impact."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/reagent
 	maxamount = 1
 
@@ -863,7 +863,7 @@
 /obj/item/ammo_casing/arrow/reagent/hypo
 	name = "injector arrow"
 	icon_state = "arrow-hypo"
-	desc = "A fairly basic arrow with a aerodynamic plastic with a reinforced hypodermic needle sticking out. Looks quite painful."
+	desc = "An arrow with a reinforced hypodermic needle sticking out. Looks quite painful."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/reagent/hypo
 
 /obj/item/ammo_casing/arrow/practice
@@ -884,6 +884,7 @@
 	desc = "A finely-made arrow with an aerodynamic plastic tip. Looks like it has small mounting points attached along the shaft."
 	force = WEAPON_FORCE_HARMLESS
 	icon_state = "arrow-practice"
+	maxamount = 4
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/practice/payload
 	var/list/special_crafting_types = list(/obj/item/grenade/explosive = /obj/item/ammo_casing/arrow/explosive,
 	/obj/item/mine/improvised = /obj/item/ammo_casing/arrow/explosive/frag,
@@ -901,14 +902,14 @@
 	amount = 4
 
 /obj/item/ammo_casing/arrow/empty_payload/attackby(obj/item/I, mob/user)
-	for(var/thingy in special_crafting_types)
-		if(ispath(I, thingy))
-			to_chat(user, SPAN_NOTICE("You attach [I] to the [src]."))
-			var/obj/item/craft_out = special_crafting_types[I]
-			new craft_out(get_turf(src))
-			qdel(I)
-			qdel(src)
+	if(is_type_in_list(I, special_crafting_types, TRUE))
+		if(amount > 1)
+			to_chat(user, SPAN_NOTICE("Seperate an arrow from the stack before attaching a payload."))
 			return
+		var/creation = is_type_in_list(I, special_crafting_types, TRUE)
+		new creation(get_turf(src))
+		qdel(src)
+		qdel(I)
 	..()
 
 /obj/item/ammo_casing/arrow/explosive

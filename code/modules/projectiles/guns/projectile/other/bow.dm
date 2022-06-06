@@ -54,6 +54,15 @@
 		loaded -= chambered
 	update_icon()
 
+//attempts to unload src. If allow_dump is set to 0, the speedloader unloading method will be disabled
+/obj/item/gun/projectile/bow/unload_ammo(mob/user, var/allow_dump=1)
+	if(chambered)
+		user.put_in_hands(chambered)
+		chambered = null
+	else
+		to_chat(user, SPAN_WARNING("[src] is empty."))
+	update_icon()
+
 /obj/item/gun/projectile/bow/consume_next_projectile()
 	if(chambered)
 		return chambered.BB

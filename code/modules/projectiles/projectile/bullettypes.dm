@@ -1141,7 +1141,7 @@
 /obj/item/projectile/bullet/reusable/arrow/explosive/smoke/on_impact(atom/target)
 	src.smoke.set_up(10, 0, usr.loc)
 	src.smoke.start()
-	return ..()
+	return TRUE
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/smoke/Destroy()
 	..()
