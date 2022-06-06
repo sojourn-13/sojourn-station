@@ -56,7 +56,7 @@
 	name = "Marshal and Blackshield Division"
 	id = DEPARTMENT_SECURITY
 	account_initial_balance = 2500
-	funding_source = DEPARTMENT_COMMAND
+	funding_source = "Nadezhda Enployment."
 
 /datum/department/technomancers
 	name = "Artificer's Guild"
@@ -93,7 +93,7 @@
 	name = "Church of Absolute"
 	id = DEPARTMENT_CHURCH
 	account_initial_balance = 2500 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
-	funding_source = "Church of Absolute"
+	funding_source = "Church of Absolute."
 
 
 
