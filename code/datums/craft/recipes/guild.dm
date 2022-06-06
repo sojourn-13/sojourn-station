@@ -21,7 +21,7 @@
 //bullets -----------------------------
 
 /datum/craft_recipe/guild/payload_arrow
-	name = "empty payload arrow"
+	name = "bulk empty payload arrow"
 	result = /obj/item/ammo_casing/arrow/empty_payload/bulk
 	icon_state = "woodworking"
 	steps = list(

@@ -77,7 +77,7 @@
 
 /obj/item/gun/projectile/bow/release_charge(atom/target, mob/living/user)
 	deltimer(overcharge_timer)
-	Fire(target, user, extra_proj_damagemult = overcharge_level, extra_proj_penmult = overcharge_level, extra_proj_stepdelaymult = (overcharge_level > 5 ? 1 : 0.5), multiply_projectile_agony = overcharge_level)
+	Fire(target, user, extra_proj_damagemult = overcharge_level, extra_proj_penmult = overcharge_level, extra_proj_stepdelaymult = (overcharge_level > 5 ? 1 : 0.4), multiply_projectile_agony = overcharge_level)
 	overcharge_level = 0
 	update_icon()
 
@@ -97,6 +97,8 @@
 	extra_damage_mult_scoped = 0.2
 	overcharge_timer_step = 4
 	price_tag = 1200
+
+//currently unobtainable due to no unique sprite
 
 /obj/item/gun/projectile/bow/xbow
 	name = "\"Whaler\" heavy compound bow"

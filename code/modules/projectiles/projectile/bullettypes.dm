@@ -953,6 +953,7 @@
 	affective_damage_range = 6
 	affective_ap_range = 6
 	create_type = /obj/item/ammo_casing/arrow
+	recoil = 0 //arrow moment
 
 /obj/item/projectile/bullet/reusable/arrow/broadhead //Similar base damage, higher embed rate, lower AP. Arrow-hollowpoints type 1.
 	name = "broadhead arrow"
@@ -960,18 +961,16 @@
 	embed = TRUE //we are going to try really hard to embed
 	embed_mult = 3
 	armor_penetration = 1.5
-	step_delay = 0.9
 	create_type = null
 	shrapnel_type = /obj/item/ammo_casing/arrow/broadhead //the ENTIRE arrow!
 
 /obj/item/projectile/bullet/reusable/arrow/serrated
 	name = "serrated arrow"
 	icon_state = "arrow"
-	agony = 32 //same as .40mag HPs
+	post_penetration_dammult = 1.1
 	damage_types = list(BRUTE = 5.5) //Very good base damage, negligible (5) AP, but no embedding. Think of it as arrow-hollowpoints type 2.
 	embed = FALSE
 	armor_penetration = 0.5
-	step_delay = 0.9
 	create_type = /obj/item/ammo_casing/arrow/serrated
 
 /obj/item/projectile/bullet/reusable/arrow/hunting
@@ -1039,12 +1038,11 @@
 	embed = FALSE
 	nodamage = TRUE
 	armor_penetration = 0
-	step_delay = 1.1
 	create_type = /obj/item/ammo_casing/arrow/practice
 
 /obj/item/projectile/bullet/reusable/arrow/practice/payload
-	name = "ultralight training arrow"
-	step_delay = 0.9
+	name = "empty payload arrow"
+	step_delay = 1.1
 	create_type = /obj/item/ammo_casing/arrow/empty_payload
 
 

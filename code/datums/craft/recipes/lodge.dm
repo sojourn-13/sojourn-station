@@ -40,7 +40,7 @@
 	steps = list(
 		list(/obj/item/stack/rods, 3),
 		list(CRAFT_MATERIAL, 2, MATERIAL_BONE, "time" = 1), //Takes a second
-		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 1) //Takes a second
+		list(/obj/item/reagent_containers/food/snacks/grown, 3, "time" = 1) //Takes a second
 	)
 
 /datum/craft_recipe/lodge/arrow_hunting/heavy
@@ -49,7 +49,7 @@
 	steps = list(
 		list(/obj/item/stack/rods, 3),
 		list(CRAFT_MATERIAL, 3, MATERIAL_BONE, "time" = 1), //Takes a second
-		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 1) //Takes a second
+		list(/obj/item/reagent_containers/food/snacks/grown, 3, "time" = 1) //Takes a second
 	)
 
 /datum/craft_recipe/lodge/baroqe

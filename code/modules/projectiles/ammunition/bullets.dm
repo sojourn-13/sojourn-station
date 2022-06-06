@@ -815,7 +815,7 @@
 /obj/item/ammo_casing/arrow/hunting
 	name = "hunting arrow"
 	icon_state = "arrow-bone"
-	desc = "A good-quality handmade arrow, with a bone head and plastic fletching. The head is shaped to allow easy removal from an animal's corpse."
+	desc = "A good-quality handmade arrow, with a bone head and leaf fletching. The head is shaped to allow easy removal from an animal's corpse."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/hunting
 
 /obj/item/ammo_casing/arrow/hunting/bulk
@@ -824,7 +824,7 @@
 /obj/item/ammo_casing/arrow/hunting/heavy
 	name = "broadhead hunting arrow"
 	icon_state = "arrow-broadbone"
-	desc = "A good-quality handmade arrow, with a bone head and plastic fletching. The head is shaped to stick fast in wounds- it likely won't be retrievable from a corpse."
+	desc = "A good-quality handmade arrow, with a bone head and leaf fletching. The head is shaped to stick fast in wounds- it likely won't be retrievable from a corpse."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/hunting/heavy
 
 /obj/item/ammo_casing/arrow/hunting/heavy/bulk
@@ -874,10 +874,11 @@
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/practice
 	matter = list(MATERIAL_PLASTIC = 0.1)
 	maxamount = 10
-//payload arrows
+
 /obj/item/ammo_casing/arrow/practice/bulk
 	amount = 10
 
+//payload arrows
 /obj/item/ammo_casing/arrow/empty_payload
 	name = "streamlined ultralight arrow"
 	desc = "A finely-made arrow with an aerodynamic plastic tip. Looks like it has small mounting points attached along the shaft."
@@ -885,6 +886,8 @@
 	icon_state = "arrow-practice"
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/practice/payload
 	var/list/special_crafting_types = list(/obj/item/grenade/explosive = /obj/item/ammo_casing/arrow/explosive,
+	/obj/item/mine/improvised = /obj/item/ammo_casing/arrow/explosive/frag,
+	/obj/item/mine = /obj/item/ammo_casing/arrow/explosive,
 	/obj/item/grenade/frag/stinger = /obj/item/ammo_casing/arrow/explosive/frag/sting,
 	/obj/item/grenade/frag = /obj/item/ammo_casing/arrow/explosive/frag,
 	/obj/item/grenade/empgrenade = /obj/item/ammo_casing/arrow/explosive/emp,
@@ -895,7 +898,7 @@
 	/obj/item/reagent_containers/glass/beaker/vial = /obj/item/ammo_casing/arrow/reagent)
 
 /obj/item/ammo_casing/arrow/empty_payload/bulk
-	amount = 2
+	amount = 4
 
 /obj/item/ammo_casing/arrow/empty_payload/attackby(obj/item/I, mob/user)
 	for(var/thingy in special_crafting_types)

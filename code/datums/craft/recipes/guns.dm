@@ -58,6 +58,17 @@
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 20),
 	)
 
+/datum/craft_recipe/gun/payload_arrow
+	name = "single empty payload arrow"
+	result = /obj/item/ammo_casing/arrow/empty_payload
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL, "time" = 1),
+		list(QUALITY_WELDING, 40, "time" = 5),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 1),
+		list(QUALITY_CUTTING, 40, "time" = 5)
+	)
+
 
 /datum/craft_recipe/gun/pistol
 	name = "handmade pistol"
