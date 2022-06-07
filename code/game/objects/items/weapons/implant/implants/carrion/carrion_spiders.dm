@@ -39,7 +39,7 @@
 
 /obj/item/implant/carrion_spider/Process()
 	if(ready_to_attack && (last_stun_time <= world.time - 4 SECONDS))
-		for(var/mob/living/L in mobs_in_view(1, src))
+		for(var/mob/living/L in living_mobs_in_view(1, src))
 			if(istype(L, /mob/living/simple_animal) || istype(L, /mob/living/carbon))
 				if(is_carrion(L))
 					continue

@@ -18,6 +18,20 @@
 		list(QUALITY_SAWING, 30, "time" = 5)
 	)
 
+//bullets -----------------------------
+
+/datum/craft_recipe/guild/payload_arrow
+	name = "bulk empty payload arrow"
+	result = /obj/item/ammo_casing/arrow/empty_payload/bulk
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL, "time" = 1),
+		list(QUALITY_WELDING, 40, "time" = 5),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 1),
+		list(QUALITY_CUTTING, 40, "time" = 5)
+	)
+
+
 //Armor mods ----------------------
 /datum/craft_recipe/guild/melee
 	name = "melee plating"
@@ -155,7 +169,7 @@
 
 /datum/craft_recipe/guild/rocket_engine
 	name = "rocket engine"
-	result = /obj/item/rocket_engine
+	result = /obj/item/tool_upgrade/productivity/rocket_engine
 	icon_state = "electronic"
 	steps = list(
 		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL, "time" = 60),
@@ -297,6 +311,7 @@
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 5)
 	)
 
+
 /datum/craft_recipe/guild/tetrasmg
 	name = "tetra laser smg"
 	result = /obj/item/gun/energy/tetra
@@ -316,6 +331,7 @@
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
+
 
 /datum/craft_recipe/guild/ten_shot_conversion
 	name = "ten-shot conversion shotgun"
@@ -546,6 +562,32 @@
 		list(QUALITY_WELDING, 40, "time" = 40),
 		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 30),
 		list(QUALITY_SCREW_DRIVING, 25, "time" = 90)
+	)
+
+//Gun Mods
+/datum/craft_recipe/guild/tensioner
+	name =  "weighted pulley kit"
+	result = /obj/item/gun_upgrade/mechanism/tensioner
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL, "time" = 30),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 20, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(/obj/item/stack/cable_coil, 5, "time" = 30),
+		list(QUALITY_WIRE_CUTTING, 25, "time" = 90)
+	)
+
+//Gun Mods
+/datum/craft_recipe/guild/detensioner
+	name =  "compound pulley kit"
+	result = /obj/item/gun_upgrade/mechanism/detensioner
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 20, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 30),
+		list(QUALITY_WIRE_CUTTING, 25, "time" = 90)
 	)
 
 /datum/craft_recipe/guild/overshooter

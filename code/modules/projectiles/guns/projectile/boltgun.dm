@@ -13,7 +13,7 @@
 	fire_delay = 2
 	damage_multiplier = 1.1
 	penetration_multiplier  = 1.5
-	recoil_buildup = 15 //FORMERLY same as AMR, whos idea was this?
+	init_recoil = HMG_RECOIL(0.6)
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING|SPEEDLOADER
 	max_shells = 10
@@ -22,7 +22,6 @@
 	fire_sound_silenced = 'sound/weapons/guns/fire/hpistol_fire.ogg' //It makes it more quite but still a high caliber
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 500
-	one_hand_penalty = 15 //full sized rifle with bayonet is hard to keep on target
 	var/bolt_open = 0
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut") // Considering attached bayonet
 	sharp = TRUE //We have a knife!
@@ -45,11 +44,10 @@
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	price_tag = 75
 	sharp = 0
-	recoil_buildup = 50
+	init_recoil = HMG_RECOIL(0.8)
 	penetration_multiplier = 0.5
 	damage_multiplier = 0.9
 	fire_delay = 4
-	one_hand_penalty = 10
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
 	saw_off = FALSE
@@ -104,6 +102,7 @@
 	playsound(src.loc, 'sound/weapons/guns/interact/rifle_boltback.ogg', 75, 1)
 	bolt_open = !bolt_open
 	if(bolt_open)
+		var/print_string = "You work the bolt open."
 		if(contents.len || loaded.len)
 			if(chambered)
 				if(eject_animatio && loaded.len) //Are bullet amination check
@@ -111,22 +110,31 @@
 						flick("bullet_eject_s", src)
 					else
 						flick("bullet_eject", src)
-				to_chat(user, SPAN_NOTICE("You work the bolt open, ejecting [chambered]!"))
-				chambered.forceMove(get_turf(src))
-				loaded -= chambered
-				chambered = null
+				if(chambered.is_caseless && !chambered.BB)
+					loaded -= chambered
+					QDEL_NULL(chambered)
+				else
+					print_string = "You work the bolt open, ejecting [chambered]!"
+					chambered.forceMove(get_turf(src))
+					loaded -= chambered
+					chambered = null
 			else
 				if(eject_animatio && loaded.len) //Are bullet amination check
 					if(silenced)
 						flick("bullet_eject_s", src)
 					else
 						flick("bullet_eject", src)
-				var/obj/item/ammo_casing/B = loaded[loaded.len]
-				to_chat(user, SPAN_NOTICE("You work the bolt open, ejecting [B]!"))
-				B.forceMove(get_turf(src))
-				loaded -= B
-		else
-			to_chat(user, SPAN_NOTICE("You work the bolt open."))
+				if(LAZYLEN(loaded))
+					var/obj/item/ammo_casing/B = loaded[loaded.len]
+					if(B.is_caseless && !B.BB)
+						loaded -= B
+						QDEL_NULL(B)
+					else
+						print_string = "You work the bolt open, ejecting [B]!"
+						B.forceMove(get_turf(src))
+						loaded -= B
+
+		to_chat(user, SPAN_NOTICE(print_string))
 	else
 		to_chat(user, SPAN_NOTICE("You work the bolt closed."))
 		playsound(src.loc, 'sound/weapons/guns/interact/rifle_boltforward.ogg', 75, 1)
@@ -134,6 +142,7 @@
 	if(user)
 		add_fingerprint(user)
 	update_icon()
+
 
 /obj/item/gun/projectile/boltgun/special_check(mob/user)
 	if(bolt_open)
@@ -145,12 +154,6 @@
 	if(!bolt_open)
 		to_chat(user, SPAN_WARNING("You add in ammo [src] while the bolt is closed!"))
 		return
-	//Prevents a bug, banaid-fix
-	if(istype(A, /obj/item/ammo_casing))
-		var/obj/item/ammo_casing/C = A
-		if(C.is_caseless)
-			to_chat(user, SPAN_WARNING("Adding in caseless ammo into [src] would trigger a chain reaction in the chamber!"))
-			return
 	..()
 
 /obj/item/gun/projectile/boltgun/unload_ammo(mob/user, var/allow_dump=1)

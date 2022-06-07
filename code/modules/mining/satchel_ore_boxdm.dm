@@ -28,11 +28,13 @@
 /obj/structure/ore_box/examine(mob/user)
 	..()
 	to_chat(user, SPAN_NOTICE("The box contains:"))
+	var/list/nice_display_list = list()
 	for(var/type in contents)
 		var/obj/item/stack/ore/O = type
-		var/name = initial(O.name)
-		to_chat(user, SPAN_NOTICE("[O.amount] of [name]"))
-
+		nice_display_list[initial(O.name)] += O.amount
+	for(var/element in nice_display_list)
+		var/numtoshow = nice_display_list[element]
+		to_chat(user, SPAN_NOTICE("[numtoshow] of [element]"))
 
 /obj/structure/ore_box/verb/empty_box()
 	set name = "Empty Ore Box"
@@ -55,6 +57,7 @@
 	if(contents.len < 1)
 		to_chat(usr, "\red The ore box is empty")
 		return
+
 
 	dump_box_contents()
 

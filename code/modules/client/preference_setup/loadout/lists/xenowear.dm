@@ -28,6 +28,13 @@
 	sort_category = "Xenowear"
 */
 
+/datum/gear/xenowear/marquamask
+	display_name = "Mar'Qua gill mask"
+	path = /obj/item/clothing/mask/breathxeno/marqua
+	slot = slot_wear_mask
+	sort_category = "Xenowear"
+	cost = 0
+
 /datum/gear/xenowear/opifexgasmask
 	display_name = "opifex gas mask"
 	path = /obj/item/clothing/mask/gas/opifex

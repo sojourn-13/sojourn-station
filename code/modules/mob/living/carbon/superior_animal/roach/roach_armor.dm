@@ -31,6 +31,7 @@
 			)
 			gives_prefex = TRUE
 			prefex = "Biosilicified"
+			armor_penetration += 15
 			return
 
 		if("Lambertian")
@@ -46,6 +47,7 @@
 			gives_prefex = TRUE
 			prefex = "Lambertian"
 			flash_resistances += 2
+			armor_penetration += 5
 			return
 
 		if("Durable")

@@ -80,3 +80,10 @@
 	w_class = ITEM_SIZE_TINY
 
 // End of scar#1579's sprites.
+
+/obj/item/animal_part/stalker_chitin //todo sprite
+	name = "chitinous femur"
+	desc = "A chitinous bone-like length of exoskeleton cut from a nightmare stalker. Chameleonic properties appear to be inert with the stalker's death, however, it might still be useful for making flexible and bendy things."
+	icon_state = "nightstalker_tooth"
+	item_state = "nightstalker_tooth"
+	price_tag = 600

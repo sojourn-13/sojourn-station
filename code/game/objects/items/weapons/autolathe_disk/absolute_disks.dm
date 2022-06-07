@@ -78,7 +78,7 @@
 		/datum/design/bioprinter/belt/security,
 		/datum/design/bioprinter/belt/medical/emt,
 		/datum/design/bioprinter/belt/misc/champion,
-	)	
+	)
 
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
 /obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public
@@ -503,6 +503,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/gun/mk58_wood = 2,
 		/datum/design/autolathe/gun/regulator = 3,
 		/datum/design/autolathe/gun/taser,
+		/datum/design/autolathe/gun/laser = 2,
 		/datum/design/autolathe/gun/sniperrifle = 6,
 		/datum/design/autolathe/ammo/pistol_ammobox_biomatter,
 		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2
@@ -542,7 +543,6 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/shield/nt_shield,
 		/datum/design/autolathe/gun/plasma/martyr,
 		//armor
-		/datum/design/bioprinter/nt_clothes/armor_kit,
 		/datum/design/bioprinter/nt_clothes/acolyte_armor_helm,
 		/datum/design/bioprinter/nt_clothes/acolyte_armor,
 		/datum/design/bioprinter/nt_clothes/agrolyte_armor_helm,
@@ -550,7 +550,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/bioprinter/nt_clothes/custodian_armor_helm,
 		/datum/design/bioprinter/nt_clothes/custodian_armor,
 		/datum/design/bioprinter/nt_clothes/rosaria_armor_helm,
-		/datum/design/bioprinter/nt_clothes/rosaria_armor,		
+		/datum/design/bioprinter/nt_clothes/rosaria_armor,
 		/datum/design/bioprinter/nt_clothes/NTvoid,
 		/datum/design/bioprinter/nt_clothes/knight_rig,
 		//holsters
@@ -634,7 +634,6 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/gun/energy_crossbow = 10,
 		/datum/design/autolathe/gun/large_energy_crossbow = 12,
 		/datum/design/autolathe/gun/ntpistol,
-		/datum/design/autolathe/gun/laser = 2,
 		/datum/design/autolathe/gun/pulse = 5,
 		/datum/design/autolathe/gun/pulse_destroyer = 8,
 		/datum/design/autolathe/gun/ionrifle = 3,

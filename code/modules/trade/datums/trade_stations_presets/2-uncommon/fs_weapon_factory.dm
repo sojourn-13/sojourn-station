@@ -17,7 +17,6 @@
 			/obj/item/gun/projectile/automatic/sts/lrifle,
 			/obj/item/gun/projectile/automatic/sts/rifle,
 			/obj/item/gun/projectile/automatic/sts/hrifle,
-			/obj/item/gun/projectile/automatic/pitbull,
 			/obj/item/gun/projectile/boltgun/lever,
 			/obj/item/gun/projectile/boltgun/sa,
 			/obj/item/gun/projectile/shotgun/pump/gladstone,
@@ -60,7 +59,8 @@
 			/obj/item/grenade/frag,
 			/obj/item/grenade/explosive,
 			/obj/item/grenade/anti_photon,
-			/obj/item/plastique
+			/obj/item/grenade/heatwave,
+			/obj/item/plastique = good_data("plastic explosive", (list(2, 4)), 1500)
 		),
 		"Top Class Firearms" = list(
 			/obj/item/gun/projectile/boltgun/scout,

@@ -116,12 +116,18 @@ var/const/NO_EMAG_ACT = -50
 	var/rank = null			//actual job
 	var/dorm = 0			// determines if this ID has claimed a dorm already
 
+	var/mining_points = 0 //mining points on the ID
+
 	var/formal_name_prefix
 	var/formal_name_suffix
 	var/claimed_locker = FALSE
 
+	var/group = "colony" // ID class used for wallet code - Seb
+
 /obj/item/card/id/examine(mob/user)
 	set src in oview(1)
+	if(mining_points)
+		to_chat(usr, "There are [mining_points] mining points on the card.")
 	if(in_range(usr, src))
 		show(usr)
 		to_chat(usr, desc)
@@ -131,6 +137,7 @@ var/const/NO_EMAG_ACT = -50
 		to_chat(usr, "The fingerprint hash on the card is [fingerprint_hash].")
 	else
 		to_chat(usr, SPAN_WARNING("It is too far away."))
+
 
 /obj/item/card/id/proc/prevent_tracking()
 	return 0
@@ -201,6 +208,7 @@ var/const/NO_EMAG_ACT = -50
 	registered_name = "Syndicate"
 	assignment = "Syndicate Overlord"
 	access = list(access_syndicate, access_external_airlocks)
+	group = "centcom"
 
 /obj/item/card/id/medical_command
 	name = "Medical ID card"
@@ -219,6 +227,7 @@ var/const/NO_EMAG_ACT = -50
 	item_state = "gold_id"
 	registered_name = "Premier"
 	assignment = "Premier"
+	group = "golden"
 
 /obj/item/card/id/captains_spare/New()
 	access = get_all_station_access()
@@ -226,7 +235,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/card/id/synthetic
 	name = "\improper Synthetic ID"
-	desc = "Access module for NanoTrasen Synthetics"
+	desc = "Access module for NanoTrasen Synthetics."
 	icon_state = "id-robot"
 	item_state = "tdgreen"
 	assignment = "Synthetic"
@@ -237,11 +246,12 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/card/id/all_access
 	name = "\improper Administrator's spare ID"
-	desc = "The spare ID of the Lord of Lords himself."
+	desc = "The spare ID of the Lord of Lords themselves."
 	icon_state = "data"
 	item_state = "tdgreen"
 	registered_name = "Administrator"
 	assignment = "Administrator"
+	group = "centcom"
 
 /obj/item/card/id/all_access/New()
 	access = get_access_ids()
@@ -249,56 +259,71 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/card/id/centcom
 	name = "\improper CentCom. ID"
-	desc = "An ID straight from Cent. Com."
+	desc = "An ID straight from Central Command."
 	icon_state = "centcom"
 	registered_name = "Central Command"
 	assignment = "General"
+	group = "secblue"
 
 /obj/item/card/id/all_access/New()
 	access = get_all_centcom_access()
 	..()
 
 /obj/item/card/id/gold
+	group = "golden"
 	icon_state = MATERIAL_GOLD
 	item_state = "gold_id"
 
 /obj/item/card/id/sci
+	group = "whitesilver"
 	icon_state = "id_sci"
 
 /obj/item/card/id/gene
+	group = "whitesilver"
 	icon_state = "id_gene"
 
 /obj/item/card/id/chem
+	group = "whitesilver"
 	icon_state = "id_chem"
 
 /obj/item/card/id/med
+	group = "whitesilver"
 	icon_state = "id_med"
 
 /obj/item/card/id/sci
+	group = "whitesilver"
 	icon_state = "id_sci"
 
 /obj/item/card/id/viro
+	group = "whitesilver"
 	icon_state = "id_viro"
 
 /obj/item/card/id/heatlab
+	group = "whitesilver"
 	icon_state = "id_heatlab"
 
 /obj/item/card/id/rd
+	group = "whitesilver"
 	icon_state = "id_rd"
 
 /obj/item/card/id/cmo
+	group = "whitesilver"
 	icon_state = "id_cmo"
 
 /obj/item/card/id/det
+	group = "secblue"
 	icon_state = "id_inspector"
 
 /obj/item/card/id/medcpec
+	group = "secblue"
 	icon_state = "id_medspec"
 
 /obj/item/card/id/sec
+	group = "secblue"
 	icon_state = "id_operative"
 
 /obj/item/card/id/hos
+	group = "secblue"
 	icon_state = "id_hos"
 
 /obj/item/card/id/secert
@@ -307,6 +332,7 @@ var/const/NO_EMAG_ACT = -50
 	registered_name = "Marshal Agent"
 	assignment = "Marshal Agent"
 	icon_state = "id_hos_all-access"
+	group = "golden"
 
 /obj/item/card/id/secert/New()
 	access = get_all_station_access()
@@ -316,18 +342,23 @@ var/const/NO_EMAG_ACT = -50
 	icon_state = "id_hop"
 
 /obj/item/card/id/ce
+	group = "engineers"
 	icon_state = "id_ce"
 
 /obj/item/card/id/engie
+	group = "engineers"
 	icon_state = "id_engie"
 
-/obj/item/card/id/atmos
+/obj/item/card/id/atmos // Currently unused.
+	group = "engineers"
 	icon_state = "id_atmos"
 
 /obj/item/card/id/car
+	group = "engineers" // Not an engie, but the sepia fits.
 	icon_state = "id_car"
 
 /obj/item/card/id/hydro
+	group = "greenone"
 	icon_state = "id_hydro"
 
 /obj/item/card/id/chaplain
@@ -346,9 +377,11 @@ var/const/NO_EMAG_ACT = -50
 	icon_state = "id_ltgrey"
 
 /obj/item/card/id/white
+	group = "whitesilver"
 	icon_state = "id_white"
 
 /obj/item/card/id/blankwhite
+	group = "whitesilver"
 	icon_state = "id_blankwhite"
 
 /obj/item/card/id/lodge

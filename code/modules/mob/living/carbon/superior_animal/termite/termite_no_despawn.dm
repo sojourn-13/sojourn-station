@@ -16,6 +16,10 @@
 	faction = "wurm"
 	fire_verb = "spits"
 	see_in_dark = 10
+	armor_penetration = 15
+
+	fleshcolor = "#7C90B8"
+	bloodcolor = "#7C90B8"
 
 	destroy_surroundings = TRUE
 	friendly_to_colony = FALSE
@@ -23,6 +27,8 @@
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/termitemeat
 	meat_amount = 3
+
+	range_telegraph = "chitin begins to crack and spikes emerge, as it prepares to launch them at"
 
 	// Type of ore to spawn when the termite dies, even in maints we still drop ore correct
 	var/ore
@@ -105,7 +111,7 @@
 	name = "miner termite"
 	desc = "A miner termite that has been hardened by the very surface beneath your feet."
 	icon_state = "smertnik_termite" // Sprites made by Polyushko#0323
-	icon_dead = "smertnik_gore"
+	icon_dead = "smertnik_gore_exploded"
 	ranged = TRUE
 	comfy_range = 6 //How far we like to be form are targets when we fire!
 	projectiletype = /obj/item/projectile/bullet/rock
@@ -163,6 +169,7 @@
 	icon = 'icons/mob/mobs-termite.dmi' // Sprites made by Polyushko#0323
 	icon_state = "koroleva_termite"
 	icon_dead = "koroleva_gore"
+	armor_penetration = 35
 
 //Health related variables
 	maxHealth = TERMITE_HEALTH_HIGH
@@ -193,6 +200,7 @@
 	comfy_range = 6 //How far we like to be form are targets when we fire!
 	projectiletype = /obj/item/projectile/bullet/spear
 	contaminant_immunity = TRUE
+	armor_penetration = 35
 
 //Health related variables
 	maxHealth = TERMITE_HEALTH_HIGH

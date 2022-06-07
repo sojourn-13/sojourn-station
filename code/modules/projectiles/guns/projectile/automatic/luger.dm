@@ -12,8 +12,7 @@
 	price_tag = 650
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	damage_multiplier = 1
-	recoil_buildup = 1.25
-	one_hand_penalty = 20
+	init_recoil = SMG_RECOIL(0.9)
 	load_method = SINGLE_CASING|MAGAZINE
 	init_firemodes = list(
 		FULL_AUTO_600_NOLOSS,

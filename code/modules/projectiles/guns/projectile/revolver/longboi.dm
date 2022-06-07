@@ -11,8 +11,7 @@
 	price_tag = 1250 //It's a novelty item.
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.1
-	recoil_buildup = 1
-	one_hand_penalty = 10
+	init_recoil = HANDGUN_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
 	twohanded = TRUE
 	serial_type = "LSS"

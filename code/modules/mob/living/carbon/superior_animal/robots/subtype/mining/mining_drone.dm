@@ -23,6 +23,7 @@
 	cleaning = FALSE // It isn't a roomba
 	wander = FALSE // We got the wandering handled manually
 	stop_automated_movement_when_pulled = TRUE
+	possession_candidate = TRUE
 
 	// Unique vars
 	var/target // Where we want to go
@@ -59,7 +60,7 @@
 
 /mob/living/carbon/superior_animal/robot/mining/death()
 	drop_loot()
-	new /obj/item/tool/pickaxe/diamonddrill(loc) // So we can use the drill to make another one
+	//new /obj/item/tool/pickaxe/diamonddrill(loc) // So we can use the drill to make another one // Miners destroy the bot round-start to get the drill...
 	..()
 
 /mob/living/carbon/superior_animal/robot/mining/attack_hand(mob/user as mob)

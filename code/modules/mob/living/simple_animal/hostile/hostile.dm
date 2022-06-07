@@ -62,6 +62,10 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 				continue
 			else if(L in friends)
 				continue
+			else if(L.target_dummy) //So we target these over normal lists
+				if(!SA_attackable(L))
+					stance = HOSTILE_STANCE_ATTACK
+					T = L
 			else
 				if(!SA_attackable(L))
 					stance = HOSTILE_STANCE_ATTACK
@@ -293,7 +297,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	var/def_zone = get_exposed_defense_zone(target)
 	A.launch(target, def_zone)
 
-/mob/living/simple_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
+/mob/living/simple_animal/hostile/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
 	var /mob/living/simple_animal/hostile/shooter = src //TODO: Make it work for alt click in perfs like rig code
 	if(ranged_cooldown >= world.time) //Modula for admins to set them at different things
 		to_chat(src, "You gun isnt ready to fire!.")

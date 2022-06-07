@@ -36,19 +36,31 @@
 	var/turf/T = get_turf(src)
 	switch (cause)
 		if("death")
-			var/obj/item/device/radio/headset/a = new /obj/item/device/radio/headset(null)
-			a.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm")
-			qdel(a)
+			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Marshal")}(src)
+			if(T.z > 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Blackshield")
+			if(T.z <= 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Marshal")
+			radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Medical")
+			qdel(radio_caller)
 			STOP_PROCESSING(SSobj, src)
 		if ("emp")
-			var/obj/item/device/radio/headset/a = new /obj/item/device/radio/headset(null)
+			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Marshal")}(src)
 			var/name = prob(50) ? t.name : pick(SSmapping.teleportlocs)
-			a.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm")
-			qdel(a)
+			if(T.z > 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Blackshield")
+			if(T.z <= 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Marshal")
+			radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Medical")
+			qdel(radio_caller)
 		else
-			var/obj/item/device/radio/headset/a = new /obj/item/device/radio/headset(null)
-			a.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm")
-			qdel(a)
+			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Marshal")}(src)
+			if(T.z > 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Blackshield")
+			if(T.z <= 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Marshal")
+			radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Medical")
+			qdel(radio_caller)
 			STOP_PROCESSING(SSobj, src)
 
 /obj/item/implant/death_alarm/malfunction(severity)			//for some reason alarms stop going off in case they are emp'd, even without this

@@ -12,6 +12,14 @@
 	src.icon_state = recipe.icon_state
 	update()
 
+/obj/item/craft/Destroy()
+
+	for (var/datum/craft_step/step in recipe.steps)
+		for (var/obj/item/craft/build_target in step.craft_items)
+			if (build_target == src)
+				step.craft_items.Remove(build_target)
+
+	. = ..()
 
 /obj/item/craft/proc/update()
 	desc = recipe.get_description(step-1, src)

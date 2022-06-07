@@ -82,7 +82,6 @@
 				/obj/item/gun/projectile/boltgun/sa = 2,\
 				//obj/item/gun/projectile/boltgun/scout/light = 2,
 				//obj/item/gun/projectile/boltgun/scout/light/wood = 2,
-				/obj/item/gun/projectile/firefly = 2,
 				/obj/item/ammo_kit = 2,
 				/obj/item/gun_upgrade/trigger/dangerzone = 1,
 				/obj/item/gun_upgrade/trigger/cop_block = 1,
@@ -151,7 +150,7 @@
 				/obj/item/gun/projectile/ladon = 1,\
 				/obj/item/gun/projectile/lamia/akurra = 1,\
 				/obj/item/gun/projectile/basilisk = 2,\
-				/obj/item/gun/projectile/automatic/survivalrifle = 1,\
+				/obj/item/gun/projectile/boltgun/survivalrifle = 1,\
 				/obj/item/gun/projectile/revolver/tacticool_revolver = 1,\
 				/obj/item/gun/projectile/revolver/mateba = 1,\
 				/obj/item/gun/projectile/silenced = 2,\

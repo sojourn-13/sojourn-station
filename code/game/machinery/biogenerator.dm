@@ -261,7 +261,8 @@
 	var/creating = recipe["path"]
 	var/reagent = recipe["reagent"]
 	if(reagent) //For reagents like milk
-		beaker.reagents.add_reagent(reagent, 30)
+		if(beaker)
+			beaker.reagents.add_reagent(reagent, 30)
 	else
 		for(var/i in 1 to amount)
 			new creating(loc)

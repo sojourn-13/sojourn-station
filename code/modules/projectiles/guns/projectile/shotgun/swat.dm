@@ -12,10 +12,9 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
 	price_tag = 1250
-	damage_multiplier = 1.1
-	penetration_multiplier = 1.2
-	recoil_buildup = 14
-	one_hand_penalty = 15 //full sized shotgun level
+	damage_multiplier = 1.3
+	penetration_multiplier = 1.3
+	init_recoil = RIFLE_RECOIL(0.6)
 	saw_off = FALSE //No
 	folding_stock = TRUE //we can fold are stocks
 
@@ -72,7 +71,8 @@
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	matter = null
-	damage_multiplier = 1.2
+	damage_multiplier = 1.4
+	penetration_multiplier = 1.2
 	force = 5
 	max_shells = 9
 	safety = FALSE

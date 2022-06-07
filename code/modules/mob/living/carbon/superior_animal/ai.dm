@@ -22,9 +22,13 @@
 /mob/living/carbon/superior_animal/proc/findTarget()
 	var/list/filteredTargets = new
 
-	for(var/atom/O in getPotentialTargets())
-		if (isValidAttackTarget(O))
-			filteredTargets += O
+	var/turf/our_turf = get_turf(src)
+	if (our_turf) //If we're not in anything, continue
+		for(var/mob/living/target_mob in hearers(src, viewRange))
+			if (isValidAttackTarget(target_mob))
+				if(target_mob.target_dummy) //Target me over anyone else
+					return target_mob
+				filteredTargets += target_mob
 
 	for (var/obj/mecha/M in GLOB.mechas_list)
 		if ((M.z == src.z) && (get_dist(src, M) <= viewRange) && isValidAttackTarget(M))
@@ -34,6 +38,8 @@
 
 /mob/living/carbon/superior_animal/proc/attemptAttackOnTarget()
 	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if(weakened) return
 
 	if(isnull(targetted_mob))
 		return
@@ -45,6 +51,8 @@
 
 /mob/living/carbon/superior_animal/proc/prepareAttackOnTarget()
 	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if(weakened) return
 
 	if (isnull(targetted_mob))
 		return
@@ -58,12 +66,15 @@
 	if ((get_dist(src, targetted_mob) >= viewRange) || src.z != targetted_mob.z && !istype(targetted_mob, /obj/mecha))
 		loseTarget()
 		return
+	if (check_if_alive())
+		prepareAttackPrecursor(targetted_mob, .proc/attemptAttackOnTarget, MELEE_TYPE, FALSE, FALSE)
 
-	attemptAttackOnTarget()
-
-/mob/living/carbon/superior_animal/proc/loseTarget()
-	stop_automated_movement = 0
-	walk(src, 0)
+/mob/living/carbon/superior_animal/proc/loseTarget(var/stop_pursuit = TRUE)
+	if (stop_pursuit)
+		stop_automated_movement = 0
+		walk(src, 0)
+	fire_delay = fire_delay_initial
+	melee_delay = melee_delay_initial
 	target_mob = null
 	stance = HOSTILE_STANCE_IDLE
 
@@ -78,11 +89,10 @@
 		return 1
 
 	if (istype(O, /obj/mecha))
-		var/obj/mecha/M = O
-		return isValidAttackTarget(M.occupant)
+		if (can_see(src, O, get_dist(src, O))) //can we even see it?
+			var/obj/mecha/M = O
+			return isValidAttackTarget(M.occupant)
 
-	if (istype(O, /obj/machinery/mining/drill))
-		return isValidAttackTarget(O)
 
 /mob/living/carbon/superior_animal/proc/destroySurroundings() //todo: make this better - Trilby
 /*
@@ -174,6 +184,7 @@
 	if(obey_check(speaker)) // Are we only obeying the one talking?
 		if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following && !anchored) // Is he telling us to follow?
 			following = speaker
+			last_followed = speaker
 			visible_emote("[follow_message]")
 		if(findtext(message, "Stop") && findtext(message, "[src.name]") && following) // Else, is he telling us to stop?
 			following = null

@@ -264,6 +264,8 @@
 		UnregisterSignal(I, COMSIG_APPVAL)
 		qdel(P)
 		return
+	if(istype(I, /obj/item/rig))
+		remove_values_armor_rig(I)
 	P.forceMove(get_turf(I))
 	UnregisterSignal(I, COMSIG_ADDVAL)
 	UnregisterSignal(I, COMSIG_APPVAL)
@@ -313,6 +315,20 @@
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
 		R.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
 	R.prefixes |= prefix
+	R.updateArmor()
+
+/datum/component/item_upgrade/proc/remove_values_armor_rig(var/obj/item/rig/R)
+	if(tool_upgrades[UPGRADE_MELEE_ARMOR])
+		R.armor = R.armor.modifyRating(melee = tool_upgrades[UPGRADE_MELEE_ARMOR] * -1)
+	if(tool_upgrades[UPGRADE_BALLISTIC_ARMOR])
+		R.armor = R.armor.modifyRating(bullet = tool_upgrades[UPGRADE_BALLISTIC_ARMOR] * -1)
+	if(tool_upgrades[UPGRADE_ENERGY_ARMOR])
+		R.armor = R.armor.modifyRating(energy = tool_upgrades[UPGRADE_ENERGY_ARMOR] * -1)
+	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
+		R.armor = R.armor.modifyRating(bomb = tool_upgrades[UPGRADE_BOMB_ARMOR] * -1)
+	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
+		R.item_flags &= ~tool_upgrades[UPGRADE_ITEMFLAGPLUS]
+	R.prefixes -= prefix
 	R.updateArmor()
 
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/tool/T)
@@ -384,11 +400,13 @@
 	if(weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT])
 		G.move_delay *= weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_RECOIL])
-		G.recoil_buildup *= weapon_upgrades[GUN_UPGRADE_RECOIL]
+		G.recoil = G.recoil.modifyAllRatings(weapon_upgrades[GUN_UPGRADE_RECOIL])
 	if(weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH])
 		G.muzzle_flash *= weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]
 	if(tool_upgrades[UPGRADE_BULK])
 		G.extra_bulk += weapon_upgrades[UPGRADE_BULK]
+	if(weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
+		G.recoil = G.recoil.modifyRating(_one_hand_penalty = weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
 	if(weapon_upgrades[GUN_UPGRADE_SILENCER])
 		G.silenced = weapon_upgrades[GUN_UPGRADE_SILENCER]
 	if(weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE])
@@ -438,6 +456,9 @@
 		G.dna_compare_samples = TRUE
 		if(G.dna_lock_sample == "not_set")
 			G.dna_lock_sample = usr.real_name
+
+	if(!weapon_upgrades[GUN_UPGRADE_DNALOCK])
+		G.dna_user_sample = "not_set"
 
 	if(G.dna_compare_samples == FALSE)
 		G.dna_lock_sample = "not_set"
@@ -622,6 +643,7 @@
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION])
 			to_chat(user, SPAN_NOTICE("Modifies projectile radiation damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION]] damage points"))
+
 
 		if(weapon_upgrades[GUN_UPGRADE_RECOIL])
 			var/amount = weapon_upgrades[GUN_UPGRADE_RECOIL]-1

@@ -5,7 +5,7 @@
 //If you need to do something else with armor - just use getarmor() proc and do with those numbers all you want
 //Random absorb system was a cancer, and was removed from all across the codebase. Don't recreate it. Clockrigger 2019
 
-/mob/living/proc/damage_through_armor(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/attack_flag = ARMOR_MELEE, var/armour_pen = 0, var/used_weapon = null, var/sharp = 0, var/edge = 0)
+/mob/living/proc/damage_through_armor(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/attack_flag = ARMOR_MELEE, var/armour_pen = 0, var/used_weapon = null, var/sharp = 0, var/edge = 0, var/post_pen_mult = 1)
 
 	if(damage == 0)
 		return FALSE
@@ -14,7 +14,7 @@
 	var/armor = getarmor(def_zone, attack_flag)
 	var/guaranteed_damage_red = armor * ARMOR_GDR_COEFFICIENT
 	var/armor_effectiveness = max(0, ( armor - armour_pen ) )
-	var/armor_over_penitration = armour_pen - armor // This basiclly lets us over penitrate to deal extra damage. 20 AP - 10 Armor would give 10, well the reverse would be -10
+	var/armor_overpenetration = armour_pen - armor // This basiclly lets us over penitrate to deal extra damage. 20 AP - 10 Armor would give 10, well the reverse would be -10
 	var/effective_damage = damage - guaranteed_damage_red
 
 	if(damagetype == HALLOSS)
@@ -31,13 +31,13 @@
 		show_message(SPAN_NOTICE("Your armor fully absorbs the blow!"))
 		return FALSE
 
-	if(armor_over_penitration > 0 && damagetype == BRUTE) //did we even over-penitrate?
+	if(armor_overpenetration > 0 && damagetype == BRUTE) //did we even over-penitrate?
 		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
-			effective_damage += max(0,round(armor_over_penitration - src.getarmor(def_zone, "bullet"))) //We re-check are armor we over-pentrated, this counts both melee and bullets. We reduce are over AP as bullets tend to have a lot
+			effective_damage += max(0,round(armor_overpenetration - src.getarmor(def_zone, "bullet"))) //We re-check are armor we over-pentrated, this counts both melee and bullets. We reduce are over AP as bullets tend to have a lot
 
-	if(armor_over_penitration > 0 && damagetype == BURN) //did we even over-penitrate?
+	if(armor_overpenetration > 0 && damagetype == BURN) //did we even over-penitrate?
 		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
-			effective_damage += max(0,round((armor_over_penitration - src.getarmor(def_zone, "energy")) * 2)) //We re-check are armor we over-pentrated, and then deal 2x damage do to being a laser, thus weaker then most bullets and most mobs having less engery armor.
+			effective_damage += max(0,round((armor_overpenetration - src.getarmor(def_zone, "energy")) * 2)) //We re-check are armor we over-pentrated, and then deal 2x damage do to being a laser, thus weaker then most bullets and most mobs having less engery armor.
 
 
 	//Here we can remove edge or sharpness from the blow
@@ -63,7 +63,7 @@
 
 	//No armor? Damage as usual
 	if(armor_effectiveness == 0)
-		apply_damage(effective_damage, damagetype, def_zone, used_weapon, sharp, edge)
+		apply_damage(effective_damage * post_pen_mult, damagetype, def_zone, used_weapon, sharp, edge)
 
 	//Here we split damage in two parts, where armor value will determine how much damage will get through
 	else
@@ -75,7 +75,7 @@
 
 		//Actual part of the damage that passed through armor
 		var/actual_damage = round ( ( effective_damage * ( 100 - armor_effectiveness ) ) / 100 )
-		apply_damage(actual_damage, damagetype, def_zone, used_weapon, sharp, edge)
+		apply_damage(actual_damage * post_pen_mult, damagetype, def_zone, used_weapon, sharp, edge)
 		return actual_damage
 	return effective_damage
 
@@ -125,7 +125,15 @@
 		hit_impact(P.get_structure_damage(), hit_dir)
 		for(var/damage_type in P.damage_types)
 			var/damage = P.damage_types[damage_type]
-			damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P))
+			var/dmult = 1
+			if(LAZYLEN(P.effective_faction))
+				if(faction in P.effective_faction)
+					dmult += P.damage_mult
+			if(LAZYLEN(P.supereffective_types))
+				if(is_type_in_list(src, P.supereffective_types, TRUE))
+					dmult += P.supereffective_mult
+			damage *= dmult
+			damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P), post_pen_mult = P.post_penetration_dammult)
 
 
 	if(P.agony > 0 && istype(P,/obj/item/projectile/bullet))
@@ -191,7 +199,7 @@
 		effective_force *= 2
 
 	//Apply weapon damage
-	if (damage_through_armor(effective_force, I.damtype, hit_zone, ARMOR_MELEE, I.armor_penetration, used_weapon = I, sharp = is_sharp(I), edge = has_edge(I)))
+	if (damage_through_armor(effective_force, I.damtype, hit_zone, ARMOR_MELEE, I.armor_penetration, used_weapon = I, sharp = is_sharp(I), edge = has_edge(I), post_pen_mult = I.post_penetration_dammult))
 		return TRUE
 	else
 		return FALSE
@@ -217,8 +225,11 @@
 			IgniteMob()
 
 		src.visible_message(SPAN_WARNING("[src] has been hit by [O]."))
-
-		damage_through_armor(throw_damage, dtype, null, ARMOR_MELEE, null, used_weapon = O, sharp = is_sharp(O), edge = has_edge(O))
+		var/ppd = 1
+		if(isitem(O))
+			var/obj/item/thingytocheck = O
+			ppd = thingytocheck.post_penetration_dammult
+		damage_through_armor(throw_damage, dtype, null, ARMOR_MELEE, null, used_weapon = O, sharp = is_sharp(O), edge = has_edge(O), post_pen_mult = ppd)
 
 		O.throwing = 0		//it hit, so stop moving
 

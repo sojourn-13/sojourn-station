@@ -31,15 +31,6 @@
 /obj/random/junkfood/rotten,
 /turf/simulated/floor/tiled/dark/danger,
 /area/template_noop)
-"ai" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 4;
-	frequency = 1379;
-	id_tag = "atmos_airlock_pump";
-	name = "Atmospherics Airlock Pump"
-	},
-/turf/simulated/floor/plating/under,
-/area/template_noop)
 "aj" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/random/scrap/sparse_even/low_chance,
@@ -280,18 +271,6 @@
 /obj/structure/scrap/poor/large,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
-"bc" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/visible/green,
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
-/area/template_noop)
-"bd" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
-/area/template_noop)
 "be" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/machinery/meter,
@@ -336,16 +315,6 @@
 /obj/random/lowkeyrandom/low_chance,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
-"bm" = (
-/obj/structure/lattice,
-/obj/machinery/atmospherics/pipe/simple/visible/green,
-/turf/template_noop,
-/area/template_noop)
-"bn" = (
-/obj/structure/lattice,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/turf/template_noop,
-/area/template_noop)
 "bo" = (
 /obj/random/junk/low_chance,
 /turf/simulated/floor/plating/under,
@@ -387,19 +356,7 @@
 "bt" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/template_noop)
-"bu" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green,
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/plasma,
-/turf/simulated/floor/plating,
-/area/template_noop)
 "bv" = (
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/plasma,
-/turf/simulated/floor/plating,
-/area/template_noop)
-"bw" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/machinery/door/firedoor,
 /obj/effect/window_lwall_spawn/plasma,
 /turf/simulated/floor/plating,
@@ -876,16 +833,7 @@
 /obj/random/pack/tech_loot,
 /turf/simulated/floor/tiled/techmaint,
 /area/template_noop)
-"dh" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
-/turf/simulated/wall,
-/area/template_noop)
 "di" = (
-/obj/machinery/atmospherics/pipe/tank/air{
-	dir = 8
-	},
 /turf/simulated/floor/plating,
 /area/template_noop)
 "dj" = (
@@ -1321,9 +1269,9 @@ Sn
 ac
 aD
 aS
-bc
-bm
-bu
+aB
+ab
+bv
 aQ
 ab
 ab
@@ -1375,9 +1323,9 @@ ak
 hj
 aF
 aO
-bd
-bn
-bw
+aB
+ab
+bv
 ZO
 ab
 aR
@@ -1443,7 +1391,7 @@ bW
 cH
 bL
 dc
-ai
+aJ
 ao
 bo
 ab
@@ -1470,7 +1418,7 @@ db
 cJ
 cV
 db
-dh
+ba
 db
 ae
 ab

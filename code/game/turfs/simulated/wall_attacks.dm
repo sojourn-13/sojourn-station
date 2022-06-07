@@ -98,9 +98,10 @@
 		to_chat(user, SPAN_WARNING("You don't have the dexterity to do this!"))
 		return
 
-	//get the user's location
-	if(!istype(user.loc, /turf))
-		return	//can't do this stuff whilst inside objects and such
+	
+	if(!istype(I, /obj/item/mecha_parts/mecha_equipment)) //make sure you're not in a mech
+		if(!istype(user.loc, /turf)) //get the user's location
+			return	//can't do this stuff whilst inside objects and such
 
 	if(I)
 		radiate()

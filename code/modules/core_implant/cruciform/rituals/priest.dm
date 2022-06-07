@@ -646,7 +646,7 @@
 
 /datum/ritual/cruciform/priest/records
 	name = "Baptismal Record"
-	phrase = "Memento nomina..."
+	phrase = "Memento nomina."
 	desc = "Requests a copy of the churches local parishoner records from your altar."
 	power = 30
 	success_message = "On the verge of audibility you hear pleasant music, a piece of paper slides out from a slit in the altar."

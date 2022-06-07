@@ -294,7 +294,7 @@
 	item_state = "dismas"
 
 /obj/item/clothing/under/bodysuit
-	name = "eva skinsuit"
+	name = "EVA skinsuit"
 	desc = "A EVA skinsuit ideally used underneath voidsuits and hardsuits for extra comfort and mobility."
 	icon_state = "skinsuit"
 	item_state = "skinsuit"
@@ -311,8 +311,10 @@
 	var/list/options = list()
 	options["Skinsuit Masculine"] = ""
 	options["Skinsuit Feminine"] = "_f"
+	options["Leotard Skinsuit Feminine"] = "_leo"
 	options["Grey Skinsuit Masculine"] = "_gm"
 	options["Grey Skinsuit Feminine"] = "_gf"
+	options["Grey Leotard Skinsuit Feminine"] = "_gleo"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

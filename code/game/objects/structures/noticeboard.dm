@@ -155,7 +155,7 @@
 
 
 /obj/structure/noticeboard/research
-	name = "Medical bulletin board"
+	name = "Research bulletin board"
 	desc = "A board containing vital notices and official memos for the Soteria research"
 	icon_state = "nboard00"
 	notices = 1

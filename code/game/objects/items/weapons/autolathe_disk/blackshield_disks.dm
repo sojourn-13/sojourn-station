@@ -17,6 +17,7 @@
 		//rifles
 		/datum/design/autolathe/gun/boltgun_sa = 0,
 		/datum/design/autolathe/gun/zatvor,
+		/datum/design/autolathe/gun/roe = 2,
 		/datum/design/autolathe/gun/sol = 3,
 		/datum/design/autolathe/gun/omnirifle = 2,
 		/datum/design/autolathe/gun/standard_omnirifle,
@@ -46,74 +47,92 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo
+	name = ""
 	disk_name = "Blackshield Ammo Sovereignty Pack"
 	icon_state = "blackshield"
 	license = 30
 
 	designs = list(
-
+		//Magazines
+		/datum/design/autolathe/ammo/pistol,
 		/datum/design/autolathe/ammo/pistol_lethal,
 		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/pistol_practice = 0,
 		/datum/design/autolathe/ammo/pistol_35_drum,
-		/datum/design/autolathe/ammo/pistol_35_drum/empty = 0,
-		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
 		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
+		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_35_drum/empty = 0,
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_rubber,
 		/datum/design/autolathe/ammo/smg_practice = 0,
 		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/magnum_lethal,
 		/datum/design/autolathe/ammo/magnum_rubber,
 		/datum/design/autolathe/ammo/magnum_practice = 0,
-		/datum/design/autolathe/ammo/magnum_lethal,
-		/datum/design/autolathe/ammo/kurtz_practice = 0,
-		/datum/design/autolathe/ammo/kurtz_rubber,
 		/datum/design/autolathe/ammo/kurtz,
 		/datum/design/autolathe/ammo/kurtz_lethal,
+		/datum/design/autolathe/ammo/kurtz_rubber,
+		/datum/design/autolathe/ammo/kurtz_practice = 0,
+		/datum/design/autolathe/ammo/shotgun_box = 3, //Might want to up these, but really only a ten point difference from the other disk.
+		/datum/design/autolathe/ammo/shotgun_pellet_box = 3,
+		/datum/design/autolathe/ammo/lrifle,
+		/datum/design/autolathe/ammo/lrifle_rubber,
+		/datum/design/autolathe/ammo/lrifle_practice = 0,
+		/datum/design/autolathe/ammo/sl_rifle,
+		/datum/design/autolathe/ammo/rifle_short,
+		/datum/design/autolathe/ammo/rifle_short_lethal,
+		/datum/design/autolathe/ammo/rifle,
+		/datum/design/autolathe/ammo/rifle_lethal,
+		/datum/design/autolathe/ammo/rifle_practice = 0,
 		/datum/design/autolathe/ammo/hrifle,
+		/datum/design/autolathe/ammo/hrifle_lethal,
 		/datum/design/autolathe/ammo/hrifle_rubber,
 		/datum/design/autolathe/ammo/hrifle_practice = 0,
-		/datum/design/autolathe/ammo/hrifle_lethal,
-		/datum/design/autolathe/ammo/lrifle,
-		/datum/design/autolathe/ammo/lrifle_short_rubber,
-		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
-		/datum/design/autolathe/ammo/rifle,
-		/datum/design/autolathe/ammo/rifle_short,
-		/datum/design/autolathe/ammo/rifle_lethal,
-		/datum/design/autolathe/ammo/rifle_short_lethal,
-		/datum/design/autolathe/ammo/sl_rifle,
+		/datum/design/autolathe/ammo/hrifle_drum = 2,
+		/datum/design/autolathe/ammo/hrifle_drum_empty = 1,
+		//Boxes
 		/datum/design/autolathe/ammo/pistol_ammobox,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
 		/datum/design/autolathe/ammo/pistol_ammobox/large,
 		/datum/design/autolathe/ammo/magnum_ammobox,
 		/datum/design/autolathe/ammo/magnum_ammobox_rubber,
-		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/magnum_ammobox/large,
+		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/kurtz_ammobox,
 		/datum/design/autolathe/ammo/kurtz_ammobox_lethal,
 		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/rifle_ammobox,
 		/datum/design/autolathe/ammo/rifle_ammobox_lethal,
+		/datum/design/autolathe/ammo/rifle_pk,
+		/datum/design/autolathe/ammo/rifle_pk_empty = 0,
+		/datum/design/autolathe/ammo/lrifle_belt,
+		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox,
 		/datum/design/autolathe/ammo/lrifle_ammobox_rubber,
+		/datum/design/autolathe/ammo/rifle_ammobox,
+		/datum/design/autolathe/ammo/rifle_ammobox_lethal,
 		/datum/design/autolathe/ammo/hrifle_ammobox,
 		/datum/design/autolathe/ammo/hrifle_ammobox_lethal,
 		/datum/design/autolathe/ammo/hrifle_ammobox_rubber,
 		/datum/design/autolathe/ammo/hrifle_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/hrifle_ammobox_linked,
+		/datum/design/autolathe/ammo/hrifle_ammobox_linked_rubber,
+		/datum/design/autolathe/ammo/hrifle_ammobox_linked_lethal,
+		/datum/design/autolathe/ammo/hrifle_ammobox_linked_empty = 0,
 		/datum/design/autolathe/ammo/grenade,
 		/datum/design/autolathe/ammo/grenade/frag,
 		/datum/design/autolathe/ammo/grenade/blast,
 		/datum/design/autolathe/ammo/grenade/flash,
+		//Utility
 		/datum/design/autolathe/ammo/flare_shell = 0,
 		/datum/design/autolathe/ammo/flare_shell_g = 0,
 		/datum/design/autolathe/ammo/flare_shell_b = 0,
-		/datum/design/autolathe/ammo/shotgun_box = 5, //Might want to up these, but really only a ten point difference from the other disk.
-		/datum/design/autolathe/ammo/shotgun_pellet_box = 5,
 		/datum/design/autolathe/container/ammocan_ih,
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/luger
-	disk_name = "NM .35 \"Vintovka Lyugera\" carbine"
+	name = "NM .35 \"Vintovka Lyugera\" carbine"
+	disk_name = ""
 	icon_state = "blackshield"
 	license = 15
 
@@ -131,7 +150,8 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/NM_colt
-	disk_name = "NM HG .35 \"Bronco\""
+	name = "NM HG .35 \"Bronco\""
+	disk_name = ""
 	icon_state = "blackshield"
 	license = 8
 
@@ -148,7 +168,8 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/semyonovich
-	disk_name = "Blackshield .35 Auto \"Semyonovich\""
+	name = "Blackshield .35 Auto \"Semyonovich\""
+	disk_name = ""
 	icon_state = "blackshield"
 	license = 8
 
@@ -162,7 +183,8 @@
 
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/greasegun
-	disk_name = "Blackshield - .35 Auto \"Grease Gun\""
+	name = "Blackshield - .35 Auto \"Grease Gun\""
+	disk_name = ""
 	icon_state = "blackshield"
 
 	license = 8
@@ -175,7 +197,8 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/buckler
-	disk_name = "Blackshield - .35 Buckler SMG"
+	name = "Blackshield - .35 Buckler SMG"
+	disk_name = ""
 	icon_state = "blackshield"
 
 	license = 12
@@ -188,7 +211,8 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/triage
-	disk_name = "Blackshield - .40 Triage SMG"
+	name = "Blackshield - .40 Triage SMG"
+	disk_name = ""
 	icon_state = "blackshield"
 
 	license = 12
@@ -201,7 +225,8 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki
-	disk_name = "NM - 7.5mm \"Strelki\""
+	name = "NM - 7.5mm \"Strelki\""
+	disk_name = ""
 	icon_state = "blackshield"
 	license = 8
 
@@ -214,7 +239,8 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/watchtower
-	disk_name = "NM - 7.5mm \"Watchtower\""
+	name = "NM - 7.5mm \"Watchtower\""
+	disk_name = ""
 	icon_state = "blackshield"
 	license = 8
 
@@ -227,7 +253,8 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/zatvor
-	disk_name = "NM 7.5 bolt \"Zatvor\" rifle"
+	name = "NM 7.5 bolt \"Zatvor\" rifle"
+	disk_name = ""
 	icon_state = "blackshield"
 	license = 8
 
@@ -241,8 +268,9 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/dp
-	disk_name = "NM - \"Pulemyot Degtyaryova\" LMG"
-	icon_state = "ironhammer"
+	name = "NM - \"Pulemyot Degtyaryova\" LMG"
+	disk_name = ""
+	icon_state = "blackshield"
 	license = 8
 
 	designs = list(
@@ -251,7 +279,8 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/duty
-	disk_name = "NM - .257 Duty Rifle"
+	name = "NM - .257 Duty Rifle"
+	disk_name = ""
 	icon_state = "blackshield"
 
 	license = 16
@@ -266,28 +295,11 @@
 		/datum/design/autolathe/ammo/lrifle = 2,
 		/datum/design/autolathe/ammo/lrifle_lethal = 4,
 		/datum/design/autolathe/ammo/lrifle_speed_loader
-
-	)
-
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/basstet
-	disk_name = "NM - .257 Basstet Rifle"
-	icon_state = "blackshield"
-
-	license = 16
-	designs = list(
-		/datum/design/autolathe/gun/basstet = 6,
-		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_short_rubber,
-		/datum/design/autolathe/ammo/lrifle_short,
-		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
-		/datum/design/autolathe/ammo/lrifle_practice = 1,
-		/datum/design/autolathe/ammo/lrifle_rubber = 2,
-		/datum/design/autolathe/ammo/lrifle = 2,
-		/datum/design/autolathe/ammo/lrifle_lethal = 4
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/blackguard
-	disk_name = "NM - .408 Blackguard Omni Rifle"
+	name = "NM - .408 Blackguard Omni Rifle"
+	disk_name = ""
 	icon_state = "blackshield"
 
 	license = 8 //RARE GUN REALLY RARE REALLY GOOD
@@ -300,7 +312,8 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/rushingbull
-	disk_name = "NA - 20mm Rushingbull Shotgun"
+	name = "NM - 20mm Rushingbull Shotgun"
+	disk_name = ""
 	icon_state = "blackshield"
 
 	license = 8

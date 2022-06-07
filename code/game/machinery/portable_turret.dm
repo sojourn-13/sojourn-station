@@ -13,6 +13,9 @@
 	icon_state = "turretCover"
 	anchored = TRUE
 
+	/// How far we will fire at mobs from. 7 by default.
+	var/firing_range = 7
+
 	density = FALSE
 	use_power = IDLE_POWER_USE				//this turret uses and requires power
 	idle_power_usage = 50		//when inactive, this turret takes up constant 50 Equipment power
@@ -556,8 +559,14 @@ var/list/turret_icons
 	var/list/targets = list()			//list of primary targets
 	var/list/secondarytargets = list()	//targets that are least important
 
-	for(var/mob/M in mobs_in_view(world.view, src))
-		assess_and_assign(M, targets, secondarytargets)
+	for(var/mob/living/M in view(firing_range, src)) //WE USED WORLD.VIEW BEFORE THATS FUCKING PSYCHOPATHIC
+		assess_and_assign(M, targets, secondarytargets) //might want to not use a proc due to proc overhead cost
+
+	for(var/obj/mecha/mech in GLOB.mechas_list)
+		if (mech.z == z && (get_dist(mech, src) < firing_range) && can_see(src, mech, firing_range))
+			var/mob/living/occupant = mech.get_mob()
+			if (occupant)
+				assess_and_assign(occupant, targets, secondarytargets)
 
 	if(!tryToShootAt(targets))
 		if(!tryToShootAt(secondarytargets)) // if no valid targets, go for secondary targets
@@ -575,7 +584,7 @@ var/list/turret_icons
 		if(TURRET_SECONDARY_TARGET)
 			secondarytargets += L
 
-/obj/machinery/porta_turret/proc/assess_living(var/mob/living/L)
+/obj/machinery/porta_turret/proc/assess_living(var/mob/living/L) //TODO: optimize
 	var/obj/item/card/id/id_card = L.GetIdCard()
 
 	if(id_card && (id_card.registered_name in registered_names))
@@ -608,7 +617,7 @@ var/list/turret_icons
 	if(!emagged && issilicon(L))	// Don't target silica
 		return TURRET_NOT_TARGET
 
-	if(get_dist(src, L) > 7)	//if it's too far away, why bother?
+	if(get_dist(src, L) > firing_range)	//if it's too far away, why bother?
 		return TURRET_NOT_TARGET
 
 	if(!check_trajectory(L, src))	//check if we have true line of sight
@@ -670,13 +679,13 @@ var/list/turret_icons
 
 /obj/machinery/porta_turret/proc/tryToShootAt(var/list/mob/living/targets)
 	if(targets.len && last_target && (last_target in targets) && target(last_target))
-		return 1
+		return TRUE
 
 	while(targets.len > 0)
 		var/mob/living/M = pick(targets)
 		targets -= M
 		if(target(M))
-			return 1
+			return TRUE
 
 
 /obj/machinery/porta_turret/proc/popUp()	//pops the turret up

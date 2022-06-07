@@ -172,9 +172,9 @@
 	//Blood regeneration if there is some space
 	if(blood_volume_raw < species.blood_volume)
 		var/datum/reagent/organic/blood/B = get_blood(vessel)
-		B.volume += 0.1 // regenerate blood VERY slowly
+		B?.volume += 0.1 // regenerate blood VERY slowly
 		if(CE_BLOODRESTORE in chem_effects)
-			B.volume += chem_effects[CE_BLOODRESTORE]
+			B?.volume += chem_effects[CE_BLOODRESTORE]
 
 	// Blood loss or heart damage make you lose nutriments
 	if(blood_volume < total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER || heart_efficiency < BRUISED_2_EFFICIENCY)

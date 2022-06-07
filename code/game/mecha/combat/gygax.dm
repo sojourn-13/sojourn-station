@@ -20,6 +20,42 @@
 	max_equip = 5
 	cargo_capacity = 3
 
+/obj/mecha/combat/gygax/marshals
+	name = "M.A.I.D Exosuit"
+	desc = "The Marshals' Armored Incentive of Dispersal, a fancy name for a visibly aging exosuit that has visibly been collecting dust in some unused corner of the Marshals offices. \
+	It appears to have much lighter armor than even a standard gygax and despite still bearing the characteristic angled plates of its Gygax cousin, is unlikely to stand up under extended\
+	small-arms fire."
+	icon_state = "maid"
+	initial_icon = "maid"
+	step_in = 3
+	step_energy_drain = 4
+	armor_level = MECHA_ARMOR_LIGHT
+	health = 500
+	deflect_chance = 10
+	damage_absorption = list("brute"=0.85,"fire"=1,"bullet"=0.9,"energy"=0.95,"bomb"=1)
+	price_tag = 10000
+	internal_damage_threshold = 45
+	wreckage = /obj/effect/decal/mecha_wreckage/gygax/marshals
+
+/obj/mecha/combat/gygax/marshals/New()
+	..()//Let it equip whatever is needed.
+	var/obj/item/mecha_parts/mecha_equipment/ME
+	if(equipment.len)//Now to remove it and equip anew.
+		for(ME in equipment)
+			ME.detach(src)
+			qdel(ME)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/melee_weapon/shockmaul
+	ME.attach(src)
+	return
+
+
+
 /obj/mecha/combat/gygax/dark
 	desc = "A lightweight exosuit used by Heavy Asset Protection. A significantly upgraded Gygax security mech."
 	name = "Dark Gygax"

@@ -68,7 +68,7 @@
 	..()
 	alpha = 255
 
-/mob/living/carbon/superior_animal/vox/hider/getPotentialTargets()
+/mob/living/carbon/superior_animal/vox/hider/findTarget()
 	..()
 	alpha = 50
 

@@ -93,7 +93,12 @@
 // Performs a linear interpolation between a and b.
 // Note that amount=0 returns a, amount=1 returns b, and
 // amount=0.5 returns the mean of a and b.
-#define LERP(a, b, amount) ( amount ? ((a) + ((b) - (a)) * (amount)) : a )
+// amount outside of [0, 1] produces values outside of [a, b] linearly.
+#define LERP(a, b, amount) ((a) + ((b) - (a)) * (amount))
+// Inverse of the linear interpolation given the same a and b.
+#define UNLERP(amount, a, b) (((amount) - (a)) / ((b) - (a)))
+//
+#define REMAP(amount, a1, b1, a2, b2) (((amount) - (a1)) / ((b1) - (a1)) * ((b2) - (a2)) + (a2))
 
 // Returns the nth root of x.
 #define ROOT(n, x) ((x) ** (1 / (n)))

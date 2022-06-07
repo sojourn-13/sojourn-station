@@ -21,6 +21,7 @@
 	var/fed = 0
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.")
 	var/web_activity = 30
+	move_to_delay = 4 //slightly faster than guardians but slower than hunters
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	var/egg_inject_chance = 0 //AHAHAHAHAHAHAHAAHAHAH, no
 	life_cycles_before_sleep = 3000 //We need more time to eat and web
@@ -50,7 +51,7 @@
 	melee_damage_upper = 15
 	poison_per_bite = 4
 	poison_type = "frostoil"
-	move_to_delay = 6 // Very slow
+	move_to_delay = 5 // Very slow
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/cave_spider
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier
@@ -61,6 +62,7 @@
 	deathmessage = "splits open! Several wriggling spiders crawl from its gore!"
 	egg_inject_chance = 2 //maybe...
 	var/has_made_spiderlings = FALSE
+	move_to_delay = 5 //Has babys on it!
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)
@@ -103,8 +105,10 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/recluse
 	meat_amount = 2
 	egg_inject_chance = 15 //Defiently
+	move_to_delay = 5 // Very slow do to being 1 hit unfun
 	//Giving the recluse its own special meat that has zombie powder. Reducing the amount of meat made since this is some hard stuff and the recluse is easy to kill.
 	poison_type = "zombiepowder"
+	armor_penetration = 70
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen
 	name = "empress spider"
@@ -126,6 +130,7 @@
 	mob_size = MOB_LARGE
 	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_SPIDER_FRIEND, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
+	armor_penetration = 35
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen/New()
 	..()
@@ -162,60 +167,62 @@
 		if(!busy && prob(web_activity))
 			//first, check for potential food nearby to cocoon
 			var/list/cocoonTargets = new
-			for(var/mob/living/C in getPotentialTargets())
-				if(C.stat != CONSCIOUS)
-					cocoonTargets += C
+			var/turf/our_turf = get_turf(src)
+			if (our_turf) //If we're not in anything, continue
+				for(var/mob/living/C in hearers(src, viewRange))
+					if(C.stat != CONSCIOUS)
+						cocoonTargets += C
 
-			cocoon_target = safepick(nearestObjectsInList(cocoonTargets,src,1))
-			if (cocoon_target)
-				busy = MOVING_TO_TARGET
-				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to(src, cocoon_target, 1, move_to_delay)
-				GiveUp(cocoon_target) //give up if we can't reach target
-				return
+				cocoon_target = safepick(nearestObjectsInList(cocoonTargets,src,1))
+				if (cocoon_target)
+					busy = MOVING_TO_TARGET
+					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+					walk_to(src, cocoon_target, 1, move_to_delay)
+					GiveUp(cocoon_target) //give up if we can't reach target
+					return
 
-				//second, spin a sticky spiderweb on this tile
-			if(!(locate(/obj/effect/spider/stickyweb) in get_turf(src)))
-				busy = SPINNING_WEB
-				src.visible_message(SPAN_NOTICE("\The [src] begins to secrete a sticky substance."))
-				stop_automated_movement = 1
-				spawn(40)
-					if(busy == SPINNING_WEB)
-						if(!(locate(/obj/effect/spider/stickyweb) in get_turf(src)))
-							new /obj/effect/spider/stickyweb(src.loc)
-							update_openspace()
-						busy = 0
-						stop_automated_movement = 0
-			else
-				//third, lay an egg cluster there, takes 2 feds
-				if((fed > 1) && !(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
-					busy = LAYING_EGGS
-					src.visible_message(SPAN_NOTICE("\The [src] begins to lay a cluster of eggs."))
+					//second, spin a sticky spiderweb on this tile
+				if(!(locate(/obj/effect/spider/stickyweb) in get_turf(src)))
+					busy = SPINNING_WEB
+					src.visible_message(SPAN_NOTICE("\The [src] begins to secrete a sticky substance."))
 					stop_automated_movement = 1
-					spawn(50)
-						if(busy == LAYING_EGGS)
-							if(!(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
-								new /obj/effect/spider/eggcluster(loc, src)
-								fed -= 2
+					spawn(40)
+						if(busy == SPINNING_WEB)
+							if(!(locate(/obj/effect/spider/stickyweb) in get_turf(src)))
+								new /obj/effect/spider/stickyweb(src.loc)
 								update_openspace()
 							busy = 0
 							stop_automated_movement = 0
 				else
-					//fourthly, cocoon any nearby items so those pesky pinkskins can't use them
-					var/list/nearestObjects = nearestObjectsInList(getObjectsInView(),src,1)
-					for(var/obj/O in nearestObjects)
-						if(O.anchored)
-							continue
-						if(istype(O, /obj/item) || istype(O, /obj/structure) || istype(O, /obj/machinery))
-							cocoonTargets += O
-
-					cocoon_target = safepick(cocoonTargets)
-					if (cocoon_target)
-						busy = MOVING_TO_TARGET
+					//third, lay an egg cluster there, takes 2 feds
+					if((fed > 1) && !(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
+						busy = LAYING_EGGS
+						src.visible_message(SPAN_NOTICE("\The [src] begins to lay a cluster of eggs."))
 						stop_automated_movement = 1
-						set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-						walk_to(src, cocoon_target, 1, move_to_delay)
-						GiveUp(cocoon_target) //give up if we can't reach target
+						spawn(50)
+							if(busy == LAYING_EGGS)
+								if(!(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
+									new /obj/effect/spider/eggcluster(loc, src)
+									fed -= 2
+									update_openspace()
+								busy = 0
+								stop_automated_movement = 0
+					else
+						//fourthly, cocoon any nearby items so those pesky pinkskins can't use them
+						var/list/nearestObjects = nearestObjectsInList(getObjectsInView(),src,1)
+						for(var/obj/O in nearestObjects)
+							if(O.anchored)
+								continue
+							if(istype(O, /obj/item) || istype(O, /obj/structure) || istype(O, /obj/machinery))
+								cocoonTargets += O
+
+						cocoon_target = safepick(cocoonTargets)
+						if (cocoon_target)
+							busy = MOVING_TO_TARGET
+							stop_automated_movement = 1
+							set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+							walk_to(src, cocoon_target, 1, move_to_delay)
+							GiveUp(cocoon_target) //give up if we can't reach target
 
 		else if(busy == MOVING_TO_TARGET && cocoon_target)
 			if(get_dist(src, cocoon_target) <= 1)

@@ -17,10 +17,10 @@
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 1)
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/max_sawn_off.ogg' //Actual double barrel sound
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 650
-	one_hand_penalty = 15 //full sized shotgun level
+	init_recoil = RIFLE_RECOIL(1.3)
 	var/bolt_open = 0
 	burst_delay = 0
 	init_firemodes = list(
@@ -101,8 +101,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_PAINFUL
 	damage_multiplier = 0.8 //slightly weaker due to sawn-off barrels
-	recoil_buildup = 1.2 //gonna have solid grip on those, point-blank shots adviced
-	one_hand_penalty = 10 //compact shotgun level
+	init_recoil = RIFLE_RECOIL(1.1)
 	saw_off = FALSE
 
 /obj/item/gun/projectile/shotgun/doublebarrel/axe
@@ -111,7 +110,7 @@
 	icon_state = "bshotgun"
 	item_state = "bshotgun"
 	damage_multiplier = 0.8 //slightly weaker due to the fact - you know, you put a fucking axe on it.
-	recoil_buildup = 1.2
+	init_recoil = RIFLE_RECOIL(1)
 	saw_off = FALSE
 	sharp = TRUE //Duh, it's an axe.
 	force = WEAPON_FORCE_ROBUST
