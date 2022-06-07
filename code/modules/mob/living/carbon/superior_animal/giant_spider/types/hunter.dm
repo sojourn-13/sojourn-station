@@ -200,7 +200,7 @@
 	icon_state = "ogre"
 	icon_living = "ogre"
 	poison_per_bite = 4
-	move_to_delay = 9
+	move_to_delay = 7
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/pit
 	name = "pit snapper spider"
