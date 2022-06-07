@@ -56,7 +56,7 @@
 	max_shells = 1
 	ammo_type = /obj/item/ammo_casing/rod_bolt
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
-	var/obj/item/projectile/superheat_type = /obj/item/projectile/bullet/rod_bolt/superheated
+	var/obj/item/projectile/superheat_type = /obj/item/projectile/bullet/reusable/rod_bolt/superheated
 	var/tension = 0                         // Current draw on the bow.
 	var/max_tension = 5                     // Highest possible tension.
 	cell = null    // Used for firing superheated rods.
@@ -199,7 +199,7 @@
 	var/max_stored_matter = 60
 	var/boltcost = 5
 	var/obj/item/ammo_casing/flashforge_type = /obj/item/ammo_casing/rod_bolt/rcd
-	superheat_type = /obj/item/projectile/bullet/rod_bolt/rcd/superhot
+	superheat_type = /obj/item/projectile/bullet/reusable/rod_bolt/rcd/superhot
 
 /obj/item/gun/projectile/crossbow/RCD/proc/genBolt(var/mob/user)
 	if(stored_matter >= boltcost && !chambered)
