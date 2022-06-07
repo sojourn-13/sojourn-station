@@ -1960,9 +1960,9 @@
 /area/nadezhda/hallway/surface/section1)
 "auh" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/briefcase/rifle,
-/obj/item/storage/briefcase/rifle,
-/obj/item/storage/briefcase/rifle,
+/obj/item/storage/backpack/duffelbag/guncase,
+/obj/item/storage/backpack/duffelbag/guncase,
+/obj/item/storage/backpack/duffelbag/guncase,
 /obj/item/storage/pouch/pistol_holster,
 /obj/item/storage/pouch/pistol_holster,
 /obj/item/storage/pouch/pistol_holster,

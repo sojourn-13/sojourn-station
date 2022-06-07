@@ -388,3 +388,19 @@
 	max_storage_space = DEFAULT_HUGE_STORAGE * 1.5
 	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_PLASTIC = 3)
 	equip_access = FALSE
+
+/obj/item/storage/backpack/duffelbag/guncase
+	name = "gun case"
+	desc = "A sturdy metal case made for transporting ranged weaponry."
+	icon_state = "rifle_case"
+	flags = CONDUCT
+	force = WEAPON_FORCE_NORMAL
+	throwforce = WEAPON_FORCE_NORMAL
+	throw_speed = 1
+	throw_range = 4
+	max_w_class = null
+	max_storage_space = 16
+	can_hold = list(/obj/item/gun,
+		/obj/item/ammo_magazine
+		)
+	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 4)
