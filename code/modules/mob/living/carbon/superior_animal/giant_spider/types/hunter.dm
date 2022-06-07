@@ -9,7 +9,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 20
 	poison_per_bite = 4
-	move_to_delay = 3
+	move_to_delay = 6
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/hunter
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","bounces in place.")
@@ -82,7 +82,7 @@
 	melee_damage_upper = 10
 	poison_per_bite = 2
 	poison_type = "plasma"
-	move_to_delay = 4
+	move_to_delay = 8
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/plasma
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","vibrates.")
@@ -200,7 +200,7 @@
 	icon_state = "ogre"
 	icon_living = "ogre"
 	poison_per_bite = 4
-	move_to_delay = 4
+	move_to_delay = 8
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/pit
 	name = "pit snapper spider"
@@ -208,7 +208,7 @@
 	icon_state = "pit"
 	icon_living = "pit"
 	poison_per_bite = 0
-	move_to_delay = 4
+	move_to_delay = 8
 	melee_damage_lower = 35
 	melee_damage_upper = 40
 
