@@ -183,3 +183,9 @@
 	slot = slot_shoes
 	sort_category = "Xenowear"
 	cost = 1
+/datum/gear/xenowear/mimemask
+	display_name = "mime mask"
+	path = /obj/item/clothing/mask/costume/job/mime
+	slot = slot_wear_mask
+	sort_category = "Xenowear"
+	cost = 1
