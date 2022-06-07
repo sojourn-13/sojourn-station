@@ -36,31 +36,31 @@
 	var/turf/T = get_turf(src)
 	switch (cause)
 		if("death")
-			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical")}(src)
-			var/obj/item/device/radio/headset/breaker_caller = new /obj/item/device/radio{channels=list("Blackshield")}(src)
+			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Marshal")}(src)
 			if(T.z > 5) //WAH HARDCODE! - SOB EVEN
-				breaker_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Blackshield")
+				radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Blackshield")
+			if(T.z < 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Marshal")
 			radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Medical")
 			qdel(radio_caller)
-			qdel(breaker_caller)
 			STOP_PROCESSING(SSobj, src)
 		if ("emp")
-			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical")}(src)
-			var/obj/item/device/radio/headset/breaker_caller = new /obj/item/device/radio{channels=list("Blackshield")}(src)
+			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Marshal")}(src)
 			var/name = prob(50) ? t.name : pick(SSmapping.teleportlocs)
 			if(T.z > 5) //WAH HARDCODE! - SOB EVEN
-				breaker_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Blackshield")
+				radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Blackshield")
+			if(T.z < 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Marshal")
 			radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Medical")
 			qdel(radio_caller)
-			qdel(breaker_caller)
 		else
-			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical")}(src)
-			var/obj/item/device/radio/headset/breaker_caller = new /obj/item/device/radio{channels=list("Blackshield")}(src)
+			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Marshal")}(src)
 			if(T.z > 5) //WAH HARDCODE! - SOB EVEN
-				breaker_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Blackshield")
+				radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Blackshield")
+			if(T.z > 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Marshal")
 			radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Medical")
 			qdel(radio_caller)
-			qdel(breaker_caller)
 			STOP_PROCESSING(SSobj, src)
 
 /obj/item/implant/death_alarm/malfunction(severity)			//for some reason alarms stop going off in case they are emp'd, even without this
