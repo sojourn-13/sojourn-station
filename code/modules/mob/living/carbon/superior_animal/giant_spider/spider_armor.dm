@@ -53,6 +53,7 @@
 			)
 			gives_prefex = TRUE
 			prefex = "lustrous"
+			armor_penetration += 15
 			flash_resistances += 2
 			return
 
@@ -67,6 +68,7 @@
 			agony = 30
 			)
 			gives_prefex = TRUE
+			armor_penetration += 5
 			flash_resistances += 1
 			prefex = "durable"
 			return
