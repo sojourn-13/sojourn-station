@@ -21,7 +21,7 @@
 	var/fed = 0
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.")
 	var/web_activity = 30
-	move_to_delay = 7 //slightly faster than guardians but slower than hunters
+	move_to_delay = 6 //slightly faster than guardians but slower than hunters
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	var/egg_inject_chance = 0 //AHAHAHAHAHAHAHAAHAHAH, no
 	life_cycles_before_sleep = 3000 //We need more time to eat and web
@@ -51,7 +51,7 @@
 	melee_damage_upper = 15
 	poison_per_bite = 4
 	poison_type = "frostoil"
-	move_to_delay = 9 // Very slow
+	move_to_delay = 7 // Very slow
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/cave_spider
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier
@@ -62,7 +62,7 @@
 	deathmessage = "splits open! Several wriggling spiders crawl from its gore!"
 	egg_inject_chance = 2 //maybe...
 	var/has_made_spiderlings = FALSE
-	move_to_delay = 10 //Has babys on it!
+	move_to_delay = 9 //Has babys on it!
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)
