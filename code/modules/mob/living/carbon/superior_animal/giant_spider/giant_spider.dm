@@ -23,7 +23,7 @@
 	armor = list(melee = 5, bullet = 5, energy = 0, bomb = 5, bio = 10, rad = 25)
 
 	move_to_delay = 4
-	turns_per_move = 5
+	turns_per_move = 10
 	see_in_dark = 10
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider
 	meat_amount = 3
