@@ -420,6 +420,26 @@
 		list(/obj/item/tool_upgrade/productivity/whetstone, 1, "time" = 30)
 	)
 
+/datum/craft_recipe/guild/vibrokatana
+	name = "vibrokatana"
+	result = /obj/item/tool/sword/katana/vibro
+	steps = list(
+		list(/obj/item/tool/sword/katana, 1, "time" = 30),
+		list(QUALITY_SAWING, 40, "time" = 60),
+		list(/obj/item/tool_upgrade/productivity/red_paint, 1, "time" = 30),
+		list(QUALITY_WELDING, 40, "time" = 60),
+		list(CRAFT_MATERIAL, 6, MATERIAL_PLATINUM, "time" = 30),
+		list(QUALITY_HAMMERING, 45, "time" = 40),
+		list(QUALITY_SAWING, 40, "time" = 60),
+		list(/obj/item/tool_upgrade/refinement/vibcompensator, 1, "time" = 30),
+		list(QUALITY_WELDING, 40, "time" = 60),
+		list(/obj/item/tool_upgrade/productivity/whetstone, 1, "time" = 30),
+		list(QUALITY_HAMMERING, 45, "time" = 40),
+		list(/obj/item/tool_upgrade/productivity/diamond_blade, 1, "time" = 30),
+		list(QUALITY_HAMMERING, 45, "time" = 40),
+		list(/obj/item/tool_upgrade/productivity/antistaining, 1, "time" = 30)
+	)
+
 /datum/craft_recipe/guild/firebrand
 	name = "firebrand"
 	result = /obj/item/tool/sword/katana/firebrand

@@ -267,6 +267,19 @@
 	else
 		overlays += "[icon_state]_power_off"
 
+/obj/item/tool/sword/katana/vibro
+	name = "artificer vibrokatana"
+	desc = "A modern katana made by a madman painted all over with red and gloss. Just being near it makes your ears ring from it's sharp edge cutting up against the air."
+	icon_state = "katana_vibro"
+	item_state = "katana_vibro"
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 5, MATERIAL_DIAMOND = 2, MATERIAL_PLATINUM = 1, MATERIAL_URANIUM = 1)
+	hitsound = 'sound/weapons/anime_sword.wav'
+	tool_qualities = list(QUALITY_CUTTING = 35, QUALITY_SAWING = 10) // It can cut throught armor like nothing
+	slot_flags = SLOT_BELT | SLOT_BACK
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_MASSIVE
+	max_upgrades = 6
+
 /obj/item/tool/sword/katana/firebrand //Firebrand. Sprited and Implemented by Sieghardt
 	name = "Artificer Firebrand"
 	desc = "Originally the fever dream of an brave guild master looking for a better way to deal with roaches, the Firebrand ended up as a hellish implement of war. While turned off, this is a blunted hunk of metal. When turned on the Firebrand becomes a bringer of fiery doom to anyone unlucky enough to be its path."
