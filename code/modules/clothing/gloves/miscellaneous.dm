@@ -185,8 +185,8 @@
 /obj/item/clothing/gloves/botanic_leather/claw
 	name = "clawed glove"
 	desc = "A single claw took away from some type of animal, that protects against floral dangers such as thorns and barbs."
-	icon_state = "leather"
-	item_state = "leather"
+	icon_state = "claw"
+	item_state = "claw"
 
 /obj/item/clothing/gloves/aerostatic_gloves
 	name = "red designer leather gloves"

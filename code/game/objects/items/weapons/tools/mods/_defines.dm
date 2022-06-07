@@ -111,6 +111,7 @@
 #define GUN_BAYONET "bayonet"
 #define GUN_CALIBRE_35 "caliber .35"
 #define GUN_CALIBRE_50 "caliber .50"
+#define ARROW_FIRING "fires arrows"
 #define GUN_AMR "caliber 60-06"
 
 //Salvager perk define
