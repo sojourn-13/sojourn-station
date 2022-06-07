@@ -162,3 +162,4 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	melee_damage_upper = 25
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	target_dummy = TRUE

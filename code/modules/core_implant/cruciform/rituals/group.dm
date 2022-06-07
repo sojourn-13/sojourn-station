@@ -172,10 +172,10 @@
 		"Benedicite loco isto.",
 		"Benedic hoc petimus Patris.",
 		"Nos obsecro te removere percula huius loci.",
-		"Ne malorum tangere terram",
-		"Frase quinta",
-		"Frase sexta",
-		"Frase septima"
+		"Ne malorum tangere terram.",
+		"Frase quinta.",
+		"Frase sexta.",
+		"Frase septima."
 	)
 	effect_type = /datum/group_ritual_effect/cruciform/sanctify
 	high_ritual = FALSE

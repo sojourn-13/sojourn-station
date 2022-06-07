@@ -16,6 +16,7 @@
 	faction = "wurm"
 	fire_verb = "spits"
 	see_in_dark = 10
+	armor_penetration = 15
 
 	fleshcolor = "#7C90B8"
 	bloodcolor = "#7C90B8"
@@ -168,6 +169,7 @@
 	icon = 'icons/mob/mobs-termite.dmi' // Sprites made by Polyushko#0323
 	icon_state = "koroleva_termite"
 	icon_dead = "koroleva_gore"
+	armor_penetration = 35
 
 //Health related variables
 	maxHealth = TERMITE_HEALTH_HIGH
@@ -198,6 +200,7 @@
 	comfy_range = 6 //How far we like to be form are targets when we fire!
 	projectiletype = /obj/item/projectile/bullet/spear
 	contaminant_immunity = TRUE
+	armor_penetration = 35
 
 //Health related variables
 	maxHealth = TERMITE_HEALTH_HIGH

@@ -107,6 +107,8 @@
 		M.heal_organ_damage(0.3 * effect_multiplier, 0.3 * effect_multiplier)
 		M.adjustToxLoss(-0.3 * effect_multiplier)
 		M.add_chemical_effect(CE_BLOODCLOT, 0.1)
+	if(!ishuman(M))
+		M.adjustHalLoss(-0.5)
 
 /datum/reagent/water/extinguisher
 	name = "Extinguisher"

@@ -16,8 +16,7 @@
 	proj_step_multiplier = 0.8
 	damage_multiplier = 1.6
 	penetration_multiplier = 3
-	recoil_buildup = 2
-	one_hand_penalty = 4
+	init_recoil = HANDGUN_RECOIL(0.4)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	serial_type = "SD GmbH"
 

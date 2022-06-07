@@ -14,9 +14,8 @@
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)
 	price_tag = 1000
 	damage_multiplier = 0.9
-	recoil_buildup = 1
 	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
-	one_hand_penalty = 5 //smg level
+	init_recoil = SMG_RECOIL(0.7)
 
 	init_firemodes = list(
 		FULL_AUTO_600_NOLOSS,
@@ -65,9 +64,8 @@
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)
 	price_tag = 1000
 	damage_multiplier = 0.75
-	recoil_buildup = 0.5
+	init_recoil = SMG_RECOIL(0.3)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
-	one_hand_penalty = 5 //smg level
 	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
 
 	init_firemodes = list(

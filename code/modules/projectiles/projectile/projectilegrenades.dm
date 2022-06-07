@@ -7,6 +7,7 @@
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
+	recoil = 35
 
 /obj/item/projectile/bullet/grenade
 	name = "grenade shell"
@@ -16,6 +17,7 @@
 	embed = FALSE
 	sharp = FALSE
 	check_armour = ARMOR_BULLET
+	recoil = 45
 
 /obj/item/projectile/bullet/grenade/Move()	//Makes grenade shells cause their effect when they arrive at their target turf
 	if(get_turf(src) == get_turf(original))
@@ -34,6 +36,7 @@
 	var/heavy_impact_range = 0
 	var/light_impact_range = 3
 	var/flash_range = 10
+	recoil = 55
 
 /obj/item/projectile/bullet/grenade/proc/grenade_effect(target)
 	explosion(target, devastation_range, heavy_impact_range, light_impact_range, flash_range)
@@ -46,6 +49,7 @@
 	var/f_damage = 4
 	var/f_step = 2
 	var/same_turf_hit_chance = 15
+	recoil = 25
 
 /obj/item/projectile/bullet/grenade/frag/grenade_effect(target)
 	fragment_explosion(target, range, f_type, f_amount, f_damage, f_step, same_turf_hit_chance)
@@ -60,6 +64,7 @@
 /obj/item/projectile/bullet/grenade/emp
 	var/heavy_emp_range = 3
 	var/light_emp_range = 8
+	recoil = 15
 
 /obj/item/projectile/bullet/grenade/emp/grenade_effect(target)
 	empulse(target, heavy_emp_range, light_emp_range)
@@ -72,11 +77,13 @@
 	f_damage = 2
 	f_step = 1
 	same_turf_hit_chance = 10
+	recoil = 10
 
 /obj/item/projectile/bullet/grenade/flash
 	name = "flash shell"
 	light_impact_range = 1
 	flash_range = 10
+	recoil = 5
 
 /obj/item/projectile/bullet/grenade/flash/grenade_effect(target)
 	fragment_explosion(target, light_impact_range, flash_range)

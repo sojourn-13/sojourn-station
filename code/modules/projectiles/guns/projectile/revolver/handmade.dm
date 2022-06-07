@@ -10,6 +10,6 @@
 	matter = list(MATERIAL_WOOD = 10, MATERIAL_STEEL = 15)
 	price_tag = 100 //one of the cheapest revolvers here
 	damage_multiplier = 1
-	recoil_buildup = 6
+	init_recoil = HANDGUN_RECOIL(0.8)
 	serial_type = "INDEX"
 	serial_shown = FALSE
