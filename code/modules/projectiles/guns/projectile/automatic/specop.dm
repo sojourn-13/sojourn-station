@@ -23,6 +23,7 @@
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_400_NOLOSS
 		)
+	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/specop/update_icon()
 	..()
