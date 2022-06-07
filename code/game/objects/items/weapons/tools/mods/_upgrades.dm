@@ -457,6 +457,9 @@
 		if(G.dna_lock_sample == "not_set")
 			G.dna_lock_sample = usr.real_name
 
+	if(!weapon_upgrades[GUN_UPGRADE_DNALOCK])
+		G.dna_user_sample = "not_set"
+
 	if(G.dna_compare_samples == FALSE)
 		G.dna_lock_sample = "not_set"
 

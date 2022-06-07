@@ -48,6 +48,9 @@
 		return
 	name = initial(name)
 	color = initial(color)
+	desc = initial(desc)
+	germ_level = initial(germ_level)
+	price_tag = initial(price_tag)
 	..()
 
 /obj/item/make_old()
@@ -342,6 +345,14 @@
 		if(prob(75))
 			darkness_view = -1
 
+/obj/item/clothing/glasses/make_young()
+	if(!oldified)
+		return
+	vision_flags = initial(vision_flags)
+	darkness_view = initial(darkness_view)
+	refresh_upgrades() //So we dont null upgrades.
+	..()
+
 /obj/item/device/lighting/glowstick/make_old()
 	.=..()
 	if (.)
@@ -391,6 +402,12 @@
 	if (.)
 		if(hud && prob(75))
 			hud = new /obj/item/clothing/glasses/hud/broken
+
+/obj/item/clothing/glasses/sechud/make_young()
+	.=..()
+	if (.)
+		if(hud)
+			hud = new /obj/item/clothing/glasses/hud/security
 
 // This code is fucking cursed and responsible for roughly 50% of the round run-times and crashed when booting up the server. No idea what cursed shit eris did, leave this commented out. -Kaz
 /*

@@ -1,6 +1,6 @@
 //Caliber Defines
 #define CAL_PISTOL ".35"
-#define CAL_35A ".35 auto"
+#define CAL_35A ".35 auto" //why are these different
 #define CAL_MAGNUM ".40 magnum"
 #define CAL_LRIFLE ".257 carbine"
 #define CAL_RIFLE "7.5mm rifle"
@@ -17,6 +17,7 @@
 #define CAL_GRENADE "grenade"
 #define CAL_FLARE "flare shell"
 #define CAL_CROSSBOW "bolt"
+#define CAL_ARROW "arrow"
 
 //Gun loading types
 #define SINGLE_CASING 	1	//The gun only accepts ammo_casings. ammo_magazines should never have this as their mag_type.
