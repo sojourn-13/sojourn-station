@@ -1055,7 +1055,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	prefixes = list()
 	item_flags = initial(item_flags)
 	extra_bulk = initial(extra_bulk)
-	init_recoil = initial(init_recoil) //Insainly good recoil controle if you have the folding stock
+
+	recoil = getRecoil(init_recoil[1], init_recoil[2], init_recoil[3])
 
 	braced = initial(braced)
 
@@ -1068,10 +1069,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			proj_step_multiplier  -= 0.4 //40% more sped on the bullet
 			penetration_multiplier += 0.2 //Makes the gun have more AP when shooting
 			extra_damage_mult_scoped += 0.2 //Gives 20% more damage when its scoped. Makes folding stock snipers more viable
-			init_recoil = FOLDING_RECOIL(0.5) //Insainly good recoil controle if you have the folding stock
+			recoil = getRecoil((init_recoil[1] * 0.5), (init_recoil[2] * 0.1), (init_recoil[3] * 0.8))
 
-
-	recoil = getRecoil(init_recoil[1], init_recoil[2], init_recoil[3])
 
 	//Now lets have each upgrade reapply its modifications
 	SEND_SIGNAL(src, COMSIG_ADDVAL, src)
