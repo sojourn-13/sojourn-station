@@ -351,7 +351,7 @@
 
 /datum/design/autolathe/gun/python
 	name = "NM 7.5 \"Python\" heavy sniper"
-	build_path = /obj/item/gun/projectile/automatic/mamba/copperhead/python
+	build_path = /obj/item/gun/projectile/automatic/mamba/python
 
 /datum/design/autolathe/gun/judge
 	name = "NM \"Judge\""

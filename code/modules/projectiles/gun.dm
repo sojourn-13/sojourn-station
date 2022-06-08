@@ -27,6 +27,9 @@
 
 	hitsound = "swing_hit"
 
+	var/saw_off = FALSE			//Can be sawn off?
+	var/sawn = null				//what it becomes when sawn down, accepts a typepath.
+
 	var/auto_eject = FALSE			//if the magazine should automatically eject itself when empty.
 	var/auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg' //The sound that places when a mag is dropped
 
@@ -1056,8 +1059,21 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	item_flags = initial(item_flags)
 	extra_bulk = initial(extra_bulk)
 
-	braced = initial(braced)
 	recoil = getRecoil(init_recoil[1], init_recoil[2], init_recoil[3])
+
+	braced = initial(braced)
+
+	//This is so we get are folding recoil mod
+	if(folding_stock)// TODO: make this somehow modular - (it prob will be a massive line if var/stock_name_of_change
+		if(!folded) //Exstended! This means are stock is out
+			extra_bulk += 12 //Simular to 12 screwdrivers, your getting a lot out of this tho
+			//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
+			damage_multiplier += 0.1 //10% more damage
+			proj_step_multiplier  -= 0.4 //40% more sped on the bullet
+			penetration_multiplier += 0.2 //Makes the gun have more AP when shooting
+			extra_damage_mult_scoped += 0.2 //Gives 20% more damage when its scoped. Makes folding stock snipers more viable
+			recoil = getRecoil((init_recoil[1] * 0.5), (init_recoil[2] * 0.1), (init_recoil[3] * 0.8))
+
 
 	//Now lets have each upgrade reapply its modifications
 	SEND_SIGNAL(src, COMSIG_ADDVAL, src)
@@ -1068,16 +1084,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	for (var/prefix in prefixes)
 		name = "[prefix] [name]"
-
-	if(folding_stock)// TODO: make this somehow modular - (it prob will be a massive line if var/stock_name_of_change
-		if(!folded) //Exstended! This means are stock is out
-			extra_bulk += 12 //Simular to 12 screwdrivers, your getting a lot out of this tho
-			//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
-			damage_multiplier += 0.1 //10% more damage
-			proj_step_multiplier  -= 0.4 //40% more sped on the bullet
-			penetration_multiplier += 0.2 //Makes the gun have more AP when shooting
-			extra_damage_mult_scoped += 0.2 //Gives 20% more damage when its scoped. Makes folding stock snipers more viable
-			init_recoil = FOLDING_RECOIL(0.5) //Insainly good recoil controle if you have the folding stock
 
 	update_icon()
 	//then update any UIs with the new stats

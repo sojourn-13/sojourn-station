@@ -10,7 +10,7 @@
 	price_tag = 200
 	tool_qualities = list(QUALITY_ARMOR = 100)
 	max_upgrades = 1
-	extra_allowed = list(/obj/item/tool/hammer/ironhammer)
+	extra_allowed = list(/obj/item/tool/hammer/ironhammer, /obj/item/storage/backpack/duffelbag/guncase)
 	stiffness = 0
 
 /obj/item/clothing/suit/armor/refresh_upgrades()
@@ -600,11 +600,11 @@
 	desc = "A simple plate carrier modified for personal use, additional pouches have been attached to it's front, \
 	with matching knee and arm pads to protect limbs without hindering movement. \
 	Opening the plate pouch would reveal a sheet of some Greyson alloy, welded and forced into a shape for the vest, \
-	far lighter and offering more protection then it's more common ceramic counterparts."
+	far lighter and offering more protection then it's more common ceramic counterparts. \
+	Do to its scrappy yet robust design its able to take additional armor plates then a strandered heavy vest."
 	icon_state = "forehead_armor"
 	item_state = "forehead_armor"
-	max_upgrades = 0 //No upgrading this one
-	tool_qualities = list()
+	max_upgrades = 2 //Like all scav armor, this means investing into these will be better but buying gear will still be viable
 	matter = list(MATERIAL_PLASTEEL = 24, MATERIAL_PLASTIC = 35, MATERIAL_PLATINUM  = 4, MATERIAL_STEEL = 40) //worth stealing
 	price_tag = 1200
 	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
