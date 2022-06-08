@@ -105713,7 +105713,7 @@
 	dir = 1;
 	pixel_y = 0
 	},
-/obj/item/gun/projectile/automatic/mamba/copperhead/python,
+/obj/item/gun/projectile/automatic/mamba/python,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "vTg" = (
