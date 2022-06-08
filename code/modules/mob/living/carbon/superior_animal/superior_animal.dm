@@ -465,6 +465,7 @@
 /mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE)
 	var/projectile_passflags
 	var/projectile_flags
+	var/calculated_walk = (comfy_range - comfy_distance)
 	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
 	if(destroy_surroundings && !already_destroying_surroundings)
 		destroySurroundings()
@@ -475,17 +476,18 @@
 		else
 			patience--
 		return
-	else if (projectiletype)
-		if (projectiletype == initial(projectiletype))
+	else if (projectiletype) // if we can't see, let's prepare to see if we can hit
+		if (projectiletype == initial(projectiletype)) // typepaths' vars are only accessable through initial() or objects
 			projectile_passflags = initial(projectiletype.pass_flags)
 			projectile_flags = initial(projectiletype.flags)
-		else
-			var/obj/item/projectile/temp_proj = new projectiletype(null)
+		else // in case for some reason this var was editted post-compile
+			var/obj/item/projectile/temp_proj = new projectiletype(null) //create it in nullspace
 			projectile_passflags = temp_proj.pass_flags
 			projectile_flags = temp_proj.flags
 		if (ranged)
 			var/obj/item/projectile/test/impacttest/trace = new /obj/item/projectile/test/impacttest(get_turf(src))
 			RegisterSignal(trace, COMSIG_TRACE_IMPACT, .proc/handle_trace_impact)
+			addtimer(CALLBACK(src, .proc/handle_advancement_var), 5) // we dont want this walk overridden immediately
 			trace.pass_flags = projectile_passflags
 			trace.flags = projectile_flags
 			trace.launch(targetted_mob)
@@ -501,11 +503,14 @@
 			return
 		if(get_dist(src, targetted_mob) <= comfy_range)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
+			if (!advancing) //we dont want to prematurely end a advancing walk
+				walk_to(src, targetted_mob, calculated_walk, move_to_delay) //we still want to reset our walk
 		else
 			if(weakened)
 				return
-			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to(src, targetted_mob, (comfy_range - comfy_distance), move_to_delay)
+			if (!advancing)
+				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+				walk_to(src, targetted_mob, calculated_walk, move_to_delay)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
@@ -686,9 +691,13 @@
 
 	if (impact_atom != targetted_mob)
 		var/distance = (get_dist(src, targetted_mob))
-		if (distance <= calculated_walk)
+		if (distance <= calculated_walk) //if we are within our comfy range but we cant attack, we need to reposition
 			var/advance_steps = (distance - advancement)
 			if (advance_steps <= 0)
-				advance_steps = 1
-			walk_to(src, targetted_mob, advance_steps, move_to_delay)
+				advance_steps = 1 //1 is the minimum distance
+			walk_to(src, targetted_mob, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
+			advancing = TRUE // we dont want this overridden instantly
 
+/// For when we want to set the mob's advancing var to false on a delay.
+/mob/living/carbon/superior_animal/proc/handle_advancement_var()
+	advancing = FALSE
