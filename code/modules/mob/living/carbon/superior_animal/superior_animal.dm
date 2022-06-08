@@ -436,6 +436,7 @@
 
 /mob/living/carbon/superior_animal/proc/handle_hostile_stance(var/atom/targetted_mob) //here so we can jump instantly to it if hostile stance is established
 	var/already_destroying_surroundings = FALSE
+	var/calculated_walk = (comfy_range - comfy_distance)
 	if(weakened) return
 	if(destroy_surroundings)
 		destroySurroundings()
@@ -445,7 +446,7 @@
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		walk_to(src, targetted_mob, (comfy_range - comfy_distance), move_to_delay) //lets get a little closer than our optimal range
+		walk_to(src, targetted_mob, calculated_walk, move_to_delay) //lets get a little closer than our optimal range
 		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
 			visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"))
 			delayed = delay_amount
@@ -501,7 +502,8 @@
 		if(get_dist(src, targetted_mob) <= comfy_range)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 		else
-			if(weakened) return
+			if(weakened)
+				return
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 			walk_to(src, targetted_mob, (comfy_range - comfy_distance), move_to_delay)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
@@ -664,6 +666,15 @@
 						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
 
+/**
+ * Signal handler for COMSIG_TRACE_IMPACT signal.
+ * Apon impact of the trace projectile, it will fire this signal, which will decide if the entity it impacted is our target. If no, we then
+ * advance advancement turfs forward towards our target.
+ *
+ * Args:
+ * trace: obj/item/projectile/test/impacttest. The trace we are registered to.
+ * atom/impact_atom: The atom the trace impacted.
+**/
 /mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/test/impacttest/trace, var/atom/impact_atom)
 	SIGNAL_HANDLER
 
@@ -671,16 +682,13 @@
 
 	var/targetted_mob = (target_mob?.resolve())
 
-	var/calculated_distance = (comfy_range - comfy_distance)
+	var/calculated_walk = (comfy_range - comfy_distance)
 
 	if (impact_atom != targetted_mob)
 		var/distance = (get_dist(src, targetted_mob))
-		if (distance <= calculated_distance)
+		if (distance <= calculated_walk)
 			var/advance_steps = (distance - advancement)
 			if (advance_steps <= 0)
 				advance_steps = 1
 			walk_to(src, targetted_mob, advance_steps, move_to_delay)
-
-/mob/living/carbon/superior_animal/proc/not_advancing()
-	advancing = FALSE
 
