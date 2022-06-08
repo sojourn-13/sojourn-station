@@ -31,7 +31,7 @@
 
 	else if(!matter)
 		matter = list()
-	
+
 	matter.Add(list(MATERIAL_BIOMATTER = 5 * w_class))    // based of item size
 
 /obj/item/clothing/Destroy()
@@ -611,6 +611,7 @@ BLIND     // can't see anything
 		/obj/item/reagent_containers/spray,
 		/obj/item/device/radio,
 		/obj/item/clothing/mask,
+		/obj/item/storage/backpack/duffelbag/guncase,
 		/obj/item/implant/carrion_spider/holographic)
 	slot_flags = SLOT_OCLOTHING
 	var/blood_overlay_type = "suit"
