@@ -23,12 +23,12 @@
 	cost = 1
 
 /datum/gear/armament/ammo_box
-	display_name = "Rubber .35 Auto pistol box"
+	display_name = "Rubber .35 Auto pistol ammo box"
 	path = /obj/item/ammo_magazine/ammobox/pistol_35/rubber
 	cost = 2
 
 /datum/gear/armament/detective
-	display_name = "Enemty Havelock .35 Auto pistol"
+	display_name = "Unloaded Havelock .35 Auto pistol"
 	path = /obj/item/gun/projectile/revolver/detective
 	cost = 2
 
