@@ -15,8 +15,10 @@
 
 	var/eating_time = 900
 
+	/// How many tiles we will advance forward from our current position if we can't hit our current target.
 	var/advancement = 3
 
+	/// Var used to track if we are currently advancing. Blocks most walk_to-s that might come up.
 	var/advancing = FALSE
 
 	///How delayed are our ranged attacks, in ticks. Reduces DPS.
@@ -476,7 +478,7 @@
 		else
 			patience--
 		return
-	else if (projectiletype) // if we can't see, let's prepare to see if we can hit
+	else if (projectiletype) // if we can see, let's prepare to see if we can hit
 		if (projectiletype == initial(projectiletype)) // typepaths' vars are only accessable through initial() or objects
 			projectile_passflags = initial(projectiletype.pass_flags)
 			projectile_flags = initial(projectiletype.flags)

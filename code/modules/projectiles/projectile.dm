@@ -963,6 +963,10 @@
 			if(istype(M))
 				return 1
 
+// projectile/Test has been proven to be inaccurate and doesn't use the logic behind firing a real projectile.
+// impacttest uses the exact same logic, and thus, is perfectly accurate. It operates on the basis that whatever we hit will end the
+// flight of the projectile, thus, showing if we can hit a target or not.
+
 /obj/item/projectile/test/impacttest
 	hitscan = TRUE
 
