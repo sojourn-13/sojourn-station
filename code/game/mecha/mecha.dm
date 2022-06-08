@@ -1447,12 +1447,10 @@ assassination method if you time it right*/
 	if(usr!=src.occupant)
 		return
 
-/*  Broken atm
 	if(isAI(mob_container))
 		var/obj/item/mecha_parts/mecha_equipment/tool/ai_holder/AH = locate() in src
 		if(AH)
 			AH.go_out()
-*/
 
 /obj/mecha/proc/go_out()
 	if(!src.occupant) return
