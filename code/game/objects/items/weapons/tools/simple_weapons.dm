@@ -269,7 +269,7 @@
 
 /obj/item/tool/sword/katana/vibro
 	name = "artificer vibrokatana"
-	desc = "A modern katana made by a madman painted all over with red and gloss. Just being near it makes your ears ring from it's sharp edge cutting up against the air."
+	desc = "A modern katana made by a madman, painted all over with red and gloss. Just being near it makes your ears ring from its sharp edge cutting up against the air."
 	icon_state = "katana_vibro"
 	item_state = "katana_vibro"
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 5, MATERIAL_DIAMOND = 2, MATERIAL_PLATINUM = 1, MATERIAL_URANIUM = 1)
