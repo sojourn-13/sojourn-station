@@ -13,8 +13,8 @@
 	max_storage_space = 20 //Its a big case
 	matter = list(MATERIAL_BIOMATTER = 8, MATERIAL_PLASTIC = 4)
 	price_tag = 90
-
-/obj/item/storage/briefcase/rifle
+/*
+/obj/item/storage/briefcase/rifle //replaced with the 'duffel' child item
 	name = "gun case"
 	desc = "A sturdy metal case made for transporting ranged weaponry."
 	icon_state = "rifle_case"
@@ -29,4 +29,4 @@
 	can_hold = list(/obj/item/gun,
 		/obj/item/ammo_magazine
 		)
-	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 4)
+	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 4) */

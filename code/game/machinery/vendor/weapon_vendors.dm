@@ -74,7 +74,7 @@
 	/obj/item/gun_upgrade/mechanism/weintraub = 2,
 	/obj/item/storage/pouch/pistol_holster = 2,
 	/obj/item/storage/pouch/ammo = 2,
-	/obj/item/storage/briefcase/rifle = 5,
+	/obj/item/storage/backpack/duffelbag/guncase = 35,
 	/obj/item/storage/box/smokes = 3)
 
 	prices = list(
@@ -145,7 +145,7 @@
 	/obj/item/gun_upgrade/mechanism/weintraub = 200,
 	/obj/item/storage/pouch/pistol_holster = 50,
 	/obj/item/storage/pouch/ammo = 75,
-	/obj/item/storage/briefcase/rifle = 50,
+	/obj/item/storage/backpack/duffelbag/guncase = 50,
 	/obj/item/storage/box/smokes = 100)
 
 /obj/machinery/vending/security
