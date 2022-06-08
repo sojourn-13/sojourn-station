@@ -18,6 +18,8 @@
 		WEAPON_NORMAL,
 		BURST_2_ROUND
 	)
+	saw_off = TRUE
+	sawn = /obj/item/gun/energy/cog/sawn
 	twohanded = TRUE
 	serial_type = "GP"
 
@@ -32,3 +34,24 @@
 		list(mode_name="lethal", mode_desc="fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/Laser4.ogg')
 	)
 	serial_type = "NM"
+	saw_off = FALSE
+
+/obj/item/gun/energy/cog/sawn
+	name = "sawn down \"Cog\" lasgun"
+	icon = 'icons/obj/guns/energy/obrez_retro.dmi'
+	desc = "A Greyson Positronic design, cheap and widely produced. This one has been made even cheaper- and shorter, by sawing off the stock."
+	icon_state = "shorty"
+	item_state = "shorty"
+	slot_flags = SLOT_BACK|SLOT_HOLSTER
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
+	damage_multiplier = 0.8
+	penetration_multiplier = 0.8
+	charge_cost = 50
+	price_tag = 400
+	init_firemodes = list(
+		WEAPON_NORMAL,
+		BURST_2_ROUND
+	)
+	twohanded = FALSE
+	saw_off = FALSE
+	init_recoil = SMG_RECOIL(1)

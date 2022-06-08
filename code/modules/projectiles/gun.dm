@@ -27,6 +27,9 @@
 
 	hitsound = "swing_hit"
 
+	var/saw_off = FALSE			//Can be sawn off?
+	var/sawn = null				//what it becomes when sawn down, accepts a typepath.
+
 	var/auto_eject = FALSE			//if the magazine should automatically eject itself when empty.
 	var/auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg' //The sound that places when a mag is dropped
 
