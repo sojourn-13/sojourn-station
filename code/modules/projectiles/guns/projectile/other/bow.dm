@@ -48,6 +48,8 @@
 		add_overlay(arrow_overlay)
 
 /obj/item/gun/projectile/bow/attackby(obj/item/A, mob/user)
+	if(chambered)
+		return
 	..()
 	if(LAZYLEN(loaded))
 		chambered = loaded[1]
