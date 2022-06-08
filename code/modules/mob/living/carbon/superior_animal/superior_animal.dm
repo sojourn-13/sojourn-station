@@ -664,7 +664,7 @@
 						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
 
-/mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/test/impacttest/trace, var/atom/placeholder, var/atom/impact_atom)
+/mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/test/impacttest/trace, var/atom/impact_atom)
 	SIGNAL_HANDLER
 
 	UnregisterSignal(trace, COMSIG_TRACE_IMPACT)

@@ -1015,7 +1015,7 @@
 
 /obj/item/projectile/test/impacttest/on_impact(atom/A)
 
-	SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, A)
+	SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, A)
 
 /obj/item/projectile/test/impacttest/Bump(atom/A, forced)
 
