@@ -227,7 +227,8 @@
 	opened = FALSE
 	update_icon()
 	playsound(src.loc, close_sound, 100, 1, -3)
-	density = 1
+	if(!wall_mounted)
+		density = TRUE
 	update_openspace()
 	return 1
 
