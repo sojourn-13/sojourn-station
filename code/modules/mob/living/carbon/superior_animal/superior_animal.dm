@@ -487,6 +487,7 @@
 			var/obj/item/projectile/temp_proj = new projectiletype(null) //create it in nullspace
 			projectile_passflags = temp_proj.pass_flags
 			projectile_flags = temp_proj.flags
+			QDEL_NULL(temp_proj)
 		if (ranged)
 			var/obj/item/projectile/test/impacttest/trace = new /obj/item/projectile/test/impacttest(get_turf(src))
 			RegisterSignal(trace, COMSIG_TRACE_IMPACT, .proc/handle_trace_impact)
