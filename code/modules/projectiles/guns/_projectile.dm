@@ -27,6 +27,8 @@
 	var/cocked_sound 	= 'sound/weapons/guns/interact/pistol_cock.ogg'
 	var/bulletinsert_sound 	= 'sound/weapons/guns/interact/bullet_insert.ogg'
 	var/item_suffix = ""		//Allows for variations within the same icon sheet.
+	var/saw_off = FALSE			//Can be sawn off?
+	var/sawn = null				//what it becomes when sawn down, accepts a typepath.
 
 	//For SINGLE_CASING or SPEEDLOADER guns
 	var/max_shells = 1			//the number of casings that will fit inside As of 3/29/2022 this has to be at lest 1 otherwise the gun can no fire without fire_from_mag

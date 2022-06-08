@@ -165,21 +165,6 @@
 		to_chat(usr, SPAN_WARNING("[src] is a disposable gun, its batteries cannot be removed!."))
 
 /obj/item/gun/energy/attackby(obj/item/C, mob/living/user)
-
-	if(QUALITY_SAWING in C.tool_qualities)
-		if(saw_off == FALSE)
-			to_chat(user, SPAN_NOTICE("Sawing down \the [src] will achieve nothing or may impede operation."))
-			return
-		else if(cell)
-			to_chat(user, SPAN_WARNING("You should unload \the [src] first!"))
-			return
-		to_chat(user, SPAN_NOTICE("You begin to saw off the stock and barrel of \the [src]."))
-		if(C.use_tool(user, src, WORKTIME_LONG, QUALITY_SAWING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-			qdel(src)
-			new sawn(usr.loc)
-			to_chat(user, SPAN_WARNING("You cut down the stock, barrel, and anything else nice from \the [src], ruining a perfectly good weapon for no good reason!"))
-		return
-	
 	if(self_recharge)
 		to_chat(usr, SPAN_WARNING("[src] is a self-charging gun, it doesn't need more batteries."))
 		return
