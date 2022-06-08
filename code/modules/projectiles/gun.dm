@@ -1055,6 +1055,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	prefixes = list()
 	item_flags = initial(item_flags)
 	extra_bulk = initial(extra_bulk)
+	init_recoil = initial(init_recoil) //Insainly good recoil controle if you have the folding stock
 
 	braced = initial(braced)
 
