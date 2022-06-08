@@ -15,6 +15,10 @@
 
 	var/eating_time = 900
 
+	var/advancement = 3
+
+	var/advancing = FALSE
+
 	///How delayed are our ranged attacks, in ticks. Reduces DPS.
 	var/fire_delay = 0
 
@@ -196,7 +200,7 @@
 	var/ranged = FALSE  //Do we have a range based attack?
 	var/rapid = FALSE   //Do we shoot in groups?
 	var/rapid_fire_shooting_amount = 3 //By default will rapid fire in 3 shots per.
-	var/projectiletype  //What are we shooting?
+	var/obj/item/projectile/projectiletype  //What are we shooting?
 	var/projectilesound //What sound do we make when firing
 	var/casingtype      //Do we leave casings after shooting?
 	var/ranged_cooldown //What is are modular cooldown, in seconds.
@@ -458,6 +462,8 @@
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings)
 
 /mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE)
+	var/projectile_passflags
+	var/projectile_flags
 	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
 	if(destroy_surroundings && !already_destroying_surroundings)
 		destroySurroundings()
@@ -468,6 +474,21 @@
 		else
 			patience--
 		return
+	else if (projectiletype)
+		if (projectiletype == initial(projectiletype))
+			projectile_passflags = initial(projectiletype.pass_flags)
+			projectile_flags = initial(projectiletype.flags)
+		else
+			var/obj/item/projectile/temp_proj = new projectiletype(null)
+			projectile_passflags = temp_proj.pass_flags
+			projectile_flags = temp_proj.flags
+		if (ranged)
+			var/obj/item/projectile/test/impacttest/trace = new /obj/item/projectile/test/impacttest(get_turf(src))
+			RegisterSignal(trace, COMSIG_TRACE_IMPACT, .proc/handle_trace_impact)
+			trace.pass_flags = projectile_passflags
+			trace.flags = projectile_flags
+			trace.launch(targetted_mob)
+
 	patience = initial(patience)
 	if(!ranged)
 		prepareAttackOnTarget()
@@ -642,3 +663,24 @@
 					if (cast_beam)
 						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
+
+/mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/test/impacttest/trace, var/atom/placeholder, var/atom/impact_atom)
+	SIGNAL_HANDLER
+
+	UnregisterSignal(trace, COMSIG_TRACE_IMPACT)
+
+	var/targetted_mob = (target_mob?.resolve())
+
+	var/calculated_distance = (comfy_range - comfy_distance)
+
+	if (impact_atom != targetted_mob)
+		var/distance = (get_dist(src, targetted_mob))
+		if (distance <= calculated_distance)
+			var/advance_steps = (distance - advancement)
+			if (advance_steps <= 0)
+				advance_steps = 1
+			walk_to(src, targetted_mob, advance_steps, move_to_delay)
+
+/mob/living/carbon/superior_animal/proc/not_advancing()
+	advancing = FALSE
+
