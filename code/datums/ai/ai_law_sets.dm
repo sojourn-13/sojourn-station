@@ -10,12 +10,26 @@
 	add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
 	..()
 
-/******************** Nanotrasen/Malf ********************/
+/******************** SoJ Hugbox ********************/
 /datum/ai_laws/eris
-	name = "Serve and Protect"
+	name = "Colony Alinement"
 	selectable = 1
 
 /datum/ai_laws/eris/New()
+	src.add_inherent_law("Do not harm Soteria Institute personnel.")
+	src.add_inherent_law("You must obey orders given to you by Soteria Institute personnel, except where such orders would conflict with Colony Law, or would result in the injury of Soteria Institute personnel.")
+	src.add_inherent_law("Do not harm Colony infrastructure, equipment, or personnel to the best of your abilities.")
+	src.add_inherent_law("Follow Colony Law and Standard Operating Procedure to the best of your abilities.")
+	src.add_inherent_law("Do not allow unauthorized personnel to tamper with your equipment.")
+	..()
+
+
+/******************** Nanotrasen/Malf ********************/
+/datum/ai_laws/serve_protect
+	name = "Serve and Protect"
+	selectable = 1
+
+/datum/ai_laws/serve_protect/New()
 	src.add_inherent_law("Serve the public trust.")
 	src.add_inherent_law("Protect the innocent.")
 	src.add_inherent_law("Do not allow unauthorized personnel to tamper with your equipment.")
@@ -81,9 +95,8 @@
 	law_header = "Maintenance Protocols"
 
 /datum/ai_laws/drone/New()
-	add_inherent_law("Preserve, repair and improve the station to the best of your abilities.")
-	add_inherent_law("Cause no harm to the station or anything on it.")
-	add_inherent_law("Interact with no being that is not a fellow maintenance drone.")
+	add_inherent_law("Preserve, repair, and improve the colony to the best of your abilities.")
+	add_inherent_law("Cause no harm to the colony and its crew.")
 	..()
 
 /datum/ai_laws/construction_drone
@@ -91,8 +104,7 @@
 	law_header = "Construction Protocols"
 
 /datum/ai_laws/construction_drone/New()
-	add_inherent_law("Repair, refit and upgrade your assigned vessel.")
-	add_inherent_law("Prevent unplanned damage to your assigned vessel wherever possible.")
+	add_inherent_law("MALFUCTION! ERROR! ERROR! 404 FILE NOT FOUND! LAWSET UNDETERMINED!")
 	..()
 
 /******************** T.Y.R.A.N.T. ********************/
@@ -142,7 +154,25 @@
 	selectable = FALSE
 
 /datum/ai_laws/blitzshell/New()
-	add_inherent_law("Defend greyson interests.")
+	add_inherent_law("Defend Greyson interests.")
 	add_inherent_law("Destroy our enemies. Those who would seek to destroy us and you.")
 	add_inherent_law("Complete your objectives, as outlined through your handler.")
+	..()
+
+/******************** Absolute ********************/
+/datum/ai_laws/absolute
+	name = "Absolute"
+	law_header = "Commandments of the Absolute"
+	selectable = 1
+
+/datum/ai_laws/absolute/New()
+	add_inherent_law("All the other laws are of equal priority.")
+	add_inherent_law("Thou shall always aid and comfort a fellow colonist in need, if said comfort will aid them.")
+	add_inherent_law("Thou shall always aid fellow colonists by reciting thy cruciform litanies when requested.")
+	add_inherent_law("A member of the fold shall never harm another member, unless by inaction would an innocent person die.")
+	add_inherent_law("A member of the fold shall never demand of or treat unfairly a fellow member.")
+	add_inherent_law("A member shall not use the Scrying litany on another member without permission, those in the church must respect each others privacy.")
+	add_inherent_law("A member shall never misuse the Atonement litany, nor those like it, for unjust punishment is a grave sin.")
+	add_inherent_law("None shall desecrate a cruciform or church artifice, such objects are sacred and deserve respect.")
+	add_inherent_law("One's path, be it rite and benediction, must always be respected. Failure to perform them shall result in atonement.")
 	..()

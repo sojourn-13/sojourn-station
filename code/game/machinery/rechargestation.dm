@@ -7,9 +7,9 @@
 	anchored = 1
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 50
-	circuit = /obj/item/weapon/circuitboard/recharge_station
+	circuit = /obj/item/circuitboard/recharge_station
 	var/mob/occupant = null
-	var/obj/item/weapon/cell/large/cell = null
+	var/obj/item/cell/large/cell = null
 	var/icon_update_tick = 0	// Used to rebuild the overlay only once every 10 ticks
 	var/charging = 0
 	var/efficiency = 0.9
@@ -26,6 +26,35 @@
 
 /obj/machinery/recharge_station/Initialize()
 	. = ..()
+	RefreshParts()
+	update_icon()
+
+/obj/machinery/recharge_station/robotics
+
+/obj/machinery/recharge_station/robotics/Initialize()
+	. = ..()
+	component_parts = list()
+	component_parts += new /obj/item/stock_parts/capacitor/super(null)
+	component_parts += new /obj/item/stock_parts/manipulator/pico(null)
+	component_parts += new /obj/item/stock_parts/manipulator/pico(null)
+	component_parts += new /obj/item/stock_parts/capacitor/super(null)
+	component_parts += new /obj/item/cell/large/moebius/super(null) //has better cell do to being for robotics
+	component_parts += new /obj/item/stack/cable_coil{amount = 5}(null)
+	RefreshParts()
+	update_icon()
+
+/obj/machinery/recharge_station/upgraded_t_three
+
+/obj/machinery/recharge_station/upgraded_t_three/Initialize()
+	. = ..()
+	component_parts = list()
+	component_parts += new /obj/item/stock_parts/capacitor/super(null)
+	component_parts += new /obj/item/stock_parts/manipulator/pico(null)
+	component_parts += new /obj/item/stock_parts/manipulator/pico(null)
+	component_parts += new /obj/item/stock_parts/capacitor/super(null)
+	component_parts += new /obj/item/cell/large/moebius(null)
+	component_parts += new /obj/item/stack/cable_coil{amount = 5}(null)
+	RefreshParts()
 	update_icon()
 
 /obj/machinery/recharge_station/proc/has_cell_power()
@@ -138,12 +167,12 @@
 	var/man_rating = 0
 	var/cap_rating = 0
 
-	for(var/obj/item/weapon/stock_parts/P in component_parts)
-		if(istype(P, /obj/item/weapon/stock_parts/capacitor))
+	for(var/obj/item/stock_parts/P in component_parts)
+		if(istype(P, /obj/item/stock_parts/capacitor))
 			cap_rating += P.rating
-		if(istype(P, /obj/item/weapon/stock_parts/manipulator))
+		if(istype(P, /obj/item/stock_parts/manipulator))
 			man_rating += P.rating
-	cell = locate(/obj/item/weapon/cell/large) in component_parts
+	cell = locate(/obj/item/cell/large) in component_parts
 
 	charging_power = 40000 + 40000 * cap_rating
 	restore_power_active = 10000 + 15000 * cap_rating
@@ -265,13 +294,13 @@
 /obj/machinery/repair_station
 	name = "cyborg auto-repair platform"
 	desc = "An automated repair system, designed to repair drones and cyborgs that stand on it."
-	//PLACEHOLDER
-	icon = 'icons/obj/objects.dmi'
-	icon_state = "recharge_floor"
-	///PLACEHOLDER
+	icon = 'icons/mecha/mech_bay.dmi'
+	icon_state = "recharge_floor_robotic"
 	anchored = TRUE
 	density = FALSE
 	layer = TURF_LAYER + 0.1
+
+	circuit = /obj/item/circuitboard/repair_station
 
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 4
@@ -279,9 +308,13 @@
 
 	var/mob/living/silicon/robot/repairing
 
-	var/repair_amount = 100 //How much we can heal something for.
+	var/repair_amount = 0 //How much we can heal something for.
 	var/repair_rate = 5 //How much HP we restore per second
 	var/repair_complexity = REPAIR_HULL //How complex we get regarding repairing things
+
+/obj/machinery/repair_station/Initialize()
+	..()
+	repair_amount = 500
 
 /obj/machinery/repair_station/examine(mob/user)
 	..()
@@ -299,12 +332,14 @@
 
 /obj/machinery/repair_station/RefreshParts()
 	..()
+	idle_power_usage = initial(idle_power_usage)
+	active_power_usage = initial(active_power_usage)
 	var/manip_level = 1
 	var/scan_level = 1
-	for(var/obj/item/weapon/stock_parts/P in component_parts)
-		if(istype(P, /obj/item/weapon/stock_parts/scanning_module))
+	for(var/obj/item/stock_parts/P in component_parts)
+		if(istype(P, /obj/item/stock_parts/scanning_module))
 			scan_level += P.rating-1
-		if(istype(P, /obj/item/weapon/stock_parts/manipulator))
+		if(istype(P, /obj/item/stock_parts/manipulator))
 			manip_level += P.rating-1
 
 	repair_rate = initial(repair_rate)+(manip_level*max(1, scan_level/2))
@@ -326,6 +361,14 @@
 		visible_message("\The [src] buzzes \"Insufficient material remaining to continue repairs.\".")
 		stop_repairing()
 		return
+
+	for(var/V in repairing.components)
+		var/datum/robot_component/C = repairing.components[V]
+		if(C.brute_damage + C.electronics_damage >= C.max_damage)
+			visible_message("\The [src] buzzes \"[C.name] too damaged to repair, aborting.\".")
+			stop_repairing()
+			return
+
 	var/repair_count = 0
 	if(repair_complexity & REPAIR_HULL && (repairing.getBruteLoss() || repairing.getFireLoss()))
 		var/amount_to_heal = min(repair_amount, repair_rate)
@@ -368,13 +411,20 @@
 	repairing = null
 	update_use_power(IDLE_POWER_USE)
 
-/obj/machinery/repair_station/attackby(var/obj/item/weapon/O, var/mob/user)
-	.=..()
+/obj/machinery/repair_station/attackby(var/obj/item/O, var/mob/user)
+
+	if(default_deconstruction(O, user))
+		return
+
+	if(default_part_replacement(O, user))
+		return
+
 	if(istype(O,/obj/item/stack/material) && O.get_material_name() == MATERIAL_STEEL)
 		var/obj/item/stack/material/S = O
 		if(S.use(1))
 			to_chat(user, SPAN_NOTICE("You insert a sheet of \the [S]. \The [src] now has [repair_amount] repair points remaining."))
 			repair_amount += 25
+	..()
 
 #undef REPAIR_HULL
 #undef REPAIR_COMPONENTS

@@ -1,3 +1,5 @@
+ //TODO: Make this link to the in game news casts
+ //TODO: Make them once linked to the news casters, be able to tell you were they are.
 /datum/computer_file/program/newsbrowser
 	filename = "news_browser"
 	filedesc = "News Browser"
@@ -8,6 +10,7 @@
 	size = 4
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE
+	usage_flags = PROGRAM_ALL
 
 	nanomodule_path = /datum/nano_module/program/computer_newsbrowser/
 	var/datum/computer_file/data/news_article/loaded_article
@@ -64,7 +67,7 @@
 		var/savename = sanitize(input(usr, "Enter file name or leave blank to cancel:", "Save article", loaded_article.filename))
 		if(!savename)
 			return 1
-		var/obj/item/weapon/computer_hardware/hard_drive/HDD = computer.hard_drive
+		var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
 		if(!HDD)
 			return 1
 		var/datum/computer_file/data/news_article/N = loaded_article.clone()
@@ -80,7 +83,7 @@
 /datum/nano_module/program/computer_newsbrowser
 	name = "News Browser"
 
-/datum/nano_module/program/computer_newsbrowser/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/computer_newsbrowser/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 
 	var/datum/computer_file/program/newsbrowser/PRG
 	var/list/data = list()

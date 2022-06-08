@@ -21,6 +21,11 @@
 	icon_state = "healthhud"
 	body_parts_covered = 0
 
+/obj/item/clothing/glasses/hud/health/scouter
+	name = "health scanner HUD"
+	desc = "A low profile heads-up display that scans the humans in view and provides accurate data about their health status."
+	icon_state = "healthscouter"
+	body_parts_covered = 0
 
 /obj/item/clothing/glasses/hud/health/process_hud(var/mob/M)
 	process_med_hud(M, 1)
@@ -57,7 +62,7 @@
 /obj/item/clothing/glasses/sechud/tactical
 	name = "security tactical HUD"
 	desc = "Flash-resistant goggles with inbuilt combat and security information."
-	flash_protection = FLASH_PROTECTION_MODERATE
+	flash_protection = FLASH_PROTECTION_MAJOR
 	icon_state = "swatgoggles"
 
 /obj/item/clothing/glasses/hud/broken/process_hud(mob/M)

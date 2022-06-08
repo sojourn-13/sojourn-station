@@ -44,11 +44,11 @@
 	"receiverA", "broadcasterA")
 
 /obj/machinery/telecomms/hub/preset_cent
-	id = "CentComm Hub"
+	id = "CentCom Hub"
 	network = "nadezhda"
 	produces_heat = 0
 	autolinkers = list("hub_cent", "c_relay", "s_relay", "m_relay", "r_relay",
-	 "centcomm", "receiverCent", "broadcasterCent")
+	 "centcom", "receiverCent", "broadcasterCent")
 
 //Receivers
 
@@ -65,8 +65,8 @@
 		..()
 
 /obj/machinery/telecomms/receiver/preset_cent
-	id = "CentComm Receiver"
-	network = "nadezhda"	
+	id = "CentCom Receiver"
+	network = "nadezhda"
 	produces_heat = 0
 	autolinkers = list("receiverCent")
 	freq_listening = list(DTH_FREQ)
@@ -106,11 +106,11 @@
 	autolinkers = list("processor4", "engineering", "common")
 
 /obj/machinery/telecomms/bus/preset_cent
-	id = "CentComm Bus"
+	id = "CentCom Bus"
 	network = "nadezhda"
 	freq_listening = list(DTH_FREQ)
 	produces_heat = 0
-	autolinkers = list("processorCent", "centcomm")
+	autolinkers = list("processorCent", "centcom")
 
 //Processors
 
@@ -135,7 +135,7 @@
 	autolinkers = list("processor4")
 
 /obj/machinery/telecomms/processor/preset_cent
-	id = "CentComm Processor"
+	id = "CentCom Processor"
 	network = "nadezhda"
 	produces_heat = 0
 	autolinkers = list("processorCent")
@@ -163,7 +163,7 @@
 
 /obj/machinery/telecomms/server/presets/service
 	id = "service server"
-	freq_listening = list(SRV_FREQ)
+	freq_listening = list(SRV_FREQ, PT_BT_FREQ, PT_RT_FREQ, PT_YT_FREQ, PT_GT_FREQ)
 	autolinkers = list("service")
 
 /obj/machinery/telecomms/server/presets/common
@@ -214,11 +214,11 @@
 	freq_listening = list(PRO_FREQ)
 	autolinkers = list("prospector")
 
-/obj/machinery/telecomms/server/presets/centcomm
-	id = "CentComm server"
+/obj/machinery/telecomms/server/presets/centcom
+	id = "CentCom server"
 	freq_listening = list(DTH_FREQ)
 	produces_heat = 0
-	autolinkers = list("centcomm")
+	autolinkers = list("centcom")
 
 /obj/machinery/telecomms/server/presets/nt
 	id = "Church Server"
@@ -236,7 +236,7 @@
 	autolinkers = list("broadcasterA")
 
 /obj/machinery/telecomms/broadcaster/preset_cent
-	id = "CentComm Broadcaster"
+	id = "CentCom Broadcaster"
 	network = "nadezhda"
 	produces_heat = 0
 	autolinkers = list("broadcasterCent")

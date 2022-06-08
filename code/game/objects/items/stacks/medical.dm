@@ -4,31 +4,45 @@
 	icon = 'icons/obj/stack/items.dmi'
 	amount = 5
 	max_amount = 5
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_TINY
 	throw_speed = 4
 	throw_range = 20
 	var/heal_brute = 0
 	var/heal_burn = 0
+	var/heal_toxin = 0
 	price_tag = 10
 	matter = list(MATERIAL_BIOMATTER = 5)
 	var/automatic_charge_overlays = FALSE	//Do we handle over-lays with base update_icon()? | Stolen from TG egun code
 	var/charge_sections = 5		// How many indicator blips are there?
 	var/charge_x_offset = 2		//The spacing between each charge indicator. Should be 2 to leave a 1px gap between each blip.
+	var/natural_remedy = FALSE
+	var/perk_required = FALSE
+	var/needed_perk = null
+	var/needed_perk_alt = null
+	var/bio_requirement = 0
+	var/disinfectant  = FALSE
+
+	var/fancy_icon = FALSE //This var is for mulitable icon states that DONT relie on a overlay
 
 /obj/item/stack/medical/attack(mob/living/M, mob/living/user)
+	..()
 	var/types = M.get_classification()
 	if (!(types & CLASSIFICATION_ORGANIC))
 		to_chat(user, SPAN_WARNING("\The [src] cannot be applied to [M]!"))
 		return 1
 
-	if ( ! (ishuman(user) || issilicon(user)) )
+	if(!(ishuman(user) || issilicon(user)))
 		to_chat(user, SPAN_WARNING("You don't have the dexterity to do this!"))
 		return 1
 
-	if (ishuman(M))
+	if(ishuman(M))
+		if(perk_required && (!user.stats.getPerk(needed_perk) && !user.stats.getPerk(needed_perk_alt)))
+			if(user.stats.getStat(STAT_BIO) < bio_requirement)
+				to_chat(user, SPAN_WARNING("You lack the biological skill or training to figure out how to properly use this!"))
+				return 1
+
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/external/affecting = H.get_organ(user.targeted_organ)
-
 		if(!affecting)
 			to_chat(user, SPAN_WARNING("What [user.targeted_organ]?"))
 			return TRUE
@@ -50,7 +64,9 @@
 				SPAN_NOTICE("You start applying [src] to [M].") \
 				)
 				if (do_after(user, 30, M))
-					if(prob(10 + user.stats.getStat(STAT_BIO)))
+					if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
+						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
+					else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
 						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 					else
 						use(1)
@@ -63,6 +79,10 @@
 
 			to_chat(user, SPAN_WARNING("This isn't useful at all on a robotic limb."))
 			return 1
+
+		for(var/datum/wound/W in affecting.wounds)
+			if(disinfectant)
+				W.disinfect()
 
 		H.UpdateDamageIcon()
 
@@ -77,8 +97,10 @@
 			)
 		var/med_skill = user.stats.getStat(STAT_BIO)
 		if (do_after(user, 30, M))
-			M.heal_organ_damage((src.heal_brute * (1+med_skill/50)/2), (src.heal_burn * (1+med_skill/50)/2))
-			if(prob(10 + med_skill))
+			M.heal_organ_damage((src.heal_brute + (med_skill * 2)), (src.heal_burn + (med_skill * 2)))
+			if(heal_toxin)
+				M.adjustToxLoss(-heal_toxin)
+			if(prob(10 + med_skill) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
 				to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 			else
 				use(1)
@@ -114,10 +136,21 @@
 	name = "roll of gauze"
 	singular_name = "gauze length"
 	desc = "Some sterile gauze to wrap around bloody stumps."
-	icon_state = "brutepack"
+	icon_state = "brutepack" //sprites by @LiLJard @Ajajumbo123
 	origin_tech = list(TECH_BIO = 1)
-	heal_brute = 4
+	heal_brute = 10
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 8)
+	fancy_icon = TRUE
+
+/obj/item/stack/medical/bruise_pack/blacshield
+	stacktype_alt = /obj/item/stack/medical/bruise_pack
+	icon_state = "bs_brutepack"
+
+
+/obj/item/stack/medical/bruise_pack/update_icon()
+	if(fancy_icon)
+		icon_state = "[initial(icon_state)][amount]"
+	..()
 
 /obj/item/stack/medical/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -142,7 +175,7 @@
 				)
 				var/used = 0
 				for (var/datum/wound/W in affecting.wounds)
-					if (W.internal)
+					if(W.internal)
 						continue
 					if(W.bandaged)
 						continue
@@ -150,6 +183,12 @@
 						break
 					if(!do_mob(user, M, W.damage/5))
 						to_chat(user, SPAN_NOTICE("You must stand still to bandage wounds."))
+						break
+					if(W.internal)
+						continue
+					if(W.bandaged)
+						continue
+					if(used == amount)
 						break
 					if (W.current_stage <= W.max_bleeding_stage)
 						user.visible_message(
@@ -178,7 +217,9 @@
 								to_chat(user, SPAN_WARNING("Your amateur actions caused [H] [pain > 50 ? "a lot of " : ""]pain."))
 							else
 								to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
-					if(prob(10 + user.stats.getStat(STAT_BIO)))
+					if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
+						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
+					else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
 						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 					else
 						used++
@@ -197,20 +238,45 @@
 				to_chat(user, SPAN_NOTICE("The [affecting.name] is cut open, you'll need more than a bandage!"))
 
 /obj/item/stack/medical/bruise_pack/handmade
-	name = "non sterile bandage"
-	singular_name = "non sterile bandage"
-	desc = "Parts of clothes that can be wrapped around bloody stumps."
+	name = "non-sterile bandages"
+	singular_name = "non-sterile bandage"
+	desc = "Parts of cloth that can be wrapped around bloody stumps."
 	icon_state = "hm_brutepack"
+	fancy_icon = FALSE
+
+/obj/item/stack/medical/bruise_pack/soteria
+	name = "Soteria medical gauze"
+	singular_name = "Soteria medical gauze"
+	desc = "An advanced sterile gauze to wrap around bloody stumps. Unlike the regular gauze, these have more charges, and sterilize wounds as ointment would, as well as treating small amounts of toxins. Hand-made, with love, by Soteria Medical staff."
+	icon_state = "sr_brutepack"
+	fancy_icon = TRUE
+	disinfectant  = TRUE
+	amount = 8
+	max_amount = 8
+	heal_brute = 10
+	heal_toxin = 5
+	price_tag = 25
 
 /obj/item/stack/medical/ointment
 	name = "ointment"
 	desc = "Used to treat those nasty burns."
 	gender = PLURAL
-	singular_name = "ointment"
+	singular_name = "ointment" //sprites by @LiLJard @Ajajumbo123
 	icon_state = "ointment"
-	heal_burn = 4
+	heal_burn = 10
 	origin_tech = list(TECH_BIO = 1)
 	preloaded_reagents = list("silicon" = 4, "carbon" = 8)
+	fancy_icon = TRUE
+	disinfectant  = TRUE
+
+/obj/item/stack/medical/ointment/blacshield
+	stacktype_alt = /obj/item/stack/medical/ointment
+	icon_state = "bs_ointment"
+
+/obj/item/stack/medical/ointment/update_icon()
+	if(fancy_icon)
+		icon_state = "[initial(icon_state)][amount]"
+	..()
 
 /obj/item/stack/medical/ointment/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -240,7 +306,9 @@
 					SPAN_NOTICE("[user] salved wounds on [M]'s [affecting.name]."),
 					SPAN_NOTICE("You salved wounds on [M]'s [affecting.name].")
 				)
-				if(prob(10 + user.stats.getStat(STAT_BIO)))
+				if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
+					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
+				else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
 					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 				else
 					use(1)
@@ -262,17 +330,66 @@
 			else
 				to_chat(user, SPAN_NOTICE("The [affecting.name] is cut open, you'll need more than a [src]!"))
 
+/obj/item/stack/medical/ointment/handmade
+	name = "spider silk salves"
+	singular_name = "spider silk salve"
+	desc = "Freshly gathered spider webs that you can slather on burns to prevent infection."
+	icon_state = "spidergoo"
+	natural_remedy = TRUE
+	fancy_icon = FALSE
+
+/obj/item/stack/medical/ointment/soteria
+	name = "Soteria branded ointment"
+	singular_name = "Soteria branded ointment"
+	desc = "Used to treat those nasty burns. Unlike regular ointment this one has a Soteria logo on it, containing more ointment per-tube."
+	icon_state = "sr_ointment"
+	heal_burn = 15
+	heal_toxin = 5
+	amount = 8
+	max_amount = 8
+
 /obj/item/stack/medical/advanced/bruise_pack
 	name = "advanced trauma kit"
 	singular_name = "advanced trauma kit"
 	desc = "An advanced trauma kit for severe injuries."
 	icon_state = "traumakit"
-	heal_brute = 8
+	heal_brute = 15
 	origin_tech = list(TECH_BIO = 2)
 	automatic_charge_overlays = TRUE
 	consumable = FALSE	// Will the stack disappear entirely once the amount is used up?
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "lithium" = 4)
+	w_class = ITEM_SIZE_SMALL
+	perk_required = TRUE
+	needed_perk = PERK_MEDICAL_EXPERT
+	needed_perk_alt = PERK_SURGICAL_MASTER
+	bio_requirement = 75
+	stacktype_alt = /obj/item/stack/medical/advanced/bruise_pack/large
+	disinfectant  = TRUE
+
+/obj/item/stack/medical/advanced/bruise_pack/large
+	name = "large advanced trauma kit"
+	singular_name = "large advanced trauma kit"
+	icon = 'icons/obj/stack/medical_big.dmi'
+	amount = 10
+	max_amount = 10
+	charge_sections = 10
+	stacktype_alt = /obj/item/stack/medical/advanced/bruise_pack
+
+/obj/item/stack/medical/advanced/bruise_pack/tatonka_tongue
+	name = "tatonka blood tongue"
+	singular_name = "tatonka blood tongue"
+	desc = "A treated tatonka tongue that has anti-septic saliva, capable of promoting healing and properly treating brute damage."
+	icon_state = "brahmin_tongue"
+	automatic_charge_overlays = FALSE
+	consumable = TRUE
+	matter = list(MATERIAL_BIOMATTER = 2.5)
+	natural_remedy = TRUE
+	fancy_icon = FALSE
+	perk_required = TRUE
+	needed_perk = PERK_BUTCHER
+	bio_requirement = 10 // So simple a tribal can do it, still has a small check to use.
+	stacktype_alt = null
 
 /obj/item/stack/medical/advanced/bruise_pack/mending_ichor
 	name = "mending ichor"
@@ -280,8 +397,14 @@
 	desc = "An ichor that can be used to mend physical trauma."
 	icon_state = "mending_ichor"
 	automatic_charge_overlays = FALSE
-	consumable = TRUE	// Will the stack disappear entirely once the amount is used up?
+	consumable = TRUE // Will the stack disappear entirely once the amount is used up?
 	matter = list(MATERIAL_BIOMATTER = 2.5)
+	natural_remedy = TRUE
+	fancy_icon = FALSE
+	perk_required = FALSE
+	needed_perk = null
+	bio_requirement = 0
+	stacktype_alt = null
 
 /obj/item/stack/medical/advanced/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -311,14 +434,20 @@
 			)
 			var/used = 0
 			for (var/datum/wound/W in affecting.wounds)
-				if (W.internal)
+				if(W.internal)
 					continue
-				if (W.bandaged && W.disinfected)
+				if(W.bandaged && W.disinfected)
 					continue
 				if(used == amount)
 					break
 				if(!do_mob(user, M, W.damage/5))
 					to_chat(user, SPAN_NOTICE("You must stand still to bandage wounds."))
+					break
+				if(W.internal)
+					continue
+				if(W.bandaged && W.disinfected)
+					continue
+				if(used == amount)
 					break
 				if (W.current_stage <= W.max_bleeding_stage)
 					user.visible_message(
@@ -336,9 +465,10 @@
 						SPAN_NOTICE("You smear some bioglue over \a [W.desc] on [M]'s [affecting.name].")
 					)
 				W.bandage()
-				W.disinfect()
 				W.heal_damage(heal_brute)
-				if(prob(10 + user.stats.getStat(STAT_BIO)))
+				if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
+					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
+				else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
 					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 				else
 					used++
@@ -372,12 +502,43 @@
 	singular_name = "advanced burn kit"
 	desc = "An advanced treatment kit for severe burns."
 	icon_state = "burnkit"
-	heal_burn = 8
+	heal_burn = 15
 	origin_tech = list(TECH_BIO = 2)
 	automatic_charge_overlays = TRUE
 	consumable = FALSE	// Will the stack disappear entirely once the amount is used up?
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "mercury" = 4)
+	w_class = ITEM_SIZE_SMALL
+	perk_required = TRUE
+	needed_perk = PERK_MEDICAL_EXPERT
+	needed_perk_alt = PERK_SURGICAL_MASTER
+	bio_requirement = 75
+	stacktype_alt = /obj/item/stack/medical/advanced/ointment/large
+	disinfectant  = TRUE
+
+/obj/item/stack/medical/advanced/ointment/large
+	name = "large advanced burn kit"
+	singular_name = "large advanced burn kit"
+	icon = 'icons/obj/stack/medical_big.dmi'
+	amount = 10
+	max_amount = 10
+	charge_sections = 10
+	stacktype_alt = /obj/item/stack/medical/advanced/ointment
+
+/obj/item/stack/medical/advanced/ointment/powder_pouch
+	name = "tatonka powder pouch"
+	singular_name = "tatonka powder pouch"
+	desc = "A small pouch containing the powder of a tatonka horn, a medicine useful for treating burns and disinfecting wounds."
+	icon_state = "powder_pouch"
+	automatic_charge_overlays = FALSE
+	consumable = TRUE
+	matter = list(MATERIAL_BIOMATTER = 2.5)
+	natural_remedy = TRUE
+	fancy_icon = FALSE
+	perk_required = TRUE
+	needed_perk = PERK_BUTCHER
+	bio_requirement = 10 // So simple a tribal can do it, still has a small check to use.
+	stacktype_alt = null
 
 /obj/item/stack/medical/advanced/ointment/regenerative_ichor
 	name = "regenerative ichor"
@@ -387,6 +548,12 @@
 	automatic_charge_overlays = FALSE
 	consumable = TRUE	// Will the stack disappear entirely once the amount is used up?
 	matter = list(MATERIAL_BIOMATTER = 2.5)
+	natural_remedy = TRUE
+	fancy_icon = FALSE
+	perk_required = FALSE
+	needed_perk = null
+	bio_requirement = 0
+	stacktype_alt = null
 
 /obj/item/stack/medical/advanced/ointment/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -420,7 +587,9 @@
 					SPAN_NOTICE("You cover wounds on [M]'s [affecting.name] with regenerative membrane.")
 				)
 				affecting.heal_damage(0,heal_burn)
-				if(prob(10 + user.stats.getStat(STAT_BIO)))
+				if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
+					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
+				else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
 					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 				else
 					use(1)
@@ -446,9 +615,19 @@
 /obj/item/stack/medical/splint
 	name = "medical splints"
 	singular_name = "medical splint"
-	icon_state = "splint"
+	icon_state = "splint" //sprites by @LiLJard @Ajajumbo123
 	amount = 5
 	max_amount = 5
+	fancy_icon = FALSE
+	bio_requirement = -25
+
+/obj/item/stack/medical/splint/improvised
+	name = "improvised bone splint"
+	singular_name = "improvised bone splint"
+	desc = "A pair of wooden planks held together by wire that can work as a splint on a pinch."
+	icon_state = "improsplint"
+	amount = 1
+	max_amount = 1
 
 /obj/item/stack/medical/splint/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -463,7 +642,7 @@
 			return TRUE
 
 		var/limb = affecting.name
-		if(!(affecting.organ_tag in list(BP_L_ARM,BP_R_ARM,BP_L_LEG ,BP_R_LEG)))
+		if(!(affecting.organ_tag in list(BP_L_LEG, BP_R_LEG, BP_L_ARM, BP_R_ARM, BP_CHEST, BP_GROIN, BP_HEAD)))
 			to_chat(user, SPAN_DANGER("You can't apply a splint there!"))
 			return
 		if(affecting.status & ORGAN_SPLINTED)
@@ -506,8 +685,48 @@
 					)
 					return
 			affecting.status |= ORGAN_SPLINTED
-			if(prob(10 + user.stats.getStat(STAT_BIO)))
-				to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
-			else
-				use(1)
+			use(1) //You cannot "waste less" of a splint! Their uses are supposed to be expended since it's one whole item not some ointment!
 		return
+
+/obj/item/stack/medical/advanced/bruise_pack/nt
+	name = "Absolutism Bruisepack"
+	singular_name = "Absolutism Bruisepack"
+	desc = "An advanced bruisepack for severe injuries. Created by the will of God and made far easier to use than normal advanced kits."
+	icon_state = "nt_traumakit"
+	heal_brute = 20
+	automatic_charge_overlays = FALSE
+	matter = list(MATERIAL_BIOMATTER = 5)
+	origin_tech = list(TECH_BIO = 4)
+	fancy_icon = TRUE
+	w_class = ITEM_SIZE_SMALL
+	perk_required = TRUE
+	needed_perk = PERK_MEDICAL_EXPERT
+	bio_requirement = 15
+	stacktype_alt = null
+
+
+/obj/item/stack/medical/advanced/bruise_pack/nt/update_icon()
+	if(fancy_icon)
+		icon_state = "[initial(icon_state)][amount]"
+	..()
+
+/obj/item/stack/medical/advanced/ointment/nt
+	name = "Absolutism Burnpack"
+	singular_name = "Absolutism Burnpack"
+	desc = "An advanced treatment kit for severe burns. Created by the will of God and made far easier to use than normal advanced kits."
+	icon_state = "nt_burnkit"
+	heal_brute = 20
+	automatic_charge_overlays = FALSE
+	matter = list(MATERIAL_BIOMATTER = 5)
+	origin_tech = list(TECH_BIO = 4)
+	fancy_icon = TRUE
+	w_class = ITEM_SIZE_SMALL
+	perk_required = TRUE
+	needed_perk = PERK_MEDICAL_EXPERT
+	bio_requirement = 15
+	stacktype_alt = null
+
+/obj/item/stack/medical/advanced/ointment/nt/update_icon()
+	if(fancy_icon)
+		icon_state = "[initial(icon_state)][amount]"
+	..()

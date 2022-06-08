@@ -5,10 +5,24 @@
 	slot = slot_w_uniform
 	sort_category = "Uniforms and Casual Dress"
 
+/datum/gear/uniform/tracksuit
+	display_name = "track suit"
+	path = /obj/item/clothing/under/track_suit
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/uniform/casualwear
 	display_name = "casualwear selection"
 	path = /obj/item/clothing/under/top
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/uniform/hawaiian
+	display_name = "Hawaiian-shirt selection"
+	path = /obj/item/clothing/under/hawaiian
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/uniform/dismas
+	display_name = "highwayman clothes"
+	path = /obj/item/clothing/under/dismas
 
 /datum/gear/uniform/cheongsam
 	display_name = "cheongsam selection"
@@ -20,6 +34,11 @@
 	path = /obj/item/clothing/under/plaid
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/uniform/casualdress
+	display_name = "casual dress selection"
+	path = /obj/item/clothing/under/dress/casual
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/uniform/gorkajumpsuit
 	display_name = "gorka jumpsuit selection"
 	path = /obj/item/clothing/under/gorka
@@ -28,6 +47,11 @@
 /datum/gear/uniform/gorkapants
 	display_name = "gorka pants selection"
 	path = /obj/item/clothing/under/gorkapants
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/uniform/bdu
+	display_name = "BDU selection"
+	path = /obj/item/clothing/under/bdu
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/jeans
@@ -62,6 +86,14 @@
 /datum/gear/uniform/latex_maid
 	display_name = "latex maid dress"
 	path = /obj/item/clothing/under/costume/kinky/latex_maid
+
+/datum/gear/uniform/classy_maid
+	display_name = "maid dress"
+	path = /obj/item/clothing/under/costume/maid
+
+/datum/gear/uniform/sexy_maid
+	display_name = "sexy maid dress"
+	path = /obj/item/clothing/under/sexymaid
 
 /datum/gear/uniform/modularsuit
 	display_name = "modular suit selection"
@@ -98,6 +130,10 @@
 	path = /obj/item/clothing/under/swimsuit
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/uniform/texansuit
+	display_name = "ivory texan suit"
+	path = /obj/item/clothing/under/top/dimmadome
+
 /datum/gear/uniform/turtleneck
 	display_name = "turtleneck selection"
 	path = /obj/item/clothing/under/turtleneck
@@ -116,6 +152,21 @@
 	)
 	gear_tweaks += new /datum/gear_tweak/path(leisure)
 
+/datum/gear/uniform/stylish_suits
+    display_name = "stylish suits"
+    path = /obj/item/clothing/under/white
+
+/datum/gear/uniform/stylish_suits/New()
+	..()
+	var/stylish = list(
+		"Ivory Suit"				=	/obj/item/clothing/under/white,
+		"Blood-red Suit"			=	/obj/item/clothing/under/red,
+		"Questionable Suit"			=	/obj/item/clothing/under/green,
+		"Ashen Suit"				=	/obj/item/clothing/under/grey,
+		"Charcoal Suit"				=	/obj/item/clothing/under/black,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(stylish)
+
 /datum/gear/uniform/dress
     display_name = "dresses"
     path = /obj/item/clothing/under/dress
@@ -125,7 +176,9 @@
 	var/dress = list(
 		"Gray Dress"			=	/obj/item/clothing/under/dress,
 		"Blue Dress"			=	/obj/item/clothing/under/dress/blue,
-		"Red Dress"				=	/obj/item/clothing/under/dress/red
+		"Red Dress"				=	/obj/item/clothing/under/dress/red,
+		"White Dress" 			=	/obj/item/clothing/under/dress/white,
+		"Black Dress" 			=	/obj/item/clothing/under/dress/black
 	)
 	gear_tweaks += new /datum/gear_tweak/path(dress)
 
@@ -133,22 +186,48 @@
 	display_name = "augmented jumpsuit"
 	path = /obj/item/clothing/under/cyber
 
-/datum/gear/uniform/jersey
-	display_name = "church overalls"
-	path = /obj/item/clothing/under/jersey
+/datum/gear/uniform/helltaker
+	display_name = "black charming outfit"
+	path = /obj/item/clothing/under/helltaker
 
-/datum/gear/uniform/churchsport
-	display_name = "church sport clothes"
-	path = /obj/item/clothing/under/rank/church/sport
+/datum/gear/uniform/helltaker_m
+	display_name = "white charming outfit"
+	path = /obj/item/clothing/under/helltaker_m
 
-/datum/gear/uniform/churchnonrank
-	display_name = "church clothes"
-	path = /obj/item/clothing/under/rank/church
+/datum/gear/uniform/johnny
+	display_name = "rockerboy clothes"
+	path = /obj/item/clothing/under/johnny
+
+/datum/gear/uniform/raider
+	display_name = "leather outfit"
+	path = /obj/item/clothing/under/raider
+
+/datum/gear/uniform/aerostatic_suit
+	display_name = "dark comfortable clothing"
+	path = /obj/item/clothing/under/aerostatic_suit
+
+/datum/gear/uniform/jamrock_suit
+	display_name = "brown comfortable clothing"
+	path = /obj/item/clothing/under/jamrock_suit
+
+/datum/gear/uniform/hunterformal
+	display_name = "hunting lodge formal clothing"
+	path = /obj/item/clothing/under/costume/misc/hunterformal
+	slot = slot_w_uniform
+	allowed_roles = list("Lodge Hunter", "Lodge Hunt Master", "Lodge Herbalist")
 
 /datum/gear/uniform/neon
 	display_name = "neon tracksuits, color presets"
 	path = /obj/item/clothing/under/neon
 	flags = GEAR_HAS_TYPE_SELECTION
+	
+/datum/gear/uniform/bodysuit
+	display_name = "eva skinsuit"
+	path = /obj/item/clothing/under/bodysuit
+
+/datum/gear/uniform/greyturtleneck
+	display_name = "grey turtleneck"
+	path = /obj/item/clothing/under/greyturtleneck
 
 /datum/gear/uniform/generic
 	display_name = "generic outfit, color presets"

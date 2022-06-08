@@ -28,7 +28,7 @@
 /datum/shuttle/autodock/ferry/emergency/shuttle_moved()
 	if(next_location != waypoint_station)
 		emergency_controller.shuttle_leaving() // This is a hell of a line. v
-		priority_announcement.Announce(replacetext(replacetext((emergency_controller.emergency_evacuation ? maps_data.emergency_shuttle_leaving_dock : maps_data.shuttle_leaving_dock), "%dock_name%", "[dock_name]"),  "%ETA%", "[round(emergency_controller.get_eta()/60,1)] minute\s"))
+		priority_announcement.Announce(replacetext(replacetext((emergency_controller.emergency_evacuation ? GLOB.maps_data.emergency_shuttle_leaving_dock : GLOB.maps_data.shuttle_leaving_dock), "%dock_name%", "[dock_name]"),  "%ETA%", "[round(emergency_controller.get_eta()/60,1)] minute\s"))
 	else if(next_location == waypoint_offsite && emergency_controller.has_evacuated())
 		emergency_controller.shuttle_evacuated()
 	..()
@@ -124,10 +124,10 @@
 	if (authorized.len >= req_authorizations)
 		return 0 //don't need any more
 
-	if (!istype(ident, /obj/item/weapon/card/id) && !istype(ident, /obj/item/modular_computer/pda))
+	if (!istype(ident, /obj/item/card/id) && !istype(ident, /obj/item/modular_computer/pda))
 		return
 
-	var/obj/item/weapon/card/id/ID
+	var/obj/item/card/id/ID
 
 	if (istype(ident, /obj/item/modular_computer/pda))
 		ID = ident.GetIdCard()
@@ -173,11 +173,11 @@
 		emagged = 1
 		return 1
 
-/obj/machinery/computer/shuttle_control/emergency/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/machinery/computer/shuttle_control/emergency/attackby(obj/item/W as obj, mob/user as mob)
 	read_authorization(W)
 	..()
 
-/obj/machinery/computer/shuttle_control/emergency/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/computer/shuttle_control/emergency/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 	var/datum/shuttle/autodock/ferry/emergency/shuttle = SSshuttle.shuttles[shuttle_tag]
 	if (!istype(shuttle))

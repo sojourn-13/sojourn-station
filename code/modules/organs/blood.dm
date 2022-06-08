@@ -1,12 +1,6 @@
 /****************************************************
 				BLOOD SYSTEM
 ****************************************************/
-//Blood levels. These are percentages based on the species blood_volume far.
-var/const/BLOOD_VOLUME_SAFE =    85
-var/const/BLOOD_VOLUME_OKAY =    75
-var/const/BLOOD_VOLUME_BAD =     60
-var/const/BLOOD_VOLUME_SURVIVE = 40
-
 /mob/living/carbon
 	var/datum/reagents/vessel // Container for blood and BLOOD ONLY. Do not transfer other chems here.
 
@@ -31,7 +25,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 
 /mob/living/carbon/proc/get_blood_data()
 	var/data = list()
-	data["donor"] = weakref(src)
+	data["donor"] = WEAKREF(src)
 	if (!data["virus2"])
 		data["virus2"] = list()
 	data["virus2"] |= virus_copylist(virus2)
@@ -51,11 +45,12 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 
 //Resets blood data
 /mob/living/carbon/human/proc/fixblood()
-	for(var/datum/reagent/organic/blood/B in vessel.reagent_list)
-		if(B.id == "blood")
-			B.data = list(	"donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= blood_color,"blood_type"=dna.b_type,	\
-							"resistances"=null,"trace_chem"=null, "virus2" = null, "antibodies" = list())
-			B.initialize_data(get_blood_data())
+	if (!QDELETED(src))
+		for(var/datum/reagent/organic/blood/B in vessel.reagent_list)
+			if(B.id == "blood")
+				B.data = list(	"donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= blood_color,"blood_type"=dna.b_type,	\
+								"resistances"=null,"trace_chem"=null, "virus2" = null, "antibodies" = list())
+				B.initialize_data(get_blood_data())
 
 // Takes care blood loss and regeneration
 /mob/living/carbon/human/handle_blood()
@@ -110,7 +105,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 ****************************************************/
 
 //Gets blood from mob to the container, preserving all data in it.
-/mob/living/carbon/proc/take_blood(obj/item/weapon/reagent_containers/container, var/amount)
+/mob/living/carbon/proc/take_blood(obj/item/reagent_containers/container, var/amount)
 	var/datum/reagent/B = new /datum/reagent/organic/blood
 	B.holder = container
 	B.volume = amount
@@ -121,7 +116,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 	return B
 
 //For humans, blood does not appear from blue, it comes from vessels.
-/mob/living/carbon/human/take_blood(obj/item/weapon/reagent_containers/container, var/amount)
+/mob/living/carbon/human/take_blood(obj/item/reagent_containers/container, var/amount)
 
 	if(species && species.flags & NO_BLOOD)
 		return null
@@ -276,7 +271,7 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 /mob/living/carbon/human/get_blood_oxygenation()
 	var/blood_volume = get_blood_circulation()
 	if(is_asystole()) // Heart is missing or isn't beating and we're not breathing (hardcrit)
-		return min(blood_volume, BLOOD_VOLUME_SURVIVE)
+		return min(blood_volume, total_blood_req)
 
 	if(!need_breathe())
 		return blood_volume
@@ -319,7 +314,7 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 				pulse_mod *= 1.1
 			if(PULSE_2FAST, PULSE_THREADY)
 				pulse_mod *= 1.25
-		blood_volume *= max(0.3, (1-((100 - heart_efficiency) / 100))) * pulse_mod
+		blood_volume *= max(0.3, (heart_efficiency / 100)) * pulse_mod
 
 	if(!open_check && chem_effects[CE_BLOODCLOT])
 		blood_volume *= max(0, 1-chem_effects[CE_BLOODCLOT])

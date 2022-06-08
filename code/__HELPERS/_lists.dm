@@ -13,15 +13,16 @@
 
 #define LAZYINITLIST(L) if (!L) L = list()
 
-#define UNSETEMPTY(L) if (L && !L.len) L = null
-#define LAZYREMOVE(L, I) if(L) { L -= I; if(!L.len) { L = null; } }
+#define LAZYLEN(L) length(L)
+#define UNSETEMPTY(L) if (L && !LAZYLEN(L)) L = null
+#define LAZYREMOVE(L, I) if(L) { L -= I; if(!LAZYLEN(L)) { L = null; } }
 #define LAZYADD(L, I) if(!L) { L = list(); } L += I;
 #define LAZYINSERT(L, I, X) if(!L) { L = list(); } L.Insert(X, I);
+#define LAZYDISTINCTADD(L, I) if(!L) { L = list(); } L |= I;
 #define LAZYOR(L, I) if(!L) { L = list(); } L |= I;
 #define LAZYFIND(L, V) L ? L.Find(V) : 0
 #define LAZYISIN(L, I) (L ? (I in L) : FALSE)
-#define LAZYACCESS(L, I) (L ? (isnum(I) ? (I > 0 && I <= L.len ? L[I] : null) : L[I]) : null)
-#define LAZYLEN(L) length(L)
+#define LAZYACCESS(L, I) (islist(L) ? (isnum(I) ? (I > 0 && I <= LAZYLEN(L) ? L[I] : null) : L[I]) : null)
 #define LAZYCLEARLIST(L) if(L) L.Cut()
 #define SANITIZE_LIST(L) ( islist(L) ? L : list() )
 #define reverseList(L) reverseRange(L.Copy())
@@ -38,33 +39,45 @@
 // Insert an object A into a sorted list using cmp_proc (/code/_helpers/cmp.dm) for comparison.
 #define ADD_SORTED(list, A, cmp_proc) if(!list.len) {list.Add(A)} else {list.Insert(FindElementIndex(A, list, cmp_proc), A)}
 
-// binary search sorted insert
-// IN: Object to be inserted
-// LIST: List to insert object into
-// TYPECONT: The typepath of the contents of the list
-// COMPARE: The variable on the objects to compare
-#define BINARY_INSERT(IN, LIST, TYPECONT, COMPARE) \
-	var/__BIN_CTTL = length(LIST);\
-	if(!__BIN_CTTL) {\
-		LIST += IN;\
-	} else {\
-		var/__BIN_LEFT = 1;\
-		var/__BIN_RIGHT = __BIN_CTTL;\
-		var/__BIN_MID = (__BIN_LEFT + __BIN_RIGHT) >> 1;\
-		var/##TYPECONT/__BIN_ITEM;\
-		while(__BIN_LEFT < __BIN_RIGHT) {\
-			__BIN_ITEM = LIST[__BIN_MID];\
-			if(__BIN_ITEM.##COMPARE <= IN.##COMPARE) {\
-				__BIN_LEFT = __BIN_MID + 1;\
-			} else {\
-				__BIN_RIGHT = __BIN_MID;\
+/// Passed into BINARY_INSERT to compare keys
+#define COMPARE_KEY __BIN_LIST[__BIN_MID]
+/// Passed into BINARY_INSERT to compare values
+#define COMPARE_VALUE __BIN_LIST[__BIN_LIST[__BIN_MID]]
+
+/****
+	* Binary search sorted insert
+	* INPUT: Object to be inserted
+	* LIST: List to insert object into
+	* TYPECONT: The typepath of the contents of the list
+	* COMPARE: The object to compare against, usualy the same as INPUT
+	* COMPARISON: The variable on the objects to compare
+	* COMPTYPE: How should the values be compared? Either COMPARE_KEY or COMPARE_VALUE.
+	*/
+#define BINARY_INSERT(INPUT, LIST, TYPECONT, COMPARE, COMPARISON, COMPTYPE) \
+	do {\
+		var/list/__BIN_LIST = LIST;\
+		var/__BIN_CTTL = length(__BIN_LIST);\
+		if(!__BIN_CTTL) {\
+			__BIN_LIST += INPUT;\
+		} else {\
+			var/__BIN_LEFT = 1;\
+			var/__BIN_RIGHT = __BIN_CTTL;\
+			var/__BIN_MID = (__BIN_LEFT + __BIN_RIGHT) >> 1;\
+			var ##TYPECONT/__BIN_ITEM;\
+			while(__BIN_LEFT < __BIN_RIGHT) {\
+				__BIN_ITEM = COMPTYPE;\
+				if(__BIN_ITEM.##COMPARISON <= COMPARE.##COMPARISON) {\
+					__BIN_LEFT = __BIN_MID + 1;\
+				} else {\
+					__BIN_RIGHT = __BIN_MID;\
+				};\
+				__BIN_MID = (__BIN_LEFT + __BIN_RIGHT) >> 1;\
 			};\
-			__BIN_MID = (__BIN_LEFT + __BIN_RIGHT) >> 1;\
+			__BIN_ITEM = COMPTYPE;\
+			__BIN_MID = __BIN_ITEM.##COMPARISON > COMPARE.##COMPARISON ? __BIN_MID : __BIN_MID + 1;\
+			__BIN_LIST.Insert(__BIN_MID, INPUT);\
 		};\
-		__BIN_ITEM = LIST[__BIN_MID];\
-		__BIN_MID = __BIN_ITEM.##COMPARE > IN.##COMPARE ? __BIN_MID : __BIN_MID + 1;\
-		LIST.Insert(__BIN_MID, IN);\
-	}
+	} while(FALSE)
 
 //Returns a list in plain english as a string
 /proc/english_list(list/input, nothing_text = "nothing", and_text = " and ", comma_text = ", ", final_comma_text = "" )
@@ -108,15 +121,38 @@
 		return TRUE
 	return FALSE
 
-//Checks for specific types in a list
-/proc/is_type_in_list(atom/A, list/L)
-	if(!LAZYLEN(L) || !A)
+/**
+ * Checks for specific types in a list.
+ *
+ * If using zebra mode the list should be an assoc list with truthy/falsey values.
+ * The check short circuits so earlier entries in the input list will take priority.
+ * Ergo, subtypes should come before parent types.
+ * Notice that this is the opposite priority of [/proc/typecacheof].
+ *
+ * Arguments:
+ * - [type_to_check][/datum]: An instance to check.
+ * - [list_to_check][/list]: A list of typepaths to check the type_to_check against.
+ * - zebra: Whether to use the value of the mathing type in the list instead of just returning true when a match is found.
+ */
+
+/proc/is_type_in_list(datum/type_to_check, list/list_to_check, zebra = FALSE)
+	if(!LAZYLEN(list_to_check) || !type_to_check)
 		return FALSE
-	for(var/type in L)
-		if(istype(A, type))
-			return TRUE
+	for(var/type in list_to_check)
+		if(istype(type_to_check, type))
+			return !zebra || list_to_check[type] // Subtypes must come first in zebra lists.
 	return FALSE
 
+//checks for specific paths in list
+//Zebra is used if the list is associative (/type/ = TRUE, /type = FALSE) and returns a value based on that true/false value
+/proc/is_path_in_list(path_to_check, list/list_to_check, zebra = FALSE)
+	if(!LAZYLEN(list_to_check) || !path_to_check)
+		return FALSE
+	for(var/path in list_to_check)
+		if(ispath(path_to_check, path))
+			return !zebra || list_to_check[path]
+
+	return FALSE
 /proc/instances_of_type_in_list(var/atom/A, var/list/L)
 	var/instances = 0
 	for(var/type in L)
@@ -439,7 +475,11 @@
 /proc/sortRecord(list/L, field = "name", order = 1)
 	GLOB.cmp_field = field
 	return sortTim(L, order >= 0 ? /proc/cmp_records_asc : /proc/cmp_records_dsc)
-
+//SoJ edit
+//Specifically for mutation datums in a list.
+/proc/sortMutation(list/L, order = TRUE)
+	return sortTim(L, (order ? /proc/cmp_mutations_asc : /proc/cmp_mutations_dsc))
+//Soj edit end
 //any value in a list
 /proc/sortList(list/L, cmp=/proc/cmp_text_asc)
 	return sortTim(L.Copy(), cmp)
@@ -580,7 +620,7 @@
 		else
 			min = mid+1
 
-proc/dd_sortedtextlist(list/incoming, case_sensitive = 0)
+/proc/dd_sortedtextlist(list/incoming, case_sensitive = 0)
 	// Returns a new list with the text values sorted.
 	// Use binary search to order by sortValue.
 	// This works by going to the half-point of the list, seeing if the node in question is higher or lower cost,
@@ -790,13 +830,6 @@ Checks if a list has the same entries and values as an element of big.
 		else
 			checked += value
 
-//Checks for specific paths in a list
-/proc/is_path_in_list(var/path, var/list/L)
-	for(var/type in L)
-		if(ispath(path, type))
-			return 1
-	return 0
-
 /proc/parse_for_paths(list/data)
 	if(!islist(data) || !data.len)
 		return list()
@@ -924,3 +957,51 @@ Checks if a list has the same entries and values as an element of big.
 			return FALSE
 
 	return TRUE
+
+/proc/try_json_decode(t)
+	. = list()
+	if(istext(t))
+		. = json_decode(t)
+	else if(islist(t))
+		. = t
+	else if(t)
+		. += t
+
+/proc/recursiveLen(list/L)
+	. = 0
+	if(istext(L))
+		L = try_json_decode(L)
+	if(length(L))
+		. += length(L)
+		for(var/list/i in L)
+			if(islist(i))
+				. += recursiveLen(i)
+			else if(islist(L[i]))
+				. += recursiveLen(L[i])
+
+/proc/RecursiveCut(list/L)
+	for(var/list/l in L)
+		if(islist(l))
+			RecursiveCut(l)
+		else
+			var/list/b = L[l]
+			if(islist(b))
+				RecursiveCut(b)
+	L.Cut()
+
+/proc/matrix2d_x_sanitize(mathrix, x)
+	if(!islist(mathrix))
+		return
+	else if(!islist(mathrix[x]))
+		return
+	return mathrix
+
+/proc/get_2d_matrix_cell(mathrix, x, y)
+	if(!matrix2d_x_sanitize(mathrix, x))
+		return
+	return mathrix[x][y]
+
+/proc/set_2d_matrix_cell(mathrix, x, y, value)
+	if(!matrix2d_x_sanitize(mathrix, x))
+		return
+	mathrix[x][y] = value

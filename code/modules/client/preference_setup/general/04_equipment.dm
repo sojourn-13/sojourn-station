@@ -136,6 +136,7 @@
 	metadata["[bt]"] = new_metadata
 
 /datum/category_item/player_setup_item/physical/equipment/OnTopic(var/href,var/list/href_list, var/mob/user)
+	pref.categoriesChanged = "Equipment"
 	if(href_list["change_underwear"])
 		var/datum/category_group/underwear/UWC = GLOB.underwear.categories_by_name[href_list["change_underwear"]]
 		if(!UWC)

@@ -8,7 +8,7 @@
 	idle_power_usage = 10
 	active_power_usage = 2000
 
-	circuit = /obj/item/weapon/circuitboard/smelter
+	circuit = /obj/item/circuitboard/smelter
 
 	// base smelting speed - based on levels of manipulators
 	var/speed = 10
@@ -74,7 +74,7 @@
 	for(var/obj/O in get_step(src, input_side))
 		if(O.anchored)
 			continue
-		O.forceMove(src)
+		O.loc = src
 		var/list/materials = result_materials(O)
 		if(!materials?.len || !are_valid_materials(materials))
 			eject(O, refuse_output_side)
@@ -124,8 +124,8 @@
 
 
 /obj/machinery/smelter/proc/result_materials(obj/O)
-	if(istype(O, /obj/item/weapon/ore))
-		var/obj/item/weapon/ore/ore = O
+	if(istype(O, /obj/item/stack/ore))
+		var/obj/item/stack/ore/ore = O
 		var/ore/data = ore_data[ore.material]
 		if(data.smelts_to)
 			return list(data.smelts_to = 1)
@@ -138,10 +138,10 @@
 	if(istype(smelting, /obj/item/stack))
 		return 30
 
-	if(istype(smelting, /obj/item/weapon/ore))
+	if(istype(smelting, /obj/item/stack/ore))
 		return 20
 
-	if(istype(smelting, /obj/item/weapon/material/shard))
+	if(istype(smelting, /obj/item/material/shard))
 		return 20
 
 	// Just one material - makes smelting easier
@@ -151,7 +151,7 @@
 	return 0
 
 /obj/machinery/smelter/proc/eject(obj/O, output_dir)
-	O.forceMove(get_step(src, output_dir))
+	O.loc = get_step(src, output_dir)
 
 
 /obj/machinery/smelter/proc/eject_material_stack(material)
@@ -160,8 +160,7 @@
 	// Sanity check: avoid an infinite loop in eject_all_material when trying to drop an invalid material
 	if(!stack_type)
 		stored_material[material] = 0
-		crash_with("Attempted to drop an invalid material: [material]")
-		return
+		CRASH("Attempted to drop an invalid material: [material]")
 
 	var/ejected_amount = min(initial(stack_type.max_amount), round(stored_material[material]), storage_capacity)
 	var/obj/item/stack/material/S = new stack_type(src, ejected_amount)
@@ -188,10 +187,10 @@
 
 	var/manipulator_rating = 0
 	var/manipulator_count = 0
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		manipulator_rating += M.rating
 		++manipulator_count
-	for(var/obj/item/weapon/stock_parts/micro_laser/M in component_parts)
+	for(var/obj/item/stock_parts/micro_laser/M in component_parts)
 		manipulator_rating += M.rating
 		++manipulator_count
 
@@ -199,7 +198,7 @@
 
 	var/mb_rating = 0
 	var/mb_count = 0
-	for(var/obj/item/weapon/stock_parts/matter_bin/MB in component_parts)
+	for(var/obj/item/stock_parts/matter_bin/MB in component_parts)
 		mb_rating += MB.rating
 		++mb_count
 	storage_capacity = round(initial(storage_capacity)*(mb_rating/mb_count))
@@ -216,7 +215,7 @@
 
 
 /obj/machinery/smelter/attack_hand(mob/user as mob)
-	return ui_interact(user)
+	return nano_ui_interact(user)
 
 
 /obj/machinery/smelter/ui_data()
@@ -235,7 +234,7 @@
 	return data
 
 
-/obj/machinery/smelter/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/smelter/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = ui_data()
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)

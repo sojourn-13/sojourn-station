@@ -3,7 +3,8 @@
 	title = "Chief Executive Officer"
 	flag = MERCHANT
 	department = DEPARTMENT_LSS
-	head_position = 1
+	head_position = TRUE
+	aster_guild_member = TRUE
 	department_flag = LSS | COMMAND
 	faction = MAP_FACTION
 	total_positions = 1
@@ -19,6 +20,7 @@
 	)
 	ideal_character_age = 40
 	minimum_character_age = 30
+	playtimerequired = 1200
 
 	stat_modifiers = list(
 		STAT_ROB = 10,
@@ -28,8 +30,8 @@
 	)
 	description = "The Chief Executive Officer coordinates the affairs of the local branch of Lonestar Shipping Solutions.<br>\
 Your main objective, bluntly, is to make as much money as you can. Purchase and acquire goods, and sell them on for a profit.<br>\
-Your Cargo Technicians will handle most of the grunt work and your Miners will acquire minerals. They are capable - utilise them well.<br>\
-The vendors found throughout the ship are also operated by your organisation. They make you money - ensure they are functional and well-stocked.<br>\
+Your Cargo Technicians will handle most of the grunt work and your Miners will acquire minerals. They are capable - utilize them well.<br>\
+The vendors found throughout the colony are also operated by your organization. They make you money - ensure they are functional and well-stocked.<br>\
 There is a market for contraband and more unscrupulous services. Venturing into this area may prove profitable, but comes with risk.<br>\
 You do not receive a salary, but can fund yourself from the company account. Strike a balance between the needs of yourself and the wider company."
 
@@ -40,13 +42,14 @@ Counsel the council on directing the colony towards profitable opportunities."
 
 	software_on_spawn = list(///datum/computer_file/program/supply,
 							 ///datum/computer_file/program/deck_management,
+							 /datum/computer_file/program/trade,
 							 /datum/computer_file/program/scanner,
 							 /datum/computer_file/program/wordprocessor,
 							 /datum/computer_file/program/reports)
 
 	outfit_type = /decl/hierarchy/outfit/job/cargo/merchant
 
-	perks = list(/datum/perk/timeismoney)
+	perks = list(/datum/perk/timeismoney, /datum/perk/market_prof, /datum/perk/bartender, /datum/perk/chem_contraband)
 
 /obj/landmark/join/start/merchant
 	name = "Chief Executive Officer"
@@ -63,6 +66,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 	spawn_positions = 4
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
+	alt_titles = list("Cargo Specialist", "Lonestar Sales Technician", "Lonestar Salesclerk")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_DUMB
 	department_account_access = TRUE
@@ -78,6 +82,8 @@ Counsel the council on directing the colony towards profitable opportunities."
 		STAT_TGH = 10,
 		STAT_VIG = 10,
 	)
+
+	perks = list(/datum/perk/market_prof)
 
 	software_on_spawn = list(///datum/computer_file/program/supply,
 							 ///datum/computer_file/program/deck_management,
@@ -111,6 +117,7 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 	spawn_positions = 4
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
+	alt_titles = list("Lonestar Drill Technician","Lonestar Digger","Mining Specialist","Junior Lonestar Miner","Ameridian Gatherer")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_HAZARD //The miners union is stubborn
 
@@ -122,13 +129,15 @@ Accessed by elevator, the area contains an outpost with all the facilities to pr
 Whatever you dig up will go to the cargo department, and from then on it is the responsibility of others within Lonestar to sell it.<br>\
 The deep tunnels are far less dangerous than the wilderness, but pack well - disappearances are not unheard of."
 
-	duties = "Dig up ores and minerals to be processed into useable material.<br>\
+	duties = "Dig up ores and minerals to be processed into usable material.<br>\
 	Locate other valuables within the tunnels that may be turned to profit."
 
 	access = list(
-		access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_mining,
+		access_maint_tunnels, access_mailsorting, access_mining,
 		access_mining_station
 	)
+
+	perks = list(/datum/perk/market_prof)
 
 	stat_modifiers = list(
 		STAT_ROB = 15,

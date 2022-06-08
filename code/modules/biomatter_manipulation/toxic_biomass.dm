@@ -4,10 +4,8 @@
 //toxin attack proc, it's used for attacking people with checking their armor
 /proc/toxin_attack(mob/living/victim, var/damage = rand(2, 4))
 	if(istype(victim))
-		var/hazard_protection = victim.getarmor(null, ARMOR_BIO)
-		if(!hazard_protection)
-			victim.apply_damage(damage * victim.reagent_permeability(), TOX)
-
+		var/hazard_protection = 100 - victim.getarmor(null, ARMOR_BIO)
+		victim.apply_damage(max(0, damage * hazard_protection / 100 * victim.reagent_permeability()), TOX)
 
 //this proc spill some biomass on the floor
 //dirs_to_spread - list with dirs where biomass should expand after creation
@@ -39,6 +37,7 @@
 	icon = 'icons/obj/bioreactor_misc.dmi'
 	icon_state = "biomass-1"
 	anchored = TRUE
+	layer = TURF_LAYER + 0.6
 
 
 /obj/effect/decal/cleanable/solid_biomass/Initialize()
@@ -52,12 +51,12 @@
 
 
 /obj/effect/decal/cleanable/solid_biomass/Process()
-	for(var/mob/living/creature in mobs_in_view(1, src))
+	for(var/mob/living/creature in living_mobs_in_view(1, src))
 		toxin_attack(creature, rand(4, 8))
 
 
 /obj/effect/decal/cleanable/solid_biomass/attackby(var/obj/item/I, var/mob/user)
-	if(istype(I, /obj/item/weapon/mop) || istype(I, /obj/item/weapon/soap))
+	if(istype(I, /obj/item/mop) || istype(I, /obj/item/soap))
 		to_chat(user, SPAN_NOTICE("You started removing this [src]. U-ugh. Disgusting..."))
 		if(do_after(user, 3 SECONDS, src))
 			to_chat(user, SPAN_NOTICE("You removed [src]."))

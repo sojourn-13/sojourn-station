@@ -3,7 +3,6 @@
 	role_text = "Commando"
 	role_text_plural = "Commandos"
 	bantype = ROLE_BANTYPE_CREW_SIDED
-	protected_jobs = list(JOBS_COMMAND, JOBS_SECURITY)
 	antaghud_indicator = "huddeathsquad"
 
 	stat_modifiers = list(
@@ -26,6 +25,7 @@
 
 	for(var/name in stat_modifiers)
 		L.stats.changeStat(name, stat_modifiers[name])
+		L.stats.addPerk(/datum/perk/codespeak)
 
 	if(!owner.current)
 		return FALSE

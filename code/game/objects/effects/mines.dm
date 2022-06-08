@@ -1,4 +1,4 @@
-/obj/item/weapon/mine_old
+/obj/item/mine_old
 	name = "old land mine"
 	desc = "A small highly dangerous explosive that looks rusted and aged beyond use. Unlike the newer models, this one has a proximity sensor, no amount of fancy footwork will save you here."
 	density = 0
@@ -11,10 +11,10 @@
 	var/smoke_strength = 3
 	layer = HIDE_LAYER
 
-/obj/item/weapon/mine_old/New()
+/obj/item/mine_old/New()
 	icon_state = "mine_old"
 
-/obj/item/weapon/mine_old/attack_hand(mob/user as mob)
+/obj/item/mine_old/attack_hand(mob/user as mob)
 	.=..()
 	if(prob(80))
 		user.visible_message(
@@ -28,7 +28,7 @@
 				SPAN_DANGER("You attempt to pick up \the [src] and somehow you don't blow yourself up doing it!")
 				)
 
-/obj/item/weapon/mine_old/proc/explode(var/mob/living/M)
+/obj/item/mine_old/proc/explode(var/mob/living/M)
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread()
 	triggered = 1
 	s.set_up(3, 1, src)
@@ -38,7 +38,7 @@
 	qdel(s)
 	qdel(src)
 
-/obj/item/weapon/mine_old/attackby(obj/item/I, mob/user)
+/obj/item/mine_old/attackby(obj/item/I, mob/user)
 	if(QUALITY_PULSING in I.tool_qualities)
 		user.visible_message(
 		SPAN_DANGER("[user] starts to carefully disarm \the [src]."),
@@ -49,8 +49,8 @@
 			SPAN_DANGER("[user] has disarmed \the [src] and it falls apart."),
 			SPAN_DANGER("You have disarmed \the [src] and it falls apart!")
 			)
-		new /obj/item/weapon/material/shard/shrapnel/scrap(src.loc)
-		new /obj/item/weapon/grenade/explosive(src.loc)
+		new /obj/item/material/shard/shrapnel/scrap(src.loc)
+		new /obj/item/grenade/explosive(src.loc)
 		qdel(src)
 		return
 	else
@@ -59,19 +59,19 @@
 		explode()
 		return
 
-/obj/item/weapon/mine_old/bullet_act()
+/obj/item/mine_old/bullet_act()
 	if(prob(90))
 		explode()
 
-/obj/item/weapon/mine_old/ex_act(severity)
+/obj/item/mine_old/ex_act(severity)
 	if(severity <= 2 || prob(90))
 		explode()
 	..()
 
-/obj/item/weapon/mine_old/Crossed(AM as mob|obj)
+/obj/item/mine_old/Crossed(AM as mob|obj)
 	Bumped(AM)
 
-/obj/item/weapon/mine_old/Bumped(mob/M as mob|obj)
+/obj/item/mine_old/Bumped(mob/M as mob|obj)
 
 	if(triggered) return
 
@@ -81,7 +81,7 @@
 		triggered = 1
 		call(src,triggerproc)(M)
 
-/obj/item/weapon/spider_shadow_trap
+/obj/item/spider_shadow_trap
 	name = "odd shadow"
 	desc = "You see an odd shadow, cast by something above you hiding in a crevice. A quick glance and you see eight red eyes filled with hatred glaring at you from the dark..."
 	density = 0
@@ -93,30 +93,59 @@
 	var/triggered = 0
 	layer = HIDE_LAYER
 
-/obj/item/weapon/spider_shadow_trap/New()
+/obj/item/spider_shadow_trap/New()
 	..()
 	pixel_x = -16
 	pixel_y = -12
+/*
+/obj/item/spider_shadow_trap/Bumped(AM as mob|obj)
+	Crossed(AM)
+*/
+/obj/item/spider_shadow_trap/attack_hand(mob/user as mob)
+	Crossed(user)
 
-/obj/item/weapon/spider_shadow_trap/Crossed(AM as mob|obj)
-	Bumped(AM)
-
-/obj/item/weapon/spider_shadow_trap/Bumped(mob/M as mob|obj)
-
+/obj/item/spider_shadow_trap/Crossed(mob/M as mob|obj)
 	if(triggered) return
 
 	if(ishuman(M))
-		for(var/mob/O in viewers(world.view, src.loc))
-			M.visible_message(
-				SPAN_DANGER("A gutteral screeching roar is heard right before [M] is knocked down by a huge spider leaping from above!"),
-				SPAN_DANGER("You hear a gutteral screeching roar right before something huge falling from above knocks you down!")
-			)
+		M.visible_message("<span class='warning'>A gutteral screeching roar is heard right before [M] is knocked down by a huge spider leaping from above!</span>", \
+						  "<span class='warning'>You hear a gutteral screeching roar right before something huge falling from above knocks you down!</span>")
 		triggered = 1
 		call(src,triggerproc)(M)
 
-/obj/item/weapon/spider_shadow_trap/proc/ambush(var/mob/living/M)
+/obj/item/spider_shadow_trap/proc/ambush(var/mob/living/M)
 	triggered = 1
 	playsound(src.loc, 'sound/sanity/screech.ogg', 300, 1)
-	M.Weaken(8)
+	M.Weaken(3)
 	new /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor(src.loc)
 	qdel(src)
+
+/obj/item/spider_shadow_trap/burrowing
+	name = "collection of webs"
+	desc = "Something isn't quite right with that section of the floor, it looks like something made a small door of refuse held together by webs."
+	density = 0
+	anchored = 1
+	icon = 'icons/obj/traps.dmi'
+	icon_state = "trapdoor"
+	item_state = "trapdoor"
+
+/obj/item/spider_shadow_trap/burrowing/Crossed(mob/M as mob|obj)
+	if(triggered) return
+
+	if(ishuman(M))
+		M.visible_message("<span class='warning'>The trap door opens and out springs a spider, [M] is knocked to the ground as it pounces!</span>", \
+						  "<span class='warning'>You see the ground spring open right before a bulky spider leaps out and knocks you to the ground!</span>")
+		triggered = 1
+		call(src,triggerproc)(M)
+
+/obj/item/spider_shadow_trap/burrowing/ambush(var/mob/living/M)
+	triggered = 1
+	playsound(src.loc, 'sound/effects/impacts/rumble2.ogg', 300, 1)
+	M.Weaken(3)
+	new /mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing(src.loc)
+	qdel(src)
+
+/obj/item/spider_shadow_trap/burrowing/New()
+	..()
+	pixel_x = 0
+	pixel_y = 0

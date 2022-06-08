@@ -21,9 +21,8 @@
 	new /obj/random/pack/cloth/low_chance(src)
 	new /obj/random/pack/cloth/low_chance(src)
 	new /obj/random/pack/gun_loot/low_chance(src)
+	new /obj/random/pouch/hardcase_scrap/low_chance(src)
 	new /obj/random/cluster/roaches/lower_chance(src)
-
-
 
 /obj/structure/closet/random_tech
 	name = "\improper technical closet"
@@ -41,11 +40,10 @@
 	new /obj/random/pack/tech_loot(src)
 	new /obj/random/pack/tech_loot(src)
 	new /obj/random/pack/tech_loot(src)
+	new /obj/random/pouch/hardcase_scrap(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/cluster/roaches/lower_chance(src)
-
-
 
 /obj/structure/closet/random_spareparts
 	name = "\improper spare parts closet"
@@ -70,12 +68,10 @@
 	new /obj/random/tool_upgrade(src)
 	new /obj/random/lathe_disk(src)
 	new /obj/random/lathe_disk/low_chance(src)
+	new /obj/random/pouch/hardcase_scrap/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/cluster/roaches/lower_chance(src)
-
-
-
 
 /obj/structure/closet/random_milsupply
 	name = "\improper military supply closet"
@@ -104,10 +100,8 @@
 	new /obj/random/medical/low_chance(src)
 	new /obj/random/medical/low_chance(src)
 	new /obj/random/medical/low_chance(src)
+	new /obj/random/pouch/hardcase_scrap/low_chance(src)
 	new /obj/random/cluster/roaches/lower_chance(src)
-
-
-
 
 /obj/structure/closet/random_medsupply
 	name = "\improper medical supply closet"
@@ -129,9 +123,8 @@
 	new /obj/random/medical(src)
 	new /obj/random/medical/low_chance(src)
 	new /obj/random/medical/low_chance(src)
+	new /obj/random/pouch/hardcase_scrap/low_chance(src)
 	new /obj/random/cluster/roaches/lower_chance(src)
-
-
 
 /obj/structure/closet/secure_closet/rare_loot
 	name = "\improper sealed military supply closet"
@@ -149,6 +142,7 @@
 	new /obj/random/pack/gun_loot(src)
 	new /obj/random/pack/gun_loot(src)
 	new /obj/random/pack/gun_loot(src)
+	new /obj/random/pouch/hardcase_scrap/low_chance(src)
 	new /obj/random/cluster/roaches/lower_chance(src)
 
 
@@ -169,6 +163,7 @@
 	new /obj/random/rations(src)
 	new /obj/random/rations(src)
 	new /obj/random/rations(src)
+	new /obj/random/pouch/hardcase_scrap/low_chance(src)
 	new /obj/random/cluster/roaches(src)
 
 // Used for scrap beacon
@@ -179,6 +174,7 @@
 	new /obj/random/lowkeyrandom/low_chance(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
+	new /obj/random/pouch/hardcase_scrap/low_chance(src)
 	new /obj/random/rations(src)
 	new /obj/random/rations(src)
 	new /obj/random/rations(src)

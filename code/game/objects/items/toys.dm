@@ -24,6 +24,7 @@
 	throw_range = 20
 	matter = list(MATERIAL_PLASTIC = 3)
 	force = NONE
+	price_tag = 10
 
 
 /*
@@ -54,7 +55,7 @@
 	return
 
 /obj/item/toy/junk/balloon/attackby(obj/O as obj, mob/user as mob)
-	if(istype(O, /obj/item/weapon/reagent_containers/glass))
+	if(istype(O, /obj/item/reagent_containers/glass))
 		if(O.reagents)
 			if(O.reagents.total_volume < 1)
 				to_chat(user, "The [O] is empty.")
@@ -343,7 +344,7 @@
 
 /obj/item/toy/weapon/waterflower/afterattack(atom/A as mob|obj, mob/user as mob)
 
-	if (istype(A, /obj/item/weapon/storage/backpack ))
+	if (istype(A, /obj/item/storage/backpack ))
 		return
 
 	else if (locate (/obj/structure/table, src.loc))
@@ -512,21 +513,21 @@
 
 /obj/item/toy/figure/character/civilian/bartender
 	name = "bartender action figure"
-	desc = "The dispenser of station booze. Civilians 2/7."
+	desc = "The dispenser of colony booze. Civilians 2/7."
 	icon_state = "bartender"
-	toysay = "Where's my monkey?"
+	toysay = "Time to mix drinks and change lives."
 
 /obj/item/toy/figure/character/civilian/janitor
 	name = "janitor action figure"
 	desc = "Blood, vomit, alien slime - they clean all. Civilians 3/7."
 	icon_state = "janitor"
-	toysay = "Look at the signs, fool!"
+	toysay = "Bubbly cape and soap, I'm ready."
 
 /obj/item/toy/figure/character/civilian/gardener
 	name = "gardener action figure"
 	desc = "The best food is often home-grown. Civilians 4/7."
 	icon_state = "gardener"
-	toysay = "Herb is a plant."
+	toysay = "No one butchers Betsy! NO ONE!"
 
 /obj/item/toy/figure/character/civilian/chaplain
 	name = "preacher action figure"
@@ -544,7 +545,7 @@
 	name = "chef action figure"
 	desc = "Without one we'd all be eating roach guts. Civilians 7/7."
 	icon_state = "chef"
-	toysay = "I swear it's not human meat!"
+	toysay = "Roach burgers aren't that bad, trust me!"
 
 /*Moebius*/
 
@@ -558,13 +559,13 @@
 	name = "research overseer action figure"
 	desc = "All research requests go through them. Soteria 2/9."
 	icon_state = "rd"
-	toysay = "I'm the smartest one here."
+	toysay = "One day, I'll get a rubber ducky on my office..."
 
 /obj/item/toy/figure/character/moebius/md
 	name = "medical doctor action figure"
 	desc = "They'll do their best to uphold the oath. Soteria 3/9."
 	icon_state = "md"
-	toysay = "They're bleeding out!"
+	toysay = "You got the cash for treatment, right...?"
 
 /obj/item/toy/figure/character/moebius/psychologist
 	name = "psychologist action figure"
@@ -576,7 +577,7 @@
 	name = "paramedic action figure"
 	desc = "They'll go anywhere to save a life. Soteria 5/9."
 	icon_state = "paramedic"
-	toysay = "Where are you?!"
+	toysay = "Your sensors are off, where are you?!"
 
 /obj/item/toy/figure/character/moebius/chemist
 	name = "chemist action figure"
@@ -588,13 +589,13 @@
 	name = "scientist action figure"
 	desc = "Their experiments sometimes go wacky. Soteria 7/9."
 	icon_state = "scientist"
-	toysay = "Do I make toxins or slimes today?"
+	toysay = "I swear that is just a new mutant tobacco strain I discovered, Officer..."
 
 /obj/item/toy/figure/character/moebius/roboticist
 	name = "roboticist action figure"
 	desc = "The master of machine life. Soteria 8/9."
 	icon_state = "roboticist"
-	toysay = "He asked to be borged!"
+	toysay = "Alright, who wants to buy a Durand?"
 
 /obj/item/toy/figure/character/moebius/borg
 	name = "cyborg action figure"
@@ -608,7 +609,7 @@
 	name = "premier action figure"
 	desc = "The man who thinks he is in charge around here. Command 1/4."
 	icon_state = "captain"
-	toysay = "Polish my display case, peasants."
+	toysay = "Polish my sabre, peasants."
 
 /obj/item/toy/figure/character/command/firstofficer
 	name = "steward action figure"
@@ -626,7 +627,7 @@
 	name = "AI action figure"
 	desc = "Great intelligence bound by restrictive laws. Command 4/4."
 	icon_state = "AI"
-	toysay = "It's a good job I can multitask."
+	toysay = "It's a good thing I can multitask."
 
 /*Guild*/
 
@@ -634,7 +635,7 @@
 	name = "CEO action figure"
 	desc = "The money-minded manager of all cargo affairs. Lonestar 1/3."
 	icon_state = "qm"
-	toysay = "Watch our budget!"
+	toysay = "Charge for every drink and meal! Charge them even for breathing!"
 
 /obj/item/toy/figure/character/guild/cargotech
 	name = "technician action figure"
@@ -646,7 +647,7 @@
 	name = "miner action figure"
 	desc = "Will they find minerals, treasure, or monsters? Lonestar 3/3."
 	icon_state = "miner"
-	toysay = "So this is how it ends."
+	toysay = "Yeah, yeah, 'I'm here' too- wait, who said that...?"
 
 /*Engineer*/
 
@@ -654,13 +655,13 @@
 	name = "guild master figure"
 	desc = "The overseer of all construction and repair. Artificer 1/2."
 	icon_state = "ce"
-	toysay = "Hurry up and wire the solars."
+	toysay = "Respect the Cube."
 
 /obj/item/toy/figure/character/technomancer/engineer
 	name = "guild adept action figure"
-	desc = "There's little a technomancer can't fix. Artificer 2/2."
+	desc = "There's little an Adept can't fix. Artificer 2/2."
 	icon_state = "engineer"
-	toysay = "Engine levels critical!"
+	toysay = "How do I fix a stalling turbine?"
 
 /*Security*/
 
@@ -668,19 +669,19 @@
 	name = "commander action figure"
 	desc = "The most formidable force on the station. Marshal 1/4."
 	icon_state = "hos"
-	toysay = "I am the law!"
+	toysay = "I'll be hugging my fax machine on my office if anyone needs me..."
 
 /obj/item/toy/figure/character/ironhammer/secofficer
 	name = "operative action figure"
 	desc = "They don't make the law, but they enforce it. Marshal 2/4."
 	icon_state = "secofficer"
-	toysay = "Halt!"
+	toysay = "Where's your gun case?"
 
 /obj/item/toy/figure/character/ironhammer/warden
 	name = "supply specialist figure"
 	desc = "Always keep plenty of ammo. Marshal 3/4."
 	icon_state = "warden"
-	toysay = "Buy my guns!"
+	toysay = "A-armory s-shop is o-op-pen."
 
 /obj/item/toy/figure/character/ironhammer/detective
 	name = "ranger action figure"
@@ -755,7 +756,7 @@
 /obj/item/toy/figure/character/bobblehead/shitcurity
 	name = "shitcurity officer figurine"
 	desc = "A Lonestar \"Space Life\" brand figurine of a classic redshirt security employed in most space stations. Their belly distends out into an obvious beer gut, revealing no form of manufacturer bias what-so-ever."
-	toysay = "\"I joined just to kill people.\""
+	toysay = "\"I joined the force just to kill people.\""
 	icon_state = "shitcurity"
 
 /obj/item/toy/figure/character/bobblehead/metro_patrolman
@@ -1211,6 +1212,26 @@
 	icon_state = "therapygreen"
 	item_state = "egg3" // It's the green egg in items_left/righthand
 	w_class = ITEM_SIZE_TINY
+
+/obj/item/toy/plushie/fumo/arcueid // If people want to add more fumos, make them children of this one. - Seb
+	name = "neco arc fumo"
+	desc = "...What the fuck?"
+	icon_state = "arcueid"
+	phrase = "Burenyaa~"
+	var/pokesound = 'sound/sanity/burenyaa.ogg'
+
+/obj/item/toy/plushie/fumo/arcueid/attack_self(mob/user as mob)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(user.a_intent == I_HELP)
+		user.visible_message(SPAN_NOTICE("<b>\The [user]</b> hugs [src]!"),SPAN_NOTICE("You hug [src]!"))
+	else if (user.a_intent == I_HURT)
+		user.visible_message(SPAN_WARNING("<b>\The [user]</b> punches [src]!"),SPAN_WARNING("You punch [src]!"))
+	else if (user.a_intent == I_GRAB)
+		user.visible_message(SPAN_WARNING("<b>\The [user]</b> attempts to strangle [src]!"),SPAN_WARNING("You attempt to strangle [src]!"))
+	else
+		user.visible_message(SPAN_NOTICE("<b>\The [user]</b> pokes the [src]."),SPAN_NOTICE("You poke the [src]."))
+		visible_message("[src] says, \"[phrase]\"")
+		playsound(src.loc, pokesound, 50, 0) // Should work for any pokesound anyone might want to add to fumos.
 
 /obj/item/toy/plushie/carp
 	name = "carp space plushie"

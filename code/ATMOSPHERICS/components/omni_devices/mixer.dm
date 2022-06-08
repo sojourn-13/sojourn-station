@@ -7,7 +7,7 @@
 
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
-	power_rating = 3700			//3700 W ~ 5 HP
+	power_rating = 700			//700 W ~ 1 HP
 
 	var/list/inputs = new()
 	var/datum/omni_port/output
@@ -123,7 +123,7 @@
 
 	return 1
 
-/obj/machinery/atmospherics/omni/mixer/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/atmospherics/omni/mixer/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	usr.set_machine(src)
 
 	var/list/data = new()
@@ -268,7 +268,7 @@
 	if(non_locked < 1)
 		return
 
-	var/new_con = (input(usr, "Enter a new concentration (0-[round(remain_con * 100, 0.5)])%", "Concentration control", min(remain_con, old_con)*100) as num) / 100
+	var/new_con = (input(usr, "Enter new concentration (0-[round(remain_con * 100, 0.5)])%", "Concentration control", min(remain_con, old_con)*100) as num) / 100
 
 	//cap it between 0 and the max remaining concentration
 	new_con = between(0, new_con, remain_con)

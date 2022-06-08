@@ -1,5 +1,5 @@
 
-#define isweakref(A) istype(A, /weakref)
+#define isweakref(D) (istype(D, /datum/weakref))
 
 #define islist(A) istype(A, /list)
 
@@ -27,6 +27,8 @@
 
 #define isslime(A) istype(A, /mob/living/carbon/slime)
 
+#define isroach(A) istype(A, /mob/living/carbon/superior_animal/roach)
+
 #define isbrain(A) istype(A, /mob/living/carbon/brain)
 
 #define ishuman(A) istype(A, /mob/living/carbon/human)
@@ -40,8 +42,14 @@
 
 #define issuperioranimal(A) istype(A, /mob/living/carbon/superior_animal)
 
+#define issuperiorhuman(A) istype(A, /mob/living/carbon/superior_animal/human)
+
+#define issuperiortermite(A) istype(A, /mob/living/carbon/superior_animal/termite)
+
 #define isburrow(A) istype(A, /obj/structure/burrow)
 //---------------------------------------------------
+
+#define issynthetic(A) istype(A, /mob) && A.mob_classification == CLASSIFICATION_SYNTHETIC //For when we really, really don't want any robots
 
 #define issilicon(A) istype(A, /mob/living/silicon)
 
@@ -64,22 +72,22 @@
 
 #define isorgan(A) istype(A, /obj/item/organ/external)
 
-#define isgun(A) istype(A, /obj/item/weapon/gun)
+#define isgun(A) istype(A, /obj/item/gun)
 
-#define isarmor(A) istype(A, /obj/item/clothing/suit/armor)
+#define isarmor(A) istype(A, /obj/item/clothing)
 
-#define istool(A) istype(A, /obj/item/weapon/tool)
+#define istool(A) istype(A, /obj/item/tool)
 
-#define isWrench(A) istype(A, /obj/item/weapon/tool/wrench)
+#define isWrench(A) istype(A, /obj/item/tool/wrench)
 
-#define isWelder(A) istype(A, /obj/item/weapon/tool/weldingtool)
+#define isWelder(A) istype(A, /obj/item/tool/weldingtool)
 
 #define isCoil(A) istype(A, /obj/item/stack/cable_coil)
 
-#define isWirecutter(A) istype(A, /obj/item/weapon/tool/wirecutters)
+#define isWirecutter(A) istype(A, /obj/item/tool/wirecutters)
 
-#define isScrewdriver(A) istype(A, /obj/item/weapon/tool/screwdriver)
+#define isScrewdriver(A) istype(A, /obj/item/tool/screwdriver)
 
-#define isMultitool(A) istype(A, /obj/item/weapon/tool/multitool)
+#define isMultitool(A) istype(A, /obj/item/tool/multitool)
 
-#define isCrowbar(A) istype(A, /obj/item/weapon/tool/crowbar)
+#define isCrowbar(A) istype(A, /obj/item/tool/crowbar)

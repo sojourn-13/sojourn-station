@@ -1,4 +1,31 @@
-/*Flower Pins*/
+/obj/item/clothing/head/centhat
+	name = "\improper CentCom. hat"
+	icon_state = "centcom"
+	item_state_slots = list(
+		slot_l_hand_str = "centhat",
+		slot_r_hand_str = "centhat",
+		)
+	desc = "It's good to be emperor."
+	siemens_coefficient = 0.9
+	body_parts_covered = 0
+
+
+/obj/item/clothing/head/laurel
+	name = "Laurel wreath"
+	icon_state = "laurel"
+	desc = "A round wreath made of connected branches and leaves of the bay laurel."
+	slot_flags = SLOT_HEAD | SLOT_EARS
+	body_parts_covered = 0
+
+/obj/item/clothing/head/laurel/silver
+	name = "silver Laurel wreath"
+	icon_state = "laurel_s"
+	desc = "A round wreath made of connected branches and leaves of the bay laurel. This one appears to be formed  silver."
+
+/obj/item/clothing/head/laurel/gold
+	name = "golden Laurel wreath"
+	icon_state = "laurel_g"
+	desc = "A round wreath made of connected branches and leaves of the bay laurel. This one appears to be formed of gold."
 
 /obj/item/clothing/head/hairflower
 	name = "red flower pin"
@@ -30,6 +57,50 @@
 /obj/item/clothing/head/hairflower/white
 	icon_state = "hairflower_white"
 	name = "white flower pin"
+
+/*Hair Pins*/
+
+/obj/item/clothing/head/pin
+	name = "hairpin"
+	icon_state = "pin"
+	desc = "A small metal hair pin."
+	slot_flags = SLOT_HEAD | SLOT_EARS
+	body_parts_covered = 0
+
+/obj/item/clothing/head/pin/butterfly
+	name = "blue butterfly pin"
+	icon_state = "butterflypin"
+	desc = "A decorative hairpin with a blue plastic butterfly on it."
+
+/obj/item/clothing/head/pin/clover
+	name = "clover hairpin"
+	icon_state = "cloverpin"
+	desc = "A hairpin with a clover on it. Lucky you!"
+
+/obj/item/clothing/head/pin/magnet
+	name = "hair magnets"
+	icon_state = "magnetpin"
+	desc = "A small metal hair pin with a magnet attached. Popular among the tiny demographic of fashionable robots."
+
+/*Hair Ribbons*/
+
+/obj/item/clothing/head/ribbon
+	name = "white hair ribbon"
+	icon_state = "whiteribbon"
+	desc = "A big white ribbon tied in a bow. Cute!"
+
+obj/item/clothing/head/ribbon/red
+	name = "red hair ribbon"
+	icon_state = "redribbon"
+	desc = "A big red ribbon tied in a bow. Somehow, this one reminds you of Jana cartoons."
+
+/*Maid Headdress*/
+
+/obj/item/clothing/head/maid
+	name = "maid headdress"
+	icon_state = "maid"
+	desc = "A frilly headdress, for keeping your hair away from the mess you're cleaning."
+
 
 /*Top Hats*/
 
@@ -172,8 +243,8 @@
 
 /*Misc*/
 
-/obj/item/clothing/head/rank/centcomm
-	name = "\improper CentComm. hat"
+/obj/item/clothing/head/rank/centcom
+	name = "\improper CentCom. hat"
 	icon_state = "centcom"
 	item_state_slots = list(
 		slot_l_hand_str = "centhat",
@@ -199,6 +270,34 @@
 	name = "boater hat"
 	icon_state = "boater_hat"
 	desc = "A formal beige summer hat."
+
+/obj/item/clothing/head/numerical_hat
+	name = "numerical hat"
+	icon_state = "numerical_hat_red"
+	desc = "A tall hat for nurmerical of the faith. Can be turned inside out to turn form red to gray or gray to red"
+
+/obj/item/clothing/head/numerical_hat/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Red Hat"] = "numerical_hat_red"
+	options["Gray Hat"] = "numerical_hat_dark"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/flatcap
 	name = "flat cap"
@@ -228,3 +327,109 @@
 	name = "rice hat"
 	desc = "A hat made out of straw, designed to keep the sun from hurting your face."
 	icon_state = "rice_hat"
+
+/obj/item/clothing/head/exceslior/excelsior_officer
+	name = "excelsior officer cap"
+	desc = "A peaked commissar cap marked with a red hammer and gear emblem on an orange background at its front."
+	icon_state = "excelsior_officer"
+
+/obj/item/clothing/head/ranger
+	name = "ranger hat"
+	desc = "A rather generic sergeant hat. On second look it's actually a ranger hat."
+	icon_state = "ranger"
+	item_state = "ranger"
+	price_tag = 40
+
+/obj/item/clothing/head/inhaler
+	name = "odd looking helmet"
+	desc = "A confusingly complex helmet. It is capable of protecting you so it's more useful than being a simple decoration."
+	icon_state = "inhaler"
+	item_state = "inhaler"
+	item_flags = THICKMATERIAL
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	siemens_coefficient = 1
+	price_tag = 600
+	armor_list = list(
+		melee = 20,
+		bullet = 15,
+		energy = 10,
+		bomb = 0,
+		bio = 20,
+		rad = 25
+	)
+
+/obj/item/clothing/head/os_cap
+	name = "Greyson Positronic Cap"
+	desc = "A flat brim cap warn by Greyson Positronic office workers to keep out light and sport their logo at the same time."
+	icon_state = "os_cap"
+	item_state = "os_cap"
+	armor_list = list(
+		melee = 5,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 20,
+		rad = 25
+	)
+
+/*
+ * Ushanka
+ */
+/obj/item/clothing/head/ushanka
+	name = "ushanka"
+	desc = "A warm, black fur cap with a soviet design."
+	icon_state = "ushanka"
+	item_state = "ushanka"
+	flags_inv = HIDEEARS
+
+// No more bulky ushanka, no need for this.
+/*
+/obj/item/clothing/head/ushanka/attack_self(mob/user as mob)
+	if(src.icon_state == "ushankadown")
+		src.icon_state = "ushankaup"
+		to_chat(user, "You raise the ear flaps on the ushanka.")
+	else
+		src.icon_state = "ushankadown"
+		to_chat(user, "You lower the ear flaps on the ushanka.")
+*/
+
+// Hood for the Outsider cloak
+
+/obj/item/clothing/head/outcasthood
+	name = "outcast's hood"
+	desc = "A raggedy hood from your trusty cloak, can be used to hide your face from the harmful looks of others."
+	icon_state = "ragged_hood"
+	item_state = "ragged_hood"
+	flags_inv = HIDEEARS|BLOCKHAIR
+	armor_list = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 5, rad = 5)
+
+// hoods for the tacticool ponchos.
+
+/obj/item/clothing/head/tacticalhood
+	name = "brown tactical hood"
+	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
+	icon_state = "tacponhood_brown"
+	item_state = "tacponhood_brown"
+	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/tacticalhood/green
+	name = "green tactical hood"
+	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
+	icon_state = "tacponhood_green"
+	item_state = "tacponhood_green"
+	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/tacticalhood/camo
+	name = "camo tactical hood"
+	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
+	icon_state = "tacponhood_camo"
+	item_state = "tacponhood_camo"
+	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/tacticalhood/ghillie
+	name = "ghillie hood"
+	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
+	icon_state = "tacponhood_ghillie"
+	item_state = "tacponhood_ghillie"
+	flags_inv = HIDEEARS|BLOCKHAIR

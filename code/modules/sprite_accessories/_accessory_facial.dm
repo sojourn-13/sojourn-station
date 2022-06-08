@@ -9,6 +9,19 @@
 /datum/sprite_accessory/facial_hair
 	icon = 'icons/mob/human_races/species/human/facial.dmi'
 	gender = MALE // barf (unless you're a dorf, dorfs dig chix /w beards :P)
+	species_allowed = list(
+		SPECIES_HUMAN,
+		SPECIES_EXALT_HUMAN,
+		FORM_MARQUA,
+		FORM_SABLEKYNE,
+		FORM_KRIOSAN,
+		FORM_AKULA,
+		FORM_CHTMANT,
+		FORM_CINDAR,
+		FORM_NARAMAD,
+		FORM_OPIFEX,
+		FORM_FBP
+		)
 
 /datum/sprite_accessory/facial_hair/shaved
 	name = "Shaved"
@@ -46,6 +59,10 @@
 /datum/sprite_accessory/facial_hair/braid
 	name = "Braided Beard"
 	icon_state = "braided"
+
+/datum/sprite_accessory/facial_hair/brokenman
+	name = "Broken Man"
+	icon_state = "facial_brokenman"
 
 /datum/sprite_accessory/facial_hair/chinless
 	name = "Chinless Beard"
@@ -115,6 +132,11 @@
 	name = "Sea Dog Beard"
 	icon_state = "seadog"
 
+/datum/sprite_accessory/facial_hair/shaggy
+	name = "Shaggy"
+	icon_state = "shag"
+	gender = NEUTER
+
 /datum/sprite_accessory/facial_hair/tribeard
 	name = "Tribeard"
 	icon_state = "tribeard"
@@ -170,12 +192,12 @@
 	name = "Cindarite Chin Horn"
 	icon_state = "facial_chinhorns_s"
 	gender = NEUTER
-
+/* Does not properly work. Probably broken icon state or something. Commented out due to being worthless. -Intense Skies
 /datum/sprite_accessory/facial_hair/una_hornadorns
 	name = "Cindarite Horn Adorns"
 	icon_state = "facial_hornadorns_s"
 	gender = NEUTER
-
+*/
 /datum/sprite_accessory/facial_hair/una_spinespikes
 	name = "Cindarite Spine Spikes"
 	icon_state = "facial_spikes_s"
@@ -186,6 +208,15 @@
 	icon_state = "facial_dorsalfrill_s"
 	gender = NEUTER
 
+/datum/sprite_accessory/facial_hair/neck_fluff
+	name = "Neck Fluff"
+	icon_state = "neckfluff"
+	gender = NEUTER
+
+/datum/sprite_accessory/facial_hair/neck_fluffie
+	name = "Neck Fluff 2"
+	icon_state = "neck_fluffies"
+	gender = NEUTER
 /*
 ///////////////////////////////////
 /  =---------------------------=  /

@@ -6,6 +6,7 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
 	)
 	related_stats = list(STAT_MEC)
+	requiredPerk = PERK_HANDYMAN
 
 /datum/craft_recipe/airlock/standard
 	name = "airlock assembly"
@@ -63,7 +64,7 @@
 	name = "multi-tile airlock assembly"
 	result = /obj/structure/door_assembly/multi_tile
 	steps = list(
-		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL)
 	)
 
 /datum/craft_recipe/airlock/research

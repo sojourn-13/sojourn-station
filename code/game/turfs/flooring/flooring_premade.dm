@@ -84,6 +84,12 @@
 	icon_state = "wooden_floor_s5"
 	initial_flooring = /decl/flooring/wood/wild5
 
+/turf/simulated/floor/wood_old
+	name = "wooden floor"
+	icon = 'icons/turf/flooring/wood_old.dmi'
+	icon_state = "wood"
+	initial_flooring = /decl/flooring/wood/wood_old
+
 /*Tiled*/
 
 /turf/simulated/floor/tiled
@@ -461,7 +467,12 @@
 // Placeholders
 /turf/simulated/floor/airless/lava
 /turf/simulated/floor/light
+
 /turf/simulated/floor/snow
+	name = "fake snow"
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "snow"
+
 /turf/simulated/floor/beach/coastline
 /turf/simulated/floor/plating/snow
 /turf/simulated/floor/airless/ceiling
@@ -560,6 +571,18 @@
 /turf/simulated/floor/asteroid/grass/jungle
 	icon_state = "grass_jungle"
 	initial_flooring = /decl/flooring/grass2/jungle
+
+/turf/simulated/floor/asteroid/grass/snow_grass
+	icon_state = "snowgrass_nes"
+	initial_flooring = /decl/flooring/grass2/snow_grass
+
+/turf/simulated/floor/asteroid/grass/snowjungle
+	icon_state = "snowjungle"
+	initial_flooring = /decl/flooring/grass2/snowjungle
+
+/turf/simulated/floor/asteroid/grass/plowed_snow
+	icon_state = "plowed_snow"
+	initial_flooring = /decl/flooring/grass2/plowed_snow
 
 /turf/simulated/floor/asteroid/grass/dry
 	icon_state = "grass_dry"

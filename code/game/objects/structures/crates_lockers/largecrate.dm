@@ -62,6 +62,18 @@
 	name = "cow crate"
 	held_type = /mob/living/simple_animal/cow
 
+/obj/structure/largecrate/animal/pig
+	name = "pig crate"
+	held_type = /mob/living/simple_animal/pig
+
+/obj/structure/largecrate/animal/bear
+	name = "bear crate"
+	held_type = /mob/living/simple_animal/hostile/bear/brown
+
+/obj/structure/largecrate/animal/p_bear
+	name = "polar bear crate"
+	held_type = /mob/living/simple_animal/hostile/bear/polar
+
 /obj/structure/largecrate/animal/goat
 	name = "goat crate"
 	held_type = /mob/living/simple_animal/hostile/retaliate/goat
@@ -77,3 +89,22 @@
 	name = "chicken crate"
 	held_count = 5
 	held_type = /mob/living/simple_animal/chick
+
+/obj/structure/largecrate/animal/giant_spider
+	name = "Giant Spider crate"
+	held_type = /mob/living/carbon/superior_animal/giant_spider
+
+/obj/structure/largecrate/animal/nurse_spider
+	name = "Nurse Spider crate"
+	held_type = /mob/living/carbon/superior_animal/giant_spider/nurse
+
+/obj/structure/largecrate/animal/hunter_spider
+	name = "Hunter Spider crate"
+	held_type = /mob/living/carbon/superior_animal/giant_spider/hunter
+
+/obj/structure/largecrate/animal/welder_roach
+	name = "Benzin Roach crate"
+	held_type = /mob/living/carbon/superior_animal/roach/benzin
+
+/obj/structure/largecrate/animal/piano
+	held_type = /obj/structure/synthesized_instrument/synthesizer/piano

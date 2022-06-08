@@ -19,6 +19,12 @@
 /obj/item/device/scanner/health/rig
 	charge_per_use = 0
 
+/obj/item/device/scanner/health/afterattack(atom/A, mob/user, proximity)
+	if(user.stats?.getPerk(PERK_ADVANCED_MEDICAL) && user.stats.getStat(STAT_BIO) > STAT_LEVEL_EXPERT)
+		use_delay = 0 // Instant use for skilled users
+	..()
+	use_delay = initial(use_delay) // Reset use_delay so unskilled users don't get the bonus
+
 /obj/item/device/scanner/health/is_valid_scan_target(atom/O)
 	return istype(O, /mob/living) || istype(O, /obj/structure/closet/body_bag)
 
@@ -44,16 +50,16 @@
 		to_chat(user, SPAN_WARNING("You are not nimble enough to use this device."))
 		return
 
-	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC))
+	if(!user.stats?.getPerk(PERK_ADVANCED_MEDICAL) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !usr.stat_check(STAT_COG, 30)) //Takes 15 bio so 30 cog
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
-	if ((CLUMSY in user.mutations) && prob(50))
+	if ((CLUMSY in user.mutations) && prob(15))
 		. = list()
 
-		user.visible_message(SPAN_NOTICE("\The [user] runs \the [scanner] over the floor."))
-		. += span("highlight", "<b>Scan results for the floor:</b>")
-		. += span("highlight", "Overall Status: Healthy")
+		user.visible_message(SPAN_NOTICE("\The [user] runs \the [scanner] clumsily over the air, trying to scan something else!"))
+		. += span("highlight", "<b>Unknown Scan results:</b>")
+		. += span("highlight", "Overall Status: Unknown")
 		return jointext(., "<br>")
 
 	var/mob/living/carbon/human/scan_subject = null
@@ -200,16 +206,16 @@
 		for(var/obj/item/organ/external/e in H.organs)
 			if(!e)
 				continue
-			//for(var/datum/wound/W in e.wounds) if(W.internal)
-				//dat += text(SPAN_WARNING("Internal bleeding detected. Advanced scanner required for location."))
-				//break
+			for(var/datum/wound/W in e.wounds) if(W.internal)
+				dat += text(SPAN_WARNING("Internal trauma detected. Advanced scanner required for location."))
+				break
 		if(H.vessel)
 			var/blood_volume = H.vessel.get_reagent_amount("blood")
 			var/blood_percent =  round((blood_volume / H.species.blood_volume)*100)
 			var/blood_type = H.dna.b_type
-			if((blood_percent <= BLOOD_VOLUME_SAFE) && (blood_percent > BLOOD_VOLUME_BAD))
+			if((blood_percent <= H.total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER) && (blood_percent > H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER))
 				dat += SPAN_DANGER("Warning: Blood Level LOW: [blood_percent]% [blood_volume]cl.</span> <span class='highlight'>Type: [blood_type]")
-			else if(blood_percent <= BLOOD_VOLUME_BAD)
+			else if(blood_percent <= H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
 				dat += SPAN_DANGER("<i>Warning: Blood Level CRITICAL: [blood_percent]% [blood_volume]cl.</i></span> <span class='highlight'>Type: [blood_type]")
 			else
 				dat += span("highlight", "Blood Level Normal: [blood_percent]% [blood_volume]cl. Type: [blood_type]")

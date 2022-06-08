@@ -23,7 +23,7 @@
 
 /obj/machinery/portable_atmospherics/powered/pump/New()
 	..()
-	cell = new/obj/item/weapon/cell/medium/high(src)
+	cell = new/obj/item/cell/large/high(src)
 
 	var/list/air_mix = StandardAirMix()
 	src.air_contents.adjust_multi("oxygen", air_mix["oxygen"], "nitrogen", air_mix["nitrogen"])
@@ -119,9 +119,9 @@
 	return src.attack_hand(user)
 
 /obj/machinery/portable_atmospherics/powered/pump/attack_hand(var/mob/user)
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/portable_atmospherics/powered/pump/ui_interact(mob/user, ui_key = "rcon", datum/nanoui/ui=null, force_open=NANOUI_FOCUS)
+/obj/machinery/portable_atmospherics/powered/pump/nano_ui_interact(mob/user, ui_key = "rcon", datum/nanoui/ui=null, force_open=NANOUI_FOCUS)
 	var/list/data[0]
 	data["portConnected"] = connected_port ? 1 : 0
 	data["tankPressure"] = round(air_contents.return_pressure() > 0 ? air_contents.return_pressure() : 0)

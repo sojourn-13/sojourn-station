@@ -14,7 +14,10 @@
 	unlocks_designs = list(	/datum/design/research/circuit/mech_recharger,
 							/datum/design/research/circuit/recharge_station,
 							/datum/design/research/item/medical/robot_scanner,
-							/datum/design/research/item/mmi)
+							/datum/design/research/item/mmi,
+							/datum/design/research/circuit/mecha/main,
+							/datum/design/research/circuit/mecha/peripherals,
+							/datum/design/research/circuit/mecha/targeting)
 
 //MECHA BRANCH
 
@@ -29,15 +32,19 @@
 
 	required_technologies = list(/datum/technology/basic_robotics)
 	required_tech_levels = list()
-	cost = 500
+	cost = 375
 
 	unlocks_designs = list(
 		/datum/design/research/circuit/mechacontrol,
 		/datum/design/research/circuit/mechfab,
 		/datum/design/research/circuit/dronecontrol,
-		/datum/design/research/circuit/mecha/main,
-		/datum/design/research/circuit/mecha/peripherals,
-		/datum/design/research/circuit/mecha/targeting
+		/datum/design/research/item/mechfab/ripley/chassis,
+		/datum/design/research/item/mechfab/ripley/chassis/firefighter,
+		/datum/design/research/item/mechfab/ripley/torso,
+		/datum/design/research/item/mechfab/ripley/left_arm,
+		/datum/design/research/item/mechfab/ripley/right_arm,
+		/datum/design/research/item/mechfab/ripley/left_leg,
+		/datum/design/research/item/mechfab/ripley/right_leg
 		)
 
 /datum/technology/mech_odysseus
@@ -51,7 +58,7 @@
 
 	required_technologies = list(/datum/technology/exosuit_robotics)
 	required_tech_levels = list()
-	cost = 500
+	cost = 375
 
 	unlocks_designs = list(
 		/datum/design/research/item/mechfab/odysseus/chassis,
@@ -75,7 +82,7 @@
 
 	required_technologies = list(/datum/technology/exosuit_robotics)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1500
 
 	unlocks_designs = list(
 		/datum/design/research/item/mechfab/gygax/chassis,
@@ -114,7 +121,7 @@
 
 	required_technologies = list(/datum/technology/exosuit_robotics)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1500
 
 	unlocks_designs = list(
 		/datum/design/research/item/mechfab/durand/chassis,
@@ -139,7 +146,7 @@
 
 	required_technologies = list(/datum/technology/mech_durand)
 	required_tech_levels = list() // Add some bluespace requirement?
-	cost = 4000
+	cost = 3000
 
 	unlocks_designs = list(
 		/datum/design/research/item/mechfab/phazon/chassis,
@@ -165,7 +172,7 @@
 
 	required_technologies = list(/datum/technology/exosuit_robotics)
 	required_tech_levels = list()
-	cost = 500
+	cost = 375
 
 	unlocks_designs = list(
 		/datum/design/research/item/mecha/hydraulic_clamp,
@@ -187,7 +194,7 @@
 
 	required_technologies = list(/datum/technology/mech_modules_core)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(
 							/datum/design/research/item/mecha/jetpack,
@@ -215,7 +222,7 @@
 
 	required_technologies = list(/datum/technology/mech_utility_modules)
 	required_tech_levels = list()
-	cost = 5000
+	cost = 3750
 
 	unlocks_designs = list(/datum/design/research/item/mecha/teleporter)
 
@@ -230,11 +237,12 @@
 
 	required_technologies = list(/datum/technology/mech_utility_modules)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1500
 
 	unlocks_designs = list(
 		/datum/design/research/item/mecha/ccw_armor,
-		/datum/design/research/item/mecha/proj_armor
+		/datum/design/research/item/mecha/proj_armor,
+		/datum/design/research/item/mecha/shield_droid
 		)
 
 /datum/technology/mech_weaponry_modules
@@ -248,7 +256,7 @@
 
 	required_technologies = list(/datum/technology/mech_modules_core)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1500
 
 	unlocks_designs = list(
 							/datum/design/research/item/mecha/weapon/scattershot,
@@ -267,11 +275,13 @@
 
 	required_technologies = list(/datum/technology/mech_weaponry_modules)
 	required_tech_levels = list()
-	cost = 4000
+	cost = 1500
 
 	unlocks_designs = list(
 							/datum/design/research/item/mecha/weapon/laser_heavy,
-							/datum/design/research/item/mecha/weapon/ion
+							/datum/design/research/item/mecha/weapon/ion,
+							/datum/design/research/item/mecha/weapon/mecha_sword,
+							/datum/design/research/item/mecha/weapon/mecha_cutlass
 							)
 
 //AI BRANCH
@@ -287,7 +297,7 @@
 
 	required_technologies = list(/datum/technology/basic_robotics)
 	required_tech_levels = list()
-	cost = 500
+	cost = 375
 
 	unlocks_designs = list(
 							/datum/design/research/item/posibrain,
@@ -308,7 +318,7 @@
 
 	required_technologies = list(/datum/technology/cyborg_robo)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1500
 
 	unlocks_designs = list(
 							/datum/design/research/circuit/aicore,
@@ -326,7 +336,7 @@
 
 	required_technologies = list(/datum/technology/artificial_intelligence)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1500
 
 	unlocks_designs = list(
 							/datum/design/research/circuit/aifixer,
@@ -358,7 +368,7 @@
 
 	required_technologies = list(/datum/technology/cyborg_robo)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1500
 
 	unlocks_designs = list(
 						/datum/design/research/item/mechfab/robot/component/jetpack,

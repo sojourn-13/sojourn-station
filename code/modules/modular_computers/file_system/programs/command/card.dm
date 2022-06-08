@@ -15,7 +15,7 @@
 	var/is_centcom = 0
 	var/show_assignments = 0
 
-/datum/nano_module/program/card_mod/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/card_mod/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 
 	data["src"] = "\ref[src]"
@@ -36,7 +36,7 @@
 	data["centcom_access"] = is_centcom
 
 	if(program && program.computer && program.computer.card_slot)
-		var/obj/item/weapon/card/id/id_card = program.computer.card_slot.stored_card
+		var/obj/item/card/id/id_card = program.computer.card_slot.stored_card
 		data["has_id"] = !!id_card
 		data["id_account_number"] = id_card ? id_card.associated_account_number : null
 		data["id_email_login"] = id_card ? id_card.associated_email_login["login"] : null
@@ -62,7 +62,7 @@
 	data["regions"] = list()
 
 	if(program.computer.card_slot && program.computer.card_slot.stored_card)
-		var/obj/item/weapon/card/id/id_card = program.computer.card_slot.stored_card
+		var/obj/item/card/id/id_card = program.computer.card_slot.stored_card
 		if(is_centcom)
 			var/list/all_centcom_access = list()
 			for(var/access in get_all_centcom_access())
@@ -95,7 +95,7 @@
 		ui.open()
 
 /datum/nano_module/program/card_mod/proc/format_jobs(list/jobs)
-	var/obj/item/weapon/card/id/id_card = program.computer.card_slot ? program.computer.card_slot.stored_card : null
+	var/obj/item/card/id/id_card = program.computer.card_slot ? program.computer.card_slot.stored_card : null
 	var/list/formatted = list()
 	for(var/job in jobs)
 		formatted.Add(list(list(
@@ -114,8 +114,8 @@
 		return 1
 
 	var/mob/user = usr
-	var/obj/item/weapon/card/id/user_id_card = user.GetIdCard()
-	var/obj/item/weapon/card/id/id_card
+	var/obj/item/card/id/user_id_card = user.GetIdCard()
+	var/obj/item/card/id/id_card
 	if (computer.card_slot)
 		id_card = computer.card_slot.stored_card
 	if (!user_id_card)
@@ -134,8 +134,8 @@
 			else
 				module.show_assignments = 1
 		if("print")
-			if(!authorized(user_id_card))
-				to_chat(usr, "<span class='warning'>Access denied.</span>")
+			if(!authorized_diet(user_id_card))
+				to_chat(usr, "<span class='warning'>Access Light Missing: Denied..</span>")
 				return
 			if(computer && computer.printer) //This option should never be called if there is no printer
 				if(module.mod_mode)
@@ -179,8 +179,8 @@
 				else
 					computer.attackby(user.get_active_hand(), user)
 		if("terminate")
-			if(!authorized(user_id_card))
-				to_chat(usr, "<span class='warning'>Access denied.</span>")
+			if(!authorized_diet(user_id_card))
+				to_chat(usr, "<span class='warning'>Access Light Missing: Denied.</span>")
 				return
 			if(computer && can_run(user, 1))
 				id_card.assignment = "Terminated"
@@ -188,7 +188,7 @@
 				callHook("terminate_employee", list(id_card))
 		if("edit")
 			if(!authorized(user_id_card))
-				to_chat(usr, "<span class='warning'>Access denied.</span>")
+				to_chat(usr, "<span class='warning'>Access Hard Missing: Denied.</span>")
 				return
 			if(computer && can_run(user, 1))
 				if(href_list["name"])
@@ -210,7 +210,7 @@
 					id_card.associated_email_login["password"] = email_password
 		if("assign")
 			if(!authorized(user_id_card))
-				to_chat(usr, "<span class='warning'>Access denied.</span>")
+				to_chat(usr, "<span class='warning'>Access Hard Missing: Denied.</span>")
 				return
 			if(computer && can_run(user, 1) && id_card)
 				var/t1 = href_list["assign_target"]
@@ -249,7 +249,7 @@
 				if(access_type in get_access_ids(ACCESS_TYPE_STATION|ACCESS_TYPE_CENTCOM))
 					for(var/access in user_id_card.access)
 						var/region_type = get_access_region_by_id(access_type)
-						if(access in maps_data.access_modify_region[region_type])
+						if(access in GLOB.maps_data.access_modify_region[region_type])
 							id_card.access -= access_type
 							if(!access_allowed)
 								id_card.access += access_type
@@ -260,13 +260,18 @@
 	SSnano.update_uis(NM)
 	return 1
 
-/datum/computer_file/program/card_mod/proc/remove_nt_access(var/obj/item/weapon/card/id/id_card)
+/datum/computer_file/program/card_mod/proc/remove_nt_access(var/obj/item/card/id/id_card)
 	id_card.access -= get_access_ids(ACCESS_TYPE_STATION|ACCESS_TYPE_CENTCOM)
 
-/datum/computer_file/program/card_mod/proc/apply_access(var/obj/item/weapon/card/id/id_card, var/list/accesses)
+/datum/computer_file/program/card_mod/proc/apply_access(var/obj/item/card/id/id_card, var/list/accesses)
 	id_card.access |= accesses
 
-/datum/computer_file/program/card_mod/proc/authorized(var/obj/item/weapon/card/id/id_card)
+/datum/computer_file/program/card_mod/proc/authorized(var/obj/item/card/id/id_card)
 	if (id_card)
 		return (access_change_ids in id_card.access)
+	return FALSE
+
+/datum/computer_file/program/card_mod/proc/authorized_diet(var/obj/item/card/id/id_card)
+	if (id_card)
+		return (access_heads in id_card.access)
 	return FALSE

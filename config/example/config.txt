@@ -131,6 +131,12 @@ ALLOW_ADMIN_OOCCOLOR
 ## allow players to initiate a restart vote
 #ALLOW_VOTE_RESTART
 
+## set a restart time in seconds after the server starts
+#AUTOMATIC_RESTART_TIME 21600
+
+## automatic restart delay from round end to actual restart in seconds
+#AUTOMATIC_RESTART_DELAY 900
+
 ## allow players to initate a mode-change start
 #ALLOW_VOTE_MODE
 
@@ -212,8 +218,8 @@ GITHUBURL https://github.com/Endless-Horizon/CEV-Eris
 
 ## Remove the # to allow special 'Easter-egg' events on special holidays such as seasonal holidays and stuff like 'Talk Like a Pirate Day' :3 YAARRR
 ALLOW_HOLIDAYS
-##Defines the ticklag for the world.  0.9 is the normal one, 0.5 is smoother.
-TICKLAG 0.3
+## Defines the FPS for the world. 30 is the normal one, 45+ is smoother.
+FPS 40
 
 ## Defines if Tick Compensation is used.  It results in a minor slowdown of movement of all mobs, but attempts to result in a level movement speed across all ticks.  Recommended if tickrate is lowered.
 #TICKCOMP

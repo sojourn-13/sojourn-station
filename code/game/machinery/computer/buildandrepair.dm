@@ -7,7 +7,7 @@
 	anchored = FALSE
 	matter = list(MATERIAL_STEEL = 5)
 	var/state = 0
-	var/obj/item/weapon/circuitboard/circuit = null
+	var/obj/item/circuitboard/circuit = null
 //	weight = 1.0E8
 
 /obj/structure/computerframe/verb/rotate()
@@ -132,8 +132,8 @@
 
 	switch(state)
 		if(1)
-			if(istype(I, /obj/item/weapon/circuitboard) && !circuit)
-				var/obj/item/weapon/circuitboard/B = I
+			if(istype(I, /obj/item/circuitboard) && !circuit)
+				var/obj/item/circuitboard/B = I
 				if(B.board_type == "computer")
 					playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 					to_chat(user, SPAN_NOTICE("You place the circuit board inside the frame."))
@@ -157,7 +157,7 @@
 						state = 3
 						icon_state = "3"
 		if(3)
-			if(istype(I, /obj/item/stack/material) && I.get_material_name() == "glass")
+			if(istype(I, /obj/item/stack/material) && I.get_material_name() == MATERIAL_GLASS)
 				var/obj/item/stack/G = I
 				if (G.get_amount() < 2)
 					to_chat(user, SPAN_WARNING("You need two sheets of glass to put in the glass panel."))

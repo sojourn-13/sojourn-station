@@ -7,7 +7,7 @@
 	if(!H.client)
 		return
 
-//	var/datum/hud/human/HUDdatum = global.HUDdatums[H.defaultHUD]
+//	var/datum/hud/human/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 	var/recreate_flag = FALSE
 
 	if(!check_HUDdatum())
@@ -26,7 +26,7 @@
 	var/mob/living/silicon/robot/H = src
 
 	if (H.defaultHUD == "BorgStyle") //если у клиента моба прописан стиль\тип ХУДа
-		if(global.HUDdatums.Find(H.defaultHUD))//Если существует такой тип ХУДА
+		if(GLOB.HUDdatums.Find(H.defaultHUD))//Если существует такой тип ХУДА
 			return TRUE
 	return FALSE
 
@@ -35,7 +35,7 @@
 
 /mob/living/silicon/robot/create_HUD() //EKUDZA HAS HERE
 //	var/mob/living/silicon/robot/H = src
-//	var/datum/hud/cyborg/HUDdatum = global.HUDdatums[H.defaultHUD]
+//	var/datum/hud/cyborg/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 
 	create_HUDneed()
 	create_HUDinventory()
@@ -51,7 +51,7 @@
 
 /mob/living/silicon/robot/create_HUDinventory()
 	var/mob/living/silicon/robot/H = src
-	var/datum/hud/cyborg/HUDdatum = global.HUDdatums[H.defaultHUD]
+	var/datum/hud/cyborg/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 	for (var/HUDname in HUDdatum.slot_data)
 		var/HUDtype
 		HUDtype = HUDdatum.slot_data[HUDname]["type"]
@@ -69,7 +69,7 @@
 
 /mob/living/silicon/robot/create_HUDneed()
 	var/mob/living/silicon/robot/H = src
-	var/datum/hud/cyborg/HUDdatum = global.HUDdatums[H.defaultHUD]
+	var/datum/hud/cyborg/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 	for (var/HUDname in HUDdatum.HUDneed)
 		var/HUDtype = HUDdatum.HUDneed[HUDname]["type"]
 //		var/obj/screen/HUD = new HUDtype(HUDname, HUDdatum.HUDneed[HUDname]["loc"], H)
@@ -94,7 +94,7 @@
 
 /mob/living/silicon/robot/create_HUDfrippery()
 	var/mob/living/silicon/robot/H = src
-	var/datum/hud/cyborg/HUDdatum = global.HUDdatums[H.defaultHUD]
+	var/datum/hud/cyborg/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 	//Добавляем Элементы ХУДа (украшения)
 	for (var/list/whistle in HUDdatum.HUDfrippery)
 		var/obj/screen/frippery/F = new (whistle["icon_state"],whistle["loc"], whistle["dir"],H)
@@ -106,7 +106,7 @@
 
 /mob/living/silicon/robot/create_HUDtech()
 	var/mob/living/silicon/robot/H = src
-	var/datum/hud/cyborg/HUDdatum = global.HUDdatums[H.defaultHUD]
+	var/datum/hud/cyborg/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 	//Добавляем технические элементы(damage,flash,pain... оверлеи)
 	for (var/techobject in HUDdatum.HUDoverlays)
 		var/HUDtype = HUDdatum.HUDoverlays[techobject]["type"]
@@ -170,11 +170,13 @@
 		//Unfortunately adding the emag module to the list of modules has to be here. This is because a borg can
 		//be emagged before they actually select a module. - or some situation can cause them to get a new module
 		// - or some situation might cause them to get de-emagged or something.
-		if(r.emagged)
+		if(r.HasTrait(CYBORG_TRAIT_EMAGGED))
 			if(!(r.module.emag in r.module.modules))
+				to_chat(src, SPAN_DANGER("More modules unlocked!"))
 				r.module.modules.Add(r.module.emag)
 		else
 			if(r.module.emag in r.module.modules)
+				to_chat(src, SPAN_DANGER("Some modules have been locked!"))
 				r.module.modules.Remove(r.module.emag)
 
 		for(var/atom/movable/A in r.module.modules)

@@ -3,7 +3,7 @@
 	desc = "A thick airtight helmet designed for planetside warfare retrofitted with seals to act like normal space suit helmet."
 	icon_state = "scaf"
 	item_state = "scaf"
-	armor = list(
+	armor_list = list(
 		melee = 60,
 		bullet = 55,
 		energy = 50,
@@ -15,6 +15,31 @@
 	species_restricted = list("Human")
 	camera_networks = list(NETWORK_MERCENARY)
 	light_overlay = "helmet_light_green"
+	obscuration = MEDIUM_OBSCURATION
+	max_upgrades = 0
+
+/obj/item/clothing/head/helmet/space/void/SCAF/verb/toggle_style()
+	set name = "Adjust Helmet Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard"] = "scaf"
+	options["Cat eared"] = "skat"
+
+	var/choice = input(M,"What kind of helmet style do you want to switch to?","Adjust style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's appearance into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/space/void/SCAF
 	name = "SCAF suit"
@@ -23,7 +48,7 @@
 	item_state = "scaf"
 	slowdown = 1.3
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
-	armor = list(
+	armor_list = list(
 		melee = 60,
 		bullet = 55,
 		energy = 50,
@@ -34,6 +59,44 @@
 	siemens_coefficient = 0.35
 	species_restricted = list("Human")
 	helmet = /obj/item/clothing/head/helmet/space/void/SCAF
+	price_tag = 950
+	stiffness = MEDIUM_STIFFNESS
+	max_upgrades = 0
+
+/obj/item/clothing/suit/space/void/SCAF/voidwolf
+	name = "REAVER-SCAF suit"
+	desc = "A bulky antique suit of refurbished infantry armour, retrofitted with seals and coatings to make it EVA capable but also reducing mobility. This one has a void wolf paint job with intimidating red colors."
+	icon_state = "scaf_wolf"
+	item_state = "scaf_wolf"
+	helmet = /obj/item/clothing/head/helmet/space/void/SCAF/voidwolf
+
+/obj/item/clothing/head/helmet/space/void/SCAF/voidwolf
+	name = "REAVER-SCAF helmet"
+	desc = "A thick airtight helmet designed for planetside warfare retrofitted with seals to act like normal space suit helmet. This one has a void wolf paint job with intimidating red colors."
+	icon_state = "scaf_wolf"
+	item_state = "scaf_wolf"
+
+/obj/item/clothing/head/helmet/space/void/SCAF/voidwolf/toggle_style()
+	set name = "Adjust Helmet Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard"] = "scaf_wolf"
+
+	var/choice = input(M,"What kind of helmet style do you want to switch to?","Adjust style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's appearance into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/space/void/SCAF/blackshield
 	name = "blackshield SCAF helmet"
@@ -42,6 +105,29 @@
 	item_state = "scaf_mil"
 	camera_networks = list(NETWORK_SECURITY)
 	light_overlay = "helmet_light_white"
+
+/obj/item/clothing/head/helmet/space/void/SCAF/blackshield/toggle_style()
+	set name = "Adjust Helmet Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard"] = "scaf_mil"
+	options["Cat eared"] = "skat_mil"
+
+	var/choice = input(M,"What kind of helmet style do you want to switch to?","Adjust style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's appearance into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/space/void/SCAF/blackshield
 	name = "blackshield SCAF suit"
@@ -56,7 +142,7 @@
 	desc = "An advanced helmet designed for work in special operations. This version is additionally reinforced against melee attacks."
 	icon_state = "syndiehelm"
 	item_state = "syndiehelm"
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 40,
 		energy = 30,
@@ -68,6 +154,7 @@
 	species_restricted = list("Human")
 	camera_networks = list(NETWORK_MERCENARY)
 	light_overlay = "helmet_light_ihs"
+	obscuration = 0
 
 /obj/item/clothing/head/helmet/space/void/merc/update_icon()
 	..()
@@ -82,7 +169,7 @@
 	name = "blood-red voidsuit"
 	desc = "An advanced suit that protects against injuries during special operations. This version is additionally reinforced against melee attacks."
 	item_state = "syndie_voidsuit"
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 40,
 		energy = 30,
@@ -93,13 +180,14 @@
 	siemens_coefficient = 0.35
 	species_restricted = list("Human")
 	helmet = /obj/item/clothing/head/helmet/space/void/merc
+	stiffness = MEDIUM_STIFFNESS
 
 /obj/item/clothing/suit/space/void/merc/equipped
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/oxygen
+	tank = /obj/item/tank/oxygen
 
 /obj/item/clothing/suit/space/void/merc/boxed
-	tank = /obj/item/weapon/tank/emergency_oxygen/double
+	tank = /obj/item/tank/emergency_oxygen/double
 
 /obj/item/clothing/head/helmet/space/void/merc/xanorath
 	name = "xanorath voidsuit helmet"
@@ -111,52 +199,13 @@
 	helmet = /obj/item/clothing/head/helmet/space/void/merc/xanorath
 	price_tag = 650
 
-
-//Church Crusader armor, credit to Valterak for the original sprite.
-/obj/item/clothing/head/helmet/space/void/crusader
-	name = "crusader hood"
-	desc = "An armored helmet with a built in light system allowing you to shine heavens grace on heretics before you purge them."
-	icon_state = "inqarmor_hood"
-	item_state = "inqarmor_hood"
-	armor = list(
-		melee = 75,
-		bullet = 75,
-		energy = 75,
-		bomb = 90,
-		bio = 100,
-		rad = 100
-	)
-	siemens_coefficient = 0
-	species_restricted = list("Human")
-	light_overlay = "helmet_light_white"
-	brightness_on = 10 //luminosity when on
-
-/obj/item/clothing/suit/space/void/crusader
-	name = "crusader 'Deus Vult' power armor"
-	desc = "The church of absolutes most powerful creation, the Mark I 'Deus Vult' power armor, a void capable ablative durasteel-forged suit with built in power systems linked to a wearers cruciform, recharged by its presence to prevent slow down from the armors weight. The only thing they fear is you."
-	icon_state = "inqarmor"
-	item_state = "inqarmor"
-	slowdown = 0
-	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
-	armor = list(
-		melee = 75,
-		bullet = 75,
-		energy = 75,
-		bomb = 90,
-		bio = 100,
-		rad = 100
-	)
-	siemens_coefficient = 0
-	species_restricted = list("Human")
-	helmet = /obj/item/clothing/head/helmet/space/void/crusader
-
 /obj/item/clothing/head/helmet/space/void/peking
 	name = "peking void-hat"
 	desc = "A strange albiet intriguing mask and hat design. The creases at its neck are visible but the field cover appears to be attached to the air-tight mask itself. \
 	It might be air-tight and fitted for space but god knows how well it actually protects the wearer.."
 	icon_state = "peking"
 	item_state = "peking"
-	armor = list(
+	armor_list = list(
 		melee = 45,
 		bullet = 40,
 		energy = 40,
@@ -177,7 +226,7 @@
 	item_state = "peking"
 	slowdown = 0.35
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
-	armor = list(
+	armor_list = list(
 		melee = 55,
 		bullet = 45,
 		energy = 40,
@@ -194,8 +243,8 @@
 	desc = "An advanced helmet designed specifically to shrug off blunt force blows, blades and even conventional projectiles with its domed armor design."
 	icon_state = "ronin"
 	item_state = "ronin"
-	armor = list(
-		melee = 76,
+	armor_list = list(
+		melee = 66,
 		bullet = 60,
 		energy = 45,
 		bomb = 45,
@@ -206,6 +255,7 @@
 	species_restricted = list("Human")
 	camera_networks = list(NETWORK_MERCENARY)
 	light_overlay = "helmet_light_ihs"
+	max_upgrades = 0
 
 /obj/item/clothing/suit/space/void/ronin
 	name = "\"Ronin\" heavy voidsuit"
@@ -216,8 +266,8 @@
 	item_state = "ronin"
 	slowdown = 0.45
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL|HIDESHOES
-	armor = list(
-		melee = 76,
+	armor_list = list(
+		melee = 66,
 		bullet = 60,
 		energy = 45,
 		bomb = 45,
@@ -227,10 +277,11 @@
 	siemens_coefficient = 0.35
 	species_restricted = list("Human")
 	helmet = /obj/item/clothing/head/helmet/space/void/ronin
+	max_upgrades = 0
 
 /obj/item/clothing/suit/space/void/ronin/equipped
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/oxygen
+	tank = /obj/item/tank/oxygen
 
 /obj/item/clothing/suit/space/void/ronin/boxed
-	tank = /obj/item/weapon/tank/emergency_oxygen/double
+	tank = /obj/item/tank/emergency_oxygen/double

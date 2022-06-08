@@ -12,18 +12,24 @@
 	src.icon_state = recipe.icon_state
 	update()
 
+/obj/item/craft/Destroy()
+
+	for (var/datum/craft_step/step in recipe.steps)
+		for (var/obj/item/craft/build_target in step.craft_items)
+			if (build_target == src)
+				step.craft_items.Remove(build_target)
+
+	. = ..()
 
 /obj/item/craft/proc/update()
-	desc = recipe.get_description(step)
-
+	desc = recipe.get_description(step-1, src)
 
 /obj/item/craft/proc/continue_crafting(obj/item/I, mob/living/user)
-	if (user && istype(loc, /turf))
+	if(user && istype(loc, /turf))
 		user.face_atom(src) //Look at what you're doing please
 
-	if(recipe.try_step(step+1, I, user, src)) //First step is
-		++step
-		if(recipe.is_compelete(step+1))
+	if(recipe.try_step(step, I, user, src)) //First step is
+		if(recipe.is_compelete(step))
 			recipe.spawn_result(src, user)
 		else
 			update()

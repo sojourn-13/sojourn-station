@@ -112,7 +112,7 @@
 	var/list/sig_types = islist(sig_type_or_types) ? sig_type_or_types : list(sig_type_or_types)
 	for(var/sig_type in sig_types)
 		if(!override && procs[target][sig_type])
-			crash_with("[sig_type] overridden. Use override = TRUE to suppress this warning")
+			CRASH("[sig_type] overridden. Use override = TRUE to suppress this warning")
 
 		procs[target][sig_type] = proc_or_callback
 
@@ -139,12 +139,12 @@
 			if(2)
 				lookup[sig] = (lookup[sig]-src)[1]
 			if(1)
-				crash_with("[target] ([target.type]) somehow has single length list inside comp_lookup")
 				if(src in lookup[sig])
 					lookup -= sig
 					if(!length(lookup))
 						target.comp_lookup = null
 						break
+				CRASH("[target] ([target.type]) somehow has single length list inside comp_lookup")
 			if(0)
 				lookup -= sig
 				if(!length(lookup))
@@ -164,7 +164,8 @@
 	return
 
 /datum/component/proc/PostTransfer()
-	return COMPONENT_INCOMPATIBLE //Do not support transfer by default as you must properly support it
+	return COMPONENT_NOTRANSFER
+	//Do not support transfer by default as you must properly support it
 
 /datum/component/proc/_GetInverseTypeList(our_type = type)
 	//we can do this one simple trick
@@ -293,7 +294,7 @@
 	target.parent = src
 	var/result = target.PostTransfer()
 	switch(result)
-		if(COMPONENT_INCOMPATIBLE)
+		if(COMPONENT_NOTRANSFER)
 			var/c_type = target.type
 			qdel(target)
 			CRASH("Incompatible [c_type] transfer attempt to a [type]!")

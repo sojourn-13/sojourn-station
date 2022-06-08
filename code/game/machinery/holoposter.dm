@@ -6,7 +6,7 @@
 	anchored = 1
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 80
-	power_channel = ENVIRON
+	power_channel = STATIC_ENVIRON
 	var/icon_forced = FALSE
 	var/seclevel = ""
 	var/last_launch = 0
@@ -31,7 +31,7 @@
 		icon_state = "glitch"
 		new_color = COLOR_LIGHTING_SCI_BRIGHT
 	else
-		var/decl/security_state/security_state = decls_repository.get_decl(maps_data.security_state)
+		var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
 		if(security_state.current_security_level_is_same_or_higher_than(security_state.high_security_level))
 			icon_state = "attention"
 			new_color =  "#AA7039"
@@ -48,7 +48,7 @@
 	src.add_fingerprint(user)
 	if(stat & (NOPOWER))
 		return
-	if (istype(W, /obj/item/weapon/tool/multitool))
+	if (istype(W, /obj/item/tool/multitool))
 		playsound(user.loc, 'sound/items/multitool_pulse.ogg', 60, 1)
 		icon_state = input("Available Posters", "Holographic Poster") as null|anything in  postertypes + "random"
 		if(icon_state == "random")

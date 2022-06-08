@@ -1,6 +1,6 @@
 /datum/technology/binary_encryption_key
 	name = "Binary Encrpytion Key"
-	desc = "Encrpytion Key that allow to receive binary communication (This type of communication using by AI and cyborgs)."
+	desc = "Encrpytion Key that allows to receive and decrypt binary channel communication (The type of communication using by AI and cyborgs)."
 	tech_type = RESEARCH_ILLEGAL
 
 	x = 0.1
@@ -9,7 +9,7 @@
 
 	required_technologies = list()
 	required_tech_levels = list(RESEARCH_BLUESPACE = 5)
-	cost = 2000
+	cost = 1500
 
 	unlocks_designs = list(/datum/design/research/item/binaryencrypt)
 
@@ -24,14 +24,14 @@
 
 	required_technologies = list()
 	required_tech_levels = list(RESEARCH_BIOTECH = 3, RESEARCH_ENGINEERING = 5, RESEARCH_ILLEGAL = 2) //Got to get 2 others
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(/datum/design/research/item/cleaner)
 
 
 /datum/technology/night_sight
 	name = "Vision Augmentation" //Undark was a better name
-	desc = "A better look into the shadows that hunt the station, allows for the manufacturing of night vision goggles and RIG night vison huds "
+	desc = "A better look into the shadows that haunt the colony, allows for the manufacturing of night vision goggles and RIG night vision huds."
 	tech_type = RESEARCH_ILLEGAL
 
 	x = 0.1
@@ -40,7 +40,7 @@
 
 	required_technologies = list(/datum/technology/binary_encryption_key)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 5)
-	cost = 2500
+	cost = 1875
 
 	unlocks_designs = list(/datum/design/research/item/night_goggles,
 							/datum/design/research/item/rig_nvgoggles,
@@ -49,7 +49,7 @@
 
 /datum/technology/thermal_sight
 	name = "Thermal Augmentation"
-	desc = "A better look into the thermal imprint of living beings, allows for the manufacturing of thermal vision goggles and RIG thermal vison huds "
+	desc = "A better look into the thermal imprint of living beings, allows for the manufacturing of thermal vision goggles and RIG thermal vision huds."
 	tech_type = RESEARCH_ILLEGAL
 
 	x = 0.3
@@ -58,7 +58,7 @@
 
 	required_technologies = list(/datum/technology/night_sight)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 20)
-	cost = 2500
+	cost = 1875
 
 	unlocks_designs = list(/datum/design/research/item/thermal_goggles,
 							/datum/design/research/item/rig_thermalgoggles,
@@ -76,13 +76,13 @@
 
 	required_technologies = list(/datum/technology/binary_encryption_key)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 10)
-	cost = 3000
+	cost = 2250
 
 	unlocks_designs = list(/datum/design/research/item/chameleon_kit)
 
 /datum/technology/freedom_implant
 	name = "Glass Case- 'Freedom'"
-	desc = "Freedom' implant releases EM impulse in the owner body, that destroy all implants of slaving in, breaking chains."
+	desc = "Freedom' implant releases EM impulse in the owner's body, that destroy all implants of slaving in, breaking chains."
 	tech_type = RESEARCH_ILLEGAL
 
 	x = 0.5
@@ -91,9 +91,27 @@
 
 	required_technologies = list(/datum/technology/chameleon_kit)
 	required_tech_levels = list(RESEARCH_BIOTECH = 5)
-	cost = 3000
+	cost = 2250
 
 	unlocks_designs = list(/datum/design/research/item/implant/freedom)
+
+/datum/technology/mind_biotech
+	name = "Mind Biotech"
+	desc = "Experimental biotechnology that explores the inner workings of sentient minds."
+	tech_type = RESEARCH_ILLEGAL
+
+	x = 0.5
+	y = 0.7
+	icon = "mindswapper"
+
+	required_technologies = list(/datum/technology/top_biotech,
+								 /datum/technology/freedom_implant)
+
+	required_tech_levels = list()
+	cost = 3000
+
+	unlocks_designs = list(	/datum/design/research/circuit/mindswapper)
+
 
 /datum/technology/tyrant_aimodule
 	name = "AI Core Module (T.Y.R.A.N.T.)"
@@ -103,34 +121,35 @@
 			4. Punish those who challenge authority unless they are more fit to hold that authority."
 	tech_type = RESEARCH_ILLEGAL
 
-	x = 0.7
+	x = 0.9
 	y = 0.5
+
 	icon = "module"
 
-	required_technologies = list(/datum/technology/freedom_implant)
+	required_technologies = list(/datum/technology/borg_syndicate_module)
 	required_tech_levels = list(RESEARCH_ROBOTICS = 5)
-	cost = 3000
+	cost = 2250
 
 	unlocks_designs = list(/datum/design/research/aimodule/core/tyrant)
 
 /datum/technology/borg_syndicate_module
-	name = "Borg Illegal Weapons Upgrade"
-	desc = "Borg Illegal Weapons Upgrade"
+	name = "Borg Overclocking Weapons Upgrade"
+	desc = "Borg Overclocking Weapons Upgrade or addition unregulated tools."
 	tech_type = RESEARCH_ILLEGAL
 
-	x = 0.9
+	x = 0.7
 	y = 0.5
 	icon = "borgmodule"
 
-	required_technologies = list(/datum/technology/tyrant_aimodule)
+	required_technologies = list(/datum/technology/freedom_implant)
 	required_tech_levels = list(RESEARCH_ROBOTICS = 10)
-	cost = 5000
+	cost = 3750
 
 	unlocks_designs = list(/datum/design/research/item/robot_upgrade/syndicate)
 
 /datum/technology/combat_defibs
-	name = "Unregulated Defibulator"
-	desc = "A defibulator that has no safeties and an overclocked set of paddles, making it ideal to pernitrate even armor."
+	name = "Unregulated Defibrillator"
+	desc = "A defibrillator that has no safeties and an overclocked set of paddles, making it ideal to penetrate even armor."
 	tech_type = RESEARCH_ILLEGAL
 
 	x = 0.5
@@ -139,6 +158,6 @@
 
 	required_technologies = list(/datum/technology/freedom_implant)
 	required_tech_levels = list(RESEARCH_BIOTECH = 10)
-	cost = 3000
+	cost = 2250
 
 	unlocks_designs = list(/datum/design/research/item/medical/combat_defibs)

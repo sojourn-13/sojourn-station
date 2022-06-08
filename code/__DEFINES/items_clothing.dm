@@ -212,7 +212,7 @@
 #define INV_W_UNIFORM_DEF_ICON 'icons/inventory/uniform/mob.dmi'
 #define INV_ACCESSORIES_DEF_ICON 'icons/inventory/accessory/mob.dmi'
 #define INV_SUIT_DEF_ICON 'icons/inventory/suit/mob.dmi'
-#define INV_BELT_DEF_ICON 'icons/invenstory/belt/mob.dmi'
+#define INV_BELT_DEF_ICON 'icons/inventory/belt/mob.dmi'
 
 //Defines for loot stashes
 #define DIRECTION_COORDS 	1
@@ -224,3 +224,19 @@
 #define STORY_CRIME	"Crime"
 #define STORY_MUTINY "Mutiny"
 #define STORY_MALFUNCTION "Malfunction"
+
+//Recoil for suits
+#define LIGHT_STIFFNESS 0.5
+#define MEDIUM_STIFFNESS 1
+#define HEAVY_STIFFNESS 1.5
+
+//Slowdown for suits - unused but eris put it here
+#define LIGHT_SLOWDOWN 0.1
+#define MEDIUM_SLOWDOWN 0.2
+#define HEAVY_SLOWDOWN 1
+
+//Offset for helmets
+#define LIGHT_OBSCURATION 2
+#define MEDIUM_OBSCURATION 3
+#define HEAVY_OBSCURATION 5
+

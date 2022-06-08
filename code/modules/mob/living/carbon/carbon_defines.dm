@@ -5,7 +5,6 @@
 	var/species_aan = ""
 	var/species_color_key = "#000000"
 	var/species_name = "Carbon Lifeform"
-	var/list/stomach_contents = list()
 	var/list/datum/disease2/disease/virus2 = list()
 	var/list/antibodies = list()
 
@@ -19,6 +18,11 @@
 	//Active emote/pose
 	var/pose = null
 
+	//Values from all base organs should add up to this
+	var/total_blood_req = 40
+	var/total_oxygen_req = 50
+	var/total_nutriment_req = DEFAULT_HUNGER_FACTOR
+
 	var/datum/reagents/metabolism/bloodstr = null
 	var/datum/reagents/metabolism/ingested = null
 	var/datum/reagents/metabolism/touching = null
@@ -31,11 +35,11 @@
 	var/cpr_time = 1.0
 	nutrition = 400.0//Carbon
 
-	var/is_watching = TRUE  //used for remote viewing of multiz structures
-
 	var/flesh_color = "#A10808"
 
-	var/obj/item/weapon/tank/internal = null//Human/Monkey
+	var/obj/item/tank/internal = null//Human/Monkey
+	colony_friend = TRUE //For mobs to make sure if they are also friendly dont attack humans
+	friendly_to_colony = TRUE //So we dont attack monkeys/BST/People if we allied
 
 	//TODO: move to brain
 

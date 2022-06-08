@@ -55,6 +55,12 @@ obj/item/clothing/under/costume/history/pirate
 	icon_state = "jester2"
 	item_state = "jester2"
 
+/obj/item/clothing/under/costume/maid
+	name = "maid dress"
+	desc = "A neat and orderly maid dress, for when you plan to actually clean."
+	icon_state = "janimaid"
+	item_state = "janimaid"
+
 /*Kinky*/
 
 /obj/item/clothing/under/costume/kinky/latex_maid
@@ -62,6 +68,33 @@ obj/item/clothing/under/costume/history/pirate
 	desc = "A shiny and squeaky outfit for cleaning and other matters."
 	icon_state = "latexmaid"
 	item_state = "latexmaid"
+
+/obj/item/clothing/under/costume/kinky/latex_maid/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Default Maid"] = "latexmaid"
+	options["Alt Maid"] = "maid_alt" //Sprite by Tori
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your clothing into [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/under/costume/kinky/leather
 	name = "leather gear"
@@ -85,11 +118,13 @@ obj/item/clothing/under/costume/history/pirate
 
 /obj/item/clothing/under/costume/kinky/stripper_pink
 	name = "pink stripper outfit"
+	desc = "You already know what this is."
 	icon_state = "stripper_p"
 	item_state = "stripper_p"
 
 /obj/item/clothing/under/costume/kinky/stripper_green
 	name = "green stripper outfit"
+	desc = "You already know what this is."
 	icon_state = "stripper_g"
 	item_state = "stripper_g"
 
@@ -133,6 +168,17 @@ obj/item/clothing/under/costume/history/pirate
 	icon_state = "clown"
 	item_state = "clown"
 
+/obj/item/clothing/under/gnome
+	name = "gnome outfit"
+	desc = "Against the gnome there is no reception, if there is no other gnomes."
+	icon_state = "gnome"
+	item_state = "gnome"
+
+/obj/item/clothing/under/gnome/fat
+	name = "fat gnome outfit"
+	icon_state = "gnome_suit_fat"
+	item_state = "gnome_suit_fat"
+
 /obj/item/clothing/under/costume/job/clown/orange
 	name = "orange clown suit"
 	desc = "A colorful and comedic outfit perfect for some clowning around."
@@ -168,6 +214,35 @@ obj/item/clothing/under/costume/history/pirate
 	desc = "The outfit of a mime. It's not very colorful."
 	icon_state = "mime"
 	item_state = "ba_suit"
+
+/obj/item/clothing/under/costume/job/mime/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["mime default"] = "mime"
+	options["mime default down"] = "mime_d"
+	options["mime skirt"] = "mime_skirt"
+	options["mime skirt down"] = "mime_skirt_d"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/under/costume/job/nurse
 	name = "nurse dress"
@@ -275,3 +350,10 @@ obj/item/clothing/under/costume/history/pirate
 	desc = "A suit resembling the body of some strange creature."
 	icon_state = "gondola"
 	item_state = "gondola"
+
+/obj/item/clothing/under/costume/misc/hunterformal
+	name = "Hunting Lodge Formal Attire"
+	desc = "A fancier piece of clothing for when members of the Hunter's Lodge needs to dress up. \
+			It consists of a red overshirt, silver shoulder pads, golden buttons, and a black cummerbund and trousers."
+	icon_state = "hunter_formal"
+	item_state = "hunter_formal"

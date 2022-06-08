@@ -109,7 +109,7 @@
 	var/datum/gas_mixture/int_air = return_air()
 	var/datum/gas_mixture/env_air = loc.return_air()
 	if ((int_air.return_pressure()-env_air.return_pressure()) > 2*ONE_ATMOSPHERE)
-		to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], it too exerted due to internal pressure."))
+		to_chat(user, SPAN_WARNING("You cannot unfasten \the [src], it is under too much pressure."))
 		add_fingerprint(user)
 		return 1
 	to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))

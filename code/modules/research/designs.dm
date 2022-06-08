@@ -32,5 +32,16 @@ other types of metals and chemistry for reagents).
 /datum/design/research/item/mechfab
 	build_type = MECHFAB
 
-/datum/design/research/item/hud
-	name_category = "HUD glasses" //?
+/datum/design/research/item/clothing
+	category = CAT_CLOTHING
+
+/datum/design/research/item/tool
+	category = CAT_TOOLS
+
+/datum/design/research/item/part
+	build_type = AUTOLATHE | PROTOLATHE
+	category = CAT_STOCKPARTS
+
+/datum/design/research/item/part/AssembleDesignDesc()
+	if(!desc)
+		desc = "A stock part used in the construction of various devices."

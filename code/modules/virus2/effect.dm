@@ -166,18 +166,19 @@
 		if(ishuman(mob))
 			var/mob/living/carbon/human/H = mob
 			for (var/obj/item/organ/external/E in H.organs)
-				if (E.status & ORGAN_BROKEN && prob(30))
+				if (E.status & ORGAN_BROKEN && prob(15))
 					E.mend_fracture()
-		var/heal_amt = -5*multiplier
-		mob.apply_damages(heal_amt,heal_amt,heal_amt,heal_amt)
+		var/heal_amt = 3*multiplier
+		mob.heal_overall_damage(heal_amt,heal_amt,heal_amt,heal_amt)
 
 	deactivate(var/mob/living/carbon/mob,var/multiplier)
 		if(ishuman(mob))
 			var/mob/living/carbon/human/H = mob
 			to_chat(H, SPAN_NOTICE("You suddenly feel hurt and old..."))
-			H.age += 8
-		var/backlash_amt = 5*multiplier
+			//H.age += 8 we dont use that kinda system of age here
+		var/backlash_amt = 3*multiplier
 		mob.apply_damages(backlash_amt,backlash_amt,backlash_amt,backlash_amt)
+
 
 /datum/disease2/effect/bones
 	name = "Fragile Bones Syndrome"
@@ -280,7 +281,7 @@
 			data = pick("bicaridine", "kelotane", "anti_toxin", "inaprovaline", "space_drugs", "sugar",
 						"tramadol", "dexalin", "cryptobiolin", "impedrezene", "hyperzine", "ethylredoxrazine",
 						"mindbreaker", "glucose")
-		var/datum/reagent/R = chemical_reagents_list[data]
+		var/datum/reagent/R = GLOB.chemical_reagents_list[data]
 		name = "[initial(name)] ([initial(R.name)])"
 
 	activate(var/mob/living/carbon/mob,var/multiplier)

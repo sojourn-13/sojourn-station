@@ -4,7 +4,8 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	title = "Premier"
 	flag = PREMIER
 	department = DEPARTMENT_COMMAND
-	head_position = 1
+	head_position = TRUE
+	aster_guild_member = TRUE
 	department_flag = COMMAND
 	faction = MAP_FACTION
 	total_positions = 1
@@ -13,9 +14,8 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	difficulty = "Very Hard."
 	selection_color = "#ccccff"
 	req_admin_notify = 1
-	wage = WAGE_NONE //The captain doesn't get paid, he's the one who does the paying
-	//The colony account is his, and he's free to draw as much salary as he likes
-
+	playtimerequired = 2500
+	wage = WAGE_COMMAND
 
 	ideal_character_age = 50 // Old geezer captains ftw
 	minimum_character_age = 35
@@ -68,7 +68,8 @@ Treat your command officers with respect, and listen to their council. Try not t
 	title = "Steward"
 	flag = STEWARD
 	department = DEPARTMENT_COMMAND
-	head_position = 1
+	head_position = TRUE
+	aster_guild_member = TRUE
 	department_flag = COMMAND
 	faction = MAP_FACTION
 	total_positions = 1
@@ -77,17 +78,18 @@ Treat your command officers with respect, and listen to their council. Try not t
 	difficulty = "Hard."
 	selection_color = "#ddddff"
 	req_admin_notify = 1
+	playtimerequired = 1200
 	wage = WAGE_COMMAND
 	ideal_character_age = 35
 	minimum_character_age = 30
 
 	description = "The Steward is the loyal right-hand of the Premier. Serving as a personal guard, follow him wherever he goes.<br>\
 	Your primary, and perhaps only, responsibility is to ensure the safety of the Premier at all costs - even your own life if necessary.<br>\
-	However, you are an advisor as well as a bodyguard. Discreetly inform him of mistakes. Make sure he follows the law and remains popular.<br>\
+	However, you are an adviser as well as a bodyguard. Discreetly inform him of mistakes. Make sure he follows the law and remains popular.<br>\
 	You may be assigned special tasks by the Premier for whatever reason. Ensure these orders are fulfilled.<br>\
 	Do not embarass him, and especially do not harm his relations with faction leaders. You may not do much talking, but you have great impact."
 
-	duties = "Act as a bodyguard, advisor, and confidant to the Premier.<br>\
+	duties = "Act as a bodyguard, adviser, and confidant to the Premier.<br>\
 	Remain conscious of any potential threats to the safety of the Premier.<br>\
 	Perform tasks as assigned by the Premier - such as filling paperwork or reassigning roles.<br>\
 	Demonstrate true loyalty and do not let your superior down."

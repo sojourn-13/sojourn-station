@@ -34,15 +34,15 @@ obj/machinery/embedded_controller/radio/Destroy()
 	if(!user.IsAdvancedToolUser())
 		return 0
 
-	src.ui_interact(user)
+	src.nano_ui_interact(user)
 
-/obj/machinery/embedded_controller/ui_interact()
+/obj/machinery/embedded_controller/nano_ui_interact()
 	return
 
 /obj/machinery/embedded_controller/radio
 	icon = 'icons/obj/airlock_machines.dmi'
 	icon_state = "airlock_control_standby"
-	power_channel = ENVIRON
+	power_channel = STATIC_ENVIRON
 	density = 0
 
 	var/id_tag

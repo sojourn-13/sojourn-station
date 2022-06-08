@@ -8,7 +8,7 @@
 
 	//~CARN: for renaming mobs (updates their name, real_name, mind.name, their ID/PDA and datacore records).
 	else if(href_list["rename"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_DEBUG|R_ADMIN))
 			return
 
 		var/mob/M = locate(href_list["rename"])
@@ -25,7 +25,7 @@
 		href_list["datumrefresh"] = href_list["rename"]
 
 	else if(href_list["varnameedit"] && href_list["datumedit"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_DEBUG|R_ADMIN))
 			return
 
 		var/D = locate(href_list["datumedit"])
@@ -36,7 +36,7 @@
 		modify_variables(D, href_list["varnameedit"], 1)
 
 	else if(href_list["varnamechange"] && href_list["datumchange"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_DEBUG|R_ADMIN))
 			return
 
 		var/D = locate(href_list["datumchange"])
@@ -47,7 +47,7 @@
 		modify_variables(D, href_list["varnamechange"], 0)
 
 	else if(href_list["varnamemass"] && href_list["datummass"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_ADMIN|R_DEBUG))
 			return
 
 		var/atom/A = locate(href_list["datummass"])
@@ -226,7 +226,7 @@
 			to_chat(usr, "This can only be done to instances of type /datum")
 			return
 
-		src.holder.marked_datum_weak = weakref(D)
+		src.holder.marked_datum_weak = WEAKREF(D)
 		href_list["datumrefresh"] = href_list["mark_object"]
 
 	else if(href_list["perkadd"])
@@ -459,7 +459,7 @@
 
 
 	else if(href_list["saveTemplate"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_DEBUG|R_ADMIN))
 			return
 
 		var/mob/living/carbon/human/H = locate(href_list["saveTemplate"])
@@ -501,9 +501,9 @@
 					contentsList["[itemCount]"] = obj.type
 					//log_debug("logged [itemCount] - [obj.type] to file")
 
-					if(istype(obj, /obj/item/weapon/storage))
+					if(istype(obj, /obj/item/storage))
 						var/storageItemCount = itemCount
-						var/obj/item/weapon/storage/bag = obj
+						var/obj/item/storage/bag = obj
 						for(var/atom/bagObj in bag.contents)
 							itemCount += 1
 							parents["[itemCount]"] = "[storageItemCount]"
@@ -513,9 +513,9 @@
 							descs["[itemCount]"] = bagObj.desc
 							//log_debug("logged [itemCount] - [bagObj.type] to file")
 
-							if(istype(bagObj, /obj/item/weapon/storage))
+							if(istype(bagObj, /obj/item/storage))
 								var/storageItemCount2 = itemCount
-								var/obj/item/weapon/storage/bag2 = bagObj
+								var/obj/item/storage/bag2 = bagObj
 								for(var/atom/bagObj2 in bag2.contents)
 									itemCount += 1
 									parents["[itemCount]"] = "[storageItemCount2]"
@@ -688,6 +688,46 @@
 
 		usr.forceMove(get_turf(A))
 
+	else if (href_list["saveCopy"])
+		if(!check_rights(R_DEBUG|R_ADMIN|R_FUN))
+			return
+
+		var/atom/copy_target = locate(href_list["saveCopy"])
+		if (!istype(copy_target, /atom)) //we NEED to make sure we aren't spawning datums or clients, the consequences if we were could be godawful
+			return
+
+		var/name = stripped_input(usr, "What will the name of this save slot be?") //stripped_input is arbitrary, replace if needed
+		if (name in GLOB.var_copies)
+			to_chat(usr, "<span class='warning'>A save with that name already exists! Try the remove save verb if you really want the name.</span>")
+			return
+		var/stop = FALSE
+		var/list/vars_to_add = list()
+		while(!stop) // this while loop was made out of me, niko, not understanding the optimal implementation of a loop like this, please replace if able
+			var/var_to_copy = input(usr, "What is the exact name of the var you want to copy, case sensitive? Type stop to continue.")
+			if (var_to_copy == "stop")
+				stop = TRUE
+				break
+			if (var_to_copy in GLOB.banned_vars) //prevents any naughty vars from being copied
+				to_chat(usr, "<span class='warning'>You cannot add [var_to_copy] as a copied var! It has been determined to be too dangerous/unstable.</span>")
+				continue
+
+			if (!(var_to_copy in copy_target.vars)) //causes a runtime otherwise
+				to_chat(usr, "<span class='warning'>[var_to_copy] does not exist within [copy_target]!</span>")
+				continue
+
+			if (!(var_to_copy in vars_to_add))
+				vars_to_add[var_to_copy] += copy_target.vars[var_to_copy] //we assign the value of vars[var_to_copy] to our temporary list's key of the same name
+
+		var/typepath = "type" //keys are stored as text, usually, as is the case with most vars
+		if (!vars_to_add[typepath]) //do we have a typepath?
+			vars_to_add["type"] = copy_target.vars["type"] //we add the type now, because otherwise, we wouldn't know what to spawn
+			// You may ask: Why not just forbid admins from assigning their own type? I didnt because it lets admins specify the type of thing they spawn in a roundabout way.
+
+		GLOB.var_copies[name] += vars_to_add //This is where we create the var copy
+
+		to_chat(usr, "<span class='warning'>Copy creation, named [name] successful.</span>")
+		log_and_message_admins("created a new var copy, named [name] and with a var list of [vars_to_add.len] vars.</span>")
+
 	if(href_list["datumrefresh"])
 		var/datum/DAT = locate(href_list["datumrefresh"])
 		if(istype(DAT, /datum) || istype(DAT, /client))
@@ -706,7 +746,7 @@
 
 		if(A.reagents)
 			var/chosen_id
-			var/list/reagent_options = sortList(chemical_reagents_list)
+			var/list/reagent_options = sortList(GLOB.chemical_reagents_list)
 			switch(alert(usr, "Choose a method.", "Add Reagents", "Enter ID", "Choose ID"))
 				if("Enter ID")
 					var/valid_id

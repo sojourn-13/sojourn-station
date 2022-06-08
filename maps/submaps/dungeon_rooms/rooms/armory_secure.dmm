@@ -41,9 +41,6 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
-/obj/machinery/light/built{
-	dir = 4
-	},
 /obj/random/structures/os,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/crawler)

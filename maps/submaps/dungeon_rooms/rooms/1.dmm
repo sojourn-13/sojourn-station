@@ -21,11 +21,6 @@
 /obj/structure/closet/onestar/tier1/mineral,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/crawler)
-"g" = (
-/obj/machinery/light/small,
-/obj/structure/table/onestar,
-/turf/simulated/floor/tiled/derelict/red_white_edges,
-/area/crawler)
 "h" = (
 /obj/random/mob/roomba,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
@@ -58,7 +53,7 @@ c
 c
 c
 c
-g
+T
 a
 "}
 (3,1,1) = {"

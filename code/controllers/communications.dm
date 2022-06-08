@@ -71,7 +71,7 @@ Radio:
 1351 - Science
 1353 - Command
 1355 - Medical
-1357 - Engineering
+1337 - Engineering
 1359 - Security
 1362 - Blackshield
 1363 - Marshalls
@@ -79,6 +79,13 @@ Radio:
 1443 - Confession Intercom
 1347 - Cargo techs
 1349 - Service people
+
+//Plasma tag!
+1549 - Blue Team
+1551 - Red  Team
+1553 - Yellow Team
+1557 - Green Team
+
 
 Devices:
 1451 - tracking implant
@@ -117,13 +124,18 @@ var/const/NT_FREQ = 1364
 var/const/SEC_FREQ = 1359
 var/const/BLS_FREQ = 1362
 var/const/MAR_FREQ = 1363
-var/const/ENG_FREQ = 1357
+var/const/ENG_FREQ = 1337 //very leet
 var/const/MED_FREQ = 1355
 var/const/SCI_FREQ = 1351
 var/const/SRV_FREQ = 1349
 var/const/SUP_FREQ = 1347
 var/const/PRO_FREQ = 1345
 
+//Plasma tag!
+var/const/PT_BT_FREQ =1549
+var/const/PT_RT_FREQ =1551
+var/const/PT_YT_FREQ =1553
+var/const/PT_GT_FREQ =1557
 
 // internal department channels
 var/const/MED_I_FREQ = 1485
@@ -147,6 +159,10 @@ var/list/radiochannels = list(
 	"Medical(I)"	= MED_I_FREQ,
 	"Security(I)"	= SEC_I_FREQ,
 	"Prospector"	= PRO_FREQ,
+	"Plasmatag B"	= PT_BT_FREQ,
+	"Plasmatag R"	= PT_RT_FREQ,
+	"Plasmatag Y"	= PT_YT_FREQ,
+	"Plasmatag G"	= PT_GT_FREQ,
 )
 
 // central command channels, i.e deathsquid
@@ -165,7 +181,7 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, NT_FREQ, PRO_
 	// Antags!
 	if (frequency in ANTAG_FREQS)
 		return "syndradio"
-	// centcomm channels
+	// centcom channels
 	if(frequency in CENT_FREQS)
 		return "centradio"
 	// command channel
@@ -197,6 +213,15 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, NT_FREQ, PRO_
 		return "proradio"
 	if(frequency in DEPT_FREQS)
 		return "deptradio"
+//Plasma tag radio colours are all the same.
+	if(frequency in PT_BT_FREQ)
+		return "syndradio"
+	if(frequency in PT_RT_FREQ)
+		return "syndradio"
+	if(frequency in PT_YT_FREQ)
+		return "syndradio"
+	if(frequency in PT_GT_FREQ)
+		return "syndradio"
 
 	return "radio"
 
@@ -264,7 +289,7 @@ var/const/RADIO_MAGNETS = "radio_magnet"
 	if (!devices_line)
 		devices_line = new
 		devices[filter] = devices_line
-	devices_line+=device
+	devices_line|=device
 //			var/list/obj/devices_line___ = devices[filter_str]
 //			var/l = devices_line___.len
 	//log_admin("DEBUG: devices_line.len=[devices_line.len]")

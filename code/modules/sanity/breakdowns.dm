@@ -342,7 +342,7 @@
 	..()
 
 
-
+/*
 #define OBSESSION_COOLDOWN rand(30 SECONDS, 120 SECONDS)
 
 /datum/breakdown/common/obsession
@@ -369,7 +369,7 @@
 		var/mob/living/carbon/human/H = pick(candidates)
 		candidates.Remove(H)
 		var/list/contents = H.get_contents()
-		target = locate(/obj/item/weapon/oddity) in contents
+		target = locate(/obj/item/oddity) in contents
 		if(!target)
 			target = pick(H.organs - H.organs_by_name[BP_CHEST])
 
@@ -421,7 +421,7 @@
 	for(var/stat in ALL_STATS)
 		holder.owner.stats.removeTempStat(stat, "Obsession")
 	..()
-
+*/
 #define KLEPTOMANIA_COOLDOWN rand(30 SECONDS, 60 SECONDS)
 
 /datum/breakdown/common/kleptomania

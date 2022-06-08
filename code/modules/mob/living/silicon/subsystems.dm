@@ -4,7 +4,9 @@
 		/datum/nano_module/alarm_monitor/all,
 		/datum/nano_module/law_manager,
 		/datum/nano_module/email_client,
-		/datum/nano_module/crew_monitor
+		/datum/nano_module/crew_monitor,
+		/datum/nano_module/chem_catalog,
+		/datum/nano_module/drink_catalog
 	)
 
 /mob/living/silicon/ai/New()
@@ -81,6 +83,16 @@
 	set desc = "Open alerts monitor system"
 	open_subsystem(/datum/nano_module/alarm_monitor/all)
 
+/mob/living/silicon/verb/show_chemicals_mixes()
+	set name = "Show Chem Catalog"
+	set desc = "Open the Chem Catalog"
+	open_subsystem(/datum/nano_module/chem_catalog)
+
+/mob/living/silicon/verb/show_drink_mixes()
+	set name = "Show Drink Catalog"
+	set desc = "Open Neon Cocktails for all your mixing needs."
+	open_subsystem(/datum/nano_module/drink_catalog)
+
 /mob/living/silicon/verb/activate_subsystem()
 	set name = "Subsystems"
 	set desc = "Activates the given subsystem"
@@ -133,6 +145,6 @@
 
 /stat_silicon_subsystem/Click(var/mob/given = usr)
 	if (istype(given))
-		subsystem.ui_interact(given, state = ui_state)
+		subsystem.nano_ui_interact(given, state = ui_state)
 	else
-		subsystem.ui_interact(usr, state = ui_state)
+		subsystem.nano_ui_interact(usr, state = ui_state)

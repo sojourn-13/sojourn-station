@@ -1,6 +1,6 @@
-/obj/item/weapon/gun/projectile/automatic/ostwind
+/obj/item/gun/projectile/automatic/ostwind
 	name = "\"Ostwind\" carbine"
-	desc = "An \"Ostwind\" high-end police-grade assault rifle manufactured by Seinemetall Defense. Primarily used by law enforcement, counter-terror units, and private security. Uses .257 Carbine rounds."
+	desc = "An \"Ostwind\" high-end police-grade assault rifle manufactured by Seinemetall Defense GmbH. Primarily used by law enforcement, counter-terror units, and private security. Uses .257 Carbine rounds."
 	icon = 'icons/obj/guns/projectile/ostwind.dmi'
 	icon_state = "ostwind"
 	item_state = "ostwind"
@@ -9,7 +9,7 @@
 	caliber = CAL_LRIFLE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	auto_eject = 1
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
@@ -20,19 +20,20 @@
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	zoom_factor = 0.4
+	extra_damage_mult_scoped = 0.4
 	penetration_multiplier = 1.2
-	damage_multiplier = 0.9
-	recoil_buildup = 7
-	one_hand_penalty = 15 //automatic rifle level
-	gun_tags = list(GUN_PROJECTILE)
+	damage_multiplier = 1
+	init_recoil = CARBINE_RECOIL(1.1)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 	init_firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
+	serial_type = "SD GmbH"
 
-/obj/item/weapon/gun/projectile/automatic/ostwind/update_icon()
+/obj/item/gun/projectile/automatic/ostwind/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -47,6 +48,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/ostwind/Initialize()
+/obj/item/gun/projectile/automatic/ostwind/Initialize()
 	. = ..()
 	update_icon()

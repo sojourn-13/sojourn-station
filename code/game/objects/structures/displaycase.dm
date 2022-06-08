@@ -3,20 +3,34 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "glassbox1"
 	desc = "A display case for prized possessions. It taunts you to kick it."
-	density = 1
-	anchored = 1
-	unacidable = 1//Dissolving the case would also delete the gun.
+	density = TRUE
+	anchored = TRUE
+	unacidable = TRUE//Dissolving the case would also delete the gun.
 	health = 60
-	var/occupied = 1
-	var/destroyed = 0
+	var/occupied = TRUE
+	var/destroyed = FALSE
+	var/locked = TRUE
+
+/obj/structure/displaycase/examine(mob/user)
+	..()
+	if(occupied)
+		to_chat(user, "<span class='info'>Looks like theirs something inside it.</span>")
+	if(locked)
+		to_chat(user, "<span class='info'>The small wire locks are intact and active.</span>")
+	if(!locked)
+		to_chat(user, "<span class='info'>It seems someone has pulsed and disconencted the wire lock.</span>")
+	if(health >= 60)
+		to_chat(user, "<span class='info'>The case's glass is in perfect health.</span>")
+	if(30 >= health && !destroyed)
+		to_chat(user, "<span class='info'>The protective glass seems like its about to break.</span>")
 
 /obj/structure/displaycase/ex_act(severity)
 	switch(severity)
 		if (1)
-			new /obj/item/weapon/material/shard( src.loc )
+			new /obj/item/material/shard( src.loc )
 			if (occupied)
-				new /obj/item/weapon/gun/energy/captain( src.loc )
-				occupied = 0
+				new /obj/item/gun/energy/captain( src.loc )
+				occupied = FALSE
 			qdel(src)
 		if (2)
 			if (prob(50))
@@ -37,9 +51,10 @@
 /obj/structure/displaycase/healthCheck()
 	if (src.health <= 0)
 		if (!( src.destroyed ))
-			src.density = 0
-			src.destroyed = 1
-			new /obj/item/weapon/material/shard( src.loc )
+			src.density = FALSE
+			src.destroyed = TRUE
+			src.locked = FALSE
+			new /obj/item/material/shard( src.loc )
 			playsound(src, "shatter", 70, 1)
 			update_icon()
 	else
@@ -54,7 +69,53 @@
 	return
 
 
-/obj/structure/displaycase/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/displaycase/attackby(obj/item/W as obj, mob/user as mob)
+	if(QUALITY_PULSING in W.tool_qualities)
+		if (!locked)
+			to_chat(user, SPAN_WARNING("The case is already unlocked!"))
+		if (locked)
+			user.visible_message(
+			SPAN_DANGER("[user] starts to carefully unlock \the [src]."),
+			SPAN_DANGER("You begin to unlock disarm \the [src].")
+			)
+		if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_NORMAL,  required_stat = STAT_COG))
+			user.visible_message(
+				SPAN_DANGER("[user] has unlocked \the [src]."),
+				SPAN_DANGER("You have unlocked \the [src]!")
+				)
+			locked = FALSE
+			src.add_fingerprint(user)
+			update_icon()
+		return
+	if(QUALITY_SCREW_DRIVING in W.tool_qualities)
+		if (locked)
+			to_chat(user, SPAN_WARNING("The case is already locked!"))
+		if (!locked)
+			user.visible_message(
+			SPAN_DANGER("[user] starts to carefully lock \the [src]."),
+			SPAN_DANGER("You begin to lock disarm \the [src].")
+			)
+		if(W.use_tool(user, src, WORKTIME_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_ZERO,  required_stat = STAT_COG))
+			user.visible_message(
+				SPAN_DANGER("[user] has locked \the [src]."),
+				SPAN_DANGER("You have locked \the [src]!")
+				)
+			locked = TRUE
+			src.add_fingerprint(user)
+			update_icon()
+		return
+	if(istype(W, /obj/item/gun/energy/captain))
+		if(locked)
+			if(occupied)
+				to_chat(user, SPAN_WARNING("There is already \a gun inside \the [src]."))
+			else if(user.unEquip(W))
+				W.forceMove(src)
+				occupied = W
+				to_chat(user, SPAN_NOTICE("You place \the gun into \the [src]."))
+				update_icon()
+				src.add_fingerprint(user)
+			return
+
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	src.health -= W.force
 	src.healthCheck()
@@ -63,9 +124,16 @@
 
 /obj/structure/displaycase/attack_hand(mob/user as mob)
 	if (src.destroyed && src.occupied)
-		new /obj/item/weapon/gun/energy/captain( src.loc )
+		new /obj/item/gun/energy/captain( src.loc )
 		to_chat(user, SPAN_NOTICE("You deactivate the hover field built into the case."))
-		src.occupied = 0
+		src.occupied = FALSE
+		src.add_fingerprint(user)
+		update_icon()
+		return
+	if (src.occupied && !src.locked)
+		new /obj/item/gun/energy/captain( src.loc )
+		to_chat(user, SPAN_NOTICE("You deactivate the hover field built into the case."))
+		src.occupied = FALSE
 		src.add_fingerprint(user)
 		update_icon()
 		return

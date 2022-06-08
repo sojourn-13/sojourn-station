@@ -7,15 +7,18 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 /mob/living/simple_animal/hostile
 	faction = "hostile"
 	var/stance = HOSTILE_STANCE_IDLE	//Used to determine behavior
-	var/mob/living/target_mob
-	var/attack_same = 0
-	var/ranged = 0
-	var/rapid = 0
+	var/datum/weakref/target_mob
+
+	var/attack_same = FALSE
+
+	var/ranged = FALSE
+	var/rapid = FALSE
 	var/projectiletype
 	var/projectilesound
 	var/casingtype
-	var/ranged_cooldown = 0 //What the current cooldown on ranged attacks is, generally world.time + ranged_cooldown_time
+
 	var/list/friends = list()
+
 	var/break_stuff_probability = 100
 	var/ranged_ignores_vision
 	stop_automated_movement_when_pulled = 0
@@ -24,11 +27,19 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	a_intent = I_HURT
 	can_burrow = FALSE
 	hunger_enabled = 0//Until automated eating mechanics are enabled, disable hunger for hostile mobs
+
 	var/minimum_distance = 1 //Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles
 	var/atom/targets_from = null //all range/attack/etc. calculations should be done from this atom, defaults to the mob itself, useful for Vehicles and such
+
 	var/vision_range = 9 //How big of an area to search for targets in, a vision of 9 attempts to find targets as soon as they walk into screen view
 	var/aggro_vision_range = 9 //If a mob is aggro, we search in this radius. Defaults to 9 to keep in line with original simple mob aggro radius
 	var/approaching_target = FALSE //We should dodge now
+
+/mob/living/simple_animal/hostile/Destroy()
+	target_mob = null
+
+	. = ..()
+
 
 /mob/living/simple_animal/hostile/proc/FindTarget()
 	var/atom/T = null
@@ -47,29 +58,35 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			var/mob/living/L = A
 			if(L.faction == src.faction && !attack_same)
 				continue
+			if(L.colony_friend && src.colony_friend)
+				continue
 			else if(L in friends)
 				continue
+			else if(L.target_dummy) //So we target these over normal lists
+				if(!SA_attackable(L))
+					stance = HOSTILE_STANCE_ATTACK
+					T = L
 			else
 				if(!SA_attackable(L))
 					stance = HOSTILE_STANCE_ATTACK
 					T = L
 					break
 
-		else if(istype(A, /obj/mecha)) // Our line of sight stuff was already done in ListTargets().
+		else if(istype(A, /obj/mecha) && !friendly_to_colony) // Our line of sight stuff was already done in ListTargets().
 			var/obj/mecha/M = A
 			if (M.occupant)
 				stance = HOSTILE_STANCE_ATTACK
 				T = M
 				break
 
-		if(istype(A, /obj/machinery/bot))
+		if(istype(A, /obj/machinery/bot) && !friendly_to_colony)
 			var/obj/machinery/bot/B = A
 			if (B.health > 0)
 				stance = HOSTILE_STANCE_ATTACK
 				T = B
 				break
 
-		if(istype(A, /obj/machinery/porta_turret))
+		if(istype(A, /obj/machinery/porta_turret) && !friendly_to_colony)
 			var/obj/machinery/porta_turret/P = A
 			if (P.health > 0)
 				stance = HOSTILE_STANCE_ATTACK
@@ -83,16 +100,18 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	return
 
 /mob/living/simple_animal/hostile/proc/MoveToTarget()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	stop_automated_movement = 1
-	if(!target_mob || SA_attackable(target_mob))
+	if(!targetted_mob || SA_attackable(targetted_mob))
 		stance = HOSTILE_STANCE_IDLE
-	if(target_mob in ListTargets(10))
+	if(targetted_mob in ListTargets(10))
 		if(ranged)
-			if(get_dist(src, target_mob) <= 6 && !istype(src, /mob/living/simple_animal/hostile/megafauna))
-				OpenFire(target_mob)
+			if(get_dist(src, targetted_mob) <= 6 && !istype(src, /mob/living/simple_animal/hostile/megafauna))
+				OpenFire(targetted_mob)
 			else
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to(src, target_mob, 1, move_to_delay)
+				walk_to(src, targetted_mob, 1, move_to_delay)
 			if(ranged && istype(src, /mob/living/simple_animal/hostile/megafauna))
 				var/mob/living/simple_animal/hostile/megafauna/megafauna = src
 				sleep(rand(megafauna.megafauna_min_cooldown,megafauna.megafauna_max_cooldown))
@@ -100,26 +119,28 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 					if(prob(rand(15,25)))
 						stance = HOSTILE_STANCE_ATTACKING
 						set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-						walk_to(src, target_mob, 1, move_to_delay)
+						walk_to(src, targetted_mob, 1, move_to_delay)
 					else
-						OpenFire(target_mob)
+						OpenFire(targetted_mob)
 				else
 					if(prob(45))
 						stance = HOSTILE_STANCE_ATTACKING
 						set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-						walk_to(src, target_mob, 1, move_to_delay)
+						walk_to(src, targetted_mob, 1, move_to_delay)
 					else
-						OpenFire(target_mob)
+						OpenFire(targetted_mob)
 		else
 			stance = HOSTILE_STANCE_ATTACKING
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to(src, target_mob, 1, move_to_delay)
+			walk_to(src, targetted_mob, 1, move_to_delay)
 	return 0
 
 /mob/living/simple_animal/hostile/proc/DestroyPathToTarget()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	if(environment_smash)
 		EscapeConfinement()
-		var/dir_to_target = get_dir(targets_from, target_mob)
+		var/dir_to_target = get_dir(targets_from, targetted_mob)
 		var/dir_list = list()
 		if(dir_to_target in mydirs) //it's diagonal, so we need two directions to hit
 			for(var/direction in mydirs)
@@ -150,37 +171,45 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			return
 
 /mob/living/simple_animal/hostile/proc/AttackTarget()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	stop_automated_movement = 1
-	if(!target_mob || SA_attackable(target_mob))
+	if(!targetted_mob || SA_attackable(targetted_mob))
 		LoseTarget()
 		return 0
-	if(!(target_mob in ListTargets(10)))
+	if(!(targetted_mob in ListTargets(10)))
 		LostTarget()
 		return 0
-	if(get_dist(src, target_mob) <= 1)	//Attacking
+	if(get_dist(src, targetted_mob) <= 1)	//Attacking
 		AttackingTarget()
 		return 1
 
 /mob/living/simple_animal/hostile/proc/AttackingTarget()
-	if(!Adjacent(target_mob))
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
+	if(!Adjacent(targetted_mob))
 		return
-	if(isliving(target_mob))
-		var/mob/living/L = target_mob
+	if(isliving(targetted_mob))
+		var/mob/living/L = targetted_mob
+		if(istype(targetted_mob, /mob/living/carbon/human))
+			var/mob/living/carbon/human/target_human = targetted_mob
+			if(target_human.check_shields(rand(melee_damage_lower,melee_damage_upper), null, src, null, attacktext)) //Do they block us?
+				return L
 		L.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return L
-	if(istype(target_mob,/obj/mecha))
-		var/obj/mecha/M = target_mob
+	if(istype(targetted_mob,/obj/mecha))
+		var/obj/mecha/M = targetted_mob
 		M.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return M
-	if(istype(target_mob,/obj/machinery/bot))
-		var/obj/machinery/bot/B = target_mob
+	if(istype(targetted_mob,/obj/machinery/bot))
+		var/obj/machinery/bot/B = targetted_mob
 		B.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return B
-	if(istype(target_mob,/obj/machinery/porta_turret))
-		var/obj/machinery/porta_turret/P = target_mob
+	if(istype(targetted_mob,/obj/machinery/porta_turret))
+		var/obj/machinery/porta_turret/P = targetted_mob
 		P.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return P
@@ -198,15 +227,18 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 /mob/living/simple_animal/hostile/proc/ListTargets(var/dist = 7)
 	var/list/L = hearers(src, dist)
 
-	for (var/obj/mecha/M in mechas_list)
+	for (var/obj/mecha/M in GLOB.mechas_list)
 		if (M.z == src.z && get_dist(src, M) <= dist)
 			L += M
 
 	return L
 
 /mob/living/simple_animal/hostile/Life()
-
 	. = ..()
+
+	if(ckey)
+		return
+
 	if(!stasis && !AI_inactive)
 		if(!.)
 			walk(src, 0)
@@ -217,7 +249,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 		if(!stat)
 			switch(stance)
 				if(HOSTILE_STANCE_IDLE)
-					target_mob = FindTarget()
+					target_mob = WEAKREF(FindTarget())
 
 				if(HOSTILE_STANCE_ATTACK)
 					if(destroy_surroundings)
@@ -265,14 +297,19 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	var/def_zone = get_exposed_defense_zone(target)
 	A.launch(target, def_zone)
 
-/mob/living/simple_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
-	var /mob/living/simple_animal/hostile/shooter = src
+/mob/living/simple_animal/hostile/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
+	var /mob/living/simple_animal/hostile/shooter = src //TODO: Make it work for alt click in perfs like rig code
+	if(ranged_cooldown >= world.time) //Modula for admins to set them at different things
+		to_chat(src, "You gun isnt ready to fire!.")
+		return
 	if(shooter.ranged ==1)
 		shooter.OpenFire(targetDD)
 
 /mob/living/simple_animal/hostile/proc/DestroySurroundings()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
 	if(istype(src, /mob/living/simple_animal/hostile/megafauna))
-		set_dir(get_dir(src,target_mob))
+		set_dir(get_dir(src,targetted_mob))
 		for(var/turf/simulated/wall/obstacle in get_step(src, dir))
 			if(prob(35))
 				obstacle.dismantle_wall(1)
@@ -283,20 +320,93 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			if(prob(95))
 				qdel(obstacle)
 
-	if(prob(break_stuff_probability))
-		for(var/dir in cardinal) // North, South, East, West
-			for(var/obj/machinery/obstacle in get_step(src, dir))
-				if((obstacle.dir == reverse_dir[dir])) // So that windows get smashed in the right order
+/*
+			if (obstacle.dir == reverse_dir[dir]) // this here is so we can target what were are attacking
+*/
+
+	if (prob(break_stuff_probability))
+
+		for (var/obj/structure/window/obstacle in src.loc) // To destroy directional windows that are on the creature's tile
+			obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+			return
+
+		for (var/obj/machinery/door/window/obstacle in src.loc) // To destroy windoors that are on the creature's tile
+			obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+			return
+
+		for (var/dir in cardinal) // North, South, East, West
+			for (var/obj/structure/window/obstacle in get_step(src, dir))
+				if ((obstacle.is_full_window()) || (obstacle.dir == reverse_dir[dir])) // So that directional windows get smashed in the right order
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
-			for(var/turf/simulated/wall/obstacle in get_step(src, dir))
-				if((obstacle.dir == reverse_dir[dir])) // So that windows get smashed in the right order
+
+			for (var/obj/machinery/door/window/obstacle in get_step(src, dir))
+				if (obstacle.dir == reverse_dir[dir]) // So that windoors get smashed in the right order
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
-			for(var/obj/structure/window/obstacle in get_step(src, dir))
-				if((obstacle.dir == reverse_dir[dir]) || obstacle.is_fulltile()) // So that windows get smashed in the right order
+
+			for(var/obj/structure/closet/obstacle in get_step(src, dir))//A locker as a block? We will brake it.
+				if(obstacle.opened == FALSE || obstacle.density == TRUE) //Are we closed or dence? then attack!
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
-			var/obj/structure/obstacle = locate(/obj/structure, get_step(src, dir))
-			if(istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/closet) || istype(obstacle, /obj/structure/table) || istype(obstacle, /obj/structure/grille) || istype(obstacle, /obj/structure/railing))
+
+			for(var/obj/structure/table/obstacle in get_step(src, dir))//Tables do not save you.
+				if(obstacle.density == TRUE) //In cases were its flipped and its walking past it
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
+
+			for(var/obj/structure/low_wall/obstacle in get_step(src, dir))//This is only a miner issue... We will brake it
+				if(obstacle.density == TRUE) //Almost never will do anything, but in cases were theirs a non-dence lower wall
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper) * 5,attacktext) //Lots of health
+					return
+
+			for(var/obj/structure/girder/obstacle in get_step(src, dir))//We know your tricks, they will now fail.
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper) * 2,attacktext) //A bit of health
+					return
+
+			for(var/obj/structure/railing/obstacle in get_step(src, dir))//Bulkwork defence... Easy to brake
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
+
+			for(var/obj/mecha/obstacle in get_step(src, dir))//Hmm, notable but not everlasting.
+				if(obstacle.density == TRUE) //will always likely be dence but in cases were its somehow not
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
+
+			for(var/obj/structure/barricade/obstacle in get_step(src, dir))//Steel will not stop us, then why would planks?
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
+
+			for(var/obj/machinery/deployable/obstacle in get_step(src, dir))//Steel will not stop us, then why would planks?
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
+
+			for(var/obj/structure/grille/obstacle in get_step(src, dir))//An insult to defences... We will make you pay
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
+
+			for(var/obj/machinery/door/obstacle in get_step(src,dir)) //Doors, will stop us when closed, but we will brake it
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
+
+			for(var/obj/structure/plasticflaps/obstacle in get_step(src,dir)) //Weak plastic will not bar us
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
+
+			for(var/obj/structure/shield_deployed/obstacle in get_step(src,dir))
 				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+				return
+
+/mob/living/simple_animal/hostile/verb/break_around()
+	set name = "Attack Surroundings "
+	set desc = "Lash out on the your surroundings | Forcefully attack your surroundings."
+	set category = "Mob verbs"
+
+	src.DestroySurroundings()

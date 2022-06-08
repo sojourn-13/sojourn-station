@@ -1,6 +1,6 @@
 /mob/living/carbon/superior_animal/roach/toxic
 	name = "Gestrahlte Roach"
-	desc = "A hulking beast of green, congealed waste. It has an enlarged salivatory gland for lobbing projectiles."
+	desc = "A hulking beast of green, congealed waste. It has an enlarged salivatory gland for vomiting toxic waste on enemies."
 	icon_state = "radioactiveroach"
 
 	meat_amount = 3
@@ -13,6 +13,7 @@
 	knockdown_odds = 3
 	melee_damage_lower = 3
 	melee_damage_upper = 7 //Weaker than hunter
+	armor_penetration = 35
 
 /mob/living/carbon/superior_animal/roach/toxic/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()

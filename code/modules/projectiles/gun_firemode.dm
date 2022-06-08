@@ -7,11 +7,12 @@
 */
 /datum/firemode
 	var/name = "default"
+	var/desc = "The default firemode"
 	var/icon_state
 	var/list/settings = list()
-	var/obj/item/weapon/gun/gun = null
+	var/obj/item/gun/gun = null
 
-/datum/firemode/New(obj/item/weapon/gun/_gun, list/properties = null)
+/datum/firemode/New(obj/item/gun/_gun, list/properties = null)
 	..()
 	if(!properties || !properties.len) return
 
@@ -21,6 +22,8 @@
 
 		if(propname == "mode_name")
 			name = propvalue
+		else if(propname == "mode_desc")
+			desc = propvalue
 		else if(propname == "icon")
 			icon_state = properties["icon"]
 		else if(isnull(propvalue))
@@ -32,7 +35,7 @@
 	gun = null
 	return ..()
 
-/datum/firemode/proc/apply_to(obj/item/weapon/gun/_gun)
+/datum/firemode/proc/apply_to(obj/item/gun/_gun)
 	gun = _gun
 
 	for(var/propname in settings)

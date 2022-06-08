@@ -1,11 +1,11 @@
 
 /obj/machinery/computer/station_alert
-	name = "station alert console"
-	desc = "Used to access the station's automated alert system."
+	name = "colony-wide alert console"
+	desc = "Used to access the colony's automated alert system."
 	icon_keyboard = "tech_key"
 	icon_screen = "alert:0"
 	light_color = COLOR_LIGHTING_CYAN_MACHINERY
-	circuit = /obj/item/weapon/circuitboard/stationalert
+	circuit = /obj/item/circuitboard/stationalert
 	var/datum/nano_module/alarm_monitor/alarm_monitor
 	var/monitor_type = /datum/nano_module/alarm_monitor
 
@@ -45,11 +45,11 @@
 /obj/machinery/computer/station_alert/attack_hand(mob/user)
 	if(..())
 		return
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/computer/station_alert/ui_interact(mob/user)
+/obj/machinery/computer/station_alert/nano_ui_interact(mob/user)
 	if(alarm_monitor)
-		alarm_monitor.ui_interact(user)
+		alarm_monitor.nano_ui_interact(user)
 
 /obj/machinery/computer/station_alert/nano_container()
 	return alarm_monitor

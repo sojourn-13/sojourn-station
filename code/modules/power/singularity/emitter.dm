@@ -4,7 +4,7 @@
 	name = "emitter"
 	desc = "It is a heavy duty industrial laser. This model has been modified to be completely silent after several complaints from engineers."
 	icon = 'icons/obj/singularity.dmi'
-	icon_state = "emitter"
+	icon_state = "emitter" //New sprites done by Eris spriter -CeUvi many thanks!
 	anchored = 0
 	density = 1
 	req_access = list(access_engine_equip)
@@ -195,7 +195,7 @@
 		if(ABORT_CHECK)
 			return
 
-	if(istype(I, /obj/item/weapon/card/id) || istype(I, /obj/item/modular_computer))
+	if(istype(I, /obj/item/card/id) || istype(I, /obj/item/modular_computer))
 		if(emagged)
 			to_chat(user, SPAN_WARNING("The lock seems to be broken!"))
 			return

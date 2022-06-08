@@ -9,10 +9,6 @@
 "c" = (
 /turf/simulated/floor/wood,
 /area/crawler)
-"d" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/wood,
-/area/crawler)
 "e" = (
 /obj/structure/filingcabinet,
 /turf/simulated/floor/wood,
@@ -23,7 +19,7 @@
 /area/crawler)
 "g" = (
 /obj/structure/bed,
-/obj/item/weapon/bedsheet/brown,
+/obj/item/bedsheet/brown,
 /turf/simulated/floor/wood,
 /area/crawler)
 "h" = (
@@ -54,12 +50,8 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "n" = (
-/mob/living/simple_animal/hostile/roomba/boomba,
+/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
 /turf/simulated/floor/wood,
-/area/crawler)
-"o" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/cafe,
 /area/crawler)
 "p" = (
 /turf/simulated/floor/tiled/cafe,
@@ -221,13 +213,13 @@ a
 "}
 (3,1,1) = {"
 a
-d
+c
 c
 B
 c
 a
 p
-o
+p
 a
 "}
 (4,1,1) = {"
@@ -255,11 +247,11 @@ b
 (6,1,1) = {"
 b
 c
-d
+c
 j
 j
 j
-d
+c
 q
 b
 "}
@@ -299,11 +291,11 @@ b
 (10,1,1) = {"
 a
 c
-d
 c
 c
 c
-d
+c
+c
 I
 a
 "}

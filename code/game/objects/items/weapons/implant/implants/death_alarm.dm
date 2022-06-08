@@ -1,10 +1,13 @@
-/obj/item/weapon/implant/death_alarm
+/obj/item/implant/death_alarm
 	name = "death alarm implant"
 	desc = "An alarm which monitors host vital signs and transmits a radio message upon death."
+	icon_state = "implant_deathalarm"
 	var/mobname = "Will Robinson"
 	origin_tech = list(TECH_BLUESPACE=1, TECH_MAGNET=2, TECH_DATA=4, TECH_BIO=3)
 
-/obj/item/weapon/implant/death_alarm/get_data()
+	overlay_icon = "deathalarm"
+
+/obj/item/implant/death_alarm/get_data()
 	var/data = {"
 		<b>Implant Specifications:</b><BR>
 		<b>Name:</b> [company_name] \"Profit Margin\" Class Employee Lifesign Sensor<BR>
@@ -17,7 +20,7 @@
 		<b>Integrity:</b> Implant will occasionally be degraded by the body's immune system and thus will occasionally malfunction."}
 	return data
 
-/obj/item/weapon/implant/death_alarm/Process()
+/obj/item/implant/death_alarm/Process()
 	if (!implanted)
 		return
 	var/mob/M = wearer
@@ -27,27 +30,40 @@
 	else if(M.stat == DEAD)
 		activate("death")
 
-/obj/item/weapon/implant/death_alarm/activate(var/cause)
+/obj/item/implant/death_alarm/activate(var/cause)
 	var/mob/M = wearer
 	var/area/t = get_area(M)
+	var/turf/T = get_turf(src)
 	switch (cause)
 		if("death")
-			var/obj/item/device/radio/headset/a = new /obj/item/device/radio/headset(null)
-			a.autosay("[mobname] has died in [t.name]!", "[mobname]'s Death Alarm")
-			qdel(a)
+			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Marshal")}(src)
+			if(T.z > 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Blackshield")
+			if(T.z <= 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Marshal")
+			radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Medical")
+			qdel(radio_caller)
 			STOP_PROCESSING(SSobj, src)
 		if ("emp")
-			var/obj/item/device/radio/headset/a = new /obj/item/device/radio/headset(null)
+			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Marshal")}(src)
 			var/name = prob(50) ? t.name : pick(SSmapping.teleportlocs)
-			a.autosay("[mobname] has died in [name]!", "[mobname]'s Death Alarm")
-			qdel(a)
+			if(T.z > 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Blackshield")
+			if(T.z <= 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Marshal")
+			radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Medical")
+			qdel(radio_caller)
 		else
-			var/obj/item/device/radio/headset/a = new /obj/item/device/radio/headset(null)
-			a.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm")
-			qdel(a)
+			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Marshal")}(src)
+			if(T.z > 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Blackshield")
+			if(T.z <= 5) //WAH HARDCODE! - SOB EVEN
+				radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Marshal")
+			radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Medical")
+			qdel(radio_caller)
 			STOP_PROCESSING(SSobj, src)
 
-/obj/item/weapon/implant/death_alarm/malfunction(severity)			//for some reason alarms stop going off in case they are emp'd, even without this
+/obj/item/implant/death_alarm/malfunction(severity)			//for some reason alarms stop going off in case they are emp'd, even without this
 	if (malfunction)		//so I'm just going to add a meltdown chance here
 		return
 	malfunction = MALFUNCTION_TEMPORARY
@@ -63,16 +79,16 @@
 	spawn(20)
 		malfunction--
 
-/obj/item/weapon/implant/death_alarm/on_install(mob/living/source)
+/obj/item/implant/death_alarm/on_install(mob/living/source)
 	mobname = source.real_name
 	START_PROCESSING(SSobj, src)
 
 
-/obj/item/weapon/implantcase/death_alarm
+/obj/item/implantcase/death_alarm
 	name = "glass case - 'death alarm'"
 	desc = "A case containing a death alarm implant."
-	implant = /obj/item/weapon/implant/death_alarm
+	implant = /obj/item/implant/death_alarm
 
-/obj/item/weapon/implanter/death_alarm
+/obj/item/implanter/death_alarm
 	name = "implanter (death alarm)"
-	implant = /obj/item/weapon/implant/death_alarm
+	implant = /obj/item/implant/death_alarm

@@ -40,6 +40,7 @@
 
 /obj/screen/Destroy()
 	master = null
+	parentmob = null
 	return ..()
 
 /obj/screen/update_plane()
@@ -77,8 +78,8 @@
 
 /obj/screen/close/Click()
 	if(master)
-		if(istype(master, /obj/item/weapon/storage))
-			var/obj/item/weapon/storage/S = master
+		if(istype(master, /obj/item/storage))
+			var/obj/item/storage/S = master
 			S.close(usr)
 	return TRUE
 //--------------------------------------------------close end---------------------------------------------------------
@@ -86,11 +87,12 @@
 
 //--------------------------------------------------GRAB---------------------------------------------------------
 /obj/screen/grab
+	icon = 'icons/mob/grab_icons.dmi'
 	name = "grab"
 
 /obj/screen/grab/Click()
 	if(master)
-		var/obj/item/weapon/grab/G = master
+		var/obj/item/grab/G = master
 		G.s_click(src)
 		return TRUE
 
@@ -523,8 +525,10 @@
 
 /obj/screen/nutrition/update_icon()
 	set src in usr.client.screen
-	var/mob/living/carbon/human/H = parentmob
 	cut_overlays()
+	var/mob/living/carbon/human/H = parentmob
+	if(H.species.reagent_tag == IS_SYNTHETIC)
+		return
 	switch(H.nutrition)
 		if(450 to INFINITY)				add_overlay( ovrls["nutrition0"])
 		if(350 to 450)					add_overlay( ovrls["nutrition1"])
@@ -783,16 +787,16 @@ obj/screen/fire/DEADelize()
 						tankcheck = list(C.r_hand, C.l_hand, C.back)
 
 					// Rigs are a fucking pain since they keep an air tank in nullspace.
-					if(istype(C.back,/obj/item/weapon/rig))
-						var/obj/item/weapon/rig/rig = C.back
+					if(istype(C.back,/obj/item/rig))
+						var/obj/item/rig/rig = C.back
 						if(rig.air_supply)
 							from = "in"
 							nicename |= "hardsuit"
 							tankcheck |= rig.air_supply
 
 					for(var/i=1, i<tankcheck.len+1, ++i)
-						if(istype(tankcheck[i], /obj/item/weapon/tank))
-							var/obj/item/weapon/tank/t = tankcheck[i]
+						if(istype(tankcheck[i], /obj/item/tank))
+							var/obj/item/tank/t = tankcheck[i]
 							if (!isnull(t.manipulated_by) && t.manipulated_by != C.real_name && findtext(t.desc, breathes))
 								contents.Add(t.air_contents.total_moles)	//Someone messed with the tank and put unknown gasses
 								continue					//in it, so we're going to believe the tank is what it says it is
@@ -808,7 +812,7 @@ obj/screen/fire/DEADelize()
 								if ("oxygen")
 									if(t.air_contents.gas["oxygen"] && !t.air_contents.gas["plasma"])
 										contents.Add(t.air_contents.gas["oxygen"])
-									else if(istype(t, /obj/item/weapon/tank/onestar_regenerator))
+									else if(istype(t, /obj/item/tank/onestar_regenerator))
 										contents.Add(BREATH_MOLES*2)
 									else
 										contents.Add(0)
@@ -993,6 +997,7 @@ obj/screen/fire/DEADelize()
 /obj/screen/mov_intent/Click()
 	var/move_intent_type = next_list_item(usr.move_intent.type, usr.move_intents)
 	var/decl/move_intent/newintent = decls_repository.get_decl(move_intent_type)
+	SEND_SIGNAL(parentmob, COMSIG_HUMAN_WALKINTENT_CHANGE, parentmob, newintent)
 	if (newintent.can_enter(parentmob, TRUE))
 		parentmob.move_intent = newintent
 		update_icon()
@@ -1101,20 +1106,15 @@ obj/screen/fire/DEADelize()
 /obj/screen/intent/Click(location, control, params)
 	var/_x = text2num(params2list(params)["icon-x"])
 	var/_y = text2num(params2list(params)["icon-y"])
-
 	if(_x<=16 && _y<=16)
 		parentmob.a_intent_change(I_HURT)
-
-	else if(_x<=16 && _y>=17)
+	if(_x<=16 && _y>=17)
 		parentmob.a_intent_change(I_HELP)
-
-	else if(_x>=17 && _y<=16)
+	if(_x>=17 && _y<=16)
 		parentmob.a_intent_change(I_GRAB)
-
-	else if(_x>=17 && _y>=17)
+	if(_x>=17 && _y>=17)
 		parentmob.a_intent_change(I_DISARM)
-	else
-		return ..()
+	SEND_SIGNAL(parentmob, COMSIG_HUMAN_ACTIONINTENT_CHANGE, parentmob)
 
 /obj/screen/intent/update_icon()
 	src.cut_overlays()
@@ -1323,7 +1323,7 @@ obj/screen/fire/DEADelize()
 		if (G.active && G.screenOverlay)//check here need if someone want call this func directly
 			add_overlay(G.screenOverlay)
 
-	if(istype(H.wearing_rig,/obj/item/weapon/rig))
+	if(istype(H.wearing_rig,/obj/item/rig))
 		var/obj/item/clothing/glasses/G = H.wearing_rig.getCurrentGlasses()
 		if (G && H.wearing_rig.visor.active)
 			add_overlay(G.screenOverlay)

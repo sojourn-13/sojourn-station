@@ -46,8 +46,8 @@
 #define GEAR_EVA 15
 
 
-// TODO: make niggas poor after implementation
-/var/list/economic_species_modifier = list(/datum/species/human	= 10)
+// TODO: not use the gamer word in the literal code
+// /var/list/economic_species_modifier = list(/datum/species/human	= 10)
 
 //---- Descriptions of destination types
 //Space stations can be purpose built for a number of different things, but generally require regular shipments of essential supplies.
@@ -62,9 +62,11 @@ var/global/current_date_string
 var/global/datum/money_account/vendor_account
 var/global/datum/money_account/station_account
 var/global/list/datum/money_account/department_accounts = list()
+var/global/list/datum/money_account/personal_accounts = list()
+var/global/list/datum/money_account/all_money_accounts = list()
 var/global/num_financial_terminals = 1
 var/global/next_account_number = 0
-var/global/list/all_money_accounts = list()
+
 var/global/list/transaction_devices = list()
 var/global/economy_init = 0
 
@@ -87,15 +89,14 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 
 
 	//Create all the department accounts
-	for(var/d in all_departments)
-		create_department_account(all_departments[d])
+	for(var/d in GLOB.all_departments)
+		create_department_account(GLOB.all_departments[d])
 
 	station_account = department_accounts[DEPARTMENT_COMMAND]
-	vendor_account = department_accounts[DEPARTMENT_LSS] //Vendors are operated by the guild and purchases pay into their stock
 
-	for(var/obj/machinery/vending/V in SSmachines.machinery)
-		if(!V.custom_vendor)
-			V.earnings_account = V.vendor_department ? department_accounts[V.vendor_department] : vendor_account
+	for(var/obj/machinery/vending/V in GLOB.machines)
+		if(V.vendor_department)
+			V.earnings_account = department_accounts[V.vendor_department]
 
 	current_date_string = "[num2text(rand(1,31))] [pick("January","February","March","April","May","June","July","August","September","October","November","December")], [game_year]"
 
@@ -110,9 +111,15 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 	department_account.account_name = "[department.name] Account"
 	department_account.account_number = rand(111111, 999999)
 	department.account_number = department_account.account_number
-
+	department_account.wage = (department.budget_base + department.budget_personnel)
 	department_account.remote_access_pin = rand(1111, 111111)
 	department.account_pin = department_account.remote_access_pin
+	department_account.employer = department.funding_source
+	department_account.wage = department.get_total_budget()
+
+	department_account.department_id = department.id
+	if(department.id in DEPARTMENT_LSS)
+		department_account.can_make_accounts = TRUE
 
 	//create an entry in the account transaction log for when it was created
 	var/datum/transaction/T = new(department.account_initial_balance, department_account.owner_name, "Account creation", "Lonestar Shipping Solutions Terminal #277")

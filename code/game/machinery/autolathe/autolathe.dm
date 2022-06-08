@@ -1,12 +1,10 @@
-#define SANITIZE_LATHE_COST(n) round(n * mat_efficiency, 0.01)
-
-
 #define ERR_OK 0
 #define ERR_NOTFOUND "not found"
 #define ERR_NOMATERIAL "no material"
 #define ERR_NOREAGENT "no reagent"
 #define ERR_NOLICENSE "no license"
 #define ERR_PAUSED "paused"
+#define ERR_NOINSIGHT "no insight"
 
 
 /obj/machinery/autolathe
@@ -20,16 +18,16 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 10
 	active_power_usage = 2000
-	circuit = /obj/item/weapon/circuitboard/autolathe
+	circuit = /obj/item/circuitboard/autolathe
 
 	var/build_type = AUTOLATHE
 
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/disk = null
+	var/obj/item/computer_hardware/hard_drive/portable/disk
 
 	var/list/stored_material = list()
-	var/obj/item/weapon/reagent_containers/glass/container = null
+	var/obj/item/reagent_containers/glass/container
 
-	var/unfolded = null
+	var/unfolded
 	var/show_category
 	var/list/categories
 
@@ -40,12 +38,15 @@
 	var/disabled = FALSE
 	var/shocked = FALSE
 
+	var/auto_input //Are we automatically inputting?
+	var/turf/auto_in_turf
+
 	var/working = FALSE
 	var/paused = FALSE
-	var/error = null
+	var/error
 	var/progress = 0
 
-	var/datum/computer_file/binary/design/current_file = null
+	var/datum/computer_file/binary/design/current_file
 	var/list/queue = list()
 	var/queue_max = 8
 
@@ -59,20 +60,22 @@
 	var/have_disk = TRUE
 	var/have_reagents = TRUE
 	var/have_materials = TRUE
-	var/have_recycling = TRUE
+	var/have_recycling = FALSE //Also dictates auto-input
 	var/have_design_selector = TRUE
 
 	var/list/unsuitable_materials = list(MATERIAL_BIOMATTER)
+	var/list/suitable_materials //List that limits autolathes to eating mats only in that list.
 
 	var/global/list/error_messages = list(
 		ERR_NOLICENSE = "Not enough license points left.",
 		ERR_NOTFOUND = "Design data not found.",
 		ERR_NOMATERIAL = "Not enough materials.",
 		ERR_NOREAGENT = "Not enough reagents.",
-		ERR_PAUSED = "**Construction Paused**"
+		ERR_PAUSED = "**Construction Paused**",
+		ERR_NOINSIGHT = "Not enough insight."
 	)
 
-	var/tmp/datum/wires/autolathe/wires = null
+	var/tmp/datum/wires/autolathe/wires
 
 	// A vis_contents hack for materials loading animation.
 	var/tmp/obj/effect/flicker_overlay/image_load
@@ -87,6 +90,7 @@
 
 	if(have_disk && default_disk)
 		disk = new default_disk(src)
+	auto_in_turf = get_step(get_turf(src), dir)
 
 /obj/machinery/autolathe/Destroy()
 	QDEL_NULL(wires)
@@ -205,11 +209,11 @@
 	return data
 
 
-/obj/machinery/autolathe/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/autolathe/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/list/data = ui_data(user, ui_key)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
+	if(!ui)
 		// the ui does not exist, so we'll create a new() one
 		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
 		ui = new(user, src, ui_key, "autolathe.tmpl", capitalize(name), 550, 655)
@@ -227,6 +231,9 @@
 
 /obj/machinery/autolathe/attackby(obj/item/I, mob/user)
 
+	if(istype(I, /obj/item/stack/material/cyborg))
+		return //Prevents borgs throwing their stuff into it
+
 	if(default_deconstruction(I, user))
 		wires?.Interact(user)
 		return
@@ -234,20 +241,20 @@
 	if(default_part_replacement(I, user))
 		return
 
-	if(istype(I, /obj/item/weapon/computer_hardware/hard_drive/portable))
+	if(istype(I, /obj/item/computer_hardware/hard_drive/portable))
 		insert_disk(user, I)
 
 	// Some item types are consumed by default
-	if(istype(I, /obj/item/stack) || istype(I, /obj/item/trash) || istype(I, /obj/item/weapon/material/shard))
+	if(istype(I, /obj/item/stack) || istype(I, /obj/item/trash) || istype(I, /obj/item/material/shard))
 		eat(user, I)
 		return
 
-	if(istype(I, /obj/item/weapon/reagent_containers/glass))
+	if(istype(I, /obj/item/reagent_containers/glass))
 		insert_beaker(user, I)
 		return
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 
 /obj/machinery/autolathe/attack_hand(mob/user)
@@ -255,7 +262,7 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 	wires.Interact(user)
 
 /obj/machinery/autolathe/Topic(href, href_list)
@@ -360,7 +367,7 @@
 		return 1
 
 
-/obj/machinery/autolathe/proc/insert_disk(mob/living/user, obj/item/weapon/computer_hardware/hard_drive/portable/inserted_disk)
+/obj/machinery/autolathe/proc/insert_disk(mob/living/user, obj/item/computer_hardware/hard_drive/portable/inserted_disk)
 	if(!inserted_disk && istype(user))
 		inserted_disk = user.get_active_hand()
 
@@ -387,7 +394,7 @@
 	SSnano.update_uis(src)
 
 
-/obj/machinery/autolathe/proc/insert_beaker(mob/living/user, obj/item/weapon/reagent_containers/glass/beaker)
+/obj/machinery/autolathe/proc/insert_beaker(mob/living/user, obj/item/reagent_containers/glass/beaker)
 	if(!beaker && istype(user))
 		beaker = user.get_active_hand()
 
@@ -464,8 +471,25 @@
 		return
 	if(!in_range(src, user))
 		return
-	src.eject_disk(user)
+	eject_disk(user)
 
+
+/obj/machinery/autolathe/CtrlClick(mob/living/user)
+	..() //comsig
+	if(!have_recycling)
+		to_chat(user, SPAN_NOTICE("[src] does not support automatic sheet loading!"))
+		return
+	auto_input = !auto_input
+	to_chat(user, SPAN_NOTICE("[src] is now [auto_input ? "" : "no longer"] automatically loading."))
+
+/obj/machinery/autolathe/CtrlShiftClick(mob/living/user)
+	..()
+	if(user.incapacitated())
+		to_chat(user, SPAN_WARNING("You can't do that right now!"))
+		return
+	src.set_dir(turn(src.dir, 90))
+	to_chat(user, SPAN_NOTICE("You rotate the [src]! Now it faces [dir2text(dir)]."))
+	auto_in_turf = get_step(get_turf(src), dir)
 
 /obj/machinery/autolathe/proc/eat(mob/living/user, obj/item/eating)
 	if(!eating && istype(user))
@@ -491,8 +515,8 @@
 		to_chat(user, SPAN_WARNING("\The [eating] does not contain significant amounts of useful materials and cannot be accepted."))
 		return FALSE
 
-	if(istype(eating, /obj/item/weapon/computer_hardware/hard_drive/portable))
-		var/obj/item/weapon/computer_hardware/hard_drive/portable/disk = eating
+	if(istype(eating, /obj/item/computer_hardware/hard_drive/portable))
+		var/obj/item/computer_hardware/hard_drive/portable/disk = eating
 		if(disk.license)
 			to_chat(user, SPAN_WARNING("\The [src] refuses to accept \the [eating] as it has non-null license."))
 			return FALSE
@@ -510,6 +534,10 @@
 			for(var/material in _matter)
 				if(material in unsuitable_materials)
 					continue
+
+				if(suitable_materials)
+					if(!(material in suitable_materials))
+						continue
 
 				if(!(material in stored_material))
 					stored_material[material] = 0
@@ -583,6 +611,89 @@
 		to_chat(user, SPAN_NOTICE("Some liquid flowed to \the [container]."))
 	else if(reagents_filltype == 2)
 		to_chat(user, SPAN_NOTICE("Some liquid flowed to the floor from \the [src]."))
+
+
+
+/obj/machinery/autolathe/proc/eat_stack_only(obj/item/stack/material/eating)
+	var/filltype = 0       // Used to determine message.
+	var/reagents_filltype = 0
+	var/total_used = 0     // Amount of material used.
+	var/mass_per_sheet = 0 // Amount of material constituting one sheet.
+
+	var/list/total_material_gained = list()
+
+	for(var/obj/O in eating.GetAllContents(includeSelf = TRUE))
+		var/obj/item/stack/material/stack = O
+		var/list/_matter = O.get_matter()
+		if(_matter)
+			for(var/material in _matter)
+				if(material in unsuitable_materials)
+					continue
+
+				if(suitable_materials)
+					if(!(material in suitable_materials))
+						continue
+
+				if(!(material in stored_material))
+					stored_material[material] = 0
+
+				if(!(material in total_material_gained))
+					total_material_gained[material] = 0
+
+				if(stored_material[material] + total_material_gained[material] >= storage_capacity)
+					continue
+
+				var/total_material = _matter[material]
+
+				total_material *= stack.get_amount()
+
+				if(stored_material[material] + total_material > storage_capacity)
+					total_material = storage_capacity - stored_material[material]
+					filltype = 1
+				else
+					filltype = 2
+
+				total_material_gained[material] += total_material
+				total_used += total_material
+				mass_per_sheet += O.matter[material]
+
+		if(O.matter_reagents)
+			if(container)
+				var/datum/reagents/RG = new(0)
+				for(var/r in O.matter_reagents)
+					RG.maximum_volume += O.matter_reagents[r]
+					RG.add_reagent(r ,O.matter_reagents[r])
+				reagents_filltype = 1
+				RG.trans_to(container, RG.total_volume)
+
+			else
+				reagents_filltype = 2
+
+		if(O.reagents && container)
+			O.reagents.trans_to(container, O.reagents.total_volume)
+
+	if(!filltype && !reagents_filltype)
+		return
+
+	// Determine what was the main material
+	var/main_material
+	var/main_material_amt = 0
+	for(var/material in total_material_gained)
+		stored_material[material] += total_material_gained[material]
+		if(total_material_gained[material] > main_material_amt)
+			main_material_amt = total_material_gained[material]
+			main_material = material
+
+
+	res_load(get_material_by_name(main_material)) // Play insertion animation.
+	var/obj/item/stack/eatstack = eating
+	var/used_sheets = min(eatstack.get_amount(), round(total_used/mass_per_sheet))
+
+
+	if(!eatstack.use(used_sheets))
+		qdel(eatstack)	// Protects against weirdness
+
+
 
 
 /obj/machinery/autolathe/proc/queue_design(datum/computer_file/binary/design/design_file, amount=1)
@@ -684,7 +795,7 @@
 					return ERR_NOREAGENT
 
 
-	if (paused)
+	if(paused)
 		return ERR_PAUSED
 
 	return ERR_OK
@@ -728,6 +839,13 @@
 	special_process()
 	update_icon()
 	SSnano.update_uis(src)
+	if(auto_input)
+		for(var/O in auto_in_turf)
+			if(!istype(O, /obj/item/stack/material))
+				continue
+			var/obj/item/stack/material/M = O
+			eat_stack_only(M)
+			visible_message(SPAN_NOTICE("[src]'s automatic feeder attempts to load [M]!"))
 
 
 /obj/machinery/autolathe/proc/consume_materials(datum/design/design)
@@ -761,7 +879,7 @@
 	if(!(material in stored_material))
 		return
 
-	if (!amount)
+	if(!amount)
 		return
 
 	var/material/M = get_material_by_name(material)
@@ -774,11 +892,11 @@
 	var/remainder = amount - whole_amount
 
 
-	if (whole_amount)
+	if(whole_amount)
 		var/obj/item/stack/material/S = new M.stack_type(drop_location())
 
 		//Accounting for the possibility of too much to fit in one stack
-		if (whole_amount <= S.max_amount)
+		if(whole_amount <= S.max_amount)
 			S.amount = whole_amount
 			S.update_strings()
 			S.update_icon()
@@ -788,7 +906,7 @@
 			//And how many sheets leftover for this stack
 			S.amount = whole_amount % S.max_amount
 
-			if (!S.amount)
+			if(!S.amount)
 				qdel(S)
 
 			for(var/i = 0; i < fullstacks; i++)
@@ -799,8 +917,8 @@
 
 
 	//And if there's any remainder, we eject that as a shard
-	if (remainder)
-		new /obj/item/weapon/material/shard(drop_location(), material, _amount = remainder)
+	if(remainder)
+		new /obj/item/material/shard(drop_location(), material, _amount = remainder)
 
 	//The stored material gets the amount (whole+remainder) subtracted
 	stored_material[material] -= amount
@@ -818,7 +936,7 @@
 	..()
 	var/mb_rating = 0
 	var/mb_amount = 0
-	for(var/obj/item/weapon/stock_parts/matter_bin/MB in component_parts)
+	for(var/obj/item/stock_parts/matter_bin/MB in component_parts)
 		mb_rating += MB.rating
 		mb_amount++
 
@@ -826,19 +944,19 @@
 
 	var/man_rating = 0
 	var/man_amount = 0
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		man_rating += M.rating
 		man_amount++
 	man_rating -= man_amount
 
 	var/las_rating = 0
 	var/las_amount = 0
-	for(var/obj/item/weapon/stock_parts/micro_laser/M in component_parts)
+	for(var/obj/item/stock_parts/micro_laser/M in component_parts)
 		las_rating += M.rating
 		las_amount++
 	las_rating -= las_amount
 
-	queue_max = initial(queue_max) + mb_rating //So the more matter bin levels the more we can queue!
+	queue_max = initial(queue_max) + mb_rating + (hacked ? 8 : 0) //So the more matter bin levels the more we can queue!
 
 	speed = initial(speed) + man_rating + las_rating
 	mat_efficiency = max(0.2, 1.0 - (man_rating * 0.1))
@@ -883,16 +1001,58 @@
 	desc = "It produces items using metal and glass."
 	idle_power_usage = 100
 	active_power_usage = 8000
-	circuit = /obj/item/weapon/circuitboard/autolathe_industrial
+	circuit = /obj/item/circuitboard/autolathe_industrial
 	speed = 4
 	storage_capacity = 240
+	have_recycling = TRUE
+
+/obj/machinery/autolathe/greyson
+	name = "greyson autolathe"
+	desc = "It produces items using metal and glass."
+	icon_state = "greyson"
+	idle_power_usage = 200
+	active_power_usage = 10000
+	circuit = /obj/item/circuitboard/autolathe_greyson
+	speed = 4
+	storage_capacity = 240
+	have_recycling = TRUE
+
+/obj/machinery/autolathe/greyson/RefreshParts()
+	..()
+	var/mb_rating = 0
+	var/mb_amount = 0
+	for(var/obj/item/stock_parts/matter_bin/MB in component_parts)
+		mb_rating += MB.rating
+		mb_amount++
+
+	storage_capacity = round(initial(storage_capacity)*(mb_rating/mb_amount))
+
+	var/man_rating = 0
+	var/man_amount = 0
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		man_rating += M.rating
+		man_amount++
+	man_rating -= man_amount
+
+	var/las_rating = 0
+	var/las_amount = 0
+	for(var/obj/item/stock_parts/micro_laser/M in component_parts)
+		las_rating += M.rating
+		las_amount++
+	las_rating -= las_amount
+
+	queue_max = initial(queue_max) + mb_rating //So the more matter bin levels the more we can queue!
+
+	speed = initial(speed) + man_rating + las_rating
+	mat_efficiency = max(0.05, 1.0 - (man_rating * 0.1))
 
 #undef ERR_OK
 #undef ERR_NOTFOUND
 #undef ERR_NOMATERIAL
 #undef ERR_NOREAGENT
 #undef ERR_NOLICENSE
-#undef SANITIZE_LATHE_COST
+#undef ERR_PAUSED
+#undef ERR_NOINSIGHT
 
 
 // A version with some materials already loaded, to be used on map spawn
@@ -905,7 +1065,7 @@
 
 /obj/machinery/autolathe/loaded/Initialize()
 	. = ..()
-	container = new /obj/item/weapon/reagent_containers/glass/beaker(src)
+	container = new /obj/item/reagent_containers/glass/beaker(src)
 
 
 // You (still) can't flicker over-lays in BYOND, and this is a vis_contents hack to provide the same functionality.

@@ -13,18 +13,46 @@
 	slot = slot_head
 	allowed_roles = list(JOBS_ENGINEERING)
 
+/datum/gear/factionartificer/normal_skirt
+	display_name = "plain skirt, artificer"
+	path = /obj/item/clothing/under/rank/engineer/skirt
+	allowed_roles = list("Guild Master","Guild Adept")
+	slot = slot_w_uniform
+	sort_category = "Faction: Artificer"
+
+/datum/gear/factionartificer/padded_skirt
+	display_name = "padded skirt, artificer"
+	path = /obj/item/clothing/under/rank/engineer/skirt/alt
+	allowed_roles = list("Guild Master","Guild Adept")
+	slot = slot_w_uniform
+	sort_category = "Faction: Artificer"
+
+/datum/gear/factionartificer/jumpsuit_padded
+	display_name = "padded jumpsuit, artificer"
+	path = /obj/item/clothing/under/rank/engineer/padded
+	allowed_roles = list("Guild Master","Guild Adept")
+	slot = slot_w_uniform
+	sort_category = "Faction: Artificer"
+
 /datum/gear/factionartificer/cloaktechnomancer
 	display_name = "cloak, artificer"
-	path = /obj/item/clothing/suit/hooded/cloak/job/technomancer
+	path = /obj/item/clothing/accessory/job/cape/technomancer
 	allowed_roles = list("Guild Master","Guild Adept")
 	slot = slot_wear_suit
 	sort_category = "Faction: Artificer"
 
 /datum/gear/factionartificer/cloakte
 	display_name = "cloak, guild master"
-	path = /obj/item/clothing/suit/hooded/cloak/job/te
+	path = /obj/item/clothing/accessory/job/cape/te
 	allowed_roles = list("Guild Master")
 	slot = slot_wear_suit
+	sort_category = "Faction: Artificer"
+
+/datum/gear/factionartificer/gm_skirt
+	display_name = "skirt, guild master"
+	path = /obj/item/clothing/under/rank/exultant/skirt
+	allowed_roles = list("Guild Master")
+	slot = slot_w_uniform
 	sort_category = "Faction: Artificer"
 
 /datum/gear/factionartificer/snowsuittechno

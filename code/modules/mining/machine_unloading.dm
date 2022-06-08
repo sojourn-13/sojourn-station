@@ -5,8 +5,8 @@
 	name = "unloading machine"
 	icon = 'icons/obj/machines/mining_machines.dmi'
 	icon_state = "unloader"
-	density = 1
-	anchored = 1.0
+	density = TRUE
+	anchored = TRUE
 	var/input_dir = null
 	var/output_dir = null
 
@@ -28,12 +28,7 @@
 		var/turf/input = get_step(src, input_dir)
 		var/obj/structure/ore_box/BOX = locate() in input
 		if(BOX)
-			var/turf/output = get_step(src, output_dir)
-			var/i = 0
-			for(var/obj/item/weapon/ore/O in BOX.contents)
-				O.forceMove(output)
-				if(++i>=10)
-					return
+			BOX.dump_box_contents(get_step(src, output_dir))
 
 		if(locate(/obj/item) in input)
 			var/obj/item/O

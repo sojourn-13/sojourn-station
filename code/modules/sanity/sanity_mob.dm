@@ -28,12 +28,15 @@
 #define INSIGHT_PASSIVE_GAIN 0.05
 #define INSIGHT_GAIN(level_change) (INSIGHT_PASSIVE_GAIN + level_change / 15)
 
+#define SANITY_MOB_DISTANCE_ACTIVATION 12
+
 #define INSIGHT_DESIRE_COUNT 2
 
 #define INSIGHT_DESIRE_FOOD "food"
 #define INSIGHT_DESIRE_ALCOHOL "alcohol"
 #define INSIGHT_DESIRE_SMOKING "smoking"
 #define INSIGHT_DESIRE_DRUGS "drugs"
+#define INSIGHT_DESIRE_DRINK_NONALCOHOL "nonalcoholic"
 
 /datum/sanity
 	var/flags
@@ -46,10 +49,16 @@
 	var/level_change = 0
 
 	var/insight
+	var/max_insight = INFINITY
+	var/insight_passive_gain_multiplier = 1.75
+	var/insight_gain_multiplier = 1.75
 	var/insight_rest = 0
+	var/max_insight_rest = INFINITY
+	var/insight_rest_gain_multiplier = 1
 	var/resting = 0
+	var/max_resting = INFINITY
 
-	var/list/valid_inspirations = list(/obj/item/weapon/oddity)
+	var/list/valid_inspirations = list(/obj/item/oddity)
 	var/list/desires = list()
 
 	var/positive_prob = 20
@@ -75,6 +84,8 @@
 /datum/sanity/proc/onLife()
 	if(owner.stat == DEAD || owner.in_stasis)
 		return
+	if(owner.species.reagent_tag == IS_SYNTHETIC)
+		return
 	var/affect = SANITY_PASSIVE_GAIN * sanity_passive_gain_multiplier
 	if(owner.stat)
 		changeLevel(affect)
@@ -84,12 +95,29 @@
 		affect -= handle_view()
 	changeLevel(max(affect, min(view_damage_threshold - level, 0)))
 	handle_breakdowns()
-	handle_insight()
+	handle_Insight()
 	handle_level()
+	SEND_SIGNAL(owner, COMSIG_HUMAN_SANITY, level)
+
+/datum/sanity/proc/give_insight(value)
+	var/new_value = value
+	if(value > 0)
+		new_value = max(0, value * insight_gain_multiplier)
+	insight = min(insight + new_value, max_insight)
+
+/datum/sanity/proc/give_resting(value)
+	resting = min(resting + value, max_resting)
+
+/datum/sanity/proc/give_insight_rest(value)
+	var/new_value = value
+	if(value > 0)
+		new_value = max(0, value * insight_rest_gain_multiplier)
+	insight_rest += new_value
 
 /datum/sanity/proc/handle_view()
 	. = 0
-	if(sanity_invulnerability)
+	activate_mobs_in_range(owner, SANITY_MOB_DISTANCE_ACTIVATION)
+	if(sanity_invulnerability)//Sorry, but that needed to be added here :C
 		return
 	var/vig = owner.stats.getStat(STAT_VIG)
 	for(var/atom/A in view(owner.client ? owner.client : owner))
@@ -109,15 +137,18 @@
 		if(!B.update())
 			breakdowns -= B
 
-/datum/sanity/proc/handle_insight()
-	insight += INSIGHT_GAIN(level_change)
-	if(usr?.stats.getPerk(PERK_INSPIRED))
-		insight += INSIGHT_GAIN(level_change)
-	while(insight >= 100)
-		to_chat(owner, SPAN_NOTICE("You have gained insight.[resting ? null : " Now you need to rest and rethink your life choices."]"))
-		++resting
-		pick_desires()
-		insight -= 100
+/datum/sanity/proc/handle_Insight()
+	give_insight((INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier) * (owner.stats.getPerk(PERK_INSPIRED) ? 1.5 : 1) * (owner.stats.getPerk(PERK_NANOGATE) ? 0.3 : 1))
+	while(resting < max_resting && insight >= 100)
+		if(owner.stats.getPerk(PERK_ARTIST))
+			to_chat(owner, SPAN_NOTICE("You have gained inspiration.[resting ? null : " Now you need to put it to good use by creating works of art. You cannot gain more inspiration until you do."]"))
+		else
+			to_chat(owner, SPAN_NOTICE("You have gained insight.[resting ? null : " Now you need to reflect on what you have learned so far by satisfying your cravings."]")) // Do you want me to add a goddamn meta "click on the eye to see your cravings" or is this not clear enough?
+			pick_desires()
+			insight -= 100
+		give_resting(1)
+		owner.playsound_local(get_turf(owner), 'sound/sanity/level_up.ogg', 100)
+
 	var/obj/screen/sanity/hud = owner.HUDneed["sanity"]
 	hud?.update_icon()
 
@@ -146,8 +177,15 @@
 	desires.Cut()
 	var/list/candidates = list(
 		INSIGHT_DESIRE_FOOD,
+		INSIGHT_DESIRE_FOOD,
+		INSIGHT_DESIRE_FOOD,
+		INSIGHT_DESIRE_ALCOHOL,
+		INSIGHT_DESIRE_ALCOHOL,
 		INSIGHT_DESIRE_ALCOHOL,
 		INSIGHT_DESIRE_SMOKING,
+		INSIGHT_DESIRE_DRINK_NONALCOHOL,
+		INSIGHT_DESIRE_DRINK_NONALCOHOL,
+		INSIGHT_DESIRE_DRUGS,
 		INSIGHT_DESIRE_DRUGS,
 	)
 	for(var/i = 0; i < INSIGHT_DESIRE_COUNT; i++)
@@ -162,6 +200,10 @@
 				potential_desires = GLOB.sanity_drinks.Copy()
 				if(!potential_desires.len)
 					potential_desires = init_sanity_drinks()
+			if(INSIGHT_DESIRE_DRINK_NONALCOHOL)
+				potential_desires = GLOB.sanity_non_alcoholic_drinks.Copy()
+				if(!potential_desires.len)
+					potential_desires = init_sanity_sanity_non_alcoholic_drinks()
 			else
 				desires += desire
 				continue
@@ -187,7 +229,7 @@
 /datum/sanity/proc/add_rest(type, amount)
 	if(!(type in desires))
 		amount /= 4
-	insight_rest += amount
+	give_insight_rest(amount)
 	if(insight_rest >= 100)
 		insight_rest = 0
 		finish_rest()
@@ -202,9 +244,15 @@
 	for(var/stat in stat_change)
 		owner.stats.changeStat(stat, stat_change[stat])
 
-	INVOKE_ASYNC(src, .proc/oddity_stat_up, resting)
+	if(!owner.stats.getPerk(PERK_ARTIST))
+		INVOKE_ASYNC(src, .proc/oddity_stat_up, resting)
 
-	to_chat(owner, SPAN_NOTICE("You have rested well and improved your stats."))
+	if(owner.stats.getPerk(PERK_ARTIST))
+		to_chat(owner, SPAN_NOTICE("You have created art and improved your stats."))
+	else
+		to_chat(owner, SPAN_NOTICE("You have satisfied your cravings and improved your stats."))
+	owner.playsound_local(get_turf(owner), 'sound/sanity/rest.ogg', 100)
+	owner.pick_individual_objective()
 	resting = 0
 
 /datum/sanity/proc/oddity_stat_up(multiplier)
@@ -216,16 +264,18 @@
 		var/obj/item/O = inspiration_items.len > 1 ? owner.client ? input(owner, "Select something to use as inspiration", "Level up") in inspiration_items : pick(inspiration_items) : inspiration_items[1]
 		if(!O)
 			return
-		var/datum/component/inspiration/I = O.GetComponent(/datum/component/inspiration) // If it's a valid inspiration, it should have this component. If not, runtime
+		GET_COMPONENT_FROM(I, /datum/component/inspiration, O) // If it's a valid inspiration, it should have this component. If not, runtime
 		var/list/L = I.calculate_statistics()
 		for(var/stat in L)
 			var/stat_up = L[stat] * multiplier
 			to_chat(owner, SPAN_NOTICE("Your [stat] stat goes up by [stat_up]"))
 			owner.stats.changeStat(stat, stat_up)
-		if(istype(O, /obj/item/weapon/oddity))
-			var/obj/item/weapon/oddity/OD = O
-			if(OD.perk)
-				owner.stats.addPerk(OD.perk)
+		if(I.perk)
+			owner.stats.addPerk(I.perk)
+		for(var/mob/living/carbon/human/H in viewers(owner))
+			SEND_SIGNAL(H, COMSIG_HUMAN_ODDITY_LEVEL_UP, owner, O)
+		for(var/mob/living/carbon/human/H in viewers(owner))
+			SEND_SIGNAL(H, COMSIG_HUMAN_LEVEL_UP, owner, O)
 
 /datum/sanity/proc/onDamage(amount)
 	changeLevel(-SANITY_DAMAGE_HURT(amount, owner.stats.getStat(STAT_VIG)))
@@ -252,7 +302,12 @@
 	if(resting)
 		add_rest(E.type, 3 * multiplier)
 
-/datum/sanity/proc/onEat(obj/item/weapon/reagent_containers/food/snacks/snack, amount_eaten)
+/datum/sanity/proc/onNonAlcohol(datum/reagent/drink/D, multiplier)
+	changeLevel(D.sanity_gain_ingest * multiplier)
+	if(resting)
+		add_rest(D.type, 3 * multiplier)
+
+/datum/sanity/proc/onEat(obj/item/reagent_containers/food/snacks/snack, amount_eaten)
 	changeLevel(snack.sanity_gain * amount_eaten / snack.bitesize)
 	if(snack.cooked && resting)
 		add_rest(snack.type, 20 * amount_eaten / snack.bitesize)
@@ -301,7 +356,7 @@
 		if(get_turf(M) in view(get_turf(owner)))
 			M.reg_break(owner)
 
-	/*for(var/obj/item/weapon/implant/carrion_spider/mindboil/S in GLOB.active_mindboil_spiders)
+	/*for(var/obj/item/implant/carrion_spider/mindboil/S in GLOB.active_mindboil_spiders)
 		if(get_turf(S) in view(get_turf(owner)))
 			S.reg_break(owner)*/
 

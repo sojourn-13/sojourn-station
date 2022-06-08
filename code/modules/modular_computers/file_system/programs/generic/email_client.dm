@@ -122,6 +122,7 @@
 	var/mob/living/L = get(nano_host(), /mob/living)
 	if(L)
 		received_message.notify_mob(L, nano_host(), "<a href='?src=\ref[src];open;reply=[received_message.uid]'>Reply</a>")
+		log_and_message_admins("[usr] received email from [received_message.source]. \n Message title: [received_message.title]. \n [received_message.stored_data]")
 
 /datum/nano_module/email_client/Destroy()
 	log_out()
@@ -132,7 +133,7 @@
 
 	if(istype(host, /obj/item/modular_computer))
 		var/obj/item/modular_computer/computer = nano_host()
-		var/obj/item/weapon/card/id/id = computer.GetIdCard()
+		var/obj/item/card/id/id = computer.GetIdCard()
 		if(!id && ismob(computer.loc))
 			var/mob/M = computer.loc
 			id = M.GetIdCard()
@@ -299,7 +300,7 @@
 		data["stored_password"] = stars(stored_password, 0)
 	return data
 
-/datum/nano_module/email_client/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/email_client/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	var/list/data = ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -359,7 +360,7 @@
 	var/mob/living/user = usr
 
 	if(href_list["open"])
-		ui_interact()
+		nano_ui_interact()
 
 	check_for_new_messages(1)		// Any actual interaction (button pressing) is considered as acknowledging received message, for the purpose of notification icons.
 	if(href_list["login"])
@@ -498,7 +499,7 @@
 		var/atom/movable/AM = host
 		if(istype(AM))
 			if(ismob(AM.loc))
-				ui_interact(AM.loc)
+				nano_ui_interact(AM.loc)
 		return 1
 
 	if(href_list["view"])

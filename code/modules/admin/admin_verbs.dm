@@ -28,9 +28,13 @@ var/list/admin_verbs = list("default" = list(), "hideable" = list())
 			if(text2num(text_right) & holder.rights)
 				verbs += admin_verbs[text_right]
 
+		if(check_rights(config.profiler_permission))
+			control_freak = 0 // enable profiler
+
 /client/proc/remove_admin_verbs()
 	for(var/right in admin_verbs)
 		verbs.Remove(admin_verbs[right])
+	control_freak = initial(control_freak)
 
 ADMIN_VERB_ADD(/client/proc/hide_most_verbs, null, FALSE)
 //hides all our hideable adminverbs
@@ -367,7 +371,7 @@ ADMIN_VERB_ADD(/client/proc/kill_air, R_DEBUG, FALSE)
 		deadmin_holder.reassociate()
 		log_admin("[src] re-admined themself.")
 		message_admins("[src] re-admined themself.", 1)
-		to_chat(src, "<span class='interface'>You now have the keys to control the planet, or atleast a small space station</span>")
+		to_chat(src, "<span class='interface'>You now have the keys to control the planet, or at least just the colony.</span>")
 		verbs -= /client/proc/readmin_self
 
 
@@ -436,7 +440,7 @@ ADMIN_VERB_ADD(/client/proc/manage_silicon_laws, R_ADMIN, TRUE)
 	if(!S) return
 
 	var/datum/nano_module/law_manager/L = new(S)
-	L.ui_interact(usr, state = GLOB.admin_state)
+	L.nano_ui_interact(usr, state = GLOB.admin_state)
 	log_and_message_admins("has opened [S]'s law manager.")
 
 
@@ -484,12 +488,12 @@ ADMIN_VERB_ADD(/client/proc/change_human_appearance_self, R_ADMIN, FALSE)
 ADMIN_VERB_ADD(/client/proc/change_security_level, R_ADMIN|R_FUN, FALSE)
 /client/proc/change_security_level()
 	set name = "Set security level"
-	set desc = "Sets the station security level"
+	set desc = "Sets the colony's security level"
 	set category = "Admin"
 
 	if(!check_rights(R_ADMIN))	return
 
-	var/decl/security_state/security_state = decls_repository.get_decl(maps_data.security_state)
+	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
 	var/decl/security_level/new_security_level = input(usr, "It's currently [security_state.current_security_level.name].", "Select Security Level")  as null|anything in (security_state.all_security_levels - security_state.current_security_level)
 	if(!new_security_level)
 		return
@@ -569,6 +573,21 @@ ADMIN_VERB_ADD(/client/proc/perkadd, R_ADMIN, FALSE)
 	T.stats.addPerk(perkname)
 	message_admins("\blue [key_name_admin(usr)] gave the perk [perkname] to [key_name(T)].", 1)
 
+ADMIN_VERB_ADD(/client/proc/playtimebypass, R_ADMIN|R_MOD|R_DEBUG, FALSE)
+/client/proc/playtimebypass(mob/T as mob in GLOB.player_list)
+	set category = "Fun"
+	set name = "Bypass Playtime"
+	set desc = "Allow a job to be played without the time requirements."
+
+	var/key = T.ckey
+	var/datum/job/J = input("Which job do you wish to change?") as null|anything in typesof(/datum/job)
+	if(!J) return
+	var/mode = input("Enable, or disable?") in list("Enable", "Disable")
+	if(!mode) return
+	SSjob.JobTimeForce(key, "[J]", (mode=="Enable"))
+	message_admins("\blue [key_name_admin(usr)] [lowertext(mode)]d [key]'s [J] job bypass.", 1)
+	log_admin("[key_name_admin(usr)] [lowertext(mode)]d [key]'s [J] job bypass.")
+
 ADMIN_VERB_ADD(/client/proc/perkremove, R_ADMIN, FALSE)
 /client/proc/perkremove(mob/T as mob in SSmobs.mob_list)
 	set category = "Fun"
@@ -585,6 +604,18 @@ ADMIN_VERB_ADD(/client/proc/perkremove, R_ADMIN, FALSE)
 		return
 	T.stats.removePerk(perkname.type)
 	message_admins("\blue [key_name_admin(usr)] removed the perk [perkname] from [key_name(T)].", 1)
+
+ADMIN_VERB_ADD(/client/proc/skill_issue, R_ADMIN, FALSE)
+/client/proc/skill_issue(mob/T as mob in SSmobs.mob_list)
+	set category = "Fun"
+	set name = "Skill Issue"
+	set desc = "Tells mob that it is a skill issue and to git gud."
+
+	to_chat(T, SPAN_NOTICE("<b><font size=3>Diagnosis: skill issue.</font></b>"))
+	to_chat(T, SPAN_NOTICE("Git gud."))
+
+	log_admin("[key_name(usr)] told [key_name(T)] that it is a skill issue and to git gud.")
+	message_admins("\blue [key_name_admin(usr)] told [key_name(T)] that it is a skill issue and to git gud.", 1)
 
 ADMIN_VERB_ADD(/client/proc/global_man_up, R_ADMIN, FALSE)
 /client/proc/global_man_up()

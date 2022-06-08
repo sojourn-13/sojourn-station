@@ -64,7 +64,7 @@
 
 	var/last_activity = 0
 
-	var/list/knownCraftRecipes = list()
+
 	/*
 		The world time when this mind was last in a mob, controlled by a client which did something.
 		Only updated once per minute, set by the inactivity subsystem
@@ -99,9 +99,31 @@
 		last_activity = world.time
 	if(new_character.client)
 		new_character.client.create_UI(new_character.type)
+	if(new_character.client)
+		if(new_character.client.get_preference_value(/datum/client_preference/stay_in_hotkey_mode) == GLOB.PREF_YES)
+			winset(new_character.client, null, "mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true input.background-color=#F0F0F0")
+		if(istype(new_character, /mob/living/silicon/robot))
+			winset(new_character.client, null, "mainwindow.macro=borgmacro")
 
 /datum/mind/proc/store_memory(new_text)
 	memory += "[new_text]<BR>"
+
+
+/datum/mind/proc/print_individualobjectives()
+	var/output
+	if(LAZYLEN(individual_objectives))
+		output += "<HR><B>Your individual objectives:</B><UL>"
+		var/obj_count = 1
+		var/la_explanation
+		for(var/datum/individual_objective/objective in individual_objectives)
+			output += "<br><b>#[obj_count] [objective.name][objective.limited_antag ? " [objective.show_la]" : ""]</B>: [objective.get_description()]</b>"
+			obj_count++
+			if(objective.limited_antag)
+				la_explanation = objective.la_explanation
+		output += "</UL>"
+		if(la_explanation)
+			output += la_explanation
+	return output
 
 /datum/mind/proc/show_memory(mob/recipient)
 	var/output = "<B>[current.real_name]'s Memory</B><HR>"
@@ -115,7 +137,7 @@
 		else
 			output += "<br><b>Your [A.role_text] objectives:</b>"
 		output += "[A.print_objectives(FALSE)]"
-
+	output += print_individualobjectives()
 	recipient << browse(output, "window=memory")
 
 /datum/mind/proc/edit_memory()
@@ -140,6 +162,9 @@
 		out += "<br><b>[antag.role_text]</b> <a href='?src=\ref[antag]'>\[EDIT\]</a> <a href='?src=\ref[antag];remove_antagonist=1'>\[DEL\]</a>"
 	out += "</table><hr>"
 	out += "<br>[memory]"
+
+	out += print_individualobjectives()
+
 	out += "<br><a href='?src=\ref[src];edit_memory=1'>"
 	usr << browse(out, "window=edit_memory[src]")
 
@@ -175,7 +200,7 @@
 					to_chat(usr, SPAN_WARNING("[src] could not be made into a [antag.role_text]!"))
 
 	else if(href_list["role_edit"])
-		var/new_role = input("Select new role", "Assigned role", assigned_role) as null|anything in joblist
+		var/new_role = input("Select new role", "Assigned role", assigned_role) as null|anything in GLOB.joblist
 		if (!new_role) return
 		var/datum/job/job = SSjob.GetJob(new_role)
 		if(job)
@@ -194,7 +219,7 @@
 			if("unemag")
 				var/mob/living/silicon/robot/R = current
 				if (istype(R))
-					R.emagged = 0
+					R.RemoveTrait(CYBORG_TRAIT_EMAGGED)
 					if (R.activated(R.module.emag))
 						R.module_active = null
 					if(R.module_state_1 == R.module.emag)
@@ -212,7 +237,7 @@
 				if (isAI(current))
 					var/mob/living/silicon/ai/ai = current
 					for (var/mob/living/silicon/robot/R in ai.connected_robots)
-						R.emagged = 0
+						R.RemoveTrait(CYBORG_TRAIT_EMAGGED)
 						if (R.module)
 							if (R.activated(R.module.emag))
 								R.module_active = null
@@ -348,7 +373,7 @@
 /datum/mind/proc/manifest_status(var/datum/computer_file/report/crew_record/CR)
 	var/inactive_time = world.time - last_activity
 	if (inactive_time >= 60 MINUTES)
-		return null //The server hasn't seen us alive in an hour.
+		return "SSD" //The server hasn't seen us alive in an hour.
 		//We will not show on the manifest at all
 
 	//Ok we're definitely going to show on the manifest, lets see if any status is set for us in the records

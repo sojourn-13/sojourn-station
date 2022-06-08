@@ -52,7 +52,7 @@
 	idle_power_usage = 10
 	active_power_usage = 200
 
-	circuit = /obj/item/weapon/circuitboard/sorter
+	circuit = /obj/item/circuitboard/sorter
 	// based on levels of manipulators
 	var/speed = 25
 	// based on levels of scanners
@@ -166,17 +166,17 @@
 		T = get_step(src, refuse_output_side)
 		state("[current_item] refused.")
 	if(T)
-		current_item.forceMove(T)
+		current_item.loc = T
 		current_item = null
 
 
 /obj/machinery/sorter/RefreshParts()
 	..()
 	var/manipulator_rating = 0
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		manipulator_rating += M.rating
 	var/num_settings = 0
-	for(var/obj/item/weapon/stock_parts/scanning_module/S in component_parts)
+	for(var/obj/item/stock_parts/scanning_module/S in component_parts)
 		num_settings += S.rating
 	number_of_settings = num_settings * initial(number_of_settings)
 	speed = manipulator_rating*10
@@ -192,7 +192,7 @@
 	..()
 
 /obj/machinery/sorter/attack_hand(mob/user as mob)
-	return ui_interact(user)
+	return nano_ui_interact(user)
 
 
 //UI
@@ -224,7 +224,7 @@
 	return data
 
 
-/obj/machinery/sorter/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, datum/topic_state/state = GLOB.default_state)
+/obj/machinery/sorter/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, datum/topic_state/state = GLOB.default_state)
 	var/list/data = ui_data()
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)

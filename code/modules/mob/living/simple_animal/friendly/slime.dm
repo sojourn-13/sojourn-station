@@ -11,6 +11,8 @@
 	response_disarm = "shoos"
 	response_harm   = "stomps on"
 	emote_see = list("jiggles", "bounces in place")
+	leather_amount = 0
+	bones_amount = 0
 	var/colour = "grey"
 	can_burrow = TRUE
 

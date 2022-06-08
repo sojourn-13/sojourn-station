@@ -12,8 +12,8 @@
 
 	origin_tech = null
 
-	var/obj/item/weapon/cell/cell = null
-	var/suitable_cell = /obj/item/weapon/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 
 	var/scan_title
 	var/scan_data
@@ -26,12 +26,15 @@
 	var/window_height = 600
 
 	var/charge_per_use = 0
+	var/is_virtual = FALSE // for non-physical scanner to avoid displaying action messages
 
 	throw_speed = 3
 	throw_range = 7
 
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 	origin_tech = list(TECH_BIO = 1)
+
+	price_tag = 100
 
 /obj/item/device/scanner/attack_self(mob/user)
 	if(!scan_data)
@@ -69,11 +72,17 @@
 		return
 
 	if(is_valid_scan_target(A) && A.simulated)
-		user.visible_message(SPAN_NOTICE("[user] runs \the [src] over \the [A]."), range = 2)
-		if(scan_sound)
-			playsound(src, scan_sound, 30)
+		if(!is_virtual)
+			user.visible_message(SPAN_NOTICE("[user] runs \the [src] over \the [A]."), range = 2)
+			if(scan_sound)
+				playsound(src, scan_sound, 30)
+		else
+			user.visible_message(SPAN_NOTICE("[user] focuses on \the [A] for a moment."), range = 2)
 		if(use_delay && !do_after(user, use_delay, A))
-			to_chat(user, "You stop scanning \the [A] with \the [src].")
+			if(!is_virtual)
+				to_chat(user, "You stop scanning \the [A] with \the [src].")
+			else
+				to_chat(user, "You stop focusing on \the [A].")
 			return
 		scan(A, user)
 		if(!scan_title)
@@ -141,7 +150,7 @@
 	if(!scan_data)
 		to_chat(user, "There is no scan data to print.")
 		return
-	var/obj/item/weapon/paper/P = new(get_turf(src), scan_data, "paper - [scan_title]")
+	var/obj/item/paper/P = new(get_turf(src), scan_data, "paper - [scan_title]")
 	user.put_in_hands(P)
 	user.visible_message("\The [src] spits out a piece of paper.")
 

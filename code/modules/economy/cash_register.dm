@@ -174,16 +174,19 @@
 
 
 
-/obj/machinery/cash_register/attackby(obj/O as obj, user as mob)
+/obj/machinery/cash_register/attackby(obj/item/O as obj, user as mob)
 	// Check for a method of paying (ID, PDA, e-wallet, cash, ect.)
-	var/obj/item/weapon/card/id/I = O.GetIdCard()
+	var/obj/item/card/id/I = O.GetIdCard()
+	var/tool_type = O.get_tool_type(user, list(QUALITY_BOLT_TURNING), src)
+	if(tool_type == QUALITY_BOLT_TURNING)
+		toggle_anchors(O, user)
 	if(I)
 		scan_card(I, O)
-	else if (istype(O, /obj/item/weapon/spacecash/ewallet))
-		var/obj/item/weapon/spacecash/ewallet/E = O
+	else if (istype(O, /obj/item/spacecash/ewallet))
+		var/obj/item/spacecash/ewallet/E = O
 		scan_wallet(E)
-	else if (istype(O, /obj/item/weapon/spacecash))
-		var/obj/item/weapon/spacecash/SC = O
+	else if (istype(O, /obj/item/spacecash))
+		var/obj/item/spacecash/SC = O
 		if(cash_open)
 			to_chat(user, "You neatly sort the cash into the box.")
 			cash_stored += SC.worth
@@ -194,11 +197,9 @@
 			qdel(SC)
 		else
 			scan_cash(SC)
-	else if(istype(O, /obj/item/weapon/card/emag))
+	else if(istype(O, /obj/item/card/emag))
 		return ..()
-	else if(istype(O, /obj/item/weapon/tool/wrench))
-		var/obj/item/weapon/tool/wrench/W = O
-		toggle_anchors(W, user)
+
 	// Not paying: Look up price and add it to transaction_amount
 	else
 		scan_item_price(O)
@@ -219,7 +220,7 @@
 		return 0
 
 
-/obj/machinery/cash_register/proc/scan_card(obj/item/weapon/card/id/I, obj/item/ID_container)
+/obj/machinery/cash_register/proc/scan_card(obj/item/card/id/I, obj/item/ID_container)
 	if (!transaction_amount)
 		return
 
@@ -284,7 +285,7 @@
 					transaction_complete()
 
 
-/obj/machinery/cash_register/proc/scan_wallet(obj/item/weapon/spacecash/ewallet/E)
+/obj/machinery/cash_register/proc/scan_wallet(obj/item/spacecash/ewallet/E)
 	if (!transaction_amount)
 		return
 
@@ -322,7 +323,7 @@
 			transaction_complete()
 
 
-/obj/machinery/cash_register/proc/scan_cash(obj/item/weapon/spacecash/SC)
+/obj/machinery/cash_register/proc/scan_cash(obj/item/spacecash/SC)
 	if (!transaction_amount)
 		return
 
@@ -422,7 +423,7 @@
 	<tr></tr>
 	<tr><td class="tx-name">Customer</td><td class="tx-data">[c_name]</td></tr>
 	<tr><td class="tx-name">Pay Method</td><td class="tx-data">[p_method]</td></tr>
-	<tr><td class="tx-name">Station Time</td><td class="tx-data">[stationtime2text()]</td></tr>
+	<tr><td class="tx-name">Colony Time</td><td class="tx-data">[stationtime2text()]</td></tr>
 	</table>
 	<table width=300>
 	"}
@@ -487,7 +488,7 @@
 		to_chat(usr, SPAN_WARNING("The cash box is locked."))
 
 
-/obj/machinery/cash_register/proc/toggle_anchors(obj/item/weapon/tool/wrench/W, mob/user)
+/obj/machinery/cash_register/proc/toggle_anchors(obj/item/tool/wrench/W, mob/user)
 	if(manipulating) return
 	manipulating = 1
 	if(!anchored)

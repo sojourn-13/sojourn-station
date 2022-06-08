@@ -49,12 +49,21 @@
 			if(locate(/mob/living) in O)
 				occupant_message(SPAN_WARNING("You can't load living things into the cargo compartment."))
 				return
-			if(O.anchored && (!istype(O, /obj/structure/scrap) && !istype(O, /obj/structure/salvageable)))
+			if(istype(target, /obj/structure/scrap))
+				occupant_message(SPAN_NOTICE("\The [chassis] begins compressing \the [O] with \the [src]."))
+				if(do_after_cooldown(O))
+					if(istype(O, /obj/structure/scrap))
+						var/obj/structure/scrap/S = O
+						S.make_cube()
+						occupant_message(SPAN_NOTICE("\The [chassis] compresses \the [O] into a cube with \the [src]."))
+				return
+			if(O.anchored && !istype(O, /obj/structure/salvageable))
 				occupant_message(SPAN_WARNING("[target] is firmly secured."))
 				return
 			if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
 				occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
 				return
+
 
 			occupant_message("You lift [target] and start to load it into cargo compartment.")
 			playsound(src,'sound/mecha/hydraulic.ogg',100,1)
@@ -99,6 +108,7 @@
 	icon_state = "mecha_drill"
 	equip_cooldown = 30
 	energy_drain = 10
+	price_tag = 150
 	force = WEAPON_FORCE_DANGEROUS
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
@@ -131,7 +141,7 @@
 					if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment)
 						var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
 						if(ore_box)
-							for(var/obj/item/weapon/ore/ore in range(chassis,1))
+							for(var/obj/item/stack/ore/ore in range(chassis,1))
 								if(get_dir(chassis,ore)&chassis.dir)
 									ore.Move(ore_box)
 				else if(istype(target, /turf/simulated/floor/asteroid))
@@ -142,7 +152,7 @@
 					if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment)
 						var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
 						if(ore_box)
-							for(var/obj/item/weapon/ore/ore in range(chassis,1))
+							for(var/obj/item/stack/ore/ore in range(chassis,1))
 								if(get_dir(chassis,ore)&chassis.dir)
 									ore.Move(ore_box)
 				else if(target.loc == C)
@@ -186,7 +196,7 @@
 					if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment)
 						var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
 						if(ore_box)
-							for(var/obj/item/weapon/ore/ore in range(chassis,1))
+							for(var/obj/item/stack/ore/ore in range(chassis,1))
 								if(get_dir(chassis,ore)&chassis.dir)
 									ore.Move(ore_box)
 				else if(istype(target,/turf/simulated/floor/asteroid))
@@ -196,7 +206,7 @@
 					if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment)
 						var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
 						if(ore_box)
-							for(var/obj/item/weapon/ore/ore in range(target,1))
+							for(var/obj/item/stack/ore/ore in range(target,1))
 								ore.Move(ore_box)
 				else if(target.loc == C)
 					log_message("Drilled through \the [target]")
@@ -211,6 +221,7 @@
 	energy_drain = 0
 	range = MECHA_MELEE|MECHA_RANGED
 	required_type = /obj/mecha/working
+	price_tag = 100
 	var/spray_particles = 5
 	var/spray_amount = 5	//units of liquid per particle. 5 is enough to wet the floor - it's a big fire extinguisher, so should be fine
 	var/max_water = 1000
@@ -284,6 +295,7 @@
 	energy_drain = 250
 	range = MECHA_MELEE|MECHA_RANGED
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASMA = 15, MATERIAL_URANIUM = 15)
+	price_tag = 1500
 	var/mode = 0 //0 - deconstruct, 1 - wall or floor, 2 - airlock.
 	var/disabled = 0 //malf
 
@@ -564,10 +576,11 @@
 	desc = "Close-combat armor booster. Boosts exosuit armor against armed melee attacks. Requires energy to operate."
 	icon_state = "mecha_abooster_ccw"
 	origin_tech = list(TECH_MATERIAL = 4)
-	matter = list(MATERIAL_STEEL = 20, MATERIAL_SILVER = 5)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_SILVER = 5)
 	deflect_coeff = 1.15
 	damage_coeff = 0.8
 	melee = 1
+	price_tag = 600
 
 	activate_boost()
 		if(..())
@@ -588,10 +601,11 @@
 	desc = "Ranged-weaponry armor booster. Boosts exosuit armor against ranged attacks. Completely blocks taser shots, but requires energy to operate."
 	icon_state = "mecha_abooster_proj"
 	origin_tech = list(TECH_MATERIAL = 4)
-	matter = list(MATERIAL_STEEL = 20, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_GOLD = 5)
 	deflect_coeff = 1.15
 	damage_coeff = 0.8
 	melee = 0
+	price_tag = 600
 
 	activate_boost()
 		if(..())
@@ -615,6 +629,7 @@
 	energy_drain = 100
 	range = 0
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_GOLD = 10, MATERIAL_SILVER = 2, MATERIAL_GLASS = 5)
+	price_tag = 1200
 	var/health_boost = 2
 	var/datum/global_iterator/pr_repair_droid
 	var/icon/droid_overlay
@@ -710,9 +725,10 @@
 	equip_cooldown = 10
 	energy_drain = 0
 	range = 0
+	price_tag = 900
 	var/datum/global_iterator/pr_energy_relay
 	var/coeff = 100
-	var/list/use_channels = list(EQUIP,ENVIRON,LIGHT)
+	var/list/use_channels = list(STATIC_EQUIP,STATIC_ENVIRON,STATIC_LIGHT)
 
 	New()
 		..()
@@ -775,7 +791,7 @@
 			var/area/A = get_area(ER.chassis)
 			if(A)
 				var/pow_chan
-				for(var/c in list(EQUIP,ENVIRON,LIGHT))
+				for(var/c in list(STATIC_EQUIP,STATIC_ENVIRON,STATIC_LIGHT))
 					if(A.powered(c))
 						pow_chan = c
 						break
@@ -790,7 +806,7 @@
 /obj/item/mecha_parts/mecha_equipment/generator
 	name = "plasma generator"
 	desc = "Generates power using solid plasma as fuel. Pollutes the environment."
-	icon_state = "tesla"
+	icon_state = "plasma"
 	origin_tech = list(TECH_PLASMA = 2, TECH_POWER = 2, TECH_ENGINEERING = 1)
 	equip_cooldown = 10
 	energy_drain = 0
@@ -927,8 +943,8 @@
 
 /obj/item/mecha_parts/mecha_equipment/generator/nuclear
 	name = "\improper ExoNuclear reactor"
-	desc = "Generates power using uranium. Pollutes the environment."
-	icon_state = "tesla"
+	desc = "Generates power using uranium recklessly. Radiates the environment."
+	icon_state = "uranium"
 	origin_tech = list(TECH_POWER = 3, TECH_ENGINEERING = 3)
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 5, MATERIAL_GLASS = 10)
 	max_fuel = 50000
@@ -966,7 +982,7 @@
 	icon_state = "mecha_clamp"
 	equip_cooldown = 15
 	energy_drain = 0
-	var/dam_force = 0
+	var/dam_force = 90
 	var/obj/mecha/working/ripley/cargo_holder
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
@@ -1009,9 +1025,15 @@
 			if(chassis.occupant.a_intent == I_HURT)
 				chassis.occupant_message(SPAN_DANGER("You obliterate [target] with [src.name], leaving blood and guts everywhere."))
 				chassis.visible_message(SPAN_DANGER("[chassis] destroys [target] in an unholy fury."))
+				M.take_overall_damage(dam_force)
+				M.adjustOxyLoss(round(dam_force/9))
+				M.updatehealth()
 			if(chassis.occupant.a_intent == I_DISARM)
-				chassis.occupant_message(SPAN_DANGER("You tear [target]'s limbs off with [src.name]."))
-				chassis.visible_message(SPAN_DANGER("[chassis] rips [target]'s arms off."))
+				chassis.occupant_message(SPAN_DANGER("You tear at [target]'s limbs with [src.name]."))
+				chassis.visible_message(SPAN_DANGER("[chassis] rips [target]'s."))
+				M.take_overall_damage(dam_force/6)
+				M.adjustOxyLoss(round(dam_force/2))
+				M.updatehealth()
 			else
 				step_away(M,chassis)
 				chassis.occupant_message("You smash into [target], sending them flying.")

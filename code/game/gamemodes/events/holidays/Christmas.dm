@@ -3,7 +3,7 @@
 		if(isNotStationLevel(xmas.z))	continue
 		for(var/turf/simulated/floor/T in trange(1,xmas))
 			for(var/i=1,i<=rand(1,5),i++)
-				new /obj/item/weapon/a_gift(T)
+				new /obj/item/a_gift(T)
 	//for(var/mob/living/simple_animal/corgi/Ian/Ian in SSmobs.mob_list)
 	//	Ian.place_on_head(new /obj/item/clothing/head/helmet/space/santahat(Ian))
 
@@ -29,7 +29,7 @@
 /obj/item/toy/junk/xmas_cracker/attack(mob/target, mob/user)
 	if( !cracked && ishuman(target) && (target.stat == CONSCIOUS) && !target.get_active_hand() )
 		target.visible_message(SPAN_NOTICE("[user] and [target] pop \an [src]! *pop*"), SPAN_NOTICE("You pull \an [src] with [target]! *pop*"), SPAN_NOTICE("You hear a *pop*."))
-		var/obj/item/weapon/paper/Joke = new /obj/item/weapon/paper(user.loc)
+		var/obj/item/paper/Joke = new /obj/item/paper(user.loc)
 		Joke.name = "[pick("awful","terrible","unfunny")] joke"
 		Joke.info = pick("What did one snowman say to the other?\n\n<i>'Is it me or can you smell carrots?'</i>",
 			"Why couldn't the snowman get laid?\n\n<i>He was frigid!</i>",

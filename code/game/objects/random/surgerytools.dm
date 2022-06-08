@@ -3,15 +3,15 @@
 	icon_state = "meds-blue"
 
 /obj/random/surgery_tool/item_to_spawn()
-	return pick(/obj/item/weapon/tool/bonesetter,\
-				/obj/item/weapon/tool/scalpel,\
-				/obj/item/weapon/tool/scalpel/advanced,\
-				/obj/item/weapon/tool/scalpel/laser,\
-				/obj/item/weapon/tool/surgicaldrill,\
-				/obj/item/weapon/tool/cautery,\
-				/obj/item/weapon/tool/retractor,\
-				/obj/item/weapon/tool/saw/circular,\
-				/obj/item/weapon/tool/hemostat)
+	return pick(/obj/item/tool/bonesetter,\
+				/obj/item/tool/scalpel,\
+				/obj/item/tool/scalpel/advanced,\
+				/obj/item/tool/scalpel/laser,\
+				/obj/item/tool/tape_roll/bonegel,\
+				/obj/item/tool/cautery,\
+				/obj/item/tool/retractor,\
+				/obj/item/tool/saw/circular,\
+				/obj/item/tool/hemostat)
 
 /obj/random/surgery_tool/low_chance
 	name = "low chance random surgery tool"

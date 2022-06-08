@@ -1,6 +1,6 @@
 //BIG CELLS - for APC, borgs and machinery.
 
-/obj/item/weapon/cell/large
+/obj/item/cell/large
 	name = "Lonestar \"Robustcell 2000L\""
 	desc = "Lonestar branded rechargeable L-standardized power cell. This one is the cheapest you can find."
 	icon_state = "b_st"
@@ -8,63 +8,64 @@
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3)
 	price_tag = 200
 
-/obj/item/weapon/cell/large/high
+/obj/item/cell/large/high
 	name = "Lonestar \"Robustcell 6000L\""
 	desc = "Lonestar branded rechargeable L-standardized power cell. Popular and reliable version."
 	icon_state = "b_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 6000
 
-/obj/item/weapon/cell/large/super
+/obj/item/cell/large/super
 	name = "Lonestar \"Robustcell 16000L\""
-	desc = "Lonestar branded rechargeable L-standardized power cell. This advanced version can store even more energy."
+	desc = "Lonestar branded rechargeable L-standardized power cell. This industrial version can store even more energy."
 	icon_state = "b_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 16000
 
-/obj/item/weapon/cell/large/hyper
+/obj/item/cell/large/hyper
 	name = "Lonestar \"Robustcell-X 20000L\""
-	desc = "Lonestar branded rechargeable L-standardized power cell. Looks like this is a rare and powerful prototype."
+	desc = "Lonestar-brand rechargeable L-standardized power cell. This is the top of the class most advanced version of cell on the market."
 	icon_state = "b_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 20000
 
-/obj/item/weapon/cell/large/moebius
+/obj/item/cell/large/moebius
 	name = "Soteria \"Power-Geyser 2000L\""
-	desc = "Soteria Institute branded rechargeable L-standardized power cell. This one is cheap, yet better than Lonestar models for same price."
+	desc = "Soteria Institute-brand rechargeable L-standardized power cell. This one is as cheap as Lonestar models, yet improved in all senses."
 	icon_state = "meb_b_st"
 	maxcharge = 2000
 
-/obj/item/weapon/cell/large/moebius/high
+/obj/item/cell/large/moebius/high
 	name = "Soteria \"Power-Geyser 8000L\""
 	desc = "Soteria Laboratories branded rechargeable L-standardized power cell. Popular and reliable version."
 	icon_state = "meb_b_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 8000
 
-/obj/item/weapon/cell/large/moebius/super
+/obj/item/cell/large/moebius/super
 	name = "Soteria \"Power-Geyser 14000L\""
-	desc = "Soteria Institute branded rechargeable L-standardized power cell. This advanced version can store even more energy."
+	desc = "Soteria Institute-brand rechargeable L-standardized power cell. This industrial version can store even more energy."
 	icon_state = "meb_b_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 14000
 
-/obj/item/weapon/cell/large/moebius/hyper
+/obj/item/cell/large/moebius/hyper
 	name = "Soteria \"Power-Geyser 18000L\""
-	desc = "Soteria Institute branded rechargeable L-standardized power cell. Looks like this is rare and powerful prototype."
+	desc = "Soteria Institute-brand rechargeable L-standardized power cell. Regarded as the second most powerful cell on the market."
 	icon_state = "meb_b_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 18000
 
-/obj/item/weapon/cell/large/moebius/omega
+/obj/item/cell/large/moebius/omega
 	name = "Soteria \"Omega-Geyser 20000L\""
-	desc = "Soteria branded rechargeable L-standardized power cell. This one being part of the Omega line making it the be all end all power cell of its type."
+	desc = "Soteria Institute-brand rechargeable L-standardized power cell. This one being part of the Omega line, making it the be-all-end-all power cell of its type, yet to hit the open market."
 	icon_state = "meb_b_omega"
-	matter = list(MATERIAL_STEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_SILVER = 9, MATERIAL_GOLD = 6) //DEAR LOAD WHAT ARE THOSE COSTS?
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_GOLD = 6)
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 20000
+	max_chargerate = 0.24
 
-/obj/item/weapon/cell/large/moebius/nuclear
+/obj/item/cell/large/moebius/nuclear
 	name = "Soteria \"Atomcell 14000L\""
 	desc = "Soteria Institute branded rechargeable L-standardized power cell. This version able to recharge itself over time."
 	icon_state = "meb_b_nu"
@@ -72,8 +73,19 @@
 	origin_tech = list(TECH_POWER = 6)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 6)
 	maxcharge = 14000
+	price_tag = 400
 
-/obj/item/weapon/cell/large/excelsior
+/obj/item/cell/large/greyson
+	name = "GP-SI \"Posi-cell 16000L\""
+	desc = "GP-SI branded rechargeable L-standardized power cell that recharges itself over time. This type has yet to hit the market!"
+	icon_state = "greyson_b_omega"
+	maxcharge = 16000
+	autorecharging = TRUE
+	autorecharge_rate = 0.06
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_PLATINUM = 3, MATERIAL_URANIUM = 6)
+	price_tag = 600
+
+/obj/item/cell/large/excelsior
 	name = "Excelsior \"Zarya 18000L\""
 	desc = "Commie rechargeable L-standardized power cell. Power to the people!"
 	icon_state = "exs_l"
@@ -81,31 +93,39 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTIC = 2)
 	maxcharge = 18000
 
+/obj/item/cell/large/neotheology
+	name = "Absolute \"Spark 13000L\""
+	desc = "Absolute branded non-rechargeable L-standardized power cell."
+	icon_state = "b_nt"
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_BIOMATTER = 15)
+	maxcharge = 13000
+	max_chargerate = 0
+	created_max_charge = TRUE
+
+/obj/item/cell/large/neotheology/plasma
+	name = "Absolute \"Radiance 20000L\""
+	desc = "Absolute branded non-rechargeable L-standardized power cell. This advanced version can store even more energy."
+	icon_state = "b_nt_pl"
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_BIOMATTER = 7.5)
+	maxcharge = 20000
+
 //Meme cells - for fun
 
-/obj/item/weapon/cell/large/potato
+/obj/item/cell/large/potato
 	name = "potato battery"
-	desc = "A rechargable starch based power cell."
+	desc = "A rechargeable starch based power cell."
 	origin_tech = list(TECH_POWER = 1)
 	icon = 'icons/obj/power.dmi'
 	icon_state = "potato_cell"
 	charge = 100
 	maxcharge = 300
 	minor_fault = 1
-
-/obj/item/weapon/cell/large/slime
-	name = "charged slime core"
-	desc = "A yellow slime core infused with plasma, it crackles with power."
-	origin_tech = list(TECH_POWER = 2, TECH_BIO = 4)
-	icon = 'icons/mob/slimes.dmi'
-	icon_state = "yellow slime extract"
-	autorecharging = TRUE
-	maxcharge = 10000 //We still have a reason to use nukie cells
+	price_tag = 50
 	matter = null
 
 //MEDIUM CELLS - for energy weapons and large devices
 
-/obj/item/weapon/cell/medium
+/obj/item/cell/medium
 	name = "Lonestar \"Robustcell 600M\""
 	desc = "Lonestar branded rechargeable M-standardized power cell. This one is the cheapest you can find."
 	icon_state = "m_st"
@@ -117,63 +137,72 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2)
 	price_tag = 100
 
-/obj/item/weapon/cell/medium/high
+/obj/item/cell/medium/depleted
+	charge = 0
+	starts_max_charge = FALSE
+
+/obj/item/cell/medium/high
 	name = "Lonestar \"Robustcell 800M\""
 	desc = "Lonestar branded rechargeable M-standardized power cell. Popular and reliable version."
 	icon_state = "m_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 800
 
-/obj/item/weapon/cell/medium/super
+/obj/item/cell/medium/high/depleted
+	charge = 0
+	starts_max_charge = FALSE
+
+/obj/item/cell/medium/super
 	name = "Lonestar \"Robustcell 1000M\""
-	desc = "Lonestar branded rechargeable M-standardized power cell. This advanced version can store even more energy."
+	desc = "Lonestar-brand rechargeable M-standardized power cell. This industrial version can store even more energy."
 	icon_state = "m_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 1000
 
-/obj/item/weapon/cell/medium/hyper
+/obj/item/cell/medium/hyper
 	name = "Lonestar \"Robustcell-X 1600M\""
-	desc = "Lonestar branded rechargeable M-standardized power cell. Looks like this is a rare and powerful prototype."
+	desc = "Lonestar branded rechargeable M-standardized power cell. This is the top of the class most advanced version of cell on the market."
 	icon_state = "m_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1600
 
-/obj/item/weapon/cell/medium/moebius
-	name = "Lonestar \"Power-Geyser 800M\""
-	desc = "Lonestar branded rechargeable M-standardized power cell. This one is cheap, yet better than Lonestar models for same price."
+/obj/item/cell/medium/moebius
+	name = "Soteria \"Power-Geyser 800M\""
+	desc = "Soteria branded rechargeable M-standardized power cell. This one is as cheap as Lonestar models come."
 	icon_state = "meb_m_st"
 	maxcharge = 800
 
-/obj/item/weapon/cell/medium/moebius/high
+/obj/item/cell/medium/moebius/high
 	name = "Soteria \"Power-Geyser 1000M\""
 	desc = "Soteria Institute branded rechargeable M-standardized power cell. Popular and reliable version."
 	icon_state = "meb_m_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 1000
 
-/obj/item/weapon/cell/medium/moebius/super
+/obj/item/cell/medium/moebius/super
 	name = "Soteria \"Power-Geyser 1200M\""
-	desc = "Soteria Institute branded rechargeable M-standardized power cell. This advanced version can store even more energy."
+	desc = "Soteria Institute branded rechargeable M-standardized power cell. This industrial version can store even more energy."
 	icon_state = "meb_m_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 1200
 
-/obj/item/weapon/cell/medium/moebius/hyper
+/obj/item/cell/medium/moebius/hyper
 	name = "Soteria \"Power-Geyser 1400M\""
-	desc = "Soteria Institute branded rechargeable M-standardized power cell. Looks like this is rare and powerful prototype."
+	desc = "Soteria Institute branded rechargeable M-standardized power cell. Regarded as the second most powerful cell on the market."
 	icon_state = "meb_m_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1400
 
-/obj/item/weapon/cell/medium/moebius/omega
+/obj/item/cell/medium/moebius/omega
 	name = "Soteria \"Omega-Geyser 1600M\""
-	desc = "Soteria branded rechargeable M-standardized power cell. This one being part of the Omega line making it the be all end all power cell of its type."
+	desc = "Soteria Institute branded rechargeable M-standardized power cell. This one being part of the Omega line, making it the be-all-end-all power cell of its type, yet to hit the open market."
 	icon_state = "meb_m_omega"
-	matter = list(MATERIAL_STEEL = 9, MATERIAL_PLASTIC = 9, MATERIAL_SILVER = 6, MATERIAL_GOLD = 3) //DEAR LOAD WHAT ARE THOSE COSTS?
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GOLD = 4)
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 1600
+	max_chargerate = 0.24
 
-/obj/item/weapon/cell/medium/moebius/nuclear
+/obj/item/cell/medium/moebius/nuclear
 	name = "Soteria \"Atomcell 1000M\""
 	desc = "Soteria Institute branded rechargeable M-standardized power cell. This version able to recharge itself over time."
 	icon_state = "meb_m_nu"
@@ -181,8 +210,19 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_URANIUM = 4)
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1000
+	price_tag = 200
 
-/obj/item/weapon/cell/medium/excelsior
+/obj/item/cell/medium/greyson
+	name = "GP-SI \"Posi-cell 1600M\""
+	desc = "GP-SI branded rechargeable M-standardized power cell that recharges itself over time. This type has yet to hit the market!"
+	icon_state = "greyson_m_omega"
+	maxcharge = 1600
+	autorecharging = TRUE
+	autorecharge_rate = 0.06
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_PLATINUM = 2, MATERIAL_URANIUM = 4)
+	price_tag = 300
+
+/obj/item/cell/medium/excelsior
 	name = "Excelsior \"Zarya 1100M\""
 	desc = "Commie rechargeable M-standardized power cell. Power to the people!"
 	icon_state = "exs_m"
@@ -190,9 +230,25 @@
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
 	maxcharge = 1100
 
+/obj/item/cell/medium/neotheology
+	name = "Absolute \"Spark 1000M\""
+	desc = "Absolute branded non-rechargeable M-standardized power cell."
+	icon_state = "m_nt"
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_BIOMATTER = 10)
+	maxcharge = 1000
+	max_chargerate = 0
+	created_max_charge = TRUE
+
+/obj/item/cell/medium/neotheology/plasma
+	name = "Absolute \"Radiance 1500M\""
+	desc = "Absolute branded non-rechargeable M-standardized power cell. This advanced version can store even more energy."
+	icon_state = "m_nt_pl"
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_BIOMATTER = 5)
+	maxcharge = 1500
+
 //SMALL CELLS - for small devices, such as flashlights, analyzers and HUDs.
 
-/obj/item/weapon/cell/small
+/obj/item/cell/small
 	name = "Lonestar \"Robustcell 100S\""
 	desc = "Lonestar branded rechargeable S-standardized power cell. This one is the cheapest you can find."
 	icon_state = "s_st"
@@ -204,63 +260,72 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1)
 	price_tag = 50
 
-/obj/item/weapon/cell/small/high
+/obj/item/cell/small/depleted
+	charge = 0
+	starts_max_charge = FALSE
+
+/obj/item/cell/small/high
 	name = "Lonestar \"Robustcell 200S\""
 	desc = "Lonestar branded rechargeable S-standardized power cell. Popular and reliable version."
 	icon_state = "s_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 200
 
-/obj/item/weapon/cell/small/super
+/obj/item/cell/small/high/depleted
+	charge = 0
+	starts_max_charge = FALSE
+
+/obj/item/cell/small/super
 	name = "Lonestar \"Robustcell 300S\""
-	desc = "Lonestar branded rechargeable S-standardized power cell. This advanced version can store even more energy."
+	desc = "Lonestar branded rechargeable S-standardized power cell. This industrial version can store even more energy."
 	icon_state = "s_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 300
 
-/obj/item/weapon/cell/small/hyper
+/obj/item/cell/small/hyper
 	name = "Lonestar \"Robustcell-X 500S\""
-	desc = "Lonestar branded rechargeable S-standardized power cell. Looks like this is a rare and powerful prototype."
+	desc = "Lonestar branded rechargeable S-standardized power cell. This is the top of the class most advanced version of cell on the market."
 	icon_state = "s_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 500
 
-/obj/item/weapon/cell/small/moebius
+/obj/item/cell/small/moebius
 	name = "Soteria \"Power-Geyser 120S\""
 	desc = "Soteria Institute branded rechargeable S-standardized power cell. This one is cheap, yet better than Lonestar models for same price."
 	icon_state = "meb_s_st"
 	maxcharge = 120
 
-/obj/item/weapon/cell/small/moebius/high
+/obj/item/cell/small/moebius/high
 	name = "Soteria \"Power-Geyser 250S\""
 	desc = "Soteria Institute branded rechargeable S-standardized power cell. Popular and reliable version."
 	icon_state = "meb_s_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 250
 
-/obj/item/weapon/cell/small/moebius/super
+/obj/item/cell/small/moebius/super
 	name = "Soteria \"Power-Geyser 300S\""
-	desc = "Soteria Institute branded rechargeable S-standardized power cell. This advanced version can store even more energy."
+	desc = "Soteria Institute branded rechargeable S-standardized power cell. This industrial version can store even more energy."
 	icon_state = "meb_s_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 300
 
-/obj/item/weapon/cell/small/moebius/hyper
+/obj/item/cell/small/moebius/hyper
 	name = "Soteria \"Power-Geyser 400S\""
-	desc = "Soteria Institute branded rechargeable S-standardized power cell. Looks like this is rare and powerful prototype."
+	desc = "Soteria Institute branded rechargeable S-standardized power cell. Regarded as the second most powerful cell on the market."
 	icon_state = "meb_s_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 400
 
-/obj/item/weapon/cell/small/moebius/omega
+/obj/item/cell/small/moebius/omega
 	name = "Soteria \"Omega-Geyser 500S\""
-	desc = "Soteria branded rechargeable S-standardized power cell. This one being part of the Omega line making it the be all end all power cell of its type."
+	desc = "Soteria Institute branded rechargeable S-standardized power cell. This one being part of the Omega line making it the be-all-end-all power cell of its type, yet to hit the open market."
 	icon_state = "meb_s_omega"
-	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 3, MATERIAL_GOLD = 1) //DEAR LOAD WHAT ARE THOSE COSTS?
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1, MATERIAL_GOLD = 2)
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 500
+	max_chargerate = 0.24
 
-/obj/item/weapon/cell/small/moebius/nuclear
+/obj/item/cell/small/moebius/nuclear
 	name = "Soteria \"Atomcell 300S\""
 	desc = "Soteria Institute branded rechargeable S-standardized microreactor cell. Recharges itself over time."
 	icon_state = "meb_s_nu"
@@ -268,20 +333,32 @@
 	origin_tech = list(TECH_POWER = 6)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1, MATERIAL_URANIUM = 2)
 	maxcharge = 300
+	price_tag = 100
 
-/obj/item/weapon/cell/small/moebius/pda
+/obj/item/cell/small/moebius/pda
 	name = "Soteria \"Atomcell 50S\""
 	desc = "Soteria Institute branded S-standardized microreactor cell. Recharges itself over time."
 	icon_state = "meb_pda"
 	origin_tech = list(TECH_POWER = 4)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_URANIUM = 1)
 	maxcharge = 50
-	// Autorecharge rate is calculated for PDA power consumption: enough to offset it, unless PDA light is on.
+	// Autorecharge rate is buffed compared to eris, to compensate for the cell's cooldown.
 	autorecharging = TRUE
-	autorecharge_rate = 0.0007
+	autorecharge_rate = 0.007
 	recharge_time = 1
+	price_tag = 65
 
-/obj/item/weapon/cell/small/excelsior
+/obj/item/cell/small/greyson
+	name = "GP-SI \"Posi-cell 400S\""
+	desc = "GP-SI branded rechargeable S-standardized power cell that recharges itself over time. This type has yet to hit the market!"
+	icon_state = "greyson_s_omega"
+	maxcharge = 400
+	autorecharging = TRUE
+	autorecharge_rate = 0.06
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_PLATINUM = 1, MATERIAL_URANIUM = 2)
+	price_tag = 150
+
+/obj/item/cell/small/excelsior
 	name = "Excelsior \"Zarya 400S\""
 	desc = "Commie rechargeable S-standardized power cell. Power to the people!"
 	icon_state = "exs_s"
@@ -289,25 +366,186 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
 	maxcharge = 400
 
+/obj/item/cell/small/neotheology
+	name = "Absolute \"Spark 300S\""
+	desc = "Absolute branded non-rechargeable S-standardized power cell."
+	icon_state = "s_nt"
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_BIOMATTER = 5)
+	maxcharge = 300
+	max_chargerate = 0
+	created_max_charge = TRUE
+
+/obj/item/cell/small/neotheology/plasma
+	name = "Absolute \"Radiance 500S\""
+	desc = "Absolute branded non-rechargeable S-standardized power cell. This advanced version can store even more energy."
+	icon_state = "s_nt_pl"
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_BIOMATTER = 2.5)
+	maxcharge = 500
+
+// One cell to rule them all!
+/obj/item/cell/large/hydrogen
+	name = "hydrogen cell adapter"
+	desc = "An advanced device designed to convert the power held within regular cryo-sealed hydrogen fuel cell into power suitable for most electronic systems."
+	icon_state = "hydrogen"
+	max_chargerate = 0 // Cannot be charged
+	origin_tech = list(TECH_POWER = 2)
+	var/ratio = 200 // How much power does 1 unit of hydrogen give. At 150 plasma per cell, a single cell would provide 200 * 150 = 30000 total power, or 10k more than the best cells
+	var/obj/item/hydrogen_fuel_cell/fuel_cell // The fuel cell that we drain power from
+
+/obj/item/cell/large/hydrogen/Initialize()
+	. = ..()
+	update_charge() // Update the charge
+
+// Update the current max charge and charge so that we don't have to keep manually referencing the fuel cell.
+/obj/item/cell/large/hydrogen/proc/update_charge()
+	maxcharge = fuel_cell?.max_plasma * ratio
+	charge = fuel_cell?.plasma * ratio
+
+	if(!maxcharge) // If the max charge is somehow null
+		maxcharge = 1 // Set to 1 to prevent divisions by 0.
+	if(!charge)
+		charge = 0
+
+	update_icon()
+
+/obj/item/cell/large/hydrogen/drain_power(var/drain_check, var/surge, var/power = 0)
+	..()
+
+/obj/item/cell/large/hydrogen/use(var/amount)
+	charge_tick = max(charge_delay, charge_tick) //The cooldown could be shorter than the refresh time.
+	if(rigged && amount > 0)
+		explode()
+		return 0
+	var/used = fuel_cell.use(amount / ratio) ? amount : 0
+	update_charge()
+	update_icon()
+	return used
+
+/obj/item/cell/large/hydrogen/give(var/amount)
+	..()
+	update_charge() // Do the normal stuff, then update the charge.
+
+/obj/item/cell/large/hydrogen/attackby(obj/item/W, mob/user)
+	..()
+	if(istype(W, /obj/item/hydrogen_fuel_cell))
+		var/obj/item/hydrogen_fuel_cell/H = W
+		insert_item(H, user) // Insert the fuel cell into the adapter
+		fuel_cell = H
+		update_charge() // Update the charge
+		return
+
+/obj/item/cell/large/hydrogen/MouseDrop(over_object)
+	if(fuel_cell)
+		usr.visible_message(
+								SPAN_NOTICE("[usr] detach [fuel_cell] from [src]."),
+								SPAN_NOTICE("You detach [fuel_cell] from [src].")
+									)
+		eject_item(fuel_cell, usr)
+		fuel_cell = null
+		update_charge() // Update the charge
+	else
+		to_chat(usr, SPAN_NOTICE("[src] doesn't have an hydrogen fuel cell."))
+
+/obj/item/cell/large/hydrogen/update_icon()
+	icon_state = "[initial(icon_state)]_[fuel_cell ? "1" : "0"]" // hydrogen_1 if it has a fuel cell, hydrogen_0 if it doesn't.
+
+// Subtype that start loaded
+/obj/item/cell/large/hydrogen/loaded/New()
+	..()
+	fuel_cell = new(src)
+	update_charge()
+
+// A cell powered by an ameridian core. It is self-charging and used in the Ameridian Knight Rig, where it cannot be removed.
+/obj/item/cell/large/ameridian
+	name = "ameridian power cell"
+	desc = "An advanced device designed to extract power from ameridian cores. However it can only extract power while not in use."
+	icon_state = "hydrogen"
+	maxcharge = 20000
+	autorecharging = TRUE
+	autorecharge_rate = 0.1
+	price_tag = 600
+	origin_tech = list(TECH_POWER = 15)
+	var/obj/item/ameridian_core/core
+
+/obj/item/cell/large/ameridian/New()
+	..()
+	update_core()
+
+/obj/item/cell/large/ameridian/examine(mob/user)
+	..()
+	if(!core)
+		to_chat(user, SPAN_NOTICE("[src] doesn't have an ameridian core installed."))
+
+/obj/item/cell/large/ameridian/attackby(obj/item/W, mob/user)
+	..()
+	if(istype(W, /obj/item/ameridian_core) && !core)
+		insert_item(W, user) // Insert the fuel cell into the adapter
+		core = W
+		update_core() // Update the charge
+		return
+
+/obj/item/cell/large/ameridian/MouseDrop(over_object)
+	if(core)
+		usr.visible_message(
+								SPAN_NOTICE("[usr] remove [core] from [src]."),
+								SPAN_NOTICE("You remove [core] from [src].")
+									)
+		eject_item(core, usr)
+		core = null
+		update_core() // Update the charge
+	else
+		to_chat(usr, SPAN_NOTICE("[src] doesn't have an ameridian core."))
+
+/obj/item/cell/large/ameridian/update_icon()
+	icon_state = "[initial(icon_state)]_[core ? "1" : "0"]" // hydrogen_1 if it has a core, hydrogen_0 if it doesn't.
+
+/obj/item/cell/large/ameridian/proc/update_core()
+	autorecharging = core ? TRUE : FALSE
+	update_icon()
+
+/obj/item/cell/large/ameridian/loaded/New()
+	..()
+	core = new(src)
+	update_core()
+
 // Hand crank
 /obj/item/device/manual_charger
 	name = "manual recharger"
-	desc = "A basic hand crank recharger utilising a manual mechanism."
+	desc = "A basic hand crank recharger utilizing a manual mechanism."
 	icon = 'icons/obj/machines/chemistry.dmi'
 	icon_state = "centrifuge_makeshift"
 	matter = list(MATERIAL_STEEL = 30)
-	var/obj/item/weapon/cell/cell = null
-	var/suitable_cell = /obj/item/weapon/cell
+	cell = null
+	suitable_cell = /obj/item/cell
+	var/charge_per_cycle = 15
 
-/obj/item/device/makeshift_centrifuge/attack_self(mob/user)
-	var/obj/item/weapon/cell/cell
-	if(do_after(user, 60 - (1 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
+
+/obj/item/device/manual_charger/attackby(obj/item/I, mob/user)
+	if(istype(I, suitable_cell) && insert_item(I, user) && !cell)
+		cell = I
+		return
+	..()
+
+/obj/item/device/manual_charger/MouseDrop(over_object)
+	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
+		cell = null
+
+/obj/item/device/manual_charger/attack_self(mob/user)
+	if(!cell)
+		return
+	user.visible_message(SPAN_NOTICE("[user] starts turning the handle on [src]."), SPAN_NOTICE("You start to turn the handle on [src]."))
+	if(do_after(user, 12 + (30 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
 		if(!cell)
 			return
 		if(cell.charge >= cell.maxcharge)
 			user.visible_message(SPAN_NOTICE("The cell can not be charged any more!"))
 			return
 		else
-			user.visible_message(SPAN_NOTICE("[user] have started to turn handle on \the [src]."), SPAN_NOTICE("You started to turn handle on \the [src]."))
-			cell.charge += 100
-			return //Stafy Return
+			cell.charge += min(charge_per_cycle, cell.maxcharge - cell.charge)
+			
+			
+// Improv crank
+/obj/item/device/manual_charger/improv
+	name = "handmade manual recharger"
+	desc = "A handmade manual crank charger. Barely capable of charging cells."
+	charge_per_cycle = 4

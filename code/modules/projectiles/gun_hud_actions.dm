@@ -9,7 +9,7 @@
 
 /obj/screen/item_action/top_bar/gun/safety/update_icon()
 	..()
-	var/obj/item/weapon/gun/G = owner
+	var/obj/item/gun/G = owner
 	icon_state = "safety[G.safety]"
 
 
@@ -19,7 +19,7 @@
 
 /obj/screen/item_action/top_bar/gun/fire_mode/update_icon()
 	..()
-	var/obj/item/weapon/gun/G = owner
+	var/obj/item/gun/G = owner
 	if(G.sel_mode <= length(G.firemodes))
 		var/datum/firemode/cur_mode = G.firemodes[G.sel_mode]
 		icon_state = "mode_[cur_mode.icon_state]"
@@ -33,9 +33,9 @@
 
 /obj/screen/item_action/top_bar/gun/scope/update_icon()
 	..()
-	var/obj/item/weapon/gun/G = owner
-	icon_state = "scope[G.zoom]"
-
+	var/obj/item/gun/G = owner
+	if(G)
+		icon_state = "scope[G.zoom]"
 
 /obj/screen/item_action/top_bar/weapon_info
 	icon = 'icons/mob/screen/gun_actions.dmi'
@@ -44,7 +44,7 @@
 	name = "Weapon Info"
 	icon_state = "info"
 
-/obj/item/weapon/gun/ui_action_click(mob/living/user, action_name)
+/obj/item/gun/ui_action_click(mob/living/user, action_name)
 	switch(action_name)
 		if("fire mode")
 			toggle_firemode(user)
@@ -53,9 +53,9 @@
 		if("safety")
 			toggle_safety(user)
 		if("Weapon Info")
-			ui_interact(user)
+			nano_ui_interact(user)
 
-/obj/item/weapon/gun/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
+/obj/item/gun/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
 	var/list/data = ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)

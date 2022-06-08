@@ -30,7 +30,7 @@
 
 /datum/craft_recipe/appliance/cannon_frame
 	name = "cannon frame"
-	result = /obj/item/weapon/cannonframe
+	result = /obj/item/cannonframe
 	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL)
@@ -66,7 +66,7 @@
 //You get some article of clothing and shred it with a blade to make a mophead. Add in some metal rods for a handle
 /datum/craft_recipe/appliance/mop
 	name = "mop"
-	result = /obj/item/weapon/mop
+	result = /obj/item/mop
 	steps = list(
 		list(/obj/item/clothing, 1, time = 30),
 		list(QUALITY_CUTTING, 10, 120),

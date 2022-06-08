@@ -42,7 +42,7 @@
 	nitrogen = MOLES_N2STANDARD
 
 /turf/simulated/floor/hull
-	name = "hull"
+	name = "underplating"
 	icon = 'icons/turf/flooring/hull.dmi'
 	icon_state = "hullcenter0"
 	initial_flooring = /decl/flooring/reinforced/plating/hull

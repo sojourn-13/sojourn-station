@@ -16,7 +16,7 @@
 	var/state = 2
 	var/reinf = 0
 	var/basestate
-	var/shardtype = /obj/item/weapon/material/shard
+	var/shardtype = /obj/item/material/shard
 	var/glasstype = null // Set this in subtypes. Null is assumed strange or otherwise impossible to dismantle, such as for shuttle glass.
 	var/silicate = 0 // number of units of silicate
 	var/no_color = FALSE //If true, don't apply a color to the base
@@ -62,7 +62,8 @@
 	var/initialhealth = health
 
 	if (!ignore_resistance)
-		damage -= resistance
+		damage = damage * (1 - silicate / 200) // up to 50% damage resistance
+		damage -= resistance // then flat resistance from material
 	if (damage <= 0)
 		return 0
 
@@ -117,6 +118,8 @@
 	var/list/turf/nearby
 	if (explode)
 		nearby = (trange(2, src) - get_turf(src))
+	else
+		nearby = (RANGE_TURFS(1, src) - get_turf(src))
 
 	if(display_message)
 		visible_message("[src] shatters!")
@@ -126,8 +129,8 @@
 		if(reinf)
 			new /obj/item/stack/rods(loc)
 		while(index < rand(4,6))
-			var/obj/item/weapon/material/shard/S = new shardtype(loc)
-			if (explode && nearby.len > 0)
+			var/obj/item/material/shard/S = new shardtype(loc)
+			if (nearby.len > 0)
 				var/turf/target = pick(nearby)
 				spawn()
 					S.throw_at(target,40,3)
@@ -190,6 +193,11 @@
 
 /obj/structure/window/hitby(AM as mob|obj)
 	..()
+
+	if(isliving(AM))
+		hit_by_living(AM)
+		return
+
 	visible_message(SPAN_DANGER("[src] was hit by [AM]."))
 	var/tforce = 0
 	if(ismob(AM))
@@ -275,6 +283,20 @@
 	sleep(5) //Allow a littleanimating time
 	return TRUE
 
+/obj/structure/window/proc/hit_by_living(var/mob/living/M)
+	var/body_part = pick(BP_HEAD, BP_CHEST, BP_GROIN)
+	visible_message(SPAN_DANGER("[M] slams against \the [src]!"))
+	if(prob(30))
+		M.Weaken(1)
+	M.damage_through_armor(8, BRUTE, body_part, ARMOR_MELEE)
+
+	var/tforce = 15
+	if(reinf) tforce *= 0.25
+	if(health - tforce <= 7 && !reinf)
+		set_anchored(FALSE)
+		step(src, get_dir(M, src))
+	hit(tforce)
+	mount_check()
 
 /obj/structure/window/attackby(obj/item/I, mob/user)
 
@@ -304,13 +326,15 @@
 						return
 					if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
 						visible_message(SPAN_NOTICE("[user] dismantles \the [src]."))
+						var/obj/glass
 						if(is_fulltile())
-							new glasstype(loc, 6)
+							glass = new glasstype(loc, 6)
 						else
-							new glasstype(loc, 1)
+							glass = new glasstype(loc, 1)
+						glass.add_fingerprint(user)
+
 						qdel(src)
 						return
-				return 1 //No whacking the window with tools unless harm intent
 
 			if(QUALITY_PRYING)
 				if(reinf && state <= 1)
@@ -533,7 +557,7 @@
 	desc = "A borosilicate alloy window. It seems to be quite strong."
 	basestate = "pwindow"
 	icon_state = "plasmawindow"
-	shardtype = /obj/item/weapon/material/shard/plasma
+	shardtype = /obj/item/material/shard/plasma
 	glasstype = /obj/item/stack/material/glass/plasmaglass
 	maximal_heat = T0C + 5227  // Safe use temperature at 5500 kelvin. Easy to remember.
 	damage_per_fire_tick = 1.5 // Lowest per-tick damage so overheated supermatter chambers have some time to respond to it. Will still shatter before a delam.
@@ -583,12 +607,12 @@
 	desc = "A borosilicate alloy window, with rods supporting it. It seems to be very strong."
 	basestate = "rpwindow"
 	icon_state = "plasmarwindow"
-	shardtype = /obj/item/weapon/material/shard/plasma
+	shardtype = /obj/item/material/shard/plasma
 	glasstype = /obj/item/stack/material/glass/plasmarglass
-	maximal_heat = T0C + 5453 // Safe use temperature at 6000 kelvin.
+	maximal_heat = T0C + 99453 // Safe use temperature at 100,000 kelvin. I think?
 	damage_per_fire_tick = 1.5
 	maxHealth = 200
-	resistance = RESISTANCE_IMPROVED
+	resistance = RESISTANCE_TOUGH
 
 /obj/structure/window/reinforced/plasma/full
 	dir = SOUTH|EAST
@@ -596,7 +620,7 @@
 	icon_state = "plasmarwindow_mask"
 	alpha = 150
 	maxHealth = 250
-	resistance = RESISTANCE_IMPROVED
+	resistance = RESISTANCE_TOUGH
 	flags = null
 
 /obj/structure/window/reinforced/tinted

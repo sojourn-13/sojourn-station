@@ -12,15 +12,15 @@
 	M.adjustToxLoss(effect_multiplier * 0.3)
 
 /datum/reagent/acetone/touch_obj(var/obj/O)	//I copied this wholesale from ethanol and could likely be converted into a shared proc. ~Techhead
-	if(istype(O, /obj/item/weapon/paper))
-		var/obj/item/weapon/paper/paperaffected = O
+	if(istype(O, /obj/item/paper))
+		var/obj/item/paper/paperaffected = O
 		paperaffected.clearpaper()
 		to_chat(usr, "The solution dissolves the ink on the paper.")
 		return
-	if(istype(O, /obj/item/weapon/book))
+	if(istype(O, /obj/item/book))
 		if(volume < 5)
 			return
-		var/obj/item/weapon/book/affectedbook = O
+		var/obj/item/book/affectedbook = O
 		affectedbook.dat = null
 		to_chat(usr, "<span class='notice'>The solution dissolves the ink on the book.</span>")
 	return
@@ -45,6 +45,7 @@
 	description = "A silvery white and ductile member of the boron group of chemical elements."
 	reagent_state = SOLID
 	color = "#A8A8A8"
+	common = TRUE //Identifiable on sight
 
 /datum/reagent/toxin/ammonia
 	name = "Ammonia"
@@ -55,6 +56,7 @@
 	reagent_state = LIQUID
 	color = "#404030"
 	metabolism = REM * 0.5
+	common = TRUE //Identifiable by smell
 
 /datum/reagent/toxin/ammonia/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.adjustToxLoss(effect_multiplier * 0.15)
@@ -62,7 +64,7 @@
 /datum/reagent/carbon
 	name = "Carbon"
 	id = "carbon"
-	description = "A chemical element, the builing block of life."
+	description = "A chemical element, the building block of life."
 	taste_description = "sour chalk"
 	taste_mult = 1.5
 	reagent_state = SOLID
@@ -94,6 +96,7 @@
 	description = "A highly ductile metal."
 	taste_description = "copper"
 	color = "#6E3B08"
+	common = TRUE //Identifiable on sight
 
 /datum/reagent/ethanol
 	name = "Ethanol" //Parent class for all alcoholic reagents.
@@ -114,6 +117,7 @@
 	var/targ_temp = 310
 	var/halluci = 0
 	var/sanity_gain_ingest = 0.5
+	common = TRUE //All alchoholic reagents can be ID'd pretty easily
 
 	glass_icon_state = "glass_clear"
 	glass_name = "ethanol"
@@ -124,9 +128,18 @@
 	if(istype(L))
 		L.adjust_fire_stacks(amount / 15)
 
-/datum/reagent/ethanol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+/datum/reagent/ethanol/on_mob_add(mob/living/L)
+	..()
+	SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_ADD_DRUG)
+
+/datum/reagent/ethanol/on_mob_delete(mob/living/L)
+	..()
+	SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_DELETE_DRUG)
+
+/datum/reagent/ethanol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustToxLoss(0.2 * toxicity * (issmall(M) ? effect_multiplier * 2 : effect_multiplier))
 	M.add_chemical_effect(CE_PAINKILLER, max(55-strength, 1))
+	SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
 	return
 
 /datum/reagent/ethanol/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
@@ -177,15 +190,15 @@
 		H.sanity.onAlcohol(src, effect_multiplier)
 
 /datum/reagent/ethanol/touch_obj(var/obj/O)
-	if(istype(O, /obj/item/weapon/paper))
-		var/obj/item/weapon/paper/paperaffected = O
+	if(istype(O, /obj/item/paper))
+		var/obj/item/paper/paperaffected = O
 		paperaffected.clearpaper()
 		to_chat(usr, "The solution dissolves the ink on the paper.")
 		return
-	if(istype(O, /obj/item/weapon/book))
+	if(istype(O, /obj/item/book))
 		if(volume < 5)
 			return
-		var/obj/item/weapon/book/affectedbook = O
+		var/obj/item/book/affectedbook = O
 		affectedbook.dat = null
 		to_chat(usr, "<span class='notice'>The solution dissolves the ink on the book.</span>")
 	return
@@ -247,6 +260,8 @@
 	taste_mult = 0 //mercury apparently is tasteless. IDK
 	reagent_state = LIQUID
 	color = "#484848"
+	common = TRUE //everyone knows what mercury looks like
+	
 
 /datum/reagent/metal/mercury/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
@@ -434,6 +449,7 @@
 	glass_icon_state = "iceglass"
 	glass_name = "sugar"
 	glass_desc = "The organic compound commonly known as table sugar and sometimes called saccharose. This white, odorless, crystalline powder has a pleasing, sweet taste."
+	common = TRUE //everyone knows what sugar is
 
 /datum/reagent/organic/sugar/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.adjustNutrition(4 * effect_multiplier)
@@ -446,11 +462,12 @@
 	reagent_state = SOLID
 	color = "#BF8C00"
 	reagent_type = "Reactive nonmetal"
+	common = TRUE //everyone knows this smell
 
 /datum/reagent/metal/tungsten
 	name = "Tungsten"
 	id = "tungsten"
-	description = "A chemical element, and a strong oxidising agent."
+	description = "A chemical element, and a strong oxidizing agent."
 	taste_mult = 0 //no taste
 	reagent_state = SOLID
 	color = "#DCDCDC"

@@ -5,15 +5,15 @@
 	icon_keyboard = null
 	icon_screen = "invaders"
 	var/list/prizes = list(
-		/obj/item/weapon/storage/box/snappops			= 2,
-		/obj/item/weapon/gun/projectile/revolver/capgun	= 2,
-		/obj/item/weapon/storage/fancy/crayons			= 2,
+		/obj/item/storage/box/snappops			= 2,
+		/obj/item/gun/projectile/revolver/capgun	= 2,
+		/obj/item/storage/fancy/crayons			= 2,
 		/obj/random/costume/body_generic				= 2,
 		/obj/random/costume/body_animals				= 2,
 		/obj/random/costume/head_generic				= 2,
 		/obj/random/costume/head_animals				= 2,
 		/obj/random/toy/arcadejunk						= 1,
-		/obj/item/toy/figure							= 1,
+		/obj/random/toy/action_figure					= 1,
 		/obj/random/toy/mecha							= 1,
 		/obj/random/toy/plushie							= 1,
 	)
@@ -21,7 +21,7 @@
 /obj/machinery/computer/arcade/Initialize()
 	. = ..()
 	if(!circuit)
-		circuit = pick(subtypesof(/obj/item/weapon/circuitboard/arcade))
+		circuit = pick(subtypesof(/obj/item/circuitboard/arcade))
 		var/build_path = initial(circuit.build_path)
 		new build_path (loc, circuit)
 		return INITIALIZE_HINT_QDEL
@@ -63,7 +63,7 @@
 	name = "arcade machine"
 	desc = "Try your luck against a vicious and deadly opponent."
 	icon_state = "arcade"
-	circuit = /obj/item/weapon/circuitboard/arcade/battle
+	circuit = /obj/item/circuitboard/arcade/battle
 	var/enemy_name = "Space Villain"
 	var/temp = "Winners don't use space drugs!" //Temporary message, for attack messages, etc
 	var/player_hp = 30 //Player health/attack points
@@ -148,7 +148,7 @@
 					  "Pasotel", "Pauper", "Paul", "Popsy", "Prax", "Praxen", "Pierce", "Phayne", "Phoenix", "Preston", "Patrick", "Piper", "Peter",
 					  "Quentin", "Quinn", "Quincy", "Quillon", "Quinton", "Quintavius", "Quimby", "Quade", "Queenie", "Quinta", "Quinlan",
 					  "Raere", "Raeschen", "Ray", "Resca", "Rex", "Ricardo", "Robbie", "Robinson", "Roosevelt", "Rotten", "Ru", "Rose", "Remington",
-					  "Samantha", "Sanders", "Sarah", "Shyne", "Sari", "Sans", "Seeking", "Stall", "Stellar", "Steam", "Schrödinger", "Steven", "Szandor", "Sydney", "Strelle", //best character
+					  "Samantha", "Sanders", "Sarah", "Shyne", "Sari", "Sans", "Seeking", "Stall", "Stellar", "Steam", "SchrÃ¶dinger", "Steven", "Szandor", "Sydney", "Strelle", //best character
 					  "Tasald", "Trevor", "Tamoka", "Tarmane", "Todd", "Torvo", "Thompson", "Thomas", "Trump", "Tommy", "Thor", "Timothy", "Tony",
 					  "Uriel", "Undine", "Uri", "Universe", "Ulysses", "Uriah", "Usher", "Ursel", "Uziel", "Ursula", "Ursule", "Ulva",
 					  "Victoria", "Vanessa", "Veer", "Verity", "Vixen", "Violet", "Victor", "Valentine", "Valentino", "Vaughn", "Vivek",

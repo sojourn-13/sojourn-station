@@ -15,7 +15,7 @@
 
 /datum/genetics/side_effect/genetic_burn
 	name = "Genetic Burn"
-	symptom = "Subject's skin turns unusualy red."
+	symptom = "Subject's skin turns unusually red."
 	treatment = "Inject small dose of dexalin."
 	effect = "Subject's skin burns."
 	duration = 10*30

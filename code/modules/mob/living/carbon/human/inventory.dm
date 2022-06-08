@@ -18,7 +18,10 @@ This saves us from having to call add_fingerprint() any time something is put in
 
 //Puts the item into our active hand if possible. returns 1 on success.
 /mob/living/carbon/human/put_in_active_hand(var/obj/item/W)
-	return (hand ? put_in_l_hand(W) : put_in_r_hand(W))
+	var/value = hand ? put_in_l_hand(W) : put_in_r_hand(W)
+	if(value)
+		W.swapped_to(src)
+	return value
 
 //Puts the item into our inactive hand if possible. returns 1 on success.
 /mob/living/carbon/human/put_in_inactive_hand(var/obj/item/W)
@@ -183,6 +186,7 @@ This saves us from having to call add_fingerprint() any time something is put in
 			return BP_R_ARM
 
 /mob/living/carbon/human/equip_to_slot(obj/item/W, slot, redraw_mob = 1)
+	SEND_SIGNAL(src, COMSING_HUMAN_EQUITP, W)
 	switch(slot)
 		if(slot_in_backpack)
 			if(src.get_active_hand() == W)
@@ -217,7 +221,7 @@ This saves us from having to call add_fingerprint() any time something is put in
 
 /mob/living/carbon/human/proc/draw_from_suit_storage()
 	var/i = get_equipped_item(slot_s_store)
-	if(!istype(i,/obj/item/weapon/gun))
+	if(!istype(i,/obj/item/gun))
 		return FALSE
 	put_in_active_hand(i)
 	return TRUE

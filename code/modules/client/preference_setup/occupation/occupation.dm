@@ -65,7 +65,7 @@
 
 	//pref.skills_allocated = pref.sanitize_skills(pref.skills_allocated)		//this proc also automatically computes and updates points_by_job
 
-	var/jobs_by_type = decls_repository.get_decls(maps_data.allowed_jobs)
+	var/jobs_by_type = decls_repository.get_decls(GLOB.maps_data.allowed_jobs)
 	for(var/job_type in jobs_by_type)
 		var/datum/job/job = jobs_by_type[job_type]
 		var/alt_title = pref.player_alt_titles[job.title]
@@ -133,9 +133,22 @@
 			bad_message = "\[IN [(available_in_days)] DAYS]"*/
 		else if(job.minimum_character_age && user.client && (user.client.prefs.age < job.minimum_character_age))
 			bad_message = "\[MINIMUM CHARACTER AGE: [job.minimum_character_age]]"
+		else if(user.client.prefs.species_form in job.disallow_species)
+			bad_message = "\[SPECIES DISALLOWED]"
+		/*else if(job.playtimerequired && user.client)
+			if(job.playtimerequired > user.client.prefs.playtime[job.department])
+				bad_message = "\[MINIMUM PLAYTIME: [job.playtimerequired] Minutes]"
+		else if(job.coltimerequired && user.client)
+			if(job.coltimerequired > user.client.prefs.playtime["Civilian"])
+				bad_message = "\[MINIMUM PLAYTIME AS A COLONIST: [job.coltimerequired] Minutes]" *///People may need to play colonist before playing this job.
 		else if(user.client && job.is_setup_restricted(user.client.prefs.setup_options))
 			bad_message = "\[SETUP RESTRICTED]"
-
+		else if(job.playtimerequired && user.client)
+			if(!job.is_experienced_enough(user.client))
+				bad_message = "\[MINIMUM PLAYTIME: [job.playtimerequired] Minutes]"
+		else if(job.coltimerequired && user.client)
+			if(!job.is_experienced_enough(user.client))
+				bad_message = "\[MINIMUM COLONIST PLAYTIME: [job.coltimerequired] Minutes]"
 		if(("Assistant" in pref.job_low) && (rank != "Assistant"))
 			. += "<a href='?src=\ref[src];set_skills=[rank]'><font color=grey>[rank]</font></a></td><td></td></tr>"
 			continue
@@ -347,6 +360,8 @@
 			job_desc += "You are in charge of this department."
 	job_desc += "<br>"
 	job_desc += "You answer to <b>[job.supervisors]</b> normally."
+	job_desc += "<br>"
+	job_desc += "The ideal character age for this role is <b>[job.ideal_character_age] years</b>."
 
 
 
@@ -436,7 +451,7 @@
  */
 /datum/category_item/player_setup_item/proc/prune_job_prefs()
 	var/allowed_titles = list()
-	var/jobs_by_type = decls_repository.get_decls(maps_data.allowed_jobs)
+	var/jobs_by_type = decls_repository.get_decls(GLOB.maps_data.allowed_jobs)
 	for(var/job_type in jobs_by_type)
 		var/datum/job/job = jobs_by_type[job_type]
 		allowed_titles += job.title

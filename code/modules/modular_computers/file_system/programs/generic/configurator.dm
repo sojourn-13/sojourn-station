@@ -21,7 +21,7 @@
 	name = "NTOS Computer Configuration Tool"
 	var/obj/item/modular_computer/movable = null
 
-/datum/nano_module/program/computer_configurator/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/computer_configurator/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	if(program)
 		movable = program.computer
 	if(!istype(movable))
@@ -47,7 +47,7 @@
 		data["battery_percent"] = round(movable.cell.percent())
 
 	var/list/all_entries[0]
-	for(var/obj/item/weapon/computer_hardware/H in hardware)
+	for(var/obj/item/computer_hardware/H in hardware)
 		all_entries.Add(list(list(
 		"name" = H.name,
 		"desc" = H.desc,

@@ -4,6 +4,8 @@
 	desc = "A portable generator for emergency backup power"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "portgen0"
+	var/off_icon = "portgen0"
+	var/on_icon = "portgen1"
 	density = 1
 	anchored = 0
 	use_power = NO_POWER_USE
@@ -81,7 +83,7 @@
 			stat &= ~EMPED
 
 /obj/machinery/power/port_gen/proc/explode()
-	explosion(src.loc, -1, 3, 5, -1)
+	explosion(src.loc, 0, 3, 5, 0)
 	qdel(src)
 
 #define TEMPERATURE_DIVISOR 40
@@ -94,7 +96,7 @@
 
 	var/sheet_name = "Plasma Sheets"
 	var/sheet_path = /obj/item/stack/material/plasma
-	circuit = /obj/item/weapon/circuitboard/pacman
+	circuit = /obj/item/circuitboard/pacman
 
 	/*
 		These values were chosen so that the generator can run safely up to 80 kW
@@ -125,7 +127,7 @@
 		connect_to_network()
 	if(use_reagents_as_fuel)
 		create_reagents(max_fuel_volume)
-		fuel_name = chemical_reagents_list[fuel_reagent_id]
+		fuel_name = GLOB.chemical_reagents_list[fuel_reagent_id]
 		desc = "A power generator that runs on [fuel_name]. Rated for [(power_gen * max_safe_output) / 1000] kW max safe output."
 
 /obj/machinery/power/port_gen/pacman/Destroy()
@@ -134,14 +136,14 @@
 
 /obj/machinery/power/port_gen/pacman/RefreshParts()
 	var/temp_rating = 0
-	for(var/obj/item/weapon/stock_parts/SP in component_parts)
-		if(istype(SP, /obj/item/weapon/stock_parts/matter_bin))
+	for(var/obj/item/stock_parts/SP in component_parts)
+		if(istype(SP, /obj/item/stock_parts/matter_bin))
 			if(!use_reagents_as_fuel)
 				max_fuel_volume = SP.rating * SP.rating * 50
 			else
 				max_fuel_volume = SP.rating * 300
 				create_reagents(max_fuel_volume)
-		else if(istype(SP, /obj/item/weapon/stock_parts/micro_laser) || istype(SP, /obj/item/weapon/stock_parts/capacitor))
+		else if(istype(SP, /obj/item/stock_parts/micro_laser) || istype(SP, /obj/item/stock_parts/capacitor))
 			temp_rating += SP.rating
 	desc = "A power generator that runs on [fuel_name]. Rated for [(power_gen * max_safe_output) / 1000] kW max safe output."
 
@@ -283,9 +285,6 @@
 
 /obj/machinery/power/port_gen/pacman/attackby(var/obj/item/I, var/mob/user)
 
-	if(default_deconstruction(I, user))
-		return
-
 	if(default_part_replacement(I, user))
 		return
 
@@ -306,33 +305,60 @@
 
 	else
 
-		var/list/usable_qualities = list(QUALITY_BOLT_TURNING)
+
+		var/list/usable_qualities = list(QUALITY_BOLT_TURNING, QUALITY_SCREW_DRIVING)
+
+		if(panel_open && circuit)
+			usable_qualities += QUALITY_PRYING
 
 		var/tool_type = I.get_tool_type(user, usable_qualities, src)
 		switch(tool_type)
 
 			if(QUALITY_BOLT_TURNING)
-				if(istype(get_turf(src), /turf/space) && !anchored)
-					to_chat(user, SPAN_NOTICE("You can't anchor something to empty space. Idiot."))
-					return
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
-					to_chat(user, SPAN_NOTICE("You [anchored ? "un" : ""]anchor the brace with [I]."))
-					anchored = !anchored
+				if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+					playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+					if(anchored)
+						to_chat(user, SPAN_NOTICE("You unsecure the [src] from the floor!"))
+						anchored = FALSE
+					else
+						if(istype(get_turf(src), /turf/space)) return //No wrenching these in space!
+						to_chat(user, SPAN_NOTICE("You secure the [src] to the floor!"))
+						anchored = TRUE
+
 					if(anchored)
 						connect_to_network()
 					else
 						disconnect_from_network()
 
+					return
+
+			if(QUALITY_PRYING)
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_HARD, required_stat = STAT_MEC))
+					to_chat(user, SPAN_NOTICE("You remove the components of \the [src] with [I]."))
+					dismantle()
+				return TRUE
+
+			if(QUALITY_SCREW_DRIVING)
+				var/used_sound = panel_open ? 'sound/machines/Custom_screwdriveropen.ogg' :  'sound/machines/Custom_screwdriverclose.ogg'
+				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
+					updateUsrDialog()
+					panel_open = !panel_open
+					to_chat(user, SPAN_NOTICE("You [panel_open ? "open" : "close"] the maintenance hatch of \the [src] with [I]."))
+					update_icon()
+				return TRUE
+
+
 			if(ABORT_CHECK)
 				return
+
 
 /obj/machinery/power/port_gen/pacman/attack_hand(mob/user)
 	..()
 	if (!anchored)
 		return
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/power/port_gen/pacman/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/power/port_gen/pacman/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	if(IsBroken())
 		return
 
@@ -399,9 +425,9 @@
 
 /obj/machinery/power/port_gen/pacman/update_icon()
 	if(active)
-		icon_state = "portgen1"
+		icon_state = "[on_icon]"
 	else
-		icon_state = "portgen0"
+		icon_state = "[off_icon]"
 
 /obj/machinery/power/port_gen/pacman/Topic(href, href_list)
 	if(..())
@@ -429,26 +455,26 @@
 /obj/machinery/power/port_gen/pacman/super
 	name = "S.U.P.E.R.P.A.C.M.A.N portable generator"
 	desc = "A power generator that utilizes uranium sheets as fuel. Can run for much longer than the standard PACMAN type generators. Rated for 80 kW max safe output."
-	icon_state = "portgen1"
+	icon_state = "portgen3"
+	off_icon = "portgen3"
+	on_icon = "portgen3_1"
 	sheet_path = /obj/item/stack/material/uranium
 	sheet_name = "Uranium Sheets"
 	time_per_fuel_unit = 576 //same power output, but a 50 sheet stack will last 2 hours at max safe power
-	circuit = /obj/item/weapon/circuitboard/pacman/super
+	circuit = /obj/item/circuitboard/pacman/super
 
 /obj/machinery/power/port_gen/pacman/super/UseFuel()
 	//produces a tiny amount of radiation when in use
 	if (prob(2*power_output))
-		for (var/mob/living/L in range(src, 5))
-			L.apply_effect(1, IRRADIATE) //should amount to ~5 rads per minute at max safe power
+		PulseRadiation(src, 1, 5) //should amount to ~5 rads per minute at max safe power
 	..()
 
 /obj/machinery/power/port_gen/pacman/super/explode()
 	//a nice burst of radiation
 	var/rads = 50 + (sheets + sheet_left)*1.5
-	for (var/mob/living/L in range(src, 10))
 		//should really fall with the square of the distance, but that makes the rads value drop too fast
 		//I dunno, maybe physics works different when you live in 2D -- SM radiation also works like this, apparently
-		L.apply_effect(max(20, round(rads/get_dist(L,src))), IRRADIATE)
+	PulseRadiation(src, max(20, rads), 10)
 
 	explosion(src.loc, 3, 3, 5, 3)
 	qdel(src)
@@ -457,6 +483,8 @@
 	name = "M.R.S.P.A.C.M.A.N portable generator"
 	desc = "An advanced power generator that runs on tritium. Rated for 200 kW maximum safe output!"
 	icon_state = "portgen2"
+	off_icon = "portgen2"
+	on_icon = "portgen2_1"
 	sheet_path = /obj/item/stack/material/tritium
 	sheet_name = "Tritium Fuel Sheets"
 
@@ -468,7 +496,7 @@
 	time_per_fuel_unit = 576
 	max_temperature = 800
 	temperature_gain = 90
-	circuit = /obj/item/weapon/circuitboard/pacman/mrs
+	circuit = /obj/item/circuitboard/pacman/mrs
 
 /obj/machinery/power/port_gen/pacman/mrs/explode()
 	//no special effects, but the explosion is pretty big (same as a supermatter shard).
@@ -478,7 +506,9 @@
 /obj/machinery/power/port_gen/pacman/camp
 	name = "C.A.M.P.E.R.P.A.C.M.A.N portable generator"
 	desc = "This pacman got its named form its low power rating of burning wood as fuel, tends to be used well people go out camping. Rated for 20 kW maximum safe output!"
-	icon_state = "portgen2"
+	icon_state = "portgen3"
+	off_icon = "portgen3"
+	on_icon = "portgen3_1"
 	sheet_path = /obj/item/stack/material/wood
 	sheet_name = "Wood Planks Fuel Sheets"
 
@@ -486,7 +516,7 @@
 	power_gen = 12000 //watts
 	time_per_fuel_unit = 80
 	temperature_gain = 20
-	circuit = /obj/item/weapon/circuitboard/pacman/camp
+	circuit = /obj/item/circuitboard/pacman/camp
 
 /obj/machinery/power/port_gen/pacman/camp/explode()
 	//low explosion effects, this is rather safe.
@@ -497,6 +527,8 @@
 	name = "M.I.S.S.P.A.C.M.A.N portable generator"
 	desc = "Using a girls best friend. Rated for 200 kW maximum safe output!"
 	icon_state = "portgen2"
+	off_icon = "portgen2"
+	on_icon = "portgen2_1"
 	sheet_path = /obj/item/stack/material/diamond
 	sheet_name = "Diamond Sheet Fuel Sheets"
 
@@ -504,7 +536,7 @@
 	power_gen = 22500 //watts
 	time_per_fuel_unit = 284 //3x longer then plasma
 	temperature_gain = 70
-	circuit = /obj/item/weapon/circuitboard/pacman/miss
+	circuit = /obj/item/circuitboard/pacman/miss
 
 /obj/machinery/power/port_gen/pacman/miss/explode()
 	//low explosion effects.

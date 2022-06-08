@@ -18,6 +18,33 @@
 	icon_state = "maid"
 	item_state = "maid"
 
+/obj/item/clothing/under/plaid/maid/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Default Maid"] = "maid"
+	options["Alt Maid"] = "maid_alt" //Sprite by Tori
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your clothing into [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/plaid/orange
 	name = "orange dress"
 	desc = "A fancy orange gown with some leg reveal."
@@ -200,6 +227,13 @@
 	item_state = "cheongsam-white"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
+/obj/item/clothing/under/sexymaid
+	name = "Skimpy maid dress"
+	desc = "More practical than latex, but still too short to of much use cleaning anything other than spears"
+	icon_state = "sexymaid"
+	item_state = "sexymaid"
+	price_tag = 45
+
 /*Skirts*/
 
 /obj/item/clothing/under/skirt/khaki
@@ -227,6 +261,16 @@
 	name = "short red skirt"
 	desc = "A short skirt with a shiny red design."
 	icon_state = "skirt_short_red"
+
+/obj/item/clothing/under/skirt/pleated
+	name = "pleated skirt"
+	desc = "A short, grey pleated skirt"
+	icon_state = "pleated"
+
+/obj/item/clothing/under/skirt/blackpleated
+	name = "black pleated skirt"
+	desc = "A short, black pleated skirt"
+	icon_state = "blackpleated"
 
 /obj/item/clothing/under/skirt
 	name = "swept skirt"

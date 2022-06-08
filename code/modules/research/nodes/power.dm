@@ -32,7 +32,7 @@
 
 	required_technologies = list(/datum/technology/basic_power)
 	required_tech_levels = list()
-	cost = 200
+	cost = 150
 
 	unlocks_designs = list(	/datum/design/research/item/part/adv_capacitor,
 							/datum/design/research/item/powercell/large/super,
@@ -51,13 +51,14 @@
 
 	required_technologies = list(/datum/technology/advanced_power)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
-	unlocks_designs = list(/datum/design/research/circuit/smes_cell, /datum/design/research/item/part/smes_coil/weak)
+	unlocks_designs = list(	/datum/design/research/circuit/smes_cell,
+							/datum/design/research/item/part/smes_coil/weak)
 
 /datum/technology/energy_distribution
 	name = "Energy Distribution"
-	desc = "Breaker boxes, that give more comfortable control of powernets."
+	desc = "Breaker boxes and better robotic power saving, that give more comfortable control of powernets and system engery saving."
 	tech_type = RESEARCH_POWERSTORAGE
 
 	x = 0.5
@@ -66,9 +67,10 @@
 
 	required_technologies = list(/datum/technology/advanced_power_storage)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
-	unlocks_designs = list(/datum/design/research/circuit/breakerbox)
+	unlocks_designs = list(	/datum/design/research/circuit/breakerbox,
+							/datum/design/research/item/robot_upgrade/power_saver)
 
 /datum/technology/super_power
 	name = "Super Power Storing"
@@ -79,18 +81,17 @@
 	y = 0.7
 	icon = "hypercell"
 
-	required_technologies = list(
-								/datum/technology/advanced_power
-								)
+	required_technologies = list(/datum/technology/advanced_power)
 	required_tech_levels = list()
-	cost = 1200
+	cost = 900
 
 	unlocks_designs = list(	/datum/design/research/item/part/super_capacitor,
 							/datum/design/research/item/powercell/large/hyper,
 							/datum/design/research/item/powercell/medium/hyper,
 							/datum/design/research/item/powercell/small/hyper,
 							/datum/design/research/item/part/smes_coil/super_io,
-							/datum/design/research/item/part/smes_coil/super_capacity)
+							/datum/design/research/item/part/smes_coil/super_capacity,
+							/datum/design/research/circuit/tesla_turret)
 
 /datum/technology/solar_power
 	name = "Basic Power Generation"
@@ -103,7 +104,7 @@
 
 	required_technologies = list()
 	required_tech_levels = list()
-	cost = 400
+	cost = 300
 
 	unlocks_designs = list(	/datum/design/research/circuit/solarcontrol,
 							/datum/design/research/circuit/camp,
@@ -112,7 +113,7 @@
 
 /datum/technology/improved_power_generation
 	name = "Improved Power Generation"
-	desc = "PACMAN MK2, uranium based power."
+	desc = "PACMAN MK2, uranium based power, hand crank generator for cells."
 	tech_type = RESEARCH_POWERSTORAGE
 
 	x = 0.25
@@ -121,9 +122,10 @@
 
 	required_technologies = list(/datum/technology/solar_power)
 	required_tech_levels = list()
-	cost = 600
+	cost = 450
 
 	unlocks_designs = list(/datum/design/research/circuit/superpacman,
+							/datum/design/research/item/hand_charger,
 							/datum/design/research/circuit/diesel)
 
 /datum/technology/advanced_power_generation
@@ -137,7 +139,7 @@
 
 	required_technologies = list(/datum/technology/improved_power_generation)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(/datum/design/research/circuit/mrspacman)
 
@@ -152,9 +154,11 @@
 
 	required_technologies = list(/datum/technology/advanced_power_generation)
 	required_tech_levels = list()
-	unlocks_designs = list(/datum/design/research/circuit/miss, /datum/design/research/structure/solar)
+	unlocks_designs = list(/datum/design/research/circuit/miss,
+								 /datum/design/research/structure/solar,
+								 /datum/design/research/circuit/hydrogen_gen)
 
-	cost = 2000//5000
+	cost = 1500
 
 	//unlocks_designs = list()"fusion_core_control", "fusion_fuel_compressor", "fusion_fuel_control", "gyrotron_control", "fusion_core", "fusion_injector", "gyrotron")
 
@@ -174,9 +178,10 @@
 								)
 
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(
+							/datum/design/research/item/powercell/large/ameridian,
 							/datum/design/research/item/powercell/large/omega,
 							/datum/design/research/item/powercell/medium/omega,
 							/datum/design/research/item/powercell/small/omega
@@ -196,7 +201,7 @@
 								)
 
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(
 							/datum/design/research/item/powercell/small/nuclear,
@@ -213,11 +218,11 @@
 	icon = "bluespacecell"
 
 	required_technologies = list(
-									/datum/technology/omega_power
+									/datum/technology/atom_small_power
 								)
 
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(
 							/datum/design/research/item/powercell/medium/nuclear
@@ -237,7 +242,7 @@
 								)
 
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(
 							/datum/design/research/item/powercell/large/nuclear

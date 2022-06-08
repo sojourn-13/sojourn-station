@@ -223,8 +223,49 @@ note dizziness decrements automatically in the mob's Life() proc.
 	// And animate the attack!
 	animate(I, alpha = 175, pixel_x = 0, pixel_y = 0, pixel_z = 0, time = 3)
 
+/* // TODO - Wizard
+/obj/mecha/do_attack_animation(atom/A, var/use_item = TRUE)
+	..()
 
+	if (!use_item)
+		//The use item flag governs whether or not we'll add a little weapon image to the animation
+		return
 
+	// What icon do we use for the attack?
+	var/image/I
+	var/obj/item/T = selected
+	if (T && T.icon)
+		I = image(T.icon, A, T.icon_state, A.layer + 1)
+	else // Attacked with a fist?
+		return
+
+	// Who can see the attack?
+	var/list/viewing = list()
+	for (var/mob/M in viewers(A))
+		if (M.client)
+			viewing |= M.client
+	flick_overlay(I, viewing, 5) // 5 ticks/half a second
+
+	// Scale the icon.
+	I.transform *= 0.75
+	// Set the direction of the icon animation.
+	var/direction = get_dir(src, A)
+	if(direction & NORTH)
+		I.pixel_y = -16
+	else if(direction & SOUTH)
+		I.pixel_y = 16
+
+	if(direction & EAST)
+		I.pixel_x = -16
+	else if(direction & WEST)
+		I.pixel_x = 16
+
+	if(!direction) // Attacked self?!
+		I.pixel_z = 16
+
+	// And animate the attack!
+	animate(I, alpha = 175, pixel_x = 0, pixel_y = 0, pixel_z = 0, time = 3)
+*/
 
 /atom/proc/SpinAnimation(speed = 10, loops = -1)
 	var/matrix/m120 = matrix(transform)
@@ -318,7 +359,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 	if (istype(target,/mob))
 		I.dir = target.dir
 
-	if (istype(old_loc,/obj/item/weapon/storage))
+	if (istype(old_loc,/obj/item/storage))
 		I.pixel_x += old_loc.pixel_x
 		I.pixel_y += old_loc.pixel_y
 

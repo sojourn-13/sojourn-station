@@ -4,6 +4,7 @@
 	icon = 'icons/obj/surgery.dmi'
 	matter = list(MATERIAL_STEEL = 12)
 	var/list/allowed_organs = list() // Surgery. list of organ_tags. BP_R_ARM, BP_L_ARM, BP_HEAD, etc.
+	var/is_organic_module = FALSE
 
 /obj/item/organ_module/proc/install(obj/item/organ/external/E)
 	E.module = src

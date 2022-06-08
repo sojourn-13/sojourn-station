@@ -1,21 +1,21 @@
 /obj/item/clothing/gloves/stungloves
 	name = "HS Power Gloves"
-	desc = "\"Holland & Sullivan's\" solution for police operations. Punch criminals right in the face instead of prodding them with some feeble rod."
+	desc = "Seinemetall Defense GmbH solution for police operations. Punch criminals right in the face instead of prodding them with some feeble rod."
 	icon_state = "powerglove"
 	item_state = "powerglove"
-	armor = list(melee = 25, bullet = 10, energy = 20, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 25, bullet = 10, energy = 20, bomb = 0, bio = 0, rad = 0)
 	action_button_name = "Toggle Power Glove"
 	price_tag = 250
 	var/stunforce = 0
 	var/agonyforce = 30
 	var/status = FALSE		//whether the thing is on or not
 	var/hitcost = 100
-	var/obj/item/weapon/cell/cell = null
-	var/suitable_cell = /obj/item/weapon/cell/medium
+	cell = null
+	suitable_cell = /obj/item/cell/medium
 
 /obj/item/clothing/gloves/stungloves/Initialize()
 	. = ..()
-	cell = new /obj/item/weapon/cell/medium/high(src)
+	cell = new /obj/item/cell/medium/high(src)
 	update_icon()
 
 /obj/item/clothing/gloves/stungloves/get_cell()
@@ -98,7 +98,7 @@
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
 		H.forcesay(hit_appends)
-
+		playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 
 /obj/item/clothing/gloves/stungloves/emp_act(severity)
 	if(cell)

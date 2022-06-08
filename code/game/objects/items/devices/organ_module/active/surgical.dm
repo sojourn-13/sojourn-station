@@ -4,7 +4,18 @@
 	verb_name = "Deploy surgical omnitool"
 	icon_state = "medimplant"
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/tool/medmultitool/medimplant
+	holding_type = /obj/item/tool/medmultitool/medimplant
+	price_tag = 685
+
+/obj/item/organ_module/active/simple/surgical/cht_mant
+	name = "surgical omni-gland"
+	desc = "An all in one organic touch that functions through a set of chemicals, enzymes, and a cht'mants sensitive glands."
+	verb_name = "Ready surgical hand"
+	icon_state = "cht_nerves"
+	allowed_organs = list(BP_R_ARM, BP_L_ARM)
+	holding_type = /obj/item/tool/medmultitool/medimplant/cht_mant
+	matter = list(MATERIAL_BIOMATTER = 10)
+	is_organic_module = TRUE
 
 /obj/item/organ_module/active/simple/surgical/organic
 	name = "embedded organic surgical multitool"
@@ -12,14 +23,14 @@
 	verb_name = "Deploy organic surgical omnitool"
 	icon_state = "organicmedimplant"
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/tool/medmultitool/medimplant/organic
+	holding_type = /obj/item/tool/medmultitool/medimplant/organic
 	matter = list(MATERIAL_BIOMATTER = 10)
+	is_organic_module = TRUE
 
-/obj/item/weapon/biogoop/surgical
+/obj/item/biogoop/surgical
 	name = "incomplete organic surgical augment"
 
-
-/obj/item/weapon/biogoop/surgical/attackby(obj/item/I, mob/user)
+/obj/item/biogoop/surgical/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/nanopaste))
 		var/obj/item/stack/S = I
 		if(S.use(1))

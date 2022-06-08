@@ -39,3 +39,24 @@
 
 /decl/ai_holo/cat
 	icon_state = "Cat"
+
+/decl/ai_holo/probe
+	icon_state = "Probe"
+
+/decl/ai_holo/spider
+	icon_state = "Spider"
+
+/decl/ai_holo/ogre
+	icon_state = "Ogre"
+
+/decl/ai_holo/roach
+	icon_state = "Roach"
+
+/decl/ai_holo/roachling
+	icon_state = "Roachling"
+
+/decl/ai_holo/slime
+	icon_state = "Slime"
+
+/decl/ai_holo/snake
+	icon_state = "Snake"

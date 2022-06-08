@@ -3,6 +3,7 @@
 	var/list/stat_list = list()
 	var/list/datum/perk/perks = list()
 	var/list/obj/effect/perk_stats = list() // Holds effects representing perks, to display them in stat()
+	var/initialized = FALSE //Whether or not the stats have had time to be properly filled. Not always used. For players, it is set in human/Stat(), used for Stat-dependant organs
 
 /datum/stat_holder/New(mob/living/L)
 	holder = L
@@ -11,24 +12,51 @@
 		stat_list[S.name] = S
 
 /datum/stat_holder/Destroy()
-	holder = null
+	if(holder)
+		holder.stats = null
+		holder = null
+
+	QDEL_LIST(perks) //i dont know if this is needed but hey
+	QDEL_LIST(perk_stats)
+
+	stat_list.Cut()
 	return ..()
+
+/datum/stat_holder/proc/check_for_shared_perk(ability_bitflag)
+	for(var/datum/perk/target_perk in perks)
+		if(target_perk.check_shared_ability(ability_bitflag))
+			return TRUE
+	return FALSE
+
+/* Uncomment when we have more than 1 bitflag for shared abilities
+/datum/stat_holder/proc/check_for_shared_perks(list/ability_bitflags)
+	for(var/datum/perk/target_perk in perks)
+		if(target_perk.check_shared_abilities(ability_bitflags))
+			return TRUE
+	return FALSE
+*/
+
+/datum/stat_holder/proc/addTempStat(statName, Value, timeDelay, id = null)
+	var/datum/stat/S = stat_list[statName]
+	S.addModif(timeDelay, Value, id)
+	SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
 
 /datum/stat_holder/proc/removeTempStat(statName, id)
 	if(!id)
-		crash_with("no id passed to removeTempStat(")
+		CRASH("no id passed to removeTempStat(")
 	var/datum/stat/S = stat_list[statName]
 	S.remove_modifier(id)
 
 /datum/stat_holder/proc/getTempStat(statName, id)
 	if(!id)
-		crash_with("no id passed to getTempStat(")
+		CRASH("no id passed to getTempStat(")
 	var/datum/stat/S = stat_list[statName]
 	return S.get_modifier(id)
 
 /datum/stat_holder/proc/changeStat(statName, Value)
 	var/datum/stat/S = stat_list[statName]
 	S.changeValue(Value)
+	SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
 
 /datum/stat_holder/proc/setStat(statName, Value)
 	var/datum/stat/S = stat_list[statName]
@@ -37,7 +65,10 @@
 /datum/stat_holder/proc/getStat(statName, pure = FALSE)
 	if (!islist(statName))
 		var/datum/stat/S = stat_list[statName]
+		SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
 		return S ? S.getValue(pure) : 0
+	else
+		log_debug("passed list to getStat()")
 
 //	Those are accept list of stats
 //	Compound stat checks.
@@ -96,11 +127,13 @@
 
 /// The main, public proc to add a perk to a mob. Accepts a path or a stringified path.
 /datum/stat_holder/proc/addPerk(perkType)
+	. = FALSE
 	if(!getPerk(perkType))
 		var/datum/perk/P = new perkType
 		perks += P
 		P.assign(holder)
 		perk_stats += P.statclick
+		. = TRUE
 
 
 /// The main, public proc to remove a perk from a mob. Accepts a path or a stringified path.
@@ -110,6 +143,11 @@
 		perks -= P
 		P.remove()
 		perk_stats -= P.statclick
+
+/datum/stat_holder/proc/removeAllPerks()
+	for(var/datum/perk/P in (perk_stats || perks))
+		removePerk(P)
+
 
 /datum/stat_mod
 	var/time = 0
@@ -131,11 +169,6 @@
 	var/desc = "Basic characteristic, you are not supposed to see this. Report to admins."
 	var/value = STAT_VALUE_DEFAULT
 	var/list/mods = list()
-
-
-/datum/stat_holder/proc/addTempStat(statName, Value, timeDelay, id = null)
-	var/datum/stat/S = stat_list[statName]
-	S.addModif(timeDelay, Value, id)
 
 /datum/stat/proc/addModif(delay, affect, id)
 	for(var/elem in mods)

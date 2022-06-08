@@ -151,49 +151,36 @@
 // then adds additional mobs or objects if they are in range 'smartly',
 // based on their presence in lists of players or registered objects
 // Type: 1-audio, 2-visual, 0-neither
-/proc/get_mobs_and_objs_in_view_fast(var/turf/T, var/range, var/type = 1, var/remote_ghosts = TRUE)
-	var/list/mobs = list()
-	var/list/objs = list()
-
-	var/list/hear = dview(range,T,INVISIBILITY_MAXIMUM)
+/proc/get_mobs_and_objs_in_view_fast(turf/T, range, list/mobs, list/objs, checkghosts = GHOSTS_ALL_HEAR)
+	var/list/hear = list()
+	DVIEW(hear, range, T, INVISIBILITY_MAXIMUM)
 	var/list/hearturfs = list()
 
-	for(var/thing in hear)
-		if(istype(thing,/obj))
-			objs += thing
-			hearturfs |= get_turf(thing)
-		else if(istype(thing,/mob))
-			mobs += thing
-			hearturfs |= get_turf(thing)
-
-	//A list of every mob with a client
-	for(var/mob in SSmobs.mob_list)
-		//VOREStation Edit - Trying to fix some vorestation bug.
-		if(!istype(mob, /mob))
-			SSmobs.mob_list -= mob
-			crash_with("There is a null or non-mob reference inside player_list ([mob]).")
-			continue
-		//VOREStation Edit End - Trying to fix some vorestation bug.
-		if(get_turf(mob) in hearturfs)
-			mobs |= mob
+	for(var/am in hear)
+		var/atom/movable/AM = am
+		if (!AM.loc)
 			continue
 
-		var/mob/M = mob
-		if(M && M.stat == DEAD && remote_ghosts && !M.forbid_seeing_deadchat)
-			switch(type)
-				if(1) //Audio messages use ghost_ears
-					if(M.is_preference_enabled(/datum/client_preference/ghost_ears))
-						mobs |= M
-				if(2) //Visual messages use ghost_sight
-					if(M.is_preference_enabled(/datum/client_preference/ghost_sight))
-						mobs |= M
+		if(ismob(AM))
+			mobs[AM] = TRUE
+			hearturfs[AM.locs[1]] = TRUE
+		else if(isobj(AM))
+			objs[AM] = TRUE
+			hearturfs[AM.locs[1]] = TRUE
 
-	//For objects below the top level who still want to hear
+	for(var/m in GLOB.player_list)
+		var/mob/M = m
+		if(checkghosts == GHOSTS_ALL_HEAR && M.stat == DEAD && !isnewplayer(M) && (M.client && M.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH))
+			if (!mobs[M])
+				mobs[M] = TRUE
+			continue
+		if(M.loc && hearturfs[M.locs[1]])
+			if (!mobs[M])
+				mobs[M] = TRUE
+
 	for(var/obj in GLOB.hearing_objects)
 		if(get_turf(obj) in hearturfs)
 			objs |= obj
-
-	return list("mobs" = mobs, "objs" = objs)
 
 
 /proc/get_mobs_in_radio_ranges(list/obj/item/device/radio/radios)
@@ -262,7 +249,7 @@
 				return 0
 	return 1
 
-proc/isInSight(atom/A, atom/B)
+/proc/isInSight(atom/A, atom/B)
 	var/turf/Aturf = get_turf(A)
 	var/turf/Bturf = get_turf(B)
 
@@ -274,6 +261,12 @@ proc/isInSight(atom/A, atom/B)
 
 	else
 		return 0
+
+/proc/get_client_by_ckey(key)
+	for(var/mob/M in SSmobs.mob_list)
+		if(M.ckey == lowertext(key))
+			return M.client
+	return null
 
 /proc/get_cardinal_step_away(atom/start, atom/finish) //returns the position of a step from start away from finish, in one of the cardinal directions
 	//returns only NORTH, SOUTH, EAST, or WEST
@@ -349,7 +342,7 @@ proc/isInSight(atom/A, atom/B)
 		for(var/client/C in show_to)
 			C.images -= I
 
-datum/projectile_data
+/datum/projectile_data
 	var/src_x
 	var/src_y
 	var/time
@@ -534,7 +527,7 @@ datum/projectile_data
 
 /proc/get_vents()
 	var/list/vents = list()
-	for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in SSmachines.machinery)
+	for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in GLOB.machines)
 		if(!temp_vent.welded && temp_vent.network && isOnStationLevel(temp_vent))
 			if(temp_vent.network.normal_members.len > 15)
 				vents += temp_vent
@@ -566,9 +559,21 @@ datum/projectile_data
 //Picks a single random landmark of a specified type
 /proc/pick_landmark(ltype)
 	var/list/L = list()
-	for(var/S in landmarks_list)
+	for(var/S in GLOB.landmarks_list)
 		if (istype(S, ltype))
 			L.Add(S)
 
 	if (L.len)
 		return pick(L)
+
+//Tells everyone thats living and is a SSmobs to wake up their AI when aplicable
+/proc/activate_mobs_in_range(atom/caller , distance)
+	var/turf/starting_point = get_turf(caller)
+	if(!starting_point)
+		return FALSE
+	for(var/mob/living/potential_attacker in SSmobs.mob_living_by_zlevel[starting_point.z])
+		if(!(potential_attacker.stat < DEAD))
+			continue
+		if(!(get_dist(starting_point, potential_attacker) <= distance))
+			continue
+		potential_attacker.try_activate_ai()

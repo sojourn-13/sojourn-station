@@ -205,6 +205,25 @@ var/list/_client_preferences_by_type
 	description = "Enable gun crosshair"
 	key = "GUN_CURSOR"
 
+/datum/client_preference/play_jukebox
+	description ="Play jukebox music"
+	key = "SOUND_JUKEBOX"
+
+/datum/client_preference/play_jukebox/changed(var/mob/preference_mob, var/new_value)
+	if(new_value == GLOB.PREF_NO)
+		preference_mob.stop_all_music()
+	else
+		preference_mob.update_music()
+
+/datum/client_preference/stay_in_hotkey_mode
+	description = "Keep hotkeys on mob change"
+	key = "KEEP_HOTKEY_MODE"
+	default_value = GLOB.PREF_YES
+
+/datum/client_preference/area_info_blurb
+	description = "Show area narration."
+	key = "AREA_INFO"
+
 /********************
 * General Staff Preferences *
 ********************/

@@ -10,42 +10,26 @@
 	var/account_number = 0
 	var/account_pin
 	var/account_initial_balance = 3500	//How much money this account starts off with
+	var/list/jobs_in_department = list()
+
+	// With external, this is the name of an organisation
+	var/funding_source
+
+	// Budget for misc department expenses, paid regardless of it being manned or not
+	var/budget_base = 500
+
+	// Budget for crew salaries. Summed up initial wages of department's personnel
+	var/budget_personnel = 0
 
 
+	// How much account failed to pay to employees. Used for emails
+	var/total_debt = 0
 
-	//Account Funding
-	/*
-		Every payday, department accounts recieve money.
-		Part of this is their budget, it stays in the account and is to be used for department purchases
-		Most of it is wages, that are immediately paid onwards to individual crewmembers/
-	*/
-	var/account_budget = 2500	//How much money is paid into this account and kept, every payday
-
-	//Must be one of the FUNDING_XXX defines in __defines/economy.dm
-	var/funding_type = FUNDING_INTERNAL
-
-	//Where the money for wages and budget actually comes from. With internal, this is a department account ID
-	//With external, this is the name of an organisation
-	var/funding_source = DEPARTMENT_COMMAND
-
-	//This is a key value list of datacore records and their total owed wage
-	//When payday comes, accounts in the department are added here, and removed once the balance is paid off
-	//They are not removed until they are paid, so multiple paydays could rollover and stack up if unpaid
-	var/list/pending_wages
-
-	// The total of the values in the above wage list. Just cached for convenience
-	var/pending_wage_total = 0
-
-	//Increased by account_budget every payday, reset to zero when paid, works like above
-	var/pending_budget_total = 0
-
-
-//Populates the pending wage total
-/datum/department/proc/sum_wages()
-	pending_wage_total = 0
-	for (var/a in pending_wages)
-		pending_wage_total += pending_wages[a]
-
+/datum/department/proc/get_total_budget()
+	if(funding_source)
+		return budget_base + budget_personnel
+	else
+		return FALSE
 
 /*************
 	Command
@@ -61,8 +45,7 @@
 	In future, we will implement largescale missions and research contracts to earn money, and then set it
 	to a much lower starting value
 	*/
-	account_initial_balance = 20000
-	funding_type = FUNDING_EXTERNAL
+	account_initial_balance = 50000
 
 
 /*************
@@ -72,20 +55,20 @@
 /datum/department/ironhammer
 	name = "Marshal and Blackshield Division"
 	id = DEPARTMENT_SECURITY
-	funding_type = FUNDING_EXTERNAL
-	account_initial_balance = 5000
+	account_initial_balance = 25000 //25k do to being state funded
+	funding_source = DEPARTMENT_COMMAND
 
 /datum/department/technomancers
-	name = "Artificier's Guild"
+	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
-	funding_type = FUNDING_EXTERNAL
+	account_initial_balance = 17500 //15k do to being state funded
+	//A full crew GM + 4 adpets is 1700 an hour, takes 10~ hours to drain the department funds
+
 
 /datum/department/civilian
 	name = "Nadezhda Contractors"
 	id = DEPARTMENT_CIVILIAN
-	account_budget = 0
 	account_initial_balance = 0
-	funding_type = FUNDING_EXTERNAL
 	//No standing balance is kept in the account, this is just for paying gardener, janitor and actor
 
 
@@ -96,20 +79,19 @@
 /datum/department/moebius_medical
 	name = "Soteria Institution: Medical Division"
 	id = DEPARTMENT_MEDICAL
-	funding_type = FUNDING_EXTERNAL
+	account_initial_balance = 15000 //For buying medical and items and payments
 	funding_source = "Soteria Institution."
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
-	account_budget = 5000 //For buying materials and components and things of scientific value
-	funding_type = FUNDING_EXTERNAL
+	account_initial_balance = 10000 //For buying materials and components and things of scientific value as well as pay the demanding staff
 	funding_source = "Soteria Institution."
 
 /datum/department/church
 	name = "Church of Absolute"
 	id = DEPARTMENT_CHURCH
-	funding_type = FUNDING_EXTERNAL
+	account_initial_balance = 25000 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
 	funding_source = "Church of Absolute"
 
 
@@ -124,14 +106,18 @@
 
 	/*
 		The LSS account represents the holdings of the local branch, and CEO.
-		He recieves no funding, infact later he will pay guild fees out of his earnings
 	*/
-	account_initial_balance = 15000
-	funding_type = FUNDING_EXTERNAL
+	/* if you want to change this remember to do so in code\game\gamemodes\score.dm as well,
+	if you manage to get this variable refferenced there you're a better man than me. godspeed
+	*/
+	account_initial_balance = 25000 //has a lot of workers thus needs a higher starting to off-set its paychecks if no one actively runs the cargo shuttle
 
 /datum/department/prospector
 	name = "Prospectors"
 	id = DEPARTMENT_PROSPECTOR
-	account_initial_balance = 7500
-	funding_type = FUNDING_EXTERNAL
+	account_initial_balance = 10000 //Has a lot of workers and people
+
+/datum/department/independent
+	name = "Independent Allied Factions"
+	id = DEPARTMENT_INDEPENDENT
 

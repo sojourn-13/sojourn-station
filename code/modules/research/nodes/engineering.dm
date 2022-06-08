@@ -20,7 +20,7 @@
 							/datum/design/research/circuit/arcade_orion_trail,
 							/datum/design/research/circuit/autolathe,
 							/datum/design/research/item/light_replacer,
-							/datum/design/autolathe/tool/weldermask,
+							/datum/design/research/item/clothing/weldermask,
 							/datum/design/research/item/mesons
 						)
 
@@ -35,9 +35,10 @@
 
 	required_technologies = list(/datum/technology/basic_engineering)
 	required_tech_levels = list()
-	cost = 500
+	cost = 375
 
-	unlocks_designs = list(/datum/design/research/circuit/atmosalerts, /datum/design/research/circuit/air_management)
+	unlocks_designs = list(/datum/design/research/circuit/atmosalerts,
+						   /datum/design/research/circuit/air_management)
 
 // TO ADD: space_heater
 /datum/technology/ice_and_fire
@@ -51,9 +52,11 @@
 
 	required_technologies = list(/datum/technology/monitoring)
 	required_tech_levels = list()
-	cost = 500
+	cost = 375
 
-	unlocks_designs = list(/datum/design/research/circuit/gas_heater, /datum/design/research/circuit/gas_cooler)
+	unlocks_designs = list(/datum/design/research/circuit/gas_heater,
+						   /datum/design/research/circuit/gas_cooler,
+						   /datum/design/research/item/computer_part/gas)
 
 // TO ADD: idcardconsole
 /datum/technology/adv_replication
@@ -67,7 +70,7 @@
 
 	required_technologies = list(/datum/technology/monitoring)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(	/datum/design/research/circuit/rdconsole,
 							/datum/design/research/circuit/rdservercontrol,
@@ -89,7 +92,7 @@
 
 	required_technologies = list(/datum/technology/adv_replication)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(
 		/datum/design/research/item/computer_part/portabledrive/advanced,
@@ -117,17 +120,19 @@
 
 	required_technologies = list(/datum/technology/adv_replication)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(
 							/datum/design/research/item/wirer,
 							/datum/design/research/item/debugger,
+							/datum/design/research/item/detailer,
+							/datum/design/research/item/analyzer,
 							/datum/design/research/item/custom_circuit_assembly,
 							/datum/design/research/item/custom_circuit_assembly/medium,
 							/datum/design/research/item/custom_circuit_assembly/drone,
 							/datum/design/research/item/custom_circuit_assembly/large,
 							/datum/design/research/item/custom_circuit_assembly/implant,
-							/datum/design/research/item/custom_circuit_assembly/implant
+							/datum/design/research/item/custom_circuit_assembly/printer
 							)
 
 /datum/technology/custom_circuits_advanced
@@ -141,9 +146,14 @@
 
 	required_technologies = list(/datum/technology/custom_circuits)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1500
 
-	unlocks_designs = list(/datum/design/research/item/custom_circuit_assembly/advanced_designs)
+	unlocks_designs = list(
+							/datum/design/research/item/custom_circuit_assembly/advanced_designs,
+							/datum/design/research/item/detailer,
+							/datum/design/research/item/analyzer,
+							/datum/design/research/item/custom_circuit_assembly/cloning
+							)
 
 /* No tesla engine?
 /datum/technology/tesla
@@ -174,9 +184,11 @@
 
 	required_technologies = list(/datum/technology/basic_engineering)
 	required_tech_levels = list()
-	cost = 500
+	cost = 375
 
-	unlocks_designs = list(/datum/design/research/circuit/ordercomp, /datum/design/research/circuit/supplycomp)
+	unlocks_designs = list(/datum/design/research/circuit/ordercomp,
+						   /datum/design/research/circuit/supplycomp,
+						   /datum/design/research/item/computer_part/price)
 
 //TOOLS BRANCH
 // TO ADD: ore_redemption, mining_equipment_vendor, mining_fabricator?
@@ -191,7 +203,7 @@
 
 	required_technologies = list(/datum/technology/basic_engineering)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(/datum/design/research/item/weapon/mining/drill)
 
@@ -207,7 +219,7 @@
 
 	required_technologies = list(/datum/technology/basic_mining)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1125
 
 	unlocks_designs = list(	/datum/design/research/circuit/miningdrill,
 							/datum/design/research/circuit/miningdrillbrace,
@@ -229,12 +241,11 @@
 									/datum/technology/advanced_mining
 								)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 750
 
-	unlocks_designs = list(	/datum/design/autolathe/tool/pneumatic_crowbar,
-							/datum/design/autolathe/tool/rcd,
-							/datum/design/autolathe/tool/rcd_ammo,
-							/datum/design/autolathe/tool/combat_shovel
+	unlocks_designs = list(	/datum/design/research/item/tool/pneumatic_crowbar,
+							/datum/design/research/item/tool/rcd,
+							/datum/design/research/item/tool/combat_shovel
 							)
 
 /datum/technology/improved_tools
@@ -248,7 +259,7 @@
 
 	required_technologies = list(/datum/technology/adv_tools)
 	required_tech_levels = list()
-	cost = 1200
+	cost = 900
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/hatton,
 							/datum/design/research/item/ammo/hatton
@@ -265,7 +276,7 @@
 
 	required_technologies = list(/datum/technology/adv_tools)
 	required_tech_levels = list()
-	cost = 1500
+	cost = 1125
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/toolmod/stick,
 							/datum/design/research/item/weapon/toolmod/heatsink,
@@ -286,7 +297,7 @@
 
 	required_technologies = list(/datum/technology/adv_tools)
 	required_tech_levels = list()
-	cost = 1500
+	cost = 1125
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/toolmod/ergonomicgrip,
 							/datum/design/research/item/weapon/toolmod/ratchet,
@@ -311,7 +322,7 @@
 
 	required_technologies = list(/datum/technology/adv_tools)
 	required_tech_levels = list()
-	cost = 1500
+	cost = 1125
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/toolmod/laserguide,
 							/datum/design/research/item/weapon/toolmod/stabilizedgrip,
@@ -332,9 +343,10 @@
 
 	required_technologies = list(/datum/technology/adv_tools)
 	required_tech_levels = list()
-	cost = 1500
+	cost = 1125
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/toolmod/cellmount,
+							/datum/design/research/item/weapon/toolmod/celladapt,
 							/datum/design/research/item/weapon/toolmod/fueltank,
 							/datum/design/research/item/weapon/toolmod/expansion,
 							/datum/design/research/item/weapon/toolmod/spikes,
@@ -384,7 +396,7 @@
 
 	required_technologies = list(/datum/technology/basic_engineering)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(/datum/design/research/item/part/high_micro_laser,
 							/datum/design/research/item/part/adv_matter_bin)
@@ -400,7 +412,7 @@
 
 	required_technologies = list(/datum/technology/adv_parts)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1125
 
 	unlocks_designs = list(/datum/design/research/item/part/ultra_micro_laser,
 						/datum/design/research/item/part/super_matter_bin,
@@ -417,7 +429,7 @@
 
 	required_technologies = list(/datum/technology/ultra_parts)
 	required_tech_levels = list()
-	cost = 1500
+	cost = 1125
 
 	unlocks_designs = list(/datum/design/research/item/part/RPED,
 							 /datum/design/research/circuit/secure_airlock,
@@ -435,12 +447,32 @@
 
 	required_technologies = list(/datum/technology/super_adv_engineering, /datum/technology/weapon_recharging)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 7)
-	cost = 3500
+	cost = 3750
 
 	unlocks_designs = list(/datum/design/research/circuit/industrial_autolathe,
 							/datum/design/research/circuit/recharger_industrial,
 							/datum/design/research/circuit/industrial_grinder,
+							/datum/design/research/circuit/advanced_grinder,
 							/datum/design/research/circuit/industrial_chems
+							)
+
+
+/datum/technology/ameridian
+	name = "Ameridian Refindment"
+	desc = "Advanced refindments of ameridian to liquid and then soild again."
+	tech_type = RESEARCH_ENGINEERING
+
+	x = 0.9
+	y = 0.7
+	icon = "ameridian"
+
+	required_technologies = list(/datum/technology/industrial_printing)
+	required_tech_levels = list()
+	cost = 1500 //Cheap-ish I guess?
+
+	unlocks_designs = list(/datum/design/research/circuit/ameridian_refinery,
+							/datum/design/research/circuit/liquid_ameridian_processor,
+							/datum/design/research/circuit/ameridian_analyzer
 							)
 
 
@@ -455,11 +487,13 @@
 
 	required_technologies = list(/datum/technology/super_adv_engineering)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 10)
-	cost = 2500
+	cost = 1875
 
 	unlocks_designs = list(	/datum/design/research/item/storage,
 							/datum/design/research/item/ai_container,
 							/datum/design/research/item/rigjets,
+							/datum/design/research/item/riggrapple,
+							/datum/design/research/item/rig_clamp,
 							/datum/design/research/item/rigrcd
 							)
 
@@ -475,7 +509,7 @@
 
 	required_technologies = list(/datum/technology/rig_industeral)
 	required_tech_levels = list()
-	cost = 2500
+	cost = 1875
 
 	unlocks_designs = list(	/datum/design/research/item/rig_drill,
 							/datum/design/research/item/rig_anomaly_scanner,
@@ -500,5 +534,3 @@
 
 	unlocks_designs = list("quadultra_micro_laser", "bluespace_matter_bin")
 */
-
-

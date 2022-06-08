@@ -21,6 +21,9 @@
 				qdel(src)
 			return .
 
+/obj/structure/multiz/ex_act(severity)
+	return //We cant be broken like this to prevent people getting unfairly stuck do to bad rng
+
 /obj/structure/multiz/CanPass(obj/mover, turf/source, height, airflow)
 	return airflow || !density
 
@@ -121,8 +124,8 @@
 			C.forceMove(target.loc)
 			var/direction = pick(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST)
 			C.Move(get_step(C, direction))
-			if(istype(C, /obj/item/weapon/grenade))
-				var/obj/item/weapon/grenade/G = C
+			if(istype(C, /obj/item/grenade))
+				var/obj/item/grenade/G = C
 				if(!G.active)
 					G.activate(user)
 			return TRUE
@@ -137,6 +140,8 @@
 		attack_hand(user)
 
 /obj/structure/multiz/ladder/attack_hand(var/mob/M)
+	if (M.buckled)//Prevents buckled mobs from getting stuck on ladders
+		return
 	if (isrobot(M) && !isdrone(M))
 		var/mob/living/silicon/robot/R = M
 		climb(M, (climb_delay*6)/R.speed_factor) //Robots are not built for climbing, they should go around where possible
@@ -210,11 +215,14 @@
 						user.client.perspective = MOB_PERSPECTIVE
 						user.hud_used.updatePlaneMasters(user)
 						user.is_watching = FALSE
+						user.can_multiz_pb = FALSE
 					else if(user.is_watching == FALSE)
 						user.client.eye = target
 						user.client.perspective = EYE_PERSPECTIVE
 						user.hud_used.updatePlaneMasters(user)
 						user.is_watching = TRUE
+						if(Adjacent(user))
+							user.can_multiz_pb = TRUE
 				return
 		else
 			to_chat(user, SPAN_NOTICE("You can't do it right now."))
@@ -336,7 +344,7 @@
 
 /obj/structure/multiz/ladder/up/deepmaint/climb()
 	if(!target)
-		var/obj/structure/burrow/my_burrow = pick(all_burrows)
+		var/obj/structure/burrow/my_burrow = pick(GLOB.all_burrows)
 		var/obj/structure/multiz/ladder/burrow_hole/my_hole = new /obj/structure/multiz/ladder/burrow_hole(my_burrow.loc)
 		my_burrow.deepmaint_entry_point = FALSE
 		target = my_hole

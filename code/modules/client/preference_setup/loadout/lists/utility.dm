@@ -1,17 +1,33 @@
 /datum/gear/utility/zippo
 	display_name = "zippo selection"
-	path = /obj/item/weapon/flame/lighter/zippo
+	path = /obj/item/flame/lighter/zippo
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/utility
 	display_name = "briefcase"
-	path = /obj/item/weapon/storage/briefcase
+	path = /obj/item/storage/briefcase
 	sort_category = "Utility"
 
 /datum/gear/utility/briefcasesecure
 	display_name = "briefcase, secure"
-	path = /obj/item/weapon/storage/secure/briefcase
+	path = /obj/item/storage/secure/briefcase
 	cost = 2
+
+/datum/gear/lunchbox
+	display_name = "lunch box"
+	path = /obj/item/storage/lunchbox
+
+/datum/gear/lunchbox_cat
+	display_name = "cat lunch box"
+	path = /obj/item/storage/lunchbox/cat
+
+/datum/gear/lunchbox_rainbow
+	display_name = "rainbow lunch box"
+	path = /obj/item/storage/lunchbox/rainbow
+
+/datum/gear/lunchbox_church
+	display_name = "church lunch box"
+	path = /obj/item/storage/lunchbox/lemniscate
 
 /datum/gear/utility/hand_radio
 	display_name = "station bound radio"
@@ -20,27 +36,29 @@
 
 /datum/gear/utility/cane
 	display_name = "cane"
-	path = /obj/item/weapon/cane
+	path = /obj/item/cane
 
 /datum/gear/utility/canewhite
 	display_name = "cane, white"
-	path = /obj/item/weapon/cane/whitecane
+	path = /obj/item/cane/whitecane
 
 /datum/gear/utility/crutch
 	display_name = "crutch"
-	path = /obj/item/weapon/cane/crutch
+	path = /obj/item/cane/crutch
 
 /datum/gear/utility/clipboard
 	display_name = "clipboard"
-	path = /obj/item/weapon/clipboard
+	path = /obj/item/clipboard
+	cost = 0
 
 /datum/gear/utility/corpreg
-	display_name = "corporate regulations"
-	path = /obj/item/weapon/book/manual/security_space_law
+	display_name = "colony law"
+	path = /obj/item/book/manual/security_space_law
+	cost = 0
 
 /datum/gear/utility/crowbar
 	display_name = "crowbar"
-	path = /obj/item/weapon/tool/crowbar
+	path = /obj/item/tool/crowbar
 
 /datum/gear/utility/flashlight
 	display_name = "flashlight"
@@ -48,8 +66,9 @@
 
 /datum/gear/utility/folder
 	display_name = "folder selection"
-	path = /obj/item/weapon/folder
+	path = /obj/item/folder
 	flags = GEAR_HAS_TYPE_SELECTION
+	cost = 0
 
 /datum/gear/utility/advancedlaptop
 	display_name = "laptop, advanced"
@@ -68,11 +87,11 @@
 
 /datum/gear/utility/lighter
 	display_name = "lighter"
-	path = /obj/item/weapon/flame/lighter
+	path = /obj/item/flame/lighter
 
 /datum/gear/utility/matchbook
 	display_name = "matchbook"
-	path = /obj/item/weapon/storage/box/matches
+	path = /obj/item/storage/box/matches
 
 /datum/gear/utility/paicard
 	display_name = "personal AI device"
@@ -81,18 +100,18 @@
 
 /datum/gear/utility/powercellsmall
 	display_name = "power cell, small"
-	path = /obj/item/weapon/cell/small/high
+	path = /obj/item/cell/small/high
 	sort_category = "Utility"
 	cost = 2
 
 /datum/gear/utility/powercellmedium
 	display_name = "power cell, medium"
-	path = /obj/item/weapon/cell/medium/high
+	path = /obj/item/cell/medium/high
 	cost = 2
 
 /datum/gear/utility/silvercoin
 	display_name = "silver coin"
-	path = /obj/item/weapon/coin/silver
+	path = /obj/item/coin/silver
 
 /datum/gear/utility/tabletadvanced
 	display_name = "tablet computer, advanced"
@@ -121,4 +140,36 @@
 
 /datum/gear/utility/ducttape
 	display_name = "duct tape"
-	path = /obj/item/weapon/tool/tape_roll
+	path = /obj/item/tool/tape_roll
+
+/datum/gear/utility/guitar
+	display_name = "guitar"
+	path = /obj/item/device/synthesized_instrument/guitar
+
+/datum/gear/utility/guitar_e
+	display_name = "polyguitar guitar"
+	path = /obj/item/device/synthesized_instrument/guitar/multi
+
+/datum/gear/utility/synthesized
+	display_name = "synthesizer"
+	path = /obj/item/device/synthesized_instrument/synthesizer
+
+/datum/gear/utility/trumpet
+	display_name = "synthesized trumpet"
+	path = /obj/item/device/synthesized_instrument/trumpet
+
+/datum/gear/utility/violin
+	display_name = "synthesized violin"
+	path = /obj/item/device/synthesized_instrument/violin
+
+/datum/gear/utility/tinfoil
+	display_name = "anti-psion hat"
+	path = /obj/item/clothing/head/psionic/tinfoil
+	cost = 3
+
+/datum/gear/utility/costume
+	display_name = "costume kit"
+	path = /obj/item/storage/box/costume
+	flags = GEAR_HAS_TYPE_SELECTION
+	cost = 2 //Style at a cost! - also cardboard
+

@@ -5,11 +5,70 @@
 /datum/reagent/other/crayon_dust
 	name = "Crayon dust"
 	id = "crayon_dust"
-	description = "Intensely coloured powder obtained by grinding crayons."
+	description = "Intensely colored powder obtained by grinding crayons."
 	taste_description = "the back of class"
 	reagent_state = LIQUID
 	color = "#888888"
-	overdose = 5
+	overdose = 1885
+	color_weight = 10
+	common = TRUE //So the coders know what they're eating better. (It's just wax)
+
+//None
+/datum/reagent/other/crayon_dust/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	return
+//Toxic
+/datum/reagent/other/crayon_dust/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	return
+//Crayons
+/datum/reagent/other/crayon_dust/overdose(mob/living/carbon/M, alien)
+	return
+
+/datum/reagent/other/crayon_dust/touch_turf(turf/T)
+	if(istype(T) && !istype(T, /turf/space))
+		T.color = color
+	return TRUE
+
+/datum/reagent/other/crayon_dust/touch_obj(obj/O)
+	if(istype(O))
+		O.color = color
+
+/datum/reagent/other/crayon_dust/touch_mob(mob/M)
+	if(istype(M) && !isobserver(M)) //painting observers: not allowed
+		M.color = color //maybe someday change this to paint only clothes and exposed body parts for human mobs.
+
+/datum/reagent/other/crayon_dust/get_data()
+	return color
+
+/datum/reagent/other/crayon_dust/initialize_data(var/newdata)
+	..()
+	color = newdata
+	return
+
+/datum/reagent/other/crayon_dust/mix_data(var/newdata, var/newamount)
+	var/list/colors = list(0, 0, 0, 0)
+	var/tot_w = 0
+
+	var/hex1 = uppertext(color)
+	var/hex2 = uppertext(newdata)
+	if(length(hex1) == 7)
+		hex1 += "FF"
+	if(length(hex2) == 7)
+		hex2 += "FF"
+	if(length(hex1) != 9 || length(hex2) != 9)
+		return
+	colors[1] += hex2num(copytext(hex1, 2, 4)) * volume
+	colors[2] += hex2num(copytext(hex1, 4, 6)) * volume
+	colors[3] += hex2num(copytext(hex1, 6, 8)) * volume
+	colors[4] += hex2num(copytext(hex1, 8, 10)) * volume
+	tot_w += volume
+	colors[1] += hex2num(copytext(hex2, 2, 4)) * newamount
+	colors[2] += hex2num(copytext(hex2, 4, 6)) * newamount
+	colors[3] += hex2num(copytext(hex2, 6, 8)) * newamount
+	colors[4] += hex2num(copytext(hex2, 8, 10)) * newamount
+	tot_w += newamount
+
+	color = rgb(colors[1] / tot_w, colors[2] / tot_w, colors[3] / tot_w, colors[4] / tot_w)
+	return
 
 /datum/reagent/other/crayon_dust/red
 	name = "Red crayon dust"
@@ -58,8 +117,9 @@
 	taste_description = "chalk"
 	reagent_state = LIQUID
 	color = "#808080"
-	overdose = REAGENTS_OVERDOSE * 0.5
+	overdose = 1885
 	color_weight = 20
+	common = TRUE //Easily Identifiable, Good for huffing
 
 /datum/reagent/other/paint/touch_turf(turf/T)
 	if(istype(T) && !istype(T, /turf/space))
@@ -111,17 +171,18 @@
 /* Things that didn't fit anywhere else */
 
 /datum/reagent/adminordrazine //An OP chemical for admins
-	name = "Adminordrazine"
+	name = "Chemical Nakh"
 	id = "adminordrazine"
-	description = "It's magic. We don't have to explain it."
-	taste_description = "100% abuse"
+	description = "An extremely rare chemical rumored to have been created specifically by soteria director Nakharan Mkne. Believed to be able to bring back even the dead or keep even the most \
+	ruined of people away from death's door. How did you get this?"
+	taste_description = "overpowered bullshit"
 	reagent_state = LIQUID
-	color = "#C8A5DC"
+	color = "#daa520"
 	affects_dead = 1 //This can even heal dead people.
 
 	glass_icon_state = "golden_cup"
 	glass_name = "golden cup"
-	glass_desc = "It's magic. We don't have to explain it."
+	glass_desc = "It's science. We don't have to explain shit."
 	appear_in_default_catalog = FALSE
 
 /datum/reagent/adminordrazine/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
@@ -157,6 +218,7 @@
 	taste_description = "expensive metal"
 	reagent_state = SOLID
 	color = "#F7C430"
+	common = TRUE //People know what gold is at a glance.
 
 /datum/reagent/metal/silver
 	name = "Silver"
@@ -189,6 +251,40 @@
 			return TRUE
 	return TRUE
 
+/datum/reagent/liquid_ameridian
+	name = "Liquid Ameridian"
+	id = MATERIAL_AMERIDIAN
+	description = "A green liquid with small crystals floating in it."
+	taste_description = "crystalline crystals"
+	reagent_state = SOLID
+	color = "#5FE45E"
+	metabolism = 5
+
+/datum/reagent/liquid_ameridian/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.apply_effect(effect_multiplier, IRRADIATE, 0, 0) // We ignore physical protection because we're inside
+
+/datum/reagent/liquid_ameridian/touch_turf(turf/T)
+	if(volume >= 10)
+		if(can_grow(T))
+			new /obj/structure/ameridian_crystal(T)
+		return TRUE
+	return TRUE
+
+/datum/reagent/liquid_ameridian/proc/can_grow(var/turf/T)
+	if(T)
+		if(T.density)
+			return FALSE
+		if(istype(T, /turf/space)) // We can't spread in SPACE!
+			return FALSE
+		if(istype(T, /turf/simulated/open)) // Crystals can't float. Yet.
+			return FALSE
+		if(locate(/obj/structure/ameridian_crystal) in T) // No stacking.
+			return FALSE
+		if(locate(/obj/machinery/shieldwall/ameridian) in T) // Sonic fence block spread.
+			return FALSE
+		if(locate(/obj/machinery/shieldwallgen/ameridian) in T) // Sonic fence block spread. We can't spread in corners
+			return FALSE
+	return TRUE
 
 /datum/reagent/adrenaline
 	name = "Adrenaline"
@@ -208,10 +304,17 @@
 /datum/reagent/adrenaline/withdrawal_act(mob/living/carbon/M)
 	M.adjustOxyLoss(15)
 
-/datum/reagent/water/holywater/touch_turf(turf/T)
-	if(volume >= 5)
-		T.holy = 1
-	return TRUE
+/datum/reagent/other/viroputine
+	name = "Viroputine"
+	id = "viroputine"
+	description = "A horrid by product of nosfernium that creates more of it. vary bad withdrawels."
+	taste_description = "chalky backwash"
+	reagent_state = LIQUID
+	color = "#A5F0EE"
+	addiction_chance = 5
+
+/datum/reagent/other/viroputine/withdrawal_act(mob/living/carbon/M)
+	M.drowsyness = max(M.drowsyness, 20)
 
 /datum/reagent/other/diethylamine
 	name = "Diethylamine"
@@ -265,7 +368,7 @@
 /datum/reagent/other/matter_deconstructor //Currently uncraftable, used in excelsior reclaimer
 	name = "Matter deconstructor"
 	id = "deconstructor"
-	description = "A celluose based combound able to deconstruct matter into it's base components, not 100% effective."
+	description = "A cellulose-based compound able to deconstruct matter into it's base components, not 100% effective."
 	taste_description = "sourness"
 	reagent_state = LIQUID
 	color = "#DC7633"
@@ -291,6 +394,7 @@
 	reagent_state = LIQUID
 	color = "#A5F0EE"
 	touch_met = 50
+	common = TRUE //It's just ammonia and water, and the Janitor should be able to know what they are working with.
 
 /datum/reagent/other/space_cleaner/touch_obj(obj/O)
 	O.clean_blood()
@@ -304,7 +408,7 @@
 				S.wet_floor(1, TRUE)
 		T.clean_blood()
 		for(var/obj/effect/O in T)
-			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay))
+			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay) && !istype(O,/obj/effect/overlay/water))
 				qdel(O)
 		for(var/mob/living/carbon/slime/M in T)
 			M.adjustToxLoss(rand(5, 10))
@@ -347,6 +451,7 @@
 	taste_description = "slime"
 	reagent_state = LIQUID
 	color = "#009CA8"
+	common = TRUE //lewd
 
 /datum/reagent/other/lube/touch_turf(turf/simulated/T)
 	if(!istype(T))
@@ -413,6 +518,7 @@
 	taste_description = "wood"
 	reagent_state = LIQUID
 	color = "#B97A57"
+	common = TRUE //Wood pulp is identifiable at a glance
 
 /datum/reagent/other/luminol
 	name = "Luminol"
@@ -421,51 +527,13 @@
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#F2F3F4"
+	illegal=TRUE //Allows inspectors to know they are working with Luminol
 
 /datum/reagent/other/luminol/touch_obj(obj/O)
 	O.reveal_blood()
 
 /datum/reagent/other/luminol/touch_mob(mob/living/L)
 	L.reveal_blood()
-
-
-/datum/reagent/other/aranecolmin
-	name = "Aranecolmin"
-	id = "aranecolmin"
-	description = "Weak antitoxin used by warrior spiders. Speeds up metabolism immensely."
-	taste_description = "sludge"
-	reagent_state = LIQUID
-	color = "#acc107"
-	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 10
-	nerve_system_accumulations = 5
-
-/datum/reagent/other/aranecolmin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_ANTITOX, 0.3)
-	if(M.bloodstr)
-		for(var/current in M.bloodstr.reagent_list)
-			var/datum/reagent/toxin/pararein/R = current
-			if(istype(R))
-				R.metabolism = initial(R.metabolism) * 3
-
-/datum/reagent/other/aranecolmin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_ANTITOX, 0.3)
-	if(M.bloodstr)
-		for(var/current in M.bloodstr.reagent_list)
-			var/datum/reagent/toxin/pararein/R = current
-			if(istype(R))
-				R.metabolism = initial(R.metabolism) * 3
-				break
-
-/datum/reagent/other/aranecolmin/on_mob_delete(mob/living/carbon/M)
-	..()
-	if(istype(M))
-		if(M.bloodstr)
-			for(var/current in M.bloodstr.reagent_list)
-				var/datum/reagent/toxin/pararein/R = current
-				if(istype(R))
-					R.metabolism = initial(R.metabolism)
-					break
 
 /datum/reagent/other/arectine
 	name = "Arectine"
@@ -488,6 +556,18 @@
 	..()
 	L.set_light(0)
 
+/datum/reagent/other/rejuvenating_agent
+	name = "Rejuvenating agent"
+	id = "rejuvenating_agent"
+	description = "A complex reagent that, applied to an object, is capable of eliminating most of the effects of the passage of time"
+	taste_description = "nothing"
+	reagent_state = LIQUID
+	color = "#c8d0f5"
+
+/datum/reagent/other/rejuvenating_agent/touch_obj(obj/O)
+	if(istype(O))
+		O.make_young()
+
 /datum/reagent/other/instantice
 	name = "InstantIce"
 	id = "instant_ice"
@@ -496,6 +576,7 @@
 	reagent_state = LIQUID
 	color = "#bbc5f0"
 
+/*
 /datum/reagent/vomitol
 	name = "Vomitol"
 	id = "vomitol"
@@ -508,3 +589,4 @@
 /datum/reagent/vomitol/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(prob(10 * effect_multiplier))
 		M.vomit()
+*/

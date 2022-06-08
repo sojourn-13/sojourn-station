@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/xray
+/obj/item/gun/energy/xray
 	name = "xray laser gun"
 	desc = "A high-power laser gun capable of expelling concentrated xray blasts."
 	icon = 'icons/obj/guns/energy/xray.dmi'
@@ -9,6 +9,8 @@
 	price_tag = 2000
 	projectile_type = /obj/item/projectile/beam/xray
 	charge_cost = 100
-	fire_delay = 1
+	init_recoil = CARBINE_RECOIL(0.1)
 	twohanded = TRUE
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+	serial_type = "INDEX"
+	serial_shown = FALSE

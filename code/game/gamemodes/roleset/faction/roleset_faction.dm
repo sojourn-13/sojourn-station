@@ -25,6 +25,12 @@
 
 	var/list/candidates = get_candidates_list(role_id)
 	if(candidates.len < min_quantity)
+		// Refund roleset points since no antags were spawned
+		log_and_message_admins("Storyteller Warning: Antagonist Spawning unsuccessful for antagonist [role_id], [antag] \n \
+		The candidate pool ([candidates.len]) was smaller than the minimum required to spawn ([min_quantity]).\n \
+		Roleset pool points will be refunded.")
+
+		cancel(severity)
 		return FALSE
 
 
@@ -79,7 +85,7 @@
 		Roleset pool points will be refunded pro-rata for the failures")
 
 		//We will now refund part of the cost
-		var/success_percent = 0.0
+		var/success_percent = 0
 		if (success_quantity > 1)
 			success_percent = success_quantity / target_quantity
 		cancel(severity, success_percent)

@@ -3,8 +3,8 @@
 #define DIRECTION_REVERSED	-1
 #define IS_OPERATING		(operating && can_conveyor_run())
 
-GLOBAL_LIST_INIT(conveyor_belts, list()) //Saves us having to look through the entire machines list for our things
-GLOBAL_LIST_INIT(conveyor_switches, list())
+GLOBAL_LIST_EMPTY(conveyor_belts) //Saves us having to look through the entire machines list for our things
+GLOBAL_LIST_EMPTY(conveyor_switches)
 
 
 //conveyor2 is pretty much like the original, except it supports corners, but not diverters.
@@ -27,6 +27,9 @@ GLOBAL_LIST_INIT(conveyor_switches, list())
 	var/reversed = FALSE	// set to TRUE to have the conveyor belt be reversed
 	var/id					// ID of the connected lever
 
+	/// Connected lever to this conveyor. Ideally, we will only have one, so it doesnt have to be a list.
+	var/obj/machinery/conveyor_switch/connected_lever = null
+
 
 // create a conveyor
 /obj/machinery/conveyor/New(loc, new_dir, new_id)
@@ -41,9 +44,13 @@ GLOBAL_LIST_INIT(conveyor_switches, list())
 		var/obj/machinery/conveyor_switch/S = I
 		if(id == S.id)
 			S.conveyors += src
+			connected_lever = S
 
 /obj/machinery/conveyor/Destroy()
 	GLOB.conveyor_belts -= src
+	if(connected_lever)
+		connected_lever.conveyors -= src
+		connected_lever = null
 	return ..()
 
 // attack with item, place item on conveyor
@@ -84,6 +91,7 @@ GLOBAL_LIST_INIT(conveyor_switches, list())
 		for(var/obj/machinery/conveyor_switch/CS in GLOB.conveyor_switches)
 			if(CS.id == id)
 				CS.conveyors -= src
+				connected_lever = null
 		id = S.id
 		to_chat(user, SPAN_NOTICE("You link [I] with [src]."))
 	else if(user.a_intent != I_HURT)
@@ -194,15 +202,8 @@ GLOBAL_LIST_INIT(conveyor_switches, list())
 	if(!can_conveyor_run())
 		return
 	use_power(100)
-	affecting = loc.contents - src // moved items will be all in loc
-	if(!affecting)
-		return
-	sleep(1)
-	for(var/atom/movable/A in affecting)
-		if(!A.anchored)
-			if(A.loc == loc) // prevents the object from being affected if it's not currently here.
-				step_glide(A, forwards, DELAY2GLIDESIZE(wait))
-		CHECK_TICK
+	//The () around get_turf are there because it's a macro.
+	(get_turf(src)).UnloadSlide(forwards, src, DELAY2GLIDESIZE(wait)) //Now handled by turfs.
 
 /obj/machinery/conveyor/proc/can_conveyor_run()
 	if(stat & BROKEN)
@@ -265,9 +266,19 @@ GLOBAL_LIST_INIT(conveyor_switches, list())
 		var/obj/machinery/conveyor/C = I
 		if(C.id == id)
 			conveyors += C
+			C.connected_lever = src
 
 /obj/machinery/conveyor_switch/Destroy()
 	GLOB.conveyor_switches -= src
+
+	for (var/obj/machinery/conveyor/connected_conveyor in conveyors)
+		var/obj/machinery/conveyor_switch/target_lever = (connected_conveyor.connected_lever)
+
+		if (target_lever == src) //theres a chance we dont own this conveyor (maybe)
+			target_lever = null
+
+	conveyors.Cut()
+
 	return ..()
 
 /obj/machinery/conveyor_switch/update_icon()

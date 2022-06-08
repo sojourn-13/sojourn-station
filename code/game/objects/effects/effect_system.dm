@@ -32,13 +32,6 @@ would spawn and follow the beaker, even if it is carried or thrown.
 		pixel_x += rand(-random_offset,random_offset)
 		pixel_y += rand(-random_offset,random_offset)
 
-
-
-/obj/effect/Destroy()
-	if(reagents)
-		reagents.delete()
-	return ..()
-
 /datum/effect/effect/system
 	var/number = 3
 	var/cardinals = 0
@@ -115,13 +108,22 @@ steam.start() -- spawns the effect
 // will always spawn at the items location.
 /////////////////////////////////////////////
 
+/proc/do_sparks(n, c, source)
+	// n - number of sparks
+	// c - cardinals, bool, do the sparks only move in cardinal directions?
+	// source - source of the sparks.
+
+	var/datum/effect/effect/system/spark_spread/sparks = new
+	sparks.set_up(n, c, source)
+	sparks.start()
+
 /obj/effect/sparks
 	name = "sparks"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "sparks"
-	var/amount = 6.0
 	anchored = 1.0
 	mouse_opacity = 0
+	var/amount = 6
 
 /obj/effect/sparks/New()
 	..()
@@ -263,18 +265,22 @@ steam.start() -- spawns the effect
 	. = ..()
 	update_light()
 
-/obj/effect/effect/light/New(var/newloc, var/radius, var/brightness)
+/obj/effect/effect/light/New(var/newloc, var/radius, var/brightness, color, selfdestruct_timer)
 	..()
 
 	src.radius = radius
 	src.brightness = brightness
 
 	set_light(radius,brightness)
+	if(selfdestruct_timer)
+		spawn(selfdestruct_timer)
+		qdel(src)
 
 /obj/effect/effect/light/set_light(l_range, l_power, l_color)
 	..()
 	radius = l_range
 	brightness = l_power
+	color = l_color
 
 /obj/effect/effect/smoke/illumination
 	name = "illumination"
@@ -282,10 +288,10 @@ steam.start() -- spawns the effect
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "sparks"
 
-/obj/effect/effect/smoke/illumination/New(var/newloc, var/brightness=15, var/lifetime=10)
+/obj/effect/effect/smoke/illumination/New(var/newloc, var/brightness=15, var/lifetime=10, var/color=COLOR_WHITE)
 	time_to_live=lifetime
 	..()
-	set_light(brightness)
+	set_light(brightness, 1, color)
 
 /////////////////////////////////////////////
 // Bad smoke

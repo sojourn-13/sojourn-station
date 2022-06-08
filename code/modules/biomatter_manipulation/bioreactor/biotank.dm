@@ -70,7 +70,7 @@
 
 
 /obj/machinery/multistructure/bioreactor_part/biotank_platform/attackby(var/obj/item/I, var/mob/user)
-	if(istype(I, /obj/item/weapon/mop))
+	if(istype(I, /obj/item/mop))
 		var/dirtiness_lvl = get_dirtiness_level()
 		to_chat(user, SPAN_NOTICE("You begin cleaning pipes with your [I]... O-of, what a smell!"))
 		if(do_after(user, CLEANING_TIME * dirtiness_lvl, src))
@@ -90,6 +90,7 @@
 
 /obj/machinery/multistructure/bioreactor_part/biotank_platform/proc/take_amount(var/amount)
 	biotank.reagents.add_reagent("biomatter", amount)
+	GLOB.biomatter_neothecnology_amt += amount
 
 
 //Pipe wearout. Wearout var - is amount of 'dirt' that will be applied to our pipes

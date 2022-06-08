@@ -10,14 +10,14 @@
 	flags = CONDUCT
 	origin_tech = list(TECH_MAGNET = 2, TECH_COMBAT = 1)
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
-
+	price_tag = 5
 	var/times_used = 0 //Number of times it's been used.
 	var/broken = 0     //Is the flash burnt out?
 	var/last_used = 0 //last world.time it was used.
 
 /obj/item/device/flash/proc/clown_check(var/mob/user)
-	if(user && (CLUMSY in user.mutations) && prob(50))
-		to_chat(user, SPAN_WARNING("\The [src] slips out of your hand."))
+	if(user && (CLUMSY in user.mutations) && prob(15))
+		to_chat(user, SPAN_WARNING("\The [src] clumsily slips out from your hand."))
 		user.drop_item()
 		return 0
 	return 1
@@ -67,7 +67,20 @@
 	playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
 	var/flashfail = 0
 
-	if(iscarbon(M))
+	if(issuperioranimal(M))
+		if(M.stat!=DEAD)
+			var/flash_strength = 10
+			if(issuperioranimal(M))
+				var/mob/living/carbon/superior_animal/H = M
+				flash_strength -= H.flash_resistances
+			if(flash_strength > 0)
+				M.Weaken(flash_strength)
+				user.visible_message(SPAN_NOTICE("[user] overloads [M]'s sensors with the flash!")) //This IS what we want.
+				return //hacky way to stop miss-messages for the player. but should work
+			else
+				flashfail = TRUE
+
+	if(iscarbon(M) && !issuperioranimal(M)) //Just in case so we dont double flash are superioranimal friends
 		if(M.stat!=DEAD)
 			var/mob/living/carbon/C = M
 			var/safety = C.eyecheck()
@@ -84,11 +97,15 @@
 				flashfail = 1
 
 	else if(isrobot(M))
-		M.Weaken(rand(5,10))
-		if (M.HUDtech.Find("flash"))
-			flick("e_flash", M.HUDtech["flash"])
+		var/mob/living/silicon/robot/robo = M
+		if(robo.HasTrait(CYBORG_TRAIT_FLASH_RESISTANT))
+			flashfail = TRUE
+		else
+			robo.Weaken(rand(5,10))
+			if (robo.HUDtech.Find("flash"))
+				flick("e_flash", robo.HUDtech["flash"])
 	else
-		flashfail = 1
+		flashfail = TRUE
 
 	if(isrobot(user))
 		spawn(0)

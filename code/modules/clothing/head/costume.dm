@@ -155,6 +155,12 @@
 	flags_inv = BLOCKHEADHAIR
 	siemens_coefficient = 2.0
 
+/obj/item/clothing/head/collectable/gnome
+	name = "gnome hat"
+	desc = "Why do gnomes come out of our toilet? Maybe they're searching for money?"
+	icon_state = "gnome_hat"
+	body_parts_covered = 0
+
 /obj/item/clothing/head/costume/halloween/mummy
 	name = "pharaoh crown"
 	desc = "A dusty ornate crown of ancient striped design."
@@ -179,7 +185,25 @@
 	siemens_coefficient = 2.0
 	body_parts_covered = HEAD|FACE|EYES
 
+/obj/item/clothing/head/costume/halloween/scream
+	name = "Ghastly hood"
+	desc = "A sleek, black hood - all the better to hide your identity when stalking through the night"
+	icon_state = "ghosthood"
+	flags_inv = BLOCKHAIR
+	body_parts_covered = HEAD
+
 /*History*/
+
+/obj/item/clothing/head/costume/history/anarchist_cap
+	name = "anarchist hat"
+	desc = "A black styled piss-cover with a white skull symbol on the front of it. Mother Anarchy loves her sons.."
+	icon_state = "anarchist_cap"
+
+/obj/item/clothing/head/costume/history/anarchist
+	name = "anarchist hat"
+	desc = "A black dyed-fur hat with a white skull symbol on the front of it. Mother Anarchy is not for sale.."
+	icon_state = "anarchist"
+	body_parts_covered = 0
 
 /obj/item/clothing/head/costume/history/pirate
 	name = "pirate hat"
@@ -236,6 +260,32 @@
 	icon_state = "nun_hood"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD
+
+/obj/item/clothing/head/costume/job/nun/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default nun hood"] = "nun_hood"
+	options["sine cornette"] = "sine_cornette"
+	options["sine cornette switched"] = "sine_cornette_switched"
+	options["sine cornette switched alternative"] = "sine_cornette_switched_alternative"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 /obj/item/clothing/head/costume/job/police
 	name = "police cap"
@@ -393,3 +443,13 @@
 		src.icon_state = "cake0"
 		src.item_state = "cake0"
 	return
+
+/* Magic! */
+
+/obj/item/clothing/head/mage_hat
+	name = "magic hat"
+	desc = "A dark hat with a blue ribbon warn by people that do magic tricks or other slight of hand."
+	icon_state = "mage_hat"
+	item_state = "mage_hat"
+
+

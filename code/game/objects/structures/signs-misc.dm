@@ -115,7 +115,7 @@
 	icon_state = "owlery"
 
 /obj/structure/sign/misc/techshop
-	name = "techshop"
+	name = "tech shop"
 	desc = "A decorative green sign advertising a techshop."
 	icon_state = "techshop"
 

@@ -7,7 +7,7 @@
 	desc = "A power generator that runs on solid plasma sheets. Rated for 80 kW max safe output."
 
 	var/fuel_type = "fuel"
-	circuit = /obj/item/weapon/circuitboard/diesel
+	circuit = /obj/item/circuitboard/diesel
 
 	/*
 		These values were chosen so that the generator can run safely up to 80 kW
@@ -39,10 +39,10 @@
 
 /obj/machinery/power/port_gen/pacman/RefreshParts()
 	var/temp_rating = 0
-	for(var/obj/item/weapon/stock_parts/SP in component_parts)
-		if(istype(SP, /obj/item/weapon/stock_parts/matter_bin))
+	for(var/obj/item/stock_parts/SP in component_parts)
+		if(istype(SP, /obj/item/stock_parts/matter_bin))
 			max_sheets = SP.rating * SP.rating * 50
-		else if(istype(SP, /obj/item/weapon/stock_parts/micro_laser) || istype(SP, /obj/item/weapon/stock_parts/capacitor))
+		else if(istype(SP, /obj/item/stock_parts/micro_laser) || istype(SP, /obj/item/stock_parts/capacitor))
 			temp_rating += SP.rating
 
 	power_gen = round(initial(power_gen) * (max(2, temp_rating) / 2))
@@ -230,12 +230,12 @@
 	..()
 	if (!anchored)
 		return
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/power/port_gen/pacman/attack_ai(mob/user as mob)
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/power/port_gen/pacman/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/power/port_gen/pacman/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	if(IsBroken())
 		return
 

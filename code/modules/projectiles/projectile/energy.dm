@@ -5,7 +5,7 @@
 	check_armour = ARMOR_ENERGY
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
-
+	recoil = 4
 	heat = 100
 
 
@@ -38,12 +38,12 @@
 	new /obj/effect/sparks(T)
 	new /obj/effect/effect/smoke/illumination(T, brightness=max(flash_range*2, brightness), lifetime=light_duration)
 
-//blinds people like the flash round, but can also be used for temporary illumination
+//blinds people like the flash round, but can also be used for temporary illumination for 60~ mins
 /obj/item/projectile/energy/flash/flare
 	damage_types = list(BURN = 10)
 	flash_range = 1
 	brightness = 9 //similar to a flare
-	light_duration = 200
+	light_duration = 60000 //this is in milasecnds.
 
 /obj/item/projectile/energy/electrode
 	name = "electrode"
@@ -53,6 +53,7 @@
 	taser_effect = 1
 	agony = 40
 	damage_types = list(HALLOS = 0)
+	recoil = 6
 	//Damage will be handled on the MOB side, to prevent window shattering.
 
 /obj/item/projectile/energy/electrode/stunshot
@@ -60,6 +61,8 @@
 	damage_types = list(BURN = 5)
 	taser_effect = 1
 	agony = 80
+	affective_damage_range = 2
+	recoil = 16
 
 /obj/item/projectile/energy/declone
 	name = "declone"
@@ -95,4 +98,3 @@
 	icon_state = "neurotoxin"
 	damage_types = list(BURN = 5)
 	weaken = 5
-

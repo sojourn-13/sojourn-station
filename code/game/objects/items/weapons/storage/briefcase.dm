@@ -1,4 +1,4 @@
-/obj/item/weapon/storage/briefcase
+/obj/item/storage/briefcase
 	name = "briefcase"
 	desc = "A sturdy briefcase made of authentic faux-leather."
 	icon_state = "briefcase"
@@ -8,12 +8,13 @@
 	throwforce = WEAPON_FORCE_NORMAL
 	throw_speed = 1
 	throw_range = 4
-	w_class = ITEM_SIZE_BULKY
-	max_w_class = ITEM_SIZE_NORMAL
-	max_storage_space = 16
+	w_class = ITEM_SIZE_BULKY //Cant normally bag this
+	max_w_class = ITEM_SIZE_NORMAL //We can fit anything smaller then us
+	max_storage_space = 20 //Its a big case
 	matter = list(MATERIAL_BIOMATTER = 8, MATERIAL_PLASTIC = 4)
+	price_tag = 90
 
-/obj/item/weapon/storage/briefcase/rifle
+/obj/item/storage/briefcase/rifle
 	name = "gun case"
 	desc = "A sturdy metal case made for transporting ranged weaponry."
 	icon_state = "rifle_case"
@@ -23,10 +24,9 @@
 	throwforce = WEAPON_FORCE_NORMAL
 	throw_speed = 1
 	throw_range = 4
-	w_class = ITEM_SIZE_BULKY
 	max_w_class = null
 	max_storage_space = 16
-	can_hold = list(/obj/item/weapon/gun,
+	can_hold = list(/obj/item/gun,
 		/obj/item/ammo_magazine
 		)
 	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 4)

@@ -18,7 +18,7 @@
 	var/clone_l = getCloneLoss()
 
 	health = maxHealth - oxy_l - tox_l - clone_l - total_burn - total_brute
-
+	SEND_SIGNAL(src, COMSIG_HUMAN_HEALTH, health)
 	//TODO: fix husking
 	if( (total_burn > 400) && stat == DEAD)
 		ChangeToHusk()
@@ -101,7 +101,7 @@
 	BITSET(hud_updateflag, HEALTH_HUD)
 
 /mob/living/carbon/human/proc/adjustBruteLossByPart(var/amount, var/organ_name, var/obj/damage_source = null)
-	amount = amount*species.brute_mod*src.burn_mod_perk
+	amount = amount*species.brute_mod*src.brute_mod_perk
 	if (organ_name in organs_by_name)
 		var/obj/item/organ/external/O = get_organ(organ_name)
 
@@ -109,7 +109,7 @@
 			O.take_damage(amount, 0, sharp=is_sharp(damage_source), edge=has_edge(damage_source), used_weapon=damage_source)
 		else
 			//if you don't want to heal robot organs, they you will have to check that yourself before using this proc.
-			O.heal_damage(-amount, 0, internal=0, robo_repair=(BP_IS_ROBOTIC(O)))
+			O.heal_damage(-amount, 0, robo_repair=(BP_IS_ROBOTIC(O)))
 
 	BITSET(hud_updateflag, HEALTH_HUD)
 
@@ -122,7 +122,7 @@
 			O.take_damage(0, amount, sharp=is_sharp(damage_source), edge=has_edge(damage_source), used_weapon=damage_source)
 		else
 			//if you don't want to heal robot organs, they you will have to check that yourself before using this proc.
-			O.heal_damage(0, -amount, internal=0, robo_repair=(BP_IS_ROBOTIC(O)))
+			O.heal_damage(0, -amount, robo_repair=(BP_IS_ROBOTIC(O)))
 
 	BITSET(hud_updateflag, HEALTH_HUD)
 

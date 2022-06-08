@@ -9,7 +9,7 @@
 
 /obj/item/device/slimelight/New()
 	..()
-	set_light(6)
+	set_light(12)
 
 /obj/item/device/slimelight/update_icon()
 	return

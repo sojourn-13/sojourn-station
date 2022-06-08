@@ -1,4 +1,8 @@
 /client
+		//////////////////////
+		//BLACK MAGIC THINGS//
+		//////////////////////
+	parent_type = /datum
 		////////////////
 		//ADMIN THINGS//
 		////////////////
@@ -28,8 +32,6 @@
 		////////////
 		//SECURITY//
 		////////////
-	// comment out the line below when debugging locally to enable the options & messages menu
-	//control_freak = 1
 
 	var/received_irc_pm = -99999
 	var/irc_admin			//IRC admin that spoke with them last.
@@ -50,7 +52,7 @@
 	// But we change it.
 	preload_rsc = 1
 
-	//fps = 60
+	fps = 45
 
 
 		////////////////

@@ -8,7 +8,7 @@
 	return ..()
 
 
-/obj/item/organ/external/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/item/organ/external/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	if(is_open() && !diagnosed)
 		try_autodiagnose(user)
 
@@ -36,9 +36,13 @@
 
 	data["conditions"] = get_conditions()
 	data["diagnosed"] = diagnosed
+	data["shrapnel"] = shrapnel_check()
 
-	if(owner && !cannot_amputate)
-		data["amputate_step"] = BP_IS_ROBOTIC(src) ? /datum/surgery_step/robotic/amputate : /datum/surgery_step/amputate
+	if(owner)
+		data["owner_oxyloss"] = owner.getOxyLoss()
+		data["owner_oxymax"] = 100 - owner.total_oxygen_req
+		if(!cannot_amputate)
+			data["amputate_step"] = BP_IS_ROBOTIC(src) ? /datum/surgery_step/robotic/amputate : /datum/surgery_step/amputate
 
 	data["insert_step"] = BP_IS_ROBOTIC(src) ? /datum/surgery_step/insert_item/robotic : /datum/surgery_step/insert_item
 
@@ -60,68 +64,20 @@
 		organ_data["status"] = organ.get_status_data()
 		organ_data["conditions"] = organ.get_conditions()
 
-		var/list/processes = list()
-		for(var/efficiency in organ.organ_efficiency)
-			processes += list(
-				list(
-					"title" = "[capitalize(efficiency)] efficiency",
-					"efficiency" = organ.organ_efficiency[efficiency],
-					)
-				)
-		organ_data["processes"] = processes
+		organ_data["stored_blood"] = organ.current_blood
+		organ_data["max_blood"] = organ.max_blood_storage
+		if(BP_BRAIN in organ.organ_efficiency)
+			organ_data["show_oxy"] = TRUE
+		organ_data["processes"] = organ.get_process_data()
 
 		var/list/actions_list = list()
-
 		if(can_remove_item(organ))
-			var/list/remove_action = list(
-				"name" = "Extract",
-				"target" = "\ref[organ]",
-				"step" = BP_IS_ROBOTIC(src) ? /datum/surgery_step/robotic/remove_item : /datum/surgery_step/remove_item
-			)
-
-			actions_list.Add(list(remove_action))
-
-		var/list/connect_action
-
-		if(BP_IS_ROBOTIC(organ))
-			connect_action = list(
-				"name" = (organ.status & ORGAN_CUT_AWAY) ? "Connect" : "Disconnect",
-				"organ" = "\ref[organ]",
-				"step" = /datum/surgery_step/robotic/connect_organ
-			)
-		else if(istype(organ, /obj/item/organ/internal/bone))
-			var/obj/item/organ/internal/bone/B = organ
-			connect_action = list(
-				"name" = (organ.parent.status & ORGAN_BROKEN) ? "Mend" : "Break",
-				"organ" = "\ref[organ]",
-				"step" = (organ.parent.status & ORGAN_BROKEN) ? /datum/surgery_step/mend_bone : /datum/surgery_step/break_bone
-			)
-			if(!(organ.parent.status & ORGAN_BROKEN))
-				var/list/replace_bone_action = list(
-					"name" = "Replace",
-					"organ" = "\ref[organ]",
-					"step" = /datum/surgery_step/replace_bone
-				)
-
-				actions_list.Add(list(replace_bone_action))
-			else if(!(B.reinforced)) //Bone must be broken and not reinforced
-				var/list/reinforce_bone_action = list(
-					"name" = "Reinforce",
-					"organ" = "\ref[organ]",
-					"step" = /datum/surgery_step/reinforce_bone
-				)
-
-				actions_list.Add(list(reinforce_bone_action))
-
-		else
-			connect_action = list(
-				"name" = (organ.status & ORGAN_CUT_AWAY) ? "Attach" : "Separate",
-				"organ" = "\ref[organ]",
-				"step" = (organ.status & ORGAN_CUT_AWAY) ? /datum/surgery_step/attach_organ : /datum/surgery_step/detach_organ
-			)
-
-
-		actions_list.Add(list(connect_action))
+			actions_list.Add(list(list(
+					"name" = "Extract",
+					"target" = "\ref[organ]",
+					"step" = BP_IS_ROBOTIC(src) ? /datum/surgery_step/robotic/remove_item : /datum/surgery_step/remove_item
+				)))
+		actions_list.Add(organ.get_actions())
 		organ_data["actions"] = actions_list
 
 		contents_list.Add(list(organ_data))
@@ -140,9 +96,9 @@
 		var/icon/ic = new(implant.icon, implant.icon_state)
 		usr << browse_rsc(ic, "[implant.icon_state].png")	//Contvers the icon to a PNG so it can be used in the UI
 		implant_data["icon_data"] = "[implant.icon_state].png"
+		implant_data["processes"] = list()
 
 		var/list/actions_list = list()
-
 		if(can_remove_item(implant))
 			var/list/remove_action = list(
 				"name" = "Extract",
@@ -153,7 +109,6 @@
 			actions_list.Add(list(remove_action))
 
 		implant_data["actions"] = actions_list
-		implant_data["processes"] = list()
 
 		contents_list.Add(list(implant_data))
 
@@ -201,5 +156,37 @@
 					target_organ = src
 
 				target_organ.try_surgery_step(step_path, usr, target = locate(href_list["target"]))
+
+			return TRUE
+
+		if("remove_shrapnel")
+			//soj edits to be insainly easyer for corpsmen
+			if(istype(usr, /mob/living))
+				var/mob/living/user = usr
+				var/target_stat = BP_IS_ROBOTIC(src) ? STAT_MEC : STAT_BIO
+				var/removal_time = 50 * usr.stats.getMult(target_stat, STAT_LEVEL_PROF)
+				var/target = get_surgery_target()
+				var/obj/item/I = user.get_active_hand()
+
+				if(!(QUALITY_CLAMPING in I.tool_qualities))
+					to_chat(user, SPAN_WARNING("You need a tool with [QUALITY_CLAMPING] quality"))
+					return FALSE
+
+				to_chat(user, SPAN_NOTICE("You start removing shrapnel from [get_surgery_name()]."))
+
+				var/wait
+				if(ismob(target))
+					wait = do_mob(user, target, removal_time)
+				else
+					wait = do_after(user, removal_time, target, needhand = FALSE)
+
+				if(wait)
+					if(prob(40 + (FAILCHANCE_VERY_EASY + usr.stats.getStat(target_stat)))) //30 bio or mech will make you never fail when doing surgery
+						for(var/obj/item/material/shard/shrapnel/shrapnel in src.implants)
+							implants -= shrapnel
+							shrapnel.loc = get_turf(src)
+						to_chat(user, SPAN_WARNING("You have removed shrapnel from [get_surgery_name()]."))
+					else
+						to_chat(user, SPAN_WARNING("You failed to remove any shrapnel from [get_surgery_name()]!"))
 
 			return TRUE

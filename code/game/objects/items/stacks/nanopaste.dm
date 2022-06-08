@@ -4,11 +4,11 @@
 	desc = "A tube of paste containing swarms of repair nanites. Very effective in repairing mechanical bodyparts, organs, and smart purging of toxic buildup."
 	icon = 'icons/obj/stack/items.dmi'
 	icon_state = "nanopaste"
-	matter = list(MATERIAL_PLASTIC = 2)
+	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 0.2, MATERIAL_STEEL = 1)
 	origin_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 3)
 	amount = 5
 	w_class = ITEM_SIZE_SMALL //just so you can place same places that a brute pack would be
-	price_tag = 15
+	price_tag = 80
 
 
 /obj/item/stack/nanopaste/attack(mob/living/M as mob, mob/user as mob)
@@ -37,7 +37,7 @@
 			if(BP_IS_ROBOTIC(S))
 				if(S.get_damage())
 					user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-					S.heal_damage(15, 15, robo_repair = 1)
+					S.heal_damage(15, 15, TRUE)
 					H.updatehealth()
 					use(1)
 					user.visible_message(
@@ -52,3 +52,15 @@
 					return
 			else
 				to_chat(user, SPAN_NOTICE("Nothing to fix in here.")) //back to the original
+
+
+//For medical crafting; not nanopaste but hey, it's close.
+/obj/item/stack/sterilizer_crystal
+	name = "sterilizer crystals"
+	singular_name = "sterilizer crystal"
+	desc = "A solid, crystalized form of steralized reagents. Used by Soteria typically in making medical supplies. Or by crack-addicts who want a mouth full of cleaning solution."
+	icon = 'icons/obj/stack/items.dmi'
+	icon_state = "sterilizer_crystal"
+	amount = 5
+	w_class = ITEM_SIZE_TINY
+	price_tag = 40

@@ -348,12 +348,12 @@
 	if(!(QUALITY_BOLT_TURNING in I.tool_qualities))
 		return ..()
 	if (istype(src, /obj/machinery/atmospherics/tvalve/digital))
-		to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], it's too complicated."))
+		to_chat(user, SPAN_WARNING("You cannot unfasten \the [src], it is too complex."))
 		return 1
 	var/datum/gas_mixture/int_air = return_air()
 	var/datum/gas_mixture/env_air = loc.return_air()
 	if ((int_air.return_pressure()-env_air.return_pressure()) > 2*ONE_ATMOSPHERE)
-		to_chat(user, "<span class='warnng'>You cannot unwrench \the [src], it too exerted due to internal pressure.</span>")
+		to_chat(user, "<span class='warnng'>You cannot unfasten \the [src], it is under too much pressure.</span>")
 		add_fingerprint(user)
 		return 1
 	to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))

@@ -26,27 +26,44 @@
 	var/list/datum/alarm/queued_alarms = new()
 
 	var/list/access_rights
-	var/obj/item/weapon/card/id/idcard
-	var/idcard_type = /obj/item/weapon/card/id/synthetic
+	var/obj/item/card/id/idcard
+	var/idcard_type = /obj/item/card/id/synthetic
 
 	var/email_ringtone = TRUE
 
 	#define SEC_HUD 1 //Security HUD mode
 	#define MED_HUD 2 //Medical HUD mode
 	mob_classification = CLASSIFICATION_SYNTHETIC
+	colony_friend = TRUE
 
 /mob/living/silicon/Initialize()
 	GLOB.silicon_mob_list |= src
 	. = ..()
 	add_language(LANGUAGE_COMMON)
+	add_language(LANGUAGE_ROBOT)
+	add_language(LANGUAGE_COMMON)
+	add_language(LANGUAGE_SERBIAN)
+	add_language(LANGUAGE_GERMAN)
+	add_language(LANGUAGE_JANA)
+	add_language(LANGUAGE_CYRILLIC)
+	add_language(LANGUAGE_LATIN)
 	init_id()
 	init_subsystems()
+
+/mob/living/silicon/New()
+	..()
+	if(ckey)
+		recalibrate_hotkeys()
 
 /mob/living/silicon/Destroy()
 	GLOB.silicon_mob_list -= src
 	for(var/datum/alarm_handler/AH in SSalarm.all_handlers)
 		AH.unregister_alarm(src)
 	. = ..()
+
+/mob/living/silicon/lay_down()
+	resting = FALSE
+	update_lying_buckled_and_verb_status()
 
 /mob/living/silicon/proc/init_id()
 	if(idcard)
@@ -58,6 +75,7 @@
 	real_name = pickedName
 	name = real_name
 	create_or_rename_email(pickedName, "root.rt")
+	recalibrate_hotkeys()
 
 /mob/living/silicon/proc/show_laws()
 	return
@@ -71,10 +89,10 @@
 /mob/living/silicon/emp_act(severity)
 	switch(severity)
 		if(1)
-			src.take_organ_damage(0,20,emp=1)
+			src.take_organ_damage(0,20,emp=TRUE)
 			Stun(rand(5,10))
 		if(2)
-			src.take_organ_damage(0,10,emp=1)
+			src.take_organ_damage(0,10,emp=TRUE)
 			confused = (min(confused + 2, 30))
 //	flick("noise", src.flash)
 	if (HUDtech.Find("flash"))
@@ -233,6 +251,17 @@
 	set category = "IC"
 
 	pose =  sanitize(input(usr, "This is [src]. It is...", "Pose", null)  as text)
+
+/mob/living/silicon/verb/recalibrate_hotkeys()
+	set name = "Recalibrate Hotkeys"
+	set desc = "Makes you use the correct borg based hotkeys."
+	set category = "OOC"
+
+	if(client.get_preference_value(/datum/client_preference/stay_in_hotkey_mode) == GLOB.PREF_YES)
+		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=true mapwindow.map.focus=true input.background-color=#F0F0F0")
+	else
+		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true input.background-color=#D3B5B5")
+
 
 /mob/living/silicon/verb/set_flavor()
 	set name = "Set Flavour Text"

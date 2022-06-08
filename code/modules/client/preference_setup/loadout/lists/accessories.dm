@@ -1,6 +1,6 @@
 /datum/gear/accessory
 	display_name = "wallet"
-	path = /obj/item/weapon/storage/wallet
+	path = /obj/item/storage/wallet
 	slot = slot_accessory_buffer
 	sort_category = "Accessories"
 
@@ -21,9 +21,25 @@
 	display_name = "locket"
 	path = /obj/item/clothing/accessory/locket
 
-/datum/gear/accessory/metalnecklace
-	display_name = "metal necklace"
+/datum/gear/accessory/necklace
+	display_name = "necklace selection"
 	path = /obj/item/clothing/accessory/necklace
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/choker
+	display_name = "choker selection"
+	path = /obj/item/clothing/accessory/choker
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/bracelet
+	display_name = "bracelet selection"
+	path = /obj/item/clothing/accessory/bracelet
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/tacticool_shirt
+	display_name = "UBAC selection"
+	path = /obj/item/clothing/accessory/tacticool
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/neckbrace
 	display_name = "neck brace"
@@ -38,7 +54,47 @@
 	display_name = "tie selection"
 	path = /obj/item/clothing/accessory/tie
 	flags = GEAR_HAS_TYPE_SELECTION
-	
+
+/datum/gear/accessory/hawaiianshirt
+	display_name = "hawaiian shirt selection"
+	path = /obj/item/clothing/accessory/hawaiian
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/kneepad
+	display_name = "kneepad selection"
+	path = /obj/item/clothing/accessory/kneepads
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/capes
+	display_name = "cape selection"
+	path = /obj/item/clothing/accessory/cape
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/tacticalponcho
+	display_name = "tactical poncho selection"
+	path = /obj/item/clothing/accessory/tacticalponcho
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/tacticalponchohood
+	display_name = "tactical poncho hood selection"
+	path = /obj/item/clothing/head/tacticalhood
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/sweatervest
+	display_name = "sweater vest selection"
+	path = /obj/item/clothing/accessory/swvest
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/waistcoat
+	display_name = "waistcoat selection"
+	path = /obj/item/clothing/accessory/waistcoat
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/accessory/blackshieldpatch
-	display_name = "Blackshield arm patch"
+	display_name = "blackshield arm patch"
 	path = /obj/item/clothing/accessory/patches/blackshield
+	
+/datum/gear/accessory/pilotharness
+	display_name = "pilot harness"
+	path = /obj/item/clothing/accessory/pilotwebbing
+	flags = GEAR_HAS_TYPE_SELECTION

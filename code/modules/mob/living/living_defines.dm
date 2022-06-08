@@ -8,13 +8,15 @@
 
 	var/hud_updateflag = 0
 
-	var/life_cycles_before_sleep = 120
-	var/life_cycles_before_scan = 100
+	var/life_cycles_before_sleep = 60
+	var/life_cycles_before_scan = 360
 
 	var/stasis = FALSE
 	var/AI_inactive = FALSE
 
 	var/inventory_shown = 1
+
+	var/armor_penetration = 0 //Used for generic attacks
 
 	//Damage related vars, NOTE: THESE SHOULD ONLY BE MODIFIED BY PROCS
 	var/bruteloss = 0.0	//Brutal damage caused by brute force (punching, being clubbed by a toolbox ect... this also accounts for pressure damage)
@@ -38,6 +40,7 @@
 	var/mob_push_flags = 0
 	var/mob_always_swap = 0
 	var/move_to_delay = 4 //delay for the automated movement.
+	var/livmomentum = 0 //Used for advanced movement options.
 	var/can_burrow = FALSE //If true, this mob can travel around using the burrow network.
 	//When this mob spawns at roundstart, a burrow will be created near it if it can't find one
 
@@ -46,7 +49,8 @@
 	var/step_count = 0
 
 	var/tod = null // Time of death
-	var/update_slimes = 1
+	var/update_slimes = 0
+	var/is_busy = FALSE // Prevents stacking of certain actions, like resting and diving
 	var/silent = 0 		// Can't talk. Value goes down every life proc.
 	var/on_fire = 0 //The "Are we on fire?" var
 	var/fire_stacks
@@ -60,13 +64,25 @@
 	var/ear_damage = 0	//Carbon
 	var/stuttering = 0	//Carbon
 	var/slurring = 0	//Carbon
-
+	var/slowdown = 0
 	var/job = null//Living
 
 	var/image/static_overlay // For static over-lays on living mobs
 	mob_classification = CLASSIFICATION_ORGANIC
 
 	var/list/chem_effects = list()
+
+	//Inactive Mutations populated at spawn, meant to reflect integral parts of this creature's DNA
+	var/list/inherent_mutations = list()
+
+	//Mutations populated through horrendous genetic tampering.
+	var/datum/genetics/genetics_holder/unnatural_mutations
+
+	//How much material is used by the cloning process
+	var/clone_difficulty = CLONE_MEDIUM
+
+	var/is_watching = TRUE  //used for remote viewing of multiz structures
+	var/can_multiz_pb = FALSE // used for point-blanking people that camp ladders.
 
 	//Used in living/recoil.dm
 	var/recoil = 0 //What our current recoil level is
@@ -79,3 +95,13 @@
 	var/burn_mod_perk = 1
 	var/toxin_mod_perk = 1
 	var/oxy_mod_perk = 1
+
+	var/list/drop_items = list() //Held items a creature can drop when they die. Accessed through drop_death_loot()
+
+	var/target_dummy = FALSE // Simple yes no if we are when spotted targeted over **everything** esle, used for simple and super mobs.
+
+	//Redays to make mobs faster or slower on attacking
+	var/delay_for_range = 0 SECONDS
+	var/delay_for_rapid_range = 0 SECONDS
+	var/delay_for_melee = 0 SECONDS
+	var/delay_for_all = 0 SECONDS

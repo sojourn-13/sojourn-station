@@ -1,8 +1,4 @@
-
-// Keep these two together, they *must* be defined on both
-// If /client ever becomes /datum/client or similar, they can be merged
-/client/proc/get_view_variables_header()
-	return "<b>[src]</b>"
+// IMPORTANT! CLIENT IS A SUBTYPE OF DATUM
 /datum/proc/get_view_variables_header()
 	return "<b>[src]</b>"
 
@@ -31,9 +27,6 @@
 		</font>
 	"}
 
-// Same for these as for get_view_variables_header() above
-/client/proc/get_view_variables_options()
-	return ""
 /datum/proc/get_view_variables_options()
 	return ""
 
@@ -91,6 +84,8 @@
 	. = ..()
 	if(reagents)
 		. += "<option value='?_src_=vars;addreagent=\ref[src]'>Add reagent</option>"
+	. += "<option value='?_src_=vars;saveCopy=\ref[src]'>Save as Copy</option>"
+
 
 
 /atom/movable/get_view_variables_options()

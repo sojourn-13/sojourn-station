@@ -56,6 +56,7 @@ var/global/list/plant_seed_sprites = list()
 	else
 		src.name = "sample of [seed.seed_name] [seed.seed_noun]"
 		src.desc = "It's labelled as coming from [seed.display_name]."
+	if (seed.origin_tech) origin_tech = seed.origin_tech.Copy()
 
 /obj/item/seeds/examine(mob/user)
 	..(user)
@@ -112,6 +113,9 @@ var/global/list/plant_seed_sprites = list()
 /obj/item/seeds/bananaseed
 	seed_type = "banana"
 
+/obj/item/seeds/clownanaseed
+	seed_type = "clownana"
+
 /obj/item/seeds/eggplantseed
 	seed_type = "eggplant"
 
@@ -129,6 +133,7 @@ var/global/list/plant_seed_sprites = list()
 
 /obj/item/seeds/bluespacetomatoseed
 	seed_type = "bluespacetomato"
+	price_tag = 180
 
 /obj/item/seeds/bluespacetomatoseed/New()
 	..()
@@ -221,6 +226,9 @@ var/global/list/plant_seed_sprites = list()
 /obj/item/seeds/ambrosiadeusseed
 	seed_type = "ambrosiadeus"
 
+/obj/item/seeds/ambrosiarobusto
+	seed_type = "ambrosiarobusto"
+
 /obj/item/seeds/whitebeetseed
 	seed_type = "whitebeet"
 
@@ -257,9 +265,6 @@ var/global/list/plant_seed_sprites = list()
 /obj/item/seeds/cherryseed
 	seed_type = "cherry"
 
-/obj/item/seeds/tobaccoseed
-	seed_type = "tobacco"
-
 /obj/item/seeds/kudzuseed
 	seed_type = "kudzu"
 
@@ -283,3 +288,18 @@ var/global/list/plant_seed_sprites = list()
 
 /obj/item/seeds/thaadra
 	seed_type = "thaadra"
+
+/obj/item/seeds/blueberryseed
+	seed_type = "blueberries"
+
+/obj/item/seeds/strawberryseed
+	seed_type = "strawberries"
+
+/obj/item/seeds/pineappleseed
+	seed_type = "pineapple"
+
+/obj/item/seeds/cinnamonseed
+	seed_type = "cinnamon"
+
+/obj/item/seeds/mintseed
+	seed_type = "mint"

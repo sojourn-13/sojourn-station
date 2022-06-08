@@ -7,13 +7,13 @@ var/list/ventcrawl_machinery = list(
 // What are these for? Antags mostly,and allowing mice to steal small things
 /mob/living/var/list/can_enter_vent_with = list(
 	/obj/parallax,
-	/obj/item/weapon/implant,
+	/obj/item/implant,
 	/obj/item/device/radio/borg,
-	/obj/item/weapon/holder,
+	/obj/item/holder,
 	/obj/machinery/camera,
 	/mob/living/simple_animal/borer,
-	/obj/item/weapon/paper/,
-	/obj/item/weapon/pen
+	/obj/item/paper/,
+	/obj/item/pen
 	)
 
 /mob/living/var/list/icon/pipes_shown = list()
@@ -49,10 +49,7 @@ var/list/ventcrawl_machinery = list(
 	if(is_type_in_list(carried_item, can_enter_vent_with))
 		return !get_inventory_slot(carried_item)
 
-/mob/living/carbon/is_allowed_vent_crawl_item(var/obj/item/carried_item)
-	if(carried_item in stomach_contents)
-		return 1
-	return ..()
+
 
 /mob/living/carbon/human/is_allowed_vent_crawl_item(var/obj/item/carried_item)
 	if(carried_item in list(l_hand,r_hand))
@@ -185,7 +182,7 @@ var/list/ventcrawl_machinery = list(
 /mob/living/proc/remove_ventcrawl()
 	is_ventcrawling = 0
 	//candrop = 1
-	sight = 0
+	sight &= ~(SEE_TURFS|SEE_OBJS|BLIND)
 	update_sight()
 	if(client)
 		for(var/image/current_image in pipes_shown)

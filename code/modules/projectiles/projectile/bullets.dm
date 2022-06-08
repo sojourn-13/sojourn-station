@@ -1,3 +1,8 @@
+/*
+Bullets are fickle and lead to ammo choices, for idea ranges, damage types and affects wanted.
+Bullets tend to also embed and be much more deadly then lasers making them ideal when used correctly.
+Bullet also tend to have more armor against them do to this and can be douged unless are hitscan
+*/
 /obj/item/projectile/bullet
 	name = "bullet"
 	icon_state = "bullet"
@@ -7,9 +12,16 @@
 	embed = TRUE
 	sharp = 0
 	hitsound_wall = "ric_sound"
+
+	affective_damage_range = 6
+	affective_ap_range = 10
+
+	has_drop_off = TRUE
+
 	var/mob_passthrough_check = 0
 
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
+	recoil = 3
 
 /obj/item/projectile/bullet/on_hit(atom/target)
 	if (..(target))
@@ -20,7 +32,7 @@
 	if(penetrating > 0 && damage_types[BRUTE] > 20 && prob(damage_types[BRUTE]))
 		mob_passthrough_check = 1
 	else
-		var/obj/item/weapon/grab/G = locate() in target_mob
+		var/obj/item/grab/G = locate() in target_mob
 		if(G && G.state >= GRAB_NECK)
 			mob_passthrough_check = rand()
 		else

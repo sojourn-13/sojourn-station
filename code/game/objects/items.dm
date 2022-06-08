@@ -20,6 +20,7 @@
 	var/list/origin_tech = list()	//Used by R&D to determine what research bonuses it grants.
 	var/list/attack_verb = list() //Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
 
+	var/extra_bulk = 0 	//Extra physicial volume added by certain mods
 
 	var/heat_protection = 0 //flags which determine which body parts are protected from heat. Use the HEAD, UPPER_TORSO, LOWER_TORSO, etc. flags. See setup.dm
 	var/cold_protection = 0 //flags which determine which body parts are protected from cold. Use the HEAD, UPPER_TORSO, LOWER_TORSO, etc. flags. See setup.dm
@@ -43,7 +44,14 @@
 	var/permeability_coefficient = 1 // for chemicals/diseases
 	var/siemens_coefficient = 1 // for electrical admittance/conductance (electrocution checks and shit)
 	var/slowdown = 0 // How much clothing is slowing you down. Negative values speeds you up
-	var/datum/armor/armor // Ref to the armor datum
+	var/slowdown_hold // How much holding an item slows you down.
+
+	var/stiffness = 0 // How much recoil is caused by moving
+	var/obscuration = 0 // How much firearm accuracy is decreased
+
+	var/list/armor_list  = list() //A list version of the armor datum, for initialization.
+	var/datum/armor/armor// Ref to the armor datum
+
 	var/list/allowed = list() //suit storage stuff.
 	var/obj/item/device/uplink/hidden/hidden_uplink = null // All items can have an uplink hidden inside, just remember to add the triggers.
 	var/zoomdevicename = null //name used for message when binoculars/scope is used
@@ -69,19 +77,37 @@
 	var/force = 0	//How much damage the weapon deals
 	var/embed_mult = 0.5 //Multiplier for the chance of embedding in mobs. Set to zero to completely disable embedding
 	var/structure_damage_factor = STRUCTURE_DAMAGE_NORMAL	//Multiplier applied to the damage when attacking structures and machinery
+
+	var/post_penetration_dammult = 1 //how much damage do we do post-armor-penetation
 	//Does not affect damage dealt to mobs
+	//var/attack_distance = 1
 
 	var/list/item_upgrades = list()
 	var/max_upgrades = 3
 	var/list/prefixes = list()
+	var/list/blacklist_upgrades = list() //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
+
+
+	var/list/effective_faction = list() // Which faction the item is effective against.
+	var/damage_mult = 1 // The damage multiplier the item get when attacking that faction.
+	//Stolen things form tool qualities
+	var/eye_hazard = FALSE
+	var/use_power_cost = 0
+	var/use_fuel_cost = 0
+	var/obj/item/cell/cell = null
+	var/suitable_cell = null	//Dont forget to edit this for a tool, if you want in to consume cells
+	var/passive_power_cost = 0 //Energy consumed per process tick while active
+	var/use_stock_cost = 0
+	var/stock = 0
+	var/sparks_on_use = FALSE
+	//Used for stashes
+	var/start_hidden = FALSE
 
 /obj/item/Initialize()
-	if(islist(armor))
-		armor = getArmor(arglist(armor))
-	else if(!armor)
+	if(armor_list)
+		armor = getArmor(arglist(armor_list))
+	else
 		armor = getArmor()
-	else if(!istype(armor, /datum/armor))
-		error("Invalid type [armor.type] found in .armor during /obj Initialize()")
 	. = ..()
 
 /obj/item/Destroy()
@@ -151,10 +177,19 @@
 			size = "colossal"
 		if(ITEM_SIZE_TITANIC)
 			size = "titanic"
+		if(ITEM_SIZE_PLANET)
+			size = "planetary"
 	message += "\nIt is a [size] item."
 
 	for(var/Q in tool_qualities)
 		message += "\n<blue>It possesses [tool_qualities[Q]] tier of [Q] quality.<blue>"
+
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.stats.getPerk(PERK_MARKET_PROF))
+			message += SPAN_NOTICE("\nThis item cost: [get_item_cost()][CREDITS]")
+		if(H.stats.getPerk(PERK_MARKET_PROF) && surplus_tag == TRUE)
+			message += SPAN_NOTICE("\nThis item has a surplus tag and is only worth ten percent its usual value on exports.")
 
 	return ..(user, distance, "", message)
 
@@ -170,13 +205,14 @@
 /obj/item/proc/pickup(mob/target)
 	throwing = 0
 	var/atom/old_loc = loc
+	SEND_SIGNAL(src, COMSIG_ITEM_PICKED, src, target)
 	if(target.put_in_active_hand(src) && old_loc )
 		if((target != old_loc) && (target != old_loc.get_holding_mob()))
 			do_pickup_animation(target,old_loc)
 	add_hud_actions(target)
 
 /obj/item/attack_ai(mob/user as mob)
-	if(istype(loc, /obj/item/weapon/robot_module))
+	if(istype(loc, /obj/item/robot_module))
 		//If the item is part of a cyborg module, equip it
 		if(!isrobot(user))
 			return
@@ -207,11 +243,13 @@
 	return TRUE
 
 // called when this item is removed from a storage item, which is passed on as S. The loc variable is already set to the new destination before this is called.
-/obj/item/proc/on_exit_storage(obj/item/weapon/storage/S as obj)
+/obj/item/proc/on_exit_storage(obj/item/storage/the_storage)
+	SEND_SIGNAL(the_storage, COMSIG_STORAGE_TAKEN, src, the_storage)
 	return
 
 // called when this item is added into a storage item, which is passed on as S. The loc variable is already set to the storage item.
-/obj/item/proc/on_enter_storage(obj/item/weapon/storage/S as obj)
+/obj/item/proc/on_enter_storage(obj/item/storage/the_storage)
+	SEND_SIGNAL(the_storage, COMSIG_STORAGE_INSERTED, src, the_storage)
 	return
 
 // called when "found" in pockets and storage items. Returns 1 if the search should end.
@@ -359,7 +397,7 @@
 	if(!..())
 		return 0
 
-	if(istype(src, /obj/item/weapon/melee/energy))
+	if(istype(src, /obj/item/melee/energy))
 		return
 
 	if((flags & NOBLOODY)||(item_flags & NOBLOODY))
@@ -461,7 +499,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 				usr.client.pixel_y = 0
 
 		usr.visible_message("[usr] peers through the [zoomdevicename ? "[zoomdevicename] of the [name]" : "[name]"].")
-
+		var/mob/living/carbon/human/H = usr
+		H.using_scope = src
 	else
 		usr.client.view = world.view
 		//if(!usr.hud_used.hud_shown)
@@ -473,6 +512,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 		if(!cannotzoom)
 			usr.visible_message("[zoomdevicename ? "[usr] looks up from the [name]" : "[usr] lowers the [name]"].")
+		var/mob/living/carbon/human/H = usr
+		H.using_scope = null
 	usr.parallax.update()
 	return
 
@@ -510,7 +551,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	return
 
 /obj/item/proc/on_embed_removal(mob/living/user)
-	return
+	if(!hud_actions)
+		return
 
 	for(var/action in hud_actions)
 		user.client.screen -= action
@@ -523,6 +565,9 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		var/obj/item/action = A
 		action.update_icon()
 
+/obj/item/get_storage_cost()
+	return (..() + extra_bulk)
+
 /obj/item/proc/refresh_upgrades()
 	force = initial(force)
 	item_flags = initial(item_flags)
@@ -531,6 +576,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	color = initial(color)
 	sharp = initial(sharp)
 	prefixes = list()
+
+	extra_bulk = initial(extra_bulk)
 
 	//Now lets have each upgrade reapply its modifications
 	SEND_SIGNAL(src, COMSIG_APPVAL, src)
@@ -544,4 +591,3 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 /obj/item/device
 	icon = 'icons/obj/device.dmi'
-

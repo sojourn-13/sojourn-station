@@ -5,7 +5,7 @@
 
 /obj/machinery/computer/power_monitor
 	name = "power monitoring console"
-	desc = "Computer designed to remotely monitor power levels around the station"
+	desc = "Computer designed to remotely monitor power levels around the colony"
 	icon_keyboard = "power_key"
 	icon_screen = "power_monitor"
 	light_color = COLOR_LIGHTING_ORANGE_MACHINERY
@@ -13,7 +13,7 @@
 	//computer stuff
 	density = 1
 	anchored = 1.0
-	circuit = /obj/item/weapon/circuitboard/powermonitor
+	circuit = /obj/item/circuitboard/powermonitor
 	var/alerting = 0
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 300
@@ -49,11 +49,11 @@
 
 	if(..())
 		return
-	ui_interact(user)
+	nano_ui_interact(user)
 
 // Uses dark magic to operate the NanoUI of this computer.
-/obj/machinery/computer/power_monitor/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	power_monitor.ui_interact(user, ui_key, ui, force_open)
+/obj/machinery/computer/power_monitor/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+	power_monitor.nano_ui_interact(user, ui_key, ui, force_open)
 
 
 // Verifies if any warnings were registered by connected sensors.

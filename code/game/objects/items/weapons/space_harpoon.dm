@@ -1,7 +1,7 @@
 #define MODE_RECEIVE 0
 #define MODE_TRANSMIT 1
 
-/obj/item/weapon/bluespace_harpoon
+/obj/item/bluespace_harpoon
 	name = "\"Harpoon\" bluespace rifle"
 	desc = "One of the stranger things developed by Nanotrasen, a company known for producing many random things from bluespace radios to soap, this harpoon serves as a tool for short and accurate teleportation of cargo and personnel through bluespace."
 	icon_state = "harpoon-1"
@@ -17,39 +17,56 @@
 	var/transforming = FALSE	// mode changing takes some time
 	var/offset_chance = 5		//chance to teleport things in wrong place
 	var/teleport_offset = 8		//radius of wrong place
-	var/obj/item/weapon/cell/cell = null
-	var/suitable_cell = /obj/item/weapon/cell/medium
+	cell = null
+	suitable_cell = /obj/item/cell/medium
 	var/Using = FALSE				//If its being used
 	var/range = 10
 
-/obj/item/weapon/bluespace_harpoon/Initialize()
+/obj/item/bluespace_harpoon/Initialize()
 	. = ..()
 	if(!cell && suitable_cell)
 		cell = new suitable_cell(src)
 
-/obj/item/weapon/bluespace_harpoon/New()
+/obj/item/bluespace_harpoon/New()
 	..()
 	item_flags |= BLUESPACE
 
-/obj/item/weapon/bluespace_harpoon/get_cell()
+/obj/item/bluespace_harpoon/get_cell()
 	return cell
 
-/obj/item/weapon/bluespace_harpoon/handle_atom_del(atom/A)
+/obj/item/bluespace_harpoon/handle_atom_del(atom/A)
 	..()
 	if(A == cell)
 		cell = null
 		update_icon()
 
-/obj/item/weapon/bluespace_harpoon/afterattack(atom/A, mob/user)
+/obj/item/bluespace_harpoon/afterattack(atom/A, mob/user)
 	if(get_dist(A, user) > range)
 		return ..()
-	if(istype(A, /obj/item/weapon/storage/))
+	if(!(A in view(user)))
+		return ..()
+	if(istype(A, /obj/item/storage/))
 		return ..()
 	else if(istype(A, /obj/structure/table/) && (get_dist(A, user) <= 1))
 		return ..()
+	var/turf/AtomTurf = get_turf(A)
+	var/turf/UserTurf = get_turf(user)
+	var/dense_check
+	switch(mode)
+		if(MODE_TRANSMIT)
+			dense_check = AtomTurf.contains_dense_objects(TRUE)
+		if(MODE_RECEIVE)
+			user.visible_message(
+				SPAN_DANGER("[user] attempts to receive items using the bluespace harpoon!"),
+				SPAN_DANGER("With the harpoon set to receive it seems to ingore its basic warnings!!")
+				)
+			//dense_check = UserTurf.contains_dense_objects(TRUE) //SoJ edit theirs no point in blocking this ways teleportation, it stops many key points of the mode
+	if(dense_check)
+		to_chat(user, SPAN_WARNING("Dense content detected on receiving terrain. Do not \"Telefrag\" any living beings caught in the harpoon. Please disengage."))
+		return //No actual telefragging, wasn't allowed to do that at the time
 	if(!Using)
 		Using = TRUE
-		if(do_after(user, 4 SECONDS - user.stats.getMult(STAT_COG, /*STAT_LEVEL_GODLIKE/20,*/ src)))
+		if(do_after(user, 4 SECONDS - user.stats.getMult(STAT_COG, STAT_LEVEL_EXPERT, src)))
 			Using = FALSE
 			if(!cell || !cell.checked_use(100))
 				to_chat(user, SPAN_WARNING("\The [src]'s battery is dead or missing."))
@@ -57,24 +74,22 @@
 			if(!user || !A || user.machine)
 				return
 			if(transforming)
-				to_chat(user, SPAN_WARNING("You can't fire \the [src] while transforming!"))
+				to_chat(user, SPAN_WARNING("You can't fire \the [src] while it is transforming!"))
 				return
 
 			playsound(user, 'sound/weapons/wave.ogg', 60, 1)
 
 			user.visible_message(SPAN_WARNING("\The [user] fires \the [src]!"))
-			to_chat(user,SPAN_WARNING("You fire from [src]"))
+			to_chat(user,SPAN_WARNING("You fire \the [src]"))
 			var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 			s.set_up(4, 1, A)
 			s.start()
 
-			var/turf/AtomTurf = get_turf(A)
-			var/turf/UserTurf = get_turf(user)
-
-			if(mode)
-				teleport(UserTurf, AtomTurf)
-			else
-				teleport(AtomTurf, UserTurf)
+			switch(mode)
+				if(MODE_TRANSMIT)
+					teleport(UserTurf, AtomTurf)
+				if(MODE_RECEIVE)
+					teleport(AtomTurf, UserTurf)
 		else
 			to_chat(user, SPAN_WARNING("Error, do not move!"))
 			Using = FALSE
@@ -82,7 +97,7 @@
 		to_chat(user, SPAN_WARNING("Error, single destination only!"))
 
 
-/obj/item/weapon/bluespace_harpoon/proc/teleport(turf/source, turf/target)
+/obj/item/bluespace_harpoon/proc/teleport(turf/source, turf/target)
 	for(var/atom/movable/AM in source)
 		if(istype(AM, /mob/shadow))
 			continue
@@ -92,10 +107,10 @@
 			else
 				go_to_bluespace(source, entropy_value, TRUE, AM, target)
 
-/obj/item/weapon/bluespace_harpoon/attack_self(mob/living/user as mob)
+/obj/item/bluespace_harpoon/attack_self(mob/living/user as mob)
 	return change_fire_mode(user)
 
-/obj/item/weapon/bluespace_harpoon/verb/change_fire_mode(mob/user)
+/obj/item/bluespace_harpoon/verb/change_fire_mode(mob/user)
 	set name = "Change fire mode"
 	set category = "Object"
 	set src in oview(1)
@@ -109,31 +124,31 @@
 	spawn(13)	//Average length of transforming animation
 		transforming = FALSE
 
-/obj/item/weapon/bluespace_harpoon/update_icon()
+/obj/item/bluespace_harpoon/update_icon()
 	icon_state = "harpoon-[mode]"
 
-/obj/item/weapon/bluespace_harpoon/examine(var/mob/user, var/dist = -1)
+/obj/item/bluespace_harpoon/examine(var/mob/user, var/dist = -1)
 	..(user, dist)
 	to_chat(user, SPAN_NOTICE("Mode set to [mode ? "transmiting" : "receiving"]."))
 
-/obj/item/weapon/bluespace_harpoon/MouseDrop(over_object)
+/obj/item/bluespace_harpoon/MouseDrop(over_object)
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
 		cell = null
 
-/obj/item/weapon/bluespace_harpoon/attackby(obj/item/C, mob/living/user)
+/obj/item/bluespace_harpoon/attackby(obj/item/C, mob/living/user)
 	if(istype(C, suitable_cell) && !cell && insert_item(C, user))
 		src.cell = C
 
-/obj/item/weapon/bluespace_harpoon/mounted
+/obj/item/bluespace_harpoon/mounted
 	var/charge_cost = 100
 	var/charge_tick = 0
 	var/recharge_time = 4
 
-/obj/item/weapon/bluespace_harpoon/mounted/Initialize()
+/obj/item/bluespace_harpoon/mounted/Initialize()
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
-/obj/item/weapon/bluespace_harpoon/mounted/Process()
+/obj/item/bluespace_harpoon/mounted/Process()
 	charge_tick++
 	if(charge_tick < recharge_time)
 		return
@@ -143,22 +158,22 @@
 	if(!cell || cell.charge >= cell.maxcharge)
 		return
 
-	var/obj/item/weapon/cell/large/external = get_external_cell()
+	var/obj/item/cell/large/external = get_external_cell()
 	if(!external || !external.use(charge_cost))
 		return
 
 	cell.give(charge_cost)
 	update_icon()
 
-/obj/item/weapon/bluespace_harpoon/mounted/proc/get_external_cell()
+/obj/item/bluespace_harpoon/mounted/proc/get_external_cell()
 	return loc.get_cell()
 
-/obj/item/weapon/bluespace_harpoon/mounted/update_icon()
+/obj/item/bluespace_harpoon/mounted/update_icon()
 	icon_state = "harpoon-mounted-[mode]"
 
-/obj/item/weapon/bluespace_harpoon/mounted/blitz
+/obj/item/bluespace_harpoon/mounted/blitz
 	name = "OR BSD \"Blauerraumharpune\""
 	desc = "Reverse engineered version of harpoon developed by Nanotrasen, remounted for robotic use only by Greyson Positronics."
 
-/obj/item/weapon/bluespace_harpoon/mounted/blitz/update_icon()
+/obj/item/bluespace_harpoon/mounted/blitz/update_icon()
 	icon_state = "harpoon-mounted-blitz-[mode]"

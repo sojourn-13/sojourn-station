@@ -4,6 +4,7 @@
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
 	body_parts_covered = 0
+	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/glasses/eyepatch/attack_self()
 	adjust()
@@ -59,6 +60,13 @@
 	item_state = "headset" // lol
 	body_parts_covered = 0
 
+/obj/item/clothing/glasses/binoclard_lenses
+	name = "binoclard lenses"
+	desc = "Wide rim disks for glasses popularized back vagabonds and drifters alike."
+	icon_state = "binoclard_lenses"
+	item_state = "binoclard_lenses" // lol
+	body_parts_covered = 0
+
 /obj/item/clothing/glasses/scanners
 	name = "scanning goggles"
 	desc = "A very oddly shaped pair of goggles with bits of wire poking out the sides. A soft humming sound emanates from it."
@@ -84,12 +92,20 @@
 	icon_state = "3d"
 	item_state = "3d"
 	body_parts_covered = 0
+	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/glasses/regular/gglasses
 	name = "green glasses"
 	desc = "Stylish glasses with a forest green tint."
 	icon_state = "gglasses"
 	item_state = "gglasses"
+	body_parts_covered = 0
+
+/obj/item/clothing/glasses/artist
+	name = "4-D Glasses"
+	desc = "You can see in every dimension, and get four times the amount of headache!"
+	icon_state = "artist"
+	item_state = "artist_glasses"
 	body_parts_covered = 0
 
 /obj/item/clothing/glasses/sunglasses
@@ -100,6 +116,7 @@
 	item_state = "sunglasses"
 	darkness_view = -1
 	flash_protection = FLASH_PROTECTION_MODERATE
+	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/glasses/sunglasses/big
 	name = "large sunglasses"
@@ -107,6 +124,17 @@
 	icon_state = "bigsunglasses"
 	item_state = "bigsunglasses"
 	flash_protection = FLASH_PROTECTION_MAJOR
+	darkness_view = -3
+	obscuration = MEDIUM_OBSCURATION
+
+/obj/item/clothing/glasses/sunglasses/helltaker // Part of the whole Helltaker dude drip. - Seb
+	name = "devilish sunglasses"
+	desc = "A stylish pair of small, circular sunglasses that keeps your eyes surprisingly well hidden."
+	icon_state = "hellgoggles"
+	item_state = "hellgoggles"
+	flash_protection = FLASH_PROTECTION_MAJOR
+	darkness_view = -3
+	obscuration = MEDIUM_OBSCURATION
 
 /obj/item/clothing/glasses/aviator
 	name = "black aviators"
@@ -140,6 +168,7 @@
 	icon_state = "blindfold"
 	item_state = "blindfold"
 	tint = TINT_BLIND
+	obscuration = HEAVY_OBSCURATION
 
 /obj/item/clothing/glasses/blindfold/tape
 	name = "length of tape"
@@ -154,6 +183,7 @@
 	desc = "Protects the eyes from sudden flashes, debris, and light shrapnel."
 	icon_state = "ballistic"
 	item_state = "ballistic"
+	prescription = TRUE
 	action_button_name = "Switch Polarization"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 2)
 	flash_protection = FLASH_PROTECTION_MODERATE
@@ -164,6 +194,7 @@
 
 /obj/item/clothing/glasses/ballistic/verb/adjust()
 	set name = "Adjust goggle polarization"
+	set category = "Object"
 	set src in usr
 
 	if(usr.canmove && !usr.stat && !usr.restrained())
@@ -172,8 +203,8 @@
 			flags_inv |= HIDEEYES
 			body_parts_covered |= EYES
 			icon_state = initial(icon_state)
-			flash_protection = initial(flash_protection)
-			darkness_view = -1
+			flash_protection = FLASH_PROTECTION_MAJOR
+			darkness_view = -4
 			to_chat(usr, "You switch \the [src]' polarization on to protect your eyes.")
 		else
 			src.active = !src.active
@@ -184,6 +215,15 @@
 			to_chat(usr, "You switch \the [src]' polarization to automatic.")
 		update_wear_icon()
 		usr.update_action_buttons()
+
+/obj/item/clothing/glasses/ballistic/med
+	name = "ballistic medHUD"
+	desc = "A mediHUD visor constructed with more durable materials to protect your eyes against sudden flashes, debris and shrapnel."
+	icon_state = "ballisticmed"
+	item_state = "ballisticmed"
+
+/obj/item/clothing/glasses/ballistic/med/process_hud(var/mob/M)
+	process_med_hud(M, 1)
 
 /obj/item/clothing/glasses/ballistic/perscription
 	name = "perscription ballistic goggles"

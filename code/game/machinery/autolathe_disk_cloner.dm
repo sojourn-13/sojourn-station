@@ -1,9 +1,9 @@
 /obj/machinery/autolathe_disk_cloner
-	name = "autolathe disk cloner"
-	desc = "Machine used for copying recipes from unprotected autolathe disks."
+	name = "Excelsior autolathe disk cloner"
+	desc = "Machine used for freeing recipes from protected autolathe disks."
 	icon = 'icons/obj/machines/disk_cloner.dmi'
 	icon_state = "disk_cloner"
-	circuit = /obj/item/weapon/circuitboard/autolathe_disk_cloner
+	circuit = /obj/item/circuitboard/autolathe_disk_cloner
 	density = 1
 	anchored = 1
 	use_power = IDLE_POWER_USE
@@ -14,8 +14,8 @@
 	var/copying_delay = 0
 	var/hack_fail_chance = 0
 
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/original = null
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/copy = null
+	var/obj/item/computer_hardware/hard_drive/portable/original = null
+	var/obj/item/computer_hardware/hard_drive/portable/copy = null
 
 	var/copying = FALSE
 
@@ -28,9 +28,9 @@
 	..()
 	var/laser_rating = 0
 	var/scanner_rating = 0
-	for(var/obj/item/weapon/stock_parts/scanning_module/SM in component_parts)
+	for(var/obj/item/stock_parts/scanning_module/SM in component_parts)
 		scanner_rating += SM.rating
-	for(var/obj/item/weapon/stock_parts/micro_laser/ML in component_parts)
+	for(var/obj/item/stock_parts/micro_laser/ML in component_parts)
 		laser_rating += ML.rating
 
 	//Redid these to make each little upgrade worth taking.
@@ -52,7 +52,7 @@
 	if(panel_open)
 		return
 
-	if(istype(I, /obj/item/weapon/computer_hardware/hard_drive/portable))
+	if(istype(I, /obj/item/computer_hardware/hard_drive/portable))
 		if(!original)
 			original = put_disk(I, user)
 			to_chat(user, SPAN_NOTICE("You put \the [I] into the first slot of [src]."))
@@ -63,7 +63,7 @@
 			to_chat(user, SPAN_NOTICE("[src]'s slots is full."))
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 	update_icon()
 
 
@@ -79,7 +79,7 @@
 /obj/machinery/autolathe_disk_cloner/Process()
 	update_icon()
 
-/obj/machinery/autolathe_disk_cloner/proc/put_disk(obj/item/weapon/computer_hardware/hard_drive/portable/AD, var/mob/user)
+/obj/machinery/autolathe_disk_cloner/proc/put_disk(obj/item/computer_hardware/hard_drive/portable/AD, var/mob/user)
 	ASSERT(istype(AD))
 
 	user.unEquip(AD,src)
@@ -91,7 +91,7 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 	update_icon()
 
 
@@ -112,7 +112,7 @@
 	return data
 
 
-/obj/machinery/autolathe_disk_cloner/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/autolathe_disk_cloner/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = ui_data()
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -140,7 +140,7 @@
 
 	if(href_list["eject"])
 		var/mob/living/H = null
-		var/obj/item/weapon/computer_hardware/hard_drive/portable/D = null
+		var/obj/item/computer_hardware/hard_drive/portable/D = null
 		if(ishuman(usr))
 			H = usr
 			D = H.get_active_hand()
@@ -177,7 +177,7 @@
 	SSnano.update_uis(src)
 	update_icon()
 	if(original && copy && !copy.used_capacity)
-		var/designgrade = istype(copy, /obj/item/weapon/computer_hardware/hard_drive/portable/design) //Design disks ignore capacity restrictions.
+		var/designgrade = istype(copy, /obj/item/computer_hardware/hard_drive/portable/design) //Design disks ignore capacity restrictions.
 		copy.name = original.name
 
 		for(var/f in original.stored_files)

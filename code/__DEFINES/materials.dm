@@ -17,6 +17,7 @@
 #define MATERIAL_CLOTH "cloth"
 #define MATERIAL_SILK "silk"
 #define MATERIAL_LEATHER "leather"
+#define MATERIAL_BONE "bone"
 #define MATERIAL_MARBLE "marble"
 #define MATERIAL_MHYDROGEN "mhydrogen"
 #define MATERIAL_OSMIUM "osmium"
@@ -28,9 +29,11 @@
 #define MATERIAL_WOOD "wood"
 #define MATERIAL_XENOCHITIN "chitin"
 #define MATERIAL_VOXALLOY "voxalloy"
-#define MATERIAL_RESIN "resin"
 #define MATERIAL_CARPET "carpet"
 #define MATERIAL_BIOMATTER "biomatter"
+#define MATERIAL_COMPRESSED_MATTER "compressed matter"
+#define MATERIAL_AMERIDIAN "ameridian"
+#define MATERIAL_RSCRAP "refined scrap"
 
 #define MATERIAL_LIST list(\
 	MATERIAL_STEEL,\
@@ -49,6 +52,7 @@
 	MATERIAL_CLOTH,\
 	MATERIAL_SILK,\
 	MATERIAL_LEATHER,\
+	MATERIAL_BONE,\
 	MATERIAL_MARBLE,\
 	MATERIAL_MHYDROGEN,\
 	MATERIAL_OSMIUM,\
@@ -60,9 +64,11 @@
 	MATERIAL_WOOD,\
 	MATERIAL_XENOCHITIN,\
 	MATERIAL_VOXALLOY,\
-	MATERIAL_RESIN,\
 	MATERIAL_CARPET,\
-	MATERIAL_BIOMATTER)
+	MATERIAL_BIOMATTER,\
+	MATERIAL_COMPRESSED_MATTER, \
+	MATERIAL_AMERIDIAN, \
+	MATERIAL_RSCRAP)
 
 #define PLASTEEL_COLOUR "#8e9799"
 //Color to exactly match concept art #b0bcbe

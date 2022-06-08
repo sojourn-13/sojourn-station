@@ -14,7 +14,7 @@
 
 #define STUN      "stun"
 #define WEAKEN    "weaken"
-#define PARALYZE  "paralize"
+#define PARALYZE  "paralyze"
 #define IRRADIATE "irradiate"
 #define AGONY     "agony"     // Added in PAIN!
 #define SLUR      "slur"
@@ -34,6 +34,10 @@
 #define ARMOR_BIO			"bio"
 #define ARMOR_RAD			"rad"
 
+//Blood levels. These are percentages based on the species blood_volume
+#define BLOOD_VOLUME_SAFE_MODIFIER    45
+#define BLOOD_VOLUME_OKAY_MODIFIER    35
+#define BLOOD_VOLUME_BAD_MODIFIER     20
 
 // Organ processes
 #define OP_EYES          "eyes"
@@ -48,22 +52,28 @@
 #define OP_NERVE         "nerve"
 #define OP_BLOOD_VESSEL  "blood vessel"
 
+// Extra organs
+#define OP_KIDNEY_LEFT    "left kidney"
+#define OP_KIDNEY_RIGHT   "right kidney"
+
 // Carrion organ processes
 #define OP_MAW       "carrion maw"
 #define OP_SPINNERET "carrion spinneret"
-#define OP_CHEMICALS "chemmical vessel"
+#define OP_CHEMICALS "chemical vessel"
 
 // Unique organs.
 #define BP_MOUTH    "mouth"
 #define BP_EYES     "eyes"
 #define BP_BRAIN    "brain"
-#define BP_B_CHEST  "ribcage"
+#define BP_B_CHEST  "rib cage"
 #define BP_B_GROIN  "pelvis"
 #define BP_B_HEAD   "skull"
 #define BP_B_L_ARM  "left humerus"
 #define BP_B_R_ARM  "right humerus"
 #define BP_B_L_LEG  "left femur"
 #define BP_B_R_LEG  "right femur"
+#define BP_PSION "psionic organ"
+#define BP_NANOGATE "nanogate"
 
 // Unique carrion Organs.
 #define BP_SPCORE   "spider core"
@@ -115,7 +125,7 @@
 #define BODYPART_GAS_INTAKE			(1<<3)
 
 // Organs helpers.
-#define BP_IS_ORGANIC(org)  (org.nature == MODIFICATION_ORGANIC)
+#define BP_IS_ORGANIC(org)  (org.nature == MODIFICATION_ORGANIC || org.nature == MODIFICATION_SUPERIOR)
 #define BP_IS_ROBOTIC(org) (org.nature == MODIFICATION_SILICON || org.nature == MODIFICATION_LIFELIKE)
 #define BP_IS_SILICON(org) (org.nature == MODIFICATION_SILICON)	// Prothetics that are obvious
 #define BP_IS_REMOVED(org) (org.nature == MODIFICATION_REMOVED)
@@ -141,6 +151,7 @@
 #define MODIFICATION_SILICON 2	// Fully robotic, no organic parts
 #define MODIFICATION_LIFELIKE 3	// Robotic, made to appear organic
 #define MODIFICATION_REMOVED 4	// Removed completly
+#define MODIFICATION_SUPERIOR 5 //Better than good, a cut above.
 
 // Damage above this value must be repaired with surgery.
 #define ROBOLIMB_SELF_REPAIR_CAP 30

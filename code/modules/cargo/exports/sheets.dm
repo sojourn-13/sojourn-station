@@ -176,3 +176,8 @@
 	cost = 80
 	message = "of nanopaste"
 	export_types = list(/obj/item/stack/nanopaste)
+
+/datum/export/stack/wax
+	cost = 95
+	message = "of wax"
+	export_types = list(/obj/item/stack/wax)

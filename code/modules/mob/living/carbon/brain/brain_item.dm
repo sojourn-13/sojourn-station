@@ -9,6 +9,7 @@
 	icon_state = "brain2"
 	force = 1.0
 	w_class = ITEM_SIZE_SMALL
+	specific_organ_size = 2
 	throwforce = 1.0
 	throw_speed = 3
 	throw_range = 5
@@ -16,6 +17,10 @@
 	origin_tech = list(TECH_BIO = 3)
 	attack_verb = list("attacked", "slapped", "whacked")
 	price_tag = 8000
+	blood_req = 8
+	max_blood_storage = 80
+	oxygen_req = 8
+	nutriment_req = 6
 	var/mob/living/carbon/brain/brainmob = null
 
 /obj/item/organ/internal/brain/xeno
@@ -90,10 +95,49 @@
 	name = "slime core"
 	desc = "A complex, organic knot of jelly and crystalline particles."
 	icon = 'icons/mob/slimes.dmi'
-	icon_state = "green slime extract"
+	icon_state = "bluespace slime extract"
+	parent_organ_base = BP_CHEST
+	var/regenerating = FALSE
+	var/revival_chem = "plasma"
+	var/respawn_delay = 100 // Delay, in deciseconds (1/10th of a second), before the slime actually revive after being injected.
+
+/obj/item/organ/internal/brain/slime/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/reagent_containers/syringe) && !regenerating)
+		var/obj/item/reagent_containers/syringe/S = I
+		if(S.mode == 1 && S.reagents.remove_reagent(revival_chem, 5)) // We inject 5u of plasma // the 1 correspond to SYRINGE_INJECT, but we're before the define
+			to_chat(user, SPAN_NOTICE("You inject [revival_chem] into [src]."))
+			src.visible_message("[src] start to wobble and wiggle...")
+			regenerating = TRUE
+			spawn(100) regen_body()
+
+/obj/item/organ/internal/brain/slime/proc/regen_body()
+	if(loc != get_turf(src))
+		forceMove(src, get_turf(src))
+	var/mob/living/carbon/human/host = new(src, FORM_SLIME, FORM_SLIME)
+	brainmob?.mind.transfer_to(host)
+
+	src.visible_message("[src] expand into a humanoid form")
 
 /obj/item/organ/internal/brain/golem
-	name = "chem"
+	name = "scroll"
 	desc = "A tightly furled roll of paper, covered with indecipherable runes."
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "scroll"
+
+/obj/item/organ/internal/brain/synthetic
+	name = "synthetic brain"
+	desc = "A synthetic brain, free willed and extremely valuable, often used in only the most complex and dangerous robots."
+	icon_state = "brain_synth"
+	organ_efficiency = list(BP_BRAIN = 200)
+	price_tag = 12000
+	blood_req = 0
+	max_blood_storage = 2.5
+	oxygen_req = 0
+	nutriment_req = 0
+	nature = MODIFICATION_SILICON
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_GOLD = 1)
+
+/obj/item/organ/internal/brain/plant
+	name = "nuclei"
+	desc = "A centralized nuclei functioning as a brain for plantoid species."
+	icon_state = "brain_plant"

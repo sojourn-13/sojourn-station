@@ -9,12 +9,16 @@ var/global/list/default_internal_channels = list(
 	num2text(MED_I_FREQ)=list(access_medical_equip),
 	num2text(SEC_FREQ) = list(access_security),
 	num2text(BLS_FREQ) = list(access_security),
-	num2text(MAR_FREQ) = list(access_security),
+	num2text(MAR_FREQ) = list(access_forensics_lockers),
 	num2text(SEC_I_FREQ)=list(access_security),
 	num2text(SCI_FREQ) = list(access_tox,access_robotics,access_xenobiology),
 	num2text(SUP_FREQ) = list(access_cargo),
 	num2text(SRV_FREQ) = list(access_janitor, access_hydroponics),
-	num2text(PRO_FREQ) = list(access_prospector)
+	num2text(PRO_FREQ) = list(access_prospector),
+	num2text(PT_BT_FREQ) = list(access_security),
+	num2text(PT_RT_FREQ) = list(access_security),
+	num2text(PT_YT_FREQ) = list(access_security),
+	num2text(PT_GT_FREQ) = list(access_security)
 )
 
 var/global/list/unique_internal_channels = list(
@@ -29,7 +33,7 @@ var/global/list/default_medbay_channels = list(
 
 /obj/item/device/radio
 	icon = 'icons/obj/radio.dmi'
-	name = "station bounced radio"
+	name = "ham radio"
 	suffix = "\[3\]"
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
@@ -56,8 +60,6 @@ var/global/list/default_medbay_channels = list(
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
 	var/const/FREQ_LISTENING = 1
 	var/list/internal_channels
-
-/obj/item/device/radio
 	var/datum/radio_frequency/radio_connection
 	var/list/datum/radio_frequency/secure_radio_connections = new
 
@@ -97,6 +99,7 @@ var/global/list/default_medbay_channels = list(
 /obj/item/device/radio/attack_self(mob/user as mob)
 	user.set_machine(src)
 	interact(user)
+	add_fingerprint(user) //Touching a radio adds are prints
 
 /obj/item/device/radio/interact(mob/user)
 	if(!user)
@@ -105,9 +108,9 @@ var/global/list/default_medbay_channels = list(
 	if(b_stat)
 		wires.Interact(user)
 
-	return ui_interact(user)
+	return nano_ui_interact(user)
 
-/obj/item/device/radio/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/item/device/radio/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 
 	data["mic_status"] = broadcasting
@@ -164,7 +167,7 @@ var/global/list/default_medbay_channels = list(
 	return user.has_internal_radio_channel_access(internal_channels[freq])
 
 /mob/proc/has_internal_radio_channel_access(var/list/req_one_accesses)
-	var/obj/item/weapon/card/id/I = GetIdCard()
+	var/obj/item/card/id/I = GetIdCard()
 	return has_access(list(), req_one_accesses, I ? I.GetAccess() : list())
 
 /mob/observer/ghost/has_internal_radio_channel_access(var/list/req_one_accesses)
@@ -239,7 +242,8 @@ var/global/list/default_medbay_channels = list(
 
 	if(.)
 		SSnano.update_uis(src)
-	playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
+	if(!issilicon(usr))
+		playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
 
 /obj/item/device/radio/proc/autosay(var/message, var/from, var/channel) //BS12 EDIT
 	var/datum/radio_frequency/connection = null
@@ -357,7 +361,7 @@ var/global/list/default_medbay_channels = list(
 		displayname = M.GetVoice()
 		jobname = "Unknown"
 		voicemask = 1
-
+	SEND_SIGNAL(src, COMSIG_MESSAGE_SENT)
 
 
   /* ###### Radio headsets can only broadcast through subspace ###### */
@@ -534,9 +538,17 @@ var/global/list/default_medbay_channels = list(
 		if (!accept)
 			for (var/ch_name in channels)
 				var/datum/radio_frequency/RF = secure_radio_connections[ch_name]
-				if (RF.frequency==freq && (channels[ch_name]&FREQ_LISTENING))
+				if (RF && RF.frequency==freq && (channels[ch_name]&FREQ_LISTENING))
 					accept = 1
 					break
+				#ifdef JANEDEBUG
+				else if(!RF)
+					log_debug("radio.receive_range(): Channel name found in channels no secure_radio_connection analog set.")
+					log_debug("radio.receive_range(): ch_name: [ch_name]")
+					log_debug("radio.receive_range(): freq: [freq]")
+					log_debug("radio.receive_range(): level: [level]")
+					log_debug("radio.receive_range(): Is ch_name listening?: [channels[ch_name]&FREQ_LISTENING]")
+				#endif
 		if (!accept)
 			return -1
 	return canhear_range
@@ -557,10 +569,10 @@ var/global/list/default_medbay_channels = list(
 			user.show_message(SPAN_NOTICE("\The [src] can not be modified or attached!"))
 	return
 
-/obj/item/device/radio/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/device/radio/attackby(obj/item/W as obj, mob/user as mob)
 	..()
 	user.set_machine(src)
-	if (!( istype(W, /obj/item/weapon/tool/screwdriver) ))
+	if(!(QUALITY_SCREW_DRIVING in W.tool_qualities))
 		return
 	b_stat = !( b_stat )
 	if(!istype(src, /obj/item/device/radio/beacon))
@@ -609,13 +621,13 @@ var/global/list/default_medbay_channels = list(
 		var/datum/robot_component/C = R.components["radio"]
 		R.cell_use_power(C.active_usage)
 
-/obj/item/device/radio/borg/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/device/radio/borg/attackby(obj/item/W as obj, mob/user as mob)
 //	..()
 	user.set_machine(src)
-	if (!( istype(W, /obj/item/weapon/tool/screwdriver) || (istype(W, /obj/item/device/encryptionkey/ ))))
+	if (!( istype(W, /obj/item/tool/screwdriver) || (istype(W, /obj/item/device/encryptionkey/ ))))
 		return
 
-	if(istype(W, /obj/item/weapon/tool/screwdriver))
+	if(istype(W, /obj/item/tool/screwdriver))
 		if(keyslot)
 
 
@@ -630,7 +642,6 @@ var/global/list/default_medbay_channels = list(
 					keyslot.loc = T
 					keyslot = null
 
-			recalculateChannels()
 			to_chat(user, "You pop out the encryption key in the radio!")
 
 		else
@@ -646,7 +657,7 @@ var/global/list/default_medbay_channels = list(
 			W.loc = src
 			keyslot = W
 
-		recalculateChannels()
+	recalculateChannels()
 
 	return
 
@@ -714,7 +725,7 @@ var/global/list/default_medbay_channels = list(
 
 	. = ..()
 
-/obj/item/device/radio/borg/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/item/device/radio/borg/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 
 	data["mic_status"] = broadcasting
@@ -780,7 +791,7 @@ var/global/list/default_medbay_channels = list(
 	channels = list("Command" = 1, "Blackshield" = 1, "Marshal" = 1, "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "Prospector" = 1)
 	price_tag = 20000
 	origin_tech = list(TECH_DATA = 7, TECH_ENGINEERING = 7, TECH_ILLEGAL = 7)
-	var/list/obj/item/weapon/oddity/used_oddity = list()
+	var/list/obj/item/oddity/used_oddity = list()
 	var/last_produce = 0
 	var/cooldown = 40 MINUTES
 	var/max_cooldown = 40 MINUTES
@@ -789,10 +800,15 @@ var/global/list/default_medbay_channels = list(
 
 /obj/item/device/radio/random_radio/New()
 	..()
+	GLOB.all_faction_items[src] = GLOB.department_guild
 	START_PROCESSING(SSobj, src)
 
 /obj/item/device/radio/random_radio/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
+		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+	GLOB.all_faction_items -= src
+	GLOB.guild_faction_item_loss++
 	. = ..()
 
 /obj/item/device/radio/random_radio/receive_range(freq, level)
@@ -822,40 +838,43 @@ var/global/list/default_medbay_channels = list(
 		playsound(loc, "sparks", 75, 1, -1)
 		to_chat(user, SPAN_NOTICE("You use the cryptographic sequencer on the [name]."))
 	else
-		to_chat(user, SPAN_NOTICE("The [name] has already been emaged."))
+		to_chat(user, SPAN_NOTICE("The [name] has already been emagged."))
 		return NO_EMAG_ACT
 
-/obj/item/device/radio/random_radio/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/device/radio/random_radio/attackby(obj/item/W, mob/user, params)
+	if(nt_sword_attack(W, user))
+		return FALSE
 	user.set_machine(src)
 
-	if(istype(W, /obj/item/weapon/oddity))
-		var/obj/item/weapon/oddity/D = W
+	if(istype(W, /obj/item/oddity))
+		var/obj/item/oddity/D = W
 		if(D.oddity_stats)
 			var/usefull = FALSE
-			if(D in used_oddity)
-				to_chat(user, SPAN_WARNING("You already used [D] to repair [src]"))
-				return
 
 			if(random_hear >= 100)
-				to_chat(user, SPAN_WARNING("The [src] are repaired at it's maximum."))
+				to_chat(user, SPAN_WARNING("The [src] is in perfect condition."))
 				return
 
-			to_chat(user, SPAN_NOTICE("You starting repairing [src] using [D]."))
+			to_chat(user, SPAN_NOTICE("You begin repairing [src] using [D]."))
 
 			if(!do_after(user, 20 SECONDS, src))
-				to_chat(user, SPAN_WARNING("You stoped repairing [src]."))
+				to_chat(user, SPAN_WARNING("You've stopped repairing [src]."))
+				return
+
+			if(D in used_oddity)
+				to_chat(user, SPAN_WARNING("You've already used [D] to repair [src]!"))
 				return
 
 			for(var/stat in D.oddity_stats)
 				if(stat == STAT_MEC)
-					var/increece = D.oddity_stats[stat] * 3
-					random_hear += increece
+					var/increase = D.oddity_stats[stat] * 3
+					random_hear += increase
 					if(random_hear > 100)
 						random_hear = 100
 					cooldown -= (D.oddity_stats[stat]) MINUTES
 					if(cooldown < min_cooldown)
 						cooldown = min_cooldown
-					to_chat(user, SPAN_NOTICE("You make use of [D], and repaired [src] by [increece]%."))
+					to_chat(user, SPAN_NOTICE("You make use of [D], and repaired [src] by [increase]%."))
 					usefull = TRUE
 					used_oddity += D
 					return

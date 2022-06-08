@@ -7,7 +7,7 @@
 		return COMPONENT_INCOMPATIBLE
 	var/atom/A = parent
 	affect = value
-	desc   = new_desc
+	desc = new_desc
 
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/onMoved)
 
@@ -24,5 +24,3 @@
 		var/area/new_area = get_area(newloc) //Actually new area is curret
 		var/datum/area_sanity/AS = new_area.sanity
 		AS.register(src)
-
-

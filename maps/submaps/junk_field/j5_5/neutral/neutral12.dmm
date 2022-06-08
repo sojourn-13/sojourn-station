@@ -1,0 +1,60 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"c" = (
+/obj/random/voidsuit/damaged,
+/turf/simulated/floor/reinforced/airmix,
+/area/template_noop)
+"h" = (
+/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/obj/random/lathe_disk/advanced,
+/turf/simulated/floor/reinforced/airmix,
+/area/template_noop)
+"m" = (
+/obj/random/tool_upgrade/low_chance,
+/turf/simulated/floor/reinforced/airmix,
+/area/template_noop)
+"v" = (
+/obj/machinery/door/airlock/maintenance_common,
+/turf/simulated/floor/plating,
+/area/template_noop)
+"z" = (
+/turf/simulated/wall,
+/area/template_noop)
+"H" = (
+/turf/simulated/floor/reinforced/airmix,
+/area/template_noop)
+
+(1,1,1) = {"
+z
+z
+v
+z
+z
+"}
+(2,1,1) = {"
+z
+c
+H
+H
+z
+"}
+(3,1,1) = {"
+v
+H
+h
+m
+v
+"}
+(4,1,1) = {"
+z
+m
+H
+H
+z
+"}
+(5,1,1) = {"
+z
+z
+v
+z
+z
+"}

@@ -1,6 +1,7 @@
 /client/proc/kaboom()
 	var/power = input(src, "power?", "power?") as num
 	var/turf/T = get_turf(src.mob)
+	log_and_message_admins("kaboom: X:[T.x] Y:[T.y] Z:[T.z] User:[src]")
 	explosion_rec(T, power)
 
 /obj

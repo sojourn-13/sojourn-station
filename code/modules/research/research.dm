@@ -29,6 +29,11 @@ Procs:
 **	Includes all the helper procs and basic tech processing.  **
 ***************************************************************/
 
+/datum/research/proc/adjust_research_points(value)
+	if(value > 0)
+		GLOB.research_point_gained += value
+	research_points += value
+
 /datum/research								//Holder for all the existing, archived, and known tech. Individual to console.
 	var/list/known_designs = list()			//List of available designs (at base reliability).
 	var/list/design_categories_protolathe = list()
@@ -82,7 +87,7 @@ Procs:
 	var/datum/tech/tree = locate(T.tech_type) in researched_tech
 	researched_tech[tree] += T
 	if(!force)
-		research_points -= T.cost
+		adjust_research_points(-T.cost)
 
 	if(initial) // Initial technologies don't add levels
 		tree.max_level -= 1
@@ -189,7 +194,7 @@ Procs:
 	if(istype(file, /datum/computer_file/binary/research_points))
 		var/datum/computer_file/binary/research_points/research_points_file = file
 		known_research_file_ids += research_points_file.research_id
-		research_points += research_points_file.size * 1000
+		adjust_research_points(research_points_file.size * 1000)
 		return TRUE
 
 	return FALSE
@@ -204,6 +209,7 @@ Procs:
 	var/shortname = "name"
 	var/desc = "description"   //General description of what it does and what it makes.
 	var/level = 0              //A simple number scale of the research level.
+	//Rare - Does work currently
 	var/rare = 1               //How much CentCom wants to get that tech. Used in supply shuttle tech cost calculation.
 	var/max_level              //Calculated based on the ammount of technologies
 	var/shown = TRUE           //Used to hide tech that is not supposed to be shown from the start
@@ -241,6 +247,14 @@ Procs:
 	name = "Robotics Research"
 	shortname = "Robotics"
 	desc = "Research into the exosuits"
+
+/datum/tech/greyson
+	name = "Greyson Positronic"
+	shortname = "Greyson Positronic"
+	desc = "Research into the Greyson Positronic blueprints and mimicry of their tech"
+	rare = 5
+	//shown = FALSE
+	//item_tech_req = TECH_ARCANE //So we will never be shown ^_^
 
 /datum/tech/illegal
 	name = "Covert Technologies Research"

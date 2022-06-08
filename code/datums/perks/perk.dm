@@ -15,6 +15,19 @@
 	target_perk = perk
 	return ..(_, perk.name, perk)
 
+/obj/effect/statclick/perk/Destroy()
+
+	if (target_perk.holder && target_perk && target_perk.holder.stats)
+		var/datum/stat_holder/parent_stat_holder = target_perk.holder.stats
+
+		parent_stat_holder.perk_stats -= src
+
+	if (target_perk)
+		target_perk.statclick = null
+		target_perk = null
+
+	. = ..()
+
 /obj/effect/statclick/perk/update()
 	if(target_perk.cooldown_time > world.time)
 		name = "[target_perk.name] ([(target_perk.cooldown_time - world.time)/10] seconds)"
@@ -43,6 +56,7 @@
 	var/passivePerk = TRUE
 	var/obj/effect/statclick/perk/statclick
 	var/cooldown_time = 0
+	var/perk_shared_ability
 
 /datum/perk/proc/update_stat()
 	statclick.update()
@@ -53,9 +67,16 @@
 
 /datum/perk/Destroy()
 	if(holder)
-		to_chat(holder, SPAN_NOTICE("[lose_text]"))
+		if (holder.stats && holder.stats.perks)
+			holder.stats.perks -= src
+		if (!((QDELETED(holder)) || (QDESTROYING(holder)))) //since this can happen during the destroy of the holder
+			to_chat(holder, SPAN_NOTICE("[lose_text]"))
 	holder = null
-	return ..()
+
+	if (statclick)
+		statclick.target_perk = null
+		statclick = null
+	. = ..()
 
 /datum/perk/proc/on_process()
 	SHOULD_CALL_PARENT(TRUE)
@@ -91,3 +112,20 @@
 
 /datum/perk/proc/deactivate()
 	//log_debug("Ah, fuck, I can't believe you've done this.  Perk [src] without a custom defined deactivate called")
+
+
+/// Proc called , a bitflag is always expected.
+/datum/perk/proc/check_shared_ability(ability_bitflag)
+	if(!(perk_shared_ability & ability_bitflag))
+		return FALSE
+	return TRUE
+
+/* Uncomment this when more shared abilities are used
+/datum/perk/proc/check_shared_abilities(list/ability_bitflags)
+	var/accumulated_bitflags = 0
+	for(var/bitflag in ability_bitflags)
+		if(!check_shared_ability(bitflag))
+			continue
+		accumulated_bitflags++
+	return ability_bitflags.len == accumulated_bitflags ? TRUE : FALSE
+*/

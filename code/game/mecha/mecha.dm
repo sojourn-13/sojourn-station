@@ -14,6 +14,7 @@
 #define MECHA_ARMOR_SCOUT 2
 #define MECHA_ARMOR_MEDIUM 3
 #define MECHA_ARMOR_HEAVY 4
+#define MECHA_ARMOR_SUPERHEAVY 5
 
 /obj/mecha
 	name = "Mecha"
@@ -50,7 +51,7 @@
 	var/list/damage_absorption = list("brute"=0.8,"fire"=1.2,"bullet"=0.9,"energy"=1,"bomb"=1)
 	// This armor level indicates how fortified the mech's armor is.
 	var/armor_level = MECHA_ARMOR_LIGHT
-	var/obj/item/weapon/cell/large/cell
+	var/obj/item/cell/large/cell
 	var/state = 0
 	var/list/log = new
 	var/last_message = 0
@@ -76,7 +77,7 @@
 	var/internal_damage = 0 //contains bitflags
 
 	var/list/operation_req_access = list()//required access level for mecha operation
-	var/list/internals_req_access = list(access_engine,access_robotics)//required access level to open cell compartment
+	var/list/internals_req_access = list()//required access level to open cell compartment
 	var/list/dna_req_access = list(access_heads)
 
 	var/datum/global_iterator/pr_int_temp_processor //normalizes internal air mixture temperature
@@ -97,7 +98,9 @@
 	var/step_sound = 'sound/mecha/Mech_Step.ogg'
 	var/step_turn_sound = 'sound/mecha/Mech_Rotation.ogg'
 
+	var/list/obj/item/mech_ammo_box/ammo[3] // List to hold the mech's internal ammo.
 
+	var/obj/item/clothing/glasses/hud/hud
 
 /obj/mecha/can_prevent_fall()
 	return TRUE
@@ -130,7 +133,7 @@
 	removeVerb(/obj/mecha/verb/disconnect_from_port)
 	log_message("[src.name] created.")
 	loc.Entered(src)
-	mechas_list += src //global mech list
+	GLOB.mechas_list += src //global mech list
 	add_hearing()
 	return
 
@@ -181,7 +184,7 @@
 	QDEL_NULL(pr_internal_damage)
 	QDEL_NULL(spark_system)
 
-	mechas_list -= src //global mech list
+	GLOB.mechas_list -= src //global mech list
 	remove_hearing()
 	. = ..()
 
@@ -206,7 +209,26 @@
 		icon_state += "-open"
 
 
-
+/obj/mecha/proc/reload_gun()
+	var/obj/item/mech_ammo_box/MAB
+	if(!istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic)) // Does it use bullets?
+		return FALSE
+	var/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/gun = selected
+	for(var/obj/item/mech_ammo_box/M in ammo) // Run through the boxes
+		if(M.ammo_type == gun.ammo_type) // Is it the right ammo?
+			MAB = M
+	if(MAB) // Only proceed if MAB isn't null, AKA we got a valid box to draw from
+		while(gun.max_ammo > gun.projectiles) // Keep loading until we're full or the box's empty
+			if(MAB.ammo_amount_left < MAB.amount_per_click) // Check if there's enough ammo left
+				MAB.forceMove(src.loc) // Drop the empty ammo box
+				for(var/i = ammo.len to 1 step -1) // Check each spot in the ammobox list
+					if(ammo[i] == MAB) // Is it the same box?
+						ammo[i] = null // It is no longer there
+						MAB = null
+				return FALSE
+			MAB.ammo_amount_left -= MAB.amount_per_click // Remove the ammo from the box
+			gun.projectiles += MAB.amount_per_click // Put the ammo in the box
+		return TRUE
 
 ////////////////////////
 ////// Helpers /////////
@@ -223,7 +245,7 @@
 	return internal_tank
 
 /obj/mecha/proc/add_cell()
-	cell = new /obj/item/weapon/cell/large/super(src)
+	cell = new /obj/item/cell/large/super(src)
 
 /obj/mecha/proc/add_cabin()
 	cabin_air = new
@@ -255,15 +277,20 @@
 	return 0
 
 /obj/mecha/proc/enter_after(delay as num, var/mob/user as mob, var/numticks = 5)
-	var/delayfraction = delay/numticks
-
 	var/turf/T = user.loc
 
-	for(var/i = 0, i<numticks, i++)
-		sleep(delayfraction)
-		if(!src || !user || !user.canmove || !(user.loc == T))
-			return 0
+	var/datum/progressbar/progbar = new(user, delay, user)
+	var/starttime = world.time
 
+	for(var/i = 0, i < delay, i++)
+		sleep(1)
+		progbar.update(world.time - starttime)
+		if(i % numticks == 0)
+			if(!src || !user || !user.canmove || !(user.loc == T))
+				qdel(progbar)
+				return 0
+
+	qdel(progbar)
 	return 1
 
 
@@ -362,11 +389,16 @@
 	if(!target.Adjacent(src))
 		if(selected && selected.is_ranged())
 			selected.action(target)
-	else if(selected)
-		if(selected.is_melee())
+	else if(selected) // If target is adjacent
+		if(istype(selected, /obj/item/mecha_parts/mecha_equipment/melee_weapon) || istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon)) // This makes it so you can atleast melee with your ranged weapon
+			if(istype(target, /mob/living))
+				selected.attack(target, user, user.targeted_organ)
+			else if(istype(target, /obj))
+				selected.attack_object(target, user)
+			else if(istype(target, /turf/simulated/wall))
+				target.attackby(selected, user)
+		else if(selected.is_melee())
 			selected.action(target)
-		else
-			occupant_message("<font color='red'>You cannot fire this weapon in close quarters!</font>")
 	else
 		src.melee_action(target)
 	return
@@ -378,7 +410,7 @@
 		target.attack_hand(src.occupant)
 		return 1
 	if(istype(target, /obj/machinery/embedded_controller))
-		target.ui_interact(src.occupant)
+		target.nano_ui_interact(src.occupant)
 		return 1
 	return 0
 
@@ -671,6 +703,13 @@ assassination method if you time it right*/
 		log_append_to_last("Took [damage] points of damage. Damage type: \"[type]\".",1)
 	return
 
+/obj/mecha/proc/take_flat_damage(amount, type="brute")
+	if(amount)
+		health -= amount
+		update_health()
+		log_append_to_last("Took [amount] points of damage.",1)
+	return
+
 /obj/mecha/proc/absorb_damage(damage,damage_type)
 	return damage*(listgetindex(damage_absorption,damage_type) || 1)
 
@@ -848,21 +887,11 @@ assassination method if you time it right*/
 	if(prob(src.deflect_chance))
 		severity++
 		src.log_append_to_last("Armor saved, changing severity to [severity].")
-	switch(severity)
-		if(1.0)
-			qdel(src)
-		if(2.0)
-			if (prob(30))
-				qdel(src)
-			else
-				src.take_damage(initial(src.health)/2)
-				src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT),1)
-		if(3.0)
-			if (prob(5))
-				qdel(src)
-			else
-				src.take_damage(initial(src.health)/5)
-				src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT),1)
+	// This formula is designed to one-shot anything less armored than a Phazon taking a severity 1 explosion.
+	// This formula also does the same raw damage (aside from one-shotting) as the previous formula against a Durand, but deals more final damage due to being unmitigated by damage resistance.
+	var/damage_proportion = 1 / max(1, (severity + max(0, armor_level - 2)))
+	src.take_flat_damage(initial(src.health) * damage_proportion)
+	src.check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT),1)
 	return
 
 /*Will fix later -Sieve
@@ -907,9 +936,7 @@ assassination method if you time it right*/
 //////////////////////
 
 /obj/mecha/attackby(obj/item/I, mob/user)
-	if(!usr.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
-		to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
-		return
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
 	var/list/usable_qualities = list()
 	if(state == 1 || state == 2)
@@ -920,27 +947,35 @@ assassination method if you time it right*/
 		usable_qualities.Add(QUALITY_SCREW_DRIVING)
 	if(state == 2 || state == 3)
 		usable_qualities.Add(QUALITY_PRYING)
-	if(state >= 3 && src.occupant)
+	if((state >= 3 && src.occupant) || src.dna)
 		usable_qualities.Add(QUALITY_PULSING)
 
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	switch(tool_type)
 
 		if(QUALITY_BOLT_TURNING)
+			if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+				to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+				return
 			if(state == 1)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-					to_chat(user, SPAN_NOTICE("You undo the securing bolts."))
+					to_chat(user, SPAN_NOTICE("You undo the securing bolts and deploy the rollers."))
 					state = 2
+					anchored = 0
 					return
 			if(state == 2)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-					to_chat(user, SPAN_NOTICE("You tighten the securing bolts."))
+					to_chat(user, SPAN_NOTICE("You tighten the securing bolts and undeploy the rollers."))
 					state = 1
+					anchored = 1
 					return
 			return
 
 		if(QUALITY_WELDING)
 			if(user.a_intent != I_HURT)
+				if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+					to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+					return
 				if(src.health >= initial(src.health))
 					to_chat(user, SPAN_NOTICE("The [src.name] is at full integrity"))
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
@@ -948,13 +983,22 @@ assassination method if you time it right*/
 						clearInternalDamage(MECHA_INT_TANK_BREACH)
 						to_chat(user, SPAN_NOTICE("You repair the damaged gas tank."))
 					if(src.health<initial(src.health))
-						to_chat(user, SPAN_NOTICE("You repair some damage to [src.name]."))
+						var/missing_health = initial(src.health) - src.health
 						user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-						src.health += min(10, initial(src.health)-src.health)
+						var/user_mec = max(0, user.stats.getStat(STAT_MEC))
+						if(state == 3)
+							to_chat(user, SPAN_NOTICE("You are able to repair more damage to [src.name] from the inside."))
+							src.health += min(initial(src.health) * (user_mec / 100), missing_health)
+						else
+							to_chat(user, SPAN_NOTICE("You repair some damage to [src.name]."))
+							src.health += min(user.stats.getStat(STAT_MEC) * 2, missing_health)
 					return
 			return
 
 		if(QUALITY_PRYING)
+			if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+				to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+				return
 			if(state == 2)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 					to_chat(user, SPAN_NOTICE("You open the hatch to the power unit."))
@@ -970,6 +1014,9 @@ assassination method if you time it right*/
 			return
 
 		if(QUALITY_SCREW_DRIVING)
+			if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+				to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+				return
 			if(hasInternalDamage(MECHA_INT_TEMP_CONTROL))
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 					to_chat(user, SPAN_NOTICE("You repair the damaged temperature controller."))
@@ -990,6 +1037,9 @@ assassination method if you time it right*/
 			return
 
 		if(QUALITY_PULSING)
+			if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+				to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+				return
 			if(state >= 3 && src.occupant)
 				to_chat(user, "You attempt to eject the pilot using the maintenance controls.")
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
@@ -1001,12 +1051,24 @@ assassination method if you time it right*/
 						src.occupant_message(SPAN_WARNING("An attempt to eject you was made using the maintenance controls."))
 						src.log_message("Eject attempt made using maintenance controls - rejected.")
 					return
+			if(src.dna)
+				if(I.use_tool(user, src, WORKTIME_LONG, tool_type, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
+					src.dna = null
+					to_chat(user, SPAN_WARNING("You have reset the mech's DNA lock forcefuly."))
+					src.log_message("DNA lock was forcefuly removed.")
+				else
+					to_chat(user, SPAN_WARNING("You failed to reset the mech's DNA lock."))
+					src.log_message("A failed attempt at reseting the DNA lock has been logged.")
 			return
 
 		if(ABORT_CHECK)
 			return
 
 	if(istype(I, /obj/item/mecha_parts/mecha_equipment))
+		if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+			to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+			return
+
 		var/obj/item/mecha_parts/mecha_equipment/E = I
 		spawn()
 			if(E.can_attach(src))
@@ -1016,7 +1078,8 @@ assassination method if you time it right*/
 			else
 				to_chat(user, "You were unable to attach [I] to [src]")
 		return
-	var/obj/item/weapon/card/id/id_card = I.GetIdCard()
+
+	var/obj/item/card/id/id_card = I.GetIdCard()
 	if(id_card)
 		if(add_req_access || maint_access)
 			if(internals_access_allowed(usr))
@@ -1028,6 +1091,10 @@ assassination method if you time it right*/
 			to_chat(user, SPAN_WARNING("Maintenance protocols disabled by operator."))
 
 	else if(istype(I, /obj/item/stack/cable_coil))
+		if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+			to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+			return
+
 		if(state == 3 && hasInternalDamage(MECHA_INT_SHORT_CIRCUIT))
 			var/obj/item/stack/cable_coil/CC = I
 			if(CC.use(2))
@@ -1037,7 +1104,7 @@ assassination method if you time it right*/
 				to_chat(user, "There's not enough wire to finish the task.")
 		return
 
-	else if(istype(I, /obj/item/weapon/cell/large))
+	else if(istype(I, /obj/item/cell/large))
 		if(state == 4 || (state == 3 && !cell))
 			if(!src.cell)
 				to_chat(user, "You install the powercell")
@@ -1055,6 +1122,15 @@ assassination method if you time it right*/
 		I.forceMove(src)
 		user.visible_message("[user] attaches [I] to [src].", "You attach [I] to [src]")
 		return
+
+	else if(istype(I, /obj/item/mech_ammo_box))
+		for(var/i = ammo.len to 1 step -1) // Check each spot in the ammobox list
+			if(ammo[i] == null) // No box in the way.
+				insert_item(I, user)
+				ammo[i] = I
+				user.visible_message("[user] attaches [I] to [src].", "You attach [I] to [src]")
+				src.log_message("Ammobox [I] inserted by [user]")
+				return
 
 	else
 		src.log_message("Attacked by [I]. Attacker - [user]")
@@ -1249,6 +1325,10 @@ assassination method if you time it right*/
 		to_chat(user, SPAN_WARNING("You can't climb into the exosuit while buckled!"))
 		return
 
+	if(istype(user.get_equipped_item(slot_back), /obj/item/rig/ameridian_knight))
+		to_chat(user, SPAN_WARNING("Your armor is too bulky to fit in the exosuit!"))
+		return
+
 	src.log_message("[user] tries to move in.")
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
@@ -1326,6 +1406,15 @@ assassination method if you time it right*/
 	src.occupant << browse(src.get_stats_html(), "window=exosuit")
 	return
 
+/obj/mecha/verb/reload()
+	set name = "Reload Gun"
+	set category = "Exosuit Interface"
+	set popup_menu = 0
+	set src = usr.loc
+	if(usr!=src.occupant)
+		return
+	reload_gun() // Reload the mech's active gun
+
 /*
 /obj/mecha/verb/force_eject()
 	set category = "Object"
@@ -1383,28 +1472,6 @@ assassination method if you time it right*/
 		return
 
 	//Eject for AI in mecha
-	if(mob_container.forceMove(src.loc))//ejecting mob container
-
-		src.log_message("[mob_container] moved out.")
-		occupant.reset_view()
-		/*
-		if(src.occupant.client)
-			src.occupant.client.eye = src.occupant.client.mob
-			src.occupant.client.perspective = MOB_PERSPECTIVE
-		*/
-		src.occupant << browse(null, "window=exosuit")
-		if(istype(mob_container, /obj/item/device/mmi))
-			var/obj/item/device/mmi/mmi = mob_container
-			if(mmi.brainmob)
-				occupant.loc = mmi
-			mmi.mecha = null
-			src.occupant.canmove = 0
-			src.verbs += /obj/mecha/verb/eject
-		src.occupant = null
-		src.update_icon()
-		src.set_dir(dir_in)
-
-
 	if(mob_container.forceMove(src.loc))//ejecting mob container
 	/*
 		if(ishuman(occupant) && (return_pressure() > HAZARD_HIGH_PRESSURE))
@@ -1471,7 +1538,7 @@ assassination method if you time it right*/
 	return FALSE
 
 
-/obj/mecha/check_access(obj/item/weapon/card/id/I, list/access_list)
+/obj/mecha/check_access(obj/item/card/id/I, list/access_list)
 	if(!istype(access_list))
 		return TRUE
 	if(!access_list.len) //no requirements
@@ -1652,7 +1719,7 @@ assassination method if you time it right*/
 	return output
 
 
-/obj/mecha/proc/output_access_dialog(obj/item/weapon/card/id/id_card, mob/user)
+/obj/mecha/proc/output_access_dialog(obj/item/card/id/id_card, mob/user)
 	if(!id_card || !user) return
 	var/output = {"<html>
 						<head><style>
@@ -1677,7 +1744,7 @@ assassination method if you time it right*/
 	onclose(user, "exosuit_add_access")
 	return
 
-/obj/mecha/proc/output_maintenance_dialog(obj/item/weapon/card/id/id_card,mob/user)
+/obj/mecha/proc/output_maintenance_dialog(obj/item/card/id/id_card,mob/user)
 	if(!id_card || !user) return
 
 	var/maint_options = "<a href='?src=\ref[src];set_internal_tank_valve=1;user=\ref[user]'>Set Cabin Air Pressure</a>"
@@ -2244,3 +2311,10 @@ assassination method if you time it right*/
 		setInternalDamage(MECHA_INT_TANK_BREACH)
 	if (prob(probability))
 		setInternalDamage(MECHA_INT_CONTROL_LOST)
+
+/obj/mecha/proc/hud_deleted(var/obj/item/clothing/glasses/hud/source, var/obj/item/clothing/glasses/hud/placeholder) //2nd arg exists because our signals are outdated
+	SIGNAL_HANDLER
+
+	if (hud == source)
+		UnregisterSignal(source, COMSIG_HUD_DELETED)
+		hud = null

@@ -7,7 +7,7 @@
 	icon_state = "map_injector"
 
 	name = "air injector"
-	desc = "Passively injects air into its surroundings. Has a valve attached to it that can control flow rate."
+	desc = "Passively releases air into its surroundings. Has a flow control valve attached."
 
 	use_power = NO_POWER_USE
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff

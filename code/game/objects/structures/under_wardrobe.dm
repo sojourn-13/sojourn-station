@@ -83,8 +83,8 @@
 			return
 
 		var/list/metadata_list = list()
-		for(var/tweak in UWI.tweaks)
-			var/datum/gear_tweak/gt = tweak
+		for(var/datum/gear_tweak/color/tweak in UWI.tweaks)
+			var/datum/gear_tweak/color/gt = tweak
 			var/metadata = gt.get_metadata(H, title = "Adjust underwear")
 			if(!metadata)
 				return

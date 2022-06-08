@@ -35,7 +35,9 @@
 		child.forceMove(target_turf)
 		for(var/obj/effect/plant/hivemind/neighbor in range(1, child))
 			neighbor.update_neighbors()
-
+	if(target_turf.holy) //Holy tiles can kill off the wire sometimes!
+		if(prob(30))
+			die_off()
 
 /obj/effect/plant/hivemind/proc/try_to_assimilate()
 	for(var/obj/machinery/machine_on_my_tile in loc)
@@ -173,12 +175,12 @@
 			if(istype(door, /obj/machinery/door/airlock))
 				var/obj/machinery/door/airlock/A = door
 				if(A.locked)
-					if(prob(50))
+					if(prob(75))
 						A.unlock()
 					return FALSE
 			//and then, if airlock is closed, we begin destroy it electronics
 			if(door.density)
-				door.take_damage(rand(25, 40))
+				door.take_damage(rand(30, 70))
 				return FALSE
 
 	return TRUE
@@ -311,7 +313,7 @@
 
 //in fact, this is some kind of reinforced wires, so we can't take samples from it and inject something too
 //but we still can slice it with something sharp
-/obj/effect/plant/hivemind/attackby(obj/item/weapon/W, mob/user)
+/obj/effect/plant/hivemind/attackby(obj/item/W, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
 	var/weapon_type

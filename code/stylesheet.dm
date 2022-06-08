@@ -36,6 +36,7 @@ em						{font-style: normal;font-weight: bold;}
 .mod_channel			{color: #735638;	font-weight: bold;}
 .mod_channel .admin		{color: #b82e00;	font-weight: bold;}
 .admin_channel			{color: #9611D4;	font-weight: bold;}
+.adminticket {color: #386AFF; font-weight: bold;}
 
 /* Radio: Misc */
 .deadsay				{color: #530FAD;}
@@ -58,7 +59,7 @@ em						{font-style: normal;font-weight: bold;}
 .sciradio				{color: #993399;}
 .supradio				{color: #5F4519;}
 .srvradio				{color: #6EAA2C;}
-.proradio				{color: #ffff99;}
+.proradio				{color: #209848;}
 
 /* Miscellaneous */
 .name					{font-weight: bold;}
@@ -95,6 +96,10 @@ h1.alert, h2.alert		{color: #000000;}
 .serbian				{color: #Ad6f1d}
 .jive					{color: #666666}
 .german					{color: #990000}
+.jana					{color: #993399}
+.latin					{color: #deb63d}
+.esperanto				{color: #ed7961}
+.yassari				{color: #5fbf4e}
 
 .interface				{color: #330033;}
 

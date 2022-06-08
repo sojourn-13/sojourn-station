@@ -435,10 +435,10 @@ Buildable meters
 /obj/item/pipe/attack_self(mob/user as mob)
 	return rotate()
 
-/obj/item/pipe/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
+/obj/item/pipe/attackby(var/obj/item/W as obj, var/mob/user as mob)
 	..()
 	//*
-	var/obj/item/weapon/tool/tool = W
+	var/obj/item/tool/tool = W
 	if (!tool)
 		return ..()
 	if (!tool.has_quality(QUALITY_BOLT_TURNING))
@@ -1169,10 +1169,10 @@ Buildable meters
 	item_state = "buildpipe"
 	w_class = ITEM_SIZE_BULKY
 
-/obj/item/pipe_meter/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
+/obj/item/pipe_meter/attackby(var/obj/item/W as obj, var/mob/user as mob)
 	..()
 
-	var/obj/item/weapon/tool/tool = W
+	var/obj/item/tool/tool = W
 	if (!tool)
 		return ..()
 	if (!tool.has_quality(QUALITY_BOLT_TURNING))

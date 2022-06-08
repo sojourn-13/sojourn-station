@@ -31,11 +31,11 @@
 		return
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/keycard_auth/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/keycard_auth/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
-	var/decl/security_state/security_state = decls_repository.get_decl(maps_data.security_state)
+	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
 
 	data["seclevel"] = security_state.current_security_level.name
 	data["emergencymaint"] = maint_all_access
@@ -66,7 +66,7 @@
 		kcad_announcement.Announce("[usr] has initiated [event_names[event]] countdown.")
 		ongoing_countdowns[event] = addtimer(CALLBACK(src, .proc/countdown_finished, event), countdown, TIMER_UNIQUE | TIMER_STOPPABLE)
 		next_countdown = world.time + cooldown
-		var/obj/item/weapon/card/id/id = usr.GetIdCard()
+		var/obj/item/card/id/id = usr.GetIdCard()
 		initiator_card[event] = id
 	if(href_list["cancel"])
 		var/event = href_list["cancel"]
@@ -80,7 +80,7 @@
 		var/event = href_list["proceed"]
 		if(!ongoing_countdowns[event])
 			return
-		var/obj/item/weapon/card/id/id = usr.GetIdCard()
+		var/obj/item/card/id/id = usr.GetIdCard()
 		if(initiator_card[event] == id)
 			return
 		kcad_announcement.Announce("[usr] has proceeded [event_names[event]] countdown.")
@@ -98,7 +98,7 @@
 /obj/machinery/keycard_auth/proc/countdown_finished(event)
 	switch(event)
 		if("redalert")
-			var/decl/security_state/security_state = decls_repository.get_decl(maps_data.security_state)
+			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
 			security_state.set_security_level(security_state.high_security_level)
 		if("pods")
 			evacuation_controller.call_evacuation(null, TRUE)

@@ -15,15 +15,15 @@
 	my_atom = A
 
 	//I dislike having these here but map-objects are initialised before world/New() is called. >_>
-	if(!chemical_reagents_list)
+	if(!GLOB.chemical_reagents_list)
 		//Chemical Reagents - Initialises all /datum/reagent into a list indexed by reagent id
 		var/paths = typesof(/datum/reagent) - /datum/reagent
-		chemical_reagents_list = list()
+		GLOB.chemical_reagents_list = list()
 		for(var/path in paths)
 			var/datum/reagent/D = new path()
 			if(!D.name)
 				continue
-			chemical_reagents_list[D.id] = D
+			GLOB.chemical_reagents_list[D.id] = D
 
 /datum/reagents/proc/get_price()
 	var/price = 0
@@ -60,6 +60,7 @@
 		SSchemistry.active_holders -= src
 
 	for(var/datum/reagent/R in reagent_list)
+		R.holder = null
 		qdel(R)
 	reagent_list.Cut()
 	reagent_list = null
@@ -110,12 +111,6 @@
 		else
 			total_volume += R.volume
 	return
-
-/datum/reagents/proc/delete()
-	for(var/datum/reagent/R in reagent_list)
-		R.holder = null
-	if(my_atom)
-		my_atom.reagents = null
 
 /datum/reagents/proc/handle_reactions()
 	if(SSchemistry)
@@ -170,7 +165,7 @@
 					playsound(my_atom, replace_sound, 80, 1)
 
 		else // Otherwise, collect all possible reactions.
-			eligible_reactions |= chemical_reactions_list[R.id]
+			eligible_reactions |= GLOB.chemical_reactions_list[R.id]
 
 	var/list/active_reactions = list()
 
@@ -228,7 +223,7 @@
 			if(my_atom)
 				my_atom.on_reagent_change()
 			return 1
-	var/datum/reagent/D = chemical_reagents_list[id]
+	var/datum/reagent/D = GLOB.chemical_reagents_list[id]
 	if(D)
 		var/datum/reagent/R = new D.type()
 		reagent_list += R
@@ -313,6 +308,13 @@
 			return current.volume
 	return 0
 
+/datum/reagents/proc/get_reagent_by_type(var/type)
+	var/amount = 0
+	for(var/datum/reagent/current in reagent_list)
+		if(istype(current, type))
+			amount += current.volume
+	return amount
+
 /datum/reagents/proc/get_data(var/id)
 	for(var/datum/reagent/current in reagent_list)
 		if(current.id == id)
@@ -382,6 +384,7 @@
 
 	else if(istype(target, /atom))
 		var/atom/A = target
+		touch(A)
 		if(ismob(target))
 			return splash_mob(target, amount, multiplier, copy)
 		if(isturf(target))
@@ -562,6 +565,30 @@
 /datum/reagents/proc/adjust_thermal_energy(J, min_temp = 2.7, max_temp = 1000)
 	var/S = specific_heat()
 	chem_temp = CLAMP(chem_temp + (J / (S * total_volume)), 2.7, 1000)
+
+/// Is this holder full or not
+/datum/reagents/proc/holder_full()
+	if(total_volume >= maximum_volume)
+		return TRUE
+	return FALSE
+
+/// Like add_reagent but you can enter a list. Format it like this: list(/datum/reagent/toxin = 10, "beer" = 15)
+/datum/reagents/proc/add_reagent_list(list/list_reagents, list/data=null)
+	for(var/r_id in list_reagents)
+		var/amt = list_reagents[r_id]
+		add_reagent(r_id, amt, data)
+
+/datum/reagents/proc/get_reagents()
+	. = list()
+	for(var/datum/reagent/current in reagent_list)
+		. += "[current.name] ([current.volume])"
+	return english_list(., "EMPTY", "", ", ", ", ")
+
+/proc/get_chem_id(chem_name)
+	for(var/X in GLOB.chemical_reagents_list)
+		var/datum/reagent/R = GLOB.chemical_reagents_list[X]
+		if(ckey(chem_name) == ckey(lowertext(R.name)))
+			return X
 
 // NanoUI / TG UI data
 /datum/reagents/ui_data()
