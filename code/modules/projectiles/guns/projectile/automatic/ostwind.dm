@@ -23,8 +23,7 @@
 	extra_damage_mult_scoped = 0.4
 	penetration_multiplier = 1.2
 	damage_multiplier = 1
-	recoil_buildup = 1.25
-	one_hand_penalty = 10 //automatic rifle level
+	init_recoil = CARBINE_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 	init_firemodes = list(

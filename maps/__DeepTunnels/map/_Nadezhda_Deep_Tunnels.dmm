@@ -95,13 +95,10 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
 /area/mine/hallway)
-"as" = (
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid,
-/area/mine/prep)
 "at" = (
-/turf/simulated/floor/asteroid,
-/area/mine/prep)
+/obj/machinery/mineral/equipment_vendor,
+/turf/simulated/floor/plating,
+/area/mine/hallway)
 "au" = (
 /turf/simulated/floor/tiled/steel,
 /area/turbolift/Research/underground)
@@ -224,16 +221,16 @@
 "aO" = (
 /obj/random/junk,
 /turf/simulated/floor/asteroid,
-/area/mine/prep)
+/area/mine/unexplored)
 "aP" = (
 /obj/structure/railing,
 /obj/random/junk,
 /turf/simulated/floor/asteroid,
-/area/mine/prep)
+/area/mine/unexplored)
 "aQ" = (
 /obj/structure/railing,
 /turf/simulated/floor/asteroid,
-/area/mine/prep)
+/area/mine/unexplored)
 "aR" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid,
@@ -317,9 +314,6 @@
 	},
 /turf/simulated/floor/asteroid,
 /area/mine/prep)
-"be" = (
-/turf/simulated/mineral/random/high_chance,
-/area/mine/lockers)
 "bf" = (
 /turf/simulated/wall/r_wall,
 /area/mine/lockers)
@@ -828,7 +822,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/prep)
+/area/mine/unexplored)
 "ct" = (
 /obj/structure/closet/secure_closet/personal/miner,
 /obj/item/storage/firstaid/ifak,
@@ -946,10 +940,15 @@
 /obj/machinery/camera/network/mining{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/ratking{
+	colony_friend = 1;
+	friendly_to_colony = 1
+	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/mine/lockers)
 "cJ" = (
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/mouse/hooded,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/mine/lockers)
 "cK" = (
@@ -1642,11 +1641,6 @@
 	},
 /turf/simulated/floor/asteroid,
 /area/mine/hallway)
-"ez" = (
-/obj/structure/boulder,
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "eA" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/railing{
@@ -2073,10 +2067,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/mine/processing)
-"fz" = (
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/tiled/steel,
-/area/mine/processing)
 "fA" = (
 /obj/machinery/mineral/processing_unit,
 /turf/simulated/floor/tiled/steel/gray_platform,
@@ -2325,15 +2315,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/asteroid,
 /area/mine/processing)
-"ga" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/effect/floor_decal/spline/plain{
-	dir = 8
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/processing)
 "gc" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -2580,7 +2561,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/processing)
+/area/mine/unexplored)
 "gK" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal{
 	dir = 4
@@ -4820,7 +4801,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/hallway)
+/area/mine/unexplored)
 "mf" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/structure/anomaly_container,
@@ -7536,20 +7517,16 @@
 	dir = 1
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"se" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/effect/floor_decal/spline/plain{
-	dir = 1
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
+/area/mine/unexplored)
 "sf" = (
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/mine/prep)
 "sg" = (
 /obj/structure/railing{
 	anchored = 1;
@@ -7563,7 +7540,7 @@
 	},
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
-/area/mine/hallway)
+/area/mine/unexplored)
 "sh" = (
 /obj/machinery/camera/network/mining,
 /obj/structure/lattice,
@@ -7711,15 +7688,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/asteroid,
 /area/mine/livingarea)
-"su" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/effect/floor_decal/spline/plain{
-	dir = 8
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "sv" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -8177,7 +8145,7 @@
 /area/nadezhda/rnd/outpostmachineroom)
 "tH" = (
 /turf/simulated/mineral/planet,
-/area/mine/prep)
+/area/mine/hallway)
 "tI" = (
 /turf/simulated/mineral/planet,
 /area/nadezhda/rnd/outpostgeneral)
@@ -8698,18 +8666,10 @@
 /obj/random/traps/low_chance,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
-"vo" = (
-/mob/living/simple_animal/hostile/ratking{
-	colony_friend = 1;
-	friendly_to_colony = 1
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/mine/livingarea)
 "vp" = (
 /obj/machinery/camera/network/mining{
 	dir = 1
 	},
-/mob/living/simple_animal/mouse/hooded,
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "vq" = (
@@ -34254,16 +34214,16 @@ ti
 ti
 ti
 ti
-be
-be
-bf
-bf
-bf
-bf
-bf
-bf
-bf
-bf
+sV
+sV
+np
+np
+np
+np
+np
+np
+np
+np
 tK
 tK
 tK
@@ -34456,9 +34416,9 @@ ti
 ti
 ti
 ti
-be
-be
-bf
+sV
+sV
+np
 bf
 bf
 bf
@@ -34658,9 +34618,9 @@ ti
 ti
 ti
 ti
-be
-be
-bf
+sV
+sV
+np
 bf
 ct
 cI
@@ -34860,9 +34820,9 @@ ti
 ti
 ti
 ti
-be
-be
-bf
+sV
+sV
+np
 bf
 ct
 cJ
@@ -35062,9 +35022,9 @@ ti
 ti
 sV
 sV
-be
-be
-bf
+sV
+sV
+np
 bf
 ct
 Oz
@@ -35081,7 +35041,7 @@ ff
 ff
 gr
 gr
-gr
+np
 eN
 tK
 tK
@@ -35264,9 +35224,9 @@ ti
 ti
 sV
 sV
-be
-be
-bf
+sV
+sV
+np
 bf
 ct
 cK
@@ -35283,7 +35243,7 @@ hn
 sj
 gN
 gr
-gr
+np
 sV
 tK
 tK
@@ -35466,9 +35426,9 @@ ti
 ti
 sV
 sV
-bf
-bf
-bf
+np
+np
+np
 bf
 cu
 cL
@@ -35485,7 +35445,7 @@ ho
 gN
 sA
 gr
-gr
+np
 sV
 tK
 tK
@@ -35687,7 +35647,7 @@ hp
 sk
 jl
 gr
-gr
+np
 sV
 sV
 tK
@@ -35889,7 +35849,7 @@ Fm
 sl
 sC
 gr
-gr
+np
 sV
 sV
 tK
@@ -36091,9 +36051,9 @@ hq
 sm
 sD
 gr
-gr
-gr
-gr
+np
+np
+np
 np
 tK
 tK
@@ -38490,16 +38450,16 @@ ti
 ti
 np
 np
-ai
-ai
-ai
-ai
-ai
-ai
-aK
-aK
-aK
-ai
+np
+np
+np
+np
+np
+np
+ad
+ad
+ad
+np
 cw
 cV
 du
@@ -38691,7 +38651,7 @@ ti
 ti
 ti
 np
-np
+ai
 ai
 ai
 ai
@@ -38713,7 +38673,7 @@ fL
 Mq
 gt
 gY
-vo
+gV
 gV
 vp
 gt
@@ -38893,7 +38853,7 @@ ti
 ti
 ti
 np
-np
+ai
 ai
 by
 cD
@@ -39095,7 +39055,7 @@ ti
 ti
 ti
 np
-np
+ai
 ai
 Fr
 by
@@ -39297,7 +39257,7 @@ ti
 ti
 ti
 np
-np
+ai
 ai
 ay
 ay
@@ -39499,7 +39459,7 @@ ti
 ti
 ti
 np
-np
+ai
 ai
 aT
 aT
@@ -39701,7 +39661,7 @@ ti
 ti
 ti
 np
-np
+ai
 ak
 ui
 ui
@@ -39724,7 +39684,7 @@ bn
 aK
 hc
 sd
-su
+af
 af
 af
 tK
@@ -39903,7 +39863,7 @@ ti
 ti
 ti
 np
-np
+ai
 al
 ui
 ui
@@ -39925,8 +39885,8 @@ bX
 bo
 aK
 hc
-se
-ez
+sU
+fG
 tK
 tK
 tK
@@ -40105,7 +40065,7 @@ ti
 ti
 ti
 np
-np
+ai
 al
 ui
 ui
@@ -40127,8 +40087,8 @@ is
 bo
 aK
 he
-se
-aC
+sU
+tK
 tK
 tK
 tK
@@ -40307,7 +40267,7 @@ ti
 ti
 ti
 np
-np
+ai
 al
 ui
 ui
@@ -40329,8 +40289,8 @@ bX
 bn
 aK
 he
-sf
-ar
+dE
+am
 tK
 tK
 tK
@@ -40509,7 +40469,7 @@ ti
 ti
 ti
 np
-np
+ai
 av
 aw
 aw
@@ -40532,7 +40492,7 @@ bo
 aK
 hc
 me
-aC
+tK
 tK
 tK
 tK
@@ -40711,7 +40671,7 @@ ti
 ti
 ti
 np
-np
+ai
 tH
 tH
 tH
@@ -40734,7 +40694,7 @@ bn
 aK
 hf
 hc
-sf
+dE
 tK
 am
 tK
@@ -40914,12 +40874,12 @@ ti
 ti
 np
 np
-aD
-aD
-aD
-aD
-aD
-aK
+np
+np
+np
+np
+np
+ai
 ai
 bD
 bT
@@ -40936,7 +40896,7 @@ gk
 ai
 ai
 sh
-sf
+dE
 tK
 tK
 tK
@@ -41117,11 +41077,11 @@ ti
 ti
 ti
 ti
-at
-at
-at
-ai
+tK
+tK
+tK
 aK
+at
 bm
 bo
 bV
@@ -41138,7 +41098,7 @@ bn
 gy
 aK
 hc
-sf
+dE
 tK
 tK
 tK
@@ -41319,10 +41279,10 @@ ti
 ti
 ti
 ti
-at
-as
-at
-ai
+tK
+am
+tK
+aK
 aU
 bn
 bo
@@ -41340,7 +41300,7 @@ bn
 gA
 aK
 hc
-sf
+dE
 tK
 tK
 tK
@@ -41521,9 +41481,9 @@ ti
 ti
 ti
 ti
-at
-as
-at
+tK
+am
+tK
 aK
 aV
 bo
@@ -41723,9 +41683,9 @@ ti
 ti
 ti
 ti
-as
-at
-as
+am
+tK
+am
 aK
 aW
 bn
@@ -41925,8 +41885,8 @@ ti
 ti
 ti
 ti
-as
-at
+am
+tK
 aD
 aD
 aD
@@ -42127,8 +42087,8 @@ ti
 ti
 ti
 ti
-at
-at
+tK
+tK
 aE
 aL
 aX
@@ -42329,8 +42289,8 @@ ti
 ti
 ti
 ti
-as
-at
+am
+tK
 aE
 aM
 aY
@@ -42531,8 +42491,8 @@ ti
 ti
 ti
 ti
-at
-at
+tK
+tK
 aE
 aM
 aZ
@@ -42733,8 +42693,8 @@ ti
 ti
 ti
 ti
-at
-as
+tK
+am
 aE
 aN
 ba
@@ -42935,8 +42895,8 @@ ti
 ti
 ti
 ab
-at
-at
+tK
+tK
 aD
 aD
 aD
@@ -42946,7 +42906,7 @@ cc
 aE
 aD
 aD
-dz
+aD
 ee
 eI
 eW
@@ -43137,24 +43097,24 @@ ti
 ti
 ti
 ti
-at
-at
-as
-as
+tK
+tK
+am
+am
 aD
 bs
 bK
 cd
 cq
-aD
-aD
-aD
+aE
+dc
+sf
 ee
 ee
 ee
-fz
-fz
-fz
+fY
+fY
+fY
 ee
 hk
 ee
@@ -43339,16 +43299,16 @@ ti
 ti
 ti
 ti
-at
-at
-at
-as
+tK
+tK
+tK
+am
 aD
 bt
 bL
 bF
 cr
-aD
+aE
 db
 dA
 eL
@@ -43543,14 +43503,14 @@ ti
 ti
 tK
 tK
-at
-as
+tK
+am
 aD
 bu
 bM
 bF
 cq
-aD
+aE
 dc
 dB
 ee
@@ -43745,7 +43705,7 @@ ti
 ti
 tK
 tK
-at
+tK
 aO
 aD
 aE
@@ -43947,7 +43907,7 @@ ti
 ti
 tK
 tK
-at
+tK
 aP
 bb
 bc
@@ -43961,8 +43921,8 @@ dD
 dD
 eZ
 ir
-ga
-ga
+af
+af
 gJ
 hm
 si
@@ -44149,7 +44109,7 @@ ti
 ti
 tK
 tK
-at
+tK
 aQ
 uc
 uc
@@ -44756,14 +44716,14 @@ ti
 tK
 tK
 tK
-at
+tK
 bd
 bv
 bN
 cf
 cs
 cs
-at
+tK
 am
 am
 am
@@ -44958,14 +44918,14 @@ ti
 tK
 tK
 tK
-at
-at
-at
-at
-as
-as
-at
-at
+tK
+tK
+tK
+tK
+am
+am
+tK
+tK
 tK
 am
 tK

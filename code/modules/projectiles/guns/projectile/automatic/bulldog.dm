@@ -13,8 +13,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
 	price_tag = 1100
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	recoil_buildup = 1.75
-	one_hand_penalty = 5 //bullpup rifle (this one is smaller and carbine, so it's 5)
+	init_recoil = CARBINE_RECOIL(1)
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
 	init_firemodes = list(
@@ -51,4 +50,4 @@
 	icon_state = "bulldog_rds"
 	item_state = "bulldog_rds"
 	price_tag = 1225
-	zoom_factor = 0.3
+	zoom_factor = 0.4

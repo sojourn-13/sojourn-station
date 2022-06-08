@@ -14,7 +14,7 @@
 	price_tag = 450
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.1
-	recoil_buildup = 4
+	init_recoil = HANDGUN_RECOIL(0.8)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 
 	init_firemodes = list(
@@ -35,7 +35,7 @@
 	icon_state = "lemant_claw"
 	item_state = "lemant_claw"
 	force = WEAPON_FORCE_PAINFUL // Up from 10, essentially a knife but harder to mod. -Kaz
-	recoil_buildup = 3 //Addded weight, better control. -Kaz
+	init_recoil = HANDGUN_RECOIL(0.6)//Addded weight, better control. -Kaz
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_BAYONET)
 	price_tag = 475 // Still an upgrade.
 
@@ -50,7 +50,7 @@
 	item_state = "lemant_way"
 	max_shells = 17
 	price_tag = 550
-	recoil_buildup = 3 // Exceptional weight helps with recoil control, but unwieldy enough to merely match the claw. -Kaz
+	init_recoil = HANDGUN_RECOIL(0.3)// Exceptional weight helps with recoil control, but unwieldy enough to merely match the claw. -Kaz
 
 /obj/item/gun/projectile/revolver/lemant/uppercut
 	name = "\"Pilgrim Hero\" kurtz revolver"
@@ -65,7 +65,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
 	max_shells = 6
 	price_tag = 500
-	recoil_buildup = 14 // Massive recoil due to being a kurtz revolver without the weight to compensate for the blast. -Kaz
+	init_recoil = HANDGUN_RECOIL(1.3)// Massive recoil due to being a kurtz revolver without the weight to compensate for the blast. -Kaz
 
 //Defined here, may be used elsewhere but for now its only used here. -Kaz
 /obj/item/gun/projectile/underslung_shotgun
@@ -167,7 +167,7 @@
 	price_tag = 700
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.1
-	recoil_buildup = 4
+	init_recoil = HANDGUN_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
 	var/obj/item/gun/projectile/underslung/launcher
 	init_firemodes = list(

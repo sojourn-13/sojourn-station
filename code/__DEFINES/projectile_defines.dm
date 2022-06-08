@@ -1,6 +1,6 @@
 //Caliber Defines
 #define CAL_PISTOL ".35"
-#define CAL_35A ".35 auto"
+#define CAL_35A ".35 auto" //why are these different
 #define CAL_MAGNUM ".40 magnum"
 #define CAL_LRIFLE ".257 carbine"
 #define CAL_RIFLE "7.5mm rifle"
@@ -17,6 +17,7 @@
 #define CAL_GRENADE "grenade"
 #define CAL_FLARE "flare shell"
 #define CAL_CROSSBOW "bolt"
+#define CAL_ARROW "arrow"
 
 //Gun loading types
 #define SINGLE_CASING 	1	//The gun only accepts ammo_casings. ammo_magazines should never have this as their mag_type.
@@ -28,7 +29,7 @@
 #define MAG_WELL_PISTOL		2
 #define MAG_WELL_H_PISTOL	4	//High cap Pistols
 #define MAG_WELL_SMG		8	//smgs
-#define MAG_WELL_RIFLE		16	//7.5mm mags
+#define MAG_WELL_RIFLE		16	//7.5mm mags / SBAW (essentially shotgun rifle magazine)
 #define MAG_WELL_STANMAG	32	//.257 standard
 #define MAG_WELL_BOX		64	//Lmgs with box mags
 #define MAG_WELL_PAN		128	//Lmgs with pan mags
@@ -36,8 +37,8 @@
 #define MAG_WELL_HRIFLE		512 //.408 rifle mags
 #define MAG_WELL_DRUM		1024 //Drum-fed i.e. shotguns
 #define MAG_WELL_PULSE		2048 //Mary sue ammo for the pulse rifle
-
-#define MAG_WELL_LSRIFLE		4096 //Mary sue ammo for the laser AK
+#define MAG_WELL_LSRIFLE	4096 //Mary sue ammo for the laser AK
+#define MAG_WELL_LINKED_BOX	8192 //Linked ammo boxes, for lmgs
 
 #define SLOT_BARREL "barrel"
 #define SLOT_GRIP "grip"

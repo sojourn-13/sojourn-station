@@ -20,7 +20,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	icon_state = "plasma"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 5, TECH_PLASMA = 8)
 	w_class = ITEM_SIZE_BULKY
-	recoil_buildup = 1
+	init_recoil = CARBINE_RECOIL(0.1)
 	twohanded = FALSE
 	can_dual = TRUE
 	max_upgrades = 3

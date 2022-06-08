@@ -56,7 +56,7 @@
 
 /datum/category_item/setup_option/background/bckgrnd/refugee
 	name = "Refugee"
-	desc = "Where ever you came from is no more, torn apart by conflict and war. It may have been a civil war or conquest by the Terran Federation, whatever the reason it has long since lost any \
+	desc = "Where ever you came from is no more, torn apart by conflict and war. It may have been a civil war or conquest by the Solarian Federation, whatever the reason it has long since lost any \
 	meaning after the destruction of your home-world. Or maybe it wasn't your homeworld that was destroyed, maybe it was just your way of life. Regardless, you've left a burned bridge behind you and \
 	can no longer go back. Your rough life has hardened you against the worst possible situations."
 

@@ -152,7 +152,7 @@
 			return
 
 	else if(reqed_quality)
-		if(!istype(I,/obj/item/tool))
+		if(!istype(I,/obj/item/tool) && !istype(I,/obj/item/mecha_parts/mecha_equipment)) //Making it so mech equipment can also craft
 			to_chat(user, SPAN_WARNING("You need to use a tool to complete this step."))
 			building = FALSE
 			return
@@ -163,7 +163,7 @@
 			return
 		if(target)
 			announce_action(start_msg, user, I, target)
-		if(!I.use_tool(user, target || user, time, reqed_quality, FAILCHANCE_NORMAL, list(STAT_MEC, STAT_COG)))
+		if(!I.use_tool(user, target || user, time, reqed_quality, FAILCHANCE_NORMAL, list(STAT_MEC, STAT_COG))) //FIXME: up here we pass a list down to getStat, which expects no list
 			to_chat(user, SPAN_WARNING("Work aborted"))
 			building = FALSE
 			return

@@ -9,12 +9,11 @@
 	fire_delay = 4 // 2 more than the serbian one
 	damage_multiplier = 1
 	penetration_multiplier = 1
-	recoil_buildup = 40
 	max_shells = 5
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 	price_tag = 150 // so we dont make a market on the cargo shuttle for these
-	one_hand_penalty = 30
+	init_recoil = HMG_RECOIL(0.2)
 	sharp = FALSE //no bayonet here
 	saw_off = FALSE //No sawning it down and remaking it into a Kardashev-Mosin
 	serial_type = "INDEX"

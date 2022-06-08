@@ -4,6 +4,7 @@
 	damage_types = list(BURN = 0)
 	nodamage = TRUE
 	check_armour = ARMOR_ENERGY
+	recoil = 5
 
 /obj/item/projectile/ion/on_impact(atom/target)
 	empulse(target, 1, 1)
@@ -16,6 +17,7 @@
 	check_armour = ARMOR_BULLET
 	sharp = TRUE
 	edge = TRUE
+	recoil = 35
 
 /obj/item/projectile/bullet/gyro/on_impact(atom/target)
 	explosion(target, 0, 1, 2)
@@ -27,10 +29,12 @@
 	damage_types = list(BRUTE = 70)
 	armor_penetration = 100
 	check_armour = ARMOR_BULLET
+	recoil = 75
 
 /obj/item/projectile/bullet/rocket/railgun
 	name = "chemical shunted power cell"
 	icon_state = "emitter"
+	recoil = 60
 
 /obj/item/projectile/bullet/rocket/launch(atom/target, target_zone, x_offset, y_offset, angle_offset)
 	set_light(2.5, 0.5, "#dddd00")
@@ -49,6 +53,7 @@
 	check_armour = ARMOR_BULLET
 	var/heavy_emp_range = 3
 	var/light_emp_range = 8
+	recoil = 60
 
 /obj/item/projectile/bullet/rocket/emp/launch(atom/target, target_zone, x_offset, y_offset, angle_offset)
 	set_light(2.5, 0.5, "#dddd00")
@@ -239,8 +244,8 @@
 	icon_state = "fireball"
 	damage_types = list(BURN = 16)
 	check_armour = ARMOR_MELEE
-	var/life = 3
-	var/fire_stacks = 1 //10 pain a fire proc through ALL armor!
+	kill_count = 3
+	var/fire_stacks = 3
 
 /obj/item/projectile/flamer_lob/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -249,21 +254,15 @@
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
 
-/obj/item/projectile/flamer_lob/New()
-	.=..()
-
 /obj/item/projectile/flamer_lob/Move(atom/A)
-	.=..()
-	life--
+	..()
 	var/turf/T = get_turf(src)
 	if(T)
 		new/obj/effect/decal/cleanable/liquid_fuel(T, 1 , 1)
 		T.hotspot_expose((T20C*2) + 380,500)
-	if(!life)
-		qdel(src)
 
 /obj/item/projectile/flamer_lob/flamethrower
-	life = 5
+	kill_count = 5
 
 /obj/item/projectile/bullet/flare
 	name = "flare"
@@ -287,6 +286,7 @@
 	embed = FALSE
 	var/chaos = FALSE
 	var/chaose_number
+	recoil = 1
 
 /obj/item/projectile/bullet/flare/New()
 	if(chaos)
@@ -331,14 +331,16 @@
 	name = "sonic bolt"
 	icon_state = "energy2"
 	damage_types = list(BRUTE = 10)
-	armor_penetration = 90 // It is a sound-wave
+	armor_penetration = 30 // It is a sound-wave liquifing organs I guess
 	kill_count = 7
 	check_armour = ARMOR_ENERGY
 	var/golem_damage_bonus = 20 // Damage multiplier against ameridians.
+	recoil = 7
 
 /obj/item/projectile/sonic_bolt/heavy
 	damage_types = list(BRUTE = 30)
 	kill_count = 14
+	recoil = 10
 
 /obj/item/projectile/tether
 	name = "tether grappler"
@@ -351,6 +353,7 @@
 	tracer_type = /obj/effect/projectile/line/tracer
 	impact_type = /obj/effect/projectile/line/impact
 	var/list/our_tracers
+	recoil = 2
 
 /obj/item/projectile/tether/Initialize()
 	..()

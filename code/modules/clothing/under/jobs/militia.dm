@@ -75,7 +75,7 @@
 	var/list/options = list()
 	options["Grey Utility Uniform"] = "greyutility"
 	options["Grey Utility Uniform Alt"] = "greyutility_alt"
-	options["Grey Utility Pans"] = "greyutility_pants"
+	options["Grey Utility Pants"] = "greyutility_pants"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -109,8 +109,8 @@
 	var/list/options = list()
 	options["Navy Utility Uniform"] = "navyutility"
 	options["Navy Utility Uniform Alt"] = "navyutility_alt"
-	options["Navy Utility Pans"] = "navyutility_pants"
-	options["Dark Utility Pans"] = "blackutility_pants"
+	options["Navy Utility Pants"] = "navyutility_pants"
+	options["Dark Utility Pants"] = "blackutility_pants"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -144,7 +144,7 @@
 	var/list/options = list()
 	options["Tan Utility Uniform"] = "tanutility"
 	options["Tan Utility Uniform Alt"] = "tanutility_alt"
-	options["Tan Utility Pans"] = "tanutility_pants"
+	options["Tan Utility Pants"] = "tanutility_pants"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -179,7 +179,7 @@
 	options["Camo Utility Uniform"] = "camoutility"
 	options["Camo Utility Uniform Corpsman Alt"] = "camoutility_alt_med"
 	options["Camo Utility Uniform Alt"] = "camoutility_alt"
-	options["Camo Utility Pans"] = "camoutility_pants"
+	options["Camo Utility Pants"] = "camoutility_pants"
 	options["Camo Utility Corpsman"] = "camoutility_med"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options

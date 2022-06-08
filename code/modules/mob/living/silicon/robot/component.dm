@@ -350,7 +350,7 @@
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASMA = 10, MATERIAL_SILVER = 20)
 
 /obj/item/robot_parts/robot_component/ion_jaunt
-	name = "ion jaunter"
+	name = "ion jaunt"
 	desc = "A special device designed to reduce the impact of EMPs on electrical systems." // TODO : Bother
 	icon_state = "ion_jaunt_stock"
 	icon_state_broken = "ion_jaunt_stock"

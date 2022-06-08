@@ -19,6 +19,57 @@
 		list(QUALITY_SAWING, 15, "time" = 30)
 	)
 
+/datum/craft_recipe/gun/arrows
+	name = "crude arrows"
+	result = /obj/item/ammo_casing/arrow/bulk
+	icon_state = "woodworking"
+	flags = CRAFT_BATCH
+	steps = list(
+		list(/obj/item/stack/rods, 3, "time" = 20),
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 60),
+	)
+
+/datum/craft_recipe/gun/arrows/practice
+	name = "training arrows"
+	result = /obj/item/ammo_casing/arrow/practice/bulk
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 60)
+	)
+
+/datum/craft_recipe/gun/arrows/broad
+	name = "broadhead arrow"
+	result = /obj/item/ammo_casing/arrow/broadhead
+	steps = list(
+		list(/obj/item/stack/rods, 1, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 20),
+		list(QUALITY_DRILLING, 10, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 20),
+	)
+
+/datum/craft_recipe/gun/arrows/serrated
+	name = "serrated arrow"
+	result = /obj/item/ammo_casing/arrow/serrated
+	steps = list(
+		list(/obj/item/stack/rods, 1, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 20),
+		list(QUALITY_CUTTING, 10, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 20),
+	)
+
+/datum/craft_recipe/gun/payload_arrow
+	name = "single empty payload arrow"
+	result = /obj/item/ammo_casing/arrow/empty_payload
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL, "time" = 1),
+		list(QUALITY_WELDING, 40, "time" = 5),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 1),
+		list(QUALITY_CUTTING, 40, "time" = 5)
+	)
+
+
 /datum/craft_recipe/gun/pistol
 	name = "handmade pistol"
 	result = /obj/item/gun/projectile/handmade_pistol
@@ -207,7 +258,18 @@
 		list(/obj/item/stack/cable_coil, 2, "time" = 10)
 	)
 
-
+/datum/craft_recipe/gun/bow
+	name = "simple bow"
+	result = /obj/item/gun/projectile/bow
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 20),
+		list(QUALITY_SAWING, 10, "time" = 20),
+		list(QUALITY_HAMMERING, 10, "time" = 20),
+		list(QUALITY_CUTTING, 10, "time" = 20),
+		list(CRAFT_MATERIAL, 2, MATERIAL_CLOTH, "time" = 40),
+		list(QUALITY_WIRE_CUTTING, 10, "time" = 10)
+	)
 
 /datum/craft_recipe/gun/multi_laser
 	name = "Multi-Laser Cannon"

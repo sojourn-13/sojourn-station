@@ -30,6 +30,11 @@
 	name = "silencer"
 	build_path = /obj/item/gun_upgrade/muzzle/silencer
 
+/datum/design/autolathe/sec/acog
+	name = "acog scope"
+	build_path = /obj/item/gun_upgrade/scope/acog
+	materials = list(MATERIAL_GLASS = 4, MATERIAL_STEEL = 2) // Double materials, prevents obtaining more than used.
+
 /datum/design/autolathe/sec/gun_case
 	name = "gun case"
 	build_path = /obj/item/storage/briefcase/rifle

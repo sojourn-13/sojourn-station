@@ -79,7 +79,6 @@
 /datum/design/research/item/computer_part/reagent
 	build_path = /obj/item/computer_hardware/scanner/reagent
 
-
 // Tesla link
 /datum/design/research/item/computer_part/teslalink
 	build_path = /obj/item/computer_hardware/tesla_link
@@ -96,7 +95,6 @@
 /datum/design/research/item/computer_part/cpu
 	build_type = IMPRINTER
 
-
 /datum/design/research/item/computer_part/cpu/basic
 	build_path = /obj/item/computer_hardware/processor_unit
 	starts_unlocked = TRUE
@@ -109,7 +107,6 @@
 
 /datum/design/research/item/computer_part/cpu/adv/small
 	build_path = /obj/item/computer_hardware/processor_unit/adv/small
-
 
 /datum/design/research/item/computer_part/cpu/super
 	build_path = /obj/item/computer_hardware/processor_unit/super

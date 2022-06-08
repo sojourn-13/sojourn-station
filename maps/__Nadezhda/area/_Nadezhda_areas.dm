@@ -1497,6 +1497,10 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Xenoflora Lab"
 	icon_state = "xeno_f_lab"
 
+/area/nadezhda/rnd/xenobiology/ameridian
+	name = "\improper Ameridian Lab"
+	icon_state = "xeno_lab"
+
 /area/nadezhda/rnd/storage
 	name = "\improper Toxins Storage"
 	icon_state = "toxstorage"

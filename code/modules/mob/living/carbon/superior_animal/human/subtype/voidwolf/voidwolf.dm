@@ -21,6 +21,10 @@
 	meat_type = null
 	leather_amount = 0
 	bones_amount = 0
+	fire_verb = "fires"
+
+	target_telegraph = "fumbles to ready their weapon, preparing to engage"
+	rush_target_telegraph = "quickly snaps their aim toward"
 
 	armor = list(melee = 10, bullet = 10, energy = 10, bomb = 0, bio = 100, rad = 50) //Legitmently their armor
 

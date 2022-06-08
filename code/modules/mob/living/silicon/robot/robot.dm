@@ -145,6 +145,8 @@
 	add_language(LANGUAGE_JANA, 1)
 	add_language(LANGUAGE_CYRILLIC, 1)
 	add_language(LANGUAGE_LATIN, 1)
+	add_language(LANGUAGE_ESPERANTO, 1)
+	add_language(LANGUAGE_YASSARI, 1)
 
 	wires = new(src)
 
@@ -268,8 +270,8 @@
 		mmi = null
 	if(connected_ai)
 		connected_ai.connected_robots -= src
-	qdel(wires)
-	wires = null
+	QDEL_NULL(wires)
+	QDEL_NULL(cell)
 	return ..()
 
 /mob/living/silicon/robot/proc/set_module_sprites(var/list/new_sprites)

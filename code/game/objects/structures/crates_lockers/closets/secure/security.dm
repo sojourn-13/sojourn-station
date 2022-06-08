@@ -52,10 +52,8 @@
 
 /obj/structure/closet/secure_closet/reinforced/hos/populate_contents()
 	new /obj/item/storage/backpack/ironhammer(src)
-	if(prob(50))
-		new /obj/item/storage/backpack/satchel/ironhammer(src)
-	else
-		new /obj/item/storage/backpack/sport/ironhammer(src)
+	new /obj/item/storage/backpack/satchel/ironhammer(src)
+	new /obj/item/storage/backpack/sport/ironhammer(src)
 	new /obj/item/device/t_scanner/advanced(src)
 	new /obj/item/clothing/head/rank/commander(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
@@ -86,12 +84,8 @@
 	new /obj/item/clipboard(src)
 	new /obj/item/device/camera(src)
 	new /obj/item/melee/classic_baton(src)
-
 	new /obj/item/oddity/code_book(src)
-	if(prob(50))
-		new /obj/item/clothing/head/helmet/faceshield/helmet_visor(src)
-	else
-		new /obj/item/clothing/head/helmet/marshal_full(src)
+	new /obj/item/clothing/head/helmet/warrant_officer(src)
 
 /obj/structure/closet/secure_closet/warden
 	name = "supply specialist's locker"
@@ -99,23 +93,14 @@
 	icon_state = "warden"
 
 /obj/structure/closet/secure_closet/warden/populate_contents()
-	if(prob(50))
-		new /obj/item/storage/backpack/ironhammer(src)
-	else
-		new /obj/item/storage/backpack/sport/ironhammer(src)
-	if(prob(50))
-		new /obj/item/gun/projectile/revolver/rev10(src)
-		new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
-		new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
-		new /obj/item/ammo_magazine/speed_loader_magnum_40/rubber(src)
-		new /obj/item/ammo_magazine/speed_loader_magnum_40/rubber(src)
-		new /obj/item/ammo_magazine/ammobox/magnum_40(src)
-	else
-		new /obj/item/gun/projectile/lamia(src)
-		new /obj/item/ammo_magazine/kurtz_50(src)
-		new /obj/item/ammo_magazine/kurtz_50(src)
-		new /obj/item/ammo_magazine/kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
+	new /obj/item/storage/backpack/ironhammer(src)
+	new /obj/item/storage/backpack/sport/ironhammer(src)
+	new /obj/item/gun/projectile/revolver/rev10(src)
+	new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
+	new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
+	new /obj/item/ammo_magazine/speed_loader_magnum_40/rubber(src)
+	new /obj/item/ammo_magazine/speed_loader_magnum_40/rubber(src)
+	new /obj/item/ammo_magazine/ammobox/magnum_40(src)
 	new /obj/item/device/bullet_scanner(src)
 	new /obj/item/voucher/marshal/specprimary(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
@@ -145,10 +130,7 @@
 	new /obj/item/storage/box/trackimp(src)
 	new /obj/item/oddity/code_book(src)
 	new /obj/item/device/t_scanner/advanced(src)
-	if(prob(50))
-		new /obj/item/clothing/head/helmet/faceshield/helmet_visor(src)
-	else
-		new /obj/item/clothing/head/helmet/marshal_full(src)
+	new /obj/item/clothing/head/helmet/marshal_full(src)
 
 /obj/structure/closet/secure_closet/personal/security
 	name = "marshal officer's locker"
@@ -181,10 +163,7 @@
 	new /obj/item/clipboard(src)
 	new /obj/item/device/camera(src)
 	new /obj/item/device/t_scanner/advanced(src)
-	if(prob(50))
-		new /obj/item/clothing/head/helmet/faceshield/helmet_visor(src)
-	else
-		new /obj/item/clothing/head/helmet/marshal_full(src)
+	new /obj/item/clothing/head/helmet/marshal_full(src)
 
 /obj/structure/closet/secure_closet/personal/detective
 	name = "ranger's locker"
@@ -193,7 +172,6 @@
 	icon_state = "cabinetdetective"
 
 /obj/structure/closet/secure_closet/personal/detective/populate_contents()
-	new /obj/item/voucher/marshal/primary(src)
 	new /obj/item/clothing/under/rank/inspector/suit(src)
 	new /obj/item/clothing/under/rank/inspector/black(src)
 	new /obj/item/clothing/under/rank/inspector(src)
@@ -225,6 +203,7 @@
 	new /obj/item/device/t_scanner/advanced(src)
 	new /obj/item/voucher/marshal/rangerprimary(src)
 	new /obj/item/voucher/marshal/rangersecondary(src)
+	new /obj/item/voucher/marshal/armor(src)
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections locker"

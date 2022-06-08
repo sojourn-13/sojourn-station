@@ -6,4 +6,4 @@
 
 ## CONTRIBUTING
 
-Please see [CONTRIBUTING.md](CONTRIBUTING.md)
+Please see [CONTRIBUTING.md](https://sojourn13.space/wiki/Contributor_Guide)

@@ -3,7 +3,7 @@
 	icon_state = "beacon"
 	anchored = TRUE
 	density = TRUE
-	var/entropy_value = 0.25
+	//var/entropy_value = 0.25 - SoJ edit we dont have the same round langths as eris, so were disabling it untill we have more ways to glob lower or fix entropy
 
 /obj/machinery/trade_beacon/attackby(obj/item/I, mob/user)
 	if(default_deconstruction(I, user))
@@ -17,7 +17,7 @@
 /obj/machinery/trade_beacon/proc/activate()
 	flick("[icon_state]_active", src)
 	do_sparks(5, 0, loc)
-	bluespace_entropy(entropy_value, get_turf(src))
+	//bluespace_entropy(entropy_value, get_turf(src)) - Todo re-add this one day
 	playsound(loc, "sparks", 50, 1)
 
 /obj/machinery/trade_beacon/sending

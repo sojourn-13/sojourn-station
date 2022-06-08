@@ -51,7 +51,7 @@
 
 
 /obj/effect/decal/cleanable/solid_biomass/Process()
-	for(var/mob/living/creature in mobs_in_view(1, src))
+	for(var/mob/living/creature in living_mobs_in_view(1, src))
 		toxin_attack(creature, rand(4, 8))
 
 

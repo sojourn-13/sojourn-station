@@ -55,6 +55,9 @@
 	//Every hour playing this role gains this much time off. (Can be negative for off duty jobs!)
 	var/timeoff_factor = 3
 
+	/// Does this job spawn with an ID?
+	var/has_id = TRUE
+
 	// End Sojourn Additions
 
 	var/list/perks = list()

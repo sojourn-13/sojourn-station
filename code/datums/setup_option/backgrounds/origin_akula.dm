@@ -22,7 +22,7 @@
 
 /datum/category_item/setup_option/background/ethnicity/akulacommander
 	name = "Former Commander"
-	desc = "Military service for an akula is considered one of the most honorable professions one can take. Many become commanders within the Terran Federation military, often leading small squads \
+	desc = "Military service for an akula is considered one of the most honorable professions one can take. Many become commanders within the Solarian Federation military, often leading small squads \
 			of Naramadi in ship to ship breaching squads or strike teams in ground assaults. Akula commanders are better trained with guns than most and adapt well to new things.  \
 			Service in the military, however, has its draw backs. Much of an akula's training is steeped solely in marksmanship as they cannot keep pace with the faster naramads and must take \
 			great care not to cause a friendly fire incident."

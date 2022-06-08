@@ -43,16 +43,36 @@
 
 	var/fire_sound_text = "gunshot"
 	var/rigged = FALSE
-	var/recoil_buildup = 2 //How quickly recoil builds up
+
+	var/datum/recoil/recoil // Reference to the recoil datum in datum/recoil.dm
+	var/list/init_recoil = list(0, 0, 0) // For updating weapon mods
 
 	var/braced = FALSE //for gun_brace proc.
-	var/brace_penalty = FALSE//penalty if not braced.
 	var/braceable = 1 //can the gun be used for gun_brace proc, modifies recoil. If the gun has foregrip mod installed, it's not braceable. Bipod mod increases value by 1.
 
 	var/muzzle_flash = 3
 	var/dual_wielding
 	var/can_dual = FALSE // Controls whether guns can be dual-wielded (firing two at once).
 	var/zoom_factor = 0 //How much to scope in when using weapon
+
+/*
+
+NOTE: For the sake of standardizing guns and extra vision range, here's a general guideline for zooming factor.
+		  Do keep in mind that a normal player's view is seven tiles of vision in each direction.
+
+						Minimum value is 0.2 which gives 1 extra tile of vision.
+				From there, increases are mostly linear, with the following shared exceptions:
+									0.3 and 0.4 = 2 extra tiles
+									0.6 and 0.7 = 4 extra tiles
+			0.9 gives 6 extra tiles, from there jumps straight to 8 extra tiles at both 1 and 1.1
+						1.3 and 1.4 = 10 extra tiles (Character no longer seen on screen)
+									1.6 and 1.7 = 12 extra tiles
+					Largest zooming factor being 2, increases tile vision by 16 extra tiles.
+
+
+For the sake of consistency, I suggest always rounding up on even values when applicable. - Seb (ThePainkiller)
+
+*/
 
 	var/suppress_delay_warning = FALSE
 
@@ -80,7 +100,6 @@
 	var/icon_contained = TRUE
 	var/static/list/item_icons_cache = list()
 	var/wielded_item_state = null
-	var/one_hand_penalty = 0 //The higher this number is, the more severe the accuracy penalty for shooting it one handed. 5 is a good baseline for this, but var edit it live and play with it yourself.
 
 	var/projectile_color //Set by a firemode. Sets the fired projectiles color
 
@@ -106,10 +125,22 @@
 	var/serial_type = "INDEX" // Index will be used for detective scanners, if there is a serial type , the gun will add a number onto its final , if none , it won;'t show on examine
 	var/serial_shown = TRUE
 
+	var/overcharge_timer //Holds ref to the timer used for overcharging
+	var/overcharge_timer_step = 1 SECOND
+	var/overcharge_rate = 1 //Base overcharge additive rate for the gun
+	var/overcharge_level = 0 //What our current overcharge level is. Peaks at overcharge_max
+	var/overcharge_max = 10
+
 /obj/item/gun/proc/loadAmmoBestGuess()
 	return
 
 /obj/item/gun/Initialize()
+	if(!recoil && islist(init_recoil))
+		recoil = getRecoil(arglist(init_recoil))
+	else if(!islist(init_recoil))
+		recoil = getRecoil()
+	else if(!istype(recoil, /datum/recoil))
+		error("Invalid type [recoil.type] found in .recoil during /obj Initialize()")
 	. = ..()
 	initialize_firemodes()
 	initialize_scope()
@@ -133,7 +164,7 @@
 				slot_s_store_str = icon,
 			)
 		item_icons = item_icons_cache[type]
-	if(one_hand_penalty || twohanded && (!wielded_item_state))//If the gun has a one handed penalty or is twohanded, but has no wielded item state then use this generic one.
+	if(!wielded_item_state) // If the gun has no wielded item state then use this generic one.
 		wielded_item_state = "_doble" //Someone mispelled double but they did it so consistently it's staying this way.
 	//generate_guntags()
 	var/obj/screen/item_action/action = new /obj/screen/item_action/top_bar/weapon_info
@@ -339,7 +370,7 @@
 			return FALSE
 	return TRUE
 
-/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
+/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, extra_proj_damagemult = 0, extra_proj_penmult = 0, extra_proj_wallbangmult = 0, extra_proj_stepdelaymult = 0, multiply_projectile_agony = 0)
 	if(!user || !target) return
 
 	if((world.time < next_fire_time) || currently_firing)
@@ -359,6 +390,9 @@
 	user.setClickCooldown(shoot_time) //no clicking on things while shooting
 	next_fire_time = world.time + shoot_time
 
+	if(muzzle_flash)
+		set_light(muzzle_flash)
+
 	//actually attempt to shoot
 	var/turf/targloc = get_turf(target) //cache this in case target gets deleted during shooting, e.g. if it was a securitron that got destroyed.
 	for(var/i in 1 to burst)
@@ -367,15 +401,33 @@
 			handle_click_empty(user)
 			break
 
+		if(extra_proj_damagemult)
+			projectile.multiply_projectile_damage(extra_proj_damagemult)
+
 		projectile.multiply_projectile_damage(damage_multiplier)
+
+		if(extra_proj_penmult)
+			projectile.multiply_projectile_penetration(extra_proj_penmult)
 
 		projectile.multiply_projectile_penetration(penetration_multiplier + user.stats.getStat(STAT_VIG) * 0.02)
 
+		if(extra_proj_wallbangmult)
+			projectile.multiply_pierce_penetration(extra_proj_wallbangmult)
+
 		projectile.multiply_pierce_penetration(pierce_multiplier)
+
+		if(extra_proj_stepdelaymult)
+			projectile.multiply_projectile_step_delay(extra_proj_stepdelaymult)
 
 		projectile.multiply_projectile_step_delay(proj_step_multiplier)
 
+		if(multiply_projectile_agony)
+			projectile.multiply_projectile_agony(multiply_projectile_agony)
+
 		projectile.multiply_projectile_agony(proj_agony_multiplier)
+
+		if(muzzle_flash)
+			set_light(muzzle_flash)
 
 		if(istype(projectile, /obj/item/projectile))
 			var/obj/item/projectile/P = projectile
@@ -390,7 +442,7 @@
 				var/obj/item/projectile/P = projectile
 				P.proj_color = projectile_color
 		if(process_projectile(projectile, user, target, user.targeted_organ, clickparams))
-			handle_post_fire(user, target, pointblank, reflex)
+			handle_post_fire(user, target, pointblank, reflex, projectile)
 			update_icon()
 
 		if(fire_animatio) //Are bullet amination check
@@ -428,6 +480,8 @@
 
 	currently_firing = FALSE
 
+	spawn(5) //gives us time to light up the area as we shoot
+
 	if(muzzle_flash)
 		set_light(0)
 
@@ -453,7 +507,7 @@
 	update_firemode() //Stops automatic weapons spamming this shit endlessly
 
 //called after successfully firing
-/obj/item/gun/proc/handle_post_fire(mob/living/user, atom/target, var/pointblank=0, var/reflex=0)
+/obj/item/gun/proc/handle_post_fire(mob/living/user, atom/target, pointblank=0, reflex=0, obj/item/projectile/P)
 	SEND_SIGNAL(src, COMSIG_GUN_POST_FIRE, target, pointblank, reflex)
 	//The sound we play
 	if(silenced)
@@ -478,25 +532,50 @@
 		if(muzzle_flash)
 			set_light(muzzle_flash)
 
-	//Now we tell are user that one handing is a bad idea, even if its cooler
-	if(one_hand_penalty)
-		if(!wielded && !user.stats.getPerk(PERK_PERFECT_SHOT))
-			switch(one_hand_penalty)
-				if(1)
-					if(prob(50)) //don't need to tell them every single time
-						to_chat(user, "<span class='warning'>Your aim wavers slightly.</span>")
-				if(2)
-					to_chat(user, "<span class='warning'>Your aim wavers as you fire \the [src] with just one hand.</span>")
-				if(3)
-					to_chat(user, "<span class='warning'>You have trouble keeping \the [src] on target with just one hand.</span>")
-				if(4 to INFINITY)
-					to_chat(user, "<span class='warning'>You struggle to keep \the [src] on target with just one hand!</span>")
-
-	if(brace_penalty && !braced)
-		to_chat(user, "<span class='warning'>You struggle to keep \the [src] on target while carrying it!</span>")
-
+	kickback(user, P)
 	user.handle_recoil(src)
 	update_icon()
+
+/obj/item/gun/proc/kickback(mob/living/user, obj/item/projectile/P)
+	var/base_recoil = recoil.getRating(RECOIL_BASE)
+	var/brace_recoil = 0
+	var/unwielded_recoil = 0
+
+	if(!braced)
+		brace_recoil = recoil.getRating(RECOIL_TWOHAND)
+	else if(braceable > 1)
+		base_recoil /= 4 // With a bipod, you can negate most of your recoil
+
+	if(!wielded)
+		unwielded_recoil = recoil.getRating(RECOIL_ONEHAND)
+
+	if(unwielded_recoil)
+		switch(recoil.getRating(RECOIL_ONEHAND_LEVEL))
+			if(0.6 to 0.8)
+				if(prob(25)) // Don't need to tell them every single time
+					to_chat(user, SPAN_WARNING("Your aim wavers slightly."))
+			if(0.8 to 1)
+				if(prob(50))
+					to_chat(user, SPAN_WARNING("Your aim wavers as you fire \the [src] with just one hand."))
+			if(1 to 1.5)
+				to_chat(user, SPAN_WARNING("You have trouble keeping \the [src] on target with just one hand."))
+			if(1.5 to INFINITY)
+				to_chat(user, SPAN_WARNING("You struggle to keep \the [src] on target with just one hand!"))
+
+	else if(brace_recoil)
+		switch(recoil.getRating(RECOIL_BRACE_LEVEL))
+			if(0.6 to 0.8)
+				if(prob(25))
+					to_chat(user, SPAN_WARNING("Your aim wavers slightly."))
+			if(0.8 to 1)
+				if(prob(50))
+					to_chat(user, SPAN_WARNING("Your aim wavers as you fire \the [src] while carrying it."))
+			if(1 to 1.2)
+				to_chat(user, SPAN_WARNING("You have trouble keeping \the [src] on target while carrying it!"))
+			if(1.2 to INFINITY)
+				to_chat(user, SPAN_WARNING("You struggle to keep \the [src] on target while carrying it!"))
+
+	user.handle_recoil(src, (base_recoil + brace_recoil + unwielded_recoil) * P.recoil)
 
 /obj/item/gun/proc/process_point_blank(var/obj/item/projectile/P, mob/user, atom/target)
 	if(!istype(P))
@@ -530,9 +609,31 @@
 	if(params)
 		P.set_clickpoint(params)
 	var/offset = user.calculate_offset(init_offset)
-	offset = rand(-offset, offset)
+/*
+	var/remainder = offset % 4
+	offset /= 4
+	offset = round(offset)
+	offset = roll(offset,9) - offset * 5
+	switch(remainder)
+		if(1)
+			offset += roll(1,3) - 2
+		if(2)
+			offset += roll(1,5) - 3
+		if(3)
+			offset += roll(1,7) - 4
+*/
+	offset = round(offset)
+
+	offset = roll(2, offset) - (offset + 1)
 
 	return !P.launch_from_gun(target, user, src, target_zone, angle_offset = offset)
+
+//Support proc for calculate_offset
+/obj/item/gun/proc/init_offset_with_brace()
+	var/offset = init_offset
+	if(braced)
+		offset -= braceable * 3 // Bipod doubles effect
+	return offset
 
 //Suicide handling.
 /obj/item/gun/proc/handle_suicide(mob/living/user)
@@ -628,15 +729,14 @@
 	if(can_dual == TRUE)
 		to_chat(user, SPAN_NOTICE("This gun can be duel-wielded effectively, if you're skilled enough."))
 
-	if(iscarbon(user) || issilicon(user))
-		if(twohanded)
-			to_chat(user, SPAN_NOTICE("This gun would need to be wielded in both hands."))
-			return
-		if(one_hand_penalty && !user.stats.getPerk(PERK_PERFECT_SHOT))
-			to_chat(user, SPAN_WARNING("This gun needs to be wielded in both hands to be used most effectively."))
-			return
-		if((one_hand_penalty && user.stats.getPerk(PERK_PERFECT_SHOT)))
-			to_chat(user, SPAN_NOTICE("This gun would need to be wielded in both hands to stablize the recoil, but your skill overcomes such things."))
+	if(twohanded)
+		to_chat(user, SPAN_NOTICE("This gun would need to be wielded in both hands."))
+		return
+
+	if(recoil.getRating(RECOIL_TWOHAND) > 0.4)
+		to_chat(user, SPAN_WARNING("This gun needs to be braced against something to be used effectively."))
+	else if(recoil.getRating(RECOIL_ONEHAND) > 0.6)
+		to_chat(user, SPAN_WARNING("This gun needs to be wielded in both hands to be used most effectively."))
 
 /obj/item/gun/proc/initialize_firemodes()
 	QDEL_LIST(firemodes)
@@ -842,11 +942,23 @@
 
 	data["force"] = force
 	data["force_max"] = initial(force)*10
+	data["armor_penetration"] = armor_penetration
 	data["muzzle_flash"] = muzzle_flash
 
-	data["recoil_buildup"] = recoil_buildup
-	data["recoil_buildup_max"] = initial(recoil_buildup)*10
+	var/total_recoil = 0
+	var/list/recoilList = recoil.getFancyList()
+	if(recoilList.len)
+		var/list/recoil_vals = list()
+		for(var/i in recoilList)
+			if(recoilList[i])
+				recoil_vals += list(list(
+					"name" = i,
+					"value" = recoilList[i]
+					))
+				total_recoil += recoilList[i]
+		data["recoil_info"] = recoil_vals
 
+	data["total_recoil"] = total_recoil
 	data["extra_volume"] = extra_bulk
 
 	data["upgrades_max"] = max_upgrades
@@ -901,6 +1013,7 @@
 	data["projectile_name"] = P.name
 	data["projectile_damage"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()
 	data["projectile_AP"] = P.armor_penetration * penetration_multiplier
+	data["projectile_recoil"] = P.recoil
 	qdel(P)
 	return data
 
@@ -911,9 +1024,10 @@
 	pierce_multiplier = initial(pierce_multiplier)
 	proj_step_multiplier = initial(proj_step_multiplier)
 	proj_agony_multiplier = initial(proj_agony_multiplier)
+	extra_damage_mult_scoped = initial(extra_damage_mult_scoped)
+	scoped_offset_reduction  = initial(scoped_offset_reduction)
 	fire_delay = initial(fire_delay)
 	move_delay = initial(move_delay)
-	recoil_buildup = initial(recoil_buildup)
 	muzzle_flash = initial(muzzle_flash)
 	silenced = initial(silenced)
 	restrict_safety = initial(restrict_safety)
@@ -931,7 +1045,6 @@
 	armor_penetration = initial(armor_penetration)
 	sharp = initial(sharp)
 	attack_verb = list()
-	one_hand_penalty = initial(one_hand_penalty)
 	auto_eject = initial(auto_eject) //SoJ edit
 	initialize_scope()
 	initialize_firemodes()
@@ -942,6 +1055,9 @@
 	prefixes = list()
 	item_flags = initial(item_flags)
 	extra_bulk = initial(extra_bulk)
+
+	braced = initial(braced)
+	recoil = getRecoil(init_recoil[1], init_recoil[2], init_recoil[3])
 
 	//Now lets have each upgrade reapply its modifications
 	SEND_SIGNAL(src, COMSIG_ADDVAL, src)
@@ -955,15 +1071,13 @@
 
 	if(folding_stock)// TODO: make this somehow modular - (it prob will be a massive line if var/stock_name_of_change
 		if(!folded) //Exstended! This means are stock is out
-			extra_bulk += 6 //Simular to 6 plates, your getting a lot out of this tho
+			extra_bulk += 12 //Simular to 12 screwdrivers, your getting a lot out of this tho
 			//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
-			recoil_buildup *= 0.5 //50% less recoil
-			one_hand_penalty *= 0.5 //50% less recoil
 			damage_multiplier += 0.1 //10% more damage
 			proj_step_multiplier  -= 0.4 //40% more sped on the bullet
 			penetration_multiplier += 0.2 //Makes the gun have more AP when shooting
 			extra_damage_mult_scoped += 0.2 //Gives 20% more damage when its scoped. Makes folding stock snipers more viable
-
+			init_recoil = FOLDING_RECOIL(0.5) //Insainly good recoil controle if you have the folding stock
 
 	update_icon()
 	//then update any UIs with the new stats

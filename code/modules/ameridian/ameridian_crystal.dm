@@ -5,7 +5,7 @@
 	icon_state = "ameridian_crystal"
 	anchored = TRUE
 	density = FALSE // We can walk through them
-	light_range = 3 // Glow in the dark
+	light_range = 1 // Glow in the dark
 	light_color = COLOR_LIGHTING_GREEN_BRIGHT
 
 	var/growth // the growth level of the crystal. The higher it is, the older the crystal is.
@@ -37,8 +37,10 @@
 	update_icon()
 
 /obj/structure/ameridian_crystal/Destroy()
-	..()
 	STOP_PROCESSING(SSobj, src)
+	golem?.node = null
+	golem = null
+	. = ..()
 
 /obj/structure/ameridian_crystal/Process()
 	if(prob(growth_prob))
@@ -52,22 +54,19 @@
 /obj/structure/ameridian_crystal/update_icon()
 	transform = initial(transform)
 	transform *= ((1/max_growth) * growth) // So the crystal is at 20% size at growth 1, 40% at growth 2, e.t.c.
-
-	for(var/U in underlays)
-		underlays -= U
-	underlays += ("crystal_floor_[clamp(growth, 1, 5)]")
+	set_light(growth, growth)
+	underlays.Cut()
+	underlays += ("crystal_floor_[clamp(round(REMAP(growth, 1, max_growth, 1, 5)), 1, 5)]")
 
 /obj/structure/ameridian_crystal/attackby(obj/item/I, mob/user)
-	if(user.a_intent == I_HELP && user.Adjacent(src) && (I.has_quality(QUALITY_EXCAVATION) || I.has_quality(QUALITY_DIGGING) || I.has_quality(QUALITY_SHOVELING)))
-		src.visible_message(SPAN_NOTICE("[user] starts excavating crystals from [src]."), SPAN_NOTICE("You start excavating crystal from [src]."))
-		if(do_after(user, WORKTIME_NORMAL, src))
-			var/obj/item/stack/material/ameridian/T = new(get_turf(src))
-			T.amount = growth // Drop more crystal the further along we are
-			src.visible_message(SPAN_NOTICE("[user] excavates a crystal from [src]."), SPAN_NOTICE("You excavate a crystal from [src]."))
-			activate_mobs_in_range(src, 15) // Wake up the nearby golems
-			qdel(src)
-		else
-			to_chat(user, SPAN_WARNING("You must stay still to finish excavation."))
+	if(user.a_intent == I_HELP && user.Adjacent(src))
+		var/tool_type = I.get_tool_type(user, list(QUALITY_EXCAVATION, QUALITY_DIGGING, QUALITY_SHOVELING), src)
+		if(tool_type)
+			visible_message(SPAN_NOTICE("[user] starts digging [src] up."), SPAN_NOTICE("You start digging [src] up."))
+			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_ROB))
+				harvest_crystals()
+			else
+				to_chat(user, SPAN_WARNING("You must stay still to finish excavation."))
 	else
 		..()
 
@@ -174,3 +173,9 @@
 
 /obj/structure/ameridian_crystal/proc/handle_golem_distance()
 	return
+
+/obj/structure/ameridian_crystal/proc/harvest_crystals()
+	var/obj/item/stack/material/ameridian/T = new(get_turf(src))
+	T.amount = growth // Drop more crystal the further along we are
+	activate_mobs_in_range(src, 15) // Wake up the nearby golems
+	qdel(src)

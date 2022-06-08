@@ -8,6 +8,8 @@
 	icon_state = "pigrat"
 	icon_living = "pigrat"
 	icon_dead = "pigrat_dead"
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork
+	meat_amount = 3
 	leather_amount = 4 //The amount of leather sheets dropped.
 	bones_amount = 4 //The amount of bone sheets dropped.
 	has_special_parts = TRUE //var for checking during the butcher process.
@@ -109,6 +111,7 @@
 	speak_emote = list("chitters!","chitter")
 	emote_see = list("scratches at the ground.","gives a small snuffle.","hops back and forth.")
 	turns_per_move = 2
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork
 	meat_amount = 1
 	health = 30
 	var/amount_grown = 0

@@ -881,13 +881,14 @@ default behaviour is:
 		update_z(T.z)
 
 /mob/living/Destroy()
-	qdel(stats)
-	stats = null
+	QDEL_NULL(stats)
 
 	unnatural_mutations.holder = null //causes a GC failure if we qdel-and it seems its not SUPPOSED to qdel, oddly
 
 	update_z(null)
-	return ..()
+
+	destroy_HUD() //this should fix the harddel on humans
+	. = ..()
 
 /mob/living/proc/vomit()
 	return

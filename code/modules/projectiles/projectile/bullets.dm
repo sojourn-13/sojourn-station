@@ -21,6 +21,7 @@ Bullet also tend to have more armor against them do to this and can be douged un
 	var/mob_passthrough_check = 0
 
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
+	recoil = 3
 
 /obj/item/projectile/bullet/on_hit(atom/target)
 	if (..(target))

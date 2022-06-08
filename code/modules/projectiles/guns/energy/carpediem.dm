@@ -13,8 +13,7 @@
 	projectile_type = /obj/item/projectile/beam/musket
 	fire_delay = 25 //Musket so you know
 	charge_cost = 50 //Slow fire rate and damage is meh
-	recoil_buildup = 10 //Slowdown!
-	one_hand_penalty = 13
+	init_recoil = CARBINE_RECOIL(1)
 	price_tag = 900
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(

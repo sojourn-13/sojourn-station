@@ -31,11 +31,10 @@
 	/obj/item/gun/projectile/revolver/rev10 = 2,
 	/obj/item/gun/projectile/revolver/mistral = 2,
 	//Automatic
-	/obj/item/gun/projectile/automatic/basstet = 2,
+	/obj/item/gun/projectile/automatic/ppsh/ppv = 2,
 	/obj/item/gun/projectile/automatic/greasegun = 2,
 	/obj/item/gun/projectile/automatic/mac = 2,
 	/obj/item/gun/projectile/automatic/wirbelwind = 2,
-	/obj/item/gun/projectile/automatic/bulldog = 2,
 	//Shotgun
 	/obj/item/gun/projectile/shotgun/pump = 2,
 	/obj/item/gun/projectile/boltgun/lever = 2,
@@ -103,11 +102,10 @@
 	/obj/item/gun/projectile/revolver/rev10 = 800,
 	/obj/item/gun/projectile/revolver/mistral = 900,
 	//Automatic
-	/obj/item/gun/projectile/automatic/basstet = 850,
+	/obj/item/gun/projectile/automatic/ppsh/ppv = 1200,
 	/obj/item/gun/projectile/automatic/greasegun = 950,
 	/obj/item/gun/projectile/automatic/mac = 1000,
 	/obj/item/gun/projectile/automatic/wirbelwind = 1500,
-	/obj/item/gun/projectile/automatic/bulldog = 1650,
 	//Shotgun
 	/obj/item/gun/projectile/shotgun/pump = 600,
 	/obj/item/gun/projectile/boltgun/lever = 650,

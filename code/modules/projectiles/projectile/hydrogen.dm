@@ -9,6 +9,7 @@
 	muzzle_type = /obj/effect/projectile/plasma/muzzle
 	impact_type = /obj/effect/projectile/plasma/impact
 	kill_count = 15 // How long until they disapear
+	recoil = 20
 
 /obj/item/projectile/hydrogen/on_impact(atom/target)
 	explosion(loc, 0, 0, 2) // Smallest possible explosion
@@ -17,12 +18,15 @@
 
 /obj/item/projectile/hydrogen/pistol
 	kill_count = 10
+	recoil = 10
 
 /obj/item/projectile/hydrogen/pistol/welder
 	kill_count = 5
+	recoil = 5
 
 /obj/item/projectile/hydrogen/cannon
 	kill_count = 12
+	recoil = 30
 
 /obj/item/projectile/hydrogen/cannon/on_impact(atom/target)
 	explosion(loc, 0, 1, 2, 4) // Same values as the missile.
@@ -33,11 +37,14 @@
 /obj/item/projectile/hydrogen/max
 	damage_types = list(BURN = 90)
 	armor_penetration = 60
+	recoil = 40
 
 /obj/item/projectile/hydrogen/pistol/max
 	damage_types = list(BURN = 80)
 	armor_penetration = 60
+	recoil = 20
 
 /obj/item/projectile/hydrogen/cannon/max
 	damage_types = list(BURN = 100)
 	armor_penetration = 60
+	recoil = 60

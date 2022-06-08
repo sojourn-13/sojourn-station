@@ -162,6 +162,19 @@
 		list(QUALITY_WIRE_CUTTING, 10, 20),
 		list(/obj/item/stack/rods, 2, 30)
 	)
+	
+/datum/craft_recipe/tool/improv_charger
+	name = "improvised crank charger"
+	result = /obj/item/device/manual_charger/improv
+	steps = list(
+		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_WELDING, 20, 30),
+		list(/obj/item/stack/rods, 10, 10),
+		list(QUALITY_WELDING, 10, 20),
+		list(/obj/item/stack/cable_coil, 10, "time" = 10),
+		list(QUALITY_WIRE_CUTTING, 10, 10),
+		list(QUALITY_ADHESIVE, 15, 20)
+	)
 
 /datum/craft_recipe/tool/handmade_handtele
 	name = "makeshift hand-teleporter"

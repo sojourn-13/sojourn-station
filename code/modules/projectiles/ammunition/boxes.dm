@@ -373,7 +373,7 @@
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = "10x24"
 	ammo_type = /obj/item/ammo_casing/c10x24
-	max_ammo = 36 //3+1 reloads of the SWAT 2.6 of the bond, around 0.29 for smgs
+	max_ammo = 80 //6.6 reloads of the SWAT, 2 of the bond, almost 1 full pulse mag
 
 //// .223 laser shot!
 
