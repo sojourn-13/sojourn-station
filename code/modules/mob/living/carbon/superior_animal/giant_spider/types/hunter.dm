@@ -86,6 +86,7 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/plasma
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","vibrates.")
+	armor_penetration = 50
 
 /mob/living/carbon/superior_animal/giant_spider/plasma/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
@@ -236,6 +237,7 @@
 	poison_type = "party drops"
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/emperor
 	armor = list(melee = 25, bullet = 25, energy = 10, bomb = 25, bio = 10, rad = 25, agony = 0)
+	armor_penetration = 25
 
 	give_randomized_armor = FALSE //Were not getting armor
 
@@ -265,6 +267,7 @@
 	poison_per_bite = 6
 	poison_type = "stoxin"
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/reaper_spider
+	armor_penetration = 30
 
 	give_randomized_armor = FALSE //Were not getting armor
 

@@ -18,6 +18,7 @@
 	speak_chance = 5
 
 	give_randomized_armor = TRUE //We get randomized addition armor
+	armor_penetration = 5
 
 	armor = list(melee = 5, bullet = 5, energy = 0, bomb = 5, bio = 10, rad = 25)
 

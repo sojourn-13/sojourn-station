@@ -28,7 +28,7 @@
 	ironskin.falls_mod -= 0.4
 	ironskin.brute_mod_perk -= 0.2
 	ironskin.burn_mod_perk += 0.4
-	ironskin.oxy_mod_perk  += 3 //Iron casket
+	ironskin.oxy_mod_perk  += 2 //Iron casket
 
 /datum/reagent/iron_skin_brew/on_mob_delete(mob/living/L)
 	. = ..()
@@ -40,7 +40,7 @@
 	ironskin.Paralyse(3)
 	ironskin.burn_mod_perk -= 0.4
 	ironskin.brute_mod_perk += 0.2
-	ironskin.oxy_mod_perk  -= 3
+	ironskin.oxy_mod_perk  -= 2
 
 /datum/reagent/toxin_draft
 	name = "Toxic Draft"

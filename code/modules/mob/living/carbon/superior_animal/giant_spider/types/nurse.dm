@@ -108,6 +108,7 @@
 	move_to_delay = 5 // Very slow do to being 1 hit unfun
 	//Giving the recluse its own special meat that has zombie powder. Reducing the amount of meat made since this is some hard stuff and the recluse is easy to kill.
 	poison_type = "zombiepowder"
+	armor_penetration = 70
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen
 	name = "empress spider"
@@ -129,6 +130,7 @@
 	mob_size = MOB_LARGE
 	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_SPIDER_FRIEND, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
+	armor_penetration = 35
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen/New()
 	..()
