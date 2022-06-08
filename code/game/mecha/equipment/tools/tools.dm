@@ -526,6 +526,30 @@
 			send_byjax(chassis.occupant,"exosuit.browser","\ref[src]",src.get_equip_info())
 		return
 
+/obj/item/mecha_parts/mecha_equipment/fist_plating
+	name = "mech plating"
+	desc = "Plating designed to cover and reinforce the limbs of exosuits to prevent impact damage to the machine during accidents in high risk environments."
+	icon_state = "mecha_fist"
+	range = 0 // Can't attack
+	force = 0
+	required_type = /obj/mecha
+	matter = list(MATERIAL_STEEL = 15) //Its only 30 damage compared to the 15 steel 60 damage sword
+	var/damage_reduction = 0.1
+
+	attach(obj/mecha/M)
+		..()
+		for(var/i in chassis.damage_absorption)
+			chassis.damage_absorption[i] -= damage_reduction
+		src.update_chassis_page()
+
+	detach(atom/moveto=null)
+		for(var/i in chassis.damage_absorption)
+			chassis.damage_absorption[i] += damage_reduction
+		..()
+
+	get_equip_info()
+		if(!chassis) return
+		return "<span style=\"color:[equip_ready?"#0f0":"#f00"];\">*</span>&nbsp;[src.name]"
 
 /obj/item/mecha_parts/mecha_equipment/armor_booster
 	name = "armor booster"
