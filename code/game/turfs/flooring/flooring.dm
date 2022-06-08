@@ -237,6 +237,9 @@ var/list/flooring_types
 			return
  // The art of calculating the vectors required to avoid tripping on the metal beams requires big quantities of brain power
 		if(prob(50 - our_trippah.stats.getStat(STAT_COG))) //50 cog makes you unable to trip
+			if(!our_trippah.back)
+				to_chat(our_trippah, SPAN_WARNING("You would have tripped if you didn't balance."))
+				return
 			our_trippah.adjustBruteLoss(5)
 			our_trippah.trip(src, 6)
 			return
