@@ -9,7 +9,7 @@
 	caliber = CAL_MAGNUM
 	max_shells = 11
 	price_tag = 750
-	recoil_buildup = 10
+	init_recoil = HMG_RECOIL(0.4)
 	damage_multiplier = 1.2
 	penetration_multiplier  = 1.1
 	extra_damage_mult_scoped = 0.2 //scoping this should be rewarded its not that good
@@ -27,5 +27,5 @@
 	caliber = CAL_HRIFLE
 	max_shells = 7
 	price_tag = 1150
-	recoil_buildup = 12
+	init_recoil = HMG_RECOIL(0.6)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 15, MATERIAL_WOOD = 10)

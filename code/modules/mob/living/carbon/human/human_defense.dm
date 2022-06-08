@@ -31,15 +31,17 @@ meteor_act
 	//Shrapnel
 	if(P.can_embed() && (check_absorb < 2) && !src.stats.getPerk(PERK_IRON_FLESH))
 		var/armor = getarmor_organ(organ, ARMOR_BULLET)
-		if(prob(20 + max(P.damage_types[BRUTE] - armor, -10)))
-			var/obj/item/material/shard/SP = new P.shrapnel_type()
-			SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
-			SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
-			SP.loc = organ
-			if(istype(SP, /obj/item/material/shard/shrapnel))
-				SP:gun_number = P.serial_type_index_bullet //"" to "" shouldnt be an issue
-			organ.embed(SP)
-
+		if(prob((20 + max(P.damage_types[BRUTE] - armor, -10) * P.embed_mult)))
+			if(!P.shrapnel_type)
+				var/obj/item/material/shard/shrapnel/SP = new()
+				SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
+				SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
+				SP.loc = organ
+				SP.gun_number = P.serial_type_index_bullet //"" to "" shouldnt be an issue
+				organ.embed(SP)
+			else
+				var/obj/item/newshrap = new P.shrapnel_type(organ)
+				organ.embed(newshrap)
 
 /mob/living/carbon/human/hit_impact(damage, dir)
 	if(incapacitated(INCAPACITATION_DEFAULT|INCAPACITATION_BUCKLED_PARTIALLY))

@@ -15,7 +15,7 @@
 	matter = list(MATERIAL_PLASTEEL = 24, MATERIAL_WOOD = 8, MATERIAL_SILVER = 10)
 	price_tag = 1500
 	projectile_type = /obj/item/projectile/ion
-	one_hand_penalty = 5
+	init_recoil = CARBINE_RECOIL(1.6)
 	twohanded = TRUE
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 	serial_type = "Absolute"
@@ -41,7 +41,7 @@
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 8)
 	price_tag = 1400
 	projectile_type = /obj/item/projectile/ion
-	one_hand_penalty = 25 //Ye they can but it can be unwhieldy
+	init_recoil = CARBINE_RECOIL(1)
 	twohanded = FALSE
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 	serial_type = "SD GmbH"

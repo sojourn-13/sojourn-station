@@ -84,6 +84,8 @@
 	var/speak_chance = 2 //percentage chance of speaking a line from 'emote_see'
 
 	var/comfy_range = 6 //How far we like to be form are targets when we fire!
+	/// comfy_range - comfy_distance = how far away mobs will try to be from their targets. Not how far they fire from.
+	var/comfy_distance = 1
 
 	var/grabbed_by_friend = FALSE //is this superior_animal being wrangled?
 
@@ -439,7 +441,7 @@
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		walk_to(src, targetted_mob, (comfy_range - 1), move_to_delay) //lets get a little closer than our optimal range
+		walk_to(src, targetted_mob, (comfy_range - comfy_distance), move_to_delay) //lets get a little closer than our optimal range
 		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
 			visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"))
 			delayed = delay_amount
@@ -475,12 +477,12 @@
 			return
 		if (!check_if_alive())
 			return
-		if(get_dist(src, targetted_mob) <= 6)
+		if(get_dist(src, targetted_mob) <= comfy_range)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 		else
 			if(weakened) return
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to(src, targetted_mob, 4, move_to_delay)
+			walk_to(src, targetted_mob, (comfy_range - comfy_distance), move_to_delay)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.

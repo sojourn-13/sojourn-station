@@ -23,8 +23,7 @@
 	price_tag = 5000
 	damage_multiplier = 1
 	penetration_multiplier = 1.2
-	recoil_buildup = 4
-	one_hand_penalty = 8
+	init_recoil = CARBINE_RECOIL(0.7)
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SIGHT)
 	init_firemodes = list(
 		list(mode_name="plasma bolt", mode_desc="Hard hitting plasma bolts to reduce armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/Laser.ogg', charge_cost=120, fire_delay=8, icon="destroy", projectile_color = "#00AAFF"),

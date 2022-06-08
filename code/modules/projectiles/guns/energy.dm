@@ -6,7 +6,7 @@
 	fire_sound = 'sound/weapons/Taser.ogg'
 	fire_sound_text = "laser blast"
 
-	recoil_buildup = 0.5 //energy weapons have little to no recoil
+	init_recoil = HANDGUN_RECOIL(0.1)
 
 
 	var/charge_cost = 100 //How much energy is needed to fire.
@@ -26,11 +26,6 @@
 	var/recharge_time = 4
 	var/charge_tick = 0
 	gun_tags = list(GUN_ENERGY)
-
-	var/overcharge_timer //Holds ref to the timer used for overcharging
-	var/overcharge_rate = 1 //Base overcharge additive rate for the gun
-	var/overcharge_level = 0 //What our current overcharge level is. Peaks at overcharge_max
-	var/overcharge_max = 10
 
 /obj/item/gun/energy/loadAmmoBestGuess()
 	var/obj/item/cell/chosenCell = null

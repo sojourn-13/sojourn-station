@@ -48,6 +48,9 @@
 		return
 	name = initial(name)
 	color = initial(color)
+	desc = initial(desc)
+	germ_level = initial(germ_level)
+	price_tag = initial(price_tag)
 	..()
 
 /obj/item/make_old()
@@ -86,8 +89,8 @@
 				break
 			QDEL_NULL(trash_mod)
 	else
-		fire_delay+= rand(0,3)
-		recoil_buildup+= rand(0,10)
+		fire_delay += rand(0,3)
+		init_recoil = OLDIFED_RECOIL(pick(1.5, 1.8, 2, 2.3, 2.6, 3.2, 3.3, 4))
 		damage_multiplier = damage_multiplier*(rand(8,10)/10) //20% less damage max
 		penetration_multiplier = penetration_multiplier*(rand(8,10)/10) //20% less damage penetration
 	refresh_upgrades() //So we dont null upgrades.
@@ -96,7 +99,6 @@
 	if(!oldified)
 		return
 	fire_delay = initial(fire_delay)
-	recoil_buildup = initial(recoil_buildup)
 	damage_multiplier = initial(damage_multiplier)
 	penetration_multiplier = initial(penetration_multiplier)
 	refresh_upgrades() //So we dont null upgrades
@@ -343,6 +345,14 @@
 		if(prob(75))
 			darkness_view = -1
 
+/obj/item/clothing/glasses/make_young()
+	if(!oldified)
+		return
+	vision_flags = initial(vision_flags)
+	darkness_view = initial(darkness_view)
+	refresh_upgrades() //So we dont null upgrades.
+	..()
+
 /obj/item/device/lighting/glowstick/make_old()
 	.=..()
 	if (.)
@@ -392,6 +402,12 @@
 	if (.)
 		if(hud && prob(75))
 			hud = new /obj/item/clothing/glasses/hud/broken
+
+/obj/item/clothing/glasses/sechud/make_young()
+	.=..()
+	if (.)
+		if(hud)
+			hud = new /obj/item/clothing/glasses/hud/security
 
 // This code is fucking cursed and responsible for roughly 50% of the round run-times and crashed when booting up the server. No idea what cursed shit eris did, leave this commented out. -Kaz
 /*

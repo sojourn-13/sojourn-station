@@ -14,7 +14,7 @@
 	var/armor = getarmor(def_zone, attack_flag)
 	var/guaranteed_damage_red = armor * ARMOR_GDR_COEFFICIENT
 	var/armor_effectiveness = max(0, ( armor - armour_pen ) )
-	var/armor_over_penitration = armour_pen - armor // This basiclly lets us over penitrate to deal extra damage. 20 AP - 10 Armor would give 10, well the reverse would be -10
+	var/armor_overpenetration = armour_pen - armor // This basiclly lets us over penitrate to deal extra damage. 20 AP - 10 Armor would give 10, well the reverse would be -10
 	var/effective_damage = damage - guaranteed_damage_red
 
 	if(damagetype == HALLOSS)
@@ -31,13 +31,13 @@
 		show_message(SPAN_NOTICE("Your armor fully absorbs the blow!"))
 		return FALSE
 
-	if(armor_over_penitration > 0 && damagetype == BRUTE) //did we even over-penitrate?
+	if(armor_overpenetration > 0 && damagetype == BRUTE) //did we even over-penitrate?
 		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
-			effective_damage += max(0,round(armor_over_penitration - src.getarmor(def_zone, "bullet"))) //We re-check are armor we over-pentrated, this counts both melee and bullets. We reduce are over AP as bullets tend to have a lot
+			effective_damage += max(0,round(armor_overpenetration - src.getarmor(def_zone, "bullet"))) //We re-check are armor we over-pentrated, this counts both melee and bullets. We reduce are over AP as bullets tend to have a lot
 
-	if(armor_over_penitration > 0 && damagetype == BURN) //did we even over-penitrate?
+	if(armor_overpenetration > 0 && damagetype == BURN) //did we even over-penitrate?
 		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
-			effective_damage += max(0,round((armor_over_penitration - src.getarmor(def_zone, "energy")) * 2)) //We re-check are armor we over-pentrated, and then deal 2x damage do to being a laser, thus weaker then most bullets and most mobs having less engery armor.
+			effective_damage += max(0,round((armor_overpenetration - src.getarmor(def_zone, "energy")) * 2)) //We re-check are armor we over-pentrated, and then deal 2x damage do to being a laser, thus weaker then most bullets and most mobs having less engery armor.
 
 
 	//Here we can remove edge or sharpness from the blow
@@ -125,6 +125,14 @@
 		hit_impact(P.get_structure_damage(), hit_dir)
 		for(var/damage_type in P.damage_types)
 			var/damage = P.damage_types[damage_type]
+			var/dmult = 1
+			if(LAZYLEN(P.effective_faction))
+				if(faction in P.effective_faction)
+					dmult += P.damage_mult
+			if(LAZYLEN(P.supereffective_types))
+				if(is_type_in_list(src, P.supereffective_types, TRUE))
+					dmult += P.supereffective_mult
+			damage *= dmult
 			damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P), post_pen_mult = P.post_penetration_dammult)
 
 

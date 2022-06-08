@@ -13,8 +13,7 @@
 	can_dual = TRUE
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.2
-	recoil_buildup = 8
-	one_hand_penalty = 10
+	init_recoil = HANDGUN_RECOIL(1.6)
 	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'

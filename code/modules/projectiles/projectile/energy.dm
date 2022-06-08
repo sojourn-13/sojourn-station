@@ -5,7 +5,7 @@
 	check_armour = ARMOR_ENERGY
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
-
+	recoil = 4
 	heat = 100
 
 
@@ -53,6 +53,7 @@
 	taser_effect = 1
 	agony = 40
 	damage_types = list(HALLOS = 0)
+	recoil = 6
 	//Damage will be handled on the MOB side, to prevent window shattering.
 
 /obj/item/projectile/energy/electrode/stunshot
@@ -61,6 +62,7 @@
 	taser_effect = 1
 	agony = 80
 	affective_damage_range = 2
+	recoil = 16
 
 /obj/item/projectile/energy/declone
 	name = "declone"

@@ -17,6 +17,8 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	hitscan = 1
 	invisibility = 101	//beam projectiles are invisible as they are rendered by the effect engine
 
+	recoil = 1
+
 	muzzle_type = /obj/effect/projectile/laser/muzzle
 	tracer_type = /obj/effect/projectile/laser/tracer
 	impact_type = /obj/effect/projectile/laser/impact
@@ -31,6 +33,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 /obj/item/projectile/beam/drone
 	damage_types = list(BURN = 15)
 	armor_penetration = 10 //Some AP
+	recoil = 2
 
 /obj/item/projectile/beam/pulse/drone
 	damage_types = list(BURN = 10)
@@ -39,24 +42,30 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 /obj/item/projectile/beam/weak
 	damage_types = list(BURN = 16)
 	armor_penetration = 15 //Some AP
+	recoil = 2
 
 /obj/item/projectile/beam/weak/pistol_35
 	damage_types = list(BURN = 12)
+	recoil = 1
 
 /obj/item/projectile/beam/weak/light_rifle_257
 	damage_types = list(BURN = 13)
 
 /obj/item/projectile/beam/weak/rifle_75
 	damage_types = list(BURN = 22)
+	recoil = 4
 
 /obj/item/projectile/beam/weak/heavy_rifle_408
 	damage_types = list(BURN = 16)
+	recoil = 3
 
 /obj/item/projectile/beam/weak/magnum_40
 	damage_types = list(BURN = 20)
+	recoil = 3
 
 /obj/item/projectile/beam/weak/kurtz_50
 	damage_types = list(BURN = 40)
+	recoil = 5
 
 /obj/item/projectile/beam/weak/smg
 	damage_types = list(BURN = 10)
@@ -72,11 +81,13 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 /obj/item/projectile/beam/shotgun
 	damage_types = list(BURN = 35) //Normal slugs deal 45
 	armor_penetration = 10
+	recoil = 2
 
 /obj/item/projectile/beam/shotgun/strong
 	damage_types = list(BURN = 54) // Default slug (/obj/item/projectile/bullet/shotgun) deal 54 damage
 	armor_penetration = 10
 	eyeblur = 4
+	recoil = 4
 
 /obj/item/projectile/beam/practice
 	name = "laser"
@@ -99,6 +110,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	muzzle_type = /obj/effect/projectile/laser_heavy/muzzle
 	tracer_type = /obj/effect/projectile/laser_heavy/tracer
 	impact_type = /obj/effect/projectile/laser_heavy/impact
+	recoil = 4
 
 /obj/item/projectile/beam/xray
 	name = "xray beam"
@@ -106,6 +118,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	damage_types = list(BURN = 25)
 	armor_penetration = 40
 	eyeblur = 4
+	recoil = 1
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer
 	impact_type = /obj/effect/projectile/xray/impact
@@ -116,6 +129,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	damage_types = list(BURN = 40)
 	armor_penetration = 25
 	eyeblur = 4
+	recoil = 3
 	muzzle_type = /obj/effect/projectile/laser_pulse/muzzle
 	tracer_type = /obj/effect/projectile/laser_pulse/tracer
 	impact_type = /obj/effect/projectile/laser_pulse/impact
@@ -146,6 +160,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer
 	impact_type = /obj/effect/projectile/xray/impact
+	recoil = 4
 
 /obj/item/projectile/beam/stun
 	name = "stun beam"
@@ -158,6 +173,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
 	impact_type = /obj/effect/projectile/stun/impact
+	recoil = 2
 
 //book "lasers"
 /obj/item/projectile/beam/sniper/judgement
@@ -171,6 +187,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
 	impact_type = /obj/effect/projectile/stun/impact
+	recoil = 0
 
 /obj/item/projectile/beam/sniper/sin_within
 	name = "sin"
@@ -181,6 +198,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer
 	impact_type = /obj/effect/projectile/xray/impact
+	recoil = 0
 
 /obj/item/projectile/beam/sniper/healing
 	name = "grace"
@@ -193,6 +211,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	muzzle_type = /obj/effect/projectile/laser_blue/muzzle
 	tracer_type = /obj/effect/projectile/laser_blue/tracer
 	impact_type = /obj/effect/projectile/laser_blue/impact
+	recoil = 0
 
 /obj/item/projectile/beam/sniper/healing/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -224,12 +243,14 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	muzzle_type = /obj/effect/projectile/tesla/muzzle
 	tracer_type = /obj/effect/projectile/tesla/tracer
 	impact_type = /obj/effect/projectile/tesla/impact
+	recoil = 2
 
 /obj/item/projectile/beam/tesla/shotgun
 	kill_count = 5 // short range
 
 /obj/item/projectile/beam/tesla/shotgun/strong
 	damage_types = list(BURN = 45) // Default slug (/obj/item/projectile/bullet/shotgun) deal 54 damage
+	recoil = 5
 
 /obj/item/projectile/beam/infrared
 	name = "infrared radiation"
@@ -241,6 +262,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	tracer_type = null
 	impact_type = null
 	heat = 500
+	recoil = 4
 
 /obj/item/projectile/beam/infrared/on_hit(atom/target)
 	if(isliving(target))

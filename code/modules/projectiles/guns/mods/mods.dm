@@ -360,6 +360,42 @@
 	I.breakable = FALSE
 	I.prefix = "feather trigger"
 
+/obj/item/gun_upgrade/mechanism/tensioner
+	name = "weighted pulley kit"
+	desc = "A set of compound pulleys, cables and mounting screws for installing onto a bow. Makes it harder to draw back, but more powerful."
+	icon_state = "winder_kit"
+	price_tag = 500
+
+/obj/item/gun_upgrade/mechanism/tensioner/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_BRUTE = 0.5, //7.5 extra damage at new max charge
+		GUN_UPGRADE_OVERCHARGE_MAX = 1.5,
+		GUN_UPGRADE_OVERCHARGE_RATE = 0.35
+		)
+	I.req_gun_tags = list(ARROW_FIRING)
+	I.gun_loc_tag = GUN_MECHANISM
+	I.prefix = "heavy"
+
+/obj/item/gun_upgrade/mechanism/detensioner
+	name = "compound pulley kit"
+	desc = "A set of compound pulleys, cables and mounting screws for installing onto a bow. Makes it significantly easier to draw back, but less powerful."
+	icon_state = "winder_kit"
+	price_tag = 250
+
+/obj/item/gun_upgrade/mechanism/detensioner/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_OVERCHARGE_MAX = 0.75,
+		GUN_UPGRADE_OVERCHARGE_RATE = 2
+		)
+	I.req_gun_tags = list(ARROW_FIRING)
+	I.gun_loc_tag = GUN_MECHANISM
+	I.prefix = "heavy"
+
+
 //obj/item/gun_upgrade/underbarrel
 
 /obj/item/storage/box/gun_upgrades

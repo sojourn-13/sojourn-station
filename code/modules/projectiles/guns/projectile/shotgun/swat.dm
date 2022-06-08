@@ -14,8 +14,7 @@
 	price_tag = 1250
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.3
-	recoil_buildup = 14 //WO shotgun, now actually better than most of the shotguns you can get, don't know why this had lower modifier.
-	one_hand_penalty = 15 //full sized shotgun level
+	init_recoil = RIFLE_RECOIL(0.6)
 	saw_off = FALSE //No
 	folding_stock = TRUE //we can fold are stocks
 

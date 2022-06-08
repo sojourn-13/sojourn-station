@@ -18,8 +18,7 @@
 	damage_multiplier = 1.1 //Payload "rifle" has a scope so fair enough
 	zoom_factor = 0.4
 	fire_delay = 12
-	recoil_buildup = 15
-	one_hand_penalty = 20
+	init_recoil = RIFLE_RECOIL(1.8)
 	fire_sound = 'sound/weapons/guns/fire/payload_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
@@ -61,7 +60,7 @@
 	icon_state = "sbaw"
 	penetration_multiplier = 1.5
 	damage_multiplier = 1.5
-	recoil_buildup = 5
+	init_recoil = RIFLE_RECOIL(1.1)
 	fire_delay = 0.5
 	init_firemodes = list(
 	SEMI_AUTO_NODELAY,

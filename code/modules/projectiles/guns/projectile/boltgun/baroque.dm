@@ -23,7 +23,7 @@ Own a musket for department defense, since that's what the founding hunters inte
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
 	caliber = CAL_BALL
-	recoil_buildup = 40
+	init_recoil = HMG_RECOIL(1)
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING
 	max_shells = 1
@@ -33,7 +33,6 @@ Own a musket for department defense, since that's what the founding hunters inte
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_BONE = 20)
 	price_tag = 750
 	extra_damage_mult_scoped = 0.4
-	one_hand_penalty = 80
 	zoom_factor = 1.4
 	twohanded = TRUE
 	sharp = FALSE
