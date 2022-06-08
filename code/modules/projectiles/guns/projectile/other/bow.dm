@@ -56,8 +56,8 @@
 		loaded -= chambered
 	update_icon()
 
-//attempts to unload src. If allow_dump is set to 0, the speedloader unloading method will be disabled
-/obj/item/gun/projectile/bow/unload_ammo(mob/user, var/allow_dump=1)
+
+/obj/item/gun/projectile/bow/unload_ammo(mob/user)
 	if(chambered)
 		user.put_in_hands(chambered)
 		chambered = null
