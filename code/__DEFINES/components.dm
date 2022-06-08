@@ -80,7 +80,7 @@
 #define COMSIG_MOB_LOGIN "mob_login"							//from mob/Login()
 #define COMSIG_MOB_DEATH "mob_death"							//from mob/death()
 
-#define COMSIG_TRACE_IMPACT "trace_impact"
+#define COMSIG_TRACE_IMPACT "trace_impact" //Soj edit
 
 // /mob/living signals
 #define COMSIG_LIVING_STUN_EFFECT "stun_effect_act"			 //mob/living/proc/stun_effect_act()
