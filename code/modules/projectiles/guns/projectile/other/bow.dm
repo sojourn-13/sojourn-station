@@ -57,7 +57,7 @@
 	update_icon()
 
 
-/obj/item/gun/projectile/bow/unload_ammo(mob/user)
+/obj/item/gun/projectile/bow/unload_ammo(mob/user, allow_dump)
 	if(chambered)
 		user.put_in_hands(chambered)
 		chambered = null
