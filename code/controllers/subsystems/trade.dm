@@ -19,15 +19,15 @@ SUBSYSTEM_DEF(trade)
 	var/list/junk_tags = list(SPAWN_JUNK)				// List of spawn tags of junk items
 
 	// For tracking/logging
-	var/export_invoice_number = 0
 	var/shipping_invoice_number = 0
+	var/export_invoice_number = 0
 	var/offer_invoice_number = 0
-	var/sell_invoice_number = 0
+	var/sale_invoice_number = 0
 
+	var/list/shipping_log = list()
 	var/list/export_log = list()
-	var/list/order_log = list()
 	var/list/offer_log = list()
-	var/list/sell_log = list()
+	var/list/sale_log = list()
 
 // === TRADE STATIONS ===
 
@@ -356,7 +356,6 @@ SUBSYSTEM_DEF(trade)
 			continue
 
 		var/list/contents_incl_self = AM.GetAllContents(5, TRUE)
-		var/invoice_contents_info
 
 		// We go backwards, so it'll be innermost objects sold first
 		for(var/atom/movable/item in reverseRange(contents_incl_self))
@@ -372,13 +371,13 @@ SUBSYSTEM_DEF(trade)
 			else
 				item.forceMove(get_turf(AM))		// Should be the same tile
 
-	if(invoice_contents_info)	// If no info, then nothing was exported
-		create_log_entry("Export", account.get_name(), invoice_contents_info, cost, TRUE, senderBeacon.loc)
-
 	senderBeacon.start_export()
 	var/datum/money_account/lonestar_account = department_accounts[DEPARTMENT_LSS]
 	var/datum/transaction/T = new(cost, lonestar_account.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
 	T.apply_to(lonestar_account)
+
+	if(invoice_contents_info)	// If no info, then nothing was exported
+		create_log_entry("Export", lonestar_account.get_name(), invoice_contents_info, cost, TRUE, senderBeacon.loc)
 
 /datum/controller/subsystem/trade/proc/get_export_price_multiplier(atom/movable/target)
 	if(!target)
@@ -388,7 +387,7 @@ SUBSYSTEM_DEF(trade)
 	var/list/target_junk_tags = target_spawn_tags & junk_tags
 	var/list/target_hockable_tags = target_spawn_tags & hockable_tags
 
-	if(istype(AM, /obj/item/paper/invoice))	// Don't export our invoices!
+	if(istype(target, /obj/item/paper/invoice))	// Don't export our invoices!
 		return NONEXPORTABLE
 
 	// Junk tags override hockable tags and offer types override both
@@ -408,16 +407,16 @@ SUBSYSTEM_DEF(trade)
 	switch(type)
 		if("Shipping")
 			log_id = "[++shipping_invoice_number]-S"
-			order_log += list(log_id, ordering_account, contents, total_paid, time2text(world.time, "hh:mm"))
+			shipping_log += list(log_id, ordering_account, contents, total_paid, time2text(world.time, "hh:mm"))
 		if("Export")
 			log_id = "[++export_invoice_number]-E"
-			export_log += list(log_id, ordering_account, contents, total_paid * 0.8, total_paid * 0.2, time2text(world.time, "hh:mm"))
+			export_log += list(log_id, ordering_account, contents, total_paid, time2text(world.time, "hh:mm"))
 		if("Special Offer")
 			log_id = "[++offer_invoice_number]-SO"
 			offer_log += list(log_id, ordering_account, contents, total_paid, time2text(world.time, "hh:mm"))
 		if("Individial Sale")
-			log_id = "[++sell_invoice_number]-IS"
-			sell_log += list(log_id, ordering_account, contents, total_paid, time2text(world.time, "hh:mm"))
+			log_id = "[++sale_invoice_number]-IS"
+			sale_log += list(log_id, ordering_account, contents, total_paid, time2text(world.time, "hh:mm"))
 		else
 			return
 

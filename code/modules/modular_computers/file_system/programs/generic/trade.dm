@@ -96,13 +96,23 @@
 			return TRUE
 
 	if(href_list["PRG_receiving"])
-		var/obj/machinery/trade_beacon/receiving/B = input("Select receiving beacon", "Receiving Beacon", null) as null|anything in SStrade.receiving_list
-		receiving = B
+		var/list/beacons_by_id = list()
+		for(var/obj/machinery/trade_beacon/receiving/beacon in SStrade.beacons_receiving)
+			var/beacon_id = beacon.get_id()
+			beacons_by_id.Insert(beacon_id, beacon_id)
+			beacons_by_id[beacon_id] = beacon
+		var/id = input("Select receiving beacon", "Receiving Beacon", null) as null|anything in beacons_by_id
+		receiving = beacons_by_id[id]
 		return TRUE
 
 	if(href_list["PRG_sending"])
-		var/obj/machinery/trade_beacon/sending/B = input("Select sending beacon", "Sending Beacon", null) as null|anything in SStrade.sending_list
-		sending = B
+		var/list/beacons_by_id = list()
+		for(var/obj/machinery/trade_beacon/sending/beacon in SStrade.beacons_sending)
+			var/beacon_id = beacon.get_id()
+			beacons_by_id.Insert(beacon_id, beacon_id)
+			beacons_by_id[beacon_id] = beacon
+		var/id = input("Select sending beacon", "Sending Beacon", null) as null|anything in beacons_by_id
+		sending = beacons_by_id[id]
 		return TRUE
 
 	if(href_list["PRG_cart_reset"])

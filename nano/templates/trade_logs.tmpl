@@ -1,0 +1,68 @@
+
+{{:helper.link(data.screen ? data.screen : "Trade Beacon Log", null, {'PRG_screen' : 1})}}
+{{if data.account}}
+	{{:helper.link(data.account, null, {'PRG_account' : 1})}}{{:helper.link('X', null, {'PRG_account_unlink' : 1}, null, 'redButton')}}
+{{else}}
+	{{:helper.link("Account Number", null, {'PRG_account' : 1})}}
+{{/if}}
+<br>
+<hr>
+{{if data.screen}}
+	{{if data.account}}
+		<div class="item" style="padding-top: 5px">
+			<div class="item">
+				<div class="itemLabel">
+					Log:
+				</div>
+				<div class="itemContent">
+					<span class="average">{{:data.screen}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="item" style="padding-top: 5px">
+			<div class="item">
+				<div class="itemLabel">
+					All Access:
+				</div>
+				<div class="itemContent">
+					{{if data.is_all_access}}
+						<span class="good">TRUE</span>
+					{{else}}
+						<span class="average">FALSE</span>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+		<div class='nanoMap' style='padding: 25px 50px;'>
+			{{table class='item'}}
+				<tr class="bottom_bordered">
+					<td>Log ID
+					<td>Ordering Account
+					<td>Contents
+					<td>Paid to Account
+					{{if data.screen == "Export Log"}}
+						<td>Paid to Lonestar
+					{{/if}}
+					<td>Timestamp
+				{{for data.current_log_data}}
+					{{if data.is_all_access || value.2 == data.account}}
+						<tr>
+							<td>{{:value.1}}
+							<td>{{:value.2}}
+							<td>{{:value.3}}
+							<td>{{:value.4}}
+							<td>{{:value.5}}
+							{{if data.screen == "Export Log"}}
+								<td>{{:value.6}}
+							{{/if}}
+					{{/if}}
+				{{empty}}
+					This log is empty.
+				{{/for}}
+			{{/table}}
+	{{/if}}
+{{else}}
+	<div class='nanoMap' style='padding: 100px 200px;'>
+		Please select a log.
+	</div>
+{{/if}}
