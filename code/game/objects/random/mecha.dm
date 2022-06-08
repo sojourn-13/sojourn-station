@@ -50,7 +50,8 @@
 	spawn_nothing_percentage = 80
 
 /obj/random/mecha_equipment/item_to_spawn()
-	return pickweight(list(/obj/item/mecha_parts/mecha_equipment/tool/ai_holder,
+	return pickweight(list(
+		//obj/item/mecha_parts/mecha_equipment/tool/ai_holder, Broken atm
 		/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
 		/obj/item/mecha_parts/mecha_equipment/tool/cable_layer,
 		/obj/item/mecha_parts/mecha_equipment/tool/syringe_gun,

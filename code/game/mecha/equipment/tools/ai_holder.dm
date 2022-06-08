@@ -1,3 +1,6 @@
+
+//Currently broken as heck dont use or spawn these untill fixed
+
 /obj/item/mecha_parts/mecha_equipment/tool/ai_holder
 	name = "AI holder"
 	desc = "AI holder - allowed AI control exo-suits."
