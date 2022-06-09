@@ -22,7 +22,7 @@
 	y = 0.1
 	icon = "cog_alt" //cog
 
-	required_technologies = list()
+	required_technologies = list(/datum/technology/GP_Cog)
 	required_tech_levels = list(RESEARCH_COMBAT = 3, RESEARCH_POWERSTORAGE = 5, RESEARCH_ILLEGAL = 2)
 	cost = 1000
 
