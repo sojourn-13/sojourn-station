@@ -58,12 +58,17 @@
 /datum/department/ironhammer
 	name = "Marshal and Blackshield Division"
 	id = DEPARTMENT_SECURITY
-	account_initial_balance = 25000 //25k do to being state funded
+	//This is balanced around full team in 6 hours with nepitism
+	//Without nepitsm a full team 27000 in 6 hours
+	//With nepitsm a full team 35100 in 6 hours
+	account_initial_balance = 50000 //+15k~ do to being state funded
+
 
 /datum/department/technomancers
 	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
-	account_initial_balance = 17500 //15k do to being state funded
+	account_initial_balance = 25000 //+15k~ do to being state funded
+	//Full team with nepitsm in 6 hours is 11900
 	//A full crew GM + 4 adpets is 1700 an hour, takes 10~ hours to drain the department funds
 
 
@@ -80,16 +85,22 @@
 /datum/department/moebius_medical
 	name = "Soteria Institution: Medical Division"
 	id = DEPARTMENT_MEDICAL
-	account_initial_balance = 15000 //For buying medical and items and payments
+	//18600 in 6 hours with full crew
+	//24180 in 6 hours with full crew + nep
+	account_initial_balance = 30000 //5~k For buying medical and items and payments
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
-	account_initial_balance = 10000 //For buying materials and components and things of scientific value as well as pay the demanding staff
+	//15000 in 6 hours with full crew
+	//19500 in 6 hours with full crew + nepitism
+	account_initial_balance = 20000 //+10k~ For buying materials and components and things of scientific value as well as pay the demanding staff
 
 /datum/department/church
 	name = "Church of Absolute"
 	id = DEPARTMENT_CHURCH
+	//9600 in 6 hours with full crew
+	//12480 with all nep in 6 hours
 	account_initial_balance = 25000 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
 
 /******************
@@ -106,12 +117,16 @@
 	/* if you want to change this remember to do so in code\game\gamemodes\score.dm as well,
 	if you manage to get this variable refferenced there you're a better man than me. godspeed
 	*/
+	//Note: LSS isnt accounted for wages when starting money as they have the easyest ways to make money
 	account_initial_balance = 25000 //has a lot of workers thus needs a higher starting to off-set its paychecks if no one actively runs the cargo shuttle
 
 /datum/department/prospector
 	name = "Prospectors"
 	id = DEPARTMENT_PROSPECTOR
-	account_initial_balance = 10000 //Has a lot of workers and people
+	//Full team in 6 hours is 6600
+	//Full team with Nep in 6 hours is 6600
+	//Nep in 6 hours with full team is 8580
+	account_initial_balance = 12500 //5k+6~hours of work. should be good for them to make money
 
 /datum/department/independent
 	name = "Independent Allied Factions"
