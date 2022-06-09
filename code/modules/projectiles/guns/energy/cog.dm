@@ -51,4 +51,4 @@
     )
     twohanded = FALSE
     init_recoil = HANDGUN_RECOIL(0.2)
-	serial_type = "PP"
+    serial_type = "PP"
