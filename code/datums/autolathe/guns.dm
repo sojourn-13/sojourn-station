@@ -392,7 +392,7 @@
 	build_path = /obj/item/gun/projectile/boltgun/lever/custer
 
 /datum/design/autolathe/gun/blackguard
-	name = "BR .408 \"Blackguard\" Omni Rifle"
+	name = "NM BR .408 \"Blackguard\" Omni Rifle"
 	build_path = /obj/item/gun/projectile/automatic/blackguard
 
 // .40 rifles
