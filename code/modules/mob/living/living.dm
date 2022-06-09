@@ -252,6 +252,16 @@ default behaviour is:
 		return FALSE	//godmode
 	toxloss = min(max(toxloss + amount, 0),(maxHealth*2))
 
+	//// TOXIN ORGAN ROT ////
+	var/mob/living/carbon/human/A = src
+	if (ishuman(A))
+		if ((toxloss > 75) && (amount>0)) // If toxloss is above a certain threshhold, more toxin damage will cause internal organ damage. For reference: 50 is DANGEROUS TOXIN LEVELS DETECTED
+			var/obj/item/organ/internal/targeted_organ
+			var/list/listed_organs  = list("brain",OP_EYES,"heart","lungs","stomach","liver","kidneys","appendix","psionic organ")
+			targeted_organ = A.random_organ_by_process(pick(listed_organs))
+			if (targeted_organ.nature !=MODIFICATION_SILICON) // If randomly chosen organ is prothestic, no damage.
+				targeted_organ.damage = rand (5,10) // How much damage is dealt to each organ. Please adjust for balance
+
 /mob/living/proc/setToxLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
