@@ -42,7 +42,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_guns
 	disk_name = "Marshal \"Negotiator\" Pack"
-	icon_state = "mashal"
+	icon_state = "marshal"
 	license = 20 //1:1 with blackshield guns
 	designs = list(
 		/datum/design/autolathe/gun/glock,
