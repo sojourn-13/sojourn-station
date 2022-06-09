@@ -654,6 +654,7 @@ BLIND     // can't see anything
 		3 = Report location
 		*/
 	var/displays_id = 1
+	var/rolldown = FALSE
 	equip_delay = 2 SECONDS
 
 	//convenience var for defining the icon state for the overlay used when the clothing is worn.
@@ -733,3 +734,13 @@ BLIND     // can't see anything
 		set_sensors(U)
 	else
 		return ..()
+
+/obj/item/clothing/under/verb/roll_down()
+	set name = "Toggle Jumpsuit"
+	set desc = "Toggle the appearance of your jumpsuit."
+	set category = "Object"
+
+	usr.visible_message("[usr] adjusts their jumpsuit.", \
+	"You adjust your jumpsuit.")
+	rolldown = !rolldown
+	usr.update_inv_w_uniform()
