@@ -291,7 +291,6 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemRangerSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Deckard Kit" = /obj/item/storage/box/m_kit/deckard,
-					"Judge Kit" = /obj/item/storage/box/m_kit/judge,
 					"Zwang Kit" = /obj/item/storage/box/m_kit/zwang)
 	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)

@@ -6,6 +6,14 @@
 ///H A N D G U N S
 //9mm
 
+/datum/design/autolathe/gun/glock
+	name = "Seinemetall Defense GmbH HG .35 \"Sky\""
+	build_path = /obj/item/gun/projectile/glock
+
+/datum/design/autolathe/gun/judiciary
+	name = "NM .35 \"Judiciary\""
+	build_path = /obj/item/gun/projectile/judiciary
+
 /datum/design/autolathe/gun/olivaw
 	name = "H&S HG 9mm \"Olivaw\""
 	build_path = /obj/item/gun/projectile/olivaw
@@ -26,9 +34,11 @@
 	name = "H&S HG 9mm \"Colt\""
 	build_path = /obj/item/gun/projectile/colt
 
+/*
 /datum/design/autolathe/gun/glock
 	name = "Seinemetall Defense GmbH HG 9mm \"Sky\""
 	build_path = /obj/item/gun/projectile/glock
+*/
 
 /datum/design/autolathe/gun/NM_colt
 	name = "BR 9mm \"Bronco\""
@@ -392,7 +402,7 @@
 	build_path = /obj/item/gun/projectile/boltgun/lever/custer
 
 /datum/design/autolathe/gun/blackguard
-	name = "BR 10x77 \"Blackguard\" Omni Rifle"
+	name = "NM BR .408 \"Blackguard\" Omni Rifle"
 	build_path = /obj/item/gun/projectile/automatic/blackguard
 
 // 10mm rifles

@@ -4,7 +4,7 @@
 	tech_type = RESEARCH_GREYSON
 
 	x = 0.1 //Bottom left corner
-	y = 0.1
+	y = 0.3
 	icon = "cog" //cog
 
 	required_technologies = list()
@@ -13,13 +13,29 @@
 
 	unlocks_designs = list(/datum/design/research/item/greyson/cog)
 
+/datum/technology/GP_Cog_alt
+	name = "Greyson Positronic Alternative Lasgun Designs"
+	desc = "Further changes made to the already successful Cog design."
+	tech_type = RESEARCH_GREYSON
+
+	x = 0.1 //Bottom left corner
+	y = 0.1
+	icon = "cog_alt" //cog
+
+	required_technologies = list(/datum/technology/GP_Cog)
+	required_tech_levels = list(RESEARCH_COMBAT = 3, RESEARCH_POWERSTORAGE = 5, RESEARCH_ILLEGAL = 2)
+	cost = 1000
+
+	unlocks_designs = list(/datum/design/research/item/greyson/cog_sawn,
+						   /datum/design/research/item/greyson/cog_gear)
+
 /datum/technology/GP_roomba
 	name = "Greyson Positronic Roomba Creation"
 	desc = "Small deployable kits for deploying Roomba's and GP FPBs."
 	tech_type = RESEARCH_GREYSON
 
 	x = 0.2 //Bottom left corner
-	y = 0.1
+	y = 0.3
 	icon = "roomba_kit"
 
 	required_technologies = list(/datum/technology/GP_Cog)
@@ -38,7 +54,7 @@
 	tech_type = RESEARCH_GREYSON
 
 	x = 0.1 //top right
-	y = 0.3
+	y = 0.5
 	icon = "greysonarmor"
 
 	required_technologies = list(/datum/technology/advanced_armor, /datum/technology/GP_Cog)
@@ -56,7 +72,7 @@
 	tech_type = RESEARCH_GREYSON
 
 	x = 0.3 //Bottom left
-	y = 0.1
+	y = 0.3
 	icon = "window"
 
 	required_technologies = list(/datum/technology/GP_Cog,
@@ -71,7 +87,7 @@
 	tech_type = RESEARCH_GREYSON
 
 	x = 0.5 //Bottom middle
-	y = 0.1
+	y = 0.3
 	icon = "mastermind"
 
 	required_technologies = list(/datum/technology/GP_window)

@@ -42,10 +42,10 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_guns
 	disk_name = "Marshal \"Negotiator\" Pack"
-	icon_state = "mashal"
+	icon_state = "marshal"
 	license = 20 //1:1 with blackshield guns
 	designs = list(
-		/datum/design/autolathe/gun/glock,
+		/datum/design/autolathe/gun/judiciary,
 		/datum/design/autolathe/gun/liberty,
 		/datum/design/autolathe/gun/rev10,
 		/datum/design/autolathe/gun/amnesty = 2,
@@ -147,6 +147,19 @@
 		)
 
 // 10mm Magnum
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/judiciary
+	disk_name = "NM - .35 Judiciary"
+	icon_state = "marshal"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/judiciary = 3,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
+		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/pistol,
+		/datum/design/autolathe/ammo/pistol_lethal =2,
+	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/liberty
 	disk_name = "NM - 10mm Liberty"

@@ -953,7 +953,7 @@
 
 /datum/sprite_accessory/hair/marqua_cat
 	name = "Mar'Qua Tipped frills"
-	icon_state = "catear"
+	icon_state = "topears"
 	species_allowed = list(FORM_MARQUA)
 
 

@@ -239,6 +239,7 @@
 		var/list/options = list()
 		options["Osprey - precision rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/fancy,/obj/item/ammo_magazine/heavy_rifle_408,/obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408/rubber)
 		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags, /obj/item/ammo_magazine/ammobox/c10x24_small)
+		options["Judge - heavy revolver"] = list(/obj/item/gun/projectile/revolver/judge, /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber, /obj/item/ammo_magazine/ammobox/rifle_75_small)
 		var/choice = input(user,"What type of equipment?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]
