@@ -454,12 +454,12 @@
 	icon_state = "box50-si"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/laser
 
-//// 12.7x108mm ////
+//// 14.5×114mm ////
 
 /obj/item/ammo_magazine/ammobox/antim
-	name = "ammunition box (12.7mm AP)"
+	name = "ammunition box (14.5mm AP)"
 	icon_state = "antim"
-	desc = "A box of large 12.7x108mm antimateriel rounds."
+	desc = "A box of large 14.5×114mm antimateriel rounds."
 	matter = list(MATERIAL_CARDBOARD = 1)
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_ANTIM
@@ -467,7 +467,7 @@
 	max_ammo = 30
 
 /obj/item/ammo_magazine/ammobox/antim_small
-	name = "ammunition packet (12.7mm AP)"
+	name = "ammunition packet (14.5mm AP)"
 	icon_state = "60-06sm"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_ANTIM
@@ -476,7 +476,7 @@
 	max_ammo = 15
 
 /obj/item/ammo_magazine/ammobox/antim/scrap
-	name = "ammunition box (old 12.7mm Anti Material)"
+	name = "ammunition box (old 14.5mm Anti Material)"
 	icon_state = "antim_s"
 	ammo_type = /obj/item/ammo_casing/antim/scrap
 	max_ammo = 5

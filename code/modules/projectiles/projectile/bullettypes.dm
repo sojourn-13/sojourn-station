@@ -529,7 +529,7 @@
 	affective_ap_range = 5
 	recoil = 10
 
-//// 12.7x108mm Anti-Material Rifle Rounds ////
+//// 14.5×114mm Anti-Material Rifle Rounds ////
 /obj/item/projectile/bullet/antim
 	damage_types = list(BRUTE = 90)
 	armor_penetration = 100

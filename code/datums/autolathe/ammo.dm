@@ -905,14 +905,14 @@
 	build_path = /obj/item/ammo_magazine/rifle_10x24
 	materials = list(MATERIAL_STEEL = 2)
 
-//12.7×108mm anti-material
+//14.5×114mm anti-material
 /datum/design/autolathe/ammo/box_antim
-	name = "ammunition box (12.7×108mm)"
+	name = "ammunition box (14.5×114mm)"
 	build_path = /obj/item/ammo_magazine/ammobox/antim
 	materials = list(MATERIAL_STEEL = 30, MATERIAL_PLASTEEL = 30)
 
 /datum/design/autolathe/ammo/antim
-	name = "loose shells (12.7×108mm)"
+	name = "loose shells (14.5×114mm)"
 	build_path = /obj/item/ammo_casing/antim/prespawned
 	materials = list(MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 5)
 

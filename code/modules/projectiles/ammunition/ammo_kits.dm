@@ -92,8 +92,8 @@
 			"17mm ball ammo pile (4 ammo, 1 points)" = list(1, /obj/item/ammo_casing/ball/prespawned),
 			"17mm ball ammo box (30 ammo, 15 points)" = list(15, /obj/item/ammo_magazine/ammobox/ball)),
 		CAL_ANTIM = list(
-			"12.7mm ammo pile (3 ammo, 5 points)" = list(5, /obj/item/ammo_casing/antim/scrap/prespawned),
-			"12.7mm ammo box (5 ammo, 10 points)" = list(10, /obj/item/ammo_magazine/ammobox/antim/scrap)))
+			"14.5mm ammo pile (3 ammo, 5 points)" = list(5, /obj/item/ammo_casing/antim/scrap/prespawned),
+			"14.5mm ammo box (5 ammo, 10 points)" = list(10, /obj/item/ammo_magazine/ammobox/antim/scrap)))
 
 	var/list/items_to_spawn = list()
 	var/user_is_choosing = TRUE
