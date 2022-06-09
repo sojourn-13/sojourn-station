@@ -173,14 +173,6 @@
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
 
-/obj/item/storage/box/m_kit/judge
-	name = "Judge Secondary Kit"
-	desc = "The standard Marshal box kit containing a Judge revolver, a large caliber revolver capable of firing a 7.5 round down range effectively. Highly sought after by police forces."
-
-	populate_contents()
-		new /obj/item/gun/projectile/revolver/judge(src)
-		new /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber(src)
-
 /obj/item/storage/box/m_kit/zwang
 	name = "Zwang Secondary Kit"
 	desc = "The standard Marshal box kit containing a Lawbringer energy revolver. The cylander of this custom-designed revolver has been replaced with space for an energy cell."
@@ -239,6 +231,7 @@
 		var/list/options = list()
 		options["Osprey - precision rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/fancy,/obj/item/ammo_magazine/heavy_rifle_408,/obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408/rubber)
 		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags, /obj/item/ammo_magazine/ammobox/c10x24_small)
+		options["Judge - heavy revolver"] = list(/obj/item/gun/projectile/revolver/judge, /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber, /obj/item/ammo_magazine/ammobox/rifle_75_small)
 		var/choice = input(user,"What type of equipment?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]

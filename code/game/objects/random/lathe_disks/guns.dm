@@ -173,7 +173,8 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/basilisk = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 6,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/liberty = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/glock = 2))
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/glock = 2,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/judiciary =2))
 
 /obj/random/lathe_disk/grande
 	name = "random grande based lathe disk"

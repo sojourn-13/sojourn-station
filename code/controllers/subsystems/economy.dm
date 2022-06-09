@@ -56,7 +56,6 @@ SUBSYSTEM_DEF(economy)
 				A.debt += A.wage
 				ED.total_debt += A.wage
 
-
 	// Departments pay to the crew
 	for(var/datum/money_account/A in personal_accounts)
 		if(!A.employer)
