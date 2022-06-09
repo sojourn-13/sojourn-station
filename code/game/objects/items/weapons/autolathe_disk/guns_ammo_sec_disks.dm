@@ -150,10 +150,10 @@
 // G U N S (minus excelsior and research)
 // Pack is used when there is more than one gun on the disk
 
-// .35 PISTOLS + REVOLVERS
+// 9mm PISTOLS + REVOLVERS
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/cheap_guns
-	disk_name = "H&S - .35 Economy Pack"
+	disk_name = "H&S - 9mm Economy Pack"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -175,7 +175,7 @@
 
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/colt
-	disk_name = "H&S - .35 M1911"
+	disk_name = "H&S - 9mm M1911"
 	icon_state = "ironhammer"
 
 	license = 8
@@ -192,7 +192,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/glock
-	disk_name = "Seinemetall Defense GmbH - .35 Sky Auto Pistol"
+	disk_name = "Seinemetall Defense GmbH - 9mm Sky Auto Pistol"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -205,10 +205,10 @@
 	)
 
 
-// .40 REVOLVERS
+// 10mm REVOLVERS
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/revolver
-	disk_name = "H&S - .40 Minotaur Revolver"
+	disk_name = "H&S - 10mm Minotaur Revolver"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -221,7 +221,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/rev10
-	disk_name = "H&S - .40 Frontier Revolver"
+	disk_name = "H&S - 10mm Frontier Revolver"
 	icon_state = "ironhammer"
 
 	license = 8
@@ -233,10 +233,10 @@
 		/datum/design/autolathe/ammo/slmagnum_lethal = 2,
 		)
 
-// .40 pistols
+// 10mm pistols
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ladon
-	disk_name = "H&S - .40 Auto-Mag Porton Handgun"
+	disk_name = "H&S - 10mm Auto-Mag Porton Handgun"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -249,7 +249,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/sa
-	disk_name = "SA - .40 Auto-Mag Sigia Handgun"
+	disk_name = "SA - 10mm Auto-Mag Sigia Handgun"
 	icon_state = "sa"
 
 	license = 8
@@ -262,7 +262,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/dark
-	disk_name = "Seinemetall Defense GmbH - .40 Auto-Mag Ladon Handgun"
+	disk_name = "Seinemetall Defense GmbH - 10mm Auto-Mag Ladon Handgun"
 	icon_state = "onestar"
 
 	license = 8
@@ -275,7 +275,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/colt/ten
-	disk_name = "H&S - .40 Auto-Mag Delta Elite"
+	disk_name = "H&S - 10mm Auto-Mag Delta Elite"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -288,7 +288,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/rafale
-	disk_name = "Seinemetall Defense GmbH - .40 Auto-Mag Rafale"
+	disk_name = "Seinemetall Defense GmbH - 10mm Auto-Mag Rafale"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -301,7 +301,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/armstrong
-	disk_name = "H&S - .40 lever action Armstrong"
+	disk_name = "H&S - 10mm lever action Armstrong"
 	icon_state = "frozenstar"
 
 	license = 16
@@ -313,9 +313,9 @@
 		/datum/design/autolathe/ammo/magnum_ammobox_lethal = 4,
 		)
 
-// .40 SMGS
+// 10mm SMGS
 /obj/item/computer_hardware/hard_drive/portable/design/guns/vector
-	disk_name = "SA - .40 Vector SMG"
+	disk_name = "SA - 10mm Vector SMG"
 	icon_state = "sa"
 
 	license = 16
@@ -330,7 +330,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/thompson
-	disk_name = "SA - .40 Thompson SMG"
+	disk_name = "SA - 10mm Thompson SMG"
 	icon_state = "sa"
 
 	license = 12
@@ -342,10 +342,10 @@
 		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
 		)
 
-// .50 PISTOLS
+// 11mm PISTOLS
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/lamia
-	disk_name = "H&S - .50 Lamia Handgun"
+	disk_name = "H&S - 11mm Lamia Handgun"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -358,7 +358,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/basilisk
-	disk_name = "H&S - .50 Basilisk Handgun"
+	disk_name = "H&S - 11mm Basilisk Handgun"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -371,7 +371,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/naga
-	disk_name = "M6 .50 Naga Handgun"
+	disk_name = "M6 11mm Naga Handgun"
 	icon_state = "black"
 
 	license = 8
@@ -384,7 +384,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/akurra
-	disk_name = "SA - .50 Akurra Silenced Handgun"
+	disk_name = "SA - 11mm Akurra Silenced Handgun"
 	icon_state = "sa"
 
 	license = 8
@@ -397,7 +397,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/revolver_mateba
-	disk_name = "SA - .50 Kurtz Mateba Revolver"
+	disk_name = "SA - 11mm Kurtz Mateba Revolver"
 	icon_state = "sa"
 
 	license = 8
@@ -501,7 +501,7 @@
 // SMGs
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/wirbelwind
-	disk_name = "Seinemetall Defense GmbH - .35 Wirbelwind SMG"
+	disk_name = "Seinemetall Defense GmbH - 9mm Wirbelwind SMG"
 	icon_state = "frozenstar"
 
 	license = 12
@@ -514,7 +514,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/texan
-	disk_name = "SA - .35 Texan SMG"
+	disk_name = "SA - 9mm Texan SMG"
 	icon_state = "sa"
 
 	license = 12
@@ -527,7 +527,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/mac
-	disk_name = "SA - .35 MAC SMG"
+	disk_name = "SA - 9mm MAC SMG"
 	icon_state = "sa"
 
 	license = 8
@@ -539,10 +539,10 @@
 		/datum/design/autolathe/ammo/smg_lethal = 2,
 	)
 
-// .257 carbines
+// 6.5mm carbines
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sol
-	disk_name = "H&S - .257 \"Solarian\" Carbine"
+	disk_name = "H&S - 6.5mm \"Solarian\" Carbine"
 	icon_state = "ironhammer"
 
 	license = 18
@@ -562,7 +562,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ostwind
-	disk_name = "Seinemetall Defense GmbH - .257 Ostwind Carbine"
+	disk_name = "Seinemetall Defense GmbH - 6.5mm Ostwind Carbine"
 	icon_state = "frozenstar"
 
 	license = 16
@@ -578,10 +578,10 @@
 		/datum/design/autolathe/ammo/lrifle_lethal = 4,
 	)
 
-// .257
+// 6.5mm Carbine
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/saw
-	disk_name = "SA - .257 Pegasus LMG"
+	disk_name = "SA - 6.5mm Pegasus LMG"
 	icon_state = "sa"
 
 	license = 8 //So we can print 2 and some ammo
@@ -595,7 +595,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sika
-	disk_name = "Hunters Inc - .257 Sika Rifle"
+	disk_name = "Hunters Inc - 6.5mm Sika Rifle"
 	icon_state = "hunters"
 
 	license = 8
@@ -609,7 +609,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/roe
-	disk_name = "Hunters Inc - .257 Roe Rifle"
+	disk_name = "Hunters Inc - 6.5mm Roe Rifle"
 	icon_state = "hunters"
 
 	license = 8
@@ -622,10 +622,27 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
 	)
 
-// 7.5 Rifles
+/obj/item/computer_hardware/hard_drive/portable/design/guns/bren
+	disk_name = "No-Publisher - 6.5mm \"Kalashnabren\""
+	icon_state = "black"
+
+	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/bren = 6,
+		/datum/design/autolathe/ammo/rifle_short_practice = 0,
+		/datum/design/autolathe/ammo/rifle_short_rubber,
+		/datum/design/autolathe/ammo/rifle_short,
+		/datum/design/autolathe/ammo/rifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/rifle_practice = 1,
+		/datum/design/autolathe/ammo/rifle_rubber = 2,
+		/datum/design/autolathe/ammo/rifle = 2,
+		/datum/design/autolathe/ammo/rifle_lethal = 4,
+	)
+
+// 7.62mm Rifles
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov
-	disk_name = "SA - 7.5 Kalashnikov Rifle"
+	disk_name = "SA - 7.62mm Kalashnikov Rifle"
 	icon_state = "sa"
 
 	license = 16
@@ -642,7 +659,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/tac_kalashnikov
-	disk_name = "SA - 7.5 Breacher Kalashnikov Rifle"
+	disk_name = "SA - 7.62mm Breacher Kalashnikov Rifle"
 	icon_state = "sa"
 
 	license = 18
@@ -661,25 +678,8 @@
 		/datum/design/autolathe/ammo/shotgun_beanbag = 1
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/bren
-	disk_name = "No-Publisher - .257 \"Kalashnabren\""
-	icon_state = "black"
-
-	license = 16
-	designs = list(
-		/datum/design/autolathe/gun/bren = 6,
-		/datum/design/autolathe/ammo/rifle_short_practice = 0,
-		/datum/design/autolathe/ammo/rifle_short_rubber,
-		/datum/design/autolathe/ammo/rifle_short,
-		/datum/design/autolathe/ammo/rifle_short_lethal = 2,
-		/datum/design/autolathe/ammo/rifle_practice = 1,
-		/datum/design/autolathe/ammo/rifle_rubber = 2,
-		/datum/design/autolathe/ammo/rifle = 2,
-		/datum/design/autolathe/ammo/rifle_lethal = 4,
-	)
-
 /obj/item/computer_hardware/hard_drive/portable/design/guns/boltgun_sa
-	disk_name = "Hunters Inc - 7.5mm Novakovic Rifle"
+	disk_name = "Hunters Inc - 7.62mm Novakovic Rifle"
 	icon_state = "hunters"
 
 	license = 12
@@ -692,10 +692,10 @@
 		/datum/design/autolathe/ammo/sl_rifle,
 	)
 
-//.408 rifles
+//10x77mm heavy rifles
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/hustler
-	disk_name = "H&S NM - .408 Hustler Heavy Rifle"
+	disk_name = "H&S NM - 10x77mm Hustler Heavy Rifle"
 	icon_state = "ironhammer"
 
 	license = 12
@@ -708,7 +708,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/boar
-	disk_name = "H&S - .408 Boar Heavy Carbine"
+	disk_name = "H&S - 10x77mm Boar Heavy Carbine"
 	icon_state = "frozenstar"
 
 	license = 6
@@ -722,7 +722,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sts40
-	disk_name = "SA - .408 STS-40 Heavy Rifle"
+	disk_name = "SA - 10x77mm STS-40 Heavy Rifle"
 	icon_state = "sa"
 
 	license = 8
@@ -736,7 +736,7 @@
 
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/scout
-	disk_name = "H&S - .408 Scout Sniper Rifle"
+	disk_name = "H&S - 10x77mm Scout Sniper Rifle"
 	icon_state = "frozenstar"
 
 	license = 6
@@ -750,7 +750,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/custer
-	disk_name = "H&S - .408 Custer Repeating Rifle"
+	disk_name = "H&S - 10x77mm Custer Repeating Rifle"
 	icon_state = "sa"
 
 	license = 8
@@ -765,7 +765,7 @@
 // Heavy
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/heavysniper
-	disk_name = "SA - .60-06 Penetrator AMR"
+	disk_name = "SA - 12.7x108mm Penetrator AMR"
 	icon_state = "sa"
 
 	license = 8
@@ -777,7 +777,7 @@
 
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk
-	disk_name = "SA - 7.5mm Pulemyot Kalashnikova MG"
+	disk_name = "SA - 7.62mm Pulemyot Kalashnikova MG"
 	icon_state = "sa"
 
 	license = 12
@@ -948,10 +948,10 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 	)
 
 
-//10mm Guns
+//10x24mm Guns
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/pulse_rifle
-	disk_name = "PAR - 10mm Caseless Pulse Rifle"
+	disk_name = "PAR - 10x24mm Caseless Pulse Rifle"
 	icon_state = "black"
 
 	license = 10 //2 guns 2 mags and 1 box
@@ -962,7 +962,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/survivalrifle
-	disk_name = "Hunters Inc - 10mm Caseless /'Bond/' Rifle"
+	disk_name = "Hunters Inc - 10x24mm Caseless /'Bond/' Rifle"
 	icon_state = "hunters"
 
 	license = 10 //2 guns 2 mags and 1 box

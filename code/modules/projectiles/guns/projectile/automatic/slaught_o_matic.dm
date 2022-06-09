@@ -19,7 +19,7 @@
 	price_tag = 10
 	serial_type = "H&S"
 
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
 
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	var/list/possible_colors = list("purple", "magenta", "blue", "cyan", "aqua", "green", "yellow", "orange", "red" )

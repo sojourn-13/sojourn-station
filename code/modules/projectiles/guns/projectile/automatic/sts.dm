@@ -100,7 +100,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle
 	name = "\"STS\" battle rifle"
-	desc = "A rugged STS-30.  Uses 7.5mm rifle rounds. We'll keep our land a free land, stop the enemy coming in."
+	desc = "A rugged STS-30.  Uses 7.62mm rifle rounds. We'll keep our land a free land, stop the enemy coming in."
 	icon = 'icons/obj/guns/projectile/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -123,7 +123,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/sawn
 	name = "sawn down \"STS\" battle rifle"
-	desc = "A rugged STS-30.  Uses 7.5mm rifle rounds. This one has been shortened as much as possible while still able to function."
+	desc = "A rugged STS-30.  Uses 7.62mm rifle rounds. This one has been shortened as much as possible while still able to function."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -141,7 +141,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield
 	name = "\"STS PARA\" Blackshield rifle"
-	desc = "A lightweight modified variant of the STS-30 that takes 7.5mm rounds, shedding wartime wood for modern plastic polymer. \
+	desc = "A lightweight modified variant of the STS-30 that takes 7.62mm rounds, shedding wartime wood for modern plastic polymer. \
 	The lightweight polymer, skeletal stock, and shortened barrel make this weapon much lighter than the standard STS with modified recievers and gas block for better recoil control. \
 	Two stamps are pressed into the side of the receiver: A 'M&C' logo and a blackshield logo."
 	icon = 'icons/obj/guns/projectile/sts35.dmi'
@@ -165,7 +165,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield
 	name = "sawn down Blackshield \"STS PARA\" rifle"
-	desc = "A rugged STS-35 with two round burst.  Uses 7.5mm rifle rounds. This one has been shortened as much as possible while still able to function still more effective then a normal STS-30 varent."
+	desc = "A rugged STS-35 with two round burst.  Uses 7.62mm rifle rounds. This one has been shortened as much as possible while still able to function still more effective then a normal STS-30 varent."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -186,7 +186,7 @@
 
 /obj/item/gun/projectile/automatic/sts/hrifle
 	name = "\"STS\" heavy rifle"
-	desc = "A rugged STS-40. Uses .408 heavy rifle rounds. If we have to go alone, we'll go alone with pride."
+	desc = "A rugged STS-40. Uses 10x77mm heavy rifle rounds. If we have to go alone, we'll go alone with pride."
 	icon = 'icons/obj/guns/projectile/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -207,7 +207,7 @@
 
 /obj/item/gun/projectile/automatic/sts/hrifle/sawn
 	name = "sawn down \"STS\" heavy rifle"
-	desc = "A rugged STS-40. Uses .408 heavy rifle rounds. This one has been shortened as much as possible while still able to function."
+	desc = "A rugged STS-40. Uses 10x77mm heavy rifle rounds. This one has been shortened as much as possible while still able to function."
 	icon = 'icons/obj/guns/projectile/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"

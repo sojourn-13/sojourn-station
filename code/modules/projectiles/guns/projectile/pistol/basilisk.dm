@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/basilisk
 	name = "\"Basilisk\" heavy pistol"
-	desc = "A distant relative of the Lamia produced by Holland & Sullivan. Robust and straight, this is a gun for a leader, not just an officer. Uses .50 kurtz."
+	desc = "A distant relative of the Lamia produced by Holland & Sullivan. Robust and straight, this is a gun for a leader, not just an officer. Uses 11mm."
 	icon = 'icons/obj/guns/projectile/basilisk.dmi'
 	icon_state = "basilisk"
 	item_state = "basilisk"
@@ -19,7 +19,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	auto_eject = 1
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_11MM)
 	serial_type = "H&S"
 
 /obj/item/gun/projectile/basilisk/update_icon()

@@ -95,7 +95,7 @@
 //Ranger kits
 /obj/item/storage/box/m_kit/armstrong
 	name = "Armstrong Kit"
-	desc = "The standard Marshal box kit containing a Armstrong lever action rifle, a repeating rifle chambered in .40 Magnum."
+	desc = "The standard Marshal box kit containing a Armstrong lever action rifle, a repeating rifle chambered in 10mm Magnum."
 
 	populate_contents()
 		new /obj/item/gun/projectile/boltgun/lever(src)
@@ -142,7 +142,7 @@
 
 /obj/item/storage/box/m_kit/liberty
 	name = "Liberty Secondary Kit"
-	desc = "The standard Marshal box kit containing a Liberty pistol. A .40 Magnum pistol made by a local Marshal gunsmith near you!"
+	desc = "The standard Marshal box kit containing a Liberty pistol. A 10mm Magnum pistol made by a local Marshal gunsmith near you!"
 
 	populate_contents()
 		new /obj/item/gun/projectile/colt/liberty(src)
@@ -152,8 +152,8 @@
 
 /obj/item/storage/box/m_kit/glock
 	name = "\improper Sky Secondary Kit"
-	desc = "The standard Marshal box kit containing a sky model glock pistol. A reasonably well made .35 pistol that has both semi-auto and burst fire options. Considered highly desirable \
-	for its low recoil and ability to take .35 drum mags and silencers."
+	desc = "The standard Marshal box kit containing a sky model glock pistol. A reasonably well made 9mm pistol that has both semi-auto and burst fire options. Considered highly desirable \
+	for its low recoil and ability to take 9mm drum mags and silencers."
 
 	populate_contents()
 		new /obj/item/gun/projectile/glock(src)
@@ -164,7 +164,7 @@
 // Ranger secondary kits
 /obj/item/storage/box/m_kit/deckard
 	name = "Deckards Secondary Kit"
-	desc = "The standard Marshal box kit containing a Deckard revolver. A handcanon in all but name, its cylinder having the capacity of five .50 Kurtz rounds."
+	desc = "The standard Marshal box kit containing a Deckard revolver. A handcanon in all but name, its cylinder having the capacity of five 11mm rounds."
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/deckard(src)
@@ -175,7 +175,7 @@
 
 /obj/item/storage/box/m_kit/judge
 	name = "Judge Secondary Kit"
-	desc = "The standard Marshal box kit containing a Judge revolver, a large caliber revolver capable of firing a 7.5 round down range effectively. Highly sought after by police forces."
+	desc = "The standard Marshal box kit containing a Judge revolver, a large caliber revolver capable of firing a 7.62mm round down range effectively. Highly sought after by police forces."
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/judge(src)

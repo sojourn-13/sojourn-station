@@ -6,7 +6,7 @@
 
 //Low-caliber pistols and SMGs
 //*********************************//
-///.35 Auto///
+///9mm///
 /obj/item/projectile/bullet/pistol_35
 	damage_types = list(BRUTE = 16)
 	armor_penetration = 5
@@ -110,7 +110,7 @@
 
 //Revolvers and high-caliber pistols
 //*********************************//
-/// .40 Magnum ///
+/// 10mm Magnum ///
 
 /obj/item/projectile/bullet/magnum_40
 	damage_types = list(BRUTE = 24)
@@ -220,7 +220,7 @@
 	check_armour = ARMOR_BIO
 	recoil = 2
 
-/// .50 Kurtz ///
+/// 11mm Heavy Pistol ///
 /obj/item/projectile/bullet/kurtz_50
 	damage_types = list(BRUTE = 35)
 	armor_penetration = 15
@@ -279,7 +279,7 @@
 //Carbines and rifles
 //*********************************//
 
-/// .257 Carbine///
+/// 6.5x39mm Carbine///
 
 /obj/item/projectile/bullet/light_rifle_257
 	damage_types = list(BRUTE = 22)
@@ -348,7 +348,7 @@
 /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 	muzzle_type = null
 
-///7.5 Rifle///
+/// 7.62x39mm Rifle ///
 
 /obj/item/projectile/bullet/rifle_75
 	damage_types = list(BRUTE = 25)
@@ -429,7 +429,7 @@
 	affective_ap_range = 3
 	recoil = 3
 
-/// .408 OMNI ///
+/// 10x77mm Heavy Rifle ///
 
 /obj/item/projectile/bullet/heavy_rifle_408
 	damage_types = list(BRUTE = 28)
@@ -529,7 +529,7 @@
 	affective_ap_range = 5
 	recoil = 10
 
-//Sniper rifles
+//// 12.7x108mm Anti-Material Rifle Rounds ////
 /obj/item/projectile/bullet/antim
 	damage_types = list(BRUTE = 90)
 	armor_penetration = 100

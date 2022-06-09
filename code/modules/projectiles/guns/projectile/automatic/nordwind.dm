@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/nordwind
 	name = "\"Nordwind\" precision rifle"
-	desc = "A \"Nordwind\" high-end police-grade marksman rifle manufactured by Seinemetall Defense GmbH equiped with a night-vision scope. Primarily used by law enforcement, counter-terror units, and private security. Uses 7.5mm Rifle rounds."
+	desc = "A \"Nordwind\" high-end police-grade marksman rifle manufactured by Seinemetall Defense GmbH equiped with a night-vision scope. Primarily used by law enforcement, counter-terror units, and private security. Uses 7.62mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/nordwind.dmi'
 	icon_state = "nordwind"
 	item_state = "nordwind"
@@ -58,7 +58,7 @@
 /obj/item/gun/projectile/automatic/nordwind/strelki
 	name = "\"Strelki\" precision rifle"
 	desc = "A Strelki precision rifle, an inexpensive rifle of dubious quality made by Nadezhda Marshals gunsmiths.\
-			Its mostly wooden design and its usage of 7.5 rounds make it the ideal weapon for a hunter tired of a crude boltaction. The frontier's favorite sniper!"
+			Its mostly wooden design and its usage of 7.62mm rounds make it the ideal weapon for a hunter tired of a crude boltaction. The frontier's favorite sniper!"
 	icon = 'icons/obj/guns/projectile/strelki.dmi'
 	icon_state = "strelki"
 	item_state = "strelki"

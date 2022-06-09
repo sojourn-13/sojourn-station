@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/lamia
 	name = "\"Lamia\" heavy pistol"
-	desc = "The \"Lamia\", a massive handgun based on the M6 series, repackaged by Holland & Sullivan for civilian and law enforcement use. Uses .50 Kurtz."
+	desc = "The \"Lamia\", a massive handgun based on the M6 series, repackaged by Holland & Sullivan for civilian and law enforcement use. Uses 11mm."
 	icon = 'icons/obj/guns/projectile/lamia.dmi'
 	icon_state = "lamia"
 	item_state = "lamia"
@@ -18,7 +18,7 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.3
 	init_recoil = HANDGUN_RECOIL(1.3)
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_11MM)
 	serial_type = "H&S"
 
 /obj/item/gun/projectile/lamia/update_icon()
@@ -33,7 +33,7 @@
 
 /obj/item/gun/projectile/lamia/dark
 	name = "\"Naga\" heavy pistol"
-	desc = "An M6 \"Naga\" heavy pistol, either a copy, surplus, or stolen. It's impossible to tell with the defaced markings. Uses .50 Kurtz."
+	desc = "An M6 \"Naga\" heavy pistol, either a copy, surplus, or stolen. It's impossible to tell with the defaced markings. Uses 11mm."
 	icon_state = "dark_lamia"
 	item_state = "dark_lamia"
 	serial_type = "INDEX"
@@ -41,7 +41,7 @@
 
 /obj/item/gun/projectile/lamia/dark/sf
 	name = "\"Rattler\" heavy pistol"
-	desc = "An M6 \"Rattler\" heavy pistol, the mainline heavy sidearm of the galaxy. This one still bears SolFed markings either lost or stolen. Uses .50 Kurtz."
+	desc = "An M6 \"Rattler\" heavy pistol, the mainline heavy sidearm of the galaxy. This one still bears SolFed markings either lost or stolen. Uses 11mm."
 	icon_state = "sfdark_lamia"
 	item_state = "sfdark_lamia"
 	serial_type = "Sol Fed"
@@ -49,7 +49,7 @@
 
 /obj/item/gun/projectile/lamia/scoped
 	name = "\"Argos\" advanced heavy pistol"
-	desc = "Seinemetall Defense GmbH handgun .50 \"Argos\" Based on the \"Lamia\" heavy pistol, it's fit for high ranking enforcers; fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
+	desc = "Seinemetall Defense GmbH handgun 11mm \"Argos\" Based on the \"Lamia\" heavy pistol, it's fit for high ranking enforcers; fitted with a smart-linked optic and stabilizer. Uses 11mm."
 	icon_state = "scoped_lamia"
 	item_state = "scoped_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 5)
@@ -62,7 +62,7 @@
 
 /obj/item/gun/projectile/lamia/scoped/dark
 	name = "\"Gemini\" advanced heavy pistol"
-	desc = "The M6D \"Gemini\", a heavy pistol manufactured on Mars and often used by SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
+	desc = "The M6D \"Gemini\", a heavy pistol manufactured on Mars and often used by SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses 11mm."
 	icon_state = "scoped_dark_lamia"
 	item_state = "scoped_dark_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
@@ -77,7 +77,7 @@
 
 /obj/item/gun/projectile/lamia/socom
 	name = "\"SOCOM\" silenced heavy pistol"
-	desc = "The M6C SOCOM, a variant of the M6 \"Naga\", it's a highly specialized and advanced handgun developed for the Solar Federation Special Operations Command. This one is fitted with a smart-linked optic and integrated suppressor. Uses .50 Kurtz."
+	desc = "The M6C SOCOM, a variant of the M6 \"Naga\", it's a highly specialized and advanced handgun developed for the Solar Federation Special Operations Command. This one is fitted with a smart-linked optic and integrated suppressor. Uses 11mm."
 	icon_state = "socom"
 	item_state = "socom"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
@@ -91,7 +91,7 @@
 
 /obj/item/gun/projectile/lamia/akurra
 	name = "\"Akurra\" silenced heavy pistol"
-	desc = "The \"Akurra\", a specialized and heavily modified Lamia-pattern pistol that's been shaved down to a sleek gunfighter's tool.  This one is fitted with an integrated suppressor and gutter-sights. Uses .50 Kurtz."
+	desc = "The \"Akurra\", a specialized and heavily modified Lamia-pattern pistol that's been shaved down to a sleek gunfighter's tool.  This one is fitted with an integrated suppressor and gutter-sights. Uses 11mm."
 	icon_state = "akurra"
 	item_state = "akurra"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
@@ -104,7 +104,7 @@
 
 /obj/item/gun/projectile/lamia/amnesty
 	name = "\"Amnesty\" heavy pistol"
-	desc = "The \"Amnesty\" pistol started as a prototype as parts from advanced heavy pistols found themselves converted to a cheaper, easier to procude format alongside improvements made to Marshal firearms. Chambered in .50 Kurtz."
+	desc = "The \"Amnesty\" pistol started as a prototype as parts from advanced heavy pistols found themselves converted to a cheaper, easier to procude format alongside improvements made to Marshal firearms. Chambered in 11mm."
 	icon = 'icons/obj/guns/projectile/amnesty.dmi'
 	icon_state = "amnesty"
 	item_state = "amnesty"

@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/basstet
 	name = "\"Basstet\" carbine"
 	desc = "Made by Nadezhda Marshals gunsmiths, the Basstet is the cheapest manufactured carbine on the colony. \
-		 A copy of the Bulldog pattern, shortened into a mid-length carbine, made as cheap as possible while still making sure it will not blow up in your hand, chambered in .257."
+		 A copy of the Bulldog pattern, shortened into a mid-length carbine, made as cheap as possible while still making sure it will not blow up in your hand, chambered in 6.5mm."
 	icon = 'icons/obj/guns/projectile/basstet.dmi'
 	icon_state = "basstet"
 	item_state = "basstet"

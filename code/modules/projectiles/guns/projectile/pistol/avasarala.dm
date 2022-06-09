@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/avasarala
 	name = "\"Avasarala\" heavy pistol"
-	desc = "An old weapon design, hyped up by its visual 'cool' factor but hardly good in any practical scenario. It's ineffective design and bafflingly badly done specs make it style over function all the way. Uses .50 kurtz."
+	desc = "An old weapon design, hyped up by its visual 'cool' factor but hardly good in any practical scenario. It's ineffective design and bafflingly badly done specs make it style over function all the way. Uses 11mm."
 	icon = 'icons/obj/guns/projectile/avasarala.dmi'
 	icon_state = "avasarala"
 	item_state = "avasarala"
@@ -18,7 +18,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/avasarala_cock.ogg'
 	fire_sound 	= 'sound/weapons/guns/fire/avasarala_fire.ogg'
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_11MM)
 	serial_type = "SA"
 
 /obj/item/gun/projectile/avasarala/update_icon()

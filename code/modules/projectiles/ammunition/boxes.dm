@@ -36,10 +36,10 @@
 			to_chat(user, SPAN_NOTICE("You fail to pick anything up with \the [src]."))
 	update_icon()
 
-//// .35 ////
+//// 9mm ////
 
 /obj/item/ammo_magazine/ammobox/pistol_35
-	name = "ammunition packet (.35 Auto)"
+	name = "ammunition packet (9mm)"
 	icon_state = "pistol"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_PISTOL
@@ -47,73 +47,73 @@
 	max_ammo = 30
 
 /obj/item/ammo_magazine/ammobox/pistol_35/scrap
-	name = "ammunition packet (old .35 Auto)"
+	name = "ammunition packet (old 9mm)"
 	icon_state = "pistol_s"
 	ammo_type = /obj/item/ammo_casing/pistol_35/scrap
 
 /obj/item/ammo_magazine/ammobox/pistol_35/practice
-	name = "ammunition packet (.35 Auto practice)"
+	name = "ammunition packet (9mm practice)"
 	icon_state = "pistol_p"
 	ammo_type = /obj/item/ammo_casing/pistol_35/practice
 
 /obj/item/ammo_magazine/ammobox/pistol_35/hv
-	name = "ammunition packet (.35 Auto high-velocity)"
+	name = "ammunition packet (9mm high-velocity)"
 	icon_state = "pistol_hv"
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 
 /obj/item/ammo_magazine/ammobox/pistol_35/rubber
-	name = "ammunition packet (.35 Auto rubber)"
+	name = "ammunition packet (9mm rubber)"
 	icon_state = "pistol_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
 /obj/item/ammo_magazine/ammobox/pistol_35/lethal
-	name = "ammunition packet (.35 Auto hollow-point)"
-	desc = "A box of self-defense grade .35 auto hollow-points."
+	name = "ammunition packet (9mm hollow-point)"
+	desc = "A box of self-defense grade 9mm hollow-points."
 	icon_state = "pistol_l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 
 /obj/item/ammo_magazine/ammobox/pistol_35/laser
-	name = "ammunition packet (.35 Auto laser)"
+	name = "ammunition packet (9mm laser)"
 	icon_state = "pistol_si"
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
 
 /obj/item/ammo_magazine/ammobox/pistol_35/biomatter
-	name = "ammunition packet (.35 Auto Caustic)"
-	desc = "A box of caustic caseless .35 Auto."
+	name = "ammunition packet (9mm Caustic)"
+	desc = "A box of caustic caseless 9mm."
 	icon_state = "pistol_bio"
 	ammo_type = /obj/item/ammo_casing/pistol_35/biomatter
 
-// .35 BIG BAWKS
+// 9mm BIG BAWKS
 /obj/item/ammo_magazine/ammobox/pistol_35/large
-	name = "ammunition box (.35 Auto)"
-	desc = "A large box of police grade .35 auto."
+	name = "ammunition box (9mm)"
+	desc = "A large box of police grade 9mm."
 	matter = list(MATERIAL_STEEL = 15)
 	w_class = ITEM_SIZE_BULKY
 	max_ammo = 200
 	icon_state = "pistol_large"
 
 /obj/item/ammo_magazine/ammobox/pistol_35/large/lethal
-	name = "ammunition box (.35 Auto hollow-point)"
-	desc = "A large box of self defense grade .35 auto hollow-point rounds."
+	name = "ammunition box (9mm hollow-point)"
+	desc = "A large box of self defense grade 9mm hollow-point rounds."
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 	icon_state = "pistol_large_hp"
 
 /obj/item/ammo_magazine/ammobox/pistol_35/large/rubber
-	name = "ammunition box (.35 Auto rubber)"
-	desc = "A large box of police grade .35 auto rubber rounds."
+	name = "ammunition box (9mm rubber)"
+	desc = "A large box of police grade 9mm rubber rounds."
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 	icon_state = "pistol_large_rubber"
 
 /obj/item/ammo_magazine/ammobox/pistol_35/large/hv
-	name = "ammunition box (.35 Auto high-velocity)"
-	desc = "A large box of high velocity .35 auto rounds"
+	name = "ammunition box (9mm high-velocity)"
+	desc = "A large box of high velocity 9mm rounds"
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 	icon_state = "pistol_large_hv"
 
-//// . 40 ////
+//// 10mm ////
 
 /obj/item/ammo_magazine/ammobox/magnum_40
-	name = "ammunition packet (.40 Magnum)"
+	name = "ammunition packet (10mm Magnum)"
 	icon_state = "magnum"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_MAGNUM
@@ -121,50 +121,50 @@
 	max_ammo = 30
 
 /obj/item/ammo_magazine/ammobox/magnum_40/scrap
-	name = "ammunition packet (old .40 Magnum)"
+	name = "ammunition packet (old 10mm Magnum)"
 	icon_state = "magnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
 /obj/item/ammo_magazine/ammobox/magnum_40/practice
-	name = "ammunition packet (.40 Magnum practice)"
+	name = "ammunition packet (10mm Magnum practice)"
 	icon_state = "magnum_p"
 	ammo_type = /obj/item/ammo_casing/magnum_40/practice
 
 /obj/item/ammo_magazine/ammobox/magnum_40/hv
-	name = "ammunition packet (.40 Magnum high-velocity)"
+	name = "ammunition packet (10mm Magnum high-velocity)"
 	icon_state = "magnum_hv"
 	ammo_type = /obj/item/ammo_casing/magnum_40/hv
 
 /obj/item/ammo_magazine/ammobox/magnum_40/rubber
-	name = "ammunition packet (.40 Magnum rubber)"
+	name = "ammunition packet (10mm Magnum rubber)"
 	icon_state = "magnum_r"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 
 /obj/item/ammo_magazine/ammobox/magnum_40/rubber/pepperball
-	name = "ammunition packet (.40 Magnum pepperspray)"
-	desc = "A box of police grade .40 Auto-Mag pepperspray type rounds."
+	name = "ammunition packet (10mm Magnum pepperspray)"
+	desc = "A box of police grade 10mm Auto-Mag pepperspray type rounds."
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
 
 /obj/item/ammo_magazine/ammobox/magnum_40/lethal
-	name = "ammunition packet (.40 Magnum hollow-point)"
-	desc = "A box of self-defense grade .40 Auto-Mag hollow-points."
+	name = "ammunition packet (10mm Magnum hollow-point)"
+	desc = "A box of self-defense grade 10mm Auto-Mag hollow-points."
 	icon_state = "magnum_l"
 	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
 
 /obj/item/ammo_magazine/ammobox/magnum_40/laser
-	name = "ammunition packet (.40 Magnum Laser)"
+	name = "ammunition packet (10mm Magnum Laser)"
 	icon_state = "magnum_si"
 	ammo_type = /obj/item/ammo_casing/magnum_40/laser
 
 /obj/item/ammo_magazine/ammobox/magnum_40/biomatter
-	name = "ammunition packet (.40 Magnum Caustic)"
-	desc = "A box of caustic caseless .40 Magnum."
+	name = "ammunition packet (10mm Magnum Caustic)"
+	desc = "A box of caustic caseless 10mm Magnum."
 	icon_state = "magnum_bio"
 	ammo_type = /obj/item/ammo_casing/magnum_40/biomatter
 
-//.40 big boxes
+//10mm big boxes
 /obj/item/ammo_magazine/ammobox/magnum_40/large
-	name = "ammunition box (.40 Magnum)"
+	name = "ammunition box (10mm Magnum)"
 	icon_state = "magbox"
 	matter = list(MATERIAL_STEEL = 15)
 	w_class = ITEM_SIZE_BULKY
@@ -173,25 +173,25 @@
 	max_ammo = 150
 
 /obj/item/ammo_magazine/ammobox/magnum_40/large/lethal
-	name = "ammunition box (.40 Magnum hollow-point)"
+	name = "ammunition box (10mm Magnum hollow-point)"
 	icon_state = "magboxhp"
 	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
 
 /obj/item/ammo_magazine/ammobox/magnum_40/large/rubber
-	name = "ammunition box (.40 Magnum rubber)"
+	name = "ammunition box (10mm Magnum rubber)"
 	icon_state = "magboxrubber"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 
 /obj/item/ammo_magazine/ammobox/magnum_40/large/hv
-	name = "ammunition box (.40 Magnum high-velocity)"
+	name = "ammunition box (10mm Magnum high-velocity)"
 	icon_state = "magboxhv"
 	ammo_type = /obj/item/ammo_casing/magnum_40/hv
 
 
-//// .257 carbine ////
+//// 6.5 carbine ////
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257
-	name = "ammunition box (.257 Carbine FMJ)"
+	name = "ammunition box (6.5mm Carbine FMJ)"
 	icon_state = "box_lrifle"
 	matter = list(MATERIAL_STEEL = 10)
 	w_class = ITEM_SIZE_BULKY
@@ -210,28 +210,28 @@
 	playsound(src,'sound/weapons/guns/interact/ammomove.ogg',60,3)
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257/rubber
-	name = "ammunition box (.257 Carbine rubber)"
+	name = "ammunition box (6.5mm Carbine rubber)"
 	icon_state = "box_lrifle_r"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257/practice
-	name = "ammunition box (.257 Carbine practice)"
+	name = "ammunition box (6.5mm Carbine practice)"
 	icon_state = "box_lrifle_p"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/practice
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257/lethal
-	name = "ammunition box (.257 Carbine hollow-point)"
+	name = "ammunition box (6.5mm Carbine hollow-point)"
 	icon_state = "box_clrifle_l"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257/highvelocity
-	name = "ammunition box (.257 Carbine high-velocity)"
+	name = "ammunition box (6.5mm Carbine high-velocity)"
 	icon_state = "box_lrifle_p"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/hv
 
-// .257 Pacets
+// 6.5mm Packets
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small
-	name = "ammunition box (.257 Carbine FMJ)"
+	name = "ammunition box (6.5mm Carbine FMJ)"
 	icon_state = "lrifle"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_LRIFLE
@@ -239,42 +239,42 @@
 	max_ammo = 60
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small/practice
-	name = "ammunition packet (.257 Carbine practice)"
+	name = "ammunition packet (6.5mm Carbine practice)"
 	icon_state = "lrifle_p"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/practice
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small/hv
-	name = "ammunition packet (.257 Carbine high-velocity)"
+	name = "ammunition packet (6.5mm Carbine high-velocity)"
 	icon_state = "lrifle_hv"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/hv
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small/rubber
-	name = "ammunition packet (.257 Carbine rubber)"
+	name = "ammunition packet (6.5mm Carbine rubber)"
 	icon_state = "lrifle_r"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small/lethal
-	name = "ammunition packet (.257 Carbine hollow-point)"
+	name = "ammunition packet (6.5mm Carbine hollow-point)"
 	icon_state = "lrifle_l"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small/laser
-	name = "ammunition packet (.257 Carbine laser)"
+	name = "ammunition packet (6.5mm Carbine laser)"
 	icon_state = "clrifle_si"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/laser
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257/scrap
-	name = "ammunition packet (old .257 Rifle)"
+	name = "ammunition packet (old 6.5mm Carbine)"
 	icon_state = "clrifle_s"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/scrap
 	max_ammo = 30
 
-////7.5 Rifle////
+////7.62mm Rifle////
 
 /obj/item/ammo_magazine/ammobox/rifle_75
-	name = "ammunition box (7.5mm Rifle ball)"
+	name = "ammunition box (7.62mm Rifle ball)"
 	icon_state = "boxhrifle"
-	desc = "A box of 7.5mm rifle ammunition. 180ct, Full Metal Jacket rounds."
+	desc = "A box of 7.62mm rifle ammunition. 180ct, Full Metal Jacket rounds."
 	matter = list(MATERIAL_STEEL = 10)
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_RIFLE
@@ -293,31 +293,31 @@
 	playsound(src,'sound/weapons/guns/interact/ammomove.ogg',60,3)
 
 /obj/item/ammo_magazine/ammobox/rifle_75/rubber
-	name = "ammunition box (7.5mm Rifle rubber)"
+	name = "ammunition box (7.62mm Rifle rubber)"
 	icon_state = "boxhrifle-rubber"
-	desc = "A box of 7.5mm rifle ammunition. 180ct, deforming traumatic rounds."
+	desc = "A box of 7.62mm rifle ammunition. 180ct, deforming traumatic rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/rubber
 
 /obj/item/ammo_magazine/ammobox/rifle_75/practice
-	name = "ammunition box (7.5mm Rifle practice)"
+	name = "ammunition box (7.62mm Rifle practice)"
 	icon_state = "boxhrifle-practice"
-	desc = "A box of 7.5mm rifle ammunition. 180ct, frangible training rounds."
+	desc = "A box of 7.62mm rifle ammunition. 180ct, frangible training rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/practice
 
 /obj/item/ammo_magazine/ammobox/rifle_75/lethal
-	name = "ammunition box (7.5mm Rifle Hollow Point)"
+	name = "ammunition box (7.62mm Rifle Hollow Point)"
 	icon_state = "boxhrifle-lethal"
-	desc = "A box of 7.5mm rifle ammunition. 180ct, hollow-point rounds."
+	desc = "A box of 7.62mm rifle ammunition. 180ct, hollow-point rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
 /obj/item/ammo_magazine/ammobox/rifle_75/hv
-	name = "ammunition box (7.5mm Rifle High-Velocity)"
+	name = "ammunition box (7.62mm Rifle High-Velocity)"
 	icon_state = "boxhrifle-hv"
-	desc = "A box of 7.5mm rifle ammunition. 180ct, high-velocity rounds."
+	desc = "A box of 7.62mm rifle ammunition. 180ct, high-velocity rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/hv
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small
-	name = "ammunition packet (7.5mm Rifle ball)"
+	name = "ammunition packet (7.62mm Rifle ball)"
 	icon_state = "lrifle"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_RIFLE
@@ -325,32 +325,32 @@
 	max_ammo = 30
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber
-	name = "ammunition packet (7.5mm Rifle rubber)"
+	name = "ammunition packet (7.62mm Rifle rubber)"
 	icon_state = "rifle_r"
 	ammo_type = /obj/item/ammo_casing/rifle_75/rubber
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/practice
-	name = "ammunition packet (7.5mm Rifle practice)"
+	name = "ammunition packet (7.62mm Rifle practice)"
 	icon_state = "rifle_p"
 	ammo_type = /obj/item/ammo_casing/rifle_75/practice
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/hv
-	name = "ammunition packet (7.5mm Rifle high-velocity)"
+	name = "ammunition packet (7.62mm Rifle high-velocity)"
 	icon_state = "rifle_hv"
 	ammo_type = /obj/item/ammo_casing/rifle_75/hv
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/lethal
-	name = "ammunition packet (7.5mm Rifle hollow-point)"
+	name = "ammunition packet (7.62mm Rifle hollow-point)"
 	icon_state = "rifle_l"
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/scrap
-	name = "ammunition packet (old 7.5mm Rifle)"
+	name = "ammunition packet (old 7.62mm Rifle)"
 	icon_state = "srifle_s"
 	ammo_type = /obj/item/ammo_casing/rifle_75/scrap
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/laser
-	name = "ammunition packet (7.5mm Rifle laser)"
+	name = "ammunition packet (7.62mm Rifle laser)"
 	icon_state = "srifle_si"
 	ammo_type = /obj/item/ammo_casing/rifle_75/laser
 
@@ -378,7 +378,7 @@
 //// .223 laser shot!
 
 /obj/item/ammo_magazine/ammobox/laser_223
-	name = "ammunition packet (.223 L)"
+	name = "ammunition packet (5.56mm L)"
 	icon_state = "223-laser"
 	desc = "A packet of .223 laser round."
 	matter = list(MATERIAL_CARDBOARD = 1)
@@ -387,19 +387,19 @@
 	max_ammo = 30
 
 /obj/item/ammo_magazine/ammobox/laser_223/ap
-	name = "ammunition packet (.223 PL)"
+	name = "ammunition packet (5.56mm PL)"
 	icon_state = "223-ap-laser"
 	ammo_type = /obj/item/ammo_casing/beam/ap
 
 /obj/item/ammo_magazine/ammobox/laser_223/lethal
-	name = "ammunition packet (.223 DL)"
+	name = "ammunition packet (5.56mm DL)"
 	icon_state = "223-lethal-laser"
 	ammo_type = /obj/item/ammo_casing/beam
 
 /obj/item/ammo_magazine/ammobox/laser_223/box
-	name = "ammunition box (.223 L)"
+	name = "ammunition box (5.56mm L)"
 	icon_state = "box223-laser"
-	desc = "A large box of .223 laser round."
+	desc = "A large box of 5.56mm laser round."
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_SCI
 	ammo_type = /obj/item/ammo_casing/beam
@@ -407,21 +407,21 @@
 	w_class = ITEM_SIZE_BULKY
 
 /obj/item/ammo_magazine/ammobox/laser_223/ap/box
-	name = "ammunition box (.223 PL)"
+	name = "ammunition box (5.56mm PL)"
 	icon_state = "box223-ap-laser"
 	ammo_type = /obj/item/ammo_casing/beam/ap
 	max_ammo = 200
 
 /obj/item/ammo_magazine/ammobox/laser_223/lethal/box
-	name = "ammunition box (.223 DL)"
+	name = "ammunition box (5.56mm DL)"
 	icon_state = "box223-lethal-laser"
 	ammo_type = /obj/item/ammo_casing/beam
 	max_ammo = 200
 
-////.50 kurtz
+//// 11mm heavy pistol
 
 /obj/item/ammo_magazine/ammobox/kurtz_50
-	name = "ammunition box (.50 kurtz)"
+	name = "ammunition box (11mm)"
 	icon_state = "box50"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_50
@@ -429,37 +429,37 @@
 	max_ammo = 24
 
 /obj/item/ammo_magazine/ammobox/kurtz_50/rubber
-	name = "ammunition box (.50 kurtz rubber)"
+	name = "ammunition box (11mm rubber)"
 	icon_state = "box50-rubber"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
 
 /obj/item/ammo_magazine/ammobox/kurtz_50/practice
-	name = "ammunition box (.50 kurtz practice)"
+	name = "ammunition box (11mm practice)"
 	icon_state = "box50-practice"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/practice
 
 /obj/item/ammo_magazine/ammobox/kurtz_50/hv
-	name = "ammunition box (.50 kurtz high-velocity)"
+	name = "ammunition box (11mm high-velocity)"
 	icon_state = "box50-hv"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/hv
 
 /obj/item/ammo_magazine/ammobox/kurtz_50/lethal
-	name = "ammunition box (.50 kurtz hollow-point)"
-	desc = "A box of self-defense grade .50 Kurtz hollow-points."
+	name = "ammunition box (11mm hollow-point)"
+	desc = "A box of self-defense grade 11mm hollow-points."
 	icon_state = "box50-lethal"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/lethal
 
 /obj/item/ammo_magazine/ammobox/kurtz_50/laser
-	name = "ammunition box (.50 kurtz laser)"
+	name = "ammunition box (11mm laser)"
 	icon_state = "box50-si"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/laser
 
-//// .60-06 ////
+//// 12.7x108mm ////
 
 /obj/item/ammo_magazine/ammobox/antim
-	name = "ammunition box (.60-06 AP)"
+	name = "ammunition box (12.7mm AP)"
 	icon_state = "antim"
-	desc = "A box of .60-06 antimateriel rounds."
+	desc = "A box of large 12.7x108mm antimateriel rounds."
 	matter = list(MATERIAL_CARDBOARD = 1)
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_ANTIM
@@ -467,7 +467,7 @@
 	max_ammo = 30
 
 /obj/item/ammo_magazine/ammobox/antim_small
-	name = "ammunition packet (.60-06 AP)"
+	name = "ammunition packet (12.7mm AP)"
 	icon_state = "60-06sm"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_ANTIM
@@ -476,74 +476,74 @@
 	max_ammo = 15
 
 /obj/item/ammo_magazine/ammobox/antim/scrap
-	name = "ammunition box (old .60 Anti Material)"
+	name = "ammunition box (old 12.7mm Anti Material)"
 	icon_state = "antim_s"
 	ammo_type = /obj/item/ammo_casing/antim/scrap
 	max_ammo = 5
 
-//// 40mm rolled shot ////
+//// 17.7mm rolled shot ////
 
 /obj/item/ammo_magazine/ammobox/ball
-	name = "ammunition box (30mm rolled shot)"
+	name = "ammunition box (17.7mm rolled shot)"
 	icon_state = "antim"
-	desc = "A box of 30mm rolled shot."
+	desc = "A box of 17.7mm rolled shot."
 	matter = list(MATERIAL_STEEL = 5)
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_BALL
 	ammo_type = /obj/item/ammo_casing/ball
 	max_ammo = 30
 
-//// .408 Omni ////
+//// 10x77mm Heavy Rifle ////
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small
-	name = "ammunition packet (.408 ball)"
+	name = "ammunition packet (10x77mm ball)"
 	icon_state = "hrifle"
-	desc = "A box of .408 Omnirifle ammunition. 40ct, 7mm FMJ subcaliber sabots."
+	desc = "A box of 10x77mm heavy rifle ammunition. 40ct, 10mm FMJ subcaliber sabots."
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_CARDBOARD = 1)
 	caliber = CAL_HRIFLE
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
 	max_ammo = 40
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/rubber
-	name = "ammunition box (.408 rubber)"
+	name = "ammunition box (10x77mm rubber)"
 	icon_state = "hrifle_r"
-	desc = "A box of .408 heavy rifle ammunition. 40ct, 7mm deforming traumatic rounds."
+	desc = "A box of 10x77mm heavy rifle ammunition. 40ct, 8mm deforming traumatic rounds."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/practice
-	name = "ammunition box (.408 practice)"
+	name = "ammunition box (10x77mm practice)"
 	icon_state = "hrifle_p"
-	desc = "A box of .408 heavy rifle ammunition. 40ct, 7mm subcaliber frangible training rounds."
+	desc = "A box of 10x77mm heavy rifle ammunition. 40ct, 8mm subcaliber frangible training rounds."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/practice
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/hv
-	name = "ammunition box (.408 SLAP)"
+	name = "ammunition box (10x77mm SLAP)"
 	icon_state = "hrifle_hv"
-	desc = "A box of .408 heavy rifle ammunition. 40ct, 7mm Saboted Light Armor Penetrators, spoon-tipped."
+	desc = "A box of 10x77mm heavy rifle ammunition. 40ct, 8mm Saboted Light Armor Penetrators, spoon-tipped."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/hv
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/lethal
-	name = "ammunition box (.408 hollow point)"
+	name = "ammunition box (10x77mm hollow point)"
 	icon_state = "hrifle_l"
-	desc = "A box of .408 heavy rifle ammunition. 40ct, 7mm hollow-tipped full-caliber."
+	desc = "A box of 10x77mm heavy rifle ammunition. 40ct, 10mm hollow-tipped full-caliber."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser
-	name = "ammunition box (.408 laser)"
+	name = "ammunition box (10x77mm laser)"
 	icon_state = "hrifle_si"
-	desc = "A box of .408 heavy rifle ammunition. 40ct, 7mm subcaliber laser rounds."
+	desc = "A box of 10x77mm heavy rifle ammunition. 40ct, 7mm subcaliber laser rounds."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/laser
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap
-	name = "ammunition packet (old .408 Rifle)"
+	name = "ammunition packet (old 10x77mm Rifle)"
 	icon_state = "lrifle_s"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/scrap
 
-////bulk .408////
+////bulk 10x77mm////
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408
-	name = "ammunition box (.408 ball)"
+	name = "ammunition box (10x77mm ball)"
 	icon_state = "boxhrifle"
-	desc = "A box of .408 heavy rifle ammunition. 120ct, 7mm FMJ subcaliber sabots."
+	desc = "A box of 10x77mm heavy rifle ammunition. 120ct, 8mm FMJ subcaliber sabots."
 	matter = list(MATERIAL_STEEL = 10)
 	w_class = ITEM_SIZE_BULKY
 	mag_type = MAGAZINE
@@ -575,9 +575,9 @@
 	icon_state = "boxhrifle-[number]"
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber
-	name = "ammunition box (.408 rubber)"
+	name = "ammunition box (10x77mm rubber)"
 	icon_state = "boxhrifle-rubber"
-	desc = "A box of .408 heavy rifle ammunition. 120ct, 7mm deforming traumatic rounds."
+	desc = "A box of 10x77mm heavy rifle ammunition. 120ct, 8mm deforming traumatic rounds."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber/update_icon()
@@ -595,9 +595,9 @@
 	icon_state = "boxhrifle-rubber-[number]"
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/practice
-	name = "ammunition box (.408 practice)"
+	name = "ammunition box (10x77mm practice)"
 	icon_state = "boxhrifle-practice"
-	desc = "A box of .408 heavy rifle ammunition. 80ct, 7mm subcaliber frangible training rounds."
+	desc = "A box of 10x77mm heavy rifle ammunition. 80ct, 8mm subcaliber frangible training rounds."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/practice
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/practice/update_icon()
@@ -615,9 +615,9 @@
 	icon_state = "boxhrifle-practice-[number]"
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv
-	name = "ammunition box (.408 SLAP)"
+	name = "ammunition box (10x77mm SLAP)"
 	icon_state = "boxhrifle-hv"
-	desc = "A box of .408 heavy rifle ammunition. 120ct, 7mm Saboted Light Armor Penetrators, spoon-tipped."
+	desc = "A box of 10x77mm heavy rifle ammunition. 120ct, 8mm Saboted Light Armor Penetrators, spoon-tipped."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/hv
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv/update_icon()
@@ -635,9 +635,9 @@
 	icon_state = "boxhrifle-hv-[number]"
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/lethal
-	name = "ammunition box (.408 hollow-tip)"
+	name = "ammunition box (10x77mm hollow-tip)"
 	icon_state = "boxhrifle-lethal"
-	desc = "A box of .408 heavy rifle ammunition. 120ct, 7mm hollow-tipped full-caliber."
+	desc = "A box of 10x77mm heavy rifle ammunition. 120ct, 10mm hollow-tipped full-caliber."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/lethal/update_icon()

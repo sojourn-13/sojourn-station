@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/revolver/mistral
 	name = "\"Mistral\" magnum revolver"
-	desc = "A high-end European revolver produced by Seinemetall Defense GmbH on Earth using hand-fitted parts. Carried by the most respected of gunslingers and counter-terror specialists. Uses .40 Magnum rounds."
+	desc = "A high-end European revolver produced by Seinemetall Defense GmbH on Earth using hand-fitted parts. Carried by the most respected of gunslingers and counter-terror specialists. Uses 10mm Magnum rounds."
 	icon = 'icons/obj/guns/projectile/mistral.dmi'
 	icon_state = "mistral"
 	item_state = "mistral"

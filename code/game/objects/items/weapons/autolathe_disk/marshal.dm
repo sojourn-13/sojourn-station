@@ -146,10 +146,10 @@
 		/datum/design/autolathe/container/ammocan_ih,
 		)
 
-// .40 Magnum
+// 10mm Magnum
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/liberty
-	disk_name = "NM - .40 Liberty"
+	disk_name = "NM - 10mm Liberty"
 	icon_state = "marshal"
 
 	license = 8
@@ -162,7 +162,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/freedom
-	disk_name = "NM - .40 Freedom SMG"
+	disk_name = "NM - 10mm Freedom SMG"
 	icon_state = "marshal"
 
 	license = 12
@@ -174,10 +174,10 @@
 		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
 		)
 
-// .50 PISTOLS
+// 11mm Heavy Pistol
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/amnesty
-	disk_name = "NM - .50 Amnesty Handgun"
+	disk_name = "NM - 11mm Amnesty Handgun"
 	icon_state = "marshal"
 
 	license = 8
@@ -203,10 +203,10 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
-// .257 carbines
+// 6.5mm carbines
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/bastard
-	disk_name = "NM - .257 \"Bastard\" Compact Machine Gun"
+	disk_name = "NM - 6.5mm \"Bastard\" Compact Machine Gun"
 	icon_state = "marshal"
 
 	license = 8
@@ -217,7 +217,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/mamba
-	disk_name = "NM - .257 Mamba Carbine"
+	disk_name = "NM - 6.5mm Mamba Carbine"
 	icon_state = "marshal"
 
 	license = 16
@@ -234,7 +234,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/viper
-	disk_name = "NM - .257 Viper DMR"
+	disk_name = "NM - 6.5mm Viper DMR"
 	icon_state = "marshal"
 
 	license = 16
@@ -250,10 +250,10 @@
 		/datum/design/autolathe/ammo/lrifle_lethal = 4,
 	)
 
-// 7.5 Rifles
+// 7.62mm Rifles
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/copperhead
-	disk_name = "NM - 7.5 Copperhead Rifle"
+	disk_name = "NM - 7.62mm Copperhead Rifle"
 	icon_state = "marshal"
 
 	license = 16
@@ -270,7 +270,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/python
-	disk_name = "NM - 7.5 Python Heavy Rifle"
+	disk_name = "NM - 7.62mm Python Heavy Rifle"
 	icon_state = "marshal"
 
 	license = 16
@@ -289,7 +289,7 @@
 //10mm Guns
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/specop
-	disk_name = "NM - 10mm Caseless /'Spec-Op/' SMG"
+	disk_name = "NM - 10x24mm Caseless /'Spec-Op/' SMG"
 	icon_state = "marshal"
 
 	license = 10 //2 guns 2 mags and 1 box
