@@ -696,6 +696,15 @@ mob/living/carbon/human/proc/get_wings_image()
 			else
 				under_state = w_uniform.item_state
 
+		// Rolldowns
+		if (istype(w_uniform, /obj/item/clothing/under))//Anti-runtime stuff
+			var/obj/item/clothing/under/uniformcheck = w_uniform
+			if (uniformcheck.rolldown)//Are we rolled down?
+				var/icon/originalicon = icon(under_icon, icon_state = under_state)
+				var/icon/rollalpha = icon('icons/inventory/overlays.dmi', icon_state = "rolldown")//If we are, grab the overlay
+				originalicon.Blend(rollalpha, ICON_MULTIPLY)//Then apply the transform to the standing icon. 
+				under_icon = originalicon
+
 		//need to append _s to the icon state for legacy compatibility
 		var/image/standing = image(icon = under_icon, icon_state = under_state)
 		standing.color = w_uniform.color
