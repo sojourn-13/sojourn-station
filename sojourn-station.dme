@@ -2775,6 +2775,7 @@
 #include "code\modules\projectiles\guns\projectile\pistol\glock.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\gyropistol.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\handmade.dm"
+#include "code\modules\projectiles\guns\projectile\pistol\judiciary.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\ladon.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\lamia.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\mk58.dm"
