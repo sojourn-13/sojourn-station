@@ -72,7 +72,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 	wage = WAGE_LABOUR_DUMB
 	department_account_access = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/cargo/cargo_tech
-	health_modifier = -5
+	health_modifier = -10
 
 	access = list(
 		access_mailsorting, access_cargo, access_cargo_bot, access_mining,
@@ -122,7 +122,7 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 	alt_titles = list("Lonestar Drill Technician","Lonestar Digger","Mining Specialist","Junior Lonestar Miner","Ameridian Gatherer")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_HAZARD //The miners union is stubborn
-	health_modifier = 10
+	health_modifier = 5
 
 	outfit_type = /decl/hierarchy/outfit/job/cargo/mining
 

@@ -178,7 +178,7 @@
 	selection_color = "#a8b69a"
 	alt_titles = list("Soteria Psychologist", "Soteria Empath")
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
-	health_modifier = -10
+	health_modifier = -15
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits
 	)

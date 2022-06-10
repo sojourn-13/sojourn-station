@@ -77,7 +77,7 @@
 				stat_adjective = pick("vitality", "vigour")
 			if("Anatomy")
 				stat_noun = pick("physique", "soma", "build", "frame")
-				stat_adjective = pick("morphology", "physical")
+				stat_adjective = pick("morphological", "physical")
 		switch(stats[stat])
 			if(30 to INFINITY)
 				a_or_an = "an"

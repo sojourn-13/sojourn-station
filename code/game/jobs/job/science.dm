@@ -121,7 +121,7 @@
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
 	department_account_access = TRUE
-	health_modifier = -5
+	health_modifier = -15
 
 	outfit_type = /decl/hierarchy/outfit/job/science/roboticist
 
