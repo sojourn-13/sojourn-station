@@ -253,6 +253,7 @@
 		to_chat(owner, SPAN_NOTICE("You have satisfied your cravings and improved your stats."))
 	owner.playsound_local(get_turf(owner), 'sound/sanity/rest.ogg', 100)
 	owner.pick_individual_objective()
+	owner.give_health_via_stats()
 	resting = 0
 
 /datum/sanity/proc/oddity_stat_up(multiplier)

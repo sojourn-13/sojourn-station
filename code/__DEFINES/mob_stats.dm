@@ -6,8 +6,10 @@
 #define STAT_ROB			"Robustness"
 #define STAT_TGH			"Toughness"
 #define STAT_VIG			"Vigilance"
+#define STAT_VIV			"Vivification"
+#define STAT_ANA			"Anatomy"
 
-#define ALL_STATS	list(STAT_MEC,STAT_COG,STAT_BIO,STAT_ROB,STAT_TGH,STAT_VIG)
+#define ALL_STATS	list(STAT_MEC,STAT_COG,STAT_BIO,STAT_ROB,STAT_TGH,STAT_VIG,STAT_VIV,STAT_ANA)
 
 #define STAT_LEVEL_NONE     0
 #define STAT_LEVEL_BASIC    15

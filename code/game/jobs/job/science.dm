@@ -12,6 +12,7 @@
 	selection_color = "#b39aaf"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
+	health_modifier = -10
 
 	outfit_type = /decl/hierarchy/outfit/job/science/rd
 	playtimerequired = 1200
@@ -70,6 +71,7 @@
 	difficulty = "Medium."
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
+	health_modifier = -15
 
 	alt_titles = list("Soteria Xenobiologist", "Soteria Xenoarcheologist", "Soteria Xenobotanist", "Soteria Research Fabricator", "Soteria Geneticist", "Soteria Research Student")
 	outfit_type = /decl/hierarchy/outfit/job/science/scientist
@@ -119,6 +121,7 @@
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
 	department_account_access = TRUE
+	health_modifier = -5
 
 	outfit_type = /decl/hierarchy/outfit/job/science/roboticist
 

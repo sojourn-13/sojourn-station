@@ -53,6 +53,7 @@
 	if(calc_nerves && ishuman(parent))
 		var/mob/living/carbon/human/parent_human = parent
 		nsa_organ_bonus = (parent_human.get_organ_efficiency(OP_NERVE) - 700) / 2
+		nsa_bonus += parent.stats.getStat(STAT_VIV)
 	nsa_threshold = round((100 + nsa_bonus + nsa_chem_bonus + nsa_organ_bonus) * nsa_mult)
 	nsa_threshold = max(nsa_threshold, NSA_THRESHOLD_MINIMUM) //Can't be below for any reason. Keeps
 	return nsa_threshold

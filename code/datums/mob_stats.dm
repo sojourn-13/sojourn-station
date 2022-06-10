@@ -238,6 +238,15 @@
 	name = STAT_VIG
 	desc = "Here, paranoia is nothing but a useful trait. Improves your ability to control recoil on guns, helps you resist insanity."
 
+/datum/stat/vivification
+	name = STAT_VIV
+	desc = "The body below the flesh can take only so much stimulation, takes a lot to train the body to handle drugs all be it helpful or harmful."
+
+/datum/stat/anatomy
+	name = STAT_ANA
+	desc = "The body itself, the more you know about how far you can push it, the more you can withstand being even at deaths door."
+
+
 // Use to perform stat checks
 /mob/proc/stat_check(stat_path, needed)
 	var/points = src.stats.getStat(stat_path)
