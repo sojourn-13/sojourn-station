@@ -15,7 +15,7 @@
 	playtimerequired = 1200
 	also_known_languages = list(LANGUAGE_LATIN = 100)
 	security_clearance = CLEARANCE_CLERGY
-	health_modifier = 25
+	health_modifier = 10
 	access = list(
 		access_nt_preacher, access_nt_disciple, access_morgue, access_chapel_office, access_crematorium, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors
 	)
@@ -79,7 +79,7 @@
 	also_known_languages = list(LANGUAGE_LATIN = 100)
 	security_clearance = CLEARANCE_COMMON
 	alt_titles = list("Divisor","Factorial","Monomial","Lemniscate","Tessellate")
-	health_modifier = 20
+	health_modifier = 5
 	stat_modifiers = list(
 	STAT_MEC = 25,
 	STAT_BIO = 10,
