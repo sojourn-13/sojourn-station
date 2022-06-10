@@ -239,7 +239,7 @@
 
 	var/stat_pool = resting * 15
 	while(stat_pool--)
-		LAZYAPLUS(stat_change, pick(ALL_STATS), 1)
+		LAZYAPLUS(stat_change, pick(ALL_STATS_FOR_LEVEL_UP), 1)
 
 	for(var/stat in stat_change)
 		owner.stats.changeStat(stat, stat_change[stat])
@@ -254,6 +254,7 @@
 	owner.playsound_local(get_turf(owner), 'sound/sanity/rest.ogg', 100)
 	owner.pick_individual_objective()
 	owner.give_health_via_stats()
+	owner.metabolism_effects.calculate_nsa(TRUE) //So
 	resting = 0
 
 /datum/sanity/proc/oddity_stat_up(multiplier)
