@@ -6,7 +6,7 @@
 	faction = MAP_FACTION
 	department = DEPARTMENT_INDEPENDENT
 	department_flag = INDEPENDENT
-	supervisors = "the lodge matriarch"
+	supervisors = "the Lodge Matriarch"
 	difficulty = "Hard."
 	selection_color = "#9b633e"
 	account_allowed = 0
@@ -14,16 +14,16 @@
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunt_master
 
-	perks = list(/datum/perk/job/butcher)
+	perks = list(/datum/perk/job/butcher, /datum/perk/stalker, /datum/perk/job/master_herbalist, /datum/perk/greenthumb)
 	access = list(access_huntmaster, access_hunter)
 
 	stat_modifiers = list(
-		STAT_BIO = 30,
-		STAT_TGH = 20,
+		STAT_BIO = 20,
+		STAT_TGH = 15,
 		STAT_ROB = 15,
 		STAT_VIG = 15,
-		STAT_MEC = 5,
-		STAT_COG = 0
+		STAT_MEC = 15,
+		STAT_COG = 15
 	)
 	playtimerequired = 1200
 	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As the hunt \
@@ -48,23 +48,23 @@
 	department = DEPARTMENT_INDEPENDENT
 	department_flag = INDEPENDENT
 	difficulty = "Hard."
-	supervisors = "the hunt master"
+	supervisors = "the Hunt Master"
 	selection_color = "#9b633e"
 	account_allowed = 0
 	create_record = 0
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunter
 
-	perks = list(/datum/perk/job/butcher)
+	perks = list(/datum/perk/job/butcher, /datum/perk/stalker)
 	access = list(access_hunter)
 
 	stat_modifiers = list(
-		STAT_BIO = 20,
-		STAT_TGH = 20,
-		STAT_ROB = 10,
+		STAT_BIO = 15,
+		STAT_TGH = 15,
+		STAT_ROB = 15,
 		STAT_VIG = 10,
-		STAT_MEC = 5,
-		STAT_COG = 0
+		STAT_MEC = 10,
+		STAT_COG = 10
 	)
 
 	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As a lodge hunter \
@@ -89,14 +89,14 @@
 	department = DEPARTMENT_INDEPENDENT
 	department_flag = INDEPENDENT
 	difficulty = "Hard."
-	supervisors = "the hunt master"
+	supervisors = "the Hunt Master"
 	selection_color = "#9b633e"
 	account_allowed = 0
 	create_record = 0
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/herbalist
 
-	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb)
+	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb, /datum/perk/stalker)
 	access = list(access_hunter)
 
 	stat_modifiers = list(
@@ -118,6 +118,47 @@
 	name = "Lodge Herbalist"
 	icon_state = "player-black"
 	join_tag = /datum/job/off_colony_herbalist
+
+/datum/job/off_colony_technician
+	title = "Lodge Technician"
+	total_positions = 1
+	spawn_positions = 1
+	flag = LODGETECH
+	faction = MAP_FACTION
+	department = DEPARTMENT_INDEPENDENT
+	department_flag = INDEPENDENT
+	difficulty = "Medium."
+	supervisors = "the Hunt Master"
+	selection_color = "#9b633e"
+	account_allowed = 0
+	create_record = 0
+	wage = WAGE_NONE
+	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunter
+
+	perks = list(/datum/perk/job/butcher, /datum/perk/junkborn, /datum/perk/stalker)
+)
+	access = list(access_hunter)
+
+	stat_modifiers = list(
+		STAT_BIO = 10,
+		STAT_MEC = 50,
+		STAT_COG = 15
+	)
+
+	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As a lodge technician \
+	your primary work is both as engineer and field technician for the lodge. Expeditions should be prepared for using whatever you can craft and make with your fellow hunters. Good lodge members \
+	work as a team under the direction of the hunt master or if present the lodge matriarch. An expert lodge hunter reads the lodge codex for the do's and dont's. While hunters are more combat \
+	focused, your purpose as an technician is to attend to the mechanical needs of your lodge, but additional skills as a crafter, engineer, and roboticist are quite handy!"
+
+	duties = "Build and maintain lodge by using your rather primitive working bench.<br>\
+		Work as a roboticist for your lodge, keeping synthetics alive and patching them up.<br>\
+		Build and maintain a thriving lodge in the wilderness."
+
+/obj/landmark/join/start/lodge_techie
+	name = "Lodge Technician"
+	icon_state = "player-black"
+	join_tag = /datum/job/off_colony_technician
+
 
 /datum/job/outsider
 	title = "Outsider"

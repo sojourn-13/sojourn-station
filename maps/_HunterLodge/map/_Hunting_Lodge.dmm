@@ -1583,6 +1583,7 @@
 "eN" = (
 /obj/item/stool/padded,
 /obj/landmark/join/start/lodge_herbalist,
+/obj/landmark/join/start/lodge_techie,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "eO" = (
@@ -3152,6 +3153,7 @@
 "jz" = (
 /obj/structure/bed/chair/custom/wood/wings,
 /obj/landmark/join/start/lodge_herbalist,
+/obj/landmark/join/start/lodge_techie,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "jA" = (
