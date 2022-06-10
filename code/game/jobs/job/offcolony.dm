@@ -18,12 +18,12 @@
 	access = list(access_huntmaster, access_hunter)
 
 	stat_modifiers = list(
-		STAT_BIO = 20,
-		STAT_TGH = 15,
+		STAT_BIO = 30,
+		STAT_TGH = 20,
 		STAT_ROB = 15,
 		STAT_VIG = 15,
-		STAT_MEC = 15,
-		STAT_COG = 15
+		STAT_MEC = 5,
+		STAT_COG = 0
 	)
 	playtimerequired = 1200
 	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As the hunt \
@@ -59,12 +59,12 @@
 	access = list(access_hunter)
 
 	stat_modifiers = list(
-		STAT_BIO = 15,
-		STAT_TGH = 15,
-		STAT_ROB = 15,
+		STAT_BIO = 20,
+		STAT_TGH = 20,
+		STAT_ROB = 10,
 		STAT_VIG = 10,
-		STAT_MEC = 10,
-		STAT_COG = 10
+		STAT_MEC = 5,
+		STAT_COG = 0
 	)
 
 	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As a lodge hunter \
