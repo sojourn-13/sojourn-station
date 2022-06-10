@@ -65,11 +65,11 @@
 	. += "Vivification:  <a href='?src=\ref[src];vivmod=1'>[pref.VIVMOD]</a><br>"
 	. += "Anatomy:  <a href='?src=\ref[src];anamod=1'>[pref.ANAMOD]</a><br>"
 	. += "<br/>"
-	. += "You have used [pref.BIOMOD + round(pref.COGMOD/2) + pref.MECMOD + pref.ROBMOD + pref.TGHMOD + pref.VIGMOD + pref.VIVMOD  + round(pref.ANAMOD*2)] / 15 skill points"
+	. += "You have used [pref.BIOMOD + round(pref.COGMOD/2) + pref.MECMOD + pref.ROBMOD + pref.TGHMOD + pref.VIGMOD + pref.VIVMOD  + round(pref.ANAMOD*5)] / 15 skill points"
 	. = jointext(.,null)
 
 /datum/category_item/player_setup_item/background/education/proc/calculatetotalpoints()
-	return (pref.BIOMOD + round(pref.COGMOD/2) + pref.MECMOD + pref.ROBMOD + pref.TGHMOD + pref.VIGMOD + pref.VIVMOD + round(pref.ANAMOD*2))
+	return (pref.BIOMOD + round(pref.COGMOD/2) + pref.MECMOD + pref.ROBMOD + pref.TGHMOD + pref.VIGMOD + pref.VIVMOD + round(pref.ANAMOD*5))
 
 /datum/category_item/player_setup_item/background/education/OnTopic(var/href,var/list/href_list, var/mob/user)
 	if(href_list["biomod"])
@@ -144,10 +144,10 @@
 
 	else if(href_list["anamod"])
 		var/new_ana = 0
-		new_ana = input(user, "Enter a value between -10 and 15 for your anatomy  (Anatomy 200% the cost of other stats).", CHARACTER_PREFERENCE_INPUT_TITLE, pref.ANAMOD) as num
+		new_ana = input(user, "Enter a value between -3 and 5 for your anatomy  (Anatomy 500% the cost of other stats).", CHARACTER_PREFERENCE_INPUT_TITLE, pref.ANAMOD) as num
 		if(CanUseTopic(user))
 			var/old_ana = pref.ANAMOD
-			pref.ANAMOD = max(min(round(new_ana), 15), -10)
+			pref.ANAMOD = max(min(round(new_ana), 5), -3)
 			if(calculatetotalpoints() > 15)
 				pref.ANAMOD = old_ana
 			return TOPIC_REFRESH
