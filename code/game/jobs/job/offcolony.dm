@@ -136,7 +136,6 @@
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunter
 
 	perks = list(/datum/perk/job/butcher, /datum/perk/junkborn, /datum/perk/stalker,  /datum/perk/greenthumb)
-)
 	access = list(access_hunter)
 
 	stat_modifiers = list(
