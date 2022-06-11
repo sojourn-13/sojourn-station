@@ -1,5 +1,6 @@
 /obj/mecha/working
 	internal_damage_threshold = 50
+	force = 15
 	var/list/cargo = list()
 	var/cargo_capacity = 5
 

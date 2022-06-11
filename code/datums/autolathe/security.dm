@@ -37,7 +37,7 @@
 
 /datum/design/autolathe/sec/gun_case
 	name = "gun case"
-	build_path = /obj/item/storage/briefcase/rifle
+	build_path = /obj/item/storage/backpack/duffelbag/guncase
 	materials = list(MATERIAL_PLASTIC = 7, MATERIAL_STEEL = 2)
 
 /datum/design/autolathe/sec/hailer

@@ -13,10 +13,13 @@
 	var/list/jobs_in_department = list()
 
 	// With external, this is the name of an organisation
+	// Adding a funding source makes the game pay them out of thin air.
+	// Adding in a department flag (see sojourn-station/code/__DEFINES/jobs.dm) will make it draw form said account to wire funds for payment of wages.
+	// This is takes form the source budget_bage + wages per person
 	var/funding_source
 
 	// Budget for misc department expenses, paid regardless of it being manned or not
-	var/budget_base = 500
+	var/budget_base = 0
 
 	// Budget for crew salaries. Summed up initial wages of department's personnel
 	var/budget_personnel = 0
@@ -24,6 +27,7 @@
 
 	// How much account failed to pay to employees. Used for emails
 	var/total_debt = 0
+
 
 /datum/department/proc/get_total_budget()
 	if(funding_source)
@@ -47,7 +51,6 @@
 	*/
 	account_initial_balance = 50000
 
-
 /*************
 	Retainers
 **************/
@@ -55,13 +58,17 @@
 /datum/department/ironhammer
 	name = "Marshal and Blackshield Division"
 	id = DEPARTMENT_SECURITY
-	account_initial_balance = 25000 //25k do to being state funded
-	funding_source = DEPARTMENT_COMMAND
+	//This is balanced around full team in 6 hours with nepitism
+	//Without nepitsm a full team 27000 in 6 hours
+	//With nepitsm a full team 35100 in 6 hours
+	account_initial_balance = 50000 //+15k~ do to being state funded
+
 
 /datum/department/technomancers
 	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
-	account_initial_balance = 17500 //15k do to being state funded
+	account_initial_balance = 25000 //+15k~ do to being state funded
+	//Full team with nepitsm in 6 hours is 11900
 	//A full crew GM + 4 adpets is 1700 an hour, takes 10~ hours to drain the department funds
 
 
@@ -71,7 +78,6 @@
 	account_initial_balance = 0
 	//No standing balance is kept in the account, this is just for paying gardener, janitor and actor
 
-
 /******************
 	Benefactors
 *******************/
@@ -79,22 +85,23 @@
 /datum/department/moebius_medical
 	name = "Soteria Institution: Medical Division"
 	id = DEPARTMENT_MEDICAL
-	account_initial_balance = 15000 //For buying medical and items and payments
-	funding_source = "Soteria Institution."
+	//18600 in 6 hours with full crew
+	//24180 in 6 hours with full crew + nep
+	account_initial_balance = 30000 //5~k For buying medical and items and payments
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
-	account_initial_balance = 10000 //For buying materials and components and things of scientific value as well as pay the demanding staff
-	funding_source = "Soteria Institution."
+	//15000 in 6 hours with full crew
+	//19500 in 6 hours with full crew + nepitism
+	account_initial_balance = 20000 //+10k~ For buying materials and components and things of scientific value as well as pay the demanding staff
 
 /datum/department/church
 	name = "Church of Absolute"
 	id = DEPARTMENT_CHURCH
+	//9600 in 6 hours with full crew
+	//12480 with all nep in 6 hours
 	account_initial_balance = 25000 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
-	funding_source = "Church of Absolute"
-
-
 
 /******************
 	Independant
@@ -110,12 +117,16 @@
 	/* if you want to change this remember to do so in code\game\gamemodes\score.dm as well,
 	if you manage to get this variable refferenced there you're a better man than me. godspeed
 	*/
+	//Note: LSS isnt accounted for wages when starting money as they have the easyest ways to make money
 	account_initial_balance = 25000 //has a lot of workers thus needs a higher starting to off-set its paychecks if no one actively runs the cargo shuttle
 
 /datum/department/prospector
 	name = "Prospectors"
 	id = DEPARTMENT_PROSPECTOR
-	account_initial_balance = 10000 //Has a lot of workers and people
+	//Full team in 6 hours is 6600
+	//Full team with Nep in 6 hours is 6600
+	//Nep in 6 hours with full team is 8580
+	account_initial_balance = 12500 //5k+6~hours of work. should be good for them to make money
 
 /datum/department/independent
 	name = "Independent Allied Factions"
