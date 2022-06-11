@@ -236,7 +236,7 @@ SUBSYSTEM_DEF(trade)
 
 		for(var/atom/movable/AM in exported)
 			SEND_SIGNAL(src, COMSIG_TRADE_BEACON, AM)
-			invoice_contents_info += "<li>[AM.name]<li/>"
+			invoice_contents_info += "<li>[AM.name]</li>"
 			qdel(AM)
 
 		var/credits_to_account = round(offer_price * 0.8)
