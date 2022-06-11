@@ -157,6 +157,7 @@
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
+	caliber = CAL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
 	fire_delay = 15
 	damage_multiplier = 1.2

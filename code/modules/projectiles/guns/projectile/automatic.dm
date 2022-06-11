@@ -6,7 +6,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	load_method = SINGLE_CASING|SPEEDLOADER //Default is speedloader because all might not have magazine sprites.
 	max_shells = 1 //Automatic quick fix idk why this was set to 22 but it was. Issue fixed
-	caliber = CAL_35A
+	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
 	ammo_type = /obj/item/ammo_casing/pistol_35

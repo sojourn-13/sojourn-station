@@ -1,6 +1,5 @@
 //Caliber Defines
 #define CAL_PISTOL "9mm"
-#define CAL_35A "9mm standard" //why are these different
 #define CAL_MAGNUM "10mm magnum"
 #define CAL_LRIFLE "6.5mm carbine"
 #define CAL_RIFLE "7.62mm rifle"
