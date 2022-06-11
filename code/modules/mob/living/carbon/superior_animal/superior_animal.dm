@@ -441,7 +441,7 @@
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		walk_to(src, targetted_mob, (comfy_range - 1), move_to_delay) //lets get a little closer than our optimal range
+		walk_to(src, targetted_mob, (comfy_range - comfy_distance), move_to_delay) //lets get a little closer than our optimal range
 		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
 			visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"))
 			delayed = delay_amount

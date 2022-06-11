@@ -9,7 +9,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 20
 	poison_per_bite = 4
-	move_to_delay = 3
+	move_to_delay = 3.5
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/hunter
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","bounces in place.")

@@ -42,10 +42,10 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_guns
 	disk_name = "Marshal \"Negotiator\" Pack"
-	icon_state = "ironhammer"
+	icon_state = "marshal"
 	license = 20 //1:1 with blackshield guns
 	designs = list(
-		/datum/design/autolathe/gun/glock,
+		/datum/design/autolathe/gun/judiciary,
 		/datum/design/autolathe/gun/liberty,
 		/datum/design/autolathe/gun/rev10,
 		/datum/design/autolathe/gun/amnesty = 2,
@@ -90,7 +90,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo
 	disk_name = "Marshal \"Shoot-out\" Pack"
-	icon_state = "ironhammer"
+	icon_state = "marshal"
 	license = 30 //1:1 with blackshield guns
 	designs = list(
 		/datum/design/autolathe/ammo/pistol = 0,
@@ -146,11 +146,26 @@
 		/datum/design/autolathe/container/ammocan_ih,
 		)
 
+// .35 Auto
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/judiciary
+	disk_name = "NM - .35 Judiciary"
+	icon_state = "marshal"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/judiciary = 3,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
+		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/pistol,
+		/datum/design/autolathe/ammo/pistol_lethal =2,
+	)
+
 // .40 Magnum
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/liberty
 	disk_name = "NM - .40 Liberty"
-	icon_state = "blackshield"
+	icon_state = "marshal"
 
 	license = 8
 	designs = list(
@@ -163,7 +178,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/freedom
 	disk_name = "NM - .40 Freedom SMG"
-	icon_state = "blackshield"
+	icon_state = "marshal"
 
 	license = 12
 	designs = list(
@@ -178,7 +193,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/amnesty
 	disk_name = "NM - .50 Amnesty Handgun"
-	icon_state = "blackshield"
+	icon_state = "marshal"
 
 	license = 8
 	designs = list(
@@ -193,7 +208,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/operator
 	disk_name = "NM - 20mm Operator Combat Shotgun"
-	icon_state = "blackshield"
+	icon_state = "marshal"
 
 	license = 8
 	designs = list(
@@ -207,7 +222,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/bastard
 	disk_name = "NM - .257 \"Bastard\" Compact Machine Gun"
-	icon_state = "blackshield"
+	icon_state = "marshal"
 
 	license = 8
 	designs = list(
@@ -218,7 +233,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/mamba
 	disk_name = "NM - .257 Mamba Carbine"
-	icon_state = "blackshield"
+	icon_state = "marshal"
 
 	license = 16
 	designs = list(
@@ -235,7 +250,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/viper
 	disk_name = "NM - .257 Viper DMR"
-	icon_state = "blackshield"
+	icon_state = "marshal"
 
 	license = 16
 	designs = list(
@@ -254,7 +269,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/copperhead
 	disk_name = "NM - 7.5 Copperhead Rifle"
-	icon_state = "blackshield"
+	icon_state = "marshal"
 
 	license = 16
 	designs = list(
@@ -271,7 +286,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/python
 	disk_name = "NM - 7.5 Python Heavy Rifle"
-	icon_state = "blackshield"
+	icon_state = "marshal"
 
 	license = 16
 	designs = list(
@@ -290,7 +305,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/specop
 	disk_name = "NM - 10mm Caseless /'Spec-Op/' SMG"
-	icon_state = "blackshield"
+	icon_state = "marshal"
 
 	license = 10 //2 guns 2 mags and 1 box
 	designs = list(
@@ -303,7 +318,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sunrise
 	disk_name = "NM - \"Sunrise\" Laser SMG"
-	icon_state = "blackshield"
+	icon_state = "marshal"
 
 	license = 8
 	designs = list(

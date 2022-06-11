@@ -19,6 +19,11 @@
 	init_recoil = HANDGUN_RECOIL(0.2)
 	serial_type = "H&S"
 
+/obj/item/gun/projectile/clarissa/preloaded
+
+/obj/item/gun/projectile/clarissa/preloaded/New()
+	. = ..()
+	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 
 /obj/item/gun/projectile/clarissa/update_icon()
 	..()
