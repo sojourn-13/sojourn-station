@@ -14,7 +14,7 @@
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunt_master
 
-	perks = list(/datum/perk/job/butcher, /datum/perk/stalker, /datum/perk/job/master_herbalist, /datum/perk/greenthumb)
+	perks = list(/datum/perk/job/butcher)
 	access = list(access_huntmaster, access_hunter)
 
 	stat_modifiers = list(
@@ -55,7 +55,7 @@
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunter
 
-	perks = list(/datum/perk/job/butcher, /datum/perk/stalker,  /datum/perk/greenthumb)
+	perks = list(/datum/perk/job/butcher)
 	access = list(access_hunter)
 
 	stat_modifiers = list(
@@ -96,7 +96,7 @@
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/herbalist
 
-	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb, /datum/perk/stalker)
+	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb)
 	access = list(access_hunter)
 
 	stat_modifiers = list(
@@ -135,7 +135,7 @@
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunter
 
-	perks = list(/datum/perk/job/butcher, /datum/perk/junkborn, /datum/perk/stalker,  /datum/perk/greenthumb)
+	perks = list(/datum/perk/job/butcher, /datum/perk/junkborn)
 	access = list(access_hunter)
 
 	stat_modifiers = list(
