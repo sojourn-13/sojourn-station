@@ -641,3 +641,10 @@
     icon_state = "upwardshorns"
     colored_layers = 1
     blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/sheep_horn
+    name = "Sheep Horn"
+    desc = ""
+    icon_state = "sheep_horn"
+    colored_layers = 2
+    blend = ICON_MULTIPLY
