@@ -49,11 +49,11 @@
 /datum/design/research/item/mecha/jetpack
 	name = "jetpack module"
 	build_path = /obj/item/mecha_parts/mecha_equipment/thruster
-/*
+
 /datum/design/research/item/mecha/ai_holder
 	name = "AI holder"
-	build_path = /obj/item/mecha_parts/mecha_equipment/tool/ai_holder  Broken atm
-*/
+	build_path = /obj/item/mecha_parts/mecha_equipment/tool/ai_holder
+
 //obj/item/mecha_parts/mecha_equipment/repair_droid,
 
 /datum/design/research/item/mecha/ammo/lmg
@@ -150,7 +150,7 @@
 
 /datum/design/research/item/mecha/weapon/mecha_fist
 	name = "Mech Melee Plating"
-	build_path = /obj/item/mecha_parts/mecha_equipment/melee_weapon/fist
+	build_path = /obj/item/mecha_parts/mecha_equipment/fist_plating
 	starts_unlocked = TRUE
 
 // *** Nonweapon modules
