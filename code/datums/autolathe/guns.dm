@@ -6,6 +6,14 @@
 ///H A N D G U N S
 //.35
 
+/datum/design/autolathe/gun/glock
+	name = "Seinemetall Defense GmbH HG .35 \"Sky\""
+	build_path = /obj/item/gun/projectile/glock
+
+/datum/design/autolathe/gun/judiciary
+	name = "NM .35 \"Judiciary\""
+	build_path = /obj/item/gun/projectile/judiciary
+
 /datum/design/autolathe/gun/olivaw
 	name = "H&S HG .35 \"Olivaw\""
 	build_path = /obj/item/gun/projectile/olivaw
@@ -25,10 +33,6 @@
 /datum/design/autolathe/gun/colt
 	name = "H&S HG .35 \"Colt\""
 	build_path = /obj/item/gun/projectile/colt
-
-/datum/design/autolathe/gun/glock
-	name = "Seinemetall Defense GmbH HG .35 \"Sky\""
-	build_path = /obj/item/gun/projectile/glock
 
 /datum/design/autolathe/gun/NM_colt
 	name = "BR .35 \"Bronco\""
@@ -351,7 +355,7 @@
 
 /datum/design/autolathe/gun/python
 	name = "NM 7.5 \"Python\" heavy sniper"
-	build_path = /obj/item/gun/projectile/automatic/mamba/copperhead/python
+	build_path = /obj/item/gun/projectile/automatic/mamba/python
 
 /datum/design/autolathe/gun/judge
 	name = "NM \"Judge\""
@@ -392,7 +396,7 @@
 	build_path = /obj/item/gun/projectile/boltgun/lever/custer
 
 /datum/design/autolathe/gun/blackguard
-	name = "BR .408 \"Blackguard\" Omni Rifle"
+	name = "NM BR .408 \"Blackguard\" Omni Rifle"
 	build_path = /obj/item/gun/projectile/automatic/blackguard
 
 // .40 rifles

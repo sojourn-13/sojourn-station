@@ -148,7 +148,7 @@
 //////////////
 //7.5 Python//
 //////////////
-/obj/item/gun/projectile/automatic/mamba/copperhead/python
+/obj/item/gun/projectile/automatic/mamba/python
 	name = "\"Python\" heavy sniper"
 	desc = "A fine work of the Nadezhda Marshal gunsmiths is the Python, a heavy rifle with a state of the art smart scope displaying wind speeds, built in range finding, nightvision capability, and an internal stabilization system. Chambered in 7.5 for stability, the normally mediocre round punches above its weight to compete with larger caliber .408 rifles."
 	icon_state = "python"
@@ -156,6 +156,7 @@
 	icon = 'icons/obj/guns/projectile/python.dmi'
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	w_class = ITEM_SIZE_HUGE
+	slot_flags = SLOT_BACK
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
 	fire_delay = 15
 	damage_multiplier = 1.2
@@ -165,9 +166,10 @@
 	init_recoil = CARBINE_RECOIL(1.2)
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
+	folding_stock = FALSE
 	init_firemodes = list(
 		list(mode_name="semi-automatic", mode_desc = "A semi-automatic firemode.", mode_type = /datum/firemode/automatic, fire_delay=15, icon="auto"
 		))
 
-/obj/item/gun/projectile/automatic/mamba/copperhead/python/Initialize()
+/obj/item/gun/projectile/automatic/mamba/python/Initialize()
 	. = ..()

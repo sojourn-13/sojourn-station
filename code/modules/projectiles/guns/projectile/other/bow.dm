@@ -48,14 +48,16 @@
 		add_overlay(arrow_overlay)
 
 /obj/item/gun/projectile/bow/attackby(obj/item/A, mob/user)
+	if(chambered)
+		return
 	..()
 	if(LAZYLEN(loaded))
 		chambered = loaded[1]
 		loaded -= chambered
 	update_icon()
 
-//attempts to unload src. If allow_dump is set to 0, the speedloader unloading method will be disabled
-/obj/item/gun/projectile/bow/unload_ammo(mob/user, var/allow_dump=1)
+
+/obj/item/gun/projectile/bow/unload_ammo(mob/user, allow_dump)
 	if(chambered)
 		user.put_in_hands(chambered)
 		chambered = null

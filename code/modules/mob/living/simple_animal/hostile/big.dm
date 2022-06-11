@@ -213,6 +213,7 @@
 	mob_size = 3
 	leather_amount = 0 //No actual skin
 	bones_amount = 30 //Lots of bone-like chitin
+	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/stalker_chitin)
 	mob_size = MOB_LARGE
 	armor = list(melee = 15, bullet = 30, energy = 35, bomb = 5, bio = 10, rad = 25)
