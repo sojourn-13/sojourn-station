@@ -76,7 +76,7 @@
 	path = /obj/item/ammo_magazine/m12/empty
 
 /datum/uplink_item/item/ammo/sniperammo
-	name = ".60-06 AP"
+	name = "14.5x114mm AP"
 	item_cost = 3
 	path = /obj/item/ammo_magazine/ammobox/antim_small
 
