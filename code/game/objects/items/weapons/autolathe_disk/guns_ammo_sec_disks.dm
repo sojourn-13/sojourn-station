@@ -342,10 +342,10 @@
 		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
 		)
 
-// 11mm PISTOLS
+// 12mm PISTOLS
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/lamia
-	disk_name = "H&S - 11mm Lamia Handgun"
+	disk_name = "H&S - 12mm Lamia Handgun"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -358,7 +358,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/basilisk
-	disk_name = "H&S - 11mm Basilisk Handgun"
+	disk_name = "H&S - 12mm Basilisk Handgun"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -371,7 +371,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/naga
-	disk_name = "M6 11mm Naga Handgun"
+	disk_name = "M6 12mm Naga Handgun"
 	icon_state = "black"
 
 	license = 8
@@ -384,7 +384,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/akurra
-	disk_name = "SA - 11mm Akurra Silenced Handgun"
+	disk_name = "SA - 12mm Akurra Silenced Handgun"
 	icon_state = "sa"
 
 	license = 8
@@ -397,7 +397,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/revolver_mateba
-	disk_name = "SA - 11mm Kurtz Mateba Revolver"
+	disk_name = "SA - 12mm Kurtz Mateba Revolver"
 	icon_state = "sa"
 
 	license = 8
@@ -692,10 +692,10 @@
 		/datum/design/autolathe/ammo/sl_rifle,
 	)
 
-//10x77mm heavy rifles
+//8.6mm heavy rifles
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/hustler
-	disk_name = "H&S NM - 10x77mm Hustler Heavy Rifle"
+	disk_name = "H&S NM - 8.6mm Hustler Heavy Rifle"
 	icon_state = "ironhammer"
 
 	license = 12
@@ -708,7 +708,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/boar
-	disk_name = "H&S - 10x77mm Boar Heavy Carbine"
+	disk_name = "H&S - 8.6mm Boar Heavy Carbine"
 	icon_state = "frozenstar"
 
 	license = 6
@@ -722,7 +722,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sts40
-	disk_name = "SA - 10x77mm STS-40 Heavy Rifle"
+	disk_name = "SA - 8.6mm STS-40 Heavy Rifle"
 	icon_state = "sa"
 
 	license = 8
@@ -736,7 +736,7 @@
 
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/scout
-	disk_name = "H&S - 10x77mm Scout Sniper Rifle"
+	disk_name = "H&S - 8.6mm Scout Sniper Rifle"
 	icon_state = "frozenstar"
 
 	license = 6
@@ -750,7 +750,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/custer
-	disk_name = "H&S - 10x77mm Custer Repeating Rifle"
+	disk_name = "H&S - 8.6mm Custer Repeating Rifle"
 	icon_state = "sa"
 
 	license = 8

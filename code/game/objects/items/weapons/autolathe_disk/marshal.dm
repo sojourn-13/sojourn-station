@@ -149,7 +149,7 @@
 // 10mm Magnum
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/judiciary
-	disk_name = "NM - .35 Judiciary"
+	disk_name = "NM - 9mm Judiciary"
 	icon_state = "marshal"
 
 	license = 8
@@ -187,10 +187,10 @@
 		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
 		)
 
-// 11mm Heavy Pistol
+// 12mm Heavy Pistol
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/amnesty
-	disk_name = "NM - 11mm Amnesty Handgun"
+	disk_name = "NM - 12mm Amnesty Handgun"
 	icon_state = "marshal"
 
 	license = 8

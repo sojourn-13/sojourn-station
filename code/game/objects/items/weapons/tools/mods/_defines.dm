@@ -110,7 +110,7 @@
 #define GUN_INTERNAL_MAG "internal mag"
 #define GUN_BAYONET "bayonet"
 #define GUN_CALIBRE_9MM "caliber 9mm"
-#define GUN_CALIBRE_11MM "caliber 11mm"
+#define GUN_CALIBRE_12MM "caliber 12mm"
 #define ARROW_FIRING "fires arrows"
 #define GUN_AMR "caliber 60-06"
 

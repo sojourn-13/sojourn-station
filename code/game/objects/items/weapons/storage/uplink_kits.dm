@@ -186,7 +186,7 @@
 
 /obj/item/storage/box/syndie_kit/hpistol
 	name = "\improper gunfighter kit"
-	desc = "11mm suppressed handgun and its kit."
+	desc = "12mm suppressed handgun and its kit."
 
 /obj/item/storage/box/syndie_kit/hpistol/populate_contents()
 	new /obj/item/gun/projectile/lamia/akurra(src)

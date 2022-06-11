@@ -200,7 +200,7 @@
 
 /obj/item/storage/box/bs_kit/lamia
 	name = "\improper Lamia Secondary Kit"
-	desc = "The standard Blackshield equipment kit containing a lamia, a 11mm pistol boasting high damage and armor penetration but low magazine size and hefty recoil. A favorite for sharp \
+	desc = "The standard Blackshield equipment kit containing a lamia, a 12mm pistol boasting high damage and armor penetration but low magazine size and hefty recoil. A favorite for sharp \
 	shooters and people with something to compensate for."
 
 	populate_contents()

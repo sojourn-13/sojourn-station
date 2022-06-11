@@ -21,7 +21,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	auto_eject = 1
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_11MM, GUN_CALIBRE_9MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_12MM, GUN_CALIBRE_9MM)
 	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/deaglebolt/verb/change_caliber()
@@ -40,6 +40,6 @@
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	else if (caliber == CAL_PISTOL)
 		caliber = CAL_50
-		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and metallic whirr is heard before it changes to 11mm heavy pistol caliber!"), \
+		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and metallic whirr is heard before it changes to 12mm heavy pistol caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	refresh_upgrades()

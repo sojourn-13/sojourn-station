@@ -240,10 +240,10 @@
 	desc = "A 7.62mm laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/rifle_75
 
-//// 10x77mm heavy rifle////
+//// 8.6mm heavy rifle////
 
 /obj/item/ammo_casing/heavy_rifle_408
-	desc = "A 10x77mm bullet casing."
+	desc = "A 8.6mm bullet casing."
 	icon_state = "lrifle_c_l"
 	spent_icon = "lrifle_c_l-spent"
 	shell_color = "l"
@@ -258,32 +258,32 @@
 	src.transform = rotation_matrix * 0.5
 
 /obj/item/ammo_casing/heavy_rifle_408/rubber
-	desc = "A 10x77mm rubber bullet casing."
+	desc = "A 8.6mm rubber bullet casing."
 	icon_state = "lrifle_c_r"
 	spent_icon = "lrifle_c_r-spent"
 	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/rubber
 
 /obj/item/ammo_casing/heavy_rifle_408/practice
-	desc = "A 10x77mm training bullet casing."
+	desc = "A 8.6mm training bullet casing."
 	icon_state = "lrifle_c_p"
 	spent_icon = "lrifle_c_p-spent"
 	shell_color = "p"
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/practice
 
 /obj/item/ammo_casing/heavy_rifle_408/hv
-	desc = "A 10x77mm high-velocity bullet casing."
+	desc = "A 8.6mm high-velocity bullet casing."
 	icon_state = "lrifle_c_hv"
 	spent_icon = "lrifle_c_hv-spent"
 	shell_color = "hv"
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/hv
 
 /obj/item/ammo_casing/heavy_rifle_408/lethal
-	desc = "A 10x77mm bullet casing."
+	desc = "A 8.6mm bullet casing."
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/lethal
 
 /obj/item/ammo_casing/heavy_rifle_408/scrap
-	desc = "An old 10x77mm rifle bullet casing."
+	desc = "An old 8.6mm rifle bullet casing."
 	icon_state = "lrifle_c_s"
 	spent_icon = "lrifle_c_s-spent"
 	shell_color = "p"
@@ -293,7 +293,7 @@
 	amount = 10
 
 /obj/item/ammo_casing/heavy_rifle_408/laser
-	desc = "A 10x77mm laser casing."
+	desc = "A 8.6mm laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/heavy_rifle_408
 
 ///10mm caseless
@@ -361,43 +361,43 @@
 /obj/item/ammo_casing/flare/green/prespawn
 	amount = 3
 
-// 11mm HEAVY PISTOL
+// 12mm HEAVY PISTOL
 
 /obj/item/ammo_casing/kurtz_50
-	desc = "A 11mm bullet casing."
+	desc = "A 12mm bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50
 	icon_state = "lrifle_c_l"
 	spent_icon = "lrifle_c_l-spent"
 
 /obj/item/ammo_casing/kurtz_50/rubber
-	desc = "A 11mm rubber bullet casing."
+	desc = "A 12mm rubber bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/rubber
 	icon_state = "lrifle_c_r"
 	spent_icon = "lrifle_c_r-spent"
 
 /obj/item/ammo_casing/kurtz_50/practice
-	desc = "A 11mm practice bullet casing."
+	desc = "A 12mm practice bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/practice
 	icon_state = "lrifle_c_p"
 	spent_icon = "lrifle_c_p-spent"
 
 /obj/item/ammo_casing/kurtz_50/hv
-	desc = "A 11mm high-velocity bullet casing."
+	desc = "A 12mm high-velocity bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/hv
 	icon_state = "lrifle_c_hv"
 	spent_icon = "lrifle_c_hv-spent"
 
 /obj/item/ammo_casing/kurtz_50/lethal
-	desc = "A 11mm hollow point bullet casing."
+	desc = "A 12mm hollow point bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/lethal
 
 /obj/item/ammo_casing/kurtz_50/laser
-	desc = "A 11mm laser casing."
+	desc = "A 12mm laser casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/beam/weak/kurtz_50
 

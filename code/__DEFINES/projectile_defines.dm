@@ -4,11 +4,11 @@
 #define CAL_MAGNUM "10mm magnum"
 #define CAL_LRIFLE "6.5mm carbine"
 #define CAL_RIFLE "7.62mm rifle"
-#define CAL_HRIFLE "10x77mm heavy rifle"
+#define CAL_HRIFLE "8.6mm heavy rifle"
 #define CAL_ANTIM "14.5mm Anti Material"
 #define CAL_BALL "17mm rolled shot"
 #define CAL_SHOTGUN "Shotgun Shell"
-#define CAL_50	"11mm heavy pistol"
+#define CAL_50	"12mm heavy pistol"
 #define CAL_70 "19mm explosive"
 #define CAL_CAP "plastic cap"
 #define CAL_ROCKET "rocket propelled grenade"
@@ -34,7 +34,7 @@
 #define MAG_WELL_BOX		64	//Lmgs with box mags
 #define MAG_WELL_PAN		128	//Lmgs with pan mags
 #define MAG_WELL_DART       256 //Dartgun mag
-#define MAG_WELL_HRIFLE		512 //10x77mm heavy rifle mags
+#define MAG_WELL_HRIFLE		512 //8.6mm heavy rifle mags
 #define MAG_WELL_DRUM		1024 //Drum-fed i.e. shotguns
 #define MAG_WELL_PULSE		2048 //Mary sue ammo for the pulse rifle
 #define MAG_WELL_LSRIFLE	4096 //Mary sue ammo for the laser AK

@@ -60,7 +60,7 @@
 /obj/item/gun/projectile/revolver/rev10/rex10/showdown
 	name = "\"Showdown\" kurtz revolver"
 	desc = "An uncommon revolver known for being an old model break action, chambered in fifty kurtz and capable of blowing a hole through a man with ease. While not exceptionally lethal as far \
-	as fifty kurtz handguns go, its ability to blow through armor thanks to its brutal design make it a favorite among those at the wrong side of a gun and the law. Chambered in 11mm rounds."
+	as fifty kurtz handguns go, its ability to blow through armor thanks to its brutal design make it a favorite among those at the wrong side of a gun and the law. Chambered in 12mm rounds."
 	icon = 'icons/obj/guns/projectile/showdown.dmi'
 	icon_state = "showdown"
 	item_state = "showdown"
@@ -71,5 +71,5 @@
 	damage_multiplier = 1
 	penetration_multiplier = 1.5
 	init_recoil = HANDGUN_RECOIL(1)
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_11MM, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "SA" //Hand made good old gun I guess?

@@ -54,15 +54,15 @@
 
 /obj/item/gun/projectile/revolver/lemant/uppercut
 	name = "\"Pilgrim Hero\" kurtz revolver"
-	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds six 11mm rounds and one single action underslung 20mm shell. \
+	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds six 12mm rounds and one single action underslung 20mm shell. \
 	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstaking to reload since it requires removing each spent shell individually. \
-	This model is a conversion, known as the pilgrim hero, its caliber is converted to 11mm but it loses ammo capacity due to the larger shells and lacks the \
+	This model is a conversion, known as the pilgrim hero, its caliber is converted to 12mm but it loses ammo capacity due to the larger shells and lacks the \
 	physical weight to give it better recoil control compared to other revolvers in its weight class. Underslung still works at least."
 	icon = 'icons/obj/guns/projectile/lemant_hero.dmi'
 	icon_state = "lemant_hero"
 	item_state = "lemant_hero"
 	caliber = CAL_50
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_11MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	max_shells = 6
 	price_tag = 500
 	init_recoil = HANDGUN_RECOIL(1.3)// Massive recoil due to being a kurtz revolver without the weight to compensate for the blast. -Kaz
@@ -168,7 +168,7 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.1
 	init_recoil = HANDGUN_RECOIL(1.1)
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_11MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	var/obj/item/gun/projectile/underslung/launcher
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,

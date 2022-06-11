@@ -31,7 +31,7 @@
 	path = /obj/item/storage/box/syndie_kit/pistol
 
 /datum/uplink_item/item/visible_weapons/akurra
-	name = "Silenced 11mm pistol"
+	name = "Silenced 12mm pistol"
 	item_cost = 8
 	path = /obj/item/storage/box/syndie_kit/hpistol
 

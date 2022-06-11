@@ -150,7 +150,7 @@
 /////////////////
 /obj/item/gun/projectile/automatic/mamba/python
 	name = "\"Python\" heavy sniper"
-	desc = "A fine work of the Nadezhda Marshal gunsmiths is the Python, a heavy rifle with a state of the art smart scope displaying wind speeds, built in range finding, nightvision capability, and an internal stabilization system. Chambered in 7.62mm for stability, the normally mediocre round punches above its weight to compete with larger 10x77mm rifles."
+	desc = "A fine work of the Nadezhda Marshal gunsmiths is the Python, a heavy rifle with a state of the art smart scope displaying wind speeds, built in range finding, nightvision capability, and an internal stabilization system. Chambered in 7.62mm for stability, the normally mediocre round punches above its weight to compete with larger 8.6x70mm rifles."
 	icon_state = "python"
 	item_state = "python"
 	icon = 'icons/obj/guns/projectile/python.dmi'

@@ -150,13 +150,13 @@
 		new /obj/item/ammo_magazine/magnum_40/rubber(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
 
-/obj/item/storage/box/m_kit/glock
-	name = "\improper Sky Secondary Kit"
-	desc = "The standard Marshal box kit containing a sky model glock pistol. A reasonably well made 9mm pistol that has both semi-auto and burst fire options. Considered highly desirable \
-	for its low recoil and ability to take 9mm drum mags and silencers."
+/obj/item/storage/box/m_kit/judiciary
+	name = "Judiciary Secondary Kit"
+	desc = "The standard Marshal box kit containing a Judicary 9mm pistol. The staple icon of the Marshals, commonly found on most hiring posters! \
+	Known for its low recoil, ability to fit a durm magazine and being an overall reliable workhorse."
 
 	populate_contents()
-		new /obj/item/gun/projectile/glock(src)
+		new /obj/item/gun/projectile/judiciary(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
@@ -164,7 +164,7 @@
 // Ranger secondary kits
 /obj/item/storage/box/m_kit/deckard
 	name = "Deckards Secondary Kit"
-	desc = "The standard Marshal box kit containing a Deckard revolver. A handcanon in all but name, its cylinder having the capacity of five 11mm rounds."
+	desc = "The standard Marshal box kit containing a Deckard revolver. A handcanon in all but name, its cylinder having the capacity of five 12mm rounds."
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/deckard(src)
@@ -172,14 +172,6 @@
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
-
-/obj/item/storage/box/m_kit/judge
-	name = "Judge Secondary Kit"
-	desc = "The standard Marshal box kit containing a Judge revolver, a large caliber revolver capable of firing a 7.62mm round down range effectively. Highly sought after by police forces."
-
-	populate_contents()
-		new /obj/item/gun/projectile/revolver/judge(src)
-		new /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber(src)
 
 /obj/item/storage/box/m_kit/zwang
 	name = "Zwang Secondary Kit"

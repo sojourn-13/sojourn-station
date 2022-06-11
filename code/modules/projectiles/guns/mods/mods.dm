@@ -274,10 +274,10 @@
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "infused"
 
-// Guild made upgrade kit that makes 11mm guns a bit more viable
+// Guild made upgrade kit that makes 12mm guns a bit more viable
 /obj/item/gun_upgrade/mechanism/upgrade_kit
 	name = "Kurtz's refinement kit"
-	desc = "A kit made of plasteel designed to refit and refine any kurtz loaded 11mm weapon. This kit is produced by the Artificer's Guild so even \
+	desc = "A kit made of plasteel designed to refit and refine any kurtz loaded 12mm weapon. This kit is produced by the Artificer's Guild so even \
 	the heaviest caliber pistols might stand a chance of competing with their legendary myrmidon design."
 	icon_state = "kit_heavy_alt"
 	can_remove = FALSE
@@ -294,15 +294,15 @@
 		GUN_UPGRADE_RECOIL = 0.85, //15% less recoil (dosnt help as much without stacking it with other mods)
 		UPGRADE_BULK = -1
 		)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_11MM)
+	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "kitted"
 
-// Rare Bluecross spawn clock cult brass kit that will make any 11mm cal gun into something worth ya know... using...
+// Rare Bluecross spawn clock cult brass kit that will make any 12mm cal gun into something worth ya know... using...
 // Todo make Cult spawn with this and the clockwork block
 /obj/item/gun_upgrade/mechanism/brass_kit
 	name = "\"Brass Fighter\" refinement kit"
-	desc = "A kit made from brass and designed to improve 11mm caliber kurtz weaponry. It's strange to look at in this day and age. It ticks, tocks, chimes, \
+	desc = "A kit made from brass and designed to improve 12mm caliber kurtz weaponry. It's strange to look at in this day and age. It ticks, tocks, chimes, \
 	and plays a faint melodic tone through brass gears and perptually grinding cogs. Was this an invention of the blue cross or a toy some other entity made?"
 	icon_state = "Clockblock"
 	can_remove = FALSE
@@ -320,7 +320,7 @@
 		GUN_UPGRADE_RECOIL = 0.75, //25% less recoil (dosnt help as much without stacking it with other mods)
 		UPGRADE_BULK = -2
 		)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_11MM)
+	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "brass kitted"
 

@@ -216,14 +216,14 @@
 	materials = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
 
 /datum/design/research/item/ammo/heavy_rifle_408
-	name = "Heavy Rifle 10x77mm laser casing."
-	desc = "Heavy Rifle 10x77mm casing fitted with a one time use laser payload."
+	name = "Heavy Rifle 8.6mm laser casing."
+	desc = "Heavy Rifle 8.6x70mm casing fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
 
 /datum/design/research/item/ammo/kurtz_laser
-	name = "Specialized 11mm, laser cases"
-	desc = "11mm cases fitted with a one time use laser payload."
+	name = "Specialized 12mm, laser cases"
+	desc = "12mm cases fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/kurtz_50/laser
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
 

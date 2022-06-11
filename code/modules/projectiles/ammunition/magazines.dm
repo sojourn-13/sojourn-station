@@ -593,8 +593,8 @@
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408
-	name = "linked ammunition box (10x77mm Heavy Rifle)"
-	desc = "A 64 round linked box marked for 10x77mm Heavy Rifle."
+	name = "linked ammunition box (8.6mm Heavy Rifle)"
+	desc = "A 64 round linked box marked for 8.6x70mm Heavy Rifle."
 	max_ammo = 64
 	icon_state = "pkh_box"
 	caliber = CAL_HRIFLE
@@ -603,15 +603,15 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/highvelocity
-	name = "linked ammunition box (10x77mm Heavy Rifle highvelocity)"
+	name = "linked ammunition box (8.6mm Heavy Rifle highvelocity)"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/hv
 
 /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/rubber
-	name = "linked ammunition box (10x77mm Heavy Rifle rubber)"
+	name = "linked ammunition box (8.6mm Heavy Rifle rubber)"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
 
 /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/lethal
-	name = "linked ammunition box (10x77mm Heavy Rifle hollowpoint)"
+	name = "linked ammunition box (8.6mm Heavy Rifle hollowpoint)"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
 
 /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/empty
@@ -634,12 +634,12 @@
 /obj/item/ammo_magazine/maxim_75/empty
 	initial_ammo = 0
 
-////10x77mm heavy rifle////
+////8.6mm heavy rifle////
 
 /obj/item/ammo_magazine/heavy_rifle_408
 	name = "heavy rifle magazine"
 	icon_state = "hrifle"
-	desc = "A 20 round magazine marked for 10x77mm Heavy Rifle."
+	desc = "A 20 round magazine marked for 8.6x70mm Heavy Rifle."
 	origin_tech = list(TECH_COMBAT = 2)
 	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
@@ -685,7 +685,7 @@
 /obj/item/ammo_magazine/heavy_rifle_408_drum
 	name = "heavy rifle drum magazine"
 	icon_state = "hdrum"
-	desc = "A 36 round drum magazine marked for 10x77mm Heavy Rifle."
+	desc = "A 36 round drum magazine marked for 8.6x70mm Heavy Rifle."
 	origin_tech = list(TECH_COMBAT = 2)
 	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
@@ -732,11 +732,11 @@
 	max_ammo = 40
 	multiple_sprites = 1
 
-//// 11mm Heavy Pistol ////
+//// 12mm Heavy Pistol ////
 
 /obj/item/ammo_magazine/kurtz_50
 	name = "heavy pistol magazine"
-	desc = "An 8 round magazine marked for 11mm."
+	desc = "An 8 round magazine marked for 12mm."
 	icon_state = "kurtz"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -854,11 +854,11 @@
 	icon_state = "slmagnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/biomatter
 
-//// 11mm speed loader ////
+//// 12mm speed loader ////
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50
-	name = "speed loader (11mm Special)"
-	desc = "A 5 round speed loader marked for 11mm."
+	name = "speed loader (12mm Special)"
+	desc = "A 5 round speed loader marked for 12mm."
 	icon_state = "slmagnum_p"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_50
@@ -868,22 +868,22 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/practice
-	name = "speed loader (11mm practice)"
+	name = "speed loader (12mm practice)"
 	icon_state = "slmagnum_p"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/practice
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber
-	name = "speed loader (11mm rubber)"
+	name = "speed loader (12mm rubber)"
 	icon_state = "slmagnum_r"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal
-	name = "speed loader (11mm hollow-point)"
+	name = "speed loader (12mm hollow-point)"
 	icon_state = "slmagnum_l"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/lethal
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/highvelocity
-	name = "speed loader (11mm high-velocity)"
+	name = "speed loader (12mm high-velocity)"
 	icon_state = "slmagnum_hv"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/hv
 
@@ -932,8 +932,8 @@
 	update_icon()
 
 /obj/item/ammo_magazine/speed_loader_heavy_rifle_408
-	name = "ammo strip (10x77mm Heavy Rifle)"
-	desc = "A 10 round ammo strip for 10x77mm Heavy Rifle."
+	name = "ammo strip (8.6mm Heavy Rifle)"
+	desc = "A 10 round ammo strip for 8.6x70mm Heavy Rifle."
 	icon_state = "stripper_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_HRIFLE

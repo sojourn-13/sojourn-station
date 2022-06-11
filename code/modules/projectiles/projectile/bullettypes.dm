@@ -220,7 +220,7 @@
 	check_armour = ARMOR_BIO
 	recoil = 2
 
-/// 11mm Heavy Pistol ///
+/// 12mm Heavy Pistol ///
 /obj/item/projectile/bullet/kurtz_50
 	damage_types = list(BRUTE = 35)
 	armor_penetration = 15
@@ -429,7 +429,7 @@
 	affective_ap_range = 3
 	recoil = 3
 
-/// 10x77mm Heavy Rifle ///
+/// 8.6x70mm Heavy Rifle ///
 
 /obj/item/projectile/bullet/heavy_rifle_408
 	damage_types = list(BRUTE = 28)

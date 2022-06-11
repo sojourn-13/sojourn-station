@@ -168,7 +168,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/semyonovich
-	name = "NM .35 Auto \"Semyonovich\""
+	name = "NM - 9mm PPV \"Semyonovich\""
 	disk_name = ""
 	icon_state = "blackshield"
 	license = 8
@@ -183,7 +183,7 @@
 
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/greasegun
-	name = "NM - .35 Auto \"Grease Gun\""
+	name = "NM - 9mm \"Grease Gun\""
 	disk_name = ""
 	icon_state = "blackshield"
 
@@ -197,7 +197,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/buckler
-	name = "NM - .35 Buckler SMG"
+	name = "NM - 9mm Buckler SMG"
 	disk_name = ""
 	icon_state = "blackshield"
 
@@ -211,7 +211,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/triage
-	name = "NM - .40 Triage SMG"
+	name = "NM - 10mm Triage SMG"
 	disk_name = ""
 	icon_state = "blackshield"
 
@@ -253,7 +253,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/zatvor
-	name = "NM 7.62mm bolt \"Zatvor\" rifle"
+	name = "NM - 7.62mm bolt \"Zatvor\" rifle"
 	disk_name = ""
 	icon_state = "blackshield"
 	license = 8
@@ -279,7 +279,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/duty
-	name = "NM - 6.5 Duty Rifle"
+	name = "NM - 6.5mm Duty Rifle"
 	disk_name = ""
 	icon_state = "blackshield"
 
@@ -298,7 +298,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/blackguard
-	name = "NM - 10x77mm Blackguard Omni Rifle"
+	name = "NM - 8.6mm Blackguard Omni Rifle"
 	disk_name = ""
 	icon_state = "blackshield"
 

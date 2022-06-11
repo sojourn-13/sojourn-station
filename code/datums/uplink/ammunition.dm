@@ -46,7 +46,7 @@
 	path = /obj/item/ammo_magazine/rifle_75/highvelocity
 
 /datum/uplink_item/item/ammo/hrifle
-	name = "10x77mm Heavy Rifle SLAP Mag"
+	name = "8.6mm Heavy Rifle SLAP Mag"
 	item_cost = 3
 	path = /obj/item/ammo_magazine/heavy_rifle_408/hv
 
