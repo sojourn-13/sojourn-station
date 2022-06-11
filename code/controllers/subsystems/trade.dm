@@ -174,7 +174,7 @@ SUBSYSTEM_DEF(trade)
 
 // === IMPORT/EXPORT ===
 
-// Checks item stacks amd item containers to see if they match their base states (no more selling empty first-aid kits or split item stacks as if they were full)
+// Checks item stacks and item containers to see if they match their base states (no more selling empty first-aid kits or split item stacks as if they were full)
 // Checks reagent containers to see if they match their base state or if they match the special offer from a station
 /datum/controller/subsystem/trade/proc/check_offer_contents(item, offer_path)
 	if(istype(item, /obj/item/reagent_containers))
@@ -242,7 +242,7 @@ SUBSYSTEM_DEF(trade)
 		var/credits_to_account = round(offer_price * 0.8)
 		var/credits_to_lonestar = round(offer_price * 0.2)
 
-		create_log_entry("Special Offer", account.get_name(), invoice_contents_info, offer_price)
+		create_log_entry("Special Offer", account.get_name(), invoice_contents_info, offer_price, TRUE, get_turf(beacon))
 
 		beacon.activate()
 		var/datum/transaction/T = new(credits_to_account, account.get_name(), "Special deal", station.name)
@@ -377,18 +377,17 @@ SUBSYSTEM_DEF(trade)
 	T.apply_to(lonestar_account)
 
 	if(invoice_contents_info)	// If no info, then nothing was exported
-		create_log_entry("Export", lonestar_account.get_name(), invoice_contents_info, cost, TRUE, senderBeacon.loc)
+		create_log_entry("Export", lonestar_account.get_name(), invoice_contents_info, cost, TRUE, get_turf(senderBeacon))
 
 /datum/controller/subsystem/trade/proc/get_export_price_multiplier(atom/movable/target)
-	if(!target)
+	if(!target || target.anchored)
 		return NONEXPORTABLE
+
 	. = EXPORTABLE
+
 	var/list/target_spawn_tags = params2list(target?.spawn_tags)
 	var/list/target_junk_tags = target_spawn_tags & junk_tags
 	var/list/target_hockable_tags = target_spawn_tags & hockable_tags
-
-	if(istype(target, /obj/item/paper/invoice))	// Don't export our invoices!
-		return NONEXPORTABLE
 
 	// Junk tags override hockable tags and offer types override both
 	if(target_hockable_tags.len)
@@ -407,65 +406,64 @@ SUBSYSTEM_DEF(trade)
 	switch(type)
 		if("Shipping")
 			log_id = "[++shipping_invoice_number]-S"
-			shipping_log += list(log_id, ordering_account, contents, total_paid, time2text(world.time, "hh:mm"))
+			shipping_log.Add(list(list("id" = log_id, "ordering_acct" = ordering_account, "contents" = contents, "total_paid" = total_paid, "time" = time2text(world.time, "hh:mm"))))
 		if("Export")
 			log_id = "[++export_invoice_number]-E"
-			export_log += list(log_id, ordering_account, contents, total_paid, time2text(world.time, "hh:mm"))
+			export_log.Add(list(list("id" = log_id, "ordering_acct" = ordering_account, "contents" = contents, "total_paid" = total_paid, "time" = time2text(world.time, "hh:mm"))))
 		if("Special Offer")
 			log_id = "[++offer_invoice_number]-SO"
-			offer_log += list(log_id, ordering_account, contents, total_paid, time2text(world.time, "hh:mm"))
+			offer_log.Add(list(list("id" = log_id, "ordering_acct" = ordering_account, "contents" = contents, "total_paid" = total_paid, "time" = time2text(world.time, "hh:mm"))))
 		if("Individial Sale")
 			log_id = "[++sale_invoice_number]-IS"
-			sale_log += list(log_id, ordering_account, contents, total_paid, time2text(world.time, "hh:mm"))
+			sale_log.Add(list(list("id" = log_id, "ordering_acct" = ordering_account, "contents" = contents, "total_paid" = total_paid, "time" = time2text(world.time, "hh:mm"))))
 		else
 			return
 
 	if(create_invoice && invoice_location && log_id)
-		var/obj/item/paper/invoice/I = new(invoice_location)
-
-		I.invoice_type = type
-		I.invoice_id = log_id
-		I.recipient = ordering_account
-		I.invoice_contents = contents
-		I.total_paid = total_paid
-		I.build_invoice()
-
+		print_invoice(type, log_id, ordering_account, contents, total_paid, FALSE, invoice_location)
 		if(type == "Shipping")
-			var/obj/item/paper/invoice/internal_copy = I
-			new internal_copy(invoice_location)
-			internal_copy.is_internal_copy = TRUE
-			internal_copy.build_invoice()
+			print_invoice(type, log_id, ordering_account, contents, total_paid, TRUE, invoice_location)
 
-// === INVOICE ===
+/datum/controller/subsystem/trade/proc/print_invoice(type, log_id, ordering_account, contents, total_paid, is_internal = FALSE, location)
+	if(!location)
+		return
 
-/obj/item/paper/invoice
-	var/invoice_type
-	var/invoice_id
-	var/recipient
-	var/invoice_contents
-	var/total_paid
-	var/is_internal_copy
+	var/title
+	title = "[lowertext(type)] invoice - #[log_id]"
+	title += is_internal ? " (internal)" : null
 
-/obj/item/paper/invoice/proc/build_invoice()
-	name = "[lowertext(invoice_type)] invoice - #[invoice_id]"
-	name += is_internal_copy ? " (internal)" : null
+	var/text
+	text += "<h3>[type] Invoice - #[log_id]</h3>"
+	text += "<hr><font size = \"2\">"
+	text += is_internal ? "FOR INTERNAL USE ONLY<br><br>" : null
+	text += type != "Shipping" && type ? "Recipient: [ordering_account]<br>" : "Recipient: \[field\]<br>"
+	text += type == "Shipping" ? "Package Name: \[field\]<br>" : null
+	text += "Contents:<br>"
+	text += "<ul>"
+	text += contents
+	text += "</ul>"
+	text += is_internal ? "Order Cost: [total_paid]<br>" : null
+	text += type == "Shipping" ? "Total Credits Paid: \[field\]<br>" : "Total Credits Paid: [total_paid]<br>"
+	text += "</font>"
+	text += type == "Shipping" ? "<hr><h5>Stamp below to confirm receipt of goods:</h5>" : null
 
-	info += "<h2>[invoice_type] Invoice</h2>"
-	info += "<hr/>"
-	info += "Invoice #[invoice_id]<br/>"
-	info += is_internal_copy ? "--- FOR INTERNAL USE ONLY ---<br/>" : null
-	info += invoice_type != "Shipping" && invoice_type ? "Recipient: [recipient]<br/>" : "Recipient: \[field\]<br/>"
-	info += invoice_type == "Shipping" ? "Package Name: \[field\]<br/>" : null
-	info += "Contents: <br/>"
-	info += "<ul>"
-	info += invoice_contents
-	info += "</ul>"
-	info += invoice_type == "Individial Sale" ? "Credits Paid To Recipient: [total_paid * 0.8]<br/>" : null
-	info += invoice_type == "Individial Sale" ? "Credits Paid To Lonestar: [total_paid * 0.2]<br/>" : null
-	info += is_internal_copy ? "Order Cost: [total_paid] credits<br/>" : null
-	info += invoice_type == "Shipping" ? "Total Credits Paid: \[field\] credits<br/>" : null
-	info += invoice_type == "Shipping" ? "<h4>Stamp below to confirm receipt of goods:</h4>" : null
-	update_icon()
+	new/obj/item/paper(location, text, title)
+
+/datum/controller/subsystem/trade/proc/get_log_data_by_id(log_id)
+	var/id_data = splittext(log_id, "-")
+	var/log_num = text2num(id_data[1])
+	var/log_type = id_data[2]
+	switch(log_type)
+		if("S")
+			return shipping_log[log_num]
+		if("E")
+			return export_log[log_num]
+		if("SO")
+			return offer_log[log_num]
+		if("IS")
+			return sale_log[log_num]
+		else
+			return
 
 // === ECONOMY ===
 

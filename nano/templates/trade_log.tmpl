@@ -1,4 +1,3 @@
-
 {{:helper.link(data.screen ? data.screen : "Trade Beacon Log", null, {'PRG_screen' : 1})}}
 {{if data.account}}
 	{{:helper.link(data.account, null, {'PRG_account' : 1})}}{{:helper.link('X', null, {'PRG_account_unlink' : 1}, null, 'redButton')}}
@@ -33,33 +32,44 @@
 				</div>
 			</div>
 		</div>
-		<div class='nanoMap' style='padding: 25px 50px;'>
-			{{table class='item'}}
-				<tr class="bottom_bordered">
-					<td>Log ID
-					<td>Ordering Account
-					<td>Contents
-					<td>Paid to Account
-					{{if data.screen == "Export Log"}}
-						<td>Paid to Lonestar
-					{{/if}}
-					<td>Timestamp
-				{{for data.current_log_data}}
-					{{if data.is_all_access || value.2 == data.account}}
+		<table class='item'>
+			<tr class="bottom_bordered">
+				<td>Log ID
+				<td>Ordering Account
+				<td>Contents
+				<td>Paid to Account
+				{{if data.screen == "Export"}}
+					<td>Paid to Lonestar
+				{{/if}}
+				<td>Time
+				<td>Print
+			{{for data.current_log_data}}
+				{{if data.is_all_access || value.ordering_acct == data.account}}
 						<tr>
-							<td>{{:value.1}}
-							<td>{{:value.2}}
-							<td>{{:value.3}}
-							<td>{{:value.4}}
-							<td>{{:value.5}}
-							{{if data.screen == "Export Log"}}
-								<td>{{:value.6}}
+							<td>{{:value.id}}
+							<td>{{:value.ordering_acct}}
+							<td class="link withToolTip">
+								View
+								<span class="ImTooltip">
+									<ul>
+										{{:value.contents}}
+									</ul>
+								</span>
+							{{if data.screen == "Export"}}
+								<td>{{:value.total_paid * 0.8}}
+								<td>{{:value.total_paid * 0.2}}
+							{{else}}
+								<td>{{if data.screen == "Shipping"}}-{{/if}}{{:value.total_paid}}
 							{{/if}}
-					{{/if}}
-				{{empty}}
-					This log is empty.
-				{{/for}}
-			{{/table}}
+							<td>{{:value.time}}
+							<td>
+								{{:helper.link("Standard", null, {'PRG_print' : value.id})}}
+								{{:helper.link("Internal", null, {'PRG_print_internal' : value.id})}}
+				{{/if}}
+			{{empty}}
+				<tr>This log is empty.
+			{{/for}}
+		</table>
 	{{/if}}
 {{else}}
 	<div class='nanoMap' style='padding: 100px 200px;'>
