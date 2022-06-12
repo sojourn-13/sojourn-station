@@ -386,6 +386,31 @@ This function restores all organs.
 			if(organ.take_damage(damage, 0, sharp, edge, used_weapon))
 				UpdateDamageIcon()
 
+						/////BRUTE FORCE TRAUMA/////
+			var/mob/living/carbon/human/A = src
+			if (ishuman(A)) // Is the mob being damaged human?
+				if ((organ.name in list("left arm","right arm","left leg","right leg")) && (organ.brute_dam >=25))
+					if ((!sharp) && (!edge)) // Blunt Weapon Smash Bone
+						for (var/obj/item/organ/internal/bone/boneHit in organ.internal_organs)
+							boneHit.take_damage(damage)
+					if ((sharp) && (!edge))  //Bullets Shred Muscles
+						for (var/obj/item/organ/internal/muscle/muscleHit in organ.internal_organs)
+							muscleHit.take_damage(damage)
+					else if ((sharp) && (edge))		//Blades shred blood vessels
+						for (var/obj/item/organ/internal/blood_vessel/vesselHit in organ.internal_organs)
+							vesselHit.take_damage(damage)
+
+				else
+					if ((organ.name in list("torso","groin")) && (organ.brute_dam >=75))
+						if ((sharp) && (!edge)) // Bullets or Shovel(?) make swiss chees of internal organs
+							var/obj/item/organ/internal/targetOrgan = pick(organ.internal_organs)
+							if (!(istype(targetOrgan,/obj/item/organ/internal/bone)))
+								targetOrgan.take_damage(damage)
+						if ((!sharp) && (!edge)) // Blunt Weapon Smash Bone
+							for (var/obj/item/organ/internal/bone/boneHit in organ.internal_organs)
+								boneHit.take_damage(damage)
+
+
 		if(BURN)
 			damageoverlaytemp = 20
 			damage = damage*species.burn_mod
