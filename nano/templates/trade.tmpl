@@ -12,30 +12,16 @@
 			<td>{{:helper.link("Trade Station", null, {'PRG_station' : 1})}}
 		{{/if}}
 	<tr>
-		<td class="link withToolTip">
-			Receiving Beacon{{if data.receiving}}: {{:data.receiving}}{{/if}}
-			<span class="ImTooltip">
-				<span class="right_aligned">{{:helper.link('X', null, {'PRG_receiving' : null}, null, 'redButton')}}</span>
-				<ul>
-					{{for data.receiving_list}}
-						<li>{{:helper.link(value.id, null, {'PRG_receiving' : value.index})}}</li>
-					{{empty}}
-						No Receiving Beacons found.
-					{{/for}}
-				</ul>
-			</span>
-		<td class="link withToolTip">
-			Sending Beacon{{if data.sending}}: {{:data.sending}}{{/if}}
-			<span class="ImTooltip">
-				<span class="right_aligned">{{:helper.link('X', null, {'PRG_sending' : null}, null, 'redButton')}}</span>
-				<ul>
-					{{for data.sending_list}}
-						<li>{{:helper.link(value.id, null, {'PRG_sending' : value.index})}}</li>
-					{{empty}}
-						No Sending Beacons found.
-					{{/for}}
-				</ul>
-			</span>
+		{{if data.receiving}}
+			<td>{{:helper.link("Receiving Beacon: " + data.receiving, null, {'PRG_receiving' : 1})}}
+		{{else}}
+			<td>{{:helper.link("Receiving Beacon", null, {'PRG_receiving' : 1})}}
+		{{/if}}
+		{{if data.sending}}
+			<td>{{:helper.link("Sending Beacon: " + data.sending, null, {'PRG_sending' : 1})}}
+		{{else}}
+			<td>{{:helper.link("Sending Beacon", null, {'PRG_sending' : 1})}}
+		{{/if}}
 </table>
 <hr>
 {{:helper.link(data.tradescreen ? "To Offers" : "To Goods", null, {'PRG_trade_screen' : 1})}}
