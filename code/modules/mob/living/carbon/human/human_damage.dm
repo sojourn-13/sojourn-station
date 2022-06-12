@@ -441,7 +441,7 @@ This function restores all organs.
 						/////NERVE BURN DAMAGE/////
 			var/mob/living/carbon/human/A = src
 			if (ishuman(A)) // Is the mob being damaged human?
-				if ((organ.nature != MODIFICATION_SILICON) && (organ.name in list("left arm","right arm","left leg","right leg")) && (organ.burn_dam >=25)) // Is the organ a limb? Is it not synthetic? Is it severely damaged?
+				if ((organ.nature != MODIFICATION_SILICON) && (organ.burn_dam >=25)) // Is the organ a limb? Is it not synthetic? Is it severely damaged?
 					for (var/obj/item/organ/internal/nerve/N in organ.internal_organs) // Check every nerve in the person
 						N.take_damage(damage) // Damage
 
