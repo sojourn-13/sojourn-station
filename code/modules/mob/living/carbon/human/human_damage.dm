@@ -223,11 +223,23 @@
 		..(amount)
 
 								//// TOXIN ORGAN ROT ////
-		if (ishuman(src))
-			if ((src.getToxLoss() > 75) && (amount>0)) // If toxloss is above a certain threshhold, more toxin damage will cause internal organ damage. For reference: 50 is DANGEROUS TOXIN LEVELS DETECTED
+		var/mob/living/carbon/human/H = src
+		if (ishuman(H))
+			var toxThreshHold
+
+			if (H.random_organ_by_process("liver").nature == MODIFICATION_SILICON)
+				toxThreshHold = 100
+			else
+				toxThreshHold = 75 // Synthetic organs buy an additional 25 points of toxin processing before becoming overloaded
+
+			if ((H.getToxLoss() > toxThreshHold) && (amount>0)) // If toxloss is above a certain threshhold, more toxin damage will cause internal organ damage. For reference: 50 is DANGEROUS TOXIN LEVELS DETECTED
 				var/obj/item/organ/internal/targeted_organ
-				var/list/listed_organs  = list("brain",OP_EYES,"heart","lungs","stomach","liver","kidneys","appendix","psionic organ")
-				targeted_organ = src.random_organ_by_process(pick(listed_organs))
+				if ((H.random_organ_by_process("liver").status & ORGAN_DEAD) || (H.getToxLoss() > 100)) // If the liver is dead, the toxin begins to rot out the other organs. If you have more than 100 toxin, your body begins to rot regardless of liver status
+					var/list/listed_organs  = list("brain",OP_EYES,"heart","lungs","stomach","kidneys","appendix","psionic organ")
+					targeted_organ = H.random_organ_by_process(pick(listed_organs))
+				else
+					targeted_organ = H.random_organ_by_process("liver")
+
 				if (targeted_organ.nature !=MODIFICATION_SILICON) // If randomly chosen organ is prothestic, no damage.
 					targeted_organ.damage += rand (5,10) // How much damage is dealt to each organ. Please adjust for balance
 
