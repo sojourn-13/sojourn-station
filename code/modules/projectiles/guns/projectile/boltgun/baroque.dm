@@ -14,7 +14,7 @@ Own a musket for department defense, since that's what the founding hunters inte
 	name = "\"Baroque\" bone rifle"
 	desc = "A heavy smoothbore lever-action rifle made from dense bones fitted with a plasteel barrel. One of the few rifles produced and widely distributed by Kriosan Jaegers, this \
 	particular design imparted by kriosan's favoring the hunting lodge. Fires a single devastating shot which can fell most animals in a single blow, though it struggles to do the same \
-	to people as it was designed primarily for game hunting. Still packs a hell of a punch. Uses 30mm rolled shot."
+	to people as it was designed primarily for game hunting. Still packs a hell of a punch. Uses 17mm rolled shot."
 	icon = 'icons/obj/guns/projectile/baroque.dmi'
 	icon_state = "baroque"
 	item_state = "baroque"

@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/handmade_pistol
 	name = "handmade pistol"
 	desc = "An unreliable hand-crafted pistol liable to blow up in your hands, while it has a chance to jam with every shot its easy and cheap to make with customizable calibers. \
-	Reloading, clearing jams, and opening or closing the chamber is done with a screwdriver. This one chambers up to six .35 pistol ammo."
+	Reloading, clearing jams, and opening or closing the chamber is done with a screwdriver. This one chambers up to six 9mm pistol ammo."
 	icon = 'icons/obj/guns/projectile/hm_pistol.dmi'
 	icon_state = "hm_pistol"
 	item_state = "pistol"
@@ -17,7 +17,7 @@
 	var/chamber_open = FALSE
 	var/jammed = FALSE
 	var/jam_chance = 15
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_CALIBRE_9MM)
 	max_upgrades = 0
 	price_tag = 50
 	serial_type = "INDEX"
@@ -26,7 +26,7 @@
 /obj/item/gun/projectile/handmade_pistol/magnum
 	name = "handmade magnum"
 	desc = "An unreliable hand-crafted pistol liable to blow up in your hands, while it has a chance to jam with every shot its easy and cheap to make with customizable calibers. \
-	Reloading, clearing jams, and opening or closing the chamber is done with a screwdriver. This one chambers up to four .40 magnum ammo."
+	Reloading, clearing jams, and opening or closing the chamber is done with a screwdriver. This one chambers up to four 10mm magnum ammo."
 	caliber = CAL_MAGNUM
 	max_shells = 4
 	init_recoil = HANDGUN_RECOIL(0.7)
@@ -48,7 +48,7 @@
 /obj/item/gun/projectile/handmade_pistol/anti_material
 	name = "handmade man-opener"
 	desc = "An unreliable hand-crafted pistol liable to blow up in your hands, while it has a chance to jam with every shot its easy and cheap to make with customizable calibers. \
-	Reloading, clearing jams, and opening or closing the chamber is done with a screwdriver. This one chambers up to one .60-06 anti material ammo. What mad man made this? It's jam chance and recoil \
+	Reloading, clearing jams, and opening or closing the chamber is done with a screwdriver. This one chambers up to one 14.5x114mm anti material ammo. What mad man made this? It's jam chance and recoil \
 	are much higher than normal."
 	caliber = CAL_ANTIM
 	max_shells = 1

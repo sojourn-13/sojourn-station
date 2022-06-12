@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/boltgun/light
 	name = "\"Sika\" light boltgun"
-	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .257, it's a common varmint and plinking rifle."
+	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in 6.5mm, it's a common varmint and plinking rifle."
 	icon = 'icons/obj/guns/projectile/lightboltgun.dmi'
 	icon_state = "boltgun"
 	item_state = "boltgun"
@@ -21,7 +21,7 @@
 
 /obj/item/gun/projectile/boltgun/sawn/light
 	name = "\"obrez\" light boltgun"
-	desc = "A crudly mangled and sawn-down .257 bolt action rifle. Rifle was fine."
+	desc = "A crudly mangled and sawn-down 6.5mm bolt action rifle. Rifle was fine."
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"
@@ -36,7 +36,7 @@
 //Wood version
 /obj/item/gun/projectile/boltgun/light_wood
 	name = "\"Roe\" light boltgun"
-	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .257, it's a common varmint and plinking rifle."
+	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in 6.5mm, it's a common varmint and plinking rifle."
 	icon = 'icons/obj/guns/projectile/lightboltgun_wood.dmi'
 	icon_state = "boltgun"
 	item_state = "boltgun"
@@ -57,7 +57,7 @@
 
 /obj/item/gun/projectile/boltgun/sawn/light_wood
 	name = "\"obrez\" light boltgun"
-	desc = "A crudly mangled and sawn-down .257 bolt action rifle. Rifle was fine."
+	desc = "A crudly mangled and sawn-down 6.5mm bolt action rifle. Rifle was fine."
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun_wood.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"

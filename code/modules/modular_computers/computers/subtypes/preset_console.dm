@@ -193,10 +193,12 @@
 /obj/item/modular_computer/console/preset/trade/install_default_hardware()
 	..()
 	card_slot = new/obj/item/computer_hardware/card_slot(src)
+	printer = new/obj/item/computer_hardware/printer(src)
 
 /obj/item/modular_computer/console/preset/trade/install_default_programs()
 	..()
 	hard_drive.store_file(new /datum/computer_file/program/trade())
+	hard_drive.store_file(new /datum/computer_file/program/trade_log())
 	set_autorun("trade")
 
 // Trade Catalog Console

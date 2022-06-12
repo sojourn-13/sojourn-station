@@ -3,7 +3,7 @@
 	desc = "The Duty is a heavy carbine designed by Marshall and Blackshield gunsmiths \
 	to suplement the ancient pattern boltguns as a standard issue rifle of Blackshield. \
 	Having the stopping power of the Kardashev-Mosin but with a faster fire rate and less recoil. \
-	The design took a lot of old world designs yet modernized it with the new caliber of .257 \
+	The design took a lot of old world designs yet modernized it with the new caliber of 6.5mm \
 	and a light polymer body balanced with heavy steel and plasteel. \
 	A full production rifle, it also has melee capabilities with its bayonet \
 	and it can be reloaded with a stripper clip due to the adapter guide installed on the receiver. \

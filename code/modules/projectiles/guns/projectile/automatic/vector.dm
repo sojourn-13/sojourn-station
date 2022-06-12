@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/vector
 	name = "\"Trajectory\" Magnum SMG"
-	desc = "A .40 SMG who's design data was recently acquired by Overboss Hogg through various connections with offworld traders. \
+	desc = "A 10mm SMG who's design data was recently acquired by Overboss Hogg through various connections with offworld traders. \
 	A Scarborough Arms logo is stamped on the side, though the SMG seems far better designed then most their usual product line. \
 	Regardless it sports robust recoil control system that dampens it's shots to near nothing, a array of firing modes for the discerning shooter, \
 	and even a folding stock for those with strong wrists or weak shoulders. Has threaded barrel for a silencer and a nice slot for a scope to be attached."
