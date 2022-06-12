@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/lmg
 	name = "SA \"SAW\""
-	desc = "A exstreamly rare HMG produced on a commision. Uses 7.5mm Rifle rounds."
+	desc = "A exstreamly rare HMG produced on a commision. Uses 7.62mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/l6.dmi'
 	var/icon_base
 	icon_base = "l6"
@@ -112,7 +112,7 @@
 //Typical LMG/SAW, use this for the high end of "normal."
 /obj/item/gun/projectile/automatic/lmg/saw
 	name = "\"Pegasus\" light machinegun"
-	desc = "A common LMG chambered in .257 Carbine, accepting either boxes or standard magazines, though this calls into question some reliability issues. \
+	desc = "A common LMG chambered in 6.5mm Carbine, accepting either boxes or standard magazines, though this calls into question some reliability issues. \
 	This particular example bears a winged horse in laurels and a \"Pegasus\" nameplate, all other markings have been filed off."
 	icon = 'icons/obj/guns/projectile/lmg.dmi'
 	icon_base = "saw"

@@ -26,7 +26,7 @@
 	item_state = "artwork_revolver_[random_icon]"
 	caliber = pick(CAL_MAGNUM,CAL_PISTOL)
 	if(caliber == CAL_PISTOL)
-		gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_35)// if we get .35 then we should take .35 upgrades
+		gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_9MM)// if we get 9mm then we should take 9mm upgrades
 	else
 		gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	max_shells += rand(-2,7)
