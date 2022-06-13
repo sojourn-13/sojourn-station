@@ -26,7 +26,7 @@
 	//We'll pick space tiles which have windows nearby
 	//This means that drones will only be spawned in places where someone could see them
 		//And thusly, places where they might fire into the ship
-	var/area/spess = locate(/area/space) in world
+	var/area/spess = locate(/area/nadezhda/outside) in world
 	for (var/turf/T in spess)
 		if (!(T.z in GLOB.maps_data.station_levels))
 			continue
