@@ -51,11 +51,10 @@
 //Must be called WHENEVER you modify nsa_bonus, nsa_chem_bonus, nsa_mult, or when you change nerve efficiency.
 //calc_nerves: Activates nerve efficiency recalculation, so its not recalculated every time.
 /datum/metabolism_effects/proc/calculate_nsa(calc_nerves = FALSE)
-	nsa_viv = 0 //Reset areself
+	nsa_viv = parent.stats.getStat(STAT_VIV)
 	if(calc_nerves && ishuman(parent))
 		var/mob/living/carbon/human/parent_human = parent
 		nsa_organ_bonus = (parent_human.get_organ_efficiency(OP_NERVE) - 700) / 2
-		nsa_viv += parent.stats.getStat(STAT_VIV)
 	nsa_threshold = round((100 + nsa_bonus + nsa_chem_bonus + nsa_organ_bonus + nsa_viv) * nsa_mult)
 	nsa_threshold = max(nsa_threshold, NSA_THRESHOLD_MINIMUM) //Can't be below for any reason. Keeps
 	return nsa_threshold
