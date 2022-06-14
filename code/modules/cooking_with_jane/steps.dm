@@ -8,15 +8,19 @@
 
 	var/parent_recipe //The parent recipe of this particular step. Created on initialization with New()
 
-	var/desc	//A description of the step
+	var/desc		//A description of the step
+
+	var/custom_result_desc //A custom description of the resulting quality on a successful completion.
 	
 	var/list/optional_step_list = list() //List of optional steps that can be followed from this point forward.
 
-	var/max_quality_awarded = -1 //The maximum quality awarded by following a given step to the letter.
+	var/max_quality_award = 0 //The maximum quality awarded by following a given step to the letter.
 
 	var/base_quality_award = 0
 
 	var/flags = 0
+
+	var/is_optional = FALSE
 
 	//The next required step for the parent recipe
 	var/datum/cooking_with_jane/recipe_step/next_step
@@ -26,7 +30,7 @@
 
 /datum/cooking_with_jane/recipe_step/New(var/datum/cooking_with_jane/recipe/our_recipe)
 	parent_recipe = our_recipe
-	unique_id = sequential_id(type)
+	unique_id = sequential_id("recipe_step")
 
 	//Add the recipe to our dictionary for future reference.
 	if(!GLOB.cwj_step_dictionary_ordered[class])
@@ -38,7 +42,7 @@
 
 //Calculate how well the recipe step was followed to the letter.
 /datum/cooking_with_jane/recipe_step/proc/calculate_quality()
-	return max_quality_awarded
+	return 0
 
 //Check if the conditions of a recipe step was followed correctly.
 /datum/cooking_with_jane/recipe_step/proc/check_conditions_met()
@@ -67,6 +71,128 @@
 	
 	//We didn't find anything. Return False.
 	return FALSE
+/datum/cooking_with_jane/recipe_step/proc/clamp_quality(var/raw_quality)
+	if((flags & CWJ_BASE_QUALITY_ENABLED) && (flags & CWJ_MAX_QUALITY_ENABLED)
+		return CLAMP(raw_quality, base_quality_award, max_quality_award)
+	if((flags & CWJ_BASE_QUALITY_ENABLED))
+		return max(raw_quality, base_quality_award)
+	if((flags & CWJ_MAX_QUALITY_ENABLED))
+		return min(raw_quality, max_quality_award)
+	return raw_quality
+
+/datum/cooking_with_jane/recipe_step/proc/follow_step()
+	return
+
+//-----------------------------------------------------------------------------------
+//The default starting step.
+//Doesn't do anything, just holds the item.
+
+/datum/cooking_with_jane/recipe_step/start
+	class = CWJ_START
+	var/required_container
+
+/datum/cooking_with_jane/recipe_step/start/New(var/container)
+	required_container = container
+
+
+
+
+//-----------------------------------------------------------------------------------
+//A cooking step that involves adding an item to the food. Is based on Item Type.
+//This basically deletes the food used on it.
+
+//ENSURE THE INCOMING ITEM HAS var/quality DEFINED!
+/datum/cooking_with_jane/recipe_step/add_item
+	class = CWJ_ADD_ITEM
+	
+	var/required_item_type //Item required for the recipe step
+	
+	var/inherited_quality_modifier = 1 //The modifier we apply multiplicatively to balance quality scaling across recipes.
+
+	var/exact_path = FALSE //Tests if the item has to be the EXACT ITEM PATH, or just a child of the item path.
+
+//item_type: The type path of the object we are looking for.
+//our_recipe: The parent recipe object,
+/datum/cooking_with_jane/recipe_step/add_item/New(var/item_type, var/datum/cooking_with_jane/recipe/our_recipe)
+	
+	if(!ispath(item_type))
+		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] is not a valid path")
+	
+	var/example_item = new item_type()
+	if(example_item)
+		description = "Add \a [example_item] into the recipe."
+
+		required_item_type = item_type
+		group_identifier = item_type
+
+		QDEL_NULL(example_item)
+	else
+		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] couldn't be created.")
+	
+	..(our_recipe)
+
+
+/datum/cooking_with_jane/recipe_step/add_item/check_conditions_met(var/added_item)
+	if(exact_path)
+		if(added_item.type == required_item_type)
+			return TRUE
+	else
+		if(istype(added_item,required_item_type))
+			return TRUE
+	return FALSE
+
+//The quality of add_item is special, in that it inherits the quality level of its parent and 
+//passes it along.
+//May need "Balancing" with var/inherited_quality_modifier
+/datum/cooking_with_jane/recipe_step/add_item/calculate_quality(var/added_item)
+	var/raw_quality = added_item:?food_quality * inherited_quality_modifier
+	return clamp_quality(raw_quality)
+
+//-----------------------------------------------------------------------------------
+//A cooking step that involves using an item on the food.
+/datum/cooking_with_jane/recipe_step/use_item
+	class=CWJ_USE_ITEM
+	var/required_item_type
+
+//item_type: The type path of the object we are looking for.
+//base_quality_award: The quality awarded by following this step.
+//our_recipe: The parent recipe object
+/datum/cooking_with_jane/recipe_step/use_item/New(var/item_type, var/datum/cooking_with_jane/recipe/our_recipe)
+	
+	if(!ispath(item_type))
+		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] is not a valid path")
+	
+	var/example_item = new item_type()
+	if(example_item)
+		description = "Apply \a [example_item]."
+
+		required_item_type = item_type
+		group_identifier = item_type
+
+		QDEL_NULL(example_item)
+	else
+		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] couldn't be created.")
+	
+	..(our_recipe)
+
+
+/datum/cooking_with_jane/recipe_step/use_item/check_conditions_met(var/added_item)
+	if(exact_path)
+		if(added_item.type == required_item_type)
+			return TRUE
+	else
+		if(istype(added_item,required_item_type))
+			return TRUE
+	return FALSE
+
+//Think about a way to make this more intuitive?
+/datum/cooking_with_jane/recipe_step/use_item/calculate_quality(var/added_item)
+	return clamp_quality(0)
+
+/datum/cooking_with_jane/recipe_step/add_item/follow_step(var/added_item, var/obj/item/cooking_with_jane/cooking_container/container)
+	added_item.forceMove(container)
+	container.foodstuff += added_item
+	return TRUE
 
 //-----------------------------------------------------------------------------------
 //A cooking step that involves adding a reagent to the food.
@@ -105,60 +231,7 @@
 	log_debug("/datum/cooking_with_jane/recipe_step/calculate_quality(var/amount) returned quality of [quality]")
 	#endif
 	return min((base_quality_award - abs(amount - required_reagent_amount)), 0)
-//-----------------------------------------------------------------------------------
-//A cooking step that involves adding an item to the food. Is based on Item Type.
-//This basically deletes the food used on it.
-/datum/cooking_with_jane/recipe_step/add_item
-	class=CWJ_ADD_ITEM
-	var/required_item_type
 
-//item_type: The type path of the object we are looking for.
-//base_quality_award: The quality awarded by following this step.
-//our_recipe: The parent recipe object,
-/datum/cooking_with_jane/recipe_step/add_item/New(var/item_type, var/datum/cooking_with_jane/recipe/our_recipe)
-	
-	if(!ispath(item_type))
-		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] is not a valid path")
-	
-	var/example_item = new item_type()
-	if(example_item)
-		description = "Add \a [example_item] into the recipe."
-
-		required_item_type = item_type
-		group_identifier = item_type
-
-		QDEL_NULL(example_item)
-	else
-		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] couldn't be created.")
-	
-	..(our_recipe)
-
-//-----------------------------------------------------------------------------------
-//A cooking step that involves using an item on the food.
-/datum/cooking_with_jane/recipe_step/use_item
-	class=CWJ_USE_ITEM
-	var/required_item_type
-
-//item_type: The type path of the object we are looking for.
-//base_quality_award: The quality awarded by following this step.
-//our_recipe: The parent recipe object
-/datum/cooking_with_jane/recipe_step/use_item/New(var/item_type, var/datum/cooking_with_jane/recipe/our_recipe)
-	
-	if(!ispath(item_type))
-		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] is not a valid path")
-	
-	var/example_item = new item_type()
-	if(example_item)
-		description = "Apply \a [example_item]."
-
-		required_item_type = item_type
-		group_identifier = item_type
-
-		QDEL_NULL(example_item)
-	else
-		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] couldn't be created.")
-	
-	..(our_recipe)
 
 //-----------------------------------------------------------------------------------
 //A cooking step that involves using SPECIFICALLY Grown foods
