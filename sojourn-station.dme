@@ -309,6 +309,7 @@
 #include "code\datums\craft\recipe.dm"
 #include "code\datums\craft\step.dm"
 #include "code\datums\craft\recipes\airlocks.dm"
+#include "code\datums\craft\recipes\alchemy.dm"
 #include "code\datums\craft\recipes\appliances.dm"
 #include "code\datums\craft\recipes\clothing.dm"
 #include "code\datums\craft\recipes\floor.dm"
