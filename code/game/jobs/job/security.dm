@@ -16,6 +16,7 @@
 	minimum_character_age = 30
 	department_account_access = TRUE
 	playtimerequired = 2500
+	health_modifier = 25
 
 	outfit_type = /decl/hierarchy/outfit/job/security/smc
 
@@ -79,6 +80,7 @@
 	minimum_character_age = 30
 	department_account_access = TRUE
 	playtimerequired = 2500
+	health_modifier = 25
 
 	outfit_type = /decl/hierarchy/outfit/job/security/swo
 
@@ -138,6 +140,7 @@
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
 	playtimerequired = 1200
+	health_modifier = 20
 
 	outfit_type = /decl/hierarchy/outfit/job/security/gunserg
 
@@ -192,6 +195,7 @@
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
 	playtimerequired = 1200
+	health_modifier = 20
 
 	outfit_type = /decl/hierarchy/outfit/job/security/serg
 
@@ -243,6 +247,7 @@
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	playtimerequired = 1200
+	health_modifier = 5
 
 	outfit_type = /decl/hierarchy/outfit/job/security/inspector
 
@@ -297,6 +302,7 @@
 	alt_titles = list("Combat Medic","Combat Surgeon")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
+	health_modifier = 5
 
 	outfit_type = /decl/hierarchy/outfit/job/security/medspec
 
@@ -350,6 +356,7 @@
 	alt_titles = list("Blackshield Cadet", "Blackshield Militiamen")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
+	health_modifier = 10
 
 	outfit_type = /decl/hierarchy/outfit/job/security/troop
 
@@ -400,6 +407,7 @@
 	alt_titles = list("Marshal Civil Servant", "Field Training Marshal")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
+	health_modifier = 10
 
 	outfit_type = /decl/hierarchy/outfit/job/security/ihoper
 
