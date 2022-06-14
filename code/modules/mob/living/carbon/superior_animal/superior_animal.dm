@@ -16,10 +16,13 @@
 	var/eating_time = 900
 
 	/// How many tiles we will advance forward from our current position if we can't hit our current target.
-	var/advancement = 3
+	var/advancement = 1
 
-	/// Var used to track if we are currently advancing. Blocks most walk_to-s that might come up.
-	var/advancing = FALSE
+	/// Incrememnts advancement_timer by itself whenever a ranged mob decides to advance.
+	var/advancement_increment = 5
+
+	/// Will be incremented advancement_increment ticks whenever a ranged mob decides to advance. If more than world.time, targetting walks will be ignored, to not end the advancement.
+	var/advancement_timer = 0
 
 	///How delayed are our ranged attacks, in ticks. Reduces DPS.
 	var/fire_delay = 0
@@ -466,8 +469,8 @@
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings)
 
 /mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE)
-	var/projectile_passflags
-	var/projectile_flags
+	var/projectile_passflags = null
+	var/projectile_flags = null
 	var/calculated_walk = (comfy_range - comfy_distance)
 	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
 	if(destroy_surroundings && !already_destroying_surroundings)
@@ -480,18 +483,18 @@
 			patience--
 		return
 	else if (projectiletype) // if we can see, let's prepare to see if we can hit
-		if (projectiletype == initial(projectiletype)) // typepaths' vars are only accessable through initial() or objects
-			projectile_passflags = initial(projectiletype.pass_flags)
-			projectile_flags = initial(projectiletype.flags)
-		else // in case for some reason this var was editted post-compile
-			var/obj/item/projectile/temp_proj = new projectiletype(null) //create it in nullspace
-			projectile_passflags = temp_proj.pass_flags
-			projectile_flags = temp_proj.flags
-			QDEL_NULL(temp_proj)
+		if (istype(projectiletype, /obj/item/projectile))
+			if (projectiletype == initial(projectiletype)) // typepaths' vars are only accessable through initial() or objects
+				projectile_passflags = initial(projectiletype.pass_flags)
+				projectile_flags = initial(projectiletype.flags)
+			else // in case for some reason this var was editted post-compile
+				var/obj/item/projectile/temp_proj = new projectiletype(null) //create it in nullspace
+				projectile_passflags = temp_proj.pass_flags
+				projectile_flags = temp_proj.flags
+				QDEL_NULL(temp_proj)
 		if (ranged)
 			var/obj/item/projectile/test/impacttest/trace = new /obj/item/projectile/test/impacttest(get_turf(src))
 			RegisterSignal(trace, COMSIG_TRACE_IMPACT, .proc/handle_trace_impact)
-			addtimer(CALLBACK(src, .proc/handle_advancement_var), 5) // we dont want this walk overridden immediately
 			trace.pass_flags = projectile_passflags
 			trace.flags = projectile_flags
 			trace.launch(targetted_mob)
@@ -507,12 +510,12 @@
 			return
 		if(get_dist(src, targetted_mob) <= comfy_range)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
-			if (!advancing) //we dont want to prematurely end a advancing walk
+			if (advancement_timer <= world.time) //we dont want to prematurely end a advancing walk
 				walk_to(src, targetted_mob, calculated_walk, move_to_delay) //we still want to reset our walk
 		else
 			if(weakened)
 				return
-			if (!advancing)
+			if (advancement_timer <= world.time)
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 				walk_to(src, targetted_mob, calculated_walk, move_to_delay)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
@@ -700,8 +703,5 @@
 			if (advance_steps <= 0)
 				advance_steps = 1 //1 is the minimum distance
 			walk_to(src, targetted_mob, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
-			advancing = TRUE // we dont want this overridden instantly
+			advancement_timer = (world.time += advancement_increment) // we dont want this overridden instantly
 
-/// For when we want to set the mob's advancing var to false on a delay.
-/mob/living/carbon/superior_animal/proc/handle_advancement_var()
-	advancing = FALSE
