@@ -25,7 +25,7 @@
 	var/list/nutriment_desc = list("food" = 1)
 	center_of_mass = list("x"=16, "y"=16)
 	w_class = ITEM_SIZE_SMALL
-
+	var/food_quality = 1
 	var/sanity_gain = 0.2 //Per bite
 	var/cooked = FALSE
 	var/appraised = 0 //Has this piece of food been appraised? We can only do that once.

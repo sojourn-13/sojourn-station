@@ -7,7 +7,7 @@ The recipe datum outlines a list of steps from getting a piece of food from poin
 Recipes have steps that are held in a modular linked list, holding required steps, and optional ones to increase the total quality of the food.
 Following a recipe incorrectly (IE, adding too much of an item, having the burner too hot, etc.) Will decrease the quality of the food.area
 
-Recipes have clear start and end points. They start with a particular item and end with a particular item. 
+Recipes have clear start and end points. They start with a particular item and end with a particular item.
 
 That said, a start item can follow multiple recipes until they eventually diverge as different steps are followed.
 
@@ -27,9 +27,9 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 	var/description			//Description for the cooking guide. Auto-populates if not set.
 	var/recipe_icon			//Icon for the cooking guide. Auto-populates if not set.
 	var/recipe_icon_state	//Icon state for the cooking guide. Auto-populates if not set.
-	
+
 	//The Cooking container the recipe is performed in.
-	var/cooking_container = list() 
+	var/cooking_container = null
 
 	var/product_type //Type path for the product created by the recipe. An item of this type should ALSO have a recipe_tracker Datum.
 
@@ -39,7 +39,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 	var/exclusive_option_mode = FALSE //triggers whether two steps in a process are exclusive- IE: you can do one or the other, but not both.
 
-	var/active_exclusive_option_list = NULL //Only needed during the creation process for tracking a given exclusive option dictionary.
+	var/active_exclusive_option_list = null //Only needed during the creation process for tracking a given exclusive option dictionary.
 
 	var/option_chain_mode = 0 //triggers whether two steps in a process are exclusive- IE: you can do one or the other, but not both.
 
@@ -50,7 +50,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		_OPTIONAL steps are linked to the previously made REQUIRED step
 		CWJ_BEGIN steps must eventually terminate in a matching CWJ_END step
 	*/
-	var/list/step_builder = NULL
+	var/list/step_builder = null
 
 	var/datum/cooking_with_jane/recipe_step/first_step //The first step in the linked list that will result in the final recipe
 
@@ -61,12 +61,12 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 /datum/cooking_with_jane/recipe/New()
 	build_steps()
 	if(ispath(product_type))
-		var/obj/product_info = new product_type()
+		var/obj/item/product_info = new product_type()
 		if(!name)
 			name = product_info.name
-		
+
 		if(!description)
-			description = product_info.description
+			description = product_info.desc
 
 		if(!(recipe_icon && recipe_icon_state))
 			recipe_icon = product_info.icon
@@ -77,17 +77,17 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 //Build out the recipe steps for a recipe, based on the step_builder list
 /datum/cooking_with_jane/recipe/proc/build_steps()
 	if(!step_builder)
-		CRASH("/datum/cooking_with_jane/recipe/New: Recipe has no step builder defined! Recipe path=[src.path].")
-	
+		CRASH("/datum/cooking_with_jane/recipe/New: Recipe has no step builder defined! Recipe path=[src.type].")
+
 	if(!cooking_container)
-		CRASH("/datum/cooking_with_jane/recipe/New: Recipe has no cooking container defined! Recipe path=[src.path].")
+		CRASH("/datum/cooking_with_jane/recipe/New: Recipe has no cooking container defined! Recipe path=[src.type].")
 
 	//Create a base step
 	create_step_base()
 
-	for (var/step in step_builder)
+	for (var/list/step in step_builder)
 		if(islist(step) && step.len >= 1)
-			reason = ""
+			var/reason = ""
 			switch(step[1])
 				if(CWJ_ADD_ITEM)
 					if(step.len < 2)
@@ -141,11 +141,11 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 						reason="Bad argument Length for CWJ_ADD_PRODUCE_OPTIONAL"
 					else
 						create_step_add_produce(step[2], TRUE)
-			
+
 			//Named Arguments modify the recipe in fixed ways
 			if("desc" in step)
 				set_step_desc(step["desc"])
-			
+
 			if("base" in step)
 				set_step_base_quality(step["base"])
 
@@ -164,7 +164,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 					reason="exact / exact type match declared on non add-item / use-item recipe step."
 
 			if(reason)
-				CRASH("[src.path]/New: Step Builder failed. Reason: [reason]")
+				CRASH("[src.type]/New: Step Builder failed. Reason: [reason]")
 		else
 			switch(step)
 				if(CWJ_BEGIN_EXCLUSIVE_OPTIONS)
@@ -175,22 +175,22 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 					begin_option_chain()
 				if(CWJ_END_OPTION_CHAIN)
 					end_option_chain()
-	
+
 	if(exclusive_option_mode)
 		CRASH("/datum/cooking_with_jane/recipe/New: Exclusive option active at end of recipe creation process. Recipe name=[name].")
-	
+
 	if(option_chain_mode)
 		CRASH("/datum/cooking_with_jane/recipe/New: Option Chain active at end of recipe creation process. Recipe name=[name].")
-	
+
 	if(last_created_step.flags & CWJ_IS_OPTIONAL)
 		CRASH("/datum/cooking_with_jane/recipe/New: Last option in builder is optional. It must be a required step! Recipe name=[name].")
-		
+
 //-----------------------------------------------------------------------------------
 //Commands for interacting with the recipe tracker
 //-----------------------------------------------------------------------------------
 //Add base step command. All other steps stem from this. Don't call twice!
 /datum/cooking_with_jane/recipe/proc/create_step_base()
-	var/datum/cooking_with_jane/recipe_step/start/step = new (container_type)
+	var/datum/cooking_with_jane/recipe_step/start/step = new /datum/cooking_with_jane/recipe_step(cooking_container)
 	return src.add_step(step, FALSE)
 
 //-----------------------------------------------------------------------------------
@@ -213,7 +213,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 //-----------------------------------------------------------------------------------
 //Use item step shortcut commands
 /datum/cooking_with_jane/recipe/proc/create_step_add_produce(var/produce, var/optional)
-	var/datum/cooking_with_jane/recipe_step/add_produce/step = new (produce, src)
+	var/datum/cooking_with_jane/recipe_step/add_produce/step = new /datum/cooking_with_jane/recipe_step/add_produce(produce, src)
 	return src.add_step(step, optional)
 
 //-----------------------------------------------------------------------------------
@@ -235,7 +235,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 /datum/cooking_with_jane/recipe/proc/set_exact_type_required(var/boolean)
 	if((last_created_step.class & CWJ_ADD_ITEM) || (last_created_step.class & CWJ_USE_ITEM))
-		last_created_step?:exact_path = modifier
+		last_created_step?:exact_path = boolean
 		return TRUE
 	else
 		return FALSE
@@ -249,11 +249,12 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 //-----------------------------------------------------------------------------------
 //Add a custom step to the cooking process not covered by the existing shortcuts.
 //TODO
+/*
 /datum/cooking_with_jane/recipe/proc/add_custom_step(var/step_type, paramlist)
 	//var/step_type, var/base_quality_award, var/param_list, optional=FALSE
 	var/datum/cooking_with_jane/recipe_step/step = new step_type(src)
 	return src.add_step(step, optional)
-
+*/
 //-----------------------------------------------------------------------------------
 //Setup for two options being exclusive to eachother.
 //Performs a lot of internal checking to make sure that it doesn't break everything.
@@ -294,7 +295,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 			if (exclusive_option.unique_id != excluder.unique_id)
 				GLOB.cwj_optional_step_exclusion_dictionary["[exclusive_option.unique_id]"] = excluder.unique_id
 
-	active_exclusive_option_list = NULL
+	active_exclusive_option_list = null
 
 //-----------------------------------------------------------------------------------
 //Setup for a chain of optional steps to be added that order themselves sequentially.
@@ -320,12 +321,12 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 //-----------------------------------------------------------------------------------
 //Function that dynamically adds a step into a given recipe matrix.
 /datum/cooking_with_jane/recipe/proc/add_step(var/datum/cooking_with_jane/recipe_step/step, var/optional)
-	
-	//Required steps can't have exclusive options. 
+
+	//Required steps can't have exclusive options.
 	//If a given recipe needs to split into two branching required steps, it should be split into two different recipes.
 	if(!optional && exclusive_option_mode)
 		CRASH("/datum/cooking_with_jane/recipe/proc/add_step: Required step added while exclusive option mode is on. Recipe name=[name].")
-	
+
 	if(!optional && option_chain_mode)
 		CRASH("/datum/cooking_with_jane/recipe/proc/add_step: Required step added while option chain mode is on. Recipe name=[name].")
 
@@ -342,11 +343,11 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 				if(1)
 					last_required_step.optional_step_list += step
 					option_chain_mode = 2
-					step.is_option_chain = TRUE
+					step.flags |= CWJ_IS_OPTION_CHAIN
 				//When the chain has already started.
 				if(2)
 					last_created_step.next_step = step
-					step.is_option_chain = TRUE
+					step.flags |= CWJ_IS_OPTION_CHAIN
 				//Add the step to the optional_step_list list normally.
 				else
 					last_required_step.optional_step_list += step
@@ -373,9 +374,9 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		if(option_chain_mode)
 			step.flags |= CWJ_IS_OPTION_CHAIN
 
-	if(!optional)		
+	if(!optional)
 		last_required_step = step
-		
+
 	last_created_step = step
 
 	//Handle exclusive options
@@ -383,12 +384,17 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		active_exclusive_option_list[step] = list()
 		for (var/datum/cooking_with_jane/recipe_step/ex_step in active_exclusive_option_list)
 			if(ex_step == step.unique_id || step.in_option_chain(ex_step))
-				continue			
+				continue
 			active_exclusive_option_list[ex_step] += step
 	return step
 
 //-----------------------------------------------------------------------------------
 //default function for creating a product
-/datum/cooking_with_jane/recipe/proc/create_product(var/datum/cooking_with_jane/recipe_pointer)
-	for(var/i = 0; i < product_count; i++)
-		new product_type(recipe_pointer.parent.holder.get_turf())
+/datum/cooking_with_jane/recipe/proc/create_product(var/datum/cooking_with_jane/recipe_pointer/pointer)
+	var/datum/cooking_with_jane/recipe_tracker/parent = pointer.parent_ref.resolve()
+	var/obj/item/cooking_with_jane/cooking_container/container = parent.holder_ref.resolve()
+	if(container)
+		for(var/i = 0; i < product_count; i++)
+			var/obj/item/product = new product_type()
+			product.loc = container
+			container.foodstuff += product
