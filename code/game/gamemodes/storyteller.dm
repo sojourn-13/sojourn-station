@@ -58,7 +58,7 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 	var/variance = 0.15 //15% How much point gains are allowed to vary up or down per tick. This helps to keep event triggering times unpredictable
 	var/repetition_multiplier = 0.85 //Weights of events are multiplied by this value after they happen, to reduce the chance of multiple instances in short time
 
-	var/event_schedule_delay = 15 MINUTES
+	var/event_schedule_delay = 45 MINUTES //Upped form 15 as are rounds are about 3x longer then eris
 	//Once selected, events are not fired immediately, but are scheduled for some random time in the near future
 	//This mostly helps to prevent them syncing up and announcements overlapping each other
 	//The maximum time between scheduling and firing an event

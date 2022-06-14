@@ -100,17 +100,18 @@
 /datum/poll/storyteller
 	name = "Storyteller"
 	question = "Choose storyteller"
+	next_vote = 60 MINUTES //After an hour if people want let them re-vote the story teller
 	time = 120
 	choice_types = list()
 	minimum_voters = 0
 	only_admin = FALSE
 
-	multiple_votes = FALSE
+	multiple_votes = TRUE
 	can_revote = TRUE
 	can_unvote = TRUE
-	cooldown = 30 MINUTES
+	cooldown = 60 MINUTES //Unlike other votes were not to spamable do to how annoying this can get
 	see_votes = TRUE
-	only_admin = TRUE
+	only_admin = FALSE
 
 	var/pregame = FALSE
 
