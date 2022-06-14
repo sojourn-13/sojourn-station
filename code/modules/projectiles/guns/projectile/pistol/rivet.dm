@@ -1,11 +1,10 @@
 /obj/item/gun/projectile/rivet
 	name = "Greyson Positronic \"Rivet\" magnum pistol"
-	desc = "GP \"Rivet\" magnum pistol, lost tech of a high power pistol using only .40 Auto-Mag."
+	desc = "GP \"Rivet\" magnum pistol, lost tech of a high power pistol using only 10mm Auto-Mag."
 	icon = 'icons/obj/guns/projectile/rivet_gun.dmi'
 	icon_state = "rivet"
 	damage_multiplier = 1.2
-	one_hand_penalty = 12
-	recoil_buildup = 8
+	init_recoil = HANDGUN_RECOIL(1.3)
 	price_tag = 1000
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 6, TECH_ILLEGAL = 3)
 	w_class = ITEM_SIZE_SMALL

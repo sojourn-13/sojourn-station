@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/olivaw
 	name = "\"Olivaw\" burst pistol"
-	desc = "The second most popular model of civilian pistols produced by H&S. This one seems to have a two-round burst-fire mode. Uses .35 auto."
+	desc = "The second most popular model of civilian pistols produced by H&S. This one seems to have a two-round burst-fire mode. Uses 9mm."
 	icon = 'icons/obj/guns/projectile/olivawcivil.dmi'
 	icon_state = "olivawcivil"
 	item_state = "pistol"
@@ -14,9 +14,8 @@
 	price_tag = 450
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.1
-	recoil_buildup = 4
-	one_hand_penalty = 7
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL, GUN_SILENCABLE)
+	init_recoil = HANDGUN_RECOIL(1)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL, GUN_SILENCABLE)
 
 	init_firemodes = list(
 		list(mode_name="semiauto", mode_desc="Shoot as fast as you can pull the trigger",       burst=1, fire_delay=1.2, move_delay=null, 				icon="semi"),

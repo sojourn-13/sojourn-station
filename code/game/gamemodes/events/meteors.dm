@@ -1,6 +1,8 @@
 /*
 	Meteors damage the station and the shields
-*/
+
+disabled
+
 /datum/storyevent/meteor
 	id = "meteor"
 	name = "meteor shower"
@@ -11,6 +13,7 @@
 	EVENT_LEVEL_MAJOR = POOL_THRESHOLD_MAJOR)
 
 	tags = list(TAG_DESTRUCTIVE, TAG_NEGATIVE, TAG_EXTERNAL)
+*/
 //===========================================
 
 /datum/event/meteor_wave

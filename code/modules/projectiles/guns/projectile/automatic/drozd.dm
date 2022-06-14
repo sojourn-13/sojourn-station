@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/drozd
 	name = "Excelsior \"Drozd\" SMG"
-	desc = "An excellent fully automatic submachinegun. Famous for it's perfomance in close quarters and used by communists groups such as the excelsior. Uses .35 rounds."
+	desc = "An excellent fully automatic submachinegun. Famous for it's perfomance in close quarters and used by communists groups such as the excelsior. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/drozd.dmi'
 	icon_state = "drozd"
 	item_state = "drozd"
@@ -14,11 +14,9 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 3)
 	price_tag = 1000
 	damage_multiplier = 0.95
-	recoil_buildup = 0.15
-	one_hand_penalty = 10
+	init_recoil = SMG_RECOIL(0.4)
 	twohanded = FALSE
-	one_hand_penalty = 5 //smg level
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL)
 	init_firemodes = list(
 		FULL_AUTO_600_NOLOSS,
 		SEMI_AUTO_NODELAY
@@ -27,7 +25,7 @@
 
 /obj/item/gun/projectile/automatic/drozd/NM_colony
 	name = "\"Kompleks\" SMG"
-	desc = "An excellent fully automatic submachinegun. Famous for it's perfomance in close quarters. Uses .35 rounds."
+	desc = "An excellent fully automatic submachinegun. Famous for it's perfomance in close quarters. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/drozd.dmi'
 	origin_tech = list(TECH_COMBAT = 4)
 	price_tag = 600

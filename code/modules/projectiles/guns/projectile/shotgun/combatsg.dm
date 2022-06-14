@@ -13,8 +13,7 @@
 	price_tag = 1250
 	damage_multiplier = 1.2
 	penetration_multiplier = 1 //Little worse than gladstone
-	recoil_buildup = 13
-	one_hand_penalty = 15 //full sized shotgun level
+	init_recoil = RIFLE_RECOIL(1.2)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/combat/sawn
 	serial_type = "Absolute"
@@ -29,8 +28,7 @@
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1000
-	recoil_buildup = 30
-	one_hand_penalty = 100 //Just in case
+	init_recoil = RIFLE_RECOIL(2.8)
 	damage_multiplier = 0.9
 	fire_delay = 12
 	saw_off = FALSE

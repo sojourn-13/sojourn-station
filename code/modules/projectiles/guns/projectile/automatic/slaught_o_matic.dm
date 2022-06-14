@@ -19,7 +19,7 @@
 	price_tag = 10
 	serial_type = "H&S"
 
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
 
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	var/list/possible_colors = list("purple", "magenta", "blue", "cyan", "aqua", "green", "yellow", "orange", "red" )
@@ -27,8 +27,7 @@
 
 	damage_multiplier = 0.8
 	penetration_multiplier = 0.2
-	recoil_buildup = 0.75
-	one_hand_penalty = 5 //despite it being handgun, it's better to hold in two hands while shooting. SMG level.
+	init_recoil = HANDGUN_RECOIL(1.6)
 
 	init_firemodes = list(
 		FULL_AUTO_300,

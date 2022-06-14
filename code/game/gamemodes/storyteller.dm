@@ -224,9 +224,9 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 //When getting the storyteller system working for us, we don't want regenerating points to prevent late game spams. Essentially the round starts difficult and gets easier
 //over time to prevent "always PvE" and allow for some relaxation and RP. Commenting out prior code in case we need it for reference later. -Kaz
 /datum/storyteller/proc/handle_points()
-	points[EVENT_LEVEL_MUNDANE] += 0 //1 * (gain_mult_mundane) * (RAND_DECIMAL(1-variance, 1+variance))
-	points[EVENT_LEVEL_MODERATE] += 0 //1 * (gain_mult_moderate) * (RAND_DECIMAL(1-variance, 1+variance))
-	points[EVENT_LEVEL_MAJOR] += 0 //1 * (gain_mult_major) * (RAND_DECIMAL(1-variance, 1+variance))
+	points[EVENT_LEVEL_MUNDANE] += 1 * (gain_mult_mundane) * (RAND_DECIMAL(1-variance, 1+variance))
+	points[EVENT_LEVEL_MODERATE] += 1 * (gain_mult_moderate) * (RAND_DECIMAL(1-variance, 1+variance))
+	points[EVENT_LEVEL_MAJOR] += 1 * (gain_mult_major) * (RAND_DECIMAL(1-variance, 1+variance))
 	points[EVENT_LEVEL_ROLESET] += 0 //1 * (gain_mult_roleset) * (RAND_DECIMAL(1-variance, 1+variance))
 	check_thresholds()
 

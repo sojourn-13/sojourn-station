@@ -13,8 +13,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_STEEL = 5)
 	price_tag = 500
 	damage_multiplier = 0.8
-	recoil_buildup = 15
-	one_hand_penalty = 30
+	init_recoil = RIFLE_RECOIL(2)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/revolver/sixshot/sawn
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
@@ -29,8 +28,7 @@
 	max_shells = 10
 	matter = list(MATERIAL_PLASTEEL = 24, MATERIAL_WOOD = 15, MATERIAL_STEEL = 5)
 	price_tag = 600
-	recoil_buildup = 12 // Added weight for better control.
-	one_hand_penalty = 50 // But now its unwieldy as fuck. -Kaz
+	init_recoil = RIFLE_RECOIL(3)
 	saw_off = FALSE
 	serial_type = "AG"
 
@@ -55,5 +53,4 @@
 	price_tag = 250
 	damage_multiplier = 0.7
 	penetration_multiplier = 0.8
-	recoil_buildup = 20 //Still a shotgun
-	one_hand_penalty = 26
+	init_recoil = RIFLE_RECOIL(2.3)

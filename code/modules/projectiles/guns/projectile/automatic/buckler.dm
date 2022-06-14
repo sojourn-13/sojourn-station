@@ -19,9 +19,8 @@
 	price_tag = 700
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.1
-	recoil_buildup = 1.25
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE, GUN_CALIBRE_35)
-	one_hand_penalty = 10
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE, GUN_CALIBRE_9MM)
+	init_recoil = SMG_RECOIL(1)
 	folding_stock = TRUE //we can fold are stocks
 
 	init_firemodes = list(

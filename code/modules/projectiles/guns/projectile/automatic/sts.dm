@@ -18,8 +18,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	damage_multiplier = 1.2
-	recoil_buildup = 1.75
-	one_hand_penalty = 13 //automatic rifle level
+	init_recoil = RIFLE_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 	serial_type = "SA"
 
@@ -96,13 +95,12 @@
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 6)
 	price_tag = 600
-	recoil_buildup = 4
-	one_hand_penalty = 20
+	init_recoil = RIFLE_RECOIL(1.2)
 	saw_off = FALSE
 
 /obj/item/gun/projectile/automatic/sts/rifle
 	name = "\"STS\" battle rifle"
-	desc = "A rugged STS-30.  Uses 7.5mm rifle rounds. We'll keep our land a free land, stop the enemy coming in."
+	desc = "A rugged STS-30.  Uses 7.62mm rifle rounds. We'll keep our land a free land, stop the enemy coming in."
 	icon = 'icons/obj/guns/projectile/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -112,8 +110,7 @@
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 1
 	penetration_multiplier = 1.2
-	recoil_buildup = 2
-	one_hand_penalty = 20
+	init_recoil = RIFLE_RECOIL(1.3)
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn
@@ -126,7 +123,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/sawn
 	name = "sawn down \"STS\" battle rifle"
-	desc = "A rugged STS-30.  Uses 7.5mm rifle rounds. This one has been shortened as much as possible while still able to function."
+	desc = "A rugged STS-30.  Uses 7.62mm rifle rounds. This one has been shortened as much as possible while still able to function."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -134,8 +131,7 @@
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	penetration_multiplier = 1.0
-	recoil_buildup = 3
-	one_hand_penalty = 20 //automatic rifle level
+	init_recoil = RIFLE_RECOIL(1.4)
 	saw_off = FALSE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	init_firemodes = list(
@@ -145,7 +141,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield
 	name = "\"STS PARA\" Blackshield rifle"
-	desc = "A lightweight modified variant of the STS-30 that takes 7.5mm rounds, shedding wartime wood for modern plastic polymer. \
+	desc = "A lightweight modified variant of the STS-30 that takes 7.62mm rounds, shedding wartime wood for modern plastic polymer. \
 	The lightweight polymer, skeletal stock, and shortened barrel make this weapon much lighter than the standard STS with modified recievers and gas block for better recoil control. \
 	Two stamps are pressed into the side of the receiver: A 'M&C' logo and a blackshield logo."
 	icon = 'icons/obj/guns/projectile/sts35.dmi'
@@ -155,8 +151,7 @@
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 1.2 //Well oiled
-	recoil_buildup = 1.75
-	one_hand_penalty = 18
+	init_recoil = RIFLE_RECOIL(1.5)
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield
@@ -170,7 +165,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield
 	name = "sawn down Blackshield \"STS PARA\" rifle"
-	desc = "A rugged STS-35 with two round burst.  Uses 7.5mm rifle rounds. This one has been shortened as much as possible while still able to function still more effective then a normal STS-30 varent."
+	desc = "A rugged STS-35 with two round burst.  Uses 7.62mm rifle rounds. This one has been shortened as much as possible while still able to function still more effective then a normal STS-30 varent."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -178,8 +173,7 @@
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 1.0 //Rifle was fine
-	recoil_buildup = 2.5
-	one_hand_penalty = 22 //automatic rifle level
+	init_recoil = RIFLE_RECOIL(1.6)
 	saw_off = FALSE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	serial_type = "NM"
@@ -192,7 +186,7 @@
 
 /obj/item/gun/projectile/automatic/sts/hrifle
 	name = "\"STS\" heavy rifle"
-	desc = "A rugged STS-40. Uses .408 heavy rifle rounds. If we have to go alone, we'll go alone with pride."
+	desc = "A rugged STS-40. Uses 8.6x70mm heavy rifle rounds. If we have to go alone, we'll go alone with pride."
 	icon = 'icons/obj/guns/projectile/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -202,8 +196,7 @@
 	price_tag = 1750
 	penetration_multiplier = 1.1
 	damage_multiplier = 1.1
-	recoil_buildup = 12
-	one_hand_penalty = 25
+	init_recoil = RIFLE_RECOIL(1.7)
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/batrifle_cock.ogg'
 	saw_off = TRUE
@@ -214,14 +207,13 @@
 
 /obj/item/gun/projectile/automatic/sts/hrifle/sawn
 	name = "sawn down \"STS\" heavy rifle"
-	desc = "A rugged STS-40. Uses .408 heavy rifle rounds. This one has been shortened as much as possible while still able to function."
+	desc = "A rugged STS-40. Uses 8.6x70mm heavy rifle rounds. This one has been shortened as much as possible while still able to function."
 	icon = 'icons/obj/guns/projectile/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"
 	w_class = ITEM_SIZE_BULKY
 	penetration_multiplier = 0.8
 	damage_multiplier = 1
-	recoil_buildup = 20
-	one_hand_penalty = 30
+	init_recoil = RIFLE_RECOIL(1.8)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	saw_off = FALSE

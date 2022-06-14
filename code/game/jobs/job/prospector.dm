@@ -13,6 +13,7 @@
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
 	department_account_access = TRUE
+	health_modifier = 15
 
 	outfit_type = /decl/hierarchy/outfit/job/foreman
 	playtimerequired = 1200
@@ -67,6 +68,8 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/salv
 
+	health_modifier = 5
+
 	access = list(
 		access_prospector, access_external_airlocks, access_eva, access_maint_tunnels
 	)
@@ -111,6 +114,7 @@
 	wage = WAGE_LABOUR_DUMB
 
 	outfit_type = /decl/hierarchy/outfit/job/pro
+	health_modifier = 10
 
 	access = list(
 		access_prospector, access_external_airlocks, access_eva, access_maint_tunnels

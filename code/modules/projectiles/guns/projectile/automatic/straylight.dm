@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/straylight
 	name = "\"Straylight\" auto-pistol"
-	desc = "A select-fire pistol made by H&S as a variant of the Firefly. Compact and flexible, but somewhat underpowered. Custom magwell allows it to feed both from pistol and SMG magazines. Uses .35 rounds."
+	desc = "A select-fire pistol made by H&S as a variant of the Firefly. Compact and flexible, but somewhat underpowered. Custom magwell allows it to feed both from pistol and SMG magazines. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/straylight.dmi'
 	icon_state = "straylight"
 	item_state = "straylight"
@@ -15,11 +15,9 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 3)
 	price_tag = 850
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_MAGWELL)
 	damage_multiplier = 0.9
-	recoil_buildup = 0.75
-	one_hand_penalty = 20
-
+	init_recoil = CARBINE_RECOIL(0.8)
 	init_firemodes = list(
 		FULL_AUTO_600,
 		SEMI_AUTO_NODELAY,

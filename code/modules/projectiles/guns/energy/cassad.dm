@@ -9,7 +9,7 @@
 	projectile_type = /obj/item/projectile/beam/pulse
 	sel_mode = 1
 	charge_cost = 40 //20 shots per high medium-sized cell
-	fire_delay = 12
+	init_recoil = CARBINE_RECOIL(1)
 	origin_tech = list(TECH_COMBAT = 7, TECH_PLASMA = 2)
 	price_tag = 1500
 	zoom_factor = null

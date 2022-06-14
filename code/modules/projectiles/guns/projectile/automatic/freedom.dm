@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/freedom
 	name = "\"Freedom\" magnum SMG"
-	desc = "A modified version of the .40 \"Liberty\" pistol, the aptly named \"Freedom\" sports an increased rate of fire and a brace-style stock to aid in recoil control."
+	desc = "A modified version of the 10mm \"Liberty\" pistol, the aptly named \"Freedom\" sports an increased rate of fire and a brace-style stock to aid in recoil control."
 	icon_state = "freedom"
 	item_state = "freedom"
 	icon = 'icons/obj/guns/projectile/freedom.dmi'
@@ -19,8 +19,7 @@
 	zoom_factor = 0.2
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.1
-	recoil_buildup = 5
-	one_hand_penalty = 10
+	init_recoil = HANDGUN_RECOIL(0.9)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND_NOLOSS,

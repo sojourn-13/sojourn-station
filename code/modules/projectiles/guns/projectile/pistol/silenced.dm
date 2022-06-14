@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/silenced
 	name = "\"Rafale\" silenced pistol"
-	desc = "A high quality, specialty handgun exclusively produced (as the markings so proudly state) by Seinemetall Defense GmbH. Commonly used by police and SWAT teams during stealth operations. Uses .40 Auto-Mag. Has an integrated silencer which cannot be removed."
+	desc = "A high quality, specialty handgun exclusively produced (as the markings so proudly state) by Seinemetall Defense GmbH. Commonly used by police and SWAT teams during stealth operations. Uses 10mm Auto-Mag. Has an integrated silencer which cannot be removed."
 	icon = 'icons/obj/guns/projectile/rafale.dmi'
 	icon_state = "rafale"
 	item_state = "rafale"
@@ -16,8 +16,7 @@
 	proj_step_multiplier = 0.8
 	damage_multiplier = 1.6
 	penetration_multiplier = 3
-	recoil_buildup = 2
-	one_hand_penalty = 4
+	init_recoil = HANDGUN_RECOIL(0.4)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	serial_type = "SD GmbH"
 

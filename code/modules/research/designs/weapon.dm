@@ -30,7 +30,7 @@
 
 /datum/design/research/item/weapon/c20r
 	name = "Lightweight C20R"
-	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses .35 Auto rounds."
+	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses 9mm rounds."
 	build_path = /obj/item/gun/projectile/automatic/c20r/sci
 
 /datum/design/research/item/weapon/centurio
@@ -174,56 +174,56 @@
 	category = "Ammo"
 
 /datum/design/research/item/ammo/smg_mag
-	name = "SMG Magazine .35 Auto (Empty) "
-	desc = "A magazine for .35 Auto, used in smgs."
+	name = "SMG Magazine 9mm (Empty) "
+	desc = "A magazine for 9mm, used in smgs."
 	build_path = /obj/item/ammo_magazine/smg_35/empty
 	materials = list(MATERIAL_STEEL = 15)
 
 /datum/design/research/item/ammo/smg_mag/lethal
-	name = "SMG Magazine .35 Auto"
-	desc = "A magazine for .35 auto, used in smgs."
+	name = "SMG Magazine 9mm"
+	desc = "A magazine for 9mm, used in smgs."
 	build_path = /obj/item/ammo_magazine/smg_35
 	materials = list(MATERIAL_STEEL = 30)
 
 /datum/design/research/item/ammo/smg_mag/rubber
-	name = "SMG Magazine .35 Auto (Rubber)"
-	desc = "A magazine for .35 Auto (Rubber), used in smgs."
+	name = "SMG Magazine 9mm (Rubber)"
+	desc = "A magazine for 9mm (Rubber), used in smgs."
 	build_path = /obj/item/ammo_magazine/smg_35/rubber
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
 
 /datum/design/research/item/ammo/pistol_laser
-	name = "Auto .35, laser"
-	desc = "Auto .35 cases fitted with a one time use laser payload."
+	name = "Specialized Magaine 9mm, laser"
+	desc = "Auto 9mm cases fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/laser
 	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
 
 /datum/design/research/item/ammo/magum_laser
-	name = "Magnum .40, laser case"
-	desc = "Magnum .40 cases fitted with a one time use laser payload."
+	name = "Magnum 10mm, laser case"
+	desc = "Magnum 10mm cases fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/laser
 	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
 
 /datum/design/research/item/ammo/light_rifle_257
-	name = "Light rifle .257 laser casing."
-	desc = ".257 casings fitted with a one time use laser payload."
+	name = "Light rifle 6.5mm laser casing."
+	desc = "6.5mm casings fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/light_rifle_257_small/laser
 	materials = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
 
 /datum/design/research/item/ammo/rifle_75
-	name = "Rifle 7.5 laser casing."
-	desc = "7.5 casings fitted with a one time use laser payload."
+	name = "Rifle 7.62mm laser casing."
+	desc = "7.62mm casings fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/rifle_75_small/laser
 	materials = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
 
 /datum/design/research/item/ammo/heavy_rifle_408
-	name = "Omni .408 laser casing."
-	desc = ".408 Omni casing fitted with a one time use laser payload."
+	name = "Heavy Rifle 8.6mm laser casing."
+	desc = "Heavy Rifle 8.6x70mm casing fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
 
 /datum/design/research/item/ammo/kurtz_laser
-	name = "Kurtz .50 , laser cases"
-	desc = ".50 Kurtz cases fitted with a one time use laser payload."
+	name = "Specialized 12mm, laser cases"
+	desc = "12mm cases fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/kurtz_50/laser
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
 
@@ -259,44 +259,44 @@
 	build_path = /obj/item/syringe_cartridge
 
 /datum/design/research/item/ammo/laser_mag
-	name = "Laser .223 casing mag (empty)"
-	desc = "A 20 round magazine marked for .223 Carbine laser ammunition."
+	name = "Laser 5.56mm casing mag (empty)"
+	desc = "A 20 round magazine marked for 5.56mm Carbine laser ammunition."
 	build_path = /obj/item/ammo_magazine/rifle_223/empty
 	materials = list(MATERIAL_STEEL = 5) // It's an empty 20 round mag. 15 steel a piece base cost is too much.
 
 /datum/design/research/item/ammo/laser  // Smaller investment and technically more cost-efficient, but more useful for boltgun users than anyone else.
 	name = "\"Star Striker\" casing"
-	desc = "A 30 round packet of casings for the Star Striker laser rifle, its cal is .233."
+	desc = "A 30 round packet of casings for the Star Striker laser rifle, its cal is 5.56mm."
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223
 	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_SILVER = 2.5) //Takes silver
 
 /datum/design/research/item/ammo/laser/ap
 	name = "\"Star Striker\" piercing laser casing."
-	desc = "A 30 round packet of casings for the Star Striker laser rifle. Meant for penetration of armor, its cal is .233."
+	desc = "A 30 round packet of casings for the Star Striker laser rifle. Meant for penetration of armor, its cal is 5.56mm."
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/ap
 	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5) //Takes gold
 
 /datum/design/research/item/ammo/laser/lethal
 	name = "\"Star Striker\" dense laser casing."
-	desc = "A 30 round packet of casings for the Star Striker laser rifle. Compact laser that deals more damage but is easily blocked by armor, its cal is .233."
+	desc = "A 30 round packet of casings for the Star Striker laser rifle. Compact laser that deals more damage but is easily blocked by armor, its cal is 5.56mm."
 	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_PLASMA = 2.5) //Takes plasma
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/lethal
 
 /datum/design/research/item/ammo/laser/box // larger initial investment, but highly beneficial for Laser AK users.
 	name = "\"Legkiy-Kalashnikov\" standard laser box"
-	desc = "A 200 round box of casings for the Legkiy-Kalashnikov laser carbine, its cal is .233."
+	desc = "A 200 round box of casings for the Legkiy-Kalashnikov laser carbine, its cal is 5.56mm."
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/box
 	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50, MATERIAL_SILVER = 25)
 
 /datum/design/research/item/ammo/laser/ap/box
 	name = "\"Legkiy-Kalashnikov\" piercing laser box."
-	desc = "A 200 round box of casings for the Legkiy-Kalashnikov laser carbine. Meant for penetration of armor, its cal is .233."
+	desc = "A 200 round box of casings for the Legkiy-Kalashnikov laser carbine. Meant for penetration of armor, its cal is 5.56mm."
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/ap/box
 	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50, MATERIAL_GOLD = 25)
 
 /datum/design/research/item/ammo/laser/lethal/box
 	name = "\"Legkiy-Kalashnikov\" dense laser box."
-	desc = "A 200 round box of casings for the Legkiy-Kalashnikov laser carbine. Compact laser that deals more damage but is easily blocked by armor, its cal is .233."
+	desc = "A 200 round box of casings for the Legkiy-Kalashnikov laser carbine. Compact laser that deals more damage but is easily blocked by armor, its cal is 5.56mm."
 	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50, MATERIAL_PLASMA = 25)
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/lethal/box
 

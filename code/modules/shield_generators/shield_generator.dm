@@ -45,6 +45,9 @@
 	var/list/default_modes = list()
 	var/generatingShield = FALSE //true when shield tiles are in process of being generated
 
+	/// If true, will allow report_damage() to be called.
+	var/reportDamage = TRUE
+
 	// The shield mode flags which should be enabled on this generator by default
 
 	var/list/allowed_modes = list(MODEFLAG_HYPERKINETIC,
@@ -648,12 +651,16 @@
 	if (report_scheduled)
 		return
 
-	report_scheduled = TRUE
-	spawn(report_delay)
-		report_damage()
+	if (reportDamage)
+		report_scheduled = TRUE
+
+		addtimer(CALLBACK(src, .proc/report_damage), report_delay)
+
+
 
 //This proc sends reports for shield damage
 /obj/machinery/power/shield_generator/proc/report_damage()
+
 	var/do_report = FALSE //We only report if this is true
 	report_scheduled = FALSE //Reset this regardless of what we do here
 

@@ -5,7 +5,7 @@
 /obj/item/gun/projectile/automatic/chaingun
 	name = "\"Fenrir\" heavy chaingun"
 	desc = "A massive single-barrel chaingun originally intended as a vehicle mounted weapon. Refitted for and commonly seen with SolFed powered infantry, it's a devastating tool for removing those stubborn stains on the universe. \
-	It is chambered in .408 and has feeding systems for drums and linkless ammunition boxes. This one is fitted with a tactical sight and a gyrostabilizer. A weapon fit to slay even the hordes of Hell."
+	It is chambered in 8.6x70mm and has feeding systems for drums and linkless ammunition boxes. This one is fitted with a tactical sight and a gyrostabilizer. A weapon fit to slay even the hordes of Hell."
 	icon = 'icons/obj/guns/projectile/chaingun.dmi'
 	var/icon_base
 	icon_base = "gpmg"
@@ -29,12 +29,10 @@
 	reload_sound 	= 'sound/weapons/guns/interact/chaingun_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/chaingun_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/chaingun_fire.ogg'
-	recoil_buildup = 1.5
 	twohanded = TRUE
-	one_hand_penalty = 100
 	zoom_factor = 0.4
 	slowdown_hold = 1 //Heavy massive gun, slow down
-	brace_penalty = 5
+	init_recoil = HMG_RECOIL(1.3)
 	init_firemodes = list(
 		FULL_AUTO_800,
 		list(mode_name="hyper-burst", mode_desc = "Short, rapid shot 3 round burst to stop any unarmed target", burst=3,    burst_delay=0.3, move_delay=2,  icon="burst"),

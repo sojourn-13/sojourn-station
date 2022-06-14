@@ -3,7 +3,7 @@
 	desc = "The Duty is a heavy carbine designed by Marshall and Blackshield gunsmiths \
 	to suplement the ancient pattern boltguns as a standard issue rifle of Blackshield. \
 	Having the stopping power of the Kardashev-Mosin but with a faster fire rate and less recoil. \
-	The design took a lot of old world designs yet modernized it with the new caliber of .257 \
+	The design took a lot of old world designs yet modernized it with the new caliber of 6.5mm \
 	and a light polymer body balanced with heavy steel and plasteel. \
 	A full production rifle, it also has melee capabilities with its bayonet \
 	and it can be reloaded with a stripper clip due to the adapter guide installed on the receiver. \
@@ -18,8 +18,7 @@
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 25)
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.1
-	recoil_buildup = 1 //Using this should be a breaze
-	one_hand_penalty = 7 //Light caliber + well balanced
+	init_recoil = CARBINE_RECOIL(0.9)
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	force = WEAPON_FORCE_ROBUST
 	gun_tags = list(GUN_PROJECTILE, GUN_BAYONET, GUN_SCOPE)

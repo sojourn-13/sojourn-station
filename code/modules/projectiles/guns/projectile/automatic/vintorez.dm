@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/vintorez
 	name = "Excelsior \"Vintorez\" silenced carbine"
 	desc = "\"We have no compassion and we ask no compassion from you. When our turn comes, we shall not make excuses for the terror.\"\
-	A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.5mm Rifle rounds."
+	A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/vintorez.dmi'
 	icon_state = "vintorez"
 	item_state = "vintorez"
@@ -18,8 +18,7 @@
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.2
 	extra_damage_mult_scoped = 0.3
-	recoil_buildup = 5
-	one_hand_penalty = 10 //automatic rifle level
+	init_recoil = RIFLE_RECOIL(1.2)
 	silenced = TRUE
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
@@ -31,7 +30,7 @@
 
 /obj/item/gun/projectile/automatic/vintorez/NM_colony
 	name = "\"Val\" silenced carbine"
-	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.5mm Rifle rounds."
+	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds."
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
 	price_tag = 800
 	serial_type = "NM"

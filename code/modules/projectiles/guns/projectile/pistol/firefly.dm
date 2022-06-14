@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/firefly
 	name = "\"Firefly\" pistol"
-	desc = "A simple and reliable sidearm produced by Seinemetall Defense GmbH for the officer on the street. Commonly issued as a sidearm by police forces and security companies. Uses .35 Auto magazines."
+	desc = "A simple and reliable sidearm produced by Seinemetall Defense GmbH for the officer on the street. Commonly issued as a sidearm by police forces and security companies. Uses 9mm magazines."
 	icon = 'icons/obj/guns/projectile/firefly.dmi'
 	icon_state = "firefly"
 	item_state = "firefly"
@@ -17,9 +17,8 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	damage_multiplier = 1
-	recoil_buildup = 5
-	one_hand_penalty = 7
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
+	init_recoil = HANDGUN_RECOIL(1.1)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/firefly/update_icon()

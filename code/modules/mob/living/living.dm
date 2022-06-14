@@ -252,6 +252,7 @@ default behaviour is:
 		return FALSE	//godmode
 	toxloss = min(max(toxloss + amount, 0),(maxHealth*2))
 
+
 /mob/living/proc/setToxLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode

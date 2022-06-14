@@ -18,9 +18,8 @@
 	charge_cost = 500
 	gun_tags = list(GUN_PROJECTILE, GUN_ENERGY, GUN_SCOPE)
 	suitable_cell = /obj/item/cell/large
-	one_hand_penalty = 10
 	fire_delay = 14 //Slow, on par with a shotgun pump then fire
-	recoil_buildup = 12 //Big shots, big recoil.
+	init_recoil = RIFLE_RECOIL(1)
 	damage_multiplier = 1
 	init_firemodes = list(
 		list(mode_name="slug", mode_desc="fires a large metal chunk at light speeds", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
@@ -78,7 +77,7 @@
 	fire_delay = 7
 	charge_cost = 100
 	gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
-	recoil_buildup = 6 //Still a railgun.
+	init_recoil = RIFLE_RECOIL(0.8)
 	can_dual = TRUE
 	twohanded = FALSE
 	init_firemodes = list(
@@ -107,9 +106,8 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8)
 	charge_cost = 100
 	suitable_cell = /obj/item/cell/medium
-	one_hand_penalty = 10
+	init_recoil = RIFLE_RECOIL(1.1)
 	fire_delay = 14 //Equivalent to a pump then fire time
-	recoil_buildup = 1.2
 	damage_multiplier = 0.8
 	fire_sound = 'sound/weapons/energy_shotgun.ogg'
 	init_firemodes = list(
@@ -180,15 +178,13 @@
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_SILVER = 10, MATERIAL_GOLD = 8, MATERIAL_PLATINUM = 4)
 	charge_cost = 750
 	fire_delay = 30
-	recoil_buildup = 30
-	one_hand_penalty = 80 //guh
+	init_recoil = HMG_RECOIL(1)
 	zoom_factor = 1.8
 	extra_damage_mult_scoped = 0.4
 	damage_multiplier = 1.6
 	penetration_multiplier = 1.5
 	twohanded = TRUE
 	slowdown_hold = 1.5
-	brace_penalty = 30
 	init_firemodes = list(
 		list(mode_name="powered-rod", mode_desc="fires a metal rod at incredible speeds", projectile_type=/obj/item/projectile/bullet/gauss, icon="kill"),
 		list(mode_name="fragmented scrap", mode_desc="fires a brittle, sharp piece of scrap-metal", projectile_type=/obj/item/projectile/bullet/grenade/frag, charge_cost=30000, icon="grenade"),

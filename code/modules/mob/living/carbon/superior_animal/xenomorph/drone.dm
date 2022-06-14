@@ -15,8 +15,9 @@ var/datum/xenomorph/xenomorph_ai
 	cant_be_pulled = TRUE
 
 	mob_size = MOB_LARGE
-	viewRange = 12
+	viewRange = 8
 	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
+	armor_penetration = 15
 
 	maxHealth = 30
 	health = 30

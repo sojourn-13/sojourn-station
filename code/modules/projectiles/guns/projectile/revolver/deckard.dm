@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/revolver/deckard
 	name = "\"Deckard\" heavy revolver"
-	desc = "A rare, custom-built revolver formerly used within Sol by the early Turing Police, gifted by the Mar'qua Technocracy. Use when there is no time for the Voight-Kampff test. Uses .50 Kurtz."
+	desc = "A rare, custom-built revolver formerly used within Sol by the early Turing Police, gifted by the Mar'qua Technocracy. Use when there is no time for the Voight-Kampff test. Uses 12mm."
 	icon = 'icons/obj/guns/projectile/deckard.dmi'
 	icon_state = "deckard"
 	caliber = CAL_50
@@ -10,9 +10,8 @@
 	price_tag = 1400 //one of most robust revolvers here
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.5
-	recoil_buildup = 8
-	one_hand_penalty = 10
+	init_recoil = HANDGUN_RECOIL(1.5)
 	zoom_factor = 0.4
 	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	serial_type = "Sol Fed"

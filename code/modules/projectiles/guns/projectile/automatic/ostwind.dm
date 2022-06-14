@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/ostwind
 	name = "\"Ostwind\" carbine"
-	desc = "An \"Ostwind\" high-end police-grade assault rifle manufactured by Seinemetall Defense GmbH. Primarily used by law enforcement, counter-terror units, and private security. Uses .257 Carbine rounds."
+	desc = "An \"Ostwind\" high-end police-grade assault rifle manufactured by Seinemetall Defense GmbH. Primarily used by law enforcement, counter-terror units, and private security. Uses 6.5mm Carbine rounds."
 	icon = 'icons/obj/guns/projectile/ostwind.dmi'
 	icon_state = "ostwind"
 	item_state = "ostwind"
@@ -23,8 +23,7 @@
 	extra_damage_mult_scoped = 0.4
 	penetration_multiplier = 1.2
 	damage_multiplier = 1
-	recoil_buildup = 1.25
-	one_hand_penalty = 10 //automatic rifle level
+	init_recoil = CARBINE_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 	init_firemodes = list(

@@ -4,11 +4,11 @@
 /obj/item/gun/projectile/handmade_pistol/anti_material/reliable
 	name = "\"Finger of God\" handmade pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	Whoever made this particular model did exceptional work. Unlike lesser handmade pistols, this one jams less and has much better shot capability. This one chambers .60-06 anti material ammo."
+	Whoever made this particular model did exceptional work. Unlike lesser handmade pistols, this one jams less and has much better shot capability. This one chambers 14.5mm anti material ammo."
 	icon = 'icons/obj/guns/projectile/hm_bluecross.dmi'
 	jam_chance = 5
 	damage_multiplier = 1.36
-	recoil_buildup = 25
+	init_recoil = HANDGUN_RECOIL(2.5)
 	max_shells = 6
 	price_tag = 750
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 6) //Its now made of plasteel to show its whatever
@@ -29,18 +29,17 @@
 	name = "\"Unicorn\" light machinegun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A small carved inscription of a unicorn has been cut into place near some additional added weights, giving this rifle amazing recoil control."
-	recoil_buildup = 1
+	init_recoil = LMG_RECOIL(0.5)
 	price_tag = 3550
 	slowdown_hold = 0
-	brace_penalty = 2
 	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/revolver/mistral/elite
 	name = "\"Elite\" magnum revolver"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	Unlike a standard mistral magnum this one has a bluespace crystal in the cylinder and weighted barrel for better recoil control. How many bullets does it hold? Uses .40 Magnum rounds."
+	Unlike a standard mistral magnum this one has a bluespace crystal in the cylinder and weighted barrel for better recoil control. How many bullets does it hold? Uses 10mm Magnum rounds."
 	max_shells = 60
-	recoil_buildup = 20
+	init_recoil = RIFLE_RECOIL(1.1)
 	price_tag = 3000
 	serial_type = "BlueCross"
 
@@ -63,8 +62,7 @@
 	max_shells = 1
 	damage_multiplier = 2
 	penetration_multiplier = 2
-	recoil_buildup = 50
-	one_hand_penalty = 35 //full sized shotgun level
+	init_recoil = RIFLE_RECOIL(4)
 	price_tag = 3250
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG) //Regains its internal mag do to its more annoying way of reloading
 	serial_type = "BlueCross"
@@ -102,7 +100,7 @@
 	A common design used by certain nefarious political groups, this model however has been stripped of its fellows evil machinations, making it safe to use by anyone."
 	price_tag = 1884
 	slowdown_hold = 0
-	brace_penalty = 5
+	init_recoil = LMG_RECOIL(0.5)
 	serial_type = "BlueCross"
 
 /obj/item/gun/energy/lasersmg/inferno
@@ -121,8 +119,7 @@
 	icon_state = "chaossmg"
 	item_state = "chaossmg"
 	damage_multiplier = 1.1 //makeshift laser
-	recoil_buildup = 1
-	one_hand_penalty = 2
+	init_recoil = HANDGUN_RECOIL(0.3)
 	init_offset = 10 //makeshift laser
 	charge_cost = 5
 	price_tag = 1500
@@ -134,8 +131,7 @@
 	A spray painted decal of a rat man with a grinning face has been placed on the grip, the deadliest killers are often those ignored or underestimated by others after all. \
 	This particular pistol has been oiled, cleaned, and appears to be so well maintenanced that its become 110% of its normal potential."
 	damage_multiplier = 1.8
-	recoil_buildup = 2
-	one_hand_penalty = 3
+	init_recoil = HANDGUN_RECOIL(0.3)
 	penetration_multiplier = 3.1
 	price_tag = 2350
 	serial_type = "BlueCross"
@@ -163,7 +159,7 @@
 	name = "\"Devil Eye\" pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 			A small red eye has been painted onto the firing pin of this formerly undepowered pistol, this one has been modified with a better feed mechaism to allow \
-			for deadlier shots. Uses .35 rounds and can take standard pistol magazines, high cap magazines, or submachine gun mags."
+			for deadlier shots. Uses 9mm rounds and can take standard pistol magazines, high cap magazines, or submachine gun mags."
 	price_tag = 2000
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG
 	damage_multiplier = 1.5
@@ -177,12 +173,11 @@
 	icon = 'icons/obj/guns/projectile/lever.dmi'
 	icon_state = "lever"
 	item_state = "lever"
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE) //Dosnt take a silencer cuz thats just mean, also 60-06
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE) //Dosnt take a silencer cuz thats just mean, also 14.5 AMR
 	bolt_training = FALSE
 	caliber = CAL_ANTIM
 	max_shells = 4
-	recoil_buildup = 60
-	one_hand_penalty = 80
+	init_recoil = HMG_RECOIL(2)
 	price_tag = 3000
 	serial_type = "BlueCross"
 
@@ -197,8 +192,7 @@
 	price_tag = 15
 	gun_tags = list(GUN_PROJECTILE)
 	possible_colors = list("rainbow")
-	recoil_buildup = 3
-	one_hand_penalty = 5 //despine it being handgun, it's better to hold in two hands while shooting. SMG level.
+	init_recoil = EMBEDDED_RECOIL(0.5)
 	price_tag = 300
 	serial_type = "BlueCross"
 
@@ -252,9 +246,8 @@
 	mag_well = MAG_WELL_H_PISTOL|MAG_WELL_PISTOL
 	damage_multiplier = 1.25
 	penetration_multiplier = 1
-	recoil_buildup = 0.1
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
-	one_hand_penalty = 2
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL)
+	init_recoil = HANDGUN_RECOIL(0.1)
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -294,9 +287,8 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	damage_multiplier = 1.5
-	recoil_buildup = 2
-	one_hand_penalty = 3
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
+	init_recoil = HANDGUN_RECOIL(0.3)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "BlueCross"
 
 /obj/item/gun/energy/lasersmg/p9evil
@@ -317,8 +309,7 @@
 	can_dual = TRUE
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.2
-	recoil_buildup = 2
-	one_hand_penalty = 10
+	init_recoil = HANDGUN_RECOIL(0.1)
 	gun_tags = list(GUN_ENERGY, GUN_LASER, GUN_SILENCABLE)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,

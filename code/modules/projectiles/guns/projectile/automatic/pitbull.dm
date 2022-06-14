@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/pitbull
 	name = "\"Pitbull\" carbine"
-	desc = "The M7 Pitbull is an older bullpup rifle model manufactured by \"Holland & Sullivan\" primarily for planetary defense forces and private military firms. It includes an underbarrel grenade launcher which is compatible with most modern grenade types. Uses .257 Carbine rounds."
+	desc = "The M7 Pitbull is an older bullpup rifle model manufactured by \"Holland & Sullivan\" primarily for planetary defense forces and private military firms. It includes an underbarrel grenade launcher which is compatible with most modern grenade types. Uses 6.5mm Carbine rounds."
 	icon = 'icons/obj/guns/projectile/pitbull.dmi'
 	icon_state = "pitbull"
 	item_state = "pitbull"
@@ -17,11 +17,10 @@
 	unload_sound 	= 'sound/weapons/guns/interact/batrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/batrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/batrifle_cock.ogg'
-	recoil_buildup = 6
 	penetration_multiplier = 1
 	damage_multiplier = 1.1
 	zoom_factor = 0.2
-	one_hand_penalty = 10 //bullpup rifle level
+	init_recoil = RIFLE_RECOIL(1)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	serial_type = "H&S"
 

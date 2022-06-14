@@ -16,8 +16,7 @@
 	cell_type = /obj/item/cell/medium
 	sel_mode = 2
 	charge_cost = 20 //Gives us 40 shots per high medium-sized cell
-	recoil_buildup = 0.9 //pulse weapons have a bit more recoil
-	one_hand_penalty = 5
+	init_recoil = HANDGUN_RECOIL(1)
 	twohanded = TRUE
 	can_dual = FALSE
 	damage_multiplier = 0.9
@@ -33,8 +32,7 @@
 	use_external_power = TRUE
 	safety = FALSE
 	twohanded = FALSE
-	one_hand_penalty = 0
-	damage_multiplier = 0.7
+	init_recoil = HANDGUN_RECOIL(0.1)
 
 
 /obj/item/gun/energy/plasma/mounted/blitz
@@ -80,8 +78,7 @@
 	cell_type = /obj/item/cell/small //can't recharge this one
 	sel_mode = 2
 	charge_cost = 12.5 // for 8 shots
-	recoil_buildup = 1
-	one_hand_penalty = 0
+	init_recoil = HANDGUN_RECOIL(0.1)
 	twohanded = FALSE
 	can_dual = TRUE
 	gun_tags = list(GUN_ENERGY)

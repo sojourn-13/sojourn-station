@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/vector
 	name = "\"Trajectory\" Magnum SMG"
-	desc = "A .40 SMG who's design data was recently acquired by Overboss Hogg through various connections with offworld traders. \
+	desc = "A 10mm SMG who's design data was recently acquired by Overboss Hogg through various connections with offworld traders. \
 	A Scarborough Arms logo is stamped on the side, though the SMG seems far better designed then most their usual product line. \
 	Regardless it sports robust recoil control system that dampens it's shots to near nothing, a array of firing modes for the discerning shooter, \
 	and even a folding stock for those with strong wrists or weak shoulders. Has threaded barrel for a silencer and a nice slot for a scope to be attached."
@@ -21,9 +21,8 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3, MATERIAL_PLASMA = 2, MATERIAL_GOLD = 1) //Some rare ones so they dont just mass make this shift start without some good rng
 	price_tag = 1100
 	damage_multiplier = 0.7 //Not the best gun in the world
-	recoil_buildup = 1
+	init_recoil = SMG_RECOIL(1)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE)
-	one_hand_penalty = 3 //smg level
 	folding_stock = TRUE //we can fold are stocks
 
 	auto_eject = TRUE //Eather a blessing or a curse, always can be fixed with a gunmod tho

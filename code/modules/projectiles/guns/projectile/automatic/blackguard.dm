@@ -1,8 +1,8 @@
 /obj/item/gun/projectile/automatic/blackguard
 	name = "\"Blackguard\" heavy marksman rifle"
-	desc = "A heavily modded and  \"improved\" omnirifle platform design made by the Marshals but used by Blackshield, chambered in .408, \
+	desc = "A heavily modded and  \"improved\" omnirifle platform design made by the Marshals but used by Blackshield, chambered in 8.6x70mm, \
 	With an extended barrel, standard bayonet, and a reflex scope this rifle has less customization than other weapons, but lends itself to a good all \
-	round design and function. Unlike other omni rifles, this one can take standard mags or drum mags of .408 ammo."
+	round design and function. Unlike other omni rifles, this one can take standard mags or drum mags of 8.6x70mm ammo."
 	icon = 'icons/obj/guns/projectile/blackguard.dmi'
 	icon_state = "sts_blackguard"
 	item_state = "sts_blackguard"
@@ -18,10 +18,7 @@
 	price_tag = 2500
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.35 //Really hard to upgrade
-	recoil_buildup = 10
-	one_hand_penalty = 15
-	brace_penalty = 15 //So this isn't literally better long arm in every way also it has a damn bayonet
-
+	init_recoil = RIFLE_RECOIL(1.15)
 	max_upgrades = 3 // Trigger and a guard; 2 less slots than usual due to its scope, pen and damage.
 
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'

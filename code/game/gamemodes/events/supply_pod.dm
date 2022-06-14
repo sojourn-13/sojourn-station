@@ -7,7 +7,7 @@
 	It may contain monsters or traps.But it also contains a very large quantity of items,
 	including quite a few rares
 
-*/
+:TODO: Make this target the jungle not the colony
 
 /datum/storyevent/supply_pod
 	id = "supply_pod"
@@ -18,7 +18,7 @@
 
 	tags = list(TAG_DESTRUCTIVE, TAG_POSITIVE, TAG_COMBAT, TAG_EXTERNAL)
 
-
+*/
 ///////////////////////////////////////////////////////
 /datum/event/supply_pod
 	var/turf/epicentre = null

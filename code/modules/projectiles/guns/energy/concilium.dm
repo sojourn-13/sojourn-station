@@ -12,8 +12,7 @@
 	w_class = ITEM_SIZE_HUGE
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_WOOD = 25, MATERIAL_GLASS = 15, MATERIAL_SILVER = 5, MATERIAL_GOLD = 3)
 	projectile_type = /obj/item/projectile/beam/drone
-	recoil_buildup = 3
-	one_hand_penalty = 30 //not like it's used anyway, but LMG level
+	init_recoil = CARBINE_RECOIL(2)
 	charge_cost = 25
 	damage_multiplier = 1 //REALLY bad beam inside but can be upgraded to be a normal laser lmg!
 	init_offset = 3

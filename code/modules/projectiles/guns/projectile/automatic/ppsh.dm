@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/ppsh
 	name = "Excelsior \"Shpagin\" assault SMG"
 	desc = "\"We are spiritual wanderers, poor in spirit. What do we live on? We live from the pure hatred we feel. We cannot love anyone. We destroy things, we shout them, we burn them..\"\
-		 An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in 35 Auto; taking only specific drum magizines. For the union, for the future."
+		 An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm; taking only specific drum magizines. For the union, for the future."
 	icon = 'icons/obj/guns/projectile/ppsh.dmi'
 	icon_state = "ppsh"
 	item_state = "ppsh"
@@ -16,13 +16,11 @@
 	matter = list(MATERIAL_PLASTEEL = 28, MATERIAL_PLASTIC = 10)
 	price_tag = 1500
 	penetration_multiplier = 1.2
-	recoil_buildup = 0.75
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
-	one_hand_penalty = 20
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	auto_eject = 1
-	brace_penalty = 5 //Holding the line, not pushing
+	init_recoil = SMG_RECOIL(1.2)
 	init_firemodes = list(
 		FULL_AUTO_800_NOLOSS,
 		BURST_3_ROUND_NOLOSS,
@@ -32,7 +30,7 @@
 
 /obj/item/gun/projectile/automatic/ppsh/NM_colony
 	name = "\"Ekaterina\" assault SMG"
-	desc = "An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in 35 Auto; taking only specific drum magizines."
+	desc = "An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm; taking only specific drum magizines."
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	price_tag = 800
 	serial_type = "NM"
@@ -50,7 +48,7 @@
 /obj/item/gun/projectile/automatic/ppsh/ppv
 	name = "\"Semyonovich\" assault SMG"
 	desc = "Some madmans bastardized yet idealized version of the past; improved yet its meaning and worth lost to time. \
-		 An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in .35 Auto. Unlike it's older cousin it can use both stick and drum magazines. The hammer to break the chains."
+		 An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm. Unlike it's older cousin it can use both stick and drum magazines. The hammer to break the chains."
 	icon = 'icons/obj/guns/projectile/ppv.dmi'
 	icon_state = "ppv"
 	item_state = "ppv"
@@ -59,8 +57,7 @@
 	price_tag = 1200
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.0
-	recoil_buildup = 1.25
-	one_hand_penalty = 20
+	init_recoil = SMG_RECOIL(1.3)
 	auto_eject = 0
 	serial_type = "NM"
 

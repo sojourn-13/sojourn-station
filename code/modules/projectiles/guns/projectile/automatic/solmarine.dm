@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine
 	name = "\"Solarian\" carbine"
 	desc = "An ancient looking rifle found commonly in the Sol Federation's old military stockpiles. Reliable but heavily dated. \
-		 It appears to have been converted at some point to chamber in .257, possibly having taken different rounds at some point. \
+		 It appears to have been converted at some point to chamber in 6.5mm, possibly having taken different rounds at some point. \
 		 Someone.. also thought it was a good idea to slap some sort of underbarrel shotgun to it. Clunky, but it works!"
 	icon = 'icons/obj/guns/projectile/solmarine.dmi'
 	icon_state = "solmarine"
@@ -12,8 +12,7 @@
 	price_tag = 1250
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.2
-	recoil_buildup = 2
-	one_hand_penalty = 25
+	init_recoil = CARBINE_RECOIL(1.1)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
@@ -57,7 +56,7 @@
 	matter = null
 	force = 5
 	max_shells = 3
-	recoil_buildup = 8
+	init_recoil = RIFLE_RECOIL(1.2)
 	safety = FALSE
 	twohanded = FALSE
 	load_method = SINGLE_CASING
@@ -72,7 +71,7 @@
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/sawn
 	name = "sawn down \"Solarian\" carbine"
 	desc = "An ancient looking rifle found commonly in the Sol Federation's old military stockpiles. Reliable but heavily dated. \
-		 It appears to have been converted at some point to chamber in .257, possibly having taken different rounds at some point. \
+		 It appears to have been converted at some point to chamber in 6.5mm, possibly having taken different rounds at some point. \
 		 Someone butchered this thing beyond recognition! At least it fits in a holster."
 	icon = 'icons/obj/guns/projectile/sawnoff/solmarine.dmi'
 	icon_state = "solmarine"
@@ -82,8 +81,7 @@
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	w_class = ITEM_SIZE_SMALL
 	can_dual = TRUE
-	recoil_buildup = 4
-	one_hand_penalty = 20
+	init_recoil = CARBINE_RECOIL(1.2)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND

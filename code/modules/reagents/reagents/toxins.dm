@@ -497,7 +497,8 @@
 	overdose = REAGENTS_OVERDOSE/3
 	addiction_chance = 0.01 //Will STILL likely always be addicting
 	nerve_system_accumulations = 10
-	strength = 0.1
+	metabolism = REM * 0.2 //but processes much faster than other toxins
+	strength = 0.3 //Rather lethal
 	heating_point = 523
 	heating_products = list("toxin")
 

@@ -17,8 +17,7 @@
 	fire_delay = 7.5
 	silenced = FALSE
 	damage_multiplier = 0.6
-	recoil_buildup = 1
-	one_hand_penalty = 5
+	init_recoil = CARBINE_RECOIL(1.2)
 	zoom_factor = 0.2
 	projectile_type = /obj/item/projectile/beam
 	suitable_cell = /obj/item/cell/medium

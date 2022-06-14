@@ -180,7 +180,7 @@
 
 /datum/perk/space_asshole
 	name = "Rough Life"
-	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body and can dive into disposal chutes. Disposals deal no damage to you as well."
+	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body."
 	//icon_state = "bomb" // https://game-icons.net
 
 /datum/perk/space_asshole/assign(mob/living/carbon/human/H)
@@ -238,12 +238,30 @@
 		holder.metabolism_effects.nsa_mult += 0.25
 		holder.metabolism_effects.calculate_nsa()
 
-// Added on top , removed first
-/datum/perk/selfmedicated/chemist/remove()
+/datum/perk/chemist/chemist/remove()
 	if(holder)
 		holder.metabolism_effects.nsa_mult -= 0.25
 		holder.metabolism_effects.calculate_nsa()
 	..()
+
+/datum/perk/alchemist
+	name = "Alchemy"
+	desc = "Weather form fun studdy or learned in the field of brewing random things together you know how to gather basic chemical components. \
+			Your NSA also has been slightly improved do to your experimentations. You can also see all reagents in beakers."
+	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
+
+/datum/perk/alchemist/assign(mob/living/carbon/human/H)
+	..()
+	if(holder)
+		holder.metabolism_effects.nsa_mult += 0.05
+		holder.metabolism_effects.calculate_nsa()
+
+/datum/perk/alchemist/remove()
+	if(holder)
+		holder.metabolism_effects.nsa_mult -= 0.05
+		holder.metabolism_effects.calculate_nsa()
+	..()
+
 
 /datum/perk/bartender
 	name = "Bar Menu"

@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/nail_gun
 	name = "Greyson Positronic \"Nail\" rifle"
 	desc = "A old and lost gun design of a rifle by Greyson Positronic, its high fire rate stopping power and more make it the perfect tool for war. \
-	Its'caliber is .257 and shockingly can be fitted with a silencer and has room for a scope."
+	Its'caliber is 6.5mm and shockingly can be fitted with a silencer and has room for a scope."
 	icon = 'icons/obj/guns/projectile/nail_gun.dmi'
 	icon_state = "nail_gun"
 	item_state = "nail_gun"
@@ -21,8 +21,7 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.5
-	recoil_buildup = 0.5
-	one_hand_penalty = 5 //smg level
+	init_recoil = CARBINE_RECOIL(0.2)
 
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE ,GUN_SCOPE, GUN_MAGWELL)
 

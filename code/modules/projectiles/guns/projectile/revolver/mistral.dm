@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/revolver/mistral
 	name = "\"Mistral\" magnum revolver"
-	desc = "A high-end European revolver produced by Seinemetall Defense GmbH on Earth using hand-fitted parts. Carried by the most respected of gunslingers and counter-terror specialists. Uses .40 Magnum rounds."
+	desc = "A high-end European revolver produced by Seinemetall Defense GmbH on Earth using hand-fitted parts. Carried by the most respected of gunslingers and counter-terror specialists. Uses 10mm Magnum rounds."
 	icon = 'icons/obj/guns/projectile/mistral.dmi'
 	icon_state = "mistral"
 	item_state = "mistral"
@@ -13,6 +13,6 @@
 	price_tag = 900
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.5
-	recoil_buildup = 6
+	init_recoil = RIFLE_RECOIL(0.6)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "SD GmbH"

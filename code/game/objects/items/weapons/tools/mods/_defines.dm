@@ -49,6 +49,7 @@
 #define GUN_UPGRADE_FIRE_DELAY_MULT "fire_delay_mult"
 #define GUN_UPGRADE_MOVE_DELAY_MULT "move_delay_mult"
 #define GUN_UPGRADE_RECOIL "recoil_mult"
+#define GUN_UPGRADE_ONEHANDPENALTY "onehandpenalty_mult"
 #define GUN_UPGRADE_MUZZLEFLASH "muzzleflash_mult"
 #define GUN_UPGRADE_STEPDELAY_MULT "stepdelay_mult"
 #define GUN_UPGRADE_CHARGECOST "chargecost_mult"
@@ -108,8 +109,9 @@
 #define GUN_REVOLVER "revolver"
 #define GUN_INTERNAL_MAG "internal mag"
 #define GUN_BAYONET "bayonet"
-#define GUN_CALIBRE_35 "caliber .35"
-#define GUN_CALIBRE_50 "caliber .50"
+#define GUN_CALIBRE_9MM "caliber 9mm"
+#define GUN_CALIBRE_12MM "caliber 12mm"
+#define ARROW_FIRING "fires arrows"
 #define GUN_AMR "caliber 60-06"
 
 //Salvager perk define

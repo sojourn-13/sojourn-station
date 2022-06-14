@@ -103,7 +103,7 @@
 		/datum/design/research/item/mechfab/modules/hud/thermal_bio
 	)
 
-// Thorn and Rose Pack - both .40 and .35
+// Thorn and Rose Pack - both 10mm and 9mm
 /obj/item/computer_hardware/hard_drive/portable/design/guns/mk58
 	disk_name = "Absolute Armory - Thorn and Rose Handgun Pack"
 	icon_state = "neotheology"

@@ -15,14 +15,13 @@
 	can_dual = TRUE
 	damage_multiplier = 1.4
 	penetration_multiplier = 1.3
-	recoil_buildup = 6
-	one_hand_penalty = 10
+	init_recoil = HANDGUN_RECOIL(1.3)
 	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	auto_eject = 1
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50, GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_12MM, GUN_CALIBRE_9MM)
 	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/deaglebolt/verb/change_caliber()
@@ -33,14 +32,14 @@
 	playsound(src.loc, 'sound/weapons/guns/interact/chaingun_cock.ogg', 100, 1)
 	if(caliber == CAL_50)
 		caliber = CAL_MAGNUM
-		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and metallic whirr is heard before it changes to .40 magnum caliber!"), \
+		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and metallic whirr is heard before it changes to 10mm magnum caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	else if(caliber == CAL_MAGNUM)
 		caliber = CAL_PISTOL
-		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and metallic whirr is heard before it changes to .35 pistol caliber!"), \
+		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and metallic whirr is heard before it changes to 9mm pistol caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	else if (caliber == CAL_PISTOL)
 		caliber = CAL_50
-		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and metallic whirr is heard before it changes to .50 kurtz caliber!"), \
+		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and metallic whirr is heard before it changes to 12mm heavy pistol caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	refresh_upgrades()

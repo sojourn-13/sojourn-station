@@ -62,6 +62,9 @@
 	var/lights = 0
 	var/lights_power = 6
 	var/force = 0
+	var/melee_cooldown = 1 SECONDS
+	var/melee_can_hit = TRUE
+	var/list/destroyable_obj = list(/obj/mecha, /obj/structure/window, /obj/structure/grille, /turf/simulated/wall)
 
 	//inner atmos
 	var/use_internal_tank = 0
@@ -400,19 +403,19 @@
 		else if(selected.is_melee())
 			selected.action(target)
 	else
+		if(istype(target, /obj/machinery))
+			interface_action(target)
 		src.melee_action(target)
 	return
 
 /obj/mecha/proc/interface_action(obj/machinery/target)
-	if(istype(target, /obj/machinery/access_button))
-		src.occupant_message(SPAN_NOTICE("Interfacing with [target]."))
-		src.log_message("Interfaced with [target].")
+	if(istype(target))
+		if(!istype(target, /obj/machinery/computer)) // Computers tend to spam
+			src.occupant_message(SPAN_NOTICE("Interfacing with [target]."))
+			src.log_message("Interfaced with [target].")
 		target.attack_hand(src.occupant)
-		return 1
-	if(istype(target, /obj/machinery/embedded_controller))
-		target.nano_ui_interact(src.occupant)
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
 /obj/mecha/contents_nano_distance(var/src_object, var/mob/living/user)
 	. = user.shared_living_nano_distance(src_object) //allow them to interact with anything they can interact with normally.
@@ -427,7 +430,101 @@
 		if(src_object in view(2, src))
 			return STATUS_UPDATE //if they're close enough, allow the occupant to see the screen through the viewport or whatever.
 
-/obj/mecha/proc/melee_action(atom/target)
+/obj/mecha/proc/can_melee()
+	if(src.force <= 0) return FALSE // We can't do damage at all, why bother?
+	if(istype(src, /obj/mecha/combat)) return TRUE // We are a combat mech, we can punch by default
+	if(istype(src, /obj/mecha/working) && locate(/obj/item/mecha_parts/mecha_equipment/fist_plating) in equipment) return TRUE // We are a worker mech, we need the plating to enable punching
+	return FALSE
+
+/obj/mecha/proc/melee_action(atom/target as obj|mob|turf)
+	if(!can_melee()) return
+
+	if(internal_damage&MECHA_INT_CONTROL_LOST)
+		target = safepick(oview(1,src))
+	if(!melee_can_hit || !istype(target, /atom)) return
+	if(isliving(target))
+		var/mob/living/M = target
+		if(src.occupant.a_intent == I_HURT)
+			playsound(src, 'sound/weapons/punch4.ogg', 50, 1)
+			if(damtype == "brute")
+				step_away(M,src,15)
+			/*
+			if(M.stat>1)
+				M.gib()
+				melee_can_hit = 0
+				if(do_after(melee_cooldown))
+					melee_can_hit = 1
+				return
+			*/
+			if(istype(target, /mob/living/carbon/human))
+				var/mob/living/carbon/human/H = target
+	//			if (M.health <= 0) return
+
+				var/obj/item/organ/external/temp = H.get_organ(pick(BP_CHEST, BP_CHEST, BP_CHEST, BP_HEAD))
+				if(temp)
+					var/update = 0
+					switch(damtype)
+						if("brute")
+							H.Paralyse(1)
+							update |= temp.take_damage(rand(force/2, force), 0)
+						if("fire")
+							update |= temp.take_damage(0, rand(force/2, force))
+						if("tox")
+							if(H.reagents)
+								if(H.reagents.get_reagent_amount("carpotoxin") + force < force*2)
+									H.reagents.add_reagent("carpotoxin", force)
+								if(H.reagents.get_reagent_amount("cryptobiolin") + force < force*2)
+									H.reagents.add_reagent("cryptobiolin", force)
+						else
+							return
+					if(update)	H.UpdateDamageIcon()
+				H.updatehealth()
+
+			else
+				switch(damtype)
+					if("brute")
+						M.Paralyse(1)
+						M.take_overall_damage(rand(force/2, force))
+					if("fire")
+						M.take_overall_damage(0, rand(force/2, force))
+					if("tox")
+						if(M.reagents)
+							if(M.reagents.get_reagent_amount("carpotoxin") + force < force*2)
+								M.reagents.add_reagent("carpotoxin", force)
+							if(M.reagents.get_reagent_amount("cryptobiolin") + force < force*2)
+								M.reagents.add_reagent("cryptobiolin", force)
+					else
+						return
+				M.updatehealth()
+			src.occupant_message("You hit [target].")
+			src.visible_message("<font color='red'><b>[src.name] hits [target].</b></font>")
+		else
+			step_away(M,src)
+			src.occupant_message("You push [target] out of the way.")
+			src.visible_message("[src] pushes [target] out of the way.")
+
+		melee_can_hit = FALSE
+		spawn(melee_cooldown)
+			melee_can_hit = TRUE
+		return
+
+	else
+		if(damtype == "brute")
+			for(var/target_type in src.destroyable_obj)
+				if(istype(target, target_type) && hascall(target, "attackby"))
+					src.occupant_message("You hit [target].")
+					src.visible_message("<font color='red'><b>[src.name] hits [target]</b></font>")
+					if(!istype(target, /turf/simulated/wall))
+						target:attackby(src,src.occupant)
+					else if(prob(5))
+						target:dismantle_wall(1)
+						src.occupant_message(SPAN_NOTICE("You smash through the wall."))
+						src.visible_message("<b>[src.name] smashes through the wall</b>")
+						playsound(src, 'sound/weapons/smash.ogg', 50, 1)
+					melee_can_hit = FALSE
+					if(do_after(melee_cooldown))
+						melee_can_hit = TRUE
+					break
 	return
 
 /obj/mecha/proc/range_action(atom/target)
@@ -1703,6 +1800,7 @@ assassination method if you time it right*/
 	if(!equipment.len)
 		return
 	var/output = "<b>Equipment:</b><div style=\"margin-left: 15px;\">"
+	output += "<a href='?src=\ref[src];unequip=1'>Deselect Current Equipment</a><br>"
 	for(var/obj/item/mecha_parts/mecha_equipment/MT in equipment)
 		output += "<div id='\ref[MT]'>[MT.get_equip_info()]</div>"
 	output += "</div>"
@@ -1820,6 +1918,15 @@ assassination method if you time it right*/
 			src.visible_message("[src] raises [equip]")
 			send_byjax(src.occupant,"exosuit.browser","eq_list",src.get_equipment_list())
 		return
+	if(href_list["unequip"])
+		if(usr != src.occupant)	return
+		if(selected)
+			usr << sound('sound/mecha/UI_SCI-FI_Tone_10_stereo.ogg',channel=4, volume=100);
+			src.occupant_message("You deselect [selected]")
+			src.visible_message("[src] lowers [selected]")
+			src.selected = null
+			send_byjax(src.occupant,"exosuit.browser","eq_list",src.get_equipment_list())
+
 	if(href_list["eject"])
 		if(usr != src.occupant)	return
 		playsound(src,'sound/mecha/ROBOTIC_Servo_Large_Dual_Servos_Open_mono.ogg',100,1)

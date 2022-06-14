@@ -9,7 +9,7 @@
 	wielded_icon = "minigun_doble"
 	origin_tech = list(TECH_COMBAT = 10)
 	w_class = ITEM_SIZE_BULKY
-	recoil_buildup = 0.2
+	init_recoil = CARBINE_RECOIL(0.01)
 	max_upgrades = 3
 	fire_delay = 1
 	fire_sound = 'sound/weapons/guns/fire/chaingun_fire.ogg'

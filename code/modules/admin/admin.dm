@@ -975,6 +975,78 @@ ADMIN_VERB_ADD(/datum/admins/proc/spawn_atom, R_DEBUG, FALSE)
 
 	log_and_message_admins("spawned [chosen] at ([usr.x],[usr.y],[usr.z])")
 
+ADMIN_VERB_ADD(/datum/admins/proc/remove_var_copy, R_ADMIN|R_DEBUG|R_FUN, TRUE)
+/**
+ * Removes a var copy from the global list that contains them, effectively the same as deletion.
+ * Automatically executes if a text argument is given, assuming it is the name of the copy to delete.
+ *
+ * Args:
+ * target_copy: Text. The proc will assume this is the key, or the name, of the var copy, and will search GLOB.var_copies for it's value.
+**/
+/datum/admins/proc/remove_var_copy(var/target_copy as text)
+	set name = "Remove Copy"
+	set desc = "Remove a vareditted var template"
+	set category = "Fun"
+
+	if(!check_rights(R_ADMIN | R_DEBUG | R_FUN))
+		return
+
+	if (!(length(target_copy) > 0)) //did they send anything?
+		target_copy = stripped_input(usr, "What is the name of the slot you want to delete?")
+	if (target_copy in GLOB.var_copies)
+		GLOB.var_copies -= target_copy
+		to_chat(usr, "<span class='warning'>[target_copy] deleted.</span>")
+		log_and_message_admins("<span class='notice'> deleted a var copy, named [target_copy].</span>")
+	else
+		to_chat(usr, "<span class='warning'>[target_copy] does not exist. Did you type it correctly?</span>")
+
+ADMIN_VERB_ADD(/datum/admins/proc/spawn_var_copy, R_ADMIN|R_DEBUG|R_FUN, TRUE)
+/**
+ * Spawns a atom on the location of the user, using the type variable within GLOB.var_copies[target_copy], using the target_copy argument.
+ * Then searches said list for any variables. If any variables are present, they will be applied to the newly created atom.
+ *
+ * Automatically executes if a text argument is given, assuming it is the name of the copy to delete.
+ *
+ * Args:
+ * target_copy: Text. The proc will assume this is the key, or the name, of the var copy, and will search GLOB.var_copies for it's value.
+**/
+/datum/admins/proc/spawn_var_copy(var/target_copy as text)
+	set name = "Spawn Copy"
+	set desc = "Spawn a atom with a vareditted var template"
+	set category = "Fun"
+
+	if(!check_rights(R_ADMIN | R_DEBUG | R_FUN))
+		return
+
+	if (!(length(target_copy) > 0)) //did they send anything?
+		target_copy = stripped_input(usr, "What is the name of the copy you want to spawn?")
+	if (target_copy in GLOB.var_copies)
+		var/list/spawn_variables = GLOB.var_copies[target_copy]
+		var/atom/spawn_target = spawn_variables["type"]
+
+		var/atom/newItem = new spawn_target(usr.loc)
+
+		for(var/variable in newItem.vars)
+			if (variable == "type") //type is read-only, we will runtime if we don't have this check
+				continue
+			if (variable in spawn_variables) // if a var exists in this, an admin wanted it to be carried over, so let's apply it
+				newItem.vars[variable] = spawn_variables[variable]
+	else
+		to_chat(usr, "<span class='warning'>[target_copy] does not exist. Did you type it correctly?</span>")
+
+ADMIN_VERB_ADD(/datum/admins/proc/list_var_copies, R_ADMIN|R_DEBUG|R_FUN, TRUE)
+/// Will list the keys/names of all var copies currently saved into the GLOB.var_copies.
+/datum/admins/proc/list_var_copies()
+	set name = "List Copy Names"
+	set desc = "List the names of all currently saved var copies"
+	set category = "Fun"
+
+	if(!check_rights(R_ADMIN | R_DEBUG | R_FUN))
+		return
+
+	to_chat(usr, "<b>Names of all var copies currently saved:</b>")
+	for (var/key_to_print in GLOB.var_copies)
+		to_chat(usr, key_to_print) //prints the keys, not the values
 
 // -Removed due to rare practical use. Moved to debug verbs ~Errorage,
 //ADMIN_VERB_ADD(/datum/admins/proc/show_traitor_panel, R_ADMIN, TRUE)

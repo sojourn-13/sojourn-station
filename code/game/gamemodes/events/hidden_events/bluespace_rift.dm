@@ -1,8 +1,8 @@
 /*
 Creates a number of two ways teleporters in maints.
 They are unstable and be used only few times, and after that they die out on both sides.
-*/
 
+*/
 /datum/storyevent/bluespace_rift
 	id = "bluespace_rift"
 	name = "bluespace_rift"
