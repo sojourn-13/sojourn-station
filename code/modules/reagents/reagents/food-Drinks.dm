@@ -3157,7 +3157,7 @@
 	glass_name = "Friendly Fire"
 	glass_desc = "Watch your back when you take a swig."
 
-/datum/reagent/alcohol/roachbeer
+/datum/reagent/ethanol/roachbeer
 	name = "Kakerlakenbier"
 	id = "roachbeer"
 	description = "A green-ish substance made out of diplopterum, beer and fuel mixed with water. Doesn\'t look nor smell like beer..."
