@@ -15,6 +15,15 @@
 
 	var/eating_time = 900
 
+	/// How many tiles we will advance forward from our current position if we can't hit our current target.
+	var/advancement = 1
+
+	/// Incrememnts advancement_timer by itself whenever a ranged mob decides to advance.
+	var/advancement_increment = 5
+
+	/// Will be incremented advancement_increment ticks whenever a ranged mob decides to advance. If more than world.time, targetting walks will be ignored, to not end the advancement.
+	var/advancement_timer = 0
+
 	///How delayed are our ranged attacks, in ticks. Reduces DPS.
 	var/fire_delay = 0
 
@@ -196,7 +205,7 @@
 	var/ranged = FALSE  //Do we have a range based attack?
 	var/rapid = FALSE   //Do we shoot in groups?
 	var/rapid_fire_shooting_amount = 3 //By default will rapid fire in 3 shots per.
-	var/projectiletype  //What are we shooting?
+	var/obj/item/projectile/projectiletype  //What are we shooting?
 	var/projectilesound //What sound do we make when firing
 	var/casingtype      //Do we leave casings after shooting?
 	var/ranged_cooldown //What is are modular cooldown, in seconds.
@@ -432,6 +441,7 @@
 
 /mob/living/carbon/superior_animal/proc/handle_hostile_stance(var/atom/targetted_mob) //here so we can jump instantly to it if hostile stance is established
 	var/already_destroying_surroundings = FALSE
+	var/calculated_walk = (comfy_range - comfy_distance)
 	if(weakened) return
 	if(destroy_surroundings)
 		destroySurroundings()
@@ -441,7 +451,8 @@
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		walk_to(src, targetted_mob, (comfy_range - comfy_distance), move_to_delay) //lets get a little closer than our optimal range
+		walk_to(src, targetted_mob, calculated_walk, move_to_delay) //lets get a little closer than our optimal range
+
 		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
 			visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"))
 			delayed = delay_amount
@@ -458,6 +469,9 @@
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings)
 
 /mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE)
+	var/projectile_passflags = null
+	var/projectile_flags = null
+	var/calculated_walk = (comfy_range - comfy_distance)
 	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
 	if(destroy_surroundings && !already_destroying_surroundings)
 		destroySurroundings()
@@ -468,6 +482,23 @@
 		else
 			patience--
 		return
+	else if (projectiletype) // if we can see, let's prepare to see if we can hit
+		if (istype(projectiletype, /obj/item/projectile))
+			if (projectiletype == initial(projectiletype)) // typepaths' vars are only accessable through initial() or objects
+				projectile_passflags = initial(projectiletype.pass_flags)
+				projectile_flags = initial(projectiletype.flags)
+			else // in case for some reason this var was editted post-compile
+				var/obj/item/projectile/temp_proj = new projectiletype(null) //create it in nullspace
+				projectile_passflags = temp_proj.pass_flags
+				projectile_flags = temp_proj.flags
+				QDEL_NULL(temp_proj)
+		if (ranged)
+			var/obj/item/projectile/test/impacttest/trace = new /obj/item/projectile/test/impacttest(get_turf(src))
+			RegisterSignal(trace, COMSIG_TRACE_IMPACT, .proc/handle_trace_impact)
+			trace.pass_flags = projectile_passflags
+			trace.flags = projectile_flags
+			trace.launch(targetted_mob)
+
 	patience = initial(patience)
 	if(!ranged)
 		prepareAttackOnTarget()
@@ -479,10 +510,14 @@
 			return
 		if(get_dist(src, targetted_mob) <= comfy_range)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
+			if (advancement_timer <= world.time) //we dont want to prematurely end a advancing walk
+				walk_to(src, targetted_mob, calculated_walk, move_to_delay) //we still want to reset our walk
 		else
-			if(weakened) return
-			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to(src, targetted_mob, (comfy_range - comfy_distance), move_to_delay)
+			if(weakened)
+				return
+			if (advancement_timer <= world.time)
+				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+				walk_to(src, targetted_mob, calculated_walk, move_to_delay)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
@@ -642,3 +677,31 @@
 					if (cast_beam)
 						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
+
+/**
+ * Signal handler for COMSIG_TRACE_IMPACT signal.
+ * Apon impact of the trace projectile, it will fire this signal, which will decide if the entity it impacted is our target. If no, we then
+ * advance advancement turfs forward towards our target.
+ *
+ * Args:
+ * trace: obj/item/projectile/test/impacttest. The trace we are registered to.
+ * atom/impact_atom: The atom the trace impacted.
+**/
+/mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/test/impacttest/trace, var/atom/impact_atom)
+	SIGNAL_HANDLER
+
+	UnregisterSignal(trace, COMSIG_TRACE_IMPACT)
+
+	var/targetted_mob = (target_mob?.resolve())
+
+	var/calculated_walk = (comfy_range - comfy_distance)
+
+	if (impact_atom != targetted_mob)
+		var/distance = (get_dist(src, targetted_mob))
+		if (distance <= calculated_walk) //if we are within our comfy range but we cant attack, we need to reposition
+			var/advance_steps = (distance - advancement)
+			if (advance_steps <= 0)
+				advance_steps = 1 //1 is the minimum distance
+			walk_to(src, targetted_mob, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
+			advancement_timer = (world.time += advancement_increment) // we dont want this overridden instantly
+
