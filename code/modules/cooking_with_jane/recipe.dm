@@ -6,14 +6,14 @@ All steps in the step builder have the following format:
 list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 
 <CWJ_STEP_CLASS>
-	The name any one of the recipe step types, custom or otherwise. 
+	The name any one of the recipe step types, custom or otherwise.
 	Valid options are:
 		CWJ_ADD_ITEM
 			Add an item to the recipe. The object is inserted in the container.
 			<REQUIRED_ARGS>:
 				type_path - the type path of the item being added.
 			Example: list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
-		
+
 		CWJ_ADD_ITEM
 			Uses an item on the recipe. The object is not consumed.
 			<REQUIRED_ARGS>:
@@ -37,18 +37,18 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 		desc
 			Adds a custom description to the recipe step, when read from a cooking book.
 			Example: desc="a custom description"
-		
+
 		base
 			Defines the base quality for a recipe step. This will become the LOWEST quality following a step can award.
 			For some step classes, this will simply be the default awarded.
 			If not defined, there is no minimum quality a step can add.
 			Example: base=4
-		
+
 		max
 			Defines the maximum quality for a recipe step. This will become the HIGHEST quality following a step can award.
 			If not defined, there is no maximum quality a step can add.
 			Example: max=10
-		
+
 		result_desc
 			Adds a custom description to the result of the recipe step. This will be read off on the item product.
 			Example: result_desc="A Slice of Bread is in the sandwich."
