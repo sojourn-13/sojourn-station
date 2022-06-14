@@ -69,6 +69,7 @@
 	var/precision = 0	//Subtracted from failure rates
 	var/workspeed = 1	//Worktimes are divided by this
 
+
 /******************************
 	/* Core Procs */
 *******************************/
@@ -83,7 +84,7 @@
 
 	if(use_fuel_cost)
 		create_reagents(max_fuel)
-		reagents.add_reagent("fuel", max_fuel)
+		reagents.add_reagent(my_fuel, max_fuel)
 
 	if(use_stock_cost)
 		stock = max_stock
@@ -786,11 +787,11 @@
 
 //Returns the amount of fuel in tool
 /obj/item/proc/get_fuel()
-	return ( reagents ? reagents.get_reagent_amount("fuel") : 0 )
+	return ( reagents ? reagents.get_reagent_amount(my_fuel) : 0 )
 
 /obj/item/tool/proc/consume_fuel(volume)
 	if(get_fuel() >= volume)
-		reagents.remove_reagent("fuel", volume)
+		reagents.remove_reagent(my_fuel, volume)
 		return TRUE
 	return FALSE
 

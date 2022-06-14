@@ -671,3 +671,8 @@ proc/is_blind(A)
 
 /mob/proc/weight_coeff()
 	return get_max_w_class()/(ITEM_SIZE_TITANIC)
+
+
+//Soj edit
+/mob/proc/get_health()
+	return health
