@@ -3164,7 +3164,7 @@
 	taste_description = "heady roach guts"
 	color = "#123a15" // rgb(18, 58, 21)
 	strength = 40
-	
+
 	glass_unique_appearance = FALSE
 	glass_name = "Kakerlakenbier"
 	glass_desc = "A green-ish substance made out of diplopterum, beer and fuel mixed with water. Doesn\'t look nor smell like beer..."
