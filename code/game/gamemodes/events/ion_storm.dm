@@ -2,6 +2,8 @@
 /*
 	Ion storm adds new laws to AI and cyborg players. It is pretty darned fun
 */
+// Were not a AI-heavy sever and thus disabled this
+/*
 /datum/storyevent/ionstorm
 	id = "ionstorm"
 	name = "ion storm"
@@ -11,6 +13,7 @@
 	event_pools = list(EVENT_LEVEL_MODERATE = POOL_THRESHOLD_MODERATE)
 
 	tags = list(TAG_SCARY, TAG_COMMUNAL)
+*/
 /////////////////////
 
 
@@ -243,3 +246,4 @@ Would like to add a law like "Law x is _______" where x = a number, and _____ is
 		for(var/obj/machinery/bot/bot in world)
 			if(prob(botEmagChance))
 				bot.emag_act()
+

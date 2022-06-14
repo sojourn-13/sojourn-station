@@ -21,7 +21,7 @@
 /datum/event/carp_migration/setup()
 	//We'll pick space tiles which have windows nearby
 	//This means that carp will only be spawned in places where someone could see them
-	var/area/spess = locate(/area/space) in world
+	var/area/spess = locate(/area/nadezhda/outside/lakeside) in world
 	for (var/turf/T in spess)
 		if (!(T.z in GLOB.maps_data.station_levels))
 			continue
@@ -61,10 +61,7 @@
 	var/list/spawn_locations = pickweight_mult(viable_turfs, number)
 
 	for(var/turf/T in spawn_locations)
-		if(prob(97.5)) //2.5% chance of SHERK
-			spawned_carp.Add(new /mob/living/simple_animal/hostile/carp(T))
-		else
-			spawned_carp.Add(new /mob/living/simple_animal/hostile/carp/pike(T))
+		spawned_carp.Add(new /obj/random/mob/carp(T))
 
 /datum/event/carp_migration/end()
 	for(var/mob/living/simple_animal/hostile/C in spawned_carp)
