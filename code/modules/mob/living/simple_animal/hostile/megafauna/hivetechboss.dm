@@ -44,7 +44,8 @@
 /mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/death()
 	..()
 	if(hive_ender)
-		delhivetech()
+		if(GLOB.hive_data_bool["tyrant_death_kills_hive"])
+			delhivetech()
 	walk(src, 0)
 
 /mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/proc/telenode()
