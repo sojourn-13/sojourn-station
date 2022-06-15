@@ -11,8 +11,6 @@
 		else
 			armor[key] = add_armor[key]
 
-
-
 /mob/living/carbon/superior_animal/roach/pick_armor()
 	switch (pickweight(list("basic" = 15, "Biosilicified" = 5, "Lambertian" = 3, "Durable" = 4)))
 
