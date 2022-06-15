@@ -99,8 +99,8 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one is an absolute unit of chitin, armor, and chittering horror."
 	icon_state = "tarantula"
 	icon_living = "tarantula"
-	maxHealth = 200
-	health = 200
+	maxHealth = 160
+	health = 160
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 	emote_see = list("chitters.","rubs its legs.","thumps its many legs on the ground.")
@@ -201,6 +201,8 @@
 	icon_living = "ogre"
 	poison_per_bite = 4
 	move_to_delay = 4
+	maxHealth = 180
+	health = 180
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/pit
 	name = "pit snapper spider"
@@ -218,6 +220,8 @@
 	icon_state = "burrowing"
 	icon_living = "burrowing"
 	poison_type = "stoxin"
+	maxHealth = 140
+	health = 140
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor
 	name = "emperor spider"

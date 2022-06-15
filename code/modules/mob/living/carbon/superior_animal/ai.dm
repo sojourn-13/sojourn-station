@@ -20,7 +20,7 @@
 	return list_to_return*/
 
 /mob/living/carbon/superior_animal/proc/findTarget()
-	var/list/filteredTargets = new
+	var/list/filteredTargets = list()
 
 	var/turf/our_turf = get_turf(src)
 	if (our_turf) //If we're not in anything, continue

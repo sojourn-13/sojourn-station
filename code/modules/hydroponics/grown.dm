@@ -1,6 +1,6 @@
 //Grown foods.
 /obj/item/reagent_containers/food/snacks/grown
-	name = "any grown"
+	name = "any grown plant"
 	matter = list(MATERIAL_BIOMATTER = 5)
 	icon = 'icons/obj/hydroponics_products.dmi'
 	icon_state = "blank"

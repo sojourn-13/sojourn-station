@@ -32,6 +32,7 @@
 #define QUALITY_WEAVING					"weaving"
 #define QUALITY_ELECTROCUTION			"electroshock"
 #define QUALITY_ARMOR					"armor"
+#define QUALITY_HEATING					"heating" //Used absure crafting
 
 
 //Time for a work for tool system calculated in that way: basic time - tool level - stat check..

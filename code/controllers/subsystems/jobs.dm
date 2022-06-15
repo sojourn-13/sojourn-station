@@ -416,6 +416,9 @@ SUBSYSTEM_DEF(job)
 		H.stats.changeStat(STAT_ROB, H.client.prefs.ROBMOD)
 		H.stats.changeStat(STAT_TGH, H.client.prefs.TGHMOD)
 		H.stats.changeStat(STAT_VIG, H.client.prefs.VIGMOD)
+		H.stats.changeStat(STAT_VIV, H.client.prefs.VIVMOD)
+		H.stats.changeStat(STAT_ANA, H.client.prefs.ANAMOD)
+		H.give_health_via_stats()
 		// This could be cleaner and better, however it should apply your stats once on spawn properly if here. If anyone wants to do this in a cleaner manner be my guest.
 
 		BITSET(H.hud_updateflag, ID_HUD)

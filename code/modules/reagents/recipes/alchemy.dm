@@ -39,3 +39,34 @@
 	required_reagents = list("oil" = 1, "sodiumchloride" = 1, "iron" = 1)
 	result_amount = 1
 	require_containers = list(/obj/item/reagent_containers/glass/beaker/flask_alchemy)
+
+/datum/chemical_reaction/mind_exspander
+	result = "mind_exspander"
+	required_reagents = list(MATERIAL_GOLD = 1, "sodiumchloride" = 1, "tatonka_milk" = 1)
+	result_amount = 1
+	require_containers = list(/obj/item/reagent_containers/glass/beaker/flask_alchemy)
+
+/datum/chemical_reaction/work_tonic
+	result = "work_tonic"
+	required_reagents = list("protein" = 1, "egg" = 1, "tatonka_milk" = 1)
+	result_amount = 1
+	require_containers = list(/obj/item/reagent_containers/glass/beaker/flask_alchemy)
+
+/datum/chemical_reaction/combat_brew
+	result = "combat_brew"
+	required_reagents = list("protein" = 1, "honey" = 1, "ethanol" = 1)
+	result_amount = 1
+	require_containers = list(/obj/item/reagent_containers/glass/beaker/flask_alchemy)
+
+/datum/chemical_reaction/eye_lid
+	result = "eye_lid"
+	required_reagents = list("blackpepper" = 1, "milk" = 1, "ethanol" = 1)
+	result_amount = 1
+	require_containers = list(/obj/item/reagent_containers/glass/beaker/flask_alchemy)
+
+//hardest one to make
+/datum/chemical_reaction/red_heart
+	result = "red_heart"
+	required_reagents = list("blood" = 1, MATERIAL_GOLD = 1, "lively_concoxion" = 1)
+	result_amount = 1
+	require_containers = list(/obj/item/reagent_containers/glass/beaker/flask_alchemy)

@@ -74,8 +74,6 @@
 			new /obj/effect/spider/spiderling/near_grown(src.loc)
 			new /obj/effect/spider/spiderling/near_grown(src.loc)
 			new /obj/effect/spider/spiderling/near_grown(src.loc)
-			new /obj/effect/spider/spiderling/near_grown(src.loc)
-			new /obj/effect/spider/spiderling/near_grown(src.loc)
 			has_made_spiderlings = TRUE
 
 		density = 0

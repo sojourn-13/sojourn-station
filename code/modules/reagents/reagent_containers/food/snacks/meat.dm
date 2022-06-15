@@ -205,7 +205,7 @@
 	preloaded_reagents = list("protein" = 25, "tramadol" = 5)
 
 /obj/item/reagent_containers/food/snacks/meat/xenomeat
-	name = "meat"
+	name = "xenomorph meat"
 	desc = "A fatty cut of bright-green meat. The overwhelmingly powerful smell of the acid within burns your sinuses and makes your eyes water."
 	icon_state = "xenomeat"
 	filling_color = "#43DE18"
