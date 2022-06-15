@@ -9,7 +9,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 20
 	poison_per_bite = 4
-	move_to_delay = 3.5
+	move_to_delay = 4.5
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/hunter
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","bounces in place.")
@@ -18,7 +18,7 @@
 	name = "cloaker spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has a weaker chameleonic chitin that makes it hard to see."
 	alpha = 50
-	armor = list(melee = 5, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 10, rad = 25, agony = 0)
 
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/cloaker/death() //We are now unable to chameleonic chitin do to being dead
@@ -105,7 +105,7 @@
 	melee_damage_upper = 25
 	emote_see = list("chitters.","rubs its legs.","thumps its many legs on the ground.")
 	mob_size = MOB_LARGE
-	armor = list(melee = 15, bullet = 15, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 15, bullet = 15, energy = 5, bomb = 5, bio = 10, rad = 25, agony = 0)
 
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/UnarmedAttack(var/atom/A, var/proximity)
@@ -200,19 +200,18 @@
 	icon_state = "ogre"
 	icon_living = "ogre"
 	poison_per_bite = 4
-	move_to_delay = 4
 	maxHealth = 180
 	health = 180
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/pit
 	name = "pit snapper spider"
-	desc = "Furry and orange, it makes you shudder to look at it. What it lacks in toxins, it makes up for in its immense bone-snapping mandibles."
+	desc = "Furry and orange, it makes you shudder to look at it. Normally it lacks in toxins but makes up for in its immense bone-snapping mandibles. "
 	icon_state = "pit"
 	icon_living = "pit"
 	poison_per_bite = 0
-	move_to_delay = 4
 	melee_damage_lower = 35
 	melee_damage_upper = 40
+	poison_type = "aranecolmin" //Shockingly this is more deadly then normal as it makes metaball faster
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing
 	name = "trapdoor spider"
@@ -240,7 +239,7 @@
 	flash_resistances = 3 //For balance against are speedy fello
 	poison_type = "party drops"
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/emperor
-	armor = list(melee = 25, bullet = 25, energy = 10, bomb = 25, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 25, bullet = 25, energy = 15, bomb = 25, bio = 10, rad = 25, agony = 0)
 	armor_penetration = 25
 
 	give_randomized_armor = FALSE //Were not getting armor

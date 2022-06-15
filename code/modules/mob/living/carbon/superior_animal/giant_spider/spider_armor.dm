@@ -10,19 +10,9 @@
 			armor[key] += add_armor[key]
 		else
 			armor[key] = add_armor[key]
-/*
-//We'll assume that damage is list(brute = 5, burn = 5) and armor is a list(brute = 5, toxin = 5)
-	var/list/result = list() //Creates a new list
-	for(var/key in damage) //gets every entry in the damage list and sets 'key' to it one at a time. Because of how byond lists work, however, key will be set to 'brute' for the first loop, then 'burn'
-		if(key in armor) //brute is in armor too
-			result[key] = max(damage[key] - armor[key], 0) //So you just take the difference between them and put the result in the result list.
-		else //burn is not in armor
-			result[key] = damage[key] //So you just deal the damage directly to the player's life points.
-  //You'll notice that at no point did toxin matter. Yes, armor blocks toxin, but because no toxin damage was actually done, in the end we didn't need to add it to the result damage list.
-  //So, at the very end, result = list(brute = 0, burn = 5)
-*/
+
 /mob/living/carbon/superior_animal/giant_spider/pick_armor()
-	switch (pickweight(list("basic" = 5, "padded" = 1, "lustrous" = 1, "durable" = 3, "young" = 2, "old" = 2)))
+	switch (pickweight(list("basic" = 6, "padded" = 1, "lustrous" = 2, "durable" = 3, "young" = 2, "old" = 3, "venomous" = 1, "brutish" = 1)))
 
 		if("basic") //No changes, we are base level
 			return
@@ -91,6 +81,7 @@
 			maxHealth -= 10 //0 hardship yet
 			health -= 10
 			move_to_delay -= 0.5 // faster
+			poison_per_bite -= 1
 			prefex = "young"
 			return
 
@@ -108,5 +99,40 @@
 			maxHealth += 20 //life already seen them by
 			health += 20
 			move_to_delay += 1 // Very slow
+			poison_per_bite -= 1
 			prefex = "aged"
+			return
+
+		if("venomous")
+			add_armor = list(
+			melee = 0,
+			bullet = 0,
+			energy = 0,
+			bomb = 5,
+			bio = 15,
+			rad = 15,
+			agony = 10
+			)
+			gives_prefex = TRUE
+			poison_per_bite += 1
+			prefex = "venomous"
+			return
+
+		if("brutish")
+			add_armor = list(
+			melee = 5,
+			bullet = 5,
+			energy = -5,
+			bomb = 5,
+			bio = 0,
+			rad = 0,
+			agony = 15
+			)
+			melee_damage_lower += 2
+			melee_damage_upper += 2
+			maxHealth += 5
+			health += 5
+			armor_penetration += 2
+			gives_prefex = TRUE
+			prefex = "brutish"
 			return
