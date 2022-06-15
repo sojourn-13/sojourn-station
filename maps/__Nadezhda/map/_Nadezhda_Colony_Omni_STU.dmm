@@ -6226,7 +6226,7 @@
 	dir = 8;
 	frequency = 1441;
 	name = "Tank Monitor";
-	sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous Oxide", "waste_sensor" = "Gas Mix Tank")
+	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous Oxide","waste_sensor"="Gas Mix Tank")
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
@@ -12236,6 +12236,7 @@
 /obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_pump,
+/obj/item/gun/projectile/boltgun/scout,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "cDX" = (
@@ -23372,7 +23373,8 @@
 	pixel_y = 1
 	},
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield{
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 1
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
@@ -24393,6 +24395,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_magazine/ammobox/light_rifle_257,
 /obj/item/ammo_magazine/light_rifle_257,
+/obj/item/ammo_magazine/light_rifle_257,
+/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "fhy" = (
@@ -32359,7 +32363,7 @@
 	input_tag = "tox_in";
 	name = "Plasma Supply Control";
 	output_tag = "tox_out";
-	sensors = list("tox_sensor" = "Tank")
+	sensors = list("tox_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -42762,7 +42766,7 @@
 	input_tag = "waste_in";
 	name = "Gas Mix Tank Control";
 	output_tag = "waste_out";
-	sensors = list("waste_sensor" = "Tank")
+	sensors = list("waste_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -43713,7 +43717,7 @@
 	input_tag = "n2o_in";
 	name = "Nitrous Oxide Supply Control";
 	output_tag = "n2o_out";
-	sensors = list("n2o_sensor" = "Tank")
+	sensors = list("n2o_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -53726,7 +53730,7 @@
 	name = "Mixed Air Supply Control";
 	output_tag = "air_out";
 	pressure_setting = 2000;
-	sensors = list("air_sensor" = "Tank")
+	sensors = list("air_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -55492,7 +55496,7 @@
 	input_tag = "co2_in";
 	name = "Carbon Dioxide Supply Control";
 	output_tag = "co2_out";
-	sensors = list("co2_sensor" = "Tank")
+	sensors = list("co2_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -63268,7 +63272,7 @@
 	input_tag = "o2_in";
 	name = "Oxygen Supply Control";
 	output_tag = "o2_out";
-	sensors = list("o2_sensor" = "Tank")
+	sensors = list("o2_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -64266,7 +64270,7 @@
 	input_tag = "n2_in";
 	name = "Nitrogen Supply Control";
 	output_tag = "n2_out";
-	sensors = list("n2_sensor" = "Tank")
+	sensors = list("n2_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -66155,14 +66159,13 @@
 	})
 "nLB" = (
 /obj/structure/table/standard,
-/obj/item/gun/projectile/automatic/blackguard{
-	pixel_x = 12
-	},
-/obj/item/gun/projectile/automatic/blackguard{
-	pixel_x = 12;
-	pixel_y = 8
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/projectile/colt/ten/dark{
+	pixel_y = -5
+	},
+/obj/item/gun/projectile/colt/ten/dark{
+	pixel_y = 5
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "nLK" = (
@@ -71297,16 +71300,11 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "oPz" = (
-/obj/item/gun/projectile/shotgun/pump{
-	pixel_y = 8
-	},
-/obj/item/gun/projectile/shotgun/pump{
-	pixel_y = 4
-	},
 /obj/structure/closet/crate/serbcrate,
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
+/obj/item/gun/projectile/automatic/bull_autoshotgun,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "oPA" = (
@@ -72475,20 +72473,12 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/gmaster)
 "peh" = (
-/obj/item/gun/projectile/automatic/omnirifle{
-	pixel_y = 1
-	},
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/closet/crate/serbcrate,
-/obj/random/gun_combat{
-	pixel_y = 4
-	},
-/obj/random/gun_combat{
-	pixel_y = 4
-	},
-/obj/random/gun_combat/low_chance,
+/obj/item/gun/projectile/automatic/omnirifle,
+/obj/item/gun/projectile/automatic/omnirifle/standard,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "pes" = (
@@ -73826,13 +73816,10 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/security/detectives_office)
 "pun" = (
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine{
-	pixel_y = 4
-	},
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/rds,
 /obj/structure/closet/crate/serbcrate,
-/obj/random/gun_combat/low_chance,
-/obj/random/gun_combat/low_chance,
+/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine,
+/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine,
+/obj/item/gun/projectile/automatic/lmg/saw,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "puI" = (
@@ -77172,7 +77159,7 @@
 	input_tag = null;
 	name = "Coolant Tank Control";
 	output_tag = null;
-	sensors = list("coolant_sensor" = "Tank")
+	sensors = list("coolant_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/atmos)
@@ -91480,6 +91467,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/item/ammo_magazine/ammobox/magnum_40/large,
+/obj/item/ammo_magazine/magnum_40,
+/obj/item/ammo_magazine/magnum_40,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "sXy" = (
@@ -95981,7 +95971,7 @@
 	input_tag = null;
 	name = "Coolant Tank Control";
 	output_tag = null;
-	sensors = list("coolant_sensor" = "Tank")
+	sensors = list("coolant_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
