@@ -707,3 +707,7 @@
 			walk_to(src, targetted_mob, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
 			advancement_timer = (world.time += advancement_increment) // we dont want this overridden instantly
 
+/mob/living/carbon/superior_animal/CanPass(atom/mover)
+	if(istype(mover, /obj/item/projectile))
+		return stat ? TRUE : FALSE
+	. = ..()
