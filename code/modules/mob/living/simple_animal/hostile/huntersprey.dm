@@ -375,6 +375,15 @@
 	can_burrow = FALSE
 	mob_size =  3  // The same as Hivemind Tyrant
 
+/mob/living/simple_animal/hostile/poporavtomat/ex_act(severity, target)
+	switch (severity)
+		if(1)
+			adjustFireLoss(rand(150,250)) //10 shots and good rng can take this down
+		if(2)
+			adjustFireLoss(rand(100,150))
+		if(3)
+			adjustFireLoss(rand(50,100))
+
 /mob/living/simple_animal/hostile/poporavtomat/MiddleClickOn(mob/targetDD as mob)
 	var /mob/living/simple_animal/hostile/shooter = src //We're the shooter.
 	if(ranged_cooldown >= world.time)
