@@ -18,7 +18,7 @@
 	/// How many tiles we will advance forward from our current position if we can't hit our current target.
 	var/advancement = 1
 
-	/// Incrememnts advancement_timer by itself whenever a ranged mob decides to advance.
+	/// Increments advancement_timer by itself whenever a ranged mob decides to advance.
 	var/advancement_increment = 5
 
 	/// Will be incremented advancement_increment ticks whenever a ranged mob decides to advance. If more than world.time, targetting walks will be ignored, to not end the advancement.
@@ -483,6 +483,10 @@
 			patience = initial(patience)
 		else
 			patience--
+			var/moving_to = pick(cardinal)
+			set_dir(moving_to)
+			step_glide(src, moving_to, DELAY2GLIDESIZE(0.5 SECONDS)) //we can potentially pathfind if we do this
+
 		return
 	else if (projectiletype) // if we can see, let's prepare to see if we can hit
 		if (istype(projectiletype, /obj/item/projectile))
