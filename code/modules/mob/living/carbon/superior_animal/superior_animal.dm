@@ -312,7 +312,7 @@
 
 /mob/living/carbon/superior_animal/examine(mob/user)
 	..()
-	if (is_dead)
+	if (is_dead())
 		to_chat(user, SPAN_DANGER("It is completely motionless, likely dead."))
 	else if (health < maxHealth * 0.10)
 		to_chat(user, SPAN_DANGER("It looks like they are on their last legs!"))
