@@ -19,7 +19,7 @@
 	var/advancement = 1
 
 	/// Increments advancement_timer by itself whenever a ranged mob decides to advance.
-	var/advancement_increment = 3
+	var/advancement_increment = 5
 
 	/// Will be incremented advancement_increment ticks whenever a ranged mob decides to advance. If more than world.time, targetting walks will be ignored, to not end the advancement.
 	var/advancement_timer = 0
