@@ -208,6 +208,7 @@
 	. = ..()
 
 /obj/effect/spider/eggcluster/Process()
+	..() //handle burning
 	amount_grown += rand(0,2)
 	if(amount_grown >= 100)
 		var/num = rand(spiderlings_lower,spiderlings_upper)
