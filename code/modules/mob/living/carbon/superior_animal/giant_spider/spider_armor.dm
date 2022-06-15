@@ -22,7 +22,7 @@
   //So, at the very end, result = list(brute = 0, burn = 5)
 */
 /mob/living/carbon/superior_animal/giant_spider/pick_armor()
-	switch (pickweight(list("basic" = 5, "padded" = 1, "lustrous" = 1, "durable" = 3)))
+	switch (pickweight(list("basic" = 5, "padded" = 1, "lustrous" = 1, "durable" = 3, "young" = 2, "old" = 2)))
 
 		if("basic") //No changes, we are base level
 			return
@@ -38,6 +38,8 @@
 			agony = 15 //Rubbers deal way less to us!
 			)
 			gives_prefex = TRUE
+			maxHealth += 10
+			health += 10
 			prefex = "padded"
 			return
 
@@ -70,5 +72,41 @@
 			gives_prefex = TRUE
 			armor_penetration += 5
 			flash_resistances += 1
+			maxHealth += 20
+			health += 20
 			prefex = "durable"
+			return
+
+		if("young")
+			add_armor = list(
+			melee = -5,
+			bullet = -5,
+			energy = -5,
+			bomb = 0,
+			bio = 0,
+			rad = 0,
+			agony = -5 //Rubbers deal way less to us!
+			)
+			gives_prefex = TRUE
+			maxHealth -= 10 //0 hardship yet
+			health -= 10
+			move_to_delay -= 0.5 // faster
+			prefex = "young"
+			return
+
+		if("old")
+			add_armor = list(
+			melee = 5,
+			bullet = 5,
+			energy = 0,
+			bomb = 10,
+			bio = 0,
+			rad = 0,
+			agony = 20 //just cant feel it
+			)
+			gives_prefex = TRUE
+			maxHealth += 20 //life already seen them by
+			health += 20
+			move_to_delay += 1 // Very slow
+			prefex = "aged"
 			return
