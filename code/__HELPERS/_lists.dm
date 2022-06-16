@@ -523,6 +523,58 @@
 
 	return nearestObjects
 
+/// Returns a list of the closest objects out of a given list, using get_dist between sourceLocation and the target.
+/proc/getClosestObjects(list/L, sourceLocation, maxRange = INFINITY, minRange = 0)
+	if (L.len == 1)
+		return L
+
+	var/list/nearestObjects = list()
+	var/shortestDistance = INFINITY
+	for (var/object in L)
+		var/distance = get_dist(sourceLocation, object)
+
+		if (distance > shortestDistance)
+			continue
+
+		if ((distance > maxRange) || (distance < minRange))
+			continue
+
+		if (distance < shortestDistance)
+			shortestDistance = distance
+			nearestObjects.Cut()
+			nearestObjects += object
+
+		else if (distance == shortestDistance)
+			nearestObjects += object
+
+	return nearestObjects
+
+/// Returns a list of the furthest objects out of a given list, using get_dist between sourceLocation and the target.
+/proc/getFurthestObjects(list/L, sourceLocation, maxRange = INFINITY, minRange = 0)
+	if (L.len == 1)
+		return L
+
+	var/list/furthestObjects = list()
+	var/furthestDistance = 0
+	for (var/object in L)
+		var/distance = get_dist(sourceLocation, object)
+
+		if (distance < furthestDistance)
+			continue
+
+		if ((distance > maxRange) || (distance < minRange))
+			continue
+
+		if (distance > furthestDistance)
+			furthestDistance = distance
+			furthestObjects.Cut()
+			furthestObjects += object
+
+		else if (distance == furthestDistance)
+			furthestObjects += object
+
+	return furthestObjects
+
 // Macros to test for bits in a bitfield. Note, that this is for use with indexes, not bit-masks!
 #define BITTEST(bitfield, index)  ((bitfield)  &   (1 << (index)))
 #define BITSET(bitfield, index)   (bitfield)  |=  (1 << (index))
