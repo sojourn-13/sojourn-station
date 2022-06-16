@@ -24,6 +24,7 @@
 	var/list/access = list()	// Core implant can grant access levels to its user
 	var/path = ""
 
+
 /obj/item/implant/core_implant/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	deactivate()
