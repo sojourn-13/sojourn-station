@@ -523,7 +523,16 @@
 
 	return nearestObjects
 
-/// Returns a list of the closest objects out of a given list, using get_dist between sourceLocation and the target.
+/**
+ *	Returns a list of the closest objects, relative to sourceLocation, and only the closest objects.
+ *	Ex. if objects 1 and 2 are 3 tiles away, and object 4 is 5, only objects 1 and 2 will be returned.
+ *
+ *	Args:
+ *	L: A given list.
+ *	sourceLocation: What our search will be relative towards.
+ *	maxRange: Anything further away than this distance, in tiles, will be disregarded.
+ *	minRange: Anything closer than this distance, in tiles, will be disregarded.
+**/
 /proc/getClosestObjects(list/L, sourceLocation, maxRange = INFINITY, minRange = 0)
 	if (L.len == 1)
 		return L
@@ -549,7 +558,7 @@
 
 	return nearestObjects
 
-/// Returns a list of the furthest objects out of a given list, using get_dist between sourceLocation and the target.
+/// [/proc/getClosestObjects], but for the furthest objects.
 /proc/getFurthestObjects(list/L, sourceLocation, maxRange = INFINITY, minRange = 0)
 	if (L.len == 1)
 		return L

@@ -18,9 +18,9 @@
 	/// Do we randomly retarget?
 	var/retarget = TRUE
 	/// How many ticks we will wait before trying to retarget randomly. When it hits 0, we retarget and reset the timer to retarget_timer_initial.
-	var/retarget_timer = 5
+	var/retarget_timer = 6
 	/// Value that retarget_timer will be reset to.
-	var/retarget_timer_initial = 5
+	var/retarget_timer_initial = 6
 	/// The targetting prioritization type used by this mob. See mobs.dm in _DEFINES for the defines.
 	var/prioritization_type = CLOSEST
 	/// Do we prioritize dummies?

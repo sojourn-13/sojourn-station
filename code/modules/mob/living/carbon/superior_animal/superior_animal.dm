@@ -241,62 +241,63 @@
 	if(destroy_surroundings && !already_destroying_surroundings)
 		destroySurroundings()
 
-	if (retarget)
-		var/retarget_prioritize = retarget_prioritize_current
-		if (retarget_timer <= 0)
-			if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !fire_through_wall))
-				can_see = FALSE //for the sake of reducing work
-				retarget_prioritize = FALSE
-			var/target_mob_cache = target_mob
-			target_mob = WEAKREF(findTarget(retarget_prioritize))
-			retarget_timer = retarget_timer_initial
-			if (!target_mob)
-				target_mob = target_mob_cache //lets let the rest of the code handle this
-			else
-				if (target_mob != target_mob_cache)
-					lost_sight = FALSE
-				targetted_mob = (target_mob?.resolve())
-		else
-			retarget_timer--
-
-	if (!can_see || (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !fire_through_wall))) //why attack if we can't even see the enemy
-		if (patience <= 0)
-			loseTarget()
-			patience = patience_initial
-		else //this is where we handle mobs losing LOS and forgetting where the target is
-			if (!lost_sight) //lets only do this if we havent lost sight of them, so we dont constantly go to their new position
-				var/location = targetted_mob.loc //the choice to not just store the location every tick is intentional, i want mobs to have a chance to reacquire their target
-				if (ranged)
-					if (advancement_timer <= world.time) //we are advancing, so lets use our advance_steps var
-						walk_to(src, location, advance_steps, move_to_delay)
-					else
-						walk_to(src, location, calculated_walk, move_to_delay)
+	if (!(isburrow(targetted_mob))) //we dont want mobs failing to use the burrows
+		if (retarget)
+			var/retarget_prioritize = retarget_prioritize_current //local var so that we can make temporary changes
+			if (retarget_timer <= 0)
+				if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !fire_through_wall)) //if we cant see them, hearers() wont show them, so lets remove the override
+					can_see = FALSE //for the sake of reducing work
+					retarget_prioritize = FALSE //removing override
+				var/target_mob_cache = target_mob
+				target_mob = WEAKREF(findTarget(retarget_prioritize))
+				retarget_timer = retarget_timer_initial //reset the timer
+				if (!target_mob)
+					target_mob = target_mob_cache //lets let the rest of the code handle this
 				else
-					walk_to(src, location, 1, move_to_delay) // melee mobs only need to go to one tile away
-				lost_sight = TRUE
+					if (target_mob != target_mob_cache)
+						lost_sight = FALSE // we dont want any weird stuff happening, so lets be safe and set it to false
+					targetted_mob = (target_mob?.resolve())
+			else
+				retarget_timer--
 
-			patience--
-			var/moving_to = pick(cardinal)
-			set_dir(moving_to)
-			step_glide(src, moving_to, DELAY2GLIDESIZE(0.5 SECONDS)) //we can potentially pathfind if we do this
-		return
+		if (!can_see || (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !fire_through_wall))) //why attack if we can't even see the enemy
+			if (patience <= 0)
+				loseTarget()
+				patience = patience_initial
+			else //this is where we handle mobs losing LOS and forgetting where the target is
+				if (!lost_sight) //lets only do this if we havent lost sight of them, so we dont constantly go to their new position
+					var/location = targetted_mob.loc //the choice to not just store the location every tick is intentional, i want mobs to have a chance to reacquire their target
+					if (ranged)
+						if (advancement_timer <= world.time) //we are advancing, so lets use our advance_steps var
+							walk_to(src, location, advance_steps, move_to_delay)
+						else
+							walk_to(src, location, calculated_walk, move_to_delay)
+					else
+						walk_to(src, location, 1, move_to_delay) // melee mobs only need to go to one tile away
+					lost_sight = TRUE
 
-	else if (projectiletype) // if we can see, let's prepare to see if we can hit
-		if (istype(projectiletype, /obj/item/projectile))
-			if (projectiletype == initial(projectiletype)) // typepaths' vars are only accessable through initial() or objects
-				projectile_passflags = initial(projectiletype.pass_flags)
-				projectile_flags = initial(projectiletype.flags)
-			else // in case for some reason this var was editted post-compile
-				var/obj/item/projectile/temp_proj = new projectiletype(null) //create it in nullspace
-				projectile_passflags = temp_proj.pass_flags
-				projectile_flags = temp_proj.flags
-				QDEL_NULL(temp_proj)
-		if (ranged)
-			var/obj/item/projectile/test/impacttest/trace = new /obj/item/projectile/test/impacttest(get_turf(src))
-			RegisterSignal(trace, COMSIG_TRACE_IMPACT, .proc/handle_trace_impact)
-			trace.pass_flags = projectile_passflags
-			trace.flags = projectile_flags
-			trace.launch(targetted_mob)
+				patience--
+				var/moving_to = pick(cardinal)
+				set_dir(moving_to)
+				step_glide(src, moving_to, DELAY2GLIDESIZE(0.5 SECONDS)) //we can potentially pathfind if we do this
+			return
+
+		else if (projectiletype) // if we can see, let's prepare to see if we can hit
+			if (istype(projectiletype, /obj/item/projectile))
+				if (projectiletype == initial(projectiletype)) // typepaths' vars are only accessable through initial() or objects
+					projectile_passflags = initial(projectiletype.pass_flags)
+					projectile_flags = initial(projectiletype.flags)
+				else // in case for some reason this var was editted post-compile
+					var/obj/item/projectile/temp_proj = new projectiletype(null) //create it in nullspace
+					projectile_passflags = temp_proj.pass_flags
+					projectile_flags = temp_proj.flags
+					QDEL_NULL(temp_proj)
+			if (ranged)
+				var/obj/item/projectile/test/impacttest/trace = new /obj/item/projectile/test/impacttest(get_turf(src))
+				RegisterSignal(trace, COMSIG_TRACE_IMPACT, .proc/handle_trace_impact)
+				trace.pass_flags = projectile_passflags
+				trace.flags = projectile_flags
+				trace.launch(targetted_mob)
 
 	lost_sight = FALSE // we can see our target now
 	patience = patience_initial
@@ -477,6 +478,7 @@
 						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
 
+/// Called in findTarget() if the found target is not the same as the one we already have.
 /mob/living/carbon/superior_animal/proc/doTargetMessage()
 	return
 

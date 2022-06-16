@@ -47,6 +47,7 @@
 
 	return filteredTarget
 
+/// Returns a list of objects, using a method dependant on the prioritization_type var of the mob.
 /mob/living/carbon/superior_animal/proc/getTargets(list/L, sourceLocation)
 	if (L.len == 1)
 		return L.Copy()
