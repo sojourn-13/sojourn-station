@@ -1227,7 +1227,7 @@
 
 /obj/item/clothing/accessory/passcard/rankorin
 	name = "Rankorin passcard"
-	desc = "A passcard issued to personal of the Nadezhda that are from Rankorin space, a death world due to its highly toxic atmosphere caused by a combination of natural flora and common storms of poisonous dusts clouds."
+	desc = "A passcard issued to citizens of the Nadezhda that are from Rankorin space, a death world due to its highly toxic atmosphere caused by a combination of natural flora and common storms of poisonous dusts clouds."
 	icon_state = "passcard_rankorin"
 	item_state = "pass"
 
