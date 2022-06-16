@@ -71,8 +71,6 @@
 
 	if(rapid)
 		for(var/shotsfired = 0, shotsfired < rapid_fire_shooting_amount, shotsfired++)
-			if(!check_if_alive())
-				break
 			addtimer(CALLBACK(src, .proc/Shoot, target, loc, src), (delay_for_rapid_range * shotsfired))
 			handle_ammo_check()
 	else
@@ -111,8 +109,11 @@
 		rapid = FALSE
 
 /mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0)
-	if(weakened) return
+	if(weakened)
+		return
 	if(target == start)
+		return
+	if (is_dead())
 		return
 
 	var/obj/item/projectile/A = new projectiletype(user:loc)

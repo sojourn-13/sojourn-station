@@ -272,6 +272,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 /mob/living/carbon/superior_animal/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)
 		target_mob = null
+		lost_sight = FALSE
 		stance = initial(stance)
 		stop_automated_movement = initial(stop_automated_movement)
 		walk(src, 0)
