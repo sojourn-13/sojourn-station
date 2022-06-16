@@ -783,13 +783,13 @@
 	desc = "A lightweight polymer frame designed to hold a neck upright comfortably."
 	icon_state = "neckbrace"
 	item_state = "neckbrace"
-	
+
 /obj/item/clothing/accessory/pilotwebbing
 	name = "basic pilot harness"
 	desc = "A basic harness commonly used through out the galaxy from shuttle pilots to mech pilots. The harness itself has minimal safety strapping however would still ensure you're safely strapped into whatever cockpit you may be seated in."
 	icon_state = "basicpilot"
 	item_state = "basicpilot"
-	
+
 /obj/item/clothing/accessory/pilotwebbing/military
 	name = "military pilot harness"
 	desc = "A military harness commonly seen being used by pilots within military or paramilitary forces for their fighter pilots and combat mech pilots. The harness itself has extra safety strapping and buckles allowing for the attaching of safety ane EVA equipment in case of an emergency however would still ensure you're safely strapped into whatever cockpit you may be seated in."
@@ -1175,3 +1175,112 @@
 	item_state = "sweatervest_red"
 	overlay_state = "sweatervest_red"
 
+/* Passports/work visa/passcard */
+
+/obj/item/clothing/accessory/passcard
+	name = "general passcard"
+	desc = "A passcard issued to citizens of the Nadezhda in the Chromin 8 system, Amethyn."
+	icon_state = "passcard_general"
+	item_state = "general_passport"
+
+/obj/item/clothing/accessory/passcard/resident_card
+	name = "resident passcard"
+	desc = "A resident card issued to citizens of the Nadezhda in the Chromin 8 system, Amethyn."
+	icon_state = "resident_card"
+	item_state = "passport"
+
+/obj/item/clothing/accessory/passcard/work_visa
+	name = "work visa"
+	desc = "A working card issued to personal of the Nadezhda that are working in the local sector temporarily in the Chromin 8 system, Amethyn. "
+	icon_state = "workvisa"
+	item_state = "pass"
+
+/obj/item/clothing/accessory/passcard/sol
+	name = "solarian passcard"
+	desc = "A passcard issued to citizens of the Nadezhda that are from Sol space."
+	icon_state = "passcard_sol"
+	item_state = "pass"
+
+/obj/item/clothing/accessory/passcard/new_damascus
+	name = "New Damascus passcard"
+	desc = "A passcard card issued to citizens of Nadezhda that are from New Damascus, once a bustling manufacturing world that was rich in oxygen and low in moisture, New Damascus is an arid world slowly bringing itself back from the brink of economic collapse."
+	icon_state = "passcard_new_damascus"
+	item_state = "passport"
+
+/obj/item/clothing/accessory/passcard/kurilskaya
+	name = "Kurilskaya passcard"
+	desc = "A passcard  issued to citizens of the Nadezhda that are from the small mining facility of an gas giant's moon."
+	icon_state = "passcard_kurilskaya"
+	item_state = "kuri"
+
+/obj/item/clothing/accessory/passcard/coalition_of_colonies
+	name = "Coalition passcard"
+	desc = "A passcard issued to citizens of the Nadezhda that are from an unknown exo-planet away from Sol space or Chromin itself. It generally means that they are from a coalition of independents colonies that are not allied to sol nor Nadezhda."
+	icon_state = "passcard_coc"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/sanperitor
+	name = "Sanperitor passcard"
+	desc = "A passcard issued to citizens of the Nadezhda that are from Sanperitor, an low atmosphere world closer to its systems star then most species are comfortable living with. The intense solar radiation of the planet has caused those who reside their to naturally adapt to the toxins present in every day life"
+	icon_state = "passcard_sanperitor"
+	item_state = "pass"
+
+/obj/item/clothing/accessory/passcard/rankorin
+	name = "Rankorin passcard"
+	desc = "A passcard issued to personal of the Nadezhda that are from Rankorin space, a death world due to its highly toxic atmosphere caused by a combination of natural flora and common storms of poisonous dusts clouds."
+	icon_state = "passcard_rankorin"
+	item_state = "pass"
+
+/obj/item/clothing/accessory/passcard/mardinat_yunan
+	name = "Mardinat Yanun passcard"
+	desc = "A  passcard issued to citizens of the Nadezhda that are Mardinat space, initially selected for habitation for its rich gasses and potential for being located on an upcoming trade lane, this gas giant had many of its economic dreams dashed, with the gaseous mixture of the atmosphere being poor for fuel production and the trade lane never materializing. You wonder how this passcard was even issued due to the failure of the colony itself."
+	icon_state = "passcard_madinat_yunan"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/thalatta
+	name = "Thalatta passcard"
+	desc = "A  passcard issued to citizens of the Nadezhda that are from the Thalatta ship, translated from the ancient Greek term for 'The Sea' , Thalatta is an aptly named city-ship that is ever sailing through the great cosmic sea."
+	icon_state = "passcard_thalatta"
+	item_state = "pass"
+
+/obj/item/clothing/accessory/passcard/wanderers_armada
+	name = "Wanderers Armada passcard"
+	desc = "A passcard issued to citizens of the Nadezhda that are from the fleet ship's of Wanderers Armada. The Wanderer's Armada is a group of nearly a hundred repurposed ships, ranging from small corvettes to the largest Dreadnought that began the Armada. While the size of this fleet rivals certain Federation fleets, it focuses on being the wandering black market, visiting each system and recruiting those that wish to join them."
+	icon_state = "passcard_wanderers_armada"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/onkarth
+	name = "Onkarth passcard"
+	desc = "A passcard issued to citizens of the Nadezhda that are from the Onkarth space,the homeworld of the sablekyne, a desert planet of extreme conditions along the equator and northern fringes of civilization."
+	icon_state = "passcard_onkarth"
+	item_state = "passport"
+
+/obj/item/clothing/accessory/passcard/aqua_fria
+	name = "Aqua Fria passcard"
+	desc = "A passcard issued to citizens of the Nadezhda that are from the Aqua Fria space, tucked away in a heavily populated system, this large aquatic world has made a reputation for being a substantial food source and home to a number of research institutes."
+	icon_state = "passcard_aqua_fria"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/donbettyr
+	name = "Donbettur passcard"
+	desc = "A passcard issued to citizens of the Nadezhda that are from the Donbettyr space, the homeworld of the akula, an old primarily water planet with two moons and few thousand separated areas of land making up a series of islands and archipelagos."
+	icon_state = "passcard_aqua_fria"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/passport_sol
+	name = "Solarian passport"
+	desc = "A passport issued to citizens of the Nadezhda that are from the sol sector and now live in the Chromin 8 system, Amethyn."
+	icon_state = "passport_sol"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/passport_general
+	name = "passport"
+	desc = "A passport issued to citizens of the Nadezhda that live in the local sector temporarily in the Chromin 8 system, Amethyn."
+	icon_state = "general_passport"
+	item_state = "general_passport"
+
+/obj/item/clothing/accessory/passcard/passport_kriosan
+	name = "Kriosan passport"
+	desc = "A passport issued to citizens of the Krios that are working or living in the local sector temporarily or permanetly in the Chromin 8 system, Amethyn."
+	icon_state = "workvisa"
+	item_state = "kuri"
