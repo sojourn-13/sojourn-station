@@ -1255,6 +1255,13 @@
 	icon_state = "passcard_onkarth"
 	item_state = "passport"
 
+/obj/item/clothing/accessory/passcard/neapolis
+	name = "Neapolis passcard"
+	desc = "A passcard issued to citizens of the Nadezhda that are from the Neapolis space, an lush garden world has modeled itself as an escape for repressed artists, political exiles, and individuals who would largely be ostracized by most major powers."
+	icon_state = "passcard_neopolis"
+	item_state = "passport"
+
+
 /obj/item/clothing/accessory/passcard/aqua_fria
 	name = "Aqua Fria passcard"
 	desc = "A passcard issued to citizens of the Nadezhda that are from the Aqua Fria space, tucked away in a heavily populated system, this large aquatic world has made a reputation for being a substantial food source and home to a number of research institutes."
