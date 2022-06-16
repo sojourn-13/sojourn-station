@@ -224,7 +224,7 @@
 
 								//// TOXIN ORGAN ROT ////
 		var/mob/living/carbon/human/H = src
-		var/obj/item/organ/internal/liver/L = H.random_organ_by_process("liver")
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
 		if (ishuman(H))
 			var toxThreshHold
 			if (L.nature == MODIFICATION_SILICON)
