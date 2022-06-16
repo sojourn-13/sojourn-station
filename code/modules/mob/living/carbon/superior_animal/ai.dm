@@ -77,6 +77,7 @@
 	melee_delay = melee_delay_initial
 	target_mob = null
 	stance = HOSTILE_STANCE_IDLE
+	lost_sight = FALSE
 
 /mob/living/carbon/superior_animal/proc/isValidAttackTarget(var/atom/O)
 

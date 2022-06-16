@@ -15,27 +15,27 @@
 
 	var/eating_time = 900
 
+	/// Stored var of calculation ran within [/mob/living/carbon/superior_animal/proc/advance_towards]
+	var/advance_steps = 0
 	/// How many tiles we will advance forward from our current position if we can't hit our current target.
 	var/advancement = 1
-
 	/// Increments advancement_timer by itself whenever a ranged mob decides to advance.
 	var/advancement_increment = 5
-
 	/// Will be incremented advancement_increment ticks whenever a ranged mob decides to advance. If more than world.time, targetting walks will be ignored, to not end the advancement.
 	var/advancement_timer = 0
 
+	/// Has this mob lost sight of their target? This is how we make sure mobs don't constantly go to the position of the target they've lost sight of.
+	var/lost_sight = FALSE
+
 	///How delayed are our ranged attacks, in ticks. Reduces DPS.
 	var/fire_delay = 0
-
 	/// Value used when resetting fire_delay. initial() works but breaks vareditting.
 	var/fire_delay_initial = 0
 
 	///How delayed are our melee attacks, in ticks. Reduces DPS.
 	var/melee_delay = 0
-
 	/// Value used when resetting melee_delay. initial() works but breaks vareditting.
 	var/melee_delay_initial = 0
-
 	/// Do we charge our melee attacks if we aren't adjacent?
 	var/do_melee_if_not_adjacent = TRUE
 
@@ -47,10 +47,13 @@
 	var/retarget_rush_timer = 0
 	/// For this amount of time after a retarget, any retargets will cause a instant attack.
 	var/retarget_rush_timer_increment = 10 SECONDS //arbitrary value for now
+
 	/// Will this mob continue to fire even if LOS has been broken?
 	var/fire_through_wall = FALSE
 	/// How many ticks are we willing to wait before untargetting a mob that we can't see?
 	var/patience = 5
+	/// What patience will be reset to whenever it's reset.
+	var/patience_initial = 5
 
 	/// Telegraph message base for mobs that are range
 	var/range_telegraph = "aims their weapon at"
@@ -388,6 +391,9 @@
 
 /mob/living/carbon/superior_animal/proc/handle_ai()
 
+	if(weakened)
+		return
+
 	if(ckey)
 		return
 
@@ -444,7 +450,6 @@
 /mob/living/carbon/superior_animal/proc/handle_hostile_stance(var/atom/targetted_mob) //here so we can jump instantly to it if hostile stance is established
 	var/already_destroying_surroundings = FALSE
 	var/calculated_walk = (comfy_range - comfy_distance)
-	if(weakened) return
 	if(destroy_surroundings)
 		destroySurroundings()
 		already_destroying_surroundings = TRUE
@@ -480,14 +485,25 @@
 	if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !fire_through_wall)) //why attack if we can't even see the enemy
 		if (patience <= 0)
 			loseTarget()
-			patience = initial(patience)
-		else
+			patience = patience_initial
+		else //this is where we handle mobs losing LOS and forgetting where the target is
+			if (!lost_sight) //lets only do this if we havent lost sight of them, so we dont constantly go to their new position
+				var/location = targetted_mob.loc //the choice to not just store the location every tick is intentional, i want mobs to have a chance to reacquire their target
+				if (ranged)
+					if (advancement_timer <= world.time) //we are advancing, so lets use our advance_steps var
+						walk_to(src, location, advance_steps, move_to_delay)
+					else
+						walk_to(src, location, calculated_walk, move_to_delay)
+				else
+					walk_to(src, location, 1, move_to_delay) // melee mobs only need to go to one tile away
+				lost_sight = TRUE
+
 			patience--
 			var/moving_to = pick(cardinal)
 			set_dir(moving_to)
 			step_glide(src, moving_to, DELAY2GLIDESIZE(0.5 SECONDS)) //we can potentially pathfind if we do this
-
 		return
+
 	else if (projectiletype) // if we can see, let's prepare to see if we can hit
 		if (istype(projectiletype, /obj/item/projectile))
 			if (projectiletype == initial(projectiletype)) // typepaths' vars are only accessable through initial() or objects
@@ -505,9 +521,11 @@
 			trace.flags = projectile_flags
 			trace.launch(targetted_mob)
 
-	patience = initial(patience)
+	lost_sight = FALSE // we can see our target now
+	patience = patience_initial
 	if(!ranged)
 		prepareAttackOnTarget()
+		walk_to(src, targetted_mob, 1, move_to_delay)
 	else if(ranged)
 		if (!(targetted_mob.check_if_alive(TRUE)))
 			loseTarget()
@@ -519,8 +537,6 @@
 			if (advancement_timer <= world.time) //we dont want to prematurely end a advancing walk
 				walk_to(src, targetted_mob, calculated_walk, move_to_delay) //we still want to reset our walk
 		else
-			if(weakened)
-				return
 			if (advancement_timer <= world.time)
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 				walk_to(src, targetted_mob, calculated_walk, move_to_delay)
@@ -700,16 +716,20 @@
 
 	var/targetted_mob = (target_mob?.resolve())
 
+	if (impact_atom != targetted_mob)
+		advance_towards(targetted_mob)
+
+/mob/living/carbon/superior_animal/proc/advance_towards(var/atom/target)
+
 	var/calculated_walk = (comfy_range - comfy_distance)
 
-	if (impact_atom != targetted_mob)
-		var/distance = (get_dist(src, targetted_mob))
-		if (distance <= calculated_walk) //if we are within our comfy range but we cant attack, we need to reposition
-			var/advance_steps = (distance - advancement)
-			if (advance_steps <= 0)
-				advance_steps = 1 //1 is the minimum distance
-			walk_to(src, targetted_mob, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
-			advancement_timer = (world.time += advancement_increment) // we dont want this overridden instantly
+	var/distance = (get_dist(src, target))
+	if (distance <= calculated_walk) //if we are within our comfy range but we cant attack, we need to reposition
+		advance_steps = (distance - advancement)
+		if (advance_steps <= 0)
+			advance_steps = 1 //1 is the minimum distance
+		walk_to(src, target, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
+		advancement_timer = (world.time += advancement_increment) // we dont want this overridden instantly
 
 /mob/living/carbon/superior_animal/CanPass(atom/mover)
 	if(istype(mover, /obj/item/projectile))
