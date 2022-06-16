@@ -62,6 +62,7 @@
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
+	noob_name = "Rookie Salvager"
 	alt_titles = list("Scrapper","Sapper","Junk Technician","Sawbones")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR
@@ -109,6 +110,7 @@
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
+	noob_name = "Greenhorn Prospector"
 	alt_titles = list("Enforcer","Frontiersmen","Triggerman")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_DUMB

@@ -15,6 +15,7 @@
 	var/current_positions = 0				// How many players have this job
 	var/supervisors					// Supervisors, who this person answers to directly
 	var/selection_color = "#ffffff"			// Selection screen color
+	var/noob_name
 	var/list/alt_titles
 	var/difficulty = "Null"
 

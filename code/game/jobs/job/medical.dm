@@ -72,7 +72,8 @@
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	minimum_character_age = 25
-	alt_titles = list("Soteria Nurse", "Soteria Emergency Physician", "Soteria Surgeon", "Soteria Medical Student")
+	alt_titles = list("Soteria Nurse", "Soteria Emergency Physician", "Soteria Surgeon")
+	noob_name = "Soteria Medical Student"
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
 	department_account_access = TRUE
 	health_modifier = -15

@@ -353,7 +353,8 @@
 	spawn_positions = 4
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	alt_titles = list("Blackshield Cadet", "Blackshield Militiamen")
+	noob_name = "Blackshield Cadet"
+	alt_titles = list("Blackshield Militiamen")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10
@@ -404,7 +405,8 @@
 	spawn_positions = 4
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	alt_titles = list("Marshal Civil Servant", "Field Training Marshal")
+	noob_name = "Field Training Marshal"
+	alt_titles = list("Marshal Civil Servant")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10
