@@ -1239,7 +1239,7 @@
 
 /obj/item/clothing/accessory/passcard/onkarth
 	name = "Onkarth passcard"
-	desc = "A passcard issued to citizens of the Onkarth, the homeworld of the sablekyne, a desert planet of extreme conditions along the equator and northern fringes of civilization."
+	desc = "A passcard issued to citizens of Onkarth, the homeworld of the Sablekyne, a primarily desert planet of extreme conditions along the equator and northern fringes of civilization."
 	icon_state = "passcard_onkarth"
 	item_state = "passport"
 
