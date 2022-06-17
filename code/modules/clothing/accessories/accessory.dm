@@ -1227,7 +1227,7 @@
 
 /obj/item/clothing/accessory/passcard/thalatta
 	name = "Thalatta passcard"
-	desc = "A passcard issued to the crewmembers of the Thalatta ship, translated from the ancient Greek term for 'The Sea' , Thalatta is an aptly named city-ship that is ever sailing through the great cosmic sea."
+	desc = "A passcard issued to crewmembers of the City-Ship Thalatta, translated from the ancient Greek term for 'The Sea.' Thalatta is an aptly named mobile city that is ever-sailing through the great cosmic sea."
 	icon_state = "passcard_thalatta"
 	item_state = "pass"
 
