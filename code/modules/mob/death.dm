@@ -59,6 +59,8 @@
 	if(stat == DEAD)
 		return 0
 
+	walk(src, 0)
+
 	activate_mobs_in_range(src, 5) //Its quite clear to everyone close by when something dies
 	facing_dir = null
 
