@@ -1179,7 +1179,7 @@
 
 /obj/item/clothing/accessory/passcard
 	name = "general passcard"
-	desc = "A passcard issued to citizens of the Nadezhda in the Chromin 8 system, Amethyn."
+	desc = "A passcard issued by the Nadezhda Colony when someone gains permanent residency on Amethyn, in the Chromin 8 system."
 	icon_state = "passcard_general"
 	item_state = "general_passport"
 
