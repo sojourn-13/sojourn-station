@@ -72,12 +72,6 @@
 			if("Cognition")
 				stat_noun = pick("cognition", "intelligence", "knowledge")
 				stat_adjective = pick("smart", "intelligent", "concentrated", "knowledgable")
-			if("Vivification")
-				stat_noun = pick("invigoration", "vigorous", "healthy", "fit")
-				stat_adjective = pick("vitality", "vigour")
-			if("Anatomy")
-				stat_noun = pick("physique", "soma", "build", "frame")
-				stat_adjective = pick("morphological", "physical")
 		switch(stats[stat])
 			if(30 to INFINITY)
 				a_or_an = "an"

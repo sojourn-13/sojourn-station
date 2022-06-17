@@ -47,10 +47,7 @@
 	//Character stats modifers
 	var/list/stat_modifiers = list()
 
-	// Sojourn Additions
-
-	//Changes max hp
-	var/health_modifier = 0
+ 	// Sojourn Additions
 
 	//Does not display this job on the occupation setup screen
 	var/latejoin_only = 0
@@ -84,9 +81,6 @@
 		target.stats.changeStat(name, stat_modifiers[name])
 	for(var/perk in perks)
 		target.stats.addPerk(perk)
-
-	target.health += health_modifier
-	target.maxHealth += health_modifier
 
 	return TRUE
 

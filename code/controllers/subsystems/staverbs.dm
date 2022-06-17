@@ -55,10 +55,6 @@ SUBSYSTEM_DEF(statverbs)
 				to_chat(user, SPAN_WARNING("You're not smart enough to do that!"))
 			if(STAT_VIG)
 				to_chat(user, SPAN_WARNING("You're not perceptive enough to do that!"))
-			if(STAT_VIV)
-				to_chat(user, SPAN_WARNING("Your nerves can't handle this!"))
-			if(STAT_ANA)
-				to_chat(user, SPAN_WARNING("You're not healthy enough to do this!"))
 		return FALSE
 
 	action(user, target)

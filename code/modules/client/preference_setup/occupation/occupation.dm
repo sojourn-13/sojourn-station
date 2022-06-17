@@ -350,13 +350,6 @@
 		job_desc += "</ul>"
 	else
 		job_desc += "None"
-	job_desc += "<h1 style='padding: 0px;'>Added Health:</h1>"
-	if(job.health_modifier)
-		job_desc += "<ul>"
-		job_desc += "<li>[job.health_modifier]</li>"
-		job_desc += "</ul>"
-	else
-		job_desc += "None"
 	job_desc +="</div>"
 
 	if(job.alt_titles)
