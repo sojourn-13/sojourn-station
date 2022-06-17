@@ -1233,7 +1233,7 @@
 
 /obj/item/clothing/accessory/passcard/wanderers_armada
 	name = "Wanderers Armada passcard"
-	desc = "A passcard issued to crewmembers of who are from the fleet ship's of Wanderers Armada. The Wanderer's Armada is a group of nearly a hundred repurposed ships, ranging from small corvettes to the largest Dreadnought that began the Armada. While the size of this fleet rivals certain Federation fleets, they visit each system and recruiting those that wish to join them."
+	desc = "A passcard issued to the crew and passengers of the Wanderer's Armada. The Wanderer's Armada is a flotilla of repurposed ships, ranging from small corvettes to the largest Dreadnought that began the Armada. While the size of this fleet rivals certain Federation fleets, they visit each system and recruit those that wish to join them."
 	icon_state = "passcard_wanderers_armada"
 	item_state = "badge"
 
