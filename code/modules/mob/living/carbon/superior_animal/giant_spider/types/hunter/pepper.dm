@@ -47,7 +47,7 @@
 		if (distance <= spray_range)
 			if (prob(spray_chance))
 				if (gas_sac.has_reagent("condensedcapsaicinspider", amount_per_transfer_from_this))
-					if (!(target.weakened)) //anti-stunlock
+					if (!((target.weakened) || (target.stunned))) //anti-stunlock
 						var/delay = rand(spray_delay_minimum, spray_delay_maximum)
 						addtimer(CALLBACK(src, .proc/sprayPepper, targetted_mob), delay)
 
