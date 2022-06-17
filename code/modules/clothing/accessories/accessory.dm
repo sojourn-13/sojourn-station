@@ -1245,7 +1245,7 @@
 
 /obj/item/clothing/accessory/passcard/neapolis
 	name = "Neapolis passcard"
-	desc = "A passcard issued to citizens of the Neapolis, an lush garden world has modeled itself as an escape for repressed artists, political exiles, and individuals who would largely be ostracized by most major powers."
+	desc = "A passcard issued to citizens of Neapolis, a lush garden world that has modeled itself as an escape for repressed artists, political exiles, and individuals who would largely be ostracized by most major powers."
 	icon_state = "passcard_neopolis"
 	item_state = "passport"
 
