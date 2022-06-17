@@ -4,10 +4,10 @@
 	welcome = "Welcome to the Nadezhda colony! We hope you enjoy your stay!"
 	description = "Peaceful and relaxed storyteller who will try to help the colony a little."
 
-	gain_mult_mundane = 1.2
-	gain_mult_moderate = 0.8
-	gain_mult_major = 0.8
-	gain_mult_roleset = 0.8
+	gain_mult_mundane = 1.1
+	gain_mult_moderate = 0.7
+	gain_mult_major = 0.7
+	gain_mult_roleset = 0.7
 
 	repetition_multiplier = 0.95
 	tag_weight_mults = list(TAG_COMBAT = 0.75, TAG_NEGATIVE = 0.5, TAG_POSITIVE = 2)
