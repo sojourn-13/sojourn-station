@@ -1185,7 +1185,7 @@
 
 /obj/item/clothing/accessory/passcard/resident_card
 	name = "resident passcard"
-	desc = "A resident card issued to citizens of the Nadezhda in the Chromin 8 system, Amethyn."
+	desc = "A card issued by the Nadezhda Colony for colonists who are offered temporary residency on Amethyn, in the Chromin 8 system."
 	icon_state = "resident_card"
 	item_state = "passport"
 
