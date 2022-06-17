@@ -1203,7 +1203,7 @@
 
 /obj/item/clothing/accessory/passcard/coalition_of_colonies
 	name = "Coalition passcard"
-	desc = "A passcard issued to citizens of the unknown exo-planets away from Sol space or Chromin itself. It generally means that they are from a coalition of independents colonies that are not allied to sol nor Nadezhda."
+	desc = "A passcard issued to citizens and colonists away from Sol space or Chromin itself. The look of this passcard may vary group to group, but no matter where it comes from, it's generally understood that whoever owns this passcard has never been a Solarian citizen."
 	icon_state = "passcard_coc"
 	item_state = "badge"
 
