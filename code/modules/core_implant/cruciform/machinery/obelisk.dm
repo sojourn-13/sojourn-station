@@ -138,7 +138,7 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 				var/buff_power = disciples.len
 				var/message
 				var/prev_stat
-				for(var/stat in ALL_STATS)
+				for(var/stat in ALL_STATS_FOR_LEVEL_UP)
 					var/datum/stat_mod/SM = mob.stats.getTempStat(stat, "nt_obelisk")
 					//if(mob.stats && mob.stats.getPerk(/datum/perk/channeling))
 					//	buff_power = buff_power * 2  // Channeling gives +1 stat point per disciple so it amounts to * 2
