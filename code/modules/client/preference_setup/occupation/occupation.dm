@@ -73,6 +73,10 @@
 			pref.player_alt_titles -= job.title
 
 /datum/category_item/player_setup_item/occupation/content(mob/user, limit = 16, list/splitJobs, splitLimit = 1)
+
+	//Keeps track of the Player being looked at
+	var/client/C = user.client
+
 	if(!SSjob)
 		return
 
@@ -155,9 +159,12 @@
 		if(bad_message)
 			. += "<a href='?src=\ref[src];set_skills=[rank]'><del>[rank]</del></a></td><td><font color=red>[bad_message]</font></td></tr>"
 			continue
+
+		if (!(SSjob.JobTimeAutoCheck(C.ckey, "[type]", "[job]", 300)) && (job.noob_name))
+			SetPlayerAltTitle(job,job.noob_name)
+
 		if(job.alt_titles)
 			. += "<a href='?src=\ref[src];select_alt_title=\ref[job]'>\[[pref.GetPlayerAltTitle(job)]\]"
-
 		else
 			//. += (unspent && (current_level != JOB_LEVEL_NEVER) ? "<a class='Points' href='?src=\ref[src];set_skills=[rank]'>" : "<a href='?src=\ref[src];set_skills=[rank]'>")
 			. += (current_level != JOB_LEVEL_NEVER ? "<a class='Points' href='?src=\ref[src];set_skills=[rank]'>" : "<a href='?src=\ref[src];set_skills=[rank]'>")
@@ -199,6 +206,10 @@
 	. = jointext(.,null)
 
 /datum/category_item/player_setup_item/occupation/OnTopic(href, href_list, user)
+
+	//Keeps track of the Player being looked at
+	var/client/C = usr.client
+
 	if(href_list["reset_jobs"])
 		ResetJobs()
 		return TOPIC_REFRESH
@@ -213,7 +224,16 @@
 	else if(href_list["select_alt_title"])
 		var/datum/job/job = locate(href_list["select_alt_title"])
 		if (job)
-			var/choices = list(job.title) + job.alt_titles
+			var/choices
+			if (job.department != DEPARTMENT_LSS)
+				choices = list(job.noob_name)
+				if (SSjob.JobTimeAutoCheck(C.ckey, "[type]", "[job]", 300))
+					choices += list(job.title)
+				if (SSjob.JobTimeAutoCheck(C.ckey, "[type]", "[job]", 600))
+					choices += job.alt_titles
+			else
+				choices = list(job.noob_name) + list(job.title) + job.alt_titles
+
 			var/choice = input("Choose a title for [job.title].", "Choose Alternative Title", pref.GetPlayerAltTitle(job)) as anything in choices|null
 			if(choice && CanUseTopic(user))
 				SetPlayerAltTitle(job, choice)

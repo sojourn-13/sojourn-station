@@ -651,7 +651,7 @@ SUBSYSTEM_DEF(job)
 //Returns true if either the job from job_key has been forced, or the sum of all jobs in the list exceeds req_time
 /datum/controller/subsystem/job/proc/JobTimeAutoCheck(ckey, job_key, jobs, req_time)
 	if(JobTimeAllowCheck(ckey, job_key)) return TRUE
-	return JobTimeCheck(ckey, jobs) >= req_time
+	return (JobTimeCheck(ckey, jobs) >= req_time)
 
 //Returns the sum of all times in the list of jobs provided.
 //If 'jobs' is not a list, it will be encapsulated in one.

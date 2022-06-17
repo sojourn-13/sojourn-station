@@ -63,7 +63,7 @@
 	supervisors = "the Foreman"
 	difficulty = "Medium."
 	noob_name = "Rookie Salvager"
-	alt_titles = list("Scrapper","Sapper","Junk Technician","Sawbones")
+	alt_titles = list("Rookie Salvager","Scrapper","Sapper","Junk Technician","Sawbones")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR
 
@@ -111,7 +111,7 @@
 	supervisors = "the Foreman"
 	difficulty = "Medium."
 	noob_name = "Greenhorn Prospector"
-	alt_titles = list("Enforcer","Frontiersmen","Triggerman")
+	alt_titles = list("Greenhorn Prospector","Enforcer","Frontiersmen","Triggerman")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_DUMB
 
