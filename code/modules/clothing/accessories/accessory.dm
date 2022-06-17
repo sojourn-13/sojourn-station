@@ -1197,7 +1197,7 @@
 
 /obj/item/clothing/accessory/passcard/new_damascus
 	name = "New Damascus passcard"
-	desc = "A passcard card issued to citizens of New Damascus, once a bustling manufacturing world that was rich in oxygen and low in moisture, New Damascus is an arid world slowly bringing itself back from the brink of economic collapse."
+	desc = "A passcard card issued to citizens of New Damascus, once a bustling manufacturing world that was rich in oxygen and low in moisture. New Damascus is an arid world slowly bringing itself back from the brink of economic collapse."
 	icon_state = "passcard_new_damascus"
 	item_state = "passport"
 
