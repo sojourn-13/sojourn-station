@@ -1276,6 +1276,6 @@
 
 /obj/item/clothing/accessory/passcard/passport_kriosan
 	name = "Kriosan passport"
-	desc = "A passport issued to citizens of the Krios that are working or living in the local sector temporarily or permanetly in the Chromin 8 system, Amethyn."
+	desc = "A passport issued to Kriosans by the Kriosan Government who are working or living on Amethyn, in the Chromin 8 system."
 	icon_state = "workvisa"
 	item_state = "kuri"
