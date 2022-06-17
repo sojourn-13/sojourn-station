@@ -1209,7 +1209,7 @@
 
 /obj/item/clothing/accessory/passcard/sanperitor
 	name = "Sanperitor passcard"
-	desc = "A passcard issued to citizens of Sanperitor, an low atmosphere world closer to its systems star then most species are comfortable living with. The intense solar radiation of the planet has caused those who reside their to naturally adapt to the toxins present in every day life"
+	desc = "A passcard issued to citizens of Sanperitor, an low atmosphere world closer to its system's star then most species are comfortable living with. The intense solar radiation of the planet has caused those who reside there to naturally adapt to the toxins present in everyday life."
 	icon_state = "passcard_sanperitor"
 	item_state = "pass"
 
