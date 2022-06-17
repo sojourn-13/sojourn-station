@@ -1270,7 +1270,7 @@
 
 /obj/item/clothing/accessory/passcard/passport_general
 	name = "passport"
-	desc = "A passport issued to citizens of the Nadezhda that live in the local sector in the Chromin 8 system, Amethyn."
+	desc = "A passport issued to Nadezhda Colonists that live on Amethyn, in the Chromin 8 system."
 	icon_state = "general_passport"
 	item_state = "general_passport"
 
