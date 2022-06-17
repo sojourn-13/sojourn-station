@@ -1258,7 +1258,7 @@
 
 /obj/item/clothing/accessory/passcard/donbettyr
 	name = "Donbettyr passcard"
-	desc = "A passcard issued to citizens of the Donbettyr, the homeworld of the akula, an old primarily water planet with two moons and few thousand separated areas of land making up a series of islands and archipelagos."
+	desc = "A passcard issued to citizens of Donbettyr, the homeworld of the Akula. An old, primarily ocean world with two moons and few thousand separated areas of land making up a series of islands and archipelagos."
 	icon_state = "passcard_aqua_fria"
 	item_state = "badge"
 
