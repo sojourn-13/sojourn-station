@@ -21,6 +21,7 @@
 
 /mob/living/carbon/superior_animal/roach/support/Destroy()
 	gas_sac.my_atom = null
+	QDEL_NULL(gas_sac)
 
 	. = ..()
 
