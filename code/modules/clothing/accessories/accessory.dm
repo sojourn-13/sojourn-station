@@ -1221,7 +1221,7 @@
 
 /obj/item/clothing/accessory/passcard/mardinat_yunan
 	name = "Mardinat Yanun passcard"
-	desc = "A passcard issued to citizens of the Mardinat Yanun, initially selected for habitation for its rich gasses and potential for being located on an upcoming trade lane, this gas giant had many of its economic dreams dashed, with the gaseous mixture of the atmosphere being poor for fuel production and the trade lane never materializing. You wonder how this passcard was even issued due to the failure of the colony itself."
+	desc = "A passcard issued to citizens of Mardinat Yunan, initially selected for habitation for its rich gasses and potential for being located on an upcoming trade lane. This gas giant had many of its economic dreams dashed, with the gaseous mixture of the atmosphere being poor for fuel production and the trade lane never materializing."
 	icon_state = "passcard_madinat_yunan"
 	item_state = "badge"
 
