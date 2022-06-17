@@ -1252,7 +1252,7 @@
 
 /obj/item/clothing/accessory/passcard/aqua_fria
 	name = "Aqua Fria passcard"
-	desc = "A passcard issued to citizens of the Aqua Fria, tucked away in a heavily populated system, this large aquatic world has made a reputation for being a substantial food source and home to a number of research institutes."
+	desc = "A passcard issued to citizens of Aqua Fria. Tucked away in a heavily populated system, this large aquatic world has made a reputation for being a substantial food source and home to a number of research institutes."
 	icon_state = "passcard_aqua_fria"
 	item_state = "badge"
 
