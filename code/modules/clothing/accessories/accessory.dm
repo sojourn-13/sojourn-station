@@ -1191,7 +1191,7 @@
 
 /obj/item/clothing/accessory/passcard/work_visa
 	name = "work visa"
-	desc = "A working card issued to personal of the Nadezhda that are working in the local sector temporarily in the Chromin 8 system, Amethyn. "
+	desc = "A card issued by the Nadezhda Colony for colonists who are offered residency for the purpose of work on Amethyn, in the Chromin 8 system. "
 	icon_state = "workvisa"
 	item_state = "pass"
 
