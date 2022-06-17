@@ -18,6 +18,10 @@
 	var/spray_delay_maximum = 5
 	/// The message to be displayed when we spray
 	var/spray_message = "suddenly sprays out a red-colored liquid at"
+	/// Tracker var for our cooldown, will be set to cooldown_increment + world.time apon successful spray
+	var/cooldown = 0
+	/// How much cooldown will be incremented
+	var/cooldown_increment = 10
 
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/pepper/New()
@@ -41,17 +45,21 @@
 
 	var/spray_range = (comfy_range - 2)
 
-	if (istype(targetted_mob, /mob/living))
-		var/mob/living/target = targetted_mob
-		var/distance = (get_dist(src, target))
-		if (distance <= spray_range)
-			if (prob(spray_chance))
-				if (gas_sac.has_reagent("condensedcapsaicinspider", amount_per_transfer_from_this))
-					if (!((target.weakened) || (target.stunned))) //anti-stunlock
-						var/delay = rand(spray_delay_minimum, spray_delay_maximum)
-						addtimer(CALLBACK(src, .proc/sprayPepper, targetted_mob), delay)
+	if (cooldown <= world.time)
+		if (isliving(targetted_mob))
+			var/mob/living/target = targetted_mob
+			var/distance = (get_dist(src, target))
+			if (distance <= spray_range)
+				if (prob(spray_chance))
+					if (gas_sac.has_reagent("condensedcapsaicinspider", amount_per_transfer_from_this))
+						if (!((target.weakened) || (target.stunned))) //anti-stunlock
+							var/delay = rand(spray_delay_minimum, spray_delay_maximum)
+							addtimer(CALLBACK(src, .proc/sprayPepper, targetted_mob), delay)
+							cooldown = (world.time + cooldown_increment)
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/pepper/proc/sprayPepper(var/atom/targetted_mob)
+	visible_message(SPAN_WARNING("[src] [spray_message] [targetted_mob]!"))
+	playsound(loc, 'sound/effects/spray2.ogg', 50, 1)
 	var/obj/effect/effect/water/chempuff/D = new/obj/effect/effect/water/chempuff(get_turf(src))
 	var/turf/my_target = get_turf(targetted_mob)
 	D.create_reagents(amount_per_transfer_from_this)
@@ -60,8 +68,5 @@
 	gas_sac.trans_to_obj(D, amount_per_transfer_from_this)
 	D.set_color()
 	var/distance = (get_dist(src, targetted_mob))
-	D.set_up(my_target, distance, 10)
+	D.set_up(my_target, (distance + 1), 10) //+1 because i found it was a little buggy
 
-	visible_message(SPAN_WARNING("[src] [spray_message] [targetted_mob]!"))
-	playsound(loc, 'sound/effects/spray2.ogg', 50, 1, -6)
-	playsound(loc, attack_sound, attack_sound_volume, 1)
