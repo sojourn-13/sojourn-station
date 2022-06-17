@@ -15,7 +15,6 @@
 	wage = WAGE_COMMAND
 	ideal_character_age = 50
 	minimum_character_age = 30
-	health_modifier = 5
 
 	outfit_type = /decl/hierarchy/outfit/job/engineering/exultant
 

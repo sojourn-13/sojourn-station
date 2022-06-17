@@ -13,7 +13,6 @@
 	create_record = 0
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunt_master
-	health_modifier = 15
 
 	perks = list(/datum/perk/job/butcher)
 	access = list(access_huntmaster, access_hunter)
@@ -55,7 +54,6 @@
 	create_record = 0
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunter
-	health_modifier = 10
 
 	perks = list(/datum/perk/job/butcher)
 	access = list(access_hunter)
@@ -97,7 +95,6 @@
 	create_record = 0
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/herbalist
-	health_modifier = 5
 
 	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb)
 	access = list(access_hunter)

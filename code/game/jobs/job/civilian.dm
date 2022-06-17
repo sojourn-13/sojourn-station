@@ -13,7 +13,6 @@
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 3000
 	wage = WAGE_LABOUR_DUMB // Makes his own money via tips and selling drinks
-	health_modifier = -10
 	stat_modifiers = list(
 		STAT_ROB = 15,
 		STAT_TGH = 15,
@@ -48,7 +47,6 @@
 	difficulty = "Easy."
 	alt_titles = list("Culinary Artist","Cook")
 	selection_color = "#dddddd"
-	health_modifier = -10
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 750
 	wage = WAGE_LABOUR_DUMB //They should get paid by making food.
@@ -87,7 +85,6 @@
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	alt_titles = list("Hydroponicist")
-	health_modifier = -10
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	wage = WAGE_LABOUR_DUMB //The gardener can make money selling his fruits to the church or to the chef and bartender.
@@ -171,7 +168,6 @@
 	alt_titles = list("Custodian","Sanitation Technician")
 	access = list(access_janitor, access_maint_tunnels, access_morgue, access_hydroponics, access_bar, access_kitchen)
 	wage = WAGE_PROFESSIONAL
-	health_modifier = 5
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 
 	perks = list(/datum/perk/market_prof, /datum/perk/job/jingle_jangle, /datum/perk/neat) //Union has revoked their chemistry privileges
