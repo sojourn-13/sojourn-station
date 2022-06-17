@@ -461,7 +461,7 @@ No more of that.
 /obj/item/maneki_neko/proc/destroy_lifes()
 	for(var/mob/living/carbon/human/H in followers)
 
-		for(var/stat in ALL_STATS)
+		for(var/stat in ALL_STATS_FOR_LEVEL_UP)
 			H.stats.changeStat(stat, -10)
 		var/neko = uppertext(src.name)
 		to_chat(H, SPAN_DANGER(pick("LIFE IS RUINED FOR ME! I CANNOT FIND [neko]!", "WHO STOLE MY [neko]!", "WHERE IS [neko]?!", "WHY I CANNOT FIND [neko]?!")))

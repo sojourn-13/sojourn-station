@@ -135,7 +135,7 @@
 	)
 
 /datum/breakdown/positive/lesson/conclude()
-	for(var/stat in ALL_STATS)
+	for(var/stat in ALL_STATS_FOR_LEVEL_UP)
 		holder.owner.stats.changeStat(stat, rand(5,10))
 	..()
 
