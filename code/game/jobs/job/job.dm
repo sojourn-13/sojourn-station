@@ -67,7 +67,7 @@
 	var/list/perks = list()
 
 /datum/job/proc/equip(var/mob/living/carbon/human/H, var/alt_title)
-	var/decl/hierarchy/outfit/outfit = get_outfit()
+	var/decl/hierarchy/outfit/outfit = get_outfit() // Put alt_title in get_outfit() in order to turn on alternative name outfits.
 	if(!outfit)
 		return FALSE
 	. = outfit.equip(H, title, alt_title)
