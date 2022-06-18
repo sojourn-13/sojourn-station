@@ -77,7 +77,6 @@
 	stat_modifiers = list(
 		STAT_BIO = 20,
 		STAT_MEC = 20,
-		STAT_COG = 10,
 		STAT_TGH = 10,
 		STAT_VIG = 10,
 		STAT_ROB = 10
@@ -123,7 +122,8 @@
 	stat_modifiers = list(
 		STAT_TGH = 20,
 		STAT_VIG = 20,
-		STAT_ROB = 20
+		STAT_ROB = 20,
+		STAT_COG = 10
 	)
 
 	perks = list(/datum/perk/stalker, /datum/perk/job/prospector_conditioning)
