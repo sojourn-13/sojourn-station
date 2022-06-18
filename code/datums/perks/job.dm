@@ -492,7 +492,7 @@
 
 /datum/perk/job/prospector_conditioning
 	name = "Rough and Tumble"
-	desc = "You've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot, and even set on fire. Hell, even a few used needles in desperate times. You feel as though your body fights off infections and addictions much better than others."
+	desc = "You've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot, and even set on fire. Hell, even a few used needles in desperate times. You feel as though your body fights off the inflictions of to much NSA and addictions much better than others."
 	perk_shared_ability = PERK_SHARED_SEE_ILLEGAL_REAGENTS
 
 /datum/perk/prospector_conditioning/assign(mob/living/carbon/human/H)
