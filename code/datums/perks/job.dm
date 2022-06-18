@@ -141,12 +141,12 @@
 
 /datum/perk/sanityboost/assign(mob/living/carbon/human/H)
 	..()
-	H.maxHealth += 40
-    H.health += 40
+	holder.maxHealth += 40
+	holder.health += 40
 
 /datum/perk/sanityboost/remove()
-	H.maxHealth -= 40
-    H.health -= 40
+	holder.maxHealth -= 40
+	holder.health -= 40
 	..()
 
 /datum/perk/sure_step
@@ -498,11 +498,11 @@
 /datum/perk/prospector_conditioning/assign(mob/living/carbon/human/H)
 	..()
 	if(holder)
-		holder.metabolism_effects.nsa_threshold_base *= 1.25
+		holder.metabolism_effects.nsa_bonus += 25
 
 /datum/perk/prospector_conditioning/remove()
 	if(holder)
-		holder.metabolism_effects.nsa_threshold_base /= 1.25
+		holder.metabolism_effects.nsa_bonus -= 25
 	..()
 
 /datum/perk/job/butcher
