@@ -119,7 +119,7 @@
 	filling_color = "#E2FFDE"
 
 	bitesize = 6
-	preloaded_reagents = list("protein" = 9, "aranecolmin" = 8, "condensedcapsaicin" = 5)
+	preloaded_reagents = list("protein" = 9, "aranecolmin" = 8, "condensedcapsaicinspider" = 5)
 
 /obj/item/reagent_containers/food/snacks/meat/spider/emperor
 	desc = "A bloated slab of sickly-green meat cut from a spider. This one smells like cognitive improvement drugs."
