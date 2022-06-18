@@ -498,11 +498,15 @@
 /datum/perk/prospector_conditioning/assign(mob/living/carbon/human/H)
 	..()
 	if(holder)
+		holder.metabolism_effects.addiction_chance_multiplier = 0.1
 		holder.metabolism_effects.nsa_bonus += 25
+		holder.metabolism_effects.calculate_nsa()
 
 /datum/perk/prospector_conditioning/remove()
 	if(holder)
+		holder.metabolism_effects.addiction_chance_multiplier = 1
 		holder.metabolism_effects.nsa_bonus -= 25
+		holder.metabolism_effects.calculate_nsa()
 	..()
 
 /datum/perk/job/butcher
