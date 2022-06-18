@@ -1,5 +1,5 @@
 /obj/item/gun/projectile/automatic/vintorez
-	name = "Excelsior \"Vintorez\" silenced carbine"
+	name = "Excelsior \"Vintorez\" silenced rifle"
 	desc = "\"We have no compassion and we ask no compassion from you. When our turn comes, we shall not make excuses for the terror.\"\
 	A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/vintorez.dmi'
@@ -29,7 +29,7 @@
 	serial_type = "EXC"
 
 /obj/item/gun/projectile/automatic/vintorez/NM_colony
-	name = "\"Val\" silenced carbine"
+	name = "\"Val\" silenced rifle"
 	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds."
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
 	price_tag = 800
