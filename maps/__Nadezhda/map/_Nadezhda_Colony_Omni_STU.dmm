@@ -1221,15 +1221,6 @@
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/podrooms)
-"alg" = (
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/maintenance/undergroundfloor1north)
 "alj" = (
 /obj/structure/grille,
 /obj/structure/barricade,
@@ -10240,11 +10231,6 @@
 /obj/machinery/door/airlock/maintenance_rnd{
 	req_access = list(5)
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/door/firedoor,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
@@ -15845,15 +15831,12 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/laber_area)
 "djc" = (
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28;
-	pixel_y = 0
-	},
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/inactive{
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
@@ -20665,14 +20648,10 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc{
-	cell_type = /obj/item/cell/large/high;
-	dir = 4;
-	name = "East APC";
-	pixel_x = 28;
-	pixel_y = 0
-	},
 /obj/random/mob/roaches/low_chance,
+/obj/machinery/power/apc/inactive{
+	pixel_x = 32
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "efP" = (
@@ -23388,15 +23367,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/security/tactical_blackshield)
-"eJz" = (
-/obj/structure/catwalk,
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/maintenance/undergroundfloor1south)
 "eJA" = (
 /obj/structure/table/standard,
 /obj/item/device/radio/off,
@@ -36705,11 +36675,6 @@
 "hhx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/modular_computer/console,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "hhB" = (
@@ -44313,10 +44278,6 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/robotics)
-"iIS" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/maintenance/undergroundfloor1west)
 "iIT" = (
 /obj/machinery/door/firedoor/multi_tile,
 /obj/machinery/door/airlock/multi_tile/glass{
@@ -51349,15 +51310,6 @@
 /obj/structure/flora/small/bushb2,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
-"kaa" = (
-/obj/structure/boulder,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/maintenance/undergroundfloor1north)
 "kab" = (
 /obj/machinery/button/remote/blast_door{
 	desc = "It controls the display cases, remotely. Written below it is 'Trust in god but keep your batteries charged.'";
@@ -59554,11 +59506,6 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "lzo" = (
 /obj/structure/catwalk,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/robotics)
 "lzr" = (
@@ -64306,6 +64253,9 @@
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/inactive{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
@@ -72047,11 +71997,6 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "nSm" = (
 /obj/structure/catwalk,
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
@@ -75767,18 +75712,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/bridge)
-"oAE" = (
-/obj/structure/catwalk,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/maintenance/undergroundfloor1west)
 "oAK" = (
 /obj/structure/bed/chair/sofa/black,
 /turf/simulated/floor/wood/wild1,
@@ -80633,11 +80566,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/random/spider_trap/low_chance,
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -82754,7 +82682,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/firedoor,
 /obj/structure/catwalk,
 /obj/machinery/door/airlock/maintenance_rnd{
 	req_access = list(5)
@@ -93789,10 +93716,10 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "rWK" = (
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
 /turf/simulated/floor/plating/under,
@@ -98933,7 +98860,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/space,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "sXi" = (
 /obj/structure/table/standard,
@@ -103731,13 +103658,6 @@
 /obj/item/reagent_containers/food/snacks/meat/human,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/maintenance/undergroundfloor1east)
-"tVD" = (
-/obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/maintenance/undergroundfloor1north)
 "tVH" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
@@ -114336,16 +114256,12 @@
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/pros/foreman)
 "vSW" = (
-/obj/machinery/power/apc{
-	cell_type = /obj/item/cell/large/high;
-	dir = 4;
-	name = "East APC";
-	pixel_x = 28;
-	pixel_y = 0
-	},
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/inactive{
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/dark/panels,
 /area/nadezhda/maintenance/undergroundfloor1south)
@@ -131892,7 +131808,7 @@ gSY
 gSY
 gSY
 gSY
-oAE
+hkz
 vUC
 xWs
 xWs
@@ -132985,7 +132901,7 @@ mZW
 mZW
 mZW
 xUQ
-iIS
+fxu
 tEj
 aTU
 kjM
@@ -147506,7 +147422,7 @@ tWy
 tWy
 hwH
 tkb
-alg
+npT
 npT
 hwH
 pnW
@@ -152286,10 +152202,10 @@ loX
 bPc
 guy
 xmb
-eJz
+vBd
 eyA
 eyA
-eJz
+vBd
 iGJ
 guy
 qyU
@@ -155806,7 +155722,7 @@ iWI
 hwH
 hwH
 hwH
-tVD
+pnW
 bby
 hOs
 ifl
@@ -157429,7 +157345,7 @@ hOs
 tJp
 npT
 hwH
-kaa
+pGB
 hAR
 nbj
 lAr
@@ -157631,7 +157547,7 @@ kYR
 dlY
 npT
 iWI
-kaa
+pGB
 hPl
 tEp
 lAr
