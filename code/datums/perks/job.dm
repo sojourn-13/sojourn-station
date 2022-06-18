@@ -141,12 +141,12 @@
 
 /datum/perk/sanityboost/assign(mob/living/carbon/human/H)
 	..()
-	holder.maxHealth += 40
-    holder.health += 40
+	H.maxHealth += 40
+    H.health += 40
 
 /datum/perk/sanityboost/remove()
-	holder.maxHealth -= 40
-    holder.health -= 40
+	H.maxHealth -= 40
+    H.health -= 40
 	..()
 
 /datum/perk/sure_step

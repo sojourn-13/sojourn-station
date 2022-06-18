@@ -36,13 +36,13 @@
 
 /datum/perk/nanite_armor/assign(mob/living/carbon/human/H)
 	..()
-	holder.maxHealth += 40
-    holder.health += 40
+	H.maxHealth += 40
+    H.health += 40
 
 /datum/perk/nanite_armor/remove()
 	..()
-	holder.maxHealth -= 40
-    holder.health -= 40
+	H.maxHealth -= 40
+    H.health -= 40
 
 /datum/perk/nanite_chem
 	name = "Nanite Chemicals"
