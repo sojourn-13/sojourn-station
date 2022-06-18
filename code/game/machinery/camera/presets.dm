@@ -13,7 +13,8 @@ var/global/list/station_networks = list(
 	NETWORK_RESEARCH,
 	NETWORK_ROBOTS,
 	NETWORK_PRISON,
-	NETWORK_SECURITY
+	NETWORK_SECURITY,
+	NETWORK_PLASMA_TAG
 )
 
 var/global/list/engineering_networks = list(
@@ -38,6 +39,9 @@ var/global/list/engineering_networks = list(
 
 /obj/machinery/camera/network/fourth_section
 	network = list(NETWORK_FOURTH_SECTION)
+
+/obj/machinery/camera/network/plasma_tag
+	network = list(NETWORK_PLASMA_TAG)
 
 /obj/machinery/camera/network/command
 	network = list(NETWORK_COMMAND)

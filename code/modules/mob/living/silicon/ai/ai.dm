@@ -66,6 +66,7 @@ var/list/ai_verbs_default = list(
 							NETWORK_RESEARCH,
 							NETWORK_RESEARCH_OUTPOST,
 							NETWORK_SECURITY,
+							NETWORK_PLASMA_TAG,
 							NETWORK_TELECOM
 							)
 	var/obj/machinery/camera/camera = null

@@ -17,7 +17,7 @@
 			return access_engine
 		if(NETWORK_COMMAND)
 			return access_heads
-		if(NETWORK_THUNDER)
+		if(NETWORK_THUNDER, NETWORK_PLASMA_TAG)
 			return 0
 
 
