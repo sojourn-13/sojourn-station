@@ -267,7 +267,6 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		return
 	else if(!first_step)
 		CRASH("/datum/cooking_with_jane/recipe/proc/begin_exclusive_options: Exclusive list cannot be active before the first required step is defined. Recipe name=[name].")
-		return
 	exclusive_option_mode = TRUE
 	active_exclusive_option_list = list()
 
@@ -278,7 +277,6 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		return
 	else if(last_required_step.optional_step_list[last_required_step.optional_step_list.len]?:len == 0)
 		CRASH("/datum/cooking_with_jane/recipe/proc/end_exclusive_options: Exclusive option list ended with no values added. Recipe name=[name].")
-		return
 	else if(option_chain_mode)
 		CRASH("/datum/cooking_with_jane/recipe/proc/end_exclusive_options: Exclusive option cannot end while option chain is active. Recipe name=[name].")
 

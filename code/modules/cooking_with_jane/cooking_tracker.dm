@@ -263,7 +263,7 @@
 
 	var/datum/cooking_with_jane/recipe_step/active_step = GLOB.cwj_step_dictionary["[id]"]
 
-	if(!active_step in get_possible_steps())
+	if(!(active_step in get_possible_steps()))
 		return FALSE
 
 	steps_taken[id] = active_step.custom_result_desc

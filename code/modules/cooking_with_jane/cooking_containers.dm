@@ -8,7 +8,7 @@
 //allows a cook to temporarily offload recipes to work on things factory-style, eliminating the need for 20 plates to get things done fast.
 
 /obj/item/cooking_with_jane/cooking_container
-	icon = 'icons/obj/trash.dmi'
+	icon = 'icons/obj/cwj_cooking/eris_kitchen.dmi'
 	var/shortname
 	var/place_verb = "into"
 	var/appliancetype //string

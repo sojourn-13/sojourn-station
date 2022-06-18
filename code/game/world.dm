@@ -20,6 +20,7 @@ var/global/datum/global_init/init = new ()
 	initialize_chemical_reagents()
 	initialize_chemical_reactions()
 	initialize_mutation_recipes()
+	initialize_cooking_recipes()
 
 	qdel(src) //we're done
 
