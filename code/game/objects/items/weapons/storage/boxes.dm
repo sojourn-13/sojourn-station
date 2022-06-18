@@ -785,6 +785,19 @@
 		new /obj/item/clothing/accessory/ranks/blank(src)
 		new /obj/item/clothing/accessory/ranks/blank(src)
 
+/obj/item/storage/box/team_support
+	name = "Box of Team Support"
+	desc = "A box filled with everything needed to support the team, flag not included."
+	icon_state = "box"
+
+	New()
+		..()
+		new /obj/item/reagent_containers/food/snacks/popcorn(src)
+		new /obj/item/toy/junk/bosunwhistle(src)
+		new /obj/random/toy/plushie_onlysquid(src)
+		new /obj/item/device/binoculars(src)
+
+
 // Guild boxes, exclusively used to mass craft guild parts.
 /obj/item/storage/box/guild_manip
 	name = "box of forged manipulators"
