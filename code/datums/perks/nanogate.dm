@@ -17,23 +17,32 @@
 /datum/perk/nanite_muscle
 	name = "Nanofiber Muscle Therapy"
 	desc = "Through the use of pain killers, implanted nanofibers, and small dispersed drug therapy to critical areas your nanogate has enhanced your physical movement speed and endurance, allowing you to run for \
-	longer stretches at a faster pace without tiring."
+	longer stretches at a faster pace without tiring. Though you feel that all this strain might make your muscles easier to damage if your were to be injured."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
+
+/datum/perk/nanite_muscle/assign(mob/living/carbon/human/H)
+	..()
+	holder.brute_mod_perk += 0.10
+
+/datum/perk/nanite_muscle/remove()
+	..()
+	holder.brute_mod_perk -= 0.10
 
 /datum/perk/nanite_armor
 	name = "Nanite Skin-Weave"
 	desc = "Through the use of reactive nanites designed to plate together into a shield your machines can reform at a lightning pace to let you physically resist incoming damage by forming a \
-	mesh weave shield just before a strike connects. Effective, but only against physical brute damage."
+	mesh weave shield just before a strike connects."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
-	var/armor_mod = 0.2
 
 /datum/perk/nanite_armor/assign(mob/living/carbon/human/H)
 	..()
-	holder?.brute_mod_perk -= armor_mod
+	holder.maxHealth += 40
+    holder.health += 40
 
 /datum/perk/nanite_armor/remove()
 	..()
-	holder?.brute_mod_perk += armor_mod
+	holder.maxHealth -= 40
+    holder.health -= 40
 
 /datum/perk/nanite_chem
 	name = "Nanite Chemicals"
