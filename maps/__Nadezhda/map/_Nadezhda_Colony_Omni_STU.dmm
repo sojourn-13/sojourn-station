@@ -82000,8 +82000,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/glass_research{
 	name = "Robotics Lab";
-	req_access = list(29);
-	anchor_direction = sssssssssssssss
+	req_access = list(29)
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/rnd/robotics)
@@ -96467,8 +96466,7 @@
 "ssR" = (
 /obj/machinery/door/airlock/glass_research{
 	name = "Robotics Lab";
-	req_access = list(29);
-	anchor_direction = sssssssssssssss
+	req_access = list(29)
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/rnd/research)
@@ -118841,8 +118839,7 @@
 "wFA" = (
 /obj/machinery/door/airlock/glass_research{
 	name = "Robotics Lab";
-	req_access = list(29);
-	anchor_direction = sssssssssssssss
+	req_access = list(29)
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/rnd/rbreakroom)
@@ -121487,8 +121484,7 @@
 	},
 /obj/machinery/door/airlock/glass_research{
 	name = "Robotics Lab";
-	req_access = list(29);
-	anchor_direction = sssssssssssssss
+	req_access = list(29)
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/rnd/robotics)
