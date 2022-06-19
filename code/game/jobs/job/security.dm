@@ -37,7 +37,6 @@
 	perks = list(/datum/perk/ass_of_concrete,
 				 /datum/perk/job/blackshield_conditioning,
 				 /datum/perk/job/bolt_reflect,
-				 /datum/perk/codespeak,
 				 /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -99,7 +98,6 @@
 	)
 
 	perks = list(/datum/perk/ass_of_concrete,
-				 /datum/perk/job/bolt_reflect,
 				 /datum/perk/codespeak,
 				 /datum/perk/chem_contraband)
 
@@ -211,7 +209,7 @@
 		STAT_VIG = 25,
 	)
 
-	perks = list(/datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect, /datum/perk/chem_contraband)
+	perks = list(/datum/perk/job/bolt_reflect, /datum/perk/job/blackshield_conditioning, /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
@@ -318,7 +316,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/medicalexpertise)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/job/blackshield_conditioning)
 				// /datum/perk/chemist -Thanos Voice: "I'm sorry little one..."
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,

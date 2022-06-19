@@ -172,7 +172,7 @@
 	name_language = null
 	min_age = 18
 	max_age = 160
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	blurb = "no."
 	hunger_factor = DEFAULT_HUNGER_FACTOR/2
 	taste_sensitivity = TASTE_HYPERSENSITIVE
 
@@ -232,12 +232,11 @@
 	name_language = null
 	min_age = 18
 	max_age = 110
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	blurb = "no."
 	taste_sensitivity = TASTE_HYPERSENSITIVE
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.25
 	radiation_mod = 0.5
-	toxins_mod = 0.75
-	brute_mod = 0.75
+	total_health = 150
 	siemens_coefficient = 2
 
 	dark_color = "#ff0000"
@@ -294,7 +293,7 @@
 	name_language = null
 	min_age = 18
 	max_age = 130
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	blurb = "no."
 	taste_sensitivity = TASTE_DULL
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.25
 
@@ -337,7 +336,7 @@
 	min_age = 18
 	max_age = 60
 	slowdown = -0.5
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	blurb = "no."
 
 	spawn_flags = CAN_JOIN
 
@@ -371,7 +370,7 @@
 	name_language = null
 	min_age = 18
 	max_age = 80
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	blurb = "no."
 	breath_type = "nitrogen"                        // Non-oxygen gas breathed, if any.
 	poison_type = "oxygen"                        // Poisonous air.
 	exhale_type = "carbon_dioxide"
@@ -412,7 +411,7 @@
 	name_language = null
 	min_age = 18
 	max_age = 120
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	blurb = "no."
 	flags = NO_PAIN
 	spawn_flags = CAN_JOIN
 	taste_sensitivity = TASTE_HYPERSENSITIVE
@@ -497,14 +496,13 @@
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite, /datum/unarmed_attack/tail)
 	num_alternate_languages = 2
+	blurb = "no"
 	name_language = null
 	min_age = 18
 	max_age = 90
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
 	spawn_flags = CAN_JOIN
-	burn_mod = 0.85                    // Burn damage multiplier.
+	total_health = 130                    // Burn damage multiplier.
 	radiation_mod = 0
-	toxins_mod = 0.5
 
 	stat_modifiers = list(
 		STAT_BIO = 2,
@@ -672,7 +670,7 @@
 	obligate_name = FALSE
 	name_plural = "FBPs"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	blurb = "no."
 	reagent_tag = IS_SYNTHETIC
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
@@ -721,7 +719,7 @@
 	obligate_name = FALSE
 	name_plural = "FBPs"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	blurb = "no"
 	reagent_tag = IS_SYNTHETIC
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
@@ -770,7 +768,7 @@
 	obligate_name = TRUE
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	blurb = "no."
 	num_alternate_languages = 3
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
@@ -833,7 +831,7 @@
 	obligate_name = TRUE
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	blurb = "no."
 	num_alternate_languages = 3
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
@@ -894,7 +892,7 @@
 	obligate_name = TRUE
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	blurb = "no."
 	num_alternate_languages = 3
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
@@ -953,7 +951,7 @@
 	obligate_name = TRUE
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	blurb = "no."
 	num_alternate_languages = 3
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
@@ -1013,7 +1011,7 @@
 	obligate_name = TRUE
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	blurb = "no."
 	num_alternate_languages = 3
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
