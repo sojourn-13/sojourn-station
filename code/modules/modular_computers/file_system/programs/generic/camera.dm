@@ -11,12 +11,18 @@
 			return access_mailsorting // Cargo office - all cargo staff should have access here.
 		if(NETWORK_ROBOTS)
 			return access_rd
-		if(NETWORK_PRISON)
+		if(NETWORK_PRISON, NETWORK_GATE)
 			return access_security
+		if(NETWORK_PROP)
+			return access_eva
+		if(NETWORK_CHURCH)
+			return access_nt_disciple
 		if(NETWORK_ENGINEERING,NETWORK_ENGINE)
 			return access_engine
 		if(NETWORK_COMMAND)
 			return access_heads
+		if(NETWORK_CARGO)
+			return access_mailsorting
 		if(NETWORK_THUNDER, NETWORK_PLASMA_TAG)
 			return 0
 

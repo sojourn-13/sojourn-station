@@ -52,16 +52,19 @@ var/list/ai_verbs_default = list(
 	status_flags = CANSTUN|CANPARALYSE|CANPUSH
 //	shouldnt_see = list()
 	universal_understand = TRUE
-	var/list/network = list(NETWORK_FIRST_SECTION,
-							NETWORK_SECOND_SECTION,
-							NETWORK_THIRD_SECTION,
-							NETWORK_FOURTH_SECTION,
+	var/list/network = list(NETWORK_COLONY_SURFACE,
+							NETWORK_COLONY_UNDERGROUND,
+							NETWORK_COLONY_TRANSITION,
+							NETWORK_CHURCH,
+							NETWORK_PROP,
+							NETWORK_CARGO,
 							NETWORK_COMMAND,
 							NETWORK_ENGINE,
 							NETWORK_ENGINEERING,
 							NETWORK_CEV_ERIS,
 							NETWORK_MINE,
 							NETWORK_PRISON,
+							NETWORK_GATE,
 							NETWORK_MEDICAL,
 							NETWORK_RESEARCH,
 							NETWORK_RESEARCH_OUTPOST,
