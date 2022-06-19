@@ -50,7 +50,7 @@
 	to a much lower starting value
 	*/
 	account_initial_balance = 50000
-
+	jobs_in_department = list(/datum/job/premier,/datum/job/pg)
 /*************
 	Retainers
 **************/
@@ -88,6 +88,7 @@
 	//18600 in 6 hours with full crew
 	//24180 in 6 hours with full crew + nep
 	account_initial_balance = 30000 //5~k For buying medical and items and payments
+	jobs_in_department = list("datum/job/cmo","/datum/job/doctor","/datum/job/trauma_team","/datum/job/psychiatrist")
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
@@ -95,6 +96,7 @@
 	//15000 in 6 hours with full crew
 	//19500 in 6 hours with full crew + nepitism
 	account_initial_balance = 20000 //+10k~ For buying materials and components and things of scientific value as well as pay the demanding staff
+	jobs_in_department = list("/datum/job/rd","/datum/job/scientist","/datum/job/roboticist")
 
 /datum/department/church
 	name = "Church of Absolute"
@@ -127,6 +129,7 @@
 	//Full team with Nep in 6 hours is 6600
 	//Nep in 6 hours with full team is 8580
 	account_initial_balance = 12500 //5k+6~hours of work. should be good for them to make money
+	jobs_in_department = list("/datum/job/foreman","/datum/job/salvager","/datum/job/pro")
 
 /datum/department/independent
 	name = "Independent Allied Factions"

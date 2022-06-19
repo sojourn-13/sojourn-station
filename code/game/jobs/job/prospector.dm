@@ -64,6 +64,7 @@
 	difficulty = "Medium."
 	noob_name = "Rookie Salvager"
 	alt_titles = list("Rookie Salvager","Scrapper","Sapper","Junk Technician","Sawbones")
+	alt_perks = list("Sawbones"=list(/datum/perk/medicalexpertise, /datum/perk/stalker), "Junk Technician"=list(/datum/perk/junkborn, /datum/perk/robotics_expert))
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR
 

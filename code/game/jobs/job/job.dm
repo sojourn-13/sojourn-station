@@ -17,6 +17,7 @@
 	var/selection_color = "#ffffff"			// Selection screen color
 	var/noob_name
 	var/list/alt_titles
+	var/list/alt_perks
 	var/difficulty = "Null"
 
 	var/req_admin_notify					// If this is set to 1, a text is printed to the player when jobs are assigned, telling him that he should let admins know that he has to disconnect.
@@ -91,6 +92,26 @@
 
 	return TRUE
 
+/datum/job/proc/finalTweaks(var/mob/living/carbon/human/target)
+	var/datum/department/list/experiencedDepts
+	if (!istype(target))
+		return FALSE
+
+	if ((alt_perks) && (target.mind.role_alt_title in alt_perks)) // If an alternative job has alternative perks, change it out.
+		perks = alt_perks[target.mind.role_alt_title]
+
+	for (var/counter in GLOB.all_departments)
+		var/datum/department/selectedDept = GLOB.all_departments[counter]
+			to_chat(world, SPAN_DANGER("selectedDept is [selectedDept] and there is [SSjob.JobTimeCheck(target.ckey,selectedDept.jobs_in_department)] minutes played"))
+
+		if (SSjob.JobTimeCheck(target.ckey,selectedDept.jobs_in_department) > 1200)
+			experiencedDepts += list(selectedDept.id)
+			to_chat(world, SPAN_DANGER("YAY for [selectedDept] being experienced!"))
+
+	if (DEPARTMENT_PROSPECTOR in experiencedDepts)
+		to_chat(world, SPAN_DANGER("Double YAY!"))
+		perks.Add(/datum/perk/ProspExperience)
+
 /datum/job/proc/add_additiional_language(var/mob/living/carbon/human/target)
 	if(!ishuman(target))
 		return FALSE
@@ -150,6 +171,7 @@
 /datum/job/proc/is_experienced_enough(client/C) //This can be reimplemented if you want to have special requirements for jobs.
 	var/are_we_experienced_enough = FALSE //We start under the assumption of NO!
 	var/list/jobs_in_department = list() //What jobs are in this department?
+
 	for(var/job in GLOB.joblist)
 		var/datum/job/J = GLOB.joblist[job]
 		if(department_flag == COMMAND)
