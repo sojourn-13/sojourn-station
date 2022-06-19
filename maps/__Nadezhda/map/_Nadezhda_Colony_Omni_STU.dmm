@@ -6258,6 +6258,10 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/hydroponics/garden)
+"blJ" = (
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/rbreakroom)
 "blP" = (
 /obj/random/scrap/dense_weighted,
 /obj/effect/spider/stickyweb,
@@ -10597,6 +10601,17 @@
 /obj/landmark/join/start/assistant,
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/bar)
+"cfX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/light/floor,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/rnd/robotics)
 "cga" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
@@ -11412,7 +11427,7 @@
 	dir = 4;
 	pixel_x = 24
 	},
-/turf/simulated/floor/tiled/dark/danger,
+/turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "coP" = (
 /obj/structure/catwalk,
@@ -13101,10 +13116,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/medical/reception)
-"cEa" = (
-/obj/machinery/vending/cola,
-/turf/simulated/floor/tiled/steel,
-/area/nadezhda/rnd/rbreakroom)
 "cEc" = (
 /obj/effect/floor_decal/industrial/box/white/corners{
 	dir = 1;
@@ -22093,7 +22104,7 @@
 	pixel_x = 30
 	},
 /obj/effect/floor_decal/industrial/box/red,
-/turf/simulated/floor/tiled/dark/danger,
+/turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "esG" = (
 /obj/random/mob/nightmare,
@@ -32865,6 +32876,15 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"grm" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/cable_coil/random,
+/obj/item/circuitboard/vending,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/console_screen,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/research)
 "grq" = (
 /obj/machinery/atmospherics/binary/pump{
 	name = "Waste to Custom"
@@ -53718,13 +53738,8 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/swo/quarters)
 "ksh" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/orangecorner,
+/obj/machinery/vending/cola,
+/turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/rbreakroom)
 "ksl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -98142,7 +98157,7 @@
 /obj/item/tool/wrench,
 /obj/item/clothing/glasses/welding,
 /obj/item/tool/weldingtool,
-/turf/simulated/floor/tiled/dark/danger,
+/turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "sLu" = (
 /obj/effect/decal/cleanable/dirt,
@@ -104284,10 +104299,6 @@
 	name = "murky water"
 	},
 /area/nadezhda/maintenance/undergroundfloor1north)
-"tWo" = (
-/obj/machinery/vending/coffee,
-/turf/simulated/floor/tiled/steel,
-/area/nadezhda/rnd/rbreakroom)
 "tWt" = (
 /obj/effect/floor_decal/border/techfloor{
 	dir = 6
@@ -120049,14 +120060,14 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/xenobiology)
 "wTu" = (
-/obj/structure/table/reinforced,
-/obj/item/stack/cable_coil/random,
-/obj/item/circuitboard/vending,
-/obj/item/stock_parts/matter_bin,
-/obj/item/stock_parts/manipulator,
-/obj/item/stock_parts/console_screen,
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/rnd/research)
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/rnd/rbreakroom)
 "wTx" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -123037,17 +123048,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/hallway/surface/section1)
-"xxc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/robotics)
 "xxf" = (
 /obj/landmark/join/start/scientist,
 /obj/effect/decal/cleanable/dirt,
@@ -151733,7 +151733,7 @@ bxY
 bxY
 tOj
 wBQ
-xxc
+cfX
 ggM
 sQO
 sQO
@@ -151743,7 +151743,7 @@ sQO
 puV
 hzc
 cqa
-wTu
+grm
 sQO
 uoj
 tin
@@ -151939,8 +151939,8 @@ uFi
 wBQ
 juU
 pcY
-cEa
-tWo
+ksh
+blJ
 pcY
 wSn
 wSn
@@ -153152,10 +153152,10 @@ ckU
 bRI
 pcY
 rDO
-ksh
-ksh
-ksh
-ksh
+wTu
+wTu
+wTu
+wTu
 iRw
 aVd
 mVA
