@@ -118866,8 +118866,7 @@
 "wFA" = (
 /obj/machinery/door/airlock/glass_research{
 	name = "Robotics Lab";
-	req_access = list(29);
-	anchor_direction = sssssssssssssss
+	req_access = list(29)
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/rbreakroom)
