@@ -5630,6 +5630,9 @@
 "bfA" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /obj/item/modular_computer/console/preset/crew_cams/camera,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/eris/crew_quarters/plasma_tag)
 "bfB" = (
@@ -14010,6 +14013,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"cNZ" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/eris/crew_quarters/plasma_tag)
 "cOd" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -16025,6 +16032,9 @@
 "djV" = (
 /obj/machinery/atmospherics/unary/vent_pump,
 /obj/item/modular_computer/console/preset/crew_cams/camera,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/eris/crew_quarters/plasma_tag)
 "djZ" = (
@@ -25291,6 +25301,14 @@
 /obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/engineering/atmos)
+"eYN" = (
+/obj/structure/closet/lasertag/green,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/eris/crew_quarters/plasma_tag)
 "eYQ" = (
 /obj/machinery/power/sensor{
 	long_range = 1;
@@ -33178,6 +33196,14 @@
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"gvO" = (
+/obj/structure/table/bench/standard,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/eris/crew_quarters/plasma_tag)
 "gvP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -40492,6 +40518,13 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
+"hTz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/eris/crew_quarters/plasma_tag)
 "hTA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/toy/junk/xmas_tree,
@@ -45193,6 +45226,13 @@
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/engineering/atmos)
+"iPt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/eris/crew_quarters/plasma_tag)
 "iPu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -53685,6 +53725,10 @@
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
+"ksx" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/eris/crew_quarters/plasma_tag)
 "ksy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -65643,6 +65687,13 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/triage_blackshield)
+"mCC" = (
+/obj/structure/table/bench/standard,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/eris/crew_quarters/plasma_tag)
 "mCD" = (
 /obj/structure/flora/small/trailrockb4,
 /obj/effect/decal/cleanable/rubble,
@@ -148791,7 +148842,7 @@ yhC
 yhC
 yhC
 lQl
-lQl
+gvO
 lQl
 fEg
 naK
@@ -148999,7 +149050,7 @@ fEg
 lJS
 xYn
 xYn
-xYn
+ksx
 fEg
 hyP
 pwx
@@ -150210,7 +150261,7 @@ yhC
 fEg
 fEg
 fEg
-sZM
+hTz
 yah
 vot
 rNr
@@ -151422,7 +151473,7 @@ yhC
 fEg
 fEg
 fEg
-jWB
+iPt
 rAk
 gZn
 tmR
@@ -152635,7 +152686,7 @@ fEg
 jbf
 xfL
 xfL
-xfL
+cNZ
 fEg
 pZU
 cwr
@@ -152831,7 +152882,7 @@ yhC
 yhC
 yhC
 lQl
-lQl
+mCC
 lQl
 fEg
 vnR
@@ -153239,7 +153290,7 @@ sZM
 sZM
 fEg
 qMY
-qMY
+eYN
 qMY
 qMY
 fEg
