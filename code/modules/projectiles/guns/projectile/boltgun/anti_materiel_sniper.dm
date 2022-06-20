@@ -17,7 +17,7 @@
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 20, MATERIAL_DIAMOND = 3, MATERIAL_OSMIUM = 5, MATERIAL_URANIUM = 2)
-	price_tag = 5000
+	price_tag = 7500
 	damage_multiplier = 0.9
 	zoom_factor = 2.0
 	twohanded = TRUE
