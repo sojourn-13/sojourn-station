@@ -387,7 +387,7 @@
 		if(!target)
 			return
 	if(istype(target, /obj/machinery))
-		if (src.interface_action(target))
+		if(src.interface_action(target))
 			return
 	if(!target.Adjacent(src))
 		if(selected && selected.is_ranged())
@@ -403,13 +403,11 @@
 		else if(selected.is_melee())
 			selected.action(target)
 	else
-		if(istype(target, /obj/machinery) && target.Adjacent(src) && occupant?.a_intent != I_HURT)
-			interface_action(target)
 		src.melee_action(target)
 	return
 
 /obj/mecha/proc/interface_action(obj/machinery/target)
-	if(istype(target))
+	if(istype(target) && occupant?.a_intent == I_HELP && get_dist(get_turf(src), get_turf(target)) <= 1) // double-check that we are targetting a machine, that we're on help intent, and that we're next to the target.
 		if(!istype(target, /obj/machinery/computer)) // Computers tend to spam
 			src.occupant_message(SPAN_NOTICE("Interfacing with [target]."))
 			src.log_message("Interfaced with [target].")
