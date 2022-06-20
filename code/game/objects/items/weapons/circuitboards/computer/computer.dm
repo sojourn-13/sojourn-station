@@ -94,11 +94,11 @@
 /obj/item/circuitboard/prisoner
 	build_name = "tracker implant management console"
 	build_path = /obj/machinery/computer/prisoner
-
+/*
 /obj/item/circuitboard/mecha_control
 	build_name = "exosuit control console"
 	build_path = /obj/machinery/computer/mecha
-
+*/
 /obj/item/circuitboard/rdservercontrol
 	build_name = "R&D server control console"
 	build_path = /obj/machinery/computer/rdservercontrol

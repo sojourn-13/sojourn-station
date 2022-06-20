@@ -103,26 +103,15 @@
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The weapon control and targeting board hangs loose in the chassis, and must be screwed into place."),
-		//18
-		list("key"=/obj/item/circuitboard/mecha/targeting,
-			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="The Peripherals control board is secured. However, a weapon control and targeting board is also required for this chassis."),
 		//19
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The peripherals control board hangs loose in the chassis, and must be screwed into place."),
-		//20
-		list("key"=/obj/item/circuitboard/mecha/peripherals,
-			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="The central control board is secured. It requires a peripherals control board to function properly."),
 		//21
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The central control board hangs loose in the chassis, and must be screwed into place."),
 		//22
-		list("key"=/obj/item/circuitboard/mecha/main,
-			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="The hydraulic wiring is adjusted, and the chassis is ready for a central control board."),
 		//23
 		list("key"=QUALITY_WIRE_CUTTING,
 			//"backkey"=QUALITY_SCREW_DRIVING,
@@ -277,7 +266,6 @@
 						"You remove the central control board from the [holder]."
 					)
 					holder.icon_state = "durand3"
-					new /obj/item/circuitboard/mecha/main(get_turf(holder))
 			if(21)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -304,7 +292,6 @@
 						"You remove the peripherals control board from the [holder]."
 					)
 					holder.icon_state = "durand5"
-					new /obj/item/circuitboard/mecha/peripherals(get_turf(holder))
 			if(19)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -331,7 +318,6 @@
 						"You remove the weapon control and targeting board from the [holder]."
 					)
 					holder.icon_state = "durand7"
-					new /obj/item/circuitboard/mecha/targeting(get_turf(holder))
 			if(17)
 				if(diff==FORWARD)
 					usr.visible_message(

@@ -1,4 +1,3 @@
-
 /datum/interface/AI_Eris
 	mobtype = /mob/living/silicon/ai
 	styleName = "ErisStyle"
@@ -63,6 +62,7 @@
 	actionPanel.setAlignment(HUD_CENTER_ALIGNMENT, HUD_VERTICAL_SOUTH_INSIDE_ALIGNMENT)
 	navigationPanel.setAlignment(HUD_HORIZONTAL_EAST_INSIDE_ALIGNMENT, HUD_VERTICAL_SOUTH_INSIDE_ALIGNMENT)
 	postBuildUI()
+
 
 // Simplified version of AI HUD accessible to humans. Used in surveillance_pod.dm
 /datum/interface/AI_Simple

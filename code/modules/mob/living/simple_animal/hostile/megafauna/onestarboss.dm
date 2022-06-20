@@ -73,8 +73,8 @@
 		var/mob/living/L = targetted_mob
 		L.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		return L
-	if(istype(targetted_mob,/obj/mecha))
-		var/obj/mecha/M = targetted_mob
+	if(istype(target_mob, /mob/living/exosuit))
+		var/mob/living/exosuit/M = target_mob
 		M.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		return M
 	if(istype(targetted_mob,/obj/machinery/bot))

@@ -93,7 +93,6 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The weapon control and targeting board hangs loose in the chassis, and must be screwed into place."),
 		//16
-		list("key"=/obj/item/circuitboard/mecha/targeting,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The Peripherals control board is secured. However, a weapon control and targeting board is also required for this chassis."),
 		//17

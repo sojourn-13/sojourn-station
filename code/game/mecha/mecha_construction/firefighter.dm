@@ -81,7 +81,6 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The peripherals control board hangs loose in the chassis, and must be screwed into place."),
 		//14
-		list("key"=/obj/item/circuitboard/mecha/peripherals,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The central control board is secured. It requires a peripherals control board to function properly."),
 		//15
@@ -89,7 +88,6 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The central control board hangs loose in the chassis, and must be screwed into place."),
 		//16
-		list("key"=/obj/item/circuitboard/mecha/main,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The hydraulic wiring is adjusted, and the chassis is ready for a central control board."),
 		//17
@@ -129,7 +127,7 @@
 	custom_action(index, diff, atom/used_atom, mob/user)
 		if(!..())
 			return 0
-		
+
 		if(!usr.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
 			to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
 			return
@@ -262,7 +260,6 @@
 						"[usr] unsecures the central control board inside the [holder].", \
 						"You unsecure the central control board inside the [holder]."
 					)
-					new /obj/item/circuitboard/mecha/main(get_turf(holder))
 					holder.icon_state = "firefighter4"
 			if(14)
 				if(diff==FORWARD)
@@ -276,7 +273,6 @@
 						"[usr] removes the peripherals control board from the [holder].", \
 						"You remove the peripherals control board from the [holder]."
 					)
-					new /obj/item/circuitboard/mecha/peripherals(get_turf(holder))
 					holder.icon_state = "firefighter5"
 			if(13)
 				if(diff==FORWARD)
@@ -331,7 +327,7 @@
 						"You scrape the gold foil lining from the [holder]."
 					)
 					new /obj/item/stack/material/gold (get_turf(holder), 5)
-					
+
 					holder.icon_state = "firefighter8"
 			if(9)
 				if(diff==FORWARD)

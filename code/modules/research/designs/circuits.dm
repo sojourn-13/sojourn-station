@@ -97,12 +97,12 @@
 	name = "robotics control console"
 	build_path = /obj/item/circuitboard/robotics
 	category = CAT_COMP
-
+/*
 /datum/design/research/circuit/mechacontrol
 	name = "exosuit control console"
 	build_path = /obj/item/circuitboard/mecha_control
 	category = CAT_COMP
-
+*/
 /datum/design/research/circuit/rdconsole
 	name = "R&D control console"
 	build_path = /obj/item/circuitboard/rdconsole

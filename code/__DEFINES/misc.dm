@@ -309,6 +309,7 @@
 //Misc text define. Does 4 spaces. Used as a makeshift tabulator.
 #define FOURSPACES "&nbsp;&nbsp;&nbsp;&nbsp;"
 
+#define NEWorINITIAL(variable, newvalue) variable = newvalue ? newvalue : initial(variable)
 
 
 //Planet habitability class

@@ -129,10 +129,10 @@
 				open()
 		return
 
-	if(istype(AM, /obj/mecha))
+	if(istype(AM, /mob/living/exosuit))
 		var/obj/mecha/mecha = AM
 		if(density)
-			if(mecha.occupant && (src.allowed(mecha.occupant) || src.check_access_list(mecha.operation_req_access)))
+			if(mecha.pilots.len && (allowed(mecha.pilots[1]) || check_access_list(mecha.saved_access)))
 				open()
 			else
 				do_animate("deny")

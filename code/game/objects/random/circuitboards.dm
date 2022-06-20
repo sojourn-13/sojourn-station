@@ -26,7 +26,7 @@
 				/obj/item/circuitboard/mecha/main = 1,
 				/obj/item/circuitboard/mecha/peripherals = 1,
 				/obj/item/circuitboard/mecha/targeting = 1,
-				/obj/item/circuitboard/mecha_control = 2,
+				//obj/item/circuitboard/mecha_control = 2,
 				/obj/item/circuitboard/mechfab = 2,
 				/obj/item/circuitboard/med_data = 2,
 				/obj/item/circuitboard/message_monitor = 1,

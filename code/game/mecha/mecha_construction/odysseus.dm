@@ -70,7 +70,6 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The peripherals control board hangs loose in the chassis, and must be screwed into place."),
 		//12
-		list("key"=/obj/item/circuitboard/mecha/peripherals,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The central control board is secured. It requires a peripherals control board to function properly."),
 		//13
@@ -78,7 +77,6 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The central control board hangs loose in the chassis, and must be screwed into place."),
 		//14
-		list("key"=/obj/item/circuitboard/mecha/main,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The hydraulic wiring is adjusted, and the chassis is ready for a central control board."),
 		//15
@@ -228,7 +226,6 @@
 						"[usr] removes the central control module from [holder].", \
 						"You remove the central computer mainboard from [holder]."
 					)
-					new /obj/item/circuitboard/mecha/main(get_turf(holder))
 					holder.icon_state = "odysseus4"
 			if(12)
 				if(diff==FORWARD)
@@ -255,7 +252,6 @@
 						"[usr] removes the peripherals control module from [holder].", \
 						"You remove the peripherals control module from [holder]."
 					)
-					new /obj/item/circuitboard/mecha/peripherals(get_turf(holder))
 					holder.icon_state = "odysseus6"
 			if(10)
 				if(diff==FORWARD)

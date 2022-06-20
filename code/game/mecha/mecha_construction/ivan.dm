@@ -73,7 +73,6 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The peripherals control board hangs loose in the chassis, and must be screwed into place."),
 		//12
-		list("key"=/obj/item/circuitboard/mecha/peripherals,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The central control board is secured. It requires a peripherals control board to function properly."),
 		//13
@@ -81,7 +80,6 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The central control board hangs loose in the chassis, and must be screwed into place."),
 		//14
-		list("key"=/obj/item/circuitboard/mecha/main,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The hydraulic wiring is adjusted, and the chassis is ready for a central control board."),
 		//15
@@ -240,7 +238,6 @@
 						"[usr] removes the central control board from the [holder].", \
 						"You remove the central control board from the [holder]."
 					)
-					new /obj/item/circuitboard/mecha/main(get_turf(holder))
 					holder.icon_state = "ripley3"
 			if(13)
 				if(diff==FORWARD)
@@ -267,7 +264,6 @@
 						"[usr] removes the peripherals control board from the [holder].", \
 						"You remove the peripherals control board from the [holder]."
 					)
-					new /obj/item/circuitboard/mecha/peripherals(get_turf(holder))
 					holder.icon_state = "ripley5"
 			if(11)
 				if(diff==FORWARD)

@@ -36,7 +36,7 @@
 					return target_mob
 				filteredTargets += target_mob
 
-		for (var/obj/mecha/M in GLOB.mechas_list)
+		for (var/mob/living/exosuit/M in mechas_list)
 			if ((M.z == src.z) && (get_dist(src, M) <= viewRange) && isValidAttackTarget(M))
 				filteredTargets += M
 
@@ -115,10 +115,10 @@
 			return
 		return 1
 
-	if (istype(O, /obj/mecha))
+	if (istype(O, /mob/living/exosuit))
 		if (can_see(src, O, get_dist(src, O))) //can we even see it?
-			var/obj/mecha/M = O
-			return isValidAttackTarget(M.occupant)
+			var/mob/living/exosuit/M = O
+			return isValidAttackTarget(M.pilots[1])
 
 
 /mob/living/carbon/superior_animal/proc/destroySurroundings() //todo: make this better - Trilby
