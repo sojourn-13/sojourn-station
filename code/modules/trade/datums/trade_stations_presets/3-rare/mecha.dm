@@ -65,6 +65,7 @@
 			/obj/item/mecha_parts/mecha_equipment/thruster
 		)
 	)
+/*
 	hidden_inventory = list(
 		"Pre-Made Mechs" = list(
 			/obj/mecha/working/hoverpod/cargo_imported = custom_good_amount_range(list(1, 2)),
@@ -72,6 +73,7 @@
 			/obj/mecha/working/ivan/cargo_imported = custom_good_amount_range(list(-1,2))
 		)
 	)
+*/
 
 	offer_types = list(
 		/obj/item/mech_ammo_box/scattershot = offer_data("LBX AC 10 ammunition box", 350, 5),
