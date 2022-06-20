@@ -39926,13 +39926,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/nadezhda/security/triage_blackshield)
-"hNJ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/space,
-/area/nadezhda/rnd/rbreakroom)
 "hNK" = (
 /obj/effect/floor_decal/border/techfloor{
 	dir = 6
@@ -67760,11 +67753,6 @@
 /area/nadezhda/maintenance/substation{
 	name = "Residential District Substation"
 	})
-"mVA" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/rbreakroom)
 "mVE" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -71954,7 +71942,8 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "nMG" = (
 /obj/effect/window_lwall_spawn/reinforced,
-/turf/space,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "nMH" = (
 /obj/random/traps/wire_splicing/low_chance,
@@ -116763,10 +116752,6 @@
 /obj/structure/barricade,
 /turf/simulated/floor/tiled/dark/panels,
 /area/nadezhda/maintenance/undergroundfloor1west)
-"wmn" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/space,
-/area/nadezhda/rnd/rbreakroom)
 "wmo" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -151945,7 +151930,7 @@ pcY
 wSn
 wSn
 atA
-wmn
+wSn
 pcY
 jWj
 aHI
@@ -152350,7 +152335,7 @@ fJT
 sKi
 mfG
 mfG
-hNJ
+wSn
 uoj
 gzW
 fIs
@@ -152956,7 +152941,7 @@ dLP
 sKi
 cwk
 jAx
-hNJ
+wSn
 wKs
 oFL
 iDR
@@ -153158,7 +153143,7 @@ wTu
 wTu
 iRw
 aVd
-mVA
+wSn
 uoj
 wIR
 iDR
@@ -153360,7 +153345,7 @@ oSX
 pZj
 mmM
 ydp
-wmn
+wSn
 maJ
 uuX
 iDR
@@ -156390,7 +156375,7 @@ iJB
 iJB
 iJB
 gpR
-tdk
+nMG
 uoj
 ttK
 qLp
