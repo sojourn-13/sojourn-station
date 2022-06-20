@@ -7,7 +7,7 @@
 	icon_state = "starstriker"
 	item_state = "starstriker"
 	max_shells = 10
-	price_tag = 450
+	price_tag = 250 //Massprintable form rnd, prevents it form being exported on mass for to cheap
 	damage_multiplier = 1.4 //So were worth using
 	extra_damage_mult_scoped = 0.5
 	force = WEAPON_FORCE_PAINFUL
