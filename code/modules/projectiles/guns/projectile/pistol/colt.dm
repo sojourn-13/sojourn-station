@@ -12,7 +12,7 @@
 	can_dual = TRUE
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
-	damage_multiplier = 1.1
+	damage_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(0.4)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "H&S"
@@ -47,7 +47,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	init_recoil = HANDGUN_RECOIL(0.5)
-	damage_multiplier = 1.2
+	damage_multiplier = 1.1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)
 	serial_type = "SA"
 
