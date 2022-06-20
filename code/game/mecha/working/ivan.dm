@@ -7,7 +7,7 @@
 	step_energy_drain = 10
 	max_temperature = 20000
 	health = 400
-	price_tag = 2500 // Relatively cheap
+	price_tag = 5000 // Relatively cheap
 	infra_luminosity = 6
 	cargo_capacity = 3
 	max_equip = 3
