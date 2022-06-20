@@ -17764,7 +17764,7 @@
 /obj/machinery/reagentgrinder/portable,
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/reagent_containers/glass/beaker{
-	preloaded_reagents = list("plasma" = 20)
+	preloaded_reagents = list("plasma"=20)
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology)
@@ -78797,10 +78797,11 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/pros/prep)
 "pcS" = (
-/obj/machinery/floor_light{
-	light_color = COLOR_LIGHTING_CYAN_BRIGHT
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/item/tool/multitool/improvised,
+/turf/simulated/floor/plating/under,
 /area/eris/crew_quarters/plasma_tag)
 "pcW" = (
 /obj/structure/table/marble,
@@ -109853,9 +109854,7 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/engineering/atmos)
 "uWm" = (
-/obj/machinery/floor_light{
-	light_color = COLOR_LIGHTING_CYAN_BRIGHT
-	},
+/obj/machinery/floor_light,
 /obj/machinery/camera/network/plasma_tag{
 	dir = 4
 	},
@@ -109866,9 +109865,7 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/crew_quarters/cafeteria)
 "uWA" = (
-/obj/machinery/floor_light{
-	light_color = COLOR_LIGHTING_RED_BRIGHT
-	},
+/obj/machinery/floor_light,
 /obj/machinery/camera/network/plasma_tag{
 	dir = 8
 	},
@@ -111623,9 +111620,7 @@
 	},
 /area/nadezhda/pros/proelav)
 "voj" = (
-/obj/machinery/floor_light{
-	light_color = COLOR_LIGHTING_RED_BRIGHT
-	},
+/obj/machinery/floor_light,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/eris/crew_quarters/plasma_tag)
 "vop" = (
@@ -150091,11 +150086,11 @@ xRk
 lHD
 mcL
 slI
-pcS
+voj
 wxd
 wxd
 wxd
-pcS
+voj
 dcZ
 wxd
 dPK
@@ -150900,7 +150895,7 @@ wMU
 nKo
 rYQ
 qRN
-tbu
+pcS
 wOY
 tbu
 iEw
