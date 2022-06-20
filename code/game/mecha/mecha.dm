@@ -619,11 +619,11 @@
 
 	anchored = TRUE //Reanchor after moving
 	if(move_result)
-		can_move = 0
-		if(do_after_mech(step_in))
-			can_move = 1
-		return 1
-	return 0
+		can_move = FALSE
+		spawn(step_in)
+			can_move = TRUE
+		return TRUE
+	return FALSE
 
 /obj/mecha/proc/mechturn(direction, var/movemode = MOVEMODE_STEP)
 	//When turning in 0g with a thruster, we do a little airburst to rotate us
