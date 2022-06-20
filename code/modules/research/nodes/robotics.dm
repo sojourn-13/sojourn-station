@@ -134,7 +134,7 @@
 		/datum/design/research/item/mechfab/exosuit/heavy/legs
 	)
 
-
+/*
 /datum/technology/mech_phazon
 	name = "Phazon"
 	desc = "Experimental exosuit parts. Use with caution!"
@@ -158,7 +158,7 @@
 		/datum/design/research/item/mechfab/phazon/right_leg,
 		/datum/design/research/item/mechfab/phazon/armour
 		)
-
+*/
 
 //Mech Modules
 /datum/technology/mech_modules_core

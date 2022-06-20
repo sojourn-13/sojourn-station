@@ -149,7 +149,7 @@
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "glass sheet crate"
 	group = "Engineering"
-	
+
 /datum/supply_pack/glass480
 	name = "Bulk Glass Sheets Crate"
 	contains = list(/obj/item/stack/material/glass/full,
@@ -438,43 +438,6 @@
 					/obj/item/am_containment)
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "antimatter fuel jar crate"
-
-/datum/supply_pack/mecha_ripley
-	name = "Exosuit Assembly Crate (\"Ripley\" APLU)"
-	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/tool/drill,
-		/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
-		/obj/item/circuitboard/mecha/main,
-		/obj/item/circuitboard/mecha/peripherals,
-		/obj/item/mecha_parts/chassis/ripley,
-		/obj/item/mecha_parts/part/ripley_torso,
-		/obj/item/mecha_parts/part/ripley_left_arm,
-		/obj/item/mecha_parts/part/ripley_right_arm,
-		/obj/item/mecha_parts/part/ripley_left_leg,
-		/obj/item/mecha_parts/part/ripley_right_leg)
-	cost = 2400
-	containertype = /obj/structure/closet/crate/secure/scisecurecrate
-	crate_name = "Exosuit Assembly Crate (\"Ripley\" APLU)"
-	group = "Engineering"
-
-/datum/supply_pack/mecha_odysseus
-	name = "Exosuit Assembly Crate (\"Odysseus\")"
-	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/tool/syringe_gun,
-		/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
-		/obj/item/circuitboard/mecha/main,
-		/obj/item/circuitboard/mecha/peripherals,
-		/obj/item/mecha_parts/chassis/odysseus,
-		/obj/item/mecha_parts/part/odysseus_head,
-		/obj/item/mecha_parts/part/odysseus_torso,
-		/obj/item/mecha_parts/part/odysseus_left_arm,
-		/obj/item/mecha_parts/part/odysseus_right_arm,
-		/obj/item/mecha_parts/part/odysseus_left_leg,
-		/obj/item/mecha_parts/part/odysseus_right_leg)
-	cost = 2400
-	containertype = /obj/structure/closet/crate/secure/scisecurecrate
-	crate_name = "Exosuit Assembly Crate (\"Odysseus\")"
-	group = "Engineering"
 
 /datum/supply_pack/robotics
 	name = "Robotics Assembly Crate"

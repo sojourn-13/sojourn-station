@@ -69,7 +69,6 @@
 
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/sonic_gun,
-							/datum/design/research/item/mecha/weapon/sonic,
 							/datum/design/research/circuit/ameridianshieldwallgen
 							)
 
@@ -344,7 +343,6 @@
 							/datum/design/research/item/weapon/hydrogen_pistol,
 							/datum/design/research/item/weapon/hydrogen_cannon,
 							/datum/design/research/item/mecha/weapon/hydrogen,
-							/datum/design/research/item/weapon/hydrogen_welder,
 							/datum/design/research/item/weapon/hydrogrenade,
 							/datum/design/research/item/ammo/hydroflaskette,
 							/datum/design/research/item/ion_jaunt)
