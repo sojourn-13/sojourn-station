@@ -1951,7 +1951,7 @@
 				water will create a intresting mod for weapons. When applied to scopes it gives them thermal vision... which sadly is illigal.
 				lubricant in 5 units will create a reverse friction substance for shoes! NON SLIP SOLES! No more slipping on wet floors!
 				<a name='16'><h3>Light Pink</h3>
-				At one time these slimes created slime jars for taming adult slimes. But recently they have shown no reactions. Changes may be coming about with them.
+				A strange thing to see such friendly reactions become so forceful. Plastic produces a odd colored auto pistol. And wood pulp is reformed into bats.
 				<a name='17'><h3>Adamantine</h3>
 				The only source of renewable diamonds. They take alot of work to create regardless due to needing dark blue slimes.
 				plasma will create various strange runes upon the floor. I've worked on deciphering them but havn't fully been able to do so. I've seen golems appear from these runes however.
