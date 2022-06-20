@@ -5,7 +5,7 @@
 	icon_state = "xray"
 	projectile_type = /obj/item/projectile/beam/mindflayer
 	fire_sound = 'sound/weapons/Laser.ogg'
-	price_tag = 1500
+	price_tag = 1250
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	can_dual = FALSE
 	serial_type = "INDEX"

@@ -9,7 +9,7 @@
 	fire_delay = 4
 	drawChargeMeter = FALSE
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3)
-	price_tag = 1500 //more op and rare than miller, hits harder, but have fun with hittin anything
+	price_tag = 1300 //more op and rare than miller, hits harder, but have fun with hittin anything
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.25
 	zoom_factor = 1.4
