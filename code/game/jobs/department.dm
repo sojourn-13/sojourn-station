@@ -28,7 +28,6 @@
 	// How much account failed to pay to employees. Used for emails
 	var/total_debt = 0
 
-
 /datum/department/proc/get_total_budget()
 	if(funding_source)
 		return budget_base + budget_personnel
@@ -161,15 +160,15 @@
 	for (var/T in paths)
 		var/datum/perk/experienced/checker = new T
 		if (checker)
-			to_chat(world, SPAN_DANGER("We're in again! [checker.dept] == [dept]) && ([checker.subPerk])"))
 			if ((checker.dept == dept)&&(checker.subPerk))
 				perkChoice += list(checker)
 
 	var/datum/perk/experienced/choice = input("Hey, this is the first text.", "SECOND!", FALSE) as anything in perkChoice
-	to_chat(world, SPAN_DANGER("Things are fucked up. Choice is [choice] right now with a type of [choice.type]"))
 	if (istype(choice,/datum/perk/experienced))
 		holder.stats.addPerk(choice.type)
-	holder.stats.removePerk(.)
+	holder.stats.removePerk(type)
+
+
 
 
 /datum/perk/experienced/Prospector
