@@ -614,21 +614,14 @@
 	else if(hasInternalDamage(MECHA_INT_CONTROL_LOST))
 		set_glide_size(DELAY2GLIDESIZE(step_in))
 		move_result = mechsteprand(movemode)
-		if (occupant)
-			occupant.l_move_time = world.time
 
 	else
 		set_glide_size(DELAY2GLIDESIZE(step_in))
 		move_result = mechstep(direction, movemode)
-		if (occupant)
-			occupant.l_move_time = world.time
 
 	anchored = TRUE //Reanchor after moving
 	if(move_result)
 		can_move = 0
-
-
-
 		if(do_after_mech(step_in))
 			can_move = 1
 		return 1
