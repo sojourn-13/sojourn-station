@@ -13,6 +13,7 @@
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
 	outfit_type = /decl/hierarchy/outfit/job/medical/cmo
+	health_modifier = -10
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_genetics, access_heads,
@@ -74,6 +75,7 @@
 	alt_titles = list("Soteria Nurse", "Soteria Emergency Physician", "Soteria Surgeon", "Soteria Medical Student")
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
 	department_account_access = TRUE
+	health_modifier = -15
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
@@ -121,6 +123,7 @@
 	alt_titles = (null)
 	outfit_type = /decl/hierarchy/outfit/job/medical/trauma_team
 
+	health_modifier = 5
 	perks = list(/datum/perk/medicalexpertise, /datum/perk/chemist) // Can treat people well but can't do surgery or chemistry as good as a doctor.
 
 	access = list(
@@ -175,6 +178,7 @@
 	selection_color = "#a8b69a"
 	alt_titles = list("Soteria Psychologist", "Soteria Empath")
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
+	health_modifier = -15
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits
 	)

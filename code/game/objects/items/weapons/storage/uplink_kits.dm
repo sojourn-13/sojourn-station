@@ -174,7 +174,7 @@
 
 /obj/item/storage/box/syndie_kit/pistol
 	name = "\improper smooth operator kit"
-	desc = ".40 suppressed handgun and its kit."
+	desc = "10mm suppressed handgun and its kit."
 
 /obj/item/storage/box/syndie_kit/pistol/populate_contents()
 	new /obj/item/gun/projectile/silenced(src)
@@ -186,7 +186,7 @@
 
 /obj/item/storage/box/syndie_kit/hpistol
 	name = "\improper gunfighter kit"
-	desc = ".50 suppressed handgun and its kit."
+	desc = "12mm suppressed handgun and its kit."
 
 /obj/item/storage/box/syndie_kit/hpistol/populate_contents()
 	new /obj/item/gun/projectile/lamia/akurra(src)

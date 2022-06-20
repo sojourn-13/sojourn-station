@@ -1,12 +1,12 @@
 /obj/item/gun/projectile/automatic
 	name = "old automatic projectile gun"
-	desc = "A no longer produced hologram of the base of all moder day smgs. Uses .35 rounds."
+	desc = "A no longer produced hologram of the base of all moder day smgs. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/generic_smg.dmi'
 	icon_state = "generic_smg"
 	w_class = ITEM_SIZE_NORMAL
 	load_method = SINGLE_CASING|SPEEDLOADER //Default is speedloader because all might not have magazine sprites.
 	max_shells = 1 //Automatic quick fix idk why this was set to 22 but it was. Issue fixed
-	caliber = CAL_35A
+	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
 	ammo_type = /obj/item/ammo_casing/pistol_35

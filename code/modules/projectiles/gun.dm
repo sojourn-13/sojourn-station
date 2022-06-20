@@ -125,6 +125,12 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/serial_type = "INDEX" // Index will be used for detective scanners, if there is a serial type , the gun will add a number onto its final , if none , it won;'t show on examine
 	var/serial_shown = TRUE
 
+	var/overcharge_timer //Holds ref to the timer used for overcharging
+	var/overcharge_timer_step = 1 SECOND
+	var/overcharge_rate = 1 //Base overcharge additive rate for the gun
+	var/overcharge_level = 0 //What our current overcharge level is. Peaks at overcharge_max
+	var/overcharge_max = 10
+
 /obj/item/gun/proc/loadAmmoBestGuess()
 	return
 
@@ -364,7 +370,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			return FALSE
 	return TRUE
 
-/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
+/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, extra_proj_damagemult = 0, extra_proj_penmult = 0, extra_proj_wallbangmult = 0, extra_proj_stepdelaymult = 0, multiply_projectile_agony = 0)
 	if(!user || !target) return
 
 	if((world.time < next_fire_time) || currently_firing)
@@ -395,13 +401,28 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			handle_click_empty(user)
 			break
 
+		if(extra_proj_damagemult)
+			projectile.multiply_projectile_damage(extra_proj_damagemult)
+
 		projectile.multiply_projectile_damage(damage_multiplier)
+
+		if(extra_proj_penmult)
+			projectile.multiply_projectile_penetration(extra_proj_penmult)
 
 		projectile.multiply_projectile_penetration(penetration_multiplier + user.stats.getStat(STAT_VIG) * 0.02)
 
+		if(extra_proj_wallbangmult)
+			projectile.multiply_pierce_penetration(extra_proj_wallbangmult)
+
 		projectile.multiply_pierce_penetration(pierce_multiplier)
 
+		if(extra_proj_stepdelaymult)
+			projectile.multiply_projectile_step_delay(extra_proj_stepdelaymult)
+
 		projectile.multiply_projectile_step_delay(proj_step_multiplier)
+
+		if(multiply_projectile_agony)
+			projectile.multiply_projectile_agony(multiply_projectile_agony)
 
 		projectile.multiply_projectile_agony(proj_agony_multiplier)
 
@@ -1035,8 +1056,21 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	item_flags = initial(item_flags)
 	extra_bulk = initial(extra_bulk)
 
-	braced = initial(braced)
 	recoil = getRecoil(init_recoil[1], init_recoil[2], init_recoil[3])
+
+	braced = initial(braced)
+
+	//This is so we get are folding recoil mod
+	if(folding_stock)// TODO: make this somehow modular - (it prob will be a massive line if var/stock_name_of_change
+		if(!folded) //Exstended! This means are stock is out
+			extra_bulk += 12 //Simular to 12 screwdrivers, your getting a lot out of this tho
+			//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
+			damage_multiplier += 0.1 //10% more damage
+			proj_step_multiplier  -= 0.4 //40% more sped on the bullet
+			penetration_multiplier += 0.2 //Makes the gun have more AP when shooting
+			extra_damage_mult_scoped += 0.2 //Gives 20% more damage when its scoped. Makes folding stock snipers more viable
+			recoil = getRecoil((init_recoil[1] * 0.5), (init_recoil[2] * 0.1), (init_recoil[3] * 0.8))
+
 
 	//Now lets have each upgrade reapply its modifications
 	SEND_SIGNAL(src, COMSIG_ADDVAL, src)
@@ -1047,16 +1081,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	for (var/prefix in prefixes)
 		name = "[prefix] [name]"
-
-	if(folding_stock)// TODO: make this somehow modular - (it prob will be a massive line if var/stock_name_of_change
-		if(!folded) //Exstended! This means are stock is out
-			extra_bulk += 12 //Simular to 12 screwdrivers, your getting a lot out of this tho
-			//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
-			damage_multiplier += 0.1 //10% more damage
-			proj_step_multiplier  -= 0.4 //40% more sped on the bullet
-			penetration_multiplier += 0.2 //Makes the gun have more AP when shooting
-			extra_damage_mult_scoped += 0.2 //Gives 20% more damage when its scoped. Makes folding stock snipers more viable
-			init_recoil = FOLDING_RECOIL(0.5) //Insainly good recoil controle if you have the folding stock
 
 	update_icon()
 	//then update any UIs with the new stats

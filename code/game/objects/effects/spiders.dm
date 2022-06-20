@@ -185,7 +185,7 @@
 	burn_overlay = "eggs_burning"
 	var/amount_grown = 0
 	var/spiderlings_lower = 2
-	var/spiderlings_upper = 4
+	var/spiderlings_upper = 3
 
 /obj/effect/spider/eggcluster/minor
 	amount_grown = 20
@@ -208,6 +208,7 @@
 	. = ..()
 
 /obj/effect/spider/eggcluster/Process()
+	..() //handle burning
 	amount_grown += rand(0,2)
 	if(amount_grown >= 100)
 		var/num = rand(spiderlings_lower,spiderlings_upper)
@@ -234,13 +235,14 @@
 	var/obj/machinery/atmospherics/unary/vent_pump/entry_vent
 	var/travelling_in_vent = 0
 	var/spawn_type = /obj/random/mob/spiders
+	var/death_prob = 20 //20% to just die rather then grow up, sad
+	var/age_prob = 30   //30% per processing tick to gain an grow amount
 
 /obj/effect/spider/spiderling/New(var/location, var/atom/parent)
 	pixel_x = rand(6,-6)
 	pixel_y = rand(6,-6)
 	START_PROCESSING(SSobj, src)
-	//50% chance to grow up
-	if(prob(50))
+	if(prob(age_prob))
 		amount_grown = 1
 	get_light_and_color(parent)
 	..()
@@ -337,6 +339,9 @@
 					break
 
 		if(amount_grown >= 100)
+			if(prob(death_prob)) //Sometimes we just dont make it past childhood
+				die()
+				return
 			new spawn_type(src.loc, src) //This spawns the random mob spawner that the spiderling grows into
 			qdel(src)
 	else if(isorgan(loc))
@@ -394,3 +399,5 @@
 /obj/effect/spider/spiderling/near_grown
 	amount_grown = 80
 	spawn_type = /obj/random/mob/spiders/spider_ling //This one cant spawn carrons
+	age_prob = 50 //coin flip if we grow up or not
+	death_prob = 10 //10% to just die rather then grow up, sad

@@ -2,7 +2,7 @@
 	name = "\"Hustler\" heavy rifle"
 	desc = "A heavy, inexpensive battle rifle of dubious quality.\
 		 An inexpensive budget rifle, it is a stripped down copy of the M12 Omnirifle, it fires a variety of utility and specialized munitions. \
-		 Chambered in .408 Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
+		 Chambered in 8.6x70mm, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example... frankly sucks and is limited to semiautomatic."
 	icon = 'icons/obj/guns/projectile/Hustler.dmi'
 	icon_state = "hustler"
@@ -57,7 +57,7 @@
 	name = "\"Omnirifle\""
 	desc = "A standard issue battle rifle issued to SolFed Marines, produced across the galaxy by state arsenals. \
 		 A weapon built for versatility and rugged reliability, it fires a variety of utility and specialized munitions. \
-		 Chambered in .408 Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
+		 Chambered in 8.6x70mm, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 Certain munitions are physically demanding for even the strongest users without the aid of power armor or gun platforms. \
 		 This example has defaced serial numbers and added electro-penciled rack numbers."
 	icon = 'icons/obj/guns/projectile/Omnirifle.dmi'
@@ -81,7 +81,7 @@
 	name = "\"Longarm\" marksman rifle"
 	desc = "A heavy front line designated marksman rifle manufactured by H&S, also known as the M13A2 Special Purpose Rifle in its generic military form. \
 		 Either a copy or 'liberated' example, it fires a variety of utility and specialized munitions. \
-		 Chambered in .408 Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
+		 Chambered in 8.6x70mm, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with an advanced combat sight and limited to semiautomatic and burst modes."
 	icon = 'icons/obj/guns/projectile/DMR.dmi'
 	icon_state = "DMR"
@@ -107,7 +107,7 @@
 	name = "\"Osprey\" precision rifle"
 	desc = "Classic, elegant sporting rifle based on proven military technology. \
 		 A police model of the venerable M13A1 Special Purpose Rifle manufactured on Earth by Seinemetall Defense GmbH for both sportsmen and counter-terror agents, it fires a variety of utility and specialized munitions. \
-		 Chambered in .408 Omni, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
+		 Chambered in 8.6x70mm, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with an high-zoom optic, elegant wood furnishing, and is limited to semiautomatic."
 	icon = 'icons/obj/guns/projectile/Osprey.dmi'
 	icon_state = "osprey"
@@ -125,7 +125,7 @@
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine
 	name = "\"Boar\" heavy carbine"
 	desc = "A heavy second-line carbine manufactured by H&S, as well as number of state arsenals. Designed for close range encounters and support fire. \
-		 A rifle fashioned for cover fire and cramped environments, taking influence from the MK-12 Omnicarbine, chambered in .408 Omni. \
+		 A rifle fashioned for cover fire and cramped environments, taking influence from the MK-12 Omnicarbine, chambered in 8.6x70mm. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
 		 Despite the blinding muzzle flash and agonizing recoil, its small size arguably makes up for the disadvantages."
 	icon = 'icons/obj/guns/projectile/Boar.dmi'
@@ -148,7 +148,7 @@
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/rds
 	name = "\"Warthog\" advanced carbine"
 	desc = "A heavy second-line carbine manufactured by H&S, as well as number of state arsenals. Designed for close range encounters and support fire. \
-		 A rifle fashioned for cover fire and cramped environments. Chambered in .408 Omni. \
+		 A rifle fashioned for cover fire and cramped environments. Chambered in 8.6x70mm. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
 		 This one is fitted with a muzzle brake, fore grip, holographic sight, and limited to 3-round bursts, it's almost manageable. Almost."
 	icon = 'icons/obj/guns/projectile/Warthog.dmi'

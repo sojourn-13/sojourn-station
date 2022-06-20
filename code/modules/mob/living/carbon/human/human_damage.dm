@@ -222,6 +222,27 @@
 			amount *= 0.5
 		..(amount)
 
+								//// TOXIN ORGAN ROT ////
+		var/mob/living/carbon/human/H = src
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
+		if (ishuman(H))
+			var toxThreshHold
+			if (L.nature == MODIFICATION_SILICON)
+				toxThreshHold = 100
+			else
+				toxThreshHold = 75 // Synthetic organs buy an additional 25 points of toxin processing before becoming overloaded
+
+			if ((H.getToxLoss() > toxThreshHold) && (amount>0)) // If toxloss is above a certain threshhold, more toxin damage will cause internal organ damage. For reference: 50 is DANGEROUS TOXIN LEVELS DETECTED
+				var/obj/item/organ/internal/targeted_organ
+				if ((L.status & ORGAN_DEAD) || (H.getToxLoss() > 100)) // If the liver is dead, the toxin begins to rot out the other organs. If you have more than 100 toxin, your body begins to rot regardless of liver status
+					var/list/listed_organs  = list("brain",OP_EYES,"heart","lungs","stomach","kidneys","appendix","psionic organ")
+					targeted_organ = H.random_organ_by_process(pick(listed_organs))
+				else
+					targeted_organ = H.random_organ_by_process("liver")
+
+				if (targeted_organ.nature !=MODIFICATION_SILICON) // If randomly chosen organ is prothestic, no damage.
+					targeted_organ.damage += rand (5,10) // How much damage is dealt to each organ. Please adjust for balance
+
 /mob/living/carbon/human/setToxLoss(var/amount)
 	if(!(species.flags & NO_POISON) && !isSynthetic())
 		adjustToxLoss(amount-getToxLoss())
@@ -385,11 +406,44 @@ This function restores all organs.
 			damage = damage*species.brute_mod
 			if(organ.take_damage(damage, 0, sharp, edge, used_weapon))
 				UpdateDamageIcon()
+
+						/////BRUTE FORCE TRAUMA/////
+			var/mob/living/carbon/human/A = src
+			if (ishuman(A)) // Is the mob being damaged human?
+				if ((organ.name in list("left arm","right arm","left leg","right leg")) && (organ.brute_dam >=45))
+					if ((!sharp) && (!edge)) // Blunt Weapon Smash Bone
+						for (var/obj/item/organ/internal/bone/boneHit in organ.internal_organs)
+							boneHit.take_damage(damage)
+					if ((sharp) && (!edge))  //Bullets Shred Muscles
+						for (var/obj/item/organ/internal/muscle/muscleHit in organ.internal_organs)
+							muscleHit.take_damage(damage)
+					else if ((sharp) && (edge))		//Blades shred blood vessels
+						for (var/obj/item/organ/internal/blood_vessel/vesselHit in organ.internal_organs)
+							vesselHit.take_damage(damage)
+
+				else
+					if ((organ.name in list("torso","groin")) && (organ.brute_dam >=75))
+						if ((sharp) && (!edge)) // Bullets or Shovel(?) make swiss chees of internal organs
+							var/obj/item/organ/internal/targetOrgan = pick(organ.internal_organs)
+							if (!(istype(targetOrgan,/obj/item/organ/internal/bone)))
+								targetOrgan.take_damage(damage)
+						if ((!sharp) && (!edge)) // Blunt Weapon Smash Bone
+							for (var/obj/item/organ/internal/bone/boneHit in organ.internal_organs)
+								boneHit.take_damage(damage)
+
+
 		if(BURN)
 			damageoverlaytemp = 20
 			damage = damage*species.burn_mod
 			if(organ.take_damage(0, damage, sharp, edge, used_weapon))
 				UpdateDamageIcon()
+
+						/////NERVE BURN DAMAGE/////
+			var/mob/living/carbon/human/A = src
+			if (ishuman(A)) // Is the mob being damaged human?
+				if ((organ.nature != MODIFICATION_SILICON) && (organ.burn_dam >=45)) // Is the organ a limb? Is it not synthetic? Is it severely damaged?
+					for (var/obj/item/organ/internal/nerve/N in organ.internal_organs) // Check every nerve in the person
+						N.take_damage(damage) // Damage
 
 	sanity.onDamage(damage)
 

@@ -3,6 +3,16 @@
 	build_path = /obj/item/gun/energy/cog
 	category = CAT_WEAPON
 
+/datum/design/research/item/greyson/cog_sawn
+	name = "GP \"Pinion\" lasegun"
+	build_path = /obj/item/gun/energy/cog/sawn
+	category = CAT_WEAPON
+
+/datum/design/research/item/greyson/cog_gear
+	name = "GP \"Gear\" lasegun"
+	build_path = /obj/item/gun/energy/cog/gear
+	category = CAT_WEAPON
+
 /datum/design/research/item/greyson/abnegate
 	name = "\"SST Abnegate\" handgun"
 	build_path = /obj/item/gun/energy/sst

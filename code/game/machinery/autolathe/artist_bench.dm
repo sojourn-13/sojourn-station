@@ -259,7 +259,7 @@
 		if(ins_used >= 55)
 			stats_amt += 2//max = 2*4*2+6 = 24 points, min 2*4+6 = 14
 		for(var/i in 1 to stats_amt)
-			var/stat = pick(ALL_STATS)
+			var/stat = pick(ALL_STATS_FOR_LEVEL_UP)
 			oddity_stats[stat] = min(oddity_stats[stat]+rand(1,2))
 
 		O.oddity_stats = oddity_stats

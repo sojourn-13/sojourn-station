@@ -16,6 +16,7 @@
 	minimum_character_age = 30
 	department_account_access = TRUE
 	playtimerequired = 2500
+	health_modifier = 25
 
 	outfit_type = /decl/hierarchy/outfit/job/security/smc
 
@@ -36,7 +37,6 @@
 	perks = list(/datum/perk/ass_of_concrete,
 				 /datum/perk/job/blackshield_conditioning,
 				 /datum/perk/job/bolt_reflect,
-				 /datum/perk/codespeak,
 				 /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -79,6 +79,7 @@
 	minimum_character_age = 30
 	department_account_access = TRUE
 	playtimerequired = 2500
+	health_modifier = 25
 
 	outfit_type = /decl/hierarchy/outfit/job/security/swo
 
@@ -97,7 +98,6 @@
 	)
 
 	perks = list(/datum/perk/ass_of_concrete,
-				 /datum/perk/job/bolt_reflect,
 				 /datum/perk/codespeak,
 				 /datum/perk/chem_contraband)
 
@@ -138,6 +138,7 @@
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
 	playtimerequired = 1200
+	health_modifier = 20
 
 	outfit_type = /decl/hierarchy/outfit/job/security/gunserg
 
@@ -192,6 +193,7 @@
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
 	playtimerequired = 1200
+	health_modifier = 20
 
 	outfit_type = /decl/hierarchy/outfit/job/security/serg
 
@@ -207,7 +209,7 @@
 		STAT_VIG = 25,
 	)
 
-	perks = list(/datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect, /datum/perk/chem_contraband)
+	perks = list(/datum/perk/job/bolt_reflect, /datum/perk/job/blackshield_conditioning, /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
@@ -243,6 +245,7 @@
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	playtimerequired = 1200
+	health_modifier = 5
 
 	outfit_type = /decl/hierarchy/outfit/job/security/inspector
 
@@ -297,6 +300,7 @@
 	alt_titles = list("Combat Medic","Combat Surgeon")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
+	health_modifier = 5
 
 	outfit_type = /decl/hierarchy/outfit/job/security/medspec
 
@@ -312,7 +316,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/medicalexpertise)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/job/blackshield_conditioning)
 				// /datum/perk/chemist -Thanos Voice: "I'm sorry little one..."
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
@@ -350,6 +354,7 @@
 	alt_titles = list("Blackshield Cadet", "Blackshield Militiamen")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
+	health_modifier = 10
 
 	outfit_type = /decl/hierarchy/outfit/job/security/troop
 
@@ -400,6 +405,7 @@
 	alt_titles = list("Marshal Civil Servant", "Field Training Marshal")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
+	health_modifier = 10
 
 	outfit_type = /decl/hierarchy/outfit/job/security/ihoper
 

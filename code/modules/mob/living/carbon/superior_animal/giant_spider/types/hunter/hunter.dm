@@ -9,7 +9,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 20
 	poison_per_bite = 4
-	move_to_delay = 3
+	move_to_delay = 4.5
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/hunter
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","bounces in place.")
@@ -18,47 +18,12 @@
 	name = "cloaker spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has a weaker chameleonic chitin that makes it hard to see."
 	alpha = 50
-	armor = list(melee = 5, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 10, rad = 25, agony = 0)
 
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/cloaker/death() //We are now unable to chameleonic chitin do to being dead
 	..()
 	alpha = 255
-
-/mob/living/carbon/superior_animal/giant_spider/hunter/shocker
-	name = "shock rock spider"
-	desc = "Furry and black, it makes you shudder to look at it. This one has yellowed metallic chitin that crackles with electricity."
-	icon_state = "spark"
-	icon_living = "spark"
-
-/mob/living/carbon/superior_animal/giant_spider/hunter/shocker/UnarmedAttack(var/atom/A, var/proximity)
-	. = ..()
-
-	if(isliving(A))
-		var/mob/living/L = A
-		if(istype(L) && prob(50))
-			var/damage = rand(melee_damage_lower, melee_damage_upper)
-			L.damage_through_armor(damage, HALLOSS)
-			playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
-			L.visible_message(SPAN_DANGER("\the [src] shocks \the [L]!"))
-
-/mob/living/carbon/superior_animal/giant_spider/hunter/pepper
-	name = "pepper spider"
-	desc = "Furry and black, it makes you shudder to look at it. This one is blood red and pulsating with sacks of irratent gas."
-	icon_state = "pepper"
-	icon_living = "pepper"
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/pepper
-	emote_see = list("chitters.","rubs its legs.","vibrates.","belches flames!")
-
-/mob/living/carbon/superior_animal/giant_spider/hunter/pepper/UnarmedAttack(var/atom/A, var/proximity)
-	. = ..()
-	if(isliving(A))
-		var/mob/living/L = A
-		if(istype(L) && prob(50))
-			var/damage = rand(melee_damage_lower, melee_damage_upper)
-			L.damage_through_armor(damage, BURN)
-			playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
-			L.visible_message(SPAN_DANGER("\the [src] breathes fire \the [L]!"))
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/viper
 	name = "viper spider"
@@ -86,6 +51,7 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/plasma
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","vibrates.")
+	armor_penetration = 50
 
 /mob/living/carbon/superior_animal/giant_spider/plasma/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
@@ -98,13 +64,13 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one is an absolute unit of chitin, armor, and chittering horror."
 	icon_state = "tarantula"
 	icon_living = "tarantula"
-	maxHealth = 200
-	health = 200
+	maxHealth = 160
+	health = 160
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 	emote_see = list("chitters.","rubs its legs.","thumps its many legs on the ground.")
 	mob_size = MOB_LARGE
-	armor = list(melee = 15, bullet = 15, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 15, bullet = 15, energy = 5, bomb = 5, bio = 10, rad = 25, agony = 0)
 
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/UnarmedAttack(var/atom/A, var/proximity)
@@ -199,17 +165,18 @@
 	icon_state = "ogre"
 	icon_living = "ogre"
 	poison_per_bite = 4
-	move_to_delay = 4
+	maxHealth = 180
+	health = 180
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/pit
 	name = "pit snapper spider"
-	desc = "Furry and orange, it makes you shudder to look at it. What it lacks in toxins, it makes up for in its immense bone-snapping mandibles."
+	desc = "Furry and orange, it makes you shudder to look at it. Normally it lacks in toxins but makes up for in its immense bone-snapping mandibles. "
 	icon_state = "pit"
 	icon_living = "pit"
 	poison_per_bite = 0
-	move_to_delay = 4
 	melee_damage_lower = 35
 	melee_damage_upper = 40
+	poison_type = "aranecolmin" //Shockingly this is more deadly then normal as it makes metaball faster
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing
 	name = "trapdoor spider"
@@ -217,6 +184,8 @@
 	icon_state = "burrowing"
 	icon_living = "burrowing"
 	poison_type = "stoxin"
+	maxHealth = 140
+	health = 140
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor
 	name = "emperor spider"
@@ -235,7 +204,8 @@
 	flash_resistances = 3 //For balance against are speedy fello
 	poison_type = "party drops"
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/emperor
-	armor = list(melee = 25, bullet = 25, energy = 10, bomb = 25, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 25, bullet = 25, energy = 15, bomb = 25, bio = 10, rad = 25, agony = 0)
+	armor_penetration = 25
 
 	give_randomized_armor = FALSE //Were not getting armor
 
@@ -265,6 +235,7 @@
 	poison_per_bite = 6
 	poison_type = "stoxin"
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/reaper_spider
+	armor_penetration = 30
 
 	give_randomized_armor = FALSE //Were not getting armor
 

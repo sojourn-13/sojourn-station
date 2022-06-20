@@ -134,12 +134,24 @@
  * - [list_to_check][/list]: A list of typepaths to check the type_to_check against.
  * - zebra: Whether to use the value of the mathing type in the list instead of just returning true when a match is found.
  */
+
 /proc/is_type_in_list(datum/type_to_check, list/list_to_check, zebra = FALSE)
 	if(!LAZYLEN(list_to_check) || !type_to_check)
 		return FALSE
 	for(var/type in list_to_check)
 		if(istype(type_to_check, type))
 			return !zebra || list_to_check[type] // Subtypes must come first in zebra lists.
+	return FALSE
+
+//checks for specific paths in list
+//Zebra is used if the list is associative (/type/ = TRUE, /type = FALSE) and returns a value based on that true/false value
+/proc/is_path_in_list(path_to_check, list/list_to_check, zebra = FALSE)
+	if(!LAZYLEN(list_to_check) || !path_to_check)
+		return FALSE
+	for(var/path in list_to_check)
+		if(ispath(path_to_check, path))
+			return !zebra || list_to_check[path]
+
 	return FALSE
 /proc/instances_of_type_in_list(var/atom/A, var/list/L)
 	var/instances = 0
@@ -511,6 +523,67 @@
 
 	return nearestObjects
 
+/**
+ *	Returns a list of the closest objects, relative to sourceLocation, and only the closest objects.
+ *	Ex. if objects 1 and 2 are 3 tiles away, and object 4 is 5, only objects 1 and 2 will be returned.
+ *
+ *	Args:
+ *	L: A given list.
+ *	sourceLocation: What our search will be relative towards.
+ *	maxRange: Anything further away than this distance, in tiles, will be disregarded.
+ *	minRange: Anything closer than this distance, in tiles, will be disregarded.
+**/
+/proc/getClosestObjects(list/L, sourceLocation, maxRange = INFINITY, minRange = 0)
+	if (L.len == 1)
+		return L
+
+	var/list/nearestObjects = list()
+	var/shortestDistance = INFINITY
+	for (var/object in L)
+		var/distance = get_dist(sourceLocation, object)
+
+		if (distance > shortestDistance)
+			continue
+
+		if ((distance > maxRange) || (distance < minRange))
+			continue
+
+		if (distance < shortestDistance)
+			shortestDistance = distance
+			nearestObjects.Cut()
+			nearestObjects += object
+
+		else if (distance == shortestDistance)
+			nearestObjects += object
+
+	return nearestObjects
+
+/// [/proc/getClosestObjects], but for the furthest objects.
+/proc/getFurthestObjects(list/L, sourceLocation, maxRange = INFINITY, minRange = 0)
+	if (L.len == 1)
+		return L
+
+	var/list/furthestObjects = list()
+	var/furthestDistance = 0
+	for (var/object in L)
+		var/distance = get_dist(sourceLocation, object)
+
+		if (distance < furthestDistance)
+			continue
+
+		if ((distance > maxRange) || (distance < minRange))
+			continue
+
+		if (distance > furthestDistance)
+			furthestDistance = distance
+			furthestObjects.Cut()
+			furthestObjects += object
+
+		else if (distance == furthestDistance)
+			furthestObjects += object
+
+	return furthestObjects
+
 // Macros to test for bits in a bitfield. Note, that this is for use with indexes, not bit-masks!
 #define BITTEST(bitfield, index)  ((bitfield)  &   (1 << (index)))
 #define BITSET(bitfield, index)   (bitfield)  |=  (1 << (index))
@@ -817,13 +890,6 @@ Checks if a list has the same entries and values as an element of big.
 			. |= value
 		else
 			checked += value
-
-//Checks for specific paths in a list
-/proc/is_path_in_list(var/path, var/list/L)
-	for(var/type in L)
-		if(ispath(path, type))
-			return 1
-	return 0
 
 /proc/parse_for_paths(list/data)
 	if(!islist(data) || !data.len)

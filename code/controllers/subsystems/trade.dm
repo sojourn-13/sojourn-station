@@ -18,6 +18,19 @@ SUBSYSTEM_DEF(trade)
 	var/list/hockable_tags = list(SPAWN_EXCELSIOR)		// List of spawn tags of hockable items
 	var/list/junk_tags = list(SPAWN_JUNK)				// List of spawn tags of junk items
 
+	// For tracking/logging
+	var/shipping_invoice_number = 0
+	var/export_invoice_number = 0
+	var/offer_invoice_number = 0
+	var/sale_invoice_number = 0
+
+	var/list/shipping_log = list()
+	var/list/export_log = list()
+	var/list/offer_log = list()
+	var/list/sale_log = list()
+
+// === TRADE STATIONS ===
+
 /datum/controller/subsystem/trade/proc/DiscoverAllTradeStations()
 	discovered_stations = all_stations.Copy()
 
@@ -118,9 +131,10 @@ SUBSYSTEM_DEF(trade)
 				station.recommendations_needed -= 1
 				if(!station.recommendations_needed)
 					discovered_stations |= station
-					GLOB.entered_event.unregister(station.overmap_location, station, /datum/trade_station/proc/discovered)
 
-//Returns cost of an existing object including contents
+// === PRICING ===
+
+// Returns cost of an existing object including contents
 /datum/controller/subsystem/trade/proc/get_cost(atom/movable/target, is_export = FALSE)
 	. = 0
 	for(var/atom/movable/A in target.GetAllContents(includeSelf = TRUE))
@@ -145,6 +159,12 @@ SUBSYSTEM_DEF(trade)
 /datum/controller/subsystem/trade/proc/get_price(atom/movable/target, is_export = FALSE)
 	. = round(get_cost(target, is_export))
 
+/datum/controller/subsystem/trade/proc/get_sell_price(path, datum/trade_station/station, price)
+	var/selling_price = round(get_new_cost(path) * station.markdown)
+	if(selling_price <= 0)
+		selling_price = price * station.markdown
+	. = selling_price
+
 /datum/controller/subsystem/trade/proc/get_import_cost(path, datum/trade_station/station)
 	. = station?.get_good_price(path)								// get_good_price() gets the custom price of the item, if it exists
 	if(!.)
@@ -152,7 +172,9 @@ SUBSYSTEM_DEF(trade)
 		if(istype(station))
 			. *= station.markup
 
-// Checks item stacks amd item containers to see if they match their base states (no more selling empty first-aid kits or split item stacks as if they were full)
+// === IMPORT/EXPORT ===
+
+// Checks item stacks and item containers to see if they match their base states (no more selling empty first-aid kits or split item stacks as if they were full)
 // Checks reagent containers to see if they match their base state or if they match the special offer from a station
 /datum/controller/subsystem/trade/proc/check_offer_contents(item, offer_path)
 	if(istype(item, /obj/item/reagent_containers))
@@ -180,19 +202,10 @@ SUBSYSTEM_DEF(trade)
 
 		return FALSE
 
-
 	if(ispath(offer_path, /datum/reagent))		// If item is not of the types checked and the offer is for a reagent, fail
 		return FALSE
 
-	if(istype(item, /obj/item/stack))						// Check if item is an item stack
-		var/obj/item/stack/item_stack = item
-		if(item_stack.amount == item_stack.max_amount)
-			return TRUE										// You can only sell items when they are at max stacks
-		return FALSE
-
 	return TRUE
-
-
 
 /datum/controller/subsystem/trade/proc/assess_offer(obj/machinery/trade_beacon/sending/beacon, datum/trade_station/station, offer_path)
 	if(QDELETED(beacon) || !station)
@@ -219,13 +232,21 @@ SUBSYSTEM_DEF(trade)
 	exported.Cut(offer_amount + 1)
 
 	if(account)
+		var/invoice_contents_info
+
 		for(var/atom/movable/AM in exported)
 			SEND_SIGNAL(src, COMSIG_TRADE_BEACON, AM)
+			invoice_contents_info += "<li>[AM.name]</li>"
 			qdel(AM)
 
+		var/credits_to_account = round(offer_price * 0.8)
+		var/credits_to_lonestar = round(offer_price * 0.2)
+
+		create_log_entry("Special Offer", account.get_name(), invoice_contents_info, offer_price, TRUE, get_turf(beacon))
+
 		beacon.activate()
-		var/datum/transaction/T = new(round(offer_price * 0.8), account.get_name(), "Special deal", station.name)
-		var/datum/transaction/TL = new(round(offer_price * 0.2), department_accounts[DEPARTMENT_LSS].get_name(), "Special deal", station.name)
+		var/datum/transaction/T = new(credits_to_account, account.get_name(), "Special deal", station.name)
+		var/datum/transaction/TL = new(credits_to_lonestar, department_accounts[DEPARTMENT_LSS].get_name(), "Special deal", station.name)
 		T.apply_to(account)
 		TL.apply_to(department_accounts[DEPARTMENT_LSS])
 		station.add_to_wealth(offer_price, TRUE)
@@ -233,60 +254,105 @@ SUBSYSTEM_DEF(trade)
 		offer_content["price"] = 0
 		station.special_offers[offer_path] = offer_content
 
-/datum/controller/subsystem/trade/proc/collect_counts_from(list/shopList)
+/datum/controller/subsystem/trade/proc/collect_counts_from(list/shoplist)
 	. = 0
-	for(var/categoryName in shopList)
-		var/category = shopList[categoryName]
+	for(var/category_name in shoplist)
+		var/category = shoplist[category_name]
 		if(length(category))
 			for(var/path in category)
 				. += category[path]
 
-/datum/controller/subsystem/trade/proc/collect_price_for_list(list/shopList, datum/trade_station/tradeStation = null)
+/datum/controller/subsystem/trade/proc/collect_price_for_list(list/shoplist, datum/trade_station/tradeStation = null)
 	. = 0
-	for(var/categoryName in shopList)
-		var/category = shopList[categoryName]
+	for(var/category_name in shoplist)
+		var/category = shoplist[category_name]
 		if(length(category))
 			for(var/path in category)
 				. += get_import_cost(path, tradeStation) * category[path]
 
-/datum/controller/subsystem/trade/proc/buy(obj/machinery/trade_beacon/receiving/senderBeacon, datum/money_account/account, list/shopList, datum/trade_station/station)
-	if(QDELETED(senderBeacon) || !istype(senderBeacon) || !account || !recursiveLen(shopList) || !istype(station))
+/datum/controller/subsystem/trade/proc/buy(obj/machinery/trade_beacon/receiving/senderBeacon, datum/money_account/account, list/shoplist, datum/trade_station/station)
+	if(QDELETED(senderBeacon) || !istype(senderBeacon) || !account || !recursiveLen(shoplist) || !istype(station))
 		return
 
 	var/obj/structure/closet/crate/C
-	var/count_of_all = collect_counts_from(shopList)
-	var/price_for_all = collect_price_for_list(shopList, station)
+	var/count_of_all = collect_counts_from(shoplist)
+	var/price_for_all = collect_price_for_list(shoplist, station)
 	if(isnum(count_of_all) && count_of_all > 1)
 		C = senderBeacon.drop(/obj/structure/closet/crate)
 	if(price_for_all && get_account_credits(account) < price_for_all)
 		return
 
-	for(var/categoryName in shopList)
-		var/list/shoplist_category = shopList[categoryName]
-		var/list/inventory_category = station.inventory[categoryName]
+	var/order_contents_info
+	var/invoice_location
+
+	for(var/category_name in shoplist)
+		var/list/shoplist_category = shoplist[category_name]
+		var/list/inventory_category = station.inventory[category_name]
 		if(length(shoplist_category) && length(inventory_category))
-			for(var/pathOfGood in shoplist_category)
-				var/count_of_good = shoplist_category[pathOfGood] //in shoplist
-				var/index_of_good = inventory_category.Find(pathOfGood) //in inventory
+			for(var/good_path in shoplist_category)
+				var/count_of_good = shoplist_category[good_path] //in shoplist
+				var/index_of_good = inventory_category.Find(good_path) //in inventory
 				for(var/i in 1 to count_of_good)
-					istype(C) ? new pathOfGood(C) : senderBeacon.drop(pathOfGood)
+					if(istype(C))
+						new good_path(C)
+					else
+						var/atom/movable/new_item = senderBeacon.drop(good_path)
+						invoice_location = new_item.loc
 				if(isnum(index_of_good))
-					station.set_good_amount(categoryName, index_of_good, max(0, station.get_good_amount(categoryName, index_of_good) - count_of_good))
+					station.set_good_amount(category_name, index_of_good, max(0, station.get_good_amount(category_name, index_of_good) - count_of_good))
+
+				// invoice gen stuff
+				var/atom/movable/AM = good_path
+				var/list/good_packet = inventory_category[good_path]
+				var/item_name = initial(AM.name)
+				if(islist(good_packet))
+					item_name = good_packet["name"] ? good_packet["name"] : item_name
+				order_contents_info += "<li>[count_of_good]x [item_name]</li>"
+
+	if(count_of_all > 1)
+		invoice_location = C
+
+	create_log_entry("Shipping", account.get_name(), order_contents_info, price_for_all, TRUE, invoice_location)
+
 	station.add_to_wealth(price_for_all)	// can only buy from one station at a time
 	charge_to_account(account.account_number, account.get_name(), "Purchase", station.name, price_for_all)
+
+//SoJ semi edit, readds direct selling
+/datum/controller/subsystem/trade/proc/sell_thing(obj/machinery/trade_beacon/sending/senderBeacon, datum/money_account/account, atom/movable/thing, datum/trade_station/station)
+	if(QDELETED(senderBeacon) || !istype(senderBeacon) || !account || !istype(thing) || !istype(station))
+		return
+
+	var/cost = get_sell_price(thing, station)
+
+	if(cost <= 0)
+		cost = get_import_cost(thing, station)
+
+	if(account)
+		create_log_entry("Individial Sale", account.get_name(), "<li>[thing.name]</li>", cost)
+		qdel(thing)
+		senderBeacon.activate()
+
+		var/datum/money_account/A = account
+		var/datum/money_account/lonestar_account = department_accounts[DEPARTMENT_LSS]
+		var/datum/transaction/TA = new(cost * 0.8, account.get_name(), "Sold item", station.name)
+		var/datum/transaction/T = new(cost * 0.2, lonestar_account.get_name(), "Sold item", TRADE_SYSTEM_IC_NAME)
+		T.apply_to(lonestar_account)
+		TA.apply_to(A)
+		station.add_to_wealth(cost)
 
 /datum/controller/subsystem/trade/proc/export(obj/machinery/trade_beacon/sending/senderBeacon)
 	if(QDELETED(senderBeacon) || !istype(senderBeacon))
 		return
 
-	var/sold_str = ""
+	var/invoice_contents_info
 	var/cost = 0
 
 	for(var/atom/movable/AM in senderBeacon.get_objects())
 		if(isliving(AM))
 			var/mob/living/L = AM
 			L.apply_damages(0,5,0,0,0,5)
-			// TODO: Small chance to export players to deepmaint hive import beacon
+			continue
+		if(AM.anchored)
 			continue
 
 		var/list/contents_incl_self = AM.GetAllContents(5, TRUE)
@@ -298,24 +364,27 @@ SUBSYSTEM_DEF(trade)
 			var/export_value = item_price * export_multiplier
 
 			if(export_multiplier)
-				sold_str += " [item.name]"
+				invoice_contents_info += "<li>[item.name]</li>"
 				cost += export_value
 				SEND_SIGNAL(src, COMSIG_TRADE_BEACON, item)
 				qdel(item)
 			else
-				if(istype(AM, /obj/item/storage))
-					var/obj/item/storage/parent_item = AM
-					parent_item.remove_from_storage(item, AM.loc)
+				item.forceMove(get_turf(AM))		// Should be the same tile
 
 	senderBeacon.start_export()
-	var/datum/money_account/guild_account = department_accounts[DEPARTMENT_LSS]
-	var/datum/transaction/T = new(cost, guild_account.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
-	T.apply_to(guild_account)
+	var/datum/money_account/lonestar_account = department_accounts[DEPARTMENT_LSS]
+	var/datum/transaction/T = new(cost, lonestar_account.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
+	T.apply_to(lonestar_account)
+
+	if(invoice_contents_info)	// If no info, then nothing was exported
+		create_log_entry("Export", lonestar_account.get_name(), invoice_contents_info, cost, TRUE, get_turf(senderBeacon))
 
 /datum/controller/subsystem/trade/proc/get_export_price_multiplier(atom/movable/target)
-	if(!target)
+	if(!target || target.anchored)
 		return NONEXPORTABLE
+
 	. = EXPORTABLE
+
 	var/list/target_spawn_tags = params2list(target?.spawn_tags)
 	var/list/target_junk_tags = target_spawn_tags & junk_tags
 	var/list/target_hockable_tags = target_spawn_tags & hockable_tags
@@ -329,34 +398,75 @@ SUBSYSTEM_DEF(trade)
 		if(istype(target, offer_type))
 			return NONEXPORTABLE
 
+// === LOGGING ===
+
+/datum/controller/subsystem/trade/proc/create_log_entry(type, ordering_account, contents, total_paid, create_invoice = FALSE, invoice_location = null)
+	var/log_id
+
+	switch(type)
+		if("Shipping")
+			log_id = "[++shipping_invoice_number]-S"
+			shipping_log.Add(list(list("id" = log_id, "ordering_acct" = ordering_account, "contents" = contents, "total_paid" = total_paid, "time" = time2text(world.time, "hh:mm"))))
+		if("Export")
+			log_id = "[++export_invoice_number]-E"
+			export_log.Add(list(list("id" = log_id, "ordering_acct" = ordering_account, "contents" = contents, "total_paid" = total_paid, "time" = time2text(world.time, "hh:mm"))))
+		if("Special Offer")
+			log_id = "[++offer_invoice_number]-SO"
+			offer_log.Add(list(list("id" = log_id, "ordering_acct" = ordering_account, "contents" = contents, "total_paid" = total_paid, "time" = time2text(world.time, "hh:mm"))))
+		if("Individial Sale")
+			log_id = "[++sale_invoice_number]-IS"
+			sale_log.Add(list(list("id" = log_id, "ordering_acct" = ordering_account, "contents" = contents, "total_paid" = total_paid, "time" = time2text(world.time, "hh:mm"))))
+		else
+			return
+
+	if(create_invoice && invoice_location && log_id)
+		print_invoice(type, log_id, ordering_account, contents, total_paid, FALSE, invoice_location)
+		if(type == "Shipping")
+			print_invoice(type, log_id, ordering_account, contents, total_paid, TRUE, invoice_location)
+
+/datum/controller/subsystem/trade/proc/print_invoice(type, log_id, ordering_account, contents, total_paid, is_internal = FALSE, location)
+	if(!location)
+		return
+
+	var/title
+	title = "[lowertext(type)] invoice - #[log_id]"
+	title += is_internal ? " (internal)" : null
+
+	var/text
+	text += "<h3>[type] Invoice - #[log_id]</h3>"
+	text += "<hr><font size = \"2\">"
+	text += is_internal ? "FOR INTERNAL USE ONLY<br><br>" : null
+	text += type != "Shipping" && type ? "Recipient: [ordering_account]<br>" : "Recipient: \[field\]<br>"
+	text += type == "Shipping" ? "Package Name: \[field\]<br>" : null
+	text += "Contents:<br>"
+	text += "<ul>"
+	text += contents
+	text += "</ul>"
+	text += is_internal ? "Order Cost: [total_paid]<br>" : null
+	text += type == "Shipping" ? "Total Credits Paid: \[field\]<br>" : "Total Credits Paid: [total_paid]<br>"
+	text += "</font>"
+	text += type == "Shipping" ? "<hr><h5>Stamp below to confirm receipt of goods:</h5>" : null
+
+	new/obj/item/paper(location, text, title)
+
+/datum/controller/subsystem/trade/proc/get_log_data_by_id(log_id)
+	var/id_data = splittext(log_id, "-")
+	var/log_num = text2num(id_data[1])
+	var/log_type = id_data[2]
+	switch(log_type)
+		if("S")
+			return shipping_log[log_num]
+		if("E")
+			return export_log[log_num]
+		if("SO")
+			return offer_log[log_num]
+		if("IS")
+			return sale_log[log_num]
+		else
+			return
+
+// === ECONOMY ===
+
 // The proc that is called when the price is being asked for. Use this to refer to another object if necessary.
 /atom/movable/proc/get_item_cost(export)
 	. = price_tag
-
-//SoJ semi edit, readds direct selling
-/datum/controller/subsystem/trade/proc/sell_thing(obj/machinery/trade_beacon/sending/senderBeacon, datum/money_account/account, atom/movable/thing, datum/trade_station/station)
-	if(QDELETED(senderBeacon) || !istype(senderBeacon) || !account || !istype(thing) || !istype(station))
-		return
-
-	var/cost = get_sell_price(thing, station)
-
-	if(cost <= 0)
-		cost = get_import_cost(thing, station)
-
-	if(account)
-		qdel(thing)
-		senderBeacon.activate()
-
-		var/datum/money_account/A = account
-		var/datum/money_account/guild_account = department_accounts[DEPARTMENT_LSS]
-		var/datum/transaction/TA = new(cost * 0.8, account.get_name(), "Sold item", station.name)
-		var/datum/transaction/T = new(cost * 0.2, guild_account.get_name(), "Sold item", TRADE_SYSTEM_IC_NAME)
-		T.apply_to(guild_account)
-		TA.apply_to(A)
-		station.add_to_wealth(cost)
-
-/datum/controller/subsystem/trade/proc/get_sell_price(path, datum/trade_station/station, price)
-	var/selling_price = round(get_new_cost(path) * station.markdown)
-	if(selling_price <= 0)
-		selling_price = price * station.markdown
-	. = selling_price

@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/luger
 	name = "\"Vintovka Lyugera\" carbine"
 	desc = "An old-world pistol mutilated and modified into an SMG of sorts. Reliable, well crafted but bulky. Amazingly it.. works! The look is hard to describe.. a mix between 'makeshift' and 'amazing'. \
-	While able to take both .35 pistol and SMG magazines the gun appears to lack a proper fire selection. Figures it's made by Nadezhda Marshals gunsmiths."
+	While able to take both 9mm pistol and SMG magazines the gun appears to lack a proper fire selection. Figures it's made by Nadezhda Marshals gunsmiths."
 	icon = 'icons/obj/guns/projectile/luger.dmi'
 	icon_state = "luger"
 	item_state = "luger"
@@ -10,7 +10,7 @@
 	mag_well = MAG_WELL_PISTOL|MAG_WELL_SMG|MAG_WELL_H_PISTOL|MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 6, MATERIAL_STEEL = 10)
 	price_tag = 650
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
 	damage_multiplier = 1
 	init_recoil = SMG_RECOIL(0.9)
 	load_method = SINGLE_CASING|MAGAZINE

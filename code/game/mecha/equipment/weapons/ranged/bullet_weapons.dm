@@ -188,8 +188,8 @@
 	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label."
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "boxhrifle-practice"
-	ammo_amount_left = 10
-	ammo_max_amout = 10
+	ammo_amount_left = 25
+	ammo_max_amout = 25
 	amount_per_click = 3
 	ammo_type = ".460"
 	price_tag = 30
@@ -201,10 +201,10 @@
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15)
 	projectile = /obj/item/projectile/bullet/auto_460
 	fire_sound = 'sound/weapons/guns/fire/chaingun_fire.ogg'
-	projectiles = 10
-	max_ammo = 10
-	projectiles_per_shot = 1
-	deviation = 1 
+	projectiles = 25
+	max_ammo = 25
+	projectiles_per_shot = 2
+	deviation = 2 
 	fire_cooldown = 2
 	ammo_type = ".460"
 
@@ -218,11 +218,11 @@
 	equip_cooldown = 20
 	projectile = /obj/item/projectile/bullet/auto_460/scrap
 	fire_sound = 'sound/weapons/guns/fire/payload_fire.ogg'
-	projectiles = 20
-	max_ammo = 20
-	projectiles_per_shot = 2
+	projectiles = 25
+	max_ammo = 25
+	projectiles_per_shot = 3
 	deviation = 3
-	fire_cooldown = 3
+	fire_cooldown = 3.5
 	required_type = list(/obj/mecha/combat, /obj/mecha/working)
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon/scrap/loaded

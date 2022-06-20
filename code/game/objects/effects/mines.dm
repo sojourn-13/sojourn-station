@@ -81,6 +81,12 @@
 		triggered = 1
 		call(src,triggerproc)(M)
 
+	if(istype(M, /mob/living/simple_animal/hostile/poporavtomat))
+		for(var/mob/O in viewers(world.view, src.loc))
+			to_chat(O, "<font color='red'>[M] steps over the \icon[src] [src] but still triggeres its payload.</font>")
+		triggered = 1
+		call(src,triggerproc)(M)
+
 /obj/item/spider_shadow_trap
 	name = "odd shadow"
 	desc = "You see an odd shadow, cast by something above you hiding in a crevice. A quick glance and you see eight red eyes filled with hatred glaring at you from the dark..."

@@ -29,7 +29,7 @@
 */
 
 /datum/gear/xenowear/marquamask
-	display_name = "Mar'Qua gill mask"
+	display_name = "marqua gill mask"
 	path = /obj/item/clothing/mask/breathxeno/marqua
 	slot = slot_wear_mask
 	sort_category = "Xenowear"

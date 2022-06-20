@@ -191,13 +191,13 @@
 // Hunters lodge chems
 /obj/item/reagent_containers/glass/bottle/tangu_extract
 	name = "tangu extract bottle"
-	desc = "A small bottle. Contains the extract of a tangu horn, a highly valuable universal healing chemical."
+	desc = "A small bottle. Contains the extract of a tangu horn, a highly valuable universal healing chemical when drank."
 	icon_state = "bottle"
 	preloaded_reagents = list("tangu_extract" = 60)
 
 /obj/item/reagent_containers/glass/bottle/clucker_extract
 	name = "clucker extract bottle"
-	desc = "A small bottle. Contains the extract of a compressed clucker feather, a rather weak painkiller."
+	desc = "A small bottle. Contains the extract of a compressed clucker feather, a rather weak painkiller when drank."
 	icon_state = "bottle"
 	preloaded_reagents = list("clucker_extract" = 60)
 

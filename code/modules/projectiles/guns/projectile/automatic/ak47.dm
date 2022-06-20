@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/ak47
 	name = "Excelsior \"Kalashnikov\" rifle"
 	desc = "\"We stand for organized terror - this should be frankly admitted. Terror is an absolute necessity during times of revolution.\"\
-		 A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.5. This is an abysmal, printed copy."
+		 A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.62mm. This is an abysmal, printed copy."
 	icon = 'icons/obj/guns/projectile/ak.dmi'
 	icon_state = "AK"
 	item_state = "AK"
@@ -31,7 +31,7 @@
 
 /obj/item/gun/projectile/automatic/ak47/NM_colony
 	name = "polymer \"Kalashnikov\" rifle"
-	desc = " A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.5. This is an abysmal, printed copy."
+	desc = " A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.62mm. This is an abysmal, printed copy."
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	price_tag = 800
 	serial_type = "NM"
@@ -105,7 +105,7 @@
 /obj/item/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" rifle"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-		 A copy of the AKM pattern, shortened into a mid-length rifle and chambered in 7.5. The left arm of the unfree world."
+		 A copy of the AKM pattern, shortened into a mid-length rifle and chambered in 7.62mm. The left arm of the unfree world."
 	icon = 'icons/obj/guns/projectile/ak_wood.dmi'
 	icon_state = "AK"
 	item_state = "AK"
@@ -120,7 +120,7 @@
 /obj/item/gun/projectile/automatic/ak47/sawn
 	name = "sawn-off \"Kalashnikov\" rifle"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-	A copy of the AKM pattern chambered in 7.5 and crudely sawed down to a shadow of its former self. Rifle was fine. Was."
+	A copy of the AKM pattern chambered in 7.62mm and crudely sawed down to a shadow of its former self. Rifle was fine. Was."
 	icon = 'icons/obj/guns/projectile/sawnoff/ak.dmi'
 	icon_state = "AK"
 	item_state = "AK"

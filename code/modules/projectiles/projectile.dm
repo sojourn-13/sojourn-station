@@ -17,6 +17,7 @@
 	anchored = TRUE //There's a reason this is here, Mport. God fucking damn it -Agouri. Find&Fix by Pete. The reason this is here is to stop the curving of emitter shots.
 	pass_flags = PASSTABLE
 	mouse_opacity = 0
+	embed_mult = 1
 	var/bumped = FALSE		//Prevents it from hitting more than one guy at once
 	var/hitsound_wall = "ricochet"
 	var/list/mob_hit_sound = list('sound/effects/gore/bullethit2.ogg', 'sound/effects/gore/bullethit3.ogg') //Sound it makes when it hits a mob. It's a list so you can put multiple hit sounds there.
@@ -58,6 +59,8 @@
 	var/embed = 0 // whether or not the projectile can embed itself in the mob
 	var/knockback = 0
 
+	var/shrapnel_type //Do we have a special thing to embed in the target? If this is null, it will embed a generic 'shrapnel' item.
+
 	var/hitscan = FALSE		// whether the projectile should be hitscan
 	var/step_delay = 1	// the delay between iterations if not a hitscan projectile
 
@@ -78,6 +81,9 @@
 	var/datum/vector_loc/location		// current location of the projectile in pixel space
 	var/matrix/effect_transform			// matrix to rotate and scale projectile effects - putting it here so it doesn't
 										//  have to be recreated multiple times
+
+	var/list/supereffective_types //the typepaths we're super-effective against. only supports mobs at the moment
+	var/supereffective_mult = 2 //damage mult on hitting supereffective types
 
 	// Ranged issue
 
@@ -956,6 +962,81 @@
 			M = locate() in get_step(src,targloc)
 			if(istype(M))
 				return 1
+
+// projectile/Test has been proven to be inaccurate and doesn't use the logic behind firing a real projectile.
+// impacttest uses the exact same logic, and thus, is perfectly accurate. It operates on the basis that whatever we hit will end the
+// flight of the projectile, thus, showing if we can hit a target or not.
+
+/obj/item/projectile/test/impacttest
+	hitscan = TRUE
+
+/obj/item/projectile/test/impacttest/launch(atom/target, angle_offset, x_offset, y_offset)
+
+	var/turf/curloc = get_turf(src)
+	var/turf/targloc = get_turf(target)
+
+	if (!istype(targloc) || !istype(curloc))
+		return TRUE
+
+	if(targloc == curloc) //Shooting something in the same turf
+		on_impact(target)
+		qdel(src)
+		return FALSE
+
+	original = target
+
+	setup_trajectory(curloc, targloc, x_offset, y_offset, angle_offset) //plot the initial trajectory
+	Process()
+
+/obj/item/projectile/test/impacttest/Process()
+	spawn while(src && src.loc)
+		if(kill_count-- < 1)
+			on_impact(src.loc) //for any final impact behaviours
+			qdel(src)
+			return
+		if((!( current ) || loc == current))
+			current = locate(min(max(x + xo, 1), world.maxx), min(max(y + yo, 1), world.maxy), z)
+		if((x == 1 || x == world.maxx || y == 1 || y == world.maxy))
+			qdel(src)
+			return
+
+		trajectory.increment()	// increment the current location
+		location = trajectory.return_location(location)		// update the locally stored location data
+
+		if(!location)
+			qdel(src)	// if it's left the world... kill it
+			return
+
+		before_move()
+		Move(location.return_turf())
+		pixel_x = location.pixel_x
+		pixel_y = location.pixel_y
+
+		if(!bumped && !isturf(original))
+			if(loc == get_turf(original))
+				if(Bump(original))
+					return
+
+/obj/item/projectile/test/impacttest/on_impact(atom/A)
+
+	SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, A)
+
+/obj/item/projectile/test/impacttest/Bump(atom/A, forced)
+
+	if(A == src)
+		return FALSE
+	if(A == firer)
+		loc = A.loc
+		return FALSE //go fuck yourself in another place pls
+
+	if(istype(A, /obj/item/projectile))
+		return FALSE
+
+	//stop flying
+	on_impact(A)
+
+	qdel(src)
+	return TRUE
 
 //Helper proc to check if you can hit them or not.
 /proc/check_trajectory(atom/target as mob|obj, atom/firer as mob|obj, var/pass_flags=PASSTABLE|PASSGLASS|PASSGRILLE, flags=null)

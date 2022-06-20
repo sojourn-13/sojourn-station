@@ -712,7 +712,7 @@
 		else
 			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			user.vessel.remove_reagent("blood",blood_cost)
-	user.visible_message("<b><font color='red'>[user]'s cruciform glows before they suddenly collapse!</font><b>", "<b><font color='red'>Your feel the air thrum with an inaudible vibration, your cruciform withdrawing everything you have to empower your litany!</font><b>", "<b><font color='red'>You hear a thud!</font><b>")		
+	user.visible_message("<b><font color='red'>[user]'s cruciform glows before they suddenly collapse!</font><b>", "<b><font color='red'>Your feel the air thrum with an inaudible vibration, your cruciform withdrawing everything you have to empower your litany!</font><b>", "<b><font color='red'>You hear a thud!</font><b>")
 	user.AdjustSleeping(15)
 	set_personal_cooldown(user) //This needs at least some downside
 	for(var/obj/item/organ/augmentic in user) // Run this loop for every organ the user has
@@ -739,7 +739,7 @@
 		else
 			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			user.vessel.remove_reagent("blood",blood_cost)
-	user.visible_message("<b><font color='red'>[user]'s cruciform glows before they suddenly collapse!</font><b>", "<b><font color='red'>Your feel the air thrum with an inaudible vibration, your cruciform withdrawing everything you have to empower your litany!</font><b>", "<b><font color='red'>You hear a thud!</font><b>")			
+	user.visible_message("<b><font color='red'>[user]'s cruciform glows before they suddenly collapse!</font><b>", "<b><font color='red'>Your feel the air thrum with an inaudible vibration, your cruciform withdrawing everything you have to empower your litany!</font><b>", "<b><font color='red'>You hear a thud!</font><b>")
 	user.AdjustSleeping(30)
 	set_personal_cooldown(user) //This needs at least some downside
 	for(var/mob/living/carbon/human/H in oview(user)) // Affect everyone the user can see.
@@ -762,6 +762,7 @@
 	cooldown_time = 60 MINUTES
 	cooldown_category = "production_litany"
 	success_message = "On the verge of audibility you hear pleasant music, an autolathe disk slides out from a slot within the altar."
+	var/anti_cheat = FALSE
 
 /datum/ritual/cruciform/factorial/production_litany/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/OBJS = get_front(user)
@@ -771,6 +772,12 @@
 	if(!altar)
 		fail("This is not an altar, the litany is useless.", user, C)
 		return FALSE
+
+	if(anti_cheat)
+		fail("Your Greed will resault in your downfall. Take your requested item, and wait your turn like the rest.", user, C)
+		return FALSE
+
+	anti_cheat = TRUE
 
 	if(altar)
 		var/response = input(user, "Which upgrade do you require?") in list("New Testament Arms Disk", "Old Testament Arms Disk", "Cancel Litany")
@@ -782,6 +789,7 @@
 				else
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
+			anti_cheat = FALSE
 			return TRUE
 		if (response == "Old Testament Arms Disk")
 			new /obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns(altar.loc)
@@ -791,10 +799,13 @@
 				else
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
+			anti_cheat = FALSE
 			return TRUE
 		if (response == "Cancel Litany")
 			fail("You decide not to obtain church artifice at this time.", user, C)
+			anti_cheat = FALSE
 			return FALSE
+	anti_cheat = FALSE
 	set_personal_cooldown(user)
 	return TRUE
 
@@ -808,6 +819,7 @@
 	cooldown_time = 120 MINUTES
 	cooldown_category = "mod_litany"
 	success_message = "On the verge of audibility you hear pleasant music, a compartment opens within the altar, a specialized upgrade sliding out."
+	var/anti_cheat = FALSE
 
 /datum/ritual/cruciform/factorial/mod_litany/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/OBJS = get_front(user)
@@ -817,6 +829,12 @@
 	if(!altar)
 		fail("This is not an altar, the litany is useless.", user, C)
 		return FALSE
+
+	if(anti_cheat)
+		fail("Your Greed will resault in your downfall. Take your requested item, and wait your turn like the rest.", user, C)
+		return FALSE
+
+	anti_cheat = TRUE
 
 	if(altar)
 		var/response = input(user, "Which upgrade do you require?") in list("Excrutiator Hyper Lens", "Overclocked Sanctifier", "Nature's Blessing", "Cleansing Presence", "Faith's Shield", "Martyr's Gift", "Wrath of God", "Speed of the Chosen", "Cancel Litany")
@@ -829,6 +847,7 @@
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
 			set_personal_cooldown(user)
+			anti_cheat = FALSE
 			return TRUE
 		if (response == "Overclocked Sanctifier")
 			new /obj/item/tool_upgrade/augment/sanctifier_plus(altar.loc)
@@ -839,6 +858,7 @@
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
 			set_personal_cooldown(user)
+			anti_cheat = FALSE
 			return TRUE
 		if (response == "Nature's Blessing")
 			new /obj/item/cruciform_upgrade/natures_blessing(altar.loc)
@@ -849,6 +869,7 @@
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
 			set_personal_cooldown(user)
+			anti_cheat = FALSE
 			return TRUE
 		if (response == "Cleansing Presence")
 			new /obj/item/cruciform_upgrade/cleansing_presence(altar.loc)
@@ -859,6 +880,7 @@
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
 			set_personal_cooldown(user)
+			anti_cheat = FALSE
 			return TRUE
 		if (response == "Faith's Shield")
 			new /obj/item/cruciform_upgrade/faiths_shield(altar.loc)
@@ -869,6 +891,7 @@
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
 			set_personal_cooldown(user)
+			anti_cheat = FALSE
 			return TRUE
 		if (response == "Martyr's Gift")
 			new /obj/item/cruciform_upgrade/martyr_gift(altar.loc)
@@ -879,6 +902,7 @@
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
 			set_personal_cooldown(user)
+			anti_cheat = FALSE
 			return TRUE
 		if (response == "Wrath of God")
 			new /obj/item/cruciform_upgrade/wrath_of_god(altar.loc)
@@ -889,6 +913,7 @@
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
 			set_personal_cooldown(user)
+			anti_cheat = FALSE
 			return TRUE
 		if (response == "Speed of the Chosen")
 			new /obj/item/cruciform_upgrade/speed_of_the_chosen(altar.loc)
@@ -899,9 +924,12 @@
 					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 					user.vessel.remove_reagent("blood",blood_cost)
 			set_personal_cooldown(user)
+			anti_cheat = FALSE
 			return TRUE
 		if (response == "Cancel Litany")
 			fail("You decide not to obtain church artifice at this time.", user, C)
+			anti_cheat = FALSE
 			return FALSE
 	set_personal_cooldown(user)
+	anti_cheat = FALSE
 	return TRUE

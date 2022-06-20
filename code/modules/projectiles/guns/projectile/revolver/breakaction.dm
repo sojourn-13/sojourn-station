@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/revolver/rev10
 	name = "\"Frontier\" magnum revolver"
 	desc = "A well made police revolver used by many departments round the universal frontier. While the design appears to predate its production by H&S it has become iconic to their company for stopping power. \
-	It appears to take .40 magnum rounds loaded via its break-action."
+	It appears to take 10mm magnum rounds loaded via its break-action."
 	icon = 'icons/obj/guns/projectile/rev10.dmi'
 	icon_state = "rev10"
 	item_state = "rev10"
@@ -54,13 +54,13 @@
 	penetration_multiplier = 1.3
 	init_recoil = HANDGUN_RECOIL(1.1)
 	zoom_factor = 0
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "H&S"
 
 /obj/item/gun/projectile/revolver/rev10/rex10/showdown
 	name = "\"Showdown\" kurtz revolver"
 	desc = "An uncommon revolver known for being an old model break action, chambered in fifty kurtz and capable of blowing a hole through a man with ease. While not exceptionally lethal as far \
-	as fifty kurtz handguns go, its ability to blow through armor thanks to its brutal design make it a favorite among those at the wrong side of a gun and the law. Chambered in .50 kurtz rounds."
+	as fifty kurtz handguns go, its ability to blow through armor thanks to its brutal design make it a favorite among those at the wrong side of a gun and the law. Chambered in 12mm rounds."
 	icon = 'icons/obj/guns/projectile/showdown.dmi'
 	icon_state = "showdown"
 	item_state = "showdown"
@@ -71,5 +71,5 @@
 	damage_multiplier = 1
 	penetration_multiplier = 1.5
 	init_recoil = HANDGUN_RECOIL(1)
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_50, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "SA" //Hand made good old gun I guess?

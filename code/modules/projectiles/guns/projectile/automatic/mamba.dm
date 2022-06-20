@@ -1,9 +1,9 @@
-////////////////////////
-//.257 Mamba, Standard//
-////////////////////////
+/////////////////////////
+//6.5mm Mamba, Standard//
+/////////////////////////
 /obj/item/gun/projectile/automatic/mamba
 	name = "\"Mamba\" carbine"
-	desc = "Produced cheaply, versatile and made for mass usage are all traits of the .257 \"Mamba\" carbine. Made by Nadezhda Marshal gunsmiths to be used in both close and mid-range combat the Mamba sports a folding adjustable stock and a holographic sight."
+	desc = "Produced cheaply, versatile and made for mass usage are all traits of the 6.5mm \"Mamba\" carbine. Made by Nadezhda Marshal gunsmiths to be used in both close and mid-range combat the Mamba sports a folding adjustable stock and a holographic sight."
 	icon_state = "mamba"
 	item_state = "mamba"
 	icon = 'icons/obj/guns/projectile/mamba.dmi'
@@ -58,11 +58,11 @@
 	update_icon()
 
 //////////////////
-//.257 Viper DMR//
+//6.5mm Viper DMR//
 //////////////////
 /obj/item/gun/projectile/automatic/mamba/viper
 	name = "\"Viper\" DMR"
-	desc = "A variant of the Nadezhda Marshal .257 \"Mamba\" carbine, the \"Viper\" is sports an adjustable recoil compensating stock, a longer barrel and an integrated smart-scope. Perfect for both medium and long range engagements."
+	desc = "A variant of the Nadezhda Marshal 6.5mm \"Mamba\" carbine, the \"Viper\" is sports an adjustable recoil compensating stock, a longer barrel and an integrated smart-scope. Perfect for both medium and long range engagements."
 	icon_state = "viper"
 	item_state = "viper"
 	matter = list(MATERIAL_PLASTEEL = 17, MATERIAL_PLASTIC = 9)
@@ -76,12 +76,12 @@
 		SEMI_AUTO_NODELAY
 		)
 
-/////////////////////////////////
-//7.5 Copperhead w/ grenade launcher//
-/////////////////////////////////
+/////////////////////////////////////////
+//7.62mm Copperhead w/ grenade launcher//
+/////////////////////////////////////////
 /obj/item/gun/projectile/automatic/mamba/copperhead
 	name = "\"Copperhead\" battle rifle"
-	desc = "The \"Copperhead\" rifle appears to be a design based off the Nadezhda Marshal's \"Mamba\" carbine, chambered in 7.5 and sporting a carry handle the Copperhead is intended both as a squad support weapon and as a battle rifle, sporting a recoil compensating stock as well as an underbarrel grenade launcher to ensure both uses."
+	desc = "The \"Copperhead\" rifle appears to be a design based off the Nadezhda Marshal's \"Mamba\" carbine, chambered in 7.62mm and sporting a carry handle the Copperhead is intended both as a squad support weapon and as a battle rifle, sporting a recoil compensating stock as well as an underbarrel grenade launcher to ensure both uses."
 	icon_state = "copperhead"
 	item_state = "copperhead"
 	icon = 'icons/obj/guns/projectile/copperhead.dmi'
@@ -145,17 +145,20 @@
 	else
 		to_chat(user, "\The [launcher] is empty.")
 
-//////////////
-//7.5 Python//
-//////////////
-/obj/item/gun/projectile/automatic/mamba/copperhead/python
+//////////////////
+//7.62mm Python//
+/////////////////
+/obj/item/gun/projectile/automatic/mamba/python
 	name = "\"Python\" heavy sniper"
-	desc = "A fine work of the Nadezhda Marshal gunsmiths is the Python, a heavy rifle with a state of the art smart scope displaying wind speeds, built in range finding, nightvision capability, and an internal stabilization system. Chambered in 7.5 for stability, the normally mediocre round punches above its weight to compete with larger caliber .408 rifles."
+	desc = "A fine work of the Nadezhda Marshal gunsmiths is the Python, a heavy rifle with a state of the art smart scope displaying wind speeds, built in range finding, nightvision capability, and an internal stabilization system. Chambered in 7.62mm for stability, the normally mediocre round punches above its weight to compete with larger 8.6x70mm rifles."
 	icon_state = "python"
 	item_state = "python"
 	icon = 'icons/obj/guns/projectile/python.dmi'
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	w_class = ITEM_SIZE_HUGE
+	slot_flags = SLOT_BACK
+	caliber = CAL_RIFLE
+	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
 	fire_delay = 15
 	damage_multiplier = 1.2
@@ -165,9 +168,10 @@
 	init_recoil = CARBINE_RECOIL(1.2)
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
+	folding_stock = FALSE
 	init_firemodes = list(
 		list(mode_name="semi-automatic", mode_desc = "A semi-automatic firemode.", mode_type = /datum/firemode/automatic, fire_delay=15, icon="auto"
 		))
 
-/obj/item/gun/projectile/automatic/mamba/copperhead/python/Initialize()
+/obj/item/gun/projectile/automatic/mamba/python/Initialize()
 	. = ..()

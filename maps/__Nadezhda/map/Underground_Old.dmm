@@ -35778,7 +35778,7 @@
 /area/nadezhda/hallway/side/f2section3)
 "bNs" = (
 /obj/structure/closet/crate/secure/weapon{
-	name = ".257 ammo crate"
+	name = "6.5mm ammo crate"
 	},
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small,
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small,

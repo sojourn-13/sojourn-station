@@ -568,7 +568,7 @@
 /obj/item/trash/mre_can,
 /obj/structure/bed/chair,
 /obj/item/gun/projectile/automatic/vintorez{
-	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.5mm Rifle rounds.";
+	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds.";
 	name = "Unmarked Vintorez silenced carbine"
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,

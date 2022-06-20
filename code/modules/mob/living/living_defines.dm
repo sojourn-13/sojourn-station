@@ -16,6 +16,8 @@
 
 	var/inventory_shown = 1
 
+	var/armor_penetration = 0 //Used for generic attacks
+
 	//Damage related vars, NOTE: THESE SHOULD ONLY BE MODIFIED BY PROCS
 	var/bruteloss = 0.0	//Brutal damage caused by brute force (punching, being clubbed by a toolbox ect... this also accounts for pressure damage)
 	var/oxyloss = 0.0	//Oxygen depravation damage (no air in lungs)

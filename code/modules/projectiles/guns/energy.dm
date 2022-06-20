@@ -27,11 +27,6 @@
 	var/charge_tick = 0
 	gun_tags = list(GUN_ENERGY)
 
-	var/overcharge_timer //Holds ref to the timer used for overcharging
-	var/overcharge_rate = 1 //Base overcharge additive rate for the gun
-	var/overcharge_level = 0 //What our current overcharge level is. Peaks at overcharge_max
-	var/overcharge_max = 10
-
 /obj/item/gun/energy/loadAmmoBestGuess()
 	var/obj/item/cell/chosenCell = null
 
@@ -176,13 +171,25 @@
 	if(disposable)
 		to_chat(usr, SPAN_WARNING("[src] is a disposable gun, it doesn't need more batteries."))
 		return
-	if(cell)
-		to_chat(usr, SPAN_WARNING("[src] is already loaded."))
-		return
+	if(istype(C, suitable_cell))
+		if(cell)
+			if(replace_item(cell, C, user))
+				cell = C
+				update_icon()
+		else if(insert_item(C, user))
+			cell = C
+			update_icon()
+	..()
 
 	if(istype(C, suitable_cell) && insert_item(C, user))
 		cell = C
 		update_icon()
+
+/obj/item/gun/energy/attack_self(mob/user)
+	if(!self_recharge && cell && cell.charge < charge_cost && eject_item(cell, user))
+		cell = null
+		update_icon()
+		return
 
 /obj/item/gun/energy/ui_data(mob/user)
 	var/list/data = ..()

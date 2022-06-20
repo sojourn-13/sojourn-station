@@ -1090,11 +1090,12 @@
 	scannable = 1
 	overdose = REAGENTS_OVERDOSE
 
-/datum/reagent/medicine/tangu_extract/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/medicine/tangu_extract/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustOxyLoss(-1.2 * effect_multiplier)
 	M.heal_organ_damage(0.6 * effect_multiplier, 0.6 * effect_multiplier)
 	M.adjustToxLoss(-0.6 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.2)
+	M.adjustHalLoss(-1)
 
 /datum/reagent/medicine/tangu_extract/overdose(var/mob/living/carbon/M, var/alien)
 	. = ..()
@@ -1114,8 +1115,9 @@
 	scannable = 1
 	metabolism = 0.02
 
-/datum/reagent/medicine/clucker_extract/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/medicine/clucker_extract/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 130, TRUE)
+	M.adjustHalLoss(-3)
 
 /datum/reagent/medicine/clucker_extract/overdose(mob/living/carbon/M, alien)
 	..()

@@ -28,7 +28,7 @@
 	ironskin.falls_mod -= 0.4
 	ironskin.brute_mod_perk -= 0.2
 	ironskin.burn_mod_perk += 0.4
-	ironskin.oxy_mod_perk  += 3 //Iron casket
+	ironskin.oxy_mod_perk  += 2 //Iron casket
 
 /datum/reagent/iron_skin_brew/on_mob_delete(mob/living/L)
 	. = ..()
@@ -40,7 +40,7 @@
 	ironskin.Paralyse(3)
 	ironskin.burn_mod_perk -= 0.4
 	ironskin.brute_mod_perk += 0.2
-	ironskin.oxy_mod_perk  -= 3
+	ironskin.oxy_mod_perk  -= 2
 
 /datum/reagent/toxin_draft
 	name = "Toxic Draft"
@@ -223,3 +223,118 @@
 		L.damage_through_armor(230, BURN, attack_flag = ARMOR_BIO)
 		return
 	L.damage_through_armor(20, BURN, attack_flag = ARMOR_BIO)
+
+/datum/reagent/mind_exspander
+	name = "Mental Salts"
+	id = "mind_exspander"
+	description = "Salts mixed with gold and tatonka milk, said to help people think clearly on tasks form gardening to scribing."
+	taste_description = "smelling salts and exspensive metal"
+	reagent_state = LIQUID //for sake of simple
+	color = "#660000"
+	scannable = 0
+	appear_in_default_catalog = FALSE
+	metabolism = 0.01
+	overdose = 1
+
+/datum/reagent/mind_exspander/overdose(mob/living/carbon/M)
+	M.adjustCloneLoss(3)
+
+/datum/reagent/mind_exspander/affect_blood(mob/living/carbon/M)
+	M.adjustToxLoss(2)
+
+/datum/reagent/mind_exspander/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, STIM_TIME, "mind_exspander")
+	M.stats.addTempStat(STAT_BIO, STAT_LEVEL_ADEPT, STIM_TIME, "mind_exspander")
+
+/datum/reagent/work_tonic
+	name = "Work Tonic"
+	id = "work_tonic"
+	description = "More of a gell then a tonic, this mix of hardy elemics makes the body able to do mechincal tasks with much more easy."
+	taste_description = "dry cheese and raw stake"
+	reagent_state = LIQUID //for sake of simple
+	color = "#660000"
+	scannable = 0
+	appear_in_default_catalog = FALSE
+	metabolism = 0.01
+	overdose = 1
+
+/datum/reagent/work_tonic/overdose(mob/living/carbon/M)
+	M.adjustCloneLoss(3)
+
+/datum/reagent/work_tonic/affect_blood(mob/living/carbon/M)
+	M.adjustToxLoss(2)
+
+/datum/reagent/work_tonic/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_EXPERT, STIM_TIME, "work_tonic")
+
+/datum/reagent/combat_brew
+	name = "Combative Brew"
+	id = "combat_brew"
+	description = "A frothy mix said to help the body withstand and deal more tramua forces to any foe."
+	taste_description = "sand with mint leafs"
+	reagent_state = LIQUID //for sake of simple
+	color = "#660000"
+	scannable = 0
+	appear_in_default_catalog = FALSE
+	metabolism = 0.1
+	overdose = 1
+
+/datum/reagent/combat_brew/overdose(mob/living/carbon/M)
+	M.adjustCloneLoss(3)
+
+/datum/reagent/combat_brew/affect_blood(mob/living/carbon/M)
+	M.adjustToxLoss(2)
+
+/datum/reagent/combat_brew/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "combat_brew")
+	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, STIM_TIME, "combat_brew")
+
+/datum/reagent/eye_lid
+	name = "Eye Closing Liquor"
+	id = "eye_lid"
+	description = "A once offten use mix to help ingore the world around them."
+	taste_description = "red wine and stale cheese"
+	reagent_state = LIQUID //for sake of simple
+	color = "#660000"
+	scannable = 0
+	appear_in_default_catalog = FALSE
+	metabolism = 0.1
+	overdose = 1
+
+/datum/reagent/eye_lid/overdose(mob/living/carbon/M)
+	M.adjustCloneLoss(3)
+
+/datum/reagent/eye_lid/affect_blood(mob/living/carbon/M)
+	M.adjustToxLoss(2)
+
+/datum/reagent/eye_lid/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, STIM_TIME, "eye_lid")
+
+/datum/reagent/red_heart
+	name = "Life Starter"
+	id = "red_heart"
+	description = "A small red dropplet of gold. Said to bring back simple pets form the dead."
+	taste_description = "zapping away your taste buds"
+	reagent_state = LIQUID //for sake of simple
+	color = "#660000"
+	scannable = 0
+	appear_in_default_catalog = FALSE
+	metabolism = 1
+	overdose = 1
+
+/datum/reagent/red_heart/overdose(mob/living/carbon/M)
+	M.adjustCloneLoss(3)
+
+/datum/reagent/red_heart/affect_blood(mob/living/carbon/M)
+	M.adjustToxLoss(20)
+
+/datum/reagent/red_heart/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	return
+
+/datum/reagent/red_heart/on_mob_add(mob/living/L)
+	. = ..()
+	if(L.stat == DEAD) //Anti-cheat so you dont inject this into a mob to deal 80% damage
+		if(!ishuman(L))
+			L.revive()
+			L.adjustToxLoss(L.get_health() * 0.8) //takes away 80% health
+			return
