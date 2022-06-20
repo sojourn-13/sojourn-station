@@ -5,7 +5,7 @@
 	initial_icon = "ripley"
 	step_in = 2
 	max_temperature = 20000
-	price_tag = 5000
+	price_tag = 10000
 	health = 500
 	wreckage = /obj/effect/decal/mecha_wreckage/ripley
 	cargo_capacity = 10
