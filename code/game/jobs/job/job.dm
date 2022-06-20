@@ -104,14 +104,22 @@
 		var/datum/department/selectedDept = GLOB.all_departments[counter]
 			to_chat(world, SPAN_DANGER("selectedDept is [selectedDept] and there is [SSjob.JobTimeCheck(target.ckey,selectedDept.jobs_in_department)] minutes played"))
 
-		if (SSjob.JobTimeCheck(target.ckey,selectedDept.jobs_in_department) > 1200)
-			experiencedDepts += list(selectedDept.id)
+		if (SSjob.JobTimeCheck(target.ckey,selectedDept.jobs_in_department) > 1200)     ////// AMOUNT OF TIME UNTIL THE PLAYER BECOMES EXPERIENCED
+		//	experiencedDepts += list(selectedDept.id)
 			to_chat(world, SPAN_DANGER("YAY for [selectedDept] being experienced!"))
 
-	if (DEPARTMENT_PROSPECTOR in experiencedDepts)
-		to_chat(world, SPAN_DANGER("Double YAY!"))
-		perks.Add(/datum/perk/ProspExperience)
-
+			var/list/paths = subtypesof(/datum/perk/experienced)
+			for (var/T in paths)
+				var/datum/perk/experienced/pathCheck = new T
+				to_chat(world, SPAN_DANGER("[pathCheck.dept] == [selectedDept.id] && [pathCheck.subPerk]"))
+				if ((pathCheck.dept == selectedDept.id) && (!pathCheck.subPerk))
+					perks += list(pathCheck.type)
+/*
+	for (var/counter in GLOB.all_departments)
+		if (counter in experiencedDepts)
+			to_chat(world, SPAN_DANGER("Double YAY!"))
+			perks += list("datum/perk/experienced/[counter]")
+*/
 /datum/job/proc/add_additiional_language(var/mob/living/carbon/human/target)
 	if(!ishuman(target))
 		return FALSE
