@@ -403,7 +403,7 @@
 		else if(selected.is_melee())
 			selected.action(target)
 	else
-		if(istype(target, /obj/machinery))
+		if(istype(target, /obj/machinery) && target.Adjacent(src) && occupant?.a_intent != I_HURT)
 			interface_action(target)
 		src.melee_action(target)
 	return
