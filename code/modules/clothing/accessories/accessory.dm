@@ -1231,12 +1231,6 @@
 	icon_state = "passcard_thalatta"
 	item_state = "pass"
 
-/obj/item/clothing/accessory/passcard/wanderers_armada
-	name = "Wanderers Armada passcard"
-	desc = "A passcard issued to the crew and passengers of the Wanderer's Armada. The Wanderer's Armada is a flotilla of repurposed ships, ranging from small corvettes to the largest Dreadnought that began the Armada. While the size of this fleet rivals certain Federation fleets, they visit each system and recruit those that wish to join them."
-	icon_state = "passcard_wanderers_armada"
-	item_state = "badge"
-
 /obj/item/clothing/accessory/passcard/onkarth
 	name = "Onkarth passcard"
 	desc = "A passcard issued to citizens of Onkarth, the homeworld of the Sablekyne, a primarily desert planet of extreme conditions along the equator and northern fringes of civilization."
