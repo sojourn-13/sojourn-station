@@ -18513,10 +18513,11 @@
 /obj/structure/table/standard,
 /obj/item/storage/briefcase,
 /obj/item/tool/crowbar,
-/obj/machinery/firealarm{
-	pixel_y = 28
-	},
 /obj/machinery/camera/network/colony_underground,
+/obj/machinery/power/wall_obelisk{
+	pixel_y = 24;
+	pixel_x = 1
+	},
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "dHM" = (
@@ -36645,7 +36646,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/power/wall_obelisk{
+/obj/machinery/alarm{
 	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/dark/cyancorner,
@@ -66872,6 +66873,9 @@
 	pixel_x = 17;
 	pixel_y = 24
 	},
+/obj/machinery/alarm{
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "mMD" = (
@@ -67608,14 +67612,6 @@
 /obj/random/melee,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/maintenance/undergroundfloor1west)
-"mUw" = (
-/obj/structure/closet/secure_closet/personal,
-/obj/machinery/power/wall_obelisk{
-	pixel_x = 17;
-	pixel_y = 24
-	},
-/turf/simulated/floor/tiled/dark/cyancorner,
-/area/nadezhda/crew_quarters/sleep/cryo2)
 "mUy" = (
 /obj/structure/grille{
 	desc = "Keeps the ruffians out. Hopefully.";
@@ -104616,16 +104612,10 @@
 /turf/simulated/floor/wood/wild4,
 /area/colony)
 "tYS" = (
-/obj/structure/cryofeed{
-	dir = 4;
-	icon_state = "cryo_rear";
-	tag = "icon-cryo_rear (EAST)"
+/obj/machinery/alarm{
+	pixel_y = 24
 	},
-/obj/machinery/power/wall_obelisk{
-	pixel_x = 17;
-	pixel_y = -42
-	},
-/turf/simulated/floor/tiled/steel/techfloor_grid,
+/turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "tYT" = (
 /obj/structure/catwalk,
@@ -118656,8 +118646,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/power/wall_obelisk{
-	pixel_y = 24
+/obj/machinery/firealarm{
+	pixel_y = 28
 	},
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
@@ -120335,14 +120325,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai_upload)
-"wVm" = (
-/obj/structure/closet/secure_closet/personal,
-/obj/machinery/power/wall_obelisk{
-	pixel_x = 17;
-	pixel_y = -42
-	},
-/turf/simulated/floor/tiled/dark/cyancorner,
-/area/nadezhda/crew_quarters/sleep/cryo2)
 "wVp" = (
 /obj/structure/multiz/stairs/active/bottom{
 	dir = 1
@@ -135304,12 +135286,12 @@ cjP
 cjP
 cjP
 hfy
-mUw
+dxk
 mGF
 aDa
 aDa
 mGF
-wVm
+dxk
 hfy
 cjP
 hfy
@@ -137117,7 +137099,7 @@ bgD
 hfy
 gzB
 gzB
-fKq
+tYS
 mkj
 fKq
 rJh
@@ -137331,7 +137313,7 @@ aDa
 aZr
 ehF
 ydY
-tYS
+ehF
 hfy
 jxQ
 tOb
@@ -137937,7 +137919,7 @@ aDa
 rNn
 ehF
 aDa
-tYS
+ehF
 hfy
 ayY
 mFK
