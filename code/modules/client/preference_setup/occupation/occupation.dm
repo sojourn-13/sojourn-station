@@ -154,7 +154,7 @@
 			. += "<a href='?src=\ref[src];set_skills=[rank]'><font color=grey>[rank]</font></a></td><td></td></tr>"
 			continue
 		if(bad_message)
-			. += "<a href='?src=\ref[src];set_skills=[rank]'><del>[rank]</del></a></td><td><font color=red>[bad_message]</font></td></tr>"
+			. += "<a href='?src=\ref[src];set_skills=[rank]'><del>[rank]</del></a></td><td><font color=black>[bad_message]</font></td></tr>"
 			continue
 
 //		if (!(SSjob.JobTimeAutoCheck(C.ckey, "[type]", "[job]", 300)) && (job.noob_name))     // If PLAYER is less than five hours of experience in role, force Noob name on him.

@@ -328,7 +328,7 @@ SUBSYSTEM_DEF(job)
 			for(var/datum/gear/G in spawn_in_storage)
 				G.spawn_in_storage_or_drop(H, H.client.prefs.Gear()[G.display_name])
 
-		job.finalTweaks(H)
+		//job.finalTweaks(H) //Uncomment to turn on various tweaks to character creation.
 		job.add_stats(H)
 
 
@@ -442,7 +442,6 @@ SUBSYSTEM_DEF(job)
 			if(G)
 				var/permitted = 1
 				if(permitted)
-
 			/*
 					var/cheater = FALSE
 					var/datum/perk/experienced/selectedPerk
@@ -465,8 +464,7 @@ SUBSYSTEM_DEF(job)
 
 			*/
 					if(G.allowed_roles)
-						if(job.title in G.allowed_roles)
-						if((job.title in G.allowed_roles)// || (cheater))		// This too.
+						if(job.title in G.allowed_roles)// || (cheater))		// The cheater var too.
 							permitted = 1
 						else
 							permitted = 0
