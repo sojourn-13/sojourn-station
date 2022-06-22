@@ -19,22 +19,46 @@
 			list_to_return += thing
 	return list_to_return*/
 
-/mob/living/carbon/superior_animal/proc/findTarget()
+/mob/living/carbon/superior_animal/proc/findTarget(prioritizeCurrent = FALSE)
+
+	if (prioritizeCurrent)
+		if (target_mob)
+			if (prob(retarget_chance))
+				return //if we already have a target_mob and we want to not untarget, lets just return
+
 	var/list/filteredTargets = list()
 
 	var/turf/our_turf = get_turf(src)
 	if (our_turf) //If we're not in anything, continue
 		for(var/mob/living/target_mob in hearers(src, viewRange))
 			if (isValidAttackTarget(target_mob))
-				if(target_mob.target_dummy) //Target me over anyone else
+				if(target_mob.target_dummy && prioritize_dummies) //Target me over anyone else
 					return target_mob
 				filteredTargets += target_mob
 
-	for (var/obj/mecha/M in GLOB.mechas_list)
-		if ((M.z == src.z) && (get_dist(src, M) <= viewRange) && isValidAttackTarget(M))
-			filteredTargets += M
+		for (var/obj/mecha/M in GLOB.mechas_list)
+			if ((M.z == src.z) && (get_dist(src, M) <= viewRange) && isValidAttackTarget(M))
+				filteredTargets += M
 
-	return safepick(nearestObjectsInList(filteredTargets, src, acceptableTargetDistance))
+	var/filteredTarget = safepick(getTargets(filteredTargets, src))
+
+	if ((filteredTarget != target_mob) && filteredTarget)
+		doTargetMessage()
+
+	return filteredTarget
+
+/// Returns a list of objects, using a method dependant on the prioritization_type var of the mob.
+/mob/living/carbon/superior_animal/proc/getTargets(list/L, sourceLocation)
+	if (L.len == 1)
+		return L.Copy()
+
+	switch(prioritization_type)
+		if (RANDOM)
+			return L
+		if (CLOSEST)
+			return getClosestObjects(L, sourceLocation, viewRange)
+		if (FURTHEST)
+			return getFurthestObjects(L, sourceLocation, viewRange)
 
 /mob/living/carbon/superior_animal/proc/attemptAttackOnTarget()
 	var/atom/targetted_mob = (target_mob?.resolve())
@@ -75,8 +99,11 @@
 		walk(src, 0)
 	fire_delay = fire_delay_initial
 	melee_delay = melee_delay_initial
+	patience = patience_initial
+	retarget_timer = retarget_timer_initial
 	target_mob = null
 	stance = HOSTILE_STANCE_IDLE
+	lost_sight = FALSE
 
 /mob/living/carbon/superior_animal/proc/isValidAttackTarget(var/atom/O)
 

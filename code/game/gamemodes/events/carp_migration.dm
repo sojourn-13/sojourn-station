@@ -61,7 +61,8 @@
 	var/list/spawn_locations = pickweight_mult(viable_turfs, number)
 
 	for(var/turf/T in spawn_locations)
-		spawned_carp.Add(new /obj/random/mob/carp(T))
+		if(prob(50)) //coin flip to spawn the carp or not, should still always have a few but not a hoard
+			spawned_carp.Add(new /obj/random/mob/carp(T))
 
 /datum/event/carp_migration/end()
 	for(var/mob/living/simple_animal/hostile/C in spawned_carp)

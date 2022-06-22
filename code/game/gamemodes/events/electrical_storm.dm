@@ -1,3 +1,7 @@
+/*
+
+Just not fun
+
 /datum/storyevent/electrical_storm
 	id = "elec_storm"
 	name = "Electrical Storm"
@@ -10,7 +14,7 @@
 	ocurrences_max = 2 //Can only do this twice as its more annoying then fun
 
 	tags = list(TAG_SCARY, TAG_TARGETED, TAG_NEGATIVE)
-
+*/
 ////////////////////////////////////////////////
 
 /datum/event/electrical_storm

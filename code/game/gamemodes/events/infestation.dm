@@ -25,6 +25,7 @@ It focuses on spawning large numbers of moderate-to-weak monsters, and includes 
 #define INFESTATION_SPIDERLINGS "spiderlings"
 #define INFESTATION_SPIDERS "spider"
 #define INFESTATION_ROACHES "large insects"
+#define INFESTATION_TERMIE "large borrowing insects"
 #define INFESTATION_HIVEBOTS "ancient synthetics"
 #define INFESTATION_SLIMES "slimes"
 #define INFESTATION_YITHIAN "yithian"
@@ -172,6 +173,7 @@ It focuses on spawning large numbers of moderate-to-weak monsters, and includes 
 			chosen_verb = "have burrowed into"
 			chosen_mob_classification[/obj/effect/spider/spiderling] = 1
 			chosen_mob_classification[/obj/effect/spider/eggcluster] = 0.2
+			chosen_mob_classification[/obj/structure/spider_nest] = 0.1
 		if(INFESTATION_SPIDERS)
 			event_name = "Spider Infestation"
 			chosen_verb = "have burrowed into"
@@ -180,6 +182,10 @@ It focuses on spawning large numbers of moderate-to-weak monsters, and includes 
 			event_name = "Giant Roach Infestation"
 			chosen_verb = "have burrowed into"
 			chosen_mob_classification += /obj/random/mob/roaches
+		if(INFESTATION_TERMIE)
+			event_name = "Giant Termite Infestation"
+			chosen_verb = "have burrowed into"
+			chosen_mob_classification += /obj/random/mob/termite_no_despawn
 		if(INFESTATION_YITHIAN)
 			unidentified = TRUE
 			chosen_mob_classification += /mob/living/simple_animal/yithian

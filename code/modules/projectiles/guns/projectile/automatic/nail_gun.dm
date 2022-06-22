@@ -14,7 +14,7 @@
 	mag_well = MAG_WELL_STANMAG
 	auto_eject = TRUE
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 25, MATERIAL_PLATINUM = 20)
-	price_tag = 2500
+	price_tag = 2000
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'

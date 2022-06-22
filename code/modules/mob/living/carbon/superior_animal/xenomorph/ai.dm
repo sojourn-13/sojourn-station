@@ -1,8 +1,7 @@
-/mob/living/carbon/superior_animal/xenomorph/findTarget()
+/mob/living/carbon/superior_animal/xenomorph/doTargetMessage()
 	. = ..()
-	if(.)
-		//visible_emote("charges at [.]!") //commented out to reduce chat lag
-		playsound(src.loc, list('sound/xenomorph/alien_growl1.ogg', 'sound/xenomorph/alien_growl2.ogg', 'sound/xenomorph/alien_growl3.ogg', 'sound/xenomorph/alien_hiss1.ogg', 'sound/xenomorph/alien_hiss2.ogg', 'sound/xenomorph/alien_hiss3.ogg'), 120, 1)
+
+	playsound(src.loc, list('sound/xenomorph/alien_growl1.ogg', 'sound/xenomorph/alien_growl2.ogg', 'sound/xenomorph/alien_growl3.ogg', 'sound/xenomorph/alien_hiss1.ogg', 'sound/xenomorph/alien_hiss2.ogg', 'sound/xenomorph/alien_hiss3.ogg'), 120, 1)
 
 /mob/living/carbon/superior_animal/xenomorph/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)

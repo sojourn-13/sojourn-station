@@ -42,7 +42,7 @@
 	mag_well = MAG_WELL_RIFLE
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10)
-	price_tag = 750
+	price_tag = 800
 	zoom_factor = 0.8
 	damage_multiplier = 1 //Little bit better Strelki
 	extra_damage_mult_scoped = 0.3
@@ -67,7 +67,7 @@
 	mag_well = MAG_WELL_RIFLE
 	gun_tags = list(GUN_PROJECTILE)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_WOOD = 10)
-	price_tag = 750
+	price_tag = 700
 	zoom_factor = 0.6
 	damage_multiplier = 0.9
 	extra_damage_mult_scoped = 0.3

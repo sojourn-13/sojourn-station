@@ -14,7 +14,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 28, MATERIAL_PLASTIC = 10)
-	price_tag = 1500
+	price_tag = 1000
 	penetration_multiplier = 1.2
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
@@ -54,7 +54,7 @@
 	item_state = "ppv"
 	mag_well = MAG_WELL_SMG|MAG_WELL_DRUM
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
-	price_tag = 1200
+	price_tag = 800
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.0
 	init_recoil = SMG_RECOIL(1.3)

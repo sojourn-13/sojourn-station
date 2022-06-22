@@ -17,7 +17,7 @@
 	var/reload = 1
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
-	price_tag = 1200 //gives tactical advantage with beanbags, but consumes more ammo and hits less harder with lethal ammo, so Gladstone or Regulator would be better for lethal takedowns in general
+	price_tag = 1000
 	damage_multiplier = 0.75
 	penetration_multiplier = 0.75
 	init_recoil = RIFLE_RECOIL(1.8)
@@ -41,7 +41,7 @@
 	item_state = "PW"
 	max_shells = 8
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10)
-	price_tag = 1750
+	price_tag = 1500
 	damage_multiplier = 0.85
 	penetration_multiplier = 0.85
 	init_recoil = RIFLE_RECOIL(1.6)

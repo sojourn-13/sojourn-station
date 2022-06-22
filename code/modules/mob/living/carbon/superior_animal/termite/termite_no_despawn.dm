@@ -1,6 +1,6 @@
 
 /mob/living/carbon/superior_animal/termite_no_despawn
-	name = "termite"
+	name = "Pekhota termite"
 	desc = "A termite, the earth and wood eaters of the colony. Hide your hard-wood kitchen floors and nick-nacks!"
 	icon = 'icons/mob/40x40.dmi' // Sprites made by Polyushko#0323
 	icon_state = "rabochiy_termite"
@@ -54,7 +54,7 @@
 
 //Iron Termite - melee, low health, decent damage
 /mob/living/carbon/superior_animal/termite_no_despawn/iron
-	name = "worker termite"
+	name = "Pomoshchnik termite"
 	desc = "A termite that does the hard labor and odd-jobs around its colony. Jeez.. even termites have assistants."
 	icon_state = "rabochiy_termite" // Sprites made by Polyushko#0323
 	icon_dead = "rabochiy_gore"
@@ -82,7 +82,7 @@
 
 //Silver Termite - melee, slow, high-damage
 /mob/living/carbon/superior_animal/termite_no_despawn/silver
-	name = "warrior termite"
+	name = "Pushka termite"
 	desc = "A larger, scarier termite for when trouble abrews."
 	icon_state = "pekhota_termite" // Sprites made by Polyushko#0323
 	icon_dead = "pekhota_gore"
@@ -108,7 +108,7 @@
 
 //Uranium Termite - ranged, slow, med-health, low damage
 /mob/living/carbon/superior_animal/termite_no_despawn/uranium
-	name = "miner termite"
+	name = "Smertnik termite"
 	desc = "A miner termite that has been hardened by the very surface beneath your feet."
 	icon_state = "smertnik_termite" // Sprites made by Polyushko#0323
 	icon_dead = "smertnik_gore_exploded"
@@ -138,7 +138,7 @@
 
 //Plasma Termite - melee, fast, med-damage
 /mob/living/carbon/superior_animal/termite_no_despawn/plasma
-	name = "warrior termite"
+	name = "Kop'ye termite"
 	desc = "A larger, scarier termite for when trouble abrews."
 	icon_state = "pushka_termite" // Sprites made by Polyushko#0323
 	icon_dead = "pushka_gore"
@@ -164,8 +164,8 @@
 
 //Diamond Wurm - melee, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite_no_despawn/diamond
-	name = "termite crusher"
-	desc = "A huge termite that specializes in crushing rocks. And heads."
+	name = "Koroleva termite"
+	desc = "A huge termite the queen of a local brew ready to crush anything it perseeves as a threat to its hive."
 	icon = 'icons/mob/mobs-termite.dmi' // Sprites made by Polyushko#0323
 	icon_state = "koroleva_termite"
 	icon_dead = "koroleva_gore"
@@ -192,7 +192,7 @@
 
 //Osmium Termite - melee, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite_no_despawn/osmium
-	name = "termite king"
+	name = "Korol termite"
 	desc = "A king termite ready to defend and slay for his queen."
 	icon = 'icons/mob/mobs-termite.dmi' // Sprites made by Polyushko#0323
 	icon_state = "koroleva_termite"

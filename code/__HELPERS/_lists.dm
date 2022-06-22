@@ -523,6 +523,67 @@
 
 	return nearestObjects
 
+/**
+ *	Returns a list of the closest objects, relative to sourceLocation, and only the closest objects.
+ *	Ex. if objects 1 and 2 are 3 tiles away, and object 4 is 5, only objects 1 and 2 will be returned.
+ *
+ *	Args:
+ *	L: A given list.
+ *	sourceLocation: What our search will be relative towards.
+ *	maxRange: Anything further away than this distance, in tiles, will be disregarded.
+ *	minRange: Anything closer than this distance, in tiles, will be disregarded.
+**/
+/proc/getClosestObjects(list/L, sourceLocation, maxRange = INFINITY, minRange = 0)
+	if (L.len == 1)
+		return L
+
+	var/list/nearestObjects = list()
+	var/shortestDistance = INFINITY
+	for (var/object in L)
+		var/distance = get_dist(sourceLocation, object)
+
+		if (distance > shortestDistance)
+			continue
+
+		if ((distance > maxRange) || (distance < minRange))
+			continue
+
+		if (distance < shortestDistance)
+			shortestDistance = distance
+			nearestObjects.Cut()
+			nearestObjects += object
+
+		else if (distance == shortestDistance)
+			nearestObjects += object
+
+	return nearestObjects
+
+/// [/proc/getClosestObjects], but for the furthest objects.
+/proc/getFurthestObjects(list/L, sourceLocation, maxRange = INFINITY, minRange = 0)
+	if (L.len == 1)
+		return L
+
+	var/list/furthestObjects = list()
+	var/furthestDistance = 0
+	for (var/object in L)
+		var/distance = get_dist(sourceLocation, object)
+
+		if (distance < furthestDistance)
+			continue
+
+		if ((distance > maxRange) || (distance < minRange))
+			continue
+
+		if (distance > furthestDistance)
+			furthestDistance = distance
+			furthestObjects.Cut()
+			furthestObjects += object
+
+		else if (distance == furthestDistance)
+			furthestObjects += object
+
+	return furthestObjects
+
 // Macros to test for bits in a bitfield. Note, that this is for use with indexes, not bit-masks!
 #define BITTEST(bitfield, index)  ((bitfield)  &   (1 << (index)))
 #define BITSET(bitfield, index)   (bitfield)  |=  (1 << (index))

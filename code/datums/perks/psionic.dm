@@ -7,16 +7,12 @@
 
 /datum/perk/psion/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk *= 1.2
-	holder.burn_mod_perk *= 1.2
-	holder.oxy_mod_perk *= 1.2
-	holder.toxin_mod_perk *= 1.2
+	holder.maxHealth -=20
+	holder.health -=20
 
 /datum/perk/psion/remove()
-	holder.brute_mod_perk /= 1.2
-	holder.burn_mod_perk /= 1.2
-	holder.oxy_mod_perk /= 1.2
-	holder.toxin_mod_perk /= 1.2
+	holder.maxHealth +=20
+	holder.health +=20
 	..()
 
 /datum/perk/psi_mania
