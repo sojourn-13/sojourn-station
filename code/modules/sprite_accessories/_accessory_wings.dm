@@ -21,7 +21,7 @@
 	name = "Bat Wings"
 	desc = ""
 	icon_state = "bat"
-	colored_layers = 1
+	colored_layers = 2
 
 /datum/sprite_accessory/wings/bee
 	name = "Bee Wings"

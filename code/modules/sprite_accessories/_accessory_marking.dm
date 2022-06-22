@@ -254,6 +254,11 @@
 		icon_state = "fangs"
 		body_parts = list(BP_HEAD)
 
+	fangskriosan
+		name = "Fangs (Kriosan/Vulpkanin)"
+		icon_state = "fangskriosan"
+		body_parts = list(BP_HEAD)
+
 	eboop_panels
 		name = "FBP panels"
 		icon_state = "eboop"
@@ -812,6 +817,12 @@
 	vulp_nose
 		name = "Vulp Nose"
 		icon_state = "vulp_nose"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
+	bat_nose
+		name = "Bat Nose"
+		icon_state = "bat_nose"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
 
