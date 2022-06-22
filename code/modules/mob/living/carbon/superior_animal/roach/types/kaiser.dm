@@ -43,11 +43,18 @@ Has ability of every roach.
 	meat_amount = 15
 	sanity_damage = 3
 
-	ranged = 1 // RUN, COWARD!
+	ranged = TRUE // RUN, COWARD!
+	limited_ammo = TRUE //Do we run out of ammo?
+	rounds_left = 2 //We get 2 shots then go for melee, this makes us a threat
 	projectiletype = /obj/item/projectile/roach_spit/large
 	fire_verb = "spits glowing bile"
 
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
+
+/mob/living/carbon/superior_animal/roach/kaiser/getTargets()
+	..()
+	rounds_left = 2 //Reload us, after all we are now targeting someone new
+	ranged = TRUE //Were reloaded we can be ranged once more
 
 /mob/living/carbon/superior_animal/roach/kaiser/New()
 	..()

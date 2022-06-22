@@ -11,6 +11,7 @@
 #define JOBS_NONHUMAN "AI","Robot","pAI"
 #define JOBS_INDEPENDENT "Lodge Hunt Master","Lodge Hunter","Lodge Herbalist","Outsider"
 
+#define JOBS_ANTI_HIVEMIND "Blackshield Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer","Sergeant","Prime","Vector","Foreman","Salvager","Prospector","Premier","Steward","AI","Janitor","Soteria Trauma Team","Soteria Roboticist","Lonestar Miner"
 
 #define CREDITS "&cent;"
 #define CREDS "&cent;"
