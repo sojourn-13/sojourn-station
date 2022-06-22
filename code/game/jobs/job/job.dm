@@ -124,7 +124,6 @@
 	var/list/paths = subtypesof(/datum/perk/experienced)
 	for (var/T in paths)
 		var/datum/perk/experienced/pathCheck = new T
-	//	to_chat(world, SPAN_DANGER("[pathCheck.dept] == [selectedDept.id] && [pathCheck.subPerk]"))
 		if ((!pathCheck.subPerk) && ((pathCheck.dept == topDept.id) || (pathCheck.dept == secondDept.id)))
 			perks += list(pathCheck.type)
 

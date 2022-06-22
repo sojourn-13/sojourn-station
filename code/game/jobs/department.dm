@@ -148,7 +148,7 @@
 	active = FALSE
 	passivePerk = FALSE
 	var/subPerk = FALSE
-	var/dept
+	var/datum/department/dept
 
 
 

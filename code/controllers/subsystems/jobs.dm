@@ -442,8 +442,31 @@ SUBSYSTEM_DEF(job)
 			if(G)
 				var/permitted = 1
 				if(permitted)
+
+			/*
+					var/cheater = FALSE
+					var/datum/perk/experienced/selectedPerk
+					var/datum/department/experiencedDepartment
+					for(var/datum/perk/experienced/counter in H.stats.perks)
+						if (istype(counter,/datum/perk/experienced))
+							selectedPerk = counter
+							if (selectedPerk.dept)
+								var/list/paths = subtypesof(/datum/department)									// This chunk of code works with Experienced Perks (if implemented)
+								for (var/Q in paths)															// so that Experienced Perks mean bringing in outside items from other departments
+									var/datum/department/checker = new Q										// Uncomment when those are implemented
+									if (istype(checker,/datum/department))
+										if (checker.id)
+											if (checker.id == selectedPerk.dept)
+												experiencedDepartment = checker
+												for (var/X in experiencedDepartment.jobs_in_department)
+													var/datum/job/J = new X
+													if (J.title in G.allowed_roles)
+														cheater = TRUE
+
+			*/
 					if(G.allowed_roles)
 						if(job.title in G.allowed_roles)
+						if((job.title in G.allowed_roles)// || (cheater))		// This too.
 							permitted = 1
 						else
 							permitted = 0
