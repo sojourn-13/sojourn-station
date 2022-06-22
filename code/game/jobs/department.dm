@@ -168,7 +168,12 @@
 		holder.stats.addPerk(choice.type)
 	holder.stats.removePerk(type)
 
-
+///////////////////////////////
+//EXPERIENCED PERKS
+//
+//When the base Department perk is clicked, it will search all subtypes of the /datum/perk/experienced/<<DEPARTMENT>>/ folder for all subperks of that particular kind.
+//It will then present an input choice list as to what "Sub-Perk" they would like to choose for being experienced.
+//////////////////////////////
 
 
 /datum/perk/experienced/Prospector

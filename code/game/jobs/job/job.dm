@@ -69,8 +69,8 @@
 
 /datum/job/proc/equip(var/mob/living/carbon/human/H, var/alt_title)
 	var/decl/hierarchy/outfit/outfit = get_outfit() // Put alt_title in get_outfit() in order to turn on alternative name outfits.
-	if(!outfit)
-		return FALSE
+	if(!outfit)										// in order to code in a custom outfit, make a subtype of the base job's outfit, then have that alternate name equal the alt path.
+		return FALSE								// Pleas see Medical Doctors for an example.
 	. = outfit.equip(H, title, alt_title)
 
 /datum/job/proc/get_outfit(var/alt_title)
@@ -93,7 +93,6 @@
 	return TRUE
 
 /datum/job/proc/finalTweaks(var/mob/living/carbon/human/target)
-	var/datum/department/list/experiencedDepts
 	var/datum/department/topDept
 	var/datum/department/secondDept
 	if (!istype(target))
@@ -106,7 +105,6 @@
 		var/datum/department/selectedDept = GLOB.all_departments[counter]
 
 		if ((SSjob.JobTimeCheck(target.ckey,selectedDept.jobs_in_department)) > 1200)     ////// AMOUNT OF TIME UNTIL THE PLAYER BECOMES EXPERIENCED
-			experiencedDepts += list(selectedDept)
 			if (!topDept)
 				topDept = selectedDept
 			else
