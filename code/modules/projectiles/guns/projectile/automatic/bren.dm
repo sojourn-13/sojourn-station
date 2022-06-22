@@ -13,7 +13,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 3, MATERIAL_WOOD = 12)
-	price_tag = 1100
+	price_tag = 900
 	damage_multiplier = 0.9
 	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'

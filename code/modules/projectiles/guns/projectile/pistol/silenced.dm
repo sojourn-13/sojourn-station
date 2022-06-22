@@ -10,7 +10,7 @@
 	silenced = TRUE
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
-	price_tag = 750
+	price_tag = 800
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	proj_step_multiplier = 0.8

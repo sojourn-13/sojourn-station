@@ -11,7 +11,7 @@
 	max_shells = 7 //Same as the gladstone
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
-	price_tag = 1250
+	price_tag = 1500
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.3
 	init_recoil = RIFLE_RECOIL(0.6)

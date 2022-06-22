@@ -9,7 +9,7 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 6)
 	mag_well = MAG_WELL_STANMAG
 	caliber = CAL_LRIFLE
-	price_tag = 1250
+	price_tag = 1100
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.2
 	init_recoil = CARBINE_RECOIL(1.1)

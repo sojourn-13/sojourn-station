@@ -24,6 +24,7 @@
 	item_state = "colt"
 	caliber = CAL_PISTOL
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
+	price_tag = 500
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 5)
@@ -41,7 +42,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 8)
-	price_tag = 900
+	price_tag = 550
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
@@ -66,7 +67,7 @@
 	icon_state = "liberty"
 	item_state = "liberty"
 	caliber = CAL_MAGNUM
-	price_tag = 750
+	price_tag = 650
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.3

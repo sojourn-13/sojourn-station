@@ -14,7 +14,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
-	price_tag = 1500
+	price_tag = 1000
 	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
@@ -88,7 +88,7 @@
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10, MATERIAL_GOLD = 5)
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_MAGNET = 3, TECH_POWER = 5)
-	price_tag = 2000
+	price_tag = 1500
 	init_recoil = RIFLE_RECOIL(0.4)
 	damage_multiplier = 1.2 //We hold less ammo but deal about the same damage
 	saw_off = FALSE
@@ -110,7 +110,7 @@
 	icon_state = "AK"
 	item_state = "AK"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
-	price_tag = 1200
+	price_tag = 900
 	init_recoil = RIFLE_RECOIL(0.9)
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	saw_off = TRUE
@@ -128,7 +128,7 @@
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
-	price_tag = 850
+	price_tag = 800
 	init_recoil = RIFLE_RECOIL(1)
 	damage_multiplier = 1
 	saw_off = FALSE

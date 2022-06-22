@@ -12,7 +12,7 @@
 	projectile_type = /obj/item/projectile/beam
 	fire_delay = 10 //old technology
 	charge_cost = 50
-	price_tag = 900
+	price_tag = 800
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
 		WEAPON_NORMAL,
