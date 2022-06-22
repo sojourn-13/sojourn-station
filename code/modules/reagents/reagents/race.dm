@@ -15,8 +15,8 @@
 	scannable = 1
 
 /datum/reagent/medicine/sabledone/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 10000, TRUE)
-	M.apply_effect(-200, AGONY, 0)
+	M.add_chemical_effect(CE_PAINKILLER, 200, TRUE)
+	M.apply_effect(-50, AGONY, 0)
 
 /datum/reagent/stim/marquatol
 	name = "Marquatol"

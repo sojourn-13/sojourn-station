@@ -882,7 +882,10 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/mechiver/proc/destroy_passenger()
-	qdel(passenger)
+	if(GLOB.hive_data_bool["gibbing_dead"])
+		qdel(passenger)
+	else
+		release_passenger(TRUE) //HAS to be true or we do an endless loop!
 	passenger = null
 
 

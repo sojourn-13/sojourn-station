@@ -13,7 +13,7 @@
 	auto_eject = 1
 	can_dual = TRUE
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)
-	price_tag = 1500 //good smg with normal recoil and silencer possibility
+	price_tag = 750
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	damage_multiplier = 0.9
 	init_recoil = SMG_RECOIL(1.1)

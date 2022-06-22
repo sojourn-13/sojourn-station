@@ -39,7 +39,7 @@
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
 	charge_cost = 400
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 8)
-	price_tag = 1400
+	price_tag = 1250
 	projectile_type = /obj/item/projectile/ion
 	init_recoil = CARBINE_RECOIL(1)
 	twohanded = FALSE

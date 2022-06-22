@@ -13,7 +13,6 @@
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
 	outfit_type = /decl/hierarchy/outfit/job/medical/cmo
-	health_modifier = -10
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_genetics, access_heads,
@@ -76,7 +75,6 @@
 	noob_name = "Soteria Medical Student"
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
 	department_account_access = TRUE
-	health_modifier = -15
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
@@ -179,7 +177,6 @@
 	selection_color = "#a8b69a"
 	alt_titles = list("Soteria Psychologist", "Soteria Empath")
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
-	health_modifier = -15
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits
 	)

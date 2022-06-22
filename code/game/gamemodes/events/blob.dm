@@ -20,7 +20,7 @@
 //============================================
 
 /datum/event/blob
-	announceWhen	= 12
+	announceWhen	= 6
 
 	var/obj/effect/blob/core/Blob
 

@@ -3,6 +3,11 @@
 #define UNCONSCIOUS 1
 #define DEAD        2
 
+// Target prioritization defines.
+#define RANDOM 		0
+#define CLOSEST 	1
+#define FURTHEST 	2
+
 // Bitflags defining which status effects could be or are inflicted on a mob.
 #define CANSTUN     0x1
 #define CANWEAKEN   0x2

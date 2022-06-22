@@ -329,9 +329,15 @@
 		//human bodies
 		if(ishuman(subject))
 			var/mob/living/L = subject
+
+			if(GLOB.hive_data_bool["gibbing_dead"])
+			//We we dont touch the dead via are controler we dont want to pk people form the round
+				return
+
 			//if our target has cruciform, let's just leave it
 			if(is_neotheology_disciple(L))
 				return
+
 			for(var/obj/item/W in L)
 				L.drop_from_inventory(W)
 			var/M = pick(/mob/living/simple_animal/hostile/hivemind/himan, /mob/living/simple_animal/hostile/hivemind/phaser)

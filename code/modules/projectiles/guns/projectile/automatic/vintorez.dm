@@ -1,5 +1,5 @@
 /obj/item/gun/projectile/automatic/vintorez
-	name = "Excelsior \"Vintorez\" silenced carbine"
+	name = "Excelsior \"Vintorez\" silenced rifle"
 	desc = "\"We have no compassion and we ask no compassion from you. When our turn comes, we shall not make excuses for the terror.\"\
 	A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/vintorez.dmi'
@@ -13,7 +13,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE //need a new magwell type?
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 5)
-	price_tag = 2000
+	price_tag = 1125
 	zoom_factor = 0.8 // double as IH_heavy
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.2
@@ -29,7 +29,7 @@
 	serial_type = "EXC"
 
 /obj/item/gun/projectile/automatic/vintorez/NM_colony
-	name = "\"Val\" silenced carbine"
+	name = "\"Val\" silenced rifle"
 	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds."
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
 	price_tag = 800

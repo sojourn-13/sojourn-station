@@ -98,11 +98,6 @@ Has ability of every roach.
 	gas_sac.clear_reagents()
 	return TRUE
 
-/mob/living/carbon/superior_animal/roach/support/findTarget()
-	. = ..()
-	if(. && gas_attack())
-		visible_emote("charges at [.] in clouds of poison!")
-
 // FUHRER ABILITIES
 /mob/living/carbon/superior_animal/roach/kaiser/proc/distress_call()
 	if (!distress_call_stage)
