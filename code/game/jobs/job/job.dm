@@ -98,32 +98,32 @@
 	if (!istype(target))
 		return FALSE
 
-	if ((alt_perks) && (target.mind.role_alt_title in alt_perks)) // If an alternative job has alternative perks, change it out.
+	if ((alt_perks) && (target.mind.role_alt_title in alt_perks)) // If an alternative job has alternative perks, change it out. Please see Salvager for example of syntax.
 		perks = alt_perks[target.mind.role_alt_title]
 
+//////////////////////////////////////
 	for (var/counter in GLOB.all_departments)
 		var/datum/department/selectedDept = GLOB.all_departments[counter]
-
 		if ((SSjob.JobTimeCheck(target.ckey,selectedDept.jobs_in_department)) > 1200)     ////// AMOUNT OF TIME UNTIL THE PLAYER BECOMES EXPERIENCED
 			if (!topDept)
 				topDept = selectedDept
 			else
 				if (SSjob.JobTimeCheck(target.ckey,selectedDept.jobs_in_department) > SSjob.JobTimeCheck(target.ckey,topDept.jobs_in_department))
 					secondDept = topDept
-					topDept = selectedDept
-				else
-					if (!secondDept)
+					topDept = selectedDept													// This code chunk goe through the different departments that have been tracked, and if they have
+				else																		// played more time than the required variable above, it grants them a Perk regarding having "Experience"
+					if (!secondDept)														// in that particular department.
 						secondDept = selectedDept
 					else
 						if (SSjob.JobTimeCheck(target.ckey,selectedDept.jobs_in_department) > SSjob.JobTimeCheck(target.ckey,secondDept.jobs_in_department))
 							secondDept = selectedDept
-
+/////////////////////////////////////
 
 	var/list/paths = subtypesof(/datum/perk/experienced)
 	for (var/T in paths)
 		var/datum/perk/experienced/pathCheck = new T
-		if ((!pathCheck.subPerk) && ((pathCheck.dept == topDept.id) || (pathCheck.dept == secondDept.id)))
-			perks += list(pathCheck.type)
+		if ((!pathCheck.subPerk) && ((pathCheck.dept == topDept.id) || (pathCheck.dept == secondDept.id)))		// Also, you can only have two of these Perks, so you can only have the Perks
+			perks += list(pathCheck.type)																		// for two highest played departments.
 
 /datum/job/proc/add_additiional_language(var/mob/living/carbon/human/target)
 	if(!ishuman(target))
