@@ -60,6 +60,8 @@
 	R.stats.addPerk(PERK_PARKOUR)
 
 	R.stats.addPerk(PERK_SI_SCI)
+	R.has_resting_icon = TRUE
+	R.has_family_guy_death_pose = TRUE
 	..(R)
 
 /obj/item/robot_module/robot/knine/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -165,6 +167,8 @@
 	S.charge_costs = list(1000)
 	S.synths = list(medicine)
 	src.modules += S
+	R.has_resting_icon = TRUE
+	R.has_family_guy_death_pose = TRUE
 
 	..(R)
 
@@ -235,6 +239,8 @@
 	//Silent cleaners
 	R.stats.addPerk(PERK_QUIET_AS_MOUSE)
 	R.stats.addPerk(PERK_SI_SCI)
+	R.has_resting_icon = TRUE
+	R.has_family_guy_death_pose = TRUE
 
 	..(R)
 
@@ -325,6 +331,8 @@
 	R.stats.addPerk(PERK_SURGICAL_MASTER)
 	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
 	R.stats.addPerk(PERK_SI_SCI)
+	R.has_resting_icon = TRUE
+	R.has_family_guy_death_pose = TRUE
 
 	..()
 
@@ -452,6 +460,8 @@
 	R.stats.addPerk(PERK_HANDYMAN)
 	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
 	R.stats.addPerk(PERK_SI_SCI)
+	R.has_resting_icon = TRUE
+	R.has_family_guy_death_pose = TRUE
 
 	..()
 
