@@ -15,7 +15,9 @@
 	var/current_positions = 0				// How many players have this job
 	var/supervisors					// Supervisors, who this person answers to directly
 	var/selection_color = "#ffffff"			// Selection screen color
+	var/noob_name
 	var/list/alt_titles
+	var/list/alt_perks
 	var/difficulty = "Null"
 
 	var/req_admin_notify					// If this is set to 1, a text is printed to the player when jobs are assigned, telling him that he should let admins know that he has to disconnect.
@@ -66,9 +68,9 @@
 	var/list/perks = list()
 
 /datum/job/proc/equip(var/mob/living/carbon/human/H, var/alt_title)
-	var/decl/hierarchy/outfit/outfit = get_outfit()
-	if(!outfit)
-		return FALSE
+	var/decl/hierarchy/outfit/outfit = get_outfit() // Put alt_title in get_outfit() in order to turn on alternative name outfits.
+	if(!outfit)										// in order to code in a custom outfit, make a subtype of the base job's outfit, then have that alternate name equal the alt path.
+		return FALSE								// Pleas see Medical Doctors for an example.
 	. = outfit.equip(H, title, alt_title)
 
 /datum/job/proc/get_outfit(var/alt_title)
@@ -89,6 +91,39 @@
 	target.maxHealth += health_modifier
 
 	return TRUE
+
+/datum/job/proc/finalTweaks(var/mob/living/carbon/human/target)
+	var/datum/department/topDept
+	var/datum/department/secondDept
+	if (!istype(target))
+		return FALSE
+
+	if ((alt_perks) && (target.mind.role_alt_title in alt_perks)) // If an alternative job has alternative perks, change it out. Please see Salvager for example of syntax.
+		perks = alt_perks[target.mind.role_alt_title]
+
+//////////////////////////////////////
+	for (var/counter in GLOB.all_departments)
+		var/datum/department/selectedDept = GLOB.all_departments[counter]
+		if ((SSjob.JobTimeCheck(target.ckey,selectedDept.jobs_in_department)) > 1200)     ////// AMOUNT OF TIME UNTIL THE PLAYER BECOMES EXPERIENCED
+			if (!topDept)
+				topDept = selectedDept
+			else
+				if (SSjob.JobTimeCheck(target.ckey,selectedDept.jobs_in_department) > SSjob.JobTimeCheck(target.ckey,topDept.jobs_in_department))
+					secondDept = topDept
+					topDept = selectedDept													// This code chunk goe through the different departments that have been tracked, and if they have
+				else																		// played more time than the required variable above, it grants them a Perk regarding having "Experience"
+					if (!secondDept)														// in that particular department.
+						secondDept = selectedDept
+					else
+						if (SSjob.JobTimeCheck(target.ckey,selectedDept.jobs_in_department) > SSjob.JobTimeCheck(target.ckey,secondDept.jobs_in_department))
+							secondDept = selectedDept
+/////////////////////////////////////
+
+	var/list/paths = subtypesof(/datum/perk/experienced)
+	for (var/T in paths)
+		var/datum/perk/experienced/pathCheck = new T
+		if ((!pathCheck.subPerk) && ((pathCheck.dept == topDept.id) || (pathCheck.dept == secondDept.id)))		// Also, you can only have two of these Perks, so you can only have the Perks
+			perks += list(pathCheck.type)																		// for two highest played departments.
 
 /datum/job/proc/add_additiional_language(var/mob/living/carbon/human/target)
 	if(!ishuman(target))
@@ -149,6 +184,7 @@
 /datum/job/proc/is_experienced_enough(client/C) //This can be reimplemented if you want to have special requirements for jobs.
 	var/are_we_experienced_enough = FALSE //We start under the assumption of NO!
 	var/list/jobs_in_department = list() //What jobs are in this department?
+
 	for(var/job in GLOB.joblist)
 		var/datum/job/J = GLOB.joblist[job]
 		if(department_flag == COMMAND)
