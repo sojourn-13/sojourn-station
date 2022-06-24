@@ -15,6 +15,7 @@
 	var/robot_traits = null
 	// managed lists that contains all cyborg upgrade modules appliedto them
 	var/robot_upgrades = list()
+	var/has_given_emaged_gifts = FALSE
 
 	var/lights_on = FALSE // Is our integrated light on?
 	var/used_power_this_tick = 0
