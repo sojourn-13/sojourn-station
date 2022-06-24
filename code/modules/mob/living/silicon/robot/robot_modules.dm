@@ -120,7 +120,8 @@ var/global/list/robot_modules = list(
 
 	for (var/obj/item/I in modules)
 		for (var/obj/item/cell/C in I)
-			C.autorecharging = TRUE //A quick hack to stop robot modules running out of power
+			C.autorecharging = TRUE
+			C.kick_autorecharging() //A quick hack to stop robot modules running out of power
 			//Later they'll be wired to the robot's central battery once we code functionality for that
 			//Setting it to infinity causes errors, so just a high number is fine
 			//Setting this to be infinity power isnt as good of a fix do to guns that cost power getting endless free shots, so auto charging is better - Trilby
@@ -155,6 +156,7 @@ var/global/list/robot_modules = list(
 	R.default_pixel_x = initial(pixel_x)
 	R.has_resting_icon = FALSE
 	R.has_family_guy_death_pose = FALSE
+	R.has_given_emaged_gifts = FALSE
 
 	R.set_module_sprites(list("Default" = "robot"))
 	R.icon_selected = 0
