@@ -133,7 +133,9 @@
 			msg += "<span class='warning'>[He] [has] \icon[belt] [belt.gender==PLURAL?"some":"a"] [(belt.blood_color != "#030303") ? "blood" : "oil"]-stained [belt.name] about [his] waist!</span>\n"
 		else
 			msg += "[He] [has] \icon[belt] \a [belt] about [his] waist.\n"
-
+	//circumsized
+	if(!getorgan(/obj/item/organ/foreskin) && gender == "male" && !(w_uniform || wear_suit))
+		msg += "<span class='deadsay'>[t_He] appears to be circumcised...</span>\n"
 	//shoes
 	if(shoes && !skipshoes)
 		if(shoes.blood_DNA)
