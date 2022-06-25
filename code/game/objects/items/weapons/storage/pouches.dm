@@ -250,6 +250,7 @@
 		/obj/item/grenade/chem_grenade,
 		/obj/item/weldpack/canister,
 		/obj/item/cell/medium,
+		/obj/item/cell/small,
 		/obj/item/tank/emergency_oxygen,
 		/obj/item/tank/emergency_nitgen,
 		/obj/item/gun/projectile/boltgun/flare_gun,
@@ -260,7 +261,8 @@
 
 /obj/item/storage/pouch/tubular/vial
 	name = "vial pouch"
-	desc = "Can hold about five vials. Rebranding!"
+	desc = "Can hold seven cylindrical and small items, including but not limiting to flares, glowsticks, syringes and even hatton tubes or rockets. Tho the branding on this wants you to only really use it with vial."
+
 
 /obj/item/storage/pouch/tubular/update_icon()
 	..()
