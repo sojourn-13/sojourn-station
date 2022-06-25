@@ -6586,6 +6586,12 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	name = "shutter";
+	id = "backrooms"
+	},
 /turf/simulated/floor/plating,
 /area/eris/crew_quarters/barquarters)
 "boo" = (
@@ -6951,6 +6957,9 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/eris/crew_quarters/kitchen_storage)
+"brk" = (
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/command/bridgebar)
 "brl" = (
 /obj/machinery/microwave/burnbarrel,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -10977,7 +10986,7 @@
 /obj/machinery/door/airlock/glass{
 	name = "Kitchen Access";
 	req_access = newlist();
-	req_one_access = list(28, 35)
+	req_one_access = list(28,35)
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -28699,6 +28708,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/maintenance/substation/section8)
+"fAW" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
+	},
+/turf/simulated/floor/wood,
+/area/eris/crew_quarters/barquarters)
 "fBk" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk,
@@ -31203,6 +31219,12 @@
 /area/nadezhda/quartermaster/miningdock)
 "fYW" = (
 /obj/effect/window_lwall_spawn,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	name = "shutter";
+	id = "backrooms"
+	},
 /turf/simulated/floor/plating,
 /area/eris/crew_quarters/barquarters)
 "fYX" = (
@@ -47683,6 +47705,10 @@
 	},
 /obj/machinery/camera/network/colony_transition{
 	dir = 8
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
 	},
 /turf/simulated/floor/wood/wild3,
 /area/eris/crew_quarters/barbackroom)
@@ -66671,6 +66697,14 @@
 /obj/item/device/lighting/toggleable/lamp/green,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"mCO" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/turf/simulated/floor/wood,
+/area/eris/crew_quarters/barquarters)
 "mCR" = (
 /obj/machinery/newscaster/security_unit{
 	dir = 8;
@@ -74257,7 +74291,7 @@
 /obj/machinery/door/airlock{
 	name = "Bartender's room";
 	req_access = newlist();
-	req_one_access = list(25, 28)
+	req_one_access = list(25,28)
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/cable/green{
@@ -74809,6 +74843,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/rnd/circuitlab)
+"oeM" = (
+/obj/structure/cyberplant,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/bar_light,
+/area/eris/crew_quarters/barbackroom)
 "oeO" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/plating,
@@ -79885,7 +79929,7 @@
 /obj/machinery/door/airlock{
 	name = "Bartender's room";
 	req_access = newlist();
-	req_one_access = list(25, 28)
+	req_one_access = list(25,28)
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/eris/crew_quarters/barbackroom)
@@ -85880,7 +85924,7 @@
 /area/nadezhda/command/swo/quarters)
 "qip" = (
 /obj/machinery/door/airlock/multi_tile/metal,
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor/multi_tile,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/eris/crew_quarters/barquarters)
 "qiq" = (
@@ -86897,7 +86941,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor/multi_tile,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/bridgebar)
 "qth" = (
@@ -90158,27 +90202,24 @@
 "qXJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/closet/wall_mounted/emcloset{
+/obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = 32
 	},
-/obj/effect/floor_decal/industrial/warningwhite{
+/obj/effect/floor_decal/industrial/warningred{
 	dir = 4
 	},
-/obj/effect/floor_decal/industrial/box/white/corners{
+/obj/effect/floor_decal/industrial/box/red/corners{
 	dir = 4;
-	icon_state = "box_corners_white"
+	icon_state = "box_corners_red"
 	},
-/obj/effect/floor_decal/industrial/box/white/corners{
+/obj/effect/floor_decal/industrial/box/red/corners{
 	dir = 1;
-	icon_state = "box_corners_white"
+	icon_state = "box_corners_red"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/eris/crew_quarters/barquarters)
@@ -93106,7 +93147,6 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "ryE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/door/firedoor,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -113268,6 +113308,11 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/button/remote/blast_door{
+	name = "shutters control";
+	pixel_x = 26;
+	id = "backrooms"
 	},
 /turf/simulated/floor/wood,
 /area/eris/crew_quarters/barquarters)
@@ -181786,8 +181831,8 @@ ieI
 ieI
 poL
 lWp
-ieI
-ieI
+fAW
+mCO
 poL
 fYW
 rec
@@ -183398,7 +183443,7 @@ aAc
 dpD
 aAc
 gfn
-aPb
+oeM
 pBj
 jfO
 vbh
@@ -185010,7 +185055,7 @@ sFI
 aAc
 pof
 fct
-kfh
+brk
 hKh
 iGz
 iqT

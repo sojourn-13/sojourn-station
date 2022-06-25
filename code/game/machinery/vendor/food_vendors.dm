@@ -450,6 +450,9 @@
 	desc = "A vending machine to showcase cocktails."
 	icon_state = "showcase"
 	var/icon_fill = "showcase-fill"
+	var/icon_on = "showcase"
+	var/icon_off = "showcase-off"
+	var/icon_panel = "showcase-panel"
 	vend_delay = 15
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	density = 0 // Removing the duplicately defined vendor_department var is a bandaid fix for it being previously inaccesible by anyone. - Seb
@@ -457,6 +460,15 @@
 	can_stock = list(/obj/item/reagent_containers/glass, /obj/item/reagent_containers/food/drinks, /obj/item/reagent_containers/food/condiment)
 
 /obj/machinery/vending/drink_showcase/update_icon()
-	..()
+	cut_overlays()
+	if(stat & (BROKEN|NOPOWER))
+		icon_state = icon_off
+	else
+		icon_state = icon_on
+
+	if(panel_open && icon_panel)
+		add_overlay(image(icon, icon_panel))
+
 	if(contents.len && !(stat & NOPOWER))
-		overlays += image(icon, icon_fill)
+		add_overlay(image(icon, icon_fill))
+
