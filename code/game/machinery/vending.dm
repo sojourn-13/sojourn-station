@@ -343,8 +343,7 @@
 			return
 
 	var/obj/item/card/id/ID = I.GetIdCard()
-
-	if (currently_vending && earnings_account && !earnings_account.suspended)
+	if (currently_vending && earnings_account && !earnings_account.suspended) // No longer are custom vendors accessible by everyone just by swiping an ID. - Seb
 		var/paid = 0
 		var/handled = 0
 
@@ -371,7 +370,6 @@
 
 	if (custom_vendor && ID)
 		var/datum/money_account/user_account = get_account(ID.associated_account_number)
-		managing = 1
 		if (!user_account)
 			status_message = "Error: Unable to access account. Please contact technical support if problem persists."
 			status_error = 1
@@ -408,9 +406,9 @@
 					status_error = 1
 					SSnano.update_uis(src)
 					return 0
-			if(!machine_vendor_account)
-				machine_vendor_account = user_account
-				earnings_account = user_account
+				if(!machine_vendor_account)
+					machine_vendor_account = user_account
+					earnings_account = user_account
 
 			locked = !locked
 			status_error = 0

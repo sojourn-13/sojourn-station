@@ -452,7 +452,7 @@
 	var/icon_fill = "showcase-fill"
 	vend_delay = 15
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
-	vendor_department = DEPARTMENT_LSS
+	density = 0 // Removing the duplicately defined vendor_department var is a bandaid fix for it being previously inaccesible by anyone. - Seb
 	custom_vendor = TRUE
 	can_stock = list(/obj/item/reagent_containers/glass, /obj/item/reagent_containers/food/drinks, /obj/item/reagent_containers/food/condiment)
 

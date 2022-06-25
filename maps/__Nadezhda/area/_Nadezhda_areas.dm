@@ -1589,6 +1589,11 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "server"
 
 
+/area/nadezhda/rnd/testrange // For APC purposes this had to be created.
+	name = "\improper Research Testing Range"
+	flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "research"
+
 //Prospector
 
 /area/nadezhda/pros/dorm
