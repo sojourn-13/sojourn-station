@@ -137,7 +137,7 @@
 /obj/machinery/smartfridge/drinks
 	name = "\improper drink showcase"
 	desc = "A refrigerated storage unit for tasty tasty alcohol."
-	density = 0 // For placing atop tables as a proper storage, like on the old layout. - Seb
+	density = FALSE // For placing atop tables as a proper storage, like on the old layout. - Seb
 	icon_state = "showcase"
 	icon_on = "showcase"
 	icon_off = "showcase-off"
