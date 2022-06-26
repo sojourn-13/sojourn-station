@@ -491,6 +491,10 @@
 "ado" = (
 /obj/structure/bed/chair/office/dark,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "adr" = (
@@ -1393,6 +1397,10 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "ani" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/spline/wood{
+	dir = 4;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/psych)
 "anm" = (
@@ -2772,6 +2780,10 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/crew_quarters/janitor)
+"aCV" = (
+/obj/structure/cryofeed,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/crew_quarters/sleep/cryo2)
 "aDa" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_perforated,
@@ -4031,6 +4043,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/medical/reception)
+"aOI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/spline/wood{
+	dir = 8
+	},
+/turf/simulated/floor/carpet/turcarpet,
+/area/nadezhda/command/captain/quarters)
 "aOJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8782,6 +8801,10 @@
 	req_access = list(41)
 	},
 /obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/merchant)
 "bKS" = (
@@ -10284,6 +10307,10 @@
 /obj/item/gun_upgrade/mechanism/bikehorn,
 /obj/item/gun_upgrade/trigger/honker,
 /obj/item/gun_upgrade/trigger/honker,
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/gaycarpet,
 /area/nadezhda/crew_quarters/clownoffice)
 "caM" = (
@@ -10416,6 +10443,10 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/dcave)
 "cbX" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/fo)
 "cbZ" = (
@@ -10562,6 +10593,14 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/hallway/side/f2section1)
+"cdy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
+/turf/simulated/floor/carpet/turcarpet,
+/area/nadezhda/command/captain/quarters)
 "cdJ" = (
 /obj/machinery/camera/network/security,
 /obj/machinery/atmospherics/unary/vent_scrubber,
@@ -18702,6 +18741,10 @@
 /obj/structure/table/gamblingtable,
 /obj/item/storage/pill_bottle/dice,
 /obj/item/deck/cards,
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/crew_quarters/cafeteria)
 "dHa" = (
@@ -18720,6 +18763,10 @@
 /obj/item/stamp/cmo,
 /obj/item/modular_computer/laptop/preset/records,
 /obj/item/reagent_containers/enricher,
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/cbo)
 "dHs" = (
@@ -21826,6 +21873,10 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "emE" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/fo)
 "emM" = (
@@ -23195,7 +23246,15 @@
 /area/nadezhda/security/armory)
 "eAJ" = (
 /obj/structure/table/steel,
-/obj/item/storage/makeshift_grinder,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stack/cable_coil/random,
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/console_screen,
+/obj/item/tool/screwdriver,
+/obj/item/circuitboard/vending,
 /turf/simulated/floor/wood/wild4,
 /area/colony)
 "eAR" = (
@@ -27318,6 +27377,7 @@
 /obj/landmark/join/start/assistant,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/arrows,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "fow" = (
@@ -27755,6 +27815,13 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
+"fsa" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
+/turf/simulated/floor/carpet/purcarpet,
+/area/nadezhda/crew_quarters/cafeteria)
 "fsb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -33870,6 +33937,10 @@
 "gwI" = (
 /obj/structure/table/woodentable,
 /obj/item/device/lighting/toggleable/lamp/green,
+/obj/effect/floor_decal/spline/wood{
+	dir = 8;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "gwL" = (
@@ -35218,6 +35289,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green,
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "gJJ" = (
@@ -35569,6 +35644,10 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/effect/floor_decal/spline/wood{
+	dir = 10;
+	icon_state = "spline_fancy"
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/command/captain/quarters)
@@ -36819,6 +36898,10 @@
 "gYl" = (
 /obj/machinery/atmospherics/unary/vent_pump,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/spline/wood{
+	dir = 5;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/psych)
 "gYr" = (
@@ -38194,6 +38277,13 @@
 	},
 /obj/machinery/camera/network/colony_underground{
 	dir = 1
+	},
+/obj/effect/floor_decal/spline/wood{
+	dir = 4;
+	icon_state = "spline_fancy"
+	},
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 8
 	},
 /turf/simulated/floor/carpet/gaycarpet,
 /area/nadezhda/crew_quarters/clownoffice)
@@ -40100,6 +40190,17 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
+"hIM" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
+/obj/effect/floor_decal/spline/wood{
+	dir = 4;
+	icon_state = "spline_fancy"
+	},
+/turf/simulated/floor/carpet/turcarpet,
+/area/nadezhda/command/captain/quarters)
 "hIO" = (
 /obj/structure/bed/chair/sofa/black/left{
 	dir = 8
@@ -40867,6 +40968,10 @@
 /area/nadezhda/rnd/research)
 "hQc" = (
 /obj/machinery/computer/prisoner,
+/obj/effect/floor_decal/spline/wood{
+	dir = 4;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "hQs" = (
@@ -41882,6 +41987,10 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "iaO" = (
 /obj/structure/displaycase,
+/obj/effect/floor_decal/spline/wood{
+	dir = 8;
+	icon_state = "spline_fancy_full"
+	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/command/captain/quarters)
 "iaQ" = (
@@ -42021,6 +42130,10 @@
 "icq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/landmark/join/start/pg,
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/fo)
 "icw" = (
@@ -44034,6 +44147,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"iwG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/spline/wood{
+	dir = 5;
+	icon_state = "spline_fancy"
+	},
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/command/fo)
 "iwQ" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8;
@@ -44553,6 +44674,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
+"iBL" = (
+/obj/machinery/cryopod,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/crew_quarters/sleep/cryo2)
 "iBO" = (
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,11"
@@ -49449,6 +49574,7 @@
 /area/nadezhda/security/prisoncells)
 "jwy" = (
 /obj/structure/table/woodentable,
+/obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/command/captain/quarters)
 "jwG" = (
@@ -50122,6 +50248,13 @@
 /obj/structure/salvageable/autolathe,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/dungeon/outside/burned_outpost)
+"jDB" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 8;
+	icon_state = "spline_fancy"
+	},
+/turf/simulated/floor/carpet/sblucarpet,
+/area/nadezhda/command/cbo)
 "jDE" = (
 /obj/structure/table/standard,
 /obj/machinery/microwave,
@@ -51438,6 +51571,10 @@
 	},
 /obj/item/paper_bin,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/spline/wood{
+	dir = 2;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/psych)
 "jPJ" = (
@@ -54484,6 +54621,10 @@
 	},
 /area/nadezhda/hallway/surface/section1)
 "ksa" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 8;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/courtroom)
 "ksd" = (
@@ -54897,6 +55038,7 @@
 "kvo" = (
 /obj/structure/table/steel,
 /obj/item/device/lighting/toggleable/lamp,
+/obj/item/storage/makeshift_grinder,
 /turf/simulated/floor/wood/wild4,
 /area/colony)
 "kvq" = (
@@ -57313,6 +57455,10 @@
 /obj/structure/bed/chair/sofa/blue/left{
 	dir = 4
 	},
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/crew_quarters/cafeteria)
 "kSK" = (
@@ -57686,6 +57832,14 @@
 /obj/structure/railing,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/crew_quarters/hydroponics/garden)
+"kVP" = (
+/obj/structure/table/woodentable,
+/obj/effect/floor_decal/spline/wood{
+	dir = 8;
+	icon_state = "spline_fancy"
+	},
+/turf/simulated/floor/carpet/sblucarpet,
+/area/nadezhda/command/courtroom)
 "kWa" = (
 /obj/structure/flora/big/bush2,
 /obj/effect/decal/cleanable/dirt,
@@ -59617,6 +59771,7 @@
 	dir = 1;
 	name = "foreman seat"
 	},
+/obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/courtroom)
 "lnU" = (
@@ -61196,6 +61351,10 @@
 	pixel_y = 3
 	},
 /obj/item/paper/monitorkey,
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/command/captain/quarters)
 "lCN" = (
@@ -63451,6 +63610,10 @@
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/spline/wood{
+	dir = 9;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/psych)
 "lZR" = (
@@ -65399,6 +65562,13 @@
 /obj/item/gun/projectile/shotgun/bull,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
+"mpQ" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
+/turf/simulated/floor/carpet/turcarpet,
+/area/nadezhda/command/captain/quarters)
 "mpR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/alarm{
@@ -67042,6 +67212,13 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/bridgebar)
 "mFs" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 5;
+	icon_state = "spline_fancy"
+	},
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 8
+	},
 /turf/simulated/floor/carpet/gaycarpet,
 /area/nadezhda/crew_quarters/clownoffice)
 "mFt" = (
@@ -71352,6 +71529,7 @@
 	dir = 1;
 	name = "premier seat"
 	},
+/obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/courtroom)
 "nxl" = (
@@ -71871,6 +72049,10 @@
 "nBG" = (
 /obj/structure/table/gamblingtable,
 /obj/random/booze,
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/crew_quarters/cafeteria)
 "nBS" = (
@@ -77668,6 +77850,10 @@
 	id = "AISHIELD";
 	name = "AI Upload Shield"
 	},
+/obj/effect/floor_decal/spline/wood{
+	dir = 4;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "oEQ" = (
@@ -78378,6 +78564,7 @@
 	dir = 1;
 	name = "prime seat"
 	},
+/obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/courtroom)
 "oLe" = (
@@ -81040,6 +81227,7 @@
 	dir = 1;
 	name = "research overseer seat"
 	},
+/obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/courtroom)
 "pnr" = (
@@ -81122,6 +81310,10 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/effect/floor_decal/spline/wood{
+	dir = 4;
+	icon_state = "spline_fancy"
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/psych)
@@ -82261,6 +82453,13 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/maintenance/substation/section4)
+"pzI" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 4;
+	icon_state = "spline_fancy"
+	},
+/turf/simulated/floor/carpet/purcarpet,
+/area/nadezhda/command/cro)
 "pzO" = (
 /obj/structure/table/rack/shelf,
 /obj/random/toolbox/low_chance,
@@ -82543,6 +82742,10 @@
 /area/nadezhda/crew_quarters/cafeteria)
 "pCy" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/spline/wood{
+	dir = 9;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/command/captain/quarters)
 "pCz" = (
@@ -84328,6 +84531,10 @@
 	pixel_x = -1;
 	pixel_y = 3
 	},
+/obj/effect/floor_decal/spline/wood{
+	dir = 4;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "pSf" = (
@@ -85402,6 +85609,7 @@
 	dir = 1;
 	name = "warrant officer seat"
 	},
+/obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/courtroom)
 "qdU" = (
@@ -88119,6 +88327,10 @@
 /obj/item/clothing/under/rank/first_officer/suit,
 /obj/item/clothing/under/rank/first_officer,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey,
+/obj/effect/floor_decal/spline/wood{
+	dir = 4;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/fo)
 "qEt" = (
@@ -88610,6 +88822,13 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"qJp" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 9;
+	icon_state = "spline_fancy"
+	},
+/turf/simulated/floor/carpet/sblucarpet,
+/area/nadezhda/command/cbo)
 "qJr" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel/bluecorner,
@@ -95871,6 +96090,10 @@
 	id = "Psych";
 	range = 5
 	},
+/obj/effect/floor_decal/spline/wood{
+	dir = 10;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/psych)
 "rXE" = (
@@ -98712,6 +98935,10 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/spline/wood{
+	dir = 8;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/psych)
 "szD" = (
@@ -102527,6 +102754,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/command/cbo)
 "tlu" = (
@@ -107420,6 +107651,10 @@
 /obj/item/device/lighting/toggleable/lamp/green,
 /obj/item/toy/plushie/mouse,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/spline/wood{
+	dir = 6;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/psych)
 "ukq" = (
@@ -109408,6 +109643,14 @@
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
+"uCj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/spline/wood{
+	dir = 1;
+	icon_state = "spline_fancy"
+	},
+/turf/simulated/floor/carpet/sblucarpet,
+/area/nadezhda/medical/psych)
 "uCo" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt,
@@ -110219,6 +110462,7 @@
 	dir = 1;
 	name = "commander seat"
 	},
+/obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/courtroom)
 "uJA" = (
@@ -112754,6 +112998,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/effect/floor_decal/spline/wood{
+	dir = 8;
+	icon_state = "spline_fancy"
 	},
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/command/cbo)
@@ -115522,6 +115770,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"vHZ" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 9;
+	icon_state = "spline_fancy"
+	},
+/turf/simulated/floor/carpet/purcarpet,
+/area/nadezhda/command/cro)
 "vIa" = (
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/maintenance/undergroundfloor1east)
@@ -115808,6 +116063,14 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/chapel)
+"vKP" = (
+/obj/structure/table/woodentable,
+/obj/effect/floor_decal/spline/wood{
+	dir = 4;
+	icon_state = "spline_fancy"
+	},
+/turf/simulated/floor/carpet,
+/area/nadezhda/command/courtroom)
 "vKR" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -119747,6 +120010,7 @@
 /obj/machinery/camera/network/colony_underground{
 	dir = 4
 	},
+/obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/courtroom)
 "wvF" = (
@@ -121836,6 +122100,7 @@
 	dir = 1;
 	name = "executive officer seat"
 	},
+/obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/courtroom)
 "wSh" = (
@@ -122116,6 +122381,7 @@
 /obj/structure/bed/chair/comfy/black{
 	dir = 8
 	},
+/obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/command/captain/quarters)
 "wUz" = (
@@ -124917,6 +125183,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/spline/wood{
+	dir = 8;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/psych)
 "xvX" = (
@@ -126853,6 +127123,7 @@
 	dir = 1;
 	name = "guild master seat"
 	},
+/obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/courtroom)
 "xNS" = (
@@ -128167,6 +128438,10 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
 "yaN" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 4;
+	icon_state = "spline_fancy"
+	},
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/courtroom)
 "ybi" = (
@@ -128333,6 +128608,7 @@
 "ydk" = (
 /obj/structure/table/woodentable,
 /obj/machinery/keycard_auth,
+/obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/command/captain/quarters)
 "ydl" = (
@@ -139820,9 +140096,9 @@ jkS
 mdB
 aDa
 rNn
-ehF
+iBL
 aDa
-ehF
+iBL
 hfy
 ayY
 mFK
@@ -140022,9 +140298,9 @@ hOK
 mdB
 aDa
 pyM
-gIY
+aCV
 mgI
-gIY
+aCV
 hfy
 ghg
 mFK
@@ -141437,7 +141713,7 @@ pBI
 lEx
 fbK
 fbK
-ueT
+fsa
 ueT
 dzW
 qqd
@@ -142264,7 +142540,7 @@ thc
 feR
 ceX
 dmr
-emE
+iwG
 qEl
 kZS
 sGe
@@ -144078,7 +144354,7 @@ aWW
 jqd
 kDc
 yaN
-wEQ
+vKP
 xor
 uIX
 pnk
@@ -144088,7 +144364,7 @@ eOx
 anL
 rbE
 pCy
-pCy
+aOI
 gMn
 hoJ
 eOx
@@ -144289,7 +144565,7 @@ cRN
 eOx
 kMm
 rbE
-pCy
+cdy
 fkg
 jwy
 oBu
@@ -144491,7 +144767,7 @@ gJz
 eOx
 sWK
 rbE
-pCy
+cdy
 ccS
 wUu
 epL
@@ -144693,7 +144969,7 @@ eiy
 eOx
 iRL
 rbE
-tbg
+hIM
 tbg
 ydk
 eCr
@@ -144886,7 +145162,7 @@ rEx
 jqd
 kDc
 ksa
-pfy
+kVP
 xor
 uIX
 xNP
@@ -145102,7 +145378,7 @@ eOx
 eOx
 ecY
 tuF
-tbg
+mpQ
 ici
 qFx
 tyz
@@ -145304,7 +145580,7 @@ nhy
 aDX
 nhy
 nhy
-tbg
+mpQ
 bkw
 eOx
 tyz
@@ -145506,7 +145782,7 @@ nhy
 nhy
 nhy
 nhy
-tbg
+mpQ
 noC
 eOx
 tyz
@@ -192946,7 +193222,7 @@ bPQ
 fxk
 jQF
 lIa
-fFA
+uCj
 fFA
 nIH
 jPI
@@ -195971,8 +196247,8 @@ elK
 qOO
 rLx
 koC
-nBx
-nBx
+qJp
+jDB
 elK
 uBN
 nPs
@@ -197392,7 +197668,7 @@ rLA
 emo
 sIV
 hQc
-tKm
+pzI
 oEN
 pSe
 klk
@@ -198808,7 +199084,7 @@ klk
 ewa
 tPn
 ctU
-tKm
+vHZ
 gwI
 xGi
 pHi
