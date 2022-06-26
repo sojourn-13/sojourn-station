@@ -643,7 +643,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 	break_open()
 	spawn()
 		L.do_pickup_animation(src, L.loc)
-		addtimer(CALLBACK(src, .proc/force_enter_burrow), L, 8)
+		addtimer(CALLBACK(src, .proc/force_enter_burrow, L), 8)
 
 /obj/structure/burrow/proc/force_enter_burrow(mob/living/L)
 	L.forceMove(src)
