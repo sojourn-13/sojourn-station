@@ -62,6 +62,8 @@
 	R.stats.addPerk(PERK_SI_SCI)
 	R.has_resting_icon = TRUE
 	R.has_family_guy_death_pose = TRUE
+	R.icon_alt_director = 'icons/mob/robots_wide.dmi'
+	R.update_icon()
 	..(R)
 
 /obj/item/robot_module/robot/knine/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -169,6 +171,8 @@
 	src.modules += S
 	R.has_resting_icon = TRUE
 	R.has_family_guy_death_pose = TRUE
+	R.icon_alt_director = 'icons/mob/robots_wide.dmi'
+	R.update_icon()
 
 	..(R)
 
@@ -241,6 +245,8 @@
 	R.stats.addPerk(PERK_SI_SCI)
 	R.has_resting_icon = TRUE
 	R.has_family_guy_death_pose = TRUE
+	R.icon_alt_director = 'icons/mob/robots_wide.dmi'
+	R.update_icon()
 
 	..(R)
 
@@ -333,6 +339,8 @@
 	R.stats.addPerk(PERK_SI_SCI)
 	R.has_resting_icon = TRUE
 	R.has_family_guy_death_pose = TRUE
+	R.icon_alt_director = 'icons/mob/robots_wide.dmi'
+	R.update_icon()
 
 	..()
 
@@ -462,6 +470,8 @@
 	R.stats.addPerk(PERK_SI_SCI)
 	R.has_resting_icon = TRUE
 	R.has_family_guy_death_pose = TRUE
+	R.icon_alt_director = 'icons/mob/robots_wide.dmi'
+	R.update_icon()
 
 	..()
 
