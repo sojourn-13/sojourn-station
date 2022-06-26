@@ -67,40 +67,46 @@
 // Parameters: None
 // Description: Opens the door. No checks are done inside this proc.
 /obj/machinery/door/blast/proc/force_open()
-	src.operating = 1
+	operating = TRUE
 	flick(icon_state_opening, src)
 	playsound(src.loc, 'sound/machines/Custom_blastdooropen.ogg', 65, 0)
-	src.density = 0
+	density = FALSE
 	update_nearby_tiles()
-	src.update_icon()
-	src.set_opacity(0)
-	sleep(15)
-	src.layer = open_layer
-	src.operating = 0
+	update_icon()
+	set_opacity(0)
+	addtimer(CALLBACK(src, .proc/layer_operating), 15)
+
+/obj/machinery/door/blast/proc/layer_operating()
+	layer = open_layer
+	operating = FALSE
+	update_icon()
 
 // Proc: force_close()
 // Parameters: None
 // Description: Closes the door. No checks are done inside this proc.
 /obj/machinery/door/blast/proc/force_close()
-	src.operating = 1
-	src.layer = closed_layer
+	operating = TRUE
+	layer = closed_layer
 	flick(icon_state_closing, src)
 	playsound(src.loc, 'sound/machines/Custom_blastdoorclose.ogg', 65, 0)
-	src.density = 1
+	density = TRUE
 	update_nearby_tiles()
-	src.update_icon()
-	src.set_opacity(1)
-	sleep(15)
-	src.operating = 0
+	update_icon()
+	set_opacity(1)
+	addtimer(CALLBACK(src, .proc/operating), 15)
+
+/obj/machinery/door/blast/proc/operating()
+	operating = FALSE
+	update_icon()
 
 // Proc: force_toggle()
 // Parameters: None
 // Description: Opens or closes the door, depending on current state. No checks are done inside this proc.
 /obj/machinery/door/blast/proc/force_toggle()
-	if(src.density)
-		src.force_open()
+	if(density)
+		force_open()
 	else
-		src.force_close()
+		force_close()
 
 // Proc: attackby()
 // Parameters: 2 (C - Item this object was clicked with, user - Mob which clicked this object)
