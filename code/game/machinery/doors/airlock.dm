@@ -1083,9 +1083,11 @@ There are 9 wires.
 						to_chat(user, SPAN_NOTICE("The airlock's bolts prevent it from being forced."))
 					else
 						if(density)
-							open(I)
+							spawn(0)
+								open(I)
 						else
-							close(I)
+							spawn(0)
+								close(I)
 			else
 				..()
 			return

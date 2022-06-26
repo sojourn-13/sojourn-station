@@ -442,12 +442,21 @@
 				playsound(loc, 'sound/machines/Custom_deny.ogg', 50, 0)
 	return
 
-/obj/machinery/door/proc/swap_density(density)
+/obj/machinery/door/proc/opening_swap_density(density)
+	density = FALSE
+	update_nearby_tiles()
+	addtimer(CALLBACK(src, .proc/open_layering), 7)
+
+/obj/machinery/door/proc/swap_density(density, opening)
 	if(density)
 		density = FALSE
 	else
 		density = TRUE
 	update_nearby_tiles()
+	if (opening == TRUE)
+		addtimer(CALLBACK(src, .proc/open_layering), 7)
+	else
+		addtimer(CALLBACK(src, .proc/closeing_layering), 7)
 
 /obj/machinery/door/proc/open(forced = 0)
 	if(!can_open(forced))
@@ -462,14 +471,14 @@
 
 	do_animate("opening")
 	icon_state = "door0"
-	addtimer(CALLBACK(src, .proc/swap_density, density), 3)
-	addtimer(CALLBACK(src, .proc/open_layering), 7)
+	addtimer(CALLBACK(src, .proc/swap_density, density, TRUE), 3)
 
 	if(autoclose)
 		var/wait = normalspeed ? 150 : 5
 		addtimer(CALLBACK(src, .proc/close), wait)
 
 	return TRUE
+
 
 /obj/machinery/door/proc/open_layering(density)
 	layer = open_layer
@@ -485,8 +494,7 @@
 	operating = TRUE
 
 	do_animate("closing")
-	addtimer(CALLBACK(src, .proc/swap_density, density), 3)
-	addtimer(CALLBACK(src, .proc/closeing_layering), 7)
+	addtimer(CALLBACK(src, .proc/swap_density, density, FALSE), 3)
 
 	if(visible && !glass)
 		set_opacity(1)	//caaaaarn!
