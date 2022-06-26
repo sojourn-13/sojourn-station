@@ -442,21 +442,14 @@
 				playsound(loc, 'sound/machines/Custom_deny.ogg', 50, 0)
 	return
 
-/obj/machinery/door/proc/opening_swap_density(density)
-	density = FALSE
-	update_nearby_tiles()
-	addtimer(CALLBACK(src, .proc/open_layering), 7)
-
-/obj/machinery/door/proc/swap_density(density, opening)
-	if(density)
+/obj/machinery/door/proc/swap_density(opening)
+	if(opening == TRUE)
+		addtimer(CALLBACK(src, .proc/open_layering), 6)
 		density = FALSE
 	else
+		addtimer(CALLBACK(src, .proc/closeing_layering), 7)
 		density = TRUE
 	update_nearby_tiles()
-	if (opening == TRUE)
-		addtimer(CALLBACK(src, .proc/open_layering), 7)
-	else
-		addtimer(CALLBACK(src, .proc/closeing_layering), 7)
 
 /obj/machinery/door/proc/open(forced = 0)
 	if(!can_open(forced))
@@ -471,7 +464,7 @@
 
 	do_animate("opening")
 	icon_state = "door0"
-	addtimer(CALLBACK(src, .proc/swap_density, density, TRUE), 3)
+	addtimer(CALLBACK(src, .proc/swap_density, TRUE), 3)
 
 	if(autoclose)
 		var/wait = normalspeed ? 150 : 5
