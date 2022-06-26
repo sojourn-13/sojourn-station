@@ -1273,6 +1273,18 @@ There are 9 wires.
 	adjustBruteLoss(crush_damage)
 	return 0
 
+
+/obj/machinery/door/airlock/proc/force_wedge_item_animtation(obj/item/tool/tool)
+	force_wedge_item(tool)
+	playsound(loc, 'sound/machines/airlock_creaking.ogg', 75, 1)
+	shake_animation(12)
+
+/obj/machinery/door/airlock/proc/force_wedge_item_animtation_after()
+	playsound(loc, 'sound/machines/buzz-two.ogg', 30, 1, -1)
+	density = FALSE
+	do_animate("opening")
+	operating = FALSE
+
 /obj/machinery/door/airlock/close(var/forced=0)
 	if(!can_close(forced))
 		return 0
@@ -1293,15 +1305,8 @@ There are 9 wires.
 						operating = TRUE
 						density = TRUE
 						do_animate("closing")
-						sleep(7)
-						force_wedge_item(AM)
-						playsound(loc, 'sound/machines/airlock_creaking.ogg', 75, 1)
-						shake_animation(12)
-						sleep(7)
-						playsound(loc, 'sound/machines/buzz-two.ogg', 30, 1, -1)
-						density = FALSE
-						do_animate("opening")
-						operating = FALSE
+						addtimer(CALLBACK(src, /obj/machinery/door/airlock/proc/force_wedge_item_animtation), AM, 70 MILLISECONDS)
+						addtimer(CALLBACK(src, /obj/machinery/door/airlock/proc/force_wedge_item_animtation_after), 70 MILLISECONDS)
 						return
 
 	for(var/turf/turf in locs)

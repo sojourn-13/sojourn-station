@@ -639,12 +639,14 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 /****************************
 	Burrow entering
 ****************************/
-/obj/structure/burrow/proc/enter_burrow(var/mob/living/L)
+/obj/structure/burrow/proc/enter_burrow(mob/living/L)
 	break_open()
 	spawn()
 		L.do_pickup_animation(src, L.loc)
-		sleep(8)
-		L.forceMove(src)
+		addtimer(CALLBACK(src, .proc/force_enter_burrow), L, 8)
+
+/obj/structure/burrow/proc/force_enter_burrow(mob/living/L)
+	L.forceMove(src)
 
 //Mobs that are summoned will walk up and attack this burrow
 //This will suck them in

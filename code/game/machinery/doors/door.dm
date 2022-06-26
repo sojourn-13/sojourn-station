@@ -437,7 +437,7 @@
 	return
 
 
-/obj/machinery/door/proc/open(var/forced = 0)
+/obj/machinery/door/proc/open(forced = 0)
 	if(!can_open(forced))
 		return
 	operating = TRUE
@@ -450,11 +450,11 @@
 
 	do_animate("opening")
 	icon_state = "door0"
-	sleep(3)
-	src.density = FALSE
+	addtimer(CALLBACK(src, .proc/density_changing), density, 3)
+	density = FALSE
 	update_nearby_tiles()
-	sleep(7)
-	src.layer = open_layer
+	addtimer(CALLBACK(src, .proc/opening_layers), 7)
+	layer = open_layer
 	explosion_resistance = 0
 	update_icon()
 	update_nearby_tiles()
@@ -466,21 +466,33 @@
 
 	return TRUE
 
-/obj/machinery/door/proc/close(var/forced = 0)
-	set waitfor = FALSE
-	if(!can_close(forced))
-		return
-	operating = 1
-
-	do_animate("closing")
-	sleep(3)
-	src.density = TRUE
+/obj/machinery/door/proc/density_changing(density)
+	if(density)
+		density = FALSE
 	update_nearby_tiles()
-	sleep(7)
-	src.layer = closed_layer
+
+/obj/machinery/door/proc/opening_layers()
+	layer = open_layer
+	explosion_resistance = 0
+	update_icon()
+	update_nearby_tiles()
+	operating = FALSE
+
+/obj/machinery/door/proc/closeing_layers()
+	layer = closed_layer
 	explosion_resistance = initial(explosion_resistance)
 	update_icon()
 	update_nearby_tiles()
+
+/obj/machinery/door/proc/close(forced = 0)
+	set waitfor = FALSE
+	if(!can_close(forced))
+		return
+	operating = TRUE
+
+	do_animate("closing")
+	addtimer(CALLBACK(src, .proc/density_changing), density, 3)
+	addtimer(CALLBACK(src, .proc/closeing_layers), 7)
 
 	if(visible && !glass)
 		set_opacity(1)	//caaaaarn!
