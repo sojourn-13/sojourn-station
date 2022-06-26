@@ -73,15 +73,13 @@
 	density = FALSE
 	update_nearby_tiles()
 	update_icon()
-	set_opacity(FALSE)
-	addtimer(CALLBACK(src, .proc/layer_operating), 15 MILLISECONDS)
-	layer = open_layer
-	operating = FALSE
-
+	set_opacity(0)
+	addtimer(CALLBACK(src, .proc/layer_operating), 15)
 
 /obj/machinery/door/blast/proc/layer_operating()
 	layer = open_layer
 	operating = FALSE
+	update_icon()
 
 // Proc: force_close()
 // Parameters: None
@@ -94,12 +92,12 @@
 	density = TRUE
 	update_nearby_tiles()
 	update_icon()
-	set_opacity(TRUE)
-	addtimer(CALLBACK(src, .proc/operating), 15 MILLISECONDS)
-	operating = FALSE
+	set_opacity(1)
+	addtimer(CALLBACK(src, .proc/operating), 15)
 
 /obj/machinery/door/blast/proc/operating()
 	operating = FALSE
+	update_icon()
 
 // Proc: force_toggle()
 // Parameters: None
