@@ -57,7 +57,7 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	zoom_factor = 0.4
 	init_recoil = HANDGUN_RECOIL(1)
-	price_tag = 1250
+	price_tag = 1100
 	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/lamia/scoped/dark
@@ -70,7 +70,7 @@
 	init_recoil = HANDGUN_RECOIL(0.7)
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.2
-	price_tag = 1100
+	price_tag = 1200
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	serial_type = "Sol Fed"
@@ -86,7 +86,7 @@
 	init_recoil = HANDGUN_RECOIL(0.1)
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.2
-	price_tag = 1250
+	price_tag = 1300
 	serial_type = "Sol Fed"
 
 /obj/item/gun/projectile/lamia/akurra
@@ -99,7 +99,7 @@
 	silenced = TRUE
 	damage_multiplier = 0.95
 	penetration_multiplier = 1.2
-	price_tag = 1250
+	price_tag = 1400
 	serial_type = "SA"
 
 /obj/item/gun/projectile/lamia/amnesty

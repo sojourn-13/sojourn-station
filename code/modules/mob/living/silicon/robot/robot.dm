@@ -15,6 +15,7 @@
 	var/robot_traits = null
 	// managed lists that contains all cyborg upgrade modules appliedto them
 	var/robot_upgrades = list()
+	var/has_given_emaged_gifts = FALSE
 
 	var/lights_on = FALSE // Is our integrated light on?
 	var/used_power_this_tick = 0
@@ -36,6 +37,11 @@
 	var/icontype 				//Persistent icontype tracking allows for cleaner icon updates
 	var/list/module_sprites = list() 		//Used to store the associations between sprite names and sprite index.
 	var/icon_selected = 1		//If icon selection has been completed yet
+	var/reset_icon_folder_draw = TRUE
+	var/icon_alt_director = 'icons/mob/robots.dmi'
+	var/has_resting_icon = FALSE //Used for wide-bots and feline type bots were we have fancy resting icons
+	var/has_family_guy_death_pose = FALSE
+	var/resting_icon_mode = FALSE
 
 //Hud stuff
 
@@ -287,7 +293,11 @@
 				icontype = "Custom"
 			else
 				icontype = module_sprites[1]
-				icon = 'icons/mob/robots.dmi'
+				if(reset_icon_folder_draw)
+					icon = 'icons/mob/robots.dmi'
+					reset_icon_folder_draw = 'icons/mob/robots.dmi'
+				else
+					icon = icon_alt_director
 				to_chat(src, SPAN_WARNING("Custom Sprite Sheet does not contain a valid icon_state for [ckey]-[modtype]"))
 		else
 			icontype = module_sprites[1]
@@ -433,6 +443,9 @@
 	set category = "Silicon Commands"
 	set name = "Toggle Lights"
 
+	if(stat == DEAD)
+		return
+
 	lights_on = !lights_on
 	to_chat(usr, "You [lights_on ? "enable" : "disable"] your integrated light.")
 	if(lights_on)
@@ -487,6 +500,7 @@
 			set_light(integrated_light_power)
 	else
 		set_light(0)
+	updateicon()
 
 // this function displays jetpack pressure in the stat panel
 /mob/living/silicon/robot/proc/show_jetpack_pressure()
@@ -856,9 +870,26 @@
 	return FALSE
 
 /mob/living/silicon/robot/updateicon()
+	icon = icon_alt_director
+	if(reset_icon_folder_draw)
+		icon = 'icons/mob/robots.dmi'
+		icon_alt_director = 'icons/mob/robots.dmi'
+		reset_icon_folder_draw = FALSE //We reset this so we dont consantly reset are icon as a default type
 	overlays.Cut()
-	if(stat == CONSCIOUS)
+	if(stat == CONSCIOUS && !resting_icon_mode)
 		overlays += "eyes-[module_sprites[icontype]]"
+
+	if(stat == DEAD && has_family_guy_death_pose)
+		icon_state = "[module_sprites[icontype]]-wreck"
+
+	if(lights_on && !resting_icon_mode)
+		overlays += "[module_sprites[icontype]]_l"
+
+	if(has_resting_icon && stat == CONSCIOUS)
+		if(resting_icon_mode && !opened)
+			icon_state = "[module_sprites[icontype]]-rest"
+		else
+			icon_state = "[module_sprites[icontype]]"
 
 	if(opened)
 		var/panelprefix = custom_sprite ? ckey : "ov"
@@ -1103,9 +1134,53 @@
 	if(alert(client,"Do you like this icon?",null, "No","Yes") == "No") // We lose the USR reference because this is called from a spawned proc, so we have to use client.
 		return choose_icon()
 
-	icon_selected = 1
+	icon_selected = 1 //MEW
+
 	verbs -= /mob/living/silicon/robot/proc/choose_icon
+
+	//This is a big section of if checks for the different types, sadly I have no idea how to do this in any other way... - Trilby
+	if(icon_state == "mekapeace")
+		icon_alt_director = 'icons/mob/robot_tall/science.dmi'
+		reset_icon_folder_draw = FALSE
+		has_resting_icon = TRUE
+		has_family_guy_death_pose = TRUE
+
+	if(icon_state == "mekamine")
+		icon_alt_director = 'icons/mob/robot_tall/mining.dmi'
+		reset_icon_folder_draw = FALSE
+		has_resting_icon = TRUE
+		has_family_guy_death_pose = TRUE
+
+	if(icon_state == "mekaserve" || icon_state == "mekaserve_alt")
+		icon_alt_director = 'icons/mob/robot_tall/server.dmi'
+		reset_icon_folder_draw = FALSE
+		has_resting_icon = TRUE
+		has_family_guy_death_pose = TRUE
+
+	if(icon_state == "mekajani")
+		icon_alt_director = 'icons/mob/robot_tall/janitor.dmi'
+		reset_icon_folder_draw = FALSE
+		has_resting_icon = TRUE
+		has_family_guy_death_pose = TRUE
+
+	if(icon_state == "mekacargo")
+		icon_alt_director = 'icons/mob/robot_tall/cargo.dmi'
+		reset_icon_folder_draw = FALSE
+		has_resting_icon = TRUE
+		has_family_guy_death_pose = TRUE
+
+	if(icon_state == "mekamed")
+		icon_alt_director = 'icons/mob/robot_tall/medical.dmi'
+		reset_icon_folder_draw = FALSE
+		has_resting_icon = TRUE
+		has_family_guy_death_pose = TRUE
+
+	if(has_resting_icon)
+		verbs += /mob/living/silicon/robot/verb/resting_icon_mode
+
 	to_chat(src, "Your icon has been set. You now require a module reset to change it.")
+
+	updateicon()
 
 /mob/living/silicon/robot/proc/sensor_mode() //Medical/Security HUD controller for borgs
 	set name = "Set Sensor Augmentation"
@@ -1248,3 +1323,20 @@
 
 /mob/living/silicon/robot/get_cell()
 	return cell
+
+
+//Soj edit
+
+/mob/living/silicon/robot/verb/resting_icon_mode()
+	set name = "Resting Icon Mode"
+	set category = "Silicon Commands"
+
+	if(opened)
+		to_chat(src, "You can not go into a resting icon mode well your pannel is open!.")
+		return
+
+	if(resting_icon_mode)
+		resting_icon_mode = FALSE
+	else
+		resting_icon_mode = TRUE
+	updateicon()

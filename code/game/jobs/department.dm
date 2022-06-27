@@ -28,7 +28,6 @@
 	// How much account failed to pay to employees. Used for emails
 	var/total_debt = 0
 
-
 /datum/department/proc/get_total_budget()
 	if(funding_source)
 		return budget_base + budget_personnel
@@ -50,7 +49,7 @@
 	to a much lower starting value
 	*/
 	account_initial_balance = 50000
-
+	jobs_in_department = list("/datum/job/premier","/datum/job/pg")
 /*************
 	Retainers
 **************/
@@ -62,6 +61,7 @@
 	//Without nepitsm a full team 27000 in 6 hours
 	//With nepitsm a full team 35100 in 6 hours
 	account_initial_balance = 50000 //+15k~ do to being state funded
+	jobs_in_department = list("/datum/job/smc","/datum/job/swo","/datum/job/supsec","/datum/job/serg","/datum/job/inspector","/datum/job/medspec","/datum/job/trooper","/datum/job/officer")
 
 
 /datum/department/technomancers
@@ -70,6 +70,7 @@
 	account_initial_balance = 25000 //+15k~ do to being state funded
 	//Full team with nepitsm in 6 hours is 11900
 	//A full crew GM + 4 adpets is 1700 an hour, takes 10~ hours to drain the department funds
+	jobs_in_department = list("/datum/job/chief_engineer","/datum/job/technomancer")
 
 
 /datum/department/civilian
@@ -77,6 +78,7 @@
 	id = DEPARTMENT_CIVILIAN
 	account_initial_balance = 0
 	//No standing balance is kept in the account, this is just for paying gardener, janitor and actor
+	jobs_in_department = list("/datum/job/clubmanager","/datum/job/clubworker","/datum/job/hydro","/datum/job/artist","/datum/job/janitor")
 
 /******************
 	Benefactors
@@ -88,6 +90,7 @@
 	//18600 in 6 hours with full crew
 	//24180 in 6 hours with full crew + nep
 	account_initial_balance = 30000 //5~k For buying medical and items and payments
+	jobs_in_department = list("datum/job/cmo","/datum/job/doctor","/datum/job/trauma_team","/datum/job/psychiatrist")
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
@@ -95,6 +98,7 @@
 	//15000 in 6 hours with full crew
 	//19500 in 6 hours with full crew + nepitism
 	account_initial_balance = 20000 //+10k~ For buying materials and components and things of scientific value as well as pay the demanding staff
+	jobs_in_department = list("/datum/job/rd","/datum/job/scientist","/datum/job/roboticist")
 
 /datum/department/church
 	name = "Church of Absolute"
@@ -102,6 +106,7 @@
 	//9600 in 6 hours with full crew
 	//12480 with all nep in 6 hours
 	account_initial_balance = 25000 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
+	jobs_in_department = list ("/datum/job/chaplain","/datum/job/acolyte")
 
 /******************
 	Independant
@@ -119,6 +124,7 @@
 	*/
 	//Note: LSS isnt accounted for wages when starting money as they have the easyest ways to make money
 	account_initial_balance = 25000 //has a lot of workers thus needs a higher starting to off-set its paychecks if no one actively runs the cargo shuttle
+	jobs_in_department = list("/datum/job/merchant","/datum/job/cargo_tech","/datum/job/mining")
 
 /datum/department/prospector
 	name = "Prospectors"
@@ -127,8 +133,104 @@
 	//Full team with Nep in 6 hours is 6600
 	//Nep in 6 hours with full team is 8580
 	account_initial_balance = 12500 //5k+6~hours of work. should be good for them to make money
+	jobs_in_department = list("/datum/job/foreman","/datum/job/salvager","/datum/job/pro")
 
 /datum/department/independent
 	name = "Independent Allied Factions"
 	id = DEPARTMENT_INDEPENDENT
+	jobs_in_department = list("/datum/job/off_colony_hunt_master","/datum/job/off_colony_hunter","/datum/job/off_colony_herbalist","/datum/job/outsider","/datum/job/assistant")
 
+///////////////////////DEPARTMENT EXPERIENCE PERKS//////////////////////////////////////////
+
+/datum/perk/experienced
+	name = "Experienced: HOLDER"
+	desc = "This is only a test."
+	active = FALSE
+	passivePerk = FALSE
+	var/subPerk = FALSE
+	var/datum/department/dept
+
+
+
+
+/datum/perk/experienced/activate()
+	..()
+	var/list/perkChoice
+	var/paths = subtypesof(type)
+	for (var/T in paths)
+		var/datum/perk/experienced/checker = new T
+		if (checker)
+			if ((checker.dept == dept)&&(checker.subPerk))
+				perkChoice += list(checker)
+
+	var/datum/perk/experienced/choice = input("Hey, this is the first text.", "SECOND!", FALSE) as anything in perkChoice
+	if (istype(choice,/datum/perk/experienced))
+		holder.stats.addPerk(choice.type)
+	holder.stats.removePerk(type)
+
+///////////////////////////////
+//EXPERIENCED PERKS
+//
+//When the base Department perk is clicked, it will search all subtypes of the /datum/perk/experienced/<<DEPARTMENT>>/ folder for all subperks of that particular kind.
+//It will then present an input choice list as to what "Sub-Perk" they would like to choose for being experienced.
+//////////////////////////////
+
+
+/datum/perk/experienced/Prospector
+	name = "Experienced: Prospector"
+	gain_text = "Did it work?"
+	dept = DEPARTMENT_PROSPECTOR
+
+/datum/perk/experienced/Prospector/ThingOne
+	subPerk = TRUE
+	name = "Experienced: Prospector - Thing One Check"   /////Use this format. Or don't?
+	gain_text = "Alright, you're scaring me..."
+
+/datum/perk/experienced/Science
+	name = "Experienced: Science"
+	gain_text = "Well, that apparently worked?"
+	desc = "Hm....."
+	dept = DEPARTMENT_SCIENCE
+
+/datum/perk/experienced/Medical
+	name = "Experienced: Medical"
+	dept = DEPARTMENT_MEDICAL
+
+/datum/perk/experienced/Lonestar
+	name = "Experienced: Lonestar"
+	dept = DEPARTMENT_LSS
+	gain_text = "Yay? Lonestar!!!"
+
+/datum/perk/experienced/Lonestar/Station
+	subPerk = TRUE
+	name = "Station?"
+	gain_text = "STATION!"
+	desc = "Station."
+
+/datum/perk/experienced/Lonestar/DoubleTrouble
+	subPerk = TRUE
+	name = "BOUBLE TWOBLE!"
+	gain_text = "I knojsdklakfdj;af"
+	desc = "Another boring description"
+
+/datum/perk/experienced/Cult
+	name = "Experienced: Church of the Gamer Word"
+	dept = DEPARTMENT_CHURCH
+
+/datum/perk/experienced/Service
+	name = "Experienced: Service Worker"
+	dept = DEPARTMENT_CIVILIAN
+
+/datum/perk/experienced/artificers
+	name = "Experienced: Artificer's Guild"
+	dept = DEPARTMENT_ENGINEERING
+
+/datum/perk/experienced/shitcurity
+	name = "Experienced: Shitcurity"
+	dept = DEPARTMENT_SECURITY
+
+/datum/perk/experienced/unaligned
+	name = "Experienced: Other"
+	dept = DEPARTMENT_INDEPENDENT
+
+//No, there is no experience perk for the Premiere, as the point of the position is suffering.

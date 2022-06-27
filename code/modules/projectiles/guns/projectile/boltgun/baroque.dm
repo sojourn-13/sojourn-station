@@ -31,7 +31,7 @@ Own a musket for department defense, since that's what the founding hunters inte
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_BONE = 20)
-	price_tag = 750
+	price_tag = 1750
 	extra_damage_mult_scoped = 0.4
 	zoom_factor = 1.4
 	twohanded = TRUE

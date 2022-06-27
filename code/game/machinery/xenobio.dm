@@ -56,7 +56,7 @@
 //Dye vat and its various procs and checks
 /obj/machinery/slime_dye_vat
 	name = "slime dye vat"
-	desc = "This machine holds slime that changes color! Makes it easy to apply to clothing."
+	desc = "This machine takes slimes and crayons of different colors to dye clothing! Remember to scrub it to keep it clean after use, or else..."
 	icon = 'icons/obj/xenobio.dmi'
 	icon_state = "slime_vat"
 	density = TRUE

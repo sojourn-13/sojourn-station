@@ -39,6 +39,11 @@
 	if(autorecharging)
 		START_PROCESSING(SSobj, src)
 
+
+/obj/item/cell/proc/kick_autorecharging()
+	if(autorecharging)
+		START_PROCESSING(SSobj, src)
+
 /obj/item/cell/Process()
 	charge_tick--
 	if(charge_tick > 0) return 0
