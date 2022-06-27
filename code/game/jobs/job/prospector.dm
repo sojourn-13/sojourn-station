@@ -79,7 +79,7 @@
 	stat_modifiers = list(
 		STAT_BIO = 20,
 		STAT_MEC = 20,
-		STAT_COG = 0,
+		STAT_COG = 10,
 		STAT_TGH = 10,
 		STAT_VIG = 10,
 		STAT_ROB = 10
