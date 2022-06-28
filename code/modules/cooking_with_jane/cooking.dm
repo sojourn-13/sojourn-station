@@ -191,7 +191,9 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 //Add base step command. All other steps stem from this. Don't call twice!
 /datum/cooking_with_jane/recipe/proc/create_step_base()
 	var/datum/cooking_with_jane/recipe_step/start/step = new /datum/cooking_with_jane/recipe_step(cooking_container)
-	return src.add_step(step, FALSE)
+	last_required_step = step
+	last_created_step = step
+	first_step = step
 
 //-----------------------------------------------------------------------------------
 //Add reagent step shortcut commands
@@ -328,31 +330,25 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 	if(!optional && option_chain_mode)
 		CRASH("/datum/cooking_with_jane/recipe/proc/add_step: Required step added while option chain mode is on. Recipe name=[name].")
 
-	if(!first_step)
-		if(optional)
-			log_debug("/datum/cooking_with_jane/recipe/proc/add_step_reagent: The first step in a recipe cannot be optional. Skipping.")
-			log_debug("Recipe name=[name].")
-			return
-		first_step = step
+
+	if(optional)
+		switch(option_chain_mode)
+			//When the chain needs to be initialized
+			if(1)
+				last_required_step.optional_step_list += step
+				option_chain_mode = 2
+				step.flags |= CWJ_IS_OPTION_CHAIN
+			//When the chain has already started.
+			if(2)
+				last_created_step.next_step = step
+				step.flags |= CWJ_IS_OPTION_CHAIN
+			//Add the step to the optional_step_list list normally.
+			else
+				last_required_step.optional_step_list += step
+		//Set the next step to loop back to the step it branched from.
+		step.next_step = last_required_step
 	else
-		if(optional)
-			switch(option_chain_mode)
-				//When the chain needs to be initialized
-				if(1)
-					last_required_step.optional_step_list += step
-					option_chain_mode = 2
-					step.flags |= CWJ_IS_OPTION_CHAIN
-				//When the chain has already started.
-				if(2)
-					last_created_step.next_step = step
-					step.flags |= CWJ_IS_OPTION_CHAIN
-				//Add the step to the optional_step_list list normally.
-				else
-					last_required_step.optional_step_list += step
-			//Set the next step to loop back to the step it branched from.
-			step.next_step = last_required_step
-		else
-			last_required_step.next_step = step
+		last_required_step.next_step = step
 
 
 	//populate the previous step for optional backwards pathing.

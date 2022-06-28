@@ -33,11 +33,11 @@
 	unique_id = sequential_id("recipe_step")
 
 	//Add the recipe to our dictionary for future reference.
-	if(!GLOB.cwj_step_dictionary_ordered[class])
-		GLOB.cwj_step_dictionary_ordered[class] = list()
-	if(!GLOB.cwj_step_dictionary_ordered[class][group_identifier])
-		GLOB.cwj_step_dictionary_ordered[class][group_identifier] = list()
-	GLOB.cwj_step_dictionary_ordered[class][group_identifier]["[unique_id]"] = src
+	if(!GLOB.cwj_step_dictionary_ordered["[class]"])
+		GLOB.cwj_step_dictionary_ordered["[class]"] = list()
+	if(!GLOB.cwj_step_dictionary_ordered["[class]"][group_identifier])
+		GLOB.cwj_step_dictionary_ordered["[class]"][group_identifier] = list()
+	GLOB.cwj_step_dictionary_ordered["[class]"][group_identifier]["[unique_id]"] = src
 	GLOB.cwj_step_dictionary["[unique_id]"] = src
 
 //Calculate how well the recipe step was followed to the letter.
@@ -80,7 +80,7 @@
 		return min(raw_quality, max_quality_award)
 	return raw_quality
 
-/datum/cooking_with_jane/recipe_step/proc/follow_step()
+/datum/cooking_with_jane/recipe_step/proc/follow_step(var/obj/added_item, var/obj/item/cooking_with_jane/cooking_container/container)
 	return
 
 //-----------------------------------------------------------------------------------
@@ -133,11 +133,12 @@
 
 
 /datum/cooking_with_jane/recipe_step/add_item/check_conditions_met(var/obj/added_item)
+	log_debug("Called add_item/check_conditions_met for [added_item], checking against item type [required_item_type]. Exact_path = [exact_path]")
 	if(exact_path)
 		if(added_item.type == required_item_type)
 			return TRUE
 	else
-		if(istype(added_item,required_item_type))
+		if(istype(added_item, required_item_type))
 			return TRUE
 	return FALSE
 
@@ -148,6 +149,11 @@
 	var/raw_quality = added_item?:food_quality * inherited_quality_modifier
 	return clamp_quality(raw_quality)
 
+/datum/cooking_with_jane/recipe_step/add_item/follow_step(var/obj/added_item, var/obj/item/cooking_with_jane/cooking_container/container)
+	log_debug("Called: /datum/cooking_with_jane/recipe_step/add_item/follow_step")
+	added_item.forceMove(container)
+	container.foodstuff += added_item
+	return TRUE
 //-----------------------------------------------------------------------------------
 //A cooking step that involves using an item on the food.
 /datum/cooking_with_jane/recipe_step/use_item
@@ -190,10 +196,6 @@
 /datum/cooking_with_jane/recipe_step/use_item/calculate_quality(var/obj/added_item)
 	return clamp_quality(0)
 
-/datum/cooking_with_jane/recipe_step/add_item/follow_step(var/obj/added_item, var/obj/item/cooking_with_jane/cooking_container/container)
-	added_item.forceMove(container)
-	container.foodstuff += added_item
-	return TRUE
 
 //-----------------------------------------------------------------------------------
 //A cooking step that involves adding a reagent to the food.

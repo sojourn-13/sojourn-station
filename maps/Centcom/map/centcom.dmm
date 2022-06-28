@@ -6183,6 +6183,7 @@
 "FZ" = (
 /obj/structure/table/marble,
 /obj/structure/table/marble,
+/obj/item/cooking_with_jane/cooking_container/plate,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Ga" = (
@@ -6286,6 +6287,13 @@
 /obj/effect/floor_decal/industrial/warningwhite/full,
 /turf/simulated/floor/carpet/purcarpet,
 /area/centcom/raider_base)
+"Ie" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/food/snacks/tofu,
+/obj/item/reagent_containers/food/snacks/tofu,
+/obj/item/reagent_containers/food/snacks/tofu,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "Ip" = (
 /obj/structure/flora/rock/variant1,
 /turf/simulated/floor/fixed/fgrass,
@@ -6512,6 +6520,9 @@
 /area/centcom/raider_base)
 "Oc" = (
 /obj/structure/table/marble,
+/obj/item/reagent_containers/food/snacks/cutlet,
+/obj/item/reagent_containers/food/snacks/cutlet,
+/obj/item/reagent_containers/food/snacks/cutlet,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Og" = (
@@ -6808,7 +6819,12 @@
 /area/centcom/raider_base)
 "Ut" = (
 /obj/structure/table/marble,
-/obj/item/glass_jar,
+/obj/item/reagent_containers/food/snacks/breadslice,
+/obj/item/reagent_containers/food/snacks/breadslice,
+/obj/item/reagent_containers/food/snacks/breadslice,
+/obj/item/reagent_containers/food/snacks/breadslice,
+/obj/item/reagent_containers/food/snacks/breadslice,
+/obj/item/reagent_containers/food/snacks/breadslice,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Uw" = (
@@ -18470,7 +18486,7 @@ ho
 yR
 FM
 FZ
-Oc
+Ie
 Oc
 Ut
 ho
