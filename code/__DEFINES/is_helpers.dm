@@ -46,6 +46,8 @@
 
 #define issuperiortermite(A) istype(A, /mob/living/carbon/superior_animal/termite)
 
+#define issuperiorspider(A) istype(A, /mob/living/carbon/superior_animal/giant_spider)
+
 #define isburrow(A) istype(A, /obj/structure/burrow)
 //---------------------------------------------------
 

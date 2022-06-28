@@ -11,7 +11,7 @@
 	charge_cost = 40 //20 shots per high medium-sized cell
 	init_recoil = CARBINE_RECOIL(1)
 	origin_tech = list(TECH_COMBAT = 7, TECH_PLASMA = 2)
-	price_tag = 1500
+	price_tag = 1200
 	zoom_factor = null
 	damage_multiplier = 1.1
 	slot_flags = SLOT_BELT|SLOT_BACK

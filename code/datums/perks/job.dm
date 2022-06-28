@@ -141,16 +141,12 @@
 
 /datum/perk/sanityboost/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk /= 1.2
-	holder.burn_mod_perk /= 1.2
-	holder.oxy_mod_perk /= 1.2
-	holder.toxin_mod_perk /= 1.2
+	holder.maxHealth += 40
+	holder.health += 40
 
 /datum/perk/sanityboost/remove()
-	holder.brute_mod_perk *= 1.2
-	holder.burn_mod_perk *= 1.2
-	holder.oxy_mod_perk *= 1.2
-	holder.toxin_mod_perk *= 1.2
+	holder.maxHealth -= 40
+	holder.health -= 40
 	..()
 
 /datum/perk/sure_step
@@ -482,34 +478,35 @@
 
 /datum/perk/job/blackshield_conditioning
 	name = "Blackshield Conditioning"
-	desc = "Thanks to special and intensive training received in the course of your employment with Blackshield, your body is a bit more resistant to brute force damage and burns due to trauma conditioning."
+	desc = "Thanks to special and intensive training received in the course of your employment with Blackshield, with all the practice gained in space you feel you can jump from greater heights and know when to duck-and-cover."
 
 /datum/perk/blackshield_conditioning/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk -= 0.15
-	holder.burn_mod_perk -= 0.10
+	holder.mob_bomb_defense += 20
+	holder.falls_mod -= 0.4
 
 /datum/perk/blackshield_conditioning/remove()
-	holder.brute_mod_perk += 0.15
-	holder.burn_mod_perk += 0.10
+	holder.mob_bomb_defense -= 20
+	holder.falls_mod += 0.4
 	..()
 
 /datum/perk/job/prospector_conditioning
 	name = "Rough and Tumble"
-	desc = "You've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot, and even set on fire. As a result, you resist every type of damage just a little bit better than others not of similar toughness."
+	desc = "You've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot, and even set on fire. Hell, even a few used needles in desperate times. You feel as though your body fights off the inflictions of to much NSA and addictions much better than others."
+	perk_shared_ability = PERK_SHARED_SEE_ILLEGAL_REAGENTS
 
 /datum/perk/prospector_conditioning/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk -= 0.10
-	holder.burn_mod_perk -= 0.05
-	holder.oxy_mod_perk -= 0.10
-	holder.toxin_mod_perk -= 0.15
+	if(holder)
+		holder.metabolism_effects.addiction_chance_multiplier = 0.1
+		holder.metabolism_effects.nsa_bonus += 25
+		holder.metabolism_effects.calculate_nsa()
 
 /datum/perk/prospector_conditioning/remove()
-	holder.brute_mod_perk += 0.10
-	holder.burn_mod_perk += 0.05
-	holder.oxy_mod_perk += 0.10
-	holder.toxin_mod_perk += 0.15
+	if(holder)
+		holder.metabolism_effects.addiction_chance_multiplier = 1
+		holder.metabolism_effects.nsa_bonus -= 25
+		holder.metabolism_effects.calculate_nsa()
 	..()
 
 /datum/perk/job/butcher
@@ -651,3 +648,4 @@
 			F.reagents.add_reagent("nutriment", 15)
 		if(9)
 			F.name = "hearty [F.name]"
+

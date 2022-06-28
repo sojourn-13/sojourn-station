@@ -2,6 +2,7 @@
 	if ((stat != CONSCIOUS) || !canmove || resting || lying || stasis || AI_inactive || client || grabbed_by_friend)
 		stance = HOSTILE_STANCE_IDLE
 		target_mob = null
+		lost_sight = FALSE
 		walk(src, 0)
 		return
 

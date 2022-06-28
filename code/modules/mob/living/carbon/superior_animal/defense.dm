@@ -245,8 +245,6 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 	if (!anim)
 		anim = 0
 
-	sleep(1)
-
 	for(var/obj/item/I in src)
 		drop_from_inventory(I)
 		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
@@ -270,12 +268,14 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 	. = ..(anim,remains)
 
 /mob/living/carbon/superior_animal/death(var/gibbed,var/message = deathmessage)
+
 	if (stat != DEAD)
 		target_mob = null
+		lost_sight = FALSE
 		stance = initial(stance)
 		stop_automated_movement = initial(stop_automated_movement)
-		walk(src, 0)
 		following = null
+		last_followed = null
 
 		density = 0
 		layer = LYING_MOB_LAYER

@@ -134,11 +134,11 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	// If nothing was ever triggered, continue as normal
 	..()
 
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/findTarget()
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/doTargetMessage()
 	. = ..()
-	if(.)
-		visible_emote("lets out a buzz as it detects a target!")
-		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1, -3)
+
+	visible_emote("lets out a buzz as it detects a target!")
+	playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1, -3)
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/advanced
 	name = "SI Mantis Drone"

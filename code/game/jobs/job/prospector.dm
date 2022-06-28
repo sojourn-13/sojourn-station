@@ -62,7 +62,9 @@
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
-	alt_titles = list("Scrapper","Sapper","Junk Technician","Sawbones")
+	noob_name = "Rookie Salvager"
+	alt_titles = list("Rookie Salvager","Scrapper","Sapper","Junk Technician","Sawbones")
+	alt_perks = list("Sawbones"=list(/datum/perk/medicalexpertise, /datum/perk/stalker), "Junk Technician"=list(/datum/perk/junkborn, /datum/perk/robotics_expert))
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR
 
@@ -109,7 +111,8 @@
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
-	alt_titles = list("Enforcer","Frontiersmen","Triggerman")
+	noob_name = "Greenhorn Prospector"
+	alt_titles = list("Greenhorn Prospector","Enforcer","Frontiersmen","Triggerman")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_DUMB
 
@@ -123,7 +126,8 @@
 	stat_modifiers = list(
 		STAT_TGH = 20,
 		STAT_VIG = 20,
-		STAT_ROB = 20
+		STAT_ROB = 20,
+		STAT_COG = 10
 	)
 
 	perks = list(/datum/perk/stalker, /datum/perk/job/prospector_conditioning)

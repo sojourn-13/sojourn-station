@@ -46,6 +46,6 @@
 					L.Weaken(flash_strength)
 					if (L.HUDtech.Find("flash"))
 						flick("e_flash", L.HUDtech["flash"])
-					L.visible_message(SPAN_DANGER("\the [src] flashes a bright green blinding \ [L]!"))
+					L.visible_message(SPAN_DANGER("\the [src] flashes a bright green, blinding \ [L]!"))
 			else
 				L.visible_message(SPAN_DANGER("\the [src] fails to blind \ [L]!"))

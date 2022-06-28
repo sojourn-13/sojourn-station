@@ -17,6 +17,7 @@
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.0
 	zoom_factor = 0.4
+	price_tag = 900
 	init_recoil = CARBINE_RECOIL(1)
 	folding_stock = TRUE
 	can_dual = FALSE //please god please please NO MORE NO MORE GOD, PLEASE
@@ -66,6 +67,7 @@
 	icon_state = "viper"
 	item_state = "viper"
 	matter = list(MATERIAL_PLASTEEL = 17, MATERIAL_PLASTIC = 9)
+	price_tag = 1000
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.2
 	extra_damage_mult_scoped = 0.2
@@ -92,6 +94,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
+	price_tag = 1000
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.1
 	zoom_factor = 0.4
@@ -160,6 +163,7 @@
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
+	price_tag = 1400
 	fire_delay = 15
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.4

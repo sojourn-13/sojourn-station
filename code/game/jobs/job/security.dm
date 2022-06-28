@@ -37,7 +37,6 @@
 	perks = list(/datum/perk/ass_of_concrete,
 				 /datum/perk/job/blackshield_conditioning,
 				 /datum/perk/job/bolt_reflect,
-				 /datum/perk/codespeak,
 				 /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -99,7 +98,6 @@
 	)
 
 	perks = list(/datum/perk/ass_of_concrete,
-				 /datum/perk/job/bolt_reflect,
 				 /datum/perk/codespeak,
 				 /datum/perk/chem_contraband)
 
@@ -211,7 +209,7 @@
 		STAT_VIG = 25,
 	)
 
-	perks = list(/datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect, /datum/perk/chem_contraband)
+	perks = list(/datum/perk/job/bolt_reflect, /datum/perk/job/blackshield_conditioning, /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
@@ -243,7 +241,8 @@
 	spawn_positions = 2
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	alt_titles = list("Detective","Forensics Specialist")
+	noob_name = "Gumshoe"
+	alt_titles = list("Gumshoe","Detective","Forensics Specialist")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	playtimerequired = 1200
@@ -299,7 +298,8 @@
 	spawn_positions = 2
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	alt_titles = list("Combat Medic","Combat Surgeon")
+	noob_name = "Corpsman Recruit"
+	alt_titles = list("Corpsman Recruit","Combat Medic","Combat Surgeon")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
@@ -318,7 +318,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/medicalexpertise)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/job/blackshield_conditioning)
 				// /datum/perk/chemist -Thanos Voice: "I'm sorry little one..."
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
@@ -353,7 +353,8 @@
 	spawn_positions = 4
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	alt_titles = list("Blackshield Cadet", "Blackshield Militiamen")
+	noob_name = "Blackshield Cadet"
+	alt_titles = list("Blackshield Cadet","Blackshield Militiamen")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10
@@ -404,7 +405,8 @@
 	spawn_positions = 4
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	alt_titles = list("Marshal Civil Servant", "Field Training Marshal")
+	noob_name = "Field Training Marshal"
+	alt_titles = list("Field Training Marshal","Marshal Civil Servant")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10

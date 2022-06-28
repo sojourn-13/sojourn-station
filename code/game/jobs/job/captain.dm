@@ -17,7 +17,6 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	playtimerequired = 2500
 	wage = WAGE_COMMAND
 
-	health_modifier = 1
 	ideal_character_age = 50 // Old geezer captains ftw
 	minimum_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/captain

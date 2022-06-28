@@ -185,7 +185,7 @@ var/global/obj/machinery/power/eotp/eotp
 		rewards -= ODDITY
 */
 	else if(type_release == STAT_BUFF)
-		var/random_stat = pick(ALL_STATS)
+		var/random_stat = pick(ALL_STATS_FOR_LEVEL_UP)
 		for(var/mob/living/carbon/human/H in disciples)
 			if(H.stats)
 				to_chat(H, SPAN_NOTICE("You feel the blessing of the church upon you. You are enlightened, and gain deeper knowledge in [random_stat]; however, you can already feel this new-found knowledge is temporary."))

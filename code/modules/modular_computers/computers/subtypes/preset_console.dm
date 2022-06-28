@@ -155,6 +155,23 @@
 	..()
 	set_autorun("cammon")
 
+// Crew cams
+/obj/item/modular_computer/console/preset/crew_cams/install_default_hardware()
+	..()
+	printer = new/obj/item/computer_hardware/printer(src)
+
+/obj/item/modular_computer/console/preset/crew_cams/install_default_programs()
+	..()
+	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
+	hard_drive.store_file(new/datum/computer_file/program/newsbrowser())
+	hard_drive.store_file(new/datum/computer_file/program/camera_monitor())
+
+// Crew cameras
+/obj/item/modular_computer/console/preset/crew_cams/camera/install_default_programs()
+	..()
+	set_autorun("cammon")
+
+
 // Security records
 /obj/item/modular_computer/console/preset/security/records/install_default_programs()
 	..()

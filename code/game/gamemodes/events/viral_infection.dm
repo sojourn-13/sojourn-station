@@ -1,8 +1,10 @@
 /*
-	Some of the vendors on the ship will go a bit nuts, firing their contents, shouting abuse, and
-	allowing contraband.
-	It will affect a limited quantity of vendors, but affected ones will last forever until fixed
-*/
+	Randomly gereates a viro outbreak and gives it to people randomly, its intent is to give something for doctors to do
+	Some are good some are bad but the main thing is to allow for the Biolab to get points and have some content with viro
+	Some infections if left for too long are lethal so theirs a risk factor to that
+
+Viro man bad ruins rp/isnt fun to contain dosnt do a good job at all to give medical something to do
+
 /datum/storyevent/viral_infection
 	id = "viral_infection"
 	name = "viral infection"
@@ -11,7 +13,7 @@
 	event_pools = list(EVENT_LEVEL_MODERATE = POOL_THRESHOLD_MODERATE,
 	EVENT_LEVEL_MAJOR = POOL_THRESHOLD_MAJOR)
 	tags = list(TAG_TARGETED, TAG_NEGATIVE)
-
+*/
 //////////////////////////////////////////////////////////
 
 
