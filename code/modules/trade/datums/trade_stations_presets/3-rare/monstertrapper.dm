@@ -3,7 +3,10 @@
 	name_pool = list(
 		"EXT 'Armitage'" = "Exterminator 'Armitage':\n\"Greetings, Colony. We're in a bit of a rough spot at the moment. Got any traps to spare?\".",
 	)
+	icon_states = list("htu_destroyer", "ship")
 	uid = "trapper"
+	tree_x = 0.46
+	tree_y = 0.5
 	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = UNIQUE_GOODS

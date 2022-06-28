@@ -3,6 +3,8 @@
 		"McTB 'Dionis'" = "'McRonalds' Trade Beacon 'Dionis'. You hope they still have Happy Meals with a toy."
 	)
 	uid = "mcronalds"
+	tree_x = 0.46
+	tree_y = 0.6
 	spawn_always = TRUE
 	markup = UNCOMMON_GOODS
 	base_income = 1600

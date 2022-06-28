@@ -3,6 +3,8 @@
 		"FTB 'Solntsey'" = "Free Trade Beacon 'Solntsey': \"Try your luck with our grab bag specials!\"",
 	)
 	uid = "casino"
+	tree_x = 0.5
+	tree_y = 0.7
 	markup = 20				// High markup, low base price to prevent export abuse
 	base_income = 0
 	wealth = 0

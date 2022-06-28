@@ -3,6 +3,8 @@
 		"GK 'Spector'" = "Ghost Kitchen 'Spector': \"We got tons of orders that need filling, will take anything you can cook."
 	)
 	uid = "ghostkitchen"
+	tree_x = 0.42
+	tree_y = 0.9
 	start_discovered = TRUE
 	spawn_always = TRUE
 	markup = 10 //These guys should only want to buy food never sell, so this dosnt matter.

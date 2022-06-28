@@ -3,6 +3,8 @@
 		"ATB 'Suit Up!'" = "Aster's Trade Beacon 'Suit Up!': \"Suits, voidsuits and more for you, traveler!\""
 	)
 	uid = "suit_up"
+	tree_x = 0.58
+	tree_y = 0.9
 	start_discovered = TRUE
 	spawn_always = TRUE
 	markup = COMMON_GOODS
