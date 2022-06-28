@@ -806,6 +806,10 @@ th.bot {
 	border: 1px solid #40628a;
 	background: url(nanomapBackground.png);
 }
+#tradeTreeContainer {
+	width: 100%;
+    height: 590px;
+}
 
 /* [Tooltips of description] */
 .withToolTip .ImTooltip, .withToolTipInTooltip .ImTooltipInTooltip{
@@ -849,6 +853,10 @@ th.bot {
 img.sciTechTreeIconToolTip {
     background-image: url(science.png);
 }
+.tradeTreeIcon .ImTooltip img{
+	background-image: url(overmap.png);
+}
+
 /* [/Tooltips of description] */
 .sciTechTreeIcon {
 	position: absolute;
@@ -1030,3 +1038,109 @@ img.sciTechTreeIconToolTip {
     width: 300px;
     float: left;
 }
+
+/* Trade tree */
+.tradeTreeIcon {
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	background-image: url(overmap.png);
+	background-position: -0px -0px;
+	background-repeat: no-repeat;
+	zoom: 1;
+}
+
+.tradeTreeIconBox {
+	width: 32px;
+	height: 32px;
+}
+
+.tradeDiscovered {
+	background: #2f943c;
+}
+
+.tradeDiscovered:hover {
+    background: #3fB44c;
+}	
+
+.tradeNotDiscovered {
+	background: #942f3c;
+}
+
+.tradeNotDiscovered:hover {
+    background: #B43f4c;
+}
+
+.tradeSelected {
+	background: #3333cc;
+}
+
+.tradeSelected:hover {
+    background: #3333cf;
+}
+
+.icon-object { background-position: 0px 0px; }
+.icon-ship { background-position: -32px 0px; }
+.icon-planet { background-position: -64px 0px; }
+.icon-station { background-position: -96px 0px; }
+.icon-bluedwarf { background-position: -128px 0px; }
+.icon-reddwarf { background-position: -160px 0px; }
+.icon-yellowgiant { background-position: -192px 0px; }
+.icon-blackhole { background-position: -224px 0px; }
+
+.icon-illusive { background-position: 0px -32px; }
+.icon-clockwork{ background-position: -32px -32px; }
+.icon-barren { background-position: -64px -32px; }
+.icon-chlorine { background-position: -96px -32px; }
+.icon-desert { background-position: -128px -32px; }
+.icon-ruined { background-position: -160px -32px; }
+.icon-lush { background-position: -192px -32px; }
+.icon-penumbra { background-position: -224px -32px; }
+
+.icon-frozen { background-position: 0px -64px; }
+.icon-volcanic { background-position: -32px -64px; }
+.icon-metallic { background-position: -64px -64px; }
+.icon-dyson { background-position: -256px -0px; }
+.icon-os_fortress { background-position: -96px -64px; }
+.icon-ring { background-position: -128px -64px; }
+.icon-ring_active { background-position: -160px -64px; }
+.icon-asteroid0 { background-position: -192px -64px; }
+
+.icon-asteroid1 { background-position: 0px -96px; }
+.icon-asteroid2 { background-position: -32px -96px; }
+.icon-asteroid3 { background-position: -64px -96px; }
+.icon-os_ruins { background-position: -96px -96px; }
+.icon-spacehulk { background-position: -128px -96px; }
+.icon-eris { background-position: -160px -96px; }
+.icon-htu_station { background-position: -192px -96px; }
+.icon-htu_capital { background-position: -224px -96px; }
+
+.icon-htu_cruiser { background-position: 0px -128px; }
+.icon-htu_destroyer { background-position: -32px -128px; }
+.icon-htu_frigate { background-position: -64px -128px; }
+.icon-moe_station { background-position: -96px -128px; }
+.icon-moe_capital { background-position: -128px -128px; }
+.icon-moe_cruiser { background-position: -160px -128px; }
+.icon-moe_destroyer { background-position: -192px -128px; }
+.icon-moe_frigate { background-position: -224px -128px; }
+
+.icon-ihs_capital { background-position: 0px -160px; }
+.icon-ihs_cruiser { background-position: -32px -160px; }
+.icon-ihs_destroyer { background-position: -64px -160px; }
+.icon-ihs_frigate { background-position: -96px -160px; }
+.icon-nt_cruiser { background-position: -128px -160px; }
+.icon-nt_destroyer { background-position: -160px -160px; }
+.icon-nt_frigate { background-position: -192px -160px; }
+.icon-serb_cruiser { background-position: -224px -160px; }
+
+.icon-serb_destroyer { background-position: 0px -192px; }
+.icon-serb_frigate { background-position: -32px -192px; }
+.icon-oberth_cruiser { background-position: -64px -192px; }
+.icon-oberth_destroyer { background-position: -96px -192px; }
+.icon-oberth_frigate { background-position: -128px -192px; }
+.icon-greyson_frigate { background-position: -160px -192px; }
+.icon-capital { background-position: -192px -192px; }
+.icon-mothership { background-position: -224px -192px; }
+
+.icon-planetcracker { background-position: 0px -224px; }
+.icon-unkn { background-position: -32px -224px; }

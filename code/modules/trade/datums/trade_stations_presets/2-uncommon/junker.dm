@@ -3,6 +3,8 @@
 		"JNK 'Garbaj'" = "Junk collector. We buy what other people won't.",
 	)
 	uid = "junker"
+	tree_x = 0.1
+	tree_y = 0.7
 	recommendations_needed = 1
 	spawn_always = TRUE
 	markup = UNCOMMON_GOODS

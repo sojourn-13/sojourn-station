@@ -2,7 +2,9 @@
 	name_pool = list(
 		"FBV 'Hellcat'" = "\"Greetings. This is the Hellcat. We're currently escorting the Caduceus and we will be departing the system shortly alongside them. We are willing to part with our spare supplies while we're here.\""
 	)
-	icon_states = "ship"
+	icon_states = list("ihs_frigate", "ship")
+	tree_x = 0.82
+	tree_y = 0.9
 	start_discovered = TRUE
 	markup = COMMON_GOODS * 1.5
 	uid = "guns_basic"

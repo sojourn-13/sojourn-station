@@ -3,6 +3,8 @@
 		"ATB 'Suit Up!'" = "Aster's Trade Beacon 'Suit Up!': \"Suits, voidsuits and more for you, traveler!\""
 	)
 	uid = "suit_up"
+	tree_x = 0.74
+	tree_y = 0.9
 	start_discovered = TRUE
 	spawn_always = TRUE
 	markup = COMMON_GOODS
@@ -10,7 +12,7 @@
 	base_income = 3200
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendations_needed = 1
+	//recommendations_needed = 1
 	stations_recommended = list("rigs", "mecha")
 	inventory = list(
 		"Armor" = list(
