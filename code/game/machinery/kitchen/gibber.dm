@@ -13,7 +13,7 @@
 	var/dirty = 0 // Does it need cleaning?
 	var/mob/living/occupant // Mob who has been put inside
 	var/gib_throw_dir = WEST // Direction to spit meat and gibs in.
-
+	var/gib_time = 40        // Time from starting until meat appears
 	var/hack_require = 6 //for hacking with multitool
 	var/hack_stage = 0
 
@@ -179,40 +179,94 @@
 		return
 	if(!occupant)
 		visible_message(SPAN_DANGER("You hear a loud metallic grinding sound."))
+		playsound(loc, 'sound/machines/blender.ogg', 50, 1)
 		return
 	use_power(1000)
 	visible_message(SPAN_DANGER("You hear a loud squelchy grinding sound."))
+	playsound(loc, 'sound/machines/juicer.ogg', 50, 1)
 	operating = TRUE
+	
+
+	var/slab_name = occupant.name
+	var/slab_count = 0
+	var/slab_type = /obj/item/reagent_containers/food/snacks/meat
+	var/slab_nutrition = 20
+	if(iscarbon(occupant))
+		var/mob/living/carbon/C = occupant
+		slab_nutrition = C.nutrition / 15
+
+	// Some mobs have specific meat item types.
+	if(isanimal(src.occupant))
+		var/mob/living/simple_animal/critter = src.occupant
+		if(critter.meat_amount)
+			slab_count = critter.meat_amount
+		if(critter.meat_type)
+			slab_type = critter.meat_type
+		if(!ispath(critter.meat_type, /obj/item/reagent_containers/food/snacks/meat) || slab_count == 0)
+			var/mob/living/to_delete = occupant
+			occupant = null
+			qdel(to_delete)
+			visible_message(SPAN_DANGER("The grinder doesn't have any appreciable meat."))
+			operating = FALSE
+			return
+
+	else if(issuperioranimal(occupant))
+		var/mob/living/carbon/superior_animal/s_animal = occupant
+		slab_type = s_animal.meat_type
+		slab_count = s_animal.meat_amount
+		if(!ispath(s_animal.meat_type, /obj/item/reagent_containers/food/snacks/meat) || slab_count == 0)
+			var/mob/living/to_delete = occupant
+			occupant = null
+			qdel(to_delete)
+			visible_message(SPAN_DANGER("The grinder doesn't have any appreciable meat."))
+			operating = FALSE
+			return
+
+	else if(ishuman(occupant))
+		var/mob/living/carbon/human/H = occupant
+		slab_name = src.occupant.real_name
+		slab_type = H.form.meat_type
+		slab_count = 3
+
+	// Small mobs don't give as much nutrition.
+	if(issmall(src.occupant))
+		slab_nutrition *= 0.5
+
 	update_icon()
+	spawn(gib_time)
+		if(occupant) //Escape in time?
+			for(var/i=1 to slab_count)
+				var/obj/item/reagent_containers/food/snacks/meat/new_meat = new slab_type(src)
+				new_meat.name = "[slab_name] [new_meat.name]"
+				new_meat.reagents.add_reagent("nutriment",slab_nutrition)
+				new_meat.initialize_genetics(occupant)
+				if(src.occupant.reagents)
+					src.occupant.reagents.trans_to_obj(new_meat, round(occupant.reagents.total_volume/slab_count,1))
 
-	var/meat_amount = occupant.mob_size / 2
-	var/meat_type = /obj/item/reagent_containers/food/snacks/meat
-	if(issuperioranimal(occupant))
-		var/mob/living/carbon/superior_animal/S = occupant
-		meat_type = S.meat_type
-	else if(iscarbon(occupant))
-		//Soj edit, always human meat atm untill someone fixes it
-		meat_type = /obj/item/reagent_containers/food/snacks/meat/human
-	else if(isanimal(occupant))
-		var/mob/living/simple_animal/A = occupant
-		meat_type = A.meat_type
+			occupant.attack_log += "\[[time_stamp()]\] Was gibbed by <b>[user]/[user.ckey]</b>" //One shall not simply gib a mob unnoticed!
+			user.attack_log += "\[[time_stamp()]\] Gibbed <b>[occupant]/[occupant.ckey]</b>"
+			msg_admin_attack("[user.name] ([user.ckey]) gibbed [occupant] ([occupant.ckey]) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[user.x];Y=[user.y];Z=[user.z]'>JMP</a>)")
 
-	for(var/i in 1 to meat_amount)
-		var/obj/item/reagent_containers/food/snacks/meat/new_meat = new meat_type(src)
-		if(occupant.reagents)
-			occupant.reagents.trans_to_obj(new_meat, round(occupant.reagents.total_volume / meat_amount, 1))
+			if(ishuman(occupant))
+				src.occupant.ghostize()
 
-	occupant.attack_log += "\[[time_stamp()]\] Was gibbed by <b>[user]/[user.ckey]</b>" //One shall not simply gib a mob unnoticed!
-	user.attack_log += "\[[time_stamp()]\] Gibbed <b>[occupant]/[occupant.ckey]</b>"
-	msg_admin_attack("[user.name] ([user.ckey]) gibbed [occupant] ([occupant.ckey]) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[user.x];Y=[user.y];Z=[user.z]'>JMP</a>)")
-	occupant.ghostize()
+		
+			ishuman(occupant) ? occupant.gib(3, TRUE) : occupant.gib()
 
-	spawn(4 SECONDS)
-		operating = FALSE
-		ishuman(occupant) ? occupant.gib(3, TRUE) : occupant.gib()
-		occupant = null
-		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
-		for(var/atom/movable/i as anything in contents)
-			i.loc = get_turf(i) // Drop it onto the turf for throwing.
-			i.throw_at(get_edge_target_turf(src, gib_throw_dir), rand(0,3), emagged ? 100 : 50) // Being pelted with bits of meat and bone would hurt.
+			var/mob/living/to_delete = occupant
+			occupant = null
+			qdel(to_delete)
+			
+
+			playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
+			operating = FALSE
+			for (var/obj/thing in contents)
+				// Todo: unify limbs and internal organs
+				// There's a chance that the gibber will fail to destroy some evidence.
+				if((istype(thing,/obj/item/organ) || istype(thing,/obj/item/organ)) && prob(10))
+					qdel(thing)
+					continue
+				thing.loc = get_turf(thing) // Drop it onto the turf for throwing.
+				thing.throw_at(get_edge_target_turf(src,gib_throw_dir),rand(0,3),emagged ? 100 : 50) // Being pelted with bits of meat and bone would hurt.
+
 		update_icon()
