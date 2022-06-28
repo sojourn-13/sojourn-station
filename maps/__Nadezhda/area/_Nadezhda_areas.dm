@@ -764,7 +764,8 @@
 /area/nadezhda/crew_quarters/library
  	name = "\improper Library"
  	icon_state = "library"
- 	sound_env = LARGE_SOFTFLOOR
+ 	sound_env = SMALL_SOFTFLOOR
+ 	forced_ambience = list('sound/ambience/ambibook1.ogg', 'sound/ambience/ambibook2.ogg') // Royalty free jazz radio - beats to read a book/send a fax to. - Seb
 
 /area/nadezhda/crew_quarters/librarybackroom
 	name = "Library Backroom"
@@ -1454,8 +1455,8 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "research"
 
 /area/nadezhda/rnd/rbreakroom
-	name = "\improper Research Breakroom"
-	icon_state = "research"
+	name = "\improper Soteria Breakroom"
+	icon_state = "erisblue"
 
 /area/nadezhda/rnd/scient
 	name = "Science Department Entrance"

@@ -144,6 +144,9 @@ ty ilu - bear
 /area/nadezhda/crew_quarters/bar
 	narrate = "The songs from the jukebox help mitigate the bustling from the nearby kitchen to soften the atmosphere. This is the place where glasses clink, drinks are poured, and lives are changed."
 
+/area/nadezhda/crew_quarters/library
+	narrate = "Pages being turned. Stories unfolding in paperback tomes. Philosophy and entertainment mingling together in the bookcases. All in a quiet, relaxed enviroment, with a nearby broken jukebox playing the same calming tunes over and over again. May you find your book in this place."
+
 /area/nadezhda/crew_quarters/janitor
 	narrate = "The small abode of custodial equipment, the most spotless place of this usually dust-ridden colony who is soon to be polished to a mirror sheen by its humblest of workers."
 
