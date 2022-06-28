@@ -34,6 +34,7 @@
 	var/mob/M = wearer
 	var/area/t = get_area(M)
 	var/turf/T = get_turf(src)
+	var/medical = FALSE
 	switch (cause)
 		if("death")
 			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Marshal")}(src)
@@ -41,6 +42,11 @@
 				radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Blackshield")
 			if(T.z <= 5) //WAH HARDCODE! - SOB EVEN
 				radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Marshal")
+			for(wearer in GLOB.player_list)
+				if(wearer.mind.assigned_role in list(JOBS_MEDICAL))
+					medical = TRUE
+			if(!medical)
+				radio_caller.autosay("No Medical Detected Broadcasting to Common: [mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm")
 			radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Medical")
 			qdel(radio_caller)
 			STOP_PROCESSING(SSobj, src)
@@ -51,6 +57,11 @@
 				radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Blackshield")
 			if(T.z <= 5) //WAH HARDCODE! - SOB EVEN
 				radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Marshal")
+			for(wearer in GLOB.player_list)
+				if(wearer.mind.assigned_role in list(JOBS_MEDICAL))
+					medical = TRUE
+			if(!medical)
+				radio_caller.autosay("No Medical Detected Broadcasting to Common: [mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm")
 			radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Medical")
 			qdel(radio_caller)
 		else
@@ -59,6 +70,12 @@
 				radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Blackshield")
 			if(T.z <= 5) //WAH HARDCODE! - SOB EVEN
 				radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Marshal")
+			for(wearer in GLOB.player_list)
+				if(wearer.mind.assigned_role in list(JOBS_MEDICAL))
+					medical = TRUE
+			if(!medical)
+				radio_caller.autosay("No Medical Detected Broadcasting to Common: [mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "[mobname]'s Death Alarm")
+
 			radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Medical")
 			qdel(radio_caller)
 			STOP_PROCESSING(SSobj, src)

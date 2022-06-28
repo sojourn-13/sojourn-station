@@ -15,7 +15,7 @@
 	mag_well = MAG_WELL_PAN
 	tac_reloads = FALSE
 	matter = list(MATERIAL_PLASTEEL = 42, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 5)
-	price_tag = 3000
+	price_tag = 2500
 	unload_sound 	= 'sound/weapons/guns/interact/lmg_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
@@ -35,7 +35,7 @@
 /obj/item/gun/projectile/automatic/maxim/NM_colony
 	name = "\"Maxim\" machine gun"
 	desc = "An old and surprisingly deprecated gun from the Excelsior. One of their more dangerous weapons, effective at dealing with crowds or suppressing firing lines."
-	price_tag = 1000
+	price_tag = 2000
 	serial_type = "NM"
 
 /obj/item/gun/projectile/automatic/maxim/update_icon()

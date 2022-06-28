@@ -259,20 +259,29 @@
 		/obj/item/integrated_circuit
 		)
 
-/obj/item/gripper/chemistry //A gripper designed for chemistry, to allow borgs to work efficiently in the lab
-	name = "chemistry gripper"
+/obj/item/gripper/chemistry //A gripper designed for chemistry and medical, to allow borgs to work efficiently in the lab
+	name = "medical gripper"
 	icon_state = "gripper-sci"
-	desc = "A specialised grasping tool designed for working in chemistry and pharmaceutical labs"
+	desc = "A specialised grasping tool designed for working in chemistry and pharmaceutical labs, as well as have basic surgical uses."
 
 	can_hold = list(
 		/obj/item/reagent_containers/glass,
 		/obj/item/reagent_containers/pill,
 		/obj/item/reagent_containers/spray,
 		/obj/item/reagent_containers/blood,
+		/obj/item/reagent_containers/hypospray,
 		/obj/item/storage/pill_bottle,
 		/obj/item/hand_labeler,
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
+		/obj/item/am_shielding_container,
+		/obj/item/organ,
+		/obj/item/organ_module,
+		/obj/item/device/mmi,
+		/obj/item/tank,
+		/obj/item/reagent_containers/food/snacks/meat, //For grinding up roaches
+		/obj/item/reagent_containers/food/snacks/grown, //For grinding up herbs
+
 		/obj/item/stack/material/plasma
 		)
 

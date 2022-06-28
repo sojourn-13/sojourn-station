@@ -53,3 +53,17 @@
 	uniform = /obj/item/clothing/under/rank/psych
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	r_ear  = /obj/item/reagent_containers/syringe/large
+
+/decl/hierarchy/outfit/job/medical/doctor/medStudent
+	name = OUTFIT_JOB_NAME("Soteria - Soteria Medical Student")
+	suit =  /obj/item/clothing/suit/armor/vest
+
+/decl/hierarchy/outfit/job/medical/doctor/medNurse
+	name = OUTFIT_JOB_NAME("Soteria - Soteria Nurse")
+
+/decl/hierarchy/outfit/job/medical/doctor/medERPhys
+	name = OUTFIT_JOB_NAME("Soteria - Soteria Emergency Physician")
+
+/decl/hierarchy/outfit/job/medical/doctor/medSurgeon
+	name = OUTFIT_JOB_NAME("Soteria - Soteria Medical Surgeon")
+	suit = /obj/item/clothing/suit/storage/hazardvest

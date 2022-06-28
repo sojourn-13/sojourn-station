@@ -7,7 +7,7 @@
 	max_shells = 10
 	zoom_factor = 2.0
 	init_recoil = HMG_RECOIL(0.5)
-	price_tag = 1000
+	price_tag = 750
 	damage_multiplier = 1.25
 	sharp = FALSE
 	force = WEAPON_FORCE_PAINFUL
@@ -44,7 +44,7 @@
 	max_shells = 10
 	init_recoil = HMG_RECOIL(0.5)
 	zoom_factor = 2.0
-	price_tag = 1000
+	price_tag = 750
 	damage_multiplier = 1.25
 	force = WEAPON_FORCE_PAINFUL
 	sharp = FALSE

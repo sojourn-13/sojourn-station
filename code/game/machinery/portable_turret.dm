@@ -404,8 +404,7 @@ var/list/turret_icons
 							SPAN_DANGER("[user] tripped the security protocol on the [src]! Run!"),
 							SPAN_DANGER("You trip the security protocol! Run!")
 						)
-						sleep(300)
-						hackfail = 0
+						addtimer(CALLBACK(src, /obj/machinery/porta_turret/proc/reset_hackfail), 30 SECOND)
 					else
 						to_chat(user, SPAN_WARNING("You fail to hack the ID reader, but avoid tripping the security protocol."))
 					return TRUE //No whacking the turret with tools on help intent
@@ -438,8 +437,7 @@ var/list/turret_icons
 						)
 						enabled = 1
 						hackfail = 1
-						sleep(300)
-						hackfail = 0
+						addtimer(CALLBACK(src, /obj/machinery/porta_turret/proc/reset_hackfail), 30 SECOND)
 			return TRUE //No whacking the turret with tools on help intent
 
 	if (!(I.flags & NOBLUDGEON) && I.force && !(stat & BROKEN))
@@ -459,6 +457,10 @@ var/list/turret_icons
 				attacked = 0
 		return TRUE
 	..()
+
+
+/obj/machinery/porta_turret/proc/reset_hackfail()
+	hackfail = 0
 
 /obj/machinery/porta_turret/emag_act(var/remaining_charges, var/mob/user)
 	if(!emagged)

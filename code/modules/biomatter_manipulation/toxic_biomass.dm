@@ -12,13 +12,13 @@
 /proc/spill_biomass(turf/target_location, var/dirs_to_spread = null)
 	if(locate(/obj/effect/decal/cleanable/solid_biomass) in target_location)
 		return
-	new /obj/effect/decal/cleanable/solid_biomass(target_location)
+	new /obj/effect/decal/cleanable/solid_biomass/aoe(target_location)
 	playsound(target_location, 'sound/effects/blobattack.ogg', 70, 1)
 	if(dirs_to_spread)
 		for(var/direction in dirs_to_spread)
 			var/blocked = FALSE
 			var/turf/neighbor = get_step(target_location, direction)
-			if(!neighbor.density && !(locate(/obj/effect/decal/cleanable/solid_biomass) in neighbor))
+			if(!neighbor.density && !(locate(/obj/effect/decal/cleanable/solid_biomass/aoe) in neighbor))
 				for(var/obj/O in neighbor)
 					if(O.density)
 						blocked = TRUE
@@ -26,7 +26,7 @@
 			else
 				continue
 			if(!blocked)
-				var/obj/effect/decal/cleanable/solid_biomass/new_one = new(target_location)
+				var/obj/effect/decal/cleanable/solid_biomass/aoe/new_one = new(target_location)
 				spawn(1)
 					new_one.forceMove(neighbor)
 
@@ -39,18 +39,32 @@
 	anchored = TRUE
 	layer = TURF_LAYER + 0.6
 
+/obj/effect/decal/cleanable/solid_biomass/Crossed(mob/living/M as mob|obj)
+	for(M in living_mobs_in_view(1, src))
+		toxin_attack(M, rand(4, 8))
 
 /obj/effect/decal/cleanable/solid_biomass/Initialize()
 	. = ..()
 	icon_state = "biomass-[rand(1, 3)]"
+
+/obj/effect/decal/cleanable/solid_biomass/aoe
+	name = "fresh solid biomass"
+	desc = "An incredibly toxic and highly dangerous solidified biomass. Better not be nere it it, unless you want to die from toxic shock."
+	icon = 'icons/obj/bioreactor_misc.dmi'
+	icon_state = "biomass-1"
+	anchored = TRUE
+	layer = TURF_LAYER + 0.6
+
+/obj/effect/decal/cleanable/solid_biomass/aoe/Initialize()
+	. = ..()
 	START_PROCESSING(SSprocessing, src)
 
-/obj/effect/decal/cleanable/solid_biomass/Destroy()
+/obj/effect/decal/cleanable/solid_biomass/aoe/Destroy()
 	STOP_PROCESSING(SSprocessing, src)
 	return ..()
 
 
-/obj/effect/decal/cleanable/solid_biomass/Process()
+/obj/effect/decal/cleanable/solid_biomass/aoe/Process()
 	for(var/mob/living/creature in living_mobs_in_view(1, src))
 		toxin_attack(creature, rand(4, 8))
 

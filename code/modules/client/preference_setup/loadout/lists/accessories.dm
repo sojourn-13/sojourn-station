@@ -3,6 +3,7 @@
 	path = /obj/item/storage/wallet
 	slot = slot_accessory_buffer
 	sort_category = "Accessories"
+	cost = 0
 
 /datum/gear/accessory/armband
 	display_name = "armband selection"
@@ -93,8 +94,13 @@
 /datum/gear/accessory/blackshieldpatch
 	display_name = "blackshield arm patch"
 	path = /obj/item/clothing/accessory/patches/blackshield
-	
+
 /datum/gear/accessory/pilotharness
 	display_name = "pilot harness"
 	path = /obj/item/clothing/accessory/pilotwebbing
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/pass
+	display_name = "passcard - work visa - passport  selection"
+	path = /obj/item/clothing/accessory/passcard
 	flags = GEAR_HAS_TYPE_SELECTION

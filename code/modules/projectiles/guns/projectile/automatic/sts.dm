@@ -12,7 +12,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
-	price_tag = 1650
+	price_tag = 850
 	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
@@ -55,7 +55,7 @@
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
-	price_tag = 1250
+	price_tag = 850
 	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE, GUN_MAGWELL)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 12)
 	saw_off = TRUE
@@ -104,7 +104,7 @@
 	icon = 'icons/obj/guns/projectile/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
-	price_tag = 1500
+	price_tag = 1000
 	w_class = ITEM_SIZE_HUGE
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
@@ -127,6 +127,7 @@
 	icon = 'icons/obj/guns/projectile/sawnoff/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
+	price_tag = 800
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
@@ -193,7 +194,7 @@
 	w_class = ITEM_SIZE_HUGE
 	caliber = CAL_HRIFLE
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
-	price_tag = 1750
+	price_tag = 1500
 	penetration_multiplier = 1.1
 	damage_multiplier = 1.1
 	init_recoil = RIFLE_RECOIL(1.7)
@@ -211,6 +212,7 @@
 	icon = 'icons/obj/guns/projectile/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"
+	price_tag = 1125
 	w_class = ITEM_SIZE_BULKY
 	penetration_multiplier = 0.8
 	damage_multiplier = 1

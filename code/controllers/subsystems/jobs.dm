@@ -328,6 +328,7 @@ SUBSYSTEM_DEF(job)
 			for(var/datum/gear/G in spawn_in_storage)
 				G.spawn_in_storage_or_drop(H, H.client.prefs.Gear()[G.display_name])
 
+		//job.finalTweaks(H) //Uncomment to turn on various tweaks to character creation.
 		job.add_stats(H)
 
 
@@ -445,8 +446,29 @@ SUBSYSTEM_DEF(job)
 			if(G)
 				var/permitted = 1
 				if(permitted)
+			/*
+					var/cheater = FALSE
+					var/datum/perk/experienced/selectedPerk
+					var/datum/department/experiencedDepartment
+					for(var/datum/perk/experienced/counter in H.stats.perks)
+						if (istype(counter,/datum/perk/experienced))
+							selectedPerk = counter
+							if (selectedPerk.dept)
+								var/list/paths = subtypesof(/datum/department)									// This chunk of code works with Experienced Perks (if implemented)
+								for (var/Q in paths)															// so that Experienced Perks mean bringing in outside items from other departments
+									var/datum/department/checker = new Q										// Uncomment when those are implemented
+									if (istype(checker,/datum/department))
+										if (checker.id)
+											if (checker.id == selectedPerk.dept)
+												experiencedDepartment = checker
+												for (var/X in experiencedDepartment.jobs_in_department)
+													var/datum/job/J = new X
+													if (J.title in G.allowed_roles)
+														cheater = TRUE
+
+			*/
 					if(G.allowed_roles)
-						if(job.title in G.allowed_roles)
+						if(job.title in G.allowed_roles)// || (cheater))		// The cheater var too.
 							permitted = 1
 						else
 							permitted = 0
@@ -655,7 +677,7 @@ SUBSYSTEM_DEF(job)
 //Returns true if either the job from job_key has been forced, or the sum of all jobs in the list exceeds req_time
 /datum/controller/subsystem/job/proc/JobTimeAutoCheck(ckey, job_key, jobs, req_time)
 	if(JobTimeAllowCheck(ckey, job_key)) return TRUE
-	return JobTimeCheck(ckey, jobs) >= req_time
+	return (JobTimeCheck(ckey, jobs) >= req_time)
 
 //Returns the sum of all times in the list of jobs provided.
 //If 'jobs' is not a list, it will be encapsulated in one.

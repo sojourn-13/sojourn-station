@@ -72,7 +72,6 @@ Counsel the council on directing the colony towards profitable opportunities."
 	wage = WAGE_LABOUR_DUMB
 	department_account_access = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/cargo/cargo_tech
-	health_modifier = -10
 
 	access = list(
 		access_mailsorting, access_cargo, access_cargo_bot, access_mining,

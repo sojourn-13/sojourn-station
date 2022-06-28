@@ -10,7 +10,7 @@
 	self_recharge = 1
 	modifystate = null
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_URANIUM = 10)
-	price_tag = 2000
+	price_tag = 1700
 	charge_cost = 50
 	can_dual = FALSE
 	twohanded = TRUE

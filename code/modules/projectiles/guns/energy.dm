@@ -190,6 +190,7 @@
 		cell = null
 		update_icon()
 		return
+	..()
 
 /obj/item/gun/energy/ui_data(mob/user)
 	var/list/data = ..()

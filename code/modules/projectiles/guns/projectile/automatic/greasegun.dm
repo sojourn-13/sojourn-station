@@ -13,7 +13,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_SMG
 	matter = list(MATERIAL_PLASTEEL = 28, MATERIAL_PLASTIC = 10)
-	price_tag = 950
+	price_tag = 800
 	penetration_multiplier = 1.2
 	init_recoil = SMG_RECOIL(0.8)
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'

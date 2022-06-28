@@ -156,7 +156,8 @@
 	for(var/obj/machinery/portable_atmospherics/hydroponics/H in view(7, src))
 		if(H.seed && !H.dead)
 			H.health += 0.05 * coef
-			H.yield_mod += 0.005 * coef
+			if(H.yield_mod < 16) //15 is highest natural yield
+				H.yield_mod += 0.005 * coef
 			++trays
 			if(H.seed.seed_name in bee_food_list)
 				++foods

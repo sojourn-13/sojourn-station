@@ -12,7 +12,7 @@
 	caliber = CAL_MAGNUM
 	mag_well = MAG_WELL_SMG|MAG_WELL_PISTOL
 	can_dual = TRUE
-	price_tag = 900
+	price_tag = 800
 	matter = list(MATERIAL_PLASTEEL = 14, MATERIAL_PLASTIC = 8)
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'

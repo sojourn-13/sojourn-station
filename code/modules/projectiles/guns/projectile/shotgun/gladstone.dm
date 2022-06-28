@@ -29,7 +29,7 @@
 	damage_multiplier = 0.8
 	penetration_multiplier = 0.9
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 6)
-	price_tag = 450
+	price_tag = 550
 	init_recoil = RIFLE_RECOIL(2.4)
 	saw_off = FALSE
 
