@@ -29,6 +29,13 @@
 
 	var/datum/money_account/account
 
+/datum/computer_file/program/trade/cargo_download
+	available_on_ntnet = TRUE
+	clone_able = TRUE
+	required_access = access_cargo
+	requires_access_to_run = FALSE
+	copy_cat = FALSE //Dosnt REALLY matter but for sake of ViewVar'ing
+
 /datum/computer_file/program/trade/proc/set_choosed_category(value)
 	choosed_category = value
 
