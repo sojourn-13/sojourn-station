@@ -4,8 +4,8 @@
 	)
 	icon_states = list("htu_destroyer", "ship")
 	uid = "kriosanconfederacy"
-	tree_x = 0.46
-	tree_y = 0.8
+	tree_x = 0.54
+	tree_y = 0.7
 	stations_recommended = list("mcronalds")
 	offer_limit = 20
 	base_income = 1600

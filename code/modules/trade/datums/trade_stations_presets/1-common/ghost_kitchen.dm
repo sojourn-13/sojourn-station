@@ -3,7 +3,7 @@
 		"GK 'Spector'" = "Ghost Kitchen 'Spector': \"We got tons of orders that need filling, will take anything you can cook."
 	)
 	uid = "ghostkitchen"
-	tree_x = 0.42
+	tree_x = 0.5
 	tree_y = 0.9
 	start_discovered = TRUE
 	spawn_always = TRUE

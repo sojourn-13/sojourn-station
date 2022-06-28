@@ -5,7 +5,7 @@
 	)
 	icon_states = list("htu_destroyer", "ship")
 	uid = "trapper"
-	tree_x = 0.46
+	tree_x = 0.34
 	tree_y = 0.5
 	start_discovered = FALSE
 	spawn_always = TRUE

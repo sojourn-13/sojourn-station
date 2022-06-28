@@ -3,7 +3,7 @@
 		"LTB 'Vermouth'" = "Lonestar's Trade Beacon 'Vermouth' \"Best Drinks! Best Beverages! Ingredients for your cooks! Anything that is needed for your private bars and more!"
 	)
 	uid = "commissary"
-	tree_x = 0.34
+	tree_x = 0.42
 	tree_y = 0.9
 	start_discovered = TRUE
 	spawn_always = TRUE

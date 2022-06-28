@@ -3,8 +3,8 @@
 	spawn_always = TRUE
 	markup = RARE_GOODS		// dept-specific stuff should be more expensive for guild
 	uid = "fs_guns"
-	tree_x = 0.66
-	tree_y = 0.6
+	tree_x = 0.82
+	tree_y = 0.7
 	offer_limit = 20
 	base_income = 0
 	wealth = 0

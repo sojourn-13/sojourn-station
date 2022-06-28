@@ -2,8 +2,8 @@
 	name_pool = list("UCCSJ 'Junker'" = "Urianth Construction Company Construction Shuttle 'Junker'. Seems that they construct and sell are exosuit parts. Sensors showing that they have a roving vessel, maybe they have one last batch for sale.\
 		\"Hey, dudes, it seems you want some mechas? We currently got a surplus and spare parts.\"")
 	icon_states = list("htu_frigate", "ship")
-	tree_x = 0.58
-	tree_y = 0.5
+	tree_x = 0.78
+	tree_y = 0.6
 	base_income = 1600
 	wealth = 0
 	markup = UNCOMMON_GOODS
@@ -11,7 +11,7 @@
 	start_discovered = TRUE
 	spawn_always = TRUE
 	uid = "mecha"
-	recommendations_needed = 2
+	//recommendations_needed = 2
 	inventory = list(
 		"Exosuit Parts" = list(
 			/obj/item/mecha_parts/chassis/ripley,

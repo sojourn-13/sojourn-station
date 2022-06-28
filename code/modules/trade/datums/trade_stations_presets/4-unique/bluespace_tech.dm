@@ -1,7 +1,7 @@
 /datum/trade_station/bluespace_technical
 	uid = "bluespace"
 	tree_x = 0.26
-	tree_y = 0.5
+	tree_y = 0.4
 	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = UNIQUE_GOODS
