@@ -27,6 +27,10 @@ client/proc/Test_ZAS_Connection(var/turf/simulated/T as turf)
 	"South" = SOUTH,\
 	"East" = EAST,\
 	"West" = WEST,\
+	#ifdef MULTIZAS
+	"Up" = UP,\
+	"Down" = DOWN,\
+	#endif
 	"N/A" = null)
 	var/direction = input("What direction do you wish to test?","Set direction") as null|anything in direction_list
 	if(!direction)
@@ -72,9 +76,7 @@ client/proc/Test_ZAS_Connection(var/turf/simulated/T as turf)
 		else
 			to_chat(mob, "both turfs can merge.")
 
-
-ADMIN_VERB_ADD(/client/proc/ZASSettings, R_DEBUG, FALSE)
-/client/proc/ZASSettings()
+client/proc/ZASSettings()
 	set category = "Debug"
 
 	vsc.SetDefault(mob)
