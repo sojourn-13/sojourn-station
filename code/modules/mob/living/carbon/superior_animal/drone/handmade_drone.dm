@@ -43,6 +43,7 @@
 	stop_message = "state, \"Ending Escort Protocol.\""
 	follow_distance = 2
 	var/list/creator = list() // Who's the bot's creator.
+	never_stimulate_air = TRUE
 
 /mob/living/carbon/superior_animal/robot/death()
 	..()

@@ -44,6 +44,8 @@
 
 	known_languages = list(LANGUAGE_COMMON)
 
+	never_stimulate_air = TRUE
+
 	//Drops
 	var/drop1 = /obj/item/scrap_lump
 	var/drop2 = null

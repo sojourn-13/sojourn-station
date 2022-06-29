@@ -262,7 +262,7 @@
 		handle_foodscanning()
 
 		//Atmos
-		var/atmos_suitable = 1
+		var/atmos_suitable = TRUE
 
 		var/atom/A = loc
 
@@ -271,49 +271,49 @@
 
 			var/datum/gas_mixture/Environment = T.return_air()
 
-			if(Environment)
+			if(Environment && needs_environment)
 
 				if( abs(Environment.temperature - bodytemperature) > 40 )
 					bodytemperature += ((Environment.temperature - bodytemperature) / 5)
 
 				if(min_oxy)
 					if(Environment.gas["oxygen"] < min_oxy)
-						atmos_suitable = 0
+						atmos_suitable = FALSE
 				if(max_oxy)
 					if(Environment.gas["oxygen"] > max_oxy)
-						atmos_suitable = 0
+						atmos_suitable = FALSE
 				if(min_tox)
 					if(Environment.gas["plasma"] < min_tox)
-						atmos_suitable = 0
+						atmos_suitable = FALSE
 				if(max_tox)
 					if(Environment.gas["plasma"] > max_tox)
-						atmos_suitable = 0
+						atmos_suitable = FALSE
 				if(min_n2)
 					if(Environment.gas["nitrogen"] < min_n2)
-						atmos_suitable = 0
+						atmos_suitable = FALSE
 				if(max_n2)
 					if(Environment.gas["nitrogen"] > max_n2)
-						atmos_suitable = 0
+						atmos_suitable = FALSE
 				if(min_co2)
 					if(Environment.gas["carbon_dioxide"] < min_co2)
-						atmos_suitable = 0
+						atmos_suitable = FALSE
 				if(max_co2)
 					if(Environment.gas["carbon_dioxide"] > max_co2)
-						atmos_suitable = 0
+						atmos_suitable = FALSE
 
-		//Atmos effect
-		if(needs_environment)
-			if(bodytemperature < minbodytemp)
-				fire_alert = 2
-				adjustBruteLoss(cold_damage_per_tick)
-			else if(bodytemperature > maxbodytemp)
-				fire_alert = 1
-				adjustBruteLoss(heat_damage_per_tick)
-			else
-				fire_alert = 0
+				//Atmos effect
 
-			if(!atmos_suitable)
-				adjustBruteLoss(unsuitable_atoms_damage)
+				if(bodytemperature < minbodytemp)
+					fire_alert = 2
+					adjustBruteLoss(cold_damage_per_tick)
+				else if(bodytemperature > maxbodytemp)
+					fire_alert = 1
+					adjustBruteLoss(heat_damage_per_tick)
+				else
+					fire_alert = 0
+
+				if(!atmos_suitable)
+					adjustBruteLoss(unsuitable_atoms_damage)
 
 		if(!AI_inactive)
 			//Speaking
@@ -624,7 +624,7 @@
 //Code to handle finding and nomming nearby food items
 /mob/living/simple_animal/proc/handle_foodscanning()
 	if (client || !hunger_enabled || !autoseek_food)
-		return 0
+		return FALSE
 
 	//Feeding, chasing food, FOOOOODDDD
 	if(!incapacitated())

@@ -374,11 +374,9 @@
 
 /mob/living/carbon/superior_animal/Life()
 	ticks_processed++
-	var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
-	/// Fire handling , not passing the whole list because thats unefficient.
-	handle_fire(environment.gas["oxygen"], loc)
 	handle_regular_hud_updates()
-	handle_cheap_chemicals_in_body()
+	if(!reagent_immune)
+		handle_cheap_chemicals_in_body()
 	if(!(ticks_processed%3))
 		// handle_status_effects() this is handled here directly to save a bit on procedure calls
 		if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1))
@@ -387,9 +385,13 @@
 		stunned = max(stunned-3,0)
 		weakened = max(weakened-3,0)
 		cheap_update_lying_buckled_and_verb_status_()
-		var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
-		handle_cheap_breath(breath)
-		handle_cheap_environment(environment)
+		if(!never_stimulate_air)
+			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
+			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
+			handle_cheap_breath(breath)
+			handle_cheap_environment(environment)
+			//Fire handling , not passing the whole list because thats unefficient.
+			handle_fire(environment.gas["oxygen"], loc)
 		updateicon()
 		ticks_processed = 0
 	if(handle_cheap_regular_status_updates()) // They have died after all of this, do not scan or do not handle AI anymore.

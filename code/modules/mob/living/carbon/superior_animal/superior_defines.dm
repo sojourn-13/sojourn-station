@@ -126,6 +126,7 @@
 
 	var/toxin_immune = FALSE
 	var/reagent_immune = FALSE
+	var/never_stimulate_air = FALSE
 
 	var/contaminant_immunity = FALSE //if TRUE, mob is immune to harmful contaminants in air (plasma), skin contact, does not relate to breathing
 	var/cold_protection = 0 //0 to 1 value, which corresponds to the percentage of protection, affects only bodytemperature
