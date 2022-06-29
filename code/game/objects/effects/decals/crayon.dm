@@ -7,7 +7,7 @@
 	random_rotation = 0
 	var/is_rune = FALSE
 
-/obj/effect/decal/cleanable/crayon/New(location,main = "#FFFFFF",shade = "#000000",var/type = "rune")
+/obj/effect/decal/cleanable/crayon/New(location,main = "#FFFFFF",shade = "#000000",type = "rune")
 	..()
 	loc = location
 
@@ -126,7 +126,7 @@
 		return
 	return
 
-/obj/effect/decal/cleanable/crayon/proc/babel_spell(var/mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/babel_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	M.add_language(LANGUAGE_CULT)
 	to_chat(M, "<span class='info'>Your head feels heavy with unknown knowledge and your heart start to raise with shock of blood loss.</span>")
@@ -136,7 +136,7 @@
 	M.unnatural_mutations.total_instability += 15
 	return
 
-/obj/effect/decal/cleanable/crayon/proc/ignorance_spell(var/mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/ignorance_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	M.psi_blocking_additive = 50
 	to_chat(M, "<span class='info'>The top of your head acks in pain and feels heavy as your blood runs thin.</span>")
@@ -145,7 +145,7 @@
 	B.remove_self(50)
 	return
 
-/obj/effect/decal/cleanable/crayon/proc/life_spell(var/mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/life_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	for(var/mob/living/carbon/superior_animal/greater in oview(1)) // Must be on the spell circle
 		if(M.maxHealth > 30)
@@ -179,7 +179,7 @@
 		return
 	return
 
-/obj/effect/decal/cleanable/crayon/proc/madness_spell(var/mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/madness_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	to_chat(M, "<span class='info'>Your blood grows thin but your mind expand into unknown wonders?</span>")
 	M.maxHealth -= 5
@@ -188,14 +188,14 @@
 	M.sanity.breakdown(TRUE)
 	return
 
-/obj/effect/decal/cleanable/crayon/proc/sight_spell(var/mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/sight_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	to_chat(M, "<span class='info'>Your book says not to use this...</span>")
 	M.disabilities &= ~NEARSIGHTED
 	B.remove_self(150)
 	return
 
-/obj/effect/decal/cleanable/crayon/proc/paradox_spell(var/mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/paradox_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	to_chat(M, "<span class='info'>The air to you grows hot, your heart races from not only blood-loss but the feeling of dread over you. You hear a whisper in the back of your ear \"What bottom?\"</span>")
 	M.maxHealth -= 25
@@ -206,7 +206,7 @@
 	explosion(loc, 3, 5, 7, 5)
 	return
 
-/obj/effect/decal/cleanable/crayon/proc/end_spell(var/mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/end_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	to_chat(M, "<span class='info'>The back of your eyes burn. The body feels better. Why?</span>")
 	M.maxHealth += 5
@@ -221,7 +221,7 @@
 			M.remove_language(LANGUAGE_OCCULT)
 	return
 
-/obj/effect/decal/cleanable/crayon/proc/flux_spell(var/mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/flux_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	var/area/my_area = get_area(src)
 	to_chat(M, "<span class='info'>The echos of smashing glass and splinting wood pound against the mind as the body drys heaving.</span>")
@@ -241,7 +241,7 @@
 			bluespace_entropy(5, get_turf(src), TRUE)
 	return
 
-/obj/effect/decal/cleanable/crayon/proc/negentropy_spell(var/mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/negentropy_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	var/area/my_area = get_area(src)
 	to_chat(M, "<span class='info'>Soft echos of trees rustle, wind blowing and trickingly of water dance around your ears, a calmness even if only a minor one feels present.</span>")
@@ -261,7 +261,7 @@
 	return
 
 
-/obj/effect/decal/cleanable/crayon/proc/voice_spell(var/mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/voice_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	M.add_language(LANGUAGE_OCCULT)
 	to_chat(M, "<span class='info'>Your head feels heavy with unknown knowlage and your heart strats to rase with shock of blood loss.</span>")
@@ -271,7 +271,7 @@
 	M.unnatural_mutations.total_instability += 15
 	return
 
-/obj/effect/decal/cleanable/crayon/proc/drain_spell(var/mob/living/carbon/human/M, var/able_to_cast = FALSE)
+/obj/effect/decal/cleanable/crayon/proc/drain_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	for(var/mob/living/carbon/superior_animal/greater in oview(1))
 		to_chat(M, "<span class='info'>The body before you is no more as its code is one with you.</span>")
