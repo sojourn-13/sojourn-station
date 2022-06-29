@@ -80,6 +80,13 @@
 		H.sanity.onSeeDeath(src)
 		SEND_SIGNAL(H, COMSIG_MOB_DEATH, src)
 
+	// this exists because somewhere mobs are having ai_inactive set to false from sueprior_animal death to this death. IM GOING FUCKINg INSANE
+	var/mob/living/carbon/superior_animal/source
+	if (istype(src, /mob/living/carbon/superior_animal))
+		source = src
+		if (!(source.AI_inactive))
+			source.AI_inactive = TRUE
+
 	stat = DEAD
 	update_lying_buckled_and_verb_status()
 	reset_plane_and_layer()
