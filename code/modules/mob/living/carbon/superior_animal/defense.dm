@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/proc/harvest(var/mob/user)
+/mob/living/carbon/superior_animal/proc/harvest(mob/user)
 	drop_embedded()
 	var/actual_meat_amount = max(1,(meat_amount/2))
 	var/actual_leather_amount = max(0,(leather_amount/2))
@@ -51,7 +51,7 @@
 
 	check_AI_act()
 
-/mob/living/carbon/superior_animal/bullet_act(var/obj/item/projectile/P, var/def_zone)
+/mob/living/carbon/superior_animal/bullet_act(obj/item/projectile/P, def_zone)
 	. = ..()
 
 	if(stance == HOSTILE_STANCE_ATTACK)
@@ -60,7 +60,7 @@
 
 	updatehealth()
 
-/mob/living/carbon/superior_animal/attackby(obj/item/I, mob/living/user, var/params)
+/mob/living/carbon/superior_animal/attackby(obj/item/I, mob/living/user, params)
 	activate_ai() //If were attacked by something and havent woken up yet. Were awake now >:T
 	if (meat_type && (stat == DEAD) && (QUALITY_CUTTING in I.tool_qualities) && user.a_intent ==  I_HELP)
 		if (I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_NORMAL, required_stat = STAT_BIO))
@@ -74,9 +74,9 @@
 
 		updatehealth()
 
-/mob/living/carbon/superior_animal/resolve_item_attack(obj/item/I, mob/living/user, var/hit_zone)
+/mob/living/carbon/superior_animal/resolve_item_attack(obj/item/I, mob/living/user, hit_zone)
 	//mob.attackby -> item.attack -> mob.resolve_item_attack -> item.apply_hit_effect
-	return 1
+	return TRUE
 
 /mob/living/carbon/superior_animal/attack_hand(mob/living/carbon/M as mob)
 	..()
@@ -88,7 +88,7 @@
 
 		if (I_GRAB)
 			if(M == src || anchored)
-				return 0
+				return FALSE
 			for(var/obj/item/grab/G in src.grabbed_by)
 				if(G.assailant == M)
 					to_chat(M, SPAN_NOTICE("You already grabbed [src]."))
@@ -111,7 +111,7 @@
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 			visible_message(SPAN_WARNING("[M] has grabbed [src] passively!"))
 
-			return 1
+			return TRUE
 
 		if (I_DISARM)
 			if (!weakened && (prob(30 + (H.stats.getStat(STAT_ROB) * 0.1))))
@@ -119,7 +119,7 @@
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 				Weaken(3)
 
-				return 1
+				return TRUE
 			else
 				M.visible_message("\red [M] failed to shove \the [src]")
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
@@ -144,7 +144,7 @@
 				updatehealth()
 				M.do_attack_animation(src)
 
-				return 1
+				return TRUE
 
 /mob/living/carbon/superior_animal/ex_act(severity)
 	..()
@@ -155,17 +155,17 @@
 	var/b_loss = null
 	var/f_loss = null
 	switch (severity)
-		if (1.0)
+		if (1)
 			gib()
 			return
 
-		if (2.0)
+		if (2)
 			b_loss += 60
 			f_loss += 60
 			ear_damage += 30
 			ear_deaf += 120
 
-		if (3.0)
+		if (3)
 			b_loss += 30
 			if (prob(50))
 				Paralyse(1)
@@ -183,20 +183,20 @@
 		return
 
 	if(stat == DEAD)
-		blinded = 1
-		silent = 0
+		blinded = TRUE
+		silent = FALSE
 	else
 		updatehealth()
 		handle_stunned()
 		handle_weakened()
 		if(health <= 0)
-			blinded = 1
-			silent = 0
-			return 1
+			blinded = TRUE
+			silent = FALSE
+			return TRUE
 
 		if(paralysis && paralysis > 0)
 			handle_paralysed()
-			blinded = 1
+			blinded = TRUE
 			stat = UNCONSCIOUS
 			if(halloss > 0)
 				adjustHalLoss(-3)
@@ -204,7 +204,7 @@
 		if(sleeping)
 			adjustHalLoss(-3)
 			sleeping = max(sleeping-1, 0)
-			blinded = 1
+			blinded = TRUE
 			stat = UNCONSCIOUS
 		else if(resting)
 			if(halloss > 0)
@@ -217,20 +217,20 @@
 
 		update_icons()
 
-	return 1
+	return TRUE
 
-/mob/living/carbon/superior_animal/adjustBruteLoss(var/amount)
+/mob/living/carbon/superior_animal/adjustBruteLoss(amount)
 	. = ..()
 	if (overkill_gib && (amount >= overkill_gib) && (getBruteLoss() >= maxHealth*2))
 		if (bodytemperature > T0C)
 			gib()
 
-/mob/living/carbon/superior_animal/adjustFireLoss(var/amount)
+/mob/living/carbon/superior_animal/adjustFireLoss(amount)
 	. = ..()
 	if (overkill_dust && (amount >= overkill_dust) && (getFireLoss() >= maxHealth*2))
 		dust()
 
-mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
+mob/living/carbon/superior_animal/adjustToxLoss(amount)
 	if (toxin_immune)
 		return
 	. = ..()
@@ -241,13 +241,9 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 	if (health <= 0 && stat != DEAD) //stops constantly procing death
 		death()
 
-/mob/living/carbon/superior_animal/gib(var/anim = icon_gib)
+/mob/living/carbon/superior_animal/gib(anim = icon_gib)
 	if (!anim)
 		anim = 0
-
-	for(var/obj/item/I in src)
-		drop_from_inventory(I)
-		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
 
 	for(var/obj/item/I in src)
 		drop_from_inventory(I)
@@ -259,7 +255,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 		gibs(src.loc, null, gibspawner_type, fleshcolor, bloodcolor)
 	. = ..(anim,FALSE)
 
-/mob/living/carbon/superior_animal/dust(var/anim = icon_dust, var/remains = dust_remains)
+/mob/living/carbon/superior_animal/dust(anim = icon_dust, remains = dust_remains)
 	if (!anim)
 		anim = 0
 
@@ -267,7 +263,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 	AI_inactive = TRUE //Optimation, were dead
 	. = ..(anim,remains)
 
-/mob/living/carbon/superior_animal/death(var/gibbed,var/message = deathmessage)
+/mob/living/carbon/superior_animal/death(gibbed,message = deathmessage)
 
 	if (stat != DEAD)
 		target_mob = null
@@ -277,11 +273,12 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 		following = null
 		last_followed = null
 
-		density = 0
+		density = FALSE
 		layer = LYING_MOB_LAYER
 
 	AI_inactive = TRUE //Optimation, were dead
-	density = 0 //In death were no longer blocking.
+	density = FALSE //In death were no longer blocking.
+	target_mob = null
 	. = ..()
 
 /mob/living/carbon/superior_animal/rejuvenate()
@@ -296,13 +293,13 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 	. = ..()
 	adjustToxLoss(2)
 
-/mob/living/carbon/superior_animal/get_cold_protection(var/temperature)
+/mob/living/carbon/superior_animal/get_cold_protection(temperature)
 	return cold_protection
 
-/mob/living/carbon/superior_animal/get_heat_protection(var/temperature)
+/mob/living/carbon/superior_animal/get_heat_protection(temperature)
 	return heat_protection
 
-/mob/living/carbon/superior_animal/handle_environment(var/datum/gas_mixture/environment)
+/mob/living/carbon/superior_animal/handle_environment(datum/gas_mixture/environment)
 	bad_environment = FALSE
 	if(!environment)
 		return
@@ -373,13 +370,13 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 	if(status_flags & GODMODE)
 		return
 
-	failed_last_breath = 0
+	failed_last_breath = FALSE
 
 	if (!(breath_required_type || breath_poison_type))
 		return
 
 	if(breath_required_type && (!breath || (breath.total_moles == 0)))
-		failed_last_breath = 1
+		failed_last_breath = TRUE
 		adjustOxyLoss(2)
 		return
 
@@ -390,7 +387,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 		var/inhale_pp = (inhaling/breath.total_moles)*breath_pressure
 		if(inhale_pp < min_breath_required_type)
 			adjustOxyLoss(2)
-			failed_last_breath = 1
+			failed_last_breath = TRUE
 
 	if (breath_poison_type)
 		var/poison = breath.gas[breath_poison_type]
@@ -398,7 +395,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 		if(toxins_pp > min_breath_poison_type)
 			adjustToxLoss(2)
 
-	return 1
+	return TRUE
 
 //Disables roaches/spiders/xenos ect form mess with atmo to prevent lag of that kind
 /mob/living/carbon/superior_animal/handle_post_breath(datum/gas_mixture/breath)
@@ -448,7 +445,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 /mob/living/carbon/superior_animal/proc/pick_armor()
 	return
 
-/mob/living/carbon/superior_animal/attack_generic(mob/user, var/damage, var/attack_message)
+/mob/living/carbon/superior_animal/attack_generic(mob/user, damage, attack_message)
 
 	if(!damage || !istype(user))
 		return
