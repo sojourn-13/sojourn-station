@@ -15,7 +15,7 @@
 	melee_damage_upper = 5
 	move_to_delay = 4
 
-/mob/living/carbon/superior_animal/roach/plasmaroach/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior_animal/roach/plasmaroach/UnarmedAttack(atom/A, proximity)
 	. = ..()
-	src.gib()
-	explosion(src.loc, 0,1,2) //slightly weaker radius than a plasma spider, still hurts like a bitch
+	gib()
+	explosion(loc, 0,1,2) //slightly weaker radius than a plasma spider, still hurts like a bitch

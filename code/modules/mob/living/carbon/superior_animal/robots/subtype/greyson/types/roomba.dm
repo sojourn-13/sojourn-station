@@ -28,7 +28,7 @@
 	var/trip_odds = 15 //So admins can edit this
 	drop2 = /obj/item/melee/telebaton
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/UnarmedAttack(atom/A, proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 
@@ -63,7 +63,7 @@
 /mob/living/carbon/superior_animal/robot/greyson/roomba/boomba/UnarmedAttack()
 	. = ..()
 	if(.) // If we succeeded in hitting.
-		src.visible_message(SPAN_DANGER("\The [src] makes an odd warbling noise, fizzles, and explodes!"))
+		visible_message(SPAN_DANGER("\The [src] makes an odd warbling noise, fizzles, and explodes!"))
 		explosion(get_turf(loc), 0, 0, 2, 3)
 		death()
 
@@ -122,7 +122,7 @@
 	var/injection_per_hit = 2
 	var/injection_type = "toxin"
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/chemical/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior_animal/robot/greyson/roomba/chemical/UnarmedAttack(atom/A, proximity)
 	. = ..()
 
 	if(isliving(A))

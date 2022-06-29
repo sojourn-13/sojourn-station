@@ -58,7 +58,7 @@
 	attack_sound = 'sound/mecha/mechdrill.ogg'
 	flash_resistances = 100 // Robot
 
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley/slip(var/slipped_on,stun_duration=8)
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley/slip(slipped_on,stun_duration=8)
 	return FALSE
 // Big stompers can't be slipped!
 
@@ -83,11 +83,11 @@
 				M.adjustOxyLoss(25)
 				M.Weaken(5)
 				visible_message(SPAN_WARNING("\red [src] immediately crushes [M] with its titan bulk when they stupidly try to grab it!"))
-				return 1
+				return TRUE
 			else
 				if(M == src || anchored)
-					return 0
-				for(var/obj/item/grab/G in src.grabbed_by)
+					return FALSE
+				for(var/obj/item/grab/G in grabbed_by)
 					if(G.assailant == M)
 						to_chat(M, SPAN_NOTICE("You already grabbed [src]."))
 						return
@@ -106,7 +106,7 @@
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 				visible_message(SPAN_WARNING("[M] has grabbed [src] passively!"))
 
-				return 1
+				return TRUE
 
 		if (I_DISARM)
 			if(!weakened && stat == CONSCIOUS)
@@ -135,7 +135,7 @@
 				updatehealth()
 				M.do_attack_animation(src)
 
-				return 1
+				return TRUE
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley/phazon
 	name = "Greyson Positronic Phazon unit"

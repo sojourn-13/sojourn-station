@@ -379,8 +379,8 @@
 		handle_cheap_chemicals_in_body()
 	if(!(ticks_processed%3))
 		// handle_status_effects() this is handled here directly to save a bit on procedure calls
-		if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1))
-			spawn(5) update_icons()
+		//if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1)) - Soj edit, we already update icon just 13 lines down form this, no point
+		//	spawn(5) update_icons()
 		paralysis = max(paralysis-3,0)
 		stunned = max(stunned-3,0)
 		weakened = max(weakened-3,0)
@@ -443,7 +443,7 @@
  *	telegraph-Boolean. If false, no visual emote will be made.
  *	cast_beam-Boolean. If true, a beam will be cast from src to targetted_mob as a visual telegraph.
 **/
-/mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(var/atom/targetted_mob, proctocall, var/attack_type, var/telegraph = TRUE, var/cast_beam = TRUE)
+/mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(atom/targetted_mob, proctocall, attack_type, telegraph = TRUE, cast_beam = TRUE)
 	if (check_if_alive()) //sanity
 		var/time_to_expire
 		switch(attack_type)
@@ -493,7 +493,7 @@
  * trace: obj/item/projectile/test/impacttest. The trace we are registered to.
  * atom/impact_atom: The atom the trace impacted.
 **/
-/mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/test/impacttest/trace, var/atom/impact_atom)
+/mob/living/carbon/superior_animal/proc/handle_trace_impact(obj/item/projectile/test/impacttest/trace, atom/impact_atom)
 	SIGNAL_HANDLER
 
 	UnregisterSignal(trace, COMSIG_TRACE_IMPACT)
@@ -503,7 +503,7 @@
 	if (impact_atom != targetted_mob)
 		advance_towards(targetted_mob)
 
-/mob/living/carbon/superior_animal/proc/advance_towards(var/atom/target)
+/mob/living/carbon/superior_animal/proc/advance_towards(atom/target)
 
 	var/calculated_walk = (comfy_range - comfy_distance)
 

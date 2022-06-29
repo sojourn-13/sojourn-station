@@ -34,7 +34,7 @@
 	var/ore
 
 // Mine a tile
-/mob/living/carbon/superior_animal/termite_no_despawn/proc/mine(var/turf/simulated/mineral/M)
+/mob/living/carbon/superior_animal/termite_no_despawn/proc/mine(turf/simulated/mineral/M)
 	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
 	M.GetDrilled() // Mine the turf
 	return TRUE

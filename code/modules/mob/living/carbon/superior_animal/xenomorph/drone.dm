@@ -68,9 +68,11 @@ var/datum/xenomorph/xenomorph_ai
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
+	never_stimulate_air = TRUE
+
 	known_languages = list(LANGUAGE_XENOMORPH)
 
-/mob/living/carbon/superior_animal/xenomorph/slip(var/slipped_on,stun_duration=8)
+/mob/living/carbon/superior_animal/xenomorph/slip(slipped_on,stun_duration=8)
 	return FALSE
 //Xenos can't be slipped but can be flashed, after all, secondary senses like thermal vision are usually easily overloaded by lights.
 
@@ -100,7 +102,7 @@ var/datum/xenomorph/xenomorph_ai
 	pixel_x = 0
 	pixel_y = 0
 
-/mob/living/carbon/superior_animal/xenomorph/start_pulling(var/atom/movable/AM)
+/mob/living/carbon/superior_animal/xenomorph/start_pulling(atom/movable/AM)
 	to_chat(src, SPAN_WARNING("Your hand gets slashed away from \the [src]. !"))
 	return
 
@@ -117,15 +119,15 @@ var/datum/xenomorph/xenomorph_ai
 				if(M.stats.getPerk(PERK_ASS_OF_CONCRETE) || M.stats.getPerk(PERK_BRAWN))
 					M.visible_message("\red [src] breaks the grapple and impales [M] with it's armor-piercing tail! [M] manages to stay standing!")
 					M.adjustBruteLoss(50)
-					return 1
+					return TRUE
 				M.visible_message("\red The [src] breaks the grapple and impales [M] with it's armor-piercing tail!")
 				M.adjustBruteLoss(50)
 				M.Weaken(3)
-				return 1
+				return TRUE
 			else
 				if(M == src || anchored)
-					return 0
-				for(var/obj/item/grab/G in src.grabbed_by)
+					return FALSE
+				for(var/obj/item/grab/G in grabbed_by)
 					if(G.assailant == M)
 						to_chat(M, SPAN_NOTICE("You already grabbed [src]."))
 						return
@@ -144,7 +146,7 @@ var/datum/xenomorph/xenomorph_ai
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 				visible_message(SPAN_WARNING("[M] has grabbed [src] passively!"))
 
-				return 1
+				return TRUE
 
 		if (I_DISARM)
 			if (!weakened && (prob(10 + (H.stats.getStat(STAT_ROB) * 0.1))))
@@ -152,12 +154,12 @@ var/datum/xenomorph/xenomorph_ai
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 				Weaken(3)
 
-				return 1
+				return TRUE
 			else if(!weakened && stat == CONSCIOUS)
 				if(M.stats.getPerk(PERK_ASS_OF_CONCRETE) || M.stats.getPerk(PERK_BRAWN))
 					M.visible_message("\red [src] breaks the grapple and impales [M] with it's armor-piercing tail! [M] manages to stay standing!")
 					M.adjustBruteLoss(50)
-					return 1
+					return TRUE
 				M.visible_message("\red [M] gets impaled by \the [src]'s armor-piercing tail!")
 				M.adjustBruteLoss(50)
 				M.Weaken(3)
@@ -183,4 +185,4 @@ var/datum/xenomorph/xenomorph_ai
 				updatehealth()
 				M.do_attack_animation(src)
 
-				return 1
+				return TRUE
