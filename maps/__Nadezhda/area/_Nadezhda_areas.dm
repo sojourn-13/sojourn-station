@@ -1467,8 +1467,8 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "research_dock"
 
 /area/nadezhda/rnd/lab
-	name = "\improper Research Lab"
-	icon_state = "toxlab"
+	name = "\improper Research Hallway"
+	icon_state = "research"
 
 /area/nadezhda/rnd/chargebay
 	name = "\improper Mech Bay"
@@ -1476,6 +1476,10 @@ area/nadezhda/medical/medbaymeeting
 
 /area/nadezhda/rnd/robotics
 	name = "\improper Robotics Lab"
+	icon_state = "robotics"
+
+/area/nadezhda/rnd/robocryo
+	name = "\improper Robotic Storage"
 	icon_state = "robotics"
 
 /area/nadezhda/rnd/rdoffice
