@@ -1,7 +1,3 @@
-var/datum/controller/air_system/air_master
-
-var/tick_multiplier = 2
-
 /*
 
 Overview:
@@ -65,193 +61,238 @@ Class Procs:
 
 */
 
+SUBSYSTEM_DEF(air)
+	name = "Air"
+	priority = SS_PRIORITY_AIR
+	init_order = SS_INIT_AIR
+	flags = SS_POST_FIRE_TIMING
 
-//Geometry lists
-/datum/controller/air_system/var/list/zones = list()
-/datum/controller/air_system/var/list/edges = list()
+	//Geometry lists
+	var/list/zones = list()
+	var/list/edges = list()
 
-//Geometry updates lists
-/datum/controller/air_system/var/list/tiles_to_update = list()
-/datum/controller/air_system/var/list/zones_to_update = list()
-/datum/controller/air_system/var/list/active_fire_zones = list()
-/datum/controller/air_system/var/list/active_hotspots = list()
-/datum/controller/air_system/var/list/active_edges = list()
+	//Geometry updates lists
+	var/list/tiles_to_update = list()
+	var/list/zones_to_update = list()
+	var/list/active_fire_zones = list()
+	var/list/active_hotspots = list()
+	var/list/active_edges = list()
 
-/datum/controller/air_system/var/active_zones = 0
+	var/list/deferred = list()
+	var/list/processing_edges
+	var/list/processing_fires
+	var/list/processing_hotspots
+	var/list/processing_zones
 
-/datum/controller/air_system/var/current_cycle = 0
-/datum/controller/air_system/var/update_delay = 5 //How long between check should it try to process atmos again.
-/datum/controller/air_system/var/failed_ticks = 0 //How many ticks have runtimed?
+	var/active_zones = 0
+	var/next_id = 1
 
-/datum/controller/air_system/var/tick_progress = 0
+/datum/controller/subsystem/air/proc/reboot()
+	// Stop processing while we rebuild.
+	can_fire = FALSE
 
-/datum/controller/air_system/var/next_id = 1 //Used to keep track of zone UIDs.
+	// Make sure we don't rebuild mid-tick.
+	if (state != SS_IDLE)
+		report_progress("ZAS Rebuild initiated. Waiting for current air tick to complete before continuing.")
+		while (state != SS_IDLE)
+			stoplag()
 
-/datum/controller/air_system/proc/Setup()
-	//Purpose: Call this at the start to setup air groups geometry
-	//    (Warning: Very processor intensive but only must be done once per round)
-	//Called by: Gameticker/Master controller
-	//Inputs: None.
-	//Outputs: None.
+	while (zones.len)
+		var/zone/zone = zones[zones.len]
+		zones.len--
 
-	#ifndef ZASDBG
-	set background = 1
-	#endif
+		zone.c_invalidate()
 
-	admin_notice(SPAN_DANGER("Processing Geometry..."), R_DEBUG)
-	sleep(-1)
+	edges.Cut()
+	tiles_to_update.Cut()
+	zones_to_update.Cut()
+	active_fire_zones.Cut()
+	active_hotspots.Cut()
+	active_edges.Cut()
 
-	var/start_time = world.timeofday
+	// Re-run setup without air settling.
+	Initialize(Uptime(), FALSE)
 
+	// Update next_fire so the MC doesn't try to make up for missed ticks.
+	next_fire = world.time + wait
+	can_fire = TRUE
+
+
+/datum/controller/subsystem/air/UpdateStat(time)
+	if (PreventUpdateStat(time))
+		return ..()
+	..({"\
+		TtU: [tiles_to_update.len] \
+		ZtU: [zones_to_update.len] \
+		AFZ: [active_fire_zones.len] \
+		AH: [active_hotspots.len] \
+		AE: [active_edges.len]\
+	"})
+
+
+/datum/controller/subsystem/air/Initialize(start_uptime, simulate = TRUE)
+	report_progress("Processing Geometry...")
 	var/simulated_turf_count = 0
-
-	for(var/turf/simulated/S in turfs)
+	for(var/turf/simulated/S)
 		simulated_turf_count++
 		S.update_air_properties()
-
-	admin_notice({"<span class='danger'>Geometry initialized in [round(0.1*(world.timeofday-start_time),0.1)] seconds.</span>
-<span class='info'>
-Total Simulated Turfs: [simulated_turf_count]
+		CHECK_TICK
+	report_progress({"Total Simulated Turfs: [simulated_turf_count]
 Total Zones: [zones.len]
 Total Edges: [edges.len]
-Total Active Edges: [active_edges.len ? SPAN_DANGER("[active_edges.len]") : "None"]
+Total Active Edges: [active_edges.len ? "<span class='danger'>[active_edges.len]</span>" : "None"]
 Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_count]
-</span>"}, R_DEBUG)
+Geometry processing completed in [(Uptime() - start_uptime)/10] seconds!
+"})
+	if (simulate)
+		report_progress("Settling air...")
+		start_uptime = Uptime()
+		fire(FALSE, TRUE)
+		report_progress("Air settling completed in [(Uptime() - start_uptime)/10] seconds!")
 
 
-//	spawn Start()
+/datum/controller/subsystem/air/fire(resumed = FALSE, no_mc_tick = FALSE)
+	if (!resumed)
+		processing_edges = active_edges.Copy()
+		processing_fires = active_fire_zones.Copy()
+		processing_hotspots = active_hotspots.Copy()
 
+	var/list/curr_tiles = tiles_to_update
+	var/list/curr_defer = deferred
+	var/list/curr_edges = processing_edges
+	var/list/curr_fire = processing_fires
+	var/list/curr_hotspot = processing_hotspots
+	var/list/curr_zones = zones_to_update
 
-/datum/controller/air_system/proc/Start()
-	//Purpose: This is kicked off by the master controller, and controls the processing of all atmosphere.
-	//Called by: Master controller
-	//Inputs: None.
-	//Outputs: None.
+	while (curr_tiles.len)
+		var/turf/T = curr_tiles[curr_tiles.len]
+		curr_tiles.len--
 
-	#ifndef ZASDBG
-	set background = 1
-	#endif
+		if (!T)
+			if (no_mc_tick)
+				CHECK_TICK
+			else if (MC_TICK_CHECK)
+				return
 
-	while(1)
-		Tick()
-		sleep(max(5,update_delay*tick_multiplier))
+			continue
 
+		//check if the turf is self-zone-blocked
+		var/c_airblock
+		ATMOS_CANPASS_TURF(c_airblock, T, T)
+		if(c_airblock & ZONE_BLOCKED)
+			deferred += T
+			if (no_mc_tick)
+				CHECK_TICK
+			else if (MC_TICK_CHECK)
+				return
+			continue
 
-/datum/controller/air_system/proc/Tick()
-	. = 1 //Set the default return value, for runtime detection.
-
-	current_cycle++
-
-	//If there are tiles to update, do so.
-	tick_progress = "updating turf properties"
-
-	var/list/updating
-
-	if(tiles_to_update.len)
-		updating = tiles_to_update
-		tiles_to_update = list()
-
+		T.update_air_properties()
+		T.post_update_air_properties()
+		T.needs_air_update = 0
 		#ifdef ZASDBG
-		var/updated = 0
+		T.overlays -= mark
+		updated++
 		#endif
 
-		//defer updating of self-zone-blocked turfs until after all other turfs have been updated.
-		//this hopefully ensures that non-self-zone-blocked turfs adjacent to self-zone-blocked ones
-		//have valid zones when the self-zone-blocked turfs update.
-		var/list/deferred = list()
+		if (no_mc_tick)
+			CHECK_TICK
+		else if (MC_TICK_CHECK)
+			return
 
-		for(var/turf/T in updating)
-			//check if the turf is self-zone-blocked
-			if(T.c_airblock(T) & ZONE_BLOCKED)
-				deferred += T
-				continue
+	while (curr_defer.len)
+		var/turf/T = curr_defer[curr_defer.len]
+		curr_defer.len--
 
-			T.update_air_properties()
-			T.post_update_air_properties()
-			T.needs_air_update = 0
-			#ifdef ZASDBG
-			T.cut_overlay(mark)
-			updated++
-			#endif
-			//sleep(1)
-
-		for(var/turf/T in deferred)
-			T.update_air_properties()
-			T.post_update_air_properties()
-			T.needs_air_update = 0
-			#ifdef ZASDBG
-			T.cut_overlay(mark)
-			updated++
-			#endif
-
+		T.update_air_properties()
+		T.post_update_air_properties()
+		T.needs_air_update = 0
 		#ifdef ZASDBG
-		if(updated != updating.len)
-			tick_progress = "[updating.len - updated] tiles left unupdated."
-			world << SPAN_DANGER("[tick_progress]")
-			. = 0
+		T.overlays -= mark
+		updated++
 		#endif
 
-	//Where gas exchange happens.
-	if(.)
-		tick_progress = "processing edges"
+		if (no_mc_tick)
+			CHECK_TICK
+		else if (MC_TICK_CHECK)
+			return
 
-	for(var/connection_edge/edge in active_edges)
+	while (curr_edges.len)
+		var/connection_edge/edge = curr_edges[curr_edges.len]
+		curr_edges.len--
+
+		if (!edge)
+			if (no_mc_tick)
+				CHECK_TICK
+			else if (MC_TICK_CHECK)
+				return
+			continue
+
 		edge.tick()
 
-	//Process fire zones.
-	if(.)
-		tick_progress = "processing fire zones"
+		if (no_mc_tick)
+			CHECK_TICK
+		else if (MC_TICK_CHECK)
+			return
 
-	for(var/zone/Z in active_fire_zones)
+	while (curr_fire.len)
+		var/zone/Z = curr_fire[curr_fire.len]
+		curr_fire.len--
+
 		Z.process_fire()
 
-	//Process hotspots.
-	if(.)
-		tick_progress = "processing hotspots"
+		if (no_mc_tick)
+			CHECK_TICK
+		else if (MC_TICK_CHECK)
+			return
 
-	for(var/obj/fire/fire in active_hotspots)
-		fire.Process()
+	while (curr_hotspot.len)
+		var/obj/hotspot/F = curr_hotspot[curr_hotspot.len]
+		curr_hotspot.len--
 
-	//Process zones.
-	if(.)
-		tick_progress = "updating zones"
+		F.Process()
 
-	active_zones = zones_to_update.len
-	if(zones_to_update.len)
-		updating = zones_to_update
-		zones_to_update = list()
-		for(var/zone/zone in updating)
-			zone.tick()
-			zone.needs_update = 0
+		if (no_mc_tick)
+			CHECK_TICK
+		else if (MC_TICK_CHECK)
+			return
 
-	if(.)
-		tick_progress = "success"
+	while (curr_zones.len)
+		var/zone/Z = curr_zones[curr_zones.len]
+		curr_zones.len--
 
-/datum/controller/air_system/proc/add_zone(zone/z)
-	zones.Add(z)
+		Z.tick()
+		Z.needs_update = FALSE
+
+		if (no_mc_tick)
+			CHECK_TICK
+		else if (MC_TICK_CHECK)
+			return
+
+/datum/controller/subsystem/air/proc/add_zone(zone/z)
+	zones += z
 	z.name = "Zone [next_id++]"
 	mark_zone_update(z)
 
-/datum/controller/air_system/proc/remove_zone(zone/z)
-	zones.Remove(z)
-	zones_to_update.Remove(z)
+/datum/controller/subsystem/air/proc/remove_zone(zone/z)
+	zones -= z
+	zones_to_update -= z
+	if (processing_zones)
+		processing_zones -= z
 
-/datum/controller/air_system/proc/air_blocked(turf/A, turf/B)
+/datum/controller/subsystem/air/proc/air_blocked(turf/A, turf/B)
 	#ifdef ZASDBG
 	ASSERT(isturf(A))
 	ASSERT(isturf(B))
 	#endif
-	var/ablock = A.c_airblock(B)
-	if(ablock == BLOCKED) return BLOCKED
-	return ablock | B.c_airblock(A)
+	var/ablock
+	ATMOS_CANPASS_TURF(ablock, A, B)
+	if(ablock == BLOCKED)
+		return BLOCKED
+	ATMOS_CANPASS_TURF(., B, A)
+	return ablock | .
 
-/datum/controller/air_system/proc/has_valid_zone(turf/simulated/T)
-	#ifdef ZASDBG
-	ASSERT(istype(T))
-	#endif
-	return istype(T) && T.zone && !T.zone.invalid
-
-/datum/controller/air_system/proc/merge(zone/A, zone/B)
+/datum/controller/subsystem/air/proc/merge(zone/A, zone/B)
 	#ifdef ZASDBG
 	ASSERT(istype(A))
 	ASSERT(istype(B))
@@ -266,7 +307,7 @@ Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_coun
 		B.c_merge(A)
 		mark_zone_update(A)
 
-/datum/controller/air_system/proc/connect(turf/simulated/A, turf/simulated/B)
+/datum/controller/subsystem/air/proc/connect(turf/simulated/A, turf/simulated/B)
 	#ifdef ZASDBG
 	ASSERT(istype(A))
 	ASSERT(isturf(B))
@@ -276,26 +317,27 @@ Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_coun
 	ASSERT(A != B)
 	#endif
 
-	var/block = air_master.air_blocked(A,B)
+	var/block = air_blocked(A,B)
 	if(block & AIR_BLOCKED) return
 
 	var/direct = !(block & ZONE_BLOCKED)
 	var/space = !istype(B)
 
 	if(!space)
-		if(min(A.zone.contents.len, B.zone.contents.len) < ZONE_MIN_SIZE || (direct && (equivalent_pressure(A.zone,B.zone) || current_cycle == 0)))
+		if(min(A.zone.contents.len, B.zone.contents.len) < ZONE_MIN_SIZE || (direct && (equivalent_pressure(A.zone,B.zone) || times_fired == 0)))
 			merge(A.zone,B.zone)
 			return
 
-	var
-		a_to_b = get_dir(A,B)
-		b_to_a = get_dir(B,A)
+	var/a_to_b = get_dir(A,B)
+	var/b_to_a = get_dir(B,A)
 
 	if(!A.connections) A.connections = new
 	if(!B.connections) B.connections = new
 
-	if(A.connections.get(a_to_b)) return
-	if(B.connections.get(b_to_a)) return
+	if(A.connections.get(a_to_b))
+		return
+	if(B.connections.get(b_to_a))
+		return
 	if(!space)
 		if(A.zone == B.zone) return
 
@@ -307,69 +349,86 @@ Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_coun
 
 	if(direct) c.mark_direct()
 
-/datum/controller/air_system/proc/mark_for_update(turf/T)
+/datum/controller/subsystem/air/proc/mark_for_update(turf/T)
 	#ifdef ZASDBG
 	ASSERT(isturf(T))
 	#endif
-	if(T.needs_air_update) return
-	tiles_to_update |= T
+	if(T.needs_air_update)
+		return
+	tiles_to_update += T
 	#ifdef ZASDBG
-	T.add_overlay(mark)
+	T.overlays += mark
 	#endif
 	T.needs_air_update = 1
 
-/datum/controller/air_system/proc/mark_zone_update(zone/Z)
+/datum/controller/subsystem/air/proc/mark_zone_update(zone/Z)
 	#ifdef ZASDBG
 	ASSERT(istype(Z))
 	#endif
-	if(Z.needs_update) return
-	zones_to_update.Add(Z)
+	if(Z.needs_update)
+		return
+	zones_to_update += Z
 	Z.needs_update = 1
 
-/datum/controller/air_system/proc/mark_edge_sleeping(connection_edge/E)
+/datum/controller/subsystem/air/proc/mark_edge_sleeping(connection_edge/E)
 	#ifdef ZASDBG
 	ASSERT(istype(E))
 	#endif
-	if(E.sleeping) return
-	active_edges.Remove(E)
+	if(E.sleeping)
+		return
+	active_edges -= E
 	E.sleeping = 1
 
-/datum/controller/air_system/proc/mark_edge_active(connection_edge/E)
+/datum/controller/subsystem/air/proc/mark_edge_active(connection_edge/E)
 	#ifdef ZASDBG
 	ASSERT(istype(E))
 	#endif
-	if(!E.sleeping) return
-	active_edges.Add(E)
+	if(!E.sleeping)
+		return
+	active_edges += E
 	E.sleeping = 0
 
-/datum/controller/air_system/proc/equivalent_pressure(zone/A, zone/B)
+/datum/controller/subsystem/air/proc/equivalent_pressure(zone/A, zone/B)
 	return A.air.compare(B.air)
 
-/datum/controller/air_system/proc/get_edge(zone/A, zone/B)
-
+/datum/controller/subsystem/air/proc/get_edge(zone/A, zone/B)
 	if(istype(B))
 		for(var/connection_edge/zone/edge in A.edges)
-			if(edge.contains_zone(B)) return edge
+			if(edge.contains_zone(B))
+				return edge
 		var/connection_edge/edge = new/connection_edge/zone(A,B)
-		edges.Add(edge)
+		edges += edge
 		edge.recheck()
 		return edge
 	else
 		for(var/connection_edge/unsimulated/edge in A.edges)
-			if(has_same_air(edge.B,B)) return edge
+			if(has_same_air(edge.B,B))
+				return edge
 		var/connection_edge/edge = new/connection_edge/unsimulated(A,B)
-		edges.Add(edge)
+		edges += edge
 		edge.recheck()
 		return edge
 
-/datum/controller/air_system/proc/has_same_air(turf/A, turf/B)
-	if(A.oxygen != B.oxygen) return 0
-	if(A.nitrogen != B.nitrogen) return 0
-	if(A.plasma != B.plasma) return 0
-	if(A.carbon_dioxide != B.carbon_dioxide) return 0
-	if(A.temperature != B.temperature) return 0
+/datum/controller/subsystem/air/proc/has_same_air(turf/A, turf/B)
+	if(A.initial_gas)
+		if(!B.initial_gas)
+			return 0
+		for(var/g in A.initial_gas)
+			if(A.initial_gas[g] != B.initial_gas[g])
+				return 0
+	if(B.initial_gas)
+		if(!A.initial_gas)
+			return 0
+		for(var/g in B.initial_gas)
+			if(A.initial_gas[g] != B.initial_gas[g])
+				return 0
+	if(A.temperature != B.temperature)
+		return 0
 	return 1
 
-/datum/controller/air_system/proc/remove_edge(connection_edge/E)
-	edges.Remove(E)
-	if(!E.sleeping) active_edges.Remove(E)
+/datum/controller/subsystem/air/proc/remove_edge(connection_edge/E)
+	edges -= E
+	if(!E.sleeping)
+		active_edges -= E
+	if(processing_edges)
+		processing_edges -= E
