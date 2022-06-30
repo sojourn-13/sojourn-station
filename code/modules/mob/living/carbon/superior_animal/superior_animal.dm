@@ -221,11 +221,11 @@
 		alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay) //lets get a little closer than our optimal range
 
 		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
-			visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"))
+			visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), range = viewRange)
 			delayed = delay_amount
 			return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
 		else
-			visible_message(SPAN_WARNING("[src] [rush_target_telegraph] <font color = 'green'>[targetted_mob]</font>!"))
+			visible_message(SPAN_WARNING("[src] [rush_target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), range = viewRange)
 
 	else if (!ranged)
 		stop_automated_movement = TRUE
@@ -307,8 +307,8 @@
 				trace.flags = projectile_flags
 				trace.launch(targetted_mob)
 
-	if (!fire_through_lost_sight)
-		lost_sight = FALSE // if we dont have fire_through_walls, this defualts to true
+	if (!fire_through_lost_sight) //can only be true if 1. src has fire_through_walls and 2. lost_sight is true
+		lost_sight = FALSE
 	patience = patience_initial
 	var/atom/targetted = targetted_mob
 	if (!(targetted_mob.check_if_alive(TRUE)))
@@ -466,13 +466,13 @@
 
 						if (!(melee_delay == 0)) //are we still charging our attack?
 							melee_delay--
-							visible_message(SPAN_WARNING("\the [src] [melee_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"))
+							visible_message(SPAN_WARNING("\the [src] [melee_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"), range = viewRange)
 							return
 						else
 							melee_delay = melee_delay_initial
 
 						if (time_to_expire > 0)
-							visible_message(SPAN_WARNING("\the [src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+							visible_message(SPAN_WARNING("\the [src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"), range = viewRange)
 					addtimer(CALLBACK(src, proctocall), time_to_expire) //awful hack because melee attacks are handled differently
 
 			if (RANGED_TYPE || RANGED_RAPID_TYPE)
@@ -481,13 +481,13 @@
 
 					if (!(fire_delay == 0)) //are we still charging our attack?
 						fire_delay--
-						visible_message(SPAN_WARNING("\the [src] [range_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"))
+						visible_message(SPAN_WARNING("\the [src] [range_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"), range = viewRange)
 						return
 					else
 						fire_delay = fire_delay_initial
 
 					if (time_to_expire > 0)
-						visible_message(SPAN_WARNING("\the [src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+						visible_message(SPAN_WARNING("\the [src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"), range = viewRange)
 					if (cast_beam)
 						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
