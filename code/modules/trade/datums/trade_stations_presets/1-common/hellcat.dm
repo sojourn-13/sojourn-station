@@ -38,7 +38,8 @@
 			/obj/item/gun/projectile/olivaw,
 			/obj/item/gun/projectile/revolver/detective,
 			/obj/item/gun/projectile/automatic/ak47/sa,
-			/obj/item/gun/projectile/automatic/mac
+			/obj/item/gun/projectile/automatic/mac,
+			/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless
 		),
 		"Flame Thrower" = list(
 			/obj/item/gun/flamethrower,
