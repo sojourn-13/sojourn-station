@@ -77,8 +77,8 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tofu, desc="It has tofu in it.", result_desc="There is tofu between the bread."),
-		list(CWJ_USE_ITEM, /obj/item/reagent_containers/food/snacks/tofu, desc="Tofu has been used on it.", result_desc="It has been in contact with tofu."),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/tofu, desc="It has tofu in it.", result_desc="There is tofu between the bread."),
+		list(CWJ_USE_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/tofu, desc="Tofu has been used on it.", result_desc="It has been in contact with tofu."),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
 	)

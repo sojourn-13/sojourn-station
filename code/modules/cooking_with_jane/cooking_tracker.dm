@@ -95,19 +95,20 @@
 				if(!use_class)
 					use_class = "Use Item"
 
-	
+
 
 	//Other Check processes will go here!
 
 	if(valid_steps.len == 0)
-		log_debug("/datum/cooking_with_jane/recipe_tracker/proc/process_item returned no steps!")
+		log_debug("/recipe_tracker/proc/process_item returned no steps!")
 		return CWJ_NO_STEPS
 
 	if(valid_steps.len > 1)
 		completion_lockout = TRUE
 		var/list/choice = input("There's two things you can do with this item!", "Choose One:") in valid_steps
+		completion_lockout = FALSE
 		if(!choice)
-			log_debug("/datum/cooking_with_jane/recipe_tracker/proc/process_item returned choice cancel!")
+			log_debug("/recipe_tracker/proc/process_item returned choice cancel!")
 			return CWJ_CHOICE_CANCEL
 		use_class = choice
 
@@ -144,7 +145,7 @@
 					recipe_string += ", or \a [pointer.current_recipe.name]"
 
 	//Choose to keep baking or finish now.
-	if(completed_list && completed_list.len < active_recipe_pointers.len)
+	if(completed_list.len && (completed_list.len != active_recipe_pointers.len))
 		if(alert("If you finish cooking now, you will create [recipe_string]. However, you feel there are possibilities beyond even this. Continue cooking anyways?",,"Yes","No") == "Yes")
 			for (var/datum/cooking_with_jane/recipe_pointer/pointer in completed_list)
 				active_recipe_pointers.Remove(pointer)
@@ -154,23 +155,23 @@
 
 	//Check if we completed our recipe
 	if(completed_list.len >= 1)
+		var/datum/cooking_with_jane/recipe_pointer/chosen_pointer = null
 		if(completed_list.len > 1)
 			completion_lockout = TRUE
 			var/choice = input("There's two things you complete at this juncture!", "Choose One:") in completed_list
+			completion_lockout = FALSE
 			if(choice)
-				var/datum/cooking_with_jane/recipe_pointer/chosen_pointer = completed_list[choice]
-				chosen_pointer.current_recipe.create_product(completed_list[choice])
-			else
-				var/datum/cooking_with_jane/recipe_pointer/chosen_pointer = completed_list[1]
-				chosen_pointer.current_recipe.create_product(completed_list[1])
-		else if(completed_list.len == 1)
-			var/datum/cooking_with_jane/recipe_pointer/chosen_pointer = completed_list[1]
-			chosen_pointer.current_recipe.create_product(completed_list[1])
-		log_debug("/datum/cooking_with_jane/recipe_tracker/proc/process_item returned recipe complete!")
+				chosen_pointer = completed_list[choice]
+				chosen_pointer.current_recipe.create_product(chosen_pointer)
+				log_debug("/recipe_tracker/proc/process_item returned recipe complete!")
+				return CWJ_COMPLETE
+		chosen_pointer = completed_list[completed_list[1]]
+		chosen_pointer.current_recipe.create_product(chosen_pointer)
+		log_debug("/recipe_tracker/proc/process_item returned recipe complete!")
 		return CWJ_COMPLETE
 
 	populate_step_flags()
-	log_debug("/datum/cooking_with_jane/recipe_tracker/proc/process_item returned success!")
+	log_debug("/recipe_tracker/proc/process_item returned success!")
 	return CWJ_SUCCESS
 
 //===================================================================================
@@ -290,6 +291,7 @@
 	return FALSE
 
 /datum/cooking_with_jane/recipe_pointer/proc/traverse(var/id, var/obj/used_obj)
+	log_debug("/recipe_pointer/traverse: Traversing pointer from [current_step.unique_id] to [id].")
 	if(!GLOB.cwj_step_dictionary["[id]"])
 		return FALSE
 
@@ -303,10 +305,11 @@
 			break
 
 	if(!is_valid_step)
+		log_debug("/recipe_pointer/traverse: step [id] is not valid for recipe [current_recipe.unique_id]")
 		return FALSE
 
 	steps_taken["[id]"] = active_step.custom_result_desc
-	if(active_step.flags & ~CWJ_IS_OPTIONAL)
+	if(!(active_step.flags & CWJ_IS_OPTIONAL))
 		current_step = active_step
 
 	tracked_quality += active_step.calculate_quality(used_obj)
@@ -315,4 +318,3 @@
 		return TRUE
 
 	return FALSE
-

@@ -386,9 +386,13 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 //default function for creating a product
 /datum/cooking_with_jane/recipe/proc/create_product(var/datum/cooking_with_jane/recipe_pointer/pointer)
 	var/datum/cooking_with_jane/recipe_tracker/parent = pointer.parent_ref.resolve()
-	var/obj/item/cooking_with_jane/cooking_container/container = parent.holder_ref.resolve()
+	var/obj/item/container = parent.holder_ref.resolve()
 	if(container)
+		//Purge the contents of the container we no longer need it
+		QDEL_NULL_LIST(container.contents)
+		container.contents = list()
+
+		//TODO: Purge reagents in the container.
+
 		for(var/i = 0; i < product_count; i++)
-			var/obj/item/product = new product_type()
-			product.loc = container
-			container.foodstuff += product
+			new product_type(container)

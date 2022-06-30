@@ -14,19 +14,18 @@
 	var/appliancetype //string
 	w_class = ITEM_SIZE_SMALL
 	var/datum/cooking_with_jane/recipe_tracker/tracker = null //To be populated the first time the plate is interacted with.
-	var/list/foodstuff = list() //Whatever food is on or in the container.
 
 /obj/item/cooking_with_jane/cooking_container/examine(var/mob/user)
 	if(!..(user, 1))
 		return FALSE
-	if(foodstuff)
+	if(contents)
 		to_chat(user, get_content_info())
 	if(reagents.total_volume)
 		to_chat(user, get_reagent_info())
 
 /obj/item/cooking_with_jane/cooking_container/proc/get_content_info()
 	var/string = "It contains:</br><ul><li>"
-	string += jointext(foodstuff, "</li><li>") + "</li></ul>"
+	string += jointext(contents, "</li><li>") + "</li></ul>"
 	return string
 
 /obj/item/cooking_with_jane/cooking_container/proc/get_reagent_info()
@@ -34,7 +33,7 @@
 
 /obj/item/cooking_with_jane/cooking_container/attackby(var/obj/item/I, var/mob/user)
 
-	if(foodstuff && !tracker)
+	if(contents && !tracker)
 		to_chat("The [src] is full. Remove the finished meal from it first.")
 
 	//OK, time to load the tracker
@@ -66,11 +65,11 @@
 	do_empty(usr)
 
 /obj/item/cooking_with_jane/cooking_container/proc/do_empty(mob/user)
-	if (foodstuff.len == 0)
+	if (contents.len == 0)
 		to_chat(user, SPAN_WARNING("There's nothing in [src] you can remove!"))
 		return
 
-	for (var/contained in foodstuff)
+	for (var/contained in contents)
 		var/atom/movable/AM = contained
 		AM.forceMove(get_turf(src))
 
@@ -86,8 +85,8 @@
 //Deletes contents of container.
 //Used when food is burned, before replacing it with a burned mess
 /obj/item/cooking_with_jane/cooking_container/proc/clear()
-	QDEL_LIST(foodstuff)
-	foodstuff=list()
+	QDEL_LIST(contents)
+	contents=list()
 	reagents.clear_reagents()
 	if(tracker)
 		qdel(tracker)
@@ -101,8 +100,8 @@
 	if (!isnull(number))
 		.+= " [number]"
 	.+= " - "
-	if (LAZYLEN(foodstuff))
-		var/obj/O = locate() in foodstuff
+	if (LAZYLEN(contents))
+		var/obj/O = locate() in contents
 		return . + O.name //Just append the name of the first object
 	return . + "empty"
 

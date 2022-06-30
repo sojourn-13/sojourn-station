@@ -52,19 +52,19 @@
 /datum/cooking_with_jane/recipe_step/proc/in_option_chain(var/datum/cooking_with_jane/recipe_step/step)
 	if(!step)
 		return FALSE
-	if((flags & ~CWJ_IS_OPTION_CHAIN) || (step.flags & ~CWJ_IS_OPTION_CHAIN))
+	if(!(flags & CWJ_IS_OPTION_CHAIN) || !(step.flags & CWJ_IS_OPTION_CHAIN))
 		return FALSE
 
 	var/datum/cooking_with_jane/recipe_step/target_step = src.previous_step
 	//traverse backwards on the chain.
-	while(target_step && (target_step & ~CWJ_IS_OPTION_CHAIN))
+	while(target_step && !(target_step & CWJ_IS_OPTION_CHAIN))
 		if(step.unique_id == target_step.unique_id)
 			return TRUE
 		target_step = target_step.previous_step
 
 	//Traverse forwards on the chain.
 	target_step = src.next_step
-	while(target_step && (target_step & ~CWJ_IS_OPTION_CHAIN))
+	while(target_step && !(target_step & CWJ_IS_OPTION_CHAIN))
 		if(step.unique_id == target_step.unique_id)
 			return TRUE
 		target_step = src.next_step
@@ -149,10 +149,14 @@
 	var/raw_quality = added_item?:food_quality * inherited_quality_modifier
 	return clamp_quality(raw_quality)
 
-/datum/cooking_with_jane/recipe_step/add_item/follow_step(var/obj/added_item, var/obj/item/cooking_with_jane/cooking_container/container)
+/datum/cooking_with_jane/recipe_step/add_item/follow_step(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 	log_debug("Called: /datum/cooking_with_jane/recipe_step/add_item/follow_step")
-	added_item.forceMove(container)
-	container.foodstuff += added_item
+	var/obj/item/container = tracker.holder_ref.resolve()
+	if(container)
+		if(usr.canUnEquip(added_item))
+			usr.unEquip(added_item, container)
+		else
+			added_item.forceMove(container)
 	return TRUE
 //-----------------------------------------------------------------------------------
 //A cooking step that involves using an item on the food.
