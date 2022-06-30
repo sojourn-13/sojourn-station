@@ -115,6 +115,8 @@
 	retarget_timer_initial = 15
 	retarget_chance = 90
 
+	projectilesound = 'sound/weapons/lasercannonfire.ogg'
+
 	fire_through_walls = TRUE //this bad boy can BREAK cover
 
 	move_to_delay = 13 //slow as hell due to it's armor and weapons. also balance reasons.
