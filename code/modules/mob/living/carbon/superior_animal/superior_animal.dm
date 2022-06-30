@@ -221,11 +221,11 @@
 		alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay) //lets get a little closer than our optimal range
 
 		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
-			visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), range = viewRange)
+			visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
 			delayed = delay_amount
 			return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
 		else
-			visible_message(SPAN_WARNING("[src] [rush_target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), range = viewRange)
+			visible_message(SPAN_WARNING("[src] [rush_target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
 
 	else if (!ranged)
 		stop_automated_movement = TRUE
@@ -391,8 +391,8 @@
 		handle_cheap_chemicals_in_body()
 	if(!(ticks_processed%3))
 		// handle_status_effects() this is handled here directly to save a bit on procedure calls
-		//if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1)) - Soj edit, we already update icon just 13 lines down form this, no point
-		//	spawn(5) update_icons()
+		if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1))
+			spawn(5) update_icons()
 		paralysis = max(paralysis-3,0)
 		stunned = max(stunned-3,0)
 		weakened = max(weakened-3,0)
@@ -455,7 +455,7 @@
  *	telegraph-Boolean. If false, no visual emote will be made.
  *	cast_beam-Boolean. If true, a beam will be cast from src to targetted_mob as a visual telegraph.
 **/
-/mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(atom/targetted_mob, proctocall, attack_type, telegraph = TRUE, cast_beam = TRUE)
+/mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(var/atom/targetted_mob, proctocall, var/attack_type, var/telegraph = TRUE, var/cast_beam = TRUE)
 	if (check_if_alive()) //sanity
 		var/time_to_expire
 		switch(attack_type)
@@ -466,13 +466,13 @@
 
 						if (!(melee_delay == 0)) //are we still charging our attack?
 							melee_delay--
-							visible_message(SPAN_WARNING("\the [src] [melee_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"), range = viewRange)
+							visible_message(SPAN_WARNING("\the [src] [melee_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
 							return
 						else
 							melee_delay = melee_delay_initial
 
 						if (time_to_expire > 0)
-							visible_message(SPAN_WARNING("\the [src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"), range = viewRange)
+							visible_message(SPAN_WARNING("\the [src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
 					addtimer(CALLBACK(src, proctocall), time_to_expire) //awful hack because melee attacks are handled differently
 
 			if (RANGED_TYPE || RANGED_RAPID_TYPE)
@@ -481,13 +481,13 @@
 
 					if (!(fire_delay == 0)) //are we still charging our attack?
 						fire_delay--
-						visible_message(SPAN_WARNING("\the [src] [range_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"), range = viewRange)
+						visible_message(SPAN_WARNING("\the [src] [range_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
 						return
 					else
 						fire_delay = fire_delay_initial
 
 					if (time_to_expire > 0)
-						visible_message(SPAN_WARNING("\the [src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"), range = viewRange)
+						visible_message(SPAN_WARNING("\the [src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
 					if (cast_beam)
 						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
@@ -505,7 +505,7 @@
  * trace: obj/item/projectile/test/impacttest. The trace we are registered to.
  * atom/impact_atom: The atom the trace impacted.
 **/
-/mob/living/carbon/superior_animal/proc/handle_trace_impact(obj/item/projectile/test/impacttest/trace, atom/impact_atom)
+/mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/test/impacttest/trace, var/atom/impact_atom)
 	SIGNAL_HANDLER
 
 	UnregisterSignal(trace, COMSIG_TRACE_IMPACT)
@@ -518,7 +518,7 @@
 	if (impact_atom != targetted_mob)
 		advance_towards(targetted_mob)
 
-/mob/living/carbon/superior_animal/proc/advance_towards(atom/target)
+/mob/living/carbon/superior_animal/proc/advance_towards(var/atom/target)
 
 	var/calculated_walk = (comfy_range - comfy_distance)
 

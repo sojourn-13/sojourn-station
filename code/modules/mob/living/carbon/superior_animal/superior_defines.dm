@@ -30,6 +30,9 @@
 	/// Percentage chance that we will keep targetting our current target if we retarget.
 	var/retarget_chance = 50 //arbitrary value
 
+	/// Do we always send a message to our target when we telegraph, or only in proximity?
+	var/always_telegraph_to_target = TRUE
+
 	/// Do we advance?
 	var/advance = TRUE
 	/// Stored var of calculation ran within [/mob/living/carbon/superior_animal/proc/advance_towards]

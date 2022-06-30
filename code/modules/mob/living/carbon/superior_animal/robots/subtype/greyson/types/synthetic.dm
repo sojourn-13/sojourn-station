@@ -53,7 +53,7 @@
 	icon_state = "nanotrasen_ert"
 
 	projectiletype = /obj/item/projectile/beam/sniper
-	telegraph_beam_color = COLOR_GREEN
+	telegraph_beam_color = COLOR_ORANGE
 	destroy_surroundings = FALSE
 	fire_delay = 2
 	fire_delay_initial = 2
@@ -65,6 +65,8 @@
 	retarget_timer_initial = 10
 
 	retarget_chance = 90
+
+	always_telegraph_to_target = FALSE
 
 	advance = FALSE
 
