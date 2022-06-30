@@ -84,21 +84,26 @@
 
 // mini-boss enemy that demands attention or else they will nuke someone. VERY POWERFUL
 /mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon
-	name = "\"Iron Lock Security\" Siege Stalker"
-	desc = "A ruthless patrol borg that defends Greyson facilities. This one has a pair of massively oversized plasma cannons, and has been fitted with thick layers of ballistic shielding, becoming a lumbering menace. This will destroy you."
+	name = "\"Iron Lock Security\" Assault Stalker Mk2"
+	desc = "A ruthless patrol borg that defends Greyson facilities. This one has a pair of massively oversized plasma cannons, and has been fitted with thick layers of ablative plating, although at the cost of it's mobility, melee, and ballistic defenses. This will destroy you."
 
 	range_charge_telegraph = "'s plasma cannons grow brighter, and it hums louder, preparing to fire at"
-	range_telegraph = "'s plasma cannons let out an eerie and TERRIFYING whine as it prepares to unleash it's deveastating payload apon"
+	range_telegraph = "'s plasma cannons let out an eerie and TERRIFYING whine as it prepares to unleash it's devastating payload upon"
 	target_telegraph = "begins to hum, it's plasma cannons glowing with a dim, growing light, as it turns to"
 
 	telegraph_beam_color = COLOR_RED
 	color = COLOR_RED
 
-	rounds_left = 3
-	mag_type = /obj/item/cell/large/hyper
+	rounds_left = 4
+	mag_type = /obj/item/cell/large/hyper/depleted
 	mags_left = 1
 
-	armor = list(melee = 45, bullet = 65, energy = 40, bomb = 100, bio = 100, rad = 100) //tanky as hell especially against its own explosions
+	advance = FALSE
+
+	armor = list(melee = 10, bullet = 15, energy = 60, bomb = 100, bio = 100, rad = 100) //takes stalker armor to the extreme, also, if people want to melee the stalker that explodes apon death, power to them
+
+	maxHealth = 470 //high hp is required due to it bombing itself a lot
+	health = 470
 
 	deathmessage = "violently explodes, it's internal plasma cells combusting along with it's remaining cells!"
 	reload_message = "lets out a hiss as it ejects a cell from it's carapace!"

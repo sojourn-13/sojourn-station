@@ -30,6 +30,8 @@
 	/// Percentage chance that we will keep targetting our current target if we retarget.
 	var/retarget_chance = 50 //arbitrary value
 
+	/// Do we advance?
+	var/advance = TRUE
 	/// Stored var of calculation ran within [/mob/living/carbon/superior_animal/proc/advance_towards]
 	var/advance_steps = 0
 	/// How many tiles we will advance forward from our current position if we can't hit our current target.

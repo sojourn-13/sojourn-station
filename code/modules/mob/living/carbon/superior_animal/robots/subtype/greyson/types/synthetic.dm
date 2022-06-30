@@ -48,8 +48,8 @@
 
 /// base type, dont use
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/sniper
-	name = "Base type"
-	desc = "You shouldn't see this"
+	name = "Greyson Positronic FBP-SEC Sniper unit"
+	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one has an overclocked and overcharged hyper cog laser rifle built into its arm, and a scope in its visor."
 	icon_state = "nanotrasen_ert"
 
 	projectiletype = /obj/item/projectile/beam/sniper
@@ -59,12 +59,14 @@
 	fire_delay_initial = 2
 	delay_for_range = 1.1 SECONDS
 
-	color = COLOR_BLUE
+	color = COLOR_TEAL
 
 	retarget_timer = 10
 	retarget_timer_initial = 10
 
 	retarget_chance = 90
+
+	advance = FALSE
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/sniper/lowrange //lower performance impact
 	viewRange = 20

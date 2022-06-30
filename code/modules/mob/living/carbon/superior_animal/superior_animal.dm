@@ -290,7 +290,7 @@
 				cant_see_timer = (world.time)++ //just to make sure we dont walk towards them
 				fire_through_lost_sight = TRUE
 
-		else if (projectiletype) // if we can see, let's prepare to see if we can hit
+		else if (projectiletype && advance) // if we can see, let's prepare to see if we can hit
 			if (istype(projectiletype, /obj/item/projectile))
 				if (projectiletype == initial(projectiletype)) // typepaths' vars are only accessable through initial() or objects
 					projectile_passflags = initial(projectiletype.pass_flags)
@@ -466,13 +466,13 @@
 
 						if (!(melee_delay == 0)) //are we still charging our attack?
 							melee_delay--
-							visible_message(SPAN_WARNING("[src] [melee_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"))
+							visible_message(SPAN_WARNING("\the [src] [melee_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"))
 							return
 						else
 							melee_delay = melee_delay_initial
 
 						if (time_to_expire > 0)
-							visible_message(SPAN_WARNING("[src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+							visible_message(SPAN_WARNING("\the [src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
 					addtimer(CALLBACK(src, proctocall), time_to_expire) //awful hack because melee attacks are handled differently
 
 			if (RANGED_TYPE || RANGED_RAPID_TYPE)
@@ -481,13 +481,13 @@
 
 					if (!(fire_delay == 0)) //are we still charging our attack?
 						fire_delay--
-						visible_message(SPAN_WARNING("[src] [range_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"))
+						visible_message(SPAN_WARNING("\the [src] [range_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"))
 						return
 					else
 						fire_delay = fire_delay_initial
 
 					if (time_to_expire > 0)
-						visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+						visible_message(SPAN_WARNING("\the [src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
 					if (cast_beam)
 						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
