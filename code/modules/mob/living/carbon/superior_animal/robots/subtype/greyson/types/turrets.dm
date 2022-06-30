@@ -82,6 +82,18 @@
 	if(prob(1) && (!drop2))
 		drop2 = /obj/item/gun/projectile/automatic/scaffold
 
+/obj/item/stalker_fuel_rod
+	name = "spent fuel rod"
+	desc = "A empty greyson-alloyed fuel rod, previously having contained some combustable substance. Presumably."
+
+	icon = 'icons/obj/stack/items.dmi'
+	icon_state = "rods"
+
+	color = PIPE_COLOR_ORANGE
+
+	origin_tech = list(TECH_GREYSON = 5, TECH_PLASMA = 3, TECH_ENGINEERING = 2)
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASMA = 1, MATERIAL_PLASMAGLASS = 1, MATERIAL_DIAMOND = 2)
+
 // mini-boss enemy that demands attention or else they will nuke someone. VERY POWERFUL
 /mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon
 	name = "\"Iron Lock Security\" Assault Stalker Mk2"
@@ -95,7 +107,7 @@
 	color = COLOR_RED
 
 	rounds_left = 4
-	mag_type = /obj/item/cell/large/hyper/depleted
+	mag_type = /obj/item/stalker_fuel_rod
 	mags_left = 1
 
 	advance = FALSE
@@ -105,8 +117,8 @@
 	maxHealth = 470 //high hp is required due to it bombing itself a lot
 	health = 470
 
-	deathmessage = "violently explodes, it's internal plasma cells combusting along with it's remaining cells!"
-	reload_message = "lets out a hiss as it ejects a cell from it's carapace!"
+	deathmessage = "violently explodes, its internal generator combusting in a brilliant blue-white flame!"
+	reload_message = "lets out a hiss as a fuel rod ejects from its carapace!"
 
 	projectiletype = /obj/item/projectile/hydrogen/cannon/max //devastating
 	fire_delay = 7 //7 ticks of charging to fire. very important since this will fucking instakill most people
