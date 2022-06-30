@@ -54,7 +54,7 @@
 /mob/living/carbon/superior_animal/robot/handle_breath(datum/gas_mixture/breath) //we dont care about the air
 	return
 
-/mob/living/carbon/superior_animal/robot/handle_environment(var/datum/gas_mixture/environment) //We are robots, no air or presser will harm us
+/mob/living/carbon/superior_animal/robot/handle_environment(datum/gas_mixture/environment) //We are robots, no air or presser will harm us
 	return
 
 /mob/living/carbon/superior_animal/robot/handle_cheap_breath(datum/gas_mixture/breath as anything)
@@ -63,7 +63,7 @@
 /mob/living/carbon/superior_animal/robot/handle_cheap_environment(datum/gas_mixture/environment as anything)
 	return
 
-/mob/living/carbon/superior_animal/robot/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0) //WE CLEAN!
+/mob/living/carbon/superior_animal/robot/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, glide_size_override = 0) //WE CLEAN!
 	. = ..()
 	if(cleaning)
 		var/turf/tile = loc
@@ -96,18 +96,18 @@
 
 /mob/living/carbon/superior_animal/robot/death()
 	..()
-	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
+	new /obj/effect/decal/cleanable/blood/gibs/robot(loc)
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
 	if(drop1)
-		new drop1 (src.loc)
+		new drop1 (loc)
 		drop1 = null
 	if(drop2)
-		new drop2 (src.loc)
+		new drop2 (loc)
 		drop2 = null
 	if(cell_drop)
-		new cell_drop (src.loc)
+		new cell_drop (loc)
 		cell_drop = null
 	if(termiation)
 		qdel(src)

@@ -3,7 +3,7 @@
 		\"Hey, dudes, it seems you want some mechas? We currently got a surplus and spare parts.\"")
 	icon_states = list("htu_frigate", "ship")
 	tree_x = 0.78
-	tree_y = 0.6
+	tree_y = 0.8
 	base_income = 1600
 	wealth = 0
 	markup = UNCOMMON_GOODS
