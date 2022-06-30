@@ -84,6 +84,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		//misc
 		/obj/item/tool/baton = 200,
 		/obj/item/storage/firstaid/surgery/traitor = 250, //Advanced tools inside
+		/obj/item/storage/firstaid/blackshield/large = 500,
 		/obj/item/computer_hardware/hard_drive/portable/design/blackshield = 500
 		)
 	var/entropy_value = 1 //It is still bluespace
