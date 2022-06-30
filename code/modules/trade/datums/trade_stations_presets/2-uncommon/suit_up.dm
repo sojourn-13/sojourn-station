@@ -13,7 +13,7 @@
 	wealth = 0
 	hidden_inv_threshold = 2000
 	//recommendations_needed = 1
-	stations_recommended = list("rigs", "mecha")
+	stations_recommended = list("rigs")
 	inventory = list(
 		"Armor" = list(
 			/obj/item/clothing/head/helmet/faceshield/riot = custom_good_amount_range(list(3, 5)),
