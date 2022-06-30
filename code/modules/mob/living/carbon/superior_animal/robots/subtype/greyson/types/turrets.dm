@@ -89,7 +89,7 @@
 	icon = 'icons/obj/stack/items.dmi'
 	icon_state = "rods"
 
-	color = PIPE_COLOR_ORANGE
+	color = GLASS_COLOR_PLASMA
 
 	origin_tech = list(TECH_GREYSON = 5, TECH_PLASMA = 3, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASMA = 1, MATERIAL_PLASMAGLASS = 1, MATERIAL_DIAMOND = 2)
