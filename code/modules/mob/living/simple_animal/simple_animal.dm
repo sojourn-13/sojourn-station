@@ -8,6 +8,7 @@
 	mob_swap_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 	mob_push_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 
+	var/datum/weakref/target_mob
 	var/datum/component/spawner/nest
 	universal_understand = TRUE //QoL to admins controling mobs
 	var/show_stat_health = TRUE	//does the percentage health show in the stat panel for the mob
@@ -537,6 +538,7 @@
 	icon_state = icon_dead
 	density = FALSE
 	AI_inactive = TRUE //Were dead
+	target_mob = null
 	return ..(gibbed,deathmessage)
 
 /mob/living/simple_animal/ex_act(severity)
