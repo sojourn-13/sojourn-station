@@ -40,10 +40,13 @@
 			if ((M.z == src.z) && (get_dist(src, M) <= viewRange) && isValidAttackTarget(M))
 				filteredTargets += M
 
-	var/filteredTarget = safepick(getTargets(filteredTargets, src))
+	var/atom/filteredTarget = safepick(getTargets(filteredTargets, src))
 
 	if ((filteredTarget != target_mob) && filteredTarget)
 		doTargetMessage()
+
+	if (filteredTarget)
+		target_location = filteredTarget.loc
 
 	return filteredTarget
 
@@ -104,6 +107,7 @@
 	target_mob = null
 	stance = HOSTILE_STANCE_IDLE
 	lost_sight = FALSE
+	target_location = null
 
 /mob/living/carbon/superior_animal/proc/isValidAttackTarget(var/atom/O)
 

@@ -239,17 +239,18 @@
 	var/projectile_passflags = null
 	var/projectile_flags = null
 	var/calculated_walk = (comfy_range - comfy_distance)
-	var/can_see = TRUE
+	var/fire_through_lost_sight = FALSE
 	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
 	if(destroy_surroundings && !already_destroying_surroundings)
 		destroySurroundings()
 
 	if (!(isburrow(targetted_mob))) //we dont want mobs failing to use the burrows
+		if (!lost_sight)
+			target_location = targetted_mob.loc //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
 		if (retarget)
 			var/retarget_prioritize = retarget_prioritize_current //local var so that we can make temporary changes
 			if (retarget_timer <= 0)
-				if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !fire_through_wall)) //if we cant see them, hearers() wont show them, so lets remove the override
-					can_see = FALSE //for the sake of reducing work
+				if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) //if we cant see them, hearers() wont show them, so lets remove the override
 					retarget_prioritize = FALSE //removing override
 				var/target_mob_cache = target_mob
 				target_mob = WEAKREF(findTarget(retarget_prioritize))
@@ -263,27 +264,31 @@
 			else
 				retarget_timer--
 
-		if (!can_see || (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !fire_through_wall))) //why attack if we can't even see the enemy
+		if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) //why attack if we can't even see the enemy
 			if (patience <= 0)
 				loseTarget()
 				patience = patience_initial
+				return
 			else //this is where we handle mobs losing LOS and forgetting where the target is
 				if (!lost_sight) //lets only do this if we havent lost sight of them, so we dont constantly go to their new position
-					var/location = targetted_mob.loc //the choice to not just store the location every tick is intentional, i want mobs to have a chance to reacquire their target
 					if (ranged)
-						if (advancement_timer <= world.time) //we are advancing, so lets use our advance_steps var
-							alive_walk_to(src, location, advance_steps, move_to_delay)
+						if ((advancement_timer <= world.time) || (cant_see_timer <= world.time)) //we are advancing, so lets use our advance_steps var
+							alive_walk_to(src, target_location, advance_steps, move_to_delay)
 						else
-							alive_walk_to(src, location, calculated_walk, move_to_delay)
+							alive_walk_to(src, target_location, calculated_walk, move_to_delay)
 					else
-						alive_walk_to(src, location, 1, move_to_delay) // melee mobs only need to go to one tile away
-					lost_sight = TRUE
+						alive_walk_to(src, target_location, 1, move_to_delay) // melee mobs only need to go to one tile away
 
+				lost_sight = TRUE
 				patience--
 				var/moving_to = pick(cardinal)
 				set_dir(moving_to)
 				step_glide(src, moving_to, DELAY2GLIDESIZE(0.5 SECONDS)) //we can potentially pathfind if we do this
-			return
+			if (!fire_through_walls)
+				return
+			else
+				cant_see_timer = (world.time)++ //just to make sure we dont walk towards them
+				fire_through_lost_sight = TRUE
 
 		else if (projectiletype) // if we can see, let's prepare to see if we can hit
 			if (istype(projectiletype, /obj/item/projectile))
@@ -302,7 +307,8 @@
 				trace.flags = projectile_flags
 				trace.launch(targetted_mob)
 
-	lost_sight = FALSE // we can see our target now
+	if (!fire_through_lost_sight)
+		lost_sight = FALSE // if we dont have fire_through_walls, this defualts to true
 	patience = patience_initial
 	if(!ranged)
 		prepareAttackOnTarget()
@@ -315,10 +321,10 @@
 			return
 		if(get_dist(src, targetted_mob) <= comfy_range)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
-			if (advancement_timer <= world.time) //we dont want to prematurely end a advancing walk
+			if ((advancement_timer <= world.time) && (cant_see_timer <= world.time)) //we dont want to prematurely end a advancing walk
 				alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay) //we still want to reset our walk
 		else
-			if (advancement_timer <= world.time)
+			if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 				alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
@@ -449,6 +455,9 @@
 /mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(var/atom/targetted_mob, proctocall, var/attack_type, var/telegraph = TRUE, var/cast_beam = TRUE)
 	if (check_if_alive()) //sanity
 		var/time_to_expire
+		var/atom/target = targetted_mob
+		if (lost_sight && target_location && ranged) //so mobs that lose sight but still fire wont fire at their target, only their last known position
+			target = target_location
 		switch(attack_type)
 			if (MELEE_TYPE)
 				if (do_melee_if_not_adjacent || Adjacent(targetted_mob))
@@ -457,13 +466,13 @@
 
 						if (!(melee_delay == 0)) //are we still charging our attack?
 							melee_delay--
-							visible_message(SPAN_WARNING("[src] [melee_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"))
+							visible_message(SPAN_WARNING("[src] [melee_charge_telegraph] <font color = 'orange'>[target]</font>!"))
 							return
 						else
 							melee_delay = melee_delay_initial
 
 						if (time_to_expire > 0)
-							visible_message(SPAN_WARNING("[src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+							visible_message(SPAN_WARNING("[src] [melee_telegraph] <font color = 'blue'>[target]</font>!"))
 					addtimer(CALLBACK(src, proctocall), time_to_expire) //awful hack because melee attacks are handled differently
 
 			if (RANGED_TYPE || RANGED_RAPID_TYPE)
@@ -472,16 +481,16 @@
 
 					if (!(fire_delay == 0)) //are we still charging our attack?
 						fire_delay--
-						visible_message(SPAN_WARNING("[src] [range_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"))
+						visible_message(SPAN_WARNING("[src] [range_charge_telegraph] <font color = 'orange'>[target]</font>!"))
 						return
 					else
 						fire_delay = fire_delay_initial
 
 					if (time_to_expire > 0)
-						visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
+						visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[target]</font>!"))
 					if (cast_beam)
-						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
-				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
+						Beam(target, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
+				addtimer(CALLBACK(src, proctocall, target), time_to_expire)
 
 /// Called in findTarget() if the found target is not the same as the one we already have.
 /mob/living/carbon/superior_animal/proc/doTargetMessage()

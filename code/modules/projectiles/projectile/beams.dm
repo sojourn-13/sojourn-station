@@ -162,6 +162,20 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	impact_type = /obj/effect/projectile/xray/impact
 	recoil = 4
 
+/obj/item/projectile/beam/sniper/heavy
+	name = "heavy sniper beam"
+	icon_state = "xray"
+	damage_types = list(BURN = 80)
+	armor_penetration = 50
+	//stun = 3
+	//weaken = 3
+	//stutter = 3
+	eyeblur = 6
+	muzzle_type = /obj/effect/projectile/xray/muzzle
+	tracer_type = /obj/effect/projectile/xray/tracer
+	impact_type = /obj/effect/projectile/xray/impact
+	recoil = 6
+
 /obj/item/projectile/beam/stun
 	name = "stun beam"
 	icon_state = "stun"

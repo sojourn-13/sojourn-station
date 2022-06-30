@@ -3,6 +3,7 @@
 		stance = HOSTILE_STANCE_IDLE
 		target_mob = null
 		lost_sight = FALSE
+		target_location = null
 		walk(src, 0)
 		return
 

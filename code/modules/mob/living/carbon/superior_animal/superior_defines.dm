@@ -41,6 +41,8 @@
 
 	/// Has this mob lost sight of their target? This is how we make sure mobs don't constantly go to the position of the target they've lost sight of.
 	var/lost_sight = FALSE
+	/// Stored value of our current target's location. Only updates if we can see them.
+	var/target_location
 
 	///How delayed are our ranged attacks, in ticks. Reduces DPS.
 	var/fire_delay = 0
@@ -63,8 +65,12 @@
 	/// For this amount of time after a retarget, any retargets will cause a instant attack.
 	var/retarget_rush_timer_increment = 10 SECONDS //arbitrary value for now
 
-	/// Will this mob continue to fire even if LOS has been broken?
-	var/fire_through_wall = FALSE
+	/// Can this mob see it's current targets through walls and will never act like it can't?
+	var/see_through_walls = FALSE
+	/// Will this mob continue to fire at it's targets through walls? Ideally used with see_through_walls
+	var/fire_through_walls = FALSE
+	/// Increments world.time + one tick if a mob with fire_through_walls = TRUE cant see it's target, to prevent any weird walks.
+	var/cant_see_timer = 0
 	/// How many ticks are we willing to wait before untargetting a mob that we can't see?
 	var/patience = 5
 	/// What patience will be reset to whenever it's reset.

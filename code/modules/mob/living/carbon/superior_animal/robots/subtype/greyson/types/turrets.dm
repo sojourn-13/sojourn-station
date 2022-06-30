@@ -38,7 +38,7 @@
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
 
-	reload_message = "ejects a magazome as it loudly reload with mechanical speed!"
+	reload_message = "ejects a magazine as it loudly reloads with mechanical speed!"
 	ranged = TRUE //will it shoot?
 	rapid = FALSE //will it shoot fast?
 	projectiletype = /obj/item/projectile/bullet/c10x24
@@ -56,12 +56,12 @@
 	range_telegraph = "'s servos begin to spool up, aiming at"
 
 /mob/living/carbon/superior_animal/robot/greyson/stalker/New()
-	..()
+	. = ..()
 	pixel_x = 0
 	pixel_y = 0
-	if(prob(1))
+	if(prob(1) && (!drop1))
 		drop1 = /obj/item/gun/projectile/automatic/scaffold
-	if(prob(30))
+	if(prob(30) && (!cell_drop))
 		cell_drop = /obj/item/cell/large
 
 /mob/living/carbon/superior_animal/robot/greyson/stalker/dual
@@ -78,6 +78,62 @@
 
 
 /mob/living/carbon/superior_animal/robot/greyson/stalker/dual/New()
-	..()
-	if(prob(1))
+	. = ..()
+	if(prob(1) && (!drop2))
 		drop2 = /obj/item/gun/projectile/automatic/scaffold
+
+// mini-boss enemy that demands attention or else they will nuke someone. VERY POWERFUL
+/mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon
+	name = "\"Iron Lock Security\" Siege Stalker"
+	desc = "A ruthless patrol borg that defends Greyson facilities. This one has a pair of massively oversized plasma cannons, and has been fitted with thick layers of ballistic shielding, becoming a lumbering menace. This will destroy you."
+
+	range_charge_telegraph = "'s plasma cannons grow brighter, and it hums louder, preparing to fire at"
+	range_telegraph = "'s plasma cannons let out an eerie and TERRIFYING whine as it prepares to unleash it's deveastating payload apon"
+	target_telegraph = "begins to hum, it's plasma cannons glowing with a dim, growing light, as it turns to"
+
+	telegraph_beam_color = COLOR_RED
+	color = COLOR_RED
+
+	rounds_left = 3
+	mag_type = /obj/item/cell/large/hyper
+	mags_left = 1
+
+	armor = list(melee = 45, bullet = 65, energy = 40, bomb = 100, bio = 100, rad = 100) //tanky as hell especially against its own explosions
+
+	deathmessage = "violently explodes, it's internal plasma cells combusting along with it's remaining cells!"
+	reload_message = "lets out a hiss as it ejects a cell from it's carapace!"
+
+	projectiletype = /obj/item/projectile/hydrogen/cannon/max //devastating
+	fire_delay = 7 //7 ticks of charging to fire. very important since this will fucking instakill most people
+	fire_delay_initial = 7
+	rapid_fire_shooting_amount = 2
+
+	delay_for_range = 2 SECONDS
+	delay_for_rapid_range = 1 SECOND
+
+	retarget_timer = 15
+	retarget_timer_initial = 15
+	retarget_chance = 90
+
+	fire_through_walls = TRUE //this bad boy can BREAK cover
+
+	move_to_delay = 13 //slow as hell due to it's armor and weapons. also balance reasons.
+
+/mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon/New()
+	. = ..()
+
+	drop1 = null
+	drop2 = null //we dont want them dropping a nonexistant greyson plasma cannon
+
+	if (prob(30) || cell_drop)
+		cell_drop = /obj/item/cell/large/hyper
+
+/mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon/death()
+
+	explosion(src.loc, 0, 1, 2, 3)
+
+	. = ..()
+
+
+
+
