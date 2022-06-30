@@ -154,6 +154,9 @@
 	if(ckey)
 		return
 
+	if (AI_inactive)
+		return
+
 	objectsInView = null
 
 	//CONSCIOUS UNCONSCIOUS DEAD
@@ -308,7 +311,7 @@
 		if (!(targetted_mob.check_if_alive(TRUE)))
 			loseTarget()
 			return
-		if (!check_if_alive())
+		if (stat == DEAD)
 			return
 		if(get_dist(src, targetted_mob) <= comfy_range)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
