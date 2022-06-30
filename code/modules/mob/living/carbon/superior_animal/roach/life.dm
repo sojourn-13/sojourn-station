@@ -38,7 +38,7 @@
 					if (eat_target)
 						busy = MOVING_TO_TARGET
 						set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-						walk_to(src, eat_target, 1, move_to_delay)
+						alive_walk_to(src, eat_target, 1, move_to_delay)
 						GiveUp(eat_target) //give up if we can't reach target
 						return
 				else if(prob(probability_egg_laying)) // chance to lay an egg

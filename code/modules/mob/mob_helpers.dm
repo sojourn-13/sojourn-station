@@ -676,3 +676,9 @@ proc/is_blind(A)
 //Soj edit
 /mob/proc/get_health()
 	return health
+
+/proc/alive_walk_to(atom/movable/Ref, Trg, Min=0, Lag=0, Speed=0)
+	if (Ref.stat != DEAD)
+		walk_to(Ref, Trg, Min, Lag, Speed)
+	else
+		return
