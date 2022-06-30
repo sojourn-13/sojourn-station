@@ -23,11 +23,12 @@
 	min_air_pressure = 0
 	min_bodytemperature = 0
 	armor_penetration = 50
+	never_stimulate_air = TRUE
 
 	var/list/nanite_swarms = list()
 	var/max_swarms = 5
 
-/mob/living/carbon/superior_animal/roach/nanite/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior_animal/roach/nanite/UnarmedAttack(atom/A, proximity)
 	. = ..()
 
 	if(isliving(A))
@@ -37,7 +38,7 @@
 			playsound(src, screech, 30, 1, -3)
 			var/mob/living/simple_animal/hostile/naniteswarm/M = new /mob/living/simple_animal/hostile/naniteswarm(get_turf(src), src)
 			nanite_swarms.Add(M)
-			M.friends += src.friends
+			M.friends += friends
 			say("10101010011100010101")
 
 /mob/living/carbon/superior_animal/roach/nanite/death()
@@ -81,7 +82,7 @@
 
 	var/mob/living/carbon/superior_animal/roach/nanite/parent
 
-/mob/living/simple_animal/hostile/naniteswarm/New(loc, var/nuparent)
+/mob/living/simple_animal/hostile/naniteswarm/New(loc, nuparent)
 	..()
 	parent = nuparent
 
