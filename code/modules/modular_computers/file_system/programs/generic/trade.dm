@@ -169,19 +169,30 @@
 		SStrade.buy(receiving, account, shoppinglist, station)
 		reset_shoplist()
 		return TRUE
-	
-	if(account)
-		if(href_list["PRG_account_unlink"])
-			account = null
-			return TRUE
 
-		if(href_list["PRG_offer_fulfill"])
-			var/datum/trade_station/S = LAZYACCESS(SStrade.discovered_stations, text2num(href_list["PRG_offer_fulfill"]))
-			if(!S)
-				return
-			var/atom/movable/path = text2path(href_list["PRG_offer_fulfill_path"])
-			SStrade.fulfill_offer(sending, account, station, path)
-			return TRUE
+	var/t2n = text2num(href_list["PRG_sell"])
+	if(isnum(t2n) && station)
+		if(!account)
+			to_chat(usr, SPAN_WARNING("ERROR: no account linked."))
+			return
+		var/path = get_2d_matrix_cell(station.inventory, choosed_category, t2n)
+		SStrade.sell_thing(sending, account, locate(path) in SStrade.assess_offer(sending, station, path), station)
+	
+	if(href_list["PRG_account_unlink"])
+		account = null
+		return TRUE
+
+	if(href_list["PRG_offer_fulfill"])
+		var/datum/trade_station/S = LAZYACCESS(SStrade.discovered_stations, text2num(href_list["PRG_offer_fulfill"]))
+		if(!S)
+			return
+		if(!account)
+			to_chat(usr, SPAN_WARNING("ERROR: no account linked."))
+			return
+		var/atom/movable/path = text2path(href_list["PRG_offer_fulfill_path"])
+		SStrade.fulfill_offer(sending, account, station, path)
+		return TRUE
+
 
 	if(sending)
 		if(href_list["PRG_export"])
@@ -317,8 +328,15 @@
 						if(islist(good_packet))
 							pathname = good_packet["name"] ? good_packet["name"] : pathname
 						var/price = SStrade.get_import_cost(path, PRG.station)
+						var/sell_price = SStrade.get_sell_price(path, PRG.station, price)
+
+						var/amount2sell = 0
+						if(PRG.station && PRG.sending)
+							amount2sell = length(SStrade.assess_offer(PRG.sending, PRG.station, path))
 
 						var/count = max(0, get_2d_matrix_cell(PRG.shoppinglist, PRG.choosed_category, path))
+
+						var/isblacklisted = ispath(path, /obj/item/storage)
 
 						.["goods"] += list(list(
 							"name" = pathname,
@@ -326,6 +344,9 @@
 							"count" = count ? count : 0,
 							"amount_available" = amount,
 							"index" = index,
+							"sell_price" = sell_price,
+							"isblacklisted" = isblacklisted,
+							"amount_available_around" = amount2sell
 						))
 			if(!recursiveLen(.["goods"]))
 				.["goods"] = null
