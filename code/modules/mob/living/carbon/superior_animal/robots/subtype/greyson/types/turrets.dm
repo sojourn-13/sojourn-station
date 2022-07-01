@@ -82,17 +82,26 @@
 	if(prob(1) && (!drop2))
 		drop2 = /obj/item/gun/projectile/automatic/scaffold
 
+
 /obj/item/stalker_fuel_rod
-	name = "spent fuel rod"
-	desc = "A empty greyson-alloyed fuel rod, previously having contained some combustable substance. Presumably."
-
-	icon = 'icons/obj/stack/items.dmi'
-	icon_state = "rods"
-
-	color = GLASS_COLOR_PLASMA
+	name = "plasma fuel rod"
+	desc = "A greyson-alloyed fuel rod, filled to the brim with plasma."
 
 	origin_tech = list(TECH_GREYSON = 5, TECH_PLASMA = 3, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASMA = 1, MATERIAL_PLASMAGLASS = 1, MATERIAL_DIAMOND = 2)
+
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "fuel_rod"
+
+	preloaded_reagents = list("plasma" = 30)
+
+/obj/item/stalker_fuel_rod/depleted
+	name = "spent fuel rod"
+	desc = "A empty greyson-alloyed fuel rod, previously having contained some combustable substance. Presumably."
+
+	icon_state = "fuel_rod_depleted"
+
+	preloaded_reagents = null
 
 // mini-boss enemy that demands attention or else they will nuke someone. VERY POWERFUL
 /mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon
@@ -107,7 +116,7 @@
 	color = COLOR_RED
 
 	rounds_left = 4
-	mag_type = /obj/item/stalker_fuel_rod
+	mag_type = /obj/item/stalker_fuel_rod/depleted
 	mags_left = 1
 
 	advance = FALSE
@@ -143,6 +152,9 @@
 
 	drop1 = null
 	drop2 = null //we dont want them dropping a nonexistant greyson plasma cannon
+
+	if (prob(25))
+		drop1 = /obj/item/stalker_fuel_rod
 
 	if (prob(30) || cell_drop)
 		cell_drop = /obj/item/cell/large/hyper
