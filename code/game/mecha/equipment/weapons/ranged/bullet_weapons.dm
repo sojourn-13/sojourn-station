@@ -47,7 +47,6 @@
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic
 	name = "general ballisic weapon"
 	var/projectile_energy_cost
-	range = MECHA_MELEE | MECHA_RANGED
 	var/max_ammo = 0// How much ammo can we cram into this gun?
 	var/ammo_type = "mew"
 	var/loaded = FALSE //do we spawn fully loaded?
@@ -234,7 +233,6 @@
 	max_ammo = 0
 	loaded = TRUE //We always start loaded
 	ammo_type = "fabricated rocket"
-	range = MECHA_RANGED
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/get_equip_info()
 		return "[..()]\[[src.projectiles]\][(src.projectiles < initial(src.projectiles))?" - <a href='?src=\ref[src];rearm=1'>Rearm</a>":null]"

@@ -257,6 +257,7 @@
 					/obj/item/storage/box/sword_drone_kit = 1,
 					/obj/item/storage/box/mantis_drone_kit = 1,
 					//Ripley
+					/*
 					/obj/item/device/kit/paint/ripley = 3,
 					/obj/item/device/kit/paint/ripley/death = 3,
 					/obj/item/device/kit/paint/ripley/flames_red = 3,
@@ -301,6 +302,7 @@
 					/obj/item/device/kit/paint/ripley/clark_spider = 1)
 	prices = list(	/obj/item/storage/box/roomba_kit = 250,
 					/obj/item/storage/box/sword_drone_kit = 750,
-					/obj/item/storage/box/mantis_drone_kit = 750)
+					/obj/item/storage/box/mantis_drone_kit = 750,
+					*/)
 
 	auto_price = FALSE

@@ -10,9 +10,7 @@
 	status_flags = PASSEMOTES
 	a_intent = I_HURT
 	mob_size = MOB_LARGE
-	can_be_fed = 0
 	defaultHUD = "exosuits"
-	bad_type = /mob/living/exosuit
 
 	mob_classification = CLASSIFICATION_SYNTHETIC
 
@@ -23,8 +21,8 @@
 	var/obj/item/device/radio/exosuit/radio
 
 	var/wreckage_path = /obj/structure/exosuit_wreckage
-	var/mech_turn_sound = 'sound/mechs/mechturn.ogg'
-	var/mech_step_sound = 'sound/mechs/mechstep.ogg'
+	var/mech_turn_sound = 'sound/mecha/mechturn.ogg'
+	var/mech_step_sound = 'sound/mecha/mechstep.ogg'
 
 	// Access updating/container.
 	var/obj/item/card/id/access_card

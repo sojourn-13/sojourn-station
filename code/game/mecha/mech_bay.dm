@@ -8,9 +8,9 @@
 	anchored = 1
 	circuit = /obj/item/circuitboard/mech_recharger
 
-	var/obj/mecha/charging = null
+	/obj/mecha/charging = null
 	var/charge = 45
-	var/repair = 0
+	repair = 0
 
 /obj/machinery/mech_recharger/Crossed(var/obj/mecha/M)
 	. = ..()

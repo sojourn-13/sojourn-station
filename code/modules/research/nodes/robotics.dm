@@ -293,8 +293,8 @@
 	unlocks_designs = list(
 		/datum/design/research/item/exosuit/weapon/plasma,
 		/datum/design/research/item/exosuit/weapon/laser,
-		/datum/design/research/item/mecha/weapon/mecha_sword,
-		/datum/design/research/item/mecha/weapon/mecha_cutlass
+		/datum/design/research/item/exosuit/weapon/mecha_sword,
+		/datum/design/research/item/exosuit/weapon/mecha_cutlass
 		)
 
 //AI BRANCH

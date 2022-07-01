@@ -78,6 +78,7 @@
 	. = ..()
 	to_chat(usr, "This kit will add a '[new_name]' decal to a exosuit'.")
 
+/*
 //Ripley APLU kits.
 /obj/item/device/kit/paint/ripley
 	name = "\"Classic\" APLU customization kit"
@@ -325,3 +326,4 @@
 	new_name = "Phazon \"Bone 'Ead\""
 	new_desc = "A Phazon exosuit outfitted with bones to appear more menacing. Why would anyone do this?"
 	new_icon = "skullmech"
+*/

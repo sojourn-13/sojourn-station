@@ -7,8 +7,8 @@
 	var/move_delay = 5
 	var/turn_delay = 5
 	var/obj/item/robot_parts/robot_component/actuator/motivator
-	var/mech_turn_sound = 'sound/mechs/mechturn.ogg'
-	var/mech_step_sound = 'sound/mechs/mechstep.ogg'
+	var/mech_turn_sound = 'sound/mecha/mechturn.ogg'
+	var/mech_step_sound = 'sound/mecha/mechstep.ogg'
 
 /obj/item/mech_component/propulsion/Destroy()
 	QDEL_NULL(motivator)

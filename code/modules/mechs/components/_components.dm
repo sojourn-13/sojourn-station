@@ -5,7 +5,6 @@
 	color = COLOR_GUNMETAL
 	matter = list(MATERIAL_STEEL = 10)
 	dir = SOUTH
-	bad_type = /obj/item/mech_component
 
 	var/on_mech_icon = MECH_PARTS_ICON
 	var/exosuit_desc_string

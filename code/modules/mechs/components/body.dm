@@ -6,7 +6,6 @@
 	matter = list(MATERIAL_STEEL = 20)
 
 	var/mech_health = 300
-	var/obj/item/cell/cell
 	var/obj/item/robot_parts/robot_component/armour/exosuit/armor_plate
 	var/obj/item/robot_parts/robot_component/exosuit_control/computer
 	var/obj/machinery/portable_atmospherics/canister/air_supply

@@ -4,7 +4,6 @@
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon
 	name = "mecha weapon"
-	range = MECHA_RANGED
 	origin_tech = list(TECH_MATERIAL = 3, TECH_COMBAT = 3)
 	matter = list(MATERIAL_STEEL = 15)
 	var/projectile //Type of projectile fired.
@@ -15,7 +14,6 @@
 	var/fire_sound //Sound played while firing.
 	var/fire_volume = 50 //How loud it is played.
 	var/auto_rearm = 0 //Does the weapon reload itself after each shot?
-	required_type = list(/obj/mecha/combat, /obj/mecha/working/hoverpod/combatpod)
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/action_checks(atom/target)
 	if(projectiles <= 0)

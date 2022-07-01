@@ -40,6 +40,7 @@
 #define FRAME_WIRED_ADJUSTED				2
 
 #define MECH_WEAPON_POWER_COST				50
+#define MECH_WEAPON_POWER_COST_HEAVY        100
 
 GLOBAL_DATUM_INIT(default_hardpoint_background,	/image,	null)
 GLOBAL_DATUM_INIT(hardpoint_error_icon,			/image,	null)

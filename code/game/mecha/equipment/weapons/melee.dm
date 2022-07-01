@@ -1,6 +1,5 @@
 /obj/item/mecha_parts/mecha_equipment/melee_weapon
 	name = "mecha melee weapon"
-	range = MECHA_MELEE
 	origin_tech = list(TECH_MATERIAL = 3, TECH_COMBAT = 3)
 	matter = list(MATERIAL_STEEL = 15)
 	equip_cooldown = 15
@@ -23,16 +22,6 @@
 	var/icon/melee_overlay
 	force = 60 // Big sword make big boo boo - R4d6 / Upped further because delay - Wizard
 
-/obj/item/mecha_parts/mecha_equipment/melee_weapon/sword/attach(obj/mecha/M as obj)
-	..()
-	if(istype(M, /obj/mecha/combat/durand))
-		melee_overlay = new(src.icon, icon_state = "durand_mech_sword")
-		M.add_overlay(melee_overlay)
-	else if(istype(M, /obj/mecha/combat/gygax))
-		melee_overlay = new(src.icon, icon_state = "gygax_mech_sword")
-		M.add_overlay(melee_overlay)
-	return
-
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/cutlass
 	name = "mech energy cutlass"
 	desc = "A huge energy cutlass designed to be wielded by an exosuit."
@@ -48,18 +37,6 @@
 	var/icon/melee_overlay
 	force = 65 //5 more for all its extra costs is the balancing
 
-
-//Todo: "cutless" based icons for this rather then base.
-/*
-/obj/item/mecha_parts/mecha_equipment/melee_weapon/cutlass/attach(obj/mecha/M as obj)
-	..()
-	if(istype(M, /obj/mecha/combat/durand))
-		melee_overlay = new(src.icon, icon_state = "durand_mech_sword_cutlass")
-		M.add_overlay(melee_overlay)
-	else if(istype(M, /obj/mecha/combat/gygax))
-		melee_overlay = new(src.icon, icon_state = "gygax_mech_sword_cutlass")
-		M.add_overlay(melee_overlay)
-	return*/
 
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/shockmaul
 	name = "mech shock maul"

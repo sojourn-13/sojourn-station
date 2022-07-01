@@ -7,9 +7,6 @@
 
 	//spawn_values
 	spawn_tags = SPAWN_TAG_MECH
-	spawn_frequency = 10
-	rarity_value = 10
-	bad_type = /mob/living/exosuit/premade
 
 	arms = /obj/item/mech_component/manipulators
 	legs = /obj/item/mech_component/propulsion

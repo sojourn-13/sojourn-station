@@ -1,23 +1,4 @@
 //MODULES' SOFTWARE
-/datum/design/research/item/exosuit/soft/engineering
-	name = "engineering system control"
-	build_path = /obj/item/weapon/circuitboard/exosystem/engineering
-
-/datum/design/research/item/exosuit/soft/utility
-	name = "utility system control"
-	build_path = /obj/item/weapon/circuitboard/exosystem/utility
-
-/datum/design/research/item/exosuit/soft/medical
-	name = "medical system control"
-	build_path = /obj/item/weapon/circuitboard/exosystem/medical
-
-/datum/design/research/item/exosuit/soft/ballistics
-	name = "ballistic weapon control"
-	build_path = /obj/item/weapon/circuitboard/exosystem/weapons
-
-/datum/design/research/item/exosuit/soft/advweapons
-	name = "advanced weapon control"
-	build_path = /obj/item/weapon/circuitboard/exosystem/advweapons
 
 //COMBAT
 /datum/design/research/item/exosuit/taser
@@ -35,6 +16,18 @@
 /datum/design/research/item/exosuit/weapon/laser
 	name = "mounted laser gun"
 	build_path = /obj/item/mech_equipment/mounted_system/taser/laser
+
+/datum/design/research/item/exosuit/weapon/hydrogen
+	name = "mounted hydrogen canon"
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/hydrogen
+
+/datum/design/research/item/exosuit/weapon/mecha_sword
+	name = "mounted exosuit sword"
+	build_path = /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword
+
+/datum/design/research/item/exosuit/weapon/mecha_cutlass
+	name = "mounted exosuit laser-cutlass"
+	build_path = /obj/item/mecha_parts/mecha_equipment/melee_weapon/cutlass
 
 //UTILITY
 /datum/design/research/item/exosuit/hydraulic_clamp

@@ -25,6 +25,23 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 
 	heat = 100
 
+/obj/item/projectile/beam/cutter
+	name = "cutting beam"
+	icon_state = "plasmablaster"
+	damage_types = list(BRUTE = 25)
+	armor_penetration = 10
+	pass_flags = PASSTABLE
+
+	muzzle_type = /obj/effect/projectile/laser/plasmacutter/muzzle
+	tracer_type = /obj/effect/projectile/laser/plasmacutter/tracer
+	impact_type = /obj/effect/projectile/laser/plasmacutter/impact
+
+/obj/item/projectile/beam/cutter/on_impact(var/atom/A)
+	if(istype(A, /turf/simulated/mineral))
+		var/turf/simulated/mineral/M = A
+		M.GetDrilled(1)
+	.=..()
+
 /obj/item/projectile/beam/musket
 	name = "charged laser"
 	armor_penetration = 30 //Good AP, its for slow firing weapon

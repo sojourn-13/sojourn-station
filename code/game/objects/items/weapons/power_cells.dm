@@ -549,3 +549,14 @@
 	name = "handmade manual recharger"
 	desc = "A handmade manual crank charger. Barely capable of charging cells."
 	charge_per_cycle = 4
+
+
+//Irremovable cells for exosuit energy weapons
+
+/obj/item/cell/medium/mech
+	name = "mech gun electrical component"
+	desc = "An electrical component for exosuit energy guns."
+	icon_state = "m_st"
+	maxcharge = 1000
+	bad_type = /obj/item/cell/medium/mech
+	matter = list()
