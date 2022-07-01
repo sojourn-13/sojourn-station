@@ -64,6 +64,7 @@
 /mob/living/silicon/lay_down()
 	resting = FALSE
 	update_lying_buckled_and_verb_status()
+	updateicon()
 
 /mob/living/silicon/proc/init_id()
 	if(idcard)

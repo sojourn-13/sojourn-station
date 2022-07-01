@@ -41,6 +41,7 @@
 	var/obj/structure/ameridian_crystal/node
 	var/drop_amount = 1 // How many crystals we drop on death
 	var/size_factor = 1 // Size, in %, of the golem
+	never_stimulate_air = TRUE
 
 /mob/living/carbon/superior_animal/ameridian_golem/Initialize()
 	..()

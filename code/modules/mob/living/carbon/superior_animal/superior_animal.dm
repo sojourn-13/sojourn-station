@@ -154,6 +154,9 @@
 	if(ckey)
 		return
 
+	if (AI_inactive)
+		return
+
 	objectsInView = null
 
 	//CONSCIOUS UNCONSCIOUS DEAD
@@ -215,7 +218,7 @@
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		walk_to(src, targetted_mob, calculated_walk, move_to_delay) //lets get a little closer than our optimal range
+		alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay) //lets get a little closer than our optimal range
 
 		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
 			visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"))
@@ -228,7 +231,7 @@
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		walk_to(src, targetted_mob, 1, move_to_delay)
+		alive_walk_to(src, targetted_mob, 1, move_to_delay)
 		moved = 1
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings)
 
@@ -269,11 +272,11 @@
 					var/location = targetted_mob.loc //the choice to not just store the location every tick is intentional, i want mobs to have a chance to reacquire their target
 					if (ranged)
 						if (advancement_timer <= world.time) //we are advancing, so lets use our advance_steps var
-							walk_to(src, location, advance_steps, move_to_delay)
+							alive_walk_to(src, location, advance_steps, move_to_delay)
 						else
-							walk_to(src, location, calculated_walk, move_to_delay)
+							alive_walk_to(src, location, calculated_walk, move_to_delay)
 					else
-						walk_to(src, location, 1, move_to_delay) // melee mobs only need to go to one tile away
+						alive_walk_to(src, location, 1, move_to_delay) // melee mobs only need to go to one tile away
 					lost_sight = TRUE
 
 				patience--
@@ -303,21 +306,21 @@
 	patience = patience_initial
 	if(!ranged)
 		prepareAttackOnTarget()
-		walk_to(src, targetted_mob, 1, move_to_delay)
+		alive_walk_to(src, targetted_mob, 1, move_to_delay)
 	else if(ranged)
 		if (!(targetted_mob.check_if_alive(TRUE)))
 			loseTarget()
 			return
-		if (!check_if_alive())
+		if (stat == DEAD)
 			return
 		if(get_dist(src, targetted_mob) <= comfy_range)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 			if (advancement_timer <= world.time) //we dont want to prematurely end a advancing walk
-				walk_to(src, targetted_mob, calculated_walk, move_to_delay) //we still want to reset our walk
+				alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay) //we still want to reset our walk
 		else
 			if (advancement_timer <= world.time)
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to(src, targetted_mob, calculated_walk, move_to_delay)
+				alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay)
 			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
 
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
@@ -374,22 +377,24 @@
 
 /mob/living/carbon/superior_animal/Life()
 	ticks_processed++
-	var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
-	/// Fire handling , not passing the whole list because thats unefficient.
-	handle_fire(environment.gas["oxygen"], loc)
 	handle_regular_hud_updates()
-	handle_cheap_chemicals_in_body()
+	if(!reagent_immune)
+		handle_cheap_chemicals_in_body()
 	if(!(ticks_processed%3))
 		// handle_status_effects() this is handled here directly to save a bit on procedure calls
-		if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1))
-			spawn(5) update_icons()
+		//if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1)) - Soj edit, we already update icon just 13 lines down form this, no point
+		//	spawn(5) update_icons()
 		paralysis = max(paralysis-3,0)
 		stunned = max(stunned-3,0)
 		weakened = max(weakened-3,0)
 		cheap_update_lying_buckled_and_verb_status_()
-		var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
-		handle_cheap_breath(breath)
-		handle_cheap_environment(environment)
+		if(!never_stimulate_air)
+			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
+			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
+			handle_cheap_breath(breath)
+			handle_cheap_environment(environment)
+			//Fire handling , not passing the whole list because thats unefficient.
+			handle_fire(environment.gas["oxygen"], loc)
 		updateicon()
 		ticks_processed = 0
 	if(handle_cheap_regular_status_updates()) // They have died after all of this, do not scan or do not handle AI anymore.
@@ -409,9 +414,9 @@
 
 			if (following)
 				if (!target_mob) // Are we following someone and not attacking something?
-					walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
+					alive_walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
 			else if (!target_mob && last_followed)
-				walk_to(src, 0)
+				alive_walk_to(src, 0)
 				last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
 
 	if(life_cycles_before_sleep)
@@ -441,7 +446,7 @@
  *	telegraph-Boolean. If false, no visual emote will be made.
  *	cast_beam-Boolean. If true, a beam will be cast from src to targetted_mob as a visual telegraph.
 **/
-/mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(var/atom/targetted_mob, proctocall, var/attack_type, var/telegraph = TRUE, var/cast_beam = TRUE)
+/mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(atom/targetted_mob, proctocall, attack_type, telegraph = TRUE, cast_beam = TRUE)
 	if (check_if_alive()) //sanity
 		var/time_to_expire
 		switch(attack_type)
@@ -491,17 +496,20 @@
  * trace: obj/item/projectile/test/impacttest. The trace we are registered to.
  * atom/impact_atom: The atom the trace impacted.
 **/
-/mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/test/impacttest/trace, var/atom/impact_atom)
+/mob/living/carbon/superior_animal/proc/handle_trace_impact(obj/item/projectile/test/impacttest/trace, atom/impact_atom)
 	SIGNAL_HANDLER
 
 	UnregisterSignal(trace, COMSIG_TRACE_IMPACT)
+
+	if (stat == DEAD)
+		return
 
 	var/targetted_mob = (target_mob?.resolve())
 
 	if (impact_atom != targetted_mob)
 		advance_towards(targetted_mob)
 
-/mob/living/carbon/superior_animal/proc/advance_towards(var/atom/target)
+/mob/living/carbon/superior_animal/proc/advance_towards(atom/target)
 
 	var/calculated_walk = (comfy_range - comfy_distance)
 
@@ -509,8 +517,8 @@
 	if (distance <= calculated_walk) //if we are within our comfy range but we cant attack, we need to reposition
 		advance_steps = (distance - advancement)
 		if (advance_steps <= 0)
-			advance_steps = 1 //1 is the minimum distance
-		walk_to(src, target, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
+			advance_steps = 1 //1 is minimum
+		alive_walk_to(src, target, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
 		advancement_timer = (world.time += advancement_increment) // we dont want this overridden instantly
 
 /mob/living/carbon/superior_animal/CanPass(atom/mover)

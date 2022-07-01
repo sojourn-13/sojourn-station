@@ -1,73 +1,70 @@
 {{:helper.link(data.screen ? data.screen : "Trade Beacon Log", null, {'PRG_screen' : 1})}}
 {{if data.account}}
-	{{:helper.link(data.account, null, {'PRG_account' : 1})}}{{:helper.link('X', null, {'PRG_account_unlink' : 1}, null, 'redButton')}}
+	{{:helper.link(data.account, null, {'PRG_account' : 1})}}{{:helper.link('', 'circle-close', {'PRG_account_unlink' : 1}, null, 'redButton')}}
 {{else}}
-	{{:helper.link("Account Number", null, {'PRG_account' : 1})}}
+	{{:helper.link("Account", 'link', {'PRG_account' : 1})}}
 {{/if}}
 <br>
 <hr>
 {{if data.screen}}
 	{{if data.account}}
-		<div class="item" style="padding-top: 5px">
-			<div class="item">
-				<div class="itemLabel">
-					Log:
-				</div>
-				<div class="itemContent">
-					<span class="average">{{:data.screen}}</span>
-				</div>
-			</div>
+		<div class="item" style="margin: 0px 0 0 0">
+			<table class="fixed" style="width: 40%; margin-left: 30%; background: #000000; border: 1px solid #40628a">
+				<tr>
+					<td>
+						<div class="item">
+							<div class="itemLabel">
+								Log:
+							</div>
+							<div class="itemContent" style="text-align: center">
+								<span class="average">{{:data.screen}}</span>
+							</div>
+						</div>
+				<tr>
+					<td>
+						<div class="item">
+							<div class="itemLabel">
+								All Access:
+							</div>
+							<div class="itemContent" style="text-align: center">
+								{{if data.is_all_access}}
+									<span class="good">TRUE</span>
+								{{else}}
+									<span class="average">FALSE</span>
+								{{/if}}
+							</div>
+						</div>
+			</table>
 		</div>
-		<div class="item" style="padding-top: 5px">
-			<div class="item">
-				<div class="itemLabel">
-					All Access:
-				</div>
-				<div class="itemContent">
-					{{if data.is_all_access}}
-						<span class="good">TRUE</span>
-					{{else}}
-						<span class="average">FALSE</span>
-					{{/if}}
-				</div>
-			</div>
-		</div>
-		<table class='item'>
+		<hr>
+		<table class='item' style="background: #000000;border: 1px solid #40628a">
 			<tr class="bottom_bordered">
 				<td>Log ID
 				<td>Ordering Account
 				<td>Contents
-				<td>Paid to Account
-				{{if data.screen == "Export"}}
-					<td>Paid to Lonestar
-				{{/if}}
+				<td>Credits
 				<td>Time
 				<td>Print
 			{{for data.current_log_data}}
 				{{if data.is_all_access || value.ordering_acct == data.account}}
-						<tr>
-							<td>{{:value.id}}
-							<td>{{:value.ordering_acct}}
-							<td class="link withToolTip">
-								View
-								<span class="ImTooltip">
-									<ul>
-										{{:value.contents}}
-									</ul>
-								</span>
-							{{if data.screen == "Export"}}
-								<td>{{:value.total_paid * 0.8}}
-								<td>{{:value.total_paid * 0.2}}
-							{{else}}
-								<td>{{if data.screen == "Shipping"}}-{{/if}}{{:value.total_paid}}
-							{{/if}}
-							<td>{{:value.time}}
-							<td>
-								{{:helper.link("Standard", null, {'PRG_print' : value.id})}}
-								{{:helper.link("Internal", null, {'PRG_print_internal' : value.id})}}
+					<tr>
+						<td>{{:value.id}}
+						<td>{{:value.ordering_acct}}
+						<td class="link withToolTip">
+							View
+							<span class="ImTooltip">
+								<ul>
+									{{:value.contents}}
+								</ul>
+							</span>
+						<td>{{if data.screen == "Shipping"}}-{{/if}}{{:value.total_paid}}
+						<td>{{:value.time}}
+						<td>
+							{{:helper.link("Standard", null, {'PRG_print' : value.id})}}
+							{{:helper.link("Internal", null, {'PRG_print_internal' : value.id})}}
 				{{/if}}
 			{{empty}}
-				<tr>This log is empty.
+				<tr><td>This log is empty.
 			{{/for}}
 		</table>
 	{{/if}}

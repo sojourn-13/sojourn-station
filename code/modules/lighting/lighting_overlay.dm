@@ -2,8 +2,8 @@
 /atom/movable/lighting_overlay
 	name = ""
 	mouse_opacity = 0
-	simulated = 0
-	anchored = 1
+	simulated = FALSE
+	anchored = TRUE
 	icon = LIGHTING_ICON
 	plane = LIGHTING_PLANE
 	invisibility = INVISIBILITY_LIGHTING
@@ -23,7 +23,7 @@
 	flags |= INITIALIZED
 	return INITIALIZE_HINT_NORMAL
 
-/atom/movable/lighting_overlay/New(var/atom/loc, var/no_update = FALSE)
+/atom/movable/lighting_overlay/New(atom/loc, no_update = FALSE)
 	. = ..()
 	verbs.Cut()
 	total_lighting_overlays++
@@ -119,15 +119,15 @@
 	return
 
 /atom/movable/lighting_overlay/forceMove()
-	return 0 //should never move
+	return FALSE //should never move
 
 /atom/movable/lighting_overlay/Move()
-	return 0
+	return FALSE
 
 /atom/movable/lighting_overlay/throw_at()
-	return 0
+	return FALSE
 
-/atom/movable/lighting_overlay/Destroy(var/force)
+/atom/movable/lighting_overlay/Destroy(force)
 	if (force)
 		total_lighting_overlays--
 		global.lighting_update_overlays     -= src
@@ -136,7 +136,7 @@
 		var/turf/T = loc
 		if(istype(T))
 			T.lighting_overlay = null
-			T.luminosity = 1
+			T.luminosity = TRUE
 
 		return ..()
 	else

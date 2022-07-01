@@ -2223,6 +2223,7 @@
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\hunter.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\kaiser.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\nanites.dm"
+#include "code\modules\mob\living\carbon\superior_animal\roach\types\plasmaroach.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\roachling.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\support.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\tank.dm"

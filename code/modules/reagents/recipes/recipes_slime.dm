@@ -515,7 +515,33 @@
 	N.loc = get_turf(holder.my_atom)
 
 //Light Pink
-// I have no effects and there for am unloved ;-;
+//Peace thru a iron fist~
+/datum/chemical_reaction/slime/slaughto
+	result = null
+	required_reagents = list("plasticide" = 5)
+	result_amount = 1
+	required = /obj/item/slime_extract/lightpink
+	mix_message = "The slime extract begins to twist and bend!"
+
+/datum/chemical_reaction/slime/slaughto/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/gun/projectile/automatic/slaught_o_matic/N = new /obj/item/gun/projectile/automatic/slaught_o_matic
+	N.loc = get_turf(holder.my_atom)
+	N.choosen_color = "pink"
+	N.update_icon()
+
+//
+/datum/chemical_reaction/slime/peace_obedience
+	result = null
+	required_reagents = list("woodpulp" = 10)
+	result_amount = 1
+	required = /obj/item/slime_extract/lightpink
+	mix_message = "The slime extract begins to twist and bend!"
+
+/datum/chemical_reaction/slime/peace_obedience/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/material/baseballbat/N = new /obj/item/material/baseballbat
+	N.loc = get_turf(holder.my_atom)
 
 //Adamantine
 /datum/chemical_reaction/slime/golem
@@ -558,3 +584,5 @@
 	var/obj/item/stack/material/platinum/P = new /obj/item/stack/material/platinum
 	P.amount = 5
 	P.loc = get_turf(holder.my_atom)
+
+//Rainbow

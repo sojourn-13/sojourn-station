@@ -307,7 +307,7 @@
 /datum/reagent/other/viroputine
 	name = "Viroputine"
 	id = "viroputine"
-	description = "A horrid by product of nosfernium that creates more of it. vary bad withdrawels."
+	description = "A horrific compound that is capable of creating other chemicals. vary bad withdrawels."
 	taste_description = "chalky backwash"
 	reagent_state = LIQUID
 	color = "#A5F0EE"

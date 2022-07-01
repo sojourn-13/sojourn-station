@@ -77,7 +77,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 
 // Mine a tile
-/mob/living/carbon/superior_animal/termite/proc/mine(var/turf/simulated/mineral/M)
+/mob/living/carbon/superior_animal/termite/proc/mine(turf/simulated/mineral/M)
 	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
 	M.GetDrilled() // Mine the turf
 	return TRUE

@@ -132,6 +132,18 @@ SUBSYSTEM_DEF(trade)
 				if(!station.recommendations_needed)
 					discovered_stations |= station
 
+/datum/controller/subsystem/trade/proc/get_station_by_uid(target_uid)
+	for(var/datum/trade_station/station in all_stations)
+		if(station.uid == target_uid)
+			return station
+	return FALSE
+
+/datum/controller/subsystem/trade/proc/get_discovered_station_by_uid(target_uid)
+	for(var/datum/trade_station/station in discovered_stations)
+		if(station.uid == target_uid)
+			return station
+	return FALSE
+
 // === PRICING ===
 
 // Returns cost of an existing object including contents

@@ -5,8 +5,7 @@
 /obj/item/grenade/chem_grenade
 	name = "grenade casing"
 	icon_state = "chemg"
-	icon_state = "teargas"
-	item_state = "teargas" //Sprites by hyperioo
+	item_state = "chemg" //Sprites by hyperioo
 	desc = "A hand made chemical grenade."
 	w_class = ITEM_SIZE_SMALL
 	force = WEAPON_FORCE_HARMLESS

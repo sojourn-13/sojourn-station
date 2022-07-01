@@ -51,11 +51,11 @@
 			target = null // reset the target
 
 		if(target) // Do we have a destination?
-			walk_to(src, target, 1, move_to_delay) // Go there
+			alive_walk_to(src, target, 1, move_to_delay) // Go there
 		else
-			walk_to(src, 0) // Or else stop
+			alive_walk_to(src, 0) // Or else stop
 	else // We got someone controlling the drone.
-		walk_to(src, 0) // Stop automated movement
+		alive_walk_to(src, 0) // Stop automated movement
 		target = null // No targets to go to
 
 /mob/living/carbon/superior_animal/robot/mining/death()
@@ -79,8 +79,8 @@
 			if(health < maxHealth)
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
 					user.visible_message(
-										SPAN_NOTICE("[user] [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [src.name]."),
-										SPAN_NOTICE("You [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [src.name].")
+										SPAN_NOTICE("[user] [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [name]."),
+										SPAN_NOTICE("You [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [name].")
 										)
 					if(user.stats.getPerk(PERK_ROBOTICS_EXPERT))
 						heal_overall_damage(50, 50)
@@ -130,13 +130,13 @@
 
 
 // Mine a tile
-/mob/living/carbon/superior_animal/robot/mining/proc/mine(var/turf/simulated/mineral/M)
+/mob/living/carbon/superior_animal/robot/mining/proc/mine(turf/simulated/mineral/M)
 	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
 	M.GetDrilled() // Mine the turf
 	return TRUE
 
 // Pick an ore and put it in the contents.
-/mob/living/carbon/superior_animal/robot/mining/proc/pick_ore(var/obj/item/stack/ore/O)
+/mob/living/carbon/superior_animal/robot/mining/proc/pick_ore(obj/item/stack/ore/O)
 	//visible_message("[src] pick up [O]") // For some reasons the messages do not combine and spam the chat.
 	O.loc = src
 	contents += O // Pick up the item
@@ -148,7 +148,7 @@
 	visible_message("[src] empties \his storage bin.")
 	for(var/obj/O in contents) // Empty everything
 		contents -= O
-		O.loc = src.loc
+		O.loc = loc
 	updateDialog()
 	return TRUE
 
