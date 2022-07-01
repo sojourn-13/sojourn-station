@@ -58,47 +58,30 @@
 	if(completion_lockout)
 		log_debug("/datum/cooking_with_jane/recipe_tracker/proc/process_item held in lockout!")
 		return CWJ_LOCKOUT
-
-	var/list/option_list = get_step_options()
-
 	var/list/valid_steps = list()
 	var/list/valid_unique_id_list = list()
 	var/use_class
-	for (var/datum/cooking_with_jane/recipe_step/step in option_list)
-		log_debug("Checking Option [step.unique_id] class [step.class]")
-		if ((step_flags & CWJ_ADD_ITEM) && step.class == CWJ_ADD_ITEM)
-			log_debug("Checking Add item, add_item step flag enabled.")
-			if (istype(used_object, /obj/item) && step.check_conditions_met(used_object))
-				log_debug("Add item conditions met with [used_object] for [step.unique_id] class [step.class]")
-				if(!valid_steps["Add Item"])
-					valid_steps["Add Item"] = list()
-				valid_steps["Add Item"]+= step
 
-				if(!valid_unique_id_list["Add Item"])
-					valid_unique_id_list["Add Item"] = list()
-				valid_unique_id_list["Add Item"] += step.unique_id
+	//Check validity of steps
+	for (var/datum/cooking_with_jane/recipe_pointer/pointer in active_recipe_pointers)
+		var/option_list = list()
+		option_list += pointer.get_possible_steps()
+		for (var/datum/cooking_with_jane/recipe_step/step in option_list)
+			var/class_string = get_class_string(step.class)
+			var/is_valid = step.check_conditions_met(used_object)
+			log_debug("recipe_tracker/proc/process_item: Check conditions met returned [is_valid]")
+			if(is_valid)
+				if(!valid_steps["[class_string]"])
+					valid_steps["[class_string]"] = list()
+				valid_steps["[class_string]"]+= step
 
-				if(!use_class)
-					use_class = "Add Item"
-
-		if ((step_flags & CWJ_USE_ITEM) && step.class == CWJ_USE_ITEM)
-			if (istype(used_object, /obj/item) && step.check_conditions_met(used_object))
-				log_debug("Use item conditions met with [used_object] for [step.unique_id] class [step.class]")
-				if(!valid_steps["Use Item"])
-					valid_steps["Use Item"] = list()
-				valid_steps["Use Item"]+= step
-
-				if(!valid_unique_id_list["Use Item"])
-					valid_unique_id_list["Use Item"] = list()
-				valid_unique_id_list["Use Item"] += step.unique_id
+				if(!valid_unique_id_list["[class_string]"])
+					valid_unique_id_list["[class_string]"] = list()
+				valid_unique_id_list["[class_string]"] += step.unique_id
 
 				if(!use_class)
-					use_class = "Use Item"
-
-
-
-	//Other Check processes will go here!
-
+					use_class = class_string
+	
 	if(valid_steps.len == 0)
 		log_debug("/recipe_tracker/proc/process_item returned no steps!")
 		return CWJ_NO_STEPS
@@ -147,6 +130,7 @@
 	//Choose to keep baking or finish now.
 	if(completed_list.len && (completed_list.len != active_recipe_pointers.len))
 		if(alert("If you finish cooking now, you will create [recipe_string]. However, you feel there are possibilities beyond even this. Continue cooking anyways?",,"Yes","No") == "Yes")
+			//Cull finished recipe items
 			for (var/datum/cooking_with_jane/recipe_pointer/pointer in completed_list)
 				active_recipe_pointers.Remove(pointer)
 				completed_list[pointer.current_recipe.name]=null

@@ -215,6 +215,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 //-----------------------------------------------------------------------------------
 //Use item step shortcut commands
 /datum/cooking_with_jane/recipe/proc/create_step_add_produce(var/produce, var/optional)
+	log_debug("Creating Produce: [produce]")
 	var/datum/cooking_with_jane/recipe_step/add_produce/step = new /datum/cooking_with_jane/recipe_step/add_produce(produce, src)
 	return src.add_step(step, optional)
 
@@ -396,3 +397,21 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 		for(var/i = 0; i < product_count; i++)
 			new product_type(container)
+
+//-----------------------------------------------------------------------------------
+/datum/cooking_with_jane/proc/get_class_string(var/code)
+	switch(code)
+		if(CWJ_ADD_ITEM)
+			return "Add Item"
+		if(CWJ_USE_ITEM)
+			return "Use Item"
+		if(CWJ_ADD_REAGENT)
+			return "Add Reagent"
+		if(CWJ_ADD_PRODUCE)
+			return "Add Produce"
+		if(CWJ_USE_APPLIANCE)
+			return "Use Appliance"
+		if(CWJ_USE_OTHER)
+			return "Custom Action"
+		if(CWJ_START)
+			return "Placeholder Action"

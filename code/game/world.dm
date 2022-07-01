@@ -20,6 +20,11 @@ var/global/datum/global_init/init = new ()
 	initialize_chemical_reagents()
 	initialize_chemical_reactions()
 	initialize_mutation_recipes()
+
+	
+	// Set up roundstart seed list.
+	plant_controller = new()
+
 	initialize_cooking_recipes()
 
 	qdel(src) //we're done
@@ -103,8 +108,7 @@ var/game_id
 
 	. = ..()
 
-	// Set up roundstart seed list.
-	plant_controller = new()
+
 
 	// This is kinda important. Set up details of what the hell things are made of.
 	populate_material_list()

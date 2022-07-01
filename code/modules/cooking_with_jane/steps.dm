@@ -6,6 +6,8 @@
 
 	var/group_identifier = "None" //Different for every type of recipe.
 
+	var/image/tooltip_image = null
+
 	var/parent_recipe //The parent recipe of this particular step. Created on initialization with New()
 
 	var/desc		//A description of the step
@@ -28,9 +30,14 @@
 	//The previous required step for the current recipe
 	var/datum/cooking_with_jane/recipe_step/previous_step
 
+
+
 /datum/cooking_with_jane/recipe_step/New(var/datum/cooking_with_jane/recipe/our_recipe)
 	parent_recipe = our_recipe
 	unique_id = sequential_id("recipe_step")
+
+	if(!tooltip_image)
+		src.set_image()
 
 	//Add the recipe to our dictionary for future reference.
 	if(!GLOB.cwj_step_dictionary_ordered["[class]"])
@@ -39,6 +46,9 @@
 		GLOB.cwj_step_dictionary_ordered["[class]"][group_identifier] = list()
 	GLOB.cwj_step_dictionary_ordered["[class]"][group_identifier]["[unique_id]"] = src
 	GLOB.cwj_step_dictionary["[unique_id]"] = src
+
+/datum/cooking_with_jane/recipe_step/proc/set_image()
+	tooltip_image = image('icons/emoji.dmi', icon_state="gear")
 
 //Calculate how well the recipe step was followed to the letter.
 /datum/cooking_with_jane/recipe_step/proc/calculate_quality()
@@ -115,16 +125,16 @@
 //our_recipe: The parent recipe object,
 /datum/cooking_with_jane/recipe_step/add_item/New(var/item_type, var/datum/cooking_with_jane/recipe/our_recipe)
 
-	if(!ispath(item_type))
+	if(!ispath(item_type, /obj/item))
 		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] is not a valid path")
 
-	var/example_item = new item_type()
+	var/obj/item/example_item = new item_type()
 	if(example_item)
 		desc = "Add \a [example_item] into the recipe."
 
 		required_item_type = item_type
 		group_identifier = item_type
-
+		tooltip_image = image(example_item.icon, icon_state=example_item.icon_state)
 		QDEL_NULL(example_item)
 	else
 		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] couldn't be created.")
@@ -132,8 +142,11 @@
 	..(our_recipe)
 
 
+
 /datum/cooking_with_jane/recipe_step/add_item/check_conditions_met(var/obj/added_item)
 	log_debug("Called add_item/check_conditions_met for [added_item], checking against item type [required_item_type]. Exact_path = [exact_path]")
+	if(!istype(added_item, /obj/item))
+		return FALSE
 	if(exact_path)
 		if(added_item.type == required_item_type)
 			return TRUE
@@ -233,11 +246,7 @@
 		return TRUE
 
 /datum/cooking_with_jane/recipe_step/add_reagent/calculate_quality(var/amount)
-	#ifdef JANEDEBUG
-	var/quality = (base_quality_award - abs(amount - required_reagent_amount))
-	log_debug("/datum/cooking_with_jane/recipe_step/calculate_quality(var/amount) returned quality of [quality]")
-	#endif
-	return min((base_quality_award - abs(amount - required_reagent_amount)), 0)
+	return clamp_quality(0)
 
 
 //-----------------------------------------------------------------------------------
@@ -245,9 +254,65 @@
 /datum/cooking_with_jane/recipe_step/add_produce
 	class=CWJ_ADD_PRODUCE
 	var/required_produce_type
+	var/base_potency
 
 /datum/cooking_with_jane/recipe_step/add_produce/New(var/produce, var/datum/cooking_with_jane/recipe/our_recipe)
-	required_produce_type = produce
-	group_identifier = produce
-	desc = "Add \a [produce] into the recipe."
+	if(!plant_controller)
+		CRASH("/datum/cooking_with_jane/recipe_step/add_produce/New: Plant controller not initialized! Exiting.")
+	if(produce && plant_controller && plant_controller.seeds[produce])
+		desc = "Add \a [produce] into the recipe."
+		required_produce_type = produce
+		group_identifier = produce
+
+		//Seeds are bad and terrible I hate this
+		//Get tooltip image for plants
+		var/datum/seed/seed = plant_controller.seeds[produce]
+		var/icon_key = "fruit-[seed.get_trait(TRAIT_PRODUCT_ICON)]-[seed.get_trait(TRAIT_PRODUCT_COLOUR)]-[seed.get_trait(TRAIT_PLANT_COLOUR)]"
+		if(plant_controller.plant_icon_cache[icon_key])
+			tooltip_image = plant_controller.plant_icon_cache[icon_key]
+		else
+			tooltip_image = image('icons/obj/hydroponics_products.dmi',"blank")
+			var/image/fruit_base = image('icons/obj/hydroponics_products.dmi',"[seed.get_trait(TRAIT_PRODUCT_ICON)]-product")
+			fruit_base.color = "[seed.get_trait(TRAIT_PRODUCT_COLOUR)]"
+			tooltip_image.add_overlay(fruit_base)
+			if("[seed.get_trait(TRAIT_PRODUCT_ICON)]-leaf" in icon_states('icons/obj/hydroponics_products.dmi'))
+				var/image/fruit_leaves = image('icons/obj/hydroponics_products.dmi',"[seed.get_trait(TRAIT_PRODUCT_ICON)]-leaf")
+				fruit_leaves.color = "[seed.get_trait(TRAIT_PLANT_COLOUR)]"
+				tooltip_image.add_overlay(fruit_leaves)
+			plant_controller.plant_icon_cache[icon_key] = tooltip_image
+
+		base_potency = seed.get_trait(TRAIT_POTENCY)
+	else
+		log_debug("recipe_step/add_produce/New(): produce [produce] not found in seed list.")
 	..(base_quality_award, our_recipe)
+
+/datum/cooking_with_jane/recipe_step/add_produce/check_conditions_met(var/obj/added_item)
+	log_debug("Called add_produce/check_conditions_met for [added_item] against [required_produce_type]")
+
+	if(!istype(added_item, /obj/item/reagent_containers/food/snacks/grown))
+		return FALSE
+
+	var/obj/item/reagent_containers/food/snacks/grown/added_produce = added_item
+
+	if(added_produce.plantname == required_produce_type)
+		return TRUE
+
+	return FALSE
+
+/datum/cooking_with_jane/recipe_step/add_produce/calculate_quality(var/obj/added_item)
+
+	var/obj/item/reagent_containers/food/snacks/grown/added_produce = added_item
+
+	var/potency_raw = round(base_quality_award + (added_produce.potency - base_potency) * 0.1)
+
+	return clamp_quality(potency_raw)
+
+/datum/cooking_with_jane/recipe_step/add_produce/follow_step(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
+	log_debug("Called: /datum/cooking_with_jane/recipe_step/add_produce/follow_step")
+	var/obj/item/container = tracker.holder_ref.resolve()
+	if(container)
+		if(usr.canUnEquip(added_item))
+			usr.unEquip(added_item, container)
+		else
+			added_item.forceMove(container)
+	return TRUE

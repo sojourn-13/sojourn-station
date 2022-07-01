@@ -71,6 +71,16 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
 	)
 
+/datum/cooking_with_jane/recipe/sandwich_bad_with_tomato
+	cooking_container = PLATE
+	product_type = /obj/item/reagent_containers/food/snacks/sandwich
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="It has meat in it.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_PRODUCE, "tomato", result_desc="There is a whole tomato stuffed in the sandwich."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
+	)
+
 /datum/cooking_with_jane/recipe/sandwich_tofu_bad
 	cooking_container = PLATE
 	product_type = /obj/item/reagent_containers/food/snacks/sandwich
