@@ -12,7 +12,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/log_ooc = 0						// log OOC channel
 	var/log_access = 0					// log login/logout
 	var/log_say = 0						// log client say
-	var/fps = 40						// Exactly what it says on the tin. Client
+	var/fps = 1							// Exactly what it says on the tin. Client
 	var/log_admin = 0					// log admin actions
 	var/log_debug = 1					// log debug output
 	var/log_game = 0					// log game events
@@ -536,12 +536,6 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if("irc_bot_export")
 					irc_bot_export = 1
-
-				if("fps")
-					fps = text2num(value)
-
-				if("fps")
-					fps = text2num(value)
 
 				if("tick_limit_mc_init")
 					tick_limit_mc_init = text2num(value)
