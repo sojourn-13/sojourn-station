@@ -87,7 +87,7 @@
 	name = "plasma fuel rod"
 	desc = "A greyson-alloyed fuel rod, filled to the brim with plasma."
 
-	origin_tech = list(TECH_GREYSON = 5, TECH_PLASMA = 3, TECH_ENGINEERING = 2)
+	origin_tech = list(TECH_POWER = 5, TECH_PLASMA = 3, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASMA = 1, MATERIAL_PLASMAGLASS = 1, MATERIAL_DIAMOND = 2)
 
 	icon = 'icons/obj/chemical.dmi'
