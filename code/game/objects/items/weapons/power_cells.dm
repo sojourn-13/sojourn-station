@@ -29,10 +29,6 @@
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 20000
 
-/obj/item/cell/large/hyper/depleted
-	charge = 0
-	starts_max_charge = FALSE
-
 /obj/item/cell/large/moebius
 	name = "Soteria \"Power-Geyser 2000L\""
 	desc = "Soteria Institute-brand rechargeable L-standardized power cell. This one is as cheap as Lonestar models, yet improved in all senses."
