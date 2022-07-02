@@ -1,14 +1,14 @@
 /obj/item/organ/internal
 	var/list/owner_verbs = list()
 	var/list/organ_efficiency = list()	//Efficency of an organ, should become the most important variable
-	var/unique_tag	//If an organ is unique and doesn't scale off of organ processes
-	var/specific_organ_size = 1  //Space organs take up in weight calculations, unaffected by w_class for balance reasons
-	var/max_blood_storage = 0	//How much blood an organ stores. Base is 5 * blood_req, so the organ can survive without blood for 5 ticks beofre taking damage (+ blood supply of blood vessels)
-	var/current_blood = 100	//How much blood is currently in the organ
-	var/blood_req = 0	//How much blood an organ takes to funcion
-	var/scanner_hidden = FALSE //Does this organ show on a body scanner?
-	var/nutriment_req = 0	//Controls passive nutriment loss
-	var/oxygen_req = 0	//If oxygen reqs are not satisfied, get debuff and brain starts taking damage
+	var/unique_tag						//If an organ is unique and doesn't scale off of organ processes
+	var/specific_organ_size = 1 		//Space organs take up in weight calculations, unaffected by w_class for balance reasons
+	var/max_blood_storage = 0			//How much blood an organ stores. Base is 5 * blood_req, so the organ can survive without blood for 5 ticks beofre taking damage (+ blood supply of blood vessels)
+	var/current_blood = 100				//How much blood is currently in the organ
+	var/blood_req = 0					//How much blood an organ takes to funcion
+	var/scanner_hidden = FALSE 			//Does this organ show on a body scanner?
+	var/nutriment_req = 0				//Controls passive nutriment loss
+	var/oxygen_req = 0					//If oxygen reqs are not satisfied, get debuff and brain starts taking damage
 	layer = ABOVE_LYING_MOB_LAYER
 	origin_tech = list(TECH_BIO = 2)
 
@@ -55,10 +55,10 @@
 	return organ_efficiency[process_define] - (organ_efficiency[process_define] * (damage / max_damage))
 
 /obj/item/organ/internal/take_damage(amount, silent)	//Deals damage to the organ itself
-	if( parent.limb_efficiency == 0)
-		damage = between(0, src.damage + (amount * 100 ), max_damage)
+	if(parent.limb_efficiency == 0)
+		damage = between(0, damage + (amount * 100 ), max_damage)
 	else
-		damage = between(0, src.damage + (amount * (100 / parent.limb_efficiency)), max_damage)
+		damage = between(0, damage + (amount * (100 / parent.limb_efficiency)), max_damage)
 	if(!(BP_IS_ROBOTIC(src)))
 		//only show this if the organ is not robotic
 		if(owner && parent && amount > 0 && !silent)
