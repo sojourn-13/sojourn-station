@@ -30,7 +30,7 @@
 	var/computer_id = null
 
 	/// I'd really rather use signals for this, but, whatever. Assigned in roomba_dispenser.dm when spawned from one.
-	var/obj/machinery/mob_dispenser/spawned_from
+	var/obj/entity_spawner/spawned_from
 
 	/*A bunch of this stuff really needs to go under their own defines instead of being globally attached to mob.
 	A variable should only be globally attached to turfs/objects/whatever, when it is in fact needed as such.

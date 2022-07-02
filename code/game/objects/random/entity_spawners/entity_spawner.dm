@@ -1,11 +1,9 @@
-/obj/machinery/mob_dispenser
-	name = "mob spawner basetype"
+/obj/entity_spawner
+	name = "entity spawner basetype"
 	desc = "dont use this"
 
 	icon = 'icons/obj/machines/autolathe.dmi'
 	icon_state = "mechfab"
-
-	use_power = FALSE
 
 	anchored = TRUE
 	density = TRUE
@@ -18,7 +16,7 @@
 	 * Very literal. Apon deconstruction of the spawner, aka when it gets shot a lot, it drops whatever is in this list. Even mobs.
 	 * Each entry is one instance of it that will be spawned.
 	**/
-	var/list/atom/movable/loot = list(
+	var/list/atom/movable/dropped = list(
 									/obj/item/stack/material/steel/{amount = 15} = 100,
 									/obj/item/stack/material/glass/random = 95,
 									/obj/item/stack/material/plasteel/random = 15,
@@ -29,7 +27,8 @@
 									/obj/item/stock_parts/manipulator/ = 32,
 									/obj/item/stock_parts/manipulator/ = 32,
 									/obj/item/stock_parts/micro_laser = 32,
-									/obj/item/stock_parts/console_screen = 80
+									/obj/item/stock_parts/console_screen = 80,
+									/obj/machinery/constructable_frame/machine_frame = 100
 	)
 
 	/// If TRUE, will perform check/tick spawn_delay every tick and/or call spawn_entities.
@@ -58,11 +57,15 @@
 	var/spawn_probability = 50
 
 	///List of lists. If to_spawn is empty or if none of the probabilities proc, we spawn one of these at random. Format: list(list(maximum, typepath), ...) Please don't put any typepaths in here that are in to_spawn.
-	var/list/default_spawn = list(list(9, /mob/living/carbon/superior_animal/giant_spider/))
+	var/list/default_spawn = list(
+								list(9, /mob/living/carbon/superior_animal/giant_spider/)
+	)
 
 	///List of lists. Format for usage: list(list(maximum, typepath, probability for prob()), ...) Please dont put any typepaths in here that are in default_spawn.
-	var/list/to_spawn = list(list(30, /mob/living/carbon/superior_animal/giant_spider/hunter, 7),
-						list(1, /mob/living/carbon/superior_animal/giant_spider/tarantula/ogre, 5))
+	var/list/to_spawn = list(
+							list(30, /mob/living/carbon/superior_animal/giant_spider/hunter, 7),
+							list(1, /mob/living/carbon/superior_animal/giant_spider/tarantula/ogre, 5)
+	)
 
 	/// Do we use currently_spawned?
 	var/track_spawned = TRUE
@@ -72,16 +75,25 @@
 	/// How many mobs do we spawn per successful spawn?
 	var/spawn_per_spawn = 1
 
-/obj/machinery/mob_dispenser/Destroy()
+/obj/entity_spawner/Initialize()
+
+	START_PROCESSING(SSobj, src)
+
+	. = ..()
+
+
+/obj/entity_spawner/Destroy()
 
 	for (var/list/containing_list in currently_spawned)
 		for (var/mob/spawned in containing_list)
 			spawned.spawned_from = null
 		containing_list.Cut()
 
+	STOP_PROCESSING(SSobj, src)
+
 	. = ..()
 
-/obj/machinery/mob_dispenser/examine(mob/user) //yoinked from hivemind code
+/obj/entity_spawner/examine(mob/user) //yoinked from hivemind code
 	..()
 	if (health < maxHealth * 0.1)
 		to_chat(user, SPAN_DANGER("It's falling apart!"))
@@ -94,7 +106,7 @@
 	else if (health < maxHealth)
 		to_chat(user, SPAN_WARNING("It's a bit scratched and has dents."))
 
-/obj/machinery/mob_dispenser/Process()
+/obj/entity_spawner/Process()
 
 	if (active)
 		if (spawn_delay == 0)
@@ -107,7 +119,7 @@
 	return FALSE
 
 /// Top layer proc for mob dispenser spawn logic. Checks to_spawn for anything, and if there is none, uses default_spawn instead. Args: spawned, int, defaults to 0. How many have we spawned this spawn tick?
-/obj/machinery/mob_dispenser/proc/spawn_entities() //TODO: make it so we can force a certain entity to spawn
+/obj/entity_spawner/proc/spawn_entities() //TODO: make it so we can force a certain entity to spawn
 // Not perfect, I could clean the code more
 	for (var/i = 0, i < spawn_per_spawn, i++) //infinitely loops, each time incrementing i, and when i is equal or above spawn_per_spawn, terminate the loop
 		var/length = 0
@@ -146,7 +158,7 @@
 				return FALSE //we have reached our mob cap
 	return TRUE
 
-/obj/machinery/mob_dispenser/proc/handle_spawn_logic(var/list/list_arg)
+/obj/entity_spawner/proc/handle_spawn_logic(var/list/list_arg)
 
 	var/maximum = list_arg[1]
 	var/typepath = list_arg[2]
@@ -167,18 +179,18 @@
 	return TRUE
 
 // i wish this was just on machinery god damn
-/obj/machinery/mob_dispenser/proc/take_damage(damage = 0, attacking_item = null)
+/obj/entity_spawner/proc/take_damage(damage = 0, attacking_item = null)
 	health -= damage
 	if (health <= 0)
-		dismantle()
+		disassemble()
 
-/obj/machinery/mob_dispenser/bullet_act(obj/item/projectile/Proj)
+/obj/entity_spawner/bullet_act(obj/item/projectile/Proj)
 	take_damage(Proj.get_structure_damage(), Proj)
 	if(istype(Proj, /obj/item/projectile/ion))
 		Proj.on_hit(loc)
 	. = ..()
 
-/obj/machinery/mob_dispenser/attackby(obj/item/I, mob/user)
+/obj/entity_spawner/attackby(obj/item/I, mob/user)
 	if(!(I.flags & NOBLUDGEON) && I.force)
 		user.do_attack_animation(src)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -191,8 +203,9 @@
 			to_chat(user, SPAN_WARNING("You try to hit the [src] with [I], but it seems useless."))
 			playsound(src, 'sound/weapons/Genhit.ogg', 30, 1)
 		return
+	return TRUE
 
-/obj/machinery/mob_dispenser/ex_act(severity)
+/obj/entity_spawner/ex_act(severity)
 	switch(severity)
 		if(1)
 			take_damage(200) //todo: modularize
@@ -202,7 +215,7 @@
 			take_damage(50)
 	return TRUE
 
-/obj/machinery/mob_dispenser/emp_act(severity)
+/obj/entity_spawner/emp_act(severity)
 	if (emp_vulnerable)
 		switch(severity)
 			if(1)
@@ -217,29 +230,36 @@
 		return TRUE
 	return FALSE
 
-/obj/machinery/mob_dispenser/proc/deactivate(duration = 0, emped = FALSE)
+/obj/entity_spawner/proc/deactivate(duration = 0, emped = FALSE)
 	active = FALSE
 	if (duration != 0)
 		addtimer((CALLBACK(src, .proc/reactivate, emped)), duration)
 	if (emped)
 		stat |= EMPED
+	return TRUE
 
-/obj/machinery/mob_dispenser/proc/reactivate(emped = FALSE)
+/obj/entity_spawner/proc/reactivate(emped = FALSE)
 	active = TRUE
 	if (emped)
 		stat &= ~EMPED
 		visible_message(SPAN_WARNING("\the [src] [emp_recover_message]"))
+	return TRUE
 
-/obj/machinery/mob_dispenser/on_deconstruction()
+/obj/entity_spawner/proc/disassemble()
 
-	if (loot && loot.len)
-		for (var/entity in loot)
-			if (prob(loot[entity]))
+	if (dropped && dropped.len)
+		for (var/entity in dropped)
+			if (prob(dropped[entity]))
 				new entity(loc)
+
 	if (death_message)
 		deathmessage()
 
-	..()
+	qdel(src)
 
-/obj/machinery/mob_dispenser/proc/deathmessage() //here for modularity
+	return TRUE
+
+/obj/entity_spawner/proc/deathmessage() //here for modularity
 	visible_message("\the [src] [death_message]")
+
+	return TRUE
