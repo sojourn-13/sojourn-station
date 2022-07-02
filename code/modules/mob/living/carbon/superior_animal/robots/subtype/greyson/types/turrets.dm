@@ -161,7 +161,7 @@
 	if (prob(60))
 		drop2 = /obj/item/stack/material/plasteel/random
 
-	if (prob(30) || cell_drop)
+	if (cell_drop)
 		cell_drop = /obj/item/cell/large/greyson
 
 
