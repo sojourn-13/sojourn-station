@@ -50,7 +50,7 @@
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/sniper
 	name = "Greyson Positronic FBP-SEC Sniper unit"
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one has an overclocked and overcharged hyper cog laser rifle built into its arm, and a scope in its visor."
-	icon_state = "nanotrasen_ert"
+	icon_state = "nano_alt"
 
 	projectiletype = /obj/item/projectile/beam/sniper
 	telegraph_beam_color = COLOR_ORANGE
@@ -58,8 +58,6 @@
 	fire_delay = 2
 	fire_delay_initial = 2
 	delay_for_range = 1.1 SECONDS
-
-	color = COLOR_TEAL
 
 	retarget_timer = 10
 	retarget_timer_initial = 10
