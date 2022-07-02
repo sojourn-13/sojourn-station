@@ -193,7 +193,7 @@
 
 		var/mob/spawned_mob = new typepath(location)
 
-		spawn_message(spawned_mob)
+		spawnmessage(spawned_mob)
 
 		if (track_spawned)
 			spawned_mob.spawned_from = src
