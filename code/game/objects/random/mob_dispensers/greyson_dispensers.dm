@@ -25,8 +25,8 @@
 
 	maximum_spawned = 15
 
-	spawn_delay = 2
-	spawn_delay_initial = 2
+	spawn_delay = 8
+	spawn_delay_initial = 8
 
 	spawn_probability = 100
 
@@ -34,11 +34,11 @@
 
 	default_spawn = list(list(15, /mob/living/carbon/superior_animal/robot/greyson/roomba))
 	to_spawn = list(
-					list(15, /mob/living/carbon/superior_animal/robot/greyson/roomba/slayer, 35),
-					list(10, /mob/living/carbon/superior_animal/robot/greyson/roomba/trip, 25),
-					list(10, /mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored, 20),
-					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/chemical, 15),
-					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/chemical/med, 5))
+					list(15, /mob/living/carbon/superior_animal/robot/greyson/roomba/slayer, 85),
+					list(10, /mob/living/carbon/superior_animal/robot/greyson/roomba/trip, 65),
+					list(10, /mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored, 55),
+					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/chemical, 35),
+					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/chemical/med, 15))
 
 /obj/machinery/mob_dispenser/greyson/roomba/melee/claymore
 	desc = "What appears to be a heavily modified robotics exofab made in the distinctive bronze of greyson alloys. Are those roombas in its glass top? DO THEY ALL HAVE CLAYMORES ON TOP OF THEM?"
