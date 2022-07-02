@@ -11,6 +11,21 @@
 	health = 500
 	maxHealth = 500
 
+	/// Damage taken if a incoming explosion's severity is "3"/devastate
+	var/devastate_damage = 200
+	/// Damage taken if a incoming explosion's severity is "2"/heavy
+	var/heavy_damage = 100
+	/// Damage taken if a incoming explosion's severity is "1"/light
+	var/light_damage = 50
+	/// Damage taken if a incoming EMP's severity is "2"/heavy
+	var/heavy_emp_damage = 70
+	/// Amount of ticks a heavy EMP will stun for
+	var/heavy_emp_stun = 20
+	/// Damage taken if a incoming EMP's severity is "1"/light
+	var/light_emp_damage = 20
+	/// Amount of ticks a light EMP will stun for
+	var/light_emp_stun = 8
+
 	/**
 	 * Associative list, enter typepaths as the key, chance to drop as the value. Each item will be considered individually in terms of probability.
 	 * Very literal. Apon deconstruction of the spawner, aka when it gets shot a lot, it drops whatever is in this list. Even mobs.
@@ -36,6 +51,9 @@
 
 	/// Does this dispenser get affected by EMPs?
 	var/emp_vulnerable = TRUE
+
+	/// In which direction will our spawns be offset? Format: list(DIRECTION, steps away from src in tiles)
+	var/list/spawn_offset = null
 
 	/// Maximum total amount of mobs this machine can have created
 	var/maximum_spawned = 50
@@ -166,9 +184,16 @@
 
 	var/list/specific_mobs = currently_spawned[typepath]
 	if ((specific_mobs.len) < maximum) //we do it here so we can spawn something else if all other checks succeed except this
-		var/mob/spawned_mob = new typepath(get_turf(src))
+		var/location = (get_turf(src))
+		if (spawn_offset)
+			var/direction = spawn_offset[1]
+			var/steps = spawn_offset[2]
+			for (var/i = 0, i < steps, i++)
+				location = get_step(location, direction) //this is where we handle spawn offsets
 
-		visible_message(SPAN_WARNING("\the [src] [spawn_message] [spawned_mob]!"))
+		var/mob/spawned_mob = new typepath(location)
+
+		spawn_message(spawned_mob)
 
 		if (track_spawned)
 			spawned_mob.spawned_from = src
@@ -205,23 +230,23 @@
 
 /obj/entity_spawner/ex_act(severity)
 	switch(severity)
-		if(1)
-			take_damage(200) //todo: modularize
-		if(2)
-			take_damage(100)
-		if(3)
-			take_damage(50)
+		if(1) //devastate
+			take_damage(devastate_damage) //todo: modularize
+		if(2) //heavy
+			take_damage(heavy_damage)
+		if(3) //light
+			take_damage(light_damage)
 	return TRUE
 
 /obj/entity_spawner/emp_act(severity)
 	if (emp_vulnerable)
 		switch(severity)
 			if(1)
-				take_damage(70) //todo: modularize
-				deactivate(7 SECONDS, TRUE)
+				take_damage(heavy_emp_damage) //todo: modularize
+				deactivate(heavy_emp_stun, TRUE)
 			if(2)
-				take_damage(30)
-				deactivate(3 SECONDS, TRUE)
+				take_damage(light_emp_damage)
+				deactivate(light_emp_stun, TRUE)
 		new /obj/effect/overlay/pulse(loc)
 		if (emp_message && stat ~! EMPED)
 			visible_message(SPAN_WARNING("\the [src] [emp_message]"))
@@ -259,5 +284,10 @@
 
 /obj/entity_spawner/proc/deathmessage() //here for modularity
 	visible_message("\the [src] [death_message]")
+
+	return TRUE
+
+/obj/entity_spawner/proc/spawnmessage(var/atom/movable/spawned_mob)
+	visible_message(SPAN_WARNING("\the [src] [spawn_message] [spawned_mob]!"))
 
 	return TRUE
