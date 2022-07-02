@@ -13,9 +13,6 @@
 	health = 500
 	maxHealth = 500
 
-	/// Shitty half-baked framework for armor, stolen directly from mob armor. don't expect this to 100% work. Only melee, bullet, and energy are used right now.
-	var/list/armor_obj = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0, agony = 0)
-
 	/**
 	 * Associative list, enter typepaths as the key, chance to drop as the value. Each item will be considered individually in terms of probability.
 	 * Very literal. Apon deconstruction of the spawner, aka when it gets shot a lot, it drops whatever is in this list. Even mobs.
@@ -38,7 +35,8 @@
 	/// If TRUE, will perform check/tick spawn_delay every tick and/or call spawn_entities.
 	var/active = TRUE
 
-	var/emp_vulnerable
+	/// Does this dispenser get affected by EMPs?
+	var/emp_vulnerable = TRUE
 
 	/// Maximum total amount of mobs this machine can have created
 	var/maximum_spawned = 50
@@ -47,6 +45,8 @@
 	var/spawn_message = "constructs a"
 	/// The message sent on deconstruction, used as \the [src] [death_message]
 	var/death_message = "stops working!"
+	/// Message sent when EMPed
+	var/emp_message = "shudders, it's lights going dark!"
 
 	///Will only allow mobs to spawn if 0. Decremented every process tick if above 0 and reset to spawn_delay_initial if 0.
 	var/spawn_delay = 0
@@ -65,7 +65,7 @@
 	/// Do we use currently_spawned?
 	var/track_spawned = TRUE
 	/// List of associative lists. each key is a typepath, each value is a instance of that typepath spawned by this machine.
-	var/list/currently_spawned = list() // TODO: maybe move typepath to 2nd entry in all lists
+	var/list/currently_spawned = list()
 
 	/// How many mobs do we spawn per successful spawn?
 	var/spawn_per_spawn = 1
@@ -121,11 +121,11 @@
 						var/probability_to_spawn = containing_list[3]
 						if (prob(probability_to_spawn))
 							var/maximum = containing_list[1]
-							var/typepath = containing_list[2]
-							if (!(currently_spawned[typepath]))
+							var/typepath = containing_list[2] // the 1st 2nd and 3rd entries in the list are always supposed to be the same exact type of thing, so we assume it
+							if (!(currently_spawned[typepath])) //if the list doesnt exist, make it
 								currently_spawned[typepath] = list()
 							var/list/specific_mobs = currently_spawned[typepath]
-							if ((specific_mobs.len) < maximum) //we do it here so we can spawn something else if all other checks succeed except this
+							if ((specific_mobs.len) < maximum) // if we havent hit the limit of this mob, add it to the list of mobs we might spawn
 								successful_rolls[typepath] += containing_list
 							continue
 
@@ -186,14 +186,14 @@
 			. = ..()
 			take_damage(clear_damage, I)
 		else
-			to_chat(user, SPAN_WARNING("You trying to hit the [src] with [I], but it seems useless."))
+			to_chat(user, SPAN_WARNING("You try to hit the [src] with [I], but it seems useless."))
 			playsound(src, 'sound/weapons/Genhit.ogg', 30, 1)
 		return
 
 /obj/machinery/mob_dispenser/ex_act(severity)
 	switch(severity)
 		if(1)
-			take_damage(200)
+			take_damage(200) //todo: modularize
 		if(2)
 			take_damage(100)
 		if(3)
@@ -204,12 +204,14 @@
 	if (emp_vulnerable)
 		switch(severity)
 			if(1)
-				take_damage(70)
+				take_damage(70) //todo: modularize
 				deactivate(7 SECONDS, TRUE)
 			if(2)
 				take_damage(30)
 				deactivate(3 SECONDS, TRUE)
 		new /obj/effect/overlay/pulse(loc)
+		if (emp_message)
+			visible_message(SPAN_WARNING("\the [src] [emp_message]"))
 		return TRUE
 	return FALSE
 
@@ -234,7 +236,7 @@
 	if (death_message)
 		deathmessage()
 
-	. = ..()
+	..()
 
 /obj/machinery/mob_dispenser/proc/deathmessage() //here for modularity
 	visible_message("\the [src] [death_message]")
