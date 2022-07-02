@@ -152,13 +152,10 @@
 /mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon/New()
 	. = ..()
 
-	drop1 = null
-	drop2 = null //we dont want them dropping a nonexistant greyson plasma cannon
-
-	if (prob(25))
+	if (drop1)
 		drop1 = /obj/item/stalker_fuel_rod
 
-	if (prob(60))
+	if (drop2)
 		drop2 = /obj/item/stack/material/plasteel/random
 
 	if (cell_drop)
