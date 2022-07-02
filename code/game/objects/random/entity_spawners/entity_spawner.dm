@@ -248,7 +248,7 @@
 				take_damage(light_emp_damage)
 				deactivate(light_emp_stun, TRUE)
 		new /obj/effect/overlay/pulse(loc)
-		if (emp_message && stat ~! EMPED)
+		if (emp_message && (stat ~! EMPED))
 			visible_message(SPAN_WARNING("\the [src] [emp_message]"))
 		return TRUE
 	return FALSE
