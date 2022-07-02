@@ -11,17 +11,17 @@
 	health = 500
 	maxHealth = 500
 
-	/// Damage taken if a incoming explosion's severity is "3"/devastate
+	/// Damage taken if a incoming explosion's severity is "1"/devastate
 	var/devastate_damage = 200
 	/// Damage taken if a incoming explosion's severity is "2"/heavy
 	var/heavy_damage = 100
-	/// Damage taken if a incoming explosion's severity is "1"/light
+	/// Damage taken if a incoming explosion's severity is "3"/light
 	var/light_damage = 50
-	/// Damage taken if a incoming EMP's severity is "2"/heavy
+	/// Damage taken if a incoming EMP's severity is "1"/heavy
 	var/heavy_emp_damage = 70
 	/// Amount of ticks a heavy EMP will stun for
 	var/heavy_emp_stun = 20
-	/// Damage taken if a incoming EMP's severity is "1"/light
+	/// Damage taken if a incoming EMP's severity is "2"/light
 	var/light_emp_damage = 20
 	/// Amount of ticks a light EMP will stun for
 	var/light_emp_stun = 8
