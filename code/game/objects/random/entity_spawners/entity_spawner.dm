@@ -183,7 +183,7 @@
 		currently_spawned[typepath] = list()
 
 	var/list/specific_mobs = currently_spawned[typepath]
-	if ((specific_mobs.len) < maximum) //we do it here so we can spawn something else if all other checks succeed except this
+	if ((specific_mobs.len) < maximum)
 		var/location = (get_turf(src))
 		if (spawn_offset)
 			var/direction = spawn_offset[1]
