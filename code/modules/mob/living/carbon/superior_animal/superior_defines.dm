@@ -43,6 +43,8 @@
 	var/advancement_increment = 5
 	/// Will be incremented advancement_increment ticks whenever a ranged mob decides to advance. If more than world.time, targetting walks will be ignored, to not end the advancement.
 	var/advancement_timer = 0
+	/// Do we wander if we can't see our target?
+	var/wander_if_lost_sight = TRUE
 
 	/// Has this mob lost sight of their target? This is how we make sure mobs don't constantly go to the position of the target they've lost sight of.
 	var/lost_sight = FALSE

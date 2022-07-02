@@ -283,9 +283,10 @@
 
 				lost_sight = TRUE
 				patience--
-				var/moving_to = pick(cardinal)
-				set_dir(moving_to)
-				step_glide(src, moving_to, DELAY2GLIDESIZE(0.5 SECONDS)) //we can potentially pathfind if we do this
+				if (wander_if_lost_sight)
+					var/moving_to = pick(cardinal)
+					set_dir(moving_to)
+					step_glide(src, moving_to, DELAY2GLIDESIZE(0.5 SECONDS)) //we can potentially pathfind if we do this
 			if (!fire_through_walls)
 				return
 			else
