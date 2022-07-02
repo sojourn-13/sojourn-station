@@ -47,6 +47,8 @@
 	var/death_message = "stops working!"
 	/// Message sent when EMPed
 	var/emp_message = "shudders, it's lights going dark!"
+	/// Message sent when they recover from an EMP
+	var/emp_recover_message = "'s lights slowly brighten, the inner machinery beginning to churn once more."
 
 	///Will only allow mobs to spawn if 0. Decremented every process tick if above 0 and reset to spawn_delay_initial if 0.
 	var/spawn_delay = 0
@@ -210,7 +212,7 @@
 				take_damage(30)
 				deactivate(3 SECONDS, TRUE)
 		new /obj/effect/overlay/pulse(loc)
-		if (emp_message)
+		if (emp_message && stat ~! EMPED)
 			visible_message(SPAN_WARNING("\the [src] [emp_message]"))
 		return TRUE
 	return FALSE
@@ -226,6 +228,7 @@
 	active = TRUE
 	if (emped)
 		stat &= ~EMPED
+		visible_message(SPAN_WARNING("\the [src] [emp_recover_message]"))
 
 /obj/machinery/mob_dispenser/on_deconstruction()
 
