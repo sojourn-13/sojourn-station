@@ -52,9 +52,15 @@
 	/// Does this dispenser get affected by EMPs?
 	var/emp_vulnerable = TRUE
 
-	/// Associative. If this is not null, anything spawned will be spawned at these coordinates. Format: list(x = offset, y = offset, z = offset). If a value is null, it defaults to src's coordinate.
+	/**
+	 * Associative. If this is not null, anything spawned will be spawned at these coordinates. X = horizontal, Y = vertical, Z = z-level.
+	 * Format: list(x = coordinate, y = coordinate, z = coordinate). If a value is null, it defaults to src's respective coordinate. Set the entire var to null to disable.
+	**/
 	var/list/spawn_override = null
-	/// Associative. Any value here will shift the spawns that many tiles away in that direction. Format: list(x = offset, y = offset, z = offset). If a value is null, it defaults to 0, AKA no offset.
+	/**
+	 * Associative. Any value here will shift the spawns that many tiles away, using coordinates. X = horizontal shifting, Y = vertical shifting, Z = z-level shifting.
+	 * Format: list(x = offset, y = offset, z = offset). If a value is null, it defaults to 0, AKA no offset. Set the entire var to null to disable.
+	**/
 	var/list/spawn_offset = null
 
 	/// Maximum total amount of mobs this machine can have created
