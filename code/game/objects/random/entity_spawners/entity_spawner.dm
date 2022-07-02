@@ -134,7 +134,7 @@
 		return TRUE
 	return FALSE
 
-/// Top layer proc for mob dispenser spawn logic. Checks to_spawn for anything, and if there is none, uses default_spawn instead. Args: spawned, int, defaults to 0. How many have we spawned this spawn tick?
+/// Top layer proc for mob dispenser spawn logic. Checks to_spawn for anything, and if there is none, uses default_spawn instead.
 /obj/entity_spawner/proc/spawn_entities()
 // Not perfect, I could clean the code more
 	for (var/i = 0, i < spawn_per_spawn, i++) //infinitely loops, each time incrementing i, and when i is equal or above spawn_per_spawn, terminate the loop
