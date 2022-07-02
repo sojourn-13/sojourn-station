@@ -106,7 +106,7 @@
 // mini-boss enemy that demands attention or else they will nuke someone. VERY POWERFUL
 /mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon
 	name = "\"Iron Lock Security\" Assault Stalker Mk2"
-	desc = "A ruthless patrol borg that defends Greyson facilities. This one has a pair of massively oversized plasma cannons, and has been fitted with thick layers of ablative plating, although at the cost of it's mobility, melee, and ballistic defenses. This will destroy you."
+	desc = "A ruthless patrol borg that defends Greyson facilities. This one has a pair of massively oversized plasma cannons, and has been fitted with thick layers of ablative plating, as well as bomb shielding, although at the cost of it's mobility. This will destroy you."
 
 	range_charge_telegraph = "'s plasma cannons grow brighter, and it hums louder, preparing to fire at"
 	range_telegraph = "'s plasma cannons let out an eerie and TERRIFYING whine as it prepares to unleash it's devastating payload upon"
@@ -115,16 +115,16 @@
 	telegraph_beam_color = COLOR_RED
 	color = COLOR_RED
 
-	rounds_left = 4
+	rounds_left = 4 //low ammo
 	mag_type = /obj/item/stalker_fuel_rod/depleted
-	mags_left = 1
+	mags_left = 2
 
 	advance = FALSE
 
-	armor = list(melee = 10, bullet = 15, energy = 60, bomb = 100, bio = 100, rad = 100) //takes stalker armor to the extreme, also, if people want to melee the stalker that explodes apon death, power to them
+	armor = list(melee = 20, bullet = 45, energy = 80, bomb = 100, bio = 100, rad = 100) //if people want to melee the stalker that explodes apon death, power to them
 
-	maxHealth = 470 //high hp is required due to it bombing itself a lot
-	health = 470
+	maxHealth = 350
+	health = 350
 
 	deathmessage = "violently explodes, its internal generator combusting in a brilliant blue-white flame!"
 	reload_message = "lets out a hiss as a fuel rod ejects from its carapace!"
@@ -141,11 +141,12 @@
 	retarget_timer_initial = 15
 	retarget_chance = 90
 
-	projectilesound = 'sound/weapons/lasercannonfire.ogg'
+	projectilesound = 'sound/weapons/blaster.ogg'
+	projectilevolume = 300
 
 	fire_through_walls = TRUE //this bad boy can BREAK cover
 
-	move_to_delay = 13 //slow as hell due to it's armor and weapons. also balance reasons.
+	move_to_delay = 11 //slow as hell due to it's armor and weapons. also balance reasons.
 
 /mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon/New()
 	. = ..()
@@ -158,6 +159,10 @@
 
 	if (prob(30) || cell_drop)
 		cell_drop = /obj/item/cell/large/hyper
+
+
+/mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon/ex_act(severity) // we dont want it to bomb itself
+	return FALSE
 
 /mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon/death()
 

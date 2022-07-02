@@ -239,6 +239,8 @@
 	var/rapid_fire_shooting_amount = 3 //By default will rapid fire in 3 shots per.
 	var/obj/item/projectile/projectiletype  //What are we shooting?
 	var/projectilesound //What sound do we make when firing
+	/// How loud will our projectile firing sound be?
+	var/projectilevolume = 100
 	var/casingtype      //Do we leave casings after shooting?
 	var/ranged_cooldown //What is are modular cooldown, in seconds.
 	var/ranged_middlemouse_cooldown = 0 //For when people are controling them and firing, do we have a cooldown? Modular for admins to tweak.
