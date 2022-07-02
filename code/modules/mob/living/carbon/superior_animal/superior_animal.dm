@@ -240,6 +240,7 @@
 	var/projectile_flags = null
 	var/calculated_walk = (comfy_range - comfy_distance)
 	var/fire_through_lost_sight = FALSE
+	var/target_location_resolved = (target_location?.resolve())
 	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
 	if(destroy_surroundings && !already_destroying_surroundings)
 		destroySurroundings()
@@ -247,7 +248,7 @@
 	if (!(isburrow(targetted_mob))) //we dont want mobs failing to use the burrows
 		// This block controls random retargetting
 		if (!lost_sight)
-			target_location = targetted_mob.loc //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
+			target_location = WEAKREF(targetted_mob.loc) //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
 		if (retarget)
 			var/retarget_prioritize = retarget_prioritize_current //local var so that we can make temporary changes
 			if (retarget_timer <= 0)
@@ -275,11 +276,11 @@
 					if (cant_see_timer <= world.time) //prevents any weirdness
 						if (ranged) //only ranged mobs can advance, currently
 							if (advancement_timer > world.time) //we are advancing, so lets use our advance_steps var
-								alive_walk_to(src, target_location, advance_steps, move_to_delay)
+								alive_walk_to(src, target_location_resolved, advance_steps, move_to_delay)
 							else
-								alive_walk_to(src, target_location, calculated_walk, move_to_delay)
+								alive_walk_to(src, target_location_resolved, calculated_walk, move_to_delay)
 						else
-							alive_walk_to(src, target_location, 1, move_to_delay) // melee mobs only need to go to one tile away
+							alive_walk_to(src, target_location_resolved, 1, move_to_delay) // melee mobs only need to go to one tile away
 
 				lost_sight = TRUE
 				patience--
@@ -319,7 +320,7 @@
 		loseTarget()
 		return
 	if (lost_sight)
-		targetted = target_location
+		targetted = target_location_resolved
 	if (stat == DEAD)
 		return
 	if(!ranged)

@@ -49,7 +49,7 @@
 		doTargetMessage()
 
 	if (filteredTarget)
-		target_location = filteredTarget.loc
+		target_location = WEAKREF(filteredTarget.loc)
 
 	return filteredTarget
 

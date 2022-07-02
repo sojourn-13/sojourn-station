@@ -48,8 +48,6 @@
 
 	/// Has this mob lost sight of their target? This is how we make sure mobs don't constantly go to the position of the target they've lost sight of.
 	var/lost_sight = FALSE
-	/// Stored value of our current target's location. Only updates if we can see them.
-	var/target_location
 
 	///How delayed are our ranged attacks, in ticks. Reduces DPS.
 	var/fire_delay = 0
@@ -190,6 +188,8 @@
 	 * Otherwise, you will access the pointer in memory to the actual target, instead of the target itself.
 	 */
 	var/datum/weakref/target_mob
+	/// Stored value of our current target's location, in weakref form. Only updates if we can see them. Use resolve() to find the proper value.
+	var/datum/weakref/target_location
 	var/attack_same = 0 //whether mob AI should target own faction members for attacks
 	var/list/friends = list() //list of mobs to consider friends, not types
 	var/environment_smash = 1
