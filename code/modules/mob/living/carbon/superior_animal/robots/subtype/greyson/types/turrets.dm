@@ -87,8 +87,8 @@
 	name = "plasma fuel rod"
 	desc = "A greyson-alloyed fuel rod, filled to the brim with plasma."
 
-	origin_tech = list(TECH_POWER = 5, TECH_PLASMA = 3, TECH_ENGINEERING = 2)
-	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASMA = 1, MATERIAL_PLASMAGLASS = 1, MATERIAL_DIAMOND = 2)
+	origin_tech = list(TECH_POWER = 6, TECH_PLASMA = 7, TECH_ENGINEERING = 4)
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASMA = 5, MATERIAL_PLASMAGLASS = 1, MATERIAL_DIAMOND = 2, MATERIAL_PLATINUM = 1)
 
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "fuel_rod"
@@ -98,6 +98,9 @@
 /obj/item/stalker_fuel_rod/depleted
 	name = "spent fuel rod"
 	desc = "A empty greyson-alloyed fuel rod, previously having contained some combustable substance. Presumably."
+
+	origin_tech = list(TECH_POWER = 3, TECH_PLASMA = 2, TECH_ENGINEERING = 2)
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASMAGLASS = 1, MATERIAL_DIAMOND = 2)
 
 	icon_state = "fuel_rod_depleted"
 
@@ -119,19 +122,17 @@
 	mag_type = /obj/item/stalker_fuel_rod/depleted
 	mags_left = 2
 
-	advance = FALSE
+	armor = list(melee = 20, bullet = 50, energy = 80, bomb = 100, bio = 100, rad = 100) //if people want to melee the stalker that explodes apon death, power to them
 
-	armor = list(melee = 20, bullet = 45, energy = 80, bomb = 100, bio = 100, rad = 100) //if people want to melee the stalker that explodes apon death, power to them
-
-	maxHealth = 500 //very tanky
-	health = 500
+	maxHealth = 550 //very tanky
+	health = 550
 
 	deathmessage = "violently explodes, its internal generator combusting in a brilliant blue-white flame!"
 	reload_message = "lets out a hiss as a fuel rod ejects from its carapace!"
 
 	projectiletype = /obj/item/projectile/hydrogen/cannon/max //devastating
-	fire_delay = 6 //6 ticks of charging to fire. very important since this will fucking instakill most people
-	fire_delay_initial = 6
+	fire_delay = 5 //5 ticks of charging to fire. very important since this will fucking instakill most people
+	fire_delay_initial = 5
 	rapid_fire_shooting_amount = 2
 
 	delay_for_range = 2 SECONDS
@@ -157,8 +158,11 @@
 	if (prob(25))
 		drop1 = /obj/item/stalker_fuel_rod
 
+	if (prob(60))
+		drop2 = /obj/item/stack/material/plasteel/random
+
 	if (prob(30) || cell_drop)
-		cell_drop = /obj/item/cell/large/hyper
+		cell_drop = /obj/item/cell/large/greyson
 
 
 /mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon/ex_act(severity) // we dont want it to bomb itself
