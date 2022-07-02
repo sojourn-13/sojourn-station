@@ -4,6 +4,7 @@ GLOBAL_LIST_INIT(banned_vars, list(
 	"ckey",
 	"key",
 	"lastKnownIP",
+	"computer_id",
 	"loc",
 	"locs"
 ))
