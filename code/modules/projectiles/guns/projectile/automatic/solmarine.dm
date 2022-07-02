@@ -93,18 +93,26 @@
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless/sawn
 	name = "sawn down \"Martian\" carbine"
 	desc = "An ancient that predates mass autolathen printing rifle found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
-		 Unlike other old stock this one was always intented to be a  6.5mm.\
+		 Unlike other old stock this one was always intented to be a 6.5mm.\
 		 Someone butchered this thing beyond recognition! At least it fits in a holster."
 	icon = 'icons/obj/guns/projectile/sawnoff/solmarine.dmi'
 	matter = list(MATERIAL_IRON = 10, MATERIAL_PLASTIC = 8)
+	init_recoil = CARBINE_RECOIL(1.2)
+	damage_multiplier = 0.8
+	price_tag = 650
 	icon_state = "solmarine"
 	item_state = "solmarine"
 	shotgun_haver = FALSE
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND
+		)
+
 
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless
 	name = "\"Martian\" carbine"
 	desc = "An ancient that predates mass autolathen printing rifle found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
-		 Unlike other old stock this one was always intented to be a  6.5mm."
+		 Unlike other old stock this one was always intented to be a 6.5mm."
 	icon = 'icons/obj/guns/projectile/martian.dmi'
 	icon_state = "service_rifle"
 	item_state = "service_rifle"
