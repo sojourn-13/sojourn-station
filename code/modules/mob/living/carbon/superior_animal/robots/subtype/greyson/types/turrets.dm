@@ -122,7 +122,7 @@
 	mag_type = /obj/item/stalker_fuel_rod/depleted
 	mags_left = 2
 
-	armor = list(melee = 20, bullet = 50, energy = 80, bomb = 100, bio = 100, rad = 100) //if people want to melee the stalker that explodes apon death, power to them
+	armor = list(melee = 35, bullet = 50, energy = 80, bomb = 100, bio = 100, rad = 100) //if people want to melee the stalker that explodes apon death, power to them
 
 	maxHealth = 550 //very tanky
 	health = 550
