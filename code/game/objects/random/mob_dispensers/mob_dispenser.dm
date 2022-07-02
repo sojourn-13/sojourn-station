@@ -8,6 +8,7 @@
 	use_power = FALSE
 
 	anchored = TRUE
+	density = TRUE
 
 	health = 500
 	maxHealth = 500
@@ -44,6 +45,8 @@
 
 	/// Used as \the [src] [spawn_message] [spawned_mob]
 	var/spawn_message = "constructs a"
+	/// The message sent on deconstruction, used as \the [src] [death_message]
+	var/death_message = "stops working!"
 
 	///Will only allow mobs to spawn if 0. Decremented every process tick if above 0 and reset to spawn_delay_initial if 0.
 	var/spawn_delay = 0
@@ -93,7 +96,8 @@
 
 	if (active)
 		if (spawn_delay == 0)
-			spawn_entities()
+			if (prob(spawn_probability))
+				spawn_entities()
 			spawn_delay = spawn_delay_initial
 		else
 			spawn_delay--
@@ -102,66 +106,63 @@
 
 /// Top layer proc for mob dispenser spawn logic. Checks to_spawn for anything, and if there is none, uses default_spawn instead. Args: spawned, int, defaults to 0. How many have we spawned this spawn tick?
 /obj/machinery/mob_dispenser/proc/spawn_entities() //TODO: make it so we can force a certain entity to spawn
-// TODO: make it so that we instead add things that succeed the prob() roll to a list so we can randomly pick
 // Not perfect, I could clean the code more
-	if (prob(spawn_probability))
-		for (var/i = 0, i < spawn_per_spawn, i++)
-			var/length = 0
-			if (currently_spawned)
-				if (currently_spawned.len)
-					for (var/key in currently_spawned)
-						var/list/mobs = currently_spawned[key]
-						length += (mobs.len)
-				if (length < maximum_spawned)
-					if (to_spawn && to_spawn.len)
-						var/list/successful_rolls = list()
-						for (var/list/containing_list in to_spawn)
-							var/probability_to_spawn = containing_list[3]
-							if (prob(probability_to_spawn))
-								var/maximum = containing_list[1]
-								var/typepath = containing_list[2]
-								if (!(currently_spawned[typepath]))
-									currently_spawned[typepath] = list()
-								var/list/mobs = currently_spawned[typepath]
-								if ((mobs.len) >= maximum)
-									continue //we do it here so we can spawn something else if all other checks succeed except this
+	for (var/i = 0, i < spawn_per_spawn, i++) //infinitely loops, each time incrementing i, and when i is equal or above spawn_per_spawn, terminate the loop
+		var/length = 0
+		if (currently_spawned)
+			if (currently_spawned.len)
+				for (var/key in currently_spawned) //check each key in our assoc list of mobs we own
+					var/list/mobs = currently_spawned[key]
+					length += (mobs.len) //add the length of each key's value to length
+			if (length < maximum_spawned) //check the total amount of mobs we currently have active against our max
+				if (to_spawn && to_spawn.len) //if its less, proceed
+					var/list/successful_rolls = list()
+					for (var/list/containing_list in to_spawn)
+						var/probability_to_spawn = containing_list[3]
+						if (prob(probability_to_spawn))
+							var/maximum = containing_list[1]
+							var/typepath = containing_list[2]
+							if (!(currently_spawned[typepath]))
+								currently_spawned[typepath] = list()
+							var/list/specific_mobs = currently_spawned[typepath]
+							if ((specific_mobs.len) < maximum) //we do it here so we can spawn something else if all other checks succeed except this
 								successful_rolls[typepath] += containing_list
-								continue
-						if (successful_rolls.len)
-							var/random = pick(successful_rolls)
-							var/list/random_list = successful_rolls[random]
-							var/typepath = random_list[2]
-							var/maximum = random_list[1]
-							var/list/mobs = currently_spawned[typepath]
-							if ((mobs.len) < maximum)
-								var/mob/spawned_mob = new typepath(get_turf(src))
-
-								visible_message(SPAN_WARNING("\the [src] [spawn_message] [spawned_mob]!"))
-
-								if (track_spawned)
-									spawned_mob.spawned_from = src
-									currently_spawned[typepath] += spawned_mob
 							continue
 
-					if (default_spawn && default_spawn.len)
-						var/list/random_list = pick(default_spawn)
-						var/maximum = random_list[1]
-						var/typepath = random_list[2]
-						if (!(currently_spawned[typepath]))
-							currently_spawned[typepath] = list()
-							var/list/mobs = currently_spawned[typepath]
-							if ((mobs.len) < maximum)
-								var/mob/spawned_mob = new typepath(get_turf(src))
+					if (successful_rolls.len) // if the previous code block had anything successfully pass every check, let's pick one of them at random
+						var/random = pick(successful_rolls)
+						var/list/random_list = successful_rolls[random]
+						handle_spawn_logic(random_list)
+						continue
 
-								visible_message(SPAN_WARNING("\the [src] [spawn_message] [spawned_mob]!"))
+				if (default_spawn && default_spawn.len) //if everything in to_spawn fails to roll, or to_spawn is empty, use a random default
+					var/list/random_list = pick(default_spawn)
+					handle_spawn_logic(random_list)
+					continue
 
-								if (track_spawned)
-									spawned_mob.spawned_from = src
-									currently_spawned[typepath] += spawned_mob
-							continue
-		return TRUE
-	else
-		return FALSE
+			else
+				return FALSE //we have reached our mob cap
+	return TRUE
+
+/obj/machinery/mob_dispenser/proc/handle_spawn_logic(var/list/list_arg)
+
+	var/maximum = list_arg[1]
+	var/typepath = list_arg[2]
+
+	if (!(currently_spawned[typepath]))
+		currently_spawned[typepath] = list()
+
+	var/list/specific_mobs = currently_spawned[typepath]
+	if ((specific_mobs.len) < maximum) //we do it here so we can spawn something else if all other checks succeed except this
+		var/mob/spawned_mob = new typepath(get_turf(src))
+
+		visible_message(SPAN_WARNING("\the [src] [spawn_message] [spawned_mob]!"))
+
+		if (track_spawned)
+			spawned_mob.spawned_from = src
+			currently_spawned[typepath] += spawned_mob
+
+	return TRUE
 
 // i wish this was just on machinery god damn
 /obj/machinery/mob_dispenser/proc/take_damage(damage = 0, attacking_item = null)
@@ -230,5 +231,10 @@
 		for (var/entity in loot)
 			if (prob(loot[entity]))
 				new entity(loc)
+	if (death_message)
+		deathmessage()
 
 	. = ..()
+
+/obj/machinery/mob_dispenser/proc/deathmessage() //here for modularity
+	visible_message("\the [src] [death_message]")
