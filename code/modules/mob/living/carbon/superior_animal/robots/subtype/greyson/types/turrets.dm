@@ -153,11 +153,12 @@
 	. = ..()
 
 	drop1 = null
+	drop2 = null
 
 	if (prob(30))
 		drop1 = /obj/item/stalker_fuel_rod
 
-	if (drop2)
+	if (prob(45))
 		drop2 = /obj/item/stack/material/plasteel/random
 
 	if (cell_drop)
