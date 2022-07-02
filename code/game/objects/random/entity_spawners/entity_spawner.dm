@@ -52,7 +52,9 @@
 	/// Does this dispenser get affected by EMPs?
 	var/emp_vulnerable = TRUE
 
-	/// In which direction will our spawns be offset? Format: list(DIRECTION, steps away from src in tiles)
+	/// Associative. If this is not null, anything spawned will be spawned at these coordinates. Format: list(x = offset, y = offset, z = offset).
+	var/list/spawn_override = null
+	/// Associative. Any value here will shift the spawns that many tiles away in that direction. Format: list(x = offset, y = offset, z = offset). If a value is null, it defaults to src's coordinate.
 	var/list/spawn_offset = null
 
 	/// Maximum total amount of mobs this machine can have created
@@ -184,12 +186,34 @@
 
 	var/list/specific_mobs = currently_spawned[typepath]
 	if ((specific_mobs.len) < maximum)
-		var/location = (get_turf(src))
-		if (spawn_offset)
-			var/direction = spawn_offset[1]
-			var/steps = spawn_offset[2]
-			for (var/i = 0, i < steps, i++)
-				location = get_step(location, direction) //this is where we handle spawn offsets
+		var/location = (src.loc)
+
+		var/list/overriding_coordinates
+
+		if (spawn_override)
+			overriding_coordinates = spawn_override
+
+		else if (spawn_offset)
+			overriding_coordinates = spawn_offset
+
+		if (overriding_coordinates)
+			for (var/coordinate in overriding_coordinates)
+				if (overriding_coordinates[coordinate] == null) //dont use ! here, we need to accept 0 values
+					overriding_coordinates[coordinate] = src[coordinate]
+
+			if (overriding_coordinates == spawn_override)
+
+				var/x_temp = overriding_coordinates[1]
+				var/y_temp = overriding_coordinates[2]
+				var/z_temp = overriding_coordinates[3]
+				location = (locate(x_temp, y_temp, z_temp))
+
+			else if (overriding_coordinates == spawn_offset)
+
+				var/x_temp = (src.x + overriding_coordinates[1])
+				var/y_temp = (src.y + overriding_coordinates[2])
+				var/z_temp = (src.z + overriding_coordinates[3])
+				location = (locate(x_temp, y_temp, z_temp))
 
 		var/mob/spawned_mob = new typepath(location)
 
