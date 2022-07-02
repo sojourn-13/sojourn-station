@@ -89,8 +89,6 @@
 			spawned.spawned_from = null
 		containing_list.Cut()
 
-	STOP_PROCESSING(SSobj, src)
-
 	. = ..()
 
 /obj/entity_spawner/examine(mob/user) //yoinked from hivemind code
