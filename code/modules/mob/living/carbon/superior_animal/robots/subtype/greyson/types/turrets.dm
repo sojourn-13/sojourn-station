@@ -121,17 +121,17 @@
 
 	advance = FALSE
 
-	armor = list(melee = 20, bullet = 45, energy = 80, bomb = 100, bio = 100, rad = 100) //if people want to melee the stalker that explodes apon death, power to them
+	armor = list(melee = 20, bullet = 50, energy = 80, bomb = 100, bio = 100, rad = 100) //if people want to melee the stalker that explodes apon death, power to them
 
-	maxHealth = 350
-	health = 350
+	maxHealth = 550 //very tanky
+	health = 550
 
 	deathmessage = "violently explodes, its internal generator combusting in a brilliant blue-white flame!"
 	reload_message = "lets out a hiss as a fuel rod ejects from its carapace!"
 
 	projectiletype = /obj/item/projectile/hydrogen/cannon/max //devastating
-	fire_delay = 7 //7 ticks of charging to fire. very important since this will fucking instakill most people
-	fire_delay_initial = 7
+	fire_delay = 5 //7 ticks of charging to fire. very important since this will fucking instakill most people
+	fire_delay_initial = 5
 	rapid_fire_shooting_amount = 2
 
 	delay_for_range = 2 SECONDS
