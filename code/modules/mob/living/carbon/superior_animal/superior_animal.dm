@@ -245,6 +245,7 @@
 		destroySurroundings()
 
 	if (!(isburrow(targetted_mob))) //we dont want mobs failing to use the burrows
+		// This block controls random retargetting
 		if (!lost_sight)
 			target_location = targetted_mob.loc //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
 		if (retarget)
@@ -263,7 +264,7 @@
 					targetted_mob = (target_mob?.resolve())
 			else
 				retarget_timer--
-
+		// This block controls losing line of sight and targetting the last known location of the enemy
 		if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) //why attack if we can't even see the enemy
 			if (patience <= 0)
 				loseTarget()
@@ -271,13 +272,14 @@
 				return
 			else //this is where we handle mobs losing LOS and forgetting where the target is
 				if (!lost_sight) //lets only do this if we havent lost sight of them, so we dont constantly go to their new position
-					if (ranged)
-						if ((advancement_timer <= world.time) || (cant_see_timer <= world.time)) //we are advancing, so lets use our advance_steps var
-							alive_walk_to(src, target_location, advance_steps, move_to_delay)
+					if (cant_see_timer <= world.time) //prevents any weirdness
+						if (ranged) //only ranged mobs can advance, currently
+							if (advancement_timer > world.time) //we are advancing, so lets use our advance_steps var
+								alive_walk_to(src, target_location, advance_steps, move_to_delay)
+							else
+								alive_walk_to(src, target_location, calculated_walk, move_to_delay)
 						else
-							alive_walk_to(src, target_location, calculated_walk, move_to_delay)
-					else
-						alive_walk_to(src, target_location, 1, move_to_delay) // melee mobs only need to go to one tile away
+							alive_walk_to(src, target_location, 1, move_to_delay) // melee mobs only need to go to one tile away
 
 				lost_sight = TRUE
 				patience--
@@ -289,7 +291,7 @@
 			else
 				cant_see_timer = (world.time)++ //just to make sure we dont walk towards them
 				fire_through_lost_sight = TRUE
-
+		// This block only runs if the above can_see check is true, fires a trace projectile to see if we can hit our target
 		else if (projectiletype && advance) // if we can see, let's prepare to see if we can hit
 			if (istype(projectiletype, /obj/item/projectile))
 				if (projectiletype == initial(projectiletype)) // typepaths' vars are only accessable through initial() or objects
@@ -307,21 +309,22 @@
 				trace.flags = projectile_flags
 				trace.launch(targetted_mob)
 
-	if (!fire_through_lost_sight) //can only be true if 1. src has fire_through_walls and 2. lost_sight is true
+	if (!fire_through_lost_sight) //can only be true if src does not have fire_through_walls
 		lost_sight = FALSE
 	patience = patience_initial
+	// This block controls our attack/range logic
 	var/atom/targetted = targetted_mob
 	if (!(targetted_mob.check_if_alive(TRUE)))
 		loseTarget()
 		return
 	if (lost_sight)
 		targetted = target_location
+	if (stat == DEAD)
+		return
 	if(!ranged)
 		prepareAttackOnTarget()
 		alive_walk_to(src, targetted, 1, move_to_delay)
 	else if(ranged)
-		if (stat == DEAD)
-			return
 		if(get_dist(src, targetted) <= comfy_range)
 			prepareAttackPrecursor(targetted, .proc/OpenFire, RANGED_TYPE)
 			if ((advancement_timer <= world.time) && (cant_see_timer <= world.time)) //we dont want to prematurely end a advancing walk
