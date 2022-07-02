@@ -135,7 +135,7 @@
 	return FALSE
 
 /// Top layer proc for mob dispenser spawn logic. Checks to_spawn for anything, and if there is none, uses default_spawn instead. Args: spawned, int, defaults to 0. How many have we spawned this spawn tick?
-/obj/entity_spawner/proc/spawn_entities() //TODO: make it so we can force a certain entity to spawn
+/obj/entity_spawner/proc/spawn_entities()
 // Not perfect, I could clean the code more
 	for (var/i = 0, i < spawn_per_spawn, i++) //infinitely loops, each time incrementing i, and when i is equal or above spawn_per_spawn, terminate the loop
 		var/length = 0
@@ -231,7 +231,7 @@
 /obj/entity_spawner/ex_act(severity)
 	switch(severity)
 		if(1) //devastate
-			take_damage(devastate_damage) //todo: modularize
+			take_damage(devastate_damage)
 		if(2) //heavy
 			take_damage(heavy_damage)
 		if(3) //light
@@ -242,7 +242,7 @@
 	if (emp_vulnerable)
 		switch(severity)
 			if(1)
-				take_damage(heavy_emp_damage) //todo: modularize
+				take_damage(heavy_emp_damage)
 				deactivate(heavy_emp_stun, TRUE)
 			if(2)
 				take_damage(light_emp_damage)
