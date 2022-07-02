@@ -14,7 +14,6 @@
 	var/corporation = null
 	var/heat = 0
 
-
 /obj/proc/is_hot()
 	return heat
 
