@@ -31,17 +31,17 @@
 
 /obj/entity_spawner/greyson/roomba/ranged
 
+	default_spawn = list(
+						list(15, /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba),
+	)
+
 	to_spawn = list(
-					list(10, /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba, 85),
 					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/plasma, 50),
-					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/armored, 50),
+					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/armored, 50)
 	)
 
 /obj/entity_spawner/greyson/roomba/melee
 
-	default_spawn = list(
-						list(15, /mob/living/carbon/superior_animal/robot/greyson/roomba)
-	)
 	to_spawn = list(
 					list(15, /mob/living/carbon/superior_animal/robot/greyson/roomba/slayer, 85),
 					list(10, /mob/living/carbon/superior_animal/robot/greyson/roomba/trip, 65),
