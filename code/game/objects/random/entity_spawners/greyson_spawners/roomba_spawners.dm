@@ -1,32 +1,3 @@
-/obj/entity_spawner/greyson //basetype, dont use
-	name = "Greyson Positronics robot dispenser"
-	desc = "What appears to be a heavily modified robotics exofab made in the distinctive bronze of greyson alloys."
-
-	death_message = "'s lights dim, ceasing function as it falls apart!"
-
-	color = PIPE_COLOR_ORANGE
-
-	dropped = list(
-				/obj/item/stack/material/steel/{amount = 15} = 100,
-				/obj/item/stack/material/glass/random = 95,
-				/obj/item/stack/material/plasteel/random = 15,
-				/obj/item/stack/cable_coil{amount = 5} = 90,
-				/obj/item/trash/material/circuit = 100,
-				/obj/item/stock_parts/matter_bin/one_star = 32,
-				/obj/item/stock_parts/matter_bin/one_star = 32,
-				/obj/item/stock_parts/manipulator/one_star = 32,
-				/obj/item/stock_parts/manipulator/one_star = 32,
-				/obj/item/stock_parts/micro_laser/one_star = 32,
-				/obj/item/stock_parts/console_screen = 80,
-				/obj/machinery/constructable_frame/machine_frame = 100
-	)
-
-/obj/entity_spawner/greyson/disassemble()
-
-	do_sparks(1, FALSE, src)
-
-	. = ..()
-
 /obj/entity_spawner/greyson/roomba
 
 	name = "Greyson Positronics roomba dispenser"
@@ -38,6 +9,33 @@
 	spawn_delay_initial = 5
 
 	spawn_probability = 100
+
+	default_spawn = list(
+						list(15, /mob/living/carbon/superior_animal/robot/greyson/roomba)
+	)
+
+
+/obj/entity_spawner/greyson/roomba/mixed
+
+	to_spawn = list(
+					list(10, /mob/living/carbon/superior_animal/robot/greyson/roomba/slayer, 65),
+					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/trip, 45),
+					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored, 35),
+					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/chemical, 20),
+					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/chemical/med, 10),
+					list(10, /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba, 35),
+					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/plasma, 30),
+					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/armored, 25),
+					list(1, /mob/living/carbon/superior_animal/robot/greyson/roomba/boomba, 5)
+	)
+
+/obj/entity_spawner/greyson/roomba/ranged
+
+	to_spawn = list(
+					list(10, /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba, 85),
+					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/plasma, 50),
+					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/armored, 50),
+	)
 
 /obj/entity_spawner/greyson/roomba/melee
 
@@ -51,6 +49,15 @@
 					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/chemical, 35),
 					list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/chemical/med, 15)
 	)
+
+/obj/entity_spawner/greyson/roomba/healing
+
+	maximum_spawned = 5
+
+	default_spawn = list(
+						list(5, /mob/living/carbon/superior_animal/robot/greyson/roomba/chemical/med/healer)
+	)
+	to_spawn = null
 
 /obj/entity_spawner/greyson/roomba/melee/claymore
 	desc = "What appears to be a heavily modified robotics exofab made in the distinctive bronze of greyson alloys. Are those roombas in its glass top? ARE THOSE CLAYMORES ON TOP OF THEM?"
@@ -72,4 +79,3 @@
 
 /obj/entity_spawner/greyson/roomba/melee/claymore/deathmessage()
 	visible_message("As the [src] [death_message]")
-
