@@ -268,6 +268,8 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		log_debug("/datum/cooking_with_jane/recipe/proc/begin_exclusive_options: Exclusive option already active.")
 		log_debug("Recipe name=[name].")
 		return
+	else if(!first_step)
+		CRASH("/datum/cooking_with_jane/recipe/proc/begin_exclusive_options: Exclusive list cannot be active before the first required step is defined. Recipe name=[name].")
 	exclusive_option_mode = TRUE
 	active_exclusive_option_list = list()
 
