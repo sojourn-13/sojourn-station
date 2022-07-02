@@ -152,7 +152,9 @@
 /mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon/New()
 	. = ..()
 
-	if (drop1)
+	drop1 = null
+
+	if (prob(30))
 		drop1 = /obj/item/stalker_fuel_rod
 
 	if (drop2)
