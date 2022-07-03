@@ -2231,7 +2231,6 @@
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\greyson.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\custodian.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\friendly.dm"
-#include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\mech.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\roomba.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\synthetic.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\turrets.dm"
