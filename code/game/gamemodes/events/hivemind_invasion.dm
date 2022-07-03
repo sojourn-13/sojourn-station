@@ -26,9 +26,9 @@
 /datum/event/hivemind/start()
 	var/turf/start_location
 	var/active_players = 0
-	var/mob/living/carbon/human/figher
-	for(figher in GLOB.player_list)
-		if(figher.mind.assigned_role in list(JOBS_ANTI_HIVEMIND))
+	var/mob/living/carbon/human/fighter
+	for(fighter in GLOB.player_list)
+		if(fighter.mind.assigned_role in list(JOBS_ANTI_HIVEMIND))
 			active_players++
 
 	for(var/i=1 to 100)
