@@ -119,3 +119,7 @@
 	matter = list(MATERIAL_IRON = 20, MATERIAL_PLASTIC = 16)
 	shotgun_haver = FALSE
 	serial_type = "Sol Fed"
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND
+		)
