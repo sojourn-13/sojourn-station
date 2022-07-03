@@ -26,8 +26,9 @@
 /datum/event/hivemind/start()
 	var/turf/start_location
 	var/active_players = 0
-	for(var/mob/M in GLOB.player_list)
-		if(M.mind.assigned_role in list(JOBS_ANTI_HIVEMIND))
+	var/mob/living/carbon/human/fighter
+	for(fighter in GLOB.player_list)
+		if(fighter.mind.assigned_role in list(JOBS_ANTI_HIVEMIND))
 			active_players++
 
 	for(var/i=1 to 100)
@@ -42,7 +43,7 @@
 
 	log_and_message_admins("Active Hivemind combative players number is [active_players].")
 	if(GLOB.hive_data_bool["pop_lock"])
-		if(active_players > 15)
+		if(active_players < 15)
 			log_and_message_admins("Hivemind failed to spawn as their was less then 10 active players exspected to combat the hivemind..")
 			kill()
 			return
