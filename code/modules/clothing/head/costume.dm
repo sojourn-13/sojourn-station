@@ -195,12 +195,12 @@
 /*History*/
 
 /obj/item/clothing/head/costume/history/anarchist_cap
-	name = "anarchist hat"
+	name = "anarchist cap"
 	desc = "A black styled piss-cover with a white skull symbol on the front of it. Mother Anarchy loves her sons.."
 	icon_state = "anarchist_cap"
 
 /obj/item/clothing/head/costume/history/anarchist
-	name = "anarchist hat"
+	name = "black papakha"
 	desc = "A black dyed-fur hat with a white skull symbol on the front of it. Mother Anarchy is not for sale.."
 	icon_state = "anarchist"
 	body_parts_covered = 0
