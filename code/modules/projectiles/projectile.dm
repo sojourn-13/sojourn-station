@@ -1,3 +1,11 @@
+/datum/penetration_holder
+
+	var/force_penetration = FALSE
+	var/list/force_penetration_on = list()
+
+	var/penetration_store_time = 0
+	var/store_penetration = FALSE
+
 /*
 #define BRUTE "brute"
 #define BURN "burn"
@@ -19,13 +27,10 @@
 	mouse_opacity = 0
 	embed_mult = 1
 
-	var/force_penetrate = FALSE
-	var/max_penetration_times = 0
-	var/penetration_times = 0
-	var/list/penetrated = list()
-	var/list/force_penetration = list()
+	var/datum/penetration_holder/penetration_holder
 
 	var/testing = FALSE
+
 
 	var/bumped = FALSE		//Prevents it from hitting more than one guy at once
 	var/hitsound_wall = "ricochet"
@@ -110,12 +115,25 @@
 
 	var/recoil = 0
 
+/obj/item/projectile/New()
+
+	penetration_holder = new /datum/penetration_holder
+
+	. = ..()
+
 /obj/item/projectile/Destroy()
 
-	QDEL_NULL(attached_effect)
-
 	if (testing)
-		SEND_SIGNAL(src, COMSIG_TRACE_DELETION, src, penetration_times, penetrated) //todo: come back to this, niko
+		SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, null) //todo: come back to this, niko
+
+		if ((!(penetration_holder.store_penetration)) || (penetration_holder.force_penetration_on.len <= 0))
+			qdel(penetration_holder) //we need to use it later if this statement is true
+		penetration_holder = null
+
+	else
+		QDEL_NULL(penetration_holder)
+
+	QDEL_NULL(attached_effect)
 
 	firer = null
 
@@ -781,78 +799,152 @@
 /obj/item/projectile/Process()
 	var/first_step = TRUE
 
-	spawn while(src && src.loc)
-		if(kill_count-- < 1)
-			on_impact(src.loc) //for any final impact behaviours
-			if (testing)
-				firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
-			qdel(src)
-			return
-		if((!( current ) || loc == current))
-			current = locate(min(max(x + xo, 1), world.maxx), min(max(y + yo, 1), world.maxy), z)
-		if((x == 1 || x == world.maxx || y == 1 || y == world.maxy))
-			if (testing)
-				firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
-			qdel(src)
-			return
+	if (!testing)
+		spawn while(src && src.loc) //copying the entire proc so it doesnt spawn while for testing projectiles fucking sucks but i cant think of any other way to do it
+			if(kill_count-- < 1)
+				on_impact(src.loc) //for any final impact behaviours
+				if (testing)
+					firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
+				qdel(src)
+				return
+			if((!( current ) || loc == current))
+				current = locate(min(max(x + xo, 1), world.maxx), min(max(y + yo, 1), world.maxy), z)
+			if((x == 1 || x == world.maxx || y == 1 || y == world.maxy))
+				if (testing)
+					firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
+				qdel(src)
+				return
 
 
-		if(has_drop_off) //Does this shot get weaker as it goes?
-			//log_and_message_admins("LOG 1: range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
-			range_shot++ //We get the distence form the shooter to what it hit
-			damage_drop_off = max(1, range_shot - affective_damage_range) / 100 //How far we were shot - are affective range. This one is for damage drop off
-			ap_drop_off = max(1, range_shot - affective_ap_range) //How far we were shot - are affective range. This one is for AP drop off
+			if(has_drop_off) //Does this shot get weaker as it goes?
+				//log_and_message_admins("LOG 1: range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
+				range_shot++ //We get the distence form the shooter to what it hit
+				damage_drop_off = max(1, range_shot - affective_damage_range) / 100 //How far we were shot - are affective range. This one is for damage drop off
+				ap_drop_off = max(1, range_shot - affective_ap_range) //How far we were shot - are affective range. This one is for AP drop off
 
-			armor_penetration = max(0, armor_penetration - ap_drop_off)
+				armor_penetration = max(0, armor_penetration - ap_drop_off)
 
-			agony = max(0, agony - range_shot) //every step we lose one agony, this stops sniping with rubbers.
-			//log_and_message_admins("LOG 2| range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
-			if(damage_types[BRUTE])
-				damage_types[BRUTE] -= max(0, damage_drop_off - penetrating / 2) //1 penitration gives 25 tiles| 2 penitration 50 tiles making 0 drop
+				agony = max(0, agony - range_shot) //every step we lose one agony, this stops sniping with rubbers.
+				//log_and_message_admins("LOG 2| range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
+				if(damage_types[BRUTE])
+					damage_types[BRUTE] -= max(0, damage_drop_off - penetrating / 2) //1 penitration gives 25 tiles| 2 penitration 50 tiles making 0 drop
 
-			if(damage_types[BURN])
-				damage_types[BURN] -= max(0, damage_drop_off - penetrating / 2) //they can still embed
+				if(damage_types[BURN])
+					damage_types[BURN] -= max(0, damage_drop_off - penetrating / 2) //they can still embed
 
-			if(damage_types[TOX])
-				damage_types[TOX] -= max(0, damage_drop_off - penetrating / 2) //they can still embed
+				if(damage_types[TOX])
+					damage_types[TOX] -= max(0, damage_drop_off - penetrating / 2) //they can still embed
 
-			//Clone dosnt get removed do to being rare same as o2
+				//Clone dosnt get removed do to being rare same as o2
 
-			if(!hitscan || testing) //TODO: test
-				speed_drop_off = range_shot / 500 //How far we were shot - are affective range. This one is for speed drop off
-				// Every 500 steps = 1 step delay , 50 is 0.1 (thats huge!), 5 0.01
-				step_delay = step_delay + speed_drop_off
+				if(!hitscan || testing) //TODO: test
+					speed_drop_off = range_shot / 500 //How far we were shot - are affective range. This one is for speed drop off
+					// Every 500 steps = 1 step delay , 50 is 0.1 (thats huge!), 5 0.01
+					step_delay = step_delay + speed_drop_off
 
-		trajectory.increment()	// increment the current location
-		location = trajectory.return_location(location)		// update the locally stored location data
+			trajectory.increment()	// increment the current location
+			location = trajectory.return_location(location)		// update the locally stored location data
 
-		if(!location)
-			if (testing)
-				firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
-			qdel(src)	// if it's left the world... kill it
-			return
+			if(!location)
+				if (testing)
+					firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
+				qdel(src)	// if it's left the world... kill it
+				return
 
-		before_move()
-		Move(location.return_turf())
-		pixel_x = location.pixel_x
-		pixel_y = location.pixel_y
+			before_move()
+			Move(location.return_turf())
+			pixel_x = location.pixel_x
+			pixel_y = location.pixel_y
 
-		if(!bumped && !isturf(original))
-			if(loc == get_turf(original))
-				if(!(original in permutated))
-					if(Bump(original))
-						return
+			if(!bumped && !isturf(original))
+				if(loc == get_turf(original))
+					if(!(original in permutated))
+						if(Bump(original))
+							return
 
-		if (!testing)
-			if(first_step)
-				muzzle_effect(effect_transform)
-				first_step = FALSE
-			else if(!bumped)
-				tracer_effect(effect_transform)
-				luminosity_effect()
+			if (!testing)
+				if(first_step)
+					muzzle_effect(effect_transform)
+					first_step = FALSE
+				else if(!bumped)
+					tracer_effect(effect_transform)
+					luminosity_effect()
 
-		if(!hitscan)
-			sleep(step_delay)	//add delay between movement iterations if it's not a hitscan weapon
+			if(!hitscan)
+				sleep(step_delay)	//add delay between movement iterations if it's not a hitscan weapon
+	else
+		while(src && src.loc) //TODO: test projectiles wont work if theyre fired instantly with this i think
+			if(kill_count-- < 1)
+				on_impact(src.loc) //for any final impact behaviours
+				if (testing)
+					firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
+				qdel(src)
+				return
+			if((!( current ) || loc == current))
+				current = locate(min(max(x + xo, 1), world.maxx), min(max(y + yo, 1), world.maxy), z)
+			if((x == 1 || x == world.maxx || y == 1 || y == world.maxy))
+				if (testing)
+					firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
+				qdel(src)
+				return
+
+
+			if(has_drop_off) //Does this shot get weaker as it goes?
+				//log_and_message_admins("LOG 1: range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
+				range_shot++ //We get the distence form the shooter to what it hit
+				damage_drop_off = max(1, range_shot - affective_damage_range) / 100 //How far we were shot - are affective range. This one is for damage drop off
+				ap_drop_off = max(1, range_shot - affective_ap_range) //How far we were shot - are affective range. This one is for AP drop off
+
+				armor_penetration = max(0, armor_penetration - ap_drop_off)
+
+				agony = max(0, agony - range_shot) //every step we lose one agony, this stops sniping with rubbers.
+				//log_and_message_admins("LOG 2| range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
+				if(damage_types[BRUTE])
+					damage_types[BRUTE] -= max(0, damage_drop_off - penetrating / 2) //1 penitration gives 25 tiles| 2 penitration 50 tiles making 0 drop
+
+				if(damage_types[BURN])
+					damage_types[BURN] -= max(0, damage_drop_off - penetrating / 2) //they can still embed
+
+				if(damage_types[TOX])
+					damage_types[TOX] -= max(0, damage_drop_off - penetrating / 2) //they can still embed
+
+				//Clone dosnt get removed do to being rare same as o2
+
+				if(!hitscan || testing) //TODO: test
+					speed_drop_off = range_shot / 500 //How far we were shot - are affective range. This one is for speed drop off
+					// Every 500 steps = 1 step delay , 50 is 0.1 (thats huge!), 5 0.01
+					step_delay = step_delay + speed_drop_off
+
+			trajectory.increment()	// increment the current location
+			location = trajectory.return_location(location)		// update the locally stored location data
+
+			if(!location)
+				if (testing)
+					firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
+				qdel(src)	// if it's left the world... kill it
+				return
+
+			before_move()
+			Move(location.return_turf())
+			pixel_x = location.pixel_x
+			pixel_y = location.pixel_y
+
+			if(!bumped && !isturf(original))
+				if(loc == get_turf(original))
+					if(!(original in permutated))
+						if(Bump(original))
+							return
+
+			if (!testing)
+				if(first_step)
+					muzzle_effect(effect_transform)
+					first_step = FALSE
+				else if(!bumped)
+					tracer_effect(effect_transform)
+					luminosity_effect()
+
+			if(!hitscan)
+				sleep(step_delay)	//add delay between movement iterations if it's not a hitscan weapon
 
 /obj/item/projectile/proc/before_move()
 	return FALSE
@@ -1001,7 +1093,7 @@
 			if(istype(M))
 				return 1
 
-/proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj, var/proc_path = null, var/proc_path_two = null)
+/proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj, var/proc_path = null, store_penetration = FALSE)
 	if (proc_path)
 		var/obj/item/projectile/trace = new proj(get_turf(firer))
 		trace.testing = TRUE
@@ -1012,10 +1104,18 @@
 
 		trace.firer = firer
 
+		if (store_penetration)
+			trace.penetration_holder.store_penetration = TRUE
+
+		. = trace.penetration_holder
+
 		firer.RegisterSignal(trace, COMSIG_TRACE_IMPACT, proc_path)
-		firer.RegisterSignal(trace, COMSIG_TRACE_DELETION, proc_path_two)
 
 		trace.launch(target)
+
+		return
+	else
+		return FALSE
 
 //Helper proc to check if you can hit them or not.
 /proc/check_trajectory(atom/target as mob|obj, atom/firer as mob|obj, var/pass_flags=PASSTABLE|PASSGLASS|PASSGRILLE, flags=null)

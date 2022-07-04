@@ -47,20 +47,21 @@ Bullet also tend to have more armor against them do to this and can be douged un
 	return ..()
 
 /obj/item/projectile/bullet/check_penetrate(var/atom/A)
+	var/datum/penetration_holder/holder = penetration_holder
 	if(!A || !A.density)
-		return 1 //if whatever it was got destroyed when we hit it, then I guess we can just keep going
+		return TRUE //if whatever it was got destroyed when we hit it, then I guess we can just keep going
 
 	if(istype(A, /obj/mecha))
-		return 1 //mecha have their own penetration handling
+		return TRUE //mecha have their own penetration handling
 	var/damage = damage_types[BRUTE]
 	if(ismob(A))
-		if(mob_passthrough_check || ((force_penetrate) && (penetration_times <= max_penetration_times) && (A in force_penetration)))
+		if(mob_passthrough_check || ((holder.force_penetration) && (A in holder.force_penetration)))
 			if(iscarbon(A))
 				damage *= 0.7
-			penetration_times++
-			if (testing)
-				penetrated += A
-			penetration_times++
+			if (testing) //we are only tracking as a trace
+				holder.force_penetration_on += A
+			else
+				holder.force_penetration_on -= A
 			return TRUE
 		else
 			return FALSE
@@ -78,14 +79,14 @@ Bullet also tend to have more armor against them do to this and can be douged un
 	else if(istype(A, /obj/machinery) || istype(A, /obj/structure))
 		chance = damage
 
-	if(prob(chance) || ((force_penetrate) && (penetration_times <= max_penetration_times) && (A in force_penetration)))
+	if(prob(chance) || ((holder.force_penetration) && (A in holder.force_penetration_on)))
 		if(A.opacity)
 			//display a message so that people on the other side aren't so confused
 			A.visible_message(SPAN_WARNING("\The [src] pierces through \the [A]!"))
-		penetration_times++
 		if (testing)
-			penetrated += A
-		penetration_times++
+			holder.force_penetration_on += A //we are only tracking as a trace
+		else
+			holder.force_penetration_on -= A
 		return TRUE
 
 	return FALSE

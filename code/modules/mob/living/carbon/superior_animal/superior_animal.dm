@@ -237,6 +237,7 @@
 
 /mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE)
 	var/calculated_walk = (comfy_range - comfy_distance)
+	var/datum/penetration_holder/trace_holder = null
 	var/can_see = TRUE
 	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
 	if(destroy_surroundings && !already_destroying_surroundings)
@@ -285,7 +286,7 @@
 
 		else if (projectiletype) // if we can see, let's prepare to see if we can hit
 			if (ranged)
-				check_trajectory_raytrace(targetted_mob, src, projectiletype, .proc/handle_trace_impact, .proc/handle_trace_penetration)
+				trace_holder = check_trajectory_raytrace(targetted_mob, src, projectiletype, .proc/handle_trace_impact, TRUE)
 
 	lost_sight = FALSE // we can see our target now
 	patience = patience_initial
@@ -299,14 +300,14 @@
 		if (stat == DEAD)
 			return
 		if(get_dist(src, targetted_mob) <= comfy_range)
-			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
+			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE, holder = trace_holder)
 			if (advancement_timer <= world.time) //we dont want to prematurely end a advancing walk
 				alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay) //we still want to reset our walk
 		else
 			if (advancement_timer <= world.time)
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 				alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay)
-			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE)
+			prepareAttackPrecursor(targetted_mob, .proc/OpenFire, RANGED_TYPE, holder = trace_holder)
 
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
 /atom/proc/check_if_alive(var/critcheck = FALSE) //A simple yes no if were alive
@@ -365,6 +366,7 @@
 	handle_regular_hud_updates()
 	if(!reagent_immune)
 		handle_cheap_chemicals_in_body()
+
 	if(!(ticks_processed%3))
 		// handle_status_effects() this is handled here directly to save a bit on procedure calls
 		//if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1)) - Soj edit, we already update icon just 13 lines down form this, no point
@@ -431,42 +433,33 @@
  *	telegraph-Boolean. If false, no visual emote will be made.
  *	cast_beam-Boolean. If true, a beam will be cast from src to targetted_mob as a visual telegraph.
 **/
-/mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(atom/targetted_mob, proctocall, attack_type, telegraph = TRUE, cast_beam = TRUE)
+/mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(proctocall, attack_type, telegraph = TRUE, cast_beam = TRUE, ...)
 	if (check_if_alive()) //sanity
 		var/time_to_expire
+		if (length(args) > 4)
+			var/list/arguments = args.Copy(5)
+		var/charge_telegraph
+		var/attack_telegraph
+		var/delay_to_use
 		switch(attack_type)
 			if (MELEE_TYPE)
-				if (do_melee_if_not_adjacent || Adjacent(targetted_mob))
-					time_to_expire = delay_for_melee
-					if (telegraph)
 
-						if (!(melee_delay == 0)) //are we still charging our attack?
-							melee_delay--
-							visible_message(SPAN_WARNING("[src] [melee_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"))
-							return
-						else
-							melee_delay = melee_delay_initial
-
-						if (time_to_expire > 0)
-							visible_message(SPAN_WARNING("[src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
-					addtimer(CALLBACK(src, proctocall), time_to_expire) //awful hack because melee attacks are handled differently
+				time_to_expire = delay_for_melee
+				charge_telegraph = melee_charge_telegraph
+				attack_telegraph = melee_telegraph
+				delay_to_use = melee_delay
 
 			if (RANGED_TYPE || RANGED_RAPID_TYPE)
 				time_to_expire = delay_for_range
-				if (telegraph) //no telegraph needed if the attack is instant
+				charge_telegraph = range_charge_telegraph
+				attack_telegraph = range_telegraph
+				delay_to_use = fire_delay
 
-					if (!(fire_delay == 0)) //are we still charging our attack?
-						fire_delay--
-						visible_message(SPAN_WARNING("[src] [range_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"))
-						return
-					else
-						fire_delay = fire_delay_initial
+			addtimer(CALLBACK(src, proctocall, arguments), time_to_expire)
+			if (cast_beam)
+				Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(get_dist(src, targetted_mob) + 10), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
+			if (telegraph)
 
-					if (time_to_expire > 0)
-						visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
-					if (cast_beam)
-						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(get_dist(src, targetted_mob) + 10), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
-				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
 
 /// Called in findTarget() if the found target is not the same as the one we already have.
 /mob/living/carbon/superior_animal/proc/doTargetMessage()
@@ -487,23 +480,22 @@
 	UnregisterSignal(trace, COMSIG_TRACE_IMPACT)
 
 	if (stat == DEAD)
-		return
+		return FALSE
 
 	var/targetted_mob = (target_mob?.resolve())
 
-	if (impact_atom != targetted_mob)
+	var/datum/penetration_holder/holder = null
+	if (impact_atom)
+		if (impact_atom == targetted_mob)
+			return FALSE
+		else if (trace.penetration_holder)
+			holder = trace.penetration_holder
+			if (holder.store_penetration)
+				if (holder.force_penetration)
+					if (holder.force_penetration_on && (impact_atom in holder.force_penetration_on))
+						return FALSE
+
 		advance_towards(targetted_mob)
-
-/mob/living/carbon/superior_animal/proc/handle_trace_penetration(var/obj/item/projectile/trace, var/penetration_times, var/trace_penetrated)
-	SIGNAL_HANDLER
-
-	UnregisterSignal(trace, COMSIG_TRACE_DELETION)
-
-	if (penetration_times)
-		trace_penetrated = TRUE
-		times_to_penetrate = penetration_times
-		if (trace_penetrated)
-			penetrated = trace_penetrated
 
 /mob/living/carbon/superior_animal/proc/advance_towards(atom/target)
 

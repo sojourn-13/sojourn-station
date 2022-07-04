@@ -63,7 +63,7 @@
 		else
 			return
 
-/mob/living/carbon/superior_animal/proc/OpenFire(var/atom/firing_target)
+/mob/living/carbon/superior_animal/proc/OpenFire(var/atom/firing_target, var/datum/penetration_holder/holder)
 	if(!check_if_alive())
 		return
 	if(weakened)
@@ -73,10 +73,10 @@
 
 	if(rapid)
 		for(var/shotsfired = 0, shotsfired < rapid_fire_shooting_amount, shotsfired++)
-			addtimer(CALLBACK(src, .proc/Shoot, target, loc, src), (delay_for_rapid_range * shotsfired))
+			addtimer(CALLBACK(src, .proc/Shoot, target, loc, src, 0, holder), (delay_for_rapid_range * shotsfired))
 			handle_ammo_check()
 	else
-		Shoot(target, loc, src)
+		Shoot(target, loc, src, trace_holder = holder)
 		handle_ammo_check()
 
 	if (!firing_target)
@@ -110,7 +110,7 @@
 		ranged = FALSE
 		rapid = FALSE
 
-/mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0)
+/mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0, var/datum/penetration_holder/trace_holder)
 	if(weakened)
 		return
 	if(target == start)
@@ -127,15 +127,14 @@
 		return
 	var/def_zone = get_exposed_defense_zone(target)
 
-	if (trace_penetrated)
-		A.force_penetrate = TRUE
-		A.force_penetration = penetrated
-		A.max_penetration_times = times_to_penetrate
+	if (trace_holder)
+		if (trace_holder.force_penetration)
+			if (trace_holder.penetration_store_time <= (world.time + (delay_for_range + 1)))
+				var/datum/penetration_holder/new_holder = A.penetration_holder
+				new_holder.force_penetration = TRUE
+				new_holder.force_penetration_on = trace_holder.force_penetration
 
-		trace_penetrated = FALSE
-
-		penetrated.Cut()
-		times_to_penetrate = 0
+		QDEL_NULL(trace_holder)
 
 	A.launch(target, def_zone)
 
