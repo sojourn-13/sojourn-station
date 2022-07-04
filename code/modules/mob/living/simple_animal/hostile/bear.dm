@@ -49,6 +49,7 @@
 						H.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 						H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 						H.added_movedelay -= 0.5
+						addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, 0.5), 60)
 						to_chat(H, SPAN_WARNING("The bears rawrs make the feeling of fight or flight all the more apparent."))
 					else
 						to_chat(H, SPAN_NOTICE("The natural insticts of fear become apparent, but you ingore such things."))
@@ -56,6 +57,7 @@
 						H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 						H.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 						H.added_movedelay -= 0.5
+						addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, 0.5), 60)
 
 		anchored = TRUE
 		addtimer(CALLBACK(src, .proc/unanchor), 10)

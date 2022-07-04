@@ -135,3 +135,7 @@
 /mob/living/carbon/human/proc/calc_momentum()
 	momentum_speed--
 	update_momentum()
+
+
+/mob/living/carbon/human/proc/clear_movement_delay(movement_clearing = 0)
+	added_movedelay -= movement_clearing
