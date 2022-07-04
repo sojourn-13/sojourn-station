@@ -401,10 +401,11 @@
 
 
 /obj/structure/bed/chair/janicart/bullet_act(var/obj/item/projectile/Proj)
-	if(buckled_mob)
-		if(prob(85))
-			return buckled_mob.bullet_act(Proj)
-	visible_message(SPAN_WARNING("[Proj] ricochets off the [callme]!"))
+	if (!(Proj.testing))
+		if(buckled_mob)
+			if(prob(85))
+				return buckled_mob.bullet_act(Proj)
+		visible_message(SPAN_WARNING("[Proj] ricochets off the [callme]!"))
 
 
 /obj/item/key

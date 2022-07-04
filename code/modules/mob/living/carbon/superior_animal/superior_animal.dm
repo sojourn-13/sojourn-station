@@ -286,21 +286,8 @@
 			return
 
 		else if (projectiletype) // if we can see, let's prepare to see if we can hit
-			if (istype(projectiletype, /obj/item/projectile))
-				if (projectiletype == initial(projectiletype)) // typepaths' vars are only accessable through initial() or objects
-					projectile_passflags = initial(projectiletype.pass_flags)
-					projectile_flags = initial(projectiletype.flags)
-				else // in case for some reason this var was editted post-compile
-					var/obj/item/projectile/temp_proj = new projectiletype(null) //create it in nullspace
-					projectile_passflags = temp_proj.pass_flags
-					projectile_flags = temp_proj.flags
-					QDEL_NULL(temp_proj)
 			if (ranged)
-				var/obj/item/projectile/test/impacttest/trace = new /obj/item/projectile/test/impacttest(get_turf(src))
-				RegisterSignal(trace, COMSIG_TRACE_IMPACT, .proc/handle_trace_impact)
-				trace.pass_flags = projectile_passflags
-				trace.flags = projectile_flags
-				trace.launch(targetted_mob)
+				check_trajectory_raytrace(targetted_mob, src, projectiletype, .proc/handle_trace_impact)
 
 	lost_sight = FALSE // we can see our target now
 	patience = patience_initial

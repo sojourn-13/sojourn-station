@@ -46,9 +46,10 @@
 
 /obj/machinery/door/unpowered/simple/bullet_act(var/obj/item/projectile/Proj)
 	var/damage = Proj.get_structure_damage()
-	if(damage)
-		//cap projectile damage so that there's still a minimum number of hits required to break the door
-		take_damage(min(damage, 100))
+	if (!(Proj.testing))
+		if(damage)
+			//cap projectile damage so that there's still a minimum number of hits required to break the door
+			take_damage(min(damage, 100))
 
 /obj/machinery/door/unpowered/simple/update_icon()
 	if(density)

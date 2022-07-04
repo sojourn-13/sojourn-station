@@ -186,11 +186,13 @@ GLOBAL_LIST_INIT(champroj_whitelist, list())
 		to_chat(M, SPAN_WARNING("Your chameleon-projector deactivates."))
 	master.disrupt()
 
-/obj/effect/dummy/chameleon/bullet_act()
-	for(var/mob/M in src)
-		to_chat(M, SPAN_WARNING("Your chameleon-projector deactivates."))
+/obj/effect/dummy/chameleon/bullet_act(var/obj/item/projectile/Proj)
+	if (!(Proj.testing))
+		for(var/mob/M in src)
+			to_chat(M, SPAN_WARNING("Your chameleon-projector deactivates."))
 	..()
-	master.disrupt()
+	if (!(Proj.testing))
+		master.disrupt()
 
 /obj/effect/dummy/chameleon/relaymove(var/mob/user, direction)
 	if(istype(loc, /turf/space)) return //No magical space movement!

@@ -53,12 +53,12 @@
 
 /mob/living/carbon/superior_animal/bullet_act(obj/item/projectile/P, def_zone)
 	. = ..()
+	if (!(P.testing))
+		if(stance == HOSTILE_STANCE_ATTACK)
+			if(destroy_surroundings)
+				destroySurroundings()
 
-	if(stance == HOSTILE_STANCE_ATTACK)
-		if(destroy_surroundings)
-			destroySurroundings()
-
-	updatehealth()
+		updatehealth()
 
 /mob/living/carbon/superior_animal/attackby(obj/item/I, mob/living/user, params)
 	activate_ai() //If were attacked by something and havent woken up yet. Were awake now >:T

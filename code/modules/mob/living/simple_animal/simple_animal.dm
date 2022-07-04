@@ -417,7 +417,8 @@
 			if(is_type_in_list(src, Proj.supereffective_types, TRUE))
 				dmult += Proj.supereffective_mult
 		damage *= dmult
-		damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj), post_pen_mult = Proj.post_penetration_dammult)
+		if (!(Proj.testing))
+			damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj), post_pen_mult = Proj.post_penetration_dammult)
 	return FALSE
 
 /mob/living/simple_animal/rejuvenate()

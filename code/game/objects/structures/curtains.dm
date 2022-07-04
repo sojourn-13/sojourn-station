@@ -13,7 +13,7 @@
 	opacity = 0
 
 /obj/structure/curtain/bullet_act(obj/item/projectile/P, def_zone)
-	if(!P.nodamage)
+	if(!P.nodamage && (!(P.testing)))
 		visible_message(SPAN_WARNING("[P] tears [src] down!"))
 		qdel(src)
 	else

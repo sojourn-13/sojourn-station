@@ -59,13 +59,15 @@
 			return !density
 
 /obj/structure/grille/bullet_act(var/obj/item/projectile/Proj)
-	if(!Proj)	return
+	if(!Proj)
+		return
 
 	//Flimsy grilles aren't so great at stopping projectiles. However they can absorb some of the impact
 	var/damage = Proj.get_structure_damage()
 	var/passthrough = 0
 
-	if(!damage) return
+	if(!damage)
+		return
 
 	//20% chance that the grille provides a bit more cover than usual. Support structure for example might take up 20% of the grille's area.
 	//If they click on the grille itself then we assume they are aiming at the grille itself and the extra cover behaviour is always used.
@@ -89,8 +91,9 @@
 		. = PROJECTILE_CONTINUE
 		damage = between(0, (damage - Proj.get_structure_damage())*(Proj.damage_types[BRUTE] ? 0.4 : 1), 10) //if the bullet passes through then the grille avoids most of the damage
 
-	src.health -= damage*0.2
-	spawn(0) healthCheck() //spawn to make sure we return properly if the grille is deleted
+	if (!(Proj.testing))
+		src.health -= damage*0.2
+		spawn(0) healthCheck() //spawn to make sure we return properly if the grille is deleted
 
 /obj/structure/grille/attackby(obj/item/I, mob/user)
 	if(user.a_intent == I_HELP && istype(I, /obj/item/gun))
