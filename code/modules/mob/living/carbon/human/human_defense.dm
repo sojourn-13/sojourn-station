@@ -24,6 +24,9 @@ meteor_act
 			else
 				P.on_hit(src, def_zone)
 				return 2
+	else
+		P.on_hit(src, def_zone)
+		return 2
 
 	//Checking absorb for spawning shrapnel
 	if (!(P.testing))
