@@ -248,6 +248,7 @@
 		// This block controls random retargetting
 		if (!lost_sight)
 			target_location = WEAKREF(targetted_mob.loc) //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
+		target_location_resolved = (target_location?.resolve())
 		if (retarget)
 			var/retarget_prioritize = retarget_prioritize_current //local var so that we can make temporary changes
 			if (retarget_timer <= 0)
