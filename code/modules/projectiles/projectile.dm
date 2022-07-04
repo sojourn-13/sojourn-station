@@ -1,9 +1,18 @@
+/**
+ * Holds variables important to the functioning of trace projectiles. If a trace projectile penetrates anything, it will be added to the force_penetration_on list.
+ * If penetration_store_time is more than world.time, and this datum is passed as an argument to Shoot(), the fired projectile will always penetrate anything in that list.
+ * This datum will then be qdeleted.
+**/
 /datum/penetration_holder
 
+	/// Can the projectile force a penetration on anything?
 	var/force_penetration = FALSE
+	/// List of things that this projectile has/will always penetrate.
 	var/list/force_penetration_on = list()
 
+	/// For mobs, incremented by their fire delay plus one.
 	var/penetration_store_time = 0
+	/// Will this holder actually share it's penetration data with anything?
 	var/store_penetration = FALSE
 
 /*
@@ -29,6 +38,7 @@
 
 	var/datum/penetration_holder/penetration_holder
 
+	/// If true, all damage, messages, visuals, sounds, effects, etc. will not occur. used for trace testing. IT IS REALLY!! GODDAMN IMPORTANT!! THAT YOU MAKE SURE YOU MAKE YOUR EFFECTS NOT HAPPEN IF THIS IS TRUE!!!
 	var/testing = FALSE
 
 
@@ -1093,6 +1103,19 @@
 			if(istype(M))
 				return 1
 
+/**
+ * Fires a projectile that uses the exact same targetting, trajectory, penetration, etc. logic it normally would, but invisible, and without any of the other effects,
+ * such as damage, visuals, sound, messages, etc. Registers firer to a signal on trace. All done in one tick, due to it being hitscan.
+ *
+ * Used for checking if the given projectile will hit the target.
+ *
+ * Args:
+ * atom/movable/target: The target we are firing at.
+ * atom/movable/firer: The source of the bullet, will be set as trace.firer.
+ * proj: The typepath of the projectile to simulate.
+ * proc_path: The proc that will be called when the signal is fired.
+ * store_penetration: Will the simulated projectile share it's penetration data?
+**/
 /proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj, var/proc_path = null, store_penetration = FALSE)
 	if (proc_path)
 		var/obj/item/projectile/trace = new proj(get_turf(firer))

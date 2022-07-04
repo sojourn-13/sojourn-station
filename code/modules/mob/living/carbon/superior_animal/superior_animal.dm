@@ -447,7 +447,9 @@
 	return FALSE
 
 /**
- *  Handles telegraphing attacks, and attack delays.
+ *  Handles telegraphing attacks, and attack delays. It does not handle the attacks themselves.
+ *
+ *	Returns a boolean, FALSE meaning the proc has come to the conclusion that the mob should not fire this tick.
  *
  *	Args:
  *	attack_type-The delay that will be used for this timer. Defines used by this defined in mobs.dm. Example: MELEE_TYPE.
@@ -501,11 +503,15 @@
 
 /**
  * Signal handler for COMSIG_TRACE_IMPACT signal.
- * Apon impact of the trace projectile, it will fire this signal, which will decide if the entity it impacted is our target. If no, we then
- * advance advancement turfs forward towards our target.
+ * Apon impact of the trace projectile, or deletion, it will fire this signal, which will decide if the entity it impacted is our target.
+ * If no, then we advance advancement turfs forward towards our target.
+ *
+ * If trace.penetration_holder.store_penetration is true, we will search it's list of penetrated object for our impact atom, using the same logic as before.
+ *
+ * If there is no impact atom, it will assume it was deleted, and only pass penetration data.
  *
  * Args:
- * trace: obj/item/projectile/test/impacttest. The trace we are registered to.
+ * obj/item/projectile/trace: The trace we are registered to.
  * atom/impact_atom: The atom the trace impacted.
 **/
 /mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/trace, var/atom/impact_atom)
