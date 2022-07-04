@@ -316,6 +316,8 @@
 			chaose_number = RANDOM_RGB
 			luminosity_color = chaose_number
 
+	..()
+
 /obj/item/projectile/bullet/flare/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if (!testing)

@@ -31,6 +31,8 @@
 /obj/item/projectile/bullet/spear/toxic/New()
 	 toxin_coated = pick("amatoxin","pararein","toxin","fuel") //they get fuel form random containers
 
+	 return ..()
+
 /obj/item/projectile/bullet/spear/toxic/on_hit(atom/target, def_zone = null)
 	if (!testing)
 		if(isliving(target))

@@ -128,13 +128,16 @@
 	var/def_zone = get_exposed_defense_zone(target)
 
 	if (trace_holder)
-		if (trace_holder.force_penetration)
-			if (trace_holder.penetration_store_time <= (world.time + (delay_for_range + 1)))
-				var/datum/penetration_holder/new_holder = A.penetration_holder
-				new_holder.force_penetration = TRUE
-				new_holder.force_penetration_on = trace_holder.force_penetration
+		if (!QDELETED(trace_holder))
+			if (trace_holder.force_penetration)
+				if (trace_holder.penetration_store_time <= (world.time + (delay_for_range + 1)))
+					var/datum/penetration_holder/new_holder = A.penetration_holder
+					new_holder.force_penetration = TRUE
+					new_holder.force_penetration_on = trace_holder.force_penetration
 
-		QDEL_NULL(trace_holder)
+			qdel(trace_holder)
+
+	trace_holder = null
 
 	A.launch(target, def_zone)
 

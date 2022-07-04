@@ -300,20 +300,16 @@
 		if (stat == DEAD)
 			return
 		if(get_dist(src, targetted_mob) <= comfy_range)
-			var/time_to_expire = prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted_mob)
-			if (isnull(time_to_expire))
-				return
-			addtimer(.proc/OpenFire, time_to_expire, targetted_mob, trace_holder)
+			if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted_mob))
+				addtimer(CALLBACK(src, .proc/OpenFire, targetted_mob, trace_holder), delay_for_range)
 			if (advancement_timer <= world.time) //we dont want to prematurely end a advancing walk
 				alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay) //we still want to reset our walk
 		else
 			if (advancement_timer <= world.time)
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 				alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay)
-			var/time_to_expire = prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted_mob)
-			if (isnull(time_to_expire))
-				return
-			addtimer(CALLBACK(.proc/OpenFire, time_to_expire, targetted_mob, trace_holder))
+				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted_mob))
+					addtimer(CALLBACK(src, .proc/OpenFire, targetted_mob, trace_holder), delay_for_range)
 
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
 /atom/proc/check_if_alive(var/critcheck = FALSE) //A simple yes no if were alive
@@ -429,15 +425,13 @@
 	return FALSE
 
 /**
- *  To be used when, instead of raw attack procs, you want to add a timer.
- *  Will telegraph this attack to any within range, visually, with a message and a beam effect.
+ *  Handles telegraphing attacks, and attack delays.
  *
  *	Args:
- *	atom/targetted_mob-Atom this timer will be targetted to, and the target of the telegraphs.
- *	proctocall: The proc the timer will call.
  *	attack_type-The delay that will be used for this timer. Defines used by this defined in mobs.dm. Example: MELEE_TYPE.
  *	telegraph-Boolean. If false, no visual emote will be made.
  *	cast_beam-Boolean. If true, a beam will be cast from src to targetted_mob as a visual telegraph.
+ *	atom/movable/targetted-The target of the telegraphs.
 **/
 /mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(attack_type, telegraph = TRUE, cast_beam = TRUE, var/atom/movable/targetted)
 	if (check_if_alive()) //sanity
@@ -447,21 +441,19 @@
 			if (MELEE_TYPE)
 
 				time_to_expire = delay_for_melee
-				. = time_to_expire
 				attack_telegraph = melee_telegraph
 
 				if (melee_delay <= 0)
 					melee_delay = melee_delay_initial
 				else
-					fire_delay--
+					melee_delay--
 					if (telegraph)
 						visible_message(SPAN_WARNING("\the [src] [melee_charge_telegraph] \the <font color = 'orange'>[targetted]</font>!"))
-					return
+					return FALSE
 
 			if (RANGED_TYPE, RANGED_RAPID_TYPE)
 
 				time_to_expire = delay_for_range
-				. = time_to_expire
 				attack_telegraph = range_telegraph
 
 				if (fire_delay <= 0)
@@ -470,16 +462,16 @@
 					fire_delay--
 					if (telegraph)
 						visible_message(SPAN_WARNING("\the [src] [range_charge_telegraph] \the <font color = 'orange'>[targetted]</font>!"))
-					return
+					return FALSE
 
 		if (cast_beam)
 			Beam(targetted, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(get_dist(src, targetted) + 10), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 		if (telegraph)
-			visible_message(SPAN_WARNING("\the [src] [attack_telegraph] \the <font color = 'orange'>[targetted]</font>!"))
+			visible_message(SPAN_WARNING("\the [src] [attack_telegraph] \the <font color = 'blue'>[targetted]</font>!"))
 
-		return
+		return TRUE
 	else
-		return null
+		return FALSE
 
 
 /// Called in findTarget() if the found target is not the same as the one we already have.
