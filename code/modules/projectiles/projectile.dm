@@ -19,6 +19,12 @@
 	mouse_opacity = 0
 	embed_mult = 1
 
+	var/force_penetrate = FALSE
+	var/max_penetration_times = 0
+	var/penetration_times = 0
+	var/list/penetrated = list()
+	var/list/force_penetration = list()
+
 	var/testing = FALSE
 
 	var/bumped = FALSE		//Prevents it from hitting more than one guy at once
@@ -108,6 +114,11 @@
 
 	QDEL_NULL(attached_effect)
 
+	if (testing && penetration_times)
+		SEND_SIGNAL(src, COMSIG_PARENT_QDELETING, src, penetration_times, penetrated) //todo: come back to this, niko
+
+	firer = null
+
 	. = ..()
 
 /obj/item/projectile/is_hot()
@@ -163,19 +174,15 @@
 	return TRUE
 
 // generate impact effect
-/obj/item/projectile/proc/on_impact(atom/A, override = FALSE)
+/obj/item/projectile/proc/on_impact(atom/A)
 	if (!testing)
-		if (!override)
-			impact_effect(effect_transform)
-			if(luminosity_ttl && attached_effect)
-				spawn(luminosity_ttl)
-				qdel(attached_effect)
+		impact_effect(effect_transform)
+		if(luminosity_ttl && attached_effect)
+			spawn(luminosity_ttl)
+			qdel(attached_effect)
 
-			if(!ismob(A))
-				playsound(src, hitsound_wall, 50, 1, -2)
-
-	else if (testing)
-		SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, A)
+		if(!ismob(A))
+			playsound(src, hitsound_wall, 50, 1, -2)
 	return
 
 /obj/item/projectile/multiply_pierce_penetration(newmult)
@@ -216,6 +223,8 @@
 	if(targloc == curloc) //Shooting something in the same turf
 		target.bullet_act(src, target_zone)
 		on_impact(target)
+		if (testing)
+			SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, target)
 		qdel(src)
 		return FALSE
 
@@ -741,6 +750,8 @@
 	if(passthrough)
 		//move ourselves onto A so we can continue on our way
 		if (!tempLoc)
+			if (testing)
+				SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, A)
 			qdel(src)
 			return TRUE
 
@@ -756,7 +767,8 @@
 	density = FALSE
 	invisibility = 101
 
-
+	if (testing)
+		SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, A)
 	qdel(src)
 	return TRUE
 
@@ -772,11 +784,15 @@
 	spawn while(src && src.loc)
 		if(kill_count-- < 1)
 			on_impact(src.loc) //for any final impact behaviours
+			if (testing)
+				firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
 			qdel(src)
 			return
 		if((!( current ) || loc == current))
 			current = locate(min(max(x + xo, 1), world.maxx), min(max(y + yo, 1), world.maxy), z)
 		if((x == 1 || x == world.maxx || y == 1 || y == world.maxy))
+			if (testing)
+				firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
 			qdel(src)
 			return
 
@@ -811,6 +827,8 @@
 		location = trajectory.return_location(location)		// update the locally stored location data
 
 		if(!location)
+			if (testing)
+				firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
 			qdel(src)	// if it's left the world... kill it
 			return
 
@@ -858,6 +876,8 @@
 	transform = turn(transform, -(trajectory.return_angle() + 90)) //no idea why 90 needs to be added, but it works
 
 /obj/item/projectile/proc/muzzle_effect(var/matrix/T)
+	if (testing)
+		return
 	//This can happen when firing inside a wall, safety check
 	if (!location)
 		return
@@ -935,6 +955,8 @@
 	xo = null
 	var/result = 0 //To pass the message back to the gun.
 
+	testing = TRUE
+
 /obj/item/projectile/test/Bump(atom/A as mob|obj|turf|area, forced)
 	if(A == firer)
 		loc = A.loc
@@ -979,11 +1001,19 @@
 			if(istype(M))
 				return 1
 
-/proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj, var/proc_path = null)
+/proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj, var/proc_path = null, var/proc_path_two = null)
 	if (proc_path)
 		var/obj/item/projectile/trace = new proj(get_turf(firer))
+		trace.testing = TRUE
+		trace.invisibility = INFINITY //nobody can see it
+		trace.yo = 0
+		trace.xo = 0 //just taken from the test proj maybe investigate why it does this later
+		trace.hitscan = TRUE
+
+		trace.firer = firer
 
 		firer.RegisterSignal(trace, COMSIG_TRACE_IMPACT, proc_path)
+		firer.RegisterSignal(trace, COMSIG_PARENT_QDELETING, proc_path_two)
 
 		trace.launch(target)
 

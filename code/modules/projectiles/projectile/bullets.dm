@@ -26,7 +26,8 @@ Bullet also tend to have more armor against them do to this and can be douged un
 /obj/item/projectile/bullet/on_hit(atom/target)
 	if (..(target))
 		var/mob/living/L = target
-		shake_camera(L, 1, 1, 0.5)
+		if (!testing)
+			shake_camera(L, 1, 1, 0.5)
 
 /obj/item/projectile/bullet/attack_mob(var/mob/living/target_mob, distance, miss_modifier)
 	if(penetrating > 0 && damage_types[BRUTE] > 20 && prob(damage_types[BRUTE]))
@@ -41,22 +42,28 @@ Bullet also tend to have more armor against them do to this and can be douged un
 
 /obj/item/projectile/bullet/can_embed()
 	//prevent embedding if the projectile is passing through the mob
-	if(mob_passthrough_check)
+	if(mob_passthrough_check || testing)
 		return FALSE
 	return ..()
 
 /obj/item/projectile/bullet/check_penetrate(var/atom/A)
-	if(!A || !A.density) return 1 //if whatever it was got destroyed when we hit it, then I guess we can just keep going
+	if(!A || !A.density)
+		return 1 //if whatever it was got destroyed when we hit it, then I guess we can just keep going
 
 	if(istype(A, /obj/mecha))
 		return 1 //mecha have their own penetration handling
 	var/damage = damage_types[BRUTE]
 	if(ismob(A))
-		if(!mob_passthrough_check)
-			return 0
-		if(iscarbon(A))
-			damage *= 0.7
-		return 1
+		if(mob_passthrough_check || ((force_penetrate) && (penetration_times <= max_penetration_times) && (A in force_penetration)))
+			if(iscarbon(A))
+				damage *= 0.7
+			penetration_times++
+			if (testing)
+				penetrated += A
+			penetration_times++
+			return TRUE
+		else
+			return FALSE
 
 	var/chance = 0
 	if(istype(A, /turf/simulated/wall))
@@ -71,13 +78,17 @@ Bullet also tend to have more armor against them do to this and can be douged un
 	else if(istype(A, /obj/machinery) || istype(A, /obj/structure))
 		chance = damage
 
-	if(prob(chance))
+	if(prob(chance) || ((force_penetrate) && (penetration_times <= max_penetration_times) && (A in force_penetration)))
 		if(A.opacity)
 			//display a message so that people on the other side aren't so confused
 			A.visible_message(SPAN_WARNING("\The [src] pierces through \the [A]!"))
-		return 1
+		penetration_times++
+		if (testing)
+			penetrated += A
+		penetration_times++
+		return TRUE
 
-	return 0
+	return FALSE
 
 //For projectiles that actually represent clouds of projectiles
 /obj/item/projectile/bullet/pellet

@@ -32,8 +32,9 @@
 	 toxin_coated = pick("amatoxin","pararein","toxin","fuel") //they get fuel form random containers
 
 /obj/item/projectile/bullet/spear/toxic/on_hit(atom/target, def_zone = null)
-	if(isliving(target))
-		var/mob/living/L = target
-		if(istype(L) && L.reagents)
-			L.reagents.add_reagent(toxin_coated, 1) //Really really bad so low amouts
-			to_chat(target, "<span class='info'>The tip of the spear was coated in something!</span>")
+	if (!testing)
+		if(isliving(target))
+			var/mob/living/L = target
+			if(istype(L) && L.reagents)
+				L.reagents.add_reagent(toxin_coated, 1) //Really really bad so low amouts
+				to_chat(target, "<span class='info'>The tip of the spear was coated in something!</span>")

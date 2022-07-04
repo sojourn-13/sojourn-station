@@ -160,7 +160,7 @@
 		return TRUE
 	else if(istype(mover, /obj/item/projectile))
 		var/obj/item/projectile/P = mover
-		if(istype(P, /obj/item/projectile/test)) // Turrets need to try to kill the shield and so their test bullet needs to penetrate.
+		if(istype(P, /obj/item/projectile/test) || P.testing) // Turrets need to try to kill the shield and so their test bullet needs to penetrate.
 			return TRUE
 
 		var/bad_arc = reverse_direction(dir) // Arc of directions from which we cannot block.

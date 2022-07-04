@@ -21,22 +21,24 @@
 	var/light_duration = 5
 
 /obj/item/projectile/energy/flash/on_impact(var/atom/A)
-	var/turf/T = flash_range? src.loc : get_turf(A)
-	if(!istype(T)) return
+	if (!testing)
+		var/turf/T = flash_range? src.loc : get_turf(A)
+		if(!istype(T))
+			return
 
-	//blind adjacent people
-	for (var/mob/living/carbon/M in viewers(T, flash_range))
-		if(M.eyecheck() < FLASH_PROTECTION_MODERATE)
-			if (M.HUDtech.Find("flash"))
-				flick("e_flash", M.HUDtech["flash"])
+		//blind adjacent people
+		for (var/mob/living/carbon/M in viewers(T, flash_range))
+			if(M.eyecheck() < FLASH_PROTECTION_MODERATE)
+				if (M.HUDtech.Find("flash"))
+					flick("e_flash", M.HUDtech["flash"])
 
-	//snap pop
-	playsound(src, 'sound/effects/snap.ogg', 50, 1)
-	src.visible_message(SPAN_WARNING("\The [src] explodes in a bright flash!"))
+		//snap pop
+		playsound(src, 'sound/effects/snap.ogg', 50, 1)
+		src.visible_message(SPAN_WARNING("\The [src] explodes in a bright flash!"))
 
-	new /obj/effect/decal/cleanable/ash(src.loc) //always use src.loc so that ash doesn't end up inside windows
-	new /obj/effect/sparks(T)
-	new /obj/effect/effect/smoke/illumination(T, brightness=max(flash_range*2, brightness), lifetime=light_duration)
+		new /obj/effect/decal/cleanable/ash(src.loc) //always use src.loc so that ash doesn't end up inside windows
+		new /obj/effect/sparks(T)
+		new /obj/effect/effect/smoke/illumination(T, brightness=max(flash_range*2, brightness), lifetime=light_duration)
 
 //blinds people like the flash round, but can also be used for temporary illumination for 60~ mins
 /obj/item/projectile/energy/flash/flare

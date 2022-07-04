@@ -15,6 +15,12 @@
 
 	var/eating_time = 900
 
+	var/trace_penetrated = FALSE
+
+	var/list/penetrated = list()
+
+	var/times_to_penetrate = 0
+
 	/// Do we randomly retarget?
 	var/retarget = TRUE
 	/// How many ticks we will wait before trying to retarget randomly. When it hits 0, we retarget and reset the timer to retarget_timer_initial.

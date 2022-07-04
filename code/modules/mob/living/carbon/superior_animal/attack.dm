@@ -123,8 +123,20 @@
 	if(casingtype)
 		new casingtype(get_turf(src))
 	playsound(user, projectilesound, 100, 1)
-	if(!A)	return
+	if(!A)
+		return
 	var/def_zone = get_exposed_defense_zone(target)
+
+	if (trace_penetrated)
+		A.force_penetrate = TRUE
+		A.force_penetration = penetrated
+		A.max_penetration_times = times_to_penetrate
+
+		trace_penetrated = FALSE
+
+		penetrated.Cut()
+		times_to_penetrate = 0
+
 	A.launch(target, def_zone)
 
 /mob/living/carbon/superior_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.

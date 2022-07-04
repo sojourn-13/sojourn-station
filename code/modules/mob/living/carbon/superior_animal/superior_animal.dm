@@ -287,7 +287,7 @@
 
 		else if (projectiletype) // if we can see, let's prepare to see if we can hit
 			if (ranged)
-				check_trajectory_raytrace(targetted_mob, src, projectiletype, .proc/handle_trace_impact)
+				check_trajectory_raytrace(targetted_mob, src, projectiletype, .proc/handle_trace_impact, .proc/)
 
 	lost_sight = FALSE // we can see our target now
 	patience = patience_initial
@@ -483,7 +483,7 @@
  * trace: obj/item/projectile/test/impacttest. The trace we are registered to.
  * atom/impact_atom: The atom the trace impacted.
 **/
-/mob/living/carbon/superior_animal/proc/handle_trace_impact(obj/item/projectile/test/impacttest/trace, atom/impact_atom)
+/mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/trace, var/atom/impact_atom)
 	SIGNAL_HANDLER
 
 	UnregisterSignal(trace, COMSIG_TRACE_IMPACT)
@@ -495,6 +495,16 @@
 
 	if (impact_atom != targetted_mob)
 		advance_towards(targetted_mob)
+
+/mob/living/carbon/superior_animal/proc/handle_trace_penetration(var/obj/item/projectile/trace, var/penetration_times, var/trace_penetrated)
+	SIGNAL_HANDLER
+
+	UnregisterSignal(trace, COMSIG_PARENT_QDELETING)
+
+	trace_penetrated = TRUE
+	times_to_penetrate = penetration_times
+	if (trace_penetrated)
+		penetrated = trace_penetrated
 
 /mob/living/carbon/superior_animal/proc/advance_towards(atom/target)
 
@@ -512,3 +522,4 @@
 	if(istype(mover, /obj/item/projectile))
 		return stat ? TRUE : FALSE
 	. = ..()
+
