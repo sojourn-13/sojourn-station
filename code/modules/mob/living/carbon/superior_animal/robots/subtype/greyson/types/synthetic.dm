@@ -12,7 +12,7 @@
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol
 	name = "Greyson Positronic FBP-SEC Mark I unit"
-	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has an old style energy pistol built into its arm."
+	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one has an old style energy pistol built into its arm."
 	icon_state = "nanotrasenranged"
 	ranged = 1
 
@@ -25,7 +25,7 @@
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg
 	name = "Greyson Positronic FBP-SEC Mark II unit"
-	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has a modified burst fire cog laser rifle built into its arm."
+	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one has a modified burst fire cog laser rifle built into its arm."
 	icon_state = "nanotrasenrangedsmg"
 	rapid = 1
 	ranged_cooldown = 3
@@ -33,13 +33,13 @@
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle
 	name = "Greyson Positronic FBP-SEC Mark III unit"
-	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has a modified heavy duty cog carbine built into its arm."
+	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one has a modified heavy duty cog carbine built into its arm."
 	icon_state = "nanotrasenrangedassault"
 	projectiletype = /obj/item/projectile/beam/midlaser
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy
 	name = "Greyson Positronic FBP-SEC Heavy unit"
-	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has an overclocked super cog laser rifle built in his arm."
+	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one has an overclocked super cog laser rifle built in its arm."
 	icon_state = "nanotrasen_ert"
 	projectiletype = /obj/item/projectile/beam
 	health = 200
