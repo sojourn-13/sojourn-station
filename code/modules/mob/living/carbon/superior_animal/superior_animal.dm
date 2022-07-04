@@ -436,12 +436,12 @@
 /mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(proctocall, attack_type, telegraph = TRUE, cast_beam = TRUE, ...)
 	if (check_if_alive()) //sanity
 		var/time_to_expire
+		var/list/arguments = list()
 		if (length(args) > 4)
-			var/list/arguments = args.Copy(5)
+			arguments = args.Copy(5)
 		var/charge_telegraph
 		var/attack_telegraph
 		var/delay_to_use // todo: make this change the original var
-		var/delay_initial_to_use
 		switch(attack_type)
 			if (MELEE_TYPE)
 
@@ -449,17 +449,20 @@
 				charge_telegraph = melee_charge_telegraph
 				attack_telegraph = melee_telegraph
 				delay_to_use = melee_delay
-				delay_initial_to_use = melee_delay_initial
 
 			if (RANGED_TYPE || RANGED_RAPID_TYPE)
 				time_to_expire = delay_for_range
 				charge_telegraph = range_charge_telegraph
 				attack_telegraph = range_telegraph
 				delay_to_use = fire_delay
-				delay_initial_to_use = fire_delay_initials
+
+		switch(delay_to_use)
+			if (fire_delay)
+				if (fire_delay )
 
 			if (!(delay_to_use))
-			addtimer(CALLBACK(src, proctocall, arguments), time_to_expire)
+				addtimer(CALLBACK(src, proctocall, arguments), time_to_expire)
+			else
 			if (cast_beam)
 				Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(get_dist(src, targetted_mob) + 10), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 			if (telegraph)
