@@ -301,6 +301,8 @@
 			return
 		if(get_dist(src, targetted_mob) <= comfy_range)
 			var/time_to_expire = prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted_mob)
+			if (isnull(time_to_expire))
+				return
 			addtimer(.proc/OpenFire, time_to_expire, targetted_mob, trace_holder)
 			if (advancement_timer <= world.time) //we dont want to prematurely end a advancing walk
 				alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay) //we still want to reset our walk
@@ -309,7 +311,9 @@
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 				alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay)
 			var/time_to_expire = prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted_mob)
-			addtimer(.proc/OpenFire, time_to_expire, targetted_mob, trace_holder)
+			if (isnull(time_to_expire))
+				return
+			addtimer(CALLBACK(.proc/OpenFire, time_to_expire, targetted_mob, trace_holder))
 
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
 /atom/proc/check_if_alive(var/critcheck = FALSE) //A simple yes no if were alive
@@ -472,6 +476,10 @@
 			Beam(targetted, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(get_dist(src, targetted) + 10), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 		if (telegraph)
 			visible_message(SPAN_WARNING("\the [src] [attack_telegraph] \the <font color = 'orange'>[targetted]</font>!"))
+
+		return
+	else
+		return null
 
 
 /// Called in findTarget() if the found target is not the same as the one we already have.
