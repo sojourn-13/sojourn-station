@@ -27,6 +27,38 @@
 
 	needs_environment = FALSE
 
+//More complicated verson of movement and targeting fire
+/mob/living/simple_animal/hostile/megafauna/MoveToTarget()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
+	stop_automated_movement = TRUE
+	if(!targetted_mob || SA_attackable(targetted_mob))
+		stance = HOSTILE_STANCE_IDLE
+	if(targetted_mob in ListTargets(10))
+		if(ranged)
+			var/mob/living/simple_animal/hostile/megafauna/megafauna = src
+			sleep(rand(megafauna.megafauna_min_cooldown,megafauna.megafauna_max_cooldown))
+			if(istype(src, /mob/living/simple_animal/hostile/megafauna/one_star))
+				if(prob(rand(15,25)))
+					stance = HOSTILE_STANCE_ATTACKING
+					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+					walk_to(src, targetted_mob, 1, move_to_delay)
+				else
+					OpenFire(targetted_mob)
+			else
+				if(prob(45))
+					stance = HOSTILE_STANCE_ATTACKING
+					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+					walk_to(src, targetted_mob, 1, move_to_delay)
+				else
+					OpenFire(targetted_mob)
+		else
+			stance = HOSTILE_STANCE_ATTACKING
+			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+			walk_to(src, targetted_mob, 1, move_to_delay)
+	return FALSE
+
+
 /mob/living/simple_animal/hostile/megafauna/Initialize(mapload)
 	. = ..()
 	for(var/action_type in attack_action_types)

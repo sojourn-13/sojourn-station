@@ -65,6 +65,9 @@
 	if(slowdown)
 		tally += 1
 
+	if(added_movedelay)
+		tally += added_movedelay
+
 	tally += (r_hand?.slowdown_hold + l_hand?.slowdown_hold)
 
 	return tally

@@ -26,11 +26,70 @@
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
 	faction = "russian"
 	inherent_mutations = list(MUTATION_EPILEPSY, MUTATION_THICK_FUR, MUTATION_IMBECILE, MUTATION_NERVOUSNESS)
+	var/horror_modifer = TRUE // For-admins to turn this off
+	var/rawr_cooldown = FALSE
 
 /mob/living/simple_animal/hostile/bear/FindTarget()
 	. = ..()
 	if(.)
 		playsound(src, 'sound/effects/creatures/bear.ogg', 100, 1, -3)
+
+/mob/living/simple_animal/hostile/bear/proc/rawr_xd()
+	if(.)
+		if(stat != DEAD)
+			visible_message(SPAN_DANGER("[src] stands up and rawrs!"))
+			playsound(src, 'sound/effects/creatures/bear.ogg', 100, 1, -3)
+			for(var/mob/living/carbon/human/H in range(5,src))
+				if(istype(H))
+					if(prob(100 - H.stats.getStat(STAT_VIG))) //Kinda a hard check-ish but cant stack
+						H.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+						H.stats.addTempStat(STAT_COG, -STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+						H.stats.addTempStat(STAT_BIO, -STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+						H.stats.addTempStat(STAT_MEC, -STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+						H.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+						H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+						H.added_movedelay -= 0.5
+						to_chat(H, SPAN_WARNING("The bears rawrs make the feeling of fight or flight all the more apparent."))
+					else
+						to_chat(H, SPAN_NOTICE("The natural insticts of fear become apparent, but you ingore such things."))
+						H.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+						H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+						H.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+						H.added_movedelay -= 0.5
+
+		anchored = TRUE
+		addtimer(CALLBACK(src, .proc/unanchor), 10)
+
+
+/mob/living/simple_animal/hostile/bear/proc/unanchor()
+	anchored = FALSE
+	addtimer(CALLBACK(src, .proc/rawr_xd_recharge), 120) //should be tolds of time for people to kill the bear
+
+/mob/living/simple_animal/hostile/bear/proc/rawr_xd_recharge()
+	rawr_cooldown = FALSE
+
+//Copy pasted for hostile.dm more complicated verson
+/mob/living/simple_animal/hostile/bear/MoveToTarget()
+	var/mob/living/targetted_mob = (target_mob?.resolve())
+
+	stop_automated_movement = TRUE
+	if(!targetted_mob || SA_attackable(targetted_mob))
+		stance = HOSTILE_STANCE_IDLE
+	if(targetted_mob in ListTargets(10) && !anchored)
+		if(ranged)
+			if(get_dist(src, targetted_mob) <= 6)
+				OpenFire(targetted_mob)
+			else
+				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+				walk_to(src, targetted_mob, 1, move_to_delay)
+		else
+			stance = HOSTILE_STANCE_ATTACKING
+			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+			walk_to(src, targetted_mob, 1, move_to_delay)
+	if(horror_modifer && !rawr_cooldown)
+		rawr_xd()
+		rawr_cooldown = TRUE
+	return FALSE
 
 /mob/living/simple_animal/hostile/bear/hudson
 	name = "Hudson"
