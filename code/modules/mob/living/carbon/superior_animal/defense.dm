@@ -268,6 +268,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(amount)
 	if (stat != DEAD)
 		target_mob = null
 		lost_sight = FALSE
+		target_location = null
 		stance = initial(stance)
 		stop_automated_movement = initial(stop_automated_movement)
 		following = null

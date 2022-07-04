@@ -122,9 +122,10 @@
 	visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"), 1)
 	if(casingtype)
 		new casingtype(get_turf(src))
-	playsound(user, projectilesound, 100, 1)
+	playsound(user, projectilesound, projectilevolume, 1)
 	if(!A)
 		return
+
 	var/def_zone = get_exposed_defense_zone(target)
 
 	if (trace_holder)

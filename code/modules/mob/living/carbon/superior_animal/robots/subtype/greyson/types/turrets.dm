@@ -38,7 +38,7 @@
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
 
-	reload_message = "ejects a magazome as it loudly reload with mechanical speed!"
+	reload_message = "ejects a magazine as it loudly reloads with mechanical speed!"
 	ranged = TRUE //will it shoot?
 	rapid = FALSE //will it shoot fast?
 	projectiletype = /obj/item/projectile/bullet/c10x24
@@ -56,12 +56,12 @@
 	range_telegraph = "'s servos begin to spool up, aiming at"
 
 /mob/living/carbon/superior_animal/robot/greyson/stalker/New()
-	..()
+	. = ..()
 	pixel_x = 0
 	pixel_y = 0
-	if(prob(1))
+	if(prob(1) && (!drop1))
 		drop1 = /obj/item/gun/projectile/automatic/scaffold
-	if(prob(30))
+	if(prob(30) && (!cell_drop))
 		cell_drop = /obj/item/cell/large
 
 /mob/living/carbon/superior_animal/robot/greyson/stalker/dual
@@ -78,6 +78,6 @@
 
 
 /mob/living/carbon/superior_animal/robot/greyson/stalker/dual/New()
-	..()
-	if(prob(1))
+	. = ..()
+	if(prob(1) && (!drop2))
 		drop2 = /obj/item/gun/projectile/automatic/scaffold
