@@ -236,8 +236,6 @@
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings)
 
 /mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE)
-	var/projectile_passflags = null
-	var/projectile_flags = null
 	var/calculated_walk = (comfy_range - comfy_distance)
 	var/can_see = TRUE
 	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
@@ -287,7 +285,7 @@
 
 		else if (projectiletype) // if we can see, let's prepare to see if we can hit
 			if (ranged)
-				check_trajectory_raytrace(targetted_mob, src, projectiletype, .proc/handle_trace_impact, .proc/)
+				check_trajectory_raytrace(targetted_mob, src, projectiletype, .proc/handle_trace_impact, .proc/handle_trace_penetration)
 
 	lost_sight = FALSE // we can see our target now
 	patience = patience_initial
@@ -467,7 +465,7 @@
 					if (time_to_expire > 0)
 						visible_message(SPAN_WARNING("[src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"))
 					if (cast_beam)
-						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
+						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(get_dist(src, targetted_mob) + 10), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
 				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
 
 /// Called in findTarget() if the found target is not the same as the one we already have.
@@ -499,12 +497,13 @@
 /mob/living/carbon/superior_animal/proc/handle_trace_penetration(var/obj/item/projectile/trace, var/penetration_times, var/trace_penetrated)
 	SIGNAL_HANDLER
 
-	UnregisterSignal(trace, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(trace, COMSIG_TRACE_DELETION)
 
-	trace_penetrated = TRUE
-	times_to_penetrate = penetration_times
-	if (trace_penetrated)
-		penetrated = trace_penetrated
+	if (penetration_times)
+		trace_penetrated = TRUE
+		times_to_penetrate = penetration_times
+		if (trace_penetrated)
+			penetrated = trace_penetrated
 
 /mob/living/carbon/superior_animal/proc/advance_towards(atom/target)
 

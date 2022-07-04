@@ -114,8 +114,8 @@
 
 	QDEL_NULL(attached_effect)
 
-	if (testing && penetration_times)
-		SEND_SIGNAL(src, COMSIG_PARENT_QDELETING, src, penetration_times, penetrated) //todo: come back to this, niko
+	if (testing)
+		SEND_SIGNAL(src, COMSIG_TRACE_DELETION, src, penetration_times, penetrated) //todo: come back to this, niko
 
 	firer = null
 
@@ -1013,7 +1013,7 @@
 		trace.firer = firer
 
 		firer.RegisterSignal(trace, COMSIG_TRACE_IMPACT, proc_path)
-		firer.RegisterSignal(trace, COMSIG_PARENT_QDELETING, proc_path_two)
+		firer.RegisterSignal(trace, COMSIG_TRACE_DELETION, proc_path_two)
 
 		trace.launch(target)
 

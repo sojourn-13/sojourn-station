@@ -77,6 +77,7 @@
 #define COMSIG_MOB_DEATH "mob_death"							//from mob/death()
 
 #define COMSIG_TRACE_IMPACT "trace_impact" //Soj edit
+#define COMSIG_TRACE_DELETION "trace_deletion" // Soj edit
 
 // /mob/living signals
 #define COMSIG_LIVING_STUN_EFFECT "stun_effect_act"			 //mob/living/proc/stun_effect_act()
