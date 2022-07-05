@@ -188,6 +188,7 @@
 
 		if(HOSTILE_STANCE_ATTACKING)
 			if (delayed == 0)
+				delayed = delayed_initial
 				handle_attacking_stance(targetted_mob)
 			else
 				delayed--
@@ -220,12 +221,13 @@
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 		alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay) //lets get a little closer than our optimal range
 
-		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
-			visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
-			delayed = delay_amount
-			return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
-		else
-			visible_message(SPAN_WARNING("[src] [rush_target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
+		if (delayed > 0)
+			if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
+				visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
+				delayed--
+				return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
+			else
+				visible_message(SPAN_WARNING("[src] [rush_target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
 
 	else if (!ranged)
 		stop_automated_movement = TRUE
@@ -240,6 +242,10 @@
 	var/projectile_flags = null
 	var/calculated_walk = (comfy_range - comfy_distance)
 	var/fire_through_lost_sight = FALSE
+	var/can_see = TRUE
+	var/ran_see_check = FALSE
+	var/mob/targetted_mob_real = null
+	var/obj/mecha/targetted_mecha = null
 	var/target_location_resolved = (target_location?.resolve())
 	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
 	if(destroy_surroundings && !already_destroying_surroundings)
@@ -247,12 +253,30 @@
 
 	if (!(isburrow(targetted_mob))) //we dont want mobs failing to use the burrows
 		// This block controls random retargetting
+
+		if (ismob(targetted_mob))
+			targetted_mob_real = targetted_mob
+
+		else if (ismecha(targetted_mob))
+			targetted_mecha = targetted_mob
+			if (targetted_mecha.occupant && ismob(targetted_mecha.occupant))
+				targetted_mob_real = targetted_mecha.occupant
+
+		if (!ran_see_check)
+			if (!see_through_walls)
+				if (targetted_mob_real && (targetted_mob_real.client))
+					if (!(targetted_mob in hearers(get_dist(src, targetted_mob), src)))
+						can_see = FALSE
+				else if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) //if we cant see them, hearers() wont show them, so lets remove the override
+					can_see = FALSE
+				ran_see_check = TRUE
+
 		if (!lost_sight)
 			target_location = WEAKREF(targetted_mob.loc) //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
 		if (retarget)
 			var/retarget_prioritize = retarget_prioritize_current //local var so that we can make temporary changes
 			if (retarget_timer <= 0)
-				if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) //if we cant see them, hearers() wont show them, so lets remove the override
+				if (!can_see)
 					retarget_prioritize = FALSE //removing override
 				var/target_mob_cache = target_mob
 				target_mob = WEAKREF(findTarget(retarget_prioritize))
@@ -266,7 +290,7 @@
 			else
 				retarget_timer--
 		// This block controls losing line of sight and targetting the last known location of the enemy
-		if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) //why attack if we can't even see the enemy
+		if (!can_see)
 			if (patience <= 0)
 				loseTarget()
 				patience = patience_initial

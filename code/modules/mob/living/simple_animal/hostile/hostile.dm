@@ -7,7 +7,6 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 /mob/living/simple_animal/hostile
 	faction = "hostile"
 	var/stance = HOSTILE_STANCE_IDLE	//Used to determine behavior
-	var/datum/weakref/target_mob
 
 	var/attack_same = FALSE
 

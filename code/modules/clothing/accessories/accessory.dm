@@ -588,7 +588,7 @@
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER // Made them children of longcoat so should inherit but juuust in case...
 
 /obj/item/clothing/accessory/bscloak/olive
-	name = "Blackshield tan longcoat"
+	name = "Blackshield drab longcoat"
 	desc = "A simple, durable drab longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
 	icon_state = "bs_longcoat_green"
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER

@@ -28,7 +28,7 @@
 	var/datum/species/species			//TODO: Fix this
 	var/datum/species_form/form
 
-	var/inserted_and_processing = TRUE //Organs are removed from the object subsystem when inserted inside of a person. 
+	var/inserted_and_processing = TRUE //Organs are removed from the object subsystem when inserted inside of a person.
 									   //This makes sure they can turn off processing while implanted in someone.
 
 	// Damage vars.
@@ -87,7 +87,7 @@
 		return
 	return ..()
 
-/obj/item/organ/proc/set_dna(var/datum/dna/new_dna)
+/obj/item/organ/proc/set_dna(datum/dna/new_dna)
 	if(new_dna)
 		dna = new_dna.Clone()
 		if(!blood_DNA)
@@ -175,10 +175,10 @@
 	//** Handle the effects of infections
 	var/antibiotics = owner.reagents.get_reagent_by_type(/datum/reagent/medicine/spaceacillin)
 
-	if (germ_level > 0 && germ_level < INFECTION_LEVEL_ONE/2 && prob(30))
+	if(germ_level > 0 && germ_level < INFECTION_LEVEL_ONE/2 && prob(30))
 		germ_level--
 
-	if (germ_level >= INFECTION_LEVEL_ONE/2)
+	if(germ_level >= INFECTION_LEVEL_ONE/2)
 		//aiming for germ level to go from ambient to INFECTION_LEVEL_TWO in an average of 15 minutes
 		if(antibiotics <= 1 && prob(round(germ_level/6))) //Make Spaceacillin autoinjectors not useless after using 1 unit out of 5 they have.
 			germ_level++
@@ -187,12 +187,12 @@
 		var/fever_temperature = (owner.species.heat_level_1 - owner.species.body_temperature - 5)* min(germ_level/INFECTION_LEVEL_TWO, 1) + owner.species.body_temperature
 		owner.bodytemperature += between(0, (fever_temperature - T20C)/BODYTEMP_COLD_DIVISOR + 1, fever_temperature - owner.bodytemperature)
 
-	if (germ_level >= INFECTION_LEVEL_TWO)
+	if(germ_level >= INFECTION_LEVEL_TWO)
 		//spread germs
-		if (antibiotics <= 5 && parent.germ_level < germ_level && ( parent.germ_level < INFECTION_LEVEL_ONE*2 || prob(30) ))
+		if(parent && antibiotics <= 5 && parent.germ_level < germ_level && ( parent.germ_level < INFECTION_LEVEL_ONE*2 || prob(30) ))
 			parent.germ_level++
 
-		if (prob(3))	//about once every 30 seconds
+		if(prob(3))	//about once every 30 seconds
 			take_damage(1,silent=prob(30))
 
 /obj/item/organ/proc/handle_rejection()
@@ -217,7 +217,7 @@
 						owner.reagents.add_reagent("toxin", rand(1,2))
 
 /obj/item/organ/proc/receive_chem(chemical as obj)
-	return 0
+	return FALSE
 
 /obj/item/organ/proc/rejuvenate()
 	damage = 0
@@ -248,7 +248,7 @@
 		germ_level -= 3 // Let's speed this up since it takes forever.
 
 //Adds autopsy data for used_weapon.
-/obj/item/organ/proc/add_autopsy_data(var/used_weapon, var/damage)
+/obj/item/organ/proc/add_autopsy_data(used_weapon, damage)
 	var/datum/autopsy_data/W = autopsy_data[used_weapon]
 	if(!W)
 		W = new()
@@ -260,11 +260,11 @@
 	W.time_inflicted = world.time
 
 //Note: external organs have their own version of this proc
-/obj/item/organ/proc/take_damage(amount, var/silent=0)
+/obj/item/organ/proc/take_damage(amount, silent=0)
 	if(BP_IS_ROBOTIC(src))
-		src.damage = between(0, src.damage + (amount * 0.8), max_damage)
+		damage = between(0, damage + (amount * 0.8), max_damage)
 	else
-		src.damage = between(0, src.damage + amount, max_damage)
+		damage = between(0, damage + amount, max_damage)
 
 		//only show this if the organ is not robotic
 		if(owner && parent && amount > 0 && !silent)
@@ -277,11 +277,11 @@
 	if(!BP_IS_ROBOTIC(src))
 		return
 	switch (severity)
-		if (1)
+		if(1)
 			take_damage(30) //Deals half the organs damage
-		if (2)
+		if(2)
 			take_damage(25)
-		if (3)
+		if(3)
 			take_damage(15)
 
 // Gets the limb this organ is located in, if any

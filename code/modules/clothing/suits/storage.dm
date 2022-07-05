@@ -1091,7 +1091,7 @@ obj/item/clothing/suit/sweater/blue
 /obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown
 	name = "blue cardigan coat"
 	desc = "A blue-brown cardigan coat. Has nice pockets and added shades of brown for contrast."
-	icon_state = "longcardigan_brown_m"
+	icon_state = "longcardigan_blue"
 	body_parts_covered = UPPER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown/verb/toggle_style()
@@ -1104,7 +1104,7 @@ obj/item/clothing/suit/sweater/blue
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["default"] = "longcardigan_brown_m"
+	options["default"] = "longcardigan_blue"
 	options["default open"] = "longcardigan_blue_open"
 	options["dark blue"] = "longcardigan_blue_alt"
 	options["dark brown open"] = "longcardigan_blue_alt_open"
