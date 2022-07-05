@@ -81,3 +81,94 @@
 	. = ..()
 	if(prob(1) && (!drop2))
 		drop2 = /obj/item/gun/projectile/automatic/scaffold
+
+/obj/item/stalker_fuel_rod
+	name = "plasma fuel rod"
+	desc = "A greyson-alloyed fuel rod, filled to the brim with plasma."
+
+	origin_tech = list(TECH_POWER = 6, TECH_PLASMA = 4, TECH_ENGINEERING = 4)
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASMA = 5, MATERIAL_PLASMAGLASS = 1, MATERIAL_DIAMOND = 2, MATERIAL_PLATINUM = 1)
+
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "fuel_rod"
+
+	preloaded_reagents = list("plasma" = 30)
+
+/obj/item/stalker_fuel_rod/depleted
+	name = "spent fuel rod"
+	desc = "A empty greyson-alloyed fuel rod, previously having contained some combustable substance. Presumably."
+
+	origin_tech = list(TECH_POWER = 3, TECH_PLASMA = 2, TECH_ENGINEERING = 2)
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASMAGLASS = 1, MATERIAL_DIAMOND = 2, MATERIAL_PLATINUM = 1)
+
+	icon_state = "fuel_rod_depleted"
+
+	preloaded_reagents = null
+
+// mini-boss enemy that demands attention or else they will nuke someone. VERY POWERFUL
+/mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon
+	name = "\"Iron Lock Security\" Assault Stalker Mk2"
+	desc = "A ruthless patrol borg that defends Greyson facilities. This one has a pair of massively oversized plasma cannons, and has been fitted with thick layers of ablative plating, as well as bomb shielding, although at the cost of it's mobility. This will destroy you."
+
+	range_charge_telegraph = "'s plasma cannons grow brighter, and it hums louder, preparing to fire at"
+	range_telegraph = "'s plasma cannons let out an eerie and TERRIFYING whine as it prepares to unleash it's devastating payload upon"
+	target_telegraph = "begins to hum, it's plasma cannons glowing with a dim, growing light, as it turns to"
+
+	telegraph_beam_color = COLOR_RED
+	color = COLOR_RED
+
+	rounds_left = 4 //low ammo
+	mag_type = /obj/item/stalker_fuel_rod/depleted
+	mags_left = 2
+
+	armor = list(melee = 35, bullet = 50, energy = 80, bomb = 100, bio = 100, rad = 100) //if people want to melee the stalker that explodes apon death, power to them
+
+	maxHealth = 550 //very tanky
+	health = 550
+
+	deathmessage = "violently explodes, its internal generator combusting in a brilliant blue-white flame!"
+	reload_message = "lets out a hiss as a fuel rod ejects from its carapace!"
+
+	projectiletype = /obj/item/projectile/hydrogen/cannon/max //devastating
+	fire_delay = 5 //5 ticks of charging to fire. very important since this will fucking instakill most people
+	fire_delay_initial = 5
+	rapid_fire_shooting_amount = 2
+
+	delay_for_range = 2 SECONDS
+	delay_for_rapid_range = 1 SECOND
+
+	retarget_timer = 15
+	retarget_timer_initial = 15
+	retarget_chance = 90
+
+	projectilesound = 'sound/weapons/blaster.ogg'
+	projectilevolume = 300
+
+	fire_through_walls = TRUE //this bad boy can BREAK cover
+
+	move_to_delay = 11 //slow as hell due to it's armor and weapons. also balance reasons.
+
+/mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon/New()
+	. = ..()
+
+	drop1 = null
+	drop2 = null
+
+	if (prob(30))
+		drop1 = /obj/item/stalker_fuel_rod
+
+	if (prob(45))
+		drop2 = /obj/item/stack/material/plasteel/random
+
+	if (cell_drop)
+		cell_drop = /obj/item/cell/large/greyson
+
+
+/mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon/ex_act(severity) // we dont want it to bomb itself
+	return FALSE
+
+/mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon/death()
+
+	explosion(src.loc, 0, 1, 2, 3)
+
+	. = ..()
