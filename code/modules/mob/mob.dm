@@ -25,6 +25,10 @@
 
 	movement_handlers.Cut()
 
+	if (spawned_from)
+		spawned_from.currently_spawned[type] -= src
+		spawned_from = null
+
 	return ..()
 
 /mob/get_fall_damage(var/turf/from, var/turf/dest)
