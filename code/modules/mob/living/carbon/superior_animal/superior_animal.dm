@@ -239,8 +239,6 @@
 	var/calculated_walk = (comfy_range - comfy_distance)
 	var/datum/penetration_holder/trace_holder = null
 	var/fire_through_lost_sight = FALSE
-	var/can_see = FALSE
-	var/ran_see_check = FALSE
 	var/target_location_resolved = (target_location?.resolve())
 	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
 	if(destroy_surroundings && !already_destroying_surroundings)
@@ -254,15 +252,7 @@
 		if (retarget)
 			var/retarget_prioritize = retarget_prioritize_current //local var so that we can make temporary changes
 			if (retarget_timer <= 0)
-				if (!see_through_walls)
-					if (targetted_mob.client)
-						if (targetted_mob in hearers(get_dist(src, targetted_mob), src))
-							can_see = FALSE
-							ran_see_check = TRUE
-						else if (!(can_see(src, targetted_mob, get_dist(src, targetted_mob)))) //if we cant see them, hearers() wont show them, so lets remove the override
-							can_see = FALSE
-							ran_see_check = TRUE
-				if (!can_see)
+				if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) //if we cant see them, hearers() wont show them, so lets remove the override
 					retarget_prioritize = FALSE //removing override
 				var/target_mob_cache = target_mob
 				target_mob = WEAKREF(findTarget(retarget_prioritize))
@@ -276,16 +266,7 @@
 			else
 				retarget_timer--
 		// This block controls losing line of sight and targetting the last known location of the enemy
-		if (!ran_see_check)
-			if (!see_through_walls)
-				if (targetted_mob.client)
-					if (targetted_mob in hearers(get_dist(src, targetted_mob), src))
-						can_see = FALSE
-						ran_see_check = TRUE
-				else if (!(can_see(src, targetted_mob, get_dist(src, targetted_mob)))) //why attack if we can't even see the enemy
-					can_see = FALSE
-					ran_see_check = TRUE
-		if (!can_see)
+		if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) //why attack if we can't even see the enemy
 			if (patience <= 0)
 				loseTarget()
 				patience = patience_initial
@@ -315,7 +296,7 @@
 				fire_through_lost_sight = TRUE
 
 		// This block only runs if the above can_see check is true, fires a trace projectile to see if we can hit our target
-		if (projectiletype && advance) // if we can see, let's prepare to see if we can hit
+		else if (projectiletype && advance) // if we can see, let's prepare to see if we can hit
 			if (ranged)
 				trace_holder = check_trajectory_raytrace(targetted_mob, src, projectiletype, .proc/handle_trace_impact, TRUE)
 
