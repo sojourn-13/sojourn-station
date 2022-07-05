@@ -5,6 +5,8 @@
 
 #define ismob(A) istype(A, /mob)
 
+#define ismecha(A) istype(A, /obj/mecha)
+
 #define isobserver(A) istype(A, /mob/observer)
 
 #define isghost(A) istype(A, /mob/observer/ghost)
