@@ -188,6 +188,7 @@
 
 		if(HOSTILE_STANCE_ATTACKING)
 			if (delayed == 0)
+				delayed = delayed_initial
 				handle_attacking_stance(targetted_mob)
 			else
 				delayed--
@@ -220,12 +221,13 @@
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 		alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay) //lets get a little closer than our optimal range
 
-		if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
-			visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
-			delayed = delay_amount
-			return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
-		else
-			visible_message(SPAN_WARNING("[src] [rush_target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
+		if (delayed > 0)
+			if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
+				visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
+				delayed--
+				return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
+			else
+				visible_message(SPAN_WARNING("[src] [rush_target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
 
 	else if (!ranged)
 		stop_automated_movement = TRUE
@@ -243,7 +245,7 @@
 	var/can_see = TRUE
 	var/ran_see_check = FALSE
 	var/mob/targetted_mob_real = null
-	var/obj/mecha/targetted_mecha
+	var/obj/mecha/targetted_mecha = null
 	var/target_location_resolved = (target_location?.resolve())
 	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
 	if(destroy_surroundings && !already_destroying_surroundings)
@@ -256,16 +258,17 @@
 			targetted_mob_real = targetted_mob
 
 		else if (ismecha(targetted_mob))
-			targetted_mob_mecha = targetted_mob
-			if (targetted_mecha.occupant)
+			targetted_mecha = targetted_mob
+			if (targetted_mecha.occupant && ismob(targetted_mecha.occupant))
 				targetted_mob_real = targetted_mecha.occupant
 
 		if (!ran_see_check)
-			if (targetted_mob_real && (targetted_mob_real.client) && (!(targetted_mob in hearers(get_dist(src, targetted_mob)))))
-				can_see = FALSE
-				ran_see_check = TRUE
-			else if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) //if we cant see them, hearers() wont show them, so lets remove the override
-				can_see = FALSE
+			if (!see_through_walls)
+				if (targetted_mob_real && (targetted_mob_real.client))
+					if (!(targetted_mob in hearers(get_dist(src, targetted_mob), src)))
+						can_see = FALSE
+				else if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) //if we cant see them, hearers() wont show them, so lets remove the override
+					can_see = FALSE
 				ran_see_check = TRUE
 
 		if (!lost_sight)
