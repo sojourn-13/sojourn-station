@@ -37,7 +37,7 @@
 /mob/living/simple_animal/hostile/bear/proc/rawr_xd()
 	if(.)
 		if(stat != DEAD)
-			visible_message(SPAN_DANGER("[src] stands up and rawrs!"))
+			visible_message(SPAN_DANGER("[src] stands up and roars!"))
 			playsound(src, 'sound/effects/creatures/bear.ogg', 100, 1, -3)
 			for(var/mob/living/carbon/human/H in range(5,src))
 				if(istype(H))
@@ -50,7 +50,7 @@
 						H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 						H.added_movedelay -= 0.5
 						addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, 0.5), 60)
-						to_chat(H, SPAN_WARNING("The bears rawrs make the feeling of fight or flight all the more apparent."))
+						to_chat(H, SPAN_WARNING("The [src] 's roar triggers the familiar feeling of flight or fight in you!"))
 					else
 						to_chat(H, SPAN_NOTICE("The natural insticts of fear become apparent, but you ingore such things."))
 						H.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
