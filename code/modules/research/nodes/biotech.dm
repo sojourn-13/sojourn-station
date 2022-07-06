@@ -243,8 +243,8 @@
 							)
 
 /datum/technology/tracker_tablet
-	name = "Tracker tablet"
-	desc = "Modified tablet frame with extra screens for use with sensor monitoring software."
+	name = "Tracker tablet and Statis Trigger"
+	desc = "Modified tablet frame with extra screens for use with sensor monitoring software. As well as advanced BIDON that can disable and trigger reactions."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.55
@@ -255,7 +255,8 @@
 	required_tech_levels = list()
 	cost = 1000
 
-	unlocks_designs = list(/datum/design/research/item/tracker_tablet)
+	unlocks_designs = list(/datum/design/research/item/tracker_tablet,
+							/datum/design/research/structure/bidontrigger)
 
 /*
 /datum/technology/med_teleportation
