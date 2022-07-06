@@ -24,7 +24,7 @@
 		if (!testing)
 			grenade_effect(get_turf(src))
 		else
-			SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, get_turf(original))
+			impact_atom = original
 		qdel(src)
 	else
 		..()
@@ -110,7 +110,7 @@
 		new/obj/effect/sparks(src.loc)
 		new/obj/effect/effect/smoke/illumination(src.loc, brightness=15)
 	if (testing)
-		SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, get_turf(target))
+		impact_atom = target
 	qdel(src)
 	return
 

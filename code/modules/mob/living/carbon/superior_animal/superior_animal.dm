@@ -322,7 +322,9 @@
 		// This block only runs if the above can_see check is true, fires a trace projectile to see if we can hit our target
 		else if (projectiletype && advance) // if we can see, let's prepare to see if we can hit
 			if (ranged)
-				trace_holder = check_trajectory_raytrace(targetted_mob, src, projectiletype, .proc/handle_trace_impact, TRUE)
+				var/trace = check_trajectory_raytrace(targetted_mob, src, projectiletype, TRUE)
+				spawn(0)
+				handle_trace_impact(trace)
 
 	if (!fire_through_lost_sight) //can only be true if src does not have fire_through_walls
 		lost_sight = FALSE
@@ -526,11 +528,9 @@
 	return
 
 /**
- * Signal handler for COMSIG_TRACE_IMPACT signal.
- * Apon impact of the trace projectile, or deletion, it will fire this signal, which will decide if the entity it impacted is our target.
- * If no, then we advance advancement turfs forward towards our target.
+ * To be used in conjunction with check_trajectory_raytrace. Make sure to spawn(0) before this proc so the projectile processes. spawn(0) does not work WITHIN the proc, sadly.
  *
- * If trace.penetration_holder.store_penetration is true, we will search it's list of penetrated object for our impact atom, using the same logic as before.
+ * If trace.impact_atom is not targetted_mob, and it is not in trace.force_penetration_on, we will advance advancement tiles towards our target.
  *
  * If there is no impact atom, it will assume it was deleted, and only pass penetration data.
  *
@@ -538,28 +538,30 @@
  * obj/item/projectile/trace: The trace we are registered to.
  * atom/impact_atom: The atom the trace impacted.
 **/
-/mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/trace, var/atom/impact_atom)
-	SIGNAL_HANDLER
-
-	UnregisterSignal(trace, COMSIG_TRACE_IMPACT)
+/mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/trace, var/delete_trace = TRUE)
 
 	if (stat == DEAD)
 		return FALSE
 
 	var/targetted_mob = (target_mob?.resolve())
-
+	var/boolean = TRUE
 	var/datum/penetration_holder/holder = null
-	if (impact_atom)
-		if (impact_atom == targetted_mob)
-			return FALSE
-		else if (trace.penetration_holder)
-			holder = trace.penetration_holder
-			if (holder.store_penetration)
-				if (holder.force_penetration)
-					if (holder.force_penetration_on && (impact_atom in holder.force_penetration_on))
-						return FALSE
 
+	if (trace.penetration_holder)
+		holder = trace.penetration_holder
+
+	if (((trace.impact_atom) && (trace.impact_atom == targetted_mob)) || ((holder) && (holder.force_penetration_on) && (targetted_mob in holder.force_penetration_on)))
+		boolean = FALSE
+	else
+		boolean = TRUE
+
+	if (delete_trace)
+		qdel(trace.penetration_holder)
+		trace.penetration_holder = null
+		QDEL_NULL(trace)
+	if (boolean)
 		advance_towards(targetted_mob)
+	return boolean
 
 /mob/living/carbon/superior_animal/proc/advance_towards(var/atom/target)
 

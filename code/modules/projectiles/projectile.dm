@@ -5,15 +5,11 @@
 **/
 /datum/penetration_holder
 
-	/// Can the projectile force a penetration on anything?
-	var/force_penetration = FALSE
 	/// List of things that this projectile has/will always penetrate.
 	var/list/force_penetration_on = list()
 
 	/// For mobs, incremented by their fire delay plus one.
 	var/penetration_store_time = 0
-	/// Will this holder actually share it's penetration data with anything?
-	var/store_penetration = FALSE
 
 /*
 #define BRUTE "brute"
@@ -41,6 +37,7 @@
 	/// If true, all damage, messages, visuals, sounds, effects, etc. will not occur. used for trace testing. IT IS REALLY!! GODDAMN IMPORTANT!! THAT YOU MAKE SURE YOU MAKE YOUR EFFECTS NOT HAPPEN IF THIS IS TRUE!!!
 	var/testing = FALSE
 
+	var/atom/impact_atom = null
 
 	var/bumped = FALSE		//Prevents it from hitting more than one guy at once
 	var/hitsound_wall = "ricochet"
@@ -133,14 +130,7 @@
 
 /obj/item/projectile/Destroy()
 
-	if (testing)
-		SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, null) //todo: come back to this, niko
-
-		if ((!(penetration_holder.store_penetration)) || (penetration_holder.force_penetration_on.len <= 0))
-			qdel(penetration_holder) //we need to use it later if this statement is true
-		penetration_holder = null
-
-	else
+	if (!testing)
 		QDEL_NULL(penetration_holder)
 
 	QDEL_NULL(attached_effect)
@@ -252,7 +242,7 @@
 		target.bullet_act(src, target_zone)
 		on_impact(target)
 		if (testing)
-			SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, target)
+			impact_atom = target
 		qdel(src)
 		return FALSE
 
@@ -738,12 +728,16 @@
 			for(S in get_both_hands(C))
 				if(S && S.block_bullet(C, src, def_zone))
 					on_hit(S,def_zone)
+					if (testing)
+						impact_atom = C
 					qdel(src)
 					return TRUE
 				break //Prevents shield dual-wielding
 			S = C.get_equipped_item(slot_back)
 			if(S && S.block_bullet(C, src, def_zone))
 				on_hit(S,def_zone)
+				if (testing)
+					impact_atom = C
 				qdel(src)
 				return TRUE
 
@@ -779,7 +773,7 @@
 		//move ourselves onto A so we can continue on our way
 		if (!tempLoc)
 			if (testing)
-				SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, A)
+				impact_atom = A
 			qdel(src)
 			return TRUE
 
@@ -796,7 +790,7 @@
 	invisibility = 101
 
 	if (testing)
-		SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, A)
+		impact_atom = A
 	qdel(src)
 	return TRUE
 
@@ -814,14 +808,12 @@
 			if(kill_count-- < 1)
 				on_impact(src.loc) //for any final impact behaviours
 				if (testing)
-					firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
+					impact_atom = src.loc
 				qdel(src)
 				return
 			if((!( current ) || loc == current))
 				current = locate(min(max(x + xo, 1), world.maxx), min(max(y + yo, 1), world.maxy), z)
 			if((x == 1 || x == world.maxx || y == 1 || y == world.maxy))
-				if (testing)
-					firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
 				qdel(src)
 				return
 
@@ -856,8 +848,6 @@
 			location = trajectory.return_location(location)		// update the locally stored location data
 
 			if(!location)
-				if (testing)
-					firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
 				qdel(src)	// if it's left the world... kill it
 				return
 
@@ -887,14 +877,12 @@
 			if(kill_count-- < 1)
 				on_impact(src.loc) //for any final impact behaviours
 				if (testing)
-					firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
+					impact_atom = loc
 				qdel(src)
 				return
 			if((!( current ) || loc == current))
 				current = locate(min(max(x + xo, 1), world.maxx), min(max(y + yo, 1), world.maxy), z)
 			if((x == 1 || x == world.maxx || y == 1 || y == world.maxy))
-				if (testing)
-					firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
 				qdel(src)
 				return
 
@@ -929,8 +917,6 @@
 			location = trajectory.return_location(location)		// update the locally stored location data
 
 			if(!location)
-				if (testing)
-					firer.UnregisterSignal(firer, COMSIG_TRACE_IMPACT)
 				qdel(src)	// if it's left the world... kill it
 				return
 
@@ -954,7 +940,7 @@
 					luminosity_effect()
 
 			if(!hitscan)
-				sleep(step_delay)	//add delay between movement iterations if it's not a hitscan weapon
+				sleep(step_delay)	//todo: might be able to fully simulate if i comment out this sleep
 
 /obj/item/projectile/proc/before_move()
 	return FALSE
@@ -1116,29 +1102,19 @@
  * proc_path: The proc that will be called when the signal is fired.
  * store_penetration: Will the simulated projectile share it's penetration data?
 **/
-/proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj, var/proc_path = null, store_penetration = FALSE)
-	if (proc_path)
-		var/obj/item/projectile/trace = new proj(get_turf(firer))
-		trace.testing = TRUE
-		trace.invisibility = INFINITY //nobody can see it
-		trace.yo = 0
-		trace.xo = 0 //just taken from the test proj maybe investigate why it does this later
-		trace.hitscan = TRUE
+/proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj, var/proc_path = null)
+	var/obj/item/projectile/trace = new proj(get_turf(firer))
+	trace.testing = TRUE
+	trace.invisibility = INFINITY //nobody can see it
+	trace.yo = 0
+	trace.xo = 0 //just taken from the test proj maybe investigate why it does this later
+	trace.hitscan = TRUE
 
-		trace.firer = firer
+	trace.firer = firer
 
-		if (store_penetration)
-			trace.penetration_holder.store_penetration = TRUE
+	trace.launch(target)
 
-		. = trace.penetration_holder
-
-		firer.RegisterSignal(trace, COMSIG_TRACE_IMPACT, proc_path)
-
-		trace.launch(target)
-
-		return
-	else
-		return FALSE
+	return trace
 
 //Helper proc to check if you can hit them or not.
 /proc/check_trajectory(atom/target as mob|obj, atom/firer as mob|obj, var/pass_flags=PASSTABLE|PASSGLASS|PASSGRILLE, flags=null)
