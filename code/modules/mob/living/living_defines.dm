@@ -16,6 +16,9 @@
 
 	var/inventory_shown = 1
 
+	var/list/mob_groups = list()
+	var/initial_time = 0
+
 	var/armor_penetration = 0 //Used for generic attacks
 
 	//Damage related vars, NOTE: THESE SHOULD ONLY BE MODIFIED BY PROCS

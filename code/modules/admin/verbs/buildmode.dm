@@ -110,6 +110,19 @@
 				to_chat(usr, "\blue Left Mouse Button on turf/obj/mob      = Select")
 				to_chat(usr, "\blue Right Mouse Button on turf/obj/mob     = Throw")
 				to_chat(usr, "\blue ***********************************************************")
+			if(5)
+				to_chat(usr, "\blue ***********************************************************")
+				to_chat(usr, "\blue LMB on mob = Select mob")
+				to_chat(usr, "\blue Shift LMB on mob = Select Group the mob belongs to")
+				to_chat(usr, "\blue Alt LMB on mob = De-select mob")
+				to_chat(usr, "\blue RMB on atom = Move selected mobs to position")
+				to_chat(usr, "\blue RMB on build mode icon = Enter key of list you wish to select")
+				to_chat(usr, "\blue MMB on build mode icon = Enter key of list you wish to delete")
+				to_chat(usr, "\blue Shift LMB on build mode icon = Toggle movement override, forcing all other walks to fail for a given period of time")
+				to_chat(usr, "\blue Alt LMB on build mode icon = De-select all mobs")
+				to_chat(usr, "\blue MMB on mob = Add mob to selected group")
+				to_chat(usr, "\blue Shift MMB on mob = Remove mob from selected group")
+				to_chat(usr, "\blue ***********************************************************")
 		return 1
 
 /obj/effect/bmode/buildquit
@@ -124,6 +137,7 @@
 	density = 0
 	anchored = 1
 	var/client/cl = null
+	var/list/selected_mobs = list()
 	var/obj/effect/bmode/builddir/builddir = null
 	var/obj/effect/bmode/buildhelp/buildhelp = null
 	var/obj/effect/bmode/buildmode/buildmode = null
@@ -141,6 +155,9 @@
 	buildquit = null
 	throw_atom = null
 	cl = null
+
+	// todo, harddel schenanigans
+	selected_mobs.Cut()
 	return ..()
 
 /obj/effect/bmode/buildmode
@@ -150,6 +167,8 @@
 	var/valueholder = "derp"
 	var/objholder = /obj/structure/closet
 	var/objsay = 1
+	var/listname = null
+	var/override_movement = FALSE
 
 	Click(location, control, params)
 		var/list/pa = params2list(params)
@@ -158,6 +177,16 @@
 			switch(master.cl.buildmode)
 				if(2)
 					objsay=!objsay
+				if(5)
+					var/list_to_delete = input(usr, "Enter the name of the list you want to delete:", "Name", "")
+					if (!(list_to_delete == ""))
+						if (list_to_delete in GLOB.mob_groups)
+							for (var/mob/living/content in GLOB.mob_groups[list_to_delete])
+								content.mob_groups -= list_to_delete
+							GLOB.mob_groups -= list_to_delete
+							to_chat(usr, "[list_to_delete] successfully deleted.")
+						else
+							to_chat(usr, SPAN_WARNING("[list_to_delete] does not exist!"))
 
 
 		if(pa.Find("left"))
@@ -172,8 +201,20 @@
 					master.cl.buildmode = 4
 					src.icon_state = "buildmode4"
 				if(4)
-					master.cl.buildmode = 1
-					src.icon_state = "buildmode1"
+					master.cl.buildmode = 5
+					src.icon_state = "buildmode5"
+				if(5)
+					if ((pa.Find("alt")) || (pa.Find("shift")))
+						if (pa.Find("shift"))
+							override_movement = (!(override_movement))
+							to_chat(usr, "Toggled movement override to [override_movement].")
+						else if (pa.Find("alt"))
+							master.selected_mobs.Cut()
+							to_chat(usr, "Successfully de-selected all selected mobs.")
+
+					else
+						master.cl.buildmode = 1
+						src.icon_state = "buildmode1"
 
 		else if(pa.Find("right"))
 			switch(master.cl.buildmode)
@@ -206,6 +247,15 @@
 							master.buildmode.valueholder = input(usr,"Enter variable value:" ,"Value") as obj in world
 						if("turf-reference")
 							master.buildmode.valueholder = input(usr,"Enter variable value:" ,"Value") as turf in world
+				if (5)
+					var/listname_temp = input(usr, "Enter the name of the list you wish to manipulate:", "Name", "")
+					if (!(listname_temp == ""))
+						if (listname_temp in GLOB.mob_groups)
+							to_chat(usr, "[listname_temp] selected.")
+						else
+							to_chat(usr, "Notice: [listname_temp] does not exist. Attempting to add something to it will create it.")
+						listname = listname_temp
+
     	return 1
 
 /proc/build_click(var/mob/user, buildmode, params, var/obj/object)
@@ -308,3 +358,74 @@
 				if(holder.throw_atom)
 					holder.throw_atom.throw_at(object, 10, 1)
 					log_admin("[key_name(usr)] threw [holder.throw_atom] at [object]")
+
+		if(5)
+			if (pa.Find("left"))
+				if (istype(object, /mob/living))
+					if (pa.Find("shift") || pa.Find("alt"))
+						if (pa.Find("shift"))
+							for (var/list/list_in_list in GLOB.mob_groups)
+								if (object in GLOB.mob_groups[list_in_list])
+									holder.selected_mobs = GLOB.mob_groups[list_in_list]
+									to_chat(usr, "Selected group successfully, length, [GLOB.mob_groups[list_in_list.len]].")
+									break
+							to_chat(usr, "\the [object] is not part of any group.")
+						else if (pa.Find("alt"))
+							if (object in holder.selected_mobs)
+								holder.selected_mobs -= object
+								to_chat(usr, "Successfully de-selected [object].")
+							else
+								to_chat(usr, SPAN_WARNING("[object] is not selected!"))
+
+
+					else if (!(object in holder.selected_mobs))
+						holder.selected_mobs += object
+						to_chat(usr, "Successfully selected [object].")
+					else
+						to_chat(usr, SPAN_WARNING("[object] is already selected!"))
+
+			else if (pa.Find("right"))
+				var/distance = null
+				if (istype(object, /atom/movable))
+					distance = 1
+				else if (istype(object, /turf))
+					distance = 0
+				if (!(isnull(distance)))
+					for (var/mob/living/held in holder.selected_mobs)
+						var/override_time
+						var/respect_the_override
+						if (holder.buildmode.override_movement == 0)
+							override_time = 0
+							respect_the_override = TRUE
+						else
+							override_time =	(get_dist(held, object) * (held.move_to_delay))
+							respect_the_override = FALSE
+						held.set_glide_size(DELAY2GLIDESIZE(held.move_to_delay))
+						walk_to_wrapper(held, object, distance, held.move_to_delay, deathcheck = FALSE, respect_override = respect_the_override, override = override_time, temporary_walk = TRUE)
+
+			else if (pa.Find("middle"))
+				if (istype(object, /mob/living))
+					var/mob/living/selected_mob = object
+					if (holder.buildmode.listname)
+						if (pa.Find("shift"))
+							if (holder.buildmode.listname in GLOB.mob_groups)
+								if (selected_mob in GLOB.mob_groups[holder.buildmode.listname])
+									GLOB.mob_groups[holder.buildmode.listname] -= selected_mob
+									selected_mob.mob_groups -= holder.buildmode.listname
+									to_chat(usr, "[selected_mob] successfully removed from [holder.buildmode.listname]")
+								else
+									to_chat(usr, SPAN_WARNING("[selected_mob] is not in [holder.buildmode.listname]!"))
+							else
+								to_chat(usr, SPAN_WARNING("[holder.buildmode.listname] does not exist!"))
+
+						else if (!(holder.buildmode.listname in GLOB.mob_groups))
+							GLOB.mob_groups[holder.buildmode.listname] = list()
+							to_chat(usr, "[holder.buildmode.listname] successfully created as a list.")
+						if (!(selected_mob in GLOB.mob_groups[holder.buildmode.listname]))
+							GLOB.mob_groups[holder.buildmode.listname] += selected_mob
+							selected_mob.mob_groups += holder.buildmode.listname
+							to_chat(usr, "[selected_mob] successfully added to [holder.buildmode.listname].")
+						else
+							to_chat(usr, SPAN_WARNING("[selected_mob] is already part of [holder.buildmode.listname]!"))
+
+

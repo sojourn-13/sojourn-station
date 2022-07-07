@@ -882,6 +882,11 @@ default behaviour is:
 		update_z(T.z)
 
 /mob/living/Destroy()
+
+	for (var/list/group in mob_groups)
+		GLOB.mob_groups[group] -= src
+		mob_groups -= group
+
 	QDEL_NULL(stats)
 
 	unnatural_mutations.holder = null //causes a GC failure if we qdel-and it seems its not SUPPOSED to qdel, oddly

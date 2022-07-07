@@ -219,7 +219,7 @@
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		alive_walk_to(src, targetted_mob, calculated_walk, move_to_delay) //lets get a little closer than our optimal range
+		walk_to_wrapper(src, targetted_mob, calculated_walk, move_to_delay, deathcheck = TRUE) //lets get a little closer than our optimal range
 
 		if (delayed > 0)
 			if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
@@ -233,7 +233,7 @@
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		alive_walk_to(src, targetted_mob, 1, move_to_delay)
+		walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
 		moved = 1
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings)
 
@@ -300,11 +300,11 @@
 					if (cant_see_timer <= world.time) //prevents any weirdness
 						if (ranged) //only ranged mobs can advance, currently
 							if (advancement_timer > world.time) //we are advancing, so lets use our advance_steps var
-								alive_walk_to(src, target_location_resolved, advance_steps, move_to_delay)
+								walk_to_wrapper(src, target_location_resolved, advance_steps, move_to_delay, deathcheck = TRUE)
 							else
-								alive_walk_to(src, target_location_resolved, calculated_walk, move_to_delay)
+								walk_to_wrapper(src, target_location_resolved, calculated_walk, move_to_delay, deathcheck = TRUE)
 						else
-							alive_walk_to(src, target_location_resolved, 1, move_to_delay) // melee mobs only need to go to one tile away
+							walk_to_wrapper(src, target_location_resolved, 1, move_to_delay, deathcheck = TRUE) // melee mobs only need to go to one tile away
 
 				lost_sight = TRUE
 				patience--
@@ -349,16 +349,16 @@
 		return
 	if(!ranged)
 		prepareAttackOnTarget()
-		alive_walk_to(src, targetted, 1, move_to_delay)
+		walk_to_wrapper(src, targetted, 1, move_to_delay, deathcheck = TRUE)
 	else if(ranged)
 		if(get_dist(src, targetted) <= comfy_range)
 			prepareAttackPrecursor(targetted, .proc/OpenFire, RANGED_TYPE)
 			if ((advancement_timer <= world.time) && (cant_see_timer <= world.time)) //we dont want to prematurely end a advancing walk
-				alive_walk_to(src, targetted, calculated_walk, move_to_delay) //we still want to reset our walk
+				walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE) //we still want to reset our walk
 		else
 			if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				alive_walk_to(src, targetted, calculated_walk, move_to_delay)
+				walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE)
 			prepareAttackPrecursor(targetted, .proc/OpenFire, RANGED_TYPE)
 
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
@@ -452,9 +452,9 @@
 
 			if (following)
 				if (!target_mob) // Are we following someone and not attacking something?
-					alive_walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
+					walk_to_wrapper(src, following, follow_distance, move_to_delay, deathcheck = TRUE) // Follow the mob referenced in 'following' and stand almost next to them.
 			else if (!target_mob && last_followed)
-				alive_walk_to(src, 0)
+				walk_to_wrapper(src, 0)
 				last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
 
 	if(life_cycles_before_sleep)
@@ -556,7 +556,7 @@
 		advance_steps = (distance - advancement)
 		if (advance_steps <= 0)
 			advance_steps = 1 //1 is minimum
-		alive_walk_to(src, target, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
+		walk_to_wrapper(src, target, advance_steps, move_to_delay, deathcheck = TRUE) //advance forward, forcing us to pathfind
 		advancement_timer = (world.time += advancement_increment) // we dont want this overridden instantly
 
 /mob/living/carbon/superior_animal/CanPass(atom/mover)
