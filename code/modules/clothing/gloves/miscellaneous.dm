@@ -103,8 +103,8 @@
 /obj/item/clothing/gloves/thick/swat/blackshield_corpsman
 	name = "corpsman combat gloves"
 	desc = "A pair of fire and impact-resistant security combat gloves. This pare has an extra rubbery coating to help prevent germs."
-	icon_state = "bs_base_gloves"
-	item_state = "bs_base_gloves"
+	icon_state = "corpsman_base_gloves"
+	item_state = "corpsman_base_gloves"
 	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 15, rad = 0)
 	siemens_coefficient = 0
 	price_tag = 250
@@ -119,11 +119,11 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Basics"] = "bs_base_gloves"
-	options["Night Camo"] = "bs_black_gloves"
-	options["Gray Clays Camo"] = "bs_drab_gloves"
-	options["Jungle Camo"] = "bs_green_gloves"
-	options["Swamp Camo"] = "bs_tan_gloves"
+	options["Basics"] = "corpsman_base_gloves"
+	options["Night Camo"] = "corpsman_black_gloves"
+	options["Gray Clays Camo"] = "corpsman_drab_gloves"
+	options["Jungle Camo"] = "corpsman_green_gloves"
+	options["Swamp Camo"] = "corpsman_tan_gloves"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
