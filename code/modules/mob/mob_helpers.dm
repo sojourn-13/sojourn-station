@@ -677,6 +677,7 @@ proc/is_blind(A)
 /mob/proc/get_health()
 	return health
 
+/// Wrapper for walk_to.
 /proc/walk_to_wrapper(atom/movable/Ref, Trg, Min=0, Lag=0, Speed=0, deathcheck = FALSE, respect_override = TRUE, temporary_walk = FALSE, override = 0)
 	if (!deathcheck || Ref.stat != DEAD)
 		if (respect_override && (Ref.walk_override_timer >= world.time))
@@ -685,18 +686,15 @@ proc/is_blind(A)
 			Ref.walk_override_timer = (world.time + override)
 			if (temporary_walk)
 				var/current_time = world.time
-				if (isliving(Ref))
-					var/mob/living/livingref = Ref
-					livingref.initial_time = current_time
+				Ref.initial_time = current_time
 				addtimer(CALLBACK(GLOBAL_PROC, .proc/walk_to_wrapper_timer, Ref, 0, current_time), override)
 		walk_to(Ref, Trg, Min, Lag, Speed)
 		return TRUE
 	else
 		return FALSE
 
+/// For use in walk_to_wrapper exclusively.
 /proc/walk_to_wrapper_timer(atom/movable/Ref, Trg, initial)
-	if (isliving(Ref))
-		var/mob/living/livingref = Ref
-		if (initial != livingref.initial_time) //so multiple movements dont interrupt eachother
-			return FALSE
+	if (initial != Ref.initial_time) //so multiple movements dont interrupt eachother
+		return FALSE
 	walk_to(Ref, Trg)

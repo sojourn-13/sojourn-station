@@ -670,9 +670,9 @@
 				stop_automated_movement = TRUE
 
 				if (istype(movement_target.loc, /turf))
-					walk_to(src,movement_target,0, seek_move_delay)//Stand ontop of food
+					walk_to_wrapper(src, movement_target, 0, seek_move_delay)//Stand ontop of food
 				else
-					walk_to(src,movement_target.loc,1, seek_move_delay)//Don't stand ontop of people
+					walk_to_wrapper(src,movement_target.loc,1, seek_move_delay)//Don't stand ontop of people
 
 
 

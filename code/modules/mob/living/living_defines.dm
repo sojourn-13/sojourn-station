@@ -16,8 +16,8 @@
 
 	var/inventory_shown = 1
 
+	/// The mob groups, defined in admin.dm, this mob is in.
 	var/list/mob_groups = list()
-	var/initial_time = 0
 
 	var/armor_penetration = 0 //Used for generic attacks
 
