@@ -880,3 +880,8 @@
 	result = "friendlyfire"
 	required_reagents = list("rum" = 2, "iron" = 1, "vodka" = 1)
 	result_amount = 3
+
+/datum/chemical_reaction/roachbeer
+	result = "roachbeer"
+	required_reagents = list("water" = 2, "diplopterum" = 1, "fuel" = 1, "beer" = 1)
+	result_amount = 1

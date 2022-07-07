@@ -3201,3 +3201,15 @@
 	glass_icon_state = "friendlyfire"
 	glass_name = "Friendly Fire"
 	glass_desc = "Watch your back when you take a swig."
+
+/datum/reagent/ethanol/roachbeer
+	name = "Kakerlakenbier"
+	id = "roachbeer"
+	description = "A green-ish substance made out of diplopterum, beer and fuel mixed with water. Doesn\'t look nor smell like beer..."
+	taste_description = "heady roach guts"
+	color = "#123a15" // rgb(18, 58, 21)
+	strength = 40
+
+	glass_unique_appearance = FALSE
+	glass_name = "Kakerlakenbier"
+	glass_desc = "A green-ish substance made out of diplopterum, beer and fuel mixed with water. Doesn\'t look nor smell like beer..."
