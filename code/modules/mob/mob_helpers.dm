@@ -686,7 +686,7 @@ proc/is_blind(A)
 			Ref.walk_override_timer = (world.time + override)
 			if (temporary_walk)
 				var/current_time = world.time
-				Ref.initial_time = current_time
+				Ref.walk_to_initial_time = current_time
 				addtimer(CALLBACK(GLOBAL_PROC, .proc/walk_to_wrapper_timer, Ref, 0, current_time), override)
 		walk_to(Ref, Trg, Min, Lag, Speed)
 		return TRUE
@@ -695,6 +695,6 @@ proc/is_blind(A)
 
 /// For use in walk_to_wrapper exclusively.
 /proc/walk_to_wrapper_timer(atom/movable/Ref, Trg, initial)
-	if (initial != Ref.initial_time) //so multiple movements dont interrupt eachother
+	if (initial != Ref.walk_to_initial_time) //so multiple movements dont interrupt eachother
 		return FALSE
 	walk_to(Ref, Trg)
