@@ -106,7 +106,8 @@
 	throwforce = WEAPON_FORCE_BRUTAL
 	slot_flags = SLOT_BELT|SLOT_BACK
 	tool_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 25, QUALITY_PRYING = 15)
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL //So we fit in webbings
+	extra_bulk = 2
 	price_tag = 45
 
 /obj/item/tool/minihoe
