@@ -144,7 +144,17 @@
 	var/obj/effect/bmode/buildquit/buildquit = null
 	var/atom/movable/throw_atom = null
 
+/obj/effect/bmode/buildholder/New()
+
+	GLOB.buildholders += src
+
+	. = ..()
+
+
 /obj/effect/bmode/buildholder/Destroy()
+
+	GLOB.buildholders -= src
+
 	qdel(builddir)
 	builddir = null
 	qdel(buildhelp)
@@ -260,7 +270,7 @@
 
 /proc/build_click(var/mob/user, buildmode, params, var/obj/object)
 	var/obj/effect/bmode/buildholder/holder = null
-	for(var/obj/effect/bmode/buildholder/H)
+	for(var/obj/effect/bmode/buildholder/H in GLOB.buildholders)
 		if(H.cl == user.client)
 			holder = H
 			break
