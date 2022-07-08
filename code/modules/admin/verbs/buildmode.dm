@@ -217,6 +217,9 @@
 							else
 								to_chat(usr, "Notice: [listname_temp] does not exist. Attempting to add something to it will create it.")
 							listname = listname_temp
+						else
+							listname = null
+							to_chat(usr, "Successfully de-selected any currently selected group.")
 
 
 		if(pa.Find("left"))
@@ -443,7 +446,7 @@
 								simple_held.target_mob = WEAKREF(object)
 						if (move_to_target)
 							held.set_glide_size(DELAY2GLIDESIZE(held.move_to_delay))
-							walk_to_wrapper(held, object, distance, held.move_to_delay, deathcheck = FALSE, respect_override = holder.buildmode.respect_override, override = holder.buildmode.override_movement, temporary_walk = holder.buildmode.temporary_walks)
+							walk_to_wrapper(held, object, distance, held.move_to_delay, deathcheck = move_dead, respect_override = holder.buildmode.respect_override, override = holder.buildmode.override_movement, temporary_walk = holder.buildmode.temporary_walks)
 
 			else if (pa.Find("middle"))
 				if (istype(object, /mob/living))
@@ -469,5 +472,7 @@
 							to_chat(usr, "[selected_mob] successfully added to [holder.buildmode.listname].")
 						else
 							to_chat(usr, SPAN_WARNING("[selected_mob] is already part of [holder.buildmode.listname]!"))
+					else
+						to_chat(usr, SPAN_WARNING("You do not have any currently selected group!"))
 
 
