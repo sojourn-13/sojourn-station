@@ -116,12 +116,17 @@
 				to_chat(usr, "\blue Shift LMB on mob = Select Group the mob belongs to")
 				to_chat(usr, "\blue Alt LMB on mob = De-select mob")
 				to_chat(usr, "\blue RMB on atom = Move selected mobs to position")
-				to_chat(usr, "\blue RMB on build mode icon = Enter key of list you wish to select")
-				to_chat(usr, "\blue MMB on build mode icon = Enter key of list you wish to delete")
-				to_chat(usr, "\blue Shift LMB on build mode icon = Toggle movement override, forcing all other walks to fail for a given period of time")
-				to_chat(usr, "\blue Alt LMB on build mode icon = De-select all mobs")
+				to_chat(usr, "\blue Shift RMB on atom/movable = Move selected mobs to position and, if applicable, set their target to the atom")
+				to_chat(usr, "\blue Alt RMB on atom/movable = If applicable, set selected mobs' target to the atom")
 				to_chat(usr, "\blue MMB on mob = Add mob to selected group")
 				to_chat(usr, "\blue Shift MMB on mob = Remove mob from selected group")
+				to_chat(usr, "\blue Alt LMB on build mode icon = De-select all mobs")
+				to_chat(usr, "\blue RMB on build mode icon = Toggle movement override, forcing all other walks to fail for a given period of time")
+				to_chat(usr, "\blue Ctrl RMB on build mode icon = Toggle walks being temporary")
+				to_chat(usr, "\blue Alt RMB on build mode icon = Toggle walks respecting currently running overrides")
+				to_chat(usr, "\blue Shift RMB on build mode icon = Toggle moving dead mobs")
+				to_chat(usr, "\blue MMB on build mode icon = Enter key of group you wish to select")
+				to_chat(usr, "\blue Shift MMB on build mode icon = Enter key of group you wish to delete")
 				to_chat(usr, "\blue ***********************************************************")
 		return 1
 
@@ -179,6 +184,9 @@
 	var/objsay = 1
 	var/listname = null
 	var/override_movement = FALSE
+	var/respect_override = TRUE
+	var/temporary_walks = FALSE
+	var/move_dead = FALSE
 
 	Click(location, control, params)
 		var/list/pa = params2list(params)
@@ -188,15 +196,27 @@
 				if(2)
 					objsay=!objsay
 				if(5)
-					var/list_to_delete = input(usr, "Enter the name of the list you want to delete:", "Name", "")
-					if (!(list_to_delete == ""))
-						if (list_to_delete in GLOB.mob_groups)
-							for (var/mob/living/content in GLOB.mob_groups[list_to_delete])
-								content.mob_groups -= list_to_delete
-							GLOB.mob_groups -= list_to_delete
-							to_chat(usr, "[list_to_delete] successfully deleted.")
-						else
-							to_chat(usr, SPAN_WARNING("[list_to_delete] does not exist!"))
+					if (pa.Find("shift"))
+						var/list_to_delete = input(usr, "Enter the name of the list you want to delete:", "Name", "")
+						if (!(list_to_delete == ""))
+							if (list_to_delete in GLOB.mob_groups)
+								var/list/target_list = GLOB.mob_groups[list_to_delete]
+								for (var/mob/living/content in target_list)
+									content.mob_groups -= target_list
+								GLOB.mob_groups -= target_list
+								target_list.Cut()
+								qdel(target_list)
+								to_chat(usr, "[list_to_delete] successfully deleted.")
+							else
+								to_chat(usr, SPAN_WARNING("[list_to_delete] does not exist!"))
+					else
+						var/listname_temp = input(usr, "Enter the name of the list you wish to manipulate:", "Name", "")
+						if (!(listname_temp == ""))
+							if (listname_temp in GLOB.mob_groups)
+								to_chat(usr, "[listname_temp] selected.")
+							else
+								to_chat(usr, "Notice: [listname_temp] does not exist. Attempting to add something to it will create it.")
+							listname = listname_temp
 
 
 		if(pa.Find("left"))
@@ -214,14 +234,9 @@
 					master.cl.buildmode = 5
 					src.icon_state = "buildmode5"
 				if(5)
-					if ((pa.Find("alt")) || (pa.Find("shift")))
-						if (pa.Find("shift"))
-							override_movement = (!(override_movement))
-							to_chat(usr, "Toggled movement override to [override_movement].")
-						else if (pa.Find("alt"))
-							master.selected_mobs.Cut()
-							to_chat(usr, "Successfully de-selected all selected mobs.")
-
+					if (pa.Find("alt"))
+						master.selected_mobs.Cut()
+						to_chat(usr, "Successfully de-selected all selected mobs.")
 					else
 						master.cl.buildmode = 1
 						src.icon_state = "buildmode1"
@@ -257,14 +272,20 @@
 							master.buildmode.valueholder = input(usr,"Enter variable value:" ,"Value") as obj in world
 						if("turf-reference")
 							master.buildmode.valueholder = input(usr,"Enter variable value:" ,"Value") as turf in world
-				if (5)
-					var/listname_temp = input(usr, "Enter the name of the list you wish to manipulate:", "Name", "")
-					if (!(listname_temp == ""))
-						if (listname_temp in GLOB.mob_groups)
-							to_chat(usr, "[listname_temp] selected.")
-						else
-							to_chat(usr, "Notice: [listname_temp] does not exist. Attempting to add something to it will create it.")
-						listname = listname_temp
+				if(5)
+					if ((pa.Find("ctrl")) || (pa.Find("alt")) || (pa.Find("shift")))
+						if (pa.Find("ctrl"))
+							temporary_walks = (!(temporary_walks))
+							to_chat(usr, "Toggled temporary walks to [temporary_walks].")
+						else if (pa.Find("alt"))
+							respect_override = (!(respect_override))
+							to_chat(usr, "Toggled respect override to [respect_override].")
+						else if (pa.Find("shift"))
+							move_dead = (!(move_dead))
+							to_chat(usr, "Toggled dead movement to [move_dead].")
+					else
+						override_movement = (!(override_movement))
+						to_chat(usr, "Toggled movement override to [override_movement].")
 
     	return 1
 
@@ -374,12 +395,16 @@
 				if (istype(object, /mob/living))
 					if (pa.Find("shift") || pa.Find("alt"))
 						if (pa.Find("shift"))
-							for (var/list/list_in_list in GLOB.mob_groups)
-								if (object in GLOB.mob_groups[list_in_list])
-									holder.selected_mobs = GLOB.mob_groups[list_in_list]
-									to_chat(usr, "Selected group successfully, length, [GLOB.mob_groups[list_in_list.len]].")
+							var/in_group = FALSE
+							for (var/entry in GLOB.mob_groups)
+								var/list/list_in_list = GLOB.mob_groups[entry]
+								if (object in list_in_list)
+									in_group = TRUE
+									holder.selected_mobs = list_in_list
+									to_chat(usr, "Selected group successfully, length, [list_in_list.len].")
 									break
-							to_chat(usr, "\the [object] is not part of any group.")
+							if (!in_group)
+								to_chat(usr, "\the [object] is not part of any group.")
 						else if (pa.Find("alt"))
 							if (object in holder.selected_mobs)
 								holder.selected_mobs -= object
@@ -396,22 +421,29 @@
 
 			else if (pa.Find("right"))
 				var/distance = null
+				var/set_target = FALSE
+				var/move_to_target = TRUE
 				if (istype(object, /atom/movable))
+					if ((pa.Find("shift")) || (pa.Find("alt")))
+						set_target = TRUE
+						if (!(pa.Find("shift")))
+							move_to_target = FALSE
 					distance = 1
 				else if (istype(object, /turf))
 					distance = 0
 				if (!(isnull(distance)))
 					for (var/mob/living/held in holder.selected_mobs)
-						var/override_time
-						var/respect_the_override
-						if (holder.buildmode.override_movement == 0)
-							override_time = 0
-							respect_the_override = TRUE
-						else
-							override_time =	(get_dist(held, object) * (held.move_to_delay))
-							respect_the_override = FALSE
-						held.set_glide_size(DELAY2GLIDESIZE(held.move_to_delay))
-						walk_to_wrapper(held, object, distance, held.move_to_delay, deathcheck = FALSE, respect_override = respect_the_override, override = override_time, temporary_walk = TRUE)
+						if (set_target)
+							if (issuperioranimal(held))
+								var/mob/living/carbon/superior_animal/superior_held = held
+								superior_held.loseTarget(FALSE, TRUE)
+								superior_held.target_mob = WEAKREF(object)
+							else if (istype(held, /mob/living/simple_animal))
+								var/mob/living/simple_animal/simple_held = held
+								simple_held.target_mob = WEAKREF(object)
+						if (move_to_target)
+							held.set_glide_size(DELAY2GLIDESIZE(held.move_to_delay))
+							walk_to_wrapper(held, object, distance, held.move_to_delay, deathcheck = FALSE, respect_override = holder.buildmode.respect_override, override = holder.buildmode.override_movement, temporary_walk = holder.buildmode.temporary_walks)
 
 			else if (pa.Find("middle"))
 				if (istype(object, /mob/living))

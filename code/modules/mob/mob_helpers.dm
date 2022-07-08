@@ -678,20 +678,21 @@ proc/is_blind(A)
 	return health
 
 /// Wrapper for walk_to.
-/proc/walk_to_wrapper(atom/movable/Ref, Trg, Min=0, Lag=0, Speed=0, deathcheck = FALSE, respect_override = TRUE, temporary_walk = FALSE, override = 0)
-	if (!deathcheck || Ref.stat != DEAD)
-		if (respect_override && (Ref.walk_override_timer >= world.time))
-			return FALSE
-		else if (override > 0)
-			Ref.walk_override_timer = (world.time + override)
-			if (temporary_walk)
-				var/current_time = world.time
-				Ref.walk_to_initial_time = current_time
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/walk_to_wrapper_timer, Ref, 0, current_time), override)
-		walk_to(Ref, Trg, Min, Lag, Speed)
-		return TRUE
-	else
+/proc/walk_to_wrapper(atom/movable/Ref, Trg, Min=0, Lag=0, Speed=0, deathcheck = FALSE, respect_override = TRUE, temporary_walk = FALSE, override = FALSE)
+	if (deathcheck && Ref.stat == DEAD)
 		return FALSE
+	if (respect_override && (Ref.walk_override_timer >= world.time))
+		return FALSE
+	if (override || temporary_walk)
+		var/timer = (get_dist(Ref, Trg) * (Lag)) // WARNING. ARBITRARY MATH. I DO NOT KNOW IF THIS WILL WORK.
+		if (override)
+			Ref.walk_override_timer = (world.time + timer)
+		if (temporary_walk)
+			var/current_time = world.time
+			Ref.walk_to_initial_time = current_time
+			addtimer(CALLBACK(GLOBAL_PROC, .proc/walk_to_wrapper_timer, Ref, 0, current_time), timer)
+	walk_to(Ref, Trg, Min, Lag, Speed)
+	return TRUE
 
 /// For use in walk_to_wrapper exclusively.
 /proc/walk_to_wrapper_timer(atom/movable/Ref, Trg, initial)

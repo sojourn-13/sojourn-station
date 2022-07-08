@@ -99,18 +99,19 @@
 	if (check_if_alive())
 		prepareAttackPrecursor(targetted_mob, .proc/attemptAttackOnTarget, MELEE_TYPE, FALSE, FALSE)
 
-/mob/living/carbon/superior_animal/proc/loseTarget(stop_pursuit = TRUE)
+/mob/living/carbon/superior_animal/proc/loseTarget(stop_pursuit = TRUE, simply_losetarget = FALSE)
 	if (stop_pursuit)
 		stop_automated_movement = 0
 		walk(src, 0)
-	fire_delay = fire_delay_initial
-	melee_delay = melee_delay_initial
-	patience = patience_initial
-	retarget_timer = retarget_timer_initial
-	target_mob = null
-	stance = HOSTILE_STANCE_IDLE
+	if (!simply_losetarget)
+		fire_delay = fire_delay_initial
+		melee_delay = melee_delay_initial
+		patience = patience_initial
+		retarget_timer = retarget_timer_initial
+		stance = HOSTILE_STANCE_IDLE
+		delayed = delayed_initial
 	lost_sight = FALSE
-	delayed = delayed_initial
+	target_mob = null
 	target_location = null
 
 /mob/living/carbon/superior_animal/proc/isValidAttackTarget(atom/O)

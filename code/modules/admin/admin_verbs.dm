@@ -340,12 +340,12 @@ ADMIN_VERB_ADD(/client/proc/list_mob_groups, R_FUN, FALSE)
 	if(!check_rights(R_FUN))
 		return
 
-	to_chat(usr, "<b>Names of all var copies currently saved:</b>")
+	to_chat(usr, "<b>Names of all mob groups:</b>")
 	for (var/key_to_print in GLOB.mob_groups)
 		to_chat(usr, key_to_print) //prints the keys, not the values
 
 ADMIN_VERB_ADD(/client/proc/list_mob_group_contents, R_FUN, FALSE)
-/client/proc/list_mob_group_contents(var/key)
+/client/proc/list_mob_group_contents(key as text)
 	set name = "List Mob Group Contents"
 	set desc = "List the contents of a given mob group using a key"
 	set category = "Special Verbs"
@@ -360,8 +360,9 @@ ADMIN_VERB_ADD(/client/proc/list_mob_group_contents, R_FUN, FALSE)
 
 	if (key in GLOB.mob_groups)
 		to_chat(usr, "<b>Contents of the given list:</b>")
-		for (var/content in GLOB.mob_groups[key])
-			to_chat(usr, content)
+		var/list/list_to_list = GLOB.mob_groups[key]
+		for (var/content in list_to_list)
+			to_chat(usr, "[content]")
 
 
 ADMIN_VERB_ADD(/client/proc/object_talk, R_FUN, FALSE)
