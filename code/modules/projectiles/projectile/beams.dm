@@ -46,25 +46,31 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 
 /obj/item/projectile/beam/weak/pistol_35
 	damage_types = list(BURN = 12)
+	armor_penetration = 5
 	recoil = 1
 
 /obj/item/projectile/beam/weak/light_rifle_257
-	damage_types = list(BURN = 13)
+	damage_types = list(BURN = 18)
+	armor_penetration = 15
 
 /obj/item/projectile/beam/weak/rifle_75
 	damage_types = list(BURN = 22)
+	armor_penetration = 20
 	recoil = 4
 
 /obj/item/projectile/beam/weak/heavy_rifle_408
-	damage_types = list(BURN = 16)
+	damage_types = list(BURN = 20)
+	armor_penetration = 30
 	recoil = 3
 
 /obj/item/projectile/beam/weak/magnum_40
 	damage_types = list(BURN = 20)
+	armor_penetration = 10
 	recoil = 3
 
 /obj/item/projectile/beam/weak/kurtz_50
-	damage_types = list(BURN = 40)
+	damage_types = list(BURN = 30)
+	armor_penetration = 15
 	recoil = 5
 
 /obj/item/projectile/beam/weak/smg
@@ -79,8 +85,8 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	armor_penetration = 25
 
 /obj/item/projectile/beam/shotgun
-	damage_types = list(BURN = 35) //Normal slugs deal 45
-	armor_penetration = 10
+	damage_types = list(BURN = 48) //Normal slugs deal 45 - Not anymore! Even scrap dealt more with 48!
+	armor_penetration = 25
 	recoil = 2
 
 /obj/item/projectile/beam/shotgun/strong
