@@ -150,23 +150,24 @@
 //checks if projectile 'P' from turf 'from' can hit whatever is behind the table. Returns 1 if it can, 0 if bullet stops.
 /obj/structure/low_wall/proc/check_cover(obj/item/projectile/P, turf/from)
 	if (get_dist(P.starting, loc) <= 1) //Tables won't help you if people are THIS close
-		return 1
+		return TRUE
 	//For some reason there was an IF(TRUE) here, re-add if it breaks anything to have it removed - Wizard
 	var/chance = 20
 	if (ismob(P.original))
 		var/mob/M = P.original
 		if (M.lying)
 			chance += 20	//Lying down lets you catch less bullets
-	if(prob(chance))
-		health -= P.get_structure_damage()/2
-		if (health > 0)
-			visible_message(SPAN_WARNING("[P] hits \the [src]!"))
-			return 0
-		else
-			visible_message(SPAN_WARNING("[src] breaks down!"))
-			qdel(src)
-			return 1
-	return 1
+	if (!(P.testing))
+		if(prob(chance))
+			health -= P.get_structure_damage()/2
+			if (health > 0)
+				visible_message(SPAN_WARNING("[P] hits \the [src]!"))
+				return FALSE
+			else
+				visible_message(SPAN_WARNING("[src] breaks down!"))
+				qdel(src)
+				return TRUE
+	return TRUE
 
 
 //Icon procs.mostly copied from tables
