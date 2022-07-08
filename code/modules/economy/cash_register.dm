@@ -22,7 +22,7 @@
 	var/cash_stored = 0
 	var/obj/item/confirm_item
 	var/datum/money_account/linked_account
-	var/account_to_connect = null
+	var/account_to_connect = lonestar_account
 
 
 // Claim machine ID
