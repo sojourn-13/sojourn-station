@@ -87,7 +87,7 @@
 		new/obj/effect/effect/smoke/illumination(src.loc, brightness=15)
 		empulse(target, heavy_emp_range, light_emp_range)
 	if (testing)
-		SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, target)
+		impact_atom = target
 	qdel(src)
 	return
 
@@ -163,7 +163,7 @@
 					if(!M.stat && !isAI(M))
 						shake_camera(M, 3, 1)
 			if (testing)
-				SEND_SIGNAL(src, COMSIG_TRACE_IMPACT, src, A)
+				impact_atom = A
 			qdel(src)
 			return 1
 	else

@@ -61,10 +61,11 @@
 	/// Do we charge our melee attacks if we aren't adjacent?
 	var/do_melee_if_not_adjacent = TRUE
 
-	/// Number of delayed AI ticks, used for delaying ranged attacks. At 9, ranged mobs will be delayed by one tick after target. TODO: Create a override.
-	var/delayed = 0
-	/// How much we increment this mob's delayed var each time.
-	var/delay_amount = 0
+
+	/// Number of delayed AI ticks, used for delaying ranged attacks. At 1, ranged mobs will be delayed by one tick after target.
+	var/delayed = 1
+	/// Value that delayed will be reset to.
+	var/delayed_initial = 1
 	/// If this is more than the world timer, and we retarget, we will immediately attack.
 	var/retarget_rush_timer = 0
 	/// For this amount of time after a retarget, any retargets will cause a instant attack.

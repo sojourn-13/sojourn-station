@@ -55,7 +55,7 @@ Bullet also tend to have more armor against them do to this and can be douged un
 		return TRUE //mecha have their own penetration handling
 	var/damage = damage_types[BRUTE]
 	if(ismob(A))
-		if(mob_passthrough_check || ((holder.force_penetration) && (A in holder.force_penetration)))
+		if(mob_passthrough_check || (A in holder.force_penetration_on))
 			if(iscarbon(A))
 				damage *= 0.7
 			if (testing) //we are only tracking as a trace
@@ -79,7 +79,7 @@ Bullet also tend to have more armor against them do to this and can be douged un
 	else if(istype(A, /obj/machinery) || istype(A, /obj/structure))
 		chance = damage
 
-	if(prob(chance) || ((holder.force_penetration) && (A in holder.force_penetration_on)))
+	if(prob(chance) || (A in holder.force_penetration_on))
 		if(A.opacity)
 			//display a message so that people on the other side aren't so confused
 			A.visible_message(SPAN_WARNING("\The [src] pierces through \the [A]!"))

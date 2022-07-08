@@ -78,7 +78,7 @@
 
 	for(var/mob/living/carbon/human/H in oviewers(src))
 		H.sanity.onSeeDeath(src)
-		SEND_SIGNAL(H, COMSIG_MOB_DEATH, src)
+		SEND_SIGNAL(H, COMSIG_MOB_DEATH, src) //im not going to use this for the mob spawner becuase i dont understand signals enough
 
 	stat = DEAD
 	update_lying_buckled_and_verb_status()
@@ -119,6 +119,11 @@
 	switch_from_living_to_dead_mob_list()
 	updateicon()
 	to_chat(src,"<span class='deadsay'>[show_dead_message]</span>")
+
+	if (spawned_from)
+		spawned_from.currently_spawned[type] -= src
+		spawned_from = null
+
 	return 1
 
 

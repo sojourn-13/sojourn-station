@@ -112,6 +112,7 @@
 	target_mob = null
 	stance = HOSTILE_STANCE_IDLE
 	lost_sight = FALSE
+	delayed = delayed_initial
 	target_location = null
 
 /mob/living/carbon/superior_animal/proc/isValidAttackTarget(atom/O)
