@@ -638,8 +638,8 @@
 				movement_target = null
 				foodtarget = FALSE
 				stop_automated_movement = FALSE
-			if( !movement_target || !(movement_target.loc in oview(src, 7)) )
-				walk_to(src,0)
+			if(!movement_target || !(movement_target.loc in oview(src, 7)) )
+				walk_to_wrapper(src,0)
 				movement_target = null
 				foodtarget = FALSE
 				stop_automated_movement = FALSE

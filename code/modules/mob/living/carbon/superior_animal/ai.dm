@@ -102,7 +102,7 @@
 /mob/living/carbon/superior_animal/proc/loseTarget(stop_pursuit = TRUE, simply_losetarget = FALSE)
 	if (stop_pursuit)
 		stop_automated_movement = 0
-		walk(src, 0)
+		walk_to_wrapper(src, 0, deathcheck = FALSE)
 	if (!simply_losetarget)
 		fire_delay = fire_delay_initial
 		melee_delay = melee_delay_initial

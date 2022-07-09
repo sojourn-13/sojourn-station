@@ -9,8 +9,10 @@ GLOBAL_LIST_INIT(banned_vars, list(
 	"locs"
 ))
 
+/// List of associative lists: Key = the name of the list, value = The mobs within. Used in path mode of buildmode for grouping mobs together.
 GLOBAL_LIST_EMPTY(mob_groups)
 
+/// List of datums. Used in buildmode to store buildmode holders.
 GLOBAL_LIST_EMPTY(buildholders)
 
 //A set of constants used to determine which type of mute an admin wishes to apply:

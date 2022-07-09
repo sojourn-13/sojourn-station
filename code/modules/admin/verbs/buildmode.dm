@@ -144,6 +144,7 @@
 	density = 0
 	anchored = 1
 	var/client/cl = null
+	/// List of mobs. Used for pathmode, every mob in here will be controlled if the user decides to make them move or target.
 	var/list/selected_mobs = list()
 	var/obj/effect/bmode/builddir/builddir = null
 	var/obj/effect/bmode/buildhelp/buildhelp = null
@@ -173,7 +174,8 @@
 	throw_atom = null
 	cl = null
 
-	// todo, harddel schenanigans
+	for (var/mob/living/entity in selected_mobs)
+		entity.selected_by -= src
 	selected_mobs.Cut()
 	return ..()
 
@@ -184,10 +186,15 @@
 	var/valueholder = "derp"
 	var/objholder = /obj/structure/closet
 	var/objsay = 1
+	/// The key of the mob group we have currently selected. See admin.dm for the documentation on the list that contains the assoc lists.
 	var/listname = null
+	/// When we move our master's selected mobs, do their walks take priority over all other walks?
 	var/override_movement = TRUE
+	/// Do we respect any walk executed with an override?
 	var/respect_override = FALSE
+	/// Are our walks temporary, do they expire on their own?
 	var/temporary_walks = TRUE
+	/// Do we move dead mobs?
 	var/move_dead = FALSE
 
 	Click(location, control, params)

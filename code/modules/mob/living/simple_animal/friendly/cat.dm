@@ -33,7 +33,7 @@
 	..()
 
 	if (turns_since_move > 5 || (flee_target || mousetarget))
-		walk_to(src,0)
+		walk_to_wrapper(src,0)
 		turns_since_move = 0
 
 		if (flee_target) //fleeing takes precendence
@@ -42,7 +42,7 @@
 			handle_movement_target()
 
 	if (!movement_target)
-		walk_to(src,0)
+		walk_to_wrapper(src,0)
 
 	spawn(2)
 		attack_mice()
@@ -166,7 +166,7 @@
 		if (movement_target != friend)
 			if (current_dist > follow_dist && !ismouse(movement_target) && (friend in oview(src)))
 				//stop existing movement
-				walk_to(src,0)
+				walk_to_wrapper(src,0)
 				turns_since_scan = 0
 
 				//walk to friend
@@ -176,7 +176,7 @@
 
 		//already following and close enough, stop
 		else if (current_dist <= near_dist)
-			walk_to(src,0)
+			walk_to_wrapper(src,0)
 			movement_target = null
 			stop_automated_movement = 0
 			if (prob(10))
