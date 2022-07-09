@@ -266,6 +266,8 @@
 										if (!(entity in master.selected_mobs))
 											master.selected_mobs += entity
 											entity.selected_by += master
+									var/list/target_list = GLOB.mob_groups[listname]
+									to_chat(usr, "Successfully selected all mobs in [target_list]. New length of selected mobs: [selected_mobs.len]")
 								else
 									to_chat(usr, SPAN_WARNING("[listname] does not exist!"))
 							else
@@ -447,7 +449,7 @@
 							if (living_object in holder.selected_mobs)
 								holder.selected_mobs -= living_object
 								living_object.selected_by -= holder
-								to_chat(usr, "Successfully de-selected [living_object].")
+								to_chat(usr, "Successfully de-selected [living_object], new selected mob length is [holder.selected_mobs.len].")
 							else
 								to_chat(usr, SPAN_WARNING("[living_object] is not selected!"))
 
@@ -455,7 +457,7 @@
 					else if (!(living_object in holder.selected_mobs))
 						holder.selected_mobs += living_object
 						living_object.selected_by += holder
-						to_chat(usr, "Successfully selected [living_object].")
+						to_chat(usr, "Successfully selected [living_object], new selected mob length is [holder.selected_mobs.len].")
 					else
 						to_chat(usr, SPAN_WARNING("[living_object] is already selected!"))
 
