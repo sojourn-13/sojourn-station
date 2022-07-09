@@ -883,9 +883,13 @@ default behaviour is:
 
 /mob/living/Destroy()
 
-	for (var/list/group in mob_groups)
+	for (var/obj/effect/bmode/buildholder/selector in selected_by)
+		selector.selected_mobs -= src
+	selected_by.Cut()
+
+	for (var/group in groups_in)
 		GLOB.mob_groups[group] -= src
-		mob_groups -= group
+	groups_in.Cut()
 
 	QDEL_NULL(stats)
 
