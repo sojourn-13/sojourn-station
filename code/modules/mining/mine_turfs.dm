@@ -106,13 +106,12 @@
 /turf/simulated/mineral/bullet_act(var/obj/item/projectile/Proj)
 
 	// Emitter blasts
-	if (!(Proj.testing))
-		if(istype(Proj, /obj/item/projectile/beam/emitter))
-			emitter_blasts_taken++
+	if(istype(Proj, /obj/item/projectile/beam/emitter))
+		emitter_blasts_taken++
 
-			if(emitter_blasts_taken > 1) // 2 blasts per tile
-				mined_ore = 4 //Were blasting away rock with high power lasers this takes quite a bit of time to set up and power.
-				GetDrilled()
+		if(emitter_blasts_taken > 1) // 2 blasts per tile
+			mined_ore = 4 //Were blasting away rock with high power lasers this takes quite a bit of time to set up and power.
+			GetDrilled()
 
 /turf/simulated/mineral/Bumped(AM)
 	. = ..()

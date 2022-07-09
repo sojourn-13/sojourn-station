@@ -128,18 +128,17 @@
 	return 1
 
 /mob/living/silicon/bullet_act(var/obj/item/projectile/Proj)
-	if (Proj.is_hot() >= HEAT_MOBIGNITE_THRESHOLD && (!(Proj.testing)))
+	if (Proj.is_hot() >= HEAT_MOBIGNITE_THRESHOLD)
 		IgniteMob()
 
 	if(!Proj.nodamage)
-		if(Proj.damage_types[BRUTE] && (!(Proj.testing)))
+		if(Proj.damage_types[BRUTE])
 			adjustBruteLoss(Proj.damage_types[BRUTE])
-		if(Proj.damage_types[BURN] && (!(Proj.testing)))
+		if(Proj.damage_types[BURN])
 			adjustFireLoss(Proj.damage_types[BURN])
 
 	Proj.on_hit(src)
-	if (!(Proj.testing))
-		updatehealth()
+	updatehealth()
 	return 2
 
 /mob/living/silicon/apply_effect(var/effect = 0,var/effecttype = STUN, var/armor_value = 0, var/check_protection = 1)

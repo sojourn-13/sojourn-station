@@ -127,8 +127,7 @@
 
 /mob/living/simple_animal/cat/bullet_act(var/obj/item/projectile/proj)
 	. = ..()
-	if (!(proj.testing))
-		set_flee_target(proj.firer? proj.firer : src.loc)
+	set_flee_target(proj.firer? proj.firer : src.loc)
 
 /mob/living/simple_animal/cat/hitby(atom/movable/AM)
 	. = ..()

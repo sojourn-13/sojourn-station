@@ -263,7 +263,7 @@
 	if(!Proj)	return
 	if(prob(65))
 		..()
-	else if (!(Proj.testing))
+	else
 		visible_message("\red <B>[src] blocks [Proj] with its shield!</B>")
 	return 0
 

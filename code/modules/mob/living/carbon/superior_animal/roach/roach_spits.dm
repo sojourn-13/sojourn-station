@@ -10,10 +10,9 @@
 /obj/item/projectile/roach_spit/on_hit(atom/target)
 	. = ..()
 	if(isliving(target))
-		if (!testing)
-			var/mob/living/L = target
-			var/damage = rand(3, 7)
-			L.damage_through_armor(damage, TOX, attack_flag = ARMOR_BIO)
+		var/mob/living/L = target
+		var/damage = rand(3, 7)
+		L.damage_through_armor(damage, TOX, attack_flag = ARMOR_BIO)
 
 /obj/item/projectile/roach_spit/attack_mob(mob/living/target_mob, distance, miss_modifier=0)
 	if (isroach(target_mob))
@@ -32,10 +31,9 @@
 /obj/item/projectile/roach_spit/large/on_hit(atom/target)
 	. = ..()
 	if(isliving(target))
-		if (!testing)
-			var/mob/living/L = target
-			var/damage = rand(12, 20)
-			L.damage_through_armor(damage, TOX, attack_flag = ARMOR_BIO)
+		var/mob/living/L = target
+		var/damage = rand(12, 20)
+		L.damage_through_armor(damage, TOX, attack_flag = ARMOR_BIO)
 
 /obj/item/projectile/roach_spit/large/attack_mob(mob/living/target_mob, distance, miss_modifier=0)
 	if (isroach(target_mob))

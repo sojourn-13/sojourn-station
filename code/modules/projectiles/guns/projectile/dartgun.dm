@@ -9,16 +9,14 @@
 	var/reagent_amount = 15
 
 /obj/item/projectile/bullet/chemdart/New()
-	if (!testing)
-		create_reagents(reagent_amount)
+	create_reagents(reagent_amount)
 	..()
 
 /obj/item/projectile/bullet/chemdart/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
-		if (!testing)
-			if(L.can_inject(target_zone = def_zone))
-				reagents.trans_to_mob(L, reagent_amount, CHEM_BLOOD)
+		if(L.can_inject(target_zone = def_zone))
+			reagents.trans_to_mob(L, reagent_amount, CHEM_BLOOD)
 
 /obj/item/ammo_casing/chemdart
 	name = "chemical dart"

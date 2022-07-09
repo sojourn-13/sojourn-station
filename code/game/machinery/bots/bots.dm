@@ -85,8 +85,7 @@
 /obj/machinery/bot/bullet_act(var/obj/item/projectile/Proj)
 	if(!Proj.get_structure_damage())
 		return
-	if (!(Proj.testing))
-		health -= Proj.get_structure_damage()
+	health -= Proj.get_structure_damage()
 	..()
 	healthCheck()
 

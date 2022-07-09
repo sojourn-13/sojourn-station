@@ -16,37 +16,32 @@ meteor_act
 	var/obj/item/organ/external/organ = get_organ(def_zone)
 
 	//Shields
-	if (!(P.testing))
-		var/shield_check = check_shields(P.get_structure_damage(), P, null, def_zone, "the [P.name]")
-		if(shield_check)
-			if(shield_check < 0)
-				return shield_check
-			else
-				P.on_hit(src, def_zone)
-				return 2
-	else
-		P.on_hit(src, def_zone)
-		return 2
+	var/shield_check = check_shields(P.get_structure_damage(), P, null, def_zone, "the [P.name]")
+	if(shield_check)
+		if(shield_check < 0)
+			return shield_check
+		else
+			P.on_hit(src, def_zone)
+			return 2
 
 	//Checking absorb for spawning shrapnel
-	if (!(P.testing))
-		.=..(P , def_zone)
+	.=..(P , def_zone)
 
-		var/check_absorb = .
-		//Shrapnel
-		if(P.can_embed() && (check_absorb < 2) && !src.stats.getPerk(PERK_IRON_FLESH))
-			var/armor = getarmor_organ(organ, ARMOR_BULLET)
-			if(prob((20 + max(P.damage_types[BRUTE] - armor, -10) * P.embed_mult)))
-				if(!P.shrapnel_type)
-					var/obj/item/material/shard/shrapnel/SP = new()
-					SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
-					SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
-					SP.loc = organ
-					SP.gun_number = P.serial_type_index_bullet //"" to "" shouldnt be an issue
-					organ.embed(SP)
-				else
-					var/obj/item/newshrap = new P.shrapnel_type(organ)
-					organ.embed(newshrap)
+	var/check_absorb = .
+	//Shrapnel
+	if(P.can_embed() && (check_absorb < 2) && !src.stats.getPerk(PERK_IRON_FLESH))
+		var/armor = getarmor_organ(organ, ARMOR_BULLET)
+		if(prob((20 + max(P.damage_types[BRUTE] - armor, -10) * P.embed_mult)))
+			if(!P.shrapnel_type)
+				var/obj/item/material/shard/shrapnel/SP = new()
+				SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
+				SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
+				SP.loc = organ
+				SP.gun_number = P.serial_type_index_bullet //"" to "" shouldnt be an issue
+				organ.embed(SP)
+			else
+				var/obj/item/newshrap = new P.shrapnel_type(organ)
+				organ.embed(newshrap)
 
 
 /mob/living/carbon/human/hit_impact(damage, dir)

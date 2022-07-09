@@ -599,11 +599,10 @@
 		qdel(src)
 
 /obj/structure/spider_nest/bullet_act(obj/item/projectile/P, def_zone)
-	if (!(P.testing))
-		playsound(loc, 'sound/voice/shriek1.ogg', 85, 1, 8, 8)
-		spawn_spider()
-		visible_message(SPAN_WARNING("[src] bursts open!"))
-		qdel(src)
+	playsound(loc, 'sound/voice/shriek1.ogg', 85, 1, 8, 8)
+	spawn_spider()
+	visible_message(SPAN_WARNING("[src] bursts open!"))
+	qdel(src)
 	..()
 
 /obj/structure/spider_nest/proc/spawn_spider()

@@ -158,10 +158,9 @@
 /obj/structure/foamedmetal/ex_act(severity)
 	qdel(src)
 
-/obj/structure/foamedmetal/bullet_act(var/obj/item/projectile/Proj)
-	if (!(Proj.testing))
-		if(metal == 1 || prob(50))
-			qdel(src)
+/obj/structure/foamedmetal/bullet_act()
+	if(metal == 1 || prob(50))
+		qdel(src)
 
 /obj/structure/foamedmetal/attack_hand(var/mob/user)
 	if ((HULK in user.mutations) || (prob(75 - metal * 25)))

@@ -143,11 +143,9 @@
 		..()
 
 /obj/vehicle/bullet_act(var/obj/item/projectile/Proj)
-	if (!(Proj.testing))
-		health -= Proj.get_structure_damage()
+	health -= Proj.get_structure_damage()
 	..()
-	if (!(Proj.testing))
-		healthCheck()
+	healthCheck()
 
 /obj/vehicle/ex_act(severity)
 	switch(severity)

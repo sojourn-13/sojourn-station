@@ -13,11 +13,10 @@
 
 /obj/item/projectile/goo/on_hit(atom/target)
 	. = ..()
-	if (!testing)
-		if(isliving(target) && !issilicon(target) )
-			var/mob/living/L = target
-			L.damage_through_armor(10, TOX, attack_flag = ARMOR_RAD)
-			if(!(locate(/obj/effect/decal/cleanable/spiderling_remains) in target.loc))
-				var/obj/effect/decal/cleanable/spiderling_remains/goo = new /obj/effect/decal/cleanable/spiderling_remains(target.loc)
-				goo.name = "electrolyzed goo" //from "acrid goo" to "acidic goo", and from "acidic goo" to "electrolyzed goo"
-				goo.desc = "An unknown, bubbling liquid. The fumes smell awful with a hint of ozone."
+	if( isliving(target) && !issilicon(target) )
+		var/mob/living/L = target
+		L.damage_through_armor(10, TOX, attack_flag = ARMOR_RAD)
+	if(!(locate(/obj/effect/decal/cleanable/spiderling_remains) in target.loc))
+		var/obj/effect/decal/cleanable/spiderling_remains/goo = new /obj/effect/decal/cleanable/spiderling_remains(target.loc)
+		goo.name = "electrolyzed goo" //from "acrid goo" to "acidic goo", and from "acidic goo" to "electrolyzed goo"
+		goo.desc = "An unknown, bubbling liquid. The fumes smell awful with a hint of ozone."

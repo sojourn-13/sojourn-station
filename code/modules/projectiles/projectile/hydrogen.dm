@@ -12,10 +12,9 @@
 	recoil = 20
 
 /obj/item/projectile/hydrogen/on_impact(atom/target)
-	if (!testing)
-		explosion(loc, 0, 0, 2) // Smallest possible explosion
-		set_light(0)
-		return TRUE
+	explosion(loc, 0, 0, 2) // Smallest possible explosion
+	set_light(0)
+	return TRUE
 
 /obj/item/projectile/hydrogen/pistol
 	kill_count = 10
@@ -30,10 +29,9 @@
 	recoil = 30
 
 /obj/item/projectile/hydrogen/cannon/on_impact(atom/target)
-	if (!testing)
-		explosion(loc, 0, 1, 2, 4) // Same values as the missile.
-		set_light(0)
-		return TRUE
+	explosion(loc, 0, 1, 2, 4) // Same values as the missile.
+	set_light(0)
+	return TRUE
 
 // Overcharged Shots
 /obj/item/projectile/hydrogen/max

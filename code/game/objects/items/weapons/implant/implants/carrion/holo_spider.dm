@@ -222,7 +222,6 @@
 	..()
 	disrupt()
 
-/obj/item/implant/carrion_spider/holographic/bullet_act(var/obj/item/projectile/Proj)
+/obj/item/implant/carrion_spider/holographic/bullet_act()
 	..()
-	if (!(Proj.testing))
-		disrupt()
+	disrupt()

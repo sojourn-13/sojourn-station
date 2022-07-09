@@ -173,28 +173,26 @@
 /obj/machinery/door/bullet_act(obj/item/projectile/Proj)
 	..()
 
-	if (!(Proj.testing))
+	var/damage = Proj.get_structure_damage()
 
-		var/damage = Proj.get_structure_damage()
-
-		// Emitter Blasts - these will eventually completely destroy the door, given enough time.
-		if (damage > 90)
-			destroy_hits--
-			if (destroy_hits <= 0)
-				visible_message(SPAN_DANGER("\The [name] disintegrates!"))
-				if(Proj.damage_types[BRUTE] > Proj.damage_types[BURN])
-					new /obj/item/stack/material/steel(loc, 2)
-					new /obj/item/stack/rods(loc, 3)
-				else
-					new /obj/effect/decal/cleanable/ash(loc) // Turn it to ashes!
-				qdel(src)
-
-		if(damage)
-			if(Proj.nocap_structures)
-				take_damage(damage)
+	// Emitter Blasts - these will eventually completely destroy the door, given enough time.
+	if (damage > 90)
+		destroy_hits--
+		if (destroy_hits <= 0)
+			visible_message(SPAN_DANGER("\The [name] disintegrates!"))
+			if(Proj.damage_types[BRUTE] > Proj.damage_types[BURN])
+				new /obj/item/stack/material/steel(loc, 2)
+				new /obj/item/stack/rods(loc, 3)
 			else
-			//cap projectile damage so that there's still a minimum number of hits required to break the door
-				take_damage(min(damage, 100))
+				new /obj/effect/decal/cleanable/ash(loc) // Turn it to ashes!
+			qdel(src)
+
+	if(damage)
+		if(Proj.nocap_structures)
+			take_damage(damage)
+		else
+		//cap projectile damage so that there's still a minimum number of hits required to break the door
+			take_damage(min(damage, 100))
 
 /obj/machinery/door/proc/hit_by_living(mob/living/M)
 	var/body_part = pick(BP_HEAD, BP_CHEST, BP_GROIN)

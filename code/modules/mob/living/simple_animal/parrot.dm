@@ -252,16 +252,15 @@
 //Bullets
 /mob/living/simple_animal/parrot/bullet_act(var/obj/item/projectile/Proj)
 	..()
-	if (!(Proj.testing))
-		if(!stat && !client)
-			if(parrot_state == PARROT_PERCH)
-				parrot_sleep_dur = parrot_sleep_max //Reset it's sleep timer if it was perched
+	if(!stat && !client)
+		if(parrot_state == PARROT_PERCH)
+			parrot_sleep_dur = parrot_sleep_max //Reset it's sleep timer if it was perched
 
-			parrot_interest = null
-			parrot_state = PARROT_WANDER //OWFUCK, Been shot! RUN LIKE HELL!
-			parrot_been_shot += 5
-			icon_state = "parrot_fly"
-			drop_held_item(0)
+		parrot_interest = null
+		parrot_state = PARROT_WANDER //OWFUCK, Been shot! RUN LIKE HELL!
+		parrot_been_shot += 5
+		icon_state = "parrot_fly"
+		drop_held_item(0)
 	return
 
 

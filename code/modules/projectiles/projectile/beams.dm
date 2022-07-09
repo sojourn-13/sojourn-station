@@ -215,26 +215,24 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 
 /obj/item/projectile/beam/sniper/healing/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if (!testing)
-		if(isliving(target))
-			var/mob/living/L = target
-			L.adjustOxyLoss(-5)
-			L.adjustToxLoss(-3)
-			L.adjustBruteLoss(-3)
-			L.adjustFireLoss(-3)
+	if(isliving(target))
+		var/mob/living/L = target
+		L.adjustOxyLoss(-5)
+		L.adjustToxLoss(-3)
+		L.adjustBruteLoss(-3)
+		L.adjustFireLoss(-3)
 
 /obj/item/projectile/beam/sniper/healing/harmony
 	name = "harmony"
 
 /obj/item/projectile/beam/sniper/healing/harmony/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if (!testing)
-		if(isliving(target))
-			var/mob/living/L = target
-			L.adjustOxyLoss(-4)
-			L.adjustToxLoss(-2)
-			L.adjustBruteLoss(-2)
-			L.adjustFireLoss(-2)
+	if(isliving(target))
+		var/mob/living/L = target
+		L.adjustOxyLoss(-4)
+		L.adjustToxLoss(-2)
+		L.adjustBruteLoss(-2)
+		L.adjustFireLoss(-2)
 
 /obj/item/projectile/beam/tesla
 	name = "lightning"
@@ -268,7 +266,6 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 
 /obj/item/projectile/beam/infrared/on_hit(atom/target)
 	if(isliving(target))
-		if (!testing)
-			var/mob/living/L = target
-			L.bodytemperature += (heat/250) * TEMPERATURE_DAMAGE_COEFFICIENT //1/5th the strength of hell ramen per tick, since you can unload with a smg
+		var/mob/living/L = target
+		L.bodytemperature += (heat/250) * TEMPERATURE_DAMAGE_COEFFICIENT //1/5th the strength of hell ramen per tick, since you can unload with a smg
 	..()

@@ -32,10 +32,9 @@
 	. = ..()
 	update_icon()
 
-/obj/item/mine/bullet_act(var/obj/item/projectile/Proj)
-	if (!(Proj.testing))
-		if(prob(90))
-			explode()
+/obj/item/mine/bullet_act()
+	if(prob(90))
+		explode()
 
 /obj/item/mine/armed
 	armed = TRUE

@@ -287,17 +287,16 @@
 /obj/machinery/power/supermatter/bullet_act(var/obj/item/projectile/Proj)
 	var/turf/L = loc
 	if(!istype(L))		// We don't run process() when we are in space
-		return FALSE	// This stops people from being able to really power up the supermatter
+		return 0	// This stops people from being able to really power up the supermatter
 				// Then bring it inside to explode instantly upon landing on a valid turf.
 
 
 	var/proj_damage = Proj.get_structure_damage()
-	if (!(Proj.testing))
-		if(istype(Proj, /obj/item/projectile/beam))
-			power += proj_damage * config_bullet_energy	* CHARGING_FACTOR / POWER_FACTOR
-		else
-			damage += proj_damage * config_bullet_energy
-	return FALSE
+	if(istype(Proj, /obj/item/projectile/beam))
+		power += proj_damage * config_bullet_energy	* CHARGING_FACTOR / POWER_FACTOR
+	else
+		damage += proj_damage * config_bullet_energy
+	return 0
 
 /obj/machinery/power/supermatter/attack_robot(mob/user as mob)
 	if(Adjacent(user))

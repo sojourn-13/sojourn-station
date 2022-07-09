@@ -205,17 +205,14 @@
 	if(src.ricochet_id != 0)
 		if(src.ricochet_id == Proj.ricochet_id)
 			src.ricochet_id = 0
-			if (!(Proj.testing))
-				new /obj/effect/sparks(get_turf(Proj))
+			new /obj/effect/sparks(get_turf(Proj))
 			return PROJECTILE_CONTINUE
 		src.ricochet_id = 0
 	var/proj_damage = Proj.get_structure_damage()
 	if(istype(Proj,/obj/item/projectile/beam))
-		if (!(Proj.testing))
-			burn(500)//TODO : fucking write these two procs not only for plasma (see plasma in materials.dm:283) ~
+		burn(500)//TODO : fucking write these two procs not only for plasma (see plasma in materials.dm:283) ~
 	else if(istype(Proj,/obj/item/projectile/ion))
-		if (!(Proj.testing))
-			burn(500)
+		burn(500)
 
 	if(Proj.can_ricochet && proj_damage != 0 && (src.x != Proj.starting.x) && (src.y != Proj.starting.y))
 		var/ricochetchance = 1
@@ -230,12 +227,10 @@
 			var/damagediff = round(proj_damage / 2 + proj_damage * ricochetchance / 200) // projectile loses up to 50% of its damage when it ricochets, depending on situation
 			Proj.damage_types[BRUTE] = round(Proj.damage_types[BRUTE] / 2 + Proj.damage_types[BRUTE] * ricochetchance / 200)
 			Proj.damage_types[BURN] = round(Proj.damage_types[BURN] / 2 + Proj.damage_types[BURN] * ricochetchance / 200)
-			if (!(Proj.testing))
-				take_damage(min(proj_damage - damagediff, 100))
-				visible_message("<span class='danger'>\The [Proj] ricochets from the surface of wall!</span>")
+			take_damage(min(proj_damage - damagediff, 100))
+			visible_message("<span class='danger'>\The [Proj] ricochets from the surface of wall!</span>")
 			projectile_reflection(Proj)
-			if (!(Proj.testing))
-				new /obj/effect/sparks(get_turf(Proj))
+			new /obj/effect/sparks(get_turf(Proj))
 			return PROJECTILE_CONTINUE // complete projectile permutation
 
 	//cut some projectile damage here and not in projectile.dm, because we need not to all things what are using get_str_dam() becomes thin and weak.
@@ -250,17 +245,15 @@
 	else
 		damage_taken = min(proj_damage, 100)
 
-	if (!(Proj.testing))
-		create_bullethole(Proj)//Potentially infinite bullet holes but most walls don't last long enough for this to be a problem.
+	create_bullethole(Proj)//Potentially infinite bullet holes but most walls don't last long enough for this to be a problem.
 
-	if (!(Proj.testing))
-		if(Proj.damage_types[BRUTE] && prob(src.damage / (material.integrity + reinf_material?.integrity) * 33))
-			var/obj/item/trash/material/metal/slug = new(get_turf(Proj))
-			slug.matter.Cut()
-			slug.matter[reinf_material ? reinf_material.name : material.name] = 0.1
-			slug.throw_at(get_turf(Proj), 0, 1)
+	if(Proj.damage_types[BRUTE] && prob(src.damage / (material.integrity + reinf_material?.integrity) * 33))
+		var/obj/item/trash/material/metal/slug = new(get_turf(Proj))
+		slug.matter.Cut()
+		slug.matter[reinf_material ? reinf_material.name : material.name] = 0.1
+		slug.throw_at(get_turf(Proj), 0, 1)
 
-		take_damage(damage_taken)
+	take_damage(damage_taken)
 
 /turf/simulated/wall/hitby(AM as mob|obj, var/speed=THROWFORCE_SPEED_DIVISOR)
 	..()

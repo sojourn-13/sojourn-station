@@ -24,7 +24,7 @@
 
 /mob/living/carbon/superior_animal/roach/benzin/bullet_act(obj/item/projectile/P, def_zone)
 	. = ..()
-	if(prob(80) && (!(P.testing)))
+	if(prob(80))
 		explosion(src.loc, 0,1,2) //slightly weaker radius than a plasma spider, still hurts like a bitch
 
 /mob/living/carbon/superior_animal/roach/benzin/attackby(obj/item/I, mob/living/user, params)

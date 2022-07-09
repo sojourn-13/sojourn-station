@@ -334,20 +334,19 @@
 	..()
 
 /obj/machinery/artifact/bullet_act(var/obj/item/projectile/P)
-	if (!(P.testing))
-		if(istype(P,/obj/item/projectile/bullet))
-			if(my_effect.trigger == TRIGGER_FORCE)
-				my_effect.ToggleActivate()
-			if(secondary_effect && secondary_effect.trigger == TRIGGER_FORCE && prob(25))
-				secondary_effect.ToggleActivate(0)
+	if(istype(P,/obj/item/projectile/bullet))
+		if(my_effect.trigger == TRIGGER_FORCE)
+			my_effect.ToggleActivate()
+		if(secondary_effect && secondary_effect.trigger == TRIGGER_FORCE && prob(25))
+			secondary_effect.ToggleActivate(0)
 
-		else if(istype(P,/obj/item/projectile/beam) ||\
-			istype(P,/obj/item/projectile/ion) ||\
-			istype(P,/obj/item/projectile/energy))
-			if(my_effect.trigger == TRIGGER_ENERGY)
-				my_effect.ToggleActivate()
-			if(secondary_effect && secondary_effect.trigger == TRIGGER_ENERGY && prob(25))
-				secondary_effect.ToggleActivate(0)
+	else if(istype(P,/obj/item/projectile/beam) ||\
+		istype(P,/obj/item/projectile/ion) ||\
+		istype(P,/obj/item/projectile/energy))
+		if(my_effect.trigger == TRIGGER_ENERGY)
+			my_effect.ToggleActivate()
+		if(secondary_effect && secondary_effect.trigger == TRIGGER_ENERGY && prob(25))
+			secondary_effect.ToggleActivate(0)
 
 /obj/machinery/artifact/ex_act(severity)
 	switch(severity)

@@ -73,15 +73,14 @@
 /mob/living/carbon/superior_animal/roach/bluespace/bullet_act(obj/item/projectile/P, def_zone)
 	var/atom/targetted_mob = (target_mob?.resolve())
 
-	if (!(P.testing))
-		if(prob(change_tele_to_mob))
-			var/source = src
-			if(targetted_mob)
-				source = targetted_mob
-			var/turf/T = get_random_secure_turf_in_range(source, 2, 1)
-			do_sparks(3, 0, src.loc)
-			do_teleport(src, T)
-			return FALSE
+	if(prob(change_tele_to_mob))
+		var/source = src
+		if(targetted_mob)
+			source = targetted_mob
+		var/turf/T = get_random_secure_turf_in_range(source, 2, 1)
+		do_sparks(3, 0, src.loc)
+		do_teleport(src, T)
+		return FALSE
 	. = ..()
 
 /mob/living/carbon/superior_animal/roach/bluespace/attack_generic(mob/user, damage, attack_message)

@@ -354,8 +354,7 @@
 		return
 
 	..()
-	if (!(Proj.testing))
-		damage(proj_damage)
+	damage(proj_damage)
 
 	return
 

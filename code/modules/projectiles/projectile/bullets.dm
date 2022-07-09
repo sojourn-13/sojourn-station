@@ -26,8 +26,7 @@ Bullet also tend to have more armor against them do to this and can be douged un
 /obj/item/projectile/bullet/on_hit(atom/target)
 	if (..(target))
 		var/mob/living/L = target
-		if (!testing)
-			shake_camera(L, 1, 1, 0.5)
+		shake_camera(L, 1, 1, 0.5)
 
 /obj/item/projectile/bullet/attack_mob(var/mob/living/target_mob, distance, miss_modifier)
 	if(penetrating > 0 && damage_types[BRUTE] > 20 && prob(damage_types[BRUTE]))
@@ -42,29 +41,22 @@ Bullet also tend to have more armor against them do to this and can be douged un
 
 /obj/item/projectile/bullet/can_embed()
 	//prevent embedding if the projectile is passing through the mob
-	if(mob_passthrough_check || testing)
+	if(mob_passthrough_check)
 		return FALSE
 	return ..()
 
 /obj/item/projectile/bullet/check_penetrate(var/atom/A)
-	var/datum/penetration_holder/holder = penetration_holder
-	if(!A || !A.density)
-		return TRUE //if whatever it was got destroyed when we hit it, then I guess we can just keep going
+	if(!A || !A.density) return 1 //if whatever it was got destroyed when we hit it, then I guess we can just keep going
 
 	if(istype(A, /obj/mecha))
-		return TRUE //mecha have their own penetration handling
+		return 1 //mecha have their own penetration handling
 	var/damage = damage_types[BRUTE]
 	if(ismob(A))
-		if(mob_passthrough_check || (A in holder.force_penetration_on))
-			if(iscarbon(A))
-				damage *= 0.7
-			if (testing) //we are only tracking as a trace
-				holder.force_penetration_on += A
-			else
-				holder.force_penetration_on -= A
-			return TRUE
-		else
-			return FALSE
+		if(!mob_passthrough_check)
+			return 0
+		if(iscarbon(A))
+			damage *= 0.7
+		return 1
 
 	var/chance = 0
 	if(istype(A, /turf/simulated/wall))
@@ -79,17 +71,13 @@ Bullet also tend to have more armor against them do to this and can be douged un
 	else if(istype(A, /obj/machinery) || istype(A, /obj/structure))
 		chance = damage
 
-	if(prob(chance) || (A in holder.force_penetration_on))
+	if(prob(chance))
 		if(A.opacity)
 			//display a message so that people on the other side aren't so confused
 			A.visible_message(SPAN_WARNING("\The [src] pierces through \the [A]!"))
-		if (testing)
-			holder.force_penetration_on += A //we are only tracking as a trace
-		else
-			holder.force_penetration_on -= A
-		return TRUE
+		return 1
 
-	return FALSE
+	return 0
 
 //For projectiles that actually represent clouds of projectiles
 /obj/item/projectile/bullet/pellet

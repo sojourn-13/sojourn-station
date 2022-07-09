@@ -238,8 +238,9 @@
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings)
 
 /mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE)
+	var/projectile_passflags = null
+	var/projectile_flags = null
 	var/calculated_walk = (comfy_range - comfy_distance)
-	var/datum/penetration_holder/trace_holder = null
 	var/fire_through_lost_sight = FALSE
 	var/can_see = TRUE
 	var/ran_see_check = FALSE
@@ -272,7 +273,6 @@
 
 		if (!lost_sight)
 			target_location = WEAKREF(targetted_mob.loc) //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
-		target_location_resolved = (target_location?.resolve())
 		if (retarget)
 			var/retarget_prioritize = retarget_prioritize_current //local var so that we can make temporary changes
 			if (retarget_timer <= 0)
@@ -308,7 +308,6 @@
 
 				lost_sight = TRUE
 				patience--
-
 				if (wander_if_lost_sight)
 					var/moving_to = pick(cardinal)
 					set_dir(moving_to)
@@ -318,13 +317,23 @@
 			else
 				cant_see_timer = (world.time)++ //just to make sure we dont walk towards them
 				fire_through_lost_sight = TRUE
-
 		// This block only runs if the above can_see check is true, fires a trace projectile to see if we can hit our target
 		else if (projectiletype && advance) // if we can see, let's prepare to see if we can hit
+			if (istype(projectiletype, /obj/item/projectile))
+				if (projectiletype == initial(projectiletype)) // typepaths' vars are only accessable through initial() or objects
+					projectile_passflags = initial(projectiletype.pass_flags)
+					projectile_flags = initial(projectiletype.flags)
+				else // in case for some reason this var was editted post-compile
+					var/obj/item/projectile/temp_proj = new projectiletype(null) //create it in nullspace
+					projectile_passflags = temp_proj.pass_flags
+					projectile_flags = temp_proj.flags
+					QDEL_NULL(temp_proj)
 			if (ranged)
-				var/trace = check_trajectory_raytrace(targetted_mob, src, projectiletype, TRUE)
-				spawn(0)
-				handle_trace_impact(trace)
+				var/obj/item/projectile/test/impacttest/trace = new /obj/item/projectile/test/impacttest(get_turf(src))
+				RegisterSignal(trace, COMSIG_TRACE_IMPACT, .proc/handle_trace_impact)
+				trace.pass_flags = projectile_passflags
+				trace.flags = projectile_flags
+				trace.launch(targetted_mob)
 
 	if (!fire_through_lost_sight) //can only be true if src does not have fire_through_walls
 		lost_sight = FALSE
@@ -342,22 +351,15 @@
 		prepareAttackOnTarget()
 		alive_walk_to(src, targetted, 1, move_to_delay)
 	else if(ranged)
-		if (!(targetted_mob.check_if_alive(TRUE)))
-			loseTarget()
-			return
-		if (stat == DEAD)
-			return
 		if(get_dist(src, targetted) <= comfy_range)
-			if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
-				addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace_holder), delay_for_range)
-			if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))  //we dont want to prematurely end a advancing walk
+			prepareAttackPrecursor(targetted, .proc/OpenFire, RANGED_TYPE)
+			if ((advancement_timer <= world.time) && (cant_see_timer <= world.time)) //we dont want to prematurely end a advancing walk
 				alive_walk_to(src, targetted, calculated_walk, move_to_delay) //we still want to reset our walk
 		else
-			if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
-				addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace_holder), delay_for_range)
 			if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 				alive_walk_to(src, targetted, calculated_walk, move_to_delay)
+			prepareAttackPrecursor(targetted, .proc/OpenFire, RANGED_TYPE)
 
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
 /atom/proc/check_if_alive(var/critcheck = FALSE) //A simple yes no if were alive
@@ -416,7 +418,6 @@
 	handle_regular_hud_updates()
 	if(!reagent_immune)
 		handle_cheap_chemicals_in_body()
-
 	if(!(ticks_processed%3))
 		// handle_status_effects() this is handled here directly to save a bit on procedure calls
 		//if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1)) - Soj edit, we already update icon just 13 lines down form this, no point
@@ -473,95 +474,78 @@
 	return FALSE
 
 /**
- *  Handles telegraphing attacks, and attack delays. It does not handle the attacks themselves.
- *
- *	Returns a boolean, FALSE meaning the proc has come to the conclusion that the mob should not fire this tick.
+ *  To be used when, instead of raw attack procs, you want to add a timer.
+ *  Will telegraph this attack to any within range, visually, with a message and a beam effect.
  *
  *	Args:
+ *	atom/targetted_mob-Atom this timer will be targetted to, and the target of the telegraphs.
+ *	proctocall: The proc the timer will call.
  *	attack_type-The delay that will be used for this timer. Defines used by this defined in mobs.dm. Example: MELEE_TYPE.
  *	telegraph-Boolean. If false, no visual emote will be made.
  *	cast_beam-Boolean. If true, a beam will be cast from src to targetted_mob as a visual telegraph.
- *	atom/movable/targetted-The target of the telegraphs.
 **/
-/mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(attack_type, telegraph = TRUE, cast_beam = TRUE, var/atom/movable/targetted)
+/mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(var/atom/targetted_mob, proctocall, var/attack_type, var/telegraph = TRUE, var/cast_beam = TRUE)
 	if (check_if_alive()) //sanity
 		var/time_to_expire
-		var/attack_telegraph
 		switch(attack_type)
 			if (MELEE_TYPE)
-
-				time_to_expire = delay_for_melee
-				attack_telegraph = melee_telegraph
-
-				if (melee_delay <= 0)
-					melee_delay = melee_delay_initial
-				else
-					melee_delay--
+				if (do_melee_if_not_adjacent || Adjacent(targetted_mob))
+					time_to_expire = delay_for_melee
 					if (telegraph)
-						visible_message(SPAN_WARNING("\the [src] [melee_charge_telegraph] \the <font color = 'orange'>[targetted]</font>!"), target = targetted, message_target = always_telegraph_to_target)
-					return FALSE
 
-			if (RANGED_TYPE, RANGED_RAPID_TYPE)
+						if (!(melee_delay == 0)) //are we still charging our attack?
+							melee_delay--
+							visible_message(SPAN_WARNING("\the [src] [melee_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
+							return
+						else
+							melee_delay = melee_delay_initial
 
+						if (time_to_expire > 0)
+							visible_message(SPAN_WARNING("\the [src] [melee_telegraph] <font color = 'blue'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
+					addtimer(CALLBACK(src, proctocall), time_to_expire) //awful hack because melee attacks are handled differently
+
+			if (RANGED_TYPE || RANGED_RAPID_TYPE)
 				time_to_expire = delay_for_range
-				attack_telegraph = range_telegraph
+				if (telegraph) //no telegraph needed if the attack is instant
 
-				if (fire_delay <= 0)
-					fire_delay = fire_delay_initial
-				else
-					fire_delay--
-					if (telegraph)
-						visible_message(SPAN_WARNING("\the [src] [range_charge_telegraph] \the <font color = 'orange'>[targetted]</font>!"), target = targetted, message_target = always_telegraph_to_target)
-					return FALSE
+					if (!(fire_delay == 0)) //are we still charging our attack?
+						fire_delay--
+						visible_message(SPAN_WARNING("\the [src] [range_charge_telegraph] <font color = 'orange'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
+						return
+					else
+						fire_delay = fire_delay_initial
 
-		if (cast_beam)
-			Beam(targetted, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(get_dist(src, targetted) + 10), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
-		if (telegraph)
-			visible_message(SPAN_WARNING("\the [src] [attack_telegraph] \the <font color = 'blue'>[targetted]</font>!"), target = targetted, message_target = always_telegraph_to_target)
-
-		return TRUE
-	else
-		return FALSE
+					if (time_to_expire > 0)
+						visible_message(SPAN_WARNING("\the [src] [range_telegraph] <font color = 'blue'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
+					if (cast_beam)
+						Beam(targetted_mob, icon_state = "1-full", time=(time_to_expire/10), maxdistance=(viewRange + 2), alpha_arg=telegraph_beam_alpha, color_arg = telegraph_beam_color)
+				addtimer(CALLBACK(src, proctocall, targetted_mob), time_to_expire)
 
 /// Called in findTarget() if the found target is not the same as the one we already have.
 /mob/living/carbon/superior_animal/proc/doTargetMessage()
 	return
 
 /**
- * To be used in conjunction with check_trajectory_raytrace. Make sure to spawn(0) before this proc so the projectile processes. spawn(0) does not work WITHIN the proc, sadly.
- *
- * If trace.impact_atom is not targetted_mob, and it is not in trace.force_penetration_on, we will advance advancement tiles towards our target.
- *
- * If there is no impact atom, it will assume it was deleted, and only pass penetration data.
+ * Signal handler for COMSIG_TRACE_IMPACT signal.
+ * Apon impact of the trace projectile, it will fire this signal, which will decide if the entity it impacted is our target. If no, we then
+ * advance advancement turfs forward towards our target.
  *
  * Args:
- * obj/item/projectile/trace: The trace we are registered to.
+ * trace: obj/item/projectile/test/impacttest. The trace we are registered to.
  * atom/impact_atom: The atom the trace impacted.
 **/
-/mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/trace, var/delete_trace = TRUE)
+/mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/test/impacttest/trace, var/atom/impact_atom)
+	SIGNAL_HANDLER
+
+	UnregisterSignal(trace, COMSIG_TRACE_IMPACT)
 
 	if (stat == DEAD)
-		return FALSE
+		return
 
 	var/targetted_mob = (target_mob?.resolve())
-	var/boolean = TRUE
-	var/datum/penetration_holder/holder = null
 
-	if (trace.penetration_holder)
-		holder = trace.penetration_holder
-
-	if (((trace.impact_atom) && (trace.impact_atom == targetted_mob)) || ((holder) && (holder.force_penetration_on) && (targetted_mob in holder.force_penetration_on)))
-		boolean = FALSE
-	else
-		boolean = TRUE
-
-	if (delete_trace)
-		qdel(trace.penetration_holder)
-		trace.penetration_holder = null
-		QDEL_NULL(trace)
-	if (boolean)
+	if (impact_atom != targetted_mob)
 		advance_towards(targetted_mob)
-	return boolean
 
 /mob/living/carbon/superior_animal/proc/advance_towards(var/atom/target)
 

@@ -43,8 +43,7 @@
 /obj/structure/termite_burrow/bullet_act(obj/item/projectile/Proj)
 	..()
         // Bullet not really efficient against a pile of rock
-	if (!(Proj.testing))
-		take_damage(Proj.get_structure_damage() * 0.25)
+	take_damage(Proj.get_structure_damage() * 0.25)
 
 /obj/structure/termite_burrow/proc/take_damage(value)
 	health = min(max(health - value, 0), max_health)

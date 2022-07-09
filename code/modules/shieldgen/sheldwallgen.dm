@@ -267,8 +267,7 @@
 	. = ..()
 
 /obj/machinery/shieldwallgen/bullet_act(var/obj/item/projectile/Proj)
-	if (!(Proj.testing))
-		storedpower -= 400 * Proj.get_structure_damage()
+	storedpower -= 400 * Proj.get_structure_damage()
 	..()
 	return
 
@@ -336,14 +335,13 @@
 
 
 /obj/machinery/shieldwall/bullet_act(var/obj/item/projectile/Proj)
-	if (!(Proj.testing))
-		if(needs_power)
-			var/obj/machinery/shieldwallgen/G
-			if(prob(50))
-				G = gen_primary
-			else
-				G = gen_secondary
-			G.storedpower -= 400 * Proj.get_structure_damage()
+	if(needs_power)
+		var/obj/machinery/shieldwallgen/G
+		if(prob(50))
+			G = gen_primary
+		else
+			G = gen_secondary
+		G.storedpower -= 400 * Proj.get_structure_damage()
 	..()
 	return
 

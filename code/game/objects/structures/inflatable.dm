@@ -56,15 +56,12 @@
 
 /obj/structure/inflatable/bullet_act(var/obj/item/projectile/Proj)
 	var/proj_damage = Proj.get_structure_damage()
-	if(!proj_damage)
-		return
+	if(!proj_damage) return
 
-	if (!(Proj.testing))
-		health -= proj_damage
+	health -= proj_damage
 	..()
-	if (!(Proj.testing))
-		if(health <= 0)
-			deflate(1)
+	if(health <= 0)
+		deflate(1)
 	return
 
 /obj/structure/inflatable/ex_act(severity)

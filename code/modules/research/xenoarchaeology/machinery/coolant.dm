@@ -12,8 +12,7 @@
 /obj/structure/reagent_dispensers/coolanttank/bullet_act(var/obj/item/projectile/Proj)
 	if(Proj.get_structure_damage())
 		if(!istype(Proj ,/obj/item/projectile/plasma/lastertag) && !istype(Proj ,/obj/item/projectile/beam/practice) )
-			if (!(Proj.testing))
-				explode()
+			explode()
 
 /obj/structure/reagent_dispensers/coolanttank/ex_act()
 	explode()

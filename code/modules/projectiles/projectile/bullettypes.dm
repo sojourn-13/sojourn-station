@@ -33,9 +33,8 @@
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/New()
 	..()
-	if (!testing)
-		create_reagents(2)
-		reagents.add_reagent(spray, 2)
+	create_reagents(2)
+	reagents.add_reagent(spray, 2)
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
@@ -164,14 +163,13 @@
 
 /obj/item/projectile/bullet/magnum_40/rubber/pepperball/New()
 	..()
-	if (!testing)
-		create_reagents(5)
-		reagents.add_reagent(spray, 5)
+	create_reagents(5)
+	reagents.add_reagent(spray, 5)
 
 /obj/item/projectile/bullet/magnum_40/rubber/pepperball/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
-		if(istype(L) && L.reagents && !testing)
+		if(istype(L) && L.reagents)
 			reagents.trans_to_mob(L, 5, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific
@@ -180,14 +178,13 @@
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific/New()
 	..()
-	if (!testing)
-		create_reagents(3)
-		reagents.add_reagent(spray, 3)
+	create_reagents(3)
+	reagents.add_reagent(spray, 3)
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
-		if(istype(L) && L.reagents && !testing)
+		if(istype(L) && L.reagents)
 			reagents.trans_to_mob(L, 3, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/magnum_40/lethal
@@ -402,14 +399,13 @@
 
 /obj/item/projectile/bullet/rifle_75/rubber/soporific/New()
 	..()
-	if (!testing)
-		create_reagents(1)
-		reagents.add_reagent(spray, 1)
+	create_reagents(1)
+	reagents.add_reagent(spray, 1)
 
 /obj/item/projectile/bullet/rifle_75/rubber/soporific/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
-		if(istype(L) && L.reagents && !testing)
+		if(istype(L) && L.reagents)
 			reagents.trans_to_mob(L, 1, CHEM_TOUCH, copy = FALSE)
 
 
@@ -571,8 +567,7 @@
 
 /obj/item/projectile/bullet/antim/ion/on_impact(atom/target, blocked = FALSE)
 	. = ..()
-	if (!testing)
-		empulse(target, 1, 3)
+	empulse(target, 1, 3)
 
 //smoothbore rifles
 /obj/item/projectile/bullet/ball
@@ -620,14 +615,13 @@
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific/New()
 	..()
-	if (!testing)
-		create_reagents(5)
-		reagents.add_reagent(spray, 5)
+	create_reagents(5)
+	reagents.add_reagent(spray, 5)
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
-		if(istype(L) && L.reagents && !testing)
+		if(istype(L) && L.reagents)
 			reagents.trans_to_mob(L, 5, CHEM_TOUCH, copy = FALSE)
 
 
@@ -649,7 +643,7 @@
 
 /obj/item/projectile/bullet/shotgun/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if(iscarbon(target) && !testing)
+	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
@@ -720,7 +714,7 @@
 
 /obj/item/projectile/bullet/kurtz_50/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if(iscarbon(target) && !testing)
+	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
@@ -743,7 +737,7 @@
 
 /obj/item/projectile/bullet/lrifle/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if(iscarbon(target) && !testing)
+	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
@@ -831,12 +825,11 @@
 	recoil = 25
 
 /obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
-	if (!testing)
-		explosion(target, 0, 0, 3)
-		if(iscarbon(target))
-			var/mob/living/carbon/M = target
-			M.adjust_fire_stacks(fire_stacks)
-			M.IgniteMob()
+	explosion(target, 0, 0, 3)
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
 	return TRUE
 
 //Miscellaneous
@@ -893,7 +886,7 @@
 
 /obj/item/projectile/bullet/reusable/on_impact(atom/A)
 	..()
-	if(create_type && !testing)
+	if(create_type)
 		new create_type(get_turf(src))
 
 /obj/item/projectile/bullet/reusable/rod_bolt
@@ -1019,9 +1012,8 @@
 	create_reagents(volume)
 
 /obj/item/projectile/bullet/reusable/arrow/reagent/on_impact(atom/target)
-	if (!testing)
-		visible_message(SPAN_DANGER("The vial attached to [name] bursts, spraying [target] with its contents!"))
-		reagents.splash(target, reagents.total_volume)
+	visible_message(SPAN_DANGER("The vial attached to [name] bursts, spraying [target] with its contents!"))
+	reagents.splash(target, reagents.total_volume)
 	return ..()
 
 /obj/item/projectile/bullet/reusable/arrow/reagent/hypo
@@ -1029,14 +1021,13 @@
 	volume = 5 //hypo arrows only hold 5u of reagents.
 
 /obj/item/projectile/bullet/reusable/arrow/reagent/hypo/on_impact(atom/target)
-	if (!testing)
-		visible_message(SPAN_DANGER("The hypo attached to [name] hits [target], injecting [target] with its contents!"))
-		if(isliving(target))
-			var/mob/living/injectee = target
-			admin_inject_log(original_firer, target, src, reagents.log_list(), 5)
-			reagents.trans_to_mob(injectee, 5, CHEM_BLOOD)
-		else
-			reagents.trans_to(target, 5)
+	visible_message(SPAN_DANGER("The hypo attached to [name] hits [target], injecting [target] with its contents!"))
+	if(isliving(target))
+		var/mob/living/injectee = target
+		admin_inject_log(original_firer, target, src, reagents.log_list(), 5)
+		reagents.trans_to_mob(injectee, 5, CHEM_BLOOD)
+	else
+		reagents.trans_to(target, 5)
 	return TRUE
 
 
@@ -1072,8 +1063,7 @@
 	create_type = null
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/on_impact(atom/target)
-	if (!testing)
-		explosion(target, 0, 1, 3)
+	explosion(target, 0, 1, 3)
 	return TRUE
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/frag
@@ -1084,8 +1074,7 @@
 	var/frag_count = 75
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/frag/on_impact(atom/target)
-	if (!testing)
-		fragment_explosion(target, 4, frag_type, frag_count, frag_damage, 2, 100)
+	fragment_explosion(target, 4, frag_type, frag_count, frag_damage, 2, 100)
 	return TRUE
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/frag/sting
@@ -1096,8 +1085,7 @@
 	frag_count = 50
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/frag/on_impact(atom/target)
-	if (!testing)
-		fragment_explosion(target, 4, frag_type, frag_count, frag_damage, 2, 100)
+	fragment_explosion(target, 4, frag_type, frag_count, frag_damage, 2, 100)
 	return TRUE
 
 
@@ -1106,8 +1094,7 @@
 	desc = "Holy shit, there's a EMP grenade taped to this arrow!"
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/emp/on_impact(atom/target)
-	if (!testing)
-		empulse(target, 1, 2) //fairly weak
+	empulse(target, 1, 2) //fairly weak
 	return TRUE
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/flashbang
@@ -1115,23 +1102,22 @@
 	desc = "Holy shit, there's a flashbang taped to this arrow!"
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/flashbang/on_impact(atom/target)
-	if (!testing)
-		for(var/mob/living/carbon/M in hear(2, get_turf(target)))
-			flashbang_bang(get_turf(target), M)
+	for(var/mob/living/carbon/M in hear(2, get_turf(target)))
+		flashbang_bang(get_turf(target), M)
 
-		for(var/mob/living/carbon/human/thermal_user in orange(4, target))
-			if(!thermal_user.glasses)
-				return
-			var/obj/item/clothing/glasses/potential_thermals = thermal_user.glasses
-			if(potential_thermals.overlays == global_hud.thermal)
-				flashbang_without_the_bang(get_turf(target), thermal_user)
+	for(var/mob/living/carbon/human/thermal_user in orange(4, target))
+		if(!thermal_user.glasses)
+			return
+		var/obj/item/clothing/glasses/potential_thermals = thermal_user.glasses
+		if(potential_thermals.overlays == global_hud.thermal)
+			flashbang_without_the_bang(get_turf(target), thermal_user)
 
-		for(var/obj/effect/blob/B in hear(2,get_turf(target)))	//Blob damage here
-			var/damage = round(30/(get_dist(2,get_turf(target))+1))
-			B.health -= damage
-			B.update_icon()
+	for(var/obj/effect/blob/B in hear(2,get_turf(target)))	//Blob damage here
+		var/damage = round(30/(get_dist(2,get_turf(target))+1))
+		B.health -= damage
+		B.update_icon()
 
-		new /obj/effect/sparks(get_turf(target))
+	new /obj/effect/sparks(get_turf(target))
 	return TRUE
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/heatwave
@@ -1139,8 +1125,7 @@
 	desc = "Holy shit, there's a heatwave grenade taped to this arrow!"
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/heatwave/on_impact(atom/target)
-	if (!testing)
-		heatwave(target, 1, 2, 25, TRUE, 0)
+	heatwave(target, 1, 2, 25, TRUE, 0)
 	return TRUE
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/smoke
@@ -1150,17 +1135,14 @@
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/smoke/Initialize()
 	..()
-	if (!testing)
-		src.smoke = new
-		src.smoke.attach(src)
+	src.smoke = new
+	src.smoke.attach(src)
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/smoke/on_impact(atom/target)
-	if (!testing)
-		src.smoke.set_up(10, 0, usr.loc)
-		src.smoke.start()
+	src.smoke.set_up(10, 0, usr.loc)
+	src.smoke.start()
 	return TRUE
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/smoke/Destroy()
 	..()
-	if (smoke)
-		QDEL_NULL(smoke)
+	QDEL_NULL(smoke)

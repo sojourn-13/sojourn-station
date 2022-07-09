@@ -160,7 +160,7 @@
 		return TRUE
 	else if(istype(mover, /obj/item/projectile))
 		var/obj/item/projectile/P = mover
-		if(istype(P, /obj/item/projectile/test) || P.testing) // Turrets need to try to kill the shield and so their test bullet needs to penetrate.
+		if(istype(P, /obj/item/projectile/test)) // Turrets need to try to kill the shield and so their test bullet needs to penetrate.
 			return TRUE
 
 		var/bad_arc = reverse_direction(dir) // Arc of directions from which we cannot block.
@@ -171,11 +171,9 @@
 	return TRUE
 
 /obj/effect/directional_shield/bullet_act(var/obj/item/projectile/P)
-	if (!(P.testing))
-		adjust_health(-P.get_structure_damage())
+	adjust_health(-P.get_structure_damage())
 	P.on_hit()
-	if (!(P.testing))
-		playsound(get_turf(src), 'sound/effects/EMPulse.ogg', 75, 1)
+	playsound(get_turf(src), 'sound/effects/EMPulse.ogg', 75, 1)
 
 // All the shields tied to their projector are one 'unit', and don't have individualized health values like most other shields.
 /obj/effect/directional_shield/proc/adjust_health(amount)

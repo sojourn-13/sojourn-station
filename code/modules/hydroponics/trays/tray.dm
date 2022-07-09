@@ -148,22 +148,20 @@
 
 /obj/machinery/portable_atmospherics/hydroponics/bullet_act(var/obj/item/projectile/Proj)
 
-	if (!(Proj.testing))
+	//Don't act on seeds like dionaea that shouldn't change.
+	if(seed && seed.get_trait(TRAIT_IMMUTABLE) > 0)
+		return
 
-		//Don't act on seeds like dionaea that shouldn't change.
-		if(seed && seed.get_trait(TRAIT_IMMUTABLE) > 0)
-			return
-
-		//Override for somatoray projectiles.
-		if(istype(Proj ,/obj/item/projectile/energy/floramut) && prob(20))
-			mutate(prob(25) ? 3 : 1)
-			return
-		else if(istype(Proj ,/obj/item/projectile/energy/florayield) && prob(20))
-			yield_mod = min(10,yield_mod+rand(1,2))
-			return
-		else if(istype(Proj ,/obj/item/projectile/energy/floraevolve) && prob(20))
-			mutate(4)
-			return
+	//Override for somatoray projectiles.
+	if(istype(Proj ,/obj/item/projectile/energy/floramut) && prob(20))
+		mutate(prob(25) ? 3 : 1)
+		return
+	else if(istype(Proj ,/obj/item/projectile/energy/florayield) && prob(20))
+		yield_mod = min(10,yield_mod+rand(1,2))
+		return
+	else if(istype(Proj ,/obj/item/projectile/energy/floraevolve) && prob(20))
+		mutate(4)
+		return
 
 	..()
 

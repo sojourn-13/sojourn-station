@@ -56,13 +56,12 @@
 	return
 
 /obj/machinery/computer/bullet_act(var/obj/item/projectile/Proj)
-	if (!(Proj.testing))
-		if(prob(Proj.get_structure_damage()))
-			if(!(stat & BROKEN))
-				var/datum/effect/effect/system/smoke_spread/S = new/datum/effect/effect/system/smoke_spread()
-				S.set_up(3, 0, src)
-				S.start()
-			set_broken()
+	if(prob(Proj.get_structure_damage()))
+		if(!(stat & BROKEN))
+			var/datum/effect/effect/system/smoke_spread/S = new/datum/effect/effect/system/smoke_spread()
+			S.set_up(3, 0, src)
+			S.start()
+		set_broken()
 	..()
 
 /obj/machinery/computer/update_icon()

@@ -35,9 +35,8 @@
 			if (prob(50))
 				qdel(src)
 
-/obj/item/latexballon/bullet_act(var/obj/item/projectile/Proj)
-	if (!(Proj.testing))
-		burst()
+/obj/item/latexballon/bullet_act()
+	burst()
 
 /obj/item/latexballon/fire_act(datum/gas_mixture/air, temperature, volume)
 	if(temperature > T0C+100)
