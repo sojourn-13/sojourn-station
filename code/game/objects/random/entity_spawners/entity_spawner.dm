@@ -229,9 +229,10 @@
 		disassemble()
 
 /obj/entity_spawner/bullet_act(obj/item/projectile/Proj)
-	take_damage(Proj.get_structure_damage(), Proj)
-	if(istype(Proj, /obj/item/projectile/ion))
-		Proj.on_hit(loc)
+	if (!(Proj.testing))
+		take_damage(Proj.get_structure_damage(), Proj)
+		if(istype(Proj, /obj/item/projectile/ion))
+			Proj.on_hit(loc)
 	. = ..()
 
 /obj/entity_spawner/attackby(obj/item/I, mob/user)
