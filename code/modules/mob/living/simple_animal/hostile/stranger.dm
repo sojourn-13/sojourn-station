@@ -102,14 +102,15 @@
 /mob/living/simple_animal/hostile/stranger/bullet_act(obj/item/projectile/P, def_zone)
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
-	if(prob(prob_tele))
-		var/source = src
-		if(targetted_mob)
-			source = targetted_mob
-		var/turf/T = get_random_secure_turf_in_range(source, 4, 2)
-		do_sparks(3, 0, src.loc)
-		do_teleport(src, T)
-		return FALSE
+	if (!(P.testing))
+		if(prob(prob_tele))
+			var/source = src
+			if(targetted_mob)
+				source = targetted_mob
+			var/turf/T = get_random_secure_turf_in_range(source, 4, 2)
+			do_sparks(3, 0, src.loc)
+			do_teleport(src, T)
+			return FALSE
 	. = ..()
 
 /mob/living/simple_animal/hostile/stranger/Life()

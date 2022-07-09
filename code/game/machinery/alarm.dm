@@ -982,8 +982,11 @@ FIRE ALARM
 		return
 	return nano_ui_interact(user)
 
-/obj/machinery/firealarm/bullet_act()
-	return src.alarm()
+/obj/machinery/firealarm/bullet_act(var/obj/item/projectile/Proj)
+	if (!(Proj.testing))
+		return src.alarm()
+	else
+		return
 
 /obj/machinery/firealarm/emp_act(severity)
 	if(prob(50/severity))

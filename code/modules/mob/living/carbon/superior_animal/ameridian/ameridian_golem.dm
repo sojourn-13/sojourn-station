@@ -66,9 +66,10 @@
 
 /mob/living/carbon/superior_animal/ameridian_golem/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	if(istype(P, /obj/item/projectile/sonic_bolt))
-		var/obj/item/projectile/sonic_bolt/SB = P
-		SB.multiply_projectile_damage(SB.golem_damage_bonus)
-		drop_amount = 0 // No loot
+		if (!(P.testing))
+			var/obj/item/projectile/sonic_bolt/SB = P
+			SB.multiply_projectile_damage(SB.golem_damage_bonus)
+			drop_amount = 0 // No loot
 
 	..()
 

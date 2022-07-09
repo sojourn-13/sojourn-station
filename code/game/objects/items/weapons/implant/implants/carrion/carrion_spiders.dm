@@ -58,7 +58,8 @@
 
 /obj/item/implant/carrion_spider/bullet_act(obj/item/projectile/P, def_zone)
 	..()
-	die_from_attack()
+	if (!(P.testing))
+		die_from_attack()
 
 /obj/item/implant/carrion_spider/proc/die_from_attack()
 	visible_message(SPAN_WARNING("[src] explodes into a bloody mess"))
