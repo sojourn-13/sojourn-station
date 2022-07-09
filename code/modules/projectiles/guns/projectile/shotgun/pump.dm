@@ -5,7 +5,7 @@
 	icon_state = "shotgun"
 	item_state = "shotgun"
 	max_shells = 4
-	w_class = ITEM_SIZE_HUGE
+	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
@@ -56,7 +56,7 @@
 	icon = 'icons/obj/guns/projectile/sawnoff/shotgun.dmi'
 	icon_state = "shotgun"
 	item_state = "shotgun"
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BACK|SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_WOOD = 10)
 	price_tag = 450

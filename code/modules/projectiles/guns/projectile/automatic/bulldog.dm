@@ -4,7 +4,7 @@
 	icon = 'icons/obj/guns/projectile/bulldog.dmi'
 	icon_state = "bulldog"
 	item_state = "bulldog"
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_NORMAL
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	caliber = CAL_LRIFLE

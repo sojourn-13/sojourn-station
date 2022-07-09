@@ -7,6 +7,7 @@
 	icon_state = "solmarine"
 	item_state = "solmarine"
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 6)
+	w_class = ITEM_SIZE_BULKY
 	mag_well = MAG_WELL_STANMAG
 	caliber = CAL_LRIFLE
 	price_tag = 1100

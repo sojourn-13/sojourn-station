@@ -4,6 +4,7 @@
 	icon = 'icons/obj/guns/projectile/lever.dmi'
 	icon_state = "lever"
 	item_state = "lever"
+	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BELT|SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_MAGNUM
