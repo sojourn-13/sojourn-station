@@ -267,7 +267,7 @@
 											master.selected_mobs += entity
 											entity.selected_by += master
 									var/list/target_list = GLOB.mob_groups[listname]
-									to_chat(usr, "Successfully selected all mobs in [target_list]. New length of selected mobs: [selected_mobs.len]")
+									to_chat(usr, "Successfully selected all mobs in [target_list]. New length of selected mobs: [master.selected_mobs.len]")
 								else
 									to_chat(usr, SPAN_WARNING("[listname] does not exist!"))
 							else
