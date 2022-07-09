@@ -113,13 +113,14 @@
 			if(5)
 				to_chat(usr, "\blue ***********************************************************")
 				to_chat(usr, "\blue LMB on mob = Select mob")
-				to_chat(usr, "\blue Shift LMB on mob = Select Group the mob belongs to")
 				to_chat(usr, "\blue Alt LMB on mob = De-select mob")
+				to_chat(usr, "\blue Shift LMB on mob = Select Group the mob belongs to")
 				to_chat(usr, "\blue RMB on atom = Move selected mobs to position")
 				to_chat(usr, "\blue Shift RMB on atom/movable = Move selected mobs to position and, if applicable, set their target to the atom")
 				to_chat(usr, "\blue Alt RMB on atom/movable = If applicable, set selected mobs' target to the atom")
 				to_chat(usr, "\blue MMB on mob = Add mob to selected group")
 				to_chat(usr, "\blue Shift MMB on mob = Remove mob from selected group")
+				to_chat(usr, "\blue Shift LMB on build mode icon = Select all mobs in selected group")
 				to_chat(usr, "\blue Alt LMB on build mode icon = De-select all mobs")
 				to_chat(usr, "\blue RMB on build mode icon = Toggle movement override, forcing all other walks to fail for a given period of time")
 				to_chat(usr, "\blue Ctrl RMB on build mode icon = Toggle walks being temporary")
@@ -127,7 +128,7 @@
 				to_chat(usr, "\blue Shift RMB on build mode icon = Toggle moving dead mobs")
 				to_chat(usr, "\blue MMB on build mode icon = Enter key of group you wish to select")
 				to_chat(usr, "\blue Shift MMB on build mode icon = Enter key of group you wish to delete")
-				to_chat(usr, "\blue Alt MMB on build mode icon = Add all selected mobs to selected list")
+				to_chat(usr, "\blue Alt MMB on build mode icon = Add all selected mobs to selected group")
 				to_chat(usr, "\blue ***********************************************************")
 		return 1
 
@@ -252,11 +253,23 @@
 					master.cl.buildmode = 5
 					src.icon_state = "buildmode5"
 				if(5)
-					if (pa.Find("alt"))
-						for (var/mob/living/entity in master.selected_mobs)
-							entity.selected_by -= master
-						master.selected_mobs.Cut()
-						to_chat(usr, "Successfully de-selected all selected mobs.")
+					if ((pa.Find("alt")) || (pa.Find("shift")))
+						if (pa.Find("alt"))
+							for (var/mob/living/entity in master.selected_mobs)
+								entity.selected_by -= master
+							master.selected_mobs.Cut()
+							to_chat(usr, "Successfully de-selected all selected mobs.")
+						else if (pa.Find("shift"))
+							if (listname)
+								if (listname in GLOB.mob_groups)
+									for (var/mob/living/entity in GLOB.mob_groups[listname])
+										if (!(entity in master.selected_mobs))
+											master.selected_mobs += entity
+											entity.selected_by += master
+								else
+									to_chat(usr, SPAN_WARNING("[listname] does not exist!"))
+							else
+								to_chat(usr, SPAN_WARNING("You do not have any currently selected group!"))
 					else
 						master.cl.buildmode = 1
 						src.icon_state = "buildmode1"
@@ -468,6 +481,10 @@
 							else if (istype(held, /mob/living/simple_animal))
 								var/mob/living/simple_animal/simple_held = held
 								simple_held.target_mob = WEAKREF(object)
+								if (istype(simple_held, /mob/living/simple_animal/hostile))
+									var/mob/living/simple_animal/hostile/hostile_held = simple_held
+									hostile_held.stance = HOSTILE_STANCE_ATTACKING
+
 						if (move_to_target)
 							held.set_glide_size(DELAY2GLIDESIZE(held.move_to_delay))
 							walk_to_wrapper(held, object, distance, held.move_to_delay, deathcheck = holder.buildmode.move_dead, respect_override = holder.buildmode.respect_override, override = holder.buildmode.override_movement, temporary_walk = holder.buildmode.temporary_walks)

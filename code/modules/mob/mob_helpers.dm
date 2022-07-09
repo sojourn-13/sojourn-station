@@ -684,7 +684,7 @@ proc/is_blind(A)
 	if (respect_override && (Ref.walk_override_timer >= world.time))
 		return FALSE
 	if (override || temporary_walk)
-		var/timer = (get_dist(Ref, Trg) * (Lag)) // WARNING. ARBITRARY MATH. I DO NOT KNOW IF THIS WILL WORK.
+		var/timer = ((get_dist(Ref, Trg) * (Lag * 1.2)) + 5) // WARNING. ARBITRARY MATH. I DO NOT KNOW IF THIS WILL WORK.
 		if (override)
 			Ref.walk_override_timer = (world.time + timer)
 		if (temporary_walk)
