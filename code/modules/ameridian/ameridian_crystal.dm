@@ -72,8 +72,9 @@
 
 /obj/structure/ameridian_crystal/bullet_act(var/obj/item/projectile/Proj)
 	if(istype(Proj, /obj/item/projectile/sonic_bolt))
-		visible_message("[src] shatters.")
-		Destroy()
+		if (!(Proj.testing))
+			visible_message("[src] shatters.")
+			Destroy()
 	else
 		..()
 

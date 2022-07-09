@@ -21,14 +21,17 @@
 
 /obj/item/projectile/bullet/grenade/Move()	//Makes grenade shells cause their effect when they arrive at their target turf
 	if(get_turf(src) == get_turf(original))
-		grenade_effect(get_turf(src))
+		if (!testing)
+			grenade_effect(get_turf(src))
+		else
+			impact_atom = original
 		qdel(src)
 	else
 		..()
 
 /obj/item/projectile/bullet/grenade/on_impact(atom/target)	//Allows us to cause different effects for each grenade shell on hit
-	grenade_effect(target)
-
+	if (!testing)
+		grenade_effect(target)
 
 /obj/item/projectile/bullet/grenade
 	name = "blast shell"
@@ -86,24 +89,28 @@
 	recoil = 5
 
 /obj/item/projectile/bullet/grenade/flash/grenade_effect(target)
-	fragment_explosion(target, light_impact_range, flash_range)
+	if (!testing)
+		fragment_explosion(target, light_impact_range, flash_range)
 	..()
-	for(var/obj/structure/closet/L in hear(7, get_turf(src)))
-		if(locate(/mob/living/carbon/, L))
-			for(var/mob/living/carbon/M in L)
-				flashbang_bang(get_turf(src), M)
+	if (!testing)
+		for(var/obj/structure/closet/L in hear(7, get_turf(src)))
+			if(locate(/mob/living/carbon/, L))
+				for(var/mob/living/carbon/M in L)
+					flashbang_bang(get_turf(src), M)
 
 
-	for(var/mob/living/carbon/M in hear(7, get_turf(src)))
-		flashbang_bang(get_turf(src), M)
+		for(var/mob/living/carbon/M in hear(7, get_turf(src)))
+			flashbang_bang(get_turf(src), M)
 
-	for(var/obj/effect/blob/B in hear(8,get_turf(src)))       		//Blob damage here
-		var/damage = round(30/(get_dist(B,get_turf(src))+1))
-		B.health -= damage
-		B.update_icon()
+		for(var/obj/effect/blob/B in hear(8,get_turf(src)))       		//Blob damage here
+			var/damage = round(30/(get_dist(B,get_turf(src))+1))
+			B.health -= damage
+			B.update_icon()
 
-	new/obj/effect/sparks(src.loc)
-	new/obj/effect/effect/smoke/illumination(src.loc, brightness=15)
+		new/obj/effect/sparks(src.loc)
+		new/obj/effect/effect/smoke/illumination(src.loc, brightness=15)
+	if (testing)
+		impact_atom = target
 	qdel(src)
 	return
 

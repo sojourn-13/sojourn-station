@@ -95,61 +95,63 @@
 
 	virtualIcon = new(icon, icon_state)
 
-	if( virtualIcon.GetPixel(p_x, p_y) ) // if the located pixel isn't blank (null)
+	if(virtualIcon.GetPixel(p_x, p_y)) // if the located pixel isn't blank (null)
 
-		hp -= damage
-		if(hp <= 0)
-			for(var/mob/O in oviewers())
-				if ((O.client && !( O.blinded )))
-					to_chat(O, SPAN_WARNING("\The [src] breaks into tiny pieces and collapses!"))
-			qdel(src)
+		if (!(Proj.testing))
 
-		// Create a temporary object to represent the damage
-		var/obj/bmark = new
-		bmark.pixel_x = p_x
-		bmark.pixel_y = p_y
-		bmark.icon = 'icons/effects/effects.dmi'
-		bmark.layer = 3.5
-		bmark.icon_state = "scorch"
+			hp -= damage
+			if(hp <= 0)
+				for(var/mob/O in oviewers())
+					if ((O.client && !( O.blinded )))
+						to_chat(O, SPAN_WARNING("\The [src] breaks into tiny pieces and collapses!"))
+				qdel(src)
 
-		if(decaltype == 1)
-			// Energy weapons are hot. they scorch!
+			// Create a temporary object to represent the damage
+			var/obj/bmark = new
+			bmark.pixel_x = p_x
+			bmark.pixel_y = p_y
+			bmark.icon = 'icons/effects/effects.dmi'
+			bmark.layer = 3.5
+			bmark.icon_state = "scorch"
 
-			// offset correction
-			bmark.pixel_x--
-			bmark.pixel_y--
+			if(decaltype == 1)
+				// Energy weapons are hot. they scorch!
 
-			if(damage >= 20 || istype(Proj, /obj/item/projectile/beam/practice))
-				bmark.icon_state = "scorch"
-				bmark.set_dir(pick(NORTH,SOUTH,EAST,WEST)) // random scorch design
+				// offset correction
+				bmark.pixel_x--
+				bmark.pixel_y--
+
+				if(damage >= 20 || istype(Proj, /obj/item/projectile/beam/practice))
+					bmark.icon_state = "scorch"
+					bmark.set_dir(pick(NORTH,SOUTH,EAST,WEST)) // random scorch design
 
 
+				else
+					bmark.icon_state = "light_scorch"
 			else
-				bmark.icon_state = "light_scorch"
-		else
 
-			// Bullets are hard. They make dents!
-			bmark.icon_state = "dent"
+				// Bullets are hard. They make dents!
+				bmark.icon_state = "dent"
 
-		if(damage >= 10 && bulletholes.len <= 35) // maximum of 35 bullet holes
-			if(decaltype == 2) // bullet
-				if(prob(damage+30)) // bullets make holes more commonly!
-					new/datum/bullethole(src, bmark.pixel_x, bmark.pixel_y) // create new bullet hole
-			else // Lasers!
-				if(prob(damage-10)) // lasers make holes less commonly
-					new/datum/bullethole(src, bmark.pixel_x, bmark.pixel_y) // create new bullet hole
+			if(damage >= 10 && bulletholes.len <= 35) // maximum of 35 bullet holes
+				if(decaltype == 2) // bullet
+					if(prob(damage+30)) // bullets make holes more commonly!
+						new/datum/bullethole(src, bmark.pixel_x, bmark.pixel_y) // create new bullet hole
+				else // Lasers!
+					if(prob(damage-10)) // lasers make holes less commonly
+						new/datum/bullethole(src, bmark.pixel_x, bmark.pixel_y) // create new bullet hole
 
-		// draw bullet holes
-		for(var/datum/bullethole/B in bulletholes)
+			// draw bullet holes
+			for(var/datum/bullethole/B in bulletholes)
 
-			virtualIcon.DrawBox(null, B.b1x1, B.b1y,  B.b1x2, B.b1y) // horizontal line, left to right
-			virtualIcon.DrawBox(null, B.b2x, B.b2y1,  B.b2x, B.b2y2) // vertical line, top to bottom
+				virtualIcon.DrawBox(null, B.b1x1, B.b1y,  B.b1x2, B.b1y) // horizontal line, left to right
+				virtualIcon.DrawBox(null, B.b2x, B.b2y1,  B.b2x, B.b2y2) // vertical line, top to bottom
 
-		add_overlay(bmark)// add the decal
+			add_overlay(bmark)// add the decal
 
-		icon = virtualIcon // apply bulletholes over decals
+			icon = virtualIcon // apply bulletholes over decals
 
-		return
+			return
 
 	return PROJECTILE_CONTINUE // the bullet/projectile goes through the target!
 

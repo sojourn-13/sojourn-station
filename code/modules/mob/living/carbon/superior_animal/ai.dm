@@ -97,7 +97,9 @@
 		loseTarget()
 		return
 	if (check_if_alive())
-		prepareAttackPrecursor(targetted_mob, .proc/attemptAttackOnTarget, MELEE_TYPE, FALSE, FALSE)
+		if (prepareAttackPrecursor(MELEE_TYPE, FALSE, FALSE, targetted_mob))
+			addtimer(CALLBACK(src, .proc/attemptAttackOnTarget), delay_for_melee)
+
 
 /mob/living/carbon/superior_animal/proc/loseTarget(stop_pursuit = TRUE, simply_losetarget = FALSE)
 	if (stop_pursuit)

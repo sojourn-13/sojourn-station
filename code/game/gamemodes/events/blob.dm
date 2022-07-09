@@ -496,7 +496,9 @@
 			absorbed_damage = min(health * fire_resist, Proj.damage_types[i])
 			taken_damage= (Proj.damage_types[i]  / fire_resist)
 			Proj.damage_types[i] -= absorbed_damage
-	take_damage(taken_damage)
+
+	if (!(Proj.testing))
+		take_damage(taken_damage)
 	if (Proj.get_total_damage() <= 0)
 		return 0
 	else

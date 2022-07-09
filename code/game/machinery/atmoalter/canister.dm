@@ -234,8 +234,9 @@ update_flag
 
 /obj/machinery/portable_atmospherics/canister/bullet_act(var/obj/item/projectile/Proj)
 	if(Proj.get_structure_damage())
-		src.health -= round(Proj.get_structure_damage() / 2)
-		healthCheck()
+		if (!(Proj.testing))
+			src.health -= round(Proj.get_structure_damage() / 2)
+			healthCheck()
 	..()
 
 /obj/machinery/portable_atmospherics/canister/attackby(var/obj/item/I, var/mob/user)

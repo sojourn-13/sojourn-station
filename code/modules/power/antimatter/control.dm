@@ -121,9 +121,10 @@
 	return
 
 /obj/machinery/power/am_control_unit/bullet_act(var/obj/item/projectile/Proj)
-	if(Proj.check_armour != ARMOR_BULLET)
-		stability -= Proj.force
-	return 0
+	if (!(Proj.testing))
+		if(Proj.check_armour != ARMOR_BULLET)
+			stability -= Proj.force
+	return FALSE
 
 /obj/machinery/power/am_control_unit/power_change()
 	..()

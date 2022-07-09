@@ -152,7 +152,7 @@
 
 //checks if projectile 'P' from turf 'from' can hit whatever is behind the table. Returns 1 if it can, 0 if bullet stops.
 /obj/structure/low_wall/proc/check_cover(obj/item/projectile/P, turf/from)
-	if(get_dist(P.starting, loc) <= 1) //Simulates firing over the low wall
+	if (get_dist(P.starting, loc) <= 1) //Simulates firing over the low wall
 		return TRUE
 	//For some reason there was an IF(TRUE) here, re-add if it breaks anything to have it removed - Wizard
 	if(ismob(P.original))
@@ -162,11 +162,13 @@
 	if(prob(base_cover_chance))
 		health -= P.get_structure_damage()/2
 		if(health > 0)
-			visible_message(SPAN_WARNING("[P] hits \the [src]!"))
+			if (!(P.testing))
+				visible_message(SPAN_WARNING("[P] hits \the [src]!"))
 			return FALSE
 		else
-			visible_message(SPAN_WARNING("[src] breaks down!"))
-			qdel(src)
+			if (!(P.testing))
+				visible_message(SPAN_WARNING("[src] breaks down!"))
+				qdel(src)
 			return TRUE
 	return TRUE
 
@@ -180,14 +182,15 @@
 	if(prob(base_cover_chance))
 		health -= P.get_structure_damage()*4 //4x so we dont make a meta of 4 low walls to get 1/5 bullets stopped for 9 years
 		if(health > 0)
-			visible_message(SPAN_WARNING("[P] hits \the [src]!"))
+			if (!(P.testing))
+				visible_message(SPAN_WARNING("[P] hits \the [src]!"))
 			return FALSE
 		else
-			visible_message(SPAN_WARNING("[src] breaks down!"))
-			qdel(src)
+			if (!(P.testing))
+				visible_message(SPAN_WARNING("[src] breaks down!"))
+				qdel(src)
 			return TRUE
 	return TRUE
-
 
 //Icon procs.mostly copied from tables
 /obj/structure/low_wall/update_icon()

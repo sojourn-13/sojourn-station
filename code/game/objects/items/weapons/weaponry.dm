@@ -93,8 +93,9 @@
 		return
 
 /obj/effect/energy_net/bullet_act(var/obj/item/projectile/Proj)
-	health -= Proj.get_structure_damage()
-	healthCheck()
+	if (!(Proj.testing))
+		health -= Proj.get_structure_damage()
+		healthCheck()
 	return 0
 
 /obj/effect/energy_net/ex_act()
