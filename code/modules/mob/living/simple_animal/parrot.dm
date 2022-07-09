@@ -417,7 +417,7 @@
 			parrot_state = PARROT_SWOOP | PARROT_RETURN
 			return
 
-		walk_to(src, parrot_interest, 1, parrot_speed)
+		walk_to_wrapper(src, parrot_interest, 1, parrot_speed)
 		return
 
 //-----RETURNING TO PERCH
@@ -435,7 +435,7 @@
 			icon_state = "parrot_sit"
 			return
 
-		walk_to(src, parrot_perch, 1, parrot_speed)
+		walk_to_wrapper(src, parrot_perch, 1, parrot_speed)
 		return
 
 //-----FLEEING
@@ -492,7 +492,7 @@
 
 		//Otherwise, fly towards the mob!
 		else
-			walk_to(src, parrot_interest, 1, parrot_speed)
+			walk_to_wrapper(src, parrot_interest, 1, parrot_speed)
 		return
 //-----STATE MISHAP
 	else //This should not happen. If it does lets reset everything and try again
