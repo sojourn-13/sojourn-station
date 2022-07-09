@@ -11,8 +11,8 @@
 	var/emp_range = 3
 	var/cooldown_timer = 0
 
-/obj/item/emp_mine/bullet_act()
-	if(prob(90))
+/obj/item/emp_mine/bullet_act(var/obj/item/projectile/Proj)
+	if(prob(90) && (!(Proj.testing)))
 		explode()
 
 /obj/item/emp_mine/proc/explode()
