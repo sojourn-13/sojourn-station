@@ -403,7 +403,8 @@
 					var/obj/A = new holder.buildmode.objholder (get_turf(object))
 					A.set_dir(holder.builddir.dir)
 			else if(pa.Find("right"))
-				if(isobj(object)) qdel(object)
+				if(isobj(object) && (!(istype(object, /obj/effect/bmode)))) //you fools
+					qdel(object)
 			if(pa.Find("middle"))
 				holder.buildmode.objholder = text2path("[object.type]")
 				if(holder.buildmode.objsay)	to_chat(usr, "[object.type]")
