@@ -41,7 +41,7 @@
 				chance += 50
 			else
 				return 1					//But only from one side
-		if(prob(chance))
+		if((prob(chance)) && (!(P.testing)))
 			health -= P.get_structure_damage()/2
 			if (health > 0)
 				visible_message(SPAN_WARNING("[P] hits \the [src]!"))

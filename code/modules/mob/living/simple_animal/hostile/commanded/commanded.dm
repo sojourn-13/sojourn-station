@@ -83,7 +83,7 @@
 		return
 	if(targetted_mob in ListTargets(10))
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		walk_to(src,targetted_mob,1,move_to_delay)
+		walk_to_wrapper(src,targetted_mob,1,move_to_delay)
 
 /mob/living/simple_animal/hostile/commanded/proc/commanded_stop() //basically a proc that runs whenever we are asked to stay put. Probably going to remain unused.
 	return
@@ -133,7 +133,7 @@
 
 /mob/living/simple_animal/hostile/commanded/proc/attack_command(var/mob/speaker,var/text)
 	target_mob = null //want me to attack something? Well I better forget my old target.
-	walk_to(src,0)
+	walk_to_wrapper(src,0)
 	stance = HOSTILE_STANCE_IDLE
 	if(text == "attack" || findtext(text,"everyone") || findtext(text,"anybody") || findtext(text, "somebody") || findtext(text, "someone")) //if its just 'attack' then just attack anybody, same for if they say 'everyone', somebody, anybody. Assuming non-pickiness.
 		allowed_targets = list("everyone")//everyone? EVERYONE
@@ -146,12 +146,12 @@
 /mob/living/simple_animal/hostile/commanded/proc/stay_command(var/mob/speaker,var/text)
 	target_mob = null
 	stance = COMMANDED_STOP
-	walk_to(src,0)
+	walk_to_wrapper(src,0)
 	return 1
 
 /mob/living/simple_animal/hostile/commanded/proc/stop_command(var/mob/speaker,var/text)
 	allowed_targets = list()
-	walk_to(src,0)
+	walk_to_wrapper(src,0)
 	target_mob = null //gotta stop SOMETHIN
 	stance = HOSTILE_STANCE_IDLE
 	stop_automated_movement = 0

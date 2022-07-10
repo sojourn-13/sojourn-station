@@ -417,7 +417,8 @@
 			if(is_type_in_list(src, Proj.supereffective_types, TRUE))
 				dmult += Proj.supereffective_mult
 		damage *= dmult
-		damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj), post_pen_mult = Proj.post_penetration_dammult)
+		if (!(Proj.testing))
+			damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj), post_pen_mult = Proj.post_penetration_dammult)
 	return FALSE
 
 /mob/living/simple_animal/rejuvenate()
@@ -638,8 +639,8 @@
 				movement_target = null
 				foodtarget = FALSE
 				stop_automated_movement = FALSE
-			if( !movement_target || !(movement_target.loc in oview(src, 7)) )
-				walk_to(src,0)
+			if(!movement_target || !(movement_target.loc in oview(src, 7)) )
+				walk_to_wrapper(src,0)
 				movement_target = null
 				foodtarget = FALSE
 				stop_automated_movement = FALSE
@@ -670,9 +671,9 @@
 				stop_automated_movement = TRUE
 
 				if (istype(movement_target.loc, /turf))
-					walk_to(src,movement_target,0, seek_move_delay)//Stand ontop of food
+					walk_to_wrapper(src, movement_target, 0, seek_move_delay)//Stand ontop of food
 				else
-					walk_to(src,movement_target.loc,1, seek_move_delay)//Don't stand ontop of people
+					walk_to_wrapper(src,movement_target.loc,1, seek_move_delay)//Don't stand ontop of people
 
 
 

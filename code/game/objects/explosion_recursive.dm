@@ -8,7 +8,6 @@
 	var/explosion_resistance
 
 
-
 var/list/explosion_turfs = list()
 
 var/explosion_in_progress = 0

@@ -204,6 +204,12 @@
 	icon_state = "morningstar"
 	item_state = "morningstar"
 
+/obj/item/clothing/suit/storage/greatcoat/overcoatblack/anarchist
+	name = "tactical black overcoat"
+	desc = "A sturdy black overcoat that has some seen some wear and tear with time. Someone has outfitted this one with a aged leather bandolier and belt built into it."
+	icon_state = "anarchist"
+	item_state = "anarchist"
+
 /obj/item/clothing/suit/greatcoat/general/german
 	name = "thalatta overcoat"
 	desc = "A sturdy overcoat from Thalatta, the city-ship filled with people of faith and technology. Not related to the local church, strangely enough, but worn by them sometimes."

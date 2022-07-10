@@ -132,7 +132,7 @@
 		if(health >= 1)
 			if(reinforced == TRUE)
 				chance += 40
-			if(prob(chance))
+			if((prob(chance)) && (!(P.testing)))
 				damage(P.get_structure_damage())
 				visible_message(SPAN_WARNING("[P] hits \the [src]!"))
 				return 0
@@ -165,7 +165,7 @@
 			chance += 40
 		if(health==0)
 			chance = 0
-		if(prob(chance))
+		if((prob(chance)) && (!(P.testing)))
 			damage(P.get_structure_damage())
 			if (health > 0)
 				visible_message(SPAN_WARNING("[P] hits \the [src]!"))

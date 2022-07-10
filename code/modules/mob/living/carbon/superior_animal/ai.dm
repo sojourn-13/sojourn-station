@@ -43,10 +43,13 @@
 					if(isValidAttackTarget(M))
 						filteredTargets += M
 
-	var/filteredTarget = safepick(getTargets(filteredTargets, src))
+	var/atom/filteredTarget = safepick(getTargets(filteredTargets, src))
 
 	if ((filteredTarget != target_mob) && filteredTarget)
 		doTargetMessage()
+
+	if (filteredTarget)
+		target_location = WEAKREF(filteredTarget.loc)
 
 	return filteredTarget
 
@@ -94,19 +97,24 @@
 		loseTarget()
 		return
 	if (check_if_alive())
-		prepareAttackPrecursor(targetted_mob, .proc/attemptAttackOnTarget, MELEE_TYPE, FALSE, FALSE)
+		if (prepareAttackPrecursor(MELEE_TYPE, FALSE, FALSE, targetted_mob))
+			addtimer(CALLBACK(src, .proc/attemptAttackOnTarget), delay_for_melee)
 
-/mob/living/carbon/superior_animal/proc/loseTarget(stop_pursuit = TRUE)
+
+/mob/living/carbon/superior_animal/proc/loseTarget(stop_pursuit = TRUE, simply_losetarget = FALSE)
 	if (stop_pursuit)
 		stop_automated_movement = 0
-		walk(src, 0)
-	fire_delay = fire_delay_initial
-	melee_delay = melee_delay_initial
-	patience = patience_initial
-	retarget_timer = retarget_timer_initial
-	target_mob = null
-	stance = HOSTILE_STANCE_IDLE
+		walk_to_wrapper(src, 0, deathcheck = FALSE)
+	if (!simply_losetarget)
+		fire_delay = fire_delay_initial
+		melee_delay = melee_delay_initial
+		patience = patience_initial
+		retarget_timer = retarget_timer_initial
+		stance = HOSTILE_STANCE_IDLE
+		delayed = delayed_initial
 	lost_sight = FALSE
+	target_mob = null
+	target_location = null
 
 /mob/living/carbon/superior_animal/proc/isValidAttackTarget(atom/O)
 

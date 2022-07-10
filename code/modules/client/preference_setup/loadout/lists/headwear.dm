@@ -119,3 +119,11 @@
 /datum/gear/head/maid
 	display_name = "maid headdress"
 	path = /obj/item/clothing/head/maid
+
+/datum/gear/head/anarchist
+	display_name = "anarchist cap"
+	path = /obj/item/clothing/head/costume/history/anarchist_cap
+
+/datum/gear/head/papakha
+	display_name = "black papakha"
+	path = /obj/item/clothing/head/costume/history/anarchist

@@ -392,4 +392,5 @@
 
 /obj/structure/railing/bullet_act(obj/item/projectile/P, def_zone)
 	. = ..()
-	take_damage(P.get_structure_damage())
+	if (!(P.testing))
+		take_damage(P.get_structure_damage())

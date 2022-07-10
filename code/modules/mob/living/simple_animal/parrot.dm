@@ -252,15 +252,16 @@
 //Bullets
 /mob/living/simple_animal/parrot/bullet_act(var/obj/item/projectile/Proj)
 	..()
-	if(!stat && !client)
-		if(parrot_state == PARROT_PERCH)
-			parrot_sleep_dur = parrot_sleep_max //Reset it's sleep timer if it was perched
+	if (!(Proj.testing))
+		if(!stat && !client)
+			if(parrot_state == PARROT_PERCH)
+				parrot_sleep_dur = parrot_sleep_max //Reset it's sleep timer if it was perched
 
-		parrot_interest = null
-		parrot_state = PARROT_WANDER //OWFUCK, Been shot! RUN LIKE HELL!
-		parrot_been_shot += 5
-		icon_state = "parrot_fly"
-		drop_held_item(0)
+			parrot_interest = null
+			parrot_state = PARROT_WANDER //OWFUCK, Been shot! RUN LIKE HELL!
+			parrot_been_shot += 5
+			icon_state = "parrot_fly"
+			drop_held_item(0)
 	return
 
 
@@ -416,7 +417,7 @@
 			parrot_state = PARROT_SWOOP | PARROT_RETURN
 			return
 
-		walk_to(src, parrot_interest, 1, parrot_speed)
+		walk_to_wrapper(src, parrot_interest, 1, parrot_speed)
 		return
 
 //-----RETURNING TO PERCH
@@ -434,7 +435,7 @@
 			icon_state = "parrot_sit"
 			return
 
-		walk_to(src, parrot_perch, 1, parrot_speed)
+		walk_to_wrapper(src, parrot_perch, 1, parrot_speed)
 		return
 
 //-----FLEEING
@@ -491,7 +492,7 @@
 
 		//Otherwise, fly towards the mob!
 		else
-			walk_to(src, parrot_interest, 1, parrot_speed)
+			walk_to_wrapper(src, parrot_interest, 1, parrot_speed)
 		return
 //-----STATE MISHAP
 	else //This should not happen. If it does lets reset everything and try again

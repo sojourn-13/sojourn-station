@@ -1847,6 +1847,19 @@
 	},
 /turf/simulated/floor/plating,
 /area/mine/processing)
+"fd" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "ff" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -2863,10 +2876,10 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "hz" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "hA" = (
@@ -2996,7 +3009,7 @@
 /turf/simulated/floor/tiled/white/techfloor,
 /area/mine/power)
 "hR" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -3658,7 +3671,7 @@
 	dir = 1;
 	pixel_y = -28
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/golden,
@@ -4431,16 +4444,16 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "lk" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/outpostbotany)
 "ll" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/outpostbotany)
 "lm" = (
@@ -4885,7 +4898,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
 "mr" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
 "ms" = (
@@ -5113,14 +5126,14 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/mixing)
 "mQ" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
@@ -5316,10 +5329,10 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "nk" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "nl" = (
@@ -5477,10 +5490,10 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/rnd/outpostbreakroom)
 "nB" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/holoposter{
 	pixel_y = 30
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/rnd/outpostbreakroom)
 "nC" = (
@@ -5526,14 +5539,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "nG" = (
@@ -5920,9 +5931,7 @@
 /obj/machinery/camera/network/research{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "oh" = (
@@ -6044,7 +6053,7 @@
 	dir = 8;
 	frequency = 1430;
 	name = "Mixing Chamber Monitor";
-	sensors = list("toxins_mixing_2" = "Mixing Chamber - 2")
+	sensors = list("toxins_mixing_2"="Mixing Chamber - 2")
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
@@ -6126,7 +6135,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
 "oF" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
@@ -6149,7 +6158,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
 "oI" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
 "oJ" = (
@@ -6238,7 +6247,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/rnd/outpostbreakroom)
 "oX" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/carpet/purcarpet,
@@ -6490,10 +6499,10 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "py" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "pz" = (
@@ -6646,7 +6655,7 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "pR" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
 "pS" = (
@@ -6742,7 +6751,7 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/outpostmedical)
 "qe" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
 "qf" = (
@@ -7029,7 +7038,7 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "qM" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "qN" = (
@@ -7135,13 +7144,15 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "rc" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
@@ -7201,7 +7212,7 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "rk" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
@@ -7229,7 +7240,7 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "rp" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "rq" = (
@@ -7330,8 +7341,8 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "rF" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/medical_stand,
+/obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "rG" = (
@@ -8705,6 +8716,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
+"wV" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "wZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -8737,6 +8760,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfour)
+"xX" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "ya" = (
 /obj/structure/lattice,
 /obj/structure/flora/ausbushes/fernybush,
@@ -8829,7 +8858,7 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/mine/hallway)
 "BN" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
@@ -8869,7 +8898,7 @@
 /area/nadezhda/rnd/anomalisolfour)
 "Ce" = (
 /obj/machinery/camera/network/research,
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
@@ -8889,6 +8918,21 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/anomalisolfour)
+"Co" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "CN" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/structure/lattice,
@@ -8902,6 +8946,19 @@
 /area/nadezhda/rnd/mixing)
 "DW" = (
 /turf/simulated/floor/tiled/white/gray_platform,
+/area/nadezhda/rnd/outpostgeneral)
+"DX" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "DY" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
@@ -9033,6 +9090,32 @@
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
+"Ha" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
+"Hq" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "HL" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4;
@@ -9213,6 +9296,12 @@
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/rnd/mixing)
+"LH" = (
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "LJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white/techfloor_grid,
@@ -9224,6 +9313,12 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
+"LS" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "LT" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/structure/lattice,
@@ -9252,6 +9347,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfive)
+"MY" = (
+/obj/machinery/atmospherics/unary/vent_scrubber,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "Oc" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -9343,6 +9442,12 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/plating,
+/area/nadezhda/rnd/outpostgeneral)
+"PS" = (
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "Qy" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
@@ -9446,6 +9551,14 @@
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostgeneral)
+"SE" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "SI" = (
 /obj/machinery/door/airlock/glass_research{
 	name = "Toxins Lab";
@@ -9518,7 +9631,6 @@
 /area/nadezhda/rnd/mixing)
 "UL" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable{
 	d1 = 1;
@@ -9530,6 +9642,9 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "UO" = (
@@ -9538,6 +9653,19 @@
 	},
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
+"UU" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "VS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -9671,6 +9799,15 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfive)
+"Yv" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/sign/warning/nosmoking/large{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
 "YB" = (
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/rnd/mixing)
@@ -9678,6 +9815,10 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/mixing)
+"YJ" = (
+/obj/structure/sign/warningnew/canisters,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/rnd/outpostgeneral)
 "YV" = (
 /obj/machinery/door/airlock/glass_research{
 	name = "Toxins Lab";
@@ -12941,20 +13082,20 @@ nj
 nt
 jH
 jH
-JI
+wV
 jH
-jH
+xX
 jH
 jH
 jH
 jH
 oP
 jH
+LH
 jH
 jH
 jH
-jH
-jH
+xX
 ra
 jH
 ih
@@ -13145,18 +13286,18 @@ jJ
 kX
 UL
 sv
-jJ
+fd
 kX
 nu
 nZ
 rm
 oQ
 Lw
-rm
+SE
 qa
 Lw
 tt
-rm
+Hq
 rb
 rl
 rv
@@ -13543,7 +13684,7 @@ hs
 hs
 ih
 tk
-jH
+qM
 nF
 ih
 os
@@ -14351,8 +14492,8 @@ kK
 kK
 ih
 jH
-jH
-nU
+MY
+Co
 ih
 iu
 pR
@@ -15162,7 +15303,7 @@ jH
 jH
 nU
 ih
-mG
+Yv
 qe
 tl
 iu
@@ -15563,7 +15704,7 @@ iP
 js
 ih
 jL
-jH
+qM
 og
 ih
 iQ
@@ -15967,8 +16108,8 @@ iP
 tj
 ih
 jH
-jH
-nU
+MY
+Co
 ih
 iB
 iB
@@ -16176,10 +16317,10 @@ ih
 ih
 ih
 ih
-ih
+YJ
 uD
 vh
-ih
+YJ
 ih
 ih
 ih
@@ -16187,7 +16328,7 @@ ih
 ih
 ih
 jH
-jH
+xX
 jH
 ih
 qd
@@ -16381,12 +16522,12 @@ jJ
 jJ
 nG
 uK
-lI
+Ha
 jJ
-jJ
+UU
 RW
 lI
-jJ
+DX
 jJ
 jJ
 rc
@@ -16583,12 +16724,12 @@ jH
 jH
 km
 jH
+PS
+jH
+LS
 jH
 jH
-jH
-jH
-jH
-jH
+PS
 jH
 jH
 lu

@@ -328,8 +328,9 @@
 
 /obj/machinery/mining/drill/bullet_act(obj/item/projectile/Proj)
 	..()
-	var/damage = Proj.get_structure_damage()
-	take_damage(damage)
+	if (!(Proj.testing))
+		var/damage = Proj.get_structure_damage()
+		take_damage(damage)
 
 /obj/machinery/mining/drill/proc/take_damage(value)
 	health = min(max(health - value, 0), max_health)
