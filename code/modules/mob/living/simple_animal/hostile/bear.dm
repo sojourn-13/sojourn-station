@@ -83,11 +83,11 @@
 				OpenFire(targetted_mob)
 			else
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to(src, targetted_mob, 1, move_to_delay)
+				walk_to_wrapper(src, targetted_mob, 1, move_to_delay)
 		else
 			stance = HOSTILE_STANCE_ATTACKING
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to(src, targetted_mob, 1, move_to_delay)
+			walk_to_wrapper(src, targetted_mob, 1, move_to_delay)
 	if(horror_modifer && !rawr_cooldown)
 		rawr_xd()
 		rawr_cooldown = TRUE
