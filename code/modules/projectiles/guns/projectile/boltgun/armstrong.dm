@@ -23,8 +23,8 @@
 	name = "\"Mares Leg\" repeating shotgun"
 	desc = "An Armstrong rifle sporting a sawn down barrel and rechambered into 20mm take shotgun shells. It appears someone has mangled this gun and replaced its serial numbers."
 	icon = 'icons/obj/guns/projectile/mares.dmi'
-	icon_state = "mare"
-	item_state = "mare"
+	icon_state = "mares"
+	item_state = "mares"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_SHOTGUN
 	max_shells = 6
