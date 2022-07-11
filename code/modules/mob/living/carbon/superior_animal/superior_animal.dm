@@ -239,13 +239,13 @@
 
 /mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE)
 	var/calculated_walk = (comfy_range - comfy_distance)
-	var/datum/penetration_holder/trace_holder = null
 	var/fire_through_lost_sight = FALSE
 	var/can_see = TRUE
 	var/ran_see_check = FALSE
 	var/mob/targetted_mob_real = null
 	var/obj/mecha/targetted_mecha = null
 	var/target_location_resolved = (target_location?.resolve())
+	var/obj/item/projectile/trace
 	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
 	if(destroy_surroundings && !already_destroying_surroundings)
 		destroySurroundings()
@@ -322,9 +322,9 @@
 		// This block only runs if the above can_see check is true, fires a trace projectile to see if we can hit our target
 		else if (projectiletype && advance) // if we can see, let's prepare to see if we can hit
 			if (ranged)
-				var/trace = check_trajectory_raytrace(targetted_mob, src, projectiletype, TRUE)
+				trace = check_trajectory_raytrace(targetted_mob, src, projectiletype, TRUE)
 				spawn(0)
-				handle_trace_impact(trace)
+				handle_trace_impact(trace, delete_trace = FALSE)
 
 	if (!fire_through_lost_sight) //can only be true if src does not have fire_through_walls
 		lost_sight = FALSE
@@ -349,12 +349,12 @@
 			return
 		if(get_dist(src, targetted) <= comfy_range)
 			if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
-				addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace_holder), delay_for_range)
+				addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
 			if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))  //we dont want to prematurely end a advancing walk
 				walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE) //we still want to reset our walk
 		else
 			if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
-				addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace_holder), delay_for_range)
+				addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
 			if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 				walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE)

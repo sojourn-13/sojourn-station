@@ -15,6 +15,9 @@
 
 	var/eating_time = 900
 
+	/// Does this mob shoot it's projectile if it would hit a friendly?
+	var/do_friendly_fire = FALSE
+
 	/// Do we randomly retarget?
 	var/retarget = TRUE
 	/// How many ticks we will wait before trying to retarget randomly. When it hits 0, we retarget and reset the timer to retarget_timer_initial.
