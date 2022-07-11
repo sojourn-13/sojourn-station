@@ -322,42 +322,45 @@
 		// This block only runs if the above can_see check is true, fires a trace projectile to see if we can hit our target
 		else if (projectiletype && advance) // if we can see, let's prepare to see if we can hit
 			if (ranged)
-				trace = check_trajectory_raytrace(targetted_mob, src, projectiletype, TRUE)
+				trace = check_trajectory_raytrace(targetted_mob, src, projectiletype)
 				spawn(0)
 				handle_trace_impact(trace, delete_trace = FALSE)
 
-	if (!fire_through_lost_sight) //can only be true if src does not have fire_through_walls
-		lost_sight = FALSE
-	patience = patience_initial
-	// This block controls our attack/range logic
-	var/atom/targetted = targetted_mob
-	if (!(targetted_mob.check_if_alive(TRUE)))
-		loseTarget()
-		return
-	if (lost_sight)
-		targetted = target_location_resolved
-	if (stat == DEAD)
-		return
-	if(!ranged)
-		prepareAttackOnTarget()
-		walk_to_wrapper(src, targetted, 1, move_to_delay, deathcheck = TRUE)
-	else if(ranged)
+		if (!fire_through_lost_sight) //can only be true if src does not have fire_through_walls
+			lost_sight = FALSE
+		patience = patience_initial
+		// This block controls our attack/range logic
+		var/atom/targetted = targetted_mob
 		if (!(targetted_mob.check_if_alive(TRUE)))
 			loseTarget()
 			return
+		if (lost_sight)
+			targetted = target_location_resolved
 		if (stat == DEAD)
 			return
-		if(get_dist(src, targetted) <= comfy_range)
-			if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
-				addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
-			if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))  //we dont want to prematurely end a advancing walk
-				walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE) //we still want to reset our walk
-		else
-			if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
-				addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
-			if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))
-				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE)
+		if(!ranged)
+			prepareAttackOnTarget()
+			walk_to_wrapper(src, targetted, 1, move_to_delay, deathcheck = TRUE)
+		else if(ranged)
+			if (!(targetted_mob.check_if_alive(TRUE)))
+				loseTarget()
+				return
+			if (stat == DEAD)
+				return
+			if(get_dist(src, targetted) <= comfy_range)
+				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
+					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
+				if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))  //we dont want to prematurely end a advancing walk
+					walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE) //we still want to reset our walk
+			else
+				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
+					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
+				if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))
+					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+					walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE)
+	else
+		prepareAttackOnTarget()
+		walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
 
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
 /atom/proc/check_if_alive(var/critcheck = FALSE) //A simple yes no if were alive

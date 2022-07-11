@@ -15,8 +15,8 @@
 
 	var/eating_time = 900
 
-	/// Does this mob shoot it's projectile if it would hit a friendly?
-	var/do_friendly_fire = FALSE
+	/// Chance to fire a projectile if it would hit a friendly.
+	var/do_friendly_fire_chance = 10
 
 	/// Do we randomly retarget?
 	var/retarget = TRUE
