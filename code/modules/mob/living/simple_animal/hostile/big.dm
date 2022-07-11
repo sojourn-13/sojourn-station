@@ -74,7 +74,7 @@
 	walk_to(src,0)
 	movement_target = null
 	icon_state = icon_dead
-	density = 0
+	density = FALSE
 	return ..(gibbed,deathmessage)
 
 
@@ -286,22 +286,27 @@
 	bones_amount = 10
 	mob_size = MOB_LARGE
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE)
+	var/alerted = FALSE
 
-/mob/living/simple_animal/hostile/retaliate/croakerlord/adjustBruteLoss(var/damage)
+/mob/living/simple_animal/hostile/retaliate/croakerlord/adjustBruteLoss(damage)
 	..()
-	visible_emote("slowly begins to open its many eyes as it looses an angered croak...")
-	icon_state = "leaper_alert"
-	icon_living = "leaper_alert"
+	if(!alerted)
+		visible_emote("slowly begins to open its many eyes as it looses an angered croak...")
+		icon_state = "leaper_alert"
+		icon_living = "leaper_alert"
+		alerted = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord/LoseTarget()
 	..()
 	icon_state = "leaper"
 	icon_living = "leaper"
+	alerted = FALSE
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord/LostTarget()
 	..()
 	icon_state = "leaper"
 	icon_living = "leaper"
+	alerted = FALSE
 
 // Credit to SlapDrink#0083 for the sprite.
 /mob/living/simple_animal/hostile/hell_pig
