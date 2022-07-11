@@ -120,7 +120,8 @@ var/global/list/robot_modules = list(
 
 	for (var/obj/item/I in modules)
 		for (var/obj/item/cell/C in I)
-			C.autorecharging = TRUE //A quick hack to stop robot modules running out of power
+			C.autorecharging = TRUE
+			C.kick_autorecharging() //A quick hack to stop robot modules running out of power
 			//Later they'll be wired to the robot's central battery once we code functionality for that
 			//Setting it to infinity causes errors, so just a high number is fine
 			//Setting this to be infinity power isnt as good of a fix do to guns that cost power getting endless free shots, so auto charging is better - Trilby
@@ -153,6 +154,9 @@ var/global/list/robot_modules = list(
 	R.pixel_y = initial(pixel_y)
 	R.icon = icon('icons/mob/robots.dmi')
 	R.default_pixel_x = initial(pixel_x)
+	R.has_resting_icon = FALSE
+	R.has_family_guy_death_pose = FALSE
+	R.has_given_emaged_gifts = FALSE
 
 	R.set_module_sprites(list("Default" = "robot"))
 	R.icon_selected = 0
@@ -338,7 +342,8 @@ var/global/list/robot_modules = list(
 				"Sleek - Medical" = "sleekmedic",
 				"Sleek - Chemistry" = "sleekchemistry",
 				"Miss" = "missm_med",
-				"Medical Junkbot" = "qualified_doctor"
+				"Medical Junkbot" = "qualified_doctor",
+				"Tall Felinal" = "mekamed",
 				)
 
 	desc = "A versatile medical droid, equipped with all the tools necessary for surgery, chemistry, and \
@@ -457,7 +462,8 @@ var/global/list/robot_modules = list(
 					"Spider" = "spidereng",
 					"Plated" = "ceborg",
 					"Heavy" = "heavyeng",
-					"Miss" = "missm_eng"
+					"Miss" = "missm_eng",
+					"Tall Felinal" = "mekacargo"
 					)
 	health = 240 //Slightly above average
 	speed_factor = 1.4 //Slightly above average
@@ -693,7 +699,8 @@ var/global/list/robot_modules = list(
 					"Buffer" = "mechaduster",
 					"Sleek" = "sleekjanitor",
 					"Maid" = "maidbot",
-					"Miss" = "missm_janitor"
+					"Miss" = "missm_janitor",
+					"Tall Felinal" = "mekajani"
 					)
 	health = 250 //Bulky
 	speed_factor = 1.45 //Fast
@@ -734,6 +741,12 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.emag += new /obj/item/reagent_containers/spray/lube(src)
 
+	if(R.icon_state == "mekajani")
+		R.icon_alt_director = 'icons/mob/robot_tall/janitor.dmi'
+		R.reset_icon_folder_draw = FALSE
+	else
+		R.reset_icon_folder_draw = TRUE
+
 	//Silent cleaners
 	R.stats.addPerk(PERK_QUIET_AS_MOUSE)
 	R.stats.addPerk(PERK_SI_SCI)
@@ -770,7 +783,9 @@ var/global/list/robot_modules = list(
 					"Mobile Bar" = "heavyserv",
 					"Sleek" = "sleekservice",
 					"Maid" = "maidbot",
-					"Miss" = "missm_service"
+					"Miss" = "missm_service",
+					"Tall Felinal" = "mekaserve",
+					"Tall Felinal Maid" = "mekaserve_alt"
 				  	)
 
 	health = 130 //fragile
@@ -862,7 +877,8 @@ var/global/list/robot_modules = list(
 					"Classic" = "miner_old",
 					"Heavy" = "heavymine",
 					"Spider" = "spidermining",
-					"Miss" = "missm_miner"
+					"Miss" = "missm_miner",
+					"Tall Felinal" = "mekamine"
 				)
 	health = 250 //Pretty tough
 	speed_factor = 1.2 //meh
@@ -920,7 +936,8 @@ var/global/list/robot_modules = list(
 					"Classic" = "robotjani",
 					"Sleek" = "sleekscience",
 					"Heavy" = "heavysci",
-					"Miss" = "missm_med"
+					"Miss" = "missm_med",
+					"Tall Felinal" = "mekapeace"
 					)
 
 	health = 160 //Weak

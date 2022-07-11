@@ -174,9 +174,11 @@
 	return
 
 /mob/living/carbon/slime/bullet_act(var/obj/item/projectile/Proj)
-	attacked += 10
+	if (!(Proj.testing))
+		attacked += 10
 	..(Proj)
-	handle_regular_status_updates()
+	if (!(Proj.testing))
+		handle_regular_status_updates()
 	return 0
 
 /mob/living/carbon/slime/emp_act(severity)

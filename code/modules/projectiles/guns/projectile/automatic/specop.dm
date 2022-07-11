@@ -13,6 +13,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well =  MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 14, MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 8)
+	price_tag = 1150
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	damage_multiplier = 1.2

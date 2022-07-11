@@ -13,7 +13,7 @@
 	desc = "The poster comes with its own automatic adhesive mechanism, for easy pinning to any vertical surface."
 	icon_state = "rolled_poster"
 	var/serial_number = 0
-	var/ruined = 0
+	var/ruined = FALSE
 	var/datum/poster/design = null
 
 /obj/item/contraband/poster/New(turf/loc, var/datum/poster/new_design = null)
@@ -25,7 +25,7 @@
 
 /obj/item/contraband/poster/placed
 	icon_state = "random"
-	anchored = 1
+	anchored = TRUE
 	New(turf/loc)
 		if(icon_state != "random")
 			for(var/datum/poster/new_design in GLOB.poster_designs)
@@ -54,7 +54,7 @@
 				return
 			visible_message(SPAN_WARNING("[user] rips [src] in a single, decisive motion!") )
 			playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, 1)
-			ruined = 1
+			ruined = TRUE
 			icon = initial(icon)
 			icon_state = "poster_ripped"
 			name = "ripped poster"
@@ -75,7 +75,7 @@
 		return
 
 /obj/item/contraband/poster/proc/roll_and_drop()
-	anchored = 0
+	anchored = FALSE
 	pixel_x = 0
 	pixel_y = 0
 	icon = initial(icon)
@@ -84,7 +84,7 @@
 
 
 //Places the poster on a wall
-/obj/item/contraband/poster/afterattack(var/turf/simulated/wall/W, var/mob/user, var/adjacent, var/clickparams)
+/obj/item/contraband/poster/afterattack(turf/simulated/wall/W, mob/user, adjacent, clickparams)
 	if (!adjacent)
 		return
 
@@ -131,7 +131,7 @@
 			pixel_x = 32
 		else if(placement_dir&EAST)
 			pixel_x = -32
-		anchored = 1
+		anchored = TRUE
 		flick("poster_being_set", src)
 		playsound(W, 'sound/items/poster_being_created.ogg', 100, 1)
 		design.set_design(src)
@@ -144,12 +144,12 @@
 	var/icon_state=""
 	var/icon = 'icons/obj/contraband.dmi'
 
-/datum/poster/proc/set_design(var/obj/item/contraband/poster/P)
+/datum/poster/proc/set_design(obj/item/contraband/poster/P)
 	P.name = "poster - [name]"
 	P.desc = desc
 	P.icon_state = icon_state
 	P.icon = icon
-	return 1
+	return TRUE
 
 /*Generic*/
 

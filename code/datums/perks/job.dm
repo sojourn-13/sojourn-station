@@ -648,3 +648,4 @@
 			F.reagents.add_reagent("nutriment", 15)
 		if(9)
 			F.name = "hearty [F.name]"
+

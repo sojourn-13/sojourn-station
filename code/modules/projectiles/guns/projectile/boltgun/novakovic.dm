@@ -7,7 +7,7 @@
 	icon_state = "boltgun"
 	item_state = "boltgun"
 	max_shells = 5
-	price_tag = 300
+	price_tag = 450
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/boltgun/sawn/sa

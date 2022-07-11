@@ -31,8 +31,10 @@
 	src.destroySurroundings()
 
 /mob/living/carbon/superior_animal/RangedAttack()
-	if(!check_if_alive()) return
-	if(weakened) return
+	if(!check_if_alive())
+		return
+	if(weakened)
+		return
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(ranged)
@@ -40,7 +42,7 @@
 			OpenFire(targetted_mob)
 		else
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to(src, targetted_mob, 1, move_to_delay)
+			walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
 		if(ranged && istype(src, /mob/living/simple_animal/hostile/megafauna))
 			var/mob/living/simple_animal/hostile/megafauna/megafauna = src
 			sleep(rand(megafauna.megafauna_min_cooldown,megafauna.megafauna_max_cooldown))
@@ -48,20 +50,20 @@
 				if(prob(rand(15,25)))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, targetted_mob, 1, move_to_delay)
+					walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
 				else
 					OpenFire(targetted_mob)
 			else
 				if(prob(45))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, targetted_mob, 1, move_to_delay)
+					walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
 				else
 					OpenFire(targetted_mob)
 		else
 			return
 
-/mob/living/carbon/superior_animal/proc/OpenFire(var/atom/firing_target)
+/mob/living/carbon/superior_animal/proc/OpenFire(var/atom/firing_target, var/datum/penetration_holder/holder)
 	if(!check_if_alive())
 		return
 	if(weakened)
@@ -71,10 +73,10 @@
 
 	if(rapid)
 		for(var/shotsfired = 0, shotsfired < rapid_fire_shooting_amount, shotsfired++)
-			addtimer(CALLBACK(src, .proc/Shoot, target, loc, src), (delay_for_rapid_range * shotsfired))
+			addtimer(CALLBACK(src, .proc/Shoot, target, loc, src, 0, holder), (delay_for_rapid_range * shotsfired))
 			handle_ammo_check()
 	else
-		Shoot(target, loc, src)
+		Shoot(target, loc, src, trace_holder = holder)
 		handle_ammo_check()
 
 	if (!firing_target)
@@ -108,7 +110,7 @@
 		ranged = FALSE
 		rapid = FALSE
 
-/mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0)
+/mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0, var/datum/penetration_holder/trace_holder)
 	if(weakened)
 		return
 	if(target == start)
@@ -120,9 +122,23 @@
 	visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"), 1)
 	if(casingtype)
 		new casingtype(get_turf(src))
-	playsound(user, projectilesound, 100, 1)
-	if(!A)	return
+	playsound(user, projectilesound, projectilevolume, 1)
+	if(!A)
+		return
+
 	var/def_zone = get_exposed_defense_zone(target)
+
+	if (trace_holder)
+		if (!QDELETED(trace_holder))
+			if (trace_holder.force_penetration_on.len > 0)
+				if (trace_holder.penetration_store_time <= (world.time + (delay_for_range + 1)))
+					var/datum/penetration_holder/new_holder = A.penetration_holder
+					new_holder.force_penetration_on = trace_holder.force_penetration_on
+
+			qdel(trace_holder)
+
+	trace_holder = null
+
 	A.launch(target, def_zone)
 
 /mob/living/carbon/superior_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.

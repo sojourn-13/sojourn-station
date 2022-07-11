@@ -8,7 +8,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_MAGNUM
 	max_shells = 11
-	price_tag = 750
+	price_tag = 650
 	init_recoil = HMG_RECOIL(0.4)
 	damage_multiplier = 1.2
 	penetration_multiplier  = 1.1
@@ -26,6 +26,6 @@
 	item_state = "custer"
 	caliber = CAL_HRIFLE
 	max_shells = 7
-	price_tag = 1150
+	price_tag = 1250
 	init_recoil = HMG_RECOIL(0.6)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 15, MATERIAL_WOOD = 10)

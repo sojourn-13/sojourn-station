@@ -30,6 +30,7 @@
 	overkill_gib = 0 // Set so we don't lose its death dust special clause.
 	overkill_dust = 0
 	contaminant_immunity = TRUE
+	never_stimulate_air = TRUE
 	mob_size = 3 // Can't contain that which isn't actually real.
 
 	move_to_delay = 2

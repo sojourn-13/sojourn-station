@@ -21,7 +21,7 @@
 	fire_sound = 'sound/weapons/guns/fire/rushingbull.ogg'
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
-	price_tag = 600
+	price_tag = 800
 	penetration_multiplier = 2
 	pierce_multiplier = 2
 	damage_multiplier = 0.6 //Most AP and pens walls but least damage out of any shotgun

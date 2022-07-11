@@ -542,8 +542,8 @@
 			return
 		else
 			cell.charge += min(charge_per_cycle, cell.maxcharge - cell.charge)
-			
-			
+
+
 // Improv crank
 /obj/item/device/manual_charger/improv
 	name = "handmade manual recharger"

@@ -11,6 +11,13 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
 	)
 
+/datum/craft_recipe/furniture/doublebed
+	name = "double bed"
+	result = /obj/structure/bed/double/padded
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL)
+	)
+
 /datum/craft_recipe/furniture/bonfire
 	name = "bonfire"
 	result = /obj/structure/bonfire

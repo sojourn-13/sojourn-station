@@ -30,7 +30,10 @@
 	icon_state = "beacon1"
 	visible_message("<span class='notice'><b><font size='3px'><font color='red'>An alarm blares as the scrap beacon turns on and begins pulling debris from space!</font></b></span>")
 	playsound(src.loc, "sound/misc/bloblarm.ogg", 100, 1)
-	sleep(60)
+	addtimer(CALLBACK(src, .proc/scrap_summon), 8)
+
+
+/obj/structure/scrap_beacon/proc/scrap_summon()
 	var/list/flooring_near_beacon = list()
 	for(var/turf/T in RANGE_TURFS(impact_range, src))
 		if(!istype(T,/turf/simulated/floor))

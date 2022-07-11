@@ -21,18 +21,18 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 
 /turf/simulated/hotspot_expose(exposed_temperature, exposed_volume, soh)
 	if(fire_protection > world.time-300)
-		return 0
+		return FALSE
 	if(locate(/obj/fire) in src)
-		return 1
+		return FALSE
 	var/datum/gas_mixture/air_contents = return_air()
 	if(!air_contents || exposed_temperature < PLASMA_MINIMUM_BURN_TEMPERATURE)
-		return 0
+		return FALSE
 
-	var/igniting = 0
+	var/igniting = FALSE
 	var/obj/effect/decal/cleanable/liquid_fuel/liquid = locate() in src
 
 	if(air_contents.check_combustability(liquid))
-		igniting = 1
+		igniting = FALSE
 
 		create_fire(exposed_temperature)
 	return igniting
@@ -63,7 +63,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 	if(!fire_tiles.len)
 		SSair.active_fire_zones.Remove(src)
 
-/zone/proc/remove_liquidfuel(var/used_liquid_fuel, var/remove_fire=0)
+/zone/proc/remove_liquidfuel(used_liquid_fuel, remove_fire=0)
 	if(!fuel_objs.len)
 		return
 
@@ -87,15 +87,15 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 			qdel(fuel)
 
 /turf/proc/create_fire(fl)
-	return 0
+	return FALSE
 
 /turf/simulated/create_fire(fl)
 	if(fire)
 		fire.firelevel = max(fl, fire.firelevel)
-		return 1
+		return TRUE
 
 	if(!zone)
-		return 1
+		return TRUE
 
 	fire = new(src, fl)
 	SSair.active_fire_zones |= zone
@@ -104,12 +104,12 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 	zone.fire_tiles |= src
 	if(fuel) zone.fuel_objs += fuel
 
-	return 0
+	return FALSE
 
 /obj/fire
 	//Icon for fire on turfs.
 
-	anchored = 1
+	anchored = TRUE
 	mouse_opacity = 0
 
 	blend_mode = BLEND_ADD
@@ -122,14 +122,14 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 	var/firelevel = 1 //Calculated by gas_mixture.calculate_firelevel()
 
 /obj/fire/Process()
-	. = 1
+	. = TRUE
 
 	var/turf/simulated/my_tile = loc
 	if(!istype(my_tile) || !my_tile.zone)
 		if(my_tile && my_tile.fire == src)
 			my_tile.fire = null
 		RemoveFire()
-		return 1
+		return TRUE
 
 	var/datum/gas_mixture/air_contents = my_tile.return_air()
 
@@ -203,7 +203,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 		var/atom/A = a
 		A.fire_act()
 
-/obj/fire/proc/fire_color(var/env_temperature)
+/obj/fire/proc/fire_color(env_temperature)
 	var/temperature = max(4000*sqrt(firelevel/vsc.fire_firelevel_multiplier), env_temperature)
 	return heat2color(temperature)
 
@@ -229,7 +229,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 
 //Returns the firelevel
 /datum/gas_mixture/proc/zburn(zone/zone, force_burn, no_check = 0)
-	. = 0
+	. = FALSE
 	if((temperature > PLASMA_MINIMUM_BURN_TEMPERATURE || force_burn) && (no_check ||check_recombustability(zone? zone.fuel_objs : null)))
 
 		#ifdef FIREDBG
@@ -260,7 +260,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 
 		total_fuel = gas_fuel + liquid_fuel
 		if(total_fuel <= 0.005)
-			return 0
+			return FALSE
 
 		//*** Determine how fast the fire burns
 
@@ -299,7 +299,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 		//if the reaction is progressing too slow then it isn't self-sustaining anymore and burns out
 		if(zone) //be less restrictive with canister and tank reactions
 			if((!liquid_fuel || used_fuel <= FIRE_LIQUD_MIN_BURNRATE) && (!gas_fuel || used_fuel <= FIRE_GAS_MIN_BURNRATE*zone.contents.len))
-				return 0
+				return FALSE
 
 
 		//*** Remove fuel and oxidizer, add carbon dioxide and heat
@@ -328,41 +328,41 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 		return firelevel
 
 datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
-	. = 0
+	. = FALSE
 	for(var/g in gas)
 		if(gas_data.flags[g] & XGM_GAS_OXIDIZER && gas[g] >= 0.1)
-			. = 1
+			. = TRUE
 			break
 
 	if(!.)
-		return 0
+		return FALSE
 
 	if(fuel_objs && fuel_objs.len)
-		return 1
+		return TRUE
 
-	. = 0
+	. = FALSE
 	for(var/g in gas)
 		if(gas_data.flags[g] & XGM_GAS_FUEL && gas[g] >= 0.1)
-			. = 1
+			. = TRUE
 			break
 
 /datum/gas_mixture/proc/check_combustability(obj/effect/decal/cleanable/liquid_fuel/liquid=null)
-	. = 0
+	. = FALSE
 	for(var/g in gas)
 		if(gas_data.flags[g] & XGM_GAS_OXIDIZER && QUANTIZE(gas[g] * vsc.fire_consuption_rate) >= 0.1)
-			. = 1
+			. = TRUE
 			break
 
 	if(!.)
-		return 0
+		return FALSE
 
 	if(liquid)
-		return 1
+		return TRUE
 
-	. = 0
+	. = FALSE
 	for(var/g in gas)
 		if(gas_data.flags[g] & XGM_GAS_FUEL && QUANTIZE(gas[g] * vsc.fire_consuption_rate) >= 0.005)
-			. = 1
+			. = TRUE
 			break
 
 //returns a value between 0 and vsc.fire_firelevel_multiplier
@@ -373,9 +373,9 @@ datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
 	var/total_combustables = (total_fuel + total_oxidizers)
 	var/active_combustables = (FIRE_REACTION_OXIDIZER_AMOUNT/FIRE_REACTION_FUEL_AMOUNT + 1)*reaction_limit
 
-	if(total_combustables > 0)
+	if(total_combustables > 0 && group_multiplier > 0)
 		//slows down the burning when the concentration of the reactants is low
-		var/damping_multiplier = min(1, active_combustables / (total_moles/group_multiplier))
+		var/damping_multiplier = min(1, active_combustables / max(1, total_moles / group_multiplier))
 
 		//weight the damping mult so that it only really brings down the firelevel when the ratio is closer to 0
 		damping_multiplier = 2*damping_multiplier - (damping_multiplier*damping_multiplier)
@@ -395,20 +395,20 @@ datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
 	return max( 0, firelevel)
 
 
-/mob/living/proc/FireBurn(var/firelevel, var/last_temperature, var/pressure)
+/mob/living/proc/FireBurn(firelevel, last_temperature, pressure)
 	var/mx = 5 * firelevel/vsc.fire_firelevel_multiplier * min(pressure / ONE_ATMOSPHERE, 1)
 	apply_damage(2.5 * mx, BURN)
 
 
-/mob/living/carbon/human/FireBurn(var/firelevel, var/last_temperature, var/pressure)
+/mob/living/carbon/human/FireBurn(firelevel, last_temperature, pressure)
 	//Burns mobs due to fire. Respects heat transfer coefficients on various body parts.
 	//Due to TG reworking how fireprotection works, this is kinda less meaningful.
 
-	var/head_exposure = 1
-	var/chest_exposure = 1
-	var/groin_exposure = 1
-	var/legs_exposure = 1
-	var/arms_exposure = 1
+	var/head_exposure = TRUE
+	var/chest_exposure = TRUE
+	var/groin_exposure = TRUE
+	var/legs_exposure = TRUE
+	var/arms_exposure = TRUE
 
 	//Get heat transfer coefficients for clothing.
 
@@ -418,15 +418,15 @@ datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
 
 		if( C.max_heat_protection_temperature >= last_temperature )
 			if(C.body_parts_covered & HEAD)
-				head_exposure = 0
+				head_exposure = FALSE
 			if(C.body_parts_covered & UPPER_TORSO)
-				chest_exposure = 0
+				chest_exposure = FALSE
 			if(C.body_parts_covered & LOWER_TORSO)
-				groin_exposure = 0
+				groin_exposure = FALSE
 			if(C.body_parts_covered & LEGS)
-				legs_exposure = 0
+				legs_exposure = FALSE
 			if(C.body_parts_covered & ARMS)
-				arms_exposure = 0
+				arms_exposure = FALSE
 	//minimize this for low-pressure enviroments
 	var/mx = 5 * firelevel/vsc.fire_firelevel_multiplier * min(pressure / ONE_ATMOSPHERE, 1)
 

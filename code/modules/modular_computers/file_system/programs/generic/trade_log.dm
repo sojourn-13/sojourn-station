@@ -95,6 +95,11 @@
 		account = A
 		return TRUE
 
+	if(account)
+		if(href_list["PRG_account_unlink"])
+			account = null
+			return TRUE
+
 /datum/computer_file/program/trade_log/proc/print_invoice()
 
 /datum/nano_module/program/trade_log

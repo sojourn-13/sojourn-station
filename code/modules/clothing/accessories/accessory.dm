@@ -588,7 +588,7 @@
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER // Made them children of longcoat so should inherit but juuust in case...
 
 /obj/item/clothing/accessory/bscloak/olive
-	name = "Blackshield tan longcoat"
+	name = "Blackshield drab longcoat"
 	desc = "A simple, durable drab longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
 	icon_state = "bs_longcoat_green"
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
@@ -783,13 +783,13 @@
 	desc = "A lightweight polymer frame designed to hold a neck upright comfortably."
 	icon_state = "neckbrace"
 	item_state = "neckbrace"
-	
+
 /obj/item/clothing/accessory/pilotwebbing
 	name = "basic pilot harness"
 	desc = "A basic harness commonly used through out the galaxy from shuttle pilots to mech pilots. The harness itself has minimal safety strapping however would still ensure you're safely strapped into whatever cockpit you may be seated in."
 	icon_state = "basicpilot"
 	item_state = "basicpilot"
-	
+
 /obj/item/clothing/accessory/pilotwebbing/military
 	name = "military pilot harness"
 	desc = "A military harness commonly seen being used by pilots within military or paramilitary forces for their fighter pilots and combat mech pilots. The harness itself has extra safety strapping and buckles allowing for the attaching of safety ane EVA equipment in case of an emergency however would still ensure you're safely strapped into whatever cockpit you may be seated in."
@@ -1175,3 +1175,101 @@
 	item_state = "sweatervest_red"
 	overlay_state = "sweatervest_red"
 
+/* Passports/work visa/passcard */
+
+/obj/item/clothing/accessory/passcard
+	name = "general passcard"
+	desc = "A passcard issued by the Nadezhda Colony when someone gains permanent residency on Amethyn, in the Chromin 8 system."
+	icon_state = "passcard_general"
+	item_state = "general_passport"
+
+/obj/item/clothing/accessory/passcard/resident_card
+	name = "resident passcard"
+	desc = "A card issued by the Nadezhda Colony for colonists who are offered temporary residency on Amethyn, in the Chromin 8 system."
+	icon_state = "resident_card"
+	item_state = "passport"
+
+/obj/item/clothing/accessory/passcard/work_visa
+	name = "work visa"
+	desc = "A card issued by the Nadezhda Colony for colonists who are offered residency for the purpose of work on Amethyn, in the Chromin 8 system. "
+	icon_state = "workvisa"
+	item_state = "pass"
+
+/obj/item/clothing/accessory/passcard/new_damascus
+	name = "New Damascus passcard"
+	desc = "A passcard card issued to citizens of New Damascus, once a bustling manufacturing world that was rich in oxygen and low in moisture. New Damascus is an arid world slowly bringing itself back from the brink of economic collapse."
+	icon_state = "passcard_new_damascus"
+	item_state = "passport"
+
+/obj/item/clothing/accessory/passcard/fringe_colonies
+	name = "Outer Fringe passcard"
+	desc = "A passcard issued to citizens and colonists away from Sol space or Chromin itself. The look of this passcard may vary group to group, but no matter where it comes from, it's generally understood that whoever owns this passcard has never been a Solarian citizen."
+	icon_state = "passcard_coc"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/sanperitor
+	name = "Sanperitor passcard"
+	desc = "A passcard issued to citizens of Sanperitor, an low atmosphere world closer to its system's star then most species are comfortable living with. The intense solar radiation of the planet has caused those who reside there to naturally adapt to the toxins present in everyday life."
+	icon_state = "passcard_sanperitor"
+	item_state = "pass"
+
+/obj/item/clothing/accessory/passcard/rankorin
+	name = "Rankorin passcard"
+	desc = "A passcard issued to citizens of Rankorin. Rankorin is in many parts considered a 'death world' due to its highly toxic atmosphere, caused by a combination of natural flora and common storms of poisonous dusts clouds."
+	icon_state = "passcard_rankorin"
+	item_state = "pass"
+
+/obj/item/clothing/accessory/passcard/mardinat_yunan
+	name = "Mardinat Yanun passcard"
+	desc = "A passcard issued to citizens of Mardinat Yunan, initially selected for habitation for its rich gasses and potential for being located on an upcoming trade lane. This gas giant had many of its economic dreams dashed, with the gaseous mixture of the atmosphere being poor for fuel production and the trade lane never materializing."
+	icon_state = "passcard_madinat_yunan"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/thalatta
+	name = "Thalatta passcard"
+	desc = "A passcard issued to crewmembers of the City-Ship Thalatta, translated from the ancient Greek term for 'The Sea.' Thalatta is an aptly named mobile city that is ever-sailing through the great cosmic sea."
+	icon_state = "passcard_thalatta"
+	item_state = "pass"
+
+/obj/item/clothing/accessory/passcard/onkarth
+	name = "Onkarth passcard"
+	desc = "A passcard issued to citizens of Onkarth, the homeworld of the Sablekyne, a primarily desert planet of extreme conditions along the equator and northern fringes of civilization."
+	icon_state = "passcard_onkarth"
+	item_state = "passport"
+
+/obj/item/clothing/accessory/passcard/neapolis
+	name = "Neapolis passcard"
+	desc = "A passcard issued to citizens of Neapolis, a lush garden world that has modeled itself as an escape for repressed artists, political exiles, and individuals who would largely be ostracized by most major powers."
+	icon_state = "passcard_neopolis"
+	item_state = "passport"
+
+
+/obj/item/clothing/accessory/passcard/aqua_fria
+	name = "Aqua Fria passcard"
+	desc = "A passcard issued to citizens of Aqua Fria. Tucked away in a heavily populated system, this large aquatic world has made a reputation for being a substantial food source and home to a number of research institutes."
+	icon_state = "passcard_aqua_fria"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/donbettyr
+	name = "Donbettyr passcard"
+	desc = "A passcard issued to citizens of Donbettyr, the homeworld of the Akula. An old, primarily ocean world with two moons and few thousand separated areas of land making up a series of islands and archipelagos."
+	icon_state = "passcard_aqua_fria"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/passport_sol
+	name = "old solarian passport"
+	desc = "An old passport issued to citizens of the Solarian Federation, this one seems to have been issued before the Bluespace Collapse. Why is it here? Is it a trinket?"
+	icon_state = "passport_sol"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/passport_general
+	name = "passport"
+	desc = "A passport issued to Nadezhda Colonists that live on Amethyn, in the Chromin 8 system."
+	icon_state = "general_passport"
+	item_state = "general_passport"
+
+/obj/item/clothing/accessory/passcard/passport_kriosan
+	name = "Kriosan passport"
+	desc = "A passport issued to Kriosans by the Kriosan Government who are working or living on Amethyn, in the Chromin 8 system."
+	icon_state = "workvisa"
+	item_state = "kuri"

@@ -73,6 +73,7 @@
 			pref.player_alt_titles -= job.title
 
 /datum/category_item/player_setup_item/occupation/content(mob/user, limit = 16, list/splitJobs, splitLimit = 1)
+
 	if(!SSjob)
 		return
 
@@ -156,12 +157,18 @@
 			. += "<a href='?src=\ref[src];set_skills=[rank]'><del>[rank]</del></a></td><td><font color=black>[bad_message]</font></td></tr>"
 			continue
 
-		//. += (unspent && (current_level != JOB_LEVEL_NEVER) ? "<a class='Points' href='?src=\ref[src];set_skills=[rank]'>" : "<a href='?src=\ref[src];set_skills=[rank]'>")
-		. += (current_level != JOB_LEVEL_NEVER ? "<a class='Points' href='?src=\ref[src];set_skills=[rank]'>" : "<a href='?src=\ref[src];set_skills=[rank]'>")
-		if((rank in command_positions) || (rank == "AI"))//Bold head jobs
-			. += "<b>[rank]</b>"
+//		if (!(SSjob.JobTimeAutoCheck(C.ckey, "[type]", "[job]", 300)) && (job.noob_name))     // If PLAYER is less than five hours of experience in role, force Noob name on him.
+//			SetPlayerAltTitle(job,job.noob_name)
+
+		if(job.alt_titles)
+			. += "<a href='?src=\ref[src];select_alt_title=\ref[job]'>\[[pref.GetPlayerAltTitle(job)]\]"
 		else
-			. += "[rank]"
+			//. += (unspent && (current_level != JOB_LEVEL_NEVER) ? "<a class='Points' href='?src=\ref[src];set_skills=[rank]'>" : "<a href='?src=\ref[src];set_skills=[rank]'>")
+			. += (current_level != JOB_LEVEL_NEVER ? "<a class='Points' href='?src=\ref[src];set_skills=[rank]'>" : "<a href='?src=\ref[src];set_skills=[rank]'>")
+			if((rank in command_positions) || (rank == "AI"))//Bold head jobs
+				. += "<b>[rank]</b>"
+			else
+				. += "[rank]"
 
 		. += "</a></td><td width='40%'>"
 
@@ -178,9 +185,6 @@
 			. += " <a href='?src=\ref[src];set_job=[rank];set_level=[JOB_LEVEL_MEDIUM]'>[current_level == JOB_LEVEL_MEDIUM ? "<font color=eecc22>" : ""]\[Medium][current_level == JOB_LEVEL_MEDIUM ? "</font>" : ""]</a>"
 			. += " <a href='?src=\ref[src];set_job=[rank];set_level=[JOB_LEVEL_LOW]'>[current_level == JOB_LEVEL_LOW ? "<font color=cc5555>" : ""]\[Low][current_level == JOB_LEVEL_LOW ? "</font>" : ""]</a>"
 			. += " <a href='?src=\ref[src];set_job=[rank];set_level=[JOB_LEVEL_NEVER]'>[current_level == JOB_LEVEL_NEVER ? "<font color=black>" : ""]\[NEVER][current_level == JOB_LEVEL_NEVER ? "</font>" : ""]</a>"
-
-		if(job.alt_titles)
-			. += "</td></tr><tr bgcolor='[lastJob.selection_color]'><td width='40%' align='center'>&nbsp</td><td><a href='?src=\ref[src];select_alt_title=\ref[job]'>\[[pref.GetPlayerAltTitle(job)]\]</a></td></tr>"
 		. += "</td></tr>"
 	. += "</td'></tr></table>"
 	. += "</center></table><center>"
@@ -199,6 +203,10 @@
 	. = jointext(.,null)
 
 /datum/category_item/player_setup_item/occupation/OnTopic(href, href_list, user)
+
+	//Keeps track of the Player being looked at
+	var/client/C = usr.client
+
 	if(href_list["reset_jobs"])
 		ResetJobs()
 		return TOPIC_REFRESH
@@ -213,8 +221,17 @@
 	else if(href_list["select_alt_title"])
 		var/datum/job/job = locate(href_list["select_alt_title"])
 		if (job)
-			var/choices = list(job.title) + job.alt_titles
-			var/choice = input("Choose an title for [job.title].", "Choose Title", pref.GetPlayerAltTitle(job)) as anything in choices|null
+			var/choices
+			if (job.department != DEPARTMENT_LSS)
+				choices = list(job.noob_name)								// Time locks for Alt Names. Change the 0's to configure when the normal title opens up, and when the alternative ones do too.
+				if (SSjob.JobTimeAutoCheck(C.ckey, "[type]", "[job]", 0))	//<--- Change this number to establish how long a CKEY has to play a position until they're not forced a "n00b name"
+					choices += list(job.title)
+				if (SSjob.JobTimeAutoCheck(C.ckey, "[type]", "[job]", 0))	//<--- Change this number to establish how long to go from normal job name to unlocking the alternate names.
+					choices += job.alt_titles
+			else
+				choices = list(job.noob_name) + list(job.title) + job.alt_titles
+
+			var/choice = input("Choose a title for [job.title].", "Choose Alternative Title", pref.GetPlayerAltTitle(job)) as anything in choices|null
 			if(choice && CanUseTopic(user))
 				SetPlayerAltTitle(job, choice)
 				return (pref.equip_preview_mob ? TOPIC_REFRESH_UPDATE_PREVIEW : TOPIC_REFRESH)

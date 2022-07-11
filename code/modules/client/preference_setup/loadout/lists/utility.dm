@@ -51,6 +51,11 @@
 	path = /obj/item/clipboard
 	cost = 0
 
+/datum/gear/utility/crayonbox
+	display_name = "crayon box"
+	path = /obj/item/storage/fancy/crayons
+	cost = 1
+
 /datum/gear/utility/corpreg
 	display_name = "colony law"
 	path = /obj/item/book/manual/security_space_law

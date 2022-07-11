@@ -13,7 +13,7 @@
 	charge_cost = 100
 	fire_delay = 20
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_SILVER = 6)
-	price_tag = 500
+	price_tag = 650
 	init_recoil = CARBINE_RECOIL(1)
 	twohanded = TRUE
 	init_firemodes = list(

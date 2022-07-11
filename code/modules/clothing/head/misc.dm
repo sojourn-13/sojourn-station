@@ -273,7 +273,7 @@ obj/item/clothing/head/ribbon/red
 
 /obj/item/clothing/head/numerical_hat
 	name = "numerical hat"
-	icon_state = "numerical_hat_red"
+	icon_state = "numerical_hat"
 	desc = "A tall hat for nurmerical of the faith. Can be turned inside out to turn form red to gray or gray to red"
 
 /obj/item/clothing/head/numerical_hat/verb/toggle_style()
@@ -286,8 +286,8 @@ obj/item/clothing/head/ribbon/red
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Red Hat"] = "numerical_hat_red"
-	options["Gray Hat"] = "numerical_hat_dark"
+	options["Red Hat"] = "numerical_hat"
+	options["Gray Hat"] = "numerical_hatgrey"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

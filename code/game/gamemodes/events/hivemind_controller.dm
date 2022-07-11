@@ -1,11 +1,13 @@
 GLOBAL_LIST_INIT(hive_data_bool, list(
 	"maximum_existing_mobs"			= FALSE, // Exact number set separately
-	"spread_trough_burrows"			= TRUE,
+	"spread_trough_burrows"			= FALSE,
 	"spread_on_lower_z_level"		= TRUE, // Spread via wires "falling down" from higher z-level
-	"teleport_core_when_damaged"	= TRUE,
+	"teleport_core_when_damaged"	= FALSE,
 	"allow_tyrant_spawn"			= TRUE,
 	"tyrant_death_kills_hive"		= FALSE,
-	"all_church_to_battle"			= FALSE))
+	"all_church_to_battle"			= FALSE,
+	"gibbing_dead"					= FALSE,
+	"pop_lock"						= TRUE))
 
 GLOBAL_LIST_INIT(hive_data_float, list(
 	"maximum_controlled_areas"		= 0, // Stop expansion when controlling certain number of areas, 0 to disable
@@ -107,6 +109,11 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	data += "<br>All Church To Inquisitors: [GLOB.hive_data_bool["all_church_to_battle"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];toggle_inquisitors=1'>\[TOGGLE\]</a>"
 
+	data += "<br>Allow Hivemind Gibbing Dead Victims: [GLOB.hive_data_bool["gibbing_dead"] ? "Enabled" : "Disabled"] \
+	<a href='?src=\ref[src];toggle_gibbing_dead=1'>\[TOGGLE\]</a>"
+
+	data += "<br>Prevent Hivemind Events Below 15 Pop: [GLOB.hive_data_bool["pop_lock"] ? "Enabled" : "Disabled"] \
+	<a href='?src=\ref[src];toggle_pop_lock=1'>\[TOGGLE\]</a>"
 
 	data += "</td></tr></table>"
 	usr << browse(data, "window=hive_main;size=600x600")
@@ -192,6 +199,13 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 
 	if(href_list["toggle_tyrant_gameover"])
 		GLOB.hive_data_bool["tyrant_death_kills_hive"] = !GLOB.hive_data_bool["tyrant_death_kills_hive"]
+
+	if(href_list["toggle_gibbing_dead"])
+		GLOB.hive_data_bool["gibbing_dead"] = !GLOB.hive_data_bool["gibbing_dead"]
+
+	if(href_list["toggle_pop_lock"])
+		GLOB.hive_data_bool["pop_lock"] = !GLOB.hive_data_bool["pop_lock"]
+
 
 	if(href_list["toggle_inquisitors"])
 		GLOB.hive_data_bool["all_church_to_battle"] = !GLOB.hive_data_bool["all_church_to_battle"]

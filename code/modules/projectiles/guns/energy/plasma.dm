@@ -73,7 +73,7 @@
 	matter = list(MATERIAL_STEEL = 2, "biomatter" = 20)
 	disposable = TRUE
 	origin_tech = list(TECH_COMBAT = 1, TECH_PLASMA = 1)
-	price_tag = 200
+	price_tag = 250
 	fire_sound = 'sound/weapons/Laser.ogg'
 	cell_type = /obj/item/cell/small //can't recharge this one
 	sel_mode = 2

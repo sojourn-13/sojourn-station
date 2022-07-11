@@ -331,6 +331,39 @@ ADMIN_VERB_ADD(/client/proc/togglebuildmodeself, R_FUN, FALSE)
 	if(src.mob)
 		togglebuildmode(src.mob)
 
+ADMIN_VERB_ADD(/client/proc/list_mob_groups, R_FUN, FALSE)
+/client/proc/list_mob_groups()
+	set name = "List Mob Groups"
+	set desc = "List the keys of all currently saved mob groups"
+	set category = "Special Verbs"
+
+	if(!check_rights(R_FUN))
+		return
+
+	to_chat(usr, "<b>Names of all mob groups:</b>")
+	for (var/key_to_print in GLOB.mob_groups)
+		to_chat(usr, key_to_print) //prints the keys, not the values
+
+ADMIN_VERB_ADD(/client/proc/list_mob_group_contents, R_FUN, FALSE)
+/client/proc/list_mob_group_contents(key as text)
+	set name = "List Mob Group Contents"
+	set desc = "List the contents of a given mob group using a key"
+	set category = "Special Verbs"
+
+	if(!check_rights(R_FUN))
+		return
+
+	if (!key)
+		key = input(usr, "Input the key of the list you wish to see the contents of:", "Key", "")
+		if (key == "")
+			to_chat(usr, SPAN_WARNING("Your entered value is invalid."))
+
+	if (key in GLOB.mob_groups)
+		to_chat(usr, "<b>Contents of the given list:</b>")
+		var/list/list_to_list = GLOB.mob_groups[key]
+		for (var/content in list_to_list)
+			to_chat(usr, "[content]")
+
 
 ADMIN_VERB_ADD(/client/proc/object_talk, R_FUN, FALSE)
 /client/proc/object_talk(var/msg as text) // -- TLE
@@ -659,3 +692,89 @@ ADMIN_VERB_ADD(/client/proc/toggleHUBVisibility, R_ADMIN, FALSE)
 
 	log_admin("[key_name(usr)] turned the hub listing [world.visibility ? "on" : "off"].")
 	message_admins("\blue [key_name_admin(usr)] turned the hub listing [world.visibility ? "on" : "off"].", 1)
+
+ADMIN_VERB_ADD(/client/proc/manage_custom_kits, R_FUN, FALSE)
+/client/proc/manage_custom_kits()
+	set category = "Fun"
+	set name = "Manage Custom Kits"
+
+	var/const/header = "Custom kit management"
+	var/groundhog_day = TRUE
+	var/mob/user = ismob(usr) ? usr : src.mob
+	var/iterations_count = 0
+
+	while(groundhog_day && iterations_count < 100)
+		iterations_count++
+		var/action = alert(user, "Currently existing kits: [LAZYLEN(GLOB.custom_kits)]", "[header]", "Spawn", "Create or edit", "Cancel")
+		switch(action)
+			if("Spawn")
+				var/kit_of_choice = input(user, "Choose a kit", "[header]") as null|anything in GLOB.custom_kits
+				if(kit_of_choice)
+					var/severity_of_adminbus = input(user, "How many?", "[header]") as null|num
+					if(severity_of_adminbus)
+						var/storage_path = GLOB.custom_kits[kit_of_choice][1]
+						var/turf/location = get_turf(user)
+						for(var/I in 1 to severity_of_adminbus)
+							var/obj/item/storage/storage = new storage_path(location)
+							for(var/i in 2 to LAZYLEN(GLOB.custom_kits[kit_of_choice]))
+								var/item_path = GLOB.custom_kits[kit_of_choice][i]
+								new item_path(storage)
+						log_and_message_admins("[ckey] spawned custom kit at [admin_jump_link(location, src)]")
+			if("Create or edit")
+				var/do_what_exactly = alert(user, "What do?", "[header]", "Create", "Edit", "Cancel")
+				switch(do_what_exactly)
+					if("Create")
+						var/perfectly_descriptive_name = input(user, "Give it a name", "[header]") as null|text
+						if(perfectly_descriptive_name)
+							if(isnum(perfectly_descriptive_name))
+								perfectly_descriptive_name = num2text(perfectly_descriptive_name)
+							var/path_of_choice
+							switch(alert(user, "Kit would need to a storage.", "[header]", "Enter path", "Pick path", "Cancel"))
+								if("Enter path")
+									path_of_choice = text2path(input(user, "It better be subtype of /obj/item/storage or other type of container.", "[header]") as null|text)
+								if("Pick path")
+									path_of_choice = input(user, "Pick a storage for the kit.", "[header]") as null|anything in typesof(/obj/item/storage)
+							if(path_of_choice)
+								GLOB.custom_kits += perfectly_descriptive_name
+								GLOB.custom_kits[perfectly_descriptive_name] = list(1)
+								GLOB.custom_kits[perfectly_descriptive_name][1] = path_of_choice
+								to_chat(user, SPAN_DANGER("Kit \"[perfectly_descriptive_name]\" created, now edit it."))
+							else
+								to_chat(user, SPAN_DANGER("Invalid storage type."))
+					if("Edit")
+						var/kit_of_choice = input(user, "Choose a kit", "[header]") as null|anything in GLOB.custom_kits
+						if(kit_of_choice)
+							switch(alert(user, "What do?", "[header]", "Add or remove items", "Delete", "Cancel"))
+								if("Add or remove items")
+									var/dream_within_a_dream = TRUE
+									while(dream_within_a_dream)
+										switch(alert(user, "What do?", "[header]", "Add item", "Remove item", "Cancel"))
+											if("Add item")
+												var/dream_within_a_dream_within_a_dream = TRUE
+												while(dream_within_a_dream_within_a_dream)
+													switch(alert(user, "Add item to the kit.", "[header]", "Enter path", "Enough"))
+														if("Enter path")
+															var/new_path = input(user, "Enter an item path.", "[header]") as null|text
+															if(new_path)
+																GLOB.custom_kits[kit_of_choice] += new_path
+														else
+															dream_within_a_dream_within_a_dream = FALSE
+											if("Remove item")
+												var/dream_within_a_dream_within_a_dream = TRUE
+												while(dream_within_a_dream_within_a_dream)
+													var/list/list_of_stuff = GLOB.custom_kits[kit_of_choice] - GLOB.custom_kits[kit_of_choice][1]
+													if(!LAZYLEN(list_of_stuff))
+														to_chat(user, SPAN_DANGER("There is nothing left."))
+														dream_within_a_dream_within_a_dream = FALSE
+													else
+														var/item_to_remove = input(user, "Pick a path to remove", "[header]") as null|anything in list_of_stuff
+														if(item_to_remove)
+															GLOB.custom_kits[kit_of_choice] -= item_to_remove
+														else
+															dream_within_a_dream_within_a_dream = FALSE
+											else
+												dream_within_a_dream = FALSE
+								if("Delete")
+									GLOB.custom_kits -= kit_of_choice
+			else
+				groundhog_day = FALSE

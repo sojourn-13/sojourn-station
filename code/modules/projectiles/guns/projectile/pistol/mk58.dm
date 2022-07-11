@@ -7,7 +7,7 @@
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
-	price_tag = 650
+	price_tag = 450
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	can_dual = TRUE
 	load_method = SINGLE_CASING|MAGAZINE
@@ -42,7 +42,7 @@
 	icon_state = "mk58"
 	item_state = "mk58"
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
-	price_tag = 750
+	price_tag = 550
 	mag_well = MAG_WELL_PISTOL
 	caliber = CAL_MAGNUM
 	damage_multiplier = 0.9

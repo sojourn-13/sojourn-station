@@ -2,7 +2,10 @@
 	name_pool = list(
 		"Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greeting. Please amuse yourself with our stock.\""
 	)
+	icon_states = list("htu_destroyer", "ship")
 	uid = "kriosanconfederacy"
+	tree_x = 0.54
+	tree_y = 0.7
 	stations_recommended = list("mcronalds")
 	offer_limit = 20
 	base_income = 1600

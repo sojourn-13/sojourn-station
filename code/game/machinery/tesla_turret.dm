@@ -450,7 +450,8 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 	..()
 
-	take_damage(damage*Proj.structure_damage_factor)
+	if (!(Proj.testing))
+		take_damage(damage*Proj.structure_damage_factor)
 
 
 /obj/machinery/tesla_turret/ex_act(severity)

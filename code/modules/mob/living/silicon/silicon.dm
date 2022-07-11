@@ -64,6 +64,7 @@
 /mob/living/silicon/lay_down()
 	resting = FALSE
 	update_lying_buckled_and_verb_status()
+	updateicon()
 
 /mob/living/silicon/proc/init_id()
 	if(idcard)
@@ -127,17 +128,18 @@
 	return 1
 
 /mob/living/silicon/bullet_act(var/obj/item/projectile/Proj)
-	if (Proj.is_hot() >= HEAT_MOBIGNITE_THRESHOLD)
+	if (Proj.is_hot() >= HEAT_MOBIGNITE_THRESHOLD && (!(Proj.testing)))
 		IgniteMob()
 
 	if(!Proj.nodamage)
-		if(Proj.damage_types[BRUTE])
+		if(Proj.damage_types[BRUTE] && (!(Proj.testing)))
 			adjustBruteLoss(Proj.damage_types[BRUTE])
-		if(Proj.damage_types[BURN])
+		if(Proj.damage_types[BURN] && (!(Proj.testing)))
 			adjustFireLoss(Proj.damage_types[BURN])
 
 	Proj.on_hit(src)
-	updatehealth()
+	if (!(Proj.testing))
+		updatehealth()
 	return 2
 
 /mob/living/silicon/apply_effect(var/effect = 0,var/effecttype = STUN, var/armor_value = 0, var/check_protection = 1)
