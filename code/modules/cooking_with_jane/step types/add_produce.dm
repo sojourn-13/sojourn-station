@@ -34,20 +34,20 @@
 		log_debug("recipe_step/add_produce/New(): produce [produce] not found in seed list.")
 	..(base_quality_award, our_recipe)
 
-/datum/cooking_with_jane/recipe_step/add_produce/check_conditions_met(var/obj/added_item)
+/datum/cooking_with_jane/recipe_step/add_produce/check_conditions_met(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 	log_debug("Called add_produce/check_conditions_met for [added_item] against [required_produce_type]")
 
 	if(!istype(added_item, /obj/item/reagent_containers/food/snacks/grown))
-		return FALSE
+		return CWJ_CHECK_INVALID
 
 	var/obj/item/reagent_containers/food/snacks/grown/added_produce = added_item
 
 	if(added_produce.plantname == required_produce_type)
-		return TRUE
+		return CWJ_CHECK_VALID
 
-	return FALSE
+	return CWJ_CHECK_INVALID
 
-/datum/cooking_with_jane/recipe_step/add_produce/calculate_quality(var/obj/added_item)
+/datum/cooking_with_jane/recipe_step/add_produce/calculate_quality(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 
 	var/obj/item/reagent_containers/food/snacks/grown/added_produce = added_item
 

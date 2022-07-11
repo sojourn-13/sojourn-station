@@ -33,22 +33,22 @@
 
 
 
-/datum/cooking_with_jane/recipe_step/add_item/check_conditions_met(var/obj/added_item)
+/datum/cooking_with_jane/recipe_step/add_item/check_conditions_met(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 	log_debug("Called add_item/check_conditions_met for [added_item], checking against item type [required_item_type]. Exact_path = [exact_path]")
 	if(!istype(added_item, /obj/item))
-		return FALSE
+		return CWJ_CHECK_INVALID
 	if(exact_path)
 		if(added_item.type == required_item_type)
-			return TRUE
+			return CWJ_CHECK_VALID
 	else
 		if(istype(added_item, required_item_type))
-			return TRUE
-	return FALSE
+			return CWJ_CHECK_VALID
+	return CWJ_CHECK_INVALID
 
 //The quality of add_item is special, in that it inherits the quality level of its parent and
 //passes it along.
 //May need "Balancing" with var/inherited_quality_modifier
-/datum/cooking_with_jane/recipe_step/add_item/calculate_quality(var/obj/added_item)
+/datum/cooking_with_jane/recipe_step/add_item/calculate_quality(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 	var/raw_quality = added_item?:food_quality * inherited_quality_modifier
 	return clamp_quality(raw_quality)
 

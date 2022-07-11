@@ -45,6 +45,8 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 	var/active_exclusive_option_chain //Only needed during the creation process for tracking items in an option chain.
 
+	var/replace_reagents = FALSE //Determines if we entirely replace the contents of the food product with the slurry that goes into it.
+
 	/*
 		The Step Builder is iterated through to create new steps in the recipe dynamically.
 		_OPTIONAL steps are linked to the previously made REQUIRED step
@@ -141,6 +143,16 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 						reason="Bad argument Length for CWJ_ADD_PRODUCE_OPTIONAL"
 					else
 						create_step_add_produce(step[2], TRUE)
+				if(CWJ_USE_TOOL)
+					if(step.len < 3)
+						reason="Bad argument Length for CWJ_ADD_REAGENT_OPTIONAL"
+					else
+						create_step_use_tool(step[2], step[3], FALSE)
+				if(CWJ_USE_TOOL_OPTIONAL)
+					if(step.len < 3)
+						reason="Bad argument Length for CWJ_ADD_REAGENT_OPTIONAL"
+					else
+						create_step_use_tool(step[2], step[3], TRUE)
 
 			//Named Arguments modify the recipe in fixed ways
 			if("desc" in step)
@@ -158,6 +170,10 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 			if("qmod" in step)
 				if(!set_inherited_quality_modifier(step["qmod"]))
 					reason="qmod / inherited_quality_modifier declared on non add-item recipe step."
+
+			if("remain_percent" in step)
+				if(!set_remain_percent_modifier(step["remain_percent"]))
+					reason="qmod / inherited_quality_modifier declared on non add-reagent recipe step."
 
 			if("exact" in step)
 				if(!set_exact_type_required(step["exact"]))
@@ -218,6 +234,14 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 	log_debug("Creating Produce: [produce]")
 	var/datum/cooking_with_jane/recipe_step/add_produce/step = new /datum/cooking_with_jane/recipe_step/add_produce(produce, src)
 	return src.add_step(step, optional)
+//-----------------------------------------------------------------------------------
+//Use Tool step shortcut commands
+/datum/cooking_with_jane/recipe/proc/create_step_use_tool(var/type, var/quality, var/optional)
+	var/datum/cooking_with_jane/recipe_step/use_tool/step = new (type, quality, src)
+	return src.add_step(step, optional)
+
+
+
 
 //-----------------------------------------------------------------------------------
 //Customize the last step created
@@ -249,6 +273,14 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		return TRUE
 	else
 		return FALSE
+
+/datum/cooking_with_jane/recipe/proc/set_remain_percent_modifier(var/modifier)
+	if(last_created_step.class & CWJ_ADD_REAGENT)
+		last_created_step?:remain_percent = modifier
+		return TRUE
+	else
+		return FALSE
+
 //-----------------------------------------------------------------------------------
 //Add a custom step to the cooking process not covered by the existing shortcuts.
 //TODO
@@ -389,14 +421,51 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 	var/datum/cooking_with_jane/recipe_tracker/parent = pointer.parent_ref.resolve()
 	var/obj/item/container = parent.holder_ref.resolve()
 	if(container)
+		//Build up a list of reagents that went into this.
+		var/datum/reagents/slurry = new /datum/reagents(1000000, container)
+		container.reagents.trans_to_holder(slurry, amount=container.reagents.total_volume)
+		for(var/obj/item/added_item in container.contents)
+			added_item.reagents.trans_to_holder(slurry, amount=container.reagents.total_volume)
+
 		//Purge the contents of the container we no longer need it
 		QDEL_LIST(container.contents)
 		container.contents = list()
 
-		//TODO: Purge reagents in the container.
 
 		for(var/i = 0; i < product_count; i++)
-			new product_type(container)
+			var/obj/item/new_item = new product_type(container)
+
+			if(replace_reagents)
+				new_item.reagents.clear_reagents()
+			
+			slurry.trans_to_holder(new_item.reagents, amount=slurry.total_volume, copy=1)
+
+			new_item?:food_quality = pointer.tracked_quality + calculate_reagent_quality(pointer)
+			//TODO: Consider making an item's base components show up in the reagents of the product.
+		container.reagents.clear_reagents()
+		qdel(slurry)
+
+
+//Extra Reagents in a recipe take away recipe quality for every extra unit added to the concoction.
+/datum/cooking_with_jane/recipe/proc/calculate_reagent_quality(var/datum/cooking_with_jane/recipe_pointer/pointer)
+	var/datum/cooking_with_jane/recipe_tracker/parent = pointer.parent_ref.resolve()
+	var/obj/item/container = parent.holder_ref.resolve()
+	var/total_volume = container.reagents.total_volume
+
+	var/calculated_volume = 0
+
+	var/calculated_quality = 0
+	for(var/id in pointer.steps_taken)
+		if(!GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_REAGENT]"][id])
+			continue
+		var/datum/cooking_with_jane/recipe_step/add_reagent/active_step = GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_REAGENT]"][id]
+		calculated_volume += active_step.required_reagent_amount
+
+		calculated_quality += active_step.base_quality_award
+	
+	return calculated_quality - (total_volume - calculated_volume)
+
+
 
 //-----------------------------------------------------------------------------------
 /datum/cooking_with_jane/proc/get_class_string(var/code)

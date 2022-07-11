@@ -26,14 +26,14 @@
 	..(our_recipe)
 
 
-/datum/cooking_with_jane/recipe_step/use_item/check_conditions_met(var/obj/added_item)
+/datum/cooking_with_jane/recipe_step/use_item/check_conditions_met(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 	if(src.exact_path)
 		if(added_item.type == required_item_type)
-			return TRUE
+			return CWJ_CHECK_VALID
 	else
 		if(istype(added_item,required_item_type))
-			return TRUE
-	return FALSE
+			return CWJ_CHECK_VALID
+	return CWJ_CHECK_INVALID
 
 //Think about a way to make this more intuitive?
 /datum/cooking_with_jane/recipe_step/use_item/calculate_quality(var/obj/added_item)

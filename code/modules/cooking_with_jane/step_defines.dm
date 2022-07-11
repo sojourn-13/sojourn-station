@@ -30,6 +30,8 @@
 	//The previous required step for the current recipe
 	var/datum/cooking_with_jane/recipe_step/previous_step
 
+	var/auto_complete_enabled = FALSE //If the step can be completed without any further input.
+
 
 
 /datum/cooking_with_jane/recipe_step/New(var/datum/cooking_with_jane/recipe/our_recipe)
@@ -51,12 +53,12 @@
 	tooltip_image = image('icons/emoji.dmi', icon_state="gear")
 
 //Calculate how well the recipe step was followed to the letter.
-/datum/cooking_with_jane/recipe_step/proc/calculate_quality()
+/datum/cooking_with_jane/recipe_step/proc/calculate_quality(var/obj/added_item, var/obj/item/cooking_with_jane/cooking_container/container)
 	return 0
 
 //Check if the conditions of a recipe step was followed correctly.
 /datum/cooking_with_jane/recipe_step/proc/check_conditions_met()
-	return TRUE
+	return CWJ_CHECK_VALID
 
 //Check if a given step is in the same option chain as another step.
 /datum/cooking_with_jane/recipe_step/proc/in_option_chain(var/datum/cooking_with_jane/recipe_step/step)
@@ -92,5 +94,15 @@
 		return min(raw_quality, max_quality_award)
 	return raw_quality
 
+/datum/cooking_with_jane/recipe_step/proc/get_step_result_text(var/obj/used_obj, step_quality)
+	if(custom_result_desc)
+		return custom_result_desc
+	else
+		return "skip"
+
 /datum/cooking_with_jane/recipe_step/proc/follow_step(var/obj/added_item, var/obj/item/cooking_with_jane/cooking_container/container)
-	return
+	return TRUE
+
+//Special function to check if the step has been satisfied. Sometimed just following the step is enough, but not always.
+/datum/cooking_with_jane/recipe_step/proc/is_complete(var/datum/cooking_with_jane/recipe_tracker/tracker)
+	return TRUE

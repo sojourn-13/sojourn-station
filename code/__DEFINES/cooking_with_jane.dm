@@ -5,9 +5,10 @@
 #define CWJ_ADD_ITEM 				2		//Adding an item to a recipe (Ex- adding a slice of bread)
 #define CWJ_ADD_REAGENT 			3		//Adding a reagent to a recipe (Ex- Adding salt)
 #define CWJ_USE_ITEM 				4 		//Using an item in a recipe (Ex- cutting bread with a knife)
-#define CWJ_ADD_PRODUCE				5		//Adding Produce to a recipe
-#define CWJ_USE_APPLIANCE 			6 		//Using a kitchen appliances in a recipe (Ex- cooking a burger on a grill)
-#define CWJ_USE_OTHER 				7 		//Custom Command flag, will take in argument lists.
+#define CWJ_USE_TOOL				5
+#define CWJ_ADD_PRODUCE				6		//Adding Produce to a recipe
+#define CWJ_USE_APPLIANCE 			7 		//Using a kitchen appliances in a recipe (Ex- cooking a burger on a grill)
+#define CWJ_USE_OTHER 				8 		//Custom Command flag, will take in argument lists.
 
 
 											
@@ -15,9 +16,10 @@
 #define CWJ_ADD_ITEM_OPTIONAL		200
 #define CWJ_ADD_REAGENT_OPTIONAL	300
 #define CWJ_USE_ITEM_OPTIONAL		400
-#define CWJ_ADD_PRODUCE_OPTIONAL	500
-#define CWJ_USE_APPLIANCE_OPTIONAL	600
-#define CWJ_OTHER_OPTIONAL 			700
+#define CWJ_USE_TOOL_OPTIONAL		500
+#define CWJ_ADD_PRODUCE_OPTIONAL	600
+#define CWJ_USE_APPLIANCE_OPTIONAL	700
+#define CWJ_OTHER_OPTIONAL 			800
 
 
 #define CWJ_BEGIN_EXCLUSIVE_OPTIONS 1000	//Beginning an exclusive option list
@@ -39,12 +41,11 @@
 #define CWJ_SUCCESS 		3 //The user decided to use the item for a given purpose.
 #define CWJ_COMPLETE		4 //The meal has been completed!
 #define CWJ_LOCKOUT			5 //Someone tried starting the function while a prompt was running. Jerk.
+#define CWJ_PARTIAL			6 //The recipe step was followed but not marked as completed.
 
-
-
-
-//Recipe tracker flags
-#define CWJ_IS_PRODUCE 	1
+#define CWJ_CHECK_INVALID	0
+#define CWJ_CHECK_VALID		1
+#define CWJ_CHECK_FULL		2 //For reagents, nothing can be added to 
 
 //Cooking container types
 #define PLATE 		"plate"

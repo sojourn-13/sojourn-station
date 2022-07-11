@@ -13,7 +13,16 @@
 	var/place_verb = "into"
 	var/appliancetype //string
 	w_class = ITEM_SIZE_SMALL
+	var/volume = 240 //Don't make recipes using reagents in larger quantities than this amount; they won't work.
 	var/datum/cooking_with_jane/recipe_tracker/tracker = null //To be populated the first time the plate is interacted with.
+	var/lip //Icon state of the lip layer of the object
+	reagent_flags = NO_REACT
+
+/obj/item/cooking_with_jane/cooking_container/Initialize()
+	create_reagents(volume)
+	.=..()
+	appearance_flags |= KEEP_TOGETHER
+
 
 /obj/item/cooking_with_jane/cooking_container/examine(var/mob/user)
 	if(!..(user, 1))
@@ -71,8 +80,10 @@
 
 	for (var/contained in contents)
 		var/atom/movable/AM = contained
+		remove_from_visible(AM)
 		AM.forceMove(get_turf(src))
 
+	update_icon()
 	qdel(tracker)
 	tracker = null
 
@@ -105,6 +116,28 @@
 		return . + O.name //Just append the name of the first object
 	return . + "empty"
 
+/obj/item/cooking_with_jane/cooking_container/update_icon()
+	for(var/obj/item/our_item in vis_contents)
+		src.remove_from_visible(our_item)
+
+	for(var/i=contents.len, i>=1, i--)
+		var/obj/item/our_item = contents[i]
+		src.add_to_visible(our_item)
+	if(lip)
+		add_overlay(image(src.icon, icon_state="lip", layer=ABOVE_OBJ_LAYER))
+
+/obj/item/cooking_with_jane/cooking_container/proc/add_to_visible(var/obj/item/our_item)
+	our_item.vis_flags = VIS_INHERIT_LAYER | VIS_INHERIT_PLANE | VIS_INHERIT_ID
+	our_item.blend_mode = BLEND_INSET_OVERLAY
+	our_item.transform *= 0.6
+	src.vis_contents += our_item
+
+/obj/item/cooking_with_jane/cooking_container/proc/remove_from_visible(var/obj/item/our_item)
+	our_item.vis_flags = 0
+	our_item.blend_mode = 0
+	our_item.transform = null
+	src.vis_contents.Remove(our_item)
+
 /obj/item/cooking_with_jane/cooking_container/plate
 	name = "serving plate"
 	shortname = "plate"
@@ -126,6 +159,15 @@
 	icon_state = "skillet"
 	hitsound = 'sound/weapons/smash.ogg'
 	appliancetype = SKILLET
+
+/obj/item/cooking_with_jane/cooking_container/pan
+	name = "pan"
+	desc = "An normal pan."
+	icon = 'icons/obj/cwj_cooking/pan.dmi'
+	icon_state = "pan" //Default state is the base icon so it looks nice in the map builder
+	hitsound = 'sound/weapons/smash.ogg'
+	appliancetype = SKILLET
+	lip = "lip"
 
 /obj/item/cooking_with_jane/cooking_container/pot
 	name = "cooking pot"
@@ -158,5 +200,3 @@
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "mixingbowl"
 	appliancetype = BOWL
-
-

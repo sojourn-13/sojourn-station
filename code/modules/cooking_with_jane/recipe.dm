@@ -9,12 +9,35 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 	The name any one of the recipe step types, custom or otherwise.
 	Valid options are:
 		CWJ_ADD_ITEM
-			Add an item to the recipe. The object is inserted in the container.
+			Add an item to the recipe. The object is inserted in the container. 
+			The product inherits the item's quality and reagents if able.
 			<REQUIRED_ARGS>:
 				type_path - the type path of the item being added.
 			Example: list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
 
-		CWJ_ADD_ITEM
+		CWJ_ADD_REAGENT
+			Add a reagent to the recipe. The resulting reagent is stored in the container's reagent datum.
+			The product inherits the reagents added if able. It's possible to sneak poison into food this way.
+			<REQUIRED_ARGS>:
+				reagent_id - the id of the reagent being added
+				amount - The amount of units the ingredient requires
+			Example: list(CWJ_ADD_REAGENT, "salt", 5)
+
+		CWJ_ADD_PRODUCE
+			Add a grown item to the recipe. The item is inserted in the container.
+			The product inherits reagents if able, and its quality scales with the plant's potency.
+			<REQUIRED_ARGS>:
+				plantname - the seed id of the reagent being added
+			Example: list(CWJ_ADD_PRODUCE, "banana")
+			
+		CWJ_USE_TOOL
+			Uses a tool on the item. Going far and beyond the quality of the tool increases the quality of the product.
+			<REQUIRED_ARGS>:
+				tool_quality - the id of the reagent being added
+				difficulty - The minimum tool quality of the reagent
+			Example: list(CWJ_USE_TOOL, QUALITY_CUTTING, 5)
+
+		CWJ_USE_ITEM
 			Uses an item on the recipe. The object is not consumed.
 			<REQUIRED_ARGS>:
 				type_path - the type path of the item being added.
@@ -54,8 +77,23 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 			Example: result_desc="A Slice of Bread is in the sandwich."
 
 		exact
-			Determines if the type path of a CWJ_ADD_ITEM step or a CWJ_USE_ITEM require an exact type path, or if a child
+			CWJ_ADD_ITEM or CWJ_USE_ITEM ONLY: 
+			Determines if the steps require an exact type path, or if a child will satisfy the requirements.
 			of the type path is also preferable.
+			Example: exact=TRUE
+
+		qmod
+			CWJ_ADD_ITEM ONLY:
+			modifier to adjust the inherited_quality_modifier on an add_item recipe step.
+			Example: qmod=0.5 //only 50% of the added item's quality will be inherited.
+
+		remain_percent
+			CWJ_ADD_REAGENT ONLY: 
+			Determines the percentage of a reagent that remains in the cooking of an item.
+			IE- if you cook a steak with wine, you can make it so the wine doesn't wind up in the resulting food.
+			Example: remain_percent=0.1 //Only 10% of the units added will apply to the resulting food injection.
+
+
 
 =========================================================
 */

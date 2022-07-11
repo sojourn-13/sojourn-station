@@ -7,8 +7,8 @@
 	//This variable is a little complicated.
 	//It specifically references recipe_pointer objects each pointing to a different point in a different recipe.
 	var/list/active_recipe_pointers = list()
-
 	var/completion_lockout = FALSE //Freakin' cheaters...
+	var/list/completed_list //List of recipes marked as complete.
 
 /datum/cooking_with_jane/recipe_tracker/New(var/obj/item/cooking_with_jane/cooking_container/container)
 	log_debug("Called /datum/cooking_with_jane/recipe_tracker/New")
@@ -62,15 +62,15 @@
 	var/list/valid_unique_id_list = list()
 	var/use_class
 
-	//Check validity of steps
+	//Decide what action is being taken with the item, if any.
 	for (var/datum/cooking_with_jane/recipe_pointer/pointer in active_recipe_pointers)
 		var/option_list = list()
 		option_list += pointer.get_possible_steps()
 		for (var/datum/cooking_with_jane/recipe_step/step in option_list)
 			var/class_string = get_class_string(step.class)
-			var/is_valid = step.check_conditions_met(used_object)
+			var/is_valid = step.check_conditions_met(used_object, src)
 			log_debug("recipe_tracker/proc/process_item: Check conditions met returned [is_valid]")
-			if(is_valid)
+			if(is_valid == CWJ_CHECK_VALID)
 				if(!valid_steps["[class_string]"])
 					valid_steps["[class_string]"] = list()
 				valid_steps["[class_string]"]+= step
@@ -81,7 +81,6 @@
 
 				if(!use_class)
 					use_class = class_string
-	
 	if(valid_steps.len == 0)
 		log_debug("/recipe_tracker/proc/process_item returned no steps!")
 		return CWJ_NO_STEPS
@@ -100,35 +99,18 @@
 	valid_steps = valid_steps[use_class]
 	valid_unique_id_list = valid_unique_id_list[use_class]
 
-	//Call a proc that follows one of the steps in question, so we have all the nice to_chat calls.
-	var/datum/cooking_with_jane/recipe_step/sample_step = valid_steps[1]
-	log_debug("Calling: follow_step")
-	sample_step.follow_step(used_object, src)
-
-
-	//traverse and cull pointers
-	var/list/completed_list = list()
-	var/recipe_string = null
-	for (var/datum/cooking_with_jane/recipe_pointer/pointer in active_recipe_pointers)
-		var/used_id = null
-		for (var/id in valid_unique_id_list)
-			if (pointer.has_option_by_id(id))
-				used_id = id
-				break
-
-		if (!used_id)
-			active_recipe_pointers.Remove(pointer)
-			qdel(pointer)
-		else
-			if(pointer.traverse(used_id))
-				completed_list[pointer.current_recipe.name] += pointer
-				if(!recipe_string)
-					recipe_string = "\a [pointer.current_recipe.name]"
-				else
-					recipe_string += ", or \a [pointer.current_recipe.name]"
+	attempt_complete_recursive(used_object, use_class)
 
 	//Choose to keep baking or finish now.
 	if(completed_list.len && (completed_list.len != active_recipe_pointers.len))
+
+		var/recipe_string = null
+		for(var/datum/cooking_with_jane/recipe_pointer/pointer in completed_list)
+			if(!recipe_string)
+				recipe_string = "\a [pointer.current_recipe.name]"
+			else
+				recipe_string += ", or \a [pointer.current_recipe.name]"
+
 		if(alert("If you finish cooking now, you will create [recipe_string]. However, you feel there are possibilities beyond even this. Continue cooking anyways?",,"Yes","No") == "Yes")
 			//Cull finished recipe items
 			for (var/datum/cooking_with_jane/recipe_pointer/pointer in completed_list)
@@ -138,25 +120,72 @@
 			completed_list = list()
 
 	//Check if we completed our recipe
+	var/datum/cooking_with_jane/recipe_pointer/chosen_pointer = null
 	if(completed_list.len >= 1)
-		var/datum/cooking_with_jane/recipe_pointer/chosen_pointer = null
 		if(completed_list.len > 1)
 			completion_lockout = TRUE
 			var/choice = input("There's two things you complete at this juncture!", "Choose One:") in completed_list
 			completion_lockout = FALSE
 			if(choice)
 				chosen_pointer = completed_list[choice]
-				chosen_pointer.current_recipe.create_product(chosen_pointer)
-				log_debug("/recipe_tracker/proc/process_item returned recipe complete!")
-				return CWJ_COMPLETE
-		chosen_pointer = completed_list[completed_list[1]]
-		chosen_pointer.current_recipe.create_product(chosen_pointer)
-		log_debug("/recipe_tracker/proc/process_item returned recipe complete!")
-		return CWJ_COMPLETE
+		else
+			chosen_pointer = completed_list[completed_list[1]]
 
+	//Call a proc that follows one of the steps in question, so we have all the nice to_chat calls.
+	var/datum/cooking_with_jane/recipe_step/sample_step = valid_steps[1]
+	log_debug("Calling: follow_step")
+	sample_step.follow_step(used_object, src)
+
+	if(chosen_pointer)
+		chosen_pointer.current_recipe.create_product(chosen_pointer)
+		return CWJ_COMPLETE
 	populate_step_flags()
 	log_debug("/recipe_tracker/proc/process_item returned success!")
 	return CWJ_SUCCESS
+
+//Abandon all hope, ye who debug here
+/datum/cooking_with_jane/recipe_tracker/proc/attempt_complete_recursive(
+		var/obj/used_object,
+		var/use_class,
+		var/depth = 1,
+		var/list/considered_steps = null)
+	var/list/ourlist = null
+	if(depth == 1)
+		ourlist = active_recipe_pointers.Copy()
+	else
+		ourlist = considered_steps.Copy()
+		log_debug("/recipe_tracker/proc/attempt_complete_recursive entered second recursion!")
+
+	for (var/datum/cooking_with_jane/recipe_pointer/pointer in ourlist)
+		var/option_list = list()
+		option_list += pointer.get_possible_steps()
+		var/has_valid_step = FALSE
+		var/had_traversal = FALSE
+		for (var/datum/cooking_with_jane/recipe_step/step in option_list)
+			if(step.class != use_class)
+				continue
+
+			if(depth !=1 && !step.auto_complete_enabled)
+				continue
+
+			if(step.check_conditions_met(used_object, src) == CWJ_CHECK_VALID)
+				has_valid_step = TRUE
+			else
+				continue
+
+			if(step.is_complete(src))
+				pointer.traverse(step.unique_id, used_object)
+				had_traversal = TRUE
+				break ///The first valid step is the only one we traverse, in the instance of multiple valid cases.
+
+		if(depth == 1 && !has_valid_step)
+			active_recipe_pointers.Remove(pointer)
+			ourlist.Remove(pointer)
+		else if(!had_traversal)
+			ourlist.Remove(pointer)
+
+	if(ourlist.len != 0 && depth !=5)
+		attempt_complete_recursive(used_object, use_class, depth=++depth, considered_steps = ourlist)
 
 //===================================================================================
 
@@ -172,8 +201,7 @@
 
 	var/list/steps_taken = list() //built over the course of following a recipe, tracks what has been done to the object. Format is unique_id:result
 
-//TODO:
-/datum/cooking_with_jane/recipe_pointer/New(start_type, recipe_id, parent)
+/datum/cooking_with_jane/recipe_pointer/New(start_type, recipe_id, var/datum/cooking_with_jane/recipe_tracker/parent)
 	log_debug("Called /datum/cooking_with_jane/recipe_pointer/pointer/New([start_type], [recipe_id], parent)")
 	parent_ref = WEAKREF(parent)
 	if(!GLOB.cwj_recipe_dictionary[start_type][recipe_id])
@@ -292,13 +320,16 @@
 		log_debug("/recipe_pointer/traverse: step [id] is not valid for recipe [current_recipe.unique_id]")
 		return FALSE
 
-	steps_taken["[id]"] = active_step.custom_result_desc
+	var/step_quality = active_step.calculate_quality(used_obj)
+	tracked_quality += step_quality
+	steps_taken["[id]"] = active_step.get_step_result_text(used_obj, step_quality)
 	if(!(active_step.flags & CWJ_IS_OPTIONAL))
 		current_step = active_step
 
-	tracked_quality += active_step.calculate_quality(used_obj)
-
+	//The recipe has been completed.
 	if(!current_step.next_step && current_step.unique_id == id)
+		var/datum/cooking_with_jane/recipe_tracker/tracker = parent_ref.resolve()
+		tracker.completed_list +=  src
 		return TRUE
 
 	return FALSE

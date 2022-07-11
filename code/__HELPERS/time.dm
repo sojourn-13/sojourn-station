@@ -120,7 +120,7 @@ var/global/rollovercheck_last_timeofday = 0
 		return midnight_rollovers++
 	return midnight_rollovers
 
-/proc/ticks_to_time(var/ticks)
+/proc/ticks_to_text(var/ticks)
 	if(ticks%1 != 0)
 		return "ERROR"
 	var/response = ""
