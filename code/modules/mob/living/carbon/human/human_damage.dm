@@ -242,7 +242,7 @@
 					targeted_organ = H.random_organ_by_process(pick(listed_organs))
 				else
 					targeted_organ = H.random_organ_by_process("liver")
-				if (targeted_organ || targeted_organ.is_usable())
+				if (targeted_organ && targeted_organ.is_usable())
 					if (targeted_organ.nature !=MODIFICATION_SILICON) // If randomly chosen organ is prothestic, no damage.
 						targeted_organ.damage += rand (5,10) // How much damage is dealt to each organ. Please adjust for balance
 
