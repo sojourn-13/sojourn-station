@@ -28,6 +28,20 @@
 
 	armor = list(melee = 10, bullet = 10, energy = 10, bomb = 0, bio = 100, rad = 50) //Legitmently their armor
 
+	get_stat_modifier = TRUE
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 25,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 13,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 4,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 2,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 7,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 6,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 5,
+	)
+
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
 //They are all waring space suits

@@ -25,6 +25,15 @@
 	var/tool = "laser"
 	var/tooltype = "os"
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 25,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 12,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 2,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 3,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 2, // greyson can be shiny, as a treat
+	)
+
 /mob/living/carbon/superior_animal/robot/greyson/custodian/New()
 	. = ..()
 	marks_type = pick("green", "blue", "pink", "orange", "cyan", "red", "os")

@@ -150,6 +150,14 @@
 		for(var/reagent in preloaded_reagents)
 			reagents.add_reagent(reagent, preloaded_reagents[reagent])
 
+	if (get_stat_modifier)
+		for (var/i = 0, i < times_to_get_stat_modifiers, i++)
+
+			var/typepath = pickweight(allowed_stat_modifiers)
+
+			var/datum/stat_modifier/chosen_modifier = new typepath
+			if (!(chosen_modifier.apply_to(src)))
+				QDEL_NULL(chosen_modifier)
 
 	return INITIALIZE_HINT_NORMAL
 

@@ -9,17 +9,21 @@
 	/// The prefix that will be applied to the name of target
 	var/prefix = null
 
-	/// Changes health by the entered value. Use with max_health_adjustment
-	var/health_adjustment = 0
-	/// Changes max health by the entered value. Use with max_health_adjustment
+	/// Changes max health by the entered value.
 	var/max_health_adjustment = 0
 
+	/// Every non-duplicate description will be printed when the holder is examined.
 	var/description = null
+
+	/// Defines in misc.dm. Determines what gets these modifiers and what doesn't.
+	var/stattags = DEFENSE_STATTAG
+
+	//todo: store the vars we change for more accurate removal
 
 /// Inverts all effects the modifier provided, and optionally qdeletes it.
 /datum/stat_modifier/proc/remove(qdel_src = TRUE)
 
-	holder.health -= health_adjustment
+	holder.health -= max_health_adjustment
 	holder.maxHealth -= max_health_adjustment
 
 	holder.prefixes -= prefix
@@ -76,9 +80,10 @@
 
 		target.update_prefixes()
 
-	target.maxHealth += max_health_adjustment
 
-	target.health += health_adjustment
+	target.maxHealth = CLAMP((target.maxHealth + max_health_adjustment), 0, INFINITY)
+
+	target.health = target.maxHealth
 
 	return TRUE
 

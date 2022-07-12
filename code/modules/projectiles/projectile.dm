@@ -238,6 +238,36 @@
 	if (!istype(targloc) || !istype(curloc))
 		return TRUE
 
+	if (isliving(firer)) //here we apply the projectile adjustments applied by prefixes and such
+		var/mob/living/livingfirer = firer
+		if (livingfirer.inherent_projectile_mult)
+			for (var/entry in damage_types)
+				damage_types[entry] *= livingfirer.inherent_projectile_mult
+
+		if (livingfirer.inherent_projectile_increment)
+			for (var/entry in damage_types)
+				damage_types[entry] += livingfirer.inherent_projectile_increment
+
+		if (livingfirer.projectile_damage_mult)
+			for (var/entry in livingfirer.projectile_damage_mult)
+				damage_types[entry] *= livingfirer.projectile_damage_mult[entry]
+
+		if (livingfirer.projectile_damage_increment)
+			for (var/entry in livingfirer.projectile_damage_increment)
+				damage_types[entry] += livingfirer.projectile_damage_increment[entry]
+
+		if (livingfirer.projectile_armor_penetration_mult)
+			armor_penetration *= livingfirer.projectile_armor_penetration_mult
+
+		if (livingfirer.projectile_armor_penetration_adjustment)
+			armor_penetration += livingfirer.projectile_armor_penetration_adjustment
+
+		if (livingfirer.projectile_speed_mult)
+			step_delay *= livingfirer.projectile_speed_mult
+
+		if (livingfirer.projectile_speed_increment)
+			step_delay += livingfirer.projectile_speed_increment
+
 	if(targloc == curloc) //Shooting something in the same turf
 		target.bullet_act(src, target_zone)
 		on_impact(target)

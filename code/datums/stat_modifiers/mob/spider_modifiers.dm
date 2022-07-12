@@ -7,7 +7,9 @@
 	flash_armor = 2
 	armor_penetration = 15
 
-	prefix = "lustrous"
+	prefix = "Lustrous"
+
+	stattags = DEFENSE_STATTAG | MELEE_STATTAG
 
 	description = "This one has a almost chrome sheen to parts of it, allowing to mitigate flashes as well as energy attacks. It also seems to be better at penetrating armor."
 
@@ -23,9 +25,10 @@
 	armor_penetration = 5
 	flash_armor = 1
 	max_health_adjustment = 20
-	health_adjustment = 20
 
-	prefix = "durable"
+	stattags = DEFENSE_STATTAG
+
+	prefix = "Durable"
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/young/spider
 
@@ -37,12 +40,13 @@
 	)
 
 	max_health_adjustment = -10
-	health_adjustment = -10
 
 	movement_adjust = -0.5
 	poison_adjustment = -1
 
-	prefix = "young"
+	stattags = DEFENSE_STATTAG
+
+	prefix = "Young"
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/old/spider
 
@@ -54,11 +58,12 @@
 	)
 
 	max_health_adjustment = 20 //life already seen them by
-	health_adjustment = 20
 	movement_adjust = 1 // Very slow
 	poison_adjustment = -1
 
-	prefix = "old"
+	stattags = DEFENSE_STATTAG
+
+	prefix = "Old"
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/venomous
 
@@ -69,9 +74,11 @@
 		agony = 10
 	)
 
+	stattags = DEFENSE_STATTAG | MELEE_STATTAG
+
 	poison_adjustment = 1
 
-	prefix = "venomous"
+	prefix = "Venomous"
 
 	description = "The fangs/claws of this creature drip with venom, and it looks sturdier than usual."
 

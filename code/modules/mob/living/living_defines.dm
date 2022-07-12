@@ -19,12 +19,22 @@
 	var/melee_damage_lower = 0
 	var/melee_damage_upper = 0
 
+	var/list/projectile_damage_increment = list()
+	var/list/projectile_damage_mult = list()
+	var/inherent_projectile_mult = 0
+	var/inherent_projectile_increment = 0
+
+	var/projectile_speed_increment = 0
+	var/projectile_speed_mult = 0
+
 	/// The mob groups, defined in admin.dm, this mob is in. Stored as keys.
 	var/list/groups_in = list()
 	/// The buildmode holders this mob is currently selected by.
 	var/list/obj/effect/bmode/buildholder/selected_by = list()
 
 	var/armor_penetration = 0 //Used for generic attacks
+	var/projectile_armor_penetration_adjustment = 0
+	var/projectile_armor_penetration_mult = 0
 
 	//Damage related vars, NOTE: THESE SHOULD ONLY BE MODIFIED BY PROCS
 	var/bruteloss = 0.0	//Brutal damage caused by brute force (punching, being clubbed by a toolbox ect... this also accounts for pressure damage)

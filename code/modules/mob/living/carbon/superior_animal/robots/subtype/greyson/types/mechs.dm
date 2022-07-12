@@ -10,6 +10,14 @@
 	attack_sound = 'sound/mecha/mechdrill.ogg'
 	flash_resistances = 100 // Robot
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 25,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 13,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 6,
+	)
+
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley/slip(slipped_on,stun_duration=8)
 	return FALSE
 // Big stompers can't be slipped!

@@ -20,16 +20,19 @@
 	for(var/language in known_languages)
 		add_language(language)
 
-	if (get_stat_modifier)
-		for (var/i = 0, i < times_to_get_stat_modifiers, i++)
-
-			var/typepath = pickweight(allowed_stat_modifiers)
-
-			var/datum/stat_modifier/chosen_modifier = new typepath
-			if (!(chosen_modifier.apply_to(src)))
-				QDEL_NULL(chosen_modifier)
-
 /mob/living/carbon/superior_animal/Initialize(var/mapload)
+	if (get_stat_modifier)
+		for (var/key in allowed_stat_modifiers)
+			var/datum/stat_modifier/mod = key
+			if (initial(mod.stattags) & DEFENSE_STATTAG)
+				continue
+			if ((!(initial(mod.stattags) & MELEE_STATTAG)) && (!ranged))
+				allowed_stat_modifiers -= mod
+				continue
+			if ((!(initial(mod.stattags) & RANGED_STATTAG)) && (ranged))
+				allowed_stat_modifiers -= mod
+				continue
+
 	.=..()
 	if (mapload && can_burrow)
 		find_or_create_burrow(get_turf(src))
@@ -322,18 +325,19 @@
 					var/moving_to = pick(cardinal)
 					set_dir(moving_to)
 					step_glide(src, moving_to, DELAY2GLIDESIZE(0.5 SECONDS)) //we can potentially pathfind if we do this
-			if (!fire_through_walls)
-				return
-			else
+			if (fire_through_walls)
 				cant_see_timer = (world.time)++ //just to make sure we dont walk towards them
 				fire_through_lost_sight = TRUE
 
 		// This block only runs if the above can_see check is true, fires a trace projectile to see if we can hit our target
-		else if (projectiletype && advance) // if we can see, let's prepare to see if we can hit
+		if ((projectiletype && advance) || (!can_see && advance_if_cant_see)) // if we can see, let's prepare to see if we can hit
 			if (ranged)
 				var/trace = check_trajectory_raytrace(targetted_mob, src, projectiletype, TRUE)
 				spawn(0)
 				handle_trace_impact(trace)
+
+		if (!can_see && (!fire_through_walls))
+			return
 
 	if (!fire_through_lost_sight) //can only be true if src does not have fire_through_walls
 		lost_sight = FALSE

@@ -21,6 +21,8 @@
 
 	var/viewRange_adjustment = 0
 
+	var/delayed_adjustment = 0
+
 	var/poison_adjustment = 0
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/remove()
@@ -33,7 +35,7 @@
 		superior_holder.fire_delay_initial -= fire_delay_increment
 
 		superior_holder.rapid_fire_shooting_amount -= rapid_adjustment
-		if (superior_holder.rapid_fire_shooting_amount == 0)
+		if (superior_holder.rapid_fire_shooting_amount <= 0)
 			superior_holder.rapid = FALSE
 
 		if (issuperiorspider(superior_holder))
@@ -41,9 +43,16 @@
 
 			spider_target.poison_per_bite -= poison_adjustment
 
+		superior_holder.delay_for_range /= fire_telegraph_delay_mult
+
+		superior_holder.delayed -= delayed_adjustment
+		superior_holder.delayed_initial -= delayed_adjustment
+
 	return ..()
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/apply_to(atom/target)
+
+	. = ..()
 
 	if (issuperioranimal(target))
 		var/mob/living/carbon/superior_animal/superior_target = target
@@ -53,23 +62,24 @@
 			else
 				superior_target.armor[key] = armor_adjustment[key]
 
-			superior_target.flash_resistances += flash_armor
-			superior_target.armor_penetration += armor_penetration
-			superior_target.fire_delay += fire_delay_increment
-			superior_target.fire_delay_initial += fire_delay_increment
-			superior_target.delay_for_range = ((superior_target.delay_for_range) * (fire_telegraph_delay_mult))
+			superior_target.flash_resistances = CLAMP((superior_target.flash_resistances + flash_armor), 0, INFINITY)
+			superior_target.armor_penetration = CLAMP((superior_target.armor_penetration + armor_penetration), 0, INFINITY)
+			superior_target.fire_delay_initial = CLAMP((superior_target.fire_delay_initial + fire_delay_increment), 0, INFINITY)
+			superior_target.fire_delay = CLAMP((superior_target.fire_delay + fire_delay_increment), 0, INFINITY)
+			superior_target.delay_for_range = CLAMP((superior_target.delay_for_range * fire_telegraph_delay_mult), 0, INFINITY)
 
-		if (rapid_adjustment)
-			if (!superior_target.rapid)
+			superior_target.delayed_initial = CLAMP((superior_target.delayed_initial + delayed_adjustment), 0, INFINITY)
+			superior_target.delayed = CLAMP((superior_target.delayed + delayed_adjustment), 0, INFINITY)
+
+			superior_target.rapid_fire_shooting_amount = CLAMP((superior_target.rapid_fire_shooting_amount + rapid_adjustment), 0, INFINITY)
+			if ((superior_target.rapid_fire_shooting_amount > 0) && (!(superior_target.rapid))) //if we are rapid firing and dont have the var set, lets set it
 				superior_target.rapid = TRUE
-			superior_target.rapid_fire_shooting_amount += rapid_adjustment
 
 		if (issuperiorspider(superior_target))
 			var/mob/living/carbon/superior_animal/giant_spider/spider_target = target
 
+			spider_target.poison_per_bite = CLAMP((spider_target.poison_per_bite + poison_adjustment), 0, INFINITY)
 			spider_target.poison_per_bite += poison_adjustment
-
-	return ..()
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/durable
 
@@ -83,6 +93,8 @@
 	flash_armor = 1
 
 	prefix = "Durable"
+
+	stattags = DEFENSE_STATTAG
 
 	description = "This one looks somewhat more sturdy than others. It'll likely be more resistant to damage and pain."
 
@@ -99,12 +111,15 @@
 	melee_lower_adjust = 2
 	melee_upper_adjust = 2
 	max_health_adjustment = 5
-	health_adjustment = 5
 	armor_penetration = 2
+
+	stattags = DEFENSE_STATTAG | MELEE_STATTAG
+
+	inherent_projectile_mult = 1.1
 
 	description = "This one is noticably muscular. It looks like it might hit harder than others."
 
-	prefix = "brutish"
+	prefix = "Brutish"
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/padded
 
@@ -115,10 +130,11 @@
 		agony = 15 //Rubbers deal way less to us!
 	)
 
-	health_adjustment = 10
+	stattags = DEFENSE_STATTAG
+
 	max_health_adjustment = 10
 
-	prefix = "padded"
+	prefix = "Padded"
 
 	description = "This one seems to be a bit 'puffier' than others. It looks like your attacks will do somewhat less on it."
 
@@ -132,10 +148,13 @@
 	)
 
 	max_health_adjustment = 20 //life already seen them by
-	health_adjustment = 20
 	movement_adjust = 1 // Very slow
 
-	prefix = "old"
+	stattags = DEFENSE_STATTAG
+
+	fire_telegraph_delay_mult = 1.1
+
+	prefix = "Old"
 
 	description = "This one seems old - lethargic, but seasoned. It's likely to be slower but harder to kill."
 
@@ -149,11 +168,14 @@
 	)
 
 	max_health_adjustment = -10
-	health_adjustment = -10
 
 	movement_adjust = -0.5
 
-	prefix = "young"
+	fire_telegraph_delay_mult = 0.8
+
+	stattags = DEFENSE_STATTAG
+
+	prefix = "Young"
 
 	description = "This one seems to be more active and energetic than the others, but somewhat smaller. It's likely to be more fragile, but quicker."
 
@@ -174,11 +196,19 @@
 	melee_lower_adjust = null
 	melee_upper_adjust = null //calculated in apply_to
 
+	inherent_projectile_mult = 1.3
+
+	stattags = DEFENSE_STATTAG | MELEE_STATTAG | RANGED_STATTAG
+
 	movement_adjust = 1
+
+	prefix = "Brutal"
 
 	description = "This one looks exceptionally muscular and scarred. You get the feeling they might be significantly physically stronger, durable, and resistant to pain, than others of its like."
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/brutal/apply_to(atom/target)
+
+	. = ..()
 
 	if (isliving(target))
 		var/mob/living/living_target = target
@@ -187,6 +217,4 @@
 		melee_upper_adjust = ((living_target.melee_damage_upper)*(1.3))
 
 	max_health_adjustment = ((target.maxHealth*(1.3)))
-	health_adjustment = max_health_adjustment
 
-	. = ..()

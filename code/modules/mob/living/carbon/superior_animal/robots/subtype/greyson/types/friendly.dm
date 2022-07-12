@@ -18,6 +18,8 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	density = FALSE
 	cant_be_pulled = FALSE
 
+	get_stat_modifier = FALSE
+
 // For repairing damage to the synths.
 /mob/living/carbon/superior_animal/robot/greyson/roomba/allied/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables

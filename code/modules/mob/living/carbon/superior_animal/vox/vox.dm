@@ -26,6 +26,18 @@
 
 	armor = list(melee = 10, bullet = 15, energy = 5, bomb = 20, bio = 20, rad = 0)
 
+	get_stat_modifier = TRUE
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 23,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 13,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 9,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 9,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 6,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 2
+	)
+
 	fire_verb = "flings a rock"
 
 	melee_damage_lower = 12

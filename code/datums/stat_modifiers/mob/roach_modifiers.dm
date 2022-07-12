@@ -9,6 +9,8 @@
 
 	armor_penetration = 15
 
+	stattags = DEFENSE_STATTAG | MELEE_STATTAG
+
 	prefix = "Biosilicified"
 
 	description = "Networks of wafer-thin crystalline lattice span the surface of this one, both hardening itself towards blunt trauma and improving its own penetration abilities."
@@ -22,6 +24,8 @@
 
 	flash_armor = 2
 	armor_penetration = 5
+
+	stattags = DEFENSE_STATTAG
 
 	prefix = "Lambertian"
 
