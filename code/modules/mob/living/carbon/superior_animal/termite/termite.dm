@@ -17,6 +17,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	emote_see = list("rubs its legs")
 	speak_chance = 5
 
+	get_stat_modifier = TRUE
+
 	deathmessage = "splatters into gore."
 	attacktext = "chomped"
 	attack_sound = 'sound/weapons/bite.ogg'

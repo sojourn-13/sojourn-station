@@ -10,6 +10,8 @@
 	emote_see = list("rubs its legs")
 	speak_chance = 5
 
+	get_stat_modifier = TRUE
+
 	deathmessage = "splatters into a bloody mess."
 	attacktext = "chomped"
 	attack_sound = 'sound/weapons/bite.ogg'

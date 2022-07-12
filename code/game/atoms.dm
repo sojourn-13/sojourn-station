@@ -391,7 +391,7 @@ its easier to just keep the beam vertical.
 				if (!(mod.description in descriptions_to_print))
 					descriptions_to_print += mod.description
 		for (var/description in descriptions_to_print)
-			to_chat(user, description)
+			to_chat(user, SPAN_NOTICE(description))
 
 	if(reagents)
 		if(reagent_flags & TRANSPARENT)

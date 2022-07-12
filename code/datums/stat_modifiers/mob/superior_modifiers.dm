@@ -169,7 +169,7 @@
 
 	movement_adjust = 1
 
-	description = "This one looks exceptionally muscular and scarred. It looks a lot more durable - and dangerous - than others of its kind."
+	description = "This one looks exceptionally muscular and scarred. You get the feeling they might be significantly physically stronger, durable, and resistant to pain, than others of its like."
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/brutal/apply_to(atom/target)
 
