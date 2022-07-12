@@ -18,6 +18,14 @@
 	see_in_dark = 10
 	armor_penetration = 15
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 35,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 9,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 7,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 4,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 2,
+	)
+
 	fleshcolor = "#7C90B8"
 	bloodcolor = "#7C90B8"
 
@@ -105,6 +113,13 @@
 //Loot related variables
 	ore = /obj/item/stack/ore/silver
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 35,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 14,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 13,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 1,
+	)
 
 //Uranium Termite - ranged, slow, med-health, low damage
 /mob/living/carbon/superior_animal/termite_no_despawn/uranium
@@ -161,6 +176,14 @@
 //Loot related variables
 	ore = /obj/item/stack/ore/plasma
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 35,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 2,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 4,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 1,
+	)
 
 //Diamond Wurm - melee, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite_no_despawn/diamond
@@ -189,8 +212,15 @@
 //Loot related variables
 	ore = /obj/item/stack/ore/diamond
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 35,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 1,
+	)
 
-//Osmium Termite - melee, doesn't give a fuck, high-damage
+//Osmium Termite - ranged, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite_no_despawn/osmium
 	name = "Korol termite"
 	desc = "A king termite ready to defend and slay for his queen."
@@ -213,6 +243,8 @@
 //Damage related variables
 	melee_damage_lower = TERMITE_DMG_LOW
 	melee_damage_upper = TERMITE_DMG_LOW
+
+	ranged = TRUE
 
 //Armor related variables
 	armor = list(melee = 50, bullet = 30, energy = 40, bomb = 50, bio = 100, rad = 0)

@@ -13,9 +13,16 @@
 	turns_per_move = 4
 	turns_since_move = 0
 
-	give_randomized_armor = TRUE //We get randomized addition armor
+	get_stat_modifier = TRUE //We get randomized addition armor
 
 	armor = list(melee = 10, bullet = 5, energy = 0, bomb = 5, bio = 20, rad = 0, agony = 0)
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 15,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 3,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable= 4
+	)
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 2

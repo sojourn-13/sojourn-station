@@ -1,19 +1,3 @@
-#define TERMITE_HEALTH_LOW 25
-#define TERMITE_HEALTH_MED 50
-#define TERMITE_HEALTH_HIGH 75
-#define TERMITE_HEALTH_ULTRA 100
-
-#define TERMITE_DMG_LOW 15
-#define TERMITE_DMG_MED 25
-#define TERMITE_DMG_HIGH 40
-#define TERMITE_DMG_ULTRA 55
-
-#define TERMITE_SPEED_SLUG 9
-#define TERMITE_SPEED_LOW 7
-#define TERMITE_SPEED_MED 5
-#define TERMITE_SPEED_HIGH 3
-
-
 // Normal types of termites
 GLOBAL_LIST_INIT(termites_normal, list(/mob/living/carbon/superior_animal/termite/iron,
 									/mob/living/carbon/superior_animal/termite/silver,
@@ -43,6 +27,14 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	fleshcolor = "#7C90B8"
 	bloodcolor = "#7C90B8"
 	armor_penetration = 5
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 35,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 9,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 7,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 4,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 2,
+	)
 
 	destroy_surroundings = TRUE
 	friendly_to_colony = FALSE
@@ -192,6 +184,14 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 //Loot related variables
 	ore = /obj/item/stack/ore/silver
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 35,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 14,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 13,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 1,
+	)
+
 
 //Uranium Termite - ranged, slow, med-health, low damage
 /mob/living/carbon/superior_animal/termite/uranium
@@ -248,6 +248,15 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 //Loot related variables
 	ore = /obj/item/stack/ore/plasma
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 35,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 2,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 4,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 1,
+	)
+
 
 //Diamond Wurm - melee, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite/diamond
@@ -276,8 +285,15 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 //Loot related variables
 	ore = /obj/item/stack/ore/diamond
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 35,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 1,
+	)
 
-//Osmium Termite - melee, doesn't give a fuck, high-damage
+//Osmium Termite - ranged, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite/osmium
 	name = "Korol termite"
 	desc = "A king termite ready to defend and slay for his queen."
@@ -300,6 +316,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 //Damage related variables
 	melee_damage_lower = TERMITE_DMG_LOW
 	melee_damage_upper = TERMITE_DMG_LOW
+
+	ranged = TRUE
 
 //Armor related variables
 	armor = list(melee = 50, bullet = 30, energy = 40, bomb = 50, bio = 100, rad = 0)

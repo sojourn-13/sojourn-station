@@ -20,6 +20,15 @@
 	for(var/language in known_languages)
 		add_language(language)
 
+	if (get_stat_modifier)
+		for (var/i = 0, i < times_to_get_stat_modifiers, i++)
+
+			var/typepath = pickweight(allowed_stat_modifiers)
+
+			var/datum/stat_modifier/chosen_modifier = new typepath
+			if (!(chosen_modifier.apply_to(src)))
+				QDEL_NULL(chosen_modifier)
+
 /mob/living/carbon/superior_animal/Initialize(var/mapload)
 	.=..()
 	if (mapload && can_burrow)

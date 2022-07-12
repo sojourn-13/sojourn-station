@@ -172,8 +172,8 @@
 	var/has_special_parts = FALSE //var for checking during the butcher process.
 	var/special_parts = list() //Any special body parts.
 
-	var/melee_damage_lower = 0
-	var/melee_damage_upper = 10
+	melee_damage_lower = 0
+	melee_damage_upper = 10
 
 	var/list/objectsInView //memoization for getObjectsInView()
 	var/viewRange = 7 //how far the mob AI can see
@@ -211,8 +211,7 @@
 	var/fleshcolor = "#DB0000"
 	var/bloodcolor = "#DB0000"
 	//Armor values for the mob. Works like normal armor values.
-	var/give_randomized_armor = FALSE
-	var/gives_prefex = FALSE
+
 	var/prefex = "bugged"
 
 	var/armor = list(

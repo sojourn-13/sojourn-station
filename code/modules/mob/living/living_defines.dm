@@ -16,6 +16,9 @@
 
 	var/inventory_shown = 1
 
+	var/melee_damage_lower = 0
+	var/melee_damage_upper = 0
+
 	/// The mob groups, defined in admin.dm, this mob is in. Stored as keys.
 	var/list/groups_in = list()
 	/// The buildmode holders this mob is currently selected by.
