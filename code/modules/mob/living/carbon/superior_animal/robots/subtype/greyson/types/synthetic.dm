@@ -12,9 +12,13 @@
 
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/none = 25,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 11
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 3
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 6
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 11,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal/robotic = 2,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 6,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 2,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 6,
 	)
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol

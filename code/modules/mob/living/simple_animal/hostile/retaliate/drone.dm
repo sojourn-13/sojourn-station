@@ -98,7 +98,6 @@
 		adjustFireLoss(rand(-20,-30))
 		if(!rapid)
 			rapid = TRUE
-			rapid_fire_shooting_amount = 3
 		if(prob(95) && !ranged)
 			ranged = TRUE
 

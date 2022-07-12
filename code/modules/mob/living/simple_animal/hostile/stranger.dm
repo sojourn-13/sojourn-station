@@ -25,7 +25,6 @@
 	status_flags = CANPUSH
 	ranged = TRUE
 	rapid = TRUE
-	rapid_fire_shooting_amount = 3
 	armor = list(melee = 25, bullet = 15, energy = 25, bomb = 25, bio = 100, rad = 100) //Were in a space suit thing?
 	projectiletype = /obj/item/projectile/plasma/heavy
 	projectilesound = 'sound/weapons/laser.ogg'

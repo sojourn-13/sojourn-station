@@ -1,7 +1,7 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/deadeye
 
-	inherent_projectile_mult = 2 //a bit more dps
-	projectile_armor_penetration_mult = 1.5
+	inherent_projectile_mult = 2 //a little more dps, but more easily avoided
+	projectile_armor_penetration_mult = 1.3
 
 	fire_delay_increment = 1
 
@@ -27,7 +27,7 @@
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw
 
-	delayed_adjustment = -1 //instantly attacks if they see you
+	delayed_adjustment = -1 //instantly attacks if they see you by default
 
 	prefix = "Quickdraw"
 

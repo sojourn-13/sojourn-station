@@ -10,6 +10,8 @@
 
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/none = 25,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 20
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quick = 3,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 4,
 	)
 

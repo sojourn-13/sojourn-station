@@ -483,6 +483,7 @@
 #include "code\datums\stat_modifiers\stat_modifier.dm"
 #include "code\datums\stat_modifiers\mob\mob_modifiers.dm"
 #include "code\datums\stat_modifiers\mob\roach_modifiers.dm"
+#include "code\datums\stat_modifiers\mob\robot_modifiers.dm"
 #include "code\datums\stat_modifiers\mob\spider_modifiers.dm"
 #include "code\datums\stat_modifiers\mob\superior_modifiers.dm"
 #include "code\datums\stat_modifiers\mob\ranged\ranged_modifiers.dm"

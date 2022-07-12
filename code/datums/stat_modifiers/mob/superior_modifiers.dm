@@ -179,6 +179,17 @@
 
 	description = "This one seems to be more active and energetic than the others, but somewhat smaller. It's likely to be more fragile, but quicker."
 
+/datum/stat_modifier/mob/living/carbon/superior_animal/quick
+
+	movement_adjust = -1
+	fire_telegraph_delay_mult = 0.8
+
+	stattags = DEFENSE_STATTAG
+
+	prefix = "Quick"
+
+	description = "This one seems to be quicker than the others."
+
 /// slower, deadlier, significantly tanker -- a significant buff
 /datum/stat_modifier/mob/living/carbon/superior_animal/brutal
 
