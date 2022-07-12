@@ -135,8 +135,6 @@
 	health_adjustment = 20
 	movement_adjust = 1 // Very slow
 
-	fire_telegraph_delay_mult = 1.1
-
 	prefix = "old"
 
 	description = "This one seems old - lethargic, but seasoned. It's likely to be slower but harder to kill."
@@ -154,8 +152,6 @@
 	health_adjustment = -10
 
 	movement_adjust = -0.5
-
-	fire_telegraph_delay_mult = 0.8
 
 	prefix = "young"
 
