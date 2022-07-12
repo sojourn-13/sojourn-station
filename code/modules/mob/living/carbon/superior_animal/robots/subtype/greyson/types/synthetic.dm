@@ -10,19 +10,6 @@
 	maxHealth = 125
 	cleaning = FALSE
 
-	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 25,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 4,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 6,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal/robotic = 2,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 7,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 2,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 6,
-	)
-
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol
 	name = "Greyson Positronic FBP-SEC Mark I unit"
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one has an old style energy pistol built into its arm."
@@ -58,8 +45,6 @@
 	health = 200
 	maxHealth = 200
 	armor = list(melee = 35, bullet = 25, energy = 40, bomb = 60, bio = 100, rad = 100) //We want to be gunned down, not lasered
-
-	times_to_get_stat_modifiers = 2 //extra prefix
 
 /// base type, dont use
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/sniper

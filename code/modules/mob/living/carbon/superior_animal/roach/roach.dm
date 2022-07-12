@@ -21,8 +21,7 @@
 		/datum/stat_modifier/none = 19,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 3,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 4,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quick = 3
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 8,
 	)
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
