@@ -182,7 +182,7 @@
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/quick
 
-	movement_adjust = -1
+	movement_adjust = -0.7
 	fire_telegraph_delay_mult = 0.8
 
 	stattags = DEFENSE_STATTAG
@@ -212,7 +212,7 @@
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG | RANGED_STATTAG
 
-	movement_adjust = 1.5
+	movement_adjust = 1.3
 
 	prefix = "Brutal"
 
