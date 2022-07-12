@@ -43,10 +43,10 @@
 	projectile_armor_penetration_adjustment = 15
 	armor_penetration = 15
 
-	melee_lower_mult = 1.2
-	melee_upper_mult = 1.2
+	melee_lower_mult = 1.5
+	melee_upper_mult = 1.5
 
-	inherent_projectile_mult = 1.2
+	inherent_projectile_mult = 1.5
 
 	prefix = "Savage"
 
