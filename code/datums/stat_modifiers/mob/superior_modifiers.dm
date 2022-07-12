@@ -198,7 +198,7 @@
 		melee = 15,
 		bullet = 5,
 		bomb = 15,
-		agony = 60 //good luck using rubbers
+		agony = 30
 	)
 
 	flash_armor = 2
