@@ -204,28 +204,15 @@
 
 	armor_penetration = 5
 
-	melee_lower_adjust = null
-	melee_upper_adjust = null //calculated in apply_to
+	melee_lower_mult = 1.3
+	melee_upper_mult = 1.3
 
 	inherent_projectile_mult = 1.3
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG | RANGED_STATTAG
 
-	movement_adjust = 1
+	movement_adjust = 1.5
 
 	prefix = "Brutal"
 
 	description = "This one looks exceptionally muscular and scarred. You get the feeling they might be significantly physically stronger, durable, and resistant to pain, than others of its like."
-
-/datum/stat_modifier/mob/living/carbon/superior_animal/brutal/apply_to(atom/target)
-
-	. = ..()
-
-	if (isliving(target))
-		var/mob/living/living_target = target
-
-		melee_lower_adjust = ((living_target.melee_damage_lower)*(1.3)) // times 1.3
-		melee_upper_adjust = ((living_target.melee_damage_upper)*(1.3))
-
-	max_health_adjustment = ((target.maxHealth*(1.3)))
-

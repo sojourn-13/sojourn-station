@@ -19,9 +19,11 @@
 
 	projectile_armor_penetration_mult = 0.7
 
+	inherent_projectile_mult = 0.9
+
 	prefix = "Trigger-fingered"
 
-	description = "This one seems overeager to shoot. It's likely they'll fire more often than others, although with less precision, thus less armor penetration."
+	description = "This one seems overeager to shoot. It's likely they'll fire more often than others, although with less precision, thus less armor penetration and damage."
 
 	stattags = RANGED_STATTAG
 

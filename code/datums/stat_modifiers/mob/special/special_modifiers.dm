@@ -25,3 +25,29 @@
 
 		superior_target.advance = TRUE
 		superior_target.advance_if_cant_see = TRUE
+
+/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage
+
+	armor_adjustment = list(
+		melee = -30,
+		bullet = -25,
+		energy = -25,
+		bomb = -20,
+		agony = 50 //it doesnt care, it just wants you dead
+	)
+
+	max_health_adjustment = -15
+
+	movement_adjust = -2 // fast
+
+	projectile_armor_penetration_adjustment = 15
+	armor_penetration = 15
+
+	melee_lower_mult = 1.2
+	melee_upper_mult = 1.2
+
+	inherent_projectile_mult = 1.2
+
+	prefix = "Savage"
+
+	description = "This one is always in a combat pose, looking for something to kill. You get the impression it might be too busy trying to kill you to care about it's own health."

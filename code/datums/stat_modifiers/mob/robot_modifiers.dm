@@ -12,8 +12,18 @@
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic
 
+	prefix = "Pristine"
+
 	description = "This one looks to be right off the production line - it's likely to be more fragile, but quicker."
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic
 
+	prefix = "Rusted"
+
 	description = "This one is noticably rusted. It's servos will be slowed by the rust, but the rust itself will provide a layer of resistance against attacks."
+
+/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage/robotic
+
+	prefix = "Overclocked"
+
+	description = "This one seems to be running an unstable overclock, enhancing its own speed and damage capabilities while compromising its own defense."

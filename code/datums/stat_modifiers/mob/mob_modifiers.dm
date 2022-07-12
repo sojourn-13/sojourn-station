@@ -5,23 +5,26 @@
 	var/melee_upper_adjust = 0
 	var/melee_lower_adjust = 0
 
+	var/melee_upper_mult = 1
+	var/melee_lower_mult = 1
+
 	/// Any damage types here will be applied to any projectiles holder fires by adding the value to the damage of that type. Added after all other modifiers.
 	var/list/projectile_adjust_increment = list()
 	/// Any damage types here will be applied to any projectiles holder fires by multiplying the value by this value. Added 3rd.
 	var/list/projectile_adjust_mult = list()
 
 	/// All projectiles fired by holder will have all damage multiplied by this amount. Applied first.
-	var/inherent_projectile_mult = null
+	var/inherent_projectile_mult = 1
 	/// All projectiles fired by holder will have all damage increased by this amount. Applied 2nd.
-	var/inherent_projectile_increment = null
+	var/inherent_projectile_increment = 0
 
 	/// Any projectiles fired by the holder will have their armor penetration increased by this much, added after the mult
 	var/projectile_armor_penetration_adjustment = 0
 	/// Any projectiles fired by the holder will have their armor penetration multiplied by this much, added first
-	var/projectile_armor_penetration_mult = 0
+	var/projectile_armor_penetration_mult = 1
 
 	var/projectile_speed_increment = 0
-	var/projectile_speed_mult = 0
+	var/projectile_speed_mult = 1
 
 	var/movement_adjust = 0
 
@@ -31,8 +34,13 @@
 
 	if (isliving(holder))
 		var/mob/living/livingholder = holder
+
+		livingholder.melee_damage_lower /= melee_lower_mult
+		livingholder.melee_damage_upper /= melee_upper_mult
+
 		livingholder.melee_damage_lower -= melee_lower_adjust
 		livingholder.melee_damage_upper -= melee_lower_adjust
+
 		livingholder.move_to_delay -= movement_adjust
 
 		livingholder.inherent_projectile_mult -= inherent_projectile_mult
@@ -56,8 +64,12 @@
 	if (isliving(target))
 		var/mob/living/livingtarget = target
 
+		livingtarget.melee_damage_upper = CLAMP((livingtarget.melee_damage_upper * melee_upper_mult), 0, INFINITY)
+		livingtarget.melee_damage_lower = CLAMP((livingtarget.melee_damage_lower * melee_lower_mult), 0, INFINITY)
+
 		livingtarget.melee_damage_upper = CLAMP((livingtarget.melee_damage_upper + melee_upper_adjust), 0, INFINITY)
 		livingtarget.melee_damage_lower = CLAMP((livingtarget.melee_damage_lower + melee_lower_adjust), 0, INFINITY)
+
 		livingtarget.move_to_delay = CLAMP((livingtarget.move_to_delay + movement_adjust), 0, INFINITY)
 
 		livingtarget.inherent_projectile_mult = CLAMP((livingtarget.inherent_projectile_mult + inherent_projectile_mult), 0, INFINITY)

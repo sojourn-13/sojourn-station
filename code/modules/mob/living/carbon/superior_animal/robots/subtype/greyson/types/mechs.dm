@@ -15,7 +15,7 @@
 		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 10,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 13,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 6,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 3,
 	)
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley/slip(slipped_on,stun_duration=8)

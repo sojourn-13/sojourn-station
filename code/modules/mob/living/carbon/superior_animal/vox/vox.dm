@@ -35,7 +35,8 @@
 		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 9,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 6,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 2
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 2,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quick = 4
 	)
 
 	fire_verb = "flings a rock"
