@@ -11,7 +11,7 @@
 
 	prefix = "Biosilicified"
 
-	description = "Small crystals of chitin and such dot the surface of this one, both hardening itself towards blunt trauma and improving its own penetration abilities."
+	description = "Networks of wafer-thin crystalline lattice span the surface of this one, both hardening itself towards blunt trauma and improving its own penetration abilities."
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/lambertian
 
@@ -25,4 +25,4 @@
 
 	prefix = "Lambertian"
 
-	description = "This one is covered in a wafer-thin silvery-white sheen, improving it's ability to resist energy attacks and pain, as well as mitigating flashes."
+	description = "This one is covered in a silvery-white sheen, improving it's ability to resist energy attacks and pain, as well as mitigating flashes."
