@@ -15,6 +15,12 @@
 	var/rapid_adjustment = 0
 	var/fire_delay_increment = 0
 
+	var/fire_telegraph_delay_mult = 1
+
+	var/retarget_timer_adjustment = 0
+
+	var/viewRange_adjustment
+
 	var/poison_adjustment = 0
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/remove()
@@ -51,6 +57,7 @@
 			superior_target.armor_penetration += armor_penetration
 			superior_target.fire_delay += fire_delay_increment
 			superior_target.fire_delay_initial += fire_delay_increment
+			superior_target.delay_for_range = ((superior_target.delay_for_range) * (fire_telegraph_delay_mult))
 
 		if (rapid_adjustment)
 			if (!superior_target.rapid)
@@ -128,6 +135,8 @@
 	health_adjustment = 20
 	movement_adjust = 1 // Very slow
 
+	fire_telegraph_delay_mult = 1.1
+
 	prefix = "old"
 
 	description = "This one seems old - lethargic, but seasoned. It's likely to be slower but harder to kill."
@@ -145,6 +154,8 @@
 	health_adjustment = -10
 
 	movement_adjust = -0.5
+
+	fire_telegraph_delay_mult = 0.8
 
 	prefix = "young"
 

@@ -183,6 +183,8 @@
 
 	spawn()
 		update_openspace()
+
+	QDEL_LIST(current_stat_modifiers)
 	return ..()
 
 /atom/proc/reveal_blood()
@@ -916,8 +918,9 @@ its easier to just keep the beam vertical.
 /obj/proc/wrenched_change()
 	return
 
+/// First resets the name of the mob to the initial name it had, then adds each prefix in a random order.
 /atom/proc/update_prefixes()
-	name = initial(src.name)
+	name = initial(src.name) //reset the name so we can accurately re-add prefixes without fear of double prefixes
 
 	for (var/prefix in prefixes)
 		name = "[prefix] [name]"
