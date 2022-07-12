@@ -19,7 +19,7 @@
 
 	projectile_armor_penetration_mult = 0.7
 
-	inherent_projectile_mult = 0.9
+	inherent_projectile_mult = 0.8
 
 	prefix = "Trigger-fingered"
 
