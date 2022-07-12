@@ -269,9 +269,6 @@
 		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 4,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 2,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 7,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 6,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 5,
 	)
 
