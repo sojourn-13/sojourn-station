@@ -50,4 +50,6 @@
 
 	prefix = "Savage"
 
+	stattags = RANGED_STATTAG | MELEE_STATTAG | NEGATIVE_DEFENSE_STATTAG
+
 	description = "This one is always in a combat pose, looking for something to kill. You get the impression it might be too busy trying to kill you to care about it's own health."

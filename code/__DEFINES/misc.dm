@@ -29,6 +29,8 @@
 #define MELEE_STATTAG (1<<1)
 #define RANGED_STATTAG (1<<2)
 #define DEFENSE_STATTAG (1<<3)
+#define NEGATIVE_DEFENSE_STATTAG (1<<4)
+
 // Some arbitrary defines to be used by self-pruning global lists.
 #define PROCESS_KILL 26 // Used to trigger removal from a processing list.
 #define MAX_GEAR_COST 5 // Used in chargen for accessory loadout limit.

@@ -96,7 +96,7 @@
 
 	stattags = DEFENSE_STATTAG
 
-	description = "This one looks somewhat more sturdy than others. It'll likely be more resistant to damage and pain."
+	description = "This one looks somewhat more sturdy than others. It'll likely be slightly more resistant to damage and pain."
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/brutish
 
@@ -116,6 +116,7 @@
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG
 
 	inherent_projectile_mult = 1.1
+	projectile_armor_penetration_adjustment = 2
 
 	description = "This one is noticably muscular. It looks like it might hit harder than others."
 

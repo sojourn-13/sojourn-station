@@ -22,8 +22,8 @@
 
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/none = 35,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 9,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 7,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 11,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 4,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 2,
 	)
@@ -216,10 +216,11 @@
 
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/none = 35,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 7,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 4,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 3,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
 	)
 
 //Osmium Termite - ranged, doesn't give a fuck, high-damage

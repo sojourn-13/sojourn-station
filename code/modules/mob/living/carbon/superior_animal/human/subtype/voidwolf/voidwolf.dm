@@ -31,7 +31,7 @@
 	get_stat_modifier = TRUE
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 25,
+		/datum/stat_modifier/none = 30,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 13,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 4,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 2,
@@ -262,6 +262,18 @@
 	rapid = FALSE
 	limited_ammo = FALSE
 	drop_items = list(/obj/item/tool/sword/saber/cutlass, /obj/item/shield/buckler/energy/reaver/damaged)
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 30,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 13,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 4,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 2,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 7,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 6,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 5,
+	)
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/New()
 	..()
