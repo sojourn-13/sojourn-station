@@ -19,7 +19,7 @@
 
 	var/retarget_timer_adjustment = 0
 
-	var/viewRange_adjustment
+	var/viewRange_adjustment = 0
 
 	var/poison_adjustment = 0
 
