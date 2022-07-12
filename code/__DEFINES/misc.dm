@@ -26,8 +26,6 @@
 #define INVISIBILITY_MAXIMUM 100
 
 // Stat modifier defines
-#define INHERENT "inherent"
-
 #define MELEE_STATTAG (1<<1)
 #define RANGED_STATTAG (1<<2)
 #define DEFENSE_STATTAG (1<<3)

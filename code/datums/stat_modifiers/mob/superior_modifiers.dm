@@ -62,18 +62,18 @@
 			else
 				superior_target.armor[key] = armor_adjustment[key]
 
-			superior_target.flash_resistances = CLAMP((superior_target.flash_resistances + flash_armor), 0, INFINITY)
-			superior_target.armor_penetration = CLAMP((superior_target.armor_penetration + armor_penetration), 0, INFINITY)
-			superior_target.fire_delay_initial = CLAMP((superior_target.fire_delay_initial + fire_delay_increment), 0, INFINITY)
-			superior_target.fire_delay = CLAMP((superior_target.fire_delay + fire_delay_increment), 0, INFINITY)
-			superior_target.delay_for_range = CLAMP((superior_target.delay_for_range * fire_telegraph_delay_mult), 0, INFINITY)
+		superior_target.flash_resistances = CLAMP((superior_target.flash_resistances + flash_armor), 0, INFINITY)
+		superior_target.armor_penetration = CLAMP((superior_target.armor_penetration + armor_penetration), 0, INFINITY)
+		superior_target.fire_delay_initial = CLAMP((superior_target.fire_delay_initial + fire_delay_increment), 0, INFINITY)
+		superior_target.fire_delay = CLAMP((superior_target.fire_delay + fire_delay_increment), 0, INFINITY)
+		superior_target.delay_for_range = CLAMP((superior_target.delay_for_range * fire_telegraph_delay_mult), 0, INFINITY)
 
-			superior_target.delayed_initial = CLAMP((superior_target.delayed_initial + delayed_adjustment), 0, INFINITY)
-			superior_target.delayed = CLAMP((superior_target.delayed + delayed_adjustment), 0, INFINITY)
+		superior_target.delayed_initial = CLAMP((superior_target.delayed_initial + delayed_adjustment), 0, INFINITY)
+		superior_target.delayed = CLAMP((superior_target.delayed + delayed_adjustment), 0, INFINITY)
 
-			superior_target.rapid_fire_shooting_amount = CLAMP((superior_target.rapid_fire_shooting_amount + rapid_adjustment), 0, INFINITY)
-			if ((superior_target.rapid_fire_shooting_amount > 0) && (!(superior_target.rapid))) //if we are rapid firing and dont have the var set, lets set it
-				superior_target.rapid = TRUE
+		superior_target.rapid_fire_shooting_amount = CLAMP((superior_target.rapid_fire_shooting_amount + rapid_adjustment), 0, INFINITY)
+		if ((superior_target.rapid_fire_shooting_amount > 0) && (!(superior_target.rapid))) //if we are rapid firing and dont have the var set, lets set it
+			superior_target.rapid = TRUE
 
 		if (issuperiorspider(superior_target))
 			var/mob/living/carbon/superior_animal/giant_spider/spider_target = target

@@ -280,7 +280,7 @@
 						can_see = FALSE
 				else if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) //if we cant see them, hearers() wont show them, so lets remove the override
 					can_see = FALSE
-				ran_see_check = TRUE
+			ran_see_check = TRUE
 
 		if (!lost_sight)
 			target_location = WEAKREF(targetted_mob.loc) //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target

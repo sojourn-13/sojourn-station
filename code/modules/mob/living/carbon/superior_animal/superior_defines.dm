@@ -239,7 +239,7 @@
 
 	var/ranged = FALSE  //Do we have a range based attack?
 	var/rapid = FALSE   //Do we shoot in groups?
-	var/rapid_fire_shooting_amount = 3 //By default will rapid fire in 3 shots per.
+	var/rapid_fire_shooting_amount = 1 // Has to be one so stat modifiers can work.
 	var/obj/item/projectile/projectiletype  //What are we shooting?
 	var/projectilesound //What sound do we make when firing
 	/// How loud will our projectile firing sound be?

@@ -189,10 +189,11 @@
 	if(reagents)
 		QDEL_NULL(reagents)
 
+	QDEL_LIST(current_stat_modifiers)
+
 	spawn()
 		update_openspace()
 
-	QDEL_LIST(current_stat_modifiers)
 	return ..()
 
 /atom/proc/reveal_blood()

@@ -75,6 +75,7 @@
 	maxHealth = 250
 	health = 250
 	rapid = TRUE
+	rapid_fire_shooting_amount = 3
 
 
 /mob/living/carbon/superior_animal/robot/greyson/stalker/dual/New()
