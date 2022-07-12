@@ -70,7 +70,7 @@
 		livingtarget.melee_damage_upper = CLAMP((livingtarget.melee_damage_upper + melee_upper_adjust), 0, INFINITY)
 		livingtarget.melee_damage_lower = CLAMP((livingtarget.melee_damage_lower + melee_lower_adjust), 0, INFINITY)
 
-		livingtarget.move_to_delay = CLAMP((livingtarget.move_to_delay + movement_adjust), 0, INFINITY)
+		livingtarget.move_to_delay = CLAMP((livingtarget.move_to_delay + movement_adjust), 0.1, INFINITY)
 
 		livingtarget.inherent_projectile_mult = CLAMP((livingtarget.inherent_projectile_mult + inherent_projectile_mult), 0, INFINITY)
 		livingtarget.inherent_projectile_increment = CLAMP((livingtarget.inherent_projectile_increment + inherent_projectile_increment), 0, INFINITY)
