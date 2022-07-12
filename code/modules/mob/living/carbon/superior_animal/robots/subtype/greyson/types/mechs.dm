@@ -16,7 +16,7 @@
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 6,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 2,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 3,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage/robotic = 1,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 6,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic = 1,
 	)
@@ -121,6 +121,6 @@
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 6,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 2,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 3,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage/robotic = 1,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 6,
 	)
