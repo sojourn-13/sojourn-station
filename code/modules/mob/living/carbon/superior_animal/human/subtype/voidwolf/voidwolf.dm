@@ -30,16 +30,18 @@
 
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
+	get_stat_modifier = TRUE
+
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/none = 100, //50% chance to have no prefix if we add all others up to this value i think
 		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 15,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 10,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 15,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 10,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 10,
 	)
