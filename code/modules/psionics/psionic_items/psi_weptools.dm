@@ -105,10 +105,10 @@
 /obj/item/tool/sword/cleaver/cult/deepmaints
 	name = "solar eclipse" //Easiest name ever
 	desc = "A weapon found in deepmaints but by all metrics is designed against the monsters inside it, dealing much more harm to psion based monsters as if its.\
-	Looking at the blades edge its safe to say its dull to skin, but a toxin to the mind..."
+	Looking at the blades edge its safe to say its dull to skin, but burns the mind..."
 	tool_qualities = list(QUALITY_SAWING = 5, QUALITY_CLAMPING = 10, QUALITY_CAUTERIZING = 20, QUALITY_RETRACTING = 10, QUALITY_BONE_SETTING = 15)
 	effective_faction = list("psi_monster") // Which faction the cleaver is effective against.
-	damtype = TOX
+	damtype = BURN
 
 /obj/item/tool/power_fist/cult
 	name = "mind rocker"
