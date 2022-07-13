@@ -10,7 +10,8 @@
 	var/prefix = null
 
 	/// Changes max health by the entered value.
-	var/max_health_adjustment = 0
+	var/max_health_adjustment
+	var/max_health_mult
 
 	/// Every non-duplicate description will be printed when the holder is examined.
 	var/description = null
@@ -23,10 +24,13 @@
 /// Inverts all effects the modifier provided, and optionally qdeletes it.
 /datum/stat_modifier/proc/remove(qdel_src = TRUE)
 
-	CLAMP((), , )
+	if (max_health_adjustment)
+		holder.maxHealth = ZERO_OR_MORE((holder.maxHealth - max_health_adjustment))
+		holder.health = ZERO_OR_MORE((holder.health - max_health_adjustment))
 
-	holder.health = CLAMP((health - max_health_adjustment), 0 ,INFINITY)
-	holder.maxHealth = CLAMP((maxHealth - max_health_adjustment), 0 , INFINITY)
+	if (max_health_mult)
+		holder.maxHealth = ZERO_OR_MORE((holder.maxHealth / max_health_mult))
+		holder.health = ZERO_OR_MORE((holder.health / max_health_mult))
 
 	holder.prefixes -= prefix
 	holder.update_prefixes()
@@ -82,10 +86,13 @@
 
 		target.update_prefixes()
 
+	if (max_health_mult)
+		target.maxHealth = ZERO_OR_MORE(SAFEMULT(target.maxHealth, max_health_mult, 0.1))
+		target.health = ZERO_OR_MORE(SAFEMULT(target.health, max_health_mult, 0.1))
 
-	target.maxHealth = CLAMP((target.maxHealth + max_health_adjustment), 0, INFINITY)
-
-	target.health = CLAMP((target.health + max_health_adjustment), 0, INFINITY)
+	if (max_health_adjustment)
+		target.maxHealth = ZERO_OR_MORE((target.maxHealth + max_health_adjustment))
+		target.health = ZERO_OR_MORE((target.health + max_health_adjustment))
 
 	return TRUE
 

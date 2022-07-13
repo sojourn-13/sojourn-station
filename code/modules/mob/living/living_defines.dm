@@ -21,11 +21,11 @@
 
 	var/list/projectile_damage_increment = list()
 	var/list/projectile_damage_mult = list()
-	var/inherent_projectile_mult = 1
+	var/inherent_projectile_mult = 0
 	var/inherent_projectile_increment = 0
 
 	var/projectile_speed_increment = 0
-	var/projectile_speed_mult = 1
+	var/projectile_speed_mult = 0
 
 	/// The mob groups, defined in admin.dm, this mob is in. Stored as keys.
 	var/list/groups_in = list()

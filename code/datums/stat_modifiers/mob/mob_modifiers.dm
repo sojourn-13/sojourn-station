@@ -2,11 +2,11 @@
 
 /datum/stat_modifier/mob/living
 
-	var/melee_upper_adjust = 0
-	var/melee_lower_adjust = 0
+	var/melee_upper_adjust
+	var/melee_lower_adjust
 
-	var/melee_upper_mult = 1
-	var/melee_lower_mult = 1
+	var/melee_upper_mult
+	var/melee_lower_mult
 
 	/// Any damage types here will be applied to any projectiles holder fires by adding the value to the damage of that type. Added after all other modifiers.
 	var/list/projectile_adjust_increment = list()
@@ -14,20 +14,20 @@
 	var/list/projectile_adjust_mult = list()
 
 	/// All projectiles fired by holder will have all damage multiplied by this amount. Applied first.
-	var/inherent_projectile_mult = 1
+	var/inherent_projectile_mult
 	/// All projectiles fired by holder will have all damage increased by this amount. Applied 2nd.
-	var/inherent_projectile_increment = 0
+	var/inherent_projectile_increment
 
 	/// Any projectiles fired by the holder will have their armor penetration increased by this much, added after the mult
-	var/projectile_armor_penetration_adjustment = 0
+	var/projectile_armor_penetration_adjustment
 	/// Any projectiles fired by the holder will have their armor penetration multiplied by this much, added first
-	var/projectile_armor_penetration_mult = 1
+	var/projectile_armor_penetration_mult
 
-	var/projectile_speed_increment = 0
-	var/projectile_speed_mult = 1
+	var/projectile_speed_increment
+	var/projectile_speed_mult
 
-	var/movement_adjust = 0
-	var/movement_adjust_mult = 1
+	var/movement_adjust
+	var/movement_adjust_mult
 
 /datum/stat_modifier/mob/living/remove()
 
@@ -36,28 +36,42 @@
 	if (isliving(holder))
 		var/mob/living/livingholder = holder
 
-		livingholder.melee_damage_lower = CLAMP((livingholder.melee_damage_lower - melee_lower_adjust), 0, INFINITY)
-		livingholder.melee_damage_upper = CLAMP((livingholder.melee_damage_upper - melee_upper_adjust), 0, INFINITY)
+		if (melee_lower_adjust)
+			livingholder.melee_damage_lower = ZERO_OR_MORE((livingholder.melee_damage_lower - melee_lower_adjust))
+		if (melee_upper_adjust)
+			livingholder.melee_damage_upper = ZERO_OR_MORE((livingholder.melee_damage_upper - melee_upper_adjust))
 
-		livingholder.melee_damage_lower = CLAMP((livingholder.melee_damage_lower / melee_lower_mult), 0, INFINITY)
-		livingholder.melee_damage_upper = CLAMP((livingholder.melee_damage_upper / melee_upper_mult), 0, INFINITY)
+		if (melee_lower_mult)
+			livingholder.melee_damage_lower = ZERO_OR_MORE((livingholder.melee_damage_lower / melee_lower_mult))
+		if (melee_upper_mult)
+			livingholder.melee_damage_upper = ZERO_OR_MORE((livingholder.melee_damage_upper / melee_upper_mult))
 
-		livingholder.move_to_delay = CLAMP((livingholder.move_to_delay - movement_adjust), 0, INFINITY)
-		livingholder.move_to_delay = CLAMP((livingholder.move_to_delay / movement_adjust_mult), 0, INFINITY)
+		if (movement_adjust)
+			livingholder.move_to_delay = ZERO_OR_MORE((livingholder.move_to_delay - movement_adjust))
+		if (movement_adjust_mult)
+			livingholder.move_to_delay = ZERO_OR_MORE((livingholder.move_to_delay / movement_adjust_mult))
 
-		livingholder.inherent_projectile_increment = CLAMP((livingholder.inherent_projectile_increment - inherent_projectile_increment), 0, INFINITY)
-		livingholder.inherent_projectile_mult = CLAMP((livingholder.inherit_projectile_mult - inherent_projectile_mult), 0, INFINITY)
+		if (inherent_projectile_increment)
+			livingholder.inherent_projectile_increment = ZERO_OR_MORE((livingholder.inherent_projectile_increment - inherent_projectile_increment))
+		if (inherent_projectile_mult)
+			livingholder.inherent_projectile_mult = ZERO_OR_MORE((livingholder.inherent_projectile_mult - inherent_projectile_mult))
 
-		for (var/entry in projectile_adjust_increment)
-			livingholder.projectile_damage_increment[entry] = CLAMP((livingholder.projectile_damage_increment[entry] - projectile_adjust_increment[entry]), 0, INFINITY)
-		for (var/entry in projectile_adjust_mult)
-			livingholder.projectile_damage_mult[entry] = CLAMP((livingholder.projectile_damage_mult[entry] - projectile_damage_mult[entry]), 0, INFINITY)
+		if (projectile_adjust_increment)
+			for (var/entry in projectile_adjust_increment)
+				livingholder.projectile_damage_increment[entry] = ZERO_OR_MORE((livingholder.projectile_damage_increment[entry] - projectile_adjust_increment[entry]))
+		if (projectile_adjust_mult)
+			for (var/entry in projectile_adjust_mult)
+				livingholder.projectile_damage_mult[entry] = ZERO_OR_MORE((livingholder.projectile_damage_mult[entry] - projectile_adjust_mult[entry]))
 
-		livingholder.projectile_armor_penetration_adjustment = CLAMP((livingholder.projectile_armor_penetration_adjustment - projectile_armor_penetration_adjustment), 0, INFINITY)
-		livingholder.projectile_armor_penetration_mult = CLAMP((livingholder.projectile_armor_penetration_mult - projectile_armor_penetration_mult), 0, INFINITY)
+		if (projectile_armor_penetration_adjustment)
+			livingholder.projectile_armor_penetration_adjustment = ZERO_OR_MORE((livingholder.projectile_armor_penetration_adjustment - projectile_armor_penetration_adjustment))
+		if (projectile_armor_penetration_mult)
+			livingholder.projectile_armor_penetration_mult = ZERO_OR_MORE((livingholder.projectile_armor_penetration_mult - projectile_armor_penetration_mult))
 
-		livingholder.projectile_speed_increment = CLAMP((livingholder.projectile_speed_increment - projectile_speed_increment), 0, INFINITY)
-		livingholder.projectile_speed_mult = CLAMP((livingholder.projectile_speed_mult - projectile_speed_mult), 0, INFINITY)
+		if (projectile_speed_increment)
+			livingholder.projectile_speed_increment = ZERO_OR_MORE((livingholder.projectile_speed_increment - projectile_speed_increment))
+		if (projectile_speed_mult)
+			livingholder.projectile_speed_mult = ZERO_OR_MORE((livingholder.projectile_speed_mult - projectile_speed_mult))
 
 /datum/stat_modifier/mob/living/apply_to(atom/target)
 
@@ -66,27 +80,41 @@
 	if (isliving(target))
 		var/mob/living/livingtarget = target
 
-		livingtarget.melee_damage_upper = CLAMP((livingtarget.melee_damage_upper * melee_upper_mult), 0, INFINITY)
-		livingtarget.melee_damage_lower = CLAMP((livingtarget.melee_damage_lower * melee_lower_mult), 0, INFINITY)
+		if (melee_upper_mult)
+			livingtarget.melee_damage_upper = ZERO_OR_MORE(SAFEMULT(livingtarget.melee_damage_upper, melee_upper_mult, 0.1))
+		if (melee_lower_mult)
+			livingtarget.melee_damage_lower = ZERO_OR_MORE(SAFEMULT(livingtarget.melee_damage_lower, melee_lower_mult, 0.1))
 
-		livingtarget.melee_damage_upper = CLAMP((livingtarget.melee_damage_upper + melee_upper_adjust), 0, INFINITY)
-		livingtarget.melee_damage_lower = CLAMP((livingtarget.melee_damage_lower + melee_lower_adjust), 0, INFINITY)
+		if (melee_upper_adjust)
+			livingtarget.melee_damage_upper = ZERO_OR_MORE((livingtarget.melee_damage_upper + melee_upper_adjust))
+		if (melee_lower_adjust)
+			livingtarget.melee_damage_lower = ZERO_OR_MORE((livingtarget.melee_damage_lower + melee_lower_adjust))
 
-		livingtarget.move_to_delay = CLAMP((livingtarget.move_to_delay * movement_adjust_mult), 0, INFINITY)
-		livingtarget.move_to_delay = CLAMP((livingtarget.move_to_delay + movement_adjust), 0, INFINITY)
+		if (movement_adjust_mult)
+			livingtarget.move_to_delay = ZERO_OR_MORE(SAFEMULT(livingtarget.move_to_delay, movement_adjust_mult, 0.1))
+		if (movement_adjust)
+			livingtarget.move_to_delay = ZERO_OR_MORE((livingtarget.move_to_delay + movement_adjust))
 
-		livingtarget.inherent_projectile_mult = CLAMP((livingtarget.inherent_projectile_mult + inherent_projectile_mult), 0, INFINITY)
-		livingtarget.inherent_projectile_increment = CLAMP((livingtarget.inherent_projectile_increment + inherent_projectile_increment), 0, INFINITY)
+		if (inherent_projectile_mult)
+			livingtarget.inherent_projectile_mult = ZERO_OR_MORE((livingtarget.inherent_projectile_mult + inherent_projectile_mult))
+		if (inherent_projectile_increment)
+			livingtarget.inherent_projectile_increment = ZERO_OR_MORE((livingtarget.inherent_projectile_increment + inherent_projectile_increment))
 
-		for (var/entry in projectile_adjust_increment)
-			livingtarget.projectile_damage_increment[entry] += CLAMP((livingtarget.projectile_damage_increment[entry] + projectile_adjust_increment[entry]), 0, INFINITY)
-		for (var/entry in projectile_adjust_mult)
-			livingtarget.projectile_damage_mult[entry] += CLAMP((livingtarget.projectile_damage_mult[entry] + projectile_adjust_mult[entry]), 0, INFINITY)
+		if (projectile_adjust_increment)
+			for (var/entry in projectile_adjust_increment)
+				livingtarget.projectile_damage_increment[entry] = ZERO_OR_MORE((livingtarget.projectile_damage_increment[entry] + projectile_adjust_increment[entry]))
+		if (projectile_adjust_mult)
+			for (var/entry in projectile_adjust_mult)
+				livingtarget.projectile_damage_mult[entry] = ZERO_OR_MORE((livingtarget.projectile_damage_mult[entry] + projectile_adjust_mult[entry]))
 
-		livingtarget.projectile_armor_penetration_adjustment = CLAMP((livingtarget.projectile_armor_penetration_adjustment + projectile_armor_penetration_adjustment), 0, INFINITY)
-		livingtarget.projectile_armor_penetration_mult = CLAMP((livingtarget.projectile_armor_penetration_mult + projectile_armor_penetration_mult), 0, INFINITY)
+		if (projectile_armor_penetration_adjustment)
+			livingtarget.projectile_armor_penetration_adjustment = ZERO_OR_MORE((livingtarget.projectile_armor_penetration_adjustment + projectile_armor_penetration_adjustment))
+		if (projectile_armor_penetration_mult)
+			livingtarget.projectile_armor_penetration_mult = ZERO_OR_MORE((livingtarget.projectile_armor_penetration_mult + projectile_armor_penetration_mult))
 
-		livingtarget.projectile_speed_increment = CLAMP((livingtarget.projectile_speed_increment + projectile_speed_increment), 0, INFINITY)
-		livingtarget.projectile_speed_mult = CLAMP((livingtarget.projectile_speed_mult + projectile_speed_mult), 0, INFINITY)
+		if (projectile_speed_increment)
+			livingtarget.projectile_speed_increment = ZERO_OR_MORE((livingtarget.projectile_speed_increment + projectile_speed_increment))
+		if (projectile_speed_mult)
+			livingtarget.projectile_speed_mult = ZERO_OR_MORE((livingtarget.projectile_speed_mult + projectile_speed_mult))
 
 /datum/stat_modifier/mob/living/carbon
