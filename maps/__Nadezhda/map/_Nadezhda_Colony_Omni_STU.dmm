@@ -35290,7 +35290,6 @@
 	id = "xenobio3";
 	name = "containment blast door"
 	},
-/obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/rnd/xenobiology)
 "gOj" = (
@@ -63544,6 +63543,7 @@
 	pixel_x = 24
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/late/cryo/starboard,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "mgM" = (
@@ -67364,6 +67364,11 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"mQv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/late/cryo/starboard,
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/crew_quarters/sleep/cryo2)
 "mQx" = (
 /obj/machinery/power/apc{
 	cell_type = /obj/item/cell/large/high;
@@ -81138,7 +81143,6 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/hallway/side/f2section1)
 "pyM" = (
-/obj/structure/railing/grey,
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 5
 	},
@@ -81146,6 +81150,7 @@
 /obj/machinery/camera/network/colony_underground{
 	dir = 8
 	},
+/obj/landmark/join/late/cryo,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "pyP" = (
@@ -114930,6 +114935,11 @@
 /obj/structure/flora/rock/variant2,
 /turf/simulated/floor/asteroid/grass/colonialjungle2,
 /area/colony)
+"vSt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/late/cryo,
+/turf/simulated/floor/tiled/dark/cyancorner,
+/area/nadezhda/crew_quarters/sleep/cryo2)
 "vSu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/wall_mounted/firecloset{
@@ -137652,9 +137662,9 @@ hfy
 vao
 aDa
 aDa
-rNn
+vSt
 gIY
-aDa
+mQv
 gIY
 hfy
 fCI
