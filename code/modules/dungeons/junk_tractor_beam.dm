@@ -21,7 +21,7 @@
 		"Greyson" = 3,
 		"Military" = 3,
 		"Void Wolf" = 3,
-		"SpaceWrecks" = 0
+		//"SpaceWrecks" = 0
 		) // available affinities
 
 /datum/junk_field/New(var/ID, var/field_affinity = null)
