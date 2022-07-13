@@ -63,7 +63,7 @@
 		else
 			return
 
-/mob/living/carbon/superior_animal/proc/OpenFire(var/atom/firing_target, var/datum/penetration_holder/holder)
+/mob/living/carbon/superior_animal/proc/OpenFire(var/atom/firing_target, var/obj/item/projectile/trace_arg)
 	if(!check_if_alive())
 		return
 	if(weakened)
@@ -73,10 +73,10 @@
 
 	if(rapid)
 		for(var/shotsfired = 0, shotsfired < rapid_fire_shooting_amount, shotsfired++)
-			addtimer(CALLBACK(src, .proc/Shoot, target, loc, src, 0, holder), (delay_for_rapid_range * shotsfired))
+			addtimer(CALLBACK(src, .proc/Shoot, target, loc, src, 0, trace_arg), (delay_for_rapid_range * shotsfired))
 			handle_ammo_check()
 	else
-		Shoot(target, loc, src, trace_holder = holder)
+		Shoot(target, loc, src, trace = trace_arg)
 		handle_ammo_check()
 
 	if (!firing_target)
@@ -110,7 +110,7 @@
 		ranged = FALSE
 		rapid = FALSE
 
-/mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0, var/datum/penetration_holder/trace_holder)
+/mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0, var/obj/item/projectile/trace)
 	if(weakened)
 		return
 	if(target == start)
@@ -128,18 +128,56 @@
 
 	var/def_zone = get_exposed_defense_zone(target)
 
-	if (trace_holder)
-		if (!QDELETED(trace_holder))
-			if (trace_holder.force_penetration_on.len > 0)
-				if (trace_holder.penetration_store_time <= (world.time + (delay_for_range + 1)))
-					var/datum/penetration_holder/new_holder = A.penetration_holder
-					new_holder.force_penetration_on = trace_holder.force_penetration_on
+	var/datum/penetration_holder/trace_penetration
 
-			qdel(trace_holder)
+	if (trace && trace.penetration_holder && ((!QDELETED(trace.penetration_holder)) && (!QDESTROYING(trace.penetration_holder))))
+		trace_penetration = trace.penetration_holder
 
-	trace_holder = null
+	var/do_we_shoot = TRUE
 
-	A.launch(target, def_zone)
+	var/obj/item/projectile/new_trace = check_trajectory_raytrace(target, src, projectiletype)
+
+	spawn(0)
+
+		if (new_trace)
+			if (new_trace.impact_atom)
+				var/list/possible_targets = list()
+				if (trace_penetration && trace_penetration.force_penetration_on.len)
+					possible_targets = trace_penetration.force_penetration_on
+				possible_targets += new_trace.impact_atom
+				for (var/atom/entry in possible_targets)
+					var/mob/possible_target
+					if (ismecha(entry))
+						var/obj/mecha/mechtarget = entry
+						possible_target = mechtarget.occupant
+					else if (ismob(entry))
+						possible_target = entry
+					if (possible_target)
+						if (possible_target = target)
+							continue //we made the concious choice to attack them
+						else if (!(prob(do_friendly_fire_chance)) && (((!attack_same && (possible_target.faction == faction)) || (possible_target in friends)) || (possible_target.friendly_to_colony && friendly_to_colony)))
+							do_we_shoot = FALSE
+							break
+
+			if (do_we_shoot)
+				if (trace_penetration && trace_penetration.force_penetration_on && trace_penetration.force_penetration_on.len)
+					var/datum/penetration_holder/penetrator = A.penetration_holder
+
+					for (var/atom/penetrated in trace_penetration.force_penetration_on)
+						penetrator += penetrated
+
+		if (do_we_shoot)
+			A.launch(target, def_zone)
+		else
+			QDEL_NULL(A)
+
+		qdel(trace.penetration_holder)
+		trace.penetration_holder = null
+		QDEL_NULL(trace)
+
+		qdel(new_trace.penetration_holder)
+		new_trace.penetration_holder = null
+		QDEL_NULL(new_trace)
 
 /mob/living/carbon/superior_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
 	if(weakened) return

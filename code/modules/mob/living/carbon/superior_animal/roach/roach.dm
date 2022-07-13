@@ -55,6 +55,8 @@
 
 	var/snacker = FALSE
 
+	do_friendly_fire_chance = 100
+
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
