@@ -23,8 +23,10 @@
 /// Inverts all effects the modifier provided, and optionally qdeletes it.
 /datum/stat_modifier/proc/remove(qdel_src = TRUE)
 
-	holder.health -= max_health_adjustment
-	holder.maxHealth -= max_health_adjustment
+	CLAMP((), , )
+
+	holder.health = CLAMP((health - max_health_adjustment), 0 ,INFINITY)
+	holder.maxHealth = CLAMP((maxHealth - max_health_adjustment), 0 , INFINITY)
 
 	holder.prefixes -= prefix
 	holder.update_prefixes()
@@ -83,7 +85,7 @@
 
 	target.maxHealth = CLAMP((target.maxHealth + max_health_adjustment), 0, INFINITY)
 
-	target.health = target.maxHealth
+	target.health = CLAMP((target.health + max_health_adjustment), 0, INFINITY)
 
 	return TRUE
 

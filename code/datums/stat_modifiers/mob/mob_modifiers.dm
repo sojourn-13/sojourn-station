@@ -27,6 +27,7 @@
 	var/projectile_speed_mult = 1
 
 	var/movement_adjust = 0
+	var/movement_adjust_mult = 1
 
 /datum/stat_modifier/mob/living/remove()
 
@@ -35,27 +36,28 @@
 	if (isliving(holder))
 		var/mob/living/livingholder = holder
 
-		livingholder.melee_damage_lower /= melee_lower_mult
-		livingholder.melee_damage_upper /= melee_upper_mult
+		livingholder.melee_damage_lower = CLAMP((livingholder.melee_damage_lower - melee_lower_adjust), 0, INFINITY)
+		livingholder.melee_damage_upper = CLAMP((livingholder.melee_damage_upper - melee_upper_adjust), 0, INFINITY)
 
-		livingholder.melee_damage_lower -= melee_lower_adjust
-		livingholder.melee_damage_upper -= melee_lower_adjust
+		livingholder.melee_damage_lower = CLAMP((livingholder.melee_damage_lower / melee_lower_mult), 0, INFINITY)
+		livingholder.melee_damage_upper = CLAMP((livingholder.melee_damage_upper / melee_upper_mult), 0, INFINITY)
 
-		livingholder.move_to_delay -= movement_adjust
+		livingholder.move_to_delay = CLAMP((livingholder.move_to_delay - movement_adjust), 0, INFINITY)
+		livingholder.move_to_delay = CLAMP((livingholder.move_to_delay / movement_adjust_mult), 0, INFINITY)
 
-		livingholder.inherent_projectile_mult -= inherent_projectile_mult
-		livingholder.inherent_projectile_increment -= inherent_projectile_increment
+		livingholder.inherent_projectile_increment = CLAMP((livingholder.inherent_projectile_increment - inherent_projectile_increment), 0, INFINITY)
+		livingholder.inherent_projectile_mult = CLAMP((livingholder.inherit_projectile_mult - inherent_projectile_mult), 0, INFINITY)
 
 		for (var/entry in projectile_adjust_increment)
-			livingholder.projectile_damage_increment[entry] -= projectile_adjust_increment[entry]
+			livingholder.projectile_damage_increment[entry] = CLAMP((livingholder.projectile_damage_increment[entry] - projectile_adjust_increment[entry]), 0, INFINITY)
 		for (var/entry in projectile_adjust_mult)
-			livingholder.projectile_damage_mult[entry] -= projectile_adjust_mult[entry]
+			livingholder.projectile_damage_mult[entry] = CLAMP((livingholder.projectile_damage_mult[entry] - projectile_damage_mult[entry]), 0, INFINITY)
 
-		livingholder.projectile_armor_penetration_adjustment -= projectile_armor_penetration_adjustment
-		livingholder.projectile_armor_penetration_mult -= projectile_armor_penetration_mult
+		livingholder.projectile_armor_penetration_adjustment = CLAMP((livingholder.projectile_armor_penetration_adjustment - projectile_armor_penetration_adjustment), 0, INFINITY)
+		livingholder.projectile_armor_penetration_mult = CLAMP((livingholder.projectile_armor_penetration_mult - projectile_armor_penetration_mult), 0, INFINITY)
 
-		livingholder.projectile_speed_increment -= projectile_speed_increment
-		livingholder.projectile_speed_mult -= projectile_speed_mult
+		livingholder.projectile_speed_increment = CLAMP((livingholder.projectile_speed_increment - projectile_speed_increment), 0, INFINITY)
+		livingholder.projectile_speed_mult = CLAMP((livingholder.projectile_speed_mult - projectile_speed_mult), 0, INFINITY)
 
 /datum/stat_modifier/mob/living/apply_to(atom/target)
 
@@ -70,15 +72,16 @@
 		livingtarget.melee_damage_upper = CLAMP((livingtarget.melee_damage_upper + melee_upper_adjust), 0, INFINITY)
 		livingtarget.melee_damage_lower = CLAMP((livingtarget.melee_damage_lower + melee_lower_adjust), 0, INFINITY)
 
+		livingtarget.move_to_delay = CLAMP((livingtarget.move_to_delay * movement_adjust_mult), 0, INFINITY)
 		livingtarget.move_to_delay = CLAMP((livingtarget.move_to_delay + movement_adjust), 0, INFINITY)
 
 		livingtarget.inherent_projectile_mult = CLAMP((livingtarget.inherent_projectile_mult + inherent_projectile_mult), 0, INFINITY)
 		livingtarget.inherent_projectile_increment = CLAMP((livingtarget.inherent_projectile_increment + inherent_projectile_increment), 0, INFINITY)
 
 		for (var/entry in projectile_adjust_increment)
-			livingtarget.projectile_damage_increment[entry] += projectile_adjust_increment[entry]
+			livingtarget.projectile_damage_increment[entry] += CLAMP((livingtarget.projectile_damage_increment[entry] + projectile_adjust_increment[entry]), 0, INFINITY)
 		for (var/entry in projectile_adjust_mult)
-			livingtarget.projectile_damage_mult[entry] += projectile_adjust_mult[entry]
+			livingtarget.projectile_damage_mult[entry] += CLAMP((livingtarget.projectile_damage_mult[entry] + projectile_adjust_mult[entry]), 0, INFINITY)
 
 		livingtarget.projectile_armor_penetration_adjustment = CLAMP((livingtarget.projectile_armor_penetration_adjustment + projectile_armor_penetration_adjustment), 0, INFINITY)
 		livingtarget.projectile_armor_penetration_mult = CLAMP((livingtarget.projectile_armor_penetration_mult + projectile_armor_penetration_mult), 0, INFINITY)
