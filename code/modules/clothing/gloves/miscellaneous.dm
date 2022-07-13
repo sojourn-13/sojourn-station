@@ -100,6 +100,79 @@
 	item_state = "ihscombat"
 	armor_list = list(melee = 10, bullet = 60, energy = 10, bomb = 10, bio = 0, rad = 0)
 
+/obj/item/clothing/gloves/thick/swat/blackshield_corpsman
+	name = "corpsman combat gloves"
+	desc = "A pair of fire and impact-resistant corpsman combat gloves. This pair has an extra rubbery coating to help prevent germs."
+	icon_state = "corpsman_base_gloves"
+	item_state = "corpsman_base_gloves"
+	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 15, rad = 0)
+	siemens_coefficient = 0
+	price_tag = 250
+
+/obj/item/clothing/gloves/thick/swat/blackshield_corpsman/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Basics"] = "corpsman_base_gloves"
+	options["Night Camo"] = "corpsman_black_gloves"
+	options["Gray Clays Camo"] = "corpsman_drab_gloves"
+	options["Jungle Camo"] = "corpsman_green_gloves"
+	options["Swamp Camo"] = "corpsman_tan_gloves"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return TRUE
+
+
+/obj/item/clothing/gloves/thick/swat/blackshield //Combined effect of SWAT gloves and insulated gloves
+	name = "blackshield combat gloves"
+	icon_state = "bs_base_gloves"
+	item_state = "bs_base_gloves"
+	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
+	siemens_coefficient = 0
+	price_tag = 250
+
+/obj/item/clothing/gloves/thick/swat/blackshield/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Basics"] = "bs_base_gloves"
+	options["Night Camo"] = "bs_black_gloves"
+	options["Gray Clays Camo"] = "bs_drab_gloves"
+	options["Jungle Camo"] = "bs_green_gloves"
+	options["Swamp Camo"] = "bs_tan_gloves"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return TRUE
+
+
 /obj/item/clothing/gloves/thick/combat //Combined effect of SWAT gloves and insulated gloves
 	desc = "A pair of fire, shock-proof, and impact-resistant combat gloves."
 	name = "combat gloves"
@@ -108,6 +181,7 @@
 	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
 	price_tag = 250
+
 
 /obj/item/clothing/gloves/thick/hunter
 	desc = "Tough, tight fitting and reinforced with bone this pair of leather gloves blend a perfect compromise between durability and comfort thanks to the different materials used."

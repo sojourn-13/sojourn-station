@@ -121,6 +121,7 @@
 #define APPEARANCE_ALL       0xFFFF
 
 // Click cooldown
+#define DEFAULT_LONG_COOLDOWN   16//Extra long timeout for some gear
 #define DEFAULT_ATTACK_COOLDOWN 8 //Default timeout for aggressive actions
 #define DEFAULT_QUICK_COOLDOWN  4
 

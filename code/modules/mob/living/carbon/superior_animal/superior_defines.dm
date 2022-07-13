@@ -17,6 +17,8 @@
 
 	/// Does this mob advance if they can't see their target?
 	var/advance_if_cant_see = FALSE
+	/// Chance to fire a projectile if it would hit a friendly.
+	var/do_friendly_fire_chance = 10
 
 	/// Do we randomly retarget?
 	var/retarget = TRUE
