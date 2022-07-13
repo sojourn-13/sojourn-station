@@ -38,10 +38,11 @@
 
 	max_health_adjustment = -15
 
-	movement_adjust = -2 // fast
+	movement_adjust = -1 // fast
 
 	projectile_armor_penetration_adjustment = 15
-	armor_penetration = 15
+	armor_penetration_mult = 1.3
+	armor_penetration_zeroth = 0.1
 
 	melee_lower_mult = 1.5
 	melee_upper_mult = 1.5
