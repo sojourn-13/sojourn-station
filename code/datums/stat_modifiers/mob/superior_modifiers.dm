@@ -10,17 +10,17 @@
 		agony = 0
 	)
 
-	var/flash_armor
-	var/flash_armor_mult
-	var/flash_armor_zeroth = 0.5
+	var/flash_resistances_increment
+	var/flash_resistances_mult
+	var/flash_resistances_zeroth = 0.5
 
-	var/armor_penetration
+	var/armor_penetration_increment
 	var/armor_penetration_mult
 	var/armor_penetration_zeroth = 0
 
-	var/rapid_adjustment
-	var/rapid_mult
-	var/rapid_fire_zeroth = 0.5
+	var/rapid_fire_shooting_amount_increment
+	var/rapid_fire_shooting_amount_mult
+	var/rapid_fire_shooting_amount_zeroth = 0.5
 
 	var/delay_for_rapid_range_adjustment
 	var/delay_for_rapid_range_mult
@@ -38,21 +38,21 @@
 	var/delayed_mult
 	var/delayed_zeroth = 0.5
 
-	var/poison_adjustment
-	var/poison_mult
+	var/poison_per_bite_adjustment
+	var/poison_per_bite_mult
 	var/poison_per_bite_zeroth = 0
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/remove()
 	if (issuperioranimal(holder))
 		var/mob/living/carbon/superior_animal/superior_holder = holder
 
-		if (flash_armor)
-			superior_holder.flash_resistances = ZERO_OR_MORE(superior_holder.flash_resistances - flash_armor)
-		if (flash_armor_mult)
-			superior_holder.flash_resistances = ZERO_OR_MORE(round(superior_holder.flash_resistances / flash_armor_mult))
+		if (flash_resistances_increment)
+			superior_holder.flash_resistances = ZERO_OR_MORE(superior_holder.flash_resistances - flash_resistances_increment)
+		if (flash_resistances_mult)
+			superior_holder.flash_resistances = ZERO_OR_MORE(round(superior_holder.flash_resistances / flash_resistances_mult))
 
-		if (armor_penetration)
-			superior_holder.armor_penetration = ZERO_OR_MORE(superior_holder.armor_penetration - armor_penetration)
+		if (armor_penetration_increment)
+			superior_holder.armor_penetration = ZERO_OR_MORE(superior_holder.armor_penetration - armor_penetration_increment)
 		if (armor_penetration_mult)
 			superior_holder.armor_penetration = ZERO_OR_MORE(superior_holder.armor_penetration / armor_penetration_mult)
 
@@ -63,20 +63,20 @@
 			superior_holder.fire_delay = ZERO_OR_MORE(round(superior_holder.fire_delay / fire_delay_mult))
 			superior_holder.fire_delay_initial = ZERO_OR_MORE(round(superior_holder.fire_delay_initial / fire_delay_mult))
 
-		if (rapid_adjustment)
-			superior_holder.rapid_fire_shooting_amount = ZERO_OR_MORE(superior_holder.rapid_fire_shooting_amount - rapid_adjustment)
-		if (rapid_mult)
-			superior_holder.rapid_fire_shooting_amount = ZERO_OR_MORE(round(superior_holder.rapid_fire_shooting_amount / rapid_mult))
+		if (rapid_fire_shooting_amount_increment)
+			superior_holder.rapid_fire_shooting_amount = ZERO_OR_MORE(superior_holder.rapid_fire_shooting_amount - rapid_fire_shooting_amount_increment)
+		if (rapid_fire_shooting_amount_mult)
+			superior_holder.rapid_fire_shooting_amount = ZERO_OR_MORE(round(superior_holder.rapid_fire_shooting_amount / rapid_fire_shooting_amount_mult))
 		if (superior_holder.rapid_fire_shooting_amount <= 0)
 			superior_holder.rapid = FALSE
 
 		if (issuperiorspider(superior_holder))
 			var/mob/living/carbon/superior_animal/giant_spider/spider_target = holder
 
-			if (poison_adjustment)
-				spider_target.poison_per_bite = ZERO_OR_MORE(spider_target.poison_per_bite - poison_adjustment)
-			if (poison_mult)
-				spider_target.poison_per_bite = ZERO_OR_MORE(spider_target.poison_per_bite / poison_mult)
+			if (poison_per_bite_adjustment)
+				spider_target.poison_per_bite = ZERO_OR_MORE(spider_target.poison_per_bite - poison_per_bite_adjustment)
+			if (poison_per_bite_mult)
+				spider_target.poison_per_bite = ZERO_OR_MORE(spider_target.poison_per_bite / poison_per_bite_mult)
 
 		if (delay_for_range_adjustment)
 			superior_holder.delay_for_range = ZERO_OR_MORE(superior_holder.delay_for_range - delay_for_range_adjustment)
@@ -112,15 +112,15 @@
 				else
 					superior_target.armor[key] = armor_adjustment[key]
 
-		if (flash_armor_mult)
-			superior_target.flash_resistances = ZERO_OR_MORE(round(SAFEMULT(superior_target.flash_resistances, flash_armor_mult, flash_armor_zeroth)))
-		if (flash_armor)
-			superior_target.flash_resistances = ZERO_OR_MORE(superior_target.flash_resistances + flash_armor)
+		if (flash_resistances_mult)
+			superior_target.flash_resistances = ZERO_OR_MORE(round(SAFEMULT(superior_target.flash_resistances, flash_resistances_mult, flash_resistances_zeroth)))
+		if (flash_resistances_increment)
+			superior_target.flash_resistances = ZERO_OR_MORE(superior_target.flash_resistances + flash_resistances_increment)
 
 		if (armor_penetration_mult)
 			superior_target.armor_penetration = (SAFEMULT(superior_target.armor_penetration, armor_penetration_mult, armor_penetration_zeroth))
-		if (armor_penetration)
-			superior_target.armor_penetration = (superior_target.armor_penetration + armor_penetration)
+		if (armor_penetration_increment)
+			superior_target.armor_penetration = (superior_target.armor_penetration + armor_penetration_increment)
 
 		if (fire_delay_mult)
 			superior_target.fire_delay_initial = ZERO_OR_MORE(round(SAFEMULT(superior_target.fire_delay_initial, fire_delay_mult, fire_delay_zeroth)))
@@ -141,10 +141,10 @@
 			superior_target.delayed_initial = ZERO_OR_MORE(superior_target.delayed_initial + delayed_adjustment)
 			superior_target.delayed = ZERO_OR_MORE(superior_target.delayed + delayed_adjustment)
 
-		if (rapid_mult)
-			superior_target.rapid_fire_shooting_amount = ZERO_OR_MORE(round(SAFEMULT(superior_target.rapid_fire_shooting_amount, rapid_mult, rapid_fire_zeroth)))
-		if (rapid_adjustment)
-			superior_target.rapid_fire_shooting_amount = ZERO_OR_MORE(superior_target.rapid_fire_shooting_amount + rapid_adjustment)
+		if (rapid_fire_shooting_amount_mult)
+			superior_target.rapid_fire_shooting_amount = ZERO_OR_MORE(round(SAFEMULT(superior_target.rapid_fire_shooting_amount, rapid_fire_shooting_amount_mult, rapid_fire_shooting_amount_zeroth)))
+		if (rapid_fire_shooting_amount_increment)
+			superior_target.rapid_fire_shooting_amount = ZERO_OR_MORE(superior_target.rapid_fire_shooting_amount + rapid_fire_shooting_amount_increment)
 		if ((superior_target.rapid_fire_shooting_amount > 0) && (!(superior_target.rapid))) //if we are rapid firing and dont have the var set, lets set it
 			superior_target.rapid = TRUE
 
@@ -156,10 +156,10 @@
 		if (issuperiorspider(superior_target))
 			var/mob/living/carbon/superior_animal/giant_spider/spider_target = target
 
-			if (poison_mult)
-				spider_target.poison_per_bite = ZERO_OR_MORE(SAFEMULT(spider_target.poison_per_bite, poison_mult, poison_per_bite_zeroth))
-			if (poison_adjustment)
-				spider_target.poison_per_bite = ZERO_OR_MORE(spider_target.poison_per_bite + poison_adjustment)
+			if (poison_per_bite_mult)
+				spider_target.poison_per_bite = ZERO_OR_MORE(SAFEMULT(spider_target.poison_per_bite, poison_per_bite_mult, poison_per_bite_zeroth))
+			if (poison_per_bite_adjustment)
+				spider_target.poison_per_bite = ZERO_OR_MORE(spider_target.poison_per_bite + poison_per_bite_adjustment)
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/durable
 
@@ -170,7 +170,7 @@
 	agony = 30
 	)
 
-	flash_armor = 1
+	flash_resistances_increment = 1
 
 	prefix = "Durable"
 
@@ -191,7 +191,7 @@
 	melee_lower_adjust = 2
 	melee_upper_adjust = 2
 	max_health_adjustment = 5
-	armor_penetration = 2
+	armor_penetration_increment = 2
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG
 
@@ -281,7 +281,7 @@
 		agony = 30
 	)
 
-	flash_armor = 4
+	flash_resistances_increment = 4
 
 	melee_lower_mult = 1.3
 	melee_upper_mult = 1.3

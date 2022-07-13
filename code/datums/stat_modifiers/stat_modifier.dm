@@ -1,4 +1,15 @@
-/// Stat modifier datum. Used in applying modifications to a given object's stats or behaviors.
+/**
+ * Stat modifier datum. Used in applying modifications to a given object's stats or behaviors.
+ *
+ * Variable format for most vars:
+ *
+ * variable_mult = The variable will be multiplied by this number. Can be a deicmal. Applied before the increment.
+ *
+ * variable_zeroth = When multiplying the variable by variable_mult, if the variable is zero, variable_zeroth will be added to it to prevent zero multiplication.
+ * Can be set to zero to allow zero multiplication.
+ *
+ * variable_increment = The variable will be incremented by this number. Can be a decimal. Applied after the mult.
+**/
 /datum/stat_modifier
 	/// If our holder's current_stat_modifiers list has more or equal instances of ourself, compared to this, we return and remove it from their allowed list.
 	var/maximum_instances = 1
@@ -10,10 +21,11 @@
 	var/prefix = null
 
 	/// Changes max health by the entered value.
-	var/max_health_adjustment
-	var/max_health_mult
+	var/maxHealth_increment
+	/// Multiplies max health by the entered value.
+	var/maxHealth_mult
 	/// The zeroth of any given var is, if the multiplied value is zero, the value that will be added to it before it is multiplied, used to prevent multiplication with zero.
-	var/max_health_zeroth = 0.1
+	var/maxHealth_zeroth = 0.1
 
 	/// Every non-duplicate description will be printed when the holder is examined.
 	var/description = null
@@ -26,13 +38,13 @@
 /// Inverts all effects the modifier provided, and optionally qdeletes it.
 /datum/stat_modifier/proc/remove(qdel_src = TRUE)
 
-	if (max_health_adjustment)
-		holder.maxHealth = ZERO_OR_MORE((holder.maxHealth - max_health_adjustment))
-		holder.health = ZERO_OR_MORE((holder.health - max_health_adjustment))
+	if (maxHealth_increment)
+		holder.maxHealth = ZERO_OR_MORE((holder.maxHealth - maxHealth_increment))
+		holder.health = ZERO_OR_MORE((holder.health - maxHealth_increment))
 
-	if (max_health_mult)
-		holder.maxHealth = ZERO_OR_MORE((holder.maxHealth / max_health_mult))
-		holder.health = ZERO_OR_MORE((holder.health / max_health_mult))
+	if (maxHealth_mult)
+		holder.maxHealth = ZERO_OR_MORE((holder.maxHealth / maxHealth_mult))
+		holder.health = ZERO_OR_MORE((holder.health / maxHealth_mult))
 
 	holder.prefixes -= prefix
 	holder.update_prefixes()
@@ -40,7 +52,8 @@
 	holder.current_stat_modifiers -= src
 	holder = null
 
-	qdel(src)
+	if (qdel_src)
+		qdel(src)
 
 	return TRUE
 
@@ -88,13 +101,13 @@
 
 		target.update_prefixes()
 
-	if (max_health_mult)
-		target.maxHealth = ZERO_OR_MORE(SAFEMULT(target.maxHealth, max_health_mult, max_health_zeroth))
-		target.health = ZERO_OR_MORE(SAFEMULT(target.health, max_health_mult, max_health_zeroth))
+	if (maxHealth_mult)
+		target.maxHealth = ZERO_OR_MORE(SAFEMULT(target.maxHealth, maxHealth_mult, maxHealth_zeroth))
+		target.health = ZERO_OR_MORE(SAFEMULT(target.health, maxHealth_mult, maxHealth_zeroth))
 
-	if (max_health_adjustment)
-		target.maxHealth = ZERO_OR_MORE((target.maxHealth + max_health_adjustment))
-		target.health = ZERO_OR_MORE((target.health + max_health_adjustment))
+	if (maxHealth_increment)
+		target.maxHealth = ZERO_OR_MORE((target.maxHealth + maxHealth_increment))
+		target.health = ZERO_OR_MORE((target.health + maxHealth_increment))
 
 	return TRUE
 
