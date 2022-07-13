@@ -5,6 +5,16 @@
 	move_to_delay = 3
 	pass_flags = PASSTABLE
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 100, // low chance
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 15,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/ = 2,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic = 6,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quick = 5,
+	)
+
 
 /mob/living/carbon/superior_animal/robot/greyson/roomba/slayer
 	name = "Greyson Positronic RMB-A unit"
@@ -59,6 +69,8 @@
 	move_to_delay = 4
 	melee_damage_lower = 10
 	melee_damage_upper = 10
+
+	get_stat_modifier = FALSE // n o .
 
 /mob/living/carbon/superior_animal/robot/greyson/roomba/boomba/UnarmedAttack()
 	. = ..()

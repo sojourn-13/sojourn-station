@@ -10,6 +10,20 @@
 	maxHealth = 125
 	cleaning = FALSE
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 100, //50% chance to have no prefix if we add all others up to this value i think
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 25,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic = 2, //we dont want them ALWAYS to be mega super fast
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 15,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage/robotic = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 5,
+	)
+
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol
 	name = "Greyson Positronic FBP-SEC Mark I unit"
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one has an old style energy pistol built into its arm."
@@ -31,6 +45,20 @@
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/beam/pulse/drone
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 100, //50% chance to have no prefix if we add all others up to this value i think
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 25,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic = 2, //we dont want them ALWAYS to be mega super fast
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 15,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage/robotic = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 20, // more aggressive
+		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 5,
+	)
+
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle
 	name = "Greyson Positronic FBP-SEC Mark III unit"
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one has a modified heavy duty cog carbine built into its arm."
@@ -51,6 +79,8 @@
 	name = "Greyson Positronic FBP-SEC Sniper unit"
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one has an overclocked and overcharged hyper cog laser rifle built into its arm, and a scope in its visor."
 	icon_state = "nano_alt"
+
+	get_stat_modifier = FALSE
 
 	projectiletype = /obj/item/projectile/beam/sniper
 	telegraph_beam_color = COLOR_ORANGE

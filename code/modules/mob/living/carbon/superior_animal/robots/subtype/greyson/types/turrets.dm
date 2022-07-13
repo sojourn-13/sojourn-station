@@ -32,6 +32,21 @@
 	melee_damage_upper = 17
 	destroy_surroundings = FALSE
 	armor = list(melee = 35, bullet = 25, energy = 40, bomb = 60, bio = 100, rad = 100) //We want to be gunned down, not lasered
+
+	times_to_get_stat_modifiers = 2 //two prefixes
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 100, //50% chance to have no prefix if we add all others up to this value i think
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 25,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 20, //these guys are old
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage/robotic = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 5,
+	)
+
 	contaminant_immunity = TRUE
 
 	light_range = 3
@@ -123,6 +138,8 @@
 	mags_left = 2
 
 	armor = list(melee = 35, bullet = 50, energy = 80, bomb = 100, bio = 100, rad = 100) //if people want to melee the stalker that explodes apon death, power to them
+
+	get_stat_modifier = FALSE // lol no
 
 	maxHealth = 550 //very tanky
 	health = 550

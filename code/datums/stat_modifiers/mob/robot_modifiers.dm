@@ -27,3 +27,9 @@
 	prefix = "Overclocked"
 
 	description = "This one seems to be running an unstable overclock, enhancing its own speed and damage capabilities while compromising its own defense."
+
+/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic
+
+	prefix = "Quickfire"
+
+	description = "This one's firing mechanisms seem to mistuned and hastened. Their shots are likely to come out faster, at the cost of their precision, thus at the cost of their damage and armor penetration."

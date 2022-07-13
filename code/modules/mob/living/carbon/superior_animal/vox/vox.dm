@@ -26,6 +26,20 @@
 
 	armor = list(melee = 10, bullet = 15, energy = 5, bomb = 20, bio = 20, rad = 0)
 
+	get_stat_modifier = TRUE
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/none = 100, //50% chance to have no prefix if we add all others up to this value i think
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 30,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 15,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 15,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 3,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 6,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quick = 9
+	)
+
 	fire_verb = "flings a rock"
 
 	melee_damage_lower = 12

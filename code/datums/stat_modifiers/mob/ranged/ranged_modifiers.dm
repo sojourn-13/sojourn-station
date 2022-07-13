@@ -20,7 +20,7 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger
 
 	rapid_fire_shooting_amount_mult = 2 //pretty noticable damage increase
-	delay_for_rapid_range_mult = 0.8
+	delay_for_rapid_range_mult = 0.5 //half the delay
 
 	projectile_armor_penetration_mult = 0.7
 
