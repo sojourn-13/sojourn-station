@@ -50,3 +50,5 @@
 
 /mob/living/carbon/superior_animal/psi_monster/pus_maggot/summoned
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/low_chance
+	drop_items = list(/obj/random/psi/low_chance)
+
