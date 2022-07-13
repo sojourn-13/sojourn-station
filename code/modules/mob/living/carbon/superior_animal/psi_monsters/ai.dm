@@ -20,6 +20,7 @@
 		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
 
 	new momento_mori(src.loc)
+	drop_death_loot(src.loc)
 
 	if(death_present)
 		src.visible_message(SPAN_DANGER(death_gasp))
@@ -38,5 +39,6 @@
 		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
 
 	new momento_mori(src.loc)
+	drop_death_loot(src.loc)
 
 	. = ..()

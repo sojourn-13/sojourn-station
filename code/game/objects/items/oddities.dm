@@ -25,8 +25,11 @@
 /obj/item/oddity/Initialize()
 	. = ..()
 	AddComponent(/datum/component/atom_sanity, sanity_value, "")
-	var/my_area = get_area(loc)
-	if(my_area == /area/deepmaint)
+	var/area/my_area = get_area(src.loc)
+	if(!my_area)
+		oddity_rolling()
+		return
+	if(my_area.name == "Deep Maintenance") //Shockingly this is how get area works
 		upgraded_oddity_rolling()
 	else
 		oddity_rolling()
@@ -41,12 +44,12 @@
 		AddComponent(/datum/component/inspiration, oddity_stats, perk)
 
 /obj/item/oddity/proc/upgraded_oddity_rolling()
-	if(!perk && prob(prob_perk))
-		perk = get_oddity_perk()
+	if(!perk && prob(prob_perk+5))
+		perk = get_good_perk()
 	if(oddity_stats)
 		if(random_stats)
 			for(var/stat in oddity_stats)
-				oddity_stats[stat] = rand(round(min_stats * 1.5), round(oddity_stats[stat] * 1.5))
+				oddity_stats[stat] = round((oddity_stats[stat] = rand(min_stats, oddity_stats[stat]) * 1.5))
 		AddComponent(/datum/component/inspiration, oddity_stats, perk)
 
 /proc/get_oddity_perk()
