@@ -163,7 +163,7 @@
 	if(weakened)
 		return
 
-	if(ckey)
+	if(ckey) //prevents players from having process on a mob theyre controlling
 		return
 
 	if (AI_inactive)
@@ -199,11 +199,11 @@
 			handle_hostile_stance(targetted_mob)
 
 		if(HOSTILE_STANCE_ATTACKING)
-			if (delayed == 0)
-				delayed = delayed_initial
-				handle_attacking_stance(targetted_mob)
+			if (delayed == 0) // is our targetting delayed still?
+				delayed = delayed_initial // if not, reset the value
+				handle_attacking_stance(targetted_mob) // and attack
 			else
-				delayed--
+				delayed-- // decrement it, we'll check again next tick
 
 	//random movement
 	if(wander && !stop_automated_movement && !anchored)
@@ -222,10 +222,10 @@
 
 /mob/living/carbon/superior_animal/proc/handle_hostile_stance(var/atom/targetted_mob) //here so we can jump instantly to it if hostile stance is established
 	var/already_destroying_surroundings = FALSE
-	var/calculated_walk = (comfy_range - comfy_distance)
+	var/calculated_walk = (comfy_range - comfy_distance) //the distance for walk_to() we will use on ranged mobs
 	if(destroy_surroundings)
 		destroySurroundings()
-		already_destroying_surroundings = TRUE
+		already_destroying_surroundings = TRUE //setting this var prevents double destruction when handle_attacking_stance is called
 	if(ranged)
 
 		stop_automated_movement = TRUE
@@ -250,16 +250,15 @@
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings)
 
 /mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE)
-	var/calculated_walk = (comfy_range - comfy_distance)
-	var/fire_through_lost_sight = FALSE
-	var/can_see = TRUE
-	var/ran_see_check = FALSE
-	var/mob/targetted_mob_real = null
-	var/obj/mecha/targetted_mecha = null
-	var/target_location_resolved = (target_location?.resolve())
-	var/obj/item/projectile/trace
+	var/calculated_walk = (comfy_range - comfy_distance) //the distance for walk_to() we will use on ranged mobs
+	var/fire_through_lost_sight = FALSE //will we continue to fire, even if we cant see them?
+	var/can_see = TRUE // did our sight check say we still see them?
+	var/ran_see_check = FALSE // have we ran our see check?
+	var/mob/targetted_mob_real = null // the true value of target_mob?.resolve(), if its a mob, needed for determining if we will use hearers or can_see in our see check
+	var/target_location_resolved = (target_location?.resolve()) // we will target this if this tick's can_see is FALSE
+	var/obj/item/projectile/trace // the projectile that ranged mobs use when testing trajectory
 	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
-	if(destroy_surroundings && !already_destroying_surroundings)
+	if(destroy_surroundings && !already_destroying_surroundings) // the second check prevents handle_hostile_stance from causing double destruction
 		destroySurroundings()
 
 	if (!(isburrow(targetted_mob))) //we dont want mobs failing to use the burrows
@@ -269,40 +268,40 @@
 			targetted_mob_real = targetted_mob
 
 		else if (ismecha(targetted_mob))
-			targetted_mecha = targetted_mob
+			var/obj/mecha/targetted_mecha = targetted_mob
 			if (targetted_mecha.occupant && ismob(targetted_mecha.occupant))
 				targetted_mob_real = targetted_mecha.occupant
 
-		if (!ran_see_check)
-			if (!see_through_walls)
-				if (targetted_mob_real && (targetted_mob_real.client))
-					if (!(targetted_mob in hearers(get_dist(src, targetted_mob), src)))
+		if (!ran_see_check) //have we already run this check? redundant check, currently
+			if (!see_through_walls) // we can skip these checks if we can always see our target
+				if (targetted_mob_real && (targetted_mob_real.client)) // is our target_mob a mob with a player controlling it?
+					if (!(targetted_mob in hearers(get_dist(src, targetted_mob), src))) //we can afford a more expensive proc for the sake of making the player experience with ai better
 						can_see = FALSE
-				else if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) //if we cant see them, hearers() wont show them, so lets remove the override
+				else if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) // if not, lets use a inaccurate cheap proc
 					can_see = FALSE
-			ran_see_check = TRUE
+			ran_see_check = TRUE  //if we cant see them, hearers() wont show them, so lets remove the override
 
-		if (!lost_sight)
+		if (!lost_sight) // if we've, in a previous iteration of this proc, lost sight of our target, lets not update the location of the target
 			target_location = WEAKREF(targetted_mob.loc) //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
 		target_location_resolved = (target_location?.resolve())
-		if (retarget)
+		if (retarget) // do we randomly retarget?
 			var/retarget_prioritize = retarget_prioritize_current //local var so that we can make temporary changes
-			if (retarget_timer <= 0)
-				if (!can_see)
+			if (retarget_timer <= 0) // has our timer reached its end?
+				if (!can_see) // if so, we can remove the override so we dont target onto something we cant even see
 					retarget_prioritize = FALSE //removing override
-				var/target_mob_cache = target_mob
-				target_mob = WEAKREF(findTarget(retarget_prioritize))
+				var/target_mob_cache = target_mob //we store the value of target_mob so we can reference the new value with the previous value
+				target_mob = WEAKREF(findTarget(retarget_prioritize)) // find a new target
 				retarget_timer = retarget_timer_initial //reset the timer
-				if (!target_mob)
-					target_mob = target_mob_cache //lets let the rest of the code handle this
-				else
-					if (target_mob != target_mob_cache)
-						lost_sight = FALSE // we dont want any weird stuff happening, so lets be safe and set it to false
-					targetted_mob = (target_mob?.resolve())
+				if (!target_mob) // if we found nothing...
+					target_mob = target_mob_cache //...we have code for handling a mob we cant see
+				else // if we found something...
+					if (target_mob != target_mob_cache) //...and it isnt our last target...
+						lost_sight = FALSE //...we can probably see them, since hearers() found them, and hearers() is the ideal see check
+					targetted_mob = (target_mob?.resolve()) //regardless of the last if statement, we need to reset targetted_mob
 			else
-				retarget_timer--
+				retarget_timer-- //if it hasnt, lets decrement it and check next tick
 		// This block controls losing line of sight and targetting the last known location of the enemy
-		if (!can_see)
+		if (!can_see) // if we cant see our current target...
 			if (patience <= 0)
 				loseTarget()
 				patience = patience_initial
