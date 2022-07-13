@@ -5,7 +5,7 @@
 	icon = 'icons/obj/guns/projectile/bren.dmi'
 	icon_state = "bren"
 	item_state = "bren"
-	w_class = ITEM_SIZE_HUGE
+	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_LRIFLE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 4)

@@ -124,19 +124,21 @@
 	if (isliving(O))
 		var/mob/living/L = O
 		if(L.stat != CONSCIOUS)
-			return
+			return FALSE
 		if(L.health <= (ishuman(L) ? HEALTH_THRESHOLD_CRIT : 0))
-			return
+			return FALSE
 		if((!attack_same && (L.faction == faction)) || (L in friends)) //just cuz your a friend dosnt mean it magically will no longer attack same
-			return
+			return FALSE
 		if(L.friendly_to_colony && friendly_to_colony) //If are target and areselfs have the friendly to colony tag, used for chtmant protection
-			return
+			return FALSE
 		return TRUE
 
 	if (istype(O, /obj/mecha))
 		if (can_see(src, O, get_dist(src, O))) //can we even see it?
 			var/obj/mecha/M = O
 			return isValidAttackTarget(M.occupant)
+
+	return TRUE
 
 
 /mob/living/carbon/superior_animal/proc/destroySurroundings() //todo: make this better - Trilby

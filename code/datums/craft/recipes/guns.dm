@@ -186,6 +186,18 @@
 		list(QUALITY_SCREW_DRIVING, 10)
 	)
 
+/datum/craft_recipe/gun/maresleg
+	name = "\"Mares Leg\" lever shotgun"
+	result = /obj/item/gun/projectile/boltgun/lever/shotgun
+	steps = list(
+		list(/obj/item/gun/projectile/boltgun/lever, 1, time = 60),
+		list(QUALITY_ADHESIVE, 10, 60),
+		list(QUALITY_SCREW_DRIVING, 10),
+		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL),
+		list(QUALITY_BOLT_TURNING, 20, 30),
+		list(QUALITY_WELDING, 10, 20)
+	)
+
 /datum/craft_recipe/gun/makeshiftlaser
 	name = "makeshift laser carbine"
 	result = /obj/item/gun/energy/laser/makeshift

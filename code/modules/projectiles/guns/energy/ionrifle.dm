@@ -7,7 +7,7 @@
 	item_charge_meter = TRUE
 	fire_sound = 'sound/weapons/Laser.ogg'
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 4)
-	w_class = ITEM_SIZE_HUGE
+	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
 	flags = CONDUCT
 	slot_flags = SLOT_BACK

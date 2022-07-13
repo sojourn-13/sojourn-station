@@ -1121,7 +1121,7 @@
 
 /**
  * Fires a projectile that uses the exact same targetting, trajectory, penetration, etc. logic it normally would, but invisible, and without any of the other effects,
- * such as damage, visuals, sound, messages, etc. Registers firer to a signal on trace. All done in one tick, due to it being hitscan.
+ * such as damage, visuals, sound, messages, etc. Returns trace.
  *
  * Used for checking if the given projectile will hit the target.
  *
@@ -1129,10 +1129,8 @@
  * atom/movable/target: The target we are firing at.
  * atom/movable/firer: The source of the bullet, will be set as trace.firer.
  * proj: The typepath of the projectile to simulate.
- * proc_path: The proc that will be called when the signal is fired.
- * store_penetration: Will the simulated projectile share it's penetration data?
 **/
-/proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj, var/proc_path = null)
+/proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj)
 	var/obj/item/projectile/trace = new proj(get_turf(firer))
 	trace.testing = TRUE
 	trace.invisibility = INFINITY //nobody can see it

@@ -217,3 +217,5 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/list/planes_visible = null	// List of atom planes that are logically visible/interactable (list of actual plane numbers).
 
 	var/obj/effect/gibspawner/gibspawner = /obj/effect/gibspawner/generic // for xeno gibs, originally
+
+	var/click_delay_addition = 0
