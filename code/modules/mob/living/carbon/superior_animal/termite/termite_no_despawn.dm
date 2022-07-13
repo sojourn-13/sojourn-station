@@ -10,8 +10,6 @@
 	emote_see = list("rubs its legs")
 	speak_chance = 5
 
-	get_stat_modifier = TRUE
-
 	deathmessage = "splatters into a bloody mess."
 	attacktext = "chomped"
 	attack_sound = 'sound/weapons/bite.ogg'
@@ -19,14 +17,6 @@
 	fire_verb = "spits"
 	see_in_dark = 10
 	armor_penetration = 15
-
-	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 35,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 11,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 4,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 2,
-	)
 
 	fleshcolor = "#7C90B8"
 	bloodcolor = "#7C90B8"
@@ -115,14 +105,6 @@
 //Loot related variables
 	ore = /obj/item/stack/ore/silver
 
-	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 35,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 14,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 13,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 1,
-	)
-
 //Uranium Termite - ranged, slow, med-health, low damage
 /mob/living/carbon/superior_animal/termite_no_despawn/uranium
 	name = "Smertnik termite"
@@ -178,15 +160,6 @@
 //Loot related variables
 	ore = /obj/item/stack/ore/plasma
 
-	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 35,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 2,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 4,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 1,
-	)
-
 //Diamond Wurm - melee, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite_no_despawn/diamond
 	name = "Koroleva termite"
@@ -213,15 +186,6 @@
 
 //Loot related variables
 	ore = /obj/item/stack/ore/diamond
-
-	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 35,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 7,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 4,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 3,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
-	)
 
 //Osmium Termite - ranged, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite_no_despawn/osmium

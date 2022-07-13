@@ -36,12 +36,13 @@
 		agony = 50 //it doesnt care, it just wants you dead
 	)
 
-	max_health_adjustment = -15
+	max_health_mult = 0.8 //80% hp
 
-	movement_adjust = -1 // fast
+	movement_adjust = -1.3 // fast
 
-	projectile_armor_penetration_adjustment = 15
-	armor_penetration = 15
+	projectile_armor_penetration_mult = 1.5
+	armor_penetration_mult = 1.5
+	armor_penetration_zeroth = 0.1
 
 	melee_lower_mult = 1.5
 	melee_upper_mult = 1.5

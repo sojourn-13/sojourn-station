@@ -17,8 +17,6 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	emote_see = list("rubs its legs")
 	speak_chance = 5
 
-	get_stat_modifier = TRUE
-
 	deathmessage = "splatters into gore."
 	attacktext = "chomped"
 	attack_sound = 'sound/weapons/bite.ogg'
@@ -29,14 +27,6 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	fleshcolor = "#7C90B8"
 	bloodcolor = "#7C90B8"
 	armor_penetration = 5
-
-	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 35,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 11,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 4,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 2,
-	)
 
 	destroy_surroundings = TRUE
 	friendly_to_colony = FALSE
@@ -186,15 +176,6 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 //Loot related variables
 	ore = /obj/item/stack/ore/silver
 
-	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 35,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 14,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 13,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 1,
-	)
-
-
 //Uranium Termite - ranged, slow, med-health, low damage
 /mob/living/carbon/superior_animal/termite/uranium
 	name = "Smertnik termite"
@@ -250,16 +231,6 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 //Loot related variables
 	ore = /obj/item/stack/ore/plasma
 
-	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 35,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 2,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 4,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 1,
-	)
-
-
 //Diamond Wurm - melee, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite/diamond
 	name = "Koroleva termite"
@@ -286,15 +257,6 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 //Loot related variables
 	ore = /obj/item/stack/ore/diamond
-
-	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 35,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 7,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 9,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 4,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 3,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
-	)
 
 //Osmium Termite - ranged, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite/osmium

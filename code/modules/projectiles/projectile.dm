@@ -257,13 +257,13 @@
 				damage_types[entry] += livingfirer.projectile_damage_increment[entry]
 
 		if (livingfirer.projectile_armor_penetration_mult)
-			armor_penetration *= livingfirer.projectile_armor_penetration_mult
+			armor_penetration = SAFEMULT(armor_penetration, livingfirer.projectile_armor_penetration_mult, 0.1)
 
 		if (livingfirer.projectile_armor_penetration_adjustment)
 			armor_penetration += livingfirer.projectile_armor_penetration_adjustment
 
 		if (livingfirer.projectile_speed_mult)
-			step_delay *= livingfirer.projectile_speed_mult
+			step_delay = SAFEMULT(step_delay, livingfirer.projectile_speed_mult, 0.1)
 
 		if (livingfirer.projectile_speed_increment)
 			step_delay += livingfirer.projectile_speed_increment
