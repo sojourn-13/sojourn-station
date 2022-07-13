@@ -11,7 +11,7 @@
  * variable_increment = The variable will be incremented by this number. Can be a decimal. Applied after the mult.
 **/
 /datum/stat_modifier
-	/// If our holder's current_stat_modifiers list has more or equal instances of ourself, compared to this, we return and remove it from their allowed list.
+	/// If our holder's current_stat_modifiers list has more or equal instances of ourself, compared to this, we return and remove ourselves from their allowed list.
 	var/maximum_instances = 1
 
 	/// The atom we have applied our changes to
@@ -113,6 +113,8 @@
 
 /// Empty modifier. Does nothing. Returns false.
 /datum/stat_modifier/none
+
+	stattags = NOTHING_STATTAG
 
 /datum/stat_modifier/none/apply_to(var/atom/target)
 	return FALSE

@@ -34,9 +34,7 @@
 	var/move_to_delay_mult
 	var/move_to_delay_zeroth = 0.1
 
-/datum/stat_modifier/mob/living/remove()
-
-	. = ..()
+/datum/stat_modifier/mob/living/remove(qdel_src = TRUE)
 
 	if (isliving(holder))
 		var/mob/living/livingholder = holder
@@ -77,6 +75,8 @@
 			livingholder.projectile_speed_increment = ZERO_OR_MORE((livingholder.projectile_speed_increment - projectile_speed_increment))
 		if (projectile_speed_mult)
 			livingholder.projectile_speed_mult = ZERO_OR_MORE((livingholder.projectile_speed_mult - projectile_speed_mult))
+
+	return ..(qdel_src)
 
 /datum/stat_modifier/mob/living/apply_to(atom/target)
 

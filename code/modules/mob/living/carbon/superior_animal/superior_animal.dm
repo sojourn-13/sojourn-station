@@ -24,6 +24,8 @@
 	if (get_stat_modifier)
 		for (var/key in allowed_stat_modifiers)
 			var/datum/stat_modifier/mod = key
+			if (initial(mod.stattags) & NOTHING_STATTAG)
+				continue
 			if (initial(mod.stattags) & DEFENSE_STATTAG)
 				continue
 			if ((!(initial(mod.stattags) & MELEE_STATTAG)) && (!ranged))

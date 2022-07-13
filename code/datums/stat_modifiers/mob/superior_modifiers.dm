@@ -42,7 +42,7 @@
 	var/poison_per_bite_mult
 	var/poison_per_bite_zeroth = 0
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/remove()
+/datum/stat_modifier/mob/living/carbon/superior_animal/remove(qdel_src = TRUE)
 	if (issuperioranimal(holder))
 		var/mob/living/carbon/superior_animal/superior_holder = holder
 
@@ -96,7 +96,7 @@
 			superior_holder.delayed = ZERO_OR_MORE(superior_holder.delayed / delayed_mult)
 			superior_holder.delayed_initial = ZERO_OR_MORE(superior_holder.delayed_initial / delayed_mult)
 
-	return ..()
+	return ..(qdel_src)
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/apply_to(atom/target)
 

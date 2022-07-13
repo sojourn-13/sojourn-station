@@ -30,6 +30,7 @@
 #define RANGED_STATTAG (1<<2)
 #define DEFENSE_STATTAG (1<<3)
 #define NEGATIVE_DEFENSE_STATTAG (1<<4)
+#define NOTHING_STATTAG (1<<5)
 
 // Some arbitrary defines to be used by self-pruning global lists.
 #define PROCESS_KILL 26 // Used to trigger removal from a processing list.
