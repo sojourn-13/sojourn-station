@@ -262,7 +262,7 @@
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/quick
 
-	movement_adjust = -1
+	movement_adjust = -0.8
 	delay_for_range_mult = 0.8
 
 	stattags = DEFENSE_STATTAG
@@ -281,9 +281,7 @@
 		agony = 30
 	)
 
-	flash_armor = 2
-
-	armor_penetration = 5
+	flash_armor = 4
 
 	melee_lower_mult = 1.3
 	melee_upper_mult = 1.3

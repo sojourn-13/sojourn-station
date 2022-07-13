@@ -3,6 +3,9 @@
 	inherent_projectile_mult = 2 //a little more dps, but more easily avoided
 	projectile_armor_penetration_mult = 1.3
 
+	delay_for_range_mult = 1.2
+	delay_for_rapid_range_mult = 1.2
+
 	fire_delay_mult = 2
 	fire_delay_zeroth = 0.5 //at 0 fire delay, it gets multiplied from 0.5 to 1
 
@@ -17,6 +20,7 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger
 
 	rapid_mult = 2 //pretty noticable damage increase
+	delay_for_rapid_range_mult = 0.8
 
 	projectile_armor_penetration_mult = 0.7
 

@@ -25,9 +25,11 @@
 	/// Any projectiles fired by the holder will have their armor penetration multiplied by this much, added first
 	var/projectile_armor_penetration_mult
 
+	/// Inverted, lower = higher speed
 	var/projectile_speed_increment
 	var/projectile_speed_mult
 
+	/// Inverted, lower = higher speed
 	var/movement_adjust
 	var/movement_adjust_mult
 	var/movement_adjust_zeroth = 0.1
