@@ -242,31 +242,31 @@
 		var/mob/living/livingfirer = firer
 		if (livingfirer.inherent_projectile_mult)
 			for (var/entry in damage_types)
-				damage_types[entry] *= livingfirer.inherent_projectile_mult
+				damage_types[entry] = ZERO_OR_MORE(damage_types[entry] * livingfirer.inherent_projectile_mult) //no safemult, since if its 0, thats practically the same as it not being there at all
 
 		if (livingfirer.inherent_projectile_increment)
 			for (var/entry in damage_types)
-				damage_types[entry] += livingfirer.inherent_projectile_increment
+				damage_types[entry] = ZERO_OR_MORE(damage_types[entry] + livingfirer.inherent_projectile_increment)
 
-		if (livingfirer.projectile_damage_mult)
+		if (livingfirer.projectile_damage_mult.len)
 			for (var/entry in livingfirer.projectile_damage_mult)
-				damage_types[entry] *= livingfirer.projectile_damage_mult[entry]
+				damage_types[entry] = ZERO_OR_MORE(damage_types[entry] * livingfirer.projectile_damage_mult[entry])
 
-		if (livingfirer.projectile_damage_increment)
+		if (livingfirer.projectile_damage_increment.len)
 			for (var/entry in livingfirer.projectile_damage_increment)
-				damage_types[entry] += livingfirer.projectile_damage_increment[entry]
+				damage_types[entry] = ZERO_OR_MORE(damage_types[entry] + livingfirer.projectile_damage_increment[entry])
 
 		if (livingfirer.projectile_armor_penetration_mult)
 			armor_penetration = SAFEMULT(armor_penetration, livingfirer.projectile_armor_penetration_mult, 0.1)
 
 		if (livingfirer.projectile_armor_penetration_adjustment)
-			armor_penetration += livingfirer.projectile_armor_penetration_adjustment
+			armor_penetration += livingfirer.projectile_armor_penetration_adjustment // armor_penetration might work if negative, so no clamp
 
 		if (livingfirer.projectile_speed_mult)
-			step_delay = SAFEMULT(step_delay, livingfirer.projectile_speed_mult, 0.1)
+			step_delay = ZERO_OR_MORE(SAFEMULT(step_delay, livingfirer.projectile_speed_mult, 0.1))
 
 		if (livingfirer.projectile_speed_increment)
-			step_delay += livingfirer.projectile_speed_increment
+			step_delay = ZERO_OR_MORE(step_delay + livingfirer.projectile_speed_increment)
 
 	if(targloc == curloc) //Shooting something in the same turf
 		target.bullet_act(src, target_zone)

@@ -21,11 +21,11 @@
 
 	var/list/projectile_damage_increment = list()
 	var/list/projectile_damage_mult = list()
-	var/inherent_projectile_mult = 0
-	var/inherent_projectile_increment = 0
+	var/inherent_projectile_mult
+	var/inherent_projectile_increment
 
-	var/projectile_speed_increment = 0
-	var/projectile_speed_mult = 0
+	var/projectile_speed_increment
+	var/projectile_speed_mult
 
 	/// The mob groups, defined in admin.dm, this mob is in. Stored as keys.
 	var/list/groups_in = list()
@@ -33,8 +33,8 @@
 	var/list/obj/effect/bmode/buildholder/selected_by = list()
 
 	var/armor_penetration = 0 //Used for generic attacks
-	var/projectile_armor_penetration_adjustment = 0
-	var/projectile_armor_penetration_mult = 1
+	var/projectile_armor_penetration_adjustment
+	var/projectile_armor_penetration_mult
 
 	//Damage related vars, NOTE: THESE SHOULD ONLY BE MODIFIED BY PROCS
 	var/bruteloss = 0.0	//Brutal damage caused by brute force (punching, being clubbed by a toolbox ect... this also accounts for pressure damage)
