@@ -6,7 +6,9 @@
 	var/melee_lower_adjust
 
 	var/melee_upper_mult
+	var/melee_damage_upper_zeroth = 0
 	var/melee_lower_mult
+	var/melee_damage_lower_zeroth = 0
 
 	/// Any damage types here will be applied to any projectiles holder fires by adding the value to the damage of that type. Added after all other modifiers.
 	var/list/projectile_adjust_increment = list()
@@ -28,6 +30,7 @@
 
 	var/movement_adjust
 	var/movement_adjust_mult
+	var/movement_adjust_zeroth = 0.1
 
 /datum/stat_modifier/mob/living/remove()
 
@@ -81,9 +84,9 @@
 		var/mob/living/livingtarget = target
 
 		if (melee_upper_mult)
-			livingtarget.melee_damage_upper = ZERO_OR_MORE(SAFEMULT(livingtarget.melee_damage_upper, melee_upper_mult, 0.1))
+			livingtarget.melee_damage_upper = ZERO_OR_MORE(SAFEMULT(livingtarget.melee_damage_upper, melee_upper_mult, melee_damage_upper_zeroth))
 		if (melee_lower_mult)
-			livingtarget.melee_damage_lower = ZERO_OR_MORE(SAFEMULT(livingtarget.melee_damage_lower, melee_lower_mult, 0.1))
+			livingtarget.melee_damage_lower = ZERO_OR_MORE(SAFEMULT(livingtarget.melee_damage_lower, melee_lower_mult, melee_damage_lower_zeroth))
 
 		if (melee_upper_adjust)
 			livingtarget.melee_damage_upper = ZERO_OR_MORE((livingtarget.melee_damage_upper + melee_upper_adjust))
@@ -91,7 +94,7 @@
 			livingtarget.melee_damage_lower = ZERO_OR_MORE((livingtarget.melee_damage_lower + melee_lower_adjust))
 
 		if (movement_adjust_mult)
-			livingtarget.move_to_delay = ZERO_OR_MORE(SAFEMULT(livingtarget.move_to_delay, movement_adjust_mult, 0.1))
+			livingtarget.move_to_delay = ZERO_OR_MORE(SAFEMULT(livingtarget.move_to_delay, movement_adjust_mult, movement_adjust_zeroth))
 		if (movement_adjust)
 			livingtarget.move_to_delay = ZERO_OR_MORE((livingtarget.move_to_delay + movement_adjust))
 

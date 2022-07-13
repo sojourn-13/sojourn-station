@@ -12,6 +12,8 @@
 	/// Changes max health by the entered value.
 	var/max_health_adjustment
 	var/max_health_mult
+	/// The zeroth of any given var is, if the multiplied value is zero, the value that will be added to it before it is multiplied, used to prevent multiplication with zero.
+	var/max_health_zeroth = 0.1
 
 	/// Every non-duplicate description will be printed when the holder is examined.
 	var/description = null
@@ -87,8 +89,8 @@
 		target.update_prefixes()
 
 	if (max_health_mult)
-		target.maxHealth = ZERO_OR_MORE(SAFEMULT(target.maxHealth, max_health_mult, 0.1))
-		target.health = ZERO_OR_MORE(SAFEMULT(target.health, max_health_mult, 0.1))
+		target.maxHealth = ZERO_OR_MORE(SAFEMULT(target.maxHealth, max_health_mult, max_health_zeroth))
+		target.health = ZERO_OR_MORE(SAFEMULT(target.health, max_health_mult, max_health_zeroth))
 
 	if (max_health_adjustment)
 		target.maxHealth = ZERO_OR_MORE((target.maxHealth + max_health_adjustment))
