@@ -153,7 +153,7 @@
 					else if (ismob(entry))
 						possible_target = entry
 					if (possible_target)
-						if (possible_target = target)
+						if (possible_target == target)
 							continue //we made the concious choice to attack them
 						else if (!(prob(do_friendly_fire_chance)) && (((!attack_same && (possible_target.faction == faction)) || (possible_target in friends)) || (possible_target.friendly_to_colony && friendly_to_colony)))
 							do_we_shoot = FALSE

@@ -7,7 +7,7 @@
 	agony = 15 //Rubbers deal way less to us!
 	)
 
-	armor_penetration = 15
+	armor_penetration_increment = 15
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG
 
@@ -22,8 +22,8 @@
 	agony = 10
 	)
 
-	flash_armor = 2
-	armor_penetration = 5
+	flash_resistances_increment = 2
+	armor_penetration_increment = 5
 
 	stattags = DEFENSE_STATTAG
 

@@ -38,7 +38,7 @@
 	var/delayed_mult
 	var/delayed_zeroth = 0.5
 
-	var/poison_per_bite_adjustment
+	var/poison_per_bite_increment
 	var/poison_per_bite_mult
 	var/poison_per_bite_zeroth = 0
 
@@ -73,8 +73,8 @@
 		if (issuperiorspider(superior_holder))
 			var/mob/living/carbon/superior_animal/giant_spider/spider_target = holder
 
-			if (poison_per_bite_adjustment)
-				spider_target.poison_per_bite = ZERO_OR_MORE(spider_target.poison_per_bite - poison_per_bite_adjustment)
+			if (poison_per_bite_increment)
+				spider_target.poison_per_bite = ZERO_OR_MORE(spider_target.poison_per_bite - poison_per_bite_increment)
 			if (poison_per_bite_mult)
 				spider_target.poison_per_bite = ZERO_OR_MORE(spider_target.poison_per_bite / poison_per_bite_mult)
 
@@ -158,8 +158,8 @@
 
 			if (poison_per_bite_mult)
 				spider_target.poison_per_bite = ZERO_OR_MORE(SAFEMULT(spider_target.poison_per_bite, poison_per_bite_mult, poison_per_bite_zeroth))
-			if (poison_per_bite_adjustment)
-				spider_target.poison_per_bite = ZERO_OR_MORE(spider_target.poison_per_bite + poison_per_bite_adjustment)
+			if (poison_per_bite_increment)
+				spider_target.poison_per_bite = ZERO_OR_MORE(spider_target.poison_per_bite + poison_per_bite_increment)
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/durable
 
@@ -188,9 +188,9 @@
 		agony = 15
 		)
 
-	melee_lower_adjust = 2
-	melee_upper_adjust = 2
-	max_health_adjustment = 5
+	melee_damage_lower_increment = 2
+	melee_damage_upper_increment = 2
+	maxHealth_increment = 5
 	armor_penetration_increment = 2
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG
@@ -213,7 +213,7 @@
 
 	stattags = DEFENSE_STATTAG
 
-	max_health_adjustment = 10
+	maxHealth_increment = 10
 
 	prefix = "Padded"
 
@@ -228,8 +228,8 @@
 		agony = 20 //just cant feel it
 	)
 
-	max_health_adjustment = 20 //life already seen them by
-	movement_adjust = 1 // Very slow
+	maxHealth_increment = 20 //life already seen them by
+	move_to_delay_increment = 1 // Very slow
 
 	stattags = DEFENSE_STATTAG
 
@@ -248,9 +248,9 @@
 		agony = -5
 	)
 
-	max_health_adjustment = -10
+	maxHealth_increment = -10
 
-	movement_adjust = -0.5
+	move_to_delay_increment = -0.5
 
 	delay_for_range_mult = 0.8
 
@@ -262,7 +262,7 @@
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/quick
 
-	movement_adjust = -0.8
+	move_to_delay_increment = -0.8
 	delay_for_range_mult = 0.8
 
 	stattags = DEFENSE_STATTAG
@@ -283,14 +283,14 @@
 
 	flash_resistances_increment = 4
 
-	melee_lower_mult = 1.3
-	melee_upper_mult = 1.3
+	melee_damage_lower_mult = 1.3
+	melee_damage_upper_mult = 1.3
 
 	inherent_projectile_mult = 1.3
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG | RANGED_STATTAG
 
-	movement_adjust = 1.3
+	move_to_delay_increment = 1.3
 
 	prefix = "Brutal"
 

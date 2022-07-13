@@ -4,8 +4,8 @@
 		energy = 10
 	)
 
-	flash_armor = 2
-	armor_penetration = 15
+	flash_resistances_increment = 2
+	armor_penetration_increment = 15
 
 	prefix = "Lustrous"
 
@@ -22,9 +22,9 @@
 		agony = 30
 	)
 
-	armor_penetration = 5
-	flash_armor = 1
-	max_health_adjustment = 20
+	armor_penetration_increment = 5
+	flash_resistances_increment = 1
+	maxHealth_increment = 20
 
 	stattags = DEFENSE_STATTAG
 
@@ -39,10 +39,10 @@
 		agony = -5
 	)
 
-	max_health_adjustment = -10
+	maxHealth_increment = -10
 
-	movement_adjust = -0.5
-	poison_adjustment = -1
+	move_to_delay_increment = -0.5
+	poison_per_bite_increment = -1
 
 	stattags = DEFENSE_STATTAG
 
@@ -57,9 +57,9 @@
 		agony = 20 //just cant feel it
 	)
 
-	max_health_adjustment = 20 //life already seen them by
-	movement_adjust = 1 // Very slow
-	poison_adjustment = -1
+	maxHealth_increment = 20 //life already seen them by
+	move_to_delay_increment = 1 // Very slow
+	poison_per_bite_increment = -1
 
 	stattags = DEFENSE_STATTAG
 
@@ -76,7 +76,7 @@
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG
 
-	poison_adjustment = 1
+	poison_per_bite_increment = 1
 
 	prefix = "Venomous"
 
