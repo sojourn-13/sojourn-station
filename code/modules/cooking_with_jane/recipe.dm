@@ -29,7 +29,7 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 			<REQUIRED_ARGS>:
 				plantname - the seed id of the reagent being added
 			Example: list(CWJ_ADD_PRODUCE, "banana")
-			
+
 		CWJ_USE_TOOL
 			Uses a tool on the item. Going far and beyond the quality of the tool increases the quality of the product.
 			<REQUIRED_ARGS>:
@@ -83,7 +83,7 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 			Example: exact=TRUE
 
 		qmod
-			CWJ_ADD_ITEM ONLY:
+			CWJ_ADD_ITEM, CWJ_USE_TOOL ONLY:
 			modifier to adjust the inherited_quality_modifier on an add_item recipe step.
 			Example: qmod=0.5 //only 50% of the added item's quality will be inherited.
 

@@ -3,6 +3,7 @@
 	class=CWJ_USE_ITEM
 	var/tool_type
 	var/tool_quality
+	var/inherited_quality_modifier = 0.1
 
 //item_type: The type path of the object we are looking for.
 //base_quality_award: The quality awarded by following this step.
@@ -18,8 +19,20 @@
 
 
 /datum/cooking_with_jane/recipe_step/use_tool/check_conditions_met(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
-	return CWJ_CHECK_INVALID
+	if(!istype(added_item, /obj/item/tool ))
+		return CWJ_CHECK_INVALID
+
+	var/obj/item/tool/our_tool = added_item
+	if(!our_tool.has_quality(tool_type))
+		return CWJ_CHECK_INVALID
+
+	if(!our_tool.get_tool_quality(tool_type) < tool_quality)
+		return CWJ_CHECK_INVALID
+
+	return CWJ_CHECK_VALID
 
 //Think about a way to make this more intuitive?
 /datum/cooking_with_jane/recipe_step/use_item/calculate_quality(var/obj/added_item)
-	return clamp_quality(0)
+	var/obj/item/tool/our_tool = added_item
+	var/raw_quality = (tool_quality - our_tool.get_tool_quality(tool_type)) * inherited_quality_modifier
+	return clamp_quality(raw_quality)

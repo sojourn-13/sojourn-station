@@ -261,21 +261,21 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 
 /datum/cooking_with_jane/recipe/proc/set_exact_type_required(var/boolean)
-	if((last_created_step.class & CWJ_ADD_ITEM) || (last_created_step.class & CWJ_USE_ITEM))
+	if((last_created_step.class == CWJ_ADD_ITEM) || (last_created_step.class == CWJ_USE_ITEM))
 		last_created_step?:exact_path = boolean
 		return TRUE
 	else
 		return FALSE
 
 /datum/cooking_with_jane/recipe/proc/set_inherited_quality_modifier(var/modifier)
-	if(last_created_step.class & CWJ_ADD_ITEM)
+	if(last_created_step.class == CWJ_ADD_ITEM || last_created_step.class == CWJ_USE_TOOL)
 		last_created_step?:inherited_quality_modifier = modifier
 		return TRUE
 	else
 		return FALSE
 
 /datum/cooking_with_jane/recipe/proc/set_remain_percent_modifier(var/modifier)
-	if(last_created_step.class & CWJ_ADD_REAGENT)
+	if(last_created_step.class == CWJ_ADD_REAGENT)
 		last_created_step?:remain_percent = modifier
 		return TRUE
 	else
