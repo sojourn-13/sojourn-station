@@ -5,10 +5,13 @@
 	var/list/allowed_tools = null
 	var/required_tool_quality = null
 	var/target_organ_type = /obj/item/organ/external
+	var/perk_i_need = PERK_SURGICAL_MASTER
+	var/perk_i_need_alt = PERK_MASTER_HERBALIST
 
 	var/difficulty = FAILCHANCE_HARD
 	var/required_stat = STAT_BIO
 	var/duration = 60
+	var/requires_perk = FALSE
 
 	// Can the step transfer germs?
 	var/can_infect = FALSE
@@ -88,6 +91,11 @@
 /obj/item/organ/proc/try_surgery_step(step_type, mob/living/user, obj/item/tool, target, no_tool_message = FALSE)
 	var/datum/surgery_step/S = GLOB.surgery_steps[step_type]
 
+	if(S.requires_perk)
+		if(!(user.stats.getPerk(S.perk_i_need) || user.stats.getPerk(S.perk_i_need_alt)) || !user.stats.getStat(STAT_BIO) >= 120)
+			to_chat(user, SPAN_WARNING("You do not have the training necessessary to do this surgery!"))
+			return FALSE
+
 	if(!S.is_valid_target(src, target))
 		SSnano.update_uis(src)
 		return FALSE
@@ -128,14 +136,14 @@
 
 	// Self-surgery increases failure chance
 	if(owner && user == owner)
-		difficulty_adjust = 60
-		time_adjust = 20
+		difficulty_adjust = 120
+		time_adjust = 40
 
 		// ...unless you are a carrion
 		// It makes sense that carrions have a way of making their flesh cooperate
 		if(is_carrion(user))
-			difficulty_adjust = -150
-			time_adjust = -40
+			difficulty_adjust = -300
+			time_adjust = -80
 
 	if(user.stats.getPerk(PERK_ROBOTICS_EXPERT) && S.is_robotic)
 		difficulty_adjust = -90

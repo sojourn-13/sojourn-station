@@ -363,7 +363,7 @@
 	perk_required = TRUE
 	needed_perk = PERK_MEDICAL_EXPERT
 	needed_perk_alt = PERK_SURGICAL_MASTER
-	bio_requirement = 75
+	bio_requirement = 25
 	stacktype_alt = /obj/item/stack/medical/advanced/bruise_pack/large
 	disinfectant  = TRUE
 
@@ -512,7 +512,7 @@
 	perk_required = TRUE
 	needed_perk = PERK_MEDICAL_EXPERT
 	needed_perk_alt = PERK_SURGICAL_MASTER
-	bio_requirement = 75
+	bio_requirement = 25
 	stacktype_alt = /obj/item/stack/medical/advanced/ointment/large
 	disinfectant  = TRUE
 
