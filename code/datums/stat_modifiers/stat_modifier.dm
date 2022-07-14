@@ -88,19 +88,14 @@
 	return ..()
 
 /**
- * The hub for the application of effects from the datum to the target. Likely called as the result of a pickweight call.
+ * The hub for checking if this stat modifier can be applied. Likely called as the result of a pickweight call.
  *
  * Prior to the application of effects, if the instances of this datum's typepath in the target's current_stat_modifiers list surpasses the datum's maximum_instances var,
  * it will return and remove it's own typepath from the target's allowed_stat_modifers list. After the application, if this is true, it will only remove it's own typepath
  * from the latter list.
  *
- * In all subtypes of stat_modifier, the datum's type-specific effects are protected by a typecheck, allowing things not of the intended type to still receive the more
- * general effects.
- *
- * Args:
- * atom/target: The target the effects will be applied to.
 **/
-/datum/stat_modifier/proc/apply_to(var/atom/target)
+/datum/stat_modifier/proc/valid_check(var/atom/target, var/list/arguments)
 
 	var/instances_in_target = instances_of_type_in_list(src, target.current_stat_modifiers)
 
@@ -127,6 +122,22 @@
 		target.allowed_stat_modifiers[type] = 0
 		//we dont return here, since we already added ourselves to the list
 
+	consider_custom_effect(target, arguments, PRIOR_TO_APPLY)
+
+	apply_to(holder, arguments)
+
+	return TRUE
+
+/**
+ * The hub for the application of effects from the datum to the target. Likely called by valid_check().
+ *
+ * In all subtypes of stat_modifier, the datum's type-specific effects are protected by a typecheck, allowing things not of the intended type to still receive the more
+ * general effects.
+ *
+ * Args:
+ * atom/target: The target the effects will be applied to.
+**/
+/datum/stat_modifier/proc/apply_to(var/atom/target, var/list/arguments)
 
 	if (prefix && target.get_prefix)
 		target.prefixes += prefix
@@ -141,6 +152,31 @@
 		target.maxHealth = ZERO_OR_MORE((target.maxHealth + maxHealth_increment))
 		target.health = ZERO_OR_MORE((target.health + maxHealth_increment))
 
+	consider_custom_effect(target, arguments, AFTER_APPLY)
+
+	return TRUE
+
+/datum/stat_modifier/proc/consider_custom_effect(atom/target, list/arguments, status)
+
+	var/list_length
+
+	if (arguments)
+		list_length = (arguments.len)
+
+	switch (status)
+		if (PRIOR_TO_APPLY)
+			if (prior_custom_effect(target, arguments, list_length))
+				return TRUE
+		if (AFTER_APPLY)
+			if (custom_effect(target, arguments, list_length))
+				return TRUE
+
+	return FALSE
+
+/datum/stat_modifier/healthy/custom/proc/custom_effect(atom/target, list/arguments, arg_length)
+	return TRUE
+
+/datum/stat_modifier/healthy/custom/proc/post_apply(atom/target, list/arguments, arg_length)
 	return TRUE
 
 /// Empty modifier. Does nothing. Returns false.

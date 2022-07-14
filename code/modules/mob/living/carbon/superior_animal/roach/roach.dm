@@ -18,11 +18,11 @@
 	armor = list(melee = 10, bullet = 5, energy = 0, bomb = 5, bio = 20, rad = 0, agony = 0)
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 19,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 3,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 8,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quick = 1,
+		/datum/stat_modifier/none = 100,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified = 26,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 16,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 42,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quick = 5,
 	)
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat

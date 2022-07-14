@@ -153,10 +153,24 @@
 	if (get_stat_modifier)
 		for (var/i = 0, i < times_to_get_stat_modifiers, i++)
 
-			var/typepath = pickweight(allowed_stat_modifiers, 0)
+			var/list/excavated = list()
+			for (var/entry in allowed_stat_modifiers)
+				var/to_add = entry
+				if (islist(allowed_stat_modifiers[entry]))
+					var/list/entrylist = allowed_stat_modifiers[entry]
+					to_add = entrylist[1]
+				excavated[entry] = to_add
+
+			var/typepath = pickweight(excavated, 0)
+
+			var/list/arguments
+			if (islist(allowed_stat_modifiers[typepath]))
+				var/list/nested_list = allowed_stat_modifiers[typepath]
+				if (length(nested_list) > 1)
+					arguments = nested_list.Copy(2)
 
 			var/datum/stat_modifier/chosen_modifier = new typepath
-			if (!(chosen_modifier.apply_to(src)))
+			if (!(chosen_modifier.valid_check(src, arguments)))
 				QDEL_NULL(chosen_modifier)
 
 	return INITIALIZE_HINT_NORMAL
