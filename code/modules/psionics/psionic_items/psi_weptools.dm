@@ -65,7 +65,7 @@
 
 /obj/item/tool/saw/chain/cult/deepmaints
 	name = "mindripper"
-	desc = "What looks to be a chainsaw for someone that only has seen the horror movies verson of them. This one's teeth rather than being hard, glow with eerie psionic power, cauterizing even the cuts it causes through sheer burns."
+	desc = "What looks to be a chainsaw for someone that only has seen the horror movies version of them. This one's teeth rather than being hard, glow with eerie psionic power, cauterizing even the cuts it causes through sheer burns."
 	icon = 'icons/obj/psionic/occchain.dmi'
 	icon_state = "chainripper"
 	force = WEAPON_FORCE_BRUTAL
