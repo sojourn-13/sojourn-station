@@ -77,11 +77,15 @@
 	if (contents.len == 0)
 		to_chat(user, SPAN_WARNING("There's nothing in [src] you can remove!"))
 		return
+	if(tracker)
+		for (var/obj/item/contained in contents)
+			contained?:food_quality -= 5
 
 	for (var/contained in contents)
 		var/atom/movable/AM = contained
 		remove_from_visible(AM)
 		AM.forceMove(get_turf(src))
+		
 
 	update_icon()
 	qdel(tracker)

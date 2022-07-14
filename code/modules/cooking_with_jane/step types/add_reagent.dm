@@ -47,7 +47,7 @@
 	return 0
 
 
-/datum/cooking_with_jane/recipe_step/add_item/follow_step(var/obj/used_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
+/datum/cooking_with_jane/recipe_step/add_reagent/follow_step(var/obj/used_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 	var/obj/item/reagent_containers/our_item = used_item
 	var/obj/item/container = tracker.holder_ref.resolve()
 

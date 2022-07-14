@@ -8,7 +8,7 @@
 	//It specifically references recipe_pointer objects each pointing to a different point in a different recipe.
 	var/list/active_recipe_pointers = list()
 	var/completion_lockout = FALSE //Freakin' cheaters...
-	var/list/completed_list //List of recipes marked as complete.
+	var/list/completed_list = list()//List of recipes marked as complete.
 
 /datum/cooking_with_jane/recipe_tracker/New(var/obj/item/cooking_with_jane/cooking_container/container)
 	log_debug("Called /datum/cooking_with_jane/recipe_tracker/New")
@@ -99,7 +99,24 @@
 	valid_steps = valid_steps[use_class]
 	valid_unique_id_list = valid_unique_id_list[use_class]
 
-	attempt_complete_recursive(used_object, use_class)
+	//traverse and cull pointers
+	for (var/datum/cooking_with_jane/recipe_pointer/pointer in active_recipe_pointers)
+		var/used_id = FALSE
+		var/list/option_list = pointer.get_possible_steps()
+		for (var/datum/cooking_with_jane/recipe_step/step in option_list)
+			if(!(step.unique_id in valid_unique_id_list))
+				continue
+			else
+				used_id = TRUE
+				if(step.is_complete(used_object, src))
+					pointer.traverse(step.unique_id)
+					break
+		if (!used_id)
+			active_recipe_pointers.Remove(pointer)
+			qdel(pointer) 
+			
+	
+	//attempt_complete_recursive(used_object, use_class) No, never again...
 
 	//Choose to keep baking or finish now.
 	if(completed_list.len && (completed_list.len != active_recipe_pointers.len))
@@ -111,25 +128,24 @@
 			else
 				recipe_string += ", or \a [pointer.current_recipe.name]"
 
-		if(alert("If you finish cooking now, you will create [recipe_string]. However, you feel there are possibilities beyond even this. Continue cooking anyways?",,"Yes","No") == "Yes")
+		if(alert(usr, "If you finish cooking now, you will create [recipe_string]. However, you feel there are possibilities beyond even this. Continue cooking anyways?",,"Yes","No") == "Yes")
 			//Cull finished recipe items
 			for (var/datum/cooking_with_jane/recipe_pointer/pointer in completed_list)
 				active_recipe_pointers.Remove(pointer)
-				completed_list[pointer.current_recipe.name]=null
 				qdel(pointer)
 			completed_list = list()
 
 	//Check if we completed our recipe
 	var/datum/cooking_with_jane/recipe_pointer/chosen_pointer = null
 	if(completed_list.len >= 1)
+		log_debug("/recipe_tracker/proc/process_item YO WE ACTUALLY HAVE A COMPLETED LIST OR SOMETHING!")
+		chosen_pointer = completed_list[1]
 		if(completed_list.len > 1)
 			completion_lockout = TRUE
-			var/choice = input("There's two things you complete at this juncture!", "Choose One:") in completed_list
+			var/choice = input(usr, "There's two things you complete at this juncture!", "Choose One:") in completed_list
 			completion_lockout = FALSE
 			if(choice)
 				chosen_pointer = completed_list[choice]
-		else
-			chosen_pointer = completed_list[completed_list[1]]
 
 	//Call a proc that follows one of the steps in question, so we have all the nice to_chat calls.
 	var/datum/cooking_with_jane/recipe_step/sample_step = valid_steps[1]
@@ -143,7 +159,8 @@
 	log_debug("/recipe_tracker/proc/process_item returned success!")
 	return CWJ_SUCCESS
 
-//Abandon all hope, ye who debug here
+//Sleep... My precious, monsterous child....
+/*
 /datum/cooking_with_jane/recipe_tracker/proc/attempt_complete_recursive(
 		var/obj/used_object,
 		var/use_class,
@@ -186,7 +203,7 @@
 
 	if(ourlist.len != 0 && depth !=5)
 		attempt_complete_recursive(used_object, use_class, depth=++depth, considered_steps = ourlist)
-
+*/
 //===================================================================================
 
 

@@ -44,9 +44,7 @@
 	//Add the recipe to our dictionary for future reference.
 	if(!GLOB.cwj_step_dictionary_ordered["[class]"])
 		GLOB.cwj_step_dictionary_ordered["[class]"] = list()
-	if(!GLOB.cwj_step_dictionary_ordered["[class]"][group_identifier])
-		GLOB.cwj_step_dictionary_ordered["[class]"][group_identifier] = list()
-	GLOB.cwj_step_dictionary_ordered["[class]"][group_identifier]["[unique_id]"] = src
+	GLOB.cwj_step_dictionary_ordered["[class]"]["[unique_id]"] = src
 	GLOB.cwj_step_dictionary["[unique_id]"] = src
 
 /datum/cooking_with_jane/recipe_step/proc/set_image()
@@ -104,5 +102,5 @@
 	return TRUE
 
 //Special function to check if the step has been satisfied. Sometimed just following the step is enough, but not always.
-/datum/cooking_with_jane/recipe_step/proc/is_complete(var/datum/cooking_with_jane/recipe_tracker/tracker)
+/datum/cooking_with_jane/recipe_step/proc/is_complete(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 	return TRUE

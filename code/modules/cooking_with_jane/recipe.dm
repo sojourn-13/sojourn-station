@@ -9,7 +9,7 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 	The name any one of the recipe step types, custom or otherwise.
 	Valid options are:
 		CWJ_ADD_ITEM
-			Add an item to the recipe. The object is inserted in the container. 
+			Add an item to the recipe. The object is inserted in the container.
 			The product inherits the item's quality and reagents if able.
 			<REQUIRED_ARGS>:
 				type_path - the type path of the item being added.
@@ -77,7 +77,7 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 			Example: result_desc="A Slice of Bread is in the sandwich."
 
 		exact
-			CWJ_ADD_ITEM or CWJ_USE_ITEM ONLY: 
+			CWJ_ADD_ITEM or CWJ_USE_ITEM ONLY:
 			Determines if the steps require an exact type path, or if a child will satisfy the requirements.
 			of the type path is also preferable.
 			Example: exact=TRUE
@@ -87,11 +87,15 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 			modifier to adjust the inherited_quality_modifier on an add_item recipe step.
 			Example: qmod=0.5 //only 50% of the added item's quality will be inherited.
 
+		keep_reagent
+			CWJ_ADD_ITEM ONLY:
+			Makes sure the reagents of an added item are not considered in the reagent injection step.
+
 		remain_percent
-			CWJ_ADD_REAGENT ONLY: 
+			CWJ_ADD_REAGENT ONLY:
 			Determines the percentage of a reagent that remains in the cooking of an item.
 			IE- if you cook a steak with wine, you can make it so the wine doesn't wind up in the resulting food.
-			Example: remain_percent=0.1 //Only 10% of the units added will apply to the resulting food injection.
+			Example: remain_percent=0.1 //Only 10% of the units expected to be added will apply to the resulting food injection.
 
 
 
@@ -143,6 +147,25 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 
 
 
+
+/datum/cooking_with_jane/recipe/sandwich_salted
+	cooking_container = PLATE
+	product_type = /obj/item/reagent_containers/food/snacks/sandwich
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="It has meat in it.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_REAGENT, "sodiumchloride", 5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
+	)
+
+/datum/cooking_with_jane/recipe/sandwich_split
+	cooking_container = SKILLET 
+	product_type = /obj/item/reagent_containers/food/snacks/sandwich
+	product_count = 2
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sandwich, qmod=0.5),
+		list(CWJ_USE_TOOL, QUALITY_SAWING, 10)
+	)
 
 /*
 /datum/cooking_with_jane/recipe/sandwich

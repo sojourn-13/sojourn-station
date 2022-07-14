@@ -111,14 +111,14 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 					else if(!is_reagent_with_id_exist(step[2]))
 						reason="Bad reagent type for CWJ_ADD_REAGENT at arg 2"
 					else
-						create_step_add_item(step[2], step[3], FALSE)
+						create_step_add_reagent(step[2], step[3], FALSE)
 				if(CWJ_ADD_REAGENT_OPTIONAL)
 					if(step.len < 3)
 						reason="Bad argument Length for CWJ_ADD_REAGENT_OPTIONAL"
 					else if(!is_reagent_with_id_exist(step[2]))
 						reason="Bad reagent type for CWJ_ADD_REAGENT_OPTIONAL at arg 2"
 					else
-						create_step_add_item(step[2], step[3], TRUE)
+						create_step_add_reagent(step[2], step[3], TRUE)
 				if(CWJ_USE_ITEM)
 					if(step.len < 2)
 						reason="Bad argument Length for CWJ_USE_ITEM"
@@ -179,6 +179,10 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 				if(!set_exact_type_required(step["exact"]))
 					reason="exact / exact type match declared on non add-item / use-item recipe step."
 
+			if("reagent_skip" in step)
+				if(!set_reagent_skip(step["reagent_skip"]))
+					reason="reagent_skip / reagent_skip declared on non add-item / add-reagent recipe step."
+
 			if(reason)
 				CRASH("[src.type]/New: Step Builder failed. Reason: [reason]")
 		else
@@ -206,7 +210,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 //-----------------------------------------------------------------------------------
 //Add base step command. All other steps stem from this. Don't call twice!
 /datum/cooking_with_jane/recipe/proc/create_step_base()
-	var/datum/cooking_with_jane/recipe_step/start/step = new /datum/cooking_with_jane/recipe_step(cooking_container)
+	var/datum/cooking_with_jane/recipe_step/start/step = new /datum/cooking_with_jane/recipe_step/start(cooking_container)
 	last_required_step = step
 	last_created_step = step
 	first_step = step
@@ -266,6 +270,14 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		return TRUE
 	else
 		return FALSE
+
+/datum/cooking_with_jane/recipe/proc/set_reagent_skip(var/boolean)
+	if((last_created_step.class == CWJ_ADD_ITEM) || (last_created_step.class == CWJ_ADD_PRODUCE))
+		last_created_step?:reagent_skip = boolean
+		return TRUE
+	else
+		return FALSE
+
 
 /datum/cooking_with_jane/recipe/proc/set_inherited_quality_modifier(var/modifier)
 	if(last_created_step.class == CWJ_ADD_ITEM || last_created_step.class == CWJ_USE_TOOL)
@@ -422,13 +434,43 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 	var/obj/item/container = parent.holder_ref.resolve()
 	if(container)
 		//Build up a list of reagents that went into this.
-		var/datum/reagents/slurry = new /datum/reagents(1000000, container)
+		var/datum/reagents/slurry = new /datum/reagents(1000000)
+
+		//Filter out reagents based on settings
+		if(GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_REAGENT]"])
+			for(var/id in pointer.steps_taken)
+				if(!GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_REAGENT]"][id])
+					continue
+				var/datum/cooking_with_jane/recipe_step/add_reagent/active_step = GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_REAGENT]"][id]
+				var/amount_to_remove = active_step.required_reagent_amount / active_step.remain_percent
+				container.reagents.remove_reagent(active_step.required_reagent_id, amount_to_remove, safety = 1)
+
 		container.reagents.trans_to_holder(slurry, amount=container.reagents.total_volume)
+
+		var/list/exclude_list = list()
 		for(var/obj/item/added_item in container.contents)
-			added_item.reagents.trans_to_holder(slurry, amount=container.reagents.total_volume)
+			var/can_add = TRUE
+			for(var/id in pointer.steps_taken)
+				if(id in exclude_list) //Only consider a step for removal one time.
+					continue
+				if(GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_ITEM]"] && GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_ITEM]"][id])
+					var/datum/cooking_with_jane/recipe_step/add_item/active_step = GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_ITEM]"][id]
+					if(active_step.reagent_skip)
+						can_add = FALSE
+						exclude_list += id
+						break
+				else if(GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_PRODUCE]"] && GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_PRODUCE]"][id])
+					var/datum/cooking_with_jane/recipe_step/add_produce/active_step = GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_PRODUCE]"][id]
+					if(active_step.reagent_skip)
+						can_add = FALSE
+						exclude_list += id
+						break
+			if(can_add)
+				added_item.reagents.trans_to_holder(slurry, amount=container.reagents.total_volume)
 
 		//Purge the contents of the container we no longer need it
 		QDEL_LIST(container.contents)
+		qdel(slurry)
 		container.contents = list()
 
 
@@ -437,7 +479,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 			if(replace_reagents)
 				new_item.reagents.clear_reagents()
-			
+
 			slurry.trans_to_holder(new_item.reagents, amount=slurry.total_volume, copy=1)
 
 			new_item?:food_quality = pointer.tracked_quality + calculate_reagent_quality(pointer)
@@ -448,6 +490,8 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 //Extra Reagents in a recipe take away recipe quality for every extra unit added to the concoction.
 /datum/cooking_with_jane/recipe/proc/calculate_reagent_quality(var/datum/cooking_with_jane/recipe_pointer/pointer)
+	if(!GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_REAGENT]"])
+		return 0
 	var/datum/cooking_with_jane/recipe_tracker/parent = pointer.parent_ref.resolve()
 	var/obj/item/container = parent.holder_ref.resolve()
 	var/total_volume = container.reagents.total_volume
@@ -462,7 +506,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		calculated_volume += active_step.required_reagent_amount
 
 		calculated_quality += active_step.base_quality_award
-	
+
 	return calculated_quality - (total_volume - calculated_volume)
 
 

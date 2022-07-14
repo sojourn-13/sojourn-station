@@ -3,6 +3,7 @@
 	class=CWJ_ADD_PRODUCE
 	var/required_produce_type
 	var/base_potency
+	var/reagent_skip = TRUE
 
 /datum/cooking_with_jane/recipe_step/add_produce/New(var/produce, var/datum/cooking_with_jane/recipe/our_recipe)
 	if(!plant_controller)

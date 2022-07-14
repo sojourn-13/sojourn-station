@@ -11,6 +11,8 @@
 
 	var/exact_path = FALSE //Tests if the item has to be the EXACT ITEM PATH, or just a child of the item path.
 
+	var/reagent_skip = TRUE
+
 //item_type: The type path of the object we are looking for.
 //our_recipe: The parent recipe object,
 /datum/cooking_with_jane/recipe_step/add_item/New(var/item_type, var/datum/cooking_with_jane/recipe/our_recipe)

@@ -26,13 +26,13 @@
 	if(!our_tool.has_quality(tool_type))
 		return CWJ_CHECK_INVALID
 
-	if(!our_tool.get_tool_quality(tool_type) < tool_quality)
+	if(our_tool.get_tool_quality(tool_type) < tool_quality)
 		return CWJ_CHECK_INVALID
 
 	return CWJ_CHECK_VALID
 
 //Think about a way to make this more intuitive?
-/datum/cooking_with_jane/recipe_step/use_item/calculate_quality(var/obj/added_item)
+/datum/cooking_with_jane/recipe_step/use_tool/calculate_quality(var/obj/added_item)
 	var/obj/item/tool/our_tool = added_item
 	var/raw_quality = (tool_quality - our_tool.get_tool_quality(tool_type)) * inherited_quality_modifier
 	return clamp_quality(raw_quality)
