@@ -3247,6 +3247,7 @@
 #include "modular_sojourn\lamp.dm"
 #include "modular_sojourn\pixelshift.dm"
 #include "modular_sojourn\shields.dm"
+#include "modular_sojourn\spaceleak.dm"
 #include "modular_sojourn\cardgame_2\cardgame_2.dm"
 #include "modular_sojourn\cardgame_2\cardholder.dm"
 #include "modular_sojourn\cardgame_2\cardpacks_and_spawner.dm"
