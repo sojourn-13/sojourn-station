@@ -1,4 +1,4 @@
-//datum/stat_modifier/mob/living/carbon/superior_animal/aggressive
+/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive
 
 	prefix = "Aggressive"
 
