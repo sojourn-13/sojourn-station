@@ -1,13 +1,18 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal
 
 	var/armor_adjustment = list(
-		melee = 0,
-		bullet = 0,
-		energy = 0,
-		bomb = 0,
-		bio = 0,
-		rad = 0,
-		agony = 0
+
+	)
+
+	var/armor_mult = list(
+
+	)
+
+	/// If the current armor value is negative, and this is true, get
+	var/invert_armor_mult_if_negative = FALSE
+	/// If we inverted due to armor being negative, we store the key of the armor and the difference between the initial value and the mult.
+	var/list/mult_diff = list(
+
 	)
 
 	var/flash_resistances_increment
@@ -45,6 +50,23 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/remove(qdel_src = TRUE)
 	if (issuperioranimal(holder))
 		var/mob/living/carbon/superior_animal/superior_holder = holder
+
+		if (armor_adjustment)
+			for (var/key in armor_adjustment)
+				if (key in superior_holder.armor)
+					superior_holder.armor[key] = (superior_holder.armor[key] - armor_adjustment[key])
+				else
+					continue //we add any missing keys in apply_to so this shouldnt happen but lets be careful
+
+		if (armor_mult)
+			for (var/key in armor_mult)
+				if (key in superior_holder.armor)
+					if ((superior_holder.armor[key] < 0) && invert_armor_mult_if_negative)
+						superior_holder.armor[key] = (superior_holder.armor[key] + mult_diff[key]) //add the multiplication difference between the initial armor value and our mult
+					else
+						superior_holder.armor[key] = (superior_holder.armor[key] / armor_adjustment[key]) //warning. negatives multiply into negatives
+				else
+					continue
 
 		if (flash_resistances_increment)
 			superior_holder.flash_resistances = ZERO_OR_MORE(superior_holder.flash_resistances - flash_resistances_increment)
@@ -104,6 +126,17 @@
 
 	if (issuperioranimal(target))
 		var/mob/living/carbon/superior_animal/superior_target = target
+
+		if (armor_mult)
+			for (var/key in armor_mult)
+				if (key in superior_target.armor)
+					if ((superior_target.armor[key] < 0) && invert_armor_mult_if_negative)
+						mult_diff[key] = MULT_DIFFERENCE(superior_target.armor[key], armor_mult[key]) //we get the difference between the multiplier and product
+						superior_target.armor[key] = (superior_target.armor[key] - mult_diff[key]) //subtract the armor by the difference between itself and the mult) //then we subtract the armor value with the inverted value. -60*1.3 = -42 with this
+					else
+						superior_target.armor[key] = (superior_target.armor[key] * armor_adjustment[key]) //warning. negatives multiply into negatives
+				else
+					continue //we arent trying to override or anything, just multiply. this is practically already zero, so, lets just leave it
 
 		if (armor_adjustment)
 			for (var/key in armor_adjustment)
