@@ -1,15 +1,13 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/deadeye
 
-	inherent_projectile_mult = 2 //a little more dps, but more easily avoided
-	projectile_armor_penetration_mult = 1.3
+	inherent_projectile_mult_increment = 1 //a little more dps, but more easily avoided
+	projectile_armor_penetration_mult_increment = 0.25
 
-	delay_for_range_mult = 1.2
-	delay_for_rapid_range_mult = 1.2
+	delay_for_range_mult = 1.4
+	delay_for_rapid_range_mult = 1.4
 
 	fire_delay_mult = 2
 	fire_delay_zeroth = 0.5 //at 0 fire delay, it gets multiplied from 0.5 to 1
-
-	projectile_speed_mult = 0.85
 
 	prefix = "Deadeye"
 
@@ -20,11 +18,11 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger
 
 	rapid_fire_shooting_amount_mult = 2 //pretty noticable damage increase
-	delay_for_rapid_range_mult = 0.8
+	delay_for_rapid_range_mult = 0.5 //half the delay
 
-	projectile_armor_penetration_mult = 0.7
+	projectile_armor_penetration_mult_increment = -0.5 //significantly worse armor penetration because they're just shooting whatever part of you they can
 
-	inherent_projectile_mult = 0.7
+	inherent_projectile_mult_increment = -0.3 // but still with higher DPS because theyre shooting you twice as much for 70% damage
 
 	prefix = "Trigger-fingered"
 

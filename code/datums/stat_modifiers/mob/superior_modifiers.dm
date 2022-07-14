@@ -195,7 +195,7 @@
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG
 
-	inherent_projectile_mult = 1.1
+	inherent_projectile_mult_increment = 0.1
 	projectile_armor_penetration_adjustment = 2
 
 	description = "This one is noticably muscular. It looks like it might hit harder than others."
@@ -286,7 +286,7 @@
 	melee_damage_lower_mult = 1.3
 	melee_damage_upper_mult = 1.3
 
-	inherent_projectile_mult = 1.3
+	inherent_projectile_mult_increment = 1.3
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG | RANGED_STATTAG
 
