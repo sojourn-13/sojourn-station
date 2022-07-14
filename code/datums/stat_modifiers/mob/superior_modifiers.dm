@@ -262,7 +262,7 @@
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/quick
 
-	move_to_delay_increment = -0.8
+	move_to_delay_increment = -0.2
 	delay_for_range_mult = 0.8
 
 	stattags = DEFENSE_STATTAG
