@@ -38,7 +38,7 @@
 	icon_state = "emitter"
 	recoil = 60
 
-/obj/item/projectile/bullet/rocket/launch(atom/target, target_zone, x_offset, y_offset, angle_offset)
+/obj/item/projectile/bullet/rocket/launch(atom/target, target_zone, x_offset, y_offset, angle_offset, firer_arg)
 	if (!testing)
 		set_light(2.5, 0.5, "#dddd00")
 	..(target, target_zone, x_offset, y_offset, angle_offset)
@@ -59,7 +59,7 @@
 	var/light_emp_range = 8
 	recoil = 60
 
-/obj/item/projectile/bullet/rocket/emp/launch(atom/target, target_zone, x_offset, y_offset, angle_offset)
+/obj/item/projectile/bullet/rocket/emp/launch(atom/target, target_zone, x_offset, y_offset, angle_offset, firer_arg)
 	if (!testing)
 		set_light(2.5, 0.5, "#dddd00")
 	..(target, target_zone, x_offset, y_offset, angle_offset)

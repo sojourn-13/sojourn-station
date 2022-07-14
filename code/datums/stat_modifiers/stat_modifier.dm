@@ -14,6 +14,8 @@
 	/// If our holder's current_stat_modifiers list has more or equal instances of ourself, compared to this, we return and remove ourselves from their allowed list.
 	var/maximum_instances = 1
 
+	var/holder_original_prob
+
 	/// The atom we have applied our changes to
 	var/atom/holder
 
@@ -33,6 +35,8 @@
 	/// Defines in misc.dm. Determines what gets these modifiers and what doesn't.
 	var/stattags = DEFENSE_STATTAG
 
+	var/list/mutually_exclusive_with = list()
+
 	//todo: store the vars we change for more accurate removal
 
 /// Inverts all effects the modifier provided, and optionally qdeletes it.
@@ -50,6 +54,24 @@
 	holder.update_prefixes()
 
 	holder.current_stat_modifiers -= src
+
+	var/instances_in_target = instances_of_type_in_list(src, holder.current_stat_modifiers)
+
+	if (instances_in_target < maximum_instances)
+		holder.allowed_stat_modifiers[type] = holder_original_prob
+
+	if (instances_in_target <= 0)
+		for (var/typepath in mutually_exclusive_with)
+			if (typepath in holder.current_stat_modifiers)
+				var/do_we_readd = TRUE
+				for (var/entry in holder.current_stat_modifiers)
+					var/datum/stat_modifier/stat_mod_entry = entry
+					if (typepath in initial(stat_mod_entry.mutually_exclusive_with))
+						do_we_readd = FALSE
+						break
+				if (do_we_readd)
+					holder.allowed_stat_modifiers[typepath] = mutually_exclusive_with[typepath] //we use our stored value to restore it!
+
 	holder = null
 
 	if (qdel_src)
@@ -83,16 +105,26 @@
 	var/instances_in_target = instances_of_type_in_list(src, target.current_stat_modifiers)
 
 	if (instances_in_target >= maximum_instances)
-		target.allowed_stat_modifiers -= type
+		target.allowed_stat_modifiers[type] = 0
 		return FALSE
+
+	for (var/entry in target.current_stat_modifiers)
+		if (entry in mutually_exclusive_with)
+			return FALSE
 
 	holder = target
 
+	holder_original_prob = holder.allowed_stat_modifiers[type]
+
 	target.current_stat_modifiers += src
+
+	for (var/typepath in mutually_exclusive_with)
+		mutually_exclusive_with[typepath] = holder.allowed_stat_modifiers[typepath] //store the value for if we get removed
+		holder.allowed_stat_modifiers[typepath] = 0 // you are now forbidden from having these
 
 	instances_in_target = instances_of_type_in_list(src, target.current_stat_modifiers) //refresh the var
 	if (instances_in_target >= maximum_instances)
-		target.allowed_stat_modifiers -= type
+		target.allowed_stat_modifiers[type] = 0
 		//we dont return here, since we already added ourselves to the list
 
 

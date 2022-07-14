@@ -15,19 +15,19 @@
 	/// Any damage types here will be applied to any projectiles holder fires by multiplying the value by this value. Added 3rd.
 	var/list/projectile_damage_mult = list()
 
-	/// All projectiles fired by holder will have all damage multiplied by this amount. Applied first.
-	var/inherent_projectile_mult
-	/// All projectiles fired by holder will have all damage increased by this amount. Applied 2nd.
-	var/inherent_projectile_increment
+	/// Increments the mob's inherent_projectile_mult var which will be applied to its projectiles. Applied first.
+	var/inherent_projectile_mult_increment
+	/// Increments the mob's inherent_projectile_increment var which will be applied to its projectiles. Applied 2nd.
+	var/inherent_projectile_increment_adjustment
 
 	/// Any projectiles fired by the holder will have their armor penetration increased by this much, added after the mult
 	var/projectile_armor_penetration_adjustment
 	/// Any projectiles fired by the holder will have their armor penetration multiplied by this much, added first
-	var/projectile_armor_penetration_mult
+	var/projectile_armor_penetration_mult_increment
 
 	/// Inverted, lower = higher speed
-	var/projectile_speed_increment
-	var/projectile_speed_mult
+	var/projectile_speed_increment_adjustment
+	var/projectile_speed_mult_increment
 
 	/// Inverted, lower = higher speed
 	var/move_to_delay_increment
@@ -54,10 +54,10 @@
 		if (move_to_delay_mult)
 			livingholder.move_to_delay = ZERO_OR_MORE((livingholder.move_to_delay / move_to_delay_mult))
 
-		if (inherent_projectile_increment)
-			livingholder.inherent_projectile_increment = ZERO_OR_MORE((livingholder.inherent_projectile_increment - inherent_projectile_increment))
-		if (inherent_projectile_mult)
-			livingholder.inherent_projectile_mult = ZERO_OR_MORE((livingholder.inherent_projectile_mult - inherent_projectile_mult))
+		if (inherent_projectile_increment_adjustment)
+			livingholder.inherent_projectile_increment = ZERO_OR_MORE((livingholder.inherent_projectile_increment - inherent_projectile_increment_adjustment))
+		if (inherent_projectile_mult_increment)
+			livingholder.inherent_projectile_mult = ZERO_OR_MORE((livingholder.inherent_projectile_mult - inherent_projectile_mult_increment))
 
 		if (projectile_damage_increment)
 			for (var/entry in projectile_damage_increment)
@@ -68,13 +68,13 @@
 
 		if (projectile_armor_penetration_adjustment)
 			livingholder.projectile_armor_penetration_adjustment = ZERO_OR_MORE((livingholder.projectile_armor_penetration_adjustment - projectile_armor_penetration_adjustment))
-		if (projectile_armor_penetration_mult)
-			livingholder.projectile_armor_penetration_mult = ZERO_OR_MORE((livingholder.projectile_armor_penetration_mult - projectile_armor_penetration_mult))
+		if (projectile_armor_penetration_mult_increment)
+			livingholder.projectile_armor_penetration_mult = ZERO_OR_MORE((livingholder.projectile_armor_penetration_mult - projectile_armor_penetration_mult_increment))
 
-		if (projectile_speed_increment)
-			livingholder.projectile_speed_increment = ZERO_OR_MORE((livingholder.projectile_speed_increment - projectile_speed_increment))
-		if (projectile_speed_mult)
-			livingholder.projectile_speed_mult = ZERO_OR_MORE((livingholder.projectile_speed_mult - projectile_speed_mult))
+		if (projectile_speed_increment_adjustment)
+			livingholder.projectile_speed_increment = ZERO_OR_MORE((livingholder.projectile_speed_increment - projectile_speed_increment_adjustment))
+		if (projectile_speed_mult_increment)
+			livingholder.projectile_speed_mult = ZERO_OR_MORE((livingholder.projectile_speed_mult - projectile_speed_mult_increment))
 
 	return ..(qdel_src)
 
@@ -100,10 +100,10 @@
 		if (move_to_delay_increment)
 			livingtarget.move_to_delay = ZERO_OR_MORE((livingtarget.move_to_delay + move_to_delay_increment))
 
-		if (inherent_projectile_mult)
-			livingtarget.inherent_projectile_mult = ZERO_OR_MORE((livingtarget.inherent_projectile_mult + inherent_projectile_mult))
-		if (inherent_projectile_increment)
-			livingtarget.inherent_projectile_increment = ZERO_OR_MORE((livingtarget.inherent_projectile_increment + inherent_projectile_increment))
+		if (inherent_projectile_mult_increment)
+			livingtarget.inherent_projectile_mult = ZERO_OR_MORE((livingtarget.inherent_projectile_mult + inherent_projectile_mult_increment))
+		if (inherent_projectile_increment_adjustment)
+			livingtarget.inherent_projectile_increment = ZERO_OR_MORE((livingtarget.inherent_projectile_increment + inherent_projectile_increment_adjustment))
 
 		if (projectile_damage_increment.len)
 			for (var/entry in projectile_damage_increment)
@@ -114,12 +114,12 @@
 
 		if (projectile_armor_penetration_adjustment)
 			livingtarget.projectile_armor_penetration_adjustment = ZERO_OR_MORE((livingtarget.projectile_armor_penetration_adjustment + projectile_armor_penetration_adjustment))
-		if (projectile_armor_penetration_mult)
-			livingtarget.projectile_armor_penetration_mult = ZERO_OR_MORE((livingtarget.projectile_armor_penetration_mult + projectile_armor_penetration_mult))
+		if (projectile_armor_penetration_mult_increment)
+			livingtarget.projectile_armor_penetration_mult = ZERO_OR_MORE((livingtarget.projectile_armor_penetration_mult + projectile_armor_penetration_mult_increment))
 
-		if (projectile_speed_increment)
-			livingtarget.projectile_speed_increment = ZERO_OR_MORE((livingtarget.projectile_speed_increment + projectile_speed_increment))
-		if (projectile_speed_mult)
-			livingtarget.projectile_speed_mult = ZERO_OR_MORE((livingtarget.projectile_speed_mult + projectile_speed_mult))
+		if (projectile_speed_increment_adjustment)
+			livingtarget.projectile_speed_increment = ZERO_OR_MORE((livingtarget.projectile_speed_increment + projectile_speed_increment_adjustment))
+		if (projectile_speed_mult_increment)
+			livingtarget.projectile_speed_mult = ZERO_OR_MORE((livingtarget.projectile_speed_mult + projectile_speed_mult_increment))
 
 /datum/stat_modifier/mob/living/carbon

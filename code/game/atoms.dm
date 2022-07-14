@@ -153,7 +153,7 @@
 	if (get_stat_modifier)
 		for (var/i = 0, i < times_to_get_stat_modifiers, i++)
 
-			var/typepath = pickweight(allowed_stat_modifiers)
+			var/typepath = pickweight(allowed_stat_modifiers, 0)
 
 			var/datum/stat_modifier/chosen_modifier = new typepath
 			if (!(chosen_modifier.apply_to(src)))
