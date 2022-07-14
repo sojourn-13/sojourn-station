@@ -35,29 +35,28 @@
 		playsound(src, 'sound/effects/creatures/bear.ogg', 100, 1, -3)
 
 /mob/living/simple_animal/hostile/bear/proc/rawr_xd()
-	if(.)
-		if(stat != DEAD)
-			visible_message(SPAN_DANGER("[src] stands up and roars!"))
-			playsound(src, 'sound/effects/creatures/bear.ogg', 100, 1, -3)
-			for(var/mob/living/carbon/human/H in range(5,src))
-				if(istype(H))
-					if(prob(100 - H.stats.getStat(STAT_VIG))) //Kinda a hard check-ish but cant stack
-						H.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
-						H.stats.addTempStat(STAT_COG, -STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
-						H.stats.addTempStat(STAT_BIO, -STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
-						H.stats.addTempStat(STAT_MEC, -STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
-						H.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
-						H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
-						H.added_movedelay -= 0.5
-						addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, 0.5), 60)
-						to_chat(H, SPAN_WARNING("The [src] 's roar triggers the familiar feeling of flight or fight in you!"))
-					else
-						to_chat(H, SPAN_NOTICE("The natural insticts of fear become apparent, but you ingore such things."))
-						H.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
-						H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
-						H.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
-						H.added_movedelay -= 0.5
-						addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, 0.5), 60)
+	if(health >= 15) //to weak to rawr if less then 15 health
+		visible_message(SPAN_DANGER("[src] stands up and roars!"))
+		playsound(src, 'sound/effects/creatures/bear.ogg', 100, 1, -3)
+		for(var/mob/living/carbon/human/H in range(5,src))
+			if(istype(H))
+				if(prob(100 - H.stats.getStat(STAT_VIG))) //Kinda a hard check-ish but cant stack
+					H.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+					H.stats.addTempStat(STAT_COG, -STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+					H.stats.addTempStat(STAT_BIO, -STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+					H.stats.addTempStat(STAT_MEC, -STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+					H.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+					H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+					H.added_movedelay -= 0.1
+					addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, -0.1), 60)
+					to_chat(H, SPAN_WARNING("The [src] 's roar triggers the familiar feeling of flight or fight in you!"))
+				else
+					to_chat(H, SPAN_NOTICE("The natural insticts of fear become apparent, but you ingore such things."))
+					H.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+					H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+					H.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
+					H.added_movedelay -= 0.1
+					addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, -0.1), 60) //Needs to be a negitive as it subtracts meaning its - - 0.1 (aka doble negitive so it adds)
 
 		anchored = TRUE
 		addtimer(CALLBACK(src, .proc/unanchor), 10)
@@ -77,17 +76,20 @@
 	stop_automated_movement = TRUE
 	if(!targetted_mob || SA_attackable(targetted_mob))
 		stance = HOSTILE_STANCE_IDLE
-	if(targetted_mob in ListTargets(10) && !anchored)
-		if(ranged)
-			if(get_dist(src, targetted_mob) <= 6)
-				OpenFire(targetted_mob)
+	if(targetted_mob in ListTargets(10))
+		if(!anchored)
+			if(ranged)
+				if(prob(45))
+					stance = HOSTILE_STANCE_ATTACKING
+					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+					walk_to_wrapper(src, targetted_mob, 1, move_to_delay)
+				else
+					OpenFire(targetted_mob)
 			else
+				stance = HOSTILE_STANCE_ATTACKING
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 				walk_to_wrapper(src, targetted_mob, 1, move_to_delay)
-		else
-			stance = HOSTILE_STANCE_ATTACKING
-			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to_wrapper(src, targetted_mob, 1, move_to_delay)
+
 	if(horror_modifer && !rawr_cooldown)
 		rawr_xd()
 		rawr_cooldown = TRUE
