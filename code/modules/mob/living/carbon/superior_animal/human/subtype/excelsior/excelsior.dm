@@ -14,6 +14,7 @@
 	//range/ammo stuff
 	ranged = 1
 	rapid = 1
+	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
 	projectilesound = 'sound/weapons/guns/fire/pistol_fire.ogg'

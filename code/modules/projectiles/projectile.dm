@@ -232,11 +232,44 @@
 		p_y = text2num(mouse_control["icon-y"])
 
 //called to launch a projectile
-/obj/item/projectile/proc/launch(atom/target, target_zone, x_offset=0, y_offset=0, angle_offset=0, proj_sound)
+/obj/item/projectile/proc/launch(atom/target, target_zone, x_offset=0, y_offset=0, angle_offset=0, proj_sound, firer_arg)
 	var/turf/curloc = get_turf(src)
 	var/turf/targloc = get_turf(target)
 	if (!istype(targloc) || !istype(curloc))
 		return TRUE
+
+	if (firer_arg)
+		firer = firer_arg
+
+	if (firer && (isliving(firer))) //here we apply the projectile adjustments applied by prefixes and such
+		var/mob/living/livingfirer = firer
+
+		if (livingfirer.inherent_projectile_mult != 1) //no need to multiply if its 1
+			multiply_projectile_damage(livingfirer.inherent_projectile_mult)
+
+		if (livingfirer.inherent_projectile_increment)
+			for (var/entry in damage_types)
+				damage_types[entry] += livingfirer.inherent_projectile_increment
+
+		if (livingfirer.projectile_damage_mult.len)
+			for (var/entry in livingfirer.projectile_damage_mult)
+				damage_types[entry] *= livingfirer.projectile_damage_mult[entry]
+
+		if (livingfirer.projectile_damage_increment.len)
+			for (var/entry in livingfirer.projectile_damage_increment)
+				damage_types[entry] += livingfirer.projectile_damage_increment[entry]
+
+		if (livingfirer.projectile_armor_penetration_mult != 1)
+			multiply_projectile_penetration(livingfirer.projectile_armor_penetration_mult)
+
+		if (livingfirer.projectile_armor_penetration_adjustment)
+			armor_penetration += livingfirer.projectile_armor_penetration_adjustment
+
+		if (livingfirer.projectile_speed_mult != 1)
+			multiply_projectile_step_delay(livingfirer.projectile_speed_mult)
+
+		if (livingfirer.projectile_speed_increment)
+			step_delay = ZERO_OR_MORE(step_delay + livingfirer.projectile_speed_increment)
 
 	if(targloc == curloc) //Shooting something in the same turf
 		target.bullet_act(src, target_zone)
@@ -1057,7 +1090,7 @@
 	result = 1
 	return
 
-/obj/item/projectile/test/launch(atom/target, angle_offset = 0, x_offset = 0, y_offset = 0)
+/obj/item/projectile/test/launch(atom/target, angle_offset = 0, x_offset = 0, y_offset = 0, firer_arg)
 	var/turf/curloc = get_turf(src)
 	var/turf/targloc = get_turf(target)
 	if(!curloc || !targloc)

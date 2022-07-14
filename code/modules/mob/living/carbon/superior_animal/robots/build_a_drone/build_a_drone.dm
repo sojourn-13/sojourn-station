@@ -129,6 +129,7 @@
 	projectiletype = pick(possible_ranged_attack) // Random attack based on what we can do
 	if(projectiletype == /obj/item/projectile/beam) // We attack with the cog, who can fire in bursts
 		rapid = TRUE
+		rapid_fire_shooting_amount = 3
 	..()
 	rapid = FALSE // Reset after the attack is done to preset the spring or flamethrower from shooting in bursts
 

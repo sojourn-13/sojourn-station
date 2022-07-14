@@ -119,7 +119,7 @@
 		return
 
 	var/obj/item/projectile/A = new projectiletype(user:loc)
-	visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"), 1)
+	visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"))
 	if(casingtype)
 		new casingtype(get_turf(src))
 	playsound(user, projectilesound, projectilevolume, 1)
@@ -153,7 +153,7 @@
 					else if (ismob(entry))
 						possible_target = entry
 					if (possible_target)
-						if (possible_target = target)
+						if (possible_target == target)
 							continue //we made the concious choice to attack them
 						else if (!(prob(do_friendly_fire_chance)) && (((!attack_same && (possible_target.faction == faction)) || (possible_target in friends)) || (possible_target.friendly_to_colony && friendly_to_colony)))
 							do_we_shoot = FALSE
@@ -164,20 +164,24 @@
 					var/datum/penetration_holder/penetrator = A.penetration_holder
 
 					for (var/atom/penetrated in trace_penetration.force_penetration_on)
-						penetrator += penetrated
+						penetrator.force_penetration_on += penetrated
 
 		if (do_we_shoot)
-			A.launch(target, def_zone)
+			A.launch(target, def_zone, firer_arg = src)
 		else
 			QDEL_NULL(A)
 
-		qdel(trace.penetration_holder)
-		trace.penetration_holder = null
-		QDEL_NULL(trace)
+		if (trace)
+			if (trace.penetration_holder)
+				qdel(trace.penetration_holder)
+				trace.penetration_holder = null
+			QDEL_NULL(trace)
 
-		qdel(new_trace.penetration_holder)
-		new_trace.penetration_holder = null
-		QDEL_NULL(new_trace)
+		if (new_trace)
+			if (new_trace.penetration_holder)
+				qdel(new_trace.penetration_holder)
+				new_trace.penetration_holder = null
+			QDEL_NULL(new_trace)
 
 /mob/living/carbon/superior_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
 	if(weakened) return

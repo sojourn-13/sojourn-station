@@ -19,6 +19,23 @@
 	var/allow_spin = TRUE
 	var/used_now = FALSE //For tools system, check for it should forbid to work on atom for more than one user at time
 
+	/// Associative list. Key should be a typepath of /datum/stat_modifier, and the value should be a weight for use in pickweight.
+	var/list/allowed_stat_modifiers = list(
+
+	)
+
+	/// List of all instances of /datum/stat_modifier that have been applied in /datum/stat_modifier/proc/apply_to(). Should never have more instances of one typepath than that typepath's maximum_instances var.
+	var/list/current_stat_modifiers = list(
+
+	)
+
+	/// List of all stored prefixes. Used for stat_modifiers, on everything but tools and guns, which use them for attachments.
+	var/list/prefixes = list()
+
+	var/get_stat_modifier = FALSE
+	var/times_to_get_stat_modifiers = 1
+	var/get_prefix = TRUE
+
 	///Chemistry.
 	var/reagent_flags = NONE
 	var/datum/reagents/reagents
@@ -133,6 +150,14 @@
 		for(var/reagent in preloaded_reagents)
 			reagents.add_reagent(reagent, preloaded_reagents[reagent])
 
+	if (get_stat_modifier)
+		for (var/i = 0, i < times_to_get_stat_modifiers, i++)
+
+			var/typepath = pickweight(allowed_stat_modifiers, 0)
+
+			var/datum/stat_modifier/chosen_modifier = new typepath
+			if (!(chosen_modifier.apply_to(src)))
+				QDEL_NULL(chosen_modifier)
 
 	return INITIALIZE_HINT_NORMAL
 
@@ -164,8 +189,11 @@
 	if(reagents)
 		QDEL_NULL(reagents)
 
+	QDEL_LIST(current_stat_modifiers)
+
 	spawn()
 		update_openspace()
+
 	return ..()
 
 /atom/proc/reveal_blood()
@@ -367,6 +395,15 @@ its easier to just keep the beam vertical.
 	if(desc)
 		to_chat(user, desc)
 //Soj Edits
+	if (current_stat_modifiers && current_stat_modifiers.len)
+		var/list/descriptions_to_print = list()
+		for (var/datum/stat_modifier/mod in current_stat_modifiers)
+			if (mod.description)
+				if (!(mod.description in descriptions_to_print))
+					descriptions_to_print += mod.description
+		for (var/description in descriptions_to_print)
+			to_chat(user, SPAN_NOTICE(description))
+
 	if(reagents)
 		if(reagent_flags & TRANSPARENT)
 			to_chat(user, SPAN_NOTICE("It contains:"))
@@ -889,3 +926,10 @@ its easier to just keep the beam vertical.
 // Called after we wrench/unwrench this object
 /obj/proc/wrenched_change()
 	return
+
+/// First resets the name of the mob to the initial name it had, then adds each prefix in a random order.
+/atom/proc/update_prefixes()
+	name = initial(src.name) //reset the name so we can accurately re-add prefixes without fear of double prefixes
+
+	for (var/prefix in prefixes)
+		name = "[prefix] [name]"

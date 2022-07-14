@@ -15,6 +15,8 @@
 
 	var/eating_time = 900
 
+	/// Does this mob advance if they can't see their target?
+	var/advance_if_cant_see = FALSE
 	/// Chance to fire a projectile if it would hit a friendly.
 	var/do_friendly_fire_chance = 10
 
@@ -175,8 +177,8 @@
 	var/has_special_parts = FALSE //var for checking during the butcher process.
 	var/special_parts = list() //Any special body parts.
 
-	var/melee_damage_lower = 0
-	var/melee_damage_upper = 10
+	melee_damage_lower = 0
+	melee_damage_upper = 10
 
 	var/list/objectsInView //memoization for getObjectsInView()
 	var/viewRange = 7 //how far the mob AI can see
@@ -214,8 +216,7 @@
 	var/fleshcolor = "#DB0000"
 	var/bloodcolor = "#DB0000"
 	//Armor values for the mob. Works like normal armor values.
-	var/give_randomized_armor = FALSE
-	var/gives_prefex = FALSE
+
 	var/prefex = "bugged"
 
 	var/armor = list(
@@ -240,7 +241,7 @@
 
 	var/ranged = FALSE  //Do we have a range based attack?
 	var/rapid = FALSE   //Do we shoot in groups?
-	var/rapid_fire_shooting_amount = 3 //By default will rapid fire in 3 shots per.
+	var/rapid_fire_shooting_amount = 1 // Has to be one so stat modifiers can work.
 	var/obj/item/projectile/projectiletype  //What are we shooting?
 	var/projectilesound //What sound do we make when firing
 	/// How loud will our projectile firing sound be?
