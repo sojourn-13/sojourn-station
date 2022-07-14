@@ -84,6 +84,9 @@
 
 	known_languages = list(LANGUAGE_COMMON)
 
+	drop_items = list(/obj/random/psi)
+
+
 /mob/living/carbon/superior_animal/psi_monster/New()
 	..()
 	if(!icon_living)

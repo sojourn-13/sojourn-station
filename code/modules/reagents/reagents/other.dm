@@ -410,6 +410,9 @@
 		for(var/obj/effect/O in T)
 			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay) && !istype(O,/obj/effect/overlay/water))
 				qdel(O)
+		for(var/obj/item/bluespace_leak/BSL in T)
+			if(istype(BSL,/obj/item/bluespace_leak))
+				qdel(BSL)
 		for(var/mob/living/carbon/slime/M in T)
 			M.adjustToxLoss(rand(5, 10))
 

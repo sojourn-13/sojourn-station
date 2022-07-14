@@ -105,16 +105,18 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	if(!targetted_mob || SA_attackable(targetted_mob))
 		stance = HOSTILE_STANCE_IDLE
 	if(targetted_mob in ListTargets(10))
-		if(ranged)
-			if(get_dist(src, targetted_mob) <= 6 && !istype(src, /mob/living/simple_animal/hostile/megafauna))
-				OpenFire(targetted_mob)
+		if(!anchored)
+			if(ranged)
+				if(prob(45))
+					stance = HOSTILE_STANCE_ATTACKING
+					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+					walk_to_wrapper(src, targetted_mob, 1, move_to_delay)
+				else
+					OpenFire(targetted_mob)
 			else
+				stance = HOSTILE_STANCE_ATTACKING
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 				walk_to_wrapper(src, targetted_mob, 1, move_to_delay)
-		else
-			stance = HOSTILE_STANCE_ATTACKING
-			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to_wrapper(src, targetted_mob, 1, move_to_delay)
 	return FALSE
 
 /mob/living/simple_animal/hostile/proc/DestroyPathToTarget()
