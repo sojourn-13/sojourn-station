@@ -22,7 +22,7 @@
 		/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified = 26,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 16,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 42,
-		/datum/stat_modifier/mob/living/speed/custom = list(500, 500),
+		/datum/stat_modifier/mob/living/speed/flat/positive/low = 9,
 	)
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat

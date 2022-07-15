@@ -31,7 +31,6 @@
 		/datum/stat_modifier/mob/living/carbon/superior_animal/old/spider = 50,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/venomous = 1,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 16,
-		/datum/stat_modifier/mob/living/speed/custom = list(500, -500),
 	)
 
 	move_to_delay = 4.5
