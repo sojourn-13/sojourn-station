@@ -35,15 +35,20 @@
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/none = 100, //50% chance to have no prefix if we add all others up to this value i think
 		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 15,
+		/datum/stat_modifier/health/flat/negative/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/low = 5
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 12,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 5,
+		/datum/stat_modifier/mob/living/damage/mixed/negative = list(5, -3, 1, 0, -3, 1, 0, -3, 0)
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/slowaim = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw = 5,
 	)
 
 //They are all waring space suits

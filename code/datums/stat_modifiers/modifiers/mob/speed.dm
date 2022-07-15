@@ -15,8 +15,6 @@
 
 	stattags = DEFENSE_STATTAG
 
-	description = "This one seems quicker than the others."
-
 	force_default_prefix = FALSE
 
 // basetype, dont use

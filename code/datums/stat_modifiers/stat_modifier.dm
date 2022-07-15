@@ -204,6 +204,7 @@
 /datum/stat_modifier/proc/after_apply(atom/target, list/arguments, arg_length, arguments_to_pass)
 	return
 
+/// Uses a ratio to determine which prefix and description will be gained. If arguments_to_pass is null, uses ratio1 and ratio2 instead. Returns if force_default_prefix is true.
 /datum/stat_modifier/proc/determine_description_and_prefixes(atom/target, arguments_to_pass, ratio1, ratio2)
 
 	if (force_default_prefix || (!(target.get_prefix)))
