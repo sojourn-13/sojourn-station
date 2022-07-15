@@ -572,7 +572,9 @@
 	if(!starting_point)
 		return FALSE
 	for(var/mob/living/potential_attacker in SSmobs.mob_living_by_zlevel[starting_point.z])
-		if(!(potential_attacker.stat < DEAD))
+		if(potential_attacker == caller)
+			continue
+		if(potential_attacker.stat == DEAD)
 			continue
 		if(!(get_dist(starting_point, potential_attacker) <= distance))
 			continue

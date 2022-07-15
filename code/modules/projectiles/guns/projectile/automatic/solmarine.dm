@@ -7,6 +7,7 @@
 	icon_state = "solmarine"
 	item_state = "solmarine"
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 6)
+	w_class = ITEM_SIZE_BULKY
 	mag_well = MAG_WELL_STANMAG
 	caliber = CAL_LRIFLE
 	price_tag = 1100
@@ -80,6 +81,7 @@
 	price_tag = 650
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	w_class = ITEM_SIZE_SMALL
+	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 3)
 	can_dual = TRUE
 	init_recoil = CARBINE_RECOIL(1.2)
 	init_firemodes = list(
@@ -88,3 +90,58 @@
 		)
 
 	shotgun_haver = FALSE
+
+/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless_sawn
+	name = "sawn down \"Martian\" carbine"
+	desc = "An ancient that predates mass autolathen printing rifle found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
+		 Unlike other old stock this one was always intented to be a 6.5mm.\
+		 Someone butchered this thing beyond recognition! At least it fits in a holster."
+	icon = 'icons/obj/guns/projectile/sawnoff/solmarine.dmi'
+	matter = list(MATERIAL_IRON = 10, MATERIAL_PLASTIC = 8)
+	init_recoil = CARBINE_RECOIL(1.2)
+	damage_multiplier = 0.8
+	price_tag = 650
+	icon_state = "solmarine"
+	item_state = "solmarine"
+	shotgun_haver = FALSE
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND
+		)
+
+
+/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless
+	name = "\"Martian\" carbine"
+	desc = "An ancient that predates mass autolathen printing rifle found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
+		 Unlike other old stock this one was always intented to be a 6.5mm."
+	icon = 'icons/obj/guns/projectile/martian.dmi'
+	icon_state = "service"
+	item_state = "service"
+	matter = list(MATERIAL_IRON = 20, MATERIAL_PLASTIC = 16)
+	shotgun_haver = FALSE
+	saw_off = TRUE
+	sawn = /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless_sawn
+	serial_type = "Sol Fed"
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND
+		)
+
+/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless/update_icon()
+	..()
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (ammo_magazine)
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
+		itemstring += "_mag"
+
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_slide"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+
+/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless/Initialize()
+	. = ..()
+	update_icon()

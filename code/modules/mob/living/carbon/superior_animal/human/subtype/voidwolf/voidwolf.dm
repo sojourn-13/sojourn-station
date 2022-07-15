@@ -98,6 +98,7 @@
 	health = 100
 	ranged = TRUE
 	rapid = TRUE
+	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/beam
 	drop_items = list(/obj/item/gun/energy/cog)
@@ -143,6 +144,7 @@
 	ranged_cooldown = 3
 	ranged = TRUE
 	rapid = TRUE
+	rapid_fire_shooting_amount = 3
 	projectiletype = /obj/item/projectile/beam
 	drop_items = list(/obj/item/gun/energy/cog)
 	limited_ammo = TRUE
@@ -189,6 +191,7 @@
 	melee_damage_upper = 25
 	ranged = TRUE
 	rapid = TRUE
+	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/beam/weak/smg
 	drop_items = list(/obj/item/gun/energy/firestorm)
@@ -263,7 +266,7 @@
 	if(!Proj)	return
 	if(prob(65))
 		..()
-	else
+	else if (!(Proj.testing))
 		visible_message("\red <B>[src] blocks [Proj] with its shield!</B>")
 	return 0
 

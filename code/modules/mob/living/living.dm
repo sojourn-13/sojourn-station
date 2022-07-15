@@ -882,6 +882,15 @@ default behaviour is:
 		update_z(T.z)
 
 /mob/living/Destroy()
+
+	for (var/obj/effect/bmode/buildholder/selector in selected_by)
+		selector.selected_mobs -= src
+	selected_by.Cut()
+
+	for (var/group in groups_in)
+		GLOB.mob_groups[group] -= src
+	groups_in.Cut()
+
 	QDEL_NULL(stats)
 
 	unnatural_mutations.holder = null //causes a GC failure if we qdel-and it seems its not SUPPOSED to qdel, oddly

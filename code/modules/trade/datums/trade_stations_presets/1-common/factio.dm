@@ -3,6 +3,8 @@
 		"PRT 'Factor'" = "Autoproduction Trader 'Factor': \"Production facility, this is the trade beacon 'Factor'. We will sell you disks and buy what they print."
 	)
 	uid = "factio_basic"
+	tree_x = 0.66
+	tree_y = 0.9
 	start_discovered = TRUE
 	spawn_always = TRUE
 	markup = COMMON_GOODS

@@ -95,11 +95,12 @@
 	if(prob(10))
 		cell_drop = /obj/item/cell/medium
 
+/* - This made them have natural armor against lasers that stacked, not that good also they get full fire proof as they are a robot
 /mob/living/carbon/superior_animal/robot/greyson/custodian/chef/adjustFireLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	fireloss = min(max(fireloss + amount/2, 0),(maxHealth*2)) //Slightly resistant to fire, because it would blow apart otherwise
-
+*/
 
 /mob/living/carbon/superior_animal/robot/greyson/custodian/engineer
 	name = "Greyson Positronic Engineering Drone"

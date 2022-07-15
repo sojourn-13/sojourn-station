@@ -18,6 +18,12 @@
 	var/can_anchor = TRUE
 	var/cant_be_pulled = FALSE //Used for things that cant be anchored, but also shouldnt be pullable
 
+	/// Used in walk_to_wrapper. Set to world.time whenever a walk is called that uses temporary_walk = TRUE. Prevents walks that dont respect the override from conflicting with eachother.
+	var/walk_to_initial_time = 0
+
+	/// Used in walk_to_wrapper. If something with an override is called, it will set it to world.time + the value of override in the proc, and any walks that respect the override after will return until world.time is more than the var.
+	var/walk_override_timer = 0
+
 	//spawn_values
 	var/price_tag = 0 // The item price in credits. atom/movable so we can also assign a price to animals and other thing.
 	var/surplus_tag = FALSE //If true, attempting to export this will net you a greatly reduced amount of credits, but we don't want to affect the actual price tag for selling to others.

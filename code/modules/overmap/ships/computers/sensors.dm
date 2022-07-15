@@ -167,7 +167,8 @@
 		to_chat(user, "\The [src] shows signs of damage!")
 
 /obj/machinery/shipsensors/bullet_act(var/obj/item/projectile/Proj)
-	take_damage(Proj.get_structure_damage())
+	if (!(Proj.testing))
+		take_damage(Proj.get_structure_damage())
 	..()
 
 /obj/machinery/shipsensors/proc/toggle()

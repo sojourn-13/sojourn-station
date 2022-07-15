@@ -22,6 +22,10 @@
 	var/cooldown = 0
 	/// How much cooldown will be incremented
 	var/cooldown_increment = 10
+	/// The amount of ticks between each movement of the spray
+	var/spray_movement_delay = 5
+	/// The amount of ticks the spray will exist for
+	var/spray_lifespan = 10
 
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/pepper/New()
@@ -68,5 +72,5 @@
 	gas_sac.trans_to_obj(D, amount_per_transfer_from_this)
 	D.set_color()
 	var/distance = (get_dist(src, targetted_mob))
-	D.set_up(my_target, (distance + 1), 10) //+1 because i found it was a little buggy
+	D.set_up(my_target, (distance + 1), spray_movement_delay, spray_lifespan) //+1 because i found it was a little buggy
 

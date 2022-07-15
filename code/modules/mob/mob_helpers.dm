@@ -676,3 +676,36 @@ proc/is_blind(A)
 //Soj edit
 /mob/proc/get_health()
 	return health
+
+/**
+ * Wrapper for walk_to. Most cases of walk_to should be instead substituted for this, although this has slightly worse performance than stock walk_to.
+ *
+ * Args:
+ * All the same as walk_to.
+ * deathcheck = FALSE: If deathcheck == TRUE, and Ref.stat == DEAD, we will return FALSE.
+ * respect_override = TRUE: If TRUE, we will check ref's walk_override_timer variable (set whenever this proc is called with override = TRUE), and if its more or equal to world.time, we return.
+ * temporary_walk = FALSE: If this or override is true, we calculate a timer based on distance and the Lag arg. If this is true, we set a timer to walk_to(Ref, 0) based on
+ * the aforementioned timer. The proc set for this timer is walk_to_wrapper_timer. See it's doc for more info.
+ * override = FALSE: If true, we set the ref's walk_override_timer to world.time + the aforementioned timer. See respect_override for more info.
+**/
+/proc/walk_to_wrapper(atom/movable/Ref, Trg, Min=0, Lag=0, Speed=0, deathcheck = FALSE, respect_override = TRUE, temporary_walk = FALSE, override = FALSE)
+	if (deathcheck && Ref.stat == DEAD)
+		return FALSE
+	if (respect_override && (Ref.walk_override_timer >= world.time))
+		return FALSE
+	if (override || temporary_walk)
+		var/timer = ((get_dist(Ref, Trg) * (Lag * 1.2)) + 3) // WARNING. ARBITRARY MATH. I DO NOT KNOW IF THIS WILL WORK.
+		if (override)
+			Ref.walk_override_timer = (world.time + timer)
+		if (temporary_walk)
+			var/current_time = world.time
+			Ref.walk_to_initial_time = current_time
+			addtimer(CALLBACK(GLOBAL_PROC, .proc/walk_to_wrapper_timer, Ref, 0, current_time), timer)
+	walk_to(Ref, Trg, Min, Lag, Speed)
+	return TRUE
+
+/// For use in walk_to_wrapper exclusively. If another temporary walk has been called while this timer was active, this walk is cancelled already, so we return.
+/proc/walk_to_wrapper_timer(atom/movable/Ref, Trg, initial)
+	if (initial != Ref.walk_to_initial_time) //so multiple movements dont interrupt eachother
+		return FALSE
+	walk_to(Ref, Trg)

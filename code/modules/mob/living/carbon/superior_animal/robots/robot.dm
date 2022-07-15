@@ -44,6 +44,8 @@
 
 	known_languages = list(LANGUAGE_COMMON)
 
+	never_stimulate_air = TRUE
+
 	//Drops
 	var/drop1 = /obj/item/scrap_lump
 	var/drop2 = null
@@ -52,7 +54,7 @@
 /mob/living/carbon/superior_animal/robot/handle_breath(datum/gas_mixture/breath) //we dont care about the air
 	return
 
-/mob/living/carbon/superior_animal/robot/handle_environment(var/datum/gas_mixture/environment) //We are robots, no air or presser will harm us
+/mob/living/carbon/superior_animal/robot/handle_environment(datum/gas_mixture/environment) //We are robots, no air or presser will harm us
 	return
 
 /mob/living/carbon/superior_animal/robot/handle_cheap_breath(datum/gas_mixture/breath as anything)
@@ -61,7 +63,7 @@
 /mob/living/carbon/superior_animal/robot/handle_cheap_environment(datum/gas_mixture/environment as anything)
 	return
 
-/mob/living/carbon/superior_animal/robot/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0) //WE CLEAN!
+/mob/living/carbon/superior_animal/robot/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, glide_size_override = 0) //WE CLEAN!
 	. = ..()
 	if(cleaning)
 		var/turf/tile = loc
@@ -94,18 +96,18 @@
 
 /mob/living/carbon/superior_animal/robot/death()
 	..()
-	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
+	new /obj/effect/decal/cleanable/blood/gibs/robot(loc)
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
 	if(drop1)
-		new drop1 (src.loc)
+		new drop1 (loc)
 		drop1 = null
 	if(drop2)
-		new drop2 (src.loc)
+		new drop2 (loc)
 		drop2 = null
 	if(cell_drop)
-		new cell_drop (src.loc)
+		new cell_drop (loc)
 		cell_drop = null
 	if(termiation)
 		qdel(src)
@@ -126,21 +128,3 @@
 		var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)
 		if(robotics_expert) // Are we an expert in robots?
 			to_chat(user, SPAN_NOTICE("[name] is currently at [(health/maxHealth)*100]% integrity!")) // Give a more accurate reading.
-		else if(health < maxHealth * 0.10)
-			to_chat(user, SPAN_DANGER("It looks like they are on their last legs!"))
-		else if (health < maxHealth * 0.20)
-			to_chat(user, SPAN_DANGER("It's grievously wounded!"))
-		else if (health < maxHealth * 0.30)
-			to_chat(user, SPAN_DANGER("It's badly wounded!"))
-		else if (health < maxHealth * 0.40)
-			to_chat(user, SPAN_WARNING("Its wounds are mounting."))
-		else if (health < maxHealth * 0.50)
-			to_chat(user, SPAN_WARNING("It looks half dead."))
-		else if (health < maxHealth * 0.60)
-			to_chat(user, SPAN_WARNING("It looks like its been beaten up quite badly"))
-		else if (health < maxHealth * 0.70)
-			to_chat(user, SPAN_WARNING("It has accrued some lasting injuries."))
-		else if (health < maxHealth * 0.80)
-			to_chat(user, SPAN_WARNING("It has had minor damage done to it."))
-		else if (health < maxHealth)
-			to_chat(user, SPAN_WARNING("It has a few cuts and bruses."))

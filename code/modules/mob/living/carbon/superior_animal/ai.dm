@@ -37,13 +37,19 @@
 				filteredTargets += target_mob
 
 		for (var/obj/mecha/M in GLOB.mechas_list)
-			if ((M.z == src.z) && (get_dist(src, M) <= viewRange) && isValidAttackTarget(M))
-				filteredTargets += M
+			//As goofy as this looks its more optimized as were not looking at every mech outside are z-level if they are around us. - Trilby
+			if(M.z == z)
+				if(get_dist(src, M) <= viewRange)
+					if(isValidAttackTarget(M))
+						filteredTargets += M
 
-	var/filteredTarget = safepick(getTargets(filteredTargets, src))
+	var/atom/filteredTarget = safepick(getTargets(filteredTargets, src))
 
 	if ((filteredTarget != target_mob) && filteredTarget)
 		doTargetMessage()
+
+	if (filteredTarget)
+		target_location = WEAKREF(filteredTarget.loc)
 
 	return filteredTarget
 
@@ -87,38 +93,52 @@
 		loseTarget()
 		return
 
-	if ((get_dist(src, targetted_mob) >= viewRange) || src.z != targetted_mob.z && !istype(targetted_mob, /obj/mecha))
+	if ((get_dist(src, targetted_mob) >= viewRange) || z != targetted_mob.z && !istype(targetted_mob, /obj/mecha))
 		loseTarget()
 		return
 	if (check_if_alive())
-		prepareAttackPrecursor(targetted_mob, .proc/attemptAttackOnTarget, MELEE_TYPE, FALSE, FALSE)
+		if (prepareAttackPrecursor(MELEE_TYPE, FALSE, FALSE, targetted_mob))
+			addtimer(CALLBACK(src, .proc/attemptAttackOnTarget), delay_for_melee)
 
-/mob/living/carbon/superior_animal/proc/loseTarget(var/stop_pursuit = TRUE)
+
+/mob/living/carbon/superior_animal/proc/loseTarget(stop_pursuit = TRUE, simply_losetarget = FALSE)
 	if (stop_pursuit)
 		stop_automated_movement = 0
-		walk(src, 0)
-	fire_delay = fire_delay_initial
-	melee_delay = melee_delay_initial
-	patience = patience_initial
-	retarget_timer = retarget_timer_initial
-	target_mob = null
-	stance = HOSTILE_STANCE_IDLE
+		walk_to_wrapper(src, 0, deathcheck = FALSE)
+	if (!simply_losetarget)
+		fire_delay = fire_delay_initial
+		melee_delay = melee_delay_initial
+		patience = patience_initial
+		retarget_timer = retarget_timer_initial
+		stance = HOSTILE_STANCE_IDLE
+		delayed = delayed_initial
 	lost_sight = FALSE
+	target_mob = null
+	target_location = null
 
-/mob/living/carbon/superior_animal/proc/isValidAttackTarget(var/atom/O)
+/mob/living/carbon/superior_animal/proc/isValidAttackTarget(atom/O)
+
+//Soj optimizations: Faster returns rather then mega returns
+//Even if this looks a bit more mess and has more lines (sob) - Trilby
 
 	if (isliving(O))
 		var/mob/living/L = O
-		if((L.stat != CONSCIOUS) || (L.health <= (ishuman(L) ? HEALTH_THRESHOLD_CRIT : 0)) || (!attack_same && (L.faction == src.faction)) || (L in friends))
-			return
-		if(L.friendly_to_colony && src.friendly_to_colony) //If are target and areselfs have the friendly to colony tag, used for chtmant protection
-			return
-		return 1
+		if(L.stat != CONSCIOUS)
+			return FALSE
+		if(L.health <= (ishuman(L) ? HEALTH_THRESHOLD_CRIT : 0))
+			return FALSE
+		if((!attack_same && (L.faction == faction)) || (L in friends)) //just cuz your a friend dosnt mean it magically will no longer attack same
+			return FALSE
+		if(L.friendly_to_colony && friendly_to_colony) //If are target and areselfs have the friendly to colony tag, used for chtmant protection
+			return FALSE
+		return TRUE
 
 	if (istype(O, /obj/mecha))
 		if (can_see(src, O, get_dist(src, O))) //can we even see it?
 			var/obj/mecha/M = O
 			return isValidAttackTarget(M.occupant)
+
+	return TRUE
 
 
 /mob/living/carbon/superior_animal/proc/destroySurroundings() //todo: make this better - Trilby
@@ -128,11 +148,11 @@
 
 	if (prob(break_stuff_probability))
 
-		for (var/obj/structure/window/obstacle in src.loc) // To destroy directional windows that are on the creature's tile
+		for (var/obj/structure/window/obstacle in loc) // To destroy directional windows that are on the creature's tile
 			obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 			return
 
-		for (var/obj/machinery/door/window/obstacle in src.loc) // To destroy windoors that are on the creature's tile
+		for (var/obj/machinery/door/window/obstacle in loc) // To destroy windoors that are on the creature's tile
 			obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 			return
 
@@ -209,11 +229,11 @@
 /mob/living/carbon/superior_animal/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/living/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	..()
 	if(obey_check(speaker)) // Are we only obeying the one talking?
-		if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following && !anchored) // Is he telling us to follow?
+		if(findtext(message, "Follow") && findtext(message, "[name]") && !following && !anchored) // Is he telling us to follow?
 			following = speaker
 			last_followed = speaker
 			visible_emote("[follow_message]")
-		if(findtext(message, "Stop") && findtext(message, "[src.name]") && following) // Else, is he telling us to stop?
+		if(findtext(message, "Stop") && findtext(message, "[name]") && following) // Else, is he telling us to stop?
 			following = null
 			visible_emote("[stop_message]")
 

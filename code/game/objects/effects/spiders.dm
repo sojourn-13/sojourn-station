@@ -99,14 +99,15 @@
 
 /obj/effect/spider/bullet_act(var/obj/item/projectile/Proj)
 	..()
-	if(BURN in Proj.damage_types)
-		for(var/obj/effect/spider/webby in range(1, src))
-			if(prob(80))
-				webby.ignite()
-		visible_message("<span class='warning'>\The [src] bursts into flame!</span>")
-		ignite()
-	health -= Proj.get_structure_damage()
-	healthCheck()
+	if (!(Proj.testing))
+		if(BURN in Proj.damage_types)
+			for(var/obj/effect/spider/webby in range(1, src))
+				if(prob(80))
+					webby.ignite()
+			visible_message("<span class='warning'>\The [src] bursts into flame!</span>")
+			ignite()
+		health -= Proj.get_structure_damage()
+		healthCheck()
 
 /obj/effect/spider/healthCheck()
 	if(health <= 0)
@@ -327,7 +328,7 @@
 			var/list/nearby = trange(5, src) - loc
 			if(nearby.len)
 				var/target_atom = pick(nearby)
-				walk_to(src, target_atom, 5)
+				walk_to_wrapper(src, target_atom, 5)
 				if(prob(25))
 					src.visible_message("<span class='notice'>\The [src] skitters[pick(" away"," around","")].</span>")
 		else if(prob(1))
@@ -335,7 +336,7 @@
 			for(var/obj/machinery/atmospherics/unary/vent_pump/v in view(7,src))
 				if(!v.welded)
 					entry_vent = v
-					walk_to(src, entry_vent, 5)
+					walk_to_wrapper(src, entry_vent, 5)
 					break
 
 		if(amount_grown >= 100)

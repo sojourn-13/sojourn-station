@@ -207,7 +207,7 @@
 	armor = list(melee = 25, bullet = 25, energy = 15, bomb = 25, bio = 10, rad = 25, agony = 0)
 	armor_penetration = 25
 
-	give_randomized_armor = FALSE //Were not getting armor
+	get_stat_modifier = FALSE //Were not getting armor
 
 	//Giving the emperor spider his own meat that has party drops. Reducing dropped meat to 3 from 4.
 	meat_amount = 4 //So its more worth killing these
@@ -237,7 +237,7 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/reaper_spider
 	armor_penetration = 30
 
-	give_randomized_armor = FALSE //Were not getting armor
+	get_stat_modifier = FALSE //Were not getting armor
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/reaper_spider/slip(var/slipped_on)
 	return FALSE

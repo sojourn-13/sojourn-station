@@ -15,7 +15,7 @@
 	melee_damage_upper = 7 //Weaker than hunter
 	armor_penetration = 35
 
-/mob/living/carbon/superior_animal/roach/toxic/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior_animal/roach/toxic/UnarmedAttack(atom/A, proximity)
 	. = ..()
 
 	if(isliving(A))

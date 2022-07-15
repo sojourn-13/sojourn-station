@@ -33,9 +33,10 @@
 
 
 
-/mob/living/carbon/superior_animal/roach/fuhrer/bullet_act()
+/mob/living/carbon/superior_animal/roach/fuhrer/bullet_act(var/obj/item/projectile/P)
 	.=..()
-	distress_call()
+	if (!(P.testing))
+		distress_call()
 
 /mob/living/carbon/superior_animal/roach/fuhrer/attackby()
 	.=..()

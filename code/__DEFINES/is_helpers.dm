@@ -5,6 +5,8 @@
 
 #define ismob(A) istype(A, /mob)
 
+#define ismecha(A) istype(A, /obj/mecha)
+
 #define isobserver(A) istype(A, /mob/observer)
 
 #define isghost(A) istype(A, /mob/observer/ghost)
@@ -46,7 +48,11 @@
 
 #define issuperiortermite(A) istype(A, /mob/living/carbon/superior_animal/termite)
 
+#define issuperiortermitenodespawn(A) istype(A, /mob/living/carbon/superior_animal/termite_no_despawn) //THIS SUCKS WHAT THE FUCK
+
 #define issuperiorspider(A) istype(A, /mob/living/carbon/superior_animal/giant_spider)
+
+#define issuperiorroach(A) istype(A, /mob/living/carbon/superior_animal/roach)
 
 #define isburrow(A) istype(A, /obj/structure/burrow)
 //---------------------------------------------------

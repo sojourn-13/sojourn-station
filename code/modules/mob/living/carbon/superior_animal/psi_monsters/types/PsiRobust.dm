@@ -79,6 +79,7 @@
 
 	ranged = TRUE
 	rapid = TRUE
+	rapid_fire_shooting_amount = 3
 	comfy_range = 8
 	projectiletype = /obj/item/projectile/goo
 	projectilesound = 'sound/effects/creatures/acid_spit.ogg'

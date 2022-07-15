@@ -2,8 +2,10 @@
 	name_pool = list(
 		"SI 'Ningishzida'" = "SI Trade Beacon 'Ningishzida': Connection with the SI surplus network established."
 	)
-	icon_states = "moe_capital"
+	icon_states = list("moe_capital", "station")
 	uid = "moe_adv"
+	tree_x = 0.26
+	tree_y = 0.8
 	spawn_always = TRUE
 	markup = RARE_GOODS
 	offer_limit = 1

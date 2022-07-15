@@ -756,7 +756,7 @@
 				if(get_dist(src, Corpse) <= 1)
 					special_ability(Corpse)
 				else
-					walk_to(src, Corpse, 1, 1, 4)
+					walk_to_wrapper(src, Corpse, 1, 1, 4)
 				break
 
 

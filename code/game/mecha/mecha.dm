@@ -935,45 +935,46 @@ assassination method if you time it right*/
 	if(Proj.firer == src.occupant) // Pass the projectile through if we fired it.
 		return PROJECTILE_CONTINUE
 
-	src.log_message("Hit by projectile. Type: [Proj.name]([Proj.check_armour]).",1)
-	if(deflect_hit(is_melee=0))
-		src.occupant_message(SPAN_NOTICE("The armor deflects incoming projectile."))
-		src.visible_message("The [src.name] armor deflects the projectile.")
-		src.log_append_to_last("Armor saved.")
-		return
+	if (!(Proj.testing))
+		src.log_message("Hit by projectile. Type: [Proj.name]([Proj.check_armour]).",1)
+		if(deflect_hit(is_melee=0))
+			src.occupant_message(SPAN_NOTICE("The armor deflects incoming projectile."))
+			src.visible_message("The [src.name] armor deflects the projectile.")
+			src.log_append_to_last("Armor saved.")
+			return
 
-	if(!(Proj.nodamage))
-		var/final_penetration = Proj.penetrating ? Proj.penetrating - src.armor_level : 0
-		var/damage_multiplier = final_penetration > 0 ? max(1.5, final_penetration) : 1 // Minimum damage bonus of 50% if you beat the mech's armor
-		Proj.penetrating = 0 // Reduce this value to maintain the old penetration loop's behavior
-		src.hit_damage(Proj.get_structure_damage() * damage_multiplier, Proj.check_armour, is_melee=0)
+		if(!(Proj.nodamage))
+			var/final_penetration = Proj.penetrating ? Proj.penetrating - src.armor_level : 0
+			var/damage_multiplier = final_penetration > 0 ? max(1.5, final_penetration) : 1 // Minimum damage bonus of 50% if you beat the mech's armor
+			Proj.penetrating = 0 // Reduce this value to maintain the old penetration loop's behavior
+			src.hit_damage(Proj.get_structure_damage() * damage_multiplier, Proj.check_armour, is_melee=0)
 
-		//AP projectiles have a chance to cause additional damage
-		if(final_penetration > 0)
-			for(var/i in 0 to min(final_penetration, round(Proj.get_total_damage()/15)))
-				if(prob(20))
-					src.occupant_message(SPAN_WARNING("Your armor was penetrated and a component was damaged!."))
-					src.visible_message("Sparks fly from the [src.name] as the projectile strikes a critical component!")
-					spark_system.start()
-					// check_internal_damage rolls a chance to damage again, so do our own critical damage handling here to guarantee that a component is damaged.
-					var/list/possible_int_damage = list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT)
-					if(prob(90))
-						for(var/T in possible_int_damage)
-							if(internal_damage & T)
-								possible_int_damage -= T
-						var/int_dam_flag = safepick(possible_int_damage)
-						if(int_dam_flag)
-							setInternalDamage(int_dam_flag)
-					else
-						var/obj/item/mecha_parts/mecha_equipment/destr = safepick(equipment)
-						if(destr)
-							destr.destroy()
-					break // Only allow one critical hit per penetration
+			//AP projectiles have a chance to cause additional damage
+			if(final_penetration > 0)
+				for(var/i in 0 to min(final_penetration, round(Proj.get_total_damage()/15)))
+					if(prob(20))
+						src.occupant_message(SPAN_WARNING("Your armor was penetrated and a component was damaged!."))
+						src.visible_message("Sparks fly from the [src.name] as the projectile strikes a critical component!")
+						spark_system.start()
+						// check_internal_damage rolls a chance to damage again, so do our own critical damage handling here to guarantee that a component is damaged.
+						var/list/possible_int_damage = list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT)
+						if(prob(90))
+							for(var/T in possible_int_damage)
+								if(internal_damage & T)
+									possible_int_damage -= T
+							var/int_dam_flag = safepick(possible_int_damage)
+							if(int_dam_flag)
+								setInternalDamage(int_dam_flag)
+						else
+							var/obj/item/mecha_parts/mecha_equipment/destr = safepick(equipment)
+							if(destr)
+								destr.destroy()
+						break // Only allow one critical hit per penetration
 
-				final_penetration--
+					final_penetration--
 
-				if(prob(15))
-					break //give a chance to exit early
+					if(prob(15))
+						break //give a chance to exit early
 
 	Proj.on_hit(src) //on_hit just returns if it's argument is not a living mob so does this actually do anything?
 	..()
