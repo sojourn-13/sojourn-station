@@ -97,6 +97,10 @@
 			to_chat(user, SPAN_WARNING("You do not have the training necessessary to do this surgery!"))
 			return FALSE
 
+	if(status & ORGAN_SPLINTED)
+		to_chat(user, SPAN_WARNING("You need to remove the brace first!"))
+		return FALSE
+
 	if(!S.is_valid_target(src, target))
 		SSnano.update_uis(src)
 		return FALSE
@@ -112,7 +116,7 @@
 		return FALSE
 
 	if (istype(tool,/obj/item/stack/medical/advanced/bruise_pack))
-		if (tool.icon_state == "traumakit" && (!(user.stats.getPerk(PERK_ADVANCED_MEDICAL) || user.stats.getPerk(PERK_SURGICAL_MASTER) || user.stats.getStat(STAT_BIO) >= 25)))
+		if (tool.icon_state == "traumakit" && (!(user.stats.getPerk(PERK_ADVANCED_MEDICAL) || user.stats.getPerk(PERK_SURGICAL_MASTER) || user.stats.getStat(STAT_BIO) >= 50)))
 			to_chat(user, SPAN_WARNING("You do not have the training to use an Advanced Trauma Kit in this way."))
 			return FALSE
 
