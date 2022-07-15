@@ -5,8 +5,9 @@
 	var/list/allowed_tools = null
 	var/required_tool_quality = null
 	var/target_organ_type = /obj/item/organ/external
-	var/perk_i_need = PERK_SURGICAL_MASTER
+	var/perk_i_need = PERK_ADVANCED_MEDICAL					//Basically set up to check for specific surgery perks.
 	var/perk_i_need_alt = PERK_MASTER_HERBALIST
+	var/perk_drug = PERK_ULTRASURGEON
 
 	var/difficulty = FAILCHANCE_HARD
 	var/required_stat = STAT_BIO
@@ -92,7 +93,7 @@
 	var/datum/surgery_step/S = GLOB.surgery_steps[step_type]
 
 	if(S.requires_perk)
-		if(!(user.stats.getPerk(S.perk_i_need) || user.stats.getPerk(S.perk_i_need_alt)) || !user.stats.getStat(STAT_BIO) >= 120)
+		if(!(user.stats.getPerk(S.perk_i_need) || user.stats.getPerk(S.perk_i_need_alt) || user.stats.getPerk(S.perk_drug)) || !user.stats.getStat(STAT_BIO) >= 50)
 			to_chat(user, SPAN_WARNING("You do not have the training necessessary to do this surgery!"))
 			return FALSE
 
@@ -111,7 +112,7 @@
 		return FALSE
 
 	if (istype(tool,/obj/item/stack/medical/advanced/bruise_pack))
-		if (tool.icon_state == "traumakit" && (!(user.stats.getPerk(PERK_ADVANCED_MEDICAL) || user.stats.getPerk(PERK_SURGICAL_MASTER) || user.stats.getStat(STAT_BIO) >= 120)))
+		if (tool.icon_state == "traumakit" && (!(user.stats.getPerk(PERK_ADVANCED_MEDICAL) || user.stats.getPerk(PERK_SURGICAL_MASTER) || user.stats.getStat(STAT_BIO) >= 25)))
 			to_chat(user, SPAN_WARNING("You do not have the training to use an Advanced Trauma Kit in this way."))
 			return FALSE
 

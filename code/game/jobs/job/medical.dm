@@ -134,7 +134,7 @@
 		STAT_TGH = 20,
 		STAT_ROB = 20,
 		STAT_VIG = 10,
-		STAT_BIO = 15
+		STAT_BIO = 20
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/chem_catalog,
