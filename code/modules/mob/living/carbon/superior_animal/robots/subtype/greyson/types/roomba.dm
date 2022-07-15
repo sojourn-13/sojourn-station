@@ -12,7 +12,7 @@
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 15,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/ = 2,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic = 6,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quick = 5,
+		/datum/stat_modifier/mob/living/speed/flat/positive/low = 5,
 	)
 
 

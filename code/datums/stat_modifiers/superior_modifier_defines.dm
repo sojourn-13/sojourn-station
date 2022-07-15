@@ -125,9 +125,7 @@
 
 	return ..(qdel_src)
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/apply_to(atom/target)
-
-	. = ..()
+/datum/stat_modifier/mob/living/carbon/superior_animal/apply_to(atom/target, list/arguments, arguments_to_pass)
 
 	if (issuperioranimal(target))
 		var/mob/living/carbon/superior_animal/superior_target = target
@@ -198,3 +196,5 @@
 				spider_target.poison_per_bite = ZERO_OR_MORE(SAFEMULT(spider_target.poison_per_bite, poison_per_bite_mult, poison_per_bite_zeroth))
 			if (poison_per_bite_increment)
 				spider_target.poison_per_bite = ZERO_OR_MORE(spider_target.poison_per_bite + poison_per_bite_increment)
+
+	return ..(target, arguments, arguments_to_pass)

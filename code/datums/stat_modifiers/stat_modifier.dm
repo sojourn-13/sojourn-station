@@ -26,14 +26,21 @@
 	/// The prefix that will be applied to the name of target
 	var/prefix = null
 
-	/// Used in after_apply() for certain modifiers. Associative: Contains prefixes to be used if the ratio of the past changed value and current value is below 0.
-	var/list/lower_prefixes = list()
+	/// Every non-duplicate description will be printed when the holder is examined.
+	var/description = null
 
-	/// Used in after_apply() for certain modifiers. Associative: Contains prefixes to be used if the ratio of the past changed value and current value is above 0.
-	var/list/upper_prefixes = list()
+	/// TODO
+	var/list/prefixes = list("Tier1" = null, "Tier2" = null, "Tier3" = null,
+							"Tier-1" = null, "Tier-2" = null, "Tier-3" = null
+							)
+
+	/// TODO
+	var/list/descriptions = list("Tier1" = null, "Tier2" = null, "Tier3" = null,
+								"Tier-1" = null, "Tier-2" = null, "Tier-3" = null
+								)
 
 	/// If true, we will completely forgo any after_apply() prefix determination.
-	var/force_default_prefix = FALSE
+	var/force_default_prefix = TRUE
 
 	/// Changes max health by the entered value.
 	var/maxHealth_increment
@@ -41,9 +48,6 @@
 	var/maxHealth_mult
 	/// The zeroth of any given var is, if the multiplied value is zero, the value that will be added to it before it is multiplied, used to prevent multiplication with zero.
 	var/maxHealth_zeroth = 0.1
-
-	/// Every non-duplicate description will be printed when the holder is examined.
-	var/description = null
 
 	/// Defines in misc.dm. Determines what gets these modifiers and what doesn't.
 	var/stattags = DEFENSE_STATTAG
@@ -166,7 +170,9 @@
 		target.maxHealth = ZERO_OR_MORE((target.maxHealth + maxHealth_increment))
 		target.health = ZERO_OR_MORE((target.health + maxHealth_increment))
 
-	consider_custom_effect(target, arguments, arguments_to_pass, AFTER_APPLY) // if we have a after_apply() override lets run it
+	var/ratio = consider_custom_effect(target, arguments, arguments_to_pass, AFTER_APPLY) // if we have a after_apply() override lets run it
+
+	determine_description_and_prefixes(target, ratio)
 
 	if (prefix && target.get_prefix) // do we have a prefix, and does our target want a prefix?
 		target.prefixes += prefix // if so, lets add ours to their prefix list...
@@ -188,13 +194,66 @@
 		if (AFTER_APPLY)
 			return after_apply(target, arguments, list_length, arguments_to_pass)
 
-	return FALSE // only happens if no custom effect is present, or if the custom effect returns false
+	return // only happens if no custom effect is present
 
+/// Holder proc for any logic that has to be run before apply_to()
 /datum/stat_modifier/proc/before_apply(atom/target, list/arguments, arg_length)
+	return
+
+/// Holder proc for any logic that has to be run after apply_to(), but before prefixes and descriptions are determined
+/datum/stat_modifier/proc/after_apply(atom/target, list/arguments, arg_length, arguments_to_pass)
+	return
+
+/datum/stat_modifier/proc/determine_description_and_prefixes(atom/target, arguments_to_pass, ratio1, ratio2)
+
+	if (force_default_prefix || (!(target.get_prefix)))
+		return FALSE
+
+	var/ratio_between_now_and_then
+	if (!(isnull(arguments_to_pass)))
+		if (islist(arguments_to_pass))
+			var/list/arg_list = arguments_to_pass
+			if ((arg_list.len == 2) && ((isnull(ratio1)) || (isnull(ratio2)))) //we're probably 2 numbers, ready to be ratio-ized or whatever
+				ratio1 = arg_list[1]
+				ratio2 = arg_list[2]
+		else
+			ratio_between_now_and_then = arguments_to_pass
+	if (ratio1 && ratio2)
+		ratio_between_now_and_then = (ratio1 / ratio2) // this will override the last if statement so be careful
+
+	if (!(isnull(ratio_between_now_and_then)))
+		if (ratio_between_now_and_then == 1)
+			return FALSE
+		else
+			if (ratio_between_now_and_then < 1)
+				if (ratio_between_now_and_then <= 0.5)
+					if (ratio_between_now_and_then <= 0.15)
+						set_prefix_and_description("Tier-3")
+					else
+						set_prefix_and_description("Tier-2")
+				else
+					set_prefix_and_description("Tier-1")
+			else if (ratio_between_now_and_then > 1)
+				if (ratio_between_now_and_then >= 1.5)
+					if (ratio_between_now_and_then >= 1.85)
+						set_prefix_and_description("Tier3")
+					else
+						set_prefix_and_description("Tier2")
+				else
+					set_prefix_and_description("Tier1")
+
+		if (isnull(prefix) || isnull(description)) //only true if someone forgot to set up their prefix and description
+			set_prefix_and_description("Tier1") //failsafe, hopefully
+
+		return TRUE
 	return FALSE
 
-/datum/stat_modifier/proc/after_apply(atom/target, list/arguments, arg_length, arguments_to_pass)
-	return FALSE
+/datum/stat_modifier/proc/set_prefix_and_description(key)
+
+	prefix = prefixes[key]
+	description = descriptions[key]
+
+	return TRUE
 
 /// Empty modifier. Does nothing. Returns false.
 /datum/stat_modifier/none

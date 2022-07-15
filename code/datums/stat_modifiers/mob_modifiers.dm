@@ -78,9 +78,7 @@
 
 	return ..(qdel_src)
 
-/datum/stat_modifier/mob/living/apply_to(atom/target)
-
-	. = ..()
+/datum/stat_modifier/mob/living/apply_to(atom/target, list/arguments, arguments_to_pass)
 
 	if (isliving(target))
 		var/mob/living/livingtarget = target
@@ -121,5 +119,7 @@
 			livingtarget.projectile_speed_increment = ZERO_OR_MORE((livingtarget.projectile_speed_increment + projectile_speed_increment_adjustment))
 		if (projectile_speed_mult_increment)
 			livingtarget.projectile_speed_mult = ZERO_OR_MORE((livingtarget.projectile_speed_mult + projectile_speed_mult_increment))
+
+	return ..(target, arguments, arguments_to_pass)
 
 /datum/stat_modifier/mob/living/carbon
