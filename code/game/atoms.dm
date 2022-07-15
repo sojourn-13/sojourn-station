@@ -19,7 +19,11 @@
 	var/allow_spin = TRUE
 	var/used_now = FALSE //For tools system, check for it should forbid to work on atom for more than one user at time
 
-	/// Associative list. Key should be a typepath of /datum/stat_modifier, and the value should be a weight for use in pickweight.
+	/**
+	 * Associative list. Key should be a typepath of /datum/stat_modifier, and the value should be a weight for use in pickweight.
+	 *
+	 * NOTE: Arguments may be passed to certain modifiers. To do this, change the value to this: list(prob, ...) where prob is the probability and ... are any arguments you want passed.
+	**/
 	var/list/allowed_stat_modifiers = list(
 
 	)
@@ -155,7 +159,7 @@
 
 			var/list/excavated = list()
 			for (var/entry in allowed_stat_modifiers)
-				var/to_add = entry
+				var/to_add = allowed_stat_modifiers[entry]
 				if (islist(allowed_stat_modifiers[entry]))
 					var/list/entrylist = allowed_stat_modifiers[entry]
 					to_add = entrylist[1]

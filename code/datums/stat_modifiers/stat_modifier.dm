@@ -14,6 +14,10 @@
 	/// If our holder's current_stat_modifiers list has more or equal instances of ourself, compared to this, we return and remove ourselves from their allowed list.
 	var/maximum_instances = 1
 
+	/**
+	 * When a modifier is added to an entity, it sets the probability for any mutually exclusive mods/itself to 0, itself if they have the max amount of us, determined in maximum_instances.
+	 * This is how we reset our own probability on removal, if we remove enough for them to have more of us. Restoration of other probabilites is done in the list of mutually exclusive modifiers.
+	 **/
 	var/holder_original_prob
 
 	/// The atom we have applied our changes to
@@ -21,6 +25,15 @@
 
 	/// The prefix that will be applied to the name of target
 	var/prefix = null
+
+	/// Used in after_apply() for certain modifiers. Associative: Contains prefixes to be used if the ratio of the past changed value and current value is below 0.
+	var/list/lower_prefixes = list()
+
+	/// Used in after_apply() for certain modifiers. Associative: Contains prefixes to be used if the ratio of the past changed value and current value is above 0.
+	var/list/upper_prefixes = list()
+
+	/// If true, we will completely forgo any after_apply() prefix determination.
+	var/force_default_prefix = FALSE
 
 	/// Changes max health by the entered value.
 	var/maxHealth_increment
@@ -35,11 +48,12 @@
 	/// Defines in misc.dm. Determines what gets these modifiers and what doesn't.
 	var/stattags = DEFENSE_STATTAG
 
+	/// Any modifier typepaths in this will have their prob on our holder set to 0 if we're added, and their original prob stored as the value of the typepath, for use in remove().
 	var/list/mutually_exclusive_with = list()
 
 	//todo: store the vars we change for more accurate removal
 
-/// Inverts all effects the modifier provided, and optionally qdeletes it.
+/// Inverts all effects the modifier provided, and optionally qdeletes it. Needs to have effects manually added.
 /datum/stat_modifier/proc/remove(qdel_src = TRUE)
 
 	if (maxHealth_increment)
@@ -50,29 +64,34 @@
 		holder.maxHealth = ZERO_OR_MORE((holder.maxHealth / maxHealth_mult))
 		holder.health = ZERO_OR_MORE((holder.health / maxHealth_mult))
 
+	// Remove our prefix, and then regenerate prefixes
 	holder.prefixes -= prefix
 	holder.update_prefixes()
 
 	holder.current_stat_modifiers -= src
 
+	// First, we check how many of us are in our holder...
 	var/instances_in_target = instances_of_type_in_list(src, holder.current_stat_modifiers)
 
-	if (instances_in_target < maximum_instances)
+	// ...and if it's less than our max, and we are disabled, let's restore our probability
+	if (instances_in_target < maximum_instances && (holder.allowed_stat_modifiers[type] == 0))
 		holder.allowed_stat_modifiers[type] = holder_original_prob
+		holder_original_prob = null // dont need to hold onto this anymore
 
+	// if we arent in the target anymore...
 	if (instances_in_target <= 0)
-		for (var/typepath in mutually_exclusive_with)
-			if (typepath in holder.current_stat_modifiers)
+		for (var/typepath in mutually_exclusive_with) // ...search for anything we're mutually exclusive with...
+			if (typepath in holder.current_stat_modifiers) // ...and if our holder has them as a key, meaning theyre allowed to have them...
 				var/do_we_readd = TRUE
-				for (var/entry in holder.current_stat_modifiers)
-					var/datum/stat_modifier/stat_mod_entry = entry
-					if (typepath in initial(stat_mod_entry.mutually_exclusive_with))
-						do_we_readd = FALSE
+				for (var/entry in holder.current_stat_modifiers) // ...lets search the rest of the typepaths...
+					var/datum/stat_modifier/stat_mod_entry = entry // ...to see...
+					if (typepath in initial(stat_mod_entry.mutually_exclusive_with)) // ...if any of them are also mutually exclusive with this...
+						do_we_readd = FALSE // ..and if one is, theyre still mutually exclusive, so lets break and say "we're not re-adding them"
 						break
-				if (do_we_readd)
-					holder.allowed_stat_modifiers[typepath] = mutually_exclusive_with[typepath] //we use our stored value to restore it!
+				if (do_we_readd) // ...if nothing is mutually exclusive...
+					holder.allowed_stat_modifiers[typepath] = mutually_exclusive_with[typepath] // ...we use our stored value to restore it!
 
-	holder = null
+	holder = null //we no longer have a holder
 
 	if (qdel_src)
 		qdel(src)
@@ -97,34 +116,34 @@
 **/
 /datum/stat_modifier/proc/valid_check(var/atom/target, var/list/arguments)
 
-	var/instances_in_target = instances_of_type_in_list(src, target.current_stat_modifiers)
+	var/instances_in_target = instances_of_type_in_list(src, target.current_stat_modifiers) // how many of us are in our target?
 
-	if (instances_in_target >= maximum_instances)
-		target.allowed_stat_modifiers[type] = 0
-		return FALSE
+	if (instances_in_target >= maximum_instances) // this shouldnt ever be true, but if it is, lets make sure it doesnt happen again
+		target.allowed_stat_modifiers[type] = 0 // by disabling ourselves
+		return FALSE // and returning
 
-	for (var/entry in target.current_stat_modifiers)
-		if (entry in mutually_exclusive_with)
-			return FALSE
+	for (var/entry in target.current_stat_modifiers) // if we're allowed in...
+		if (entry in mutually_exclusive_with) // ...lets scan all the typepaths...
+			return FALSE // ...to see if we're mutually exclusive with any of them. note this only checks OUR list
 
-	holder = target
+	holder = target // they are now our holder!
 
-	holder_original_prob = holder.allowed_stat_modifiers[type]
+	holder_original_prob = holder.allowed_stat_modifiers[type] // we need this in case we disable ourselves and remove ourselves later
 
-	target.current_stat_modifiers += src
+	target.current_stat_modifiers += src // add ourselves to their currently held modifiers
 
 	for (var/typepath in mutually_exclusive_with)
 		mutually_exclusive_with[typepath] = holder.allowed_stat_modifiers[typepath] //store the value for if we get removed
 		holder.allowed_stat_modifiers[typepath] = 0 // you are now forbidden from having these
 
 	instances_in_target = instances_of_type_in_list(src, target.current_stat_modifiers) //refresh the var
-	if (instances_in_target >= maximum_instances)
-		target.allowed_stat_modifiers[type] = 0
+	if (instances_in_target >= maximum_instances) // if we are now at the maximum of our own instances...
+		target.allowed_stat_modifiers[type] = 0 // ...disable ourselves
 		//we dont return here, since we already added ourselves to the list
 
-	consider_custom_effect(target, arguments, PRIOR_TO_APPLY)
+	var/arguments_to_pass = consider_custom_effect(target, arguments, status = PRIOR_TO_APPLY) // lets see if we have any pre_apply effects
 
-	apply_to(holder, arguments)
+	apply_to(holder, arguments, arguments_to_pass) // now we apply our affects, passing arguments_to_pass to after_apply(), if we have any arguments to pass
 
 	return TRUE
 
@@ -137,12 +156,7 @@
  * Args:
  * atom/target: The target the effects will be applied to.
 **/
-/datum/stat_modifier/proc/apply_to(var/atom/target, var/list/arguments)
-
-	if (prefix && target.get_prefix)
-		target.prefixes += prefix
-
-		target.update_prefixes()
+/datum/stat_modifier/proc/apply_to(var/atom/target, var/list/arguments, arguments_to_pass)
 
 	if (maxHealth_mult)
 		target.maxHealth = ZERO_OR_MORE(SAFEMULT(target.maxHealth, maxHealth_mult, maxHealth_zeroth))
@@ -152,32 +166,35 @@
 		target.maxHealth = ZERO_OR_MORE((target.maxHealth + maxHealth_increment))
 		target.health = ZERO_OR_MORE((target.health + maxHealth_increment))
 
-	consider_custom_effect(target, arguments, AFTER_APPLY)
+	consider_custom_effect(target, arguments, arguments_to_pass, AFTER_APPLY) // if we have a after_apply() override lets run it
+
+	if (prefix && target.get_prefix) // do we have a prefix, and does our target want a prefix?
+		target.prefixes += prefix // if so, lets add ours to their prefix list...
+
+		target.update_prefixes() // ...and regenerate their prefixes
 
 	return TRUE
 
-/datum/stat_modifier/proc/consider_custom_effect(atom/target, list/arguments, status)
+/datum/stat_modifier/proc/consider_custom_effect(atom/target, list/arguments, arguments_to_pass, status)
 
 	var/list_length
 
-	if (arguments)
-		list_length = (arguments.len)
+	if (arguments) // if we have any arguments from the holder.allowed_stat_modifiers list...
+		list_length = (arguments.len) // ...this is how many we have
 
 	switch (status)
-		if (PRIOR_TO_APPLY)
-			if (prior_custom_effect(target, arguments, list_length))
-				return TRUE
+		if (PRIOR_TO_APPLY) // lets see what type of custom effect should be ran, and then pass a few args to them
+			return before_apply(target, arguments, list_length)
 		if (AFTER_APPLY)
-			if (custom_effect(target, arguments, list_length))
-				return TRUE
+			return after_apply(target, arguments, list_length, arguments_to_pass)
 
+	return FALSE // only happens if no custom effect is present, or if the custom effect returns false
+
+/datum/stat_modifier/proc/before_apply(atom/target, list/arguments, arg_length)
 	return FALSE
 
-/datum/stat_modifier/healthy/custom/proc/custom_effect(atom/target, list/arguments, arg_length)
-	return TRUE
-
-/datum/stat_modifier/healthy/custom/proc/post_apply(atom/target, list/arguments, arg_length)
-	return TRUE
+/datum/stat_modifier/proc/after_apply(atom/target, list/arguments, arg_length, arguments_to_pass)
+	return FALSE
 
 /// Empty modifier. Does nothing. Returns false.
 /datum/stat_modifier/none

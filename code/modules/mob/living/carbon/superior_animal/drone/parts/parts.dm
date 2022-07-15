@@ -50,7 +50,7 @@
 	var/health_bonus = 100
 
 	// The total armor it will give to the roomba.
-	var/armor_stat = list(
+	var/list/armor_stat = list(
 		melee = 25,
 		bullet = 25,
 		energy = 25,
