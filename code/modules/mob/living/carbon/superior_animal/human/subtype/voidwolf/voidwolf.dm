@@ -30,6 +30,27 @@
 
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
+	get_stat_modifier = TRUE
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
+		/datum/stat_modifier/health/flat/negative/low = 5,
+		/datum/stat_modifier/health/flat/positive/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/negative/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 12,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 5,
+		/datum/stat_modifier/mob/living/damage/negative/mixed/flat/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/slowaimed = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 15,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw = 10,
+	)
+
 //They are all waring space suits
 	breath_required_type = NONE
 	breath_poison_type = NONE
@@ -170,6 +191,8 @@
 	mag_type = /obj/item/cell/small/high/depleted
 	mags_left = 1
 
+	times_to_get_stat_modifiers = 2 //two prefixes
+
 /mob/living/carbon/superior_animal/human/voidwolf/captain/New()
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one with one hand!"
@@ -202,6 +225,12 @@
 /mob/living/carbon/superior_animal/human/voidwolf/elite/New()
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
+
+/mob/living/carbon/superior_animal/human/voidwolf/elite/Initialize()
+
+	allowed_stat_modifiers[/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage] += 10 //10% extra chance to be a glass cannon
+
+	. = ..()
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/laserak
 	projectiletype = /obj/item/projectile/beam/weak/ap

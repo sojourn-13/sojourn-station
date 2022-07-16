@@ -20,6 +20,8 @@
 	cant_be_pulled = FALSE
 	wander = FALSE
 
+	get_stat_modifier = FALSE
+
 	// Vars that determine the parts used for the sprite.
 	var/chassis = "" // The chassis of the drone.
 	var/radio = "" // The radio of the drone.
