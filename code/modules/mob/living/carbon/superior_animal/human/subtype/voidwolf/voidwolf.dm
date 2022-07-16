@@ -160,9 +160,10 @@
 	desc = "A Void Wolf mercenary wielding an energy rifle and jetpack."
 	icon_state = "voidwolf_flying"
 	icon_dead = "voidwolf_flying_dead"
-	move_to_delay = 3 // i mean we are literally using a jetpack
 	ranged = TRUE
 	rapid = TRUE
+	rounds_left = 16
+	mags_left = 2
 	rapid_fire_shooting_amount = 3
 	projectiletype = /obj/item/projectile/beam
 	drop_items = list(/obj/item/gun/energy/cog)
