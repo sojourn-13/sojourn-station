@@ -56,7 +56,7 @@
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw
 
-	delayed_adjustment = -1 //instantly attacks if they see you by default
+	delayed_adjustment = 1
 
 	prefix = "Slowdraw"
 
