@@ -391,6 +391,9 @@
 	default_type = MATERIAL_PLASMAGLASS
 	price_tag = 6
 
+/obj/item/stack/material/glass/plasmaglass/full
+	amount = 120
+
 /obj/item/stack/material/glass/plasmaglass/random
 	rand_min = 3
 	rand_max = 8
@@ -402,6 +405,9 @@
 	icon_state = "sheet-plasmarglass"
 	default_type = MATERIAL_RPLASMAGLASS
 	price_tag = 12
+
+/obj/item/stack/material/glass/plasmarglass/full
+	amount = 120
 
 /obj/item/stack/material/biomatter
 	name = "biomatter"
