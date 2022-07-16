@@ -593,8 +593,6 @@
 			B.set_awake()
 	return ..()
 
-
-
 /obj/effect/blob/shield
 	name = "strong blob"
 	icon = 'icons/mob/blob.dmi'
@@ -616,8 +614,5 @@
 		icon_state = "blob"
 	else
 		icon_state = "blob_damaged"
-
-
-
 	//Blob gradually fades out as it's damaged.
 	alpha = 255 * healthpercent
