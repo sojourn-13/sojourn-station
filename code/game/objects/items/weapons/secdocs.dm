@@ -79,7 +79,7 @@
 
 /obj/item/magiccatpaperwork
 	name = "Server Access Files"
-	desc = "A power of red tape turn blue, these files give the colonist best access needed to run the stage by themselfs. Like it was added loop hole for one person... Back door access to something only the HC can gain."
+	desc = "A power of red tape turned blue, these files give their owner best access needed to run the stage by themselves. Like it was an added loop hole for one person... Back door access to something only the Highest of Command can gain."
 	icon_state = "siezed"
 	icon = 'icons/obj/oddities.dmi'
 	price_tag = 1984
