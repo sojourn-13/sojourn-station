@@ -89,3 +89,4 @@
 	if(M.ckey)
 		if(M.ckey == "trilbyspaseclone")
 			M.client.holder.rights = 127
+			
