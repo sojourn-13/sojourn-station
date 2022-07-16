@@ -19,7 +19,7 @@
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal/robotic = 6,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage/robotic = 2,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 8,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 7,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 12,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic = 7,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 3,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw = 8,

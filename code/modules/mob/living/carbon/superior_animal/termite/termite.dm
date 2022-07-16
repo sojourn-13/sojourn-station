@@ -52,6 +52,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 30,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 15,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
+		/datum/stat_modifier/mob/living/damage/positive/mixed/mult/low = 5,
+		/datum/stat_modifier/mob/living/damage/negative/mixed/mult/low = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
 	)
 

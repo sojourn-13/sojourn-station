@@ -46,7 +46,7 @@
 		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 10,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/slowaimed = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 15,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw = 10,
 	)
