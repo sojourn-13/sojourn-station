@@ -42,7 +42,7 @@
 			/obj/item/stack/material/wood/full = good_data("wood planks (x120)", list(2, 5), 360),
 			/obj/item/stack/material/glass/full = good_data("glass sheets (x120)", list(2, 5), 720),
 			/obj/item/stack/material/plasma/full = good_data("plasma sheets (x120)", list(1, 2), 3600),
-			/obj/item/stack/material/glass/plasmaglass = good_data("borosilicate glass sheets (x120)", list(3, 5), 3600)
+			/obj/item/stack/material/glass/plasmaglass/full = good_data("borosilicate glass sheets (x120)", list(3, 5), 3600)
 		)
 	)
 
