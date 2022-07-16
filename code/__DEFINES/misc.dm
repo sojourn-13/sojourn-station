@@ -32,6 +32,9 @@
 #define NEGATIVE_DEFENSE_STATTAG (1<<4)
 #define NOTHING_STATTAG (1<<5)
 
+#define PRIOR_TO_APPLY "prior"
+#define AFTER_APPLY "after"
+
 // Some arbitrary defines to be used by self-pruning global lists.
 #define PROCESS_KILL 26 // Used to trigger removal from a processing list.
 #define MAX_GEAR_COST 5 // Used in chargen for accessory loadout limit.

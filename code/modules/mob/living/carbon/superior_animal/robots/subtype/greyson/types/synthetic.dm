@@ -32,6 +32,12 @@
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/beam/pulse/drone
 
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg/Initialize(mapload)
+
+	allowed_stat_modifiers[/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive] += 40 // more aggressive
+
+	. = ..()
+
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle
 	name = "Greyson Positronic FBP-SEC Mark III unit"
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one has a modified heavy duty cog carbine built into its arm."
@@ -52,6 +58,8 @@
 	name = "Greyson Positronic FBP-SEC Sniper unit"
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one has an overclocked and overcharged hyper cog laser rifle built into its arm, and a scope in its visor."
 	icon_state = "nano_alt"
+
+	get_stat_modifier = FALSE
 
 	projectiletype = /obj/item/projectile/beam/sniper
 	telegraph_beam_color = COLOR_ORANGE
