@@ -290,6 +290,8 @@
 	mag_type = /obj/item/ammo_magazine/a75/empty
 	mags_left = 0 //no spare mags, they are lethal
 
+	get_stat_modifier = FALSE
+
 	casingtype = /obj/item/ammo_casing/a75/spent
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet/New()
