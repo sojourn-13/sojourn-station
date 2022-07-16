@@ -94,8 +94,6 @@
 	return
 
 /mob/living/carbon/superior_animal/proc/handle_ammo_check()
-	if(casingtype)
-		new casingtype(get_turf(src))
 	if(!limited_ammo)
 		return //Quick return
 	rounds_left -= rounds_per_fire //modular, tho likely will always be one

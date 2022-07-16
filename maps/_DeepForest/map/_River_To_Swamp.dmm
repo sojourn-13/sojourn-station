@@ -2369,7 +2369,7 @@
 /area/colony/exposedsun/crashed_shop)
 "KP" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/human/voidwolf/elite,
+/mob/living/carbon/superior_animal/human/voidwolf/elite/laserak,
 /turf/simulated/floor/tiled/steel/danger,
 /area/colony/exposedsun/crashed_shop/workshop)
 "KS" = (
@@ -2511,7 +2511,7 @@
 /area/colony/exposedsun/crashed_shop)
 "MP" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/human/voidwolf/elite,
+/mob/living/carbon/superior_animal/human/voidwolf/elite/laserak,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "Nb" = (
