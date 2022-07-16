@@ -11,8 +11,11 @@
 
 #define SQRTWO 1.414
 
+/// Returns the difference between multiplier and the product of multiplier * multiplicand.
+#define MULT_DIFFERENCE(multiplier, multiplicand) ((multiplier * multiplicand) - multiplier)
+
 /// Returns the higher of multiplicand and check, then multiplies it with multiplier.
-#define SAFEMULT(multiplicand, multiplier, check) ((max(multiplicand, check)) * multiplier)
+#define SAFEMULT(multiplier, multiplicand, check) ((max(multiplier, check)) * multiplicand)
 
 /// Returns the higher of dividend and check, then divides it with divisor.
 #define SAFEDIVIDE(dividend, divisor, check) ((max(dividend, check)) * divisor)

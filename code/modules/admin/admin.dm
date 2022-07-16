@@ -1029,6 +1029,8 @@ ADMIN_VERB_ADD(/datum/admins/proc/spawn_var_copy, R_ADMIN|R_DEBUG|R_FUN, TRUE)
 		for(var/variable in newItem.vars)
 			if (variable == "type") //type is read-only, we will runtime if we don't have this check
 				continue
+			if (variable in GLOB.banned_vars) // these vars must never be applied
+				continue
 			if (variable in spawn_variables) // if a var exists in this, an admin wanted it to be carried over, so let's apply it
 				newItem.vars[variable] = spawn_variables[variable]
 	else

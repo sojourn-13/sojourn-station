@@ -219,7 +219,7 @@
 
 	var/prefex = "bugged"
 
-	var/armor = list(
+	var/list/armor = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,
