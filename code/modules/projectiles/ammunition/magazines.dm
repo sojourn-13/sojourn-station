@@ -167,6 +167,11 @@
 	ammo_color = "-hv"
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 
+/obj/item/ammo_magazine/smg_35/hv/empty
+
+	ammo_color = ""
+	initial_ammo = 0
+
 /obj/item/ammo_magazine/smg_35/rubber
 	name = "smg magazine (9mm rubber)"
 	icon_state = "smg_r"

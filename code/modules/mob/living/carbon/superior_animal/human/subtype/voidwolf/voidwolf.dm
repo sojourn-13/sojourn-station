@@ -211,7 +211,7 @@
 	mags_left = 3
 
 	rapid_fire_shooting_amount = 5 //we're using the burst 5 mode
-	delay_for_rapid_range = 0.20 SECONDS
+	delay_for_rapid_range = 0.22 SECONDS
 
 /obj/item/gun/projectile/automatic/ak47/akl/reaver_modded
 
@@ -229,9 +229,9 @@
 	drop_items = list(/obj/item/gun/projectile/automatic/c20r/reaver_modded)
 
 	rapid_fire_shooting_amount = 8 // WE FIRE REALLY GODDAMN FAST
-	delay_for_rapid_range = 0.10 SECONDS
+	delay_for_rapid_range = 0.15 SECONDS
 	rounds_left = 32
-	mag_type = /obj/item/ammo_magazine/smg_35/empty
+	mag_type = /obj/item/ammo_magazine/smg_35/hv/empty
 	mags_left = 6 //since we fire. FAST
 
 	casingtype = /obj/item/ammo_casing/pistol_35/hv/spent
