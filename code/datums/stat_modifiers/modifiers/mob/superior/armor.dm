@@ -230,8 +230,8 @@
 			for (var/entry in superior_target.armor)
 				new_armor_total += superior_target.armor[entry]
 
-				var/old_armor_total_clamped = CLAMP(old_armor_total, 1e-31, INFINITY) //prevent division by zero
-				var/ratio_between_now_and_then = (new_armor_total / old_armor_total_clamped)
+			var/old_armor_total_clamped = CLAMP(old_armor_total, 1e-31, INFINITY) //prevent division by zero
+			var/ratio_between_now_and_then = (new_armor_total / old_armor_total_clamped)
 
-				return ratio_between_now_and_then
+			return ratio_between_now_and_then
 	return FALSE

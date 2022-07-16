@@ -20,7 +20,7 @@
 	var/used_now = FALSE //For tools system, check for it should forbid to work on atom for more than one user at time
 
 	/**
-	 * Associative list. Key should be a typepath of /datum/stat_modifier, and the value should be a weight for use in pickweight.
+	 * Associative list. Key should be a typepath of /datum/stat_modifier, and the value should be a weight for use in prob.
 	 *
 	 * NOTE: Arguments may be passed to certain modifiers. To do this, change the value to this: list(prob, ...) where prob is the probability and ... are any arguments you want passed.
 	**/
@@ -165,15 +165,25 @@
 					to_add = entrylist[1]
 				excavated[entry] = to_add
 
-			var/typepath = pickweight(excavated, 0)
+			var/list/successful_rolls = list()
+			for (var/typepath in excavated)
+				if (prob(excavated[typepath]))
+					successful_rolls += typepath
+
+			var/picked
+			if (successful_rolls.len)
+				picked = pick(successful_rolls)
+
+			if (isnull(picked))
+				continue
 
 			var/list/arguments
-			if (islist(allowed_stat_modifiers[typepath]))
-				var/list/nested_list = allowed_stat_modifiers[typepath]
+			if (islist(allowed_stat_modifiers[picked]))
+				var/list/nested_list = allowed_stat_modifiers[picked]
 				if (length(nested_list) > 1)
 					arguments = nested_list.Copy(2)
 
-			var/datum/stat_modifier/chosen_modifier = new typepath
+			var/datum/stat_modifier/chosen_modifier = new picked
 			if (!(chosen_modifier.valid_check(src, arguments)))
 				QDEL_NULL(chosen_modifier)
 

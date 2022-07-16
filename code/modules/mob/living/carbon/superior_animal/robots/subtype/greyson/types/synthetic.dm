@@ -10,24 +10,6 @@
 	maxHealth = 125
 	cleaning = FALSE
 
-	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 150, //50% chance to have no prefix if we add all others up to this value i think
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/low = 8,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/medium = 2,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic = 2, //we dont want them ALWAYS to be mega super fast
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 15,
-		/datum/stat_modifier/mob/living/damage/mixed/negative = list(5, -3, 1, 0, -3, 1, 0, -3, 0)
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal/robotic = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage/robotic = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw = 10,
-	)
-
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol
 	name = "Greyson Positronic FBP-SEC Mark I unit"
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one has an old style energy pistol built into its arm."

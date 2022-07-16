@@ -6,12 +6,15 @@
 	pass_flags = PASSTABLE
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 100, // low chance
 		/datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic = 1,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 15,
+		/datum/stat_modifier/health/mult/positive/low = 10,
+		/datum/stat_modifier/health/mult/positive/medium = 5,
+		/datum/stat_modifier/health/mult/negative/medium = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 20,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/ = 2,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic = 6,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw = 6,
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 5,
 	)
 

@@ -33,7 +33,6 @@
 	get_stat_modifier = TRUE
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 100, //50% chance to have no prefix if we add all others up to this value i think
 		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 20,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified = 20,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 3,

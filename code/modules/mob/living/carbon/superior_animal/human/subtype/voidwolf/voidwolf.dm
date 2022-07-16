@@ -33,22 +33,22 @@
 	get_stat_modifier = TRUE
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 100, //50% chance to have no prefix if we add all others up to this value i think
 		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
 		/datum/stat_modifier/health/flat/negative/low = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/low = 5
+		/datum/stat_modifier/health/flat/positive/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/negative/low = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 12,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 5,
-		/datum/stat_modifier/mob/living/damage/mixed/negative = list(5, -3, 1, 0, -3, 1, 0, -3, 0)
+		/datum/stat_modifier/mob/living/damage/negative/mixed/flat/low = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 10,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/slowaim = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/slowaimed = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 10,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw = 10,
 	)
 
 //They are all waring space suits
@@ -224,23 +224,18 @@
 	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 3
 
-	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 100, //50% chance to have no prefix if we add all others up to this value i think
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 15,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 5, // scary
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 15,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 10,
-	)
-
 	armor = list(melee = 60, bullet = 55, energy = 50, bomb = 75, bio = 100, rad = 25) //Legitmently their armor
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/New()
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
+
+
+/mob/living/carbon/superior_animal/human/voidwolf/elite/Initialize()
+
+	allowed_stat_modifiers[/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage] += 10 //10% extra chance to be a glass cannon
+
+	. = ..()
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/c20r
 	icon_state = "reaver_bulldog"
@@ -268,17 +263,6 @@
 	mag_type = /obj/item/ammo_magazine/a75/empty
 	mags_left = 0 //no spare mags, they are lethal
 
-	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 100, //50% chance to have no prefix if we add all others up to this value i think
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 15,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 5, // scary
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 15,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 10,
-	)
-
 /mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet/New()
 	..()
 	reload_message = "[name] rapidly reloads before the empty mag hits the ground!"// You should be panicing
@@ -294,14 +278,6 @@
 	rapid = FALSE
 	limited_ammo = FALSE
 	drop_items = list(/obj/item/tool/sword/saber/cutlass, /obj/item/shield/buckler/energy/reaver/damaged)
-
-	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 100, //50% chance to have no prefix if we add all others up to this value i think
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 30,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 20,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 15,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 5, // scary
-	)
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/New()
 	..()

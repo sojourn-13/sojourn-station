@@ -32,11 +32,100 @@
 
 	force_default_prefix = TRUE // im too lazy to do the math
 
+/datum/stat_modifier/mob/living/damage/positive/mixed/flat/low
+
+	melee_damage_lower_increment = 3
+	melee_damage_upper_increment = 3
+
+	inherent_projectile_increment_adjustment = 3
+
+/datum/stat_modifier/mob/living/damage/positive/mixed/flat/medium
+
+	melee_damage_lower_increment = 6
+	melee_damage_upper_increment = 6
+
+	inherent_projectile_increment_adjustment = 6
+
+/datum/stat_modifier/mob/living/damage/positive/mixed/flat/high
+
+	melee_damage_lower_increment = 10
+	melee_damage_upper_increment = 10
+
+	inherent_projectile_increment_adjustment = 10
+
+/datum/stat_modifier/mob/living/damage/negative/mixed/flat/low
+
+	melee_damage_lower_increment = -3
+	melee_damage_upper_increment = -3
+
+	inherent_projectile_increment_adjustment = -3
+
+/datum/stat_modifier/mob/living/damage/negative/mixed/flat/medium
+
+	melee_damage_lower_increment = -6
+	melee_damage_upper_increment = -6
+
+	inherent_projectile_increment_adjustment = -6
+
+/datum/stat_modifier/mob/living/damage/negative/mixed/flat/high
+
+	melee_damage_lower_increment = -10
+	melee_damage_upper_increment = -10
+
+	inherent_projectile_increment_adjustment = -10
+
+/datum/stat_modifier/mob/living/damage/positive/mixed/mult/low
+
+	melee_damage_lower_mult = 1.2
+	melee_damage_upper_mult = 1.2
+
+	inherent_projectile_mult_increment = 1.2
+
+/datum/stat_modifier/mob/living/damage/positive/mixed/mult/medium
+
+	melee_damage_lower_mult = 1.5
+	melee_damage_upper_mult = 1.5
+
+	inherent_projectile_mult_increment = 1.5
+
+/datum/stat_modifier/mob/living/damage/positive/mixed/mult/high
+
+	melee_damage_lower_mult = 1.8
+	melee_damage_upper_mult = 1.8
+
+	inherent_projectile_mult_increment = 1.8
+/datum/stat_modifier/mob/living/damage/negative/mixed/mult/low
+
+	melee_damage_lower_increment = -1.2
+	melee_damage_upper_increment = -1.2
+
+	inherent_projectile_increment_adjustment = -1.2
+
+/datum/stat_modifier/mob/living/damage/negative/mixed/mult/medium
+
+	melee_damage_lower_increment = -1.5
+	melee_damage_upper_increment = -1.5
+
+	inherent_projectile_increment_adjustment = -1.5
+
+/datum/stat_modifier/mob/living/damage/negative/mixed/mult/high
+
+	melee_damage_lower_increment = -1.8
+	melee_damage_upper_increment = -1.8
+
+	inherent_projectile_increment_adjustment = -1.8
+
+
+/datum/stat_modifier/mob/living/damage/negative //got lazy, do it yourself tbh
+
+	prefix = "Weak"
+
+	description = "This one seems weaker than the others."
+
 /datum/stat_modifier/mob/living/damage/ranged
 
 	inherent_projectile_increment_adjustment = 0
 	inherent_projectile_mult_increment = 0
-
 
 /datum/stat_modifier/mob/living/damage/melee
 
@@ -47,14 +136,6 @@
 	melee_damage_upper_increment = 0
 	melee_damage_upper_mult = 1
 	melee_damage_upper_zeroth = 0.1
-
-/datum/stat_modifier/mob/living/damage/mixed //got lazy, do it yourself tbh
-
-/datum/stat_modifier/mob/living/damage/mixed/negative //got lazy, do it yourself tbh
-
-	prefix = "Weak"
-
-	description = "This one seems weaker than the others."
 
 /datum/stat_modifier/mob/living/damage/custom
 

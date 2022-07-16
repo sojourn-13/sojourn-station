@@ -36,8 +36,9 @@
 	times_to_get_stat_modifiers = 2 //two prefixes
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 100, //50% chance to have no prefix if we add all others up to this value i think
 		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 25,
+		/datum/stat_modifier/mob/living/damage/positive/mixed/mult/low = 5,
+		/datum/stat_modifier/mob/living/damage/negative/mixed/mult/low = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/low = 10,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/medium = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/high = 1,

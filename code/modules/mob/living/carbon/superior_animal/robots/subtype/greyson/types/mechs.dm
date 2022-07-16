@@ -11,14 +11,13 @@
 	flash_resistances = 100 // Robot
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 100,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 20,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/low = 10,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/medium = 5,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 20,
-		/datum/stat_modifier/mob/living/speed/flat/negative/medium = 20,
+		/datum/stat_modifier/mob/living/speed/flat/negative/medium = 10,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal/robotic = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage/robotic = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage/robotic = 4,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 30,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic = 5,
 	)
@@ -116,14 +115,6 @@
 	melee_damage_upper = 55
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 30, bio = 100, rad = 100)
-
-	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 100,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 20,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 20,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal/robotic = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 30,
-	)
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley/phazon/Initialize(mapload)
 

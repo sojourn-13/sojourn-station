@@ -111,7 +111,7 @@
 	return ..()
 
 /**
- * The hub for checking if this stat modifier can be applied. Likely called as the result of a pickweight call.
+ * The hub for checking if this stat modifier can be applied. Likely called in atom initialize.
  *
  * Prior to the application of effects, if the instances of this datum's typepath in the target's current_stat_modifiers list surpasses the datum's maximum_instances var,
  * it will return and remove it's own typepath from the target's allowed_stat_modifers list. After the application, if this is true, it will only remove it's own typepath
