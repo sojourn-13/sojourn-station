@@ -492,7 +492,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/colony/exposedsun/crashed_shop)
 "hR" = (
-/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper,
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
 "ia" = (

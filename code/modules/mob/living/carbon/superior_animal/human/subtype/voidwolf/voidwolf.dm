@@ -168,7 +168,7 @@
 	projectiletype = /obj/item/projectile/beam
 	drop_items = list(/obj/item/gun/energy/cog)
 
-/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper/New()
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper/New()
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
 

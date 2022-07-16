@@ -327,7 +327,7 @@
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "bj" = (
-/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper,
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor,
 /area/template_noop)
 "bk" = (
