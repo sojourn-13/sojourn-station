@@ -17,7 +17,7 @@
 	extra_damage_mult_scoped = 0.2 //scoping this should be rewarded its not that good
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 5)
 	saw_off = FALSE
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE, GUN_SILENCABLE)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
 	serial_type = "H&S"
 
 /obj/item/gun/projectile/boltgun/lever/custer
