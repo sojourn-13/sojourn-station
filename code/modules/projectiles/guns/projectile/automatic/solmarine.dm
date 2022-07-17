@@ -111,7 +111,7 @@
 
 
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless
-	name = "\"Martian\" carbine"
+	name = "\"Saturnian\" carbine"
 	desc = "An ancient that predates mass autolathen printing rifle found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
 		 Unlike other old stock this one was always intented to be a 6.5mm."
 	icon = 'icons/obj/guns/projectile/martian.dmi'

@@ -319,3 +319,29 @@
 	populate_contents()
 		new /obj/item/clothing/suit/armor/platecarrier/corpsman(src)
 		new /obj/item/clothing/head/helmet/ballistic/shieldfull/corpsman(src)
+
+/obj/item/gunbox/commanding_officer //credit goes to Hestia both for the idea of loadout gun box and for the code, and sprite.
+	name = "\improper CO equipment kit"
+	desc = "A secure box containing the CO primary weapon."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "rifle_case"
+
+/obj/item/gunbox/commanding_officer/attack_self(mob/living/user)
+	..()
+	var/stamped
+	if(!stamped)
+		stamped = TRUE
+		var/list/options = list()
+		options["\"Longarm\" - marksman rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/scoped,/obj/item/ammo_magazine/heavy_rifle_408/lethal,/obj/item/ammo_magazine/heavy_rifle_408/lethal, /obj/item/ammo_magazine/heavy_rifle_408/lethal)
+		options["\"Bounty\"- lever shotgun"] = list(/obj/item/gun/projectile/boltgun/lever/shotgun/bounty, /obj/item/ammo_magazine/speed_loader_shotgun, /obj/item/ammo_magazine/speed_loader_shotgun/pellet)
+		var/choice = input(user,"What type of equipment?") as null|anything in options
+		if(src && choice)
+			var/list/things_to_spawn = options[choice]
+			for(var/new_type in things_to_spawn)
+				var/atom/movable/AM = new new_type(get_turf(src))
+				if(istype(AM, /obj/item/gun/))
+					to_chat(user, "You have chosen \the [AM].")
+			qdel(src)
+		else
+			stamped = FALSE
+
