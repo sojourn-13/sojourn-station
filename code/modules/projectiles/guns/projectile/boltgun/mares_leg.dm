@@ -15,6 +15,7 @@
 	extra_damage_mult_scoped = 0.2
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 6, MATERIAL_PLASTEEL = 7)
 	serial_type = "INDEX"
+	extra_bulk = -2
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
 
 /obj/item/gun/projectile/boltgun/lever/shotgun/bounty
