@@ -240,6 +240,10 @@
 	name = "SA CAR 20mm \"Saiga\""
 	build_path = /obj/item/gun/projectile/automatic/ak47/saiga
 
+/datum/design/autolathe/gun/bounty_lever
+	name = "NM 20mm \"Bounty\""
+	build_path = /obj/item/gun/projectile/boltgun/lever/shotgun/bounty
+
 //C A R B I N E S
 
 /datum/design/autolathe/gun/bastard

@@ -26,6 +26,7 @@
 		/datum/design/autolathe/gun/strelki = 2,
 		/datum/design/autolathe/gun/watchtower = 3,
 		/datum/design/autolathe/gun/rushing_bull = 4,
+		/datum/design/autolathe/gun/bounty_lever = 4,
 		/datum/design/autolathe/gun/duty = 3,
 		//machinegun
 		/datum/design/autolathe/gun/saw = 4,
@@ -319,6 +320,19 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/rushing_bull = 3,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
+		/datum/design/autolathe/ammo/shotgun_illumination
+		)
+
+/obj/item/computer_hardware/hard_drive/portable/design/blackshield/bounty_lever
+	name = "NM - 20mm Bounty Lever Shotgun"
+	disk_name = ""
+	icon_state = "blackshield"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/bounty_lever = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
 		/datum/design/autolathe/ammo/shotgun_illumination
