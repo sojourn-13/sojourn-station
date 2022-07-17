@@ -2778,6 +2778,7 @@
 #include "code\modules\projectiles\guns\projectile\boltgun\bond.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\flaregun.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\handmade.dm"
+#include "code\modules\projectiles\guns\projectile\boltgun\mares_leg.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\novakovic.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\roe_sika.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\scout.dm"

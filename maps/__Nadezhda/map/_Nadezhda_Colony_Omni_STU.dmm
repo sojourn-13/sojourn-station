@@ -77815,6 +77815,7 @@
 	pixel_y = 23
 	},
 /obj/item/gun/projectile/automatic/bull_autoshotgun,
+/obj/item/gun/projectile/boltgun/lever/shotgun/bounty,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "oPG" = (

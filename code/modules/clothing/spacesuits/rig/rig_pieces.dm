@@ -111,6 +111,7 @@
 	cold_protection =    UPPER_TORSO|LOWER_TORSO
 	flags_inv =          HIDEJUMPSUIT
 	flags =              THICKMATERIAL|COVER_PREVENT_MANIPULATION
+	extra_allowed = list(/obj/item/storage/backpack) //Light rigs are also allowed a backpack on their suit slot.
 	matter = list(MATERIAL_STEEL = 1)
 
 /obj/item/clothing/shoes/lightrig
