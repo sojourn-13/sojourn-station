@@ -444,7 +444,7 @@
 	var/result = FALSE//Occulus Edit
 	if (!T)
 		T = loc
-	for (var/mob/living/L in alldirs) //AOE
+	for (var/mob/living/L in T)
 		if(L.stat == DEAD)
 			continue
 		L.visible_message(SPAN_DANGER("The blob attacks \the [L]!"), SPAN_DANGER("The blob attacks you!"))
