@@ -122,7 +122,6 @@ Class Procs:
 	var/anchor_type = null //What type of object can be anchored to a machine
 	var/current_power_usage = 0 // How much power are we currently using, dont change by hand, change power_usage vars and then use set_power_use
 	var/area/current_power_area // What area are we powering currently
-	var/processing_flags // Bitflag. What is being processed. One of `MACHINERY_PROCESS_*`.
 
 	var/blue_ink_tk_blocker = FALSE
 
@@ -156,19 +155,6 @@ Class Procs:
 
 /obj/machinery/Process()//If you dont use process or power why are you here
 	return PROCESS_KILL
-
-/obj/machinery/proc/process_all()
-	/* Uncomment this if/when you need component processing
-	if(processing_flags & MACHINERY_PROCESS_COMPONENTS)
-		for(var/thing in processing_parts)
-			var/obj/item/stock_parts/part = thing
-			if(part.machine_process(src) == PROCESS_KILL)
-				part.stop_processing() */
-
-	if((processing_flags & MACHINERY_PROCESS_SELF))
-		. = Process()
-		if(. == PROCESS_KILL)
-			STOP_PROCESSING(SSmachines, src)
 
 /obj/machinery/emp_act(severity)
 	if(use_power && !stat)
