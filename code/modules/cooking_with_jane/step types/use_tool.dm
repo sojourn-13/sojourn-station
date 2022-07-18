@@ -31,6 +31,11 @@
 
 	return CWJ_CHECK_VALID
 
+/datum/cooking_with_jane/recipe_step/use_tool/follow_step(obj/added_item, obj/item/cooking_with_jane/cooking_container/container)
+	var/obj/item/tool/our_tool = added_item
+	if(our_tool.worksound && our_tool.worksound != NO_WORKSOUND)
+		playsound(usr.loc, our_tool.worksound, 50, 1)
+
 //Think about a way to make this more intuitive?
 /datum/cooking_with_jane/recipe_step/use_tool/calculate_quality(var/obj/added_item)
 	var/obj/item/tool/our_tool = added_item

@@ -121,6 +121,7 @@
 	return . + "empty"
 
 /obj/item/cooking_with_jane/cooking_container/update_icon()
+	cut_overlays()
 	for(var/obj/item/our_item in vis_contents)
 		src.remove_from_visible(our_item)
 
