@@ -5,6 +5,19 @@
 	move_to_delay = 3
 	pass_flags = PASSTABLE
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 5,
+		/datum/stat_modifier/health/mult/positive/low = 10,
+		/datum/stat_modifier/health/mult/positive/medium = 5,
+		/datum/stat_modifier/health/mult/negative/medium = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 20,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/ = 2,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic = 6,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw = 6,
+		/datum/stat_modifier/mob/living/speed/flat/positive/low = 5,
+	)
+
 
 /mob/living/carbon/superior_animal/robot/greyson/roomba/slayer
 	name = "Greyson Positronic RMB-A unit"
@@ -28,7 +41,7 @@
 	var/trip_odds = 15 //So admins can edit this
 	drop2 = /obj/item/melee/telebaton
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/UnarmedAttack(atom/A, proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 
@@ -60,10 +73,12 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 
+	get_stat_modifier = FALSE // n o .
+
 /mob/living/carbon/superior_animal/robot/greyson/roomba/boomba/UnarmedAttack()
 	. = ..()
 	if(.) // If we succeeded in hitting.
-		src.visible_message(SPAN_DANGER("\The [src] makes an odd warbling noise, fizzles, and explodes!"))
+		visible_message(SPAN_DANGER("\The [src] makes an odd warbling noise, fizzles, and explodes!"))
 		explosion(get_turf(loc), 0, 0, 2, 3)
 		death()
 
@@ -122,7 +137,7 @@
 	var/injection_per_hit = 2
 	var/injection_type = "toxin"
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/chemical/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior_animal/robot/greyson/roomba/chemical/UnarmedAttack(atom/A, proximity)
 	. = ..()
 
 	if(isliving(A))

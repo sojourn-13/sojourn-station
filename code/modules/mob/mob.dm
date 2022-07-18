@@ -25,6 +25,10 @@
 
 	movement_handlers.Cut()
 
+	if (spawned_from)
+		spawned_from.currently_spawned[type] -= src
+		spawned_from = null
+
 	return ..()
 
 /mob/get_fall_damage(var/turf/from, var/turf/dest)
@@ -77,8 +81,9 @@
 // message is the message output to anyone who can see e.g. "[src] does something!"
 // self_message (optional) is what the src mob sees  e.g. "You do something!"
 // blind_message (optional) is what blind people will hear e.g. "You hear something!"
+// target (optional) is the target that will ALWAYS be given the message
 
-/mob/visible_message(var/message, var/self_message, var/blind_message, var/range = world.view)
+/mob/visible_message(var/message, var/self_message, var/blind_message, var/range = world.view, var/mob/target, var/message_target = TRUE)
 	var/list/messageturfs = list()//List of turfs we broadcast to.
 	var/list/messagemobs = list()//List of living mobs nearby who can hear it, and distant ghosts who've chosen to hear it
 	for (var/turf in view(range, get_turf(src)))
@@ -92,7 +97,7 @@
 			continue
 		if (!M.client || istype(M, /mob/new_player))
 			continue
-		if(get_turf(M) in messageturfs)
+		if((get_turf(M) in messageturfs) || ((target && M == target) && (message_target)))
 			messagemobs += M
 
 	for(var/A in messagemobs)

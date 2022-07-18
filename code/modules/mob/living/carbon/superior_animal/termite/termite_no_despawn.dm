@@ -30,11 +30,25 @@
 
 	range_telegraph = "chitin begins to crack and spikes emerge, as it prepares to launch them at"
 
+	get_stat_modifier = TRUE
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 20,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified = 20,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 3,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 30,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 15,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
+		/datum/stat_modifier/mob/living/damage/positive/mixed/mult/low = 5,
+		/datum/stat_modifier/mob/living/damage/negative/mixed/mult/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
+	)
+
 	// Type of ore to spawn when the termite dies, even in maints we still drop ore correct
 	var/ore
 
 // Mine a tile
-/mob/living/carbon/superior_animal/termite_no_despawn/proc/mine(var/turf/simulated/mineral/M)
+/mob/living/carbon/superior_animal/termite_no_despawn/proc/mine(turf/simulated/mineral/M)
 	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
 	M.GetDrilled() // Mine the turf
 	return TRUE
@@ -105,7 +119,6 @@
 //Loot related variables
 	ore = /obj/item/stack/ore/silver
 
-
 //Uranium Termite - ranged, slow, med-health, low damage
 /mob/living/carbon/superior_animal/termite_no_despawn/uranium
 	name = "Smertnik termite"
@@ -161,7 +174,6 @@
 //Loot related variables
 	ore = /obj/item/stack/ore/plasma
 
-
 //Diamond Wurm - melee, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite_no_despawn/diamond
 	name = "Koroleva termite"
@@ -189,8 +201,7 @@
 //Loot related variables
 	ore = /obj/item/stack/ore/diamond
 
-
-//Osmium Termite - melee, doesn't give a fuck, high-damage
+//Osmium Termite - ranged, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite_no_despawn/osmium
 	name = "Korol termite"
 	desc = "A king termite ready to defend and slay for his queen."
@@ -213,6 +224,8 @@
 //Damage related variables
 	melee_damage_lower = TERMITE_DMG_LOW
 	melee_damage_upper = TERMITE_DMG_LOW
+
+	ranged = TRUE
 
 //Armor related variables
 	armor = list(melee = 50, bullet = 30, energy = 40, bomb = 50, bio = 100, rad = 0)

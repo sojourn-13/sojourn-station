@@ -1,12 +1,10 @@
 /*
 	The blob is a horrible acidic slime creature that eats through airlocks and expands infinitely.
 	The rate of expansion slows down as it grows, so it is ultimately soft-capped
-
 	Its attacks deal light burn damage, but spam many hits. They deal a lot of damage by splashing acid
 	onto victims, allowing acidproof gear to provide some good protection
-
 	Blobs are very vulnerable to fire and lasers. Flamethrower is the recommended weapon, and
-	In an emergency, a plasma canister and a lighter will bring a quick end to a blob
+	In an emergency, a phoron canister and a lighter will bring a quick end to a blob
 */
 
 /datum/storyevent/blob
@@ -20,7 +18,7 @@
 //============================================
 
 /datum/event/blob
-	announceWhen	= 6
+	announceWhen	= 12
 
 	var/obj/effect/blob/core/Blob
 
@@ -59,18 +57,17 @@
 	name = "blob"
 	icon = 'icons/mob/blob.dmi'
 	icon_state = "blob"
-	var/icon_scale = 1.0
 	light_range = 3
 	desc = "Some blob creature thingy"
 	density = FALSE //Normal blobs can be walked over, but it's not a good idea
 
 	opacity = 0
-	anchored = 1
+	anchored = TRUE
 	mouse_opacity = 2
-
+	var/icon_scale = 1
 	maxHealth = 20
 	health = 1
-	var/health_regen = 1.7
+	var/health_regen = 3
 	var/brute_resist = 1.25
 	var/fire_resist = 0.6
 	var/expandType = /obj/effect/blob
@@ -158,7 +155,7 @@
 
 	//Heal ourselves
 	regen()
-
+	MeltFloor(src.loc)//Occulus Edit
 
 	if (world.time >= next_expansion)
 		//Update our neighbors. This may cause us to stop processing
@@ -182,6 +179,7 @@
 			return PROCESS_KILL
 
 		set_expand_time()
+
 /*
 /obj/effect/blob/verb/expandverb()
 	set src in view()
@@ -353,6 +351,7 @@
 	if(B)
 		B.ex_act(2)
 		return
+
 	var/obj/mecha/M = locate() in T
 	if(M)
 		M.visible_message(SPAN_DANGER("The blob attacks \the [M]!"))
@@ -440,6 +439,9 @@
 //Blobs will do horrible things to any mobs they share a tile with
 //Returns true if any mob was damaged, false if not
 /obj/effect/blob/proc/attack_mobs(var/turf/T)
+	if(!core) //Occulus edit. If the core is dead, stop attacking
+		return//Occulus edit: If the core is dead, stop attacking
+	var/result = FALSE//Occulus Edit
 	if (!T)
 		T = loc
 	for (var/mob/living/L in T)
@@ -447,34 +449,71 @@
 			continue
 		L.visible_message(SPAN_DANGER("The blob attacks \the [L]!"), SPAN_DANGER("The blob attacks you!"))
 		playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
-		L.take_organ_damage(burn = RAND_DECIMAL(0.4, 2.3))
+//		L.take_organ_damage(burn = RAND_DECIMAL(6,8))//Occulus Edit: No wonder this did basically no damage.
+		L.apply_damage(RAND_DECIMAL(6,8),BURN)//Occulus Edit: this respects armor now
 
 		//In addition to the flat damage above, we will also splash a small amount of acid on the target
 		//This allows them to wear acidproof gear to resist it
 		if (iscarbon(L))
-			var/datum/reagents/R = new /datum/reagents(4, null)
-			R.add_reagent("sacid", RAND_DECIMAL(0.8,4))
-			R.trans_to(L, R.total_volume)
+			var/datum/reagents/R = new /datum/reagents(30, null)//Bigger container Occulus Edit
+			R.add_reagent("sacid", 30)//Deals another 5 damage if you aren't in an acidproof suit, Ocuclus Edit
+			R.splash(L, R.total_volume)//Acid gets splashed on people you Eris dummies. Occulus Edit
 			qdel(R)
 
-		return TRUE
-
-	var/obj/mecha/M = (locate(/obj/mecha) in loc)
-	if(M)
-		M.visible_message(SPAN_DANGER("The blob attacks \the [M]!"))
-		M.take_damage(5)
-		return TRUE
+		result = TRUE//Occulus edit
 
 	//If we get here, nobody was harmed
-	return FALSE
+	return result//Occulus edit
 
+/obj/effect/blob/proc/MeltFloor(var/turf/T)
+	if(!core)
+		return
+	if(istype(T, /turf/simulated/floor))
+		if(prob(25))
+			var/turf/simulated/floor/D
+			D = T
+			D.take_damage(20, BLAST)
+			playsound(src.loc, pick('sound/items/Welder.ogg','sound/items/Welder.ogg'), 10, 1)
+	for(var/obj/item/A in T)
+		if(!A.unacidable)
+			if(prob(5))
+				visible_message(SPAN_DANGER("Acid melts [A]!"))
+				A.ex_act(1)
+	for(var/obj/machinery/B in T)
+		if(!B.unacidable)
+			if(prob(5))
+				B.ex_act(1)
+				visible_message(SPAN_DANGER("Acid melts [B]!"))
+	for(var/obj/structure/C in T)
+		if(!C.unacidable)
+			if(prob(5))
+				C.ex_act(1)
+				visible_message(SPAN_DANGER("Acid melts [C]!"))
+	if(istype(T, /turf/simulated/open))
+		expand(get_turf(locate(T.x, T.y, T.z-1)))
+		active = FALSE
+
+/obj/effect/blob/shield/MeltFloor(var/turf/T)
+	if(istype(T, /turf/simulated/floor))
+		if(prob(10))
+			var/turf/simulated/floor/D
+			D = T
+			D.take_damage(100, BLAST)
+			playsound(src.loc, pick('sound/items/Welder.ogg','sound/items/Welder.ogg'), 75, 1)
+	..()
+/obj/structure/multiz
+	unacidable = 1
+
+/obj/machinery/multistructure/bioreactor_part
+	unacidable = 1
 
 //Stepping on a blob is bad for your health.
 //When walked over, the blob will wake up and attack whoever stepped on it
 //Since it's awake, it will keep attacking them every process call until they leave or die
-/obj/effect/blob/Crossed()
-	set_awake()
-	attack_mobs()
+/obj/effect/blob/Crossed(mob/AM)
+	if(isliving(AM))//Occulus Edit
+		set_awake()//Edits
+		attack_mobs()//Edits
 
 /*******************
 	BLOB DEFENSE
@@ -496,7 +535,8 @@
 			absorbed_damage = min(health * fire_resist, Proj.damage_types[i])
 			taken_damage= (Proj.damage_types[i]  / fire_resist)
 			Proj.damage_types[i] -= absorbed_damage
-	take_damage(taken_damage)
+	if (!(Proj.testing))
+		take_damage(taken_damage)
 	if (Proj.get_total_damage() <= 0)
 		return 0
 	else
@@ -516,6 +556,8 @@
 				damage = (W.force / brute_resist)
 
 		take_damage(damage)
+		if(prob(5))
+			attack_mobs(user.loc)
 		return 1
 	return ..()
 
@@ -529,7 +571,7 @@
 	fire_resist = 2
 	density = TRUE
 	icon_scale = 1.2
-	health_regen = 0 //The core does not heal
+	health_regen = 1
 
 	expandType = /obj/effect/blob/shield
 
@@ -551,8 +593,6 @@
 			B.set_awake()
 	return ..()
 
-
-
 /obj/effect/blob/shield
 	name = "strong blob"
 	icon = 'icons/mob/blob.dmi'
@@ -560,7 +600,7 @@
 	desc = "Some blob creature thingy"
 	maxHealth = 160
 	health = 160
-	health_regen = 2
+	health_regen = 5
 	brute_resist = 2
 	fire_resist = 1
 	density = TRUE
@@ -574,10 +614,5 @@
 		icon_state = "blob"
 	else
 		icon_state = "blob_damaged"
-
-
-
 	//Blob gradually fades out as it's damaged.
 	alpha = 255 * healthpercent
-
-

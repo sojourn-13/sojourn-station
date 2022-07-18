@@ -41,6 +41,7 @@
 	var/obj/structure/ameridian_crystal/node
 	var/drop_amount = 1 // How many crystals we drop on death
 	var/size_factor = 1 // Size, in %, of the golem
+	never_stimulate_air = TRUE
 
 /mob/living/carbon/superior_animal/ameridian_golem/Initialize()
 	..()
@@ -65,9 +66,10 @@
 
 /mob/living/carbon/superior_animal/ameridian_golem/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	if(istype(P, /obj/item/projectile/sonic_bolt))
-		var/obj/item/projectile/sonic_bolt/SB = P
-		SB.multiply_projectile_damage(SB.golem_damage_bonus)
-		drop_amount = 0 // No loot
+		if (!(P.testing))
+			var/obj/item/projectile/sonic_bolt/SB = P
+			SB.multiply_projectile_damage(SB.golem_damage_bonus)
+			drop_amount = 0 // No loot
 
 	..()
 

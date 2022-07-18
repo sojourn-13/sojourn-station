@@ -59,6 +59,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/gun/projectile/automatic/buckler = 500,
 		/obj/item/gun/projectile/automatic/triage = 550,
 		/obj/item/gun/projectile/automatic/bull_autoshotgun = 650,
+		/obj/item/gun/projectile/boltgun/lever/shotgun/bounty = 700,
 		/obj/item/gun/projectile/automatic/sts/lrifle = 200,
 		/obj/item/gun/projectile/automatic/sts/rifle = 300,
 		/obj/item/gun/projectile/automatic/sts/hrifle = 500,
@@ -84,7 +85,8 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		//misc
 		/obj/item/tool/baton = 200,
 		/obj/item/storage/firstaid/surgery/traitor = 250, //Advanced tools inside
-		/obj/item/computer_hardware/hard_drive/portable/design/blackshield = 500
+		/obj/item/computer_hardware/hard_drive/portable/design/blackshield = 500,
+		/obj/item/storage/firstaid/blackshield/large = 500
 		)
 	var/entropy_value = 1 //It is still bluespace
 

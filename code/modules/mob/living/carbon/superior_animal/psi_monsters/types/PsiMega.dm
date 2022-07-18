@@ -25,6 +25,7 @@
 	second_teleport_callout = "<b><font size='3px'>\the Dreaming King looses an agonized howl before journeying to nowhere, his words bellowing in rage, \"I will never die!\" The strongest of his court heard affirming his call!</font></b>"
 	var/dreaming_king = TRUE
 	var/hound_of_the_crown = FALSE
+	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 
 /mob/living/carbon/superior_animal/psi_monster/dreaming_king/hound_crown
 	name = "Hound of the Crown"

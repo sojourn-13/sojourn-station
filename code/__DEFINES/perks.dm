@@ -32,6 +32,8 @@
 #define PERK_SHARP_MIND /datum/perk/oddity/sharp_mind
 #define PERK_BLACKBOX_INSIGHT /datum/perk/oddity/blackbox_insight
 #define PERK_STRANGTH /datum/perk/oddity/strangth
+#define PERK_MIND_OF_MATTER /datum/perk/oddity/mind_of_matter
+#define PERK_IRON_WILL /datum/perk/oddity/iron_will
 
 //roundstart perks (job and racial)
 #define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery
@@ -123,3 +125,16 @@
 #define PERK_CARNIVORE /datum/perk/carnivore
 #define PERK_HERBIVORE /datum/perk/herbivore
 #define PERK_SNACKIVORE /datum/perk/oddity/snackivore
+
+#define GOOD_ODDITY_PERKS list(PERK_FAST_WALKER, \
+							   PERK_GUNSLINGER, \
+							   PERK_BALLS_OF_PLASTEEL, \
+							   PERK_HARDEN, \
+							   PERK_BETTER_TOXINS, \
+							   PERK_SHARP_MIND, \
+							   PERK_STRANGTH, \
+							   PERK_IRON_WILL, \
+							   PERK_SNACKIVORE)
+
+	//Temporary drug perks
+#define PERK_ULTRASURGEON /datum/perk/drug/ultrasurgeon

@@ -112,7 +112,7 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	data += "<br>Allow Hivemind Gibbing Dead Victims: [GLOB.hive_data_bool["gibbing_dead"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];toggle_gibbing_dead=1'>\[TOGGLE\]</a>"
 
-	data += "<br>Allow Events Below 15 Pop: [GLOB.hive_data_bool["pop_lock"] ? "Enabled" : "Disabled"] \
+	data += "<br>Prevent Hivemind Events Below 15 Pop: [GLOB.hive_data_bool["pop_lock"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];toggle_pop_lock=1'>\[TOGGLE\]</a>"
 
 	data += "</td></tr></table>"

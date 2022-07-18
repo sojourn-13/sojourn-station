@@ -14,7 +14,7 @@
 
 /mob/living/carbon/superior_animal/nanobot/UnarmedAttack(var/mob/living/carbon/human/H, var/proximity)
 	if(medbot) // Are we in healing mode?
-		if(H == patient) // Are we "attacking" our patient?
+		if(H == patient && ishuman(H)) // Are we "attacking" our patient?
 			var/t = valid_healing_target(H)
 			if(!t)
 				visible_emote("state, \"Patient healed.\"")

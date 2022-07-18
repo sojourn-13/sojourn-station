@@ -59,9 +59,10 @@
 		explode()
 		return
 
-/obj/item/mine_old/bullet_act()
-	if(prob(90))
-		explode()
+/obj/item/mine_old/bullet_act(var/obj/item/projectile/Proj)
+	if (!(Proj.testing))
+		if(prob(90))
+			explode()
 
 /obj/item/mine_old/ex_act(severity)
 	if(severity <= 2 || prob(90))

@@ -1,5 +1,8 @@
 /datum/trade_station/greyson_ship
+	icon_states = list("greyson_frigate", "ship")
 	uid = "greyson"
+	tree_x = 0.66
+	tree_y = 0.7
 	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = UNIQUE_GOODS

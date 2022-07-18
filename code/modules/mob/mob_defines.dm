@@ -29,6 +29,9 @@
 	var/lastKnownIP = null
 	var/computer_id = null
 
+	/// I'd really rather use signals for this, but, whatever. Assigned in roomba_dispenser.dm when spawned from one.
+	var/obj/entity_spawner/spawned_from
+
 	/*A bunch of this stuff really needs to go under their own defines instead of being globally attached to mob.
 	A variable should only be globally attached to turfs/objects/whatever, when it is in fact needed as such.
 	The current method unnecessarily clusters up the variable list, especially for humans (although rearranging won't really clean it up a lot but the difference will be noticable for other mobs).
@@ -214,3 +217,5 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/list/planes_visible = null	// List of atom planes that are logically visible/interactable (list of actual plane numbers).
 
 	var/obj/effect/gibspawner/gibspawner = /obj/effect/gibspawner/generic // for xeno gibs, originally
+
+	var/click_delay_addition = 0

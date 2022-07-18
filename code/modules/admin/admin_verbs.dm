@@ -331,6 +331,39 @@ ADMIN_VERB_ADD(/client/proc/togglebuildmodeself, R_FUN, FALSE)
 	if(src.mob)
 		togglebuildmode(src.mob)
 
+ADMIN_VERB_ADD(/client/proc/list_mob_groups, R_FUN, FALSE)
+/client/proc/list_mob_groups()
+	set name = "List Mob Groups"
+	set desc = "List the keys of all currently saved mob groups"
+	set category = "Special Verbs"
+
+	if(!check_rights(R_FUN))
+		return
+
+	to_chat(usr, "<b>Names of all mob groups:</b>")
+	for (var/key_to_print in GLOB.mob_groups)
+		to_chat(usr, key_to_print) //prints the keys, not the values
+
+ADMIN_VERB_ADD(/client/proc/list_mob_group_contents, R_FUN, FALSE)
+/client/proc/list_mob_group_contents(key as text)
+	set name = "List Mob Group Contents"
+	set desc = "List the contents of a given mob group using a key"
+	set category = "Special Verbs"
+
+	if(!check_rights(R_FUN))
+		return
+
+	if (!key)
+		key = input(usr, "Input the key of the list you wish to see the contents of:", "Key", "")
+		if (key == "")
+			to_chat(usr, SPAN_WARNING("Your entered value is invalid."))
+
+	if (key in GLOB.mob_groups)
+		to_chat(usr, "<b>Contents of the given list:</b>")
+		var/list/list_to_list = GLOB.mob_groups[key]
+		for (var/content in list_to_list)
+			to_chat(usr, "[content]")
+
 
 ADMIN_VERB_ADD(/client/proc/object_talk, R_FUN, FALSE)
 /client/proc/object_talk(var/msg as text) // -- TLE

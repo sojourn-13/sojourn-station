@@ -1,3 +1,20 @@
+// Termite defines
+
+#define TERMITE_HEALTH_LOW 25
+#define TERMITE_HEALTH_MED 50
+#define TERMITE_HEALTH_HIGH 75
+#define TERMITE_HEALTH_ULTRA 100
+
+#define TERMITE_DMG_LOW 15
+#define TERMITE_DMG_MED 25
+#define TERMITE_DMG_HIGH 40
+#define TERMITE_DMG_ULTRA 55
+
+#define TERMITE_SPEED_SLUG 9
+#define TERMITE_SPEED_LOW 7
+#define TERMITE_SPEED_MED 5
+#define TERMITE_SPEED_HIGH 3
+
 // /mob/var/stat things.
 #define CONSCIOUS   0
 #define UNCONSCIOUS 1
@@ -104,6 +121,7 @@
 #define APPEARANCE_ALL       0xFFFF
 
 // Click cooldown
+#define DEFAULT_LONG_COOLDOWN   16//Extra long timeout for some gear
 #define DEFAULT_ATTACK_COOLDOWN 8 //Default timeout for aggressive actions
 #define DEFAULT_QUICK_COOLDOWN  4
 

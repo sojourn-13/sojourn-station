@@ -100,7 +100,8 @@
 			START_PROCESSING(SSmachines, src)
 
 /obj/machinery/camera/bullet_act(var/obj/item/projectile/P)
-	take_damage(P.get_structure_damage())
+	if (!(P.testing))
+		take_damage(P.get_structure_damage())
 
 /obj/machinery/camera/ex_act(severity)
 	if(src.invuln)

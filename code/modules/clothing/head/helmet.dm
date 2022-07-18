@@ -789,6 +789,7 @@
 	icon_state = "ironhammer_wo_full"
 	item_state = "ironhammer_wo_full"
 	flash_protection = FLASH_PROTECTION_MAJOR
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 100, rad = 0)
 
 /obj/item/clothing/head/helmet/warrant_officer/update_icon()

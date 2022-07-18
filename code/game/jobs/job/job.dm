@@ -117,13 +117,17 @@
 					else
 						if (SSjob.JobTimeCheck(target.ckey,selectedDept.jobs_in_department) > SSjob.JobTimeCheck(target.ckey,secondDept.jobs_in_department))
 							secondDept = selectedDept
-/////////////////////////////////////
+			if (target.mind.assigned_job)
+				var/datum/job/checkedJob = target.mind.assigned_job
+				if ((checkedJob.department == selectedDept.id) && ((checkedJob.department == topDept.id) || (checkedJob.department == secondDept.id)))
+					to_chat(world, SPAN_DANGER("Huzzah."))
+					var/list/paths = subtypesof(/datum/perk/experienced)
+					for (var/T in paths)
+						var/datum/perk/experienced/pathCheck = new T
+						if ((!pathCheck.subPerk) && (target.mind.assigned_job.department == pathCheck.dept))// Also, you can only have two of these Perks, so you can only have the Perks
+							perks += list(pathCheck.type)																		// for two highest played departments.
 
-	var/list/paths = subtypesof(/datum/perk/experienced)
-	for (var/T in paths)
-		var/datum/perk/experienced/pathCheck = new T
-		if ((!pathCheck.subPerk) && ((pathCheck.dept == topDept.id) || (pathCheck.dept == secondDept.id)))		// Also, you can only have two of these Perks, so you can only have the Perks
-			perks += list(pathCheck.type)																		// for two highest played departments.
+/////////////////////////////////////////
 
 /datum/job/proc/add_additiional_language(var/mob/living/carbon/human/target)
 	if(!ishuman(target))

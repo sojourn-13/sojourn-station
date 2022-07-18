@@ -11,6 +11,15 @@
 
 #define SQRTWO 1.414
 
+/// Returns the difference between multiplier and the product of multiplier * multiplicand.
+#define MULT_DIFFERENCE(multiplier, multiplicand) ((multiplier * multiplicand) - multiplier)
+
+/// Returns the higher of multiplicand and check, then multiplies it with multiplier.
+#define SAFEMULT(multiplier, multiplicand, check) ((max(multiplier, check)) * multiplicand)
+
+/// Returns the higher of dividend and check, then divides it with divisor.
+#define SAFEDIVIDE(dividend, divisor, check) ((max(dividend, check)) * divisor)
+
 #define PERCENT(val) (round((val)*100, 0.1))
 #define CLAMP01(x) (CLAMP(x, 0, 1))
 
@@ -24,6 +33,8 @@
 #define QUANTIZE(variable) (round(variable, 0.0001))
 
 #define CLAMP(CLVALUE,CLMIN,CLMAX) ( max( (CLMIN), min((CLVALUE), (CLMAX)) ) )
+
+#define ZERO_OR_MORE(CLVALUE) CLAMP(CLVALUE, 0, INFINITY)
 
 // Similar to clamp but the bottom rolls around to the top and vice versa. min is inclusive, max is exclusive
 #define WRAP(val, min, max) ( min == max ? min : (val) - (round(((val) - (min))/((max) - (min))) * ((max) - (min))) )

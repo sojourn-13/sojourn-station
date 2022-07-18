@@ -3,6 +3,8 @@
 		"HTB 'Boris'" = "Hardsuit Trade Beacon 'Boris': \"Hello there, we are hardsuit salvagers. We will be around the system for some time and we have leftover stock. We can sell some off if you want them."
 	)
 	uid = "rigs"
+	tree_x = 0.74
+	tree_y = 0.7
 	spawn_always = TRUE
 	markup = UNCOMMON_GOODS
 	offer_limit = 20
@@ -10,7 +12,7 @@
 	wealth = 0
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 4000
-	stations_recommended = list("illegal1", "mecha")
+	stations_recommended = list("illegal1")
 	recommendations_needed = 1
 	inventory = list(
 		"RIGs II" =  list(

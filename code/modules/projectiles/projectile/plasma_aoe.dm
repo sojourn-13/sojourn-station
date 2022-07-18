@@ -13,10 +13,11 @@
 	recoil = 30
 
 /obj/item/projectile/plasma/aoe/on_hit(atom/target)
-	if(emp_strength)
-		empulse(target, aoe_strong, aoe_weak, strength=emp_strength)
-	if(heat_damage)
-		heatwave(target, aoe_strong, aoe_weak, heat_damage, fire_stacks, armor_penetration)
+	if (!testing)
+		if(emp_strength)
+			empulse(target, aoe_strong, aoe_weak, strength=emp_strength)
+		if(heat_damage)
+			heatwave(target, aoe_strong, aoe_weak, heat_damage, fire_stacks, armor_penetration)
 	..()
 
 /obj/item/projectile/plasma/aoe/ion

@@ -5,6 +5,9 @@
 /datum/design/research/structure/bidonadv
 	build_type = AUTOLATHE | PROTOLATHE
 
+/datum/design/research/structure/bidontrigger
+	build_type = AUTOLATHE | PROTOLATHE
+
 /datum/design/research/structure/solar
 	build_type = AUTOLATHE | PROTOLATHE
 

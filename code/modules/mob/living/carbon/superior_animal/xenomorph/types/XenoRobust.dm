@@ -47,7 +47,7 @@ var/datum/xenomorph/xeno_morph_ai
 	var/list/global_abilities_cooldown = list()
 
 /mob/living/carbon/superior_animal/xenomorph/warrior/shrike/Life()
-	if((src.stat != CONSCIOUS)||!canmove||resting||lying||stasis||AI_inactive)
+	if((stat != CONSCIOUS)||!canmove||resting||lying||stasis||AI_inactive)
 		return // Shrikes don't get to scream when passed out or dead
 	.=..()
 	if (world.time - cooldown_time < cooldown)

@@ -2,7 +2,9 @@
 	name_pool = list(
 		"MAV 'Caduceus'" = "Moebius Aid Vessel 'Caduceus':\n\"Hello there, we are from the Kriosan Confederacy. We will be leaving the system shortly but we can offer you medical supplies in the mean time.\"."
 	)
-	icon_states = "ship"
+	icon_states = list("moe_frigate", "ship")
+	tree_x = 0.26
+	tree_y = 0.9
 	start_discovered = TRUE
 	uid = "moe_basic"
 	spawn_always = TRUE

@@ -1,19 +1,3 @@
-#define TERMITE_HEALTH_LOW 25
-#define TERMITE_HEALTH_MED 50
-#define TERMITE_HEALTH_HIGH 75
-#define TERMITE_HEALTH_ULTRA 100
-
-#define TERMITE_DMG_LOW 15
-#define TERMITE_DMG_MED 25
-#define TERMITE_DMG_HIGH 40
-#define TERMITE_DMG_ULTRA 55
-
-#define TERMITE_SPEED_SLUG 9
-#define TERMITE_SPEED_LOW 7
-#define TERMITE_SPEED_MED 5
-#define TERMITE_SPEED_HIGH 3
-
-
 // Normal types of termites
 GLOBAL_LIST_INIT(termites_normal, list(/mob/living/carbon/superior_animal/termite/iron,
 									/mob/living/carbon/superior_animal/termite/silver,
@@ -59,6 +43,19 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	//Controller that spawns the termites
 	var/datum/termite_controller/controller
 
+	get_stat_modifier = TRUE
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 20,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified = 20,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 3,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 30,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 15,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
+		/datum/stat_modifier/mob/living/damage/positive/mixed/mult/low = 5,
+		/datum/stat_modifier/mob/living/damage/negative/mixed/mult/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
+	)
 
 	range_telegraph = "chitin begins to crack and spikes emerge, as it prepares to launch them at"
 
@@ -77,7 +74,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 
 // Mine a tile
-/mob/living/carbon/superior_animal/termite/proc/mine(var/turf/simulated/mineral/M)
+/mob/living/carbon/superior_animal/termite/proc/mine(turf/simulated/mineral/M)
 	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
 	M.GetDrilled() // Mine the turf
 	return TRUE
@@ -192,7 +189,6 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 //Loot related variables
 	ore = /obj/item/stack/ore/silver
 
-
 //Uranium Termite - ranged, slow, med-health, low damage
 /mob/living/carbon/superior_animal/termite/uranium
 	name = "Smertnik termite"
@@ -248,7 +244,6 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 //Loot related variables
 	ore = /obj/item/stack/ore/plasma
 
-
 //Diamond Wurm - melee, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite/diamond
 	name = "Koroleva termite"
@@ -276,8 +271,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 //Loot related variables
 	ore = /obj/item/stack/ore/diamond
 
-
-//Osmium Termite - melee, doesn't give a fuck, high-damage
+//Osmium Termite - ranged, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite/osmium
 	name = "Korol termite"
 	desc = "A king termite ready to defend and slay for his queen."
@@ -300,6 +294,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 //Damage related variables
 	melee_damage_lower = TERMITE_DMG_LOW
 	melee_damage_upper = TERMITE_DMG_LOW
+
+	ranged = TRUE
 
 //Armor related variables
 	armor = list(melee = 50, bullet = 30, energy = 40, bomb = 50, bio = 100, rad = 0)

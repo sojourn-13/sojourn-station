@@ -17,10 +17,20 @@
 	emote_see = list("chitters.", "rubs its legs.")
 	speak_chance = 5
 
-	give_randomized_armor = TRUE //We get randomized addition armor
+	get_stat_modifier = TRUE //We get randomized addition armor
 	armor_penetration = 5
 
 	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 5, bio = 10, rad = 25)
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/lustrous = 33,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/ = 17,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/spider = 50,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/spider = 33,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/spider = 50,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/venomous = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 16,
+	)
 
 	move_to_delay = 4.5
 	turns_per_move = 5

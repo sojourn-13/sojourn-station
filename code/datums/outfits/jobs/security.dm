@@ -57,7 +57,7 @@
 	head = /obj/item/clothing/head/rank/instructor_hat
 	glasses = /obj/item/clothing/glasses/ballistic
 	l_pocket = /obj/item/device/flash
-	gloves = /obj/item/clothing/gloves/thick
+	gloves = /obj/item/clothing/gloves/thick/swat/blackshield
 	backpack_contents = list(/obj/item/storage/hcases/ammo/blackmarket/serg = 1)
 
 /decl/hierarchy/outfit/job/security/inspector
@@ -88,7 +88,7 @@
 	head = /obj/item/clothing/head/rank/corpsman/beret
 	pda_type = /obj/item/modular_computer/pda/corpsman
 	belt = /obj/item/storage/belt/medical/emt
-	gloves = /obj/item/clothing/gloves/thick
+	gloves = /obj/item/clothing/gloves/thick/swat/blackshield_corpsman
 	l_hand = /obj/item/storage/firstaid/blackshield
 	backpack_contents = list(/obj/item/storage/hcases/ammo/blackmarket/medspec = 1)
 
@@ -109,5 +109,5 @@
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	glasses = /obj/item/clothing/glasses/ballistic
 	head = /obj/item/clothing/head/rank/trooper/cap
-	gloves = /obj/item/clothing/gloves/thick/swat
+	gloves = /obj/item/clothing/gloves/thick/swat/blackshield
 	backpack_contents = list(/obj/item/storage/hcases/ammo/blackmarket/trooper = 1)

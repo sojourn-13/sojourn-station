@@ -387,7 +387,7 @@ Class Procs:
 	qdel(src)
 	return 1
 
-//called on deconstruction before the final deletion
+///called on deconstruction before the final deletion
 /obj/machinery/proc/on_deconstruction()
 	return
 

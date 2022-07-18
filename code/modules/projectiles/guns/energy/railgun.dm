@@ -9,6 +9,7 @@
 	fire_sound = 'sound/weapons/rail.ogg'
 	item_charge_meter = TRUE
 	w_class = ITEM_SIZE_BULKY
+	extra_bulk = 2
 	force = WEAPON_FORCE_PAINFUL
 	twohanded = TRUE
 	flags = CONDUCT

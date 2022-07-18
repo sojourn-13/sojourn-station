@@ -99,11 +99,11 @@
 /mob/living/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	var/hit_dir = get_dir(P, src)
 
-	if (P.is_hot() >= HEAT_MOBIGNITE_THRESHOLD)
+	if (P.is_hot() >= HEAT_MOBIGNITE_THRESHOLD && (!(P.testing)))
 		IgniteMob()
 
 	//Being hit while using a deadman switch
-	if(istype(get_active_hand(),/obj/item/device/assembly/signaler))
+	if(istype(get_active_hand(),/obj/item/device/assembly/signaler) && (!(P.testing)))
 		var/obj/item/device/assembly/signaler/signaler = get_active_hand()
 		if(signaler.deadman && prob(80))
 			log_and_message_admins("has triggered a signaler deadman's switch")
@@ -112,17 +112,21 @@
 
 	//Stun Beams
 	if(P.taser_effect)
-		stun_effect_act(0, P.agony, def_zone, P)
-		to_chat(src, SPAN_WARNING("You have been hit by [P]!"))
+		if (!(P.testing))
+			stun_effect_act(0, P.agony, def_zone, P)
+			to_chat(src, SPAN_WARNING("You have been hit by [P]!"))
+		else
+			P.on_impact(src, TRUE) //not sure if this will work
 		qdel(P)
 		return TRUE
 
-	if(P.knockback && hit_dir)
+	if(P.knockback && hit_dir && (!(P.testing)))
 		throw_at(get_edge_target_turf(src, hit_dir), P.knockback, P.knockback)
 
 	//Armor and damage
 	if(!P.nodamage)
-		hit_impact(P.get_structure_damage(), hit_dir)
+		if (!(P.testing))
+			hit_impact(P.get_structure_damage(), hit_dir)
 		for(var/damage_type in P.damage_types)
 			var/damage = P.damage_types[damage_type]
 			var/dmult = 1
@@ -133,12 +137,14 @@
 				if(is_type_in_list(src, P.supereffective_types, TRUE))
 					dmult += P.supereffective_mult
 			damage *= dmult
-			damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P), post_pen_mult = P.post_penetration_dammult)
+			if (!(P.testing))
+				damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P), post_pen_mult = P.post_penetration_dammult)
 
 
 	if(P.agony > 0 && istype(P,/obj/item/projectile/bullet))
-		hit_impact(P.agony, hit_dir)
-		damage_through_armor(P.agony, HALLOSS, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp = is_sharp(P), edge = has_edge(P))
+		if (!(P.testing))
+			hit_impact(P.agony, hit_dir)
+			damage_through_armor(P.agony, HALLOSS, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp = is_sharp(P), edge = has_edge(P))
 
 
 	P.on_hit(src, def_zone)
