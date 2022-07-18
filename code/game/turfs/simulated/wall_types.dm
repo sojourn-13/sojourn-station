@@ -178,6 +178,8 @@
 	anchored = 1
 	density = TRUE
 
+	atmos_canpass = CANPASS_DENSITY
+
 /obj/structure/shuttle_part/cargo
 	name = "Cargo Transport Shuttle (A5)"
 	icon = 'icons/turf/shuttlecargo.dmi'
