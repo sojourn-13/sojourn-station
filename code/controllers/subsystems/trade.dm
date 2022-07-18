@@ -214,8 +214,10 @@ SUBSYSTEM_DEF(trade)
 
 		return FALSE
 
-	if(ispath(offer_path, /datum/reagent))		// If item is not of the types checked and the offer is for a reagent, fail
-		return FALSE
+	if(istype(item, /obj/item/stack))
+		var/obj/item/stack/current_stack = item
+		if(current_stack.amount < current_stack.max_amount)	// prevents selling 3 as same as full stacks
+			return FALSE
 
 	return TRUE
 
