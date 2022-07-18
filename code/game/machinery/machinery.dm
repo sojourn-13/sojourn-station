@@ -122,6 +122,7 @@ Class Procs:
 	var/anchor_type = null //What type of object can be anchored to a machine
 	var/current_power_usage = 0 // How much power are we currently using, dont change by hand, change power_usage vars and then use set_power_use
 	var/area/current_power_area // What area are we powering currently
+	var/processing_flags // Bitflag. What is being processed. One of `MACHINERY_PROCESS_*`.
 
 	var/blue_ink_tk_blocker = FALSE
 
@@ -132,28 +133,59 @@ Class Procs:
 	else
 		..()
 
-/obj/machinery/Initialize(mapload, d=0)
+/obj/machinery/Initialize(mapload, d = 0, populate_components = TRUE, is_internal = FALSE)
 	. = ..()
 	if(d)
 		set_dir(d)
-	InitCircuit()
-	GLOB.machines += src
-	START_PROCESSING(SSmachines, src)
+
+	START_PROCESSING(SSmachinery, src)
+	SSmachinery.machinery += src // All machines should be in machinery.
+
+	if (populate_components && component_types)
+		component_parts = list()
+		for (var/type in component_types)
+			var/count = component_types[type]
+			if(ispath(type, /obj/item/stack))
+				if(isnull(count))
+					count = 1
+				component_parts += new type(src, count)
+			else
+				if(count > 1)
+					for (var/i in 1 to count)
+						component_parts += new type(src)
+				else
+					component_parts += new type(src)
+
+		if(component_parts.len)
+			RefreshParts()
 
 /obj/machinery/Destroy()
-	STOP_PROCESSING(SSmachines, src)
+	STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_ALL)
 	if(component_parts)
 		for(var/atom/A in component_parts)
-			qdel(A)
-	if(contents) // The same for contents.
-		for(var/atom/A in contents)
-			qdel(A)
-	GLOB.machines -= src
-	set_power_use(NO_POWER_USE)
+			if(A.loc == src) // If the components are inside the machine, delete them.
+				qdel(A)
+			else // Otherwise we assume they were dropped to the ground during deconstruction, and were not removed from the component_parts list by deconstruction code.
+				component_parts -= A
+
 	return ..()
+
 
 /obj/machinery/Process()//If you dont use process or power why are you here
 	return PROCESS_KILL
+
+/obj/machinery/proc/process_all()
+	/* Uncomment this if/when you need component processing
+	if(processing_flags & MACHINERY_PROCESS_COMPONENTS)
+		for(var/thing in processing_parts)
+			var/obj/item/stock_parts/part = thing
+			if(part.machine_process(src) == PROCESS_KILL)
+				part.stop_processing() */
+
+	if((processing_flags & MACHINERY_PROCESS_SELF))
+		. = Process()
+		if(. == PROCESS_KILL)
+			STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
 
 /obj/machinery/emp_act(severity)
 	if(use_power && !stat)

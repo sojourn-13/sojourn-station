@@ -244,6 +244,21 @@
 	else if(a.loc)
 		return "[a.loc] (0,0,0) ([a.loc.type])"
 
+/proc/log_ss(subsystem, text, log_world = TRUE, severity = SEVERITY_DEBUG)
+	if (!subsystem)
+		subsystem = "UNKNOWN"
+	var/msg = "[subsystem]: [text]"
+	game_log("SS", msg)
+	if (log_world)
+		world.log <<  "SS[subsystem]: [text]" //removed the gelf logs because i think they only work with rust
+
+/proc/log_ss_init(text)
+	game_log("SS", "[text]")
+
+// Generally only used when something has gone very wrong.
+/proc/log_failsafe(text)
+	game_log("FAILSAFE", text)
+
 //From tg
 #if defined(REFERENCE_TRACKING) // Doing it locally
 #define log_reftracker(msg) log_harddel("## REF SEARCH [msg]")

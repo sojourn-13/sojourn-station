@@ -97,8 +97,7 @@
 #define ATMOSTANK_NITROGEN      90000 // A lot of N2 is needed to produce air mix, that's why we keep 90MPa of it
 #define ATMOSTANK_OXYGEN        40000 // O2 is also important for airmix, but not as much as N2 as it's only 21% of it.
 #define ATMOSTANK_CO2           25000 // CO2, PH and H2 are not critically important for station, only for toxins and alternative coolants, no need to store a lot of those.
-#define ATMOSTANK_PHORON        25000
-#define ATMOSTANK_PHORON_SCARCE 2500  // we're also in the middle of a phoron shortage - the old ATMOSTANK_PHORON define is staying in case someone wants to map in a phoron tank or something
+#define ATMOSTANK_PLASMA        25000
 #define ATMOSTANK_HYDROGEN      25000
 #define ATMOSTANK_NITROUSOXIDE  10000 // N2O doesn't have a real useful use, i guess it's on station just to allow refilling of sec's riot control canisters?
 
@@ -114,18 +113,18 @@
 #define GAS_ALIEN				"aliether"
 #define GAS_STEAM				"water"
 
-#define	PIPE_COLOR_GREY		"#ffffff"	//yes white is grey
-#define	PIPE_COLOR_RED		"#ff0000"
-#define	PIPE_COLOR_BLUE		"#0000ff"
-#define	PIPE_COLOR_CYAN		"#00ffff"
-#define	PIPE_COLOR_GREEN	"#00ff00"
-#define	PIPE_COLOR_YELLOW	"#ffcc00"
-#define	PIPE_COLOR_BLACK	"#444444"
-#define	PIPE_COLOR_PURPLE	"#bb25af"
-
 #define CONNECT_TYPE_REGULAR	1
 #define CONNECT_TYPE_SUPPLY		2
 #define CONNECT_TYPE_SCRUBBER	4
 #define CONNECT_TYPE_HE			8
+
+#define	PIPE_COLOR_GREY		"#e4e7ea"	//yes white is grey
+#define	PIPE_COLOR_RED		"#c1293f"
+#define	PIPE_COLOR_BLUE		"#1f92c2"
+#define	PIPE_COLOR_CYAN		"#0c9d98"
+#define	PIPE_COLOR_GREEN	"#8ad55d"
+#define	PIPE_COLOR_YELLOW	"#deb63d"
+#define	PIPE_COLOR_BLACK	"#34383d"
+#define	PIPE_COLOR_ORANGE	"#b95a00"
 
 var/global/list/pipe_colors = list("grey" = PIPE_COLOR_GREY, "red" = PIPE_COLOR_RED, "blue" = PIPE_COLOR_BLUE, "cyan" = PIPE_COLOR_CYAN, "green" = PIPE_COLOR_GREEN, "yellow" = PIPE_COLOR_YELLOW, "black" = PIPE_COLOR_BLACK, "purple" = PIPE_COLOR_PURPLE)

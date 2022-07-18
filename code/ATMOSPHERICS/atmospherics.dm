@@ -10,6 +10,8 @@ Pipelines + Other Objects -> Pipe network
 
 */
 /obj/machinery/atmospherics
+	var/has_errored = FALSE
+
 	anchored = 1
 	idle_power_usage = 0
 	active_power_usage = 0
@@ -28,7 +30,6 @@ Pipelines + Other Objects -> Pipe network
 	var/global/datum/pipe_icon_manager/icon_manager
 	var/obj/machinery/atmospherics/node1
 	var/obj/machinery/atmospherics/node2
-	gfi_layer_rotation = GFI_ROTATION_OVERDIR
 
 /obj/machinery/atmospherics/Initialize(mapload)
 	. = ..()
@@ -97,7 +98,7 @@ obj/machinery/atmospherics/proc/check_connect_types(obj/machinery/atmospherics/a
 
 	return node.pipe_color
 
-/obj/machinery/atmospherics/process()
+/obj/machinery/atmospherics/Process()
 	last_flow_rate = 0
 	last_power_draw = 0
 

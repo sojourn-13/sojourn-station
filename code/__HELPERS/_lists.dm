@@ -11,14 +11,6 @@
 
 #define listequal(A, B) (A.len == B.len && !length(A^B))
 
-#define LAZYINITLIST(L) if (!L) L = list()
-
-#define LAZYLEN(L) length(L)
-#define UNSETEMPTY(L) if (L && !LAZYLEN(L)) L = null
-#define LAZYREMOVE(L, I) if(L) { L -= I; if(!LAZYLEN(L)) { L = null; } }
-#define LAZYADD(L, I) if(!L) { L = list(); } L += I;
-#define LAZYINSERT(L, I, X) if(!L) { L = list(); } L.Insert(X, I);
-#define LAZYDISTINCTADD(L, I) if(!L) { L = list(); } L |= I;
 #define LAZYOR(L, I) if(!L) { L = list(); } L |= I;
 #define LAZYFIND(L, V) L ? L.Find(V) : 0
 #define LAZYISIN(L, I) (L ? (I in L) : FALSE)
@@ -35,9 +27,6 @@
 
 //Subtracts value from the existing value of a key
 #define LAZYAMINUS(L,K,V) if(L && L[K]) { L[K] -= V; if(!LAZYLEN(L[K])) { L -= K } }
-
-// Insert an object A into a sorted list using cmp_proc (/code/_helpers/cmp.dm) for comparison.
-#define ADD_SORTED(list, A, cmp_proc) if(!list.len) {list.Add(A)} else {list.Insert(FindElementIndex(A, list, cmp_proc), A)}
 
 /// Passed into BINARY_INSERT to compare keys
 #define COMPARE_KEY __BIN_LIST[__BIN_MID]

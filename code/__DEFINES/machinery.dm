@@ -66,6 +66,15 @@ var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called
 // Those networks can only be accessed by pre-existing terminals. AIs and new terminals can't use them.
 var/list/restricted_camera_networks = list(NETWORK_MERCENARY, "Secret")
 
+// Machinery process flags, for use with START_PROCESSING_MACHINE
+#define MACHINERY_PROCESS_SELF          (1<<0)
+#define MACHINERY_PROCESS_COMPONENTS    (1<<1)
+#define MACHINERY_PROCESS_ALL           (MACHINERY_PROCESS_SELF | MACHINERY_PROCESS_COMPONENTS)
+
+// Machinery init flag masks
+#define INIT_MACHINERY_PROCESS_SELF         0x1
+#define INIT_MACHINERY_PROCESS_COMPONENTS   0x2
+#define INIT_MACHINERY_PROCESS_ALL          0x3
 
 //singularity defines
 #define STAGE_ONE 	1
