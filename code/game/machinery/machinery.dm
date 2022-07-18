@@ -133,41 +133,24 @@ Class Procs:
 	else
 		..()
 
-/obj/machinery/Initialize(mapload, d = 0, populate_components = TRUE, is_internal = FALSE)
+/obj/machinery/Initialize(mapload, d=0)
 	. = ..()
 	if(d)
 		set_dir(d)
-
-	START_PROCESSING(SSmachinery, src)
-	SSmachinery.machinery += src // All machines should be in machinery.
-
-	if (populate_components && component_types)
-		component_parts = list()
-		for (var/type in component_types)
-			var/count = component_types[type]
-			if(ispath(type, /obj/item/stack))
-				if(isnull(count))
-					count = 1
-				component_parts += new type(src, count)
-			else
-				if(count > 1)
-					for (var/i in 1 to count)
-						component_parts += new type(src)
-				else
-					component_parts += new type(src)
-
-		if(component_parts.len)
-			RefreshParts()
+	InitCircuit()
+	GLOB.machines += src
+	START_PROCESSING(SSmachines, src)
 
 /obj/machinery/Destroy()
-	STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_ALL)
+	STOP_PROCESSING(SSmachines, src)
 	if(component_parts)
 		for(var/atom/A in component_parts)
-			if(A.loc == src) // If the components are inside the machine, delete them.
-				qdel(A)
-			else // Otherwise we assume they were dropped to the ground during deconstruction, and were not removed from the component_parts list by deconstruction code.
-				component_parts -= A
-
+			qdel(A)
+	if(contents) // The same for contents.
+		for(var/atom/A in contents)
+			qdel(A)
+	GLOB.machines -= src
+	set_power_use(NO_POWER_USE)
 	return ..()
 
 
@@ -185,7 +168,7 @@ Class Procs:
 	if((processing_flags & MACHINERY_PROCESS_SELF))
 		. = Process()
 		if(. == PROCESS_KILL)
-			STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
+			STOP_PROCESSING(SSmachinery, src)
 
 /obj/machinery/emp_act(severity)
 	if(use_power && !stat)
