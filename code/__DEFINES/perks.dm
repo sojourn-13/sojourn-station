@@ -135,3 +135,6 @@
 							   PERK_STRANGTH, \
 							   PERK_IRON_WILL, \
 							   PERK_SNACKIVORE)
+
+	//Temporary drug perks
+#define PERK_ULTRASURGEON /datum/perk/drug/ultrasurgeon
