@@ -50,9 +50,6 @@ SUBSYSTEM_DEF(machines)
 	all_sensors = all_sensors
 	current_step = SSMACHINERY_PIPENETS
 
-/datum/controller/subsystem/machines/New()
-	NEW_SS_GLOBAL(SSmachines)
-
 /datum/controller/subsystem/machines/Initialize(timeofday)
 	makepowernets()
 	build_rcon_lists()

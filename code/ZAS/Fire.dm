@@ -112,9 +112,9 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 	if(fuel)
 		LAZYADD(zone.fuel_objs, fuel)
 
-	var/obj/effect/decal/cleanable/foam/extinguisher_foam = locate() in src
-	if(extinguisher_foam && extinguisher_foam.reagents)
-		fire.firelevel *= max(0,1 - (extinguisher_foam.reagents.total_volume*0.04))
+	//var/obj/effect/decal/cleanable/foam/extinguisher_foam = locate() in src
+	//if(extinguisher_foam && extinguisher_foam.reagents)
+	//	fire.firelevel *= max(0,1 - (extinguisher_foam.reagents.total_volume*0.04))
 		//25 units will eliminate the fire completely
 
 	return 0
@@ -190,11 +190,11 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 			else
 				enemy_tile.adjacent_fire_act(loc, air_contents, air_contents.temperature, air_contents.volume)
 
-	set_light(l_color = fire_color(air_contents.temperature, TRUE))
+	/*set_light(l_color = fire_color(air_contents.temperature, TRUE))
 	var/list/animate_targets = get_above_oo() + src
 	for (var/thing in animate_targets)
 		var/atom/movable/AM = thing
-		animate(AM, color = fire_color(air_contents.temperature), 5)
+		animate(AM, color = fire_color(air_contents.temperature), 5)*/
 
 /obj/fire/New(newLoc,fl)
 	..()
