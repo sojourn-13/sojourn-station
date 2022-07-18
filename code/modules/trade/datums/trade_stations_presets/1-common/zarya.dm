@@ -3,6 +3,8 @@
 		"FTB 'Zarya'" = "Free Trade Beacon 'Zarya': \"Privet, this is the trade beacon 'Zarya'. We sell electronics, construction, and anything related to engineering! If you are looking for a more general shop, you should contact our main station: FTS 'Solnishko'"
 	)
 	uid = "techno_basic"
+	tree_x = 0.18
+	tree_y = 0.9
 	start_discovered = TRUE
 	spawn_always = TRUE
 	markup = COMMON_GOODS

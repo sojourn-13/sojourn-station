@@ -49,11 +49,9 @@ var/global/list/image/splatter_cache=list()
 	if(invisibility != 100)
 		invisibility = 100
 		amount = 0
-		STOP_PROCESSING(SSobj, src)
 	..(ignore=TRUE)
 
 /obj/effect/decal/cleanable/blood/Destroy()
-	STOP_PROCESSING(SSobj, src)
 	return ..()
 
 /obj/effect/decal/cleanable/blood/New()
@@ -63,9 +61,9 @@ var/global/list/image/splatter_cache=list()
 
 	if(istype(src, /obj/effect/decal/cleanable/blood/gibs))
 		return
-	if(src.type == /obj/effect/decal/cleanable/blood)
-		if(src.loc && isturf(src.loc))
-			for(var/obj/effect/decal/cleanable/blood/B in src.loc)
+	if(type == /obj/effect/decal/cleanable/blood)
+		if(loc && isturf(loc))
+			for(var/obj/effect/decal/cleanable/blood/B in loc)
 				if(B != src)
 					if(B.blood_DNA)
 						blood_DNA |= B.blood_DNA.Copy()
@@ -73,11 +71,7 @@ var/global/list/image/splatter_cache=list()
 						shoe_types |= B.shoe_types.Copy()
 					qdel(B)
 	drytime = world.time + DRYING_TIME * (amount+1)
-	START_PROCESSING(SSobj, src)
-
-/obj/effect/decal/cleanable/blood/Process()
-	if(world.time > drytime)
-		dry()
+	addtimer(CALLBACK(src, .proc/dry), drytime)
 
 /obj/effect/decal/cleanable/blood/update_icon()
 	if(basecolor == "rainbow") basecolor = get_random_colour(1)
@@ -134,7 +128,6 @@ var/global/list/image/splatter_cache=list()
 	desc = drydesc
 	color = adjust_brightness(color, -50)
 	amount = 0
-	STOP_PROCESSING(SSobj, src)
 
 /obj/effect/decal/cleanable/blood/attack_hand(mob/living/carbon/human/user)
 	..()
@@ -200,8 +193,8 @@ var/global/list/image/splatter_cache=list()
 	name = "gibs"
 	desc = "They look bloody and gruesome."
 	gender = PLURAL
-	density = 0
-	anchored = 1
+	density = FALSE
+	anchored = TRUE
 	layer = LOW_OBJ_LAYER
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "mgibbl5"
@@ -246,7 +239,7 @@ var/global/list/image/splatter_cache=list()
 			sleep(3)
 			if (i > 0)
 				var/obj/effect/decal/cleanable/blood/splatter/b = new(loc)
-				b.basecolor = src.basecolor
+				b.basecolor = basecolor
 				b.update_icon()
 
 			if (step_to(src, get_step(src, direction), 0))
@@ -257,23 +250,23 @@ var/global/list/image/splatter_cache=list()
 	name = "mucus"
 	desc = "Disgusting mucus."
 	gender = PLURAL
-	density = 0
-	anchored = 1
+	density = FALSE
+	anchored = TRUE
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "mucus"
 	random_icon_states = list("mucus")
 
 	var/list/datum/disease2/disease/virus2 = list()
-	var/dry=0 // Keeps the lag down
+	var/dry = FALSE // Keeps the lag down
 
 /obj/effect/decal/cleanable/mucus/New()
 	spawn(DRYING_TIME * 2)
-		dry=1
+		dry = TRUE
 
 //This proc prevents blood on openspace tiles, by causing them to fall down until they hit the ground
 /obj/effect/decal/cleanable/blood/proc/fall_to_floor()
 	if (istype(loc, /turf/simulated/open))
-		anchored = 0 //Anchored things can't fall
+		anchored = FALSE //Anchored things can't fall
 		while (istype(loc, /turf/simulated/open))
 			var/turf/simulated/open/T = loc
 			T.fallThrough(src)

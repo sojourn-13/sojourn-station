@@ -51,46 +51,50 @@
 /obj/structure/grille/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(air_group || (height==0)) return 1
 	if(istype(mover) && mover.checkpass(PASSGRILLE))
-		return 1
+		return TRUE
 	else
 		if(istype(mover, /obj/item/projectile))
 			return prob(30)
 		else
 			return !density
 
-/obj/structure/grille/bullet_act(var/obj/item/projectile/Proj)
-	if(!Proj)	return
+
+/obj/structure/grille/bullet_act(obj/item/projectile/Proj)
+	if(!Proj)
+		return
 
 	//Flimsy grilles aren't so great at stopping projectiles. However they can absorb some of the impact
 	var/damage = Proj.get_structure_damage()
-	var/passthrough = 0
+	var/passthrough = FALSE
 
-	if(!damage) return
+	if(!damage)
+		return
 
-	//20% chance that the grille provides a bit more cover than usual. Support structure for example might take up 20% of the grille's area.
+	//The current math for this is the projectile damage -10 for its odds, I.e 50 damage is a 40% odds to penitrate through
 	//If they click on the grille itself then we assume they are aiming at the grille itself and the extra cover behaviour is always used.
 	for(var/i in Proj.damage_types)
 		if(i == BRUTE)
 			//bullets
 			if(Proj.original == src || prob(20))
 				Proj.damage_types[i] *= between(0, Proj.damage_types[i]/60, 0.5)
-				if(prob(max((damage-10)/25, 0))*100)
-					passthrough = 1
+				if(prob(max((damage-10), 0)))
+					passthrough = TRUE
 			else
 				Proj.damage_types[i] *= between(0, Proj.damage_types[i]/60, 1)
-				passthrough = 1
+				passthrough = TRUE
 		if(i == BURN)
 			//beams and other projectiles are either blocked completely by grilles or stop half the damage.
 			if(!(Proj.original == src || prob(20)))
 				Proj.damage_types[i] *= 0.5
-				passthrough = 1
+				passthrough = TRUE
 
 	if(passthrough)
 		. = PROJECTILE_CONTINUE
 		damage = between(0, (damage - Proj.get_structure_damage())*(Proj.damage_types[BRUTE] ? 0.4 : 1), 10) //if the bullet passes through then the grille avoids most of the damage
 
-	src.health -= damage*0.2
-	spawn(0) healthCheck() //spawn to make sure we return properly if the grille is deleted
+	if (!(Proj.testing))
+		health -= damage*2
+		healthCheck() //spawn to make sure we return properly if the grille is deleted
 
 /obj/structure/grille/attackby(obj/item/I, mob/user)
 	if(user.a_intent == I_HELP && istype(I, /obj/item/gun))
@@ -216,13 +220,13 @@
 			healthCheck()
 	..()
 
-/obj/structure/grille/attack_generic(var/mob/user, var/damage, var/attack_verb)
+/obj/structure/grille/attack_generic(mob/user, damage, attack_verb)
 	if(istype(user))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.do_attack_animation(src)
 		visible_message(SPAN_DANGER("[user] smashes into [src]!"))
 		take_damage(damage)
-		return 1
+		return TRUE
 
 /obj/structure/grille/proc/take_damage(amount)
 	health -= amount
@@ -244,16 +248,16 @@
 		tforce = I.throwforce
 	health = max(0, health - tforce)
 	if(health <= 0)
-		destroyed=1
+		destroyed = TRUE
 		new /obj/item/stack/rods(get_turf(src))
-		density=0
+		density = FALSE
 		update_icon()
 
 // Used in mapping to avoid
 /obj/structure/grille/broken
-	destroyed = 1
+	destroyed = TRUE
 	icon_state = "grille-b"
-	density = 0
+	density = FALSE
 	New()
 		..()
 		health = rand(-5, -1) //In the destroyed but not utterly threshold.
@@ -267,10 +271,10 @@
 
 /obj/structure/grille/cult/CanPass(atom/movable/mover, turf/target, height = 1.5, air_group = 0)
 	if(air_group)
-		return 0 //Make sure air doesn't drain
+		return FALSE //Make sure air doesn't drain
 	..()
 
-/obj/structure/grille/get_fall_damage(var/turf/from, var/turf/dest)
+/obj/structure/grille/get_fall_damage(turf/from, turf/dest)
 	var/damage = health * 0.4
 
 	if (from && dest)

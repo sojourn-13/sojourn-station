@@ -16,9 +16,10 @@
 	icon_state = "dicebag"
 
 /obj/item/storage/pill_bottle/chechker/populate_contents()
-	for(var/i = 1 to 16)
-		new /obj/item/checker(src.loc)
-		new /obj/item/checker/red(src.loc)
+	for(var/black = 1 to 16)
+		new /obj/item/checker(src)
+	for(var/red = 1 to 16)
+		new /obj/item/checker/red(src)
 
 /obj/item/board/examine(mob/user, var/distance = -1)
 	if(in_range(user,src))

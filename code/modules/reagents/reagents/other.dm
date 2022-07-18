@@ -307,7 +307,7 @@
 /datum/reagent/other/viroputine
 	name = "Viroputine"
 	id = "viroputine"
-	description = "A horrid by product of nosfernium that creates more of it. vary bad withdrawels."
+	description = "A horrific compound that is capable of creating other chemicals. vary bad withdrawels."
 	taste_description = "chalky backwash"
 	reagent_state = LIQUID
 	color = "#A5F0EE"
@@ -410,6 +410,9 @@
 		for(var/obj/effect/O in T)
 			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay) && !istype(O,/obj/effect/overlay/water))
 				qdel(O)
+		for(var/obj/item/bluespace_leak/BSL in T)
+			if(istype(BSL,/obj/item/bluespace_leak))
+				qdel(BSL)
 		for(var/mob/living/carbon/slime/M in T)
 			M.adjustToxLoss(rand(5, 10))
 

@@ -32,6 +32,7 @@
 				/obj/item/gun/projectile/handmade_pistol = 2,\
 				/obj/item/gun/projectile/automatic/luger = 0.1, \
 				/obj/item/gun/projectile/boltgun/zatvor = 2, \
+				/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless = 0.5, \
 				//obj/item/gun/projectile/ladon/sa = 1,
 				/obj/item/gun/projectile/olivaw = 2,
 				/obj/item/gun_upgrade/barrel/forged = 2))

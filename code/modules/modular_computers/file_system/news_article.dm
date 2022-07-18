@@ -78,11 +78,22 @@
 /datum/computer_file/data/news_article/CardCarp
 	filename = "CardCarp"
 	server_file_path = 'news_articles/CardCarp.html'
+	archived = 1
 
 /datum/computer_file/data/news_article/Whoever_fights_monsters
 	filename = "Whoever fights monsters"
 	server_file_path = 'news_articles/Whoever_fights_monsters.html'
+	archived = 1
 
 /datum/computer_file/data/news_article/Official_Marshal_communique
 	filename = "Official Marshal communique"
 	server_file_path = 'news_articles/Official_Marshal_communique.html'
+
+/datum/computer_file/data/news_article/kros_news
+	filename = "Official Marshal communique"
+	server_file_path = 'news_articles/kros_news.html'
+
+/datum/computer_file/data/news_article/kros_news_ii
+	filename = "Trouble in Sector N-2"
+	server_file_path = 'news_articles/kros_news_ii.html'
+

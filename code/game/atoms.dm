@@ -19,6 +19,27 @@
 	var/allow_spin = TRUE
 	var/used_now = FALSE //For tools system, check for it should forbid to work on atom for more than one user at time
 
+	/**
+	 * Associative list. Key should be a typepath of /datum/stat_modifier, and the value should be a weight for use in prob.
+	 *
+	 * NOTE: Arguments may be passed to certain modifiers. To do this, change the value to this: list(prob, ...) where prob is the probability and ... are any arguments you want passed.
+	**/
+	var/list/allowed_stat_modifiers = list(
+
+	)
+
+	/// List of all instances of /datum/stat_modifier that have been applied in /datum/stat_modifier/proc/apply_to(). Should never have more instances of one typepath than that typepath's maximum_instances var.
+	var/list/current_stat_modifiers = list(
+
+	)
+
+	/// List of all stored prefixes. Used for stat_modifiers, on everything but tools and guns, which use them for attachments.
+	var/list/prefixes = list()
+
+	var/get_stat_modifier = FALSE
+	var/times_to_get_stat_modifiers = 1
+	var/get_prefix = TRUE
+
 	///Chemistry.
 	var/reagent_flags = NONE
 	var/datum/reagents/reagents
@@ -133,6 +154,38 @@
 		for(var/reagent in preloaded_reagents)
 			reagents.add_reagent(reagent, preloaded_reagents[reagent])
 
+	if (get_stat_modifier)
+		for (var/i = 0, i < times_to_get_stat_modifiers, i++)
+
+			var/list/excavated = list()
+			for (var/entry in allowed_stat_modifiers)
+				var/to_add = allowed_stat_modifiers[entry]
+				if (islist(allowed_stat_modifiers[entry]))
+					var/list/entrylist = allowed_stat_modifiers[entry]
+					to_add = entrylist[1]
+				excavated[entry] = to_add
+
+			var/list/successful_rolls = list()
+			for (var/typepath in excavated)
+				if (prob(excavated[typepath]))
+					successful_rolls += typepath
+
+			var/picked
+			if (successful_rolls.len)
+				picked = pick(successful_rolls)
+
+			if (isnull(picked))
+				continue
+
+			var/list/arguments
+			if (islist(allowed_stat_modifiers[picked]))
+				var/list/nested_list = allowed_stat_modifiers[picked]
+				if (length(nested_list) > 1)
+					arguments = nested_list.Copy(2)
+
+			var/datum/stat_modifier/chosen_modifier = new picked
+			if (!(chosen_modifier.valid_check(src, arguments)))
+				QDEL_NULL(chosen_modifier)
 
 	return INITIALIZE_HINT_NORMAL
 
@@ -164,8 +217,11 @@
 	if(reagents)
 		QDEL_NULL(reagents)
 
+	QDEL_LIST(current_stat_modifiers)
+
 	spawn()
 		update_openspace()
+
 	return ..()
 
 /atom/proc/reveal_blood()
@@ -367,6 +423,15 @@ its easier to just keep the beam vertical.
 	if(desc)
 		to_chat(user, desc)
 //Soj Edits
+	if (current_stat_modifiers && current_stat_modifiers.len)
+		var/list/descriptions_to_print = list()
+		for (var/datum/stat_modifier/mod in current_stat_modifiers)
+			if (mod.description)
+				if (!(mod.description in descriptions_to_print))
+					descriptions_to_print += mod.description
+		for (var/description in descriptions_to_print)
+			to_chat(user, SPAN_NOTICE(description))
+
 	if(reagents)
 		if(reagent_flags & TRANSPARENT)
 			to_chat(user, SPAN_NOTICE("It contains:"))
@@ -889,3 +954,10 @@ its easier to just keep the beam vertical.
 // Called after we wrench/unwrench this object
 /obj/proc/wrenched_change()
 	return
+
+/// First resets the name of the mob to the initial name it had, then adds each prefix in a random order.
+/atom/proc/update_prefixes()
+	name = initial(src.name) //reset the name so we can accurately re-add prefixes without fear of double prefixes
+
+	for (var/prefix in prefixes)
+		name = "[prefix] [name]"

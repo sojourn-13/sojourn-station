@@ -53,8 +53,8 @@ for reference:
 	desc = "An improvised barrier designed to block access."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "barricade"
-	anchored = 1.0
-	density = 1.0
+	anchored = 1
+	density = 1
 	health = 100
 	maxHealth = 100
 	var/material/material
@@ -73,13 +73,13 @@ for reference:
 	maxHealth = material.integrity
 	health = maxHealth
 
-/obj/structure/barricade/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
+/obj/structure/barricade/attack_generic(mob/user, damage, attack_verb, wallbreaker)
 	if(istype(user))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.do_attack_animation(src)
 		visible_message(SPAN_DANGER("[user] smashes into [src]!"))
 		take_damage(damage)
-		return 1
+		return TRUE
 
 /obj/structure/barricade/proc/take_damage(amount)
 	health -= amount
@@ -139,24 +139,62 @@ for reference:
 
 /obj/structure/barricade/ex_act(severity)
 	switch(severity)
-		if(1.0)
+		if(1)
 			visible_message(SPAN_DANGER("\The [src] is blown apart!"))
 			qdel(src)
 			return
-		if(2.0)
+		if(2)
 			health -= 25
 			if(health <= 0)
 				visible_message(SPAN_DANGER("\The [src] is blown apart!"))
 				dismantle()
 			return
 
+/obj/structure/barricade/proc/check_cover_dry(obj/item/projectile/Proj)
+	if(!Proj)	return
+
+	//Flimsy baracade aren't so great at stopping projectiles. However they can absorb some of the impact
+	var/damage = Proj.get_structure_damage()
+	var/passthrough = FALSE
+
+	if(!damage) return
+
+	//The current math for this is the projectile damage -10 for its odds, I.e 50 damage is a 40% odds to penitrate through
+	//If they click on the baracade itself then we assume they are aiming at the baracade itself and the extra cover behaviour is always used.
+	for(var/i in Proj.damage_types)
+		if(i == BRUTE)
+			//bullets
+			if(Proj.original == src || prob(20))
+				Proj.damage_types[i] *= between(0, Proj.damage_types[i]/60, 0.5)
+				if(prob(max((damage-10), 0)))
+					passthrough = TRUE
+			else
+				Proj.damage_types[i] *= between(0, Proj.damage_types[i]/60, 1)
+				passthrough = TRUE
+		if(i == BURN)
+			//beams and other projectiles are either blocked completely by grilles or stop half the damage.
+			if(!(Proj.original == src || prob(20)))
+				Proj.damage_types[i] *= 0.5
+				passthrough = TRUE
+
+	if(passthrough)
+		. = PROJECTILE_CONTINUE
+		damage = between(0, (damage - Proj.get_structure_damage())*(Proj.damage_types[BRUTE] ? 0.4 : 1), 10) //if the bullet passes through then the baracade avoids most of the damage
+
+	health -= damage
+	healthCheck() //spawn to make sure we return properly if the grille is deleted
+
+
 /obj/structure/barricade/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)//So bullets will fly over and stuff.
+	if(istype(mover,/obj/item/projectile))
+		return (check_cover_dry(mover))
+
 	if(air_group || (height==0))
-		return 1
+		return TRUE
 	if(istype(mover) && mover.checkpass(PASSTABLE))
-		return 1
+		return TRUE
 	else
-		return 0
+		return FALSE
 
 //Actual Deployable machinery stuff
 /obj/machinery/deployable
@@ -169,21 +207,21 @@ for reference:
 	name = "deployable barrier"
 	desc = "A deployable barrier. Swipe your ID card to lock/unlock it, can even brace guns on it."
 	icon = 'icons/obj/objects.dmi'
-	anchored = 0
-	density = 1
+	anchored = FALSE
+	density = TRUE
 	icon_state = "barrier0"
 	health = 100
 	maxHealth = 100
 	var/locked = 0
 //	req_access = list(access_maint_tunnels)
 
-/obj/machinery/deployable/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
+/obj/machinery/deployable/attack_generic(mob/user, damage, attack_verb, wallbreaker)
 	if(istype(user))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.do_attack_animation(src)
 		visible_message(SPAN_DANGER("[user] smashes into [src]!"))
 		take_damage(damage)
-		return 1
+		return TRUE
 
 /obj/machinery/deployable/proc/take_damage(amount)
 	health -= amount
@@ -225,12 +263,12 @@ for reference:
 	else if(istype(W, /obj/item/tool/wrench))
 		if(health < maxHealth)
 			health = maxHealth
-			emagged = 0
+			emagged = FALSE
 			req_access = list(access_security)
 			visible_message(SPAN_WARNING("[user] repairs \the [src]!"))
 			return
 		else if(emagged > 0)
-			emagged = 0
+			emagged = FALSE
 			req_access = list(access_security)
 			visible_message(SPAN_WARNING("[user] repairs \the [src]!"))
 			return
@@ -248,10 +286,10 @@ for reference:
 
 /obj/machinery/deployable/barrier/ex_act(severity)
 	switch(severity)
-		if(1.0)
+		if(1)
 			explode()
 			return
-		if(2.0)
+		if(2)
 			health -= 25
 			if(health <= 0)
 				explode()
@@ -293,9 +331,9 @@ for reference:
 	if(src)
 		qdel(src)
 
-/obj/machinery/deployable/barrier/emag_act(var/remaining_charges, var/mob/user)
-	if(emagged == 0)
-		emagged = 1
+/obj/machinery/deployable/barrier/emag_act(remaining_charges, mob/user)
+	if(emagged == FALSE)
+		emagged = TRUE
 		req_access.Cut()
 		req_one_access.Cut()
 		to_chat(user, "You break the ID authentication lock on \the [src].")
@@ -303,12 +341,12 @@ for reference:
 		s.set_up(2, 1, src)
 		s.start()
 		visible_message(SPAN_WARNING("BZZzZZzZZzZT"))
-		return 1
-	else if(emagged == 1)
+		return TRUE
+	else if(emagged == TRUE)
 		emagged = 2
 		to_chat(user, "You short out the anchoring mechanism on \the [src].")
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(2, 1, src)
 		s.start()
 		visible_message(SPAN_WARNING("BZZzZZzZZzZT"))
-		return 1
+		return TRUE

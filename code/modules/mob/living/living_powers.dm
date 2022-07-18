@@ -18,7 +18,7 @@
 
 
 /mob/living/proc/activate_ai()
-	if(AI_inactive && health >= 1)//Were not alive to wake up
+	if(AI_inactive && stat != DEAD)//Were not alive to wake up
 		AI_inactive = FALSE
 		life_cycles_before_sleep = initial(life_cycles_before_sleep)
 

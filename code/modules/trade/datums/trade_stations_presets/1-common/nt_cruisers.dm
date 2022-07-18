@@ -5,8 +5,10 @@
 		"CAV 'Faith'" = "Church of Absolute Vessel 'Faith': \"We are currently resupplying from Nadezhda, but we can sell a few items from our stock.\"",
 		"CAV 'Hope'" = "Church of Absolute Vessel 'Hope': \"We're in the system for the next few hours before we make a round trip to the confederacy, we're certainly willing to sell our goods.\""
 		)
-	icon_states = "nt_cruiser"
+	icon_states = list("nt_frigate", "ship")
 	uid = "nt_basic"
+	tree_x = 0.34
+	tree_y = 0.9
 	start_discovered = TRUE
 	spawn_always = TRUE
 	base_income = 1600

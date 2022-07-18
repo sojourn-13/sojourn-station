@@ -501,15 +501,17 @@ var/list/turret_icons
 		return
 
 	if(enabled)
-		if(!attacked && !emagged)
-			attacked = 1
-			spawn()
-				sleep(60)
-				attacked = 0
+		if (!(Proj.testing))
+			if(!attacked && !emagged)
+				attacked = 1
+				spawn()
+					sleep(60)
+					attacked = 0
 
 	..()
 
-	take_damage(damage*Proj.structure_damage_factor)
+	if (!(Proj.testing))
+		take_damage(damage*Proj.structure_damage_factor)
 
 /obj/machinery/porta_turret/emp_act(severity)
 	if(enabled)

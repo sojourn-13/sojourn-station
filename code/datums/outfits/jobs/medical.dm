@@ -37,7 +37,7 @@
 	uniform = /obj/item/clothing/under/rank/paramedic
 	id_type = /obj/item/card/id/med
 	pda_type = /obj/item/modular_computer/pda/science/medical
-	suit =  /obj/item/clothing/suit/armor/vest
+	suit =  /obj/item/clothing/suit/armor/vest/security
 	shoes = /obj/item/clothing/shoes/jackboots
 	belt = /obj/item/storage/belt/medical/emt
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL

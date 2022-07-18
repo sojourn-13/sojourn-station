@@ -312,7 +312,7 @@
 	)
 
 	stat_modifiers = list(
-		STAT_BIO = 30,
+		STAT_BIO = 25,
 		STAT_TGH = 10,
 		STAT_VIG = 15,
 		STAT_ROB = 10,

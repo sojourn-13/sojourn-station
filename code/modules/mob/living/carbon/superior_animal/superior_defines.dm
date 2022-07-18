@@ -15,6 +15,11 @@
 
 	var/eating_time = 900
 
+	/// Does this mob advance if they can't see their target?
+	var/advance_if_cant_see = FALSE
+	/// Chance to fire a projectile if it would hit a friendly.
+	var/do_friendly_fire_chance = 10
+
 	/// Do we randomly retarget?
 	var/retarget = TRUE
 	/// How many ticks we will wait before trying to retarget randomly. When it hits 0, we retarget and reset the timer to retarget_timer_initial.
@@ -30,6 +35,11 @@
 	/// Percentage chance that we will keep targetting our current target if we retarget.
 	var/retarget_chance = 50 //arbitrary value
 
+	/// Do we always send a message to our target when we telegraph, or only in proximity?
+	var/always_telegraph_to_target = TRUE
+
+	/// Do we advance?
+	var/advance = TRUE
 	/// Stored var of calculation ran within [/mob/living/carbon/superior_animal/proc/advance_towards]
 	var/advance_steps = 0
 	/// How many tiles we will advance forward from our current position if we can't hit our current target.
@@ -38,6 +48,8 @@
 	var/advancement_increment = 5
 	/// Will be incremented advancement_increment ticks whenever a ranged mob decides to advance. If more than world.time, targetting walks will be ignored, to not end the advancement.
 	var/advancement_timer = 0
+	/// Do we wander if we can't see our target?
+	var/wander_if_lost_sight = TRUE
 
 	/// Has this mob lost sight of their target? This is how we make sure mobs don't constantly go to the position of the target they've lost sight of.
 	var/lost_sight = FALSE
@@ -54,17 +66,22 @@
 	/// Do we charge our melee attacks if we aren't adjacent?
 	var/do_melee_if_not_adjacent = TRUE
 
-	/// Number of delayed AI ticks, used for delaying ranged attacks. At 9, ranged mobs will be delayed by one tick after target. TODO: Create a override.
-	var/delayed = 0
-	/// How much we increment this mob's delayed var each time.
-	var/delay_amount = 0
+
+	/// Number of delayed AI ticks, used for delaying ranged attacks. At 1, ranged mobs will be delayed by one tick after target.
+	var/delayed = 1
+	/// Value that delayed will be reset to.
+	var/delayed_initial = 1
 	/// If this is more than the world timer, and we retarget, we will immediately attack.
 	var/retarget_rush_timer = 0
 	/// For this amount of time after a retarget, any retargets will cause a instant attack.
 	var/retarget_rush_timer_increment = 10 SECONDS //arbitrary value for now
 
-	/// Will this mob continue to fire even if LOS has been broken?
-	var/fire_through_wall = FALSE
+	/// Can this mob see it's current targets through walls and will never act like it can't?
+	var/see_through_walls = FALSE
+	/// Will this mob continue to fire at it's targets through walls? Ideally used with see_through_walls
+	var/fire_through_walls = FALSE
+	/// Increments world.time + one tick if a mob with fire_through_walls = TRUE cant see it's target, to prevent any weird walks.
+	var/cant_see_timer = 0
 	/// How many ticks are we willing to wait before untargetting a mob that we can't see?
 	var/patience = 5
 	/// What patience will be reset to whenever it's reset.
@@ -126,6 +143,7 @@
 
 	var/toxin_immune = FALSE
 	var/reagent_immune = FALSE
+	var/never_stimulate_air = FALSE
 
 	var/contaminant_immunity = FALSE //if TRUE, mob is immune to harmful contaminants in air (plasma), skin contact, does not relate to breathing
 	var/cold_protection = 0 //0 to 1 value, which corresponds to the percentage of protection, affects only bodytemperature
@@ -159,8 +177,8 @@
 	var/has_special_parts = FALSE //var for checking during the butcher process.
 	var/special_parts = list() //Any special body parts.
 
-	var/melee_damage_lower = 0
-	var/melee_damage_upper = 10
+	melee_damage_lower = 0
+	melee_damage_upper = 10
 
 	var/list/objectsInView //memoization for getObjectsInView()
 	var/viewRange = 7 //how far the mob AI can see
@@ -176,6 +194,8 @@
 	 * Otherwise, you will access the pointer in memory to the actual target, instead of the target itself.
 	 */
 	var/datum/weakref/target_mob
+	/// Stored value of our current target's location, in weakref form. Only updates if we can see them. Use resolve() to find the proper value.
+	var/datum/weakref/target_location
 	var/attack_same = 0 //whether mob AI should target own faction members for attacks
 	var/list/friends = list() //list of mobs to consider friends, not types
 	var/environment_smash = 1
@@ -196,11 +216,10 @@
 	var/fleshcolor = "#DB0000"
 	var/bloodcolor = "#DB0000"
 	//Armor values for the mob. Works like normal armor values.
-	var/give_randomized_armor = FALSE
-	var/gives_prefex = FALSE
+
 	var/prefex = "bugged"
 
-	var/armor = list(
+	var/list/armor = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,
@@ -222,9 +241,11 @@
 
 	var/ranged = FALSE  //Do we have a range based attack?
 	var/rapid = FALSE   //Do we shoot in groups?
-	var/rapid_fire_shooting_amount = 3 //By default will rapid fire in 3 shots per.
+	var/rapid_fire_shooting_amount = 1 // Has to be one so stat modifiers can work.
 	var/obj/item/projectile/projectiletype  //What are we shooting?
 	var/projectilesound //What sound do we make when firing
+	/// How loud will our projectile firing sound be?
+	var/projectilevolume = 100
 	var/casingtype      //Do we leave casings after shooting?
 	var/ranged_cooldown //What is are modular cooldown, in seconds.
 	var/ranged_middlemouse_cooldown = 0 //For when people are controling them and firing, do we have a cooldown? Modular for admins to tweak.

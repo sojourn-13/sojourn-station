@@ -297,3 +297,13 @@
 	holder.stats.changeStat(STAT_MEC, -10)
 	..()
 
+
+//////////////
+//Drug Perks//
+//////////////
+
+//Basically for drugs to apply a perk for a set amount of time..
+
+/datum/perk/drug/ultrasurgeon
+	name = "Ultrasurgeon Knowledge"
+	desc = "After your fix of ultrasurgeon you can feel your mind ease just as your muscles relax."

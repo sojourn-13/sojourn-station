@@ -11,7 +11,7 @@
 	icon = 'icons/obj/guns/projectile/duty.dmi'
 	icon_state = "duty"
 	item_state = "duty"
-	w_class = ITEM_SIZE_HUGE
+	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_LRIFLE
 	mag_well = MAG_WELL_STANMAG
 	load_method = SINGLE_CASING|SPEEDLOADER|MAGAZINE

@@ -17,9 +17,12 @@
 /datum/trade_station
 	var/name
 	var/desc
-	var/list/icon_states = "htu_station"
+	var/list/icon_states = list("htu_station", "station")
 	var/initialized = FALSE
 	var/uid 						// Needed for unlocking via recommendations since names are selected from a pool
+
+	var/tree_x = 0.1				// Position on the trade tree map, 0 - left, 1 - right                 
+	var/tree_y = 0.1				// 0 - down, 1 - top
 
 	var/update_time = 0				// For displaying the time remaining on the UI
 	var/update_timer_start = 0		//
@@ -314,7 +317,7 @@
 	overmap_object.dir = pick(rand(1,2), 4, 8)
 
 //	overmap_object.name_stages = list(name, "unknown station", "unknown spatial phenomenon")
-//	overmap_object.icon_stages = list(pick(icon_states), "station", "poi")
+//	overmap_object.icon_stages = list(icon_states[1], icon_states[2], "poi")
 
 	if(!start_discovered)
 		GLOB.entered_event.register(overmap_location, src, .proc/discovered)

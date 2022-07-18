@@ -22,7 +22,7 @@
 	damage_multiplier = 0.9
 	init_firemodes = list(
 		list(mode_name="destroy", mode_desc="An armor-stripping plasma round", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
-		list(mode_name="impact", mode_desc="A relatively light plasma round that knocks people back", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', fire_delay=25, icon="kill", projectile_color = "#FF0000"),
+		list(mode_name="incinerate", mode_desc="A relatively heavy shot of super-heated plasma that creates a fireball on impact", projectile_type=/obj/item/projectile/plasma/aoe/heat, fire_sound='sound/effects/supermatter.ogg', charge_cost=160, fire_delay=25, icon="kill", projectile_color = "#FF0000"),
 	)
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 	serial_type = "Absolute"

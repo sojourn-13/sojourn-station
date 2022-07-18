@@ -43,9 +43,11 @@
 
 
 /obj/structure/displaycase/bullet_act(var/obj/item/projectile/Proj)
-	health -= Proj.get_structure_damage()
+	if (!(Proj.testing))
+		health -= Proj.get_structure_damage()
 	..()
-	src.healthCheck()
+	if (!(Proj.testing))
+		src.healthCheck()
 	return
 
 /obj/structure/displaycase/healthCheck()

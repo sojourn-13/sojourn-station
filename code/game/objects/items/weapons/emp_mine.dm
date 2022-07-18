@@ -1,6 +1,6 @@
 /obj/item/emp_mine
 	name = "OS Type - 183 \"Hei'an\""
-	desc = "Self-rechargeable Chinese EMP mine. It still works, despite all the age."
+	desc = "Self-rechargeable Chinese EMP mine. It still works, despite all the age, known for its weak lithium core components making it susceptible to taking bullet to destory them form afar."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "empmine0"
 	w_class = ITEM_SIZE_BULKY
@@ -10,6 +10,16 @@
 	var/trigger_range = 1
 	var/emp_range = 3
 	var/cooldown_timer = 0
+
+/obj/item/emp_mine/bullet_act(var/obj/item/projectile/Proj)
+	if(prob(90) && (!(Proj.testing)))
+		explode()
+
+/obj/item/emp_mine/proc/explode()
+	var/turf/T = get_turf(src)
+	explosion(T,-1,0,3,7)
+	if(src)
+		qdel(src)
 
 /obj/item/emp_mine/proc/arm()
 	if(armed)

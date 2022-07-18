@@ -132,6 +132,18 @@ SUBSYSTEM_DEF(trade)
 				if(!station.recommendations_needed)
 					discovered_stations |= station
 
+/datum/controller/subsystem/trade/proc/get_station_by_uid(target_uid)
+	for(var/datum/trade_station/station in all_stations)
+		if(station.uid == target_uid)
+			return station
+	return FALSE
+
+/datum/controller/subsystem/trade/proc/get_discovered_station_by_uid(target_uid)
+	for(var/datum/trade_station/station in discovered_stations)
+		if(station.uid == target_uid)
+			return station
+	return FALSE
+
 // === PRICING ===
 
 // Returns cost of an existing object including contents
@@ -202,8 +214,10 @@ SUBSYSTEM_DEF(trade)
 
 		return FALSE
 
-	if(ispath(offer_path, /datum/reagent))		// If item is not of the types checked and the offer is for a reagent, fail
-		return FALSE
+	if(istype(item, /obj/item/stack))
+		var/obj/item/stack/current_stack = item
+		if(current_stack.amount < current_stack.max_amount)	// prevents selling 3 as same as full stacks
+			return FALSE
 
 	return TRUE
 
