@@ -3,9 +3,9 @@
 #define SSMACHINERY_POWERNETS 3
 #define SSMACHINERY_POWER_OBJECTS 4
 
-/var/datum/controller/subsystem/machinery/SSmachinery
+SUBSYSTEM_DEF(machines)
 
-/datum/controller/subsystem/machinery
+/datum/controller/subsystem/machines
 	name = "Machinery"
 	priority = SS_PRIORITY_MACHINERY
 	init_order = INIT_ORDER_MACHINES
@@ -42,25 +42,25 @@
 	// Cooking stuff. Not substantial enough to get its own SS, so it's shoved in here.
 	var/list/recipe_datums = list()
 
-/datum/controller/subsystem/machinery/Recover()
-	all_cameras = SSmachinery.all_cameras
-	all_holopads = SSmachinery.all_holopads
-	recipe_datums = SSmachinery.recipe_datums
+/datum/controller/subsystem/machines/Recover()
+	all_cameras = SSmachines.all_cameras
+	all_holopads = SSmachines.all_holopads
+	recipe_datums = SSmachines.recipe_datums
 	breaker_boxes = breaker_boxes
 	all_sensors = all_sensors
 	current_step = SSMACHINERY_PIPENETS
 
-/datum/controller/subsystem/machinery/New()
-	NEW_SS_GLOBAL(SSmachinery)
+/datum/controller/subsystem/machines/New()
+	NEW_SS_GLOBAL(SSmachines)
 
-/datum/controller/subsystem/machinery/Initialize(timeofday)
+/datum/controller/subsystem/machines/Initialize(timeofday)
 	makepowernets()
 	build_rcon_lists()
 	setup_atmos_machinery(machinery)
 	fire(FALSE, TRUE)	// Tick machinery once to pare down the list so we don't hammer the server on round-start.
 	..(timeofday)
 
-/datum/controller/subsystem/machinery/fire(resumed = FALSE, no_mc_tick = FALSE)
+/datum/controller/subsystem/machines/fire(resumed = FALSE, no_mc_tick = FALSE)
 	var/timer
 	if (!resumed || current_step == SSMACHINERY_PIPENETS)
 		timer = world.tick_usage
@@ -94,13 +94,13 @@
 			return
 		current_step = SSMACHINERY_PIPENETS
 
-/datum/controller/subsystem/machinery/proc/makepowernets()
+/datum/controller/subsystem/machines/proc/makepowernets()
 	for(var/datum/powernet/powernet as anything in powernets)
 		qdel(powernet)
 	powernets.Cut()
 	setup_powernets_for_cables(GLOB.cable_list)
 
-/datum/controller/subsystem/machinery/proc/setup_powernets_for_cables(list/cables)
+/datum/controller/subsystem/machines/proc/setup_powernets_for_cables(list/cables)
 	for (var/obj/structure/cable/cable as anything in cables)
 		if (cable.powernet)
 			continue
@@ -108,7 +108,7 @@
 		network.add_cable(cable)
 		propagate_network(cable, cable.powernet)
 
-/datum/controller/subsystem/machinery/proc/setup_atmos_machinery(list/machines)
+/datum/controller/subsystem/machines/proc/setup_atmos_machinery(list/machines)
 	set background = TRUE
 	var/list/atmos_machines = list()
 	for (var/obj/machinery/atmospherics/machine in machines)
@@ -124,7 +124,7 @@
 		machine.build_network()
 		CHECK_TICK
 
-/datum/controller/subsystem/machinery/proc/process_pipenets(resumed, no_mc_tick)
+/datum/controller/subsystem/machines/proc/process_pipenets(resumed, no_mc_tick)
 	if (!resumed)
 		queue = pipenets.Copy()
 	var/datum/pipe_network/network
@@ -142,7 +142,7 @@
 			queue.Cut(i)
 			return
 
-/datum/controller/subsystem/machinery/proc/process_machinery(resumed, no_mc_tick)
+/datum/controller/subsystem/machines/proc/process_machinery(resumed, no_mc_tick)
 	if (!resumed)
 		queue = processing.Copy()
 	var/obj/machinery/machine
@@ -161,7 +161,7 @@
 			queue.Cut(i)
 			return
 
-/datum/controller/subsystem/machinery/proc/process_powernets(resumed, no_mc_tick)
+/datum/controller/subsystem/machines/proc/process_powernets(resumed, no_mc_tick)
 	if (!resumed)
 		queue = powernets.Copy()
 	var/datum/powernet/network
@@ -179,7 +179,7 @@
 			queue.Cut(i)
 			return
 
-/datum/controller/subsystem/machinery/proc/process_power_objects(resumed, no_mc_tick)
+/datum/controller/subsystem/machines/proc/process_power_objects(resumed, no_mc_tick)
 	if (!resumed)
 		queue = power_objects.Copy()
 	var/obj/item/item
@@ -199,7 +199,7 @@
 			queue.Cut(i)
 			return
 
-/datum/controller/subsystem/machinery/stat_entry()
+/datum/controller/subsystem/machines/stat_entry()
 	..({"\n\
 		Queues: \
 		Pipes [pipenets.len] \
@@ -214,13 +214,13 @@
 		Overall [round(cost ? processing.len / cost : 0, 0.1)]
 	"})
 
-///datum/controller/subsystem/machinery/ExplosionStart()
+///datum/controller/subsystem/machines/ExplosionStart()
 //	suspend()
 
-///datum/controller/subsystem/machinery/ExplosionEnd()
+///datum/controller/subsystem/machines/ExplosionEnd()
 //	wake()
 
-/datum/controller/subsystem/machinery/proc/build_rcon_lists()
+/datum/controller/subsystem/machines/proc/build_rcon_lists()
 	rcon_smes_units.Cut()
 	rcon_breaker_units.Cut()
 	rcon_breaker_units_by_tag.Cut()

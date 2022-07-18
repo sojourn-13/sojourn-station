@@ -8,7 +8,6 @@
 #define READ_FILE(file, text) DIRECT_INPUT(file, text)
 //print an error message to world.log
 
-
 // On Linux/Unix systems the line endings are LF, on windows it's CRLF, admins that don't use notepad++
 // will get logs that are one big line if the system is Linux and they are using notepad.  This solves it by adding CR to every line ending
 // in the logs.  ascii character 13 = CR
@@ -244,7 +243,7 @@
 	else if(a.loc)
 		return "[a.loc] (0,0,0) ([a.loc.type])"
 
-/proc/log_ss(subsystem, text, log_world = TRUE, severity = SEVERITY_DEBUG)
+/proc/log_ss(subsystem, text, log_world = TRUE)
 	if (!subsystem)
 		subsystem = "UNKNOWN"
 	var/msg = "[subsystem]: [text]"

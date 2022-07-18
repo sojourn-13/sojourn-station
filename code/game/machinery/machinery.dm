@@ -168,7 +168,7 @@ Class Procs:
 	if((processing_flags & MACHINERY_PROCESS_SELF))
 		. = Process()
 		if(. == PROCESS_KILL)
-			STOP_PROCESSING(SSmachinery, src)
+			STOP_PROCESSING(SSmachines, src)
 
 /obj/machinery/emp_act(severity)
 	if(use_power && !stat)
