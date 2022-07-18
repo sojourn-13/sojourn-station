@@ -249,6 +249,13 @@
 	nerve_system_accumulations = 30
 	addiction_chance = 30
 
+/datum/reagent/stim/ultra_surgeon/on_mob_add(mob/living/carbon/M, alien, effect_multiplier)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.stats.addPerk(PERK_ULTRASURGEON)
+		addtimer(CALLBACK(H.stats, /datum/stat_holder/proc/removePerk, PERK_ULTRASURGEON), 600 * volume)
+	. = ..()
+
 /datum/reagent/stim/ultra_surgeon/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_BIO, STAT_LEVEL_ADEPT, STIM_TIME, "ultra_surgeon")
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "ultra_surgeon")
