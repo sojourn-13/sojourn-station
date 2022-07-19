@@ -26,7 +26,8 @@
 		FORM_BSSYNTH,
 		FORM_CHURCHSYNTH,
 		FORM_NASHEF,
-		FORM_UNBRANDED
+		FORM_UNBRANDED,
+		FORM_SLIME
 		)
 
 /datum/sprite_accessory/hair/bald
