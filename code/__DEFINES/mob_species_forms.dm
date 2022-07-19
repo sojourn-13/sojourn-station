@@ -24,7 +24,6 @@
 #define SPECIES_ZORREN_HIGH		"Wolf"
 #define SPECIES_STATIONXENO     "Xenomorph Hybrid"
 #define SPECIES_CUSTOM			"Custom Species"
-#define SPECIES_SLIMEPERSON		"Slimeperson"
 
 // Monkey and alien monkeys.
 #define SPECIES_MONKEY			"Monkey"

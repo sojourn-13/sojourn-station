@@ -108,12 +108,12 @@
 			to_chat(user, SPAN_NOTICE("You inject [revival_chem] into [src]."))
 			src.visible_message("[src] start to wobble and wiggle...")
 			regenerating = TRUE
-			spawn(respawn_delay) regen_body()
+			spawn(100) regen_body()
 
 /obj/item/organ/internal/brain/slime/proc/regen_body()
 	if(loc != get_turf(src))
 		forceMove(src, get_turf(src))
-	var/mob/living/carbon/human/host = new(src.loc, FORM_SLIME, FORM_SLIME)
+	var/mob/living/carbon/human/host = new(src, FORM_SLIME, FORM_SLIME)
 	brainmob?.mind.transfer_to(host)
 
 	src.visible_message("[src] expand into a humanoid form")

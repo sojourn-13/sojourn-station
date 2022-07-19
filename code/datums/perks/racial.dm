@@ -630,18 +630,16 @@
 	desc = "Spend nutrition in exchange of regenerating your limbs"
 	var/cooldown = 30 MINUTES
 	passivePerk = FALSE
-	var/nutrition_cost = 100 // 100 as a upfrunt costs then more per lim/organ
+	var/nutrition_cost = 500 // I don't know if nutrition even goes that high, but that's Possum's problem. -R4d6
+	var/list/limbs = list(BP_HEAD, BP_GROIN, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 
 /datum/perk/limb_regen/activate()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("Production takes time."))
-		return FALSE
-	if(holder.nutrition < nutrition_cost)
-		to_chat(usr, SPAN_NOTICE("You do not have the required nutrition to regrow missing lims."))
+		to_chat(usr, SPAN_NOTICE("TODO Error Message"))
 		return FALSE
 	cooldown_time = world.time + cooldown
 	holder.nutrition -= nutrition_cost
-	holder.regenerate_organs() // Function located in 'code/modules/mob/living/carbon/human/human_damage.dm' Line 334. I couldn't find anything better for regenerating missing limbs and I'm too tired to try and code it in, so it will have to do. -R4d6
+	holder.restore_all_organs() // Function located in 'code/modules/mob/living/carbon/human/human_damage.dm' Line 334. I couldn't find anything better for regenerating missing limbs and I'm too tired to try and code it in, so it will have to do. -R4d6
 
 /datum/perk/slime_stat_boost
 	name = "Gelatinous Stat Boost"
