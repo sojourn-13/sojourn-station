@@ -26,12 +26,12 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 
 /turf/simulated/hotspot_expose(exposed_temperature, exposed_volume, soh)
 	if(fire_protection > world.time-300)
-		return 0
+		return FALSE
 	if(locate(/obj/fire) in src)
-		return 1
+		return TRUE
 	var/datum/gas_mixture/air_contents = return_air()
 	if(!air_contents || exposed_temperature < PLASMA_MINIMUM_BURN_TEMPERATURE)
-		return 0
+		return FALSE
 
 	var/igniting = 0
 	var/obj/effect/decal/cleanable/liquid_fuel/liquid = locate() in src
@@ -94,16 +94,16 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 			qdel(fuel)
 
 /turf/proc/create_fire(fl)
-	return 0
+	return FALSE
 
 /turf/simulated/create_fire(fl)
 
 	if(fire)
 		fire.firelevel = max(fl, fire.firelevel)
-		return 1
+		return TRUE
 
 	if(!zone)
-		return 1
+		return TRUE
 
 	fire = new(src, fl)
 	SSair.active_fire_zones |= zone
@@ -119,7 +119,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 	//	fire.firelevel *= max(0,1 - (extinguisher_foam.reagents.total_volume*0.04))
 		//25 units will eliminate the fire completely
 
-	return 0
+	return FALSE
 
 /obj/fire
 	//Icon for fire on turfs.
@@ -144,7 +144,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 		if(my_tile && my_tile.fire == src)
 			my_tile.fire = null
 		RemoveFire()
-		return 1
+		return TRUE
 
 	var/datum/gas_mixture/air_contents = my_tile.return_air()
 
@@ -277,7 +277,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 
 		total_fuel = gas_fuel + liquid_fuel
 		if(total_fuel <= 0.005)
-			return 0
+			return FALSE
 
 		//*** Determine how fast the fire burns
 
@@ -316,7 +316,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 		//if the reaction is progressing too slow then it isn't self-sustaining anymore and burns out
 		if(zone) //be less restrictive with canister and tank reactions
 			if((!liquid_fuel || used_fuel <= FIRE_LIQUD_MIN_BURNRATE) && (!gas_fuel || used_fuel <= FIRE_GAS_MIN_BURNRATE*zone.contents.len))
-				return 0
+				return FALSE
 
 
 		//*** Remove fuel and oxidizer, add carbon dioxide and heat
@@ -352,10 +352,10 @@ datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
 			break
 
 	if(!.)
-		return 0
+		return FALSE
 
 	if(fuel_objs && fuel_objs.len)
-		return 1
+		return TRUE
 
 	. = 0
 	for(var/g in gas)
@@ -371,10 +371,10 @@ datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
 			break
 
 	if(!.)
-		return 0
+		return FALSE
 
 	if(liquid)
-		return 1
+		return TRUE
 
 	. = 0
 	for(var/g in gas)

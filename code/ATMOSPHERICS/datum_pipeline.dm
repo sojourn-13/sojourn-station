@@ -89,7 +89,7 @@
 /datum/pipeline/proc/network_expand(datum/pipe_network/new_network, obj/machinery/atmospherics/pipe/reference)
 
 	if(new_network.line_members.Find(src))
-		return 0
+		return FALSE
 
 	new_network.line_members += src
 
@@ -100,7 +100,7 @@
 			if(!istype(result,/obj/machinery/atmospherics/pipe) && (result!=reference))
 				result.network_expand(new_network, edge)
 
-	return 1
+	return TRUE
 
 /datum/pipeline/proc/return_network(obj/machinery/atmospherics/reference)
 	if(!network)
@@ -179,7 +179,7 @@
 				self_temperature_delta = -heat/total_heat_capacity
 				sharer_temperature_delta = heat/sharer_heat_capacity
 			else
-				return 1
+				return TRUE
 
 			air.temperature += self_temperature_delta
 

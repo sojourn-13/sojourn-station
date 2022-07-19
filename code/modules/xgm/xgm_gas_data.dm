@@ -53,7 +53,7 @@
 			gas_data.tile_overlay[gas.id] = I
 		gas_data.flags[gas.id] = gas.flags
 
-	return 1
+	return TRUE
 
 /obj/effect/gas_overlay
 	name = "gas"

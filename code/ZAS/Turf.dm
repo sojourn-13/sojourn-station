@@ -15,7 +15,7 @@
 	ATMOS_CANPASS_TURF(block, src, src)
 	if(block & AIR_BLOCKED)
 		//dbg(blocked)
-		return 1
+		return TRUE
 
 	#ifdef MULTIZAS
 	for(var/d = 1, d < 64, d *= 2)
@@ -72,7 +72,7 @@
 
 /turf/simulated/proc/can_safely_remove_from_zone()
 	if(!zone)
-		return 1
+		return TRUE
 
 	var/check_dirs
 	GET_ZONE_NEIGHBOURS(src, check_dirs)
@@ -118,7 +118,7 @@
 			else
 				z.rebuild()
 
-		return 1
+		return TRUE
 
 	var/previously_open = open_directions
 	open_directions = 0
@@ -237,10 +237,10 @@
 	if(connections) connections.update_all()
 
 /turf/assume_air(datum/gas_mixture/giver) //use this for machines to adjust air
-	return 0
+	return FALSE
 
 /turf/proc/assume_gas(gasid, moles, temp = 0)
-	return 0
+	return FALSE
 
 /turf/return_air()
 	//Create gas mixture to hold data for passing
@@ -279,7 +279,7 @@
 	else
 		my_air.adjust_gas_temp(gasid, moles, temp)
 
-	return 1
+	return TRUE
 
 /turf/simulated/remove_air(amount as num)
 	var/datum/gas_mixture/my_air = return_air()

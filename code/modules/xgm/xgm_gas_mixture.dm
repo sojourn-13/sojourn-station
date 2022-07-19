@@ -23,7 +23,7 @@
 
 /datum/gas_mixture/proc/get_gas(gasid)
 	if(!gas.len)
-		return 0 //if the list is empty BYOND treats it as a non-associative list, which runtimes
+		return FALSE //if the list is empty BYOND treats it as a non-associative list, which runtimes
 	return gas[gasid] * group_multiplier
 
 /datum/gas_mixture/proc/get_total_moles()
@@ -129,8 +129,7 @@
 	update_values()
 	sharer.update_values()
 
-	return 1
-
+	return TRUE
 
 //Returns the heat capacity of the gas mix based on the specific heat of the gases.
 /datum/gas_mixture/proc/heat_capacity()
@@ -144,12 +143,12 @@
 /datum/gas_mixture/proc/add_thermal_energy(var/thermal_energy)
 
 	if (total_moles == 0)
-		return 0
+		return FALSE
 
 	var/heat_capacity = heat_capacity()
 	if (thermal_energy < 0)
 		if (temperature < TCMB)
-			return 0
+			return FALSE
 		var/thermal_energy_limit = -(temperature - TCMB)*heat_capacity	//ensure temperature does not go below TCMB
 		thermal_energy = max( thermal_energy, thermal_energy_limit )	//thermal_energy and thermal_energy_limit are negative here.
 	temperature += thermal_energy/heat_capacity
@@ -214,7 +213,7 @@
 /datum/gas_mixture/proc/return_pressure()
 	if(volume)
 		return total_moles * R_IDEAL_GAS_EQUATION * temperature / volume
-	return 0
+	return FALSE
 
 
 //Removes moles from the gas mixture and returns a gas_mixture containing the removed air.
@@ -304,44 +303,44 @@
 	else
 		update_values()
 
-	return 1
+	return TRUE
 
 //Checks if we are within acceptable range of another gas_mixture to suspend processing or merge.
 /datum/gas_mixture/proc/compare(const/datum/gas_mixture/sample, var/vacuum_exception = 0)
-	if(!sample) return 0
+	if(!sample) return FALSE
 
 	if(vacuum_exception)
 		// Special case - If one of the two is zero pressure, the other must also be zero.
 		// This prevents suspending processing when an air-filled room is next to a vacuum,
 		// an edge case which is particually obviously wrong to players
 		if(total_moles == 0 && sample.total_moles != 0 || sample.total_moles == 0 && total_moles != 0)
-			return 0
+			return FALSE
 
 	var/list/marked = list()
 	for(var/g in gas)
 		if((abs(gas[g] - sample.gas[g]) > MINIMUM_AIR_TO_SUSPEND) && \
 		((gas[g] < (1 - MINIMUM_AIR_RATIO_TO_SUSPEND) * sample.gas[g]) || \
 		(gas[g] > (1 + MINIMUM_AIR_RATIO_TO_SUSPEND) * sample.gas[g])))
-			return 0
+			return FALSE
 		marked[g] = 1
 
 	if(abs(return_pressure() - sample.return_pressure()) > MINIMUM_PRESSURE_DIFFERENCE_TO_SUSPEND)
-		return 0
+		return FALSE
 
 	for(var/g in sample.gas)
 		if(!marked[g])
 			if((abs(gas[g] - sample.gas[g]) > MINIMUM_AIR_TO_SUSPEND) && \
 			((gas[g] < (1 - MINIMUM_AIR_RATIO_TO_SUSPEND) * sample.gas[g]) || \
 			(gas[g] > (1 + MINIMUM_AIR_RATIO_TO_SUSPEND) * sample.gas[g])))
-				return 0
+				return FALSE
 
 	if(total_moles > MINIMUM_AIR_TO_SUSPEND)
 		if((abs(temperature - sample.temperature) > MINIMUM_TEMPERATURE_DELTA_TO_SUSPEND) && \
 		((temperature < (1 - MINIMUM_TEMPERATURE_RATIO_TO_SUSPEND)*sample.temperature) || \
 		(temperature > (1 + MINIMUM_TEMPERATURE_RATIO_TO_SUSPEND)*sample.temperature)))
-			return 0
+			return FALSE
 
-	return 1
+	return TRUE
 
 
 /datum/gas_mixture/proc/react()
@@ -380,7 +379,7 @@
 		gas[g] += right_side.gas[g]
 
 	update_values()
-	return 1
+	return TRUE
 
 
 //Simpler version of remove(), adjusts gas amounts directly and doesn't account for group_multiplier.
@@ -389,7 +388,7 @@
 		gas[g] -= right_side.gas[g]
 
 	update_values()
-	return 1
+	return TRUE
 
 
 //Multiply all gas amounts by a factor.
@@ -398,7 +397,7 @@
 		gas[g] *= factor
 
 	update_values()
-	return 1
+	return TRUE
 
 
 //Divide all gas amounts by a factor.
@@ -407,7 +406,7 @@
 		gas[g] /= factor
 
 	update_values()
-	return 1
+	return TRUE
 
 
 //Shares gas with another gas_mixture based on the amount of connecting tiles and a fixed lookup table.
@@ -499,7 +498,7 @@
 			gasmix.temperature = combined.temperature
 			gasmix.multiply(gasmix.volume)
 
-	return 1
+	return TRUE
 
 /datum/gas_mixture/proc/get_mass()
 	for(var/g in gas)

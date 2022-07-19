@@ -42,7 +42,8 @@
 		qdel(src)
 
 /datum/pipe_network/proc/merge(datum/pipe_network/giver)
-	if(giver==src) return 0
+	if(giver==src)
+		return FALSE
 
 	normal_members |= giver.normal_members
 
@@ -55,7 +56,7 @@
 		line_member.network = src
 
 	update_network_gases()
-	return 1
+	return TRUE
 
 /datum/pipe_network/proc/update_network_gases()
 	//Go through membership roster and make sure gases is up to date
