@@ -14,7 +14,8 @@
 #define LAZYOR(L, I) if(!L) { L = list(); } L |= I;
 #define LAZYFIND(L, V) L ? L.Find(V) : 0
 #define LAZYISIN(L, I) (L ? (I in L) : FALSE)
-#define LAZYACCESS(L, I) (islist(L) ? (isnum(I) ? (I > 0 && I <= LAZYLEN(L) ? L[I] : null) : L[I]) : null)
+// Reads I from L safely - Works with both associative and traditional lists.
+#define LAZYACCESS(L, I) (L ? (isnum(I) ? (I > 0 && I <= L.len ? L[I] : null) : L[I]) : null)
 #define LAZYCLEARLIST(L) if(L) L.Cut()
 #define SANITIZE_LIST(L) ( islist(L) ? L : list() )
 #define reverseList(L) reverseRange(L.Copy())
