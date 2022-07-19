@@ -190,11 +190,8 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 			else
 				enemy_tile.adjacent_fire_act(loc, air_contents, air_contents.temperature, air_contents.volume)
 
-	/*set_light(l_color = fire_color(air_contents.temperature, TRUE))
-	var/list/animate_targets = get_above_oo() + src
-	for (var/thing in animate_targets)
-		var/atom/movable/AM = thing
-		animate(AM, color = fire_color(air_contents.temperature), 5)*/
+	animate(src, color = fire_color(air_contents.temperature), 5)
+	set_light(l_color = color)
 
 /obj/fire/New(newLoc,fl)
 	..()
@@ -211,6 +208,12 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 
 	firelevel = fl
 	SSair.active_hotspots += src
+
+	//When a fire is created, immediately call fire_act on things in the tile.
+	//This is needed for flamethrowers
+	for (var/a in loc)
+		var/atom/A = a
+		A.fire_act()
 
 /obj/fire/proc/fire_color(var/env_temperature)
 	var/temperature = max(4000*sqrt(firelevel/vsc.fire_firelevel_multiplier), env_temperature)
