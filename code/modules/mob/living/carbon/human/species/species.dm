@@ -155,6 +155,9 @@
 	var/swap_flags = ~HEAVY	// What can we swap place with?
 
 	var/pass_flags = 0
+// Instead of using snowflake slime sprites, we just tweak their alpha down
+	var/body_alpha = 255
+	var/hair_alpha = 255
 
 /datum/species/proc/get_eyes(var/mob/living/carbon/human/H)
 	return
