@@ -187,7 +187,7 @@ var/global/vs_control/vsc = new
 				newvalue = vars[V]
 		V = newvalue
 
-/vs_control/proc/ChangePhoron()
+/vs_control/proc/ChangePlasma()
 	for(var/V in plc.settings)
 		plc.Randomize(V)
 
