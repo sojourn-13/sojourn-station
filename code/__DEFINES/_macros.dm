@@ -28,8 +28,6 @@
 // Reads the length of L, returning 0 if null
 #define LAZYLEN(L) length(L)
 
-#define CLAMP(CLVALUE,CLMIN,CLMAX) ( max( (CLMIN), min((CLVALUE), (CLMAX)) ) )
-
 
 #define sound_to(target, sound)                             target << sound
 //#define to_chat(target, message)                            target << message
