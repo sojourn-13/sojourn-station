@@ -710,7 +710,7 @@
 			return
 		var/health_boost = RD.health_boost
 		var/repaired = 0
-		if(RD.chassis.hasInternalDamage(MECHA_INT_SHORT_CIRCUIT))
+		if(RD.chassis.hasInternalDamage(MECH_INT_SHORT_CIRCUIT))
 			health_boost *= -2
 		else if(RD.chassis.hasInternalDamage() && prob(15))
 			for(var/int_dam_flag in RD.repairable_damage)
@@ -794,7 +794,7 @@
 /datum/global_iterator/mecha_energy_relay
 
 	Process(var/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay/ER)
-		if(!ER.chassis || ER.chassis.hasInternalDamage(MECHA_INT_SHORT_CIRCUIT))
+		if(!ER.chassis || ER.chassis.hasInternalDamage(MECH_INT_SHORT_CIRCUIT))
 			stop()
 			ER.set_ready_state(1)
 			return

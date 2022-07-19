@@ -16,7 +16,7 @@
 							/datum/design/research/item/medical/robot_scanner,
 							/datum/design/research/item/mmi)
 
-//MECHA BRANCH
+//Exosuits Branch
 
 /datum/technology/exosuit_robotics
 	name = "Basics of Exosuits"
@@ -176,7 +176,6 @@
 
 	unlocks_designs = list(
 		/datum/design/research/item/exosuit/floodlight,
-		/datum/design/research/item/exosuit/soft/utility,
 	)
 
 /datum/technology/mech_medical_modules
@@ -197,7 +196,6 @@
 	cost = 500
 
 	unlocks_designs = list(
-		/datum/design/research/item/exosuit/soft/medical,
 		/datum/design/research/item/exosuit/sleeper
 	)
 
@@ -272,7 +270,7 @@
 	cost = 1500
 
 	unlocks_designs = list(
-		/datum/design/research/item/exosuit/soft/ballistics,
+		/datum/design/research/item/exosuit/weapon/scattershot,
 		/datum/design/research/item/exosuit/taser,
 		/datum/design/research/item/exosuit/weapon/ion
 		)

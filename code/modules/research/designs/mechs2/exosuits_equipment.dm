@@ -29,6 +29,10 @@
 	name = "mounted exosuit laser-cutlass"
 	build_path = /obj/item/mecha_parts/mecha_equipment/melee_weapon/cutlass
 
+/datum/design/research/item/exosuit/weapon/scattershot
+	name = "LBX AC 10 \"Scattershot\" shotgun"
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot
+
 //UTILITY
 /datum/design/research/item/exosuit/hydraulic_clamp
 	name = "hydraulic clamp"

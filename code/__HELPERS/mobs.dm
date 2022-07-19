@@ -52,7 +52,7 @@
 	var/list/mobs = list()
 	for(var/mob/target_mob in view(range, source))
 		mobs += target_mob
-	for(var/obj/mecha/potential_mech in GLOB.mechas_list)
+	for(var/mob/living/exosuit/M in GLOB.mechas_list)
 		if(potential_mech.z == source.z && get_dist(potential_mech, source) < range && can_see(source, potential_mech, range))
 			var/mob/living/occupant = potential_mech.get_mob()
 			if (occupant)

@@ -352,3 +352,4 @@
 
 /obj/item/extinguisher/mech/get_hardpoint_status_value()
 	return reagents.total_volume/max_water
+

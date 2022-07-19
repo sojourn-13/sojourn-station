@@ -1,5 +1,5 @@
 /obj/item/mech_equipment/sleeper
-	name = "\improper exosuit sleeper"
+	name = "exosuit sleeper"
 	desc = "An exosuit-mounted sleeper designed to mantain patients stabilized on their way to medical facilities."
 	icon_state = "mech_sleeper"
 	restricted_hardpoints = list(HARDPOINT_BACK)
@@ -77,3 +77,140 @@
 		beaker = I
 		user.visible_message("<span class='notice'>\The [user] adds \a [I] to \the [src].</span>", "<span class='notice'>You add \a [I] to \the [src].</span>")
 
+/obj/item/mecha_parts/mecha_equipment/tool/cable_layer
+	name = "Cable Layer"
+	icon_state = "mecha_wire"
+	var/datum/event/event
+	var/turf/old_turf
+	var/obj/structure/cable/last_piece
+	var/obj/item/stack/cable_coil/cable
+	var/max_cable = 1000
+	required_type = /obj/mecha/working
+
+	New()
+		cable = new(src)
+		cable.amount = 0
+		..()
+
+	attach()
+		..()
+		event = chassis.events.addEvent("onMove",src,"layCable")
+		return
+
+	detach()
+		chassis.events.clearEvent("onMove",event)
+		return ..()
+
+	destroy()
+		chassis.events.clearEvent("onMove",event)
+		return ..()
+
+	action(var/obj/item/stack/cable_coil/target)
+		if(!action_checks(target))
+			return
+		var/result = load_cable(target)
+		var/message
+		if(isnull(result))
+			message = "<font color='red'>Unable to load [target] - no cable found.</font>"
+		else if(!result)
+			message = "Reel is full."
+		else
+			message = "[result] meters of cable successfully loaded."
+			send_byjax(chassis.occupant,"exosuit.browser","\ref[src]",src.get_equip_info())
+		occupant_message(message)
+		return
+
+	Topic(href,href_list)
+		..()
+		if(href_list["toggle"])
+			set_ready_state(!equip_ready)
+			occupant_message("[src] [equip_ready?"dea":"a"]ctivated.")
+			log_message("[equip_ready?"Dea":"A"]ctivated.")
+			return
+		if(href_list["cut"])
+			if(cable && cable.amount)
+				var/m = round(input(chassis.occupant,"Please specify the length of cable to cut","Cut cable",min(cable.amount,30)) as num, 1)
+				m = min(m, cable.amount)
+				if(m)
+					use_cable(m)
+					var/obj/item/stack/cable_coil/CC = new (get_turf(chassis))
+					CC.amount = m
+			else
+				occupant_message("There's no more cable on the reel.")
+		return
+
+	get_equip_info()
+		var/output = ..()
+		if(output)
+			return "[output] \[Cable: [cable ? cable.amount : 0] m\][(cable && cable.amount) ? "- <a href='?src=\ref[src];toggle=1'>[!equip_ready?"Dea":"A"]ctivate</a>|<a href='?src=\ref[src];cut=1'>Cut</a>" : null]"
+		return
+
+	proc/load_cable(var/obj/item/stack/cable_coil/CC)
+		if(istype(CC) && CC.amount)
+			var/cur_amount = cable? cable.amount : 0
+			var/to_load = max(max_cable - cur_amount,0)
+			if(to_load)
+				to_load = min(CC.amount, to_load)
+				if(!cable)
+					cable = new(src)
+					cable.amount = 0
+				cable.amount += to_load
+				CC.use(to_load)
+				return to_load
+			else
+				return 0
+		return
+
+	proc/use_cable(amount)
+		if(!cable || cable.amount<1)
+			set_ready_state(1)
+			occupant_message("Cable depleted, [src] deactivated.")
+			log_message("Cable depleted, [src] deactivated.")
+			return
+		if(cable.amount < amount)
+			occupant_message("No enough cable to finish the task.")
+			return
+		cable.use(amount)
+		update_equip_info()
+		return 1
+
+	proc/reset()
+		last_piece = null
+
+	proc/dismantleFloor(var/turf/new_turf)
+		if(istype(new_turf, /turf/simulated/floor))
+			var/turf/simulated/floor/T = new_turf
+			if(!T.is_plating())
+				T.make_plating(!(T.broken || T.burnt))
+		return new_turf.is_plating()
+
+	proc/layCable(var/turf/new_turf)
+		if(equip_ready || !istype(new_turf) || !dismantleFloor(new_turf))
+			return reset()
+		var/fdirn = turn(chassis.dir,180)
+		for(var/obj/structure/cable/LC in new_turf)		// check to make sure there's not a cable there already
+			if(LC.d1 == fdirn || LC.d2 == fdirn)
+				return reset()
+		if(!use_cable(1))
+			return reset()
+		var/obj/structure/cable/NC = new(new_turf)
+		NC.cableColor("red")
+		NC.d1 = 0
+		NC.d2 = fdirn
+		NC.updateicon()
+
+		var/datum/powernet/PN
+		if(last_piece && last_piece.d2 != chassis.dir)
+			last_piece.d1 = min(last_piece.d2, chassis.dir)
+			last_piece.d2 = max(last_piece.d2, chassis.dir)
+			last_piece.updateicon()
+			PN = last_piece.powernet
+
+		if(!PN)
+			PN = new()
+		PN.add_cable(NC)
+		NC.mergeConnectedNetworks(NC.d2)
+
+		//NC.mergeConnectedNetworksOnTurf()
+		last_piece = NC
+		return 1

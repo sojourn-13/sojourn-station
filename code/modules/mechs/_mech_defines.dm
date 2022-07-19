@@ -13,6 +13,9 @@
 #define HARDPOINT_RIGHT_SHOULDER			"right shoulder"
 #define HARDPOINT_HEAD						"head"
 
+// Damage mech proc for internal damages and repair droids.
+#define MECH_INT_SHORT_CIRCUIT
+
 // No software required: taser, light.
 #define MECH_SOFTWARE_UTILITY				"utility equipment"				// Plasma torch, clamp, drill.
 #define MECH_SOFTWARE_MEDICAL				"medical support systems"		// Sleeper.
