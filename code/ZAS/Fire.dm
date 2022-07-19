@@ -7,6 +7,8 @@ If it gains pressure too slowly, it may leak or just rupture instead of explodin
 */
 
 //#define FIREDBG
+#define MINIMUM_FUEL_VOLUME 0.0005 //Used to prevent leaving patches with astronomically tiny amounts of fuel
+
 #define FIRE_LIGHT_1	2 //These defines are the power of the light given off by fire at various stages
 #define FIRE_LIGHT_2	4
 #define FIRE_LIGHT_3	5
@@ -84,7 +86,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 			continue
 
 		fuel.amount -= fuel_to_remove
-		if(fuel.amount <= 0)
+		if(fuel.amount <= MINIMUM_FUEL_VOLUME)
 			LAZYREMOVE(fuel_objs, fuel)
 			if(remove_fire)
 				var/turf/T = fuel.loc
@@ -128,9 +130,9 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 	blend_mode = BLEND_ADD
 
 	icon = 'icons/effects/fire.dmi'
-	icon_state = "wavey_fire"
-	light_color = LIGHT_COLOR_FIRE
-	layer = ABOVE_MOB_LAYER
+	icon_state = "1"
+	light_color = "#ED9200"
+	layer = GASFIRE_LAYER
 
 	var/firelevel = 1 //Calculated by gas_mixture.calculate_firelevel()
 
