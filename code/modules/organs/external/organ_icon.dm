@@ -156,7 +156,7 @@ var/global/list/limb_icon_cache = list()
 
 	if(appearance_test.colorize_organ)
 		if(status & ORGAN_DEAD)
-			mob_icon.ColorTone(rgb(10,50,0, species.body_alpha))
+			mob_icon.ColorTone(rgb(10,50,0))
 			mob_icon.SetIntensity(0.7)
 		if(skin_col)
 			mob_icon.Blend(skin_col, ICON_MULTIPLY)

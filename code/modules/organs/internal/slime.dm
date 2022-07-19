@@ -10,18 +10,3 @@
 	..()
 	visible_message(SPAN_NOTICE("[src] lose cohesion and become a puddle of goo!"))
 	qdel(src)
-
-/obj/item/organ/internal/heart/slime
-	name = "slime vascular system"
-	desc = "A complex, organic knot of pulsating jelly and crystalline particles."
-	icon = 'icons/mob/slimes.dmi'
-	icon_state = "bluespace slime extract"
-	dead_icon = "bluespace slime extract"
-
-/obj/item/organ/internal/eyes/slime
-	name = "slime photoreceptors"
-	desc = "A pulsating complex of jelly-like orbs."
-
-/obj/item/organ/internal/stomach/slime
-	name = "slime digestive sack"
-	desc = "a pulsating sack that contains especially heavy acids and sand."

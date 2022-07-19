@@ -370,7 +370,7 @@ var/global/list/wings_icon_cache = list()
 		if(facial_hair_style && facial_hair_style.species_allowed && (src.species.get_bodytype() in facial_hair_style.species_allowed))
 			var/icon/facial_s = new/icon(facial_hair_style.icon, facial_hair_style.icon_state)
 			if(facial_hair_style.colored_layers)
-				facial_s.Blend(facial_color, species.hair_alpha, ICON_ADD)
+				facial_s.Blend(facial_color, ICON_ADD)
 
 			face_standing.Blend(facial_s, ICON_OVERLAY)
 
@@ -381,12 +381,12 @@ var/global/list/wings_icon_cache = list()
 			var/icon/hair_s = new/icon(hair_style.icon, hair_style.icon_state)
 			if(grad_style)
 				grad_s = new/icon("icon" = 'icons/mob/hair_gradients.dmi', "icon_state" = hair_gradients_list[grad_style])
-				grad_s.Blend(hair_s, species.hair_alpha, ICON_AND)
-				grad_s.Blend(grad_color, species.hair_alpha, ICON_ADD)
+				grad_s.Blend(hair_s, ICON_AND)
+				grad_s.Blend(grad_color, ICON_ADD)
 			if(hair_style.colored_layers)
-				hair_s.Blend(hair_color, species.hair_alpha, ICON_ADD)
+				hair_s.Blend(hair_color, ICON_ADD)
 				if(!isnull(grad_s))
-					hair_s.Blend(grad_s, species.hair_alpha, ICON_OVERLAY)
+					hair_s.Blend(grad_s, ICON_OVERLAY)
 
 			face_standing.Blend(hair_s, ICON_OVERLAY)
 
@@ -519,11 +519,11 @@ var/global/list/wings_icon_cache = list()
 	var/datum/sprite_accessory/ears/earstype = ears
 	var/icon/ears_icon = icon(earstype.icon, earstype.icon_state)
 	if(earstype.colored_layers)
-		ears_icon.Blend(ears_colors[1], species.body_alpha, earstype.blend)
+		ears_icon.Blend(ears_colors[1], earstype.blend)
 	for(var/i = 2, i <= earstype.colored_layers, i++)
 		var/icon/extra_overlay = icon(earstype.icon, (earstype.extra_overlay ? earstype.extra_overlay : earstype.icon_state)+"[(i-1)]")
-		extra_overlay.Blend(ears_colors[i], species.body_alpha, earstype.blend)
-		ears_icon.Blend(extra_overlay, species.body_alpha, ICON_OVERLAY)
+		extra_overlay.Blend(ears_colors[i], earstype.blend)
+		ears_icon.Blend(extra_overlay, ICON_OVERLAY)
 
 	var/ears_image = image(ears_icon)
 	ears_icon_cache[cache_key] = ears_image
@@ -564,11 +564,11 @@ var/global/list/wings_icon_cache = list()
 	var/datum/sprite_accessory/tail/tailtype = tail
 	var/icon/tail_icon = icon(tailtype.icon, tailtype.icon_state)
 	if(tailtype.colored_layers)
-		tail_icon.Blend(tail_colors[1], species.body_alpha, tailtype.blend)
+		tail_icon.Blend(tail_colors[1], tailtype.blend)
 	for(var/i = 2, i <= tailtype.colored_layers, i++)
 		var/icon/extra_overlay = icon(tailtype.icon, (tailtype.extra_overlay ? tailtype.extra_overlay : tailtype.icon_state)+"[(i-1)]")
-		extra_overlay.Blend(tail_colors[i], species.body_alpha, tailtype.blend)
-		tail_icon.Blend(extra_overlay, species.body_alpha, ICON_OVERLAY)
+		extra_overlay.Blend(tail_colors[i], tailtype.blend)
+		tail_icon.Blend(extra_overlay, ICON_OVERLAY)
 	//if(istype(tailtype, /datum/sprite_accessory/tail/taur)) return image(tail_icon, "pixel_x" = -16)
 
 	var/tail_image = image(tail_icon)
@@ -598,11 +598,11 @@ mob/living/carbon/human/proc/get_wings_image()
 	var/datum/sprite_accessory/wings/wingstype = wings
 	var/icon/wings_icon = icon(wingstype.icon, wingstype.icon_state)
 	if(wingstype.colored_layers)
-		wings_icon.Blend(wings_colors[1], species.body_alpha, wingstype.blend)
+		wings_icon.Blend(wings_colors[1], wingstype.blend)
 	for(var/i = 2, i <= wingstype.colored_layers, i++)
 		var/icon/extra_overlay = icon(wingstype.icon, (wingstype.extra_overlay ? wingstype.extra_overlay : wingstype.icon_state)+"[(i-1)]")
-		extra_overlay.Blend(wings_colors[i], species.body_alpha, wingstype.blend)
-		wings_icon.Blend(extra_overlay, species.body_alpha, ICON_OVERLAY)
+		extra_overlay.Blend(wings_colors[i], wingstype.blend)
+		wings_icon.Blend(extra_overlay, ICON_OVERLAY)
 
 	var/wings_image = image(wings_icon)
 	wings_icon_cache[cache_key] = wings_image
@@ -702,7 +702,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			if (uniformcheck.rolldown)//Are we rolled down?
 				var/icon/originalicon = icon(under_icon, icon_state = under_state)
 				var/icon/rollalpha = icon('icons/inventory/overlays.dmi', icon_state = "rolldown")//If we are, grab the overlay
-				originalicon.Blend(rollalpha, ICON_MULTIPLY)//Then apply the transform to the standing icon.
+				originalicon.Blend(rollalpha, ICON_MULTIPLY)//Then apply the transform to the standing icon. 
 				under_icon = originalicon
 
 		//need to append _s to the icon state for legacy compatibility
