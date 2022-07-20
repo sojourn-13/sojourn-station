@@ -241,3 +241,7 @@
 		"white" = /obj/item/clothing/under/genericw
 	)
 	gear_tweaks += new /datum/gear_tweak/path(generic)
+
+/datum/gear/uniform/jersey
+	display_name = "tacky jersey"
+	path = /obj/item/clothing/under/costume/misc/jersey
