@@ -257,7 +257,7 @@
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
 	drop_items = list(/obj/item/gun/projectile/automatic/c20r/reaver_modded)
 
-	rapid_fire_shooting_amount = 6 // WE FIRE REALLY GODDAMN FAST
+	rapid_fire_shooting_amount = 8 // WE FIRE REALLY GODDAMN FAST
 	delay_for_rapid_range = 0.15 SECONDS
 	rounds_left = 32
 	mag_type = /obj/item/ammo_magazine/smg_35/hv/empty
@@ -271,6 +271,7 @@
 								/obj/item/tool_upgrade/refinement/laserguide,
 								/obj/item/tool_upgrade/productivity/ergonomic_grip,
 								/obj/item/tool_upgrade/refinement/stabilized_grip,
+								/obj/item/gun_upgrade/barrel/forged,
 								)
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/c20r/New()

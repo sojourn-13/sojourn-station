@@ -20,6 +20,7 @@
 	dir = 1
 	},
 /obj/structure/table/steel_reinforced,
+/obj/random/firstaid,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/colony/exposedsun/crashed_shop/workshop)
 "az" = (
@@ -62,6 +63,15 @@
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"aM" = (
+/obj/structure/table/woodentable,
+/obj/item/ammo_magazine/ammobox/pistol_35/hv,
+/obj/item/ammo_magazine/smg_35/hv,
+/obj/item/ammo_magazine/smg_35/hv,
+/obj/item/ammo_magazine/ammobox/pistol_35,
+/obj/item/ammo_magazine/ammobox/pistol_35,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/workshop)
 "aQ" = (
 /obj/item/stack/rods/random,
 /obj/structure/invislight,
@@ -212,6 +222,19 @@
 /obj/structure/flora/small/rock4,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
+"cD" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/gun_fancy/alawys_spawn,
+/obj/random/gun_fancy,
+/obj/random/gun_fancy,
+/obj/random/gun_combat,
+/obj/random/gun_shotgun/low_chance,
+/obj/random/gun_shotgun/low_chance,
+/obj/random/gun_shotgun,
+/obj/random/gun_combat,
+/obj/random/gun_combat,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/workshop)
 "cK" = (
 /obj/random/scrap/dense_weighted,
 /obj/structure/invislight,
@@ -225,6 +248,14 @@
 "cP" = (
 /obj/structure/lattice,
 /turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop)
+"cT" = (
+/obj/structure/catwalk,
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/simulated/open,
 /area/colony/exposedsun/crashed_shop)
 "cV" = (
 /obj/structure/table/steel_reinforced,
@@ -409,6 +440,21 @@
 /obj/random/toolbox/low_chance,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"gm" = (
+/obj/item/grenade/frag,
+/obj/structure/table/rack/shelf,
+/obj/item/grenade/frag/stinger,
+/obj/item/grenade/frag/stinger,
+/obj/item/grenade/explosive,
+/obj/item/grenade/explosive,
+/obj/item/grenade/chem_grenade/incendiary,
+/obj/item/grenade/explosive,
+/obj/item/grenade/frag,
+/obj/item/grenade/frag,
+/obj/item/grenade/explosive,
+/obj/item/grenade/explosive,
+/turf/simulated/floor/tiled/cafe,
+/area/colony/exposedsun/crashed_shop/workshop)
 "gr" = (
 /obj/item/scrap_lump,
 /turf/simulated/floor/tiled/dark/panels,
@@ -1040,6 +1086,21 @@
 /obj/item/stack/rods/random,
 /turf/simulated/floor/rock/grey,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
+"pS" = (
+/obj/item/grenade/empgrenade,
+/obj/structure/table/rack/shelf,
+/obj/item/grenade/heatwave,
+/obj/item/grenade/empgrenade/low_yield,
+/obj/item/grenade/flashbang,
+/obj/item/grenade/flashbang,
+/obj/item/grenade/flashbang,
+/obj/item/grenade/flashbang,
+/obj/item/grenade/flashbang,
+/obj/item/grenade/empgrenade/low_yield,
+/obj/item/grenade/heatwave,
+/obj/item/grenade/heatwave,
+/turf/simulated/floor/tiled/cafe,
+/area/colony/exposedsun/crashed_shop/workshop)
 "pT" = (
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
@@ -1069,6 +1130,14 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
+"qp" = (
+/obj/structure/catwalk,
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/colony/exposedsun/crashed_shop)
 "qy" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/beach/water/shallow,
@@ -1290,6 +1359,13 @@
 /obj/structure/flora/rock/variant1,
 /turf/simulated/floor/rock,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
+"up" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/colony/exposedsun/crashed_shop)
 "uy" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -1402,6 +1478,10 @@
 /obj/structure/scrap/vehicle,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"wp" = (
+/mob/living/carbon/superior_animal/human/voidwolf/elite/c20r,
+/turf/simulated/floor/tiled/cafe,
+/area/colony/exposedsun/crashed_shop/workshop)
 "wr" = (
 /obj/effect/damagedfloor/fire,
 /obj/item/stack/rods/random,
@@ -1472,6 +1552,13 @@
 "xk" = (
 /obj/item/stack/rods/random,
 /turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop)
+"xl" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/simulated/open,
 /area/colony/exposedsun/crashed_shop)
 "xq" = (
 /obj/effect/damagedfloor/fire,
@@ -1644,6 +1731,23 @@
 /obj/random/tool/advanced/onestar/low_chance,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"Ar" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/workshop)
 "Ax" = (
 /obj/item/stack/rods/random,
 /obj/structure/girder,
@@ -1777,6 +1881,14 @@
 /area/colony/exposedsun/crashed_shop)
 "Cv" = (
 /obj/structure/table/rack/shelf,
+/obj/item/grenade/chem_grenade/cleaner,
+/obj/item/grenade/chem_grenade/cleaner,
+/obj/item/grenade/chem_grenade/cleaner,
+/obj/item/grenade/chem_grenade/cleaner,
+/obj/item/grenade/chem_grenade/cleaner,
+/obj/item/grenade/chem_grenade/cleaner,
+/obj/item/grenade/chem_grenade/cleaner,
+/obj/item/grenade/chem_grenade/cleaner,
 /turf/simulated/floor/tiled/cafe,
 /area/colony/exposedsun/crashed_shop/workshop)
 "CJ" = (
@@ -1811,6 +1923,22 @@
 /area/colony/exposedsun/crashed_shop)
 "CT" = (
 /turf/simulated/floor/tiled/steel,
+/area/colony/exposedsun/crashed_shop/workshop)
+"CU" = (
+/obj/structure/catwalk,
+/obj/structure/invislight,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/simulated/open,
+/area/colony/exposedsun/crashed_shop)
+"CW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/woodentable,
+/obj/random/voidsuit/damaged/low_chance,
+/obj/random/voidsuit/low_chance,
+/obj/random/voidsuit/low_chance,
+/turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "Dd" = (
 /obj/structure/bed/chair{
@@ -2040,6 +2168,18 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/random/dungeon_armor_mods,
+/obj/random/dungeon_armor_mods/low_chance,
+/obj/random/dungeon_armor_mods/low_chance,
+/obj/structure/table/steel_reinforced,
+/obj/random/dungeon_armor_mods,
+/obj/random/dungeon_armor_mods,
+/obj/item/clothing/suit/space/void/merc/xanorath,
+/obj/item/clothing/suit/space/void/merc/xanorath,
+/obj/item/clothing/suit/space/void/merc/xanorath,
+/obj/random/cloth/armor,
+/obj/random/cloth/armor,
+/obj/random/cloth/armor,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "Gn" = (
@@ -2223,6 +2363,7 @@
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "ID" = (
 /obj/structure/table/steel_reinforced,
+/obj/structure/closet/crate/voidwolf/voidwolfdrugs,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/colony/exposedsun/crashed_shop/workshop)
 "II" = (
@@ -2352,6 +2493,14 @@
 "Kl" = (
 /obj/random/closet_maintloot/low_chance,
 /turf/simulated/floor/tiled/dark/panels,
+/area/colony/exposedsun/crashed_shop)
+"Kx" = (
+/obj/structure/catwalk,
+/obj/structure/invislight,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/open,
 /area/colony/exposedsun/crashed_shop)
 "Kz" = (
 /obj/structure/table/steel_reinforced,
@@ -2589,6 +2738,12 @@
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
+"Oq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior_animal/human/voidwolf/elite/c20r,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/workshop)
 "Ou" = (
 /obj/effect/damagedfloor/fire,
 /obj/item/stack/rods/random,
@@ -2596,6 +2751,17 @@
 /obj/structure/flora/small/lavarock3,
 /turf/simulated/floor/rock,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
+"Ow" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/melee/energy/sword/pirate,
+/obj/item/melee/energy/sword/pirate,
+/obj/item/melee/energy/sword/pirate,
+/obj/item/melee/energy/sword/pirate,
+/obj/item/melee/energy/sword/pirate,
+/obj/random/melee,
+/obj/random/melee,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/workshop)
 "OB" = (
 /mob/living/carbon/superior_animal/human/voidwolf/elite/c20r,
 /turf/simulated/floor/wood_old,
@@ -2817,6 +2983,7 @@
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "RR" = (
 /obj/machinery/light/small,
+/obj/item/clothing/suit/space/void/SCAF/voidwolf,
 /turf/simulated/floor/tiled/cafe,
 /area/colony/exposedsun/crashed_shop/workshop)
 "RS" = (
@@ -3036,10 +3203,12 @@
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
 "Vf" = (
-/obj/structure/table/bench/wooden,
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/table/steel_reinforced,
+/obj/random/oddity_guns,
+/obj/random/oddity_guns,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "Vi" = (
@@ -3072,6 +3241,11 @@
 /obj/effect/damagedfloor/fire,
 /obj/random/structures/low_chance,
 /turf/simulated/floor/tiled/dark/panels,
+/area/colony/exposedsun/crashed_shop)
+"Vy" = (
+/obj/structure/catwalk,
+/obj/structure/railing,
+/turf/simulated/open,
 /area/colony/exposedsun/crashed_shop)
 "VF" = (
 /turf/unsimulated/mineral/transition,
@@ -3128,7 +3302,14 @@
 /obj/structure/sign/painting/paintingstreet{
 	pixel_y = 30
 	},
-/mob/living/carbon/superior_animal/human/voidwolf/elite/c20r,
+/obj/structure/table/woodentable,
+/obj/item/ammo_magazine/ammobox/laser_223/ap,
+/obj/item/ammo_magazine/ammobox/laser_223,
+/obj/item/ammo_magazine/rifle_223,
+/obj/item/ammo_magazine/rifle_223,
+/obj/item/ammo_magazine/rifle_223,
+/obj/item/ammo_magazine/ammobox/laser_223/lethal,
+/obj/item/ammo_magazine/ammobox/laser_223,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "WA" = (
@@ -3252,6 +3433,16 @@
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/colony/exposedsun/crashed_shop/workshop)
+"Yc" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/colony/exposedsun/crashed_shop)
 "Yd" = (
 /obj/item/trash/material/metal,
 /obj/structure/invislight,
@@ -3275,6 +3466,23 @@
 /obj/item/tool/knife/tacknife,
 /turf/simulated/floor/rock/grey,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
+"YH" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/random/ammo_fancy,
+/obj/random/dungeon_ammo,
+/obj/random/ammo_fancy,
+/obj/random/dungeon_ammo,
+/obj/random/dungeon_ammo,
+/obj/random/dungeon_ammo,
+/obj/random/dungeon_ammo,
+/obj/random/ammo_fancy,
+/obj/random/ammo_fancy,
+/obj/random/ammo_fancy,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/workshop)
 "YJ" = (
 /obj/random/closet_wardrobe,
 /obj/machinery/light/small{
@@ -10447,7 +10655,7 @@ XE
 Mk
 Bz
 Mk
-Mk
+wp
 RR
 fB
 mA
@@ -10529,8 +10737,8 @@ Mk
 Gc
 fB
 Cv
-Cv
-Cv
+pS
+gm
 fB
 mA
 mA
@@ -10692,11 +10900,11 @@ Yb
 LY
 qe
 Gk
-rY
-rY
-rY
+Ar
+Ow
+cD
 Vf
-rY
+YH
 fB
 mA
 mA
@@ -10772,7 +10980,7 @@ fB
 Ab
 Jt
 LY
-ow
+Oq
 WN
 LY
 TH
@@ -10934,7 +11142,7 @@ QK
 QK
 fB
 Ww
-LY
+aM
 OB
 ow
 TH
@@ -11019,7 +11227,7 @@ iK
 iK
 LY
 sw
-TH
+WN
 rY
 rY
 rY
@@ -11242,8 +11450,8 @@ Us
 Us
 Us
 Us
-WH
-WH
+Yc
+qp
 Us
 Us
 Us
@@ -11326,8 +11534,8 @@ bL
 Xz
 Fb
 WH
-WH
-WH
+up
+qp
 Us
 Us
 Us
@@ -11410,20 +11618,20 @@ Fb
 WH
 WH
 WH
-WH
-YO
-WH
-WH
-YO
-WH
-WH
-YO
-WH
-WH
-YO
-WH
-WH
-YO
+up
+Kx
+up
+up
+Kx
+up
+up
+Kx
+up
+up
+Kx
+up
+up
+Kx
 sH
 TH
 sw
@@ -11493,19 +11701,19 @@ Fb
 Fb
 WH
 WH
-YO
-WH
-WH
-YO
-WH
-WH
-YO
-WH
-WH
-YO
-WH
-WH
-YO
+CU
+xl
+xl
+CU
+xl
+xl
+CU
+xl
+xl
+CU
+xl
+xl
+CU
 sH
 TH
 sw
@@ -11574,7 +11782,7 @@ Rx
 US
 Fb
 WH
-WH
+Vy
 Us
 Us
 Us
@@ -11656,7 +11864,7 @@ Jr
 US
 Vk
 WH
-WH
+cT
 Us
 Us
 Us
@@ -11838,7 +12046,7 @@ fB
 ID
 LY
 TH
-LY
+OB
 TH
 LY
 LY
@@ -12169,7 +12377,7 @@ kR
 En
 kR
 fB
-TH
+CW
 TH
 LY
 TH
