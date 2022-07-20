@@ -266,9 +266,13 @@
 					continue
 				if(!(target in targetTurfs))
 					continue
-				if(current.c_airblock(target)) //this is needed to stop chemsmoke from passing through thin window walls
+				var/currentblock
+				ATMOS_CANPASS_TURF(currentblock, current, target)
+				if(currentblock) //this is needed to stop chemsmoke from passing through thin window walls
 					continue
-				if(target.c_airblock(current))
+				var/targetblock
+				ATMOS_CANPASS_TURF(targetblock, target, current)
+				if(targetblock)
 					continue
 				pending += target
 

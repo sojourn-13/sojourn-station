@@ -6,7 +6,7 @@
 	layer = CLOSED_TURF_LAYER
 	opacity = 1
 	density = TRUE
-	blocks_air = 1
+	blocks_air = TRUE
 	thermal_conductivity = WALL_HEAT_TRANSFER_COEFFICIENT
 	heat_capacity = 312500 //a little over 5 cm thick , 312500 for 1 m by 2.5 m by 0.25 m plasteel wall
 
