@@ -249,6 +249,14 @@
 /obj/structure/lattice,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"cT" = (
+/obj/structure/catwalk,
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/simulated/open,
+/area/colony/exposedsun/crashed_shop)
 "cV" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/material_rare/low_chance,
@@ -1122,6 +1130,14 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
+"qp" = (
+/obj/structure/catwalk,
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/colony/exposedsun/crashed_shop)
 "qy" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/beach/water/shallow,
@@ -1343,6 +1359,13 @@
 /obj/structure/flora/rock/variant1,
 /turf/simulated/floor/rock,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
+"up" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/colony/exposedsun/crashed_shop)
 "uy" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -1529,6 +1552,13 @@
 "xk" = (
 /obj/item/stack/rods/random,
 /turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop)
+"xl" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/simulated/open,
 /area/colony/exposedsun/crashed_shop)
 "xq" = (
 /obj/effect/damagedfloor/fire,
@@ -1894,6 +1924,14 @@
 "CT" = (
 /turf/simulated/floor/tiled/steel,
 /area/colony/exposedsun/crashed_shop/workshop)
+"CU" = (
+/obj/structure/catwalk,
+/obj/structure/invislight,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/simulated/open,
+/area/colony/exposedsun/crashed_shop)
 "CW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/woodentable,
@@ -2455,6 +2493,14 @@
 "Kl" = (
 /obj/random/closet_maintloot/low_chance,
 /turf/simulated/floor/tiled/dark/panels,
+/area/colony/exposedsun/crashed_shop)
+"Kx" = (
+/obj/structure/catwalk,
+/obj/structure/invislight,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/open,
 /area/colony/exposedsun/crashed_shop)
 "Kz" = (
 /obj/structure/table/steel_reinforced,
@@ -3196,6 +3242,11 @@
 /obj/random/structures/low_chance,
 /turf/simulated/floor/tiled/dark/panels,
 /area/colony/exposedsun/crashed_shop)
+"Vy" = (
+/obj/structure/catwalk,
+/obj/structure/railing,
+/turf/simulated/open,
+/area/colony/exposedsun/crashed_shop)
 "VF" = (
 /turf/unsimulated/mineral/transition,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
@@ -3382,6 +3433,16 @@
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/colony/exposedsun/crashed_shop/workshop)
+"Yc" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/colony/exposedsun/crashed_shop)
 "Yd" = (
 /obj/item/trash/material/metal,
 /obj/structure/invislight,
@@ -11389,8 +11450,8 @@ Us
 Us
 Us
 Us
-WH
-WH
+Yc
+qp
 Us
 Us
 Us
@@ -11473,8 +11534,8 @@ bL
 Xz
 Fb
 WH
-WH
-WH
+up
+qp
 Us
 Us
 Us
@@ -11557,20 +11618,20 @@ Fb
 WH
 WH
 WH
-WH
-YO
-WH
-WH
-YO
-WH
-WH
-YO
-WH
-WH
-YO
-WH
-WH
-YO
+up
+Kx
+up
+up
+Kx
+up
+up
+Kx
+up
+up
+Kx
+up
+up
+Kx
 sH
 TH
 sw
@@ -11640,19 +11701,19 @@ Fb
 Fb
 WH
 WH
-YO
-WH
-WH
-YO
-WH
-WH
-YO
-WH
-WH
-YO
-WH
-WH
-YO
+CU
+xl
+xl
+CU
+xl
+xl
+CU
+xl
+xl
+CU
+xl
+xl
+CU
 sH
 TH
 sw
@@ -11721,7 +11782,7 @@ Rx
 US
 Fb
 WH
-WH
+Vy
 Us
 Us
 Us
@@ -11803,7 +11864,7 @@ Jr
 US
 Vk
 WH
-WH
+cT
 Us
 Us
 Us
