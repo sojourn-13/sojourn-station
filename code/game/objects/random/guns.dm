@@ -311,6 +311,15 @@
 	icon_state = "gun-red-low"
 	spawn_nothing_percentage = 80
 
+/obj/random/dungeon_gun_mods/voidwolf
+
+/obj/random/dungeon_gun_mods/voidwolf/item_to_spawn()
+	return pickweight(list( // i hate pickweight but fine
+		/obj/item/gun_upgrade/barrel/gauss = 1,
+		/obj/item/gun_upgrade/scope/killer = 1,
+		/obj/item/gun_upgrade/trigger/dangerzone = 1, //only good mods
+	))
+
 //Armor Mod Spawners
 /obj/random/dungeon_armor_mods
 	name = "random armor mod"

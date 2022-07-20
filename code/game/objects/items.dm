@@ -83,6 +83,10 @@
 	//var/attack_distance = 1
 
 	var/list/item_upgrades = list()
+
+	/// Any upgrades in here will be applied on initialize().
+	var/list/initialized_upgrades = list()
+
 	var/max_upgrades = 3
 	prefixes = list()
 	var/list/blacklist_upgrades = list() //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
@@ -104,6 +108,13 @@
 	var/start_hidden = FALSE
 
 /obj/item/Initialize()
+
+	for (var/upgrade_typepath in initialized_upgrades)
+		var/obj/item/upgrade = new upgrade_typepath
+
+		if (!(SEND_SIGNAL(upgrade, COMSIG_IATTACK, src, null)))
+			QDEL_NULL(upgrade)
+
 	if(armor_list)
 		armor = getArmor(arglist(armor_list))
 	else

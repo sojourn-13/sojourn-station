@@ -155,26 +155,20 @@
 	..()
 	reload_message = "[name] ejects a depleted cell and fumbles a new one into their weapon."
 
-/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper
 	name = "Void Wolf Aerotrooper"
 	desc = "A Void Wolf mercenary wielding an energy rifle and jetpack."
 	icon_state = "voidwolf_flying"
 	icon_dead = "voidwolf_flying_dead"
-	melee_damage_lower = 10 //We dont like melee
-	melee_damage_upper = 15
-	ranged_cooldown = 3
 	ranged = TRUE
 	rapid = TRUE
+	rounds_left = 16
+	mags_left = 2
 	rapid_fire_shooting_amount = 3
 	projectiletype = /obj/item/projectile/beam
 	drop_items = list(/obj/item/gun/energy/cog)
-	limited_ammo = TRUE
-	mag_drop = TRUE
-	rounds_left = 16
-	mag_type = /obj/item/cell/medium/high/depleted
-	mags_left = 2
 
-/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper/New()
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper/New()
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
 
@@ -195,7 +189,7 @@
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 8
-	mag_type = /obj/item/cell/medium/high/depleted
+	mag_type = /obj/item/cell/small/high/depleted
 	mags_left = 1
 
 	times_to_get_stat_modifiers = 2 //two prefixes
@@ -206,6 +200,7 @@
 
 //Reavers, the void wolf elite.
 /mob/living/carbon/superior_animal/human/voidwolf/elite
+	// basetype, dont use
 	name = "Void Reaver Stormtrooper"
 	desc = "A void wolf reaver stormtrooper, vatgrown and given bionic enhancements, with far better equipment and decades of experience raiding ships and killing men under the command of a true reaver."
 	icon_state = "reaver_lasrak"
@@ -216,13 +211,14 @@
 	rapid = TRUE
 	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
-	projectiletype = /obj/item/projectile/beam/weak/smg
-	drop_items = list(/obj/item/gun/energy/firestorm)
+	drop_items = list(/obj/item/gun/projectile/automatic/ak47/akl/reaver_modded)
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 20
-	mag_type = /obj/item/cell/medium/high/depleted
+	mag_type = /obj/item/ammo_magazine/rifle_223/empty
 	mags_left = 3
+
+	casingtype = /obj/item/ammo_casing/beam/ap/spent
 
 	armor = list(melee = 60, bullet = 55, energy = 50, bomb = 75, bio = 100, rad = 25) //Legitmently their armor
 
@@ -230,21 +226,53 @@
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
 
-
 /mob/living/carbon/superior_animal/human/voidwolf/elite/Initialize()
 
 	allowed_stat_modifiers[/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage] += 10 //10% extra chance to be a glass cannon
 
 	. = ..()
 
+/mob/living/carbon/superior_animal/human/voidwolf/elite/laserak
+	projectiletype = /obj/item/projectile/beam/weak/ap/reaver
+	drop_items = list(/obj/item/gun/projectile/automatic/ak47/akl/reaver_modded)
+
+	mag_type = /obj/item/ammo_magazine/rifle_223/empty
+	mags_left = 3
+
+	rapid_fire_shooting_amount = 5 //we're using the burst 5 mode
+	delay_for_rapid_range = 0.22 SECONDS
+
+/obj/item/gun/projectile/automatic/ak47/akl/reaver_modded
+
+	initialized_upgrades = list(/obj/item/gun_upgrade/trigger/dangerzone,
+								/obj/item/tool_upgrade/refinement/laserguide,
+								/obj/item/tool_upgrade/productivity/ergonomic_grip,
+								/obj/item/gun_upgrade/barrel/bore,
+								/obj/item/tool_upgrade/refinement/stabilized_grip, // max is 5
+								)
+
 /mob/living/carbon/superior_animal/human/voidwolf/elite/c20r
 	icon_state = "reaver_bulldog"
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
-	drop_items = list(/obj/item/gun/projectile/automatic/c20r)
+	drop_items = list(/obj/item/gun/projectile/automatic/c20r/reaver_modded)
+
+	rapid_fire_shooting_amount = 8 // WE FIRE REALLY GODDAMN FAST
+	delay_for_rapid_range = 0.15 SECONDS
 	rounds_left = 32
-	mag_type = /obj/item/ammo_magazine/smg_35/empty
-	mags_left = 3
+	mag_type = /obj/item/ammo_magazine/smg_35/hv/empty
+	mags_left = 6 //since we fire. FAST
+
+	casingtype = /obj/item/ammo_casing/pistol_35/hv/spent
+
+/obj/item/gun/projectile/automatic/c20r/reaver_modded
+
+	initialized_upgrades = list(/obj/item/gun_upgrade/trigger/dangerzone,
+								/obj/item/tool_upgrade/refinement/laserguide,
+								/obj/item/tool_upgrade/productivity/ergonomic_grip,
+								/obj/item/tool_upgrade/refinement/stabilized_grip,
+								/obj/item/gun_upgrade/barrel/forged,
+								)
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/c20r/New()
 	..()
@@ -263,6 +291,10 @@
 	mag_type = /obj/item/ammo_magazine/a75/empty
 	mags_left = 0 //no spare mags, they are lethal
 
+	get_stat_modifier = FALSE
+
+	casingtype = /obj/item/ammo_casing/a75/spent
+
 /mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet/New()
 	..()
 	reload_message = "[name] rapidly reloads before the empty mag hits the ground!"// You should be panicing
@@ -279,6 +311,8 @@
 	limited_ammo = FALSE
 	drop_items = list(/obj/item/tool/sword/saber/cutlass, /obj/item/shield/buckler/energy/reaver/damaged)
 
+	var/block_chance = 65
+
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/New()
 	..()
 	reload_message = "[name] rapidly reloads?!"
@@ -287,18 +321,19 @@
 	return
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	if(prob(65))
+	if(prob(block_chance))
 		visible_message("\red \b [src] blocks the [O]!")
 		return
 	..()
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/bullet_act(var/obj/item/projectile/Proj)
-	if(!Proj)	return
-	if(prob(65))
+	if(!Proj)
+		return
+	if(prob(block_chance))
 		..()
 	else if (!(Proj.testing))
 		visible_message("\red <B>[src] blocks [Proj] with its shield!</B>")
-	return 0
+	return TRUE
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/Initialize()
 	..()
