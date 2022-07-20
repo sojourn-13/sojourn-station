@@ -211,7 +211,6 @@
 	rapid = TRUE
 	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
-	projectiletype = /obj/item/projectile/beam/weak/ap/reaver // we do extra damage thanks to the heavy barrel
 	drop_items = list(/obj/item/gun/projectile/automatic/ak47/akl/reaver_modded)
 	limited_ammo = TRUE
 	mag_drop = TRUE
@@ -234,7 +233,7 @@
 	. = ..()
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/laserak
-	projectiletype = /obj/item/projectile/beam/weak/ap
+	projectiletype = /obj/item/projectile/beam/weak/ap/reaver
 	drop_items = list(/obj/item/gun/projectile/automatic/ak47/akl/reaver_modded)
 
 	mag_type = /obj/item/ammo_magazine/rifle_223/empty
