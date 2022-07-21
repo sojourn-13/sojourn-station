@@ -83,6 +83,10 @@
 	display_name = "black suit skirt"
 	path = /obj/item/clothing/under/suit_jacket/blackskirt
 
+/datum/gear/uniform/fancy_redish_suit
+	display_name = "expensive brown suit"
+	path =/obj/item/clothing/under/fancy_redish_suit
+
 /datum/gear/uniform/latex_maid
 	display_name = "latex maid dress"
 	path = /obj/item/clothing/under/costume/kinky/latex_maid
@@ -220,7 +224,7 @@
 	display_name = "neon tracksuits, color presets"
 	path = /obj/item/clothing/under/neon
 	flags = GEAR_HAS_TYPE_SELECTION
-	
+
 /datum/gear/uniform/bodysuit
 	display_name = "eva skinsuit"
 	path = /obj/item/clothing/under/bodysuit
@@ -241,3 +245,7 @@
 		"white" = /obj/item/clothing/under/genericw
 	)
 	gear_tweaks += new /datum/gear_tweak/path(generic)
+
+/datum/gear/uniform/jersey
+	display_name = "tacky jersey"
+	path = /obj/item/clothing/under/costume/misc/jersey

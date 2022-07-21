@@ -21,8 +21,13 @@
 
 /obj/item/ammo_casing/Initialize()
 	. = ..()
+
 	if(ispath(projectile_type))
 		BB = new projectile_type(src)
+
+	if(spent_icon && !BB)
+		icon_state = spent_icon
+
 	pixel_x = rand(-10, 10)
 	pixel_y = rand(-10, 10)
 	if(amount > 1)

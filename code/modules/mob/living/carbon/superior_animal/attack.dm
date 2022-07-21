@@ -94,8 +94,6 @@
 	return
 
 /mob/living/carbon/superior_animal/proc/handle_ammo_check()
-	if(casingtype)
-		new casingtype(get_turf(src))
 	if(!limited_ammo)
 		return //Quick return
 	rounds_left -= rounds_per_fire //modular, tho likely will always be one
@@ -119,10 +117,6 @@
 		return
 
 	var/obj/item/projectile/A = new projectiletype(user:loc)
-	visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"))
-	if(casingtype)
-		new casingtype(get_turf(src))
-	playsound(user, projectilesound, projectilevolume, 1)
 	if(!A)
 		return
 
@@ -168,6 +162,10 @@
 
 		if (do_we_shoot)
 			A.launch(target, def_zone, firer_arg = src)
+			visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"))
+			if(casingtype)
+				new casingtype(get_turf(src))
+			playsound(user, projectilesound, projectilevolume, 1)
 		else
 			QDEL_NULL(A)
 

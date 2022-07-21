@@ -336,6 +336,32 @@
 	name = "Secure wooden crate"
 	icon_state = "serbcrate"
 
+/obj/structure/closet/crate/voidwolf
+	desc = "A secure wooden crate."
+	name = "Secure wooden crate"
+	icon_state = "serbcrate"
+
+/obj/structure/closet/crate/voidwolf/voidwolfdrugs
+
+/obj/structure/closet/crate/voidwolf/voidwolfdrugs/populate_contents()
+
+	new /obj/item/reagent_containers/hypospray/autoinjector/drugs(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/drugs(src)
+	new /obj/item/reagent_containers/syringe/drugs(src)
+	new /obj/item/reagent_containers/syringe/drugs(src)
+	new /obj/item/reagent_containers/pill/zoom(src)
+	new /obj/item/reagent_containers/pill/happy(src)
+	new /obj/item/seeds/ambrosiadeusseed(src)
+	new /obj/item/seeds/ambrosiavulgarisseed(src)
+	new /obj/item/reagent_containers/food/snacks/grown/ambrosiadeus(src)
+	new /obj/item/reagent_containers/food/snacks/grown/ambrosiadeus(src)
+	new /obj/item/reagent_containers/food/snacks/grown/ambrosiadeus(src)
+	new /obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris(src)
+	new /obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris(src)
+	new /obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris(src)
+
+	. = ..()
+
 /obj/structure/closet/crate/serbcrate_gray
 	desc = "A secure metallic crate."
 	name = "Secure metallic crate"

@@ -35,6 +35,8 @@
 	dir = EAST
 	var/width = 1
 
+	atmos_canpass = CANPASS_PROC
+
 	var/tryingToLock = FALSE // for autoclosing
 	var/damage_smoke = FALSE
 
