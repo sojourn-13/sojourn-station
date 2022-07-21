@@ -48,7 +48,6 @@ meteor_act
 					var/obj/item/newshrap = new P.shrapnel_type(organ)
 					organ.embed(newshrap)
 
-
 /mob/living/carbon/human/hit_impact(damage, dir)
 	if(incapacitated(INCAPACITATION_DEFAULT|INCAPACITATION_BUCKLED_PARTIALLY))
 		return
