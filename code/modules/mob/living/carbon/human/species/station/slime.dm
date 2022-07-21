@@ -3,6 +3,8 @@
 	name = "Slime"
 	name_plural = "slimes"
 
+//	spawn_flags = CAN_JOIN
+
 	default_form = FORM_SLIME
 	obligate_form = TRUE
 	reagent_tag = IS_SLIME
@@ -14,7 +16,6 @@
 	breath_type = null
 	poison_type = null
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 2
-	spawn_flags = IS_RESTRICTED
 
 	burn_mod = 1
 	brute_mod = 1
@@ -49,7 +50,6 @@
 		BP_R_LEG =  new /datum/organ_description/leg/right/slime
 	)
 
-//	spawn_flags = CAN_JOIN
 
 	perks = list(PERK_SPEED, PERK_LIMB_REGEN, PERK_MIND_BOOST, PERK_BODY_BOOST)
 
