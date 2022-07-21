@@ -219,7 +219,10 @@ SUBSYSTEM_DEF(trade)
 		if(current_stack.amount < current_stack.max_amount)	// prevents selling 3 as same as full stacks
 			return FALSE
 
-	return TRUE
+	if(ispath(offer_path, /datum/reagent))		// If item is not of the types checked and the offer is for a reagent, fail
+		return FALSE
+
+	return TRUE		// Otherwise, pass since we're not checking for anything with special considerations (reagents, stacks, containers) if the previous checks did not return
 
 /datum/controller/subsystem/trade/proc/assess_offer(obj/machinery/trade_beacon/sending/beacon, datum/trade_station/station, offer_path)
 	if(QDELETED(beacon) || !station)
