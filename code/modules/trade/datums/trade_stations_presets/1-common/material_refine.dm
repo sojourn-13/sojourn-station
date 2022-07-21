@@ -17,7 +17,7 @@
 	stations_recommended = list("trash")
 	inventory = list(
 		"Flares"  = list(
-			/obj/item/device/lighting/glowstick/flare,
+			/obj/item/device/lighting/glowstick/flare = good_data("Red Hand Flare", list(1, 5), 10),
 			/obj/item/ammo_magazine/ammobox/shotgun/flash,
 			/obj/item/gun/projectile/boltgun/flare_gun,
 			/obj/item/ammo_casing/flare/blue/prespawn,
