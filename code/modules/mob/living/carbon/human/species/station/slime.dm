@@ -1,9 +1,8 @@
 
 /datum/species/slime
+	spawn_flags = CAN_JOIN
 	name = "Slime"
 	name_plural = "slimes"
-
-//	spawn_flags = CAN_JOIN
 
 	default_form = FORM_SLIME
 	obligate_form = TRUE
@@ -52,6 +51,8 @@
 
 
 	perks = list(PERK_SPEED, PERK_LIMB_REGEN, PERK_MIND_BOOST, PERK_BODY_BOOST)
+
+	spawn_flags = CAN_JOIN
 
 /datum/species/slime/handle_death(var/mob/living/carbon/human/H)
 	spawn(1)
