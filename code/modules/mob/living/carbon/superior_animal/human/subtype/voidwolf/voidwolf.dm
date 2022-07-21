@@ -218,7 +218,7 @@
 	mag_type = /obj/item/ammo_magazine/rifle_223/empty
 	mags_left = 3
 
-	casingtype = /obj/item/ammo_casing/beam/ap/spent
+	flash_resistances = 20 //no.
 
 	armor = list(melee = 60, bullet = 55, energy = 50, bomb = 75, bio = 100, rad = 25) //Legitmently their armor
 
@@ -235,6 +235,8 @@
 /mob/living/carbon/superior_animal/human/voidwolf/elite/laserak
 	projectiletype = /obj/item/projectile/beam/weak/ap/reaver
 	drop_items = list(/obj/item/gun/projectile/automatic/ak47/akl/reaver_modded)
+
+	casingtype = /obj/item/ammo_casing/beam/ap/spent
 
 	mag_type = /obj/item/ammo_magazine/rifle_223/empty
 	mags_left = 3
