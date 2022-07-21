@@ -111,7 +111,7 @@
 	damage_multiplier = 1
 	penetration_multiplier = 1.2
 	init_recoil = RIFLE_RECOIL(1.3)
-	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg'
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn
 
@@ -153,7 +153,7 @@
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 1.2 //Well oiled
 	init_recoil = RIFLE_RECOIL(1.5)
-	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg' // This is the sound ripped from a video of me shooting an FM FSL. As real as it gets. - Seb
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield
 	serial_type = "NM"
