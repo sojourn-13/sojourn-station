@@ -145,7 +145,7 @@
 		time_adjust = 40
 
 		//For if a user is doing 'surgery' on their own prosthetic bodypart
-		if(target_organ_type = /obj/item/organ/external/robotic)
+		if(nature == MODIFICATION_SILICON)
 			difficulty_adjust = 80
 			time_adjust = 20
 
