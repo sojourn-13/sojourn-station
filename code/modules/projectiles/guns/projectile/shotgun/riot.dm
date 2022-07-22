@@ -57,6 +57,7 @@
 	icon = 'icons/obj/guns/projectile/operator.dmi'
 	icon_state = "operator"
 	item_state = "oporator"
+	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 4)
 	max_shells = 7
 	ammo_type = /obj/item/ammo_casing/shotgun

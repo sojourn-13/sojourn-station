@@ -6,6 +6,7 @@
 	icon = 'icons/obj/guns/projectile/swat.dmi' //Sprites by Toriate#0657 many loves and thanks to this amazing spriter!
 	icon_state = "swat"
 	item_state = "swat"
+	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 4)
 	max_shells = 7 //Same as the gladstone
