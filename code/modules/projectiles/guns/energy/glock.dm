@@ -21,7 +21,7 @@
 	zoom_factor = 0.4
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 10, MATERIAL_SILVER = 4, MATERIAL_PLASMA = 8)
 	price_tag = 5000
-	damage_multiplier = 1
+	damage_multiplier = 1.2
 	penetration_multiplier = 1.2
 	init_recoil = CARBINE_RECOIL(0.7)
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SIGHT)

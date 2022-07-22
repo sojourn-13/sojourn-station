@@ -182,6 +182,16 @@
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
 
+/obj/item/storage/box/m_kit/judge
+	name = "Judge Secondary Kit"
+	desc = "The standard Marshal box kit containing a Judge revolver, a large caliber revolver capable of firing a 7.5 round down range effectively. Highly sought after by police forces."
+
+	populate_contents()
+		new /obj/item/gun/projectile/revolver/judge(src)
+		new /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber(src)
+
+
+
 // Armor Kits
 /obj/item/storage/box/m_kit/standard_armor
 	name = "\improper Standard Visor Armor Kit"
