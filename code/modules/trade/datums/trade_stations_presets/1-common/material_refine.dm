@@ -17,7 +17,7 @@
 	stations_recommended = list("trash")
 	inventory = list(
 		"Flares"  = list(
-			/obj/item/device/lighting/glowstick/flare,
+			/obj/item/device/lighting/glowstick/flare = good_data("Red Hand Flare", list(1, 5), 10),
 			/obj/item/ammo_magazine/ammobox/shotgun/flash,
 			/obj/item/gun/projectile/boltgun/flare_gun,
 			/obj/item/ammo_casing/flare/blue/prespawn,
@@ -42,7 +42,7 @@
 			/obj/item/stack/material/wood/full = good_data("wood planks (x120)", list(2, 5), 360),
 			/obj/item/stack/material/glass/full = good_data("glass sheets (x120)", list(2, 5), 720),
 			/obj/item/stack/material/plasma/full = good_data("plasma sheets (x120)", list(1, 2), 3600),
-			/obj/item/stack/material/glass/plasmaglass = good_data("borosilicate glass sheets (x120)", list(3, 5), 3600)
+			/obj/item/stack/material/glass/plasmaglass/full = good_data("borosilicate glass sheets (x120)", list(3, 5), 3600)
 		)
 	)
 

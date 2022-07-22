@@ -65,3 +65,14 @@
 	if(!reagents.remove_reagent(ammo_type, use_amount)) // Do we have enough fuel? (Also consume the fuel if we have enough)
 		return null
 	return new projectile_type(src)
+
+// Ameridian shard launcher. Launches solid fragment of ameridian that can embed
+/obj/item/gun/matter/ameridian
+	name = "ameridian shard launcher"
+	desc = "A gun that fire shards of solid ameridian."
+	icon = 'icons/obj/guns/ameridian/ameridian_cog.dmi'
+	icon_state = "ameridian_cog"
+	item_state = "ameridian_cog"
+	fire_sound = 'sound/weapons/rail.ogg'
+	matter_type = MATERIAL_AMERIDIAN
+	projectile_type = /obj/item/projectile/ameridian_shard

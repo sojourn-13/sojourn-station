@@ -15,6 +15,20 @@
 
 	stattags = RANGED_STATTAG
 
+/datum/stat_modifier/mob/living/carbon/superior_animal/slowaimed
+
+	delay_for_range_mult = 1.2
+	delay_for_rapid_range_mult = 1.2
+
+	fire_delay_mult = 2
+	fire_delay_zeroth = 0.5 //at 0 fire delay, it gets multiplied from 0.5 to 1
+
+	prefix = "Slow-aimed"
+
+	description = "This one seems to take a bit of extra time to aim."
+
+	stattags = RANGED_STATTAG
+
 /datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger
 
 	rapid_fire_shooting_amount_mult = 2 //pretty noticable damage increase
@@ -37,5 +51,15 @@
 	prefix = "Quickdraw"
 
 	description = "This one seems vigilant, especially when it comes to keeping whatever they use as a weapon at the ready. It's likely they'll react faster than others."
+
+	stattags = RANGED_STATTAG
+
+/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw
+
+	delayed_adjustment = 1
+
+	prefix = "Slowdraw"
+
+	description = "This one seems to take a bit longer to fire than others."
 
 	stattags = RANGED_STATTAG

@@ -23,14 +23,13 @@
 	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 5, bio = 10, rad = 25)
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/none = 6,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/lustrous = 2,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/ = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/spider = 3,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young/spider = 2,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/spider = 3,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/lustrous = 33,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/ = 17,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/spider = 50,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/spider = 33,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/spider = 50,
 		/datum/stat_modifier/mob/living/carbon/superior_animal/venomous = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 1
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 16,
 	)
 
 	move_to_delay = 4.5

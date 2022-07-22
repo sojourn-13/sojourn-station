@@ -503,7 +503,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		user.visible_message("*click click*", SPAN_DANGER("*click*"))
 	else
 		src.visible_message("*click click*")
-	playsound(src.loc, 'sound/weapons/guns/misc/gun_empty.ogg', 100, 1)
+	playsound(src.loc, 'sound/weapons/guns/misc/trigger_fail.ogg', 100, 0) // Better sound! No variance please.
 	update_firemode() //Stops automatic weapons spamming this shit endlessly
 
 //called after successfully firing

@@ -1,13 +1,23 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal
 
+	/// Assoc list. If the key is present in the target's armor list var, add the value of this key to their key. If it isnt present, set the value to this key's value.
 	var/armor_adjustment = list(
-		melee = 0,
-		bullet = 0,
-		energy = 0,
-		bomb = 0,
-		bio = 0,
-		rad = 0,
-		agony = 0
+
+	)
+
+	/// Assoc list. If the key is present in the target's armor list var, multiply the value of their key by this value. If it isnt present, continue.
+	var/armor_mult = list(
+
+	)
+
+	/**
+	 * If the current armor value is negative, and this is true, and we are multiplying our target's armor,
+	 * get the difference between the target's current armor value of the current key, and subtract it with the difference between the value and the product of value*mult.
+    **/
+	var/invert_armor_mult_if_negative = FALSE
+	/// If we inverted due to armor being negative, we store the key of the armor and the difference between the initial value and the mult.
+	var/list/mult_diff = list(
+
 	)
 
 	var/flash_resistances_increment
@@ -45,6 +55,23 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/remove(qdel_src = TRUE)
 	if (issuperioranimal(holder))
 		var/mob/living/carbon/superior_animal/superior_holder = holder
+
+		if (armor_adjustment)
+			for (var/key in armor_adjustment)
+				if (key in superior_holder.armor)
+					superior_holder.armor[key] = (superior_holder.armor[key] - armor_adjustment[key])
+				else
+					continue //we add any missing keys in apply_to so this shouldnt happen but lets be careful
+
+		if (armor_mult)
+			for (var/key in armor_mult)
+				if (key in superior_holder.armor)
+					if ((superior_holder.armor[key] < 0) && invert_armor_mult_if_negative)
+						superior_holder.armor[key] = (superior_holder.armor[key] + mult_diff[key]) //add the multiplication difference between the initial armor value and our mult
+					else
+						superior_holder.armor[key] = (superior_holder.armor[key] / armor_mult[key]) //warning. negatives multiply into negatives
+				else
+					continue
 
 		if (flash_resistances_increment)
 			superior_holder.flash_resistances = ZERO_OR_MORE(superior_holder.flash_resistances - flash_resistances_increment)
@@ -98,12 +125,21 @@
 
 	return ..(qdel_src)
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/apply_to(atom/target)
-
-	. = ..()
+/datum/stat_modifier/mob/living/carbon/superior_animal/apply_to(atom/target, list/arguments, arguments_to_pass)
 
 	if (issuperioranimal(target))
 		var/mob/living/carbon/superior_animal/superior_target = target
+
+		if (armor_mult)
+			for (var/key in armor_mult)
+				if (key in superior_target.armor)
+					if ((superior_target.armor[key] < 0) && invert_armor_mult_if_negative)
+						mult_diff[key] = MULT_DIFFERENCE(superior_target.armor[key], armor_mult[key]) //we get the difference between the multiplier and product
+						superior_target.armor[key] = (superior_target.armor[key] - mult_diff[key]) //subtract the armor by the difference between itself and the mult) //then we subtract the armor value with the inverted value. -60*1.3 = -42 with this
+					else
+						superior_target.armor[key] = (superior_target.armor[key] * armor_mult[key]) //warning. negatives multiply into negatives
+				else
+					continue //we arent trying to override or anything, just multiply. this is practically already zero, so, lets just leave it
 
 		if (armor_adjustment)
 			for (var/key in armor_adjustment)
@@ -161,137 +197,4 @@
 			if (poison_per_bite_increment)
 				spider_target.poison_per_bite = ZERO_OR_MORE(spider_target.poison_per_bite + poison_per_bite_increment)
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/durable
-
-	armor_adjustment = list(
-	melee = 5,
-	bullet = 5,
-	bomb = 15,
-	agony = 30
-	)
-
-	flash_resistances_increment = 1
-
-	prefix = "Durable"
-
-	stattags = DEFENSE_STATTAG
-
-	description = "This one looks somewhat more sturdy than others. It'll likely be slightly more resistant to damage and pain."
-
-/datum/stat_modifier/mob/living/carbon/superior_animal/brutish
-
-	armor_adjustment = list(
-		melee = 5,
-		bullet = 5,
-		energy = -5,
-		bomb = 5,
-		agony = 15
-		)
-
-	melee_damage_lower_increment = 2
-	melee_damage_upper_increment = 2
-	maxHealth_increment = 5
-	armor_penetration_increment = 2
-
-	stattags = DEFENSE_STATTAG | MELEE_STATTAG
-
-	inherent_projectile_mult_increment = 0.1
-	projectile_armor_penetration_adjustment = 2
-
-	description = "This one is noticably muscular. It looks like it might hit harder than others."
-
-	prefix = "Brutish"
-
-/datum/stat_modifier/mob/living/carbon/superior_animal/padded
-
-	armor_adjustment = list(
-		melee = 10,
-		bullet = 5,
-		bomb = 10,
-		agony = 15 //Rubbers deal way less to us!
-	)
-
-	stattags = DEFENSE_STATTAG
-
-	maxHealth_increment = 10
-
-	prefix = "Padded"
-
-	description = "This one seems to be a bit 'puffier' than others. It looks like your attacks will do somewhat less on it."
-
-/datum/stat_modifier/mob/living/carbon/superior_animal/old
-
-	armor_adjustment = list(
-		melee = 5,
-		bullet = 5,
-		bomb = 10,
-		agony = 20 //just cant feel it
-	)
-
-	maxHealth_increment = 20 //life already seen them by
-	move_to_delay_increment = 1 // Very slow
-
-	stattags = DEFENSE_STATTAG
-
-	delay_for_range_mult = 1.1
-
-	prefix = "Old"
-
-	description = "This one seems old - lethargic, but seasoned. It's likely to be slower but harder to kill."
-
-/datum/stat_modifier/mob/living/carbon/superior_animal/young
-
-	armor_adjustment = list(
-		melee = -5,
-		bullet = -5,
-		energy = -5,
-		agony = -5
-	)
-
-	maxHealth_increment = -10
-
-	move_to_delay_increment = -0.5
-
-	delay_for_range_mult = 0.8
-
-	stattags = DEFENSE_STATTAG
-
-	prefix = "Young"
-
-	description = "This one seems to be more active and energetic than the others, but somewhat smaller. It's likely to be more fragile, but quicker."
-
-/datum/stat_modifier/mob/living/carbon/superior_animal/quick
-
-	move_to_delay_increment = -0.8
-	delay_for_range_mult = 0.8
-
-	stattags = DEFENSE_STATTAG
-
-	prefix = "Quick"
-
-	description = "This one seems to be quicker than the others."
-
-/// slower, deadlier, significantly tanker -- a significant buff
-/datum/stat_modifier/mob/living/carbon/superior_animal/brutal
-
-	armor_adjustment = list(
-		melee = 15,
-		bullet = 5,
-		bomb = 15,
-		agony = 30
-	)
-
-	flash_resistances_increment = 4
-
-	melee_damage_lower_mult = 1.3
-	melee_damage_upper_mult = 1.3
-
-	inherent_projectile_mult_increment = 1.3
-
-	stattags = DEFENSE_STATTAG | MELEE_STATTAG | RANGED_STATTAG
-
-	move_to_delay_increment = 1.3
-
-	prefix = "Brutal"
-
-	description = "This one looks exceptionally muscular and scarred. You get the feeling they might be significantly physically stronger, durable, and resistant to pain, than others of its like."
+	return ..(target, arguments, arguments_to_pass)

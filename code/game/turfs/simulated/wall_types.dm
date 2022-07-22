@@ -150,7 +150,7 @@
 	icon_state = "wall1"
 	opacity = 1
 	density = TRUE
-	blocks_air = 1
+	blocks_air = TRUE
 
 /turf/simulated/shuttle/wall/cargo
 	name = "Cargo Transport Shuttle (A5)"
@@ -177,6 +177,8 @@
 	icon = 'icons/turf/shuttle.dmi'
 	anchored = 1
 	density = TRUE
+
+	atmos_canpass = CANPASS_DENSITY
 
 /obj/structure/shuttle_part/cargo
 	name = "Cargo Transport Shuttle (A5)"

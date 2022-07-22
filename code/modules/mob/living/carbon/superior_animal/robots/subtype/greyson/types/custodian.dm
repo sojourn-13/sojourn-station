@@ -13,6 +13,17 @@
 
 	cleaning = TRUE //we do clean prase us!
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 20,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 3,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 2,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 10,
+	)
+
 	light_range = 3
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
@@ -83,6 +94,20 @@
 	ranged = TRUE
 	cleaning = FALSE
 	range_telegraph = "lurks back, getting ready to splash flaming oil at"
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 20,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/robotic = 15,
+		/datum/stat_modifier/health/mult/positive/low = 10,
+		/datum/stat_modifier/health/mult/negative/low = 10,
+		/datum/stat_modifier/health/mult/positive/medium = 5,
+		/datum/stat_modifier/health/mult/negative/medium = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw = 10,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 10,
+	)
 
 /mob/living/carbon/superior_animal/robot/greyson/custodian/chef/New()
 	. = ..()

@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper,
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor,
 /area/template_noop)
 "ab" = (
@@ -44,7 +44,7 @@
 /turf/simulated/floor/tiled/dark/cargo,
 /area/template_noop)
 "ak" = (
-/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper,
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/template_noop)
 "al" = (

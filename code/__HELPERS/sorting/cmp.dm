@@ -78,3 +78,10 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 	. = B[STAT_ENTRY_TIME] - A[STAT_ENTRY_TIME]
 	if (!.)
 		. = B[STAT_ENTRY_COUNT] - A[STAT_ENTRY_COUNT]
+
+/proc/cmp_rcon_smes(obj/machinery/power/smes/buildable/S1, obj/machinery/power/smes/buildable/S2)
+	return sorttext(S2.RCon_tag, S1.RCon_tag)
+
+/proc/cmp_rcon_bbox(obj/machinery/power/breakerbox/BR1, obj/machinery/power/breakerbox/BR2)
+	return sorttext(BR2.RCon_tag, BR1.RCon_tag)
+

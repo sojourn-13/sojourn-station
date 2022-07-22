@@ -6,8 +6,10 @@ GLOBAL_LIST_INIT(banned_vars, list(
 	"lastKnownIP",
 	"computer_id",
 	"loc",
-	"locs"
+	"locs",
+	"rights"
 ))
+GLOBAL_PROTECT(banned_vars)
 
 /// List of associative lists: Key = the name of the list, value = The mobs within. Used in path mode of buildmode for grouping mobs together.
 GLOBAL_LIST_EMPTY(mob_groups)

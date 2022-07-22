@@ -6,6 +6,7 @@
  * copypasting varedited atoms with ease.
 **/
 GLOBAL_LIST_EMPTY(var_copies)
+GLOBAL_PROTECT(var_copies)
 
 #define TOPIC_NOACTION 0
 #define TOPIC_HANDLED 1

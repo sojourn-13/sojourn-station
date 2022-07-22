@@ -42,7 +42,7 @@
 	return TRUE // Everything can go through, it's a sound barrier, not a physical thing
 
 /obj/machinery/shieldwall/ameridian/Crossed(atom/movable/O)
-	if(istype(O, /obj/item/stack/material/ameridian))
+	if(istype(O, /obj/item/stack/material/ameridian) || istype(O, /obj/item/projectile/ameridian_shard))
 		O.visible_message(SPAN_NOTICE("[O] shatter into dust under the sonic field."))
 		qdel(O)
 		return

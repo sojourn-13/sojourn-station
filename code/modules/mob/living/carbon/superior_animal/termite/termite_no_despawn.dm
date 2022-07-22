@@ -30,6 +30,20 @@
 
 	range_telegraph = "chitin begins to crack and spikes emerge, as it prepares to launch them at"
 
+	get_stat_modifier = TRUE
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 20,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified = 20,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 3,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 30,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 15,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
+		/datum/stat_modifier/mob/living/damage/positive/mixed/mult/low = 5,
+		/datum/stat_modifier/mob/living/damage/negative/mixed/mult/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
+	)
+
 	// Type of ore to spawn when the termite dies, even in maints we still drop ore correct
 	var/ore
 

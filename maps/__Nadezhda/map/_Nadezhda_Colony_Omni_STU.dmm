@@ -26247,7 +26247,6 @@
 /obj/item/ammo_magazine/ammobox/light_rifle_257,
 /obj/item/ammo_magazine/light_rifle_257,
 /obj/item/ammo_magazine/light_rifle_257,
-/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "fhz" = (
@@ -60400,6 +60399,7 @@
 /obj/item/ammo_magazine/ammobox/rifle_75,
 /obj/item/ammo_magazine/rifle_75/highvelocity,
 /obj/item/ammo_magazine/rifle_75/highvelocity,
+/obj/item/ammo_magazine/rifle_75_linked_box,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "lBQ" = (
@@ -77815,6 +77815,7 @@
 	pixel_y = 23
 	},
 /obj/item/gun/projectile/automatic/bull_autoshotgun,
+/obj/item/gun/projectile/boltgun/lever/shotgun/bounty,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "oPG" = (
@@ -80673,7 +80674,7 @@
 /obj/structure/closet/crate/serbcrate,
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine,
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine,
-/obj/item/gun/projectile/automatic/lmg/saw,
+/obj/item/gun/projectile/automatic/lmg/heroic,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "puu" = (

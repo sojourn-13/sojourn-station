@@ -20,6 +20,9 @@
 	spent_icon = "pistol_c_hv-spent"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/hv
 
+/obj/item/ammo_casing/pistol_35/hv/spent
+	projectile_type = null
+
 /obj/item/ammo_casing/pistol_35/practice
 	desc = "A 9mm practice bullet casing."
 	icon_state = "pistol_c_p"
@@ -685,6 +688,9 @@
 	caliber = CAL_70
 	projectile_type = /obj/item/projectile/bullet/gyro
 
+/obj/item/ammo_casing/a75/spent
+	projectile_type = null
+
 /obj/item/ammo_casing/cap
 	name = "cap"
 	desc = "A cap for children toys."
@@ -698,6 +704,9 @@
 	caliber = CAL_SCI
 	projectile_type = /obj/item/projectile/beam/weak
 
+/obj/item/ammo_casing/beam/spent
+	projectile_type = null
+
 /obj/item/ammo_casing/beam/ap
 	desc = "A piercing laser casing. Meant for penetration of armor thats cal is .223."
 	projectile_type = /obj/item/projectile/beam/weak/ap
@@ -705,6 +714,9 @@
 /obj/item/ammo_casing/beam/lethal
 	desc = "A dence laser casing. Compact laser that is easily blocked by armor thats cal is .223."
 	projectile_type = /obj/item/projectile/beam/weak/lethal
+
+/obj/item/ammo_casing/beam/ap/spent
+	projectile_type = null
 
 //// Grenade Shells ////
 

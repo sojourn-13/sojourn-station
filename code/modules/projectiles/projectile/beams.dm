@@ -78,6 +78,9 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	damage_types = list(BURN = 15)
 	armor_penetration = 25
 
+/obj/item/projectile/beam/weak/ap/reaver
+	damage_types = list(BURN = 16.5)
+
 /obj/item/projectile/beam/shotgun
 	damage_types = list(BURN = 35) //Normal slugs deal 45
 	armor_penetration = 10

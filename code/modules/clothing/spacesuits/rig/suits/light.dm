@@ -136,9 +136,11 @@
 
 /obj/item/clothing/shoes/lightrig/hacker
 	siemens_coefficient = 0.4
+	overslot = 1
 	flags = NOSLIP //All the other rigs have magboots anyways, hopefully gives the hacker suit something more going for it.
 
 /obj/item/clothing/gloves/lightrig/hacker
+	overslot = 1
 	siemens_coefficient = 0
 
 /obj/item/rig/light/ninja
