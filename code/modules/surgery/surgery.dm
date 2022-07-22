@@ -144,6 +144,11 @@
 		difficulty_adjust = 120
 		time_adjust = 40
 
+		//For if a user is doing 'surgery' on their own prosthetic bodypart
+		if(target_organ_type = /obj/item/organ/external/robotic)
+			difficulty_adjust = 80
+			time_adjust = 20
+
 		// ...unless you are a carrion
 		// It makes sense that carrions have a way of making their flesh cooperate
 		if(is_carrion(user))
