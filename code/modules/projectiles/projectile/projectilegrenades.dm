@@ -2,6 +2,7 @@
 	name = "baton round"
 	icon_state = "grenade"
 	damage_types = list(BRUTE = 10)
+	added_damage_laser_pve = 10
 	agony = 80
 	check_armour = ARMOR_MELEE
 	armor_penetration = 0
@@ -13,6 +14,7 @@
 	name = "grenade shell"
 	icon_state = "grenade"
 	damage_types = list(BRUTE = 10)
+	added_damage_laser_pve = 10
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE

@@ -5,7 +5,19 @@
 //If you need to do something else with armor - just use getarmor() proc and do with those numbers all you want
 //Random absorb system was a cancer, and was removed from all across the codebase. Don't recreate it. Clockrigger 2019
 
-/mob/living/proc/damage_through_armor(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/attack_flag = ARMOR_MELEE, var/armour_pen = 0, var/used_weapon = null, var/sharp = 0, var/edge = 0, var/post_pen_mult = 1)
+/mob/living/proc/damage_through_armor(
+	damage					= 0,
+	damagetype				= BRUTE,
+	def_zone				= null,
+	attack_flag				= ARMOR_MELEE,
+	armour_pen				= 0,
+	used_weapon				= null,
+	sharp					= FALSE,
+	edge					= FALSE,
+	post_pen_mult			= 1,
+	added_damage_bullet_pve	= 0,
+	added_damage_laser_pve	= 0
+	)
 
 	if(damage == 0)
 		return FALSE
@@ -14,30 +26,57 @@
 	var/armor = getarmor(def_zone, attack_flag)
 	var/guaranteed_damage_red = armor * ARMOR_GDR_COEFFICIENT
 	var/armor_effectiveness = max(0, ( armor - armour_pen ) )
-	var/armor_overpenetration = armour_pen - armor // This basiclly lets us over penitrate to deal extra damage. 20 AP - 10 Armor would give 10, well the reverse would be -10
 	var/effective_damage = damage - guaranteed_damage_red
 
-	if(damagetype == HALLOSS)
-		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/))
-			effective_damage = round ( effective_damage * ( 100 - src.getarmor(def_zone, "agony") ) / 100 )
-		else
+	if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/))
+		var/mob_brute_armor = src.getarmor(def_zone, "bullet") //All brute over-pen checks bullet rather then melee for simple mobs to keep melee viable
+		var/mob_laser_armor = src.getarmor(def_zone, "energy")
+		var/mob_agony_armor = src.getarmor(def_zone, "agony")
+
+		//message_admins("mob_brute_armor = [mob_brute_armor]!")
+		//message_admins("mob_laser_armor = [mob_laser_armor]!")
+		//message_admins("mob_agony_armor = [mob_agony_armor]!")
+
+		var/burns_armor_overpenetration = armour_pen - mob_laser_armor // This basiclly lets us over penitrate to deal extra damage
+		var/brute_armor_overpenetration = armour_pen - mob_brute_armor // This basiclly lets us over penitrate to deal extra damage
+
+		//message_admins("brute_armor_overpenetration = [brute_armor_overpenetration]!")
+		//message_admins("burns_armor_overpenetration = [burns_armor_overpenetration]!")
+
+		//message_admins("effective_damage = [effective_damage]!")
+		//message_admins("added_damage_bullet_pve = [added_damage_bullet_pve]!")
+		//message_admins("added_damage_laser_pve = [added_damage_laser_pve]!")
+
+		if(damagetype == HALLOSS)
+			effective_damage =  max(0,round(effective_damage - mob_agony_armor))
+
+		if(damagetype == AGONY)
+			effective_damage =  max(0,round(effective_damage - mob_agony_armor))
+
+		if(brute_armor_overpenetration > 0 && damagetype == BRUTE)
+			effective_damage += max(0,round(brute_armor_overpenetration - mob_brute_armor))
+
+		if(burns_armor_overpenetration > 0 && damagetype == BURN)
+			effective_damage += max(0,round(burns_armor_overpenetration - mob_laser_armor))
+
+		if(added_damage_bullet_pve)
+			effective_damage += max(0,round(added_damage_bullet_pve - mob_brute_armor))
+
+		if(added_damage_laser_pve)
+			effective_damage += max(0,round(added_damage_laser_pve - mob_laser_armor))
+
+
+		//message_admins("post math effective_damage = [effective_damage]!")
+
+	else
+
+		if(damagetype == HALLOSS)
 			effective_damage = round(effective_damage * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)))
-	//Simple and superior mobs have a different way of dealing with agony damage.
-	if(damagetype == AGONY)
-		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/))
-			effective_damage = round ( effective_damage * ( 100 - src.getarmor(def_zone, "agony") ) / 100 )
+
 
 	if(effective_damage <= 0)
 		show_message(SPAN_NOTICE("Your armor fully absorbs the blow!"))
 		return FALSE
-
-	if(armor_overpenetration > 0 && damagetype == BRUTE) //did we even over-penitrate?
-		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
-			effective_damage += max(0,round(armor_overpenetration - src.getarmor(def_zone, "bullet")) * 0.8) //We re-check are armor we over-pentrated and reduce the effective damage by 0.8, this counts both melee and bullets. We reduce are over AP as bullets tend to have a lot
-
-	if(armor_overpenetration > 0 && damagetype == BURN) //did we even over-penitrate?
-		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
-			effective_damage += max(0,round((armor_overpenetration - src.getarmor(def_zone, "energy")))) //We re-check are armor we over-pentrated and deal the extra damage accordingly.
 
 
 	//Here we can remove edge or sharpness from the blow
@@ -138,7 +177,7 @@
 					dmult += P.supereffective_mult
 			damage *= dmult
 			if (!(P.testing))
-				damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P), post_pen_mult = P.post_penetration_dammult)
+				damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P), post_pen_mult = P.post_penetration_dammult, added_damage_bullet_pve = P.added_damage_bullet_pve, added_damage_laser_pve = P.added_damage_laser_pve)
 
 
 	if(P.agony > 0 && istype(P,/obj/item/projectile/bullet))
