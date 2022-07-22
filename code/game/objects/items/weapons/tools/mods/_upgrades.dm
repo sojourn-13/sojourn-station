@@ -393,6 +393,8 @@
 		G.penetration_multiplier *= weapon_upgrades[GUN_UPGRADE_PEN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
 		G.pierce_multiplier += weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
+	if(weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE])
+		G.proj_agony_multiplier *= weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE]
 	if(weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT])
 		G.proj_step_multiplier *= weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])

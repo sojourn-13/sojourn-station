@@ -4,6 +4,7 @@
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
 	damage_types = list(BURN  = 30) // 10 more damage than the Cog
+	added_damage_laser_pve = 30
 	irradiate = 25
 	armor_penetration = 15 // 5 less AP than the Cog
 	check_armour = ARMOR_ENERGY
@@ -17,6 +18,7 @@
 /obj/item/projectile/ameridian_shard
 	name = "ameridian shard"
 	damage_types = list(BRUTE = 40)
+	added_damage_laser_pve = 80 //op plz nerf
 	irradiate = 10
 	armor_penetration = 25
 	check_armour = ARMOR_BULLET
