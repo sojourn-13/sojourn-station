@@ -38,7 +38,7 @@
 
 /obj/item/oddity/roundstart/book_2
 	name = "old book"
-	desc = "A book depicting a specific type of story , by using narratives and images. Theres alot of general informations that teach the reader about old and ancient traditions and tales."
+	desc = "A book depicting a specific type of story, by using narratives and images. Theres alot of general informations that teach the reader about old and ancient traditions and tales."
 	icon_state = "rounstart_oddity_2"
 
 	oddity_stats = list(
