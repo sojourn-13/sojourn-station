@@ -52,19 +52,20 @@ Has ability of every roach.
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 
 /mob/living/carbon/superior_animal/roach/kaiser/getTargets()
-	..()
+	. = ..()
+
 	rounds_left = 2 //Reload us, after all we are now targeting someone new
 	ranged = TRUE //Were reloaded we can be ranged once more
 
 /mob/living/carbon/superior_animal/roach/kaiser/New()
-	..()
+	. = ..()
 	gas_sac = new /datum/reagents(100, src)
 	pixel_x = -16  // For some reason it doesn't work when I overload them in class definition, so here it is.
 	pixel_y = -16
 
 
 /mob/living/carbon/superior_animal/roach/kaiser/handle_ai()
-	..()
+	. = ..()
 
 	if(can_call_reinforcements())
 		distress_call()
