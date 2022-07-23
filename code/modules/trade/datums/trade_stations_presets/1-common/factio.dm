@@ -100,7 +100,7 @@
 	)
 
 	offer_types = list(
-		/obj/item/hatton_magazine = offer_data("Hatton Magazone", 800, 5),
+		/obj/item/hatton_magazine = offer_data("Hatton Magazine", 800, 5),
 		/obj/item/hatton = offer_data("Hatton", 1000, 1),
 		/obj/item/plastique = offer_data("Plastic Explosive", 2000, 1)
 	)
