@@ -30,7 +30,7 @@
 	desc = "A familiar book depicting a strange and alien exo-planet, telling its stories by images and strange-looking words. Maybe your ancestry came from here... Or maybe you found this world.... many possibilities."
 	icon_state = "rounstart_oddity_1"
 
-		oddity_stats = list(
+	oddity_stats = list(
 		STAT_MEC = 1,
 		STAT_BIO = 1,
 		STAT_COG = 1,
@@ -41,7 +41,7 @@
 	desc = "A book depicting a specific type of story , by using narratives and images. Theres alot of general informations that teach the reader about old and ancient traditions and tales."
 	icon_state = "rounstart_oddity_2"
 
-		oddity_stats = list(
+	oddity_stats = list(
 		STAT_MEC = 1,
 		STAT_BIO = 1,
 		STAT_COG = 1,
@@ -52,7 +52,7 @@
 	desc = "A non-functional zippo lighter... and looking even rusted. Something about it might tell many tales."
 	icon_state = "rounstart_oddity_4"
 
-		oddity_stats = list(
+	oddity_stats = list(
 		STAT_MEC = 1,
 		STAT_TGH = 1,
 		STAT_VIG = 1
