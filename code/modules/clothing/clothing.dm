@@ -594,6 +594,7 @@ BLIND     // can't see anything
 	allowed = list(
 		/obj/item/clipboard,
 		/obj/item/storage/pouch/,
+		/obj/item/storage/sheath,
 		/obj/item/gun,
 		/obj/item/melee,
 		/obj/item/material,
