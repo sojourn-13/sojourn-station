@@ -11,6 +11,7 @@
 	offer_limit = 20
 	base_income = 0
 	wealth = 0
+	regain_stock = FALSE
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 300
 	stations_recommended = list("mcronalds") //Alt way to get to it

@@ -14,14 +14,15 @@
 	hidden_inv_threshold = 1000
 	recommendation_threshold = 3000
 	stations_recommended = list("greyson")
+	regain_stock = FALSE
 	inventory = list(
 		"Disk Designs" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/misc = custom_good_nameprice("Lonestar Miscellaneous Pack", list(1, 10)),
-			/obj/item/computer_hardware/hard_drive/portable/design/robustcells = custom_good_nameprice("Lonestar Robustcells", list(1, 10)),
-			/obj/item/computer_hardware/hard_drive/portable/design/janitor = custom_good_nameprice("Lonestar Janitor Pack", list(1, 10)),
-			/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = custom_good_nameprice("H&S Nonlethal Magazines Pack", list(1, 10)),
-			/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo = custom_good_nameprice("H&S Lethal Magazines Pack", list(1, 10)),
-			/obj/item/computer_hardware/hard_drive/portable/design/security = custom_good_nameprice("Security Miscellaneous Pack", list(1, 10)),
+			/obj/item/computer_hardware/hard_drive/portable/design/misc = custom_good_nameprice("Lonestar Miscellaneous Pack", list(800, 1000)),
+			/obj/item/computer_hardware/hard_drive/portable/design/robustcells = custom_good_nameprice("Lonestar Robustcells", list(800, 1000)),
+			/obj/item/computer_hardware/hard_drive/portable/design/janitor = custom_good_nameprice("Lonestar Janitor Pack", list(800, 1000)),
+			/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = custom_good_nameprice("H&S Nonlethal Magazines Pack", list(800, 1000)),
+			/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo = custom_good_nameprice("H&S Lethal Magazines Pack", list(800, 1000)),
+			/obj/item/computer_hardware/hard_drive/portable/design/security = custom_good_nameprice("Security Miscellaneous Pack", list(800, 1000)),
 			/obj/item/computer_hardware/hard_drive/portable = custom_good_nameprice("Blank Disk", list(1, 10))
 		),
 		"Printed Goods" = list(
@@ -52,10 +53,10 @@
 
 	hidden_inventory = list(
 		"Disk II" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/components = custom_good_name("Artificer's ARK-034 Components"),
-			/obj/item/computer_hardware/hard_drive/portable/design/adv_tools = custom_good_name("Artificer's IJIRO-451 Advanced Tools"),
-			/obj/item/computer_hardware/hard_drive/portable/design/circuits = custom_good_name("Artificer's ESPO-830 Circuits"),
-			/obj/item/computer_hardware/hard_drive/portable/design/logistics = custom_good_name("Artificer's LAT-018 Logistics")
+			/obj/item/computer_hardware/hard_drive/portable/design/components = custom_good_nameprice("Artificer's ARK-034 Components", list(800, 1000)),
+			/obj/item/computer_hardware/hard_drive/portable/design/adv_tools = custom_good_nameprice("Artificer's IJIRO-451 Advanced Tools", list(800, 1000)),
+			/obj/item/computer_hardware/hard_drive/portable/design/circuits = custom_good_nameprice("Artificer's ESPO-830 Circuits", list(800, 1000)),
+			/obj/item/computer_hardware/hard_drive/portable/design/logistics = custom_good_nameprice("Artificer's LAT-018 Logistics", list(800, 1000))
 		),
 		"Printed II" = list(
 			/obj/item/tool/crowbar = good_data("Crowbar", list(-100, -50), 60),
