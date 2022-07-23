@@ -7,7 +7,7 @@
 	tree_y = 0.9
 	start_discovered = TRUE
 	spawn_always = TRUE
-	markup = COMMON_GOODS
+	markup = UNIQUE_GOODS //For markup
 	offer_limit = 20
 	base_income = 800
 	wealth = 0
@@ -41,11 +41,11 @@
 			/obj/item/modular_computer = good_data("Computer Frame", list(-9900, -9850), 10),
 			/obj/item/construct/conveyor = good_data("Conveyor Belt", list(-9900, -9850), 15),
 			/obj/item/construct/conveyor_switch = good_data("Conveyor Switch Frame", list(-900, -850), 15),
-			/obj/item/grenade = good_data("Grenage Case", list(-9900, -9850), 150),
+			/obj/item/grenade = good_data("Grenage Case", list(-9900, -9850), 350),
 			/obj/item/handcuffs = good_data("Hand Cuffs", list(-9900, -9850), 100),
 			/obj/item/shield = good_data("Shield", list(-9900, -850), 250),
 			/obj/item/gun_upgrade = good_data("Gun Upgrade", list(-9900, -9850), 350),
-			/obj/item/tool/baton = good_data("Stun Baton", list(-9900, -9850), 250),
+			/obj/item/tool/baton = good_data("Stun Baton", list(-9900, -9850), 550),
 			/obj/item/extinguisher = good_data("Extinguisher", list(-9900, -9850), 30)
 		)
 	)
