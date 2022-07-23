@@ -12,8 +12,8 @@
 	base_income = 0		// Needs ore to refine
 	wealth = 0
 	offer_limit = 30
-	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	hidden_inv_threshold = 7000
+	recommendation_threshold = 8000
 	stations_recommended = list("trash")
 	inventory = list(
 		"Flares"  = list(
