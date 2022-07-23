@@ -344,6 +344,9 @@ SUBSYSTEM_DEF(trade)
 	if(cost <= 0)
 		cost = get_import_cost(thing, station)
 
+	if(thing.surplus_tag)
+		cost -= cost * 0.2
+
 	if(account)
 		create_log_entry("Individial Sale", account.get_name(), "<li>[thing.name]</li>", cost)
 		qdel(thing)
@@ -379,6 +382,9 @@ SUBSYSTEM_DEF(trade)
 			var/item_price = get_price(item, TRUE)
 			var/export_multiplier = get_export_price_multiplier(item)
 			var/export_value = item_price * export_multiplier
+
+			if(item.surplus_tag)
+				item_price -= item_price * 0.2
 
 			if(export_multiplier)
 				invoice_contents_info += "<li>[item.name]</li>"
