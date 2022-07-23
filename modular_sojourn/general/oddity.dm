@@ -44,7 +44,7 @@
 	oddity_stats = list(
 		STAT_MEC = 1,
 		STAT_BIO = 1,
-		STAT_COG = 1,
+		STAT_COG = 1
 	)
 
 /obj/item/oddity/roundstart/lighter
