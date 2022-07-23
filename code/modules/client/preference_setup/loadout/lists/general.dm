@@ -85,3 +85,8 @@
 /datum/gear/trackingimplanter
 	display_name = "implanter (tracking)"
 	path = /obj/item/implanter/tracking
+
+/datum/gear/oddity
+	display_name = "oddity selection"
+	path = /obj/item/oddity/roundstart
+	flags = GEAR_HAS_TYPE_SELECTION

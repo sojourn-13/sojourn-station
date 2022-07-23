@@ -3268,4 +3268,5 @@
 #include "modular_sojourn\cardgame_2\cardholder.dm"
 #include "modular_sojourn\cardgame_2\cardpacks_and_spawner.dm"
 #include "modular_sojourn\cardgame_2\items.dm"
+#include "modular_sojourn\general\oddity.dm"
 // END_INCLUDE
