@@ -28,7 +28,7 @@
 		list(QUALITY_HAMMERING, 10, "time" = 30) // ...and hammer them into shape!
 	)
 
-/datum/craft_recipe/gun/stripper1
+/datum/craft_recipe/gun/stripper2
 	name = "handmade 7.62mm rifle stripper clip"
 	result = /obj/item/ammo_magazine/speed_loader_rifle_75/empty
 	steps = list(
