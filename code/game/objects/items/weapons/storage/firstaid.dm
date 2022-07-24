@@ -474,7 +474,7 @@
 	new /obj/item/storage/pill_bottle/bicaridine(src)
 	new /obj/item/storage/pill_bottle/dermaline(src)
 	new /obj/item/storage/pill_bottle/spaceacillin(src)
-	new /obj/item/storage/pill_bottle/antitox(src)
+	new /obj/item/storage/pill_bottle/carthatoline(src)
 	new /obj/item/storage/pill_bottle/prosurgeon(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/device/scanner/health(src)

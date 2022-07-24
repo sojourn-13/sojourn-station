@@ -130,9 +130,10 @@
 	initial_contents = list(/obj/item/storage/pill_bottle/bicaridine,
 	/obj/item/storage/pill_bottle/dermaline,
 	/obj/item/storage/pill_bottle/dexalin_plus,
-	/obj/item/storage/pill_bottle/dylovene,
+	/obj/item/storage/pill_bottle/carthatoline,
 	/obj/item/storage/pill_bottle/tramadol,
 	/obj/item/storage/pill_bottle/spaceacillin,
+	/obj/item/reagent_containers/hypospray/autoinjector/sanguinum,
 	/obj/item/stack/medical/splint)
 
 //Crates
