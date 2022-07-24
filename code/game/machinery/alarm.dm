@@ -1044,7 +1044,7 @@ FIRE ALARM
 			if(buildstage == 1)
 				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 					to_chat(user, "You pry out the circuit!")
-					var/obj/item/airalarm_electronics/circuit = new /obj/item/airalarm_electronics()
+					var/obj/item/airalarm_electronics/circuit = new /obj/item/firealarm_electronics()
 					circuit.loc = user.loc
 					buildstage = 0
 					update_icon()
