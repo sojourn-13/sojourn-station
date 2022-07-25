@@ -238,6 +238,13 @@
 	item_state = "syrette_quickclot"
 	baseline_sprite = "syrette_quickclot"
 
+/obj/item/reagent_containers/hypospray/autoinjector/sanguinum
+	name = "autoinjector (sanguinum)"
+	preloaded_reagents = list("sanguinum" = 5)
+	icon_state = "syrette_red"
+	item_state = "syrette_red"
+	baseline_sprite = "syrette_red"
+
 /obj/item/reagent_containers/hypospray/autoinjector/spaceacillin
 	name = "autoinjector (spaceacillin)"
 	icon_state = "syrette_spacealine"

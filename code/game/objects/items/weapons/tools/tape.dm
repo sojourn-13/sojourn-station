@@ -86,7 +86,7 @@
 
 /obj/item/tool/tape_roll/bonegel/si
 	name = "bone super gel"
-	desc = "A gel-like calcium composite used as a surgical substitute for broken or missing bone pieces."
+	desc = "An improved gel-like calcium composite formula used as an efficient surgical substitute for broken or missing bone pieces."
 	icon = 'icons/obj/stack/items.dmi'
 	icon_state = "bonegel_SI"
 	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 3)

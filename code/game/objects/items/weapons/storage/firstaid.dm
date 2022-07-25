@@ -109,7 +109,7 @@
 	new /obj/item/reagent_containers/pill/dexalin(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/quickclot(src)
-	new /obj/item/reagent_containers/hypospray/autoinjector/quickclot(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/sanguinum(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
 
@@ -143,9 +143,10 @@
 	new /obj/item/storage/pill_bottle/bicaridine(src)
 	new /obj/item/storage/pill_bottle/dermaline(src)
 	new /obj/item/storage/pill_bottle/dexalin_plus(src)
-	new /obj/item/storage/pill_bottle/dylovene(src)
+	new /obj/item/storage/pill_bottle/carthatoline(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/storage/pill_bottle/spaceacillin(src)
+	new /obj/item/storage/pill_bottle/bloodregen(src)
 	new /obj/item/stack/medical/splint(src)
 
 /obj/item/storage/firstaid/surgery
@@ -473,7 +474,7 @@
 	new /obj/item/storage/pill_bottle/bicaridine(src)
 	new /obj/item/storage/pill_bottle/dermaline(src)
 	new /obj/item/storage/pill_bottle/spaceacillin(src)
-	new /obj/item/storage/pill_bottle/antitox(src)
+	new /obj/item/storage/pill_bottle/carthatoline(src)
 	new /obj/item/storage/pill_bottle/prosurgeon(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/device/scanner/health(src)
@@ -565,6 +566,19 @@
     new /obj/item/reagent_containers/pill/dylovene(src)
     new /obj/item/reagent_containers/pill/dylovene(src)
 
+/obj/item/storage/pill_bottle/carthatoline
+	name = "bottle of Carthatoline pills"
+	desc = "Contains pills used to counteract severe poisoning and liver failure."
+
+/obj/item/storage/pill_bottle/carthatoline/populate_contents()
+	new /obj/item/reagent_containers/pill/carthatoline(src)
+	new /obj/item/reagent_containers/pill/carthatoline(src)
+	new /obj/item/reagent_containers/pill/carthatoline(src)
+	new /obj/item/reagent_containers/pill/carthatoline(src)
+	new /obj/item/reagent_containers/pill/carthatoline(src)
+	new /obj/item/reagent_containers/pill/carthatoline(src)
+	new /obj/item/reagent_containers/pill/carthatoline(src)
+
 /obj/item/storage/pill_bottle/inaprovaline
 	name = "bottle of Inaprovaline pills"
 	desc = "Contains pills used to stabilize patients."
@@ -642,6 +656,19 @@
 	new /obj/item/reagent_containers/pill/prosurgeon(src)
 	new /obj/item/reagent_containers/pill/prosurgeon(src)
 	new /obj/item/reagent_containers/pill/prosurgeon(src)
+
+/obj/item/storage/pill_bottle/bloodregen
+	name = "bottle of Blood Deficiency supplements"
+	desc = "Contains pills to help speed up natural blood generation."
+
+/obj/item/storage/pill_bottle/bloodregen/populate_contents()
+	new /obj/item/reagent_containers/pill/bloodregen(src)
+	new /obj/item/reagent_containers/pill/bloodregen(src)
+	new /obj/item/reagent_containers/pill/bloodregen(src)
+	new /obj/item/reagent_containers/pill/bloodregen(src)
+	new /obj/item/reagent_containers/pill/bloodregen(src)
+	new /obj/item/reagent_containers/pill/bloodregen(src)
+	new /obj/item/reagent_containers/pill/bloodregen(src)
 
 /*
  * Portable Freezers
