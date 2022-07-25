@@ -16,6 +16,14 @@
 	src.generate_pointers()
 	src.populate_step_flags()
 
+//Call when a method is done incorrectly that provides a flat debuff to the whole meal.
+/datum/cooking_with_jane/recipe_tracker/proc/apply_flat_penalty(var/penalty)
+	if(active_recipe_pointers.len == 0)
+		return
+
+	for (var/datum/cooking_with_jane/recipe_pointer/pointer in active_recipe_pointers)
+		pointer.tracked_quality -= penalty
+
 //Generate recipe_pointer objects based on the global list
 /datum/cooking_with_jane/recipe_tracker/proc/generate_pointers()
 	log_debug("Called /datum/cooking_with_jane/recipe_tracker/proc/generate_pointers")
