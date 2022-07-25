@@ -146,7 +146,7 @@
 	new /obj/item/storage/pill_bottle/carthatoline(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/storage/pill_bottle/spaceacillin(src)
-	new /obj/item/reagent_containers/hypospray/autoinjector/sanguinum(src)
+	new /obj/item/storage/pill_bottle/bloodregen(src)
 	new /obj/item/stack/medical/splint(src)
 
 /obj/item/storage/firstaid/surgery
@@ -656,6 +656,19 @@
 	new /obj/item/reagent_containers/pill/prosurgeon(src)
 	new /obj/item/reagent_containers/pill/prosurgeon(src)
 	new /obj/item/reagent_containers/pill/prosurgeon(src)
+
+/obj/item/storage/pill_bottle/bloodregen
+	name = "bottle of Blood Deficiency supplements"
+	desc = "Contains pills to help speed up natural blood generation."
+
+/obj/item/storage/pill_bottle/bloodregen/populate_contents()
+	new /obj/item/reagent_containers/pill/bloodregen(src)
+	new /obj/item/reagent_containers/pill/bloodregen(src)
+	new /obj/item/reagent_containers/pill/bloodregen(src)
+	new /obj/item/reagent_containers/pill/bloodregen(src)
+	new /obj/item/reagent_containers/pill/bloodregen(src)
+	new /obj/item/reagent_containers/pill/bloodregen(src)
+	new /obj/item/reagent_containers/pill/bloodregen(src)
 
 /*
  * Portable Freezers
