@@ -212,7 +212,7 @@
 	name = "Ferritin-Hemosiderin pill"
 	desc = "A pill of iron supplements meant to help the natural restoration of blood."
 	icon_state = "pill5"
-	preloaded_reagents = list("iron" = 10 "protein" = 10) // Sugar does nothing to restore blood, but Protein does!
+	preloaded_reagents = list("iron" = 10, "protein" = 10) // Sugar does nothing to restore blood, but Protein does!
 
 //Pills with random content
 /obj/item/reagent_containers/pill/floorpill
