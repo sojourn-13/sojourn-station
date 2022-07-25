@@ -95,10 +95,10 @@
 		ShiftClickOn(A)
 		return 0
 	if(modifiers["alt"]) // alt and alt-gr (rightalt)
-		AltClickOn(A)
+		AltClickOn(A, params)
 		return 1
 	if(modifiers["ctrl"])
-		CtrlClickOn(A)
+		CtrlClickOn(A, params)
 		return 1
 
 	if(stat || paralysis || stunned || weakened)
@@ -284,10 +284,10 @@
 	Ctrl click
 	For most objects, pull
 */
-/mob/proc/CtrlClickOn(var/atom/A)
+/mob/proc/CtrlClickOn(var/atom/A, params)
 	A.CtrlClick(src)
 	return
-/atom/proc/CtrlClick(var/mob/user)
+/atom/proc/CtrlClick(var/mob/user, params)
 	SEND_SIGNAL(src, COMSIG_CLICK_CTRL, user)
 	return
 
