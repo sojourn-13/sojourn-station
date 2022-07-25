@@ -32,6 +32,10 @@
 	/// use the [SS_NO_FIRE] flag instead for systems that never fire to keep it from even being added to list that is checked every tick
 	var/can_fire = TRUE
 
+	// Similar to can_fire, but intended explicitly for subsystems that are asleep. Using this var instead of can_fire
+	//	 allows admins to disable subsystems without them re-enabling themselves.
+	var/suspended = FALSE
+
 	///Bitmap of what game states can this subsystem fire at. See [RUNLEVELS_DEFAULT] for more details.
 	var/runlevels = RUNLEVELS_DEFAULT //points of the game at which the SS can fire
 
@@ -296,3 +300,15 @@
 // 		if (NAMEOF(src, queued_priority)) //editing this breaks things.
 // 			return FALSE
 // 	. = ..()
+
+// Suspends this subsystem. Functionally identical to disable(), but shows SUSPEND in MC panel.
+// 	Preferred over disable() for self-disabling subsystems.
+/datum/controller/subsystem/proc/suspend()
+	suspended = TRUE
+
+// Wakes a suspended subsystem.
+/datum/controller/subsystem/proc/wake()
+	if (suspended)
+		suspended = FALSE
+		if (can_fire)
+			next_fire = world.time + wait

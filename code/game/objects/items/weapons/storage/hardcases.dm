@@ -395,8 +395,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/med/medical_job_trama/populate_contents()
-	new /obj/item/rig/trauma_suit/equipped(src)
 	new /obj/item/clothing/suit/straight_jacket(src)
+	new /obj/item/gearbox/traumatizedteam(src)
 	new /obj/item/storage/firstaid/soteria/large(src)
 	new /obj/item/gun/energy/sst/formatbound/preloaded(src)
 	new /obj/item/cell/medium/moebius/high(src)
@@ -442,3 +442,58 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	sticker_name = "scrap"
 	desc = "An old lacquer coated hardcase with engineering markings that can hold a variety of different tools and materials. Alt+click to open and close."
 	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
+
+
+////////////////////////////////////////////Rando 'gear kits'./////////////////////////////////////
+
+
+/obj/item/gunbox/warrantofficer //credit goes to Hestia both for the idea of loadout gun box and for the code, and sprite.
+	name = "\improper Warrant Officers equipment kit"
+	desc = "A secure box containing the Warrant Officers primary weapon."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "rifle_case"
+
+/obj/item/gunbox/warrantofficer/attack_self(mob/living/user)
+	..()
+	var/stamped
+	if(!stamped)
+		stamped = TRUE
+		var/list/options = list()
+		options["Osprey - precision rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/fancy,/obj/item/ammo_magazine/heavy_rifle_408,/obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408/rubber)
+		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags, /obj/item/ammo_magazine/ammobox/c10x24_small)
+		options["Galaxy - Plasma pistol"] = list(/obj/item/gun/energy/glock,/obj/item/cell/medium/high)
+		var/choice = input(user,"What type of equipment?") as null|anything in options
+		if(src && choice)
+			var/list/things_to_spawn = options[choice]
+			for(var/new_type in things_to_spawn)
+				var/atom/movable/AM = new new_type(get_turf(src))
+				if(istype(AM, /obj/item/gun/))
+					to_chat(user, "You have chosen \the [AM].")
+			qdel(src)
+		else
+			stamped = FALSE
+
+obj/item/gearbox/traumatizedteam
+	name ="\improper Trauma Teams equipment kit."
+	desc = "A secure box containing the heavy duty protective gear of the Soteria Trauma Team."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "secure"
+
+obj/item/gearbox/traumatizedteam/attack_self(mob/living/user)
+	..()
+	var/stamped
+	if(!stamped)
+		stamped = TRUE
+		var/list/options = list()
+		options["Trauma Team RIG"] = list(/obj/item/rig/trauma_suit/equipped)
+		options["Advanced Paramedic Armor"] = list(/obj/item/clothing/suit/armor/paramedic,/obj/item/clothing/head/helmet/faceshield/paramedic)
+		var/choice = input(user,"What type of equipment?") as null|anything in options
+		if(src && choice)
+			var/list/things_to_spawn = options[choice]
+			for(var/new_type in things_to_spawn)
+				var/atom/movable/AM = new new_type(get_turf(src))
+				if(istype(AM, /obj/item/gun/))
+					to_chat(user, "You have chosen \the [AM].")
+			qdel(src)
+		else
+			stamped = FALSE

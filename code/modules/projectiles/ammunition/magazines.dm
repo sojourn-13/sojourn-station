@@ -167,6 +167,11 @@
 	ammo_color = "-hv"
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 
+/obj/item/ammo_magazine/smg_35/hv/empty
+
+	ammo_color = ""
+	initial_ammo = 0
+
 /obj/item/ammo_magazine/smg_35/rubber
 	name = "smg magazine (9mm rubber)"
 	icon_state = "smg_r"
@@ -910,6 +915,10 @@
 	. = ..()
 	update_icon()
 
+/obj/item/ammo_magazine/speed_loader_rifle_75/empty
+	initial_ammo = 0
+	icon_state = "stripper_base"
+
 /obj/item/ammo_magazine/speed_loader_light_rifle_257
 	name = "ammo strip (6.5mm Carbine)"
 	desc = "A 10 round ammo strip for 6.5mm Carbine."
@@ -930,6 +939,10 @@
 /obj/item/ammo_magazine/speed_loader_light_rifle_257/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/item/ammo_magazine/speed_loader_light_rifle_257/empty
+	initial_ammo = 0
+	icon_state = "stripper_base"
 
 /obj/item/ammo_magazine/speed_loader_heavy_rifle_408
 	name = "ammo strip (8.6mm Heavy Rifle)"

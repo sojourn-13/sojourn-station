@@ -50,7 +50,7 @@
 
 /obj/item/clothing/glasses/sechud
 	name = "HUD sunglasses"
-	desc = "Sunglasses with a HUD."
+	desc = "A pair of stylish sunglasses with an integrated Security-HUD. No one said cops couldn't be stylish."
 	icon_state = "sunhud"
 	prescription = TRUE
 

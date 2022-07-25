@@ -137,7 +137,7 @@
 	new /obj/item/device/radio(src)
 	new /obj/item/tool/crowbar(src)
 	new /obj/item/extinguisher/mini(src)
-	new /obj/item/clothing/shoes/reinforced(src)
+	new /obj/item/clothing/shoes/reinforced/medical(src)
 	new /obj/item/device/radio/headset/headset_med(src)
 	new /obj/item/taperoll/medical(src)
 	new /obj/item/storage/belt/medical/emt(src)

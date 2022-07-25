@@ -6,20 +6,12 @@
 #define BLOCKED 3
 
 #define ZONE_MIN_SIZE 14 //zones with less than this many turfs will always merge, even if the connection is not direct
+#define EDGE_KNOCKDOWN_MAX_DISTANCE 16	// Maximum distance between an airflow origin and a movable before knockdown no longer applies.
 
 #define CANPASS_ALWAYS 1
 #define CANPASS_DENSITY 2
 #define CANPASS_PROC 3
 #define CANPASS_NEVER 4
-
-#define NORTHUP (NORTH|UP)
-#define EASTUP (EAST|UP)
-#define SOUTHUP (SOUTH|UP)
-#define WESTUP (WEST|UP)
-#define NORTHDOWN (NORTH|DOWN)
-#define EASTDOWN (EAST|DOWN)
-#define SOUTHDOWN (SOUTH|DOWN)
-#define WESTDOWN (WEST|DOWN)
 
 #define TURF_HAS_VALID_ZONE(T) (istype(T, /turf/simulated) && T:zone && !T:zone:invalid)
 
@@ -34,14 +26,14 @@ var/list/gzn_check = list(NORTH, SOUTH, EAST, WEST, UP, DOWN)
 	} \
 	else if (B.z != A.z) { \
 		if (B.z < A.z) { \
-			if (!istype(A, /turf/simulated/open)) { \
+			if (!isopenturf(A)) { \
 				ret = BLOCKED; \
 			} else { \
 				ret = ZONE_BLOCKED; \
 			} \
 		} \
 		else { \
-			if (!istype(B, /turf/simulated/open)) { \
+			if (!isopenturf(B)) { \
 				ret = BLOCKED; \
 			} else { \
 				ret = ZONE_BLOCKED; \

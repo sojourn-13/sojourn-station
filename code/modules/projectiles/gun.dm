@@ -106,6 +106,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/twohanded = FALSE //If TRUE, gun can only be fired when wileded
 	var/recentwield = 0 // to prevent spammage
 	var/proj_step_multiplier = 1
+	var/proj_pve_damage_multiplier = 1 //Damage against mobs that are not player multiplier
 	var/list/proj_damage_adjust = list() //What additional damage do we give to the bullet. Type(string) -> Amount(int)
 
 	var/eject_animatio = FALSE //Only currenly in bolt guns. Check boltgun.dm for more information on this
@@ -370,7 +371,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			return FALSE
 	return TRUE
 
-/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, extra_proj_damagemult = 0, extra_proj_penmult = 0, extra_proj_wallbangmult = 0, extra_proj_stepdelaymult = 0, multiply_projectile_agony = 0)
+/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, extra_proj_damagemult = 0, extra_proj_penmult = 0, extra_proj_wallbangmult = 0, extra_proj_stepdelaymult = 0, multiply_projectile_agony = 0, multiply_pve_damage = 0)
 	if(!user || !target) return
 
 	if((world.time < next_fire_time) || currently_firing)
@@ -425,6 +426,11 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			projectile.multiply_projectile_agony(multiply_projectile_agony)
 
 		projectile.multiply_projectile_agony(proj_agony_multiplier)
+
+		if(multiply_pve_damage)
+			projectile.multiply_pve_damage(multiply_pve_damage)
+
+		projectile.multiply_pve_damage(proj_pve_damage_multiplier)
 
 		if(muzzle_flash)
 			set_light(muzzle_flash)
@@ -503,7 +509,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		user.visible_message("*click click*", SPAN_DANGER("*click*"))
 	else
 		src.visible_message("*click click*")
-	playsound(src.loc, 'sound/weapons/guns/misc/gun_empty.ogg', 100, 1)
+	playsound(src.loc, 'sound/weapons/guns/misc/trigger_fail.ogg', 100, 0) // Better sound! No variance please.
 	update_firemode() //Stops automatic weapons spamming this shit endlessly
 
 //called after successfully firing
@@ -933,6 +939,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 /obj/item/gun/ui_data(mob/user)
 	var/list/data = list()
 	data["damage_multiplier"] = damage_multiplier
+	data["proj_pve_damage_multiplier"] = proj_pve_damage_multiplier
 	data["pierce_multiplier"] = pierce_multiplier
 	data["penetration_multiplier"] = penetration_multiplier
 
@@ -1012,7 +1019,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/data = list()
 	data["projectile_name"] = P.name
 	data["projectile_damage"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()
+	data["projectile_damage_pve"] = (P.get_total_damage() * damage_multiplier) + (P.get_total_damage_pve() * proj_pve_damage_multiplier) + get_total_damage_adjust() + (P.agony * proj_agony_multiplier)
 	data["projectile_AP"] = P.armor_penetration * penetration_multiplier
+	data["projectile_pain"] = P.agony * proj_agony_multiplier
 	data["projectile_recoil"] = P.recoil
 	qdel(P)
 	return data
@@ -1024,6 +1033,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	pierce_multiplier = initial(pierce_multiplier)
 	proj_step_multiplier = initial(proj_step_multiplier)
 	proj_agony_multiplier = initial(proj_agony_multiplier)
+	proj_pve_damage_multiplier = initial(proj_pve_damage_multiplier)
 	extra_damage_mult_scoped = initial(extra_damage_mult_scoped)
 	scoped_offset_reduction  = initial(scoped_offset_reduction)
 	fire_delay = initial(fire_delay)

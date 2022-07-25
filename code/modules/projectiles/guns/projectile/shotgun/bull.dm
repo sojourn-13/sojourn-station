@@ -9,7 +9,7 @@
 	load_method = SINGLE_CASING|SPEEDLOADER
 	handle_casings = HOLD_CASINGS
 	max_shells = 7
-	w_class = ITEM_SIZE_HUGE
+	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
@@ -39,6 +39,7 @@
 	icon = 'icons/obj/guns/projectile/bigpeacewalker.dmi'
 	icon_state = "bigpeacewalker"
 	item_state = "PW"
+	w_class = ITEM_SIZE_HUGE
 	max_shells = 8
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10)
 	price_tag = 1500
