@@ -233,7 +233,7 @@
 			list(name="Box (8.6 Rubber)", cost=3820, path=/obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber),
 			list(name="Box (8.6 Practice)", cost=200, path=/obj/item/ammo_magazine/ammobox/heavy_rifle_408/practice),
 			list(name="Linked Ammunition Box (8.6 Ball)", cost=2820, path=/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408),
-			list(name="Linked Ammunition Box (8.6 Hollow Point)", cost=3460, path=/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/highvelocity),
+			list(name="Linked Ammunition Box (8.6 High velocity)", cost=3460, path=/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/highvelocity),
 			list(name="Linked Ammunition Box (8.6 Hollow Point)", cost=3460, path=/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/lethal),
 			list(name="Linked Ammunition Box (8.6 Rubber)", cost=2820, path=/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/rubber),
 			list(name="Linked Ammunition Box (8.6 Empty)", cost=420, path=/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/empty),

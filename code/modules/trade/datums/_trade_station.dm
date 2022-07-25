@@ -21,7 +21,7 @@
 	var/initialized = FALSE
 	var/uid 						// Needed for unlocking via recommendations since names are selected from a pool
 
-	var/tree_x = 0.1				// Position on the trade tree map, 0 - left, 1 - right                 
+	var/tree_x = 0.1				// Position on the trade tree map, 0 - left, 1 - right
 	var/tree_y = 0.1				// 0 - down, 1 - top
 
 	var/update_time = 0				// For displaying the time remaining on the UI
@@ -64,6 +64,8 @@
 
 	var/obj/effect/overmap_event/overmap_object
 	var/turf/overmap_location
+
+	var/regain_stock = TRUE
 
 /datum/trade_station/New(init_on_new)
 	. = ..()
@@ -168,8 +170,18 @@
 
 // The station will restock based on base_income + wealth, then check unlockables.
 /datum/trade_station/proc/goods_tick()
-	// Add base income
+	// Compare total favor and unlock thresholds
+	if(!hidden_inv_unlocked)
+		try_unlock_hidden_inv()
+
+	if(!recommendation_unlocked)
+		try_recommendation()
+
 	wealth += base_income		// Base income doesn't contribute to favor
+
+	if(!regain_stock)
+		return
+	// Add base income
 
 	// Restock
 	var/starting_balance = wealth								// For calculating production budget
@@ -208,13 +220,6 @@
 		if(total_cost < wealth)
 			set_good_amount(good_packet["cat"], good_packet["index"], good_packet["to add"] + good_packet["current amt"])
 			subtract_from_wealth(total_cost)
-
-	// Compare total favor and unlock thresholds
-	if(!hidden_inv_unlocked)
-		try_unlock_hidden_inv()
-
-	if(!recommendation_unlocked)
-		try_recommendation()
 
 /datum/trade_station/proc/try_unlock_hidden_inv()
 	if(favor >= hidden_inv_threshold)
