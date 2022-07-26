@@ -21,7 +21,7 @@
 /datum/event/carp_migration/setup()
 	//We'll pick space tiles which have windows nearby
 	//This means that carp will only be spawned in places where someone could see them
-	var/area/spess = locate(/area/nadezhda/outside/lakeside) in world
+	var/area/spess = locate(/area/nadezhda/outside/forest) in world
 	for (var/turf/T in spess)
 		if (!(T.z in GLOB.maps_data.station_levels))
 			continue
@@ -31,7 +31,7 @@
 
 		//The number of windows near each tile is recorded
 		var/numwin
-		for (var/obj/structure/window/W in view(4, T))
+		for (var/turf/simulated/floor/asteroid/grass/W in view(4, T))
 			numwin++
 
 		//And the square of it is entered into the list as a weight
@@ -55,7 +55,7 @@
 	if(severity == EVENT_LEVEL_MAJOR)
 		spawn_fish(260)
 	else if(severity == EVENT_LEVEL_MODERATE)
-		spawn_fish(50)
+		spawn_fish(75)
 
 /datum/event/carp_migration/proc/spawn_fish(var/number)
 	var/list/spawn_locations = pickweight_mult(viable_turfs, number)
