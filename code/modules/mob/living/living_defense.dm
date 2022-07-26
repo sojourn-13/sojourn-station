@@ -31,7 +31,7 @@
 	//GDR - guaranteed damage reduction. It's a value that deducted from damage before all calculations
 	var/armor = getarmor(def_zone, attack_flag)
 	var/guaranteed_damage_red = armor * ARMOR_GDR_COEFFICIENT
-	var/armor_effectiveness = max(0, ((armor - armour_pen) * armor_times_mod))
+	var/armor_effectiveness = max(0, ((armor * armor_times_mod) - armour_pen))
 	var/effective_damage = damage - guaranteed_damage_red
 
 	if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/))
