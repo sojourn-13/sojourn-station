@@ -22,10 +22,16 @@
 	if(damage == 0)
 		return FALSE
 
+	//Used for simple/super mobs do to their armor being checked twice
+	var/armor_times_mod = 1
+
+	if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/))
+		armor_times_mod = 0.5
+
 	//GDR - guaranteed damage reduction. It's a value that deducted from damage before all calculations
 	var/armor = getarmor(def_zone, attack_flag)
 	var/guaranteed_damage_red = armor * ARMOR_GDR_COEFFICIENT
-	var/armor_effectiveness = max(0, ( armor - armour_pen ) )
+	var/armor_effectiveness = max(0, ((armor - armour_pen) * armor_times_mod))
 	var/effective_damage = damage - guaranteed_damage_red
 
 	if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/))
@@ -37,8 +43,13 @@
 		//message_admins("mob_laser_armor = [mob_laser_armor]!")
 		//message_admins("mob_agony_armor = [mob_agony_armor]!")
 
-		var/burns_armor_overpenetration = armour_pen - mob_laser_armor // This basiclly lets us over penitrate to deal extra damage
-		var/brute_armor_overpenetration = armour_pen - mob_brute_armor // This basiclly lets us over penitrate to deal extra damage
+		//We take the armor pen and baseline armor for calulating the armor pen rather then the reduction so that we get correct values
+		var/burns_armor_overpenetration = armour_pen - mob_laser_armor
+		var/brute_armor_overpenetration = armour_pen - mob_brute_armor
+
+		//This is put here rather then above over-pen as we want to keep over-pen being with baseline armor rather then halfed.
+		mob_brute_armor = mob_brute_armor * armor_times_mod
+		mob_laser_armor = mob_laser_armor * armor_times_mod
 
 		//message_admins("brute_armor_overpenetration = [brute_armor_overpenetration]!")
 		//message_admins("burns_armor_overpenetration = [burns_armor_overpenetration]!")
@@ -54,11 +65,12 @@
 			effective_damage =  max(0,round(effective_damage - mob_agony_armor))
 
 		if(brute_armor_overpenetration > 0 && damagetype == BRUTE)
-			effective_damage += max(0,round(brute_armor_overpenetration - mob_brute_armor))
+			effective_damage += max(0,round(brute_armor_overpenetration))
 
 		if(burns_armor_overpenetration > 0 && damagetype == BURN)
-			effective_damage += max(0,round(burns_armor_overpenetration - mob_laser_armor))
+			effective_damage += max(0,round(burns_armor_overpenetration))
 
+		//This is why we cut are armor, otherwise we would be checking base armor 2 times for reduction
 		if(added_damage_bullet_pve)
 			effective_damage += max(0,round(added_damage_bullet_pve - mob_brute_armor))
 
@@ -80,7 +92,7 @@
 
 
 	//Here we can remove edge or sharpness from the blow
-	if ( (sharp || edge) && prob ( getarmor (def_zone, attack_flag) ) )
+	if((sharp || edge) && prob (getarmor(def_zone, attack_flag)))
 		sharp = 0
 		edge = 0
 
