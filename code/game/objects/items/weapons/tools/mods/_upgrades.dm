@@ -394,7 +394,7 @@
 	if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
 		G.pierce_multiplier += weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE])
-		G.proj_agony_multiplier *= weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE]
+		G.proj_pve_damage_multiplier *= weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE]
 	if(weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT])
 		G.proj_step_multiplier *= weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
@@ -572,6 +572,13 @@
 				to_chat(user, SPAN_NOTICE("Increases projectile damage by [amount*100]%"))
 			else
 				to_chat(user, SPAN_WARNING("Decreases projectile damage by [abs(amount*100)]%"))
+
+		if(weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE])
+			var/amount = weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE]-1
+			if(amount > 0)
+				to_chat(user, SPAN_NOTICE("Increases PVE damage by [amount*100]%"))
+			else
+				to_chat(user, SPAN_WARNING("Decreases PVE damage by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PEN_MULT]-1
