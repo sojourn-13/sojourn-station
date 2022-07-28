@@ -108,7 +108,7 @@
 	join_tag = /datum/job/doctor
 
 /datum/job/recovery_team
-	title = "Soteria Recovery Specialist"
+	title = "Soteria Client Recovery Specialist"
 	flag = RECOVERYTEAM
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
@@ -119,13 +119,8 @@
 	difficulty = "Ungratifying."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
-<<<<<<< Updated upstream
-	alt_titles = list("Soteria Client Recovery Specialist")
+	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/medical/trauma_team
-=======
-	alt_titles = (null)
-	outfit_type = /decl/hierarchy/outfit/job/medical/recovery_team
->>>>>>> Stashed changes
 
 	health_modifier = 5
 	perks = list(/datum/perk/medicalexpertise, /datum/perk/chemist) // Can treat people well but can't do surgery or chemistry as good as a doctor.
