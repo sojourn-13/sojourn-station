@@ -78,7 +78,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/church/acolyte
 	also_known_languages = list(LANGUAGE_LATIN = 100)
 	security_clearance = CLEARANCE_COMMON
-	alt_titles = list("Divisor","Factorial","Monomial","Lemniscate","Tessellate")
+	alt_titles = list("Divisor","Factorial","Monomial","Lemniscate","Tessellate", "Mason", "Militant", "Herald", "Apothecary", "Shaman")
 	health_modifier = 5
 	stat_modifiers = list(
 	STAT_MEC = 25,
