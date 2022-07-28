@@ -8,7 +8,7 @@
 //*********************************//
 ///9mm///
 /obj/item/projectile/bullet/pistol_35
-	damage_types = list(BRUTE = 8)
+	damage_types = list(BRUTE = 11)
 	armor_penetration = 5
 	step_delay = 0.65
 	can_ricochet = TRUE
@@ -21,7 +21,7 @@
 /obj/item/projectile/bullet/pistol_35/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 3)
+	damage_types = list(BRUTE = 4)
 	agony = 22
 	armor_penetration = 0
 	embed = FALSE
@@ -58,7 +58,7 @@
 
 
 /obj/item/projectile/bullet/pistol_35/hv
-	damage_types = list(BRUTE = 5)
+	damage_types = list(BRUTE = 7)
 	armor_penetration = 20
 	step_delay = 0.5
 	affective_damage_range = 4
@@ -69,7 +69,7 @@
 
 /obj/item/projectile/bullet/pistol_35/practice
 	name = "practice bullet"
-	damage_types = list(BRUTE = 1)
+	damage_types = list(BRUTE = 2)
 	agony = 3
 	armor_penetration = 0
 	embed = FALSE
@@ -81,7 +81,7 @@
 
 /obj/item/projectile/bullet/pistol_35/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 8.5)
+	damage_types = list(BRUTE = 13)
 	agony = 6
 	post_penetration_dammult = 2
 	armor_penetration = 0
@@ -94,7 +94,7 @@
 	added_damage_bullet_pve = 17
 
 /obj/item/projectile/bullet/pistol_35/scrap
-	damage_types = list(BRUTE = 6)
+	damage_types = list(BRUTE = 8)
 	armor_penetration = 0
 
 	affective_damage_range = 1
@@ -104,7 +104,7 @@
 
 /obj/item/projectile/bullet/pistol_35/biomatter
 	name = "biomatter bullet"
-	damage_types = list(TOX = 9)
+	damage_types = list(TOX = 12)
 	agony = 20
 	armor_penetration = 0
 	penetrating = 0
@@ -121,7 +121,7 @@
 /// 10mm Magnum ///
 
 /obj/item/projectile/bullet/magnum_40
-	damage_types = list(BRUTE = 12)
+	damage_types = list(BRUTE = 16)
 	armor_penetration = 10
 	can_ricochet = TRUE
 	step_delay = 0.4
@@ -133,7 +133,7 @@
 
 /obj/item/projectile/bullet/magnum_40/practice
 	name = "practice bullet"
-	damage_types = list(BRUTE = 1)
+	damage_types = list(BRUTE = 2)
 	agony = 3
 	armor_penetration = 0
 	embed = FALSE
@@ -144,7 +144,7 @@
 	added_damage_bullet_pve = 1
 
 /obj/item/projectile/bullet/magnum_40/hv
-	damage_types = list(BRUTE = 10)
+	damage_types = list(BRUTE = 13)
 	armor_penetration = 33
 	penetrating = 1
 	step_delay = 0.25
@@ -157,7 +157,7 @@
 /obj/item/projectile/bullet/magnum_40/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 5)
+	damage_types = list(BRUTE = 8)
 	agony = 30
 	armor_penetration = 0
 	embed = FALSE
@@ -203,7 +203,7 @@
 
 /obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 12)
+	damage_types = list(BRUTE = 16)
 	agony = 11
 	armor_penetration = 0
 	post_penetration_dammult = 2
@@ -216,7 +216,7 @@
 	added_damage_bullet_pve = 24
 
 /obj/item/projectile/bullet/magnum_40/scrap
-	damage_types = list(BRUTE = 10)
+	damage_types = list(BRUTE = 13)
 	armor_penetration = 5
 	affective_damage_range = 1
 	affective_ap_range = 1
@@ -225,7 +225,7 @@
 
 /obj/item/projectile/bullet/magnum_40/biomatter
 	name = "biomatter bullet"
-	damage_types = list(TOX = 13)
+	damage_types = list(TOX = 17)
 	agony = 32
 	armor_penetration = 0
 	penetrating = 0
@@ -540,7 +540,7 @@
 ///Snowflake  ///
 
 /obj/item/projectile/bullet/c10x24
-	damage_types = list(BRUTE = 9)
+	damage_types = list(BRUTE = 13)
 	armor_penetration = 18
 	penetrating = 2
 	can_ricochet = TRUE
