@@ -29,6 +29,24 @@
 	unlocks_designs = list(/datum/design/research/item/cleaner)
 
 
+/datum/technology/dart_plus
+	name = "SI \"Artemis\" Dart Carbine"
+	desc = "A gas-powered dart carbine capable of delivering chemical cocktails swiftly across short distances."
+	tech_type = RESEARCH_ILLEGAL
+
+	x = 0.3
+	y = 0.3
+	icon = "artemis"
+
+	required_tech_levels = list(/datum/technology/advanced_biotech)
+	required_tech_levels = list(RESEARCH_BIOTECH = 10, RESEARCH_ENGINEERING = 3, RESEARCH_COMBAT = 5)
+	cost = 2000
+
+	unlocks_designs = list(/datum/design/research/item/ammo/fancy_dart,
+							/datum/design/research/item/ammo/dart_mag,
+							/datum/design/research/item/weapon/carbine_dartgun)
+
+
 /datum/technology/night_sight
 	name = "Vision Augmentation" //Undark was a better name
 	desc = "A better look into the shadows that haunt the colony, allows for the manufacturing of night vision goggles and RIG night vision huds."
