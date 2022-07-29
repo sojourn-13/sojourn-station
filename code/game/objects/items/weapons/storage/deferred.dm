@@ -98,13 +98,13 @@
 	icon_state = "combat_surgery_kit"
 	item_state = "combat_surgery_kit"
 	initial_contents = list(
-		/obj/item/tool/bonesetter,
+		/obj/item/tool/bonesetter/adv,
 		/obj/item/tool/saw/circular/medical,
 		/obj/item/tool/hemostat/adv,
 		/obj/item/tool/retractor/adv,
 		/obj/item/tool/scalpel/laser,
 		/obj/item/tool/tape_roll/bonegel,
-		/obj/item/tool/surgicaldrill,
+		/obj/item/tool/surgicaldrill/adv,
 		/obj/item/reagent_containers/syringe/stim/ultra_surgeon,
 		/obj/item/storage/pill_bottle/tramadol,
 		/obj/item/stack/medical/advanced/bruise_pack
@@ -130,9 +130,10 @@
 	initial_contents = list(/obj/item/storage/pill_bottle/bicaridine,
 	/obj/item/storage/pill_bottle/dermaline,
 	/obj/item/storage/pill_bottle/dexalin_plus,
-	/obj/item/storage/pill_bottle/dylovene,
+	/obj/item/storage/pill_bottle/carthatoline,
 	/obj/item/storage/pill_bottle/tramadol,
 	/obj/item/storage/pill_bottle/spaceacillin,
+	/obj/item/reagent_containers/hypospray/autoinjector/sanguinum,
 	/obj/item/stack/medical/splint)
 
 //Crates

@@ -26,7 +26,7 @@
 	//We'll pick space tiles which have windows nearby
 	//This means that drones will only be spawned in places where someone could see them
 		//And thusly, places where they might fire into the ship
-	var/area/spess = locate(/area/nadezhda/outside) in world
+	var/area/spess = locate(/area/nadezhda/outside/forest) in world
 	for (var/turf/T in spess)
 		if (!(T.z in GLOB.maps_data.station_levels))
 			continue
@@ -36,7 +36,7 @@
 
 		//The number of windows near each tile is recorded
 		var/numwin
-		for (var/obj/structure/window/W in view(4, T))
+		for (var/turf/simulated/floor/asteroid/grass/W in view(4, T))
 			numwin++
 
 		//And the square of it is entered into the list as a weight
