@@ -45,6 +45,10 @@
 	if(contents && !tracker)
 		to_chat("The [src] is full. Remove the finished meal from it first.")
 
+	process_item(I, user)
+	return
+
+/obj/item/cooking_with_jane/cooking_container/proc/process_item(var/obj/I, var/mob/user)
 	//OK, time to load the tracker
 	if(!tracker)
 		tracker = new /datum/cooking_with_jane/recipe_tracker(src)
@@ -63,8 +67,6 @@
 			update_icon()
 		if(CWJ_LOCKOUT)
 			to_chat("You can't make the same decision twice!")
-	return
-
 
 /obj/item/cooking_with_jane/cooking_container/verb/empty()
 	set src in oview(1)

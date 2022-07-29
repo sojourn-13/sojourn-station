@@ -2,7 +2,6 @@
 #define T_HI "High"
 #define T_MED "Medium"
 #define T_LOW "Low"
-#define T_NONE "None"
 #define ON 1
 #define OFF 0
 
@@ -15,7 +14,7 @@
 	anchored = TRUE
 	layer = BET_LOW_OBJ_LAYER
 	cooking = FALSE
-	var/list/temperature= list(T_HI, T_HI, T_HI, T_HI)
+	var/list/temperature= list(T_LOW, T_LOW, T_LOW, T_LOW)
 	var/list/timer = list(1 MINUTE, 1 MINUTE, 1 MINUTE, 1 MINUTE)
 	var/list/switches = list(OFF, OFF, OFF, OFF)
 	var/list/cooking_timestamp = list(0, 0, 0, 0) //Timestamp of when cooking initialized so we know if the prep was disturbed at any point.
@@ -39,7 +38,6 @@
 	return input
 
 /obj/machinery/cooking_with_jane/stove/attackby(var/obj/item/used_item, var/mob/user, params)
-
 	if(!(QUALITY_SCREW_DRIVING in used_item.tool_qualities))
 		return ..()
 	var/list/click_params = params2list(params)
@@ -47,24 +45,26 @@
 	
 	if(item[input] != null)
 		to_chat(usr, SPAN_NOTICE("That burner already has something on it!"))		
-	else if(istype(used_item, /obj/item/cooking_with_jane/cooking_container))
+	else
 		to_chat(usr, SPAN_NOTICE("You put a [used_item] on the stove."))
 		if(usr.canUnEquip(used_item))
 			usr.unEquip(used_item, src)
 		else
 			used_item.forceMove(src)
 		items[input] = used_item
+		if(switches[input] == ON)
+			cooking_timestamp[input] = world.time
+	update_icon()
 
 /obj/machinery/cooking_with_jane/stove/attack_hand(mob/user as mob, params)
 	var/list/click_params = params2list(params)
 	var/input = getInput(params)
 	if(item[input] != null)
 		if(switches[item] == ON)
-			if(istype(items[input], /obj/item/cooking_with_jane/cooking_container))
-				var/obj/item/cooking_with_jane/cooking_container/container = items[input]
-				reference_time = world.time
-				container.tracker.process_item(src)
-			if(ishuman(user) && (temperature[input] == T_HI || temperature[input] == T_MED))
+			
+			handle_cooking(user, input)
+			
+			if(ishuman(user) && (temperature[input] == T_HI || temperature[input] == T_MED ))
 				var/mob/living/carbon/human/burn_victim = user
 				if(!burn_victim.gloves)
 					var/damage = 0
@@ -76,6 +76,7 @@
 					to_chat(burn_victim, SPAN_DANGER("You burn your hand a little taking the [item[input]] off of the stove."))
 		user.put_in_hands(item[input])
 		item[input] = null
+		update_icon()
 
 /obj/machinery/cooking_with_jane/stove/CtrlClick(/var/mob/user, params)
 	if(!(user.stat || user.restrained() || (!in_range(src, user))))
@@ -98,7 +99,7 @@
 	handle_switch(user, input)
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_temperature(user, input)
-	var/choice = alert(user,"Select a heat setting for burner [input]. Current temperature: [temperature[input]]",T_HI,T_MED,T_LOW,T_NONE,"Cancel")
+	var/choice = alert(user,"Select a heat setting for burner [input]. Current temperature: [temperature[input]]",T_HI,T_MED,T_LOW,"Cancel")
 	if(choice && choice != "Cancel")
 		temperature[input] = choice
 
@@ -106,27 +107,39 @@
 	var/timer[input] = input(user, "Enter a number on the timer for burner [input]", "Minutes") as num
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_switch(user, input)
-	var/obj/item/cooking_with_jane/cooking_container/container = items[input]
-	if(!istype(container, /obj/item/cooking_with_jane/cooking_container))
-		log_debug("stove/proc/handle_switch: Non cooking container item on the stove.")
-		return
-	
+
+
+	playsound(src, 'sound/items/lighter.ogg', 100, 1, 0)
 	if(switches[input] == ON)
 		switches[input] = OFF
-		reference_time = world.time - cooking_timestamp[input]
-		container.tracker.process_item(src)
+		handle_cooking(user, input)
 		cooking_timestamp[input] = world.time
 	else
 		switches[input] = ON
 		cooking_timestamp[input] = world.time
 		if(timer[input] != 0)
-			var/old_timestamp = cooking_timestamp[input]
 			spawn(timer[input])
-				if(old_timestamp == cooking_timestamp[input])
-					reference_time = timer[input]
+				if(switches[input] = ON)
+					playsound(src, 'sound/items/lighter.ogg', 100, 1, 0)
+					switches[input] = OFF
+					handle_cooking(user, input)
+	update_icon()
 
-
+/obj/machinery/cooking_with_jane/stove/proc/handle_cooking(user, input)
+	
+	if(!(items[input] && istype(items[input], /obj/item/cooking_with_jane/cooking_container)))
+		return
 		
+	var/obj/item/cooking_with_jane/cooking_container/container = items[input]
+	if(container)
+			if(set_timer)
+				reference_time = set_timer
+			else
+				reference_time = world.time - cooking_timestamp[input]
+			container.process_item(src, user)
+
+/obj/machinery/cooking_with_jane/stove/proc/handle_burning(input)
+
 	
 
 
