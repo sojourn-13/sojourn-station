@@ -79,6 +79,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/shield/buckler = 250,
 		/obj/item/shield/riot = 350,
 		//Armor
+		/obj/item/clothing/head/helmet/faceshield/altyn/milisha = 120,
 		/obj/item/clothing/suit/space/void/security/odst/mil = 300,
 		/obj/item/clothing/suit/space/void/odst/corps = 300,
 		/obj/item/storage/box/bs_kit/bullet_armor = 500,
