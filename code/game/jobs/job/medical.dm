@@ -120,7 +120,7 @@
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	alt_titles = null
-	outfit_type = /decl/hierarchy/outfit/job/medical/trauma_team
+	outfit_type = /decl/hierarchy/outfit/job/medical/recovery_team
 
 	health_modifier = 5
 	perks = list(/datum/perk/medicalexpertise, /datum/perk/chemist) // Can treat people well but can't do surgery or chemistry as good as a doctor.

@@ -372,12 +372,12 @@ Technomancer RIG
 		/obj/item/rig_module/storage
 		)
 
-/obj/item/rig/trauma_suit
-	name = "trauma suit control module"
+/obj/item/rig/recovery_suit
+	name = "recovery team suit control module"
 	suit_type = "Recovery Team hardsuit"
 	desc = "An upgraded hardsuit designed by the Soteria for their Recovery Team division. While not as heavily armored as a proper hardsuit, the inbuilt medical systems make it highly prized. \
 	It is best suited for surviving and combating wild life, but has reasonably decent kevlar plating and impact pads to absorb bullets and energy blasts."
-	icon_state = "tt_rig"
+	icon_state = "response_rig"
 	armor_list = list(
 		melee = 60,
 		bullet = 35,
@@ -398,7 +398,7 @@ Technomancer RIG
 	)
 
 
-/obj/item/rig/trauma_suit/equipped
+/obj/item/rig/recovery_suit/equipped
 	req_access = list()
 	req_one_access = list()
 

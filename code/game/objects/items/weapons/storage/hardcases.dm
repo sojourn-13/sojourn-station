@@ -485,7 +485,7 @@ obj/item/gearbox/traumatizedteam/attack_self(mob/living/user)
 	if(!stamped)
 		stamped = TRUE
 		var/list/options = list()
-		options["Recovery Team RIG"] = list(/obj/item/rig/trauma_suit/equipped)
+		options["Recovery Team RIG"] = list(/obj/item/rig/recovery_suit/equipped)
 		options["Advanced Paramedic Armor"] = list(/obj/item/clothing/suit/armor/paramedic,/obj/item/clothing/head/helmet/faceshield/paramedic)
 		var/choice = input(user,"What type of equipment?") as null|anything in options
 		if(src && choice)
