@@ -119,7 +119,7 @@
 	difficulty = "Ungratifying."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
-	alt_titles = null
+	alt_titles = list("Soteria Emergency Medical Technitcian")
 	outfit_type = /decl/hierarchy/outfit/job/medical/recovery_team
 
 	health_modifier = 5
