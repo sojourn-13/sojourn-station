@@ -277,7 +277,59 @@
 							   "nitrogen" = N2STANDARD *  MolesForPressure(environment.volume))
 
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/update_icon()
-    return
+	return
 
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/MolesForPressure(var/gasVolume)
+	return (ONE_ATMOSPHERE * gasVolume) / (R_IDEAL_GAS_EQUATION * T20C)
+
+/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee
+	name = "Kriosan Tree"
+	desc = "Strange dog tree."
+	icon = 'icons/obj/flora/jungletree.dmi'
+	icon_state = "tree"
+	anchored = 1
+	pixel_x = -48
+	pixel_y = -16
+	var/damage = 0.3
+	var/NOLAG = 0
+
+	use_power = NO_POWER_USE
+	idle_power_usage = 0
+	active_power_usage = 0
+
+/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/attackby(var/obj/item/I as obj, var/mob/user as mob)
+	to_chat(user, SPAN_WARNING("This is a dog tree, no cutting."))
+	return
+
+/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/attack_hand(var/mob/user)
+	to_chat(user, SPAN_WARNING("This is a dog tree, no cutting."))
+	return
+
+/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/Process()
+
+	var/datum/gas_mixture/environment = loc.return_air()
+
+	if(environment)
+		environment.temperature = T20C
+		environment.gas = list("carbon_dioxide" = MolesForPressure(environment.volume))
+
+	if(NOLAG)
+		var/list/affected = list()
+		spawn()
+			for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
+				if (H.z == src.z)
+					affected.Add(H)
+			for(var/mob/living/carbon/human/affected_guy in affected)
+				affected_guy.damage_through_armor(damage, TOX, attack_flag = ARMOR_BIO)
+	else
+		var/list/affected = list()
+		for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
+			if (H.z == src.z)
+				affected.Add(H)
+		for(var/mob/living/carbon/human/affected_guy in affected)
+			affected_guy.damage_through_armor(damage, TOX, attack_flag = ARMOR_BIO)
+/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/update_icon()
+	return
+
+/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/MolesForPressure(var/gasVolume)
 	return (ONE_ATMOSPHERE * gasVolume) / (R_IDEAL_GAS_EQUATION * T20C)
