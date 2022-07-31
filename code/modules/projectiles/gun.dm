@@ -43,6 +43,7 @@
 
 	var/fire_sound_text = "gunshot"
 	var/rigged = FALSE
+	var/excelsior = FALSE
 
 	var/datum/recoil/recoil // Reference to the recoil datum in datum/recoil.dm
 	var/list/init_recoil = list(0, 0, 0) // For updating weapon mods
@@ -299,7 +300,16 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 				explosion(get_turf(src), 1, 2, 3, 3)
 				qdel(src)
 			return FALSE
-	return TRUE
+	
+	if(excelsior)
+		if(!is_excelsior(M))
+			if(prob(60 - user.stat_check(STAT_COG)))
+				user.visible_message(
+					SPAN_DANGER("\The [user] pulls the trigger, causing a round to burst in the chamber!"))
+				explosion(get_turf(src), 1, 2, 3, 3)
+				qdel(src)
+				return FALSE
+		return TRUE
 
 /obj/item/gun/emp_act(severity)
 	for(var/obj/O in contents)

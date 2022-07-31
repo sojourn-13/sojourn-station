@@ -5,6 +5,7 @@
 	icon = 'icons/obj/guns/projectile/ppsh.dmi'
 	icon_state = "ppsh"
 	item_state = "ppsh"
+	excelsior = TRUE
 	w_class = ITEM_SIZE_BULKY
 	twohanded = TRUE
 	force = WEAPON_FORCE_NORMAL
