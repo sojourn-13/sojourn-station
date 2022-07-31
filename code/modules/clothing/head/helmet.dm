@@ -1128,6 +1128,43 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/head/helmet/faceshield/altyn/milisha
+	name = "blackshield maska helmet"
+	desc = "A maska helmet like any other but with nice camo options"
+	icon_state = "maska_bs"
+
+/obj/item/clothing/head/helmet/faceshield/altyn/milisha/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["maska dark camo"] = "maska_bs"
+	options["maska forest camo"] = "maska_bs_green"
+	options["maska red rock camo"] = "maska_bs_tan"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		base_state = options[choice]
+		icon_state = options[choice]
+		item_state = options[choice]
+		if(up)
+			icon_state = "[base_state]up"
+		item_state_slots = list(
+		slot_l_hand_str = options[choice],
+		slot_r_hand_str = options[choice],
+		)
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/head/helmet/faceshield/paramedic
 	name = "Advanced paramedic helmet"
 	desc = "A smart helmet that aids in medical tracking."
