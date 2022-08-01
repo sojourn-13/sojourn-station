@@ -277,3 +277,12 @@
 	delay_for_rapid_range = 0.75 SECONDS
 	delay_for_melee = 0 SECONDS
 	delay_for_all = 0.5 SECONDS
+
+	/// Used in proc/shoot to determine the inaccuracy of the projectile. Initial value.
+	var/initial_firing_offset = 2 // By default, two degrees of inaccuracy.
+	/**
+	 * Used in proc/shoot to determine the inaccuracy of the projectile. Used value.
+	 * A value between this and the sign-inverted (5 becomes -5) version of itself will be picked at random when the mob fires a projectile, and THAT will be the
+	 * final offset of the projectile. Make sure to sync with initial_firing_offset.
+	**/
+	var/current_firing_offset = 2
