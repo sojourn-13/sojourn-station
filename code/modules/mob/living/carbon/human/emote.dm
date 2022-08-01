@@ -496,22 +496,7 @@
 			else
 				message = "moans!"
 				m_type = 2
-				if(get_sex() == FEMALE)
-					switch(pick("1", "2", "3"))
-						if("1")
-							playsound(loc, 'sound/effects/mob_effects/moan_f1.ogg', 80)
-						if("2")
-							playsound(loc, 'sound/effects/mob_effects/moan_f2.ogg', 80)
-						if("3")
-							playsound(loc, 'sound/effects/mob_effects/moan_f4.ogg', 80)
-				else
-					switch(pick("1", "2", "3"))
-						if("1")
-							playsound(loc, 'sound/effects/mob_effects/moan_m1.ogg', 80)
-						if("2")
-							playsound(loc, 'sound/effects/mob_effects/moan_m3.ogg', 80)
-						if("3")
-							playsound(loc, 'sound/effects/mob_effects/moan_m5.ogg', 80)
+				playsound(loc, 'sound/effects/mob_effects/moan_u.ogg', 80)
 
 		if ("johnny")
 			var/M
