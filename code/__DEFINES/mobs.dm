@@ -105,6 +105,16 @@
 #define ROBOT_NOTIFICATION_MODULE_RESET 4
 #define ROBOT_NOTIFICATION_SIGNAL_LOST 5
 
+// Superior mob attack reaction flags
+#define ALWAYS_SEE (0<<1)
+#define GUESS_LOCATION_WITH_AURA (0<<2)
+
+// Superior mob attack ranged retaliation modes
+#define NO_RETALIATION 0
+#define ALWAYS_ATTACK_AGGRESSOR 1
+#define ATTACK_RANDOM_AREA_IN_LINE 2
+#define ATTACK_RANDOM_AREA_IN_AURA 3 //only use with GUESS_LOCATION_WITH_AURA
+
 // Appearance change flags
 #define APPEARANCE_UPDATE_DNA  0x1
 #define APPEARANCE_RACE       (0x2|APPEARANCE_UPDATE_DNA)

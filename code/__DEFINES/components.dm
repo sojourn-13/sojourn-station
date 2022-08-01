@@ -60,6 +60,7 @@
 #define COMSIG_ATOM_UNFASTEN "atom_unfasten" // set_anchored()
 #define COMSIG_CLICK_ALT "alt_click"//from atom/AltClick(): (/mob)
 #define COMSIG_CLICK_CTRL "ctrl_click"//from atom/CtrlClick(): (/mob)
+#define COMSIG_ATTACKED "attacked" // Soj edit
 
 // /area signals
 #define COMSIG_AREA_SANCTIFY "sanctify_area"

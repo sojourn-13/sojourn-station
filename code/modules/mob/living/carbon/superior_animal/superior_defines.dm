@@ -180,6 +180,15 @@
 	melee_damage_lower = 0
 	melee_damage_upper = 10
 
+	/// Determines if the mob will target whoever attacked them in the absence of an existing target. Ignores view range.
+	var/react_to_attack = TRUE
+
+	/// Determines what the mob will fire at if reacting to an attack they can't see.
+	var/retaliation_target_type = ATTACK_RANDOM_AREA_IN_LINE
+
+	/// Determines what the mob will do if they are reacting to an attack and they can't see their target.
+	var/reaction_out_of_sight_mode = GUESS_LOCATION_WITH_AURA
+
 	var/list/objectsInView //memoization for getObjectsInView()
 	var/viewRange = 7 //how far the mob AI can see
 	var/acceptableTargetDistance = 1 //consider all targets within this range equally

@@ -41,6 +41,8 @@
 		if (prob(extra_burrow_chance))
 			create_burrow(get_turf(src))
 
+	RegisterSignal(src, COMSIG_ATTACKED)
+
 /mob/living/carbon/superior_animal/Destroy()
 	GLOB.superior_animal_list -= src
 
