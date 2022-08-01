@@ -160,6 +160,18 @@
 		canmove = TRUE
 		set_density(initial(density))
 
+/mob/living/carbon/superior_animal/proc/adjustFiringOffset(var/value)
+
+	current_firing_offset += value
+
+	return TRUE
+
+/mob/living/carbon/superior_animal/proc/resetFiringOffset()
+
+	current_firing_offset = initial_firing_offset
+
+	return TRUE
+
 /mob/living/carbon/superior_animal/proc/handle_ai()
 
 	if(weakened)

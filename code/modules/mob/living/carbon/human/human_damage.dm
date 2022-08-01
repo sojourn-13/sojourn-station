@@ -227,6 +227,8 @@
 		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
 		if (ishuman(H))
 			var toxThreshHold
+			if(!L)
+				return
 			if (L.is_usable())
 				if (L.nature == MODIFICATION_SILICON)
 					toxThreshHold = 100

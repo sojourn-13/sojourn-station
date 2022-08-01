@@ -418,10 +418,8 @@ steam.start() -- spawns the effect
 
 	set_up (amt, loc, flash = 0, flash_fact = 0)
 		amount = amt
-		if(istype(loc, /turf/))
-			location = loc
-		else
-			location = get_turf(loc)
+
+		location = loc
 
 		flashing = flash
 		flashing_factor = flash_fact
@@ -429,14 +427,14 @@ steam.start() -- spawns the effect
 		return
 
 	start()
-		if (amount <= 2)
+		if (amount <= 3)
 			var/datum/effect/effect/system/spark_spread/s = new
-			s.set_up(2, 1, location)
+			s.set_up(3, 1, location)
 			s.start()
 
-			for(var/mob/M in viewers(5, location))
+			for(var/mob/M in viewers(5, get_turf(location)))
 				to_chat(M, SPAN_WARNING("The solution violently explodes."))
-			for(var/mob/M in viewers(1, location))
+			for(var/mob/M in viewers(1, get_turf(location)))
 				if (prob (50 * amount))
 					to_chat(M, SPAN_WARNING("The explosion knocks you down."))
 					M.Weaken(rand(1,5))
@@ -460,7 +458,7 @@ steam.start() -- spawns the effect
 			if (flashing && flashing_factor)
 				flash = (amount/4) * flashing_factor
 
-			for(var/mob/M in viewers(8, location))
+			for(var/mob/M in viewers(8, get_turf(location)))
 				to_chat(M, SPAN_WARNING("The solution violently explodes."))
 
 			explosion(

@@ -146,6 +146,12 @@
 	name = "\"Legkiy-Kalashnikov\" laser carbine"
 	build_path = /obj/item/gun/projectile/automatic/ak47/akl
 
+//OP dart gun
+/datum/design/research/item/weapon/carbine_dartgun
+	name = "\"Artemis\" dart carbine"
+	build_path = /obj/item/gun/projectile/dartgun
+
+
 // Plasma guns
 /datum/design/research/item/weapon/hydrogen_rifle
 	name = "Hydrogen \"Venatori\" Rifle"
@@ -226,6 +232,18 @@
 	desc = "12mm cases fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/kurtz_50/laser
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
+
+/datum/design/research/item/ammo/fancy_dart
+	name = "carbine chem dart"
+	desc = "A hollow dart that loads into a cartridge."
+	build_path = /obj/item/ammo_casing/chemdart
+	materials = list(MATERIAL_STEEL = 3)
+
+/datum/design/research/item/ammo/dart_mag
+	name = "dart cartridge"
+	desc = "A rack of hollow darts."
+	build_path = /obj/item/ammo_magazine/chemdart
+	materials = list(MATERIAL_STEEL = 3)
 
 // Shotgun Ammo
 

@@ -102,6 +102,10 @@
 #define COMSIG_HUMAN_HEALTH "human_health"					   //from human/updatehealth()
 #define COMSIG_HUMAN_SANITY "human_sanity"						//from /datum/sanity/proc/onLife()
 #define COMSIG_HUMAN_INSTALL_IMPLANT "human_install_implant"
+
+// /mob/living/carbon/superior_animal signals
+#define COMSIG_SUPERIOR_FIRED_PROJECTILE "superior_fired_projectile"
+
 // /datum/species signals
 
 // /obj signals
