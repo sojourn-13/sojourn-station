@@ -822,8 +822,8 @@
 			if(B.damage > 0)
 				B.damage = max(B.damage - 5 * removed, 0)
 
-/datum/reagent/medicine/quickclot/overdose(mob/living/carbon/M, alien)
-	M.add_chemical_effect(CE_BLOODCLOT, min(1, 0.20))
+/datum/reagent/medicine/quickclot/overdose(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_BLOODCLOT, min(1, 0.20 * effect_multiplier))
 
 /datum/reagent/medicine/ossisine
 	name = "Ossisine"
