@@ -154,6 +154,11 @@
 /mob/living/carbon/superior_animal/react_to_attack(var/mob/living/carbon/superior_animal/source = src, var/obj/item/attacked_with, var/atom/attacker, params)
 	. = ..()
 
+	if (isprojectile(attacked_with))
+		var/obj/item/projectile/Proj = attacked_with
+		if (Proj.testing) //sanity
+			return FALSE
+
 	if (!react_to_attack)
 		return FALSE
 
@@ -163,11 +168,11 @@
 			var/atom/new_target_location = attacker.loc
 			var/distance = (get_dist(src, attacker))
 			if (distance > viewRange) // are they out of our viewrange? TODO: maybe add a see/hear check
-				new_target = target_outside_of_view_range(attacker, distance)
+				new_target_location = target_outside_of_view_range(attacker, distance) //this is where we think they might be
 			target_mob = WEAKREF(new_target)
 			target_location = WEAKREF(new_target_location)
 
-			lost_sight = TRUE
+			lost_sight = TRUE //not sure if this is necessary
 
 /mob/living/carbon/superior_animal/ex_act(severity)
 	..()

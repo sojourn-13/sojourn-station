@@ -189,7 +189,7 @@
 	/// If true, turfs that have no LOS on the target out of viewrange will be ignored when finding a location in an aura/line that's out of viewrange.
 	var/out_of_sight_turf_LOS_check = TRUE
 	/// If target_out_of_sight_mode == GUESS_LOCATION_WITH_LINE, distance from src and target will be multiplied by this, then set as the limit for the line search.
-	var/out_of_viewrange_line_distance_mult = 2
+	var/out_of_viewrange_line_distance_mult = 1 //BROKEN DONT CHANGE
 
 	var/list/objectsInView //memoization for getObjectsInView()
 	var/viewRange = 7 //how far the mob AI can see

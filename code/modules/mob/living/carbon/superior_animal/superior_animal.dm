@@ -126,47 +126,57 @@
 **/
 /mob/living/carbon/superior_animal/proc/target_outside_of_view_range(var/atom/target, distance = get_dist(src, target), target_mode = target_out_of_sight_mode)
 
-	var/tiles_out_of_viewrange = (distance - viewRange)
+	var/tiles_out_of_viewrange = (distance - viewRange) //self explanatory
 	if (tiles_out_of_viewrange <= 0)
 		return FALSE //they are within our viewrange
 
-	var/list/possible_locations
+	var/list/possible_locations //initialize the var
 	switch (target_mode)
-		if (ALWAYS_SEE)
+		if (ALWAYS_SEE) // if this is true we can always detect our target
 			return target
 
 		if (GUESS_LOCATION_WITH_AURA)
-			possible_locations = RANGE_TURFS(tiles_out_of_viewrange, target)
+			possible_locations = RANGE_TURFS(tiles_out_of_viewrange, target) // the further away the target, the more inaccurate our targetting
 
 		if (GUESS_LOCATION_WITH_LINE, GUESS_LOCATION_WITH_END_OF_LINE)
 			var/turf/step_calculation = get_step_to(src, target, viewRange) //first, get the edge of our viewrange towards the attacker
 
-			var/edge_distance = get_dist(step_calculation, target)
-			var/multiplied_distance = (edge_distance*out_of_viewrange_line_distance_mult)
+			var/edge_distance = get_dist(step_calculation, target) //then, get the distance between that edge and our target
+			var/multiplied_distance = round((edge_distance*out_of_viewrange_line_distance_mult)) //multiply the distance by the var for more inaccuracy BROKEN DONT USE
+
 			possible_locations = list()
-			while (get_dist(step_calculation, target) > (multiplied_distance))
-				step_calculation = get_step_towards(step_calculation, target)
-				possible_locations += step_calculation
+
+			for (var/steps = multiplied_distance, steps > 0, steps--) //keep calculating steps toward the target until we run out of steps
+				step_calculation = get_step_towards(step_calculation, target) // calculate another walk
+				possible_locations += step_calculation // and add this calculation to the list of possible targets
 
 			if (target_mode == GUESS_LOCATION_WITH_END_OF_LINE)
+				if (out_of_sight_turf_LOS_check)
+					for (var/i = possible_locations.len, i > 0, i--) //start from the last entry added
+						var/atom/possible_location = possible_locations[i]
+						if (can_see(possible_location, target, get_dist(possible_location, target))) //if this turf can see the target,
+							return possible_location // this is a valid target
+						else
+							continue
+
 				return step_calculation //we're only returning the end of the line which is more than likely this turf
 
-	for (var/turf/possible_location in possible_locations)
-		if (density == TRUE)
-			possible_locations -= possible_location
+	for (var/turf/possible_location in possible_locations) // iterate through each turf we are considering
+		if (density == TRUE) // if the turf is dense, aka we cant walk through it...
+			possible_locations -= possible_location // ...no way they're in it
 			continue
 
 		if (out_of_sight_turf_LOS_check)
-			if (!(can_see(possible_location, target, get_dist(possible_location, target))))
-				possible_locations -= possible_location
+			if (!(can_see(possible_location, target, get_dist(possible_location, target)))) // if it cant see the target...
+				possible_locations -= possible_location // then theres no way the target was there
 				continue
 
 		for (var/atom/movable/entity in possible_location)
-			if (entity.density == TRUE)
+			if (entity.density == TRUE) //the 1st check but for the contents
 				possible_locations -= possible_location
 				continue
 
-	return safepick(possible_locations)
+	return safepick(possible_locations) //return one at random
 
 // Same as breath but with innecesarry code removed and damage tripled. Environment pressure damage moved here since we handle moles.
 
@@ -404,12 +414,13 @@
 					spawn(0) //the projectile needs time to process
 					handle_trace_impact(trace, delete_trace = FALSE) //and now, we check to see if we should advance, using the trace
 
-		if (!can_see && (!fire_through_walls))
-			return
+		//if (!can_see && (!fire_through_walls))
+		//	return
 
-		if (!fire_through_lost_sight) //can only be true if src does not have fire_through_walls
+		if (!fire_through_lost_sight)
 			lost_sight = FALSE
-		patience = patience_initial
+		if (can_see)
+			patience = patience_initial
 		// This block controls our attack/range logic
 		var/atom/targetted = targetted_mob
 		if (!(targetted_mob.check_if_alive(TRUE)))
@@ -434,9 +445,13 @@
 
 			var/shoot = TRUE
 
-			if (distance <= viewRange) // is our target within our viewrange?
-				if (targetted == target_location_resolved) //...this isnt our target. its useless to shoot at it
-					shoot =	can_see_check(targetted, null) // but if we cant actually /see/ it, due to walls, we dont know this. so lets check
+			if (targetted == target_location_resolved) //...this isnt our target. its useless to shoot at it
+				if (distance <= viewRange) // is our target within our viewrange?
+					shoot =	(!can_see_check(targetted, null)) // if we cant actually /see/ it, due to walls, we dont know this. so lets check
+
+			else if (targetted == targetted_mob)
+				if (!can_see)
+					shoot = FALSE
 
 			if (shoot) // should we shoot?
 				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
