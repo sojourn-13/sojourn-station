@@ -35,6 +35,7 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
 	price_tag = 800
 	serial_type = "NM"
+	excelsior = FALSE
 
 /obj/item/gun/projectile/automatic/vintorez/update_icon()
 	..()

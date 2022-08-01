@@ -35,6 +35,7 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	price_tag = 800
 	serial_type = "NM"
+	excelsior = FALSE
 
 /obj/item/gun/projectile/automatic/ppsh/update_icon()
 	..()
@@ -61,6 +62,7 @@
 	init_recoil = SMG_RECOIL(1.3)
 	auto_eject = 0
 	serial_type = "NM"
+	excelsior = FALSE
 
 /obj/item/gun/projectile/automatic/ppsh/ppv/update_icon()
 	..()
