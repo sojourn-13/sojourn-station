@@ -377,7 +377,7 @@ Technomancer RIG
 	suit_type = "Recovery Team hardsuit"
 	desc = "An upgraded hardsuit designed by the Soteria for their Recovery Team division. While not as heavily armored as a proper hardsuit, the inbuilt medical systems make it highly prized. \
 	It is best suited for surviving and combating wild life, but has reasonably decent kevlar plating and impact pads to absorb bullets and energy blasts."
-	icon_state = "response_rig"
+	icon_state = "response_team"
 	armor_list = list(
 		melee = 60,
 		bullet = 35,
