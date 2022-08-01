@@ -540,6 +540,11 @@
 			L.stat = UNCONSCIOUS //Life() can bring them back to consciousness if it needs to.
 			L.failed_last_breath = 0 //So mobs that died of oxyloss don't revive and have perpetual out of breath.
 
+			//Stablizating
+			L.heal_organ_damage(30, 30)
+			L.adjustOxyLoss(-50)
+			L.adjustToxLoss(-50)
+
 			L.emote("gasp")
 			L.Weaken(rand(10,25))
 			L.updatehealth()
