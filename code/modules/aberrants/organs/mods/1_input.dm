@@ -3,24 +3,11 @@
 	icon_state = "input_organoid"
 
 /obj/item/modification/organ/internal/input/reagents
-	name = "enzymal organoid"
-	desc = "Functional tissue of one or more organs in graftable form. Enhances metabolism of reagents."
+	name = "metabolic organoid"
+	desc = "Functional tissue of one or more organs in graftable form. Enhances metabolism of specific reagents."
 
 /obj/item/modification/organ/internal/input/reagents/New(loc, generate_organ_stats = FALSE, predefined_modifier = null, list/chosen_input_info, chosen_mode)
 	var/datum/component/modification/organ/input/reagents/I = AddComponent(/datum/component/modification/organ/input/reagents)
-
-	for(var/input in chosen_input_info)
-		I.accepted_inputs += input
-		I.accepted_inputs[input] = chosen_input_info[input]
-	I.check_mode = chosen_mode
-	..()
-
-/obj/item/modification/organ/internal/input/consume_reagents
-	name = "metabolic organoid"
-	desc = "Functional tissue of one or more organs in graftable form. Consumes reagents in large quantities."
-
-/obj/item/modification/organ/internal/input/consume_reagents/New(loc, generate_organ_stats = FALSE, predefined_modifier = null, list/chosen_input_info, chosen_mode)
-	var/datum/component/modification/organ/input/consume_reagents/I = AddComponent(/datum/component/modification/organ/input/consume_reagents)
 
 	for(var/input in chosen_input_info)
 		I.accepted_inputs += input

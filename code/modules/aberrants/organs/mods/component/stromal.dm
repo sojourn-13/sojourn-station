@@ -11,7 +11,7 @@
 		to_chat(user, SPAN_WARNING(examine_msg))
 
 /datum/component/modification/organ/stromal/get_function_info()
-	var/function_info
+	var/function_info = "<i>"
 
 	//for(var/owner_verb in owner_verb_adds)
 	//	holder.owner_verbs |= owner_verb
@@ -38,6 +38,12 @@
 		function_info += "[nutriment_req_multiplier >= 0 ? "Decreases" : "Increases"] nutriment requirement by [abs(nutriment_req_multiplier) * 100]%\n"
 	if(oxygen_req_multiplier)
 		function_info += "[oxygen_req_multiplier >= 0 ? "Decreases" : "Increases"] oxygen requirement by [abs(oxygen_req_multiplier) * 100]%\n"
+	if(min_bruised_damage_multiplier)
+		function_info += "[min_bruised_damage_multiplier >= 0 ? "Decreases" : "Increases"] bruised threshold by [abs(min_bruised_damage_multiplier) * 100]%\n"
+	if(min_broken_damage_multiplier)
+		function_info += "[min_broken_damage_multiplier >= 0 ? "Decreases" : "Increases"] broken threshold by [abs(min_broken_damage_multiplier) * 100]%\n"
+	if(max_damage_multiplier)
+		function_info += "[max_damage_multiplier >= 0 ? "Decreases" : "Increases"] maximum health by [abs(max_damage_multiplier) * 100]%\n"
 
 	if(specific_organ_size_mod)
 		function_info += "[specific_organ_size_mod >= 0 ? "Increases" : "Decreases"] size by [abs(specific_organ_size_mod)]\n"
@@ -51,10 +57,17 @@
 		function_info += "[oxygen_req_mod >= 0 ? "Increases" : "Decreases"] oxygen requirement by [abs(oxygen_req_mod)]\n"
 	if(max_upgrade_mod)
 		function_info += "[max_upgrade_mod >= 0 ? "Increases" : "Decreases"] maximum upgrades by [abs(max_upgrade_mod)]\n"
+	if(min_bruised_damage_mod)
+		function_info += "[min_bruised_damage_mod >= 0 ? "Decreases" : "Increases"] bruised threshold by [abs(min_bruised_damage_mod)]\n"
+	if(min_broken_damage_mod)
+		function_info += "[min_broken_damage_mod >= 0 ? "Decreases" : "Increases"] broken threshold by [abs(min_broken_damage_mod)]\n"
+	if(max_damage_mod)
+		function_info += "[max_damage_mod >= 0 ? "Decreases" : "Increases"] maximum health by [abs(max_damage_mod)]\n"
 
 	if(scanner_hidden)
 		function_info += "Hides the organ from scanners\n"
 
-	function_info = copytext(function_info, 1, length(function_info) - 1)
+	function_info = copytext(function_info, 1, length(function_info))
+	function_info += "</i>"
 
 	return function_info

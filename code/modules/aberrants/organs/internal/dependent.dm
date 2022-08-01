@@ -10,15 +10,14 @@
 	should_process_have_organ_stats = FALSE
 	output_pool = ALL_STANDARD_ORGAN_EFFICIENCIES
 	output_info = list(1)
-	special_info = list(STAT_ROB, 3, DEPENDENT_ABERRANT_STIM_TIME)
+	special_info = list(STAT_ROB, 2, DEPENDENT_ABERRANT_STIM_TIME)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater
 	name = "wifebeater's organ"
 	desc = "A masterfully engineered organ for when you really need to put someone in their place."
 	specific_input_type_pool = list(
-		/datum/reagent/ethanol/beer, /datum/reagent/ethanol/ale
+		/datum/reagent/ethanol/beer, /datum/reagent/ethanol/ale, /datum/reagent/ethanol/mead
 	)
-	input_threshold = LOW_REAGENT_THRESHOLD
 	input_mode = CHEM_INGEST
 	special_info = list(STAT_ROB, 2, DEPENDENT_ABERRANT_STIM_TIME)		// specfic organs will have better buffs
 
@@ -55,10 +54,9 @@
 	name = "functional ethanolic's organ"
 	desc = "A masterfully engineered organ for those who want to drink and drive."
 	specific_input_type_pool = list(
-		/datum/reagent/ethanol/gin, /datum/reagent/ethanol/rum, /datum/reagent/ethanol/sake, /datum/reagent/ethanol/tequilla, /datum/reagent/ethanol/vermouth,
-		/datum/reagent/ethanol/vodka, /datum/reagent/ethanol/whiskey, /datum/reagent/ethanol/wine
+		/datum/reagent/ethanol/gin, /datum/reagent/ethanol/rum, /datum/reagent/ethanol/tequilla, /datum/reagent/ethanol/vermouth,
+		/datum/reagent/ethanol/vodka, /datum/reagent/ethanol/whiskey, /datum/reagent/ethanol/wine, /datum/reagent/ethanol/cognac
 	)
-	input_threshold = LOW_REAGENT_THRESHOLD
 	input_mode = CHEM_INGEST
 	special_info = list(STAT_MEC, 2, DEPENDENT_ABERRANT_STIM_TIME)
 
@@ -97,7 +95,6 @@
 	specific_input_type_pool = list(
 		/datum/reagent/ethanol/martini, /datum/reagent/ethanol/coffee/b52, /datum/reagent/ethanol/black_russian, /datum/reagent/ethanol/gintonic
 	)
-	input_threshold = LOW_REAGENT_THRESHOLD
 	input_mode = CHEM_INGEST
 	special_info = list(STAT_COG, 2, DEPENDENT_ABERRANT_STIM_TIME)
 
@@ -136,7 +133,6 @@
 	specific_input_type_pool = list(
 		/datum/reagent/stim/bouncer, /datum/reagent/stim/steady, /datum/reagent/stim/violence
 	)
-	input_threshold = LOW_REAGENT_THRESHOLD
 	input_mode = CHEM_BLOOD
 	special_info = list(STAT_VIG, 2, DEPENDENT_ABERRANT_STIM_TIME)
 
@@ -171,11 +167,10 @@
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/mobster
 	name = "mobster's organ"
-	desc = "A masterfully engineered organ for those who want to play in the snow."
+	desc = "A masterfully engineered organ for the tough stuff."
 	specific_input_type_pool = list(
 		/datum/reagent/drug/space_drugs, /datum/reagent/drug/psilocybin
 	)
-	input_threshold = LOW_REAGENT_THRESHOLD
 	input_mode = CHEM_BLOOD
 	special_info = list(STAT_TGH, 2, DEPENDENT_ABERRANT_STIM_TIME)
 
@@ -214,7 +209,6 @@
 	specific_input_type_pool = list(
 		/datum/reagent/stim/pro_surgeon, /datum/reagent/medicine/aminazine, /datum/reagent/medicine/citalopram
 	)
-	input_threshold = LOW_REAGENT_THRESHOLD
 	input_mode = CHEM_BLOOD
 	special_info = list(STAT_BIO, 2, DEPENDENT_ABERRANT_STIM_TIME)
 

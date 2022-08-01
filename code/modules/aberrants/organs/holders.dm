@@ -35,17 +35,17 @@
 
 /obj/item/organ/internal/scaffold/examine(mob/user)
 	. = ..()
-	if(item_upgrades.len)
-		to_chat(user, SPAN_NOTICE("Organoid grafts present ([item_upgrades.len]/[max_upgrades]). Use a laser cutting tool to remove."))
-	if(aberrant_cooldown_time > 0)
-		to_chat(user, SPAN_NOTICE("Average organ process duration: [aberrant_cooldown_time / (1 SECOND)] seconds"))
-	if(user.stats?.getStat(STAT_BIO) >= STAT_LEVEL_PROF)
+	if(user.stats?.getStat(STAT_BIO) >= STAT_LEVEL_EXPERT || user.stats?.getPerk(PERK_ADVANCED_MEDICAL))
+		if(item_upgrades.len)
+			to_chat(user, SPAN_NOTICE("Organoid grafts present ([item_upgrades.len]/[max_upgrades]). Use a laser cutting tool to remove."))
+		if(aberrant_cooldown_time > 0)
+			to_chat(user, SPAN_NOTICE("Average organ process duration: [aberrant_cooldown_time / (1 SECOND)] seconds"))
 		var/organs = ""
 		for(var/organ in organ_efficiency)
 			organs += organ + " ([organ_efficiency[organ]]), "
 		organs = copytext(organs, 1, length(organs) - 1)
 		to_chat(user, SPAN_NOTICE("Organ tissues present (efficiency): [organs ? organs : "none"]"))
-	if(user.stats?.getStat(STAT_BIO) >= STAT_LEVEL_GODLIKE)
+	if(user.stats?.getStat(STAT_BIO) >= STAT_LEVEL_PROF || user.stats?.getPerk(PERK_ADVANCED_MEDICAL))
 		var/function_info
 		var/input_info
 		var/process_info
@@ -212,7 +212,6 @@
 
 	var/base_input_type = null
 	var/list/specific_input_type_pool = list()
-	var/input_threshold = null
 	var/input_mode = null
 	var/list/process_info = list()
 	var/should_process_have_organ_stats = TRUE
@@ -225,7 +224,7 @@
 	if(!input_mod_path && !process_mod_path && !output_mod_path && !special_mod_path)
 		return
 	if(input_mod_path)
-		if(!input_mode || (!base_input_type && !specific_input_type_pool.len) || !input_threshold)
+		if(!input_mode || (!base_input_type && !specific_input_type_pool.len))
 			return
 	if(output_mod_path)
 		if(!output_pool.len || !output_info.len)
@@ -240,10 +239,10 @@
 	if(req_num_inputs)
 		for(var/i in 1 to req_num_inputs)
 			if(specific_input_type_pool.len)
-				input_info += list(pick_n_take(specific_input_type_pool) = input_threshold)
+				input_info += pick_n_take(specific_input_type_pool)
 			else if(base_input_type)
 				var/list/reagents_sans_blacklist = subtypesof(base_input_type) - REAGENT_BLACKLIST
-				input_info = list(pick_n_take(reagents_sans_blacklist) = input_threshold)
+				input_info = pick_n_take(reagents_sans_blacklist)
 
 	if(req_num_outputs)
 		for(var/i in 1 to req_num_outputs)		

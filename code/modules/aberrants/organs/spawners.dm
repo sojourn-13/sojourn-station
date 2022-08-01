@@ -26,4 +26,4 @@
 				/obj/machinery/vending/organfridge/aberrant/alcoholic = 2,
 				/obj/machinery/vending/organfridge/aberrant/addict = 2,
 				/obj/machinery/sleeper/sarcophagus = 2,
-				/obj/machinery/sleeper/sarcophagus/abomination = 6))
+				/obj/machinery/sleeper/sarcophagus/abomination = 16))

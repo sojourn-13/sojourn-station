@@ -32,7 +32,8 @@ COMSIG_ABERRANT_COOLDOWN
 	var/removal_difficulty = FAILCHANCE_CHALLENGING
 	var/removal_stat = STAT_COG
 
-	var/adjust_on_removal = FALSE	// Increase/decrease the quality of the mod the first time it's removed
+	var/bypass_perk = null
+
 	var/destroy_on_removal = FALSE 
 	var/removable = TRUE
 	var/breakable = FALSE //Some mods are meant to be tamper-resistant and should be removed only in a hard way
@@ -146,7 +147,11 @@ COMSIG_ABERRANT_COOLDOWN
 /datum/component/modification/proc/on_examine(mob/user)
 	if(examine_msg)
 		to_chat(user, SPAN_WARNING(examine_msg))
-	if(user.stats.getStat(examine_stat) >= examine_difficulty)
+
+	var/stat_req_bypassed = FALSE
+	if(bypass_perk)
+		stat_req_bypassed = user.stats?.getPerk(bypass_perk) ? TRUE : FALSE
+	if(stat_req_bypassed || user.stats?.getStat(examine_stat) >= examine_difficulty)
 		if(examine_msg_bonus)
 			to_chat(user, SPAN_NOTICE(examine_msg_bonus))
 		var/function_info = get_function_info()
@@ -214,7 +219,7 @@ COMSIG_ABERRANT_COOLDOWN
 				return TRUE
 			else
 				//You failed the check, lets see what happens
-				if(M.breakable == FALSE)
+				if(M.breakable == FALSE || user.stats?.getPerk(bypass_perk))
 					to_chat(user, SPAN_DANGER("You failed to extract \the [toremove]."))
 					upgrade_loc.refresh_upgrades()
 					user.update_action_buttons()
@@ -222,7 +227,6 @@ COMSIG_ABERRANT_COOLDOWN
 					//50% chance to break the upgrade and remove it
 					to_chat(user, SPAN_DANGER("You successfully extract \the [toremove], but destroy it in the process."))
 					SEND_SIGNAL(toremove, COMSIG_REMOVE, parent)
-					//do_sparks(5, 0, toremove.loc)
 					QDEL_NULL(toremove)
 					upgrade_loc.refresh_upgrades()
 					user.update_action_buttons()

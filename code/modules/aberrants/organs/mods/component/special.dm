@@ -2,8 +2,6 @@
 	exclusive_type = /obj/item/modification/organ/internal/special/on_examine
 	trigger_signal = COMSIG_EXAMINE
 
-// needs function info
-
 /datum/component/modification/organ/on_examine/brainloss
 	var/damage = 1
 
@@ -14,12 +12,13 @@
 /datum/component/modification/organ/on_examine/brainloss/moderate
 	damage = 5
 
-/datum/component/modification/organ/on_examine/brainloss/trigger(mob/user, distance)
-	if(!user)
+/datum/component/modification/organ/on_examine/brainloss/trigger(obj/item/holder, mob/owner)
+	if(!holder || !owner)
 		return
-	if(isliving(user))
-		var/mob/living/L = user
+	if(isliving(owner))
+		var/mob/living/L = owner	// NOTE: In this case, owner means the mob that examined the holder, not the mob the holder is attached to
 		L.adjustBrainLoss(damage)
+		L.apply_damage(PSY, damage)
 
 
 /datum/component/modification/organ/on_pickup
@@ -37,12 +36,12 @@
 /datum/component/modification/organ/on_pickup/shock/powerful
 	damage = 25
 
-/datum/component/modification/organ/on_pickup/shock/trigger(obj/item/parent, mob/user)
-	if(!user || !parent)
+/datum/component/modification/organ/on_pickup/shock/trigger(obj/item/holder, mob/owner)
+	if(!holder || !owner)
 		return
 
-	if(isliving(user))
-		var/mob/living/L = user
+	if(isliving(owner))
+		var/mob/living/L = owner
 		L.electrocute_act(damage, parent)
 
 
@@ -77,18 +76,22 @@
 
 	return description
 
-/datum/component/modification/organ/on_cooldown/chemical_effect/trigger(obj/item/parent, mob/user)
-	if(!user || !parent)
+/datum/component/modification/organ/on_cooldown/chemical_effect/trigger(obj/item/holder, mob/owner)
+	if(!holder || !owner)
+		return
+	if(!istype(holder, /obj/item/organ/internal/scaffold))
 		return
 
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		H.add_chemical_effect(effect, magnitude)
+	var/obj/item/organ/internal/scaffold/S = holder
+	var/effect_multiplier = (S.max_damage - S.damage) / S.max_damage
+
+	if(ishuman(owner))
+		var/mob/living/carbon/human/H = owner
+		H.add_chemical_effect(effect, magnitude * effect_multiplier)
 
 /datum/component/modification/organ/on_cooldown/stat_boost
 	var/stat
 	var/boost
-	var/delay
 
 /datum/component/modification/organ/on_cooldown/stat_boost/get_function_info()
 	var/description = "<span style='color:purple'>Functional information (secondary):</span> augments physical/mental affinity"
@@ -96,10 +99,16 @@
 
 	return description
 
-/datum/component/modification/organ/on_cooldown/stat_boost/trigger(obj/item/parent, mob/user)
-	if(!user || !parent)
+/datum/component/modification/organ/on_cooldown/stat_boost/trigger(obj/item/holder, mob/owner)
+	if(!holder || !owner)
+		return
+	if(!istype(holder, /obj/item/organ/internal/scaffold))
 		return
 
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		H.stats.addTempStat(stat, boost, delay, parent)
+	var/obj/item/organ/internal/scaffold/S = holder
+	var/effect_multiplier = (S.max_damage - S.damage) / S.max_damage
+	var/delay = S.aberrant_cooldown_time + 1 SECOND
+
+	if(ishuman(owner))
+		var/mob/living/carbon/human/H = owner
+		H.stats.addTempStat(stat, boost * effect_multiplier, delay, holder)

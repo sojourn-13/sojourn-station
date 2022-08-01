@@ -51,8 +51,8 @@
 	..()
 
 /obj/item/modification/organ/internal/output/damaging_insight_gain
-	name = "masochistic organoid"
-	desc = "Functional tissue of one or more organs in graftable form. Causes injury to the body."
+	name = "enigmatic organoid"
+	desc = "Functional tissue of one or more organs in graftable form. It's function is unknown."
 
 /obj/item/modification/organ/internal/output/damaging_insight_gain/New(loc, generate_organ_stats = FALSE, predefined_modifier = null, list/output_types)
 	var/datum/component/modification/organ/output/damaging_insight_gain/O = AddComponent(/datum/component/modification/organ/output/damaging_insight_gain)

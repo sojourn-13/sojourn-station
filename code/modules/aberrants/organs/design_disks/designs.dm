@@ -1,6 +1,3 @@
-/datum/design/autolathe/tool/scalpel/laser
-	build_path = /obj/item/tool/scalpel/laser
-
 /datum/design/organ
 	build_type = ORGAN_GROWER
 

@@ -23,8 +23,7 @@
 	special_mod_path = /obj/item/modification/organ/internal/special/on_examine/brainloss
 
 	specific_input_type_pool = list(CLONE)
-	input_threshold = 1
 	input_mode = NOT_USED
 	process_info = list(1, 0)
 	output_pool = list(PSY)
-	output_info = list(1)
+	output_info = list(2)

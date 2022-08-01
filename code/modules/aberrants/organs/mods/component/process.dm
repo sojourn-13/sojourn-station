@@ -2,30 +2,6 @@
 	exclusive_type = /obj/item/modification/organ/internal/process
 	trigger_signal = COMSIG_ABERRANT_PROCESS
 
-
-/*
-/datum/component/modification/organ/process/arithmetic
-	var/coefficient = 1
-	var/constant = 0
-
-/datum/component/modification/organ/process/arithmetic/get_function_info()
-	var/description = "\n<span style='color:orange'>Functional information (processing):</span> standard"
-	description += "\n<span style='color:orange'>Input/Output formula:</span> [coefficient] x input + [constant]"
-
-	return description
-
-/datum/component/modification/organ/process/arithmetic/trigger(atom/movable/holder, mob/living/carbon/owner, list/input)
-	if(!holder || !owner || !input)
-		return
-
-	if(input?.len)
-		for(var/element in input)
-			input[element] = coefficient * input[element] + constant
-			input[element] = input[element] ? input[element] : 0
-
-		SEND_SIGNAL(holder, COMSIG_ABERRANT_OUTPUT, holder, owner, input)
-*/
-
 /datum/component/modification/organ/process/shuffle
 	var/list/new_packet_order = list()
 	var/num_outputs

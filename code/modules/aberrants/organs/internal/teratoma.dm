@@ -1,4 +1,4 @@
-// Flavorful holder object for a single random organoid. On first removal, will adjust organoid stats based on user's BIO stat and tool efficiency. organoids should almost never spawn outside of these.
+// Flavorful holder object for a organoids. Organoids should almost never spawn outside of these.
 /obj/item/organ/internal/scaffold/aberrant/teratoma
 	name = "teratoma"
 	desc = "An abnormal growth of organ tissue."
@@ -30,16 +30,17 @@
 	switch(input_mod_path)
 		if(/obj/item/modification/organ/internal/input/damage)
 			specific_input_type_pool += ALL_USABLE_DAMAGE_TYPES
-			input_threshold = pick(LOW_DAMAGE_THRESHOLD, MID_DAMAGE_THRESHOLD, HIGH_DAMAGE_THRESHOLD)
 			input_mode = NOT_USED
 		if(/obj/item/modification/organ/internal/input/power_source)
 			specific_input_type_pool += ALL_USABLE_POWER_SOURCES
-			input_threshold = NOT_USED
 			input_mode = NOT_USED
-		if(/obj/item/modification/organ/internal/input/reagents, /obj/item/modification/organ/internal/input/consume_reagents)
-			specific_input_type_pool += subtypesof(/datum/reagent) - REAGENT_BLACKLIST
-			input_threshold = pick(LOW_REAGENT_THRESHOLD, MID_REAGENT_THRESHOLD, HIGH_REAGENT_THRESHOLD)
+		if(/obj/item/modification/organ/internal/input/reagents)
+			specific_input_type_pool += REAGENTS_DISPENSER + REAGENTS_TOXIN + REAGENTS_ROACH + REAGENTS_SPIDER
 			input_mode = pick(CHEM_TOUCH, CHEM_INGEST, CHEM_BLOOD)
+			if(input_mode == CHEM_INGEST)
+				specific_input_type_pool += REAGENTS_EDIBLE + REAGENTS_ALCOHOL
+			if(input_mode == CHEM_BLOOD)
+				specific_input_type_pool += REAGENTS_MEDICINE_SIMPLE + REAGENTS_DRUGS + REAGENTS_STIMULANT_SIMPLE
 
 
 	switch(process_mod_path)
@@ -48,9 +49,13 @@
 
 	switch(output_mod_path)
 		if(/obj/item/modification/organ/internal/output/reagents_blood)
-			output_pool += subtypesof(/datum/reagent) - REAGENT_BLACKLIST
+			output_pool += REAGENTS_MEDICINE_SIMPLE + REAGENTS_DRUGS + REAGENTS_ROACH + REAGENTS_SPIDER
 			for(var/i in 1 to req_num_outputs)
-				output_info += LOW_OUTPUT
+				output_info += pick(VERY_LOW_OUTPUT, LOW_OUTPUT)
+		if(/obj/item/modification/organ/internal/output/reagents_ingest)
+			output_pool += REAGENTS_EDIBLE + REAGENTS_ALCOHOL + REAGENTS_ROACH + REAGENTS_SPIDER
+			for(var/i in 1 to req_num_outputs)
+				output_info += pick(VERY_LOW_OUTPUT, LOW_OUTPUT)
 		if(/obj/item/modification/organ/internal/output/chemical_effects)
 			var/list/chem_effects = ALL_USABLE_POSITIVE_CHEM_EFFECTS
 			for(var/effect in chem_effects)

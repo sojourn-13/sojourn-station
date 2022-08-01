@@ -12,6 +12,8 @@
 	removal_difficulty = FAILCHANCE_VERY_HARD
 	removal_stat = STAT_BIO
 
+	bypass_perk = PERK_ADVANCED_MEDICAL
+
 	destroy_on_removal = FALSE 
 	removable = TRUE
 	breakable = TRUE		// Needs high Bio to remove
@@ -21,7 +23,7 @@
 
 	examine_msg = "Can be attached to organ scaffolds and abnormal organs."
 	examine_stat = STAT_BIO
-	examine_difficulty = STAT_LEVEL_PROF
+	examine_difficulty = STAT_LEVEL_EXPERT
 
 	// Internal organ stuff
 	var/list/owner_verb_adds = list()
@@ -44,6 +46,9 @@
 	var/blood_req_multiplier = null
 	var/nutriment_req_multiplier = null
 	var/oxygen_req_multiplier = null
+	var/min_bruised_damage_multiplier = null
+	var/min_broken_damage_multiplier = null
+	var/max_damage_multiplier = null
 
 	var/max_upgrade_mod = null
 	var/scanner_hidden = FALSE

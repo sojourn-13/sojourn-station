@@ -1,4 +1,4 @@
-/obj/item/computer_hardware/hard_drive/portable/design/omg/
+/obj/item/computer_hardware/hard_drive/portable/design/omg
 	icon_state = "omg"
 	license = -1
 
@@ -6,8 +6,6 @@
 	disk_name = "Oh My Guts! Starter Kit"
 	desc = "Data disk used to store autolathe designs. Mod your heart out!"
 	designs = list(
-		/datum/design/autolathe/tool/scalpel/laser,
-		/datum/design/autolathe/cell/small,
 		/datum/design/organ/organ_mod/capillaries,
 		/datum/design/organ/organ_mod/durable_membrane,
 		/datum/design/organ/organ_mod/stem_cells,
@@ -39,7 +37,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/omg/simple
 	disk_name = "Oh My Guts! The Classics"
-	license = 5
+	license = 10
 	designs = list(
 		/datum/design/organ/aberrant_organ/scrub_toxin_blood,
 		/datum/design/organ/aberrant_organ/scrub_toxin_ingest,

@@ -105,7 +105,6 @@
 	if(chosen_special_info?.len >= 3)
 		S.stat = chosen_special_info[1]
 		S.boost = chosen_special_info[2]
-		S.delay = chosen_special_info[3]
 	..()
 
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/mechanical_5
@@ -114,7 +113,6 @@
 
 	S.stat = STAT_MEC
 	S.boost = 5
-	S.delay = STANDARD_ABERRANT_STIM_TIME
 	..()
 
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/cognition_5
@@ -123,7 +121,6 @@
 
 	S.stat = STAT_COG
 	S.boost = 5
-	S.delay = STANDARD_ABERRANT_STIM_TIME
 	..()
 
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/biology_5
@@ -132,7 +129,6 @@
 
 	S.stat = STAT_BIO
 	S.boost = 5
-	S.delay = STANDARD_ABERRANT_STIM_TIME
 	..()
 
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/robustness_5
@@ -141,7 +137,6 @@
 
 	S.stat = STAT_ROB
 	S.boost = 5
-	S.delay = STANDARD_ABERRANT_STIM_TIME
 	..()
 
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/toughness_5
@@ -150,7 +145,6 @@
 
 	S.stat = STAT_TGH
 	S.boost = 5
-	S.delay = STANDARD_ABERRANT_STIM_TIME
 	..()
 
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/vigilance_5
@@ -159,5 +153,4 @@
 
 	S.stat = STAT_VIG
 	S.boost = 5
-	S.delay = STANDARD_ABERRANT_STIM_TIME
 	..()

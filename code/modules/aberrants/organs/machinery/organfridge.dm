@@ -1,4 +1,3 @@
-/*
 /obj/machinery/smartfridge/secure/medbay/organs
 	name = "Organ Freezer"
 	desc = "A refrigerated storage unit for organs."
@@ -9,8 +8,9 @@
 	icon_fill10 = "organfridge-fill10"
 	icon_fill20 = "organfridge-fill20"
 	icon_fill30 = "organfridge-fill30"
+	var/light_colors = list("red", "yellow", "green")
 
-/obj/machinery/vending/organfridge/update_icon()
+/obj/machinery/smartfridge/secure/medbay/organs/update_icon()
 	..()
 
 	if(panel_open && icon_panel)
@@ -18,7 +18,26 @@
 		overlays += image(icon, "fridge_light-top_right-" + pick(light_colors))
 		overlays += image(icon, "fridge_light-bottom_left-" + pick(light_colors))
 		overlays += image(icon, "fridge_light-bottom_right-" + pick(light_colors))
-*/
+
+/obj/machinery/smartfridge/secure/medbay/organs/accept_check(obj/item/O)
+	if(istype(O, /obj/item/organ))
+		return TRUE
+	if(istype(O, /obj/item/modification/organ))
+		return TRUE
+	if(istype(O, /obj/item/storage/freezer/medical))
+		return TRUE
+	if(istype(O, /obj/item/computer_hardware/hard_drive/portable/design/omg))
+		return TRUE
+	return FALSE
+
+/obj/machinery/smartfridge/secure/medbay/organs/stocked
+/obj/machinery/smartfridge/secure/medbay/organs/stocked/New()
+	..()
+	new /obj/item/computer_hardware/hard_drive/portable/design/omg/diy_organs(src)
+	new /obj/item/storage/freezer/medical(src)
+	update_contents()
+	update_icon()
+
 /obj/machinery/vending/organfridge
 	name = "Organ Freezer"
 	desc = "A refrigerated storage unit for organs."
@@ -37,11 +56,10 @@
 
 /obj/machinery/vending/organfridge/stocked
 	products = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/basic_organ_mods = 1,
 		/obj/item/computer_hardware/hard_drive/portable/design/omg/diy_organs = 1
 	)
 	contraband = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma = 1
+		/obj/item/computer_hardware/hard_drive/portable/design/omg/simple = 1
 	)
 
 /obj/machinery/vending/organfridge/New()
@@ -265,5 +283,5 @@
 		/obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary = 1500
 	)
 
-// Unused organ slogans: "Come back if you have a change of heart!;Broken heart? We've got you covered!;;I've got you deep in the heart of me!;Owner of a lonely heart?; Owner of a broken heart?"
+// Unused organ slogan ideas: "Come back if you have a change of heart!;Broken heart? We've got you covered!;;I've got you deep in the heart of me!;Owner of a lonely heart?; Owner of a broken heart?"
 //						 "Wanna liver 'nother day?;Cry me a liver!;You got a bone to pick with me?;Let liver let die!;Bone appetit!"

@@ -5,7 +5,6 @@
 	desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner. It looks like it needs to be pried open."
 	var/horror_occupant = null
 	var/mob_count = 1
-	var/accompanying_loot = null
 
 	// Internal
 	var/preset_direction = FALSE
@@ -71,9 +70,6 @@
 		for(var/count in 1 to mob_count)
 			new horror_occupant(src.loc)
 
-		if(accompanying_loot)
-			new accompanying_loot(src.loc)
-
 		horror_occupant = null
 
 		update_use_power(1)
@@ -96,7 +92,6 @@
 
 /obj/machinery/sleeper/sarcophagus/abomination
 	horror_occupant = /mob/living/carbon/superior_animal/living_failure
-	//accompanying_loot = /obj/item/storage/freezer/medical/contains_scaffolding
 
 // To be placed on the map
 /obj/machinery/sleeper/sarcophagus/random
@@ -106,7 +101,6 @@
 	. = ..()
 	if(prob(50))
 		horror_occupant = /mob/living/carbon/superior_animal/living_failure
-		//accompanying_loot = /obj/item/storage/freezer/medical/contains_scaffolding
 	else
 		horror_occupant = null
 		desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner."

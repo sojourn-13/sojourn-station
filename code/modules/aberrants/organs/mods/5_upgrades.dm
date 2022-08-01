@@ -32,9 +32,9 @@
 /obj/item/modification/organ/internal/stromal/improvement/durability/New()
 	var/datum/component/modification/organ/stromal/M = AddComponent(/datum/component/modification/organ/stromal)
 
-	M.min_bruised_damage_mod = 0.10
-	M.min_broken_damage_mod = 0.10
-	M.max_damage_mod = 0.20
+	M.min_bruised_damage_multiplier = 0.10
+	M.min_broken_damage_multiplier = 0.10
+	M.max_damage_multiplier = 0.20
 	M.prefix = "durable"
 	..()
 
@@ -94,7 +94,7 @@
 /obj/item/modification/organ/internal/stromal/augment/expander/New()
 	var/datum/component/modification/organ/stromal/M = AddComponent(/datum/component/modification/organ/stromal)
 
-	M.specific_organ_size_multiplier = -0.33	// Negative value means size increase
+	M.specific_organ_size_mod = 0.5
 	M.max_upgrade_mod = 2
 	M.removable = FALSE		// Not feasible to remove
 	M.prefix = "expanded"
