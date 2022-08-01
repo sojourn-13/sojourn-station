@@ -106,8 +106,10 @@
 #define ROBOT_NOTIFICATION_SIGNAL_LOST 5
 
 // Superior mob attack reaction flags
-#define ALWAYS_SEE (0<<1)
-#define GUESS_LOCATION_WITH_AURA (0<<2)
+#define ALWAYS_SEE 1
+#define GUESS_LOCATION_WITH_AURA 2
+#define GUESS_LOCATION_WITH_LINE 3
+#define GUESS_LOCATION_WITH_END_OF_LINE 4
 
 // Superior mob attack ranged retaliation modes
 #define NO_RETALIATION 0

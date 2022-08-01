@@ -265,3 +265,6 @@
 	tX = max(1, min(origin.x + 7 - tX, world.maxx))
 	tY = max(1, min(origin.y + 7 - tY, world.maxy))
 	return locate(tX, tY, tZ)
+
+/proc/get_step_towards_expanding(var/atom/source, var/atom/target)
+

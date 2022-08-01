@@ -60,7 +60,7 @@
 				destroySurroundings()
 
 		updatehealth()
-		SEND_SIGNAL(src, COMSIG_ATTACKED, src, P)
+		SEND_SIGNAL(src, COMSIG_ATTACKED, P, P.original_firer)
 
 /mob/living/carbon/superior_animal/attackby(obj/item/I, mob/living/user, params)
 	activate_ai() //If were attacked by something and havent woken up yet. Were awake now >:T
@@ -74,7 +74,7 @@
 				destroySurroundings()
 
 		updatehealth()
-		SEND_SIGNAL(src, COMSIG_ATTACKED, src, I, user, params)
+		SEND_SIGNAL(src, COMSIG_ATTACKED, I, user, params)
 
 /mob/living/carbon/superior_animal/resolve_item_attack(obj/item/I, mob/living/user, hit_zone)
 	//mob.attackby -> item.attack -> mob.resolve_item_attack -> item.apply_hit_effect
@@ -112,7 +112,7 @@
 			M.do_attack_animation(src)
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 			visible_message(SPAN_WARNING("[M] has grabbed [src] passively!"))
-			SEND_SIGNAL(src, COMSIG_ATTACKED, src, null, user)
+			SEND_SIGNAL(src, COMSIG_ATTACKED, null, M)
 
 			return TRUE
 
@@ -128,7 +128,7 @@
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 
 			M.do_attack_animation(src)
-			SEND_SIGNAL(src, COMSIG_ATTACKED, src, null, user)
+			SEND_SIGNAL(src, COMSIG_ATTACKED, null, M)
 
 		if (I_HURT)
 			var/damage = 3
@@ -148,19 +148,26 @@
 				updatehealth()
 				M.do_attack_animation(src)
 
-				SEND_SIGNAL(src, COMSIG_ATTACKED, src, null, user)
+				SEND_SIGNAL(src, COMSIG_ATTACKED, null, M)
 				return TRUE
 
-/mob/living/carbon/superior_animal/react_to_attack(var/mob/living/)
-	SIGNAL_HANDLER
-
+/mob/living/carbon/superior_animal/react_to_attack(var/mob/living/carbon/superior_animal/source = src, var/obj/item/attacked_with, var/atom/attacker, params)
 	. = ..()
 
 	if (!react_to_attack)
 		return FALSE
 
+	if (attacker && !target_mob) //no target? target this guy
+		if (isValidAttackTarget(attacker))
+			var/atom/new_target = attacker
+			var/atom/new_target_location = attacker.loc
+			var/distance = (get_dist(src, attacker))
+			if (distance > viewRange) // are they out of our viewrange? TODO: maybe add a see/hear check
+				new_target = target_outside_of_view_range(attacker, distance)
+			target_mob = WEAKREF(new_target)
+			target_location = WEAKREF(new_target_location)
 
-
+			lost_sight = TRUE
 
 /mob/living/carbon/superior_animal/ex_act(severity)
 	..()

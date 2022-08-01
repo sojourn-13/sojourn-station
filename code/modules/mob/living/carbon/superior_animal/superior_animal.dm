@@ -109,6 +109,64 @@
 	else if (health < maxHealth)
 		to_chat(user, SPAN_WARNING("It has a few cuts and bruses."))
 
+/**
+ * To be used when we attempt to target a mob outside of view_range.
+ * Args:
+ * target: The target we are attempting to target.
+ * distance: The distance between our target and us. Defaults to just that value. Here for override purposes.
+ * target_mode: Defaults to target_out_of_sight_mode. Here for override purposes.
+ *
+ * If target_mode == ALWAYS_SEE, just returns target. If target_mode == GUESS_LOCATION_WITH_AREA, returns RANGE_TURFS, radius being the distance outside of viewrange.
+ * Trims said list to remove any turfs that are dense, or turfs that have dense objects in them. If out_of_sight_turf_LOS_check is true, also removes and turfs
+ * that fail a can_see check.
+ *
+ * If target_mode == GUESS_TARGET_WITH_LINE, does above, except it returns a list of turfs generated from a line drawn from the edge of viewrange to
+ *
+ * out_of_viewrange_line_distance_mult the distance from said distance to the target.
+**/
+/mob/living/carbon/superior_animal/proc/target_outside_of_view_range(var/atom/target, distance = get_dist(src, target), target_mode = target_out_of_sight_mode)
+
+	var/tiles_out_of_viewrange = (distance - viewRange)
+	if (tiles_out_of_viewrange <= 0)
+		return FALSE //they are within our viewrange
+
+	var/list/possible_locations
+	switch (target_mode)
+		if (ALWAYS_SEE)
+			return target
+
+		if (GUESS_LOCATION_WITH_AURA)
+			possible_locations = RANGE_TURFS(tiles_out_of_viewrange, target)
+
+		if (GUESS_LOCATION_WITH_LINE, GUESS_LOCATION_WITH_END_OF_LINE)
+			var/turf/step_calculation = get_step_to(src, target, viewRange) //first, get the edge of our viewrange towards the attacker
+
+			var/edge_distance = get_dist(step_calculation, target)
+			var/multiplied_distance = (edge_distance*out_of_viewrange_line_distance_mult)
+			possible_locations = list()
+			while (get_dist(step_calculation, target) > (multiplied_distance))
+				step_calculation = get_step_towards(step_calculation, target)
+				possible_locations += step_calculation
+
+			if (target_mode == GUESS_LOCATION_WITH_END_OF_LINE)
+				return step_calculation //we're only returning the end of the line which is more than likely this turf
+
+	for (var/turf/possible_location in possible_locations)
+		if (density == TRUE)
+			possible_locations -= possible_location
+			continue
+
+		if (out_of_sight_turf_LOS_check)
+			if (!(can_see(possible_location, target, get_dist(possible_location, target))))
+				possible_locations -= possible_location
+				continue
+
+		for (var/atom/movable/entity in possible_location)
+			if (entity.density == TRUE)
+				possible_locations -= possible_location
+				continue
+
+	return safepick(possible_locations)
 
 // Same as breath but with innecesarry code removed and damage tripled. Environment pressure damage moved here since we handle moles.
 
@@ -289,13 +347,7 @@
 				targetted_mob_real = targetted_mecha.occupant
 
 		if (!ran_see_check) //have we already run this check? redundant check, currently
-			if (!see_through_walls) // we can skip these checks if we can always see our target
-				if (targetted_mob_real && (targetted_mob_real.client)) // is our target_mob a mob with a player controlling it?
-					if (!(targetted_mob in hearers(get_dist(src, targetted_mob), src))) //we can afford a more expensive proc for the sake of making the player experience with ai better
-						can_see = FALSE
-				else if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) // if not, lets use a inaccurate cheap proc
-					can_see = FALSE
-			ran_see_check = TRUE  //if we cant see them, hearers() wont show them, so lets remove the override
+			can_see = can_see_check(targetted_mob, targetted_mob_real, can_see)
 
 		if (!lost_sight) // if we've, in a previous iteration of this proc, lost sight of our target, lets not update the location of the target
 			target_location = WEAKREF(targetted_mob.loc) //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
@@ -371,25 +423,42 @@
 			prepareAttackOnTarget()
 			walk_to_wrapper(src, targetted, 1, move_to_delay, deathcheck = TRUE)
 		else if(ranged)
+
+			var/distance = (get_dist(src, targetted))
+
 			if (!(targetted_mob.check_if_alive(TRUE)))
 				loseTarget()
 				return
 			if (stat == DEAD)
 				return
-			if(get_dist(src, targetted) <= comfy_range)
+
+			var/shoot = TRUE
+
+			if (distance <= viewRange) // is our target within our viewrange?
+				if (targetted == target_location_resolved) //...this isnt our target. its useless to shoot at it
+					shoot =	can_see_check(targetted, null) // but if we cant actually /see/ it, due to walls, we dont know this. so lets check
+
+			if (shoot) // should we shoot?
 				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
 					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
-				if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))  //we dont want to prematurely end a advancing walk
-					walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE) //we still want to reset our walk
-			else
-				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
-					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
-				if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))
-					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE)
+
+			if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))  //we dont want to prematurely end a advancing walk
+				walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE) //we still want to reset our walk
+				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 	else
 		prepareAttackOnTarget()
 		walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
+
+/mob/living/carbon/superior_animal/proc/can_see_check(var/atom/targetted_mob, var/mob/living/targetted_mob_real, can_see = TRUE, use_hearers = FALSE)
+
+	if (!see_through_walls) // we can skip these checks if we can always see our target
+		if ((targetted_mob_real && (targetted_mob_real.client)) || use_hearers) // is our target_mob a mob with a player controlling it?
+			if (!(targetted_mob in hearers(min(get_dist(src, targetted_mob), viewRange), src))) //we can afford a more expensive proc for the sake of making the player experience with ai better
+				can_see = FALSE
+		else if (!((can_see(src, targetted_mob, min(get_dist(src, targetted_mob), viewRange))) && !see_through_walls)) // if not, lets use a inaccurate cheap proc
+			can_see = FALSE
+
+	return can_see
 
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
 /atom/proc/check_if_alive(var/critcheck = FALSE) //A simple yes no if were alive

@@ -495,7 +495,7 @@ its easier to just keep the beam vertical.
 		var/obj/item/I = P.virtual_scanner
 		I.afterattack(src, user, get_dist(src, user) <= 1)
 
-	SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
+	LEGACY_SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
 
 	return distance == -1 || (get_dist(src, user) <= distance) || isobserver(user)
 

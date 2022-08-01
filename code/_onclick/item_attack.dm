@@ -70,7 +70,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		if(prob(10))
 			for(var/mob/living/carbon/human/H in viewers(user))
-				SEND_SIGNAL(H, SWORD_OF_TRUTH_OF_DESTRUCTION, src)
+				LEGACY_SEND_SIGNAL(H, SWORD_OF_TRUTH_OF_DESTRUCTION, src)
 			qdel(src)
 		. = TRUE
 
@@ -83,8 +83,6 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	if(can_operate(src, user) && do_surgery(src, user, I)) //Surgery
 		return TRUE
 	return I.attack(src, user, user.targeted_organ)
-
-	. = ..()
 
 // Proximity_flag is 1 if this afterattack was called on something adjacent, in your square, or on your person.
 // Click parameters is the params string from byond Click() code, see that documentation.
