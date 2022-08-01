@@ -86,6 +86,9 @@
 // Used for calculating the radioactive strength falloff
 #define INVERSE_SQUARE(initial_strength,cur_distance,initial_distance) ( (initial_strength)*((initial_distance)**2/(cur_distance)**2) )
 
+// Inverts the sign of the given number.
+#define INVERT_SIGN(number) ((number)*-1)
+
 // Vector algebra.
 #define SQUAREDNORM(x, y) (x**2 + y**)
 

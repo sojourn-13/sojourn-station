@@ -1147,7 +1147,7 @@
  * atom/movable/firer: The source of the bullet, will be set as trace.firer.
  * proj: The typepath of the projectile to simulate.
 **/
-/proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj)
+/proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj, var/offset = 0)
 	var/obj/item/projectile/trace = new proj(get_turf(firer))
 	trace.testing = TRUE
 	trace.invisibility = INFINITY //nobody can see it
@@ -1157,7 +1157,7 @@
 
 	trace.firer = firer
 
-	trace.launch(target)
+	trace.launch(target, angle_offset = offset) // offset is by default null
 
 	return trace
 
