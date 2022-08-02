@@ -43,6 +43,16 @@
 
 	RegisterSignal(src, COMSIG_ATTACKED, .proc/react_to_attack)
 
+/**
+ * Signal handler. Called whenever a superior mob is attacked.
+ * On base, will target the mob that attacked them if they dont currently have a target.
+ *
+ * Args:
+ * source: src.
+ * obj/item/attacked_with: The item they were attacked with. Optional.
+ * atom/attacker: The atom that attacked them. Optional.
+ * params: A legacy arg that I only added because a proc that would send this signal had that arg.
+**/
 /mob/living/carbon/superior_animal/proc/react_to_attack(var/mob/living/carbon/superior_animal/source = src, var/obj/item/attacked_with, var/atom/attacker, params)
 	SIGNAL_HANDLER
 
