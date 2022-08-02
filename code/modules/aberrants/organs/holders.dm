@@ -11,8 +11,8 @@
 	var/use_generated_name = TRUE
 	var/use_generated_icon = TRUE
 	var/use_generated_color = TRUE
+	var/generated_color = null
 
-	// Internal
 	var/aberrant_cooldown_time = STANDARD_ABERRANT_COOLDOWN
 	var/on_cooldown = FALSE
 	var/ruined = FALSE
@@ -73,10 +73,11 @@
 	name = initial(name)
 	color = initial(color)
 	max_upgrades = initial(max_upgrades)
+	prefixes = list()
 	min_bruised_damage = initial(min_bruised_damage)
 	min_broken_damage = initial(min_broken_damage)
-	max_damage = initial(max_damage)
-	owner_verbs = initial(owner_verbs)
+	max_damage = initial(max_damage) ? initial(max_damage) : min_broken_damage * 2
+	owner_verbs = initial_owner_verbs.Copy()
 	organ_efficiency = initial_organ_efficiency.Copy()
 	scanner_hidden = initial(scanner_hidden)
 	unique_tag = initial(unique_tag)
@@ -87,17 +88,17 @@
 	nutriment_req = initial(nutriment_req)
 	oxygen_req = initial(oxygen_req)
 
-	if(use_generated_name)
-		name = generate_name_from_eff()
-	else
-		name = ruined ? ruined_name : initial(name)
+	if(!use_generated_name)
+		name = ruined ? ruined_name : name
 
 	if(use_generated_color)
-		color = generate_color_from_mods()
+		color = generate_color()
 	else
 		color = ruined ? ruined_color : color
 
 	SEND_SIGNAL(src, COMSIG_APPVAL, src)
+
+	generate_name()
 
 /obj/item/organ/internal/scaffold/update_icon()
 	if(use_generated_icon)
@@ -107,7 +108,7 @@
 
 /obj/item/organ/internal/scaffold/proc/generate_name_from_eff()
 	if(!organ_efficiency.len)
-		return ruined ? ruined_name : initial(name)
+		return ruined ? ruined_name : name
 
 	var/beginning
 	var/list/middle = list()
@@ -168,13 +169,20 @@
 		new_name += end
 		return new_name
 
-/obj/item/organ/internal/scaffold/proc/generate_color_from_mods()
+/obj/item/organ/internal/scaffold/proc/generate_color()
 	if(!item_upgrades.len)
-		return ruined ? ruined_color : initial(color)
+		return ruined ? ruined_color : color
 
-	var/new_color = pick("#c92b2e", "#fc697d", "#fdab8d", "#672F1D", "#e793bc", "#a7e75f", "#9e6a93")
+	if(!generated_color)
+		generated_color = pick("#c92b2e", "#fc697d", "#fdab8d", "#672F1D", "#e793bc", "#a7e75f", "#9e6a93")
 
-	return new_color
+	return generated_color
+
+/obj/item/organ/internal/scaffold/proc/generate_name()
+	if(use_generated_name)
+		name = generate_name_from_eff()
+	for(var/prefix in prefixes)
+		name = "[prefix] [name]"
 
 /obj/item/organ/internal/scaffold/proc/try_ruin()
 	if(!ruined)

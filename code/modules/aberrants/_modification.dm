@@ -219,7 +219,7 @@ COMSIG_ABERRANT_COOLDOWN
 				return TRUE
 			else
 				//You failed the check, lets see what happens
-				if(M.breakable == FALSE || user.stats?.getPerk(bypass_perk))
+				if(M.breakable == FALSE || user.stats?.getPerk(M.bypass_perk))
 					to_chat(user, SPAN_DANGER("You failed to extract \the [toremove]."))
 					upgrade_loc.refresh_upgrades()
 					user.update_action_buttons()

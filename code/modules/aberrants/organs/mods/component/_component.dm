@@ -71,14 +71,11 @@
 	if(new_name && !using_generated_name)
 		holder.name = new_name
 	if(prefix)
-		holder.name = "[prefix] [holder.name]"
+		holder.prefixes += prefix
 	if(new_desc)
 		holder.desc = new_desc
 	if(new_color && !using_generated_color)
 		holder.color = new_color
-
-	for(var/owner_verb in owner_verb_adds)
-		holder.owner_verbs |= owner_verb
 
 	if(!islist(holder.organ_efficiency))
 		holder.organ_efficiency = list()
@@ -122,6 +119,9 @@
 
 	if(scanner_hidden)
 		holder.scanner_hidden = scanner_hidden
+
+	for(var/owner_verb in owner_verb_adds)
+		holder.owner_verbs |= owner_verb
 
 /datum/component/modification/organ/uninstall(obj/item/I, mob/living/user)
 	..()

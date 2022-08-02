@@ -72,6 +72,10 @@
 
 #define REAGENTS_SPIDER list(/datum/reagent/toxin/pararein, /datum/reagent/toxin/aranecolmin)
 
+#define REAGENTS_METAL list(/datum/reagent/metal/aluminum, /datum/reagent/metal/copper, /datum/reagent/metal/iron, /datum/reagent/metal/lithium,\
+							/datum/reagent/metal/mercury, /datum/reagent/metal/potassium, /datum/reagent/metal/radium, /datum/reagent/metal/sodium,\
+							/datum/reagent/metal/tungsten)
+
 #define REAGENTS_EDIBLE list(/datum/reagent/organic/nutriment, /datum/reagent/organic/frostoil, /datum/reagent/organic/capsaicin, /datum/reagent/drink/milk)
 
 #define REAGENTS_ALCOHOL list(/datum/reagent/ethanol/ale, /datum/reagent/ethanol/beer, /datum/reagent/ethanol/mead,\

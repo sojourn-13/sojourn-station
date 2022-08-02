@@ -17,7 +17,7 @@
 	if(input_mod_path)
 		input_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/input))
 	else if(process_mod_path)
-		process_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/process))
+		process_mod_path = /obj/item/modification/organ/internal/process/condense		// Shuffle might be too confusing when dealing with single inputs and outputs
 	else if(output_mod_path)
 		output_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/output) - /obj/item/modification/organ/internal/output/damaging_insight_gain\
 																						- /obj/item/modification/organ/internal/output/activate_organ_functions)	// use defines to whitelist/blacklist subtypes
@@ -84,7 +84,7 @@
 /obj/item/organ/internal/scaffold/aberrant/teratoma/input
 	name = "teratoma (input)"
 	req_num_inputs = 1
-	input_mod_path = /obj/item/modification/organ/internal/input
+	input_mod_path = TRUE
 
 /obj/item/organ/internal/scaffold/aberrant/teratoma/input/uncommon
 	name = "bulging teratoma (input)"
@@ -97,13 +97,13 @@
 // process
 /obj/item/organ/internal/scaffold/aberrant/teratoma/process
 	name = "teratoma (processing)"
-	process_mod_path = /obj/item/modification/organ/internal/process
+	process_mod_path = TRUE
 
 // output
 /obj/item/organ/internal/scaffold/aberrant/teratoma/output
 	name = "teratoma (output)"
 	req_num_outputs = 1
-	output_mod_path = /obj/item/modification/organ/internal/output
+	output_mod_path = TRUE
 
 /obj/item/organ/internal/scaffold/aberrant/teratoma/output/uncommon
 	name = "bulging teratoma (output)"
@@ -116,7 +116,7 @@
 // special
 /obj/item/organ/internal/scaffold/aberrant/teratoma/special
 	name = "teratoma (unknown)"
-	special_mod_path = /obj/item/modification/organ/internal/special
+	special_mod_path = TRUE
 
 // parasitic
 /obj/item/organ/internal/scaffold/aberrant/teratoma/parasitic

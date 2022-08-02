@@ -80,7 +80,6 @@
 
 	for(var/desired_damage_type in accepted_inputs)
 		var/current_damage = 0
-		var/desired_damage_amount = accepted_inputs[desired_damage_type]
 		var/threshold_met = FALSE
 		switch(desired_damage_type)
 			if(BRUTE)
@@ -96,7 +95,7 @@
 			if(HALLOSS)
 				current_damage = owner.getHalLoss()
 					
-		if(current_damage >= desired_damage_amount)
+		if(current_damage > 0)
 			threshold_met = TRUE
 
 		input += desired_damage_type
@@ -186,7 +185,7 @@
 				if(prob(2))
 					to_chat(owner, SPAN_NOTICE("A pleasant chill runs up your spine. You feel more focused."))
 				var/mob/living/carbon/human/H = owner
-				H.stats.addTempStat(STAT_COG, magnitude * 2, STANDARD_ABERRANT_STIM_TIME, "[parent]")
+				H.stats.addTempStat(STAT_COG, magnitude * 2, S.aberrant_cooldown_time + 1 SECOND, "[parent]")
 				H.sanity.changeLevel(magnitude - 2)
 
 		input += power_source
