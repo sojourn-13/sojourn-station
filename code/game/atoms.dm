@@ -222,8 +222,6 @@
 	spawn()
 		update_openspace()
 
-	UnregisterSignal(src, COMSIG_ATTACKED)
-
 	return ..()
 
 /atom/proc/reveal_blood()

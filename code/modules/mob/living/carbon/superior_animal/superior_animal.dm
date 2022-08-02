@@ -43,50 +43,15 @@
 
 	RegisterSignal(src, COMSIG_ATTACKED, .proc/react_to_attack)
 
-/**
- * Signal handler. Called whenever a superior mob is attacked.
- * On base, will target the mob that attacked them if they dont currently have a target.
- *
- * Args:
- * source: src.
- * obj/item/attacked_with: The item they were attacked with. Optional.
- * atom/attacker: The atom that attacked them. Optional.
- * params: A legacy arg that I only added because a proc that would send this signal had that arg.
-**/
-/mob/living/carbon/superior_animal/proc/react_to_attack(var/mob/living/carbon/superior_animal/source = src, var/obj/item/attacked_with, var/atom/attacker, params)
-	SIGNAL_HANDLER
-
-	if (attacked_with && (isprojectile(attacked_with)))
-		var/obj/item/projectile/Proj = attacked_with
-		if (Proj.testing) //sanity
-			return FALSE
-
-	if (!react_to_attack)
-		return FALSE
-
-	if (attacker && !target_mob) //no target? target this guy
-		if (isValidAttackTarget(attacker))
-			var/atom/new_target = attacker
-			var/atom/new_target_location = attacker.loc
-			var/distance = (get_dist(src, attacker))
-			if (distance > viewRange) // are they out of our viewrange? TODO: maybe add a see/hear check
-				new_target_location = target_outside_of_view_range(attacker, distance) //this is where we think they might be
-			target_mob = WEAKREF(new_target)
-			target_location = WEAKREF(new_target_location)
-
-			lost_sight = TRUE //not sure if this is necessary
-
-			if (retaliation_type)
-				if (retaliation_type & APPROACH_ATTACKER)
-					INVOKE_ASYNC(GLOBAL_PROC, .proc/walk_to_wrapper, src, target_location,  (comfy_range - comfy_distance), move_to_delay, 0, TRUE) //to avoid ci failure, we invoke async
-					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-
 /mob/living/carbon/superior_animal/Destroy()
 	GLOB.superior_animal_list -= src
 
 	target_mob = null
 
 	friends.Cut()
+
+	UnregisterSignal(src, COMSIG_ATTACKED)
+
 	. = ..()
 
 /mob/living/carbon/superior_animal/u_equip(obj/item/W as obj)
