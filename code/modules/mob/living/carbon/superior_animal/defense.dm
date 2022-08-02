@@ -112,7 +112,8 @@
 			M.do_attack_animation(src)
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 			visible_message(SPAN_WARNING("[M] has grabbed [src] passively!"))
-			SEND_SIGNAL(src, COMSIG_ATTACKED, null, M)
+			//SEND_SIGNAL(src, COMSIG_ATTACKED, null, M)
+			(!src.comp_lookup?[COMSIG_ATTACKED] ? NONE : src._SendSignal(COMSIG_ATTACKED, list(src, null, M)) )
 
 			return TRUE
 
