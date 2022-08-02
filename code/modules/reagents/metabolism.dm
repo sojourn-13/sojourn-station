@@ -1,4 +1,4 @@
-#define NSA_THRESHOLD_MINIMUM 20 //The lowest someone's NSA Threshhold can reach
+#define NSA_THRESHOLD_MINIMUM 50 //The lowest someone's NSA Threshhold can reach
 
 /datum/reagents/metabolism
 	var/metabolism_class //CHEM_TOUCH, CHEM_INGEST, or CHEM_BLOOD

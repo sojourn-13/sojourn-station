@@ -916,3 +916,9 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/stack/sterilizer_crystal(location)
+
+/datum/chemical_reaction/reviver
+	result = "reviver"
+	required_reagents = list("dermaline" = 1, "clonexadone" = 1, "sterilizine" = 1, "aminazine" = 1, "serotrotium" = 1, "polystem" = 1, "paroxetine" = 1,"rezadone" = 1,"spaceacillin" = 1,"rejuvenating_agent" = 1,"cordradaxon" = 1,"carthatoline" = 1,"dexalinp" = 1)
+	result_amount = 1
+	catalysts = list("honey" = 5)

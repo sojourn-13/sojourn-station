@@ -113,7 +113,7 @@
 	new /obj/item/storage/pouch/medical_supply(src)
 
 /obj/structure/closet/secure_closet/personal/orderly
-	name = "soteria trauma team locker"
+	name = "soteria recovery team locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_orderly)
 	icon_state = "traumateam"

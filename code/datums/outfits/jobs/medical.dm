@@ -32,8 +32,8 @@
 	belt = /obj/item/storage/belt/medical
 	backpack_contents = list(/obj/item/storage/hcases/med/medical_job = 1)
 
-/decl/hierarchy/outfit/job/medical/trauma_team
-	name = OUTFIT_JOB_NAME("Soteria - Trauma Team")
+/decl/hierarchy/outfit/job/medical/recovery_team
+	name = OUTFIT_JOB_NAME("Soteria - Recovery Team")
 	uniform = /obj/item/clothing/under/rank/paramedic
 	id_type = /obj/item/card/id/med
 	pda_type = /obj/item/modular_computer/pda/science/medical
