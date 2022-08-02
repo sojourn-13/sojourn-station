@@ -51,7 +51,13 @@
 /obj/machinery/mining/drill/Destroy()
 	for(var/obj/machinery/mining/brace/b in supports)
 		b.disconnect()
-	QDEL_NULL(soul)
+
+	if(TC)
+		TC.stop()
+		TC = null
+
+	if(soul)
+		QDEL_NULL(soul)
 	return ..()
 
 /obj/machinery/mining/drill/Initialize()
@@ -343,8 +349,7 @@
 				TC.stop()
 				TC = null
 			if(soul)
-				qdel(soul)
-				soul = null
+				QDEL_NULL(soul)
 			qdel(src)
 			return
 		else
@@ -352,8 +357,7 @@
 				TC.stop()
 				TC = null
 			if(soul)
-				qdel(soul)
-				soul = null
+				QDEL_NULL(soul)
 			qdel(src)
 
 /obj/machinery/mining/drill/examine(mob/user)
