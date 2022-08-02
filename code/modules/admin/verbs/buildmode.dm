@@ -194,8 +194,8 @@
 	var/respect_override = FALSE
 	/// Are our walks temporary, do they expire on their own?
 	var/temporary_walks = TRUE
-	/// Do we move dead mobs?
-	var/move_dead = FALSE
+	/// Do we forbid dead movement?
+	var/deathcheck = TRUE
 
 	Click(location, control, params)
 		var/list/pa = params2list(params)
@@ -323,8 +323,8 @@
 							respect_override = (!(respect_override))
 							to_chat(usr, "Toggled respect override to [respect_override].")
 						else if (pa.Find("shift"))
-							move_dead = (!(move_dead))
-							to_chat(usr, "Toggled dead movement to [move_dead].")
+							deathcheck = (!(deathcheck))
+							to_chat(usr, "Toggled dead movement to [!deathcheck].")
 					else
 						override_movement = (!(override_movement))
 						to_chat(usr, "Toggled movement override to [override_movement].")
