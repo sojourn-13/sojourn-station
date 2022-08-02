@@ -339,9 +339,21 @@
 		var/turf/O = get_turf(src)
 		if(O)
 			explosion(O, -1, 1, 4, 10)
+			if(TC)
+				TC.stop()
+				TC = null
+			if(soul)
+				qdel(soul)
+				soul = null
 			qdel(src)
 			return
 		else
+			if(TC)
+				TC.stop()
+				TC = null
+			if(soul)
+				qdel(soul)
+				soul = null
 			qdel(src)
 
 /obj/machinery/mining/drill/examine(mob/user)
