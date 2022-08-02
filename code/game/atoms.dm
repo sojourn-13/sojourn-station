@@ -187,8 +187,6 @@
 			if (!(chosen_modifier.valid_check(src, arguments)))
 				QDEL_NULL(chosen_modifier)
 
-	RegisterSignal(src, COMSIG_ATTACKED, .proc/react_to_attack)
-
 	return INITIALIZE_HINT_NORMAL
 
 /**
@@ -227,11 +225,6 @@
 	UnregisterSignal(src, COMSIG_ATTACKED)
 
 	return ..()
-
-/atom/proc/react_to_attack()
-	SIGNAL_HANDLER
-
-	return
 
 /atom/proc/reveal_blood()
 	return
