@@ -1,6 +1,6 @@
 //A cooking step that involves adding a reagent to the food.
 /datum/cooking_with_jane/recipe_step/use_stove
-	class=CWJ_ADD_REAGENT
+	class=CWJ_USE_STOVE
 	auto_complete_enabled = TRUE
 	var/time
 	var/heat

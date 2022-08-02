@@ -145,14 +145,55 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 						create_step_add_produce(step[2], TRUE)
 				if(CWJ_USE_TOOL)
 					if(step.len < 3)
-						reason="Bad argument Length for CWJ_ADD_REAGENT_OPTIONAL"
+						reason="Bad argument Length for CWJ_USE_TOOL"
 					else
 						create_step_use_tool(step[2], step[3], FALSE)
 				if(CWJ_USE_TOOL_OPTIONAL)
 					if(step.len < 3)
-						reason="Bad argument Length for CWJ_ADD_REAGENT_OPTIONAL"
+						reason="Bad argument Length for CWJ_USE_TOOL_OPTIONAL"
 					else
 						create_step_use_tool(step[2], step[3], TRUE)
+				if(CWJ_USE_STOVE)
+					if(step.len < 3)
+						reason="Bad argument Length for CWJ_USE_STOVE"
+					switch(step[2])
+						if(J_LO)
+							if(step[3] > CWJ_BURN_TIME_LOW)
+								reason="Time too large for Low setting on CWJ_USE_STOVE; Food will automatically burn."
+								
+						if(J_MED)
+							if(step[3] > CWJ_BURN_TIME_MEDIUM)
+								reason="Time too large for Medium setting on CWJ_USE_STOVE; Food will automatically burn."
+
+						if(J_HI)
+							if(step[3] > CWJ_BURN_TIME_HIGH)
+								reason="Time too large for High setting on CWJ_USE_STOVE; Food will automatically burn."
+
+						else
+							reason="Unrecognized temperature for CWJ_USE_STOVE"
+					
+					if(!reason)
+						create_step_use_stove(step[2], step[3], FALSE)
+				if(CWJ_USE_STOVE_OPTIONAL)
+					if(step.len < 3)
+						reason="Bad argument Length for CWJ_USE_STOVE_OPTIONAL"
+					switch(step[2])
+						if(J_LO)
+							if(step[3] > CWJ_BURN_TIME_LOW)
+								reason="Time too large for Low setting on CWJ_USE_STOVE_OPTIONAL; Food will automatically burn."
+								
+						if(J_MED)
+							if(step[3] > CWJ_BURN_TIME_MEDIUM)
+								reason="Time too large for Medium setting on CWJ_USE_STOVE_OPTIONAL; Food will automatically burn."
+
+						if(J_HI)
+							if(step[3] > CWJ_BURN_TIME_HIGH)
+								reason="Time too large for High setting on CWJ_USE_STOVE_OPTIONAL; Food will automatically burn."
+						else
+							reason="Unrecognized temperature for CWJ_USE_STOVE_OPTIONAL"
+					
+					if(!reason)
+						create_step_use_stove(step[2], step[3], TRUE)
 
 			//Named Arguments modify the recipe in fixed ways
 			if("desc" in step)
@@ -235,7 +276,6 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 //-----------------------------------------------------------------------------------
 //Use item step shortcut commands
 /datum/cooking_with_jane/recipe/proc/create_step_add_produce(var/produce, var/optional)
-	log_debug("Creating Produce: [produce]")
 	var/datum/cooking_with_jane/recipe_step/add_produce/step = new /datum/cooking_with_jane/recipe_step/add_produce(produce, src)
 	return src.add_step(step, optional)
 //-----------------------------------------------------------------------------------
@@ -244,8 +284,11 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 	var/datum/cooking_with_jane/recipe_step/use_tool/step = new (type, quality, src)
 	return src.add_step(step, optional)
 
-
-
+//-----------------------------------------------------------------------------------
+//Use Stove step shortcut commands
+/datum/cooking_with_jane/recipe/proc/create_step_use_stove(var/type, var/quality, var/optional)
+	var/datum/cooking_with_jane/recipe_step/use_stove/step = new (type, quality, src)
+	return src.add_step(step, optional)
 
 //-----------------------------------------------------------------------------------
 //Customize the last step created
@@ -293,15 +336,6 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 	else
 		return FALSE
 
-//-----------------------------------------------------------------------------------
-//Add a custom step to the cooking process not covered by the existing shortcuts.
-//TODO
-/*
-/datum/cooking_with_jane/recipe/proc/add_custom_step(var/step_type, paramlist)
-	//var/step_type, var/base_quality_award, var/param_list, optional=FALSE
-	var/datum/cooking_with_jane/recipe_step/step = new step_type(src)
-	return src.add_step(step, optional)
-*/
 //-----------------------------------------------------------------------------------
 //Setup for two options being exclusive to eachother.
 //Performs a lot of internal checking to make sure that it doesn't break everything.

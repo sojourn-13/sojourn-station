@@ -7,7 +7,7 @@
 #define CWJ_USE_ITEM 				4 		//Using an item in a recipe (Ex- cutting bread with a knife)
 #define CWJ_USE_TOOL				5
 #define CWJ_ADD_PRODUCE				6		//Adding Produce to a recipe
-#define CWJ_USE_APPLIANCE 			7 		//Using a kitchen appliances in a recipe (Ex- cooking a burger on a grill)
+#define CWJ_USE_STOVE	 			7 		//Using a stove in a recipe
 #define CWJ_USE_OTHER 				8 		//Custom Command flag, will take in argument lists.
 
 
@@ -18,7 +18,7 @@
 #define CWJ_USE_ITEM_OPTIONAL		400
 #define CWJ_USE_TOOL_OPTIONAL		500
 #define CWJ_ADD_PRODUCE_OPTIONAL	600
-#define CWJ_USE_APPLIANCE_OPTIONAL	700
+#define CWJ_USE_STOVE_OPTIONAL		700
 #define CWJ_OTHER_OPTIONAL 			800
 
 
@@ -57,6 +57,10 @@
 #define OVEN		"oven"
 #define GRILL		"grill"
 
+//Stove temp settings.
+#define J_LO "Low"
+#define J_MED "Medium"
+#define J_HI "High"
 
 //Burn times for cooking things on a stove.
 //Anything put on a stove for this long becomes a burned mess.
