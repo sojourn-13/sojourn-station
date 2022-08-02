@@ -1,9 +1,9 @@
 /datum/design/organ
 	build_type = ORGAN_GROWER
+	materials = list(MATERIAL_BIOMATTER = 5)
 
 // Mods
 /datum/design/organ/organ_mod
-	materials = list(MATERIAL_BIOMATTER = 5)
 
 /datum/design/organ/organ_mod/capillaries
 	build_path = /obj/item/modification/organ/internal/stromal/improvement/requirements
@@ -35,10 +35,10 @@
 	build_path = /obj/item/organ/internal/scaffold
 
 /datum/design/organ/aberrant_organ
-	materials = list(MATERIAL_BIOMATTER = 20)
+	materials = list(MATERIAL_BIOMATTER = 20)	// Organ plus 3 mods
 
 /datum/design/organ/aberrant_organ/teratoma
-	materials = list(MATERIAL_BIOMATTER = 10)
+	materials = list(MATERIAL_BIOMATTER = 10)	// Organ plus mod
 
 /datum/design/organ/aberrant_organ/teratoma/input
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input

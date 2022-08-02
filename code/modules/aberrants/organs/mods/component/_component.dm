@@ -16,10 +16,9 @@
 
 	destroy_on_removal = FALSE 
 	removable = TRUE
-	breakable = TRUE		// Needs high Bio to remove
+	breakable = TRUE		// Needs high Bio or a perk to remove
 
 	apply_to_types = list(/obj/item/organ/internal/scaffold)
-	//blacklisted_types = list(/obj/item/organ/internal/scaffold/hive)
 
 	examine_msg = "Can be attached to organ scaffolds and abnormal organs."
 	examine_stat = STAT_BIO

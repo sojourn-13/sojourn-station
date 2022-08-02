@@ -96,14 +96,14 @@ COMSIG_ABERRANT_COOLDOWN
 
 		if(!type_match)
 			if(user)
-				to_chat(user, SPAN_WARNING("The [I] can not accept the [parent]!"))
+				to_chat(user, SPAN_WARNING("The [parent] can not be attached to the [I]!"))
 			return FALSE
 
 	if(blacklisted_types.len)
 		for(var/path in blacklisted_types)
 			if(istype(I, path))
 				if(user)
-					to_chat(user, SPAN_WARNING("The [I] can not accept the [parent]!"))
+					to_chat(user, SPAN_WARNING("The [parent] can not be attached to the [I]!"))
 				return FALSE
 	
 	return TRUE
@@ -112,7 +112,14 @@ COMSIG_ABERRANT_COOLDOWN
 	if(user)
 		user.visible_message(SPAN_NOTICE("[user] starts attaching [parent] to [A]"), SPAN_NOTICE("You start attaching \the [parent] to \the [A]"))
 		var/obj/item/I = parent
-		if(!I.use_tool(user = user, target =  A, base_time = install_time, required_quality = null, fail_chance = install_difficulty, required_stat = install_stat, forced_sound = install_sound))
+		var/difficulty_adjust = 0
+		var/time_adjust = 0
+		if(user.stats?.getPerk(bypass_perk))
+			difficulty_adjust = install_difficulty
+			time_adjust = install_time
+		var/final_install_time = install_time - time_adjust
+		var/final_install_difficulty = install_difficulty - difficulty_adjust
+		if(!I.use_tool(user = user, target =  A, base_time = final_install_time, required_quality = null, fail_chance = final_install_difficulty, required_stat = install_stat, forced_sound = install_sound))
 			return FALSE
 		to_chat(user, SPAN_NOTICE("You have successfully attached \the [parent] to \the [A]"))
 		user.drop_from_inventory(parent)
@@ -210,7 +217,14 @@ COMSIG_ABERRANT_COOLDOWN
 		if(M.removable == FALSE)
 			to_chat(user, SPAN_DANGER("\the [toremove] seems to be permanently attached to the [upgrade_loc]"))
 		else
-			if(C.use_tool(user = user, target =  upgrade_loc, base_time = M.removal_time, required_quality = removal_tool_quality, fail_chance = M.removal_difficulty, required_stat = M.removal_stat))
+			var/difficulty_adjust = 0
+			var/time_adjust = 0
+			if(user.stats?.getPerk(M.bypass_perk))
+				difficulty_adjust = M.removal_difficulty
+				time_adjust = M.removal_time
+			var/removal_time = M.removal_time - time_adjust
+			var/removal_difficulty = M.removal_difficulty - difficulty_adjust
+			if(C.use_tool(user = user, target =  upgrade_loc, base_time = removal_time, required_quality = removal_tool_quality, fail_chance = removal_difficulty, required_stat = M.removal_stat))
 				// If you pass the check, then you manage to remove the upgrade intact
 				if(!M.destroy_on_removal && user)
 					to_chat(user, SPAN_NOTICE("You successfully extract \the [toremove] while leaving it intact."))
