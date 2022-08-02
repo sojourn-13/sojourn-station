@@ -497,7 +497,7 @@
 
 						if (move_to_target)
 							held.set_glide_size(DELAY2GLIDESIZE(held.move_to_delay))
-							walk_to_wrapper(held, object, distance, held.move_to_delay, deathcheck = holder.buildmode.move_dead, respect_override = holder.buildmode.respect_override, override = holder.buildmode.override_movement, temporary_walk = holder.buildmode.temporary_walks)
+							walk_to_wrapper(held, object, distance, held.move_to_delay, deathcheck = holder.buildmode.deathcheck, respect_override = holder.buildmode.respect_override, override = holder.buildmode.override_movement, temporary_walk = holder.buildmode.temporary_walks)
 						held.AI_inactive = 0
 						held.life_cycles_before_scan = initial(held.life_cycles_before_scan)
 						held.life_cycles_before_sleep = initial(held.life_cycles_before_sleep)
