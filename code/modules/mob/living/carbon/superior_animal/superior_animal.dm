@@ -167,25 +167,8 @@
 			possible_locations = RANGE_TURFS(tiles_out_of_viewrange, target) // the further away the target, the more inaccurate our targetting
 
 		if (GUESS_LOCATION_WITH_LINE, GUESS_LOCATION_WITH_END_OF_LINE)
-
 			var/turf/viewrange_edge = get_turf_at_edge_of_viewRange(target)
-
-			var/turf/target_turf = get_turf(target)
-
-			var/difference_x = GET_DIFFERENCE(target_turf.x, viewrange_edge.x)
-			var/difference_y = GET_DIFFERENCE(target_turf.y, viewrange_edge.y)
-			var/mult = (out_of_viewrange_line_distance_mult - 1) //set this to something more mathamatically sound. 0 becomes -1, meaning max_x = 0, since its adding a negative version of itself
-			var/max_x = round((target_turf.x + (difference_x * mult)))
-			var/max_y = round((target_turf.y + (difference_y * mult)))
-
-			var/turf/max_guessing_range_turf = locate(max_x, max_y, z)
-			var/max_distance = get_dist(viewrange_edge, max_guessing_range_turf)
-
-			possible_locations = list()
-
-			for (var/steps = max_distance, steps > 0, steps--) //keep calculating steps toward the target until we run out of steps
-				viewrange_edge = get_step_towards(viewrange_edge, max_guessing_range_turf) // calculate another walk
-				possible_locations += viewrange_edge // and add this calculation to the list of possible targets
+			possible_locations = get_turfs_in_line_toward_target(viewrange_edge, target, out_of_viewrange_line_distance_mult)
 
 			if (target_mode == GUESS_LOCATION_WITH_END_OF_LINE)
 				if (out_of_sight_turf_LOS_check)
@@ -195,19 +178,17 @@
 							return possible_location // this is a valid target
 						else
 							continue
-
-				return viewrange_edge //we're only returning the end of the line which is more than likely this turf
+				var/index = possible_locations.len
+				return possible_locations[index] //return the last entry in the list
 
 	for (var/turf/possible_location in possible_locations) // iterate through each turf we are considering
 		if (density == TRUE) // if the turf is dense, aka we cant walk through it...
 			possible_locations -= possible_location // ...no way they're in it
 			continue
-
 		if (out_of_sight_turf_LOS_check)
 			if (!(can_see(possible_location, target, get_dist(possible_location, target)))) // if it cant see the target...
 				possible_locations -= possible_location // then theres no way the target was there
 				continue
-
 		for (var/atom/movable/entity in possible_location)
 			if (entity.density == TRUE) //the 1st check but for the contents
 				possible_locations -= possible_location
