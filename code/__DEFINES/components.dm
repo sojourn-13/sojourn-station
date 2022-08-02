@@ -114,7 +114,6 @@
 #define COMSIG_SUPERIOR_FIRED_PROJECTILE "superior_fired_projectile"
 #define COMSIG_ATTACKED "attacked" // Soj edit, feel free to adapt this to other types
 
-
 // /datum/species signals
 
 // /obj signals

@@ -164,7 +164,7 @@
 			var/offset_temp = right_before_firing()
 			A.launch(target, def_zone, firer_arg = src, angle_offset = offset_temp) //this is where we actually shoot the projectile
 			right_after_firing()
-			LEGACY_SEND_SIGNAL(src, COMSIG_SUPERIOR_FIRED_PROJECTILE, src, A)
+			SEND_SIGNAL(src, COMSIG_SUPERIOR_FIRED_PROJECTILE, src, A)
 			visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"))
 			if(casingtype)
 				new casingtype(get_turf(src))
