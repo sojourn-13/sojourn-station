@@ -1,9 +1,7 @@
 #define ICON_SPLIT world.icon_size/2
-#define T_HI "High"
-#define T_MED "Medium"
-#define T_LOW "Low"
 #define ON 1
 #define OFF 0
+
 
 /obj/machinery/cooking_with_jane/stove
 	name = "Stovetop"
@@ -12,15 +10,85 @@
 	icon_state = "grill"
 	density = TRUE
 	anchored = TRUE
-	layer = BET_LOW_OBJ_LAYER
+	layer = BELOW_OBJ_LAYER
 	cooking = FALSE
-	var/list/temperature= list(T_LOW, T_LOW, T_LOW, T_LOW)
+	var/list/temperature= list("Low", "Low", "Low", "Low")
 	var/list/timer = list(1 MINUTE, 1 MINUTE, 1 MINUTE, 1 MINUTE)
 	var/list/switches = list(OFF, OFF, OFF, OFF)
 	var/list/cooking_timestamp = list(0, 0, 0, 0) //Timestamp of when cooking initialized so we know if the prep was disturbed at any point.
 	var/list/items[4]
+
+	var/active_input //The input that cooking tracker objects look at
 	var/reference_time = 0 //The exact moment when we call the process routine, just to account for lag.
+
+	var/power_cost = 2500 //Power cost per process step for a particular burner
+	var/check_on_10 = 0
+	
+	var/on_fire = FALSE //if the stove has caught fire or not.
+	
 	circuit = /obj/item/circuitboard/cooking_with_jane/stove
+
+//Did not want to use this...
+/obj/machinery/cooking_with_jane/stove/Process()
+
+	if(on_fire)
+		//Do bad things if it is on fire.
+
+	//Under normal circumstances, Only process this thing every 10 process calls; it doesn't need to be hyper-accurate.
+	if(check_on_10 != 10)
+		check_on_10++
+		return
+	else
+		check_on_10 = 0
+	
+	if(switches[1] == ON)
+		cook_checkin(1)
+	if(switches[2] == ON)
+		cook_checkin(2)
+	if(switches[3] == ON)
+		cook_checkin(3)
+	if(switches[4] == ON)
+		cook_checkin(4)
+
+//Process how a specific stove is interacting with material
+/obj/machinery/cooking_with_jane/stove/proc/cook_checkin(var/input)
+	use_power(power_cost)
+	log_debug("/cooking_with_jane/stove/proc/cook_checkin called on burner [input]")
+
+	if(items[input])
+		switch(temperature[input])
+			if("Low")
+				if( (world.time - cooking_timestamp[input]) > CWJ_BURN_TIME_LOW)
+					handle_burning(input)
+				if( (world.time - cooking_timestamp[input]) > CWJ_IGNITE_TIME_LOW)
+					handle_ignition(input)
+
+			if("Medium")
+				if( (world.time - cooking_timestamp[input]) > CWJ_BURN_TIME_MEDIUM)
+					handle_burning(input)
+				if( (world.time - cooking_timestamp[input]) > CWJ_IGNITE_TIME_MEDIUM)
+					handle_ignition(input)
+
+			if("High")
+				if( (world.time - cooking_timestamp[input]) > CWJ_BURN_TIME_HIGH)
+					handle_burning(input)
+				if( (world.time - cooking_timestamp[input]) > CWJ_IGNITE_TIME_HIGH)
+					handle_ignition(input)
+	
+/obj/machinery/cooking_with_jane/stove/proc/handle_burning(input)
+	if(!(items[input] && istype(items[input], /obj/item/cooking_with_jane/cooking_container)))
+		return
+	
+	var/obj/item/cooking_with_jane/cooking_container/container = items[input]
+	container.handle_burning()
+
+/obj/machinery/cooking_with_jane/stove/proc/handle_ignition(input)
+	if(!(items[input] && istype(items[input], /obj/item/cooking_with_jane/cooking_container)))
+		return
+	
+	var/obj/item/cooking_with_jane/cooking_container/container = items[input]
+	if(container.handle_ignition())
+		on_fire = TRUE
 
 //Retrieve which quadrant of the baking pan is being used.
 /obj/machinery/cooking_with_jane/stove/proc/getInput(params)
@@ -35,6 +103,8 @@
 		input = 3
 	else if(icon_x > ICON_SPLIT && icon_y > ICON_SPLIT)
 		input = 4
+	
+	log_debug("cooking_with_jane/stove/proc/getInput returned burner [input]")
 	return input
 
 /obj/machinery/cooking_with_jane/stove/attackby(var/obj/item/used_item, var/mob/user, params)
@@ -64,14 +134,14 @@
 			
 			handle_cooking(user, input)
 			
-			if(ishuman(user) && (temperature[input] == T_HI || temperature[input] == T_MED ))
+			if(ishuman(user) && (temperature[input] == "High" || temperature[input] == "Medium" ))
 				var/mob/living/carbon/human/burn_victim = user
 				if(!burn_victim.gloves)
 					var/damage = 0
 					switch(temperature[input])
-						if(T_HI)
+						if("High")
 							burn_victim.adjustFireLoss(5)
-						if(T_MED)
+						if("Medium")
 							burn_victim.adjustFireLoss(2)
 					to_chat(burn_victim, SPAN_DANGER("You burn your hand a little taking the [item[input]] off of the stove."))
 		user.put_in_hands(item[input])
@@ -99,9 +169,13 @@
 	handle_switch(user, input)
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_temperature(user, input)
-	var/choice = alert(user,"Select a heat setting for burner [input]. Current temperature: [temperature[input]]",T_HI,T_MED,T_LOW,"Cancel")
-	if(choice && choice != "Cancel")
+	var/old_temp = temperature[input]
+	var/choice = alert(user,"Select a heat setting for burner [input]. Current temperature: [old_temp]","High","Medium","Low","Cancel")
+	if(choice && choice != "Cancel" && choice != old_temp)
 		temperature[input] = choice
+		if(switches[input] = ON)
+			handle_cooking(user, input)
+			cooking_timestamp[input] = world.time
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_timer(user, input)
 	var/timer[input] = input(user, "Enter a number on the timer for burner [input]", "Minutes") as num
@@ -125,22 +199,31 @@
 					handle_cooking(user, input)
 	update_icon()
 
-/obj/machinery/cooking_with_jane/stove/proc/handle_cooking(user, input)
+/obj/machinery/cooking_with_jane/stove/proc/handle_cooking(var/mob/user, var/input)
 	
 	if(!(items[input] && istype(items[input], /obj/item/cooking_with_jane/cooking_container)))
 		return
 		
 	var/obj/item/cooking_with_jane/cooking_container/container = items[input]
-	if(container)
-			if(set_timer)
-				reference_time = set_timer
-			else
-				reference_time = world.time - cooking_timestamp[input]
-			container.process_item(src, user)
+	if(set_timer)
+		reference_time = set_timer
+	else
+		reference_time = world.time - cooking_timestamp[input]
 
-/obj/machinery/cooking_with_jane/stove/proc/handle_burning(input)
+	var/qual_reduction = 0
+	switch(temperature[input])
+		if("Low")
+			qual_reduction = (reference_time / 1 MINUTES)
 
-	
+		if("Medium")
+			qual_reduction = (reference_time / 30 SECONDS)
+
+		if("High")
+			qual_reduction = (reference_time / 20 SECONDS)
+
+	active_input = input
+	container.process_item(src, user, lower_quality_on_fail = qual_reduction)
+
 
 
 
@@ -158,5 +241,6 @@
 		src.add_to_visible(our_item)
 	if(cooking)
 		add_overlay(grill)
+
 
 #undef ICON_SPLIT

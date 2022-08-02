@@ -41,7 +41,7 @@
 #define CWJ_SUCCESS 		3 //The user decided to use the item for a given purpose.
 #define CWJ_COMPLETE		4 //The meal has been completed!
 #define CWJ_LOCKOUT			5 //Someone tried starting the function while a prompt was running. Jerk.
-#define CWJ_PARTIAL			6 //The recipe step was followed but not marked as completed.
+#define CWJ_BURNT			6 //The meal was ruined by burning the food somehow.
 
 #define CWJ_CHECK_INVALID	0
 #define CWJ_CHECK_VALID		1
@@ -56,6 +56,19 @@
 #define BASKET		"basket"
 #define OVEN		"oven"
 #define GRILL		"grill"
+
+
+//Burn times for cooking things on a stove.
+//Anything put on a stove for this long becomes a burned mess.
+#define CWJ_BURN_TIME_LOW		15 MINUTES
+#define CWJ_BURN_TIME_MEDIUM	10 MINUTES
+#define CWJ_BURN_TIME_HIGH		5 MINUTES
+
+//Ignite times for reagents interacting with a stove.
+//The stove will catch fire if left on too long with flammable reagents in any of its holders.
+#define CWJ_IGNITE_TIME_LOW		1 HOUR
+#define CWJ_IGNITE_TIME_MEDIUM	30 MINUTES
+#define CWJ_IGNITE_TIME_HIGH	15 MINUTES
 
 //A dictionary of unique step ids that point to other step IDs that should be EXCLUDED if it is present in a recipe_pointer's list of possible steps.
 GLOBAL_LIST_EMPTY(cwj_optional_step_exclusion_dictionary)

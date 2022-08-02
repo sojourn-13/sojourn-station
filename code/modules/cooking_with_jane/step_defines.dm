@@ -99,7 +99,7 @@
 		return "skip"
 
 /datum/cooking_with_jane/recipe_step/proc/follow_step(var/obj/added_item, var/obj/item/cooking_with_jane/cooking_container/container)
-	return TRUE
+	return CWJ_SUCCESS
 
 //Special function to check if the step has been satisfied. Sometimed just following the step is enough, but not always.
 /datum/cooking_with_jane/recipe_step/proc/is_complete(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)

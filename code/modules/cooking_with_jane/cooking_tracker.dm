@@ -61,7 +61,7 @@
 	return active_recipe_pointers.len
 
 //Core function that checks if a object meets all the requirements for certain recipe actions.
-/datum/cooking_with_jane/recipe_tracker/proc/process_item(var/obj/used_object)
+/datum/cooking_with_jane/recipe_tracker/proc/process_item(var/obj/used_object, var/mob/user)
 	log_debug("Called /datum/cooking_with_jane/recipe_tracker/proc/process_item")
 	if(completion_lockout)
 		log_debug("/datum/cooking_with_jane/recipe_tracker/proc/process_item held in lockout!")
@@ -95,7 +95,7 @@
 
 	if(valid_steps.len > 1)
 		completion_lockout = TRUE
-		var/list/choice = input("There's two things you can do with this item!", "Choose One:") in valid_steps
+		var/list/choice = input(user, "There's two things you can do with this item!", "Choose One:") in valid_steps
 		completion_lockout = FALSE
 		if(!choice)
 			log_debug("/recipe_tracker/proc/process_item returned choice cancel!")
@@ -136,7 +136,7 @@
 			else
 				recipe_string += ", or \a [pointer.current_recipe.name]"
 
-		if(alert(usr, "If you finish cooking now, you will create [recipe_string]. However, you feel there are possibilities beyond even this. Continue cooking anyways?",,"Yes","No") == "Yes")
+		if(alert(user, "If you finish cooking now, you will create [recipe_string]. However, you feel there are possibilities beyond even this. Continue cooking anyways?",,"Yes","No") == "Yes")
 			//Cull finished recipe items
 			for (var/datum/cooking_with_jane/recipe_pointer/pointer in completed_list)
 				active_recipe_pointers.Remove(pointer)
@@ -150,14 +150,14 @@
 		chosen_pointer = completed_list[1]
 		if(completed_list.len > 1)
 			completion_lockout = TRUE
-			var/choice = input(usr, "There's two things you complete at this juncture!", "Choose One:") in completed_list
+			var/choice = input(user, "There's two things you complete at this juncture!", "Choose One:") in completed_list
 			completion_lockout = FALSE
 			if(choice)
 				chosen_pointer = completed_list[choice]
 
 	//Call a proc that follows one of the steps in question, so we have all the nice to_chat calls.
 	var/datum/cooking_with_jane/recipe_step/sample_step = valid_steps[1]
-	log_debug("Calling: follow_step")
+	log_debug("/recipe_tracker/proc/process_item: Calling follow_step")
 	sample_step.follow_step(used_object, src)
 
 	if(chosen_pointer)

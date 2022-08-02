@@ -56,7 +56,7 @@
 	playsound(src,'sound/effects/Liquid_transfer_mono.ogg',50,1)
 	to_chat(usr, SPAN_NOTICE("You transfer [trans] units to \the [container]."))
 
-	return TRUE
+	return CWJ_SUCCESS
 
 /datum/cooking_with_jane/recipe_step/add_reagent/is_complete(var/obj/used_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 	var/obj/item/reagent_containers/our_item = used_item

@@ -64,4 +64,4 @@
 			usr.unEquip(added_item, container)
 		else
 			added_item.forceMove(container)
-	return TRUE
+	return CWJ_SUCCESS

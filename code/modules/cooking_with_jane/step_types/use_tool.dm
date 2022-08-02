@@ -35,6 +35,7 @@
 	var/obj/item/tool/our_tool = added_item
 	if(our_tool.worksound && our_tool.worksound != NO_WORKSOUND)
 		playsound(usr.loc, our_tool.worksound, 50, 1)
+	return CWJ_SUCCESS
 
 //Think about a way to make this more intuitive?
 /datum/cooking_with_jane/recipe_step/use_tool/calculate_quality(var/obj/added_item)

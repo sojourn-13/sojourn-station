@@ -1,6 +1,3 @@
-#define T_HI "High"
-#define T_MED "Medium"
-#define T_LOW "Low"
 //A cooking step that involves adding a reagent to the food.
 /datum/cooking_with_jane/recipe_step/use_stove
 	class=CWJ_ADD_REAGENT
@@ -35,22 +32,18 @@
 
 
 /datum/cooking_with_jane/recipe_step/add_reagent/follow_step(var/obj/used_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
-	return TRUE
+	var/obj/machinery/cooking_with_jane/stove/our_stove = used_item
+	var/obj/item/container = tracker.holder_ref.resolve()
+	container.cook_data[our_stove.temperature[our_stove.active_input]] += our_stove.reference_time
+
+	return CWJ_SUCCESS
 
 /datum/cooking_with_jane/recipe_step/add_reagent/is_complete(var/obj/used_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
-	var/obj/item/reagent_containers/our_item = used_item
+
 	var/obj/item/container = tracker.holder_ref.resolve()
-	var/part = our_item.reagents.get_reagent_amount(required_reagent_id) / our_item.reagents.total_volume
 
-	var/incoming_amount = max(0, min(our_item.amount_per_transfer_from_this, our_item.reagents.total_volume, container.reagents.get_free_space()))
-
-	var/incoming_valid_amount = incoming_amount * part
-
-	var/resulting_total = container.reagents.get_reagent_amount(required_reagent_id) + incoming_valid_amount
-	if(resulting_total >= required_reagent_amount)
+	if(container.cook_data[heat] >= time)
 		return TRUE
+
 	return FALSE
 
-#undef T_HI
-#undef T_MED
-#undef T_LOW

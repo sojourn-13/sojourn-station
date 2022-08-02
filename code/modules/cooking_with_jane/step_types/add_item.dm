@@ -34,7 +34,6 @@
 	..(our_recipe)
 
 
-
 /datum/cooking_with_jane/recipe_step/add_item/check_conditions_met(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 	log_debug("Called add_item/check_conditions_met for [added_item], checking against item type [required_item_type]. Exact_path = [exact_path]")
 	if(!istype(added_item, /obj/item))
@@ -62,4 +61,4 @@
 			usr.unEquip(added_item, container)
 		else
 			added_item.forceMove(container)
-	return TRUE
+	return CWJ_SUCCESS

@@ -16,6 +16,8 @@
 	var/volume = 240 //Don't make recipes using reagents in larger quantities than this amount; they won't work.
 	var/datum/cooking_with_jane/recipe_tracker/tracker = null //To be populated the first time the plate is interacted with.
 	var/lip //Icon state of the lip layer of the object
+	var/removal_penalty = 0 //A flat quality reduction for removing an unfinished recipe from the container.
+	var/list/cook_data = list("High"=0 , "Medium" = 0, "Low"=0) //Record of what cooking has been done on this food.
 	reagent_flags = NO_REACT
 
 /obj/item/cooking_with_jane/cooking_container/Initialize()
@@ -42,31 +44,42 @@
 
 /obj/item/cooking_with_jane/cooking_container/attackby(var/obj/item/I, var/mob/user)
 
-	if(contents && !tracker)
+	if((contents || (reagents.total_volume != 0)) && !tracker)
 		to_chat("The [src] is full. Remove the finished meal from it first.")
-
+	
 	process_item(I, user)
 	return
 
-/obj/item/cooking_with_jane/cooking_container/proc/process_item(var/obj/I, var/mob/user)
+/obj/item/cooking_with_jane/cooking_container/proc/process_item(var/obj/I, var/mob/user, var/lower_quality_on_fail = 0)
 	//OK, time to load the tracker
 	if(!tracker)
 		tracker = new /datum/cooking_with_jane/recipe_tracker(src)
 
-	switch(tracker.process_item(I))
+	switch(tracker.process_item(I, user))
 		if(CWJ_NO_STEPS)
 			to_chat("It doesn't seem like you can create a meal from that. Yet.")
+			if(lower_quality_on_fail != 0)
+				for (var/obj/item/contained in contents)
+					contained?:food_quality -= lower_quality_on_fail
 		if(CWJ_CHOICE_CANCEL)
 			to_chat("You decide against adding anything to the [src].")
 		if(CWJ_COMPLETE)
 			to_chat("You finish cooking with the [src].")
 			qdel(tracker)
 			tracker = null
+			cook_data = list("High"=0 , "Medium" = 0, "Low"=0)
 			update_icon()
 		if(CWJ_SUCCESS)
 			update_icon()
 		if(CWJ_LOCKOUT)
 			to_chat("You can't make the same decision twice!")
+
+//TODO: Handle the contents of the container being ruined via burning.
+/obj/item/cooking_with_jane/cooking_container/proc/handle_burning
+
+//TODO: Handle the contents of the container lighting on actual fire.
+/obj/item/cooking_with_jane/cooking_container/proc/handle_ignition
+	return FALSE
 
 /obj/item/cooking_with_jane/cooking_container/verb/empty()
 	set src in oview(1)
@@ -79,19 +92,35 @@
 	if (contents.len == 0)
 		to_chat(user, SPAN_WARNING("There's nothing in [src] you can remove!"))
 		return
-	if(tracker)
-		for (var/obj/item/contained in contents)
-			contained?:food_quality -= 5
+
+	if(tracker && removal_penalty)
+			var/was_removed = FALSE
+			for (var/obj/item/contained in contents)
+				if(!was_removed)
+					was_removed == TRUE
+				contained?:food_quality -= removal_penalty
+			to_chat(user, SPAN_WARNING("The quality of ingredients in the [src] was reduced by the extra jostling."))
+
+	//Handle quality reduction for reagents
+	if((reagents.total_volume != 0) && (contents.len != 0))
+		var/reagent_qual_reduction = round(reagents.total_volume/contents.len)
+		if(reagent_qual_reduction != 0)
+			for (var/obj/item/contained in contents)
+				contained?:food_quality -= reagent_qual_reduction
+			to_chat(user, SPAN_WARNING("The quality of ingredients in the [src] was reduced by the presence of reagents in the container."))
 
 	for (var/contained in contents)
 		var/atom/movable/AM = contained
 		remove_from_visible(AM)
 		AM.forceMove(get_turf(src))
-		
+ 
+	//TODO: Splash the reagents somewhere
+	reagents.clear_reagents()
 
 	update_icon()
 	qdel(tracker)
 	tracker = null
+	cook_data = list("High"=0 , "Medium" = 0, "Low"=0)
 
 	to_chat(user, SPAN_NOTICE("You remove all the solid items from [src]."))
 
@@ -108,6 +137,7 @@
 	if(tracker)
 		qdel(tracker)
 		tracker = null
+	cook_data = list("High"=0 , "Medium" = 0, "Low"=0)
 
 /obj/item/cooking_with_jane/cooking_container/proc/label(var/number, var/CT = null)
 	//This returns something like "Fryer basket 1 - empty"
@@ -182,6 +212,7 @@
 	desc = "Boil things with this. Maybe even stick 'em in a stew."
 	icon_state = "pot"
 	hitsound = 'sound/weapons/smash.ogg'
+	removal_penalty = 5
 	appliancetype = POT
 	w_class = ITEM_SIZE_BULKY
 
@@ -190,6 +221,7 @@
 	shortname = "basket"
 	desc = "Put ingredients in this; designed for use with a deep fryer. Warranty void if used."
 	icon_state = "basket"
+	removal_penalty = 5
 	appliancetype = BASKET
 
 /obj/item/cooking_with_jane/cooking_container/grill_grate
@@ -198,6 +230,7 @@
 	place_verb = "onto"
 	desc = "Primarily used to grill meat, place this on a grill and enjoy an ancient human tradition."
 	icon_state = "grill_grate"
+	removal_penalty = 1
 	appliancetype = GRILL
 
 /obj/item/cooking_with_jane/cooking_container/bowl
@@ -206,4 +239,5 @@
 	desc = "A bowl."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "mixingbowl"
+	removal_penalty = 2
 	appliancetype = BOWL
