@@ -107,7 +107,7 @@
 
 	var/obj/item/organ/internal/scaffold/S = holder
 	var/effect_multiplier = (S.max_damage - S.damage) / S.max_damage
-	var/delay = S.aberrant_cooldown_time + 1 SECOND
+	var/delay = S.aberrant_cooldown_time + 2 SECONDS
 
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner

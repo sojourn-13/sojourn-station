@@ -102,6 +102,12 @@
 		holder.nutriment_req *= 1 - round(nutriment_req_multiplier, 0.01)
 	if(oxygen_req_multiplier)
 		holder.oxygen_req *= 1 - round(oxygen_req_multiplier, 0.01)
+	if(min_bruised_damage_multiplier)
+		holder.min_bruised_damage *= 1 + round(min_bruised_damage_multiplier, 0.01)
+	if(min_broken_damage_multiplier)
+		holder.min_broken_damage *= 1 + round(min_broken_damage_multiplier, 0.01)
+	if(max_damage_multiplier)
+		holder.max_damage *= 1 + round(max_damage_multiplier, 0.01)
 
 	if(specific_organ_size_mod)
 		holder.specific_organ_size += round(specific_organ_size_mod, 0.01)
@@ -115,6 +121,12 @@
 		holder.oxygen_req += round(oxygen_req_mod, 0.01)
 	if(max_upgrade_mod)
 		holder.max_upgrades += max_upgrade_mod
+	if(min_bruised_damage_mod)
+		holder.min_bruised_damage += min_bruised_damage_mod
+	if(min_broken_damage_mod)
+		holder.min_broken_damage += min_broken_damage_mod
+	if(max_damage_mod)
+		holder.max_damage += max_damage_mod
 
 	if(scanner_hidden)
 		holder.scanner_hidden = scanner_hidden

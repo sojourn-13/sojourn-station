@@ -4,7 +4,7 @@
 	desc = "NeoTheology machine for printing things using biomass. Configured for medical use."
 	icon_state = "bioprinter_med"
 	//circuit = /obj/item/electronics/circuitboard/autolathe/bioprinter/med
-	build_type = AUTOLATHE | ORGAN_GROWER		// Should not be able to use church disks
+	build_type = ORGAN_GROWER		// Should not be able to use church disks
 	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/omg/basic_organ_mods
 	stored_material = list(
 		MATERIAL_BIOMATTER = 360,

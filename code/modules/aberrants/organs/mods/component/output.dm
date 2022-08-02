@@ -10,7 +10,7 @@
 	var/outputs
 	for(var/output in possible_outputs)
 		var/datum/reagent/R = output
-		outputs += initial(R.name) + " ([possible_outputs[output]]), "
+		outputs += initial(R.name) + " ([possible_outputs[output]]u), "
 
 	outputs = copytext(outputs, 1, length(outputs) - 1)
 
@@ -26,18 +26,20 @@
 		return
 
 	var/obj/item/organ/internal/scaffold/S = holder
-	var/effect_multiplier = (S.max_damage - S.damage) / S.max_damage
+	var/organ_multiplier = (S.max_damage - S.damage) / S.max_damage
 
 	if(input.len && input.len <= possible_outputs.len)
 		for(var/i in input)
 			var/index = input.Find(i)
-			var/is_input_valid = input[i]
+			var/is_input_valid = input[i] ? TRUE : FALSE
 			if(is_input_valid)
+				var/input_multiplier = input[i]
 				var/datum/reagent/output = possible_outputs[index]
-				var/amount_to_add = possible_outputs[output] * effect_multiplier
+				var/amount_to_add = possible_outputs[output] * organ_multiplier * input_multiplier
 				owner.bloodstr.add_reagent(initial(output.id), amount_to_add)
 	
 		SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
+
 
 /datum/component/modification/organ/output/reagents_ingest
 /datum/component/modification/organ/output/reagents_ingest/get_function_info()
@@ -60,18 +62,20 @@
 		return
 
 	var/obj/item/organ/internal/scaffold/S = holder
-	var/effect_multiplier = (S.max_damage - S.damage) / S.max_damage
+	var/organ_multiplier = (S.max_damage - S.damage) / S.max_damage
 
 	if(input.len)
 		for(var/i in input)
 			var/index = input.Find(i)
-			var/is_input_valid = input[i]
+			var/is_input_valid = input[i] ? TRUE : FALSE
 			if(is_input_valid && index <= possible_outputs.len)
+				var/input_multiplier = input[i]
 				var/datum/reagent/output = possible_outputs[index]
-				var/amount_to_add = possible_outputs[output] * effect_multiplier
+				var/amount_to_add = possible_outputs[output] * organ_multiplier * input_multiplier
 				owner.ingested.add_reagent(initial(output.id), amount_to_add)
 	
 		SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
+
 
 /datum/component/modification/organ/output/chemical_effects	// More organ-like than producing reagents
 /datum/component/modification/organ/output/chemical_effects/get_function_info()
@@ -109,15 +113,16 @@
 		return
 
 	var/obj/item/organ/internal/scaffold/S = holder
-	var/effect_multiplier = (S.max_damage - S.damage) / S.max_damage
+	var/organ_multiplier = (S.max_damage - S.damage) / S.max_damage
 
 	if(input.len)
 		for(var/i in input)
 			var/index = input.Find(i)
-			var/is_input_valid = input[i]
+			var/is_input_valid = input[i] ? TRUE : FALSE
 			if(is_input_valid && index <= possible_outputs.len)
+				var/input_multiplier = input[i]
 				var/effect = possible_outputs[index]
-				var/magnitude = input[i] ? possible_outputs[effect] * effect_multiplier : 0
+				var/magnitude = possible_outputs[effect] * organ_multiplier * input_multiplier
 				owner.add_chemical_effect(effect, magnitude)
 	
 		SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
@@ -143,16 +148,17 @@
 		return
 
 	var/obj/item/organ/internal/scaffold/S = holder
-	var/effect_multiplier = (S.max_damage - S.damage) / S.max_damage
-	var/delay = S.aberrant_cooldown_time + 1 SECOND
+	var/organ_multiplier = (S.max_damage - S.damage) / S.max_damage
+	var/delay = S.aberrant_cooldown_time + 2 SECONDS
 
 	if(input.len && iscarbon(owner))
 		for(var/i in input)
 			var/index = input.Find(i)
-			var/is_input_valid = input[i]
+			var/is_input_valid = input[i] ? TRUE : FALSE
 			if(is_input_valid && index <= possible_outputs.len)
+				var/input_multiplier = input[i]
 				var/stat = possible_outputs[index]
-				var/magnitude = possible_outputs[stat] * effect_multiplier
+				var/magnitude = possible_outputs[stat] * organ_multiplier * input_multiplier
 				owner.stats.addTempStat(stat, magnitude, delay, "[holder]")
 	
 		SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
@@ -170,16 +176,17 @@
 		return
 
 	var/obj/item/organ/internal/scaffold/S = holder
-	var/effect_multiplier = (S.max_damage - S.damage) / S.max_damage
+	var/organ_multiplier = (S.max_damage - S.damage) / S.max_damage
 
 	if(input.len && ishuman(owner))
 		for(var/i in input)
 			var/index = input.Find(i)
 			var/is_input_valid = input[i]
 			if(is_input_valid)
+				var/input_multiplier = input[i]
 				var/mob/living/carbon/human/H = owner
 				var/damage_type = possible_outputs[index]
-				var/damage_amount = possible_outputs[damage_type] * effect_multiplier
+				var/damage_amount = possible_outputs[damage_type] * organ_multiplier * input_multiplier
 				H.apply_damage(damage_amount, damage_type)
 				H.adjustBrainLoss(damage_amount)		// Added brainloss because we're gaining insight and most damage is trivial anyway
 				H.sanity.give_insight(damage_amount)
@@ -221,7 +228,7 @@
 		return
 
 	var/obj/item/organ/internal/scaffold/S = holder
-	var/effect_multiplier = (S.max_damage - S.damage) / S.max_damage
+	var/organ_multiplier = (S.max_damage - S.damage) / S.max_damage
 
 	var/mob/living/carbon/human/H = owner
 
@@ -242,11 +249,12 @@
 		for(var/i in input)
 			var/is_input_valid = input[i]
 			if(is_input_valid)
-				organ_efficiency_mod = active_organ_efficiency_mod * effect_multiplier
-				blood_req_mod = active_blood_req_mod * effect_multiplier
-				nutriment_req_mod = active_nutriment_req_mod * effect_multiplier
-				oxygen_req_mod = active_oxygen_req_mod * effect_multiplier
-				owner_verb_adds = active_owner_verb_adds * effect_multiplier
+				var/input_multiplier = input[i]
+				organ_efficiency_mod = active_organ_efficiency_mod * organ_multiplier * input_multiplier
+				blood_req_mod = active_blood_req_mod * organ_multiplier * input_multiplier
+				nutriment_req_mod = active_nutriment_req_mod * organ_multiplier * input_multiplier
+				oxygen_req_mod = active_oxygen_req_mod * organ_multiplier * input_multiplier
+				owner_verb_adds = active_owner_verb_adds * organ_multiplier * input_multiplier
 
 				if(active_organ_efficiency_mod.len)
 					for(var/process in active_organ_efficiency_mod)

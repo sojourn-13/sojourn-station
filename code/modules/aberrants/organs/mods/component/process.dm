@@ -2,6 +2,25 @@
 	exclusive_type = /obj/item/modification/organ/internal/process
 	trigger_signal = COMSIG_ABERRANT_PROCESS
 
+/datum/component/modification/organ/process/boost
+	var/multiplier
+
+/datum/component/modification/organ/process/boost/get_function_info()
+	var/description = "\n<span style='color:orange'>Functional information (processing):</span> amplifies outputs"
+	description += "\n<span style='color:orange'>Output increase:</span> [multiplier * 100]%"
+
+	return description
+
+/datum/component/modification/organ/process/boost/trigger(atom/movable/holder, mob/living/carbon/owner, list/input)
+	if(!holder || !owner || !input)
+		return
+
+	if(input?.len)
+		for(var/element in input)
+			input[element] += multiplier
+
+		SEND_SIGNAL(holder, COMSIG_ABERRANT_OUTPUT, holder, owner, input)
+
 /datum/component/modification/organ/process/shuffle
 	var/list/new_packet_order = list()
 	var/num_outputs

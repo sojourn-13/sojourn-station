@@ -38,13 +38,11 @@
 	update_contents()
 	update_icon()
 
-/obj/machinery/vending/organfridge
-	name = "Organ Freezer"
-	desc = "A refrigerated storage unit for organs."
-	icon_state = "organfridge"
-	auto_price = FALSE
-	always_open = TRUE
-	can_stock = list(/obj/item/organ, /obj/item/modification/organ, /obj/item/storage/freezer/medical)
+/obj/machinery/vending/organfridge_aberrant
+	name = "Oh My Guts!"
+	desc = "Grass-fed organic organs or your money back!"
+	product_slogans = "Don\'t be heartless!;Can you stomach these prices?!;You don\'t have the guts, pal!"
+	product_ads = "Don\'t be heartless!;Can you stomach these prices?!;You don\'t have the guts, pal!"
 	var/icon_on = "organfridge"
 	var/icon_off = "organfridge-off"
 	var/icon_panel = "organfridge-panel"
@@ -53,74 +51,6 @@
 	var/icon_fill30 = "organfridge-fill30"
 	var/light_colors = list("red", "yellow", "green")
 	var/contents_current
-
-/obj/machinery/vending/organfridge/stocked
-	products = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/diy_organs = 1
-	)
-	contraband = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/simple = 1
-	)
-
-/obj/machinery/vending/organfridge/New()
-	..()
-	contents_current = 0
-	for(var/i in products)
-		contents_current += products[i]
-	for(var/i in contraband)
-		contents_current += contraband[i]
-
-	wires = new /datum/wires/vending/intermediate(src)
-
-	update_icon()
-
-/obj/machinery/vending/organfridge/update_icon()
-	cut_overlays()
-	if(stat & (BROKEN|NOPOWER))
-		icon_state = icon_off
-	else
-		icon_state = icon_on
-
-	if(panel_open && icon_panel)
-		overlays += image(icon, icon_panel)
-	else
-		overlays += image(icon, "fridge_light-top_left-" + pick(light_colors))
-		overlays += image(icon, "fridge_light-top_right-" + pick(light_colors))
-		overlays += image(icon, "fridge_light-bottom_left-" + pick(light_colors))
-		overlays += image(icon, "fridge_light-bottom_right-" + pick(light_colors))
-
-	if(contents_current > 0)
-		if(contents_current <= 10)
-			overlays += image(icon, icon_fill10)
-		else if(contents_current <= 20)
-			overlays += image(icon, icon_fill20)
-		else
-			overlays += image(icon, icon_fill30)
-
-
-
-/obj/machinery/vending/organfridge/attackby()
-	. = ..()
-	update_icon()	// Vending code doesn't update the whole sprite when the panel is opened/closed
-
-/obj/machinery/vending/organfridge/vend()
-	..()
-	contents_current -= 1
-	update_icon()
-
-/obj/machinery/vending/organfridge/stock()
-	..()
-	contents_current += 1
-	update_icon()
-
-/obj/machinery/vending/organfridge/aberrant
-	name = "Oh My Guts!"
-	desc = "Grass-fed organic organs or your money back!"
-	product_slogans = "Don\'t be heartless!;Can you stomach these prices?!;You don\'t have the guts, pal!"
-	product_ads = "Don\'t be heartless!;Can you stomach these prices?!;You don\'t have the guts, pal!"
-	auto_price = TRUE
-	always_open = FALSE
-	can_stock = list()
 	products = list(
 		/obj/item/organ/internal/scaffold = 3,
 		/obj/item/storage/freezer/medical = 5,
@@ -154,7 +84,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/rare = 2000
 	)
 
-/obj/machinery/vending/organfridge/aberrant/New()
+/obj/machinery/vending/organfridge_aberrant/New()
 	..()
 	var/light_color = pick(\
 		COLOR_LIGHTING_RED_DARK,\
@@ -167,11 +97,60 @@
 	set_light(1.4, 1, light_color)
 	earnings_account = department_accounts[vendor_department]
 
-/obj/machinery/vending/organfridge/aberrant/update_icon()
+	contents_current = 0
+	for(var/i in products)
+		contents_current += products[i]
+	for(var/i in contraband)
+		contents_current += contraband[i]
+
+	wires = new /datum/wires/vending/intermediate(src)
+
+	update_icon()
+
+/obj/machinery/vending/organfridge_aberrant/update_icon()
+	cut_overlays()
+	if(stat & (BROKEN|NOPOWER))
+		icon_state = icon_off
+	else
+		icon_state = icon_on
+
+	if(panel_open && icon_panel)
+		overlays += image(icon, icon_panel)
+	else
+		overlays += image(icon, "fridge_light-top_left-" + pick(light_colors))
+		overlays += image(icon, "fridge_light-top_right-" + pick(light_colors))
+		overlays += image(icon, "fridge_light-bottom_left-" + pick(light_colors))
+		overlays += image(icon, "fridge_light-bottom_right-" + pick(light_colors))
+
+	if(contents_current > 0)
+		if(contents_current <= 10)
+			overlays += image(icon, icon_fill10)
+		else if(contents_current <= 20)
+			overlays += image(icon, icon_fill20)
+		else
+			overlays += image(icon, icon_fill30)
+
+
+
+/obj/machinery/vending/organfridge_aberrant/attackby()
+	. = ..()
+	update_icon()	// Vending code doesn't update the whole sprite when the panel is opened/closed
+
+/obj/machinery/vending/organfridge_aberrant/vend()
+	..()
+	contents_current -= 1
+	update_icon()
+
+/obj/machinery/vending/organfridge_aberrant/stock()
+	..()
+	contents_current += 1
+	update_icon()
+
+/obj/machinery/vending/organfridge_aberrant/update_icon()
 	..()
 	overlays += image(icon, "organfridge_screen-omg")
 
-/obj/machinery/vending/organfridge/aberrant/simple
+/obj/machinery/vending/organfridge_aberrant/simple
 	name = "OMG! The Classics"
 	desc = "The classic organs from the original OMG! Mart. Oh My Guts!"
 	product_slogans = "Do you have the guts?;Your liver will thank you!;It's what\'s on the inside that counts!"
@@ -199,7 +178,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/damage_response = 1000
 	)
 
-/obj/machinery/vending/organfridge/aberrant/alcoholic
+/obj/machinery/vending/organfridge_aberrant/alcoholic
 	name = "OMG! Discount Organs"
 	desc = "Humanely harvested discount organs! Oh My Guts!"
 	product_slogans = "Get a heart on!;At least, you\'ll be beautiful on the inside!;No guts, no glory!"
@@ -241,7 +220,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/dependent/classy = 1500
 	)
 
-/obj/machinery/vending/organfridge/aberrant/addict
+/obj/machinery/vending/organfridge_aberrant/addict
 	name = "OMG! Refurbished Organs"
 	desc = "Humanely harvested refurbished organs! Oh My Guts!"
 	product_slogans = "Bad kidney? Sounds like you\'re in trouble.;You only liver once!;I've got you under my skin!"

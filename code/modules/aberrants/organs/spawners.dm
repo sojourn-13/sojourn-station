@@ -21,9 +21,9 @@
 	//tags_to_spawn = list(SPAWN_ABERRANT_MACHINERY_ORGANS)	// Add more as they are created
 
 /obj/random/aberrant_machine/item_to_spawn()
-	return pickweight(list(/obj/machinery/vending/organfridge/aberrant = 10,
-				/obj/machinery/vending/organfridge/aberrant/simple = 8,
-				/obj/machinery/vending/organfridge/aberrant/alcoholic = 2,
-				/obj/machinery/vending/organfridge/aberrant/addict = 2,
+	return pickweight(list(/obj/machinery/vending/organfridge_aberrant = 6,
+				/obj/machinery/vending/organfridge_aberrant/simple = 10,
+				/obj/machinery/vending/organfridge_aberrant/alcoholic = 2,
+				/obj/machinery/vending/organfridge_aberrant/addict = 2,
 				/obj/machinery/sleeper/sarcophagus = 2,
 				/obj/machinery/sleeper/sarcophagus/abomination = 16))

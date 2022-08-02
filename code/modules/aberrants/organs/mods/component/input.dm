@@ -3,9 +3,7 @@
 	trigger_signal = COMSIG_ABERRANT_INPUT
 
 	var/check_mode
-	//var/consumption_factor
-	var/list/accepted_inputs = list()	// Format: input = unit threshold (/datum/reagent = 20)
-
+	var/list/accepted_inputs = list()
 
 /datum/component/modification/organ/input/reagents
 /datum/component/modification/organ/input/reagents/get_function_info()
@@ -40,7 +38,7 @@
 		return
 
 	var/obj/item/organ/internal/scaffold/S = holder
-	var/effect_multiplier = ((S.max_damage - S.damage) / S.max_damage) * (S.aberrant_cooldown_time / (2 SECONDS))	// Life() is called every 2 seconds
+	var/organ_multiplier = ((S.max_damage - S.damage) / S.max_damage) * (S.aberrant_cooldown_time / (2 SECONDS))	// Life() is called every 2 seconds
 
 	var/list/input = list()
 
@@ -51,7 +49,7 @@
 			if(istype(R, reagent_path))
 				if(R.volume > 0)
 					threshold_met = TRUE
-					var/removed = R.metabolism * effect_multiplier		// Consumes reagent based on organ health and how many ticks in between organ processes
+					var/removed = R.metabolism * organ_multiplier		// Consumes reagent based on organ health and how many ticks in between organ processes
 					R.remove_self(removed)
 			input += reagent_path
 			input[reagent_path] = threshold_met
@@ -135,7 +133,7 @@
 		return
 
 	var/obj/item/organ/internal/scaffold/S = holder
-	var/effect_multiplier = ((S.max_damage - S.damage) / S.max_damage)
+	var/organ_multiplier = ((S.max_damage - S.damage) / S.max_damage)
 
 	var/list/input = list()
 	var/active_hand_held = owner.get_active_hand()
@@ -154,7 +152,7 @@
 		if(istype(AM, /obj/item/cell))
 			var/obj/item/cell/C = AM
 			if(C.charge)
-				power_supplied = C.use(C.charge) / CELLRATE		// Using a rigged cell will make it explode instead, which is funny
+				power_supplied = C.use(C.charge) / CELLRATE		// Using a rigged cell will make it explode, which is funny
 
 		// 1 plasma sheet = 192 kJ, 1 uranium sheet = 1152 kJ, 1 tritium sheet = 1440 kJ
 		if(istype(AM, /obj/item/stack/material))
@@ -175,17 +173,17 @@
 			var/magnitude = 0
 
 			if(power_supplied > 4999999)
-				magnitude = 5 * effect_multiplier
+				magnitude = 5 * organ_multiplier
 			if(power_supplied > 999999)
-				magnitude = 3 * effect_multiplier
+				magnitude = 3 * organ_multiplier
 			if(power_supplied > 99999)
-				magnitude = 2 * effect_multiplier
+				magnitude = 2 * organ_multiplier
 				
 			if(magnitude && ishuman(owner))
 				if(prob(2))
-					to_chat(owner, SPAN_NOTICE("A pleasant chill runs up your spine. You feel more focused."))
+					to_chat(owner, SPAN_NOTICE("A pleasant chill runs down your spine. You feel more focused."))
 				var/mob/living/carbon/human/H = owner
-				H.stats.addTempStat(STAT_COG, magnitude * 2, S.aberrant_cooldown_time + 1 SECOND, "[parent]")
+				H.stats.addTempStat(STAT_COG, magnitude * 2, S.aberrant_cooldown_time + 2 SECONDS, "[parent]")
 				H.sanity.changeLevel(magnitude - 2)
 
 		input += power_source

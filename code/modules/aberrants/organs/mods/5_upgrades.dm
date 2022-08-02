@@ -32,9 +32,9 @@
 /obj/item/modification/organ/internal/stromal/improvement/durability/New()
 	var/datum/component/modification/organ/stromal/M = AddComponent(/datum/component/modification/organ/stromal)
 
-	M.min_bruised_damage_multiplier = 0.10
-	M.min_broken_damage_multiplier = 0.10
-	M.max_damage_multiplier = 0.20
+	M.min_bruised_damage_multiplier = 0.40
+	M.min_broken_damage_multiplier = 0.40
+	M.max_damage_multiplier = 0.40
 	M.prefix = "durable"
 	..()
 
@@ -102,7 +102,7 @@
 
 /obj/item/modification/organ/internal/stromal/augment/silencer
 	name = "masked membrane"
-	desc = "An outer membrane that is invisible to typical medical scanning wavelengths. Slightly impedes organ functions."
+	desc = "An outer membrane that absorbs typical medical scanning wavelengths. Slightly impedes organ functions."
 	icon_state = "stealth_composites"
 
 /obj/item/modification/organ/internal/stromal/augment/silencer/New()
