@@ -85,7 +85,7 @@
 		while(trash_mods.len)
 			var/trash_mod_path = pick_n_take(trash_mods)
 			var/obj/item/trash_mod = new trash_mod_path
-			if(SEND_SIGNAL(trash_mod, COMSIG_IATTACK, src, null))
+			if(LEGACY_SEND_SIGNAL(trash_mod, COMSIG_IATTACK, src, null))
 				break
 			QDEL_NULL(trash_mod)
 	else

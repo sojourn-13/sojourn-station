@@ -254,6 +254,7 @@
 
 	if (firer_arg)
 		firer = firer_arg
+		original_firer = firer_arg
 
 	if (firer && (isliving(firer))) //here we apply the projectile adjustments applied by prefixes and such
 		var/mob/living/livingfirer = firer

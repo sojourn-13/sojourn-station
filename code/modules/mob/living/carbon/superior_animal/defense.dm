@@ -53,12 +53,14 @@
 
 /mob/living/carbon/superior_animal/bullet_act(obj/item/projectile/P, def_zone)
 	. = ..()
+
 	if (!(P.testing))
 		if(stance == HOSTILE_STANCE_ATTACK)
 			if(destroy_surroundings)
 				destroySurroundings()
 
 		updatehealth()
+		SEND_SIGNAL(src, COMSIG_ATTACKED, P, P.original_firer)
 
 /mob/living/carbon/superior_animal/attackby(obj/item/I, mob/living/user, params)
 	activate_ai() //If were attacked by something and havent woken up yet. Were awake now >:T
@@ -70,16 +72,16 @@
 		if(stance == HOSTILE_STANCE_ATTACK && stat == CONSCIOUS )
 			if(destroy_surroundings)
 				destroySurroundings()
-		. = ..()
 
 		updatehealth()
+		SEND_SIGNAL(src, COMSIG_ATTACKED, I, user, params)
 
 /mob/living/carbon/superior_animal/resolve_item_attack(obj/item/I, mob/living/user, hit_zone)
 	//mob.attackby -> item.attack -> mob.resolve_item_attack -> item.apply_hit_effect
 	return TRUE
 
 /mob/living/carbon/superior_animal/attack_hand(mob/living/carbon/M as mob)
-	..()
+	. = ..()
 	var/mob/living/carbon/human/H = M
 
 	switch(M.a_intent)
@@ -110,7 +112,7 @@
 			M.do_attack_animation(src)
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 			visible_message(SPAN_WARNING("[M] has grabbed [src] passively!"))
-
+			SEND_SIGNAL(src, COMSIG_ATTACKED, null, M)
 			return TRUE
 
 		if (I_DISARM)
@@ -125,6 +127,7 @@
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 
 			M.do_attack_animation(src)
+			SEND_SIGNAL(src, COMSIG_ATTACKED, null, M)
 
 		if (I_HURT)
 			var/damage = 3
@@ -144,6 +147,7 @@
 				updatehealth()
 				M.do_attack_animation(src)
 
+				SEND_SIGNAL(src, COMSIG_ATTACKED, null, M)
 				return TRUE
 
 /mob/living/carbon/superior_animal/ex_act(severity)
