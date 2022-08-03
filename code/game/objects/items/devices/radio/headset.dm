@@ -86,7 +86,7 @@
 	name = "marshal bowman headset"
 	desc = "This headset is a premium quality headset made for only true operators! Ignore.. the ten credit price tag and the rattling noise it makes when you shake it."
 	icon_state = "sec_headset_bowman"
-	item_state = "headset_bowman"
+	item_state = "headset"
 
 /obj/item/device/radio/headset/headset_blackshield
 	name = "blackshield radio headset"
