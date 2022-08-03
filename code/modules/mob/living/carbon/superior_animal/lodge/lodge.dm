@@ -15,3 +15,10 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/meat
 	attack_sound = 'sound/xenomorph/alien_bite1.ogg'
 	target_dummy = TRUE
+
+/mob/living/carbon/superior_animal/lodge/attack_hand(mob/living/carbon/human/M as mob)
+	..()
+
+	if(I_HELP)
+		if (health > 0)
+			M.visible_message("\blue [M] pets \the [src]")
