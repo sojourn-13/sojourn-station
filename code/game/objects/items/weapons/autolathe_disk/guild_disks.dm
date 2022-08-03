@@ -330,6 +330,7 @@
 	/datum/design/autolathe/tool/rcd,
 	/datum/design/autolathe/tool/surgicaldrill/adv,
 	/datum/design/autolathe/tool/hatton_ammo,
+	/datum/design/autolathe/tool/rpd,
 	//Tool Mods
 	/datum/design/autolathe/part/laserguide,
 	/datum/design/autolathe/part/diamondblade,
