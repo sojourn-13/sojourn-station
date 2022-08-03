@@ -186,6 +186,7 @@
 		/datum/design/autolathe/tool/multitool/advanced,
 		/datum/design/autolathe/tool/ducttape/fiber,
 		/datum/design/autolathe/tool/ducttape/glue,
+		/datum/design/autolathe/tool/rpd,
 		// From Circuits
 		/datum/design/autolathe/circuit/airlockmodule,
 		/datum/design/autolathe/circuit/airalarm,

@@ -257,3 +257,7 @@
 /datum/design/autolathe/tool/manual_charger
 	name = "hand crank charger"
 	build_path = /obj/item/device/manual_charger
+
+/datum/design/autolathe/tool/rpd
+	name = "rapid piping device"
+	build_path = /obj/item/rpd
