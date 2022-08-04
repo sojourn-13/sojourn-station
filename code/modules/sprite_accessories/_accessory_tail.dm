@@ -247,7 +247,7 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
-/datum/sprite_accessory/tail/xeno
+/datum/sprite_accessory/tail/spiked_lizard
 	name = "Lizard Spiked Tail"
 	desc = ""
 	icon_state = "spiked_tail"
