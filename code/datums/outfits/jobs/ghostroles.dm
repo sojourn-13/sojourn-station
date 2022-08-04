@@ -59,6 +59,52 @@
 	back = /obj/item/storage/backpack/security
 	backpack_contents = list(/obj/item/ammo_magazine/rifle_75 = 5, /obj/item/ammo_magazine/rifle_75/highvelocity = 3, /obj/item/ammo_casing/grenade/flash = 2, /obj/item/ammo_casing/grenade/blast = 2 )
 
+/decl/hierarchy/outfit/engi_ert
+	name = "Guild Emergency Personnel"
+	l_ear = /obj/item/device/radio/headset/heads/ce
+	head = /obj/item/clothing/head/firefighter/guild_emergency
+	uniform = /obj/item/clothing/under/rank/engineer/adv_master
+	suit = /obj/item/clothing/suit/storage/hazardvest_black
+	r_pocket = /obj/item/device/t_scanner/advanced
+	pda_type = /obj/item/modular_computer/pda/heads/ce
+	belt = /obj/item/storage/belt/webbing/artificer/ert
+	glasses = /obj/item/clothing/glasses/powered/meson
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/insulated
+	back = /obj/item/storage/backpack/satchel
+	backpack_contents = list(/obj/item/rcd/industrial = 1, \
+							/obj/item/stack/material/compressed_matter/full = 1, \
+							/obj/item/stack/material/glass/plasmarglass/full = 1, \
+							/obj/item/stack/material/plasteel/full = 1, \
+							/obj/item/stack/material/steel/full = 1, \
+							/obj/item/stack/material/plastic/full = 1, \
+							/obj/item/stack/cable_coil/random = 2, \
+							/obj/item/rpd = 1, \
+							/obj/item/modular_computer/tablet/lease/preset/command = 1,\
+							/obj/item/extinguisher/mini = 1)
+	l_pocket = /obj/item/card/id/guild_command
+
+/decl/hierarchy/outfit/lss_ert
+	name = "Auditor"
+	l_ear = /obj/item/device/radio/headset/headset_com
+	head = /obj/item/clothing/head/helmet/technomancersuit //Looks good enuff and has good armor I guess
+	uniform = /obj/item/clothing/under/suit_jacket/black
+	suit = /obj/item/clothing/suit/storage/hazardvest
+	r_pocket = /obj/item/device/t_scanner/advanced
+	pda_type = /obj/item/modular_computer/pda/heads
+	glasses = /obj/item/clothing/glasses/regular
+	shoes = /obj/item/clothing/shoes/color/black
+	gloves = /obj/item/clothing/gloves/color/white
+	back = /obj/item/storage/backpack/satchel
+	backpack_contents = list(/obj/item/paper = 2,
+							/obj/item/clipboard = 1,
+							/obj/item/device/taperecorder = 1,
+							/obj/item/pen/multi = 1,
+							/obj/item/reagent_containers/glass/paint/red = 1, //For the papers, in case they want to make a paper red with red link to REALY show that they mean something
+							/obj/item/modular_computer/tablet/lease/preset/command = 1)
+	l_pocket = /obj/item/card/id/lss_command
+
+
 /decl/hierarchy/outfit/doggo
 	name = "Kriosan trooper"
 	l_ear  =/obj/item/device/radio/headset

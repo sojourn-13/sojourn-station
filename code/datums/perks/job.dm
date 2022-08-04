@@ -650,3 +650,31 @@
 		if(9)
 			F.name = "hearty [F.name]"
 
+
+
+
+//Ghost spawners
+
+/datum/perk/true_name
+	name = "Rename Self"
+	desc = "No one knows you thus your name is what ever you need or want to be."
+	active = FALSE
+	passivePerk = FALSE
+	var/anti_cheat = FALSE
+
+/datum/perk/true_name/activate()
+	..()
+	if(anti_cheat)
+		to_chat(holder, "You can only keep up so many personallitys.")
+		return FALSE
+	anti_cheat = TRUE
+	var/mob/M = usr
+	var/npc_name = input(M, "Choose your name: ", "Superstar Name", "VIP") as text
+	if(src && npc_name)
+		M.real_name = npc_name
+		M.stats.removePerk(/datum/perk/true_name)
+	anti_cheat = FALSE
+	return TRUE
+
+/datum/perk/true_name/remove()
+	..()
