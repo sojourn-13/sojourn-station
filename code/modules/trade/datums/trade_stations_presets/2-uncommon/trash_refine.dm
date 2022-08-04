@@ -102,4 +102,4 @@
 	price_tag = 3
 
 /obj/item/stack/sheet/refined_scrap
-	price_tag = 5 //Proffit!
+	price_tag = 30 //Proffit!
