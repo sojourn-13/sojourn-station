@@ -40,6 +40,7 @@
 	var/burst_delay = 2	//delay between shots, if firing in bursts
 	var/move_delay = 1
 	var/fire_sound = 'sound/weapons/Gunshot.ogg'
+	var/modded_sound = FALSE
 
 	var/fire_sound_text = "gunshot"
 	var/rigged = FALSE
@@ -1061,7 +1062,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	restrict_safety = initial(restrict_safety)
 	init_offset = initial(init_offset)
 	proj_damage_adjust = list()
-	fire_sound = initial(fire_sound)
+	if(modded_sound)
+		modded_sound = FALSE
+		fire_sound = initial(fire_sound)
 	restrict_safety = initial(restrict_safety)
 	dna_compare_samples = initial(dna_compare_samples)
 	rigged = initial(rigged)
