@@ -1,3 +1,4 @@
+#define isdatum(D) (istype(D, /datum))
 
 #define isweakref(D) (istype(D, /datum/weakref))
 
