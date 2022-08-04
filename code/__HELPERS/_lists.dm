@@ -394,7 +394,6 @@
  * B would have a 30% chance of being picked,
  * C would have a 10% chance of being picked,
  * and D would have a 0% chance of being picked.
- * You should only pass integers in.
  */
 /proc/pickweight(list/list_to_pick, base_weight = 1)
 	var/total = 0
@@ -404,7 +403,7 @@
 			list_to_pick[item] = base_weight
 		total += list_to_pick[item]
 
-	total = rand(0, total)
+	total = rand() * total
 	for(item in list_to_pick)
 		total -= list_to_pick[item]
 		if(total <= 0 && list_to_pick[item])
