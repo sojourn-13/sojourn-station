@@ -25,6 +25,7 @@
 		BURST_3_ROUND_NOLOSS,
 		FULL_AUTO_600_NOLOSS
 		)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)
 
 /obj/item/gun/projectile/automatic/freedom/update_icon()
 	..()
