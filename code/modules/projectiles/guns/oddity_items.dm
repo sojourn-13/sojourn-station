@@ -102,6 +102,7 @@
 	slowdown_hold = 0
 	init_recoil = LMG_RECOIL(0.5)
 	serial_type = "BlueCross"
+	excelsior = FALSE
 
 /obj/item/gun/energy/lasersmg/inferno
 	name = "Disco Inferno \"Light Show\""

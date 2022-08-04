@@ -17,6 +17,8 @@
 #define PERK_HORRIBLE_DEEDS /datum/perk/oddity/horrible_deeds
 #define PERK_ABSOLUTE_GRAB /datum/perk/oddity/absolute_grab <-- This perk here may be implemented later and its code exists but is commented out.
 */
+// Name changer perk, meant for ghostspawners
+#define PERK_TRUE_NAME /datum/perk/true_name
 
 // oddity perks
 #define PERK_FAST_WALKER /datum/perk/oddity/fast_walker

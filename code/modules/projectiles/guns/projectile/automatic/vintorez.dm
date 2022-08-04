@@ -5,6 +5,7 @@
 	icon = 'icons/obj/guns/projectile/vintorez.dmi'
 	icon_state = "vintorez"
 	item_state = "vintorez"
+	excelsior = TRUE
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_RIFLE //needs a new caliber type?
@@ -34,6 +35,7 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
 	price_tag = 800
 	serial_type = "NM"
+	excelsior = FALSE
 
 /obj/item/gun/projectile/automatic/vintorez/update_icon()
 	..()

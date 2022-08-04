@@ -234,7 +234,7 @@
 	//var/sanity_lost = rand(-10,10) no thanks
 	T.druggy = max(T.druggy, 10)
 	//T.sanity.changeLevel(sanity_lost) //no thanks
-	SEND_SIGNAL(H, COMSIG_RITUAL, src, T)
+	LEGACY_SEND_SIGNAL(H, COMSIG_RITUAL, src, T)
 	return TRUE
 
 /datum/ritual/cruciform/base/install_upgrade

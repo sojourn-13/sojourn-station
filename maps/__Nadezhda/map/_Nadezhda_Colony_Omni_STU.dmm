@@ -107766,10 +107766,6 @@
 	})
 "uzN" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/head/helmet/faceshield/altyn/maska{
-	pixel_x = -8;
-	pixel_y = -6
-	},
 /obj/item/clothing/head/helmet/ballistic/tan{
 	pixel_x = 4;
 	pixel_y = -8
@@ -107777,18 +107773,14 @@
 /obj/item/clothing/head/helmet/ballistic/tan{
 	pixel_x = 4;
 	pixel_y = -8
-	},
-/obj/item/clothing/head/helmet/steelpot{
-	pixel_x = 0;
-	pixel_y = 4
-	},
-/obj/item/clothing/head/helmet/steelpot{
-	pixel_x = 0;
-	pixel_y = 4
 	},
 /obj/item/clothing/head/helmet/ballistic/militia{
 	pixel_x = -8;
 	pixel_y = 13
+	},
+/obj/item/clothing/head/helmet/faceshield/altyn/maska{
+	pixel_x = -8;
+	pixel_y = -6
 	},
 /obj/item/clothing/head/helmet/ballistic/militia{
 	pixel_x = -8;
@@ -107805,14 +107797,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/clothing/head/helmet/steelpot{
-	pixel_x = 0;
-	pixel_y = 4
-	},
-/obj/item/clothing/head/helmet/steelpot{
-	pixel_x = 0;
-	pixel_y = 4
-	},
 /obj/item/clothing/head/helmet/ballistic/tan{
 	pixel_x = 4;
 	pixel_y = -8
@@ -107837,6 +107821,9 @@
 	pixel_x = 8;
 	pixel_y = 13
 	},
+/obj/item/clothing/head/helmet/faceshield/altyn/milisha,
+/obj/item/clothing/head/helmet/faceshield/altyn/milisha,
+/obj/item/clothing/head/helmet/faceshield/altyn/milisha,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory_blackshield)
 "uzP" = (

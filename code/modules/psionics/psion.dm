@@ -115,18 +115,6 @@
 				var/mob/living/carbon/human/H = owner
 				H.update_implants()
 
-		if(istype(O, /obj/item/implant))
-			if(O == src)
-				continue
-			var/obj/item/implant/R = O
-			owner.visible_message(SPAN_DANGER("[R.name] rips through [owner]'s body."),\
-			SPAN_DANGER("[R.name] rips through your body."))
-			R.uninstall()
-			R.malfunction = MALFUNCTION_PERMANENT
-			if(ishuman(owner))
-				var/mob/living/carbon/human/H = owner
-				H.update_implants()
-
 		if(istype(O, /obj/item/organ_module))
 			if(O == src)
 				continue
@@ -139,6 +127,19 @@
 				if(ishuman(owner))
 					var/mob/living/carbon/human/H = owner
 					H.update_implants()
+
+
+// This proc removes all implanters other then non-metal ones.
+/obj/item/organ/internal/psionic_tumor/proc/remove_implanted(metal_implant)
+	if(istype(metal_implant, /obj/item/implant))
+		var/obj/item/implant/R = metal_implant
+		owner.visible_message(SPAN_DANGER("[R.name] rips through [owner]'s body."),\
+		SPAN_DANGER("[R.name] rips through your body."))
+		R.uninstall()
+		R.malfunction = MALFUNCTION_PERMANENT
+		if(ishuman(owner))
+			var/mob/living/carbon/human/H = owner
+			H.update_implants()
 
 
 // This proc handles paying for your powers and checks if you attempt to use your power while you are dead or unconcious. Placed here so it doesn't need to be in every power function.

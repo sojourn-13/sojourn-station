@@ -23,7 +23,7 @@
 	penetration_multiplier = 1.5
 	init_recoil = CARBINE_RECOIL(0.2)
 
-	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE ,GUN_SCOPE, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_SCOPE, GUN_MAGWELL)
 
 	init_firemodes = list(
 		FULL_AUTO_400,

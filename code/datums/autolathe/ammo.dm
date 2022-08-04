@@ -933,6 +933,11 @@
 	build_path = /obj/item/ammo_casing/grenade/frag
 	materials = list(MATERIAL_STEEL = 14)
 
+/datum/design/autolathe/ammo/grenade/stinger
+	name = "stinger grenade shell"
+	build_path = /obj/item/ammo_casing/grenade/frag/stinger
+	materials = list(MATERIAL_STEEL = 7, MATERIAL_PLASTIC = 7)
+
 /datum/design/autolathe/ammo/grenade/emp
 	name = "EMP grenade shell"
 	build_path = /obj/item/ammo_casing/grenade/emp

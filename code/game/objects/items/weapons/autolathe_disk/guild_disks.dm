@@ -186,6 +186,7 @@
 		/datum/design/autolathe/tool/multitool/advanced,
 		/datum/design/autolathe/tool/ducttape/fiber,
 		/datum/design/autolathe/tool/ducttape/glue,
+		/datum/design/autolathe/tool/rpd,
 		// From Circuits
 		/datum/design/autolathe/circuit/airlockmodule,
 		/datum/design/autolathe/circuit/airalarm,
@@ -329,6 +330,7 @@
 	/datum/design/autolathe/tool/rcd,
 	/datum/design/autolathe/tool/surgicaldrill/adv,
 	/datum/design/autolathe/tool/hatton_ammo,
+	/datum/design/autolathe/tool/rpd,
 	//Tool Mods
 	/datum/design/autolathe/part/laserguide,
 	/datum/design/autolathe/part/diamondblade,

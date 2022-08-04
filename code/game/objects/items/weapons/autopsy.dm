@@ -202,7 +202,7 @@
 		return
 	for(var/mob/O in viewers(M))
 		O.show_message(SPAN_NOTICE("\The [user] scans the wounds on [M.name]'s [S.name] with \the [src]"), 1)
-	SEND_SIGNAL(user, COMSING_AUTOPSY, M)
+	LEGACY_SEND_SIGNAL(user, COMSING_AUTOPSY, M)
 	if(user.mind && user.mind.assigned_job && (user.mind.assigned_job.department in GLOB.department_moebius))
 		GLOB.moebius_autopsies_mobs |= M
 	src.add_data(S, user)
