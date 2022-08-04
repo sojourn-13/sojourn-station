@@ -5,7 +5,7 @@
 	verb_name = "Deploy mining tool"
 	items = list(
 		/obj/item/tool/omnitool,
-		/obj/item/tool/pickaxe/drill/onestar,
+		/obj/item/tool/pickaxe/jackhammer,
 		/obj/item/device/scanner/mining/advanced,
 		/obj/item/device/radio/off,
 	)

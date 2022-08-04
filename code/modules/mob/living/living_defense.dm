@@ -197,8 +197,7 @@
 			hit_impact(P.agony, hit_dir)
 			damage_through_armor(P.agony, HALLOSS, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp = is_sharp(P), edge = has_edge(P))
 
-
-	P.on_hit(src, def_zone)
+	..()
 	return TRUE
 
 //Handles the effects of "stun" weapons

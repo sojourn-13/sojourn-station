@@ -40,6 +40,7 @@
 	var/burst_delay = 2	//delay between shots, if firing in bursts
 	var/move_delay = 1
 	var/fire_sound = 'sound/weapons/Gunshot.ogg'
+	var/modded_sound = FALSE
 
 	var/fire_sound_text = "gunshot"
 	var/rigged = FALSE
@@ -532,7 +533,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 //called after successfully firing
 /obj/item/gun/proc/handle_post_fire(mob/living/user, atom/target, pointblank=0, reflex=0, obj/item/projectile/P)
-	SEND_SIGNAL(src, COMSIG_GUN_POST_FIRE, target, pointblank, reflex)
+	LEGACY_SEND_SIGNAL(src, COMSIG_GUN_POST_FIRE, target, pointblank, reflex)
 	//The sound we play
 	if(silenced)
 		//Silenced shots have a lower range and volume
@@ -1061,7 +1062,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	restrict_safety = initial(restrict_safety)
 	init_offset = initial(init_offset)
 	proj_damage_adjust = list()
-	fire_sound = initial(fire_sound)
+	if(modded_sound)
+		modded_sound = FALSE
+		fire_sound = initial(fire_sound)
 	restrict_safety = initial(restrict_safety)
 	dna_compare_samples = initial(dna_compare_samples)
 	rigged = initial(rigged)
@@ -1101,8 +1104,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 
 	//Now lets have each upgrade reapply its modifications
-	SEND_SIGNAL(src, COMSIG_ADDVAL, src)
-	SEND_SIGNAL(src, COMSIG_APPVAL, src)
+	LEGACY_SEND_SIGNAL(src, COMSIG_ADDVAL, src)
+	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
 
 	if(firemodes.len)
 		very_unsafe_set_firemode(sel_mode) // Reset the firemode so it gets the new changes
