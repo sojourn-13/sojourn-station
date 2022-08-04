@@ -163,6 +163,7 @@
 			list(name="Grenade Shell Flash", cost=250, path=/obj/item/ammo_casing/grenade/flash),
 			list(name="Grenade Shell Blast", cost=350, path=/obj/item/ammo_casing/grenade/blast),
 			list(name="Grenade Shell Frag", cost=350, path=/obj/item/ammo_casing/grenade/frag),
+			list(name="Grenade Shell Stinger", cost=300, path=/obj/item/ammo_casing/grenade/frag/stinger),
 			list(name="Grenade Shell EMP", cost=300, path=/obj/item/ammo_casing/grenade/emp),
 			list(name="14.5×114mm Anti-Material \"Red-Nose\"", cost=2400, path=/obj/item/ammo_casing/antim/lethal/prespawned),
 			list(name="14.5×114mm Anti-Material \"Off-Switch\"", cost=2400, path=/obj/item/ammo_casing/antim/ion/prespawned),

@@ -23,3 +23,14 @@
 /obj/item/gun/projectile/grenade/lenar/update_icon()
 	overlays.Cut()
 	update_charge()
+
+
+/obj/item/gun/projectile/grenade/lenar/update_icon()
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if(wielded)
+		itemstring += "_doble"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
