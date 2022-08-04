@@ -124,7 +124,6 @@
 				to_chat(usr, "\blue Alt LMB on build mode icon = De-select all mobs")
 				to_chat(usr, "\blue RMB on build mode icon = Toggle movement override, forcing all other walks to fail for a given period of time")
 				to_chat(usr, "\blue Ctrl RMB on build mode icon = Toggle walks being temporary")
-				to_chat(usr, "\blue Alt RMB on build mode icon = Toggle walks respecting currently running overrides")
 				to_chat(usr, "\blue Shift RMB on build mode icon = Toggle moving dead mobs")
 				to_chat(usr, "\blue MMB on build mode icon = Enter key of group you wish to select")
 				to_chat(usr, "\blue Shift MMB on build mode icon = Enter key of group you wish to delete")
@@ -190,8 +189,6 @@
 	var/listname = null
 	/// When we move our master's selected mobs, do their walks take priority over all other walks?
 	var/override_movement = TRUE
-	/// Do we respect any walk executed with an override?
-	var/respect_override = FALSE
 	/// Are our walks temporary, do they expire on their own?
 	var/temporary_walks = TRUE
 	/// Do we forbid dead movement?
@@ -319,9 +316,6 @@
 						if (pa.Find("ctrl"))
 							temporary_walks = (!(temporary_walks))
 							to_chat(usr, "Toggled temporary walks to [temporary_walks].")
-						else if (pa.Find("alt"))
-							respect_override = (!(respect_override))
-							to_chat(usr, "Toggled respect override to [respect_override].")
 						else if (pa.Find("shift"))
 							deathcheck = (!(deathcheck))
 							to_chat(usr, "Toggled dead movement to [!deathcheck].")
@@ -497,7 +491,13 @@
 
 						if (move_to_target)
 							held.set_glide_size(DELAY2GLIDESIZE(held.move_to_delay))
-							walk_to_wrapper(held, object, distance, held.move_to_delay, deathcheck = holder.buildmode.deathcheck, respect_override = holder.buildmode.respect_override, override = holder.buildmode.override_movement, temporary_walk = holder.buildmode.temporary_walks)
+							var/timer
+							if (holder.buildmode.temporary_walks)
+								timer = ((get_dist(held, object) * (held.move_to_delay * 1.2)) + 1) //warning: arbitrary math
+							var/movement_priority = MOVEMENT_DEFAULT_PRIORITY
+							if (holder.buildmode.override_movement)
+								movement_priority = MOVEMENT_PATHMODE_PRIORITY
+							SSmove_manager.move_to(held, object, distance, held.move_to_delay, timer, priority = movement_priority)
 						held.AI_inactive = 0
 						held.life_cycles_before_scan = initial(held.life_cycles_before_scan)
 						held.life_cycles_before_sleep = initial(held.life_cycles_before_sleep)

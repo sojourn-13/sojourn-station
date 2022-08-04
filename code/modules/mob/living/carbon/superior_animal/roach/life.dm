@@ -38,7 +38,8 @@
 					if (eat_target)
 						busy = MOVING_TO_TARGET
 						set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-						walk_to_wrapper(src, eat_target, 1, move_to_delay, deathcheck = TRUE)
+						if (stat != DEAD)
+							SSmove_manager.move_to(src, eat_target, 1, move_to_delay)
 						GiveUp(eat_target) //give up if we can't reach target
 						return
 				else if(prob(probability_egg_laying)) // chance to lay an egg
@@ -66,7 +67,7 @@
 						busy = EATING_TARGET
 						stop_automated_movement = 1
 						src.visible_message(SPAN_NOTICE("\The [src] begins to eat \the [eat_target]."))
-						walk(src,0)
+						SSmove_manager.stop_looping(src)
 						busy_start_time = world.timeofday
 						if (istype(eat_target, /mob/living/carbon/human))
 							eating_time = 15 MINUTES

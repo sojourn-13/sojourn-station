@@ -252,7 +252,7 @@
 	STOP_PROCESSING(SSobj, src)
 	if(entry_vent)
 		entry_vent = null
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 	if (istype(loc, /obj/item/organ/external))
 		var/obj/item/organ/external/O = loc
 		O.implants -= src
@@ -328,7 +328,7 @@
 			var/list/nearby = trange(5, src) - loc
 			if(nearby.len)
 				var/target_atom = pick(nearby)
-				walk_to_wrapper(src, target_atom, 5)
+				SSmove_manager.move_to(src, target_atom, 5)
 				if(prob(25))
 					src.visible_message("<span class='notice'>\The [src] skitters[pick(" away"," around","")].</span>")
 		else if(prob(1))
@@ -336,7 +336,7 @@
 			for(var/obj/machinery/atmospherics/unary/vent_pump/v in view(7,src))
 				if(!v.welded)
 					entry_vent = v
-					walk_to_wrapper(src, entry_vent, 5)
+					SSmove_manager.move_to(src, entry_vent, 5)
 					break
 
 		if(amount_grown >= 100)

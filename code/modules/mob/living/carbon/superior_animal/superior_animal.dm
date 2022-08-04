@@ -245,7 +245,8 @@
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		walk_to_wrapper(src, targetted_mob, calculated_walk, move_to_delay, deathcheck = TRUE) //lets get a little closer than our optimal range
+		if (stat != DEAD)
+			SSmove_manager.move_to(src, targetted_mob, calculated_walk, move_to_delay) //lets get a little closer than our optimal range
 
 		if (delayed > 0)
 			if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
@@ -259,7 +260,8 @@
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
+		if (stat != DEAD)
+			SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 		moved = 1
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings)
 
@@ -325,11 +327,12 @@
 					if (cant_see_timer <= world.time) //prevents any weirdness
 						if (ranged) //only ranged mobs can advance, currently
 							if (advancement_timer > world.time) //we are advancing, so lets use our advance_steps var
-								walk_to_wrapper(src, target_location_resolved, advance_steps, move_to_delay, deathcheck = TRUE)
-							else
-								walk_to_wrapper(src, target_location_resolved, calculated_walk, move_to_delay, deathcheck = TRUE)
-						else
-							walk_to_wrapper(src, target_location_resolved, 1, move_to_delay, deathcheck = TRUE) // melee mobs only need to go to one tile away
+								if (stat != DEAD)
+									SSmove_manager.move_to(src, target_location_resolved, advance_steps, move_to_delay)
+							else if (stat != DEAD)
+								SSmove_manager.move_to(src, target_location_resolved, calculated_walk, move_to_delay)
+						else if (stat != DEAD)
+							SSmove_manager.move_to(src, target_location_resolved, 1, move_to_delay) // melee mobs only need to go to one tile away
 
 				lost_sight = TRUE
 				patience--
@@ -367,7 +370,8 @@
 			return
 		if(!ranged)
 			prepareAttackOnTarget()
-			walk_to_wrapper(src, targetted, 1, move_to_delay, deathcheck = TRUE)
+			if (stat != DEAD)
+				SSmove_manager.move_to(src, targetted, 1, move_to_delay)
 		else if(ranged)
 			if (!(targetted_mob.check_if_alive(TRUE)))
 				loseTarget()
@@ -378,16 +382,19 @@
 				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
 					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
 				if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))  //we dont want to prematurely end a advancing walk
-					walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE) //we still want to reset our walk
+					if (stat != DEAD)
+						SSmove_manager.move_to(src, targetted, calculated_walk, move_to_delay) //we still want to reset our walk
 			else
 				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
 					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
 				if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE)
+					if (stat != DEAD)
+						SSmove_manager.move_to(src, targetted, calculated_walk, move_to_delay)
 	else
 		prepareAttackOnTarget()
-		walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
+		if (stat != DEAD)
+			SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
 /atom/proc/check_if_alive(var/critcheck = FALSE) //A simple yes no if were alive
@@ -481,9 +488,10 @@
 
 			if (following)
 				if (!target_mob) // Are we following someone and not attacking something?
-					walk_to_wrapper(src, following, follow_distance, move_to_delay, deathcheck = TRUE) // Follow the mob referenced in 'following' and stand almost next to them.
+					if (stat != DEAD)
+						SSmove_manager.move_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
 			else if (!target_mob && last_followed)
-				walk_to_wrapper(src, 0)
+				SSmove_manager.stop_looping(src)
 				last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
 
 	if(life_cycles_before_sleep)
@@ -602,7 +610,7 @@
 		advance_steps = (distance - advancement)
 		if (advance_steps <= 0)
 			advance_steps = 1 //1 is minimum
-		walk_to_wrapper(src, target, advance_steps, move_to_delay, deathcheck = TRUE) //advance forward, forcing us to pathfind
+		SSmove_manager.move_to(src, target, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
 		advancement_timer = (world.time += advancement_increment) // we dont want this overridden instantly
 
 /mob/living/carbon/superior_animal/CanPass(atom/mover)

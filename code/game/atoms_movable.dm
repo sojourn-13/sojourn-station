@@ -20,10 +20,10 @@
 	var/can_anchor = TRUE
 	var/cant_be_pulled = FALSE //Used for things that cant be anchored, but also shouldnt be pullable
 
-	/// Used in walk_to_wrapper. Set to world.time whenever a walk is called that uses temporary_walk = TRUE. Prevents walks that dont respect the override from conflicting with eachother.
+	/// Used in SSmove_manager.move_to. Set to world.time whenever a walk is called that uses temporary_walk = TRUE. Prevents walks that dont respect the override from conflicting with eachother.
 	var/walk_to_initial_time = 0
 
-	/// Used in walk_to_wrapper. If something with an override is called, it will set it to world.time + the value of override in the proc, and any walks that respect the override after will return until world.time is more than the var.
+	/// Used in SSmove_manager.move_to. If something with an override is called, it will set it to world.time + the value of override in the proc, and any walks that respect the override after will return until world.time is more than the var.
 	var/walk_override_timer = 0
 
 	//spawn_values
@@ -32,7 +32,14 @@
 	var/spawn_tags
 
 /atom/movable/Destroy()
+
+	if(move_packet)
+		if(!QDELETED(move_packet))
+			qdel(move_packet)
+		move_packet = null
+
 	. = ..()
+
 	for(var/atom/movable/AM in contents)
 		qdel(AM)
 

@@ -69,7 +69,7 @@
 		target_mob = null
 		stance = initial(stance)
 		stop_automated_movement = initial(stop_automated_movement)
-		walk(src, 0)
+		SSmove_manager.stop_looping(src)
 		if(!has_made_spiderlings)
 			new /obj/effect/spider/spiderling/near_grown(src.loc)
 			new /obj/effect/spider/spiderling/near_grown(src.loc)
@@ -175,7 +175,8 @@
 				if (cocoon_target)
 					busy = MOVING_TO_TARGET
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to_wrapper(src, cocoon_target, 1, move_to_delay, deathcheck = TRUE)
+					if (stat != DEAD)
+						SSmove_manager.move_to(src, cocoon_target, 1, move_to_delay)
 					GiveUp(cocoon_target) //give up if we can't reach target
 					return
 
@@ -219,7 +220,8 @@
 							busy = MOVING_TO_TARGET
 							stop_automated_movement = 1
 							set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-							walk_to_wrapper(src, cocoon_target, 1, move_to_delay, deathcheck = TRUE)
+							if (stat != DEAD)
+								SSmove_manager.move_to(src, cocoon_target, 1, move_to_delay)
 							GiveUp(cocoon_target) //give up if we can't reach target
 
 		else if(busy == MOVING_TO_TARGET && cocoon_target)
@@ -227,7 +229,7 @@
 				busy = SPINNING_COCOON
 				src.visible_message(SPAN_NOTICE("\The [src] begins to secrete a sticky substance around \the [cocoon_target]."))
 				stop_automated_movement = 1
-				walk(src,0)
+				SSmove_manager.stop_looping(src)
 				spawn(50)
 					if(busy == SPINNING_COCOON)
 						if(cocoon_target && istype(cocoon_target.loc, /turf) && get_dist(src,cocoon_target) <= 1)

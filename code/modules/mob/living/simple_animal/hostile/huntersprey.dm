@@ -103,7 +103,7 @@
 	if(!T)
 		return
 	DestroySurroundings()
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 	src.dir=dir
 	animate(src, alpha = 255, color = "#FF0000", transform = matrix()*1.2, time = 2)
 	sleep(2)
@@ -123,10 +123,10 @@
 	animate(src, alpha = 255, color = "#FF0000", transform = matrix()*1.2, time = 3)
 	sleep(1)
 	var/movespeed = 0.7
-	walk_towards(src, T, movespeed)
+	SSmove_manager.home_onto(src, T, movespeed)
 	charging = 1
 	sleep(get_dist(src, T)* movespeed)
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 	animate(src, alpha = 255, color = initial(color), transform = matrix()*1, time = 3)
 	charging = 0
 	fatigue = 0

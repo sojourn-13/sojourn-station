@@ -49,7 +49,7 @@
 		if(get_dist(src, H) >= 1)
 			UnarmedAttack(H)
 		else
-			walk_to_wrapper(src,H,1,5,0)
+			SSmove_manager.move_to(src,H,1,5)
 
 /mob/living/bot/miningonestar/resources/agressive/with_support/Initialize()
 	..()
@@ -83,4 +83,4 @@
 		if(get_dist(src, AST) >= 1)
 			UnarmedAttack(AST)
 		else
-			walk_to_wrapper(src,AST, 1, 5, 0)
+			SSmove_manager.move_to(src,AST, 1, 5)
