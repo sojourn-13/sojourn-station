@@ -31,6 +31,10 @@
 								// This is a more generic way of handling open space turfs
 	var/is_wall = FALSE 	//True for wall turfs, but also true if they contain a low wall object
 
+	/// How pathing algorithm will check if this turf is passable by itself (not including content checks). By default it's just density check.
+	/// WARNING: Currently to use a density shortcircuiting this does not support dense turfs with special allow through function
+	var/pathing_pass_method = TURF_PATHING_PASS_DENSITY
+
 /turf/New()
 	..()
 	for(var/atom/movable/AM as mob|obj in src)

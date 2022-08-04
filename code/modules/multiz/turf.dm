@@ -50,6 +50,8 @@ see multiz/movement.dm for some info.
 
 	var/tmp/list/climbers = list()
 
+	pathing_pass_method = TURF_PATHING_PASS_PROC
+
 /turf/simulated/open/New()
 	icon_state = "transparentclickable"
 	..()

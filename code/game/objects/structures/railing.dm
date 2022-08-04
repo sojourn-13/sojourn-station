@@ -55,13 +55,15 @@
 		R.update_icon()
 	. = ..()
 
-/obj/structure/railing/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+/obj/structure/railing/CanPass(atom/movable/mover, turf/target, height=0, air_group=0, direction)
 	if(!mover)
 		return 1
 
 	if(!reinforced && istype(mover) && mover.checkpass(PASSTABLE))
 		return 1
-	if(get_dir(loc, target) == dir)
+	if (isnull(direction))
+		direction = get_dir(loc, target)
+	if(direction == dir)
 		return !density
 	else
 		return 1
