@@ -72,6 +72,7 @@
 	M.adjustToxLoss(-1)
 	M.add_chemical_effect(CE_STABLE)
 	M.add_chemical_effect(CE_PAINKILLER, 45, TRUE)
+	M.add_chemical_effect(CE_BLOODRESTORE, 1.1 * effect_multiplier)
 	M.add_chemical_effect(CE_PULSE, -1)
 	//We also sleep are target, this will make it not as good to use against spiders still active or simple animals.
 	var/effective_dose = dose

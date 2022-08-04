@@ -551,6 +551,18 @@
 
 		return 1
 
+//Start with normal
+/obj/item/storage/belt/webbing/artificer/ert
+	storage_slots = 9 //Like old belts used to be
+	max_w_class = ITEM_SIZE_NORMAL
 
-
-
+/obj/item/storage/belt/webbing/artificer/ert/populate_contents()
+	new /obj/item/tool/crowbar/pneumatic(src)
+	new /obj/item/tool/hammer/deadblow(src)
+	new /obj/item/tool/multitool/advanced(src)
+	new /obj/item/tool/screwdriver/electric(src)
+	new /obj/item/tool/shovel/power(src)
+	new /obj/item/tool/tape_roll/fiber(src)
+	new /obj/item/tool/baton/arcwelder(src)
+	new /obj/item/tool/wirecutters/armature(src)
+	new /obj/item/tool/wrench/big_wrench(src)

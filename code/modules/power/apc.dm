@@ -1046,7 +1046,7 @@
 		return 0
 
 /obj/machinery/power/apc/Process()
-	SEND_SIGNAL(area, COMSIG_AREA_APC_OPERATING, operating)
+	LEGACY_SEND_SIGNAL(area, COMSIG_AREA_APC_OPERATING, operating)
 	if(stat & (BROKEN|MAINT))
 		return
 	if(!area.requires_power)

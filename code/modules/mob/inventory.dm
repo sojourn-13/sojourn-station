@@ -148,8 +148,8 @@
 	if(!canUnEquip(I))
 		return
 	//Removed until we have features that need them, so these aren't being rapid-fired needlessly. - Hex
-	//SEND_SIGNAL(src, COMSIG_CLOTH_DROPPED, I)
-	//SEND_SIGNAL(I, COMSIG_CLOTH_DROPPED, src)
+	//LEGACY_SEND_SIGNAL(src, COMSIG_CLOTH_DROPPED, I)
+	//LEGACY_SEND_SIGNAL(I, COMSIG_CLOTH_DROPPED, src)
 	return drop_from_inventory(I,Target)
 
 //Attemps to remove an object on a mob.

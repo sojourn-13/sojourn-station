@@ -78,7 +78,7 @@
 
 	for(var/mob/living/carbon/human/H in oviewers(src))
 		H.sanity.onSeeDeath(src)
-		SEND_SIGNAL(H, COMSIG_MOB_DEATH, src) //im not going to use this for the mob spawner becuase i dont understand signals enough
+		LEGACY_SEND_SIGNAL(H, COMSIG_MOB_DEATH, src) //im not going to use this for the mob spawner becuase i dont understand signals enough
 
 	stat = DEAD
 	update_lying_buckled_and_verb_status()

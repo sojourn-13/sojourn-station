@@ -52,7 +52,7 @@
 
 /obj/item/clothing/glasses/hud/health/mech/Destroy()
 
-	SEND_SIGNAL(src, COMSIG_HUD_DELETED, src)
+	LEGACY_SEND_SIGNAL(src, COMSIG_HUD_DELETED, src)
 
 	. = ..()
 

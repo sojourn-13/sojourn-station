@@ -29,6 +29,9 @@
 
 #define SQRTWO 1.414
 
+/// Returns the difference between num1 and num2.
+#define GET_DIFFERENCE(num1, num2) (num1 - num2)
+
 /// Returns the difference between multiplier and the product of multiplier * multiplicand.
 #define MULT_DIFFERENCE(multiplier, multiplicand) ((multiplier * multiplicand) - multiplier)
 
