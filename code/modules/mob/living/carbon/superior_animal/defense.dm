@@ -72,6 +72,7 @@
 		if(stance == HOSTILE_STANCE_ATTACK && stat == CONSCIOUS )
 			if(destroy_surroundings)
 				destroySurroundings()
+		. = ..()
 
 		updatehealth()
 		SEND_SIGNAL(src, COMSIG_ATTACKED, I, user, params)
