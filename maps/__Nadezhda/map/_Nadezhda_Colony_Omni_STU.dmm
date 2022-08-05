@@ -37097,6 +37097,13 @@
 /obj/structure/flora/small/bushc1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
+"hgU" = (
+/obj/structure/table/standard,
+/obj/machinery/photocopier/faxmachine{
+	department = "Brig"
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/security/prisoncells)
 "hgX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -135208,7 +135215,7 @@ gEI
 xGU
 mLY
 wfW
-uhi
+hgU
 jAz
 jAz
 jAz
