@@ -1076,7 +1076,7 @@
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "altyn"
 	armor_up = list(melee = 20, bullet = 15, energy = 0, bomb = 15, bio = 0, rad = 0)
-	armor_list = list(melee = 40, bullet = 40, energy = 10, bomb = 35, bio = 0, rad = 0)
+	armor_list = list(melee = 40, bullet = 45, energy = 10, bomb = 35, bio = 0, rad = 0)
 	siemens_coefficient = 1
 	up = TRUE
 
