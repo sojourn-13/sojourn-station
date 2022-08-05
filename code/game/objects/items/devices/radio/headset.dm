@@ -96,6 +96,13 @@
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/headset_bs
 
+/obj/item/device/radio/headset/headset_blackshield/bowman
+	name = "blackshield bowman headset"
+	desc = "This headset is a questionable quality headset made years ago for Sol cargo poilets its hard to ingore the rattling noise when ever you turn your head to fast."
+	icon_state = "bs_bowman_headset"
+	item_state = "bs_bowman_headset"
+
+
 /obj/item/device/radio/headset/radiohat_blackshield // No longer a cap, a honest to god cap with a FUNCTIONAL headset. - Seb
 	name = "blackshield radio hat"
 	desc = "A faded black cap with the badge of the Blackshield. Comes attached with an industrial radio headset for long-range communication."
