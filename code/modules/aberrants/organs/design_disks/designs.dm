@@ -1,7 +1,3 @@
-/datum/design/organ
-	build_type = ORGAN_GROWER
-	materials = list(MATERIAL_BIOMATTER = 5)
-
 // Mods
 /datum/design/organ/organ_mod
 
@@ -28,7 +24,6 @@
 
 /datum/design/organ/organ_mod/sphincter
 	build_path = /obj/item/modification/organ/internal/process/condense
-
 
 // Organs
 /datum/design/organ/scaffold

@@ -116,7 +116,7 @@
 // From living failure projectiles
 /obj/item/modification/organ/internal/stromal/parasitic
 	name = "parasitic organoid"
-	desc = ""
+	desc = "An organoid that draws blood and nutrients from surrounding tissue, reducing its effectiveness."
 
 /obj/item/modification/organ/internal/stromal/parasitic/New()
 	..()

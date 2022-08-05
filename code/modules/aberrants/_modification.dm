@@ -1,20 +1,4 @@
-/*
-*Explain this shit
-
-// Used elsewhere, do not modify
-COMSIG_IATTACK			Attacking with the item, args(target, user)				from click.dm
-COMSIG_ATTACKBY		 	Attacking the item with another, args(held item, user)	from click.dm
-COMSIG_EXAMINE			On examine, args(user, distance)
-COMSIG_ITEM_PICKED		Picking the item up, args(parent item, user)			from item.dm
-COMSIG_ITEM_DROPPED		Dropping the item, args(parent item)					from lighting_atom.dm
-
-// Aberrant-specific
-COMSIG_ABERRANT_INPUT
-COMSIG_ABERRANT_PROCESS
-COMSIG_ABERRANT_OUTPUT
-COMSIG_ABERRANT_COOLDOWN
-*/
-
+// TODO: update tool mod components to use this since it's basically the same
 /datum/component/modification
 	dupe_mode = COMPONENT_DUPE_UNIQUE
 	can_transfer = TRUE
@@ -125,7 +109,7 @@ COMSIG_ABERRANT_COOLDOWN
 		user.drop_from_inventory(parent)
 	//If we get here, we succeeded in the applying
 	var/obj/item/I = parent
-	I.forceMove(A)	// May want to change this to I.loc = A or something similar. forceMove() calls all Crossed() procs between the src and the target.
+	I.forceMove(A)
 	A.item_upgrades.Add(I)
 	RegisterSignal(A, trigger_signal, .proc/trigger)
 	RegisterSignal(A, COMSIG_APPVAL, .proc/apply_values)

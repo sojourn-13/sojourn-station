@@ -28,11 +28,17 @@
 		return TRUE
 	if(istype(O, /obj/item/computer_hardware/hard_drive/portable/design/omg))
 		return TRUE
+	if(istype(O, /obj/item/computer_hardware/hard_drive/portable/design/medical))
+		return TRUE
+	if(istype(O, /obj/item/computer_hardware/hard_drive/portable/design/surgery))
+		return TRUE	
 	return FALSE
 
 /obj/machinery/smartfridge/secure/medbay/organs/stocked
 /obj/machinery/smartfridge/secure/medbay/organs/stocked/New()
 	..()
+	new /obj/item/computer_hardware/hard_drive/portable/design/medical/surgery(src)			// Can't hurt to have a spare
+	new /obj/item/computer_hardware/hard_drive/portable/design/omg/basic_organ_mods(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/omg/diy_organs(src)
 	new /obj/item/storage/freezer/medical(src)
 	update_contents()

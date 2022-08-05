@@ -17,7 +17,7 @@
 	if(input_mod_path)
 		input_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/input))
 	else if(process_mod_path)
-		process_mod_path = /obj/item/modification/organ/internal/process/condense		// Shuffle might be too confusing when dealing with single inputs and outputs
+		process_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/process) - /obj/item/modification/organ/internal/process/shuffle)	// Shuffle might be too confusing to see when dealing with single inputs and outputs
 	else if(output_mod_path)
 		output_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/output) - /obj/item/modification/organ/internal/output/damaging_insight_gain\
 																						- /obj/item/modification/organ/internal/output/activate_organ_functions)	// use defines to whitelist/blacklist subtypes
@@ -41,7 +41,6 @@
 				specific_input_type_pool += REAGENTS_EDIBLE + REAGENTS_ALCOHOL
 			if(input_mode == CHEM_BLOOD)
 				specific_input_type_pool += REAGENTS_MEDICINE_SIMPLE + REAGENTS_DRUGS + REAGENTS_STIMULANT_SIMPLE
-
 
 	switch(process_mod_path)
 		if(/obj/item/modification/organ/internal/process/shuffle)
