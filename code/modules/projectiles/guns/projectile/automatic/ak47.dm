@@ -6,6 +6,7 @@
 	icon_state = "AK"
 	item_state = "AK"
 	item_suffix = ""
+	excelsior = TRUE
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_RIFLE
@@ -32,6 +33,7 @@
 /obj/item/gun/projectile/automatic/ak47/NM_colony
 	name = "polymer \"Kalashnikov\" rifle"
 	desc = " A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.62mm. This is an abysmal, printed copy."
+	excelsior = FALSE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	price_tag = 800
 	serial_type = "NM"
@@ -64,6 +66,7 @@
 	icon_state = "saiga"
 	item_state = "saiga"
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	excelsior = TRUE
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1, TECH_ILLEGAL = 4)
 	mag_well = MAG_WELL_RIFLE //Have you ever seen saiga with drum magazine because I haven't
@@ -73,6 +76,8 @@
 /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony
 	name = "\"Saigini 12\" shotgun"
 	desc = "A bulked up and modified version of the kalashnikov made to fire 20mm shotgun slugs, similar to the sol federation SBAW design. Uses 20mm in SBAW magazines."
+	penetration_multiplier = 0.9 //Non-Excelsior varient, it's powerful as is. Pug on crack.
+	excelsior = FALSE
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1)
 	price_tag = 800
 	serial_type = "NM"
@@ -84,6 +89,7 @@
 	icon = 'icons/obj/guns/projectile/akl.dmi'
 	icon_state = "AKL"
 	item_state = "AKL"
+	excelsior = FALSE
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10, MATERIAL_GOLD = 5)
@@ -109,6 +115,7 @@
 	icon = 'icons/obj/guns/projectile/ak_wood.dmi'
 	icon_state = "AK"
 	item_state = "AK"
+	excelsior = FALSE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 900
 	init_recoil = RIFLE_RECOIL(0.9)
@@ -124,6 +131,7 @@
 	icon = 'icons/obj/guns/projectile/sawnoff/ak.dmi'
 	icon_state = "AK"
 	item_state = "AK"
+	excelsior = FALSE
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)

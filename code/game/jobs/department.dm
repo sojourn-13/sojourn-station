@@ -90,7 +90,7 @@
 	//18600 in 6 hours with full crew
 	//24180 in 6 hours with full crew + nep
 	account_initial_balance = 30000 //5~k For buying medical and items and payments
-	jobs_in_department = list("datum/job/cmo","/datum/job/doctor","/datum/job/trauma_team","/datum/job/psychiatrist")
+	jobs_in_department = list("datum/job/cmo","/datum/job/doctor","/datum/job/recovery_team","/datum/job/psychiatrist")
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"

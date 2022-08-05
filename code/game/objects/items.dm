@@ -112,7 +112,7 @@
 	for (var/upgrade_typepath in initialized_upgrades)
 		var/obj/item/upgrade = new upgrade_typepath
 
-		if (!(SEND_SIGNAL(upgrade, COMSIG_IATTACK, src, null)))
+		if (!(LEGACY_SEND_SIGNAL(upgrade, COMSIG_IATTACK, src, null)))
 			QDEL_NULL(upgrade)
 
 	if(armor_list)
@@ -216,7 +216,7 @@
 /obj/item/proc/pickup(mob/target)
 	throwing = 0
 	var/atom/old_loc = loc
-	SEND_SIGNAL(src, COMSIG_ITEM_PICKED, src, target)
+	LEGACY_SEND_SIGNAL(src, COMSIG_ITEM_PICKED, src, target)
 	if(target.put_in_active_hand(src) && old_loc )
 		if((target != old_loc) && (target != old_loc.get_holding_mob()))
 			do_pickup_animation(target,old_loc)
@@ -255,12 +255,12 @@
 
 // called when this item is removed from a storage item, which is passed on as S. The loc variable is already set to the new destination before this is called.
 /obj/item/proc/on_exit_storage(obj/item/storage/the_storage)
-	SEND_SIGNAL(the_storage, COMSIG_STORAGE_TAKEN, src, the_storage)
+	LEGACY_SEND_SIGNAL(the_storage, COMSIG_STORAGE_TAKEN, src, the_storage)
 	return
 
 // called when this item is added into a storage item, which is passed on as S. The loc variable is already set to the storage item.
 /obj/item/proc/on_enter_storage(obj/item/storage/the_storage)
-	SEND_SIGNAL(the_storage, COMSIG_STORAGE_INSERTED, src, the_storage)
+	LEGACY_SEND_SIGNAL(the_storage, COMSIG_STORAGE_INSERTED, src, the_storage)
 	return
 
 // called when "found" in pockets and storage items. Returns 1 if the search should end.
@@ -591,7 +591,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	extra_bulk = initial(extra_bulk)
 
 	//Now lets have each upgrade reapply its modifications
-	SEND_SIGNAL(src, COMSIG_APPVAL, src)
+	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
 
 	for (var/prefix in prefixes)
 		name = "[prefix] [name]"

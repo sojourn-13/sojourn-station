@@ -25,6 +25,11 @@
 	path = /obj/item/clothing/glasses/regular
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/eyes/binoclard
+	display_name = "binoclard glasses selection"
+	path = /obj/item/clothing/glasses/binoclard_lenses
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/eyes/sunglasses
 	display_name = "sunglasses selection"
 	path = /obj/item/clothing/glasses/sunglasses

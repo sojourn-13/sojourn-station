@@ -376,7 +376,7 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 			temperature = E.adj_temp > 0 ? "Warm" : "Cold"
 		if(E.nutriment_factor)
 			nutrition = E.nutriment_factor > 1 ? "High" : "Low"
-		strength = E.strength <= 15 ? "Light" : E.strength <= 50 ? "Strong" : "Knocking out"
+		strength = E.strength <= 15 ? "Knocking out" : E.strength <= 50 ? "Strong" : "Light"
 		thing_nature = "Alchohol drink"
 
 	var/list/recipes = GLOB.chemical_reactions_list_by_result[V.id]

@@ -163,6 +163,7 @@
 			list(name="Grenade Shell Flash", cost=250, path=/obj/item/ammo_casing/grenade/flash),
 			list(name="Grenade Shell Blast", cost=350, path=/obj/item/ammo_casing/grenade/blast),
 			list(name="Grenade Shell Frag", cost=350, path=/obj/item/ammo_casing/grenade/frag),
+			list(name="Grenade Shell Stinger", cost=300, path=/obj/item/ammo_casing/grenade/frag/stinger),
 			list(name="Grenade Shell EMP", cost=300, path=/obj/item/ammo_casing/grenade/emp),
 			list(name="14.5×114mm Anti-Material \"Red-Nose\"", cost=2400, path=/obj/item/ammo_casing/antim/lethal/prespawned),
 			list(name="14.5×114mm Anti-Material \"Off-Switch\"", cost=2400, path=/obj/item/ammo_casing/antim/ion/prespawned),
@@ -286,7 +287,7 @@
 		return
 	if(processing)
 		to_chat(user, SPAN_NOTICE("\The [src] is currently processing."))
-	else if(!istype(I, /obj/item/stack/material))
+	else if(!istype(I, /obj/item/stack/material) && !istype(I, /obj/item/stack/sheet/refined_scrap))
 		to_chat(user, SPAN_NOTICE("You cannot put this in \the [src]."))
 	else
 		var/i = 0
@@ -358,7 +359,7 @@
 		to_chat(usr, SPAN_NOTICE("The bullet fabricator is in the process of working."))
 		return
 	var/S = 0
-	for(var/obj/item/stack/material/I in contents)
+	for(var/obj/item/stack/I in contents)
 		S += 5
 		points += I.amount * I.price_tag * 5
 		//if(I.reagents.get_reagent_amount("nutriment") < 0.1)

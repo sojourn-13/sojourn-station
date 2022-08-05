@@ -121,6 +121,7 @@
 /// 10mm Magnum ///
 
 /obj/item/projectile/bullet/magnum_40
+	icon_state = "bullet_magnum"
 	damage_types = list(BRUTE = 16)
 	armor_penetration = 10
 	can_ricochet = TRUE
@@ -239,6 +240,7 @@
 
 /// 12mm Heavy Pistol ///
 /obj/item/projectile/bullet/kurtz_50
+	icon_state = "bullet_krutz"
 	damage_types = list(BRUTE = 17.5)
 	armor_penetration = 15
 	can_ricochet = TRUE
@@ -304,6 +306,7 @@
 /// 6.5x39mm Carbine///
 
 /obj/item/projectile/bullet/light_rifle_257
+	icon_state = "bullet_carbine"
 	damage_types = list(BRUTE = 11)
 	armor_penetration = 15
 	penetrating = 1
@@ -467,6 +470,7 @@
 /// 8.6x70mm Heavy Rifle ///
 
 /obj/item/projectile/bullet/heavy_rifle_408
+	icon_state = "bullet_heavy"
 	damage_types = list(BRUTE = 14)
 	armor_penetration = 30
 	penetrating = 2

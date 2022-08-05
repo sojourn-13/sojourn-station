@@ -433,6 +433,7 @@
 		G.max_upgrades += weapon_upgrades[UPGRADE_MAXUPGRADES]
 	if(weapon_upgrades[GUN_UPGRADE_HONK])
 		G.fire_sound = 'sound/items/bikehorn.ogg'
+		G.modded_sound = TRUE
 	if(weapon_upgrades[GUN_UPGRADE_RIGGED])
 		G.rigged = TRUE
 	if(weapon_upgrades[GUN_UPGRADE_EXPLODE])
@@ -784,7 +785,7 @@
 		if(C.use_tool(user = user, target =  upgrade_loc, base_time = IU.removal_time, required_quality = QUALITY_SCREW_DRIVING, fail_chance = IU.removal_difficulty, required_stat = STAT_MEC))
 			//If you pass the check, then you manage to remove the upgrade intact
 			to_chat(user, SPAN_NOTICE("You successfully remove \the [toremove] while leaving it intact."))
-			SEND_SIGNAL(toremove, COMSIG_REMOVE, upgrade_loc)
+			LEGACY_SEND_SIGNAL(toremove, COMSIG_REMOVE, upgrade_loc)
 			upgrade_loc.refresh_upgrades()
 			return 1
 		else
@@ -796,7 +797,7 @@
 			else if(prob(50))
 				//50% chance to break the upgrade and remove it
 				to_chat(user, SPAN_DANGER("You successfully remove \the [toremove], but destroy it in the process."))
-				SEND_SIGNAL(toremove, COMSIG_REMOVE, parent)
+				LEGACY_SEND_SIGNAL(toremove, COMSIG_REMOVE, parent)
 				QDEL_NULL(toremove)
 				upgrade_loc.refresh_upgrades()
 				user.update_action_buttons()

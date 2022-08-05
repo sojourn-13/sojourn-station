@@ -4,6 +4,7 @@
 	icon = 'icons/obj/guns/projectile/maxim.dmi'
 	icon_state = "maxim"
 	item_state = "maxim"
+	excelsior = TRUE
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
 	slot_flags = 0
@@ -37,6 +38,7 @@
 	desc = "An old and surprisingly deprecated gun from the Excelsior. One of their more dangerous weapons, effective at dealing with crowds or suppressing firing lines."
 	price_tag = 2000
 	serial_type = "NM"
+	excelsior = FALSE
 
 /obj/item/gun/projectile/automatic/maxim/update_icon()
 	..()

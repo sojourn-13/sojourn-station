@@ -4,7 +4,7 @@
 	icon_state = "armor-blue"
 	spawn_nothing_percentage = 20
 
-/obj/random/rig/item_to_spawn()
+/obj/random/psi/item_to_spawn()
 	return pickweight(list(
 	//Swords and hammers
 	/obj/item/tool/sword/cult/deepmaints = 1,

@@ -82,6 +82,12 @@
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/headset_mar
 
+/obj/item/device/radio/headset/headset_sec/bowman
+	name = "marshal bowman headset"
+	desc = "This headset is a premium quality headset made for only true operators! Ignore.. the ten credit price tag and the rattling noise it makes when you shake it."
+	icon_state = "sec_headset_bowman"
+	item_state = "headset"
+
 /obj/item/device/radio/headset/headset_blackshield
 	name = "blackshield radio headset"
 	desc = "This is used by the idiotic chimps with guns. This has a small symbol denoting its built in back-up transmitter."
@@ -89,6 +95,13 @@
 	item_state = "headset"
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/headset_bs
+
+/obj/item/device/radio/headset/headset_blackshield/bowman
+	name = "blackshield bowman headset"
+	desc = "This headset is a questionable quality headset made years ago for Sol cargo poilets its hard to ingore the rattling noise when ever you turn your head to fast."
+	icon_state = "bs_bowman_headset"
+	item_state = "bs_bowman_headset"
+
 
 /obj/item/device/radio/headset/radiohat_blackshield // No longer a cap, a honest to god cap with a FUNCTIONAL headset. - Seb
 	name = "blackshield radio hat"

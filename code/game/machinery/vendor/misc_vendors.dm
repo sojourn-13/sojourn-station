@@ -233,6 +233,7 @@
 		/obj/item/clothing/accessory/cape/blackalt = 8,
 		//Glasses
 		/obj/item/clothing/glasses/binoclard_lenses = 5,
+		/obj/item/clothing/glasses/binoclard_lenses/dark = 3,
 		//Gloves
 		/obj/item/clothing/gloves/knuckles = 3,
 		/obj/item/clothing/gloves/evening = 3,
@@ -481,6 +482,7 @@
 		/obj/item/clothing/accessory/cape/blackalt = 95,
 		//Glasses
 		/obj/item/clothing/glasses/binoclard_lenses = 50,
+		/obj/item/clothing/glasses/binoclard_lenses/dark = 50,
 		//Gloves
 		/obj/item/clothing/gloves/knuckles = 65,
 		/obj/item/clothing/gloves/evening = 70,

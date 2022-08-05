@@ -29,6 +29,9 @@
 
 #define SQRTWO 1.414
 
+/// Returns the difference between num1 and num2.
+#define GET_DIFFERENCE(num1, num2) (num1 - num2)
+
 /// Returns the difference between multiplier and the product of multiplier * multiplicand.
 #define MULT_DIFFERENCE(multiplier, multiplicand) ((multiplier * multiplicand) - multiplier)
 
@@ -85,6 +88,9 @@
 
 // Used for calculating the radioactive strength falloff
 #define INVERSE_SQUARE(initial_strength,cur_distance,initial_distance) ( (initial_strength)*((initial_distance)**2/(cur_distance)**2) )
+
+// Inverts the sign of the given number.
+#define INVERT_SIGN(number) ((number)*-1)
 
 // Vector algebra.
 #define SQUAREDNORM(x, y) (x**2 + y**)

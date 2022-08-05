@@ -17,7 +17,7 @@ var/global/floorIsLava = 0
 	var/m = "<span class=\"log_message\"><span class=\"prefix\">[tagtext]:</span> <span class=\"message\">[msg]</span></span>"
 	log_adminwarn(m)
 	for(var/client/C in admins)
-		m = "<span class=\"log_message\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> <span class=\"message\">[msg]</span></span>"
+		m = "<span class=\"log_message\"><span class=\"message\">[msg]</span></span>"
 		if(check_rights(R_ADMIN, 0, C.mob))
 			to_chat(C, m)
 

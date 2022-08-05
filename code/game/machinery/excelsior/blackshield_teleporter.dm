@@ -69,7 +69,6 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/gun/projectile/automatic/duty = 350,
 		/obj/item/gun/projectile/automatic/nordwind/watchtower = 600,
 		/obj/item/gun/projectile/automatic/blackguard = 750,
-		/obj/item/gun/projectile/automatic/lmg/heroic = 750,
 		/obj/item/gun/projectile/automatic/drozd/NM_colony = 300,
 		/obj/item/gun/projectile/automatic/ppsh/NM_colony = 450,
 		/obj/item/gun/projectile/automatic/ak47/NM_colony = 325,
@@ -79,6 +78,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/shield/buckler = 250,
 		/obj/item/shield/riot = 350,
 		//Armor
+		/obj/item/clothing/head/helmet/faceshield/altyn/milisha = 120,
 		/obj/item/clothing/suit/space/void/security/odst/mil = 300,
 		/obj/item/clothing/suit/space/void/odst/corps = 300,
 		/obj/item/storage/box/bs_kit/bullet_armor = 500,

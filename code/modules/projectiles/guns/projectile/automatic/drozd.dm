@@ -4,6 +4,7 @@
 	icon = 'icons/obj/guns/projectile/drozd.dmi'
 	icon_state = "drozd"
 	item_state = "drozd"
+	excelsior = TRUE
 	w_class = ITEM_SIZE_NORMAL
 	can_dual = TRUE
 	force = WEAPON_FORCE_PAINFUL
@@ -27,6 +28,7 @@
 	name = "\"Kompleks\" SMG"
 	desc = "An excellent fully automatic submachinegun. Famous for it's perfomance in close quarters. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/drozd.dmi'
+	excelsior = FALSE
 	origin_tech = list(TECH_COMBAT = 4)
 	price_tag = 600
 	serial_type = "NM"

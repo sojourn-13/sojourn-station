@@ -69,7 +69,7 @@
 	health = 1
 	var/health_regen = 3
 	var/brute_resist = 1.25
-	var/fire_resist = 0.6
+	var/fire_resist = 0.8
 	var/expandType = /obj/effect/blob
 
 	//We will periodically update and track neighbors in two lists:
@@ -568,7 +568,7 @@
 	maxHealth = 200
 	health = 200
 	brute_resist = 4
-	fire_resist = 2
+	fire_resist = 3
 	density = TRUE
 	icon_scale = 1.2
 	health_regen = 1
@@ -602,7 +602,7 @@
 	health = 160
 	health_regen = 5
 	brute_resist = 2
-	fire_resist = 1
+	fire_resist = 1.3
 	density = TRUE
 	icon_scale = 1.2
 

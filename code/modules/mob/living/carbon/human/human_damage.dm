@@ -18,7 +18,7 @@
 	var/clone_l = getCloneLoss()
 
 	health = maxHealth - oxy_l - tox_l - clone_l - total_burn - total_brute
-	SEND_SIGNAL(src, COMSIG_HUMAN_HEALTH, health)
+	LEGACY_SEND_SIGNAL(src, COMSIG_HUMAN_HEALTH, health)
 	//TODO: fix husking
 	if( (total_burn > 400) && stat == DEAD)
 		ChangeToHusk()
@@ -227,6 +227,8 @@
 		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
 		if (ishuman(H))
 			var toxThreshHold
+			if(!L)
+				return
 			if (L.is_usable())
 				if (L.nature == MODIFICATION_SILICON)
 					toxThreshHold = 100
