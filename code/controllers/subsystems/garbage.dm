@@ -257,6 +257,11 @@ SUBSYSTEM_DEF(garbage)
 	var/refID = "\ref[D]"
 
 	var/tick_usage = TICK_USAGE
+	var/atom/movable/AM
+	if (ismovable(D))
+		AM = D
+	if (AM && AM.move_packet)
+		log_harddel("[AM] tried deleting with a valid move_packet: [AM.move_packet]")
 	del(D)
 	tick_usage = TICK_USAGE_TO_MS(tick_usage)
 

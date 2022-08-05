@@ -400,7 +400,7 @@
 		//	if(destination_turf.density)
 		//		return TRUE
 		if(TURF_PATHING_PASS_PROC)
-			if (!destination_turf.CanPass(caller, destination_turf)) //not sure if this works. TODO NIKO: COME BACK TO THIS
+			if (!destination_turf.CanPass(caller, destination_turf)) //not really relevant right now, i dont think this type of pathfinding is even used rn
 				return TRUE
 		if(TURF_PATHING_PASS_NO)
 			return TRUE

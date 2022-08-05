@@ -49,7 +49,7 @@
 		doTargetMessage()
 
 	if (filteredTarget)
-		target_location = WEAKREF(filteredTarget.loc)
+		target_location = WEAKREF(get_turf(filteredTarget))
 
 	return filteredTarget
 
@@ -104,7 +104,10 @@
 /mob/living/carbon/superior_animal/proc/loseTarget(stop_pursuit = TRUE, simply_losetarget = FALSE)
 	if (stop_pursuit)
 		stop_automated_movement = 0
-		SSmove_manager.stop_looping(src)
+		if (move_packet)
+			var/datum/move_loop/our_loop = move_packet.existing_loops[SSmovement] //niko todo: replace with something better
+			if (our_loop && our_loop.priority < MOVEMENT_PATHMODE_PRIORITY)
+				SSmove_manager.stop_looping(src)
 	if (!simply_losetarget)
 		fire_delay = fire_delay_initial
 		melee_delay = melee_delay_initial
@@ -285,7 +288,7 @@
 	if (attacker && !target_mob) //no target? target this guy
 		if (isValidAttackTarget(attacker))
 			var/atom/new_target = attacker
-			var/atom/new_target_location = attacker.loc
+			var/atom/new_target_location = get_turf(attacker)
 			var/distance = (get_dist(src, attacker))
 			if (distance > viewRange) // are they out of our viewrange? TODO: maybe add a see/hear check
 				new_target_location = target_outside_of_view_range(attacker, distance) //this is where we think they might be

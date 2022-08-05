@@ -376,7 +376,7 @@
 			lost_sight = FALSE
 
 		if (!lost_sight) // if we've, in a previous iteration of this proc, lost sight of our target, lets not update the location of the target
-			target_location = WEAKREF(targetted_mob.loc) //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
+			target_location = WEAKREF(get_turf(targetted_mob)) //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
 		target_location_resolved = (target_location?.resolve())
 		if (retarget) // do we randomly retarget?
 			var/retarget_prioritize = retarget_prioritize_current //local var so that we can make temporary changes
