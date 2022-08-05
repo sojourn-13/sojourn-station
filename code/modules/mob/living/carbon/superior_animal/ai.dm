@@ -299,5 +299,5 @@
 
 			if (retaliation_type)
 				if (retaliation_type & APPROACH_ATTACKER)
-					INVOKE_ASYNC(GLOBAL_PROC, .proc/walk_to_wrapper, src, target_location,  (comfy_range - comfy_distance), move_to_delay, 0, TRUE) //to avoid ci failure, we invoke async
-					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+					if (stat != DEAD)
+						INVOKE_ASYNC(SSmove_manager, /datum/controller/subsystem/move_manager/proc/move_to, src, target_location, (comfy_range - comfy_distance), move_to_delay)
