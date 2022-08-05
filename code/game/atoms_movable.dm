@@ -41,8 +41,6 @@
 		SSmove_manager.stop_looping(src) // not 1:1 with tg movess, niko todo: replace
 		if(!QDELETED(move_packet))
 			qdel(move_packet)
-		else
-			message_admins("[src]'s [move_packet] was found to be QDELETED") //NIKO TODO delete, this is debug code
 		move_packet = null
 
 	. = ..()

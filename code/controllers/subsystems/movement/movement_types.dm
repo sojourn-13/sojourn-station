@@ -808,4 +808,4 @@
 		return FALSE
 	var/atom/old_loc = moving.loc
 	holder.current_pipe = holder.current_pipe.transfer(holder)
-	return old_loc != moving?.loc*/ //NIKO TODO COME BACK TO THIS (DO NOT MERGE UNTIL THIS COMMENT IS REMOVED)
+	return old_loc != moving?.loc*/
