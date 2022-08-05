@@ -27,13 +27,13 @@
 	tool_qualities = list(QUALITY_ARMOR = 100)
 	max_upgrades = 1
 
-//Blackshield helmets
 /obj/item/clothing/head/helmet/ballistic
 	name = "ballistic helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel."
 	icon_state = "helmet_mil"
-	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
+	armor_list = list(melee = 25, bullet = 35,energy = 25, bomb = 30, bio = 0, rad = 0)
 
+//Blackshield helmets
 /obj/item/clothing/head/helmet/ballistic/militia
 	name = "blackshield helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
@@ -72,7 +72,7 @@
 	This one bears the IFF stripes of the Blackshield."
 	flags_inv = HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 25, bullet = 40, energy = 25, bomb = 10, bio = 0, rad = 0)
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4
 	light_overlay = "bs_bulletproof"
@@ -122,7 +122,7 @@
 	name = "Corpsmans full helm"
 	desc = "Standard military gear. A full-faced vasriant of the common ballistic helmet. This one bears a few\
 	key upgrades, including sterile materials and contaminant resistant sealing."
-	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 20, rad = 0)
+	armor_list = list(melee = 30, bullet = 40,energy = 20, bomb = 30, bio = 75, rad = 0)
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4
 	light_overlay = "corpsmanfullhelm_light"

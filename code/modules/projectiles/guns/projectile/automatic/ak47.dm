@@ -76,6 +76,7 @@
 /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony
 	name = "\"Saigini 12\" shotgun"
 	desc = "A bulked up and modified version of the kalashnikov made to fire 20mm shotgun slugs, similar to the sol federation SBAW design. Uses 20mm in SBAW magazines."
+	penetration_multiplier = 0.9 //Non-Excelsior varient, it's powerful as is. Pug on crack.
 	excelsior = FALSE
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1)
 	price_tag = 800

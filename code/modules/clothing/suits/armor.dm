@@ -632,7 +632,7 @@
 	icon_state = "platecarrier"
 	item_state = "platecarrier"
 	blood_overlay_type = "armor"
-	armor_list = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 30, bullet = 40, energy = 10, bomb = 15, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/platecarrier/full
 	name = "full body plate carrier"
