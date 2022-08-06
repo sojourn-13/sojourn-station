@@ -51,6 +51,11 @@
 	path = /obj/item/clipboard
 	cost = 0
 
+/datum/gear/utility/multipen
+	display_name = "multicolored pen"
+	path = /obj/item/pen/multi
+	cost = 1
+
 /datum/gear/utility/crayonbox
 	display_name = "crayon box"
 	path = /obj/item/storage/fancy/crayons
