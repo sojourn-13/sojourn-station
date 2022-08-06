@@ -48,7 +48,8 @@
 	name = "Demon Wings"
 	desc = ""
 	icon_state = "demon"
-	colored_layers = 1
+	colored_layers = 2
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/dragon
 	name = "Dragon Wings"
