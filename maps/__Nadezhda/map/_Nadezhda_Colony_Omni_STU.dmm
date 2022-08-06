@@ -7173,6 +7173,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
+/obj/machinery/camera/network/security{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "buP" = (
@@ -14908,12 +14911,8 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/crew_quarters/podrooms)
 "cWT" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/flackvest/marshal/full,
-/obj/item/clothing/suit/armor/flackvest/marshal/full,
-/obj/item/clothing/suit/armor/flackvest/marshal/full,
-/obj/item/clothing/suit/armor/flackvest/marshal/full,
-/turf/simulated/floor/tiled/dark/gray_perforated,
+/obj/item/stool,
+/turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "cWY" = (
 /obj/effect/decal/cleanable/rubble,
@@ -25340,22 +25339,10 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "eXP" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/camera/network/security{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
-/turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/sechall)
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
+/area/nadezhda/security/armory)
 "eYh" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -27;
@@ -27178,14 +27165,18 @@
 /obj/machinery/door/window/westleft,
 /obj/structure/table/rack/shelf,
 /obj/structure/window/reinforced,
-/obj/random/ammo,
-/obj/random/ammo,
-/obj/random/ammo,
-/obj/random/ammo/shotgun,
-/obj/random/ammo/shotgun,
-/obj/random/ammo_fancy,
-/obj/random/ammo_fancy,
-/obj/random/ammo_fancy,
+/obj/item/rig/combat/ironhammer/equipped{
+	pixel_x = -5
+	},
+/obj/item/rig/combat/ironhammer/equipped{
+	pixel_x = -5
+	},
+/obj/item/rig/combat/ironhammer/equipped{
+	pixel_x = 5
+	},
+/obj/item/rig/combat/ironhammer/equipped{
+	pixel_x = 5
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "fqA" = (
@@ -37711,6 +37702,21 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
+"hna" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/door/window/southleft{
+	dir = 8
+	},
+/obj/machinery/door/window/brigdoor/northleft{
+	dir = 4;
+	req_access = list(3)
+	},
+/obj/machinery/door/blast/regular{
+	id = "Armoury";
+	name = "Armory Shop"
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/armory)
 "hnf" = (
 /obj/structure/table/rack/shelf,
 /obj/random/medical_lowcost/low_chance,
@@ -72807,12 +72813,14 @@
 	pixel_y = 0
 	},
 /obj/structure/table/rack/shelf,
-/obj/random/dungeon_ammo,
-/obj/random/dungeon_ammo,
-/obj/random/dungeon_ammo,
-/obj/random/dungeon_ammo/low_chance,
-/obj/random/ammo_lowcost,
-/obj/random/ammo_lowcost,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
+/obj/item/clothing/suit/armor/flackvest/marshal/full,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "nUs" = (
@@ -80036,12 +80044,8 @@
 /turf/simulated/floor/tiled/dark/panels,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "png" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
-/turf/simulated/floor/tiled/dark/gray_perforated,
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "pnh" = (
 /turf/simulated/floor/tiled/steel,
@@ -96379,19 +96383,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "son" = (
 /obj/structure/table/rack/shelf,
-/obj/item/rig/combat/ironhammer/equipped{
-	pixel_x = -5
-	},
-/obj/item/rig/combat/ironhammer/equipped{
-	pixel_x = 5
-	},
-/obj/item/rig/combat/ironhammer/equipped{
-	pixel_x = -5
-	},
-/obj/item/rig/combat/ironhammer/equipped{
-	pixel_x = 5
-	},
-/turf/simulated/floor/tiled/dark/gray_perforated,
+/turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "soq" = (
 /obj/structure/disposalpipe/segment{
@@ -140295,7 +140287,7 @@ oxi
 kRI
 moG
 buM
-eXP
+oxi
 khE
 rXm
 kFp
@@ -140497,8 +140489,8 @@ krD
 krD
 krD
 krD
-krD
-krD
+hna
+eXP
 krD
 krD
 hFv
@@ -141102,10 +141094,10 @@ nAD
 krD
 esU
 eAI
-eAI
 frf
 nKC
 jto
+eAI
 uqw
 knD
 wcv
@@ -141304,10 +141296,10 @@ pec
 eEg
 qVB
 ezx
-eAI
 nKC
 tvG
 rjn
+eAI
 wvK
 gfI
 wcv
@@ -141506,10 +141498,10 @@ adJ
 krD
 ecu
 ezx
-eAI
 jqG
 jJx
 wmt
+eAI
 eXM
 dXO
 wcv
