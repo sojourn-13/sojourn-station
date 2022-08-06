@@ -219,6 +219,7 @@
 	tool_qualities = list(QUALITY_CUTTING = 30,  QUALITY_WIRE_CUTTING = 20, QUALITY_LASER_CUTTING = 20, QUALITY_WELDING = 10, QUALITY_CAUTERIZING = 10)
 	var/mob/living/creator
 	var/datum/effect/effect/system/spark_spread/spark_system
+	var/dequel_self = TRUE
 
 /obj/item/melee/energy/blade/New()
 	..()
@@ -232,12 +233,17 @@
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
+
+/obj/item/melee/energy/blade/proc/dequel_check()
+	if(src && dequel_self)
+		qdel(src)
+
 /obj/item/melee/energy/blade/attack_self(mob/user as mob)
 	user.drop_from_inventory(src)
-	spawn(1) if(src) qdel(src)
+	addtimer(CALLBACK(src, .proc/dequel_check), 1)
 
 /obj/item/melee/energy/blade/dropped()
-	spawn(1) if(src) qdel(src)
+	addtimer(CALLBACK(src, .proc/dequel_check), 1)
 
 /obj/item/melee/energy/blade/Process()
 	if(!creator || loc != creator || (creator.l_hand != src && creator.r_hand != src))
@@ -252,9 +258,10 @@
 			host.pinned -= src
 			host.embedded -= src
 			host.drop_from_inventory(src)
-		spawn(1) if(src) qdel(src)
+		addtimer(CALLBACK(src, .proc/dequel_check), 1)
 
 /obj/item/melee/energy/blade/organ_module //just to make sure that blade doesnt delet itself
+	dequel_self = FALSE
 
 /obj/item/melee/energy/blade/organ_module/New()
 

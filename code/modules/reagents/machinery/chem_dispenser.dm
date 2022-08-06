@@ -119,12 +119,12 @@
 
 /obj/machinery/chemical_dispenser/ex_act(severity)
 	switch(severity)
-		if(1.0)
-			del(src)
+		if(1)
+			qdel(src)
 			return
-		if(2.0)
-			if (prob(50))
-				del(src)
+		if(2)
+			if(prob(50))
+				qdel(src)
 				return
 
 /obj/machinery/chemical_dispenser/ui_data()
