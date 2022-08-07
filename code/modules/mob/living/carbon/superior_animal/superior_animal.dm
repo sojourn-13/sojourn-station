@@ -550,49 +550,50 @@
 	*/
 
 /mob/living/carbon/superior_animal/Life()
-	ticks_processed++
-	handle_regular_hud_updates()
-	if(!reagent_immune)
-		handle_cheap_chemicals_in_body()
+	if (!AI_inactive)
+		ticks_processed++
+		handle_regular_hud_updates()
+		if(!reagent_immune)
+			handle_cheap_chemicals_in_body()
 
-	if(!(ticks_processed%3))
-		// handle_status_effects() this is handled here directly to save a bit on procedure calls
-		//if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1)) - Soj edit, we already update icon just 13 lines down form this, no point
-		//	spawn(5) update_icons()
-		paralysis = max(paralysis-3,0)
-		stunned = max(stunned-3,0)
-		weakened = max(weakened-3,0)
-		cheap_update_lying_buckled_and_verb_status_()
-		if(!never_stimulate_air)
-			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
-			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
-			handle_cheap_breath(breath)
-			handle_cheap_environment(environment)
-			//Fire handling , not passing the whole list because thats unefficient.
-			handle_fire(environment.gas["oxygen"], loc)
-		updateicon()
-		ticks_processed = 0
-	if(handle_cheap_regular_status_updates()) // They have died after all of this, do not scan or do not handle AI anymore.
-		return PROCESS_KILL
+		if(!(ticks_processed%3))
+			// handle_status_effects() this is handled here directly to save a bit on procedure calls
+			//if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1)) - Soj edit, we already update icon just 13 lines down form this, no point
+			//	spawn(5) update_icons()
+			paralysis = max(paralysis-3,0)
+			stunned = max(stunned-3,0)
+			weakened = max(weakened-3,0)
+			cheap_update_lying_buckled_and_verb_status_()
+			if(!never_stimulate_air)
+				var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
+				var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
+				handle_cheap_breath(breath)
+				handle_cheap_environment(environment)
+				//Fire handling , not passing the whole list because thats unefficient.
+				handle_fire(environment.gas["oxygen"], loc)
+			updateicon()
+			ticks_processed = 0
+		if(handle_cheap_regular_status_updates()) // They have died after all of this, do not scan or do not handle AI anymore.
+			return PROCESS_KILL
 
-	if (can_burrow && bad_environment)
-		evacuate()
+		if (can_burrow && bad_environment)
+			evacuate()
 
-	if (!weakened)
+		if (!weakened)
 
-		if(!AI_inactive) //we dont need to handle ai if we're disabled
-			handle_ai()
-			//Speaking
+			if(!AI_inactive) //we dont need to handle ai if we're disabled
+				handle_ai()
+				//Speaking
 
-			if(speak_chance && prob(speak_chance))
-				visible_emote(emote_see)
+				if(speak_chance && prob(speak_chance))
+					visible_emote(emote_see)
 
-			if (following)
-				if (!target_mob) // Are we following someone and not attacking something?
-					walk_to_wrapper(src, following, follow_distance, move_to_delay, deathcheck = TRUE) // Follow the mob referenced in 'following' and stand almost next to them.
-			else if (!target_mob && last_followed)
-				walk_to_wrapper(src, 0)
-				last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
+				if (following)
+					if (!target_mob) // Are we following someone and not attacking something?
+						walk_to_wrapper(src, following, follow_distance, move_to_delay, deathcheck = TRUE) // Follow the mob referenced in 'following' and stand almost next to them.
+				else if (!target_mob && last_followed)
+					walk_to_wrapper(src, 0)
+					last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
 
 	if(life_cycles_before_sleep)
 		life_cycles_before_sleep--
