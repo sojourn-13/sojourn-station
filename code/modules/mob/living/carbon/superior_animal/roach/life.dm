@@ -135,9 +135,12 @@
 
 			if(LAYING_EGG)
 				if (world.timeofday >= busy_start_time + eating_time * 0.5) //Takes half as long to lay an egg then it is to eat a dead body
+					/*
 					if (istype(src, /mob/living/carbon/superior_animal/roach/kaiser))// kaiser roaches now lay roachcubes
+						
 						var/roachcube = pick(subtypesof(/obj/item/reagent_containers/food/snacks/cube/roach))
 						new roachcube(get_turf(src))
+						
 					else
 						var/obj/item/roach_egg/egg
 						if (istype(src, /mob/living/carbon/superior_animal/roach/golden))// kaiser roaches now lay roachcubes
@@ -146,6 +149,7 @@
 							egg = new /obj/item/roach_egg(loc, src)
 						if(unnatural_mutations.mutation_pool.len > 0)
 							egg.unnatural_mutations = unnatural_mutations.Copy()
+					*/
 					fed--
 					update_openspace()
 					busy = 0
