@@ -1,12 +1,9 @@
 #define ICON_SPLIT_X 16
 #define ICON_SPLIT_Y 21
-#define ON 1
-#define OFF 0
-
 
 /obj/machinery/cooking_with_jane/stove
 	name = "Stovetop"
-	desc = "A set of four burners for cooking food. There seems to be other equipment built into the machine. Is... That a camera?"
+	desc = "A set of four burners for cooking food. There seems to be other equipment built into the machine. Is... That a camera? \nCtrl+Click: Set Temperatures / Timers \nShift+Ctrl+Click: Turn on a burner."
 	icon = 'icons/obj/cwj_cooking/stove.dmi'
 	icon_state = "stove"
 	density = TRUE
@@ -16,7 +13,7 @@
 	var/list/temperature= list("Low", "Low", "Low", "Low")
 	var/list/timer = list(0, 0, 0, 0)
 	var/list/timerstamp = list(0, 0, 0, 0)
-	var/list/switches = list(OFF, OFF, OFF, OFF)
+	var/list/switches = list(0, 0, 0, 0)
 	var/list/cooking_timestamp = list(0, 0, 0, 0) //Timestamp of when cooking initialized so we know if the prep was disturbed at any point.
 	var/list/items[4]
 
@@ -46,13 +43,13 @@
 		check_on_10 = 0
 
 	var/used_power = 0
-	if(switches[1] == ON)
+	if(switches[1] == 1)
 		used_power += power_cost
-	if(switches[2] == ON)
+	if(switches[2] == 1)
 		used_power += power_cost
-	if(switches[3] == ON)
+	if(switches[3] == 1)
 		used_power += power_cost
-	if(switches[4] == ON)
+	if(switches[4] == 1)
 		used_power += power_cost
 	use_power(used_power)
 
@@ -139,14 +136,14 @@
 		else
 			used_item.forceMove(src)
 		items[input] = used_item
-		if(switches[input] == ON)
+		if(switches[input] == 1)
 			cooking_timestamp[input] = world.time
 	update_icon()
 
 /obj/machinery/cooking_with_jane/stove/attack_hand(mob/user as mob, params)
 	var/input = getInput(params)
 	if(items[input] != null)
-		if(switches[input] == ON)
+		if(switches[input] == 1)
 			handle_cooking(user, input)
 			cooking_timestamp[input] = world.time
 			if(ishuman(user) && (temperature[input] == "High" || temperature[input] == "Medium" ))
@@ -175,8 +172,8 @@
 		if("Set timer")
 			handle_timer(user, input)
 
-//Switch the cooking device on or off with alt+click
-/obj/machinery/cooking_with_jane/stove/AltClick(var/mob/user, params)
+//Switch the cooking device on or off
+/obj/machinery/cooking_with_jane/stove/ShiftCtrlClick(var/mob/user, params)
 
 	if(user.stat || user.restrained() || (!in_range(src, user)))
 		return
@@ -190,14 +187,14 @@
 	var/choice = input(user,"Select a heat setting for burner #[input].\nCurrent temp :[old_temp]","Select Temperature","High") in list("High","Medium","Low","Cancel")
 	if(choice && choice != "Cancel" && choice != old_temp)
 		temperature[input] = choice
-		if(switches[input] == ON)
+		if(switches[input] == 1)
 			handle_cooking(user, input)
 			cooking_timestamp[input] = world.time
 
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_timer(user, input)
 	timer[input] = (input(user, "Set Timer","Enter a timer for burner #[input]",1) as num) SECONDS
-	if(timer[input] != 0 && switches[input] == ON)
+	if(timer[input] != 0 && switches[input] == 1)
 		timer_act(user, input)
 
 /obj/machinery/cooking_with_jane/stove/proc/timer_act(user, input)	
@@ -206,7 +203,7 @@
 	spawn(timer[input])
 		if(old_timerstamp == timerstamp[input])
 			playsound(src, 'sound/items/lighter.ogg', 100, 1, 0)
-			switches[input] = OFF
+			switches[input] = 0
 			handle_cooking(user, input, TRUE)
 			timerstamp[input]=world.time
 			cooking_timestamp[input] = world.time
@@ -214,13 +211,13 @@
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_switch(user, input)
 	playsound(src, 'sound/items/lighter.ogg', 100, 1, 0)
-	if(switches[input] == ON)
-		switches[input] = OFF
+	if(switches[input] == 1)
+		switches[input] = 0
 		handle_cooking(user, input)
 		timerstamp[input]=world.time
 		cooking_timestamp[input] = world.time
 	else
-		switches[input] = ON
+		switches[input] = 1
 		cooking_timestamp[input] = world.time
 		cook_checkin(input)
 		if(timer[input] != 0)
@@ -259,8 +256,18 @@
 
 /obj/machinery/cooking_with_jane/stove/update_icon()
 	cut_overlays()
+
 	for(var/obj/item/our_item in vis_contents)
 		src.remove_from_visible(our_item)
+
+	if(panel_open)
+		icon="stove_open"
+	else
+		icon="stove"
+
+	for(var/i=1, i<=4, i++)
+		if(switches[i] == 1)
+			add_overlay(image(src.icon, icon_state="[panel_open?"open_":""]burner_[i]"))
 
 	for(var/i=1, i<=4, i++)
 		if(!(items[i]))
@@ -280,6 +287,8 @@
 				our_item.pixel_x = 18
 				our_item.pixel_y = 21
 		src.add_to_visible(our_item, i)
+		if(switches[i] == 1)
+			add_overlay(image(src.icon, icon_state="steam_[i]", layer=ABOVE_OBJ_LAYER))
 
 /obj/machinery/cooking_with_jane/stove/proc/add_to_visible(var/obj/item/our_item, input)
 	our_item.vis_flags = VIS_INHERIT_LAYER | VIS_INHERIT_PLANE | VIS_INHERIT_ID
@@ -297,4 +306,5 @@
 	src.vis_contents.Remove(our_item)
 
 
-#undef ICON_SPLIT
+#undef ICON_SPLIT_X
+#undef ICON_SPLIT_Y

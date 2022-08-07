@@ -8,7 +8,7 @@
 //allows a cook to temporarily offload recipes to work on things factory-style, eliminating the need for 20 plates to get things done fast.
 
 /obj/item/cooking_with_jane/cooking_container
-	icon = 'icons/obj/cwj_cooking/eris_kitchen.dmi'
+	icon = 'icons/obj/cwj_cooking/kitchen.dmi'
 	var/shortname
 	var/place_verb = "into"
 	var/appliancetype //string
@@ -179,11 +179,19 @@
 	src.vis_contents.Remove(our_item)
 
 /obj/item/cooking_with_jane/cooking_container/plate
+	icon = 'icons/obj/cwj_cooking/eris_kitchen.dmi'
 	name = "serving plate"
 	shortname = "plate"
-	desc = "A plate. Don't put too much on it."
+	desc = "A shitty serving plate. You probably shouldn't be seeing this."
 	icon_state = "plate"
 	appliancetype = PLATE
+
+/obj/item/cooking_with_jane/cooking_container/board
+	name = "cutting board"
+	shortname = "cutting_board"
+	desc = "Good for making sandwiches on, too."
+	icon_state = "plate"
+	appliancetype = CUTTING_BOARD
 
 /obj/item/cooking_with_jane/cooking_container/oven
 	name = "oven dish"
@@ -203,7 +211,6 @@
 /obj/item/cooking_with_jane/cooking_container/pan
 	name = "pan"
 	desc = "An normal pan."
-	icon = 'icons/obj/cwj_cooking/kitchen.dmi'
 	icon_state = "pan" //Default state is the base icon so it looks nice in the map builder
 	hitsound = 'sound/weapons/smash.ogg'
 	appliancetype = SKILLET

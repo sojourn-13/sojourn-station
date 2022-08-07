@@ -48,14 +48,15 @@
 #define CWJ_CHECK_FULL		2 //For reagents, nothing can be added to 
 
 //Cooking container types
-#define PLATE 		"plate"
-#define PAN			"pan"
-#define POT			"pot"
-#define BOWL		"bowl"
-#define SKILLET		"skillet"
-#define BASKET		"basket"
-#define OVEN		"oven"
-#define GRILL		"grill"
+#define PLATE 			"plate"
+#define CUTTING_BOARD	"cutting board"
+#define PAN				"pan"
+#define POT				"pot"
+#define BOWL			"bowl"
+#define SKILLET			"skillet"
+#define BASKET			"basket"
+#define OVEN			"oven"
+#define GRILL			"grill"
 
 //Stove temp settings.
 #define J_LO "Low"
