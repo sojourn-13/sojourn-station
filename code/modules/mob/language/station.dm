@@ -5,7 +5,7 @@
 	partial_understanding = list(
 		LANGUAGE_MONKEY = 5,			//hehe le monkey
 		LANGUAGE_LATIN = 5,
-		LANGUAGE_JANA = 10,
+		LANGUAGE_JANA = 5,
 		LANGUAGE_ESPERANTO = 10,
 		LANGUAGE_GERMAN = 20,
 		LANGUAGE_CYRILLIC = 5,
