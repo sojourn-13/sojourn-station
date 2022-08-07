@@ -37705,7 +37705,8 @@
 "hna" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/door/window/southleft{
-	dir = 8
+	dir = 8;
+	req_one_access = list(63)
 	},
 /obj/machinery/door/window/brigdoor/northleft{
 	dir = 4;
