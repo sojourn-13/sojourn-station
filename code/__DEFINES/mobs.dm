@@ -1,3 +1,7 @@
+/// Mobs will by default avoid these turfs when moving.
+GLOBAL_LIST_INIT(dangerous_turfs, typecacheof(list(
+	/turf/simulated/open)))
+
 // Termite defines
 
 #define TERMITE_HEALTH_LOW 25

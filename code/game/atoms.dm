@@ -19,6 +19,9 @@
 	var/allow_spin = TRUE
 	var/used_now = FALSE //For tools system, check for it should forbid to work on atom for more than one user at time
 
+	///AI controller that controls this atom. type on init, then turned into an instance during runtime
+	var/datum/ai_controller/ai_controller
+
 	/**
 	 * Associative list. Key should be a typepath of /datum/stat_modifier, and the value should be a weight for use in prob.
 	 *

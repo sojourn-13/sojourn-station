@@ -96,3 +96,11 @@ if(Datum.is_processing) {\
 	PreInit();\
 }\
 /datum/controller/subsystem/processing/##X
+
+#define MOVEMENT_SUBSYSTEM_DEF(X) GLOBAL_REAL(SS##X, /datum/controller/subsystem/movement/##X);\
+/datum/controller/subsystem/movement/##X/New(){\
+	NEW_SS_GLOBAL(SS##X);\
+	PreInit();\
+}\
+/datum/controller/subsystem/movement/##X/fire() {..() /*just so it shows up on the profiler*/} \
+/datum/controller/subsystem/movement/##X

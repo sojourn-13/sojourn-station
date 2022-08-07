@@ -1,4 +1,4 @@
-/*//// COOLDOWN SYSTEMS
+//// COOLDOWN SYSTEMS
 /*
  * We have 2 cooldown systems: timer cooldowns (divided between stoppable and regular) and world.time cooldowns.
  *
@@ -61,7 +61,19 @@
 //Shared cooldowns for actions
 #define MOB_SHARED_COOLDOWN_1 (1<<0)
 #define MOB_SHARED_COOLDOWN_2 (1<<1)
-#define MOB_SHARED_COOLDOWN_3 (1<<2) */
+#define MOB_SHARED_COOLDOWN_3 (1<<2)
+
+//click cooldowns, in tenths of a second, used for various combat actions
+#define CLICK_CD_MELEE 8
+#define CLICK_CD_THROW 8
+#define CLICK_CD_RANGE 4
+#define CLICK_CD_RAPID 2
+#define CLICK_CD_CLICK_ABILITY 6
+#define CLICK_CD_BREAKOUT 100
+#define CLICK_CD_HANDCUFFED 10
+#define CLICK_CD_RESIST 20
+#define CLICK_CD_GRABBING 10
+#define CLICK_CD_LOOK_UP 5
 
 //TIMER COOLDOWN MACROS
 
