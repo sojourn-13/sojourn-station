@@ -37097,6 +37097,13 @@
 /obj/structure/flora/small/bushc1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
+"hgU" = (
+/obj/structure/table/standard,
+/obj/machinery/photocopier/faxmachine{
+	department = "Brig"
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/security/prisoncells)
 "hgX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -89848,7 +89855,7 @@
 "rek" = (
 /obj/structure/table/rack,
 /obj/random/rig_module/low_chance,
-/obj/item/rig/light/hacker/steward,
+/obj/item/rig/hazard/steward,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/fo)
 "ret" = (
@@ -107517,10 +107524,6 @@
 	})
 "uzN" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/head/helmet/faceshield/altyn/maska{
-	pixel_x = -8;
-	pixel_y = -6
-	},
 /obj/item/clothing/head/helmet/ballistic/tan{
 	pixel_x = 4;
 	pixel_y = -8
@@ -107528,18 +107531,14 @@
 /obj/item/clothing/head/helmet/ballistic/tan{
 	pixel_x = 4;
 	pixel_y = -8
-	},
-/obj/item/clothing/head/helmet/steelpot{
-	pixel_x = 0;
-	pixel_y = 4
-	},
-/obj/item/clothing/head/helmet/steelpot{
-	pixel_x = 0;
-	pixel_y = 4
 	},
 /obj/item/clothing/head/helmet/ballistic/militia{
 	pixel_x = -8;
 	pixel_y = 13
+	},
+/obj/item/clothing/head/helmet/faceshield/altyn/maska{
+	pixel_x = -8;
+	pixel_y = -6
 	},
 /obj/item/clothing/head/helmet/ballistic/militia{
 	pixel_x = -8;
@@ -107556,14 +107555,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/clothing/head/helmet/steelpot{
-	pixel_x = 0;
-	pixel_y = 4
-	},
-/obj/item/clothing/head/helmet/steelpot{
-	pixel_x = 0;
-	pixel_y = 4
-	},
 /obj/item/clothing/head/helmet/ballistic/tan{
 	pixel_x = 4;
 	pixel_y = -8
@@ -107588,6 +107579,9 @@
 	pixel_x = 8;
 	pixel_y = 13
 	},
+/obj/item/clothing/head/helmet/faceshield/altyn/milisha,
+/obj/item/clothing/head/helmet/faceshield/altyn/milisha,
+/obj/item/clothing/head/helmet/faceshield/altyn/milisha,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory_blackshield)
 "uzP" = (
@@ -135221,7 +135215,7 @@ gEI
 xGU
 mLY
 wfW
-uhi
+hgU
 jAz
 jAz
 jAz

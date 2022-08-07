@@ -85,6 +85,7 @@
 	new /obj/item/oddity/code_book(src)
 	new /obj/item/clothing/head/helmet/warrant_officer(src)
 	new /obj/item/storage/sheath/judgement/filled(src)
+	new /obj/item/device/radio/headset/headset_sec/bowman(src)
 
 /obj/structure/closet/secure_closet/warden
 	name = "supply specialist's locker"
@@ -110,7 +111,7 @@
 	new /obj/item/clothing/suit/storage/vest/ironhammer(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/exotic_ammo(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo(src)
-	new /obj/item/device/radio/headset/headset_sec(src)
+	new /obj/item/device/radio/headset/headset_sec/bowman(src)
 	new /obj/item/clothing/accessory/holster/waist(src)
 	new /obj/item/clothing/glasses/sechud/tactical(src)
 	new /obj/item/clothing/glasses/sechud(src)
@@ -148,7 +149,7 @@
 	new /obj/item/voucher/marshal/secondary(src)
 	new /obj/item/voucher/marshal/armor(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
-	new /obj/item/device/radio/headset/headset_sec(src)
+	new /obj/item/device/radio/headset/headset_sec/bowman(src)
 	new /obj/item/storage/belt/security(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
 	new /obj/item/clothing/suit/storage/vest/ironhammer(src)
@@ -185,7 +186,7 @@
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
 	new /obj/item/clothing/shoes/reinforced(src)
 	new /obj/item/storage/box/evidence(src)
-	new /obj/item/device/radio/headset/headset_sec(src)
+	new /obj/item/device/radio/headset/headset_sec/bowman(src)
 	new /obj/item/storage/belt/security(src)
 	new /obj/item/device/holowarrant(src)
 	new /obj/item/clothing/accessory/holster/waist(src)

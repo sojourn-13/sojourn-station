@@ -468,6 +468,88 @@
 /datum/reagent/stim/hacker/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_PROF, STIM_TIME, "hacker_w")
 
+/datum/reagent/stim/mind_melter
+	name = "Cerebrenal"
+	id = "mindmelter"
+	description = "A largely unknown and not quite understood chemical that impedes the mind and cognitive abilities based on how high the dosage is. Even small amounts can be quite troublesome, in particular to psions, with larger amounts actively damaging their psi organs."
+	taste_description = "your mind melting"
+	reagent_state = LIQUID
+	color = "#AEE5E4"
+	overdose = REAGENTS_OVERDOSE * 0.5
+	nerve_system_accumulations = 5
+	addiction_chance = 0
+
+/datum/reagent/stim/mind_melter/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	var/effective_dose = dose
+	if(effective_dose <= 2)
+		M.stats.addTempStat(STAT_COG, -10, STIM_TIME, "mindmelter")
+	else if(effective_dose <= 4)
+		M.stats.addTempStat(STAT_COG, -20, STIM_TIME, "mindmelter")
+	else if(effective_dose <= 6)
+		M.stats.addTempStat(STAT_COG, -30, STIM_TIME, "mindmelter")
+	else if(effective_dose <= 8)
+		M.stats.addTempStat(STAT_COG, -40, STIM_TIME, "mindmelter")
+	else if(effective_dose <= 10)
+		M.stats.addTempStat(STAT_COG, -50, STIM_TIME, "mindmelter")
+	else if(effective_dose <= 12)
+		M.stats.addTempStat(STAT_COG, -60, STIM_TIME, "mindmelter")
+	else if(effective_dose <= 14)
+		M.stats.addTempStat(STAT_COG, -70, STIM_TIME, "mindmelter")
+
+/datum/reagent/stim/mind_melter/overdose(var/mob/living/carbon/M, var/alien)
+	M.add_side_effect("Headache", 11)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/psionic_tumor/C = H.random_organ_by_process(OP_HEART)
+		if(H && istype(H))
+			if(BP_IS_ROBOTIC(C))
+				return
+			if(C.damage > 0)
+				C.damage = max(C.damage - 2, 0)
+
+
+#define REVIVE_TIME_FRAME  (1 MINUTES)
+
+/datum/reagent/stim/reviver
+	name = "Adenosine+"
+	id = "reviver"
+	description = "A SI branded mix of chemicals that are designed to only to work on a dead body to jumpstart the processes so that it lives once more,\
+	 only works if a body has died and its admistred within one minute. For some reason only works on high-intelligent beings."
+	taste_description = "sponge cake"
+	reagent_state = LIQUID
+	color = "#00FFFF"
+	scannable = 1
+
+/datum/reagent/stim/reviver/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(prob(20 * effect_multiplier))
+		M.vomit()
+
+/datum/reagent/stim/reviver/on_mob_add(mob/living/carbon/human/L)
+	. = ..()
+	if(L.stat == DEAD)
+		if(ishuman(L))
+			var/deadtime = world.time - L.timeofdeath
+			if (deadtime > REVIVE_TIME_FRAME && !L.isSynthetic())
+				return
+			GLOB.dead_mob_list.Remove(L)
+			if((L in GLOB.living_mob_list) || (L in GLOB.dead_mob_list))
+				WARNING("Mob [L] was Adenosine+ but already in the living or dead list still!")
+			GLOB.living_mob_list += L
+
+			L.timeofdeath = 0
+			L.stat = UNCONSCIOUS //Life() can bring them back to consciousness if it needs to.
+			L.failed_last_breath = 0 //So mobs that died of oxyloss don't revive and have perpetual out of breath.
+
+			//Stablizating
+			L.heal_organ_damage(30, 30)
+			L.adjustOxyLoss(-50)
+			L.adjustToxLoss(-50)
+
+			L.emote("gasp")
+			L.Weaken(rand(10,25))
+			L.updatehealth()
+			return
+
 //Animal chemicals, these are not created through chemistry but messing with animals, be it butchering or milking. Yes, I'm aware of the irony, shush. -Kaz
 /datum/reagent/stim/tatonka_milk
 	name = "Tatonka Milk"
@@ -509,42 +591,3 @@
 	if(prob(5 - (3 * M.stats.getMult(STAT_TGH))))
 		M.Stun(rand(1,5))
 	M.bodytemperature += TEMPERATURE_DAMAGE_COEFFICIENT
-
-/datum/reagent/stim/mind_melter
-	name = "Cerebrenal"
-	id = "mindmelter"
-	description = "A largely unknown and not quite understood chemical that impedes the mind and cognitive abilities based on how high the dosage is. Even small amounts can be quite troublesome, in particular to psions, with larger amounts actively damaging their psi organs."
-	taste_description = "your mind melting"
-	reagent_state = LIQUID
-	color = "#AEE5E4"
-	overdose = REAGENTS_OVERDOSE * 0.5
-	nerve_system_accumulations = 5
-	addiction_chance = 0
-
-/datum/reagent/stim/mind_melter/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	var/effective_dose = dose
-	if(effective_dose <= 2)
-		M.stats.addTempStat(STAT_COG, -10, STIM_TIME, "mindmelter")
-	else if(effective_dose <= 4)
-		M.stats.addTempStat(STAT_COG, -20, STIM_TIME, "mindmelter")
-	else if(effective_dose <= 6)
-		M.stats.addTempStat(STAT_COG, -30, STIM_TIME, "mindmelter")
-	else if(effective_dose <= 8)
-		M.stats.addTempStat(STAT_COG, -40, STIM_TIME, "mindmelter")
-	else if(effective_dose <= 10)
-		M.stats.addTempStat(STAT_COG, -50, STIM_TIME, "mindmelter")
-	else if(effective_dose <= 12)
-		M.stats.addTempStat(STAT_COG, -60, STIM_TIME, "mindmelter")
-	else if(effective_dose <= 14)
-		M.stats.addTempStat(STAT_COG, -70, STIM_TIME, "mindmelter")
-
-/datum/reagent/stim/mind_melter/overdose(var/mob/living/carbon/M, var/alien)
-	M.add_side_effect("Headache", 11)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/psionic_tumor/C = H.random_organ_by_process(OP_HEART)
-		if(H && istype(H))
-			if(BP_IS_ROBOTIC(C))
-				return
-			if(C.damage > 0)
-				C.damage = max(C.damage - 2, 0)

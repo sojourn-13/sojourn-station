@@ -110,7 +110,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 	//Includes the Tesla Turret in the running for an individual objective
 	var/area/A = get_area(src)
-	SEND_SIGNAL(A, COMSIG_TURRENT, src)
+	LEGACY_SEND_SIGNAL(A, COMSIG_TURRENT, src)
 
 	//Now we fuck around with power and find out
 	update_power_use()

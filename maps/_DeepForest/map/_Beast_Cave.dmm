@@ -5772,12 +5772,9 @@
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
 "wM" = (
-/obj/item/gun/projectile/automatic/vintorez{
-	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds.";
-	name = "Unmarked Vintorez silenced carbine"
-	},
 /obj/item/ammo_magazine/rifle_75,
 /obj/item/remains/human,
+/obj/item/gun/projectile/automatic/vintorez/NM_colony,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "wO" = (

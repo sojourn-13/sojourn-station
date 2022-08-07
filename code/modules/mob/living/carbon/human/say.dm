@@ -60,7 +60,7 @@
 	. = ..(message, alt_name = alt_name)
 
 	if(.)
-		SEND_SIGNAL(src, COMSIG_HUMAN_SAY, message)
+		LEGACY_SEND_SIGNAL(src, COMSIG_HUMAN_SAY, message)
 
 /mob/living/carbon/human/proc/forcesay(list/append)
 	if(stat == CONSCIOUS)
