@@ -31,13 +31,13 @@
 		to_chat(usr, SPAN_WARNING("Your mechanical understanding isn't high enough to use this!"))
 		return
 	if((CLUMSY in user.mutations) && prob(15))
-		to_chat(user, text("\red You try to analyze the something but you accidently scanned the air's vitals!"))
+		to_chat(user, text("\red You try to analyze the floor's vitals!"))
 		for(var/mob/O in viewers(M, null))
-			O.show_message(text("\red [user] has analyzed the air's vitals!"), 1)
-		user.show_message(text("\blue Analyzing Results for The Air:\n\t Overall Status: Air"), 1)
-		user.show_message(text("\blue \t Damage Specifics: [100]-[-5]-[0]-[0]"), 1)
+			O.show_message(text("\red [user] has analyzed the floor's vitals!"), 1)
+		user.show_message(text("\blue Analyzing Results for The floor:\n\t Overall Status: Healthy"), 1)
+		user.show_message(text("\blue \t Damage Specifics: [0]-[0]-[0]-[0]"), 1)
 		user.show_message("\blue Key: Suffocation/Toxin/Burns/Brute", 1)
-		user.show_message("\blue Body Temperature: Air?", 1)
+		user.show_message("\blue Body Temperature: ???", 1)
 		return
 
 	var/scan_type
