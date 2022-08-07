@@ -8,7 +8,11 @@
 	key = "e"
 	shorthand = "ES"
 	partial_understanding = list(
-		LANGUAGE_LATIN = 30
+		LANGUAGE_LATIN = 30,
+		LANGUAGE_CYRILLIC = 20,
+		LANGUAGE_SERBIAN = 20,
+		LANGUAGE_GERMAN = 25,
+		LANGUAGE_COMMON = 10
 	)
 	space_chance = 70
 	syllables = list(

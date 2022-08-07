@@ -4,7 +4,9 @@
 	colour = "latin"
 	key = "l"
 	partial_understanding = list(
-		LANGUAGE_ESPERANTO = 30
+		LANGUAGE_ESPERANTO = 30,
+		LANGUAGE_CULT = 40,
+		LANGUAGE_OCCULT = 40
 	)
 	space_chance = 80
 	speech_verb = list("states")

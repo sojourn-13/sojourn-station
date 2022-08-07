@@ -6,7 +6,8 @@
 	key = "x"
 	space_chance = 80
 	partial_understanding = list(
-		LANGUAGE_CYRILLIC = 60
+		LANGUAGE_CYRILLIC = 60,
+		LANGUAGE_ESPERANTO = 20
 	)
 	shorthand = "SB"
 	syllables = list("zena", "rob", "macka", "tvoj", "ruke", "jebote", "placenik", "tsatsh", "da", "zivim", "cich", "jovan", "be", "ot", \

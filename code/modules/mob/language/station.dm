@@ -3,7 +3,13 @@
 	desc = "Most popular language in Canis Majoris constellation, thanks to many USA colonial ships arrived there in distant past."
 	key = "0"
 	partial_understanding = list(
-		LANGUAGE_MONKEY = 5			//hehe le monkey
+		LANGUAGE_MONKEY = 5,			//hehe le monkey
+		LANGUAGE_LATIN = 5,
+		LANGUAGE_JANA = 10,
+		LANGUAGE_ESPERANTO = 10,
+		LANGUAGE_GERMAN = 20,
+		LANGUAGE_CYRILLIC = 5,
+		LANGUAGE_SERBIAN = 5
 	)
 	flags = RESTRICTED
 	shorthand = "CO"
@@ -88,7 +94,8 @@
 	colour = "russian"
 	key = "r"
 	partial_understanding = list(
-		LANGUAGE_SERBIAN = 60
+		LANGUAGE_SERBIAN = 60,
+		LANGUAGE_ESPERANTO = 20
 	)
 	space_chance = 80
 	syllables = list("zhena", "reb", "kot", "tvoy", "vodka", "blyad", "verbovka", "ponimat", "zhit", "kley", "sto", "yat", "si", "det", \
