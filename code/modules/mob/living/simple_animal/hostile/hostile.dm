@@ -197,6 +197,12 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 		P.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return P
+	if(istype(targetted_mob,/obj/machinery/tesla_turret))
+		var/obj/machinery/tesla_turret/T = targetted_mob
+		T.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+		playsound(src.loc, attack_sound, 50, 1)
+		return T
+
 
 /mob/living/simple_animal/hostile/proc/LoseTarget()
 	stance = HOSTILE_STANCE_IDLE
@@ -387,6 +393,11 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			for(var/obj/structure/shield_deployed/obstacle in get_step(src,dir))
 				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 				return
+
+			for(var/obj/machinery/tesla_turret/obstacle in get_step(src,dir)) //Weak plastic will not bar us
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
 
 /mob/living/simple_animal/hostile/verb/break_around()
 	set name = "Attack Surroundings "

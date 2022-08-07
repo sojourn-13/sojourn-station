@@ -226,6 +226,11 @@
 				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 				return
 
+			for(var/obj/machinery/tesla_turret/obstacle in get_step(src,dir)) //Weak plastic will not bar us
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
+
 /mob/living/carbon/superior_animal/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/living/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	..()
 	if(obey_check(speaker)) // Are we only obeying the one talking?

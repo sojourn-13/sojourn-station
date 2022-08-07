@@ -22,8 +22,8 @@
 	attack_sound = 'sound/weapons/heavysmash.ogg' //So we dont make bite sounds
 
 	deathmessage = "shatters in a pile of rubbles."
-	health = 100
-	maxHealth = 100
+	health = 80
+	maxHealth = 80
 	melee_damage_lower = 10
 	melee_damage_upper = 25
 	leather_amount = 0
@@ -42,6 +42,18 @@
 	var/drop_amount = 1 // How many crystals we drop on death
 	var/size_factor = 1 // Size, in %, of the golem
 	never_stimulate_air = TRUE
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
+		/datum/stat_modifier/health/flat/negative/low = 5,
+		/datum/stat_modifier/health/flat/positive/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/negative/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 5,
+		/datum/stat_modifier/mob/living/damage/negative/mixed/flat/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 10
+	)
 
 /mob/living/carbon/superior_animal/ameridian_golem/Initialize()
 	..()
