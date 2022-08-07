@@ -66,27 +66,25 @@
 		use_power = 2
 
 		var/to_fire = max_targets
-		for(var/A in affected)
-			if(istype(A, /obj/structure/burrow))
-				var/obj/structure/burrow/burrow = A
-				if(!burrow.obelisk_around)
-					burrow.obelisk_around = any2ref(src)
-			else if(istype(A, /mob/living/carbon/superior_animal))
-				var/mob/living/carbon/superior_animal/animal = A
+		for(var/mob/living/carbon/superior_animal/superior_mob in affected)
+			if(istype(superior_mob, /mob/living/carbon/superior_animal))
+				var/mob/living/carbon/superior_animal/animal = superior_mob
 				if(animal.stat != DEAD &! animal.colony_friend && biomatter_ammo >= biomatter_use_per_shot) //got roach, spider, xenos, but not colony pets
 					animal.take_overall_damage(damage)
 					biomatter_ammo -= biomatter_use_per_shot
 					if(!--to_fire)
 						return
-			else if(istype(A, /mob/living/simple_animal/hostile))
-				var/mob/living/simple_animal/hostile/animal = A
+		for(var/mob/living/simple_animal/hostile/simple_h in affected)
+			if(istype(simple_h, /mob/living/simple_animal/hostile))
+				var/mob/living/simple_animal/hostile/animal = simple_h
 				if(animal.stat != DEAD &! animal.colony_friend && biomatter_ammo >= biomatter_use_per_shot) //got misc things like tango, voild wolfs but not colony pets
 					animal.take_overall_damage(damage)
 					biomatter_ammo -= biomatter_use_per_shot
 					if(!--to_fire)
 						return
-			else if(istype(A, /obj/effect/plant))
-				var/obj/effect/plant/shroom = A
+		for(var/obj/effect/plant/P in affected)
+			if(istype(P, /obj/effect/plant))
+				var/obj/effect/plant/shroom = P
 				if(shroom.seed.type == /datum/seed/mushroom/maintshroom)
 					qdel(shroom)
 					if(!--to_fire)
