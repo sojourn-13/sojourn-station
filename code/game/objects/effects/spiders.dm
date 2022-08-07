@@ -208,6 +208,12 @@
 
 	. = ..()
 
+/obj/effect/spider/eggcluster/proc/die()
+	visible_message("<span class='alert'>[src] dies!</span>")
+	new /obj/effect/decal/cleanable/spiderling_remains(loc)
+	qdel(src)
+
+
 /obj/effect/spider/eggcluster/Process()
 	..() //handle burning
 	amount_grown += rand(0,2)
