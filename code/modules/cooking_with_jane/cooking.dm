@@ -213,8 +213,10 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 					reason="qmod / inherited_quality_modifier declared on non add-item recipe step."
 
 			if("remain_percent" in step)
-				if(!set_remain_percent_modifier(step["remain_percent"]))
-					reason="qmod / inherited_quality_modifier declared on non add-reagent recipe step."
+				if(step["remain_percent"] > 1 || step["remain_percent"] < 0)
+					reason="remain_percent must be between 1 and 0."
+				else if(!set_remain_percent_modifier(step["remain_percent"]))
+					reason="remain_percent / declared on non add-reagent recipe step."
 
 			if("exact" in step)
 				if(!set_exact_type_required(step["exact"]))
@@ -223,9 +225,17 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 			if("reagent_skip" in step)
 				if(!set_reagent_skip(step["reagent_skip"]))
 					reason="reagent_skip / reagent_skip declared on non add-item / add-reagent recipe step."
+			
+			if("exclude_reagents" in step)
+				for(var/id in step["exclude_reagents"])
+					if(!is_reagent_with_id_exist(id))
+						reason="exclude_reagents list has nonexistant reagent id [id]"
+
+				if(!set_exclude_reagents(step["exclude_reagents"]))
+					reason="exclude_reagents declared on non add-item / add-reagent recipe step."
 
 			if(reason)
-				CRASH("[src.type]/New: Step Builder failed. Reason: [reason]")
+				CRASH("[src.type]/New: CWJ Step Builder failed. Reason: [reason]")
 		else
 			switch(step)
 				if(CWJ_BEGIN_EXCLUSIVE_OPTIONS)
@@ -321,6 +331,12 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 	else
 		return FALSE
 
+/datum/cooking_with_jane/recipe/proc/set_exclude_reagents(var/list/exclude_list)
+	if((last_created_step.class == CWJ_ADD_ITEM) || (last_created_step.class == CWJ_ADD_PRODUCE))
+		last_created_step?:exclude_reagents = exclude_list
+		return TRUE
+	else
+		return FALSE
 
 /datum/cooking_with_jane/recipe/proc/set_inherited_quality_modifier(var/modifier)
 	if(last_created_step.class == CWJ_ADD_ITEM || last_created_step.class == CWJ_USE_TOOL)
@@ -409,7 +425,6 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 	if(!optional && option_chain_mode)
 		CRASH("/datum/cooking_with_jane/recipe/proc/add_step: Required step added while option chain mode is on. Recipe name=[name].")
 
-
 	if(optional)
 		switch(option_chain_mode)
 			//When the chain needs to be initialized
@@ -476,30 +491,37 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 				if(!GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_REAGENT]"][id])
 					continue
 				var/datum/cooking_with_jane/recipe_step/add_reagent/active_step = GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_REAGENT]"][id]
-				var/amount_to_remove = active_step.required_reagent_amount / active_step.remain_percent
+				var/amount_to_remove = active_step.required_reagent_amount * (1 - active_step.remain_percent)
 				container.reagents.remove_reagent(active_step.required_reagent_id, amount_to_remove, safety = 1)
 
 		container.reagents.trans_to_holder(slurry, amount=container.reagents.total_volume)
 
+		//Do reagent filtering on added items and produce
 		var/list/exclude_list = list()
 		for(var/obj/item/added_item in container.contents)
 			var/can_add = TRUE
+			var/list/exclude_specific_reagents = list()
 			for(var/id in pointer.steps_taken)
 				if(id in exclude_list) //Only consider a step for removal one time.
 					continue
 				if(GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_ITEM]"] && GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_ITEM]"][id])
 					var/datum/cooking_with_jane/recipe_step/add_item/active_step = GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_ITEM]"][id]
+					exclude_specific_reagents = active_step.exclude_reagents
 					if(active_step.reagent_skip)
 						can_add = FALSE
 						exclude_list += id
 						break
 				else if(GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_PRODUCE]"] && GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_PRODUCE]"][id])
 					var/datum/cooking_with_jane/recipe_step/add_produce/active_step = GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_PRODUCE]"][id]
+					exclude_specific_reagents = active_step.exclude_reagents
 					if(active_step.reagent_skip)
 						can_add = FALSE
 						exclude_list += id
 						break
 			if(can_add)
+				if(exclude_specific_reagents.len)
+					for(var/id in exclude_specific_reagents)
+						added_item.reagents.remove_reagent(id, added_item.reagents.get_reagent_amount(id), safety=TRUE)
 				added_item.reagents.trans_to_holder(slurry, amount=container.reagents.total_volume)
 
 		//Purge the contents of the container we no longer need it
@@ -556,8 +578,10 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 			return "Add Reagent"
 		if(CWJ_ADD_PRODUCE)
 			return "Add Produce"
-		if(CWJ_USE_APPLIANCE)
-			return "Use Appliance"
+		if(CWJ_USE_TOOL)
+			return "Use Tool"
+		if(CWJ_USE_STOVE)
+			return "Use Stove"
 		if(CWJ_USE_OTHER)
 			return "Custom Action"
 		if(CWJ_START)

@@ -22,7 +22,6 @@
 
 	var/flags = 0
 
-	var/is_optional = FALSE
 
 	//The next required step for the parent recipe
 	var/datum/cooking_with_jane/recipe_step/next_step

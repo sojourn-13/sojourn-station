@@ -1,4 +1,5 @@
-#define ICON_SPLIT world.icon_size/2
+#define ICON_SPLIT_X 16
+#define ICON_SPLIT_Y 21
 #define ON 1
 #define OFF 0
 
@@ -6,14 +7,15 @@
 /obj/machinery/cooking_with_jane/stove
 	name = "Stovetop"
 	desc = "A set of four burners for cooking food. There seems to be other equipment built into the machine. Is... That a camera?"
-	icon = 'icons/obj/cwj_kitchen/eris_kitchen.dmi'
-	icon_state = "grill"
+	icon = 'icons/obj/cwj_cooking/stove.dmi'
+	icon_state = "stove"
 	density = TRUE
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
 	cooking = FALSE
 	var/list/temperature= list("Low", "Low", "Low", "Low")
-	var/list/timer = list(1 MINUTE, 1 MINUTE, 1 MINUTE, 1 MINUTE)
+	var/list/timer = list(0, 0, 0, 0)
+	var/list/timerstamp = list(0, 0, 0, 0)
 	var/list/switches = list(OFF, OFF, OFF, OFF)
 	var/list/cooking_timestamp = list(0, 0, 0, 0) //Timestamp of when cooking initialized so we know if the prep was disturbed at any point.
 	var/list/items[4]
@@ -21,17 +23,19 @@
 	var/active_input //The input that cooking tracker objects look at
 	var/reference_time = 0 //The exact moment when we call the process routine, just to account for lag.
 
+	var/quality_mod = 1
+
 	var/power_cost = 2500 //Power cost per process step for a particular burner
 	var/check_on_10 = 0
-	
+
 	var/on_fire = FALSE //if the stove has caught fire or not.
-	
+
 	circuit = /obj/item/circuitboard/cooking_with_jane/stove
 
 //Did not want to use this...
 /obj/machinery/cooking_with_jane/stove/Process()
 
-	if(on_fire)
+	//if(on_fire)
 		//Do bad things if it is on fire.
 
 	//Under normal circumstances, Only process this thing every 10 process calls; it doesn't need to be hyper-accurate.
@@ -40,81 +44,94 @@
 		return
 	else
 		check_on_10 = 0
-	
+
+	var/used_power = 0
 	if(switches[1] == ON)
-		cook_checkin(1)
+		used_power += power_cost
 	if(switches[2] == ON)
-		cook_checkin(2)
+		used_power += power_cost
 	if(switches[3] == ON)
-		cook_checkin(3)
+		used_power += power_cost
 	if(switches[4] == ON)
-		cook_checkin(4)
+		used_power += power_cost
+	use_power(used_power)
+
+/obj/machinery/cooking_with_jane/stove/RefreshParts()
+	var/man_rating = 0
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		man_rating += M.rating
+	quality_mod = round(man_rating/2)
 
 //Process how a specific stove is interacting with material
 /obj/machinery/cooking_with_jane/stove/proc/cook_checkin(var/input)
-	use_power(power_cost)
 	log_debug("/cooking_with_jane/stove/proc/cook_checkin called on burner [input]")
-
 	if(items[input])
+		var/old_timestamp = cooking_timestamp[input]
 		switch(temperature[input])
 			if("Low")
-				if( (world.time - cooking_timestamp[input]) > CWJ_BURN_TIME_LOW)
-					handle_burning(input)
-				if( (world.time - cooking_timestamp[input]) > CWJ_IGNITE_TIME_LOW)
-					handle_ignition(input)
+				spawn(CWJ_BURN_TIME_LOW)
+					if(cooking_timestamp[input] == old_timestamp)
+						handle_burning(input)
+				spawn(CWJ_IGNITE_TIME_LOW)
+					if(cooking_timestamp[input] == old_timestamp)
+						handle_ignition(input)
 
 			if("Medium")
-				if( (world.time - cooking_timestamp[input]) > CWJ_BURN_TIME_MEDIUM)
-					handle_burning(input)
-				if( (world.time - cooking_timestamp[input]) > CWJ_IGNITE_TIME_MEDIUM)
-					handle_ignition(input)
+				spawn(CWJ_BURN_TIME_MEDIUM)
+					if(cooking_timestamp[input] == old_timestamp)
+						handle_burning(input)
+				spawn(CWJ_IGNITE_TIME_MEDIUM)
+					if(cooking_timestamp[input] == old_timestamp)
+						handle_ignition(input)
 
 			if("High")
-				if( (world.time - cooking_timestamp[input]) > CWJ_BURN_TIME_HIGH)
-					handle_burning(input)
-				if( (world.time - cooking_timestamp[input]) > CWJ_IGNITE_TIME_HIGH)
-					handle_ignition(input)
-	
+				spawn(CWJ_BURN_TIME_HIGH)
+					if(cooking_timestamp[input] == old_timestamp)
+						handle_burning(input)
+				spawn(CWJ_IGNITE_TIME_HIGH)
+					if(cooking_timestamp[input] == old_timestamp)
+						handle_ignition(input)
+
 /obj/machinery/cooking_with_jane/stove/proc/handle_burning(input)
 	if(!(items[input] && istype(items[input], /obj/item/cooking_with_jane/cooking_container)))
 		return
-	
+
 	var/obj/item/cooking_with_jane/cooking_container/container = items[input]
 	container.handle_burning()
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_ignition(input)
 	if(!(items[input] && istype(items[input], /obj/item/cooking_with_jane/cooking_container)))
 		return
-	
+
 	var/obj/item/cooking_with_jane/cooking_container/container = items[input]
 	if(container.handle_ignition())
 		on_fire = TRUE
 
 //Retrieve which quadrant of the baking pan is being used.
 /obj/machinery/cooking_with_jane/stove/proc/getInput(params)
+	var/list/click_params = params2list(params)
 	var/input
 	var/icon_x = text2num(click_params["icon-x"])
 	var/icon_y = text2num(click_params["icon-y"])
-	if(icon_x < ICON_SPLIT && icon_y < ICON_SPLIT)
+	if(icon_x < ICON_SPLIT_X && icon_y < ICON_SPLIT_Y)
 		input = 1
-	else if(icon_x > ICON_SPLIT && icon_y < ICON_SPLIT)
+	else if(icon_x > ICON_SPLIT_X && icon_y < ICON_SPLIT_Y)
 		input = 2
-	else if(icon_x < ICON_SPLIT && icon_y > ICON_SPLIT)
+	else if(icon_x < ICON_SPLIT_X && icon_y > ICON_SPLIT_Y)
 		input = 3
-	else if(icon_x > ICON_SPLIT && icon_y > ICON_SPLIT)
+	else if(icon_x > ICON_SPLIT_X && icon_y > ICON_SPLIT_Y)
 		input = 4
-	
-	log_debug("cooking_with_jane/stove/proc/getInput returned burner [input]")
+
+	log_debug("cooking_with_jane/stove/proc/getInput returned burner [input]. icon-x: [click_params["icon-x"]], icon-y: [click_params["icon-y"]]")
 	return input
 
 /obj/machinery/cooking_with_jane/stove/attackby(var/obj/item/used_item, var/mob/user, params)
-	if(!(QUALITY_SCREW_DRIVING in used_item.tool_qualities))
+	if(QUALITY_SCREW_DRIVING in used_item.tool_qualities)
 		return ..()
-	var/list/click_params = params2list(params)
 	var/input = getInput(params)
-	
-	if(item[input] != null)
-		to_chat(usr, SPAN_NOTICE("That burner already has something on it!"))		
+
+	if(items[input] != null)
+		to_chat(usr, SPAN_NOTICE("That burner already has something on it!"))
 	else
 		to_chat(usr, SPAN_NOTICE("You put a [used_item] on the stove."))
 		if(usr.canUnEquip(used_item))
@@ -127,34 +144,31 @@
 	update_icon()
 
 /obj/machinery/cooking_with_jane/stove/attack_hand(mob/user as mob, params)
-	var/list/click_params = params2list(params)
 	var/input = getInput(params)
-	if(item[input] != null)
-		if(switches[item] == ON)
-			
+	if(items[input] != null)
+		if(switches[input] == ON)
 			handle_cooking(user, input)
-			
+			cooking_timestamp[input] = world.time
 			if(ishuman(user) && (temperature[input] == "High" || temperature[input] == "Medium" ))
 				var/mob/living/carbon/human/burn_victim = user
 				if(!burn_victim.gloves)
-					var/damage = 0
 					switch(temperature[input])
 						if("High")
 							burn_victim.adjustFireLoss(5)
 						if("Medium")
 							burn_victim.adjustFireLoss(2)
-					to_chat(burn_victim, SPAN_DANGER("You burn your hand a little taking the [item[input]] off of the stove."))
-		user.put_in_hands(item[input])
-		item[input] = null
+					to_chat(burn_victim, SPAN_DANGER("You burn your hand a little taking the [items[input]] off of the stove."))
+		user.put_in_hands(items[input])
+		items[input] = null
 		update_icon()
 
-/obj/machinery/cooking_with_jane/stove/CtrlClick(/var/mob/user, params)
-	if(!(user.stat || user.restrained() || (!in_range(src, user))))
+/obj/machinery/cooking_with_jane/stove/CtrlClick(var/mob/user, params)
+	if(user.stat || user.restrained() || (!in_range(src, user)))
 		return
-
-	var/input = getInput(params)
 	
-	var/choice = alert(user,"Select an action to take on burner [input]","Set temperature","Set timer")
+	var/input = getInput(params)
+	log_debug("/cooking_with_jane/stove/CtrlClick called on burner [input]")
+	var/choice = alert(user,"Select an action for burner #[input]","Select One:","Set temperature","Set timer","Cancel")
 	switch(choice)
 		if("Set temperature")
 			handle_temperature(user, input)
@@ -162,48 +176,64 @@
 			handle_timer(user, input)
 
 //Switch the cooking device on or off with alt+click
-/obj/machinery/cooking_with_jane/stove/AltClick(/var/mob/user, params)
-	if(!(user.stat || user.restrained() || (!in_range(src, user))))
+/obj/machinery/cooking_with_jane/stove/AltClick(var/mob/user, params)
+
+	if(user.stat || user.restrained() || (!in_range(src, user)))
 		return
 	var/input = getInput(params)
+
+	log_debug("/cooking_with_jane/stove/CtrlClick called on burner [input]")
 	handle_switch(user, input)
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_temperature(user, input)
 	var/old_temp = temperature[input]
-	var/choice = alert(user,"Select a heat setting for burner [input]. Current temperature: [old_temp]","High","Medium","Low","Cancel")
+	var/choice = input(user,"Select a heat setting for burner #[input].\nCurrent temp :[old_temp]","Select Temperature","High") in list("High","Medium","Low","Cancel")
 	if(choice && choice != "Cancel" && choice != old_temp)
 		temperature[input] = choice
-		if(switches[input] = ON)
+		if(switches[input] == ON)
 			handle_cooking(user, input)
 			cooking_timestamp[input] = world.time
 
+
 /obj/machinery/cooking_with_jane/stove/proc/handle_timer(user, input)
-	var/timer[input] = input(user, "Enter a number on the timer for burner [input]", "Minutes") as num
+	timer[input] = (input(user, "Set Timer","Enter a timer for burner #[input]",1) as num) SECONDS
+	if(timer[input] != 0 && switches[input] == ON)
+		timer_act(user, input)
+
+/obj/machinery/cooking_with_jane/stove/proc/timer_act(user, input)	
+	timerstamp[input]=world.time
+	var/old_timerstamp = timerstamp[input]
+	spawn(timer[input])
+		if(old_timerstamp == timerstamp[input])
+			playsound(src, 'sound/items/lighter.ogg', 100, 1, 0)
+			switches[input] = OFF
+			handle_cooking(user, input, TRUE)
+			timerstamp[input]=world.time
+			cooking_timestamp[input] = world.time
+
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_switch(user, input)
-
-
 	playsound(src, 'sound/items/lighter.ogg', 100, 1, 0)
 	if(switches[input] == ON)
 		switches[input] = OFF
 		handle_cooking(user, input)
+		timerstamp[input]=world.time
 		cooking_timestamp[input] = world.time
 	else
 		switches[input] = ON
 		cooking_timestamp[input] = world.time
+		cook_checkin(input)
 		if(timer[input] != 0)
-			spawn(timer[input])
-				if(switches[input] = ON)
-					playsound(src, 'sound/items/lighter.ogg', 100, 1, 0)
-					switches[input] = OFF
-					handle_cooking(user, input)
+			timer_act(user, input)
 	update_icon()
 
-/obj/machinery/cooking_with_jane/stove/proc/handle_cooking(var/mob/user, var/input)
-	
+
+
+/obj/machinery/cooking_with_jane/stove/proc/handle_cooking(var/mob/user, var/input, set_timer=FALSE)
+
 	if(!(items[input] && istype(items[input], /obj/item/cooking_with_jane/cooking_container)))
 		return
-		
+
 	var/obj/item/cooking_with_jane/cooking_container/container = items[input]
 	if(set_timer)
 		reference_time = set_timer
@@ -229,18 +259,42 @@
 
 /obj/machinery/cooking_with_jane/stove/update_icon()
 	cut_overlays()
-	for(var/i=contents.len, i>=1, i--)
-		var/obj/item/our_item = contents[i]
+	for(var/obj/item/our_item in vis_contents)
+		src.remove_from_visible(our_item)
+
+	for(var/i=1, i<=4, i++)
+		if(!(items[i]))
+			continue
+		var/obj/item/our_item = items[i]
 		switch(i)
 			if(1)
-				our_item.pixel_x = 13
-				our_item.pixel_y = 20
-			if(1)
-				our_item.pixel_x = 24
-				our_item.pixel_y = 20
-		src.add_to_visible(our_item)
-	if(cooking)
-		add_overlay(grill)
+				our_item.pixel_x = -5
+				our_item.pixel_y = 0
+			if(2)
+				our_item.pixel_x = 18
+				our_item.pixel_y = 14
+			if(3)
+				our_item.pixel_x = 5
+				our_item.pixel_y = 21
+			if(4)
+				our_item.pixel_x = 18
+				our_item.pixel_y = 21
+		src.add_to_visible(our_item, i)
+
+/obj/machinery/cooking_with_jane/stove/proc/add_to_visible(var/obj/item/our_item, input)
+	our_item.vis_flags = VIS_INHERIT_LAYER | VIS_INHERIT_PLANE | VIS_INHERIT_ID
+	src.vis_contents += our_item
+	if(input == 2 || input == 4)
+		var/matrix/M = matrix()
+		M.Scale(-1,1)
+		our_item.transform = M
+	our_item.transform *= 0.8
+
+/obj/machinery/cooking_with_jane/stove/proc/remove_from_visible(var/obj/item/our_item, input)
+	our_item.vis_flags = 0
+	our_item.blend_mode = 0
+	our_item.transform =  null
+	src.vis_contents.Remove(our_item)
 
 
 #undef ICON_SPLIT

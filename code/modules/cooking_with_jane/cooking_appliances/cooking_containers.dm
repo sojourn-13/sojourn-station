@@ -46,7 +46,7 @@
 
 	if((contents || (reagents.total_volume != 0)) && !tracker)
 		to_chat("The [src] is full. Remove the finished meal from it first.")
-	
+
 	process_item(I, user)
 	return
 
@@ -75,10 +75,11 @@
 			to_chat("You can't make the same decision twice!")
 
 //TODO: Handle the contents of the container being ruined via burning.
-/obj/item/cooking_with_jane/cooking_container/proc/handle_burning
+/obj/item/cooking_with_jane/cooking_container/proc/handle_burning()
+	return
 
 //TODO: Handle the contents of the container lighting on actual fire.
-/obj/item/cooking_with_jane/cooking_container/proc/handle_ignition
+/obj/item/cooking_with_jane/cooking_container/proc/handle_ignition()
 	return FALSE
 
 /obj/item/cooking_with_jane/cooking_container/verb/empty()
@@ -94,12 +95,12 @@
 		return
 
 	if(tracker && removal_penalty)
-			var/was_removed = FALSE
-			for (var/obj/item/contained in contents)
-				if(!was_removed)
-					was_removed == TRUE
-				contained?:food_quality -= removal_penalty
-			to_chat(user, SPAN_WARNING("The quality of ingredients in the [src] was reduced by the extra jostling."))
+		var/was_removed = FALSE
+		for (var/obj/item/contained in contents)
+			if(!was_removed)
+				was_removed = TRUE
+			contained?:food_quality -= removal_penalty
+		to_chat(user, SPAN_WARNING("The quality of ingredients in the [src] was reduced by the extra jostling."))
 
 	//Handle quality reduction for reagents
 	if((reagents.total_volume != 0) && (contents.len != 0))
@@ -113,7 +114,7 @@
 		var/atom/movable/AM = contained
 		remove_from_visible(AM)
 		AM.forceMove(get_turf(src))
- 
+
 	//TODO: Splash the reagents somewhere
 	reagents.clear_reagents()
 
@@ -161,9 +162,11 @@
 		var/obj/item/our_item = contents[i]
 		src.add_to_visible(our_item)
 	if(lip)
-		add_overlay(image(src.icon, icon_state="lip", layer=ABOVE_OBJ_LAYER))
+		add_overlay(image(src.icon, icon_state=lip, layer=ABOVE_OBJ_LAYER))
 
 /obj/item/cooking_with_jane/cooking_container/proc/add_to_visible(var/obj/item/our_item)
+	our_item.pixel_x = initial(our_item.pixel_x)
+	our_item.pixel_y = initial(our_item.pixel_y)
 	our_item.vis_flags = VIS_INHERIT_LAYER | VIS_INHERIT_PLANE | VIS_INHERIT_ID
 	our_item.blend_mode = BLEND_INSET_OVERLAY
 	our_item.transform *= 0.6
@@ -200,11 +203,11 @@
 /obj/item/cooking_with_jane/cooking_container/pan
 	name = "pan"
 	desc = "An normal pan."
-	icon = 'icons/obj/cwj_cooking/pan.dmi'
+	icon = 'icons/obj/cwj_cooking/kitchen.dmi'
 	icon_state = "pan" //Default state is the base icon so it looks nice in the map builder
 	hitsound = 'sound/weapons/smash.ogg'
 	appliancetype = SKILLET
-	lip = "lip"
+	lip = "pan_lip"
 
 /obj/item/cooking_with_jane/cooking_container/pot
 	name = "cooking pot"

@@ -41,7 +41,15 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 			Uses an item on the recipe. The object is not consumed.
 			<REQUIRED_ARGS>:
 				type_path - the type path of the item being added.
-			Example: list(CWJ_USE_ITEM, /obj/item/material/kitchen/rollingpin)
+			Example: list(CWJ_USE_ITEM, /obj/item/material/kitchen/rollingpin) #Use a rolling pin on the container
+		
+		CWJ_USE_STOVE
+			Cook the cooking container on a stove. Keep it on too long, it burns.
+			<REQUIRED_ARGS>:
+				temperature - the required temperature to cook the food at. 
+					(Temperatures are macro'd by: J_LO, J_MED, J_HI)
+				time - the amount of time, in seconds, to keep the food on the stove.
+			Example: list(CWJ_USE_STOVE, J_LO, 40) #Cook on a stove set to "Low" for 40 seconds.
 
 <_OPTIONAL>
 	The tag _OPTIONAL can be tacked onto any command to make it an optional step not required to finish the recipe.
@@ -87,21 +95,93 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 			modifier to adjust the inherited_quality_modifier on an add_item recipe step.
 			Example: qmod=0.5 //only 50% of the added item's quality will be inherited.
 
-		keep_reagent
-			CWJ_ADD_ITEM ONLY:
-			Makes sure the reagents of an added item are not considered in the reagent injection step.
-
 		remain_percent
 			CWJ_ADD_REAGENT ONLY:
 			Determines the percentage of a reagent that remains in the cooking of an item.
 			IE- if you cook a steak with wine, you can make it so the wine doesn't wind up in the resulting food.
 			Example: remain_percent=0.1 //Only 10% of the units expected to be added will apply to the resulting food injection.
 
+		reagent_skip
+			CWJ_ADD_ITEM, CWJ_ADD_PRODUCE ONLY:
+			Outright excludes all reagents from the added item/produce from showing up in the product.
+			Example: reagent_skip=TRUE
 
+		exclude_reagents
+			CWJ_ADD_ITEM, CWJ_ADD_PRODUCE ONLY:
+			Excludes the presence of a reagent in an item from the resulting meal.
+			Example: exclude_reagents=list("carpotoxin", "blattedin") //Removes the presence of Carpotoxin or blattedin from the item.
 
 =========================================================
 */
 //Example Recipes
+/datum/cooking_with_jane/recipe/steak_stove
+
+	//Name of the recipe. If not defined, it will just use the name of the product_type
+	name="Stove-Top cooked Steak"
+
+	//The recipe will be cooked on a pan
+	cooking_container = PAN 
+
+	//The product of the recipe will be a steak.
+	product_type = /obj/item/reagent_containers/food/snacks/meatsteak
+
+	//The product will have it's initial reagents wiped, prior to the recipe adding in reagents of its own.
+	replace_reagents = TRUE 
+
+	step_builder = list(
+		
+		//Butter your pan by adding a slice of butter, and then melting it. Adding the butter unlocks the option to melt it on the stove.
+		CWJ_BEGIN_OPTION_CHAIN,
+		//base - the lowest amount of quality following this step can award.
+		//reagent_skip - Exclude the added item's reagents from being included the product
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=10, reagent_skip=TRUE),
+
+		//Melt the butter into the pan by cooking it on a stove set to Low for 10 seconds
+		list(CWJ_USE_STOVE_OPTIONAL, J_LOW, 10),
+		CWJ_END_OPTION_CHAIN,
+
+		//A steak is needed to start the meal. 
+		//qmod- Half of the food quality of the parent will be considered.
+		//exclude_reagents- Blattedin and Carpotoxin will be filtered out of the steak.
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
+		
+		//Add some mushrooms to give it some zest. Only one kind is allowed!
+		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "mushroom", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE),
+		CWJ_END_EXCLUSIVE_OPTIONS,
+
+		//Beat that meat to increase its quality
+		list(CWJ_USE_TOOL_OPTIONAL, QUALITY_HAMMERING, 15),
+
+		//You can add up to 3 units of salt and pepper to increase the quality. Any more will negatively impact it.
+		//base- for CWJ_ADD_REAGENT, the amount that this step will award if followed perfectly.
+		list(CWJ_ADD_REAGENT_OPTIONAL, 'salt', 3, base=3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, 'pepper', 3, base=3),
+
+		//You can add capaicin or wine, but not both
+		//prod_desc- the amount that this step will award if followed perfectly.
+		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
+		list(CWJ_ADD_REAGENT_OPTIONAL, 'capsaicin', 5, base=6, prod_desc="The steak was Spiced with chili powder."),
+		list(CWJ_ADD_REAGENT_OPTIONAL, 'wine', 5, remain_percent=0.1 ,base=6, prod_desc="The steak was sauteed in wine"),
+		CWJ_END_EXCLUSIVE_OPTIONS,
+
+		//Cook on a stove, at medium temperature, for 30 seconds
+		list(CWJ_USE_STOVE, J_MED, 30)
+	)
+
+/datum/cooking_with_jane/recipe/steak_stove
+	name="Tenderized Meat"
+	cooking_container = PLATE
+	product_type = /obj/item/reagent_containers/food/snacks/meat
+	replace_reagents = TRUE 
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat),
+		list(CWJ_USE_TOOL_OPTIONAL, QUALITY_HAMMERING, 15)
+	)
+
 
 
 /datum/cooking_with_jane/recipe/sandwich_bad
@@ -167,7 +247,23 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 		list(CWJ_USE_TOOL, QUALITY_SAWING, 10)
 	)
 
+
 /*
+//Example of the same recipe, but for the grill, just to show off how compact everything is.
+/datum/cooking_with_jane/recipe/grill_stove
+	cooking_container = SKILLET 
+	product_type = /obj/item/reagent_containers/food/snacks/meatsteak
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat, qmod=0.5, remain_percent=0),
+		list(CWJ_USE_TOOL_OPTIONAL, QUALITY_HAMMERING, 15)
+		list(CWJ_ADD_REAGENT_OPTIONAL, 'salt', 3, base=3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, 'pepper', 3, base=3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, 'capsaicin', 5, base=6, prod_desc="The steak was Spiced with chili powder."),
+		list(CWJ_USE_GRILL, J_MED, 30)
+	)
+
+
+
 /datum/cooking_with_jane/recipe/sandwich
 	cooking_container = PLATE
 	product_type = /obj/item/reagent_containers/food/snacks/sandwich

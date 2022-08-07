@@ -5,6 +5,8 @@
 	var/base_potency
 	var/reagent_skip = TRUE
 
+	var/list/exclude_reagents = list()
+
 /datum/cooking_with_jane/recipe_step/add_produce/New(var/produce, var/datum/cooking_with_jane/recipe/our_recipe)
 	if(!plant_controller)
 		CRASH("/datum/cooking_with_jane/recipe_step/add_produce/New: Plant controller not initialized! Exiting.")

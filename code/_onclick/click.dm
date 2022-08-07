@@ -80,7 +80,7 @@
 
 	var/list/modifiers = params2list(params)
 	if(modifiers["shift"] && modifiers["ctrl"])
-		CtrlShiftClickOn(A)
+		CtrlShiftClickOn(A, params)
 		return 1
 	if(modifiers["ctrl"] && modifiers["alt"])
 		CtrlAltClickOn(A)
@@ -95,7 +95,7 @@
 		ShiftClickOn(A)
 		return 0
 	if(modifiers["alt"]) // alt and alt-gr (rightalt)
-		AltClickOn(A, params)
+		AltClickOn(A)
 		return 1
 	if(modifiers["ctrl"])
 		CtrlClickOn(A, params)
@@ -162,7 +162,7 @@
 			else
 				if(ismob(A)) // No instant mob attacking
 					setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-				UnarmedAttack(A, 1)
+				UnarmedAttack(A, 1, params)
 			return
 		else // non-adjacent click
 			if(W)
@@ -321,11 +321,11 @@
 	Control+Shift click
 	Unused except for AI
 */
-/mob/proc/CtrlShiftClickOn(var/atom/A)
-	A.CtrlShiftClick(src)
+/mob/proc/CtrlShiftClickOn(var/atom/A, params)
+	A.CtrlShiftClick(src, params)
 	return
 
-/atom/proc/CtrlShiftClick(var/mob/user)
+/atom/proc/CtrlShiftClick(var/mob/user, params)
 	return
 
 /*
