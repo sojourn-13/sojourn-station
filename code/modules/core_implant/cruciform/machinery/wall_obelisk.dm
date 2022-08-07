@@ -17,7 +17,7 @@
 	var/active = TRUE //Were always active
 
 	var/area_radius = 7
-	var/damage = 20
+	var/damage = 120
 	var/max_targets = 3
 
 	var/biomatter_ammo = 10 //We attack 10 times before running out on map spawn
