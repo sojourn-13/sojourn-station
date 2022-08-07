@@ -114,8 +114,8 @@
 	perks = list(/datum/perk/klutz, /datum/perk/clumsy)
 
 	stat_modifiers = list(
-		STAT_ROB = 25,
-		STAT_TGH = 45,
+		STAT_ROB = 20,
+		STAT_TGH = 30,
 		STAT_VIG = -45,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
