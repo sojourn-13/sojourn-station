@@ -618,5 +618,5 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.stats.removePerk(PERK_CLUMSY)
-		addtimer(CALLBACK(H.stats, /datum/stat_holder/proc/addPerk, /datum/perk/klutz), 600 * volume)
+		addtimer(CALLBACK(H.stats, /datum/stat_holder/proc/addPerk, PERK_CLUMSY), 600 * volume)
 	. = ..()
