@@ -604,6 +604,11 @@
 		holder.verbs -= codespeak_procs
 	..()
 
+/datum/perk/gunsmith
+	name = "Gunsmith Master"
+	desc = "You are a professional gunsmith, your knowledge allows to not only repair firearms but expertly craft them. \
+			This includes the machines required to do so, including the bullet fabricator."
+
 //Chef's special perk
 
 /datum/perk/foodappraise
