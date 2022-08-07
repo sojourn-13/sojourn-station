@@ -110,13 +110,13 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 				if(prob(45))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to_wrapper(src, targetted_mob, 1, move_to_delay)
+					SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 				else
 					OpenFire(targetted_mob)
 			else
 				stance = HOSTILE_STANCE_ATTACKING
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to_wrapper(src, targetted_mob, 1, move_to_delay)
+				SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 	return FALSE
 
 /mob/living/simple_animal/hostile/proc/DestroyPathToTarget()
@@ -207,11 +207,11 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 /mob/living/simple_animal/hostile/proc/LoseTarget()
 	stance = HOSTILE_STANCE_IDLE
 	target_mob = null
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 
 /mob/living/simple_animal/hostile/proc/LostTarget()
 	stance = HOSTILE_STANCE_IDLE
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 
 
 /mob/living/simple_animal/hostile/proc/ListTargets(var/dist = 7)
@@ -231,7 +231,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 
 	if(!stasis && !AI_inactive)
 		if(!.)
-			walk(src, 0)
+			SSmove_manager.stop_looping(src)
 			return 0
 		if(client)
 			return 0

@@ -42,7 +42,8 @@
 			OpenFire(targetted_mob)
 		else
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
+			if (stat != DEAD)
+				SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 		if(ranged && istype(src, /mob/living/simple_animal/hostile/megafauna))
 			var/mob/living/simple_animal/hostile/megafauna/megafauna = src
 			sleep(rand(megafauna.megafauna_min_cooldown,megafauna.megafauna_max_cooldown))
@@ -50,14 +51,16 @@
 				if(prob(rand(15,25)))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
+					if (stat != DEAD)
+						SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 				else
 					OpenFire(targetted_mob)
 			else
 				if(prob(45))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
+					if (stat != DEAD)
+						SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 				else
 					OpenFire(targetted_mob)
 		else

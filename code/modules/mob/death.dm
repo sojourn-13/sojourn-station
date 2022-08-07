@@ -59,7 +59,7 @@
 	if(stat == DEAD)
 		return 0
 
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 
 	activate_mobs_in_range(src, 5) //Its quite clear to everyone close by when something dies
 	facing_dir = null
