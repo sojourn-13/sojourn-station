@@ -46,11 +46,11 @@
 					var/obj/effect/spider/spiderling/tasty_bugs = locate(/obj/effect/spider/spiderling) in orange(1, src)//cant as easy scuttle away
 					if(tasty_eggs)
 						visible_message(SPAN_WARNING("[src] eats [tasty_eggs]."),"", SPAN_NOTICE("You hear something eating something."))
-						tasty_eggs.Destroy()
+						tasty_eggs.die()
 						fed += rand(3, 12) // this would otherwise pop out this many big spiders
 					if(tasty_bugs)
 						visible_message(SPAN_WARNING("[src] eats [tasty_bugs]."),"", SPAN_NOTICE("You hear something eating something."))
-						tasty_bugs.Destroy()
+						tasty_bugs.die()
 						fed += rand(0, 1) //Some times a single bug isnt all that filling
 
 					else if(fed <= 0)
