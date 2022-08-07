@@ -306,7 +306,7 @@
 "Jerkov",
 "Jigovic",
 "Jorgic",
-"Karad�ic",
+"Karadžic",
 "Kadijevic",
 "Kajosevic",
 "Kalicanin",
