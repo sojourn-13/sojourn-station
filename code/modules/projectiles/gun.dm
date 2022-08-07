@@ -282,7 +282,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 					SPAN_DANGER("\The [user] fumbles with \the [src] and shoot themselves in the foot with \the [src]!"),
 					SPAN_DANGER("You fumble with the gun and accidentally shoot yourself in the foot with \the [src]!")
 					)
-				M.drop_item()
 		else
 			handle_click_empty(user)
 		return FALSE
@@ -489,7 +488,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if(!twohanded && user.stats.getPerk(PERK_GUNSLINGER))
 		next_fire_time = world.time + fire_delay - fire_delay * 0.33
 
-	if((CLUMSY in user.mutations) && prob(40)) //Clumsy handling
+	if((CLUMSY in user.mutations) && prob(15)) //Clumsy handling
 		var/obj/P = consume_next_projectile()
 		if(P)
 			if(process_projectile(P, user, user, pick(BP_L_LEG, BP_R_LEG)))
@@ -498,7 +497,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 					SPAN_DANGER("\The [user] shoots \himself in the foot with \the [src]!"),
 					SPAN_DANGER("You shoot yourself in the foot with \the [src]!")
 					)
-				user.drop_item()
 		else
 			handle_click_empty(user)
 		return FALSE

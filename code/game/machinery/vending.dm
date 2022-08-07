@@ -244,7 +244,6 @@
 
 		for(var/entry in current_list[1])
 			var/datum/data/vending_product/product = new/datum/data/vending_product(src, entry)
-
 			product.price = (entry in prices) ? prices[entry] : product.price
 			product.amount = (current_list[1][entry]) ? current_list[1][entry] : 1
 			product.category = category

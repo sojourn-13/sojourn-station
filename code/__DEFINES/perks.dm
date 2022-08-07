@@ -40,6 +40,7 @@
 //roundstart perks (job and racial)
 #define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery
 #define PERK_LUNGS_OF_IRON /datum/perk/lungs_of_iron
+#define PERK_CLUMSY /datum/perk/klutz
 #define PERK_BLOOD_OF_LEAD /datum/perk/blood_of_lead
 #define PERK_SPACE_ASSHOLE /datum/perk/space_asshole
 #define PERK_PARKOUR /datum/perk/parkour

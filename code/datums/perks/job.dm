@@ -101,6 +101,23 @@
 	holder.mutations.Remove(CLUMSY)
 	..()
 
+/datum/perk/clumsy
+	name = "Inner Focus"
+	desc = "You find a lot of tasks a little beyond your ability to perform, but due to your constant struggle you have learned that breathing slowly and focusing makes your clumsy nature go away for a few minutes before getting exaushted all again."
+
+/datum/perk/clumsy/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("You haven't quite recovered yet, your senses need more time before you may focus again."))
+		return FALSE
+	cooldown_time = world.time + 5 MINUTES
+	user.visible_message("<b><font color='red'>[user] sneers lightly as their pupils dilate and tension builds in their body seeming to be extra focused!</font><b>", "<b><font color='red'>You feel your senses focusing, sound becomes crystal clear and your reflexes as fluid as water.</font><b>")
+	user.reagents.add_reagent("clunitol", 3)
+	return ..()
+
+
 /datum/perk/addict
 	name = "Chem Addict"
 	desc = "You've been an addict all your life, for whatever piss poor reason you've told yourself. Your body is able to handle a variety of drugs, more than the average person, but you get \

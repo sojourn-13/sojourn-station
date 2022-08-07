@@ -593,3 +593,30 @@
 	if(prob(10 * effect_multiplier))
 		M.vomit()
 */
+
+/datum/reagent/stim/clumsy
+	name = "Clunitol"
+	id = "clunitol"
+	description = "A chemical naturally produced by people who are by nature clumsy, that works like a form of adrenaline to lightly enchance their bodies so they may work in a more natural manner without hurting themselvs but as an side effect, making themselves weaker on the process and more attentive."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#5a11e7"
+	nerve_system_accumulations = 5
+	appear_in_default_catalog = FALSE
+
+/datum/reagent/stim/clumsy/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_TGH, -15, STIM_TIME, "clunitol")
+	M.stats.addTempStat(STAT_ROB, -15, STIM_TIME, "clunitol")
+	M.stats.addTempStat(STAT_COG, 5, STIM_TIME, "clunitol")
+	M.stats.addTempStat(STAT_BIO, 5, STIM_TIME, "clunitol")
+	M.stats.addTempStat(STAT_VIG, 25, STIM_TIME, "clunitol")
+	M.stats.addTempStat(STAT_MEC, 5, STIM_TIME, "clunitol")
+	M.add_chemical_effect(CE_SPEEDBOOST, -0.1)
+	M.add_chemical_effect(CE_PULSE, 2)
+
+/datum/reagent/stim/clumsy/on_mob_add(mob/living/carbon/M, alien, effect_multiplier)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.stats.removePerk(PERK_CLUMSY)
+		addtimer(CALLBACK(H.stats, /datum/stat_holder/proc/addPerk, /datum/perk/klutz), 600 * volume)
+	. = ..()

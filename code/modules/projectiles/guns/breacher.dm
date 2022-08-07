@@ -108,11 +108,10 @@
 
 	if(isliving(user))
 		var/mob/living/M = user
-		if ((CLUMSY in M.mutations) && prob(8))
-			to_chat(user, SPAN_DANGER("[src] blows up in your face."))
+		if ((CLUMSY in M.mutations) && prob(5))
+			to_chat(user, SPAN_DANGER("[src] almost blows up in your face."))
 			M.drop_item()
 			Fire(get_turf(M))
-			qdel(src)
 			return
 
 	if (use_charge())
