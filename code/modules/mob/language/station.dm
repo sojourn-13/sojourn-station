@@ -2,6 +2,9 @@
 	name = LANGUAGE_COMMON
 	desc = "Most popular language in Canis Majoris constellation, thanks to many USA colonial ships arrived there in distant past."
 	key = "0"
+	partial_understanding = list(
+		LANGUAGE_MONKEY = 5			//hehe le monkey
+	)
 	flags = RESTRICTED
 	shorthand = "CO"
 
@@ -84,6 +87,9 @@
 	desc = "Ancient language of Russian colonists, rusted with time and bastardized with technical terms in everyday use."
 	colour = "russian"
 	key = "r"
+	partial_understanding = list(
+		LANGUAGE_SERBIAN = 60
+	)
 	space_chance = 80
 	syllables = list("zhena", "reb", "kot", "tvoy", "vodka", "blyad", "verbovka", "ponimat", "zhit", "kley", "sto", "yat", "si", "det", \
 					 "re", "be", "nok", "chto", "techno", "kak", "govor", "navernoe", "da", "net", "horosho", "pochemu", "privet","lubov", \

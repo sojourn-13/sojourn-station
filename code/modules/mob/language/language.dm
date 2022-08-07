@@ -20,6 +20,7 @@
 	var/list/space_chance = 55        			// Likelihood of getting a space in the random scramble string
 	var/machine_understands = 1 		  		// Whether machines can parse and understand this language
 	var/shorthand = "CO"						// Shorthand that shows up in chat for this language.
+	var/list/partial_understanding				// List of languages that can /somehwat/ understand it, format is: name = chance of understanding a word
 
 	//Random name lists
 	var/name_lists = FALSE
@@ -67,7 +68,12 @@
 /datum/language
 	var/list/scramble_cache = list()
 
-/datum/language/proc/scramble(var/input)
+/datum/language/proc/scramble(var/input, var/list/known_languages)
+
+	var/understand_chance = 0
+	for(var/datum/language/L in known_languages)
+		if(LAZYACCESS(partial_understanding, L.name))
+			understand_chance += partial_understanding[L.name]
 
 	if(!syllables || !syllables.len)
 		return stars(input)

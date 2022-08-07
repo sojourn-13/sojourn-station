@@ -7,6 +7,9 @@
 	colour = "brass"
 	key = "e"
 	shorthand = "ES"
+	partial_understanding = list(
+		LANGUAGE_LATIN = 30
+	)
 	space_chance = 70
 	syllables = list(
 		"adapti", "adiau", "afabla", "ah", "aj", "ajn", "akcepti", "alveni", "alia", "angla", "apud", "audi", "bani", "bela", "bati", "bona",

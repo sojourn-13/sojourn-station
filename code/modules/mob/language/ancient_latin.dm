@@ -3,6 +3,9 @@
 	desc = "An ancient language once used by most of europe but now mainly used by followers of the Church of Absolute."
 	colour = "latin"
 	key = "l"
+	partial_understanding = list(
+		LANGUAGE_ESPERANTO = 30
+	)
 	space_chance = 80
 	speech_verb = list("states")
 	ask_verb = list("implores")
