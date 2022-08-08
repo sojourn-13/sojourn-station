@@ -105,57 +105,52 @@
 	..()
 
 	if (!mover || !isturf(mover.loc) || isobserver(mover))
-		return 1
+		return TRUE
 
 	//First, check objects to block exit that are not on the border
 	for(var/obj/obstacle in mover.loc)
 		if(!(obstacle.flags & ON_BORDER) && (mover != obstacle) && (forget != obstacle))
 			if(!obstacle.CheckExit(mover, src))
 				mover.Bump(obstacle, 1)
-				return 0
+				return FALSE
 
 	//Now, check objects to block exit that are on the border
 	for(var/obj/border_obstacle in mover.loc)
 		if((border_obstacle.flags & ON_BORDER) && (mover != border_obstacle) && (forget != border_obstacle))
 			if(!border_obstacle.CheckExit(mover, src))
 				mover.Bump(border_obstacle, 1)
-				return 0
+				return FALSE
 
 	//Next, check objects to block entry that are on the border
 	for(var/obj/border_obstacle in src)
 		if(border_obstacle.flags & ON_BORDER)
 			if(!border_obstacle.CanPass(mover, mover.loc, 1, 0) && (forget != border_obstacle))
 				mover.Bump(border_obstacle, 1)
-				return 0
+				return FALSE
 
 	//Then, check the turf itself
 	if (!src.CanPass(mover, src))
 		mover.Bump(src, 1)
-		return 0
+		return FALSE
 
 	//Finally, check objects/mobs to block entry that are not on the border
 	for(var/atom/movable/obstacle in src)
 		if(!(obstacle.flags & ON_BORDER))
 			if(!obstacle.CanPass(mover, mover.loc, 1, 0) && (forget != obstacle))
 				mover.Bump(obstacle, 1)
-				return 0
-	return 1 //Nothing found to block so return success!
+				return FALSE
+	return TRUE //Nothing found to block so return success!
 
 var/const/enterloopsanity = 100
-/turf/Entered(atom/atom as mob|obj)
+/turf/Entered(atom/movable/AM)
 
 	if(movement_disabled)
 		to_chat(usr, SPAN_WARNING("Movement is admin-disabled.")) //This is to identify lag problems
 		return
 	..()
 
-	if(!istype(atom, /atom/movable))
-		return
-
-	var/atom/movable/A = atom
-
-	if(ismob(A))
-		var/mob/M = A
+	if(ismob(AM))
+		var/mob/M = AM
 
 		M.update_floating()
 		if(M.check_gravity() || M.incorporeal_move)
@@ -175,15 +170,15 @@ var/const/enterloopsanity = 100
 			L.handle_footstep(src)
 
 	var/objects = 0
-	if(A && (A.flags & PROXMOVE))
+	if(AM && (AM.flags & PROXMOVE))
 		for(var/atom/movable/thing in range(1))
 			if(objects > enterloopsanity) break
 			objects++
 			spawn(0)
-				if(A)
-					A.HasProximity(thing, 1)
-					if ((thing && A) && (thing.flags & PROXMOVE))
-						thing.HasProximity(A, 1)
+				if(AM)
+					AM.HasProximity(thing, 1)
+					if ((thing && AM) && (thing.flags & PROXMOVE))
+						thing.HasProximity(AM, 1)
 	return
 
 /turf/proc/adjacent_fire_act(turf/simulated/floor/source, temperature, volume)
