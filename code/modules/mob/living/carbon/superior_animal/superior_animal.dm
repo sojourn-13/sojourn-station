@@ -205,7 +205,7 @@
 /mob/living/carbon/superior_animal/proc/cheap_incapacitation_check() // This works based off constants ,override it if you want it to be dynamic . Based off isincapacited
 	return stunned > 0 || weakened > 0 || resting || pinned.len > 0 || stat || paralysis || sleeping || (status_flags & FAKEDEATH) || buckled() > 0
 
-/mob/living/carbon/superior_animal/proc/cheap_update_lying_buckled_and_verb_status_()
+/mob/living/carbon/superior_animal/update_lying_buckled_and_verb_status()
 
 	if(cheap_incapacitation_check())
 		lying = FALSE
@@ -573,6 +573,8 @@
 
 	*/
 
+	. = ..()
+
 	ticks_processed++
 	handle_regular_hud_updates()
 	if(!reagent_immune)
@@ -589,7 +591,6 @@
 		if(!never_stimulate_air)
 			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
 			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
-			handle_cheap_breath(breath)
 			handle_cheap_environment(environment)
 			//Fire handling , not passing the whole list because thats unefficient.
 			handle_fire(environment.gas["oxygen"], loc)

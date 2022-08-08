@@ -32,7 +32,7 @@
 	return ..()
 
 /mob/get_fall_damage(var/turf/from, var/turf/dest)
-	return 0
+	return FALSE
 
 /mob/fall_impact(var/turf/from, var/turf/dest)
 	return
@@ -164,14 +164,6 @@
 	if(lying) //Crawling, it's slower
 		. += 14 + (weakened)
 	. += move_intent.move_delay
-
-
-/mob/proc/Life()
-	LEGACY_SEND_SIGNAL(src, COMSIG_MOB_LIFE)
-//	if(organStructure)
-//		organStructure.ProcessOrgans()
-	//handle_typing_indicator() //You said the typing indicator would be fine. The test determined that was a lie.
-	return
 
 #define UNBUCKLED 0
 #define PARTIALLY_BUCKLED 1
@@ -770,17 +762,17 @@ All Canmove setting in this proc is temporary. This var should not be set from h
 /mob/proc/update_lying_buckled_and_verb_status()
 
 	if(!resting && cannot_stand() && can_stand_overridden())
-		lying = 0
+		lying = FALSE
 		canmove = TRUE //TODO: Remove this
 	else if(buckled)
-		anchored = 1
+		anchored = TRUE
 		if(istype(buckled))
 			if(buckled.buckle_lying == -1)
 				lying = incapacitated(INCAPACITATION_KNOCKDOWN)
 			else
 				lying = buckled.buckle_lying
 			if(buckled.buckle_movable)
-				anchored = 0
+				anchored = FALSE
 		canmove = FALSE //TODO: Remove this
 	else
 		lying = incapacitated(INCAPACITATION_KNOCKDOWN)
@@ -788,8 +780,10 @@ All Canmove setting in this proc is temporary. This var should not be set from h
 
 	if(lying)
 		set_density(0)
-		if(l_hand) unEquip(l_hand)
-		if(r_hand) unEquip(r_hand)
+		if(l_hand)
+			unEquip(l_hand)
+		if(r_hand)
+			unEquip(r_hand)
 	else
 		canmove = TRUE
 		set_density(initial(density))
@@ -797,13 +791,13 @@ All Canmove setting in this proc is temporary. This var should not be set from h
 
 	for(var/obj/item/grab/G in grabbed_by)
 		if(G.force_stand())
-			lying = 0
+			lying = FALSE
 
 	//Temporarily moved here from the various life() procs
 	//I'm fixing stuff incrementally so this will likely find a better home.
 	//It just makes sense for now. ~Carn
 	if( update_icon )	//forces a full overlay update
-		update_icon = 0
+		update_icon = TRUE
 		regenerate_icons()
 	else if( lying != lying_prev )
 		update_icons()

@@ -1,6 +1,7 @@
 /mob/living/carbon/proc/handle_viruses()
 
-	if(status_flags & GODMODE)	return 0	//godmode
+	if(status_flags & GODMODE)
+		return 0	//godmode
 
 	if(bodytemperature > 406)
 		for (var/ID in virus2)
@@ -31,7 +32,8 @@
 			else
 				V.activate(src)
 			// activate may have deleted the virus
-			if(!V) continue
+			if(!V)
+				continue
 
 			// check if we're immune
 			var/list/common_antibodies = V.antigen & src.antibodies

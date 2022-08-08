@@ -1,38 +1,52 @@
-/mob/living/Life()
+/**
+ * Handles the biological and general over-time processes of the mob.
+ *
+ *
+ * Arguments:
+ * - delta_time: The amount of time that has elapsed since this last fired.
+ * - times_fired: The number of times SSmobs has fired
+ */
+/mob/living/proc/Life(delta_time = SSMOBS_DT, times_fired)
+	set waitfor = FALSE
 
-	. = ..()
-	if(config.enable_mob_sleep)
-		if(stat != DEAD && !mind)	// Check for mind so player-driven, nonhuman mobs don't sleep
-			if(life_cycles_before_scan > 0)
-				life_cycles_before_scan--
-			else
-				if(check_surrounding_area(7))
-					activate_ai()
-					life_cycles_before_scan = 29 //So it doesn't fall asleep just to wake up the next tick
-				else
-					life_cycles_before_scan = 240
+	SEND_SIGNAL(src, COMSIG_LIVING_LIFE, delta_time, times_fired)
 
-			if(life_cycles_before_sleep)
-				life_cycles_before_sleep--
+	if (HasMovementHandler(/datum/movement_handler/mob/transformation/)) // i hate movement handlers
+		return
+	if(!loc)
+		return
 
-			if(life_cycles_before_sleep < 1 && !AI_inactive)
-				AI_inactive = TRUE
+	if(!IS_IN_STASIS(src))
 
+		if(stat != DEAD)
+			//Breathing, if applicable
+			handle_breathing(delta_time, times_fired)
+			//Mutations and radiation
+			handle_mutations(delta_time, times_fired)
 
-	if((!stasis && !AI_inactive) || ishuman(src)) //god fucking forbid we do this to humanmobs somehow
-		if(Life_Check())
-			. = TRUE
+		if (QDELETED(src)) // sanity
+			return
 
-	else
-		if((life_cycles_before_scan % 60) == 0)
-			Life_Check_Light()
+		if(stat != DEAD)
+			//Random events (vomiting etc)
+			handle_random_events(delta_time, times_fired)
 
+		//Handle temperature/pressure differences between body and environment
+		var/datum/gas_mixture/environment = loc.return_air()
+		if(environment)
+			handle_environment(environment, delta_time, times_fired)
 
-	var/turf/T = get_turf(src)
-	if(T)
-		if(registered_z != T.z)
-			update_z(T.z)
+		handle_gravity(delta_time, times_fired)
 
+		if(stat != DEAD)
+			handle_traits(delta_time, times_fired) // eye, ear, brain damages
+			handle_status_effects(delta_time, times_fired) //all special effects, stun, knockdown, jitteryness, hallucination, sleeping, etc
+
+	if(machine)
+		machine.check_eye(src)
+
+	if(stat != DEAD)
+		return TRUE
 
 /mob/living/proc/Life_Check()
 	if (HasMovementHandler(/datum/movement_handler/mob/transformation/))
@@ -102,6 +116,7 @@
 	update_pulling()
 
 /mob/living/proc/handle_breathing()
+	SEND_SIGNAL(src, COMSIG_LIVING_HANDLE_BREATHING, delta_time, times_fired)
 	return
 
 /mob/living/proc/handle_mutations_and_radiation()

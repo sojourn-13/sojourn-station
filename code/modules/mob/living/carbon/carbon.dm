@@ -10,34 +10,23 @@
 /mob/living/carbon/Life()
 	. = ..()
 
-	handle_viruses()
+	handle_viruses() //NIKO TODO: add a var here that lets you just ignore this
 	// Increase germ_level regularly
 	if(germ_level < GERM_LEVEL_AMBIENT && prob(30))	//if you're just standing there, you shouldn't get more germs beyond an ambient level
 		germ_level++
 
 /mob/living/carbon/Destroy()
 
-	bloodstr.parent = null //these exist due to a GC failure linked to these vars
-	bloodstr.my_atom = null //while they should be cleared by the qdels, they evidently aren't
-
-	ingested.parent = null
-	ingested.my_atom = null
-
-	touching.parent = null
-	touching.my_atom = null
-
-	metabolism_effects.parent = null
-
 	QDEL_NULL(ingested)
 	QDEL_NULL(touching)
 	QDEL_NULL(reagents) //TODO: test deleting QDEL_NULL(reagents) since QDEL_NULL(bloodstr) might be all we need
 	QDEL_NULL(bloodstr)
+	QDEL_NULL(metabolism_effects) // NIKO TODO: may cause harddels
 	// qdel(metabolism_effects) //not sure why, but this causes a GC failure, maybe this isnt supposed to qdel?
 	// We don't qdel(bloodstr) because it's the same as qdel(reagents) // then why arent you qdeling reagents
 	QDEL_LIST(internal_organs)
 	QDEL_LIST(hallucinations)
-	if(vessel)
-		vessel.my_atom = null //sanity check
+	if (vessel)
 		QDEL_NULL(vessel)
 	return ..()
 
