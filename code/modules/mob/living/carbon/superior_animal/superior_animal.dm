@@ -470,7 +470,8 @@
 					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
 
 			if (advancement_timer <= world.time)  //we dont want to prematurely end a advancing walk
-				SSmove_manager.move_to(src, targetted, calculated_walk, move_to_delay) //we still want to reset our walk
+				if (stat != DEAD)
+					SSmove_manager.move_to(src, targetted, calculated_walk, move_to_delay) //we still want to reset our walk
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 	else
 		prepareAttackOnTarget()
@@ -715,7 +716,8 @@
 		advance_steps = (distance - advancement)
 		if (advance_steps <= 0)
 			advance_steps = 1 //1 is minimum
-		SSmove_manager.move_to(src, target, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
+		if (stat != DEAD)
+			SSmove_manager.move_to(src, target, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
 		advancement_timer = (world.time += advancement_increment) // we dont want this overridden instantly
 
 /mob/living/carbon/superior_animal/CanPass(atom/mover)

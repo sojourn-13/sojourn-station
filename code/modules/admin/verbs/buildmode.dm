@@ -508,7 +508,8 @@
 							var/movement_priority = MOVEMENT_DEFAULT_PRIORITY
 							if (holder.buildmode.override_movement)
 								movement_priority = MOVEMENT_PATHMODE_PRIORITY
-							SSmove_manager.move_to(held, object, distance, held.move_to_delay, timer, priority = movement_priority, flags = movement_flags)
+							if (!(holder.buildmode.deathcheck) || stat != DEAD)
+								SSmove_manager.move_to(held, object, distance, held.move_to_delay, timer, priority = movement_priority, flags = movement_flags)
 						held.AI_inactive = 0
 						held.life_cycles_before_scan = initial(held.life_cycles_before_scan)
 						held.life_cycles_before_sleep = initial(held.life_cycles_before_sleep)
