@@ -560,6 +560,11 @@
 	if(!reagent_immune)
 		handle_cheap_chemicals_in_body()
 
+	var/turf/T = get_turf(src)
+	if(T)
+		if(registered_z != T.z)
+			update_z(T.z)
+
 	if(!(ticks_processed%3))
 		// handle_status_effects() this is handled here directly to save a bit on procedure calls
 		//if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1)) - Soj edit, we already update icon just 13 lines down form this, no point
