@@ -92,8 +92,3 @@
 			add_fingerprint(user)
 	..()
 	return
-
-/obj/item/grenade/attack_hand()
-	SSmove_manager.move(src, null, null)
-	..()
-	return
