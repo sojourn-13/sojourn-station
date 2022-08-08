@@ -114,12 +114,12 @@
 	perks = list(/datum/perk/klutz, /datum/perk/clumsy)
 
 	stat_modifiers = list(
-		STAT_ROB = 20,
-		STAT_TGH = 30,
-		STAT_VIG = -45,
+		STAT_ROB = 10,
+		STAT_TGH = 20,
+		STAT_VIG = -20,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = -10
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/no_light
