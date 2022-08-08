@@ -24,7 +24,7 @@
 		return TRUE
 	if(istype(O, /obj/item/modification/organ))
 		return TRUE
-	if(istype(O, /obj/item/storage/freezer/medical))
+	if(istype(O, /obj/item/storage/freezer))
 		return TRUE
 	if(istype(O, /obj/item/computer_hardware/hard_drive/portable/design/omg))
 		return TRUE
@@ -40,7 +40,7 @@
 	new /obj/item/computer_hardware/hard_drive/portable/design/medical/surgery(src)			// Can't hurt to have a spare
 	new /obj/item/computer_hardware/hard_drive/portable/design/omg/basic_organ_mods(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/omg/diy_organs(src)
-	new /obj/item/storage/freezer/medical(src)
+	new /obj/item/storage/freezer(src)
 	update_contents()
 	update_icon()
 

@@ -54,7 +54,7 @@
 			input += reagent_path
 			input[reagent_path] = threshold_met
 
-	SEND_SIGNAL(holder, COMSIG_ABERRANT_PROCESS, holder, owner, input)
+	LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_PROCESS, holder, owner, input)
 
 
 /datum/component/modification/organ/input/damage
@@ -99,7 +99,7 @@
 		input += desired_damage_type
 		input[desired_damage_type] = threshold_met
 
-	SEND_SIGNAL(holder, COMSIG_ABERRANT_PROCESS, holder, owner, input)
+	LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_PROCESS, holder, owner, input)
 
 
 /datum/component/modification/organ/input/power_source
@@ -189,4 +189,4 @@
 		input += power_source
 		input[power_source] = power_supplied ? TRUE : FALSE
 
-	SEND_SIGNAL(holder, COMSIG_ABERRANT_PROCESS, holder, owner, input)
+	LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_PROCESS, holder, owner, input)

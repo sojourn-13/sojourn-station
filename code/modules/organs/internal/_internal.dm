@@ -216,7 +216,7 @@
 	nutriment_req = initial(nutriment_req)
 	oxygen_req = initial(oxygen_req)
 
-	SEND_SIGNAL(src, COMSIG_APPVAL, src)
+	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
 
 	for(var/prefix in prefixes)
 		name = "[prefix] [name]"

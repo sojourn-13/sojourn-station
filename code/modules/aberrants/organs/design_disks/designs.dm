@@ -77,7 +77,7 @@
 
 
 /datum/design/organ/aberrant_organ/wifebeater
-	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater
+	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater/random
 
 /datum/design/organ/aberrant_organ/wifebeater/liver
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater/liver
@@ -90,7 +90,7 @@
 	
 
 /datum/design/organ/aberrant_organ/functional_alcoholic
-	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic
+	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic/random
 	
 /datum/design/organ/aberrant_organ/functional_alcoholic/liver
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic/liver
@@ -103,7 +103,7 @@
 	
 
 /datum/design/organ/aberrant_organ/classy
-	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/classy
+	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/classy/random
 	
 /datum/design/organ/aberrant_organ/classy/liver
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/classy/liver
@@ -116,7 +116,7 @@
 	
 
 /datum/design/organ/aberrant_organ/mobster
-	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/mobster
+	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/mobster/random
 	
 /datum/design/organ/aberrant_organ/mobster/blood_vessel
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/mobster/blood_vessel
@@ -129,7 +129,7 @@
 
 
 /datum/design/organ/aberrant_organ/chemist
-	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/chemist
+	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/chemist/random
 
 /datum/design/organ/aberrant_organ/chemist/blood_vessel
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/chemist/blood_vessel
@@ -142,7 +142,7 @@
 
 
 /datum/design/organ/aberrant_organ/exmercenary
-	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary
+	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/random
 
 /datum/design/organ/aberrant_organ/exmercenary/blood_vessel
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/blood_vessel

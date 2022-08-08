@@ -1,18 +1,18 @@
-/datum/component/modification/organ/on_examine
-	exclusive_type = /obj/item/modification/organ/internal/special/on_examine
+/datum/component/modification/organ/on_item_examine
+	exclusive_type = /obj/item/modification/organ/internal/special/on_item_examine
 	trigger_signal = COMSIG_EXAMINE
 
-/datum/component/modification/organ/on_examine/brainloss
+/datum/component/modification/organ/on_item_examine/brainloss
 	var/damage = 1
 
-/datum/component/modification/organ/on_examine/brainloss/get_function_info()
+/datum/component/modification/organ/on_item_examine/brainloss/get_function_info()
 	var/description = "<span style='color:purple'>Functional information (secondary):</span> causes brain damage when examined"
 	return description
 
-/datum/component/modification/organ/on_examine/brainloss/moderate
+/datum/component/modification/organ/on_item_examine/brainloss/moderate
 	damage = 5
 
-/datum/component/modification/organ/on_examine/brainloss/trigger(obj/item/holder, mob/owner)
+/datum/component/modification/organ/on_item_examine/brainloss/trigger(obj/item/holder, mob/owner)
 	if(!holder || !owner)
 		return
 	if(isliving(owner))

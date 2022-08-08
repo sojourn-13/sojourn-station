@@ -6,7 +6,7 @@
 	var/multiplier
 
 /datum/component/modification/organ/process/boost/get_function_info()
-	var/description = "\n<span style='color:orange'>Functional information (processing):</span> amplifies outputs"
+	var/description = "<span style='color:orange'>Functional information (processing):</span> amplifies outputs"
 	description += "\n<span style='color:orange'>Output increase:</span> [multiplier * 100]%"
 
 	return description
@@ -19,7 +19,7 @@
 		for(var/element in input)
 			input[element] += multiplier
 
-		SEND_SIGNAL(holder, COMSIG_ABERRANT_OUTPUT, holder, owner, input)
+		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_OUTPUT, holder, owner, input)
 
 /datum/component/modification/organ/process/shuffle
 	var/list/new_packet_order = list()
@@ -55,7 +55,7 @@
 				shuffled_input.Add(key)
 				shuffled_input[key] = value
 
-	SEND_SIGNAL(holder, COMSIG_ABERRANT_OUTPUT, holder, owner, shuffled_input)
+	LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_OUTPUT, holder, owner, shuffled_input)
 
 /datum/component/modification/organ/process/shuffle/uninstall()
 	new_packet_order = list()
@@ -78,4 +78,4 @@
 		for(var/element in input)
 			condensed_input["condensed input"] += input[element]
 
-	SEND_SIGNAL(holder, COMSIG_ABERRANT_OUTPUT, holder, owner, condensed_input)
+	LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_OUTPUT, holder, owner, condensed_input)

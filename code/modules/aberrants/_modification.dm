@@ -30,8 +30,7 @@
 
 	// Stat-gated details
 	var/examine_stat = STAT_COG
-	var/examine_difficulty = FAILCHANCE_ZERO
-	var/examine_msg_bonus = null
+	var/examine_difficulty = STAT_LEVEL_BASIC
 
 	// Trigger
 	var/trigger_signal
@@ -143,8 +142,6 @@
 	if(bypass_perk)
 		stat_req_bypassed = user.stats?.getPerk(bypass_perk) ? TRUE : FALSE
 	if(stat_req_bypassed || user.stats?.getStat(examine_stat) >= examine_difficulty)
-		if(examine_msg_bonus)
-			to_chat(user, SPAN_NOTICE(examine_msg_bonus))
 		var/function_info = get_function_info()
 		if(function_info)
 			to_chat(user, SPAN_NOTICE(function_info))
@@ -192,11 +189,15 @@
 	ASSERT(istype(upgrade_loc))
 
 	if(upgrade_loc.item_upgrades.len && C.has_quality(removal_tool_quality))
-		var/list/possibles = upgrade_loc.item_upgrades.Copy()
-		possibles += "Cancel"
-		var/obj/item/modification/toremove = input("Which modification would you like to try to extract? The modification will likely be destroyed in the process","Removing Modifications") in possibles
-		if(toremove == "Cancel")
-			return TRUE
+		var/obj/item/modification/toremove
+		if(upgrade_loc.item_upgrades.len == 1)
+			toremove = upgrade_loc.item_upgrades[1]
+		else
+			var/list/possibles = upgrade_loc.item_upgrades.Copy()
+			possibles += "Cancel"
+			toremove = input("Which modification would you like to try to extract? The modification will likely be destroyed in the process","Removing Modifications") in possibles
+			if(toremove == "Cancel")
+				return TRUE
 		var/datum/component/modification/M = toremove.GetComponent(/datum/component/modification)
 		if(M.removable == FALSE)
 			to_chat(user, SPAN_DANGER("\the [toremove] seems to be permanently attached to the [upgrade_loc]"))
@@ -212,7 +213,7 @@
 				// If you pass the check, then you manage to remove the upgrade intact
 				if(!M.destroy_on_removal && user)
 					to_chat(user, SPAN_NOTICE("You successfully extract \the [toremove] while leaving it intact."))
-				SEND_SIGNAL(toremove, COMSIG_REMOVE, upgrade_loc)
+				LEGACY_SEND_SIGNAL(toremove, COMSIG_REMOVE, upgrade_loc)
 				upgrade_loc.refresh_upgrades()
 				return TRUE
 			else
@@ -224,7 +225,7 @@
 				else if(prob(50))
 					//50% chance to break the upgrade and remove it
 					to_chat(user, SPAN_DANGER("You successfully extract \the [toremove], but destroy it in the process."))
-					SEND_SIGNAL(toremove, COMSIG_REMOVE, parent)
+					LEGACY_SEND_SIGNAL(toremove, COMSIG_REMOVE, parent)
 					QDEL_NULL(toremove)
 					upgrade_loc.refresh_upgrades()
 					user.update_action_buttons()

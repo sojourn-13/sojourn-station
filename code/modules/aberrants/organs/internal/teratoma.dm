@@ -10,6 +10,7 @@
 
 	max_upgrades = 1
 	use_generated_name = FALSE
+	use_generated_color = FALSE
 	req_num_inputs = null
 	req_num_outputs = null
 
@@ -23,7 +24,7 @@
 																						- /obj/item/modification/organ/internal/output/activate_organ_functions)	// use defines to whitelist/blacklist subtypes
 	else if(special_mod_path)
 		special_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/special/on_pickup) +\
-								subtypesof(/obj/item/modification/organ/internal/special/on_examine) +\
+								subtypesof(/obj/item/modification/organ/internal/special/on_item_examine) +\
 								subtypesof(/obj/item/modification/organ/internal/special/on_cooldown/chemical_effect) +\
 								subtypesof(/obj/item/modification/organ/internal/special/on_cooldown/stat_boost))
 
@@ -68,12 +69,9 @@
 
 	..()
 
-/obj/item/organ/internal/scaffold/aberrant/teratoma/update_icon()
-	icon_state = initial(icon_state) + "-[rand(1,6)]"
-
 /obj/item/organ/internal/scaffold/aberrant/teratoma/ruin()
 	..()
-	use_generated_color = FALSE
+	use_generated_name = FALSE
 	max_upgrades = 0
 	price_tag = 50
 	matter = list(MATERIAL_BIOMATTER = 5)
@@ -123,7 +121,7 @@
 
 /obj/item/organ/internal/scaffold/aberrant/teratoma/parasitic/New()
 	var/obj/item/modification/organ/internal/stromal/parasitic/P = new (src)
-	SEND_SIGNAL(P, COMSIG_IATTACK, src)
+	LEGACY_SEND_SIGNAL(P, COMSIG_IATTACK, src)
 	..()
 
 // random

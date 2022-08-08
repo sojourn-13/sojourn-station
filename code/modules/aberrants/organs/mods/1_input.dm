@@ -11,7 +11,6 @@
 
 	for(var/input in chosen_input_info)
 		I.accepted_inputs += input
-		I.accepted_inputs[input] = chosen_input_info[input]
 	I.check_mode = chosen_mode
 	..()
 
@@ -24,7 +23,6 @@
 
 	for(var/input in chosen_input_info)
 		I.accepted_inputs += input
-		I.accepted_inputs[input] = chosen_input_info[input]
 	..()
 
 /obj/item/modification/organ/internal/input/power_source
@@ -38,7 +36,7 @@
 	for(var/input in chosen_input_info)
 		if(!ispath(input))
 			continue
-		I.accepted_inputs += input	// source path
+		I.accepted_inputs += input
 	..()
 
 /obj/item/modification/organ/internal/input/power_source/update_icon()

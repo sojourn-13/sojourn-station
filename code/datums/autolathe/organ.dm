@@ -41,9 +41,11 @@
 	build_path = /obj/item/organ/internal/lungs
 
 /datum/design/organ/kidney_left
+	materials = list()
 	build_path = /obj/item/organ/internal/kidney/left
 
 /datum/design/organ/kidney_right
+	materials = list()
 	build_path = /obj/item/organ/internal/kidney/right
 
 /datum/design/organ/liver
@@ -55,10 +57,12 @@
 	build_path = /obj/item/organ/internal/eyes
 
 /datum/design/organ/nerves
+	materials = list(MATERIAL_BIOMATTER = -10)
 	build_path = /obj/item/organ/internal/nerve
 
 /datum/design/organ/muscle
 	build_path = /obj/item/organ/internal/muscle
 
 /datum/design/organ/blood_vessel
+	materials = list(MATERIAL_BIOMATTER = -10)
 	build_path = /obj/item/organ/internal/blood_vessel

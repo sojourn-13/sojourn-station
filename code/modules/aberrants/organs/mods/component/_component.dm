@@ -67,7 +67,7 @@
 		using_generated_name = S.use_generated_name
 		using_generated_color = S.use_generated_color
 
-	if(new_name && !using_generated_name)
+	if(new_name && using_generated_name)
 		holder.name = new_name
 	if(prefix)
 		holder.prefixes += prefix
@@ -139,3 +139,22 @@
 	if(istype(I, /obj/item/organ/internal/scaffold))
 		var/obj/item/organ/internal/scaffold/S = I
 		S.try_ruin()
+
+/datum/component/modification/organ/on_examine(mob/user)
+	if(examine_msg)
+		to_chat(user, SPAN_WARNING(examine_msg))
+
+	var/stat_req_bypassed = bypass_perk && user.stats?.getPerk(bypass_perk) ? TRUE : FALSE
+	if(stat_req_bypassed || user.stats?.getStat(examine_stat) >= examine_difficulty)
+		var/info = "Organoid size: [specific_organ_size_mod]"
+		info += "\nRequirements: <span style='color:red'>[blood_req_mod]</span>/<span style='color:blue'>[oxygen_req_mod]</span>/<span style='color:orange'>[nutriment_req_mod]</span>"
+		info += "\nOrgan tissues present: <span style='color:pink'>"
+		for(var/organ in organ_efficiency_mod)
+			info += organ + " ([organ_efficiency_mod[organ]]), "
+		info = copytext(info, 1, length(info) - 1)
+		info += "</span>"
+		to_chat(user, SPAN_NOTICE(info))
+
+		var/function_info = get_function_info()
+		if(function_info)
+			to_chat(user, SPAN_NOTICE(function_info))

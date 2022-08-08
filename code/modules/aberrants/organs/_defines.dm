@@ -63,7 +63,7 @@
 #define REAGENTS_STIMULANT_INTERMEDIATE list()
 #define REAGENTS_STIMULANT_ADVANCED list()
 
-#define REAGENTS_TOXIN list(/datum/reagent/toxin, /datum/reagent/toxin/plasticide, /datum/reagent/toxin/amatoxin, /datum/reagent/toxin/plasma,\
+#define REAGENTS_TOXIN list(/datum/reagent/toxin, /datum/reagent/toxin/amatoxin, /datum/reagent/toxin/plasma,\
 							/datum/reagent/toxin/fertilizer, /datum/reagent/toxin/plantbgone, /datum/reagent/acid/polyacid, /datum/reagent/toxin/lexorin,\
 							/datum/reagent/medicine/soporific, /datum/reagent/toxin/biomatter)
 

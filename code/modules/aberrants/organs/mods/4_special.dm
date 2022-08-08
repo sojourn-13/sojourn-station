@@ -6,14 +6,14 @@
 /obj/item/modification/organ/internal/special/update_icon()
 	icon_state = initial(icon_state) + "-[rand(1,5)]"
 
-/obj/item/modification/organ/internal/special/on_examine
+/obj/item/modification/organ/internal/special/on_item_examine
 
-/obj/item/modification/organ/internal/special/on_examine/brainloss
+/obj/item/modification/organ/internal/special/on_item_examine/brainloss
 	name = "eldritch membrane"
 	desc = "A graftable outer membrane for organ tissues. The alien textures are painful to look at."
 
-/obj/item/modification/organ/internal/special/on_examine/brainloss/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
-	AddComponent(/datum/component/modification/organ/on_examine/brainloss)
+/obj/item/modification/organ/internal/special/on_item_examine/brainloss/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
+	AddComponent(/datum/component/modification/organ/on_item_examine/brainloss)
 	..()
 
 
@@ -102,7 +102,7 @@
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/New(loc, generate_organ_stats = FALSE, predefined_modifier = null, list/chosen_special_info)
 	var/datum/component/modification/organ/on_cooldown/stat_boost/S = AddComponent(/datum/component/modification/organ/on_cooldown/stat_boost)
 
-	if(chosen_special_info?.len >= 3)
+	if(chosen_special_info?.len >= 2)
 		S.stat = chosen_special_info[1]
 		S.boost = chosen_special_info[2]
 	..()

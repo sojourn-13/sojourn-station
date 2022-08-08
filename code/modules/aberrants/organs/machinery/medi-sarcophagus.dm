@@ -58,15 +58,6 @@
 	if(horror_occupant)
 		desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner."
 
-		var/list/targets = get_mobs_or_objects_in_view(1, src, TRUE, FALSE)
-		if(targets.len)
-			for(var/atom/movable/target in targets)
-				target.throw_at_random(FALSE, 3, 2)
-				if(isliving(target))
-					var/mob/living/L = target
-					L.apply_damage(5, BRUTE)
-					L.apply_damage(10, HALLOSS)
-
 		for(var/count in 1 to mob_count)
 			new horror_occupant(src.loc)
 
@@ -91,7 +82,7 @@
 			go_out()
 
 /obj/machinery/sleeper/sarcophagus/abomination
-	horror_occupant = /mob/living/carbon/superior_animal/living_failure
+	horror_occupant = /obj/random/mob/sarcophagus
 
 // To be placed on the map
 /obj/machinery/sleeper/sarcophagus/random
@@ -100,10 +91,20 @@
 /obj/machinery/sleeper/sarcophagus/random/Initialize()
 	. = ..()
 	if(prob(50))
-		horror_occupant = /mob/living/carbon/superior_animal/living_failure
+		horror_occupant = /obj/random/mob/sarcophagus
 	else
 		horror_occupant = null
 		desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner."
 
 	update_icon()
 
+/obj/random/mob/sarcophagus
+	name = "random hivemob"
+
+/obj/random/mob/sarcophagus/item_to_spawn() //list of spawnable mobs
+	return pickweight(list(/mob/living/simple_animal/hostile/hivemind/himan = 10,
+							/mob/living/simple_animal/hostile/hivemind/stinger = 8,
+							/mob/living/simple_animal/hostile/hivemind/lobber = 6,
+							/mob/living/simple_animal/hostile/hivemind/phaser = 4,
+							/mob/living/simple_animal/hostile/hivemind/hiborg = 2,
+							/mob/living/simple_animal/hostile/hivemind/mechiver = 1))

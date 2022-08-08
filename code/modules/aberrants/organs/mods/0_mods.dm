@@ -3,7 +3,7 @@
 
 /obj/item/modification/organ/internal
 	name = "organoid"
-	icon = 'icons/obj/aberrant_organs.dmi'
+	icon = 'icons/obj/organ_mods.dmi'
 	icon_state = "organoid"
 	desc = "Functional tissue of one or more organs in graftable form."
 	spawn_tags = SPAWN_TAG_ORGAN_MOD
@@ -52,14 +52,6 @@
 			msg_organs += organ
 
 			probability = probability / 8
-
-	O.examine_msg_bonus = "Organoid size: [O.specific_organ_size_mod]"
-	O.examine_msg_bonus += "\nRequirements: <span style='color:red'>[O.blood_req_mod]</span>/<span style='color:blue'>[O.oxygen_req_mod]</span>/<span style='color:orange'>[O.nutriment_req_mod]</span>"
-	O.examine_msg_bonus += "\nOrgan tissues present: <span style='color:pink'>"
-	for(var/organ in msg_organs)
-		O.examine_msg_bonus += organ + " ([O.organ_efficiency_mod[organ]]), "
-	O.examine_msg_bonus = copytext(O.examine_msg_bonus, 1, length(O.examine_msg_bonus) - 1)
-	O.examine_msg_bonus += "</span>"
 
 	if(is_parasitic)
 		O.new_color = pick("#183311", "#8bb0db", "#a55de4")

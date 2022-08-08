@@ -5,8 +5,8 @@
 	icon_state = "bioprinter_med"
 	//circuit = /obj/item/electronics/circuitboard/autolathe/bioprinter/med
 	build_type = ORGAN_GROWER		// Should not be able to use church disks
-	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/medical/surgery
-	stored_material = list(MATERIAL_BIOMATTER = 360)
+	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/omg/diy_organs
+	stored_material = list(MATERIAL_BIOMATTER = 480)
 
 /obj/machinery/autolathe/bioprinter/RefreshParts()
 	..()

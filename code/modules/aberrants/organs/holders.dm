@@ -2,14 +2,15 @@
 	name = "organ scaffold"
 	icon = 'icons/obj/aberrant_organs.dmi'
 	icon_state = "organ_scaffold"
-	desc = "A collagen-based biostructure with no discernable function."
+	desc = "A collagen-based biostructure."
 	price_tag = 100
 	organ_efficiency = list()
-	specific_organ_size = 0.5
+	specific_organ_size = 0.2
 	spawn_tags = SPAWN_TAG_ABERRANT_ORGAN
 
 	var/use_generated_name = TRUE
 	var/use_generated_icon = TRUE
+	var/organ_type = null
 	var/use_generated_color = TRUE
 	var/generated_color = null
 
@@ -17,12 +18,15 @@
 	var/on_cooldown = FALSE
 	var/ruined = FALSE
 	var/ruined_name = "organ scaffold"
-	var/ruined_desc = "A collagen-based biostructure with no discernable function."
+	var/ruined_desc = "A collagen-based biostructure."
 	var/ruined_color = null
 
 /obj/item/organ/internal/scaffold/New()
 	..()
 	RegisterSignal(src, COMSIG_ABERRANT_COOLDOWN, .proc/start_cooldown)
+	if(use_generated_icon)
+		organ_type = "-[rand(1,6)]"
+	update_icon()
 
 /obj/item/organ/internal/scaffold/Destroy()
 	..()
@@ -30,8 +34,8 @@
 
 /obj/item/organ/internal/scaffold/Process()
 	. = ..()
-	if(owner && !on_cooldown)
-		SEND_SIGNAL(src, COMSIG_ABERRANT_INPUT, src, owner)
+	if(owner && !on_cooldown && damage < min_broken_damage)
+		LEGACY_SEND_SIGNAL(src, COMSIG_ABERRANT_INPUT, src, owner)
 
 /obj/item/organ/internal/scaffold/examine(mob/user)
 	. = ..()
@@ -69,46 +73,45 @@
 		if(function_info)
 			to_chat(user, SPAN_NOTICE(function_info))
 
-/obj/item/organ/internal/scaffold/refresh_upgrades()
-	name = initial(name)
-	color = initial(color)
-	max_upgrades = initial(max_upgrades)
-	prefixes = list()
-	min_bruised_damage = initial(min_bruised_damage)
-	min_broken_damage = initial(min_broken_damage)
-	max_damage = initial(max_damage) ? initial(max_damage) : min_broken_damage * 2
-	owner_verbs = initial_owner_verbs.Copy()
-	organ_efficiency = initial_organ_efficiency.Copy()
-	scanner_hidden = initial(scanner_hidden)
-	unique_tag = initial(unique_tag)
-	specific_organ_size = initial(specific_organ_size)
-	max_blood_storage = initial(max_blood_storage)
-	current_blood = initial(current_blood)
-	blood_req = initial(blood_req)
-	nutriment_req = initial(nutriment_req)
-	oxygen_req = initial(oxygen_req)
-
-	if(!use_generated_name)
-		name = ruined ? ruined_name : name
-
-	if(use_generated_color)
-		color = generate_color()
-	else
-		color = ruined ? ruined_color : color
-
-	SEND_SIGNAL(src, COMSIG_APPVAL, src)
-
-	generate_name()
-
 /obj/item/organ/internal/scaffold/update_icon()
 	if(use_generated_icon)
-		icon_state = initial(icon_state) + "-[rand(1,8)]"
+		icon_state = initial(icon_state) + organ_type + generated_color
 	else
 		icon_state = initial(icon_state)
 
+/obj/item/organ/internal/scaffold/proc/update_color()
+	if(!use_generated_color || !item_upgrades.len)
+		color = ruined ? ruined_color : color
+		generated_color = null
+		return
+
+	if(!generated_color)
+		generated_color = "-[rand(1,5)]"
+
+/obj/item/organ/internal/scaffold/proc/update_name()
+	if(use_generated_name)
+		name = generate_name_from_eff()
+	else
+		name = ruined ? ruined_name : name
+
+	for(var/prefix in prefixes)
+		name = "[prefix] [name]"
+
+/obj/item/organ/internal/scaffold/proc/try_ruin()
+	if(!ruined)
+		ruin()
+
+/obj/item/organ/internal/scaffold/proc/ruin()
+	ruined = TRUE
+	name = ruined_name ? ruined_name : initial(name)
+	desc = ruined_desc ? ruined_desc : initial(desc)
+	color = ruined_color ? ruined_color : initial(color)
+	price_tag = 100
+	use_generated_name = TRUE
+
 /obj/item/organ/internal/scaffold/proc/generate_name_from_eff()
 	if(!organ_efficiency.len)
-		return ruined ? ruined_name : name
+		return ruined && (name == initial(name)) ? ruined_name : name		// name == initial(name) check is to see if the name was overidden by mods
 
 	var/beginning
 	var/list/middle = list()
@@ -169,32 +172,6 @@
 		new_name += end
 		return new_name
 
-/obj/item/organ/internal/scaffold/proc/generate_color()
-	if(!item_upgrades.len)
-		return ruined ? ruined_color : color
-
-	if(!generated_color)
-		generated_color = pick("#c92b2e", "#fc697d", "#fdab8d", "#672F1D", "#e793bc", "#a7e75f", "#9e6a93")
-
-	return generated_color
-
-/obj/item/organ/internal/scaffold/proc/generate_name()
-	if(use_generated_name)
-		name = generate_name_from_eff()
-	for(var/prefix in prefixes)
-		name = "[prefix] [name]"
-
-/obj/item/organ/internal/scaffold/proc/try_ruin()
-	if(!ruined)
-		ruin()
-
-/obj/item/organ/internal/scaffold/proc/ruin()
-	ruined = TRUE
-	name = ruined_name ? ruined_name : initial(name)
-	desc = ruined_desc ? ruined_desc : initial(desc)
-	color = ruined_color ? ruined_color : initial(color)
-	price_tag = 100
-
 /obj/item/organ/internal/scaffold/proc/start_cooldown()
 	on_cooldown = TRUE
 	addtimer(CALLBACK(src, .proc/end_cooldown), aberrant_cooldown_time, TIMER_STOPPABLE)
@@ -202,9 +179,35 @@
 /obj/item/organ/internal/scaffold/proc/end_cooldown()
 	on_cooldown = FALSE
 
+/obj/item/organ/internal/scaffold/refresh_upgrades()
+	name = initial(name)
+	color = initial(color)
+	max_upgrades = initial(max_upgrades)
+	prefixes = list()
+	min_bruised_damage = initial(min_bruised_damage)
+	min_broken_damage = initial(min_broken_damage)
+	max_damage = initial(max_damage) ? initial(max_damage) : min_broken_damage * 2
+	owner_verbs = initial_owner_verbs.Copy()
+	organ_efficiency = initial_organ_efficiency.Copy()
+	scanner_hidden = initial(scanner_hidden)
+	unique_tag = initial(unique_tag)
+	specific_organ_size = initial(specific_organ_size)
+	max_blood_storage = initial(max_blood_storage)
+	current_blood = initial(current_blood)
+	blood_req = initial(blood_req)
+	nutriment_req = initial(nutriment_req)
+	oxygen_req = initial(oxygen_req)
+
+	update_color()
+
+	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
+
+	update_name()
+	update_icon()
+
 /obj/item/organ/internal/scaffold/rare
-	name = "efficient organ scaffold"
-	desc = "A collagen-based biostructure with no discernable function. This one has room for an extra organoid."
+	name = "large organ scaffold"
+	desc = "A collagen-based biostructure. This one has room for an extra organoid."
 	max_upgrades = 4
 
 /obj/item/organ/internal/scaffold/aberrant
@@ -250,7 +253,7 @@
 				input_info += pick_n_take(specific_input_type_pool)
 			else if(base_input_type)
 				var/list/reagents_sans_blacklist = subtypesof(base_input_type) - REAGENT_BLACKLIST
-				input_info = pick_n_take(reagents_sans_blacklist)
+				input_info += pick_n_take(reagents_sans_blacklist)
 
 	if(req_num_outputs)
 		for(var/i in 1 to req_num_outputs)		
@@ -273,13 +276,13 @@
 		S = new special_mod_path(src, FALSE, null, special_info)
 
 	if(I)
-		SEND_SIGNAL(I, COMSIG_IATTACK, src)
+		LEGACY_SEND_SIGNAL(I, COMSIG_IATTACK, src)
 
 	if(P)
-		SEND_SIGNAL(P, COMSIG_IATTACK, src)
+		LEGACY_SEND_SIGNAL(P, COMSIG_IATTACK, src)
 
 	if(O)
-		SEND_SIGNAL(O, COMSIG_IATTACK, src)
+		LEGACY_SEND_SIGNAL(O, COMSIG_IATTACK, src)
 
 	if(S)
-		SEND_SIGNAL(S, COMSIG_IATTACK, src)
+		LEGACY_SEND_SIGNAL(S, COMSIG_IATTACK, src)

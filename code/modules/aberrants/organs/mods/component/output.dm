@@ -38,7 +38,7 @@
 				var/amount_to_add = possible_outputs[output] * organ_multiplier * input_multiplier
 				owner.bloodstr.add_reagent(initial(output.id), amount_to_add)
 	
-		SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
+		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
 
 
 /datum/component/modification/organ/output/reagents_ingest
@@ -74,7 +74,7 @@
 				var/amount_to_add = possible_outputs[output] * organ_multiplier * input_multiplier
 				owner.ingested.add_reagent(initial(output.id), amount_to_add)
 	
-		SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
+		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
 
 
 /datum/component/modification/organ/output/chemical_effects	// More organ-like than producing reagents
@@ -125,7 +125,7 @@
 				var/magnitude = possible_outputs[effect] * organ_multiplier * input_multiplier
 				owner.add_chemical_effect(effect, magnitude)
 	
-		SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
+		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
 
 
 /datum/component/modification/organ/output/stat_boost
@@ -161,7 +161,7 @@
 				var/magnitude = possible_outputs[stat] * organ_multiplier * input_multiplier
 				owner.stats.addTempStat(stat, magnitude, delay, "[holder]")
 	
-		SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
+		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
 
 
 /datum/component/modification/organ/output/damaging_insight_gain
@@ -190,7 +190,7 @@
 				H.apply_damage(damage_amount, damage_type)
 				H.adjustBrainLoss(damage_amount)		// Added brainloss because we're gaining insight and most damage is trivial anyway
 				H.sanity.give_insight(damage_amount)
-				SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
+				LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
 				return TRUE
 
 /datum/component/modification/organ/output/activate_organ_functions
@@ -263,7 +263,7 @@
 						H.internal_organs_by_efficiency[process] |= holder
 
 				holder.refresh_upgrades()
-				SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
+				LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
 				return TRUE
 	
 	organ_efficiency_mod = old_organ_efficiency_mod
