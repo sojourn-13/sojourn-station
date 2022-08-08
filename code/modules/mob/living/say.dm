@@ -250,7 +250,7 @@ var/list/channel_to_radio_key = new
 		var/list/hear = hear(message_range, T)
 		var/list/hear_falloff = hear(falloff, T)
 
-		for(var/mob/M as anything in SSmobs.mob_living_by_zlevel[z])
+		for(var/mob/M as anything in SSmobs.mob_living_by_zlevel[loc.z])
 			if(M.locs.len && (M.locs[1] in hear))
 				listening |= M
 				continue //To avoid seeing BOTH normal message and quiet message
