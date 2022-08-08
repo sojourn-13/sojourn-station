@@ -17,12 +17,12 @@
 
 	GLOB.superior_animal_list += src
 
-	for(var/language in known_languages)
+	for(var/language as anything in known_languages)
 		add_language(language)
 
 /mob/living/carbon/superior_animal/Initialize(var/mapload)
 	if (get_stat_modifier)
-		for (var/key in allowed_stat_modifiers)
+		for (var/key as anything in allowed_stat_modifiers)
 			var/datum/stat_modifier/mod = key
 			if (initial(mod.stattags) & NOTHING_STATTAG)
 				continue
@@ -156,7 +156,7 @@
 				var/index = possible_locations.len
 				return possible_locations[index] //return the last entry in the list
 
-	for (var/turf/possible_location in possible_locations) // iterate through each turf we are considering
+	for (var/turf/possible_location as anything in possible_locations) // iterate through each turf we are considering
 		if (density == TRUE) // if the turf is dense, aka we cant walk through it...
 			possible_locations -= possible_location // ...no way they're in it
 			continue

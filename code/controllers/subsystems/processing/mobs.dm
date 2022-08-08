@@ -8,6 +8,7 @@ PROCESSING_SUBSYSTEM_DEF(mobs)
 
 	var/list/mob_list
 	var/list/mob_living_by_zlevel[][]
+	var/list/ghost_list = list()
 
 /datum/controller/subsystem/processing/mobs/PreInit()
 	mob_list = processing // Simply setups a more recognizable var name than "processing"
