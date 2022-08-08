@@ -625,7 +625,6 @@
 	pockets.max_storage_space = 8
 	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
 
-//Blackshield armor
 /obj/item/clothing/suit/armor/platecarrier
 	name = "plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes."
@@ -643,6 +642,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
+//Marshal armor
 /obj/item/clothing/suit/armor/platecarrier/ih
 	name = "plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, in Marshals colors."
@@ -657,6 +657,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
+//Blackshield armor
 /obj/item/clothing/suit/armor/platecarrier/militia
 	name = "blackshield plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one bears the distinct IFF stripes of the Blackshield."

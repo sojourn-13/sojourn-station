@@ -30,13 +30,13 @@
 
 	var/turf/our_turf = get_turf(src)
 	if (our_turf) //If we're not in anything, continue
-		for(var/mob/living/target_mob in hearers(src, viewRange))
+		for(var/mob/living/target_mob as anything in hearers(src, viewRange)) //as anything works because isvalid has a isliving check, change if necessary
 			if (isValidAttackTarget(target_mob))
 				if(target_mob.target_dummy && prioritize_dummies) //Target me over anyone else
 					return target_mob
 				filteredTargets += target_mob
 
-		for (var/obj/mecha/M in GLOB.mechas_list)
+		for (var/obj/mecha/M as anything in GLOB.mechas_list)
 			//As goofy as this looks its more optimized as were not looking at every mech outside are z-level if they are around us. - Trilby
 			if(M.z == z)
 				if(get_dist(src, M) <= viewRange)
@@ -228,6 +228,11 @@
 			for(var/obj/structure/shield_deployed/obstacle in get_step(src,dir))
 				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 				return
+
+			for(var/obj/machinery/tesla_turret/obstacle in get_step(src,dir)) //Weak plastic will not bar us
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
 
 /mob/living/carbon/superior_animal/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/living/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	..()

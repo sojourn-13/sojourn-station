@@ -802,8 +802,7 @@ its easier to just keep the beam vertical.
 
 /atom/Entered(var/atom/movable/AM, var/atom/old_loc, var/special_event)
 	if(loc)
-		for(var/i in AM.contents)
-			var/atom/movable/A = i
+		for(var/atom/movable/A as anything in AM.contents)
 			A.entered_with_container(old_loc)
 		if(MOVED_DROP == special_event)
 			AM.forceMove(loc, MOVED_DROP)

@@ -125,6 +125,7 @@
 	qdel(spark_system)
 	spark_system = null
 	QDEL_NULL(installation)
+	density = FALSE //Were broken and can be stepped over
 	. = ..()
 
 /obj/machinery/porta_turret/proc/setup()

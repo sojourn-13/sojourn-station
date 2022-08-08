@@ -33,6 +33,7 @@
 	name = "\"Val\" silenced rifle"
 	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds."
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
+	damage_multiplier = 1.0 //The gun is made to be Excelsior, thus its higher stats. Nerfed since this variant is not supposed to be an antag-weapon. Plus - extra damage when scoped.
 	price_tag = 800
 	serial_type = "NM"
 	excelsior = FALSE

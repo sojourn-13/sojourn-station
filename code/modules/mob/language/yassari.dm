@@ -6,6 +6,9 @@
 	exclaim_verb = list("rambles")
 	colour = "yassari"
 	key = "y"
+	partial_understanding = list(
+		LANGUAGE_OPIFEXEE = 15
+	)
 	space_chance = 100
 	shorthand = "YI"
 	syllables = list("laa", "naaam", "masaa' alkhayr", "haydi bakalim", "hal yumkinuk", "hadduth bibut'", "afham tamaaman", "maafi mushki", "habeebti", "hala", "ahlan wa sahlan", \

@@ -82,6 +82,10 @@
 	else
 		..()
 
+/obj/structure/ameridian_crystal/ex_act(severity)
+	if(severity) //If all fails, blow it up
+		qdel(src) //Don't expect any rewards!
+
 // This proc handle the growth & spread of the crystal
 /obj/structure/ameridian_crystal/proc/handle_growth()
 	if(growth >= max_growth) // If we are at max growth.

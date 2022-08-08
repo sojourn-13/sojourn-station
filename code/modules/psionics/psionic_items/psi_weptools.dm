@@ -174,7 +174,7 @@
 	projectile_color = "#BF40BF"
 
 /obj/item/gun/energy/plasma/cassad/cult
-	name = "\"Black Sun\" psi-plasma rifle"
+	name = "\"Unseen Sun\" psi-plasma rifle"
 	desc = "A plasma weapon formed from the mind of a psion who shaped an oddity into a weapon. A psychic copy of the cassad, a widely known weapon for being one of the few examples of plasma tech \
 	outside the Soteria or Church. Perhaps its popularity is what imprinted it in the memory of the psion that made it?"
 	icon = 'icons/obj/psionic/occcassad.dmi'

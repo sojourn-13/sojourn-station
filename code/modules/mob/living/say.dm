@@ -213,7 +213,7 @@ var/list/channel_to_radio_key = new
 		var/msg
 		if(!speaking || !(speaking.flags&NO_TALK_MSG))
 			msg = SPAN_NOTICE("\The [src] talks into \the [used_radios[1]]")
-		for(var/mob/living/M in hearers(5, src))
+		for(var/mob/living/M as anything in hearers(5, src))
 			if((M != src) && msg)
 				M.show_message(msg)
 			if(speech_sound)
@@ -250,11 +250,15 @@ var/list/channel_to_radio_key = new
 		var/list/hear = hear(message_range, T)
 		var/list/hear_falloff = hear(falloff, T)
 
-		for(var/X in SSmobs.mob_list)
-			if(!ismob(X))
-				continue
-			var/mob/M = X
-			if(M.stat == DEAD && M.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH)
+		for(var/mob/M as anything in SSmobs.mob_living_by_zlevel[z])
+			if(M.locs.len && (M.locs[1] in hear))
+				listening |= M
+				continue //To avoid seeing BOTH normal message and quiet message
+			else if(M.locs.len && (M.locs[1] in hear_falloff))
+				listening_falloff |= M
+
+		for (var/mob/M as anything in SSmobs.ghost_list) // too scared to make a combined list
+			if(M.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH)
 				listening |= M
 				continue
 			if(M.locs.len && (M.locs[1] in hear))
@@ -263,7 +267,7 @@ var/list/channel_to_radio_key = new
 			else if(M.locs.len && (M.locs[1] in hear_falloff))
 				listening_falloff |= M
 
-		for(var/obj in GLOB.hearing_objects)
+		for(var/obj as anything in GLOB.hearing_objects)
 			if(get_turf(obj) in hear)
 				listening_obj |= obj
 
@@ -273,24 +277,18 @@ var/list/channel_to_radio_key = new
 	QDEL_IN(speech_bubble, 30)
 
 	var/list/speech_bubble_recipients = list()
-	for(var/X in listening) //Again, as we're dealing with a lot of mobs, typeless gives us a tangible speed boost.
-		if(!ismob(X))
-			continue
-		var/mob/M = X
+	for(var/mob/M as anything in listening) //Again, as we're dealing with a lot of mobs, typeless gives us a tangible speed boost.
 		if(M.client)
 			speech_bubble_recipients += M.client
 		M.hear_say(message, verb, speaking, alt_name, italics, src, speech_sound, sound_vol, getSpeechVolume(message))
-	for(var/X in listening_falloff)
-		if(!ismob(X))
-			continue
-		var/mob/M = X
+	for(var/mob/M as anything in listening_falloff)
 		if(M.client)
 			speech_bubble_recipients += M.client
 		M.hear_say(message, verb, speaking, alt_name, italics, src, speech_sound, sound_vol, 1)
 
 	animate_speechbubble(speech_bubble, speech_bubble_recipients, 30)
 
-	for(var/obj/O in listening_obj)
+	for(var/obj/O as anything in listening_obj)
 		spawn(0)
 			if(!QDELETED(O)) //It's possible that it could be deleted in the meantime.
 				O.hear_talk(src, message, verb, speaking, getSpeechVolume(message), message_pre_stutter)

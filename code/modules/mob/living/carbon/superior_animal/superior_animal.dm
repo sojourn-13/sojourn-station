@@ -17,12 +17,12 @@
 
 	GLOB.superior_animal_list += src
 
-	for(var/language in known_languages)
+	for(var/language as anything in known_languages)
 		add_language(language)
 
 /mob/living/carbon/superior_animal/Initialize(var/mapload)
 	if (get_stat_modifier)
-		for (var/key in allowed_stat_modifiers)
+		for (var/key as anything in allowed_stat_modifiers)
 			var/datum/stat_modifier/mod = key
 			if (initial(mod.stattags) & NOTHING_STATTAG)
 				continue
@@ -156,7 +156,7 @@
 				var/index = possible_locations.len
 				return possible_locations[index] //return the last entry in the list
 
-	for (var/turf/possible_location in possible_locations) // iterate through each turf we are considering
+	for (var/turf/possible_location as anything in possible_locations) // iterate through each turf we are considering
 		if (density == TRUE) // if the turf is dense, aka we cant walk through it...
 			possible_locations -= possible_location // ...no way they're in it
 			continue
@@ -470,7 +470,8 @@
 					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
 
 			if (advancement_timer <= world.time)  //we dont want to prematurely end a advancing walk
-				SSmove_manager.move_to(src, targetted, calculated_walk, move_to_delay) //we still want to reset our walk
+				if (stat != DEAD)
+					SSmove_manager.move_to(src, targetted, calculated_walk, move_to_delay) //we still want to reset our walk
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 	else
 		prepareAttackOnTarget()
@@ -733,7 +734,8 @@
 		advance_steps = (distance - advancement)
 		if (advance_steps <= 0)
 			advance_steps = 1 //1 is minimum
-		SSmove_manager.move_to(src, target, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
+		if (stat != DEAD)
+			SSmove_manager.move_to(src, target, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
 		advancement_timer = (world.time += advancement_increment) // we dont want this overridden instantly
 
 /mob/living/carbon/superior_animal/CanPass(atom/mover)

@@ -66,6 +66,13 @@
 	icon_state = "binoclard_lenses"
 	item_state = "binoclard_lenses" // lol
 	body_parts_covered = 0
+	prescription = 1
+
+/obj/item/clothing/glasses/binoclard_lenses/dark
+	name = "dark binoclard glasses"
+	desc = "Standard glasses that correct and enhance vision. These ones are a darker rounded lens to allow rule of cool rather then protection."
+	icon_state = "black_binoclard_lenses"
+	item_state = "black_binoclard_lenses"
 
 /obj/item/clothing/glasses/scanners
 	name = "scanning goggles"
