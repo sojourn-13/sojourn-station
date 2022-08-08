@@ -1,7 +1,7 @@
 // Bioprinter for organ printing
 /obj/machinery/autolathe/bioprinter/med
 	name = "Medical Bioprinter"
-	desc = "NeoTheology machine for printing things using biomass. Configured for medical use."
+	desc = "Soteria machine for printing things using biomass. Configured for medical use."
 	icon_state = "bioprinter_med"
 	//circuit = /obj/item/electronics/circuitboard/autolathe/bioprinter/med
 	build_type = ORGAN_GROWER		// Should not be able to use church disks
