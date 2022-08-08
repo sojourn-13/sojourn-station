@@ -605,12 +605,12 @@
 	appear_in_default_catalog = FALSE
 
 /datum/reagent/stim/clumsy/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_TGH, -15, STIM_TIME, "clunitol")
-	M.stats.addTempStat(STAT_ROB, -15, STIM_TIME, "clunitol")
-	M.stats.addTempStat(STAT_COG, 5, STIM_TIME, "clunitol")
-	M.stats.addTempStat(STAT_BIO, 5, STIM_TIME, "clunitol")
-	M.stats.addTempStat(STAT_VIG, 25, STIM_TIME, "clunitol")
-	M.stats.addTempStat(STAT_MEC, 5, STIM_TIME, "clunitol")
+	M.stats.addTempStat(STAT_TGH, -5, STIM_TIME, "clunitol")
+	M.stats.addTempStat(STAT_ROB, -5, STIM_TIME, "clunitol")
+	M.stats.addTempStat(STAT_COG, 3, STIM_TIME, "clunitol")
+	M.stats.addTempStat(STAT_BIO, 3, STIM_TIME, "clunitol")
+	M.stats.addTempStat(STAT_VIG, 3, STIM_TIME, "clunitol")
+	M.stats.addTempStat(STAT_MEC, 3, STIM_TIME, "clunitol")
 	M.add_chemical_effect(CE_SPEEDBOOST, -0.1)
 	M.add_chemical_effect(CE_PULSE, 2)
 
