@@ -33,7 +33,7 @@
 	if(faction == "station")
 		return TRUE
 
-	if(faction == "CEV Eris")
+	if(faction == "CEV Eris") niko. replace these with vars on the mobs. fucker.
 		return TRUE
 
 	for (var/obj/mecha/M in GLOB.mechas_list)
@@ -44,7 +44,7 @@
 		if(!(M.stat < DEAD))
 			continue
 		if(M.faction != faction)
-			if(get_dist(src, M) <= dist)
+			if(get_dist(src, M) <= dist) also replace these kind of things with a goddamn proc. ideally a better list-based faction var.
 				return TRUE
 
 	return FALSE

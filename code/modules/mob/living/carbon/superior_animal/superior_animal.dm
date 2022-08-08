@@ -173,7 +173,7 @@
 
 // Same as breath but with innecesarry code removed and damage tripled. Environment pressure damage moved here since we handle moles.
 
-/mob/living/carbon/superior_animal/proc/handle_cheap_breath(datum/gas_mixture/breath as anything)
+/mob/living/carbon/superior_animal/handle_breath(datum/gas_mixture/breath as anything)
 	var/breath_pressure = (breath.total_moles*R_IDEAL_GAS_EQUATION*breath.temperature)/BREATH_VOLUME
 	var/breath_required = breath_pressure > 15 && (breath_required_type || breath_poison_type)
 	if(!breath_required) // 15 KPA Minimum
@@ -181,7 +181,7 @@
 	adjustOxyLoss(breath.gas[breath_required_type] ? 0 : ((((breath.gas[breath_required_type] / breath.total_moles) * breath_pressure) < min_breath_required_type) ? 0 : 6))
 	adjustToxLoss(breath.gas[breath_poison_type] ? 0 : ((((breath.gas[breath_poison_type] / breath.total_moles) * breath_pressure) < min_breath_poison_type) ? 0 : 6))
 
-/mob/living/carbon/superior_animal/proc/handle_cheap_environment(datum/gas_mixture/environment as anything)
+/mob/living/carbon/superior_animal/handle_environment(datum/gas_mixture/environment as anything)
 	var/pressure = environment.return_pressure()
 	var/enviro_damage = (bodytemperature < min_bodytemperature) || (pressure < min_air_pressure) || (pressure > max_air_pressure)
 	if(enviro_damage) // its like this to avoid extra processing further below without using goto
@@ -554,6 +554,24 @@
 	*/
 
 /mob/living/carbon/superior_animal/Life()
+
+	/*
+	life signal
+
+	if (process, maybe put a process scan on mobss instead as a seperate proc) {
+		block for things like metabolism and such, anything that should always process {
+			handle status effects, maybe datumize them {}
+			atmos handling
+			all that shit
+		}
+	}
+
+	block for handling ambient scanning to see if we should awaken {
+
+	}
+
+	*/
+
 	ticks_processed++
 	handle_regular_hud_updates()
 	if(!reagent_immune)

@@ -1,9 +1,6 @@
 /mob/living/Life()
-	set invisibility = 0
-	set background = BACKGROUND_ENABLED
 
-	. = FALSE
-	..()
+	. = ..()
 	if(config.enable_mob_sleep)
 		if(stat != DEAD && !mind)	// Check for mind so player-driven, nonhuman mobs don't sleep
 			if(life_cycles_before_scan > 0)
