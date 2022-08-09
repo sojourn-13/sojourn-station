@@ -220,17 +220,6 @@
 
 	return 0
 
-/obj/item/reagent_containers/food/snacks/examine(mob/user)
-	if(!..(user, 1))
-		return
-	if (bitecount==0)
-		return
-	else if (bitecount==1)
-		to_chat(user, SPAN_NOTICE("\The [src] was bitten by someone!"))
-	else if (bitecount<=3)
-		to_chat(user, SPAN_NOTICE("\The [src] was bitten [bitecount] time\s!"))
-	else
-		to_chat(user, SPAN_NOTICE("\The [src] was bitten multiple times!"))
 
 /obj/item/reagent_containers/food/snacks/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W,/obj/item/storage))

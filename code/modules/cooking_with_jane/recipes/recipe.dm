@@ -42,11 +42,11 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 			<REQUIRED_ARGS>:
 				type_path - the type path of the item being added.
 			Example: list(CWJ_USE_ITEM, /obj/item/material/kitchen/rollingpin) #Use a rolling pin on the container
-		
+
 		CWJ_USE_STOVE
 			Cook the cooking container on a stove. Keep it on too long, it burns.
 			<REQUIRED_ARGS>:
-				temperature - the required temperature to cook the food at. 
+				temperature - the required temperature to cook the food at.
 					(Temperatures are macro'd by: J_LO, J_MED, J_HI)
 				time - the amount of time, in seconds, to keep the food on the stove.
 			Example: list(CWJ_USE_STOVE, J_LO, 40) #Cook on a stove set to "Low" for 40 seconds.
@@ -120,16 +120,16 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 	name="Stove-Top cooked Steak"
 
 	//The recipe will be cooked on a pan
-	cooking_container = PAN 
+	cooking_container = PAN
 
 	//The product of the recipe will be a steak.
 	product_type = /obj/item/reagent_containers/food/snacks/meatsteak
 
 	//The product will have it's initial reagents wiped, prior to the recipe adding in reagents of its own.
-	replace_reagents = TRUE 
+	replace_reagents = TRUE
 
 	step_builder = list(
-		
+
 		//Butter your pan by adding a slice of butter, and then melting it. Adding the butter unlocks the option to melt it on the stove.
 		CWJ_BEGIN_OPTION_CHAIN,
 		//base - the lowest amount of quality following this step can award.
@@ -140,11 +140,11 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 		list(CWJ_USE_STOVE_OPTIONAL, J_LOW, 10),
 		CWJ_END_OPTION_CHAIN,
 
-		//A steak is needed to start the meal. 
+		//A steak is needed to start the meal.
 		//qmod- Half of the food quality of the parent will be considered.
 		//exclude_reagents- Blattedin and Carpotoxin will be filtered out of the steak.
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat, qmod=0.5, exclude_reagents=list("carpotoxin", "blattedin")),
-		
+
 		//Add some mushrooms to give it some zest. Only one kind is allowed!
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "mushroom", qmod=0.2, reagent_skip=TRUE),
@@ -158,14 +158,14 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 
 		//You can add up to 3 units of salt and pepper to increase the quality. Any more will negatively impact it.
 		//base- for CWJ_ADD_REAGENT, the amount that this step will award if followed perfectly.
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'salt', 3, base=3),
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'pepper', 3, base=3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "salt", 3, base=3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "pepper", 3, base=3),
 
 		//You can add capaicin or wine, but not both
 		//prod_desc- the amount that this step will award if followed perfectly.
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'capsaicin', 5, base=6, prod_desc="The steak was Spiced with chili powder."),
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'wine', 5, remain_percent=0.1 ,base=6, prod_desc="The steak was sauteed in wine"),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "capsaicin", 5, base=6, prod_desc="The steak was Spiced with chili powder."),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "wine", 5, remain_percent=0.1 ,base=6, prod_desc="The steak was sauteed in wine"),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 
 		//Cook on a stove, at medium temperature, for 30 seconds
@@ -176,7 +176,7 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 	name="Tenderized Meat"
 	cooking_container = PLATE
 	product_type = /obj/item/reagent_containers/food/snacks/meat
-	replace_reagents = TRUE 
+	replace_reagents = TRUE
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat),
 		list(CWJ_USE_TOOL_OPTIONAL, QUALITY_HAMMERING, 15)
@@ -239,7 +239,7 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 	)
 
 /datum/cooking_with_jane/recipe/sandwich_split
-	cooking_container = SKILLET 
+	cooking_container = SKILLET
 	product_type = /obj/item/reagent_containers/food/snacks/sandwich
 	product_count = 2
 	step_builder = list(
@@ -251,7 +251,7 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 /*
 //Example of the same recipe, but for the grill, just to show off how compact everything is.
 /datum/cooking_with_jane/recipe/grill_stove
-	cooking_container = SKILLET 
+	cooking_container = SKILLET
 	product_type = /obj/item/reagent_containers/food/snacks/meatsteak
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat, qmod=0.5, remain_percent=0),
