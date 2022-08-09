@@ -149,8 +149,7 @@ var/const/enterloopsanity = 100
 		return
 	..()
 
-	if(!istype(AM, /atom/movable))
-		return
+
 
 
 	if(ismob(AM))
@@ -175,6 +174,8 @@ var/const/enterloopsanity = 100
 
 	var/objects = 0
 	if(AM && (AM.flags & PROXMOVE))
+		if(!istype(AM, /atom/movable))
+			log_debug("Non Movable thing [AM.type] with 0x20 flag set called for Entered! That's not good!")
 		for(var/atom/movable/thing in range(1))
 			if(objects > enterloopsanity) break
 			objects++
