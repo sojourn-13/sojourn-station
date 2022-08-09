@@ -417,7 +417,7 @@
 /mob/living/proc/update_z(new_z) // 1+ to register, null to unregister
 	if (!new_z)
 		var/turf/location = get_turf(src)
-		new_z = location
+		new_z = location?.z
 	if (registered_z != new_z)
 		if (registered_z)
 			SSmobs.mob_living_by_zlevel[registered_z] -= src
