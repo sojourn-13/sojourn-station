@@ -259,7 +259,7 @@ var/list/channel_to_radio_key = new
 						continue
 					else //we are in the falloff radius
 						listening_falloff |= recursive_content
-				else if (isobj(AM2recursive_content))
+				else if (isobj(recursive_content))
 					if (recursive_content in GLOB.hearing_objects)
 						listening_obj |= recursive_content
 
