@@ -270,17 +270,19 @@ mob/living/carbon/superior_animal/adjustToxLoss(amount)
 
 /mob/living/carbon/superior_animal/death(gibbed,message = deathmessage)
 
-	if (stat != DEAD)
-		target_mob = null
-		lost_sight = FALSE
-		target_location = null
-		stance = initial(stance)
-		stop_automated_movement = initial(stop_automated_movement)
-		following = null
-		last_followed = null
+	if (is_dead(src))
+		return FALSE
 
-		density = FALSE
-		layer = LYING_MOB_LAYER
+	target_mob = null
+	lost_sight = FALSE
+	target_location = null
+	stance = initial(stance)
+	stop_automated_movement = initial(stop_automated_movement)
+	following = null
+	last_followed = null
+
+	density = FALSE
+	layer = LYING_MOB_LAYER
 
 	AI_inactive = TRUE //Optimation, were dead
 	density = FALSE //In death were no longer blocking.

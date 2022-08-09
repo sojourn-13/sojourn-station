@@ -238,8 +238,10 @@ default behaviour is:
 /mob/living/proc/adjustBruteLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
-	bruteloss = min(max(bruteloss + amount, 0),(maxHealth*2))
-	adjustHealth(bruteloss)
+	var/new_value = min(max(bruteloss + amount, 0),(maxHealth*2))
+	var/change = (new_value - bruteloss)
+	bruteloss = new_value
+	adjustHealth(change)
 
 /mob/living/proc/getOxyLoss()
 	return oxyloss
@@ -248,11 +250,14 @@ default behaviour is:
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	oxyloss = min(max(oxyloss + amount, 0),(maxHealth*2))
+	adjustHealth(amount)
 
 /mob/living/proc/setOxyLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
+	var/change = INVERT_SIGN(oxyloss - amount)
 	oxyloss = amount
+	adjustHealth(change)
 
 /mob/living/proc/getToxLoss()
 	return toxloss
@@ -260,13 +265,17 @@ default behaviour is:
 /mob/living/proc/adjustToxLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
-	toxloss = min(max(toxloss + amount, 0),(maxHealth*2))
-
+	var/new_value = min(max(toxloss + amount, 0),(maxHealth*2))
+	var/change = (new_value - toxloss)
+	toxloss = new_value
+	adjustHealth(change)
 
 /mob/living/proc/setToxLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
+	var/change = INVERT_SIGN(toxloss - amount)
 	toxloss = amount
+	adjustHealth(change)
 
 /mob/living/proc/getFireLoss()
 	return fireloss
@@ -274,7 +283,10 @@ default behaviour is:
 /mob/living/proc/adjustFireLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
-	fireloss = min(max(fireloss + amount, 0),(maxHealth*2))
+	var/new_value = min(max(fireloss + amount, 0),(maxHealth*2))
+	var/change = (new_value - fireloss)
+	fireloss = new_value
+	adjustHealth(change)
 
 /mob/living/proc/getCloneLoss()
 	return cloneloss
@@ -282,11 +294,16 @@ default behaviour is:
 /mob/living/proc/adjustCloneLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
-	cloneloss = min(max(cloneloss + amount, 0),(maxHealth*2))
+	var/new_value = min(max(fireloss + amount, 0),(maxHealth*2))
+	var/change = (new_value - fireloss)
+	fireloss = new_value
+	adjustHealth(change)
 
 /mob/living/proc/setCloneLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
+	var/change = INVERT_SIGN(cloneloss - amount)
+	adjustHealth(change)
 	cloneloss = amount
 
 /mob/living/proc/getBrainLoss()
@@ -308,11 +325,16 @@ default behaviour is:
 /mob/living/proc/adjustHalLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
-	halloss = min(max(halloss + amount, 0),(maxHealth*2))
+	var/new_value = min(max(halloss + amount, 0),(maxHealth*2))
+	var/change = (new_value - halloss)
+	halloss = new_value
+	adjustHealth(change)
 
 /mob/living/proc/setHalLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
+	var/change = INVERT_SIGN(halloss - amount)
+	adjustHealth(change)
 	halloss = amount
 
 /mob/living/proc/getmaxHealth()

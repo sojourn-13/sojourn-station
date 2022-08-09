@@ -205,7 +205,7 @@
 /mob/living/carbon/superior_animal/proc/cheap_incapacitation_check() // This works based off constants ,override it if you want it to be dynamic . Based off isincapacited
 	return stunned > 0 || weakened > 0 || resting || pinned.len > 0 || stat || paralysis || sleeping || (status_flags & FAKEDEATH) || buckled() > 0
 
-/mob/living/carbon/superior_animal/proc/cheap_update_lying_buckled_and_verb_status_()
+/mob/living/carbon/superior_animal/update_lying_buckled_and_verb_status()
 
 	if(cheap_incapacitation_check())
 		lying = FALSE
@@ -517,8 +517,16 @@
 // Same as overridden proc but -3 instead of -1 since its 3 times less frequently envoked, if checks removed
 /mob/living/carbon/superior_animal/handle_status_effects()
 	paralysis = max(paralysis-3,0)
-	stunned = max(stunned-3,0)
-	weakened = max(weakened-3,0)
+
+	if (stunned)
+		stunned = max(stunned-3,0)
+		if(!stunned)
+			update_icons()
+
+	if(weakened)
+		weakened = max(weakened-3,0)
+		if(!weakened)
+			update_icons()
 
 /mob/living/carbon/superior_animal/proc/handle_cheap_regular_status_updates()
 	health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
@@ -529,7 +537,7 @@
 		return TRUE
 	return FALSE
 
-/mob/living/carbon/superior_animal/proc/handle_cheap_chemicals_in_body()
+/mob/living/carbon/superior_animal/handle_chemicals_in_body()
 	if(reagents)
 		chem_effects.Cut()
 		if(touching)
@@ -557,16 +565,11 @@
 	ticks_processed++
 	handle_regular_hud_updates()
 	if(!reagent_immune)
-		handle_cheap_chemicals_in_body()
+		handle_chemicals_in_body()
 
 	if(!(ticks_processed%3))
-		// handle_status_effects() this is handled here directly to save a bit on procedure calls
-		//if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1)) - Soj edit, we already update icon just 13 lines down form this, no point
-		//	spawn(5) update_icons()
-		paralysis = max(paralysis-3,0)
-		stunned = max(stunned-3,0)
-		weakened = max(weakened-3,0)
-		cheap_update_lying_buckled_and_verb_status_()
+		handle_status_effects()
+		update_lying_buckled_and_verb_status()
 		if(!never_stimulate_air)
 			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
 			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
@@ -574,9 +577,7 @@
 			handle_environment(environment)
 			//Fire handling , not passing the whole list because thats unefficient.
 			handle_fire(environment.gas["oxygen"], loc)
-		updateicon()
 		ticks_processed = 0
-	handle_cheap_regular_status_updates()
 
 	if (can_burrow && bad_environment)
 		evacuate()

@@ -57,7 +57,7 @@
 
 /mob/proc/death(gibbed,deathmessage="seizes up and falls limp...",show_dead_message = "You have died.")
 	if(stat == DEAD)
-		return 0
+		return FALSE
 
 	SSmove_manager.stop_looping(src)
 
