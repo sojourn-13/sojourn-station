@@ -2885,6 +2885,14 @@
 /obj/item/storage/firstaid/fire,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/abandoned_solars)
+"aEs" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/genetics)
 "aED" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -8222,6 +8230,13 @@
 /obj/machinery/light,
 /turf/simulated/floor/asteroid/grass/dry,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"bFR" = (
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 22
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/genetics)
 "bFT" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -18521,8 +18536,8 @@
 /obj/item/tool/crowbar,
 /obj/machinery/camera/network/colony_underground,
 /obj/machinery/power/wall_obelisk{
-	pixel_y = 24;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
@@ -30095,7 +30110,7 @@
 "fQH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/white/gray_platform,
+/turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/genetics)
 "fQN" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -40418,10 +40433,6 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos/surface)
 "hQV" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/genetics)
 "hQW" = (
@@ -43466,10 +43477,12 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "iwx" = (
 /obj/structure/table/reinforced,
-/obj/item/device/lighting/toggleable/lamp/green,
 /obj/structure/disposalpipe/segment{
-	dir = 4
+	dir = 1;
+	icon_state = "pipe-c"
 	},
+/obj/item/paper_bin,
+/obj/item/pen/blue,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/genetics)
 "iwC" = (
@@ -43933,12 +43946,9 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/security/detectives_office)
 "iBc" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 28
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white/brown_perforated,
+/obj/machinery/autolathe/bioprinter/med,
+/turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/genetics)
 "iBz" = (
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -45845,6 +45855,12 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/colony)
+"iTL" = (
+/obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/white/gray_platform,
+/area/nadezhda/medical/genetics)
 "iTO" = (
 /obj/structure/table/bench/wooden,
 /obj/structure/railing/grey{
@@ -63128,12 +63144,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -77915,11 +77931,8 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/command/bridgebar)
 "oQl" = (
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 22
-	},
-/turf/simulated/floor/tiled/white/brown_perforated,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/genetics)
 "oQq" = (
 /turf/simulated/wall/r_wall,
@@ -83269,7 +83282,7 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "pRw" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/machinery/smartfridge/secure/medbay/organs/stocked,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/genetics)
 "pRJ" = (
@@ -100920,14 +100933,9 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "tjy" = (
-/obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/reinforced,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/recharger/industrial,
-/turf/simulated/floor/tiled/white/gray_platform,
+/obj/structure/bed/chair/office/light,
+/turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/genetics)
 "tjB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -106099,6 +106107,9 @@
 "uma" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microscope,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/genetics)
 "umg" = (
@@ -111125,6 +111136,11 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/eris/crew_quarters/barbackroom)
 "via" = (
+/obj/machinery/disposal,
+/obj/effect/floor_decal/industrial/box/red,
+/obj/structure/disposalpipe/trunk{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/genetics)
 "vig" = (
@@ -112157,10 +112173,13 @@
 	},
 /area/shuttle/rocinante_shuttle_area)
 "vrz" = (
-/obj/machinery/disposal,
-/obj/effect/floor_decal/industrial/box/red,
-/obj/structure/disposalpipe/trunk{
-	dir = 4
+/obj/structure/table/reinforced,
+/obj/item/storage/box/gloves{
+	pixel_x = 3;
+	pixel_y = 8
+	},
+/obj/item/tool/scalpel/laser{
+	pixel_y = -5
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/genetics)
@@ -121885,6 +121904,7 @@
 	pixel_x = 32
 	},
 /obj/item/gun/energy/cog,
+/obj/machinery/recharger/industrial,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/genetics)
 "xjG" = (
@@ -193198,7 +193218,7 @@ fMv
 wjJ
 pRw
 vrz
-ula
+iBc
 elK
 sfN
 owe
@@ -193400,7 +193420,7 @@ cZB
 wjJ
 fQH
 tjy
-ula
+iTL
 elK
 aRo
 uCE
@@ -193602,7 +193622,7 @@ hcZ
 qNV
 via
 iwx
-ula
+oQl
 elK
 cTu
 qOO
@@ -196222,8 +196242,8 @@ sFI
 ula
 ula
 hdW
-iBc
-oQl
+aEs
+bFR
 olI
 ula
 ula
