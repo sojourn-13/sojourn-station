@@ -249,17 +249,17 @@ var/list/channel_to_radio_key = new
 		//DO NOT FUCKING CHANGE THIS TO GET_OBJ_OR_MOB_AND_BULLSHIT() -- Hugs and Kisses ~Ccomp
 		var/list/hear_falloff = hear_movables(falloff, T)
 
-		for(var/atom/A as anything in hear_falloff)
-			var/list/recursive_contents_with_self = (A.get_recursive_contents_until(2))
-			recursive_contents_with_self += A
+		for(var/atom/movable/AM as anything in hear_falloff)
+			var/list/recursive_contents_with_self = (AM.get_recursive_contents_until(2))
+			recursive_contents_with_self += AM
 			for (var/mob/M in recursive_contents_with_self) // stopgap between getting contents and getting full recursive contents
 				if (get_dist(get_turf(M), src) < falloff) //if we're not in the falloff distance
 					listening |= M
 					continue
 				else //we are in the falloff radius
 					listening_falloff |= M
-			if (isobj(A) && (A in GLOB.hearing_objects))
-				listening_obj |= A
+			if (isobj(AM) && (AM in GLOB.hearing_objects))
+				listening_obj |= AM
 
 		for (var/mob/M as anything in SSmobs.ghost_list) // too scared to make a combined list
 			if(M.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH)
