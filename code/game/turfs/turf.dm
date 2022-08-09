@@ -149,6 +149,10 @@ var/const/enterloopsanity = 100
 		return
 	..()
 
+	if(!istype(AM, /atom/movable))
+		return
+
+
 	if(ismob(AM))
 		var/mob/M = AM
 
