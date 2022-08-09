@@ -414,7 +414,10 @@
 	for(var/atom/movable/AM in src) // Notify contents of Z-transition. This can be overridden IF we know the items contents do not care.
 		AM.onTransitZ(old_z,new_z)*/
 
-/mob/living/proc/update_z(new_z = z) // 1+ to register, null to unregister
+/mob/living/proc/update_z(new_z) // 1+ to register, null to unregister
+	if (!new_z)
+		var/turf/location = get_turf(src)
+		new_z = location
 	if (registered_z != new_z)
 		if (registered_z)
 			SSmobs.mob_living_by_zlevel[registered_z] -= src
