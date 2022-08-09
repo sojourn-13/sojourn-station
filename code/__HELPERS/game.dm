@@ -47,6 +47,24 @@
 
 	return heard
 
+/proc/hear_movables(range, atom/source)
+
+	. = list()
+
+	var/lum = source.luminosity
+	source.luminosity = world.view
+	for (var/atom/movable/AM in view(range+3, source))
+		if ((get_dist(AM, source) > range))
+			if (ishuman(AM))
+				var/mob/living/carbon/human/H = AM
+				if(!H.stats.getPerk(PERK_EAR_OF_QUICKSILVER))
+					continue
+				. += H
+		else
+			. += AM
+
+	source.luminosity = lum
+
 /proc/circlerange(center=usr, radius=3)
 
 	var/turf/centerturf = get_turf(center)
