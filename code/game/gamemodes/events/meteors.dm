@@ -194,7 +194,7 @@ disabled
 	var/obj/effect/meteor/M = new Me(pickedstart)
 	M.dest = pickedgoal
 	spawn(0)
-		walk_towards(M, M.dest, 1)
+		SSmove_manager.home_onto(M, M.dest, 1)
 	return
 
 /proc/spaceDebrisStartLoc(startSide, Z)
@@ -347,7 +347,7 @@ disabled
 		qdel(src)
 
 /obj/effect/meteor/Destroy()
-	walk(src,0) //this cancels the walk_towards() proc
+	SSmove_manager.stop_looping(src) //this cancels the walk_towards() proc
 	return ..()
 
 /obj/effect/meteor/New()

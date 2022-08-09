@@ -116,6 +116,13 @@
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
+	P = new()
+	P.name = "Instructions; Bullet Fabrication Operation"
+	P.info = "<br>An instructional guide to the usage of our newly aquired bullet fabricator. <br> - Do <b>NOT</b> stick your hand in it. <br> - Do <b>NOT</b> stick your head in it. <br> - Do <b>NOT</b> insert wood into it. <br> - The <b>better</b> quality of the resources inserted, the more ammo you can print; including refined scrap."
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
 /obj/structure/noticeboard/blackshield
 	name = "Blackshield bulletin board"
 	desc = "A board containing vital notices and official memos for the Blackshield Militia"

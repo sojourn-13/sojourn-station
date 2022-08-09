@@ -15,13 +15,15 @@
 	var/mob/pulledby = null
 	var/item_state = null // Used to specify the item state for the on-mob over-lays.
 	var/inertia_dir = 0
+	///Holds information about any movement loops currently running/waiting to run on the movable. Lazy, will be null if nothing's going on
+	var/datum/movement_packet/move_packet
 	var/can_anchor = TRUE
 	var/cant_be_pulled = FALSE //Used for things that cant be anchored, but also shouldnt be pullable
 
-	/// Used in walk_to_wrapper. Set to world.time whenever a walk is called that uses temporary_walk = TRUE. Prevents walks that dont respect the override from conflicting with eachother.
+	/// Used in SSmove_manager.move_to. Set to world.time whenever a walk is called that uses temporary_walk = TRUE. Prevents walks that dont respect the override from conflicting with eachother.
 	var/walk_to_initial_time = 0
 
-	/// Used in walk_to_wrapper. If something with an override is called, it will set it to world.time + the value of override in the proc, and any walks that respect the override after will return until world.time is more than the var.
+	/// Used in SSmove_manager.move_to. If something with an override is called, it will set it to world.time + the value of override in the proc, and any walks that respect the override after will return until world.time is more than the var.
 	var/walk_override_timer = 0
 
 	//spawn_values
@@ -30,7 +32,19 @@
 	var/spawn_tags
 
 /atom/movable/Destroy()
+
+	var/turf/T = loc
+	if(opacity && istype(T))
+		T.reconsider_lights()
+
+	if(move_packet)
+		SSmove_manager.stop_looping(src) // not 1:1 with tg movess, niko todo: replace
+		if(!QDELETED(move_packet))
+			qdel(move_packet)
+		move_packet = null
+
 	. = ..()
+
 	for(var/atom/movable/AM in contents)
 		qdel(AM)
 
@@ -401,6 +415,9 @@
 		AM.onTransitZ(old_z,new_z)*/
 
 /mob/living/proc/update_z(new_z) // 1+ to register, null to unregister
+	if (!new_z)
+		var/turf/location = get_turf(src)
+		new_z = location?.z
 	if (registered_z != new_z)
 		if (registered_z)
 			SSmobs.mob_living_by_zlevel[registered_z] -= src

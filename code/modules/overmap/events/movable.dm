@@ -83,7 +83,7 @@
 
 /obj/effect/overmap_event/movable/Process()
 	if(movable == 1)
-		walk(src,moving_vector,170,0)
+		SSmove_manager.move(src,moving_vector,170,0)
 		//handle_wraparound()
 
 /obj/effect/overmap_event/movable/Initialize()

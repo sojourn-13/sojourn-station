@@ -3,6 +3,10 @@
 	desc = "Language used by the descendants of Europe."
 	colour = "german"
 	key = "q"
+	partial_understanding = list(
+		LANGUAGE_ESPERANTO = 20,
+		LANGUAGE_COMMON = 25
+	)
 	space_chance = 80
 	shorthand = "GE"
 	syllables = list("Frau", "Mann", "Waffe", "Schiff", "Bombe", "Explosion", "Grenze", "Strasse", "Halle", "Pistole", "Gewehr", "Uniform", "Kind", "Arzt", \

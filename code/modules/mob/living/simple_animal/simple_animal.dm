@@ -637,7 +637,8 @@
 				foodtarget = FALSE
 				stop_automated_movement = FALSE
 			if(!movement_target || !(movement_target.loc in oview(src, 7)) )
-				walk_to_wrapper(src,0)
+				if (stat != DEAD)
+					SSmove_manager.move_to(src,0)
 				movement_target = null
 				foodtarget = FALSE
 				stop_automated_movement = FALSE
@@ -668,9 +669,10 @@
 				stop_automated_movement = TRUE
 
 				if (istype(movement_target.loc, /turf))
-					walk_to_wrapper(src, movement_target, 0, seek_move_delay)//Stand ontop of food
-				else
-					walk_to_wrapper(src,movement_target.loc,1, seek_move_delay)//Don't stand ontop of people
+					if (stat != DEAD)
+						SSmove_manager.move_to(src, movement_target, 0, seek_move_delay)//Stand ontop of food
+				else if (stat != DEAD)
+					SSmove_manager.move_to(src,movement_target.loc,1, seek_move_delay)//Don't stand ontop of people
 
 
 

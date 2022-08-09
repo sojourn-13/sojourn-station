@@ -17,12 +17,12 @@
 
 	GLOB.superior_animal_list += src
 
-	for(var/language in known_languages)
+	for(var/language as anything in known_languages)
 		add_language(language)
 
 /mob/living/carbon/superior_animal/Initialize(var/mapload)
 	if (get_stat_modifier)
-		for (var/key in allowed_stat_modifiers)
+		for (var/key as anything in allowed_stat_modifiers)
 			var/datum/stat_modifier/mod = key
 			if (initial(mod.stattags) & NOTHING_STATTAG)
 				continue
@@ -156,7 +156,7 @@
 				var/index = possible_locations.len
 				return possible_locations[index] //return the last entry in the list
 
-	for (var/turf/possible_location in possible_locations) // iterate through each turf we are considering
+	for (var/turf/possible_location as anything in possible_locations) // iterate through each turf we are considering
 		if (density == TRUE) // if the turf is dense, aka we cant walk through it...
 			possible_locations -= possible_location // ...no way they're in it
 			continue
@@ -326,7 +326,8 @@
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE) //lets get a little closer than our optimal range
+		if (stat != DEAD)
+			SSmove_manager.move_to(src, targetted_mob, calculated_walk, move_to_delay) //lets get a little closer than our optimal range
 
 		if (delayed > 0)
 			if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
@@ -340,7 +341,8 @@
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		walk_to_wrapper(src, targetted, 1, move_to_delay, deathcheck = TRUE)
+		if (stat != DEAD)
+			SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 		moved = 1
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings, can_see, ran_see_check)
 
@@ -374,7 +376,7 @@
 			lost_sight = FALSE
 
 		if (!lost_sight) // if we've, in a previous iteration of this proc, lost sight of our target, lets not update the location of the target
-			target_location = WEAKREF(targetted_mob.loc) //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
+			target_location = WEAKREF(get_turf(targetted_mob)) //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
 		target_location_resolved = (target_location?.resolve())
 		if (retarget) // do we randomly retarget?
 			var/retarget_prioritize = retarget_prioritize_current //local var so that we can make temporary changes
@@ -435,7 +437,8 @@
 			return
 		if(!ranged)
 			prepareAttackOnTarget()
-			walk_to_wrapper(src, targetted, 1, move_to_delay, deathcheck = TRUE)
+			if (stat != DEAD)
+				SSmove_manager.move_to(src, targetted, 1, move_to_delay)
 		else if(ranged)
 
 			var/distance = (get_dist(src, targetted))
@@ -467,11 +470,13 @@
 					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
 
 			if (advancement_timer <= world.time)  //we dont want to prematurely end a advancing walk
-				walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE) //we still want to reset our walk
+				if (stat != DEAD)
+					SSmove_manager.move_to(src, targetted, calculated_walk, move_to_delay) //we still want to reset our walk
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 	else
 		prepareAttackOnTarget()
-		walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
+		if (stat != DEAD)
+			SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 
 /mob/living/carbon/superior_animal/proc/get_turf_at_edge_of_viewRange(var/atom/target, view_range = viewRange)
 	var/turf/viewrange_edge = get_turf(src)
@@ -589,9 +594,10 @@
 
 			if (following)
 				if (!target_mob) // Are we following someone and not attacking something?
-					walk_to_wrapper(src, following, follow_distance, move_to_delay, deathcheck = TRUE) // Follow the mob referenced in 'following' and stand almost next to them.
+					if (stat != DEAD)
+						SSmove_manager.move_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
 			else if (!target_mob && last_followed)
-				walk_to_wrapper(src, 0)
+				SSmove_manager.stop_looping(src)
 				last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
 
 	if(life_cycles_before_sleep)
@@ -710,7 +716,8 @@
 		advance_steps = (distance - advancement)
 		if (advance_steps <= 0)
 			advance_steps = 1 //1 is minimum
-		walk_to_wrapper(src, target, advance_steps, move_to_delay, deathcheck = TRUE) //advance forward, forcing us to pathfind
+		if (stat != DEAD)
+			SSmove_manager.move_to(src, target, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
 		advancement_timer = (world.time += advancement_increment) // we dont want this overridden instantly
 
 /mob/living/carbon/superior_animal/CanPass(atom/mover)

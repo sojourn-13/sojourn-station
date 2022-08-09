@@ -1,7 +1,10 @@
+#define isdatum(D) (istype(D, /datum))
 
 #define isweakref(D) (istype(D, /datum/weakref))
 
 #define islist(A) istype(A, /list)
+
+#define isatom(A) istype(A, /atom)
 
 #define ismob(A) istype(A, /mob)
 

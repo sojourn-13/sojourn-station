@@ -5,6 +5,10 @@
 	colour = "serbian"
 	key = "x"
 	space_chance = 80
+	partial_understanding = list(
+		LANGUAGE_CYRILLIC = 60,
+		LANGUAGE_ESPERANTO = 20
+	)
 	shorthand = "SB"
 	syllables = list("zena", "rob", "macka", "tvoj", "ruke", "jebote", "placenik", "tsatsh", "da", "zivim", "cich", "jovan", "be", "ot", \
 					 "ja", "tamo", "moj", "za", "gdje", "su", "brodove", "noge", "da", "ne", "svemirskog", "pochemu", "zasto","ljubav", \
@@ -268,7 +272,7 @@
 "Cubrilovic",
 "Cvijic",
 "Cvijovic",
-"–ajic",
+"ƒêajic",
 "Damjenic",
 "Davidovic",
 "Djapic",
@@ -288,7 +292,7 @@
 "Gracanin",
 "Grba",
 "Grlic",
-"Grmuöa",
+"Grmu≈°a",
 "Grol",
 "Grujicic",
 "Horvat",
@@ -302,7 +306,7 @@
 "Jerkov",
 "Jigovic",
 "Jorgic",
-"Karadûic",
+"Karad≈æic",
 "Kadijevic",
 "Kajosevic",
 "Kalicanin",

@@ -43,6 +43,7 @@
 				/obj/item/flame/lighter/zippo/royal = 4,
 				/obj/item/flame/lighter/zippo/gonzo = 4,
 				/obj/item/flame/lighter/zippo/bullet = 4,
+				/obj/item/flame/lighter/zippo/brass = 3,
 				/obj/item/flame/lighter/zippo/absolutism = 4)
 	contraband = list(/obj/item/flame/lighter/zippo/communist = 2,
 				/obj/item/flame/lighter/zippo/excelsior = 4,
@@ -81,6 +82,8 @@
 				/obj/item/flame/lighter/zippo/gonzo = 50,
 				/obj/item/flame/lighter/zippo/bullet = 50,
 				/obj/item/flame/lighter/zippo/communist = 250, // Idiot tax, but still affordable
+				/obj/item/flame/lighter/zippo/brass = 55,
+				/obj/item/flame/lighter/zippo/absolutism = 50,
 				/obj/item/storage/fancy/cigar = 250,
 				/obj/item/clothing/mask/vape = 150,
 				/obj/item/clothing/mask/smokable/pipe = 75,

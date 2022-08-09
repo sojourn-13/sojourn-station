@@ -102,7 +102,7 @@
 
 	anger_modifier = CLAMP(((maxHealth - health)/50),0,20)
 	ranged_cooldown = world.time + 30
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 	telegraph()
 	icon_state = "onestar_boss"
 	if(prob(35))
