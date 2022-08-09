@@ -186,6 +186,7 @@
 			buckled_mob.forceMove(destination, special_event, (glide_size_override ? glide_size_override : glide_size))
 		else
 			unbuckle_mob()
+			update_icon()
 
 /obj/structure/bed/proc/remove_padding()
 	if(padding_material)
@@ -247,7 +248,7 @@
 		return
 	else
 		usr.visible_message(SPAN_NOTICE("\The [usr] quickly connects \the IV needle to \the [target]!"),
-					SPAN_NOTICE("You quickly hook \the IV bag on \the [src] to \the [target] ."))
+					SPAN_NOTICE("You quickly hook \the IV bag on \the [src] to \the [target]."))
 		iv_attached = TRUE
 		update_icon()
 		START_PROCESSING(SSobj,src)
@@ -374,6 +375,17 @@
 		if(density)
 			iv.pixel_y = 6
 		overlays += iv
+
+/obj/structure/bed/roller/compact/post_buckle_mob(mob/living/M as mob)
+	. = ..()
+	if(M == buckled_mob)
+		set_density(1)
+		icon_state = "adv_up"
+	else
+		set_density(0)
+		if(iv_attached)
+			detach_iv(M, usr)
+		icon_state = "adv_down"
 
 /obj/item/roller
 	name = "roller bed"
