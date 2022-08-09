@@ -300,6 +300,7 @@ default behaviour is:
 /mob/living/proc/setHalLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
+	halloss = amount
 
 /mob/living/proc/getmaxHealth()
 	return maxHealth
