@@ -93,7 +93,7 @@
 	desc = "A Sollex-Pattern hydrogen-plasma cannon, modified to fit on combat exosuits. Unlike its hand-held counter-part, this one doesn't need cooling, as it use the Exosuit's systems for that purpose."
 	icon_state = "hydrogen_cannon"
 	energy_drain = 1000
-	fire_delay = 20
+	fire_cooldown = 25
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_MHYDROGEN = 6, MATERIAL_TRITIUM = 6)
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 7, TECH_PLASMA = 10)
 	projectile = /obj/item/projectile/hydrogen/cannon/max
