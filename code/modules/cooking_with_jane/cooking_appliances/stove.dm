@@ -162,7 +162,7 @@
 /obj/machinery/cooking_with_jane/stove/CtrlClick(var/mob/user, params)
 	if(user.stat || user.restrained() || (!in_range(src, user)))
 		return
-	
+
 	var/input = getInput(params)
 	log_debug("/cooking_with_jane/stove/CtrlClick called on burner [input]")
 	var/choice = alert(user,"Select an action for burner #[input]","Select One:","Set temperature","Set timer","Cancel")
@@ -173,7 +173,7 @@
 			handle_timer(user, input)
 
 //Switch the cooking device on or off
-/obj/machinery/cooking_with_jane/stove/ShiftCtrlClick(var/mob/user, params)
+/obj/machinery/cooking_with_jane/stove/CtrlShiftClick(var/mob/user, params)
 
 	if(user.stat || user.restrained() || (!in_range(src, user)))
 		return
@@ -197,7 +197,7 @@
 	if(timer[input] != 0 && switches[input] == 1)
 		timer_act(user, input)
 
-/obj/machinery/cooking_with_jane/stove/proc/timer_act(user, input)	
+/obj/machinery/cooking_with_jane/stove/proc/timer_act(user, input)
 	timerstamp[input]=world.time
 	var/old_timerstamp = timerstamp[input]
 	spawn(timer[input])

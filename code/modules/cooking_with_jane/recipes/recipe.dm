@@ -137,7 +137,7 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=10, reagent_skip=TRUE),
 
 		//Melt the butter into the pan by cooking it on a stove set to Low for 10 seconds
-		list(CWJ_USE_STOVE_OPTIONAL, J_LOW, 10),
+		list(CWJ_USE_STOVE_OPTIONAL, J_LO, 10),
 		CWJ_END_OPTION_CHAIN,
 
 		//A steak is needed to start the meal.
