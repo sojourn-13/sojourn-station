@@ -53,6 +53,8 @@
 	. = ..()
 	check_shadow()
 
+	update_z()
+
 /mob/living/proc/check_shadow()
 	var/mob/M = src
 	if(isturf(M.loc))
