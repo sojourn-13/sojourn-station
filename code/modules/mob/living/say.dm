@@ -247,10 +247,12 @@ var/list/channel_to_radio_key = new
 			sound_vol *= 0.5 //muffle the sound a bit, so it's like we're actually talking through contact
 		var/falloff = (message_range + round(3 * (chem_effects[CE_SPEECH_VOLUME] ? chem_effects[CE_SPEECH_VOLUME] : 1))) //A wider radius where you're heard, but only quietly. This means you can hear people offscreen.
 		//DO NOT FUCKING CHANGE THIS TO GET_OBJ_OR_MOB_AND_BULLSHIT() -- Hugs and Kisses ~Ccomp
-		var/list/hear_falloff = hear(falloff, T)
+		var/list/hear_falloff = hear_movables(falloff, T)
 
 		for(var/atom/A as anything in hear_falloff)
-			for (var/mob/M in A.contents) //recursive contents would be better functionality for worse performance, pick your poison
+			var/list/recursive_contents_with_self = (A.get_recursive_contents_until(2))
+			recursive_contents_with_self += A
+			for (var/mob/M in recursive_contents_with_self) // stopgap between getting contents and getting full recursive contents
 				if (get_dist(get_turf(M), src) < falloff) //if we're not in the falloff distance
 					listening |= M
 					continue
