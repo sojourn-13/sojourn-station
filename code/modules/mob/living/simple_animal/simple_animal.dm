@@ -205,7 +205,7 @@
 /mob/living/simple_animal/updatehealth()
 	..()
 	activate_ai()
-	if (health <= 0 && stat != DEAD)
+	if (health <= death_threshold && stat != DEAD)
 		death()
 
 /mob/living/simple_animal/examine(mob/user)
@@ -244,7 +244,7 @@
 		if(!.)
 			return FALSE
 
-		if(health <= 0 && stat != DEAD) //So we dont loop every tick
+		if(health <= death_threshold && stat != DEAD) //So we dont loop every tick
 			death()
 			return FALSE
 

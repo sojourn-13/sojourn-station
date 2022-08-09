@@ -91,7 +91,7 @@
 
 /mob/living/carbon/superior_animal/examine(mob/user)
 	..()
-	if (is_dead())
+	if (is_dead(src))
 		to_chat(user, SPAN_DANGER("It is completely motionless, likely dead."))
 	else if (health < maxHealth * 0.10)
 		to_chat(user, SPAN_DANGER("It looks like they are on their last legs!"))
@@ -173,7 +173,7 @@
 
 // Same as breath but with innecesarry code removed and damage tripled. Environment pressure damage moved here since we handle moles.
 
-/mob/living/carbon/superior_animal/proc/handle_cheap_breath(datum/gas_mixture/breath as anything)
+/mob/living/carbon/superior_animal/handle_breath(datum/gas_mixture/breath as anything)
 	var/breath_pressure = (breath.total_moles*R_IDEAL_GAS_EQUATION*breath.temperature)/BREATH_VOLUME
 	var/breath_required = breath_pressure > 15 && (breath_required_type || breath_poison_type)
 	if(!breath_required) // 15 KPA Minimum
@@ -181,7 +181,7 @@
 	adjustOxyLoss(breath.gas[breath_required_type] ? 0 : ((((breath.gas[breath_required_type] / breath.total_moles) * breath_pressure) < min_breath_required_type) ? 0 : 6))
 	adjustToxLoss(breath.gas[breath_poison_type] ? 0 : ((((breath.gas[breath_poison_type] / breath.total_moles) * breath_pressure) < min_breath_poison_type) ? 0 : 6))
 
-/mob/living/carbon/superior_animal/proc/handle_cheap_environment(datum/gas_mixture/environment as anything)
+/mob/living/carbon/superior_animal/handle_environment(datum/gas_mixture/environment as anything)
 	var/pressure = environment.return_pressure()
 	var/enviro_damage = (bodytemperature < min_bodytemperature) || (pressure < min_air_pressure) || (pressure > max_air_pressure)
 	if(enviro_damage) // its like this to avoid extra processing further below without using goto
@@ -522,9 +522,8 @@
 
 /mob/living/carbon/superior_animal/proc/handle_cheap_regular_status_updates()
 	health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
-	if(health <= 0 && stat != DEAD)
+	if(health <= death_threshold && stat != DEAD)
 		death()
-		// STOP_PROCESSING(SSmobs, src) This is handled in Superior animal Life().
 		blinded = TRUE
 		silent = FALSE
 		return TRUE
@@ -571,14 +570,13 @@
 		if(!never_stimulate_air)
 			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
 			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
-			handle_cheap_breath(breath)
-			handle_cheap_environment(environment)
+			handle_breath(breath)
+			handle_environment(environment)
 			//Fire handling , not passing the whole list because thats unefficient.
 			handle_fire(environment.gas["oxygen"], loc)
 		updateicon()
 		ticks_processed = 0
-	if(handle_cheap_regular_status_updates()) // They have died after all of this, do not scan or do not handle AI anymore.
-		return PROCESS_KILL
+	handle_cheap_regular_status_updates()
 
 	if (can_burrow && bad_environment)
 		evacuate()

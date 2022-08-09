@@ -176,7 +176,7 @@ GLOBAL_LIST_EMPTY(faction_types)
 /proc/get_dead_antags_count(var/a_type)
 	var/count = 0
 	for(var/datum/antagonist/antag in GLOB.current_antags)
-		if((!a_type || antag.id == a_type) && antag.is_dead())
+		if((!a_type || antag.id == a_type) && antag.isdead())
 			count++
 	return count
 

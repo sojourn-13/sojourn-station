@@ -15,6 +15,8 @@
 
 	var/eating_time = 900
 
+	var/process_reagents_while_dead
+
 	/// Does this mob advance if they can't see their target?
 	var/advance_if_cant_see = FALSE
 	/// Chance to fire a projectile if it would hit a friendly.

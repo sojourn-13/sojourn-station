@@ -441,7 +441,7 @@
 
 	var/mob/M = CI.wearer
 
-	if(ishuman(M) && M.is_dead())
+	if(ishuman(M) && is_dead(M))
 		if(user.species?.reagent_tag != IS_SYNTHETIC)
 			if(user.nutrition >= nutri_cost)
 				user.nutrition -= nutri_cost
@@ -456,7 +456,7 @@
 		CI.uninstall()
 		return TRUE
 
-	else if(ismob(M) && M.is_dead()) //Cruciforms can't normally be placed on non-humans, but this is still here for sanity purposes.
+	else if(ismob(M) && is_dead(M)) //Cruciforms can't normally be placed on non-humans, but this is still here for sanity purposes.
 		CI.name = "[M]'s Cruciform"
 		CI.uninstall()
 		return TRUE

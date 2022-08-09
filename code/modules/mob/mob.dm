@@ -671,11 +671,6 @@
 /mob/proc/is_active()
 	return (0 >= usr.stat)
 
-/mob/proc/is_dead()
-	if (stat == DEAD) //attempted fix to this proc
-		return TRUE
-	return FALSE
-
 /mob/proc/is_mechanical()
 	if(mind && (mind.assigned_role == "Robot" || mind.assigned_role == "AI"))
 		return 1

@@ -371,7 +371,7 @@
 	if(affecting.lying)	//putting in lying for the victim will cause the assailant to expend more effort
 		slowdown += 1
 
-	if(affecting.is_dead() || affecting.incapacitated() )	// victim can't resist if he is dead or stunned.
+	if(is_dead(affecting) || affecting.incapacitated() )	// victim can't resist if he is dead or stunned.
 		slowdown *= 0.1
 	else
 		slowdown += max(0, -0.05 * difference_stat)			// Avoids negative values from making the grabber going supersanic

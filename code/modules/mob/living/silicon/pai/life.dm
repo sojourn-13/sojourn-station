@@ -25,7 +25,7 @@
 
 	handle_statuses()
 
-	if(health <= 0)
+	if(health <= death_threshold)
 		death(null,"gives one shrill beep before falling lifeless.")
 
 /mob/living/silicon/pai/updatehealth()

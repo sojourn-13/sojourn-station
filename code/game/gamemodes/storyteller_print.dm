@@ -111,7 +111,7 @@
 	if (GLOB.current_antags.len)
 		for(var/datum/antagonist/A in GLOB.current_antags)
 			var/act = "<font color=red>DEAD</font>"
-			if(!A.is_dead())
+			if(!A.isdead())
 				if(!A.is_active())
 					act = "<font color=silver>AFK</font>"
 				else

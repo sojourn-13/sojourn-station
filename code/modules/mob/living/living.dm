@@ -172,6 +172,15 @@ default behaviour is:
 	else
 		health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
 
+/mob/living/proc/adjustHealth(amount)
+	if(status_flags & GODMODE)
+		health = 100
+		stat = CONSCIOUS
+		return
+	else
+		health -= amount
+		if (health <= death_threshold)
+			death()
 
 //This proc is used for mobs which are affected by pressure to calculate the amount of pressure that actually
 //affects them once clothing is factored in. ~Errorage
@@ -230,6 +239,7 @@ default behaviour is:
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	bruteloss = min(max(bruteloss + amount, 0),(maxHealth*2))
+	adjustHealth(bruteloss)
 
 /mob/living/proc/getOxyLoss()
 	return oxyloss

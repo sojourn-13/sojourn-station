@@ -194,7 +194,7 @@
 		updatehealth()
 		handle_stunned()
 		handle_weakened()
-		if(health <= 0)
+		if(health <= death_threshold)
 			blinded = TRUE
 			silent = FALSE
 			return TRUE
@@ -243,7 +243,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(amount)
 /mob/living/carbon/superior_animal/updatehealth()
 	. = ..() //health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
 	activate_ai()
-	if (health <= 0 && stat != DEAD) //stops constantly procing death
+	if (health <= death_threshold && stat != DEAD) //stops constantly procing death
 		death()
 
 /mob/living/carbon/superior_animal/gib(anim = icon_gib)
@@ -305,76 +305,11 @@ mob/living/carbon/superior_animal/adjustToxLoss(amount)
 /mob/living/carbon/superior_animal/get_heat_protection(temperature)
 	return heat_protection
 
-/mob/living/carbon/superior_animal/handle_environment(datum/gas_mixture/environment)
-	bad_environment = FALSE
-	if(!environment)
-		return
-
-	if (!contaminant_immunity)
-		for(var/g in environment.gas)
-			if(gas_data.flags[g] & XGM_GAS_CONTAMINANT && environment.gas[g] > gas_data.overlay_limit[g] + 1)
-				bad_environment = TRUE
-				pl_effects()
-				break
-
-	if(istype(get_turf(src), /turf/space))
-		if (bodytemperature > 1)
-			bodytemperature = max(1,bodytemperature - 10*(1-get_cold_protection(0)))
-
-		if (min_air_pressure > 0)
-			bad_environment = TRUE
-			adjustBruteLoss(2)
-	else
-		var/loc_temp = T0C
-		var/loc_pressure = 0
-		if(istype(loc, /obj/mecha))
-			var/obj/mecha/M = loc
-			loc_temp =  M.return_temperature()
-			loc_pressure =  M.return_pressure()
-		else if(istype(loc, /obj/machinery/atmospherics/unary/cryo_cell))
-			var/obj/machinery/atmospherics/unary/cryo_cell/M = loc
-			loc_temp = M.air_contents.temperature
-			loc_pressure = M.air_contents.return_pressure()
-		else
-			loc_temp = environment.temperature
-			loc_pressure = environment.return_pressure()
-
-		//Body temperature adjusts depending on surrounding atmosphere based on your thermal protection (convection)
-		var/temp_adj = 0
-		if(loc_temp < bodytemperature) //Place is colder than we are
-			var/thermal_protection = get_cold_protection(loc_temp) //0 to 1 value, which corresponds to the percentage of protection
-			if(thermal_protection < 1)
-				temp_adj = (1-thermal_protection) * ((loc_temp - bodytemperature) / BODYTEMP_COLD_DIVISOR) //this will be negative
-		else if (loc_temp > bodytemperature) //Place is hotter than we are
-			var/thermal_protection = get_heat_protection(loc_temp) //0 to 1 value, which corresponds to the percentage of protection
-			if(thermal_protection < 1)
-				temp_adj = (1-thermal_protection) * ((loc_temp - bodytemperature) / BODYTEMP_HEAT_DIVISOR)
-
-		var/relative_density = environment.total_moles / MOLES_CELLSTANDARD
-		bodytemperature += between(BODYTEMP_COOLING_MAX, temp_adj*relative_density, BODYTEMP_HEATING_MAX)
-
-		if ((loc_pressure < min_air_pressure) || (loc_pressure > max_air_pressure))
-			bad_environment = TRUE
-			adjustBruteLoss(2)
-
-	if (overkill_dust && (getFireLoss() >= maxHealth*2))
-		if (bodytemperature >= max_bodytemperature*1.5)
-			dust()
-			return
-
-	if ((bodytemperature > max_bodytemperature) || (bodytemperature < min_bodytemperature))
-		bad_environment = TRUE
-		adjustFireLoss(5)
-		updatehealth()
-
-
-	//If we're unable to breathe, lets get out of here
-	if (can_burrow && !stat && bad_environment)
-		evacuate()
-
-/mob/living/carbon/superior_animal/handle_breath(datum/gas_mixture/breath)
+/*/mob/living/carbon/superior_animal/handle_breath(datum/gas_mixture/breath)
 	if(status_flags & GODMODE)
 		return
+
+	if (is_dead(src))
 
 	failed_last_breath = FALSE
 
@@ -401,7 +336,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(amount)
 		if(toxins_pp > min_breath_poison_type)
 			adjustToxLoss(2)
 
-	return TRUE
+	return TRUE */
 
 //Disables roaches/spiders/xenos ect form mess with atmo to prevent lag of that kind
 /mob/living/carbon/superior_animal/handle_post_breath(datum/gas_mixture/breath)
