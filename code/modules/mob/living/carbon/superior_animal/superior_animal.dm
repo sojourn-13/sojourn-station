@@ -528,7 +528,7 @@
 		if(!weakened)
 			update_icons()
 
-/mob/living/carbon/superior_animal/proc/handle_cheap_regular_status_updates()
+/mob/living/carbon/superior_animal/handle_regular_status_updates()
 	health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
 	if(health <= death_threshold && stat != DEAD)
 		death()
@@ -568,15 +568,17 @@
 		handle_chemicals_in_body()
 
 	if(!(ticks_processed%3))
-		handle_status_effects()
-		update_lying_buckled_and_verb_status()
-		if(!never_stimulate_air)
-			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
-			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
-			handle_breath(breath)
-			handle_environment(environment)
-			//Fire handling , not passing the whole list because thats unefficient.
-			handle_fire(environment.gas["oxygen"], loc)
+		if (!AI_inactive)
+			handle_regular_status_updates()
+			handle_status_effects()
+			update_lying_buckled_and_verb_status()
+			if(!never_stimulate_air)
+				var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
+				var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
+				handle_breath(breath)
+				handle_environment(environment)
+				//Fire handling , not passing the whole list because thats unefficient.
+				handle_fire(environment.gas["oxygen"], loc)
 		ticks_processed = 0
 
 	if (can_burrow && bad_environment)

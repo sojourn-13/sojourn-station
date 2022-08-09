@@ -347,8 +347,9 @@ mob/living/carbon/superior_animal/adjustToxLoss(amount)
 	//	loc.assume_air(breath) //by default, exhale
 
 /mob/living/carbon/superior_animal/handle_fire(flammable_gas, turf/location)
-	if(never_stimulate_air && fire_stacks > 0)
-		ExtinguishMob() //We dont simulate air thus we dont simulate fire
+	if(never_stimulate_air)
+		if (fire_stacks > 0)
+			ExtinguishMob() //We dont simulate air thus we dont simulate fire
 		return
 
 	// if its lower than 0 , just bring it back to 0

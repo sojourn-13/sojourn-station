@@ -65,15 +65,15 @@
 	health = 35
 
 /mob/living/carbon/superior_animal/vox/hider/UnarmedAttack()
-	..()
+	. = ..()
 	alpha = 255
 
 /mob/living/carbon/superior_animal/vox/hider/findTarget()
-	..()
+	. = ..()
 	alpha = 50
 
 /mob/living/carbon/superior_animal/vox/hider/death()
-	..()
+	. = ..()
 	alpha = 255
 
 /mob/living/carbon/superior_animal/vox/ashen

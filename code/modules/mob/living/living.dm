@@ -172,21 +172,10 @@ default behaviour is:
 	else
 		health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
 
-/mob/living/proc/adjustHealth(amount)
-	if(status_flags & GODMODE)
-		health = 100
-		stat = CONSCIOUS
-		return
-	else
-		health -= amount
-		if (health <= death_threshold)
-			death()
-
 //This proc is used for mobs which are affected by pressure to calculate the amount of pressure that actually
 //affects them once clothing is factored in. ~Errorage
 /mob/living/proc/calculate_affecting_pressure(var/pressure)
 	return
-
 
 //sort of a legacy burn method for /electrocute, /shock, and the e_chair
 /mob/living/proc/burn_skin(burn_amount)
@@ -238,10 +227,7 @@ default behaviour is:
 /mob/living/proc/adjustBruteLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
-	var/new_value = min(max(bruteloss + amount, 0),(maxHealth*2))
-	var/change = (new_value - bruteloss)
-	bruteloss = new_value
-	adjustHealth(change)
+	bruteloss = min(max(bruteloss + amount, 0),(maxHealth*2))
 
 /mob/living/proc/getOxyLoss()
 	return oxyloss
@@ -250,14 +236,11 @@ default behaviour is:
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	oxyloss = min(max(oxyloss + amount, 0),(maxHealth*2))
-	adjustHealth(amount)
 
 /mob/living/proc/setOxyLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
-	var/change = INVERT_SIGN(oxyloss - amount)
 	oxyloss = amount
-	adjustHealth(change)
 
 /mob/living/proc/getToxLoss()
 	return toxloss
@@ -265,17 +248,12 @@ default behaviour is:
 /mob/living/proc/adjustToxLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
-	var/new_value = min(max(toxloss + amount, 0),(maxHealth*2))
-	var/change = (new_value - toxloss)
-	toxloss = new_value
-	adjustHealth(change)
+	toxloss = min(max(toxloss + amount, 0),(maxHealth*2))
 
 /mob/living/proc/setToxLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
-	var/change = INVERT_SIGN(toxloss - amount)
 	toxloss = amount
-	adjustHealth(change)
 
 /mob/living/proc/getFireLoss()
 	return fireloss
@@ -283,10 +261,7 @@ default behaviour is:
 /mob/living/proc/adjustFireLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
-	var/new_value = min(max(fireloss + amount, 0),(maxHealth*2))
-	var/change = (new_value - fireloss)
-	fireloss = new_value
-	adjustHealth(change)
+	fireloss = min(max(fireloss + amount, 0),(maxHealth*2))
 
 /mob/living/proc/getCloneLoss()
 	return cloneloss
@@ -294,16 +269,11 @@ default behaviour is:
 /mob/living/proc/adjustCloneLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
-	var/new_value = min(max(fireloss + amount, 0),(maxHealth*2))
-	var/change = (new_value - fireloss)
-	fireloss = new_value
-	adjustHealth(change)
+	cloneloss = min(max(cloneloss + amount, 0),(maxHealth*2))
 
 /mob/living/proc/setCloneLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
-	var/change = INVERT_SIGN(cloneloss - amount)
-	adjustHealth(change)
 	cloneloss = amount
 
 /mob/living/proc/getBrainLoss()
@@ -325,17 +295,11 @@ default behaviour is:
 /mob/living/proc/adjustHalLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
-	var/new_value = min(max(halloss + amount, 0),(maxHealth*2))
-	var/change = (new_value - halloss)
-	halloss = new_value
-	adjustHealth(change)
+	halloss = min(max(halloss + amount, 0),(maxHealth*2))
 
 /mob/living/proc/setHalLoss(var/amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
-	var/change = INVERT_SIGN(halloss - amount)
-	adjustHealth(change)
-	halloss = amount
 
 /mob/living/proc/getmaxHealth()
 	return maxHealth
