@@ -3,7 +3,7 @@
 
 	This needs more thinking out, but I might as well.
 */
-var/const/tk_maxrange = 11
+var/const/tk_maxrange = 7 //Do not expand it past this unless you want players abusing the range.
 
 /*
 	Telekinetic attack:
