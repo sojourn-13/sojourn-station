@@ -874,11 +874,21 @@ its easier to just keep the beam vertical.
 
 
 /atom/proc/get_recursive_contents()
-	var/list/result = list()
-	for (var/atom/a in contents)
-		result += a
-		result |= a.get_recursive_contents()
-	return result
+	. = list()
+	for (var/atom/a as anything in contents)
+		. += a
+		. |= a.get_recursive_contents()
+
+/atom/proc/get_recursive_contents_until(limit = INFINITY, current_recursion = 0)
+	if (limit <= current_recursion)
+		return
+	. = list()
+	current_recursion++
+	for (var/atom/a as anything in contents)
+		. += a
+		var/recursive_contents = a.get_recursive_contents_until(limit, current_recursion)
+		if (!isnull(recursive_contents))
+			. |= recursive_contents
 
 /atom/proc/AllowDrop()
 	return FALSE

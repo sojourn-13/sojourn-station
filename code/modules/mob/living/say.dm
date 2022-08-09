@@ -247,29 +247,25 @@ var/list/channel_to_radio_key = new
 			sound_vol *= 0.5 //muffle the sound a bit, so it's like we're actually talking through contact
 		var/falloff = (message_range + round(3 * (chem_effects[CE_SPEECH_VOLUME] ? chem_effects[CE_SPEECH_VOLUME] : 1))) //A wider radius where you're heard, but only quietly. This means you can hear people offscreen.
 		//DO NOT FUCKING CHANGE THIS TO GET_OBJ_OR_MOB_AND_BULLSHIT() -- Hugs and Kisses ~Ccomp
-		var/list/hear = hear(message_range, T)
-		var/list/hear_falloff = hear(falloff, T)
+		var/list/hear_falloff = hear_movables(falloff, T)
 
-		for(var/mob/M as anything in SSmobs.mob_living_by_zlevel[loc.z])
-			if(M.locs.len && (M.locs[1] in hear))
-				listening |= M
-				continue //To avoid seeing BOTH normal message and quiet message
-			else if(M.locs.len && (M.locs[1] in hear_falloff))
-				listening_falloff |= M
+		for(var/atom/movable/AM as anything in hear_falloff)
+			var/list/recursive_contents_with_self = (AM.get_recursive_contents_until(2))
+			recursive_contents_with_self += AM
+			for (var/mob/M in recursive_contents_with_self) // stopgap between getting contents and getting full recursive contents
+				if (get_dist(get_turf(M), src) < falloff) //if we're not in the falloff distance
+					listening |= M
+					continue
+				else //we are in the falloff radius
+					listening_falloff |= M
+			if (isobj(AM) && (AM in GLOB.hearing_objects))
+				listening_obj |= AM
 
 		for (var/mob/M as anything in SSmobs.ghost_list) // too scared to make a combined list
 			if(M.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH)
 				listening |= M
+				listening_falloff &= ~M
 				continue
-			if(M.locs.len && (M.locs[1] in hear))
-				listening |= M
-				continue //To avoid seeing BOTH normal message and quiet message
-			else if(M.locs.len && (M.locs[1] in hear_falloff))
-				listening_falloff |= M
-
-		for(var/obj as anything in GLOB.hearing_objects)
-			if(get_turf(obj) in hear)
-				listening_obj |= obj
 
 	var/speech_bubble_test = say_test(message)
 	var/image/speech_bubble = image('icons/mob/talk.dmi', src, "h[speech_bubble_test]")
