@@ -22,21 +22,21 @@
 		available_chemicals |= list("polystem" = "Polystem")
 
 	if(prob(50))
-		available_chemicals |= pick(list(list("bicaridine" = "Bicaridine"), list("toxin" = "Bicaridone"), list("mold" = "Bicarizine")))
+		available_chemicals |= pick(list(list("bicaridine" = "Bicaridine"), list("toxin" = "Bicaridone"), list("oil" = "Bicarizine")))
 	if(prob(50))
-		available_chemicals |= pick(list(list("dermaline" = "Dermaline"), list("toxin" = "Dermazine"), list("mold" = "Dermalyne")))
+		available_chemicals |= pick(list(list("dermaline" = "Dermaline"), list("toxin" = "Dermazine"), list("oil" = "Dermalyne")))
 	if(prob(50))
-		available_chemicals |= pick(list(list("tramadol" = "Tramadol"), list("toxin" = "Tramadone"), list("mold" = "Tramamol")))
+		available_chemicals |= pick(list(list("tramadol" = "Tramadol"), list("toxin" = "Tramadone"), list("oil" = "Tramamol")))
 	if(prob(50))
-		available_chemicals |= pick(list(list("hyronalin" = "Hyronalin"), list("toxin" = "Hyronaline"), list("mold" = "Hyronalyne")))
+		available_chemicals |= pick(list(list("hyronalin" = "Hyronalin"), list("toxin" = "Hyronaline"), list("oil" = "Hyronalyne")))
 
 	if(prob(25))
-		available_chemicals |= pick(list(list("oxycodone" = "Oxycodone"), list("toxin" = "Oxycodol"), list("mold" = "Oxycodine")))
+		available_chemicals |= pick(list(list("oxycodone" = "Oxycodone"), list("toxin" = "Oxycodol"), list("oil" = "Oxycodine")))
 
 	if(prob(5))
-		available_chemicals |= pick(list(list("meralyne" = "Meralyne"), list("toxin" = "Meraline"), list("mold" = "Meradine")))
+		available_chemicals |= pick(list(list("meralyne" = "Meralyne"), list("toxin" = "Meraline"), list("oil" = "Meradine")))
 	if(prob(5))
-		available_chemicals |= pick(list(list("rezadone" = "Rezadone"), list("toxin" = "Rezadine"), list("mold" = "Rezaline")))
+		available_chemicals |= pick(list(list("rezadone" = "Rezadone"), list("toxin" = "Rezadine"), list("oil" = "Rezaline")))
 
 	if(prob(1))
 		available_chemicals |= list("ossisine" = "Ossisine")
