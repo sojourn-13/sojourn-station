@@ -565,24 +565,29 @@
 	ticks_processed++
 	handle_regular_hud_updates()
 	if(!reagent_immune)
-		handle_chemicals_in_body()
+		handle_chemicals_in_body() //not under ai_inactive, because of shit like blattedin
 
+	// is this optimal? no. do i like this? no. if i could, would i rip it up and make it better? yes.
+	// but this is eriscode. i cant make a clean change on fucking anything. i am so goddamn tired of trying
+	// to optimize this mess, taht at this point, im willing to just shove all this shit in here. and you know what?
+	// this isnt even that bad. im disgusted by this too, and by god, i beg of whoever the hell is reading this,
+	// MAKE THIS BETTER. we have SO many goddamn superior mobs that this shit NEEDS to be optimal but i am a goddamn
+	// sophmore in college about to get a goddamn job so im pretty tired of workin on this shit.
 	if(!(ticks_processed%3))
 		if (!AI_inactive)
-			handle_regular_status_updates()
 			handle_status_effects()
 			update_lying_buckled_and_verb_status()
 			if(!never_stimulate_air)
 				var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
 				var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
 				handle_breath(breath)
-				handle_environment(environment)
+				handle_environment(environment) //it should be pretty safe to move this out of ai inactive if this causes problems.
+				if (can_burrow && bad_environment)
+					evacuate()
 				//Fire handling , not passing the whole list because thats unefficient.
 				handle_fire(environment.gas["oxygen"], loc)
+		handle_regular_status_updates() // we should probably still do this even if we're dead or something
 		ticks_processed = 0
-
-	if (can_burrow && bad_environment)
-		evacuate()
 
 	if (!weakened)
 
