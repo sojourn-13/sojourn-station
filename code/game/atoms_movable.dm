@@ -79,7 +79,7 @@
 
 /atom/movable/proc/forceMove(atom/destination, var/special_event, glide_size_override=0)
 	if(loc == destination)
-		return FALSE
+		return 0
 
 	if (glide_size_override)
 		set_glide_size(glide_size_override)
@@ -119,7 +119,7 @@
 		if( !isturf(origin) || (get_z(loc) != get_z(origin)) )
 			update_plane()
 
-	return TRUE
+	return 1
 
 
 //called when src is thrown into hit_atom
