@@ -74,13 +74,14 @@
 		else
 			if (icon_living)
 				icon_state = icon_living
-			var/matrix/M = matrix()
-			M.Turn(180)
-			//M.Translate(1,-6)
-			transform = M
-	else if (icon_living)
-		icon_state = icon_living
-
+		var/matrix/M = matrix()
+		M.Turn(90)
+		transform = M
+	else
+		var/matrix/M = matrix()
+		transform = M
+		if (icon_living)
+			icon_state = icon_living
 
 /mob/living/carbon/superior_animal/regenerate_icons()
 	. = ..()
@@ -205,7 +206,7 @@
 /mob/living/carbon/superior_animal/proc/cheap_incapacitation_check() // This works based off constants ,override it if you want it to be dynamic . Based off isincapacited
 	return stunned > 0 || weakened > 0 || resting || pinned.len > 0 || stat || paralysis || sleeping || (status_flags & FAKEDEATH) || buckled() > 0
 
-/mob/living/carbon/superior_animal/update_lying_buckled_and_verb_status()
+/*/mob/living/carbon/superior_animal/update_lying_buckled_and_verb_status()
 
 	if(cheap_incapacitation_check())
 		lying = FALSE
@@ -221,7 +222,7 @@
 		set_density(FALSE)
 	else
 		canmove = TRUE
-		set_density(initial(density))
+		set_density(initial(density))*/
 
 /mob/living/carbon/superior_animal/proc/adjustFiringOffset(var/value)
 
@@ -577,15 +578,16 @@
 		if (!AI_inactive)
 			handle_status_effects()
 			update_lying_buckled_and_verb_status()
-			if(!never_stimulate_air)
-				var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
-				var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
-				handle_breath(breath)
-				handle_environment(environment) //it should be pretty safe to move this out of ai inactive if this causes problems.
-				if (can_burrow && bad_environment)
-					evacuate()
-				//Fire handling , not passing the whole list because thats unefficient.
-				handle_fire(environment.gas["oxygen"], loc)
+		if(!never_stimulate_air)
+			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
+			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
+			handle_breath(breath)
+			handle_environment(environment) //it should be pretty safe to move this out of ai inactive if this causes problems.
+			if (can_burrow && bad_environment)
+				evacuate()
+			//Fire handling , not passing the whole list because thats unefficient.
+			handle_fire(environment.gas["oxygen"], loc)
+		// this one in particular im very unhappy about. every 3 ticks, if a superior mob is dead to something that doesnt directly apply damage, it dies. i hate this.
 		handle_regular_status_updates() // we should probably still do this even if we're dead or something
 		ticks_processed = 0
 

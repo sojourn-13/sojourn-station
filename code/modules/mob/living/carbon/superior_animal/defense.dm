@@ -47,7 +47,9 @@
 				gib()
 
 /mob/living/carbon/superior_animal/update_lying_buckled_and_verb_status()
-	..()
+	lying_prev = lying
+
+	. = ..()
 
 	check_AI_act()
 
