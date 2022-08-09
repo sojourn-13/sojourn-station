@@ -50,3 +50,8 @@ GLOBAL_DATUM_INIT(moved_event, /decl/observ/moved, new)
 	. = ..()
 	if(. && !loc)
 		GLOB.moved_event.raise_event(src, old_loc, null)
+
+/mob/living/forceMove(atom/destination, special_event, glide_size_override)
+	. = ..()
+
+	update_z() //maybe put this on a signal

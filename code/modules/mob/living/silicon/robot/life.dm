@@ -27,11 +27,6 @@
 	for(var/mob/living/L in view(7)) //Sucks to put this here, but otherwise mobs will ignore them
 		L.try_activate_ai()
 
-	var/turf/T = get_turf(src)
-	if(T)
-		if(registered_z != T.z)
-			update_z(T.z)
-
 /mob/living/silicon/robot/proc/clamp_values()
 
 	SetStunned(min(stunned, 30))

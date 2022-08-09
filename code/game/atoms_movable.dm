@@ -79,7 +79,7 @@
 
 /atom/movable/proc/forceMove(atom/destination, var/special_event, glide_size_override=0)
 	if(loc == destination)
-		return 0
+		return FALSE
 
 	if (glide_size_override)
 		set_glide_size(glide_size_override)
@@ -119,7 +119,7 @@
 		if( !isturf(origin) || (get_z(loc) != get_z(origin)) )
 			update_plane()
 
-	return 1
+	return TRUE
 
 
 //called when src is thrown into hit_atom
@@ -414,7 +414,7 @@
 	for(var/atom/movable/AM in src) // Notify contents of Z-transition. This can be overridden IF we know the items contents do not care.
 		AM.onTransitZ(old_z,new_z)*/
 
-/mob/living/proc/update_z(new_z) // 1+ to register, null to unregister
+/mob/living/proc/update_z(new_z = z) // 1+ to register, null to unregister
 	if (registered_z != new_z)
 		if (registered_z)
 			SSmobs.mob_living_by_zlevel[registered_z] -= src
