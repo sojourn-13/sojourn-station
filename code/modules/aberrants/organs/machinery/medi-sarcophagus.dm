@@ -14,7 +14,7 @@
 	if(!preset_direction)
 		set_dir(pick(NORTH, EAST, WEST))
 
-	available_chemicals = list("inaprovaline2" = "Synth-Inaprovaline", "anti_toxin" = "Dylovene")
+	available_chemicals = list("inaprovaline" = "Synth-Inaprovaline", "anti_toxin" = "Dylovene")
 
 	if(prob(75))
 		available_chemicals |= list("paracetamol" = "Paracetamol")
