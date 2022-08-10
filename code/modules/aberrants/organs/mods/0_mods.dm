@@ -29,9 +29,6 @@
 
 	organ_list = shuffle(organ_list)
 
-	// For desc generation
-	var/list/msg_organs = list()
-
 	// Organ stat generation
 	var/probability = 100
 
@@ -48,15 +45,8 @@
 			O.blood_req_mod 				+= round(organ_stats[4] * modifier * (1 + (1 * is_parasitic)), 0.01)
 			O.nutriment_req_mod 			+= round(organ_stats[5] * modifier * (1 + (1 * is_parasitic)), 0.01)
 			O.oxygen_req_mod 				+= round(organ_stats[6] * modifier * (1 + (1 * is_parasitic)), 0.01)
-			
-			msg_organs += organ
 
 			probability = probability / 8
 
 	if(is_parasitic)
 		O.new_color = pick("#183311", "#8bb0db", "#a55de4")
-	//else
-		//O.new_color = pick("#B12729", "#fd696d", "#FDBBA4", "#672F1D", "#DC7AAA", "#CCFF66")
-
-	//O.scanner_hidden = FALSE
-	//O.unique_tag
