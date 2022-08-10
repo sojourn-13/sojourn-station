@@ -8,11 +8,6 @@
 	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/omg/diy_organs
 	stored_material = list(MATERIAL_BIOMATTER = 480)
 	have_recycling = FALSE
-	selectively_recycled_types = list(
-		/obj/item/organ,
-		/obj/item/modification/organ,
-		/obj/item/reagent_containers/food/snacks	// Plant- or meat-based organs
-	)
 
 /obj/machinery/autolathe/bioprinter/RefreshParts()
 	..()
