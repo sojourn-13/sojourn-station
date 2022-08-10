@@ -26,7 +26,7 @@
 				food_descriptor = "There's a special spark in this cooking, a measure of love and care unseen by the casual chef."
 			if(81 to 99)
 				food_descriptor = "The quality of this food is legendary. Words fail to describe it further. It must be eaten"
-
+	to_chat(user, SPAN_NOTICE(food_descriptor))
 
 
 

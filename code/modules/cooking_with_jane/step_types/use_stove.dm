@@ -9,7 +9,7 @@
 //amount: The amount of the required reagent that needs to be added.
 //base_quality_award: The quality awarded by following this step.
 //our_recipe: The parent recipe object,
-/datum/cooking_with_jane/recipe_step/use_stove/New(var/set_time,  var/set_heat, var/datum/cooking_with_jane/recipe/our_recipe)
+/datum/cooking_with_jane/recipe_step/use_stove/New(var/set_heat, var/set_time, var/datum/cooking_with_jane/recipe/our_recipe)
 
 	desc = "Cook on a stove set to [heat] for [ticks_to_text(time)]."
 
@@ -48,7 +48,7 @@
 /datum/cooking_with_jane/recipe_step/use_stove/follow_step(var/obj/used_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 	var/obj/machinery/cooking_with_jane/stove/our_stove = used_item
 	var/obj/item/cooking_with_jane/cooking_container/container = tracker.holder_ref.resolve()
-	container.cook_data[our_stove.temperature[our_stove.active_input]] += our_stove.reference_time
+	container.cook_data[our_stove.temperature[our_stove.active_input]] =  container.cook_data[our_stove.temperature[our_stove.active_input]] + our_stove.reference_time
 
 	return CWJ_SUCCESS
 
@@ -57,7 +57,9 @@
 	var/obj/item/cooking_with_jane/cooking_container/container = tracker.holder_ref.resolve()
 
 	if(container.cook_data[heat] >= time)
+		log_debug("use_stove/is_complete() Returned True")
 		return TRUE
 
+	log_debug("use_stove/is_complete() Returned False")
 	return FALSE
 

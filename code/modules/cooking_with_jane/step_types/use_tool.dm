@@ -26,19 +26,21 @@
 	if(!our_tool.has_quality(tool_type))
 		return CWJ_CHECK_INVALID
 
-	if(our_tool.get_tool_quality(tool_type) < tool_quality)
-		return CWJ_CHECK_INVALID
-
 	return CWJ_CHECK_VALID
 
 /datum/cooking_with_jane/recipe_step/use_tool/follow_step(obj/added_item, obj/item/cooking_with_jane/cooking_container/container)
 	var/obj/item/tool/our_tool = added_item
 	if(our_tool.worksound && our_tool.worksound != NO_WORKSOUND)
 		playsound(usr.loc, our_tool.worksound, 50, 1)
+	to_chat(usr, SPAN_NOTICE("You use the [added_item] according to the recipe."))
+
+	if(our_tool.get_tool_quality(tool_type) < tool_quality)
+		return to_chat(usr, SPAN_NOTICE("The low quality of the tool hurts the quality of the dish."))
+
 	return CWJ_SUCCESS
 
 //Think about a way to make this more intuitive?
 /datum/cooking_with_jane/recipe_step/use_tool/calculate_quality(var/obj/added_item)
 	var/obj/item/tool/our_tool = added_item
-	var/raw_quality = (tool_quality - our_tool.get_tool_quality(tool_type)) * inherited_quality_modifier
+	var/raw_quality = (our_tool.get_tool_quality(tool_type) - tool_quality) * inherited_quality_modifier
 	return clamp_quality(raw_quality)

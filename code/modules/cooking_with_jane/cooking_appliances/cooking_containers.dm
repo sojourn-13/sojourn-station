@@ -213,7 +213,7 @@
 	desc = "An normal pan."
 	icon_state = "pan" //Default state is the base icon so it looks nice in the map builder
 	hitsound = 'sound/weapons/smash.ogg'
-	appliancetype = SKILLET
+	appliancetype = PAN
 	lip = "pan_lip"
 
 /obj/item/cooking_with_jane/cooking_container/pot

@@ -110,11 +110,11 @@
 	var/input
 	var/icon_x = text2num(click_params["icon-x"])
 	var/icon_y = text2num(click_params["icon-y"])
-	if(icon_x < ICON_SPLIT_X && icon_y < ICON_SPLIT_Y)
+	if(icon_x <= ICON_SPLIT_X && icon_y <= ICON_SPLIT_Y)
 		input = 1
-	else if(icon_x > ICON_SPLIT_X && icon_y < ICON_SPLIT_Y)
+	else if(icon_x > ICON_SPLIT_X && icon_y <= ICON_SPLIT_Y)
 		input = 2
-	else if(icon_x < ICON_SPLIT_X && icon_y > ICON_SPLIT_Y)
+	else if(icon_x <= ICON_SPLIT_X && icon_y > ICON_SPLIT_Y)
 		input = 3
 	else if(icon_x > ICON_SPLIT_X && icon_y > ICON_SPLIT_Y)
 		input = 4
@@ -123,8 +123,9 @@
 	return input
 
 /obj/machinery/cooking_with_jane/stove/attackby(var/obj/item/used_item, var/mob/user, params)
-	if(QUALITY_SCREW_DRIVING in used_item.tool_qualities)
-		return ..()
+	if(default_deconstruction(used_item, user))
+		return
+
 	var/input = getInput(params)
 
 	if(items[input] != null)
@@ -184,7 +185,7 @@
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_temperature(user, input)
 	var/old_temp = temperature[input]
-	var/choice = input(user,"Select a heat setting for burner #[input].\nCurrent temp :[old_temp]","Select Temperature","High") in list("High","Medium","Low","Cancel")
+	var/choice = input(user,"Select a heat setting for burner #[input].\nCurrent temp :[old_temp]","Select Temperature",old_temp) in list("High","Medium","Low","Cancel")
 	if(choice && choice != "Cancel" && choice != old_temp)
 		temperature[input] = choice
 		if(switches[input] == 1)
@@ -193,7 +194,8 @@
 
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_timer(user, input)
-	timer[input] = (input(user, "Set Timer","Enter a timer for burner #[input]",1) as num) SECONDS
+	var/old_time = timer[input]
+	timer[input] = (input(user, "Enter a timer for burner #[input] (In Seconds)","Set Timer", old_time) as num) SECONDS
 	if(timer[input] != 0 && switches[input] == 1)
 		timer_act(user, input)
 
@@ -233,7 +235,7 @@
 
 	var/obj/item/cooking_with_jane/cooking_container/container = items[input]
 	if(set_timer)
-		reference_time = set_timer
+		reference_time = timer[input]
 	else
 		reference_time = world.time - cooking_timestamp[input]
 
@@ -261,9 +263,9 @@
 		src.remove_from_visible(our_item)
 
 	if(panel_open)
-		icon="stove_open"
+		icon_state="stove_open"
 	else
-		icon="stove"
+		icon_state="stove"
 
 	for(var/i=1, i<=4, i++)
 		if(switches[i] == 1)
@@ -275,17 +277,17 @@
 		var/obj/item/our_item = items[i]
 		switch(i)
 			if(1)
-				our_item.pixel_x = -5
+				our_item.pixel_x = -7
 				our_item.pixel_y = 0
 			if(2)
-				our_item.pixel_x = 18
-				our_item.pixel_y = 14
+				our_item.pixel_x = 7
+				our_item.pixel_y = 0
 			if(3)
-				our_item.pixel_x = 5
-				our_item.pixel_y = 21
+				our_item.pixel_x = -7
+				our_item.pixel_y = 9
 			if(4)
-				our_item.pixel_x = 18
-				our_item.pixel_y = 21
+				our_item.pixel_x = 7
+				our_item.pixel_y = 9
 		src.add_to_visible(our_item, i)
 		if(switches[i] == 1)
 			add_overlay(image(src.icon, icon_state="steam_[i]", layer=ABOVE_OBJ_LAYER))

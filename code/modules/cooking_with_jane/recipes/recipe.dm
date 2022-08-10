@@ -158,8 +158,7 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 
 		//You can add up to 3 units of salt and pepper to increase the quality. Any more will negatively impact it.
 		//base- for CWJ_ADD_REAGENT, the amount that this step will award if followed perfectly.
-		list(CWJ_ADD_REAGENT_OPTIONAL, "salt", 3, base=3),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "pepper", 3, base=3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 3, base=3),
 
 		//You can add capaicin or wine, but not both
 		//prod_desc- the amount that this step will award if followed perfectly.
@@ -171,18 +170,6 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 		//Cook on a stove, at medium temperature, for 30 seconds
 		list(CWJ_USE_STOVE, J_MED, 30)
 	)
-
-/datum/cooking_with_jane/recipe/steak_stove
-	name="Tenderized Meat"
-	cooking_container = PLATE
-	product_type = /obj/item/reagent_containers/food/snacks/meat
-	replace_reagents = TRUE
-	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat),
-		list(CWJ_USE_TOOL_OPTIONAL, QUALITY_HAMMERING, 15)
-	)
-
-
 
 /datum/cooking_with_jane/recipe/sandwich_bad
 	cooking_container = PLATE

@@ -296,8 +296,8 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 //-----------------------------------------------------------------------------------
 //Use Stove step shortcut commands
-/datum/cooking_with_jane/recipe/proc/create_step_use_stove(var/type, var/quality, var/optional)
-	var/datum/cooking_with_jane/recipe_step/use_stove/step = new (type, quality, src)
+/datum/cooking_with_jane/recipe/proc/create_step_use_stove(var/heat, var/time, var/optional)
+	var/datum/cooking_with_jane/recipe_step/use_stove/step = new (heat, time, src)
 	return src.add_step(step, optional)
 
 //-----------------------------------------------------------------------------------
@@ -339,7 +339,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		return FALSE
 
 /datum/cooking_with_jane/recipe/proc/set_inherited_quality_modifier(var/modifier)
-	if(last_created_step.class == CWJ_ADD_ITEM || last_created_step.class == CWJ_USE_TOOL)
+	if(last_created_step.class == CWJ_ADD_ITEM || last_created_step.class == CWJ_USE_TOOL || last_created_step.class == CWJ_ADD_PRODUCE)
 		last_created_step?:inherited_quality_modifier = modifier
 		return TRUE
 	else
@@ -526,7 +526,6 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 		//Purge the contents of the container we no longer need it
 		QDEL_LIST(container.contents)
-		qdel(slurry)
 		container.contents = list()
 
 

@@ -4,6 +4,7 @@
 	var/required_produce_type
 	var/base_potency
 	var/reagent_skip = TRUE
+	var/inherited_quality_modifier
 
 	var/list/exclude_reagents = list()
 
@@ -54,7 +55,7 @@
 
 	var/obj/item/reagent_containers/food/snacks/grown/added_produce = added_item
 
-	var/potency_raw = round(base_quality_award + (added_produce.potency - base_potency) * 0.1)
+	var/potency_raw = round(base_quality_award + (added_produce.potency - base_potency) * inherited_quality_modifier)
 
 	return clamp_quality(potency_raw)
 
