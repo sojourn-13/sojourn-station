@@ -80,7 +80,12 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "ax" = (
-/obj/structure/flora/big/bush3,
+/obj/random/junk/cigbutt,
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"az" = (
+/obj/random/junk/cigbutt,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "aA" = (
@@ -126,10 +131,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
-"aJ" = (
-/obj/item/reagent_containers/food/drinks/bottle/small/beer_two,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
 "aL" = (
 /obj/structure/table/glass,
 /obj/random/booze/low_chance,
@@ -425,11 +426,6 @@
 "bJ" = (
 /turf/simulated/shuttle/floor/mining,
 /area/turbolift/mountain/solars)
-"bK" = (
-/obj/random/junk/cigbutt,
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
 "bL" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -476,17 +472,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"bX" = (
-/obj/structure/window/reinforced{
-	dir = 4;
-	pixel_x = 0
-	},
-/obj/machinery/telecomms/relay/preset/telecomms,
-/obj/machinery/door/window/northleft{
-	dir = 2
-	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/engineering/dorm)
 "ca" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/engineering{
@@ -556,9 +541,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/engineering/dorm)
-"cm" = (
-/turf/space,
 /area/nadezhda/engineering/dorm)
 "cn" = (
 /obj/structure/cable{
@@ -1032,6 +1014,10 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
+"ge" = (
+/obj/item/reagent_containers/food/drinks/bottle/small/beer_two,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
 "gr" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
@@ -1089,6 +1075,11 @@
 /obj/structure/flora/small/grassa2,
 /obj/structure/flora/small/grassa2,
 /obj/structure/flora/small/busha3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"iM" = (
+/obj/item/reagent_containers/food/drinks/bottle/small/beer_two,
+/obj/structure/flora/small/bushc3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "iY" = (
@@ -1166,12 +1157,8 @@
 /obj/structure/boulder,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"lT" = (
+"mf" = (
 /obj/random/flora/small_jungle_tree/low,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
-"mo" = (
-/obj/random/flora/jungle_tree/low,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "mz" = (
@@ -1233,6 +1220,16 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
+"nV" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/ntnet_relay,
+/obj/machinery/door/window/northleft{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/engineering/dorm)
 "nZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1278,6 +1275,10 @@
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
+"pS" = (
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
 "ql" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/scrap/dense_weighted,
@@ -1362,16 +1363,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"tE" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/ntnet_relay,
-/obj/machinery/door/window/northleft{
-	dir = 2
-	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/engineering/dorm)
 "ug" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/mineral,
@@ -1441,10 +1432,6 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/dorm)
-"wZ" = (
-/obj/structure/flora/ausbushes/leafybush,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
 "xb" = (
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/mountainsolars)
@@ -1462,10 +1449,6 @@
 "xk" = (
 /obj/structure/flora/big/rocks3,
 /turf/simulated/floor/rock,
-/area/nadezhda/outside/mountainsolars)
-"xZ" = (
-/obj/random/junk/cigbutt,
-/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "yc" = (
 /obj/random/scrap/sparse_even/low_chance,
@@ -1537,6 +1520,17 @@
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
+"Bj" = (
+/obj/structure/window/reinforced{
+	dir = 4;
+	pixel_x = 0
+	},
+/obj/machinery/telecomms/relay/preset/telecomms,
+/obj/machinery/door/window/northleft{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/engineering/dorm)
 "BI" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
 /obj/effect/decal/cleanable/rubble,
@@ -1575,6 +1569,12 @@
 /area/nadezhda/outside/mountainsolars)
 "Di" = (
 /obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/engineering/dorm)
+"Dl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
 "Dt" = (
@@ -1660,6 +1660,12 @@
 /obj/structure/railing,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
+"FP" = (
+/obj/structure/bed/chair,
+/obj/item/storage/fancy/cigarettes/toha,
+/obj/item/flame/lighter/zippo/brass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
 "FR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1682,12 +1688,6 @@
 	icon_state = "railing0";
 	tag = "icon-railing0 (EAST)"
 	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
-"GO" = (
-/obj/structure/bed/chair,
-/obj/item/storage/fancy/cigarettes/toha,
-/obj/item/flame/lighter/zippo/brass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "GU" = (
@@ -1783,6 +1783,14 @@
 	},
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
+"KF" = (
+/obj/structure/flora/big/bush3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"KT" = (
+/obj/structure/flora/small/bushc2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
 "KX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1871,6 +1879,10 @@
 /obj/random/scrap/moderate_weighted,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
+"NT" = (
+/obj/structure/flora/ausbushes/leafybush,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
 "Og" = (
 /obj/structure/low_wall,
 /turf/simulated/floor/plating,
@@ -1923,22 +1935,11 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"Pr" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm)
 "PE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/mountainsolars)
-"PL" = (
-/obj/item/reagent_containers/food/drinks/bottle/small/beer_two,
-/obj/structure/flora/small/bushc3,
-/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "PX" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1988,10 +1989,6 @@
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/mountainsolars)
-"Rt" = (
-/obj/structure/flora/small/bushc2,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
 "RK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
@@ -2007,6 +2004,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing,
 /turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"Sw" = (
+/obj/random/flora/jungle_tree/low,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "SE" = (
 /obj/random/tool_upgrade/low_chance,
@@ -2029,10 +2030,6 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/outside/mountainsolars)
-"TX" = (
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "Uc" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -7248,9 +7245,9 @@ al
 av
 av
 al
-wZ
+NT
 al
-Rt
+KT
 ac
 ac
 ac
@@ -7550,11 +7547,11 @@ ab
 ab
 ac
 ac
-Rt
+KT
 al
-ax
+KF
 al
-ax
+KF
 aQ
 av
 al
@@ -7652,14 +7649,14 @@ ab
 ab
 ac
 al
-TX
-PL
+pS
+iM
 aS
 TD
-PL
-ax
+iM
+KF
 al
-mo
+Sw
 ac
 ac
 ab
@@ -7755,10 +7752,10 @@ ab
 ac
 aS
 al
-xZ
+az
 aS
-GO
-bK
+FP
+ax
 aS
 Ye
 ac
@@ -7857,9 +7854,9 @@ ab
 ac
 ac
 al
-lT
-xZ
-aJ
+mf
+az
+ge
 al
 al
 ac
@@ -7960,9 +7957,9 @@ ac
 ac
 al
 al
-ax
+KF
 aS
-wZ
+NT
 ac
 ac
 ab
@@ -8063,7 +8060,7 @@ ac
 ac
 aS
 aS
-Rt
+KT
 ac
 ac
 ab
@@ -8383,7 +8380,7 @@ Um
 DS
 Di
 aE
-Pr
+Dl
 cn
 cK
 ak
@@ -8889,7 +8886,7 @@ ab
 ab
 aa
 nt
-cm
+Um
 DS
 Di
 Cm
@@ -9398,7 +9395,7 @@ ab
 ab
 aa
 nt
-tE
+nV
 QL
 HT
 wU
@@ -9500,7 +9497,7 @@ ab
 ab
 aa
 nt
-bX
+Bj
 jH
 nl
 aB
