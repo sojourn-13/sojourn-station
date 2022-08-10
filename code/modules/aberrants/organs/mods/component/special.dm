@@ -2,6 +2,9 @@
 	exclusive_type = /obj/item/modification/organ/internal/special/on_item_examine
 	trigger_signal = COMSIG_EXAMINE
 
+/datum/component/modification/organ/on_item_examine/try_modify()
+	return
+
 /datum/component/modification/organ/on_item_examine/brainloss
 	var/damage = 1
 
@@ -25,6 +28,8 @@
 	exclusive_type = /obj/item/modification/organ/internal/special/on_pickup
 	trigger_signal = COMSIG_ITEM_PICKED
 
+/datum/component/modification/organ/on_pickup/try_modify()
+	return
 
 /datum/component/modification/organ/on_pickup/shock
 	var/damage = 5
@@ -48,6 +53,9 @@
 /datum/component/modification/organ/on_cooldown
 	exclusive_type = /obj/item/modification/organ/internal/special/on_cooldown
 	trigger_signal = COMSIG_ABERRANT_COOLDOWN
+
+/datum/component/modification/organ/on_cooldown/try_modify()
+	return
 
 /datum/component/modification/organ/on_cooldown/chemical_effect
 	var/effect

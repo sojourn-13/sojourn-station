@@ -7,11 +7,12 @@
 	desc = "Functional tissue of one or more organs in graftable form. Secretes reagents into the bloodstream."
 
 /obj/item/modification/organ/internal/output/reagents_blood/New(loc, generate_organ_stats = FALSE, predefined_modifier = null, list/output_types)
-	var/datum/component/modification/organ/output/reagents_blood/O = AddComponent(/datum/component/modification/organ/output/reagents_blood)
+	var/datum/component/modification/organ/output/reagents/O = AddComponent(/datum/component/modification/organ/output/reagents)
 
 	for(var/output in output_types)
 		O.possible_outputs += output
 		O.possible_outputs[output] = output_types[output]
+		O.mode = CHEM_BLOOD
 	..()
 
 /obj/item/modification/organ/internal/output/reagents_ingest
@@ -19,11 +20,12 @@
 	desc = "Functional tissue of one or more organs in graftable form. Produces reagents in the stomach."
 
 /obj/item/modification/organ/internal/output/reagents_ingest/New(loc, generate_organ_stats = FALSE, predefined_modifier = null, list/output_types)
-	var/datum/component/modification/organ/output/reagents_ingest/O = AddComponent(/datum/component/modification/organ/output/reagents_ingest)
+	var/datum/component/modification/organ/output/reagents/O = AddComponent(/datum/component/modification/organ/output/reagents)
 
 	for(var/output in output_types)
 		O.possible_outputs += output
 		O.possible_outputs[output] = output_types[output]
+		O.mode = CHEM_INGEST
 	..()
 
 /obj/item/modification/organ/internal/output/chemical_effects

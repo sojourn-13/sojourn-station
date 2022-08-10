@@ -48,7 +48,7 @@
 		for(var/organ in organ_efficiency)
 			organs += organ + " ([organ_efficiency[organ]]), "
 		organs = copytext(organs, 1, length(organs) - 1)
-		to_chat(user, SPAN_NOTICE("Organ tissues present (efficiency): [organs ? organs : "none"]"))
+		to_chat(user, SPAN_NOTICE("Organ tissues present (efficiency): <span style='color:pink'>[organs ? organs : "none"]</span>"))
 	if(user.stats?.getStat(STAT_BIO) >= STAT_LEVEL_PROF || user.stats?.getPerk(PERK_ADVANCED_MEDICAL))
 		var/function_info
 		var/input_info
@@ -60,15 +60,18 @@
 			var/obj/item/modification/organ/internal/holder = mod
 			var/datum/component/modification/organ/organ_mod = holder.GetComponent(/datum/component/modification/organ)
 			if(istype(mod, /obj/item/modification/organ/internal/input))
-				input_info += organ_mod.get_function_info() + "\n"
+				input_info += organ_mod.get_function_info()
 			if(istype(mod, /obj/item/modification/organ/internal/process))
-				process_info += organ_mod.get_function_info() + "\n"
+				process_info += organ_mod.get_function_info()
 			if(istype(mod, /obj/item/modification/organ/internal/output))
-				output_info += organ_mod.get_function_info() + "\n"
+				output_info += organ_mod.get_function_info()
 			if(istype(mod, /obj/item/modification/organ/internal/special))
-				secondary_info += organ_mod.get_function_info() + "\n"
+				secondary_info += organ_mod.get_function_info()
 
-		function_info = input_info + process_info + output_info + secondary_info
+		function_info = input_info + (input_info && process_info ? "\n" : null) +\
+						process_info + (process_info && output_info ? "\n" : null) +\
+						output_info + (output_info && secondary_info ? "\n" : null) +\
+						secondary_info
 
 		if(function_info)
 			to_chat(user, SPAN_NOTICE(function_info))
