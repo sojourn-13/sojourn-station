@@ -58,11 +58,6 @@
 /obj/structure/cable,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"ai" = (
-/obj/structure/table/woodentable,
-/obj/random/powercell/low_chance,
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/one)
 "aj" = (
 /turf/simulated/wall,
 /area/nadezhda/outside/mountainsolars)
@@ -77,22 +72,6 @@
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
-"aq" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 "au" = (
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
@@ -101,14 +80,9 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "ax" = (
-/turf/simulated/wall,
-/area/nadezhda/engineering/dorm/one)
-"ay" = (
-/turf/simulated/wall,
-/area/nadezhda/engineering/dorm/two)
-"az" = (
-/turf/simulated/wall,
-/area/nadezhda/engineering/dorm/three)
+/obj/random/junk/cigbutt,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
 "aA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
@@ -116,32 +90,6 @@
 "aB" = (
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/dorm)
-"aC" = (
-/turf/simulated/wall,
-/area/nadezhda/engineering/dorm/four)
-"aD" = (
-/obj/structure/curtain/open,
-/obj/machinery/shower{
-	dir = 4;
-	icon_state = "shower"
-	},
-/obj/effect/floor_decal/spline/fancy,
-/obj/effect/floor_decal/corner_techfloor_grid,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4;
-	pixel_x = 0
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/window/southleft{
-	name = "shower door"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
 "aE" = (
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
@@ -178,12 +126,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
-"aJ" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
 "aL" = (
 /obj/structure/table/glass,
 /obj/random/booze/low_chance,
@@ -225,15 +167,6 @@
 /obj/random/toolbox,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
-"aQ" = (
-/obj/machinery/vending/wallmed{
-	name = "Emergency NanoMed";
-	pixel_x = 0;
-	pixel_y = 32
-	},
-/obj/machinery/washing_machine,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
 "aR" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/structure/cable{
@@ -256,16 +189,6 @@
 /obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"aV" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm)
 "aW" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -398,12 +321,6 @@
 /obj/map_data/nadezda_solars,
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/mountainsolars)
-"bv" = (
-/obj/structure/table/rack/shelf,
-/obj/random/junk/low_chance,
-/obj/random/tool/low_chance,
-/turf/simulated/floor/tiled/techmaint_cargo,
-/area/nadezhda/engineering/dorm/one)
 "bw" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
@@ -422,21 +339,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"by" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/table/woodentable,
-/obj/item/paper_bin{
-	pixel_x = 0;
-	pixel_y = 3
-	},
-/obj/item/pen{
-	pixel_x = -1;
-	pixel_y = 3
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
 "bz" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -450,10 +352,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"bA" = (
-/obj/item/modular_computer/console/preset/engineering,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
 "bB" = (
 /obj/structure/railing{
 	dir = 1;
@@ -519,14 +417,6 @@
 "bJ" = (
 /turf/simulated/shuttle/floor/mining,
 /area/turbolift/mountain/solars)
-"bK" = (
-/obj/structure/table/woodentable,
-/obj/machinery/recharger,
-/obj/structure/noticeboard{
-	pixel_y = 30
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
 "bL" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -573,44 +463,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"bW" = (
-/obj/structure/curtain/open,
-/obj/machinery/shower{
-	dir = 4;
-	icon_state = "shower"
-	},
-/obj/effect/floor_decal/spline/fancy,
-/obj/effect/floor_decal/corner_techfloor_grid,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4;
-	pixel_x = 0
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/door/window/southleft{
-	name = "shower door"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
-"bX" = (
-/obj/structure/bed/chair/comfy/black{
-	dir = 1
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
-"bY" = (
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
-"bZ" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
 "ca" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/engineering{
@@ -634,12 +486,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
-"cf" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
 "cg" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/orangecorner,
@@ -688,13 +534,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/dorm)
 "cm" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/turf/simulated/floor/tiled/steel/orangecorner,
+/turf/space,
 /area/nadezhda/engineering/dorm)
 "cn" = (
 /obj/structure/cable{
@@ -740,15 +580,6 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"cs" = (
-/obj/machinery/vending/wallmed{
-	name = "Emergency NanoMed";
-	pixel_x = 0;
-	pixel_y = 32
-	},
-/obj/machinery/washing_machine,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
 "ct" = (
 /obj/structure/railing{
 	dir = 8;
@@ -756,31 +587,10 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"cv" = (
-/obj/structure/table/rack/shelf,
-/obj/random/junk/low_chance,
-/obj/random/tool/low_chance,
-/turf/simulated/floor/tiled/techmaint_cargo,
-/area/nadezhda/engineering/dorm/two)
 "cw" = (
 /obj/structure/flora/small/bushb1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"cx" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/table/woodentable,
-/obj/item/paper_bin{
-	pixel_x = 0;
-	pixel_y = 3
-	},
-/obj/item/pen{
-	pixel_x = -1;
-	pixel_y = 3
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
 "cy" = (
 /obj/structure/flora/rock/variant1,
 /turf/simulated/floor/asteroid/grass,
@@ -803,10 +613,6 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"cC" = (
-/obj/item/modular_computer/console/preset/engineering,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
 "cD" = (
 /obj/structure/railing{
 	dir = 8;
@@ -827,14 +633,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
-"cG" = (
-/obj/structure/table/woodentable,
-/obj/machinery/recharger,
-/obj/structure/noticeboard{
-	pixel_y = 30
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
 "cH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1143,48 +941,11 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"ef" = (
-/obj/item/storage/box/donkpockets,
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
-"eg" = (
-/obj/structure/toilet{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
-"el" = (
-/obj/machinery/newscaster{
-	dir = 8;
-	pixel_x = -30;
-	pixel_y = 0
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
 "em" = (
 /obj/structure/catwalk,
 /obj/item/caution,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"eq" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 24
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
 "eA" = (
 /obj/structure/railing{
 	dir = 1;
@@ -1206,26 +967,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/mountainsolars)
-"eT" = (
-/obj/machinery/button/remote/airlock{
-	id = "engdorm4";
-	name = "Door Bolt Control";
-	pixel_y = -28;
-	specialfunctions = 4
-	},
-/obj/effect/floor_decal/industrial/box/red,
-/obj/structure/closet/crate/bin,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
-"fk" = (
-/obj/machinery/vending/wallmed{
-	name = "Emergency NanoMed";
-	pixel_x = 0;
-	pixel_y = 32
-	},
-/obj/machinery/washing_machine,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
 "fn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -1251,31 +992,11 @@
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"fs" = (
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
 "fH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/mountainsolars)
-"fJ" = (
-/obj/item/storage/box/donkpockets,
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
 "fK" = (
 /obj/random/toolbox,
 /obj/structure/table/standard,
@@ -1287,35 +1008,11 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"gd" = (
-/obj/machinery/light,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
-"ge" = (
-/obj/structure/window/reinforced{
-	dir = 4;
-	pixel_x = 0
-	},
-/obj/machinery/telecomms/relay/preset/telecomms,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/engineering/dorm)
-"gn" = (
-/obj/machinery/door/unpowered/simple/wood,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
 "gr" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"gD" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
 "gS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -1328,9 +1025,6 @@
 /obj/effect/floor_decal/industrial/box,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/dorm)
-"hb" = (
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/three)
 "hy" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -1354,21 +1048,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
-"in" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/table/woodentable,
-/obj/item/paper_bin{
-	pixel_x = 0;
-	pixel_y = 3
-	},
-/obj/item/pen{
-	pixel_x = -1;
-	pixel_y = 3
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
 "is" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/rock,
@@ -1378,9 +1057,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/engineering/dorm)
-"iD" = (
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/two)
 "iH" = (
 /obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
@@ -1391,14 +1067,6 @@
 /obj/structure/flora/small/busha3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"iM" = (
-/obj/random/booze,
-/obj/random/junkfood/onlypizza,
-/obj/random/junkfood/onlyburger,
-/obj/random/junkfood,
-/obj/structure/closet/secure_closet/freezer,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
 "iY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/hologram/holopad,
@@ -1421,16 +1089,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/outside/mountainsolars)
-"jv" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 "jE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -1440,15 +1098,6 @@
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
-"jF" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
 "jH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/orangecorner,
@@ -1462,39 +1111,15 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/mineral,
 /area/nadezhda/outside/mountainsolars)
-"km" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/engineering{
-	id_tag = "engdorm3";
-	name = "Adept Dorm 3";
-	req_access = list(10)
-	},
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 "kq" = (
 /obj/structure/closet/crate/solar,
 /obj/effect/floor_decal/industrial/box,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/dorm)
 "kG" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
-"kN" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
+/obj/item/reagent_containers/food/drinks/bottle/small/beer_two,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
 "kO" = (
 /obj/structure/flora/small/bushc3,
 /turf/simulated/floor/asteroid/grass,
@@ -1511,69 +1136,26 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/mountainsolars)
-"lu" = (
-/obj/structure/bed/chair/comfy/black{
-	dir = 1
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
 "lx" = (
 /obj/structure/sign/department/atmos,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/outside/mountainsolars)
-"lH" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
 "lI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"lT" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
-"lU" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -28
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
-"md" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
-"mf" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
-"mo" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
-"mr" = (
-/turf/simulated/wall/r_wall,
-/area/nadezhda/engineering/dorm)
 "mv" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/ntnet_relay,
+/obj/machinery/door/window/northleft{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/engineering/dorm)
 "mz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1583,15 +1165,6 @@
 "mI" = (
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/mountainsolars)
-"mR" = (
-/turf/unsimulated/mineral,
-/area/nadezhda/engineering/dorm/three)
-"nc" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 24
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
 "ng" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
@@ -1611,12 +1184,6 @@
 "nt" = (
 /turf/simulated/wall,
 /area/nadezhda/engineering/dorm)
-"nw" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
 "nx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder,
@@ -1630,26 +1197,6 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"nA" = (
-/obj/machinery/button/remote/airlock{
-	id = "engdorm1";
-	name = "Door Bolt Control";
-	pixel_x = 0;
-	pixel_y = -28;
-	specialfunctions = 4
-	},
-/obj/effect/floor_decal/industrial/box/red,
-/obj/structure/closet/crate/bin,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
-"nF" = (
-/obj/item/storage/lunchbox,
-/obj/item/hand_labeler,
-/obj/item/storage/briefcase,
-/obj/random/toy/plushie,
-/obj/structure/closet/secure_closet/personal/engineering_personal,
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/one)
 "nJ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -1668,19 +1215,7 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"nV" = (
-/obj/machinery/door/airlock{
-	name = "Bathroom"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
 "nZ" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/holoposter{
@@ -1688,25 +1223,6 @@
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
-"ol" = (
-/obj/item/modular_computer/telescreen/preset/generic{
-	pixel_x = -32;
-	pixel_y = 24
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
-"ou" = (
-/obj/machinery/door/unpowered/simple/wood,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
-"ox" = (
-/obj/machinery/newscaster{
-	dir = 8;
-	pixel_x = -30;
-	pixel_y = 0
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
 "oG" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/plating,
@@ -1730,31 +1246,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/mountainsolars)
-"oW" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
-"pj" = (
-/obj/machinery/vending/wallmed{
-	name = "Emergency NanoMed";
-	pixel_x = 0;
-	pixel_y = 32
-	},
-/obj/machinery/washing_machine,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
-"pm" = (
-/obj/structure/bed/double/padded,
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/bedsheet/orangedouble,
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/one)
 "pp" = (
 /obj/structure/railing{
 	dir = 8
@@ -1762,69 +1253,24 @@
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
 "pq" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/vending/wallmed{
 	name = "Emergency NanoMed";
 	pixel_x = 0;
 	pixel_y = 32
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
-"pw" = (
-/turf/unsimulated/mineral,
-/area/nadezhda/engineering/dorm/two)
-"pS" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
 "qa" = (
-/obj/item/modular_computer/console/preset/engineering,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
-"qc" = (
-/obj/structure/table/standard,
-/obj/structure/bedsheetbin,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
-"qj" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 24
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
+/obj/structure/bed/chair,
+/obj/item/storage/fancy/cigarettes/toha,
+/obj/item/flame/lighter/zippo/brass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
 "ql" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"qm" = (
-/obj/structure/table/standard,
-/obj/random/junkfood/low_chance{
-	pixel_x = -1;
-	pixel_y = 3
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
-"qu" = (
-/obj/structure/window/reinforced{
-	dir = 4;
-	pixel_x = 0
-	},
-/obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 0
-	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/engineering/dorm)
-"qw" = (
-/obj/machinery/door/window/northleft,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/engineering/dorm)
 "qB" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -1841,38 +1287,14 @@
 /obj/item/storage/pill_bottle/dice,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
-"qQ" = (
-/obj/machinery/newscaster{
-	dir = 8;
-	pixel_x = -30;
-	pixel_y = 0
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
 "qU" = (
 /obj/structure/flora/small/rock4,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"qV" = (
-/obj/random/furniture/pottedplant,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
 "rm" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
-"rp" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
-"rE" = (
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
+/obj/random/flora/small_jungle_tree/low,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
 "rF" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -1897,14 +1319,6 @@
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
-"rZ" = (
-/obj/item/storage/lunchbox,
-/obj/item/hand_labeler,
-/obj/item/storage/briefcase,
-/obj/random/toy/plushie,
-/obj/structure/closet/secure_closet/personal/engineering_personal,
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/three)
 "sh" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -1914,71 +1328,11 @@
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
-"si" = (
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
 "so" = (
-/obj/structure/curtain/open,
-/obj/machinery/shower{
-	dir = 4;
-	icon_state = "shower"
-	},
-/obj/effect/floor_decal/spline/fancy,
-/obj/effect/floor_decal/corner_techfloor_grid,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4;
-	pixel_x = 0
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/door/window/southleft{
-	name = "shower door"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
-"su" = (
-/obj/random/booze,
-/obj/random/junkfood/onlypizza,
-/obj/random/junkfood/onlyburger,
-/obj/random/junkfood,
-/obj/structure/closet/secure_closet/freezer,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
-"sw" = (
-/obj/machinery/door/airlock{
-	name = "Bathroom"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
-"sx" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
-"sN" = (
-/obj/structure/table/woodentable,
-/obj/machinery/recharger,
-/obj/structure/noticeboard{
-	pixel_y = 30
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
-"sQ" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/holoposter{
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled/steel/orangecorner,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
 "sS" = (
 /obj/structure/cable{
@@ -2002,85 +1356,24 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"tx" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/engineering{
-	id_tag = "engdorm1";
-	name = "Adept Dorm 1";
-	req_access = list(10)
-	},
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
-"tE" = (
-/obj/machinery/newscaster{
-	dir = 8;
-	pixel_x = -30;
-	pixel_y = 0
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
 "ug" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/mountainsolars)
-"uh" = (
-/obj/structure/table/standard,
-/obj/random/booze/low_chance,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
-"ul" = (
-/obj/structure/toilet{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
 "ut" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/dorm)
-"vg" = (
-/obj/machinery/microwave,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
 "vl" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"vO" = (
-/obj/structure/bed/chair/comfy/black{
-	dir = 1
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
 "vR" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
-"vS" = (
-/obj/item/storage/box/donkpockets,
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
 "vU" = (
 /obj/machinery/light{
 	dir = 4
@@ -2088,14 +1381,6 @@
 /obj/machinery/vending/engivend,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/engineering/dorm)
-"vW" = (
-/obj/structure/table/standard,
-/obj/random/junkfood/low_chance{
-	pixel_x = -1;
-	pixel_y = 3
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
 "wi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2140,18 +1425,6 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/dorm)
-"wZ" = (
-/obj/structure/sink{
-	dir = 8;
-	icon_state = "sink";
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/obj/structure/mirror{
-	pixel_x = -28
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
 "xb" = (
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/mountainsolars)
@@ -2160,12 +1433,6 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
 "xh" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/device/radio/intercom{
 	pixel_y = 22
@@ -2176,21 +1443,6 @@
 /obj/structure/flora/big/rocks3,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/mountainsolars)
-"xH" = (
-/obj/structure/table/standard,
-/obj/structure/bedsheetbin,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
-"xX" = (
-/obj/machinery/light,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
-"xZ" = (
-/obj/structure/bed/chair/comfy/black{
-	dir = 1
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
 "yc" = (
 /obj/random/scrap/sparse_even/low_chance,
 /turf/simulated/floor/asteroid/dirt,
@@ -2220,18 +1472,6 @@
 /obj/structure/railing,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"yt" = (
-/obj/structure/table/woodentable,
-/obj/item/storage/secure/safe{
-	pixel_x = 34
-	},
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/one)
-"yF" = (
-/obj/structure/table/standard,
-/obj/random/booze/low_chance,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
 "yG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2240,12 +1480,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"yI" = (
-/obj/structure/toilet{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
 "yK" = (
 /obj/machinery/vending/cola,
 /obj/effect/decal/cleanable/dirt,
@@ -2254,40 +1488,10 @@
 "yU" = (
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
-"zd" = (
-/obj/structure/table/standard,
-/obj/random/junkfood/low_chance{
-	pixel_x = -1;
-	pixel_y = 3
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
 "zi" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"zj" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
-"zz" = (
-/obj/structure/table/standard,
-/obj/random/booze/low_chance,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
-"zD" = (
-/obj/structure/table/standard,
-/obj/random/junkfood/low_chance{
-	pixel_x = -1;
-	pixel_y = 3
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
 "zI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2299,62 +1503,16 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"Ai" = (
-/obj/item/modular_computer/telescreen/preset/generic{
-	pixel_x = -32;
-	pixel_y = 24
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
-"AA" = (
-/obj/random/furniture/pottedplant,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
 "AB" = (
 /obj/structure/table/rack/shelf,
 /obj/random/powercell/low_chance,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
-"AQ" = (
-/obj/machinery/button/remote/airlock{
-	id = "engdorm2";
-	name = "Door Bolt Control";
-	pixel_x = 0;
-	pixel_y = -28;
-	specialfunctions = 4
-	},
-/obj/effect/floor_decal/industrial/box/red,
-/obj/structure/closet/crate/bin,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
 "Bi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"Bj" = (
-/obj/item/storage/lunchbox,
-/obj/item/hand_labeler,
-/obj/item/storage/briefcase,
-/obj/random/toy/plushie,
-/obj/structure/closet/secure_closet/personal/engineering_personal,
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/two)
-"Bu" = (
-/obj/machinery/door/airlock{
-	name = "Bathroom"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
-"BC" = (
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/one)
-"BG" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
 "BI" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
 /obj/effect/decal/cleanable/rubble,
@@ -2369,37 +1527,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/mountainsolars)
-"Ce" = (
-/obj/structure/table/woodentable,
-/obj/machinery/recharger,
-/obj/structure/noticeboard{
-	pixel_y = 30
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
-"Ch" = (
-/obj/structure/curtain/open,
-/obj/machinery/shower{
-	dir = 4;
-	icon_state = "shower"
-	},
-/obj/effect/floor_decal/spline/fancy,
-/obj/effect/floor_decal/corner_techfloor_grid,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4;
-	pixel_x = 0
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/window/southleft{
-	name = "shower door"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
 "Cm" = (
 /obj/structure/table/glass,
 /obj/item/device/lighting/toggleable/lamp/green,
@@ -2413,30 +1540,10 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"Ct" = (
-/obj/structure/table/standard,
-/obj/structure/bedsheetbin,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
-"Cy" = (
-/obj/machinery/microwave,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
-"CB" = (
-/obj/structure/table/rack/shelf,
-/obj/random/junk/low_chance,
-/obj/random/tool/low_chance,
-/turf/simulated/floor/tiled/techmaint_cargo,
-/area/nadezhda/engineering/dorm/three)
 "CE" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"CZ" = (
-/obj/item/modular_computer/console/preset/engineering,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
 "Dg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2446,23 +1553,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
-"Dl" = (
-/obj/item/storage/box/donkpockets,
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
 "Dt" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/fixed/hydrotile,
@@ -2472,18 +1562,9 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "DE" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
-"DL" = (
-/obj/machinery/light,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
+/obj/random/flora/jungle_tree/low,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
 "DS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2494,14 +1575,6 @@
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"Ei" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
 "En" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/rack/shelf,
@@ -2514,40 +1587,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/nadezhda/outside/mountainsolars)
-"Et" = (
-/obj/item/modular_computer/telescreen/preset/generic{
-	pixel_x = -32;
-	pixel_y = 24
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
-"Ev" = (
-/obj/random/booze,
-/obj/random/junkfood/onlypizza,
-/obj/random/junkfood/onlyburger,
-/obj/random/junkfood,
-/obj/structure/closet/secure_closet/freezer,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
-"Ey" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/table/woodentable,
-/obj/item/paper_bin{
-	pixel_x = 0;
-	pixel_y = 3
-	},
-/obj/item/pen{
-	pixel_x = -1;
-	pixel_y = 3
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
-"EF" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/unsimulated/mineral,
 /area/nadezhda/outside/mountainsolars)
 "EI" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2571,12 +1610,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/mountainsolars)
-"Fe" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -28
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
 "Fm" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -2607,27 +1640,11 @@
 /obj/structure/railing,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"FP" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
 "FR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
-"FS" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
 "FX" = (
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/dirt,
@@ -2647,30 +1664,11 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"GO" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
 "GU" = (
 /obj/structure/closet/crate/solar,
 /obj/machinery/camera/network/engineering,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
-"Hl" = (
-/obj/structure/table/rack/shelf,
-/obj/random/junk/low_chance,
-/obj/random/tool/low_chance,
-/turf/simulated/floor/tiled/techmaint_cargo,
-/area/nadezhda/engineering/dorm/four)
-"Ho" = (
-/obj/structure/table/standard,
-/obj/random/booze/low_chance,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
 "Hw" = (
 /obj/structure/railing{
 	anchored = 1;
@@ -2685,18 +1683,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"HD" = (
-/obj/structure/sink{
-	dir = 8;
-	icon_state = "sink";
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/obj/structure/closet/wall_mounted/firecloset{
-	pixel_y = -32
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
 "HP" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger,
@@ -2739,28 +1725,6 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
-"Jx" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/device/radio/intercom{
-	pixel_y = 22
-	},
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
-"JF" = (
-/obj/machinery/light,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
-"JI" = (
-/obj/random/furniture/pottedplant,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
 "JU" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/grass,
@@ -2785,20 +1749,6 @@
 "Kn" = (
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/mountainsolars)
-"Kv" = (
-/obj/machinery/light_switch{
-	pixel_x = 0;
-	pixel_y = -28
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
-"KA" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 "KB" = (
 /obj/structure/railing{
 	dir = 1;
@@ -2807,19 +1757,6 @@
 	},
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"KF" = (
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
-"KK" = (
-/obj/item/modular_computer/telescreen/preset/generic{
-	pixel_x = -32;
-	pixel_y = 24
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
-"KT" = (
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
 "KX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2846,21 +1783,6 @@
 /obj/structure/boulder,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/mountainsolars)
-"Lg" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/network/engineering,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
-"Lk" = (
-/obj/machinery/light,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
 "Lv" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
@@ -2878,32 +1800,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/mountainsolars)
-"LC" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
-"LM" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 0
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/engineering/dorm)
-"LP" = (
-/obj/machinery/light,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
 "LS" = (
 /obj/structure/flora/small/rock5,
 /turf/simulated/floor/asteroid/grass,
@@ -2918,17 +1814,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"Mv" = (
-/obj/machinery/button/remote/airlock{
-	id = "engdorm3";
-	name = "Door Bolt Control";
-	pixel_y = -28;
-	specialfunctions = 4
-	},
-/obj/effect/floor_decal/industrial/box/red,
-/obj/structure/closet/crate/bin,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
 "My" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt,
@@ -2937,52 +1822,14 @@
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"MH" = (
-/obj/structure/table/woodentable,
-/obj/random/powercell/low_chance,
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/three)
-"MK" = (
-/obj/machinery/door/unpowered/simple/wood,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
-"MW" = (
-/obj/structure/table/woodentable,
-/obj/random/powercell/low_chance,
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/two)
-"Nh" = (
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/four)
-"Nn" = (
-/obj/structure/sink{
-	dir = 8;
-	icon_state = "sink";
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/obj/structure/mirror{
-	pixel_x = -28
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
 "Nq" = (
 /obj/structure/flora/small/trailrocka4,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
 "Nt" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
-"Ny" = (
-/obj/machinery/door/unpowered/simple/wood,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
+/turf/simulated/wall,
+/area/nadezhda/outside/mountainsolars)
 "NK" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
@@ -2993,29 +1840,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/mountainsolars)
-"NO" = (
-/obj/structure/table/woodentable,
-/obj/random/powercell/low_chance,
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/four)
 "NQ" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/random/scrap/moderate_weighted,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"NT" = (
-/obj/structure/table/woodentable,
-/obj/item/storage/secure/safe{
-	pixel_x = 34
-	},
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/four)
-"Oa" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -28
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
 "Og" = (
 /obj/structure/low_wall,
 /turf/simulated/floor/plating,
@@ -3045,11 +1874,6 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"OB" = (
-/obj/structure/table/standard,
-/obj/structure/bedsheetbin,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
 "OC" = (
 /obj/structure/table/glass,
 /obj/item/paper_bin,
@@ -3068,63 +1892,22 @@
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
-"OU" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
-"OY" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/ntnet_relay,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/engineering/dorm)
 "Pd" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"Pr" = (
-/obj/structure/bed/double/padded,
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/bedsheet/orangedouble,
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/three)
 "PE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"PK" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 24
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
-"PL" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/random/furniture/pottedplant,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 "PX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"Qa" = (
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
 "Qh" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -3135,73 +1918,28 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/mountainsolars)
-"Qn" = (
-/obj/machinery/microwave,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
 "Qq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/mineral,
 /area/nadezhda/outside/mountainsolars)
-"QD" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
-"QE" = (
-/obj/machinery/light,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/two)
 "QH" = (
 /obj/structure/flora/small/busha3,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"QJ" = (
-/obj/item/storage/lunchbox,
-/obj/item/hand_labeler,
-/obj/item/storage/briefcase,
-/obj/random/toy/plushie,
-/obj/structure/closet/secure_closet/personal/engineering_personal,
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/four)
 "QL" = (
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
-"QT" = (
-/obj/machinery/light,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
 "QX" = (
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
-"Rb" = (
-/obj/structure/bed/double/padded,
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/bedsheet/orangedouble,
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/four)
 "Ri" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -3213,43 +1951,6 @@
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/mountainsolars)
-"Rq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/network/engineering{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/engineering/dorm)
-"Rr" = (
-/obj/structure/sink{
-	dir = 8;
-	icon_state = "sink";
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -28
-	},
-/obj/structure/closet/wall_mounted/firecloset{
-	pixel_y = -32
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
-"Rt" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 "RK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
@@ -3257,12 +1958,6 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
 "RO" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/engineering,
 /turf/simulated/floor/tiled/steel/orangecorner,
@@ -3272,49 +1967,10 @@
 /obj/structure/railing,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"Sa" = (
-/obj/machinery/light_switch{
-	pixel_x = 0;
-	pixel_y = -28
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
-"So" = (
-/obj/machinery/light_switch{
-	pixel_x = 0;
-	pixel_y = -28
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
-"Sw" = (
-/obj/structure/sink{
-	dir = 8;
-	icon_state = "sink";
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/obj/structure/mirror{
-	pixel_x = -28
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
 "SE" = (
 /obj/random/tool_upgrade/low_chance,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/mountainsolars)
-"SL" = (
-/obj/structure/table/woodentable,
-/obj/item/storage/secure/safe{
-	pixel_x = 34
-	},
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/two)
-"Tf" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -28
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
 "Tq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -3323,26 +1979,9 @@
 /area/nadezhda/outside/mountainsolars)
 "TD" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/unsimulated/mineral,
+/obj/random/junk/cigbutt,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"TE" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
-"TJ" = (
-/obj/random/booze,
-/obj/random/junkfood/onlypizza,
-/obj/random/junkfood/onlyburger,
-/obj/random/junkfood,
-/obj/structure/closet/secure_closet/freezer,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
 "TO" = (
 /obj/structure/catwalk,
 /obj/machinery/camera/network/engineering{
@@ -3350,22 +1989,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"TS" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/two)
-"TX" = (
-/obj/structure/bed/double/padded,
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/bedsheet/orangedouble,
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/two)
 "Uc" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
@@ -3411,19 +2034,7 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"Vv" = (
-/obj/structure/toilet{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/three)
 "VL" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
 /obj/machinery/holoposter{
 	pixel_y = 32
 	},
@@ -3440,34 +2051,20 @@
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
 "Wc" = (
-/obj/structure/sink{
-	dir = 8;
-	icon_state = "sink";
-	pixel_x = -12;
-	pixel_y = 2
+/obj/structure/window/reinforced{
+	dir = 4;
+	pixel_x = 0
 	},
-/obj/structure/mirror{
-	pixel_x = -28
+/obj/machinery/telecomms/relay/preset/telecomms,
+/obj/machinery/door/window/northleft{
+	dir = 2
 	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
-"Wi" = (
-/obj/machinery/light_switch{
-	pixel_x = 0;
-	pixel_y = -28
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/three)
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/engineering/dorm)
 "Wo" = (
 /obj/vehicle/train/cargo/trolley,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"Ww" = (
-/obj/machinery/door/airlock{
-	name = "Bathroom"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
 "WE" = (
 /obj/structure/railing{
 	dir = 1;
@@ -3481,14 +2078,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"WQ" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
 "WR" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -3512,18 +2101,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"Xl" = (
-/obj/structure/sink{
-	dir = 8;
-	icon_state = "sink";
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/obj/structure/closet/wall_mounted/firecloset{
-	pixel_y = -32
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
 "Xp" = (
 /obj/structure/catwalk,
 /obj/machinery/camera/network/engineering,
@@ -3539,11 +2116,6 @@
 /obj/structure/low_wall,
 /turf/simulated/floor/plating,
 /area/nadezhda/engineering/dorm)
-"XL" = (
-/obj/machinery/microwave,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/four)
 "XR" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -3553,52 +2125,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/dorm)
-"Yd" = (
-/obj/random/furniture/pottedplant,
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/four)
-"Ye" = (
-/turf/simulated/floor/wood,
-/area/nadezhda/engineering/dorm/one)
-"Ys" = (
-/obj/structure/sink{
-	dir = 8;
-	icon_state = "sink";
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -28
-	},
-/obj/structure/closet/wall_mounted/firecloset{
-	pixel_y = -32
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/engineering/dorm/one)
-"Yv" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 "YM" = (
 /obj/machinery/power/apc/hyper{
 	dir = 1;
 	environ = 1;
 	equipment = 1;
 	pixel_y = 26
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
 	},
 /obj/structure/cable{
 	d2 = 4;
@@ -3617,20 +2149,6 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/engineering/dorm)
-"YY" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/engineering{
-	id_tag = "engdorm4";
-	name = "Adept Dorm 4";
-	req_access = list(10)
-	},
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
 "Zj" = (
 /obj/structure/cable{
@@ -3651,13 +2169,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"Zs" = (
-/obj/structure/table/woodentable,
-/obj/item/storage/secure/safe{
-	pixel_x = 34
-	},
-/turf/simulated/floor/carpet/oracarpet,
-/area/nadezhda/engineering/dorm/three)
 "Zx" = (
 /obj/structure/railing{
 	anchored = 1;
@@ -3675,20 +2186,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/mountainsolars)
-"ZQ" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/engineering{
-	id_tag = "engdorm2";
-	name = "Adept Dorm 2";
-	req_access = list(10)
-	},
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 
 (1,1,1) = {"
 aa
@@ -8608,23 +7105,23 @@ ab
 ac
 ac
 av
-bN
-av
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-FX
-FX
-FX
-FX
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
 bx
 ac
 ac
@@ -8712,21 +7209,21 @@ ac
 al
 av
 av
-aa
-ax
-ax
-ax
-ax
-ax
-ax
-ax
-ax
-ax
-ak
-ak
-ak
-ak
-FX
+al
+al
+al
+al
+ac
+ac
+ac
+ac
+ac
+al
+al
+al
+ac
+ac
+ac
 aG
 ac
 ac
@@ -8814,21 +7311,21 @@ ac
 al
 av
 bL
-EF
-ax
-aD
-Wc
-xH
-ax
-TJ
-qQ
-Ys
-nt
-xg
-yU
-AB
-ak
-FX
+aS
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+ac
+ac
 aG
 ac
 ac
@@ -8916,21 +7413,21 @@ ac
 ac
 av
 av
-aa
-ax
-aJ
-KF
-pS
-ax
-fJ
-FS
-LP
-nt
-GU
-Ot
-En
-ak
+bT
+al
+al
+al
+al
+al
+al
+ac
+ac
+ac
 FX
+FX
+FX
+ac
+ac
 Ib
 ac
 bb
@@ -9018,19 +7515,19 @@ ac
 al
 al
 al
+al
+al
+al
+al
+al
+al
+ac
+ac
 aa
-ax
-aQ
-KF
-ul
-ax
-Qn
-DE
-zd
-nt
-OM
-Ot
-Ot
+aj
+ak
+ak
+ak
 ak
 aj
 aR
@@ -9118,21 +7615,21 @@ ab
 ac
 al
 al
-al
+kG
 aS
 TD
-ax
-ax
-Bu
-ax
-ax
-Ho
+kG
+al
+al
 DE
-nA
+ac
+ac
+ab
+aa
 nt
-jH
-jH
-jH
+xg
+yU
+AB
 aF
 aN
 ci
@@ -9220,21 +7717,21 @@ ab
 ac
 al
 al
-al
-aS
-aa
 ax
-bv
-Ye
-Tf
-Ye
-Ai
-lH
-WQ
-tx
-rm
-KA
-Um
+aS
+qa
+ax
+al
+al
+ac
+ac
+ac
+ab
+aa
+nt
+GU
+Ot
+En
 aI
 aO
 cj
@@ -9322,21 +7819,21 @@ ab
 ac
 ac
 al
-al
-al
-aa
+rm
 ax
-bv
-Ye
-Ye
-nc
-bZ
-Ye
-Sa
+kG
+al
+al
+ac
+ac
+ac
+ab
+ab
+aa
 nt
-cm
-Um
-jH
+OM
+Ot
+Ot
 cd
 aP
 rF
@@ -9426,15 +7923,15 @@ ac
 al
 al
 al
-EF
-ax
-by
-Ye
-Lk
-ax
-ax
-Ny
-ax
+aS
+al
+ac
+ac
+ab
+ab
+ab
+ab
+aa
 nt
 nZ
 DS
@@ -9528,18 +8025,18 @@ ac
 ac
 aS
 aS
+al
+ac
+ac
+ab
+ab
+ab
+ab
+ab
 aa
-ax
-bA
-bX
-Ye
-ax
-BC
-BC
-ai
 nt
-jv
 jH
+Gd
 jH
 aA
 ch
@@ -9629,18 +8126,18 @@ ab
 ac
 ac
 aS
-aS
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-ax
-bK
-Ye
-JI
-ax
-nF
-pm
-yt
 nt
-cm
+Um
 Gd
 Og
 jH
@@ -9732,17 +8229,17 @@ ab
 ac
 ac
 ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-ax
-ax
-ax
-ax
-ax
-ax
-ax
-ax
 nt
-jv
+Um
 jH
 QX
 aE
@@ -9834,21 +8331,21 @@ ab
 ac
 ac
 ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-ay
-bW
-Nn
-OB
-ay
-iM
-el
-HD
 nt
-Yv
+Um
 DS
 Di
 aE
-FR
+so
 cn
 cK
 ak
@@ -9936,17 +8433,17 @@ ab
 ab
 ab
 ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-ay
-cf
-bY
-rp
-ay
-ef
-gD
-QE
 nt
-cm
+Um
 DS
 aE
 FR
@@ -10038,15 +8535,15 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-ay
-cs
-bY
-eg
-ay
-Cy
-QD
-zD
 nt
 xh
 jH
@@ -10140,17 +8637,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-ay
-ay
-nV
-ay
-ay
-yF
-QD
-AQ
 nt
-Yv
+DS
 Um
 Di
 aM
@@ -10242,17 +8739,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-ay
-cv
-fs
-lU
-fs
-ol
-kN
-TS
-ZQ
-aq
+nt
+Um
 iY
 aE
 aL
@@ -10344,22 +8841,22 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-ay
-cv
-fs
-fs
-qj
-nw
-fs
-So
 nt
 cm
 DS
 Di
 Cm
 OC
-aV
+dB
 tc
 ak
 Oq
@@ -10446,15 +8943,15 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-ay
-cx
-fs
-gd
-ay
-ay
-ou
-ay
 nt
 RO
 DS
@@ -10548,17 +9045,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-ay
-cC
-vO
-fs
-ay
-iD
-iD
-MW
 nt
-jv
+jH
 Um
 rL
 aE
@@ -10650,15 +9147,15 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-ay
-cG
-fs
-qV
-ay
-Bj
-TX
-SL
 nt
 VL
 jH
@@ -10752,15 +9249,15 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
+nt
 nt
 YM
 jH
@@ -10854,16 +9351,16 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-pw
-ay
-ay
-ay
-ay
-ay
-ay
-ay
 nt
+mv
 QL
 HT
 wU
@@ -10956,17 +9453,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-pw
-ay
-ay
-ay
-ay
-ay
-ay
-ay
 nt
-Nt
+Wc
+jH
 nl
 aB
 aA
@@ -11058,17 +9555,17 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-mR
-az
-az
-az
-az
-az
-az
-az
 nt
-Nt
+nt
+jH
 DS
 JX
 JX
@@ -11160,15 +9657,15 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-az
-az
-az
-az
-az
-az
-az
-az
+aa
 nt
 pq
 jH
@@ -11262,18 +9759,18 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-az
-Ch
-Sw
-qc
-az
-Ev
-ox
-Rr
-nt
+aa
+aj
 Nt
-jH
+Nt
 aj
 ak
 ak
@@ -11364,19 +9861,19 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
-az
-mo
-si
-mf
-az
-Dl
-md
-JF
-nt
-Nt
-DS
-ak
+aa
+aa
+aa
+aa
 FX
 FX
 aZ
@@ -11466,20 +9963,20 @@ ab
 ab
 ab
 ab
-aa
-az
-pj
-si
-Vv
-az
-vg
-zj
-qm
-nt
-Nt
-jH
-ak
-Oq
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+al
 al
 aZ
 be
@@ -11568,20 +10065,20 @@ aa
 ab
 ab
 ab
-aa
-az
-az
-sw
-az
-az
-zz
-zj
-Mv
-nt
-oW
-DS
-ak
-Oq
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+al
 al
 cp
 be
@@ -11670,20 +10167,20 @@ aa
 ab
 ab
 ab
-aa
-az
-CB
-rE
-Fe
-rE
-KK
-OU
-Ei
-km
-Rt
-jH
-ak
-Oq
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+al
 al
 cp
 be
@@ -11772,20 +10269,20 @@ aa
 ab
 ab
 ab
-aa
-az
-CB
-rE
-rE
-eq
-BG
-rE
-Wi
-nt
-Nt
-jH
-ak
-Oq
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+al
 al
 aZ
 be
@@ -11874,19 +10371,19 @@ aa
 ab
 ab
 ab
-aa
-az
-Ey
-rE
-xX
-az
-az
-gn
-az
-nt
-Nt
-DS
-aj
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 al
 ac
 aZ
@@ -11976,19 +10473,19 @@ aa
 ab
 ab
 ab
-aa
-az
-CZ
-xZ
-rE
-az
-hb
-hb
-MH
-nt
-Lg
-jH
-aj
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ac
 ac
 ac
@@ -12078,19 +10575,19 @@ aa
 ab
 ab
 ab
-aa
-az
-sN
-rE
-AA
-az
-rZ
-Pr
-Zs
-nt
-Jx
-DS
-aj
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ac
@@ -12180,19 +10677,19 @@ aa
 ab
 ab
 ab
-aa
-az
-az
-az
-az
-az
-az
-az
-az
-nt
-PL
-Gd
-nt
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -12282,19 +10779,19 @@ aa
 ab
 ab
 ab
-aa
-aC
-so
-wZ
-Ct
-aC
-su
-tE
-Xl
-nt
-Nt
-DS
-nt
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -12385,18 +10882,18 @@ aa
 aa
 aa
 aa
-aC
-sx
-Qa
-mv
-aC
-vS
-lT
-QT
-nt
-Nt
-Gd
-nt
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -12487,18 +10984,18 @@ aa
 aa
 aa
 aa
-aC
-fk
-Qa
-yI
-aC
-XL
-jF
-vW
-nt
-sQ
-jH
-nt
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -12589,18 +11086,18 @@ aa
 aa
 aa
 aa
-aC
-aC
-Ww
-aC
-aC
-uh
-jF
-eT
-nt
-TE
-DS
-nt
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -12691,18 +11188,18 @@ aa
 aa
 aa
 aa
-aC
-Hl
-KT
-Oa
-KT
-Et
-FP
-GO
-YY
-LC
-DS
-nt
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -12793,20 +11290,20 @@ aa
 aa
 aa
 aa
-aC
-Hl
-KT
-KT
-PK
-kG
-KT
-Kv
-nt
-jH
-Gd
-mr
-mr
-mr
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 aZ
@@ -12895,20 +11392,20 @@ aa
 aa
 aa
 aa
-aC
-in
-KT
-DL
-aC
-aC
-MK
-aC
-nt
-jH
-DS
-LM
-OY
-mr
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ac
@@ -12997,20 +11494,20 @@ aa
 aa
 aa
 aa
-aC
-qa
-lu
-KT
-aC
-Nh
-Nh
-NO
-nt
-Gd
-DS
-qw
-Rq
-mr
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
 aa
 aa
@@ -13099,20 +11596,20 @@ aa
 aa
 aa
 aa
-aC
-Ce
-KT
-Yd
-aC
-QJ
-Rb
-NT
-nt
-jH
-jH
-qu
-ge
-mr
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
 aa
 aa
@@ -13201,20 +11698,20 @@ aa
 aa
 aa
 aa
-aC
-aC
-aC
-aC
-aC
-aC
-aC
-aC
-nt
-nt
-nt
-mr
-mr
-mr
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
 aa
 aa
