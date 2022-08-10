@@ -842,6 +842,8 @@
 					/obj/item/storage/pill_bottle/dice = 7,
 					/obj/item/storage/pill_bottle/dice_nerd = 5,
 					/obj/item/storage/pill_bottle/chechker = 7,
+					/obj/item/toy/junk/dodgeball = 5,
+					/obj/item/toy/junk/dodgeball/face = 5,
 					/obj/item/storage/fancy/crayons = 5,
 					/obj/item/storage/box/team_support = 8,
 					/obj/item/device/binoculars = 12,
@@ -862,13 +864,17 @@
 					/obj/item/cardholder/rabbit = 20,
 					/obj/item/storage/hcases/cardcarp = 20,
 					/obj/item/card_carp = 50,
-					/obj/item/card_carp/index = 50
+					/obj/item/card_carp/index = 50,
+					/obj/item/clothing/under/dodgeball_blue = 5,
+					/obj/item/clothing/under/dodgeball_red = 5
 					)
 	prices = list(
 					/obj/item/storage/pill_bottle/dice = 20,
 					/obj/item/storage/pill_bottle/dice_nerd = 35,
 					/obj/item/storage/pill_bottle/chechker = 40,
 					/obj/item/storage/fancy/crayons = 150,
+					/obj/item/toy/junk/dodgeball = 15,
+					/obj/item/toy/junk/dodgeball/face = 15,
 					/obj/item/board = 35,
 					/obj/item/storage/box/team_support = 40,
 					/obj/item/device/binoculars = 30,
@@ -888,7 +894,9 @@
 					/obj/item/cardholder/rabbit = 30,
 					/obj/item/storage/hcases/cardcarp = 20,
 					/obj/item/card_carp = 1,
-					/obj/item/card_carp/index = 1)
+					/obj/item/card_carp/index = 1,
+					/obj/item/clothing/under/dodgeball_blue = 15,
+					/obj/item/clothing/under/dodgeball_red = 15)
 
 /obj/machinery/vending/gamers/hunters
 	name = "Pre-Payed Game Emporium"
@@ -897,6 +905,8 @@
 					/obj/item/storage/pill_bottle/dice = 3,
 					/obj/item/storage/pill_bottle/dice_nerd = 2,
 					/obj/item/storage/pill_bottle/chechker = 4,
+					/obj/item/toy/junk/dodgeball = 4,
+					/obj/item/toy/junk/dodgeball/face = 4,
 					/obj/item/board = 4,
 					/obj/item/storage/fancy/crayons = 5,
 					/obj/item/storage/box/team_support = 4,
@@ -917,13 +927,17 @@
 					/obj/item/cardholder/rabbit = 4,
 					/obj/item/storage/hcases/cardcarp = 4,
 					/obj/item/card_carp = 4,
-					/obj/item/card_carp/index = 4
+					/obj/item/card_carp/index = 4,
+					/obj/item/clothing/under/dodgeball_blue = 3,
+					/obj/item/clothing/under/dodgeball_red = 3
 					)
 	prices = list(
 					/obj/item/storage/pill_bottle/dice = 0,
 					/obj/item/storage/pill_bottle/dice_nerd = 0,
 					/obj/item/storage/pill_bottle/chechker = 0,
 					/obj/item/storage/fancy/crayons = 0,
+					/obj/item/toy/junk/dodgeball = 0,
+					/obj/item/toy/junk/dodgeball/face = 0,
 					/obj/item/board = 0,
 					/obj/item/storage/box/team_support = 0,
 					/obj/item/device/binoculars = 0,
@@ -943,6 +957,8 @@
 					/obj/item/cardholder/rabbit = 0,
 					/obj/item/storage/hcases/cardcarp = 0,
 					/obj/item/card_carp = 0,
-					/obj/item/card_carp/index = 0)
+					/obj/item/card_carp/index = 0,
+					/obj/item/clothing/under/dodgeball_blue = 0,
+					/obj/item/clothing/under/dodgeball_red = 0)
 	always_open = TRUE
 

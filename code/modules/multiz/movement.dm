@@ -140,7 +140,7 @@
 				return TRUE
 
 /mob/living/silicon/robot/can_ztravel(var/direction)
-	if(incapacitated() || is_dead())
+	if(incapacitated() || is_dead(src))
 		return FALSE
 
 	if(allow_spacemove()) //Checks for active jetpack

@@ -61,6 +61,8 @@
 			/obj/item/toy/weapon/katana,
 			/obj/item/toy/junk/snappop,
 			/obj/item/toy/junk/bosunwhistle,
+			/obj/item/toy/junk/dodgeball,
+			/obj/item/toy/junk/dodgeball/face,
 			/obj/item/toy/figure/character/bobblehead/excelsior,
 			/obj/item/toy/figure/character/bobblehead/serbian,
 			/obj/item/toy/figure/character/bobblehead/acolyte,

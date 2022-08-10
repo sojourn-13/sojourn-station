@@ -26,13 +26,13 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma
 	disk_name = "Oh My Guts! Bespoke Teratomas"
-	license = 20
+	license = 10
 	designs = list(
-		/datum/design/organ/aberrant_organ/teratoma/input/uncommon = 2,
-		/datum/design/organ/aberrant_organ/teratoma/input/rare = 4,
-		/datum/design/organ/aberrant_organ/teratoma/output/uncommon = 2,
-		/datum/design/organ/aberrant_organ/teratoma/output/rare = 4,
-		/datum/design/organ/aberrant_organ/teratoma/special = 2
+		/datum/design/organ/aberrant_organ/teratoma/input/uncommon,
+		/datum/design/organ/aberrant_organ/teratoma/input/rare = 2,
+		/datum/design/organ/aberrant_organ/teratoma/output/uncommon,
+		/datum/design/organ/aberrant_organ/teratoma/output/rare = 2,
+		/datum/design/organ/aberrant_organ/teratoma/special
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/omg/simple

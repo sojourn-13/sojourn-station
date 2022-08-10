@@ -59,12 +59,6 @@
 /mob/living/carbon/superior_animal/human/excelsior/handle_environment(var/datum/gas_mixture/environment) //are armor legit is a void suit
 	return
 
-/mob/living/carbon/superior_animal/human/excelsior/handle_cheap_breath(datum/gas_mixture/breath as anything)
-	return
-
-/mob/living/carbon/superior_animal/human/excelsior/handle_cheap_environment(datum/gas_mixture/environment as anything)
-	return
-
 /mob/living/carbon/superior_animal/human/excelsior/start_pulling(var/atom/movable/AM)
 	to_chat(src, SPAN_WARNING("Your hand gets pushed away from \the [src]. !"))
 	return

@@ -671,11 +671,6 @@
 /mob/proc/is_active()
 	return (0 >= usr.stat)
 
-/mob/proc/is_dead()
-	if (stat == DEAD) //attempted fix to this proc
-		return TRUE
-	return FALSE
-
 /mob/proc/is_mechanical()
 	if(mind && (mind.assigned_role == "Robot" || mind.assigned_role == "AI"))
 		return 1
@@ -770,24 +765,24 @@ All Canmove setting in this proc is temporary. This var should not be set from h
 /mob/proc/update_lying_buckled_and_verb_status()
 
 	if(!resting && cannot_stand() && can_stand_overridden())
-		lying = 0
+		lying = FALSE
 		canmove = TRUE //TODO: Remove this
 	else if(buckled)
-		anchored = 1
+		anchored = TRUE
 		if(istype(buckled))
 			if(buckled.buckle_lying == -1)
 				lying = incapacitated(INCAPACITATION_KNOCKDOWN)
 			else
 				lying = buckled.buckle_lying
 			if(buckled.buckle_movable)
-				anchored = 0
+				anchored = FALSE
 		canmove = FALSE //TODO: Remove this
 	else
 		lying = incapacitated(INCAPACITATION_KNOCKDOWN)
 		canmove = FALSE //TODO: Remove this
 
 	if(lying)
-		set_density(0)
+		set_density(TRUE)
 		if(l_hand) unEquip(l_hand)
 		if(r_hand) unEquip(r_hand)
 	else
@@ -797,13 +792,13 @@ All Canmove setting in this proc is temporary. This var should not be set from h
 
 	for(var/obj/item/grab/G in grabbed_by)
 		if(G.force_stand())
-			lying = 0
+			lying = TRUE
 
 	//Temporarily moved here from the various life() procs
 	//I'm fixing stuff incrementally so this will likely find a better home.
 	//It just makes sense for now. ~Carn
 	if( update_icon )	//forces a full overlay update
-		update_icon = 0
+		update_icon = FALSE
 		regenerate_icons()
 	else if( lying != lying_prev )
 		update_icons()

@@ -74,13 +74,14 @@
 		else
 			if (icon_living)
 				icon_state = icon_living
-			var/matrix/M = matrix()
-			M.Turn(180)
-			//M.Translate(1,-6)
-			transform = M
-	else if (icon_living)
-		icon_state = icon_living
-
+		var/matrix/M = matrix()
+		M.Turn(90)
+		transform = M
+	else
+		var/matrix/M = matrix()
+		transform = M
+		if (icon_living)
+			icon_state = icon_living
 
 /mob/living/carbon/superior_animal/regenerate_icons()
 	. = ..()
@@ -91,7 +92,7 @@
 
 /mob/living/carbon/superior_animal/examine(mob/user)
 	..()
-	if (is_dead())
+	if (is_dead(src))
 		to_chat(user, SPAN_DANGER("It is completely motionless, likely dead."))
 	else if (health < maxHealth * 0.10)
 		to_chat(user, SPAN_DANGER("It looks like they are on their last legs!"))
@@ -173,7 +174,7 @@
 
 // Same as breath but with innecesarry code removed and damage tripled. Environment pressure damage moved here since we handle moles.
 
-/mob/living/carbon/superior_animal/proc/handle_cheap_breath(datum/gas_mixture/breath as anything)
+/mob/living/carbon/superior_animal/handle_breath(datum/gas_mixture/breath as anything)
 	var/breath_pressure = (breath.total_moles*R_IDEAL_GAS_EQUATION*breath.temperature)/BREATH_VOLUME
 	var/breath_required = breath_pressure > 15 && (breath_required_type || breath_poison_type)
 	if(!breath_required) // 15 KPA Minimum
@@ -181,7 +182,7 @@
 	adjustOxyLoss(breath.gas[breath_required_type] ? 0 : ((((breath.gas[breath_required_type] / breath.total_moles) * breath_pressure) < min_breath_required_type) ? 0 : 6))
 	adjustToxLoss(breath.gas[breath_poison_type] ? 0 : ((((breath.gas[breath_poison_type] / breath.total_moles) * breath_pressure) < min_breath_poison_type) ? 0 : 6))
 
-/mob/living/carbon/superior_animal/proc/handle_cheap_environment(datum/gas_mixture/environment as anything)
+/mob/living/carbon/superior_animal/handle_environment(datum/gas_mixture/environment as anything)
 	var/pressure = environment.return_pressure()
 	var/enviro_damage = (bodytemperature < min_bodytemperature) || (pressure < min_air_pressure) || (pressure > max_air_pressure)
 	if(enviro_damage) // its like this to avoid extra processing further below without using goto
@@ -205,7 +206,7 @@
 /mob/living/carbon/superior_animal/proc/cheap_incapacitation_check() // This works based off constants ,override it if you want it to be dynamic . Based off isincapacited
 	return stunned > 0 || weakened > 0 || resting || pinned.len > 0 || stat || paralysis || sleeping || (status_flags & FAKEDEATH) || buckled() > 0
 
-/mob/living/carbon/superior_animal/proc/cheap_update_lying_buckled_and_verb_status_()
+/*/mob/living/carbon/superior_animal/update_lying_buckled_and_verb_status()
 
 	if(cheap_incapacitation_check())
 		lying = FALSE
@@ -221,7 +222,7 @@
 		set_density(FALSE)
 	else
 		canmove = TRUE
-		set_density(initial(density))
+		set_density(initial(density))*/
 
 /mob/living/carbon/superior_animal/proc/adjustFiringOffset(var/value)
 
@@ -517,20 +518,27 @@
 // Same as overridden proc but -3 instead of -1 since its 3 times less frequently envoked, if checks removed
 /mob/living/carbon/superior_animal/handle_status_effects()
 	paralysis = max(paralysis-3,0)
-	stunned = max(stunned-3,0)
-	weakened = max(weakened-3,0)
 
-/mob/living/carbon/superior_animal/proc/handle_cheap_regular_status_updates()
+	if (stunned)
+		stunned = max(stunned-3,0)
+		if(!stunned)
+			update_icons()
+
+	if(weakened)
+		weakened = max(weakened-3,0)
+		if(!weakened)
+			update_icons()
+
+/mob/living/carbon/superior_animal/handle_regular_status_updates()
 	health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
-	if(health <= 0 && stat != DEAD)
+	if(health <= death_threshold && stat != DEAD)
 		death()
-		// STOP_PROCESSING(SSmobs, src) This is handled in Superior animal Life().
 		blinded = TRUE
 		silent = FALSE
 		return TRUE
 	return FALSE
 
-/mob/living/carbon/superior_animal/proc/handle_cheap_chemicals_in_body()
+/mob/living/carbon/superior_animal/handle_chemicals_in_body()
 	if(reagents)
 		chem_effects.Cut()
 		if(touching)
@@ -558,30 +566,30 @@
 	ticks_processed++
 	handle_regular_hud_updates()
 	if(!reagent_immune)
-		handle_cheap_chemicals_in_body()
+		handle_chemicals_in_body() //not under ai_inactive, because of shit like blattedin
 
+	// is this optimal? no. do i like this? no. if i could, would i rip it up and make it better? yes.
+	// but this is eriscode. i cant make a clean change on fucking anything. i am so goddamn tired of trying
+	// to optimize this mess, taht at this point, im willing to just shove all this shit in here. and you know what?
+	// this isnt even that bad. im disgusted by this too, and by god, i beg of whoever the hell is reading this,
+	// MAKE THIS BETTER. we have SO many goddamn superior mobs that this shit NEEDS to be optimal but i am a goddamn
+	// sophmore in college about to get a goddamn job so im pretty tired of workin on this shit.
 	if(!(ticks_processed%3))
-		// handle_status_effects() this is handled here directly to save a bit on procedure calls
-		//if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1)) - Soj edit, we already update icon just 13 lines down form this, no point
-		//	spawn(5) update_icons()
-		paralysis = max(paralysis-3,0)
-		stunned = max(stunned-3,0)
-		weakened = max(weakened-3,0)
-		cheap_update_lying_buckled_and_verb_status_()
+		if (!AI_inactive)
+			handle_status_effects()
+			update_lying_buckled_and_verb_status()
 		if(!never_stimulate_air)
 			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
 			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
-			handle_cheap_breath(breath)
-			handle_cheap_environment(environment)
+			handle_breath(breath)
+			handle_environment(environment) //it should be pretty safe to move this out of ai inactive if this causes problems.
+			if (can_burrow && bad_environment)
+				evacuate()
 			//Fire handling , not passing the whole list because thats unefficient.
 			handle_fire(environment.gas["oxygen"], loc)
-		updateicon()
+		// this one in particular im very unhappy about. every 3 ticks, if a superior mob is dead to something that doesnt directly apply damage, it dies. i hate this.
+		handle_regular_status_updates() // we should probably still do this even if we're dead or something
 		ticks_processed = 0
-	if(handle_cheap_regular_status_updates()) // They have died after all of this, do not scan or do not handle AI anymore.
-		return PROCESS_KILL
-
-	if (can_burrow && bad_environment)
-		evacuate()
 
 	if (!weakened)
 
