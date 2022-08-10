@@ -7144,7 +7144,7 @@
 	req_access = list();
 	req_one_access = list(55)
 	},
-/turf/simulated/floor/tiled/white/danger,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/genetics)
 "btG" = (
 /obj/structure/bed/chair{
@@ -14717,7 +14717,7 @@
 	name = "Genetics Pen Access";
 	req_one_access = list(55)
 	},
-/turf/simulated/floor/tiled/white/danger,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/genetics)
 "cTV" = (
 /obj/machinery/door/airlock/maintenance_common{
@@ -75814,7 +75814,7 @@
 	req_access = list();
 	req_one_access = list(55)
 	},
-/turf/simulated/floor/tiled/white/danger,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/genetics)
 "ouy" = (
 /obj/machinery/power/apc{
@@ -84905,7 +84905,7 @@
 	req_access = list();
 	req_one_access = list(55)
 	},
-/turf/simulated/floor/tiled/white/danger,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/genetics)
 "qgG" = (
 /obj/effect/decal/cleanable/dirt,
