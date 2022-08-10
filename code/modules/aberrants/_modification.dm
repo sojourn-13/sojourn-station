@@ -16,8 +16,6 @@
 	var/removal_difficulty = FAILCHANCE_CHALLENGING
 	var/removal_stat = STAT_COG
 
-	var/mod_start_action = "adjusting"
-	var/mod_success_action = "adjusted"
 	var/mod_time = WORKTIME_FAST
 	var/mod_tool_quality = QUALITY_CLAMPING				
 	var/mod_difficulty = FAILCHANCE_ZERO
@@ -26,6 +24,7 @@
 
 	var/bypass_perk = null
 
+	var/adjustable = FALSE
 	var/destroy_on_removal = FALSE 
 	var/removable = TRUE
 	var/breakable = FALSE //Some mods are meant to be tamper-resistant and should be removed only in a hard way
@@ -76,7 +75,7 @@
 /datum/component/modification/proc/check_item(obj/item/I, mob/living/user)
 	if(I.item_upgrades.len >= I.max_upgrades)
 		if(user)
-			to_chat(user, SPAN_WARNING("The [I] can not fit anymore modifications!"))
+			to_chat(user, SPAN_WARNING("\The [I] can not fit anymore modifications!"))
 		return FALSE
 
 	if(apply_to_types.len)
@@ -88,14 +87,14 @@
 
 		if(!type_match)
 			if(user)
-				to_chat(user, SPAN_WARNING("The [parent] can not be attached to the [I]!"))
+				to_chat(user, SPAN_WARNING("\The [parent] can not be attached to \the [I]!"))
 			return FALSE
 
 	if(blacklisted_types.len)
 		for(var/path in blacklisted_types)
 			if(istype(I, path))
 				if(user)
-					to_chat(user, SPAN_WARNING("The [parent] can not be attached to the [I]!"))
+					to_chat(user, SPAN_WARNING("\The [parent] can not be attached to \the [I]!"))
 				return FALSE
 	
 	return TRUE
@@ -141,8 +140,7 @@
 
 		if(!I.use_tool(user = user, target = parent, base_time = final_install_time, required_quality = mod_tool_quality, fail_chance = final_install_difficulty, required_stat = mod_stat, forced_sound = mod_sound))
 			return FALSE
-		if(modify(I, user))
-			to_chat(user, SPAN_NOTICE("You have successfully [mod_success_action] \the [parent]"))
+		modify(I, user)
 	
 /datum/component/modification/proc/modify(obj/item/I, mob/living/user)
 	return TRUE
@@ -224,7 +222,6 @@
 			toremove = upgrade_loc.item_upgrades[1]
 		else
 			var/list/possibles = upgrade_loc.item_upgrades.Copy()
-			possibles += "Cancel"
 			toremove = input("Which modification would you like to try to extract? The modification will likely be destroyed in the process","Removing Modifications") as null|anything in possibles
 			if(!toremove)
 				return TRUE

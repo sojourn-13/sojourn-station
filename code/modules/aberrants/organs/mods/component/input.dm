@@ -6,6 +6,8 @@
 	var/list/accepted_inputs = list()
 
 /datum/component/modification/organ/input/reagents
+	adjustable = TRUE
+
 /datum/component/modification/organ/input/reagents/get_function_info()
 	var/source
 	switch(check_mode)
@@ -71,6 +73,8 @@
 
 
 /datum/component/modification/organ/input/damage
+	adjustable = TRUE
+
 /datum/component/modification/organ/input/damage/get_function_info()
 	var/inputs
 	for(var/input in accepted_inputs)

@@ -6,6 +6,7 @@
 
 
 /datum/component/modification/organ/output/reagents
+	adjustable = TRUE
 	var/mode = CHEM_BLOOD
 
 /datum/component/modification/organ/output/reagents/get_function_info()

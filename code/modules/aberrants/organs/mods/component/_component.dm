@@ -148,17 +148,22 @@
 	if(examine_msg)
 		to_chat(user, SPAN_WARNING(examine_msg))
 
+	if(adjustable)
+		to_chat(user, SPAN_WARNING("Can be adjusted with a laser cutting tool."))
+
 	var/stat_req_bypassed = bypass_perk && user.stats?.getPerk(bypass_perk) ? TRUE : FALSE
 	if(stat_req_bypassed || user.stats?.getStat(examine_stat) >= examine_difficulty)
 		var/info = "Organoid size: [specific_organ_size_mod ? specific_organ_size_mod : "0"]"
 		info += "\nRequirements: <span style='color:red'>[blood_req_mod ? blood_req_mod : "0"]\
 								</span>/<span style='color:blue'>[oxygen_req_mod ? oxygen_req_mod : "0"]\
 								</span>/<span style='color:orange'>[nutriment_req_mod ? nutriment_req_mod : "0"]</span>"
-		info += "\nOrgan tissues present: <span style='color:pink'>"
+
+		var/organs
 		for(var/organ in organ_efficiency_mod)
-			info += organ + " ([organ_efficiency_mod[organ]]), "
-		info = copytext(info, 1, length(info) - 1)
-		info += "</span>"
+			organs += organ + " ([organ_efficiency_mod[organ]]), "
+		organs = copytext(organs, 1, length(organs) - 1)
+		info += "\nOrgan tissues present: <span style='color:pink'>[organs ? organs : "none"]</span>"
+
 		to_chat(user, SPAN_NOTICE(info))
 
 		var/function_info = get_function_info()
