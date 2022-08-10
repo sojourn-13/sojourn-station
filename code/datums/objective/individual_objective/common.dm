@@ -372,7 +372,7 @@
 	RegisterSignal(owner.initial_account, COMSIG_TRANSATION, .proc/task_completed)
 
 /datum/individual_objective/bills/task_completed(datum/money_account/S, datum/money_account/T, amount)
-	if(S == owner.initial_account && T == target)
+	if(S == owner.initial_account && amount >= units_requested && T != S)
 		..(amount)
 
 /datum/individual_objective/bills/completed()
