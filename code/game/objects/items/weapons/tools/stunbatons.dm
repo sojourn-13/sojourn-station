@@ -147,7 +147,7 @@
 	add_fingerprint(user)
 
 /obj/item/tool/baton/attack(mob/M, mob/user)
-	if(switched_on && (CLUMSY in user.mutations) && prob(10))
+	if(switched_on && (CLUMSY in user.mutations) && prob(50))
 		to_chat(user, SPAN_DANGER("You accidentally hit yourself with the [src]!"))
 		user.Weaken(1)
 		deductcharge(hitcost)
