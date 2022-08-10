@@ -116,7 +116,7 @@
 		return
 	if(target == start)
 		return
-	if (is_dead())
+	if (is_dead(src))
 		return
 
 	var/obj/item/projectile/A = new projectiletype(user:loc)

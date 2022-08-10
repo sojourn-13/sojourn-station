@@ -78,12 +78,6 @@
 /mob/living/carbon/superior_animal/nanobot/handle_environment(var/datum/gas_mixture/environment) //were space proof
 	return
 
-/mob/living/carbon/superior_animal/nanobot/handle_cheap_breath(datum/gas_mixture/breath as anything)
-	return
-
-/mob/living/carbon/superior_animal/nanobot/handle_cheap_environment(datum/gas_mixture/environment as anything)
-	return
-
 /mob/living/carbon/superior_animal/nanobot/New()
 	. = ..()
 	Radio = new/obj/item/device/radio(src)

@@ -30,7 +30,7 @@
 	needs_environment = FALSE
 
 /mob/living/simple_animal/hostile/megafauna/excelsior_cosmonaught/death(gibbed, var/list/force_grant)
-	if(health <= 0)
+	if(health <= death_threshold)
 		visible_message("<b>[src]</b> blows apart in an explosion!")
 		explosion(src.loc, 0,1,3)
 		new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
