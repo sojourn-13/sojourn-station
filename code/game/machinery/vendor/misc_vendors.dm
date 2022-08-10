@@ -43,6 +43,7 @@
 				/obj/item/flame/lighter/zippo/royal = 4,
 				/obj/item/flame/lighter/zippo/gonzo = 4,
 				/obj/item/flame/lighter/zippo/bullet = 4,
+				/obj/item/flame/lighter/zippo/brass = 3,
 				/obj/item/flame/lighter/zippo/absolutism = 4)
 	contraband = list(/obj/item/flame/lighter/zippo/communist = 2,
 				/obj/item/flame/lighter/zippo/excelsior = 4,
@@ -81,6 +82,8 @@
 				/obj/item/flame/lighter/zippo/gonzo = 50,
 				/obj/item/flame/lighter/zippo/bullet = 50,
 				/obj/item/flame/lighter/zippo/communist = 250, // Idiot tax, but still affordable
+				/obj/item/flame/lighter/zippo/brass = 55,
+				/obj/item/flame/lighter/zippo/absolutism = 50,
 				/obj/item/storage/fancy/cigar = 250,
 				/obj/item/clothing/mask/vape = 150,
 				/obj/item/clothing/mask/smokable/pipe = 75,
@@ -233,6 +236,7 @@
 		/obj/item/clothing/accessory/cape/blackalt = 8,
 		//Glasses
 		/obj/item/clothing/glasses/binoclard_lenses = 5,
+		/obj/item/clothing/glasses/binoclard_lenses/dark = 3,
 		//Gloves
 		/obj/item/clothing/gloves/knuckles = 3,
 		/obj/item/clothing/gloves/evening = 3,
@@ -481,6 +485,7 @@
 		/obj/item/clothing/accessory/cape/blackalt = 95,
 		//Glasses
 		/obj/item/clothing/glasses/binoclard_lenses = 50,
+		/obj/item/clothing/glasses/binoclard_lenses/dark = 50,
 		//Gloves
 		/obj/item/clothing/gloves/knuckles = 65,
 		/obj/item/clothing/gloves/evening = 70,
@@ -837,6 +842,8 @@
 					/obj/item/storage/pill_bottle/dice = 7,
 					/obj/item/storage/pill_bottle/dice_nerd = 5,
 					/obj/item/storage/pill_bottle/chechker = 7,
+					/obj/item/toy/junk/dodgeball = 5,
+					/obj/item/toy/junk/dodgeball/face = 5,
 					/obj/item/storage/fancy/crayons = 5,
 					/obj/item/storage/box/team_support = 8,
 					/obj/item/device/binoculars = 12,
@@ -857,13 +864,17 @@
 					/obj/item/cardholder/rabbit = 20,
 					/obj/item/storage/hcases/cardcarp = 20,
 					/obj/item/card_carp = 50,
-					/obj/item/card_carp/index = 50
+					/obj/item/card_carp/index = 50,
+					/obj/item/clothing/under/dodgeball_blue = 5,
+					/obj/item/clothing/under/dodgeball_red = 5
 					)
 	prices = list(
 					/obj/item/storage/pill_bottle/dice = 20,
 					/obj/item/storage/pill_bottle/dice_nerd = 35,
 					/obj/item/storage/pill_bottle/chechker = 40,
 					/obj/item/storage/fancy/crayons = 150,
+					/obj/item/toy/junk/dodgeball = 15,
+					/obj/item/toy/junk/dodgeball/face = 15,
 					/obj/item/board = 35,
 					/obj/item/storage/box/team_support = 40,
 					/obj/item/device/binoculars = 30,
@@ -883,7 +894,9 @@
 					/obj/item/cardholder/rabbit = 30,
 					/obj/item/storage/hcases/cardcarp = 20,
 					/obj/item/card_carp = 1,
-					/obj/item/card_carp/index = 1)
+					/obj/item/card_carp/index = 1,
+					/obj/item/clothing/under/dodgeball_blue = 15,
+					/obj/item/clothing/under/dodgeball_red = 15)
 
 /obj/machinery/vending/gamers/hunters
 	name = "Pre-Payed Game Emporium"
@@ -892,6 +905,8 @@
 					/obj/item/storage/pill_bottle/dice = 3,
 					/obj/item/storage/pill_bottle/dice_nerd = 2,
 					/obj/item/storage/pill_bottle/chechker = 4,
+					/obj/item/toy/junk/dodgeball = 4,
+					/obj/item/toy/junk/dodgeball/face = 4,
 					/obj/item/board = 4,
 					/obj/item/storage/fancy/crayons = 5,
 					/obj/item/storage/box/team_support = 4,
@@ -912,13 +927,17 @@
 					/obj/item/cardholder/rabbit = 4,
 					/obj/item/storage/hcases/cardcarp = 4,
 					/obj/item/card_carp = 4,
-					/obj/item/card_carp/index = 4
+					/obj/item/card_carp/index = 4,
+					/obj/item/clothing/under/dodgeball_blue = 3,
+					/obj/item/clothing/under/dodgeball_red = 3
 					)
 	prices = list(
 					/obj/item/storage/pill_bottle/dice = 0,
 					/obj/item/storage/pill_bottle/dice_nerd = 0,
 					/obj/item/storage/pill_bottle/chechker = 0,
 					/obj/item/storage/fancy/crayons = 0,
+					/obj/item/toy/junk/dodgeball = 0,
+					/obj/item/toy/junk/dodgeball/face = 0,
 					/obj/item/board = 0,
 					/obj/item/storage/box/team_support = 0,
 					/obj/item/device/binoculars = 0,
@@ -938,6 +957,8 @@
 					/obj/item/cardholder/rabbit = 0,
 					/obj/item/storage/hcases/cardcarp = 0,
 					/obj/item/card_carp = 0,
-					/obj/item/card_carp/index = 0)
+					/obj/item/card_carp/index = 0,
+					/obj/item/clothing/under/dodgeball_blue = 0,
+					/obj/item/clothing/under/dodgeball_red = 0)
 	always_open = TRUE
 

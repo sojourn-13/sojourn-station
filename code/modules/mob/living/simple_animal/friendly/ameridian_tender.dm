@@ -84,7 +84,8 @@
 
 	// We got a crystal, but it is too far away, go toward it.
 	if(get_dist(get_turf(src), get_turf(target_crystal)) > 1)
-		walk_to_wrapper(src, target_crystal, 1, move_to_delay)
+		if (stat != DEAD)
+			SSmove_manager.move_to(src, target_crystal, 1, move_to_delay)
 		return
 
 	// We got a crystal, and it is right next to us.

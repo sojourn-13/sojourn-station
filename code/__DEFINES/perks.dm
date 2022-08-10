@@ -17,6 +17,8 @@
 #define PERK_HORRIBLE_DEEDS /datum/perk/oddity/horrible_deeds
 #define PERK_ABSOLUTE_GRAB /datum/perk/oddity/absolute_grab <-- This perk here may be implemented later and its code exists but is commented out.
 */
+// Name changer perk, meant for ghostspawners
+#define PERK_TRUE_NAME /datum/perk/true_name
 
 // oddity perks
 #define PERK_FAST_WALKER /datum/perk/oddity/fast_walker
@@ -87,6 +89,7 @@
 #define PERK_LIMB_REGEN /datum/perk/limb_regen
 #define PERK_MIND_BOOST /datum/perk/slime_stat_boost/mental
 #define PERK_BODY_BOOST /datum/perk/slime_stat_boost/physical
+#define PERK_GUNSMITH /datum/perk/gunsmith
 
 // Psionic perks
 #define PERK_PSION /datum/perk/psion

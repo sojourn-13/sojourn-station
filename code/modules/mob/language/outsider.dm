@@ -86,6 +86,9 @@
 	colour = "cult"
 	key = "f"
 	flags = RESTRICTED
+	partial_understanding = list(
+		LANGUAGE_YASSARI = 15
+	)
 	space_chance = 100
 	syllables = list("ire","ego","nahlizet","certum","veri","jatkaa","mgar","balaq", "karazet", "geeri", \
 		"orkan", "allaq", "sas'so", "c'arta", "forbici", "tarem", "n'ath", "reth", "sh'yro", "eth", "d'raggathnor", \

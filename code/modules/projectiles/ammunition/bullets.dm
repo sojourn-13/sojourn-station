@@ -743,6 +743,11 @@
 	icon_state = "frag"
 	projectile_type = /obj/item/projectile/bullet/grenade/frag
 
+/obj/item/ammo_casing/grenade/frag/stinger
+	name = "stinger grenade shell"
+	desc = "A stinger grenade shell, designed to be fired from grenade launchers."
+	projectile_type = /obj/item/projectile/bullet/grenade/frag/stinger
+
 /obj/item/ammo_casing/grenade/emp
 	name = "emp grenade shell"
 	desc = "An EMP grenade shell, designed to be fired from grenade launchers."

@@ -327,6 +327,12 @@
 				if(istype(O, /obj/item/stack/material/cyborg))
 					return //Prevents borgs throwing their stuff into it
 
+				if(istype(O, /obj/item/ammo_magazine))
+					return //Prevents people from shoving in ammo to get matter
+
+				if(istype(O, /obj/item/ammo_casing))
+					return //Prevents people from shoving in ammo to get matter 
+					
 				if(istype(O, /obj/item/stack))
 					var/obj/item/stack/material/stack = O
 					total_material *= stack.get_amount()

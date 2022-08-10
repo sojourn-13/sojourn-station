@@ -445,3 +445,36 @@ Technomancer RIG
 		/obj/item/rig_module/grenade_launcher,
 		/obj/item/rig_module/mounted/taser
 		)
+/obj/item/rig/hazard/steward
+	name = "hazard hardsuit control module"
+	suit_type = "hazard hardsuit"
+	desc = "A modification of the traditional hazard rig built for equal parts utility and defense. Marked with a seal of two Armstrong rifles crossing each other in a X at the base of the neck."
+	icon_state = "hazard_rig"
+	armor_list = list(
+		melee = 40,
+		bullet = 40,
+		energy = 40,
+		bomb = 90,
+		bio = 100,
+		rad = 100
+	)
+	slowdown = 0.3
+	drain = 3.5
+	offline_slowdown = 3
+	offline_vision_restriction = 1
+
+	helm_type = /obj/item/clothing/head/helmet/space/rig/hazard
+	max_upgrades = 1
+	req_access = list(access_hop)
+	req_one_access = list()
+
+
+	initial_modules = list(
+		/obj/item/rig_module/mounted/taser,
+		/obj/item/rig_module/device/flash,
+		/obj/item/rig_module/vision/medhud,
+		/obj/item/rig_module/device/healthscanner,
+		/obj/item/rig_module/modular_injector/medical,
+		/obj/item/rig_module/ai_container,
+		/obj/item/rig_module/storage
+		)

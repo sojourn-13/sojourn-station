@@ -4,7 +4,7 @@
 		target_mob = null
 		lost_sight = FALSE
 		target_location = null
-		walk(src, 0)
+		SSmove_manager.stop_looping(src)
 		return
 
 	return 1

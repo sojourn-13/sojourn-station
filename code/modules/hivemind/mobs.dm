@@ -25,6 +25,19 @@
 
 	mob_classification = CLASSIFICATION_SYNTHETIC
 
+	// Loot
+	var/drop_chance = 20
+	var/list/loot_possibilities = list(
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/input = 5,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/uncommon = 2,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/rare = 1,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/process = 5,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/output = 5,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/uncommon = 2,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/rare = 1,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/special = 3
+	)
+
 	//internals
 	var/obj/machinery/hivemind_machine/master
 	var/special_ability_cooldown = 0		//use ability_cooldown, don't touch this
@@ -60,7 +73,7 @@
 /mob/living/simple_animal/hostile/hivemind/proc/mulfunction()
 	stance = HOSTILE_STANCE_IDLE //it give us some kind of stun effect
 	target_mob = null
-	walk(src, FALSE)
+	SSmove_manager.stop_looping(src)
 	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
 	sparks.set_up(3, 3, loc)
 	sparks.start()
@@ -156,6 +169,10 @@
 		GLOB.hivemind_mobs.Remove(real_name)
 	if(master) //for spawnable mobs
 		master.spawned_creatures.Remove(src)
+	if(prob(drop_chance))
+		var/loot_type = pickweight(loot_possibilities)
+		if(loot_type)
+			new loot_type(get_turf(src))
 	. = ..()
 
 
@@ -637,7 +654,7 @@
 	src.visible_message("<b>[src]</b> dies!")
 	destroy_surroundings = FALSE
 	fake_dead = TRUE
-	walk(src, FALSE)
+	SSmove_manager.stop_looping(src)
 	icon_state = icon_dead
 	fake_dead_wait_time = world.time + 10 SECONDS
 
@@ -756,7 +773,7 @@
 				if(get_dist(src, Corpse) <= 1)
 					special_ability(Corpse)
 				else
-					walk_to_wrapper(src, Corpse, 1, 1, 4)
+					SSmove_manager.move_to(src, Corpse, 1, 1)
 				break
 
 

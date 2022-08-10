@@ -163,6 +163,7 @@
 			list(name="Grenade Shell Flash", cost=250, path=/obj/item/ammo_casing/grenade/flash),
 			list(name="Grenade Shell Blast", cost=350, path=/obj/item/ammo_casing/grenade/blast),
 			list(name="Grenade Shell Frag", cost=350, path=/obj/item/ammo_casing/grenade/frag),
+			list(name="Grenade Shell Stinger", cost=300, path=/obj/item/ammo_casing/grenade/frag/stinger),
 			list(name="Grenade Shell EMP", cost=300, path=/obj/item/ammo_casing/grenade/emp),
 			list(name="14.5×114mm Anti-Material \"Red-Nose\"", cost=2400, path=/obj/item/ammo_casing/antim/lethal/prespawned),
 			list(name="14.5×114mm Anti-Material \"Off-Switch\"", cost=2400, path=/obj/item/ammo_casing/antim/ion/prespawned),
@@ -454,7 +455,7 @@
 	eat_eff = bin_rating
 
 /obj/machinery/bulletfabricator/proc/check_user(mob/user)
-	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, STAT_LEVEL_EXPERT))
+	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stats?.getPerk(PERK_GUNSMITH) || user.stat_check(STAT_MEC, STAT_LEVEL_EXPERT))
 		return TRUE
 	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
 	return FALSE

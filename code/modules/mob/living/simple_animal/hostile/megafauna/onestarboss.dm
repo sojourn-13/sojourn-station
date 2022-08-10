@@ -31,7 +31,7 @@
 	projectiletype = /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 
 /mob/living/simple_animal/hostile/megafauna/one_star/death(gibbed, var/list/force_grant)
-	if(health <= 0)
+	if(health <= death_threshold)
 		visible_message("<b>[src]</b> blows apart in an explosion!")
 		explosion(src.loc, 0,1,3)
 		new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
@@ -102,7 +102,7 @@
 
 	anger_modifier = CLAMP(((maxHealth - health)/50),0,20)
 	ranged_cooldown = world.time + 30
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 	telegraph()
 	icon_state = "onestar_boss"
 	if(prob(35))

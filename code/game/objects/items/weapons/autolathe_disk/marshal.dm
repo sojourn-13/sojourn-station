@@ -140,6 +140,7 @@
 		/datum/design/autolathe/ammo/hrifle_ammobox_linked_empty = 0,
 		/datum/design/autolathe/ammo/grenade,
 		/datum/design/autolathe/ammo/grenade/flash,
+		/datum/design/autolathe/ammo/grenade/stinger,
 		/datum/design/autolathe/ammo/flare_shell = 0,
 		/datum/design/autolathe/ammo/flare_shell_g = 0,
 		/datum/design/autolathe/ammo/flare_shell_b = 0,

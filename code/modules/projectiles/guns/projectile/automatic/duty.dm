@@ -17,7 +17,6 @@
 	load_method = SINGLE_CASING|SPEEDLOADER|MAGAZINE
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 25)
 	price_tag = 800
-	damage_multiplier = 1.1
 	penetration_multiplier = 1.1
 	init_recoil = CARBINE_RECOIL(0.9)
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'

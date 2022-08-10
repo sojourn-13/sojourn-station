@@ -669,3 +669,4 @@
 	name = "Gelatinous Physical Stat Boost"
 	desc = "Spend nutrition in exchange of \[INSERT DESCRIPTION HERE\]"
 	stats_to_boost = list(STAT_ROB, STAT_TGH, STAT_VIG)
+

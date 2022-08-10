@@ -19,6 +19,8 @@
 	icon = 'icons/obj/bloodpack.dmi'
 	icon_state = "bloodpack"
 	volume = 200
+	amount_per_transfer_from_this = REM // To avoid overdosing and emptying blood packs a bit too much. It's enough to keep someone alive over time. - Seb
+	possible_transfer_amounts = list(REM,0.5,1,2) // In case the blood packs are to be filled with other chems somehow, or to change from slow drip to faster.
 	reagent_flags = OPENCONTAINER
 	filling_states = "25;50;75;100"
 	var/blood_type = null

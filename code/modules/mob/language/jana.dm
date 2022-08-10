@@ -7,6 +7,9 @@
 	colour = "brass"
 	key = "j"
 	shorthand = "JA"
+	partial_understanding = list(
+		LANGUAGE_COMMON = 5
+	)
 	space_chance = 80
 	syllables = list(
 		"a", "ai", "an", "ang", "ao", "ba", "bai", "ban", "bang", "bao", "bei", "ben", "beng", "bi", "bian", "biao",

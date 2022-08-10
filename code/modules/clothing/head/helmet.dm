@@ -27,13 +27,13 @@
 	tool_qualities = list(QUALITY_ARMOR = 100)
 	max_upgrades = 1
 
-//Blackshield helmets
 /obj/item/clothing/head/helmet/ballistic
 	name = "ballistic helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel."
 	icon_state = "helmet_mil"
-	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
+	armor_list = list(melee = 30, bullet = 40,energy = 20, bomb = 30, bio = 0, rad = 0)
 
+//Blackshield helmets
 /obj/item/clothing/head/helmet/ballistic/militia
 	name = "blackshield helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
@@ -122,7 +122,7 @@
 	name = "Corpsmans full helm"
 	desc = "Standard military gear. A full-faced vasriant of the common ballistic helmet. This one bears a few\
 	key upgrades, including sterile materials and contaminant resistant sealing."
-	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 20, rad = 0)
+	armor_list = list(melee = 30, bullet = 40,energy = 20, bomb = 30, bio = 75, rad = 0)
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4
 	light_overlay = "corpsmanfullhelm_light"
@@ -1076,7 +1076,7 @@
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "altyn"
 	armor_up = list(melee = 20, bullet = 15, energy = 0, bomb = 15, bio = 0, rad = 0)
-	armor_list = list(melee = 40, bullet = 40, energy = 0, bomb = 35, bio = 0, rad = 0)
+	armor_list = list(melee = 40, bullet = 45, energy = 10, bomb = 35, bio = 0, rad = 0)
 	siemens_coefficient = 1
 	up = TRUE
 
