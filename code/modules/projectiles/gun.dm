@@ -273,7 +273,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		handle_click_empty(user)
 		return FALSE
 
-	if((CLUMSY in M.mutations) && prob(15))
+	if((CLUMSY in M.mutations) && prob(75))
 		var/obj/P = consume_next_projectile()
 		if(P)
 			if(process_projectile(P, user, user, pick(BP_L_LEG, BP_R_LEG)))
