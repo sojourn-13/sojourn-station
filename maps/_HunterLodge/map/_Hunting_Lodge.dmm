@@ -1427,7 +1427,7 @@
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	dir = 8;
-	matter = list("wood" = 4);
+	matter = list("wood"=4);
 	name = "wooden fence"
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -1440,7 +1440,7 @@
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	dir = 4;
-	matter = list("wood" = 4);
+	matter = list("wood"=4);
 	name = "wooden fence"
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -1449,13 +1449,13 @@
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	dir = 1;
-	matter = list("wood" = 4);
+	matter = list("wood"=4);
 	name = "wooden fence"
 	},
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	dir = 8;
-	matter = list("wood" = 4);
+	matter = list("wood"=4);
 	name = "wooden fence"
 	},
 /obj/structure/sink/puddle,
@@ -1465,7 +1465,7 @@
 "es" = (
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
-	matter = list("wood" = 4);
+	matter = list("wood"=4);
 	name = "wooden fence"
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -1474,13 +1474,13 @@
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	dir = 4;
-	matter = list("wood" = 4);
+	matter = list("wood"=4);
 	name = "wooden fence"
 	},
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	dir = 1;
-	matter = list("wood" = 4);
+	matter = list("wood"=4);
 	name = "wooden fence"
 	},
 /obj/structure/sink/puddle,
@@ -2194,12 +2194,12 @@
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	dir = 8;
-	matter = list("wood" = 4);
+	matter = list("wood"=4);
 	name = "wooden fence"
 	},
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
-	matter = list("wood" = 4);
+	matter = list("wood"=4);
 	name = "wooden fence"
 	},
 /obj/structure/sink/puddle,
@@ -2208,13 +2208,13 @@
 "gJ" = (
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
-	matter = list("wood" = 4);
+	matter = list("wood"=4);
 	name = "wooden fence"
 	},
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	dir = 4;
-	matter = list("wood" = 4);
+	matter = list("wood"=4);
 	name = "wooden fence"
 	},
 /obj/structure/sink/puddle,
@@ -3207,7 +3207,7 @@
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	dir = 8;
-	matter = list("wood" = 4);
+	matter = list("wood"=4);
 	name = "wooden fence"
 	},
 /obj/structure/table/woodentable,
@@ -3224,15 +3224,12 @@
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	dir = 4;
-	matter = list("wood" = 4);
+	matter = list("wood"=4);
 	name = "wooden fence"
 	},
 /obj/structure/table/woodentable,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/hunting_lodge)
-"jL" = (
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/dungeon/outside/abandoned_solars/powered)
 "jM" = (
 /obj/structure/table/woodentable,
 /obj/machinery/recharger,
@@ -3317,12 +3314,9 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
-"jW" = (
-/turf/simulated/floor/holofloor/wood,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
 "jX" = (
 /obj/structure/table/bench/wooden,
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "jY" = (
 /obj/machinery/door/unpowered/simple/wood/saloon{
@@ -3336,15 +3330,11 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
-/turf/simulated/floor/holofloor/wood,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
-"ka" = (
-/obj/structure/table/woodentable,
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "kb" = (
 /obj/structure/flora/pottedplant/bamboo,
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "kc" = (
 /obj/structure/closet,
@@ -3359,14 +3349,14 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
-/turf/simulated/floor/tiled/dark/brown_platform,
+/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ke" = (
 /obj/structure/table/woodentable,
 /obj/item/towel/random,
 /obj/item/towel/random,
 /obj/item/towel/random,
-/turf/simulated/floor/tiled/dark/brown_platform,
+/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "kf" = (
 /obj/structure/closet,
@@ -6320,7 +6310,7 @@ aD
 aD
 aD
 aD
-jL
+aD
 at
 at
 at
@@ -6427,7 +6417,7 @@ aD
 aD
 aD
 aD
-jL
+aD
 aD
 at
 at
@@ -12806,14 +12796,14 @@ aP
 aP
 aP
 aP
-jW
-jW
-jW
-jW
-jW
-jW
-jW
-jW
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+fv
 kn
 du
 aM
@@ -12913,13 +12903,13 @@ aV
 eA
 cT
 he
-jW
-jW
-jW
-jW
-jW
-jW
-jW
+fv
+fv
+fv
+fv
+fv
+fv
+fv
 km
 aP
 aM
@@ -13020,13 +13010,13 @@ aV
 eA
 cT
 cT
-jW
-jW
-jW
-jW
-jW
-jW
-jW
+fv
+fv
+fv
+fv
+fv
+fv
+fv
 km
 aP
 aM
@@ -13127,13 +13117,13 @@ bc
 eA
 cT
 he
-jW
-jW
-ka
+fv
+fv
+fw
 kd
 ke
-jW
-jW
+fv
+fv
 km
 aP
 aD
@@ -13342,11 +13332,11 @@ eA
 cU
 bQ
 jX
-jW
+fv
 jX
 bQ
 jX
-jW
+fv
 kj
 jX
 aP
@@ -13449,7 +13439,7 @@ aP
 bQ
 bQ
 jX
-jW
+fv
 jX
 bQ
 jX
@@ -13555,8 +13545,8 @@ at
 aP
 bz
 iT
-jW
-jW
+fv
+fv
 kb
 bQ
 jX
@@ -23934,16 +23924,16 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
 ew
 ew
 ew
@@ -24041,16 +24031,16 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
 ew
 ew
 ew
@@ -24143,21 +24133,21 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
 ew
 ew
 ew
@@ -24250,21 +24240,21 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
 ew
 ew
 ew
@@ -24357,21 +24347,21 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
 ew
 ew
 ew
@@ -24464,21 +24454,21 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
 ew
 ew
 ew
@@ -24571,21 +24561,21 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
 ew
 ew
 ew
@@ -24678,21 +24668,21 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
 ew
 ew
 ew
@@ -24785,21 +24775,21 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
 ew
 ew
 ew
@@ -24895,18 +24885,18 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
 ew
 ew
 ew
@@ -25002,18 +24992,18 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
 ew
 ew
 ew
@@ -25109,18 +25099,18 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
+ex
 ew
 ew
 ew
