@@ -22172,7 +22172,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "erA" = (
 /obj/machinery/gibber,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/genetics)
 "erE" = (
 /obj/effect/decal/cleanable/dirt,
@@ -121325,7 +121325,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "xct" = (
 /obj/structure/kitchenspike,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/genetics)
 "xcy" = (
 /obj/structure/flora/ausbushes/sparsegrass,
