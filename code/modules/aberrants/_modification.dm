@@ -3,8 +3,8 @@
 	dupe_mode = COMPONENT_DUPE_UNIQUE
 	can_transfer = TRUE
 
-	var/install_start_msg = ""
-	var/install_success_msg = ""
+	var/install_start_action = "attaching"
+	var/install_success_action = "attached"
 	var/install_time = WORKTIME_FAST
 	//var/install_tool_quality = null				
 	var/install_difficulty = FAILCHANCE_ZERO
@@ -15,6 +15,14 @@
 	var/removal_tool_quality = QUALITY_CLAMPING
 	var/removal_difficulty = FAILCHANCE_CHALLENGING
 	var/removal_stat = STAT_COG
+
+	var/mod_start_action = "adjusting"
+	var/mod_success_action = "adjusted"
+	var/mod_time = WORKTIME_FAST
+	var/mod_tool_quality = QUALITY_CLAMPING				
+	var/mod_difficulty = FAILCHANCE_ZERO
+	var/mod_stat = STAT_COG
+	var/mod_sound = WORKSOUND_HONK
 
 	var/bypass_perk = null
 
@@ -43,6 +51,7 @@
 
 /datum/component/modification/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_IATTACK, .proc/attempt_install)
+	RegisterSignal(parent, COMSIG_ATTACKBY, .proc/try_modify)
 	RegisterSignal(parent, COMSIG_EXAMINE, .proc/on_examine)
 	RegisterSignal(parent, COMSIG_REMOVE, .proc/uninstall)
 
@@ -93,18 +102,19 @@
 
 /datum/component/modification/proc/apply(obj/item/A, mob/living/user)
 	if(user)
-		user.visible_message(SPAN_NOTICE("[user] starts attaching [parent] to [A]"), SPAN_NOTICE("You start attaching \the [parent] to \the [A]"))
-		var/obj/item/I = parent
-		var/difficulty_adjust = 0
 		var/time_adjust = 0
+		var/difficulty_adjust = 0
 		if(user.stats?.getPerk(bypass_perk))
-			difficulty_adjust = install_difficulty
 			time_adjust = install_time
+			difficulty_adjust = install_difficulty
 		var/final_install_time = install_time - time_adjust
 		var/final_install_difficulty = install_difficulty - difficulty_adjust
+
+		user.visible_message(SPAN_NOTICE("[user] starts [install_start_action] [parent] to [A]"), SPAN_NOTICE("You start [install_start_action] \the [parent] to \the [A]"))
+		var/obj/item/I = parent
 		if(!I.use_tool(user = user, target =  A, base_time = final_install_time, required_quality = null, fail_chance = final_install_difficulty, required_stat = install_stat, forced_sound = install_sound))
 			return FALSE
-		to_chat(user, SPAN_NOTICE("You have successfully attached \the [parent] to \the [A]"))
+		to_chat(user, SPAN_NOTICE("You have successfully [install_success_action] \the [parent] to \the [A]"))
 		user.drop_from_inventory(parent)
 	//If we get here, we succeeded in the applying
 	var/obj/item/I = parent
@@ -117,6 +127,24 @@
 	MR.removal_tool_quality = removal_tool_quality
 
 	A.refresh_upgrades()
+	return TRUE
+
+/datum/component/modification/proc/try_modify(obj/item/I, mob/living/user)
+	if(user)
+		var/time_adjust = 0
+		var/difficulty_adjust = 0
+		if(user.stats.getPerk(bypass_perk))
+			time_adjust = mod_time
+			difficulty_adjust = mod_difficulty
+		var/final_install_time = mod_time - time_adjust
+		var/final_install_difficulty = mod_difficulty - difficulty_adjust
+
+		if(!I.use_tool(user = user, target = parent, base_time = final_install_time, required_quality = mod_tool_quality, fail_chance = final_install_difficulty, required_stat = mod_stat, forced_sound = mod_sound))
+			return FALSE
+		if(modify(I, user))
+			to_chat(user, SPAN_NOTICE("You have successfully [mod_success_action] \the [parent]"))
+	
+/datum/component/modification/proc/modify(obj/item/I, mob/living/user)
 	return TRUE
 
 /datum/component/modification/proc/trigger(obj/item/I, mob/living/user)
@@ -163,11 +191,13 @@
 
 /datum/component/modification/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_IATTACK)
+	UnregisterSignal(parent, COMSIG_ATTACKBY)
 	UnregisterSignal(parent, COMSIG_EXAMINE)
 	UnregisterSignal(parent, COMSIG_REMOVE)
 
 /datum/component/modification/PostTransfer()
 	return COMPONENT_TRANSFER
+
 
 /datum/component/modification_removal
 	dupe_mode = COMPONENT_DUPE_UNIQUE
@@ -195,8 +225,8 @@
 		else
 			var/list/possibles = upgrade_loc.item_upgrades.Copy()
 			possibles += "Cancel"
-			toremove = input("Which modification would you like to try to extract? The modification will likely be destroyed in the process","Removing Modifications") in possibles
-			if(toremove == "Cancel")
+			toremove = input("Which modification would you like to try to extract? The modification will likely be destroyed in the process","Removing Modifications") as null|anything in possibles
+			if(!toremove)
 				return TRUE
 		var/datum/component/modification/M = toremove.GetComponent(/datum/component/modification)
 		if(M.removable == FALSE)
