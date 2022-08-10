@@ -17,6 +17,7 @@
 	minimum_character_age = 30
 	health_modifier = 5
 
+	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 	outfit_type = /decl/hierarchy/outfit/job/engineering/exultant
 
 	access = list(
@@ -81,6 +82,9 @@
 		access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,
 		access_external_airlocks, access_construction, access_atmospherics
 	)
+
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+
 
 	stat_modifiers = list(
 		STAT_MEC = 30,

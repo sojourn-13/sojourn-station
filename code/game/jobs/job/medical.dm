@@ -13,6 +13,7 @@
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
 	outfit_type = /decl/hierarchy/outfit/job/medical/cmo
+	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_genetics, access_heads,
@@ -75,6 +76,7 @@
 	noob_name = "Soteria Medical Student"
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
 	department_account_access = TRUE
+	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
@@ -121,6 +123,7 @@
 	wage = WAGE_PROFESSIONAL
 	alt_titles = list("Soteria Emergency Medical Technician")
 	outfit_type = /decl/hierarchy/outfit/job/medical/recovery_team
+	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 	health_modifier = 5
 	perks = list(/datum/perk/medicalexpertise, /datum/perk/chemist) // Can treat people well but can't do surgery or chemistry as good as a doctor.
@@ -180,6 +183,7 @@
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits
 	)
+	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 	perks = list(/datum/perk/medicalexpertise, /datum/perk/psi_psychology, /datum/perk/chemist) //Your trained for this.
 
