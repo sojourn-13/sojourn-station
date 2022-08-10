@@ -53,7 +53,8 @@
 	. = ..()
 	check_shadow()
 
-	update_z()
+	var/turf/location = get_turf(src)
+	update_z(location?.z)
 
 /mob/living/proc/check_shadow()
 	var/mob/M = src
