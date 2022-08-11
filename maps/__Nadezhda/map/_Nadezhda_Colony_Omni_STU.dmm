@@ -31239,7 +31239,8 @@
 /obj/machinery/button/remote/blast_door{
 	id = "research_shutters";
 	name = "R&D shutter control";
-	pixel_y = -24
+	pixel_y = -24;
+	req_access = list(5)
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/light,
@@ -88990,7 +88991,8 @@
 /obj/machinery/button/remote/blast_door{
 	id = "organ_shutter";
 	name = "privacy shutter control";
-	pixel_y = -24
+	pixel_y = -24;
+	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/rnd/docking)
