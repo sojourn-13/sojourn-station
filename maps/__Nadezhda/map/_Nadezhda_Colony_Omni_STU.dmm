@@ -2691,8 +2691,8 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "organ_shutter";
-	name = "Privacy Shutters";
+	id = "research_shutters";
+	name = "R&D Privacy Shutters";
 	opacity = 0
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -6404,7 +6404,7 @@
 	dir = 2;
 	icon_state = "shutter0";
 	id = "organ_shutter";
-	name = "Privacy Shutters";
+	name = "Organ Laboratory Privacy Shutters";
 	opacity = 0
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -14717,9 +14717,9 @@
 	name = "containment blast door"
 	},
 /obj/machinery/door/window/brigdoor/northright{
-	req_access = list();
-	pixel_y = 1;
 	name = "Genetics Pen Access";
+	pixel_y = 1;
+	req_access = list();
 	req_one_access = list(55)
 	},
 /turf/simulated/floor/tiled/white,
@@ -20209,9 +20209,9 @@
 /area/nadezhda/rnd/robotics)
 "dYo" = (
 /obj/machinery/computer/operating{
+	density = 0;
 	dir = 1;
-	pixel_y = -29;
-	density = 0
+	pixel_y = -29
 	},
 /obj/structure/medical_stand/anesthetic,
 /turf/simulated/floor/tiled/white/monofloor,
@@ -25650,8 +25650,8 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "organ_shutter";
-	name = "Privacy Shutters";
+	id = "research_shutters";
+	name = "R&D Privacy Shutters";
 	opacity = 0
 	},
 /obj/structure/cable/green{
@@ -64351,8 +64351,8 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/sandstone{
-	name = "Dormitory";
-	id_tag = "BD2"
+	id_tag = "BD2";
+	name = "Dormitory"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/eris/crew_quarters/barquarters)
@@ -68150,8 +68150,8 @@
 /obj/machinery/button/remote/airlock{
 	id = "securestorage";
 	name = "Door Bolt Control";
-	specialfunctions = 4;
-	pixel_y = 32
+	pixel_y = 32;
+	specialfunctions = 4
 	},
 /obj/machinery/light{
 	dir = 1
@@ -92209,8 +92209,8 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "organ_shutter";
-	name = "Privacy Shutters";
+	id = "research_shutters";
+	name = "R&D Privacy Shutters";
 	opacity = 0
 	},
 /turf/simulated/floor/plating,
@@ -97227,8 +97227,8 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "suT" = (
 /obj/machinery/computer/operating{
-	pixel_y = 30;
-	density = 0
+	density = 0;
+	pixel_y = 30
 	},
 /obj/structure/medical_stand/anesthetic,
 /turf/simulated/floor/tiled/white/monofloor,
@@ -98424,8 +98424,8 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/sandstone{
-	name = "Dormitory";
-	id_tag = "BD1"
+	id_tag = "BD1";
+	name = "Dormitory"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/eris/crew_quarters/barquarters)
@@ -125196,8 +125196,8 @@
 /area/nadezhda/engineering/workshop)
 "xNa" = (
 /obj/structure/sign/department/medbay{
-	pixel_x = 28;
-	name = "Organ Laboratory"
+	name = "Organ Laboratory";
+	pixel_x = 28
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
