@@ -1200,8 +1200,8 @@ area/nadezhda/medical/medbaymeeting
 	name = "Medbay Upper Coridor"
 	icon_state = "erisgreen"
 
-/area/nadezhda/medical/organology
-	name = "Organology Lab"
+/area/nadezhda/medical/organ_lab
+	name = "Organ Laboratory"
 
 //Security
 

@@ -2691,8 +2691,8 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "organ_shutter";
-	name = "Privacy Shutters";
+	id = "research_shutters";
+	name = "R&D Privacy Shutters";
 	opacity = 0
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -4163,8 +4163,16 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "aPI" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -6404,11 +6412,11 @@
 	dir = 2;
 	icon_state = "shutter0";
 	id = "organ_shutter";
-	name = "Privacy Shutters";
+	name = "Organ Laboratory Privacy Shutters";
 	opacity = 0
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "bms" = (
 /obj/machinery/newscaster{
 	pixel_x = -30;
@@ -7850,6 +7858,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "bAK" = (
@@ -13254,6 +13263,9 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/cafeteria)
+"cDN" = (
+/turf/simulated/wall/r_wall,
+/area/nadezhda/medical/organ_lab)
 "cDR" = (
 /obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
@@ -13612,8 +13624,11 @@
 /obj/structure/sink{
 	pixel_y = -22
 	},
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "cIq" = (
 /obj/effect/floor_decal/industrial/outline/red,
 /obj/structure/multiz/ladder,
@@ -14646,7 +14661,7 @@
 /obj/structure/table/standard,
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "cTv" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/engineering/shield_generator)
@@ -14717,9 +14732,9 @@
 	name = "containment blast door"
 	},
 /obj/machinery/door/window/brigdoor/northright{
-	req_access = list();
-	pixel_y = 1;
 	name = "Genetics Pen Access";
+	pixel_y = 1;
+	req_access = list();
 	req_one_access = list(55)
 	},
 /turf/simulated/floor/tiled/white,
@@ -18208,6 +18223,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "dCV" = (
@@ -20209,9 +20232,9 @@
 /area/nadezhda/rnd/robotics)
 "dYo" = (
 /obj/machinery/computer/operating{
+	density = 0;
 	dir = 1;
-	pixel_y = -29;
-	density = 0
+	pixel_y = -29
 	},
 /obj/structure/medical_stand/anesthetic,
 /turf/simulated/floor/tiled/white/monofloor,
@@ -25650,8 +25673,8 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "organ_shutter";
-	name = "Privacy Shutters";
+	id = "research_shutters";
+	name = "R&D Privacy Shutters";
 	opacity = 0
 	},
 /obj/structure/cable/green{
@@ -27800,6 +27823,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "fuq" = (
@@ -29320,6 +29344,10 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "fHz" = (
@@ -30234,6 +30262,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "fQH" = (
@@ -31239,7 +31268,8 @@
 /obj/machinery/button/remote/blast_door{
 	id = "research_shutters";
 	name = "R&D shutter control";
-	pixel_y = -24
+	pixel_y = -24;
+	req_access = list(5)
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/light,
@@ -32777,6 +32807,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "goF" = (
@@ -34515,6 +34546,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "gGy" = (
@@ -40952,12 +40984,20 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9;
-	pixel_y = 0
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "hVt" = (
 /obj/effect/floor_decal/industrial/warningwhite,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -43546,8 +43586,13 @@
 /obj/structure/closet/wall_mounted{
 	pixel_x = 32
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "ivP" = (
 /obj/effect/floor_decal/border/techfloor,
 /obj/effect/floor_decal/border/techfloor{
@@ -44024,7 +44069,7 @@
 "iAP" = (
 /obj/machinery/optable,
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "iAR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -46811,7 +46856,7 @@
 	pixel_y = -5
 	},
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "jbH" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -47462,8 +47507,16 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "jhW" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /turf/simulated/floor/wood/wild5,
@@ -47858,6 +47911,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
 "jlx" = (
@@ -52431,7 +52485,7 @@
 	},
 /obj/item/tank/anesthetic,
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "kdS" = (
 /obj/structure/table/standard,
 /obj/item/stack/medical/advanced/bruise_pack,
@@ -58385,13 +58439,16 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/hallway/side/f2section1)
 "lgB" = (
-/obj/structure/table/standard,
-/obj/machinery/atmospherics/unary/vent_pump,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/disposal,
+/obj/effect/floor_decal/industrial/box/red,
+/obj/structure/disposalpipe/trunk{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "lgC" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light/small{
@@ -62075,6 +62132,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "lQv" = (
@@ -64351,8 +64412,8 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/sandstone{
-	name = "Dormitory";
-	id_tag = "BD2"
+	id_tag = "BD2";
+	name = "Dormitory"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/eris/crew_quarters/barquarters)
@@ -68150,8 +68211,8 @@
 /obj/machinery/button/remote/airlock{
 	id = "securestorage";
 	name = "Door Bolt Control";
-	specialfunctions = 4;
-	pixel_y = 32
+	pixel_y = 32;
+	specialfunctions = 4
 	},
 /obj/machinery/light{
 	dir = 1
@@ -76038,6 +76099,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "owr" = (
@@ -77733,8 +77795,16 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/cryo)
 "oLT" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "oLU" = (
 /obj/structure/table/woodentable,
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -86780,6 +86850,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "qzi" = (
@@ -88990,10 +89064,11 @@
 /obj/machinery/button/remote/blast_door{
 	id = "organ_shutter";
 	name = "privacy shutter control";
-	pixel_y = -24
+	pixel_y = -24;
+	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "qUQ" = (
 /obj/random/junk/low_chance,
 /turf/simulated/floor/tiled/techmaint,
@@ -92209,8 +92284,8 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "organ_shutter";
-	name = "Privacy Shutters";
+	id = "research_shutters";
+	name = "R&D Privacy Shutters";
 	opacity = 0
 	},
 /turf/simulated/floor/plating,
@@ -94060,8 +94135,14 @@
 /area/nadezhda/outside/dcave)
 "rPN" = (
 /obj/structure/table/standard,
+/obj/structure/cable/green,
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "East APC";
+	pixel_x = 28
+	},
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "rQd" = (
 /obj/structure/railing/grey{
 	dir = 4;
@@ -95686,6 +95767,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "seQ" = (
@@ -97227,8 +97316,8 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "suT" = (
 /obj/machinery/computer/operating{
-	pixel_y = 30;
-	density = 0
+	density = 0;
+	pixel_y = 30
 	},
 /obj/structure/medical_stand/anesthetic,
 /turf/simulated/floor/tiled/white/monofloor,
@@ -98424,8 +98513,8 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/sandstone{
-	name = "Dormitory";
-	id_tag = "BD1"
+	id_tag = "BD1";
+	name = "Dormitory"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/eris/crew_quarters/barquarters)
@@ -104171,9 +104260,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
-/obj/structure/disposalpipe/segment{
+/obj/structure/disposalpipe/junction{
 	dir = 8;
-	icon_state = "pipe-s"
+	icon_state = "pipe-j2"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
@@ -119209,6 +119298,11 @@
 	icon_state = "2-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "wEG" = (
@@ -120814,6 +120908,7 @@
 /obj/machinery/camera/network/research{
 	dir = 8
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "wWY" = (
@@ -125196,8 +125291,8 @@
 /area/nadezhda/engineering/workshop)
 "xNa" = (
 /obj/structure/sign/department/medbay{
-	pixel_x = 28;
-	name = "Organ Laboratory"
+	name = "Organ Laboratory";
+	pixel_x = 28
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
@@ -157653,7 +157748,7 @@ cAG
 hYY
 qhV
 dCT
-sMW
+ity
 wEF
 wzo
 lZR
@@ -158055,10 +158150,10 @@ xxZ
 xxZ
 mrS
 hYY
-hYY
+cDN
 aPG
 bmp
-hYY
+cDN
 yhV
 oxv
 hYY
@@ -158260,7 +158355,7 @@ hYY
 lgB
 hVm
 jbz
-hYY
+cDN
 evS
 cSs
 hYY
@@ -158462,7 +158557,7 @@ hYY
 cTu
 jhS
 qUE
-hYY
+cDN
 lop
 ffD
 hYY
@@ -158664,7 +158759,7 @@ hYY
 iAP
 oLT
 cIp
-hYY
+cDN
 lop
 qdj
 hYY
@@ -158866,7 +158961,7 @@ hYY
 kdN
 ivN
 rPN
-hYY
+cDN
 lop
 qdj
 hYY
