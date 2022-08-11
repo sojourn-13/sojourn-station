@@ -35,11 +35,13 @@
 
 		base_potency = seed.get_trait(TRAIT_POTENCY)
 	else
-		log_debug("recipe_step/add_produce/New(): produce [produce] not found in seed list.")
+		CRASH("/datum/cooking_with_jane/recipe_step/add_produce/New: Seed [produce] not found. Exiting.")
 	..(base_quality_award, our_recipe)
 
 /datum/cooking_with_jane/recipe_step/add_produce/check_conditions_met(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
+	#ifdef CWJ_DEBUG
 	log_debug("Called add_produce/check_conditions_met for [added_item] against [required_produce_type]")
+	#endif
 
 	if(!istype(added_item, /obj/item/reagent_containers/food/snacks/grown))
 		return CWJ_CHECK_INVALID
@@ -60,7 +62,9 @@
 	return clamp_quality(potency_raw)
 
 /datum/cooking_with_jane/recipe_step/add_produce/follow_step(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
+	#ifdef CWJ_DEBUG
 	log_debug("Called: /datum/cooking_with_jane/recipe_step/add_produce/follow_step")
+	#endif
 	var/obj/item/container = tracker.holder_ref.resolve()
 	if(container)
 		if(usr.canUnEquip(added_item))

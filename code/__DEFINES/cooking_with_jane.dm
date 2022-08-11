@@ -1,3 +1,5 @@
+#define CWJ_DEBUG 1
+
 
 //Step classifications, for easy reference later. 
 //If something falls outside these classifications, why would it?
@@ -9,7 +11,6 @@
 #define CWJ_ADD_PRODUCE				6		//Adding Produce to a recipe
 #define CWJ_USE_STOVE	 			7 		//Using a stove in a recipe
 #define CWJ_USE_OTHER 				8 		//Custom Command flag, will take in argument lists.
-
 
 											
 //Optional flags
@@ -38,10 +39,11 @@
 //Check item use flags
 #define CWJ_NO_STEPS  	  	1 //The used object has no valid recipe uses
 #define CWJ_CHOICE_CANCEL 	2 //The user opted to cancel when given a choice
-#define CWJ_SUCCESS 		3 //The user decided to use the item for a given purpose.
-#define CWJ_COMPLETE		4 //The meal has been completed!
-#define CWJ_LOCKOUT			5 //Someone tried starting the function while a prompt was running. Jerk.
-#define CWJ_BURNT			6 //The meal was ruined by burning the food somehow.
+#define CWJ_SUCCESS 		3 //The user decided to use the item and the step was followed
+#define CWJ_PARTIAL_SUCCESS	4 //The user decided to use the item but the qualifications for the step was not fulfilled
+#define CWJ_COMPLETE		5 //The meal has been completed!
+#define CWJ_LOCKOUT			6 //Someone tried starting the function while a prompt was running. Jerk.
+#define CWJ_BURNT			7 //The meal was ruined by burning the food somehow.
 
 #define CWJ_CHECK_INVALID	0
 #define CWJ_CHECK_VALID		1

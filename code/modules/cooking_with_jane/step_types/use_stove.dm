@@ -11,10 +11,12 @@
 //our_recipe: The parent recipe object,
 /datum/cooking_with_jane/recipe_step/use_stove/New(var/set_heat, var/set_time, var/datum/cooking_with_jane/recipe/our_recipe)
 
-	desc = "Cook on a stove set to [heat] for [ticks_to_text(time)]."
+
 
 	time = set_time
 	heat = set_heat
+
+	desc = "Cook on a stove set to [heat] for [ticks_to_text(time)]."
 
 	..(our_recipe)
 
@@ -46,10 +48,6 @@
 
 
 /datum/cooking_with_jane/recipe_step/use_stove/follow_step(var/obj/used_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
-	var/obj/machinery/cooking_with_jane/stove/our_stove = used_item
-	var/obj/item/cooking_with_jane/cooking_container/container = tracker.holder_ref.resolve()
-	container.cook_data[our_stove.temperature[our_stove.active_input]] =  container.cook_data[our_stove.temperature[our_stove.active_input]] + our_stove.reference_time
-
 	return CWJ_SUCCESS
 
 /datum/cooking_with_jane/recipe_step/use_stove/is_complete(var/obj/used_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
@@ -57,9 +55,13 @@
 	var/obj/item/cooking_with_jane/cooking_container/container = tracker.holder_ref.resolve()
 
 	if(container.cook_data[heat] >= time)
-		log_debug("use_stove/is_complete() Returned True")
+		#ifdef CWJ_DEBUG
+		log_debug("use_stove/is_complete() Returned True; comparing [heat]: [container.cook_data[heat]] to [time]")
+		#endif
 		return TRUE
 
-	log_debug("use_stove/is_complete() Returned False")
+	#ifdef CWJ_DEBUG
+	log_debug("use_stove/is_complete() Returned False; comparing [heat]: [container.cook_data[heat]] to [time]")
+	#endif
 	return FALSE
 

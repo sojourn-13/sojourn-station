@@ -359,8 +359,10 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 /datum/cooking_with_jane/recipe/proc/begin_exclusive_options()
 	if(exclusive_option_mode)
+		#ifdef CWJ_DEBUG
 		log_debug("/datum/cooking_with_jane/recipe/proc/begin_exclusive_options: Exclusive option already active.")
 		log_debug("Recipe name=[name].")
+		#endif
 		return
 	else if(!first_step)
 		CRASH("/datum/cooking_with_jane/recipe/proc/begin_exclusive_options: Exclusive list cannot be active before the first required step is defined. Recipe name=[name].")
@@ -369,8 +371,10 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 /datum/cooking_with_jane/recipe/proc/end_exclusive_options()
 	if(!exclusive_option_mode)
+		#ifdef CWJ_DEBUG
 		log_debug("/datum/cooking_with_jane/recipe/proc/end_exclusive_options: Exclusive option already inactive.")
 		log_debug("Recipe name=[name].")
+		#endif
 		return
 	else if(last_required_step.optional_step_list[last_required_step.optional_step_list.len]?:len == 0)
 		CRASH("/datum/cooking_with_jane/recipe/proc/end_exclusive_options: Exclusive option list ended with no values added. Recipe name=[name].")
@@ -398,8 +402,10 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 //If begin_option_chain is called, end_option_chain must eventually be called in order to close out and proceed to the next required step.
 /datum/cooking_with_jane/recipe/proc/begin_option_chain()
 	if(option_chain_mode)
+		#ifdef CWJ_DEBUG
 		log_debug("/datum/cooking_with_jane/recipe/proc/begin_option_chain: Option Chain already active.")
 		log_debug("Recipe name=[name].")
+		#endif
 		return
 	if(!first_step)
 		CRASH("/datum/cooking_with_jane/recipe/proc/begin_option_chain: Option Chain cannot be active before first required step is defined. Recipe name=[name].")
@@ -407,8 +413,10 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 /datum/cooking_with_jane/recipe/proc/end_option_chain()
 	if(!option_chain_mode)
+		#ifdef CWJ_DEBUG
 		log_debug("/datum/cooking_with_jane/recipe/proc/end_option_chain: Option Chain already inactive.")
 		log_debug("Recipe name=[name].")
+		#endif
 		return
 	option_chain_mode = 0
 

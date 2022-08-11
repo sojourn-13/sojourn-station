@@ -17,7 +17,6 @@
 	var/list/cooking_timestamp = list(0, 0, 0, 0) //Timestamp of when cooking initialized so we know if the prep was disturbed at any point.
 	var/list/items[4]
 
-	var/active_input //The input that cooking tracker objects look at
 	var/reference_time = 0 //The exact moment when we call the process routine, just to account for lag.
 
 	var/quality_mod = 1
@@ -61,7 +60,9 @@
 
 //Process how a specific stove is interacting with material
 /obj/machinery/cooking_with_jane/stove/proc/cook_checkin(var/input)
+	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/proc/cook_checkin called on burner [input]")
+	#endif
 	if(items[input])
 		var/old_timestamp = cooking_timestamp[input]
 		switch(temperature[input])
@@ -119,7 +120,9 @@
 	else if(icon_x > ICON_SPLIT_X && icon_y > ICON_SPLIT_Y)
 		input = 4
 
+	#ifdef CWJ_DEBUG
 	log_debug("cooking_with_jane/stove/proc/getInput returned burner [input]. icon-x: [click_params["icon-x"]], icon-y: [click_params["icon-y"]]")
+	#endif
 	return input
 
 /obj/machinery/cooking_with_jane/stove/attackby(var/obj/item/used_item, var/mob/user, params)
@@ -165,7 +168,9 @@
 		return
 
 	var/input = getInput(params)
+	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/CtrlClick called on burner [input]")
+	#endif
 	var/choice = alert(user,"Select an action for burner #[input]","Select One:","Set temperature","Set timer","Cancel")
 	switch(choice)
 		if("Set temperature")
@@ -180,7 +185,9 @@
 		return
 	var/input = getInput(params)
 
+	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/CtrlClick called on burner [input]")
+	#endif
 	handle_switch(user, input)
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_temperature(user, input)
@@ -198,6 +205,7 @@
 	timer[input] = (input(user, "Enter a timer for burner #[input] (In Seconds)","Set Timer", old_time) as num) SECONDS
 	if(timer[input] != 0 && switches[input] == 1)
 		timer_act(user, input)
+	update_icon()
 
 /obj/machinery/cooking_with_jane/stove/proc/timer_act(user, input)
 	timerstamp[input]=world.time
@@ -205,17 +213,19 @@
 	spawn(timer[input])
 		if(old_timerstamp == timerstamp[input])
 			playsound(src, 'sound/items/lighter.ogg', 100, 1, 0)
-			switches[input] = 0
+
 			handle_cooking(user, input, TRUE)
+			switches[input] = 0
 			timerstamp[input]=world.time
 			cooking_timestamp[input] = world.time
-
+			update_icon()
+	update_icon()
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_switch(user, input)
 	playsound(src, 'sound/items/lighter.ogg', 100, 1, 0)
 	if(switches[input] == 1)
-		switches[input] = 0
 		handle_cooking(user, input)
+		switches[input] = 0
 		timerstamp[input]=world.time
 		cooking_timestamp[input] = world.time
 	else
@@ -250,9 +260,21 @@
 		if("High")
 			qual_reduction = (reference_time / 20 SECONDS)
 
-	active_input = input
-	container.process_item(src, user, lower_quality_on_fail = qual_reduction)
+	container.cook_data[temperature[input]] += reference_time
 
+	#ifdef CWJ_DEBUG
+	log_debug("stove/proc/handle_cooking data:")
+	log_debug("     qual_reduction: [qual_reduction]")
+	for(var/key in list(J_LO, J_MED, J_HI))
+		if(container.cook_data[key])
+			log_debug("     container.cook_data([key]): [container.cook_data[key]]")
+		else
+			log_debug("     container.cook_data([key]): 0")
+	#endif
+	if(user.Adjacent(src))
+		container.process_item(src, user, lower_quality_on_fail = qual_reduction, send_message=TRUE)
+	else
+		container.process_item(src, user, lower_quality_on_fail = qual_reduction)
 
 
 

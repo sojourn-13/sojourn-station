@@ -19,8 +19,10 @@
 //our_recipe: The parent recipe object,
 /datum/cooking_with_jane/recipe_step/add_item/New(var/item_type, var/datum/cooking_with_jane/recipe/our_recipe)
 
+	#ifdef CWJ_DEBUG
 	if(!ispath(item_type, /obj/item))
 		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] is not a valid path")
+	#endif
 
 	var/obj/item/example_item = new item_type()
 	if(example_item)
@@ -30,14 +32,17 @@
 		group_identifier = item_type
 		tooltip_image = image(example_item.icon, icon_state=example_item.icon_state)
 		QDEL_NULL(example_item)
+	#ifdef CWJ_DEBUG
 	else
 		log_debug("/datum/cooking_with_jane/recipe_step/add_item/New(): item [item_type] couldn't be created.")
-
+	#endif
 	..(our_recipe)
 
 
 /datum/cooking_with_jane/recipe_step/add_item/check_conditions_met(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
+	#ifdef CWJ_DEBUG
 	log_debug("Called add_item/check_conditions_met for [added_item], checking against item type [required_item_type]. Exact_path = [exact_path]")
+	#endif
 	if(!istype(added_item, /obj/item))
 		return CWJ_CHECK_INVALID
 	if(exact_path)
@@ -56,7 +61,9 @@
 	return clamp_quality(raw_quality)
 
 /datum/cooking_with_jane/recipe_step/add_item/follow_step(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
+	#ifdef CWJ_DEBUG
 	log_debug("Called: /datum/cooking_with_jane/recipe_step/add_item/follow_step")
+	#endif
 	var/obj/item/container = tracker.holder_ref.resolve()
 	if(container)
 		if(usr.canUnEquip(added_item))

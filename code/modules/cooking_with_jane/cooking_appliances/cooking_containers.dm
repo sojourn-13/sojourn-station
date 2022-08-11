@@ -50,29 +50,39 @@
 	process_item(I, user)
 	return
 
-/obj/item/cooking_with_jane/cooking_container/proc/process_item(var/obj/I, var/mob/user, var/lower_quality_on_fail = 0)
+/obj/item/cooking_with_jane/cooking_container/proc/process_item(var/obj/I, var/mob/user, var/lower_quality_on_fail = 0, var/send_message = TRUE)
 	//OK, time to load the tracker
 	if(!tracker)
 		tracker = new /datum/cooking_with_jane/recipe_tracker(src)
 
 	switch(tracker.process_item(I, user))
 		if(CWJ_NO_STEPS)
-			to_chat("It doesn't seem like you can create a meal from that. Yet.")
+			if(send_message)
+				to_chat("It doesn't seem like you can create a meal from that. Yet.")
 			if(lower_quality_on_fail != 0)
 				for (var/obj/item/contained in contents)
 					contained?:food_quality -= lower_quality_on_fail
 		if(CWJ_CHOICE_CANCEL)
-			to_chat("You decide against adding anything to the [src].")
+			if(send_message)
+				to_chat("You decide against cooking with the [src].")
 		if(CWJ_COMPLETE)
-			to_chat("You finish cooking with the [src].")
+			if(send_message)
+				to_chat("You finish cooking with the [src].")
 			qdel(tracker)
 			tracker = null
-			cook_data = list("High"=0 , "Medium" = 0, "Low"=0)
+			cook_data = initial(cook_data)
 			update_icon()
 		if(CWJ_SUCCESS)
+			if(send_message)
+				to_chat("You have successfully completed a recipe step.")
+			cook_data = initial(cook_data)
 			update_icon()
+		if(CWJ_PARTIAL_SUCCESS)
+			if(send_message)
+				to_chat("More must be done to complete this step of the recipe.")
 		if(CWJ_LOCKOUT)
-			to_chat("You can't make the same decision twice!")
+			if(send_message)
+				to_chat("You can't make the same decision twice!")
 
 //TODO: Handle the contents of the container being ruined via burning.
 /obj/item/cooking_with_jane/cooking_container/proc/handle_burning()
