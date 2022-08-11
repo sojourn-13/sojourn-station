@@ -4163,8 +4163,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "aPI" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -6408,7 +6413,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "bms" = (
 /obj/machinery/newscaster{
 	pixel_x = -30;
@@ -13254,6 +13259,9 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/cafeteria)
+"cDN" = (
+/turf/simulated/wall/r_wall,
+/area/nadezhda/medical/organ_lab)
 "cDR" = (
 /obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
@@ -13613,7 +13621,7 @@
 	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "cIq" = (
 /obj/effect/floor_decal/industrial/outline/red,
 /obj/structure/multiz/ladder,
@@ -14646,7 +14654,7 @@
 /obj/structure/table/standard,
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "cTv" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/engineering/shield_generator)
@@ -18207,6 +18215,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
@@ -40957,8 +40970,13 @@
 	dir = 9;
 	pixel_y = 0
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "hVt" = (
 /obj/effect/floor_decal/industrial/warningwhite,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -43547,8 +43565,13 @@
 /obj/structure/closet/wall_mounted{
 	pixel_x = 32
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "ivP" = (
 /obj/effect/floor_decal/border/techfloor,
 /obj/effect/floor_decal/border/techfloor{
@@ -44025,7 +44048,7 @@
 "iAP" = (
 /obj/machinery/optable,
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "iAR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -46812,7 +46835,7 @@
 	pixel_y = -5
 	},
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "jbH" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -47463,8 +47486,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "jhW" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /turf/simulated/floor/wood/wild5,
@@ -52432,7 +52460,7 @@
 	},
 /obj/item/tank/anesthetic,
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "kdS" = (
 /obj/structure/table/standard,
 /obj/item/stack/medical/advanced/bruise_pack,
@@ -58392,7 +58420,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "lgC" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light/small{
@@ -77734,8 +77762,13 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/cryo)
 "oLT" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "oLU" = (
 /obj/structure/table/woodentable,
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -88995,7 +89028,7 @@
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "qUQ" = (
 /obj/random/junk/low_chance,
 /turf/simulated/floor/tiled/techmaint,
@@ -94062,8 +94095,14 @@
 /area/nadezhda/outside/dcave)
 "rPN" = (
 /obj/structure/table/standard,
+/obj/structure/cable/green,
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "East APC";
+	pixel_x = 28
+	},
 /turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/rnd/docking)
+/area/nadezhda/medical/organ_lab)
 "rQd" = (
 /obj/structure/railing/grey{
 	dir = 4;
@@ -95687,6 +95726,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
@@ -119211,6 +119255,11 @@
 	icon_state = "2-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "wEG" = (
@@ -157655,7 +157704,7 @@ cAG
 hYY
 qhV
 dCT
-sMW
+ity
 wEF
 wzo
 lZR
@@ -158057,10 +158106,10 @@ xxZ
 xxZ
 mrS
 hYY
-hYY
+cDN
 aPG
 bmp
-hYY
+cDN
 yhV
 oxv
 hYY
@@ -158262,7 +158311,7 @@ hYY
 lgB
 hVm
 jbz
-hYY
+cDN
 evS
 cSs
 hYY
@@ -158464,7 +158513,7 @@ hYY
 cTu
 jhS
 qUE
-hYY
+cDN
 lop
 ffD
 hYY
@@ -158666,7 +158715,7 @@ hYY
 iAP
 oLT
 cIp
-hYY
+cDN
 lop
 qdj
 hYY
@@ -158868,7 +158917,7 @@ hYY
 kdN
 ivN
 rPN
-hYY
+cDN
 lop
 qdj
 hYY
