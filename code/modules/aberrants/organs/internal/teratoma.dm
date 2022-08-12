@@ -20,10 +20,9 @@
 			input_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/input))
 	else if(process_mod_path)
 		if(!ispath(process_mod_path))
-			if(!should_process_have_organ_stats)
-				process_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/process) - /obj/item/modification/organ/internal/process/shuffle)
-			else
-				process_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/process))
+			process_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/process) - /obj/item/modification/organ/internal/process/shuffle)
+		else
+			process_mod_path = pick(subtypesof(process_mod_path))		// Janky, but there aren't enough processing effects to matter yet
 	else if(output_mod_path)
 		if(!ispath(output_mod_path))
 			output_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/output) - /obj/item/modification/organ/internal/output/damaging_insight_gain\
@@ -151,11 +150,10 @@
 /obj/item/organ/internal/scaffold/aberrant/teratoma/process
 	name = "teratoma (processing)"
 	process_mod_path = TRUE
-	should_process_have_organ_stats = FALSE
 
 /obj/item/organ/internal/scaffold/aberrant/teratoma/process/uncommon
 	name = "bulging teratoma (processing)"
-	should_process_have_organ_stats = TRUE
+	process_mod_path = /obj/item/modification/organ/internal/process
 
 // output
 /obj/item/organ/internal/scaffold/aberrant/teratoma/output
