@@ -1,5 +1,6 @@
 // Mods
 /datum/design/organ/organ_mod
+	category = "Modifications"
 
 /datum/design/organ/organ_mod/capillaries
 	build_path = /obj/item/modification/organ/internal/stromal/improvement/requirements
@@ -27,38 +28,12 @@
 
 // Organs
 /datum/design/organ/scaffold
+	category = "Aberrant Organs"
 	build_path = /obj/item/organ/internal/scaffold
 
 /datum/design/organ/aberrant_organ
+	category = "Aberrant Organs"
 	materials = list(MATERIAL_BIOMATTER = 20)	// Organ plus 3 mods
-
-/datum/design/organ/aberrant_organ/teratoma
-	materials = list(MATERIAL_BIOMATTER = 10)	// Organ plus mod
-
-/datum/design/organ/aberrant_organ/teratoma/input
-	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input
-
-/datum/design/organ/aberrant_organ/teratoma/input/uncommon
-	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/uncommon
-
-/datum/design/organ/aberrant_organ/teratoma/input/rare
-	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/rare
-
-/datum/design/organ/aberrant_organ/teratoma/process
-	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/process
-
-/datum/design/organ/aberrant_organ/teratoma/output
-	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output
-
-/datum/design/organ/aberrant_organ/teratoma/output/uncommon
-	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/uncommon
-
-/datum/design/organ/aberrant_organ/teratoma/output/rare
-	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/rare
-
-/datum/design/organ/aberrant_organ/teratoma/special
-	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/special
-
 
 /datum/design/organ/aberrant_organ/scrub_toxin_blood
 	build_path = /obj/item/organ/internal/scaffold/aberrant/scrub_toxin/blood
@@ -152,3 +127,105 @@
 
 /datum/design/organ/aberrant_organ/exmercenary/muscle
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/muscle
+
+
+// Teratomas
+/datum/design/organ/aberrant_organ/teratoma
+	category = "Teratomas"
+	materials = list(MATERIAL_BIOMATTER = 10)	// Organ plus mod
+
+
+/datum/design/organ/aberrant_organ/teratoma/input
+	category = "Teratoma - Inputs"
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input
+
+/datum/design/organ/aberrant_organ/teratoma/input/reagents
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/reagents
+
+/datum/design/organ/aberrant_organ/teratoma/input/damage
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/damage
+
+/datum/design/organ/aberrant_organ/teratoma/input/power_source
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/power_source
+
+
+/datum/design/organ/aberrant_organ/teratoma/input/reagents/uncommon
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/reagents/uncommon
+
+/datum/design/organ/aberrant_organ/teratoma/input/damage/uncommon
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/damage/uncommon
+
+/datum/design/organ/aberrant_organ/teratoma/input/power_source/uncommon
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/power_source/uncommon
+
+
+/datum/design/organ/aberrant_organ/teratoma/input/reagents/rare
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/reagents/rare
+
+/datum/design/organ/aberrant_organ/teratoma/input/damage/rare
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/damage/rare
+
+/datum/design/organ/aberrant_organ/teratoma/input/power_source/rare
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/power_source/rare
+
+
+/datum/design/organ/aberrant_organ/teratoma/process
+	category = "Teratoma - Processes"
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/process
+
+/datum/design/organ/aberrant_organ/teratoma/process/uncommon
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/process/uncommon
+
+
+/datum/design/organ/aberrant_organ/teratoma/output
+	category = "Teratoma - Outputs"
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output
+
+/datum/design/organ/aberrant_organ/teratoma/output/reagents_blood
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/reagents_blood
+
+/datum/design/organ/aberrant_organ/teratoma/output/reagents_ingest
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/reagents_ingest
+
+/datum/design/organ/aberrant_organ/teratoma/output/chemical_effects
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/chemical_effects
+
+/datum/design/organ/aberrant_organ/teratoma/output/stat_boost
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/stat_boost
+
+
+/datum/design/organ/aberrant_organ/teratoma/output/reagents_blood/uncommon
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/reagents_blood/uncommon
+
+/datum/design/organ/aberrant_organ/teratoma/output/reagents_ingest/uncommon
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/reagents_ingest/uncommon
+
+/datum/design/organ/aberrant_organ/teratoma/output/chemical_effects/uncommon
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/chemical_effects/uncommon
+
+/datum/design/organ/aberrant_organ/teratoma/output/stat_boost/uncommon
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/stat_boost/uncommon
+
+
+/datum/design/organ/aberrant_organ/teratoma/output/reagents_blood/rare
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/reagents_blood/rare
+
+/datum/design/organ/aberrant_organ/teratoma/output/reagents_ingest/rare
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/reagents_ingest/rare
+
+/datum/design/organ/aberrant_organ/teratoma/output/chemical_effects/rare
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/chemical_effects/rare
+
+/datum/design/organ/aberrant_organ/teratoma/output/stat_boost/rare
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/stat_boost/rare
+
+
+/datum/design/organ/aberrant_organ/teratoma/special
+	category = "Teratoma - Secondary"
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/special
+
+/datum/design/organ/aberrant_organ/teratoma/special/chemical_effect
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/special/chemical_effect
+
+/datum/design/organ/aberrant_organ/teratoma/special/stat_boost
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/special/stat_boost

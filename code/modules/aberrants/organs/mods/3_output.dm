@@ -41,7 +41,7 @@
 	..()
 
 /obj/item/modification/organ/internal/output/stat_boost
-	name = "superior endocrinal organoid"
+	name = "intracrinal organoid"
 	desc = "Functional tissue of one or more organs in graftable form. Secretes stimulating hormones."
 
 /obj/item/modification/organ/internal/output/stat_boost/New(loc, generate_organ_stats = FALSE, predefined_modifier = null, list/output_types)
