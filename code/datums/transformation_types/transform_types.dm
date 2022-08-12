@@ -1,12 +1,24 @@
-/// Datum-based transforms, currently only used for superior mobs. This allows compatability between multiple static types of transforms.
+/// Datum-based transforms, used for compatability between transform types. Ideally will replace all matrix/transform replacements and transforms we have.
+/// To use this, you have two options: One, add a new transform_type to types.dm, and apply it with add_transformation_type or add_initial_transforms. This allows full functionality.
+/// The second is to use a instance of /transform_type/modular and pass the variables in add_transformation_type through args. This isn't reccomended, but if you dont want to make
+/// A new datum, this works decently.
 /datum/transform_type
+	/// How much this transform will scale the atom on the x axis.
 	var/scale_x = 1
+	/// How much this transform will scale the atom on the y axis.
 	var/scale_y = 1
+	/// How much this transform will rotate the atom, in degrees.
 	var/rotation = 0
+	/// How many pixels on the x axis this transform will shift the atom.
 	var/shift_x = 0
+	/// How many pixels on the y axis this transform will shift the atom.
 	var/shift_y = 0
+	/// The flag, in string form (ideally put as a define in _DEFINES/transforms.dm). This is the entire reason this datum was made; so that we can apply a specific transform
+	/// to an atom, using say, a constant check, without repeatadly reapplying the same effect and without clearing the transform entirely every time.
 	var/flag
+	/// Allows other transform_types with the same flag to replace this one.
 	var/override_others_with_flag = FALSE
+	/// The atom we are applied to.
 	var/atom/holder
 
 /datum/transform_type/Destroy()
@@ -17,6 +29,7 @@
 
 	. = ..()
 
+/// Mostly an arbitrary proc. Ran on atom/initialize(). You can put your transforms in this or in any initializing proc, take your pick.
 /atom/proc/add_initial_transforms()
 	return
 
@@ -34,7 +47,16 @@
 
 	transform_datum.update_self()
 
-/// Base proc for updating transforms.
+/// Base proc for applying custom values on creation. Must return TRUE or else apply_transformation will crash. Can return a string for the CRASH to display it in runtimes.
+/datum/transform_type/proc/apply_custom_values(scalex, scaley, rotation, shiftx, shifty, flagarg, override)
+	return TRUE
+
+/**
+ * Base proc for updating transforms. Calls update_values() if update_values == TRUE.
+ * Args: before_initial_applicaton = FALSE - used for determining if this update is being called within apply_transformation. If FALSE, we remove ourselves, before updating our
+ * values, and then re-apply ourselves. This is so our holder gets our new values without overridding our current effects.
+ * update_values = TRUE - If TRUE, we run update_values() in the middle of the proc.
+**/
 /datum/transform_type/proc/update_self(before_initial_application = FALSE, update_values = TRUE)
 	if (!before_initial_application)
 		holder.apply_transformation(src, TRUE, FALSE) //remove our current values
@@ -44,6 +66,7 @@
 		holder.apply_transformation(src, FALSE, FALSE) // re-apply ourself to our holder
 	return
 
+/// Base proc for updating our values when update_self() is called.
 /datum/transform_type/proc/update_values()
 	return
 
@@ -60,17 +83,20 @@
 	if (flagarg in transform_types)
 		if (isnull(override))
 			override = initial(transform_datum.override_others_with_flag)
-		if (!override)
+		if (override)
 			remove_transformation_type(flagarg) //we can override others with our flag, so lets just get rid of this one
 		else
 			return
 
-	transform_datum = new transform_arg(NULLSPACE, scalex, scaley, rotation, shiftx, shifty, flagarg) //copy everything but the first arg and send it to new
+	transform_datum = new transform_arg(NULLSPACE)
+	var/result = (transform_datum.apply_custom_values(scalex, scaley, rotation, shiftx, shifty, flagarg, override)) //copy everything but the first arg and apply it
+	if (result != TRUE) //result can return a string in an error state, so we explicitely check for true
+		CRASH("[transform_datum] apply_custom_values crashed for reason [result]")
 	transform_types[flagarg] = transform_datum
 	transform_datum.holder = src
 	apply_transformation(transform_types[flagarg])
 
-/// Remove this flag's associated datum from ourselves, and remove its effects.
+/// Remove this flag's associated datum from ourselves, and remove its effects, then remove the flag.
 /atom/proc/remove_transformation_type(flag)
 	if (!transform_types)
 		transform_types = list()
@@ -83,7 +109,14 @@
 	qdel(transform_datum) //since its no longer needed we can delete it and unassign the flag
 	transform_types -= flag
 
-/// Apply this transformation's effects onto us. Remove it's effects, if invert is true.
+/**
+ * Apply this transformation's effects onto us.
+ * Args:
+ * invert = FALSE - If TRUE, all effects are inverted, then removed. This is how we remove the effects of a transformation.
+ * WARNING: If scale_x or scale_y are 0 or null, this will cause a runtime due to a division by 0.
+ * update = TRUE - If TRUE, we call update_self() on the datum, with before_initial_application set to TRUE.
+ * update_values = TRUE - Passed to update_self, sets it's update_values arg.
+**/
 /atom/proc/apply_transformation(transform_arg, invert = FALSE, update = TRUE, update_values = TRUE)
 	var/datum/transform_type/transform_datum = transform_arg
 	if (!transform)

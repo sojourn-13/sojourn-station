@@ -21,10 +21,11 @@
 /datum/transform_type/modular
 	flag = MODULAR_BASE_TRANSFORM_DO_NOT_USE
 
-/datum/transform_type/modular/New(location, scalex = scale_x, scaley = scale_y, rotationarg = rotation, shiftx = shift_x, shifty = shift_y, flagarg = flag)
-
+/datum/transform_type/modular/apply_custom_values(scalex = scale_x, scaley = scale_y, rotationarg = rotation, shiftx = shift_x, shifty = shift_y, flagarg = flag, override = override_others_with_flag)
+	// You may wonder why I force it to crash here. It's because using the base flag for this type, a type meant to be re-used in many places, as a replacement for just
+	// making a new datum, and not replacing it's flag will cause a ton of incompatability issues.
 	if (flagarg == flag)
-		CRASH("[usr] tried to add a modular transform_type [src], but didn't change the flag arg!")
+		return "[usr] tried to add a modular transform_type [src], but didn't change the flag arg from [flagarg]!" //error state, we pass this for debugging
 
 	scale_x = scalex
 	scale_y = scaley
@@ -32,8 +33,9 @@
 	shift_x = shiftx
 	shift_y = shifty
 	flag = flagarg
+	override_others_with_flag = override
 
-	. = ..(location)
+	return ..()
 
 /datum/transform_type/ameridian_structures
 	flag = AMERIDIAN_TRANSFORM

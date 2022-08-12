@@ -19,7 +19,7 @@
 	var/allow_spin = TRUE
 	var/used_now = FALSE //For tools system, check for it should forbid to work on atom for more than one user at time
 
-	/// Bitwise var containing transform type flags.
+	/// Associative list containing FLAG -> transform_type. Holds all transform_types currently applying their effects to us.
 	var/list/transform_types = list()
 
 	/**
