@@ -150,28 +150,22 @@
 
 
 /datum/design/organ/aberrant_organ/teratoma/input/reagents/uncommon
-	materials = list(MATERIAL_BIOMATTER = 15)
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/reagents/uncommon
 
 /datum/design/organ/aberrant_organ/teratoma/input/damage/uncommon
-	materials = list(MATERIAL_BIOMATTER = 15)
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/damage/uncommon
 
 /datum/design/organ/aberrant_organ/teratoma/input/power_source/uncommon
-	materials = list(MATERIAL_BIOMATTER = 15)
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/power_source/uncommon
 
 
 /datum/design/organ/aberrant_organ/teratoma/input/reagents/rare
-	materials = list(MATERIAL_BIOMATTER = 25)
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/reagents/rare
 
 /datum/design/organ/aberrant_organ/teratoma/input/damage/rare
-	materials = list(MATERIAL_BIOMATTER = 25)
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/damage/rare
 
 /datum/design/organ/aberrant_organ/teratoma/input/power_source/rare
-	materials = list(MATERIAL_BIOMATTER = 25)
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/input/power_source/rare
 
 
@@ -201,36 +195,28 @@
 
 
 /datum/design/organ/aberrant_organ/teratoma/output/reagents_blood/uncommon
-	materials = list(MATERIAL_BIOMATTER = 15)
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/reagents_blood/uncommon
 
 /datum/design/organ/aberrant_organ/teratoma/output/reagents_ingest/uncommon
-	materials = list(MATERIAL_BIOMATTER = 15)
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/reagents_ingest/uncommon
 
 /datum/design/organ/aberrant_organ/teratoma/output/chemical_effects/uncommon
-	materials = list(MATERIAL_BIOMATTER = 15)
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/chemical_effects/uncommon
 
 /datum/design/organ/aberrant_organ/teratoma/output/stat_boost/uncommon
-	materials = list(MATERIAL_BIOMATTER = 15)
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/stat_boost/uncommon
 
 
 /datum/design/organ/aberrant_organ/teratoma/output/reagents_blood/rare
-	materials = list(MATERIAL_BIOMATTER = 25)
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/reagents_blood/rare
 
 /datum/design/organ/aberrant_organ/teratoma/output/reagents_ingest/rare
-	materials = list(MATERIAL_BIOMATTER = 25)
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/reagents_ingest/rare
 
 /datum/design/organ/aberrant_organ/teratoma/output/chemical_effects/rare
-	materials = list(MATERIAL_BIOMATTER = 25)
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/chemical_effects/rare
 
 /datum/design/organ/aberrant_organ/teratoma/output/stat_boost/rare
-	materials = list(MATERIAL_BIOMATTER = 25)
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/output/stat_boost/rare
 
 

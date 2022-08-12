@@ -34,6 +34,8 @@
 									subtypesof(/obj/item/modification/organ/internal/special/on_item_examine) +\
 									subtypesof(/obj/item/modification/organ/internal/special/on_cooldown/chemical_effect) +\
 									subtypesof(/obj/item/modification/organ/internal/special/on_cooldown/stat_boost))
+		else
+			special_mod_path = pick(subtypesof(special_mod_path))	// Janky, but there aren't enough secondary effects to matter yet
 
 	switch(input_mod_path)
 		if(/obj/item/modification/organ/internal/input/damage)
