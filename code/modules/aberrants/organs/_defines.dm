@@ -24,7 +24,7 @@
 		OP_BLOOD_VESSEL	= list(100,   0.5, 100, 0,   1,   2,   list("blood v", "ess", "el"), list())\
 	)	//organ			= eff, size, max blood, blood req, nutriment req, oxygen req, name chunks, verbs
 
-#define ALL_USABLE_DAMAGE_TYPES list(BRUTE, BURN, TOX, OXY, CLONE, HALLOSS)
+#define ALL_USABLE_DAMAGE_TYPES list(BRUTE, BURN, TOX, OXY, CLONE)//, HALLOSS)
 
 //#define ALL_STATS list(STAT_MEC, STAT_COG, STAT_BIO, STAT_ROB, STAT_TGH, STAT_VIG)
 #define ALL_USABLE_POSITIVE_CHEM_EFFECTS list(CE_BLOODRESTORE = 0.1, CE_BLOODCLOT = 0.1, CE_PAINKILLER = 10, CE_ANTITOX = 0.1, CE_SPEEDBOOST = 0.1)
@@ -43,10 +43,11 @@
 								/datum/reagent/phosphorus, /datum/reagent/metal/potassium, /datum/reagent/metal/radium, /datum/reagent/acid, /datum/reagent/acid/hydrochloric,\
 								/datum/reagent/silicon, /datum/reagent/metal/sodium, /datum/reagent/organic/sugar, /datum/reagent/sulfur, /datum/reagent/metal/tungsten)
 
-#define REAGENTS_MEDICINE_SIMPLE list(/datum/reagent/medicine/inaprovaline, /datum/reagent/medicine/kelotane, /datum/reagent/medicine/dylovene,\
-										/datum/reagent/medicine/tricordrazine, /datum/reagent/medicine/paracetamol, /datum/reagent/medicine/dexalin,\
-										/datum/reagent/medicine/hyronalin, /datum/reagent/medicine/synaptizine, /datum/reagent/medicine/alkysine,\
-										/datum/reagent/medicine/imidazoline, /datum/reagent/medicine/bicaridine)
+#define REAGENTS_MEDICINE_BASIC list(/datum/reagent/medicine/inaprovaline, /datum/reagent/medicine/paracetamol, /datum/reagent/medicine/dexalin, /datum/reagent/medicine/hyronalin,\
+										/datum/reagent/medicine/alkysine, /datum/reagent/medicine/imidazoline)
+
+#define REAGENTS_MEDICINE_SIMPLE list(/datum/reagent/medicine/kelotane, /datum/reagent/medicine/bicaridine, /datum/reagent/medicine/tricordrazine, /datum/reagent/medicine/dylovene,\
+										/datum/reagent/medicine/synaptizine)
 
 #define REAGENTS_MEDICINE_INTERMEDIATE list()
 #define REAGENTS_MEDICINE_ADVANCED list()

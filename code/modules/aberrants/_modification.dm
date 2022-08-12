@@ -62,7 +62,7 @@
 		var/obj/item/I = A
 		//No using multiples of the same upgrade
 		for (var/obj/item/item in I.item_upgrades)
-			if(item.type == parent.type || (exclusive_type && istype(item.type, exclusive_type)))
+			if(item.type == parent.type || (exclusive_type && istype(item, exclusive_type)))
 				if(user)
 					to_chat(user, SPAN_WARNING("A modification of this type is already attached!"))
 				return FALSE
