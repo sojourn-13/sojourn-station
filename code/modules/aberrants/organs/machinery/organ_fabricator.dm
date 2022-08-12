@@ -79,8 +79,6 @@
 	for(var/design_file in disk.find_files_by_type(/datum/computer_file/binary/design))
 		var/datum/computer_file/binary/design/DF = design_file
 		var/datum/design/D = DF.design
-		D.AssembleDesignInfo()
-		D.ui_data["icon"] = sanitizeFileName("[D.build_path].png")
 		if(D && D.build_type == build_type)
 			files.known_designs |= D
 			categories |= D.category
