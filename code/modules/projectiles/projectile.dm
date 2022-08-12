@@ -1009,7 +1009,8 @@
 	effect_transform.Scale(trajectory.return_hypotenuse(), 1)
 	effect_transform.Turn(-trajectory.return_angle())		//no idea why this has to be inverted, but it works
 
-	transform = turn(transform, -(trajectory.return_angle() + 90)) //no idea why 90 needs to be added, but it works
+	var/to_turn = (-(trajectory.return_angle() + 90))//no idea why 90 needs to be added, but it works
+	add_transformation_type(/datum/transform_type/modular, rotation = to_turn, flagarg = PROJECTILE_GENERIC_TRANSFORM)
 
 /obj/item/projectile/proc/muzzle_effect(var/matrix/T)
 	if (testing)

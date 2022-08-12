@@ -104,12 +104,14 @@
 
 
 	//Turn the player at an angle away from the wall
-	var/matrix/mat = M.transform
+
+	var/to_turn = 0
 	if (surface.x > M.x)
-		mat.Turn(-20)
-	if (surface.x < M.x)
-		mat.Turn(20)
-	M.transform = mat
+		to_turn = -20
+	else if (surface.x < M.x)
+		to_turn = 20
+	M.add_transformation_type(/datum/transform_type/modular, rotation = to_turn, flagarg = VTM_CLIMB_MAG_ROTATION_TRANSFORM, override = TRUE)
+	given_transformations += /datum/transform_type/modular
 	.=..()
 
 	//When walking on a wall with magboots, you face the direction you're going

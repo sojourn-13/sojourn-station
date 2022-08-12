@@ -57,9 +57,7 @@
 		if(DROPLIMB_EDGE)
 			compile_icon()
 			add_blood(victim)
-			var/matrix/M = matrix()
-			M.Turn(rand(180))
-			src.transform = M
+			add_transformation_type(/datum/transform_type/random_rotation/half)
 			if(!clean)
 				// Throw limb around.
 				if(src && istype(loc,/turf))

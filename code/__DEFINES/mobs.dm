@@ -113,10 +113,10 @@
 
 // Superior mob attack ranged retaliation modes
 #define NO_RETALIATION 0
-#define ALWAYS_ATTACK_AGGRESSOR (0<<1)
-#define ATTACK_RANDOM_AREA_IN_LINE (0<<2)
-#define ATTACK_RANDOM_AREA_IN_AURA (0<<3)
-#define APPROACH_ATTACKER (0<<4)
+#define ALWAYS_ATTACK_AGGRESSOR (1<<1)
+#define ATTACK_RANDOM_AREA_IN_LINE (1<<2)
+#define ATTACK_RANDOM_AREA_IN_AURA (1<<3)
+#define APPROACH_ATTACKER (1<<4)
 
 // Appearance change flags
 #define APPEARANCE_UPDATE_DNA  0x1

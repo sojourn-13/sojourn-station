@@ -114,7 +114,6 @@
 	if (light_spot && on && !T.is_space())
 		light_spot.forceMove(T)
 		light_spot.icon_state = "nothing"
-		light_spot.transform = initial(light_spot.transform)
 		light_spot.set_light(light_spot_radius, light_spot_power)
 
 		if (cell && cell.percent() <= 25)
@@ -134,15 +133,16 @@
 				if (4)
 					light_spot.icon_state = "lightspot_far"
 		if(angle)
+			add_transformation_type(/datum/transform_type/modular, rotation = angle, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
 			light_spot.transform = turn(light_spot.transform, angle)
 		else
 			switch(light_direction)	//icon pointing north by default
 				if(SOUTH)
-					light_spot.transform = turn(light_spot.transform, 180)
+					add_transformation_type(/datum/transform_type/modular, rotation = 180, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
 				if(EAST)
-					light_spot.transform = turn(light_spot.transform, 90)
+					add_transformation_type(/datum/transform_type/modular, rotation = 90, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
 				if(WEST)
-					light_spot.transform = turn(light_spot.transform, -90)
+					add_transformation_type(/datum/transform_type/modular, rotation = -90, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
 
 /obj/item/device/lighting/toggleable/flashlight/proc/lightSpotPassable(var/turf/T)
 	if (is_opaque(T))

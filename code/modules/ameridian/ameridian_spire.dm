@@ -15,14 +15,15 @@
 	rad_damage = 1
 	rad_range = 3
 	blue_crystal_prob = 10 // More chances of spawning a blue crystal
+	resize = FALSE
 	var/respawn_distance = 10 // How many tiles do we let the golem get before spawning another
 
-/obj/structure/ameridian_crystal/spire/update_icon()
-	transform = initial(transform)
-	transform *= 1.5 // 50% bigger
+/obj/structure/ameridian_crystal/spire/add_initial_transforms()
+	add_transformation_type(/datum/transform_type/modular, scalex = 1.5, scaley = 1.5, flagarg = AMERIDIAN_SPIRE_DEFAULT_RESIZE_TRANSFORM)
+	. = ..()
 
 /obj/structure/ameridian_crystal/spire/examine(mob/user)
-	..()
+	. = ..()
 	if(user.stats?.getPerk(PERK_PSION)) // Are we a psion and is there something to see?
 		to_chat(user, SPAN_PSION("You have the feeling this spire goes deep. Very deep..."))
 

@@ -62,11 +62,10 @@
 /datum/vertical_travel_method/jump/start_animation()
 	.=..()
 	if (direction == DOWN)
-		var/matrix/mat = M.transform
-		mat.Turn(180)
-		M.transform = mat
+		M.add_transformation_type(/datum/transform_type/modular, rotation = 180, flagarg = VTM_JUMP_TRANSFORM)
+		given_transformations += /datum/transform_type/modular
 
-		mat = M.transform
+		var/matrix/mat = M.transform
 		mat.Scale(0.9)
 		M.set_plane(FLOOR_PLANE)
 		M.layer = 1

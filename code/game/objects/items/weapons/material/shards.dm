@@ -33,6 +33,7 @@
 
 	//Overwrite whatever was populated before. A shard contains <1 unit of a single material
 	matter = list(material.name = amount)
+	add_transformation_type(/datum/transform_type/shard/variable_size)
 	update_icon()
 
 /obj/item/material/shard/set_material(var/new_material, var/update)
@@ -73,16 +74,11 @@
 	else
 		icon_state = "[material.shard_icon]["small"]"
 	//variable rotation based on randomness
-	var/rot = rand(0, 360)
-	var/matrix/M = matrix()
-	M.Turn(rot)
+	add_transformation_type(/datum/transform_type/random_rotation)
 
 	//Variable icon size based on material quantity
 	//Shards will scale from 0.6 to 1.25 scale, in the range of 0..1 amount
-	if (amount < 1)
-		M.Scale(((1.25 - 0.8)*amount)+0.8)
-
-	transform = M
+	update_transform(SHARD_VARIABLE_SIZE_TRANSFORM)
 
 /obj/item/material/shard/attackby(obj/item/I, mob/user)
 	if(QUALITY_WELDING in I.tool_qualities)

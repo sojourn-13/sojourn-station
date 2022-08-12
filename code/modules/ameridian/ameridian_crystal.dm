@@ -26,19 +26,27 @@
 	var/mob/living/carbon/superior_animal/ameridian_golem/golem // The golem that the growth spawned
 	var/shooter_prob = 10 // % chance of spawning the ranged golem instead of the regular one.
 
-/obj/structure/ameridian_crystal/Initialize(mapload, ...)
-	..()
-	START_PROCESSING(SSobj, src)
-	AddRadSource(src, rad_damage, rad_range)
+	var/resize = TRUE
 
+/obj/structure/ameridian_crystal/Initialize(mapload, ...)
 	// If the crystal was mapped in, spawn at full growth, else spawn as a seed.
 	if(!growth) // As long as we didn't manually set a growth level
 		if(mapload)
 			growth = max_growth
 		else
 			growth = 1
+
+	. = ..()
+	START_PROCESSING(SSobj, src)
+	AddRadSource(src, rad_damage, rad_range)
+
 	golem_timer = 0 // Reset the timer
 	update_icon()
+
+/obj/structure/ameridian_crystal/add_initial_transforms()
+	if (resize)
+		add_transformation_type(/datum/transform_type/ameridian_structures/crystal_resizing)
+	. = ..()
 
 /obj/structure/ameridian_crystal/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -56,11 +64,12 @@
 		handle_golems()
 
 /obj/structure/ameridian_crystal/update_icon()
-	transform = initial(transform)
-	transform *= ((1/max_growth) * growth) // So the crystal is at 20% size at growth 1, 40% at growth 2, e.t.c.
+	update_all_transforms()
 	set_light(growth, growth)
 	underlays.Cut()
 	underlays += ("crystal_floor_[clamp(round(REMAP(growth, 1, max_growth, 1, 5)), 1, 5)]")
+
+	. = ..()
 
 /obj/structure/ameridian_crystal/attackby(obj/item/I, mob/user)
 	if(user.a_intent == I_HELP && user.Adjacent(src))

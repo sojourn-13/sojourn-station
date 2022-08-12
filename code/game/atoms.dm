@@ -19,6 +19,9 @@
 	var/allow_spin = TRUE
 	var/used_now = FALSE //For tools system, check for it should forbid to work on atom for more than one user at time
 
+	/// Bitwise var containing transform type flags.
+	var/list/transform_types = list()
+
 	/**
 	 * Associative list. Key should be a typepath of /datum/stat_modifier, and the value should be a weight for use in prob.
 	 *
@@ -187,6 +190,8 @@
 			if (!(chosen_modifier.valid_check(src, arguments)))
 				QDEL_NULL(chosen_modifier)
 
+	add_initial_transforms()
+
 	return INITIALIZE_HINT_NORMAL
 
 /**
@@ -217,6 +222,7 @@
 	if(reagents)
 		QDEL_NULL(reagents)
 
+	QDEL_LIST_ASSOC_VAL(transform_types)
 	QDEL_LIST(current_stat_modifiers)
 
 	spawn()
