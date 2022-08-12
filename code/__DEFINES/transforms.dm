@@ -3,6 +3,9 @@
 #define PRONE_TRANSFORM "prone_transform"
 #define RANDOM_ROTATION_TRANSFORM "random_rotaton_transform"
 
+#define HUMAN_PRONE_TRANSFORM "human_prone_transformation"
+#define HUMAN_SIZE_SCALING_TRANSFORM "human_size_scaling_transform"
+
 #define AMERIDIAN_TRANSFORM "ameridian_transform"
 #define CRYSTAL_RESIZING_TRANSFORM "crystal_resizing_transform"
 #define AMERIDIAN_SPIRE_DEFAULT_RESIZE_TRANSFORM "ameridian_spire_default_resize_transform"

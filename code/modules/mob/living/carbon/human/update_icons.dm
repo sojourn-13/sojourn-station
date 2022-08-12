@@ -161,14 +161,14 @@ Please contact me on #coderbus IRC. ~Carn x
 
 	if(lying && !form.prone_icon) //Only rotate them if we're not drawing a specific icon for being prone.
 		add_transformation_type(/datum/transform_type/prone)
-		add_transformation_type(/datum/transform_type/modular, size_multiplier, size_multiplier, shiftx = 1, shifty = -6, flagarg = "human_misc_transformation", override = TRUE) //i dont get this
+		add_transformation_type(/datum/transform_type/modular, shiftx = 1, shifty = -6, flagarg = HUMAN_PRONE_TRANSFORM)
 	else
 		remove_transformation_type(PRONE_TRANSFORM)
-		add_transformation_type(/datum/transform_type/modular, size_multiplier, size_multiplier, shiftx = 0, shifty = (16*(size_multiplier-1)), flagarg = "human_misc_transformation", override = TRUE)
+		remove_transformation_type(HUMAN_PRONE_TRANSFORM)
 
 	COMPILE_OVERLAYS(src)
 
-	..()
+	. = ..()
 
 var/global/list/damage_icon_parts = list()
 

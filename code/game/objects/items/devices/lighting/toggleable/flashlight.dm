@@ -133,16 +133,17 @@
 				if (4)
 					light_spot.icon_state = "lightspot_far"
 		if(angle)
-			add_transformation_type(/datum/transform_type/modular, rotation = angle, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
-			light_spot.transform = turn(light_spot.transform, angle)
+			light_spot.add_transformation_type(/datum/transform_type/modular, rotation = angle, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
 		else
 			switch(light_direction)	//icon pointing north by default
+				if (NORTH)
+					light_spot.add_transformation_type(/datum/transform_type/modular, rotation = 0, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
 				if(SOUTH)
-					add_transformation_type(/datum/transform_type/modular, rotation = 180, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
+					light_spot.add_transformation_type(/datum/transform_type/modular, rotation = 180, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
 				if(EAST)
-					add_transformation_type(/datum/transform_type/modular, rotation = 90, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
+					light_spot.add_transformation_type(/datum/transform_type/modular, rotation = 90, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
 				if(WEST)
-					add_transformation_type(/datum/transform_type/modular, rotation = -90, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
+					light_spot.add_transformation_type(/datum/transform_type/modular, rotation = 270, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
 
 /obj/item/device/lighting/toggleable/flashlight/proc/lightSpotPassable(var/turf/T)
 	if (is_opaque(T))

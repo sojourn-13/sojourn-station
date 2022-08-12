@@ -78,6 +78,7 @@
 	var/stat = 0
 
 /atom/proc/update_icon()
+	update_all_transforms()
 	return
 
 /atom/proc/healthCheck()

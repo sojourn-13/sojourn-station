@@ -57,13 +57,14 @@
  * values, and then re-apply ourselves. This is so our holder gets our new values without overridding our current effects.
  * update_values = TRUE - If TRUE, we run update_values() in the middle of the proc.
 **/
-/datum/transform_type/proc/update_self(before_initial_application = FALSE, update_values = TRUE)
-	if (!before_initial_application)
-		holder.apply_transformation(src, TRUE, FALSE) //remove our current values
+/datum/transform_type/proc/update_self(update_values = TRUE, rebuild)
+	var/result
 	if (update_values)
-		update_values()
-	if (!before_initial_application)
-		holder.apply_transformation(src, FALSE, FALSE) // re-apply ourself to our holder
+		result = update_values()
+	if ((isnull(rebuild)) && (!isnull(result)))
+		rebuild = result
+	if (rebuild)
+		holder.rebuild_transform(FALSE, FALSE) //create a new transform, with the new values
 	return
 
 /// Base proc for updating our values when update_self() is called.
@@ -91,6 +92,7 @@
 	transform_datum = new transform_arg(NULLSPACE)
 	var/result = (transform_datum.apply_custom_values(scalex, scaley, rotation, shiftx, shifty, flagarg, override)) //copy everything but the first arg and apply it
 	if (result != TRUE) //result can return a string in an error state, so we explicitely check for true
+		qdel(transform_datum)
 		CRASH("[transform_datum] apply_custom_values crashed for reason [result]")
 	transform_types[flagarg] = transform_datum
 	transform_datum.holder = src
@@ -103,39 +105,42 @@
 
 	if (!(flag in transform_types))
 		return
-	var/datum/transform_type/transform_datum = transform_types[flag]
-
-	apply_transformation(transform_datum, TRUE, TRUE, FALSE)
-	qdel(transform_datum) //since its no longer needed we can delete it and unassign the flag
+	qdel(transform_types[flag]) //since its no longer needed we can delete it and unassign the flag
 	transform_types -= flag
+
+	rebuild_transform()
+
+/atom/proc/rebuild_transform(update = TRUE, update_values = TRUE, rebuild = FALSE)
+	var/matrix/new_transform = matrix() //destroy the current matrix and reassign a new one
+	transform = new_transform
+
+	var/datum/transform_type/transform_datum
+	var/key
+	for (var/i = 1, i <= transform_types.len, i++) //reapply all our transforms, in the order we received them
+		key = transform_types[i]
+		transform_datum = transform_types[key]
+		apply_transformation(transform_datum, update, update_values, rebuild)
+
+	return TRUE
 
 /**
  * Apply this transformation's effects onto us.
  * Args:
- * invert = FALSE - If TRUE, all effects are inverted, then removed. This is how we remove the effects of a transformation.
- * WARNING: If scale_x or scale_y are 0 or null, this will cause a runtime due to a division by 0.
  * update = TRUE - If TRUE, we call update_self() on the datum, with before_initial_application set to TRUE.
  * update_values = TRUE - Passed to update_self, sets it's update_values arg.
 **/
-/atom/proc/apply_transformation(transform_arg, invert = FALSE, update = TRUE, update_values = TRUE)
+/atom/proc/apply_transformation(transform_arg, update = TRUE, update_values = TRUE, rebuild = FALSE)
 	var/datum/transform_type/transform_datum = transform_arg
 	if (!transform)
 		transform = matrix()
 
 	if (update)
-		transform_datum.update_self(TRUE, update_values)
+		transform_datum.update_self(update_values, rebuild)
 	var/scale_x = (transform_datum.scale_x)
 	var/scale_y = (transform_datum.scale_y)
 	var/rotation = (transform_datum.rotation)
 	var/shift_x = (transform_datum.shift_x)
 	var/shift_y = (transform_datum.shift_y)
-
-	if (invert)
-		scale_x = (GET_MULT_INVERSE(scale_x))
-		scale_y = (GET_MULT_INVERSE(scale_y))
-		rotation = (SUBTRACT_FROM_360(rotation)) //yes, on values of 0 this returns 360
-		shift_x = (INVERT_SIGN(shift_x))
-		shift_y = (INVERT_SIGN(shift_y))
 
 	transform = transform.Scale(scale_x, scale_y)
 	transform = transform.Turn(rotation)

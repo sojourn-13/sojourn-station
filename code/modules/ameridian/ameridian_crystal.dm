@@ -64,7 +64,6 @@
 		handle_golems()
 
 /obj/structure/ameridian_crystal/update_icon()
-	update_all_transforms()
 	set_light(growth, growth)
 	underlays.Cut()
 	underlays += ("crystal_floor_[clamp(round(REMAP(growth, 1, max_growth, 1, 5)), 1, 5)]")

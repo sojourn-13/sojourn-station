@@ -76,9 +76,7 @@
 	//variable rotation based on randomness
 	add_transformation_type(/datum/transform_type/random_rotation)
 
-	//Variable icon size based on material quantity
-	//Shards will scale from 0.6 to 1.25 scale, in the range of 0..1 amount
-	update_transform(SHARD_VARIABLE_SIZE_TRANSFORM)
+	. = ..()
 
 /obj/item/material/shard/attackby(obj/item/I, mob/user)
 	if(QUALITY_WELDING in I.tool_qualities)
