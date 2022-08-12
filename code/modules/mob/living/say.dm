@@ -254,10 +254,11 @@ var/list/channel_to_radio_key = new
 			recursive_contents_with_self += AM
 			for (var/atom/movable/recursive_content as anything in recursive_contents_with_self) // stopgap between getting contents and getting full recursive contents
 				if (ismob(recursive_content))
-					if (get_dist(get_turf(recursive_content), src) < falloff) //if we're not in the falloff distance
+					var/distance = get_dist(get_turf(recursive_content), src)
+					if (distance <= message_range) //if we're not in the falloff distance
 						listening |= recursive_content
 						continue
-					else //we are in the falloff radius
+					else if (distance <= falloff) //we're in the falloff distance
 						listening_falloff |= recursive_content
 				else if (isobj(recursive_content))
 					if (recursive_content in GLOB.hearing_objects)
