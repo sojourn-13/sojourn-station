@@ -542,8 +542,10 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 			if(replace_reagents)
 				new_item.reagents.clear_reagents()
-
-			slurry.trans_to_holder(new_item.reagents, amount=slurry.total_volume, copy=1)
+			#ifdef CWJ_DEBUG
+			log_debug("Transferring slurry of [slurry.total_volume] to [new_item] of [new_item.reagents.total_volume]")
+			#endif
+			slurry.trans_to_holder(new_item.reagents, amount=slurry.total_volume)
 
 			new_item?:food_quality = pointer.tracked_quality + calculate_reagent_quality(pointer)
 			//TODO: Consider making an item's base components show up in the reagents of the product.

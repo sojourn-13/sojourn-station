@@ -201,7 +201,7 @@
 
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_timer(user, input)
-	var/old_time = timer[input]
+	var/old_time = timer[input]? round((timer[input]/(1 SECONDS)), 1 SECONDS): 1
 	timer[input] = (input(user, "Enter a timer for burner #[input] (In Seconds)","Set Timer", old_time) as num) SECONDS
 	if(timer[input] != 0 && switches[input] == 1)
 		timer_act(user, input)
@@ -252,25 +252,32 @@
 	var/qual_reduction = 0
 	switch(temperature[input])
 		if("Low")
-			qual_reduction = (reference_time / 1 MINUTES)
+			qual_reduction = (reference_time / (1 MINUTES))
 
 		if("Medium")
-			qual_reduction = (reference_time / 30 SECONDS)
+			qual_reduction = (reference_time / (30 SECONDS))
 
 		if("High")
-			qual_reduction = (reference_time / 20 SECONDS)
+			qual_reduction = (reference_time / (20 SECONDS))
 
-	container.cook_data[temperature[input]] += reference_time
 
 	#ifdef CWJ_DEBUG
 	log_debug("stove/proc/handle_cooking data:")
 	log_debug("     qual_reduction: [qual_reduction]")
-	for(var/key in list(J_LO, J_MED, J_HI))
-		if(container.cook_data[key])
-			log_debug("     container.cook_data([key]): [container.cook_data[key]]")
-		else
-			log_debug("     container.cook_data([key]): 0")
+	log_debug("     temperature: [temperature[input]]")
+	log_debug("     reference_time: [reference_time]")
+	log_debug("     world.time: [world.time]")
+	log_debug("     cooking_timestamp: [cooking_timestamp[input]]")
+	log_debug("     cook_data: [container.cook_data]")
 	#endif
+
+
+	if(container.cook_data[temperature[input]])
+		container.cook_data[temperature[input]] += reference_time
+	else
+		container.cook_data[temperature[input]] = reference_time
+
+
 	if(user.Adjacent(src))
 		container.process_item(src, user, lower_quality_on_fail = qual_reduction, send_message=TRUE)
 	else
@@ -289,9 +296,16 @@
 	else
 		icon_state="stove"
 
+	var/stove_on = FALSE
 	for(var/i=1, i<=4, i++)
-		if(switches[i] == 1)
+		if(switches[i] == TRUE)
+			if(!stove_on)
+				stove_on = TRUE
 			add_overlay(image(src.icon, icon_state="[panel_open?"open_":""]burner_[i]"))
+
+	if(stove_on)
+		add_overlay(image(src.icon, icon_state="indicator"))
+
 
 	for(var/i=1, i<=4, i++)
 		if(!(items[i]))

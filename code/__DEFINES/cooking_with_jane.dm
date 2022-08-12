@@ -55,8 +55,8 @@
 #define PAN				"pan"
 #define POT				"pot"
 #define BOWL			"bowl"
-#define SKILLET			"skillet"
-#define BASKET			"basket"
+#define DF_BASKET		"deep fryer basket"
+#define AF_BASKET		"air fryer basket"
 #define OVEN			"oven"
 #define GRILL			"grill"
 

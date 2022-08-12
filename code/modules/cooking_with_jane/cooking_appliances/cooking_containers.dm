@@ -70,12 +70,12 @@
 				to_chat("You finish cooking with the [src].")
 			qdel(tracker)
 			tracker = null
-			cook_data = initial(cook_data)
+			cook_data = list("High"=0 , "Medium" = 0, "Low"=0)
 			update_icon()
 		if(CWJ_SUCCESS)
 			if(send_message)
 				to_chat("You have successfully completed a recipe step.")
-			cook_data = initial(cook_data)
+			cook_data = list("High"=0 , "Medium" = 0, "Low"=0)
 			update_icon()
 		if(CWJ_PARTIAL_SUCCESS)
 			if(send_message)
@@ -200,56 +200,71 @@
 	name = "cutting board"
 	shortname = "cutting_board"
 	desc = "Good for making sandwiches on, too."
-	icon_state = "plate"
+	icon_state = "cutting_board"
 	appliancetype = CUTTING_BOARD
 
 /obj/item/cooking_with_jane/cooking_container/oven
 	name = "oven dish"
 	shortname = "shelf"
 	desc = "Put ingredients in this; designed for use with an oven. Warranty void if used."
-	icon_state = "ovendish"
+	icon_state = "oven_dish"
+	lip = "oven_dish_lip"
 	appliancetype = OVEN
-
-/obj/item/cooking_with_jane/cooking_container/skillet
-	name = "skillet"
-	shortname = "skillet"
-	desc = "Chuck ingredients in this to fry something on the stove."
-	icon_state = "skillet"
-	hitsound = 'sound/weapons/smash.ogg'
-	appliancetype = SKILLET
 
 /obj/item/cooking_with_jane/cooking_container/pan
 	name = "pan"
 	desc = "An normal pan."
+
 	icon_state = "pan" //Default state is the base icon so it looks nice in the map builder
+	lip = "pan_lip"
+
 	hitsound = 'sound/weapons/smash.ogg'
 	appliancetype = PAN
-	lip = "pan_lip"
 
 /obj/item/cooking_with_jane/cooking_container/pot
 	name = "cooking pot"
 	shortname = "pot"
 	desc = "Boil things with this. Maybe even stick 'em in a stew."
+	
 	icon_state = "pot"
+	lip = "pot_lip"
+
 	hitsound = 'sound/weapons/smash.ogg'
 	removal_penalty = 5
 	appliancetype = POT
 	w_class = ITEM_SIZE_BULKY
 
-/obj/item/cooking_with_jane/cooking_container/fryer
-	name = "fryer basket"
+/obj/item/cooking_with_jane/cooking_container/deep_basket
+	name = "deep fryer basket"
 	shortname = "basket"
-	desc = "Put ingredients in this; designed for use with a deep fryer. Warranty void if used."
-	icon_state = "basket"
+	desc = "Cwispy! Warranty void if used."
+
+	icon_state = "deepfryer_basket"
+	lip = "deepfryer_basket_lip"
+	
 	removal_penalty = 5
-	appliancetype = BASKET
+	appliancetype = DF_BASKET
+
+/obj/item/cooking_with_jane/cooking_container/air_basket
+	name = "air fryer basket"
+	shortname = "basket"
+	desc = "Permanently laminated with dried oil and late-stage capitalism."
+	
+	icon_state = "airfryer_basket"
+	lip = "airfryer_basket_lip"
+	
+	removal_penalty = 5
+	appliancetype = AF_BASKET
+
 
 /obj/item/cooking_with_jane/cooking_container/grill_grate
 	name = "grill grate"
 	shortname = "grate"
 	place_verb = "onto"
 	desc = "Primarily used to grill meat, place this on a grill and enjoy an ancient human tradition."
+	
 	icon_state = "grill_grate"
+	
 	removal_penalty = 1
 	appliancetype = GRILL
 
@@ -257,7 +272,10 @@
 	name = "serving bowl"
 	shortname = "bowl"
 	desc = "A bowl."
-	icon = 'icons/obj/kitchen.dmi'
-	icon_state = "mixingbowl"
+	
+	icon_state = "bowl"
+	lip = "bowl_lip"
+	
+	
 	removal_penalty = 2
 	appliancetype = BOWL

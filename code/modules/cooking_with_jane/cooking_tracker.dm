@@ -181,7 +181,7 @@
 	var/datum/cooking_with_jane/recipe_pointer/chosen_pointer = null
 	if(completed_list.len >= 1)
 		#ifdef CWJ_DEBUG
-		log_debug("/recipe_tracker/proc/process_item YO WE ACTUALLY HAVE A COMPLETED LIST OR SOMETHING!")
+		log_debug("/recipe_tracker/proc/process_item YO WE ACTUALLY HAVE A COMPLETED A RECIPE!")
 		#endif
 		chosen_pointer = completed_list[1]
 		if(completed_list.len > 1)
@@ -403,7 +403,7 @@
 	#endif
 	if(!GLOB.cwj_step_dictionary["[id]"])
 		return FALSE
-
+	var/datum/cooking_with_jane/recipe_tracker/tracker = parent_ref.resolve()
 	var/datum/cooking_with_jane/recipe_step/active_step = GLOB.cwj_step_dictionary["[id]"]
 
 	var/is_valid_step =  FALSE
@@ -419,7 +419,7 @@
 		#endif
 		return FALSE
 
-	var/step_quality = active_step.calculate_quality(used_obj)
+	var/step_quality = active_step.calculate_quality(used_obj, tracker)
 	tracked_quality += step_quality
 	steps_taken["[id]"] = active_step.get_step_result_text(used_obj, step_quality)
 	if(!(active_step.flags & CWJ_IS_OPTIONAL))
@@ -427,7 +427,7 @@
 
 	//The recipe has been completed.
 	if(!current_step.next_step && current_step.unique_id == id)
-		var/datum/cooking_with_jane/recipe_tracker/tracker = parent_ref.resolve()
+		
 		tracker.completed_list +=  src
 		return TRUE
 
