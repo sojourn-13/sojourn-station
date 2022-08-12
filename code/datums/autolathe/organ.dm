@@ -1,36 +1,7 @@
 /datum/design/organ
+	category = "Standard"
 	build_type = ORGAN_GROWER
 	materials = list(MATERIAL_BIOMATTER = 5)
-
-/datum/design/organ/ex_lungs
-	name = "Extended Lungs"
-	materials = list(MATERIAL_BIOMATTER = 30)
-	build_path = /obj/item/organ/internal/lungs/long
-
-/datum/design/organ/huge_heart
-	name = "Huge Heart"
-	materials = list(MATERIAL_BIOMATTER = 45)
-	build_path = /obj/item/organ/internal/heart/huge
-
-/datum/design/organ/big_liver
-	name = "Big Liver"
-	materials = list(MATERIAL_BIOMATTER = 30)
-	build_path = /obj/item/organ/internal/liver/big
-
-/datum/design/organ/hyper_nerves
-	name = "Hypersensitive Nerves"
-	materials = list(MATERIAL_BIOMATTER = 15, MATERIAL_GOLD = 1)
-	build_path = /obj/item/organ/internal/nerve/sensitive_nerve
-
-/datum/design/organ/super_muscle
-	name = "Super Muscle"
-	materials = list(MATERIAL_BIOMATTER = 30)
-	build_path = /obj/item/organ/internal/muscle/super_muscle
-
-/datum/design/organ/ex_blood_vessel
-	name = "Extensive Blood Vessels"
-	materials = list(MATERIAL_BIOMATTER = 30, MATERIAL_PLASTIC = 2)
-	build_path = /obj/item/organ/internal/blood_vessel/extensive
 
 /datum/design/organ/heart
 	materials = list(MATERIAL_BIOMATTER = 30)
@@ -66,3 +37,36 @@
 /datum/design/organ/blood_vessel
 	materials = list(MATERIAL_BIOMATTER = -10)
 	build_path = /obj/item/organ/internal/blood_vessel
+
+/datum/design/organ/back_alley
+	category = "Back Alley"
+
+/datum/design/organ/back_alley/ex_lungs
+	name = "Extended Lungs"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/lungs/long
+
+/datum/design/organ/back_alley/huge_heart
+	name = "Huge Heart"
+	materials = list(MATERIAL_BIOMATTER = 45)
+	build_path = /obj/item/organ/internal/heart/huge
+
+/datum/design/organ/back_alley/big_liver
+	name = "Big Liver"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/liver/big
+
+/datum/design/organ/back_alley/hyper_nerves
+	name = "Hypersensitive Nerves"
+	materials = list(MATERIAL_BIOMATTER = 15, MATERIAL_GOLD = 1)
+	build_path = /obj/item/organ/internal/nerve/sensitive_nerve
+
+/datum/design/organ/back_alley/super_muscle
+	name = "Super Muscle"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/muscle/super_muscle
+
+/datum/design/organ/back_alley/ex_blood_vessel
+	name = "Extensive Blood Vessels"
+	materials = list(MATERIAL_BIOMATTER = 30, MATERIAL_PLASTIC = 2)
+	build_path = /obj/item/organ/internal/blood_vessel/extensive

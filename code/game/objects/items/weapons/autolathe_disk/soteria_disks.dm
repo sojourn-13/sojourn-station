@@ -109,12 +109,12 @@
 
 	license = 5
 	designs = list(
-		/datum/design/organ/ex_lungs,
-		/datum/design/organ/huge_heart,
-		/datum/design/organ/big_liver,
-		/datum/design/organ/hyper_nerves,
-		/datum/design/organ/super_muscle,
-		/datum/design/organ/ex_blood_vessel
+		/datum/design/organ/back_alley/ex_lungs,
+		/datum/design/organ/back_alley/huge_heart,
+		/datum/design/organ/back_alley/big_liver,
+		/datum/design/organ/back_alley/hyper_nerves,
+		/datum/design/organ/back_alley/super_muscle,
+		/datum/design/organ/back_alley/ex_blood_vessel
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/computer
