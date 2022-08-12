@@ -106,7 +106,7 @@
 
 	return design_files
 
-/obj/machinery/autolathe/nano_ui_interact()
+/obj/machinery/autolathe/organ_fabricator/nano_ui_interact()
 	if(!disk && !show_category && length(categories))
 		show_category = categories[1]
 	..()
