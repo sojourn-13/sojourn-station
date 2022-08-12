@@ -204,6 +204,28 @@ They generally give more random result and can provide more divercity in spawn.
 					/obj/random/mecha/damaged = 1, //Some dangerous shit can be found there
 				))
 
+// MAchine pack, but with deep maint specific spawns
+/obj/random/pack/deep_machine
+	name = "random deepmaint machine"
+	icon_state = "machine-orange"
+
+
+/obj/random/pack/deep_machine/item_to_spawn()
+	return pickweight(list(
+					/obj/random/structures = 28, //That one have MUCH MORE important objects for maints inside, that's why the number is hight
+					/obj/random/closet_maintloot = 18, //That one is also important part of the maints
+					/obj/random/closet_tech = 6,
+					/obj/random/closet = 4,
+					/obj/random/closet_wardrobe = 2,
+					/obj/random/scrap/moderate_weighted = 12, //Our scrap pile. This is basically just a huge spawner.
+					/obj/random/mecha/damaged = 1, //Some dangerous shit can be found there
+					/obj/random/aberrant_machine = 6
+				))
+
+/obj/random/pack/deep_machine/low_chance
+	name = "low chance deepmaint machine"
+	icon_state = "machine-orange-low"
+	spawn_nothing_percentage = 70
 
 /obj/random/prothesis
 	name = "random prosthesis"

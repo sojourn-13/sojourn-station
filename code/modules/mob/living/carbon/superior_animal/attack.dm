@@ -42,7 +42,8 @@
 			OpenFire(targetted_mob)
 		else
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
+			if (stat != DEAD)
+				SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 		if(ranged && istype(src, /mob/living/simple_animal/hostile/megafauna))
 			var/mob/living/simple_animal/hostile/megafauna/megafauna = src
 			sleep(rand(megafauna.megafauna_min_cooldown,megafauna.megafauna_max_cooldown))
@@ -50,14 +51,16 @@
 				if(prob(rand(15,25)))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
+					if (stat != DEAD)
+						SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 				else
 					OpenFire(targetted_mob)
 			else
 				if(prob(45))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
+					if (stat != DEAD)
+						SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 				else
 					OpenFire(targetted_mob)
 		else
@@ -94,8 +97,6 @@
 	return
 
 /mob/living/carbon/superior_animal/proc/handle_ammo_check()
-	if(casingtype)
-		new casingtype(get_turf(src))
 	if(!limited_ammo)
 		return //Quick return
 	rounds_left -= rounds_per_fire //modular, tho likely will always be one
@@ -115,14 +116,10 @@
 		return
 	if(target == start)
 		return
-	if (is_dead())
+	if (is_dead(src))
 		return
 
 	var/obj/item/projectile/A = new projectiletype(user:loc)
-	visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"))
-	if(casingtype)
-		new casingtype(get_turf(src))
-	playsound(user, projectilesound, projectilevolume, 1)
 	if(!A)
 		return
 
@@ -167,7 +164,14 @@
 						penetrator.force_penetration_on += penetrated
 
 		if (do_we_shoot)
-			A.launch(target, def_zone, firer_arg = src)
+			var/offset_temp = right_before_firing()
+			A.launch(target, def_zone, firer_arg = src, angle_offset = offset_temp) //this is where we actually shoot the projectile
+			right_after_firing()
+			SEND_SIGNAL(src, COMSIG_SUPERIOR_FIRED_PROJECTILE, A)
+			visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"))
+			if(casingtype)
+				new casingtype(get_turf(src))
+			playsound(user, projectilesound, projectilevolume, 1)
 		else
 			QDEL_NULL(A)
 
@@ -182,6 +186,26 @@
 				qdel(new_trace.penetration_holder)
 				new_trace.penetration_holder = null
 			QDEL_NULL(new_trace)
+
+/// Ran right before A.launch in /mob/living/carbon/superior_animal/proc/Shoot. On base, is used for firing offset calculations.
+/mob/living/carbon/superior_animal/proc/right_before_firing(offset_positive = current_firing_offset, round_offset = FALSE)
+	if (round_offset)
+		offset_positive = round(offset_positive) //just to be safe
+
+	offset_positive = abs(offset_positive) //it should be positive, but lets just be safe
+
+	if (!offset_positive) //the rest of the code doesnt matter if we're just 0 or null
+		return offset_positive
+
+	var/offset_negative = INVERT_SIGN(offset_positive) //invert the sign, so it becomes negative
+
+	var/offset_to_return = rand(offset_negative, offset_positive) //now get a random value from between the two. the numbers between positive and negative are now our firing arc
+
+	return offset_to_return
+
+/// Ran right after A.launch in /mob/living/carbon/superior_animal/proc/Shoot. On base, does nothing.
+/mob/living/carbon/superior_animal/proc/right_after_firing()
+	return FALSE
 
 /mob/living/carbon/superior_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
 	if(weakened) return

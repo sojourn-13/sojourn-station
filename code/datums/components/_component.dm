@@ -62,7 +62,7 @@
 	if(!force && parent)
 		_RemoveFromParent()
 	if(!silent)
-		SEND_SIGNAL(parent, COMSIG_COMPONENT_REMOVING, src)
+		LEGACY_SEND_SIGNAL(parent, COMSIG_COMPONENT_REMOVING, src)
 	parent = null
 	return ..()
 
@@ -268,7 +268,7 @@
 		new_comp = new nt(arglist(args)) // Dupes are allowed, act like normal
 
 	if(!old_comp && !QDELETED(new_comp)) // Nothing related to duplicate components happened and the new component is healthy
-		SEND_SIGNAL(src, COMSIG_COMPONENT_ADDED, new_comp)
+		LEGACY_SEND_SIGNAL(src, COMSIG_COMPONENT_ADDED, new_comp)
 		return new_comp
 	return old_comp
 
@@ -284,7 +284,7 @@
 	PreTransfer()
 	_RemoveFromParent()
 	parent = null
-	SEND_SIGNAL(old_parent, COMSIG_COMPONENT_REMOVING, src)
+	LEGACY_SEND_SIGNAL(old_parent, COMSIG_COMPONENT_REMOVING, src)
 
 /datum/proc/TakeComponent(datum/component/target)
 	if(!target || target.parent == src)

@@ -76,12 +76,14 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	real_name = name
 
 	ghost_multitool = new(src)
+	SSmobs.ghost_list += src
 	..()
 
 /mob/observer/ghost/Destroy()
 	stop_following()
 	qdel(ghost_multitool)
 	ghost_multitool = null
+	SSmobs.ghost_list -= src
 	return ..()
 
 /mob/observer/ghost/Topic(href, href_list)

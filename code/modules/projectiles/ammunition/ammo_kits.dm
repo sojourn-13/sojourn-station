@@ -63,7 +63,7 @@
 			"6.5mm carbine linked box (empty, 100 ammo, 20 points)" = list(20, /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/empty),
 			"6.5mm carbine ammo box (30 ammo, 10 points)" = list(10, /obj/item/ammo_magazine/ammobox/light_rifle_257/scrap)),
 		CAL_HRIFLE = list(
-			"8.6mm heavy rifle ammo pile (10 ammo, 3 points)" = list(3, /obj/item/ammo_casing/heavy_rifle_408/scrap),
+			"8.6mm heavy rifle ammo pile (10 ammo, 3 points)" = list(3, /obj/item/ammo_casing/heavy_rifle_408/scrap/prespawned),
 			"8.6mm heavy rifle standard magazine (empty, 20 ammo, 5 points)" = list(5, /obj/item/ammo_magazine/heavy_rifle_408/scrap/empty),,
 			"8.6mm heavy rifle drum magazine (empty, 36 ammo, 30 points)" = list(30, /obj/item/ammo_magazine/heavy_rifle_408_drum/empty),
 			"8.6mm heavy rifle ammo box (40 ammo, 15 points)" = list(15, /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap)),

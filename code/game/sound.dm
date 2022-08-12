@@ -580,3 +580,4 @@ var/const/FALLOFF_SOUNDS = 0.5
 	if (timer_handle)
 		deltimer(timer_handle)
 	qdel(src)
+

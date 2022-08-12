@@ -35,7 +35,7 @@
 	if (reagents)
 		reagents.my_atom = null
 		QDEL_NULL(reagents)
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 	return ..()
 
 /obj/effect/effect/smoke/chem/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
@@ -266,9 +266,13 @@
 					continue
 				if(!(target in targetTurfs))
 					continue
-				if(current.c_airblock(target)) //this is needed to stop chemsmoke from passing through thin window walls
+				var/currentblock
+				ATMOS_CANPASS_TURF(currentblock, current, target)
+				if(currentblock) //this is needed to stop chemsmoke from passing through thin window walls
 					continue
-				if(target.c_airblock(current))
+				var/targetblock
+				ATMOS_CANPASS_TURF(targetblock, target, current)
+				if(targetblock)
 					continue
 				pending += target
 

@@ -81,7 +81,7 @@
 			mode = 1
 			set_light(0)
 			icon_state = "powersink0"
-			STOP_PROCESSING(SSmachines, src)
+			START_PROCESSING(SSmachines, src)
 
 /obj/item/device/powersink/pwr_drain()
 	if(!attached)

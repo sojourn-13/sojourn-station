@@ -27,13 +27,13 @@
 	tool_qualities = list(QUALITY_ARMOR = 100)
 	max_upgrades = 1
 
-//Blackshield helmets
 /obj/item/clothing/head/helmet/ballistic
 	name = "ballistic helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel."
 	icon_state = "helmet_mil"
-	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
+	armor_list = list(melee = 30, bullet = 40,energy = 20, bomb = 30, bio = 0, rad = 0)
 
+//Blackshield helmets
 /obj/item/clothing/head/helmet/ballistic/militia
 	name = "blackshield helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
@@ -122,7 +122,7 @@
 	name = "Corpsmans full helm"
 	desc = "Standard military gear. A full-faced vasriant of the common ballistic helmet. This one bears a few\
 	key upgrades, including sterile materials and contaminant resistant sealing."
-	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 20, rad = 0)
+	armor_list = list(melee = 30, bullet = 40,energy = 20, bomb = 30, bio = 75, rad = 0)
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4
 	light_overlay = "corpsmanfullhelm_light"
@@ -790,7 +790,7 @@
 	item_state = "ironhammer_wo_full"
 	flash_protection = FLASH_PROTECTION_MAJOR
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
-	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 100, rad = 0)
+	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 100, rad = 0)
 
 /obj/item/clothing/head/helmet/warrant_officer/update_icon()
 	if(on)
@@ -1076,7 +1076,7 @@
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "altyn"
 	armor_up = list(melee = 20, bullet = 15, energy = 0, bomb = 15, bio = 0, rad = 0)
-	armor_list = list(melee = 40, bullet = 40, energy = 0, bomb = 35, bio = 0, rad = 0)
+	armor_list = list(melee = 40, bullet = 45, energy = 10, bomb = 35, bio = 0, rad = 0)
 	siemens_coefficient = 1
 	up = TRUE
 
@@ -1109,6 +1109,43 @@
 	var/list/options = list()
 	options["maska"] = "maska"
 	options["maska killa"] = "maska_killa"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		base_state = options[choice]
+		icon_state = options[choice]
+		item_state = options[choice]
+		if(up)
+			icon_state = "[base_state]up"
+		item_state_slots = list(
+		slot_l_hand_str = options[choice],
+		slot_r_hand_str = options[choice],
+		)
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/head/helmet/faceshield/altyn/milisha
+	name = "blackshield maska helmet"
+	desc = "A maska helmet like any other but with nice camo options"
+	icon_state = "maska_bs"
+
+/obj/item/clothing/head/helmet/faceshield/altyn/milisha/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["maska dark camo"] = "maska_bs"
+	options["maska forest camo"] = "maska_bs_green"
+	options["maska red rock camo"] = "maska_bs_tan"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

@@ -182,6 +182,16 @@
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
 
+/obj/item/storage/box/m_kit/judge
+	name = "Judge Secondary Kit"
+	desc = "The standard Marshal box kit containing a Judge revolver, a large caliber revolver capable of firing a 7.5 round down range effectively. Highly sought after by police forces."
+
+	populate_contents()
+		new /obj/item/gun/projectile/revolver/judge(src)
+		new /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber(src)
+
+
+
 // Armor Kits
 /obj/item/storage/box/m_kit/standard_armor
 	name = "\improper Standard Visor Armor Kit"
@@ -216,29 +226,3 @@
 	populate_contents()
 		new /obj/item/clothing/suit/armor/heavy/riot/ironhammer(src)
 		new /obj/item/clothing/head/helmet/faceshield/riot(src)
-
-/obj/item/gunbox/warrantofficer //credit goes to Hestia both for the idea of loadout gun box and for the code, and sprite.
-	name = "\improper Warrant Officers equipment kit"
-	desc = "A secure box containing the Warrant Officers primary weapon."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "rifle_case"
-
-/obj/item/gunbox/warrantofficer/attack_self(mob/living/user)
-	..()
-	var/stamped
-	if(!stamped)
-		stamped = TRUE
-		var/list/options = list()
-		options["Osprey - precision rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/fancy,/obj/item/ammo_magazine/heavy_rifle_408,/obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408/rubber)
-		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags, /obj/item/ammo_magazine/ammobox/c10x24_small)
-		options["Judge - heavy revolver"] = list(/obj/item/gun/projectile/revolver/judge, /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber, /obj/item/ammo_magazine/ammobox/rifle_75_small)
-		var/choice = input(user,"What type of equipment?") as null|anything in options
-		if(src && choice)
-			var/list/things_to_spawn = options[choice]
-			for(var/new_type in things_to_spawn)
-				var/atom/movable/AM = new new_type(get_turf(src))
-				if(istype(AM, /obj/item/gun/))
-					to_chat(user, "You have chosen \the [AM].")
-			qdel(src)
-		else
-			stamped = FALSE

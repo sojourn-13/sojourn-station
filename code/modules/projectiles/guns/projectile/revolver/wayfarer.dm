@@ -8,6 +8,7 @@
 	icon = 'icons/obj/guns/projectile/wayfarer.dmi'
 	icon_state = "wayfarer"
 	item_state = "wayfarer"
+	excelsior = FALSE
 	drawChargeMeter = FALSE
 	caliber = "10x24"
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)

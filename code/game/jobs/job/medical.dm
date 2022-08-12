@@ -107,9 +107,9 @@
 	icon_state = "player-green"
 	join_tag = /datum/job/doctor
 
-/datum/job/trauma_team
-	title = "Soteria Trauma Team"
-	flag = TRAUMATEAM
+/datum/job/recovery_team
+	title = "Soteria Client Recovery Specialist"
+	flag = RECOVERYTEAM
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
 	faction = MAP_FACTION
@@ -119,8 +119,8 @@
 	difficulty = "Ungratifying."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
-	alt_titles = (null)
-	outfit_type = /decl/hierarchy/outfit/job/medical/trauma_team
+	alt_titles = list("Soteria Emergency Medical Technician")
+	outfit_type = /decl/hierarchy/outfit/job/medical/recovery_team
 
 	health_modifier = 5
 	perks = list(/datum/perk/medicalexpertise, /datum/perk/chemist) // Can treat people well but can't do surgery or chemistry as good as a doctor.
@@ -140,7 +140,7 @@
 	software_on_spawn = list(/datum/computer_file/program/chem_catalog,
 							/datum/computer_file/program/scanner)
 
-	description = "Members of the trauma team are not men of science nor medicine, they are strictly in charge of enforcing the chief biolabs orders and sometimes the chief research overseer's orders.<br>\
+	description = "Members of the recovery team are not men of science nor medicine, they are strictly in charge of enforcing the chief biolabs orders and sometimes the chief research overseer's orders.<br>\
 	Your primary role is that of an armed thug for medical. You make sure that medical remains safe by ensuring people don't trespass or steal items and remove those who shouldn't be there, by force if necessary.<br>\
 	Your secondary responsibility is that of an soteria enforcer. Actions that require in house enforcement such as aiding doctors and security with violent patients in medical, securing the virology lab during an outbreak, and aiding in the destruction of escape slimes or kudzu from science.<br>\
 	Your third duty is to aid medical doctors and act as a paramedic in fixing patients and collecting patients, this can include retrieving chemicals, doing basic triage, and going out to recover injured patients.<br>\
@@ -152,15 +152,15 @@
 		Act as a nurse for minor injuries, treating patients that a doctor needn't bother with.<br>\
 		Ensure that any outbreaks are contained, such as slimes, infected monkeys, or kudzu."
 
-/obj/landmark/join/start/chemist //This says chemist so I didn't have to edit the map shit when I changed this. Fix later.
-	name = "Soteria Trauma Team"
+/obj/landmark/join/start/chemist //This says chemist so I didn't have to edit the map shit when I changed this. Fix later. || Update: Whoever did this, you never fucking fixed it. I hate you. - Rebel0
+	name = "Soteria Recovery Team"
 	icon_state = "player-green"
-	join_tag = /datum/job/trauma_team
+	join_tag = /datum/job/recovery_team
 
-/obj/landmark/join/start/paramedic // Same thing as above tbh.
-	name = "Soteria Trauma Team"
+/obj/landmark/join/start/paramedic // Same thing as above tbh. || I still hate you. -Rebel0
+	name = "Soteria Recovery Team"
 	icon_state = "player-green"
-	join_tag = /datum/job/trauma_team
+	join_tag = /datum/job/recovery_team
 
 
 /datum/job/psychiatrist

@@ -486,7 +486,7 @@ its easier to just keep the beam vertical.
 		var/obj/item/I = P.virtual_scanner
 		I.afterattack(src, user, get_dist(src, user) <= 1)
 
-	SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
+	LEGACY_SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
 
 	return distance == -1 || (get_dist(src, user) <= distance) || isobserver(user)
 
@@ -799,8 +799,7 @@ its easier to just keep the beam vertical.
 
 /atom/Entered(var/atom/movable/AM, var/atom/old_loc, var/special_event)
 	if(loc)
-		for(var/i in AM.contents)
-			var/atom/movable/A = i
+		for(var/atom/movable/A as anything in AM.contents)
 			A.entered_with_container(old_loc)
 		if(MOVED_DROP == special_event)
 			AM.forceMove(loc, MOVED_DROP)
@@ -875,11 +874,21 @@ its easier to just keep the beam vertical.
 
 
 /atom/proc/get_recursive_contents()
-	var/list/result = list()
-	for (var/atom/a in contents)
-		result += a
-		result |= a.get_recursive_contents()
-	return result
+	. = list()
+	for (var/atom/a as anything in contents)
+		. += a
+		. |= a.get_recursive_contents()
+
+/atom/proc/get_recursive_contents_until(limit = INFINITY, current_recursion = 0)
+	if (limit <= current_recursion)
+		return
+	. = list()
+	current_recursion++
+	for (var/atom/a as anything in contents)
+		. += a
+		var/recursive_contents = a.get_recursive_contents_until(limit, current_recursion)
+		if (!isnull(recursive_contents))
+			. |= recursive_contents
 
 /atom/proc/AllowDrop()
 	return FALSE

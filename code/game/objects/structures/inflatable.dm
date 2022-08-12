@@ -30,11 +30,13 @@
 /obj/structure/inflatable
 	name = "inflatable"
 	desc = "An inflated membrane. Do not puncture."
-	density = 1
-	anchored = 1
-	opacity = 0
+	density = TRUE
+	anchored = TRUE
+	opacity = FALSE
 	icon = 'icons/obj/inflatable.dmi'
 	icon_state = "wall"
+
+	atmos_canpass = CANPASS_DENSITY
 
 	var/undeploy_path = null
 	health = 50.0
@@ -69,13 +71,13 @@
 
 /obj/structure/inflatable/ex_act(severity)
 	switch(severity)
-		if(1.0)
+		if(1)
 			qdel(src)
 			return
-		if(2.0)
+		if(2)
 			deflate(1)
 			return
-		if(3.0)
+		if(3)
 			if(prob(50))
 				deflate(1)
 				return
@@ -85,7 +87,8 @@
 	return
 
 /obj/structure/inflatable/attackby(obj/item/W as obj, mob/user as mob)
-	if(!istype(W) || istype(W, /obj/item/inflatable_dispenser)) return
+	if(!istype(W) || istype(W, /obj/item/inflatable_dispenser))
+		return
 
 	if (can_puncture(W))
 		visible_message(SPAN_DANGER("[user] pierces [src] with [W]!"))
@@ -95,7 +98,7 @@
 		..()
 	return
 
-/obj/structure/inflatable/proc/hit(var/damage, var/sound_effect = 1)
+/obj/structure/inflatable/proc/hit(damage, sound_effect = 1)
 	health = max(0, health - damage)
 	if(sound_effect)
 		playsound(loc, 'sound/effects/Glasshit.ogg', 75, 1)
@@ -105,7 +108,7 @@
 /obj/structure/inflatable/CtrlClick()
 	hand_deflate()
 
-/obj/structure/inflatable/proc/deflate(var/violent=0)
+/obj/structure/inflatable/proc/deflate(violent=0)
 	playsound(loc, 'sound/machines/hiss.ogg', 75, 1)
 	if(violent)
 		visible_message("[src] rapidly deflates!")
@@ -132,7 +135,7 @@
 	verbs -= /obj/structure/inflatable/verb/hand_deflate
 	deflate()
 
-/obj/structure/inflatable/attack_generic(var/mob/user, var/damage, var/attack_verb)
+/obj/structure/inflatable/attack_generic(mob/user, damage, attack_verb)
 	health -= damage
 	attack_animation(user)
 	if(health <= 0)
@@ -140,12 +143,12 @@
 		spawn(1) deflate(1)
 	else
 		user.visible_message(SPAN_DANGER("[user] [attack_verb] at [src]!"))
-	return 1
+	return TRUE
 
 /obj/structure/inflatable/door //Based on mineral door code
 	name = "inflatable door"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	opacity = FALSE
 
 	icon_state = "door_closed"
@@ -196,7 +199,7 @@
 	isSwitchingStates = 1
 	flick("door_opening", src)
 	sleep(10)
-	density = 0
+	density = FALSE
 	state = 1
 	update_icon()
 	isSwitchingStates = 0
@@ -205,7 +208,7 @@
 	isSwitchingStates = 1
 	flick("door_closing", src)
 	sleep(10)
-	density = 1
+	density = TRUE
 	state = 0
 	update_icon()
 	isSwitchingStates = 0
@@ -216,7 +219,7 @@
 	else
 		icon_state = "door_closed"
 
-/obj/structure/inflatable/door/deflate(var/violent=0)
+/obj/structure/inflatable/door/deflate(violent=0)
 	playsound(loc, 'sound/machines/hiss.ogg', 75, 1)
 	if(violent)
 		visible_message("[src] rapidly deflates!")

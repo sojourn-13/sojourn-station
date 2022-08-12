@@ -172,12 +172,10 @@ default behaviour is:
 	else
 		health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
 
-
 //This proc is used for mobs which are affected by pressure to calculate the amount of pressure that actually
 //affects them once clothing is factored in. ~Errorage
 /mob/living/proc/calculate_affecting_pressure(var/pressure)
 	return
-
 
 //sort of a legacy burn method for /electrocute, /shock, and the e_chair
 /mob/living/proc/burn_skin(burn_amount)
@@ -251,7 +249,6 @@ default behaviour is:
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	toxloss = min(max(toxloss + amount, 0),(maxHealth*2))
-
 
 /mob/living/proc/setToxLoss(var/amount)
 	if(status_flags & GODMODE)

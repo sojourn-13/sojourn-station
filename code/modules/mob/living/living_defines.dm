@@ -8,6 +8,8 @@
 
 	var/hud_updateflag = 0
 
+	var/death_threshold = HEALTH_THRESHOLD_SOFTCRIT
+
 	var/life_cycles_before_sleep = 60
 	var/life_cycles_before_scan = 360
 

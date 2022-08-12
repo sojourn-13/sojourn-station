@@ -138,7 +138,7 @@
 			else
 				src.visible_message("\blue \icon[src] [src] suddenly lies still and quiet.")
 			disabled = rand(150, 600)
-			walk(src,0)
+			SSmove_manager.stop_looping(src)
 
 	if(exploding && prob(20))
 		if(prob(50))
@@ -153,7 +153,7 @@
 		exploding = 1
 		stat = UNCONSCIOUS
 		wander = 1
-		walk(src,0)
+		SSmove_manager.stop_looping(src)
 		spawn(rand(50,150))
 			if(!disabled && exploding)
 				explosion(get_turf(src), 0, 1, 4, 7)
@@ -165,7 +165,7 @@
 	adjustFireLoss(rand(20,30)*severity)
 	disabled = rand(150, 600)
 	hostile_drone = 0
-	walk(src,0)
+	SSmove_manager.stop_looping(src)
 	if(rapid)
 		rapid = FALSE
 	if(prob(5) && ranged) //Kinda would suck if they lost their only weapon

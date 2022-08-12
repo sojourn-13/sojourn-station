@@ -3,6 +3,8 @@
 	var/hair_color = "#000000"
 	var/h_style = "Bald"
 
+	death_threshold = HEALTH_THRESHOLD_DEAD
+
 	//Facial hair colour and style
 	var/facial_color = "#000000"
 	var/f_style = "Shaved"

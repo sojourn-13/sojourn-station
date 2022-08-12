@@ -359,11 +359,6 @@ var/global/ManifestJSON
 /proc/find_security_record(field, value)
 	return find_record(field, value, data_core.security)
 
-/proc/find_record(field, value, list/L)
-	for(var/datum/data/record/R in L)
-		if(R.fields[field] == value)
-			return R
-
 /*/proc/GetAssignment(var/mob/living/carbon/human/H)
 	if(H.mind.assigned_role)
 		return H.mind.assigned_role

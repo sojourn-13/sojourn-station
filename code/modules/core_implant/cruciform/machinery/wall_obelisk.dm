@@ -17,7 +17,7 @@
 	var/active = TRUE //Were always active
 
 	var/area_radius = 7
-	var/damage = 20
+	var/damage = 120
 	var/max_targets = 3
 
 	var/biomatter_ammo = 10 //We attack 10 times before running out on map spawn
@@ -58,7 +58,7 @@
 	..()
 	if(stat)
 		return
-	var/list/affected = range(area_radius, src)
+	var/list/affected = hearers(area_radius, src)
 	if(!active)
 		use_power = IDLE_POWER_USE
 		return
@@ -66,28 +66,18 @@
 		use_power = 2
 
 		var/to_fire = max_targets
-		for(var/A in affected)
-			if(istype(A, /obj/structure/burrow))
-				var/obj/structure/burrow/burrow = A
-				if(!burrow.obelisk_around)
-					burrow.obelisk_around = any2ref(src)
-			else if(istype(A, /mob/living/carbon/superior_animal))
-				var/mob/living/carbon/superior_animal/animal = A
-				if(animal.stat != DEAD &! animal.colony_friend && biomatter_ammo >= biomatter_use_per_shot) //got roach, spider, xenos, but not colony pets
-					animal.take_overall_damage(damage)
-					biomatter_ammo -= biomatter_use_per_shot
-					if(!--to_fire)
-						return
-			else if(istype(A, /mob/living/simple_animal/hostile))
-				var/mob/living/simple_animal/hostile/animal = A
-				if(animal.stat != DEAD &! animal.colony_friend && biomatter_ammo >= biomatter_use_per_shot) //got misc things like tango, voild wolfs but not colony pets
-					animal.take_overall_damage(damage)
-					biomatter_ammo -= biomatter_use_per_shot
-					if(!--to_fire)
-						return
-			else if(istype(A, /obj/effect/plant))
-				var/obj/effect/plant/shroom = A
-				if(shroom.seed.type == /datum/seed/mushroom/maintshroom)
-					qdel(shroom)
-					if(!--to_fire)
-						return
+		for(var/mob/living/carbon/superior_animal/superior_mob in affected)
+			var/mob/living/carbon/superior_animal/animal = superior_mob
+			if(animal.stat != DEAD &! animal.colony_friend && biomatter_ammo >= biomatter_use_per_shot) //got roach, spider, xenos, but not colony pets
+				animal.take_overall_damage(damage)
+				biomatter_ammo -= biomatter_use_per_shot
+				if(!--to_fire)
+					return
+		for(var/mob/living/simple_animal/hostile/simple_h in affected)
+			var/mob/living/simple_animal/hostile/animal = simple_h
+			if(animal.stat != DEAD &! animal.colony_friend && biomatter_ammo >= biomatter_use_per_shot) //got misc things like tango, voild wolfs but not colony pets
+				animal.take_overall_damage(damage)
+				biomatter_ammo -= biomatter_use_per_shot
+				if(!--to_fire)
+					return
+

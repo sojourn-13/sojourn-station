@@ -18,6 +18,9 @@
 		clone_attack(M, rand(4, 8))
 	.=..()
 
+/obj/item/bluespace_leak/attack_hand(mob/user as mob)
+	Crossed(user)
+
 /obj/item/bluespace_leak/attackby(obj/item/I, mob/user)
 	if(user.Adjacent(src))
 		if(!(I.flags & NOBLUDGEON))

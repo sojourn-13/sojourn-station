@@ -122,6 +122,9 @@
 
 	var/recoil = 0
 
+	var/added_damage_bullet_pve = 0 //Added damage against mobs, checks bullet armor
+	var/added_damage_laser_pve  = 0 //Added damage against mobs, checks enegery armor
+
 /obj/item/projectile/New()
 
 	penetration_holder = new /datum/penetration_holder
@@ -149,6 +152,13 @@
 		val += damage_types[i]
 	return val
 
+/obj/item/projectile/proc/get_total_damage_pve()
+	var/val = 0
+	val += added_damage_bullet_pve
+	val += added_damage_laser_pve
+	return val
+
+
 /obj/item/projectile/proc/is_halloss()
 	for(var/i in damage_types)
 		if(i != HALLOSS)
@@ -171,6 +181,10 @@
 
 /obj/item/projectile/multiply_projectile_agony(newmult)
 	agony = initial(agony) * newmult
+
+/obj/item/projectile/multiply_pve_damage(newmult)
+	added_damage_bullet_pve = initial(added_damage_bullet_pve) * newmult
+	added_damage_laser_pve  = initial(added_damage_laser_pve) * newmult
 
 /obj/item/projectile/proc/adjust_damages(var/list/newdamages)
 	if(!newdamages.len)
@@ -240,6 +254,7 @@
 
 	if (firer_arg)
 		firer = firer_arg
+		original_firer = firer_arg
 
 	if (firer && (isliving(firer))) //here we apply the projectile adjustments applied by prefixes and such
 		var/mob/living/livingfirer = firer
@@ -1133,7 +1148,7 @@
  * atom/movable/firer: The source of the bullet, will be set as trace.firer.
  * proj: The typepath of the projectile to simulate.
 **/
-/proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj)
+/proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj, var/offset = 0)
 	var/obj/item/projectile/trace = new proj(get_turf(firer))
 	trace.testing = TRUE
 	trace.invisibility = INFINITY //nobody can see it
@@ -1143,7 +1158,7 @@
 
 	trace.firer = firer
 
-	trace.launch(target)
+	trace.launch(target, angle_offset = offset) // offset is by default null
 
 	return trace
 

@@ -4,7 +4,7 @@
 	Its attacks deal light burn damage, but spam many hits. They deal a lot of damage by splashing acid
 	onto victims, allowing acidproof gear to provide some good protection
 	Blobs are very vulnerable to fire and lasers. Flamethrower is the recommended weapon, and
-	In an emergency, a phoron canister and a lighter will bring a quick end to a blob
+	In an emergency, a plasma canister and a lighter will bring a quick end to a blob
 */
 
 /datum/storyevent/blob
@@ -69,7 +69,7 @@
 	health = 1
 	var/health_regen = 3
 	var/brute_resist = 1.25
-	var/fire_resist = 0.6
+	var/fire_resist = 0.8
 	var/expandType = /obj/effect/blob
 
 	//We will periodically update and track neighbors in two lists:
@@ -568,7 +568,7 @@
 	maxHealth = 200
 	health = 200
 	brute_resist = 4
-	fire_resist = 2
+	fire_resist = 3
 	density = TRUE
 	icon_scale = 1.2
 	health_regen = 1
@@ -602,7 +602,7 @@
 	health = 160
 	health_regen = 5
 	brute_resist = 2
-	fire_resist = 1
+	fire_resist = 1.3
 	density = TRUE
 	icon_scale = 1.2
 

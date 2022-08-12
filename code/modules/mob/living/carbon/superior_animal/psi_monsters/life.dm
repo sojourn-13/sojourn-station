@@ -119,9 +119,3 @@
 
 /mob/living/carbon/superior_animal/psi_monster/handle_environment(var/datum/gas_mixture/environment) //were made up!
 	return
-
-/mob/living/carbon/superior_animal/psi_monster/handle_cheap_breath(datum/gas_mixture/breath as anything)
-	return
-
-/mob/living/carbon/superior_animal/psi_monster/handle_cheap_environment(datum/gas_mixture/environment as anything)
-	return

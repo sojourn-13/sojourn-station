@@ -13,6 +13,8 @@
 	var/shield_generate_power = 7500	//how much power we use when regenerating
 	var/shield_idle_power = 1500		//how much power we use when just being sustained.
 
+	atmos_canpass = CANPASS_NEVER
+
 /obj/machinery/shield/malfai
 	name = "emergency forcefield"
 	desc = "A weak forcefield which seems to be projected by the station's emergency atmosphere containment field"

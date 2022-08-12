@@ -8,7 +8,6 @@
 #define READ_FILE(file, text) DIRECT_INPUT(file, text)
 //print an error message to world.log
 
-
 // On Linux/Unix systems the line endings are LF, on windows it's CRLF, admins that don't use notepad++
 // will get logs that are one big line if the system is Linux and they are using notepad.  This solves it by adding CR to every line ending
 // in the logs.  ascii character 13 = CR
@@ -243,6 +242,21 @@
 		return "[a.loc] ([t.x],[t.y],[t.z]) ([a.loc.type])"
 	else if(a.loc)
 		return "[a.loc] (0,0,0) ([a.loc.type])"
+
+/proc/log_ss(subsystem, text, log_world = TRUE)
+	if (!subsystem)
+		subsystem = "UNKNOWN"
+	var/msg = "[subsystem]: [text]"
+	game_log("SS", msg)
+	if (log_world)
+		world.log <<  "SS[subsystem]: [text]" //removed the gelf logs because i think they only work with rust
+
+/proc/log_ss_init(text)
+	game_log("SS", "[text]")
+
+// Generally only used when something has gone very wrong.
+/proc/log_failsafe(text)
+	game_log("FAILSAFE", text)
 
 //From tg
 #if defined(REFERENCE_TRACKING) // Doing it locally

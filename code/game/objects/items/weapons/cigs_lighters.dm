@@ -1058,3 +1058,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "\improper Liberation Zippo lighter"
 	desc = "A cheap, mass produced Zippo for the working masses, its flame - much like the motto - goes ever upwards."
 	icon_state = "excelsior"
+
+/obj/item/flame/lighter/zippo/brass
+	name = "\improper Brass Zippo lighter"
+	desc = "A shiney brass zippo made to last, for some reason the metal is always cold to the touch and rather then the flint to start the flame makes a ticking sound when used."
+	icon_state = "brass_zippo"

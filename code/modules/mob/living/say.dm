@@ -213,7 +213,7 @@ var/list/channel_to_radio_key = new
 		var/msg
 		if(!speaking || !(speaking.flags&NO_TALK_MSG))
 			msg = SPAN_NOTICE("\The [src] talks into \the [used_radios[1]]")
-		for(var/mob/living/M in hearers(5, src))
+		for(var/mob/living/M as anything in hearers(5, src))
 			if((M != src) && msg)
 				M.show_message(msg)
 			if(speech_sound)
@@ -247,25 +247,27 @@ var/list/channel_to_radio_key = new
 			sound_vol *= 0.5 //muffle the sound a bit, so it's like we're actually talking through contact
 		var/falloff = (message_range + round(3 * (chem_effects[CE_SPEECH_VOLUME] ? chem_effects[CE_SPEECH_VOLUME] : 1))) //A wider radius where you're heard, but only quietly. This means you can hear people offscreen.
 		//DO NOT FUCKING CHANGE THIS TO GET_OBJ_OR_MOB_AND_BULLSHIT() -- Hugs and Kisses ~Ccomp
-		var/list/hear = hear(message_range, T)
-		var/list/hear_falloff = hear(falloff, T)
+		var/list/hear_falloff = hear_movables(falloff, T)
 
-		for(var/X in SSmobs.mob_list)
-			if(!ismob(X))
-				continue
-			var/mob/M = X
-			if(M.stat == DEAD && M.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH)
-				listening |= M
-				continue
-			if(M.locs.len && (M.locs[1] in hear))
-				listening |= M
-				continue //To avoid seeing BOTH normal message and quiet message
-			else if(M.locs.len && (M.locs[1] in hear_falloff))
-				listening_falloff |= M
+		for(var/atom/movable/AM as anything in hear_falloff)
+			var/list/recursive_contents_with_self = (AM.get_recursive_contents_until(3))
+			recursive_contents_with_self += AM
+			for (var/atom/movable/recursive_content as anything in recursive_contents_with_self) // stopgap between getting contents and getting full recursive contents
+				if (ismob(recursive_content))
+					if (get_dist(get_turf(recursive_content), src) < falloff) //if we're not in the falloff distance
+						listening |= recursive_content
+						continue
+					else //we are in the falloff radius
+						listening_falloff |= recursive_content
+				else if (isobj(recursive_content))
+					if (recursive_content in GLOB.hearing_objects)
+						listening_obj |= recursive_content
 
-		for(var/obj in GLOB.hearing_objects)
-			if(get_turf(obj) in hear)
-				listening_obj |= obj
+		for (var/mob/M as anything in SSmobs.ghost_list) // too scared to make a combined list
+			if(M.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH)
+				listening |= M
+				listening_falloff &= ~M
+				continue
 
 	var/speech_bubble_test = say_test(message)
 	var/image/speech_bubble = image('icons/mob/talk.dmi', src, "h[speech_bubble_test]")
@@ -273,24 +275,18 @@ var/list/channel_to_radio_key = new
 	QDEL_IN(speech_bubble, 30)
 
 	var/list/speech_bubble_recipients = list()
-	for(var/X in listening) //Again, as we're dealing with a lot of mobs, typeless gives us a tangible speed boost.
-		if(!ismob(X))
-			continue
-		var/mob/M = X
+	for(var/mob/M as anything in listening) //Again, as we're dealing with a lot of mobs, typeless gives us a tangible speed boost.
 		if(M.client)
 			speech_bubble_recipients += M.client
 		M.hear_say(message, verb, speaking, alt_name, italics, src, speech_sound, sound_vol, getSpeechVolume(message))
-	for(var/X in listening_falloff)
-		if(!ismob(X))
-			continue
-		var/mob/M = X
+	for(var/mob/M as anything in listening_falloff)
 		if(M.client)
 			speech_bubble_recipients += M.client
 		M.hear_say(message, verb, speaking, alt_name, italics, src, speech_sound, sound_vol, 1)
 
 	animate_speechbubble(speech_bubble, speech_bubble_recipients, 30)
 
-	for(var/obj/O in listening_obj)
+	for(var/obj/O as anything in listening_obj)
 		spawn(0)
 			if(!QDELETED(O)) //It's possible that it could be deleted in the meantime.
 				O.hear_talk(src, message, verb, speaking, getSpeechVolume(message), message_pre_stutter)

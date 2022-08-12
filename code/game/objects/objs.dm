@@ -22,15 +22,6 @@
 
 /obj/examine(mob/user, distance=-1, infix, suffix)
 	..(user, distance, infix, suffix)
-	if(get_dist(user, src) <= 2)
-		if (corporation)
-			if (corporation in GLOB.global_corporations)
-				var/datum/corporation/C = GLOB.global_corporations[corporation]
-				to_chat(user, "<font color='[C.textcolor]'>You think this [src.name] create a \
-				<IMG CLASS=icon SRC=\ref[C.icon] ICONSTATE='[C.icon_state]'>\
-				[C.name]. [C.about]</font>")
-			else
-				to_chat(user, "You think this [src.name] create a [corporation].")
 	return distance == -1 || (get_dist(src, user) <= distance)
 
 
@@ -273,3 +264,5 @@
 /obj/proc/multiply_projectile_step_delay(newmult)
 
 /obj/proc/multiply_projectile_agony(newmult)
+
+/obj/proc/multiply_pve_damage(newmult)

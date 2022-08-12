@@ -102,7 +102,7 @@
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This particular model is made with mining in \
 	mind. Unlike the mechanical adept model this chassis is built work long hard hours in the darkness, being far more able to smash down rock veins and dig out tunnels rich with both soft \
 	and hard materials alike. While not as capable in combat as a Soteria combat chassis this model boasts equal parts sturdiness and pre-programmed assistants in maintaining tools and one's ownself. \
-	This design comes with a mining omnitool, which boasts a munchkin 3000 multitool, a greyson power drill, advanced ore scanner, and emergency radio."
+	This design comes with a mining omnitool, which boasts a munchkin 3000 multitool, a powered jackhammer, advanced ore scanner, and emergency radio."
 
 	restricted_to_species = list(FORM_AGSYNTH)
 	racial_implants = (/obj/item/organ_module/active/multitool/miner)

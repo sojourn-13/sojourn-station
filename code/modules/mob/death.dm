@@ -57,9 +57,9 @@
 
 /mob/proc/death(gibbed,deathmessage="seizes up and falls limp...",show_dead_message = "You have died.")
 	if(stat == DEAD)
-		return 0
+		return FALSE
 
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 
 	activate_mobs_in_range(src, 5) //Its quite clear to everyone close by when something dies
 	facing_dir = null
@@ -78,7 +78,7 @@
 
 	for(var/mob/living/carbon/human/H in oviewers(src))
 		H.sanity.onSeeDeath(src)
-		SEND_SIGNAL(H, COMSIG_MOB_DEATH, src) //im not going to use this for the mob spawner becuase i dont understand signals enough
+		LEGACY_SEND_SIGNAL(H, COMSIG_MOB_DEATH, src) //im not going to use this for the mob spawner becuase i dont understand signals enough
 
 	stat = DEAD
 	update_lying_buckled_and_verb_status()
@@ -118,6 +118,7 @@
 		mind.store_memory("Time of death: [stationtime2text()]", 0)
 	switch_from_living_to_dead_mob_list()
 	updateicon()
+	update_icons()
 	to_chat(src,"<span class='deadsay'>[show_dead_message]</span>")
 
 	if (spawned_from)

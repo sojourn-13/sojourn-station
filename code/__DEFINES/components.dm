@@ -1,4 +1,11 @@
-#define SEND_SIGNAL(target, sigtype, arguments...) ( !target.comp_lookup || !target.comp_lookup[sigtype] ? NONE : target._SendSignal(sigtype, list(##arguments)) )
+/// Used to trigger signals and call procs registered for that signal
+/// The datum hosting the signal is automaticaly added as the first argument
+/// Returns a bitfield gathered from all registered procs
+/// Arguments given here are packaged in a list and given to _SendSignal
+#define SEND_SIGNAL(target, sigtype, arguments...) ( !target.comp_lookup || !target.comp_lookup[sigtype] ? NONE : target._SendSignal(sigtype, list(target, ##arguments)) )
+
+/// Depreciated. Use SEND_SIGNAL instead. This only exists for compatability.
+#define LEGACY_SEND_SIGNAL(target, sigtype, arguments...) ( !target.comp_lookup || !target.comp_lookup[sigtype] ? NONE : target._SendSignal(sigtype, list(##arguments)) )
 
 #define SEND_GLOBAL_SIGNAL(sigtype, arguments...) ( SEND_SIGNAL(SSdcs, sigtype, ##arguments) )
 
@@ -102,6 +109,11 @@
 #define COMSIG_HUMAN_HEALTH "human_health"					   //from human/updatehealth()
 #define COMSIG_HUMAN_SANITY "human_sanity"						//from /datum/sanity/proc/onLife()
 #define COMSIG_HUMAN_INSTALL_IMPLANT "human_install_implant"
+
+// /mob/living/carbon/superior_animal signals
+#define COMSIG_SUPERIOR_FIRED_PROJECTILE "superior_fired_projectile"
+#define COMSIG_ATTACKED "attacked" // Soj edit, feel free to adapt this to other types
+
 // /datum/species signals
 
 // /obj signals
@@ -136,6 +148,12 @@
 
 //obj/item/gun signals
 #define COMSIG_GUN_POST_FIRE "gun_post_fire"	//from base of /obj/item/gun/proc/handle_post_fire(): (atom/target, pointblank, reflex)
+
+// ABERRANT signals
+#define COMSIG_ABERRANT_INPUT "aberrant_input"
+#define COMSIG_ABERRANT_PROCESS "aberrant_process"
+#define COMSIG_ABERRANT_OUTPUT "aberrant_output"
+#define COMSIG_ABERRANT_COOLDOWN "aberrant_cooldown"
 
 /*******Component Specific Signals*******/
 //Janitor

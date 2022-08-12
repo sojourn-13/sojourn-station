@@ -44,6 +44,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/ammo_magazine/speed_loader_rifle_75 = 15, //More or less for ammo rather then speedloader
 		/obj/item/ammo_magazine/light_rifle_257 = 30,
 		/obj/item/ammo_magazine/rifle_75 = 35,
+		/obj/item/ammo_magazine/rifle_75_linked_box/empty = 65, // Empty linked mag for balance, making the Heroic actually useable if ordered.
 		/obj/item/ammo_magazine/heavy_rifle_408 = 50,
 		/obj/item/ammo_magazine/ammobox/pistol_35 = 75,
 		/obj/item/ammo_magazine/ammobox/magnum_40 = 150,
@@ -77,6 +78,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/shield/buckler = 250,
 		/obj/item/shield/riot = 350,
 		//Armor
+		/obj/item/clothing/head/helmet/faceshield/altyn/milisha = 120,
 		/obj/item/clothing/suit/space/void/security/odst/mil = 300,
 		/obj/item/clothing/suit/space/void/odst/corps = 300,
 		/obj/item/storage/box/bs_kit/bullet_armor = 500,

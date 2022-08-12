@@ -105,6 +105,19 @@
 #define ROBOT_NOTIFICATION_MODULE_RESET 4
 #define ROBOT_NOTIFICATION_SIGNAL_LOST 5
 
+// Superior mob attack reaction flags
+#define ALWAYS_SEE 1
+#define GUESS_LOCATION_WITH_AURA 2
+#define GUESS_LOCATION_WITH_LINE 3
+#define GUESS_LOCATION_WITH_END_OF_LINE 4
+
+// Superior mob attack ranged retaliation modes
+#define NO_RETALIATION 0
+#define ALWAYS_ATTACK_AGGRESSOR (0<<1)
+#define ATTACK_RANDOM_AREA_IN_LINE (0<<2)
+#define ATTACK_RANDOM_AREA_IN_AURA (0<<3)
+#define APPROACH_ATTACKER (0<<4)
+
 // Appearance change flags
 #define APPEARANCE_UPDATE_DNA  0x1
 #define APPEARANCE_RACE       (0x2|APPEARANCE_UPDATE_DNA)
@@ -314,3 +327,5 @@
 // Sojourn Additions End
 
 #define RANDOM_BLOOD_TYPE pick(4;"O-", 36;"O+", 3;"A-", 28;"A+", 1;"B-", 20;"B+", 1;"AB-", 5;"AB+")
+
+#define is_dead(M) M.stat == DEAD

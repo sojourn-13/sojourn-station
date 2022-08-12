@@ -163,6 +163,7 @@
 			list(name="Grenade Shell Flash", cost=250, path=/obj/item/ammo_casing/grenade/flash),
 			list(name="Grenade Shell Blast", cost=350, path=/obj/item/ammo_casing/grenade/blast),
 			list(name="Grenade Shell Frag", cost=350, path=/obj/item/ammo_casing/grenade/frag),
+			list(name="Grenade Shell Stinger", cost=300, path=/obj/item/ammo_casing/grenade/frag/stinger),
 			list(name="Grenade Shell EMP", cost=300, path=/obj/item/ammo_casing/grenade/emp),
 			list(name="14.5×114mm Anti-Material \"Red-Nose\"", cost=2400, path=/obj/item/ammo_casing/antim/lethal/prespawned),
 			list(name="14.5×114mm Anti-Material \"Off-Switch\"", cost=2400, path=/obj/item/ammo_casing/antim/ion/prespawned),
@@ -233,7 +234,7 @@
 			list(name="Box (8.6 Rubber)", cost=3820, path=/obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber),
 			list(name="Box (8.6 Practice)", cost=200, path=/obj/item/ammo_magazine/ammobox/heavy_rifle_408/practice),
 			list(name="Linked Ammunition Box (8.6 Ball)", cost=2820, path=/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408),
-			list(name="Linked Ammunition Box (8.6 Hollow Point)", cost=3460, path=/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/highvelocity),
+			list(name="Linked Ammunition Box (8.6 High velocity)", cost=3460, path=/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/highvelocity),
 			list(name="Linked Ammunition Box (8.6 Hollow Point)", cost=3460, path=/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/lethal),
 			list(name="Linked Ammunition Box (8.6 Rubber)", cost=2820, path=/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/rubber),
 			list(name="Linked Ammunition Box (8.6 Empty)", cost=420, path=/obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/empty),
@@ -286,7 +287,7 @@
 		return
 	if(processing)
 		to_chat(user, SPAN_NOTICE("\The [src] is currently processing."))
-	else if(!istype(I, /obj/item/stack/material))
+	else if(!istype(I, /obj/item/stack/material) && !istype(I, /obj/item/stack/sheet/refined_scrap))
 		to_chat(user, SPAN_NOTICE("You cannot put this in \the [src]."))
 	else
 		var/i = 0
@@ -358,7 +359,7 @@
 		to_chat(usr, SPAN_NOTICE("The bullet fabricator is in the process of working."))
 		return
 	var/S = 0
-	for(var/obj/item/stack/material/I in contents)
+	for(var/obj/item/stack/I in contents)
 		S += 5
 		points += I.amount * I.price_tag * 5
 		//if(I.reagents.get_reagent_amount("nutriment") < 0.1)
@@ -454,7 +455,7 @@
 	eat_eff = bin_rating
 
 /obj/machinery/bulletfabricator/proc/check_user(mob/user)
-	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, STAT_LEVEL_EXPERT))
+	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stats?.getPerk(PERK_GUNSMITH) || user.stat_check(STAT_MEC, STAT_LEVEL_EXPERT))
 		return TRUE
 	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
 	return FALSE

@@ -24,7 +24,7 @@
 /obj/item/biosyphon/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
 	GLOB.ironhammer_faction_item_loss++
 	. = ..()
@@ -71,7 +71,7 @@
 	STOP_PROCESSING(SSobj, src)
 	check_for_faithful(list())
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
 	GLOB.moebius_faction_item_loss++
 	..()
@@ -148,7 +148,7 @@
 
 /obj/item/reagent_containers/enricher/Destroy()
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
 	GLOB.moebius_faction_item_loss++
 	..()
@@ -236,7 +236,7 @@ No more of that.
 
 /obj/item/device/techno_tribalism/Destroy()
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
 	GLOB.technomancer_faction_item_loss++
 	..()
@@ -369,7 +369,7 @@ No more of that.
 			to_chat(user, SPAN_WARNING("The [W] is not suitable for [src]!"))
 			return
 		to_chat(user, SPAN_NOTICE("You feed [W] to [src]."))
-		SEND_SIGNAL(user, COMSIG_OBJ_TECHNO_TRIBALISM, W)
+		LEGACY_SEND_SIGNAL(user, COMSIG_OBJ_TECHNO_TRIBALISM, W)
 		items_count += 1
 		qdel(W)
 
@@ -421,7 +421,7 @@ No more of that.
 /obj/item/maneki_neko/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
 	GLOB.guild_faction_item_loss++
 	..()
@@ -493,7 +493,7 @@ No more of that.
 
 /obj/item/tool/sword/nt_sword/Destroy()
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
 	GLOB.neotheology_faction_item_loss++
 	..()
@@ -653,7 +653,7 @@ No more of that.
 /obj/item/reagent_containers/atomic_distillery/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
 	. = ..()
 

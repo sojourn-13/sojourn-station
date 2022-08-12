@@ -152,6 +152,7 @@ Class Procs:
 	set_power_use(NO_POWER_USE)
 	return ..()
 
+
 /obj/machinery/Process()//If you dont use process or power why are you here
 	return PROCESS_KILL
 

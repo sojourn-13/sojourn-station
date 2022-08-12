@@ -17,12 +17,12 @@
 
 	GLOB.superior_animal_list += src
 
-	for(var/language in known_languages)
+	for(var/language as anything in known_languages)
 		add_language(language)
 
 /mob/living/carbon/superior_animal/Initialize(var/mapload)
 	if (get_stat_modifier)
-		for (var/key in allowed_stat_modifiers)
+		for (var/key as anything in allowed_stat_modifiers)
 			var/datum/stat_modifier/mod = key
 			if (initial(mod.stattags) & NOTHING_STATTAG)
 				continue
@@ -41,12 +41,17 @@
 		if (prob(extra_burrow_chance))
 			create_burrow(get_turf(src))
 
+	RegisterSignal(src, COMSIG_ATTACKED, .proc/react_to_attack)
+
 /mob/living/carbon/superior_animal/Destroy()
 	GLOB.superior_animal_list -= src
 
 	target_mob = null
 
 	friends.Cut()
+
+	UnregisterSignal(src, COMSIG_ATTACKED)
+
 	. = ..()
 
 /mob/living/carbon/superior_animal/u_equip(obj/item/W as obj)
@@ -69,13 +74,14 @@
 		else
 			if (icon_living)
 				icon_state = icon_living
-			var/matrix/M = matrix()
-			M.Turn(180)
-			//M.Translate(1,-6)
-			transform = M
-	else if (icon_living)
-		icon_state = icon_living
-
+		var/matrix/M = matrix()
+		M.Turn(90)
+		transform = M
+	else
+		var/matrix/M = matrix()
+		transform = M
+		if (icon_living)
+			icon_state = icon_living
 
 /mob/living/carbon/superior_animal/regenerate_icons()
 	. = ..()
@@ -86,7 +92,7 @@
 
 /mob/living/carbon/superior_animal/examine(mob/user)
 	..()
-	if (is_dead())
+	if (is_dead(src))
 		to_chat(user, SPAN_DANGER("It is completely motionless, likely dead."))
 	else if (health < maxHealth * 0.10)
 		to_chat(user, SPAN_DANGER("It looks like they are on their last legs!"))
@@ -107,10 +113,68 @@
 	else if (health < maxHealth)
 		to_chat(user, SPAN_WARNING("It has a few cuts and bruses."))
 
+/**
+ * To be used when we attempt to target a mob outside of view_range.
+ * Args:
+ * target: The target we are attempting to target.
+ * distance: The distance between our target and us. Defaults to just that value. Here for override purposes.
+ * target_mode: Defaults to target_out_of_sight_mode. Here for override purposes.
+ *
+ * If target_mode == ALWAYS_SEE, just returns target. If target_mode == GUESS_LOCATION_WITH_AREA, returns RANGE_TURFS, radius being the distance outside of viewrange.
+ * Trims said list to remove any turfs that are dense, or turfs that have dense objects in them. If out_of_sight_turf_LOS_check is true, also removes and turfs
+ * that fail a can_see check.
+ *
+ * If target_mode == GUESS_TARGET_WITH_LINE, does above, except it returns a list of turfs generated from a line drawn from the edge of viewrange to
+ *
+ * out_of_viewrange_line_distance_mult the distance from said distance to the target.
+**/
+/mob/living/carbon/superior_animal/proc/target_outside_of_view_range(var/atom/target, distance = get_dist(src, target), target_mode = target_out_of_sight_mode)
+
+	var/tiles_out_of_viewrange = (distance - viewRange) //self explanatory
+	if (tiles_out_of_viewrange <= 0)
+		return FALSE //they are within our viewrange
+
+	var/list/possible_locations //initialize the var
+	switch (target_mode)
+		if (ALWAYS_SEE) // if this is true we can always detect our target
+			return target
+
+		if (GUESS_LOCATION_WITH_AURA)
+			possible_locations = RANGE_TURFS(tiles_out_of_viewrange, target) // the further away the target, the more inaccurate our targetting
+
+		if (GUESS_LOCATION_WITH_LINE, GUESS_LOCATION_WITH_END_OF_LINE)
+			var/turf/viewrange_edge = get_turf_at_edge_of_viewRange(target)
+			possible_locations = get_turfs_in_line_toward_target(viewrange_edge, target, out_of_viewrange_line_distance_mult)
+
+			if (target_mode == GUESS_LOCATION_WITH_END_OF_LINE)
+				if (out_of_sight_turf_LOS_check)
+					for (var/i = possible_locations.len, i > 0, i--) //start from the last entry added
+						var/atom/possible_location = possible_locations[i]
+						if (can_see(possible_location, target, get_dist(possible_location, target))) //if this turf can see the target,
+							return possible_location // this is a valid target
+						else
+							continue
+				var/index = possible_locations.len
+				return possible_locations[index] //return the last entry in the list
+
+	for (var/turf/possible_location as anything in possible_locations) // iterate through each turf we are considering
+		if (density == TRUE) // if the turf is dense, aka we cant walk through it...
+			possible_locations -= possible_location // ...no way they're in it
+			continue
+		if (out_of_sight_turf_LOS_check)
+			if (!(can_see(possible_location, target, get_dist(possible_location, target)))) // if it cant see the target...
+				possible_locations -= possible_location // then theres no way the target was there
+				continue
+		for (var/atom/movable/entity in possible_location)
+			if (entity.density == TRUE) //the 1st check but for the contents
+				possible_locations -= possible_location
+				continue
+
+	return safepick(possible_locations) //return one at random
 
 // Same as breath but with innecesarry code removed and damage tripled. Environment pressure damage moved here since we handle moles.
 
-/mob/living/carbon/superior_animal/proc/handle_cheap_breath(datum/gas_mixture/breath as anything)
+/mob/living/carbon/superior_animal/handle_breath(datum/gas_mixture/breath as anything)
 	var/breath_pressure = (breath.total_moles*R_IDEAL_GAS_EQUATION*breath.temperature)/BREATH_VOLUME
 	var/breath_required = breath_pressure > 15 && (breath_required_type || breath_poison_type)
 	if(!breath_required) // 15 KPA Minimum
@@ -118,7 +182,7 @@
 	adjustOxyLoss(breath.gas[breath_required_type] ? 0 : ((((breath.gas[breath_required_type] / breath.total_moles) * breath_pressure) < min_breath_required_type) ? 0 : 6))
 	adjustToxLoss(breath.gas[breath_poison_type] ? 0 : ((((breath.gas[breath_poison_type] / breath.total_moles) * breath_pressure) < min_breath_poison_type) ? 0 : 6))
 
-/mob/living/carbon/superior_animal/proc/handle_cheap_environment(datum/gas_mixture/environment as anything)
+/mob/living/carbon/superior_animal/handle_environment(datum/gas_mixture/environment as anything)
 	var/pressure = environment.return_pressure()
 	var/enviro_damage = (bodytemperature < min_bodytemperature) || (pressure < min_air_pressure) || (pressure > max_air_pressure)
 	if(enviro_damage) // its like this to avoid extra processing further below without using goto
@@ -142,7 +206,7 @@
 /mob/living/carbon/superior_animal/proc/cheap_incapacitation_check() // This works based off constants ,override it if you want it to be dynamic . Based off isincapacited
 	return stunned > 0 || weakened > 0 || resting || pinned.len > 0 || stat || paralysis || sleeping || (status_flags & FAKEDEATH) || buckled() > 0
 
-/mob/living/carbon/superior_animal/proc/cheap_update_lying_buckled_and_verb_status_()
+/*/mob/living/carbon/superior_animal/update_lying_buckled_and_verb_status()
 
 	if(cheap_incapacitation_check())
 		lying = FALSE
@@ -158,7 +222,19 @@
 		set_density(FALSE)
 	else
 		canmove = TRUE
-		set_density(initial(density))
+		set_density(initial(density))*/
+
+/mob/living/carbon/superior_animal/proc/adjustFiringOffset(var/value)
+
+	current_firing_offset += value
+
+	return TRUE
+
+/mob/living/carbon/superior_animal/proc/resetFiringOffset()
+
+	current_firing_offset = initial_firing_offset
+
+	return TRUE
 
 /mob/living/carbon/superior_animal/proc/handle_ai()
 
@@ -225,40 +301,59 @@
 /mob/living/carbon/superior_animal/proc/handle_hostile_stance(var/atom/targetted_mob) //here so we can jump instantly to it if hostile stance is established
 	var/already_destroying_surroundings = FALSE
 	var/calculated_walk = (comfy_range - comfy_distance) //the distance for walk_to() we will use on ranged mobs
+	var/can_see = TRUE
+	var/ran_see_check = FALSE
 	if(destroy_surroundings)
 		destroySurroundings()
 		already_destroying_surroundings = TRUE //setting this var prevents double destruction when handle_attacking_stance is called
-	if(ranged)
 
+	var/mob/living/targetted_mob_real
+
+	if (isliving(targetted_mob))
+		targetted_mob_real = targetted_mob
+
+	if (!ran_see_check)
+		if (!(can_see_check(targetted_mob, targetted_mob_real)))
+			can_see = FALSE
+			lost_sight = TRUE
+		ran_see_check = TRUE
+
+	var/atom/targetted = targetted_mob
+
+	if (!can_see)
+		targetted = (target_location?.resolve())
+
+	if(ranged)
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		walk_to_wrapper(src, targetted_mob, calculated_walk, move_to_delay, deathcheck = TRUE) //lets get a little closer than our optimal range
+		if (stat != DEAD)
+			SSmove_manager.move_to(src, targetted_mob, calculated_walk, move_to_delay) //lets get a little closer than our optimal range
 
 		if (delayed > 0)
 			if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
-				visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
+				visible_message(SPAN_WARNING("[src] [target_telegraph] <font color = 'green'>[targetted]</font>!"), target = targetted, message_target = always_telegraph_to_target)
 				delayed--
 				return //return to end the switch early, so we delay our attack by one tick. does not happen if rush timer is less than world.time
 			else
-				visible_message(SPAN_WARNING("[src] [rush_target_telegraph] <font color = 'green'>[targetted_mob]</font>!"), target = targetted_mob, message_target = always_telegraph_to_target)
+				visible_message(SPAN_WARNING("[src] [rush_target_telegraph] <font color = 'green'>[targetted]</font>!"), target = targetted, message_target = always_telegraph_to_target)
 
 	else if (!ranged)
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
 		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
+		if (stat != DEAD)
+			SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 		moved = 1
-	handle_attacking_stance(targetted_mob, already_destroying_surroundings)
+	handle_attacking_stance(targetted_mob, already_destroying_surroundings, can_see, ran_see_check)
 
-/mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE)
+/mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE, can_see = TRUE, ran_see_check = FALSE)
 	var/calculated_walk = (comfy_range - comfy_distance) //the distance for walk_to() we will use on ranged mobs
 	var/fire_through_lost_sight = FALSE //will we continue to fire, even if we cant see them?
-	var/can_see = TRUE // did our sight check say we still see them?
-	var/ran_see_check = FALSE // have we ran our see check?
 	var/mob/targetted_mob_real = null // the true value of target_mob?.resolve(), if its a mob, needed for determining if we will use hearers or can_see in our see check
 	var/target_location_resolved = (target_location?.resolve()) // we will target this if this tick's can_see is FALSE
 	var/obj/item/projectile/trace // the projectile that ranged mobs use when testing trajectory
+
 	retarget_rush_timer += ((world.time) + retarget_rush_timer_increment) //we put it here because we want mobs currently angry to be vigilant
 	if(destroy_surroundings && !already_destroying_surroundings) // the second check prevents handle_hostile_stance from causing double destruction
 		destroySurroundings()
@@ -274,17 +369,15 @@
 			if (targetted_mecha.occupant && ismob(targetted_mecha.occupant))
 				targetted_mob_real = targetted_mecha.occupant
 
-		if (!ran_see_check) //have we already run this check? redundant check, currently
-			if (!see_through_walls) // we can skip these checks if we can always see our target
-				if (targetted_mob_real && (targetted_mob_real.client)) // is our target_mob a mob with a player controlling it?
-					if (!(targetted_mob in hearers(get_dist(src, targetted_mob), src))) //we can afford a more expensive proc for the sake of making the player experience with ai better
-						can_see = FALSE
-				else if (!((can_see(src, targetted_mob, get_dist(src, targetted_mob))) && !see_through_walls)) // if not, lets use a inaccurate cheap proc
-					can_see = FALSE
-			ran_see_check = TRUE  //if we cant see them, hearers() wont show them, so lets remove the override
+		if (!ran_see_check) //have we already run this check?
+			can_see = can_see_check(targetted_mob, targetted_mob_real)
+			ran_see_check = TRUE
+
+		if (can_see)
+			lost_sight = FALSE
 
 		if (!lost_sight) // if we've, in a previous iteration of this proc, lost sight of our target, lets not update the location of the target
-			target_location = WEAKREF(targetted_mob.loc) //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
+			target_location = WEAKREF(get_turf(targetted_mob)) //the choice to not just store the location unconditionally every tick is intentional, i want mobs to have a chance to reacquire their target
 		target_location_resolved = (target_location?.resolve())
 		if (retarget) // do we randomly retarget?
 			var/retarget_prioritize = retarget_prioritize_current //local var so that we can make temporary changes
@@ -309,16 +402,6 @@
 				patience = patience_initial
 				return
 			else //this is where we handle mobs losing LOS and forgetting where the target is
-				if (!lost_sight) //lets only do this if we havent lost sight of them, so we dont constantly go to their new position
-					if (cant_see_timer <= world.time) //prevents any weirdness
-						if (ranged) //only ranged mobs can advance, currently
-							if (advancement_timer > world.time) //we are advancing, so lets use our advance_steps var
-								walk_to_wrapper(src, target_location_resolved, advance_steps, move_to_delay, deathcheck = TRUE)
-							else
-								walk_to_wrapper(src, target_location_resolved, calculated_walk, move_to_delay, deathcheck = TRUE)
-						else
-							walk_to_wrapper(src, target_location_resolved, 1, move_to_delay, deathcheck = TRUE) // melee mobs only need to go to one tile away
-
 				lost_sight = TRUE
 				patience--
 
@@ -327,8 +410,9 @@
 					set_dir(moving_to)
 					step_glide(src, moving_to, DELAY2GLIDESIZE(0.5 SECONDS)) //we can potentially pathfind if we do this
 			if (fire_through_walls)
-				cant_see_timer = (world.time)++ //just to make sure we dont walk towards them
 				fire_through_lost_sight = TRUE
+		else
+			lost_sight = FALSE
 
 		// This block only runs if the above can_see check is true, fires a trace projectile to see if we can hit our target
 		if (projectiletype && advance) //are we allowed to advance?
@@ -338,12 +422,11 @@
 					spawn(0) //the projectile needs time to process
 					handle_trace_impact(trace, delete_trace = FALSE) //and now, we check to see if we should advance, using the trace
 
-		if (!can_see && (!fire_through_walls))
-			return
+		//if (!can_see && (!fire_through_walls))
+		//	return
 
-		if (!fire_through_lost_sight) //can only be true if src does not have fire_through_walls
-			lost_sight = FALSE
-		patience = patience_initial
+		if (can_see)
+			patience = patience_initial
 		// This block controls our attack/range logic
 		var/atom/targetted = targetted_mob
 		if (!(targetted_mob.check_if_alive(TRUE)))
@@ -355,27 +438,70 @@
 			return
 		if(!ranged)
 			prepareAttackOnTarget()
-			walk_to_wrapper(src, targetted, 1, move_to_delay, deathcheck = TRUE)
+			if (stat != DEAD)
+				SSmove_manager.move_to(src, targetted, 1, move_to_delay)
 		else if(ranged)
+
+			var/distance = (get_dist(src, targetted))
+
 			if (!(targetted_mob.check_if_alive(TRUE)))
 				loseTarget()
 				return
 			if (stat == DEAD)
 				return
-			if(get_dist(src, targetted) <= comfy_range)
+
+			var/shoot = TRUE
+
+			if (targetted == target_location_resolved) //this isnt our target. its useless to shoot at it
+
+				if (distance > viewRange) //if it's not in our viewrange...
+					var/turf/viewrange_edge = get_turf_at_edge_of_viewRange(targetted)
+					if (viewrange_edge.opacity || !(can_see_check(viewrange_edge))) //... and if itself blocks LOS or we cant see it...
+						if (!fire_through_walls) //...and we arent allowed to fire through walls...
+							shoot = FALSE //...lets not shoot
+				else if (!fire_through_walls)
+					shoot = FALSE
+
+			else if (targetted == targetted_mob)
+				if (!can_see && (!fire_through_lost_sight))
+					shoot = FALSE
+
+			if (shoot) // should we shoot?
 				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
 					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
-				if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))  //we dont want to prematurely end a advancing walk
-					walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE) //we still want to reset our walk
-			else
-				if (prepareAttackPrecursor(RANGED_TYPE, TRUE, TRUE, targetted))
-					addtimer(CALLBACK(src, .proc/OpenFire, targetted, trace), delay_for_range)
-				if ((advancement_timer <= world.time) && (cant_see_timer <= world.time))
-					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to_wrapper(src, targetted, calculated_walk, move_to_delay, deathcheck = TRUE)
+
+			if (advancement_timer <= world.time)  //we dont want to prematurely end a advancing walk
+				if (stat != DEAD)
+					SSmove_manager.move_to(src, targetted, calculated_walk, move_to_delay) //we still want to reset our walk
+				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 	else
 		prepareAttackOnTarget()
-		walk_to_wrapper(src, targetted_mob, 1, move_to_delay, deathcheck = TRUE)
+		if (stat != DEAD)
+			SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
+
+/mob/living/carbon/superior_animal/proc/get_turf_at_edge_of_viewRange(var/atom/target, view_range = viewRange)
+	var/turf/viewrange_edge = get_turf(src)
+	if (!target)
+		return null
+	for (var/i = 0, i < view_range, i++)
+		viewrange_edge = get_step_towards(viewrange_edge, target) // need to loop here since get_step_to avoids obstacles
+
+	return viewrange_edge
+
+/mob/living/carbon/superior_animal/proc/can_see_check(var/atom/targetted_mob, var/mob/living/targetted_mob_real, can_see = FALSE, use_hearers = FALSE)
+
+	if (!see_through_walls) // we can skip these checks if we can always see our target
+		var/distance = (min(get_dist(src, targetted_mob), viewRange))
+		if ((targetted_mob_real && (targetted_mob_real.client) && (ismob(targetted_mob))) || use_hearers) // is our target_mob a mob with a player controlling it?
+			if (targetted_mob in hearers(distance, src)) //we can afford a more expensive proc for the sake of making the player experience with ai better
+				can_see = TRUE
+		else if (can_see(src, targetted_mob, distance)) // if not, lets use a inaccurate cheap proc
+			can_see = TRUE
+	else
+		if (see_past_viewRange || (targetted_mob in range(viewRange, src)))
+			can_see = TRUE
+
+	return can_see
 
 /// If critcheck = FALSE, will check if health is more than 0. Otherwise, if is a human, will check if theyre in hardcrit.
 /atom/proc/check_if_alive(var/critcheck = FALSE) //A simple yes no if were alive
@@ -392,20 +518,27 @@
 // Same as overridden proc but -3 instead of -1 since its 3 times less frequently envoked, if checks removed
 /mob/living/carbon/superior_animal/handle_status_effects()
 	paralysis = max(paralysis-3,0)
-	stunned = max(stunned-3,0)
-	weakened = max(weakened-3,0)
 
-/mob/living/carbon/superior_animal/proc/handle_cheap_regular_status_updates()
+	if (stunned)
+		stunned = max(stunned-3,0)
+		if(!stunned)
+			update_icons()
+
+	if(weakened)
+		weakened = max(weakened-3,0)
+		if(!weakened)
+			update_icons()
+
+/mob/living/carbon/superior_animal/handle_regular_status_updates()
 	health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
-	if(health <= 0 && stat != DEAD)
+	if(health <= death_threshold && stat != DEAD)
 		death()
-		// STOP_PROCESSING(SSmobs, src) This is handled in Superior animal Life().
 		blinded = TRUE
 		silent = FALSE
 		return TRUE
 	return FALSE
 
-/mob/living/carbon/superior_animal/proc/handle_cheap_chemicals_in_body()
+/mob/living/carbon/superior_animal/handle_chemicals_in_body()
 	if(reagents)
 		chem_effects.Cut()
 		if(touching)
@@ -433,30 +566,30 @@
 	ticks_processed++
 	handle_regular_hud_updates()
 	if(!reagent_immune)
-		handle_cheap_chemicals_in_body()
+		handle_chemicals_in_body() //not under ai_inactive, because of shit like blattedin
 
+	// is this optimal? no. do i like this? no. if i could, would i rip it up and make it better? yes.
+	// but this is eriscode. i cant make a clean change on fucking anything. i am so goddamn tired of trying
+	// to optimize this mess, taht at this point, im willing to just shove all this shit in here. and you know what?
+	// this isnt even that bad. im disgusted by this too, and by god, i beg of whoever the hell is reading this,
+	// MAKE THIS BETTER. we have SO many goddamn superior mobs that this shit NEEDS to be optimal but i am a goddamn
+	// sophmore in college about to get a goddamn job so im pretty tired of workin on this shit.
 	if(!(ticks_processed%3))
-		// handle_status_effects() this is handled here directly to save a bit on procedure calls
-		//if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1)) - Soj edit, we already update icon just 13 lines down form this, no point
-		//	spawn(5) update_icons()
-		paralysis = max(paralysis-3,0)
-		stunned = max(stunned-3,0)
-		weakened = max(weakened-3,0)
-		cheap_update_lying_buckled_and_verb_status_()
+		if (!AI_inactive)
+			handle_status_effects()
+			update_lying_buckled_and_verb_status()
 		if(!never_stimulate_air)
 			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
 			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
-			handle_cheap_breath(breath)
-			handle_cheap_environment(environment)
+			handle_breath(breath)
+			handle_environment(environment) //it should be pretty safe to move this out of ai inactive if this causes problems.
+			if (can_burrow && bad_environment)
+				evacuate()
 			//Fire handling , not passing the whole list because thats unefficient.
 			handle_fire(environment.gas["oxygen"], loc)
-		updateicon()
+		// this one in particular im very unhappy about. every 3 ticks, if a superior mob is dead to something that doesnt directly apply damage, it dies. i hate this.
+		handle_regular_status_updates() // we should probably still do this even if we're dead or something
 		ticks_processed = 0
-	if(handle_cheap_regular_status_updates()) // They have died after all of this, do not scan or do not handle AI anymore.
-		return PROCESS_KILL
-
-	if (can_burrow && bad_environment)
-		evacuate()
 
 	if (!weakened)
 
@@ -469,9 +602,10 @@
 
 			if (following)
 				if (!target_mob) // Are we following someone and not attacking something?
-					walk_to_wrapper(src, following, follow_distance, move_to_delay, deathcheck = TRUE) // Follow the mob referenced in 'following' and stand almost next to them.
+					if (stat != DEAD)
+						SSmove_manager.move_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
 			else if (!target_mob && last_followed)
-				walk_to_wrapper(src, 0)
+				SSmove_manager.stop_looping(src)
 				last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
 
 	if(life_cycles_before_sleep)
@@ -590,7 +724,8 @@
 		advance_steps = (distance - advancement)
 		if (advance_steps <= 0)
 			advance_steps = 1 //1 is minimum
-		walk_to_wrapper(src, target, advance_steps, move_to_delay, deathcheck = TRUE) //advance forward, forcing us to pathfind
+		if (stat != DEAD)
+			SSmove_manager.move_to(src, target, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
 		advancement_timer = (world.time += advancement_increment) // we dont want this overridden instantly
 
 /mob/living/carbon/superior_animal/CanPass(atom/mover)

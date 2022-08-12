@@ -251,6 +251,14 @@
 	sort_category = "Faction: Security"
 	cost = 2 //has flash protection
 
+/datum/gear/factionsecurity/secglasses
+	display_name = "HUD Glasses"
+	path = /obj/item/clothing/glasses/sechud
+	allowed_roles = list(JOBS_SECURITY)
+	slot = slot_glasses
+	sort_category = "Faction: Security"
+	cost = 2 //has flash protection
+
 /datum/gear/factionsecurity/fatigueselection
 	display_name = "fatigue selection"
 	path = /obj/item/clothing/under/rank/fatigues/

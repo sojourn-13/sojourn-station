@@ -11,6 +11,15 @@
 				 {{:data.damage_multiplier}}x
 			</div>
 		{{/if}}
+
+		{{if data.proj_pve_damage_multiplier != 1}}
+			<div class="itemLabel">
+				Projectile PvE damage multiplier:
+			</div>
+			<div class="itemContent">
+				 {{:data.multiply_pve_damage}}x
+			</div>
+		{{/if}}
 		
 		{{if data.pierce_multiplier != 0}}
 			<div class="itemLabel">
@@ -140,17 +149,31 @@
 				</div>
 			
 			<div class="itemLabel">
-				Overall damage:
+				PvP damage:
 			</div>
 				<div class="itemContent">
 					{{:data.projectile_damage}}
 				</div>
-			
+
+			<div class="itemLabel">
+				Estimated  PvE Damage:
+			</div>
+				<div class="itemContent">
+					{{:data.projectile_damage_pve}}
+				</div>
+
 			<div class="itemLabel">
 				Overall AP:
 			</div>
 				<div class="itemContent">
 					{{:data.projectile_AP}}
+				</div>
+
+			<div class="itemLabel">
+				Overall Pain:
+			</div>
+				<div class="itemContent">
+					{{:data.projectile_pain}}
 				</div>
 
 			<div class="itemLabel">

@@ -72,7 +72,7 @@
 	/obj/item/clothing/gloves/stungloves,
 	/obj/item/clothing/mask/balaclava/tactical,
 	/obj/item/clothing/glasses/sechud/tactical,
-	/obj/item/device/radio/headset/headset_sec)
+	/obj/item/device/radio/headset/headset_sec/bowman)
 
 	var/list/loadout_3 = list(/obj/item/clothing/under/rank/scientist,
 	/obj/item/clothing/head/bandana/orange,
