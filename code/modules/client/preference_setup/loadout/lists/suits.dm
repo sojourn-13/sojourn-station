@@ -22,7 +22,7 @@
 
 /datum/gear/suit/duster
 	display_name = "duster selection"
-	path = /obj/item/clothing/suit/storage/duster
+	path = /obj/item/clothing/accessory/duster
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/suit/flannel
