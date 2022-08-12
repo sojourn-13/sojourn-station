@@ -18,7 +18,7 @@
 	var/datum/component/modification/organ/process/PC = P.GetComponent(/datum/component/modification/organ/process)
 	PC.organ_efficiency_mod = list()		// Clear organ efficiencies since this is mimicking an organ process. Also, organ will need its own name.
 	organ_efficiency = list()
-
+	refresh_upgrades()
 
 /obj/item/organ/internal/scaffold/aberrant/scrub_toxin/blood
 	name = "filtration node"
@@ -60,6 +60,7 @@
 	var/datum/component/modification/organ/process/PC = P.GetComponent(/datum/component/modification/organ/process)
 	PC.organ_efficiency_mod = list()		// Clear organ efficiencies since this is mimicking an organ process. Also, organ will need its own name.
 	organ_efficiency = list()
+	refresh_upgrades()
 
 /obj/item/organ/internal/scaffold/aberrant/damage_response
 	name = "endocrine gland"
@@ -84,3 +85,4 @@
 	var/datum/component/modification/organ/process/PC = P.GetComponent(/datum/component/modification/organ/process)
 	PC.organ_efficiency_mod = list()		// Clear organ efficiencies since this is mimicking an organ process. Also, organ will need its own name.
 	organ_efficiency = list()
+	refresh_upgrades()
