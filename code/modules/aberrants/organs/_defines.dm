@@ -44,11 +44,11 @@
 								/datum/reagent/silicon, /datum/reagent/metal/sodium, /datum/reagent/organic/sugar, /datum/reagent/sulfur, /datum/reagent/metal/tungsten)
 
 #define REAGENTS_MEDICINE_BASIC list(/datum/reagent/medicine/inaprovaline, /datum/reagent/medicine/paracetamol, /datum/reagent/medicine/dexalin, /datum/reagent/medicine/hyronalin,\
-										/datum/reagent/medicine/alkysine, /datum/reagent/medicine/imidazoline)
+										/datum/reagent/medicine/alkysine, /datum/reagent/medicine/imidazoline, /datum/reagent/medicine/synaptizine)
 
 #define REAGENTS_MEDICINE_SIMPLE list(/datum/reagent/medicine/kelotane, /datum/reagent/medicine/bicaridine, /datum/reagent/medicine/tricordrazine, /datum/reagent/medicine/dylovene)
 
-#define REAGENTS_MEDICINE_INTERMEDIATE list(/datum/reagent/medicine/synaptizine)
+#define REAGENTS_MEDICINE_INTERMEDIATE list()
 #define REAGENTS_MEDICINE_ADVANCED list()
 
 #define REAGENTS_DRUGS list(/datum/reagent/drug/space_drugs, /datum/reagent/drug/cryptobiolin, /datum/reagent/drug/mindbreaker,\
