@@ -2,7 +2,7 @@
 	price_tag = 200
 	use_generated_name = FALSE
 	input_mod_path = /obj/item/modification/organ/internal/input/reagents
-	process_mod_path = /obj/item/modification/organ/internal/process/condense
+	process_mod_path = /obj/item/modification/organ/internal/process/boost
 	output_mod_path = /obj/item/modification/organ/internal/output/chemical_effects
 	base_input_type = /datum/reagent/toxin
 	output_pool = ALL_USABLE_POSITIVE_CHEM_EFFECTS
@@ -42,7 +42,7 @@
 	price_tag = 200
 	use_generated_name = FALSE
 	input_mod_path = /obj/item/modification/organ/internal/input/reagents
-	process_mod_path = /obj/item/modification/organ/internal/process/condense
+	process_mod_path = /obj/item/modification/organ/internal/process/boost
 	output_mod_path = /obj/item/modification/organ/internal/output/reagents_ingest
 	specific_input_type_pool = list(/datum/reagent/other/crayon_dust, /datum/reagent/other/paint, /datum/reagent/other/ultraglue, /datum/reagent/other/space_cleaner,
 									/datum/reagent/toxin/amatoxin, /datum/reagent/toxin/carpotoxin, /datum/reagent/toxin/fertilizer)
@@ -67,11 +67,11 @@
 	price_tag = 200
 	use_generated_name = FALSE
 	input_mod_path = /obj/item/modification/organ/internal/input/damage
-	process_mod_path = /obj/item/modification/organ/internal/process/condense
+	process_mod_path = /obj/item/modification/organ/internal/process/boost
 	output_mod_path = /obj/item/modification/organ/internal/output/reagents_blood
 	specific_input_type_pool = ALL_USABLE_DAMAGE_TYPES
 	input_mode = NOT_USED
-	output_pool = REAGENTS_MEDICINE_SIMPLE
+	output_pool = REAGENTS_MEDICINE_BASIC
 	output_info = list(VERY_LOW_OUTPUT)
 
 /obj/item/organ/internal/scaffold/aberrant/damage_response/New()
