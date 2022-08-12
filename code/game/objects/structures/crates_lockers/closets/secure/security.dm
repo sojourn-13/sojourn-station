@@ -85,7 +85,7 @@
 	new /obj/item/oddity/code_book(src)
 	new /obj/item/clothing/head/helmet/warrant_officer(src)
 	new /obj/item/storage/sheath/judgement/filled(src)
-	new /obj/item/device/radio/headset/headset_sec/bowman(src)
+	new /obj/item/device/radio/headset/heads/hos/bowman(src)
 
 /obj/structure/closet/secure_closet/warden
 	name = "supply specialist's locker"
