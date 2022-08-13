@@ -6,7 +6,7 @@
 	organ_efficiency = list(OP_LUNGS = 100)
 	parent_organ_base = BP_CHEST
 	specific_organ_size = 2
-	price_tag = 1500
+	price_tag = 700
 	blood_req = 10
 	max_blood_storage = 50
 	nutriment_req = 10
@@ -24,7 +24,7 @@
 	name = "prosthetic lungs"
 	desc = "Lungs made out of metal. Still work just as well as normal lungs."
 	icon_state = "lungs-prosthetic"
-	price_tag = 1500
+	price_tag = 1000
 	price_tag = 100
 	nature = MODIFICATION_SILICON
 	matter = list(MATERIAL_STEEL = 1)
