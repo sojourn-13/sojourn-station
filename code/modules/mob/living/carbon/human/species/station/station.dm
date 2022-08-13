@@ -243,7 +243,7 @@
 	//start event stuff
 
 	breath_pressure = 0 //so we dont die of lack of breath
-	toxins_mod =    0                    // Toxloss modifier
+	toxins_mod = 0                    // Toxloss modifier
 	radiation_mod = 0                    // Radiation modifier
 
 	//End
