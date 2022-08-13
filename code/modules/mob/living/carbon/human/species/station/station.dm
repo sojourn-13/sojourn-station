@@ -226,6 +226,7 @@
 	name_plural = "Kriosans"
 	default_form = FORM_KRIOSAN
 	obligate_form = TRUE
+	reagent_tag = IS_KRIOSAN
 	unarmed_types = list(/datum/unarmed_attack/needle, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	darksight = 8
 	num_alternate_languages = 2
