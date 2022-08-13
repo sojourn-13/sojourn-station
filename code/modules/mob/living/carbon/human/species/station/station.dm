@@ -226,6 +226,7 @@
 	name_plural = "Kriosans"
 	default_form = FORM_KRIOSAN
 	obligate_form = TRUE
+	reagent_tag = IS_KRIOSAN
 	unarmed_types = list(/datum/unarmed_attack/needle, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	darksight = 8
 	num_alternate_languages = 2
@@ -238,6 +239,14 @@
 	radiation_mod = 0.5
 	total_health = 150
 	siemens_coefficient = 2
+
+	//start event stuff
+
+	breath_pressure = 0 //so we dont die of lack of breath
+	toxins_mod = 0                    // Toxloss modifier
+	radiation_mod = 0                    // Radiation modifier
+
+	//End
 
 	dark_color = "#ff0000"
 	light_color = "#990000"

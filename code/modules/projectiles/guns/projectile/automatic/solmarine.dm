@@ -92,7 +92,7 @@
 	shotgun_haver = FALSE
 
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless_sawn
-	name = "sawn down \"Martian\" carbine"
+	name = "sawn down \"Saturnian\" carbine"
 	desc = "An ancient that predates mass autolathen printing rifle found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
 		 Unlike other old stock this one was always intented to be a 6.5mm.\
 		 Someone butchered this thing beyond recognition! At least it fits in a holster."

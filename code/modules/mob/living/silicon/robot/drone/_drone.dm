@@ -281,6 +281,8 @@ var/list/mob_hat_cache = list()
 		stat = CONSCIOUS
 		return
 	health = maxHealth - (getBruteLoss() + getFireLoss())
+	if(health <= death_threshold && stat != DEAD) //stops constantly procing death
+		death()
 	return
 
 //Easiest to check this here, then check again in the robot proc.
