@@ -120,3 +120,32 @@
 	key = "o"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"
+
+/datum/language/kriosan
+	name = LANGUAGE_KRIOSAN
+	desc = "The main language of Krios, Kriosan Creole. Mostly consiting of quill-hound noises, posturing and many German borrow words."
+	speech_verb = list("states", "rumbles")
+	ask_verb = list("stipulates", "huffs")
+	exclaim_verb = list("barks", "yips")
+	colour = "kriosan"
+	key = "k"
+	flags = RESTRICTED
+	partial_understanding = list(
+		LANGUAGE_GERMAN = 75,
+		LANGUAGE_COMMON = 10
+	)
+	shorthand = "KO"
+	syllables = list("Frau", "Mann", "Waffe", "Schiff", "Bombe", "Explosion", "Grenze", "Strasse", "Halle", "Pistole", "Gewehr", "Uniform", "Kind", "Arzt", \
+					 "und", "ja", "nein", "vielleicht", "ob", "Hund", "Hundt", "katse", "Rüde", "Pleite", "Schreckschraube", "Klammer", "fahren","Raumschiff", \
+ 					 "Serbien", "Eisenhammer", "Soteria", "Atmosphaere", "Generator", "Ingenieur", "Religion", "Ratte", "Priester", "Käfer", "Armee", "Regierung", "neu", \
+ 					 "fuß", "braver", "Hoffnung", "schauen", "sterben", "elektrisch", "Teufel", "kurieren", "Fleisch", "trinken", "Auftrag", "Hilfe", "Medizin", "zeppelin", \
+ 					 "verfallen", "Verfall", "National", "Laser", "Strom", "Gruppe", "Verteidigung", "verteidigen", "suche", "Auge", "Hand", "Bein", "Kopf", \
+ 					 "Flucht", "teufel", "Ritter", "Einfluss", "Einfall", "Muesli", "Wand", "Fenster", "Metall", "Holz", "Glas", "platz",  \
+ 					 "Bleib", "gib laut", "hunden", "sitz", "Weltraum", "Turbine", "Treibstoff", "platt", "dunkel", "hell", "tauchen", "Licht", "scheinen", \
+ 					 "Kaiser", "bekaempfen", "Tastatur", "Augenlicht", "verwerfen", "analysieren", "verschieben", \
+ 					 "Flammen", "Feuer", "Batterie", "laser", "Unwetter", "Abflug", "behandeln", "Roboter", "Regierung", \
+					 "Unterhaltung", "Platituede", "Pferd", "Poker", "spielen", "Stopp", "Baum", "Raumschlacht", "Kolonie", "kolonisieren", \
+ 					 "Gas", "Schaltung", "umstuerzen", "Umsturz", "Wissenschaft", "erforschen", "Forschung", "Psychologe", "Schmerz", \
+ 					 "Schmerzen", "gebrochen", "brechen", "alle", "Musik", "also", "Interesse", "Pruegel", "Alkohol", "Getraenk", \
+ 					 "dynamisch", "Dynamik", "Organisation", "hauptsache", "ueberhaupt", "weil", "denn", "deshalb", "mir", "dir", \
+ 					 "dein", "mein", "ihr", "eure", "seine", "meine", "Hier", "Fisch", "Ziege")

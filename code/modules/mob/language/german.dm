@@ -5,7 +5,8 @@
 	key = "q"
 	partial_understanding = list(
 		LANGUAGE_ESPERANTO = 20,
-		LANGUAGE_COMMON = 25
+		LANGUAGE_COMMON = 25,
+		LANGUAGE_KRIOSAN = 75
 	)
 	space_chance = 80
 	shorthand = "GE"
