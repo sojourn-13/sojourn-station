@@ -3,6 +3,7 @@
  // Useful proc for making people psions, in case its needed for an event, debugging, or fixing. Adds the organ to the head and then the organ takes care of the rest.
  // HOW TO USE: Right click person -> view variables -> call proc -> type "make_psion" -> click finished -> done
 /mob/proc/make_psion()
+	return //Temp well outside colony
 	var/mob/living/carbon/human/user = src
 	if(user.is_mannequin) //Quick return to stop them adding mages to mannequins
 		return
@@ -15,6 +16,7 @@
 			B.replaced(head)
 
 /mob/proc/make_psion_psych()
+	return //Temp well outside colony
 	var/mob/living/carbon/human/user = src
 	if(user.is_mannequin) //Quick return to stop them adding mages to mannequins
 		return
@@ -41,6 +43,7 @@
 // This also handles psi points limits and regeneration, the effect is dynamic so increases to cognition through things like stims and chems will update accordingly.
 /obj/item/organ/internal/psionic_tumor/Process()
 	..()
+	return //Temp well outside colony
 	if(disabled == FALSE && damage < 60)
 		var/psi_max_bonus = 0
 		var/cognitive_potential = 1
