@@ -240,6 +240,14 @@
 	total_health = 150
 	siemens_coefficient = 2
 
+	//start event stuff
+
+	breath_pressure = 0 //so we dont die of lack of breath
+	toxins_mod =    0                    // Toxloss modifier
+	radiation_mod = 0                    // Radiation modifier
+
+	//End
+
 	dark_color = "#ff0000"
 	light_color = "#990000"
 
