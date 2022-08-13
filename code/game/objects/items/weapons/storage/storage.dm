@@ -394,8 +394,6 @@
 		var/obj/item/storage/fancy/F = src
 		F.update_icon(1)
 
-	W.layer = initial(W.layer)
-	W.set_plane(initial(W.plane))
 
 	if (new_location)
 		W.loc = new_location
@@ -408,6 +406,8 @@
 		W.maptext = ""
 
 	W.on_exit_storage(src)
+	W.layer = initial(W.layer)
+	W.set_plane(initial(W.plane))
 	if(extraction_sound)
 		playsound(get_turf(src), extraction_sound, 100)
 	update_icon()
