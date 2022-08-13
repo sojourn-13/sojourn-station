@@ -543,7 +543,8 @@
 	max_ammo = 100
 	multiple_sprites = 1
 	w_class = ITEM_SIZE_BULKY //Balance change, these things are the size a box due to being legit 5 mags worth of ammo. Wacky that it was normal-sized before.
-
+	extra_bulk = -2
+	
 /obj/item/ammo_magazine/rifle_75_linked_box/update_icon()
 	if (!stored_ammo.len)
 		icon_state = "pk_box-0"
