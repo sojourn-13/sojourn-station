@@ -557,7 +557,7 @@
 	if ((CLUMSY in user.mutations) && prob(15))
 		to_chat(user, SPAN_WARNING("You accidentally bash yourself with the [src]."))
 		user.damage_through_armor(10, BURN, user.hand)
-		user.Weaken(1 * force)
+		user.Weaken(0.5 * force)
 	active = !active
 	if (active)
 		force = WEAPON_FORCE_PAINFUL
