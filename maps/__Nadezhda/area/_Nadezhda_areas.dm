@@ -464,7 +464,7 @@
 
 /area/nadezhda/hallway/side/cryo
 	name = "Cryo Hallway"
-
+	
 /area/nadezhda/hallway/side/bridgehallway
 	name = "Bridge Hallway"
 	icon_state = "erisblue"
@@ -1160,6 +1160,7 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/medical/cryo
 	name = "\improper Cryogenics"
 	icon_state = "cryo"
+	flags = CRITICAL_AREA
 
 /area/nadezhda/medical/exam_room
 	name = "\improper Exam Room"
@@ -1454,6 +1455,7 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/rnd/research
 	name = "\improper Research and Development"
 	icon_state = "research"
+	flags = CRITICAL_AREA
 
 /area/nadezhda/rnd/researchbathroom
 	name = "\improper Research Bathroom"
@@ -1486,6 +1488,7 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/rnd/robotics
 	name = "\improper Robotics Lab"
 	icon_state = "robotics"
+	flags = CRITICAL_AREA
 
 /area/nadezhda/rnd/rdoffice
 	name = "\improper Soteria Expedition Overseer's Office"
