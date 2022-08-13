@@ -2237,6 +2237,7 @@
 #include "code\modules\mob\living\carbon\superior_animal\giant_spider\types\hunter\shocker.dm"
 #include "code\modules\mob\living\carbon\superior_animal\human\human.dm"
 #include "code\modules\mob\living\carbon\superior_animal\human\subtype\excelsior\excelsior.dm"
+#include "code\modules\mob\living\carbon\superior_animal\human\subtype\kriosan\kriosan.dm"
 #include "code\modules\mob\living\carbon\superior_animal\human\subtype\voidwolf\voidwolf.dm"
 #include "code\modules\mob\living\carbon\superior_animal\lodge\ai.dm"
 #include "code\modules\mob\living\carbon\superior_animal\lodge\lodge.dm"
