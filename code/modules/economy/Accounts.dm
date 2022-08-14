@@ -45,8 +45,8 @@
 
 /datum/transaction/New(_amount = 0, _target_name, _purpose, _source_terminal, _date = null, _time = null)
 	amount = _amount
-	target_name = _target_name
-	purpose = _purpose
+	target_name = html2pencode(_target_name)
+	purpose = html2pencode(_purpose)
 	source_terminal = _source_terminal
 
 	if(istype(_source_terminal, /atom))
@@ -86,7 +86,7 @@
 
 	//create a new account
 	var/datum/money_account/M = new()
-	M.owner_name = new_owner_name
+	M.owner_name =  html2pencode(new_owner_name)
 	M.remote_access_pin = rand(1111, 9999)
 	M.money = starting_funds
 	M.employer = department
@@ -96,7 +96,7 @@
 
 	//create an entry in the account transaction log for when it was created
 	var/datum/transaction/T = new()
-	T.target_name = new_owner_name
+	T.target_name = html2pencode(new_owner_name)
 	T.purpose = "Account creation"
 	T.amount = starting_funds
 	if(!source_db)
