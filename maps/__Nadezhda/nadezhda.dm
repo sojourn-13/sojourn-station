@@ -6,11 +6,11 @@
 #include "data/shuttles-eris.dm"
 #include "data/reports.dm"
 
-#include "map/krios.dmm"
+#include "map/_Nadezhda_Colony_Omni_STU.dmm"
 //#include "_Nadezhda_Colony_Underground.dmm"
 //#include "_Nadezhda_Colony_Transition.dmm"
 //#include "_Nadezhda_Colony_Surface.dmm"
-#include "map/Shield_1.dmm"
+#include "map/_Nadezhda_Solar_Area.dmm"
 
 
 /obj/map_data/eris
@@ -18,25 +18,6 @@
 	is_sealed = TRUE
 	height = 1
 
-/obj/map_data/krios
-	name = "Krios"
-	is_station_level = FALSE
-	is_player_level = TRUE
-	is_contact_level = TRUE
-	is_accessable_level = FALSE
-	is_sealed = TRUE
-	generate_asteroid = TRUE
-	height = 4
-
-/obj/map_data/shield_1
-	name = "Shield_1"
-	is_station_level = TRUE
-	is_player_level = TRUE
-	is_contact_level = TRUE
-	is_accessable_level = FALSE
-	is_sealed = FALSE
-	generate_asteroid = TRUE
-	height = 3
 
 /obj/map_data/nadezda_ues //Omnie level has all three surface underground and stairs
 	name = "Nadezhda Omni Map"
