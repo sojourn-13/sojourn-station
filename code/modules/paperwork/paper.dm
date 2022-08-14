@@ -83,17 +83,19 @@
 		info = parsepencode(info)
 		return
 
-/obj/item/paper/New(loc, text,title)
+/obj/item/paper/New(loc, text,title, datum/language/L = null)
 	..(loc)
 	pixel_y = rand(-8, 8)
 	pixel_x = rand(-9, 9)
 	set_content(text ? text : info, title)
 
+	if (L)
+		language = L
+
 	var/old_language = language
-	language = global.all_languages[language]
-	if (!language)
+	if (!set_language(language, TRUE))
 		log_debug("[src] ([type]) initialized with invalid or missing language `[old_language]` defined.")
-		language = global.all_languages[LANGUAGE_COMMON]
+		set_language(LANGUAGE_COMMON, TRUE)
 
 /obj/item/paper/proc/set_content(text,title)
 	if(title)
@@ -103,6 +105,18 @@
 	update_icon()
 	update_space(info)
 	updateinfolinks()
+
+/obj/item/paper/proc/set_language(datum/language/new_language, force = FALSE)
+	if (!new_language || (info && !force))
+		return FALSE
+
+	if (!istype(new_language))
+		new_language = global.all_languages[new_language]
+	if (!istype(new_language))
+		return FALSE
+
+	language = new_language
+	return TRUE
 
 /obj/item/paper/update_icon()
 	if (icon_state == "paper_talisman")
@@ -125,7 +139,7 @@
 	else
 		to_chat(user, "<span class='notice'>You have to go closer if you want to read it.</span>")
 
-/obj/item/paper/verb/set_language()
+/obj/item/paper/verb/user_set_language()
 	set name = "Set writing language"
 	set category = "Object"
 	set src in usr
@@ -158,7 +172,7 @@
 	if (!admin_force && !Adjacent(src, user) && !CanInteract(user, GLOB.deep_inventory_state))
 		to_chat(user, SPAN_WARNING("You must remain next to or continue holding \the [src] to do that."))
 		return
-	language = new_language
+	set_language(new_language)
 
 /obj/item/paper/proc/show_content(mob/user, forceshow, editable = FALSE)
 	var/can_read = (istype(user, /mob/living/carbon/human) || isghost(user) || istype(user, /mob/living/silicon)) || forceshow

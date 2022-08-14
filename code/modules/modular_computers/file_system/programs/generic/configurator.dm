@@ -46,6 +46,10 @@
 		data["battery_rating"] = movable.cell.maxcharge
 		data["battery_percent"] = round(movable.cell.percent())
 
+	// Configurable stuff
+	var/obj/item/computer_hardware/printer/printer = computer.printer(/obj/item/computer_hardware/printer)
+	data["print_language"] = printer ? printer.print_language : null
+
 	var/list/all_entries[0]
 	for(var/obj/item/computer_hardware/H in hardware)
 		all_entries.Add(list(list(
@@ -63,3 +67,23 @@
 		ui.auto_update_layout = 1
 		ui.set_initial_data(data)
 		ui.open()
+	
+/datum/nano_module/program/computer_configurator/Topic(href, href_list)
+	. = ..()
+	if (.)
+		return
+
+	if (href_list["edit_language"])
+		var/obj/item/computer_hardware/printer/printer = computer.printer(/obj/item/computer_hardware/printer)
+		if (!printer)
+			to_chat(usr, SPAN_WARNING("No printer found, unable to update language."))
+			return TOPIC_REFRESH
+		var/list/selectable_languages = list()
+		for (var/datum/language/L in usr.languages)
+			if (L.has_written_form)
+				selectable_languages += L
+		var/new_language = input(usr, "What language do you want to print in?", "Change language", printer.print_language) as null|anything in selectable_languages
+		if (!new_language)
+			return TOPIC_HANDLED
+		printer.print_language = new_language
+		return TOPIC_REFRESH

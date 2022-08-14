@@ -422,7 +422,7 @@ mob/proc/format_say_message(var/message = null)
 					message = pick(S.speak)
 			else
 				if(language)
-					message = language.scramble(message)
+					message = language.scramble(message, languages)
 				else
 					message = stars(message)
 
@@ -458,7 +458,7 @@ mob/proc/format_say_message(var/message = null)
 						return
 				else
 					if(language)
-						message = language.scramble(message)
+						message = language.scramble(message, languages)
 					else
 						message = stars(message)
 
