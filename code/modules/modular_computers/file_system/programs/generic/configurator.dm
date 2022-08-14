@@ -47,7 +47,7 @@
 		data["battery_percent"] = round(movable.cell.percent())
 
 	// Configurable stuff
-	var/obj/item/computer_hardware/printer/printer = computer.printer(/obj/item/computer_hardware/printer)
+	var/obj/item/computer_hardware/printer/printer = movable.printer
 	data["print_language"] = printer ? printer.print_language : null
 
 	var/list/all_entries[0]
@@ -67,14 +67,14 @@
 		ui.auto_update_layout = 1
 		ui.set_initial_data(data)
 		ui.open()
-	
+
 /datum/nano_module/program/computer_configurator/Topic(href, href_list)
 	. = ..()
 	if (.)
 		return
 
 	if (href_list["edit_language"])
-		var/obj/item/computer_hardware/printer/printer = computer.printer(/obj/item/computer_hardware/printer)
+		var/obj/item/computer_hardware/printer/printer = movable.printer
 		if (!printer)
 			to_chat(usr, SPAN_WARNING("No printer found, unable to update language."))
 			return TOPIC_REFRESH
