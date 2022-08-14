@@ -138,9 +138,10 @@
 	Are we truly changing anything?"
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/psychoactive_manipulation
 
-/obj/item/device/psionic_catalyst/Initialize()
+/obj/item/device/psionic_catalyst/add_initial_transforms()
 	. = ..()
-	src.transform *= 0.5
+
+	add_transformation_type(list(/datum/transform_type/modular, 0.5, 0.5, flagarg = PSICATALYST_INITIAL_SCALE_TRANSFORM, priorityarg = PSICATALYST_INITIAL_SCALE_TRANSFORM_PRIORITY))
 
 /obj/item/device/psionic_catalyst/verb/invoke_power()
 	set name = "Invoke Psionic Catalyst"

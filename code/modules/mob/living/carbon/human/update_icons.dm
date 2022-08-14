@@ -160,11 +160,9 @@ Please contact me on #coderbus IRC. ~Carn x
 			add_overlay(species.get_eyes(src))
 
 	if(lying && !form.prone_icon) //Only rotate them if we're not drawing a specific icon for being prone.
-		add_transformation_type(/datum/transform_type/prone)
-		add_transformation_type(/datum/transform_type/modular, shiftx = 1, shifty = -6, flagarg = HUMAN_PRONE_TRANSFORM)
+		add_transformations(list(/datum/transform_type/prone, list(/datum/transform_type/modular, shiftx = 1, shifty = -6, flagarg = HUMAN_PRONE_TRANSFORM, priorityarg = HUMAN_PRONE_TRANSFORM_PRIORITY)))
 	else
-		remove_transformation_type(PRONE_TRANSFORM)
-		remove_transformation_type(HUMAN_PRONE_TRANSFORM)
+		remove_transformations(list(HUMAN_PRONE_TRANSFORM, PRONE_TRANSFORM))
 
 	COMPILE_OVERLAYS(src)
 

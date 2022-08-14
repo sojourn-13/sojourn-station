@@ -62,8 +62,8 @@
 /datum/vertical_travel_method/jump/start_animation()
 	.=..()
 	if (direction == DOWN)
-		M.add_transformation_type(/datum/transform_type/modular, rotation = 180, flagarg = VTM_JUMP_TRANSFORM)
-		given_transformations += /datum/transform_type/modular
+		M.add_transformation_type(list(/datum/transform_type/modular, rotationarg = 180, flagarg = VTM_JUMP_ROTATION_TRANSFORM, priorityarg = VTM_JUMP_ROTATION_TRANSFORM_PRIORITY))
+		given_transformations += VTM_JUMP_ROTATION_TRANSFORM
 
 		var/matrix/mat = M.transform
 		mat.Scale(0.9)

@@ -108,9 +108,7 @@
 			//Disabled for mold because it looks bad
 			//0 is in here several times to weight it a bit more towards normal
 			var/rot = pick(list(0,0,0, 90, 180, -90))
-			var/matrix/M = matrix()
-			M.Turn(rot)
-			transform = M
+			add_transformation_type(list(/datum/transform_type/modular, rotationarg = rot, flagarg = PLANT_INITIAL_ROTATION_TRANSFORM, priority = PLANT_INITIAL_ROTATION_TRANSFORM_PRIORITY))
 	else
 		max_growth = seed.growth_stages
 		growth_threshold = max_health/seed.growth_stages
@@ -273,21 +271,21 @@ var/list/global/cutoff_plant_icons = list()
 			newDir = 1
 		else
 			wall_mount = get_step(loc, newDir)
-			var/matrix/M = matrix()
+			var/to_turn = 0
 			// should make the plant flush against the wall it's meant to be growing from.
 
 			//M.Translate(0,offset)
 
 			switch(newDir)
 				if(WEST)
-					M.Turn(90)
+					to_turn = 90
 				if(NORTH)
-					M.Turn(180)
+					to_turn = 180
 					offset_to(wall_mount, WALL_HUG_OFFSET*0.5) //Due to perspective, there's more space to the north
 					//So plants that hug a north wall will be offset 50% more
 				if(EAST)
-					M.Turn(270)
-			src.transform = M
+					to_turn = 270
+			add_transformation_type(list(/datum/transform_type/modular, rotationarg = to_turn, flagarg = PLANT_SPREAD_ROTATION_TRANSFORM, priority = PLANT_SPREAD_ROTATION_TRANSFORM_PRIORITY))
 
 			if (newDir == SOUTH)
 				//Lets cutoff part of the plant

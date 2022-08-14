@@ -1104,7 +1104,7 @@
 		mount_assembly(T,user)
 
 /obj/item/device/electronic_assembly/pickup()
-	transform = matrix() //Reset the matrix.
+	remove_all_transforms() //Reset the matrix.
 	..()
 
 /obj/item/device/electronic_assembly/wallmount/proc/mount_assembly(turf/on_wall, mob/user) //Yeah, this is admittedly just an abridged and kitbashed version of the wallframe attach procs.
@@ -1125,24 +1125,24 @@
 		SPAN_NOTICE("You attach [src] to the wall."),
 		SPAN_NOTICE("You hear clicking."))
 	if(user.unEquip(src,T))
-		var/matrix/M = matrix()
+		var/to_turn = 0
 		switch(ndir)
 			if(NORTH)
 				pixel_y = -32
 				pixel_x = 0
-				M.Turn(180)
+				to_turn = 180
 			if(SOUTH)
 				pixel_y = 21
 				pixel_x = 0
 			if(EAST)
 				pixel_x = -27
 				pixel_y = 0
-				M.Turn(270)
+				to_turn = 270
 			if(WEST)
 				pixel_x = 27
 				pixel_y = 0
-				M.Turn(90)
-		transform = M
+				to_turn = 90
+		add_transformation_type(list(/datum/transform_type/modular, rotationarg = to_turn, flagarg = WALLMOUNT_PLACED_ROTATION_TRANSFORMATION, priority = WALLMOUNT_PLACED_ROTATION_TRANSFORMATION_PRIORITY))
 
 /obj/item/device/electronic_assembly/implant
 	name = "electronic implant"

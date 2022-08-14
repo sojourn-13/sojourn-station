@@ -133,17 +133,17 @@
 				if (4)
 					light_spot.icon_state = "lightspot_far"
 		if(angle)
-			light_spot.add_transformation_type(/datum/transform_type/modular, rotation = angle, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
+			light_spot.add_transformation_type(list(/datum/transform_type/modular, rotationarg = angle, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priorityarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
 		else
 			switch(light_direction)	//icon pointing north by default
 				if (NORTH)
-					light_spot.add_transformation_type(/datum/transform_type/modular, rotation = 0, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
+					light_spot.add_transformation_type(list(/datum/transform_type/modular, rotationarg = 0, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priorityarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
 				if(SOUTH)
-					light_spot.add_transformation_type(/datum/transform_type/modular, rotation = 180, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
+					light_spot.add_transformation_type(list(/datum/transform_type/modular, rotationarg = 180, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priorityarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
 				if(EAST)
-					light_spot.add_transformation_type(/datum/transform_type/modular, rotation = 90, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
+					light_spot.add_transformation_type(list(/datum/transform_type/modular, rotationarg = 90, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priorityarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
 				if(WEST)
-					light_spot.add_transformation_type(/datum/transform_type/modular, rotation = 270, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, override = TRUE)
+					light_spot.add_transformation_type(list(/datum/transform_type/modular, rotationarg = 270, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priorityarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
 
 /obj/item/device/lighting/toggleable/flashlight/proc/lightSpotPassable(var/turf/T)
 	if (is_opaque(T))

@@ -113,7 +113,7 @@
 	animate(M)
 	M.pixel_x = prev_x
 	M.pixel_y = prev_y
-	for (var/datum/transform_type/entry in given_transformations)
+	for (var/entry as anything in given_transformations)
 		M.remove_transformation_type(entry)
 		given_transformations -= entry
 	M.alpha = prev_alpha

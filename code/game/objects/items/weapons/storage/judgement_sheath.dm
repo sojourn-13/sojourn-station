@@ -173,7 +173,7 @@
 /atom/movable/SpatialCut/Initialize(mapload, obj/item/tool/sword/katana/spatial_cutter/C, _color = color, _angle, _time)
 	. = ..()
 	MyCutter = C
-	add_transformation_type(/datum/transform_type/modular, rotation = _angle, flagarg = "spatialcut_initial_rotation_transform")
+	add_transformation_type(list(/datum/transform_type/modular, rotationarg = _angle, flagarg = SPATIALCUT_INITIAL_SCALE_TRANSFORM, priorityarg = SPATIALCUT_INITIAL_SCALE_TRANSFORM_PRIORITY))
 	color = _color
 
 	if(_time)

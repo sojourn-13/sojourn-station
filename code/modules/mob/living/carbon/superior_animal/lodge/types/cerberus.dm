@@ -120,9 +120,10 @@
 	friendly_to_colony = TRUE
 	randpixel = 0
 
-/mob/living/carbon/superior_animal/lodge/baby_cerberus/New()
-	..()
-	src.transform *= 0.5
+/mob/living/carbon/superior_animal/lodge/add_initial_transforms()
+	. = ..()
+
+	add_transformation_type(list(/datum/transform_type/modular, 0.5, 0.5, flagarg = BABY_CERBERUS_INITIAL_SCALE_TRANSFORM, priorityarg = BABY_CERBERUS_INITIAL_SCALE_TRANSFORM_PRIORITY))
 
 /mob/living/carbon/superior_animal/lodge/baby_cerberus/Life()
 	. =..()

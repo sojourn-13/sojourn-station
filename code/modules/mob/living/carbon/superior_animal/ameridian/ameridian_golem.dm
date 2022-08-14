@@ -58,7 +58,7 @@
 /mob/living/carbon/superior_animal/ameridian_golem/add_initial_transforms()
 	. = ..()
 
-	add_transformation_type(/datum/transform_type/modular, size_factor, size_factor, flagarg = "ameridian_golem_initial_transform")
+	add_transformation_type(list(/datum/transform_type/modular, size_factor, size_factor, flagarg = AMERIDIAN_GOLEM_INITIAL_SCALE_TRANSFORM, priorityarg = AMERIDIAN_GOLEM_INITIAL_SCALE_TRANSFORM_PRIORITY))
 
 /mob/living/carbon/superior_animal/ameridian_golem/death()
 	. = ..()
