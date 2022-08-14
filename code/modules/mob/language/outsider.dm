@@ -9,6 +9,7 @@
 	flags = RESTRICTED
 	syllables = list("sss","sSs","SSS")
 	shorthand = "Xeno"
+	has_written_form = FALSE
 
 /*
 /datum/language/xenos
@@ -43,6 +44,7 @@
 	key = "x"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"
+	has_written_form = FALSE
 
 /datum/language/corticalborer/broadcast(var/mob/living/speaker,var/message,var/speaker_mask)
 
@@ -68,6 +70,7 @@
 	key = "f"
 	flags = RESTRICTED
 	space_chance = 100
+	has_written_form = TRUE		//I҉̵̴̢҉̶̸̴̵̸̷̷̴̷̷̶̷̴̵̡̨̡̢̧̨̧̡̛̛̛̛̛̀́̀́̀̀̕͘̕͜͢͢͢͜͜͢͜͢͡͞͠͠͠͝͠͡͠͠͞͠ ͜͢҉̴̷̵̨̧̢̛̛̛͝͏̧́̀́̀̕̕͘̕͘͜͢͠͡͏̴̸̶̴̧̛́́́͟͢͡͞͠͞͏̴̴̵̵̵̵̢̨̢̧͟͟͠͞͡͠͞͝͡ḉ̷̸̶̧̢̧̀́͟͢͟͟͢͜͠͡҉̢̛͟͏̷̶̸̡̡̨̡̛̛́͘͢͜͢͠͏̡̧̕͝͏̸̶́́̀͢͢͢͢͡͠͠ ͞͞͏̷̷̀̕͠҉͡͏̸̶̸̷̨̧̨̢̨̨̨́́̀̕̕͜͞͡͏͏̵̴̶̸̀́͟͠u̶̵̡̢̧̕͟͢͝͏̵̶҉̧҉̛͠͝͡҉̶̸̴̶̨̡̀́̀̀́̀͢͢͡͝͝͡͞͡
 	syllables = list("ire","ego","nahlizet","certum","veri","jatkaa","mgar","balaq", "karazet", "geeri", \
 		"orkan", "allaq", "sas'so", "c'arta", "forbici", "tarem", "n'ath", "reth", "sh'yro", "eth", "d'raggathnor", \
 		"mah'weyh", "pleggh", "at", "e'ntrath", "tok-lyr", "rqa'nap", "g'lt-ulotf", "ta'gh", "fara'qha", "fel", "d'amar det", \
@@ -90,6 +93,7 @@
 		LANGUAGE_YASSARI = 15
 	)
 	space_chance = 100
+	has_written_form = TRUE
 	syllables = list("ire","ego","nahlizet","certum","veri","jatkaa","mgar","balaq", "karazet", "geeri", \
 		"orkan", "allaq", "sas'so", "c'arta", "forbici", "tarem", "n'ath", "reth", "sh'yro", "eth", "d'raggathnor", \
 		"mah'weyh", "pleggh", "at", "e'ntrath", "tok-lyr", "rqa'nap", "g'lt-ulotf", "ta'gh", "fara'qha", "fel", "d'amar det", \
@@ -109,6 +113,7 @@
 	key = "y"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"
+	has_written_form = FALSE	//Hiveminds don't get a written language.
 
 /datum/language/chtmant
 	name = LANGUAGE_CHTMANT
@@ -120,6 +125,7 @@
 	key = "o"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"
+	has_written_form = FALSE	//Hiveminds don't get a written language.
 
 /datum/language/kriosan
 	name = LANGUAGE_KRIOSAN
@@ -130,6 +136,7 @@
 	colour = "kriosan"
 	key = "k"
 	flags = RESTRICTED
+	has_written_form = FALSE	//Lore reason - Creolized German and their ancient native language. Therefor their written language is 'dead' effectively.
 	partial_understanding = list(
 		LANGUAGE_GERMAN = 75,
 		LANGUAGE_COMMON = 10
