@@ -7,7 +7,7 @@
 	max_blood_storage = 25
 	oxygen_req = 7
 	nutriment_req = 5
-	price_tag = 1800
+	price_tag = 800
 	w_class = ITEM_SIZE_SMALL
 
 //We got it covered in Process with more detailed thing
@@ -28,6 +28,7 @@
 	icon_state = "liver_big"
 	organ_efficiency = list(OP_LIVER = 150)
 	specific_organ_size = 1.2
+	price_tag = 900
 
 /obj/item/organ/internal/liver/big/exalt
 	name = "exalt liver"
