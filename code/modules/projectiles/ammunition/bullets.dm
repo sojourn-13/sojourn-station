@@ -8,15 +8,6 @@
 	projectile_type = /obj/item/projectile/bullet/pistol_35
 	maxamount = 15
 
-/obj/item/ammo_casing/pistol_35/add_initial_transforms()
-	. = ..()
-
-	var/calculation = (round(45 * rand(0, 32) / 2))
-	add_transformations(list(
-						list(/datum/transform_type/modular, rotationarg = calculation, flagarg = CASING_INITIAL_ROTATION_TRANSFORM, priorityarg = CASING_INITIAL_ROTATION_TRANSFORM_PRIORITY)),
-						list(/datum/transform_type/modular, 0.5, 0.5, flagarg = CASING_INITIAL_SCALE_TRANSFORM, priorityarg = CASING_INITIAL_SCALE_TRANSFORM_PRIORITY)
-	)
-
 /obj/item/ammo_casing/pistol_35/hv
 	desc = "A 9mm high-velocity bullet casing."
 	icon_state = "pistol_c_hv"
@@ -78,15 +69,6 @@
 	projectile_type = /obj/item/projectile/bullet/magnum_40
 	maxamount = 6
 
-/obj/item/ammo_casing/magnum_40/add_initial_transforms()
-	. = ..()
-
-	var/calculation = (round(45 * rand(0, 32) / 2))
-	add_transformations(list(
-						list(/datum/transform_type/modular, rotationarg = calculation, flagarg = CASING_INITIAL_ROTATION_TRANSFORM, priorityarg = CASING_INITIAL_ROTATION_TRANSFORM_PRIORITY)),
-						list(/datum/transform_type/modular, 0.5, 0.5, flagarg = CASING_INITIAL_SCALE_TRANSFORM, priorityarg = CASING_INITIAL_SCALE_TRANSFORM_PRIORITY)
-	)
-
 /obj/item/ammo_casing/magnum_40/practice
 	desc = "A 10mm Magnum practice bullet casing."
 	icon_state = "magnum_c_p"
@@ -147,15 +129,6 @@
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257
 	maxamount = 10
 
-/obj/item/ammo_casing/light_rifle_257/add_initial_transforms()
-	. = ..()
-
-	var/calculation = (round(45 * rand(0, 32) / 2))
-	add_transformations(list(
-						list(/datum/transform_type/modular, rotationarg = calculation, flagarg = CASING_INITIAL_ROTATION_TRANSFORM, priorityarg = CASING_INITIAL_ROTATION_TRANSFORM_PRIORITY)),
-						list(/datum/transform_type/modular, 0.5, 0.5, flagarg = CASING_INITIAL_SCALE_TRANSFORM, priorityarg = CASING_INITIAL_SCALE_TRANSFORM_PRIORITY)
-	)
-
 /obj/item/ammo_casing/light_rifle_257/practice
 	desc = "A 6.5mm practice bullet casing."
 	icon_state = "srifle_c_p"
@@ -207,14 +180,6 @@
 	projectile_type = /obj/item/projectile/bullet/rifle_75
 	maxamount = 10
 
-/obj/item/ammo_casing/rifle_75/add_initial_transforms()
-	. = ..()
-
-	var/calculation = (round(45 * rand(0, 32) / 2))
-	add_transformations(list(
-						list(/datum/transform_type/modular, rotationarg = calculation, flagarg = CASING_INITIAL_ROTATION_TRANSFORM, priorityarg = CASING_INITIAL_ROTATION_TRANSFORM_PRIORITY)),
-						list(/datum/transform_type/modular, 0.5, 0.5, flagarg = CASING_INITIAL_SCALE_TRANSFORM, priorityarg = CASING_INITIAL_SCALE_TRANSFORM_PRIORITY)
-	)
 /obj/item/ammo_casing/rifle_75/hv
 	desc = "A 7.62mm high-velocity bullet casing."
 	icon_state = "srifle_c_hv"
@@ -264,15 +229,6 @@
 	caliber = CAL_HRIFLE
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408
 	maxamount = 10
-
-/obj/item/ammo_casing/heavy_rifle_408/add_initial_transforms()
-	. = ..()
-
-	var/calculation = (round(45 * rand(0, 32) / 2))
-	add_transformations(list(
-						list(/datum/transform_type/modular, rotationarg = calculation, flagarg = CASING_INITIAL_ROTATION_TRANSFORM, priorityarg = CASING_INITIAL_ROTATION_TRANSFORM_PRIORITY)),
-						list(/datum/transform_type/modular, 0.5, 0.5, flagarg = CASING_INITIAL_SCALE_TRANSFORM, priorityarg = CASING_INITIAL_SCALE_TRANSFORM_PRIORITY)
-	)
 
 /obj/item/ammo_casing/heavy_rifle_408/rubber
 	desc = "A 8.6mm rubber bullet casing."
@@ -428,15 +384,6 @@
 	projectile_type = /obj/item/projectile/bullet/antim
 	maxamount = 5
 
-/obj/item/ammo_casing/antim/add_initial_transforms()
-	. = ..()
-
-	var/calculation = (round(45 * rand(0, 32) / 2))
-	add_transformations(list(
-						list(/datum/transform_type/modular, rotationarg = calculation, flagarg = CASING_INITIAL_ROTATION_TRANSFORM, priorityarg = CASING_INITIAL_ROTATION_TRANSFORM_PRIORITY)),
-						list(/datum/transform_type/modular, 0.5, 0.5, flagarg = CASING_INITIAL_SCALE_TRANSFORM, priorityarg = CASING_INITIAL_SCALE_TRANSFORM_PRIORITY)
-	)
-
 /obj/item/ammo_casing/antim/prespawned
 	amount = 5
 
@@ -481,15 +428,6 @@
 	projectile_type = /obj/item/projectile/bullet/ball
 	maxamount = 5
 
-/obj/item/ammo_casing/ball/add_initial_transforms()
-	. = ..()
-
-	var/calculation = (round(45 * rand(0, 32) / 2))
-	add_transformations(list(
-						list(/datum/transform_type/modular, rotationarg = calculation, flagarg = CASING_INITIAL_ROTATION_TRANSFORM, priorityarg = CASING_INITIAL_ROTATION_TRANSFORM_PRIORITY)),
-						list(/datum/transform_type/modular, 0.5, 0.5, flagarg = CASING_INITIAL_SCALE_TRANSFORM, priorityarg = CASING_INITIAL_SCALE_TRANSFORM_PRIORITY)
-	)
-
 /obj/item/ammo_casing/ball/prespawned
 	amount = 4
 
@@ -506,15 +444,6 @@
 
 /obj/item/ammo_casing/shotgun/prespawned
 	amount = 5
-
-/obj/item/ammo_casing/shotgun/add_initial_transforms()
-	. = ..()
-
-	var/calculation = (round(45 * rand(0, 32) / 2))
-	add_transformations(list(
-						list(/datum/transform_type/modular, rotationarg = calculation, flagarg = CASING_INITIAL_ROTATION_TRANSFORM, priorityarg = CASING_INITIAL_ROTATION_TRANSFORM_PRIORITY)),
-						list(/datum/transform_type/modular, 0.75, 0.75, flagarg = CASING_INITIAL_SCALE_TRANSFORM, priorityarg = CASING_INITIAL_SCALE_TRANSFORM_PRIORITY)
-	)
 
 /obj/item/ammo_casing/shotgun/scrap
 	name = "old shotgun slug"

@@ -93,3 +93,7 @@
 		scale_x = human_holder.size_multiplier
 		scale_y = scale_x
 		return TRUE
+
+/datum/transform_type/casing
+
+/datum/transform_type/casing/

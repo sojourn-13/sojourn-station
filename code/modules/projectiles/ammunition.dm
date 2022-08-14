@@ -19,6 +19,8 @@
 	var/reload_delay = 0
 	var/shell_color = ""
 
+	var/transform_scale = 1
+
 /obj/item/ammo_casing/Initialize()
 	. = ..()
 
@@ -38,6 +40,15 @@
 	BB = null
 
 	. = ..()
+
+/obj/item/ammo_casing/add_initial_transforms()
+	. = ..()
+
+	var/calculation = (round(45 * rand(0, 32) / 2))
+	add_transformations(list(
+						list(/datum/transform_type/modular, transform_scale, transform_scale, flagarg = CASING_INITIAL_SCALE_TRANSFORM, priorityarg = CASING_INITIAL_SCALE_TRANSFORM_PRIORITY)
+		)
+	)
 
 //removes the projectile from the ammo casing
 /obj/item/ammo_casing/proc/expend()
