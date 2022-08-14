@@ -24,7 +24,6 @@
 
 /obj/item/oddity/Initialize()
 	. = ..()
-	return //Temp well outside colony
 	AddComponent(/datum/component/atom_sanity, sanity_value, "")
 	var/area/my_area = get_area(src.loc)
 	if(!my_area)
