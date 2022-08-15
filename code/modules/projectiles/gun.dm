@@ -282,7 +282,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 					SPAN_DANGER("\The [user] fumbles with \the [src] and shoot themselves in the foot with \the [src]!"),
 					SPAN_DANGER("You fumble with the gun and accidentally shoot yourself in the foot with \the [src]!")
 					)
-				M.drop_item()
+				currently_firing = FALSE
 		else
 			handle_click_empty(user)
 		return FALSE
@@ -296,7 +296,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 					SPAN_DANGER("As \the [user] pulls the trigger on \the [src], a bullet fires backwards out of it"),
 					SPAN_DANGER("Your \the [src] fires backwards, shooting you in the face!")
 					)
-				user.drop_item()
+				currently_firing = FALSE
 			if(rigged > TRUE)
 				explosion(get_turf(src), 1, 2, 3, 3)
 				qdel(src)
@@ -308,6 +308,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			if(P)
 				if(process_projectile(P, user, user, BP_HEAD))
 					handle_post_fire(user, user)
+					currently_firing = FALSE
 					user.visible_message(
 						SPAN_DANGER("As \the [user] pulls the trigger on \the [src], a bullet fires backwards out of it"),
 						SPAN_DANGER("Your \the [src] fires backwards, shooting you in the face!")
