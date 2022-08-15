@@ -23,8 +23,8 @@
 	var/override_others_with_flag = FALSE
 	/// The atom we are applied to.
 	var/atom/holder
-	/// What do we use for update_values?
-	var/datum/value_target
+	/// The atom we use for updating our values and such. Weakreffed, as we have no way of ensuring it isn't being deleted.
+	var/datum/weakref/value_target
 
 /datum/transform_type/Destroy()
 
@@ -32,6 +32,7 @@
 		if (holder.transform_types && holder.transform_types[flag] == src) //we can be deleted by an overridding thing so we must check
 			holder.transform_types -= flag //for sanity
 		update_holder_status(null, null)
+	value_target = null
 
 	. = ..()
 
@@ -77,13 +78,17 @@
 /datum/transform_type/proc/update_values()
 	return
 
-/**
- * Add a new transformation type datum associated with it's flag into our transform_types list, and apply its effects.
- * If using a modular type, you may make the argument a list. The first entry should always be the type, and the rest should be in the format of the type's
- * apply_custom_values args.
-**/
 
-/atom/proc/add_new_transformations(list/arguments)
+/**
+ * List-based proc for adding NEW, aka non-existing transform types to the atom.
+ * Args:
+ * list/arguments - How you determine what to add. Format: add_new_transformations(list(type, type, list(type, list(params)), etc)).
+ * valuetarget = src - Passed to add_new_transformation.
+ * If you are passing params, you must wrap both the type and param list in a list of its own.
+ *
+ * This is more efficient than add_new_transformation because it only rebuilds once.
+**/
+/atom/proc/add_new_transformations(list/arguments, valuetarget = WEAKREF(src))
 	var/do_we_rebuild = FALSE
 	for (var/arg as anything in arguments)
 		var/datum/transform_type/found_type
@@ -97,16 +102,24 @@
 			found_type = arg
 			params = null //by default null by hey might as well
 
-		if (add_new_transformation(found_type, params, FALSE))
-			do_we_rebuild = TRUE
+		if (add_new_transformation(found_type, params, FALSE, valuetarget)) // if we succeeded in adding thsi transformation
+			do_we_rebuild = TRUE // we need to rebuild
 
 	if (do_we_rebuild)
 		rebuild_transform() //saves a bunch of rebuilds
 
-/atom/proc/add_new_transformation(found_type, list/params, rebuild = TRUE)
+/**
+ * Arg-based proc for adding NEW, aka non-existing transform types to the atom.
+ * Args:
+ * found_type: The type you are going to create and then add.
+ * list/params: The params you are going to pass to add_transformation.
+ * rebuild = TRUE: If this proc will handle the rebuilding. If TRUE, rebuild_transform() will be called if add_transformation() succeeds.
+ * valuetarget = src: Passed to add_transformation().
+**/
+/atom/proc/add_new_transformation(found_type, list/params, rebuild = TRUE, valuetarget = WEAKREF(src))
 	var/datum/transform_type/transform_datum = new found_type(NULLSPACE)
 
-	. = add_transformation(transform_datum, params, FALSE) //return the same value as this proc. we pass FALSE for rebuild because we'll do it ourselves
+	. = add_transformation(transform_datum, params, FALSE, valuetarget) //return the same value as this proc. we pass FALSE for rebuild because we'll do it ourselves
 
 	if (.) // if add_trans succeeded
 		if (rebuild) // and if we can rebuild
@@ -114,7 +127,15 @@
 
 	// otherwise, we will by default return our . to add_new_transformations if it called us, which will save a lot of rebuilds
 
-/atom/proc/add_transformation(var/datum/transform_type/transform_datum, list/params, rebuild = TRUE, valuetarget = src)
+/**
+ * Arg-based proc for adding existing transform types to the atom.
+ * Args:
+ * datum/transform_type/transform_datum: The datum you will be adding.
+ * list/params: Params to be passed to apply_custom_values using arglist.
+ * rebuild = TRUE: If this proc will handle the rebuilding. If TRUE, rebuild_transform() will be called if the proc succeeds.
+ * valuetarget = src: The atom to be used for update_values() and such, weakreffed. Needed for things that use the values of others, like shadows.
+**/
+/atom/proc/add_transformation(var/datum/transform_type/transform_datum, list/params, rebuild = TRUE, valuetarget = WEAKREF(src))
 	if (!transform_types)
 		transform_types = list()
 
@@ -138,11 +159,15 @@
 
 	return TRUE
 /**
- * For each type given in the types list, adds it as a new transform_type datum associated with its flag.
- * If using a modular type, you may make it's list entry a list itself. The first entry should always be the type, and the rest should be in the format of the type's
- * apply_custom_values args.
+ * List-based proc for adding existing transform types to the atom.
+ * Args:
+ * list/arguments - How you determine what to add. Format: add_new_transformations(list(type, type, list(type, list(params)), etc)).
+ * valuetarget = src - Passed to add_transformation.
+ * If you are passing params, you must wrap both the type and param list in a list of its own.
+ *
+ * This is more efficient than add_transformation because it only rebuilds once.
 **/
-/atom/proc/add_transformations(list/arguments, valuetarget = src)
+/atom/proc/add_transformations(list/arguments, valuetarget = WEAKREF(src))
 	var/do_we_rebuild = FALSE
 	for (var/arg as anything in arguments)
 		var/datum/transform_type/found_type
@@ -259,8 +284,13 @@
 	transform = transform.Turn(rotation)
 	transform = transform.Translate(shift_x, shift_y)
 
-/// Replaces our transform types with these ones, niko todo document this more
-/atom/proc/copy_transformations_from(atom/copy_target)
+/**
+ * Copies the transformation types from atom/copy_target and applies it to src.
+ * Destroys the currently existing transform and replaces all existing transform types.
+ * Args:
+ * atom/copy_target:
+**/
+/atom/proc/copy_transformations_from(atom/copy_target, atom/valuetarget = copy_target)
 	remove_all_transforms(FALSE) //reset our transform and transform types to default
 
 	var/list/to_add = list()
@@ -275,7 +305,7 @@
 
 		to_add += transform_datum
 
-	add_transformations(to_add, copy_target)
+	add_transformations(to_add, valuetarget)
 
 /datum/transform_type/proc/copy_variables_from(datum/transform_type/to_copy_from, copyholder = FALSE)
 	SHOULD_CALL_PARENT(TRUE) // should call parent because if you dont you dont get the crucial variables up here
@@ -298,5 +328,5 @@
 
 /datum/transform_type/proc/update_holder_status(to_be_held_by = holder, to_use_for_values = to_be_held_by)
 	holder = to_be_held_by
-	value_target = to_use_for_values
+	value_target = WEAKREF(to_use_for_values)
 
