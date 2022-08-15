@@ -14,6 +14,7 @@
 	)
 	flags = RESTRICTED
 	shorthand = "CO"
+	has_written_form = TRUE
 
 
 	//syllables are at the bottom of the file

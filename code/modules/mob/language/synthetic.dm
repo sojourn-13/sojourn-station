@@ -8,6 +8,7 @@
 	key = "b"
 	flags = RESTRICTED | HIVEMIND
 	var/drone_only
+	has_written_form = FALSE
 
 /datum/language/binary/broadcast(var/mob/living/speaker,var/message,var/speaker_mask)
 
