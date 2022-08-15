@@ -171,7 +171,10 @@
 	else if(health == max_health && !plant && (seed.type != /datum/seed/mushroom/maintshroom))
 		plant = new(T,seed)
 		plant.dir = src.dir
-		plant.add_transformations(transform_types) //give them our transformations
+		var/list/to_add = list()
+		for (var/key in transform_types)
+			to_add += transform_types[key]
+		plant.add_transformations(to_add) //give them our transformations
 		plant.age = seed.get_trait(TRAIT_MATURATION)-1
 		plant.update_icon()
 		if(growth_type==0) //Vines do not become invisible.
