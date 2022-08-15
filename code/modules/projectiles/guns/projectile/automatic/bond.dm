@@ -1,6 +1,9 @@
 /obj/item/gun/projectile/automatic/survivalrifle
 	name = "\"Bond\" survival rifle"
-	desc = "A \"Bond\" survival rifle manufactured by Hunters Inc, with a fixed adjustable scope. Compact, lightweight, with high velocity and high penetration. Fires lightweight caseless ammunition using a robust bolt-action mechanism. A true modern frontiersman's rifle."
+	desc = "A \"Bond\" survival rifle manufactured by Hunters Inc, with a fixed adjustable scope. \
+	Compact, lightweight, with high velocity and high penetration. \
+	Fires lightweight caseless ammunition using a robust bolt-action mechanism. \
+	A true modern frontiersman's rifle."
 	icon = 'icons/obj/guns/projectile/survivalrifle.dmi'
 	icon_state = "survivalrifle"
 	item_state = "survivalrifle"
@@ -32,10 +35,13 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY)
 
+/obj/item/gun/projectile/automatic/survivalrifle/examine(mob/user)
+	..()
+	to_chat(user, "<span class='info'>To adjust the scope CtrlClick.</span>")
+
 /obj/item/gun/projectile/automatic/survivalrifle/Initialize()
 	. = ..()
 	update_icon()
-
 
 /obj/item/gun/projectile/automatic/survivalrifle/update_icon()
 	if(wielded_item_state)
