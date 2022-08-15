@@ -9,4 +9,4 @@
 /obj/item/scarab/add_initial_transforms()
 	. = ..()
 
-	add_transformation_type(list(/datum/transform_type/modular, 0.8, 0.8, flagarg = SCARAB_INITIAL_SCALE_TRANSFORM, priorityarg = SCARAB_INITIAL_SCALE_TRANSFORM_PRIORITY))
+	add_new_transformation(/datum/transform_type/modular, list(0.8, 0.8, flagarg = SCARAB_INITIAL_SCALE_TRANSFORM, priorityarg = SCARAB_INITIAL_SCALE_TRANSFORM_PRIORITY))

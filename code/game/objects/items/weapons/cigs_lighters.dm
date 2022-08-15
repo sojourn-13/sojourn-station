@@ -578,7 +578,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/trash/cigbutt/add_initial_transforms()
 	. = ..()
 
-	add_transformation_type(/datum/transform_type/random_rotation)
+	add_new_transformation(/datum/transform_type/random_rotation)
 
 /obj/item/trash/cigbutt/cigarbutt
 	name = "cigar butt"

@@ -113,9 +113,8 @@
 	animate(M)
 	M.pixel_x = prev_x
 	M.pixel_y = prev_y
-	for (var/entry as anything in given_transformations)
-		M.remove_transformation_type(entry)
-		given_transformations -= entry
+	M.remove_transformations(given_transformations)
+	given_transformations.Cut()
 	M.alpha = prev_alpha
 	M.layer = prev_layer
 	M.set_plane(prev_plane)

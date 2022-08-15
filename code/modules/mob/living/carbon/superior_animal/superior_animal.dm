@@ -73,9 +73,9 @@
 		else
 			if (icon_living)
 				icon_state = icon_living
-		add_transformation_type(/datum/transform_type/prone)
+		add_new_transformation(/datum/transform_type/prone)
 	else
-		remove_transformation_type(PRONE_TRANSFORM)
+		remove_transformation(PRONE_TRANSFORM)
 		if (icon_living)
 			icon_state = icon_living
 

@@ -45,7 +45,7 @@
 
 /obj/structure/ameridian_crystal/add_initial_transforms()
 	if (resize)
-		add_transformation_type(/datum/transform_type/ameridian_structures/crystal_resizing)
+		add_new_transformation(/datum/transform_type/ameridian_structures/crystal_resizing)
 	. = ..()
 
 /obj/structure/ameridian_crystal/Destroy()

@@ -133,17 +133,20 @@
 				if (4)
 					light_spot.icon_state = "lightspot_far"
 		if(angle)
-			light_spot.add_transformation_type(list(/datum/transform_type/modular, rotationarg = angle, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priorityarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
+			light_spot.add_new_transformation(/datum/transform_type/modular, list(rotationarg = angle, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priorityarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
 		else
+			var/to_rotate = 0
 			switch(light_direction)	//icon pointing north by default
 				if (NORTH)
-					light_spot.add_transformation_type(list(/datum/transform_type/modular, rotationarg = 0, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priorityarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
+					to_rotate = 0
 				if(SOUTH)
-					light_spot.add_transformation_type(list(/datum/transform_type/modular, rotationarg = 180, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priorityarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
+					to_rotate = 180
 				if(EAST)
-					light_spot.add_transformation_type(list(/datum/transform_type/modular, rotationarg = 90, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priorityarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
+					to_rotate = 90
 				if(WEST)
-					light_spot.add_transformation_type(list(/datum/transform_type/modular, rotationarg = 270, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priorityarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
+					to_rotate = 270
+
+			light_spot.add_new_transformation(/datum/transform_type/modular, list(rotationarg = to_rotate, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priorityarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
 
 /obj/item/device/lighting/toggleable/flashlight/proc/lightSpotPassable(var/turf/T)
 	if (is_opaque(T))

@@ -110,7 +110,7 @@
 		to_turn = -20
 	else if (surface.x < M.x)
 		to_turn = 20
-	M.add_transformation_type(list(/datum/transform_type/modular, rotationarg = to_turn, flagarg = VTM_CLIMB_MAG_ROTATION_TRANSFORM, priorityarg = VTM_CLIMB_MAG_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
+	M.add_new_transformation(/datum/transform_type/modular, list(rotationarg = to_turn, flagarg = VTM_CLIMB_MAG_ROTATION_TRANSFORM, priorityarg = VTM_CLIMB_MAG_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
 	given_transformations += VTM_CLIMB_MAG_ROTATION_TRANSFORM
 	.=..()
 

@@ -33,7 +33,7 @@
 
 	//Overwrite whatever was populated before. A shard contains <1 unit of a single material
 	matter = list(material.name = amount)
-	add_transformation_type(/datum/transform_type/shard/variable_size)
+	add_new_transformation(/datum/transform_type/shard/variable_size)
 	update_icon()
 
 /obj/item/material/shard/set_material(var/new_material, var/update)
@@ -74,7 +74,7 @@
 	else
 		icon_state = "[material.shard_icon]["small"]"
 	//variable rotation based on randomness
-	add_transformation_type(/datum/transform_type/random_rotation)
+	add_new_transformation(/datum/transform_type/random_rotation)
 
 	. = ..()
 

@@ -40,7 +40,7 @@
 	icon_state = M.icon_state
 	color = M.color
 	copy_overlays(M.get_overlays(), TRUE)
-	transform = M.transform
+	copy_transformations_from(M.transform_types)
 	dir = M.dir
 	if(shadow)
 		shadow.sync_icon(src)

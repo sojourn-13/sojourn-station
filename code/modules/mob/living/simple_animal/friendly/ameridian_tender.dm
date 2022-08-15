@@ -49,7 +49,7 @@
 
 /mob/living/simple_animal/ameridian_tender/add_initial_transforms()
 	. = ..()
-	add_transformation_type(list(/datum/transform_type/modular, 0.5, 0.5, flagarg = AMERIDIAN_TENDER_INITIAL_SCALE_TRANSFORM, priorityarg = AMERIDIAN_TENDER_INITIAL_SCALE_TRANSFORM_PRIORITY))
+	add_new_transformation(/datum/transform_type/modular, list(0.5, 0.5, flagarg = AMERIDIAN_TENDER_INITIAL_SCALE_TRANSFORM, priorityarg = AMERIDIAN_TENDER_INITIAL_SCALE_TRANSFORM_PRIORITY))
 
 /mob/living/simple_animal/ameridian_tender/examine(mob/user)
 	. = ..(user)

@@ -57,7 +57,7 @@
 		if(DROPLIMB_EDGE)
 			compile_icon()
 			add_blood(victim)
-			add_transformation_type(/datum/transform_type/random_rotation/half)
+			add_new_transformation(/datum/transform_type/random_rotation/half)
 			if(!clean)
 				// Throw limb around.
 				if(src && istype(loc,/turf))

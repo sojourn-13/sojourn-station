@@ -23,13 +23,15 @@
 	var/override_others_with_flag = FALSE
 	/// The atom we are applied to.
 	var/atom/holder
+	/// What do we use for update_values?
+	var/datum/value_target
 
 /datum/transform_type/Destroy()
 
 	if (holder)
 		if (holder.transform_types && holder.transform_types[flag] == src) //we can be deleted by an overridding thing so we must check
 			holder.transform_types -= flag //for sanity
-		holder = null
+		update_holder_status(null, null)
 
 	. = ..()
 
@@ -80,111 +82,119 @@
  * If using a modular type, you may make the argument a list. The first entry should always be the type, and the rest should be in the format of the type's
  * apply_custom_values args.
 **/
-/atom/proc/add_transformation_type(argument)
+
+/atom/proc/add_new_transformations(list/arguments)
+	var/do_we_rebuild = FALSE
+	for (var/arg as anything in arguments)
+		var/datum/transform_type/found_type
+		var/list/params
+
+		if (islist(arg))
+			var/list/arg_list = arg
+			found_type = arg_list[1] //please always put the datum in the first slot
+			params = arg_list[2] //this is where the list is
+		else
+			found_type = arg
+			params = null //by default null by hey might as well
+
+		if (add_new_transformation(found_type, params, FALSE))
+			do_we_rebuild = TRUE
+
+	if (do_we_rebuild)
+		rebuild_transform() //saves a bunch of rebuilds
+
+/atom/proc/add_new_transformation(found_type, list/params, rebuild = TRUE)
+	var/datum/transform_type/transform_datum = new found_type(NULLSPACE)
+
+	. = add_transformation(transform_datum, params, FALSE) //return the same value as this proc. we pass FALSE for rebuild because we'll do it ourselves
+
+	if (.) // if add_trans succeeded
+		if (rebuild) // and if we can rebuild
+			rebuild_transform() // lets do it
+
+	// otherwise, we will by default return our . to add_new_transformations if it called us, which will save a lot of rebuilds
+
+/atom/proc/add_transformation(var/datum/transform_type/transform_datum, list/params, rebuild = TRUE, valuetarget = src)
 	if (!transform_types)
 		transform_types = list()
 
-	var/datum/transform_type/transform_datum
-	var/list/params
-
-	if (islist(argument))
-		var/list/entrylist = argument
-		var/datum/transform_type/found_type = entrylist[1]
-		transform_datum = new found_type(NULLSPACE) // all lists passed to this arg should have the type be in the first slot
-
-		params = entrylist.Copy(2) // we dont need to pass ourselves
-
-	else //clearly, we're not a list nor modular
-		transform_datum = new argument(NULLSPACE) //so we can create ourselves
-
-	var/result = transform_datum.apply_custom_values(arglist(params)) //dont worry this still works even if params is null
+	var/result = transform_datum.apply_custom_values(arglist(params)) //dont worry this still works even if params is null or empty
 	if (result != TRUE) //result can return a string in an error state, so we explicitely check for true
 		qdel(transform_datum)
 		CRASH("[transform_datum] apply_custom_values crashed for reason [result]")
 
 	if (transform_datum.flag in transform_types)
 		if (transform_datum.override_others_with_flag)
-			remove_transformation_type(transform_datum.flag) //we can override others with our flag, so lets just get rid of this one
+			remove_transformation(transform_datum.flag) //we can override others with our flag, so lets just get rid of this one
 		else
 			qdel(transform_datum)
 			return
 
 	transform_types[transform_datum.flag] = transform_datum
-	transform_datum.holder = src
+	transform_datum.update_holder_status(src, valuetarget)
 
-	rebuild_transform()
+	if (rebuild)
+		rebuild_transform()
 
+	return TRUE
 /**
  * For each type given in the types list, adds it as a new transform_type datum associated with its flag.
  * If using a modular type, you may make it's list entry a list itself. The first entry should always be the type, and the rest should be in the format of the type's
  * apply_custom_values args.
 **/
-/atom/proc/add_transformations(list/types)
-	if (!transform_types)
-		transform_types = list()
-
-	var/added_anything = FALSE
-	for (var/entry as anything in types)
-		var/datum/transform_type/transform_datum
+/atom/proc/add_transformations(list/arguments, valuetarget = src)
+	var/do_we_rebuild = FALSE
+	for (var/arg as anything in arguments)
+		var/datum/transform_type/found_type
 		var/list/params
 
-		if (islist(entry))
-			var/list/entrylist = entry
-			var/datum/transform_type/found_type = entrylist[1]
-			transform_datum = new found_type(NULLSPACE) // all lists passed to this arg should have the type be in the first slot
+		if (islist(arg))
+			var/list/arg_list = arg
+			found_type = arg_list[1] //please always put the datum in the first slot
+			params = arg_list.Copy(2) //we dont need to pass ourselves
+		else
+			found_type = arg
+			params = null //by default null by hey might as well
 
-			params = entrylist.Copy(2) // we dont need to pass ourselves
+		if (add_transformation(found_type, params, FALSE, valuetarget))
+			do_we_rebuild = TRUE
 
-		else //clearly, we're not a list nor modular
-			transform_datum = new entry(NULLSPACE) //so we can create ourselves
-
-		var/result = transform_datum.apply_custom_values(arglist(params)) //dont worry this still works even if params is null
-		if (result != TRUE) //result can return a string in an error state, so we explicitely check for true
-			qdel(transform_datum)
-			CRASH("[transform_datum] apply_custom_values crashed for reason [result]")
-
-		if (transform_datum.flag in transform_types)
-			if (transform_datum.override_others_with_flag)
-				remove_transformation_type(transform_datum.flag) //we can override others with our flag, so lets just get rid of this one
-			else
-				qdel(transform_datum)
-				continue
-		added_anything = TRUE
-
-		transform_types[transform_datum.flag] = transform_datum
-		transform_datum.holder = src
-
-	if (added_anything)
-		rebuild_transform() // only call it once in comparison to adding each transformation individually
+	if (do_we_rebuild)
+		rebuild_transform() //saves a bunch of rebuilds
 
 /// Remove this flag's associated datum from ourselves, and remove its effects, then remove the flag.
-/atom/proc/remove_transformation_type(flag)
+/atom/proc/remove_transformation(flag, rebuild = TRUE)
 	if (!transform_types)
 		transform_types = list()
+		return //theres literally nothing in here
 
 	if (!(flag in transform_types))
 		return
 	qdel(transform_types[flag]) //since its no longer needed we can delete it and unassign the flag
 	transform_types -= flag
 
-	rebuild_transform()
+	if (rebuild)
+		rebuild_transform()
+
+	return TRUE
 
 /// Removes all transformation types associated with the given flags.
 /atom/proc/remove_transformations(list/flags)
-	var/removed_anything = FALSE
+	var/do_we_rebuild = FALSE
 	for (var/flag as anything in flags)
-		if (!(flag in transform_types))
-			continue
-		qdel(transform_types[flag])
-		transform_types -= flag
-		removed_anything = TRUE
+		if (remove_transformation(flag, FALSE))
+			do_we_rebuild = TRUE
 
-	if (removed_anything)
-		rebuild_transform() // micro-op over remove_transformation_type, since we only rebuild once per batch of removals
+	if (do_we_rebuild)
+		rebuild_transform() //saves a bunch of rebuilds
 
 /// Sets transform to null, then deletes all transform_types in the transform_type list, before cutting it.
-/atom/proc/remove_all_transforms()
-	transform = null //destroy the transform
+/atom/proc/remove_all_transforms(null_transform = TRUE)
+	if (null_transform)
+		transform = null //destroy the transform
+	else
+		transform = matrix() //reset the transform
+
 	QDEL_LIST_ASSOC_VAL(transform_types) //and then destroy everything in the list
 
 /**
@@ -248,3 +258,45 @@
 	transform = transform.Scale(scale_x, scale_y)
 	transform = transform.Turn(rotation)
 	transform = transform.Translate(shift_x, shift_y)
+
+/// Replaces our transform types with these ones, niko todo document this more
+/atom/proc/copy_transformations_from(atom/copy_target)
+	remove_all_transforms(FALSE) //reset our transform and transform types to default
+
+	var/list/to_add = list()
+
+	var/list/to_copy_from = copy_target.transform_types
+	for (var/key as anything in to_copy_from)
+		var/datum/transform_type/found_type = to_copy_from[key]
+		var/type_to_use = found_type.type //this runtimes otherwise
+		var/datum/transform_type/transform_datum = new type_to_use(NULLSPACE)
+
+		transform_datum.copy_variables_from(found_type)
+
+		to_add += transform_datum
+
+	add_transformations(to_add, copy_target)
+
+/datum/transform_type/proc/copy_variables_from(datum/transform_type/to_copy_from, copyholder = FALSE)
+	SHOULD_CALL_PARENT(TRUE) // should call parent because if you dont you dont get the crucial variables up here
+
+	scale_x = to_copy_from.scale_x
+	scale_y = to_copy_from.scale_y
+
+	rotation = to_copy_from.rotation
+
+	shift_x = to_copy_from.shift_x
+	shift_y = to_copy_from.shift_y
+
+	flag = to_copy_from.flag
+	priority = to_copy_from.priority
+
+	override_others_with_flag = to_copy_from.override_others_with_flag
+
+	if (copyholder)
+		holder = to_copy_from.holder
+
+/datum/transform_type/proc/update_holder_status(to_be_held_by = holder, to_use_for_values = to_be_held_by)
+	holder = to_be_held_by
+	value_target = to_use_for_values
+

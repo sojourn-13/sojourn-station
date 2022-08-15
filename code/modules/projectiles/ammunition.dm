@@ -44,7 +44,7 @@
 /obj/item/ammo_casing/add_initial_transforms()
 	. = ..()
 
-	add_transformation_type(list(/datum/transform_type/modular, transform_scale, transform_scale, flagarg = CASING_INITIAL_SCALE_TRANSFORM, priorityarg = CASING_INITIAL_SCALE_TRANSFORM_PRIORITY))
+	add_new_transformation(/datum/transform_type/modular, list(transform_scale, transform_scale, flagarg = CASING_INITIAL_SCALE_TRANSFORM, priorityarg = CASING_INITIAL_SCALE_TRANSFORM_PRIORITY))
 
 //removes the projectile from the ammo casing
 /obj/item/ammo_casing/proc/expend()

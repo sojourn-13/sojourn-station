@@ -63,7 +63,7 @@
 /mob/living/carbon/human/add_initial_transforms()
 	. = ..()
 
-	add_transformation_type(/datum/transform_type/human/size_scaling)
+	add_new_transformation(/datum/transform_type/human/size_scaling)
 
 /mob/living/carbon/human/Destroy()
 	GLOB.human_mob_list -= src

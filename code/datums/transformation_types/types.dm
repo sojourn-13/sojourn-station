@@ -50,7 +50,7 @@
 	priority = AMERIDIAN_CRYSTAL_RESIZING_TRANSFORM_PRIORITY
 
 /datum/transform_type/ameridian_structures/crystal_resizing/update_values()
-	var/obj/structure/ameridian_crystal/crystal = holder
+	var/obj/structure/ameridian_crystal/crystal = value_target
 
 	. = ..()
 
@@ -65,7 +65,7 @@
 	priority = SHARD_VARIABLE_SIZE_TRANSFORM_PRIORITY
 
 /datum/transform_type/shard/variable_size/update_values()
-	var/obj/item/material/shard/our_shard = holder
+	var/obj/item/material/shard/our_shard = value_target
 
 	. = ..()
 
@@ -85,7 +85,7 @@
 	priority = HUMAN_SIZE_SCALING_TRANSFORM_PRIORITY
 
 /datum/transform_type/human/size_scaling/update_values()
-	var/mob/living/carbon/human/human_holder = holder
+	var/mob/living/carbon/human/human_holder = value_target
 
 	. = ..()
 
