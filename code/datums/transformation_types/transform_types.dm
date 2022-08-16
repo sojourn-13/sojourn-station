@@ -301,7 +301,7 @@
 		var/type_to_use = found_type.type //this runtimes otherwise
 		var/datum/transform_type/transform_datum = new type_to_use(NULLSPACE)
 
-		transform_datum.copy_variables_from(found_type)
+		transform_datum.copy_variables_from(found_type, FALSE, TRUE)
 
 		to_add += transform_datum
 
@@ -313,8 +313,9 @@
  * Args:
  * datum/transform_type/to_copy_from: The datum to copy variables from.
  * copyholder = FALSE: If true, src will also take to_copy_from's holder var.
+ * copyvaluetarget = TRUE: If true, src will also take to_copy_from's value_target var.
 **/
-/datum/transform_type/proc/copy_variables_from(datum/transform_type/to_copy_from, copyholder = FALSE)
+/datum/transform_type/proc/copy_variables_from(datum/transform_type/to_copy_from, copyholder = FALSE, copyvaluetarget = TRUE)
 	SHOULD_CALL_PARENT(TRUE) // should call parent because if you dont you dont get the crucial variables up here
 
 	scale_x = to_copy_from.scale_x
@@ -332,6 +333,9 @@
 
 	if (copyholder)
 		holder = to_copy_from.holder
+
+	if (copyvaluetarget)
+		value_target = to_copy_from.value_target //dont worry, its already in weakref form
 
 /datum/transform_type/proc/update_holder_status(to_be_held_by = holder, to_use_for_values = to_be_held_by)
 	holder = to_be_held_by
