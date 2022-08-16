@@ -285,7 +285,7 @@ var/list/global/cutoff_plant_icons = list()
 					//So plants that hug a north wall will be offset 50% more
 				if(EAST)
 					to_turn = 270
-			add_new_transformation(/datum/transform_type/modular, list(rotationarg = to_turn, flagarg = PLANT_SPREAD_ROTATION_TRANSFORM, priority = PLANT_SPREAD_ROTATION_TRANSFORM_PRIORITY))
+			add_new_transformation(/datum/transform_type/modular, list(rotationarg = to_turn, flagarg = PLANT_SPREAD_ROTATION_TRANSFORM, priorityarg = PLANT_SPREAD_ROTATION_TRANSFORM_PRIORITY))
 
 			if (newDir == SOUTH)
 				//Lets cutoff part of the plant
