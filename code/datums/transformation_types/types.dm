@@ -22,8 +22,8 @@
 
 	if (istype(to_copy_from, /datum/transform_type/random_rotation))
 		var/datum/transform_type/random_rotation/transform_datum = to_copy_from
-		upper_bound = transform_datum.upper_bound
-		lower_bound = transform_datum.lower_bound
+		src.upper_bound = transform_datum.upper_bound
+		src.lower_bound = transform_datum.lower_bound
 
 /datum/transform_type/random_rotation/half
 	upper_bound = 180
