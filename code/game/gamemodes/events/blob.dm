@@ -101,15 +101,15 @@
 	update_icon()
 	set_awake()
 
-
 	//Random rotation for blobs, as well as larger sizing for some
-	var/rot = pick(list(0, 90, 180, -90))
-	var/matrix/M = matrix()
-	M.Turn(rot)
-	M.Scale(icon_scale)
-	transform = M
 	name += "[rand(0,999)]"
 	return ..(loc)
+
+/obj/effect/blob/add_initial_transforms()
+	. = ..()
+
+	var/rot = pick(list(0, 90, 180, -90))
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = icon_scale, scale_y = icon_scale, rotation = rot, flag = BLOB_INITIAL_TRANSFORM, priority = BLOB_INITIAL_TRANSFORM_PRIORITY))
 
 /obj/effect/blob/Destroy()
 	STOP_PROCESSING(SSobj, src)

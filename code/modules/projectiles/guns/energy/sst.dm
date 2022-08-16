@@ -1,6 +1,7 @@
-/obj/item/gun/energy/sst/Initialize()
+/obj/item/gun/energy/sst/add_initial_transforms()
 	. = ..()
-	src.transform *= 0.65
+
+	add_new_transformation(/datum/transform_type/modular, list(0.65, 0.65, flag = SST_INITIAL_SCALE_TRANSFORM, priority = SST_INITIAL_SCALE_TRANSFORM_PRIORITY))
 
 /obj/item/gun/energy/sst
 	name = "\"SST Abnegate\" handgun"
