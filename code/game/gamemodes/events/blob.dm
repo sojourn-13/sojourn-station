@@ -109,7 +109,7 @@
 	. = ..()
 
 	var/rot = pick(list(0, 90, 180, -90))
-	add_new_transformation(/datum/transform_type/modular, list(scalex = icon_scale, scaley = icon_scale, rotation = rot, flag = BLOB_INITIAL_TRANSFORM, priority = BLOB_INITIAL_TRANSFORM_PRIORITY))
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = icon_scale, scale_y = icon_scale, rotation = rot, flag = BLOB_INITIAL_TRANSFORM, priority = BLOB_INITIAL_TRANSFORM_PRIORITY))
 
 /obj/effect/blob/Destroy()
 	STOP_PROCESSING(SSobj, src)
