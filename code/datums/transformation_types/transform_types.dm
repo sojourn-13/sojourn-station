@@ -88,7 +88,7 @@
  *
  * This is more efficient than add_new_transformation because it only rebuilds once.
 **/
-/atom/proc/add_new_transformations(list/arguments, valuetarget = WEAKREF(src))
+/atom/proc/add_new_transformations(list/arguments, valuetarget = src)
 	var/do_we_rebuild = FALSE
 	for (var/arg as anything in arguments)
 		var/datum/transform_type/found_type
@@ -116,7 +116,7 @@
  * rebuild = TRUE: If this proc will handle the rebuilding. If TRUE, rebuild_transform() will be called if add_transformation() succeeds.
  * valuetarget = src: Passed to add_transformation().
 **/
-/atom/proc/add_new_transformation(found_type, list/params, rebuild = TRUE, valuetarget = WEAKREF(src))
+/atom/proc/add_new_transformation(found_type, list/params, rebuild = TRUE, valuetarget = src)
 	var/datum/transform_type/transform_datum = new found_type(NULLSPACE)
 
 	. = add_transformation(transform_datum, params, FALSE, valuetarget) //return the same value as this proc. we pass FALSE for rebuild because we'll do it ourselves
@@ -135,7 +135,7 @@
  * rebuild = TRUE: If this proc will handle the rebuilding. If TRUE, rebuild_transform() will be called if the proc succeeds.
  * valuetarget = src: The atom to be used for update_values() and such, weakreffed. Needed for things that use the values of others, like shadows.
 **/
-/atom/proc/add_transformation(var/datum/transform_type/transform_datum, list/params, rebuild = TRUE, valuetarget = WEAKREF(src))
+/atom/proc/add_transformation(var/datum/transform_type/transform_datum, list/params, rebuild = TRUE, valuetarget = src)
 	if (!transform_types)
 		transform_types = list()
 
@@ -167,7 +167,7 @@
  *
  * This is more efficient than add_transformation because it only rebuilds once.
 **/
-/atom/proc/add_transformations(list/arguments, valuetarget = WEAKREF(src))
+/atom/proc/add_transformations(list/arguments, valuetarget = src)
 	var/do_we_rebuild = FALSE
 	for (var/arg as anything in arguments)
 		var/datum/transform_type/found_type
@@ -307,6 +307,13 @@
 
 	add_transformations(to_add, valuetarget)
 
+/**
+ * Proc for copying variables from to_copy_from to src. Useful for copying transformations from an atom to another.
+ * Must call parent and must override for type-specific vars.
+ * Args:
+ * datum/transform_type/to_copy_from: The datum to copy variables from.
+ * copyholder = FALSE: If true, src will also take to_copy_from's holder var.
+**/
 /datum/transform_type/proc/copy_variables_from(datum/transform_type/to_copy_from, copyholder = FALSE)
 	SHOULD_CALL_PARENT(TRUE) // should call parent because if you dont you dont get the crucial variables up here
 
