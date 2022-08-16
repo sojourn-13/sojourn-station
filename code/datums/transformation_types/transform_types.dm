@@ -55,8 +55,14 @@
 	transform_datum.update_self()
 
 /// Base proc for applying custom values on creation. Must return TRUE or else apply_transformation will crash. Can return a string for the CRASH to display it in runtimes.
-/datum/transform_type/proc/apply_custom_values(scale_x = src.scale_x, scale_y = src.scale_y, rotation = src.rotation, shift_x = src.shift_x, shift_y = src.shift_y,
-												flag = src.flag, override = src.override, priority = src.priority)
+/datum/transform_type/proc/apply_custom_values(scale_x = src.scale_x,
+											   scale_y = src.scale_y,
+											   rotation = src.rotation,
+											   shift_x = src.shift_x,
+											   shift_y = src.shift_y,
+											   flag = src.flag,
+											   override = src.override,
+											   priority = src.priority)
 
 	return TRUE
 

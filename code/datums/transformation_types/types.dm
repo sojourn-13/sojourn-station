@@ -32,8 +32,14 @@
 	flag = MODULAR_BASE_TRANSFORM_DO_NOT_USE
 	priority = MODULAR_BASE_TRANSFORM_DO_NOT_USE_PRIORITY
 
-/datum/transform_type/modular/apply_custom_values(scale_x = src.scale_x, scale_y = src.scale_y, rotation = src.rotation, shift_x = src.shift_x, shift_y = src.shift_y,
-												flag = src.flag, override = src.override, priority = src.priority)
+/datum/transform_type/modular/apply_custom_values(scale_x = src.scale_x,
+												  scale_y = src.scale_y,
+												  rotation = src.rotation,
+												  shift_x = src.shift_x,
+												  shift_y = src.shift_y,
+												  flag = src.flag,
+												  override = src.override,
+												  priority = src.priority)
 
 	// You may wonder why I force it to crash here. It's because using the base flag for this type, a type meant to be re-used in many places, as a replacement for just
 	// making a new datum, and not replacing it's flag will cause a ton of incompatability issues.
@@ -64,13 +70,14 @@
 
 	var/obj/structure/ameridian_crystal/crystal = (value_target?.resolve())
 
-	if (crystal)
+	if (!crystal)
+		return
 
-		var/calculation = ((1/crystal.max_growth) * crystal.growth)
-		if ((scale_x != calculation) || (scale_y != calculation))
-			scale_x = calculation // So the crystal is at 20% size at growth 1, 40% at growth 2, e.t.c.
-			scale_y = scale_x //sync the y value
-			return TRUE
+	var/calculation = ((1/crystal.max_growth) * crystal.growth)
+	if ((scale_x != calculation) || (scale_y != calculation))
+		scale_x = calculation // So the crystal is at 20% size at growth 1, 40% at growth 2, e.t.c.
+		scale_y = scale_x //sync the y value
+		return TRUE
 
 /datum/transform_type/shard/variable_size
 	flag = SHARD_VARIABLE_SIZE_TRANSFORM
@@ -81,15 +88,17 @@
 	. = ..()
 	var/obj/item/material/shard/our_shard = (value_target?.resolve())
 
-	if (our_shard)
-		if (our_shard.amount < 1)
-			//Variable icon size based on material quantity
-			//Shards will scale from 0.6 to 1.25 scale, in the range of 0..1 amount
-			var/calculation = (((1.25-0.8)*our_shard.amount)+0.8)
-			if ((scale_x != calculation) || (scale_y != calculation))
-				scale_x = calculation
-				scale_y = scale_x
-				return TRUE
+	if (!our_shard)
+		return
+
+	if (our_shard.amount < 1)
+		//Variable icon size based on material quantity
+		//Shards will scale from 0.6 to 1.25 scale, in the range of 0..1 amount
+		var/calculation = (((1.25-0.8)*our_shard.amount)+0.8)
+		if ((scale_x != calculation) || (scale_y != calculation))
+			scale_x = calculation
+			scale_y = scale_x
+			return TRUE
 
 /datum/transform_type/human
 
@@ -102,8 +111,10 @@
 
 	var/mob/living/carbon/human/human_target = (value_target?.resolve())
 
-	if (human_target)
-		if ((scale_x != human_target.size_multiplier) || (scale_y != human_target.size_multiplier))
-			scale_x = human_target.size_multiplier
-			scale_y = scale_x
-			return TRUE
+	if (!human_target)
+		return
+
+	if ((scale_x != human_target.size_multiplier) || (scale_y != human_target.size_multiplier))
+		scale_x = human_target.size_multiplier
+		scale_y = scale_x
+		return TRUE
