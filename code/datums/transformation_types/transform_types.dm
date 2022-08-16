@@ -290,7 +290,8 @@
  * Copies the transformation types from atom/copy_target and applies it to src.
  * Destroys the currently existing transform and replaces all existing transform types.
  * Args:
- * atom/copy_target:
+ * atom/copy_target: The atom to copy from.
+ * atom/valuetarget: Pased to add_transformations.
 **/
 /atom/proc/copy_transformations_from(atom/copy_target, atom/valuetarget = copy_target)
 	remove_all_transforms(FALSE) //reset our transform and transform types to default

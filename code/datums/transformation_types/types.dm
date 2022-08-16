@@ -62,7 +62,7 @@
 /datum/transform_type/ameridian_structures/crystal_resizing/update_values()
 	. = ..()
 
-	var/obj/structure/ameridian_crystal/crystal = (value_target.resolve())
+	var/obj/structure/ameridian_crystal/crystal = (value_target?.resolve())
 
 	if (crystal)
 
@@ -79,7 +79,7 @@
 /datum/transform_type/shard/variable_size/update_values()
 
 	. = ..()
-	var/obj/item/material/shard/our_shard = (value_target.resolve())
+	var/obj/item/material/shard/our_shard = (value_target?.resolve())
 
 	if (our_shard)
 		if (our_shard.amount < 1)
@@ -100,7 +100,7 @@
 /datum/transform_type/human/size_scaling/update_values()
 	. = ..()
 
-	var/mob/living/carbon/human/human_target = (value_target.resolve())
+	var/mob/living/carbon/human/human_target = (value_target?.resolve())
 
 	if (human_target)
 		if ((scale_x != human_target.size_multiplier) || (scale_y != human_target.size_multiplier))
