@@ -17,7 +17,7 @@
 
 	. = ..(location)
 
-/datum/transform_type/random_rotation/copy_variables_from(datum/transform_type/to_copy_from, copyholder)
+/datum/transform_type/random_rotation/copy_variables_from(datum/transform_type/to_copy_from, copyholder = FALSE, copyvaluetarget = TRUE)
 	. = ..()
 
 	if (istype(to_copy_from, /datum/transform_type/random_rotation))
