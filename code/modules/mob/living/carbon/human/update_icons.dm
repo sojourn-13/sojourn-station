@@ -162,7 +162,7 @@ Please contact me on #coderbus IRC. ~Carn x
 	if(lying && !form.prone_icon) //Only rotate them if we're not drawing a specific icon for being prone.
 		add_new_transformations(list(
 								/datum/transform_type/prone,
-								list(/datum/transform_type/modular, list(shiftx = 1, shifty = -6, flagarg = HUMAN_PRONE_TRANSFORM, priorityarg = HUMAN_PRONE_TRANSFORM_PRIORITY)))
+								list(/datum/transform_type/modular, list(shift_x = 1, shift_y = -6, flag = HUMAN_PRONE_TRANSFORM, priority = HUMAN_PRONE_TRANSFORM_PRIORITY)))
 )
 	else
 		remove_transformations(list(HUMAN_PRONE_TRANSFORM, PRONE_TRANSFORM))

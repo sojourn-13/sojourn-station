@@ -19,7 +19,7 @@
 	var/respawn_distance = 10 // How many tiles do we let the golem get before spawning another
 
 /obj/structure/ameridian_crystal/spire/add_initial_transforms()
-	add_new_transformation(/datum/transform_type/modular, list(scalex = 1.5, scaley = 1.5, flagarg = AMERIDIAN_SPIRE_INITIAL_SCALE_TRANSFORM, priorityarg = AMERIDIAN_SPIRE_INITIAL_SCALE_TRANSFORM_PRIORITY))
+	add_new_transformation(/datum/transform_type/modular, list(scalex = 1.5, scaley = 1.5, flag = AMERIDIAN_SPIRE_INITIAL_SCALE_TRANSFORM, priority = AMERIDIAN_SPIRE_INITIAL_SCALE_TRANSFORM_PRIORITY))
 	. = ..()
 
 /obj/structure/ameridian_crystal/spire/examine(mob/user)

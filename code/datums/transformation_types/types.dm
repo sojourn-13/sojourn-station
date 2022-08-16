@@ -6,7 +6,7 @@
 /datum/transform_type/random_rotation
 	flag = RANDOM_ROTATION_TRANSFORM
 	priority = RANDOM_ROTATION_TRANSFORM_PRIORITY
-	override_others_with_flag = TRUE
+	override = TRUE
 
 	var/lower_bound = 0
 	var/upper_bound = 360
@@ -32,20 +32,22 @@
 	flag = MODULAR_BASE_TRANSFORM_DO_NOT_USE
 	priority = MODULAR_BASE_TRANSFORM_DO_NOT_USE_PRIORITY
 
-/datum/transform_type/modular/apply_custom_values(scalex = scale_x, scaley = scale_y, rotationarg = rotation, shiftx = shift_x, shifty = shift_y, flagarg = flag, override = override_others_with_flag, priorityarg = priority)
+/datum/transform_type/modular/apply_custom_values(scale_x = src.scale_x, scale_y = src.scale_y, rotation = src.rotation, shift_x = src.shift_x, shift_y = src.shift_y,
+												flag = src.flag, override = src.override, priority = src.priority)
+
 	// You may wonder why I force it to crash here. It's because using the base flag for this type, a type meant to be re-used in many places, as a replacement for just
 	// making a new datum, and not replacing it's flag will cause a ton of incompatability issues.
-	if (flagarg == initial(flag))
-		return "[usr] tried to add a modular transform_type [src], but didn't change the flag arg from [flagarg]!" //error state, we pass this for debugging
+	if (flag == initial(src.flag))
+		return "[usr] tried to add a modular transform_type [src], but didn't change the flag arg from [flag]!" //error state, we pass this for debugging
 
-	scale_x = scalex
-	scale_y = scaley
-	rotation = rotationarg
-	shift_x = shiftx
-	shift_y = shifty
-	flag = flagarg
-	override_others_with_flag = override
-	priority = priorityarg
+	src.scale_x = scale_x
+	src.scale_y = scale_y
+	src.rotation = rotation
+	src.shift_x = shift_x
+	src.shift_y = shift_y
+	src.flag = flag
+	src.override = override
+	src.priority = priority
 
 	return ..()
 

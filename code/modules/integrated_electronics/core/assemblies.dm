@@ -1142,7 +1142,7 @@
 				pixel_x = 27
 				pixel_y = 0
 				to_turn = 90
-		add_new_transformation(/datum/transform_type/modular, list(rotationarg = to_turn, flagarg = WALLMOUNT_PLACED_ROTATION_TRANSFORMATION, priorityarg = WALLMOUNT_PLACED_ROTATION_TRANSFORMATION_PRIORITY))
+		add_new_transformation(/datum/transform_type/modular, list(rotation = to_turn, flag = WALLMOUNT_PLACED_ROTATION_TRANSFORMATION, priority = WALLMOUNT_PLACED_ROTATION_TRANSFORMATION_PRIORITY))
 
 /obj/item/device/electronic_assembly/implant
 	name = "electronic implant"

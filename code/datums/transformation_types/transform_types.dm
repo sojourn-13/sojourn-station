@@ -20,7 +20,7 @@
 	/// and then the transform is reset, before applying all transforms from lowest index in the list, to highest.
 	var/priority = TRANSFORM_PRIORITY_DEFAULT
 	/// If the target has a transform_type with the same flag and this is true, that transform_type will be removed and we will be applied.
-	var/override_others_with_flag = FALSE
+	var/override = FALSE
 	/// The atom we are applied to.
 	var/atom/holder
 	/// The atom we use for updating our values and such. Weakreffed, as we have no way of ensuring it isn't being deleted.
@@ -55,7 +55,9 @@
 	transform_datum.update_self()
 
 /// Base proc for applying custom values on creation. Must return TRUE or else apply_transformation will crash. Can return a string for the CRASH to display it in runtimes.
-/datum/transform_type/proc/apply_custom_values(scalex, scaley, rotation, shiftx, shifty, flagarg, override)
+/datum/transform_type/proc/apply_custom_values(scale_x = src.scale_x, scale_y = src.scale_y, rotation = src.rotation, shift_x = src.shift_x, shift_y = src.shift_y,
+												flag = src.flag, override = src.override, priority = src.priority)
+
 	return TRUE
 
 /**
@@ -145,7 +147,7 @@
 		CRASH("[transform_datum] apply_custom_values crashed for reason [result]")
 
 	if (transform_datum.flag in transform_types)
-		if (transform_datum.override_others_with_flag)
+		if (transform_datum.override)
 			remove_transformation(transform_datum.flag) //we can override others with our flag, so lets just get rid of this one
 		else
 			qdel(transform_datum)
@@ -318,24 +320,24 @@
 /datum/transform_type/proc/copy_variables_from(datum/transform_type/to_copy_from, copyholder = FALSE, copyvaluetarget = TRUE)
 	SHOULD_CALL_PARENT(TRUE) // should call parent because if you dont you dont get the crucial variables up here
 
-	scale_x = to_copy_from.scale_x
-	scale_y = to_copy_from.scale_y
+	src.scale_x = to_copy_from.scale_x
+	src.scale_y = to_copy_from.scale_y
 
-	rotation = to_copy_from.rotation
+	src.rotation = to_copy_from.rotation
 
-	shift_x = to_copy_from.shift_x
-	shift_y = to_copy_from.shift_y
+	src.shift_x = to_copy_from.shift_x
+	src.shift_y = to_copy_from.shift_y
 
-	flag = to_copy_from.flag
-	priority = to_copy_from.priority
+	src.flag = to_copy_from.flag
+	src.priority = to_copy_from.priority
 
-	override_others_with_flag = to_copy_from.override_others_with_flag
+	src.override = to_copy_from.override
 
 	if (copyholder)
-		holder = to_copy_from.holder
+		src.holder = to_copy_from.holder
 
 	if (copyvaluetarget)
-		value_target = to_copy_from.value_target //dont worry, its already in weakref form
+		src.value_target = to_copy_from.value_target //dont worry, its already in weakref form
 
 /datum/transform_type/proc/update_holder_status(to_be_held_by = holder, to_use_for_values = to_be_held_by)
 	holder = to_be_held_by

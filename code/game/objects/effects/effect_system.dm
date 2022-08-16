@@ -25,7 +25,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 			rotation_amount = pick(0, 90, 180, -90)
 		if (2)
 			rotation_amount= rand(0,360)
-	add_new_transformation(/datum/transform_type/modular, list(rotationarg = rotation_amount, flagarg = EFFECT_INITIAL_ROTATION_TRANSFORM, priorityarg = EFFECT_INITIAL_ROTATION_TRANSFORM_PRIORITY))
+	add_new_transformation(/datum/transform_type/modular, list(rotation = rotation_amount, flag = EFFECT_INITIAL_ROTATION_TRANSFORM, priority = EFFECT_INITIAL_ROTATION_TRANSFORM_PRIORITY))
 
 /datum/effect/effect/system
 	var/number = 3

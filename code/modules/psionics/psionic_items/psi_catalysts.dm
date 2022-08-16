@@ -141,7 +141,7 @@
 /obj/item/device/psionic_catalyst/add_initial_transforms()
 	. = ..()
 
-	add_new_transformation(/datum/transform_type/modular, list(0.5, 0.5, flagarg = PSICATALYST_INITIAL_SCALE_TRANSFORM, priorityarg = PSICATALYST_INITIAL_SCALE_TRANSFORM_PRIORITY))
+	add_new_transformation(/datum/transform_type/modular, list(0.5, 0.5, flag = PSICATALYST_INITIAL_SCALE_TRANSFORM, priority = PSICATALYST_INITIAL_SCALE_TRANSFORM_PRIORITY))
 
 /obj/item/device/psionic_catalyst/verb/invoke_power()
 	set name = "Invoke Psionic Catalyst"

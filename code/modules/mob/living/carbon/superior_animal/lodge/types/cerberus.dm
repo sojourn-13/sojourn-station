@@ -123,7 +123,7 @@
 /mob/living/carbon/superior_animal/lodge/baby_cerberus/add_initial_transforms()
 	. = ..()
 
-	add_new_transformation(/datum/transform_type/modular, list(0.5, 0.5, flagarg = BABY_CERBERUS_INITIAL_SCALE_TRANSFORM, priorityarg = BABY_CERBERUS_INITIAL_SCALE_TRANSFORM_PRIORITY))
+	add_new_transformation(/datum/transform_type/modular, list(0.5, 0.5, flag = BABY_CERBERUS_INITIAL_SCALE_TRANSFORM, priority = BABY_CERBERUS_INITIAL_SCALE_TRANSFORM_PRIORITY))
 
 /mob/living/carbon/superior_animal/lodge/baby_cerberus/Life()
 	. =..()

@@ -11,7 +11,7 @@
 obj/item/organ/internal/bone/add_initial_transforms()
 	. = ..()
 
-	add_new_transformation(/datum/transform_type/modular, list(0.5, 0.5, flagarg = BONE_INITIAL_SCALE_TRANSFORM, priorityarg = BONE_INITIAL_SCALE_TRANSFORM_PRIORITY))
+	add_new_transformation(/datum/transform_type/modular, list(0.5, 0.5, flag = BONE_INITIAL_SCALE_TRANSFORM, priority = BONE_INITIAL_SCALE_TRANSFORM_PRIORITY))
 
 /obj/item/organ/internal/bone/proc/fracture()
 	if(owner)

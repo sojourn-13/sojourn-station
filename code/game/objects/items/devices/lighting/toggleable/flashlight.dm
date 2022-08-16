@@ -133,7 +133,7 @@
 				if (4)
 					light_spot.icon_state = "lightspot_far"
 		if(angle)
-			light_spot.add_new_transformation(/datum/transform_type/modular, list(rotationarg = angle, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priorityarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
+			light_spot.add_new_transformation(/datum/transform_type/modular, list(rotation = angle, flag = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priority = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
 		else
 			var/to_rotate = 0
 			switch(light_direction)	//icon pointing north by default
@@ -146,7 +146,7 @@
 				if(WEST)
 					to_rotate = 270
 
-			light_spot.add_new_transformation(/datum/transform_type/modular, list(rotationarg = to_rotate, flagarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priorityarg = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
+			light_spot.add_new_transformation(/datum/transform_type/modular, list(rotation = to_rotate, flag = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priority = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
 
 /obj/item/device/lighting/toggleable/flashlight/proc/lightSpotPassable(var/turf/T)
 	if (is_opaque(T))
