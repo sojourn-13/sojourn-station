@@ -13,7 +13,7 @@
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
 	outfit_type = /decl/hierarchy/outfit/job/medical/cmo
-	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_UNBRANDED, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_genetics, access_heads,
