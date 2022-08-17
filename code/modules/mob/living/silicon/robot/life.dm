@@ -7,7 +7,6 @@
 
 	//Status updates, death etc.
 	clamp_values()
-	handle_regular_status_updates()
 	handle_actions()
 
 	if(client)
@@ -88,7 +87,7 @@
 	if(src.resting)
 		Weaken(5)
 
-	if(health <= 0 && src.stat != 2) //die only once
+	if(health <= death_threshold && src.stat != DEAD) //die only once
 		death()
 
 	if (src.stat != 2) //Alive.

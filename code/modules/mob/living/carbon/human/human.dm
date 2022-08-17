@@ -60,6 +60,11 @@
 
 	AddComponent(/datum/component/fabric)
 
+/mob/living/carbon/human/add_initial_transforms()
+	. = ..()
+
+	add_new_transformation(/datum/transform_type/human/size_scaling)
+
 /mob/living/carbon/human/Destroy()
 	GLOB.human_mob_list -= src
 
@@ -1551,6 +1556,9 @@ var/list/rank_prefix = list(\
 	set desc = "If you want to know what's above."
 	set category = "IC"
 
+	// /mob/living/handle_vision has vision not reset if the user has the machine var referencing something
+	// which it will always have since it is very poorly handled in its dereferencing SPCR - 2022
+	machine = null
 	if(!is_physically_disabled())
 		var/turf/above = GetAbove(src)
 		if(shadow)

@@ -36,14 +36,17 @@
 	use_generated_name = FALSE
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater/liver
+	name = "wifebeater's liver"
 	output_pool = list(OP_LIVER)
 	special_info = list(STAT_ROB, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater/stomach
+	name = "wifebeater's stomach"
 	output_pool = list(OP_STOMACH)
 	special_info = list(STAT_ROB, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater/kidney
+	name = "wifebeater's kidney"
 	output_pool = list(OP_KIDNEYS)
 	special_info = list(STAT_ROB, 10)
 
@@ -72,14 +75,17 @@
 	use_generated_name = FALSE
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic/liver
+	name = "functional alcoholic's liver"
 	output_pool = list(OP_LIVER)
 	special_info = list(STAT_MEC, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic/stomach
+	name = "functional alcoholic's stomach"
 	output_pool = list(OP_STOMACH)
 	special_info = list(STAT_MEC, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic/kidney
+	name = "functional alcoholic's kidney"
 	output_pool = list(OP_KIDNEYS)
 	special_info = list(STAT_MEC, 10)
 
@@ -107,14 +113,17 @@
 	use_generated_name = FALSE
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/classy/liver
+	name = "aristocrat's liver"
 	output_pool = list(OP_LIVER)
 	special_info = list(STAT_COG, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/classy/stomach
+	name = "aristocrat's stomach"
 	output_pool = list(OP_STOMACH)
 	special_info = list(STAT_COG, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/classy/kidney
+	name = "aristocrat's kidney"
 	output_pool = list(OP_KIDNEYS)
 	special_info = list(STAT_COG, 10)
 
@@ -142,14 +151,17 @@
 	use_generated_name = FALSE
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/blood_vessel
+	name = "ex-mercenary's blood vessel"
 	output_pool = list(OP_BLOOD_VESSEL)
 	special_info = list(STAT_VIG, 5)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/liver
+	name = "ex-mercenary's liver"
 	output_pool = list(OP_LIVER)
 	special_info = list(STAT_VIG, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/muscle
+	name = "ex-mercenary's muscle"
 	output_pool = list(OP_MUSCLE)
 	special_info = list(STAT_VIG, 5)
 
@@ -177,14 +189,17 @@
 	use_generated_name = FALSE
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/mobster/blood_vessel
+	name = "mobster's blood vessel"
 	output_pool = list(OP_BLOOD_VESSEL)
 	special_info = list(STAT_TGH, 5)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/mobster/liver
+	name = "mobster's liver"
 	output_pool = list(OP_LIVER)
 	special_info = list(STAT_TGH, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/mobster/muscle
+	name = "mobster's muscle"
 	output_pool = list(OP_MUSCLE)
 	special_info = list(STAT_TGH, 5)
 
@@ -212,14 +227,17 @@
 	use_generated_name = FALSE
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/chemist/blood_vessel
+	name = "chemist's blood vessel"
 	output_pool = list(OP_BLOOD_VESSEL)
 	special_info = list(STAT_BIO, 5)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/chemist/liver
+	name = "chemist's liver"
 	output_pool = list(OP_LIVER)
 	special_info = list(STAT_BIO, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/chemist/kidney
+	name = "chemist's kidney"
 	output_pool = list(OP_KIDNEYS)
 	special_info = list(STAT_BIO, 10)
 

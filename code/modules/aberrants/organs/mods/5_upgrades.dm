@@ -32,9 +32,10 @@
 /obj/item/modification/organ/internal/stromal/improvement/durability/New()
 	var/datum/component/modification/organ/stromal/M = AddComponent(/datum/component/modification/organ/stromal)
 
-	M.min_bruised_damage_multiplier = 0.40
-	M.min_broken_damage_multiplier = 0.40
-	M.max_damage_multiplier = 0.40
+	M.specific_organ_size_mod = 0.5
+	M.min_bruised_damage_multiplier = 0.20
+	M.min_broken_damage_multiplier = 0.20
+	M.max_damage_multiplier = 0.20
 	M.prefix = "durable"
 	..()
 

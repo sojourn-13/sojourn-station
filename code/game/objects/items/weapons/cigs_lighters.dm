@@ -574,7 +574,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	..()
 	pixel_x = rand(-10,10)
 	pixel_y = rand(-10,10)
-	transform = turn(transform,rand(0,360))
+
+/obj/item/trash/cigbutt/add_initial_transforms()
+	. = ..()
+
+	add_new_transformation(/datum/transform_type/random_rotation)
 
 /obj/item/trash/cigbutt/cigarbutt
 	name = "cigar butt"

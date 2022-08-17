@@ -5,6 +5,7 @@
 	colour = "serbian"
 	key = "x"
 	space_chance = 80
+	has_written_form = TRUE
 	partial_understanding = list(
 		LANGUAGE_CYRILLIC = 60,
 		LANGUAGE_ESPERANTO = 20

@@ -469,7 +469,7 @@
 /turf/simulated/floor/light
 
 /turf/simulated/floor/snow
-	name = "fake snow"
+	name = "snow"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "snow"
 

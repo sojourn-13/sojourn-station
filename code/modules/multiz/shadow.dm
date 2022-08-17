@@ -40,7 +40,7 @@
 	icon_state = M.icon_state
 	color = M.color
 	copy_overlays(M.get_overlays(), TRUE)
-	transform = M.transform
+	copy_transformations_from(M)
 	dir = M.dir
 	if(shadow)
 		shadow.sync_icon(src)
@@ -52,6 +52,9 @@
 /mob/living/forceMove(atom/destination, var/special_event, glide_size_override=0)
 	. = ..()
 	check_shadow()
+
+	var/turf/location = get_turf(src)
+	update_z(location?.z)
 
 /mob/living/proc/check_shadow()
 	var/mob/M = src

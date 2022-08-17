@@ -3,7 +3,8 @@
 
 	This needs more thinking out, but I might as well.
 */
-var/const/tk_maxrange = 7 //Do not expand it past this unless you want players abusing the range.
+
+var/const/tk_maxrange = 7 //Do not increase further - stops abusing of TK mechanics using scopes and/or binoculars.
 
 /*
 	Telekinetic attack:

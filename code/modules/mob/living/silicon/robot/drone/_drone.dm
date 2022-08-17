@@ -281,6 +281,8 @@ var/list/mob_hat_cache = list()
 		stat = CONSCIOUS
 		return
 	health = maxHealth - (getBruteLoss() + getFireLoss())
+	if(health <= death_threshold && stat != DEAD) //stops constantly procing death
+		death()
 	return
 
 //Easiest to check this here, then check again in the robot proc.
@@ -288,7 +290,7 @@ var/list/mob_hat_cache = list()
 //Drones killed by damage will gib.
 /mob/living/silicon/robot/drone/handle_regular_status_updates()
 	var/turf/T = get_turf(src)
-	if((!T || health <= 0) && src.stat != DEAD)
+	if((!T || health <= death_threshold) && src.stat != DEAD)
 		timeofdeath = world.time
 		death() //Possibly redundant, having trouble making death() cooperate.
 		gib()

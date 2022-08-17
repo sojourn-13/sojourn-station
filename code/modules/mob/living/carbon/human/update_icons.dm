@@ -160,20 +160,16 @@ Please contact me on #coderbus IRC. ~Carn x
 			add_overlay(species.get_eyes(src))
 
 	if(lying && !form.prone_icon) //Only rotate them if we're not drawing a specific icon for being prone.
-		var/matrix/M = matrix()
-		M.Turn(90)
-		M.Scale(size_multiplier)
-		M.Translate(1,-6)
-		src.transform = M
+		add_new_transformations(list(
+								/datum/transform_type/prone,
+								list(/datum/transform_type/modular, list(shift_x = 1, shift_y = -6, flag = HUMAN_PRONE_TRANSFORM, priority = HUMAN_PRONE_TRANSFORM_PRIORITY)))
+)
 	else
-		var/matrix/M = matrix()
-		M.Scale(size_multiplier)
-		M.Translate(0, 16*(size_multiplier-1))
-		src.transform = M
+		remove_transformations(list(HUMAN_PRONE_TRANSFORM, PRONE_TRANSFORM))
 
 	COMPILE_OVERLAYS(src)
 
-	..()
+	. = ..()
 
 var/global/list/damage_icon_parts = list()
 
@@ -702,7 +698,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			if (uniformcheck.rolldown)//Are we rolled down?
 				var/icon/originalicon = icon(under_icon, icon_state = under_state)
 				var/icon/rollalpha = icon('icons/inventory/overlays.dmi', icon_state = "rolldown")//If we are, grab the overlay
-				originalicon.Blend(rollalpha, ICON_MULTIPLY)//Then apply the transform to the standing icon. 
+				originalicon.Blend(rollalpha, ICON_MULTIPLY)//Then apply the transform to the standing icon.
 				under_icon = originalicon
 
 		//need to append _s to the icon state for legacy compatibility
