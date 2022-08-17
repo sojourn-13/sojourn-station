@@ -207,14 +207,15 @@
 		timer_act(user, input)
 	update_icon()
 
-/obj/machinery/cooking_with_jane/stove/proc/timer_act(user, input)
+//input: 1 thru 4, depends on which burner was selected
+/obj/machinery/cooking_with_jane/stove/proc/timer_act(var/mob/user, var/input)
 	timerstamp[input]=world.time
 	var/old_timerstamp = timerstamp[input]
 	spawn(timer[input])
 		if(old_timerstamp == timerstamp[input])
 			playsound(src, 'sound/items/lighter.ogg', 100, 1, 0)
 
-			handle_cooking(user, input, TRUE)
+			handle_cooking(user, input, TRUE) //Do a check in the cooking interface
 			switches[input] = 0
 			timerstamp[input]=world.time
 			cooking_timestamp[input] = world.time
