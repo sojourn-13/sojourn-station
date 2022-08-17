@@ -89060,7 +89060,7 @@
 /area/nadezhda/hallway/surface/section1)
 "qUE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/autolathe/bioprinter/med,
+/obj/machinery/autolathe/organ_fabricator,
 /obj/machinery/button/remote/blast_door{
 	id = "organ_shutter";
 	name = "privacy shutter control";

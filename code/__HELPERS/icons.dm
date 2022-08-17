@@ -198,7 +198,7 @@ icon
 		return I
 
 	proc/BecomeLying()
-		Turn(90)
+		Turn(PRONE_MATRIX_ROTATE)
 		Shift(SOUTH, 6)
 		Shift(EAST, 1)
 

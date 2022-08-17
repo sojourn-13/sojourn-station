@@ -8,9 +8,10 @@
 	var/broken_description = ""
 	var/reinforced = FALSE
 
-/obj/item/organ/internal/bone/Initialize()
-    . = ..()
-    src.transform *= 0.5 // this little trick makes bone size small while keeping detail level of 32x32 bones.
+obj/item/organ/internal/bone/add_initial_transforms()
+	. = ..()
+
+	add_new_transformation(/datum/transform_type/modular, list(0.5, 0.5, flag = BONE_INITIAL_SCALE_TRANSFORM, priority = BONE_INITIAL_SCALE_TRANSFORM_PRIORITY))
 
 /obj/item/organ/internal/bone/proc/fracture()
 	if(owner)

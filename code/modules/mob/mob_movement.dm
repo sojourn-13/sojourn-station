@@ -9,8 +9,7 @@
 
 
 /mob
-	var/moving           = FALSE
-
+	var/moving = FALSE
 
 /mob/proc/set_move_cooldown(var/timeout)
 	var/datum/movement_handler/mob/delay/delay = GetMovementHandler(/datum/movement_handler/mob/delay)
@@ -18,13 +17,14 @@
 		delay.SetDelay(timeout)
 
 /mob/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
-	if(air_group || (height==0)) return 1
+	if(air_group || (height==0))
+		return TRUE
 
 	if(ismob(mover))
 		var/mob/moving_mob = mover
 		if ((other_mobs && moving_mob.other_mobs))
-			return 1
-		return (!mover.density || !density || lying)
+			return TRUE
+		return (!mover.density || !density || (lying || moving_mob.lying)) // The 2nd lying check is a Soj Edit by niko, i have no fucking idea if this will break anything
 	else
 		return (!mover.density || !density || lying)
 

@@ -9,10 +9,12 @@
 		LANGUAGE_ESPERANTO = 10,
 		LANGUAGE_GERMAN = 20,
 		LANGUAGE_CYRILLIC = 5,
-		LANGUAGE_SERBIAN = 5
+		LANGUAGE_SERBIAN = 5,
+		LANGUAGE_KRIOSAN = 10
 	)
 	flags = RESTRICTED
 	shorthand = "CO"
+	has_written_form = TRUE
 
 
 	//syllables are at the bottom of the file

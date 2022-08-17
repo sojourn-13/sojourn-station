@@ -65,7 +65,6 @@
 
 /mob/living/carbon/superior_animal/update_icons()
 	. = ..()
-	transform = null
 	if (stat == DEAD)
 		icon_state = icon_dead
 	else if ((stat == UNCONSCIOUS) || resting || lying)
@@ -74,12 +73,9 @@
 		else
 			if (icon_living)
 				icon_state = icon_living
-		var/matrix/M = matrix()
-		M.Turn(90)
-		transform = M
+		add_new_transformation(/datum/transform_type/prone)
 	else
-		var/matrix/M = matrix()
-		transform = M
+		remove_transformation(PRONE_TRANSFORM)
 		if (icon_living)
 			icon_state = icon_living
 

@@ -93,8 +93,8 @@
 			"burn" = BURN,
 			"toxin" = TOX,
 			"suffocation" = OXY,
-			"DNA degradation" = CLONE,
-			"pain" = HALLOSS
+			"DNA degradation" = CLONE
+			//"pain" = HALLOSS
 		)
 
 	for(var/input in accepted_inputs)
