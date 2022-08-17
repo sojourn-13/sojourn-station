@@ -198,6 +198,10 @@
 		if(switches[input] == 1)
 			handle_cooking(user, input)
 			cooking_timestamp[input] = world.time
+			timerstamp[input]=world.time
+			#ifdef CWJ_DEBUG
+			log_debug("Timerstamp no. [input] set! New timerstamp: [timerstamp[input]]")
+			#endif
 
 
 /obj/machinery/cooking_with_jane/stove/proc/handle_timer(user, input)
@@ -209,9 +213,14 @@
 
 //input: 1 thru 4, depends on which burner was selected
 /obj/machinery/cooking_with_jane/stove/proc/timer_act(var/mob/user, var/input)
-	timerstamp[input]=world.time
+
+	timerstamp[input]=round(world.time)
+	#ifdef CWJ_DEBUG
+	log_debug("Timerstamp no. [input] set! New timerstamp: [timerstamp[input]]")
+	#endif
 	var/old_timerstamp = timerstamp[input]
 	spawn(timer[input])
+		log_debug("Comparimg timerstamp([input]) of [timerstamp[input]] to old_timerstamp [old_timerstamp]")
 		if(old_timerstamp == timerstamp[input])
 			playsound(src, 'sound/items/lighter.ogg', 100, 1, 0)
 
@@ -228,6 +237,9 @@
 		handle_cooking(user, input)
 		switches[input] = 0
 		timerstamp[input]=world.time
+		#ifdef CWJ_DEBUG
+		log_debug("Timerstamp no. [input] set! New timerstamp: [timerstamp[input]]")
+		#endif
 		cooking_timestamp[input] = world.time
 	else
 		switches[input] = 1
