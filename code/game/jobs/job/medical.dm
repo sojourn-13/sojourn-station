@@ -123,7 +123,7 @@
 	wage = WAGE_PROFESSIONAL
 	alt_titles = list("Soteria Emergency Medical Technician")
 	outfit_type = /decl/hierarchy/outfit/job/medical/recovery_team
-	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 	health_modifier = 5
 	perks = list(/datum/perk/medicalexpertise, /datum/perk/chemist) // Can treat people well but can't do surgery or chemistry as good as a doctor.
