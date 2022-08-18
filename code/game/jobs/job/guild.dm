@@ -75,7 +75,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 	department_account_access = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/cargo/cargo_tech
 
-	disallow_species = list(FORM_BSSYNTH, FORM_CHURCHSYNTH)
+	disallow_species = list(FORM_BSSYNTH)
 
 
 	access = list(
