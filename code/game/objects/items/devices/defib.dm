@@ -27,7 +27,7 @@
 
 /obj/item/device/defib_kit/New() //starts without a cell for rnd
 	..()
-	
+
 	paddles = new paddle_type(src, src)
 
 	if(ispath(cell_type, suitable_cell))
@@ -222,7 +222,7 @@
 
 /obj/item/shockpaddles/linked/combat/advanced
 	name = "advanced defibrillator paddles"
-	desc = "A pair of ploymore-gripped paddles with flat metals surfaces that are used to deliver powerful controled electric shocks."
+	desc = "A pair of ploymore-gripped paddles with flat metals surfaces that are used to deliver powerful controled electric shocks. As well as defib through prosthetic chests."
 	si_only = TRUE
 	advanced_pads = TRUE
 
@@ -672,9 +672,10 @@
 
 /obj/item/shockpaddles/robot
 	name = "defibrillator paddles"
-	desc = "A pair of advanced shockpaddles powered by a robot's internal power cell, able to penetrate thick clothing."
+	desc = "A pair of advanced shockpaddles powered by a robot's internal power cell, able to penetrate thick clothing. As well as defib through prosthetic chests."
 	chargecost = 50
 	combat = 1
+	use_on_synthetic = 1
 	icon_state = "defibpaddles0"
 	item_state = "defibpaddles0"
 	cooldowntime = (3 SECONDS)
@@ -836,7 +837,7 @@
 //FBP Defibs
 /obj/item/device/defib_kit/jumper_kit
 	name = "jumper cable kit"
-	desc = "A device that delivers powerful shocks to detachable jumper cables that are capable of reviving full body prosthetics."
+	desc = "A device that delivers powerful shocks to detachable jumper cables that are capable of reviving prosthetics chests."
 	icon_state = "jumperunit"
 	item_state = "defibunit"
 //	item_state = "jumperunit"
