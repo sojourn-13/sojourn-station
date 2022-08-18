@@ -263,8 +263,28 @@
 		if(temp.dislocated == 2)
 			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.joint] is dislocated!</span><br>"
 		if(((temp.status & ORGAN_BROKEN) && temp.brute_dam > temp.min_broken_damage) || (temp.status & ORGAN_MUTATED))
-			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.name] is dented and swollen!</span><br>"
-
+			wound_flavor_text["[temp.name]"] += "<span class='warning'>[T.His] [temp.name] is mangled!</span><br>"
+		if(temp.germ_level > INFECTION_LEVEL_ONE && temp.germ_level < INFECTION_LEVEL_TWO)//Occulus Edit: Infection status on examine
+			wound_flavor_text["[temp.name]"] += "<span class='warning'>[T.His] [temp.name] is discolored!</span><br>"
+		else if(temp.germ_level > INFECTION_LEVEL_TWO && temp.germ_level < INFECTION_LEVEL_THREE)
+			wound_flavor_text["[temp.name]"] += "<span class='warning'>[T.His] [temp.name] is oozing pus!</span><br>"
+		else if(temp.germ_level > INFECTION_LEVEL_THREE)
+			wound_flavor_text["[temp.name]"] += "<span class='danger'>[T.His] [temp.name] is covered in decaying tissue!</span><br>"
+		if(temp.status & ORGAN_DEAD)
+			wound_flavor_text["[temp.name]"] += "<span class='danger'>[T.His] [temp.name] is necrotic!</span><br>"//Occulus Edit End
+		for(var/obj/item/organ/internal/blood_vessel/BV in temp.internal_organs)//Occulus Edit: Ruptured Blood Vessel
+			if(BV.damage > 4)//occulus Edit: Ruptured blood vessel that is above the self-heal threshold
+				wound_flavor_text["[temp.name]"] += "<span class='warning'>[T.His] [temp.name] swollen and discolored!</span><br>"//Occulus Edit: Ruptured Blood vessel
+//Edited out form occulus port but this is good to have in case we ever add back in sanity
+/*
+	if(user.stats.getPerk(PERK_EMPATH))
+		if(sanity.level <= 40 && sanity.level > 20)
+			msg += "[T.He] looks stressed out.\n"
+		else if(sanity.level <= 20 && sanity.level > 0)
+			msg += "<span class='warning'>[T.He] looks ready to do something rash!</span>\n"
+		else if(sanity.level == 0)
+			msg += "<span class ='danger'>[T.He] needs help! Now! Something is wrong!\n"
+*/
 	//Handles the text strings being added to the actual description.
 	//If they have something that covers the limb, and it is not missing, put flavortext.  If it is covered but bleeding, add other flavortext.
 
