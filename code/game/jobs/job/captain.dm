@@ -84,7 +84,6 @@ Treat your command officers with respect, and listen to their council. Try not t
 	wage = WAGE_COMMAND
 	ideal_character_age = 35
 	minimum_character_age = 30
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 	health_modifier = 5
 	description = "The Steward is the loyal right-hand of the Premier. Serving as a personal guard, follow him wherever he goes.<br>\
