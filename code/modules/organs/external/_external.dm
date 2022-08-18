@@ -41,7 +41,7 @@
 	var/hair_col
 
 	// Wound and structural data.
-	var/wound_update_accuracy = 1		// how often wounds should be updated, a higher number means less often
+	var/wound_update_accuracy = 3		// how often wounds should be updated, a higher number means less often Occulus Edit: only update wounds every 3 ticks (potential lag reduction)
 	var/list/wounds = list()			// wound datum list.
 	var/number_wounds = 0				// number of wounds, which is NOT wounds.len!
 	var/list/children = list()			// Sub-limbs.
@@ -222,7 +222,7 @@
 			nerve = new /obj/item/organ/internal/nerve/sensitive_nerve/exalt
 		else
 			nerve = new /obj/item/organ/internal/nerve/sensitive_nerve/exalt_leg
-		
+
 	else if(nature < MODIFICATION_SILICON)
 		nerve = new /obj/item/organ/internal/nerve
 	else
@@ -350,10 +350,10 @@
 
 /obj/item/organ/external/proc/is_dislocated()
 	if(dislocated > 0)
-		return 1
+		return TRUE
 	if(parent)
 		return parent.is_dislocated()
-	return 0
+	return FALSE
 
 /obj/item/organ/external/proc/dislocate(var/primary)
 	if(dislocated != -1)
@@ -482,17 +482,19 @@ This function completely restores a damaged organ to perfect condition.
 //Determines if we even need to process this organ.
 /obj/item/organ/external/proc/need_process()
 	if(status & (ORGAN_CUT_AWAY|ORGAN_BLEEDING|ORGAN_BROKEN|ORGAN_DESTROYED|ORGAN_SPLINTED|ORGAN_DEAD|ORGAN_MUTATED))
-		return 1
+		return TRUE
 	if((brute_dam || burn_dam) && !BP_IS_ROBOTIC(src)) //Robot limbs don't autoheal and thus don't need to process when damaged
-		return 1
+		return TRUE
 	if(last_dam != brute_dam + burn_dam) // Process when we are fully healed up.
 		last_dam = brute_dam + burn_dam
-		return 1
+		return TRUE
 	else
 		last_dam = brute_dam + burn_dam
 	if(germ_level)
-		return 1
-	return 0
+		return TRUE
+	if(wounds)//Occulus Edit - Need this to process wound healing over time!
+		return TRUE//Occulus Edit - Need this to process wound healing over time!
+	return FALSE
 
 /obj/item/organ/external/Process()
 	if(owner)
@@ -639,7 +641,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 	for(var/datum/wound/W in wounds)
 		// wounds can disappear after 10 minutes at the earliest
-		if(W.damage <= 0 && W.created + 10 * 10 * 60 <= world.time)
+		if(W.damage <= 0 && W.salved == 1 && W.bandaged == 1)//Occulus Edit: Wounds that have no damage, are salved, and are bandaged will disappear
 			wounds -= W
 			continue
 			// let the GC handle the deletion of the wound
@@ -724,8 +726,8 @@ Note that amputating the affected organ does in fact remove the infection from t
 	var/n_is = damage_state_text()
 	if (n_is != damage_state)
 		damage_state = n_is
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
 // new damage icon system
 // returns just the brute/burn damage code
@@ -757,7 +759,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 //****************************************************/
 
 /obj/item/organ/external/proc/is_stump()
-	return 0
+	return FALSE
 
 /obj/item/organ/external/proc/release_restraints(var/mob/living/carbon/human/holder)
 	if(!holder)
@@ -780,24 +782,24 @@ Note that amputating the affected organ does in fact remove the infection from t
 	for(var/datum/wound/W in wounds)
 		if(W.internal) continue
 		if(!W.bandaged)
-			return 0
-	return 1
+			return FALSE
+	return TRUE
 
 // checks if all wounds on the organ are salved
 /obj/item/organ/external/proc/is_salved()
 	for(var/datum/wound/W in wounds)
 		if(W.internal) continue
 		if(!W.salved)
-			return 0
-	return 1
+			return FALSE
+	return TRUE
 
 // checks if all wounds on the organ are disinfected
 /obj/item/organ/external/proc/is_disinfected()
 	for(var/datum/wound/W in wounds)
 		if(W.internal) continue
 		if(!W.disinfected)
-			return 0
-	return 1
+			return FALSE
+	return TRUE
 
 /obj/item/organ/external/proc/bandage()
 	var/rval = 0
@@ -877,8 +879,8 @@ Note that amputating the affected organ does in fact remove the infection from t
 /obj/item/organ/external/proc/has_infected_wound()
 	for(var/datum/wound/W in wounds)
 		if(W.germ_level > INFECTION_LEVEL_ONE)
-			return 1
-	return 0
+			return TRUE
+	return FALSE
 
 /obj/item/organ/external/proc/is_malfunctioning()
 	return (BP_IS_ROBOTIC(src) && (brute_dam + burn_dam) >= 40 && prob(brute_dam + burn_dam))
