@@ -954,18 +954,19 @@ Note that amputating the affected organ does in fact remove the infection from t
 		if(W.internal && !open) continue // can't see internal wounds
 		var/this_wound_desc = W.desc
 
-		if(W.damage_type == BURN && W.salved)
-			this_wound_desc = "salved [this_wound_desc]"
+		if(W.salved)	// Always show salved wounds -- this is important for Jamini's incoming injury clearing PR
+		//if(W.damage_type == BURN && W.salved)
+			this_wound_desc = "<font color='F5793A'>salved</font> [this_wound_desc]" // OCCULUS EDIT: This is orange
 
 		if(W.bleeding())
-			this_wound_desc = "bleeding [this_wound_desc]"
+			this_wound_desc = "<b>bleeding</b> [this_wound_desc]"	// OCCULUS EDIT: bold 'bleeding'
 		else if(W.bandaged)
-			this_wound_desc = "bandaged [this_wound_desc]"
+			this_wound_desc = "<font color='6073B1'>bandaged</font> [this_wound_desc]" // OCCULUS EDIT: This is a somewhat light blue
 
 		if(W.germ_level > 600)
-			this_wound_desc = "badly infected [this_wound_desc]"
+			this_wound_desc = "<font color='00FF00'>badly infected [this_wound_desc]</font>"
 		else if(W.germ_level > 330)
-			this_wound_desc = "lightly infected [this_wound_desc]"
+			this_wound_desc = "<font color='90ee90'>lightly infected [this_wound_desc]</font>"
 
 		if(wound_descriptors[this_wound_desc])
 			wound_descriptors[this_wound_desc] += W.amount
@@ -975,7 +976,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(wound_descriptors.len)
 		var/list/flavor_text = list()
 		var/list/no_exclude = list("gaping wound", "big gaping wound", "massive wound", "large bruise",\
-		"huge bruise", "massive bruise", "severe burn", "large burn", "deep burn", "carbonised area") //note to self make this more robust
+		"huge bruise", "massive bruise", "severe burn", "large burn", "deep burn", "carbonised area")
 		for(var/wound in wound_descriptors)
 			switch(wound_descriptors[wound])
 				if(1)
