@@ -99,7 +99,7 @@
 		var/amount	= text2num(input(usr,"Amount to transfer", "Funds transfer"))
 		var/purpose	= input(usr,"Transfer purpose", "Funds transfer")
 		purpose = sanitizeSafe(purpose, 128, TRUE)
-		if(amount > account.money)
+		if(amount > account.money || amount <= 0)
 			popup_message = "<b>An error has occurred.</b><br> Insufficient funds."
 			P.set_icon("uplink")
 		else if(!get_account(target))
