@@ -102,6 +102,8 @@
 		if(amount > account.money)
 			popup_message = "<b>An error has occurred.</b><br> Insufficient funds."
 			P.set_icon("uplink")
+		if(amount <= 0)
+			P.set_icon("uplink")
 		else if(!get_account(target))
 			popup_message = "<b>An error has occurred.</b><br> Target account not found."
 			P.set_icon("uplink")
