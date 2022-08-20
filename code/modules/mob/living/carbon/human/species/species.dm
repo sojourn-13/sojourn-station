@@ -308,7 +308,10 @@
 		return 1
 
 	if(!H.druggy)
-		H.see_in_dark = (H.sight == SEE_TURFS|SEE_MOBS|SEE_OBJS) ? 8 : min(darksight + H.equipment_darkness_modifier, 8)
+		H.see_in_dark = (H.sight == SEE_TURFS|SEE_MOBS|SEE_OBJS) ? darksight : min(darksight + H.equipment_darkness_modifier, darksight)
+		H.see_in_dark += H.equipment_darkness_modifier
+		if(H.see_in_dark <= 0)
+			H.see_in_dark = 1
 
 	if(H.equipment_see_invis)
 		H.see_invisible = H.equipment_see_invis
