@@ -94,6 +94,14 @@
 		to_chat(usr, SPAN_NOTICE("You empty \the [src] onto the floor."))
 		reagents.splash(usr.loc, reagents.total_volume)
 
+/obj/item/reagent_containers/spray/update_icon()
+	cut_overlays()
+
+	if(reagents.total_volume)
+		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[icon_state]-[get_filling_state()]")
+		filling.color = reagents.get_color()
+		add_overlay(filling)
+
 //space cleaner
 /obj/item/reagent_containers/spray/cleaner
 	name = "space cleaner"
