@@ -36,7 +36,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 	// Type of ore to spawn when the termite dies
 	var/ore
-
+	var/dropped_ore = FALSE
 	// The bane of termite's existence
 	var/obj/machinery/mining/drill/DD
 
@@ -92,7 +92,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	. = ..()
 
 // Spawn ores
-	if(ore)
+	if(ore && !dropped_ore)
+		dropped_ore = TRUE
 		var/nb_ores = rand(3, 5)
 		for(var/i in 1 to nb_ores)
 			new ore(loc)
