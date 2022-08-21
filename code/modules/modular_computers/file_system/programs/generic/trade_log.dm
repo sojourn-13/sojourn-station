@@ -2,7 +2,8 @@
 #define EXPORT_SCREEN "Export"
 #define OFFER_SCREEN "Offer"
 #define SALE_SCREEN "Sale"
-#define SCREEN_LIST list(SHIPPING_SCREEN, EXPORT_SCREEN, OFFER_SCREEN, SALE_SCREEN)
+#define ORDER_SCREEN "Order"
+#define SCREEN_LIST list(SHIPPING_SCREEN, EXPORT_SCREEN, OFFER_SCREEN, ORDER_SCREEN)
 
 /datum/computer_file/program/trade_log
 	filename = "trade_log"
@@ -18,7 +19,7 @@
 
 	var/screen = null
 	var/datum/money_account/account
-
+	var/current_page = 1
 
 /datum/computer_file/program/trade_log/Topic(href, href_list)
 	. = ..()
@@ -46,6 +47,8 @@
 					log_type = "Special Offer"
 				if("IS")
 					log_type = "Individual Sale"
+				if("O")
+					log_type = "Order"
 				else
 					return
 
@@ -75,6 +78,42 @@
 
 	if(href_list["PRG_screen"])
 		screen = input("Select log type", "Log Type", null) as null|anything in SCREEN_LIST
+		current_page = 1
+		return TRUE
+
+	if(href_list["PRG_page_first"])
+		current_page = 1
+		return TRUE
+
+	if(href_list["PRG_page_prev_10"])
+		current_page = max(1, current_page - 10)
+		return TRUE
+
+	if(href_list["PRG_page_prev"])
+		current_page = max(1, current_page - 1)
+		return TRUE
+
+	if(href_list["PRG_page_select"])
+		var/page_max = text2num(href_list["PRG_page_select"])
+		var/input = input("Enter page number (1-[page_max])", "Page Selection") as num|null
+		if(!input)
+			return
+		current_page = clamp(input, 1, page_max)
+		return TRUE
+
+	if(href_list["PRG_page_next"])
+		var/page_max = text2num(href_list["PRG_page_next"])
+		current_page = min(page_max, current_page + 1)
+		return TRUE
+
+	if(href_list["PRG_page_next_10"])
+		var/page_max = text2num(href_list["PRG_page_next_10"])
+		current_page = min(page_max, current_page + 10)
+		return TRUE
+
+	if(href_list["PRG_page_last"])
+		var/page_max = text2num(href_list["PRG_page_last"])
+		current_page = page_max
 		return TRUE
 
 	if(href_list["PRG_account"])
@@ -120,30 +159,62 @@
 	if(!istype(PRG))
 		return
 
+	var/list/current_log = list()
+	var/is_all_access = FALSE
+	var/account = "[PRG.account.get_name()] #[PRG.account.account_number]"
+
+	if(PRG.account)
+		.["account"] = account
+		var/dept_id = PRG.account.department_id
+		if(dept_id)
+			is_all_access = (dept_id == DEPARTMENT_LSS || dept_id == DEPARTMENT_SECURITY) ? TRUE : FALSE
+
 	.["screen"] = PRG.screen
-	.["current_log_data"] = null
+	.["log_page"] = PRG.current_page
+	.["is_all_access"] = is_all_access
 
 	switch(PRG.screen)
 		if(SHIPPING_SCREEN)
-			.["current_log_data"] = SStrade.shipping_log
+			current_log = SStrade.shipping_log
 		if(EXPORT_SCREEN)
-			.["current_log_data"] = SStrade.export_log
+			current_log = SStrade.export_log
 		if(OFFER_SCREEN)
-			.["current_log_data"] = SStrade.offer_log
+			current_log = SStrade.offer_log
 		if(SALE_SCREEN)
-			.["current_log_data"] = SStrade.sale_log
+			current_log = SStrade.sale_log
+		if(ORDER_SCREEN)
+			current_log = SStrade.order_log
 		else
-			.["current_log_data"] = null
+			current_log = null
 
-	if(PRG.account)
-		.["account"] = "[PRG.account.get_name()] #[PRG.account.account_number]"
-		.["is_all_access"] = FALSE
-		var/dept_id = PRG.account.department_id
-		if(dept_id)
-			.["is_all_access"] = ((dept_id == DEPARTMENT_LSS) || (dept_id == DEPARTMENT_SECURITY)) ? TRUE : FALSE
+	if(!is_all_access)
+		for(var/log_entry in current_log)
+			var/list/log_data = log_entry
+			if(log_data["ordering_acct"] != account)
+				current_log -= log_entry
+
+	var/logs_per_page = 10
+	var/logs_to_display = logs_per_page
+	var/page_max = round(current_log.len / logs_per_page, 1)
+	var/page_remainder = current_log.len % logs_per_page
+	if(current_log.len < logs_per_page * PRG.current_page)
+		logs_to_display = page_remainder
+	if(page_remainder < logs_per_page / 2)
+		++page_max
+
+	.["page_max"] = page_max ? page_max : 1
+
+	var/list/page_of_logs = list()
+
+	if(logs_to_display)
+		for(var/i in 1 to logs_to_display)
+			page_of_logs += list(current_log[i + (logs_per_page * (PRG.current_page - 1))])
+
+	.["current_log_data"] = page_of_logs
 
 #undef SHIPPING_SCREEN
 #undef EXPORT_SCREEN
 #undef OFFER_SCREEN
 #undef SALE_SCREEN
+#undef ORDER_SCREEN
 #undef SCREEN_LIST
