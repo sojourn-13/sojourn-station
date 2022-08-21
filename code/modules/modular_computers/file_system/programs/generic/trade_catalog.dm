@@ -5,6 +5,7 @@
 	extended_desc = "Electronic handbook containing inventory information about discovered trade beacons. Trade orders can be requested using this."
 	size = 2
 	available_on_ntnet = TRUE
+	clone_able = TRUE
 	usage_flags = PROGRAM_ALL
 
 	program_type = "ordering"	// master, slave, ordering

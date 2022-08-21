@@ -226,7 +226,6 @@
 			return
 		set_chosen_category()
 		station = S
-		reset_shop_list()
 		return TRUE
 
 	if(href_list["PRG_cart_reset"])
@@ -514,7 +513,7 @@
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
-		ui = new(user, src, ui_key, "trade.tmpl", name, 960, 800, state = state)
+		ui = new(user, src, ui_key, "trade.tmpl", name, 1000, 800, state = state)
 
 		// template keys starting with _ are not appended to the UI automatically and have to be called manually
 		ui.add_template("_goods", "trade_goods.tmpl")
