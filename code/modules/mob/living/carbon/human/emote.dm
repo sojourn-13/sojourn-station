@@ -195,7 +195,7 @@
 
 		if ("choke")
 			if(miming)
-				message = "clutches [get_visible_gender() == MALE ? "his" : get_visible_gender() == FEMALE ? "her" : "their"] throat desperately!"
+				message = "clutches [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] throat desperately!"
 				m_type = 1
 			else
 				if (!muzzled)
@@ -223,14 +223,14 @@
 
 		if ("flap")
 			if (!src.restrained())
-				message = "flaps [get_visible_gender() == MALE ? "his" : get_visible_gender() == FEMALE ? "her" : "their"] wings."
+				message = "flaps [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] wings."
 				m_type = 2
 				if(miming)
 					m_type = 1
 
 		if ("aflap")
 			if (!src.restrained())
-				message = "flaps [get_visible_gender() == MALE ? "his" : get_visible_gender() == FEMALE ? "her" : "their"] wings ANGRILY!"
+				message = "flaps [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] wings ANGRILY!"
 				m_type = 2
 				if(miming)
 					m_type = 1
@@ -276,7 +276,7 @@
 
 		if ("cough")
 			if(miming)
-				message = "takes [get_visible_gender() == MALE ? "his" : get_visible_gender() == FEMALE ? "her" : "their"] curled up fist to their mouth, mimicking a cough!"
+				message = "takes [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] curled up fist to their mouth, mimicking a cough!"
 				m_type = 1
 			else
 				if (!muzzled)
@@ -425,7 +425,7 @@
 					message = "cries."
 					m_type = 2
 				else
-					message = "makes a weak, whimpering noise. [get_visible_gender() == MALE ? "He" : get_visible_gender() == FEMALE ? "She" : "They"] [get_visible_gender() == NEUTER ? "frown" : "frowns"]."
+					message = "makes a weak, whimpering noise. [identifying_gender == "male" ? "He" : identifying_gender == "female" ? "She" : "They"] [get_gender() == NEUTER ? "frown" : "frowns"]."
 					m_type = 2
 
 		if ("sigh")
@@ -552,7 +552,7 @@
 			m_type = 1
 
 		if("shake")
-			message = "shakes [get_visible_gender() == MALE ? "his" : get_visible_gender() == FEMALE ? "her" : "their"] head."
+			message = "shakes [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] head."
 			m_type = 1
 
 		if ("shrug")
@@ -676,7 +676,7 @@
 				if (M)
 					message = "hugs [M]."
 				else
-					message = "hugs [get_visible_gender() == MALE ? "himself" : get_visible_gender() == FEMALE ? "herself" : "themselves"]."
+					message = "hugs [identifying_gender == "male" ? "himself" : identifying_gender == "female" ? "herself" : "themselves"]."
 
 		if ("handshake")
 			m_type = 1
@@ -694,7 +694,7 @@
 					if (M.canmove && !M.r_hand && !M.restrained())
 						message = "shakes hands with [M]."
 					else
-						message = "holds out [get_visible_gender() == MALE ? "his" : get_visible_gender() == FEMALE ? "her" : "their"] hand to [M] to shake."
+						message = "holds out [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] hand to [M] to shake."
 
 		if("dap")
 			m_type = 1
@@ -708,7 +708,7 @@
 				if (M)
 					message = "gives daps to [M]."
 				else
-					message = "sadly can't find anybody to give daps to, and daps [get_visible_gender() == MALE ? "himself" : get_visible_gender() == FEMALE ? "herself" : "themselves"]. Shameful."
+					message = "sadly can't find anybody to give daps to, and daps [identifying_gender == "male" ? "himselves" : identifying_gender == "female" ? "her" : "themselves"]. Shameful."
 
 		if ("scream")
 			if (miming)
@@ -976,4 +976,4 @@
 	if(suppress_communication)
 		return FALSE
 
-	pose =  sanitize(input(usr, "This is [src]. [get_visible_gender() == MALE ? "He" : get_visible_gender() == FEMALE ? "She" : "They"] [get_visible_gender() == NEUTER ? "are" : "is"]...", "Pose", null)  as text)
+	pose =  sanitize(input(usr, "This is [src]. [identifying_gender == "male" ? "He" : identifying_gender == "female" ? "She" : "They"] [get_gender() == NEUTER ? "are" : "is"]...", "Pose", null)  as text)
