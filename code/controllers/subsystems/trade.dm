@@ -396,6 +396,14 @@ SUBSYSTEM_DEF(trade)
 				for(var/path in category)
 					. += get_import_cost(path, station) * category[path]
 
+/datum/controller/subsystem/trade/proc/collect_price_for_category(list/category)
+	. = 0
+	if(length(category))
+		return
+
+	for(var/path in category)
+		. += get_import_cost(path, station) * category[path]
+
 /datum/controller/subsystem/trade/proc/buy(obj/machinery/trade_beacon/receiving/senderBeacon, datum/money_account/account, list/shopList)
 	if(QDELETED(senderBeacon) || !istype(senderBeacon) || !account || !recursiveLen(shopList))
 		return
@@ -417,7 +425,7 @@ SUBSYSTEM_DEF(trade)
 		for(var/category_name in shoplist_station)
 			var/list/shoplist_category = shoplist_station[category_name]
 			var/list/inventory_category = station.inventory[category_name]
-			to_station_wealth = collect_price_for_list(shoplist_category)
+			to_station_wealth = collect_price_for_category(shoplist_category)
 			if(length(shoplist_category) && length(inventory_category))
 				for(var/good_path in shoplist_category)
 					var/count_of_good = shoplist_category[good_path] //in shoplist

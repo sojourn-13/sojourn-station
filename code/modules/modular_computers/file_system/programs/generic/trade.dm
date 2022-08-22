@@ -660,7 +660,7 @@
 
 						var/amount2sell = 0
 						if(PRG.station && PRG.sending)
-							amount2sell = length(SStrade.assess_offer(PRG.sending, PRG.station, path))
+							amount2sell = length(SStrade.assess_offer(PRG.sending, path))
 
 						var/list/shop_list_station = PRG.shoppinglist[PRG.station]
 						var/count = 0
