@@ -552,7 +552,6 @@
 			m_type = 1
 
 		if("shake")
-			message = "[identifying_gender]"
 			message = "shakes [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] head."
 			m_type = 1
 
