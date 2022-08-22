@@ -4558,6 +4558,10 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
+"Zi" = (
+/obj/effect/shuttle_landmark/river_forest,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/river_forest_light)
 "Zm" = (
 /obj/effect/decal/cleanable/rubble,
 /mob/living/carbon/superior_animal/wurm,
@@ -78072,7 +78076,7 @@ lB
 xa
 xa
 xa
-xa
+Zi
 xa
 xa
 xa
