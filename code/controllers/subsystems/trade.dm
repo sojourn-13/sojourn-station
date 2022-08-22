@@ -23,11 +23,27 @@ SUBSYSTEM_DEF(trade)
 	var/export_invoice_number = 0
 	var/offer_invoice_number = 0
 	var/sale_invoice_number = 0
+	var/order_number = 0
 
 	var/list/shipping_log = list()
 	var/list/export_log = list()
 	var/list/offer_log = list()
 	var/list/sale_log = list()
+	var/list/order_log = list()
+
+	// For ordering
+	var/handling_fee = 0.2
+	var/order_queue_id = 0
+	var/list/order_queue = list()
+	// Order format
+	// list(
+	//		"requesting_acct" = acct name,
+	//		"reason" = reasons,
+	//		"cost" = cart price,
+	//		"fee" = handling fee,
+	//		"contents" = shoppinglist,
+	//		"viewable_contents" = parsed shopping list
+	// )
 
 // === TRADE STATIONS ===
 
@@ -224,10 +240,10 @@ SUBSYSTEM_DEF(trade)
 
 	return TRUE		// Otherwise, pass since we're not checking for anything with special considerations (reagents, stacks, containers) if the previous checks did not return
 
-/datum/controller/subsystem/trade/proc/assess_offer(obj/machinery/trade_beacon/sending/beacon, datum/trade_station/station, offer_path)
-	if(QDELETED(beacon) || !station)
+/datum/controller/subsystem/trade/proc/assess_offer(obj/machinery/trade_beacon/sending/beacon, offer_path)
+	if(QDELETED(beacon))
 		return
-
+		
 	. = list()
 
 	for(var/atom/movable/AM in beacon.get_objects())
@@ -237,13 +253,36 @@ SUBSYSTEM_DEF(trade)
 			continue
 		. += AM
 
-/datum/controller/subsystem/trade/proc/fulfill_offer(obj/machinery/trade_beacon/sending/beacon, datum/money_account/account, datum/trade_station/station, offer_path)
-	var/list/exported = assess_offer(beacon, station, offer_path)
+/datum/controller/subsystem/trade/proc/assess_all_offers(obj/machinery/trade_beacon/sending/beacon)
+	if(QDELETED(beacon))
+		return
+
+	var/list/all_offers = offer_types.Copy()
+
+	for(var/atom/movable/AM in beacon.get_objects())
+		for(var/offer_path in offer_types)
+			if(AM.anchored || !(istype(AM, offer_path) || ispath(offer_path, /datum/reagent)))
+				continue
+			if(!check_offer_contents(AM, offer_path))		// Check contents after we know it's the same type
+				continue
+			if(!islist(all_offers[offer_path]))
+				all_offers[offer_path] = list()
+			all_offers[offer_path] += AM
+			continue
+
+	for(var/offer in all_offers)
+		if(!islist(all_offers[offer]))		// If it's not a list, no items were found
+			all_offers -= offer
+
+	return all_offers
+
+/datum/controller/subsystem/trade/proc/fulfill_offer(obj/machinery/trade_beacon/sending/beacon, datum/money_account/account, datum/trade_station/station, offer_path, is_slaved = FALSE)
+	var/list/exported = assess_offer(beacon, offer_path)
 
 	var/list/offer_content = station.special_offers[offer_path]
 	var/offer_amount = text2num(offer_content["amount"])
 	var/offer_price = text2num(offer_content["price"])
-	if(!exported || length(exported) < offer_amount)
+	if(!exported || length(exported) < offer_amount || !offer_amount)
 		return
 
 	exported.Cut(offer_amount + 1)
@@ -262,6 +301,19 @@ SUBSYSTEM_DEF(trade)
 		create_log_entry("Special Offer", account.get_name(), invoice_contents_info, offer_price, TRUE, get_turf(beacon))
 
 		beacon.activate()
+
+		/*	If Soj ever uses public trade beacons, this would be cleaner to use
+		if(is_slaved)
+			var/datum/money_account/master_account = department_accounts[DEPARTMENT_GUILD]
+			var/datum/transaction/master_T = new(offer_price * 0.2, master_account.get_name(), "Trade Offer", station.name)
+			var/datum/transaction/slave_T = new(offer_price * 0.8, account.get_name(), "Trade Offer", station.name)
+			master_T.apply_to(master_account)
+			slave_T.apply_to(account)
+		else
+			var/datum/transaction/T = new(offer_price, account.get_name(), "Trade Offer", station.name)
+			T.apply_to(account)
+		*/
+
 		var/datum/transaction/T = new(credits_to_account, account.get_name(), "Special deal", station.name)
 		var/datum/transaction/TL = new(credits_to_lonestar, department_accounts[DEPARTMENT_LSS].get_name(), "Special deal", station.name)
 		T.apply_to(account)
@@ -271,29 +323,86 @@ SUBSYSTEM_DEF(trade)
 		offer_content["price"] = 0
 		station.special_offers[offer_path] = offer_content
 
-/datum/controller/subsystem/trade/proc/collect_counts_from(list/shoplist)
-	. = 0
-	for(var/category_name in shoplist)
-		var/category = shoplist[category_name]
-		if(length(category))
-			for(var/path in category)
-				. += category[path]
+/datum/controller/subsystem/trade/proc/fulfill_all_offers(obj/machinery/trade_beacon/sending/beacon, datum/money_account/account, is_slaved = FALSE)
+	var/list/exported = assess_all_offers(beacon)
 
-/datum/controller/subsystem/trade/proc/collect_price_for_list(list/shoplist, datum/trade_station/tradeStation = null)
-	. = 0
-	for(var/category_name in shoplist)
-		var/category = shoplist[category_name]
-		if(length(category))
-			for(var/path in category)
-				. += get_import_cost(path, tradeStation) * category[path]
+	for(var/station in discovered_stations)
+		var/datum/trade_station/TS = station
 
-/datum/controller/subsystem/trade/proc/buy(obj/machinery/trade_beacon/receiving/senderBeacon, datum/money_account/account, list/shoplist, datum/trade_station/station)
-	if(QDELETED(senderBeacon) || !istype(senderBeacon) || !account || !recursiveLen(shoplist) || !istype(station))
+		for(var/offer_path in TS.offer_types)
+			var/list/offer_content = TS.special_offers[offer_path]
+			var/offer_amount = text2num(offer_content["amount"])
+			var/offer_price = text2num(offer_content["price"])
+			var/list/item_list = exported[offer_path]
+
+			if(!item_list || item_list.len < offer_amount || !offer_amount)
+				continue
+
+			if(account)
+				var/invoice_contents_info
+
+				for(var/i in 1 to offer_amount)
+					var/atom/movable/AM = item_list[i]
+					SEND_SIGNAL(src, COMSIG_TRADE_BEACON, AM)
+					invoice_contents_info += "<li>[AM.name]</li>"
+					qdel(AM)
+
+				var/credits_to_account = round(offer_price * 0.8)
+				var/credits_to_lonestar = round(offer_price * 0.2)
+
+				create_log_entry("Special Offer", account.get_name(), invoice_contents_info, offer_price, FALSE, get_turf(beacon))
+
+				/*	If Soj ever uses public trade beacons, this would be cleaner to use
+				if(is_slaved)
+					var/datum/money_account/master_account = department_accounts[DEPARTMENT_GUILD]
+					var/datum/transaction/master_T = new(offer_price * 0.2, master_account.get_name(), "Trade Offer", TS.name)
+					var/datum/transaction/slave_T = new(offer_price * 0.8, account.get_name(), "Trade Offer", TS.name)
+					master_T.apply_to(account)
+					slave_T.apply_to(account)
+				else
+					var/datum/transaction/T = new(offer_price, account.get_name(), "Trade Offer", TS.name)
+					T.apply_to(account)
+				*/
+
+				var/datum/transaction/T = new(credits_to_account, account.get_name(), "Special deal", TS.name)
+				var/datum/transaction/TL = new(credits_to_lonestar, department_accounts[DEPARTMENT_LSS].get_name(), "Special deal", TS.name)
+				T.apply_to(account)
+				TL.apply_to(department_accounts[DEPARTMENT_LSS])
+
+				TS.add_to_wealth(offer_price, TRUE)
+				offer_content["amount"] = 0
+				offer_content["price"] = 0
+				TS.special_offers[offer_path] = offer_content
+
+	beacon.start_export()
+
+/datum/controller/subsystem/trade/proc/collect_counts_from(list/shopList)
+	. = 0
+	for(var/station in shopList)
+		var/list/shoplist_station = shopList[station]
+		for(var/category_name in shoplist_station)
+			var/list/category = shoplist_station[category_name]
+			if(length(category))
+				for(var/path in category)
+					. += category[path]
+
+/datum/controller/subsystem/trade/proc/collect_price_for_list(list/shopList)
+	. = 0
+	for(var/station in shopList)
+		var/list/shoplist_station = shopList[station]
+		for(var/category_name in shoplist_station)
+			var/category = shoplist_station[category_name]
+			if(length(category))
+				for(var/path in category)
+					. += get_import_cost(path, station) * category[path]
+
+/datum/controller/subsystem/trade/proc/buy(obj/machinery/trade_beacon/receiving/senderBeacon, datum/money_account/account, list/shopList)
+	if(QDELETED(senderBeacon) || !istype(senderBeacon) || !account || !recursiveLen(shopList))
 		return
 
 	var/obj/structure/closet/crate/C
-	var/count_of_all = collect_counts_from(shoplist)
-	var/price_for_all = collect_price_for_list(shoplist, station)
+	var/count_of_all = collect_counts_from(shopList)
+	var/price_for_all = collect_price_for_list(shopList)
 	if(isnum(count_of_all) && count_of_all > 1)
 		C = senderBeacon.drop(/obj/structure/closet/crate)
 	if(price_for_all && get_account_credits(account) < price_for_all)
@@ -302,37 +411,40 @@ SUBSYSTEM_DEF(trade)
 	var/order_contents_info
 	var/invoice_location
 
-	for(var/category_name in shoplist)
-		var/list/shoplist_category = shoplist[category_name]
-		var/list/inventory_category = station.inventory[category_name]
-		if(length(shoplist_category) && length(inventory_category))
-			for(var/good_path in shoplist_category)
-				var/count_of_good = shoplist_category[good_path] //in shoplist
-				var/index_of_good = inventory_category.Find(good_path) //in inventory
-				for(var/i in 1 to count_of_good)
-					if(istype(C))
-						new good_path(C)
-					else
-						var/atom/movable/new_item = senderBeacon.drop(good_path)
-						invoice_location = new_item.loc
-				if(isnum(index_of_good))
-					station.set_good_amount(category_name, index_of_good, max(0, station.get_good_amount(category_name, index_of_good) - count_of_good))
+	for(var/datum/trade_station/station in shopList)
+		var/list/shoplist_station = shopList[station]
+		var/to_station_wealth = 0
+		for(var/category_name in shoplist_station)
+			var/list/shoplist_category = shoplist_station[category_name]
+			var/list/inventory_category = station.inventory[category_name]
+			to_station_wealth = collect_price_for_list(shoplist_category)
+			if(length(shoplist_category) && length(inventory_category))
+				for(var/good_path in shoplist_category)
+					var/count_of_good = shoplist_category[good_path] //in shoplist
+					var/index_of_good = inventory_category.Find(good_path) //in inventory
+					for(var/i in 1 to count_of_good)
+						if(istype(C))
+							new good_path(C)
+						else
+							var/atom/movable/new_item = senderBeacon.drop(good_path)
+							invoice_location = new_item.loc
+					if(isnum(index_of_good))
+						station.set_good_amount(category_name, index_of_good, max(0, station.get_good_amount(category_name, index_of_good) - count_of_good))
 
-				// invoice gen stuff
-				var/atom/movable/AM = good_path
-				var/list/good_packet = inventory_category[good_path]
-				var/item_name = initial(AM.name)
-				if(islist(good_packet))
-					item_name = good_packet["name"] ? good_packet["name"] : item_name
-				order_contents_info += "<li>[count_of_good]x [item_name]</li>"
+					// invoice gen stuff
+					var/atom/movable/AM = good_path
+					var/list/good_packet = inventory_category[good_path]
+					var/item_name = initial(AM.name)
+					if(islist(good_packet))
+						item_name = good_packet["name"] ? good_packet["name"] : item_name
+					order_contents_info += "<li>[count_of_good]x [item_name]</li>"
+		station.add_to_wealth(to_station_wealth)
 
 	if(count_of_all > 1)
 		invoice_location = C
 
 	create_log_entry("Shipping", account.get_name(), order_contents_info, price_for_all, TRUE, invoice_location)
-
-	station.add_to_wealth(price_for_all)	// can only buy from one station at a time
-	charge_to_account(account.account_number, account.get_name(), "Purchase", station.name, price_for_all)
+	charge_to_account(account.account_number, account.get_name(), "Purchase", "Trade Network", price_for_all)
 
 //SoJ semi edit, readds direct selling
 /datum/controller/subsystem/trade/proc/sell_thing(obj/machinery/trade_beacon/sending/senderBeacon, datum/money_account/account, atom/movable/thing, datum/trade_station/station)
@@ -421,6 +533,67 @@ SUBSYSTEM_DEF(trade)
 		if(istype(target, offer_type))
 			return NONEXPORTABLE
 
+// === ORDERING ===
+
+/datum/controller/subsystem/trade/proc/build_order(requesting_account, reason, list/shopping_list)
+	if(!requesting_account || !shopping_list || !shopping_list.len)
+		return
+
+	var/cost = collect_price_for_list(shopping_list)
+	var/order_contents_info
+	var/list/goods = list()
+	var/datum/money_account/requesting_acct = requesting_account
+	var/datum/money_account/master_acct = department_accounts[DEPARTMENT_LSS]
+	var/is_requestor_master = (requesting_acct == master_acct) ? TRUE : FALSE
+
+	for(var/station in shopping_list)
+		var/list/shoplist_categories = shopping_list[station]
+		for(var/category in shoplist_categories)
+			var/list/shoplist_goods = shoplist_categories[category]
+			for(var/good in shoplist_goods)
+				goods |= good
+
+				var/amount_to_add = shoplist_goods[good]
+
+				goods[good] += amount_to_add
+
+				var/atom/movable/AM = good
+				order_contents_info += "<li>[amount_to_add]x [initial(AM.name)]</li>"
+
+	var/list/new_order = list(
+		"requesting_acct" = requesting_account,
+		"reason" = reason,
+		"cost" = cost,
+		"fee" = (is_requestor_master ? 0 : cost * handling_fee),
+		"contents" = shopping_list,
+		"viewable_contents" = order_contents_info
+	)
+
+	var/order_queue_slot = "order_[++order_queue_id]"
+	order_queue |= order_queue_slot
+	order_queue[order_queue_slot] = new_order
+
+	return order_queue_slot
+
+/datum/controller/subsystem/trade/proc/purchase_order(obj/machinery/trade_beacon/receiving/beacon, order_id)
+	if(QDELETED(beacon) || !beacon || !order_id)
+		return
+
+	if(order_queue.Find(order_id))
+		var/list/order = order_queue[order_id]
+
+		var/datum/money_account/master_account = department_accounts[DEPARTMENT_LSS]
+		var/datum/money_account/requesting_account = order["requesting_acct"]
+		var/list/shopping_list = order["contents"]
+		var/list/viewable_contents = order["viewable_contents"]
+		var/total_cost = order["cost"] + order["fee"]
+		var/is_requestor_master = (requesting_account == master_account) ? TRUE : FALSE
+
+		buy(beacon, master_account, shopping_list)
+		if(!is_requestor_master)
+			transfer_funds(requesting_account, master_account, "Order Request", null, total_cost)
+		create_log_entry("Order", requesting_account.get_name(), viewable_contents, total_cost)
+
 // === LOGGING ===
 
 /datum/controller/subsystem/trade/proc/create_log_entry(type, ordering_account, contents, total_paid, create_invoice = FALSE, invoice_location = null)
@@ -439,6 +612,9 @@ SUBSYSTEM_DEF(trade)
 		if("Individial Sale")
 			log_id = "[++sale_invoice_number]-IS"
 			sale_log.Add(list(list("id" = log_id, "ordering_acct" = ordering_account, "contents" = contents, "total_paid" = total_paid, "time" = time2text(world.time, "hh:mm"))))
+		if("Order")
+			log_id = "[++order_number]-O"
+			order_log.Add(list(list("id" = log_id, "ordering_acct" = ordering_account, "contents" = contents, "total_paid" = total_paid, "time" = time2text(world.time, "hh:mm"))))
 		else
 			return
 
@@ -485,6 +661,8 @@ SUBSYSTEM_DEF(trade)
 			return offer_log[log_num]
 		if("IS")
 			return sale_log[log_num]
+		if("O")
+			return order_log[log_num]
 		else
 			return
 
