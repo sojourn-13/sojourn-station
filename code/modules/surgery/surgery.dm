@@ -93,7 +93,7 @@
 	var/datum/surgery_step/S = GLOB.surgery_steps[step_type]
 
 	if(S.requires_perk)
-		if(!(user.stats.getPerk(S.perk_i_need) || user.stats.getPerk(S.perk_i_need_alt) || user.stats.getPerk(S.perk_drug)) || !user.stats.getStat(STAT_BIO) >= 50)
+		if(!(user.stats.getPerk(S.perk_i_need) || user.stats.getPerk(S.perk_i_need_alt) || user.stats.getPerk(S.perk_drug) || user.stats.getStat(STAT_BIO) >= 50))
 			to_chat(user, SPAN_WARNING("You do not have the necessary training to do this surgery!"))
 			return FALSE
 
