@@ -398,7 +398,7 @@ SUBSYSTEM_DEF(trade)
 
 /datum/controller/subsystem/trade/proc/collect_price_for_category(list/category, datum/trade_station/station)
 	. = 0
-	if(length(category))
+	if(!length(category))
 		return
 
 	for(var/path in category)
