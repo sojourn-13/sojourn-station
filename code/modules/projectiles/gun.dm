@@ -959,7 +959,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 /obj/item/gun/ui_data(mob/user)
 	var/list/data = list()
 	data["damage_multiplier"] = damage_multiplier
-	data["proj_pve_damage_multiplier"] = proj_pve_damage_multiplier
+	data["multiply_pve_damage"] = proj_pve_damage_multiplier
 	data["pierce_multiplier"] = pierce_multiplier
 	data["penetration_multiplier"] = penetration_multiplier
 
