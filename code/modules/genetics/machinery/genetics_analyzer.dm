@@ -229,11 +229,11 @@ cannot isolate or combine desired genes.
 						awarding_points += known_mutations[mut_key]
 
 				if(awarding_points > 0)
-					console.files.research_points += awarding_points // Give the points
+					console.files.adjust_research_points(awarding_points) // Give the points
 					var/obj/item/device/radio/radio
 					radio = new /obj/item/device/radio{channels=list("Science")}(src) // Create a new radio
 					radio.autosay("Genetics Research Uploaded, granting [awarding_points] research points~!", "Genetics Announcement System", "Science") // Make the radio say a message.
-					spawn(50) qdel(radio)
+					qdel(radio)
 
 				//Update known mutations from the master console JIC
 				for(var/mut_key in console.known_mutations)
