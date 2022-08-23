@@ -64,7 +64,7 @@
 
 /datum/craft_recipe/wall/underplating
 	name = "underplating"
-	result = /obj/effect/flooring_type_spawner/crafted
+	result = /obj/effect/flooring_type_spawner
 	time = WORKTIME_SLOW
 	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
 	steps = list(

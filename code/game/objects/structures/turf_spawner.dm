@@ -6,10 +6,6 @@
 	anchored = 1
 	var/change_floor_to_path = /turf/simulated/floor/plating/under
 	var/activated = FALSE
-	var/crafting_bypass = FALSE //Hack so the crafting these things work
-
-/obj/effect/flooring_type_spawner/crafted
-	crafting_bypass = TRUE //Hack so the crafting these things work
 
 /obj/effect/flooring_type_spawner/Initialize()
 	. = ..()
@@ -31,7 +27,7 @@
 	var/turf/Tsrc = get_turf(src)
 	if(Tsrc)
 		Tsrc.ChangeTurf(change_floor_to_path)
-	if(crafting_bypass)
+	if(loc)
 		new change_floor_to_path(src.loc)
 	return
 
