@@ -115733,7 +115733,7 @@
 	name = "\improper Outdoors - Pad"
 	})
 "vYj" = (
-/obj/item/modular_computer/console/preset/trade_catalog{
+/obj/item/modular_computer/console/preset/trade_orders{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,

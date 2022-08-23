@@ -425,7 +425,7 @@ SUBSYSTEM_DEF(trade)
 		for(var/category_name in shoplist_station)
 			var/list/shoplist_category = shoplist_station[category_name]
 			var/list/inventory_category = station.inventory[category_name]
-			to_station_wealth = collect_price_for_category(shoplist_category, station)
+			to_station_wealth += collect_price_for_category(shoplist_category, station)
 			if(length(shoplist_category) && length(inventory_category))
 				for(var/good_path in shoplist_category)
 					var/count_of_good = shoplist_category[good_path] //in shoplist
