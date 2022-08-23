@@ -279,6 +279,10 @@
 /obj/item/organ/external/emp_act(severity)
 	if(!BP_IS_ROBOTIC(src))
 		return
+	
+	if(severity == 1)
+		take_damage(5)
+	/*
 	switch (severity)
 		if (1)
 			take_damage(20)
@@ -286,7 +290,7 @@
 			take_damage(15)
 		if (3)
 			take_damage(5)
-
+	*/
 /obj/item/organ/external/attack_self(var/mob/user)
 	if(!contents.len)
 		return ..()
