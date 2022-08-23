@@ -329,8 +329,8 @@
 	target = pick(valids_targets)
 	units_requested = rand(1500, 3000) //500-1000 was to little lets make this harder
 	desc = "The money must always flow but you must also prevent fees from ruining you.  \
-			Make a back transfer from you personal account for amount of [units_requested][CREDITS].\
-			Back transfer meaning adding the [units_requested][CREDITS] must be added to your account"
+			Make a back transfer from you personal to \"[target.account_number]\" account for amount of [units_requested][CREDITS].\
+			Back transfer meaning adding the [units_requested][CREDITS] must be added account \"[target.account_number]\""
 	RegisterSignal(owner.initial_account, COMSIG_TRANSATION, .proc/task_completed)
 
 /datum/individual_objective/economy/task_completed(datum/money_account/S, datum/money_account/T, amount)

@@ -96,7 +96,7 @@
 
 
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost
-	name = "superior endocrinal membrane"
+	name = "intracrinal membrane"
 	desc = "A graftable membrane for organ tissues. Secretes stimulating hormones when the primary organ function triggers."
 
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/New(loc, generate_organ_stats = FALSE, predefined_modifier = null, list/chosen_special_info)

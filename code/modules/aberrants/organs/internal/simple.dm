@@ -2,9 +2,9 @@
 	price_tag = 200
 	use_generated_name = FALSE
 	input_mod_path = /obj/item/modification/organ/internal/input/reagents
-	process_mod_path = /obj/item/modification/organ/internal/process/condense
+	process_mod_path = /obj/item/modification/organ/internal/process/boost
 	output_mod_path = /obj/item/modification/organ/internal/output/chemical_effects
-	base_input_type = /datum/reagent/toxin
+	specific_input_type_pool = list(/datum/reagent/toxin)	// Should let these scrub ANY toxin
 	output_pool = ALL_USABLE_POSITIVE_CHEM_EFFECTS
 	output_info = list(NOT_USED)
 
@@ -18,7 +18,7 @@
 	var/datum/component/modification/organ/process/PC = P.GetComponent(/datum/component/modification/organ/process)
 	PC.organ_efficiency_mod = list()		// Clear organ efficiencies since this is mimicking an organ process. Also, organ will need its own name.
 	organ_efficiency = list()
-
+	refresh_upgrades()
 
 /obj/item/organ/internal/scaffold/aberrant/scrub_toxin/blood
 	name = "filtration node"
@@ -42,7 +42,7 @@
 	price_tag = 200
 	use_generated_name = FALSE
 	input_mod_path = /obj/item/modification/organ/internal/input/reagents
-	process_mod_path = /obj/item/modification/organ/internal/process/condense
+	process_mod_path = /obj/item/modification/organ/internal/process/boost
 	output_mod_path = /obj/item/modification/organ/internal/output/reagents_ingest
 	specific_input_type_pool = list(/datum/reagent/other/crayon_dust, /datum/reagent/other/paint, /datum/reagent/other/ultraglue, /datum/reagent/other/space_cleaner,
 									/datum/reagent/toxin/amatoxin, /datum/reagent/toxin/carpotoxin, /datum/reagent/toxin/fertilizer)
@@ -60,6 +60,7 @@
 	var/datum/component/modification/organ/process/PC = P.GetComponent(/datum/component/modification/organ/process)
 	PC.organ_efficiency_mod = list()		// Clear organ efficiencies since this is mimicking an organ process. Also, organ will need its own name.
 	organ_efficiency = list()
+	refresh_upgrades()
 
 /obj/item/organ/internal/scaffold/aberrant/damage_response
 	name = "endocrine gland"
@@ -67,7 +68,7 @@
 	price_tag = 200
 	use_generated_name = FALSE
 	input_mod_path = /obj/item/modification/organ/internal/input/damage
-	process_mod_path = /obj/item/modification/organ/internal/process/condense
+	process_mod_path = /obj/item/modification/organ/internal/process/boost
 	output_mod_path = /obj/item/modification/organ/internal/output/reagents_blood
 	specific_input_type_pool = ALL_USABLE_DAMAGE_TYPES
 	input_mode = NOT_USED
@@ -84,3 +85,4 @@
 	var/datum/component/modification/organ/process/PC = P.GetComponent(/datum/component/modification/organ/process)
 	PC.organ_efficiency_mod = list()		// Clear organ efficiencies since this is mimicking an organ process. Also, organ will need its own name.
 	organ_efficiency = list()
+	refresh_upgrades()

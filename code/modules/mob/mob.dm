@@ -782,9 +782,12 @@ All Canmove setting in this proc is temporary. This var should not be set from h
 		canmove = FALSE //TODO: Remove this
 
 	if(lying)
-		set_density(TRUE)
-		if(l_hand) unEquip(l_hand)
-		if(r_hand) unEquip(r_hand)
+		if(l_hand)
+			unEquip(l_hand)
+		if(r_hand)
+			unEquip(r_hand)
+		if (!is_dead(src)) //to prevent dead mobs from always being set to dense. not sure if this is going to have consequences, but it hopefully shouldnt?
+			set_density(TRUE)
 	else
 		canmove = TRUE
 		set_density(initial(density))

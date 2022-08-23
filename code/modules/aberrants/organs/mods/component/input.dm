@@ -6,6 +6,8 @@
 	var/list/accepted_inputs = list()
 
 /datum/component/modification/organ/input/reagents
+	adjustable = TRUE
+
 /datum/component/modification/organ/input/reagents/get_function_info()
 	var/source
 	switch(check_mode)
@@ -30,6 +32,19 @@
 	description += "\n<span style='color:green'>Reagents metabolized:</span> [inputs]"
 
 	return description
+
+/datum/component/modification/organ/input/reagents/modify(obj/item/I, mob/living/user)
+	var/list/adjustable_qualities = list(
+		"skin" = CHEM_TOUCH,
+		"stomach" = CHEM_INGEST,
+		"bloodstream" = CHEM_BLOOD
+	)
+
+	var/decision = input("Choose a metabolic source","Adjusting Organoid") as null|anything in adjustable_qualities
+	if(!decision)
+		return TRUE
+
+	check_mode = adjustable_qualities[decision]
 
 /datum/component/modification/organ/input/reagents/trigger(atom/movable/holder, mob/living/carbon/owner)
 	if(!holder || !owner)
@@ -58,6 +73,8 @@
 
 
 /datum/component/modification/organ/input/damage
+	adjustable = TRUE
+
 /datum/component/modification/organ/input/damage/get_function_info()
 	var/inputs
 	for(var/input in accepted_inputs)
@@ -69,6 +86,31 @@
 	description += "\n<span style='color:green'>Damage types:</span> [inputs]"
 
 	return description
+
+/datum/component/modification/organ/input/damage/modify(obj/item/I, mob/living/user)
+	var/list/adjustable_qualities = list(
+			"brute" = BRUTE,
+			"burn" = BURN,
+			"toxin" = TOX,
+			"suffocation" = OXY,
+			"DNA degradation" = CLONE
+			//"pain" = HALLOSS
+		)
+
+	for(var/input in accepted_inputs)
+		var/list/possibilities = adjustable_qualities.Copy()
+
+		if(accepted_inputs.len > 1)
+			for(var/dmg_name in possibilities)
+				var/dmg_type = possibilities[dmg_name]
+				if(input != dmg_type && accepted_inputs.Find(dmg_type))
+					possibilities.Remove(dmg_name)
+
+		var/decision = input("Choose a damaging stimulus (current: [input])","Adjusting Organoid") as null|anything in possibilities
+		if(!decision)
+			continue
+
+		accepted_inputs[accepted_inputs.Find(input)] = adjustable_qualities[decision]
 
 /datum/component/modification/organ/input/damage/trigger(atom/movable/holder, mob/living/carbon/owner)
 	if(!holder || !owner)

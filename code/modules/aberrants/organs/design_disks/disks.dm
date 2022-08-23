@@ -19,20 +19,43 @@
 	disk_name = "Oh My Guts! DIY Organs"
 	designs = list(
 		/datum/design/organ/scaffold,
-		/datum/design/organ/aberrant_organ/teratoma/input,
+		/datum/design/organ/aberrant_organ/teratoma/input/reagents,
+		/datum/design/organ/aberrant_organ/teratoma/input/damage,
+		/datum/design/organ/aberrant_organ/teratoma/input/power_source,
 		/datum/design/organ/aberrant_organ/teratoma/process,
-		/datum/design/organ/aberrant_organ/teratoma/output
+		/datum/design/organ/aberrant_organ/teratoma/output/reagents_blood,
+		/datum/design/organ/aberrant_organ/teratoma/output/reagents_ingest,
+		/datum/design/organ/aberrant_organ/teratoma/output/chemical_effects,
+		/datum/design/organ/aberrant_organ/teratoma/output/stat_boost
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma
 	disk_name = "Oh My Guts! Bespoke Teratomas"
 	license = 10
 	designs = list(
-		/datum/design/organ/aberrant_organ/teratoma/input/uncommon,
-		/datum/design/organ/aberrant_organ/teratoma/input/rare = 2,
-		/datum/design/organ/aberrant_organ/teratoma/output/uncommon,
-		/datum/design/organ/aberrant_organ/teratoma/output/rare = 2,
-		/datum/design/organ/aberrant_organ/teratoma/special
+		/datum/design/organ/aberrant_organ/teratoma/input/reagents/uncommon,
+		/datum/design/organ/aberrant_organ/teratoma/input/damage/uncommon,
+		/datum/design/organ/aberrant_organ/teratoma/input/power_source/uncommon,
+		/datum/design/organ/aberrant_organ/teratoma/process/uncommon,
+		/datum/design/organ/aberrant_organ/teratoma/output/reagents_blood/uncommon,
+		/datum/design/organ/aberrant_organ/teratoma/output/reagents_ingest/uncommon,
+		/datum/design/organ/aberrant_organ/teratoma/output/chemical_effects/uncommon,
+		/datum/design/organ/aberrant_organ/teratoma/output/stat_boost/uncommon,
+		/datum/design/organ/aberrant_organ/teratoma/special/chemical_effect,
+		/datum/design/organ/aberrant_organ/teratoma/special/stat_boost
+	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma_rare
+	disk_name = "Oh My Guts! Artisanal Teratomas"
+	license = 10
+	designs = list(
+		/datum/design/organ/aberrant_organ/teratoma/input/reagents/rare,
+		/datum/design/organ/aberrant_organ/teratoma/input/damage/rare,
+		/datum/design/organ/aberrant_organ/teratoma/input/power_source/rare,
+		/datum/design/organ/aberrant_organ/teratoma/output/reagents_blood/rare,
+		/datum/design/organ/aberrant_organ/teratoma/output/reagents_ingest/rare,
+		/datum/design/organ/aberrant_organ/teratoma/output/chemical_effects/rare,
+		/datum/design/organ/aberrant_organ/teratoma/output/stat_boost/rare,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/omg/simple

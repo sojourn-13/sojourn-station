@@ -1200,8 +1200,8 @@ area/nadezhda/medical/medbaymeeting
 	name = "Medbay Upper Coridor"
 	icon_state = "erisgreen"
 
-/area/nadezhda/medical/organology
-	name = "Organology Lab"
+/area/nadezhda/medical/organ_lab
+	name = "Organ Laboratory"
 
 //Security
 
@@ -1457,6 +1457,7 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/rnd/research
 	name = "\improper Research and Development"
 	icon_state = "research"
+	flags = AREA_FLAG_CRITICAL
 
 /area/nadezhda/rnd/researchbathroom
 	name = "\improper Research Bathroom"
@@ -1489,6 +1490,7 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/rnd/robotics
 	name = "\improper Robotics Lab"
 	icon_state = "robotics"
+	flags = AREA_FLAG_CRITICAL
 
 /area/nadezhda/rnd/rdoffice
 	name = "\improper Soteria Expedition Overseer's Office"

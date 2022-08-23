@@ -5,8 +5,6 @@
 	desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner. It looks like it needs to be pried open."
 	var/horror_occupant = null
 	var/mob_count = 1
-
-	// Internal
 	var/preset_direction = FALSE
 
 /obj/machinery/sleeper/sarcophagus/Initialize()

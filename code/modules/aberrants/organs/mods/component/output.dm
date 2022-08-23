@@ -5,8 +5,13 @@
 	var/list/possible_outputs = list()
 
 
-/datum/component/modification/organ/output/reagents_blood
-/datum/component/modification/organ/output/reagents_blood/get_function_info()
+/datum/component/modification/organ/output/reagents
+	adjustable = TRUE
+	var/mode = CHEM_BLOOD
+
+/datum/component/modification/organ/output/reagents/get_function_info()
+	var/metabolism = mode == CHEM_BLOOD ? "bloodstream" : "stomach"
+	
 	var/outputs
 	for(var/output in possible_outputs)
 		var/datum/reagent/R = output
@@ -14,19 +19,41 @@
 
 	outputs = copytext(outputs, 1, length(outputs) - 1)
 
-	var/description = "<span style='color:blue'>Functional information (output):</span> produces reagents in bloodstream"
+	var/description = "<span style='color:blue'>Functional information (output):</span> produces reagents in [metabolism]"
 	description += "\n<span style='color:blue'>Reagents produced:</span> [outputs]"
 
 	return description
 
-/datum/component/modification/organ/output/reagents_blood/trigger(atom/movable/holder, mob/living/carbon/owner, list/input)
-	if(!holder || !owner || !input)
+/datum/component/modification/organ/output/reagents/modify(obj/item/I, mob/living/user)
+	var/list/adjustable_qualities = list(
+		"stomach" = CHEM_INGEST,
+		"bloodstream" = CHEM_BLOOD
+	)
+
+	var/decision = input("Choose a metabolic target","Adjusting Organoid") as null|anything in adjustable_qualities
+	if(!decision)
+		return TRUE
+
+	mode = adjustable_qualities[decision]
+
+	if(istype(parent, /obj/item/modification/organ))
+		var/obj/item/modification/organ/O = parent
+		if(mode == CHEM_INGEST)
+			O.name = "gastric organoid"
+			O.desc = "Functional tissue of one or more organs in graftable form. Produces reagents in the stomach."
+		else if(mode == CHEM_BLOOD)
+			O.name = "hepatic organoid"
+			O.desc = "Functional tissue of one or more organs in graftable form. Secretes reagents into the bloodstream."
+
+/datum/component/modification/organ/output/reagents/trigger(atom/movable/holder, mob/living/carbon/owner, list/input)
+	if(!holder || !owner || !input || !mode)
 		return
 	if(!istype(holder, /obj/item/organ/internal/scaffold))
 		return
 
 	var/obj/item/organ/internal/scaffold/S = holder
 	var/organ_multiplier = (S.max_damage - S.damage) / S.max_damage
+	var/datum/reagents/metabolism/RM = owner.get_metabolism_handler(mode)
 
 	if(input.len && input.len <= possible_outputs.len)
 		for(var/i in input)
@@ -36,43 +63,7 @@
 				var/input_multiplier = input[i]
 				var/datum/reagent/output = possible_outputs[index]
 				var/amount_to_add = possible_outputs[output] * organ_multiplier * input_multiplier
-				owner.bloodstr.add_reagent(initial(output.id), amount_to_add)
-	
-		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
-
-
-/datum/component/modification/organ/output/reagents_ingest
-/datum/component/modification/organ/output/reagents_ingest/get_function_info()
-	var/outputs
-	for(var/output in possible_outputs)
-		var/datum/reagent/R = output
-		outputs += initial(R.name) + " ([possible_outputs[output]]), "
-
-	outputs = copytext(outputs, 1, length(outputs) - 1)
-
-	var/description = "<span style='color:blue'>Functional information (output):</span> produces reagents in stomach"
-	description += "\n<span style='color:blue'>Reagents produced:</span> [outputs]"
-
-	return description
-
-/datum/component/modification/organ/output/reagents_ingest/trigger(atom/movable/holder, mob/living/carbon/owner, list/input)
-	if(!holder || !owner || !input)
-		return
-	if(!istype(holder, /obj/item/organ/internal/scaffold))
-		return
-
-	var/obj/item/organ/internal/scaffold/S = holder
-	var/organ_multiplier = (S.max_damage - S.damage) / S.max_damage
-
-	if(input.len)
-		for(var/i in input)
-			var/index = input.Find(i)
-			var/is_input_valid = input[i] ? TRUE : FALSE
-			if(is_input_valid && index <= possible_outputs.len)
-				var/input_multiplier = input[i]
-				var/datum/reagent/output = possible_outputs[index]
-				var/amount_to_add = possible_outputs[output] * organ_multiplier * input_multiplier
-				owner.ingested.add_reagent(initial(output.id), amount_to_add)
+				RM.add_reagent(initial(output.id), amount_to_add)
 	
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
 

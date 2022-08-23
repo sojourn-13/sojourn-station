@@ -92,7 +92,7 @@
 		"Kegs" = list(
 			/obj/structure/reagent_dispensers/beerkeg/cargo,
 			/obj/structure/reagent_dispensers/meadkeg/cargo,
-			/obj/structure/reagent_dispensers/premiumwhiske/cargo
+			/obj/structure/reagent_dispensers/premiumwhiskey/cargo
 		)
 	)
 
@@ -117,10 +117,10 @@
 /obj/structure/reagent_dispensers/meadkeg/cargo/New()
 	price_tag = 900
 
-/obj/structure/reagent_dispensers/premiumwhiske/cargo
+/obj/structure/reagent_dispensers/premiumwhiskey/cargo
 	price_tag = 5000
 
-/obj/structure/reagent_dispensers/premiumwhiske/cargo/New()
+/obj/structure/reagent_dispensers/premiumwhiskey/cargo/New()
 	price_tag = 500
 
 
