@@ -27,7 +27,7 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 			Add a grown item to the recipe. The item is inserted in the container.
 			The product inherits reagents if able, and its quality scales with the plant's potency.
 			<REQUIRED_ARGS>:
-				plantname - the seed id of the reagent being added
+				plantname - the NAME of the SEED DATUM of the plant being added.
 			Example: list(CWJ_ADD_PRODUCE, "banana")
 
 		CWJ_USE_TOOL
@@ -147,7 +147,7 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 
 		//Add some mushrooms to give it some zest. Only one kind is allowed!
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_PRODUCE_OPTIONAL, "chanterelle", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "mushrooms", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "reishi", qmod=0.4, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "amanita", qmod=0.4, reagent_skip=TRUE),
 		list(CWJ_ADD_PRODUCE_OPTIONAL, "plumphelmet", qmod=0.4, reagent_skip=TRUE),
