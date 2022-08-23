@@ -1,7 +1,7 @@
-/datum/computer_file/program/trade/catalog
-	filename = "trade_catalog"
-	filedesc = "LSS\'s Trade Catalog and Order Requests"
-	nanomodule_path = /datum/nano_module/program/trade/catalog
+/datum/computer_file/program/trade/order
+	filename = "trade_orders"
+	filedesc = "LSS\'s Trade Order Requests"
+	nanomodule_path = /datum/nano_module/program/trade/order
 	extended_desc = "Electronic handbook containing inventory information about discovered trade beacons. Trade orders can be requested using this."
 	size = 2
 	available_on_ntnet = TRUE
@@ -10,5 +10,5 @@
 
 	program_type = "ordering"	// master, slave, ordering
 
-/datum/nano_module/program/trade/catalog
-	name = "Trade Catalog and Order Requests"
+/datum/nano_module/program/trade/order
+	name = "Trade Beacon Order Requests"

@@ -121,14 +121,10 @@
 		if(!acc_num)
 			return
 
-		var/acc_pin = input("Enter PIN", "Account linking") as num|null
-		if(!acc_pin)
-			return
+		var/datum/money_account/A = get_account(acc_num)
 
-		var/card_check = computer?.card_slot?.stored_card?.associated_account_number == acc_num
-		var/datum/money_account/A = attempt_account_access(acc_num, acc_pin, card_check ? 2 : 1, TRUE)
 		if(!A)
-			to_chat(usr, SPAN_WARNING("Unable to link account: access denied."))
+			to_chat(usr, SPAN_WARNING("ERROR: Account not found."))
 			return
 
 		account = A
@@ -188,10 +184,12 @@
 			current_log = null
 
 	if(!is_all_access)
+		var/list/sanitized_log = list()
 		for(var/log_entry in current_log)
 			var/list/log_data = log_entry
-			if(log_data["ordering_acct"] != account)
-				current_log -= log_entry
+			if(log_data["ordering_acct"] == PRG.account.get_name())
+				sanitized_log |= list(log_data)
+		current_log = sanitized_log
 
 	var/logs_per_page = 10
 	var/logs_to_display = logs_per_page
