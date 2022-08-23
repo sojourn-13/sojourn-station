@@ -66,7 +66,7 @@
 	name = "underplating"
 	result = /obj/effect/flooring_type_spawner
 	time = WORKTIME_SLOW
-	flags = null
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
 	steps = list(
 		list(CRAFT_MATERIAL, 15, MATERIAL_STEEL)
 	)
@@ -76,7 +76,7 @@
 	name = "catwalk"
 	result = /obj/structure/catwalk
 	time = WORKTIME_FAST
-	flags = null
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
 	steps = list(
 		list(CRAFT_MATERIAL, 8, MATERIAL_STEEL)
 	)
@@ -86,7 +86,7 @@
 	name = "lattice"
 	result = /obj/structure/lattice
 	time = WORKTIME_FAST
-	flags = null
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
 	steps = list(
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
 	)

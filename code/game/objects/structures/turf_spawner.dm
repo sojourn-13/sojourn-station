@@ -26,7 +26,8 @@
 
 /obj/effect/flooring_type_spawner/proc/handle_flooring_spawn()
 	var/turf/Tsrc = get_turf(src)
-	Tsrc.ChangeTurf(change_floor_to_path)
+	if(Tsrc)
+		Tsrc.ChangeTurf(change_floor_to_path)
 	return
 
 /obj/effect/flooring_type_spawner/proc/activate()
