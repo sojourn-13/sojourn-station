@@ -278,7 +278,7 @@
 		return
 	
 	//Robotic body parts conduct EMPs way better than flesh
-	if(BP_IS_ROBOTIC(parent))
+	if(parent && BP_IS_ROBOTIC(parent))
 		switch (severity)
 			if(1)
 				take_damage(40) //Deals half the organs damage
