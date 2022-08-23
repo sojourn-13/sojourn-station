@@ -47735,7 +47735,7 @@
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/chapel)
 "jkb" = (
-/obj/machinery/camera/network/cargo{
+/obj/machinery/camera/network/security{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -49042,7 +49042,8 @@
 "jxh" = (
 /obj/structure/table/glass,
 /obj/machinery/photocopier/faxmachine{
-	pixel_y = 8
+	pixel_y = 8;
+	department = "Medical Lobby Desk"
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/medical/reception)
@@ -51896,6 +51897,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/item/device/radio/intercom{
+	dir = 2;
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
@@ -56162,7 +56167,7 @@
 /area/nadezhda/outside/forest)
 "kMm" = (
 /obj/machinery/photocopier/faxmachine{
-	department = "Steward's Office"
+	department = "Premier's Office"
 	},
 /obj/machinery/requests_console{
 	announcementConsole = 1;
@@ -57264,12 +57269,6 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "kWp" = (
 /obj/machinery/vending/props,
-/obj/machinery/alarm{
-	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 26;
-	pixel_y = 0
-	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/clownoffice)
 "kWq" = (
@@ -76877,7 +76876,7 @@
 "oEd" = (
 /obj/structure/table/woodentable,
 /obj/machinery/photocopier/faxmachine{
-	department = "Command Center Office"
+	department = "Command Meeting Room Office"
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/meeting_room)
@@ -90391,7 +90390,7 @@
 "rhF" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/photocopier/faxmachine{
-	department = "Blackshield Commander's Office"
+	department = "Warrent Officer's Office"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals10,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -100848,18 +100847,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/surgery)
-"ths" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/item/device/radio/intercom{
-	dir = 2;
-	pixel_y = 24
-	},
-/turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/sechall)
 "thu" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -110543,7 +110530,9 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "vab" = (
 /obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine,
+/obj/machinery/photocopier/faxmachine{
+	department = "Public Office"
+	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/security/vacantoffice2)
 "val" = (
@@ -111681,7 +111670,7 @@
 "vmq" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
-	department = "Command Center Office"
+	department = "Bridge Office"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -136704,7 +136693,7 @@ dTa
 aZK
 rzW
 ygi
-ths
+lzI
 jkb
 puh
 tmw
@@ -151499,9 +151488,9 @@ sTA
 glv
 glv
 glv
-jQF
-jQF
-jQF
+nYT
+nYT
+nYT
 trH
 wnd
 wpA
