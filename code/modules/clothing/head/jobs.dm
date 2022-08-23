@@ -65,6 +65,60 @@
 	desc = "An easily colored, plain beret. Classy!"
 	icon_state = "beret_whiterim"
 
+//Sprites by Michiyamenotehifunana and Occulist
+/obj/item/clothing/head/beret/fashion
+	name = "tan beret"
+	desc = "A fashionable and colorful beret."
+	icon_state = "beret-tan"
+
+/obj/item/clothing/head/beret/fashion/grey
+	name = "grey beret"
+	icon_state = "beret-grey"
+
+/obj/item/clothing/head/beret/fashion/pink
+	name = "pink beret"
+	icon_state = "beret-pink"
+
+/obj/item/clothing/head/beret/fashion/red
+	name = "red beret"
+	icon_state = "beret-red"
+
+/obj/item/clothing/head/beret/fashion/brown
+	name = "brown beret"
+	icon_state = "beret-brown"
+
+/obj/item/clothing/head/beret/fashion/copper
+	name = "copper beret"
+	icon_state = "beret-copper"
+
+/obj/item/clothing/head/beret/fashion/orange
+	name = "orange beret"
+	icon_state = "beret-orange"
+
+/obj/item/clothing/head/beret/fashion/yellow
+	name = "yellow beret"
+	icon_state = "beret-yellow"
+
+/obj/item/clothing/head/beret/fashion/lime
+	name = "lime beret"
+	icon_state = "beret-lime"
+
+/obj/item/clothing/head/beret/fashion/cyan
+	name = "cyan beret"
+	icon_state = "beret-cyan"
+
+/obj/item/clothing/head/beret/fashion/ice
+	name = "ice beret"
+	icon_state = "beret-ice"
+
+/obj/item/clothing/head/beret/fashion/blue
+	name = "blue beret"
+	icon_state = "beret-blue"
+
+/obj/item/clothing/head/beret/fashion/purple
+	name = "purple beret"
+	icon_state = "beret-purple"
+//End of sprites by Michiyamenotehifunana and Occulist
 //Security
 /obj/item/clothing/head/rank/ironhammer
 	name = "marshal beret"
