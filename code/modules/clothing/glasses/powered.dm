@@ -10,10 +10,11 @@
 	var/tick_cost = 1
 	cell = null
 	suitable_cell = /obj/item/cell/small
+	var/spawn_with_cell = TRUE
 
 /obj/item/clothing/glasses/powered/Initialize()
 	. = ..()
-	if(!cell && suitable_cell)
+	if(!cell && suitable_cell && spawn_with_cell)
 		cell = new /obj/item/cell/small(src)
 
 /obj/item/clothing/glasses/powered/Process()
@@ -93,4 +94,16 @@
 	. = ..()
 	screenOverlay = global_hud.nvg
 
+/obj/item/clothing/glasses/powered/night/guild
+	name = "converted vision goggles"
+	desc = "Converted from boring mesons these refined Guild designs sports the benefits form the mesons power saving making these last 10% longer then other NV goggles on the market!"
+	darkness_view = 7
+	see_invisible = SEE_INVISIBLE_NOLIGHTING
+	origin_tech = list(TECH_MAGNET = 3)
+	price_tag = 350
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1, MATERIAL_PLASTIC = 2, MATERIAL_URANIUM = 1)
+	tick_cost = 0.4 //10% more so you have a reason to go to the guild and get these
 
+
+/obj/item/clothing/glasses/powered/night/guild/crafted
+	spawn_with_cell = FALSE
