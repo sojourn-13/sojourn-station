@@ -61,3 +61,33 @@
 		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL)
 	)
 	related_stats = list(STAT_MEC)
+
+/datum/craft_recipe/wall/underplating
+	name = "underplating"
+	result = /turf/simulated/floor/plating/under
+	time = WORKTIME_SLOW
+	flags = null
+	steps = list(
+		list(CRAFT_MATERIAL, 15, MATERIAL_STEEL)
+	)
+	related_stats = list(STAT_MEC)
+
+/datum/craft_recipe/wall/catwalk
+	name = "catwalk"
+	result = /obj/structure/catwalk
+	time = WORKTIME_FAST
+	flags = null
+	steps = list(
+		list(CRAFT_MATERIAL, 8, MATERIAL_STEEL)
+	)
+	related_stats = list(STAT_MEC)
+
+/datum/craft_recipe/wall/lattice
+	name = "lattice"
+	result = /obj/structure/lattice
+	time = WORKTIME_FAST
+	flags = null
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
+	)
+	related_stats = list(STAT_MEC)

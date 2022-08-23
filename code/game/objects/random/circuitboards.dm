@@ -37,7 +37,7 @@
 				/obj/item/circuitboard/powermonitor = 2,
 				/obj/item/circuitboard/repair_station = 2,
 				/obj/item/circuitboard/protolathe = 2,
-				/obj/item/circuitboard/rdconsole = 2,
+				/obj/item/circuitboard/rdconsole_unlicensed = 2,
 				/obj/item/circuitboard/rdserver = 2,
 				/obj/item/circuitboard/rdservercontrol = 2,
 				/obj/item/circuitboard/recharge_station = 2,

@@ -1,3 +1,7 @@
+/obj/item/circuitboard/rdconsole_unlicensed
+	build_name = "unlicensed R&D control console"
+	build_path = /obj/machinery/computer/rdconsole/unlicensed
+
 /obj/item/circuitboard/rdconsole
 	build_name = "R&D control console"
 	build_path = /obj/machinery/computer/rdconsole/core
