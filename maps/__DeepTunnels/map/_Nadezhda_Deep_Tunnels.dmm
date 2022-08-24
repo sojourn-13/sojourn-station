@@ -728,9 +728,9 @@
 "ci" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/shieldwallgen/ameridian{
-	active = 1;
+	active = 0;
 	anchored = 1;
-	state = 1;
+	state = 0;
 	storedpower = 50000
 	},
 /obj/structure/cable{
@@ -749,9 +749,9 @@
 /area/mine/hallway)
 "ck" = (
 /obj/machinery/shieldwallgen/ameridian{
-	active = 1;
+	active = 0;
 	anchored = 1;
-	state = 1;
+	state = 0;
 	storedpower = 50000
 	},
 /obj/structure/cable{
@@ -1417,19 +1417,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid,
 /area/mine/hallway)
-"dX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/ameridian_crystal{
-	growth = 1
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"dY" = (
-/obj/structure/ameridian_crystal{
-	growth = 1
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "dZ" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -2033,13 +2020,6 @@
 	},
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled/steel,
-/area/mine/hallway)
-"fs" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/ameridian_crystal{
-	growth = 1
-	},
-/turf/simulated/floor/asteroid,
 /area/mine/hallway)
 "ft" = (
 /obj/structure/sign/warningnew/radiation,
@@ -9323,9 +9303,9 @@
 	dir = 1
 	},
 /obj/machinery/shieldwallgen/ameridian{
-	active = 1;
+	active = 0;
 	anchored = 1;
-	state = 1;
+	state = 0;
 	storedpower = 50000
 	},
 /obj/structure/cable,
@@ -9936,9 +9916,9 @@
 "ZM" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/machinery/shieldwallgen/ameridian{
-	active = 1;
+	active = 0;
 	anchored = 1;
-	state = 1;
+	state = 0;
 	storedpower = 50000
 	},
 /obj/structure/cable{
@@ -39287,10 +39267,10 @@ by
 bj
 wn
 cj
-dY
-dY
-dX
-fs
+aC
+aC
+cW
+ar
 JK
 wn
 fN
@@ -39489,10 +39469,10 @@ Mm
 bj
 ai
 RN
-dY
-dY
-dY
-dY
+aC
+aC
+aC
+aC
 JK
 ai
 fO
@@ -39691,10 +39671,10 @@ bz
 by
 wn
 cj
-dY
-dY
-dY
-fs
+aC
+aC
+aC
+ar
 JK
 wn
 fP
@@ -39893,10 +39873,10 @@ bj
 ch
 wn
 cj
-dY
-dY
-dY
-dY
+aC
+aC
+aC
+aC
 eS
 wn
 bX
@@ -40095,10 +40075,10 @@ bA
 bS
 wn
 cj
-dY
-fs
-dY
-dX
+aC
+ar
+aC
+cW
 JK
 wn
 bX
