@@ -5,7 +5,7 @@
 	process_mod_path = /obj/item/modification/organ/internal/process/boost
 	output_mod_path = /obj/item/modification/organ/internal/output/chemical_effects
 	specific_input_type_pool = list(/datum/reagent/toxin)	// Should let these scrub ANY toxin
-	output_pool = ALL_USABLE_POSITIVE_CHEM_EFFECTS
+	output_pool = ALL_HORMONES
 	output_info = list(NOT_USED)
 
 /obj/item/organ/internal/scaffold/aberrant/scrub_toxin/New()
@@ -22,7 +22,7 @@
 
 /obj/item/organ/internal/scaffold/aberrant/scrub_toxin/blood
 	name = "filtration node"
-	desc = "A finely engineered organ. Scrubs toxins from the blood stream."
+	desc = "A finely engineered organ. Scrubs toxins from the bloodstream."
 	input_mode = CHEM_BLOOD
 
 /obj/item/organ/internal/scaffold/aberrant/scrub_toxin/ingest
@@ -64,16 +64,16 @@
 
 /obj/item/organ/internal/scaffold/aberrant/damage_response
 	name = "endocrine gland"
-	desc = "A finely engineered organ. Secretes chemicals in response to pain or injury."
+	desc = "A finely engineered organ. Secretes hormones in response to pain or injury."
 	price_tag = 200
 	use_generated_name = FALSE
 	input_mod_path = /obj/item/modification/organ/internal/input/damage
 	process_mod_path = /obj/item/modification/organ/internal/process/boost
-	output_mod_path = /obj/item/modification/organ/internal/output/reagents_blood
+	output_mod_path = /obj/item/modification/organ/internal/output/chemical_effects
 	specific_input_type_pool = ALL_USABLE_DAMAGE_TYPES
 	input_mode = NOT_USED
-	output_pool = REAGENTS_MEDICINE_SIMPLE
-	output_info = list(VERY_LOW_OUTPUT)
+	output_pool = ALL_HORMONES
+	output_info = list(NOT_USED)
 
 /obj/item/organ/internal/scaffold/aberrant/damage_response/New()
 	..()

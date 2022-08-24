@@ -33,7 +33,6 @@
 
 /datum/design/organ/aberrant_organ
 	category = "Aberrant Organs"
-	materials = list(MATERIAL_BIOMATTER = 20)	// Organ plus 3 mods
 
 /datum/design/organ/aberrant_organ/scrub_toxin_blood
 	build_path = /obj/item/organ/internal/scaffold/aberrant/scrub_toxin/blood
@@ -132,7 +131,6 @@
 // Teratomas
 /datum/design/organ/aberrant_organ/teratoma
 	category = "Teratomas"
-	materials = list(MATERIAL_BIOMATTER = 10)	// Organ plus mod
 
 
 /datum/design/organ/aberrant_organ/teratoma/input
@@ -173,8 +171,14 @@
 	category = "Teratoma - Processes"
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/process
 
-/datum/design/organ/aberrant_organ/teratoma/process/uncommon
-	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/process/uncommon
+/datum/design/organ/aberrant_organ/teratoma/process/map
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/process/map
+
+/datum/design/organ/aberrant_organ/teratoma/process/condense
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/process/condense
+
+/datum/design/organ/aberrant_organ/teratoma/process/boost
+	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/process/boost
 
 
 /datum/design/organ/aberrant_organ/teratoma/output

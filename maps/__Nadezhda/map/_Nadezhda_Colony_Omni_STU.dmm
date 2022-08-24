@@ -49042,8 +49042,8 @@
 "jxh" = (
 /obj/structure/table/glass,
 /obj/machinery/photocopier/faxmachine{
-	pixel_y = 8;
-	department = "Medical Lobby Desk"
+	department = "Medical Lobby Desk";
+	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/medical/reception)
@@ -52408,8 +52408,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/vault{
-	req_access = list(999999999999);
-	locked = 1
+	locked = 1;
+	req_access = list(999999999999)
 	},
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
@@ -54669,9 +54669,9 @@
 /obj/machinery/bioprinter,
 /obj/item/storage/freezer,
 /obj/structure/sign/department/operational{
-	pixel_x = 27;
+	desc = "This sign indicates the area is an Operating Theatre for surgeries of all kinds.";
 	name = "Surgery";
-	desc = "This sign indicates the area is an Operating Theatre for surgeries of all kinds."
+	pixel_x = 27
 	},
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/surgery)
@@ -63244,8 +63244,8 @@
 	pixel_x = 0
 	},
 /obj/structure/sign/levels/stairsdown{
-	pixel_y = -30;
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = -30
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/absolutism/storage)
@@ -89006,7 +89006,7 @@
 /area/nadezhda/hallway/surface/section1)
 "qUE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/autolathe/organ_fabricator,
+/obj/machinery/autolathe/organ_fabricator/loaded,
 /obj/machinery/button/remote/blast_door{
 	id = "organ_shutter";
 	name = "privacy shutter control";
@@ -107906,8 +107906,8 @@
 /area/nadezhda/command/bridgebar)
 "uBv" = (
 /obj/machinery/door/airlock/vault{
-	req_access = list(999999999999);
-	locked = 1
+	locked = 1;
+	req_access = list(999999999999)
 	},
 /obj/structure/cable/cyan{
 	d1 = 4;

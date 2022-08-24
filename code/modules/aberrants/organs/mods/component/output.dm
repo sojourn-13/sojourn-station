@@ -3,7 +3,7 @@
 	trigger_signal = COMSIG_ABERRANT_OUTPUT
 
 	var/list/possible_outputs = list()
-
+	var/list/output_qualities = list()
 
 /datum/component/modification/organ/output/reagents
 	adjustable = TRUE
@@ -25,25 +25,55 @@
 	return description
 
 /datum/component/modification/organ/output/reagents/modify(obj/item/I, mob/living/user)
-	var/list/adjustable_qualities = list(
-		"stomach" = CHEM_INGEST,
-		"bloodstream" = CHEM_BLOOD
-	)
+	if(!output_qualities.len)
+		return
 
-	var/decision = input("Choose a metabolic target","Adjusting Organoid") as null|anything in adjustable_qualities
-	if(!decision)
-		return TRUE
+	var/list/can_adjust = list("metabolic target", "reagent")
 
-	mode = adjustable_qualities[decision]
+	var/decision_adjust = input("What do you want to adjust?","Adjusting Organoid") as null|anything in can_adjust
+	if(!decision_adjust)
+		return
 
-	if(istype(parent, /obj/item/modification/organ))
-		var/obj/item/modification/organ/O = parent
-		if(mode == CHEM_INGEST)
-			O.name = "gastric organoid"
-			O.desc = "Functional tissue of one or more organs in graftable form. Produces reagents in the stomach."
-		else if(mode == CHEM_BLOOD)
-			O.name = "hepatic organoid"
-			O.desc = "Functional tissue of one or more organs in graftable form. Secretes reagents into the bloodstream."
+	var/list/adjustable_qualities = list()
+
+	if(decision_adjust == "metabolic target")
+		adjustable_qualities = list(
+			"stomach" = CHEM_INGEST,
+			"bloodstream" = CHEM_BLOOD
+		)
+
+		var/decision = input("Choose a metabolic target","Adjusting Organoid") as null|anything in adjustable_qualities
+		if(!decision)
+			return
+
+		mode = adjustable_qualities[decision]
+
+		if(istype(parent, /obj/item/modification/organ))
+			var/obj/item/modification/organ/O = parent
+			if(mode == CHEM_INGEST)
+				O.name = "gastric organoid"
+				O.desc = "Functional tissue of one or more organs in graftable form. Produces reagents in the stomach."
+			else if(mode == CHEM_BLOOD)
+				O.name = "hepatic organoid"
+				O.desc = "Functional tissue of one or more organs in graftable form. Secretes reagents into the bloodstream."
+
+	if(decision_adjust == "reagent")
+		for(var/output in possible_outputs)
+			var/list/possibilities = output_qualities.Copy()
+
+			if(possible_outputs.len > 1)
+				for(var/effect_name in possibilities)
+					var/effect_type = possibilities[effect_name]
+					if(output != effect_type && possible_outputs.Find(effect_type))
+						possibilities.Remove(effect_name)
+
+			var/decision = input("Choose a reagent:","Adjusting Organoid") as null|anything in possibilities
+			if(!decision)
+				return
+
+			var/output_amount = possible_outputs[output]
+			possible_outputs[possible_outputs.Find(output)] = output_qualities[decision]
+			possible_outputs[output_qualities[decision]] = output_amount
 
 /datum/component/modification/organ/output/reagents/trigger(atom/movable/holder, mob/living/carbon/owner, list/input)
 	if(!holder || !owner || !input || !mode)
@@ -54,6 +84,7 @@
 	var/obj/item/organ/internal/scaffold/S = holder
 	var/organ_multiplier = (S.max_damage - S.damage) / S.max_damage
 	var/datum/reagents/metabolism/RM = owner.get_metabolism_handler(mode)
+	var/triggered = FALSE
 
 	if(input.len && input.len <= possible_outputs.len)
 		for(var/i in input)
@@ -64,38 +95,66 @@
 				var/datum/reagent/output = possible_outputs[index]
 				var/amount_to_add = possible_outputs[output] * organ_multiplier * input_multiplier
 				RM.add_reagent(initial(output.id), amount_to_add)
+				triggered = TRUE
 	
+	if(triggered)
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
+		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_SECONDARY, holder, owner)
 
 
 /datum/component/modification/organ/output/chemical_effects	// More organ-like than producing reagents
+	adjustable = TRUE
+
 /datum/component/modification/organ/output/chemical_effects/get_function_info()
 	var/outputs
 	for(var/output in possible_outputs)
 		var/effect
 		switch(output)
-			if(CE_BLOODRESTORE)
+			if(/datum/reagent/hormone/bloodrestore)
 				effect = "blood restoration"
-			if(CE_BLOODCLOT)
+			if(/datum/reagent/hormone/bloodclot)
 				effect = "blood clotting"
-			if(CE_PAINKILLER)
+			if(/datum/reagent/hormone/painkiller)
 				effect = "painkiller"
-			if(CE_ANTITOX)
+			if(/datum/reagent/hormone/antitox)
 				effect = "anti-toxin"
-			if(CE_TOXIN)
-				effect = "toxin"
-			if(CE_SPEEDBOOST)
+			if(/datum/reagent/hormone/oxygenation)
+				effect = "oxygenation"
+			if(/datum/reagent/hormone/speedboost)
 				effect = "augmented agility"
 			else
 				effect = "none"
-		outputs += effect + " ([possible_outputs[output]]), "
+		outputs += "[effect], "
 
 	outputs = copytext(outputs, 1, length(outputs) - 1)
 
-	var/description = "<span style='color:blue'>Functional information (output):</span> produces chemical effects in the body"
+	var/description = "<span style='color:blue'>Functional information (output):</span> secretes hormones"
 	description += "\n<span style='color:blue'>Effects produced:</span> [outputs]"
 
 	return description
+
+/datum/component/modification/organ/output/chemical_effects/modify(obj/item/I, mob/living/user)
+	if(!output_qualities.len)
+		return
+
+	for(var/output in possible_outputs)
+		var/list/possibilities = output_qualities.Copy()
+
+		if(possible_outputs.len > 1)
+			for(var/effect_name in possibilities)
+				var/effect_type = possibilities[effect_name]
+				if(output != effect_type && possible_outputs.Find(effect_type))
+					possibilities.Remove(effect_name)
+
+		var/decision = input("Choose a hormone effect (current: [output])","Adjusting Organoid") as null|anything in possibilities
+		if(!decision)
+			continue
+
+		var/new_output = output_qualities[decision]
+		var/amount = possible_outputs[output]
+
+		possible_outputs[possible_outputs.Find(output)] = new_output
+		possible_outputs[new_output] = amount
 
 /datum/component/modification/organ/output/chemical_effects/trigger(atom/movable/holder, mob/living/carbon/owner, list/input)
 	if(!holder || !owner || !input)
@@ -104,22 +163,30 @@
 		return
 
 	var/obj/item/organ/internal/scaffold/S = holder
-	var/organ_multiplier = (S.max_damage - S.damage) / S.max_damage
+	var/organ_multiplier = ((S.max_damage - S.damage) / S.max_damage) * (S.aberrant_cooldown_time / (2 SECONDS))	// Life() is called every 2 seconds
+	var/datum/reagents/metabolism/RM = owner.get_metabolism_handler(CHEM_BLOOD)
+	var/triggered = FALSE
 
-	if(input.len)
+	if(input.len && input.len <= possible_outputs.len)
 		for(var/i in input)
 			var/index = input.Find(i)
 			var/is_input_valid = input[i] ? TRUE : FALSE
-			if(is_input_valid && index <= possible_outputs.len)
+			if(is_input_valid)
 				var/input_multiplier = input[i]
-				var/effect = possible_outputs[index]
-				var/magnitude = possible_outputs[effect] * organ_multiplier * input_multiplier
-				owner.add_chemical_effect(effect, magnitude)
+				var/datum/reagent/output = possible_outputs[index]
+				var/amount_to_add = initial(output.metabolism) * organ_multiplier * input_multiplier
+				RM.remove_reagent(initial(output.id), 1000)	// Soj seems to have issues with chems processing slower than organs
+				RM.add_reagent(initial(output.id), amount_to_add)
+				triggered = TRUE
 	
+	if(triggered)
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
+		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_SECONDARY, holder, owner)
 
 
 /datum/component/modification/organ/output/stat_boost
+	adjustable = TRUE
+
 /datum/component/modification/organ/output/stat_boost/get_function_info()
 	var/outputs
 	for(var/stat in possible_outputs)
@@ -132,6 +199,25 @@
 
 	return description
 
+/datum/component/modification/organ/output/stat_boost/modify(obj/item/I, mob/living/user)
+	if(!output_qualities.len)
+		return
+
+	for(var/output in possible_outputs)
+		var/list/possibilities = output_qualities.Copy()
+		var/output_amount = possible_outputs[output]
+		if(possible_outputs.len > 1)
+			for(var/stat in possibilities)
+				if(output != stat && possible_outputs.Find(stat))
+					possibilities.Remove(stat)
+
+		var/decision = input("Choose an affinity (current: [output])","Adjusting Organoid") as null|anything in possibilities
+		if(!decision)
+			continue
+
+		possible_outputs[possible_outputs.Find(output)] = decision
+		possible_outputs[decision] = output_amount
+
 /datum/component/modification/organ/output/stat_boost/trigger(atom/movable/holder, mob/living/carbon/owner, list/input)
 	if(!holder || !owner || !input)
 		return
@@ -141,6 +227,7 @@
 	var/obj/item/organ/internal/scaffold/S = holder
 	var/organ_multiplier = (S.max_damage - S.damage) / S.max_damage
 	var/delay = S.aberrant_cooldown_time + 2 SECONDS
+	var/triggered = FALSE
 
 	if(input.len && iscarbon(owner))
 		for(var/i in input)
@@ -150,9 +237,12 @@
 				var/input_multiplier = input[i]
 				var/stat = possible_outputs[index]
 				var/magnitude = possible_outputs[stat] * organ_multiplier * input_multiplier
-				owner.stats.addTempStat(stat, magnitude, delay, "[holder]")
+				owner.stats.addTempStat(stat, magnitude, delay, "\ref[parent]")
+				triggered = TRUE
 	
+	if(triggered)
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
+		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_SECONDARY, holder, owner)
 
 
 /datum/component/modification/organ/output/damaging_insight_gain
@@ -168,6 +258,7 @@
 
 	var/obj/item/organ/internal/scaffold/S = holder
 	var/organ_multiplier = (S.max_damage - S.damage) / S.max_damage
+	var/triggered = FALSE
 
 	if(input.len && ishuman(owner))
 		for(var/i in input)
@@ -181,8 +272,11 @@
 				H.apply_damage(damage_amount, damage_type)
 				H.adjustBrainLoss(damage_amount)		// Added brainloss because we're gaining insight and most damage is trivial anyway
 				H.sanity.give_insight(damage_amount)
-				LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
-				return TRUE
+				triggered = TRUE
+				
+	if(triggered)			
+		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
+		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_SECONDARY, holder, owner)
 
 /datum/component/modification/organ/output/activate_organ_functions
 	var/list/active_organ_efficiency_mod = list()
@@ -220,7 +314,6 @@
 
 	var/obj/item/organ/internal/scaffold/S = holder
 	var/organ_multiplier = (S.max_damage - S.damage) / S.max_damage
-
 	var/mob/living/carbon/human/H = owner
 
 	if(!are_values_stored)
@@ -255,6 +348,7 @@
 
 				holder.refresh_upgrades()
 				LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
+				LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_SECONDARY, holder, owner)
 				return TRUE
 	
 	organ_efficiency_mod = old_organ_efficiency_mod

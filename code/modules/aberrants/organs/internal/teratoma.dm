@@ -20,9 +20,7 @@
 			input_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/input))
 	else if(process_mod_path)
 		if(!ispath(process_mod_path))
-			process_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/process) - /obj/item/modification/organ/internal/process/shuffle)
-		else
-			process_mod_path = pick(subtypesof(process_mod_path))		// Janky, but there aren't enough processing effects to matter yet
+			process_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/process))
 	else if(output_mod_path)
 		if(!ispath(output_mod_path))
 			output_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/output) - /obj/item/modification/organ/internal/output/damaging_insight_gain\
@@ -46,41 +44,41 @@
 			input_mode = NOT_USED
 
 		if(/obj/item/modification/organ/internal/input/reagents)
-			specific_input_type_pool += REAGENTS_DISPENSER + REAGENTS_TOXIN + REAGENTS_ROACH + REAGENTS_SPIDER
+			var/list/possible_reagent_classes = list()
+			possible_reagent_classes |= list(REAGENTS_TOXIN, REAGENTS_ROACH, REAGENTS_SPIDER)
 			input_mode = pick(CHEM_TOUCH, CHEM_INGEST, CHEM_BLOOD)
 			if(input_mode == CHEM_INGEST)
-				specific_input_type_pool += REAGENTS_EDIBLE + REAGENTS_ALCOHOL
+				possible_reagent_classes |= list(REAGENTS_EDIBLE, REAGENTS_ALCOHOL)
 			if(input_mode == CHEM_BLOOD)
-				specific_input_type_pool += REAGENTS_MEDICINE_BASIC + REAGENTS_DRUGS + REAGENTS_STIMULANT_SIMPLE
-
-	switch(process_mod_path)
-		if(/obj/item/modification/organ/internal/process/shuffle)
-			process_info = list(pick(1,2,4))
+				possible_reagent_classes |= list(REAGENTS_MEDICINE_BASIC, REAGENTS_DRUGS)
+			specific_input_type_pool = pick(possible_reagent_classes)
 
 	switch(output_mod_path)
 		if(/obj/item/modification/organ/internal/output/reagents_blood)
-			output_pool += REAGENTS_MEDICINE_BASIC + REAGENTS_DRUGS + REAGENTS_ROACH + REAGENTS_SPIDER
+			var/list/possible_reagent_classes = list()
+			possible_reagent_classes |= list(REAGENTS_MEDICINE_BASIC, REAGENTS_DRUGS, REAGENTS_ROACH)
 			if(req_num_outputs > 1)	// > 1 means uncommon or rare
-				output_pool += REAGENTS_MEDICINE_SIMPLE
+				possible_reagent_classes |= list(REAGENTS_MEDICINE_SIMPLE)
 			for(var/i in 1 to req_num_outputs)
-				output_info += pick(VERY_LOW_OUTPUT, LOW_OUTPUT)
+				output_info += pick(VERY_LOW_OUTPUT)
+			output_pool = pick(possible_reagent_classes)
 
 		if(/obj/item/modification/organ/internal/output/reagents_ingest)
-			output_pool += REAGENTS_EDIBLE + REAGENTS_ALCOHOL + REAGENTS_ROACH + REAGENTS_SPIDER
+			var/list/possible_reagent_classes = list()
+			possible_reagent_classes |= list(REAGENTS_EDIBLE, REAGENTS_ALCOHOL, REAGENTS_ROACH)
 			if(req_num_outputs > 1)	// > 1 means uncommon or rare
-				output_pool += REAGENTS_MEDICINE_SIMPLE
+				possible_reagent_classes |= list(REAGENTS_MEDICINE_SIMPLE)
 			for(var/i in 1 to req_num_outputs)
-				output_info += pick(VERY_LOW_OUTPUT, LOW_OUTPUT)
+				output_info += pick(VERY_LOW_OUTPUT)
+			output_pool = pick(possible_reagent_classes)
 
 		if(/obj/item/modification/organ/internal/output/chemical_effects)
-			var/list/chem_effects = ALL_USABLE_POSITIVE_CHEM_EFFECTS
-			for(var/effect in chem_effects)
-				output_pool.Add(effect)
+			output_pool = ALL_HORMONES
 			for(var/i in 1 to req_num_outputs)
 				output_info += NOT_USED
 
 		if(/obj/item/modification/organ/internal/output/stat_boost)
-			output_pool += ALL_STATS
+			output_pool = ALL_STATS - STAT_ANA - STAT_VIV
 			for(var/i in 1 to req_num_outputs)
 				output_info += MID_OUTPUT
 
@@ -151,9 +149,17 @@
 	name = "teratoma (processing)"
 	process_mod_path = TRUE
 
-/obj/item/organ/internal/scaffold/aberrant/teratoma/process/uncommon
-	name = "bulging teratoma (processing)"
-	process_mod_path = /obj/item/modification/organ/internal/process
+/obj/item/organ/internal/scaffold/aberrant/teratoma/process/map
+	name = "tubular teratoma"
+	process_mod_path = /obj/item/modification/organ/internal/process/map
+
+/obj/item/organ/internal/scaffold/aberrant/teratoma/process/condense
+	name = "sphincter teratoma"
+	process_mod_path = /obj/item/modification/organ/internal/process/condense
+
+/obj/item/organ/internal/scaffold/aberrant/teratoma/process/boost
+	name = "enzymal teratoma"
+	process_mod_path = /obj/item/modification/organ/internal/process/boost
 
 // output
 /obj/item/organ/internal/scaffold/aberrant/teratoma/output
@@ -230,11 +236,11 @@
 	special_mod_path = TRUE
 
 /obj/item/organ/internal/scaffold/aberrant/teratoma/special/chemical_effect
-	name = "small endocrinal teratoma"
+	name = "pygmy endocrinal teratoma"
 	special_mod_path = /obj/item/modification/organ/internal/special/on_cooldown/chemical_effect
 
 /obj/item/organ/internal/scaffold/aberrant/teratoma/special/stat_boost
-	name = "small intracrinal teratoma"
+	name = "pygmy intracrinal teratoma"
 	special_mod_path = /obj/item/modification/organ/internal/special/on_cooldown/stat_boost
 
 // parasitic

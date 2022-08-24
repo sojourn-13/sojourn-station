@@ -1,7 +1,6 @@
 /datum/design/organ
 	category = "Standard"
 	build_type = ORGAN_GROWER
-	materials = list(MATERIAL_BIOMATTER = 5)
 
 /datum/design/organ/heart
 	materials = list(MATERIAL_BIOMATTER = 30)

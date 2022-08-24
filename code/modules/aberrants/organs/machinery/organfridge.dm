@@ -78,7 +78,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/input = 200,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/process = 200,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/output = 200,
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma = 1000,
+		/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma = 0,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/special = 200,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/uncommon = 300,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/rare = 400,
@@ -171,7 +171,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/scrub_toxin/blood = 400,
 		/obj/item/organ/internal/scaffold/aberrant/scrub_toxin/ingest = 400,
 		/obj/item/organ/internal/scaffold/aberrant/scrub_toxin/touch = 400,
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/simple = 1000,
+		/obj/item/computer_hardware/hard_drive/portable/design/omg/simple = 0,
 		/obj/item/organ/internal/scaffold/aberrant/gastric = 400,
 		/obj/item/organ/internal/scaffold/aberrant/damage_response = 400
 	)
@@ -210,7 +210,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/dependent/classy/liver = 750,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/classy/stomach = 750,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/classy/kidney = 750,
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/alcoholic = 1000,
+		/obj/item/computer_hardware/hard_drive/portable/design/omg/alcoholic = 0,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater = 500,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic = 500,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/classy = 500
@@ -250,7 +250,7 @@
 		/obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/blood_vessel = 600,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/liver = 750,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/muscle = 500,
-		/obj/item/computer_hardware/hard_drive/portable/design/omg/addict = 1000,
+		/obj/item/computer_hardware/hard_drive/portable/design/omg/addict = 0,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/mobster = 500,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/chemist = 500,
 		/obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary = 500

@@ -11,6 +11,11 @@
 	have_recycling = FALSE
 	speed = 6
 
+	selectively_recycled_types = list(
+		/obj/item/organ,
+		/obj/item/modification/organ
+	)
+
 	special_actions = list(
 		//list("action" = "sync", "name" = "Sync with R&D console", "icon" = "refresh"),		// Not until sci has their part of organ gaming
 		list("action" = "rip", "name" = "Rip OMG! designs", "icon" = "document")
@@ -38,7 +43,8 @@
 		/datum/design/organ/aberrant_organ/teratoma/input/reagents,
 		/datum/design/organ/aberrant_organ/teratoma/input/damage,
 		/datum/design/organ/aberrant_organ/teratoma/input/power_source,
-		/datum/design/organ/aberrant_organ/teratoma/process,
+		/datum/design/organ/aberrant_organ/teratoma/process/map,
+		/datum/design/organ/aberrant_organ/teratoma/process/condense,
 		/datum/design/organ/aberrant_organ/teratoma/output/reagents_blood,
 		/datum/design/organ/aberrant_organ/teratoma/output/reagents_ingest,
 		/datum/design/organ/aberrant_organ/teratoma/output/chemical_effects,
