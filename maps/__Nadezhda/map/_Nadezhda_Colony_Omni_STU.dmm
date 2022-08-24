@@ -49042,8 +49042,8 @@
 "jxh" = (
 /obj/structure/table/glass,
 /obj/machinery/photocopier/faxmachine{
-	department = "Medical Lobby Desk";
-	pixel_y = 8
+	pixel_y = 8;
+	department = "Medical Lobby Desk"
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/medical/reception)
@@ -52408,8 +52408,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/vault{
-	locked = 1;
-	req_access = list(999999999999)
+	req_access = list(999999999999);
+	locked = 1
 	},
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
@@ -54669,9 +54669,9 @@
 /obj/machinery/bioprinter,
 /obj/item/storage/freezer,
 /obj/structure/sign/department/operational{
-	desc = "This sign indicates the area is an Operating Theatre for surgeries of all kinds.";
+	pixel_x = 27;
 	name = "Surgery";
-	pixel_x = 27
+	desc = "This sign indicates the area is an Operating Theatre for surgeries of all kinds."
 	},
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/surgery)
@@ -63244,8 +63244,8 @@
 	pixel_x = 0
 	},
 /obj/structure/sign/levels/stairsdown{
-	pixel_x = 32;
-	pixel_y = -30
+	pixel_y = -30;
+	pixel_x = 32
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/absolutism/storage)
@@ -107906,8 +107906,8 @@
 /area/nadezhda/command/bridgebar)
 "uBv" = (
 /obj/machinery/door/airlock/vault{
-	locked = 1;
-	req_access = list(999999999999)
+	req_access = list(999999999999);
+	locked = 1
 	},
 /obj/structure/cable/cyan{
 	d1 = 4;
