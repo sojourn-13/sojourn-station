@@ -3,6 +3,9 @@
 	examine_msg = "Can be attached to internal organs."
 	examine_difficulty = STAT_LEVEL_BASIC
 
+/datum/component/modification/organ/stromal/try_modify()
+	return
+
 /datum/component/modification/organ/stromal/on_examine(mob/user)
 	var/function_info = get_function_info()
 	if(function_info)

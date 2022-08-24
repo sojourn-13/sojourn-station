@@ -300,8 +300,10 @@
 /mob/living/simple_animal/cat/runtime/attackby(var/obj/item/O, var/mob/user)
 	visible_message(SPAN_DANGER("[user]'s [O.name] harmlessly passes through \the [src]."))
 
+/*	// Commenting out so we can put the catto in the box
 /mob/living/simple_animal/cat/runtime/MouseDrop(atom/over_object)
 	return
+*/
 
 /mob/living/simple_animal/cat/runtime/attack_hand(mob/living/carbon/human/M as mob)
 
@@ -341,6 +343,8 @@
 /mob/living/simple_animal/cat/runtime/singularity_act()
 	return
 
+/*	This is for the sake of the cardboard box, and also parading the catto around
 /mob/living/simple_animal/cat/runtime/start_pulling(var/atom/movable/AM)
 	to_chat(src, SPAN_WARNING("Your hand passes through \the [src]."))
 	return
+*/

@@ -25,6 +25,7 @@
 		STAT_TGH = 2,
 		STAT_VIG = 2
 	)
+	darksight = 2
 
 	perks = list(/datum/perk/tenacity, /datum/perk/iwillsurvive, /datum/perk/slymarbo)
 
@@ -64,7 +65,7 @@
 		STAT_VIG = 5
 	)
 
-	darksight = 6
+	darksight = 3
 
 	perks = list(/datum/perk/debtor, /datum/perk/splicer)
 
@@ -155,6 +156,7 @@
 	permitted_tail  = list("Sablekyne Tail")
 	permitted_wings = list()
 
+	darksight = 3 //Cat eyes
 	perks = list(/datum/perk/laststand,/datum/perk/bone, /datum/perk/brawn, /datum/perk/carnivore)
 
 /datum/species/sablekyne/get_bodytype()
@@ -197,6 +199,8 @@
 		STAT_MEC = 10
 	)
 
+	darksight = 1 //1 eyes
+
 	has_process = list(    // which required-organ checks are conducted.
 		OP_HEART        = /obj/item/organ/internal/heart,
 		OP_LUNGS        = /obj/item/organ/internal/lungs,
@@ -226,8 +230,9 @@
 	name_plural = "Kriosans"
 	default_form = FORM_KRIOSAN
 	obligate_form = TRUE
+	reagent_tag = IS_KRIOSAN
 	unarmed_types = list(/datum/unarmed_attack/needle, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
-	darksight = 8
+	darksight = 4 //enhanced eyes dosnt mean perfected
 	num_alternate_languages = 2
 	name_language = null
 	min_age = 18
@@ -288,7 +293,7 @@
 	default_form = FORM_AKULA
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/tail, /datum/unarmed_attack/bite/strong)
-	darksight = 4
+	darksight = 3
 	num_alternate_languages = 2
 	name_language = null
 	min_age = 18
@@ -337,6 +342,7 @@
 	max_age = 60
 	slowdown = -0.5
 	blurb = "no."
+	darksight = 2
 
 	spawn_flags = CAN_JOIN
 
@@ -385,6 +391,7 @@
 
 	dark_color = "#dddddd"
 	light_color = "#dddddd"
+	darksight = 2
 
 	permitted_ears  = list()
 	permitted_tail  = list("Avian Wagtail", "Avian Fantail")
@@ -415,6 +422,7 @@
 	flags = NO_PAIN
 	spawn_flags = CAN_JOIN
 	taste_sensitivity = TASTE_HYPERSENSITIVE
+	darksight = 4
 
 	brute_mod =     1.25                    // Physical damage multiplier.
 	burn_mod =      0.85                    // Burn damage multiplier.
@@ -503,6 +511,7 @@
 	spawn_flags = CAN_JOIN
 	total_health = 130                    // Burn damage multiplier.
 	radiation_mod = 0
+	darksight = 3
 
 	stat_modifiers = list(
 		STAT_BIO = 2,
@@ -589,6 +598,7 @@
 	vision_flags = SEE_SELF
 	flags = NO_PAIN | IS_PLANT
 	taste_sensitivity = TASTE_NUMB
+	darksight = 4
 
 	dark_color = "#93eb9e"
 	light_color = "#93eb9e"
@@ -632,6 +642,7 @@
 	flags = NO_PAIN | IS_PLANT | NO_POISON | NO_BREATHE
 	slowdown = 0.3
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.3
+	darksight = 6
 
 	burn_mod = 2						// Burn damage multiplier.
 	light_dam = 1 // Same threshold as the Nightcrawler perk
@@ -679,6 +690,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
+	darksight = 2
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/full_body_prosthetic,
@@ -728,6 +740,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
+	darksight = 2
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/unbranded,
@@ -783,6 +796,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
+	darksight = 2
 
 	dark_color = "#ffffff"
 	light_color = "#000000"
@@ -845,6 +859,7 @@
 	breath_type = null
 	poison_type = null
 	total_health = 75
+	darksight = 2
 
 	dark_color = "#FA8128"
 	light_color = "#FCAE1E"
@@ -907,6 +922,7 @@
 	total_health = 75
 	dark_color = "#FFFFFF"
 	light_color = "#000000"
+	darksight = 2
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/blackshield_synthetic,
@@ -964,6 +980,7 @@
 	breath_type = null
 	poison_type = null
 	total_health = 75
+	darksight = 2
 
 	dark_color = "#FFFFFF"
 	light_color = "#000000"
@@ -1023,6 +1040,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
+	darksight = 3
 
 	dark_color = "#FFFFFF"
 	light_color = "#000000"

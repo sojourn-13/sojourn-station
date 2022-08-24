@@ -253,9 +253,15 @@
 			continue
 		else if(temp.wounds.len > 0 || temp.open)
 			if(temp.is_stump() && temp.parent)
-				wound_flavor_text["[temp.name]"] = "<span class='warning'>[He] [has] [temp.get_wounds_desc()] on [his] [temp.parent.name].</span><br>"
+				// OCCULUS EDIT START: Better clarity for injuries.
+				// OLD: 'He has a pair of tiny bruises, a massive salved burn, and a large bruise on his right arm'
+				// NEW: 'His right arm has a pair of tiny buises, a massive salved burn, and a large bruise.'
+				// old code: wound_flavor_text["[temp.name]"] = "<span class='warning'>[He] [has] [temp.get_wounds_desc()] on [his] [temp.parent.name].</span><br>"
+				wound_flavor_text["[temp.name]"] = "<span class='warning'>[His] <b>[temp.parent.name]</b> [has] [temp.get_wounds_desc()].</span><br>"
 			else
-				wound_flavor_text["[temp.name]"] = "<span class='warning'>[He] [has] [temp.get_wounds_desc()] on [his] [temp.name].</span><br>"
+				// old code: wound_flavor_text["[temp.name]"] = "<span class='warning'>[He] [has] [temp.get_wounds_desc()] on [his] [temp.name].</span><br>"
+				wound_flavor_text["[temp.name]"] = "<span class='warning'>[His] <b>[temp.name]</b> [has] [temp.get_wounds_desc()].</span><br>"
+				// OCCULUS EDIT END
 			if(temp.status & ORGAN_BLEEDING)
 				is_bleeding["[temp.name]"] = "<span class='danger'>[His] [temp.name] is bleeding!</span><br>"
 		else
@@ -263,8 +269,28 @@
 		if(temp.dislocated == 2)
 			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.joint] is dislocated!</span><br>"
 		if(((temp.status & ORGAN_BROKEN) && temp.brute_dam > temp.min_broken_damage) || (temp.status & ORGAN_MUTATED))
-			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.name] is dented and swollen!</span><br>"
-
+			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.name] is mangled!</span><br>"
+		if(temp.germ_level > INFECTION_LEVEL_ONE && temp.germ_level < INFECTION_LEVEL_TWO)//Occulus Edit: Infection status on examine
+			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.name] is discolored!</span><br>"
+		else if(temp.germ_level > INFECTION_LEVEL_TWO && temp.germ_level < INFECTION_LEVEL_THREE)
+			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.name] is oozing pus!</span><br>"
+		else if(temp.germ_level > INFECTION_LEVEL_THREE)
+			wound_flavor_text["[temp.name]"] += "<span class='danger'>[His] [temp.name] is covered in decaying tissue!</span><br>"
+		if(temp.status & ORGAN_DEAD)
+			wound_flavor_text["[temp.name]"] += "<span class='danger'>[His] [temp.name] is necrotic!</span><br>"//Occulus Edit End
+		for(var/obj/item/organ/internal/blood_vessel/BV in temp.internal_organs)//Occulus Edit: Ruptured Blood Vessel
+			if(BV.damage > 4)//occulus Edit: Ruptured blood vessel that is above the self-heal threshold
+				wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.name] swollen and discolored!</span><br>"//Occulus Edit: Ruptured Blood vessel
+//Edited out form occulus port but this is good to have in case we ever add back in sanity
+/*
+	if(user.stats.getPerk(PERK_EMPATH))
+		if(sanity.level <= 40 && sanity.level > 20)
+			msg += "[He] looks stressed out.\n"
+		else if(sanity.level <= 20 && sanity.level > 0)
+			msg += "<span class='warning'>[He] looks ready to do something rash!</span>\n"
+		else if(sanity.level == 0)
+			msg += "<span class ='danger'>[He] needs help! Now! Something is wrong!\n"
+*/
 	//Handles the text strings being added to the actual description.
 	//If they have something that covers the limb, and it is not missing, put flavortext.  If it is covered but bleeding, add other flavortext.
 

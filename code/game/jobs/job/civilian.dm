@@ -136,6 +136,10 @@
 		STAT_MEC = 10  //They often deal with tool mods guns and other things that need these
 	)
 
+	//You need insperation to do your job.
+	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+
+
 	perks = list(/datum/perk/market_prof, PERK_ARTIST, /datum/perk/stalker)
 	software_on_spawn = list(///datum/computer_file/program/supply,
 							 ///datum/computer_file/program/deck_management,

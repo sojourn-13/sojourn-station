@@ -1,11 +1,15 @@
 /datum/component/modification/organ
-	install_start_msg = ""
-	install_success_msg = ""
 	install_time = WORKTIME_FAST
 	//install_tool_quality = null
 	install_difficulty = FAILCHANCE_HARD
 	install_stat = STAT_BIO
 	install_sound = 'sound/effects/squelch1.ogg'
+
+	mod_time = WORKTIME_FAST
+	mod_tool_quality = QUALITY_LASER_CUTTING			
+	mod_difficulty = FAILCHANCE_HARD
+	mod_stat = STAT_BIO
+	mod_sound = 'sound/effects/squelch1.ogg'
 
 	removal_time = WORKTIME_SLOW
 	removal_tool_quality = QUALITY_LASER_CUTTING
@@ -144,15 +148,22 @@
 	if(examine_msg)
 		to_chat(user, SPAN_WARNING(examine_msg))
 
+	if(adjustable)
+		to_chat(user, SPAN_WARNING("Can be adjusted with a laser cutting tool."))
+
 	var/stat_req_bypassed = bypass_perk && user.stats?.getPerk(bypass_perk) ? TRUE : FALSE
 	if(stat_req_bypassed || user.stats?.getStat(examine_stat) >= examine_difficulty)
-		var/info = "Organoid size: [specific_organ_size_mod]"
-		info += "\nRequirements: <span style='color:red'>[blood_req_mod]</span>/<span style='color:blue'>[oxygen_req_mod]</span>/<span style='color:orange'>[nutriment_req_mod]</span>"
-		info += "\nOrgan tissues present: <span style='color:pink'>"
+		var/info = "Organoid size: [specific_organ_size_mod ? specific_organ_size_mod : "0"]"
+		info += "\nRequirements: <span style='color:red'>[blood_req_mod ? blood_req_mod : "0"]\
+								</span>/<span style='color:blue'>[oxygen_req_mod ? oxygen_req_mod : "0"]\
+								</span>/<span style='color:orange'>[nutriment_req_mod ? nutriment_req_mod : "0"]</span>"
+
+		var/organs
 		for(var/organ in organ_efficiency_mod)
-			info += organ + " ([organ_efficiency_mod[organ]]), "
-		info = copytext(info, 1, length(info) - 1)
-		info += "</span>"
+			organs += organ + " ([organ_efficiency_mod[organ]]), "
+		organs = copytext(organs, 1, length(organs) - 1)
+		info += "\nOrgan tissues present: <span style='color:pink'>[organs ? organs : "none"]</span>"
+
 		to_chat(user, SPAN_NOTICE(info))
 
 		var/function_info = get_function_info()

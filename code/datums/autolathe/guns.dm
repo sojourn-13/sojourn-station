@@ -429,7 +429,7 @@
 
 /datum/design/autolathe/gun/survivalrifle
 	name = "Hunters Inc 10mm Caseless \"Bond\" Rifle"
-	build_path = /obj/item/gun/projectile/boltgun/survivalrifle
+	build_path = /obj/item/gun/projectile/automatic/survivalrifle
 
 /datum/design/autolathe/gun/flare_gun
 	name = "H&S \"Dazzlation\" flare pistol"

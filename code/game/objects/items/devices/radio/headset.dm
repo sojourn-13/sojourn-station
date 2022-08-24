@@ -191,6 +191,10 @@
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 
+/obj/item/device/radio/headset/heads/hos/bowman
+	name = "warrant officer bowman headset"
+	icon_state = "wo_headset_bowman"
+
 /obj/item/device/radio/headset/heads/bscom
 	name = "blackshield commander headset"
 	desc = "The headset of the men who protects your worthless lives. This has a small symbol denoting its built in back-up transmitter."

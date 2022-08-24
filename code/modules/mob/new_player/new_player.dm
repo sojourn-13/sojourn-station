@@ -282,6 +282,10 @@
 /mob/new_player/proc/AttemptLateSpawn(rank, var/spawning_at)
 	if(src != usr)
 		return 0
+	if(!BC_IsKeyAllowedToConnect(ckey) && !usr.client.holder)
+		alert("Border Control is enabled, and you haven't been whitelisted!  You're welcome to observe, \
+			but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!" , "Border Control Active")
+		return FALSE
 	if(SSticker.current_state != GAME_STATE_PLAYING)
 		to_chat(usr, "\red The round is either not ready, or has already finished...")
 		return 0

@@ -47,29 +47,24 @@
 /mob/living/simple_animal/ameridian_tender/ghost_control
 	possession_candidate = TRUE
 
-/mob/living/simple_animal/ameridian_tender/New()
-	..()
-	update_icons()
-
-/mob/living/simple_animal/ameridian_tender/update_icons()
-	..()
-	transform = initial(transform)
-	transform *= 0.5
-
+/mob/living/simple_animal/ameridian_tender/add_initial_transforms()
+	. = ..()
+	add_new_transformation(/datum/transform_type/modular, list(0.5, 0.5, flag = AMERIDIAN_TENDER_INITIAL_SCALE_TRANSFORM, priority = AMERIDIAN_TENDER_INITIAL_SCALE_TRANSFORM_PRIORITY))
 
 /mob/living/simple_animal/ameridian_tender/examine(mob/user)
-	..(user)
+	. = ..(user)
 	if(held_item)
 		to_chat(user, "[src] is carrying \icon[held_item] \a [held_item].")
 
 /mob/living/simple_animal/ameridian_tender/death()
-	..()
+	. = ..()
 	if(held_item) // if the tender is holding an item
 		held_item.loc = src.loc
 		held_item = null
 
 /mob/living/simple_animal/ameridian_tender/Life()
-	if(..() && !client)
+	. = ..()
+	if(. && !client)
 		tend_crystal()
 
 // Harvest nearby crystals
@@ -148,7 +143,7 @@
 			held_item.Move(A)
 			held_item = null
 			return TRUE
-	..()
+	. = ..()
 
 /mob/living/simple_animal/ameridian_tender/verb/change_name()
 	set name = "Change your name"

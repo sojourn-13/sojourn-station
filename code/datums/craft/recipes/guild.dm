@@ -448,6 +448,22 @@
 
 
 //Wearables =========================
+/datum/craft_recipe/guild/nv_guild
+	name = "Converted NV Goggles"
+	result = /obj/item/clothing/glasses/powered/night/guild/crafted
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/clothing/glasses/powered/meson, 1, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_RGLASS),
+		list(QUALITY_WELDING, 40, "time"= 60),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 30),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 40),
+		list(CRAFT_MATERIAL, 1, MATERIAL_URANIUM, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 40, 30),
+		list(/obj/item/stack/cable_coil, 2, "time" = 20),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
+	)
+
 /datum/craft_recipe/guild/technosuit
 	name = "'Mark V' environmental protection suit"
 	result = /obj/item/clothing/suit/armor/vest/technomancersuit

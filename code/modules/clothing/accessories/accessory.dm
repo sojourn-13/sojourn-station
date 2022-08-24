@@ -575,6 +575,106 @@
 		usr.update_action_buttons()
 		return 1
 
+/*Dusters*/
+
+/obj/item/clothing/accessory/duster
+	name = "tan duster"
+	desc = "A resilient tan duster composed of somewhat frayed fabric."
+	icon_state = "soldiercoat"
+	item_state = "soldiercoat"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+/obj/item/clothing/accessory/duster/brown
+	name = "brown duster"
+	desc = "A standard brown duster with an added collar."
+	icon_state = "duster"
+	item_state = "duster"
+
+/obj/item/clothing/accessory/duster/chestnut
+	name = "chestnut duster"
+	desc = "A worn brown duster with a tough metallic belt."
+	icon_state = "autumn"
+	item_state = "autumn"
+
+/obj/item/clothing/accessory/duster/crimson
+	name = "crimson duster"
+	desc = "A deep red duster coat with a thick layer of padding."
+	icon_state = "battlecoat"
+	item_state = "battlecoat"
+
+/obj/item/clothing/accessory/duster/bloodred
+	name = "blood red duster"
+	desc = "A deep red duster coat with black trim padding."
+	icon_state = "te_coat"
+	item_state = "te_coat"
+
+/obj/item/clothing/accessory/duster/gauntlet
+	name = "gauntlet duster"
+	desc = "A thick brown duster with a tough but comfortable design."
+	icon_state = "sheriff"
+	item_state = "sheriff"
+
+/obj/item/clothing/accessory/duster/ivory
+	name = "ivory duster"
+	desc = "A lightly toned duster with a thinly layered undercoat."
+	icon_state = "ranger"
+	item_state = "ranger"
+
+/obj/item/clothing/accessory/duster/lumber
+	name = "lumber duster"
+	desc = "A dark blue sleeveless duster with a clasp."
+	icon_state = "veteran"
+	item_state = "veteran"
+
+/obj/item/clothing/accessory/duster/navy
+	name = "navy duster"
+	desc = "A battered dark navy duster with a well-worn look."
+	icon_state = "courier"
+	item_state = "courier"
+
+/obj/item/clothing/accessory/duster/cyberpunklong
+	name = "cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long"
+	item_state = "cyberpunksleek_long"
+
+/obj/item/clothing/accessory/duster/cyberpunklong/green
+	name = "green cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long_green"
+	item_state = "cyberpunksleek_long_green"
+
+/obj/item/clothing/accessory/duster/cyberpunklong/black
+	name = "black cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long_black"
+	item_state = "cyberpunksleek_long_black"
+
+/obj/item/clothing/accessory/duster/cyberpunklong/white
+	name = "white cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long_white"
+	item_state = "cyberpunksleek_long_white"
+
+/obj/item/clothing/accessory/duster/bladerunner
+	name = "runner coat"
+	desc = "A sleek longcoat perfectly made for a driven person."
+	icon_state = "bladerunner_coat"
+	item_state = "bladerunner_coat"
+
+/obj/item/clothing/accessory/duster/donte
+	name = "exterminators jacket"
+	desc = "Your prom date won't know what to say when you show up wearing this stylish leather coat."
+	icon_state = "dante"
+	item_state = "dante"
+
+/obj/item/clothing/accessory/duster/denton
+	name = "futuristic coat"
+	desc = "whether hopping into action, or reading your coworkers emails, you'll be ready for any hostage situations"
+	icon_state = "denton"
+	item_state = "denton"
+
+/*BS Coats*/
+
 /obj/item/clothing/accessory/bscloak
 	name = "Blackshield longcoat"
 	desc = "A simple, durable longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
@@ -764,6 +864,74 @@
 	item_state = "ninja_scarf"
 	siemens_coefficient = 0
 
+//Sprites by Michiyamenotehifunana and Occulist
+/obj/item/clothing/accessory/shemaugh
+	name = "shemaugh"
+	desc = "A piece of light fabric, suited for protection in hot, arid climates."
+	icon_state = "shemaugh"
+	item_state = "shemaugh"
+
+/obj/item/clothing/accessory/shemaugh/blue
+	name = "blue shemaugh"
+	icon_state = "shemaugh-blue"
+	item_state = "shemaugh-blue"
+
+/obj/item/clothing/accessory/shemaugh/red
+	name = "red shemaugh"
+	icon_state = "shemaugh-red"
+	item_state = "shemaugh-red"
+
+/obj/item/clothing/accessory/shemaugh/grey
+	name = "grey shemaugh"
+	icon_state = "shemaugh-grey"
+	item_state = "shemaugh-grey"
+
+/obj/item/clothing/accessory/shemaugh/purple
+	name = "purple shemaugh"
+	icon_state = "shemaugh-purple"
+	item_state = "shemaugh-purple"
+
+/obj/item/clothing/accessory/shemaugh/pink
+	name = "pink shemaugh"
+	icon_state = "shemaugh-pink"
+	item_state = "shemaugh-pink"
+
+/obj/item/clothing/accessory/shemaugh/brown
+	name = "brown shemaugh"
+	icon_state = "shemaugh-brown"
+	item_state = "shemaugh-brown"
+
+/obj/item/clothing/accessory/shemaugh/copper
+	name = "copper shemaugh"
+	icon_state = "shemaugh-copper"
+	item_state = "shemaugh-copper"
+
+/obj/item/clothing/accessory/shemaugh/orange
+	name = "orange shemaugh"
+	icon_state = "shemaugh-orange"
+	item_state = "shemaugh-orange"
+
+/obj/item/clothing/accessory/shemaugh/yellow
+	name = "yellow shemaugh"
+	icon_state = "shemaugh-yellow"
+	item_state = "shemaugh-yellow"
+
+/obj/item/clothing/accessory/shemaugh/lime
+	name = "lime shemaugh"
+	icon_state = "shemaugh-lime"
+	item_state = "shemaugh-lime"
+
+/obj/item/clothing/accessory/shemaugh/cyan
+	name = "cyan shemaugh"
+	icon_state = "shemaugh-cyan"
+	item_state = "shemaugh-cyan"
+
+/obj/item/clothing/accessory/shemaugh/ice
+	name = "ice shemaugh"
+	icon_state = "shemaugh-ice"
+	item_state = "shemaugh-ice"
+
+//End of sprites by Michiyamenotehifunana and Occulist
 /*One-Off Stuff*/
 
 /obj/item/clothing/accessory/dropstraps

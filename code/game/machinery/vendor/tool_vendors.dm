@@ -252,6 +252,7 @@
 					/obj/item/tool/crowbar = 5,
 					/obj/item/weldpack/canister = 2,
 					/obj/item/weldpack = 1,
+					/obj/item/device/defib_kit/jumper_kit = 5,
 					//Drone Fabrication Kits
 					/obj/item/storage/box/roomba_kit = 3,
 					/obj/item/storage/box/sword_drone_kit = 1,

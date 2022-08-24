@@ -43,6 +43,7 @@
 #define IS_SYNTHETIC 4
 #define IS_SLIME 5
 #define IS_MARQUA 6
+#define IS_KRIOSAN 7
 
 #define CE_STABLE "stable" // Inaprovaline
 #define CE_ANTIBIOTIC "antibiotic" // Spaceacilin
