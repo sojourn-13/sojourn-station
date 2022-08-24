@@ -725,46 +725,6 @@
 	},
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/mine/hallway)
-"ci" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/shieldwallgen/ameridian{
-	active = 1;
-	anchored = 1;
-	state = 1;
-	storedpower = 50000
-	},
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"cj" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"ck" = (
-/obj/machinery/shieldwallgen/ameridian{
-	active = 1;
-	anchored = 1;
-	state = 1;
-	storedpower = 50000
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "cl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -1035,8 +995,6 @@
 "cY" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/table/steel_reinforced,
-/obj/item/reagent_containers/glass/bottle/ameridian,
-/obj/item/gun/energy/sonic_emitter/preloaded,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/mine/hallway)
 "cZ" = (
@@ -1417,30 +1375,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid,
 /area/mine/hallway)
-"dX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/ameridian_crystal{
-	growth = 1
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"dY" = (
-/obj/structure/ameridian_crystal{
-	growth = 1
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "dZ" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/plating,
 /area/mine/hallway)
 "ea" = (
@@ -1450,31 +1390,16 @@
 	},
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/mine/hallway)
 "eb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/mine/hallway)
 "ec" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
 "ed" = (
@@ -1633,14 +1558,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/mine/atmos)
-"ey" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "eA" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/railing{
@@ -1787,11 +1704,6 @@
 "eS" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/asteroid,
 /area/mine/hallway)
 "eT" = (
@@ -2034,30 +1946,9 @@
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
-"fs" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/ameridian_crystal{
-	growth = 1
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "ft" = (
 /obj/structure/sign/warningnew/radiation,
 /turf/simulated/wall/r_wall,
-/area/mine/hallway)
-"fu" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/asteroid,
 /area/mine/hallway)
 "fv" = (
 /obj/machinery/camera/network/mining{
@@ -8763,15 +8654,6 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
-"wZ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "xd" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 4;
@@ -8905,22 +8787,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
-"BO" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/steel,
-/area/mine/hallway)
 "BR" = (
 /obj/machinery/light{
 	dir = 4
@@ -9253,15 +9119,6 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
-"JK" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "JM" = (
 /obj/machinery/light,
 /turf/simulated/floor/reinforced,
@@ -9321,18 +9178,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/mining{
 	dir = 1
-	},
-/obj/machinery/shieldwallgen/ameridian{
-	active = 1;
-	anchored = 1;
-	state = 1;
-	storedpower = 50000
-	},
-/obj/structure/cable,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
 	},
 /turf/simulated/floor/asteroid,
 /area/mine/hallway)
@@ -9559,11 +9404,6 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "RN" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/camera/network/mining,
 /turf/simulated/floor/asteroid,
 /area/mine/hallway)
@@ -9745,15 +9585,6 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
-"VS" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/steel,
-/area/mine/hallway)
 "VU" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 5;
@@ -9933,20 +9764,6 @@
 /obj/machinery/portable_atmospherics/powered/pump,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/mixing)
-"ZM" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/machinery/shieldwallgen/ameridian{
-	active = 1;
-	anchored = 1;
-	state = 1;
-	storedpower = 50000
-	},
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "ZN" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
@@ -39084,12 +38901,12 @@ bx
 bx
 bx
 wn
-ci
+cW
 cW
 aC
 dW
 ar
-ZM
+ar
 wn
 fM
 yT
@@ -39286,12 +39103,12 @@ bj
 by
 bj
 wn
-cj
-dY
-dY
-dX
-fs
-JK
+aC
+aC
+aC
+cW
+ar
+ar
 wn
 fN
 cz
@@ -39489,11 +39306,11 @@ Mm
 bj
 ai
 RN
-dY
-dY
-dY
-dY
-JK
+aC
+aC
+aC
+aC
+aC
 ai
 fO
 gj
@@ -39690,12 +39507,12 @@ bw
 bz
 by
 wn
-cj
-dY
-dY
-dY
-fs
-JK
+aC
+aC
+aC
+aC
+ar
+ar
 wn
 fP
 bo
@@ -39892,11 +39709,11 @@ bk
 bj
 ch
 wn
-cj
-dY
-dY
-dY
-dY
+aC
+aC
+aC
+aC
+aC
 eS
 wn
 bX
@@ -40094,12 +39911,12 @@ bl
 bA
 bS
 wn
-cj
-dY
-fs
-dY
-dX
-JK
+aC
+aC
+ar
+aC
+cW
+ar
 wn
 bX
 bo
@@ -40296,11 +40113,11 @@ ai
 bB
 bT
 ai
-ck
-ey
-ey
-fu
-ey
+aC
+aC
+aC
+aC
+aC
 KK
 ai
 is
@@ -40501,7 +40318,7 @@ wn
 ar
 cy
 aC
-wZ
+cW
 ar
 aC
 wn
@@ -41511,7 +41328,7 @@ bo
 cz
 cZ
 Xk
-VS
+cz
 cz
 cZ
 bo
@@ -41713,7 +41530,7 @@ cl
 cA
 da
 cA
-BO
+cA
 eC
 da
 cl

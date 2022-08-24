@@ -13,20 +13,20 @@
 	circuit = /obj/item/circuitboard/liquid_ameridian_processor
 	var/obj/structure/reagent_dispensers/bidon/Container
 	var/outputs = list(
-						list(name = "Steel", cost = 100, path = /obj/item/stack/material/steel),
-						list(name = "Plastic", cost = 100, path = /obj/item/stack/material/plastic),
-						list(name = "Glass", cost = 100, path = /obj/item/stack/material/glass),
-						list(name = "Plasteel", cost = 350, path = /obj/item/stack/material/plasteel),
-						list(name = "Silver", cost = 200, path = /obj/item/stack/material/silver),
-						list(name = "Gold", cost = 200, path = /obj/item/stack/material/gold),
-						list(name = "Platinum", cost = 250, path = /obj/item/stack/material/platinum),
-						list(name = "Uranium", cost = 250, path = /obj/item/stack/material/uranium),
-						list(name = "Plasma", cost = 250, path = /obj/item/stack/material/plasma),
-						list(name = "Osmium", cost = 400, path = /obj/item/stack/material/osmium),
-						list(name = "Diamonds", cost = 400, path = /obj/item/stack/material/diamond),
-						list(name = "Metallic Hydrogen", cost = 400, path=/obj/item/stack/material/mhydrogen),
-						list(name = "Tritium", cost = 400, path = /obj/item/stack/material/tritium),
-						list(name = "Ameridian Core", cost = 3600, path=/obj/item/ameridian_core)
+						list(name = "Steel", cost = 10, path = /obj/item/stack/material/steel),
+						list(name = "Plastic", cost = 10, path = /obj/item/stack/material/plastic),
+						list(name = "Glass", cost = 10, path = /obj/item/stack/material/glass),
+						list(name = "Plasteel", cost = 35, path = /obj/item/stack/material/plasteel),
+						list(name = "Silver", cost = 20, path = /obj/item/stack/material/silver),
+						list(name = "Gold", cost = 20, path = /obj/item/stack/material/gold),
+						list(name = "Platinum", cost = 25, path = /obj/item/stack/material/platinum),
+						list(name = "Uranium", cost = 25, path = /obj/item/stack/material/uranium),
+						list(name = "Plasma", cost = 25, path = /obj/item/stack/material/plasma),
+						list(name = "Osmium", cost = 40, path = /obj/item/stack/material/osmium),
+						list(name = "Diamonds", cost = 40, path = /obj/item/stack/material/diamond),
+						list(name = "Metallic Hydrogen", cost = 40, path=/obj/item/stack/material/mhydrogen),
+						list(name = "Tritium", cost = 40, path = /obj/item/stack/material/tritium),
+						list(name = "Ameridian Core", cost = 80, path=/obj/item/ameridian_core)
 						)
 	var/cost_modifier = 1
 
