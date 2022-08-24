@@ -1744,6 +1744,7 @@
 #include "code\modules\clothing\gloves\stungloves.dm"
 #include "code\modules\clothing\head\beanie.dm"
 #include "code\modules\clothing\head\costume.dm"
+#include "code\modules\clothing\head\fishing.dm"
 #include "code\modules\clothing\head\hardhat.dm"
 #include "code\modules\clothing\head\helmet.dm"
 #include "code\modules\clothing\head\hood.dm"
