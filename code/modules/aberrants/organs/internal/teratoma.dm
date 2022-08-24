@@ -80,7 +80,7 @@
 		if(/obj/item/modification/organ/internal/output/stat_boost)
 			output_pool = ALL_STATS - STAT_ANA - STAT_VIV
 			for(var/i in 1 to req_num_outputs)
-				output_info += MID_OUTPUT
+				output_info += 3
 
 	..()
 
