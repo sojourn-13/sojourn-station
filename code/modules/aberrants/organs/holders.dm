@@ -5,7 +5,7 @@
 	desc = "A collagen-based biostructure."
 	price_tag = 100
 	organ_efficiency = list()
-	specific_organ_size = 0.2
+	specific_organ_size = 0.4
 	spawn_tags = SPAWN_TAG_ABERRANT_ORGAN
 
 	var/use_generated_name = TRUE
@@ -75,6 +75,32 @@
 
 		if(function_info)
 			to_chat(user, SPAN_NOTICE(function_info))
+
+/obj/item/organ/internal/scaffold/refresh_upgrades()
+	name = initial(name)
+	color = initial(color)
+	max_upgrades = max_upgrades ? initial(max_upgrades) : 0		// If no max upgrades, it must be a ruined teratoma. So, leave it at 0.
+	prefixes = list()
+	min_bruised_damage = initial(min_bruised_damage)
+	min_broken_damage = initial(min_broken_damage)
+	max_damage = initial(max_damage) ? initial(max_damage) : min_broken_damage * 2
+	owner_verbs = initial_owner_verbs.Copy()
+	organ_efficiency = initial_organ_efficiency.Copy()
+	scanner_hidden = initial(scanner_hidden)
+	unique_tag = initial(unique_tag)
+	specific_organ_size = initial(specific_organ_size)
+	max_blood_storage = initial(max_blood_storage)
+	current_blood = initial(current_blood)
+	blood_req = initial(blood_req)
+	nutriment_req = initial(nutriment_req)
+	oxygen_req = initial(oxygen_req)
+
+	update_color()
+
+	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
+
+	update_name()
+	update_icon()
 
 /obj/item/organ/internal/scaffold/update_icon()
 	if(use_generated_icon)
@@ -248,23 +274,33 @@
 			return
 
 	var/list/input_info = list()
+	var/list/additional_input_info = list()
 	var/list/output_types = list()
+	var/list/additional_output_info = list()
 	
 	if(req_num_inputs)
+		var/list/inputs_sans_blacklist = list()
+		var/list/input_pool = list()
+
+		if(specific_input_type_pool.len)
+			additional_input_info = specific_input_type_pool.Copy()
+			input_pool = specific_input_type_pool.Copy()
+		else if(base_input_type)
+			inputs_sans_blacklist = subtypesof(base_input_type) - REAGENT_BLACKLIST
+			additional_input_info = inputs_sans_blacklist.Copy()
+			input_pool = inputs_sans_blacklist.Copy()
+
 		for(var/i in 1 to req_num_inputs)
-			if(specific_input_type_pool.len)
-				input_info += pick_n_take(specific_input_type_pool)
-			else if(base_input_type)
-				var/list/reagents_sans_blacklist = subtypesof(base_input_type) - REAGENT_BLACKLIST
-				input_info += pick_n_take(reagents_sans_blacklist)
+			input_info += pick_n_take(input_pool)
 
 	if(req_num_outputs)
-		for(var/i in 1 to req_num_outputs)		
+		additional_output_info = output_pool.Copy()
+		for(var/i in 1 to req_num_outputs)
 			output_types += list(pick_n_take(output_pool) = output_info[i])
 
 	var/obj/item/modification/organ/internal/input/I
 	if(ispath(input_mod_path, /obj/item/modification/organ/internal/input))
-		I = new input_mod_path(src, FALSE, null, input_info, input_mode)
+		I = new input_mod_path(src, FALSE, null, input_info, input_mode, additional_input_info)
 
 	var/obj/item/modification/organ/internal/process/P
 	if(ispath(process_mod_path, /obj/item/modification/organ/internal/process))
@@ -272,7 +308,7 @@
 
 	var/obj/item/modification/organ/internal/output/O
 	if(ispath(output_mod_path, /obj/item/modification/organ/internal/output))
-		O = new output_mod_path(src, FALSE, null, output_types)
+		O = new output_mod_path(src, FALSE, null, output_types, additional_output_info)
 
 	var/obj/item/modification/organ/internal/special/S
 	if(ispath(special_mod_path, /obj/item/modification/organ/internal/special))

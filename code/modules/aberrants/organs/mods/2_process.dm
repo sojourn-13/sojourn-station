@@ -11,7 +11,7 @@
 
 	P.multiplier = process_info.len ? process_info[1] : 0.20
 	..()
-
+	
 /obj/item/modification/organ/internal/process/condense
 	name = "sphincter organoid"
 	desc = "Functional tissue of one or more organs in graftable form. Connects multiple inputs to a single output."
@@ -20,12 +20,10 @@
 	AddComponent(/datum/component/modification/organ/process/condense)
 	..()
 
-/obj/item/modification/organ/internal/process/shuffle
+/obj/item/modification/organ/internal/process/map
 	name = "tubular organoid"
-	desc = "Functional tissue of one or more organs in graftable form. Randomly connects multiple inputs to multiple outputs."
+	desc = "Functional tissue of one or more organs in graftable form. Connects inputs to outputs."
 
-/obj/item/modification/organ/internal/process/shuffle/New(loc, generate_organ_stats = TRUE, predefined_modifier = null, list/process_info)
-	var/datum/component/modification/organ/process/shuffle/P = AddComponent(/datum/component/modification/organ/process/shuffle)
-
-	P.num_outputs = process_info[1]
+/obj/item/modification/organ/internal/process/map/New(loc, generate_organ_stats = TRUE, predefined_modifier = null)
+	AddComponent(/datum/component/modification/organ/process/map)
 	..()

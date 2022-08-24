@@ -8,10 +8,9 @@
 
 #define NOT_USED 1
 
-#define ALL_STANDARD_ORGAN_EFFICIENCIES list(OP_EYES, OP_HEART, OP_LUNGS, OP_LIVER, OP_KIDNEYS, OP_APPENDIX, OP_STOMACH, OP_BONE, OP_MUSCLE, OP_NERVE, OP_BLOOD_VESSEL)
+#define ALL_STANDARD_ORGAN_EFFICIENCIES list(OP_HEART, OP_LUNGS, OP_LIVER, OP_KIDNEYS, OP_APPENDIX, OP_STOMACH, OP_BONE, OP_MUSCLE, OP_NERVE, OP_BLOOD_VESSEL)
 
 #define ALL_ORGAN_STATS list(\
-		OP_EYES			= list(100,   1,   20,  2,   1,   1,   list("e", "y", "es"), list()),\
 		OP_HEART		= list(100,   2,   0,   0,   10,  10,  list("he", "ar", "t"), list()),\
 		OP_LUNGS		= list(100,   2,   50,	10,  10,  0,   list("l", "un", "gs"), list()),\
 		OP_LIVER		= list(100,   1,   25,	5,   5,   7,   list("l", "iv", "er"), list()),\
@@ -27,7 +26,9 @@
 #define ALL_USABLE_DAMAGE_TYPES list(BRUTE, BURN, TOX, OXY, CLONE)//, HALLOSS)
 
 //#define ALL_STATS list(STAT_MEC, STAT_COG, STAT_BIO, STAT_ROB, STAT_TGH, STAT_VIG)
-#define ALL_USABLE_POSITIVE_CHEM_EFFECTS list(CE_BLOODRESTORE = 0.1, CE_BLOODCLOT = 0.1, CE_PAINKILLER = 10, CE_ANTITOX = 0.1, CE_SPEEDBOOST = 0.1)
+
+#define ALL_HORMONES list(/datum/reagent/hormone/bloodclot, /datum/reagent/hormone/bloodrestore, /datum/reagent/hormone/painkiller,\
+						/datum/reagent/hormone/speedboost, /datum/reagent/hormone/antitox, /datum/reagent/hormone/oxygenation)
 
 #define ALL_USABLE_POWER_SOURCES list(/obj/item/cell/small, /obj/item/cell/medium, /obj/item/cell/large, /obj/item/stack/material/plasma, /obj/item/stack/material/uranium, /obj/item/stack/material/tritium)
 
@@ -43,25 +44,18 @@
 								/datum/reagent/phosphorus, /datum/reagent/metal/potassium, /datum/reagent/metal/radium, /datum/reagent/acid, /datum/reagent/acid/hydrochloric,\
 								/datum/reagent/silicon, /datum/reagent/metal/sodium, /datum/reagent/organic/sugar, /datum/reagent/sulfur, /datum/reagent/metal/tungsten)
 
-#define REAGENTS_MEDICINE_BASIC list(/datum/reagent/medicine/inaprovaline, /datum/reagent/medicine/paracetamol, /datum/reagent/medicine/dexalin, /datum/reagent/medicine/hyronalin,\
-										/datum/reagent/medicine/alkysine, /datum/reagent/medicine/imidazoline, /datum/reagent/medicine/synaptizine)
+#define REAGENTS_MEDICINE_BASIC list(/datum/reagent/medicine/inaprovaline, /datum/reagent/medicine/dexalin, /datum/reagent/medicine/hyronalin,\
+										/datum/reagent/medicine/alkysine, /datum/reagent/medicine/imidazoline)
 
-#define REAGENTS_MEDICINE_SIMPLE list(/datum/reagent/medicine/kelotane, /datum/reagent/medicine/bicaridine, /datum/reagent/medicine/tricordrazine, /datum/reagent/medicine/dylovene)
+#define REAGENTS_MEDICINE_SIMPLE list(/datum/reagent/medicine/kelotane, /datum/reagent/medicine/tricordrazine, /datum/reagent/medicine/dylovene)
 
-#define REAGENTS_MEDICINE_INTERMEDIATE list()
-#define REAGENTS_MEDICINE_ADVANCED list()
+#define REAGENTS_MEDICINE_INTERMEDIATE list(/datum/reagent/medicine/bicaridine, /datum/reagent/medicine/synaptizine, /datum/reagent/drug/hyperzine)
 
 #define REAGENTS_DRUGS list(/datum/reagent/drug/space_drugs, /datum/reagent/drug/cryptobiolin, /datum/reagent/drug/mindbreaker,\
-							/datum/reagent/drug/psilocybin, /datum/reagent/drug/nicotine, /datum/reagent/drug/hyperzine)
+							/datum/reagent/drug/psilocybin, /datum/reagent/drug/nicotine)
 
-#define REAGENTS_STIMULANT_SIMPLE list(/datum/reagent/stim/mbr, /datum/reagent/stim/cherrydrops, /datum/reagent/stim/pro_surgeon,\
-										/datum/reagent/stim/violence, /datum/reagent/stim/bouncer, /datum/reagent/stim/steady)
-
-#define REAGENTS_STIMULANT_INTERMEDIATE list()
-#define REAGENTS_STIMULANT_ADVANCED list()
-
-#define REAGENTS_TOXIN list(/datum/reagent/toxin, /datum/reagent/toxin/amatoxin, /datum/reagent/toxin/plasma,\
-							/datum/reagent/toxin/fertilizer, /datum/reagent/toxin/plantbgone, /datum/reagent/acid/polyacid, /datum/reagent/toxin/lexorin,\
+#define REAGENTS_TOXIN list(/datum/reagent/toxin/amatoxin, /datum/reagent/toxin/plasma, /datum/reagent/toxin/fertilizer,\
+							/datum/reagent/toxin/plantbgone, /datum/reagent/acid/polyacid, /datum/reagent/toxin/lexorin,\
 							/datum/reagent/medicine/soporific, /datum/reagent/toxin/biomatter)
 
 #define REAGENTS_ROACH list(/datum/reagent/toxin/diplopterum, /datum/reagent/toxin/seligitillin, /datum/reagent/toxin/starkellin,\

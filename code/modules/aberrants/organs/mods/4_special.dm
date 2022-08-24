@@ -51,47 +51,48 @@
 
 	if(chosen_special_info?.len >= 2)
 		S.effect = chosen_special_info[1]
-		S.magnitude = ALL_USABLE_POSITIVE_CHEM_EFFECTS[S.effect] * chosen_special_info[2]
 	..()
 
 /obj/item/modification/organ/internal/special/on_cooldown/chemical_effect/bloodrestore
 /obj/item/modification/organ/internal/special/on_cooldown/chemical_effect/bloodrestore/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/chemical_effect/S = AddComponent(/datum/component/modification/organ/on_cooldown/chemical_effect)
 
-	S.effect = CE_BLOODRESTORE
-	S.magnitude = ALL_USABLE_POSITIVE_CHEM_EFFECTS[CE_BLOODRESTORE]
+	S.effect = /datum/reagent/hormone/bloodrestore
 	..()
 
 /obj/item/modification/organ/internal/special/on_cooldown/chemical_effect/bloodclot
 /obj/item/modification/organ/internal/special/on_cooldown/chemical_effect/bloodclot/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/chemical_effect/S = AddComponent(/datum/component/modification/organ/on_cooldown/chemical_effect)
 
-	S.effect = CE_BLOODCLOT
-	S.magnitude = ALL_USABLE_POSITIVE_CHEM_EFFECTS[CE_BLOODCLOT]
+	S.effect = /datum/reagent/hormone/bloodclot
 	..()
 
 /obj/item/modification/organ/internal/special/on_cooldown/chemical_effect/painkiller
 /obj/item/modification/organ/internal/special/on_cooldown/chemical_effect/painkiller/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/chemical_effect/S = AddComponent(/datum/component/modification/organ/on_cooldown/chemical_effect)
 
-	S.effect = CE_PAINKILLER
-	S.magnitude = ALL_USABLE_POSITIVE_CHEM_EFFECTS[CE_PAINKILLER]
+	S.effect = /datum/reagent/hormone/painkiller
 	..()
 
 /obj/item/modification/organ/internal/special/on_cooldown/chemical_effect/antitox
 /obj/item/modification/organ/internal/special/on_cooldown/chemical_effect/antitox/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/chemical_effect/S = AddComponent(/datum/component/modification/organ/on_cooldown/chemical_effect)
 
-	S.effect = CE_ANTITOX
-	S.magnitude = ALL_USABLE_POSITIVE_CHEM_EFFECTS[CE_ANTITOX]
+	S.effect = /datum/reagent/hormone/antitox
+	..()
+
+/obj/item/modification/organ/internal/special/on_cooldown/chemical_effect/oxygenation
+/obj/item/modification/organ/internal/special/on_cooldown/chemical_effect/oxygenation/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
+	var/datum/component/modification/organ/on_cooldown/chemical_effect/S = AddComponent(/datum/component/modification/organ/on_cooldown/chemical_effect)
+
+	S.effect = /datum/reagent/hormone/oxygenation
 	..()
 
 /obj/item/modification/organ/internal/special/on_cooldown/chemical_effect/speedboost
 /obj/item/modification/organ/internal/special/on_cooldown/chemical_effect/speedboost/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/chemical_effect/S = AddComponent(/datum/component/modification/organ/on_cooldown/chemical_effect)
 
-	S.effect = CE_SPEEDBOOST
-	S.magnitude = ALL_USABLE_POSITIVE_CHEM_EFFECTS[CE_SPEEDBOOST]
+	S.effect = /datum/reagent/hormone/speedboost
 	..()
 
 
@@ -107,44 +108,44 @@
 		S.boost = chosen_special_info[2]
 	..()
 
-/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/mechanical_5
-/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/mechanical_5/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
+/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/mechanical
+/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/mechanical/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/stat_boost/S = AddComponent(/datum/component/modification/organ/on_cooldown/stat_boost)
 
 	S.stat = STAT_MEC
-	S.boost = 5
+	S.boost = 3
 	..()
 
-/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/cognition_5
-/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/cognition_5/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
+/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/cognition
+/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/cognition/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/stat_boost/S = AddComponent(/datum/component/modification/organ/on_cooldown/stat_boost)
 
 	S.stat = STAT_COG
-	S.boost = 5
+	S.boost = 3
 	..()
 
-/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/biology_5
-/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/biology_5/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
+/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/biology
+/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/biology/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/stat_boost/S = AddComponent(/datum/component/modification/organ/on_cooldown/stat_boost)
 
 	S.stat = STAT_BIO
-	S.boost = 5
+	S.boost = 3
 	..()
 
-/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/robustness_5
-/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/robustness_5/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
+/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/robustness
+/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/robustness/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/stat_boost/S = AddComponent(/datum/component/modification/organ/on_cooldown/stat_boost)
 
 	S.stat = STAT_ROB
-	S.boost = 5
+	S.boost = 3
 	..()
 
-/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/toughness_5
-/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/toughness_5/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
+/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/toughness
+/obj/item/modification/organ/internal/special/on_cooldown/stat_boost/toughness/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/stat_boost/S = AddComponent(/datum/component/modification/organ/on_cooldown/stat_boost)
 
 	S.stat = STAT_TGH
-	S.boost = 5
+	S.boost = 3
 	..()
 
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/vigilance_5
@@ -152,5 +153,5 @@
 	var/datum/component/modification/organ/on_cooldown/stat_boost/S = AddComponent(/datum/component/modification/organ/on_cooldown/stat_boost)
 
 	S.stat = STAT_VIG
-	S.boost = 5
+	S.boost = 3
 	..()

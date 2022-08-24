@@ -15,52 +15,56 @@
 	if(!holder || !owner || !input)
 		return
 
-	if(input?.len)
+	if(input.len)
 		for(var/element in input)
 			input[element] += multiplier
 
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_OUTPUT, holder, owner, input)
 
-/datum/component/modification/organ/process/shuffle
-	var/list/new_packet_order = list()
-	var/num_outputs
+/datum/component/modification/organ/process/map
+	adjustable = TRUE
+	var/mode = "normal"
 
-/datum/component/modification/organ/process/shuffle/get_function_info()
-	var/description = "<span style='color:orange'>Functional information (processing):</span> rearranges input/output connections"
-	description += "\n<span style='color:orange'>New input order:</span> [new_packet_order.len ? new_packet_order : "unknown, must be grafted to an organ and used once"]"
-	description += "\n<span style='color:orange'>Number of possible outputs:</span> [num_outputs ? num_outputs : "unknown, must be grafted to an organ and used once"]"
+/datum/component/modification/organ/process/map/get_function_info()
+	var/description = "<span style='color:orange'>Functional information (processing):</span> connects inputs to outputs"
+	description += "\n<span style='color:orange'>Mode:</span> [mode]"
 
 	return description
 
-/datum/component/modification/organ/process/shuffle/trigger(atom/movable/holder, mob/living/carbon/owner, list/input)
-	if(!holder || !owner || !input)
+/datum/component/modification/organ/process/map/modify()
+	var/list/adjustable_qualities = list("normal", "random")
+
+	var/decision = input("Choose an input to output mapping mode","Adjusting Organoid") as null|anything in adjustable_qualities
+	if(!decision)
 		return
 
-	var/list/copied_input = input.Copy()
+	mode = decision
+
+/datum/component/modification/organ/process/map/trigger(atom/movable/holder, mob/living/carbon/owner, list/input)
+	if(!holder || !owner || !input || !input.len)
+		return
+
 	var/list/shuffled_input = list()
+	var/list/packet_order = list()
+
+	if(mode == "random")
+		for(var/i in 1 to input.len)
+			packet_order += "[i]"
+			packet_order["[i]"] = i
+			
+		shuffle(packet_order)
+
+		for(var/i in 1 to input.len)
+			var/key = input[text2num(packet_order[i])]
+			var/value = input[key]
+			shuffled_input.Add(key)
+			shuffled_input[key] = value
+
+		input = shuffled_input
 
 	if(input.len)
-		if(!new_packet_order.len)
-			for(var/i in 1 to input.len)
-				new_packet_order += "[i]"
-				new_packet_order["[i]"] = i
-				shuffle(new_packet_order)
-			if(!num_outputs)
-				num_outputs = input.len
+		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_OUTPUT, holder, owner, input)
 
-		if(input.len >= num_outputs)
-			for(var/i in 1 to num_outputs)
-				var/key = copied_input[text2num(new_packet_order[i])]
-				var/value = copied_input[key]
-				shuffled_input.Add(key)
-				shuffled_input[key] = value
-
-	LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_OUTPUT, holder, owner, shuffled_input)
-
-/datum/component/modification/organ/process/shuffle/uninstall()
-	new_packet_order = list()
-	num_outputs = null
-	..()
 
 /datum/component/modification/organ/process/condense
 /datum/component/modification/organ/process/condense/get_function_info()
@@ -76,6 +80,6 @@
 
 	if(input.len)
 		for(var/element in input)
-			condensed_input["condensed input"] += input[element]
+			condensed_input["condensed input"] |= input[element]
 
-	LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_OUTPUT, holder, owner, condensed_input)
+		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_OUTPUT, holder, owner, condensed_input)

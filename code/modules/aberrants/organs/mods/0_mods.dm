@@ -37,7 +37,7 @@
 			var/list/organ_stats = organ_list[organ]
 			var/modifier = abs(predefined_modifier)
 			if(!modifier)
-				modifier = pick(0.10, 0.20, 0.25)
+				modifier = pick(0.04, 0.08, 0.16)
 			O.organ_efficiency_mod.Add(organ)
 			O.organ_efficiency_mod[organ] 	= round(organ_stats[1] * modifier * (1 - (2 * is_parasitic)), 1)
 			O.specific_organ_size_mod 		+= round(organ_stats[2] * modifier * (1 + (2 * is_parasitic)), 0.01)
