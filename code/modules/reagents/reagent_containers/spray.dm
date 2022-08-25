@@ -18,6 +18,7 @@
 	var/spray_size = 3
 	var/list/spray_sizes = list(1,3)
 	volume = 250
+	filling_states = "10;20;50;75;80;100"
 
 /obj/item/reagent_containers/spray/Initialize()
 	. = ..()

@@ -449,7 +449,7 @@
 
 //Wearables =========================
 /datum/craft_recipe/guild/nv_guild
-	name = "Converted NV Goggles"
+	name = "Optimized NV Goggles"
 	result = /obj/item/clothing/glasses/powered/night/guild/crafted
 	icon_state = "clothing"
 	steps = list(
