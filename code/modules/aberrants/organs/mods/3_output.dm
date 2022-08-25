@@ -64,24 +64,23 @@
 	var/list/new_output_qualities = list()
 
 	for(var/quality in additional_output_info)
-		if(istext(quality))
-			var/effect
-			switch(quality)
-				if(/datum/reagent/hormone/bloodrestore)
-					effect = "blood restoration"
-				if(/datum/reagent/hormone/bloodclot)
-					effect = "blood clotting"
-				if(/datum/reagent/hormone/painkiller)
-					effect = "painkiller"
-				if(/datum/reagent/hormone/antitox)
-					effect = "anti-toxin"
-				if(/datum/reagent/hormone/oxygenation)
-					effect = "oxygenation"
-				if(/datum/reagent/hormone/speedboost)
-					effect = "augmented agility"
+		var/effect
+		switch(quality)
+			if(/datum/reagent/hormone/bloodrestore)
+				effect = "blood restoration"
+			if(/datum/reagent/hormone/bloodclot)
+				effect = "blood clotting"
+			if(/datum/reagent/hormone/painkiller)
+				effect = "painkiller"
+			if(/datum/reagent/hormone/antitox)
+				effect = "anti-toxin"
+			if(/datum/reagent/hormone/oxygenation)
+				effect = "oxygenation"
+			if(/datum/reagent/hormone/speedboost)
+				effect = "augmented agility"
 
-			new_output_qualities |= effect
-			new_output_qualities[effect] = quality
+		new_output_qualities |= effect
+		new_output_qualities[effect] = quality
 	
 	O.output_qualities = new_output_qualities
 	..()
