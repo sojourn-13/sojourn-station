@@ -20597,7 +20597,10 @@
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "ecu" = (
 /obj/structure/table/rack,
-/obj/machinery/door/window/southright,
+/obj/machinery/door/window/southright{
+	name = "Ion weaponry";
+	req_access = list(3)
+	},
 /obj/structure/window/reinforced{
 	dir = 4;
 	pixel_x = 0
@@ -22265,7 +22268,10 @@
 /area/nadezhda/hallway/main/stairwell)
 "esU" = (
 /obj/structure/table/rack,
-/obj/machinery/door/window/southleft,
+/obj/machinery/door/window/southleft{
+	req_access = list(3);
+	name = "Energy weapons"
+	},
 /obj/item/gun/energy/cog{
 	pixel_y = 8
 	},
@@ -24334,7 +24340,10 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/construction)
 "ePe" = (
-/obj/machinery/door/window/westleft,
+/obj/machinery/door/window/westleft{
+	req_access = list(3);
+	name = "Grenades"
+	},
 /obj/structure/closet{
 	name = "high explosive grenades"
 	},
@@ -27292,7 +27301,10 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
 "fqy" = (
-/obj/machinery/door/window/westleft,
+/obj/machinery/door/window/westleft{
+	req_access = list(3);
+	name = "RIG modules"
+	},
 /obj/structure/table/rack/shelf,
 /obj/structure/window/reinforced,
 /obj/item/rig/combat/ironhammer/equipped{
@@ -30034,7 +30046,10 @@
 /obj/item/storage/box/syndie_kit/antimaterial_rifle{
 	name = "SA AMR kit"
 	},
-/obj/machinery/door/window/westleft,
+/obj/machinery/door/window/westleft{
+	req_access = list(3);
+	name = "Sniper rifles"
+	},
 /obj/structure/window/reinforced,
 /obj/structure/closet/crate/secure/weapon{
 	name = "AMR crate";
@@ -49242,6 +49257,10 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/machinery/door/window/eastleft{
+	req_access = list(3);
+	name = "Light Machineguns"
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "jzd" = (
@@ -62136,7 +62155,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "lQL" = (
-/obj/machinery/door/window/southleft,
+/obj/machinery/door/window/southleft{
+	req_access = list(3);
+	name = "Shotguns"
+	},
 /obj/structure/table/rack,
 /obj/item/gun/projectile/automatic/riot_autoshotgun,
 /obj/item/gun/projectile/automatic/riot_autoshotgun{
@@ -64614,7 +64636,10 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "mnI" = (
 /obj/structure/table/rack,
-/obj/machinery/door/window/southleft,
+/obj/machinery/door/window/southleft{
+	req_access = list(3);
+	name = "Marksman weaponry"
+	},
 /obj/item/gun/projectile/automatic/ostwind{
 	pixel_y = 6
 	},
@@ -64867,7 +64892,10 @@
 /area/nadezhda/hallway/side/f2section1)
 "mpG" = (
 /obj/structure/table/rack,
-/obj/machinery/door/window/southright,
+/obj/machinery/door/window/southright{
+	name = "Shotguns";
+	req_access = list(3)
+	},
 /obj/structure/window/reinforced{
 	dir = 4;
 	pixel_x = 0
@@ -73002,7 +73030,10 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "nUo" = (
-/obj/machinery/door/window/westright,
+/obj/machinery/door/window/westright{
+	req_access = list(3);
+	name = "Specialized armors"
+	},
 /obj/structure/window/reinforced{
 	dir = 1;
 	pixel_y = 0
@@ -97563,7 +97594,10 @@
 /area/nadezhda/storage/primary)
 "syC" = (
 /obj/structure/table/rack,
-/obj/machinery/door/window/southright,
+/obj/machinery/door/window/southright{
+	name = "Carbines and Rifles";
+	req_access = list(3)
+	},
 /obj/structure/window/reinforced{
 	dir = 4;
 	pixel_x = 0
@@ -115110,7 +115144,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "vTf" = (
-/obj/machinery/door/window/westright,
+/obj/machinery/door/window/westright{
+	req_access = list(3);
+	name = "Sniper rifles"
+	},
 /obj/structure/closet/crate/secure/weapon{
 	name = "DMR crate";
 	req_access = list(3)
@@ -140344,7 +140381,7 @@ rzv
 rzv
 rzv
 rzv
-rzv
+bgD
 mHw
 opS
 opS
@@ -140545,8 +140582,8 @@ hSx
 hSx
 sFI
 sFI
-sFI
-rzv
+xGi
+bgD
 eFd
 qoY
 fsl
@@ -140747,7 +140784,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+xGi
 krD
 krD
 krD
@@ -140949,7 +140986,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+krD
 krD
 krD
 krD
@@ -141151,7 +141188,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+krD
 krD
 kzg
 jyT
@@ -141353,7 +141390,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+krD
 krD
 eAI
 eAI
@@ -141555,7 +141592,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+krD
 krD
 vTf
 fPq
@@ -141757,7 +141794,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+krD
 krD
 krD
 krD
