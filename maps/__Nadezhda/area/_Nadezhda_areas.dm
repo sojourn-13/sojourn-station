@@ -1422,6 +1422,10 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Cargo Mining Dock"
 	icon_state = "mining"
 
+/area/nadezhda/quartermaster/mining_outside_doc
+	name = "\improper Cargo Mining Area"
+	icon_state = "mining"
+
 /area/nadezhda/quartermaster/disposaldrop
 	name = "Disposal and Delivery"
 	icon_state = "erisred"

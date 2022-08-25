@@ -11,7 +11,7 @@
 		new /obj/effect/decal/cleanable/rubble(T)
 	if(prob(1)) //higher the number the more mobs the more laggy this becomes
 		new /obj/structure/ameridian_crystal(T)
-	if(prob(1)) //higher the number the more mobs the more laggy this becomes
+	if(prob(0.5)) //higher the number the more mobs the more laggy this becomes
 		new /obj/random/mob/golem/high_chance(T)
 	if(prob(0.1)) //higher the number the more mobs the more laggy this becomes
 		new /obj/structure/ameridian_crystal/spire(T)
