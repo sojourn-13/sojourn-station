@@ -3,6 +3,10 @@
 	set category = "Admin"
 	set name = "Adminhelp"
 
+	if(!BC_IsKeyAllowedToConnect(ckey) && !usr.client.holder)
+		to_chat(src, "Non-Whitelisted may get any administation help.")
+		return
+
 	if(say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "\red Speech is currently admin-disabled.")
 		return
