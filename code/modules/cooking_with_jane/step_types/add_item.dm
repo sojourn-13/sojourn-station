@@ -11,7 +11,7 @@
 
 	var/exact_path = FALSE //Tests if the item has to be the EXACT ITEM PATH, or just a child of the item path.
 
-	var/reagent_skip = TRUE
+	var/reagent_skip = FALSE
 
 	var/list/exclude_reagents = list()
 

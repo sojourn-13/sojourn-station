@@ -285,14 +285,14 @@
 	For most objects, pull
 */
 /mob/proc/CtrlClickOn(var/atom/A, params)
-	A.CtrlClick(src)
+	A.CtrlClick(src, params)
 	return
 
 /atom/proc/CtrlClick(var/mob/user, params)
 	LEGACY_SEND_SIGNAL(src, COMSIG_CLICK_CTRL, user)
 	return
 
-/atom/movable/CtrlClick(var/mob/user)
+/atom/movable/CtrlClick(var/mob/user, params)
 	if(Adjacent(user) && loc != user) //cant pull things on yourself
 		user.start_pulling(src)
 	..()

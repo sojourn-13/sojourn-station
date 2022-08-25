@@ -160,7 +160,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 						if(J_LO)
 							if(step[3] > CWJ_BURN_TIME_LOW)
 								reason="Time too large for Low setting on CWJ_USE_STOVE; Food will automatically burn."
-								
+
 						if(J_MED)
 							if(step[3] > CWJ_BURN_TIME_MEDIUM)
 								reason="Time too large for Medium setting on CWJ_USE_STOVE; Food will automatically burn."
@@ -171,7 +171,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 						else
 							reason="Unrecognized temperature for CWJ_USE_STOVE"
-					
+
 					if(!reason)
 						create_step_use_stove(step[2], step[3], FALSE)
 				if(CWJ_USE_STOVE_OPTIONAL)
@@ -181,7 +181,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 						if(J_LO)
 							if(step[3] > CWJ_BURN_TIME_LOW)
 								reason="Time too large for Low setting on CWJ_USE_STOVE_OPTIONAL; Food will automatically burn."
-								
+
 						if(J_MED)
 							if(step[3] > CWJ_BURN_TIME_MEDIUM)
 								reason="Time too large for Medium setting on CWJ_USE_STOVE_OPTIONAL; Food will automatically burn."
@@ -191,7 +191,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 								reason="Time too large for High setting on CWJ_USE_STOVE_OPTIONAL; Food will automatically burn."
 						else
 							reason="Unrecognized temperature for CWJ_USE_STOVE_OPTIONAL"
-					
+
 					if(!reason)
 						create_step_use_stove(step[2], step[3], TRUE)
 
@@ -225,7 +225,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 			if("reagent_skip" in step)
 				if(!set_reagent_skip(step["reagent_skip"]))
 					reason="reagent_skip / reagent_skip declared on non add-item / add-reagent recipe step."
-			
+
 			if("exclude_reagents" in step)
 				for(var/id in step["exclude_reagents"])
 					if(!is_reagent_with_id_exist(id))
@@ -491,7 +491,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 	var/obj/item/container = parent.holder_ref.resolve()
 	if(container)
 		//Build up a list of reagents that went into this.
-		var/datum/reagents/slurry = new /datum/reagents(1000000)
+		var/datum/reagents/slurry = new /datum/reagents(max=1000000, A=container)
 
 		//Filter out reagents based on settings
 		if(GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_REAGENT]"])
@@ -500,8 +500,15 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 					continue
 				var/datum/cooking_with_jane/recipe_step/add_reagent/active_step = GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_REAGENT]"][id]
 				var/amount_to_remove = active_step.required_reagent_amount * (1 - active_step.remain_percent)
+				if(!amount_to_remove)
+					continue
+				#ifdef CWJ_DEBUG
+				log_debug("/recipe/proc/create_product: Removing [amount_to_remove] units of id [active_step.required_reagent_id] from [container]")
+				#endif
 				container.reagents.remove_reagent(active_step.required_reagent_id, amount_to_remove, safety = 1)
-
+		#ifdef CWJ_DEBUG
+		log_debug("/recipe/proc/create_product: Transferring container reagents of [container.reagents.total_volume] to slurry of current volume [slurry.total_volume] max volume [slurry.maximum_volume]")
+		#endif
 		container.reagents.trans_to_holder(slurry, amount=container.reagents.total_volume)
 
 		//Do reagent filtering on added items and produce
@@ -509,13 +516,25 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		for(var/obj/item/added_item in container.contents)
 			var/can_add = TRUE
 			var/list/exclude_specific_reagents = list()
+			#ifdef CWJ_DEBUG
+			log_debug("/recipe/proc/create_product: Analyzing reagents of [added_item].")
+			#endif
 			for(var/id in pointer.steps_taken)
+				#ifdef CWJ_DEBUG
+				log_debug("/recipe/proc/create_product: Comparing step id [id] for [added_item].")
+				#endif
 				if(id in exclude_list) //Only consider a step for removal one time.
+					#ifdef CWJ_DEBUG
+					log_debug("/recipe/proc/create_product: id in exclude list; skipping.")
+					#endif
 					continue
 				if(GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_ITEM]"] && GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_ITEM]"][id])
 					var/datum/cooking_with_jane/recipe_step/add_item/active_step = GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_ITEM]"][id]
 					exclude_specific_reagents = active_step.exclude_reagents
 					if(active_step.reagent_skip)
+						#ifdef CWJ_DEBUG
+						log_debug("/recipe/proc/create_product: Reagent skip detected. Ignoring reagents from [added_item].")
+						#endif
 						can_add = FALSE
 						exclude_list += id
 						break
@@ -523,14 +542,23 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 					var/datum/cooking_with_jane/recipe_step/add_produce/active_step = GLOB.cwj_step_dictionary_ordered["[CWJ_ADD_PRODUCE]"][id]
 					exclude_specific_reagents = active_step.exclude_reagents
 					if(active_step.reagent_skip)
+						#ifdef CWJ_DEBUG
+						log_debug("/recipe/proc/create_product: Reagent skip detected. Ignoring reagents from [added_item].")
+						#endif
 						can_add = FALSE
 						exclude_list += id
 						break
 			if(can_add)
 				if(exclude_specific_reagents.len)
 					for(var/id in exclude_specific_reagents)
+						#ifdef CWJ_DEBUG
+						log_debug("/recipe/proc/create_product: Removing [added_item.reagents.get_reagent_amount(id)] units of id [id] from [added_item]")
+						#endif
 						added_item.reagents.remove_reagent(id, added_item.reagents.get_reagent_amount(id), safety=TRUE)
-				added_item.reagents.trans_to_holder(slurry, amount=container.reagents.total_volume)
+				#ifdef CWJ_DEBUG
+				log_debug("/recipe/proc/create_product: Adding [added_item.reagents.total_volume] units from [added_item] to slurry")
+				#endif
+				added_item.reagents.trans_to_holder(slurry, amount=added_item.reagents.total_volume)
 
 		//Purge the contents of the container we no longer need it
 		QDEL_LIST(container.contents)
@@ -539,13 +567,17 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 		for(var/i = 0; i < product_count; i++)
 			var/obj/item/new_item = new product_type(container)
-
+			log_debug("Item created with reagents of [new_item.reagents.total_volume]")
 			if(replace_reagents)
+				//Clearing out reagents in data. If initialize hasn't been called, we also null that out here.
+				#ifdef CWJ_DEBUG
+				log_debug("/recipe/proc/create_product: Clearing out reagents from the [new_item]")
+				#endif
 				new_item.reagents.clear_reagents()
 			#ifdef CWJ_DEBUG
-			log_debug("Transferring slurry of [slurry.total_volume] to [new_item] of [new_item.reagents.total_volume]")
+			log_debug("/recipe/proc/create_product: Transferring slurry of [slurry.total_volume] to [new_item] of total volume [new_item.reagents.total_volume]")
 			#endif
-			slurry.trans_to_holder(new_item.reagents, amount=slurry.total_volume)
+			slurry.trans_to_holder(new_item.reagents, amount=slurry.total_volume, copy=1)
 
 			new_item?:food_quality = pointer.tracked_quality + calculate_reagent_quality(pointer)
 			//TODO: Consider making an item's base components show up in the reagents of the product.
