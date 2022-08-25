@@ -716,7 +716,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 			qdel(src)
 		else
 			collapse()
-			if(severity >= 2)
+			if(severity <= 2)
 				qdel(src)
 
 /obj/structure/burrow/preventsTurfInteractions()
