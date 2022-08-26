@@ -435,6 +435,13 @@
 	build_path = /obj/item/circuitboard/ameridian_analyzer
 	category = CAT_AMERIDIAN
 
+/datum/design/research/circuit/ameridianshieldwallgen
+	name = "sonic fence generator"
+	build_path = /obj/item/circuitboard/ameridianshieldwallgen
+	category = CAT_AMERIDIAN
+
+
+
 //Industrial Printing
 
 /datum/design/research/circuit/industrial_chems

@@ -69,7 +69,8 @@
 
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/sonic_gun,
-							/datum/design/research/item/mecha/weapon/sonic
+							/datum/design/research/item/mecha/weapon/sonic,
+							/datum/design/research/circuit/ameridianshieldwallgen
 							)
 
 

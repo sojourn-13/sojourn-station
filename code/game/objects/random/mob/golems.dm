@@ -21,7 +21,7 @@
 	spawn_nothing_percentage = 30
 
 /obj/random/cluster/golem
-	name = "cluster of golem"
+	name = "cluster of golem (2-3)"
 	icon_state = "hostilemob-brown-cluster"
 	alpha = 128
 	min_amount = 2
@@ -32,12 +32,12 @@
 	return /obj/random/mob/golem
 
 /obj/random/cluster/golem_hoard
-	name = "hoard of golem"
+	name = "hoard of golem (4-5)"
 	icon_state = "hostilemob-brown-cluster"
 	alpha = 128
 	//This is still a lot
-	min_amount = 7
-	max_amount = 10
+	min_amount = 4
+	max_amount = 5
 	spread_range = 0
 
 /obj/random/cluster/golem_hoard/item_to_spawn()

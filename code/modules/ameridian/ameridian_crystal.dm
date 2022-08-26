@@ -14,6 +14,7 @@
 	var/colour_type = "GREEN"
 
 	var/resize = TRUE
+	var/randomized_colour = TRUE
 
 /obj/structure/ameridian_crystal/Initialize(mapload, ...)
 	update_icon()
@@ -21,20 +22,42 @@
 
 /obj/structure/ameridian_crystal/New()
 	..()
-	growth = pick(1,1,2,2,2,3,3,3,4,4,4,5,5)
-	new /obj/random/mob/golem (src.loc)
-	new /obj/random/mob/golem/high_chance (src.loc)
-	new /obj/random/mob/golem/high_chance (src.loc)
 	update_icon()
+	if(!randomized_colour)
+		gooners()
+		return
 	if(prob(33))
 		colour_type = "BLUE"
 		icon_state = "ameridian_crystal_blue"
-		new /obj/random/cluster/golem (src.loc)
-		return
-	if(prob(33))
+	else if(prob(33))
 		colour_type = "RED"
 		icon_state = "ameridian_crystal_red"
+	gooners()
+
+/obj/structure/ameridian_crystal/proc/gooners()
+	if(colour_type == "BLUE") //Slower but less danger - kinda this needs to be better worked on
 		new /obj/random/cluster/golem (src.loc)
+		growth = pick(1,1,1,1,2,2,2,3,3,3,4,4,5)
+		light_color = COLOR_LIGHTING_BLUE_BRIGHT
+	if(colour_type == "RED") //Red things grow faster
+		new /obj/random/cluster/golem (src.loc)
+		new /obj/random/mob/golem/high_chance (src.loc)
+		growth = pick(1,2,2,3,3,3,4,5,5,5,5,5,5)
+		light_color = COLOR_LIGHTING_RED_BRIGHT
+	if(colour_type == "GREEN")
+		new /obj/random/mob/golem (src.loc)
+		new /obj/random/mob/golem/high_chance (src.loc)
+		growth = pick(1,1,2,2,2,3,3,3,4,4,4,5,5)
+	if(colour_type == "PURPLE")
+		growth = pick(1,2,2,3,3,3,4,4,4,5,5,5,5)
+		light_color = COLOR_LIGHTING_PURPLE_BRIGHT
+		icon_state = "ameridian_crystal_purple"
+		new /obj/random/cluster/golem_hoard(src.loc)
+	if(colour_type == "FAKE")
+		growth = 1
+		light_color = COLOR_LIGHTING_PURPLE_DARK
+		icon_state = "ameridian_crystal_purple"
+	update_icon()
 
 /obj/structure/ameridian_crystal/add_initial_transforms()
 	if (resize)

@@ -1597,6 +1597,7 @@
 #include "code\modules\ameridian\ameridian_analyzer.dm"
 #include "code\modules\ameridian\ameridian_core.dm"
 #include "code\modules\ameridian\ameridian_crystal.dm"
+#include "code\modules\ameridian\ameridian_field.dm"
 #include "code\modules\ameridian\ameridian_refinery.dm"
 #include "code\modules\ameridian\ameridian_spire.dm"
 #include "code\modules\ameridian\liquid_ameridian_processor.dm"
