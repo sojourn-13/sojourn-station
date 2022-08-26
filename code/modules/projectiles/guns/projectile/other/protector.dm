@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/grenade
 	name = "NT GL \"Protector\""
-	desc = "A bulky pump-action grenade launcher. Holds up to 6 grenade shells in a revolving magazine."
+	desc = "A bulky pump-action grenade launcher, produced by the New Testament. Holds up to 6 grenade shells in a revolving magazine."
 	icon = 'icons/obj/guns/launcher/riotgun.dmi'
 	icon_state = "riotgun"
 	item_state = "riotgun"
