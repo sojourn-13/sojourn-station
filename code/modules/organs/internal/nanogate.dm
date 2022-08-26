@@ -28,7 +28,7 @@
 		/obj/item/organ/internal/nanogate/proc/nanite_antenna,
 		// Creation and upgrade of the bot
 
-		///obj/item/organ/internal/nanogate/proc/create_nanobot, - bot itself is buggy and not all that good on performance
+		/obj/item/organ/internal/nanogate/proc/create_nanobot,
 
 		// Upgrades of the user.
 		/obj/item/organ/internal/nanogate/proc/nanite_regen,
@@ -66,7 +66,7 @@ obj/item/organ/internal/nanogate/artificer
 	owner_verbs = list(
 		/obj/item/organ/internal/nanogate/proc/nanite_antenna,
 		// Creation and upgrade of the bot
-		///obj/item/organ/internal/nanogate/proc/create_nanobot, - bot itself is buggy and not all that good on performance
+		/obj/item/organ/internal/nanogate/proc/create_nanobot,
 
 		// Upgrades of the user.
 		/obj/item/organ/internal/nanogate/proc/nanite_regen,
