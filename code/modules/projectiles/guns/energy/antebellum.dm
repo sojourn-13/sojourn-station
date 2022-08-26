@@ -4,9 +4,9 @@
 	icon_state = "antebellum"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	item_charge_meter = TRUE
-	desc = "One of the creation of Divisors and Monomial Numericals from the New testament following the need to weaponize the followers against Excelsior and Psionic creature menace without having the need to make use of the Prime's armory. \
-	The Antebellum is a plasma shotgun that destroy their own cell and releases plasma and ionized sharpnel into their victim, making it formidable while being only able to use church-brand energy cells. \
-	This one holds a rosary of a model of a cruciform - for wishing good luck."
+	desc = "Created by the Numericals and distributed by the Testament in hopes of combatting Excelsior and psionic creatures. \
+	The Antebellum is a plasma shotgun that uses only Church-branded cells, consuming them and releasing their contents in a formidable burst of plasma and ionized shrapnel.\
+	This one bears a cruciform rosary, for good luck."
 	fire_sound = 'sound/weapons/Laser.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
