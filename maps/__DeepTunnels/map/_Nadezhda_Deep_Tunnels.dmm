@@ -15,7 +15,7 @@
 /turf/simulated/floor/plating,
 /area/mine/unexplored)
 "ae" = (
-/obj/random/mob/undergroundmob/low_chance,
+/obj/random/mob/golem/high_chance,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "af" = (
@@ -995,6 +995,7 @@
 "cY" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/table/steel_reinforced,
+/obj/item/gun/energy/sonic_emitter/preloaded,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/mine/hallway)
 "cZ" = (
@@ -7872,7 +7873,7 @@
 /turf/simulated/floor/asteroid,
 /area/nadezhda/quartermaster/mining_outside_doc)
 "tg" = (
-/mob/living/carbon/superior_animal/wurm/osmium,
+/obj/random/mob/golem/low_chance,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "th" = (
@@ -8592,11 +8593,11 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/rnd/outpostbotany)
 "vj" = (
-/mob/living/simple_animal/hostile/nightmare,
+/obj/random/cluster/golem/lower_chance,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "vl" = (
-/obj/random/mob/undergroundmob,
+/obj/random/cluster/golem/low_chance,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "vn" = (
@@ -11956,7 +11957,7 @@ ti
 ti
 tK
 tK
-tK
+vl
 tK
 ti
 ti
@@ -12157,7 +12158,7 @@ ti
 ti
 ti
 tK
-ji
+tK
 tK
 tK
 ti
@@ -12869,8 +12870,8 @@ ti
 ti
 ti
 ti
-ji
-uf
+vj
+tK
 ti
 ti
 ti
@@ -12949,7 +12950,7 @@ ti
 ti
 ti
 tK
-ii
+tK
 tK
 ti
 ti
@@ -13150,7 +13151,7 @@ ti
 ti
 ti
 ti
-tK
+vl
 tK
 tK
 ti
@@ -13525,9 +13526,9 @@ ti
 ti
 ti
 tK
-ji
 tK
-uf
+vj
+tK
 ti
 ti
 ti
@@ -13710,7 +13711,7 @@ ti
 ti
 ti
 tK
-ji
+vj
 ti
 ti
 ti
@@ -16310,7 +16311,7 @@ ti
 ti
 ti
 tK
-ji
+vj
 tK
 tK
 ti
@@ -16615,7 +16616,7 @@ ti
 ti
 tK
 tK
-tK
+tg
 tK
 tK
 ti
@@ -17020,7 +17021,7 @@ ti
 ti
 ti
 ti
-vn
+tK
 tK
 ti
 ti
@@ -17098,7 +17099,7 @@ ti
 ti
 ti
 tK
-ii
+vj
 tK
 ti
 ti
@@ -18428,10 +18429,10 @@ ti
 ti
 ti
 tK
+tg
 tK
 tK
 tK
-ae
 tK
 tK
 tK
@@ -18790,7 +18791,7 @@ ti
 ti
 ti
 tK
-ji
+tg
 tK
 ti
 ti
@@ -20973,7 +20974,7 @@ ti
 ti
 ti
 tK
-ii
+vl
 tK
 ti
 ti
@@ -21551,7 +21552,7 @@ ti
 ti
 ti
 tK
-ii
+vj
 tK
 ti
 ti
@@ -22999,7 +23000,6 @@ ti
 ti
 ti
 tK
-uf
 tK
 tK
 tK
@@ -23012,6 +23012,7 @@ tK
 tK
 tK
 tK
+tK
 ti
 ti
 ti
@@ -23060,7 +23061,7 @@ ti
 ti
 ti
 tK
-tK
+tg
 ti
 ti
 ti
@@ -23414,7 +23415,7 @@ ti
 ti
 tK
 tK
-tK
+vj
 tK
 ti
 ti
@@ -24161,7 +24162,7 @@ ti
 ti
 ti
 tK
-ji
+vj
 ti
 ti
 ti
@@ -24636,7 +24637,7 @@ tK
 tK
 tK
 tK
-uf
+tK
 ti
 ti
 ti
@@ -26133,7 +26134,7 @@ ti
 ti
 ti
 tK
-ii
+tK
 ti
 ti
 ti
@@ -26335,7 +26336,7 @@ ti
 ti
 ti
 tK
-tK
+vj
 ti
 ti
 ti
@@ -26825,7 +26826,7 @@ ti
 ti
 ti
 tK
-vl
+tK
 tK
 ti
 ti
@@ -27027,19 +27028,19 @@ ti
 ti
 ti
 tK
+ae
+tK
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 tK
 tK
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-tK
-vj
 tK
 tK
 tK
@@ -27242,7 +27243,7 @@ ti
 ti
 tK
 tK
-tK
+vj
 tK
 tK
 ti
@@ -27494,7 +27495,7 @@ ti
 ti
 tK
 tK
-vl
+tK
 ti
 ti
 ti
@@ -27695,7 +27696,7 @@ tK
 tK
 ti
 tK
-tK
+tg
 tK
 ti
 ti
@@ -27811,8 +27812,8 @@ ti
 ti
 ti
 tK
-ii
-uf
+vj
+tK
 ti
 ti
 ti
@@ -28295,7 +28296,7 @@ tK
 tK
 tK
 tK
-tK
+tg
 tK
 tK
 tK
@@ -28489,7 +28490,7 @@ ti
 ti
 ti
 ti
-tK
+tg
 tK
 tK
 tK
@@ -28691,7 +28692,7 @@ ti
 ti
 ti
 ti
-tK
+tg
 tK
 ti
 ti
@@ -30307,7 +30308,7 @@ ti
 ti
 ti
 tK
-ji
+vl
 tK
 ti
 ti
@@ -31855,7 +31856,7 @@ ti
 ti
 ti
 tK
-ii
+tK
 tK
 ti
 ti
@@ -32057,7 +32058,7 @@ ti
 ti
 ti
 tK
-tK
+vj
 tK
 ti
 ti
@@ -32531,7 +32532,7 @@ ti
 ti
 ti
 tK
-tK
+tg
 tK
 tK
 tK
@@ -32940,7 +32941,7 @@ tK
 tK
 tK
 tK
-tK
+tg
 tK
 ti
 ti
@@ -33117,7 +33118,7 @@ ti
 ti
 ti
 ti
-ii
+vj
 tK
 ti
 ti
@@ -34160,7 +34161,7 @@ ti
 ti
 tK
 tK
-tK
+tg
 tK
 ti
 ti
@@ -34705,7 +34706,7 @@ Zb
 fo
 Zb
 Zb
-Zb
+Sw
 Zb
 Zb
 Zb
@@ -35160,7 +35161,7 @@ ti
 ti
 tK
 tK
-tK
+tg
 tK
 tK
 tK
@@ -35364,7 +35365,7 @@ tK
 tK
 tK
 tK
-uf
+tK
 tK
 tK
 tK
@@ -35601,7 +35602,7 @@ ti
 ti
 ti
 tK
-ji
+vj
 tK
 tK
 ti
@@ -35770,7 +35771,7 @@ tK
 tK
 tK
 tK
-tK
+tg
 tK
 tK
 tK
@@ -37040,7 +37041,7 @@ ti
 ti
 ti
 ti
-ji
+tK
 tK
 ti
 ti
@@ -37242,7 +37243,7 @@ ti
 ti
 ti
 ti
-tK
+vj
 tK
 ti
 ti
@@ -38565,7 +38566,7 @@ ti
 ti
 ti
 tK
-ii
+vj
 tK
 ti
 ti
@@ -40001,7 +40002,7 @@ ti
 ti
 ti
 ti
-ii
+vj
 tK
 ti
 ti
@@ -40438,7 +40439,7 @@ ti
 ti
 ti
 tK
-ii
+vj
 ti
 ti
 ti
@@ -41992,7 +41993,7 @@ ti
 ti
 ti
 tK
-ii
+vj
 tK
 ti
 ti
@@ -43719,7 +43720,7 @@ ti
 ti
 ti
 tK
-ii
+vj
 tK
 ti
 ti
@@ -43896,7 +43897,7 @@ ti
 ti
 ti
 tK
-uf
+tK
 ti
 ti
 ti
@@ -44097,7 +44098,7 @@ ti
 ti
 ti
 ti
-ii
+vj
 tK
 ti
 ti
@@ -45032,7 +45033,7 @@ ti
 ti
 ti
 ti
-ii
+vj
 tK
 ti
 ti
@@ -45064,7 +45065,7 @@ ti
 ti
 ti
 tK
-ii
+vj
 tK
 ti
 ti
@@ -45588,7 +45589,7 @@ ti
 ti
 ti
 ti
-Sw
+Zb
 Zb
 Zb
 Zb
