@@ -12,11 +12,13 @@
 	anchor_direction = WEST
 	circuit = /obj/item/circuitboard/liquid_ameridian_processor
 	var/obj/structure/reagent_dispensers/bidon/Container
-	//Current as of wrighting is balance is around t5 parts aka 50% reduction\
-	Meaning: 1 ameridain shard is worth 10, and 50% of 30 = 15 this 1.5 shards makes 1 steel or 2 golem kills\
-	Its balance this way to both encurage its use to fill in gaps when a drill is failing or to round out numbers when needed\
-	Ontop of it being able to be farmed semi-easily with an invest of 1 to 3 cores + time on return.\
+	/*
+	Current as of wrighting is balance is around t5 parts aka 50% reduction
+	Meaning: 1 ameridain shard is worth 10, and 50% of 30 = 15 this 1.5 shards makes 1 steel or 2 golem kills
+	Its balance this way to both encurage its use to fill in gaps when a drill is failing or to round out numbers when needed
+	Ontop of it being able to be farmed semi-easily with an invest of 1 to 3 cores + time on return.
 	- Trilby 8/24/2022
+	*/
 	var/outputs = list(
 						list(name = "Steel", cost = 30, path = /obj/item/stack/material/steel),
 						list(name = "Plastic", cost = 30, path = /obj/item/stack/material/plastic),
