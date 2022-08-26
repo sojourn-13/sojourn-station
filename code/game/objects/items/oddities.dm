@@ -596,7 +596,7 @@
 
 /obj/item/oddity/nt/pyramid
 	name = "Pyramid"
-	desc = "A small structure with various triangular bricks and forms a triangular frame. This one seems like a egyptian pyramid in specific, and have various ancient egyptian engravings about forgotten gods that only the today's history researcher may know, considering that various aspects of civilization has been lost over time as the old earth has lost their old history entities from the newer, non-earth born generations, or straight up alien. This lifts the important need to preserve history to never be forgotten. It seems this is supposed to be, more specifically, a figure of the Pyramid which Queen Khentkaus I has been buried. Anubis is the god more present on the arid, golden sand bricks and chiselled by hand."
+	desc = "A small sandstone pyramid, covered in bizzare engravings. The Cartographer of the Church of the Absolute has declared relics like this holy beyond any doubt, though none know exactly why."
 	icon_state = "pyramid"
 	oddity_stats = list(
 		STAT_TGH = 16
