@@ -1,6 +1,6 @@
 /obj/item/gun/energy/plasma
 	name = "\"Dominion\" plasma rifle"
-	desc = "A Old Testament weapon that uses advanced plasma generation technology to emit powerful blasts of energized matter or large, consuming fireballs. Due to its complexity and cost, it is usually reserved for specialists and elites."
+	desc = "One of the last designs produced by the Old Testament, the \"Dominion\" uses advanced plasma generation technology to emit powerful blasts of energized matter or large, consuming fireballs. Due to its complexity and cost, it is usually reserved for specialists and elites."
 	icon = 'icons/obj/guns/energy/pulse.dmi'
 	icon_state = "pulse"
 	item_state = null	//so the human update icon uses the icon_state instead.
@@ -44,7 +44,7 @@
 
 /obj/item/gun/energy/plasma/destroyer
 	name = "\"Purger\" plasma rifle"
-	desc = "A more recent \"Old Testament\" brand plasma rifle, developed in direct response to compete against the highly successful \"Cassad\" design. Reliable and capable of firing suppressive bursts of lower-temperature plasma"
+	desc = "An older \"Old Testament\" brand plasma rifle, developed in direct response to compete against the highly successful \"Cassad\" design. Reliable and capable of firing suppressive bursts of lower-temperature plasma."
 	icon = 'icons/obj/guns/energy/destroyer.dmi'
 	fire_sound = 'sound/weapons/pulse.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 10, MATERIAL_URANIUM = 5)
