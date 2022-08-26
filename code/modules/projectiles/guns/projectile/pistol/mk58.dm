@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/mk58
 	name = "\"Thorn\" pistol"
-	desc = "The first firearm produced by the Church of the Absolute, predating even the Testament, the OT Thorn is a cheap, ubiquitous sidearm and of the few Church-branded ballistic weapons. Fires 9mm rounds and bears a suspicious resemblance to the Mk-58 Mod 0."
+	desc = "The first firearm produced by the Church of the Absolute, predating even the Testament, the OT Thorn is a cheap, ubiquitous sidearm and one of the few Church-branded ballistic weapons. Fires 9mm rounds and bears a suspicious resemblance to the Mk-58 Mod 0."
 	icon = 'icons/obj/guns/projectile/mk58.dmi'
 	icon_state = "mk58"
 	item_state = "mk58"
