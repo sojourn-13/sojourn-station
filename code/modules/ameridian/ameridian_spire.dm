@@ -9,10 +9,11 @@
 	light_power = 7
 	light_color = COLOR_LIGHTING_PURPLE_BRIGHT
 	resize = FALSE
-	var/is_growing = FALSE
-	var/spread_range = 1 // Radius that the crystal can spawn new crystals. this is basically atm a 3x3 - Gains 1x1 every additonal core added so people can make their own size fields how they want!
 	randomized_colour = FALSE
 	colour_type = "PURPLE"
+	growth = 5 //We start out always maxed as to save on preformance
+	grower_helper = TRUE
+	self_improvement = FALSE
 
 /obj/structure/ameridian_crystal/spire/fake
 	spread_range = -1 //Invest 3 into me before a return
@@ -33,10 +34,10 @@
 /obj/structure/ameridian_crystal/spire/attackby(obj/item/I, mob/user)
 	..()
 	if(istype(I, /obj/item/ameridian_core))
-		to_chat(user, "<span class='info'>The spire begines to</span><span class='rose'> grow rapidly as it comuses the </span><span class='angelsay'>pure core </span><span class='moderate'>whole.</span>")
 		if(!is_growing)
 			addtimer(CALLBACK(src, .proc/spread), rand(40,90)) //So people have time to prepare for the worst
 			is_growing = TRUE
+			to_chat(user, "<span class='info'>The spire begines to</span><span class='rose'> grow rapidly as it comuses the </span><span class='angelsay'>pure core </span><span class='moderate'>whole.</span>")
 		else
 			to_chat(user, "<span class='info'>The spire begines to</span><span class='rose'> grow even faster as it comuses the </span><span class='angelsay'>pure core </span><span class='moderate'>whole.</span>")
 			spread_range += 1 //this can quickly
@@ -51,30 +52,8 @@
 	var/obj/item/stack/material/ameridian/T = new(get_turf(src))
 	///new /obj/item/ameridian_core(T) - So SI cant sneakly get these and start their own farms without LSS or what ever
 	T.amount = 60 //Half a stack for a rare find
-	activate_mobs_in_range(src, 15) // Wake up the nearby golems
+	activate_mobs_in_range(src, 7) // Wake up the nearby golems
 	qdel(src)
-
-/obj/structure/ameridian_crystal/spire/proc/spread()
-	if(!src) //Just in case
-		return
-	if(!is_growing)
-		return
-	var/list/turf_list = list()
-	for(var/turf/T in orange(spread_range, get_turf(src)))
-		if(!can_spread_to_turf(T))
-			continue
-		if(T.Enter(src)) // If we can "enter" on the tile then we can spread to it.
-			turf_list += T
-
-	if(turf_list.len)
-		var/turf/T = pick(turf_list)
-		var/crystal
-
-		crystal = /obj/structure/ameridian_crystal // We spread are basic type
-
-		if(crystal)
-			new crystal(T) // We spread
-	addtimer(CALLBACK(src, .proc/spread), rand(60,90)) //This constantly gets recalled by self. Thus to give people time to combat the shards they will get some time
 
 // Check the given turf to see if there is any special things that would prevent the spread
 /obj/structure/ameridian_crystal/proc/can_spread_to_turf(var/turf/T)
@@ -89,4 +68,8 @@
 			return FALSE
 		if(locate(/obj/machinery/shieldwallgen/ameridian) in T) // Sonic fence block spread. We can't spread in corners
 			return FALSE
-	return TRUE
+		if(istype(T, /turf/simulated/floor/asteroid))
+			return TRUE
+		if(istype(T, /turf/simulated/floor/beach))
+			return TRUE
+	return FALSE

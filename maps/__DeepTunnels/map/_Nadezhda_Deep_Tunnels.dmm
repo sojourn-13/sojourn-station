@@ -46,9 +46,14 @@
 	},
 /area/turbolift/Research/underground)
 "ak" = (
-/turf/simulated/shuttle/wall/mining{
-	icon_state = "10,18"
+/obj/structure/railing{
+	anchored = 1;
+	dir = 4
 	},
+/obj/effect/floor_decal/spline/plain{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
 /area/mine/hallway)
 "al" = (
 /turf/simulated/shuttle/wall/mining{
@@ -704,12 +709,11 @@
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/prep)
 "cf" = (
-/obj/structure/multiz/stairs/enter/bottom{
-	dir = 4
+/obj/machinery/light/small{
+	dir = 1
 	},
-/obj/structure/railing,
 /turf/simulated/floor/asteroid,
-/area/mine/prep)
+/area/mine/hallway)
 "cg" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -816,15 +820,6 @@
 "cw" = (
 /turf/simulated/wall/r_wall,
 /area/mine/atmos)
-"cx" = (
-/obj/effect/decal/cleanable/generic,
-/obj/random/scrap,
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"cy" = (
-/obj/effect/decal/cleanable/generic,
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "cz" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
@@ -984,20 +979,23 @@
 /area/mine/hallway)
 "cX" = (
 /obj/structure/railing{
-	anchored = 1;
 	dir = 4
 	},
 /obj/effect/floor_decal/spline/plain{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/mine/processing)
+"cY" = (
+/obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
 	},
+/obj/structure/railing,
 /turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"cY" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/table/steel_reinforced,
-/obj/item/gun/energy/sonic_emitter/preloaded,
-/turf/simulated/floor/tiled/steel/gray_platform,
-/area/mine/hallway)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "cZ" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -1030,45 +1028,19 @@
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/mine/prep)
 "dd" = (
-/obj/structure/multiz/stairs/enter/bottom{
-	dir = 4
-	},
-/obj/structure/railing,
-/obj/machinery/camera/network/mining,
-/turf/simulated/floor/asteroid,
-/area/mine/prep)
-"de" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/effect/floor_decal/spline/plain{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/mine/prep)
+/obj/structure/table/rack,
+/obj/item/device/gps/mining,
+/obj/item/device/gps/mining,
+/obj/item/device/gps/mining,
+/obj/random/lowkeyrandom,
+/turf/simulated/floor/tiled/steel/danger,
+/area/mine/hallway)
 "df" = (
-/obj/structure/multiz/stairs/enter/bottom,
-/turf/simulated/floor/plating,
-/area/mine/prep)
-"dg" = (
-/obj/structure/railing{
-	anchored = 1;
-	dir = 8
+/obj/structure/ameridian_crystal/spire/fake{
+	spread_range = 0
 	},
-/obj/effect/decal/cleanable/generic,
-/obj/random/material_ore,
-/obj/random/material_rare/low_chance,
-/obj/effect/floor_decal/spline/plain{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/mine/prep)
+/turf/simulated/floor/asteroid,
+/area/mine/hallway)
 "dh" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -1192,11 +1164,15 @@
 /turf/simulated/floor/plating,
 /area/mine/hallway)
 "dx" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/table/steel_reinforced,
+/obj/item/gun/energy/sonic_emitter/preloaded,
+/obj/item/ameridian_core,
+/obj/item/ameridian_core,
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 0
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/mine/hallway)
 "dy" = (
@@ -1208,26 +1184,11 @@
 /turf/simulated/floor/asteroid,
 /area/mine/prep)
 "dz" = (
-/turf/simulated/mineral/random/high_chance,
-/area/mine/prep)
-"dA" = (
-/obj/effect/floor_decal/spline/plain{
-	dir = 1
-	},
-/obj/machinery/conveyor/south{
-	id = "mining_internal"
-	},
-/turf/simulated/floor/plating,
-/area/mine/prep)
-"dB" = (
-/obj/effect/floor_decal/spline/plain{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warningdust{
+/obj/machinery/camera/network/mining{
 	dir = 8
 	},
-/turf/simulated/floor/plating,
-/area/mine/prep)
+/turf/simulated/floor/tiled/steel,
+/area/mine/hallway)
 "dC" = (
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
@@ -1248,21 +1209,28 @@
 /turf/simulated/floor/asteroid,
 /area/nadezhda/quartermaster/mining_outside_doc)
 "dF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 1
-	},
+/obj/structure/multiz/stairs/enter/bottom,
 /turf/simulated/floor/plating,
 /area/mine/processing)
 "dG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 1
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 4
 	},
-/turf/simulated/floor/plating,
+/obj/structure/railing,
+/obj/machinery/camera/network/mining,
+/turf/simulated/floor/asteroid,
 /area/mine/processing)
 "dH" = (
+/obj/structure/railing{
+	anchored = 1;
+	dir = 8
+	},
+/obj/effect/decal/cleanable/generic,
+/obj/random/material_ore,
+/obj/random/material_rare/low_chance,
+/obj/effect/floor_decal/spline/plain{
+	dir = 1
+	},
 /obj/effect/floor_decal/industrial/warningdust{
 	dir = 4
 	},
@@ -1374,6 +1342,9 @@
 "dW" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/simulated/floor/asteroid,
 /area/mine/hallway)
 "dZ" = (
@@ -1947,10 +1918,6 @@
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
-"ft" = (
-/obj/structure/sign/warningnew/radiation,
-/turf/simulated/wall/r_wall,
-/area/mine/hallway)
 "fv" = (
 /obj/machinery/camera/network/mining{
 	dir = 4
@@ -2408,10 +2375,7 @@
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
 "gB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/closet/crate,
-/obj/random/lowkeyrandom,
+/obj/machinery/vending/tool,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
 "gC" = (
@@ -2856,13 +2820,10 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/mine/power)
 "hJ" = (
-/obj/machinery/vending/tool,
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 8
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,18"
 	},
-/turf/simulated/floor/tiled/steel/cargo,
-/area/mine/prep)
+/area/mine/hallway)
 "hK" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 1
@@ -3919,15 +3880,9 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/outpostmachineroom)
 "kc" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/structure/table/rack,
-/obj/item/device/gps/mining,
-/obj/item/device/gps/mining,
-/obj/item/device/gps/mining,
-/turf/simulated/floor/tiled/steel/danger,
-/area/mine/hallway)
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Mining,
+/turf/simulated/shuttle/floor/mining,
+/area/turbolift/Mining/underground)
 "kd" = (
 /obj/structure/table/standard,
 /obj/item/book/manual/suspension,
@@ -7455,15 +7410,6 @@
 	},
 /turf/simulated/floor/asteroid,
 /area/nadezhda/quartermaster/mining_outside_doc)
-"sf" = (
-/obj/effect/floor_decal/spline/plain{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/mine/prep)
 "sg" = (
 /obj/structure/railing{
 	anchored = 1;
@@ -8611,9 +8557,12 @@
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "vq" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Mining,
-/turf/simulated/shuttle/floor/mining,
-/area/turbolift/Mining/underground)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel,
+/area/mine/hallway)
 "vr" = (
 /obj/machinery/portable_atmospherics/powered/scrubber/huge,
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -8859,6 +8808,10 @@
 /obj/structure/lattice,
 /turf/simulated/floor/fixed/hydrotile/shallowcoolant,
 /area/nadezhda/rnd/mixing)
+"Dv" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/asteroid,
+/area/mine/hallway)
 "DL" = (
 /obj/structure/railing{
 	anchored = 1;
@@ -9415,10 +9368,6 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
-"RN" = (
-/obj/machinery/camera/network/mining,
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "RU" = (
 /turf/simulated/mineral/random/high_chance,
 /area/nadezhda/quartermaster/mining_outside_doc)
@@ -9444,9 +9393,11 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "RZ" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/material_box,
-/turf/simulated/floor/tiled/steel/cargo,
+/obj/structure/table/rack,
+/obj/item/device/gps/mining,
+/obj/item/device/gps/mining,
+/obj/item/device/gps/mining,
+/turf/simulated/floor/tiled/steel/danger,
 /area/mine/hallway)
 "Sa" = (
 /obj/structure/lattice,
@@ -9654,13 +9605,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
-"Xk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/network/mining{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel,
-/area/mine/hallway)
 "Xo" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -38515,18 +38459,18 @@ ti
 ti
 ti
 ti
-np
-np
-np
-np
-np
-np
-np
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 np
 ad
 ad
 ad
-np
 cw
 cV
 du
@@ -38717,7 +38661,8 @@ ti
 ti
 ti
 ti
-np
+ti
+ai
 ai
 ai
 ai
@@ -38728,7 +38673,6 @@ ai
 bh
 bR
 bR
-ai
 ai
 ai
 ai
@@ -38919,11 +38863,12 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 ai
 by
 cD
+by
 by
 by
 az
@@ -38931,7 +38876,6 @@ bx
 bx
 bx
 wn
-cW
 cW
 aC
 dW
@@ -39121,10 +39065,11 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 ai
 Fr
+by
 by
 by
 by
@@ -39133,7 +39078,6 @@ bj
 by
 bj
 wn
-aC
 aC
 aC
 cW
@@ -39323,24 +39267,24 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 ai
 ay
 ay
 ay
 by
+by
 aB
 bj
 Mm
 bj
 ai
-RN
+cf
 aC
 aC
 aC
-aC
-aC
+Dv
 ai
 fO
 gj
@@ -39525,12 +39469,13 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 ai
 aT
 aT
 aT
+ai
 ai
 aH
 bw
@@ -39539,8 +39484,7 @@ by
 wn
 aC
 aC
-aC
-aC
+df
 ar
 ar
 wn
@@ -39727,19 +39671,19 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
-ak
+hJ
 ui
 ui
-vq
+kc
 ax
+ai
 ai
 bk
 bj
 ch
 wn
-aC
 aC
 aC
 aC
@@ -39929,19 +39873,19 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 al
 ui
 ui
 ui
 al
+ai
 ai
 bl
 bA
 bS
 wn
-aC
 aC
 ar
 aC
@@ -40131,19 +40075,19 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 al
 ui
 ui
 ui
 al
+ai
 ai
 ai
 bB
 bT
 ai
-aC
 aC
 aC
 aC
@@ -40333,24 +40277,24 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 al
 ui
 ui
 ui
 al
+ai
 aI
 ai
 bo
 bU
 wn
-ar
-cy
-aC
-cW
-ar
-aC
+aR
+dv
+dZ
+dv
+aR
 wn
 bX
 bn
@@ -40535,7 +40479,7 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 av
 aw
@@ -40544,15 +40488,15 @@ aw
 aA
 ai
 ai
+ai
 BG
 bV
 wn
-cx
-ar
-dv
-dZ
-dv
-ar
+ak
+dw
+ea
+eA
+eA
 wn
 fP
 bo
@@ -40737,24 +40681,24 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 tH
 tH
 tH
 tH
 tH
+ai
 ai
 ai
 bC
 bV
 wn
-aR
-cX
-dw
-ea
-eA
-aR
+dv
+dv
+dv
+dv
+dv
 wn
 bX
 bn
@@ -40939,24 +40883,24 @@ ti
 ti
 ti
 ti
+ti
 np
 np
 np
 np
 np
 np
-np
+ai
 ai
 ai
 bD
 bT
 ai
 wn
-cY
 dx
 eb
 eB
-ai
+wn
 ai
 fO
 gk
@@ -41147,18 +41091,18 @@ ti
 Zb
 Zb
 Zb
+Zb
 aK
 at
 bm
 bo
 bV
-kc
+dd
 wn
 ai
-ft
 ec
 FB
-ai
+wn
 fv
 bX
 bn
@@ -41348,6 +41292,7 @@ ti
 ti
 Zb
 Fs
+Fs
 Zb
 aK
 aU
@@ -41357,7 +41302,6 @@ bV
 bo
 cz
 cZ
-Xk
 cz
 cz
 cZ
@@ -41550,6 +41494,7 @@ ti
 ti
 Zb
 Fs
+Fs
 Zb
 aK
 aV
@@ -41559,7 +41504,6 @@ bW
 cl
 cA
 da
-cA
 cA
 eC
 da
@@ -41752,6 +41696,7 @@ ti
 ti
 Fs
 Zb
+Zb
 Fs
 aK
 aW
@@ -41760,9 +41705,8 @@ bC
 bX
 bn
 cB
-cz
-cz
-ed
+vq
+dz
 eD
 cz
 bn
@@ -41954,6 +41898,7 @@ ti
 ti
 Fs
 Zb
+Zb
 aD
 aD
 aD
@@ -41963,7 +41908,6 @@ bY
 aE
 aD
 aD
-hJ
 ee
 ee
 ee
@@ -42156,6 +42100,7 @@ ti
 ti
 Zb
 Zb
+Zb
 aE
 aL
 aX
@@ -42164,7 +42109,6 @@ bF
 bZ
 cm
 cC
-aD
 aD
 ee
 eE
@@ -42358,6 +42302,7 @@ ti
 ti
 Fs
 Zb
+Zb
 aE
 aM
 aY
@@ -42367,7 +42312,6 @@ ca
 cn
 dI
 aD
-dz
 ee
 eF
 eU
@@ -42560,6 +42504,7 @@ ti
 ti
 Zb
 Zb
+Zb
 aE
 aM
 aZ
@@ -42569,7 +42514,6 @@ cb
 co
 cE
 aD
-dz
 ee
 eG
 eU
@@ -42762,6 +42706,7 @@ ti
 ti
 Zb
 Fs
+Fs
 aE
 aN
 ba
@@ -42771,7 +42716,6 @@ bL
 cp
 cF
 aD
-dz
 ee
 eH
 eV
@@ -42964,6 +42908,7 @@ ti
 ab
 Zb
 Zb
+Zb
 aD
 aD
 aD
@@ -42971,7 +42916,6 @@ aE
 bJ
 cc
 aE
-aD
 aD
 aD
 ee
@@ -43166,6 +43110,7 @@ ti
 ti
 Zb
 Zb
+Zb
 Fs
 Fs
 aD
@@ -43175,7 +43120,6 @@ cd
 cq
 aE
 dc
-sf
 ee
 ee
 ee
@@ -43369,6 +43313,7 @@ ti
 Zb
 Zb
 Zb
+Zb
 Fs
 aD
 bt
@@ -43377,7 +43322,6 @@ bF
 cr
 aE
 db
-dA
 eL
 ef
 eX
@@ -43571,6 +43515,7 @@ ti
 Zb
 Zb
 Zb
+Zb
 Fs
 aD
 bu
@@ -43579,7 +43524,6 @@ bF
 cq
 aE
 dc
-dB
 ee
 dC
 ee
@@ -43773,6 +43717,7 @@ ti
 Zb
 Zb
 Zb
+Zb
 aO
 aD
 aE
@@ -43780,8 +43725,7 @@ bJ
 ce
 aE
 aD
-dd
-dD
+dG
 eg
 dD
 eY
@@ -43975,6 +43919,7 @@ ti
 Zb
 Zb
 Zb
+Zb
 aP
 bb
 bc
@@ -43982,8 +43927,7 @@ bc
 bc
 fC
 cH
-de
-dD
+cX
 dD
 dD
 eZ
@@ -44177,6 +44121,7 @@ ti
 Zb
 Zb
 Zb
+Zb
 aQ
 uc
 uc
@@ -44184,7 +44129,6 @@ bc
 bc
 bc
 bc
-df
 dF
 eh
 eh
@@ -44378,6 +44322,7 @@ ti
 ti
 ti
 Zb
+Zb
 Fs
 aQ
 ud
@@ -44386,8 +44331,7 @@ bc
 bc
 bc
 bc
-df
-dG
+dF
 eh
 eh
 fa
@@ -44580,6 +44524,7 @@ ti
 ti
 ab
 Zb
+Zb
 Fs
 aQ
 uc
@@ -44588,7 +44533,6 @@ bc
 bc
 cG
 dy
-dg
 dH
 ei
 eM
@@ -44784,14 +44728,14 @@ Zb
 Zb
 Zb
 Zb
+Zb
 bd
 bv
 bN
-cf
+cY
 cs
 cs
 Zb
-Fs
 Fs
 Fs
 Zb
@@ -44989,9 +44933,9 @@ Zb
 Zb
 Zb
 Zb
-Fs
-Fs
 Zb
+Fs
+Fs
 Zb
 Zb
 Fs
