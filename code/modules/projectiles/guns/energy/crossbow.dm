@@ -1,6 +1,6 @@
 /obj/item/gun/energy/crossbow
 	name = "\"Nemesis\" energy crossbow"
-	desc = "Mini energy crossbow, produced by Old Testament, discontinued now. Highly favored for a backpack for game hunting."
+	desc = "An Old Testament mini energy crossbow, currently produced only in small batches. Small, portable, and self-charging, it's great for wilderness survival."
 	icon = 'icons/obj/guns/energy/crossbow.dmi'
 	icon_state = "crossbow"
 	w_class = ITEM_SIZE_SMALL
@@ -29,7 +29,7 @@
 
 /obj/item/gun/energy/crossbow/largecrossbow
 	name = "\"Themis\" energy crossbow"
-	desc = "Energy crossbow, produced by old Old Testament, discontinued now. Highly favored for game hunting."
+	desc = "An aging Old Testament energy crossbow, currently produced only in small batches. Favored for game hunting."
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 35, MATERIAL_PLASTIC = 20, MATERIAL_SILVER = 9, MATERIAL_URANIUM = 9)
