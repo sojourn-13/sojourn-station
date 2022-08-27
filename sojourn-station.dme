@@ -858,6 +858,7 @@
 #include "code\game\machinery\telecomms\presets.dm"
 #include "code\game\machinery\telecomms\telecomunications.dm"
 #include "code\game\machinery\telecomms\telemonitor.dm"
+#include "code\game\machinery\vendor\cloathing.dm"
 #include "code\game\machinery\vendor\food_vendors.dm"
 #include "code\game\machinery\vendor\integrated_electronics.dm"
 #include "code\game\machinery\vendor\labtop_vendor.dm"
