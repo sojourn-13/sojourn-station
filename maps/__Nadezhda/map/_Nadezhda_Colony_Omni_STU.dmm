@@ -16027,7 +16027,6 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central6,
 /obj/structure/table/reinforced,
-/obj/item/oddity/rare/golden_cup,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/security/tactical_blackshield)
 "dic" = (
@@ -92918,6 +92917,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos/storage)
+"rFp" = (
+/obj/structure/table/rack/shelf,
+/obj/item/oddity/rare/golden_cup,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/pros/prep)
 "rFq" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -233630,7 +233634,7 @@ mcJ
 lVF
 ihz
 kiN
-wQs
+rFp
 gLr
 yhU
 rRY
