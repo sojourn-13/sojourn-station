@@ -17,7 +17,8 @@
 	var/datum/cooking_with_jane/recipe_tracker/tracker = null //To be populated the first time the plate is interacted with.
 	var/lip //Icon state of the lip layer of the object
 	var/removal_penalty = 0 //A flat quality reduction for removing an unfinished recipe from the container.
-	var/list/cook_data = list("High"=0 , "Medium" = 0, "Low"=0) //Record of what cooking has been done on this food.
+	var/list/stove_data = list("High"=0 , "Medium" = 0, "Low"=0) //Record of what stove-cooking has been done on this food.
+	var/list/grill_data = list("High"=0 , "Medium" = 0, "Low"=0) //Record of what grill-cooking has been done on this food.
 	reagent_flags = NO_REACT
 
 /obj/item/cooking_with_jane/cooking_container/Initialize()
@@ -58,31 +59,31 @@
 	switch(tracker.process_item(I, user))
 		if(CWJ_NO_STEPS)
 			if(send_message)
-				to_chat("It doesn't seem like you can create a meal from that. Yet.")
+				to_chat(user, "It doesn't seem like you can create a meal from that. Yet.")
 			if(lower_quality_on_fail != 0)
 				for (var/obj/item/contained in contents)
 					contained?:food_quality -= lower_quality_on_fail
 		if(CWJ_CHOICE_CANCEL)
 			if(send_message)
-				to_chat("You decide against cooking with the [src].")
+				to_chat(user, "You decide against cooking with the [src].")
 		if(CWJ_COMPLETE)
 			if(send_message)
-				to_chat("You finish cooking with the [src].")
+				to_chat(user, "You finish cooking with the [src].")
 			qdel(tracker)
 			tracker = null
-			cook_data = list("High"=0 , "Medium" = 0, "Low"=0)
+			clear_cooking_data()
 			update_icon()
 		if(CWJ_SUCCESS)
 			if(send_message)
-				to_chat("You have successfully completed a recipe step.")
-			cook_data = list("High"=0 , "Medium" = 0, "Low"=0)
+				to_chat(user, "You have successfully completed a recipe step.")
+			clear_cooking_data()
 			update_icon()
 		if(CWJ_PARTIAL_SUCCESS)
 			if(send_message)
-				to_chat("More must be done to complete this step of the recipe.")
+				to_chat(user, "More must be done to complete this step of the recipe.")
 		if(CWJ_LOCKOUT)
 			if(send_message)
-				to_chat("You can't make the same decision twice!")
+				to_chat(user, "You can't make the same decision twice!")
 
 //TODO: Handle the contents of the container being ruined via burning.
 /obj/item/cooking_with_jane/cooking_container/proc/handle_burning()
@@ -131,7 +132,7 @@
 	update_icon()
 	qdel(tracker)
 	tracker = null
-	cook_data = list("High"=0 , "Medium" = 0, "Low"=0)
+	clear_cooking_data()
 
 	to_chat(user, SPAN_NOTICE("You remove all the solid items from [src]."))
 
@@ -148,7 +149,12 @@
 	if(tracker)
 		qdel(tracker)
 		tracker = null
-	cook_data = list("High"=0 , "Medium" = 0, "Low"=0)
+	clear_cooking_data()
+
+
+/obj/item/cooking_with_jane/cooking_container/proc/clear_cooking_data()
+	stove_data = list("High"=0 , "Medium" = 0, "Low"=0)
+	grill_data = list("High"=0 , "Medium" = 0, "Low"=0)
 
 /obj/item/cooking_with_jane/cooking_container/proc/label(var/number, var/CT = null)
 	//This returns something like "Fryer basket 1 - empty"

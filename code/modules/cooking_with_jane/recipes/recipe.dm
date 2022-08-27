@@ -281,6 +281,15 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 	)
 
 
+/datum/cooking_with_jane/recipe/sandwich_toasted
+	cooking_container = GRILL
+	product_type = /obj/item/reagent_containers/food/snacks/sandwich
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sandwich),
+		list(CWJ_USE_GRILL, J_LO, 30 SECONDS, result_desc="It has been toasted.")
+	)
+
+
 /*
 //Example of the same recipe, but for the grill, just to show off how compact everything is.
 /datum/cooking_with_jane/recipe/grill_stove

@@ -191,9 +191,50 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 								reason="Time too large for High setting on CWJ_USE_STOVE_OPTIONAL; Food will automatically burn."
 						else
 							reason="Unrecognized temperature for CWJ_USE_STOVE_OPTIONAL"
+					if(!reason)
+						create_step_use_stove(step[2], step[3], FALSE)
+
+				if(CWJ_USE_GRILL)
+					if(step.len < 3)
+						reason="Bad argument Length for CWJ_USE_GRILL"
+					switch(step[2])
+						if(J_LO)
+							if(step[3] > CWJ_BURN_TIME_LOW)
+								reason="Time too large for Low setting on CWJ_USE_GRILL; Food will automatically burn."
+
+						if(J_MED)
+							if(step[3] > CWJ_BURN_TIME_MEDIUM)
+								reason="Time too large for Medium setting on CWJ_USE_GRILL; Food will automatically burn."
+
+						if(J_HI)
+							if(step[3] > CWJ_BURN_TIME_HIGH)
+								reason="Time too large for High setting on CWJ_USE_GRILL; Food will automatically burn."
+
+						else
+							reason="Unrecognized temperature for CWJ_USE_GRILL"
 
 					if(!reason)
-						create_step_use_stove(step[2], step[3], TRUE)
+						create_step_use_grill(step[2], step[3], FALSE)
+
+				if(CWJ_USE_GRILL_OPTIONAL)
+					if(step.len < 3)
+						reason="Bad argument Length for CWJ_USE_GRILL_OPTIONAL"
+					switch(step[2])
+						if(J_LO)
+							if(step[3] > CWJ_BURN_TIME_LOW)
+								reason="Time too large for Low setting on CWJ_USE_GRILL_OPTIONAL; Food will automatically burn."
+
+						if(J_MED)
+							if(step[3] > CWJ_BURN_TIME_MEDIUM)
+								reason="Time too large for Medium setting on CWJ_USE_GRILL_OPTIONAL; Food will automatically burn."
+
+						if(J_HI)
+							if(step[3] > CWJ_BURN_TIME_HIGH)
+								reason="Time too large for High setting on CWJ_USE_GRILL_OPTIONAL; Food will automatically burn."
+						else
+							reason="Unrecognized temperature for CWJ_USE_GRILL_OPTIONAL"
+					if(!reason)
+						create_step_use_grill(step[2], step[3], TRUE)
 
 			//Named Arguments modify the recipe in fixed ways
 			if("desc" in step)
@@ -298,6 +339,11 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 //Use Stove step shortcut commands
 /datum/cooking_with_jane/recipe/proc/create_step_use_stove(var/heat, var/time, var/optional)
 	var/datum/cooking_with_jane/recipe_step/use_stove/step = new (heat, time, src)
+	return src.add_step(step, optional)
+//-----------------------------------------------------------------------------------
+//Use Grill step shortcut commands
+/datum/cooking_with_jane/recipe/proc/create_step_use_grill(var/heat, var/time, var/optional)
+	var/datum/cooking_with_jane/recipe_step/use_grill/step = new (heat, time, src)
 	return src.add_step(step, optional)
 
 //-----------------------------------------------------------------------------------
@@ -623,6 +669,8 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 			return "Use Tool"
 		if(CWJ_USE_STOVE)
 			return "Use Stove"
+		if(CWJ_USE_GRILL)
+			return "Use Grill"
 		if(CWJ_USE_OTHER)
 			return "Custom Action"
 		if(CWJ_START)

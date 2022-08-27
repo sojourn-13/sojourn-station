@@ -10,7 +10,8 @@
 #define CWJ_USE_TOOL				5
 #define CWJ_ADD_PRODUCE				6		//Adding Produce to a recipe
 #define CWJ_USE_STOVE	 			7 		//Using a stove in a recipe
-#define CWJ_USE_OTHER 				8 		//Custom Command flag, will take in argument lists.
+#define CWJ_USE_GRILL	 			8 		//Using a stove in a recipe
+#define CWJ_USE_OTHER 				9 		//Custom Command flag, will take in argument lists.
 
 											
 //Optional flags
@@ -20,7 +21,8 @@
 #define CWJ_USE_TOOL_OPTIONAL		500
 #define CWJ_ADD_PRODUCE_OPTIONAL	600
 #define CWJ_USE_STOVE_OPTIONAL		700
-#define CWJ_OTHER_OPTIONAL 			800
+#define CWJ_USE_GRILL_OPTIONAL		800
+#define CWJ_OTHER_OPTIONAL 			900
 
 
 #define CWJ_BEGIN_EXCLUSIVE_OPTIONS 1000	//Beginning an exclusive option list
