@@ -528,6 +528,7 @@ BLIND     // can't see anything
 
 /obj/item/clothing/shoes/attackby(var/obj/item/I, var/mob/user)
 	var/global/knifes
+	var/global/not_a_knife
 	if(istype(I,/obj/item/noslipmodule))
 		if (item_flags != 0)
 			noslip = item_flags
@@ -550,9 +551,14 @@ BLIND     // can't see anything
 			/obj/item/tool/knife/tacknife,
 			/obj/item/tool/knife/shiv
 		)
+	if(!not_a_knife)
+		not_a_knife = list(/obj/item/tool/knife/psionic_blade)
 	if(can_hold_knife && is_type_in_list(I, knifes))
 		if(holding)
 			to_chat(user, SPAN_WARNING("\The [src] is already holding \a [holding]."))
+			return
+		if(is_type_in_list(I, not_a_knife))
+			to_chat(user, SPAN_WARNING("\The [src] is not a real knife."))
 			return
 		if(user.unEquip(I, src))
 			holding = I
@@ -619,6 +625,13 @@ BLIND     // can't see anything
 	siemens_coefficient = 0.9
 	w_class = ITEM_SIZE_NORMAL
 	var/list/extra_allowed = list()
+	blacklisted_allowed = list(
+		/obj/item/tool/knife/psionic_blade,
+		/obj/item/tool/hammer/telekinetic_fist,
+		/obj/item/tool/psionic_omnitool,
+		/obj/item/shield/riot/crusader/psionic,
+		/obj/item/gun/kinetic_blaster
+		)
 	equip_delay = 1 SECONDS
 
 	valid_accessory_slots = list("armband","decor")

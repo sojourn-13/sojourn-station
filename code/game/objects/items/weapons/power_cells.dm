@@ -522,7 +522,7 @@
 	cell = null
 	suitable_cell = /obj/item/cell
 	var/charge_per_cycle = 15
-
+	var/inuse = FALSE
 
 /obj/item/device/manual_charger/attackby(obj/item/I, mob/user)
 	if(istype(I, suitable_cell) && insert_item(I, user) && !cell)
@@ -537,6 +537,9 @@
 /obj/item/device/manual_charger/attack_self(mob/user)
 	if(!cell)
 		return
+	if(inuse)
+		to_chat(user, SPAN_WARNING("You are already charging the cell!"))
+	inuse = TRUE
 	user.visible_message(SPAN_NOTICE("[user] starts turning the handle on [src]."), SPAN_NOTICE("You start to turn the handle on [src]."))
 	if(do_after(user, 12 + (30 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
 		if(!cell)
@@ -546,7 +549,10 @@
 			return
 		else
 			cell.charge += min(charge_per_cycle, cell.maxcharge - cell.charge)
+	inuse = FALSE
 
+/obj/item/device/manual_charger/dropped(mob/user)
+	inuse = FALSE
 
 // Improv crank
 /obj/item/device/manual_charger/improv
