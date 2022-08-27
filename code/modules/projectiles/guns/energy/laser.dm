@@ -1,6 +1,6 @@
 /obj/item/gun/energy/laser
 	name = "\"Lightfall\" laser rifle"
-	desc = "\"Old Testament\" brand laser carbine. Deadly and radiant, like the ire of God it represents."
+	desc = "\"Old Testament\" brand laser carbine. Deadly and radiant, like the divine wrath it represents."
 	icon = 'icons/obj/guns/energy/laser.dmi'
 	icon_state = "laser"
 	item_state = "laser"
