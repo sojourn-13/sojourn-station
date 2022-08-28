@@ -19,12 +19,20 @@
 			/obj/item/storage/deferred/science = custom_good_amount_range(list(2, 4)),
 			/obj/item/storage/deferred/toolmod = custom_good_amount_range(list(2, 4)),
 			/obj/item/storage/deferred/medical = custom_good_amount_range(list(2, 4))
+		),
+		"Assorted Goods" = list(
+			/obj/item/storage/deferred/powercells = custom_good_amount_range(list(2, 4)),
+			/obj/item/storage/deferred/electronics = custom_good_amount_range(list(2, 4)),
+			/obj/item/storage/deferred/science = custom_good_amount_range(list(2, 4)),
+			/obj/item/storage/deferred/toolmod = custom_good_amount_range(list(2, 4)),
+			/obj/item/storage/deferred/medical = custom_good_amount_range(list(2, 4))
 		)
 	)
 	hidden_inventory = list(
 			/obj/item/storage/deferred/disks = custom_good_amount_range(list(2, 4)),
 			/obj/item/storage/deferred/rig = custom_good_amount_range(list(2, 4)),
-			/obj/item/storage/deferred/tools = custom_good_amount_range(list(2, 4))
+			/obj/item/storage/deferred/tools = custom_good_amount_range(list(2, 4)),
+			/obj/item/gem //THE BIG TICKET ITEM
 	)
 	offer_types = list(
 		/obj/item/oddity/common/coin = offer_data("strange coin", 800, 1),

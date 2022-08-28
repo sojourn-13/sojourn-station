@@ -37,6 +37,9 @@
 			/mob/living/simple_animal/corgi/puppy = good_data("Young Corgi", list(3, 5), 250),
 			/mob/living/simple_animal/lizard = good_data("Crate Pusher", list(2, 5), 100),
 			/mob/living/simple_animal/cat = good_data("Rat Slayer", list(4, 5), 150)
+		),
+		"Assault Armor" = list(
+			/obj/item/clothing/suit/space/void/assault = good_data("Assault Armor", list(3, 5), 20000)
 		)
 	)
 	hidden_inventory = list(
