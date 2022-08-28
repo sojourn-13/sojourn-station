@@ -328,7 +328,7 @@
 "bh" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/ore_box,
+/obj/machinery/suit_storage_unit/rad_unit,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
 "bj" = (
@@ -528,7 +528,7 @@
 /area/mine/power)
 "bR" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/ore_box,
+/obj/machinery/suit_storage_unit/rad_unit,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
 "bS" = (

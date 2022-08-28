@@ -38,6 +38,9 @@
 			addtimer(CALLBACK(src, .proc/spread), rand(40,90)) //So people have time to prepare for the worst
 			is_growing = TRUE
 			to_chat(user, "<span class='info'>The spire begines to</span><span class='rose'> grow rapidly as it comuses the </span><span class='angelsay'>pure core </span><span class='moderate'>whole.</span>")
+			if(!rads_producter)
+				rads_producter = TRUE
+				add_rads()
 		else
 			to_chat(user, "<span class='info'>The spire begines to</span><span class='rose'> grow even faster as it comuses the </span><span class='angelsay'>pure core </span><span class='moderate'>whole.</span>")
 			spread_range += 1 //this can quickly
