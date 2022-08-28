@@ -48,10 +48,7 @@
 /area/nadezhda/hallway/main/stairwell)
 "aap" = (
 /turf/simulated/mineral,
-/area/nadezhda/command/courtroom)
-"aaq" = (
-/turf/simulated/wall,
-/area/nadezhda/crew_quarters/pool)
+/area/nadezhda/command/tcommsat/computer)
 "aar" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -107,7 +104,7 @@
 /area/nadezhda/hallway/main/stairwell)
 "aay" = (
 /turf/simulated/wall,
-/area/nadezhda/command/tcommsat/computer)
+/area/nadezhda/command/courtroom)
 "aaz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -13516,8 +13513,8 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "cGW" = (
-/turf/simulated/wall,
-/area/nadezhda/command/courtroom)
+/turf/simulated/mineral,
+/area/nadezhda/command/panic_room)
 "cHc" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
 	dir = 4;
@@ -18939,7 +18936,7 @@
 /area/nadezhda/security/sechall)
 "dLo" = (
 /turf/simulated/mineral,
-/area/nadezhda/command/panic_room)
+/area/nadezhda/command/courtroom)
 "dLp" = (
 /obj/machinery/holoposter{
 	pixel_y = 32
@@ -20429,7 +20426,7 @@
 	})
 "eaA" = (
 /turf/simulated/mineral,
-/area/nadezhda/command/tcommsat/computer)
+/area/nadezhda/command/bridgebar)
 "eaB" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
@@ -20689,8 +20686,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "edv" = (
-/turf/simulated/mineral,
-/area/nadezhda/engineering/atmos/storage)
+/turf/simulated/wall,
+/area/nadezhda/crew_quarters/pool)
 "edw" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 4
@@ -33570,6 +33567,9 @@
 /obj/structure/railing,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/quartermaster/hangarsupply)
+"gxH" = (
+/turf/simulated/wall,
+/area/nadezhda/command/tcommsat/computer)
 "gxQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/constructable_frame/machine_frame,
@@ -66926,7 +66926,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "mJp" = (
 /turf/simulated/mineral,
-/area/nadezhda/command/bridgebar)
+/area/nadezhda/engineering/atmos/storage)
 "mJr" = (
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
@@ -136183,7 +136183,7 @@ uXy
 lLg
 uXy
 eVZ
-dLo
+cGW
 eVZ
 eVZ
 eVZ
@@ -144091,7 +144091,7 @@ tyz
 tyz
 tyz
 tyz
-aay
+gxH
 guy
 guy
 guy
@@ -144291,8 +144291,8 @@ bZB
 rUt
 rUt
 tyz
-eaA
-aay
+aap
+gxH
 bdl
 vuf
 oBg
@@ -144493,8 +144493,8 @@ aOK
 aOK
 aOK
 tyz
-eaA
-aay
+aap
+gxH
 cmD
 llM
 oBg
@@ -144695,8 +144695,8 @@ fRA
 fRA
 ijR
 tyz
-eaA
-aay
+aap
+gxH
 guy
 guy
 guy
@@ -144881,7 +144881,7 @@ irf
 qFK
 eSH
 tyz
-eaA
+aap
 tyz
 bYx
 tdD
@@ -144897,8 +144897,8 @@ kSu
 blZ
 qSH
 tyz
-eaA
-aay
+aap
+gxH
 wYZ
 gDm
 mUC
@@ -145073,17 +145073,17 @@ lXd
 rGz
 ogM
 dwc
-aap
-aap
-aap
-aap
-aap
-aap
+dLo
+dLo
+dLo
+dLo
+dLo
+dLo
 irf
 kzA
 oDE
 tyz
-eaA
+aap
 tyz
 duS
 tgJ
@@ -145100,7 +145100,7 @@ gco
 tgJ
 tyz
 tyz
-aay
+gxH
 bJz
 sxu
 cdL
@@ -145275,17 +145275,17 @@ mOt
 mOt
 irf
 irf
-cGW
-cGW
-cGW
-cGW
-cGW
-cGW
+aay
+aay
+aay
+aay
+aay
+aay
 irf
 kzA
 jXl
 tyz
-eaA
+aap
 tyz
 iGL
 rcs
@@ -145302,7 +145302,7 @@ aEh
 tje
 vEB
 tyz
-aay
+gxH
 inu
 aQj
 vGU
@@ -145504,7 +145504,7 @@ ahq
 lYg
 nzT
 tyz
-aay
+gxH
 guy
 guy
 guy
@@ -145706,7 +145706,7 @@ ibF
 oEu
 ija
 tyz
-aay
+gxH
 wYZ
 gDm
 mUC
@@ -145908,7 +145908,7 @@ ibF
 eiC
 eLd
 tyz
-aay
+gxH
 bJz
 eCH
 cdL
@@ -146110,7 +146110,7 @@ ibF
 sNv
 aVW
 tyz
-aay
+gxH
 inu
 aQj
 vGU
@@ -146312,7 +146312,7 @@ liu
 psw
 glo
 tyz
-aay
+gxH
 guy
 guy
 guy
@@ -146514,7 +146514,7 @@ ibF
 gFm
 miQ
 tyz
-aay
+gxH
 wYZ
 gDm
 hpC
@@ -146698,7 +146698,7 @@ guy
 guy
 kzA
 jXl
-aay
+gxH
 tyz
 tyz
 tyz
@@ -146716,7 +146716,7 @@ bRo
 sNv
 sjX
 tyz
-aay
+gxH
 eSx
 fVS
 cdL
@@ -146900,10 +146900,10 @@ guy
 guy
 kzA
 jXl
-aay
-eaA
-eaA
-eaA
+gxH
+aap
+aap
+aap
 tyz
 tyz
 tyz
@@ -146918,7 +146918,7 @@ tyz
 tyz
 tyz
 tyz
-aay
+gxH
 inu
 qfT
 vGU
@@ -147102,25 +147102,25 @@ guy
 guy
 kzA
 jXl
-aay
-aay
-aay
-aay
-aay
-aay
-aay
-aay
-aay
-eaA
-eaA
-eaA
-eaA
-eaA
-aay
-aay
-aay
-aay
-aay
+gxH
+gxH
+gxH
+gxH
+gxH
+gxH
+gxH
+gxH
+gxH
+aap
+aap
+aap
+aap
+aap
+gxH
+gxH
+gxH
+gxH
+gxH
 guy
 guy
 guy
@@ -148120,13 +148120,13 @@ akr
 akr
 hGs
 dlI
-aaq
-aaq
-aaq
-aaq
-aaq
-aaq
-aaq
+edv
+edv
+edv
+edv
+edv
+edv
+edv
 tSL
 dBa
 dBa
@@ -148322,13 +148322,13 @@ hGs
 hGs
 hGs
 gRc
-aaq
+edv
 aeb
 aeb
 aeb
 aeb
 aeb
-aaq
+edv
 blR
 bpW
 buj
@@ -148524,13 +148524,13 @@ aLN
 aeL
 aeL
 aeL
-aaq
+edv
 aeb
 tRU
 nwF
 mPw
 aeb
-aaq
+edv
 guy
 guy
 guy
@@ -180796,7 +180796,7 @@ iXq
 drj
 aAc
 aAc
-mJp
+eaA
 gfn
 uzc
 rGT
@@ -180998,7 +180998,7 @@ iXq
 qlR
 vtJ
 aAc
-mJp
+eaA
 gfn
 iZl
 nvD
@@ -181200,7 +181200,7 @@ rAd
 dON
 oJo
 aAc
-mJp
+eaA
 gfn
 lLq
 jwk
@@ -181402,7 +181402,7 @@ hKh
 iHJ
 aAc
 aAc
-mJp
+eaA
 gfn
 fgj
 bQq
@@ -183824,7 +183824,7 @@ sFI
 sFI
 sFI
 sFI
-mJp
+eaA
 dbO
 qIr
 ygV
@@ -184026,7 +184026,7 @@ sFI
 sFI
 sFI
 sFI
-mJp
+eaA
 szv
 muz
 bJk
@@ -184228,7 +184228,7 @@ sFI
 sFI
 sFI
 sFI
-mJp
+eaA
 nEZ
 mvG
 mXM
@@ -184430,7 +184430,7 @@ sFI
 sFI
 sFI
 sFI
-mJp
+eaA
 dbO
 mvG
 hsB
@@ -196521,8 +196521,8 @@ qAI
 rbA
 rKf
 uNP
-edv
-edv
+mJp
+mJp
 uNP
 tfh
 vHy
@@ -224374,7 +224374,7 @@ jHm
 jHm
 jHm
 jHm
-dtD
+veZ
 dtD
 dtD
 dtD
