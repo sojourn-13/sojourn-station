@@ -1,3 +1,4 @@
+/*
 /obj/machinery/mindswapper
 	name = "experimental mind swapper"
 	desc = "The name isn't descriptive enough?"
@@ -103,3 +104,4 @@
 
 	visible_message(SPAN_DANGER("You hear a loud electrical crack before the mind swapper shuts down."))
 	update_icon()
+*/
