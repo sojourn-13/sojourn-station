@@ -53,6 +53,22 @@
 			/obj/item/reagent_containers/blood/OPlus,
 			/obj/item/reagent_containers/blood/OMinus
 		),
+		"Protection" = list(
+			/obj/item/clothing/suit/radiation = good_data("Radiation Suit", list(3, 4), 600),
+			/obj/item/clothing/head/radiation = good_data("Radiation Hood", list(3, 4), 600),
+			/obj/item/clothing/suit/bio_suit/general = good_data("Gengeric Biohazard Suit", list(3, 4), 800),
+			/obj/item/clothing/head/bio_hood/general = good_data("Gengeric Biohazard Hood", list(3, 4), 800),
+			/obj/item/clothing/suit/bio_suit/virology = good_data("Virology Biohazard Suit", list(3, 4), 800),
+			/obj/item/clothing/head/bio_hood/virology = good_data("Virology Biohazard Hood", list(3, 4), 800),
+			/obj/item/clothing/suit/bio_suit/janitor = good_data("Janitor Biohazard Suit", list(3, 4), 800),
+			/obj/item/clothing/head/bio_hood/janitor = good_data("Janitor Biohazard Hood", list(3, 4), 800),
+			/obj/item/clothing/suit/bio_suit/security = good_data("Red Sec Biohazard Suit", list(3, 4), 800),
+			/obj/item/clothing/head/bio_hood/security = good_data("Red Sec Biohazard Hood", list(3, 4), 800),
+			/obj/item/clothing/suit/bio_suit/scientist = good_data("SI Biohazard Suit", list(3, 4), 800),
+			/obj/item/clothing/head/bio_hood/scientist = good_data("SI Biohazard Hood", list(3, 4), 800),
+			/obj/item/clothing/suit/bio_suit/cmo = good_data("CMO Biohazard Suit", list(3, 4), 800),
+			/obj/item/clothing/head/bio_hood/cmo = good_data("CMO Biohazard Hood", list(3, 4), 800)
+		),
 		"Misc" = list(
 //			/obj/item/virusdish/random,		// Spawns without an icon
 			/obj/structure/reagent_dispensers/coolanttank,
