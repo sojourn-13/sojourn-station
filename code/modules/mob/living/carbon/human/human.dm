@@ -137,10 +137,19 @@
 
 	src.stats.initialized = TRUE
 
+/mob/living/carbon/human/flash(duration = 0, drop_items = FALSE, doblind = FALSE, doblurry = FALSE, eye_damage = 0)
+	if(blinded)
+		return
+	if(eye_damage)
+		eye_damage += eye_damage * species.flash_mod // increase based on how susceptible they are
+		var/obj/item/organ/internal/eyes/E = src.random_organ_by_process(OP_EYES)
+		E.take_damage(eye_damage, FALSE)
+		if (E && E.damage >= E.min_bruised_damage)
+			to_chat(src, SPAN_DANGER("Your eyes start to burn badly!"))
+	..(duration, drop_items, doblind, doblurry)
+
 /mob/living/carbon/human/ex_act(severity)
-	if(!blinded)
-		if (HUDtech.Find("flash"))
-			flick("flash", HUDtech["flash"])
+	flash(5, FALSE, TRUE , TRUE, 5)
 
 	var/shielded = 0
 	var/b_loss

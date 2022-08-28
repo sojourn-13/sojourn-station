@@ -155,9 +155,7 @@
 
 /mob/living/carbon/superior_animal/ex_act(severity)
 	..()
-	if(!blinded)
-		if (HUDtech.Find("flash"))
-			flick("flash", HUDtech["flash"])
+	flash(5, FALSE ,FALSE ,FALSE)
 
 	var/b_loss = null
 	var/f_loss = null
