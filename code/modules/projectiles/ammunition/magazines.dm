@@ -544,7 +544,7 @@
 	multiple_sprites = 1
 	w_class = ITEM_SIZE_BULKY //Balance change, these things are the size a box due to being legit 5 mags worth of ammo. Wacky that it was normal-sized before.
 	extra_bulk = -2
-	
+
 /obj/item/ammo_magazine/rifle_75_linked_box/update_icon()
 	if (!stored_ammo.len)
 		icon_state = "pk_box-0"
@@ -784,13 +784,19 @@
 /obj/item/ammo_magazine/speed_loader_pistol_35
 	name = "speed loader (9mm Special)"
 	desc = "A 6 round speed loader marked for (9mm."
-	icon_state = "slpistol_l"
+	icon_state = "slpistol_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_PISTOL
 	matter = list(MATERIAL_STEEL = 3)
 	ammo_type = /obj/item/ammo_casing/pistol_35
 	max_ammo = 6
-	multiple_sprites = 1
+
+/obj/item/ammo_magazine/speed_loader_pistol_35/update_icon()
+	cut_overlays()
+	var/count = 0
+	for(var/obj/item/ammo_casing/AC in stored_ammo)
+		count++
+		overlays += "slpistol_[AC.shell_color]-[count]"
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/practice
 	name = "speed loader (9mm Special practice)"
@@ -822,13 +828,23 @@
 /obj/item/ammo_magazine/speed_loader_magnum_40
 	name = "speed loader (10mm Magnum)"
 	desc = "A 6 round speed loader marked for 10mm Magnum."
-	icon_state = "slmagnum_l"
+	icon_state = "slmagnum_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_MAGNUM
 	ammo_type = /obj/item/ammo_casing/magnum_40
 	matter = list(MATERIAL_STEEL = 3)
 	max_ammo = 6
-	multiple_sprites = 1
+
+/obj/item/ammo_magazine/speed_loader_magnum_40/update_icon()
+	cut_overlays()
+	var/count = 0
+	for(var/obj/item/ammo_casing/AC in stored_ammo)
+		count++
+		overlays += "slmagnum_[AC.shell_color]-[count]"
+
+/obj/item/ammo_magazine/speed_loader_magnum_40/Initialize()
+	. = ..()
+	update_icon()
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/practice
 	name = "speed loader (10mm Magnum practice)"
