@@ -47,8 +47,11 @@
 	},
 /area/nadezhda/hallway/main/stairwell)
 "aap" = (
+/turf/simulated/wall,
+/area/nadezhda/command/courtroom)
+"aaq" = (
 /turf/simulated/mineral,
-/area/nadezhda/command/tcommsat/computer)
+/area/nadezhda/engineering/atmos/storage)
 "aar" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -103,8 +106,8 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/main/stairwell)
 "aay" = (
-/turf/simulated/wall,
-/area/nadezhda/command/courtroom)
+/turf/simulated/mineral,
+/area/nadezhda/security/triage_blackshield)
 "aaz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -13513,8 +13516,8 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "cGW" = (
-/turf/simulated/mineral,
-/area/nadezhda/command/panic_room)
+/turf/simulated/wall,
+/area/nadezhda/crew_quarters/pool)
 "cHc" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
 	dir = 4;
@@ -18935,8 +18938,8 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "dLo" = (
-/turf/simulated/mineral,
-/area/nadezhda/command/courtroom)
+/turf/simulated/wall,
+/area/nadezhda/command/tcommsat/computer)
 "dLp" = (
 /obj/machinery/holoposter{
 	pixel_y = 32
@@ -20686,8 +20689,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "edv" = (
-/turf/simulated/wall,
-/area/nadezhda/crew_quarters/pool)
+/turf/simulated/mineral,
+/area/nadezhda/command/tcommsat/computer)
 "edw" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 4
@@ -33568,8 +33571,8 @@
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/quartermaster/hangarsupply)
 "gxH" = (
-/turf/simulated/wall,
-/area/nadezhda/command/tcommsat/computer)
+/turf/simulated/mineral,
+/area/nadezhda/security/nuke_storage)
 "gxQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/constructable_frame/machine_frame,
@@ -61596,9 +61599,8 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/engineering/atmos)
 "lMr" = (
-/obj/structure/disposalpipe/segment,
 /turf/simulated/mineral,
-/area/asteroid/cave)
+/area/nadezhda/command/panic_room)
 "lMu" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "15,6";
@@ -66925,8 +66927,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "mJp" = (
+/obj/structure/disposalpipe/segment,
 /turf/simulated/mineral,
-/area/nadezhda/engineering/atmos/storage)
+/area/asteroid/cave)
 "mJr" = (
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
@@ -114725,7 +114728,7 @@
 /area/nadezhda/engineering/construction)
 "vPc" = (
 /turf/simulated/mineral,
-/area/nadezhda/security/nuke_storage)
+/area/nadezhda/command/courtroom)
 "vPe" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/floor_decal/industrial/warningwhite{
@@ -136183,7 +136186,7 @@ uXy
 lLg
 uXy
 eVZ
-cGW
+lMr
 eVZ
 eVZ
 eVZ
@@ -144091,7 +144094,7 @@ tyz
 tyz
 tyz
 tyz
-gxH
+dLo
 guy
 guy
 guy
@@ -144291,8 +144294,8 @@ bZB
 rUt
 rUt
 tyz
-aap
-gxH
+edv
+dLo
 bdl
 vuf
 oBg
@@ -144493,8 +144496,8 @@ aOK
 aOK
 aOK
 tyz
-aap
-gxH
+edv
+dLo
 cmD
 llM
 oBg
@@ -144695,8 +144698,8 @@ fRA
 fRA
 ijR
 tyz
-aap
-gxH
+edv
+dLo
 guy
 guy
 guy
@@ -144881,7 +144884,7 @@ irf
 qFK
 eSH
 tyz
-aap
+edv
 tyz
 bYx
 tdD
@@ -144897,8 +144900,8 @@ kSu
 blZ
 qSH
 tyz
-aap
-gxH
+edv
+dLo
 wYZ
 gDm
 mUC
@@ -145073,17 +145076,17 @@ lXd
 rGz
 ogM
 dwc
-dLo
-dLo
-dLo
-dLo
-dLo
-dLo
+vPc
+vPc
+vPc
+vPc
+vPc
+vPc
 irf
 kzA
 oDE
 tyz
-aap
+edv
 tyz
 duS
 tgJ
@@ -145100,7 +145103,7 @@ gco
 tgJ
 tyz
 tyz
-gxH
+dLo
 bJz
 sxu
 cdL
@@ -145275,17 +145278,17 @@ mOt
 mOt
 irf
 irf
-aay
-aay
-aay
-aay
-aay
-aay
+aap
+aap
+aap
+aap
+aap
+aap
 irf
 kzA
 jXl
 tyz
-aap
+edv
 tyz
 iGL
 rcs
@@ -145302,7 +145305,7 @@ aEh
 tje
 vEB
 tyz
-gxH
+dLo
 inu
 aQj
 vGU
@@ -145504,7 +145507,7 @@ ahq
 lYg
 nzT
 tyz
-gxH
+dLo
 guy
 guy
 guy
@@ -145706,7 +145709,7 @@ ibF
 oEu
 ija
 tyz
-gxH
+dLo
 wYZ
 gDm
 mUC
@@ -145908,7 +145911,7 @@ ibF
 eiC
 eLd
 tyz
-gxH
+dLo
 bJz
 eCH
 cdL
@@ -146110,7 +146113,7 @@ ibF
 sNv
 aVW
 tyz
-gxH
+dLo
 inu
 aQj
 vGU
@@ -146203,7 +146206,7 @@ otw
 xta
 xta
 koE
-vPc
+gxH
 mIx
 jTU
 oZv
@@ -146312,7 +146315,7 @@ liu
 psw
 glo
 tyz
-gxH
+dLo
 guy
 guy
 guy
@@ -146405,7 +146408,7 @@ dQc
 dQc
 dQc
 koE
-vPc
+gxH
 mIx
 hBp
 rqu
@@ -146514,7 +146517,7 @@ ibF
 gFm
 miQ
 tyz
-gxH
+dLo
 wYZ
 gDm
 hpC
@@ -146607,7 +146610,7 @@ cpM
 cpM
 cpM
 koE
-vPc
+gxH
 mIx
 rmH
 wbW
@@ -146698,7 +146701,7 @@ guy
 guy
 kzA
 jXl
-gxH
+dLo
 tyz
 tyz
 tyz
@@ -146716,7 +146719,7 @@ bRo
 sNv
 sjX
 tyz
-gxH
+dLo
 eSx
 fVS
 cdL
@@ -146900,10 +146903,10 @@ guy
 guy
 kzA
 jXl
-gxH
-aap
-aap
-aap
+dLo
+edv
+edv
+edv
 tyz
 tyz
 tyz
@@ -146918,7 +146921,7 @@ tyz
 tyz
 tyz
 tyz
-gxH
+dLo
 inu
 qfT
 vGU
@@ -147102,25 +147105,25 @@ guy
 guy
 kzA
 jXl
-gxH
-gxH
-gxH
-gxH
-gxH
-gxH
-gxH
-gxH
-gxH
-aap
-aap
-aap
-aap
-aap
-gxH
-gxH
-gxH
-gxH
-gxH
+dLo
+dLo
+dLo
+dLo
+dLo
+dLo
+dLo
+dLo
+dLo
+edv
+edv
+edv
+edv
+edv
+dLo
+dLo
+dLo
+dLo
+dLo
 guy
 guy
 guy
@@ -148120,13 +148123,13 @@ akr
 akr
 hGs
 dlI
-edv
-edv
-edv
-edv
-edv
-edv
-edv
+cGW
+cGW
+cGW
+cGW
+cGW
+cGW
+cGW
 tSL
 dBa
 dBa
@@ -148322,13 +148325,13 @@ hGs
 hGs
 hGs
 gRc
-edv
+cGW
 aeb
 aeb
 aeb
 aeb
 aeb
-edv
+cGW
 blR
 bpW
 buj
@@ -148524,13 +148527,13 @@ aLN
 aeL
 aeL
 aeL
-edv
+cGW
 aeb
 tRU
 nwF
 mPw
 aeb
-edv
+cGW
 guy
 guy
 guy
@@ -196521,8 +196524,8 @@ qAI
 rbA
 rKf
 uNP
-mJp
-mJp
+aaq
+aaq
 uNP
 tfh
 vHy
@@ -222159,8 +222162,8 @@ veZ
 veZ
 veZ
 veZ
-ern
-ern
+veZ
+veZ
 wBa
 fbi
 ssy
@@ -222361,8 +222364,8 @@ veZ
 veZ
 veZ
 veZ
-ern
-ern
+veZ
+veZ
 wBa
 fbi
 ssy
@@ -222563,8 +222566,8 @@ veZ
 veZ
 veZ
 veZ
-ern
-ern
+veZ
+veZ
 wBa
 uZL
 cBL
@@ -222764,9 +222767,9 @@ veZ
 veZ
 veZ
 veZ
-ern
-ern
-ern
+veZ
+veZ
+veZ
 wBa
 wBa
 wBa
@@ -222966,9 +222969,9 @@ veZ
 veZ
 veZ
 veZ
-ern
-ern
-ern
+veZ
+veZ
+veZ
 wBa
 wBa
 wBa
@@ -223168,9 +223171,9 @@ veZ
 veZ
 veZ
 veZ
-ern
-ern
-ern
+veZ
+veZ
+veZ
 wBa
 mlv
 rmd
@@ -223370,9 +223373,9 @@ veZ
 veZ
 veZ
 veZ
-ern
-ern
-ern
+veZ
+veZ
+veZ
 wBa
 xlX
 khJ
@@ -223572,9 +223575,9 @@ veZ
 veZ
 veZ
 veZ
-ern
-ern
-ern
+veZ
+veZ
+veZ
 wBa
 wBa
 wBa
@@ -223774,11 +223777,11 @@ veZ
 veZ
 veZ
 veZ
-ern
-ern
-ern
-wBa
-wBa
+veZ
+veZ
+veZ
+veZ
+veZ
 wBa
 siI
 qNN
@@ -223976,11 +223979,11 @@ veZ
 veZ
 veZ
 veZ
-ern
-ern
-ern
-wBa
-wBa
+veZ
+veZ
+veZ
+veZ
+veZ
 wBa
 hWa
 qNN
@@ -225586,7 +225589,7 @@ hIX
 jHm
 jHm
 jHm
-dtD
+aay
 dtD
 dtD
 dtD
@@ -232043,8 +232046,8 @@ sUr
 sUr
 iwh
 pmM
-lMr
-lMr
+mJp
+mJp
 cdq
 aEi
 eaW
@@ -232245,8 +232248,8 @@ pmM
 pmM
 pmM
 pmM
-lMr
-lMr
+mJp
+mJp
 cdq
 iFH
 iFH
