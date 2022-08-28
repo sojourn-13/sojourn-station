@@ -2446,6 +2446,7 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "gV" = (
+/obj/machinery/mindswapper,
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
