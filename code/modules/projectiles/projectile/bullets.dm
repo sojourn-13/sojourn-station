@@ -22,6 +22,7 @@ Bullet also tend to have more armor against them do to this and can be douged un
 
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
 	recoil = 3
+	structure_damage_factor = 2 //Bullets are great at destorying things, unlike lasers
 
 /obj/item/projectile/bullet/on_hit(atom/target)
 	if (..(target))
