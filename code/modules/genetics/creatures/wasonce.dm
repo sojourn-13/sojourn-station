@@ -141,12 +141,17 @@ Has ability of every roach.
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/Life()
 
+	if(captives.len)
+		for(var/mob/living/carbon/human/captive in captives)
+			if(captive.loc != src)
+				captives.Remove(captive)
 
 	if(captives.len && prob(15) && real_mutator)
 		var/fail_mutation_path = pick(injector.getFailList())
 		var/datum/genetics/mutation/injecting_mutation = new fail_mutation_path()
 		injector.addMutation(injecting_mutation)
 		for(var/mob/living/carbon/human/captive in captives)
+
 			if(captive.species.reagent_tag == IS_SYNTHETIC && (captive.getBruteLoss() < 300))
 				to_chat(captive, SPAN_DANGER(pick("The immense strength of the creature is crushing. Wasn't... Flesh supposed to be weak?")))
 				captive.adjustBruteLossByPart(15, pick(captive.organs))
