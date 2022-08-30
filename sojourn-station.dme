@@ -1494,7 +1494,6 @@
 #include "code\modules\aberrants\organs\mods\component\process.dm"
 #include "code\modules\aberrants\organs\mods\component\special.dm"
 #include "code\modules\aberrants\organs\mods\component\stromal.dm"
-#include "code\modules\aberrants\organs\projectiles\teratoma.dm"
 #include "code\modules\aberrants\organs\reagents\hormones.dm"
 #include "code\modules\acting\acting_items.dm"
 #include "code\modules\admin\admin.dm"

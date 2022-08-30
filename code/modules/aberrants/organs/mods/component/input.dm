@@ -115,6 +115,10 @@
 				inputs += "DNA degredation, "
 			if(HALLOSS)
 				inputs += "pain, "
+			if("brain")
+				inputs += "brain, "
+			if(PSY)
+				inputs += "sanity, "
 		
 	inputs = copytext(inputs, 1, length(inputs) - 1)
 
@@ -146,6 +150,7 @@
 	if(!holder || !owner)
 		return
 
+	var/mob/living/carbon/human/H = owner
 	var/list/input = list()
 
 	for(var/desired_damage_type in accepted_inputs)
@@ -164,6 +169,10 @@
 				current_damage = owner.getCloneLoss()
 			if(HALLOSS)
 				current_damage = owner.getHalLoss()
+			if("brain")
+				current_damage = owner.getBrainLoss()
+			if(PSY)
+				current_damage = H.sanity.max_level - H.sanity.level
 					
 		if(current_damage > 0)
 			threshold_met = TRUE
@@ -219,10 +228,10 @@
 
 		accepted_inputs[accepted_inputs.Find(input)] = input_qualities[decision]
 
-/datum/component/modification/organ/input/power_source/trigger(atom/movable/holder, mob/living/carbon/owner)
+/datum/component/modification/organ/input/power_source/trigger(atom/movable/holder, mob/living/carbon/human/owner)
 	if(!holder || !owner)
 		return
-	if(owner.body_part_covered(BP_L_ARM) && owner.body_part_covered(BP_R_ARM))
+	if(!owner.get_siemens_coefficient_organ(owner.get_organ(check_zone(BP_L_ARM))) && !owner.get_siemens_coefficient_organ(owner.get_organ(check_zone(BP_R_ARM))))
 		return
 	if(!istype(holder, /obj/item/organ/internal/scaffold))
 		return

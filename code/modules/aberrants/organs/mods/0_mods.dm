@@ -1,13 +1,14 @@
 /obj/item/modification/organ
+	name = "organoid"
 	matter = list(MATERIAL_BIOMATTER = 5)
+	origin_tech = list(TECH_BIO = 3)	// One level higher than regular organs
 
 /obj/item/modification/organ/internal
-	name = "organoid"
 	icon = 'icons/obj/organ_mods.dmi'
 	icon_state = "organoid"
 	desc = "Functional tissue of one or more organs in graftable form."
 	spawn_tags = SPAWN_TAG_ORGAN_MOD
-	price_tag = 400
+	price_tag = 200
 
 /obj/item/modification/organ/internal/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	..()

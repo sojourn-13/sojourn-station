@@ -8,4 +8,4 @@
 				/obj/machinery/vending/organfridge_aberrant/alcoholic = 2,
 				/obj/machinery/vending/organfridge_aberrant/addict = 2,
 				/obj/machinery/sleeper/sarcophagus = 2,
-				/obj/machinery/sleeper/sarcophagus/abomination = 16))
+				/obj/machinery/sleeper/sarcophagus/hive = 16))
