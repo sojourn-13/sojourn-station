@@ -116,7 +116,7 @@
 /obj/machinery/autolathe/organ_fabricator/eject(material, amount)
 	var/material/M = get_material_by_name(material)
 	if(M.stack_type == /obj/item/stack/material/biomatter)
-		visible_message(SPAN_WARNING("biomatter cannot be removed from this machine."))
+		visible_message(SPAN_WARNING("Biomatter cannot be removed from this machine."))
 		return
 	..()
 

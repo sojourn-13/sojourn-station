@@ -18,6 +18,7 @@
 		set_dir(pick(NORTH, EAST, WEST))
 
 /obj/machinery/sleeper/sarcophagus/RefreshParts()
+	..()
 	for(var/component in component_parts)
 		if(istype(component, /obj/item/circuitboard/sarcophagus))
 			var/obj/item/circuitboard/sarcophagus/C = component
@@ -55,14 +56,6 @@
 	. = ..()
 
 /obj/machinery/sleeper/sarcophagus/attackby(obj/item/I, mob/user)
-	if(default_deconstruction(I, user))
-		return
-
-	//Useability tweak for borgs
-	if (istype(I,/obj/item/gripper))
-		nano_ui_interact(user)
-		return
-
 	..()
 
 	if(istool(I) && horror_occupant)
