@@ -43,6 +43,8 @@
 			files.AddDesign2Known(D)
 			ripped_categories |= D.category
 
+	visible_message(SPAN_NOTICE("The contents of \the [disk] have been saved to \the [src]'s drive."))
+
 /obj/machinery/autolathe/organ_fabricator/insert_disk(mob/living/user, obj/item/computer_hardware/hard_drive/portable/inserted_disk)
 	. = ..()
 	for(var/design_file in disk.find_files_by_type(/datum/computer_file/binary/design))
