@@ -9,13 +9,13 @@
 "ac" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "ad" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/mine/unexplored)
 "ae" = (
-/obj/random/mob/undergroundmob/low_chance,
+/obj/random/mob/golem/high_chance,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "af" = (
@@ -26,7 +26,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "ag" = (
 /obj/structure/railing{
 	dir = 8
@@ -36,7 +36,7 @@
 	},
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "ai" = (
 /turf/simulated/wall/r_wall,
 /area/mine/hallway)
@@ -46,9 +46,14 @@
 	},
 /area/turbolift/Research/underground)
 "ak" = (
-/turf/simulated/shuttle/wall/mining{
-	icon_state = "10,18"
+/obj/structure/railing{
+	anchored = 1;
+	dir = 4
 	},
+/obj/effect/floor_decal/spline/plain{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
 /area/mine/hallway)
 "al" = (
 /turf/simulated/shuttle/wall/mining{
@@ -185,7 +190,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "aK" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -221,16 +226,16 @@
 "aO" = (
 /obj/random/junk,
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "aP" = (
 /obj/structure/railing,
 /obj/random/junk,
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "aQ" = (
 /obj/structure/railing,
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "aR" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid,
@@ -323,7 +328,7 @@
 "bh" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/ore_box,
+/obj/machinery/suit_storage_unit/rad_unit,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
 "bj" = (
@@ -523,7 +528,7 @@
 /area/mine/power)
 "bR" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/ore_box,
+/obj/machinery/suit_storage_unit/rad_unit,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
 "bS" = (
@@ -704,12 +709,11 @@
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/prep)
 "cf" = (
-/obj/structure/multiz/stairs/enter/bottom{
-	dir = 4
+/obj/machinery/light/small{
+	dir = 1
 	},
-/obj/structure/railing,
 /turf/simulated/floor/asteroid,
-/area/mine/prep)
+/area/mine/hallway)
 "cg" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -724,46 +728,6 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/monofloor,
-/area/mine/hallway)
-"ci" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/shieldwallgen/ameridian{
-	active = 1;
-	anchored = 1;
-	state = 1;
-	storedpower = 50000
-	},
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"cj" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"ck" = (
-/obj/machinery/shieldwallgen/ameridian{
-	active = 1;
-	anchored = 1;
-	state = 1;
-	storedpower = 50000
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/asteroid,
 /area/mine/hallway)
 "cl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -822,7 +786,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "ct" = (
 /obj/structure/closet/secure_closet/personal/miner,
 /obj/item/storage/firstaid/ifak,
@@ -856,15 +820,6 @@
 "cw" = (
 /turf/simulated/wall/r_wall,
 /area/mine/atmos)
-"cx" = (
-/obj/effect/decal/cleanable/generic,
-/obj/random/scrap,
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"cy" = (
-/obj/effect/decal/cleanable/generic,
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "cz" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
@@ -1024,21 +979,23 @@
 /area/mine/hallway)
 "cX" = (
 /obj/structure/railing{
-	anchored = 1;
 	dir = 4
 	},
 /obj/effect/floor_decal/spline/plain{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warningdust{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/mine/processing)
+"cY" = (
+/obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
 	},
+/obj/structure/railing,
 /turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"cY" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/table/steel_reinforced,
-/obj/item/reagent_containers/glass/bottle/ameridian,
-/obj/item/gun/energy/sonic_emitter/preloaded,
-/turf/simulated/floor/tiled/steel/gray_platform,
-/area/mine/hallway)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "cZ" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -1071,45 +1028,19 @@
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/mine/prep)
 "dd" = (
-/obj/structure/multiz/stairs/enter/bottom{
-	dir = 4
-	},
-/obj/structure/railing,
-/obj/machinery/camera/network/mining,
-/turf/simulated/floor/asteroid,
-/area/mine/prep)
-"de" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/effect/floor_decal/spline/plain{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/mine/prep)
+/obj/structure/table/rack,
+/obj/item/device/gps/mining,
+/obj/item/device/gps/mining,
+/obj/item/device/gps/mining,
+/obj/random/lowkeyrandom,
+/turf/simulated/floor/tiled/steel/danger,
+/area/mine/hallway)
 "df" = (
-/obj/structure/multiz/stairs/enter/bottom,
-/turf/simulated/floor/plating,
-/area/mine/prep)
-"dg" = (
-/obj/structure/railing{
-	anchored = 1;
-	dir = 8
+/obj/structure/ameridian_crystal/spire/fake{
+	spread_range = 0
 	},
-/obj/effect/decal/cleanable/generic,
-/obj/random/material_ore,
-/obj/random/material_rare/low_chance,
-/obj/effect/floor_decal/spline/plain{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/mine/prep)
+/turf/simulated/floor/asteroid,
+/area/mine/hallway)
 "dh" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -1233,11 +1164,15 @@
 /turf/simulated/floor/plating,
 /area/mine/hallway)
 "dx" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/table/steel_reinforced,
+/obj/item/gun/energy/sonic_emitter/preloaded,
+/obj/item/ameridian_core,
+/obj/item/ameridian_core,
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 0
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/mine/hallway)
 "dy" = (
@@ -1249,26 +1184,11 @@
 /turf/simulated/floor/asteroid,
 /area/mine/prep)
 "dz" = (
-/turf/simulated/mineral/random/high_chance,
-/area/mine/prep)
-"dA" = (
-/obj/effect/floor_decal/spline/plain{
-	dir = 1
-	},
-/obj/machinery/conveyor/south{
-	id = "mining_internal"
-	},
-/turf/simulated/floor/plating,
-/area/mine/prep)
-"dB" = (
-/obj/effect/floor_decal/spline/plain{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warningdust{
+/obj/machinery/camera/network/mining{
 	dir = 8
 	},
-/turf/simulated/floor/plating,
-/area/mine/prep)
+/turf/simulated/floor/tiled/steel,
+/area/mine/hallway)
 "dC" = (
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
@@ -1287,23 +1207,30 @@
 	dir = 1
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "dF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 1
-	},
+/obj/structure/multiz/stairs/enter/bottom,
 /turf/simulated/floor/plating,
 /area/mine/processing)
 "dG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 1
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 4
 	},
-/turf/simulated/floor/plating,
+/obj/structure/railing,
+/obj/machinery/camera/network/mining,
+/turf/simulated/floor/asteroid,
 /area/mine/processing)
 "dH" = (
+/obj/structure/railing{
+	anchored = 1;
+	dir = 8
+	},
+/obj/effect/decal/cleanable/generic,
+/obj/random/material_ore,
+/obj/random/material_rare/low_chance,
+/obj/effect/floor_decal/spline/plain{
+	dir = 1
+	},
 /obj/effect/floor_decal/industrial/warningdust{
 	dir = 4
 	},
@@ -1415,18 +1342,8 @@
 "dW" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"dX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/ameridian_crystal{
-	growth = 1
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"dY" = (
-/obj/structure/ameridian_crystal{
-	growth = 1
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/simulated/floor/asteroid,
 /area/mine/hallway)
@@ -1436,11 +1353,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/plating,
 /area/mine/hallway)
 "ea" = (
@@ -1450,31 +1362,16 @@
 	},
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/mine/hallway)
 "eb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/mine/hallway)
 "ec" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
 "ed" = (
@@ -1597,7 +1494,7 @@
 	},
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "ev" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1633,14 +1530,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/mine/atmos)
-"ey" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "eA" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/railing{
@@ -1787,11 +1676,6 @@
 "eS" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/asteroid,
 /area/mine/hallway)
 "eT" = (
@@ -1988,7 +1872,7 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "fp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -2033,31 +1917,6 @@
 	},
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled/steel,
-/area/mine/hallway)
-"fs" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/ameridian_crystal{
-	growth = 1
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
-"ft" = (
-/obj/structure/sign/warningnew/radiation,
-/turf/simulated/wall/r_wall,
-/area/mine/hallway)
-"fu" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/asteroid,
 /area/mine/hallway)
 "fv" = (
 /obj/machinery/camera/network/mining{
@@ -2117,7 +1976,7 @@
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "fH" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/powercell/low_chance,
@@ -2516,10 +2375,7 @@
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
 "gB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/closet/crate,
-/obj/random/lowkeyrandom,
+/obj/machinery/vending/tool,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
 "gC" = (
@@ -2576,7 +2432,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "gK" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal{
 	dir = 4
@@ -2964,13 +2820,10 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/mine/power)
 "hJ" = (
-/obj/machinery/vending/tool,
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 8
+/turf/simulated/shuttle/wall/mining{
+	icon_state = "10,18"
 	},
-/turf/simulated/floor/tiled/steel/cargo,
-/area/mine/prep)
+/area/mine/hallway)
 "hK" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 1
@@ -4027,15 +3880,9 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/outpostmachineroom)
 "kc" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/structure/table/rack,
-/obj/item/device/gps/mining,
-/obj/item/device/gps/mining,
-/obj/item/device/gps/mining,
-/turf/simulated/floor/tiled/steel/danger,
-/area/mine/hallway)
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Mining,
+/turf/simulated/shuttle/floor/mining,
+/area/turbolift/Mining/underground)
 "kd" = (
 /obj/structure/table/standard,
 /obj/item/book/manual/suspension,
@@ -4836,7 +4683,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "mf" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/structure/anomaly_container,
@@ -7562,16 +7409,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
-"sf" = (
-/obj/effect/floor_decal/spline/plain{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warningdust{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/mine/prep)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "sg" = (
 /obj/structure/railing{
 	anchored = 1;
@@ -7585,7 +7423,7 @@
 	},
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "sh" = (
 /obj/machinery/camera/network/mining,
 /obj/structure/lattice,
@@ -7935,7 +7773,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "sV" = (
 /turf/simulated/mineral/random/high_chance,
 /area/mine/unexplored)
@@ -7979,9 +7817,9 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
+/area/nadezhda/quartermaster/mining_outside_doc)
 "tg" = (
-/mob/living/carbon/superior_animal/wurm/osmium,
+/obj/random/mob/golem/low_chance,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "th" = (
@@ -8701,11 +8539,11 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/rnd/outpostbotany)
 "vj" = (
-/mob/living/simple_animal/hostile/nightmare,
+/obj/random/cluster/golem/lower_chance,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "vl" = (
-/obj/random/mob/undergroundmob,
+/obj/random/cluster/golem/low_chance,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "vn" = (
@@ -8719,9 +8557,12 @@
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "vq" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Mining,
-/turf/simulated/shuttle/floor/mining,
-/area/turbolift/Mining/underground)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel,
+/area/mine/hallway)
 "vr" = (
 /obj/machinery/portable_atmospherics/powered/scrubber/huge,
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -8763,15 +8604,6 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
-"wZ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "xd" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 4;
@@ -8905,22 +8737,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
-"BO" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/steel,
-/area/mine/hallway)
 "BR" = (
 /obj/machinery/light{
 	dir = 4
@@ -8992,6 +8808,10 @@
 /obj/structure/lattice,
 /turf/simulated/floor/fixed/hydrotile/shallowcoolant,
 /area/nadezhda/rnd/mixing)
+"Dv" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/asteroid,
+/area/mine/hallway)
 "DL" = (
 /obj/structure/railing{
 	anchored = 1;
@@ -9104,6 +8924,10 @@
 	},
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/mine/hallway)
+"Fs" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid,
+/area/nadezhda/quartermaster/mining_outside_doc)
 "FA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 10
@@ -9178,6 +9002,10 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
+"Hk" = (
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid,
+/area/nadezhda/quartermaster/mining_outside_doc)
 "Hq" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -9253,15 +9081,6 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
-"JK" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "JM" = (
 /obj/machinery/light,
 /turf/simulated/floor/reinforced,
@@ -9321,18 +9140,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/mining{
 	dir = 1
-	},
-/obj/machinery/shieldwallgen/ameridian{
-	active = 1;
-	anchored = 1;
-	state = 1;
-	storedpower = 50000
-	},
-/obj/structure/cable,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
 	},
 /turf/simulated/floor/asteroid,
 /area/mine/hallway)
@@ -9398,6 +9205,9 @@
 /obj/structure/lattice,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/rnd/mixing)
+"Ma" = (
+/turf/simulated/wall/r_wall,
+/area/nadezhda/quartermaster/mining_outside_doc)
 "Mm" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/steel/monofloor,
@@ -9558,15 +9368,9 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
-"RN" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/camera/network/mining,
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
+"RU" = (
+/turf/simulated/mineral/random/high_chance,
+/area/nadezhda/quartermaster/mining_outside_doc)
 "RW" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -9589,9 +9393,11 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "RZ" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/material_box,
-/turf/simulated/floor/tiled/steel/cargo,
+/obj/structure/table/rack,
+/obj/item/device/gps/mining,
+/obj/item/device/gps/mining,
+/obj/item/device/gps/mining,
+/turf/simulated/floor/tiled/steel/danger,
 /area/mine/hallway)
 "Sa" = (
 /obj/structure/lattice,
@@ -9605,6 +9411,10 @@
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
+"St" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/nadezhda/quartermaster/mining_outside_doc)
 "Su" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -9618,6 +9428,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfive)
+"Sw" = (
+/obj/random/mob/undergroundmob/low_chance,
+/turf/simulated/floor/asteroid,
+/area/nadezhda/quartermaster/mining_outside_doc)
 "SD" = (
 /obj/machinery/light{
 	dir = 1
@@ -9745,15 +9559,6 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
-"VS" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/steel,
-/area/mine/hallway)
 "VU" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 5;
@@ -9800,13 +9605,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
-"Xk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/network/mining{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel,
-/area/mine/hallway)
 "Xo" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -9887,6 +9685,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
+"Yx" = (
+/obj/random/traps/low_chance,
+/turf/simulated/floor/asteroid,
+/area/nadezhda/quartermaster/mining_outside_doc)
 "YB" = (
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/rnd/mixing)
@@ -9910,6 +9712,9 @@
 /obj/effect/window_lwall_spawn/smartspawnplasma,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
+"Zb" = (
+/turf/simulated/floor/asteroid,
+/area/nadezhda/quartermaster/mining_outside_doc)
 "Zu" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -9933,20 +9738,6 @@
 /obj/machinery/portable_atmospherics/powered/pump,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/mixing)
-"ZM" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/machinery/shieldwallgen/ameridian{
-	active = 1;
-	anchored = 1;
-	state = 1;
-	storedpower = 50000
-	},
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/hallway)
 "ZN" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
@@ -12110,7 +11901,7 @@ ti
 ti
 tK
 tK
-tK
+vl
 tK
 ti
 ti
@@ -12311,7 +12102,7 @@ ti
 ti
 ti
 tK
-ji
+tK
 tK
 tK
 ti
@@ -13023,8 +12814,8 @@ ti
 ti
 ti
 ti
-ji
-uf
+vj
+tK
 ti
 ti
 ti
@@ -13103,7 +12894,7 @@ ti
 ti
 ti
 tK
-ii
+tK
 tK
 ti
 ti
@@ -13304,7 +13095,7 @@ ti
 ti
 ti
 ti
-tK
+vl
 tK
 tK
 ti
@@ -13679,9 +13470,9 @@ ti
 ti
 ti
 tK
-ji
 tK
-uf
+vj
+tK
 ti
 ti
 ti
@@ -13864,7 +13655,7 @@ ti
 ti
 ti
 tK
-ji
+vj
 ti
 ti
 ti
@@ -16464,7 +16255,7 @@ ti
 ti
 ti
 tK
-ji
+vj
 tK
 tK
 ti
@@ -16769,7 +16560,7 @@ ti
 ti
 tK
 tK
-tK
+tg
 tK
 tK
 ti
@@ -17174,7 +16965,7 @@ ti
 ti
 ti
 ti
-vn
+tK
 tK
 ti
 ti
@@ -17252,7 +17043,7 @@ ti
 ti
 ti
 tK
-ii
+vj
 tK
 ti
 ti
@@ -18582,10 +18373,10 @@ ti
 ti
 ti
 tK
+tg
 tK
 tK
 tK
-ae
 tK
 tK
 tK
@@ -18944,7 +18735,7 @@ ti
 ti
 ti
 tK
-ji
+tg
 tK
 ti
 ti
@@ -21127,7 +20918,7 @@ ti
 ti
 ti
 tK
-ii
+vl
 tK
 ti
 ti
@@ -21705,7 +21496,7 @@ ti
 ti
 ti
 tK
-ii
+vj
 tK
 ti
 ti
@@ -23153,7 +22944,6 @@ ti
 ti
 ti
 tK
-uf
 tK
 tK
 tK
@@ -23166,6 +22956,7 @@ tK
 tK
 tK
 tK
+tK
 ti
 ti
 ti
@@ -23214,7 +23005,7 @@ ti
 ti
 ti
 tK
-tK
+tg
 ti
 ti
 ti
@@ -23568,7 +23359,7 @@ ti
 ti
 tK
 tK
-tK
+vj
 tK
 ti
 ti
@@ -24315,7 +24106,7 @@ ti
 ti
 ti
 tK
-ji
+vj
 ti
 ti
 ti
@@ -24790,7 +24581,7 @@ tK
 tK
 tK
 tK
-uf
+tK
 ti
 ti
 ti
@@ -26287,7 +26078,7 @@ ti
 ti
 ti
 tK
-ii
+tK
 ti
 ti
 ti
@@ -26489,7 +26280,7 @@ ti
 ti
 ti
 tK
-tK
+vj
 ti
 ti
 ti
@@ -26979,7 +26770,7 @@ ti
 ti
 ti
 tK
-vl
+tK
 tK
 ti
 ti
@@ -27181,19 +26972,19 @@ ti
 ti
 ti
 tK
+ae
+tK
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 tK
 tK
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-tK
-vj
 tK
 tK
 tK
@@ -27396,7 +27187,7 @@ ti
 ti
 tK
 tK
-tK
+vj
 tK
 tK
 ti
@@ -27648,7 +27439,7 @@ ti
 ti
 tK
 tK
-vl
+tK
 ti
 ti
 ti
@@ -27849,7 +27640,7 @@ tK
 tK
 ti
 tK
-tK
+tg
 tK
 ti
 ti
@@ -27965,8 +27756,8 @@ ti
 ti
 ti
 tK
-ii
-uf
+vj
+tK
 ti
 ti
 ti
@@ -28449,7 +28240,7 @@ tK
 tK
 tK
 tK
-tK
+tg
 tK
 tK
 tK
@@ -28643,7 +28434,7 @@ ti
 ti
 ti
 ti
-tK
+tg
 tK
 tK
 tK
@@ -28845,7 +28636,7 @@ ti
 ti
 ti
 ti
-tK
+tg
 tK
 ti
 ti
@@ -30461,7 +30252,7 @@ ti
 ti
 ti
 tK
-ji
+vl
 tK
 ti
 ti
@@ -32009,7 +31800,7 @@ ti
 ti
 ti
 tK
-ii
+tK
 tK
 ti
 ti
@@ -32211,7 +32002,7 @@ ti
 ti
 ti
 tK
-tK
+vj
 tK
 ti
 ti
@@ -32685,7 +32476,7 @@ ti
 ti
 ti
 tK
-tK
+tg
 tK
 tK
 tK
@@ -33094,7 +32885,7 @@ tK
 tK
 tK
 tK
-tK
+tg
 tK
 ti
 ti
@@ -33271,7 +33062,7 @@ ti
 ti
 ti
 ti
-ii
+vj
 tK
 ti
 ti
@@ -33434,18 +33225,18 @@ ti
 ti
 ti
 ti
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -33636,21 +33427,21 @@ ti
 ti
 ti
 ti
-tK
-tK
-tK
-tK
-am
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Fs
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -33838,22 +33629,22 @@ ti
 ti
 ti
 ti
-tK
-tK
-eN
-am
-tK
-tK
-am
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Hk
+Fs
+Zb
+Zb
+Fs
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -34040,22 +33831,22 @@ ti
 ti
 ti
 ti
-tK
-am
-am
-tK
-tK
-tK
-am
-am
-am
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Fs
+Fs
+Zb
+Zb
+Zb
+Fs
+Fs
+Fs
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -34242,22 +34033,22 @@ ti
 ti
 ti
 eN
-tK
-ae
-tK
-tK
-am
-tK
-tK
-tK
+Zb
+Sw
+Zb
+Zb
+Fs
+Zb
+Zb
+Zb
 fo
-tK
-tK
-tK
-vn
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Yx
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -34314,7 +34105,7 @@ ti
 ti
 tK
 tK
-tK
+tg
 tK
 ti
 ti
@@ -34444,23 +34235,23 @@ np
 np
 np
 np
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -34646,23 +34437,23 @@ bf
 bf
 bf
 bf
-am
-tK
-tK
-tK
-am
-tK
-tK
-tK
+Fs
+Zb
+Zb
+Zb
+Fs
+Zb
+Zb
+Zb
 fo
-am
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Fs
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -34848,22 +34639,22 @@ dh
 gh
 ej
 bf
-eN
-am
-tK
-am
-tK
-tK
-am
-tK
+Hk
+Fs
+Zb
+Fs
+Zb
+Zb
+Fs
+Zb
 fo
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Sw
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -35050,22 +34841,22 @@ di
 dJ
 ej
 bf
-eN
+Hk
 fG
-am
-tK
-am
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Fs
+Zb
+Fs
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -35261,13 +35052,13 @@ ff
 ff
 gr
 gr
-np
-eN
-tK
-tK
-tK
-tK
-tK
+Ma
+Hk
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -35314,7 +35105,7 @@ ti
 ti
 tK
 tK
-tK
+tg
 tK
 tK
 tK
@@ -35463,13 +35254,13 @@ hn
 sj
 gN
 gr
-np
-sV
-tK
-tK
-tK
-am
-tK
+Ma
+RU
+Zb
+Zb
+Zb
+Fs
+Zb
 ti
 ti
 ti
@@ -35518,7 +35309,7 @@ tK
 tK
 tK
 tK
-uf
+tK
 tK
 tK
 tK
@@ -35665,13 +35456,13 @@ ho
 gN
 sA
 gr
-np
-sV
-tK
-tK
-am
-tK
-tK
+Ma
+RU
+Zb
+Zb
+Fs
+Zb
+Zb
 ti
 ti
 ti
@@ -35755,7 +35546,7 @@ ti
 ti
 ti
 tK
-ji
+vj
 tK
 tK
 ti
@@ -35867,13 +35658,13 @@ hp
 sk
 jl
 gr
-np
-sV
-sV
-tK
-tK
-tK
-am
+Ma
+RU
+RU
+Zb
+Zb
+Zb
+Fs
 ti
 ti
 ti
@@ -35924,7 +35715,7 @@ tK
 tK
 tK
 tK
-tK
+tg
 tK
 tK
 tK
@@ -36069,14 +35860,14 @@ Fm
 sl
 sC
 gr
-np
-sV
-sV
-tK
-tK
-tK
-tK
-eN
+Ma
+RU
+RU
+Zb
+Zb
+Zb
+Zb
+Hk
 ti
 ti
 ti
@@ -36271,13 +36062,13 @@ hq
 sm
 sD
 gr
-np
-sV
-sV
-sV
-tK
-tK
-tK
+Ma
+RU
+RU
+RU
+Zb
+Zb
+Zb
 ab
 ti
 ti
@@ -36473,13 +36264,13 @@ ai
 ai
 ai
 ai
-np
-sV
-sV
-tK
-tK
-tK
-am
+Ma
+RU
+RU
+Zb
+Zb
+Zb
+Fs
 ab
 ti
 ti
@@ -36676,12 +36467,12 @@ sn
 td
 gP
 hr
-tK
-tK
-tK
-am
-tK
-tK
+Zb
+Zb
+Zb
+Fs
+Zb
+Zb
 ti
 ti
 ti
@@ -36878,12 +36669,12 @@ bo
 Cb
 so
 rX
-tK
-tK
-am
-tK
-tK
-tK
+Zb
+Zb
+Fs
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -37080,121 +36871,121 @@ bo
 td
 sL
 DL
-tK
-tK
-sV
+Zb
+Zb
+RU
 tf
+Zb
+Zb
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 tK
-tK
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ji
 tK
 ti
 ti
@@ -37284,10 +37075,10 @@ ai
 ai
 Kt
 Kt
-np
-am
-tK
-tK
+Ma
+Fs
+Zb
+Zb
 ab
 ti
 ti
@@ -37396,7 +37187,7 @@ ti
 ti
 ti
 ti
-tK
+vj
 tK
 ti
 ti
@@ -37486,10 +37277,10 @@ ed
 ed
 ed
 tb
-ad
-am
-tK
-am
+St
+Fs
+Zb
+Fs
 ab
 ti
 ti
@@ -37688,10 +37479,10 @@ ed
 sO
 ed
 tc
-ad
-am
-tK
-tK
+St
+Fs
+Zb
+Zb
 ab
 ti
 ti
@@ -37890,10 +37681,10 @@ gt
 gt
 ia
 gt
-np
-eN
-am
-tK
+Ma
+Hk
+Fs
+Zb
 ti
 ti
 ti
@@ -38092,10 +37883,10 @@ gt
 sP
 gV
 gt
-eN
-eN
-am
-tK
+Hk
+Hk
+Fs
+Zb
 ti
 ti
 ti
@@ -38294,10 +38085,10 @@ gt
 sQ
 gV
 gt
-am
-tK
-tK
-tK
+Fs
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -38496,10 +38287,10 @@ gt
 gt
 gV
 gt
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -38668,18 +38459,18 @@ ti
 ti
 ti
 ti
-np
-np
-np
-np
-np
-np
-np
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 np
 ad
 ad
 ad
-np
 cw
 cV
 du
@@ -38698,10 +38489,10 @@ gt
 sR
 gV
 gt
-tK
-tK
-tK
-am
+Zb
+Zb
+Zb
+Fs
 ti
 ti
 ti
@@ -38719,7 +38510,7 @@ ti
 ti
 ti
 tK
-ii
+vj
 tK
 ti
 ti
@@ -38870,7 +38661,8 @@ ti
 ti
 ti
 ti
-np
+ti
+ai
 ai
 ai
 ai
@@ -38881,7 +38673,6 @@ ai
 bh
 bR
 bR
-ai
 ai
 ai
 ai
@@ -38900,10 +38691,10 @@ gt
 sS
 sX
 gt
-am
-tK
-tK
-tK
+Fs
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -39072,11 +38863,12 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 ai
 by
 cD
+by
 by
 by
 az
@@ -39084,12 +38876,11 @@ bx
 bx
 bx
 wn
-ci
 cW
 aC
 dW
 ar
-ZM
+ar
 wn
 fM
 yT
@@ -39102,10 +38893,10 @@ gt
 gt
 gt
 gt
-am
-tK
-am
-am
+Fs
+Zb
+Fs
+Fs
 ti
 ti
 ti
@@ -39274,10 +39065,11 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 ai
 Fr
+by
 by
 by
 by
@@ -39286,12 +39078,11 @@ bj
 by
 bj
 wn
-cj
-dY
-dY
-dX
-fs
-JK
+aC
+aC
+cW
+ar
+ar
 wn
 fN
 cz
@@ -39303,11 +39094,11 @@ gw
 gt
 fG
 fo
-am
-tK
-tK
-tK
-tK
+Fs
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -39476,24 +39267,24 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 ai
 ay
 ay
 ay
 by
+by
 aB
 bj
 Mm
 bj
 ai
-RN
-dY
-dY
-dY
-dY
-JK
+cf
+aC
+aC
+aC
+Dv
 ai
 fO
 gj
@@ -39504,12 +39295,12 @@ st
 st
 sM
 sU
-am
-tK
-tK
-tK
-am
-tK
+Fs
+Zb
+Zb
+Zb
+Fs
+Zb
 ti
 ti
 ti
@@ -39678,24 +39469,24 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 ai
 aT
 aT
 aT
+ai
 ai
 aH
 bw
 bz
 by
 wn
-cj
-dY
-dY
-dY
-fs
-JK
+aC
+aC
+df
+ar
+ar
 wn
 fP
 bo
@@ -39706,13 +39497,13 @@ st
 st
 sN
 sU
-tK
-am
-tK
-tK
-tK
-tK
-tK
+Zb
+Fs
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -39880,23 +39671,23 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
-ak
+hJ
 ui
 ui
-vq
+kc
 ax
+ai
 ai
 bk
 bj
 ch
 wn
-cj
-dY
-dY
-dY
-dY
+aC
+aC
+aC
+aC
 eS
 wn
 bX
@@ -39907,14 +39698,14 @@ sd
 af
 af
 af
-tK
-am
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Fs
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -40082,24 +39873,24 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 al
 ui
 ui
 ui
 al
+ai
 ai
 bl
 bA
 bS
 wn
-cj
-dY
-fs
-dY
-dX
-JK
+aC
+ar
+aC
+cW
+ar
 wn
 bX
 bo
@@ -40107,16 +39898,16 @@ aK
 hc
 sU
 fG
-tK
-tK
-tK
-am
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Fs
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -40155,7 +39946,7 @@ ti
 ti
 ti
 ti
-ii
+vj
 tK
 ti
 ti
@@ -40284,23 +40075,23 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 al
 ui
 ui
 ui
 al
+ai
 ai
 ai
 bB
 bT
 ai
-ck
-ey
-ey
-fu
-ey
+aC
+aC
+aC
+aC
 KK
 ai
 is
@@ -40308,16 +40099,16 @@ bo
 aK
 he
 sU
-tK
-tK
-tK
-tK
-tK
-tK
-eN
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Hk
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -40486,39 +40277,39 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 al
 ui
 ui
 ui
 al
+ai
 aI
 ai
 bo
 bU
 wn
-ar
-cy
-aC
-wZ
-ar
-aC
+aR
+dv
+dZ
+dv
+aR
 wn
 bX
 bn
 aK
 he
 dE
-am
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Fs
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -40592,7 +40383,7 @@ ti
 ti
 ti
 tK
-ii
+vj
 ti
 ti
 ti
@@ -40688,7 +40479,7 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 av
 aw
@@ -40697,28 +40488,28 @@ aw
 aA
 ai
 ai
+ai
 BG
 bV
 wn
-cx
-ar
-dv
-dZ
-dv
-ar
+ak
+dw
+ea
+eA
+eA
 wn
 fP
 bo
 aK
 hc
 me
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -40890,24 +40681,24 @@ ti
 ti
 ti
 ti
-np
+ti
 ai
 tH
 tH
 tH
 tH
 tH
+ai
 ai
 ai
 bC
 bV
 wn
-aR
-cX
-dw
-ea
-eA
-aR
+dv
+dv
+dv
+dv
+dv
 wn
 bX
 bn
@@ -40915,12 +40706,12 @@ aK
 hf
 hc
 dE
-tK
-am
-tK
-am
-tK
-tK
+Zb
+Fs
+Zb
+Fs
+Zb
+Zb
 ti
 ti
 ti
@@ -41092,24 +40883,24 @@ ti
 ti
 ti
 ti
+ti
 np
 np
 np
 np
 np
 np
-np
+ai
 ai
 ai
 bD
 bT
 ai
 wn
-cY
 dx
 eb
 eB
-ai
+wn
 ai
 fO
 gk
@@ -41117,12 +40908,12 @@ ai
 ai
 sh
 dE
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -41297,21 +41088,21 @@ ti
 ti
 ti
 ti
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
 aK
 at
 bm
 bo
 bV
-kc
+dd
 wn
 ai
-ft
 ec
 FB
-ai
+wn
 fv
 bX
 bn
@@ -41319,12 +41110,12 @@ gy
 aK
 hc
 dE
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -41499,9 +41290,10 @@ ti
 ti
 ti
 ti
-tK
-am
-tK
+Zb
+Fs
+Fs
+Zb
 aK
 aU
 bn
@@ -41510,8 +41302,7 @@ bV
 bo
 cz
 cZ
-Xk
-VS
+cz
 cz
 cZ
 bo
@@ -41521,12 +41312,12 @@ gA
 aK
 hc
 dE
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -41701,9 +41492,10 @@ ti
 ti
 ti
 ti
-tK
-am
-tK
+Zb
+Fs
+Fs
+Zb
 aK
 aV
 bo
@@ -41713,7 +41505,6 @@ cl
 cA
 da
 cA
-BO
 eC
 da
 cl
@@ -41723,12 +41514,12 @@ RZ
 aK
 hc
 sg
-tK
-tK
-tK
-tK
-tK
-ae
+Zb
+Zb
+Zb
+Zb
+Zb
+Sw
 ti
 ti
 ti
@@ -41903,9 +41694,10 @@ ti
 ti
 ti
 ti
-am
-tK
-am
+Fs
+Zb
+Zb
+Fs
 aK
 aW
 bn
@@ -41913,9 +41705,8 @@ bC
 bX
 bn
 cB
-cz
-cz
-ed
+vq
+dz
 eD
 cz
 bn
@@ -41926,11 +41717,11 @@ aK
 hf
 sw
 dE
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -42105,8 +41896,9 @@ ti
 ti
 ti
 ti
-am
-tK
+Fs
+Zb
+Zb
 aD
 aD
 aD
@@ -42116,7 +41908,6 @@ bY
 aE
 aD
 aD
-hJ
 ee
 ee
 ee
@@ -42128,11 +41919,11 @@ ee
 ee
 sx
 dE
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -42146,7 +41937,7 @@ ti
 ti
 ti
 tK
-ii
+vj
 tK
 ti
 ti
@@ -42307,8 +42098,9 @@ ti
 ti
 ti
 ti
-tK
-tK
+Zb
+Zb
+Zb
 aE
 aL
 aX
@@ -42317,7 +42109,6 @@ bF
 bZ
 cm
 cC
-aD
 aD
 ee
 eE
@@ -42330,11 +42121,11 @@ hg
 ee
 si
 dE
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -42509,8 +42300,9 @@ ti
 ti
 ti
 ti
-am
-tK
+Fs
+Zb
+Zb
 aE
 aM
 aY
@@ -42520,7 +42312,6 @@ ca
 cn
 dI
 aD
-dz
 ee
 eF
 eU
@@ -42532,11 +42323,11 @@ iW
 ee
 si
 dE
-am
-tK
-tK
-tK
-tK
+Fs
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -42711,8 +42502,9 @@ ti
 ti
 ti
 ti
-tK
-tK
+Zb
+Zb
+Zb
 aE
 aM
 aZ
@@ -42722,7 +42514,6 @@ cb
 co
 cE
 aD
-dz
 ee
 eG
 eU
@@ -42734,11 +42525,11 @@ QN
 ee
 si
 dE
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -42913,8 +42704,9 @@ ti
 ti
 ti
 ti
-tK
-am
+Zb
+Fs
+Fs
 aE
 aN
 ba
@@ -42924,7 +42716,6 @@ bL
 cp
 cF
 aD
-dz
 ee
 eH
 eV
@@ -42936,11 +42727,11 @@ hi
 ee
 sy
 dE
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -43115,8 +42906,9 @@ ti
 ti
 ti
 ab
-tK
-tK
+Zb
+Zb
+Zb
 aD
 aD
 aD
@@ -43124,7 +42916,6 @@ aE
 bJ
 cc
 aE
-aD
 aD
 aD
 ee
@@ -43138,11 +42929,11 @@ hj
 ee
 si
 dE
-am
-tK
-tK
-tK
-tK
+Fs
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -43317,10 +43108,11 @@ ti
 ti
 ti
 ti
-tK
-tK
-am
-am
+Zb
+Zb
+Zb
+Fs
+Fs
 aD
 bs
 bK
@@ -43328,7 +43120,6 @@ cd
 cq
 aE
 dc
-sf
 ee
 ee
 ee
@@ -43340,11 +43131,11 @@ hk
 ee
 si
 dE
-eN
-tK
-tK
-tK
-tK
+Hk
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -43519,10 +43310,11 @@ ti
 ti
 ti
 ti
-tK
-tK
-tK
-am
+Zb
+Zb
+Zb
+Zb
+Fs
 aD
 bt
 bL
@@ -43530,7 +43322,6 @@ bF
 cr
 aE
 db
-dA
 eL
 ef
 eX
@@ -43542,11 +43333,11 @@ hl
 ee
 si
 eu
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -43721,10 +43512,11 @@ ti
 ti
 ti
 ti
-tK
-tK
-tK
-am
+Zb
+Zb
+Zb
+Zb
+Fs
 aD
 bu
 bM
@@ -43732,7 +43524,6 @@ bF
 cq
 aE
 dc
-dB
 ee
 dC
 ee
@@ -43744,11 +43535,11 @@ ee
 ee
 sx
 dE
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -43873,7 +43664,7 @@ ti
 ti
 ti
 tK
-ii
+vj
 tK
 ti
 ti
@@ -43923,9 +43714,10 @@ ti
 ti
 ti
 ti
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
 aO
 aD
 aE
@@ -43933,8 +43725,7 @@ bJ
 ce
 aE
 aD
-dd
-dD
+dG
 eg
 dD
 eY
@@ -43946,11 +43737,11 @@ fZ
 gp
 sz
 dE
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -44050,7 +43841,7 @@ ti
 ti
 ti
 tK
-uf
+tK
 ti
 ti
 ti
@@ -44125,9 +43916,10 @@ ti
 ti
 ti
 ti
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
 aP
 bb
 bc
@@ -44135,8 +43927,7 @@ bc
 bc
 fC
 cH
-de
-dD
+cX
 dD
 dD
 eZ
@@ -44147,12 +43938,12 @@ gJ
 hm
 si
 aJ
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -44251,7 +44042,7 @@ ti
 ti
 ti
 ti
-ii
+vj
 tK
 ti
 ti
@@ -44327,9 +44118,10 @@ ti
 ti
 ti
 ti
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
 aQ
 uc
 uc
@@ -44337,23 +44129,22 @@ bc
 bc
 bc
 bc
-df
 dF
 eh
 eh
 eh
 fD
-tK
-tK
-tK
+Zb
+Zb
+Zb
 af
 ag
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -44530,8 +44321,9 @@ ti
 ti
 ti
 ti
-tK
-am
+Zb
+Zb
+Fs
 aQ
 ud
 ud
@@ -44539,23 +44331,22 @@ bc
 bc
 bc
 bc
-df
-dG
+dF
 eh
 eh
 fa
 fE
-am
+Fs
 ac
 ac
-am
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Fs
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -44732,8 +44523,9 @@ ti
 ti
 ti
 ab
-tK
-am
+Zb
+Zb
+Fs
 aQ
 uc
 uc
@@ -44741,23 +44533,22 @@ bc
 bc
 cG
 dy
-dg
 dH
 ei
 eM
 fb
 fF
-am
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Fs
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -44933,33 +44724,33 @@ ti
 ti
 ti
 ti
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
 bd
 bv
 bN
-cf
+cY
 cs
 cs
-tK
-am
-am
-am
-tK
-tK
+Zb
+Fs
+Fs
+Zb
+Zb
 ac
-tK
-am
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Fs
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -45135,59 +44926,59 @@ ti
 ti
 ti
 ti
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Fs
+Fs
+Zb
+Zb
+Fs
+Zb
+Fs
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+vj
 tK
-tK
-tK
-tK
-tK
-tK
-tK
-am
-am
-tK
-tK
-tK
-am
-tK
-am
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ii
-tK
 ti
 ti
 ti
@@ -45218,7 +45009,7 @@ ti
 ti
 ti
 tK
-ii
+vj
 tK
 ti
 ti
@@ -45337,30 +45128,30 @@ ti
 ti
 ti
 ti
-tK
-tK
-tK
-tK
-tK
-tK
-am
-tK
-tK
-tK
-am
-tK
-tK
-am
-am
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Fs
+Zb
+Zb
+Zb
+Fs
+Zb
+Zb
+Fs
+Fs
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -45540,29 +45331,29 @@ ti
 ti
 ti
 ti
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -45742,29 +45533,29 @@ ti
 ti
 ti
 ti
-ae
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti
@@ -45947,26 +45738,26 @@ ti
 ti
 ti
 ti
-tK
-tK
-tK
+Zb
+Zb
+Zb
 ti
 ti
 ti
 ti
 ti
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
-tK
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
+Zb
 ti
 ti
 ti

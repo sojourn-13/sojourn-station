@@ -69,8 +69,6 @@
 	qdel(src)
 
 /mob/living/carbon/superior_animal/ameridian_golem/Destroy()
-	node?.golem = null
-	node = null
 	. = ..()
 
 /mob/living/carbon/superior_animal/ameridian_golem/bullet_act(var/obj/item/projectile/P, var/def_zone)

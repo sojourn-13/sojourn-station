@@ -25,8 +25,7 @@
 	..()
 	spawn(1)
 		for(var/obj/structure/ameridian_crystal/AC in get_turf(src))
-			if(istype(AC, /obj/structure/ameridian_crystal/spire)) // Don't destroy spires.
-				continue
+			//Yes even the spirer should be destoryed
 			AC.visible_message("[AC] shatter into dust under the sonic field.")
 			AC.Destroy()
 
