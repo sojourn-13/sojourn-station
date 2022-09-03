@@ -110,17 +110,17 @@
 						handle_ignition(input)
 
 /obj/machinery/cooking_with_jane/grill/proc/handle_burning(input)
-	if(!(items[input] && istype(items[input], /obj/item/cooking_with_jane/cooking_container)))
+	if(!(items[input] && istype(items[input], /obj/item/reagent_containers/cooking_with_jane/cooking_container)))
 		return
 
-	var/obj/item/cooking_with_jane/cooking_container/container = items[input]
+	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
 	container.handle_burning()
 
 /obj/machinery/cooking_with_jane/grill/proc/handle_ignition(input)
-	if(!(items[input] && istype(items[input], /obj/item/cooking_with_jane/cooking_container)))
+	if(!(items[input] && istype(items[input], /obj/item/reagent_containers/cooking_with_jane/cooking_container)))
 		return
 
-	var/obj/item/cooking_with_jane/cooking_container/container = items[input]
+	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
 	if(container.handle_ignition())
 		on_fire = TRUE
 
@@ -162,10 +162,10 @@
 
 	var/input = getInput(params)
 	if(items[input] != null)
-		var/obj/item/cooking_with_jane/cooking_container/container = items[input]
+		var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
 		container.process_item(used_item, params)
 
-	else if(istype(used_item, /obj/item/cooking_with_jane/cooking_container/grill_grate))
+	else if(istype(used_item, /obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate))
 		to_chat(usr, SPAN_NOTICE("You put a [used_item] on the grill."))
 		if(usr.canUnEquip(used_item))
 			usr.unEquip(used_item, src)
@@ -286,10 +286,10 @@
 
 /obj/machinery/cooking_with_jane/grill/proc/handle_cooking(var/mob/user, var/input, set_timer=FALSE)
 
-	if(!(items[input] && istype(items[input], /obj/item/cooking_with_jane/cooking_container)))
+	if(!(items[input] && istype(items[input], /obj/item/reagent_containers/cooking_with_jane/cooking_container)))
 		return
 
-	var/obj/item/cooking_with_jane/cooking_container/container = items[input]
+	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
 	if(set_timer)
 		reference_time = timer[input]
 	else

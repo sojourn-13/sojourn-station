@@ -9,8 +9,9 @@
 	var/list/active_recipe_pointers = list()
 	var/completion_lockout = FALSE //Freakin' cheaters...
 	var/list/completed_list = list()//List of recipes marked as complete.
+	var/recipe_started = FALSE 	//Tells if steps have been taken for this recipe
 
-/datum/cooking_with_jane/recipe_tracker/New(var/obj/item/cooking_with_jane/cooking_container/container)
+/datum/cooking_with_jane/recipe_tracker/New(var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container)
 
 	#ifdef CWJ_DEBUG
 	log_debug("Called /datum/cooking_with_jane/recipe_tracker/New")
@@ -33,7 +34,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("Called /datum/cooking_with_jane/recipe_tracker/proc/generate_pointers")
 	#endif
-	var/obj/item/cooking_with_jane/cooking_container/container = holder_ref.resolve()
+	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = holder_ref.resolve()
 
 	#ifdef CWJ_DEBUG
 	log_debug("Loading all references to [container] of type [container.type] using [container.appliancetype]")
@@ -80,6 +81,20 @@
 	log_debug("Called /datum/cooking_with_jane/recipe_tracker/proc/has_recipes")
 	#endif
 	return active_recipe_pointers.len
+
+//Wrapper function for analyzing process_item internally.
+/datum/cooking_with_jane/recipe_tracker/proc/process_item_wrap(var/obj/used_object, var/mob/user)
+
+	#ifdef CWJ_DEBUG
+	log_debug("/datum/cooking_with_jane/recipe_tracker/proc/process_item_wrap called!")
+	#endif
+
+	var/response = process_item(used_object, user)
+
+	if(response == CWJ_SUCCESS || response == CWJ_COMPLETE || response == CWJ_PARTIAL_SUCCESS)
+		if(!recipe_started)
+			recipe_started = TRUE
+	return response
 
 //Core function that checks if a object meets all the requirements for certain recipe actions.
 /datum/cooking_with_jane/recipe_tracker/proc/process_item(var/obj/used_object, var/mob/user)
@@ -158,9 +173,9 @@
 					break
 		if (!used_id)
 			active_recipe_pointers.Remove(pointer)
-			qdel(pointer) 
-			
-	
+			qdel(pointer)
+
+
 	//attempt_complete_recursive(used_object, use_class) No, never again...
 
 	//Choose to keep baking or finish now.
@@ -206,13 +221,13 @@
 		chosen_pointer.current_recipe.create_product(chosen_pointer)
 		return CWJ_COMPLETE
 	populate_step_flags()
-	
+
 	if(has_traversed)
 		#ifdef CWJ_DEBUG
 		log_debug("/recipe_tracker/proc/process_item returned success!")
 		#endif
 		return CWJ_SUCCESS
-	
+
 	#ifdef CWJ_DEBUG
 	log_debug("/recipe_tracker/proc/process_item returned partial success!")
 	#endif
@@ -284,7 +299,7 @@
 	#endif
 
 	parent_ref = WEAKREF(parent)
-	
+
 	#ifdef CWJ_DEBUG
 	if(!GLOB.cwj_recipe_dictionary[start_type][recipe_id])
 		log_debug("Recipe [start_type]-[recipe_id] not found by tracker!")
@@ -303,7 +318,7 @@
 
 //A list returning the next possible steps in a given recipe
 /datum/cooking_with_jane/recipe_pointer/proc/get_possible_steps()
-	
+
 	#ifdef CWJ_DEBUG
 	log_debug("Called /datum/cooking_with_jane/recipe_pointer/proc/get_possible_steps")
 	if(!current_step)
@@ -338,16 +353,16 @@
 				if(steps_taken["[id]"])
 					exclude_step = TRUE
 					break
-		
-		
+
+
 		if(!exclude_step)
 			return_list += step
-		#ifdef CWJ_DEBUG	
+		#ifdef CWJ_DEBUG
 		else
 			log_debug("Ignoring step [step.unique_id] due to exclusion.")
 		#endif
-			
-	
+
+
 	#ifdef CWJ_DEBUG
 	log_debug("/datum/cooking_with_jane/recipe_pointer/proc/get_possible_steps returned list of length [return_list.len]")
 	#endif
@@ -431,7 +446,7 @@
 
 	//The recipe has been completed.
 	if(!current_step.next_step && current_step.unique_id == id)
-		
+
 		tracker.completed_list +=  src
 		return TRUE
 

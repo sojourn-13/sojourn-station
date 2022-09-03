@@ -5450,37 +5450,37 @@
 /area/centcom/evac)
 "oM" = (
 /obj/structure/table/marble,
-/obj/item/cooking_with_jane/cooking_container/pot,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oN" = (
 /obj/structure/table/marble,
-/obj/item/cooking_with_jane/cooking_container/oven,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oO" = (
 /obj/structure/table/marble,
-/obj/item/cooking_with_jane/cooking_container/deep_basket,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/deep_basket,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oP" = (
 /obj/structure/table/marble,
-/obj/item/cooking_with_jane/cooking_container/air_basket,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/air_basket,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oQ" = (
 /obj/structure/table/marble,
-/obj/item/cooking_with_jane/cooking_container/board,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/board,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oR" = (
 /obj/structure/table/marble,
-/obj/item/cooking_with_jane/cooking_container/bowl,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oS" = (
 /obj/structure/table/marble,
-/obj/item/cooking_with_jane/cooking_container/grill_grate,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oT" = (
@@ -5864,6 +5864,7 @@
 "xg" = (
 /obj/structure/table/marble,
 /obj/item/seeds/tomatoseed,
+/obj/item/reagent_containers/food/snacks/dollop,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "xl" = (
@@ -5892,6 +5893,11 @@
 /obj/item/contraband/poster/placed/advertisement/eat,
 /turf/simulated/wall/r_wall,
 /area/centcom/evac)
+"xI" = (
+/obj/structure/table/marble,
+/obj/machinery/chemical_dispenser/coffee_master,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "xJ" = (
 /obj/structure/filingcabinet/security,
 /turf/simulated/floor/tiled/dark/golden,
@@ -5915,6 +5921,11 @@
 	},
 /turf/simulated/floor/tiled/dark/panels,
 /area/centcom/raider_base)
+"yl" = (
+/obj/structure/table/marble,
+/obj/machinery/chemical_dispenser/beer,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "yq" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -6081,7 +6092,7 @@
 /area/centcom/evac)
 "BW" = (
 /obj/structure/table/marble,
-/obj/item/cooking_with_jane/cooking_container/plate,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "BX" = (
@@ -6131,6 +6142,11 @@
 "Ct" = (
 /obj/machinery/vending/tool,
 /turf/simulated/floor/tiled/dark/golden,
+/area/centcom/evac)
+"CP" = (
+/obj/structure/table/marble,
+/obj/machinery/chemical_dispenser/soda,
+/turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "CR" = (
 /obj/machinery/computer/teleporter,
@@ -6265,7 +6281,7 @@
 "FZ" = (
 /obj/structure/table/marble,
 /obj/structure/table/marble,
-/obj/item/cooking_with_jane/cooking_container/plate,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Ga" = (
@@ -6337,6 +6353,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/centcom/raider_base)
+"Hl" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "Hu" = (
 /obj/item/storage/firstaid/surgery/traitor,
 /obj/structure/table/glass,
@@ -6454,6 +6474,10 @@
 /obj/item/tool/sword/crusader/nt_sword_truth,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
+"Kr" = (
+/obj/machinery/chemical_dispenser/beer,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/centcom/evac)
 "Ks" = (
 /obj/structure/railing{
 	dir = 1
@@ -6516,7 +6540,7 @@
 /area/centcom/evac)
 "Mb" = (
 /obj/structure/table/marble,
-/obj/item/cooking_with_jane/cooking_container/pan,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Mc" = (
@@ -19192,7 +19216,7 @@ KR
 ho
 EX
 FM
-FM
+Hl
 GW
 Ir
 zI
@@ -19796,7 +19820,7 @@ qH
 qH
 KR
 ho
-FM
+CP
 FM
 Mb
 Bo
@@ -19998,7 +20022,7 @@ qH
 qH
 KR
 ho
-oK
+xI
 FM
 FM
 FM
@@ -20200,7 +20224,7 @@ qH
 qH
 KR
 ho
-FM
+yl
 FM
 FM
 FM
@@ -20402,7 +20426,7 @@ qH
 qH
 KR
 ho
-FM
+UC
 FM
 BW
 Oc
@@ -21629,7 +21653,7 @@ aD
 dn
 dn
 dn
-dn
+Kr
 aD
 ho
 KR

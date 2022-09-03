@@ -29,6 +29,8 @@
 
 /datum/cooking_with_jane/recipe_step/add_reagent/check_conditions_met(var/obj/used_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 	var/obj/item/container = tracker.holder_ref.resolve()
+
+	
 	if((container.reagents.total_volume + required_reagent_amount - container.reagents.get_reagent_amount(required_reagent_id)) > container.reagents.maximum_volume)
 		return CWJ_CHECK_FULL
 
@@ -36,15 +38,23 @@
 		return CWJ_CHECK_INVALID
 	if(!(used_item.reagent_flags & OPENCONTAINER))
 		return CWJ_CHECK_INVALID
+
 	var/obj/item/reagent_containers/our_item = used_item
 	if(our_item.amount_per_transfer_from_this <= 0)
+		return CWJ_CHECK_INVALID
+	if(our_item.reagents.total_volume == 0)
 		return CWJ_CHECK_INVALID
 
 	return CWJ_CHECK_VALID
 
-//Reagents are calculated prior to object creation
+//Reagents are calculated in two areas. Here and /datum/cooking_with_jane/recipe/proc/calculate_reagent_quality
 /datum/cooking_with_jane/recipe_step/add_reagent/calculate_quality(var/obj/used_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
-	return 0
+	var/obj/item/container = tracker.holder_ref.resolve()
+	var/data = container.reagents.get_data(required_reagent_id)
+	var/cooked_quality = 0
+	if(data && istype(data, /list) && data["FOOD_QUALITY"])
+		cooked_quality = data["FOOD_QUALITY"]
+	return cooked_quality
 
 
 /datum/cooking_with_jane/recipe_step/add_reagent/follow_step(var/obj/used_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
@@ -53,7 +63,7 @@
 
 	var/trans = our_item.reagents.trans_to_obj(container, our_item.amount_per_transfer_from_this)
 
-	playsound(src,'sound/effects/Liquid_transfer_mono.ogg',50,1)
+	playsound(usr,'sound/effects/Liquid_transfer_mono.ogg',50,1)
 	to_chat(usr, SPAN_NOTICE("You transfer [trans] units to \the [container]."))
 
 	return CWJ_SUCCESS

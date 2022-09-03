@@ -290,6 +290,16 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 	)
 
 
+/datum/cooking_with_jane/recipe/icing
+	cooking_container = POT
+	reagent_id = "glaze"
+	reagent_amount = 30
+	step_builder = list(
+		list(CWJ_ADD_REAGENT, "sugar", 30),
+		list(CWJ_ADD_REAGENT, "water", 30),
+		list(CWJ_USE_STOVE, J_LO, 30 SECONDS)
+	)
+
 /*
 //Example of the same recipe, but for the grill, just to show off how compact everything is.
 /datum/cooking_with_jane/recipe/grill_stove
