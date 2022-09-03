@@ -54,9 +54,12 @@
 		dna.ready_dna(src)
 		dna.real_name = real_name
 		sync_organ_dna()
+
 	make_blood()
 
 	sanity = new(src)
+
+	flash_mod = species.flash_mod
 
 	AddComponent(/datum/component/fabric)
 
@@ -141,7 +144,7 @@
 	if(blinded)
 		return
 	if(eye_damage)
-		eye_damage += eye_damage * species.flash_mod // increase based on how susceptible they are
+		eye_damage += eye_damage * flash_mod // increase based on how susceptible they are
 		var/obj/item/organ/internal/eyes/E = src.random_organ_by_process(OP_EYES)
 		E.take_damage(eye_damage, FALSE)
 		if (E && E.damage >= E.min_bruised_damage)

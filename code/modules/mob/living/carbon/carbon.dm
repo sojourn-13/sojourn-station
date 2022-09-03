@@ -246,7 +246,7 @@
 	if(blinded)
 		return
 	if(species)
-		..(duration * species.flash_mod, drop_items, doblind, doblurry)
+		..(duration * flash_mod, drop_items, doblind, doblurry)
 	else
 		..(duration, drop_items, doblind, doblurry)
 

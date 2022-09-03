@@ -1914,6 +1914,7 @@
 #include "code\modules\genetics\machinery\genetics_items.dm"
 #include "code\modules\genetics\mutations\bald.dm"
 #include "code\modules\genetics\mutations\barotrauma.dm"
+#include "code\modules\genetics\mutations\blood_bank.dm"
 #include "code\modules\genetics\mutations\bottomless_belly.dm"
 #include "code\modules\genetics\mutations\cat_eyes.dm"
 #include "code\modules\genetics\mutations\cloaking.dm"
