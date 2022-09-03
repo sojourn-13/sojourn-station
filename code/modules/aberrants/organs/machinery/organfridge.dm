@@ -60,16 +60,14 @@
 		/obj/item/storage/freezer/medical = 5,
 		/obj/item/tool/scalpel/laser = 1,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/input = 6,
-		/obj/item/organ/internal/scaffold/aberrant/teratoma/process = 9,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/process = 8,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/output = 6
 	)
 	contraband = list(
 		/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma = 1,
-		/obj/item/organ/internal/scaffold/aberrant/teratoma/special = 3,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/special = 2,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/uncommon = 2,
-		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/uncommon = 2,
-		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/rare = 2,
-		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/rare = 2
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/uncommon = 2
 	)
 	prices = list(
 		/obj/item/organ/internal/scaffold = 100,
@@ -81,9 +79,7 @@
 		/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma = 0,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/special = 200,
 		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/uncommon = 300,
-		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/rare = 400,
-		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/uncommon = 300,
-		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/rare = 400
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/uncommon = 300
 	)
 
 /obj/machinery/vending/organfridge_aberrant/New()
@@ -149,6 +145,34 @@
 	..()
 	contents_current += 1
 	update_icon()
+
+/obj/machinery/vending/organfridge_aberrant/alt
+	products = list(
+		/obj/item/organ/internal/scaffold = 3,
+		/obj/item/storage/freezer/medical = 5,
+		/obj/item/tool/scalpel/laser = 1,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/uncommon = 6,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/process = 8,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/uncommon = 6
+	)
+	contraband = list(
+		/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma_rare = 1,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/special = 2,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/rare = 2,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/rare = 2
+	)
+	prices = list(
+		/obj/item/organ/internal/scaffold = 100,
+		/obj/item/storage/freezer/medical = 25,
+		/obj/item/tool/scalpel/laser = 125,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/uncommon = 300,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/uncommon = 300,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/process = 200,
+		/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma_rare = 0,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/special = 200,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/rare = 400,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/rare = 400
+	)
 
 /obj/machinery/vending/organfridge_aberrant/simple
 	name = "OMG! The Classics"
