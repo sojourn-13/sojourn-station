@@ -796,7 +796,7 @@
 	var/count = 0
 	for(var/obj/item/ammo_casing/AC in stored_ammo)
 		count++
-		overlays += "slpistol_[AC.shell_color]-[count]"
+		add_overlay("slpistol_[AC.shell_color]-[count]")
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/practice
 	name = "speed loader (9mm Special practice)"
@@ -840,7 +840,7 @@
 	var/count = 0
 	for(var/obj/item/ammo_casing/AC in stored_ammo)
 		count++
-		overlays += "slmagnum_[AC.shell_color]-[count]"
+		add_overlay("slmagnum_[AC.shell_color]-[count]")
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/Initialize()
 	. = ..()
@@ -881,13 +881,19 @@
 /obj/item/ammo_magazine/speed_loader_kurtz_50
 	name = "speed loader (12mm Special)"
 	desc = "A 5 round speed loader marked for 12mm."
-	icon_state = "slmagnum_p"
+	icon_state = "slmagnum_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_50
 	ammo_type = /obj/item/ammo_casing/kurtz_50
 	matter = list(MATERIAL_STEEL = 3)
 	max_ammo = 5
-	multiple_sprites = 1
+
+/obj/item/ammo_magazine/speed_loader_kurtz_50/update_icon()
+	cut_overlays()
+	var/count = 0
+	for(var/obj/item/ammo_casing/AC in stored_ammo)
+		count++
+		add_overlay("slmagnum_[AC.shell_color]-[count]")
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/practice
 	name = "speed loader (12mm practice)"
