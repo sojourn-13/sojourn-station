@@ -197,7 +197,7 @@
 
 /datum/ritual/cruciform/priest/heal_heathen/proc/heal_other(mob/living/carbon/human/participant)
 		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain.</span>")
-		participant.reagents.add_reagent("laudanum", 5, "meralyne", 5, "kelotane", 5)
+		participant.reagents.add_reagent("laudanum", 5, "bicaridine", 5, "kelotane", 5)
 		participant.adjustToxLoss(-15)
 		participant.adjustOxyLoss(-30)
 		participant.adjustBrainLoss(-5)
