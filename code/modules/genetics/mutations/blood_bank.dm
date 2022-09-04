@@ -3,7 +3,7 @@
 	name = "Blood Banks"
 	key = "MUTATION_BLOOD_BANK"
 	desc = "Slightly increases the amount of blood the person has."
-	gain_text = "Your eyes narrow into that of a predator."
+	gain_text = "You feel your veins tingle and pulsate."
 	exclusive_type = MUT_TYPE_NONE //Just free
 	instability = 10 //10 as this isnt all that big of a game changer
 
