@@ -53,6 +53,7 @@
 #define MUTATION_CAT_EYES /datum/genetics/mutation/cat_eyes
 #define MUTATION_REGENERATION /datum/genetics/mutation/hyperion
 #define MUTATION_RAD_PROTECTION /datum/genetics/mutation/rad_protection
+#define MUTATION_BLOOD_BANK /datum/genetics/mutation/blood_bank
 //^^^ All mutations!
 
 

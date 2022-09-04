@@ -169,8 +169,8 @@
 	if(blood_volume > total_blood_req)
 		status_flags &= ~BLEEDOUT
 
-	//Blood regeneration if there is some space
-	if(blood_volume_raw < species.blood_volume)
+	//Blood regeneration if there is *any* space
+	if(blood_volume_raw < vessel.maximum_volume)
 		var/datum/reagent/organic/blood/B = get_blood(vessel)
 		B?.volume += 0.1 // regenerate blood VERY slowly
 		if(CE_BLOODRESTORE in chem_effects)

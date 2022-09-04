@@ -83,9 +83,12 @@
 	var/eye_blurry = 0	//Carbon
 	var/ear_damage = 0	//Carbon
 	var/stuttering = 0	//Carbon
+	var/flash_mod = 0	//Carbon
 	var/slurring = 0	//Carbon
 	var/slowdown = 0
 	var/job = null//Living
+
+	var/additional_darksight = 0	//Added to darksight
 
 	var/image/static_overlay // For static over-lays on living mobs
 	mob_classification = CLASSIFICATION_ORGANIC
