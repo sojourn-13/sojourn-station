@@ -187,6 +187,10 @@
 	var/firealarmed = 0
 	var/atmosalarmed = 0
 
+
+	var/over_ride_lighting = FALSE
+	var/over_ride_brightness_color = COLOR_LIGHTING_DEFAULT_BRIGHT
+
 // the smaller bulb light fixture
 
 /obj/machinery/light/floor
@@ -206,6 +210,15 @@
 
 /obj/machinery/light/small/autoattach
 	autoattach = 1
+
+/obj/machinery/light/small/autoattach/deepmaints
+	over_ride_lighting = TRUE
+	over_ride_brightness_color = COLOR_LIGHTING_PURPLE_MACHINERY
+
+/obj/machinery/light/small/autoattach/deepmaints/New()
+	if(prob(50))
+		over_ride_brightness_color = COLOR_LIGHTING_RED_MACHINERY
+	..()
 
 /obj/machinery/light/spot
 	name = "spotlight"
@@ -247,6 +260,8 @@
 	if(location)
 		if(location.area_light_color)
 			brightness_color = location.area_light_color
+			if(over_ride_lighting)
+				brightness_color = over_ride_brightness_color
 
 	update(0)
 
@@ -284,6 +299,7 @@
 			atmosalarmed = 1
 			firealarmed = 0
 			brightness_color = COLOR_LIGHTING_BLUE_MACHINERY
+
 		update()
 
 /obj/machinery/light/proc/set_red()
@@ -306,6 +322,9 @@
 
 			else
 				brightness_color = COLOR_LIGHTING_DEFAULT_BRIGHT
+
+			if(over_ride_lighting)
+				brightness_color = over_ride_brightness_color
 
 		update()
 
@@ -338,6 +357,8 @@
 					set_light(0)
 			else
 				use_power = ACTIVE_POWER_USE
+				if(over_ride_lighting)
+					brightness_color = over_ride_brightness_color
 				set_light(brightness_range, brightness_power, brightness_color)
 	else
 		use_power = IDLE_POWER_USE

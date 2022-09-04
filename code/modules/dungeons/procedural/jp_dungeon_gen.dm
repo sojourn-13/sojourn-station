@@ -39,6 +39,9 @@
 	var/pathWidth = 2 //The default width of paths connecting the rooms
 	var/lightSpawnChance = 0 //Chance to spawn a light during path generation
 
+	var/regen_specific = FALSE
+	var/regen_light = /obj/machinery/light/small/autoattach
+
 	var/list/border_turfs //Internal list. No touching, unless you really know what you're doing.
 
 	var/list/examined //Internal list, used for pre-existing region stuff
@@ -165,7 +168,10 @@
 
 
 /obj/procedural/jp_DungeonGenerator/proc/AddLight(t)
-	new /obj/machinery/light/small/autoattach(t)
+	if(regen_specific)
+		new regen_light(t)
+	else
+		new /obj/machinery/light/small/autoattach(t)
 
 /*
 
