@@ -243,7 +243,7 @@ It also resets instability to 0 so bad things don't happen.
 		to_chat(user, SPAN_WARNING("The needle can't pierce through clothes."))
 		return
 
-	if(issynthetic(target))
+	if(issynthetic(target) || target.get_species(IS_SYNTHETIC))
 		to_chat(user, SPAN_WARNING("The needle can't pierce synthetic casing- and anything held inside probably wouldn't work on a robot."))
 		return
 
@@ -326,7 +326,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 		to_chat(user, SPAN_WARNING("The needle can't pierce through clothes."))
 		return
 
-	if(issynthetic(target))
+	if(issynthetic(target) || target.get_species(IS_SYNTHETIC))
 		to_chat(user, SPAN_WARNING("The needle can't pierce synthetic casing- and anything held inside probably wouldn't work on a robot."))
 		return
 
