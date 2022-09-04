@@ -1,6 +1,7 @@
 /datum/design/organ
 	category = "Standard"
 	build_type = ORGAN_GROWER
+	starts_unlocked = TRUE
 
 /datum/design/organ/heart
 	materials = list(MATERIAL_BIOMATTER = 30)
@@ -39,6 +40,7 @@
 
 /datum/design/organ/back_alley
 	category = "Back Alley"
+	starts_unlocked = FALSE
 
 /datum/design/organ/back_alley/ex_lungs
 	name = "Extended Lungs"

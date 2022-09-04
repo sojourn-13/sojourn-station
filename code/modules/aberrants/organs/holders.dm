@@ -3,6 +3,7 @@
 	icon = 'icons/obj/aberrant_organs.dmi'
 	icon_state = "organ_scaffold"
 	desc = "A collagen-based biostructure."
+	description_info = "A functionless organ with three slots for organ mods or organoids. Best used with an input, process, and output organoid to create a modular organ."
 	price_tag = 100
 	organ_efficiency = list()
 	specific_organ_size = 0.4
@@ -19,6 +20,7 @@
 	var/ruined = FALSE
 	var/ruined_name = "organ scaffold"
 	var/ruined_desc = "A collagen-based biostructure."
+	var/ruined_description_info = "A functionless organ with three slots for organ mods or organoids. Best used with an input, process, and output organoid to create a modular organ."
 	var/ruined_color = null
 
 /obj/item/organ/internal/scaffold/New()
@@ -33,7 +35,7 @@
 	UnregisterSignal(src, COMSIG_ABERRANT_COOLDOWN)
 
 /obj/item/organ/internal/scaffold/Process()
-	. = ..()
+	..()
 	if(owner && !on_cooldown && damage < min_broken_damage)
 		LEGACY_SEND_SIGNAL(src, COMSIG_ABERRANT_INPUT, src, owner)
 
@@ -76,32 +78,6 @@
 		if(function_info)
 			to_chat(user, SPAN_NOTICE(function_info))
 
-/obj/item/organ/internal/scaffold/refresh_upgrades()
-	name = initial(name)
-	color = initial(color)
-	max_upgrades = max_upgrades ? initial(max_upgrades) : 0		// If no max upgrades, it must be a ruined teratoma. So, leave it at 0.
-	prefixes = list()
-	min_bruised_damage = initial(min_bruised_damage)
-	min_broken_damage = initial(min_broken_damage)
-	max_damage = initial(max_damage) ? initial(max_damage) : min_broken_damage * 2
-	owner_verbs = initial_owner_verbs.Copy()
-	organ_efficiency = initial_organ_efficiency.Copy()
-	scanner_hidden = initial(scanner_hidden)
-	unique_tag = initial(unique_tag)
-	specific_organ_size = initial(specific_organ_size)
-	max_blood_storage = initial(max_blood_storage)
-	current_blood = initial(current_blood)
-	blood_req = initial(blood_req)
-	nutriment_req = initial(nutriment_req)
-	oxygen_req = initial(oxygen_req)
-
-	update_color()
-
-	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
-
-	update_name()
-	update_icon()
-
 /obj/item/organ/internal/scaffold/update_icon()
 	if(use_generated_icon)
 		icon_state = initial(icon_state) + organ_type + generated_color
@@ -134,6 +110,7 @@
 	ruined = TRUE
 	name = ruined_name ? ruined_name : initial(name)
 	desc = ruined_desc ? ruined_desc : initial(desc)
+	description_info = ruined_description_info ? ruined_description_info : initial(description_info)
 	color = ruined_color ? ruined_color : initial(color)
 	price_tag = 100
 	use_generated_name = TRUE
@@ -237,6 +214,9 @@
 /obj/item/organ/internal/scaffold/rare
 	name = "large organ scaffold"
 	desc = "A collagen-based biostructure. This one has room for an extra organoid."
+	ruined_desc = "A collagen-based biostructure. This one has room for an extra organoid."
+	description_info = "A functionless organ with four slots for organ mods or organoids. Generally, you'll want to save the fourth upgrade slot for a membrane."
+	ruined_description_info = "A functionless organ with four slots for organ mods or organoids. Generally, you'll want to save the fourth upgrade slot for a membrane."
 	max_upgrades = 4
 
 /obj/item/organ/internal/scaffold/aberrant
