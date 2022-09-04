@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/stranger
+/mob/living/carbon/superior_animal/human/stranger
 	name = "Stranger"
 	desc = "A stranger from an unknown place."
 	icon = 'icons/mob/mobs-humanoid.dmi'
@@ -7,21 +7,16 @@
 	icon_gib = "syndicate_gib"
 	speak_chance = 0
 	turns_per_move = 4
-	response_help = "pokes"
-	response_disarm = "shoves"
-	response_harm = "hits"
-	speed = 4
 	ranged_cooldown = 1
 	stop_automated_movement_when_pulled = FALSE
 	maxHealth = 200
 	health = 200
-	harm_intent_damage = 5
 	melee_damage_lower = 15
 	melee_damage_upper = 15
+	ranged_cooldown = 2
+	rapid_fire_shooting_amount = 3
 	attacktext = "punched"
 	a_intent = I_HURT
-	needs_environment = FALSE
-	unsuitable_atoms_damage = 15
 	status_flags = CANPUSH
 	ranged = TRUE
 	rapid = TRUE
@@ -33,12 +28,13 @@
 	bones_amount = 0
 	var/empy_cell = FALSE
 	var/prob_tele = 20
+	never_stimulate_air = TRUE
 
-/mob/living/simple_animal/hostile/stranger/Initialize(mapload)
+/mob/living/carbon/superior_animal/human/Initialize(mapload)
 	. = ..()
 	do_sparks(3, 0, src.loc)
 
-/mob/living/simple_animal/hostile/stranger/death()
+/mob/living/carbon/superior_animal/human/stranger/death()
 	. = ..()
 	var/obj/item/gun/energy/plasma/stranger/S = new (src.loc)
 	S.cell = new S.suitable_cell(S)
@@ -54,11 +50,11 @@
 	animation.icon =  'icons/mob/mob.dmi'
 	animation.master = src
 	flick("dust2-h", animation)
-	addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
 	do_sparks(3, 0, src.loc)
 	qdel(src)
+	qdel(animation)
 
-/mob/living/simple_animal/hostile/stranger/attack_generic(mob/user, damage, attack_message)
+/mob/living/carbon/superior_animal/human/stranger/attack_generic(mob/user, damage, attack_message)
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(!damage || !istype(user))
@@ -73,7 +69,7 @@
 		return FALSE
 	. = ..()
 
-/mob/living/simple_animal/hostile/stranger/attackby(obj/item/W, mob/user, params)
+/mob/living/carbon/superior_animal/human/stranger/attackby(obj/item/W, mob/user, params)
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(prob(prob_tele))
@@ -86,7 +82,7 @@
 		return FALSE
 	. = ..()
 
-/mob/living/simple_animal/hostile/stranger/attack_hand(mob/living/carbon/M)
+/mob/living/carbon/superior_animal/human/stranger/attack_hand(mob/living/carbon/M)
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(M.a_intent != I_HELP && prob(prob_tele))
@@ -99,7 +95,7 @@
 		return FALSE
 	. = ..()
 
-/mob/living/simple_animal/hostile/stranger/bullet_act(obj/item/projectile/P, def_zone)
+/mob/living/carbon/superior_animal/human/stranger/bullet_act(obj/item/projectile/P, def_zone)
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if (!(P.testing))
@@ -113,7 +109,7 @@
 			return FALSE
 	. = ..()
 
-/mob/living/simple_animal/hostile/stranger/Life()
+/mob/living/carbon/superior_animal/human/stranger/Life()
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	. = ..()
