@@ -142,6 +142,7 @@
 	if(default_deconstruction(used_item, user))
 		return
 
+
 	if(istype(used_item, /obj/item/stack/material/wood))
 		var/obj/item/stack/material/wood/stack = used_item
 		var/used_sheets = min(stack.get_amount(), (wood_maximum - stored_wood))
@@ -161,9 +162,14 @@
 
 
 	var/input = getInput(params)
+
 	if(items[input] != null)
 		var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
-		container.process_item(used_item, params)
+
+		if(istype(used_item, /obj/item/spatula))
+			container.do_empty(user, target=src, reagent_clear = FALSE)
+		else
+			container.process_item(used_item, params)
 
 	else if(istype(used_item, /obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate))
 		to_chat(usr, SPAN_NOTICE("You put a [used_item] on the grill."))

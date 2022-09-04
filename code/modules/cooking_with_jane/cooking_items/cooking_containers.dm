@@ -46,16 +46,20 @@
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/get_reagent_info()
 	return "It contains [reagents.total_volume] units of reagents."
 
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/attackby(var/obj/item/I, var/mob/user)
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/attackby(var/obj/item/used_item, var/mob/user)
 		
 	#ifdef CWJ_DEBUG
 	log_debug("cooking_container/attackby() called!")
 	#endif
 
+	if(istype(used_item, /obj/item/spatula))
+		do_empty(user, target=null, reagent_clear = FALSE)
+		return
+
 	if(!tracker && (contents.len || reagents.total_volume != 0))
 		to_chat(user, "The [src] is full. Empty its contents first.")
 	else
-		process_item(I, user)
+		process_item(used_item, user)
 
 	return TRUE
 
@@ -100,7 +104,7 @@
 	if(!tracker)
 		tracker = new /datum/cooking_with_jane/recipe_tracker(src)
 
-
+	var/return_value = 0
 	switch(tracker.process_item_wrap(I, user))
 		if(CWJ_NO_STEPS)
 			if(send_message)
@@ -118,10 +122,12 @@
 			tracker = null
 			clear_cooking_data()
 			update_icon()
+			return_value = 1
 		if(CWJ_SUCCESS)
 			if(send_message)
 				to_chat(user, "You have successfully completed a recipe step.")
 			clear_cooking_data()
+			return_value = 1
 			update_icon()
 		if(CWJ_PARTIAL_SUCCESS)
 			if(send_message)
@@ -133,7 +139,7 @@
 	if(tracker && !tracker.recipe_started)
 		qdel(tracker)
 		tracker = null
-
+	return return_value
 
 //TODO: Handle the contents of the container being ruined via burning.
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/handle_burning()
