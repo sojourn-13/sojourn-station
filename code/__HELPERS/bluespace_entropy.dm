@@ -142,7 +142,7 @@ GLOBAL_VAR_INIT(bluespace_distotion_cooldown, 10 MINUTES)
 		if(newT)
 			T = newT
 	T = get_random_secure_turf_in_range(T, 4)
-	var/mob/living/simple_animal/hostile/stranger/S = new (T)
+	var/mob/living/carbon/superior_animal/human/stranger/S = new (T)
 	if(minor_distortion && prob(95))
 		S.maxHealth = S.maxHealth/1.5
 		S.health = S.maxHealth
