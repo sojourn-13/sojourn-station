@@ -186,9 +186,9 @@
 	required_tech_levels = list()
 	cost = 375
 
-	unlocks_designs = list(/datum/design/research/circuit/ordercomp,
-						   /datum/design/research/circuit/supplycomp,
-						   /datum/design/research/item/computer_part/price)
+	unlocks_designs = list(/datum/design/research/item/computer_part/price)
+							//datum/design/research/circuit/ordercomp,
+							//datum/design/research/circuit/supplycomp,
 
 //TOOLS BRANCH
 // TO ADD: ore_redemption, mining_equipment_vendor, mining_fabricator?
