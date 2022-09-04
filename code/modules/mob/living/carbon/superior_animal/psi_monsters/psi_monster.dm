@@ -86,6 +86,12 @@
 
 	drop_items = list(/obj/random/psi)
 
+	var/psionic_respawn = TRUE
+	var/fast_respawn = 5 MINUTES
+	var/slow_respawn = 15 MINUTES
+	var/respawn_mob_type = /obj/random/mob/psi_monster
+	var/affects_chaos = FALSE
+
 
 /mob/living/carbon/superior_animal/psi_monster/New()
 	..()
