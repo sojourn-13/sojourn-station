@@ -34559,7 +34559,7 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/mineral,
 /area/colony)
 "gGY" = (
 /obj/machinery/newscaster{
@@ -42874,9 +42874,8 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "iqE" = (
-/obj/structure/catwalk,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/maintenance/undergroundfloor1south)
+/turf/simulated/mineral,
+/area/eris/crew_quarters/plasma_tag)
 "iqF" = (
 /obj/structure/table/woodentable,
 /obj/item/device/lighting/toggleable/lamp/green,
@@ -46646,16 +46645,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/maintenance_interior{
-	name = "Compactor";
-	req_access = newlist();
-	req_one_access = list(1,70,10)
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/maintenance_interior,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/hallway/side/f2section1)
 "jac" = (
@@ -50350,12 +50345,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "jKx" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
-/obj/structure/lattice,
-/turf/simulated/floor/plating/under,
-/area/colony)
+/turf/simulated/mineral,
+/area/nadezhda/security{
+	name = "Security Training"
+	})
 "jKF" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -66233,12 +66226,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "mDl" = (
-/obj/machinery/door/airlock/maintenance_interior{
-	name = "Compactor";
-	req_access = newlist();
-	req_one_access = list(1,70,10)
-	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/maintenance_interior,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/hallway/side/f2section1)
 "mDp" = (
@@ -86291,10 +86280,6 @@
 /obj/structure/flora/small/trailrocka3,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"quS" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/wall/r_wall,
-/area/colony)
 "quT" = (
 /obj/structure/flora/ausbushes/palebush,
 /obj/structure/sign/faction/neotheology{
@@ -95770,8 +95755,8 @@
 	dir = 2
 	},
 /obj/structure/lattice,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/security/armory)
+/turf/simulated/mineral,
+/area/colony)
 "sgc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -140345,8 +140330,8 @@ rzv
 rzv
 rzv
 rzv
-rzv
-rzv
+jKx
+jKx
 bgD
 mHw
 opS
@@ -140548,7 +140533,7 @@ hSx
 hSx
 sFI
 sFI
-xGi
+sFI
 bgD
 eFd
 qoY
@@ -140750,7 +140735,7 @@ sFI
 sFI
 sFI
 sFI
-xGi
+sFI
 krD
 krD
 krD
@@ -140952,7 +140937,7 @@ sFI
 sFI
 sFI
 sFI
-krD
+sFI
 krD
 krD
 krD
@@ -141154,7 +141139,7 @@ sFI
 sFI
 sFI
 sFI
-krD
+sFI
 krD
 kzg
 jyT
@@ -141356,7 +141341,7 @@ sFI
 sFI
 sFI
 sFI
-krD
+sFI
 krD
 eAI
 eAI
@@ -141558,7 +141543,7 @@ sFI
 sFI
 sFI
 sFI
-krD
+sFI
 krD
 vTf
 fPq
@@ -141760,7 +141745,7 @@ sFI
 sFI
 sFI
 sFI
-krD
+sFI
 krD
 krD
 krD
@@ -141952,23 +141937,23 @@ crC
 fMk
 crC
 crC
-quS
-quS
-quS
-quS
-quS
+crC
+crC
+crC
+crC
+crC
 gGS
-xGi
-xGi
-xGi
-xGi
-xGi
-krD
-krD
-krD
-krD
-krD
-krD
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 krD
 syC
 taJ
@@ -142153,7 +142138,7 @@ koE
 koE
 koE
 sFI
-tfU
+sFI
 tfU
 tfU
 tfU
@@ -142163,14 +142148,14 @@ sfM
 tfU
 tfU
 tfU
-xGi
-xGi
-xGi
-xGi
-xGi
-xGi
-xGi
-xGi
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 krD
 krD
 krD
@@ -142355,7 +142340,7 @@ rNC
 mMP
 koE
 sFI
-tfU
+sFI
 tfU
 xGf
 vXa
@@ -142370,9 +142355,9 @@ vcJ
 vcJ
 vcJ
 vcJ
-jKx
-jKx
-jKx
+sfZ
+sfZ
+sfZ
 sfZ
 gaI
 gaI
@@ -142557,7 +142542,7 @@ iuY
 iuY
 koE
 sFI
-tfU
+sFI
 tfU
 cBX
 kWL
@@ -142759,7 +142744,7 @@ iuY
 iuY
 koE
 sFI
-tfU
+sFI
 tfU
 lDJ
 kWL
@@ -154275,7 +154260,7 @@ fEg
 fEg
 xCy
 xCy
-xCy
+iqE
 xCy
 xCy
 xCy
@@ -158670,7 +158655,7 @@ vvA
 vih
 hVa
 hVa
-iqE
+guy
 qyU
 sFI
 hSx
@@ -160931,8 +160916,8 @@ eWj
 xRr
 trc
 trc
-trc
-trc
+iWI
+iWI
 trc
 trc
 rrw
@@ -221332,7 +221317,7 @@ veZ
 wBa
 vva
 wBa
-nPy
+jYW
 nPy
 nPy
 pRe
