@@ -28,6 +28,7 @@
 
 	scan_types = list("smile", "peep")
 
+
 //Did not want to use this...
 /obj/machinery/cooking_with_jane/oven/Process()
 
@@ -107,8 +108,10 @@
 /obj/machinery/cooking_with_jane/oven/attackby(var/obj/item/used_item, var/mob/user, params)
 	if(default_deconstruction(used_item, user))
 		return
+	
+	var/center_selected = getInput(params)
 
-	if(opened)
+	if(opened && center_selected)
 		if(items != null)
 			var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items
 
@@ -126,6 +129,8 @@
 			items = used_item
 			if(switches == 1)
 				cooking_timestamp = world.time
+	else
+		handle_open(user)
 	update_icon()
 
 //Retrieve whether or not the oven door has been clicked.
@@ -313,16 +318,16 @@
 
 /obj/machinery/cooking_with_jane/oven/update_icon()
 	cut_overlays()
-
+	icon_state = "oven_base"
 	for(var/obj/item/our_item in vis_contents)
 		src.remove_from_visible(our_item)
 
 	if(items)
 		var/obj/item/our_item = items
 		our_item.pixel_x = 0
-		our_item.pixel_y = 5
+		our_item.pixel_y = -5
 		src.add_to_visible(our_item)
-	if(opened)
+	if(!opened)
 		add_overlay(image(src.icon, icon_state="oven_hatch[switches?"_on":""]", layer=ABOVE_OBJ_LAYER))
 
 

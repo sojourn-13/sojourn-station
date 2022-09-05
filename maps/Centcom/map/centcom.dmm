@@ -5946,7 +5946,7 @@
 "yC" = (
 /obj/machinery/cooking_with_jane/oven,
 /turf/simulated/floor/tiled/cafe,
-/area/space)
+/area/centcom/evac)
 "yR" = (
 /obj/structure/sign/department/bar,
 /turf/simulated/wall/r_wall,

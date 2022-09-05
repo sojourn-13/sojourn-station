@@ -302,7 +302,7 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 
 
 /datum/cooking_with_jane/recipe/bread
-	cooking_container = CUTTING_BOARD
+	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/sliceable/bread
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.5),

@@ -66,6 +66,7 @@
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/standard_pour_into(mob/user, atom/target)
 
+
 	#ifdef CWJ_DEBUG
 	log_debug("cooking_container/standard_pour_into() called!")
 	#endif
@@ -87,6 +88,8 @@
 
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/afterattack(var/obj/target, var/mob/user, var/flag)
+	if(!istype(target, /obj/item/reagent_containers))
+		return
 	if(!flag)
 		return
 	if(tracker)
@@ -116,7 +119,7 @@
 				to_chat(user, "It doesn't seem like you can create a meal from that. Yet.")
 			if(lower_quality_on_fail)
 				for (var/datum/cooking_with_jane/recipe_pointer/pointer in tracker.active_recipe_pointers)
-					pointer?:food_quality -= lower_quality_on_fail
+					pointer?:tracked_quality -= lower_quality_on_fail
 		if(CWJ_CHOICE_CANCEL)
 			if(send_message)
 				to_chat(user, "You decide against cooking with the [src].")
