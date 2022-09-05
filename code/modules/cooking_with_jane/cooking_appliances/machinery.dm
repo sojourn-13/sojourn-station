@@ -2,6 +2,7 @@
 	var/tmp/obj/effect/flicker_overlay/scan
 	var/list/scan_types = list()
 	var/scan_chance = 1
+	var/quality_mod = 1
 
 /obj/machinery/cooking_with_jane/Initialize()
 	. = ..()

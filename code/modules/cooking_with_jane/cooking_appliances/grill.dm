@@ -24,8 +24,6 @@
 
 	var/reference_time = 0 //The exact moment when we call the process routine, just to account for lag.
 
-	var/quality_mod = 1
-
 	var/check_on_10 = 0
 
 	var/on_fire = FALSE //if the grill has caught fire or not.

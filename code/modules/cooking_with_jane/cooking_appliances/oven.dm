@@ -19,8 +19,6 @@
 
 	var/reference_time = 0 //The exact moment when we call the process routine, just to account for lag.
 
-	var/quality_mod = 1
-
 	var/power_cost = 3000 //Power cost per process step for a particular burner
 	var/check_on_10 = 0
 
