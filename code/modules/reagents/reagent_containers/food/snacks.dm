@@ -275,6 +275,8 @@
 			for(var/i=1 to (slices_num-slices_lost))
 				var/obj/slice = new slice_path (src.loc)
 				reagents.trans_to_obj(slice, reagents_per_slice)
+				if(istype(slice_path, /obj/item/reagent_containers/food/snacks))
+					slice_path?:food_quality = src.food_quality
 			qdel(src)
 			return
 

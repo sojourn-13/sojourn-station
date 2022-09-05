@@ -27,6 +27,7 @@
 	var/on_fire = FALSE //if the stove has caught fire or not.
 
 	circuit = /obj/item/circuitboard/cooking_with_jane/stove
+	scan_types = list("scan_1")
 
 //Did not want to use this...
 /obj/machinery/cooking_with_jane/stove/Process()
@@ -52,7 +53,11 @@
 		used_power += power_cost
 	use_power(used_power)
 
+	if(!(stat & NOPOWER))
+		decide_action()
+
 /obj/machinery/cooking_with_jane/stove/RefreshParts()
+	..()
 	var/man_rating = 0
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		man_rating += M.rating
@@ -192,7 +197,7 @@
 	var/input = getInput(params)
 
 	#ifdef CWJ_DEBUG
-	log_debug("/cooking_with_jane/stove/CtrlClick called on burner [input]")
+	log_debug("/cooking_with_jane/stove/CtrlShiftClick called on burner [input]")
 	#endif
 	handle_switch(user, input)
 
@@ -268,21 +273,9 @@
 	else
 		reference_time = world.time - cooking_timestamp[input]
 
-	var/qual_reduction = 0
-	switch(temperature[input])
-		if("Low")
-			qual_reduction = (reference_time / (1 MINUTES))
-
-		if("Medium")
-			qual_reduction = (reference_time / (30 SECONDS))
-
-		if("High")
-			qual_reduction = (reference_time / (20 SECONDS))
-
 
 	#ifdef CWJ_DEBUG
 	log_debug("stove/proc/handle_cooking data:")
-	log_debug("     qual_reduction: [qual_reduction]")
 	log_debug("     temperature: [temperature[input]]")
 	log_debug("     reference_time: [reference_time]")
 	log_debug("     world.time: [world.time]")
@@ -298,9 +291,9 @@
 
 
 	if(user.Adjacent(src))
-		container.process_item(src, user, lower_quality_on_fail = qual_reduction, send_message=TRUE)
+		container.process_item(src, user, send_message=TRUE)
 	else
-		container.process_item(src, user, lower_quality_on_fail = qual_reduction)
+		container.process_item(src, user)
 
 
 

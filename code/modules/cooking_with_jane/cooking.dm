@@ -272,6 +272,46 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 							reason="Unrecognized temperature for CWJ_USE_GRILL_OPTIONAL"
 					if(!reason)
 						create_step_use_grill(step[2], step[3], TRUE)
+				if(CWJ_USE_OVEN)
+					if(step.len < 3)
+						reason="Bad argument Length for CWJ_USE_OVEN"
+					switch(step[2])
+						if(J_LO)
+							if(step[3] > CWJ_BURN_TIME_LOW)
+								reason="Time too large for Low setting on CWJ_USE_OVEN; Food will automatically burn."
+
+						if(J_MED)
+							if(step[3] > CWJ_BURN_TIME_MEDIUM)
+								reason="Time too large for Medium setting on CWJ_USE_OVEN; Food will automatically burn."
+
+						if(J_HI)
+							if(step[3] > CWJ_BURN_TIME_HIGH)
+								reason="Time too large for High setting on CWJ_USE_OVEN; Food will automatically burn."
+
+						else
+							reason="Unrecognized temperature for CWJ_USE_OVEN"
+
+					if(!reason)
+						create_step_use_oven(step[2], step[3], FALSE)
+				if(CWJ_USE_OVEN_OPTIONAL)
+					if(step.len < 3)
+						reason="Bad argument Length for CWJ_USE_OVEN_OPTIONAL"
+					switch(step[2])
+						if(J_LO)
+							if(step[3] > CWJ_BURN_TIME_LOW)
+								reason="Time too large for Low setting on CWJ_USE_OVEN_OPTIONAL; Food will automatically burn."
+
+						if(J_MED)
+							if(step[3] > CWJ_BURN_TIME_MEDIUM)
+								reason="Time too large for Medium setting on CWJ_USE_OVEN_OPTIONAL; Food will automatically burn."
+
+						if(J_HI)
+							if(step[3] > CWJ_BURN_TIME_HIGH)
+								reason="Time too large for High setting on CWJ_USE_OVEN_OPTIONAL; Food will automatically burn."
+						else
+							reason="Unrecognized temperature for CWJ_USE_OVEN_OPTIONAL"
+					if(!reason)
+						create_step_use_oven(step[2], step[3], FALSE)
 
 			//Named Arguments modify the recipe in fixed ways
 			if("desc" in step)
@@ -382,7 +422,11 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 /datum/cooking_with_jane/recipe/proc/create_step_use_grill(var/heat, var/time, var/optional)
 	var/datum/cooking_with_jane/recipe_step/use_grill/step = new (heat, time, src)
 	return src.add_step(step, optional)
-
+//-----------------------------------------------------------------------------------
+//Use Stove step shortcut commands
+/datum/cooking_with_jane/recipe/proc/create_step_use_oven(var/heat, var/time, var/optional)
+	var/datum/cooking_with_jane/recipe_step/use_oven/step = new (heat, time, src)
+	return src.add_step(step, optional)
 //-----------------------------------------------------------------------------------
 //Customize the last step created
 /datum/cooking_with_jane/recipe/proc/set_step_desc(var/new_description)
@@ -725,6 +769,8 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 			return "Use Stove"
 		if(CWJ_USE_GRILL)
 			return "Use Grill"
+		if(CWJ_USE_OVEN)
+			return "Use Oven"
 		if(CWJ_USE_OTHER)
 			return "Custom Action"
 		if(CWJ_START)

@@ -5,10 +5,9 @@
 	var/time
 	var/heat
 
-//reagent_id: The id of the required reagent to be added, E.G. 'salt'.
-//amount: The amount of the required reagent that needs to be added.
-//base_quality_award: The quality awarded by following this step.
-//our_recipe: The parent recipe object,
+//set_heat: The temperature the stove must cook at.
+//set_time: How long something must be cook in the stove
+//our_recipe: The parent recipe object
 /datum/cooking_with_jane/recipe_step/use_stove/New(var/set_heat, var/set_time, var/datum/cooking_with_jane/recipe/our_recipe)
 
 

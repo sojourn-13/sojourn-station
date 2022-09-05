@@ -10,3 +10,4 @@ to function.
 Food, snacks, and any atom used as an ingredient in cooking needs a food_quality value. This
 is needed for the add_item recipe step type.
 
+Modify slicable food to inherit the food quality of their parent.

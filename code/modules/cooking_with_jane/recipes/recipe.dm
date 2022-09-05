@@ -300,6 +300,18 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 		list(CWJ_USE_STOVE, J_LO, 30 SECONDS)
 	)
 
+
+/datum/cooking_with_jane/recipe/bread
+	cooking_container = CUTTING_BOARD
+	product_type = /obj/item/reagent_containers/food/snacks/sliceable/bread
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.5),
+		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
+	)
+
+
+
+
 /*
 //Example of the same recipe, but for the grill, just to show off how compact everything is.
 /datum/cooking_with_jane/recipe/grill_stove

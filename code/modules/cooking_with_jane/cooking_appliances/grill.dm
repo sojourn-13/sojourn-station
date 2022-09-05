@@ -33,6 +33,11 @@
 	circuit = /obj/item/circuitboard/cooking_with_jane/grill
 
 	var/tmp/obj/effect/flicker_overlay/hopper_insert
+	scan_types = list("scan_1")
+
+/obj/machinery/cooking_with_jane/grill/Initialize()
+	. = ..()
+	hopper_insert = new(src)
 
 //Did not want to use this...
 /obj/machinery/cooking_with_jane/grill/Process()
@@ -59,8 +64,13 @@
 		else
 			stored_wood -= 1
 
+	if(!(stat & NOPOWER))
+		decide_action()
+
 
 /obj/machinery/cooking_with_jane/grill/RefreshParts()
+	..()
+
 	var/man_rating = 0
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		man_rating += M.rating
@@ -155,7 +165,7 @@
 		stored_wood += used_sheets
 		if(prob(5))
 			src.visible_message(SPAN_DANGER("The Grill exclaims: \"OM NOM NOM~! YUMMIE~~!\""))
-		
+
 		flick("wood_load", hopper_insert)
 
 		return
@@ -301,21 +311,8 @@
 	else
 		reference_time = world.time - cooking_timestamp[input]
 
-	var/qual_reduction = 0
-	switch(temperature[input])
-		if("Low")
-			qual_reduction = (reference_time / (1 MINUTES))
-
-		if("Medium")
-			qual_reduction = (reference_time / (30 SECONDS))
-
-		if("High")
-			qual_reduction = (reference_time / (20 SECONDS))
-
-
 	#ifdef CWJ_DEBUG
 	log_debug("grill/proc/handle_cooking data:")
-	log_debug("     qual_reduction: [qual_reduction]")
 	log_debug("     temperature: [temperature[input]]")
 	log_debug("     reference_time: [reference_time]")
 	log_debug("     world.time: [world.time]")
@@ -331,9 +328,9 @@
 
 
 	if(user && user.Adjacent(src))
-		container.process_item(src, user, lower_quality_on_fail = qual_reduction, send_message=TRUE)
+		container.process_item(src, user, send_message=TRUE)
 	else
-		container.process_item(src, user, lower_quality_on_fail = qual_reduction)
+		container.process_item(src, user)
 
 
 

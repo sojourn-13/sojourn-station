@@ -24,6 +24,7 @@
 	reagent_flags = OPENCONTAINER | NO_REACT
 	var/list/stove_data = list("High"=0 , "Medium" = 0, "Low"=0) //Record of what stove-cooking has been done on this food.
 	var/list/grill_data = list("High"=0 , "Medium" = 0, "Low"=0) //Record of what grill-cooking has been done on this food.
+	var/list/oven_data = list("High"=0 , "Medium" = 0, "Low"=0) //Record of what oven-cooking has been done on this food.
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/Initialize()
 	.=..()
@@ -267,6 +268,7 @@
 	shortname = "cutting_board"
 	desc = "Good for making sandwiches on, too."
 	icon_state = "cutting_board"
+	item_state = "cutting_board"
 	appliancetype = CUTTING_BOARD
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/oven
@@ -275,6 +277,7 @@
 	desc = "Put ingredients in this; designed for use with an oven. Warranty void if used."
 	icon_state = "oven_dish"
 	lip = "oven_dish_lip"
+	item_state = "oven_dish"
 	appliancetype = OVEN
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/pan
@@ -283,7 +286,7 @@
 
 	icon_state = "pan" //Default state is the base icon so it looks nice in the map builder
 	lip = "pan_lip"
-
+	item_state = "pan"
 	hitsound = 'sound/weapons/smash.ogg'
 	appliancetype = PAN
 
@@ -294,6 +297,7 @@
 
 	icon_state = "pot"
 	lip = "pot_lip"
+	item_state = "pot"
 
 	hitsound = 'sound/weapons/smash.ogg'
 	removal_penalty = 5
@@ -307,7 +311,7 @@
 
 	icon_state = "deepfryer_basket"
 	lip = "deepfryer_basket_lip"
-
+	item_state = "deepfryer_basket"
 	removal_penalty = 5
 	appliancetype = DF_BASKET
 
@@ -318,7 +322,7 @@
 
 	icon_state = "airfryer_basket"
 	lip = "airfryer_basket_lip"
-
+	item_state = "airfryer_basket"
 	removal_penalty = 5
 	appliancetype = AF_BASKET
 
@@ -331,7 +335,6 @@
 
 	icon_state = "grill_grate"
 
-	removal_penalty = 1
 	appliancetype = GRILL
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl
@@ -341,7 +344,7 @@
 
 	icon_state = "bowl"
 	lip = "bowl_lip"
-
+	item_state = "pot"
 
 	removal_penalty = 2
 	appliancetype = BOWL

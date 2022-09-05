@@ -311,7 +311,9 @@
 	if(!current_recipe)
 		log_debug("Recipe [start_type]-[recipe_id] initialized as null!")
 	#endif
+
 	current_step = current_recipe.first_step
+
 	#ifdef CWJ_DEBUG
 		steps_taken["[current_step.unique_id]"]="Started with a [start_type]"
 	#endif
