@@ -47,7 +47,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 
 	var/exclusive_option_mode = FALSE //triggers whether two steps in a process are exclusive- IE: you can do one or the other, but not both.
 
-	var/active_exclusive_option_list = null //Only needed during the creation process for tracking a given exclusive option dictionary.
+	var/list/active_exclusive_option_list = list() //Only needed during the creation process for tracking a given exclusive option dictionary.
 
 	var/option_chain_mode = 0 //triggers whether two steps in a process are exclusive- IE: you can do one or the other, but not both.
 
@@ -125,231 +125,232 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 	create_step_base()
 
 	for (var/step in step_builder)
-		if(islist(step) && step.len >= 1)
+		if(islist(step))
+			var/list/step_list = step
 			var/reason = ""
-			switch(step[1])
+			switch(step_list[1])
 				if(CWJ_ADD_ITEM)
-					if(step.len < 2)
+					if(step_list.len < 2)
 						reason="Bad argument Length for CWJ_ADD_ITEM"
-					else if(!ispath(step[2]))
+					else if(!ispath(step_list[2]))
 						reason="Bad argument type for CWJ_ADD_ITEM at arg 2"
 					else
-						create_step_add_item(step[2], FALSE)
+						create_step_add_item(step_list[2], FALSE)
 				if(CWJ_ADD_ITEM_OPTIONAL)
-					if(step.len < 2)
+					if(step_list.len < 2)
 						reason="Bad argument Length for CWJ_ADD_ITEM_OPTIONAL"
-					else if(!ispath(step[2]))
+					else if(!ispath(step_list[2]))
 						reason="Bad argument type for CWJ_ADD_ITEM_OPTIONAL at arg 2"
 					else
-						create_step_add_item(step[2], TRUE)
+						create_step_add_item(step_list[2], TRUE)
 				if(CWJ_ADD_REAGENT)
-					if(step.len < 3)
+					if(step_list.len < 3)
 						reason="Bad argument Length for CWJ_ADD_REAGENT"
-					else if(!is_reagent_with_id_exist(step[2]))
+					else if(!is_reagent_with_id_exist(step_list[2]))
 						reason="Bad reagent type for CWJ_ADD_REAGENT at arg 2"
 					else
-						create_step_add_reagent(step[2], step[3], FALSE)
+						create_step_add_reagent(step_list[2], step_list[3], FALSE)
 				if(CWJ_ADD_REAGENT_OPTIONAL)
-					if(step.len < 3)
+					if(step_list.len < 3)
 						reason="Bad argument Length for CWJ_ADD_REAGENT_OPTIONAL"
-					else if(!is_reagent_with_id_exist(step[2]))
+					else if(!is_reagent_with_id_exist(step_list[2]))
 						reason="Bad reagent type for CWJ_ADD_REAGENT_OPTIONAL at arg 2"
 					else
-						create_step_add_reagent(step[2], step[3], TRUE)
+						create_step_add_reagent(step_list[2], step_list[3], TRUE)
 				if(CWJ_USE_ITEM)
-					if(step.len < 2)
+					if(step_list.len < 2)
 						reason="Bad argument Length for CWJ_USE_ITEM"
-					else if(!ispath(step[2]))
+					else if(!ispath(step_list[2]))
 						reason="Bad argument type for CWJ_USE_ITEM at arg 2"
 					else
-						create_step_use_item(step[2], FALSE)
+						create_step_use_item(step_list[2], FALSE)
 				if(CWJ_USE_ITEM_OPTIONAL)
-					if(step.len < 2)
+					if(step_list.len < 2)
 						reason="Bad argument Length for CWJ_USE_ITEM_OPTIONAL"
-					else if(!ispath(step[2]))
+					else if(!ispath(step_list[2]))
 						reason="Bad argument type for CWJ_USE_ITEM_OPTIONAL at arg 2"
 					else
-						create_step_use_item(step[2], TRUE)
+						create_step_use_item(step_list[2], TRUE)
 				if(CWJ_ADD_PRODUCE)
-					if(step.len < 2)
+					if(step_list.len < 2)
 						reason="Bad argument Length for CWJ_ADD_PRODUCE"
 					else
-						create_step_add_produce(step[2], FALSE)
+						create_step_add_produce(step_list[2], FALSE)
 				if(CWJ_ADD_PRODUCE_OPTIONAL)
-					if(step.len < 2)
+					if(step_list.len < 2)
 						reason="Bad argument Length for CWJ_ADD_PRODUCE_OPTIONAL"
 					else
-						create_step_add_produce(step[2], TRUE)
+						create_step_add_produce(step_list[2], TRUE)
 				if(CWJ_USE_TOOL)
-					if(step.len < 3)
+					if(step_list.len < 3)
 						reason="Bad argument Length for CWJ_USE_TOOL"
 					else
-						create_step_use_tool(step[2], step[3], FALSE)
+						create_step_use_tool(step_list[2], step_list[3], FALSE)
 				if(CWJ_USE_TOOL_OPTIONAL)
-					if(step.len < 3)
+					if(step_list.len < 3)
 						reason="Bad argument Length for CWJ_USE_TOOL_OPTIONAL"
 					else
-						create_step_use_tool(step[2], step[3], TRUE)
+						create_step_use_tool(step_list[2], step_list[3], TRUE)
 				if(CWJ_USE_STOVE)
-					if(step.len < 3)
+					if(step_list.len < 3)
 						reason="Bad argument Length for CWJ_USE_STOVE"
-					switch(step[2])
+					switch(step_list[2])
 						if(J_LO)
-							if(step[3] > CWJ_BURN_TIME_LOW)
+							if(step_list[3] > CWJ_BURN_TIME_LOW)
 								reason="Time too large for Low setting on CWJ_USE_STOVE; Food will automatically burn."
 
 						if(J_MED)
-							if(step[3] > CWJ_BURN_TIME_MEDIUM)
+							if(step_list[3] > CWJ_BURN_TIME_MEDIUM)
 								reason="Time too large for Medium setting on CWJ_USE_STOVE; Food will automatically burn."
 
 						if(J_HI)
-							if(step[3] > CWJ_BURN_TIME_HIGH)
+							if(step_list[3] > CWJ_BURN_TIME_HIGH)
 								reason="Time too large for High setting on CWJ_USE_STOVE; Food will automatically burn."
 
 						else
 							reason="Unrecognized temperature for CWJ_USE_STOVE"
 
 					if(!reason)
-						create_step_use_stove(step[2], step[3], FALSE)
+						create_step_use_stove(step_list[2], step_list[3], FALSE)
 				if(CWJ_USE_STOVE_OPTIONAL)
-					if(step.len < 3)
+					if(step_list.len < 3)
 						reason="Bad argument Length for CWJ_USE_STOVE_OPTIONAL"
-					switch(step[2])
+					switch(step_list[2])
 						if(J_LO)
-							if(step[3] > CWJ_BURN_TIME_LOW)
+							if(step_list[3] > CWJ_BURN_TIME_LOW)
 								reason="Time too large for Low setting on CWJ_USE_STOVE_OPTIONAL; Food will automatically burn."
 
 						if(J_MED)
-							if(step[3] > CWJ_BURN_TIME_MEDIUM)
+							if(step_list[3] > CWJ_BURN_TIME_MEDIUM)
 								reason="Time too large for Medium setting on CWJ_USE_STOVE_OPTIONAL; Food will automatically burn."
 
 						if(J_HI)
-							if(step[3] > CWJ_BURN_TIME_HIGH)
+							if(step_list[3] > CWJ_BURN_TIME_HIGH)
 								reason="Time too large for High setting on CWJ_USE_STOVE_OPTIONAL; Food will automatically burn."
 						else
 							reason="Unrecognized temperature for CWJ_USE_STOVE_OPTIONAL"
 					if(!reason)
-						create_step_use_stove(step[2], step[3], FALSE)
+						create_step_use_stove(step_list[2], step_list[3], TRUE)
 
 				if(CWJ_USE_GRILL)
-					if(step.len < 3)
+					if(step_list.len < 3)
 						reason="Bad argument Length for CWJ_USE_GRILL"
-					switch(step[2])
+					switch(step_list[2])
 						if(J_LO)
-							if(step[3] > CWJ_BURN_TIME_LOW)
+							if(step_list[3] > CWJ_BURN_TIME_LOW)
 								reason="Time too large for Low setting on CWJ_USE_GRILL; Food will automatically burn."
 
 						if(J_MED)
-							if(step[3] > CWJ_BURN_TIME_MEDIUM)
+							if(step_list[3] > CWJ_BURN_TIME_MEDIUM)
 								reason="Time too large for Medium setting on CWJ_USE_GRILL; Food will automatically burn."
 
 						if(J_HI)
-							if(step[3] > CWJ_BURN_TIME_HIGH)
+							if(step_list[3] > CWJ_BURN_TIME_HIGH)
 								reason="Time too large for High setting on CWJ_USE_GRILL; Food will automatically burn."
 
 						else
 							reason="Unrecognized temperature for CWJ_USE_GRILL"
 
 					if(!reason)
-						create_step_use_grill(step[2], step[3], FALSE)
+						create_step_use_grill(step_list[2], step_list[3], FALSE)
 
 				if(CWJ_USE_GRILL_OPTIONAL)
-					if(step.len < 3)
+					if(step_list.len < 3)
 						reason="Bad argument Length for CWJ_USE_GRILL_OPTIONAL"
-					switch(step[2])
+					switch(step_list[2])
 						if(J_LO)
-							if(step[3] > CWJ_BURN_TIME_LOW)
+							if(step_list[3] > CWJ_BURN_TIME_LOW)
 								reason="Time too large for Low setting on CWJ_USE_GRILL_OPTIONAL; Food will automatically burn."
 
 						if(J_MED)
-							if(step[3] > CWJ_BURN_TIME_MEDIUM)
+							if(step_list[3] > CWJ_BURN_TIME_MEDIUM)
 								reason="Time too large for Medium setting on CWJ_USE_GRILL_OPTIONAL; Food will automatically burn."
 
 						if(J_HI)
-							if(step[3] > CWJ_BURN_TIME_HIGH)
+							if(step_list[3] > CWJ_BURN_TIME_HIGH)
 								reason="Time too large for High setting on CWJ_USE_GRILL_OPTIONAL; Food will automatically burn."
 						else
 							reason="Unrecognized temperature for CWJ_USE_GRILL_OPTIONAL"
 					if(!reason)
-						create_step_use_grill(step[2], step[3], TRUE)
+						create_step_use_grill(step_list[2], step_list[3], TRUE)
 				if(CWJ_USE_OVEN)
-					if(step.len < 3)
+					if(step_list.len < 3)
 						reason="Bad argument Length for CWJ_USE_OVEN"
-					switch(step[2])
+					switch(step_list[2])
 						if(J_LO)
-							if(step[3] > CWJ_BURN_TIME_LOW)
+							if(step_list[3] > CWJ_BURN_TIME_LOW)
 								reason="Time too large for Low setting on CWJ_USE_OVEN; Food will automatically burn."
 
 						if(J_MED)
-							if(step[3] > CWJ_BURN_TIME_MEDIUM)
+							if(step_list[3] > CWJ_BURN_TIME_MEDIUM)
 								reason="Time too large for Medium setting on CWJ_USE_OVEN; Food will automatically burn."
 
 						if(J_HI)
-							if(step[3] > CWJ_BURN_TIME_HIGH)
+							if(step_list[3] > CWJ_BURN_TIME_HIGH)
 								reason="Time too large for High setting on CWJ_USE_OVEN; Food will automatically burn."
 
 						else
 							reason="Unrecognized temperature for CWJ_USE_OVEN"
 
 					if(!reason)
-						create_step_use_oven(step[2], step[3], FALSE)
+						create_step_use_oven(step_list[2], step_list[3], FALSE)
 				if(CWJ_USE_OVEN_OPTIONAL)
-					if(step.len < 3)
+					if(step_list.len < 3)
 						reason="Bad argument Length for CWJ_USE_OVEN_OPTIONAL"
-					switch(step[2])
+					switch(step_list[2])
 						if(J_LO)
-							if(step[3] > CWJ_BURN_TIME_LOW)
+							if(step_list[3] > CWJ_BURN_TIME_LOW)
 								reason="Time too large for Low setting on CWJ_USE_OVEN_OPTIONAL; Food will automatically burn."
 
 						if(J_MED)
-							if(step[3] > CWJ_BURN_TIME_MEDIUM)
+							if(step_list[3] > CWJ_BURN_TIME_MEDIUM)
 								reason="Time too large for Medium setting on CWJ_USE_OVEN_OPTIONAL; Food will automatically burn."
 
 						if(J_HI)
-							if(step[3] > CWJ_BURN_TIME_HIGH)
+							if(step_list[3] > CWJ_BURN_TIME_HIGH)
 								reason="Time too large for High setting on CWJ_USE_OVEN_OPTIONAL; Food will automatically burn."
 						else
 							reason="Unrecognized temperature for CWJ_USE_OVEN_OPTIONAL"
 					if(!reason)
-						create_step_use_oven(step[2], step[3], FALSE)
+						create_step_use_oven(step_list[2], step_list[3], TRUE)
 
 			//Named Arguments modify the recipe in fixed ways
-			if("desc" in step)
-				set_step_desc(step["desc"])
+			if("desc" in step_list)
+				set_step_desc(step_list["desc"])
 
-			if("base" in step)
-				set_step_base_quality(step["base"])
+			if("base" in step_list)
+				set_step_base_quality(step_list["base"])
 
-			if("max" in step)
-				set_step_max_quality(step["max"])
+			if("max" in step_list)
+				set_step_max_quality(step_list["max"])
 
-			if("result_desc" in step)
-				set_step_custom_result_desc(step["result_desc"])
+			if("result_desc" in step_list)
+				set_step_custom_result_desc(step_list["result_desc"])
 
-			if("qmod" in step)
-				if(!set_inherited_quality_modifier(step["qmod"]))
+			if("qmod" in step_list)
+				if(!set_inherited_quality_modifier(step_list["qmod"]))
 					reason="qmod / inherited_quality_modifier declared on non add-item recipe step."
 
-			if("remain_percent" in step)
-				if(step["remain_percent"] > 1 || step["remain_percent"] < 0)
+			if("remain_percent" in step_list)
+				if(step_list["remain_percent"] > 1 || step_list["remain_percent"] < 0)
 					reason="remain_percent must be between 1 and 0."
-				else if(!set_remain_percent_modifier(step["remain_percent"]))
+				else if(!set_remain_percent_modifier(step_list["remain_percent"]))
 					reason="remain_percent / declared on non add-reagent recipe step."
 
-			if("exact" in step)
-				if(!set_exact_type_required(step["exact"]))
+			if("exact" in step_list)
+				if(!set_exact_type_required(step_list["exact"]))
 					reason="exact / exact type match declared on non add-item / use-item recipe step."
 
-			if("reagent_skip" in step)
-				if(!set_reagent_skip(step["reagent_skip"]))
+			if("reagent_skip" in step_list)
+				if(!set_reagent_skip(step_list["reagent_skip"]))
 					reason="reagent_skip / reagent_skip declared on non add-item / add-reagent recipe step."
 
-			if("exclude_reagents" in step)
-				for(var/id in step["exclude_reagents"])
+			if("exclude_reagents" in step_list)
+				for(var/id in step_list["exclude_reagents"])
 					if(!is_reagent_with_id_exist(id))
 						reason="exclude_reagents list has nonexistant reagent id [id]"
 
-				if(!set_exclude_reagents(step["exclude_reagents"]))
+				if(!set_exclude_reagents(step_list["exclude_reagents"]))
 					reason="exclude_reagents declared on non add-item / add-reagent recipe step."
 
 			if(reason)
@@ -492,7 +493,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		#endif
 		return
 	else if(!first_step)
-		CRASH("/datum/cooking_with_jane/recipe/proc/begin_exclusive_options: Exclusive list cannot be active before the first required step is defined. Recipe name=[name].")
+		CRASH("/datum/cooking_with_jane/recipe/proc/begin_exclusive_options: Exclusive list cannot be active before the first required step is defined. Recipe name=[src.type].")
 	exclusive_option_mode = TRUE
 	active_exclusive_option_list = list()
 
@@ -503,10 +504,10 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		log_debug("Recipe name=[name].")
 		#endif
 		return
-	else if(last_required_step.optional_step_list[last_required_step.optional_step_list.len]?:len == 0)
-		CRASH("/datum/cooking_with_jane/recipe/proc/end_exclusive_options: Exclusive option list ended with no values added. Recipe name=[name].")
+	else if(active_exclusive_option_list.len == 0)
+		CRASH("/datum/cooking_with_jane/recipe/proc/end_exclusive_options: Exclusive option list ended with no values added. Recipe name=[src.type].")
 	else if(option_chain_mode)
-		CRASH("/datum/cooking_with_jane/recipe/proc/end_exclusive_options: Exclusive option cannot end while option chain is active. Recipe name=[name].")
+		CRASH("/datum/cooking_with_jane/recipe/proc/end_exclusive_options: Exclusive option cannot end while option chain is active. Recipe name=[src.type].")
 
 	exclusive_option_mode = FALSE
 
@@ -545,6 +546,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 		log_debug("Recipe name=[name].")
 		#endif
 		return
+	last_created_step.next_step = last_required_step
 	option_chain_mode = 0
 
 
@@ -571,11 +573,10 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 			if(2)
 				last_created_step.next_step = step
 				step.flags |= CWJ_IS_OPTION_CHAIN
-			//Add the step to the optional_step_list list normally.
 			else
 				last_required_step.optional_step_list += step
-		//Set the next step to loop back to the step it branched from.
-		step.next_step = last_required_step
+				//Set the next step to loop back to the step it branched from.
+				step.next_step = last_required_step
 	else
 		last_required_step.next_step = step
 
@@ -716,7 +717,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 			//Purge the contents of the container we no longer need it
 			QDEL_LIST(container.contents)
 			container.contents = list()
-		
+
 		container.reagents.clear_reagents()
 
 		if(reagent_id) //Make a reagent

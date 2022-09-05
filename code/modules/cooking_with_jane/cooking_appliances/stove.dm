@@ -300,7 +300,7 @@
 
 
 
-/obj/machinery/cooking_with_jane/stove/update_icon()
+/obj/machinery/cooking_with_jane/stove/update_icon(var/play_scan)
 	cut_overlays()
 
 	for(var/obj/item/our_item in vis_contents)
@@ -343,6 +343,10 @@
 		if(switches[i] == 1)
 			add_overlay(image(src.icon, icon_state="steam_[i]", layer=ABOVE_OBJ_LAYER))
 
+	if(play_scan)
+		add_overlay(image('icons/obj/cwj_cooking/scan.dmi', icon_state=play_scan, layer=ABOVE_WINDOW_LAYER))
+		spawn(100)
+			update_icon()
 /obj/machinery/cooking_with_jane/stove/proc/add_to_visible(var/obj/item/our_item, input)
 	our_item.vis_flags = VIS_INHERIT_LAYER | VIS_INHERIT_PLANE | VIS_INHERIT_ID
 	src.vis_contents += our_item

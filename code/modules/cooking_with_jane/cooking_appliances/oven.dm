@@ -316,7 +316,7 @@
 
 
 
-/obj/machinery/cooking_with_jane/oven/update_icon()
+/obj/machinery/cooking_with_jane/oven/update_icon(var/play_scan)
 	cut_overlays()
 	icon_state = "oven_base"
 	for(var/obj/item/our_item in vis_contents)
@@ -329,7 +329,10 @@
 		src.add_to_visible(our_item)
 	if(!opened)
 		add_overlay(image(src.icon, icon_state="oven_hatch[switches?"_on":""]", layer=ABOVE_OBJ_LAYER))
-	add_overlay(scan)
+	if(play_scan)
+		add_overlay(image('icons/obj/cwj_cooking/scan.dmi', icon_state=play_scan, layer=ABOVE_WINDOW_LAYER))
+		spawn(100)
+			update_icon()
 
 
 /obj/machinery/cooking_with_jane/oven/proc/add_to_visible(var/obj/item/our_item)

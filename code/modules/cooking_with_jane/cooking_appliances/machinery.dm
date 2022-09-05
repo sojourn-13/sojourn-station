@@ -1,12 +1,7 @@
 /obj/machinery/cooking_with_jane
-	var/image/scan
 	var/list/scan_types = list()
 	var/scan_chance = 1
 	var/quality_mod = 1
-
-/obj/machinery/cooking_with_jane/Initialize()
-	. = ..()
-	scan = image('icons/obj/cwj_cooking/scan.dmi', src, icon_state="scan_start", layer=ABOVE_MOB_LAYER)
 
 /obj/machinery/cooking_with_jane/RefreshParts()
 	var/scan_rating = 0
@@ -30,19 +25,21 @@
 					action = 1
 				else
 					action = 2
+			else
+				action = force_action
 
 			if(action == 1)
 				var/flick_state = pick(scan_types)
 				#ifdef CWJ_DEBUG
 				log_debug("Called /cooking_with_jane/decide_action([force_action]). Decided [action], used for icon_state [flick_state] on [src]")
 				#endif
-				flick(flick_state, scan)
+				update_icon(flick_state)
 			if(action == 2)
 				var/mob/living/carbon/human/target = pick(witnesses)
 				#ifdef CWJ_DEBUG
 				log_debug("Called /cooking_with_jane/decide_action([force_action]). Decided [action], ran scan animation on [target]")
 				#endif
-				var/image/img = image('icons/obj/cwj_cooking/kitchen.dmi', target)
+				var/image/img = image('icons/obj/cwj_cooking/scan.dmi', target)
 				view() << img
 				flick("scan_person", img)
 				spawn(40)
