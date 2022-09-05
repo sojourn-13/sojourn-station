@@ -158,7 +158,7 @@
 	return FALSE
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/verb/empty()
-	set src in oview(1)
+	set src in view(1)
 	set name = "Empty Container"
 	set category = "Object"
 	set desc = "Removes items from the container, excluding reagents."

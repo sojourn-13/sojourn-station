@@ -11,7 +11,7 @@
 	layer = BELOW_OBJ_LAYER
 	cooking = FALSE
 	var/list/temperature= list("Low", "Low", "Low", "Low")
-	var/list/timer = list(0, 0, 0, 0)
+	var/list/timer = list(30, 30, 30, 30)
 	var/list/timerstamp = list(0, 0, 0, 0)
 	var/list/switches = list(0, 0, 0, 0)
 	var/list/cooking_timestamp = list(0, 0, 0, 0) //Timestamp of when cooking initialized so we know if the prep was disturbed at any point.
@@ -342,11 +342,6 @@
 		src.add_to_visible(our_item, i)
 		if(switches[i] == 1)
 			add_overlay(image(src.icon, icon_state="steam_[i]", layer=ABOVE_OBJ_LAYER))
-
-	if(play_scan)
-		add_overlay(image('icons/obj/cwj_cooking/scan.dmi', icon_state=play_scan, layer=ABOVE_WINDOW_LAYER))
-		spawn(100)
-			update_icon()
 /obj/machinery/cooking_with_jane/stove/proc/add_to_visible(var/obj/item/our_item, input)
 	our_item.vis_flags = VIS_INHERIT_LAYER | VIS_INHERIT_PLANE | VIS_INHERIT_ID
 	src.vis_contents += our_item
@@ -362,6 +357,124 @@
 	our_item.transform =  null
 	src.vis_contents.Remove(our_item)
 
+/obj/machinery/cooking_with_jane/stove/verb/toggle_burner_1()
+	set src in view(1)
+	set name = "Stove burner 1 - Toggle"
+	set category = "Cooking"
+	set desc = "Turn on a burner on the stove"
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/stove/verb/toggle_burner_1() called to toggle burner 1")
+	#endif
+	handle_switch(usr, 1)
 
+/obj/machinery/cooking_with_jane/stove/verb/toggle_burner_2()
+	set src in view(1)
+	set name = "Stove burner 2 - Toggle"
+	set category = "Cooking"
+	set desc = "Turn on a burner on the stove"
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/stove/verb/toggle_burner_2() called to toggle burner 2")
+	#endif
+	handle_switch(usr, 2)
+
+/obj/machinery/cooking_with_jane/stove/verb/toggle_burner_3()
+	set src in view(1)
+	set name = "Stove burner 3 - Toggle"
+	set category = "Cooking"
+	set desc = "Turn on a burner on the stove"
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/stove/verb/toggle_burner_3() called to toggle burner 3")
+	#endif
+	handle_switch(usr, 3)
+
+/obj/machinery/cooking_with_jane/stove/verb/toggle_burner_4()
+	set src in view(1)
+	set name = "Stove burner 4 - Toggle"
+	set category = "Cooking"
+	set desc = "Turn on a burner on the stove"
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/stove/verb/toggle_burner_4() called to toggle burner 4")
+	#endif
+	handle_switch(usr, 4)
+
+/obj/machinery/cooking_with_jane/stove/verb/change_temperature_1()
+	set src in view(1)
+	set name = "Stove burner 1 - Set Temp"
+	set category = "Cooking"
+	set desc = "Set a temperature for a burner."
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/stove/verb/change_temperature_1() called to change temperature on 1")
+	#endif
+	handle_temperature(usr, 1)
+
+/obj/machinery/cooking_with_jane/stove/verb/change_temperature_2()
+	set src in view(1)
+	set name = "Stove burner 2 - Set Temp"
+	set category = "Cooking"
+	set desc = "Set a temperature for a burner."
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/stove/verb/change_temperature_2() called to change temperature on 2")
+	#endif
+	handle_temperature(usr, 2)
+
+/obj/machinery/cooking_with_jane/stove/verb/change_temperature_3()
+	set src in view(1)
+	set name = "Stove burner 3 - Set Temp"
+	set category = "Cooking"
+	set desc = "Set a temperature for a burner."
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/stove/verb/change_temperature_3() called to change temperature on 3")
+	#endif
+	handle_temperature(usr, 3)
+
+/obj/machinery/cooking_with_jane/stove/verb/change_temperature_4()
+	set src in view(1)
+	set name = "Stove burner 4 - Set Temp"
+	set category = "Cooking"
+	set desc = "Set a temperature for a burner."
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/stove/verb/change_temperature_4() called to change temperature on 4")
+	#endif
+	handle_temperature(usr, 4)
+
+/obj/machinery/cooking_with_jane/stove/verb/change_timer_1()
+	set src in view(1)
+	set name = "Stove burner 1 - Set Timer"
+	set category = "Cooking"
+	set desc = "Set a timer for a burner."
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/stove/verb/change_timer_1() called to change timer on 1")
+	#endif
+	handle_timer(usr, 1)
+
+/obj/machinery/cooking_with_jane/stove/verb/change_timer_2()
+	set src in view(1)
+	set name = "Stove burner 2 - Set Timer"
+	set category = "Cooking"
+	set desc = "Set a timer for a burner."
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/stove/verb/change_timer_2() called to change timer on 2")
+	#endif
+	handle_timer(usr, 2)
+
+/obj/machinery/cooking_with_jane/stove/verb/change_timer_3()
+	set src in view(1)
+	set name = "Stove burner 3 - Set Timer"
+	set category = "Cooking"
+	set desc = "Set a timer for a burner."
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/stove/verb/change_timer_3() called to change timer on 3")
+	#endif
+	handle_timer(usr, 3)
+	
+/obj/machinery/cooking_with_jane/stove/verb/change_timer_4()
+	set src in view(1)
+	set name = "Stove burner 4 - Set Timer"
+	set category = "Cooking"
+	set desc = "Set a timer for a burner."
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/stove/verb/change_timer_4() called to change timer on 4")
+	#endif
+	handle_timer(usr, 4)
 #undef ICON_SPLIT_X
 #undef ICON_SPLIT_Y

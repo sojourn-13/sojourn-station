@@ -17,7 +17,7 @@ Recipes are loaded at startup. Food items reference it by the recipe_tracker dat
 
 By following the steps correctly, good food can be made.
 
-Food quality is calculated based on a mix between the incoming reagent and the quality of the steps taken.
+Food quality is calculated based on the steps taken.
 
 */
 

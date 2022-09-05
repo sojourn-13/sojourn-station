@@ -33,14 +33,21 @@
 				#ifdef CWJ_DEBUG
 				log_debug("Called /cooking_with_jane/decide_action([force_action]). Decided [action], used for icon_state [flick_state] on [src]")
 				#endif
-				update_icon(flick_state)
+				//update_icon(flick_state)
+				var/image/img = image('icons/obj/cwj_cooking/scan.dmi', src, layer=ABOVE_WINDOW_LAYER)
+				for (var/mob/living/carbon/human/person in witnesses)
+					person << img
+				flick(flick_state, img)
+				spawn(100)
+					qdel(img)
 			if(action == 2)
 				var/mob/living/carbon/human/target = pick(witnesses)
 				#ifdef CWJ_DEBUG
 				log_debug("Called /cooking_with_jane/decide_action([force_action]). Decided [action], ran scan animation on [target]")
 				#endif
 				var/image/img = image('icons/obj/cwj_cooking/scan.dmi', target)
-				view() << img
+				for (var/mob/living/carbon/human/person in witnesses)
+					person << img
 				flick("scan_person", img)
 				spawn(40)
 					qdel(img)

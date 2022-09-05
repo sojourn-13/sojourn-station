@@ -346,3 +346,43 @@
 	our_item.transform =  null
 	src.vis_contents.Remove(our_item)
 
+/obj/machinery/cooking_with_jane/oven/verb/toggle_burner()
+	set src in view(1)
+	set name = "Oven - Toggle"
+	set category = "Cooking"
+	set desc = "Turn on the oven"
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/oven/verb/toggle_burner_1() called")
+	#endif
+	handle_switch(usr)
+
+
+/obj/machinery/cooking_with_jane/oven/verb/change_temperature()
+	set src in view(1)
+	set name = "Oven - Set Temp"
+	set category = "Cooking"
+	set desc = "Set a temperature for the oven."
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/oven/verb/change_temperature_1() called")
+	#endif
+	handle_temperature(usr)
+
+/obj/machinery/cooking_with_jane/oven/verb/change_timer()
+	set src in view(1)
+	set name = "Oven - Set Timer"
+	set category = "Cooking"
+	set desc = "Set a timer for the oven."
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/oven/verb/change_timer() called")
+	#endif
+	handle_timer(usr)
+
+/obj/machinery/cooking_with_jane/oven/verb/toggle_door()
+	set src in view(1)
+	set name = "Oven - Open/Close door"
+	set category = "Cooking"
+	set desc = "Open/Close the door of the oven."
+	#ifdef CWJ_DEBUG
+	log_debug("/cooking_with_jane/oven/verb/toggle_door() called")
+	#endif
+	handle_open(usr)
