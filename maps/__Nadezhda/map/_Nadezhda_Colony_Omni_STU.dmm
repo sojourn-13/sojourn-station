@@ -7739,7 +7739,7 @@
 	icon_state = "door_closed";
 	id_tag = "cargo_bay_door";
 	locked = 0;
-	name = "Cargo Docking Hatch";
+	name = "Cargo Factory Floor";
 	req_access = list(50)
 	},
 /obj/machinery/door/firedoor,
@@ -12334,7 +12334,7 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/boulder,
 /turf/simulated/floor/rock,
-/area/nadezhda/outside/forest)
+/area/nadezhda/outside/bcave)
 "cwf" = (
 /obj/structure/sink/kitchen{
 	name = "kitchen sink";
@@ -18377,11 +18377,6 @@
 "dFd" = (
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"dFh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/supplycomp,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/quartermaster/miningdock)
 "dFi" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/item/bananapeel,
@@ -21800,11 +21795,9 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
 "epa" = (
-/obj/effect/shuttle_landmark/supply/station{
-	autoset = 1
-	},
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/quartermaster/hangarsupply)
+/obj/random/spider_trap_burrowing/low_chance,
+/turf/unsimulated/mineral,
+/area/nadezhda/outside/forest)
 "epc" = (
 /obj/effect/floor_decal/industrial/warningwhite{
 	dir = 1
@@ -22896,9 +22889,6 @@
 /turf/simulated/floor/plating,
 /area/colony)
 "ezV" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/structure/table/reinforced,
 /obj/random/material_rare/low_chance,
 /obj/random/lowkeyrandom/low_chance,
@@ -31843,7 +31833,7 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/skyyard)
 "ggy" = (
-/obj/machinery/computer/supplycomp,
+/obj/item/modular_computer/console/preset/trade,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/quartermaster/hangarsupply)
 "ggB" = (
@@ -34569,7 +34559,7 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/mineral,
 /area/colony)
 "gGY" = (
 /obj/machinery/newscaster{
@@ -42884,9 +42874,8 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "iqE" = (
-/obj/structure/catwalk,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/maintenance/undergroundfloor1south)
+/turf/simulated/mineral,
+/area/eris/crew_quarters/plasma_tag)
 "iqF" = (
 /obj/structure/table/woodentable,
 /obj/item/device/lighting/toggleable/lamp/green,
@@ -46656,16 +46645,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/maintenance_interior{
-	name = "Compactor";
-	req_access = newlist();
-	req_one_access = list(1,70,10)
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/maintenance_interior,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/hallway/side/f2section1)
 "jac" = (
@@ -50360,12 +50345,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "jKx" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
-/obj/structure/lattice,
-/turf/simulated/floor/plating/under,
-/area/colony)
+/turf/simulated/mineral,
+/area/nadezhda/security{
+	name = "Security Training"
+	})
 "jKF" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -50532,8 +50515,10 @@
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/security/laber_area)
 "jMl" = (
-/obj/machinery/door/blast/regular,
-/turf/simulated/wall/r_wall,
+/obj/machinery/conveyor/west{
+	id = "QMLoad2"
+	},
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/hangarsupply)
 "jMm" = (
 /obj/structure/table/steel,
@@ -52476,11 +52461,11 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
-/obj/machinery/computer/supplycomp{
-	dir = 8
-	},
 /obj/structure/noticeboard/lonestar_supply{
 	pixel_x = 32
+	},
+/obj/item/modular_computer/console/preset/trade{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/quartermaster/office)
@@ -62057,10 +62042,6 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/engineering/atmos)
 "lQe" = (
-/obj/machinery/computer/supplycomp{
-	dir = 4;
-	pixel_x = -4
-	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/merchant)
 "lQg" = (
@@ -66245,12 +66226,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "mDl" = (
-/obj/machinery/door/airlock/maintenance_interior{
-	name = "Compactor";
-	req_access = newlist();
-	req_one_access = list(1,70,10)
-	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/maintenance_interior,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/hallway/side/f2section1)
 "mDp" = (
@@ -86303,10 +86280,6 @@
 /obj/structure/flora/small/trailrocka3,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"quS" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/wall/r_wall,
-/area/colony)
 "quT" = (
 /obj/structure/flora/ausbushes/palebush,
 /obj/structure/sign/faction/neotheology{
@@ -88938,7 +88911,7 @@
 	icon_state = "door_closed";
 	id_tag = "cargo_bay_door";
 	locked = 0;
-	name = "Cargo Docking Hatch";
+	name = "Cargo Factory Floor";
 	req_access = list(50)
 	},
 /turf/simulated/floor/tiled/white/techfloor,
@@ -89246,9 +89219,8 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/colony)
 "qWD" = (
-/obj/machinery/computer/supplycomp,
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/quartermaster/hangarsupply)
+/turf/simulated/mineral,
+/area/nadezhda/engineering/engine_room)
 "qWG" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
@@ -95783,8 +95755,8 @@
 	dir = 2
 	},
 /obj/structure/lattice,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/security/armory)
+/turf/simulated/mineral,
+/area/colony)
 "sgc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -106238,6 +106210,9 @@
 /obj/random/medical/low_chance,
 /obj/random/lowkeyrandom/low_chance,
 /obj/random/lowkeyrandom/low_chance,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "ulE" = (
@@ -109940,8 +109915,11 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/section2)
 "uUd" = (
-/turf/unsimulated/mineral,
-/area/nadezhda/security/tactical_blackshield)
+/obj/machinery/conveyor/east{
+	id = "QMLoad"
+	},
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/quartermaster/hangarsupply)
 "uUh" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
@@ -112319,9 +112297,6 @@
 	},
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
-	},
-/obj/machinery/computer/supplycomp/order{
-	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/office)
@@ -115754,9 +115729,6 @@
 	name = "\improper Outdoors - Pad"
 	})
 "vYj" = (
-/obj/item/modular_computer/console/preset/trade_orders{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/quartermaster/office)
 "vYl" = (
@@ -131256,7 +131228,7 @@ oXQ
 axf
 lqm
 pVz
-hwH
+trc
 uCp
 uCp
 jop
@@ -131458,7 +131430,7 @@ trc
 trc
 eCM
 trc
-hwH
+trc
 uCp
 uCp
 uCp
@@ -140358,8 +140330,8 @@ rzv
 rzv
 rzv
 rzv
-rzv
-rzv
+jKx
+jKx
 bgD
 mHw
 opS
@@ -140561,7 +140533,7 @@ hSx
 hSx
 sFI
 sFI
-xGi
+sFI
 bgD
 eFd
 qoY
@@ -140763,7 +140735,7 @@ sFI
 sFI
 sFI
 sFI
-xGi
+sFI
 krD
 krD
 krD
@@ -140965,7 +140937,7 @@ sFI
 sFI
 sFI
 sFI
-krD
+sFI
 krD
 krD
 krD
@@ -141167,7 +141139,7 @@ sFI
 sFI
 sFI
 sFI
-krD
+sFI
 krD
 kzg
 jyT
@@ -141369,7 +141341,7 @@ sFI
 sFI
 sFI
 sFI
-krD
+sFI
 krD
 eAI
 eAI
@@ -141571,7 +141543,7 @@ sFI
 sFI
 sFI
 sFI
-krD
+sFI
 krD
 vTf
 fPq
@@ -141773,7 +141745,7 @@ sFI
 sFI
 sFI
 sFI
-krD
+sFI
 krD
 krD
 krD
@@ -141965,23 +141937,23 @@ crC
 fMk
 crC
 crC
-quS
-quS
-quS
-quS
-quS
+crC
+crC
+crC
+crC
+crC
 gGS
-xGi
-xGi
-xGi
-xGi
-xGi
-krD
-krD
-krD
-krD
-krD
-krD
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 krD
 syC
 taJ
@@ -142153,20 +142125,20 @@ xRr
 hwH
 hwH
 koE
-jMl
-jMl
-jMl
-jMl
-jMl
-jMl
-jMl
-jMl
-jMl
-jMl
-jMl
+koE
+koE
+koE
+koE
+koE
+koE
+koE
+koE
+koE
+koE
+koE
 koE
 sFI
-tfU
+sFI
 tfU
 tfU
 tfU
@@ -142176,14 +142148,14 @@ sfM
 tfU
 tfU
 tfU
-xGi
-xGi
-xGi
-xGi
-xGi
-xGi
-xGi
-xGi
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 krD
 krD
 krD
@@ -142368,7 +142340,7 @@ rNC
 mMP
 koE
 sFI
-tfU
+sFI
 tfU
 xGf
 vXa
@@ -142383,9 +142355,9 @@ vcJ
 vcJ
 vcJ
 vcJ
-jKx
-jKx
-jKx
+sfZ
+sfZ
+sfZ
 sfZ
 gaI
 gaI
@@ -142570,7 +142542,7 @@ iuY
 iuY
 koE
 sFI
-tfU
+sFI
 tfU
 cBX
 kWL
@@ -142762,17 +142734,17 @@ uNB
 iuY
 kgl
 iuY
+uUd
 iuY
 iuY
 iuY
-iuY
-iuY
+jMl
 fGi
 iuY
 iuY
 koE
 sFI
-tfU
+sFI
 tfU
 lDJ
 kWL
@@ -142964,11 +142936,11 @@ gxx
 iuY
 iuY
 iuY
+uUd
 iuY
 iuY
 iuY
-iuY
-iuY
+jMl
 iuY
 iuY
 iuY
@@ -143166,11 +143138,11 @@ uRy
 iuY
 iuY
 iuY
+uUd
 iuY
 iuY
 iuY
-iuY
-iuY
+jMl
 iuY
 iuY
 iuY
@@ -143368,11 +143340,11 @@ gxx
 iuY
 iuY
 iuY
+uUd
 iuY
 iuY
 iuY
-iuY
-iuY
+jMl
 iuY
 iuY
 iuY
@@ -143570,11 +143542,11 @@ uNB
 iuY
 iuY
 iuY
+uUd
 iuY
 iuY
 iuY
-iuY
-iuY
+jMl
 iuY
 iuY
 iuY
@@ -143772,11 +143744,11 @@ gxx
 iuY
 kgl
 iuY
+uUd
 iuY
 iuY
 iuY
-iuY
-iuY
+jMl
 fGi
 iuY
 iuY
@@ -143974,11 +143946,11 @@ gxx
 iuY
 iuY
 iuY
-iuY
-bwW
-epa
+uUd
 bwW
 iuY
+bwW
+jMl
 iuY
 iuY
 iuY
@@ -145196,7 +145168,7 @@ hIn
 eMl
 nSQ
 grV
-qWD
+njf
 hdF
 iax
 iuY
@@ -146627,7 +146599,7 @@ jCy
 uBU
 fJB
 wWL
-dFh
+jCy
 hzY
 rnr
 vEV
@@ -154288,7 +154260,7 @@ fEg
 fEg
 xCy
 xCy
-xCy
+iqE
 xCy
 xCy
 xCy
@@ -156815,7 +156787,7 @@ bKt
 bKt
 geh
 guy
-guy
+qyU
 guy
 jdW
 mlX
@@ -158683,7 +158655,7 @@ vvA
 vih
 hVa
 hVa
-iqE
+guy
 qyU
 sFI
 hSx
@@ -160944,8 +160916,8 @@ eWj
 xRr
 trc
 trc
-trc
-trc
+iWI
+iWI
 trc
 trc
 rrw
@@ -162030,7 +162002,7 @@ iQo
 rZm
 skC
 geh
-geh
+bKt
 bKt
 jHf
 vDd
@@ -163444,7 +163416,7 @@ bKt
 bKt
 bKt
 bKt
-geh
+bKt
 bKt
 bKt
 bKt
@@ -163646,7 +163618,7 @@ bKt
 bKt
 bKt
 bKt
-geh
+bKt
 bKt
 bKt
 bKt
@@ -163848,10 +163820,10 @@ bKt
 bKt
 bKt
 bKt
-geh
-geh
-geh
-geh
+bKt
+bKt
+bKt
+bKt
 bKt
 bKt
 bKt
@@ -164053,7 +164025,7 @@ bKt
 bKt
 bKt
 bKt
-geh
+bKt
 bKt
 bKt
 bKt
@@ -164255,7 +164227,7 @@ bKt
 bKt
 bKt
 bKt
-geh
+bKt
 bKt
 bKt
 bKt
@@ -181356,7 +181328,7 @@ sFI
 sFI
 sFI
 sFI
-tzg
+sFI
 tzg
 tzg
 tzg
@@ -185798,7 +185770,7 @@ sFI
 sFI
 sFI
 sFI
-wDK
+sFI
 wDK
 wDK
 wDK
@@ -186002,7 +185974,7 @@ sFI
 sFI
 sFI
 sFI
-wDK
+sFI
 wDK
 wDK
 wDK
@@ -186015,13 +185987,13 @@ rvw
 uoL
 tnX
 tnX
-uAo
-uAo
-uAo
-uAo
-uAo
-uAo
-uAo
+fbv
+fbv
+fbv
+fbv
+fbv
+fbv
+fbv
 xCT
 xCT
 xCT
@@ -194085,11 +194057,11 @@ sFI
 sFI
 sFI
 eyR
-eyR
-eyR
-eyR
-eyR
-eyR
+qWD
+qWD
+qWD
+qWD
+qWD
 eyR
 eyR
 vxr
@@ -195297,7 +195269,7 @@ uNP
 uNP
 rFs
 uNP
-uNP
+aaq
 eyR
 szY
 tbJ
@@ -195499,7 +195471,7 @@ qnl
 qXK
 eCB
 uNP
-uNP
+aaq
 eyR
 sDt
 tbW
@@ -195712,7 +195684,7 @@ ult
 wFu
 uNP
 xGi
-xGi
+beK
 beK
 beK
 beK
@@ -199938,7 +199910,7 @@ sXI
 gLk
 eXl
 crV
-crV
+sFI
 sFI
 sFI
 sFI
@@ -200140,7 +200112,7 @@ mlj
 mMT
 eXl
 crV
-crV
+sFI
 sFI
 sFI
 uNP
@@ -200342,7 +200314,7 @@ crV
 crV
 crV
 crV
-crV
+sFI
 sFI
 sFI
 uNP
@@ -208689,9 +208661,9 @@ sUr
 sUr
 veZ
 veZ
-tfX
-tfX
-tfX
+tMV
+tMV
+tMV
 tfX
 tfX
 tfX
@@ -208891,11 +208863,11 @@ veZ
 veZ
 veZ
 veZ
-tfX
-tfX
-tfX
-tfX
-tfX
+fvh
+fvh
+tMV
+tMV
+tMV
 tfX
 tfX
 tfX
@@ -209094,7 +209066,7 @@ wLD
 qmH
 bIh
 cvX
-tfX
+fvh
 gZV
 gZV
 gZV
@@ -209287,16 +209259,16 @@ veZ
 veZ
 veZ
 veZ
-sUr
-sUr
-sUr
-sUr
 veZ
 veZ
 veZ
 veZ
-tfX
-tfX
+veZ
+veZ
+veZ
+veZ
+fvh
+fvh
 fvh
 gZV
 gZV
@@ -209489,16 +209461,16 @@ veZ
 veZ
 veZ
 veZ
-sUr
-sUr
-sUr
-sUr
 veZ
 veZ
 veZ
 veZ
-tfX
-tfX
+veZ
+veZ
+veZ
+veZ
+fvh
+fvh
 fvh
 lAE
 uqQ
@@ -209691,15 +209663,15 @@ veZ
 veZ
 veZ
 veZ
-sUr
-sUr
-sUr
-sUr
-sUr
 veZ
 veZ
 veZ
-tfX
+veZ
+veZ
+veZ
+veZ
+veZ
+fvh
 gZV
 gZV
 lAE
@@ -209891,17 +209863,17 @@ veZ
 veZ
 veZ
 veZ
-sUr
-veZ
-sUr
-sUr
-sUr
-sUr
-sUr
 veZ
 veZ
 veZ
-tfX
+veZ
+veZ
+veZ
+veZ
+veZ
+veZ
+veZ
+fvh
 gZV
 gZV
 wMv
@@ -210093,17 +210065,17 @@ veZ
 veZ
 veZ
 veZ
-sUr
-veZ
-sUr
-sUr
-sUr
-sUr
 veZ
 veZ
 veZ
 veZ
-tfX
+veZ
+veZ
+veZ
+veZ
+veZ
+veZ
+fvh
 gZV
 gZV
 tot
@@ -210294,18 +210266,18 @@ veZ
 veZ
 veZ
 veZ
-sUr
-veZ
-veZ
-sUr
-sUr
-sUr
-sUr
-sUr
 veZ
 veZ
 veZ
-tfX
+veZ
+veZ
+veZ
+veZ
+veZ
+veZ
+veZ
+veZ
+fvh
 gZV
 gZV
 gZV
@@ -210496,18 +210468,18 @@ veZ
 veZ
 veZ
 veZ
-sUr
-veZ
-veZ
-sUr
-sUr
-sUr
-sUr
-sUr
 veZ
 veZ
 veZ
-tfX
+veZ
+veZ
+veZ
+veZ
+veZ
+veZ
+veZ
+veZ
+gZV
 gZV
 gZV
 gZV
@@ -210703,17 +210675,17 @@ veZ
 veZ
 sUr
 sUr
-sUr
-sUr
 veZ
 veZ
 veZ
 veZ
-tfX
-tfX
-fvh
-fvh
-fvh
+veZ
+veZ
+tMV
+tMV
+gZV
+gZV
+gZV
 gZV
 gZV
 tot
@@ -210907,15 +210879,15 @@ sUr
 sUr
 sUr
 sUr
-sUr
 veZ
-sUr
 veZ
-imJ
-tfX
-tfX
-tfX
-imJ
+veZ
+veZ
+epa
+tMV
+tMV
+tMV
+epa
 gZV
 gZV
 wMv
@@ -211113,11 +211085,11 @@ sUr
 veZ
 veZ
 veZ
-tfX
-tfX
-tfX
-tfX
-tfX
+tMV
+tMV
+tMV
+tMV
+tMV
 gZV
 gZV
 wMv
@@ -211315,9 +211287,9 @@ sUr
 veZ
 rRe
 veZ
-tfX
-tfX
-tfX
+tMV
+tMV
+tMV
 imJ
 tfX
 gZV
@@ -211517,7 +211489,7 @@ lxZ
 lxZ
 lxZ
 lxZ
-tfX
+tMV
 tfX
 tfX
 tfX
@@ -221345,7 +221317,7 @@ veZ
 wBa
 vva
 wBa
-nPy
+jYW
 nPy
 nPy
 pRe
@@ -224186,14 +224158,14 @@ veZ
 veZ
 veZ
 veZ
-sUr
-sUr
-sUr
-sUr
-sUr
-sUr
-sUr
-cMY
+veZ
+veZ
+veZ
+veZ
+veZ
+veZ
+veZ
+pwm
 dAa
 ucS
 aot
@@ -224388,7 +224360,7 @@ ern
 ern
 ern
 ern
-uUd
+ern
 pPq
 pPq
 pPq
@@ -234462,7 +234434,7 @@ veZ
 cwr
 sxR
 cwr
-cwr
+aBH
 cwr
 nWF
 cwr
@@ -234664,7 +234636,7 @@ veZ
 cwr
 lvZ
 cwr
-cwr
+aBH
 cwr
 nWF
 cwr
