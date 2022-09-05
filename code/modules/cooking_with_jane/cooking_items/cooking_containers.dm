@@ -103,16 +103,20 @@
 
 	//OK, time to load the tracker
 	if(!tracker)
-		tracker = new /datum/cooking_with_jane/recipe_tracker(src)
+		if(lower_quality_on_fail)
+			for (var/obj/item/contained in contents)
+				contained?:food_quality -= lower_quality_on_fail
+		else
+			tracker = new /datum/cooking_with_jane/recipe_tracker(src)
 
 	var/return_value = 0
 	switch(tracker.process_item_wrap(I, user))
 		if(CWJ_NO_STEPS)
 			if(send_message)
 				to_chat(user, "It doesn't seem like you can create a meal from that. Yet.")
-			if(lower_quality_on_fail != 0)
-				for (var/obj/item/contained in contents)
-					contained?:food_quality -= lower_quality_on_fail
+			if(lower_quality_on_fail)
+				for (var/datum/cooking_with_jane/recipe_pointer/pointer in tracker.active_recipe_pointers)
+					pointer?:food_quality -= lower_quality_on_fail
 		if(CWJ_CHOICE_CANCEL)
 			if(send_message)
 				to_chat(user, "You decide against cooking with the [src].")

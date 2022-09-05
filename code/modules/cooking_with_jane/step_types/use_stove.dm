@@ -41,10 +41,7 @@
 
 	bad_cooking = round(bad_cooking/(5 SECONDS))
 
-	//Wierd rounding here allows for cooking product to be slightly late due to lag.
-	var/overcooking = round((time - container.stove_data[heat]), 10 SECONDS)/ 1 SECONDS
-
-	var/good_cooking = round(time/3 SECONDS) - bad_cooking - overcooking + our_stove.quality_mod
+	var/good_cooking = round(time/3 SECONDS) - bad_cooking + our_oven.quality_mod
 
 	return clamp_quality(good_cooking)
 

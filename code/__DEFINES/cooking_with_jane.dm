@@ -81,6 +81,9 @@
 #define CWJ_IGNITE_TIME_MEDIUM	30 MINUTES
 #define CWJ_IGNITE_TIME_HIGH	15 MINUTES
 
+//Determines how much quality is taken from a food each tick when a 'no recipe' response is made.
+#define CWJ_BASE_QUAL_REDUCTION 5
+
 //A dictionary of unique step ids that point to other step IDs that should be EXCLUDED if it is present in a recipe_pointer's list of possible steps.
 GLOBAL_LIST_EMPTY(cwj_optional_step_exclusion_dictionary)
 

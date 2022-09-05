@@ -55,6 +55,12 @@
 
 	if(!(stat & NOPOWER))
 		decide_action()
+	
+	
+	for(var/i=1, i<=4, i++)
+		if(switches[i])
+			handle_cooking(null, i, FALSE)
+
 
 /obj/machinery/cooking_with_jane/stove/RefreshParts()
 	..()

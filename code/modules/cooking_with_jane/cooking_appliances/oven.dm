@@ -1,3 +1,5 @@
+
+
 /obj/machinery/cooking_with_jane/oven
 	name = "Oven"
 	desc = "A cozy oven for baking food. You feel like it is watching you... \nCtrl+Click: Set Temperatures / Timers \nShift+Ctrl+Click: Turn on the oven."
@@ -46,6 +48,9 @@
 
 	if(!(stat & NOPOWER))
 		decide_action()
+	
+	if(switches)
+		handle_cooking(null, FALSE)
 
 /obj/machinery/cooking_with_jane/oven/RefreshParts()
 	..()
@@ -57,10 +62,10 @@
 
 //Process how a specific oven is interacting with material
 /obj/machinery/cooking_with_jane/oven/proc/cook_checkin()
-	#ifdef CWJ_DEBUG
-	log_debug("/cooking_with_jane/oven/proc/cook_checkin called on burner ")
-	#endif
 	if(items)
+		#ifdef CWJ_DEBUG
+		log_debug("/cooking_with_jane/oven/proc/cook_checkin called on burner ")
+		#endif
 		var/old_timestamp = cooking_timestamp
 		switch(temperature)
 			if("Low")
@@ -302,9 +307,9 @@
 
 
 	if(user && user.Adjacent(src))
-		container.process_item(src, user, send_message=TRUE)
+		container.process_item(src, user, lower_quality_on_fail=CWJ_BASE_QUAL_REDUCTION, send_message=TRUE)
 	else
-		container.process_item(src, user)
+		container.process_item(src, user,  lower_quality_on_fail=CWJ_BASE_QUAL_REDUCTION)
 
 
 

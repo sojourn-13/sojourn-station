@@ -67,6 +67,12 @@
 	if(!(stat & NOPOWER))
 		decide_action()
 
+	for(var/i=1, i<=2, i++)
+		if(switches[i])
+			handle_cooking(null, i, FALSE)
+
+
+
 
 /obj/machinery/cooking_with_jane/grill/RefreshParts()
 	..()
@@ -89,10 +95,11 @@
 
 //Process how a specific grill is interacting with material
 /obj/machinery/cooking_with_jane/grill/proc/cook_checkin(var/input)
-	#ifdef CWJ_DEBUG
-	log_debug("/cooking_with_jane/grill/proc/cook_checkin called on burner [input]")
-	#endif
+
 	if(items[input])
+		#ifdef CWJ_DEBUG
+		log_debug("/cooking_with_jane/grill/proc/cook_checkin called on burner [input]")
+		#endif
 		var/old_timestamp = cooking_timestamp[input]
 		switch(temperature[input])
 			if("Low")
@@ -328,9 +335,9 @@
 
 
 	if(user && user.Adjacent(src))
-		container.process_item(src, user, send_message=TRUE)
+		container.process_item(src, user, lower_quality_on_fail=CWJ_BASE_QUAL_REDUCTION, send_message=TRUE)
 	else
-		container.process_item(src, user)
+		container.process_item(src, user,  lower_quality_on_fail=CWJ_BASE_QUAL_REDUCTION)
 
 
 
