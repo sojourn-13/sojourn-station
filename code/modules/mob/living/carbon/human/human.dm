@@ -54,9 +54,12 @@
 		dna.ready_dna(src)
 		dna.real_name = real_name
 		sync_organ_dna()
+
 	make_blood()
 
 	sanity = new(src)
+
+	flash_mod = species.flash_mod
 
 	AddComponent(/datum/component/fabric)
 
@@ -117,7 +120,7 @@
 
 		var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
 		if(C)
-			stat("Axis Power", "[C.power]/[C.max_power]")
+			stat("Faith", "[C.power]/[C.max_power]")
 			stat("Channeling Boost", "[C.channeling_boost]")
 
 		var/obj/item/organ/internal/psionic_tumor/B = random_organ_by_process(BP_PSION)
@@ -137,10 +140,19 @@
 
 	src.stats.initialized = TRUE
 
+/mob/living/carbon/human/flash(duration = 0, drop_items = FALSE, doblind = FALSE, doblurry = FALSE, eye_damage = 0)
+	if(blinded)
+		return
+	if(eye_damage)
+		eye_damage += eye_damage * flash_mod // increase based on how susceptible they are
+		var/obj/item/organ/internal/eyes/E = src.random_organ_by_process(OP_EYES)
+		E.take_damage(eye_damage, FALSE)
+		if (E && E.damage >= E.min_bruised_damage)
+			to_chat(src, SPAN_DANGER("Your eyes start to burn badly!"))
+	..(duration, drop_items, doblind, doblurry)
+
 /mob/living/carbon/human/ex_act(severity)
-	if(!blinded)
-		if (HUDtech.Find("flash"))
-			flick("flash", HUDtech["flash"])
+	flash(5, FALSE, TRUE , TRUE, 5)
 
 	var/shielded = 0
 	var/b_loss

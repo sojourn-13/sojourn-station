@@ -17,8 +17,8 @@
 
 /datum/old_surgery_step/hardsuit/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	user.visible_message(
-		SPAN_NOTICE("[user] starts cutting through the support systems of [target]'s [target.back] with \the [tool]."),
-		SPAN_NOTICE("You start cutting through the support systems of [target]'s [target.back] with \the [tool].")
+		SPAN_NOTICE("[user] starts drilling through the support systems of [target]'s [target.back] with \the [tool]."),
+		SPAN_NOTICE("You start drilling through the support systems of [target]'s [target.back] with \the [tool].")
 	)
 	..()
 
@@ -28,8 +28,8 @@
 		return
 	rig.reset()
 	user.visible_message(
-		SPAN_NOTICE("[user] has cut through the support systems of [target]'s [rig] with \the [tool]."),
-		SPAN_NOTICE("You have cut through the support systems of [target]'s [rig] with \the [tool].")
+		SPAN_NOTICE("[user] has drilled through the support systems of [target]'s [rig] with \the [tool]."),
+		SPAN_NOTICE("You have drilled through the support systems of [target]'s [rig] with \the [tool].")
 	)
 
 /datum/old_surgery_step/hardsuit/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)

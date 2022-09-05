@@ -1033,3 +1033,39 @@ obj/item/clothing/suit/sweater/blue
 	the design soon found itself spread throughout the colony."
 	icon_state = "scav_jacket"
 	item_state = "scav_jacket"
+
+/obj/item/clothing/suit/storage/suitjacket/trenchcoat
+	name = "noir trenchcoat"
+	desc = "A long and rugged black trenchcoat, the perfect complement for your film noir ensemble. \n All you need now is a smoke, a whiskey, unlimited ammo and a license to kill." // Max Payne reference.
+	icon_state = "black_trench_m"
+	item_state = "black_trench_m"
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/trenchcoat/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default"] = "black_trench_m"
+	options["feminine alt"] = "black_trench_f"
+
+	var/choice = input(M,"What kind of style do you want to change to?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your trenchcoat's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+

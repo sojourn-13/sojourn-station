@@ -9,6 +9,6 @@
 	name = "receiving trade beacon"
 	build_path = /obj/machinery/trade_beacon/receiving
 
-/obj/item/circuitboard/trade_beacon/sending_beacon
+/obj/item/circuitboard/trade_beacon/sending
 	name = "sending trade beacon"
 	build_path = /obj/machinery/trade_beacon/sending

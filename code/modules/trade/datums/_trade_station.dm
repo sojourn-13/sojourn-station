@@ -156,7 +156,7 @@
 			var/offer_index = offer_types.Find(offer_path)
 			special_offers.Insert(offer_index, offer_path)
 			special_offers[offer_path] = offer_content
-			SStrade.offer_types.Add(offer_path)				// For blacklisting offers from exports
+			SStrade.offer_types |= offer_path				// For blacklisting offers from exports
 
 /datum/trade_station/proc/update_tick()
 	offer_tick()
@@ -164,7 +164,7 @@
 		goods_tick()
 	else
 		initialized = TRUE
-	update_time = rand(15,20) MINUTES
+	update_time = rand(8,12) MINUTES
 	addtimer(CALLBACK(src, .proc/update_tick), update_time, TIMER_STOPPABLE)
 	update_timer_start = world.time
 

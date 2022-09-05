@@ -3,9 +3,10 @@
 	icon = 'icons/obj/aberrant_organs.dmi'
 	icon_state = "organ_scaffold"
 	desc = "A collagen-based biostructure."
+	description_info = "A functionless organ with three slots for organ mods or organoids. Best used with an input, process, and output organoid to create a modular organ."
 	price_tag = 100
 	organ_efficiency = list()
-	specific_organ_size = 0.2
+	specific_organ_size = 0.4
 	spawn_tags = SPAWN_TAG_ABERRANT_ORGAN
 
 	var/use_generated_name = TRUE
@@ -19,6 +20,7 @@
 	var/ruined = FALSE
 	var/ruined_name = "organ scaffold"
 	var/ruined_desc = "A collagen-based biostructure."
+	var/ruined_description_info = "A functionless organ with three slots for organ mods or organoids. Best used with an input, process, and output organoid to create a modular organ."
 	var/ruined_color = null
 
 /obj/item/organ/internal/scaffold/New()
@@ -33,7 +35,7 @@
 	UnregisterSignal(src, COMSIG_ABERRANT_COOLDOWN)
 
 /obj/item/organ/internal/scaffold/Process()
-	. = ..()
+	..()
 	if(owner && !on_cooldown && damage < min_broken_damage)
 		LEGACY_SEND_SIGNAL(src, COMSIG_ABERRANT_INPUT, src, owner)
 
@@ -108,6 +110,7 @@
 	ruined = TRUE
 	name = ruined_name ? ruined_name : initial(name)
 	desc = ruined_desc ? ruined_desc : initial(desc)
+	description_info = ruined_description_info ? ruined_description_info : initial(description_info)
 	color = ruined_color ? ruined_color : initial(color)
 	price_tag = 100
 	use_generated_name = TRUE
@@ -211,6 +214,9 @@
 /obj/item/organ/internal/scaffold/rare
 	name = "large organ scaffold"
 	desc = "A collagen-based biostructure. This one has room for an extra organoid."
+	ruined_desc = "A collagen-based biostructure. This one has room for an extra organoid."
+	description_info = "A functionless organ with four slots for organ mods or organoids. Generally, you'll want to save the fourth upgrade slot for a membrane."
+	ruined_description_info = "A functionless organ with four slots for organ mods or organoids. Generally, you'll want to save the fourth upgrade slot for a membrane."
 	max_upgrades = 4
 
 /obj/item/organ/internal/scaffold/aberrant
@@ -248,23 +254,33 @@
 			return
 
 	var/list/input_info = list()
+	var/list/additional_input_info = list()
 	var/list/output_types = list()
+	var/list/additional_output_info = list()
 	
 	if(req_num_inputs)
+		var/list/inputs_sans_blacklist = list()
+		var/list/input_pool = list()
+
+		if(specific_input_type_pool.len)
+			additional_input_info = specific_input_type_pool.Copy()
+			input_pool = specific_input_type_pool.Copy()
+		else if(base_input_type)
+			inputs_sans_blacklist = subtypesof(base_input_type) - REAGENT_BLACKLIST
+			additional_input_info = inputs_sans_blacklist.Copy()
+			input_pool = inputs_sans_blacklist.Copy()
+
 		for(var/i in 1 to req_num_inputs)
-			if(specific_input_type_pool.len)
-				input_info += pick_n_take(specific_input_type_pool)
-			else if(base_input_type)
-				var/list/reagents_sans_blacklist = subtypesof(base_input_type) - REAGENT_BLACKLIST
-				input_info += pick_n_take(reagents_sans_blacklist)
+			input_info += pick_n_take(input_pool)
 
 	if(req_num_outputs)
-		for(var/i in 1 to req_num_outputs)		
+		additional_output_info = output_pool.Copy()
+		for(var/i in 1 to req_num_outputs)
 			output_types += list(pick_n_take(output_pool) = output_info[i])
 
 	var/obj/item/modification/organ/internal/input/I
 	if(ispath(input_mod_path, /obj/item/modification/organ/internal/input))
-		I = new input_mod_path(src, FALSE, null, input_info, input_mode)
+		I = new input_mod_path(src, FALSE, null, input_info, input_mode, additional_input_info)
 
 	var/obj/item/modification/organ/internal/process/P
 	if(ispath(process_mod_path, /obj/item/modification/organ/internal/process))
@@ -272,7 +288,7 @@
 
 	var/obj/item/modification/organ/internal/output/O
 	if(ispath(output_mod_path, /obj/item/modification/organ/internal/output))
-		O = new output_mod_path(src, FALSE, null, output_types)
+		O = new output_mod_path(src, FALSE, null, output_types, additional_output_info)
 
 	var/obj/item/modification/organ/internal/special/S
 	if(ispath(special_mod_path, /obj/item/modification/organ/internal/special))

@@ -1,6 +1,15 @@
 /obj/machinery/autolathe/organ_fabricator
 	name = "Organ Fabricator"
 	desc = "Soteria machine for printing organs using biomass."
+	description_info = "Quick Guide to Organs:\n\n\
+						Print an organ scaffold\n\
+						Print an input, process, and output teratoma\n\
+						Use a laser scalpel to remove the organoid from each teratoma\n\
+						(Optional) Use a laser scalpel on an organoid to modify its behavior\n\
+						Attach all three organoids to the scaffold\n\
+						Insert the newly crafted organ into self or another person\n\
+						OR\n\
+						Store it in the organ fridge for later use"
 	icon_state = "bioprinter_med"
 	circuit = /obj/item/circuitboard/organ_fabricator
 	build_type = ORGAN_GROWER			// Should not be able to use church disks
@@ -11,39 +20,17 @@
 	have_recycling = FALSE
 	speed = 6
 
+	selectively_recycled_types = list(
+		/obj/item/organ,
+		/obj/item/modification/organ
+	)
+
 	special_actions = list(
-		//list("action" = "sync", "name" = "Sync with R&D console", "icon" = "refresh"),		// Not until sci has their part of organ gaming
 		list("action" = "rip", "name" = "Rip OMG! designs", "icon" = "document")
 	)
 
 	var/datum/research/files
-	var/list/initial_designs = list(
-		/datum/design/organ/heart,
-		/datum/design/organ/lungs,
-		/datum/design/organ/kidney_left,
-		/datum/design/organ/kidney_right,
-		/datum/design/organ/liver,
-		/datum/design/organ/eyes,
-		/datum/design/organ/nerves,
-		/datum/design/organ/muscle,
-		/datum/design/organ/blood_vessel,
-		/datum/design/organ/organ_mod/capillaries,
-		/datum/design/organ/organ_mod/durable_membrane,
-		/datum/design/organ/organ_mod/stem_cells,
-		/datum/design/organ/organ_mod/overclock,
-		/datum/design/organ/organ_mod/underclock,
-		/datum/design/organ/organ_mod/expander,
-		/datum/design/organ/organ_mod/silencer,
-		/datum/design/organ/scaffold,
-		/datum/design/organ/aberrant_organ/teratoma/input/reagents,
-		/datum/design/organ/aberrant_organ/teratoma/input/damage,
-		/datum/design/organ/aberrant_organ/teratoma/input/power_source,
-		/datum/design/organ/aberrant_organ/teratoma/process,
-		/datum/design/organ/aberrant_organ/teratoma/output/reagents_blood,
-		/datum/design/organ/aberrant_organ/teratoma/output/reagents_ingest,
-		/datum/design/organ/aberrant_organ/teratoma/output/chemical_effects,
-		/datum/design/organ/aberrant_organ/teratoma/output/stat_boost
-	)
+	var/list/ripped_categories = list()		// For sanitizing categories
 
 /obj/machinery/autolathe/organ_fabricator/loaded
 	stored_material = list(MATERIAL_BIOMATTER = 360)
@@ -51,24 +38,6 @@
 /obj/machinery/autolathe/organ_fabricator/Initialize()
 	. = ..()
 	files = new /datum/research(src)
-
-	if(!categories)
-		categories = list()
-	
-	if(initial_designs?.len)
-		for(var/design in initial_designs)
-			var/datum/design/new_design = new design
-
-			// Needed for ui data
-			new_design.AssembleDesignInfo()
-			new_design.ui_data["icon"] = sanitizeFileName("[new_design.build_path].png")
-			var/datum/computer_file/binary/design/design_file = new
-			design_file.design = new_design
-			design_file.on_design_set()
-			new_design.file = design_file
-
-			files.known_designs |= new_design
-			categories |= new_design.category
 
 /obj/machinery/autolathe/organ_fabricator/proc/rip_disk()
 	if(!disk)
@@ -80,31 +49,42 @@
 		var/datum/computer_file/binary/design/DF = design_file
 		var/datum/design/D = DF.design
 		if(D && D.build_type == build_type)
-			files.known_designs |= D
-			categories |= D.category
+			files.AddDesign2Known(D)
+			ripped_categories |= D.category
+
+	audible_message(SPAN_NOTICE("The contents of \the [disk] have been saved to \the [src]'s drive."))
 
 /obj/machinery/autolathe/organ_fabricator/insert_disk(mob/living/user, obj/item/computer_hardware/hard_drive/portable/inserted_disk)
 	. = ..()
-	show_category = null
+	for(var/design_file in disk.find_files_by_type(/datum/computer_file/binary/design))
+		var/datum/computer_file/binary/design/DF = design_file
+		var/datum/design/D = DF.design
+		categories |= D.category
 
 /obj/machinery/autolathe/organ_fabricator/eject_disk(mob/living/user)
 	. = ..()
+	// Sanitize categories
+	categories = files.design_categories_organfab
+	categories |= ripped_categories
+
 	SSnano.update_uis(src)
 
 /obj/machinery/autolathe/organ_fabricator/design_list()
 	var/list/design_files = list()
 
-	if(!show_category)
+	if(disk)
 		design_files |= disk.find_files_by_type(/datum/computer_file/binary/design)
-	else
-		for(var/d in files.known_designs)
-			var/datum/design/design = d
-			if((design.build_type & build_type) && design.file)
-				design_files |= design.file
+
+	for(var/d in files.known_designs)
+		var/datum/design/design = d
+		if((design.build_type & build_type) && design.file)
+			design_files |= design.file
 
 	return design_files
 
 /obj/machinery/autolathe/organ_fabricator/nano_ui_interact()
+	if(!categories?.len)
+		categories = files.design_categories_organfab
 	if(!disk && !show_category && length(categories))
 		show_category = categories[1]
 	..()

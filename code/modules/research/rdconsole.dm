@@ -684,6 +684,10 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	id = 2
 	req_access = list(access_robotics)
 
+/obj/machinery/computer/rdconsole/unlicensed
+	name = "unlicensed R&D console"
+	id = 3
+
 /obj/machinery/computer/rdconsole/core
 	name = "core R&D console"
 	id = 1

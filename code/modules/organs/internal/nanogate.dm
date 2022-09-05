@@ -27,6 +27,7 @@
 	owner_verbs = list(
 		/obj/item/organ/internal/nanogate/proc/nanite_antenna,
 		// Creation and upgrade of the bot
+
 		/obj/item/organ/internal/nanogate/proc/create_nanobot,
 
 		// Upgrades of the user.

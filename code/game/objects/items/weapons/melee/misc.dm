@@ -29,7 +29,7 @@
 	..()
 	cut_overlays()
 	if(reinforced)
-		add_overlay("[icon_state]-duct_tape")
+		add_overlay("hm_hammer-duct_tape")
 
 /obj/item/melee/toolbox_maul/proc/break_apart(var/mob/living/user)
 	qdel(src)

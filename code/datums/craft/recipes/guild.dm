@@ -448,6 +448,22 @@
 
 
 //Wearables =========================
+/datum/craft_recipe/guild/nv_guild
+	name = "Optimized NV Goggles"
+	result = /obj/item/clothing/glasses/powered/night/guild/crafted
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/clothing/glasses/powered/meson, 1, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_RGLASS),
+		list(QUALITY_WELDING, 40, "time"= 60),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 30),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 40),
+		list(CRAFT_MATERIAL, 1, MATERIAL_URANIUM, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 40, 30),
+		list(/obj/item/stack/cable_coil, 2, "time" = 20),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
+	)
+
 /datum/craft_recipe/guild/technosuit
 	name = "'Mark V' environmental protection suit"
 	result = /obj/item/clothing/suit/armor/vest/technomancersuit
@@ -743,6 +759,37 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER)
+	)
+
+/datum/craft_recipe/guild/safety_clamp
+	name = "Hydraulic clamp overclock: KILL CLAMP"
+	result = /obj/item/mecha_parts/mecha_equipment/tool/safety_clamp
+	steps = list(
+		list(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp, 1, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 30, "time" = 40),
+		list(/obj/item/tool_upgrade/productivity/motor, 1, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 10, 70),
+		list(/obj/item/tool_upgrade/augment/hydraulic, 1, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 10, 70),
+		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 30, "time" = 40),
+		list(/obj/item/tool_upgrade/augment/spikes, 1, "time" = 60)
+	)
+
+/datum/craft_recipe/guild/tesla_energy_relay
+	name = "Mech energy relay"
+	result = /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_WELDING, 45, "time" = 40),
+		list(QUALITY_BOLT_TURNING, 40, 70),
+		list(/obj/item/computer_hardware/tesla_link, 2, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(/obj/item/stack/cable_coil, 15, "time" = 90),
+		list(QUALITY_WIRE_CUTTING, 25, "time" = 90),
+		list(/obj/item/stock_parts/capacitor/guild, 1, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 10, 70),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD)
 	)
 
 /datum/craft_recipe/guild/guild_bin

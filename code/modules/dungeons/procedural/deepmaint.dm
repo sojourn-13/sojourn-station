@@ -42,6 +42,10 @@ var/global/list/big_deepmaint_room_templates = list()
 
 /obj/procedural/jp_DungeonGenerator/deepmaint
 	name = "Deep Maintenance Procedural Generator"
+	regen_specific = TRUE
+	regen_light = /obj/machinery/light/small/autoattach/deepmaints
+
+
 /*
 	Finds a line of walls adjacent to the line of turfs given
 */
@@ -147,8 +151,8 @@ var/global/list/big_deepmaint_room_templates = list()
 			if(prob(30))
 				new /obj/random/pack/deep_machine(W)
 		for(var/turf/W in wall_line)
-			if(locate(/obj/machinery/light/small/autoattach, W))
-				var/obj/machinery/light/small/autoattach/L = locate(/obj/machinery/light/small/autoattach, W)
+			if(locate(/obj/machinery/light/small/autoattach/deepmaints, W))
+				var/obj/machinery/light/small/autoattach/deepmaints/L = locate(/obj/machinery/light/small/autoattach/deepmaints, W)
 				qdel(L)
 			W.ChangeTurf(/turf/simulated/floor/tiled/techmaint_perforated)
 			for(var/turf/simulated/wall/A in getAdjacent(W))

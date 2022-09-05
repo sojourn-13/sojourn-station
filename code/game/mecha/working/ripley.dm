@@ -4,11 +4,12 @@
 	icon_state = "ripley"
 	initial_icon = "ripley"
 	step_in = 2
+	step_energy_drain = 6
 	max_temperature = 20000
 	price_tag = 5000
 	health = 500
 	wreckage = /obj/effect/decal/mecha_wreckage/ripley
-	cargo_capacity = 10
+	cargo_capacity = 25
 	max_equip = 6
 
 /obj/mecha/working/ripley/Destroy()
@@ -26,6 +27,7 @@
 	name = "APLU \"Firefighter\""
 	icon_state = "firefighter"
 	initial_icon = "firefighter"
+	step_energy_drain = 8
 	max_temperature = 65000
 	price_tag = 6500
 	health = 550

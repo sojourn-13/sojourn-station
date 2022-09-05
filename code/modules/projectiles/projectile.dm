@@ -228,7 +228,7 @@
 	return TRUE
 
 /obj/item/projectile/proc/get_structure_damage()
-	return damage_types[BRUTE] + damage_types[BURN]
+	return ((damage_types[BRUTE] + damage_types[BURN]) * structure_damage_factor)
 
 //return 1 if the projectile should be allowed to pass through after all, 0 if not.
 /obj/item/projectile/proc/check_penetrate(atom/A)

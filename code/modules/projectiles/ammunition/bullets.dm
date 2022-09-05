@@ -4,6 +4,7 @@
 	desc = "A 9mm bullet casing."
 	icon_state = "pistol_c_l"
 	spent_icon = "pistol_c_l-spent"
+	shell_color = "l"
 	caliber = CAL_PISTOL
 	projectile_type = /obj/item/projectile/bullet/pistol_35
 	maxamount = 15
@@ -12,6 +13,7 @@
 	desc = "A 9mm high-velocity bullet casing."
 	icon_state = "pistol_c_hv"
 	spent_icon = "pistol_c_hv-spent"
+	shell_color = "hv"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/hv
 
 /obj/item/ammo_casing/pistol_35/hv/spent
@@ -21,12 +23,14 @@
 	desc = "A 9mm practice bullet casing."
 	icon_state = "pistol_c_p"
 	spent_icon = "pistol_c_p-spent"
+	shell_color = "p"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/practice
 
 /obj/item/ammo_casing/pistol_35/rubber
 	desc = "A 9mm rubber bullet casing."
 	icon_state = "pistol_c_r"
 	spent_icon = "pistol_c_r-spent"
+	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber
 
 /obj/item/ammo_casing/pistol_35/rubber/soporific_cbo
@@ -38,12 +42,14 @@
 
 /obj/item/ammo_casing/pistol_35/lethal
 	desc = "A 9mm hollow-point bullet casing."
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/lethal
 
 /obj/item/ammo_casing/pistol_35/scrap
 	desc = "An old 9mm bullet casing."
 	icon_state = "pistol_c_s"
 	spent_icon = "pistol_c_s-spent"
+	shell_color = "s"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/scrap
 
 /obj/item/ammo_casing/pistol_35/scrap/prespawned
@@ -57,6 +63,7 @@
 	desc = "A caseless 9mm caustic."
 	projectile_type = /obj/item/projectile/bullet/pistol_35/biomatter
 	icon_state = "clrifle_c_s"
+	shell_color = "s"
 	is_caseless = TRUE
 
 //// 10mm ////
@@ -66,6 +73,7 @@
 	icon_state = "magnum_c_l"
 	spent_icon = "magnum_c_l-spent"
 	caliber = CAL_MAGNUM
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/magnum_40
 	maxamount = 6
 
@@ -73,18 +81,21 @@
 	desc = "A 10mm Magnum practice bullet casing."
 	icon_state = "magnum_c_p"
 	spent_icon = "magnum_c_p-spent"
+	shell_color = "p"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/practice
 
 /obj/item/ammo_casing/magnum_40/hv
 	desc = "A 10mm Magnum high-velocity bullet casing."
 	icon_state = "magnum_c_hv"
 	spent_icon = "magnum_c_hv-spent"
+	shell_color = "hv"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/hv
 
 /obj/item/ammo_casing/magnum_40/rubber
 	desc = "A 10mm Magnum rubber bullet casing."
 	icon_state = "magnum_c_r"
 	spent_icon = "magnum_c_r-spent"
+	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber
 
 /obj/item/ammo_casing/magnum_40/rubber/pepperball
@@ -97,6 +108,7 @@
 	desc = "A 10mm Magnum hollow point bullet casing."
 	icon_state = "magnum_c_l"
 	spent_icon = "magnum_c_l-spent"
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/lethal
 
 /obj/item/ammo_casing/magnum_40/laser
@@ -107,6 +119,7 @@
 	desc = "An old 10mm Magnum bullet casing."
 	icon_state = "magnum_c_s"
 	spent_icon = "magnum_c_s-spent"
+	shell_color = "s"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/scrap
 
 /obj/item/ammo_casing/magnum_40/scrap/prespawned
@@ -116,6 +129,7 @@
 	desc = "A caseless 10mm Magnum Caustic."
 	projectile_type = /obj/item/projectile/bullet/magnum_40/biomatter
 	icon_state = "clrifle_c_p"
+	shell_color = "s"
 	is_caseless = TRUE
 
 //// 6.5 carbine ////

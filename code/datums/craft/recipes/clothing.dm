@@ -1,6 +1,6 @@
 /datum/craft_recipe/clothing
 	category = "Clothing"
-	icon_state = "clothing"
+	icon_state = "armor_part"
 	time = 50
 	related_stats = list(STAT_COG)
 
@@ -55,6 +55,7 @@
 /datum/craft_recipe/clothing/handmadebelt
 	name = "hand-made tool belt"
 	result = /obj/item/storage/belt/utility/handmade
+	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/stack/cable_coil, 30, time = 15),
 		list(QUALITY_CUTTING, 10, 60)
@@ -63,6 +64,7 @@
 /datum/craft_recipe/clothing/blindfold
 	name = "blindfold"
 	result = /obj/item/clothing/glasses/blindfold
+	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/stack/material/cloth, 5, time = 15),
 		list(QUALITY_CUTTING, 10, 60)
@@ -83,6 +85,7 @@
 /datum/craft_recipe/clothing/cardborg_helmet
 	name = "cardborg helmet"
 	result = /obj/item/clothing/head/costume/halloween/cardborg
+	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)
@@ -90,6 +93,7 @@
 /datum/craft_recipe/clothing/cardborg_suit
 	name = "cardborg suit"
 	result = /obj/item/clothing/suit/costume/halloween/cardborg
+	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 3, MATERIAL_CARDBOARD)
 	)
@@ -98,6 +102,7 @@
 /datum/craft_recipe/clothing/combat_gloves
 	name = "combat gloves"
 	result = /obj/item/clothing/gloves/thick/handmade
+	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/clothing/gloves/thick, 1, "time" = 15),
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
@@ -162,6 +167,7 @@
 /datum/craft_recipe/clothing/muzzle
 	name = "muzzle"
 	result = /obj/item/clothing/mask/muzzle
+	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/stack/material/cloth, 5, time = 15),
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),
@@ -172,6 +178,7 @@
 /datum/craft_recipe/clothing/cloak
 	name = "ragged cloak"
 	result = /obj/item/clothing/suit/hooded/cloak/simple
+	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/clothing, 1, time = 30),
 		list(/obj/item/clothing, 1, time = 30),
@@ -401,6 +408,7 @@
 /datum/craft_recipe/clothing/woodenarmor
 	name = "wooden armor"
 	result = /obj/item/clothing/suit/armor/vest/handmadewooden
+	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
 		list(QUALITY_SAWING, 10, 60),
@@ -412,6 +420,7 @@
 /datum/craft_recipe/clothing/tac_clothes
 	name = "tactical baggy rags"
 	result = /obj/item/clothing/under/outcast
+	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/clothing, 1, time = 30),
 		list(/obj/item/clothing, 1, time = 30),
@@ -423,6 +432,7 @@
 /datum/craft_recipe/clothing/outsider_cloak
 	name = "outcast's cloak"
 	result = /obj/item/clothing/suit/storage/raggedcape
+	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/clothing, 1, time = 30),
 		list(/obj/item/clothing, 1, time = 30),
@@ -434,6 +444,7 @@
 /datum/craft_recipe/clothing/outsider_hood
 	name = "outcast's hood"
 	result = /obj/item/clothing/head/outcasthood
+	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/clothing, 1, time = 30),
 		list(/obj/item/clothing, 1, time = 30),
@@ -445,6 +456,7 @@
 /datum/craft_recipe/clothing/outsider_cape
 	name = "outcast's cape"
 	result = /obj/item/clothing/accessory/cape/outsider
+	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/clothing/suit/storage/raggedcape, 1, "time" = 30),
 		list(QUALITY_CUTTING, 15, 30)
@@ -452,6 +464,7 @@
 /datum/craft_recipe/clothing/tribalhide
 	name = "Tribal Hides"
 	result =  /obj/item/clothing/under/tribalhide
+	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_LEATHER, "time" = 60),
 		list(QUALITY_CUTTING, 15, 30),

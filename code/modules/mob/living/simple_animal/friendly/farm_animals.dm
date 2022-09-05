@@ -133,6 +133,10 @@
 	udder.my_atom = null
 
 	. = ..()
+/mob/living/simple_animal/cow/visible_emote(emote_see)
+	..()
+	if(prob(10))
+		playsound(loc, 'sound/voice/moo1.ogg', 50, 1, -1) //Credit to Minecraft for the sound effect!
 
 /mob/living/simple_animal/cow/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	var/obj/item/reagent_containers/G = O

@@ -17,6 +17,7 @@
 	var/bottlesprite = "bottle"
 	var/syrettesprite = "syrette"
 	var/pillsprite = "1"
+	var/pill_bottle_sprite = "pill_canister"
 	var/client/has_sprites = list()
 	var/max_pill_count = 24 //max of pills that can be made in a bottle
 	var/max_pill_vol = 60 //max vol pills can have
@@ -199,8 +200,11 @@
 			var/obj/item/storage/pill_bottle/PB
 			if(create_pill_bottle)
 				PB = new(get_turf(src))
+				PB.pixel_x = rand(-7, 7) //random position Suffer medical powergamers
+				PB.pixel_y = rand(-7, 7)
 				PB.name = "[PB.name] ([name])"
 				PB.matter = list()
+				PB.icon_state = "[pill_bottle_sprite]"
 			while (reagents.total_volume)
 				var/obj/item/reagent_containers/pill/P = new/obj/item/reagent_containers/pill(src.loc)
 				if(!name) name = reagents.get_master_reagent_name()
@@ -270,12 +274,21 @@
 			dat += "</table>"
 			usr << browse(dat, "window=chem_master")
 			return
+		else if(href_list["change_pill_bottle"])
+			var/dat = "<table>"
+			for(var/sprite in PILL_BOTTLE_MODELS)
+				dat += "<tr><td><a href=\"?src=\ref[src]&pill_bottle=[sprite]\"><img src=\"[sprite].png\" /></a></td></tr>"
+			dat += "</table>"
+			usr << browse(dat, "window=chem_master")
+			return
 		else if(href_list["pill_sprite"])
 			pillsprite = href_list["pill_sprite"]
 		else if(href_list["bottle_sprite"])
 			bottlesprite = href_list["bottle_sprite"]
 		else if(href_list["syrette_sprite"])
 			syrettesprite = href_list["syrette_sprite"]
+		else if(href_list["pill_bottle"])
+			pill_bottle_sprite = href_list["pill_bottle"]
 
 	playsound(loc, 'sound/machines/button.ogg', 100, 1)
 	src.updateUsrDialog()
@@ -299,6 +312,8 @@
 				usr << browse_rsc(icon('icons/obj/chemical.dmi', sprite), "[sprite].png")
 			for(var/sprite in SYRETTE_SPRITES)
 				usr << browse_rsc(icon('icons/obj/syringe.dmi', sprite), "[sprite].png")
+			for(var/sprite in PILL_BOTTLE_MODELS)
+				usr << browse_rsc(icon('icons/obj/chemical.dmi', sprite), "[sprite].png")
 	var/dat = ""
 	if(!beaker)
 		dat = "Please insert beaker.<BR>"
@@ -340,7 +355,8 @@
 			dat += "<HR><BR><A href='?src=\ref[src];createpill=1'>Create pill ([max_pill_count] units max)</A><a href=\"?src=\ref[src]&change_pill=1\"><img src=\"pill[pillsprite].png\" /></a><BR>"
 			dat += "<A href='?src=\ref[src];createpill_multiple=1'>Create multiple pills</A><BR>"
 			dat += "<A href='?src=\ref[src];createbottle=1'>Create bottle (60 units max)<a href=\"?src=\ref[src]&change_bottle=1\"><img src=\"[bottlesprite].png\" /></A><BR>"
-			dat += "<A href='?src=\ref[src];createsyrette=1'>Create syrette (5 units max)<a href=\"?src=\ref[src]&change_syrette=1\"><img src=\"[syrettesprite].png\" /></A>"
+			dat += "<A href='?src=\ref[src];createsyrette=1'>Create syrette (5 units max)<a href=\"?src=\ref[src]&change_syrette=1\"><img src=\"[syrettesprite].png\" /></A><BR>"
+			dat += "<A href='?src=\ref[src];change_pill_bottle=1'>Change Pill Bottle Sprite<a href=\"?src=\ref[src]&pill_bottle_sprite=1\"><img src=\"[pill_bottle_sprite].png\" /></A>"
 		else
 			dat += "<A href='?src=\ref[src];createbottle=1'>Create bottle (50 units max)</A>"
 	if(!condi)

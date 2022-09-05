@@ -599,10 +599,10 @@ proc/is_blind(A)
 	return
 
 /mob/living/in_perfect_health()
-	if (stat == DEAD)
+	if(stat == DEAD)
 		return FALSE
 
-	if (brainloss || bruteloss || cloneloss || fireloss || halloss || oxyloss || toxloss)
+	if(usr.health != usr.maxHealth)
 		return FALSE
 
 

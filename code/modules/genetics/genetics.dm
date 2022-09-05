@@ -439,7 +439,7 @@
 	#endif
 
 	//No robots allowed.
-	if(issynthetic(target))
+	if(issynthetic(target) || target.get_species(IS_SYNTHETIC))
 		return FALSE
 
 	//Opifex or Nanogate can't use genetics. If they try, their body begins removing the affected cells- manually.

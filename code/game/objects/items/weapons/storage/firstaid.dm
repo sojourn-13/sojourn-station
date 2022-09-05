@@ -502,8 +502,9 @@
 	max_storage_space = 32
 
 /obj/item/storage/pill_bottle/antitox
-	name = "bottle of Dylovene pills"
-	desc = "Contains pills used to counter toxins."
+	icon_state = "pill_green"
+	name = "bottle of high-dose Dylovene pills"
+	desc = "Contains pills used to counter higher concentrations of toxins."
 
 /obj/item/storage/pill_bottle/antitox/populate_contents()
 	new /obj/item/reagent_containers/pill/antitox(src)
@@ -516,6 +517,7 @@
 
 /obj/item/storage/pill_bottle/bicaridine
 	name = "bottle of Bicaridine pills"
+	icon_state = "pill_red"
 	desc = "Contains pills used to stabilize the severely injured."
 
 /obj/item/storage/pill_bottle/bicaridine/populate_contents()
@@ -529,6 +531,7 @@
 
 /obj/item/storage/pill_bottle/dexalin_plus
 	name = "bottle of Dexalin Plus pills"
+	icon_state = "pill_blue"
 	desc = "Contains pills used to treat extreme cases of oxygen deprivation."
 
 /obj/item/storage/pill_bottle/dexalin_plus/populate_contents()
@@ -542,6 +545,7 @@
 
 /obj/item/storage/pill_bottle/dermaline
 	name = "bottle of Dermaline pills"
+	icon_state = "pill_orange"
 	desc = "Contains pills used to treat burn wounds."
 
 /obj/item/storage/pill_bottle/dermaline/populate_contents()
@@ -555,6 +559,7 @@
 
 /obj/item/storage/pill_bottle/dylovene
 	name = "bottle of Dylovene pills"
+	icon_state = "pill_green"
 	desc = "Contains pills used to counteract toxic substances in the blood."
 
 /obj/item/storage/pill_bottle/dylovene/populate_contents()
@@ -568,6 +573,7 @@
 
 /obj/item/storage/pill_bottle/carthatoline
 	name = "bottle of Carthatoline pills"
+	icon_state = "pill_green"
 	desc = "Contains pills used to counteract severe poisoning and liver failure."
 
 /obj/item/storage/pill_bottle/carthatoline/populate_contents()
@@ -581,6 +587,7 @@
 
 /obj/item/storage/pill_bottle/inaprovaline
 	name = "bottle of Inaprovaline pills"
+	icon_state = "pill_blue"
 	desc = "Contains pills used to stabilize patients."
 
 /obj/item/storage/pill_bottle/inaprovaline/populate_contents()
@@ -594,6 +601,7 @@
 
 /obj/item/storage/pill_bottle/kelotane
 	name = "bottle of Kelotane pills"
+	icon_state = "pill_yellow"
 	desc = "Contains pills used to treat burns."
 
 /obj/item/storage/pill_bottle/kelotane/populate_contents()
@@ -607,6 +615,7 @@
 
 /obj/item/storage/pill_bottle/spaceacillin
 	name = "bottle of Spaceacillin pills"
+	icon_state = "pill_white"
 	desc = "A theta-lactam antibiotic. Effective against many diseases likely to be encountered in space."
 
 /obj/item/storage/pill_bottle/spaceacillin/populate_contents()
@@ -620,6 +629,7 @@
 
 /obj/item/storage/pill_bottle/tramadol
 	name = "bottle of Tramadol pills"
+	icon_state = "pill_pink"
 	desc = "Contains pills used to relieve pain."
 
 /obj/item/storage/pill_bottle/tramadol/populate_contents()
@@ -633,6 +643,7 @@
 
 /obj/item/storage/pill_bottle/citalopram
 	name = "bottle of Citalopram pills"
+	icon_state = "pill_pink"
 	desc = "Contains pills used to stabilize a patient's mood."
 
 /obj/item/storage/pill_bottle/citalopram/populate_contents()
@@ -646,6 +657,7 @@
 
 /obj/item/storage/pill_bottle/prosurgeon
 	name = "bottle of ProSurgeon pills"
+	icon_state = "pill_black"
 	desc = "Contains pills used to reduce hand tremors."
 
 /obj/item/storage/pill_bottle/prosurgeon/populate_contents()
@@ -659,6 +671,7 @@
 
 /obj/item/storage/pill_bottle/bloodregen
 	name = "bottle of Blood Deficiency supplements"
+	icon_state = "pill_dred"
 	desc = "Contains pills to help speed up natural blood generation."
 
 /obj/item/storage/pill_bottle/bloodregen/populate_contents()
