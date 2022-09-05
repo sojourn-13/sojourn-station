@@ -27,10 +27,10 @@
 #define CWJ_OTHER_OPTIONAL 			1000
 
 
-#define CWJ_BEGIN_EXCLUSIVE_OPTIONS 1000	//Beginning an exclusive option list
-#define CWJ_END_EXCLUSIVE_OPTIONS 	2000	//Ending an exclusive option list
-#define CWJ_BEGIN_OPTION_CHAIN 		3000	//Beginning an option chain
-#define CWJ_END_OPTION_CHAIN 		4000	//Ending an option chain
+#define CWJ_BEGIN_EXCLUSIVE_OPTIONS 10000	//Beginning an exclusive option list
+#define CWJ_END_EXCLUSIVE_OPTIONS 	20000	//Ending an exclusive option list
+#define CWJ_BEGIN_OPTION_CHAIN 		30000	//Beginning an option chain
+#define CWJ_END_OPTION_CHAIN 		40000	//Ending an option chain
 
 //Recipe state flags
 #define CWJ_IS_LAST_STEP 			1		//If the step in the recipe is marked as the last step

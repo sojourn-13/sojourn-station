@@ -329,6 +329,7 @@
 		src.add_to_visible(our_item)
 	if(!opened)
 		add_overlay(image(src.icon, icon_state="oven_hatch[switches?"_on":""]", layer=ABOVE_OBJ_LAYER))
+	add_overlay(scan)
 
 
 /obj/machinery/cooking_with_jane/oven/proc/add_to_visible(var/obj/item/our_item)

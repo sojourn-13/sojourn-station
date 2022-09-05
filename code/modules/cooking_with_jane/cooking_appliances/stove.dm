@@ -293,7 +293,7 @@
 		container.stove_data[temperature[input]] = reference_time
 
 
-	if(user.Adjacent(src))
+	if(user && user.Adjacent(src))
 		container.process_item(src, user, send_message=TRUE)
 	else
 		container.process_item(src, user)

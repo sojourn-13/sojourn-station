@@ -1,12 +1,12 @@
 /obj/machinery/cooking_with_jane
-	var/tmp/obj/effect/flicker_overlay/scan
+	var/image/scan
 	var/list/scan_types = list()
 	var/scan_chance = 1
 	var/quality_mod = 1
 
 /obj/machinery/cooking_with_jane/Initialize()
 	. = ..()
-	scan = new(src)
+	scan = image('icons/obj/cwj_cooking/scan.dmi', src, icon_state="scan_start", layer=ABOVE_MOB_LAYER)
 
 /obj/machinery/cooking_with_jane/RefreshParts()
 	var/scan_rating = 0
@@ -20,7 +20,7 @@
 /obj/machinery/cooking_with_jane/proc/decide_action(var/force_action)
 	if(prob(scan_chance) || force_action)
 		var/list/witnesses = list()
-		for(var/mob/living/carbon/human/target in ohearers(10))
+		for(var/mob/living/carbon/human/target in ohearers(10, src))
 			witnesses += target
 
 		if(witnesses.len)

@@ -124,7 +124,7 @@ Food quality is calculated based on a mix between the incoming reagent and the q
 	//Create a base step
 	create_step_base()
 
-	for (var/list/step in step_builder)
+	for (var/step in step_builder)
 		if(islist(step) && step.len >= 1)
 			var/reason = ""
 			switch(step[1])
