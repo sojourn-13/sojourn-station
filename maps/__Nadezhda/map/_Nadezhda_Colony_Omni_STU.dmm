@@ -115729,6 +115729,7 @@
 	name = "\improper Outdoors - Pad"
 	})
 "vYj" = (
+/obj/item/modular_computer/console/preset/trade_orders,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/quartermaster/office)
 "vYl" = (
