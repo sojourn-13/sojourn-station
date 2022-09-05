@@ -34,8 +34,11 @@
 
 	//if(on_fire)
 		//Do bad things if it is on fire.
+	
+	if(switches)
+		handle_cooking(null, FALSE)
 
-	//Under normal circumstances, Only process this thing every 10 process calls; it doesn't need to be hyper-accurate.
+	//Under normal circumstances, Only process the rest of this 10 process calls; it doesn't need to be hyper-accurate.
 	if(check_on_10 != 10)
 		check_on_10++
 		return
@@ -47,9 +50,7 @@
 
 	if(!(stat & NOPOWER))
 		decide_action()
-	
-	if(switches)
-		handle_cooking(null, FALSE)
+
 
 /obj/machinery/cooking_with_jane/oven/RefreshParts()
 	..()
