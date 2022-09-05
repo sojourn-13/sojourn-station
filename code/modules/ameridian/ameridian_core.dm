@@ -10,4 +10,4 @@
 	throw_speed = 3
 	throw_range = 6
 	origin_tech = list(TECH_MATERIAL = 15)
-	price_tag = 10000 // Worth more than the ameridian crystals used to make it
+	price_tag = 1000 // worthy a penny so that cargo can sell them to LS or other places for it

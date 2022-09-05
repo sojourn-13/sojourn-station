@@ -19,7 +19,6 @@
 		STAT_TGH = 15,
 		STAT_VIG = 15,
 	)
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
 
 	perks = list(/datum/perk/market_prof, /datum/perk/bartender)
 
@@ -58,7 +57,6 @@
 		STAT_TGH = 10,
 		STAT_BIO = 10, // They need it to butcher animals without hurting themselves.
 	)
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
 
 	perks = list(/datum/perk/market_prof, /datum/perk/bartender, /datum/perk/foodappraise)
 
@@ -94,7 +92,6 @@
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	wage = WAGE_LABOUR_DUMB //The gardener can make money selling his fruits to the church or to the chef and bartender.
 
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
 	outfit_type = /decl/hierarchy/outfit/job/service/gardener
 	stat_modifiers = list(
 		STAT_BIO = 15,
@@ -180,7 +177,6 @@
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
 
 	perks = list(/datum/perk/market_prof, /datum/perk/job/jingle_jangle, /datum/perk/neat) //Union has revoked their chemistry privileges
 

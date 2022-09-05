@@ -276,13 +276,25 @@
 /obj/item/organ/emp_act(severity)
 	if(!BP_IS_ROBOTIC(src))
 		return
-	switch (severity)
-		if(1)
-			take_damage(30) //Deals half the organs damage
-		if(2)
-			take_damage(25)
-		if(3)
-			take_damage(15)
+	
+	//Robotic body parts conduct EMPs way better than flesh
+	if(parent && BP_IS_ROBOTIC(parent))
+		switch (severity)
+			if(1)
+				take_damage(40) //Deals half the organs damage
+			if(2)
+				take_damage(30)
+			if(3)
+				take_damage(20)
+	else
+		switch (severity)
+			if(1)
+				take_damage(25) //Deals half the organs damage
+			if(2)
+				take_damage(20)
+			if(3)
+				take_damage(10)
+		
 
 // Gets the limb this organ is located in, if any
 /obj/item/organ/proc/get_limb()

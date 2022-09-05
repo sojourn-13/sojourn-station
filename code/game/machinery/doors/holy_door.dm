@@ -28,7 +28,7 @@
 
 /obj/item/clothing/accessory/magatama
 	name = "magatama necklace"
-	desc = "A curved, comma-shaped jewel made out of precious stone. Simply looking at this stone is enough to make one more calm and confident. It is said Amaterasu herself - one of the absolute's masks - held this specific Magatama herself, and anyone that holds this jewel while meditating long enough, finds inner peace easier than in any other way.  In fact, during times of turmoil it became well know to allow vectors to touch the Magatama before sleeping on monasteries, due to it's non-chemically related, calming properties. It is also said this Jewel was totally unrepaired by the church, and because of time, shows some external damages and scratches."
+	desc = "A large jade stone with a hole in it, showing some signs of wear. Church legends say it was the personal possession of the first matyred Monomial, and alledge that its touch can calm even the most disquieted soul."
 	icon = 'icons/inventory/accessory/icon.dmi'
 	icon_state = "magatama"
 	item_state = "magatama"

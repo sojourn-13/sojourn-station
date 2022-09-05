@@ -52,50 +52,52 @@
 
 /datum/component/modification/organ/on_cooldown
 	exclusive_type = /obj/item/modification/organ/internal/special/on_cooldown
-	trigger_signal = COMSIG_ABERRANT_COOLDOWN
+	trigger_signal = COMSIG_ABERRANT_SECONDARY
 
 /datum/component/modification/organ/on_cooldown/try_modify()
 	return
 
 /datum/component/modification/organ/on_cooldown/chemical_effect
 	var/effect
-	var/magnitude
 
 /datum/component/modification/organ/on_cooldown/chemical_effect/get_function_info()
-	var/effect_name
-	switch(effect)
-		if(CE_BLOODRESTORE)
-			effect_name = "blood restoration"
-		if(CE_BLOODCLOT)
-			effect_name = "blood clotting"
-		if(CE_PAINKILLER)
-			effect_name = "painkiller"
-		if(CE_ANTITOX)
-			effect_name = "anti-toxin"
-		if(CE_TOXIN)
-			effect_name = "toxin"
-		if(CE_SPEEDBOOST)
-			effect_name = "augmented agility"
-		else
-			effect_name = "none"
+	var/datum/reagent/hormone/H
+	if(ispath(effect, /datum/reagent/hormone))
+		H = effect
 
-	var/description = "<span style='color:purple'>Functional information (secondary):</span> produces a chemical effect in the body"
-	description += "\n<span style='color:purple'>Effect produced:</span> [effect_name] ([magnitude])"
+	var/effect_desc
+	switch(effect)
+		if(/datum/reagent/hormone/bloodrestore, /datum/reagent/hormone/bloodrestore/alt)
+			effect_desc = "blood restoration"
+		if(/datum/reagent/hormone/bloodclot, /datum/reagent/hormone/bloodclot/alt)
+			effect_desc = "blood clotting"
+		if(/datum/reagent/hormone/painkiller, /datum/reagent/hormone/painkiller/alt)
+			effect_desc = "painkiller"
+		if(/datum/reagent/hormone/antitox, /datum/reagent/hormone/antitox/alt)
+			effect_desc = "anti-toxin"
+		if(/datum/reagent/hormone/oxygenation, /datum/reagent/hormone/oxygenation/alt)
+			effect_desc = "oxygenation"
+		if(/datum/reagent/hormone/speedboost, /datum/reagent/hormone/speedboost/alt)
+			effect_desc = "augmented agility"
+
+	var/description = "<span style='color:purple'>Functional information (secondary):</span> secretes a hormone"
+	description += "\n<span style='color:purple'>Effect produced:</span> [effect_desc] (type ["[initial(H.hormone_type)]"])"
 
 	return description
 
-/datum/component/modification/organ/on_cooldown/chemical_effect/trigger(obj/item/holder, mob/owner)
+/datum/component/modification/organ/on_cooldown/chemical_effect/trigger(obj/item/holder, mob/living/carbon/owner)
 	if(!holder || !owner)
 		return
 	if(!istype(holder, /obj/item/organ/internal/scaffold))
 		return
 
 	var/obj/item/organ/internal/scaffold/S = holder
-	var/effect_multiplier = (S.max_damage - S.damage) / S.max_damage
+	var/organ_multiplier = ((S.max_damage - S.damage) / S.max_damage) * (S.aberrant_cooldown_time / (2 SECONDS))	// Life() is called every 2 seconds
+	var/datum/reagents/metabolism/RM = owner.get_metabolism_handler(CHEM_BLOOD)
 
-	if(ishuman(owner))
-		var/mob/living/carbon/human/H = owner
-		H.add_chemical_effect(effect, magnitude * effect_multiplier)
+	var/datum/reagent/output = effect
+	var/amount_to_add = initial(output.metabolism) * organ_multiplier
+	RM.add_reagent(initial(output.id), amount_to_add)
 
 /datum/component/modification/organ/on_cooldown/stat_boost
 	var/stat
@@ -119,4 +121,4 @@
 
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner
-		H.stats.addTempStat(stat, boost * effect_multiplier, delay, holder)
+		H.stats.addTempStat(stat, boost * effect_multiplier, delay, "\ref[parent]")

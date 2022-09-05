@@ -864,6 +864,74 @@
 	item_state = "ninja_scarf"
 	siemens_coefficient = 0
 
+//Sprites by Michiyamenotehifunana and Occulist
+/obj/item/clothing/accessory/shemaugh
+	name = "shemaugh"
+	desc = "A piece of light fabric, suited for protection in hot, arid climates."
+	icon_state = "shemaugh"
+	item_state = "shemaugh"
+
+/obj/item/clothing/accessory/shemaugh/blue
+	name = "blue shemaugh"
+	icon_state = "shemaugh-blue"
+	item_state = "shemaugh-blue"
+
+/obj/item/clothing/accessory/shemaugh/red
+	name = "red shemaugh"
+	icon_state = "shemaugh-red"
+	item_state = "shemaugh-red"
+
+/obj/item/clothing/accessory/shemaugh/grey
+	name = "grey shemaugh"
+	icon_state = "shemaugh-grey"
+	item_state = "shemaugh-grey"
+
+/obj/item/clothing/accessory/shemaugh/purple
+	name = "purple shemaugh"
+	icon_state = "shemaugh-purple"
+	item_state = "shemaugh-purple"
+
+/obj/item/clothing/accessory/shemaugh/pink
+	name = "pink shemaugh"
+	icon_state = "shemaugh-pink"
+	item_state = "shemaugh-pink"
+
+/obj/item/clothing/accessory/shemaugh/brown
+	name = "brown shemaugh"
+	icon_state = "shemaugh-brown"
+	item_state = "shemaugh-brown"
+
+/obj/item/clothing/accessory/shemaugh/copper
+	name = "copper shemaugh"
+	icon_state = "shemaugh-copper"
+	item_state = "shemaugh-copper"
+
+/obj/item/clothing/accessory/shemaugh/orange
+	name = "orange shemaugh"
+	icon_state = "shemaugh-orange"
+	item_state = "shemaugh-orange"
+
+/obj/item/clothing/accessory/shemaugh/yellow
+	name = "yellow shemaugh"
+	icon_state = "shemaugh-yellow"
+	item_state = "shemaugh-yellow"
+
+/obj/item/clothing/accessory/shemaugh/lime
+	name = "lime shemaugh"
+	icon_state = "shemaugh-lime"
+	item_state = "shemaugh-lime"
+
+/obj/item/clothing/accessory/shemaugh/cyan
+	name = "cyan shemaugh"
+	icon_state = "shemaugh-cyan"
+	item_state = "shemaugh-cyan"
+
+/obj/item/clothing/accessory/shemaugh/ice
+	name = "ice shemaugh"
+	icon_state = "shemaugh-ice"
+	item_state = "shemaugh-ice"
+
+//End of sprites by Michiyamenotehifunana and Occulist
 /*One-Off Stuff*/
 
 /obj/item/clothing/accessory/dropstraps

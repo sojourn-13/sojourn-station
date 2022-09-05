@@ -26,6 +26,10 @@
 	var/dreaming_king = TRUE
 	var/hound_of_the_crown = FALSE
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
+	fast_respawn = 1 MINUTES
+	slow_respawn = 3 MINUTES
+	respawn_mob_type = /obj/random/cluster/psi_monster
+	affects_chaos = TRUE
 
 /mob/living/carbon/superior_animal/psi_monster/dreaming_king/hound_crown
 	name = "Hound of the Crown"
@@ -42,7 +46,10 @@
 	second_teleport_callout = "<b><font size='3px'>\the Hound of the Crown looses an agonized howl before journeying to nowhere, its words echoing, \"Nobody stands before the king!\" Nearby howls can be heard echoing through the halls in answer!</font></b>"
 	dreaming_king = FALSE
 	hound_of_the_crown = TRUE
-
+	fast_respawn = 1 MINUTES
+	slow_respawn = 3 MINUTES
+	respawn_mob_type = /obj/random/cluster/psi_monster
+	affects_chaos = TRUE
 
 /obj/random/psi_megafauna
 	name = "random calamity"

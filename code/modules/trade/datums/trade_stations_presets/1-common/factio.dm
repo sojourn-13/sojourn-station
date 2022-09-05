@@ -42,7 +42,7 @@
 			/obj/item/modular_computer = good_data("Computer Frame", list(-9900, -9850), 10),
 			/obj/item/construct/conveyor = good_data("Conveyor Belt", list(-9900, -9850), 15),
 			/obj/item/construct/conveyor_switch = good_data("Conveyor Switch Frame", list(-900, -850), 15),
-			/obj/item/grenade = good_data("Grenage Case", list(-9900, -9850), 350),
+			/obj/item/grenade = good_data("Grenage Case", list(-9900, -9850), 150),
 			/obj/item/handcuffs = good_data("Hand Cuffs", list(-9900, -9850), 100),
 			/obj/item/shield = good_data("Shield", list(-9900, -850), 250),
 			/obj/item/gun_upgrade = good_data("Gun Upgrade", list(-9900, -9850), 350),

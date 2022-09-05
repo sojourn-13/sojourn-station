@@ -6,6 +6,13 @@
 	armor_list = list(melee = 25, bullet = 10, energy = 25, bomb = 0, bio = 0, rad = 0)
 	price_tag = 250
 
+/obj/item/clothing/gloves/runed
+	name = "rune gloves"
+	desc = "An expensive designers gloves fitted with a golden ring and engraved with decretive runes."
+	icon_state = "runed_glove_ring"
+	item_state = "runed_glove_ring"
+	price_tag = 220
+
 /obj/item/clothing/gloves/cyborg
 	desc = "Beep boop."
 	name = "cyborg gloves"

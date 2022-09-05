@@ -411,7 +411,7 @@
 
 /obj/item/reagent_containers/glass/replenishing/chalice
 	name = "Holy Chalice"
-	desc = "One of the important relics of the Church of the Absolute. It was only possible to discover where the Holy Chalice was with the Absolute's guidance, found under debris of an ancient church in Morroco before the exodus to the colony, the Holy Chalice has been repaired and bathed in gold after so many centuries, treated as a common chalice without the knowledge of the prior holders. This chalice was once held by Jesus Christ himself during the Last Supper. Today, to manifest the power of Christ - the chalice has been blessed by absolute's lights to transform air moisture into church's wine. As much as this may provide Wine for the vectors, this is kept for only the gaze to drink - not the mouth - as this liquid is only for the entity or person that belongs to the Christian doctrine of the Trinity, with that said - anyone drinking from that chalice is stealing from Christ himself."
+	desc = "One of the church's most sacred relics, discovered by Augustine on a pilgrimage at the height of the Church's power. It fills eternally with the Church's healing sacremental wine. The wine in this cup is said to be the presence of the Absolute itself; it is only to be drunk in the most holy of ceremonies or the most dire of emergencies. To do otherwise is dire blasphemy."
 	icon_state = "holy_chalice"
 	price_tag = 8000
 

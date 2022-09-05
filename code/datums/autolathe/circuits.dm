@@ -106,7 +106,7 @@
 
 /datum/design/autolathe/circuit/trade_beacon_sending
 	name = "trade sending beacon"
-	build_path = /obj/item/circuitboard/trade_beacon/sending_beacon
+	build_path = /obj/item/circuitboard/trade_beacon/sending
 
 //Soj thing
 /datum/design/autolathe/circuit/nanite_reconstitution_apparatus

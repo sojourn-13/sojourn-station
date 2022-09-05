@@ -5902,21 +5902,11 @@
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
-"uU" = (
-/obj/structure/table/onestar,
-/obj/landmark/join/start/outsider,
-/turf/simulated/floor/carpet,
-/area/nadezhda/outside/one_star/fo_internal)
 "uV" = (
-/obj/landmark/join/late/dormitory_outsider,
 /obj/structure/bed/padded,
 /obj/random/furniture/bedsheet,
 /turf/simulated/floor/carpet,
 /area/nadezhda/outside/one_star/fo_internal)
-"uW" = (
-/obj/machinery/cryopod/dormitory,
-/turf/simulated/floor/carpet,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
 "uX" = (
 /obj/structure/table/onestar,
 /obj/item/reagent_containers/food/drinks/mug/black,
@@ -37801,7 +37791,7 @@ mA
 ac
 kV
 ac
-uU
+kN
 uV
 ac
 cV
@@ -38258,7 +38248,7 @@ kO
 kZ
 kO
 kM
-uW
+kM
 ac
 cV
 bg

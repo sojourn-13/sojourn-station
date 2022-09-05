@@ -46,6 +46,7 @@
 
 	// Type of ore to spawn when the termite dies, even in maints we still drop ore correct
 	var/ore
+	var/dropped_ore = FALSE
 
 // Mine a tile
 /mob/living/carbon/superior_animal/termite_no_despawn/proc/mine(turf/simulated/mineral/M)
@@ -57,7 +58,8 @@
 /mob/living/carbon/superior_animal/termite_no_despawn/death(message = deathmessage)
 	..()
 // Spawn ores
-	if(ore)
+	if(ore && !dropped_ore)
+		dropped_ore = TRUE
 		var/nb_ores = rand(3, 5)
 		for(var/i in 1 to nb_ores)
 			new ore(loc)
