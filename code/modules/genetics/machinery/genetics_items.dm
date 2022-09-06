@@ -329,8 +329,8 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	if(issynthetic(target))
 		to_chat(user, SPAN_WARNING("The needle can't pierce synthetic casing- and anything held inside probably wouldn't work on a robot."))
 		return
-    
-    if(istype(target, /mob/living/carbon/human))
+
+	if(istype(target, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = target
 		if(H && H.species && H.species.reagent_tag == IS_SYNTHETIC)
 			to_chat(user, SPAN_WARNING("The needle can't pierce synthetic casing- and anything held inside probably wouldn't work on a robot."))
