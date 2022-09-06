@@ -7,7 +7,6 @@
 	var/static/list/exempt_areas = typesof(
 		/area/space, /area/skipjack_station,
 		/area/shuttle, /area/holodeck,
-		/area/supply/station,
 		/area/turbolift, /area/mine,
 		/area/nadezhda/quartermaster/mining_outside_doc)
 
