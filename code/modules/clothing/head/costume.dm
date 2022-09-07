@@ -246,6 +246,12 @@
 	icon_state = "jester2"
 	desc = "The extravagant jangly hat of a court jester."
 
+/obj/item/clothing/head/costume/livesey
+	name = "naval surgeon tricorne"
+	desc = "A tricorne worn by naval surgeons of antiquity, complete with an advocate wig."
+	icon_state = "livesey"
+	flags_inv = HIDEEARS|BLOCKHAIR
+
 /*Job*/
 
 /obj/item/clothing/head/costume/job/mailman

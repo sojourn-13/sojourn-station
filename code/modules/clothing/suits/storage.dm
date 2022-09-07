@@ -248,7 +248,6 @@
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
-	allowed = list (/obj/item/device/flash, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight,/obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
 
 /obj/item/clothing/suit/storage/snowsuit/command
 	name = "command snowsuit"
@@ -773,7 +772,6 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	icon_state = "hellvest"
 	item_state = "hellvest"
 	item_state_slots = list(slot_r_hand_str = "wcoat", slot_l_hand_str = "wcoat")
-	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
 	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 	slot_flags = SLOT_OCLOTHING
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -914,7 +912,6 @@ obj/item/clothing/suit/sweater/blue
 	desc = "A snappy tan suit jacket."
 	icon_state = "tan_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
-	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
 
 /obj/item/clothing/suit/storage/suitjacket/helltaker
 	name = "white suit jacket"
@@ -1068,4 +1065,18 @@ obj/item/clothing/suit/sweater/blue
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
+/obj/item/clothing/suit/storage/suitjacket/livesey // The word Rum and the word Death should mean the same to you. - Seb
+	name = "Naval Surgeon jacket"
+	desc = "An archaic, green jacket meant for a naval surgeon to dress formally while still being on duty."
+	icon_state = "livesey"
+	item_state = "livesey"
+	armor_list = list(
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 10,
+		rad = 0
+	)
 
