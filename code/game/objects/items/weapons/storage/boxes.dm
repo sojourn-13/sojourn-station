@@ -802,23 +802,6 @@ Boxes with clothing on them, unable to put them back if taken out because...
 		new /obj/random/toy/plushie_onlysquid(src)
 		new /obj/item/device/binoculars(src)
 
-/obj/item/storage/box/livesey
-	name = "Naval Surgeon outfit box"
-	desc = "A box filled with apparel befitting an archaic naval surgeon."
-	icon_state = "box_of_doom_big"
-
-	New()
-		..()
-		new /obj/item/clothing/under/suit_jacket/livesey(src)
-		new /obj/item/clothing/gloves/latex/regal(src)
-		new /obj/item/clothing/shoes/leather/regal(src)
-		new /obj/item/clothing/suit/storage/suitjacket/livesey(src)
-		new /obj/item/clothing/head/costume/livesey(src)
-		new /obj/item/reagent_containers/food/drinks/bottle/rombuty(src) // The words "Rum"...
-		new /obj/item/toy/badtothebone(src) // ...and "death" mean the same to you.
-		new /obj/item/tool/sword/saber(src)
-		new /obj/item/clothing/accessory/holster/saber(src)
-
 
 // Guild boxes, exclusively used to mass craft guild parts.
 /obj/item/storage/box/guild_manip
