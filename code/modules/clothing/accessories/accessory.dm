@@ -1441,3 +1441,11 @@
 	desc = "A passport issued to Kriosans by the Kriosan Government who are working or living on Amethyn, in the Chromin 8 system."
 	icon_state = "workvisa"
 	item_state = "kuri"
+
+/obj/item/clothing/accessory/hunter_necklace
+	name = "Fang Tooth Necklace"
+	desc = "A collection of pristine fangs taken from the prey of the hunt tied with some leather strapping."
+	icon_state = "btnecklace"
+	item_state = "btnecklace"
+	slot_flags = SLOT_MASK | SLOT_ACCESSORY_BUFFER
+	price_tag = 1500
