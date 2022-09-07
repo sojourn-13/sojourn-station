@@ -188,8 +188,6 @@
 	new /obj/item/device/defib_kit/compact/combat/adv/loaded/cbo(src)
 	new /obj/item/oddity/chem_book(src)
 	new /obj/item/storage/hcases/med(src)
-	if(prob(25))
-		new /obj/item/storage/box/costume/livesey(src)
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control closet"
