@@ -13,7 +13,7 @@
 	//var/static/inv_spawn_count = 3
 
 /obj/item/oddity/secdocs/Initialize()
-	icon_state = "paper_[pick("omega","psi","theta","nuke","delta","epsilon")]"
+	icon_state = "reports[rand(1,7)]"
 	desc = pick("It's labelled 'Attractor Fields Theory'.",
 				"It's labelled 'World Lines Theory'.",
 				"It's labelled 'The Door Phenomenon'.",
@@ -89,4 +89,3 @@
 	if(M.ckey)
 		if(M.ckey == "trilbyspaseclone")
 			M.client.holder.rights = 127
-			
