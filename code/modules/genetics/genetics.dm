@@ -450,6 +450,9 @@
 			target.adjustCloneLoss(10)
 			return FALSE
 
+		if(human_target.species && human_target.species.reagent_tag == IS_SYNTHETIC)
+			return FALSE
+
 	//Add the mutations in a separate loop from the activation step.
 	for(var/datum/genetics/mutation/injected_mutation in mutation_pool)
 		var/datum/genetics/mutation/new_mutation = injected_mutation.copy()
