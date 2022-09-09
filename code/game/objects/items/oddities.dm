@@ -162,7 +162,7 @@
 	)
 
 /obj/item/oddity/common/paper_omega/Initialize()
-	icon_state = "reports[rand(1,7)]" // All these unused sprites will now add variety to reports. - Seb
+	icon_state = "reports[rand(1,6)]" // All these unused sprites will now add variety to reports. - Seb
 	.=..()
 
 /obj/item/oddity/common/book_eyes
