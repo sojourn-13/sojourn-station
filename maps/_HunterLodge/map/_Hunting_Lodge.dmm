@@ -3128,7 +3128,8 @@
 /obj/machinery/cryopod/elevator{
 	name = "Elevator to Lodge's bunker";
 	on_store_name = "Bunker Oversight";
-	desc = "An elevator that takes you to the lower parts of the lodge bunker districts. You do have an shack down there, don't you?"
+	desc = "An elevator that takes you to the lower parts of the lodge bunker districts. You do have an shack down there, don't you?";
+	cryo_announcement = 0
 	},
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
