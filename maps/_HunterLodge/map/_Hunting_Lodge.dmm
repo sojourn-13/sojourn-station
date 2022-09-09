@@ -649,11 +649,14 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "dz" = (
-/obj/structure/closet/chefcloset,
 /obj/item/soap/hunters,
 /obj/item/tool_upgrade/productivity/whetstone,
 /obj/item/tool_upgrade/productivity/whetstone,
 /obj/item/reagent_containers/spray/cleaner,
+/obj/structure/closet/secure_closet/freezer,
+/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/food/snacks/meat,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dA" = (
