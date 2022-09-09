@@ -13,7 +13,7 @@
 	//var/static/inv_spawn_count = 3
 
 /obj/item/oddity/secdocs/Initialize()
-	icon_state = "reports[rand(1,7)]"
+	icon_state = "reports[rand(1,6)]"
 	desc = pick("It's labelled 'Attractor Fields Theory'.",
 				"It's labelled 'World Lines Theory'.",
 				"It's labelled 'The Door Phenomenon'.",
