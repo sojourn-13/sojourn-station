@@ -2470,9 +2470,6 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "Ez" = (
 /obj/machinery/photocopier,
-/obj/item/gun/projectile/boltgun/sci{
-	pixel_y = 32
-	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "EG" = (
@@ -2611,6 +2608,10 @@
 /obj/machinery/chemical_dispenser/soda,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
+"HM" = (
+/obj/item/gun/projectile/boltgun/sci,
+/turf/simulated/wall/wood_barrel,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "HP" = (
 /obj/structure/table/rack/shelf,
 /obj/item/tool/knife/dagger,
@@ -5109,7 +5110,7 @@ aa
 jY
 tz
 zF
-Xo
+Ez
 sp
 sp
 NR
@@ -5186,8 +5187,8 @@ jY
 aa
 jY
 tz
-zF
-Ez
+HM
+Xo
 JB
 yr
 zF
