@@ -109,7 +109,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/recentwield = 0 // to prevent spammage
 	var/proj_step_multiplier = 1
 	var/proj_pve_damage_multiplier = 1 //Damage against mobs that are not player multiplier
-	var/list/proj_damage_adjust = list() //What additional damage do we give to the bullet. Type(string) -> Amount(int)
+	var/list/proj_damage_adjust = list() //What additional damage do we give to the bullet. Type(string) -> Amount(int), damage is divided for pellets
 
 	var/eject_animatio = FALSE //Only currenly in bolt guns. Check boltgun.dm for more information on this
 	var/fire_animatio = FALSE //Only used in revolvers atm, animation for each shot being fired
