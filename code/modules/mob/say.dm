@@ -137,7 +137,7 @@
 /mob/proc/say_quote(message, datum/language/speaking = null)
 	var/verb = "says"
 	var/ending = copytext(message, length(message))
-	if(ending=="!")
+	if(ending=="!!")
 		verb=pick("exclaims", "shouts", "yells")
 	else if(ending=="?")
 		verb="asks"
