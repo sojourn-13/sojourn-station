@@ -172,7 +172,7 @@
 	//no check for grab levels
 	visible_message(SPAN_DANGER("[attacker] thrusts \his fist in [target]'s guts!"))
 	var/damage = max(1, (10 - target.stats.getStat(STAT_TGH) / 4))//40+ TGH = 1 dmg
-	target.damage_through_armor(damage, BRUTE, BP_GROIN, ARMOR_MELEE, wounding_multiplier = 2)
+	target.damage_through_armor(damage, BRUTE, BP_GROIN, ARMOR_MELEE)
 	//vomiting goes on cd for 35 secs, which means it's impossible to spam this
 	target.vomit(TRUE)
 	//admin messaging
