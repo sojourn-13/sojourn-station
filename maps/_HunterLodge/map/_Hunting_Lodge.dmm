@@ -23,7 +23,11 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "ah" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/toolbox/syndicate,
+/obj/item/tool/hammer,
+/obj/item/tool/hammer,
+/obj/item/tool/hammer,
+/obj/item/tool/hammer,
+/obj/item/tool/hammer,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ai" = (
@@ -65,10 +69,7 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "aq" = (
-/obj/machinery/optable/altar{
-	name = "spiritual altar";
-	desc = "The altar of the hunters."
-	},
+/obj/structure/table/marble,
 /turf/simulated/floor/carpet,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ar" = (
@@ -80,7 +81,7 @@
 	name = "wooden fence"
 	},
 /obj/item/gun/projectile/boltgun/lever,
-/obj/item/gun/projectile/boltgun/lever,
+/obj/item/ammo_magazine/ammobox/magnum_40,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "at" = (
@@ -196,7 +197,8 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "bc" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/hunter/leather,
+/obj/item/stack/material/plasteel/random,
+/obj/item/stack/material/plasteel/random,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "bg" = (
@@ -419,11 +421,11 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/hunting_lodge)
 "cg" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/hopdouble,
-/obj/landmark/join/start/hunt_master,
-/turf/simulated/floor/wood/wild3,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
+/obj/structure/table/rack/shelf,
+/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
+/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
 "co" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -503,13 +505,10 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "cJ" = (
 /obj/structure/table/rack/shelf,
-/obj/item/ammo_casing/arrow/hunting/heavy/bulk,
-/obj/item/ammo_casing/arrow/hunting/heavy/bulk,
-/obj/item/ammo_casing/arrow/hunting/heavy/bulk,
-/obj/item/ammo_casing/arrow/hunting/heavy/bulk,
-/obj/item/ammo_casing/arrow/hunting/heavy/bulk,
-/obj/item/ammo_casing/arrow/hunting/heavy/bulk,
-/obj/item/ammo_casing/arrow/hunting/heavy/bulk,
+/obj/item/device/lighting/toggleable/lantern,
+/obj/item/device/lighting/toggleable/lantern,
+/obj/item/device/lighting/toggleable/lantern,
+/obj/item/device/lighting/toggleable/lantern,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "cK" = (
@@ -536,7 +535,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "cR" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/hunter,
+/obj/item/stack/material/steel/full,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "cS" = (
@@ -553,7 +552,8 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "cZ" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/hunter/reinforced,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "db" = (
@@ -694,15 +694,10 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dN" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/head/helmet/hunter,
-/obj/item/clothing/head/helmet/hunter,
-/obj/item/clothing/head/helmet/hunter,
-/obj/item/clothing/head/helmet/hunter,
-/obj/item/clothing/head/helmet/hunter/stalker,
-/obj/item/clothing/head/helmet/hunter/stalker,
-/obj/item/clothing/head/helmet/hunter/stalker,
 /obj/machinery/light,
+/obj/structure/table/woodentable,
+/obj/random/booze/low_chance,
+/obj/random/booze/low_chance,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "dO" = (
@@ -779,7 +774,10 @@
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dZ" = (
-/obj/structure/reagent_dispensers/meadkeg,
+/obj/structure/table/rack/shelf,
+/obj/item/stack/cable_coil/random,
+/obj/item/stack/cable_coil/random,
+/obj/item/stack/cable_coil/random,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ea" = (
@@ -948,18 +946,15 @@
 "fk" = (
 /obj/structure/table/rack/shelf,
 /obj/item/ammo_casing/arrow/hunting/heavy/bulk,
-/obj/item/ammo_casing/arrow/hunting/heavy/bulk,
-/obj/item/ammo_casing/arrow/hunting/heavy/bulk,
-/obj/item/ammo_casing/arrow/hunting/heavy/bulk,
-/obj/item/ammo_casing/arrow/hunting/heavy/bulk,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fl" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
-/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
-/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
-/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
+/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/computer_hardware/hard_drive/portable/design/janitor,
+/obj/item/computer_hardware/hard_drive/portable/basic,
+/obj/item/computer_hardware/hard_drive/portable/design/security,
+/obj/item/computer_hardware/hard_drive/portable/design/medical,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fr" = (
@@ -1064,7 +1059,6 @@
 /obj/item/computer_hardware/hard_drive/portable/design/misc,
 /obj/item/computer_hardware/hard_drive/portable/design/janitor,
 /obj/item/computer_hardware/hard_drive/portable/basic,
-/obj/item/computer_hardware/hard_drive/portable/design/adv_tools,
 /obj/item/computer_hardware/hard_drive/portable/design/security,
 /obj/item/computer_hardware/hard_drive/portable/design/medical,
 /obj/structure/railing{
@@ -1311,11 +1305,16 @@
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/hunting_lodge)
 "hg" = (
-/obj/structure/table/woodentable,
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	matter = list("wood"=4);
 	name = "wooden fence"
+	},
+/obj/structure/sink{
+	density = 1;
+	desc = "A small fountain of polished stone and has a small pump at the bottom that helps push fresh water.";
+	icon_state = "BaptismFont_Water";
+	name = "Water Fountain"
 	},
 /turf/simulated/floor/carpet,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -1458,7 +1457,9 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "iv" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/hunter/bone,
+/obj/item/stack/material/glass/random,
+/obj/item/stack/material/glass/random,
+/obj/item/stack/material/glass/random,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ix" = (
@@ -1536,11 +1537,6 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "iU" = (
 /obj/machinery/autolathe/industrial,
-/obj/item/stack/material/steel/full,
-/obj/item/stack/material/plasteel/full,
-/obj/item/stack/material/wood/full,
-/obj/item/stack/material/cardboard/full,
-/obj/item/stack/material/glass/full,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "iW" = (
@@ -1671,7 +1667,6 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "jX" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/revolver/rev10/rex10,
 /obj/item/gun/projectile/revolver/rev10/rex10,
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
@@ -2404,6 +2399,14 @@
 	},
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Da" = (
+/obj/structure/table/rack/shelf,
+/obj/item/beartrap,
+/obj/item/beartrap,
+/obj/item/beartrap,
+/obj/item/beartrap,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Db" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/cryopod/robot,
@@ -2573,6 +2576,10 @@
 /obj/effect/floor_decal/industrial/stand_clear,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/outside/forest/hunting_lodge)
+"GH" = (
+/obj/structure/bed/chair/sofa/beige/left,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Hh" = (
 /obj/structure/bookcase,
 /obj/item/book/manual/nonfiction/ageofreason,
@@ -2601,6 +2608,8 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "HJ" = (
 /obj/item/trash/cigbutt/cigarbutt,
+/obj/structure/table/woodentable,
+/obj/item/material/ashtray,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "HK" = (
@@ -2681,6 +2690,10 @@
 /obj/structure/cable,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
+"Jx" = (
+/obj/structure/bed/chair/sofa/beige/right,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "JB" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/wood/wild3,
@@ -2769,11 +2782,11 @@
 /turf/simulated/wall/wood_barrel,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Ms" = (
-/obj/structure/table/rack/shelf,
 /obj/item/device/synthesized_instrument/guitar{
 	desc = "A wooden musical instrument with six strings. This guitar has seen more history then most hunters. Inscribed on the back of it is 'Charles Astra, Hunt Master'.";
 	name = "Worn Guitar"
 	},
+/obj/structure/table/woodentable,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "MV" = (
@@ -3236,6 +3249,13 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
+"Yq" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Master Armory";
+	req_access = list(80)
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "YS" = (
 /obj/structure/flora/rock,
 /turf/simulated/floor/asteroid/dirt/burned,
@@ -4592,7 +4612,7 @@ bu
 at
 ca
 at
-ix
+Da
 at
 bn
 et
@@ -4670,14 +4690,14 @@ bk
 at
 cJ
 at
-ix
+cg
 at
 by
 et
 cR
 sp
 sp
-sp
+dZ
 ed
 uv
 gw
@@ -5113,9 +5133,9 @@ zF
 Ez
 sp
 sp
-NR
+Yq
 ES
-dZ
+PK
 zF
 eL
 zF
@@ -5192,8 +5212,8 @@ Xo
 JB
 yr
 zF
-cg
-PK
+sp
+OU
 zF
 tz
 tz
@@ -5270,8 +5290,8 @@ tb
 sp
 wS
 zF
-zF
-zF
+TS
+PD
 zF
 tz
 tz
@@ -5348,8 +5368,8 @@ zF
 NR
 zF
 zF
-dl
-bv
+zF
+zF
 zF
 tz
 tz
@@ -5422,12 +5442,12 @@ jY
 jY
 tz
 zF
-TS
+bv
 sp
 OY
 sp
 sp
-sz
+dl
 zF
 tz
 tz
@@ -5500,11 +5520,11 @@ Ju
 jY
 tz
 zF
-PD
+Jx
 sp
 Mj
 sp
-IC
+sz
 zF
 zF
 zF
@@ -5578,7 +5598,7 @@ jY
 jY
 tz
 zF
-OU
+GH
 RM
 kt
 XZ
@@ -5659,7 +5679,7 @@ zF
 Ms
 HJ
 QF
-sp
+IC
 sp
 dC
 sp
