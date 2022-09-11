@@ -8,7 +8,4 @@
 			GLOB.cwj_recipe_dictionary[example_recipe.cooking_container] = list()
 		GLOB.cwj_recipe_dictionary[example_recipe.cooking_container]["[example_recipe.unique_id]"] = example_recipe
 
-//Pre-populates all the HTML Templates for the cooking program.
-//This is how the whole recipe book functions, btw.
-//BIG TODO
-/proc/initialize_cooking_templates()
+		GLOB.cwj_recipe_list += example_recipe

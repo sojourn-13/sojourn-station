@@ -32,6 +32,8 @@ Food quality is calculated based on the steps taken.
 	var/cooking_container = null
 
 	var/product_type //Type path for the product created by the recipe. An item of this type should ALSO have a recipe_tracker Datum.
+	var/product_name
+	var/product_count = 1 //how much of a thing is made per case of the recipe being followed.
 
 	//Special variables that must be defined INSTEAD of product_type in order to create reagents instead of an object.
 	var/reagent_id
@@ -39,9 +41,7 @@ Food quality is calculated based on the steps taken.
 	var/reagent_name
 	var/reagent_desc
 
-	var/color //Auto populates if we're dealing with a dollop
-
-	var/product_count = 1 //how much of a thing is made per case of the recipe being followed.
+	var/icon_image_file
 
 	var/quality_description //A decorator description tacked onto items when the recipe is completed. Used in future recipes. "The Bread looks Handmade."
 
@@ -55,6 +55,7 @@ Food quality is calculated based on the steps taken.
 
 	var/replace_reagents = FALSE //Determines if we entirely replace the contents of the food product with the slurry that goes into it.
 
+	var/appear_in_default_catalog = TRUE //Everything appears in the catalog by default
 	/*
 		The Step Builder is iterated through to create new steps in the recipe dynamically.
 		_OPTIONAL steps are linked to the previously made REQUIRED step
@@ -77,39 +78,28 @@ Food quality is calculated based on the steps taken.
 
 	if(ispath(product_type))
 		var/obj/item/product_info = new product_type()
+		product_name = product_info.name
 		if(!name)
 			name = product_info.name
 
 		if(!description)
 			description = product_info.desc
 
-		if(!(recipe_icon && recipe_icon_state))
-			recipe_icon = product_info.icon
-			recipe_icon_state = product_info.icon_state
-			color = product_info.color
 		QDEL_NULL(product_info) //We don't need this anymore.
 
 	if(reagent_id)
 		var/datum/reagent/test_reagent = GLOB.chemical_reagents_list[reagent_id]
-		if(!ispath(product_type))
-			if(test_reagent)
-				if(!name)
-					name = test_reagent.name
-				if(!description)
-					description = test_reagent.description
+		if(test_reagent)
+			if(!name)
+				name = test_reagent.name
+			if(!description)
+				description = test_reagent.description
 
-				var/obj/item/reagent_containers/food/snacks/dollop/test_dollop = new(null, reagent_id, reagent_amount)
-				test_dollop.Initialize() //sanity check
+			reagent_name = test_reagent.name
+			reagent_desc = test_reagent.description
 
-
-				recipe_icon = test_dollop.icon
-				recipe_icon_state = test_dollop.icon_state
-				color = test_dollop.color
-				QDEL_NULL(test_dollop)
-		else
-			if(test_reagent)
-				reagent_name = test_reagent.name
-				reagent_desc = test_reagent.description
+	if(!name)
+		name = "NO NAME!"
 
 	unique_id = sequential_id("recipe")
 

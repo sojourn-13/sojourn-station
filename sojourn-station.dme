@@ -1822,6 +1822,7 @@
 #include "code\modules\clothing\under\jobs\security.dm"
 #include "code\modules\clothing\underwear\base.dm"
 #include "code\modules\cooking_with_jane\cooking.dm"
+#include "code\modules\cooking_with_jane\cooking_catalog.dm"
 #include "code\modules\cooking_with_jane\cooking_init.dm"
 #include "code\modules\cooking_with_jane\cooking_tracker.dm"
 #include "code\modules\cooking_with_jane\food_overrides.dm"

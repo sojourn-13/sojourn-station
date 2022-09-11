@@ -69,6 +69,9 @@
 #define J_MED "Medium"
 #define J_HI "High"
 
+//Just a catalog for the cooking catalog
+#define CATALOG_COOKING "cooking"
+
 //Burn times for cooking things on a stove.
 //Anything put on a stove for this long becomes a burned mess.
 #define CWJ_BURN_TIME_LOW		15 MINUTES
@@ -91,9 +94,9 @@ GLOBAL_LIST_EMPTY(cwj_optional_step_exclusion_dictionary)
 //Format: {base_ingedient_type:{unique_id:recipe}}
 GLOBAL_LIST_EMPTY(cwj_recipe_dictionary)
 
-//A dictionary of all recipes by the results. Used later for assembling the HTML list.
-//Format: {base_ingedient_type:{unique_id:recipe}}
-GLOBAL_LIST_EMPTY(cwj_recipe_dictionary_result)
+//A dictionary of all recipes full_stop. Used later for assembling the HTML list.
+//Format: {recipe_type:{unique_id:recipe}}
+GLOBAL_LIST_EMPTY(cwj_recipe_list)
 
 //A dictionary of all steps held within all recipes
 //Format: {unique_id:step}
