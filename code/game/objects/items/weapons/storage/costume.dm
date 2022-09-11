@@ -492,3 +492,19 @@
 	new /obj/item/clothing/under/shorts/athleticblue(src)
 	new /obj/item/clothing/under/shorts/athleticblack(src)
 
+/obj/item/storage/box/costume/livesey
+	name = "Naval Surgeon outfit box"
+	desc = "A box filled with apparel befitting an archaic naval surgeon."
+	icon_state = "box_of_doom_big"
+
+/obj/item/storage/box/costume/livesey/populate_contents()
+	new /obj/item/clothing/under/suit_jacket/livesey(src)
+	new /obj/item/clothing/gloves/latex/regal(src)
+	new /obj/item/clothing/shoes/leather/regal(src)
+	new /obj/item/clothing/suit/storage/suitjacket/livesey(src)
+	new /obj/item/clothing/head/costume/livesey(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/rombuty(src) // The words "Rum"...
+	new /obj/item/toy/badtothebone(src) // ...and "death" mean the same to you.
+	new /obj/item/tool/sword/saber(src)
+	new /obj/item/clothing/accessory/holster/saber(src)
+

@@ -599,7 +599,10 @@ BLIND     // can't see anything
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	allowed = list(
 		/obj/item/clipboard,
-		/obj/item/storage/pouch/,
+		/obj/item/pen,
+		/obj/item/paper,
+		/obj/item/device/flash,
+		/obj/item/storage/pouch,
 		/obj/item/storage/sheath,
 		/obj/item/gun,
 		/obj/item/melee,
@@ -616,6 +619,9 @@ BLIND     // can't see anything
 		/obj/item/device/lighting,
 		/obj/item/device/scanner,
 		/obj/item/reagent_containers/spray,
+		/obj/item/device/lighting/toggleable/flashlight,
+		/obj/item/storage/box/matches,
+		/obj/item/reagent_containers/food/drinks/flask,
 		/obj/item/device/radio,
 		/obj/item/clothing/mask,
 		/obj/item/storage/backpack/duffelbag/guncase,

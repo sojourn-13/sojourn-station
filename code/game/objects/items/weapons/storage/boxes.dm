@@ -726,6 +726,11 @@
 /obj/item/storage/box/data_disk/basic/empty/populate_contents()
 	return
 
+/*
+Boxes with clothing on them, unable to put them back if taken out because...
+...well, boxes can't normally fit clothes on them!
+*/
+
 /obj/item/storage/box/trooperuniform
 	name = "Trooper/Corpsman Service and Dress Kit"
 	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
