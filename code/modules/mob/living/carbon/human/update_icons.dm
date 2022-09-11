@@ -458,11 +458,11 @@ var/global/list/wings_icon_cache = list()
 			//Eris lacks hands and feet. This code should allow hands and feet.
 			//This exists because the sprites are separated over all limbs whereas this codebase doesn't have hands or feet.
 			//Apparently chest and groin are considered disembodied, which I otherwise used to exclude severed limbs.
-			var/valid = (part in organs_by_name) && organs_by_name[part] && ((part in BP_BASE_PARTS) || organs_by_name[part]:dislocated >= 0)
+			var/valid = (part in organs_by_name) && organs_by_name[part] && ((part in BP_BASE_PARTS) || organs_by_name[part]:nerve_struck >= 0)
 			if(!valid)
 				for(var/organ in organs_by_name)
 					var/obj/item/organ/external/O = organs_by_name[organ]
-					if(O.dislocated >= 0 && (part in O.additional_limb_parts))
+					if(O.nerve_struck >= 0 && (part in O.additional_limb_parts))
 						valid = TRUE
 						break
 			if(valid && ("[real_marking.icon_state]-[part]" in icon_states(real_marking.icon)))

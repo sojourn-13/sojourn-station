@@ -67,6 +67,9 @@
 #define COMSIG_ATOM_UNFASTEN "atom_unfasten" // set_anchored()
 #define COMSIG_CLICK_ALT "alt_click"//from atom/AltClick(): (/mob)
 #define COMSIG_CLICK_CTRL "ctrl_click"//from atom/CtrlClick(): (/mob)
+#define COMSIG_SHIFTCLICK "shiftclick" // used for ai_like_control component
+#define COMSIG_CTRLCLICK "ctrlclick" // used for ai_like_control component
+#define COMSIG_ALTCLICK "altclick" // used for ai_like_control component
 
 // /area signals
 #define COMSIG_AREA_SANCTIFY "sanctify_area"
