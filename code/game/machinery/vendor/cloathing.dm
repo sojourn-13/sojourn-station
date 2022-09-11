@@ -33,6 +33,7 @@
 					/obj/item/storage/box/costume/mime = 2,
 					/obj/item/storage/box/costume/mummy = 2,
 					/obj/item/storage/box/costume/napoleonic = 2,
+					/obj/item/storage/box/costume/livesey = 2, // Name is "Naval surgeon outfit", still respects alphabetical order
 					/obj/item/storage/box/costume/nekomaid = 2,
 					/obj/item/storage/box/costume/nurse = 2,
 					/obj/item/storage/box/costume/nun = 2,
@@ -93,6 +94,7 @@
 					/obj/item/storage/box/costume/mime = 100,
 					/obj/item/storage/box/costume/mummy = 100,
 					/obj/item/storage/box/costume/napoleonic = 100,
+					/obj/item/storage/box/costume/livesey = 500, // Has a saber, scabbard and booze, and the items sell for quite a bit.
 					/obj/item/storage/box/costume/nekomaid = 100,
 					/obj/item/storage/box/costume/nurse = 100,
 					/obj/item/storage/box/costume/nun = 100,

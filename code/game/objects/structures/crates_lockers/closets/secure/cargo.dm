@@ -141,7 +141,7 @@
 	else if(prob(50))
 		new /obj/item/gun/projectile/shotgun/pump(src)
 		new /obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet(src)
-		new /obj/item/ammo_magazine/speed_loader_shotgun/empty(src)		
+		new /obj/item/ammo_magazine/speed_loader_shotgun/empty(src)
 	else if(prob(25))
 		new /obj/item/gun/projectile/automatic/vector(src)
 		new /obj/item/ammo_magazine/smg_magnum_40/old(src)
@@ -405,16 +405,17 @@
 	icon_state = "cargo"
 
 /obj/structure/closet/secure_closet/personal/artist/populate_contents()
-	new/obj/item/clothing/suit/artist(src)
-	new/obj/item/clothing/under/rank/artist(src)
-	new/obj/item/clothing/suit/artist(src)
-	new/obj/item/clothing/shoes/artist_shoes(src)
-	new/obj/item/clothing/head/beret/artist(src)
-	new/obj/item/clothing/glasses/artist(src)
-	new/obj/item/clothing/mask/gas/artist_hat(src)
-	new/obj/item/device/radio/headset/headset_cargo(src)
-	new/obj/item/circuitboard/artist_bench(src)
-	new/obj/item/storage/pouch/grow_a_gun(src)
+	new /obj/item/clothing/suit/artist(src)
+	new /obj/item/clothing/under/rank/artist(src)
+	new /obj/item/clothing/suit/artist(src)
+	new /obj/item/clothing/shoes/artist_shoes(src)
+	new /obj/item/clothing/head/beret/artist(src)
+	new /obj/item/clothing/glasses/artist(src)
+	new /obj/item/clothing/mask/gas/artist_hat(src)
+	new /obj/item/device/radio/headset/headset_cargo(src)
+	new /obj/item/circuitboard/artist_bench(src)
+	new /obj/item/storage/pouch/grow_a_gun(src)
+	new /obj/item/toy/badtothebone(src) // They should be able to use this just as much.
 
 /obj/structure/closet/wardrobe/color/pink/artist
 

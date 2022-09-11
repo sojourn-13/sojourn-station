@@ -83,7 +83,7 @@
 		var/mob/M = loc
 		M.visible_message(
 			"[src] slowly burns out.",
-			"And now... the darkness holds dominion – black as death."
+			"And now... the darkness holds dominion - black as death."
 		)
 	else
 		visible_message("[src] slowly burns out")

@@ -216,6 +216,12 @@
     icon_state = "interfacebluesuit"
     item_state = "interfacebluesuit"
 
+/obj/item/clothing/under/suit_jacket/livesey
+	name = "Naval Surgeon's suit"
+	desc = "A formal pair of burgundy pants with a big belt buckle, pairing with a golden buttoned teal jacket, a sign of prestige for naval surgeons."
+	icon_state = "doktor"
+	item_state = "doktor"
+
 /*Modular Suits*/
 
 /obj/item/clothing/under/modular/black
