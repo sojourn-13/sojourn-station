@@ -10,7 +10,7 @@
 	usage_flags = PROGRAM_ALL
 
 /datum/nano_module/cook_catalog
-	name = "Victoria's Incredible Kitchen Assistant"
+	name = "Lonestar (and Soteria) Presents: Victoria's Incredible Kitchen Assistant"
 
 /datum/nano_module/cook_catalog/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_REINITIALIZE, state = GLOB.default_state)
 	var/list/data = ui_data(user)
