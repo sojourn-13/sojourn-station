@@ -189,3 +189,6 @@
 	path = /obj/item/clothing/suit/space/anomaly
 	cost = 2 //Some good armor but slowdown
 */
+ /datum/gear/suit/boxer_jacket
+ 	display_name = "boxer jacket"
+ 	path=/obj/item/clothing/suit/storage/boxer_jacket
