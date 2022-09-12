@@ -92,7 +92,7 @@
 
 		if(/obj/item/modification/organ/internal/output/stat_boost)
 			if(!output_pool?.len)
-				output_pool = ALL_STATS
+				output_pool = ALL_STATS_FOR_LEVEL_UP
 			if(!output_info?.len)
 				for(var/i in 1 to req_num_outputs)
 					output_info += 3

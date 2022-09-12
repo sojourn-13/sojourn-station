@@ -161,6 +161,7 @@ Sword holsters
 	desc = "A white leather weapon sheath mounted around the waist."
 	icon_state = "saber_holster"
 	overlay_state = "saber"
+	slot_flags = SLOT_ACCESSORY_BUFFER|SLOT_BELT
 	slot = "utility"
 	can_hold = list(/obj/item/tool/sword/saber)
 	price_tag = 200

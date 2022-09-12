@@ -186,6 +186,7 @@
 	added_damage_bullet_pve = initial(added_damage_bullet_pve) * newmult
 	added_damage_laser_pve  = initial(added_damage_laser_pve) * newmult
 
+// bullet/pellets redefines this
 /obj/item/projectile/proc/adjust_damages(var/list/newdamages)
 	if(!newdamages.len)
 		return

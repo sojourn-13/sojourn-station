@@ -168,7 +168,9 @@
 		/obj/item/soap,
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
-		/obj/item/oddity/chimeric_fang_trophy
+		/obj/item/oddity/chimeric_fang_trophy,
+		/obj/item/device/binoculars,
+		/obj/item/device/lighting/glowstick/flare/torch
 	)
 
 /obj/item/storage/belt/utility/neotheology
@@ -185,7 +187,8 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
-		/obj/item/gun/energy/ntpistol
+		/obj/item/gun/energy/ntpistol,
+		/obj/item/device/binoculars
 	)
 
 /obj/item/storage/belt/utility/handmade
@@ -359,7 +362,8 @@
 		/obj/item/device/camera,
 		/obj/item/folder,
 		/obj/item/reagent_containers/food/snacks,
-		/obj/item/reagent_containers/food/drinks
+		/obj/item/reagent_containers/food/drinks,
+		/obj/item/device/binoculars // By popular demand. - Seb
 	)
 
 /obj/item/storage/belt/holding
@@ -454,7 +458,8 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
-		/obj/item/gun/energy/ntpistol
+		/obj/item/gun/energy/ntpistol,
+		/obj/item/device/binoculars
 	)
 
 /obj/item/storage/belt/champion

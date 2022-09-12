@@ -132,3 +132,8 @@
 /datum/gear/head/papakha
 	display_name = "black papakha"
 	path = /obj/item/clothing/head/costume/history/anarchist
+
+/datum/gear/head/livesey
+	display_name = "Naval Surgeon Tricorne"
+	path = /obj/item/clothing/head/costume/livesey
+

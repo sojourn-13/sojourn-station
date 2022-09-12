@@ -218,6 +218,14 @@
 	center_of_mass = list("x"=16, "y"=8)
 	preloaded_reagents = list("rum" = 100)
 
+/obj/item/reagent_containers/food/drinks/bottle/rombuty
+	name = "Captain Flint's Secret Rum"
+	desc = "For some reason, to you, the label on this bottle reads the same as Death."
+	icon_state = "rombuty"
+	item_state = "rombuty"
+	center_of_mass = list("x"=16, "y"=8)
+	preloaded_reagents = list("rum" = 100)
+
 /obj/item/reagent_containers/food/drinks/bottle/vermouth
 	name = "Goldeneye Vermouth"
 	desc = "Sweet, sweet dryness~"

@@ -292,6 +292,13 @@
 	w_class = ITEM_SIZE_BULKY
 	attack_verb = list("attacked", "slashed", "stabbed", "poked")
 
+/obj/item/toy/badtothebone // CHANANANA NANA
+	name = "replica skull"
+	desc = "A fake skull for theatrical purposes, it's neither alive nor almighty. Alas, poor Yorick..."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "yorick"
+	item_state = "yorick"
+
 /*
  * Snap pops
  */
