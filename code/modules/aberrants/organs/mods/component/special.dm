@@ -49,6 +49,28 @@
 		var/mob/living/L = owner
 		L.electrocute_act(damage, parent)
 
+/datum/component/modification/organ/on_pickup/parasitic
+
+/datum/component/modification/organ/on_pickup/parasitic/get_function_info()
+	var/description = "<span style='color:purple'>Functional information (secondary):</span> attempts to implant itself into the holder"
+	return description
+
+/datum/component/modification/organ/on_pickup/parasitic/trigger(obj/item/holder, mob/owner)
+	if(!holder || !owner)
+		return
+
+	if(ishuman(owner))
+		var/mob/living/carbon/human/H = owner
+		var/obj/item/organ/external/active_hand = H.get_active_hand_organ()
+		if(H.getarmor_organ(active_hand, ARMOR_MELEE) < 3 && active_hand.get_total_occupied_volume() < active_hand.max_volume)
+			if(istype(holder, /obj/item/organ/internal))
+				var/obj/item/organ/internal/I = holder
+				owner.drop_item(I)
+				I.replaced(active_hand)
+				H.apply_damage(10, HALLOSS, active_hand)
+				H.apply_damage(10, BRUTE, active_hand)
+				to_chat(owner, SPAN_WARNING("\The [holder] forces its way into your [active_hand.name]!"))
+
 
 /datum/component/modification/organ/on_cooldown
 	exclusive_type = /obj/item/modification/organ/internal/special/on_cooldown

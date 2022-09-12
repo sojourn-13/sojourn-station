@@ -20,11 +20,11 @@
 
 	destroy_on_removal = FALSE 
 	removable = TRUE
-	breakable = TRUE		// Needs high Bio or a perk to remove
+	breakable = FALSE
 
 	apply_to_types = list(/obj/item/organ/internal/scaffold)
 
-	examine_msg = "Can be attached to organ scaffolds and abnormal organs."
+	examine_msg = "Can be attached to organ scaffolds and aberrant organs."
 	examine_stat = STAT_BIO
 	examine_difficulty = STAT_LEVEL_EXPERT
 
