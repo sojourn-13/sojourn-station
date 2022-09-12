@@ -1083,7 +1083,7 @@ obj/item/clothing/suit/sweater/blue
 obj/item/clothing/suit/storage/boxer_jacket//I shoulda never smoked that shit now I'm overthrowing the soviet government
 
 	name= "Boxer jacket"
-	desc="Uppercut their heads off"
+	desc="Uppercut their heads off."
 	icon_state= "boxer_jacket"
 	item_state= "boxer_jacket"
 	body_parts_covered= UPPER_TORSO|ARMS
