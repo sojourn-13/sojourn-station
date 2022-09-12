@@ -41,17 +41,27 @@
 
 /obj/item/organ/internal/scaffold/examine(mob/user)
 	. = ..()
-	if(user.stats?.getStat(STAT_BIO) >= STAT_LEVEL_EXPERT || user.stats?.getPerk(PERK_ADVANCED_MEDICAL))
-		if(item_upgrades.len)
-			to_chat(user, SPAN_NOTICE("Organoid grafts present ([item_upgrades.len]/[max_upgrades]). Use a laser cutting tool to remove."))
-		if(aberrant_cooldown_time > 0)
-			to_chat(user, SPAN_NOTICE("Average organ process duration: [aberrant_cooldown_time / (1 SECOND)] seconds"))
+	var/using_sci_goggles = FALSE
+	var/details_unlocked = FALSE
+	
+	if(ishuman(user))
+		// Goggles check
+		var/mob/living/carbon/human/H = user
+		if(istype(H.glasses, /obj/item/clothing/glasses/powered/science))
+			var/obj/item/clothing/glasses/powered/G = H.glasses
+			using_sci_goggles = G.active	// Meat vision
+
+		// Stat check
+		details_unlocked = (user.stats.getStat(STAT_BIO) >= STAT_LEVEL_PROF || user.stats?.getPerk(PERK_ADVANCED_MEDICAL)) ? TRUE : FALSE
+	else if(istype(user, /mob/observer/ghost))
+		details_unlocked = TRUE
+
+	if(using_sci_goggles || details_unlocked)
 		var/organs = ""
 		for(var/organ in organ_efficiency)
 			organs += organ + " ([organ_efficiency[organ]]), "
 		organs = copytext(organs, 1, length(organs) - 1)
-		to_chat(user, SPAN_NOTICE("Organ tissues present (efficiency): <span style='color:pink'>[organs ? organs : "none"]</span>"))
-	if(user.stats?.getStat(STAT_BIO) >= STAT_LEVEL_PROF || user.stats?.getPerk(PERK_ADVANCED_MEDICAL))
+
 		var/function_info
 		var/input_info
 		var/process_info
@@ -75,8 +85,17 @@
 						output_info + (output_info && secondary_info ? "\n" : null) +\
 						secondary_info
 
+		if(item_upgrades.len)
+			to_chat(user, SPAN_NOTICE("Organoid grafts present ([item_upgrades.len]/[max_upgrades]). Use a laser cutting tool to remove."))
+		if(aberrant_cooldown_time > 0)
+			to_chat(user, SPAN_NOTICE("Average organ process duration: [aberrant_cooldown_time / (1 SECOND)] seconds"))
+
+		to_chat(user, SPAN_NOTICE("Organ tissues present (efficiency): <span style='color:pink'>[organs ? organs : "none"]</span>"))
+
 		if(function_info)
 			to_chat(user, SPAN_NOTICE(function_info))
+	else
+		to_chat(user, SPAN_WARNING("You lack the biological knowledge required to understand its functions."))
 
 /obj/item/organ/internal/scaffold/update_icon()
 	if(use_generated_icon)

@@ -145,14 +145,29 @@
 		S.try_ruin()
 
 /datum/component/modification/organ/on_examine(mob/user)
+	var/using_sci_goggles = FALSE
+	var/details_unlocked = FALSE
+	
+	if(ishuman(user))
+		// Goggles check
+		var/mob/living/carbon/human/H = user
+		if(istype(H.glasses, /obj/item/clothing/glasses/powered/science))
+			var/obj/item/clothing/glasses/powered/G = H.glasses
+			using_sci_goggles = G.active	// Meat vision
+
+		// Stat check
+		var/stat_req_bypassed = (bypass_perk && user.stats?.getPerk(bypass_perk)) ? TRUE : FALSE
+		details_unlocked = (stat_req_bypassed || user.stats.getStat(examine_stat) >= examine_difficulty) ? TRUE : FALSE
+	else if(istype(user, /mob/observer/ghost))
+		details_unlocked = TRUE
+
 	if(examine_msg)
 		to_chat(user, SPAN_WARNING(examine_msg))
 
 	if(adjustable)
 		to_chat(user, SPAN_WARNING("Can be adjusted with a laser cutting tool."))
 
-	var/stat_req_bypassed = bypass_perk && user.stats?.getPerk(bypass_perk) ? TRUE : FALSE
-	if(stat_req_bypassed || user.stats?.getStat(examine_stat) >= examine_difficulty)
+	if(using_sci_goggles || details_unlocked)
 		var/info = "Organoid size: [specific_organ_size_mod ? specific_organ_size_mod : "0"]"
 		info += "\nRequirements: <span style='color:red'>[blood_req_mod ? blood_req_mod : "0"]\
 								</span>/<span style='color:blue'>[oxygen_req_mod ? oxygen_req_mod : "0"]\
@@ -169,3 +184,5 @@
 		var/function_info = get_function_info()
 		if(function_info)
 			to_chat(user, SPAN_NOTICE(function_info))
+	else
+		to_chat(user, SPAN_WARNING("You lack the biological knowledge required to understand its functions."))
