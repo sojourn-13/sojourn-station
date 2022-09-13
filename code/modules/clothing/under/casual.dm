@@ -383,3 +383,9 @@
 	desc = "A white and gold summerdress, produced and oft worn by Abolutists"
 	icon_state = "summerdress_nt"
 	item_state = "summerdress_nt"
+
+/obj/item/clothing/under/sports
+	name= "White tank top"
+	desc= "Sweat stains not included."
+	icon_state = "sports"
+	item_state = "sports"

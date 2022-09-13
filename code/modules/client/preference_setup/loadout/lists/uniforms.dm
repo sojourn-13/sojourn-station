@@ -249,3 +249,7 @@
 /datum/gear/uniform/jersey
 	display_name = "tacky jersey"
 	path = /obj/item/clothing/under/costume/misc/jersey
+
+/datum/gear/uniform/sports
+	display_name = "white tank top"
+	path = /obj/item/clothing/under/sports
