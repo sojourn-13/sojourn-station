@@ -100,8 +100,8 @@ var/list/channel_to_radio_key = new
 	return returns
 
 /mob/living/proc/get_speech_ending(verb, var/ending)
-	if(ending=="!!")
-		return pick("exclaims", "shouts", "yells")
+	if(ending=="!")
+		return pick("exclaims")
 	else if(ending=="?")
 		return "asks"
 	else if(ending=="@")
