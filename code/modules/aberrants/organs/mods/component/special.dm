@@ -15,13 +15,13 @@
 /datum/component/modification/organ/on_item_examine/brainloss/moderate
 	damage = 5
 
-/datum/component/modification/organ/on_item_examine/brainloss/trigger(obj/item/holder, mob/owner)
-	if(!holder || !owner)
+/datum/component/modification/organ/on_item_examine/brainloss/trigger(mob/user)
+	if(!user)
 		return
-	if(isliving(owner))
-		var/mob/living/L = owner	// NOTE: In this case, owner means the mob that examined the holder, not the mob the holder is attached to
+	if(ishuman(user))
+		var/mob/living/L = user
 		L.adjustBrainLoss(damage)
-		L.apply_damage(PSY, damage)
+		L.apply_damage(damage, PSY)
 
 
 /datum/component/modification/organ/on_pickup

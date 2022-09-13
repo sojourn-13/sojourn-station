@@ -25,8 +25,7 @@
 			process_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/process))
 	else if(output_mod_path)
 		if(!ispath(output_mod_path))
-			output_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/output) - /obj/item/modification/organ/internal/output/damaging_insight_gain\
-																							- /obj/item/modification/organ/internal/output/activate_organ_functions)
+			output_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/output))
 	else if(special_mod_path)
 		if(!ispath(special_mod_path))
 			special_mod_path = pick(subtypesof(/obj/item/modification/organ/internal/special/on_pickup) +\
@@ -70,7 +69,7 @@
 				output_pool = pick(possible_reagent_classes)
 			if(!output_info?.len)
 				for(var/i in 1 to req_num_outputs)
-					output_info += pick(VERY_LOW_OUTPUT)
+					output_info += pick(LOW_OUTPUT)
 
 		if(/obj/item/modification/organ/internal/output/reagents_ingest)
 			if(!output_pool?.len)
@@ -79,7 +78,7 @@
 				output_pool = pick(possible_reagent_classes)
 			if(!output_info?.len)
 				for(var/i in 1 to req_num_outputs)
-					output_info += pick(VERY_LOW_OUTPUT)
+					output_info += pick(LOW_OUTPUT)
 
 		if(/obj/item/modification/organ/internal/output/chemical_effects)
 			if(!output_pool?.len)
@@ -96,6 +95,18 @@
 			if(!output_info?.len)
 				for(var/i in 1 to req_num_outputs)
 					output_info += 3
+
+		if(/obj/item/modification/organ/internal/output/damaging_insight_gain)
+			if(!output_pool?.len)
+				output_pool = list(BRUTE, BURN, TOX, OXY, CLONE, PSY)
+			for(var/i in 1 to req_num_outputs)
+				output_info += 1
+
+		if(/obj/item/modification/organ/internal/output/activate_organ_functions)
+			if(!output_pool?.len)
+				output_pool = ALL_STANDARD_ORGAN_EFFICIENCIES
+			for(var/i in 1 to req_num_outputs)
+				output_info += 1
 
 	..()
 
@@ -480,15 +491,6 @@
 						Membrane information:\n\
 						Slightly increases a stat when the primary function triggers."
 	special_mod_path = /obj/item/modification/organ/internal/special/on_cooldown/stat_boost
-
-// parasitic
-/obj/item/organ/internal/scaffold/aberrant/teratoma/parasitic
-	name = "teratoma (unknown)"
-
-/obj/item/organ/internal/scaffold/aberrant/teratoma/parasitic/New()
-	var/obj/item/modification/organ/internal/stromal/parasitic/P = new (src)
-	LEGACY_SEND_SIGNAL(P, COMSIG_IATTACK, src)
-	..()
 
 // random
 /obj/item/organ/internal/scaffold/aberrant/teratoma/random
