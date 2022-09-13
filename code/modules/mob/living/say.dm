@@ -112,8 +112,6 @@ var/list/channel_to_radio_key = new
 /mob/living/proc/getSpeechVolume(var/message)
 	var/volume = chem_effects[CE_SPEECH_VOLUME] ? round(chem_effects[CE_SPEECH_VOLUME]) : 2	// 2 is default text size in byond chat
 	var/ending = copytext(message, length(message))
-	if(ending == "!!")
-		volume ++
 	return volume
 
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="")
