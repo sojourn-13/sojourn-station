@@ -52,6 +52,8 @@
 
 	UnregisterSignal(src, COMSIG_ATTACKED)
 
+	lastarea = null
+
 	. = ..()
 
 /mob/living/carbon/superior_animal/u_equip(obj/item/W as obj)

@@ -902,7 +902,11 @@ default behaviour is:
 
 	QDEL_NULL(stats)
 
-	unnatural_mutations.holder = null //causes a GC failure if we qdel-and it seems its not SUPPOSED to qdel, oddly
+	static_overlay.loc = null
+	static_overlay.transform = null
+	QDEL_NULL(static_overlay)
+
+	unnatural_mutations = null //causes a GC failure if we qdel-and it seems its not SUPPOSED to qdel, oddly
 
 	update_z(null)
 

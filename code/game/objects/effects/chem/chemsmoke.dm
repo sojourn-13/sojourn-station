@@ -28,7 +28,7 @@
 	//float over to our destination, if we have one
 	destination = dest_turf
 	if(destination)
-		walk_to(src, destination)
+		SSmove_manager.move_to(src, destination)
 
 
 /obj/effect/effect/smoke/chem/Destroy()
@@ -36,6 +36,8 @@
 		reagents.my_atom = null
 		QDEL_NULL(reagents)
 	SSmove_manager.stop_looping(src)
+	destination = null
+	weak_reference = null
 	return ..()
 
 /obj/effect/effect/smoke/chem/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
@@ -90,6 +92,11 @@
 	..()
 	chemholder = new/obj()
 	chemholder.create_reagents(500)
+
+/datum/effect/effect/system/smoke_spread/chem/Destroy()
+	QDEL_NULL(chemholder)
+	return ..()
+
 
 //Sets up the chem smoke effect
 // Calculates the max range smoke can travel, then gets all turfs in that view range.
