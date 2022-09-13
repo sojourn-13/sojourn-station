@@ -267,6 +267,7 @@
 	name = "ammunition packet (old 6.5mm Carbine)"
 	icon_state = "clrifle_s"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/scrap
+	w_class = ITEM_SIZE_NORMAL
 	max_ammo = 30
 
 ////7.62mm Rifle////
