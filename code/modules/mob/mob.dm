@@ -5,7 +5,12 @@
 	GLOB.mob_list -= src
 	unset_machine()
 	QDEL_NULL(hud_used)
+	languages = null
+	move_intent = null
+	QDEL_NULL(weak_reference)
 	QDEL_NULL(parallax)
+	transform = null
+	QDEL_NULL(transform)
 	if(client)
 		for(var/atom/movable/AM in client.screen)
 			qdel(AM)
