@@ -28,7 +28,7 @@
 	//float over to our destination, if we have one
 	destination = dest_turf
 	if(destination)
-		walk_to(src, destination)
+		SSmove_manager.move_to(src, destination)
 
 
 /obj/effect/effect/smoke/chem/Destroy()
