@@ -478,11 +478,48 @@
 /datum/reagent/other/coolant
 	name = "Coolant"
 	id = "coolant"
-	description = "Industrial cooling substance."
+	description = "Industrial coolant. Used to lower the freezing point and raise the boiling point of liquid in a system."
 	taste_description = "sourness"
 	taste_mult = 1.1
 	reagent_state = LIQUID
 	color = "#C8A5DC"
+	var/reagent_property_coeff = 2796	// 0.7857 * 3559, the density (kg/L) and specific heat (J/(kg K)) of 50:50 propylene glycol water
+	var/latent_heat = 600				// Arbitrarily chosen amount. Just needs to be worse than refrigerant.
+
+/datum/reagent/other/coolant/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.adjustToxLoss(1)
+	M.add_chemical_effect(CE_TOXIN, 1)
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/organ_process = pick(OP_LIVER, OP_LUNGS, OP_KIDNEYS, OP_BLOOD_VESSEL, OP_STOMACH)
+		var/obj/item/organ/internal/I = H.random_organ_by_process(organ_process)
+		if(istype(I))
+			I.take_damage(1, TRUE)
+
+// This was created to give people a way to cool reagents without needing a chem heater. Use it in a sprayer.
+/datum/reagent/other/coolant/touch_obj(obj/O, amount)
+	if(!istype(O, /obj/item/reagent_containers))	// Remove this check if we want to apply this to all objects.
+		return
+
+	// Q = mc(del_T);	Realistically, we'd look at the properties of the reagent being cooled and the removed heat (Q) of the coolant/refrigerant.
+	// temp change = Q / mc
+	var/removed_heat = amount * latent_heat								// Ignoring surrounding temp for simplicity
+	var/volume_in_liters = amount / 30									// L, Water latent heat comment in core.dm says 30u is 1 L
+	var/reagent_property_divisor = volume_in_liters * reagent_property_coeff
+	var/temperature_change = removed_heat / reagent_property_divisor	// K
+
+	O.reagents.chem_temp -= temperature_change
+
+// Not even close to how refrigerant is used IRL, but it's just a game.
+/datum/reagent/other/coolant/refrigerant
+	name = "Refrigerant"
+	id = "refrigerant"
+	description = "Industrial refrigerant R13. Used to remove heat."
+	taste_description = "fresh grass"
+	color = "#b6dca5"
+	reagent_property_coeff = 1496	// 1.21 * 1236, denstiy and specific heat of R22 refrigerant.
+	latent_heat = 1900				// Roughly a tenth of water's latent heat from core.dm
 
 /datum/reagent/other/ultraglue
 	name = "Ultra Glue"
