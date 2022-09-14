@@ -138,7 +138,7 @@
 	var/verb = "says"
 	var/ending = copytext(message, length(message))
 	if(ending=="!")
-		verb=pick("exclaims", "shouts", "yells")
+		verb="exclaims"
 	else if(ending=="?")
 		verb="asks"
 	else if(ending=="@")
