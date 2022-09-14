@@ -15,9 +15,10 @@
 		//If the person is a ghost/spectator - you should be able to get the voice of the person.
 		if(isghost(src))
 			speaker_name = H.rank_prefix_name(H.GetVoice(FALSE))
-
+/*
 	if(speech_volume)
 		message = "<FONT size='[speech_volume]'>[message]</FONT>"
+*/
 	if(italics)
 		message = "<i>[message]</i>"
 
