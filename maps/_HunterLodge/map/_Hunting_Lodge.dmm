@@ -2662,7 +2662,7 @@
 "Ax" = (
 /obj/structure/curtain/open/privacy,
 /obj/machinery/smartfridge/seeds{
-	name = s"\improper Refrigerated Seeds Storage"
+	name = "\improper Refrigerated Seeds Storage"
 	},
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
