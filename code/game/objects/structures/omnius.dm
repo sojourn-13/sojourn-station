@@ -69,6 +69,9 @@
 
 /obj/structure/invislightsmall
 	name = "small invisible light"
+	icon = null
+	layer = HIDING_MOB_PLANE
+	invisibility = 101
 
 /obj/structure/invislightsmall/New()
 	set_light(1, 1, "#999999")
