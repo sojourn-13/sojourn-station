@@ -628,7 +628,7 @@
 		to_chat(usr, SPAN_NOTICE("This food item has already been spiced!"))
 		return FALSE
 	to_chat(usr, SPAN_NOTICE("You quickly sprinkle some of your anomalous spice onto the food item, revealing its hidden properties."))
-	log_and_message_admins("used their [src] perk.")
+	//log_and_message_admins("used their [src] perk.")
 	F.chef_buff_type = rand(1,9) // We assign a random bufferino.
 	F.appraised = 1
 	switch(F.chef_buff_type)
