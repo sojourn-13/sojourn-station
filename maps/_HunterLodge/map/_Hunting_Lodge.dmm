@@ -2393,7 +2393,7 @@
 /obj/structure/dogbed,
 /mob/living/simple_animal/corgi/puppy{
 	name = "\improper  David";
-	desc = s"It's a corgi puppy! Though the local hunters decided to call him 'David the greatest Puppy'."
+	desc = "It's a corgi puppy! Though the local hunters decided to call him 'David the greatest Puppy'."
 	},
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/hunting_lodge)
