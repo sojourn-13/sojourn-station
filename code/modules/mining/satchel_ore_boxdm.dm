@@ -41,7 +41,7 @@
 	set category = "Object"
 	set src in view(1)
 
-	if(!ishuman(usr)) //Only living, intelligent creatures with hands can empty ore boxes.
+	if(!ishuman(usr) && !isrobot(usr)) //Only living, intelligent creatures with hands can empty material boxes.
 		to_chat(usr, "\red You are physically incapable of emptying the ore box.")
 		return
 
