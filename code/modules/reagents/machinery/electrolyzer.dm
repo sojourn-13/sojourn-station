@@ -100,16 +100,18 @@
 	if(istype(I, /obj/item/reagent_containers) && I.is_open_container() && (!beaker || !separation_beaker))
 		. = TRUE //no afterattack
 		var/obj/item/reagent_containers/B = I
-		I.forceMove(src)
-		I.add_fingerprint(user)
-		if(!beaker)
-			beaker = B
-		else if(!separation_beaker)
-			separation_beaker = B
-		to_chat(user, SPAN_NOTICE("You add [B] to [src]."))
-		SSnano.update_uis(src)
-		update_icon()
-		return
+		if(user.drop_from_inventory(B))
+			user.drop_from_inventory(B)
+			B.forceMove(src)
+			B.add_fingerprint(user)
+			if(!beaker)
+				beaker = B
+			else if(!separation_beaker)
+				separation_beaker = B
+			to_chat(user, SPAN_NOTICE("You add [B] to [src]."))
+			SSnano.update_uis(src)
+			update_icon()
+			return
 	return ..()
 
 /obj/machinery/electrolyzer/attackby(obj/item/I, mob/user, params)
@@ -245,15 +247,17 @@
 	if(istype(C, /obj/item/reagent_containers) && C.is_open_container() && (!beaker || !separation_beaker))
 		. = TRUE //no afterattack
 		var/obj/item/reagent_containers/B = C
-		C.forceMove(src)
-		C.add_fingerprint(user)
-		if(!beaker)
-			beaker = B
-		else if(!separation_beaker)
-			separation_beaker = B
-		to_chat(user, SPAN_NOTICE("You add [B] to [src]."))
-		SSnano.update_uis(src)
-		return
+		if(user.drop_from_inventory(C))
+			user.drop_from_inventory(C)
+			C.forceMove(src)
+			C.add_fingerprint(user)
+			if(!beaker)
+				beaker = B
+			else if(!separation_beaker)
+				separation_beaker = B
+			to_chat(user, SPAN_NOTICE("You add [B] to [src]."))
+			SSnano.update_uis(src)
+			return
 
 /obj/item/device/makeshift_electrolyser/handle_atom_del(atom/A)
 	..()

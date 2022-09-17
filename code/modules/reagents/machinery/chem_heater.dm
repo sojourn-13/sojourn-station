@@ -64,10 +64,12 @@
 		beaker.reagents.handle_reactions()
 		SSnano.update_uis(src)
 
+/* - A bit buggy allowing phantom beakers and other exploitable things - Trilby
 /obj/machinery/chem_heater/MouseDrop_T(atom/movable/I, mob/user, src_location, over_location, src_control, over_control, params)
 	if(!Adjacent(user) || !I.Adjacent(user) || user.stat)
 		return ..()
 	if(istype(I, /obj/item/reagent_containers) && I.is_open_container())
+		user.drop_from_inventory(I)
 		I.add_fingerprint(user)
 		replace_beaker(user, I)
 		to_chat(user, SPAN_NOTICE("You add [I] to [src]."))
@@ -75,6 +77,7 @@
 		update_icon()
 		return
 	. = ..()
+*/
 
 /obj/machinery/chem_heater/attackby(obj/item/I, mob/user, params)
 	if(default_deconstruction(I, user))

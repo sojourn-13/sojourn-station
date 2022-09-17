@@ -101,15 +101,20 @@
 		return ..()
 	if(!on && istype(C, /obj/item/reagent_containers) && C.is_open_container())
 		if (!mainBeaker || separationBeakers.len < beakerSlots)
-			C.forceMove(src)
-			C.add_fingerprint(user)
-			if(!mainBeaker)
-				mainBeaker = C
-			else
-				separationBeakers.Add(C)
-			to_chat(user, SPAN_NOTICE("You add [C] to [src]."))
-			SSnano.update_uis(src)
-			update_icon()
+			if(user.drop_from_inventory(C))
+				user.drop_from_inventory(C)
+				C.forceMove(src)
+				user.visible_message("[user.name] places \the [C] into \the [src].", \
+					"You place \the [C] into the [src].")
+				playsound(loc, 'sound/machines/vending_drop.ogg', 100, 1)
+				C.add_fingerprint(user)
+				if(!mainBeaker)
+					mainBeaker = C
+				else
+					separationBeakers.Add(C)
+				to_chat(user, SPAN_NOTICE("You add [C] to [src]."))
+				SSnano.update_uis(src)
+				update_icon()
 	else
 		return ..()
 
@@ -280,15 +285,17 @@
 		return ..()
 	if(!on && istype(C, /obj/item/reagent_containers) && C.is_open_container())
 		if (!mainBeaker || separationBeakers.len < beakerSlots)
-			C.forceMove(src)
-			C.add_fingerprint(user)
-			if(!mainBeaker)
-				mainBeaker = C
-			else
-				separationBeakers.Add(C)
-			to_chat(user, SPAN_NOTICE("You add [C] to [src]."))
-			SSnano.update_uis(src)
-			update_icon()
+			if(user.drop_from_inventory(C))
+				user.drop_from_inventory(C)
+				C.forceMove(src)
+				C.add_fingerprint(user)
+				if(!mainBeaker)
+					mainBeaker = C
+				else
+					separationBeakers.Add(C)
+				to_chat(user, SPAN_NOTICE("You add [C] to [src]."))
+				SSnano.update_uis(src)
+				update_icon()
 	else
 		return ..()
 
