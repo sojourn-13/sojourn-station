@@ -1,6 +1,6 @@
 /obj/item/gun/energy/centurio
 	name = "\"Centurio\" plasma pistol"
-	desc = "A specialized firearm designed to fire lethal plasma rounds or a slow wave of ion particals."
+	desc = "A specialized firearm designed to fire lethal plasma rounds or a slow wave of ion particles."
 	icon = 'icons/obj/guns/energy/toxgun.dmi'
 	icon_state = "toxgun"
 	w_class = ITEM_SIZE_NORMAL
