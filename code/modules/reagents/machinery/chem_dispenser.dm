@@ -216,12 +216,14 @@
 	if(!Adjacent(user) || !I.Adjacent(user) || user.stat)
 		return ..()
 	if(istype(I, /obj/item/reagent_containers) && I.is_open_container() && !beaker)
-		I.forceMove(src)
-		I.add_fingerprint(user)
-		beaker = I
-		to_chat(user, SPAN_NOTICE("You add [I] to [src]."))
-		SSnano.update_uis(src) // update all UIs attached to src
-		return
+		if(user.drop_from_inventory(I))
+			user.drop_from_inventory(I)
+			I.forceMove(src)
+			I.add_fingerprint(user)
+			beaker = I
+			to_chat(user, SPAN_NOTICE("You add [I] to [src]."))
+			SSnano.update_uis(src) // update all UIs attached to src
+			return
 	. = ..()
 
 /obj/machinery/chemical_dispenser/attackby(obj/item/I, mob/living/user)
