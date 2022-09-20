@@ -562,7 +562,7 @@
 */
 /obj/item/gun_upgrade/mechanism/greyson_master_catalyst
 	name = "Greyson \"Master Unmaker\" infuser"
-	desc = "One of the rarest and most powerful weapon modification ever made by Greyson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
+	desc = "One of the rarest and most powerful weapon modifications ever made by Greyson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
 	icon_state = "psionic_catalyst"
 	matter = list(MATERIAL_PLATINUM = 5, MATERIAL_PLASTEEL = 3, MATERIAL_DIAMOND = 10)
 	price_tag = 4500
@@ -571,13 +571,15 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
+		UPGRADE_BULK = 1,
 		GUN_UPGRADE_DAMAGE_BRUTE = 10,
 		GUN_UPGRADE_DAMAGE_BURN = 10,
 		GUN_UPGRADE_DAMAGE_TOX = 5,
 		GUN_UPGRADE_DAMAGE_OXY = 5,
 		GUN_UPGRADE_DAMAGE_CLONE = 5,
 		GUN_UPGRADE_DAMAGE_HALLOSS = 5,
-		UPGRADE_BULK = 1
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
+		GUN_UPGRADE_CHARGECOST = 1.5
 	)
 	I.removal_time *= 10
 	I.gun_loc_tag = GUN_MECHANISM
