@@ -571,7 +571,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		UPGRADE_BULK = 2,
+		UPGRADE_BULK = 1,
 		GUN_UPGRADE_DAMAGE_BRUTE = 10,
 		GUN_UPGRADE_DAMAGE_BURN = 10,
 		GUN_UPGRADE_DAMAGE_TOX = 5,
