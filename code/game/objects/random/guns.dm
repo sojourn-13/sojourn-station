@@ -284,6 +284,7 @@
 	icon_state = "gun-red"
 /obj/random/dungeon_gun_mods/item_to_spawn()
 	return pickweight(list(/obj/item/gun_upgrade/muzzle/silencer = 1,
+				/obj/item/gun_upgrade/muzzle/pain_maker = 0.3,
 				/obj/item/gun_upgrade/barrel/forged = 1,
 				/obj/item/gun_upgrade/barrel/mag_accel = 1,
 				/obj/item/gun_upgrade/barrel/overheat = 1,

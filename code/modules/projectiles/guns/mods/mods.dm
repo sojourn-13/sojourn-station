@@ -10,7 +10,7 @@
 //Silences the weapon, reduces damage multiplier slightly, Legacy port.
 /obj/item/gun_upgrade/muzzle/silencer
 	name = "Silencer"
-	desc = "A threaded silencer that can be attached to the muzzle of certain guns. Vastly reduces noise, but impedes muzzle velocity."
+	desc = "A threaded silencer that can be attached to the muzzle of certain guns. Vastly reduces noise."
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
 	icon_state = "silencer"
 	price_tag = 100
@@ -25,6 +25,32 @@
 	I.gun_loc_tag = GUN_MUZZLE
 	I.req_gun_tags = list(GUN_SILENCABLE)
 	I.prefix = "silenced"
+
+/obj/item/gun_upgrade/muzzle/pain_maker
+	name = "SA \"PainMaker\" muzzle"
+	desc = "A threaded barrel that can be attached to the muzzle of most projectile guns. \
+	Using some creative barreling allows the bullet to spin and fracture on impact as it comes making the projectile hard to control but much more painful. \
+	Typically used when taking a hostages or kidnapping."
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
+	icon_state = "silencer"
+	price_tag = 100
+
+/obj/item/gun_upgrade/muzzle/pain_maker/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		UPGRADE_BULK = 2,
+		GUN_UPGRADE_STEPDELAY_MULT = 1.5,
+		GUN_UPGRADE_DAMAGE_MULT = 0.8,
+		GUN_UPGRADE_PEN_MULT = 0.5,
+		GUN_UPGRADE_OFFSET = 11,
+		GUN_UPGRADE_RECOIL = 1.5,
+		GUN_UPGRADE_PAIN_MULT = 2
+		)
+	I.gun_loc_tag = GUN_MUZZLE
+	I.req_gun_tags = list(GUN_PROJECTILE)
+	I.prefix = "LTL"
+
 
 //Decreases fire delay. Acquired through loot spawns or guild crafting
 /obj/item/gun_upgrade/barrel/forged

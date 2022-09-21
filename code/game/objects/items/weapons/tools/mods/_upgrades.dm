@@ -387,8 +387,8 @@
 /datum/component/item_upgrade/proc/apply_values_gun(var/obj/item/gun/G)
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT])
 		G.damage_multiplier *= weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT]
-	if(weapon_upgrades[GUN_UPGRADE_DAMAGEMOD_PLUS])
-		G.damage_multiplier += weapon_upgrades[GUN_UPGRADE_DAMAGEMOD_PLUS]
+	if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
+		G.proj_agony_multiplier += weapon_upgrades[GUN_UPGRADE_PAIN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
 		G.penetration_multiplier *= weapon_upgrades[GUN_UPGRADE_PEN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
@@ -573,6 +573,13 @@
 				to_chat(user, SPAN_NOTICE("Increases projectile damage by [amount*100]%"))
 			else
 				to_chat(user, SPAN_WARNING("Decreases projectile damage by [abs(amount*100)]%"))
+
+		if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
+			var/amount = weapon_upgrades[GUN_UPGRADE_PAIN_MULT]-1
+			if(amount > 0)
+				to_chat(user, SPAN_NOTICE("Increases projectile agony damage by [amount*100]%"))
+			else
+				to_chat(user, SPAN_WARNING("Decreases projectile agony damage by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE]-1
