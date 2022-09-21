@@ -29,7 +29,7 @@
 /obj/item/gun_upgrade/muzzle/pain_maker
 	name = "SA \"PainMaker\" muzzle"
 	desc = "A threaded barrel that can be attached to the muzzle of most projectile guns. \
-	Using some creative barreling allows the bullet to spin and fracture on impact as it comes making the projectile hard to control but much more painful. \
+	Threaded barrel device made of a coil sensor and heater. As bullets pass the device they are slowed down and heated up by the coil, causing them to deform when hitting a target and imparting all their painful energy. \
 	Typically used when taking a hostages or kidnapping."
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
 	icon_state = "silencer"
@@ -43,6 +43,7 @@
 		GUN_UPGRADE_STEPDELAY_MULT = 1.5,
 		GUN_UPGRADE_DAMAGE_MULT = 0.8,
 		GUN_UPGRADE_PEN_MULT = 0.5,
+		GUN_UPGRADE_PIERC_MULT = -3, //This does a LOT lowering range, as well as most guns being unable to wall bang with it
 		GUN_UPGRADE_OFFSET = 11,
 		GUN_UPGRADE_RECOIL = 1.5,
 		GUN_UPGRADE_PAIN_MULT = 2
