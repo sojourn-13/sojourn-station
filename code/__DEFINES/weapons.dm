@@ -83,7 +83,7 @@
 
 // recoil
 
-#define MAX_ACCURACY_OFFSET  30 //It's both how big gun recoil can build up, and how hard you can miss
+#define MAX_ACCURACY_OFFSET  50 //It's both how big gun recoil can build up, and how hard you can miss
 #define RECOIL_REDUCTION_TIME 1 SECOND
 
 // _recoil_buildup, _brace_penalty, _one_hand_penalty

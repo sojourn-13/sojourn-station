@@ -962,6 +962,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	data["multiply_pve_damage"] = proj_pve_damage_multiplier
 	data["pierce_multiplier"] = pierce_multiplier
 	data["penetration_multiplier"] = penetration_multiplier
+	data["proj_agony_multiplier"] = proj_agony_multiplier
 
 	data["fire_delay"] = fire_delay //time between shot, in ms
 	data["burst"] = burst //How many shots are fired per click
