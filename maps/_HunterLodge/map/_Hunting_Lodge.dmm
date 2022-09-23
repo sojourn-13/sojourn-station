@@ -45,12 +45,12 @@
 	desc = "This bird has a sense of smug superiority and missing eye.";
 	name = "Jea Junior"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "al" = (
 /obj/structure/table/woodentable,
 /obj/item/storage/bag/plastic,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "an" = (
 /obj/machinery/power/solar,
@@ -88,10 +88,11 @@
 	},
 /obj/item/gun/projectile/boltgun/lever,
 /obj/item/ammo_magazine/ammobox/magnum_40,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "at" = (
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/busha3,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "au" = (
 /obj/structure/railing{
@@ -109,6 +110,11 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"aw" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/machinery/light/floor,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "ax" = (
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -151,7 +157,7 @@
 "aG" = (
 /obj/structure/table/woodentable,
 /obj/item/clothing/head/hairflower/white,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aK" = (
 /obj/structure/table/woodentable,
@@ -194,7 +200,7 @@
 	pixel_y = -12;
 	pixel_x = 15
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aY" = (
 /obj/structure/closet/secure_closet/freezer/meat,
@@ -209,7 +215,7 @@
 	matter = list("wood"=4);
 	name = "wooden fence"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "bb" = (
 /obj/machinery/vending/dinnerware,
@@ -235,7 +241,7 @@
 	matter = list("wood"=4);
 	name = "wooden fence"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "bl" = (
 /obj/structure/catwalk,
@@ -256,7 +262,7 @@
 /obj/structure/table/woodentable,
 /obj/item/paper_bin,
 /obj/item/pen/multi,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "bp" = (
 /obj/effect/floor_decal/industrial/danger{
@@ -300,26 +306,17 @@
 /obj/structure/table/rack/shelf,
 /obj/random/common_oddities,
 /obj/random/common_oddities,
-/obj/random/credits,
-/obj/random/medical_lowcost_handmade,
 /obj/random/medical_lowcost_handmade,
 /obj/random/medical_lowcost_handmade,
 /obj/random/medical_lowcost,
 /obj/random/medical_lowcost,
-/obj/random/melee,
-/obj/random/tool_upgrade,
-/obj/random/tool_upgrade,
-/obj/random/tool_upgrade,
-/obj/random/ammo,
-/obj/random/ammo,
-/obj/random/ammo,
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	dir = 1;
 	matter = list("wood"=4);
 	name = "wooden fence"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "bv" = (
 /obj/structure/table/woodentable,
@@ -381,13 +378,13 @@
 	matter = list("wood"=4);
 	name = "wooden fence"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "bK" = (
 /obj/structure/flora/tree/jungle_small,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "bN" = (
 /obj/structure/table/woodentable,
@@ -396,7 +393,7 @@
 "bO" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "bR" = (
 /obj/structure/closet/crate/hydroponics,
@@ -423,12 +420,13 @@
 "bT" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "bW" = (
-/obj/structure/grille,
-/obj/structure/barricade,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/table/rack{
+	name = "feeding rack"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/outside/forest/hunting_lodge)
 "bX" = (
 /obj/effect/overlay/water/top,
@@ -448,10 +446,10 @@
 /obj/item/storage/belt/utility,
 /obj/item/storage/belt/medical,
 /obj/item/storage/belt/medical,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "cc" = (
-/obj/machinery/vending/cigarette,
+/obj/machinery/vending/fitness,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "cf" = (
@@ -462,11 +460,18 @@
 /obj/structure/table/rack/shelf,
 /obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
 /obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ch" = (
 /obj/random/toy/plushie_onlycarp,
 /turf/unsimulated/mineral,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ck" = (
+/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/small/bushc3,
+/obj/structure/flora/small/bushc1,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "co" = (
 /obj/structure/cable{
@@ -562,12 +567,13 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "cG" = (
 /obj/structure/table/woodentable,
 /obj/item/reagent_containers/food/drinks/shaker,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "cJ" = (
 /obj/structure/table/rack/shelf,
@@ -575,7 +581,7 @@
 /obj/item/device/lighting/toggleable/lantern,
 /obj/item/device/lighting/toggleable/lantern,
 /obj/item/device/lighting/toggleable/lantern,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "cK" = (
 /obj/machinery/power/port_gen/pacman/diesel,
@@ -606,6 +612,10 @@
 /obj/item/storage/box/costume/scarecrow,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/outside/forest/hunting_lodge)
+"cQ" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "cR" = (
 /obj/structure/table/rack/shelf,
 /obj/item/stack/material/steel/full,
@@ -624,7 +634,7 @@
 	name = "Joe";
 	desc = "A friendly creature vaguely resembling an oversized snail without a shell. Named Joe by the local hunters due to his rather funny apperance"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "cZ" = (
 /obj/structure/table/rack/shelf,
@@ -664,7 +674,7 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dg" = (
 /obj/structure/table/woodentable,
@@ -706,7 +716,9 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "du" = (
 /obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/bushc1,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dv" = (
 /obj/structure/cable{
@@ -758,7 +770,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "dD" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dE" = (
 /obj/effect/decal/cleanable/dirt,
@@ -768,7 +780,12 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "dJ" = (
 /obj/structure/invislight,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dK" = (
+/mob/living/simple_animal/cow,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dN" = (
 /obj/machinery/light,
@@ -902,10 +919,10 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ek" = (
-/obj/structure/flora/tree/jungle_small{
-	pixel_y = -1
-	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/machinery/light/floor,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "el" = (
 /obj/machinery/door/unpowered/simple/wood,
@@ -945,13 +962,19 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"eC" = (
+/obj/machinery/light/floor,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "eD" = (
 /obj/structure/bed/roller,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "eE" = (
 /obj/structure/table/bench/wooden,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "eL" = (
 /turf/simulated/mineral/planet,
@@ -981,7 +1004,7 @@
 /obj/item/tool/spear,
 /obj/item/tool/spear,
 /obj/item/tool/spear,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "eW" = (
 /obj/structure/multiz/stairs/enter/bottom{
@@ -991,7 +1014,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "eX" = (
 /obj/structure/boulder,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "eY" = (
 /obj/structure/table/woodentable,
@@ -1002,7 +1025,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "eZ" = (
 /obj/structure/flora/small/rock4,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fc" = (
 /obj/structure/multiz/stairs/enter/bottom{
@@ -1013,7 +1036,7 @@
 "fd" = (
 /obj/structure/table/woodentable,
 /obj/item/clothing/under/dress/casual/flowerdress,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fe" = (
 /turf/simulated/floor/asteroid/dirt/dark/plough,
@@ -1031,7 +1054,7 @@
 "fk" = (
 /obj/structure/table/rack/shelf,
 /obj/item/ammo_casing/arrow/hunting/heavy/bulk,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fl" = (
 /obj/structure/table/rack/shelf,
@@ -1058,9 +1081,11 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ft" = (
-/obj/structure/boulder,
-/obj/structure/boulder,
-/turf/simulated/floor/asteroid/grass/jungle,
+/mob/living/simple_animal/cow,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/machinery/light/floor,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fv" = (
 /obj/structure/cable{
@@ -1103,10 +1128,12 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fB" = (
-/mob/living/simple_animal/chicken,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/table/rack{
+	name = "feeding rack"
+	},
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fD" = (
 /obj/structure/multiz/stairs/enter/bottom{
@@ -1115,9 +1142,11 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fE" = (
-/mob/living/simple_animal/cow,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/table/rack{
+	name = "feeding rack"
+	},
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fF" = (
 /obj/structure/curtain/open/privacy,
@@ -1134,7 +1163,7 @@
 "fI" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fJ" = (
 /obj/item/farmbot_arm_assembly,
@@ -1153,13 +1182,13 @@
 	matter = list("wood"=4);
 	name = "wooden fence"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fQ" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/bed/chair/comfy/black,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fR" = (
 /obj/structure/table/rack/shelf,
@@ -1169,7 +1198,12 @@
 	matter = list("wood"=4);
 	name = "wooden fence"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/random/ammo,
+/obj/random/ammo,
+/obj/random/tool_upgrade,
+/obj/random/tool_upgrade,
+/obj/random/melee,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fS" = (
 /obj/machinery/light{
@@ -1194,9 +1228,6 @@
 "fU" = (
 /obj/structure/table/woodentable,
 /obj/item/storage/firstaid/o2,
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid,
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/box/bodybags,
 /obj/machinery/light/small{
@@ -1265,10 +1296,12 @@
 /turf/simulated/floor/asteroid/dirt/dark/plough,
 /area/nadezhda/outside/forest/hunting_lodge)
 "gr" = (
-/obj/structure/table/rack,
+/obj/structure/table/rack{
+	name = "feeding rack"
+	},
 /obj/item/device/lighting/toggleable/lantern,
 /obj/item/device/lighting/toggleable/lantern,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "gs" = (
 /obj/structure/table/rack,
@@ -1286,7 +1319,7 @@
 	matter = list("wood"=4);
 	name = "wooden fence"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "gt" = (
 /obj/machinery/honey_extractor,
@@ -1309,7 +1342,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "gC" = (
 /obj/structure/flora/small/bushb1,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "gE" = (
 /obj/structure/cable{
@@ -1361,7 +1394,10 @@
 "gP" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/table/rack{
+	name = "feeding rack"
+	},
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "gR" = (
 /obj/structure/railing{
@@ -1376,6 +1412,10 @@
 	},
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/outside/forest/hunting_lodge)
+"gS" = (
+/obj/machinery/light/floor,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge)
 "gV" = (
 /obj/structure/table/steel,
 /obj/machinery/recharger,
@@ -1387,7 +1427,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "ha" = (
 /obj/structure/flora/ausbushes/sunnybush,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "hb" = (
 /obj/structure/table/woodentable,
@@ -1420,7 +1460,7 @@
 /obj/item/clothing/head/hairflower/blue,
 /obj/item/oddity/ls/bouquet,
 /obj/item/clothing/shoes/slippers,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "hf" = (
 /obj/effect/overlay/water,
@@ -1463,7 +1503,7 @@
 /obj/structure/table/woodentable,
 /obj/item/clothing/head/hairflower,
 /obj/item/oddity/ls/bouquet,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "hq" = (
 /obj/machinery/light{
@@ -1505,8 +1545,8 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "hH" = (
-/obj/structure/sink/puddle,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "hK" = (
 /obj/effect/floor_decal/industrial/arrows{
@@ -1526,8 +1566,6 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "hM" = (
 /obj/structure/table/glass,
-/obj/item/stack/nanopaste,
-/obj/item/stack/nanopaste,
 /obj/item/stack/nanopaste,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -1558,6 +1596,12 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
+"if" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/hunting_lodge)
 "ig" = (
 /obj/structure/medical_stand/anesthetic{
 	pixel_x = -5;
@@ -1586,7 +1630,7 @@
 "it" = (
 /obj/structure/table/bench/wooden,
 /obj/landmark/join/start/lodge_hunter,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "iv" = (
 /obj/structure/table/rack/shelf,
@@ -1596,7 +1640,7 @@
 "ix" = (
 /obj/structure/table/rack/shelf,
 /obj/item/gun/projectile/bow/hunting,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "iy" = (
 /obj/structure/bed,
@@ -1608,6 +1652,11 @@
 /obj/structure/curtain/open/bed,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"iz" = (
+/obj/machinery/light/floor,
+/obj/structure/table/rack/shelf,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge)
 "iB" = (
 /obj/machinery/power/port_gen/pacman/diesel,
 /obj/item/reagent_containers/glass/bottle/petrel,
@@ -1617,6 +1666,10 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"iC" = (
+/obj/item/storage/box/snappops,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "iE" = (
 /obj/structure/table/glass,
@@ -1659,7 +1712,7 @@
 	matter = list("wood"=4);
 	name = "wooden fence"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "iS" = (
 /turf/simulated/wall/wood_old,
@@ -1677,7 +1730,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "iX" = (
 /obj/structure/bonfire/permanent,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ja" = (
 /obj/machinery/power/tracker,
@@ -1708,7 +1761,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "jn" = (
 /mob/living/simple_animal/fennec,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "jq" = (
 /obj/effect/floor_decal/industrial/stand_clear{
@@ -1758,7 +1811,8 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "jz" = (
 /obj/structure/railing{
@@ -1795,7 +1849,7 @@
 "jR" = (
 /obj/structure/table/woodentable,
 /obj/item/clothing/head/hairflower/orange,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "jS" = (
 /obj/structure/railing{
@@ -1819,7 +1873,7 @@
 	matter = list("wood"=4);
 	name = "wooden fence"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "jY" = (
 /turf/unsimulated/wall/jungle,
@@ -1827,7 +1881,7 @@
 "kb" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/reagent_dispensers/meadkeg,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ke" = (
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -1898,7 +1952,7 @@
 /obj/item/tool/fireaxe/woodsman,
 /obj/item/tool/fireaxe/woodsman,
 /obj/item/tool/fireaxe/woodsman,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "kG" = (
 /obj/structure/closet/secure_closet/freezer,
@@ -1914,7 +1968,10 @@
 /obj/structure/curtain/open/bed{
 	name = "red curtain"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/machinery/door/unpowered/simple/wood/saloon{
+	name = "Hunt Masters Office"
+	},
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "lj" = (
 /obj/structure/invislight,
@@ -1961,7 +2018,7 @@
 /obj/structure/table/woodentable,
 /obj/random/junkfood,
 /obj/random/junkfood,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "mz" = (
 /obj/machinery/power/terminal{
@@ -1974,6 +2031,10 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"mG" = (
+/obj/machinery/light/floor,
+/turf/simulated/floor/asteroid/dirt/dark/plough,
 /area/nadezhda/outside/forest/hunting_lodge)
 "mK" = (
 /obj/structure/catwalk,
@@ -1996,7 +2057,10 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "nj" = (
 /obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/bushc3,
+/obj/structure/flora/small/bushc1,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "nt" = (
 /obj/structure/reagent_dispensers/fueltank/huge,
@@ -2083,7 +2147,7 @@
 "nZ" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/tree/jungle/variant1,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "oc" = (
 /obj/machinery/power/solar,
@@ -2141,7 +2205,8 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/palebush,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "oK" = (
 /obj/machinery/light/small,
@@ -2158,13 +2223,18 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "pi" = (
 /obj/structure/kitchenspike,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"po" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "pr" = (
 /obj/structure/table/glass,
 /obj/random/booze,
 /obj/random/booze,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "pw" = (
 /obj/machinery/power/solar,
@@ -2186,8 +2256,8 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/outside/forest/hunting_lodge)
 "pE" = (
-/obj/item/storage/box/snappops,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/lavarock1,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "pP" = (
 /obj/random/mob/spiders/low_chance,
@@ -2205,7 +2275,7 @@
 	dir = 8;
 	icon_state = "sofaend_left"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "qh" = (
 /obj/random/mob/roaches/low_chance,
@@ -2217,7 +2287,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "qm" = (
 /obj/item/toy/plushie/face_hugger,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "qn" = (
 /obj/machinery/beehive,
@@ -2228,7 +2298,7 @@
 	desc = "It can be a bit noisy, but still serves well.";
 	name = "old mantle"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "qM" = (
 /obj/machinery/light/small{
@@ -2244,7 +2314,14 @@
 	},
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/mop,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"qR" = (
+/obj/structure/flora/ausbushes/reedbush,
+/obj/structure/flora/small/bushc3,
+/obj/structure/flora/small/bushc1,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "rg" = (
 /obj/structure/table/bench/wooden,
@@ -2323,7 +2400,15 @@
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
 	},
+/obj/machinery/door/unpowered/simple/wood/saloon{
+	name = "Hunt Masters Office"
+	},
 /turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"sI" = (
+/mob/living/carbon/superior_animal/lodge/clucker,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "sV" = (
 /obj/machinery/smartfridge/chemistry,
@@ -2352,9 +2437,10 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge)
 "tu" = (
-/mob/living/simple_animal/pig,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/machinery/light/floor,
+/obj/structure/table/woodentable,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "tz" = (
 /turf/unsimulated/mineral,
@@ -2363,6 +2449,10 @@
 /obj/structure/multiz/stairs/enter/bottom,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"tO" = (
+/obj/structure/table/bench/wooden,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge)
 "tQ" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -2383,6 +2473,10 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
+"tT" = (
+/obj/structure/table/rack/shelf,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge)
 "tV" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -2391,11 +2485,14 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "tW" = (
 /obj/structure/table/woodentable,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "uh" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/bushc3,
+/obj/structure/flora/small/bushc1,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ur" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -2415,7 +2512,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "ux" = (
 /mob/living/simple_animal/redpanda/fae,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "uy" = (
 /obj/structure/closet/wall_mounted{
@@ -2424,12 +2521,19 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge)
 "uE" = (
-/obj/structure/dogbed,
+/obj/structure/dogbed{
+	name = "chicken nest";
+	desc = "A bed made especially for chickens to lay their eggs on it."
+	},
 /mob/living/simple_animal/corgi/puppy{
 	name = "\improper  David";
 	desc = "It's a corgi puppy! Though the local hunters decided to call him 'David the greatest Puppy'."
 	},
 /turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge)
+"uS" = (
+/obj/structure/flora/rock/variant2,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "uV" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -2437,11 +2541,18 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/table/marble,
 /obj/item/device/camera,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "uX" = (
 /obj/structure/flora/ausbushes/pointybush,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/bushc1,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"vc" = (
+/obj/structure/flora/small/busha3,
+/obj/structure/flora/small/lavarock1,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "vn" = (
 /obj/structure/table/marble,
@@ -2473,6 +2584,12 @@
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"vE" = (
+/obj/structure/barricade,
+/obj/structure/grille,
+/obj/effect/window_lwall_spawn,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
 "vL" = (
 /obj/structure/curtain/open/bed,
 /obj/structure/multiz/stairs/enter/bottom{
@@ -2484,7 +2601,14 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/leafybush,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/barricade,
+/obj/structure/grille,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"wc" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/small/grassa1,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "wg" = (
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -2507,15 +2631,20 @@
 "wq" = (
 /obj/structure/table/glass,
 /obj/random/junkfood,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "wv" = (
 /obj/structure/curtain/open/bed,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "wC" = (
 /obj/structure/bed/chair/custom/wood,
 /turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge)
+"wH" = (
+/obj/structure/flora/small/grassb2,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "wJ" = (
 /obj/structure/catwalk,
@@ -2577,6 +2706,10 @@
 /obj/machinery/chemical_dispenser/coffee_master,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
+"xI" = (
+/obj/structure/flora/small/grassa4,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "xK" = (
 /obj/landmark/join/start/lodge_hunter,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -2601,6 +2734,11 @@
 	},
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/hunting_lodge)
+"ye" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/sink/puddle,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "yj" = (
 /obj/structure/catwalk,
 /obj/structure/railing{
@@ -2615,7 +2753,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "yo" = (
 /obj/structure/flora/small/rock2,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "yr" = (
 /obj/item/paper_bin,
@@ -2641,9 +2779,21 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
+"yT" = (
+/obj/structure/dogbed{
+	name = "chicken nest";
+	desc = "A bed made especially for chickens to lay their eggs on it."
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/hunting_lodge)
 "yU" = (
 /obj/structure/multiz/stairs/enter/bottom,
 /turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/hunting_lodge)
+"yV" = (
+/obj/structure/catwalk,
+/obj/machinery/power/solar,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "zo" = (
 /obj/structure/catwalk,
@@ -2700,7 +2850,8 @@
 "Ae" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/leafybush,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/bushb1,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Am" = (
 /obj/random/scrap/sparse_weighted,
@@ -2708,19 +2859,14 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Aq" = (
 /obj/structure/barricade,
-/obj/structure/barricade,
-/obj/structure/barricade,
-/obj/structure/barricade,
 /obj/structure/grille,
-/obj/structure/grille,
-/obj/structure/grille,
-/obj/structure/grille,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Au" = (
 /obj/structure/table/bench/wooden,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Aw" = (
 /turf/simulated/floor/wood/wild4,
@@ -2732,13 +2878,19 @@
 	},
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Ay" = (
+/obj/structure/boulder,
+/obj/structure/barricade,
+/obj/structure/grille,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Az" = (
 /obj/structure/railing{
 	dir = 1;
 	icon_state = "railing0";
 	tag = "icon-railing0 (NORTH)"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "AC" = (
 /obj/machinery/hologram/holopad,
@@ -2748,6 +2900,11 @@
 /obj/random/scrap/sparse_even,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"AL" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/small/lavarock1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "AN" = (
 /obj/structure/invislight,
 /obj/structure/multiz/stairs/enter/bottom{
@@ -2780,6 +2937,19 @@
 	},
 /turf/simulated/floor/hull,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"BH" = (
+/obj/machinery/vending/sovietsoda,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"BI" = (
+/obj/structure/flora/rock,
+/obj/structure/flora/small/busha3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"BZ" = (
+/obj/structure/flora/small/bushc3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Cb" = (
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2832,6 +3002,9 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "CG" = (
 /obj/effect/step_trigger/riverforest_to_huntinglodge_1_A,
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 1
+	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
 "CO" = (
@@ -2846,7 +3019,7 @@
 /obj/item/beartrap,
 /obj/item/beartrap,
 /obj/item/beartrap,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Db" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -2863,7 +3036,12 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Di" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/bushb1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Dm" = (
+/obj/structure/sink/puddle,
+/turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Dq" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -2871,7 +3049,15 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/table/marble,
 /obj/item/clipboard,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"DE" = (
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
 "DL" = (
 /obj/machinery/power/solar,
@@ -2928,6 +3114,13 @@
 /obj/landmark/join/start/lodge_hunter,
 /turf/simulated/floor/asteroid/dirt/dark/plough,
 /area/nadezhda/outside/forest/hunting_lodge)
+"Eq" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/small/bushc3,
+/obj/structure/flora/small/bushc1,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Ez" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/wood/wild3,
@@ -2952,6 +3145,9 @@
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
 	},
+/obj/machinery/door/unpowered/simple/wood/saloon{
+	name = "Hunt Masters Office"
+	},
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ES" = (
@@ -2963,14 +3159,37 @@
 "EU" = (
 /mob/living/carbon/superior_animal/lodge/tatonka,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"EZ" = (
+/obj/structure/curtain/open/bed{
+	name = "red curtain"
+	},
+/obj/machinery/door/unpowered/simple/wood/saloon{
+	name = "Hunt Masters Office"
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Fa" = (
+/obj/structure/dogbed{
+	name = "chicken nest";
+	desc = "A bed made especially for chickens to lay their eggs on it."
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Fe" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/machinery/vending/cigarette,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Ff" = (
+/obj/structure/flora/small/bushc2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Fr" = (
 /obj/machinery/computer/cryopod/elevator{
 	pixel_y = -32
@@ -3022,8 +3241,9 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Gk" = (
-/obj/random/flora/jungle_tree,
-/turf/simulated/floor/asteroid/grass/jungle,
+/mob/living/simple_animal/chicken,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Gw" = (
 /obj/structure/bonfire/permanent,
@@ -3034,7 +3254,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "GC" = (
 /obj/machinery/door/airlock/multi_tile/glass{
@@ -3082,7 +3302,9 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Hl" = (
 /obj/structure/flora/ausbushes/palebush,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/bushc1,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Hq" = (
 /obj/random/mob/luna_solis,
@@ -3120,7 +3342,7 @@
 /obj/item/tool/knife/dagger,
 /obj/item/tool/knife/dagger,
 /obj/item/tool/knife/dagger,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "HR" = (
 /obj/structure/table/marble,
@@ -3137,7 +3359,15 @@
 /obj/structure/bed/chair{
 	dir = 1
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Il" = (
+/obj/structure/dogbed{
+	name = "chicken nest";
+	desc = "A bed made especially for chickens to lay their eggs on it."
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Io" = (
 /obj/machinery/smartfridge/kitchen,
@@ -3155,6 +3385,10 @@
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge)
+"II" = (
+/obj/structure/flora/small/grassa1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "IN" = (
 /obj/machinery/light,
 /turf/simulated/floor/carpet/bcarpet,
@@ -3171,6 +3405,13 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"IT" = (
+/obj/structure/barricade,
+/obj/structure/grille,
+/obj/effect/window_lwall_spawn,
+/obj/effect/window_lwall_spawn,
+/turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "IZ" = (
 /obj/machinery/door/airlock/external,
@@ -3208,7 +3449,7 @@
 /obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = -4
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Js" = (
 /obj/structure/extinguisher_cabinet,
@@ -3230,18 +3471,16 @@
 "JC" = (
 /obj/structure/table/woodentable,
 /obj/item/clothing/head/hairflower/yellow,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "JY" = (
 /obj/structure/morgue,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Kf" = (
-/obj/machinery/door/window,
-/obj/machinery/door/window/northright{
-	dir = 8
-	},
-/turf/simulated/floor/asteroid/dirt/dust,
+/obj/structure/barricade,
+/obj/structure/grille,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Kp" = (
 /obj/structure/catwalk,
@@ -3255,7 +3494,7 @@
 	icon_state = "railing0";
 	tag = "icon-railing0 (NORTH)"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Ky" = (
 /obj/effect/floor_decal/industrial/danger{
@@ -3279,6 +3518,10 @@
 /obj/structure/curtain/black,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Lp" = (
+/obj/structure/flora/small/bushb3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Ls" = (
 /obj/machinery/gibber,
 /turf/simulated/floor/wood/wild1,
@@ -3312,7 +3555,7 @@
 "LR" = (
 /obj/structure/bonfire/permanent,
 /obj/machinery/door/blast/shutters/glass,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Mj" = (
 /obj/structure/table/woodentable,
@@ -3342,9 +3585,19 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"MA" = (
+/obj/structure/flora/tree/jungle_small{
+	pixel_y = -1
+	},
+/obj/structure/flora/small/lavarock1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "ME" = (
 /obj/structure/flora/ausbushes/genericbush,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/bushc3,
+/obj/structure/flora/small/bushc1,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "MG" = (
 /obj/machinery/light/small{
@@ -3359,18 +3612,26 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "MQ" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/bushc1,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "MV" = (
 /obj/structure/table/bench/wooden,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Ne" = (
+/mob/living/simple_animal/pig,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Nk" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "No" = (
 /obj/structure/table/woodentable,
@@ -3401,7 +3662,23 @@
 /mob/living/simple_animal/cat/fluff{
 	name = "Jones"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"NN" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/obj/structure/catwalk,
+/obj/machinery/power/solar,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "NO" = (
 /obj/structure/multiz/stairs/enter/bottom{
@@ -3422,10 +3699,10 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "NZ" = (
-/obj/machinery/vending/gamers/hunters,
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/machinery/vending/gamers/hunters,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Oi" = (
@@ -3441,8 +3718,7 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Op" = (
-/obj/structure/cardboardbox,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Os" = (
 /obj/machinery/microwave/burnbarrel{
@@ -3458,8 +3734,16 @@
 /obj/machinery/holoposter,
 /turf/simulated/wall/wood_barrel,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"OF" = (
+/obj/machinery/vending/cola,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "OI" = (
 /turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge)
+"OL" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "OP" = (
 /obj/structure/extinguisher_cabinet,
@@ -3531,11 +3815,11 @@
 "Py" = (
 /obj/structure/flora/big/rocks3,
 /obj/random/flora/jungle_tree,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "PB" = (
 /obj/machinery/media/jukebox,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "PD" = (
 /obj/structure/table/rack/shelf,
@@ -3557,8 +3841,24 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
+"PQ" = (
+/obj/machinery/light/floor,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/table/rack{
+	name = "feeding rack"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Qb" = (
 /turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Qi" = (
+/obj/machinery/light/floor,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/machinery/space_heater,
+/obj/machinery/door/blast/shutters/glass,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Qp" = (
 /obj/structure/cable{
@@ -3585,6 +3885,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/random/credits,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "QF" = (
@@ -3596,7 +3897,7 @@
 "QH" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "QO" = (
 /turf/simulated/floor/wood/wild2,
@@ -3641,7 +3942,9 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/leafybush,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/barricade,
+/obj/structure/grille,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Ry" = (
 /obj/structure/table/woodentable,
@@ -3664,7 +3967,7 @@
 "RJ" = (
 /obj/structure/flora/small/rock2,
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "RK" = (
 /obj/structure/sign/warning/hazard_danger,
@@ -3686,6 +3989,11 @@
 /mob/living/carbon/superior_animal/lodge/cerberus,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/outside/forest/hunting_lodge)
+"Sm" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/tree/jungle_small/variant5,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "St" = (
 /obj/structure/curtain/open/bed{
 	name = "red curtain"
@@ -3701,11 +4009,12 @@
 "Sz" = (
 /obj/structure/table/woodentable,
 /obj/item/toy/plushie/fumo,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "SJ" = (
 /obj/structure/flora/ausbushes/leafybush,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/flora/small/bushb1,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "SM" = (
 /obj/structure/invislight,
@@ -3725,6 +4034,11 @@
 /obj/machinery/computer/arcade/orion_trail,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Tk" = (
+/obj/structure/flora/rock/variant1,
+/obj/structure/flora/small/busha3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Tl" = (
 /obj/structure/table/woodentable,
 /obj/machinery/reagentgrinder,
@@ -3735,11 +4049,15 @@
 /obj/item/toy/plushie/carp,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/hunting_lodge)
+"Tw" = (
+/obj/machinery/light/floor,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/hunting_lodge)
 "TE" = (
 /obj/structure/table/woodentable,
 /obj/item/reagent_containers/dropper,
 /obj/item/reagent_containers/food/condiment/cookingoil,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "TS" = (
 /obj/structure/table/rack/shelf,
@@ -3752,12 +4070,24 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Us" = (
+/obj/structure/barricade,
+/obj/effect/window_lwall_spawn,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Uy" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"UA" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/small/bushc3,
+/obj/structure/flora/small/bushc1,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "UE" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -3806,6 +4136,7 @@
 	dir = 4;
 	pixel_x = 24
 	},
+/obj/machinery/vending/snack,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "UR" = (
@@ -3843,6 +4174,11 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/outside/forest/hunting_lodge)
+"VK" = (
+/obj/machinery/light/floor,
+/obj/structure/sink/puddle,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge)
 "VN" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
@@ -3864,10 +4200,42 @@
 	},
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Wa" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/small/grassa1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Wu" = (
 /obj/structure/table/marble,
 /obj/item/storage/lunchbox,
 /turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Wz" = (
+/obj/machinery/door/window,
+/obj/machinery/door/window/northright{
+	dir = 8
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"WL" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/machinery/light/floor,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"WS" = (
+/obj/machinery/vending/style,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Xd" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/small/bushc3,
+/obj/structure/flora/small/bushc1,
+/obj/structure/flora/small/grassa5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Xo" = (
 /obj/structure/filingcabinet/chestdrawer,
@@ -3895,7 +4263,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "XK" = (
 /obj/structure/flora/big/rocks3,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "XL" = (
 /obj/machinery/power/solar,
@@ -3961,6 +4329,7 @@
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk,
+/obj/machinery/power/solar,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Yq" = (
@@ -3979,12 +4348,12 @@
 "Yw" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Yz" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/reagent_dispensers/beerkeg,
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "YS" = (
 /obj/structure/flora/rock,
@@ -4001,6 +4370,10 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
+"Zh" = (
+/obj/random/flora/jungle_tree,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Zi" = (
 /obj/structure/catwalk,
 /obj/structure/catwalk,
@@ -4008,14 +4381,23 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Zj" = (
-/obj/structure/sink/puddle,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass/jungle,
+/obj/structure/table/woodentable,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Zr" = (
 /obj/structure/table/marble,
 /obj/machinery/microwave,
 /turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Zt" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/leafybush,
+/obj/machinery/door/window/northright{
+	dir = 2
+	},
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Zv" = (
 /obj/structure/railing{
@@ -4023,7 +4405,7 @@
 	icon_state = "railing0";
 	tag = "icon-railing0 (WEST)"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Zw" = (
 /obj/structure/table/woodentable,
@@ -4061,7 +4443,7 @@
 	dir = 8;
 	icon_state = "sofaend_right"
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ZR" = (
 /mob/living/simple_animal/crab,
@@ -4070,14 +4452,14 @@
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ZX" = (
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ZY" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
 	},
-/turf/simulated/floor/asteroid/grass/jungle,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 
 (1,1,1) = {"
@@ -4174,13 +4556,13 @@ jY
 aa
 aB
 aB
-tz
 zF
 zF
-tz
 zF
 zF
-tz
+zF
+zF
+zF
 tz
 zF
 zF
@@ -4250,7 +4632,7 @@ pw
 dT
 aa
 aa
-aa
+aB
 Ou
 Gw
 DR
@@ -4372,16 +4754,16 @@ ai
 ai
 ai
 iS
-tz
-tz
 iS
 iS
 iS
 iS
 iS
 iS
-tz
-tz
+iS
+iS
+zF
+zF
 aB
 aB
 aB
@@ -4414,7 +4796,7 @@ zF
 cM
 DR
 gg
-tz
+zF
 tz
 zF
 CE
@@ -4483,7 +4865,7 @@ dv
 pw
 dv
 pw
-aa
+aB
 aB
 sF
 zF
@@ -4619,9 +5001,9 @@ cw
 et
 fe
 qn
-fe
+mG
 qn
-fe
+mG
 qn
 aB
 tz
@@ -4748,7 +5130,7 @@ ag
 hf
 mv
 ag
-at
+Op
 xW
 eo
 QO
@@ -4826,7 +5208,7 @@ hf
 hf
 hf
 ag
-at
+Op
 ay
 et
 hj
@@ -4853,9 +5235,9 @@ et
 fe
 jr
 qn
-fe
+mG
 qn
-fe
+mG
 qn
 aB
 tz
@@ -4898,13 +5280,13 @@ tz
 tz
 tz
 aa
-at
+BI
 ag
 hf
 hf
 ag
-at
-at
+Op
+Op
 ay
 et
 hj
@@ -4955,15 +5337,15 @@ aB
 ay
 aa
 aB
-at
-at
-at
+Op
+Op
+Op
 tW
-at
+Op
 tW
-at
+Op
 tW
-at
+Op
 zF
 zF
 mO
@@ -5034,27 +5416,27 @@ ay
 aa
 ew
 eE
-at
-at
-at
+Op
+Op
+Op
 ux
-at
-at
-at
-at
+Op
+Op
+Op
+Op
 eL
 zF
 XO
 cu
 cu
-cu
+WS
 zF
 zF
 tz
 tz
 tz
-at
-at
+Tk
+Ff
 ag
 hf
 hf
@@ -5079,9 +5461,9 @@ et
 fF
 fF
 aB
-ax
+PQ
 FW
-ax
+Qi
 aB
 cB
 fc
@@ -5113,13 +5495,13 @@ aa
 aB
 iX
 eE
-at
-at
-at
+Op
+Op
+Op
 ag
 dc
 jn
-at
+Op
 zF
 zF
 zF
@@ -5131,8 +5513,8 @@ RQ
 zF
 zF
 tz
-at
-at
+xI
+Lp
 SM
 mv
 hf
@@ -5157,10 +5539,10 @@ he
 eW
 eW
 aB
+Fa
+sI
 ax
-bs
-ax
-fX
+vE
 jz
 ax
 ax
@@ -5190,14 +5572,14 @@ ay
 aa
 ew
 eE
-at
-at
-at
-at
+Op
+Op
+Op
+Op
 ag
 ag
-at
-at
+Op
+Op
 eL
 zF
 av
@@ -5205,12 +5587,12 @@ gg
 gg
 kC
 fr
-kn
+FL
 NZ
 zF
 MV
 at
-at
+wH
 aB
 aD
 aB
@@ -5234,10 +5616,10 @@ ay
 ay
 ay
 ay
-fX
+vE
+yT
 ax
-ax
-ax
+hH
 aB
 XY
 ax
@@ -5267,15 +5649,15 @@ aB
 Nu
 aB
 aB
-at
-at
-at
-at
-at
-at
-at
-at
-at
+Op
+Op
+Op
+Op
+Op
+Op
+Op
+Op
+Op
 zF
 zF
 Ph
@@ -5285,7 +5667,7 @@ Ph
 QO
 gg
 gg
-St
+EZ
 jw
 xW
 ay
@@ -5312,10 +5694,10 @@ JC
 ay
 ay
 ay
-fX
-ax
+vE
+Il
 bs
-ax
+po
 aB
 jz
 ax
@@ -5338,22 +5720,22 @@ jY
 jY
 aa
 pw
-VN
+yV
 dv
 pw
 aB
 xW
 ay
 Pl
-at
-at
-at
-at
-at
-at
-at
-at
-at
+Op
+Op
+Op
+Op
+Op
+Op
+Op
+Op
+Op
 eL
 zF
 ee
@@ -5363,7 +5745,7 @@ gg
 QO
 gg
 wY
-St
+EZ
 jw
 ay
 ay
@@ -5391,10 +5773,10 @@ ay
 fI
 eE
 aB
+yT
+hH
 ax
-ax
-ax
-fX
+IT
 XY
 ax
 ax
@@ -5416,7 +5798,7 @@ et
 cK
 et
 pw
-VN
+yV
 dv
 pw
 aB
@@ -5441,7 +5823,7 @@ kC
 QO
 gg
 gg
-St
+EZ
 jw
 xW
 ay
@@ -5466,13 +5848,13 @@ UF
 ay
 ay
 ay
-nj
+OL
 eE
 aB
-aB
-Kf
-aB
-aB
+Tw
+ax
+eC
+Us
 au
 ax
 ax
@@ -5494,7 +5876,7 @@ VN
 fv
 co
 pw
-VN
+yV
 dv
 pw
 aB
@@ -5513,14 +5895,14 @@ RE
 tz
 zF
 Ph
-XU
-XU
+gg
+gg
 Ph
-QO
+BH
 UP
 Fe
 zF
-at
+pE
 ay
 ag
 hf
@@ -5540,7 +5922,7 @@ ed
 ed
 et
 et
-at
+Op
 bK
 dD
 ay
@@ -5548,10 +5930,10 @@ dD
 aB
 aB
 aB
-wg
-kz
-kz
-wg
+Wz
+aB
+aB
+au
 ax
 ax
 wg
@@ -5588,17 +5970,17 @@ CO
 gg
 gg
 FU
-gg
+kn
 zF
 Ow
-St
-St
+XU
+XU
 zF
 zF
 zF
 zF
 zF
-ek
+MA
 ay
 ag
 oq
@@ -5627,8 +6009,8 @@ Zc
 ay
 wg
 ay
-wg
-wg
+kz
+kz
 wg
 ax
 ax
@@ -5676,7 +6058,7 @@ tz
 aa
 ak
 at
-at
+vc
 ay
 er
 hf
@@ -5712,7 +6094,7 @@ ax
 ax
 wg
 aB
-dV
+gS
 dV
 az
 aB
@@ -5747,14 +6129,14 @@ zF
 gg
 gg
 gg
-FL
+OF
 cc
 zF
 tz
 aa
-nj
-at
-at
+OL
+pE
+uS
 ay
 ag
 hf
@@ -5839,13 +6221,13 @@ aD
 aD
 aB
 ay
-Di
+wc
 Ae
-at
+gC
 Au
 tW
 eE
-at
+gC
 et
 ko
 et
@@ -5858,11 +6240,11 @@ et
 ay
 ay
 pi
-bC
+Kf
 Zj
 bT
 tu
-fX
+Kf
 je
 ax
 ax
@@ -5908,7 +6290,7 @@ iS
 tz
 et
 aa
-uh
+cQ
 ay
 ay
 ay
@@ -5917,7 +6299,7 @@ aN
 aN
 FC
 ay
-at
+II
 et
 et
 et
@@ -5931,14 +6313,14 @@ et
 et
 cV
 Gz
-at
+Op
 eE
 ay
 ay
 Yz
 aB
 fE
-Di
+hH
 fB
 aB
 je
@@ -5995,7 +6377,7 @@ aN
 aN
 FC
 ay
-Di
+wc
 et
 tn
 vn
@@ -6014,11 +6396,11 @@ it
 ay
 ay
 kb
-bC
-Di
+Kf
 fE
+hH
 gP
-fX
+Kf
 je
 ax
 ax
@@ -6060,20 +6442,20 @@ tz
 iS
 mx
 HT
-at
+Op
 ZD
 qb
 aa
 eE
 ay
 ay
-at
+pE
 aB
 CB
 CB
 aB
 ay
-Ae
+Wa
 Oi
 Qb
 Qb
@@ -6085,7 +6467,7 @@ jH
 jH
 dn
 HR
-at
+Op
 iX
 Kt
 eE
@@ -6093,9 +6475,9 @@ ay
 ay
 cG
 aB
-bW
-bW
-bW
+hH
+hH
+hH
 aB
 je
 ax
@@ -6103,7 +6485,7 @@ ax
 wg
 gI
 dV
-dV
+gS
 dV
 aB
 tz
@@ -6122,7 +6504,7 @@ pw
 yL
 dQ
 jv
-wk
+NN
 Ju
 aB
 tz
@@ -6138,20 +6520,20 @@ tz
 iS
 al
 HT
-at
-at
-at
+Op
+Op
+Op
 aa
 eE
 ay
 ay
-at
+BZ
 ag
 hf
 hf
 ag
 ay
-Di
+wc
 et
 Qb
 Hw
@@ -6163,25 +6545,25 @@ aY
 HK
 xH
 Io
-at
+iC
 Zv
-at
+Op
 eE
 ay
 ay
 Jn
 aB
-QH
-Di
-Di
+WL
+hH
+hH
 aB
 iI
 ax
 ax
 wg
 rA
-dV
-dV
+tO
+gS
 dV
 aB
 tz
@@ -6220,7 +6602,7 @@ et
 fD
 fD
 aa
-uh
+AL
 ay
 ay
 ag
@@ -6229,7 +6611,7 @@ hf
 ag
 ay
 ay
-Di
+wc
 et
 eo
 et
@@ -6249,16 +6631,16 @@ ay
 ay
 bo
 aB
-Di
+hH
 QH
-Di
+hH
 aB
 ss
 ax
 ax
 wg
 rA
-dV
+bW
 dV
 dV
 aB
@@ -6307,8 +6689,8 @@ bx
 ag
 ay
 ay
-Di
-Ae
+wc
+Wa
 AN
 fQ
 Dq
@@ -6327,16 +6709,16 @@ ay
 ay
 PB
 bC
-Di
-Di
-Di
+Sm
+ye
+hH
 fX
 ss
 ax
 xK
 wg
 aB
-dV
+bW
 dV
 dV
 aB
@@ -6403,10 +6785,10 @@ ay
 ay
 ay
 ay
-ay
+Op
 aB
 QH
-Di
+hH
 QH
 aB
 ss
@@ -6414,7 +6796,7 @@ ax
 ax
 wg
 aB
-dV
+tO
 dV
 dV
 aB
@@ -6474,25 +6856,25 @@ ay
 ay
 ay
 ay
+if
+if
+if
+if
+if
 ay
 ay
-ay
-ay
-ay
-ay
-ay
-ay
+Op
 bC
-Di
-Di
-Di
+hH
+hH
+hH
 fX
 ss
 ax
 ax
 wg
 aB
-dV
+tT
 Sb
 dV
 aB
@@ -6552,17 +6934,17 @@ et
 et
 et
 et
-eX
+Ay
 vV
 vV
 vV
 Rr
-ay
-ay
-ay
+DE
+Op
+Op
 aB
 QH
-Di
+hH
 QH
 aB
 ss
@@ -6570,9 +6952,9 @@ ax
 ax
 wg
 aB
+iz
 dV
-dV
-dV
+VK
 aB
 tz
 "}
@@ -6608,7 +6990,7 @@ aa
 aa
 aa
 qN
-at
+Op
 XK
 ay
 ay
@@ -6631,17 +7013,17 @@ Tl
 LQ
 et
 et
-eX
-at
+aw
+dK
 ek
 vV
+DE
 ay
-ay
-ay
+Op
 bC
-Di
-Di
-Di
+aw
+hH
+hH
 fG
 ax
 ax
@@ -6682,11 +7064,11 @@ aB
 yo
 gC
 yo
-at
+Op
 XK
 yo
 gC
-at
+Op
 yo
 ay
 ay
@@ -6709,11 +7091,11 @@ es
 es
 es
 et
-eX
-at
-at
+Ne
+bT
+hH
 vV
-ay
+DE
 ay
 ay
 aB
@@ -6760,9 +7142,9 @@ aB
 RJ
 XK
 gC
-Gk
-at
-at
+Zh
+Op
+Op
 Py
 gC
 eZ
@@ -6787,23 +7169,23 @@ es
 Ry
 gv
 et
-eX
+hH
 Gk
-pE
-vV
+hH
+Zt
 ay
 ay
 ay
 bC
 aB
-aB
+hH
 hH
 wv
-at
-at
+bT
+hH
 fe
 wg
-wg
+Dm
 aB
 aB
 aa
@@ -6835,13 +7217,13 @@ Zi
 Zi
 zo
 aB
-at
-at
+Op
+Op
 yo
 gC
 yo
-at
-at
+Op
+Op
 yo
 gC
 ay
@@ -6866,14 +7248,14 @@ No
 os
 et
 ft
-eX
-eX
+hH
+aw
 aa
 Js
 ay
 ay
 bC
-aa
+aB
 aB
 aB
 aB
@@ -6958,7 +7340,7 @@ aB
 hL
 wg
 ab
-at
+ek
 ab
 aB
 aa
@@ -7015,9 +7397,9 @@ et
 et
 et
 ay
-at
+Op
 NK
-at
+Op
 Op
 eX
 eX
@@ -7027,14 +7409,14 @@ aB
 aB
 aB
 fc
-ay
+eW
 bC
 aa
 aa
 aa
 aB
 hL
-at
+ek
 ab
 wg
 ab
@@ -7084,17 +7466,17 @@ er
 hf
 hf
 ag
-MQ
-dD
+Xd
+UA
 nj
-du
+qR
 ME
-SJ
-ha
+ck
+Eq
 uh
 ay
 ay
-at
+Op
 qm
 eX
 eX
@@ -7105,7 +7487,7 @@ es
 Yr
 ks
 ax
-fc
+ax
 bC
 aa
 aa
@@ -7652,7 +8034,7 @@ aB
 aB
 ay
 ay
-Zc
+ay
 CG
 aM
 aB
@@ -7730,7 +8112,7 @@ aB
 aa
 ay
 ay
-Zc
+ay
 CG
 aM
 aB
