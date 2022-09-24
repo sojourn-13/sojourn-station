@@ -9,6 +9,8 @@
 		level_threshholds += (level_threshholds * min(1, level))
 		if(!unlocked)
 			unlocked = TRUE
+		else
+			activate_affect()
 
 /datum/task_master/task/proc/activate_affect()
 	return
