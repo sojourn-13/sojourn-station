@@ -138,6 +138,16 @@
 		/obj/item/clothing/accessory/cape/blackedge = 8,
 		/obj/item/clothing/accessory/cape/brown = 8,
 		/obj/item/clothing/accessory/cape/blackalt = 8,
+		//Ties
+		/obj/item/clothing/accessory/tie/black = 8,
+		/obj/item/clothing/accessory/tie/bluestriped = 8,
+		/obj/item/clothing/accessory/tie/darkgreen = 8,
+		/obj/item/clothing/accessory/tie/navy = 8,
+		/obj/item/clothing/accessory/tie/red = 8,
+		/obj/item/clothing/accessory/tie/redstriped = 8,
+		/obj/item/clothing/accessory/tie/white = 8,
+		/obj/item/clothing/accessory/tie/yellow = 8,
+		/obj/item/clothing/accessory/tie = 8,
 		//Glasses
 		/obj/item/clothing/glasses/binoclard_lenses = 5,
 		/obj/item/clothing/glasses/binoclard_lenses/dark = 3,
@@ -388,6 +398,16 @@
 		/obj/item/clothing/accessory/cape/blackedge = 95,
 		/obj/item/clothing/accessory/cape/brown = 95,
 		/obj/item/clothing/accessory/cape/blackalt = 95,
+		//Ties - Scarves are 50 credits so these one should as well.
+		/obj/item/clothing/accessory/tie/black = 50,
+		/obj/item/clothing/accessory/tie/bluestriped = 50,
+		/obj/item/clothing/accessory/tie/darkgreen = 50,
+		/obj/item/clothing/accessory/tie/navy = 50,
+		/obj/item/clothing/accessory/tie/red = 50,
+		/obj/item/clothing/accessory/tie/redstriped = 50,
+		/obj/item/clothing/accessory/tie/white = 50,
+		/obj/item/clothing/accessory/tie/yellow = 50,
+		/obj/item/clothing/accessory/tie = 50,
 		//Glasses
 		/obj/item/clothing/glasses/binoclard_lenses = 50,
 		/obj/item/clothing/glasses/binoclard_lenses/dark = 50,

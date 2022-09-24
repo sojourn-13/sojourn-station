@@ -86,22 +86,22 @@
 
 /obj/item/clothing/accessory/tie/blueclip
 	name = "blue clip tie"
-	desc = "A neosilk clip-on tie with a striped blue design and clip."
+	desc = "A neosilk clip-on long tie with a striped blue design and clip."
 	icon_state = "bluecliptie"
 
 /obj/item/clothing/accessory/tie/bluestriped
 	name = "blue striped tie"
-	desc = "A neosilk clip-on tie with a striped blue design."
+	desc = "A neosilk clip-on long tie with a striped blue design."
 	icon_state = "bluelongtie"
 
 /obj/item/clothing/accessory/tie/darkgreen
 	name = "dark green tie"
-	desc = "A neosilk clip-on tie with a dark green design."
+	desc = "A neosilk clip-on long tie with a dark green design."
 	icon_state = "dgreentie"
 
 /obj/item/clothing/accessory/tie/navy
 	name = "navy tie"
-	desc = "A neosilk clip-on tie with a navy design."
+	desc = "A neosilk clip-on long tie with a navy design."
 	icon_state = "navytie"
 
 /obj/item/clothing/accessory/tie/red
@@ -111,17 +111,17 @@
 
 /obj/item/clothing/accessory/tie/redclip
 	name = "red clip tie"
-	desc = "A neosilk clip-on tie with a striped red design and clip."
+	desc = "A neosilk clip-on long tie with a striped red design and clip."
 	icon_state = "redcliptie"
 
 /obj/item/clothing/accessory/tie/redstriped
 	name = "red striped tie"
-	desc = "A neosilk clip-on tie with a striped red design."
+	desc = "A neosilk clip-on long tie with a striped red design."
 	icon_state = "redlongtie"
 
 /obj/item/clothing/accessory/tie/white
 	name = "white tie"
-	desc = "A neosilk clip-on tie with a white design."
+	desc = "A neosilk clip-on long tie with a white design."
 	icon_state = "whitetie"
 
 /obj/item/clothing/accessory/tie/yellow

@@ -22,7 +22,7 @@
 /datum/gear/factionsoteria/cloakmedical
 	display_name = "cloak, soteria medical"
 	path = /obj/item/clothing/accessory/job/cape/medical
-	allowed_roles = list("Soteria Doctor","Soteria Biolab Officer","Soteria Orderly","Soteria Client Recovery Specialist")
+	allowed_roles = list("Soteria Doctor","Soteria Biolab Officer","Soteria Client Recovery Specialist")
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"
 

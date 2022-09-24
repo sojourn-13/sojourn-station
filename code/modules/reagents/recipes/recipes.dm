@@ -201,6 +201,7 @@
 	required_reagents = list("psi_juice" = 30, "water" = 30, "silicon" = 30)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The solution solidifies into a cerebrix inhaler!"
 
 /datum/chemical_reaction/psi_juice_inhaler/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -378,6 +379,7 @@
 	required_reagents = list("slimejelly" = 100)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The solution coalesces into a compressed jelly jar!"
 
 /datum/chemical_reaction/compressedjelly/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var /obj/item/slime_potion/slimes_reviver/R = new /obj/item/slime_potion/slimes_reviver
@@ -403,6 +405,7 @@
 	result = null
 	required_reagents = list("iron" = 5, "frostoil" = 5, "plasma" = 20)
 	result_amount = 1
+	mix_message = "The solution coalesces into solid sheets of plasma!"
 
 /datum/chemical_reaction/plasmasolidification/on_reaction(var/datum/reagents/holder, var/created_volume)
 	new /obj/item/stack/material/plasma(get_turf(holder.my_atom), created_volume)
@@ -412,6 +415,7 @@
 	result = null
 	required_reagents = list("pacid" = 1, "plasticide" = 2)
 	result_amount = 1
+	mix_message = "The solution coalesces into solid sheets of plastic!"
 
 /datum/chemical_reaction/plastication/on_reaction(var/datum/reagents/holder, var/created_volume)
 	new /obj/item/stack/material/plastic(get_turf(holder.my_atom), created_volume)
@@ -422,6 +426,7 @@
 	result = null
 	required_reagents = list("iron" = 5, "frostoil" = 5, MATERIAL_GOLD = 20)
 	result_amount = 1
+	mix_message = "The solution coalesces into solid sheets of gold! Alchemy is real!"
 
 /datum/chemical_reaction/goldsolidification/on_reaction(var/datum/reagents/holder, var/created_volume)
 	new /obj/item/stack/material/gold(get_turf(holder.my_atom), created_volume)
@@ -431,6 +436,7 @@
 	result = null
 	required_reagents = list("phosphorus" = 5, "frostoil" = 5, MATERIAL_URANIUM = 20)
 	result_amount = 1
+	mix_message = "The solution dangerously coalesces into solid sheets of stable uranium!"
 
 /datum/chemical_reaction/uraniumsolidification/on_reaction(var/datum/reagents/holder, var/created_volume)
 	new /obj/item/stack/material/uranium(get_turf(holder.my_atom), created_volume)
@@ -440,6 +446,7 @@
 	result = null
 	required_reagents = list("iron" =5, "frostoil" =5, "silver" =20)
 	result_amount =1
+	mix_message = "The solution coalesces into solid sheets of silver!"
 
 /datum/chemical_reaction/silversolidification/on_reaction(var/datum/reagents/holder, var/created_volume)
 	new /obj/item/stack/material/silver(get_turf(holder.my_atom), created_volume)
@@ -449,6 +456,7 @@
 	result = null
 	required_reagents = list("woodpulp" = 5, "water" = 5)
 	result_amount = 1
+	mix_message = "The mixture dries up and becomes sheets of pliable cardboard."
 
 /datum/chemical_reaction/cardboardification/on_reaction(var/datum/reagents/holder, var/created_volume)
 	new /obj/item/stack/material/cardboard(get_turf(holder.my_atom), created_volume)
@@ -778,7 +786,6 @@
 	supports_decomposition_by_electrolysis = FALSE
 	required_reagents = list("instant_ice" = 3, "water" = 3)
 	result_amount = 4
-
 
 /datum/chemical_reaction/instant_ice_with_water/on_reaction(datum/reagents/holder, var/created_volume)
 	..()
