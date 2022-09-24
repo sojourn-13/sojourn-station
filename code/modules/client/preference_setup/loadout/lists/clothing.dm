@@ -39,6 +39,12 @@
 	slot = slot_wear_mask
 	cost = 2
 
+/datum/gear/clothing/withnosurvivors
+	display_name = "rebreather"
+	path = /obj/item/clothing/mask/gas/bigguy
+	slot = slot_wear_mask
+	cost = 2
+
 /datum/gear/clothing/mask/costume/history/plaguedoctor
 	display_name = "Plague Doctor mask"
 	path = /obj/item/clothing/mask/costume/history/plaguedoctor
