@@ -1,5 +1,6 @@
 
 
+//Heavily inspired by Proto23 created by Croc
 //Power creep but for random tasks and unsorted things to help push players into doing activities for miner gains
 //Code is HEAVILLY reused and stolen from Hex's Genetics with miner tweaks
 
