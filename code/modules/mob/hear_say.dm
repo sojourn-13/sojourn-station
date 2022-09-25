@@ -24,7 +24,6 @@
 	if(verb == "reports")
 		var/cop_code
 		if(is_neotheology_disciple(src))
-			log_debug("I passed the disciple check")
 			cop_code = get_cop_code(holy = TRUE)
 		else
 			cop_code = get_cop_code()
@@ -86,7 +85,6 @@
 	if(rverb == "reports")
 		var/cop_code
 		if(is_neotheology_disciple(src))
-			log_debug("I passed the disciple check")
 			cop_code = get_cop_code(holy = TRUE)
 		else
 			cop_code = get_cop_code()

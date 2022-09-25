@@ -8,7 +8,6 @@ var/cop_code_last
 	var/cop_code_holy = pick("Apostle ", "Bishop", "Chaplin", "Deacon", "Exclaustration", "Friars", "Seminarian", "Upanishads")
 
 	var/cop_code_new
-	log_debug("isholy : [holy]")
 	if(holy)
 		cop_code_new = "[cop_code_1]-[cop_code_2] [cop_code_holy]"
 	else
