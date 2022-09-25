@@ -42,7 +42,7 @@
 		return TRUE
 	if(get_task_mastery(task_key))
 		var/datum/task_master/task/pushforwards = get_task_mastery(task_key)
-		log_debug("incoming_task ==[incoming_task] task_key == [task_key] skill_gained == [skill_gained] learner == [learner].")
+		//log_debug("incoming_task ==[incoming_task] task_key == [task_key] skill_gained == [skill_gained] learner == [learner].")
 		pushforwards.gain_value(value_to_gain = skill_gained)
 	return FALSE
 
