@@ -1,11 +1,18 @@
 var/cop_code_expire
 var/cop_code_last
 
-/proc/get_cop_code()
+/proc/get_cop_code(holy = FALSE)
 	var/cop_code_1 = pick("2", "10", "20", "0", "13")
 	var/cop_code_2 = pick("1","4", "7", "8", "10", "13", "15", "17", "21", "22", "24", "33", "40", "55", "64", "75", "88", "99")
 	var/cop_code_3 = pick("Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Sierra", "Uniform", "Youth On Skates")
-	var/cop_code_new = "[cop_code_1]-[cop_code_2] [cop_code_3]"
+	var/cop_code_holy = pick("Apostle ", "Bishop", "Chaplin", "Deacon", "Exclaustration", "Friars", "Seminarian", "Upanishads")
+
+	var/cop_code_new
+	log_debug("isholy : [holy]")
+	if(holy)
+		cop_code_new = "[cop_code_1]-[cop_code_2] [cop_code_holy]"
+	else
+		cop_code_new = "[cop_code_1]-[cop_code_2] [cop_code_3]"
 	if(world.time < cop_code_expire)
 		return cop_code_last
 	else

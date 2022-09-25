@@ -22,7 +22,12 @@
 		message = "<i>[message]</i>"
 
 	if(verb == "reports")
-		var/cop_code = get_cop_code()
+		var/cop_code
+		if(is_neotheology_disciple(src))
+			log_debug("I passed the disciple check")
+			cop_code = get_cop_code(holy = TRUE)
+		else
+			cop_code = get_cop_code()
 		if(isghost(src))
 			message = cop_code + " (" + replace_characters(message, list("@"=")"))
 		else
@@ -79,7 +84,12 @@
 	var/speaker_name = get_hear_name(speaker, hard_to_hear, voice_name)
 
 	if(rverb == "reports")
-		var/cop_code = get_cop_code()
+		var/cop_code
+		if(is_neotheology_disciple(src))
+			log_debug("I passed the disciple check")
+			cop_code = get_cop_code(holy = TRUE)
+		else
+			cop_code = get_cop_code()
 		if(isghost(src))
 			message = cop_code + " (" + replace_characters(message, list("@"=")"))
 		else
