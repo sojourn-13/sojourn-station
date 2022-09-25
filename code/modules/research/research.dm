@@ -186,7 +186,8 @@ Procs:
 /datum/research/proc/can_load_file(datum/computer_file/file)
 	if(istype(file, /datum/computer_file/binary/research_points))
 		var/datum/computer_file/binary/research_points/research_points_file = file
-		return !(research_points_file.research_id in known_research_file_ids)
+		if(research_points_file.size >= 1)
+			return TRUE //!(research_points_file.research_id in known_research_file_ids) Soj edit we now just kill the file
 
 	return FALSE
 
@@ -196,8 +197,10 @@ Procs:
 
 	if(istype(file, /datum/computer_file/binary/research_points))
 		var/datum/computer_file/binary/research_points/research_points_file = file
-		known_research_file_ids += research_points_file.research_id
+		known_research_file_ids += research_points_file.research_id //Used for admins/logs still
 		adjust_research_points(research_points_file.size * 1000)
+		file.size = 0 //Just in case
+		file.holder.recalculate_size()
 		return TRUE
 
 	return FALSE

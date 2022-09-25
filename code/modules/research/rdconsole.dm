@@ -98,6 +98,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	. = ..()
 	files = new /datum/research(src) //Setup the research data holder.
 	SyncRDevices()
+	sync_tech() //To stop cheaters
 
 /obj/machinery/computer/rdconsole/Destroy()
 	files = null
