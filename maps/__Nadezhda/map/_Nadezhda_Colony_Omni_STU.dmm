@@ -25099,7 +25099,7 @@
 /obj/structure/bed/chair/shuttle{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/shuttle/surface_transport_lz)
 "eVj" = (
 /obj/structure/cable/cyan{
@@ -77051,7 +77051,7 @@
 /obj/machinery/computer/shuttle_control/multi/surface_transport{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/shuttle/surface_transport_lz)
 "oFt" = (
 /obj/effect/window_lwall_spawn/reinforced,
