@@ -306,7 +306,7 @@
 		var/name = saved_shopping_lists[text2num(href_list["PRG_cart_delete"])]
 		delete_shop_list(name)
 		return TRUE
-	
+
 	// Order requests
 	if(href_list["PRG_reason"])
 		var/reason = sanitizeName(input("Enter reason(s) for order", "Request Reason", ""), MAX_NAME_LEN)
@@ -495,7 +495,7 @@
 			if(account.money < order_cost)
 				to_chat(usr, SPAN_WARNING("ERROR: Not enough funds in account ([account.get_name()] #[account.account_number])."))
 				return
-			if(requesting_account.money < requestor_cost)	
+			if(requesting_account.money < requestor_cost)
 				to_chat(usr, SPAN_WARNING("ERROR: Not enough funds in requesting account ([requesting_account.get_name()] #[requesting_account.account_number])."))
 				return
 
@@ -509,7 +509,7 @@
 	name = "Trading Program"
 
 /datum/nano_module/program/trade/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, state = GLOB.default_state)
-	var/list/data = ui_data()
+	var/list/data = nano_ui_data()
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -526,7 +526,7 @@
 		ui.set_initial_data(data)
 		ui.open()
 
-/datum/nano_module/program/trade/ui_data()
+/datum/nano_module/program/trade/nano_ui_data()
 	. = ..()
 	var/datum/computer_file/program/trade/PRG = program
 	if(!istype(PRG))

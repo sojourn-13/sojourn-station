@@ -550,14 +550,14 @@
 
 
 //
-/datum/genetics/genetics_holder/ui_data(var/list/known_mutations)
+/datum/genetics/genetics_holder/nano_ui_data(var/list/known_mutations)
 	var/list/data = list()
 	data["instability"] = total_instability
 	var/list/mutation_pool_data = null
 	if(mutation_pool)
 		mutation_pool_data = list()
 		for(var/datum/genetics/mutation/selected_mutation in mutation_pool)
-			mutation_pool_data += list(selected_mutation.ui_data(known_mutations))
+			mutation_pool_data += list(selected_mutation.nano_ui_data(known_mutations))
 	data["mutation_pool"] = mutation_pool_data
 
 	return data
@@ -648,7 +648,7 @@
 	return duplicate
 
 //Obfuscate the data if we don't know it yet.
-/datum/genetics/mutation/ui_data(var/list/known_mutations)
+/datum/genetics/mutation/nano_ui_data(var/list/known_mutations)
 	var/list/data = list()
 	if(known_mutations[key])
 		data["source_mob"] = source_mob

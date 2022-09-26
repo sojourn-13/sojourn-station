@@ -180,7 +180,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 	if(stat & (BROKEN|NOPOWER)) return
 	if(user.stat || user.restrained()) return
 
-	var/list/data = ui_data()
+	var/list/data = nano_ui_data()
 
 	time_until_scan = time2text((1800 - ((world.time - round_start_time) % 1800)), "mm:ss")
 
@@ -190,7 +190,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		ui.set_initial_data(data)
 		ui.open()
 
-/obj/machinery/blackshield_teleporter/ui_data()
+/obj/machinery/blackshield_teleporter/nano_ui_data()
 	var/list/data = list()
 	data["energy"] = round(blackshield_energy)
 	data["maxEnergy"] = round(blackshield_max_energy)

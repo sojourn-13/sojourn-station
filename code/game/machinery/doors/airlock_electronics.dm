@@ -22,8 +22,8 @@
 	nano_ui_interact(user)
 
 
-/obj/item/airlock_electronics/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.hands_state)
-	var/list/data = ui_data()
+/obj/item/airlock_electronics/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/nano_topic_state/state = GLOB.hands_state)
+	var/list/data = nano_ui_data()
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -31,7 +31,7 @@
 		ui.set_initial_data(data)
 		ui.open()
 
-/obj/item/airlock_electronics/ui_data()
+/obj/item/airlock_electronics/nano_ui_data()
 	var/list/data = list()
 	var/list/regions = list()
 

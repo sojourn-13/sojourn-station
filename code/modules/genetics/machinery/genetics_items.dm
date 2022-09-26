@@ -303,7 +303,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	var/list/data = list()
 	data["name"] = name
 	data["unique_id"] = unique_id
-	data += genetics_holder.ui_data(known_mutations)
+	data += genetics_holder.nano_ui_data(known_mutations)
 	return data
 /*
 =================Mutagenic Implanter=================

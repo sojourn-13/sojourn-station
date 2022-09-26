@@ -130,10 +130,10 @@ list(
 	if(panel_open)
 		add_overlay(image(icon, "[icon_state]_p"))
 
-/obj/machinery/reagentgrinder/advanced/ui_data()
+/obj/machinery/reagentgrinder/advanced/nano_ui_data()
 	var/list/data = ..()
-	log_debug("advanced.ui_data: Called function")
-	data["reagents"] = reagents.ui_data()
+	log_debug("advanced.nano_ui_data: Called function")
+	data["reagents"] = reagents.nano_ui_data()
 
 	var/bidon_is_linked = linked_bidon ? TRUE : FALSE
 	data["bidon_linked"] = bidon_is_linked

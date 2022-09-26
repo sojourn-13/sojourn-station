@@ -158,7 +158,7 @@
 	nano_ui_interact(user)
 
 /obj/machinery/electrolyzer/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data()
+	var/list/data = nano_ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -173,14 +173,14 @@
 
 
 
-/obj/machinery/electrolyzer/ui_data()
+/obj/machinery/electrolyzer/nano_ui_data()
 	var/data = list()
 	data["on"] = on
 
 	if(beaker)
-		data["beaker"] = beaker.reagents.ui_data()
+		data["beaker"] = beaker.reagents.nano_ui_data()
 	if(separation_beaker)
-		data["separation_beaker"] = separation_beaker.reagents.ui_data()
+		data["separation_beaker"] = separation_beaker.reagents.nano_ui_data()
 	data["has_power"] = (stat & NOPOWER) ? FALSE : TRUE
 	return data
 
@@ -325,7 +325,7 @@
 	return ..()
 
 /obj/item/device/makeshift_electrolyser/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data()
+	var/list/data = nano_ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -340,15 +340,15 @@
 
 
 
-/obj/item/device/makeshift_electrolyser/ui_data()
+/obj/item/device/makeshift_electrolyser/nano_ui_data()
 	var/data = list()
 	data["on"] = on
 	data["has_power"] = cell ? cell.check_charge(tick_cost) : FALSE
 
 	if(beaker)
-		data["beaker"] = beaker.reagents.ui_data()
+		data["beaker"] = beaker.reagents.nano_ui_data()
 	if(separation_beaker)
-		data["separation_beaker"] = separation_beaker.reagents.ui_data()
+		data["separation_beaker"] = separation_beaker.reagents.nano_ui_data()
 	return data
 
 /obj/item/device/makeshift_electrolyser/attack_hand(mob/user)

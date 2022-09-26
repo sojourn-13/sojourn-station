@@ -110,7 +110,7 @@
 	nano_ui_interact(user)
 
 /obj/machinery/computer/bssilk_control/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
-	var/list/data = ui_data()
+	var/list/data = nano_ui_data()
 
 	if(!connected_hub)
 		data["fail_connect"] = TRUE
