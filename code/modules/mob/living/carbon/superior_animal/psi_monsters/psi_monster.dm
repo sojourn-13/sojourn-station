@@ -16,7 +16,7 @@
 	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
 
 	cant_be_pulled = TRUE
-
+	cant_gib = TRUE
 	maxHealth = 120
 	health = 120
 	randpixel = 0
