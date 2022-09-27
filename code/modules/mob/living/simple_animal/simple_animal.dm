@@ -531,7 +531,7 @@
 		stat(null, "Health: [round((health / maxHealth) * 100)]%")
 
 /mob/living/simple_animal/death(gibbed, deathmessage = "dies!")
-	walk_to(src,0)
+	SSmove_manager.stop_looping(src)
 	movement_target = null
 	icon_state = icon_dead
 	density = FALSE
