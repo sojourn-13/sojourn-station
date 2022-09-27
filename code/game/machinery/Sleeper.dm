@@ -115,7 +115,7 @@
 
 	nano_ui_interact(user)
 
-/obj/machinery/sleeper/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
+/obj/machinery/sleeper/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state =GLOB.outside_state)
 	var/data[0]
 
 	data["power"] = stat & (NOPOWER|BROKEN) ? 0 : 1

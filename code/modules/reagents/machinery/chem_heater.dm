@@ -115,7 +115,7 @@
 	nano_ui_interact(user)
 
 /obj/machinery/chem_heater/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data()
+	var/list/data = nano_ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -130,13 +130,13 @@
 
 
 
-/obj/machinery/chem_heater/ui_data()
+/obj/machinery/chem_heater/nano_ui_data()
 	var/data = list()
 	data["target_temperature"] = target_temperature
 	data["on"] = on
 
 	if(beaker)
-		data["beaker"] = beaker.reagents.ui_data()
+		data["beaker"] = beaker.reagents.nano_ui_data()
 	return data
 
 

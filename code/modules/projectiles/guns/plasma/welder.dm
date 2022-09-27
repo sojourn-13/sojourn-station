@@ -79,7 +79,7 @@
 	return
 
 // Copying the superior proc because I don't know how to insert the plasma cost in the middle.
-/obj/item/tool/plasma_torch/ui_data(mob/user)
+/obj/item/tool/plasma_torch/nano_ui_data(mob/user)
 	var/list/data = ..()
 
 	if(use_plasma_cost)

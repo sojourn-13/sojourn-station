@@ -956,7 +956,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	toggle_safety(usr)
 
-/obj/item/gun/ui_data(mob/user)
+/obj/item/gun/nano_ui_data(mob/user)
 	var/list/data = list()
 	data["damage_multiplier"] = damage_multiplier
 	data["multiply_pve_damage"] = proj_pve_damage_multiplier
@@ -1021,7 +1021,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	return data
 
-/obj/item/gun/Topic(href, href_list, var/datum/topic_state/state)
+/obj/item/gun/Topic(href, href_list, var/datum/nano_topic_state/state)
 	if(..(href, href_list, state))
 		return 1
 
