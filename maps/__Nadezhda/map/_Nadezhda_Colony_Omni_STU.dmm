@@ -5460,7 +5460,6 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "bdB" = (
-/obj/item/implant/carrion_spider/holographic,
 /obj/item/clothing/head/costume/history/piratecap,
 /obj/item/clothing/head/costume/history/piratecap,
 /obj/item/clothing/under/costume/history/pirate,
