@@ -79,6 +79,7 @@
 	min_n2 = 0
 	max_n2 = 0
 	minbodytemp = 0
+	cant_gib = TRUE
 
 	var/mob/living/carbon/superior_animal/roach/nanite/parent
 
@@ -91,6 +92,7 @@
 	if(parent)
 		parent.nanite_swarms.Remove(src)
 		parent.friends.Remove(src)
+		parent = null
 	new /obj/effect/decal/cleanable/blood/oil(get_turf(src))
 	qdel(src)
 

@@ -354,6 +354,7 @@
 	desc = "A 12mm bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50
+	shell_color = "l"
 	icon_state = "lrifle_c_l"
 	spent_icon = "lrifle_c_l-spent"
 
@@ -361,6 +362,7 @@
 	desc = "A 12mm rubber bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/rubber
+	shell_color = "r"
 	icon_state = "lrifle_c_r"
 	spent_icon = "lrifle_c_r-spent"
 
@@ -368,6 +370,7 @@
 	desc = "A 12mm practice bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/practice
+	shell_color = "p"
 	icon_state = "lrifle_c_p"
 	spent_icon = "lrifle_c_p-spent"
 
@@ -375,12 +378,14 @@
 	desc = "A 12mm high-velocity bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/hv
+	shell_color = "hv"
 	icon_state = "lrifle_c_hv"
 	spent_icon = "lrifle_c_hv-spent"
 
 /obj/item/ammo_casing/kurtz_50/lethal
 	desc = "A 12mm hollow point bullet casing."
 	caliber = CAL_50
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/lethal
 
 /obj/item/ammo_casing/kurtz_50/laser

@@ -59,6 +59,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 	range_telegraph = "chitin begins to crack and spikes emerge, as it prepares to launch them at"
 
+	cant_gib = TRUE
+
 /mob/living/carbon/superior_animal/termite/New(loc, obj/machinery/mining/drill/drill, datum/termite_controller/parent)
 	..()
 	if(parent)
