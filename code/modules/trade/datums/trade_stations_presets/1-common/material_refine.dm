@@ -62,6 +62,8 @@
 
 	offer_types = list(
 		// Trash mats are priced based on expected value of sheets. Ores are priced based on smelting results and are priced slightly better than if the processed sheets were being sold directly.
+		/obj/item/tool/pickaxe = offer_data_mods("modified pickaxe (3 upgrades)", 1400, 2, OFFER_MODDED_TOOL, 3),
+		/obj/item/tool/shovel = offer_data_mods("modified shovel (3 upgrades)", 1400, 2, OFFER_MODDED_TOOL, 3),
 		/obj/item/trash/material/metal = offer_data("scrap metal", 120, 20),
 		/obj/item/trash/material/circuit = offer_data("burnt circuit", 90, 20),
 		/obj/item/trash/material/device = offer_data("broken device", 205, 20),
