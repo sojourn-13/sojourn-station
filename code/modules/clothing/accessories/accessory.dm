@@ -365,8 +365,8 @@
 
 /obj/item/clothing/accessory/halfcape/ceo
 	name = "CEOs holo-mantle"
-	desc = "A fancy holo-mantle made from light-toned silk and bearing the rank markings of the Prime. Fine alabaster silks and gold trim, despite its seemingly similar\
-	 make to similar cloaks, its quality cannot be contested."
+	desc = "A fancy holo-mantle made from light-toned silk and bearing the rank markings of the Prime. Fine alabaster silks and gold trim, despite its seemingly similar \
+	make to similar cloaks, its quality cannot be contested."
 	icon_state = "half_ceo"
 
 
@@ -424,7 +424,7 @@
 
 /obj/item/clothing/accessory/job/cape/church/smallalt
 	name = "red Absolutists cloak"
-	icon_state = "churchcloakblack"
+	icon_state = "churchcloakred"
 	desc = "A sleek, luxurious cloak with red trim."
 
 /obj/item/clothing/accessory/job/cape/ironhammer
@@ -695,6 +695,17 @@
 
 /*Scarves*/
 
+/obj/item/clothing/accessory/scarf
+	name = "striped red scarf"
+	desc = "A striped red scarf."
+	icon_state = "stripedredscarf"
+	item_state = "stripedredscarf"
+	body_parts_covered = FACE
+	item_flags = FLEXIBLEMATERIAL
+	w_class = ITEM_SIZE_SMALL
+	gas_transfer_coefficient = 0.90
+	price_tag = 50
+
 /obj/item/clothing/accessory/scarf/black
 	name = "black scarf"
 	desc = "A stylish black scarf."
@@ -809,11 +820,6 @@
 	desc = "A blue neck scarf."
 	icon_state = "blue_scarf"
 	item_state = "blue_scarf"
-	body_parts_covered = FACE
-	item_flags = FLEXIBLEMATERIAL
-	w_class = ITEM_SIZE_SMALL
-	gas_transfer_coefficient = 0.90
-	price_tag = 50
 
 /obj/item/clothing/accessory/scarf/checkered
 	name = "checkered neck scarf"
@@ -850,12 +856,6 @@
 	desc = "A striped purple scarf."
 	icon_state = "stripedpurplescarf"
 	item_state = "stripedpurplescarf"
-
-/obj/item/clothing/accessory/scarf
-	name = "striped red scarf"
-	desc = "A striped red scarf."
-	icon_state = "stripedredscarf"
-	item_state = "stripedredscarf"
 
 /obj/item/clothing/accessory/ninjascarf /*Omitted from scarf selection because it's more of a costume piece.*/
 	name = "ninja scarf"
@@ -1253,12 +1253,6 @@
 	icon_state = "wristwatch_fancy"
 	item_state = "wristwatch_fancy"
 
-/obj/item/clothing/accessory/bracelet/watch
-	name = "fancy watch"
-	desc = "An expensive watch with a red band wrapped around your wrist. Snazzy."
-	icon_state = "wristwatch_fancy"
-	item_state = "wristwatch_fancy"
-
 /obj/item/clothing/accessory/bracelet/watch/leather
 	name = "fancy leather watch"
 	desc = "An expensive watch with a leather brown band wrapped around your wrist. Snazzy."
@@ -1421,7 +1415,7 @@
 /obj/item/clothing/accessory/passcard/donbettyr
 	name = "Donbettyr passcard"
 	desc = "A passcard issued to citizens of Donbettyr, the homeworld of the Akula. An old, primarily ocean world with two moons and few thousand separated areas of land making up a series of islands and archipelagos."
-	icon_state = "passcard_aqua_fria"
+	icon_state = "passcard_donbettyr"
 	item_state = "badge"
 
 /obj/item/clothing/accessory/passcard/passport_sol
