@@ -196,8 +196,8 @@
 		list(QUALITY_ADHESIVE, 15, 70)
 	)
 
-/datum/craft_recipe/weapon/laser_spear
-	name = "laser spear"
+/datum/craft_recipe/weapon/energy_spear
+	name = "energy spear"
 	result = /obj/item/melee/energy/spear
 	icon_state = "gun"
 	steps = list(
