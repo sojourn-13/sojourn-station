@@ -196,6 +196,56 @@
 	tool_qualities = list(QUALITY_CUTTING = 25,  QUALITY_WIRE_CUTTING = 15, QUALITY_LASER_CUTTING = 1, QUALITY_WELDING = 10, QUALITY_CAUTERIZING = 10)
 
 /*
+ * Energy Spear
+ */
+
+/obj/item/melee/energy/spear
+	name = "energy spear"
+	desc = "A repurposed energy cutlass crudely attached to a polearm to serve as a spear.\n The energy \"blade\" has been reshaped into a three-pronged cross tip."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "jumonji-off"
+	wielded_icon = "jumonji-off_wielded"
+	active_force = WEAPON_FORCE_BRUTAL
+	active_throwforce = WEAPON_FORCE_LETHAL
+	active_w_class = ITEM_SIZE_HUGE
+	force = WEAPON_FORCE_NORMAL // It still is a rod even when turned off, you can still whack with it
+	throwforce = WEAPON_FORCE_PAINFUL
+	throw_speed = 3 // Same as normal spear
+	throw_range = 7 // Lighter since the "blade" is made of light and thus, weightless
+	w_class = ITEM_SIZE_HUGE // It's a long spear
+	slot_flags = SLOT_BACK
+	flags = CONDUCT // It's a metal pole, you're a literal lightning rod while holding it
+	origin_tech = list(TECH_MAGNET = 3, TECH_COMBAT = 4)
+	sharp = 1
+	edge = 1
+
+/obj/item/melee/energy/spear/activate(mob/living/user)
+	if(!active)
+		to_chat(user, SPAN_NOTICE("\The [src] is now energized."))
+	icon_state = "jumonji-on"
+	wielded_icon = "jumonji-on_wielded"
+	..()
+	attack_verb = list("pierced", "stabbed", "cleaved", "impaled", "sliced", "cut", "slashed", "lanced")
+	tool_qualities = list(QUALITY_CUTTING = 30,  QUALITY_WIRE_CUTTING = 20, QUALITY_WELDING = 1, QUALITY_CAUTERIZING = 1)
+	flags |= NOBLOODY // Only when it's active, otherwise you're beating people with a pole and WILL get bloodied
+
+/obj/item/melee/energy/spear/deactivate(mob/living/user)
+	if(active)
+		to_chat(user, SPAN_NOTICE("\The [src] deactivates!"))
+	icon_state = initial(icon_state)
+	wielded_icon = initial(wielded_icon)
+	..()
+	attack_verb = list()
+	tool_qualities = initial(tool_qualities)
+	flags &= ~NOBLOODY
+
+/obj/item/melee/energy/examine(mob/user)
+	..()
+	if(active)
+		to_chat(user, "<span class='info'>Thrust with it, and it becomes a spear. Cut with it, and it becomes a scythe.\nDraw it back, and it becomes a sickle. \n No matter how it's used, it never fails to hit its target...</span>")
+		// Houzouin-ryu school of spearmanship's motto
+
+/*
  *Energy Blade
  */
 
