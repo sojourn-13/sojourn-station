@@ -209,15 +209,13 @@
 	active_throwforce = WEAPON_FORCE_LETHAL
 	active_w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_NORMAL // It still is a rod even when turned off, you can still whack with it
-	throwforce = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_PAINFUL // Not gonna matter since it will turn off on throwing, thank you psions can't have shit in Nadezhda
 	throw_speed = 3 // Same as normal spear
-	throw_range = 7 // Lighter since the "blade" is made of light and thus, weightless
+	throw_range = 7
 	w_class = ITEM_SIZE_HUGE // It's a long spear
 	slot_flags = SLOT_BACK
 	flags = CONDUCT // It's a metal pole, you're a literal lightning rod while holding it
 	origin_tech = list(TECH_MAGNET = 3, TECH_COMBAT = 4)
-	sharp = 1
-	edge = 1
 
 /obj/item/melee/energy/spear/activate(mob/living/user)
 	if(!active)
@@ -239,11 +237,15 @@
 	tool_qualities = initial(tool_qualities)
 	flags &= ~NOBLOODY
 
-/obj/item/melee/energy/examine(mob/user)
+/obj/item/melee/energy/spear/examine(mob/user)
 	..()
 	if(active)
 		to_chat(user, "<span class='info'>Thrust with it, and it becomes a spear. Cut with it, and it becomes a scythe.\nDraw it back, and it becomes a sickle. \n No matter how it's used, it never fails to hit its target...</span>")
 		// Houzouin-ryu school of spearmanship's motto
+
+/obj/item/melee/energy/spear/dropped(var/mob/user) // To prevent psions with tk from gaming it too hard.
+	..()
+	deactivate(user)
 
 /*
  *Energy Blade
