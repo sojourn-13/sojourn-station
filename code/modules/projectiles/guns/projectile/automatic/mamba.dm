@@ -16,7 +16,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.0
-	zoom_factor = 0.4
+	zoom_factors = list(0.4)
 	price_tag = 900
 	init_recoil = CARBINE_RECOIL(1)
 	folding_stock = TRUE
@@ -71,7 +71,7 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.2
 	extra_damage_mult_scoped = 0.2
-	zoom_factor = 0.8
+	zoom_factors = list(0.8)
 	init_recoil = CARBINE_RECOIL(1.1)
 	folding_stock = FALSE
 	init_firemodes = list(
@@ -97,7 +97,7 @@
 	price_tag = 1000
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.1
-	zoom_factor = 0.4
+	zoom_factors = list(0.4)
 	init_recoil = CARBINE_RECOIL(1)
 	folding_stock = FALSE
 	init_firemodes = list(
@@ -167,7 +167,7 @@
 	fire_delay = 15
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.4
-	zoom_factor = 1.2
+	zoom_factors = list(1.2)
 	extra_damage_mult_scoped = 0.4
 	init_recoil = CARBINE_RECOIL(1.2)
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING

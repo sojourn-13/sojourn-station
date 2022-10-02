@@ -13,7 +13,7 @@
 	init_recoil = HMG_RECOIL(0.4)
 	damage_multiplier = 1.2
 	penetration_multiplier  = 1.1
-	zoom_factor = 0.4
+	zoom_factors = list(0.4)
 	extra_damage_mult_scoped = 0.2 //scoping this should be rewarded its not that good
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 5)
 	saw_off = FALSE

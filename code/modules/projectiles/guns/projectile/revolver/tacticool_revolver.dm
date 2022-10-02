@@ -12,7 +12,7 @@
 	price_tag = 1300 //more op and rare than miller, hits harder, but have fun with hittin anything
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.25
-	zoom_factor = 1.4
+	zoom_factors = list(1.4)
 	init_recoil = HANDGUN_RECOIL(1.2)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	serial_type = "SA"

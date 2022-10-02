@@ -33,7 +33,7 @@ Own a musket for department defense, since that's what the founding hunters inte
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_BONE = 20)
 	price_tag = 1750
 	extra_damage_mult_scoped = 0.4
-	zoom_factor = 1.4
+	zoom_factors = list(1.4)
 	twohanded = TRUE
 	sharp = FALSE
 	saw_off = FALSE //Todo. Pistole verson

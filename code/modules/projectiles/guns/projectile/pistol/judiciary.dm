@@ -15,7 +15,7 @@
 	mag_well = MAG_WELL_H_PISTOL|MAG_WELL_PISTOL|MAG_WELL_DRUM
 	damage_multiplier = 1
 	penetration_multiplier = 1.2
-	zoom_factor = 0.2
+	zoom_factors = list(0.2)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
 	init_recoil = HANDGUN_RECOIL(0.8)
 	auto_eject = TRUE

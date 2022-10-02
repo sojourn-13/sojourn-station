@@ -451,3 +451,26 @@
 				P.pixel_y = location.pixel_y
 				P.activate()
 				our_tracers.Add(P) //this should be more performant than += since we don't need to be creating a bunch of new lists
+
+
+//OS Portable turret projectiles
+
+/obj/item/projectile/bullet/os_trurret_gauss
+	name = "ferrous slug"
+	damage_types = list(BRUTE = 15)
+	armor_penetration = 25
+	penetrating = 2
+	recoil = 30
+	step_delay = 0.4
+	sharp = TRUE	// Until all bullets are turned sharp by default
+
+/obj/item/projectile/beam/os_turret
+	name = "pulsed beam"
+	icon_state = "beam_blue"
+	damage_types = list(BURN = 15)
+	stutter = 3
+	recoil = 10
+
+	muzzle_type = /obj/effect/projectile/laser_blue/muzzle
+	tracer_type = /obj/effect/projectile/laser_blue/tracer
+	impact_type = /obj/effect/projectile/laser_blue/impact

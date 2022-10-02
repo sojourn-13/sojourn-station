@@ -16,7 +16,7 @@
 	suitable_cell = /obj/item/cell/medium
 	charge_cost = 50 //Doble normal do to being cooled by plasma and other such things
 	fire_delay = 8 //Well its an SMG it has a long cool down form shits
-	zoom_factor = 0.5 //Scope
+	zoom_factors = list(0.5) //Scope
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 10, MATERIAL_SILVER = 4, MATERIAL_PLASMA = 8)
 	price_tag = 1800 //900 on cargo
 	damage_multiplier = 0.6 //Litttttle better then normal

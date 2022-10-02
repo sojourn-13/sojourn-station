@@ -65,7 +65,7 @@
 	price_tag = 1000
 	damage_multiplier = 0.8
 	penetration_multiplier = 1.0
-	zoom_factor = 0.2
+	zoom_factors = list(0.2)
 	init_recoil = RIFLE_RECOIL(1.4)
 	folding_stock = TRUE //we can fold are stocks
 	can_dual = FALSE

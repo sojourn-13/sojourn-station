@@ -14,7 +14,7 @@
 	damage_multiplier = 1.4
 	penetration_multiplier = 1.3
 	init_recoil = HANDGUN_RECOIL(1.2)
-	zoom_factor = 0.2
+	zoom_factors = list(0.2)
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	can_dual = TRUE
@@ -53,7 +53,7 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.3
 	init_recoil = HANDGUN_RECOIL(1.1)
-	zoom_factor = 0
+	zoom_factors = list()
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "H&S"
 

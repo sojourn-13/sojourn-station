@@ -5,7 +5,7 @@
 	icon_state = "boltgun"
 	item_state = "boltgun"
 	max_shells = 10
-	zoom_factor = 2.0
+	zoom_factors = list(2.0)
 	init_recoil = HMG_RECOIL(0.5)
 	price_tag = 750
 	damage_multiplier = 1.25
@@ -43,7 +43,7 @@
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	max_shells = 10
 	init_recoil = HMG_RECOIL(0.5)
-	zoom_factor = 2.0
+	zoom_factors = list(2.0)
 	price_tag = 750
 	damage_multiplier = 1.25
 	force = WEAPON_FORCE_PAINFUL

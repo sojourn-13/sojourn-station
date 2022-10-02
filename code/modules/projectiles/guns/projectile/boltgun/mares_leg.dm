@@ -11,7 +11,7 @@
 	init_recoil = HMG_RECOIL(1.0)
 	damage_multiplier = 0.8
 	penetration_multiplier = 0.9
-	zoom_factor = 0
+	zoom_factors = list()
 	extra_damage_mult_scoped = 0.2
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 6, MATERIAL_PLASTEEL = 7)
 	serial_type = "INDEX"

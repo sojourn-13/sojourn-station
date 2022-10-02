@@ -15,7 +15,7 @@
 	unload_sound = 'sound/weapons/guns/interact/smg_magout.ogg'
 	reload_sound = 'sound/weapons/guns/interact/smg_magin.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/smg_cock.ogg'
-	zoom_factor = 0 //Default zoom factor you want on all automatic weapons.
+	zoom_factors = list()
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	auto_rack = TRUE
 	init_firemodes = list(

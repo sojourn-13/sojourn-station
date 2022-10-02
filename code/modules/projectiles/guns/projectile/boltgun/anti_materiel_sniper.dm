@@ -19,7 +19,7 @@
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 20, MATERIAL_DIAMOND = 3, MATERIAL_OSMIUM = 5, MATERIAL_URANIUM = 2)
 	price_tag = 7500
 	damage_multiplier = 0.9
-	zoom_factor = 2.0
+	zoom_factors = list(1,2)
 	twohanded = TRUE
 	sharp = FALSE
 	saw_off = FALSE
@@ -32,6 +32,9 @@
 	slowdown_hold = 1.5  //Were entrenched
 	pierce_multiplier = 6
 	serial_type = "SA"
+	action_button_name = "Switch zoom level"
+	action_button_proc = "switch_zoom"
+
 
 /obj/item/weaponparts
 	var/part_color = ""
