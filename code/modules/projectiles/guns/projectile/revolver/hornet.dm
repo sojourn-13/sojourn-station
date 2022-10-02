@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/revolver/hornet
 	name = "\"Hornet\" heavy revolver"
-	desc = "A heavy pistol custom made that has built smaller PainMaker allowing it to still be able to penetrate through basic armor and flesh alike if needed. \
-	Used by eather vigilantes or during hostages situations were taking some lives is needed .Uses 12mm."
+	desc = "A heavy pistol of custom make with a built-in PainMaker, its heavy round allowing it to still be able to penetrate through basic armor and flesh alike when necessary. \
+	Used primarily by either vigilantes, or during hostages situations where taking some lives may be needed. Uses 12mm rounds."
 	icon = 'icons/obj/guns/projectile/hornet.dmi'
 	icon_state = "hornet"
 	item_state = "hornet"
@@ -10,8 +10,8 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 1200
 	can_dual = TRUE
-	proj_agony_multiplier = 1.3
-	damage_multiplier = 0.9
+	proj_agony_multiplier = 1.4
+	damage_multiplier = 0.8
 	penetration_multiplier = 1
 	init_recoil = HANDGUN_RECOIL(1) //So it can accully be used
 	zoom_factors = list(0.2)
