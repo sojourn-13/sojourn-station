@@ -14,7 +14,7 @@
 	matter = list(MATERIAL_STEEL = 20)
 	price_tag = 750
 	projectile_type = /obj/item/projectile/temp
-	zoom_factor = 2.0
+	zoom_factors = list(2.0)
 
 	init_firemodes = list(
 		list(mode_name="ice", mode_desc="A freezing bolt to chill anything down rapidly", projectile_type=/obj/item/projectile/temp/ice, fire_delay=6, charge_cost = 1000),

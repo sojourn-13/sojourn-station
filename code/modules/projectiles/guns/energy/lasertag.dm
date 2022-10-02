@@ -31,7 +31,7 @@
 	name = "plasma tag sniper"
 	desc = "Standard-issue weapon of the Imperial Guard. This one has a hologram projected scope attached that appears when the user looks down the sight. Fancy, but the gun itself is quite slow to fire as a result."
 	fire_delay = 10
-	zoom_factor = 1.2 //small zome factor so we can't snipe from all the way accross the map
+	zoom_factors = list(1.2) //small zome factor so we can't snipe from all the way accross the map
 
 /obj/item/gun/energy/lasertag/pistol
 	name = "plasma tag burst-pistol"

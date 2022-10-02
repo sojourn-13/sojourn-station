@@ -10,7 +10,7 @@
 	extra_damage_mult_scoped = 0.2
 	init_recoil = HMG_RECOIL(0.8)
 	max_shells = 5
-	zoom_factor = 2.0
+	zoom_factors = list(2.0)
 	price_tag = 1500
 	sharp = 0
 	caliber = CAL_HRIFLE

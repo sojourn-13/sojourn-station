@@ -18,7 +18,7 @@
 	suitable_cell = /obj/item/cell/medium
 	charge_cost = 120
 	fire_delay = 8
-	zoom_factor = 0.4
+	zoom_factors = list(0.4)
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 10, MATERIAL_SILVER = 4, MATERIAL_PLASMA = 8)
 	price_tag = 5000
 	damage_multiplier = 1.2

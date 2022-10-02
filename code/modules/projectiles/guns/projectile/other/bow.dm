@@ -104,7 +104,7 @@
 	matter = list(MATERIAL_BONE = 10, MATERIAL_WOOD = 10, MATERIAL_PLASTIC = 5)
 	penetration_multiplier = 1.5
 	gun_tags = list(ARROW_FIRING)
-	zoom_factor = 2.0
+	zoom_factors = list(2.0)
 	extra_damage_mult_scoped = 0.2
 	overcharge_timer_step = 4
 	price_tag = 1200
@@ -120,5 +120,5 @@
 	penetration_multiplier = 1.2
 	gun_tags = list(ARROW_FIRING)
 	max_upgrades = 4
-	zoom_factor = 1.4
+	zoom_factors = list(1.4)
 	extra_damage_mult_scoped = 0.1

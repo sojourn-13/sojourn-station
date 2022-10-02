@@ -11,7 +11,7 @@
 	damage_multiplier = 1.4 //So were worth using
 	extra_damage_mult_scoped = 0.5
 	force = WEAPON_FORCE_PAINFUL
-	zoom_factor = 2.0
+	zoom_factors = list(2.0)
 	caliber = CAL_SCI
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_MAGNET = 3, TECH_POWER = 6)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)

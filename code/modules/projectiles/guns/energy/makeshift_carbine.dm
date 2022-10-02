@@ -11,7 +11,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
-	zoom_factor = 0
+	zoom_factors = list()
 	charge_cost = 100 //worst lightfall
 	fire_delay = 10 //ditto
 	price_tag = 400

@@ -30,7 +30,7 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/chaingun_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/chaingun_fire.ogg'
 	twohanded = TRUE
-	zoom_factor = 0.4
+	zoom_factors = list(0.4)
 	slowdown_hold = 1 //Heavy massive gun, slow down
 	init_recoil = HMG_RECOIL(1.3)
 	init_firemodes = list(

@@ -180,7 +180,7 @@
 	charge_cost = 750
 	fire_delay = 30
 	init_recoil = HMG_RECOIL(1)
-	zoom_factor = 1.8
+	zoom_factors = list(1.8)
 	extra_damage_mult_scoped = 0.4
 	damage_multiplier = 1.6
 	penetration_multiplier = 1.5

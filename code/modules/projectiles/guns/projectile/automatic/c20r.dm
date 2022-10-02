@@ -20,7 +20,7 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.5
-	zoom_factor = 0.4
+	zoom_factors = list(0.4)
 	init_recoil = SMG_RECOIL(0.9)
 	serial_type = "SA"
 

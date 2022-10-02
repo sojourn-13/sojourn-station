@@ -16,7 +16,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 9, MATERIAL_URANIUM = 6)
 	price_tag = 2500
 	cell_type = /obj/item/cell/medium
-	zoom_factor = 2.0
+	zoom_factors = list(1,2)
 	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
@@ -24,3 +24,5 @@
 	twohanded = TRUE
 	gun_tags = list(GUN_ENERGY)
 	serial_type = "Absolute"
+	action_button_name = "Switch zoom level"
+	action_button_proc = "switch_zoom"

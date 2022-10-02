@@ -16,7 +16,7 @@
 	matter = list(MATERIAL_PLASTEEL = 14, MATERIAL_PLASTIC = 8)
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	zoom_factor = 0.2
+	zoom_factors = list(0.2)
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.1
 	init_recoil = HANDGUN_RECOIL(0.9)

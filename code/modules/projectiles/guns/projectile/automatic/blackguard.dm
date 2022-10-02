@@ -14,7 +14,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_STEEL = 25, MATERIAL_GLASS = 5)
-	zoom_factor = 0.5 //3 more tiles - was never entented to be anything more or less
+	zoom_factors = list(0.5)
 	price_tag = 2500
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.35 //Really hard to upgrade

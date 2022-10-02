@@ -55,7 +55,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 5)
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	zoom_factor = 0.4
+	zoom_factors = list(0.4)
 	init_recoil = HANDGUN_RECOIL(1)
 	price_tag = 1100
 	serial_type = "SD GmbH"
@@ -66,7 +66,7 @@
 	icon_state = "scoped_dark_lamia"
 	item_state = "scoped_dark_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
-	zoom_factor = 0.4
+	zoom_factors = list(0.4)
 	init_recoil = HANDGUN_RECOIL(0.7)
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.2
@@ -81,7 +81,7 @@
 	icon_state = "socom"
 	item_state = "socom"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
-	zoom_factor = 0.5
+	zoom_factors = list(0.5)
 	silenced = TRUE
 	init_recoil = HANDGUN_RECOIL(0.1)
 	damage_multiplier = 0.9
@@ -112,7 +112,7 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 8, MATERIAL_GLASS = 4)
 	damage_multiplier = 1.4
 	penetration_multiplier = 1.2
-	zoom_factor = 0.2
+	zoom_factors = list(0.2)
 	init_recoil = HANDGUN_RECOIL(1.1)
 	unload_sound 	= 'sound/weapons/guns/interact/avasarala_unload.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
