@@ -1,3 +1,8 @@
+#define TURRET_PRIORITY_TARGET 2
+#define TURRET_SECONDARY_TARGET 1
+#define TURRET_NOT_TARGET 0
+
+
 /obj/machinery/power/os_turret
 	name = "Greyson Positronic turret"
 	desc = "A turret of the Greyson Positronic variety."
@@ -11,12 +16,13 @@
 
 	// Targeting
 	var/should_target_players = TRUE			// TRUE targets players, FALSE targets superior animals (roaches, golems, and spiders)
-	var/range = 8								// Starts firing just out of player sight
+	var/firing_range = 8								// Starts firing just out of player sight
 	var/returning_fire = FALSE					// Will attempt to fire at the nearest target when attacked and no one is in range
+	var/last_target								//last target fired at, prevents turrets from erratically firing at all valid targets in range
 
 	// Shooting
-	var/obj/item/projectile/projectile = /obj/item/projectile/bullet/gauss
-	var/number_of_shots = 5
+	var/obj/item/projectile/projectile = /obj/item/projectile/bullet/os_trurret_gauss
+	var/number_of_shots = 3
 	var/time_between_shots = 0.5 SECONDS
 	var/list/shot_timer_ids = list()
 	var/cooldown_time = null
@@ -27,13 +33,15 @@
 	var/on_cooldown = FALSE
 	var/cooldown_timer_id
 
-	var/machine_integrity = 360
+	health = 120			//the turret's health
+	maxHealth = 120		//turrets maximal health.
+	var/auto_repair = TRUE
 
 /obj/machinery/power/os_turret/laser
 	icon_state = "os_laser"
 	circuit = /obj/item/circuitboard/os_turret/laser
-	range = 10
-	projectile = /obj/item/projectile/beam/pulse
+	firing_range = 10
+	projectile = /obj/item/projectile/beam/os_turret
 	number_of_shots = 3
 	time_between_shots = 0.3 SECONDS
 	cooldown_time = 2 SECONDS
@@ -46,12 +54,14 @@
 		cooldown_time = time_between_shots * number_of_shots
 
 /obj/machinery/power/os_turret/Process()
-	if(stat)
-		if(prob(2))
-			do_sparks(1, TRUE, src)
-		return
 
-	if(machine_integrity <= 0)
+//Sparks that are not seeable by players are valueless
+//	if(stat)
+//		if(prob(2))
+//			do_sparks(1, TRUE, src)
+//		return
+
+	if(health <= 0)
 		stat |= BROKEN
 		return
 
@@ -63,42 +73,83 @@
 
 	update_icon()
 
-	var/list/potential_targets = list()
-	var/mob/nearest_valid_target
-	var/nearest_valid_target_distance
+	var/list/targets = list()			//list of primary targets
+	var/list/secondarytargets = list()	//targets that are least important
 
-	if(should_target_players)
-		potential_targets = (GLOB.player_list & SSmobs.mob_living_by_zlevel[z])
-	else
-		potential_targets = (GLOB.superior_animal_list & SSmobs.mob_living_by_zlevel[z])
+	for(var/mob/living/M in view(firing_range, src)) //WE USED WORLD.VIEW BEFORE THATS FUCKING PSYCHOPATHIC
+		assess_and_assign(M, targets, secondarytargets) //might want to not use a proc due to proc overhead cost
 
-	for(var/mob in potential_targets)
-		var/distance_to_target = get_dist(src, mob)
+	for(var/obj/mecha/mech in GLOB.mechas_list)
+		if (mech.z == z && (get_dist(mech, src) < firing_range) && can_see(src, mech, firing_range))
+			var/mob/living/occupant = mech.get_mob()
+			if (occupant)
+				assess_and_assign(occupant, targets, secondarytargets)
 
-		if(!returning_fire && !(distance_to_target <= range))
-			continue
+	if(!tryToShootAt(targets))
+		if(!tryToShootAt(secondarytargets)) // if no valid targets, go for secondary targets
+			if(auto_repair && (health < maxHealth))
+				use_power(20000)
+				health = min(health+1, maxHealth) // 1HP for 20kJ
 
-		var/mob/living/L = mob
 
-		if(!L)
-			continue
-		if(L.stat == DEAD)
-			continue
-		if(L.invisibility >= INVISIBILITY_LEVEL_ONE) // Cannot see him. see_invisible is a mob-var
-			continue
-		if(!check_trajectory(L, src))	//check if we have true line of sight
-			continue
+/obj/machinery/power/os_turret/proc/tryToShootAt(var/list/mob/living/targets)
+	if(targets.len && last_target && (last_target in targets) && target(last_target))
+		return TRUE
 
-		if(!nearest_valid_target)
-			nearest_valid_target = L
-			nearest_valid_target_distance = distance_to_target
-		else
-			if(distance_to_target > nearest_valid_target_distance)
-				nearest_valid_target = L
-				nearest_valid_target_distance = distance_to_target
+	while(targets.len > 0)
+		var/mob/living/M = pick(targets)
+		targets -= M
+		if(target(M))
+			return TRUE
 
-	if(nearest_valid_target)
-		try_shoot(nearest_valid_target)
+/obj/machinery/power/os_turret/proc/target(var/mob/living/target)
+	if(target)
+		last_target = target
+		set_dir(get_dir(src, target))	//even if you can't shoot, follow the target
+		try_shoot(target)
+		return TRUE
+	return
+
+/obj/machinery/power/os_turret/proc/assess_and_assign(var/mob/living/L, var/list/targets, var/list/secondarytargets)
+	switch(assess_living(L))
+		if(TURRET_PRIORITY_TARGET)
+			targets += L
+		if(TURRET_SECONDARY_TARGET)
+			secondarytargets += L
+
+/obj/machinery/power/os_turret/proc/assess_living(var/mob/living/L) //TODO: optimize
+	if(L.faction == "greyson") //The cheatcode
+		return TURRET_NOT_TARGET
+
+	if(!istype(L))
+		return TURRET_NOT_TARGET
+
+	if(L.invisibility >= INVISIBILITY_LEVEL_ONE) // Cannot see him. see_invisible is a mob-var
+		return TURRET_NOT_TARGET
+
+	if(L.stat)		//if the perp is dead/dying, no need to bother really
+		return TURRET_NOT_TARGET	//move onto next potential victim!
+
+	if(!L)
+		return TURRET_NOT_TARGET
+
+	if(get_dist(src, L) > firing_range)	//if it's too far away, why bother?
+		return TURRET_NOT_TARGET
+
+	if(!check_trajectory(L, src))	//check if we have true line of sight
+		return TURRET_NOT_TARGET
+
+	if(should_target_players && ishuman(L))
+		return TURRET_PRIORITY_TARGET
+
+	if(should_target_players && issilicon(L)) //We shoot non GP robots
+		return TURRET_SECONDARY_TARGET
+
+	if(!should_target_players && !ishuman(L))
+		return TURRET_NOT_TARGET
+
+	return TURRET_PRIORITY_TARGET	//if the perp has passed all previous tests, congrats, it is now a "shoot-me!" nominee
+
 
 /obj/machinery/power/os_turret/Destroy()
 	if(cooldown_timer_id)
@@ -197,13 +248,16 @@
 	C.target_superior_mobs = TRUE
 
 /obj/machinery/power/os_turret/proc/take_damage(amount)
-	machine_integrity = max(machine_integrity - amount, 0)
-	if(machine_integrity <= 0)
+	health = max(health - amount, 0)
+	if(health <= 0)
 		stat |= BROKEN
 	return amount
 
 /obj/machinery/power/os_turret/proc/try_shoot(target)
 	if(on_cooldown && !returning_fire)
+		return
+
+	if(stat) //We are ded jim
 		return
 
 	// Delete previously queued shots to prevent overlap
@@ -239,7 +293,9 @@
 	if(returning_fire)
 		returning_fire = FALSE
 
-/obj/machinery/power/os_turret/proc/shoot(target, def_zone)
+/obj/machinery/power/os_turret/proc/shoot(atom/target, def_zone)
+	if(QDELETED(target))
+		return
 	set_dir(get_dir(src, target))
 	var/obj/item/projectile/P = new projectile(loc)
 	P.launch(target, def_zone)
@@ -251,3 +307,7 @@
 /obj/machinery/power/os_turret/proc/emp_off()
 	stat &= ~EMPED
 	emp_timer_id = null
+
+#undef TURRET_PRIORITY_TARGET
+#undef TURRET_SECONDARY_TARGET
+#undef TURRET_NOT_TARGET

@@ -1,5 +1,5 @@
 /obj/item/gun/projectile/trouble_shooter
-	name = "GP \"Trouble Shooter\" rifle pistol"
+	name = "GP \"Trouble Shooter\" rifle"
 	desc = "With many issues being raised from rogue robots and people alike, the Greyson Positronic answer was a gun to shoot though several layers of armor \
 	Its material cost lead to it being mainly used in-house rather than in mass production."
 	icon = 'icons/obj/guns/projectile/type_21.dmi'
@@ -11,8 +11,9 @@
 	mag_well = MAG_WELL_RIFLE
 	caliber = CAL_RIFLE
 	price_tag = 3400
-	damage_multiplier = 1.4
+	damage_multiplier = 1.5
 	penetration_multiplier = 3
+	pierce_multiplier = 2
 	init_recoil = HMG_RECOIL(0.5)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -29,13 +30,13 @@
 
 	if (ammo_magazine)
 		iconstring += "_mag"
+		itemstring += "_mag"
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		iconstring += "_empty"
 
 	if (silenced)
 		iconstring += "_s"
-		itemstring += "_s"
 
 	icon_state = iconstring
 	set_item_state(itemstring)

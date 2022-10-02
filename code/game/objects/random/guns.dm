@@ -127,7 +127,8 @@
 				//obj/item/gun/projectile/automatic/omnirifle = 1,
 				//obj/item/gun/projectile/automatic/omnirifle/omnicarbine = 1,
 				//obj/item/gun/projectile/automatic/straylight = 3,
-				/obj/item/gun/projectile/shotgun/pug = 0.5))
+				/obj/item/gun/projectile/shotgun/pug = 0.5,
+				/obj/item/gun/projectile/revolver/hornet = 0.5))
 				//obj/item/gun/projectile/automatic/wirbelwind = 0.1))
 
 /obj/random/gun_combat/low_chance

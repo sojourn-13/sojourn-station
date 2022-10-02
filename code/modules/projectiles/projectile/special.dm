@@ -455,7 +455,7 @@
 
 //OS Portable turret projectiles
 
-/obj/item/projectile/bullet/gauss
+/obj/item/projectile/bullet/os_trurret_gauss
 	name = "ferrous slug"
 	damage_types = list(BRUTE = 15)
 	armor_penetration = 25
@@ -464,7 +464,7 @@
 	step_delay = 0.4
 	sharp = TRUE	// Until all bullets are turned sharp by default
 
-/obj/item/projectile/beam/pulse
+/obj/item/projectile/beam/os_turret
 	name = "pulsed beam"
 	icon_state = "beam_blue"
 	damage_types = list(BURN = 15)

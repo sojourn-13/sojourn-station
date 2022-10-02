@@ -195,6 +195,18 @@
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/mask/balaclava(src)
 
+/obj/item/storage/box/syndie_kit/painrevolver
+	name = "\improper vigilante revolver kit"
+	desc = "12mm revolver and its kit."
+
+/obj/item/storage/box/syndie_kit/painrevolver/populate_contents()
+	new /obj/item/gun/projectile/revolver/hornet(src)
+	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
+	new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
+	new /obj/item/ammo_magazine/speed_loader_kurtz_50/highvelocity(src)
+	new /obj/item/clothing/glasses/sunglasses(src)
+	new /obj/item/clothing/mask/balaclava(src)
+
 /obj/item/storage/box/syndie_kit/c20r
 	name = "C-20r box"
 	desc = "C-20r kit"

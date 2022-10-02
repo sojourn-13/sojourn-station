@@ -35,6 +35,11 @@
 	item_cost = 8
 	path = /obj/item/storage/box/syndie_kit/hpistol
 
+/datum/uplink_item/item/visible_weapons/painrevolver
+	name = "12mm Hornet Revolver"
+	item_cost = 8
+	path = /obj/item/storage/box/syndie_kit/painrevolver
+
 /datum/uplink_item/item/visible_weapons/riggedlaser
 	name = "Exosuit (APLU) Rigged Laser"
 	item_cost = 4
