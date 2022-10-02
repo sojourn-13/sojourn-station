@@ -365,6 +365,10 @@
 	name = "NM 7.62x39mm \"Judge\""
 	build_path = /obj/item/gun/projectile/revolver/judge
 
+/datum/design/autolathe/gun/trouble_shooter
+	name = "GP 7.62x39mm \"Trouble Shooter\""
+	build_path = /obj/item/gun/projectile/trouble_shooter
+
 // . 4 0 8 H E A V Y  R I F L E S
 
 /datum/design/autolathe/gun/standard_omnirifle
