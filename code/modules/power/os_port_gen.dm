@@ -28,7 +28,7 @@
 		if(istype(SP, /obj/item/stock_parts/capacitor))
 			capacitor_rating += SP.rating
 
-	if(micro_laser_rating > 4 && capacitor_rating > 4)
+	if(micro_laser_rating >= 4 && capacitor_rating >= 4)
 		can_generate_power = TRUE
 
 	var/total_rating = micro_laser_rating + capacitor_rating
@@ -42,16 +42,17 @@
 
 /obj/machinery/power/port_gen/os_generator/examine(mob/living/carbon/user)
 	..(user)
-	var/mec_or_cog = max(user.stats.getStat(STAT_MEC), user.stats.getStat(STAT_COG))
-	if(mec_or_cog >= STAT_LEVEL_PROF)
-		if(can_generate_power)
-			to_chat(user, "\The [src] appears to be producing [power_gen*power_output] W.")
+	if(iscarbon(user) || issilicon(user)) //sanity check so we dont check stats of a ghost
+		var/mec_or_cog = max(user.stats.getStat(STAT_MEC), user.stats.getStat(STAT_COG))
+		if(mec_or_cog >= STAT_LEVEL_PROF)
+			if(can_generate_power)
+				to_chat(user, "\The [src] appears to be producing [power_gen*power_output] W.")
+			else
+				to_chat(user, SPAN_NOTICE("\The [src] wasn\'t built correctly. One or more of its components are incompatible with the circuitry."))
+			if(IsBroken())
+				to_chat(user, SPAN_WARNING("\The [src] seems to have broken down."))
 		else
-			to_chat(user, SPAN_NOTICE("\The [src] wasn\'t built correctly. One or more of its components are incompatible with the circuitry."))
-		if(IsBroken())
-			to_chat(user, SPAN_WARNING("\The [src] seems to have broken down."))
-	else
-		to_chat(user, SPAN_WARNING("You lack the knowledge or skill to comprehend \the [src]\'s functions."))
+			to_chat(user, SPAN_WARNING("You lack the knowledge or skill to comprehend \the [src]\'s functions."))
 
 /obj/machinery/power/port_gen/os_generator/handleInactive()
 	if(power_gen > 0)
@@ -75,7 +76,7 @@
 
 /obj/machinery/power/port_gen/os_generator/attackby(obj/item/I, mob/user)
 	var/mec_or_cog = max(user.stats.getStat(STAT_MEC), user.stats.getStat(STAT_COG))
-	if(mec_or_cog >= STAT_LEVEL_EXPERT)
+	if(mec_or_cog <= STAT_LEVEL_EXPERT)
 		to_chat(user, SPAN_WARNING("You lack the knowledge or skill to perform work on \the [src]."))
 		return
 
