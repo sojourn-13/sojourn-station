@@ -383,6 +383,13 @@
 	var/list/our_tracers
 	recoil = 2
 
+/obj/item/projectile/tether/lash
+	name = "fleshy tentral"
+	damage_types = list(BRUTE = 5)
+	nodamage = FALSE
+	stun = 2 //Horrors
+	weaken = 2 //Unspeakable
+
 /obj/item/projectile/tether/Initialize()
 	..()
 	our_tracers = list()

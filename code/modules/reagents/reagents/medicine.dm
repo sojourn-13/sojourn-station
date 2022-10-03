@@ -135,6 +135,8 @@
 	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Fish recipes no longer contain carpotoxin, but good in cases of poisoning.
 	holder.remove_reagent("toxin", 0.4 * effect_multiplier)
 	holder.remove_reagent("blattedin", 0.4 * effect_multiplier) // Massive complains about its slow metabolization rate + poisoning actually working, plus dylo originally purged it, so I'm bringing it back. - Seb
+	holder.remove_reagent("wasp_toxin", 0.2 * effect_multiplier)
+
 
 /datum/reagent/medicine/dylovene/overdose(var/mob/living/carbon/M, var/alien)
 	if(ishuman(M))
@@ -174,6 +176,7 @@
 	holder.remove_reagent("zombiepowder", 0.4 * effect_multiplier)
 	holder.remove_reagent("xenotoxin", 0.4 * effect_multiplier)
 	holder.remove_reagent("blattedin", 0.8 * effect_multiplier) // Consistency with Dylovene, making it a straight upgrade worth mixing.
+	holder.remove_reagent("wasp_toxin", 0.6 * effect_multiplier)
 
 /datum/reagent/medicine/cordradaxon
 	name = "Cordradaxon"
