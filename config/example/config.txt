@@ -1,8 +1,8 @@
 ## Server name: This appears at the top of the screen in-game. In this case it will read "tgstation: station_name" where station_name is the randomly generated name of the station for the round. Remove the # infront of SERVERNAME and replace 'spacestation13' with the name of your choice
-SERVERNAME Sojourn Colony
+SERVERNAME [RU]Coffeₑ colony - Sojourn 13
 
 ## Hub visiblity - uncomment to make visible on the HUB
-#HUB_VISIBLE
+HUB_VISIBLE
 
 ## Alert levels
 ALERT_GREEN All threats to the ship have passed. Security may not have weapons visible, privacy laws are once again fully enforced.
@@ -172,7 +172,7 @@ ALLOW_AI
 # DONT_DEL_NEWMOB
 
 ## set a hosted by name for unix platforms
-HOSTEDBY yournamehere
+HOSTEDBY Amerecanno
 
 ## Set to jobban "Guest-" accounts from Captain, HoS, HoP, CE, RD, CMO, Warden, Security, Detective, and AI positions.
 ## Set to 1 to jobban them from those positions, set to 0 to allow them.
@@ -191,16 +191,16 @@ GUEST_BAN
 # LANGUAGE
 
 ## forum address
-# FORUMURL http://example.com
+# FORUMURL https://discord.gg/c5zvcGYBrs
 
 ## Wiki address
-# WIKIURL http://example.com
+# WIKIURL https://sojourn13.space/wiki/Main_Page
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
 # BANAPPEALS http://example.com
 
 ##Github address
-GITHUBURL https://github.com/Endless-Horizon/CEV-Eris
+GITHUBURL https://github.com/Amerecanno/CoffeStation.git
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard
