@@ -111,7 +111,7 @@ var/list/channel_to_radio_key = new
 // returns message
 /mob/living/proc/getSpeechVolume(var/message)
 	var/volume = chem_effects[CE_SPEECH_VOLUME] ? round(chem_effects[CE_SPEECH_VOLUME]) : 2	// 2 is default text size in byond chat
-	var/ending = copytext(message, length(message))
+	var/ending = copytext_char(message, length(message))
 	if(ending == "!")
 		volume ++
 	return volume
@@ -123,7 +123,7 @@ var/list/channel_to_radio_key = new
 			return
 
 	if(stat)
-		var/last_symbol = copytext(message, length(message))
+		var/last_symbol = copytext_char(message, length(message))
 		if(stat == DEAD)
 			return say_dead(message)
 		else if(last_symbol=="@")
@@ -140,20 +140,20 @@ var/list/channel_to_radio_key = new
 		to_chat(src, SPAN_DANGER("You're muzzled and cannot speak!"))
 		return
 
-	var/prefix = copytext(message,1,2)
+	var/prefix = copytext_char(message,1,2)
 	if(prefix == get_prefix_key(/decl/prefix/custom_emote))
-		return emote(copytext(message,2))
+		return emote(copytext_char(message,2))
 	if(prefix == get_prefix_key(/decl/prefix/visible_emote))
-		return custom_emote(1, copytext(message,2))
+		return custom_emote(1, copytext_char(message,2))
 
 	//parse the radio code and consume it
 	var/message_mode = parse_message_mode(message, "headset")
 	if (message_mode)
 		//it would be really nice if the parse procs could do this for us.
 		if (message_mode == "headset")
-			message = copytext(message,2)
+			message = copytext_char(message,2)
 		else
-			message = copytext(message,3)
+			message = copytext_char(message,3)
 
 	message = trim_left(message)
 
@@ -302,7 +302,7 @@ mob/proc/format_say_message(var/message = null)
 	var/list/punctuation = list("!","?",".")
 
 	///Last character in the message
-	var/last_character = copytext(message,length_char(message))
+	var/last_character = copytext_char(message,length_char(message))
 	if(!(last_character in punctuation))
 		message += "."
 	return message
@@ -474,7 +474,7 @@ mob/proc/format_say_message(var/message = null)
 		var/list/messages = splittext(message, " ")
 		var/R = rand(1, messages.len)
 		var/heardword = messages[R]
-		if(copytext(heardword, 1, 1) in punctuation)
+		if(copytext_char(heardword, 1, 1) in punctuation)
 			heardword = copytext(heardword, 2)
 		if(copytext(heardword, -1) in punctuation)
 			heardword = copytext(heardword, 1, length(heardword))

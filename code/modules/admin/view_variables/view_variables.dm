@@ -31,7 +31,7 @@ ADMIN_VERB_ADD(/client/proc/debug_variables, R_ADMIN | R_MOD | R_DEBUG, FALSE)
 	usr << browse_rsc('code/js/view_variables.js', "view_variables.js")
 
 	var/html = {"
-		<html>
+		<html><meta charset="UTF-8">
 		<head>
 			<script src='view_variables.js'></script>
 			<title>[D] (\ref[D] - [D.type])</title>

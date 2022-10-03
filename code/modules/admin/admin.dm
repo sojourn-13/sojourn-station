@@ -115,7 +115,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/show_player_panel, null, TRUE)
 		to_chat(usr, "Error: you are not an admin!")
 		return
 
-	var/body = "<html><head><title>Options for [M.key]</title></head>"
+	var/body = "<html><meta charset=\"UTF-8\"><head><title>Options for [M.key]</title></head>"
 	body += "<body>Options panel for <b>[M]</b>"
 
 	if(M.client)

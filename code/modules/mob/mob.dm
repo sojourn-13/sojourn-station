@@ -386,7 +386,7 @@
 		to_chat(src, "The game appears to have misplaced your mind datum, so we can't show you your notes.")
 
 /mob/proc/store_memory(msg as message, popup, sane = 1)
-	msg = copytext(msg, 1, MAX_MESSAGE_LEN)
+	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
 
 	if (sane)
 		msg = sanitize(msg)
@@ -556,8 +556,8 @@
 	if(href_list["flavor_more"])
 		//if(src in view(usr)) //Flavor at any range
 		var/dat = {"
-			<html><head><title>[name]</title></head>
-			<body><tt>[replacetext(flavor_text, "\n", "<br>")]</tt></body>
+			<html><meta charset=\"UTF-8\"><head><title>[name]</title></head>
+			<body><tt>[replacetext_char(flavor_text, "\n", "<br>")]</tt></body>
 			</html>
 		"}
 		usr << browse(dat, "window=[name]_flavor;size=500x200")
@@ -566,8 +566,8 @@
 		update_flavor_text()
 	if(href_list["ooc_text"])
 		var/dat = {"
-				<html><head><title>[name]</title></head>
-				<body><tt>[replacetext(ooc_text, "\n", "<br>")]</tt></body>
+				<html><meta charset=\"UTF-8\"><head><title>[name]</title></head>
+				<body><tt>[replacetext_char(ooc_text, "\n", "<br>")]</tt></body>
 				</html>
 			"}
 		usr << browse(dat, "window=[name]_ooc;size=500x200")

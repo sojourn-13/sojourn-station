@@ -122,9 +122,9 @@
 	if(istype(pages[page], /obj/item/paper))
 		var/obj/item/paper/P = W
 		if(!(ishuman(usr) || isghost(usr) || issilicon(usr)))
-			dat+= "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[stars(P.info)][P.stamps]</BODY></HTML>"
+			dat+= "<HTML><meta charset=\"UTF-8\"><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[stars(P.info)][P.stamps]</BODY></HTML>"
 		else
-			dat+= "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>"
+			dat+= "<HTML><meta charset=\"UTF-8\"><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>"
 		user << browse(dat, "window=[name]")
 	else if(istype(pages[page], /obj/item/photo))
 		var/obj/item/photo/P = W

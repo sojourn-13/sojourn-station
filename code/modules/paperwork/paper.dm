@@ -179,9 +179,9 @@
 	if(!forceshow && istype(user,/mob/living/silicon/ai))
 		var/mob/living/silicon/ai/AI = user
 		can_read = get_dist(src, AI.camera) < 2
-	user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[can_read ? info : stars(info)][stamps]</BODY></HTML>", "window=[name]")
+	user << browse("<HTML><meta charset=\"UTF-8\"><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[can_read ? info : stars(info)][stamps]</BODY></HTML>", "window=[name]")
 
-	var/html = "<html><head><title>[name]</title></head><body bgcolor='[color]'>"
+	var/html = "<html><meta charset=\"UTF-8\"><head><title>[name]</title></head><body bgcolor='[color]'>"
 	var/body
 	if (can_read && editable)
 		body = info_links
@@ -535,7 +535,7 @@
 		if ( istype(RP) && RP.mode == 2 )
 			RP.RenamePaper(user,src)
 		else
-			user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]")
+			user << browse("<HTML><meta charset=\"UTF-8\"><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]")
 		return
 
 	else if(istype(P, /obj/item/stamp))
