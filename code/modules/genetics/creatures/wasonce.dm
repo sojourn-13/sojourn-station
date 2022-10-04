@@ -50,6 +50,7 @@ Has ability of every roach.
 	mob_size =  3  // The same as Hivemind Tyrant
 	status_flags = 0
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
+	phaser = TRUE //WERE REALLLLL
 
 	life_cycles_before_sleep = 3000 //Keep this awake for longer than the regular mob.
 

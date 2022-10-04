@@ -60,6 +60,7 @@
 	var/poison_type = "mindmelter"
 	var/last_noise = -30000
 	var/chameleon_skill = 10
+	var/phaser = TRUE
 	var/healing_factor = 1
 	var/momento_mori = /obj/effect/decal/cleanable/psi_ash
 	var/death_present = FALSE
