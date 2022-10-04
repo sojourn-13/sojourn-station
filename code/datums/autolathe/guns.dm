@@ -569,10 +569,6 @@
 	name = "H&S \"Cop Block\" Trigger"
 	build_path = /obj/item/gun_upgrade/trigger/cop_block
 
-/datum/design/autolathe/gun/dnalock_mod
-	name = "Soteria \"DNA lock\" Finger Imprinter Trigger"
-	build_path = /obj/item/gun_upgrade/trigger/dnalock
-
 /datum/design/autolathe/gun/bipod_mod
 	name = "H&S \"Stand\" bipod"
 	build_path = /obj/item/gun_upgrade/underbarrel/bipod
