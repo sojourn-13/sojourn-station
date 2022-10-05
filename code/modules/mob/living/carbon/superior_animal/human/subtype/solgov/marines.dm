@@ -14,10 +14,10 @@
 	speak_emote = list("In my sights!","Come get some!","Seperatist scumbags!", "Frontier Fucks!", "Hoorah!", "Put your hands up!")
 
     //range/ammo stuff
-	ranged = 1
+	ranged = TRUE
 	viewRange = 10
 	comfy_range = 7
-	rapid = 0
+	rapid = FALSE
 	ranged_cooldown = 2
 	projectiletype = /obj/item/projectile/bullet/heavy_rifle_408
 	projectilesound = 'sound/weapons/guns/fire/lmg_fire.ogg'
@@ -47,6 +47,13 @@
 
 	min_air_pressure = 0
 	min_bodytemperature = 0
+
+	can_burrow = FALSE
+	colony_friend = FALSE
+	friendly_to_colony = FALSE
+
+	never_stimulate_air = TRUE
+
 	faction = "solfed" //Temp measure to allow Excel turrets and the sort to be used alongside them. Apply faction if wanted for different events.
 
 /mob/living/carbon/superior_animal/human/marine/shield
@@ -60,7 +67,7 @@
 	speak_emote = list("Come get me!","A human shield only costs one life!","Hoorah, mother-fucker!", "Colonial dicks!", "Can't hit me!", "Level 3 plates, bitch!","BANG-BANG-BANG Mother-fucker!")
 
 	//range/ammo stuff
-	rapid = 1
+	rapid = TRUE
 	comfy_range = 4
 	rapid_fire_shooting_amount = 2
 	ranged_cooldown = 2
@@ -115,7 +122,7 @@
 
 /mob/living/carbon/superior_animal/human/marine/specialist/death()
 	..()
-	if(prob 20)
+	if(prob(20))
 		gibs(loc, null, /obj/effect/gibspawner/human)
 		explosion(get_turf(src), 0, 0, 3)
 		qdel(src)
@@ -132,7 +139,7 @@
 	speak_emote = list("This machine kills commies!","Come get some!","Fuckin' blast em'!", "I got a round with your name on it!", "Just die already!", "Hah-haaa, you're fuckin' done!", "Make war, not love!")
 
 	comfy_range = 6
-	rapid = 1
+	rapid = TRUE
 	rapid_fire_shooting_amount = 5
 	ranged_cooldown = 4
 	projectiletype = /obj/item/projectile/bullet/heavy_rifle_408
