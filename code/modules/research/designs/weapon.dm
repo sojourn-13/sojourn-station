@@ -358,6 +358,12 @@
 /datum/design/research/item/weapon/weapon_upgrade/toxin_coater
 	name = "Soteria \"Black Viper\" toxin coater"
 	build_path = /obj/item/gun_upgrade/barrel/toxin_coater
+
+/datum/design/research/item/weapon/weapon_upgrade/dnalock_mod
+	name = "Soteria \"DNA lock\" Finger Imprinter Trigger"
+	build_path = /obj/item/gun_upgrade/trigger/dnalock
+
+
 /*
 /datum/design/research/item/weapon/weapon_upgrade/isotope_diffuser
 	name = "Soteria \"Atomik\" isotope diffuser"

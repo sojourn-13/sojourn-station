@@ -248,6 +248,7 @@
 							/datum/design/research/item/weapon/weapon_upgrade/toxin_coater,
 							/datum/design/research/item/weapon/weapon_upgrade/overheat,
 							/datum/design/research/item/weapon/weapon_upgrade/penetrator,
+							/datum/design/research/item/weapon/weapon_upgrade/dnalock_mod
 							//datum/design/research/item/weapon/weapon_upgrade/isotope_diffuser,
 							//datum/design/research/item/weapon/weapon_upgrade/psionic_catalyst
 						)

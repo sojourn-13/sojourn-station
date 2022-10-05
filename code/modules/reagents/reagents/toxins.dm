@@ -838,3 +838,27 @@
 	if(istype(L))
 		L.adjustHalLoss(50)
 		L.adjustToxLoss(20)
+
+
+//Wasp toxin
+/datum/reagent/toxin/wasp_toxin
+	name = "Wasp Inflamer"
+	id = "wasp_toxin"
+	description = "A toxin that paralizes through pain its victums."
+	taste_mult = 0.6
+	reagent_state = LIQUID
+	color = "#CF3600"
+	strength = 0.2
+	metabolism = REM * 2
+	var/agony_amount = 4
+
+/datum/reagent/toxin/wasp_toxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.species && (H.species.flags & (NO_PAIN)))
+			return
+
+		M.apply_effect(agony_amount, AGONY, 0)
+		if(prob(5))
+			to_chat(M, SPAN_DANGER("You feel like your insides are burning!"))
