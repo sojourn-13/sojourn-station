@@ -5,38 +5,38 @@
 
 /tipsAndTricks/roles/traitor_uplink
     roles_list = list(/datum/antagonist/traitor)
-    tipText = "As a traitor, you can order all sorts of useful stuff from your PDA/Headset/Implant uplink, like weapons, devices, equipment, services and even money!"
+    tipText = "Как предатель, вы можете заказать все виды полезных вещей со своего КПК / гарнитуры / импланта аплинка, таких как оружие, устройства, экипировка, услуги и даже деньги!"
 
 /tipsAndTricks/roles/antag_good_rp
     roles_list = list(/datum/antagonist)
-    tipText = "Roleplaying makes for loyal friends and respectful adversaries. Everyone loves a good storyteller who brings others into the plot."
+    tipText = "Ролевые игры создают верных друзей и заслуживающих уважение противников. Все любят хорошего рассказчика, который вовлекает других в сюжет."
 
 /tipsAndTricks/roles/antag_good_rp_two
     roles_list = list(/datum/antagonist)
-    tipText = "Play to have fun and to bring others into the fun. If your round feels less like a kill compilation and more like a sci-fi thriller, you're doing it right."
+    tipText = "Играйте, чтобы повеселиться и вовлечь в это веселье других. Если ваш раунд меньше похож на подборку убийств, а больше на научно-фантастический триллер, вы делаете все правильно."
+
 
 /tipsAndTricks/roles/antag_good_rp_three
     roles_list = list(/datum/antagonist)
-    tipText = "Merely killing your enemies with a shot in the back is so very droll. You can do better. Make them die tired."
+    tipText = "Просто убивать своих врагов выстрелом в спину - это так банально. Ты можешь сделать лучше. Заставь их умереть уставшими."
 
 /tipsAndTricks/roles/antag_good_rp_four
     roles_list = list(/datum/antagonist)
-    tipText = "Being an antagonist is no excuse for not roleplaying."
+    tipText = "Быть антагонистом - это не оправдание для того, чтобы избегать ролевой игры."
 
 /tipsAndTricks/roles/bombs
     roles_list = list(/datum/antagonist)
-    tipText = "You can create very potent bombs in Soteria chemistry or toxins. You also have various activation methods to chose from."
+    tipText = "Вы можете создавать очень мощные бомбы в лабораториях Сотерии. У вас также есть различные способы детонации на выбор."
 
 /tipsAndTricks/roles/computerPrograms
     roles_list = list(/datum/antagonist/traitor)
-    tipText = "When you emag a computer it unlocks access to some unique programs. Access Decipherer is one of them. Note that most of the programs depend on computer processing power."
+    tipText = "Когда вы емагаете компьютер, он открывает доступ к некоторым уникальным программам. Дешифратор доступа - один из них. Обратите внимание, что большинство программ зависят от вычислительной мощности компьютера."
 
 /tipsAndTricks/roles/borgEmag
     roles_list = list(/datum/antagonist/traitor)
-    tipText = "By emagging a cyborg, you obtain a powerful ally with full access. Don't forget to open its panel first."
+    tipText = "Емагнув киборга, вы получаете могущественного союзника с полным доступом. Не забудьте сначала открыть его панель."
 
 /tipsAndTricks/roles/siliconLaws
     roles_list = list(/datum/antagonist)
-    tipText = "The AI of the colony can do your bidding if you update its laws accordingly. It can also affect cyborgs if they are in sync with the AI."
-
+    tipText = "Искусственный интеллект колонии может выполнить ваши требования, если вы соответствующим образом обновите его законы. Это также может повлиять на киборгов, если они синхронизированы с ИИ."
 

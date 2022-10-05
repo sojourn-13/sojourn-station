@@ -3,64 +3,62 @@
     textColor = "#32690e"
 
 /tipsAndTricks/gameplay/bracing
-    tipText = "You can brace your weapon on a table or a low wall to reduce its recoil."
+    tipText = "Вы можете поставить свое оружие на стол или низкую стену, чтобы уменьшить отдачу."
 
 /tipsAndTricks/gameplay/airlockInteractions
-    tipText = "Did you know? You can click on the turf tile where an airlock is located instead of the actual airlock to toggle it."
+    tipText = "Ты знал? Вы можете нажать на клетку, где расположен шлюз, вместо того чтобы нажимать на него самого."
 
 /tipsAndTricks/gameplay/fightBlob
-    tipText = "Blobs have a nasty acid attack allowing them to in any melee melt your weapon and armor! Stay far away from them or ware bio-resistant clothing to prevent these chemical warfare tactics."
+    tipText = "Блоб обладет неприятной кислотной атакой, позволяющей им в ближнем бою расплавить ваше оружие и броню! Держитесь от них подальше или носите биостойкую одежду, чтобы сорвать ему тактику химической войны."
 
 /tipsAndTricks/gameplay/fuhrerRoachReinforcement
-    tipText = "The Fuhrer roach can call for an entire battalion of reinforcement roaches. If you hear it scream, RUN!"
+    tipText = "Таракан 'Фюрер' может вызвать целый батальон тараканов на подкрепление. Если ты услышишь его крик, БЕГИ!"
 
 /tipsAndTricks/gameplay/spiderPoison
-    tipText = "Spiders are a powerful foe that can poison their targets. Fighting them in melee is a bad idea."
+    tipText = "Пауки - могущественный враг, который может отравить тебя. Сражаться с ними в ближнем бою - плохая идея."
 
 /tipsAndTricks/gameplay/carryFlashlight
-    tipText = "Always carry a flashlight and some spare power cells. Darkness is dangerous."
+    tipText = "Всегда носите с собой фонарик и несколько запасных элементов питания. Темнота опасна."
 
 /tipsAndTricks/gameplay/modifyTools
-    tipText = "You can find or buy many modifications to improve your tools or turn them into effective weapons."
-
+    tipText = "Вы можете найти или купить множество модификаций, чтобы улучшить свои инструменты или превратить их в эффективное оружие."
 /tipsAndTricks/gameplay/spiderslip
-    tipText = "Spiders and roaches can be stunned and slipped like humans. When facing off against either, try to even the fight by either flashing them with a flash, or leading them to slip on wet tiles."
+    tipText = "Пауков и тараканов можно оглушить и поскользнуть, как людей. Столкнувшись лицом к лицу с любым из них, попытайтесь осветить их флэшером, либо заставить их поскользнуться на мокрой плитке."
 
 /tipsAndTricks/gameplay/retreatFool
-    tipText = "It's better to retreat from a fight and only suffer mild injuries than to win a fight and suffer a mortal wound. Pick and choose your battles carefully."
+    tipText = "Лучше отступить от боя и получить лишь легкие травмы, чем выиграть бой и получить смертельную рану. Тщательно оценивайте свои шансы."
 
 /tipsAndTricks/gameplay/pdaCoords
-    tipText = "Your PDA has a GPS system and can show you your current location. If you are in trouble and seek help while you don't know your location, tell your coordinates to your potential rescuers."
+    tipText = "Ваш КПК оснащен системой GPS и может показать вам ваше текущее местоположение. Если вы попали в беду и обращаетесь за помощью, не зная своего местоположения, сообщите свои координаты потенциальным спасателям."
 
 /tipsAndTricks/gameplay/walkOnUnderplatin
-    tipText = "If you walk instead of run on underplating, you won't trip."
+    tipText = "Если вы идете, а не бежите по полу без плитки, вы не споткнетесь."
 
 /tipsAndTricks/gameplay/zoneTargetingNum
-    tipText = "You can target specific damage zones by using the Numpad keys."
+    tipText = "Вы можете нацелиться на определенные зоны на кукле с помощью нумпада."
 
 /tipsAndTricks/gameplay/cuffHardsuit
-    tipText = "People in RIG/Hardsuits need to be cuffed using zipties or cable cuffs. Normal cuffs are not large enough to cover their wrists while wearing their gauntlets."
+    tipText = "Люди в РИГ-ах / Хардсьютах должны быть связанты с только помощью кабельных стяжек. Обычные наручники недостаточно велики, чтобы закрывать запястья во время ношения скафандра."
 
 /tipsAndTricks/gameplay/dont_hoardcredits
-    tipText = "Credits come and go, hoarding a big stash of credits without any plans to spend them is a waste!"
+    tipText = "Кредиты приходят и уходят, копить большую сумму кредитов без каких-либо планов их потратить - пустая трата времени!"
 
 /tipsAndTricks/gameplay/dont_hoarditems
-    tipText = "Departments and factions are willing to buy and sell many items, and you should as well. After all...what's more useful, a shotgun gathering dust in a locker, or the credits you made selling it?"
-
+    tipText = "Департаменты и фракции готовы покупать и продавать множество предметов, и вы тоже должны это делать. В конце концов...что полезнее: дробовик, пылящийся в шкафчике, или кредиты, которые вы заработали, продавая его?"
 /tipsAndTricks/gameplay/misc_tasks
-    tipText = "Departments may be understaffed or looking for assistance to do certain tasks, maybe ask around!"
+    tipText = "Отделы могут быть недоукомплектованы или нуждаются в помощи для выполнения определенных задач, возможно, поспрашивайте окружающих!"
 
 /tipsAndTricks/gameplay/body_gards
-    tipText = "Are you going into danger or risking yourself in combat? Maybe hire a colonist as a body guard or medic. It might just make their day to be useful for once."
+    tipText = "Вы идете навстречу опасности или рискуете собой в бою? Может быть, нанять колониста в качестве телохранителя или медика. Это могло бы просто сделать их день хоть раз полезным."
 
 /tipsAndTricks/gameplay/guncases
-    tipText = "Gun cases are large and unwieldy but great for transporting rifles and certain weapons in a legal way. Security can supply you with one from their vendor or armory shop!"
+    tipText = "Оружейные ящики большие и громоздкие, но отлично подходят для законной транспортировки винтовок и некоторых видов оружия. Служба безопасности может снабдить вас одним из них у своего вендора или магазина-оружейки!"
 
 /tipsAndTricks/gameplay/newscasters_can_be_maintaind
-    tipText = "Newscasters have limited stock that can be refilled by refitting back in printed news papers."
+    tipText = "У ньюскастеров ограниченный запас бумаги, который можно пополнить, вернув его в печатные выпуски новостей."
 
 /tipsAndTricks/gameplay/flashlights_fit_in_baton_holsters
-    tipText = "Tubular and Baton Holsters can fit many things inside them, from flashlights to hatton tubes try to fit just about anything inside them to learn what can and cant fit."
+    tipText = "Трубчатые кобуры и кобуры для дубинок могут вместить в себя множество вещей, от фонариков до трубок Хаттона. Попробуйте поместить в них практически все, чтобы узнать, что может поместиться, а что нет."
 
 /tipsAndTricks/gameplay/examinetab
-    tipText = "Automatically switching to the examine tab upon examining something can be disabled in your preferences."
+    tipText = "Автоматическое переключение на вкладку 'Examine' при осмотре чего-либо может быть отключено в ваших настройках."

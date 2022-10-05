@@ -381,6 +381,7 @@
 
 /obj/machinery/cash_register/proc/get_current_transaction()
 	var/dat = {"
+	<html><meta charset="UTF-8">
 	<head><style>
 		.tx-title-r {text-align: center; background-color:#ffdddd; font-weight: bold}
 		.tx-name-r {background-color: #eebbbb}
