@@ -49,114 +49,114 @@
 	set category = "OOC"
 
 	var/admin = {"<font color='purple'>
-Admin:
-\tF5 = Aghost (admin-ghost)
-\tF6 = player-panel
-\tF7 = admin-pm
-\tF8 = Invisimin
-Admin Ghost:
-\tShift + Ctrl + Click = View Variables
+	Admin:
+	\tF5 = Aghost (admin-ghost)
+	\tF6 = player-panel
+	\tF7 = admin-pm
+	\tF8 = Invisimin
+	Admin Ghost:
+	\tShift + Ctrl + Click = View Variables
 </font>"}
 
 	var/hotkey_mode = {"<font color='purple'>
-Hotkey-Mode: (hotkey-mode must be on)
-\tTAB = toggle hotkey-mode
-\ta = left
-\ts = down
-\td = right
-\tw = up
-\tq = drop
-\te = equip
-\tr = throw
-\tt = say
-\t5 = emote
-\tx = swap-hand
-\tz = activate held object (or y)
-\tj = toggle-aiming-mode
-\tf = cycle-intents-left
-\tg = cycle-intents-right
-\t1 = help-intent
-\t2 = disarm-intent
-\t3 = grab-intent
-\t4 = harm-intent
-\tCtrl = drag
-\tShift = examine
+Режим горячих клавиш (горячие клавиши должны быть включены)
+\tTAB = включить режим горячих клавиш
+\ta = влево
+\ts = вниз
+\td = вправо
+\tw = вверх
+\tq = положить
+\te = экипировать
+\tr = бросить
+\tt = говорить
+\t5 = описывать действия персонажа
+\tx = переключить активную руку
+\tz = активировать предмет в активной руке (или y)
+\tj = переключить режим прицеливания
+\tf = переключить намерения влево
+\tg = переключить намеренья вправо
+\t1 = намеренье помощи
+\t2 = намеренье разоружения
+\t3 = намеренье захвата
+\t4 = намеренье вреда
+\tCtrl = тащить
+\tShift = осмотреть
 </font>"}
 
 	var/other = {"<font color='purple'>
-Any-Mode: (hotkey doesn't need to be on)
-\tCtrl+a = left
-\tCtrl+s = down
-\tCtrl+d = right
-\tCtrl+w = up
-\tCtrl+q = drop
-\tCtrl+e = equip
-\tCtrl+r = throw
-\tCtrl+x = swap-hand
-\tCtrl+z = activate held object (or Ctrl+y)
-\tCtrl+f = cycle-intents-left
-\tCtrl+g = cycle-intents-right
-\tCtrl+1 = help-intent
-\tCtrl+2 = disarm-intent
-\tCtrl+3 = grab-intent
-\tCtrl+4 = harm-intent
-\tF1 = adminhelp
-\tF2 = ooc
-\tF3 = say
-\tF4 = emote
-\tDEL = pull
-\tINS = cycle-intents-right
-\tHOME = drop
-\tPGUP = swap-hand
-\tPGDN = activate held object
-\tEND = throw
+Любой-режим: (Включённый режим горячих клавиш не требуется)
+\tCtrl+a = влево
+\tCtrl+s = вниз
+\tCtrl+d = вправо
+\tCtrl+w = вверх
+\tCtrl+q = положить
+\tCtrl+e = экипировать
+\tCtrl+r = бросить
+\tCtrl+x = переключить активную руку
+\tCtrl+z =активировать предмет в активной руке (или Ctrl+y)
+\tCtrl+f = переключать намеренья влево
+\tCtrl+g = переключать намеренья вправо
+\tCtrl+1 = намеренье помощи
+\tCtrl+2 = намеренье разоружения
+\tCtrl+3 = намеренье захвата
+\tCtrl+4 = намеренье вреда
+\tF1 = помощь администрации
+\tF2 = внеигровой чат
+\tF3 = говорить
+\tF4 = описывать действия персонажа
+\tDEL = тащить
+\tINS = переключать намеренья вправо
+\tHOME = положить
+\tPGUP = переключить активную руку
+\tPGDN = активировать предмет в активной руке
+\tEND = бросить
 </font>"}
 
 	var/robot_hotkey_mode = {"<font color='purple'>
-Hotkey-Mode: (hotkey-mode must be on)
-\tTAB = toggle hotkey-mode
-\ta = left
-\ts = down
-\td = right
-\tw = up
-\tq = unequip active module
-\tt = say
-\tx = cycle active modules
-\tz = activate held object (or y)
-\tf = cycle-intents-left
-\tg = cycle-intents-right
-\t1 = activate module 1
-\t2 = activate module 2
-\t3 = activate module 3
-\t4 = toggle intents
-\t5 = emote
-\tCtrl = drag
-\tShift = examine
+Режим горячих клавиш: (режим горячих клавиш должен быть включён)
+\tTAB = включить режим горячих клавиш
+\ta = влево
+\ts = вниз
+\td = вправо
+\tw = вверх
+\tq = убрать активный модуль
+\tt = говорить
+\tx = переключать активные модули
+\tz = активировать предмет в руке (или y)
+\tf = переключать намеренья влево
+\tg = переключать намеренья вправо
+\t1 = активировать модуль 1
+\t2 = активировать модуль 2
+\t3 = активировать модуль 3
+\t4 = переключить намеренья
+\t5 = описывать действия персонажа
+\tCtrl = тащить
+\tShift = осмотреть
 </font>"}
 
 	var/robot_other = {"<font color='purple'>
-Any-Mode: (hotkey doesn't need to be on)
-\tCtrl+a = left
-\tCtrl+s = down
-\tCtrl+d = right
-\tCtrl+w = up
-\tCtrl+q = unequip active module
-\tCtrl+x = cycle active modules
-\tCtrl+z = activate held object (or Ctrl+y)
-\tCtrl+f = cycle-intents-left
-\tCtrl+g = cycle-intents-right
-\tCtrl+1 = activate module 1
-\tCtrl+2 = activate module 2
-\tCtrl+3 = activate module 3
-\tCtrl+4 = toggle intents
-\tF1 = adminhelp
-\tF2 = ooc
-\tF3 = say
-\tF4 = emote
-\tDEL = pull
-\tINS = toggle intents
-\tPGUP = cycle active modules
-\tPGDN = activate held object
+Любой-режим: (Включённый режим горячих клавиш не требуется)
+\tCtrl+a = влево
+\tCtrl+s = вниз
+\tCtrl+d = вправо
+\tCtrl+w = вверх
+\tCtrl+q = снять активный модуль
+\tCtrl+x = переключать активные модули
+\tCtrl+z = активировать объект в руке (или Ctrl+y)
+\tCtrl+f = переключать-намеренья-влево
+\tCtrl+g = переключать-намеренья-вправо
+\tCtrl+1 = активация модуля 1
+\tCtrl+2 = активация модуля 2
+\tCtrl+3 = активация модуля 3
+\tCtrl+4 = переключить намеренья
+\tF1 = помощь администрации
+\tF2 = внеигровой чат
+\tF3 = говорить
+\tF4 = описывать действия персонажа
+\tDEL = тащить
+\tINS = переключить взаимодействия
+\tPGUP = переключать активные модули
+\tPGDN = активировать объект в руке
 </font>"}
 
 	if(isrobot(src.mob))
