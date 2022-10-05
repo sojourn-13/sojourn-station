@@ -47,7 +47,7 @@
 
 	min_air_pressure = 0
 	min_bodytemperature = 0
-	faction = "excelsior" //Temp measure to allow Excel turrets and the sort to be used alongside them. Apply faction if wanted for different events.
+	faction = "solfed" //Temp measure to allow Excel turrets and the sort to be used alongside them. Apply faction if wanted for different events.
 
 /mob/living/carbon/superior_animal/human/marine/shield
 	name = "Sol-Fed Commando"
