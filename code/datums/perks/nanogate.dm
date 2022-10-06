@@ -95,11 +95,11 @@
 /datum/perk/nanite_ammo
 	name = "Munition Fabrication"
 	desc = "You programmed and set aside a specific subset of nanites whose singular purpose is to reconstruct themselves into ammunition boxes. The process is quite intensive and requires \
-	one hour between uses."
+	half an hour between uses."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	active = FALSE
 	passivePerk = FALSE
-	var/cooldown = 60 MINUTES
+	var/cooldown = 30 MINUTES
 	var/anti_cheat = FALSE //No more spaming...
 
 /datum/perk/nanite_ammo/activate()
@@ -112,10 +112,8 @@
 		return
 	anti_cheat = TRUE
 
-	var/list/ammo_boxes = typesof(/obj/item/ammo_magazine/ammobox)
-	//We cant print everything under the sun sadly, so we limit are options a small bit!
-	//No SI laser ammo, explosives, some higher end boxes/ammo, and church biomatter boxes
-	ammo_boxes -= list(	/obj/item/ammo_magazine/ammobox,
+				//illegal bullets go BRRRT!!!
+	var/list/blacklisted_types = list(	/obj/item/ammo_magazine/ammobox,
 						/obj/item/ammo_magazine/ammobox/pistol_35/laser,
 						/obj/item/ammo_magazine/ammobox/pistol_35/biomatter,
 						/obj/item/ammo_magazine/ammobox/pistol_35/scrap,
@@ -154,8 +152,22 @@
 						/obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet,
 						/obj/item/ammo_magazine/ammobox/shotgun/scrap_slug
 						)
+
+	var/list/ammo_boxes = list()
+	for(var/ammo in subtypesof(/obj/item/ammo_magazine/ammobox))
+		if (ammo in blacklisted_types)
+			continue
+		var/obj/O = ammo
+		ammo_boxes[initial(O.name)] = ammo
+
 	var/obj/item/choice = input(usr, "Which type of ammo do you want?", "Ammo Choice", null) as null|anything in ammo_boxes
-	usr.put_in_hands(new choice(usr.loc))
+
+	if (!choice)	// user can cancel
+		anti_cheat = FALSE
+		return
+
+	choice = ammo_boxes[choice]
+	usr.put_in_hands(new choice(get_turf(usr)))
 	cooldown_time = world.time + cooldown
 
 	anti_cheat = FALSE
