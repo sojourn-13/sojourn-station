@@ -8,7 +8,7 @@
 	ruined_description_info = "Useless organ tissue. Recycle this in a regurgitator."
 	ruined_color = "#696969"
 	icon_state = "teratoma"
-	price_tag = 200
+	price_tag = 100
 
 	max_upgrades = 1
 	use_generated_name = FALSE
@@ -94,7 +94,7 @@
 				output_pool = ALL_STATS_FOR_LEVEL_UP
 			if(!output_info?.len)
 				for(var/i in 1 to req_num_outputs)
-					output_info += 3
+					output_info += MID_OUTPUT
 
 		if(/obj/item/modification/organ/internal/output/damaging_insight_gain)
 			if(!output_pool?.len)
