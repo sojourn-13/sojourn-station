@@ -304,8 +304,8 @@
 	spawn_positions = 2
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	noob_name = "Corpsman Recruit"
-	alt_titles = list("Medic Cadet")
+	noob_name = "Medical Cadet"
+	alt_titles = list("Medical Cadet")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
