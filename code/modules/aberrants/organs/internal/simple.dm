@@ -5,7 +5,7 @@
 	process_mod_path = /obj/item/modification/organ/internal/process/boost
 	output_mod_path = /obj/item/modification/organ/internal/output/chemical_effects
 	specific_input_type_pool = list(/datum/reagent/toxin)	// Should let these scrub ANY toxin
-	output_pool = TYPE_1_HORMONES
+	output_pool = TYPE_2_HORMONES
 	output_info = list(NOT_USED)
 
 /obj/item/organ/internal/scaffold/aberrant/scrub_toxin/New()
@@ -48,7 +48,7 @@
 									/datum/reagent/toxin/amatoxin, /datum/reagent/toxin/carpotoxin, /datum/reagent/toxin/fertilizer)
 	input_mode = CHEM_INGEST
 	output_pool = list(/datum/reagent/organic/nutriment)
-	output_info = list(VERY_LOW_OUTPUT)
+	output_info = list(LOW_OUTPUT)
 
 /obj/item/organ/internal/scaffold/aberrant/gastric/New()
 	..()
@@ -72,7 +72,7 @@
 	output_mod_path = /obj/item/modification/organ/internal/output/chemical_effects
 	specific_input_type_pool = ALL_DAMAGE_TYPES
 	input_mode = NOT_USED
-	output_pool = TYPE_1_HORMONES
+	output_pool = TYPE_2_HORMONES
 	output_info = list(NOT_USED)
 
 /obj/item/organ/internal/scaffold/aberrant/damage_response/New()

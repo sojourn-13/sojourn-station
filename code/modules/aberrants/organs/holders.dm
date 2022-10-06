@@ -57,11 +57,6 @@
 		details_unlocked = TRUE
 
 	if(using_sci_goggles || details_unlocked)
-		var/organs = ""
-		for(var/organ in organ_efficiency)
-			organs += organ + " ([organ_efficiency[organ]]), "
-		organs = copytext(organs, 1, length(organs) - 1)
-
 		var/function_info
 		var/input_info
 		var/process_info
@@ -85,12 +80,8 @@
 						output_info + (output_info && secondary_info ? "\n" : null) +\
 						secondary_info
 
-		if(item_upgrades.len)
-			to_chat(user, SPAN_NOTICE("Organoid grafts present ([item_upgrades.len]/[max_upgrades]). Use a laser cutting tool to remove."))
 		if(aberrant_cooldown_time > 0)
 			to_chat(user, SPAN_NOTICE("Average organ process duration: [aberrant_cooldown_time / (1 SECOND)] seconds"))
-
-		to_chat(user, SPAN_NOTICE("Organ tissues present (efficiency): <span style='color:pink'>[organs ? organs : "none"]</span>"))
 
 		if(function_info)
 			to_chat(user, SPAN_NOTICE(function_info))
