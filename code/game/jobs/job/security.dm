@@ -414,7 +414,7 @@
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
 	noob_name = "Junior Marshal Officer"
-	alt_titles = list("Junior Marshal Officer")
+	alt_titles = list("Junior Marshal Officer", "Marshal Civil Servant")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10
