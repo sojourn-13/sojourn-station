@@ -110,7 +110,7 @@ List of powers in this page :
 						/obj/item/gun_upgrade/trigger,
 						/obj/item/gun_upgrade/magwell,
 						/obj/item/gun_upgrade/scope,
-						/obj/gun_upgrade/underbarrel,
+						/obj/item/gun_upgrade/underbarrel,
 						/obj/item/gun_upgrade/barrel/forged,
 						/obj/item/gun_upgrade/barrel/bore,
 						/obj/item/gun_upgrade/barrel/excruciator,	//Sadly has biomatter
