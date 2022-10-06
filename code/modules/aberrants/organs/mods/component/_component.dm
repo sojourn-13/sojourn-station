@@ -1,7 +1,7 @@
 /datum/component/modification/organ
 	install_time = WORKTIME_FAST
 	//install_tool_quality = null
-	install_difficulty = FAILCHANCE_HARD
+	install_difficulty = FAILCHANCE_NORMAL
 	install_stat = STAT_BIO
 	install_sound = 'sound/effects/squelch1.ogg'
 
@@ -13,7 +13,7 @@
 
 	removal_time = WORKTIME_SLOW
 	removal_tool_quality = QUALITY_LASER_CUTTING
-	removal_difficulty = FAILCHANCE_VERY_HARD
+	removal_difficulty = FAILCHANCE_HARD
 	removal_stat = STAT_BIO
 
 	bypass_perk = PERK_ADVANCED_MEDICAL
