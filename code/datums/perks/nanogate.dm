@@ -95,7 +95,7 @@
 /datum/perk/nanite_ammo
 	name = "Munition Fabrication"
 	desc = "You programmed and set aside a specific subset of nanites whose singular purpose is to reconstruct themselves into ammunition boxes. The process is quite intensive and requires \
-	one hour between uses."
+	half an hour between uses."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	active = FALSE
 	passivePerk = FALSE
@@ -111,7 +111,7 @@
 		to_chat(holder, "Something feels cold.")
 		return
 	anti_cheat = TRUE
-	
+
 				//illegal bullets go BRRRT!!!
 	var/list/blacklisted_types = list(	/obj/item/ammo_magazine/ammobox,
 						/obj/item/ammo_magazine/ammobox/pistol_35/laser,
