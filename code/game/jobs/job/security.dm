@@ -295,7 +295,7 @@
 
 
 /datum/job/medspec
-	title = "Combat Medic"
+	title = "Corpsman"
 	flag = MEDSPEC
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
@@ -305,7 +305,7 @@
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	noob_name = "Medical Cadet"
-	alt_titles = list("Medical Cadet")
+	alt_titles = list("Medical Cadet", "Combat Medic")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
