@@ -40,12 +40,12 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		UPGRADE_BULK = 2,
-		GUN_UPGRADE_STEPDELAY_MULT = 1.5,
+		GUN_UPGRADE_STEPDELAY_MULT = 2,
 		GUN_UPGRADE_DAMAGE_MULT = 0.5,
 		GUN_UPGRADE_PEN_MULT = 0.5,
 		GUN_UPGRADE_PIERC_MULT = -3, //This does a LOT lowering range, as well as most guns being unable to wall bang with it
-		GUN_UPGRADE_OFFSET = 11,
-		GUN_UPGRADE_RECOIL = 1.5,
+		GUN_UPGRADE_OFFSET = 21,
+		GUN_UPGRADE_RECOIL = 2.5,
 		GUN_UPGRADE_PAIN_MULT = 2
 		)
 	I.gun_loc_tag = GUN_MUZZLE
