@@ -413,7 +413,7 @@
 	spawn_positions = 4
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	noob_name = "Field Training Marshal"
+	noob_name = "Junior Marshal Officer"
 	alt_titles = list("Junior Marshal Officer")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
