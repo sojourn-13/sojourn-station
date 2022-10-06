@@ -46,7 +46,7 @@
 	spawn_positions = 2
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
-	alt_titles = list("Culinary Artist","Cook")
+	alt_titles = list("Culinary Artist","Cook", "Line Chef", "Head Chef")
 	selection_color = "#dddddd"
 	health_modifier = -10
 	access = list(access_hydroponics, access_bar, access_kitchen)

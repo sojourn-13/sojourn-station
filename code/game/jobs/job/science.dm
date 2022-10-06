@@ -119,7 +119,7 @@
 	supervisors = "the Chief Research Overseer"
 	difficulty = "Medium."
 	noob_name = "Soteria Roboticist Trainee"
-	alt_titles = list("Soteria Roboticist Trainee","Soteria Roboticist Fabricator", "Soteria Cyberneticist", "Soteria Mechanist", "Soteria Biomechanical Engineer")
+	alt_titles = list("Soteria Roboticist Trainee", "Soteria Cyberneticist", "Soteria Mechanist", "Soteria Biomechanical Engineer")
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
 	department_account_access = TRUE
