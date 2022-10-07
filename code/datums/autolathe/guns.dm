@@ -565,7 +565,7 @@
 
 /datum/design/autolathe/gun/plasma/excubitor
 	name = "NT \"Excubitor\""
-	build_path = /obj/item/gun/energy/excubitor
+	build_path = /obj/item/gun/energy/plasma/excubitor
 
 // Gun mods
 
