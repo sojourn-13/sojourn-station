@@ -73,6 +73,10 @@
 					playsound(src, 'sound/xenomorph/4_xeno_roars.ogg', 200, 1)
 
 /mob/living/carbon/superior_animal/psi_monster/ploge/proc/use_ability(mob/living/target)
+	if(target.faction == "psi_monster")
+		return
+	if(target == src)
+		return
 
 	var/mob/living/carbon/human/H = target
 	if(istype(H))
@@ -99,8 +103,13 @@
 	return target_list
 
 
+/mob/living/carbon/superior_animal/psi_monster/ploge/proc/regain_range()
+	ranged = TRUE
+
+
 /mob/living/carbon/superior_animal/psi_monster/ploge/right_after_firing(atom/firing_target, obj/item/projectile/trace_arg)
 	ranged = FALSE
+	addtimer(CALLBACK(src, .proc/regain_range), 60) // gives some time for the monster to run upto or attack the mob
 
 /mob/living/carbon/superior_animal/psi_monster/ploge/UnarmedAttack(atom/A, proximity)
 	..()

@@ -76,7 +76,7 @@
 	selection_color = "#d5c88f"
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/engineering/engineer
-	alt_titles = list("Guild Trainee","Guild Electrician", "Guild Tinkerer", "Guild Pipefitter")
+	alt_titles = list("Guild Trainee","Guild Electrician", "Guild Mechanical Engineer")
 	noob_name = "Guild Trainee"
 	access = list(
 		access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,

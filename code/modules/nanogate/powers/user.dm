@@ -86,30 +86,13 @@ List of powers in this page :
 	set name = "Nanite Augment - Modification Fabrication (1)"
 	set desc = "Spend some of your nanites to create a tool or gun mod."
 	nano_point_cost = 1
-	var/list/choices_mods = typesof(/obj/item/tool_upgrade) // Get every tool mod
-	// Remove the parents of the toolmods
-	choices_mods -= list(/obj/item/tool_upgrade,
-						/obj/item/tool_upgrade/reinforcement,
+		// Add illegal shit here
+	var/list/blacklisted_types = list(	/obj/item/tool_upgrade/reinforcement,
 						/obj/item/tool_upgrade/productivity,
 						/obj/item/tool_upgrade/refinement,
 						/obj/item/tool_upgrade/augment,
-						/obj/item/tool_upgrade/armor
-						)
-
-	choices_mods += typesof(/obj/item/gun_upgrade) // Get every gun mod
-
-	// Remove the parents of the gunmods
-	choices_mods -= list(/obj/item/gun_upgrade,
-						/obj/item/gun_upgrade/barrel,
-						/obj/item/gun_upgrade/muzzle,
-						/obj/item/gun_upgrade/mechanism,
-						/obj/item/gun_upgrade/trigger,
-						/obj/item/gun_upgrade/magwell,
-						/obj/item/gun_upgrade/scope
-						)
-
-	// Removing the mods that shouldn't be available : AKA Bluespace, Greyson, AI and guild handmade only stuff
-	choices_mods -= list(/obj/item/tool_upgrade/augment/holding_tank,
+						/obj/item/tool_upgrade/armor,
+						/obj/item/tool_upgrade/augment/holding_tank,
 						/obj/item/tool_upgrade/augment/ai_tool,
 						/obj/item/tool_upgrade/augment/ai_tool_excelsior,
 						/obj/item/tool_upgrade/augment/repair_nano,
@@ -121,6 +104,13 @@ List of powers in this page :
 						/obj/item/tool_upgrade/armor/energy,
 						/obj/item/tool_upgrade/armor/bomb,
 						/obj/item/tool_upgrade/productivity/waxcoat, //Biomatter
+						/obj/item/gun_upgrade/barrel,
+						/obj/item/gun_upgrade/muzzle,
+						/obj/item/gun_upgrade/mechanism,
+						/obj/item/gun_upgrade/trigger,
+						/obj/item/gun_upgrade/magwell,
+						/obj/item/gun_upgrade/scope,
+						/obj/item/gun_upgrade/underbarrel,
 						/obj/item/gun_upgrade/barrel/forged,
 						/obj/item/gun_upgrade/barrel/bore,
 						/obj/item/gun_upgrade/barrel/excruciator,	//Sadly has biomatter
@@ -139,13 +129,23 @@ List of powers in this page :
 						/obj/item/gun_upgrade/muzzle/faulty,
 						/obj/item/gun_upgrade/mechanism/faulty,
 						/obj/item/gun_upgrade/scope/faulty
-						)
+	)
 
-	var/obj/item/choice = input(owner, "Which modification do you want?", "Mod Choice", null) as null|anything in choices_mods
+	var/list/choice_mods = list()
+	// add new paths into the format of + subtypesof(XXX)
+	var/list/types = subtypesof(/obj/item/tool_upgrade) + subtypesof(/obj/item/gun_upgrade)
+	for (var/mod in types)
+		if (mod in blacklisted_types)
+			continue
+		var/obj/O = mod
+		choice_mods[initial(O.name)] = mod
+
+	var/obj/item/choice = input(usr, "Which modification do you want?", "Mod Choice", null) as null|anything in choice_mods
 
 	if(choice && pay_power_cost(nano_point_cost))
 		to_chat(owner, "You permanently assign some of your nanites to create a modification.")
-		owner.put_in_hands(new choice(owner.loc))
+		choice = choice_mods[choice]
+		usr.put_in_hands(new choice(get_turf(usr)))
 
 // Give the user a perk that allow them to create an ammo box every 30 minutes
 /obj/item/organ/internal/nanogate/proc/nanite_ammo()
