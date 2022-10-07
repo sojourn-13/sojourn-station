@@ -121,6 +121,8 @@
 	maxHealth = 125 //Less health than a noraml person.
 	health = 125
 
+	casingtype = null
+
 	comfy_range = 7
 	ranged_cooldown = 5
 	projectiletype = /obj/item/projectile/bullet/grenade
