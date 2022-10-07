@@ -283,6 +283,9 @@
 	desc = "A 8.6mm laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/heavy_rifle_408
 
+/obj/item/ammo_casing/heavy_rifle_408/spent
+	projectile_type = null
+
 ///10mm caseless
 /obj/item/ammo_casing/c10x24
 	desc = "A 10x24mm caseless cartidge."
