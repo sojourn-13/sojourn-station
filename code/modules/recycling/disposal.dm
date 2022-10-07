@@ -596,8 +596,8 @@
 			for(var/mob/living/H in src)
 				if(isdrone(H)) //Drones use the mailing code to move through the disposal system,
 					continue
-				//if(H.stats.getPerk(PERK_SPACE_ASSHOLE)) //Assholes gain disposal immunity
-				//	continue - SoJ edit, we dont want perfect immunity
+				if(H.stats.getPerk(PERK_SPACE_ASSHOLE)) //Assholes gain disposal immunity
+					continue //- SoJ edit, we dont want perfect immunity
 				// Hurt any living creature jumping down disposals
 				var/multiplier = 1
 
