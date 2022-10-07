@@ -127,6 +127,7 @@ List of powers in this page :
 						/obj/item/gun_upgrade/trigger/faulty,
 						/obj/item/gun_upgrade/barrel/faulty,
 						/obj/item/gun_upgrade/muzzle/faulty,
+						/obj/item/gun_upgrade/muzzle/pain_maker,
 						/obj/item/gun_upgrade/mechanism/faulty,
 						/obj/item/gun_upgrade/scope/faulty
 	)
