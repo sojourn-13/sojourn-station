@@ -2191,13 +2191,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge)
-"su" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
 "sz" = (
 /obj/structure/closet/wall_mounted{
 	pixel_x = 32
@@ -2520,13 +2513,11 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "xf" = (
-/obj/structure/grille,
-/obj/structure/barricade,
-/obj/structure/window/reinforced{
-	dir = 4
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
 	},
-/obj/machinery/door/unpowered/simple/wood,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "xo" = (
 /obj/machinery/light{
@@ -4967,7 +4958,7 @@ iE
 fe
 iE
 WQ
-xf
+iE
 fe
 iE
 WQ
@@ -12003,7 +11994,7 @@ UR
 wD
 jj
 jj
-su
+xf
 jj
 zs
 Lx
