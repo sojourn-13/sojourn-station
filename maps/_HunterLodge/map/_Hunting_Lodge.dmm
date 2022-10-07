@@ -169,6 +169,9 @@
 	icon_state = "BaptismFont_Water";
 	name = "Water Fountain"
 	},
+/obj/effect/floor_decal/spline/fancy{
+	color = "6c3d26"
+	},
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aS" = (
@@ -587,13 +590,6 @@
 "de" = (
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
-"dg" = (
-/obj/structure/table/woodentable,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
 "dk" = (
 /obj/structure/multiz/stairs/enter{
 	dir = 8
@@ -965,7 +961,6 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fi" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/boltgun/sci,
 /obj/machinery/light,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -1189,6 +1184,9 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "gr" = (
 /obj/machinery/beehive,
+/obj/effect/floor_decal/spline/fancy{
+	color = "6c3d26"
+	},
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "gs" = (
@@ -1576,10 +1574,31 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
+"jd" = (
+/obj/effect/floor_decal/spline/fancy/corner{
+	color = "6c3d26"
+	},
+/obj/effect/floor_decal/spline/fancy/corner{
+	color = "6c3d26";
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
 "je" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/forest/hunting_lodge)
+"jf" = (
+/obj/effect/floor_decal/spline/fancy{
+	dir = 8;
+	color = "6c3d26"
+	},
+/obj/effect/floor_decal/spline/fancy{
+	color = "6c3d26";
+	dir = 4
+	},
+/turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "jj" = (
 /turf/simulated/floor/wood,
@@ -2712,6 +2731,13 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
+"Ab" = (
+/obj/structure/table/woodentable,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Ae" = (
 /obj/effect/floor_decal/border/carpet/black{
 	dir = 1
@@ -2768,6 +2794,18 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
+"Bi" = (
+/obj/item/gun/projectile/boltgun/sci{
+	pixel_y = 26;
+	layer = 4;
+	anchored = 1
+	},
+/obj/structure/noticeboard{
+	pixel_y = 28;
+	layer = 3.5
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Bq" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/wood/wild2,
@@ -3649,6 +3687,9 @@
 	},
 /turf/simulated/open,
 /area/nadezhda/outside/forest/hunting_lodge)
+"Pc" = (
+/turf/simulated/wall/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Ph" = (
 /obj/structure/railing{
 	dir = 4
@@ -3915,6 +3956,10 @@
 /obj/effect/step_trigger/riverforest_to_huntinglodge_1_A,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
+"TW" = (
+/obj/machinery/door/unpowered/simple/wood,
+/turf/simulated/wall/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
 "TX" = (
 /obj/effect/floor_decal/spline/fancy/corner{
 	color = "6c3d26";
@@ -4079,9 +4124,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
-"WO" = (
-/turf/simulated/wall/wood,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Xq" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -4214,10 +4256,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
-"Za" = (
-/obj/machinery/door/unpowered/simple/wood,
-/turf/simulated/wall/wood,
-/area/nadezhda/outside/forest/hunting_lodge)
 "Zi" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -4579,11 +4617,11 @@ RE
 Eo
 aN
 eE
-WO
+Pc
 eE
 aN
 Eo
-WO
+Pc
 gM
 "}
 (5,1,1) = {"
@@ -4657,11 +4695,11 @@ RE
 jV
 Eo
 gZ
-WO
+Pc
 cU
 wk
 Eo
-WO
+Pc
 gM
 "}
 (6,1,1) = {"
@@ -4726,7 +4764,7 @@ jj
 jj
 jj
 jj
-Za
+TW
 ax
 ax
 ax
@@ -4735,11 +4773,11 @@ RE
 bR
 Up
 Eo
-WO
+Pc
 Eo
 bR
 Eu
-WO
+Pc
 gM
 "}
 (7,1,1) = {"
@@ -4765,7 +4803,7 @@ jj
 jj
 Mr
 Rn
-WO
+Pc
 AD
 dA
 CB
@@ -4813,11 +4851,11 @@ RE
 bR
 bR
 bR
-WO
+Pc
 bR
 bR
 bR
-WO
+Pc
 ig
 "}
 (8,1,1) = {"
@@ -4873,15 +4911,15 @@ ax
 ax
 RE
 RE
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
 Pu
-WO
+Pc
 dm
-WO
-WO
+Pc
+Pc
 RE
 Mj
 be
@@ -4891,11 +4929,11 @@ RE
 iE
 fe
 iE
-WO
+Pc
 xf
 fe
 iE
-WO
+Pc
 ig
 "}
 (9,1,1) = {"
@@ -4960,7 +4998,7 @@ hM
 hM
 hM
 xv
-WO
+Pc
 bo
 be
 ax
@@ -4973,7 +5011,7 @@ Eo
 Eo
 aN
 Ol
-WO
+Pc
 ig
 "}
 (10,1,1) = {"
@@ -5038,7 +5076,7 @@ hM
 hM
 hM
 ca
-WO
+Pc
 tn
 be
 ax
@@ -5051,7 +5089,7 @@ aN
 aN
 aN
 by
-WO
+Pc
 gM
 "}
 (11,1,1) = {"
@@ -5069,15 +5107,15 @@ dv
 pw
 aa
 RE
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
 xp
 jj
 QO
 Rn
-WO
+Pc
 AD
 dA
 RE
@@ -5112,11 +5150,11 @@ hM
 hM
 hM
 hM
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
 dB
 be
 ax
@@ -5129,7 +5167,7 @@ aN
 aN
 aN
 by
-WO
+Pc
 ig
 "}
 (12,1,1) = {"
@@ -5150,13 +5188,13 @@ RE
 jj
 jj
 lz
-WO
-WO
+Pc
+Pc
 Xt
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
 mz
 CB
 RE
@@ -5194,7 +5232,7 @@ bt
 fl
 QF
 ai
-WO
+Pc
 Nk
 NZ
 ax
@@ -5207,7 +5245,7 @@ aN
 Eo
 Eo
 xz
-WO
+Pc
 ig
 "}
 (13,1,1) = {"
@@ -5228,13 +5266,13 @@ QO
 jj
 jj
 lz
-WO
+Pc
 dM
 jj
 jj
 jj
 Rn
-WO
+Pc
 jj
 jj
 cz
@@ -5272,7 +5310,7 @@ bt
 hM
 hM
 fF
-WO
+Pc
 IZ
 FW
 ax
@@ -5285,7 +5323,7 @@ fe
 hu
 hu
 hu
-WO
+Pc
 ig
 "}
 (14,1,1) = {"
@@ -5304,15 +5342,15 @@ CA
 RE
 vU
 jj
-WO
-WO
-WO
+Pc
+Pc
+Pc
 RK
 jj
 jj
 jj
 gG
-WO
+Pc
 jj
 jj
 cz
@@ -5363,7 +5401,7 @@ bR
 bR
 bR
 Eo
-WO
+Pc
 gM
 "}
 (15,1,1) = {"
@@ -5382,7 +5420,7 @@ pw
 RE
 QO
 jj
-WO
+Pc
 cn
 ak
 jj
@@ -5441,7 +5479,7 @@ bR
 jU
 bR
 Eo
-WO
+Pc
 gM
 "}
 (16,1,1) = {"
@@ -5460,7 +5498,7 @@ pw
 RE
 QO
 jj
-WO
+Pc
 ph
 cN
 jj
@@ -5519,7 +5557,7 @@ bR
 bR
 Eo
 aN
-WO
+Pc
 ig
 "}
 (17,1,1) = {"
@@ -5538,15 +5576,15 @@ pw
 RE
 vU
 jj
-WO
-WO
-WO
+Pc
+Pc
+Pc
 RK
 jj
 jj
 jj
 gG
-WO
+Pc
 jj
 jj
 cz
@@ -5597,7 +5635,7 @@ bR
 cP
 aN
 eE
-WO
+Pc
 ig
 "}
 (18,1,1) = {"
@@ -5618,13 +5656,13 @@ QO
 jj
 jj
 lz
-WO
+Pc
 dM
 jj
 jj
 jj
 Rn
-WO
+Pc
 jj
 jj
 cz
@@ -5696,13 +5734,13 @@ RE
 jj
 jj
 lz
-WO
-WO
+Pc
+Pc
 CO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
 mz
 CB
 RE
@@ -5772,14 +5810,14 @@ bl
 rg
 RE
 CO
-WO
-WO
-WO
+Pc
+Pc
+Pc
 jj
 jj
 SM
 An
-WO
+Pc
 VF
 dA
 RE
@@ -6091,7 +6129,7 @@ jj
 jj
 iv
 An
-WO
+Pc
 AD
 dA
 CB
@@ -7189,9 +7227,9 @@ ZR
 Yq
 hL
 Yq
-WO
-WO
-WO
+Pc
+Pc
+Pc
 QO
 QO
 QO
@@ -7248,10 +7286,10 @@ tz
 tz
 tz
 tz
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
 aa
 aa
 aa
@@ -7260,14 +7298,14 @@ aa
 tz
 tz
 RE
-WO
+Pc
 XN
 XN
 XN
 XN
 XN
-WO
-WO
+Pc
+Pc
 QO
 bg
 QO
@@ -7304,7 +7342,7 @@ RE
 Pl
 sp
 sp
-WO
+Pc
 wg
 ax
 dV
@@ -7323,28 +7361,28 @@ tz
 tz
 tz
 tz
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
 iS
 iS
-WO
-WO
-WO
+Pc
+Pc
+Pc
 tz
 tz
 tz
 tz
 tz
 RE
-WO
+Pc
 SW
 PK
 bq
 rx
 hy
-WO
+Pc
 de
 uv
 uv
@@ -7353,11 +7391,11 @@ ks
 WD
 WD
 WD
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
 RE
 RE
 RE
@@ -7396,12 +7434,12 @@ tz
 "}
 (41,1,1) = {"
 tz
-WO
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
 AD
 rc
 QO
@@ -7409,13 +7447,13 @@ QO
 QO
 QO
 QO
-WO
-WO
+Pc
+Pc
 tz
 tz
 tz
 tz
-WO
+Pc
 fx
 bq
 bq
@@ -7431,7 +7469,7 @@ jj
 jj
 jj
 jj
-WO
+Pc
 ek
 xo
 aT
@@ -7474,7 +7512,7 @@ tz
 "}
 (42,1,1) = {"
 tz
-WO
+Pc
 Rn
 BQ
 RR
@@ -7488,12 +7526,12 @@ ec
 ec
 kz
 Di
-WO
-WO
+Pc
+Pc
 tz
 tz
 tz
-WO
+Pc
 ew
 bq
 bq
@@ -7509,7 +7547,7 @@ ur
 jj
 jj
 aX
-WO
+Pc
 jw
 Cb
 aT
@@ -7552,7 +7590,7 @@ tz
 "}
 (43,1,1) = {"
 tz
-WO
+Pc
 rW
 TX
 RR
@@ -7567,18 +7605,18 @@ ZD
 BB
 NV
 wq
-WO
+Pc
 tz
 tz
 tz
-WO
+Pc
 fB
 bq
 ee
 bn
 bq
 bq
-WO
+Pc
 jj
 ur
 ux
@@ -7587,7 +7625,7 @@ ur
 jj
 jj
 bv
-WO
+Pc
 XO
 Cb
 Cb
@@ -7630,12 +7668,12 @@ tz
 "}
 (44,1,1) = {"
 tz
-WO
+Pc
 jj
 jj
-WO
-WO
-WO
+Pc
+Pc
+Pc
 us
 ZD
 ZD
@@ -7645,11 +7683,11 @@ ZD
 eB
 il
 eN
-WO
+Pc
 tz
 tz
 tz
-WO
+Pc
 iX
 bq
 UY
@@ -7665,7 +7703,7 @@ ur
 jj
 jj
 yo
-WO
+Pc
 cc
 Cb
 Cb
@@ -7694,7 +7732,7 @@ RE
 sp
 EU
 MV
-WO
+Pc
 wg
 ax
 kt
@@ -7708,12 +7746,12 @@ tz
 "}
 (45,1,1) = {"
 tz
-WO
+Pc
 jj
 jj
 On
 XA
-WO
+Pc
 ev
 ZD
 ZD
@@ -7723,11 +7761,11 @@ ZD
 UI
 QO
 pc
-WO
+Pc
 tz
 tz
 tz
-WO
+Pc
 oZ
 bq
 bn
@@ -7743,7 +7781,7 @@ ur
 jj
 jj
 hA
-WO
+Pc
 Cb
 Cb
 Cb
@@ -7786,12 +7824,12 @@ tz
 "}
 (46,1,1) = {"
 tz
-WO
+Pc
 jj
 jj
 On
 XA
-WO
+Pc
 ev
 ZD
 ZD
@@ -7801,11 +7839,11 @@ ZD
 UI
 QO
 pc
-WO
+Pc
 tz
 tz
 tz
-WO
+Pc
 jn
 bq
 jF
@@ -7821,7 +7859,7 @@ ur
 jj
 jj
 rQ
-WO
+Pc
 Cb
 Cb
 wC
@@ -7864,12 +7902,12 @@ tz
 "}
 (47,1,1) = {"
 tz
-WO
+Pc
 jj
 jj
-WO
-WO
-WO
+Pc
+Pc
+Pc
 us
 ZD
 ZD
@@ -7879,11 +7917,11 @@ ZD
 UI
 Di
 jC
-WO
+Pc
 tz
 tz
 tz
-WO
+Pc
 dl
 bq
 bq
@@ -7942,7 +7980,7 @@ tz
 "}
 (48,1,1) = {"
 tz
-WO
+Pc
 XE
 hD
 RR
@@ -7957,18 +7995,18 @@ ZD
 hv
 yK
 wq
-WO
+Pc
 tz
 tz
 tz
-WO
-WO
+Pc
+Pc
 sI
 XK
 Zr
 mo
 az
-WO
+Pc
 jj
 jj
 jj
@@ -8020,7 +8058,7 @@ tz
 "}
 (49,1,1) = {"
 tz
-WO
+Pc
 Rn
 BQ
 RR
@@ -8034,19 +8072,19 @@ FF
 FF
 hN
 il
-WO
-WO
+Pc
+Pc
 tz
 tz
 tz
 tz
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
 cZ
 dw
 dw
@@ -8059,11 +8097,11 @@ xH
 Cb
 dC
 av
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
 RE
 bV
 Xs
@@ -8098,12 +8136,12 @@ tz
 "}
 (50,1,1) = {"
 tz
-WO
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
 VF
 rc
 QO
@@ -8111,8 +8149,8 @@ QO
 QO
 QO
 QO
-WO
-WO
+Pc
+Pc
 tz
 tz
 tz
@@ -8133,11 +8171,11 @@ mc
 cZ
 bS
 De
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
 tz
 tz
 tz
@@ -8181,15 +8219,15 @@ tz
 tz
 tz
 tz
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
 iS
 iS
-WO
-WO
-WO
+Pc
+Pc
+Pc
 tz
 tz
 tz
@@ -8262,10 +8300,10 @@ tz
 tz
 tz
 tz
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
 tz
 tz
 tz
@@ -8977,7 +9015,7 @@ Cb
 oe
 Cb
 Cb
-WO
+Pc
 nS
 sp
 lm
@@ -9055,7 +9093,7 @@ bY
 bY
 bd
 Cb
-WO
+Pc
 yW
 yP
 sp
@@ -9126,14 +9164,14 @@ ar
 ar
 ar
 RE
-jj
+Bi
 jj
 Cb
 Cb
 vA
 Cb
 Cb
-WO
+Pc
 mI
 sp
 sp
@@ -9241,13 +9279,13 @@ ar
 ar
 ar
 aY
-jH
-jH
-jH
-jH
-jH
-jH
-jH
+jd
+jf
+jf
+jf
+jf
+jf
+jf
 dD
 jj
 jj
@@ -9289,7 +9327,7 @@ jj
 cu
 jj
 xS
-WO
+Pc
 Vu
 sp
 PF
@@ -9362,12 +9400,12 @@ RE
 RE
 Xt
 Xt
-WO
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
 cp
 sp
 fi
@@ -9407,8 +9445,8 @@ cV
 Uy
 jj
 rA
-WO
-WO
+Pc
+Pc
 RE
 ar
 ar
@@ -9444,8 +9482,8 @@ QO
 bg
 QO
 QO
-WO
-WO
+Pc
+Pc
 HA
 sp
 SL
@@ -9475,13 +9513,13 @@ ar
 ar
 ar
 aY
-jH
-jH
-jH
-jH
-jH
-jH
-jH
+jd
+jf
+jf
+jf
+jf
+jf
+jf
 dD
 jj
 jj
@@ -9523,7 +9561,7 @@ Oc
 Oc
 Oc
 Rn
-WO
+Pc
 wd
 sp
 wM
@@ -9601,10 +9639,10 @@ vN
 eZ
 eZ
 Sq
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
 RE
 ar
 ar
@@ -9679,10 +9717,10 @@ vN
 eZ
 eZ
 Sq
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
 RE
 ar
 ar
@@ -9757,7 +9795,7 @@ yU
 yU
 yU
 Rn
-WO
+Pc
 CG
 HN
 Xz
@@ -9834,8 +9872,8 @@ QO
 Lg
 QO
 QO
-WO
-WO
+Pc
+Pc
 jj
 jj
 jj
@@ -9908,11 +9946,11 @@ RE
 RE
 Xt
 Xt
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
 jj
 jj
 jj
@@ -9986,7 +10024,7 @@ ar
 RE
 jj
 jj
-WO
+Pc
 wo
 yC
 Cj
@@ -10064,7 +10102,7 @@ ar
 RE
 mz
 jj
-WO
+Pc
 jj
 jj
 jj
@@ -10298,7 +10336,7 @@ ar
 RE
 mz
 jj
-WO
+Pc
 jj
 jj
 jj
@@ -10376,7 +10414,7 @@ ar
 RE
 jj
 jj
-WO
+Pc
 uQ
 Pm
 aK
@@ -11378,19 +11416,19 @@ tz
 tz
 tz
 tz
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
 af
 af
 af
-WO
-WO
-WO
+Pc
+Pc
+Pc
 tz
 tz
 ar
@@ -11398,20 +11436,20 @@ RE
 cD
 jj
 Kt
-WO
+Pc
 cD
 jj
 Kt
-WO
+Pc
 ha
 bH
 PD
-WO
+Pc
 bO
 bN
 bN
-WO
-WO
+Pc
+Pc
 RE
 RE
 jH
@@ -11456,19 +11494,19 @@ tz
 tz
 tz
 tz
-WO
+Pc
 jj
 tl
 SF
 au
 jj
-WO
+Pc
 HB
 uK
 ZZ
 hx
 Ra
-WO
+Pc
 tz
 tz
 ar
@@ -11476,11 +11514,11 @@ RE
 jj
 jj
 jj
-WO
+Pc
 jj
 jj
 jj
-WO
+Pc
 kf
 bq
 bq
@@ -11534,35 +11572,35 @@ tz
 tz
 tz
 tz
-WO
+Pc
 Cm
 on
 ZD
 za
 Qz
-WO
+Pc
 ZU
 ts
 oC
 BQ
 ro
-WO
-WO
+Pc
+Pc
 tz
 ar
 RE
 jj
 el
 Rz
-WO
+Pc
 jj
 el
 Rz
-WO
+Pc
 bK
 kF
 bT
-WO
+Pc
 HJ
 gg
 gg
@@ -11612,39 +11650,39 @@ tz
 tz
 tz
 tz
-WO
+Pc
 IG
 ZD
 iS
 ZD
 om
-WO
+Pc
 us
 kI
 Lx
 TX
 RR
 ga
-WO
-WO
+Pc
+Pc
 RE
 RE
 kG
-WO
-WO
-WO
+Pc
+Pc
+Pc
 kG
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
 Jm
 gg
 gg
-WO
+Pc
 Em
 jj
 RR
@@ -11690,13 +11728,13 @@ tz
 tz
 tz
 tz
-WO
+Pc
 zy
 zW
 ZD
 EM
 ij
-WO
+Pc
 us
 BQ
 jj
@@ -11722,7 +11760,7 @@ gg
 gg
 gg
 gg
-WO
+Pc
 jj
 jj
 zs
@@ -11768,13 +11806,13 @@ tz
 tz
 tz
 tz
-WO
+Pc
 jj
 zs
 cr
 TX
 jj
-WO
+Pc
 px
 BQ
 jj
@@ -11800,8 +11838,8 @@ gg
 gs
 dJ
 gv
-WO
-dg
+Pc
+Ab
 jj
 jj
 CB
@@ -11843,34 +11881,34 @@ tz
 "}
 (44,1,2) = {"
 tz
-WO
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
 Xt
-WO
-WO
-WO
+Pc
+Pc
+Pc
 ao
 BQ
 jj
 jj
 RR
 ga
-WO
-WO
+Pc
+Pc
 RE
 RE
 kG
-WO
-WO
-WO
+Pc
+Pc
+Pc
 kG
-WO
-WO
-WO
+Pc
+Pc
+Pc
 GG
 gg
 gg
@@ -11878,7 +11916,7 @@ gg
 Ae
 bY
 bs
-WO
+Pc
 Rz
 jj
 jj
@@ -11921,7 +11959,7 @@ tz
 "}
 (45,1,2) = {"
 tz
-WO
+Pc
 eZ
 eZ
 UR
@@ -11937,18 +11975,18 @@ jj
 jj
 RR
 oI
-WO
+Pc
 tz
 ar
 RE
 jj
 wq
 Rz
-WO
+Pc
 jj
 wq
 Rz
-WO
+Pc
 Fy
 gg
 gg
@@ -11956,7 +11994,7 @@ gg
 iI
 ik
 cS
-WO
+Pc
 Rz
 jj
 jj
@@ -11999,7 +12037,7 @@ tz
 "}
 (46,1,2) = {"
 tz
-WO
+Pc
 eZ
 eZ
 UR
@@ -12015,18 +12053,18 @@ jj
 jj
 RR
 Cy
-WO
+Pc
 tz
 ar
 RE
 jj
 jj
 jj
-WO
+Pc
 jj
 jj
 jj
-WO
+Pc
 bB
 gg
 gg
@@ -12034,8 +12072,8 @@ gg
 zF
 zF
 zF
-WO
-dg
+Pc
+Ab
 jj
 ro
 gA
@@ -12077,34 +12115,34 @@ tz
 "}
 (47,1,2) = {"
 tz
-WO
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
 Xt
-WO
-WO
-WO
+Pc
+Pc
+Pc
 jj
 jj
 jj
 jj
 RR
 Cy
-WO
+Pc
 tz
 ar
 RE
 cD
 iv
 fg
-WO
+Pc
 cD
 iv
 fg
-WO
+Pc
 he
 gg
 gg
@@ -12112,7 +12150,7 @@ gg
 zF
 eZ
 eZ
-WO
+Pc
 wq
 jj
 RR
@@ -12158,20 +12196,20 @@ tz
 tz
 tz
 tz
-WO
+Pc
 jj
 ro
 Uv
 hD
 jj
-WO
+Pc
 mz
 jj
 jj
 jj
 RR
 Cy
-WO
+Pc
 tz
 ar
 RE
@@ -12236,20 +12274,20 @@ tz
 tz
 tz
 tz
-WO
+Pc
 Cm
 on
 ZD
 za
 Qz
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
 Xt
-WO
-WO
+Pc
+Pc
 tz
 ar
 ar
@@ -12314,20 +12352,20 @@ tz
 tz
 tz
 tz
-WO
+Pc
 IG
 ZD
 iS
 ZD
 om
-WO
+Pc
 ac
 ac
 ac
 ac
 bq
 XF
-WO
+Pc
 tz
 ar
 ar
@@ -12392,20 +12430,20 @@ tz
 tz
 tz
 tz
-WO
+Pc
 zy
 zW
 ZD
 EM
 ij
-WO
+Pc
 KR
 bq
 bq
 bq
 bq
 ML
-WO
+Pc
 tz
 tz
 ar
@@ -12470,20 +12508,20 @@ tz
 tz
 tz
 tz
-WO
+Pc
 jj
 pZ
 Rt
 Ch
 jj
-WO
+Pc
 ac
 ac
 ac
 ac
 bq
 ML
-WO
+Pc
 tz
 tz
 ar
@@ -12548,20 +12586,20 @@ tz
 tz
 tz
 tz
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
+Pc
 tz
 tz
 ar
@@ -12575,11 +12613,11 @@ ar
 ar
 ar
 RE
-WO
-WO
-WO
-WO
-WO
+Pc
+Pc
+Pc
+Pc
+Pc
 RE
 ar
 ar
