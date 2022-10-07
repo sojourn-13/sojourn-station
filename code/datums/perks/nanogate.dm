@@ -95,11 +95,11 @@
 /datum/perk/nanite_ammo
 	name = "Munition Fabrication"
 	desc = "You programmed and set aside a specific subset of nanites whose singular purpose is to reconstruct themselves into ammunition boxes. The process is quite intensive and requires \
-	one hour between uses."
+	half an hour between uses."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	active = FALSE
 	passivePerk = FALSE
-	var/cooldown = 60 MINUTES
+	var/cooldown = 30 MINUTES
 	var/anti_cheat = FALSE //No more spaming...
 
 /datum/perk/nanite_ammo/activate()
@@ -112,29 +112,62 @@
 		return
 	anti_cheat = TRUE
 
-	var/list/ammo_boxes = typesof(/obj/item/ammo_magazine/ammobox)
-	//We cant print everything under the sun sadly, so we limit are options a small bit!
-	//No SI laser ammo, explosives, some higher end boxes/ammo, and church biomatter boxes
-	ammo_boxes -= list(	/obj/item/ammo_magazine/ammobox,
+				//illegal bullets go BRRRT!!!
+	var/list/blacklisted_types = list(	/obj/item/ammo_magazine/ammobox,
 						/obj/item/ammo_magazine/ammobox/pistol_35/laser,
 						/obj/item/ammo_magazine/ammobox/pistol_35/biomatter,
+						/obj/item/ammo_magazine/ammobox/pistol_35/scrap,
+						/obj/item/ammo_magazine/ammobox/pistol_35/hv,
+						/obj/item/ammo_magazine/ammobox/pistol_35/large/hv,
 						/obj/item/ammo_magazine/ammobox/magnum_40/laser,
 						/obj/item/ammo_magazine/ammobox/magnum_40/biomatter,
+						/obj/item/ammo_magazine/ammobox/magnum_40/scrap,
+						/obj/item/ammo_magazine/ammobox/magnum_40/hv,
+						/obj/item/ammo_magazine/ammobox/magnum_40/large/hv,
+						/obj/item/ammo_magazine/ammobox/magnum_40/rubber/pepperball,
 						/obj/item/ammo_magazine/ammobox/light_rifle_257_small/laser,
+						/obj/item/ammo_magazine/ammobox/light_rifle_257_small/hv,
+						/obj/item/ammo_magazine/ammobox/light_rifle_257/scrap,
+						/obj/item/ammo_magazine/ammobox/light_rifle_257/highvelocity,
 						/obj/item/ammo_magazine/ammobox/rifle_75_small/laser,
+						/obj/item/ammo_magazine/ammobox/rifle_75/hv,
+						/obj/item/ammo_magazine/ammobox/rifle_75_small/hv,
+						/obj/item/ammo_magazine/ammobox/rifle_75_small/scrap,
 						/obj/item/ammo_magazine/ammobox/laser_223,
 						/obj/item/ammo_magazine/ammobox/laser_223/ap,
 						/obj/item/ammo_magazine/ammobox/laser_223/lethal,
+						/obj/item/ammo_magazine/ammobox/kurtz_50/hv,
 						/obj/item/ammo_magazine/ammobox/kurtz_50/laser,
 						/obj/item/ammo_magazine/ammobox/antim, //Unlike the small box holds 15
+						/obj/item/ammo_magazine/ammobox/antim/scrap,
 						/obj/item/ammo_magazine/ammobox/ball,
 						/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser,
+						/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/hv,
+						/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap,
+						/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv,
 						/obj/item/ammo_magazine/ammobox/shotgun/flashshells, //holds 70 shells, its a map item not meant to be common
 						/obj/item/ammo_magazine/ammobox/shotgun/payload,
-						/obj/item/ammo_magazine/ammobox/shotgun/incendiary
+						/obj/item/ammo_magazine/ammobox/shotgun/incendiary,
+						/obj/item/ammo_magazine/ammobox/shotgun/scrap_beanbag,
+						/obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet,
+						/obj/item/ammo_magazine/ammobox/shotgun/scrap_slug
 						)
+
+	var/list/ammo_boxes = list()
+	for(var/ammo in subtypesof(/obj/item/ammo_magazine/ammobox))
+		if (ammo in blacklisted_types)
+			continue
+		var/obj/O = ammo
+		ammo_boxes[initial(O.name)] = ammo
+
 	var/obj/item/choice = input(usr, "Which type of ammo do you want?", "Ammo Choice", null) as null|anything in ammo_boxes
-	usr.put_in_hands(new choice(usr.loc))
+
+	if (!choice)	// user can cancel
+		anti_cheat = FALSE
+		return
+
+	choice = ammo_boxes[choice]
+	usr.put_in_hands(new choice(get_turf(usr)))
 	cooldown_time = world.time + cooldown
 
 	anti_cheat = FALSE

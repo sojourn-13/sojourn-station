@@ -319,7 +319,7 @@
 	return pickweight(list( // i hate pickweight but fine
 		/obj/item/gun_upgrade/barrel/gauss = 1,
 		/obj/item/gun_upgrade/scope/killer = 1,
-		/obj/item/gun_upgrade/trigger/dangerzone = 1, //only good mods
+		/obj/item/gun_upgrade/trigger/dangerzone = 1 //only good mods
 	))
 
 //Armor Mod Spawners

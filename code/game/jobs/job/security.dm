@@ -246,8 +246,8 @@
 	spawn_positions = 2
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	noob_name = "Gumshoe"
-	alt_titles = list("Gumshoe","Detective","Forensics Specialist")
+	noob_name = "Junior Ranger"
+	alt_titles = list("Junior Ranger","Detective","Forensics Specialist")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	playtimerequired = 1200
@@ -304,8 +304,8 @@
 	spawn_positions = 2
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	noob_name = "Corpsman Recruit"
-	alt_titles = list("Corpsman Recruit","Combat Medic","Combat Surgeon")
+	noob_name = "Corpsman Cadet"
+	alt_titles = list("Corpsman Cadet", "Combat Medic")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
@@ -361,7 +361,7 @@
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	noob_name = "Blackshield Cadet"
-	alt_titles = list("Blackshield Cadet","Blackshield Militiamen")
+	alt_titles = list("Blackshield Cadet")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10
@@ -413,8 +413,8 @@
 	spawn_positions = 4
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	noob_name = "Field Training Marshal"
-	alt_titles = list("Field Training Marshal","Marshal Civil Servant")
+	noob_name = "Junior Marshal Officer"
+	alt_titles = list("Junior Marshal Officer", "Marshal Civil Servant")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10
