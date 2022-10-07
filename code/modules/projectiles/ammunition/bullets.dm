@@ -132,6 +132,9 @@
 	shell_color = "s"
 	is_caseless = TRUE
 
+/obj/item/ammo_casing/magnum_40/spent
+	projectile_type = null
+
 //// 6.5 carbine ////
 
 /obj/item/ammo_casing/light_rifle_257
@@ -282,6 +285,12 @@
 /obj/item/ammo_casing/heavy_rifle_408/laser
 	desc = "A 8.6mm laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/heavy_rifle_408
+
+/obj/item/ammo_casing/heavy_rifle_408/spent
+	projectile_type = null
+
+/obj/item/ammo_casing/heavy_rifle_408/hv/spent
+	projectile_type = null
 
 ///10mm caseless
 /obj/item/ammo_casing/c10x24
@@ -460,6 +469,9 @@
 	caliber = CAL_SHOTGUN
 	projectile_type = /obj/item/projectile/bullet/shotgun
 	maxamount = 5
+
+/obj/item/ammo_casing/shotgun/spent
+	projectile_type = null
 
 /obj/item/ammo_casing/shotgun/prespawned
 	amount = 5
