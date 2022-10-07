@@ -11,7 +11,7 @@
 
 	armor = list(melee = 50, bullet = 50, energy = 45, bomb = 50, bio = 100, rad = 100)
 
-	speak_emote = list("In my sights!","Come get some!","Seperatist scumbags!", "Frontier Fucks!", "Hoorah!", "Put your hands up!")
+	casingtype = /obj/item/ammo_casing/heavy_rifle_408/spent
 
     //range/ammo stuff
 	ranged = TRUE
@@ -25,16 +25,16 @@
 	mag_drop = TRUE
 	rounds_left = 20
 	mag_type = /obj/item/ammo_magazine/heavy_rifle_408/empty
-	mags_left = 2 //1+2
-
+	mags_left = 6 //1+6
+	delay_for_range = 1.0 SECONDS
 
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	breath_required_type = 0 // Doesn't need to breath for event atmosphere purposes.
 	breath_poison_type = 0 // Can't be poisoned
 	min_air_pressure = 0 // Doesn't need pressure for event atmosphere purposes.
-	attacktext = "slashed"
-	attack_sound = 'sound/weapons/bladeslice.ogg'
+	attacktext = "punched"
+	attack_sound = 'sound/weapons/punch1.ogg'
 	meat_amount = 0
 	meat_type = null
 	leather_amount = 0
@@ -56,6 +56,9 @@
 
 	faction = "solfed" //Temp measure to allow Excel turrets and the sort to be used alongside them. Apply faction if wanted for different events.
 
+/mob/living/carbon/superior_animal/human/marine/doTargetMessage()
+	visible_emote("grunts, \"[pick("In my sights!","Come get some!","Seperatist scumbags!", "Frontier Fucks!", "Hoorah!", "Put your hands up!")]")
+
 /mob/living/carbon/superior_animal/human/marine/shield
 	name = "Sol-Fed Commando"
 	desc = "A Solar Federation ship breacher and close quarters specialist. Sporting a riot shield and a burst-fire firearm appearing to be built into the arm of their armor!"
@@ -64,12 +67,12 @@
 
 	armor = list(melee = 60, bullet = 70, energy = 50, bomb = 40, bio = 100, rad = 100)
 
-	speak_emote = list("Come get me!","A human shield only costs one life!","Hoorah, mother-fucker!", "Colonial dicks!", "Can't hit me!", "Level 3 plates, bitch!","BANG-BANG-BANG Mother-fucker!")
+	casingtype = /obj/item/ammo_casing/magnum_40/spent
 
 	//range/ammo stuff
 	rapid = TRUE
+	rapid_fire_shooting_amount = 3
 	comfy_range = 4
-	rapid_fire_shooting_amount = 2
 	ranged_cooldown = 2
 	projectiletype = /obj/item/projectile/bullet/magnum_40
 	projectilesound = 'sound/weapons/guns/fire/vector_fire.ogg'
@@ -77,10 +80,13 @@
 	mag_drop = TRUE
 	rounds_left = 30
 	mag_type = /obj/item/ammo_magazine/smg_magnum_40/empty
-	mags_left = 1 //1+1
+	mags_left = 5 //1+5
 
 	melee_damage_lower = 15
 	melee_damage_upper = 20
+
+/mob/living/carbon/superior_animal/human/marine/shield/doTargetMessage()
+	visible_emote("grunts, \"[pick("Come get me!","A human shield only costs one life!","Hoorah, mother-fucker!", "Colonial dicks!", "Can't hit me!", "Level 3 plates, bitch!","BANG-BANG-BANG Mother-fucker!")]")
 
 /mob/living/carbon/superior_animal/human/marine/shotgun
 	name = "Sol-Fed Heavy Commando"
@@ -90,10 +96,10 @@
 
 	armor = list(melee = 70, bullet = 55, energy = 40, bomb = 70, bio = 100, rad = 100)
 
-	speak_emote = list("You WISH I use buckshot!","Time for some shotgun-surgery!","I got a slug with your name on it!", "Ker-chunk, baby!", "Hoorah!", "I ain't firin' blanks!", "Come get me, little man!")
+	casingtype = /obj/item/ammo_casing/shotgun/spent
 
 	comfy_range = 4
-	ranged_cooldown = 3
+	ranged_cooldown = 2
 	projectiletype = /obj/item/projectile/bullet/shotgun
 	projectilesound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	limited_ammo = FALSE
@@ -101,6 +107,10 @@
 
 	melee_damage_lower = 20
 	melee_damage_upper = 25
+
+/mob/living/carbon/superior_animal/human/marine/shotgun/doTargetMessage()
+	visible_emote("grunts, \"[pick("You WISH I use buckshot!","Time for some shotgun-surgery!","I got a slug with your name on it!", "Ker-chunk, baby!", "Hoorah!", "I ain't firin' blanks!", "Come get me, little man!")]")
+
 
 /mob/living/carbon/superior_animal/human/marine/specialist
 	name = "Sol-Fed Combat Specialist"
@@ -111,7 +121,7 @@
 	maxHealth = 125 //Less health than a noraml person.
 	health = 125
 
-	speak_emote = list("Frag out!","I've got a present for you!","Incoming!", "Danger close!", "Grenade out!", "Prepare for a closed-casket, asshole!", "Ain't gonna be much left of you!", "I love a fine red mist!")
+	casingtype = null
 
 	comfy_range = 7
 	ranged_cooldown = 5
@@ -120,9 +130,12 @@
 	limited_ammo = FALSE
 	mag_drop = FALSE
 
+/mob/living/carbon/superior_animal/human/marine/specialist/doTargetMessage()
+	visible_emote("grunts, \"[pick("Frag out!","I've got a present for you!","Incoming!", "Danger close!", "Grenade out!", "Prepare for a closed-casket, asshole!", "Ain't gonna be much left of you!", "I love a fine red mist!")]")
+
 /mob/living/carbon/superior_animal/human/marine/specialist/death()
 	..()
-	if(prob(20))
+	if(prob(40))
 		gibs(loc, null, /obj/effect/gibspawner/human)
 		explosion(get_turf(src), 0, 0, 3)
 		qdel(src)
@@ -136,16 +149,17 @@
 	maxHealth = 175 //More than a normal person.
 	health = 175
 
-	speak_emote = list("This machine kills commies!","Come get some!","Fuckin' blast em'!", "I got a round with your name on it!", "Just die already!", "Hah-haaa, you're fuckin' done!", "Make war, not love!")
-
 	comfy_range = 6
 	rapid = TRUE
 	rapid_fire_shooting_amount = 5
-	ranged_cooldown = 4
+	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/bullet/heavy_rifle_408
 	projectilesound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	limited_ammo = FALSE
 	mag_drop = FALSE
+
+/mob/living/carbon/superior_animal/human/marine/heavy/doTargetMessage()
+	visible_emote("grunts, \"[pick("This machine kills commies!","Come get some!","Fuckin' blast em'!", "I got a round with your name on it!", "Just die already!", "Hah-haaa, you're fuckin' done!", "Make war, not love!")]")
 
 /mob/living/carbon/superior_animal/human/marine/sniper
 	name = "Sol-Fed Sniper"
@@ -156,12 +170,15 @@
 	maxHealth = 100 //Less health than a noraml person.
 	health = 100
 
-	speak_emote = list("All lined up.","In my sights.","One shot, one kill.", "Bingo, target spotted.", "Hoo-fuckin'-rah.", "Get fucked, dickweed.")
-
 	armor = list(melee = 25, bullet = 40, energy = 35, bomb = 20, bio = 100, rad = 100)
+
+	casingtype = /obj/item/ammo_casing/heavy_rifle_408/hv/spent
 
 	viewRange = 14
 	comfy_range = 12
 	ranged_cooldown = 4
 	projectiletype = /obj/item/projectile/bullet/heavy_rifle_408/hv
 	projectilesound = 'sound/weapons/guns/fire/heavy_fire.ogg'
+
+/mob/living/carbon/superior_animal/human/marine/sniper/doTargetMessage()
+	visible_emote("grunts, \"[pick("All lined up.","In my sights.","One shot, one kill.", "Bingo, target spotted.", "Hoo-fuckin'-rah.", "Get fucked, dickweed.")]")
