@@ -563,7 +563,7 @@
 	name = "NM \"Zwang\""
 	build_path = /obj/item/gun/energy/zwang
 
-/datum/design/autolathe/gun/excubitor
+/datum/design/autolathe/gun/plasma/excubitor
 	name = "NT \"Excubitor\""
 	build_path = /obj/item/gun/energy/plasma/excubitor
 
