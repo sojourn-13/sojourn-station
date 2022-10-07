@@ -15912,10 +15912,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "dgH" = (
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "dgJ" = (
@@ -29964,10 +29961,7 @@
 /area/nadezhda/medical/sleeper)
 "fOx" = (
 /obj/random/scrap/dense_even,
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "fOC" = (
@@ -33126,10 +33120,7 @@
 /area/nadezhda/security/armory_blackshield)
 "grM" = (
 /obj/structure/railing,
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /obj/effect/floor_decal/spline/plain,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
@@ -54432,10 +54423,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical_blackshield)
 "kve" = (
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
 	name = "murky water"
@@ -54750,10 +54738,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/absolutism/vectorrooms)
 "kym" = (
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "kyt" = (
@@ -58486,10 +58471,7 @@
 	name = "Science Expedition prep"
 	})
 "lhs" = (
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /obj/structure/catwalk,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
@@ -65676,6 +65658,10 @@
 	})
 "mxB" = (
 /obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "mxC" = (
@@ -68828,10 +68814,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "ndA" = (
@@ -70391,10 +70374,7 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
 "nsZ" = (
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
@@ -74694,10 +74674,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "oiB" = (
 /obj/effect/floor_decal/spline/plain,
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
 	name = "murky water"
@@ -80901,10 +80878,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
 	name = "murky water"
@@ -90965,10 +90939,7 @@
 	icon_state = "railing0";
 	tag = "icon-railing0 (EAST)"
 	},
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /obj/effect/floor_decal/spline/plain{
 	dir = 4
 	},
@@ -91771,10 +91742,7 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/bridgebar)
 "ruK" = (
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "ruM" = (
@@ -101210,10 +101178,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /obj/effect/floor_decal/spline/plain{
 	dir = 8
 	},
@@ -108975,10 +108940,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /obj/structure/catwalk,
 /obj/effect/floor_decal/spline/plain{
 	dir = 8
@@ -119801,10 +119763,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "wKo" = (
-/mob/living/simple_animal/hostile/naniteswarm{
-	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
-	name = "infested miniroach cluster"
-	},
+/mob/living/carbon/superior_animal/roach/nanite,
 /obj/structure/flora/small/trailrockb2,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
