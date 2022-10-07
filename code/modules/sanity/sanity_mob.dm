@@ -43,7 +43,7 @@
 	var/mob/living/carbon/human/owner
 
 	var/sanity_passive_gain_multiplier = 1
-	var/sanity_invulnerability = 1
+	var/sanity_invulnerability = 0
 	var/level
 	var/max_level = 100
 	var/level_change = 0
