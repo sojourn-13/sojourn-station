@@ -12,6 +12,8 @@
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_WOOD = 25, MATERIAL_GLASS = 5, MATERIAL_GOLD = 2, MATERIAL_BIOMATTER = 120, MATERIAL_STEEL = 30)
 	suitable_cell = /obj/item/cell/medium/neotheology
 	projectile_type = /obj/item/projectile/plasma/light
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_MASSIVE
 	fire_delay = 10
 	charge_cost = 100 //10 shots with basic 15 with level 2
 	init_recoil = HANDGUN_RECOIL(1)
