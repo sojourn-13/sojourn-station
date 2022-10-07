@@ -6,32 +6,30 @@
 
 /tipsAndTricks/mobs/breathing
     mobs_list = list(/mob/living/carbon/human)
-    tipText = "As an average humanoid, you need oxygen and pressure to breathe. Comfortable pressure for a humanoid is around 101kPa. Some gases, like plasma, are toxic to you. Some exceptions exist, like the opifex, who require nitrogen to breathe and treat oxygen as toxic."
+    tipText = "Как среднестатистическому гуманоиду, вам нужен кислород и давление, чтобы дышать. Комфортное давление для гуманоида составляет около 101 кПа. Некоторые газы, такие как плазма, токсичны для вас. Существуют некоторые исключения, такие как опифекс, которым для дыхания требуется азот, а кислород считается токсичным."
 
 /tipsAndTricks/mobs/chtmant_healing
     mobs_list = list(/mob/living/carbon/human)
     species_that_we_are = list(/datum/species/chtmant)
-    tipText = "As a cht'mant, roaches are often times your friend but carry healing chemicals in their meat. Eating them is always beneficial, but make sure you don't eat too much or you'll overdose."
+    tipText = "Как правило для Чти'Мантов, тараканы часто бывают вашими друзьями, но в их мясе содержатся целебные химические вещества. Употребление их в пищу всегда полезно, но убедитесь, что вы не едите слишком много, иначе у вас будет передозировка."
 
 /tipsAndTricks/mobs/chtmant_webbing
     mobs_list = list(/mob/living/carbon/human)
     species_that_we_are = list(/datum/species/chtmant)
-    tipText = "As a cht'mant, you may find yourself a friend of spiders. You never get caught in spider webs and can create your own, but make sure not to do that in a public space or the Marshals might arrest you!"
+    tipText = "Как Чти'Мант, вы можете оказаться другом пауков. Вы никогда не попадетесь в паутину и можете создать свою собственную, но убедитесь, что не делаете этого в общественном месте, иначе маршалы могут вас арестовать!"
 
 /tipsAndTricks/mobs/chtmant_channle
     mobs_list = list(/mob/living/carbon/human)
     species_that_we_are = list(/datum/species/chtmant)
-    tipText = "As a cht'mant, using ',o' will allow you to speak within your hivemind, allowing all other cht'mants to hear you no matter where you are, including the deep forest, mines, and mountain top!"
+    tipText = "Как Чти'Мант, использование ', o' позволит вам говорить внутри вашего канала улья, позволяя всем другим чт'мантам слышать вас независимо от того, где вы находитесь. Связь в любой точке мира!"
 
 /tipsAndTricks/mobs/chtmant_metal_bad
     mobs_list = list(/mob/living/carbon/human)
     species_that_we_are = list(/datum/species/chtmant)
-    tipText = "As a cht'mant, metal is toxic to you when it's inside your body.  Prosthetics, augments, and shrapnel will give you toxins buildup and hallucinations, it is best to avoid them entirely."
+    tipText = "Как для Чти'Манта, металл токсичен для вас, когда он находится внутри вашего тела. Протезы, аугменты и шрапнель приведут к накоплению токсинов и галлюцинациям, лучше всего полностью избегать их..."
 
 /tipsAndTricks/mobs/chtmant_toxic
     mobs_list = list(/mob/living/carbon/human)
     species_that_we_are = list(/datum/species/chtmant)
-    tipText = "As a cht'mant, you can check yourself and feel if something is wrong, often times alerting you to toxin damage you would otherwise not feel due to your pain immunity."
-
-
+    tipText = "Как Чти'Мант, вы можете проверить себя и почувствовать, если что-то не так, часто предупреждая вас о повреждении токсинами, которое вы в противном случае не почувствовали бы из-за вашего иммунитета к боли."
 

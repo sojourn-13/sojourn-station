@@ -209,12 +209,18 @@ var/list/global/organ_rel_size = list(
 	var/newphrase=""
 	var/newletter=""
 	while(counter>=1)
-		newletter=copytext(phrase,(leng-counter)+1,(leng-counter)+2)
+		newletter=copytext_char(phrase,(leng-counter)+1,(leng-counter)+2)
 		if(rand(1,3)==3)
 			if(lowertext(newletter)=="o")	newletter="u"
 			if(lowertext(newletter)=="s")	newletter="ch"
 			if(lowertext(newletter)=="a")	newletter="ah"
 			if(lowertext(newletter)=="c")	newletter="k"
+
+			if(lowertext(newletter)=="о")	newletter="у"
+			if(lowertext(newletter)=="с")	newletter="з"
+			if(lowertext(newletter)=="а")	newletter="ах"
+			if(lowertext(newletter)=="с")	newletter="к"
+			if(lowertext(newletter)=="ч")	newletter="з"
 		switch(rand(1,15))
 			if(1,3,5,8)	newletter="[lowertext(newletter)]"
 			if(2,4,6,15)	newletter="[uppertext(newletter)]"
@@ -241,9 +247,10 @@ var/list/global/organ_rel_size = list(
 		var/index = split_phrase.Find(word) //Find the word in the split phrase so we can replace it.
 
 		//Search for dipthongs (two letters that make one sound.)
-		var/first_sound = copytext(word,1,3)
-		var/first_letter = copytext(word,1,2)
-		if(lowertext(first_sound) in list("ch","th","sh"))
+		var/first_sound = copytext_char(word,1,3)
+		var/first_letter = copytext_char(word,1,2)
+		if(lowertext(first_sound) in list("b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z",
+			"б","с","д","ф","г","ч","ж","к","л","т","н","р","т","в","х","у","з"))
 			first_letter = first_sound
 
 		//Repeat the first letter to create a stutter.
@@ -266,7 +273,7 @@ var/list/global/organ_rel_size = list(
 	var/returntext = ""
 	for(var/i = 1, i <= length(t), i++)
 
-		var/letter = copytext(t, i, i+1)
+		var/letter = copytext_char(t, i, i+1)
 		if(prob(50))
 			if(p >= 70)
 				letter = ""
@@ -292,9 +299,9 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 		var/n_letter
 		var/n_mod = rand(1,4)
 		if(p+n_mod>n+1)
-			n_letter = copytext(n, p, n+1)
+			n_letter = copytext_char(n, p, n+1)
 		else
-			n_letter = copytext(n, p, p+n_mod)
+			n_letter = copytext_char(n, p, p+n_mod)
 		if (prob(50))
 			if (prob(30))
 				n_letter = text("[n_letter]-[n_letter]-[n_letter]")

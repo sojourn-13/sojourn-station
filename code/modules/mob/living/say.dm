@@ -70,15 +70,15 @@ var/list/channel_to_radio_key = new
 
 	if((HULK in mutations) && health >= 25 && length(message))
 		message = "[uppertext(message)]!!!"
-		verb = pick("yells", "roars", "hollers")
+		verb = pick("кричит","вопит") //INF, WAS verb = pick("yells","roars","hollers")
 		speech_problem_flag = 1
 	if(slurring)
 		message = slur(message)
-		verb = pick("slobbers", "slurs")
+		verb = "заплетается" //INF, WAS verb = pick("slobbers","slurs")
 		speech_problem_flag = 1
 	if(stuttering)
 		message = stutter(message)
-		verb = pick("stammers", "stutters")
+		verb = pick("бормочет","заикается") //INF, WAS verb = pick("stammers","stutters")
 		speech_problem_flag = 1
 
 	returns[1] = message
@@ -101,9 +101,9 @@ var/list/channel_to_radio_key = new
 
 /mob/living/proc/get_speech_ending(verb, var/ending)
 	if(ending=="!")
-		return pick("exclaims", "shouts", "yells")
+		return pick("восклицает","выкрикивает") //INF, WAS return pick("exclaims","shouts","yells")
 	else if(ending=="?")
-		return "asks"
+		return "спрашивает" //INF, WAS return "asks"
 	else if(ending=="@")
 		verb="reports"
 	return verb
