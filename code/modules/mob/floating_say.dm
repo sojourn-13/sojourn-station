@@ -1,6 +1,6 @@
 // Thanks to Burger from Burgerstation for the foundation for this.
 // This code was written by Chinsky for Nebula, I just made it compatible with Eris. - Matt
-/*GLOBAL_LIST_INIT(floating_chat_colors, list())
+GLOBAL_LIST_INIT(floating_chat_colors, list())
 
 /atom/movable
 	var/list/stored_chat_text
@@ -66,4 +66,4 @@
 	for(var/client/C in show_to)
 		C.images -= I
 		qdel(I)
-*/
+
