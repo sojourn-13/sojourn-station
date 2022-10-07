@@ -125,7 +125,7 @@
 
 /mob/living/carbon/superior_animal/human/marine/specialist/death()
 	..()
-	if(prob(20))
+	if(prob(40))
 		gibs(loc, null, /obj/effect/gibspawner/human)
 		explosion(get_turf(src), 0, 0, 3)
 		qdel(src)
