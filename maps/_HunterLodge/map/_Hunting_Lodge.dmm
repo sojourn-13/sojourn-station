@@ -297,7 +297,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "bt" = (
 /obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/wall/wood_barrel,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "bu" = (
 /obj/machinery/button/remote/blast_door{
@@ -1353,7 +1353,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "hq" = (
 /obj/effect/window_lwall_spawn,
-/turf/simulated/floor/wood/wild1,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge)
 "hr" = (
 /obj/structure/table/rack/shelf,
@@ -3387,6 +3387,10 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
