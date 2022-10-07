@@ -563,6 +563,10 @@
 	name = "NM \"Zwang\""
 	build_path = /obj/item/gun/energy/zwang
 
+/datum/design/autolathe/gun/excubitor
+	name = "NT \"Excubitor\""
+	build_path = /obj/item/gun/energy/plasma/excubitor
+
 // Gun mods
 
 /datum/design/autolathe/gun/cop_mod
