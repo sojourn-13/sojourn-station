@@ -739,13 +739,13 @@ var/list/rank_prefix = list(\
 	if(!lastpuke)
 		lastpuke = 1
 		if(!forced)
-			to_chat(src, SPAN_WARNING("You feel nauseous..."))
+			to_chat(src, SPAN_WARNING("Вы чувствуете тошноту..."))
 			sleep(150)	//15 seconds until second warning
-			to_chat(src, SPAN_WARNING("You feel like you are about to throw up!"))
+			to_chat(src, SPAN_WARNING("Вы чувствуете, что вас вот-вот вырвет!"))
 			sleep(100)	//and you have 10 more for mad dash to the bucket
 		Stun(2)
 
-		visible_message(SPAN_WARNING("[src] throws up!"),SPAN_WARNING("You throw up!"))
+		visible_message(SPAN_WARNING("[src] стошнило!"),SPAN_WARNING("Тебя стошнило!"))
 		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 
 		var/turf/location = loc
