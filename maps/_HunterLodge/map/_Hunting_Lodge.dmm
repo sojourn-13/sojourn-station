@@ -1046,9 +1046,15 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fG" = (
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/item/bedsheet/brown{
+	dir = 1
+	},
 /obj/landmark/join/late/dormitory,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/forest/hunting_lodge)
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fH" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -1581,6 +1587,13 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
+"jc" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "je" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -2431,6 +2444,15 @@
 /obj/machinery/smartfridge/drying_rack,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"vZ" = (
+/obj/structure/bed,
+/obj/item/bedsheet/brown,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/landmark/join/late/dormitory,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "wd" = (
 /obj/structure/table/rack/shelf,
 /obj/item/gun/projectile/boltgun/lever,
@@ -2513,10 +2535,13 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "xf" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
+/obj/structure/closet,
+/obj/item/storage/belt/hunter,
+/obj/item/storage/belt/hunter,
+/obj/item/clothing/under/costume/misc/hunterformal,
+/obj/item/clothing/under/costume/misc/hunterformal,
+/obj/item/clothing/shoes/hunterboots,
+/obj/item/clothing/shoes/hunterboots,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "xo" = (
@@ -2772,6 +2797,12 @@
 "Aw" = (
 /turf/unsimulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge)
+"AC" = (
+/obj/structure/bed,
+/obj/item/bedsheet/brown,
+/obj/landmark/join/late/dormitory,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "AD" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/grassybush,
@@ -4084,6 +4115,20 @@
 /obj/structure/table/marble,
 /obj/item/reagent_containers/food/condiment/sugar,
 /turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Ve" = (
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/item/bedsheet/brown{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/obj/landmark/join/late/dormitory,
+/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Vn" = (
 /obj/structure/table/woodentable,
@@ -6905,10 +6950,10 @@ ax
 ax
 ax
 ax
-fG
-fG
-fG
-fG
+ax
+ax
+ax
+ax
 ay
 rg
 ay
@@ -6987,7 +7032,7 @@ ax
 ax
 ax
 ax
-fG
+ax
 ay
 rg
 jM
@@ -7062,10 +7107,10 @@ rg
 Gz
 rg
 ay
-fG
-fG
 ax
-fG
+ax
+ax
+ax
 ay
 Gz
 rg
@@ -7143,7 +7188,7 @@ dO
 rg
 ay
 ax
-fG
+ax
 ay
 rg
 Zy
@@ -11998,7 +12043,7 @@ UR
 wD
 jj
 jj
-xf
+jc
 jj
 zs
 Lx
@@ -12250,11 +12295,11 @@ RE
 RE
 RE
 RE
-RE
-RE
-RE
-RE
-RE
+WQ
+WQ
+WQ
+WQ
+WQ
 kG
 kG
 zF
@@ -12327,12 +12372,12 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
 RE
+wq
+fG
+Ve
+fG
+WQ
 gg
 gg
 zF
@@ -12405,12 +12450,12 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
 RE
+xf
+jj
+jj
+jj
+kG
 gg
 gg
 zF
@@ -12483,12 +12528,12 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
 RE
+xf
+jj
+jj
+jj
+kG
 gg
 gg
 gg
@@ -12561,12 +12606,12 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
 RE
+wq
+vZ
+AC
+AC
+WQ
 gg
 FU
 gg
@@ -12639,17 +12684,17 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
 RE
-WQ
-WQ
-WQ
-WQ
-WQ
+RE
+RE
+RE
+RE
+RE
+RE
+RE
+RE
+RE
+RE
 RE
 tz
 tz
