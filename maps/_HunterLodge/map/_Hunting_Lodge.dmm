@@ -281,7 +281,7 @@
 /obj/effect/floor_decal/industrial/stand_clear{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
 "bq" = (
 /turf/simulated/floor/tiled/cafe,
@@ -757,7 +757,7 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dV" = (
 /obj/machinery/door/airlock/multi_tile/glass{
@@ -1046,9 +1046,13 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fG" = (
-/obj/structure/bed,
+/obj/structure/bed{
+	dir = 4
+	},
 /obj/landmark/join/late/dormitory,
-/obj/item/bedsheet/brown,
+/obj/item/bedsheet/brown{
+	dir = 1
+	},
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fH" = (
@@ -1711,7 +1715,7 @@
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ke" = (
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
 "kf" = (
 /obj/structure/table/woodentable,
@@ -1790,7 +1794,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "lr" = (
 /obj/effect/floor_decal/industrial/danger,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
 "lz" = (
 /obj/structure/table/rack/shelf,
@@ -1879,16 +1883,6 @@
 /obj/machinery/honey_extractor,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
-"na" = (
-/obj/structure/bed{
-	dir = 4
-	},
-/obj/landmark/join/late/dormitory,
-/obj/item/bedsheet/brown{
-	dir = 1
-	},
-/turf/simulated/floor/wood/wild1,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
 "nt" = (
 /obj/structure/reagent_dispensers/fueltank/huge,
 /turf/simulated/floor/plating/under,
@@ -1906,7 +1900,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "nJ" = (
 /obj/effect/shuttle_landmark/hunting_lodge,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
 "nM" = (
 /obj/structure/catwalk,
@@ -1976,7 +1970,7 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
 "or" = (
 /obj/structure/bed/chair/sofa/brown,
@@ -2078,7 +2072,7 @@
 	dir = 1;
 	icon_state = "danger"
 	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
 "pO" = (
 /obj/structure/table/bench/wooden,
@@ -2179,6 +2173,12 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
+"rG" = (
+/obj/structure/bed,
+/obj/landmark/join/late/dormitory,
+/obj/item/bedsheet/brown,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "rQ" = (
 /obj/machinery/light,
 /turf/simulated/floor/wood,
@@ -2296,7 +2296,7 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ue" = (
 /obj/structure/multiz/stairs/enter/bottom{
@@ -3219,7 +3219,7 @@
 "GD" = (
 /obj/effect/floor_decal/industrial/danger,
 /obj/effect/floor_decal/industrial/stand_clear,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
 "GG" = (
 /obj/structure/sign/misc/clock{
@@ -3443,7 +3443,7 @@
 /obj/effect/floor_decal/industrial/stand_clear{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
 "KA" = (
 /obj/structure/railing{
@@ -3490,16 +3490,6 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
-"LC" = (
-/obj/structure/closet,
-/obj/item/clothing/under/costume/misc/hunterformal,
-/obj/item/clothing/under/costume/misc/hunterformal,
-/obj/item/clothing/shoes/hunterboots,
-/obj/item/clothing/shoes/hunterboots,
-/obj/item/storage/belt/hunter,
-/obj/item/storage/belt/hunter,
-/turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "LE" = (
 /obj/structure/cable,
@@ -3559,7 +3549,7 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Mp" = (
 /obj/structure/sign/warning/hazard_danger,
@@ -3853,6 +3843,16 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Qx" = (
+/obj/structure/closet,
+/obj/item/clothing/under/costume/misc/hunterformal,
+/obj/item/clothing/under/costume/misc/hunterformal,
+/obj/item/clothing/shoes/hunterboots,
+/obj/item/clothing/shoes/hunterboots,
+/obj/item/storage/belt/hunter,
+/obj/item/storage/belt/hunter,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Qy" = (
 /obj/machinery/autolathe/industrial,
 /turf/simulated/floor/wood,
@@ -3896,7 +3896,7 @@
 	dir = 1;
 	icon_state = "danger"
 	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Ra" = (
 /obj/structure/table/woodentable,
@@ -4129,7 +4129,7 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
 "VF" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -7862,7 +7862,7 @@ VN
 aa
 RE
 RE
-RE
+WQ
 RE
 RE
 wg
@@ -12350,10 +12350,10 @@ ar
 ar
 RE
 av
-na
-na
-na
-na
+fG
+fG
+fG
+fG
 WQ
 gg
 gg
@@ -12427,7 +12427,7 @@ ar
 ar
 ar
 RE
-LC
+Qx
 gg
 gg
 gg
@@ -12505,7 +12505,7 @@ ar
 ar
 ar
 RE
-LC
+Qx
 gg
 gg
 gg
@@ -12584,10 +12584,10 @@ ar
 ar
 RE
 av
-fG
-fG
-fG
-fG
+rG
+rG
+rG
+rG
 WQ
 gg
 FU
