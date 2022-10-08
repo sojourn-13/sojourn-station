@@ -42632,6 +42632,9 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/captain/quarters)
+"ilY" = (
+/turf/simulated/mineral,
+/area/nadezhda/medical/organ_lab)
 "imb" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
@@ -117988,6 +117991,9 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/janitor)
+"wrV" = (
+/turf/simulated/mineral,
+/area/nadezhda/rnd/docking)
 "wrZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -150760,8 +150766,8 @@ vVX
 cIp
 wDa
 wtF
-wtF
-wtF
+ilY
+ilY
 wtF
 cbi
 qWL
@@ -158430,9 +158436,9 @@ ihS
 ihS
 gLl
 hYY
-hYY
-hYY
-hYY
+wrV
+wrV
+wrV
 hYY
 evS
 cSs
@@ -158632,9 +158638,9 @@ ihS
 ihS
 gLl
 hYY
-hYY
-hYY
-hYY
+wrV
+wrV
+wrV
 hYY
 lop
 ffD
@@ -158834,9 +158840,9 @@ ihS
 ihS
 gLl
 hYY
-hYY
-hYY
-hYY
+wrV
+wrV
+wrV
 hYY
 lop
 qdj
@@ -159036,9 +159042,9 @@ vnu
 vnu
 vTA
 hYY
-hYY
-hYY
-hYY
+wrV
+wrV
+wrV
 hYY
 lop
 qdj
