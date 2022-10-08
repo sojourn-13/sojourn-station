@@ -27,13 +27,13 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "af" = (
-/obj/structure/bed{
-	dir = 4
-	},
-/obj/landmark/join/late/dormitory,
 /obj/item/bedsheet/brown{
 	dir = 1
 	},
+/obj/structure/bed/padded{
+	dir = 4
+	},
+/obj/landmark/join/late/dormitory,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ag" = (
@@ -1052,9 +1052,9 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fG" = (
-/obj/structure/bed,
-/obj/landmark/join/late/dormitory,
 /obj/item/bedsheet/brown,
+/obj/structure/bed/padded,
+/obj/landmark/join/late/dormitory,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fH" = (
@@ -3627,6 +3627,16 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
+"NG" = (
+/obj/structure/bed/padded{
+	dir = 4
+	},
+/obj/item/bedsheet/brown{
+	dir = 1
+	},
+/obj/landmark/join/late/dormitory,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "NO" = (
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,
 /turf/simulated/floor/asteroid/grass,
@@ -3810,6 +3820,12 @@
 "PK" = (
 /obj/machinery/vending/dinnerware,
 /turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"PQ" = (
+/obj/structure/bed/padded,
+/obj/landmark/join/late/dormitory,
+/obj/item/bedsheet/brown,
+/turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Qp" = (
 /obj/structure/cable{
@@ -12347,7 +12363,7 @@ ar
 RE
 av
 af
-af
+NG
 af
 af
 WQ
@@ -12582,8 +12598,8 @@ RE
 av
 fG
 fG
-fG
-fG
+PQ
+PQ
 WQ
 gg
 FU
