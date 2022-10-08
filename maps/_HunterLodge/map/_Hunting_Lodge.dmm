@@ -73,7 +73,7 @@
 "ao" = (
 /obj/effect/floor_decal/spline/fancy{
 	dir = 6;
-	color = "8f8f8f"
+	color = "#8f8f8f"
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -1046,9 +1046,11 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fG" = (
+/obj/structure/bed,
 /obj/landmark/join/late/dormitory,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/item/bedsheet/brown,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fH" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -1877,6 +1879,16 @@
 /obj/machinery/honey_extractor,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"na" = (
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/landmark/join/late/dormitory,
+/obj/item/bedsheet/brown{
+	dir = 1
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "nt" = (
 /obj/structure/reagent_dispensers/fueltank/huge,
 /turf/simulated/floor/plating/under,
@@ -1988,7 +2000,7 @@
 /obj/structure/table/bench/wooden,
 /obj/effect/floor_decal/spline/fancy{
 	dir = 6;
-	color = "8f8f8f"
+	color = "#8f8f8f"
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -3064,7 +3076,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "Ej" = (
 /obj/machinery/door/unpowered/simple/wood,
-/turf/simulated/wall/wood,
+/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Em" = (
 /obj/structure/railing{
@@ -3478,6 +3490,16 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"LC" = (
+/obj/structure/closet,
+/obj/item/clothing/under/costume/misc/hunterformal,
+/obj/item/clothing/under/costume/misc/hunterformal,
+/obj/item/clothing/shoes/hunterboots,
+/obj/item/clothing/shoes/hunterboots,
+/obj/item/storage/belt/hunter,
+/obj/item/storage/belt/hunter,
+/turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "LE" = (
 /obj/structure/cable,
@@ -6905,10 +6927,10 @@ ax
 ax
 ax
 ax
-fG
-fG
-fG
-fG
+ax
+ax
+ax
+ax
 ay
 rg
 ay
@@ -6987,7 +7009,7 @@ ax
 ax
 ax
 ax
-fG
+ax
 ay
 rg
 jM
@@ -7062,10 +7084,10 @@ rg
 Gz
 rg
 ay
-fG
-fG
 ax
-fG
+ax
+ax
+ax
 ay
 Gz
 rg
@@ -7143,7 +7165,7 @@ dO
 rg
 ay
 ax
-fG
+ax
 ay
 rg
 Zy
@@ -8447,7 +8469,7 @@ tz
 tz
 tz
 tz
-aB
+RE
 RE
 xM
 xM
@@ -12249,12 +12271,12 @@ RE
 RE
 RE
 RE
-RE
-RE
-RE
-RE
-RE
-RE
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
 kG
 kG
 zF
@@ -12326,13 +12348,13 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
-ar
 RE
+av
+na
+na
+na
+na
+WQ
 gg
 gg
 zF
@@ -12404,13 +12426,13 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
-ar
 RE
+LC
+gg
+gg
+gg
+gg
+gg
 gg
 gg
 zF
@@ -12482,13 +12504,13 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
-ar
 RE
+LC
+gg
+gg
+gg
+gg
+gg
 gg
 gg
 gg
@@ -12560,13 +12582,13 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
-ar
 RE
+av
+fG
+fG
+fG
+fG
+WQ
 gg
 FU
 gg
@@ -12638,13 +12660,13 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
-ar
 RE
+WQ
+WQ
+WQ
+WQ
+WQ
+WQ
 WQ
 WQ
 WQ
