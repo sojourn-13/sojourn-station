@@ -1046,8 +1046,12 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fG" = (
-/obj/landmark/join/late/dormitory,
-/turf/simulated/floor/asteroid/dirt/dust,
+/obj/structure/flora/rock{
+	layer = 4;
+	desc = "Kinda Dense";
+	name = "Lando"
+	},
+/turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fH" = (
 /obj/effect/overlay/water,
@@ -1918,6 +1922,12 @@
 /obj/item/pen/multi,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"nX" = (
+/obj/structure/bed,
+/obj/landmark/join/late/dormitory,
+/obj/item/bedsheet/brown,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
 "oc" = (
 /obj/machinery/power/solar,
 /obj/structure/cable{
@@ -1970,6 +1980,16 @@
 /obj/structure/bed/chair/sofa/brown,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"os" = (
+/obj/structure/bed{
+	dir = 1
+	},
+/obj/landmark/join/late/dormitory,
+/obj/item/bedsheet/brown{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
 "ov" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -2091,6 +2111,15 @@
 /obj/random/mob/luna_solis,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"qn" = (
+/obj/structure/bed,
+/obj/landmark/join/late/dormitory,
+/obj/item/bedsheet/brown,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
 "qs" = (
 /obj/structure/flora/big/bush2,
 /obj/random/flora/jungle_tree,
@@ -2809,6 +2838,16 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"AW" = (
+/obj/structure/closet,
+/obj/item/clothing/shoes/hunterboots,
+/obj/item/clothing/shoes/hunterboots,
+/obj/item/storage/belt/hunter,
+/obj/item/storage/belt/hunter,
+/obj/item/clothing/under/costume/misc/hunterformal,
+/obj/item/clothing/under/costume/misc/hunterformal,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Bq" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/wood/wild2,
@@ -3227,6 +3266,10 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Hi" = (
+/obj/random/furniture/pottedplant,
+/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Hz" = (
 /obj/structure/table/steel_reinforced,
@@ -4156,6 +4199,10 @@
 "WQ" = (
 /turf/simulated/wall/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"WW" = (
+/obj/machinery/door/unpowered/simple/wood,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Xq" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -4295,6 +4342,20 @@
 	layer = 4
 	},
 /turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Zl" = (
+/obj/structure/bed{
+	dir = 1
+	},
+/obj/landmark/join/late/dormitory,
+/obj/item/bedsheet/brown{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Zo" = (
 /obj/effect/floor_decal/border/stoneborder{
@@ -5716,7 +5777,7 @@ ay
 ay
 ay
 mm
-Ks
+fG
 ay
 ax
 ax
@@ -6905,10 +6966,10 @@ ax
 ax
 ax
 ax
-fG
-fG
-fG
-fG
+ax
+ax
+ax
+ax
 ay
 rg
 ay
@@ -6987,7 +7048,7 @@ ax
 ax
 ax
 ax
-fG
+ax
 ay
 rg
 jM
@@ -7062,10 +7123,10 @@ rg
 Gz
 rg
 ay
-fG
-fG
 ax
-fG
+ax
+ax
+ax
 ay
 Gz
 rg
@@ -7143,7 +7204,7 @@ dO
 rg
 ay
 ax
-fG
+ax
 ay
 rg
 Zy
@@ -12326,12 +12387,12 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
-ar
+RE
+Hi
+os
+Zl
+os
+os
 RE
 gg
 gg
@@ -12404,13 +12465,13 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
-ar
 RE
+AW
+CB
+CB
+CB
+CB
+WW
 gg
 gg
 zF
@@ -12482,13 +12543,13 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
-ar
 RE
+AW
+CB
+CB
+CB
+CB
+WW
 gg
 gg
 gg
@@ -12560,12 +12621,12 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
-ar
+RE
+Hi
+nX
+qn
+nX
+nX
 RE
 gg
 FU
@@ -12638,12 +12699,12 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
-ar
+RE
+RE
+RE
+RE
+RE
+RE
 RE
 WQ
 WQ
