@@ -27,9 +27,15 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "af" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/wall/wood_barrel,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/landmark/join/late/dormitory,
+/obj/item/bedsheet/brown{
+	dir = 1
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "ag" = (
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -1046,13 +1052,9 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fG" = (
-/obj/structure/bed{
-	dir = 4
-	},
+/obj/structure/bed,
 /obj/landmark/join/late/dormitory,
-/obj/item/bedsheet/brown{
-	dir = 1
-	},
+/obj/item/bedsheet/brown,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fH" = (
@@ -2173,12 +2175,6 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
-"rG" = (
-/obj/structure/bed,
-/obj/landmark/join/late/dormitory,
-/obj/item/bedsheet/brown,
-/turf/simulated/floor/wood/wild1,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
 "rQ" = (
 /obj/machinery/light,
 /turf/simulated/floor/wood,
@@ -3843,16 +3839,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
-"Qx" = (
-/obj/structure/closet,
-/obj/item/clothing/under/costume/misc/hunterformal,
-/obj/item/clothing/under/costume/misc/hunterformal,
-/obj/item/clothing/shoes/hunterboots,
-/obj/item/clothing/shoes/hunterboots,
-/obj/item/storage/belt/hunter,
-/obj/item/storage/belt/hunter,
-/turf/simulated/floor/wood/wild1,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Qy" = (
 /obj/machinery/autolathe/industrial,
 /turf/simulated/floor/wood,
@@ -4177,6 +4163,16 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "WQ" = (
 /turf/simulated/wall/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"WS" = (
+/obj/structure/closet,
+/obj/item/clothing/under/costume/misc/hunterformal,
+/obj/item/clothing/under/costume/misc/hunterformal,
+/obj/item/clothing/shoes/hunterboots,
+/obj/item/clothing/shoes/hunterboots,
+/obj/item/storage/belt/hunter,
+/obj/item/storage/belt/hunter,
+/turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Xq" = (
 /obj/structure/catwalk,
@@ -11477,9 +11473,9 @@ WQ
 WQ
 WQ
 WQ
-af
-af
-af
+Bq
+Bq
+Bq
 WQ
 WQ
 WQ
@@ -12350,10 +12346,10 @@ ar
 ar
 RE
 av
-fG
-fG
-fG
-fG
+af
+af
+af
+af
 WQ
 gg
 gg
@@ -12427,7 +12423,7 @@ ar
 ar
 ar
 RE
-Qx
+WS
 gg
 gg
 gg
@@ -12505,7 +12501,7 @@ ar
 ar
 ar
 RE
-Qx
+WS
 gg
 gg
 gg
@@ -12584,10 +12580,10 @@ ar
 ar
 RE
 av
-rG
-rG
-rG
-rG
+fG
+fG
+fG
+fG
 WQ
 gg
 FU
