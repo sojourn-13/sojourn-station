@@ -25,8 +25,7 @@
 
 
 /datum/event/brand_intelligence/announce()
-	command_announcement.Announce("Rampant brand intelligence has been detected within the colony, please stand-by.", "Machine Learning Alert")
-
+   	command_announcement.Announce("Агрессивный маркетинговый интеллект был обнаружен внутри колонии, пожалуйста, будьте на чеку.", "Оповещение о машинном обучении")
 
 /datum/event/brand_intelligence/start()
 	for(var/obj/machinery/vending/V in GLOB.machines)

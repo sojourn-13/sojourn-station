@@ -31,7 +31,7 @@
 
 
 /datum/event/spider_infestation/announce()
-	command_announcement.Announce("Unidentified lifesigns detected burrowing into colony areas. Secure any exterior access, including ducting and ventilation.", "Lifesign Alert", new_sound = 'sound/AI/aliens.ogg')
+    command_announcement.Announce("Обнаружены неопознанные признаки жизни, проникающие в районы колоний. Обеспечьте защиту от проникновения через воздуховоды и вентиляцию.", "Оповещение о признаках жизни", new_sound = 'sound/AI/aliens.ogg')
 
 
 /datum/event/spider_infestation/start()

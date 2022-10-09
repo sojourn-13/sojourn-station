@@ -23,8 +23,7 @@ Just not fun
 
 
 /datum/event/electrical_storm/announce()
-	command_announcement.Announce("An electrical storm has been detected in your area, please repair potential electronic overloads.", "Electrical Storm Alert")
-
+	command_announcement.Announce("В вашем районе была обнаружена электрическая буря, пожалуйста, устраните возможные электронные перегрузки.", "Оповещение об электро-шторме")
 
 /datum/event/electrical_storm/start()
 	switch(severity)

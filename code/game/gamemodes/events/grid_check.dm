@@ -34,14 +34,12 @@ So sometimes this event can result in people finding new and interesting things
 	power_failure(0, strength, GLOB.maps_data.contact_levels)
 
 /datum/event/grid_check/announce()
-	command_announcement.Announce("Abnormal activity detected in the colony's powernet. As a precautionary measure, power will be shut off for an indeterminate duration.", "Automated Grid Check", new_sound = 'sound/AI/poweroff.ogg')
-
+	command_announcement.Announce("Аномальная активность обнаружена в энергосети колонии. В качестве меры предосторожности питание будет отключено на неопределенный срок.", "Автоматическая Проверка Сети", new_sound = 'sound/AI/poweroff.ogg')
 
 
 /proc/power_failure(var/announce = 1, var/severity = 2, var/list/affected_z_levels)
 	if(announce)
-		command_announcement.Announce("Abnormal activity detected in the colony's powernet. As a precautionary measure, power will be shut off for an indeterminate duration.", "Critical Power Failure", new_sound = 'sound/AI/poweroff.ogg')
-
+		command_announcement.Announce("В колонии восстановлено электроснабжение. Мы приносим извинения за причиненные неудобства.", "Восстановление электроснабжения", new_sound = 'sound/AI/poweron.ogg')
 	for(var/obj/machinery/power/smes/buildable/S in GLOB.smes_list)
 		if (is_valid_smes(S))
 			S.energy_fail(rand(30 * severity*severity,40 * severity*severity))

@@ -260,3 +260,4 @@
 		custom_emote(m_type, message)
 
 	return
+
