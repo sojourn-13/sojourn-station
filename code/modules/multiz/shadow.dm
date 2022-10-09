@@ -14,6 +14,7 @@
 	layer = ABOVE_OPEN_TURF_LAYER
 	vis_flags = VIS_HIDE // Prevents mob shadows from stacking on open spaces when the mob is more than 1 z-level below
 	var/mob/owner = null
+	var/size_multiplier = 1
 
 /mob/shadow/can_fall()
 	return FALSE
@@ -25,6 +26,9 @@
 	//..()
 	owner = L
 	sync_icon(L)
+	if(ishuman(owner))
+		var/mob/living/carbon/human/shadow_caster = L
+		size_multiplier = shadow_caster.size_multiplier
 
 /mob/Destroy()
 	qdel(shadow)
