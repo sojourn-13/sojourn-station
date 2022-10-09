@@ -3,9 +3,10 @@
 	real_name = "cortical borer"
 	desc = "A small, quivering sluglike creature."
 	speak_emote = list("chirrups")
-	response_help  = "pokes"
-	response_disarm = "prods"
-	response_harm   = "stomps on"
+	emote_hear = list("chirrups")
+	response_help  = "pokes the"
+	response_disarm = "prods the"
+	response_harm   = "stomps on the"
 	icon_state = "brainslug"
 	colony_friend = TRUE
 	health = 30
