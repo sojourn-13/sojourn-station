@@ -34,7 +34,7 @@
 
 	var/list/warm_bodies = list()
 	var/mob/living/surrogate = null
-	for(var/mob/living/victim in ohearers())
+	for(var/mob/living/victim in ohearers(8))
 		if(victim?.stat == CONSCIOUS)
 			warm_bodies += victim
 	if(!host)
