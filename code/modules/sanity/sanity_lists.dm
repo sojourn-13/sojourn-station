@@ -88,7 +88,7 @@
 /datum/sanity/proc/pick_quote_20()
 	var/static/list/sanity_quotes_20
 	if(!sanity_quotes_20)
-			sanity_quotes_20 = list(
+		sanity_quotes_20 = list(
 			"Все вокруг замерзает. Даже теплу с тобой противно.",
 			"Все внутри тебя дрожит. Замереть - значит умереть.",
 			"Все хотят, чтобы ты сдох.",
@@ -170,7 +170,7 @@
 			"Скоро мы будем дома.",
 			"Я вижу что написано внутри твоего черепа.",
 			"У ТЕБЯ НЕТ ВЫБОРА"
-			)
+		)
 		for(var/i in 0 to 9)
 			sanity_quotes_20 += "[i] is the number."
 	return pick(sanity_quotes_20)
