@@ -265,10 +265,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
-"bl" = (
-/obj/machinery/power/solar,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
 "bn" = (
 /obj/structure/table/marble,
 /turf/simulated/floor/tiled/cafe,
@@ -2604,6 +2600,7 @@
 	dir = 4;
 	icon_state = "term"
 	},
+/obj/structure/cable,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "vA" = (
@@ -3998,6 +3995,7 @@
 /obj/item/storage/bag/produce,
 /obj/item/storage/bag/produce,
 /obj/item/storage/bag/produce,
+/obj/item/soap/hunters,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "On" = (
@@ -6263,7 +6261,7 @@ ct
 pw
 pw
 dv
-bl
+dT
 BO
 RE
 CO
