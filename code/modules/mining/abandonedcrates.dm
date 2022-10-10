@@ -1,4 +1,4 @@
-	/obj/structure/closet/crate/secure/loot
+/obj/structure/closet/crate/secure/loot
 	name = "abandoned crate"
 	desc = "What could be inside? A small port near the lock could connect to a multi-tool."
 	icon_state = "securecrate"
