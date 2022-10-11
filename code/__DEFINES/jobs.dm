@@ -2,7 +2,7 @@
 #define JOBS_SECURITY "Blackshield Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer","Sergeant"
 #define JOBS_COMMAND "Premier","Steward","Blackshield Commander","Warrant Officer","Chief Executive Officer","Guild Master","Chief Biolab Overseer","Chief Research Overseer","Prime","Foreman"
 #define JOBS_ENGINEERING "Guild Master","Guild Adept"
-#define JOBS_MEDICAL "Chief Biolab Overseer","Soteria Doctor","Soteria Psychiatrist","Soteria Client Recovery Specialist"
+#define JOBS_MEDICAL "Chief Biolab Overseer","Soteria Doctor","Soteria Psychiatrist","Soteria Lifeline Technician"
 #define JOBS_SCIENCE "Chief Research Overseer","Soteria Scientist","Soteria Roboticist"
 #define JOBS_LSS "Chief Executive Officer","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor","Artist"
 #define JOBS_CIVILIAN "Colonist"
@@ -11,7 +11,7 @@
 #define JOBS_NONHUMAN "AI","Robot","pAI"
 #define JOBS_INDEPENDENT "Lodge Hunt Master","Lodge Hunter","Lodge Herbalist","Outsider"
 
-#define JOBS_ANTI_HIVEMIND "Blackshield Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer","Sergeant","Prime","Vector","Foreman","Salvager","Prospector","Premier","Steward","AI","Janitor","Soteria Recovery Specialist","Soteria Roboticist","Lonestar Miner"
+#define JOBS_ANTI_HIVEMIND "Blackshield Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer","Sergeant","Prime","Vector","Foreman","Salvager","Prospector","Premier","Steward","AI","Janitor","Soteria Lifeline Technician","Soteria Roboticist","Lonestar Miner"
 
 #define CREDITS "&cent;"
 #define CREDS "&cent;"
