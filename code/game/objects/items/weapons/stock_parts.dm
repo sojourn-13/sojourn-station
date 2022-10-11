@@ -449,3 +449,12 @@
 	origin_tech = list(TECH_MAGNET = 5, TECH_MATERIAL = 5, TECH_BLUESPACE = 3)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 1)
 	price_tag = 100
+
+//Blackshield stock parts
+
+/obj/item/stock_parts/blackshield/stskit
+	name = "blackshield conversion kit"
+	icon_state = "bs_kit"
+	desc = "A parts kit developed from the commissioned STS-30s from Blackshield, for the purpose of converting more to the pattern."
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 3)
+	price_tag = 100

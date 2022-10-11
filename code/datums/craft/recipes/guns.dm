@@ -216,6 +216,50 @@
 		list(QUALITY_WELDING, 10, 20)
 	)
 
+/datum/craft_recipe/gun/sts
+	name = "\"STS\" battle rifle"
+	result = /obj/item/gun/projectile/automatic/sts/rifle
+	steps = list(
+		list(/obj/item/gun/projectile/automatic/sts/lrifle, 1, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 10, "time" = 10),
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
+		list(QUALITY_SAWING, 10, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 20, "time" = 10)
+
+	)
+
+/datum/craft_recipe/gun/hsts
+	name = "\"STS\" heavy rifle"
+	result = /obj/item/gun/projectile/automatic/sts/hrifle
+	steps = list(
+		list(/obj/item/gun/projectile/automatic/sts/rifle, 1, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 10, "time" = 10),
+		list(CRAFT_MATERIAL, 15, MATERIAL_STEEL),
+		list(QUALITY_WELDING, 10, "time" = 20),
+		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD),
+		list(QUALITY_SAWING, 10, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 20, "time" = 10)
+
+	)
+
+/datum/craft_recipe/gun/bssts
+	name = "\"STS PARA\" Blackshield rifle"
+	result = /obj/item/gun/projectile/automatic/sts/rifle/blackshield
+	steps = list(
+		list(/obj/item/gun/projectile/automatic/sts/rifle, 1, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 10, "time" = 10),
+		list(CRAFT_MATERIAL, 15, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 10, "time" = 20),
+		list(/obj/item/stock_parts/blackshield/stskit, 1),
+		list(CRAFT_MATERIAL, 15, MATERIAL_STEEL),
+		list(QUALITY_ADHESIVE, 15, 70),
+		list(CRAFT_MATERIAL, 15, MATERIAL_PLASTIC),
+		list(QUALITY_SAWING, 10, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 20, "time" = 10)
+	)
+
 /datum/craft_recipe/gun/makeshiftlaser
 	name = "makeshift laser carbine"
 	result = /obj/item/gun/energy/laser/makeshift
