@@ -166,6 +166,15 @@
 
 /obj/random/psi_catalyst/item_to_spawn()
 	return pickweight(list(
+				/obj/item/device/psionic_catalyst/cryo_kinetic_blaster = 4,//Coffee edit
+				/obj/item/device/psionic_catalyst/pyro_kinetic_blaster = 4,//Not that 'OP' strong.
+				/obj/item/device/psionic_catalyst/electro_kinetic_blaster = 4,
+				/obj/item/device/psionic_catalyst/kinetic_barrier = 3,
+				/obj/item/device/psionic_catalyst/chosen_control = 3,
+				/obj/item/device/psionic_catalyst/detect_thoughts = 3,
+				/obj/item/device/psionic_catalyst/psychoactive_manipulation = 3,
+				/obj/item/device/psionic_catalyst/cerebral_hemorrhage = 1,// This is rather strong, but due to bug this doesn't spawn in usual way
+				/obj/item/device/psionic_catalyst/enslavement = 1,// This is rather strong, but due to bug this doesn't spawn in usual way
 				/obj/item/device/psionic_catalyst/nightmare_mind = 8,
 				/obj/item/device/psionic_catalyst/bring_darkness = 10,
 				/obj/item/device/psionic_catalyst/rust = 10,
