@@ -24,19 +24,19 @@
 		STAT_COG = 8
 	)
 
-	description = "The ideal newcomer role. You have no official position within the colony or are simply off duty. You will not be paid a wage.<br>\
-Where did you come from? Why are you here? These things are up to you.<br>\
+	description = "Вы идеальный кандидат для новоприбывших. Вы не имеете официальной занятости в колонии, или находитесь в отпуске.<br>\
+Откуда вы пришли? Почему вы тут? Это вам решать.<br>\
 <br>\
-Perhaps you're a new arrival, who paid for transit. What are you seeking, or what are you running from?<br>\
-Perhaps you're a young apprentice or intern. What new and exciting career are you pursuing?<br>\
-Perhaps you're a friend, relative, spouse or lover of an existing colonist. How can you support them in their work?<br>\
-Perhaps you're a former prisoner, ready to join the crew after your served time. What was your crime?<br>\
-Perhaps you're a refugee, stranded in the wilderness and rescued by the colony. Why were you out there?<br>\
-Perhaps you're a known crew member, taking some time off to relax and enjoy the surface life without the need for work?<br>\
+Возможно вы новоприбывший, что заплатил за транзит. Что вы ищите, или от чего спасаетесь бегством?<br>\
+Возможно вы молодой подмастерье, или интерн? Какую же новую и захватывающую карьеру вы преследуете?<br>\
+Возможно вы друг, родственник, вторая половинка, или любовник уже существующего колониста. Как вы сможете поддержать их?<br>\
+Возможно вы бывший заключенный, готовые присоединится к колонии после тюрьмы. Каково было ваше преступление?<br>\
+Возможно вы беженец, заблудившийся на диких территориях и спасенный колонией. Почему вы были там?<br>\
+Возможно вы известный колонист, взявший себе отпуск и наслаждаясь жизнью на поверхности без нужды работать?<br>\
 <br>\
-Your story is yours to write. What matters is that you're here now - find some purpose.<br>\
-To form connections, strive to help out anyone you can. Or at least, anyone who offers you a paying job.<br>\
-Find a way to make money, stay out of trouble, and survive."
+Ваша история - то что вы сами напишете. Но что имеет значение - что вы тут. Найдите себе цель.<br>\
+Чтобы наладить связи, стремитесь помочь всем, кому сможете. Или, по крайней мере, тем, кто готовы заплатить.<br>\
+Найдите способ заработать деньги, оставаться на плаву, и выжить."
 
 /obj/landmark/join/start/assistant
 	name = "Colonist"
