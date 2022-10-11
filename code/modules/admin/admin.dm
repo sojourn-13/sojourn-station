@@ -84,7 +84,7 @@ var/global/floorIsLava = 0
 		to_chat(usr, "Error: you are not an admin!")
 		return
 
-	var/body = "<html><head><title>Log Panel of [M.real_name]</title></head>"
+	var/body = "<html><meta charset=\"UTF-8\"><head><title>Log Panel of [M.real_name]</title></head>"
 	body += "<body><center>Logs of <b>[M]</b><br>"
 	body += "<a href='?src=\ref[src];viewlogs=\ref[M]'>REFRESH</a></center><br>"
 

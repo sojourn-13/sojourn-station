@@ -145,7 +145,7 @@
 		return
 
 	var/dat = list()
-	dat += "<html><body><hr><b>Lift panel</b><hr>"
+	dat += "<html><meta charset=\"UTF-8\"><body><hr><b>Lift panel</b><hr>"
 
 	//the stops list stores levels in order of increasing Z
 	//therefore, to display upper levels at the top of the menu and

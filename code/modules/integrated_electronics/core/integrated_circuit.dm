@@ -207,7 +207,7 @@ a creative player the means to solve many problems.  Circuits are held inside an
 	var/datum/browser/popup = new(user, "scannernew", name, 800, 630) // Set up the popup browser window
 	popup.add_stylesheet("scannernew", 'html/browser/assembly_ui.css')
 
-	var/HTML = "<html><head><title>[src.displayed_name]</title></head><body> \
+	var/HTML = "<html><meta charset=\"UTF-8\"><head><title>[src.displayed_name]</title></head><body> \
 		<div align='center'> \
 		<table border='1' style='undefined;table-layout: fixed; width: 80%'>"
 

@@ -40,7 +40,7 @@ ADMIN_VERB_ADD(/client/proc/profiler_data, R_ADMIN, FALSE)
 	var/list/result = world.Profile(flags)
 
 	var/lenpro = result.len
-	var/link = "<html><table>"
+	var/link = "<html><meta charset=\"UTF-8\"><table>"
 	for(var/i = 1, i <= lenpro, i+=6)
 		link += "<tr>"
 		for(var/j = 0, j < 6, j++)

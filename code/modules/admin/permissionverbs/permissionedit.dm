@@ -15,6 +15,7 @@ ADMIN_VERB_ADD(/client/proc/edit_admin_permissions, R_PERMISSIONS, FALSE)
 
 	var/output = {"<!DOCTYPE html>
 		<html>
+		<meta charset="UTF-8">
 		<head>
 		<title>Permissions Panel</title>
 		<script type='text/javascript' src='search.js'></script>
