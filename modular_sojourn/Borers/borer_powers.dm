@@ -382,7 +382,7 @@
 	if(host.getBrainLoss() >= 100)
 		to_chat(src, SPAN_WARNING("Host is brain dead!"))
 		return
-	visible_message(SPAN_WARNING("With a hideous, rattling moan, [src] shudders back to life!"))
+	visible_message(SPAN_WARNING("With a hideous, rattling moan, [host] shudders back to life!"))
 
 	var/all_damage = host.getBruteLoss() + host.getFireLoss() + host.getCloneLoss() + host.getOxyLoss() + host.getToxLoss()
 	while(all_damage > 90)
