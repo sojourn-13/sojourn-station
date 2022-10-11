@@ -250,10 +250,12 @@
 	steps = list(
 		list(/obj/item/gun/projectile/automatic/sts/rifle, 1, "time" = 60),
 		list(QUALITY_SCREW_DRIVING, 10, "time" = 10),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 15, MATERIAL_PLASTEEL),
 		list(QUALITY_WELDING, 10, "time" = 20),
 		list(/obj/item/stock_parts/blackshield/stskit, 1),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
+		list(CRAFT_MATERIAL, 15, MATERIAL_STEEL),
+		list(QUALITY_ADHESIVE, 15, 70),
+		list(CRAFT_MATERIAL, 15, MATERIAL_PLASTIC),
 		list(QUALITY_SAWING, 10, "time" = 10),
 		list(QUALITY_BOLT_TURNING, 20, "time" = 10)
 	)
