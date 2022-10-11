@@ -26,18 +26,23 @@
 	universal_understand = 1
 	//holder_type = /obj/item/holder/borer //Theres no inhand sprites for holding borers, it turns you into a pink square
 
-	var/borer_level = 0                           // Level of borer.
-	var/borer_exp = 0                             // Borer experience.
+	var/borer_level = 0			// Level of borer.
+	var/borer_exp = 0			// Borer experience.
 	var/last_request
 	var/used_dominate
-	var/max_chemicals = 50					// Max chemicals produce without a host
-	var/max_chemicals_inhost = 250          // Max chemicals produce within a host
-	var/chemicals = 50                      // Chemicals used for reproduction and spitting neurotoxin.
-	var/mob/living/carbon/human/host        // Human host for the brain worm.
-	var/truename                            // Name used for brainworm-speak.
-	var/mob/living/captive_brain/host_brain // Used for swapping control of the body back and forth.
+	var/max_chemicals = 50									// Max chemicals produce without a host
+	var/max_chemicals_inhost =	250							// Max chemicals produce within a host
+	var/chemicals = 50										// Chemicals used for reproduction and spitting neurotoxin.
+
+	var/mob/living/captive_brain/host_brain			// Used for swapping control of the body back and forth.
+	var/mob/living/carbon/human/H					// Human host for the brain worm.
+	var/mob/living/carbon/superior_animal/symbiont	// Superior host for the brain worm.
+	var/mob/living/simple_animal/parasitoid			// Lesser host for the brain worm.
+	var/mob/living/host								// Generic host for the brain worm.
+
+	var/truename							// Name used for brainworm-speak.
 	var/controlling = FALSE					// Used in human death check.
-	var/docile = 0                          // Sugar can stop borers from acting.
+	var/docile = 0							// Sugar can stop borers from acting.
 	var/has_reproduced
 	var/roundstart
 
@@ -64,7 +69,7 @@
 	// Abilities borer can use when controlling the host
 	// (keep in mind that those have to be abilities of /mob/living/carbon, not /mob/living/simple_animal/borer)
 	var/list/abilities_in_control = list(
-		/mob/living/carbon/proc/release_control,
+		/mob/living/proc/release_control,
 		/mob/living/carbon/proc/talk_host,
 		/mob/living/carbon/human/proc/psychic_whisper,
 		/mob/living/carbon/proc/spawn_larvae
@@ -115,32 +120,39 @@
 	// Remove all abilities
 	verbs -= abilities_standalone
 	verbs -= abilities_in_host
+	verbs -= abilities_in_control
 	host?.verbs -= abilities_in_control
+	verbs -= list(
+		/mob/living/simple_animal/verb/toggle_AI,
+		/mob/living/simple_animal/hostile/verb/break_around,
+		)
 
 	// Borer gets host abilities before actually getting inside the host
 	// Workaround for a BYOND bug: http://www.byond.com/forum/post/1833666
+	/*
 	if(force_host)
 		if(ishuman(host))
 			verbs += abilities_in_host
 			return
 		for(var/ability in abilities_in_host)
-			if(istype(ability, /mob/living/carbon/human))
+			if(ispath(ability, /mob/living/carbon/human))
 				continue
 			verbs += ability
 		return
-
+	*/
 	// Re-grant some of the abilities, depending on the situation
 	if(!host)
 		verbs += abilities_standalone
+
 	else if(!controlling)
-		if(ishuman(host))
+		for(var/ability in abilities_in_host)
+			if(ispath(ability, /mob/living/carbon/human))
+				continue
+			verbs += ability
 			verbs += abilities_in_host
 			Stat()
 			return
-		for(var/ability in abilities_in_host)
-			if(istype(ability, /mob/living/carbon/human))
-				continue
-			verbs += ability
+
 	else
 		host.verbs += abilities_in_control
 	Stat()
@@ -178,11 +190,15 @@
 
 		if(chemicals < max_chemicals_inhost)
 			chemicals += level + 1
+
 		if(controlling)
 			if(docile)
 				to_chat(host, SPAN_DANGER("You are feeling far too docile to continue controlling your host..."))
 				host.release_control()
 				return
+
+			if(!host.AI_inactive) //We are in control now.
+				host.AI_inactive = 1
 
 			if(prob(5))
 				host.adjustBrainLoss(0.1)
@@ -190,7 +206,7 @@
 			if(prob(host.brainloss/20))
 				host.say("*[pick(list("blink","blink_r","choke","aflap","drool","twitch","twitch_s","gasp"))]")
 
-	for(var/mob/living/L in view(7)) //Sucks to put this here, but otherwise mobs will ignore them
+	for(var/mob/living/L in oviewers(8)) //Sucks to put this here, but otherwise mobs will ignore them
 		L.try_activate_ai()
 
 /mob/living/simple_animal/borer/Stat()
@@ -219,6 +235,7 @@
 		head.implants -= src
 
 	controlling = FALSE
+	host.AI_inactive = 0
 
 	host.remove_language(LANGUAGE_CORTICAL)
 	update_abilities()
@@ -289,6 +306,10 @@
 /mob/living/simple_animal/borer/proc/update_borer_level()
 	if((borer_exp >= 20) && (borer_level < 1))
 		borer_level = 1
+		if(host && controlling)
+			to_chat(host, SPAN_NOTICE("Congratulations! You've reached Evolution Level 1, new reagents and new abilities are now available."))
+		else
+			to_chat(src, SPAN_NOTICE("Congratulations! You've reached Evolution Level 1, new reagents and new abilities are now available."))
 		produced_reagents |= list("inaprovaline", "tricordrazine", "synaptizine", "imidazoline", "hyronalin")
 		abilities_in_host |= list(/mob/living/simple_animal/borer/proc/say_host, /mob/living/simple_animal/borer/proc/whisper_host, /mob/living/simple_animal/borer/proc/commune)
 		abilities_standalone |= list(/mob/living/simple_animal/borer/proc/commune)
@@ -298,12 +319,15 @@
 			verbs += /mob/living/simple_animal/borer/proc/commune
 		if(!host)
 			verbs += /mob/living/simple_animal/borer/proc/commune
-		to_chat(src, SPAN_NOTICE("Congratulations! You've reached Evolution Level 1, new reagents and new abilities are now available."))
 		max_chemicals += (borer_level * 10)
 		max_chemicals_inhost = max_chemicals * 5
 
 	if((borer_exp >= 40) && (borer_level < 2))
 		borer_level = 2
+		if(host && controlling)
+			to_chat(host, SPAN_NOTICE("Congratulations! You've reached Evolution Level 2, new reagents and new abilities are now available."))
+		else
+			to_chat(src, SPAN_NOTICE("Congratulations! You've reached Evolution Level 2, new reagents and new abilities are now available."))
 		produced_reagents |= list("spaceacillin", "quickclot", "detox", "purger", "arithrazine")
 		abilities_standalone |= list(/mob/living/simple_animal/borer/proc/biograde)
 		abilities_in_control |= list(/mob/living/carbon/human/proc/commune)
@@ -311,37 +335,45 @@
 			verbs += /mob/living/simple_animal/borer/proc/biograde
 		if(host && controlling && ishuman(host))
 			verbs += /mob/living/carbon/human/proc/commune
-		to_chat(src, SPAN_NOTICE("Congratulations! You've reached Evolution Level 2, new reagents and new abilities are now available."))
 		max_chemicals += (borer_level * 10)
 		max_chemicals_inhost = max_chemicals * 5
 
 	if((borer_exp >= 80) && (borer_level < 3))
 		borer_level = 3
+		if(host && controlling)
+			to_chat(host, SPAN_NOTICE("Congratulations! You've reached Evolution Level 3, new reagents and new abilities are now available."))
+		else
+			to_chat(src, SPAN_NOTICE("Congratulations! You've reached Evolution Level 3, new reagents and new abilities are now available."))
 		produced_reagents |= list("meralyne", "dermaline", "dexalinp", "oxycodone", "ryetalyn")
 		abilities_standalone |= list(/mob/living/simple_animal/borer/proc/invisible)
 		if(!host)
 			verbs += /mob/living/simple_animal/borer/proc/invisible
-		to_chat(src, SPAN_NOTICE("Congratulations! You've reached Evolution Level 3, new reagents and new abilities are now available."))
 		max_chemicals += (borer_level * 10)
 		max_chemicals_inhost = max_chemicals * 5
 
 	if((borer_exp >= 160) && (borer_level < 4))
 		borer_level = 4
+		if(host && controlling)
+			to_chat(host, SPAN_NOTICE("Congratulations! You've reached Evolution Level 4, new reagents are now available."))
+		else
+			to_chat(src, SPAN_NOTICE("Congratulations! You've reached Evolution Level 4, new reagents are now available."))
 		produced_reagents |= list("peridaxon", "rezadone", "ossisine", "kyphotorin", "aminazine")
 		health = 100
 		maxHealth = 100
 		speed = 1
-		to_chat(src, SPAN_NOTICE("Congratulations! You've reached Evolution Level 4, new reagents and new abilities are now available."))
 		max_chemicals += (borer_level * 10)
 		max_chemicals_inhost = max_chemicals * 5
 
 	if((borer_exp >= 320) && (borer_level < 5))
 		borer_level = 5
+		if(host && controlling)
+			to_chat(host, SPAN_NOTICE("Congratulations! You've reached Evolution Level 5, new abilities are now available."))
+		else
+			to_chat(src, SPAN_NOTICE("Congratulations! You've reached Evolution Level 5, new abilities are now available."))
 		produced_reagents |= list("violence", "steady", "bouncer", "prosurgeon", "cherry drops", "machine binding ritual")
 		abilities_in_host |= list(/mob/living/simple_animal/borer/proc/jumpstart)
 		if(host && !controlling)
 			verbs += /mob/living/simple_animal/borer/proc/jumpstart
-		to_chat(src, SPAN_NOTICE("Congratulations! You've reached Evolution Level 5, new reagents and new abilities are now available."))
 		max_chemicals += (borer_level * 10)
 		max_chemicals_inhost = max_chemicals * 5
 

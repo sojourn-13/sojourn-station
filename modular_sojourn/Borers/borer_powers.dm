@@ -113,6 +113,7 @@
 
 	host = M
 	host.status_flags |= PASSEMOTES
+
 	update_abilities()
 	spawn(1) /// Wait for abilities to update THEN move them in due to the afore-mentioned bug.
 		forceMove(host)
@@ -356,6 +357,13 @@
 
 			controlling = TRUE
 
+			host.verbs -= list(
+			/mob/living/simple_animal/verb/toggle_AI,
+			/mob/living/simple_animal/hostile/verb/break_around,
+			/mob/living/carbon/superior_animal/verb/toggle_AI,
+			/mob/living/carbon/superior_animal/verb/break_around,
+			)
+
 			update_abilities()
 
 /mob/living/simple_animal/borer/proc/jumpstart()
@@ -388,11 +396,12 @@
 	host.stat = UNCONSCIOUS
 	host.updatehealth()
 	host.make_jittery(100)
-	host.Stun(10)
-	host.Weaken(10)
-	host.Paralyse(10)
-	host.restore_blood()
-	host.fixblood()
+	host.SetStunned(10)
+	host.SetWeakened(10)
+	host.SetParalysis(10)
+	if(H == host)
+		H.restore_blood()
+		H.fixblood()
 	host.update_lying_buckled_and_verb_status()
 	chemicals -= 500
 
@@ -440,8 +449,8 @@
 			to_chat(src, SPAN_NOTICE("You learned [english_list(copied_languages)]."))
 
 		to_chat(host, SPAN_DANGER("Your head spins, your memories thrown in disarray!"))
-		host.adjustBrainLoss(copied_amount * 4)
-		host?.sanity.onPsyDamage(copied_amount * 4)
+		H.adjustBrainLoss(copied_amount * 4)
+		H?.sanity.onPsyDamage(copied_amount * 4)
 
 		host.make_dizzy(copied_amount * 4)
 		host.confused = max(host.confused, copied_amount * 4)
@@ -488,7 +497,7 @@
 
 		to_chat(host, SPAN_DANGER("Your head spins as new information fills your mind!"))
 		host.adjustBrainLoss(copied_amount * 2)
-		host?.sanity.onPsyDamage(copied_amount * 2)
+		H?.sanity.onPsyDamage(copied_amount * 2)
 
 		host.make_dizzy(copied_amount * 2)
 		host.confused = max(host.confused, copied_amount * 2)
