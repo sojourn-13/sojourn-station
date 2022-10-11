@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/sts
 	name = "\"STS\" carbine"
-	desc = "The rugged STS-25, the right arm of the unfree world. Uses Carbine rounds. This one is unmarked."
+	desc = "The rugged STS-25, the right arm of the unfree world. Uses Carbine rounds."
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -51,7 +51,7 @@
 
 /obj/item/gun/projectile/automatic/sts/lrifle
 	name = "\"STS\" carbine"
-	desc = "The rugged STS-25, the right left arm of the unfree world. Uses Carbine rounds. This one is unmarked."
+	desc = "The rugged STS-25, the right left arm of the unfree world. Uses Carbine rounds."
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -87,7 +87,7 @@
 
 /obj/item/gun/projectile/automatic/sts/lrifle/sawn
 	name = "\"STS\" carbine"
-	desc = "The rugged STS-25, the right left arm of the unfree world. Uses Carbine rounds. This one has had its stock lopped off, rendering it rather impractical to use.."
+	desc = "The rugged STS-25, the right left arm of the unfree world. Uses Carbine rounds. This one has had its stock lopped off, rendering it rather impractical to use."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -118,6 +118,7 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
+		BURST_2_ROUND,
 		FULL_AUTO_400
 		)
 
@@ -137,6 +138,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
+		BURST_2_ROUND,
 		FULL_AUTO_400
 		)
 
@@ -149,35 +151,50 @@
 	icon_state = "stspara"
 	item_state = "stspara"
 	w_class = ITEM_SIZE_BULKY
+	extra_bulk = -2 //Slightly smaller
+	damage_multiplier = 1.3 //Well oiled
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
-	damage_multiplier = 1.2 //Well oiled
-	init_recoil = RIFLE_RECOIL(1.5)
+	init_recoil = RIFLE_RECOIL(1.1)
 	fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg' // This is the sound ripped from a video of me shooting an FM FSL. As real as it gets. - Seb
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield
 	serial_type = "NM"
 
+	max_upgrades = 2 // Were good baseline lets not get out of hand here
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
 		FULL_AUTO_400
 		)
 
+	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE,
+							  /obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE,
+							  /obj/item/tool_upgrade/productivity/ergonomic_grip = TRUE,
+							  /obj/item/tool_upgrade/refinement/stabilized_grip = TRUE)
+
 /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield
 	name = "sawn down Blackshield \"STS PARA\" rifle"
-	desc = "A rugged STS-35 with two round burst.  Uses 7.62mm rifle rounds. This one has been shortened as much as possible while still able to function still more effective then a normal STS-30 varent."
-	icon = 'icons/obj/guns/projectile/sawnoff/sts30.dmi'
+	desc = "A rugged STS-35 with two round burst.  Uses 7.62mm rifle rounds. This one has been shortened as much as possible while still able to function."
+	icon = 'icons/obj/guns/projectile/sawnoff/sts35.dmi'
 	icon_state = "sts"
 	item_state = "sts"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
-	damage_multiplier = 1.0 //Rifle was fine
-	init_recoil = RIFLE_RECOIL(1.6)
+	extra_bulk = -2
+	init_recoil = RIFLE_RECOIL(1.2)
+	damage_multiplier = 1.2 //Well oiled
 	saw_off = FALSE
+	max_upgrades = 2 // Were good baseline lets not get out of hand here
+	fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg' // This is the sound ripped from a video of me shooting an FM FSL. As real as it gets. - Seb
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	serial_type = "NM"
+
+	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE,
+							  /obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE,
+							  /obj/item/tool_upgrade/productivity/ergonomic_grip = TRUE,
+							  /obj/item/tool_upgrade/refinement/stabilized_grip = TRUE)
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
