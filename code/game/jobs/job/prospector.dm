@@ -137,13 +137,13 @@
 
 	perks = list(/datum/perk/stalker, /datum/perk/job/prospector_conditioning)
 
-	description = "The Prospector serves as hired muscle to the Foreman, positioned somewhere between meat shield and exterminator.<br>\
-	Your job is to keep the Salvagers and anyone else with you protected, handling the fighting and being the first to enter dangerous areas. <br>\
-	While combat is your primary goal, you are still there to salvage valuable technology and make a profit selling said items to the colony."
+	description = "Старатель служит как вышибала у Бригадира/Начальника Цеха, находясь в иерархии где-то между живым щитом и чистильщиком от тараканов.<br>\
+    Ваша работа держать Спасателей и всех рядом с вами под защитой, сражаясь и идя первым в опасные места. <br>\
+    Хоть бой является вашей основной задачей, вы так же занимаетесь сбором ценных технологий и продажей, продавая всё собранное Колонии."
 
-	duties = "Guard your peers from hostile creatures and other dangers that cross your path.<br>\
-	Use whatever measures necessary to ensure survival, but try not to soil the standing of your team.<br>\
-	Help with the more general salvaging and heavy lifting."
+	duties = "Защищать своих напарников от враждебных существ и других опасностей на своем пути.<br>\
+    Используйте всё, что обеспечит ваше выживание, но не запятнайте репутацию вашей команды.<br>\
+    Помогайте с основным сбором вещей и работой с тяжелыми объектами."
 
 /obj/landmark/join/start/pro
 	name = "Prospector"
