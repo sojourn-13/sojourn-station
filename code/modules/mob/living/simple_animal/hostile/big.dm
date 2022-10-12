@@ -284,6 +284,8 @@
 	meat_amount = 10 //extra thicc
 	leather_amount = 20
 	bones_amount = 10
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/croaker_tongue)
 	mob_size = MOB_LARGE
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE)
 	var/alerted = FALSE

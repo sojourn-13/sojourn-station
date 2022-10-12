@@ -87,3 +87,17 @@
 	icon_state = "nightstalker_tooth"
 	item_state = "nightstalker_tooth"
 	price_tag = 600
+
+/obj/item/animal_part/croaker_tongue //start of the dok hunter arc
+	name = "croaker lord tongue"
+	desc = "A hulking tongue of a venerable Croaker Lord. A tool used by the Lord to hunt the various pest that encroached its domain. Even now trying to pull your hand away too fast from it causes it to grip to you like a vise."
+	icon_state = "croaker_tongue"
+	item_state = "croaker_tongue"
+	price_tag = 2000 //i kinda just eyeballed this cause its def rarer than a tahca antler but maybe not chimera fangs? idk
+
+/obj/item/animal_part/emperor_silk_gland
+	name = "imperial silk gland"
+	desc = "The carefully extracted from a fallen Emperor spider. The silk from an Emperor spider is regarded as some of the strongest and finest ever seen."
+	icon_state = "emperor_silk"
+	item_state = "emperor_silk"
+	price_tag = 1000
