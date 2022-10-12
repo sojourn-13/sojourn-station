@@ -19,7 +19,7 @@
 
 	init_firemodes = list(
 		list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=0.2, fire_stacks=0, move_delay=null, icon="semi"),
-		list(mode_name="fire blast", mode_desc="Consumes one round to fire a burst of flame.", burst=1, fire_delay=0.2, fire_stacks=3, penetration_multiplier = 0.5, damage_multiplier = 0.9, icon="kill") //Worse than Kurtz incendiary.
+		list(mode_name="fire blast", mode_desc="Consumes one round to fire a burst of flame.", burst=1, fire_delay=0.2, fire_stacks=3, penetration_multiplier = 0.5, damage_multiplier = 0.8, icon="kill") //Worse than Kurtz incendiary.
 		)
 
 	reload_sound 	= 'sound/weapons/guns/interact/reload_silver.ogg'
