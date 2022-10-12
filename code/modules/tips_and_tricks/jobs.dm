@@ -5,351 +5,351 @@
 
 /tipsAndTricks/jobs/captain_boss
     jobs_list = list(/datum/job/premier)
-    tipText = "As a premier, you function as an internal affairs agent, lawyer, and mediator."
+    tipText = "Как Премьер этой колонии, вы выполняете функции агента внутренних дел, юриста и посредника."
 
 /tipsAndTricks/jobs/ironhammer_theft
     jobs_list = list(/datum/job/smc, /datum/job/swo, /datum/job/supsec, /datum/job/inspector, /datum/job/medspec, /datum/job/trooper, /datum/job/officer, /datum/job/serg)
-    tipText = "As a member of security, you have broad access to chase criminals. This does not mean you can take anything you have access to. Taking things from other departments is theft!"
+    tipText = "Как у сотрудника охраны, у вас есть широкий доступ к другим отделам. Это не означает, что вы можете взять все, к чему у вас есть доступ. Брать вещи из других отделов - это воровство!"
 
 /tipsAndTricks/jobs/plants_are_dieing_gardener
     jobs_list = list(/datum/job/hydro)
-    tipText = "As the gardener your exspected to maintain potted plants around the colony."
+    tipText = "Как садовник, вы должны поддерживать растения и вокруг колонии."
 
 /tipsAndTricks/jobs/newsprint
     jobs_list = list(/datum/job/janitor)
-    tipText = "Your bundle of newsprint will never run out of paper, make sure to keep those news casters all stocked up."
+    tipText = "В вашей пачке газетной бумаги никогда не кончится бумага, убедитесь, что вся станция оснащена газетами."
 
 /tipsAndTricks/jobs/guild_resale_profit
     jobs_list = list(/datum/job/merchant, /datum/job/cargo_tech, /datum/job/mining)
-    tipText = "As Lonestar, you should be buying up valuable things from scavengers and reselling them for a profit. Buy anything of value that's brought to you."
+    tipText = "Как член Lonestar, вы должны скупать ценные вещи у мусорщиков и перепродавать их с прибылью. Покупайте все ценное, что вам приносят."
 
 /tipsAndTricks/jobs/guild_price_scanner
     jobs_list = list(/datum/job/merchant, /datum/job/cargo_tech, /datum/job/mining)
-    tipText = "There is a price scanner that can help you appraise items. Your PDA also has this scanner installed."
+    tipText = "В колонии есть сканер цен, который может помочь вам оценить товары. На вашем КПК также установлен этот сканер."
 
 /tipsAndTricks/jobs/mines_are_danger
     jobs_list = list(/datum/job/merchant, /datum/job/cargo_tech, /datum/job/mining)
-    tipText = "The mines might hold a lot of ore, but also a lot of danger. Nightmare Stalkers, Spiders, Roaches and other monsters are commonplace down there."
+    tipText = "В шахтах обычно много руды, но также и много опасности. Преследователи из ваших кошмаров, Пауки полные яда, Тараканы и другие монстры - обычное дело там, внизу."
 
 /tipsAndTricks/jobs/custom_venders
     jobs_list = list(/datum/job/merchant, /datum/job/cargo_tech, /datum/job/mining)
-    tipText = "Always try to make use of your Custom Vending Machines when you can, they can sell products when you are busy making more deals. Other departments will love you for setting one up for them as well."
+    tipText = "Всегда старайтесь использовать Custom Vending Machines, когда это возможно, они могут продавать товары, когда вы заняты заключением новых сделок. Другие отделы будут рады, если вы создадите такой же и для них."
 
 /tipsAndTricks/jobs/drillllls
     jobs_list = list(/datum/job/cargo_tech, /datum/job/mining)
-    tipText = "The massive drills mine deep into the ground on the tile its drilling, upgrading it will increase its AOE to more tiles."
+    tipText = "Массивные сверла глубоко проникают в землю на том тайле, который они сверлят, модернизация увеличит их радиус до большего количества плиток."
 
 /tipsAndTricks/jobs/diggyhole
     jobs_list = list(/datum/job/cargo_tech, /datum/job/mining)
-    tipText = "The ground itself can be digged to get more ore with a shovel, this will likely give you rocks that can be hammered for more ore fragments."
+    tipText = "Саму землю можно перекопать лопатой, чтобы получить больше руды, это, скорее всего, даст вам камни, которые можно отбивать молотком для получения большего количества осколков руды."
 
 /tipsAndTricks/jobs/the_wall_of_ore
     jobs_list = list(/datum/job/cargo_tech, /datum/job/mining)
-    tipText = "You can use certain types of picks to mine the walls of the mines that are impassable and indestructible, this will yield more ore fragments without destroying the rock."
+    tipText = "Вы можете использовать определенные типы кирок, чтобы пробивать стены шахт, которые до этого были непроходимы и неразрушимы, это даст больше осколков руды, без необходимости рушить камень."
 
 /tipsAndTricks/jobs/surface_mining
     jobs_list = list(/datum/job/cargo_tech, /datum/job/mining)
-    tipText = "For those who want to avoid the dark, lonely, scary mines, you can go to the surface and find a nearby cave by the lakeside to mine out. Sadly, this will not get much ore but could be an interesting prospecting choice..."
+    tipText = "Для тех, кто хочет избежать темных, одиноких, страшных шахт, вы можете подняться на поверхность и найти ближайшую пещеру на берегу озера, чтобы заняться добычей полезных ископаемых. К сожалению, это не даст вам больше руды, но может стать интересным выбором для исследований..."
 
 /tipsAndTricks/jobs/survive
     jobs_list = list(/datum/job/foreman, /datum/job/mining, /datum/job/salvager, /datum/job/pro)
-    tipText = "Don't die."
+    tipText = "Не умирать... Ну хотя-бы не так быстро..."
 
 /tipsAndTricks/jobs/scrap_stuff
     jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
-    tipText = "Broken Devices, Scrap Metal, and Burnt Boards are all worth grabbing, as they can have random materials or at least some steel, glass and/or plastic."
+    tipText = "Сломанные устройства, металлолом и обгоревшие доски - все это стоит собирать, так как в них могут быть случайные материалы или, по крайней мере, немного стали, стекла и / или пластика."
 
 /tipsAndTricks/jobs/scrap_ammo_uses
     jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
-    tipText = "Scrap ammo, while dealing less damage, has great uses for its availability, like shooting down lockers whenever a hacking tool is not available."
+    tipText = "Боеприпасы из хлама, хоть и наносят меньше урона, имеют большое применение благодаря своей доступности, например, сбивают замки всякий раз, когда инструмент для взлома недоступен."
 
 /tipsAndTricks/jobs/pointy_thing
     jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
-    tipText = "Daggers and knives when stabbed in the back of monsters and man alike will deal more damage than normal."
+    tipText = "Кинжалы и ножи, вонзенные в спину как монстров, так и людей, наносят больше урона, чем обычно. Нет ничего лучше чем ударить в спину друга, не так ли?"
 
 /tipsAndTricks/jobs/sell_things_you_hoarding_goblins
     jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
-    tipText = "Selling things to other departments is part of your job. Blackshield and Marshals like weapons and ammo, Soteria will always love getting materials and Research disks. The Guild (specially a Guild Master) would appreciate Curios, cable coils and materials."
+    tipText = "Продажа товаров другим отделам - это часть вашей работы. Черный щит и маршалы любят оружие и боеприпасы, Сотерия всегда будет рада получить материалы и исследовательские диски. Гильдия (особенно Гильдмастер) была бы признательна за редкости, кабельные катушки и материалы как пример... Ну или подарите им тостер, они отвлекутся на молитвы..."
 
 /tipsAndTricks/jobs/your_perks_are_op
     jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
-    tipText = "You have a perk that lets you tell at a glance what an anomaly on an oddity does, you can market this for a profit!"
+    tipText = "У вас есть перк, который позволяет вам с первого взгляда определить, как влияет аномалия на странности, вы можете продавать эти знания с прибылью!"
 
 /tipsAndTricks/jobs/captain_leader
     jobs_list = list(/datum/job/premier)
-    tipText = "A wise man's advise is always listened to, because a wise man will never give bad advice."
+    tipText = "К советам мудрого человека всегда прислушиваются, потому что мудрый человек никогда не даст плохого совета."
 
 /tipsAndTricks/jobs/captain_free_access
     jobs_list = list(/datum/job/premier)
-    tipText = "You didn't pick this role for the ID, did you?"
+    tipText = "Вы выбрали эту роль только для карты с полным доступом, не так ли?"
 
 /tipsAndTricks/jobs/captain_value_your_ship
     jobs_list = list(/datum/job/premier)
-    tipText = "When two departments come into conflict, don't hesitate to smooth things over."
+    tipText = "Когда два отдела вступают в конфликт, не стесняйтесь сглаживать ситуацию."
 
 /tipsAndTricks/jobs/captain_is_overseer
     jobs_list = list(/datum/job/premier)
-    tipText = "You have a vital out-of-character role; you are the quest-giver. If players lacks direction and the colony is getting restless or bored, give them something productive to do."
+    tipText = "У вас есть жизненно важная роль вне персонажа; вы даете задания, если игрокам не хватает направления для развития, а колония становится беспокойной или скучающей, дайте им какое-нибудь продуктивное занятие.."
 
 /tipsAndTricks/jobs/is_captain_right
     jobs_list = list(/datum/job/premier)
-    tipText = "Listen to your fellow Council members. Their input is invaluable, specially in situations regarding their area of expertise."
+    tipText = "Прислушайтесь к своим коллегам - членам Совета. Их вклад неоценим, особенно в ситуациях, касающихся их области работы."
 
 /tipsAndTricks/jobs/engies_tribe
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-    tipText = "Since ancient times, the Guild had trained the best Engineers in the galaxy. That is why you are called Master."
+    tipText = "С древних времен Гильдия готовила лучших Инженеров в галактике. Вот почему вас называют Мастером."
 
 /tipsAndTricks/jobs/unlimitedpower
 	jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-	tipText = "Solars aren't the only way to power up the colony! There is a Dam at the north side of the Guild controlled by a computer which will notify you through the Guild's communication channel when you can open the floodgates to generate power, as well as diesel and PACMAN-type generators that take different kinds of mats for fuel."
+	tipText = "Солнечные батареи - не единственный способ обеспечить колонию энергией! На северной стороне Гильдии есть Плотина, управляемая компьютером, который уведомит вас по каналу связи Гильдии, когда вы сможете открыть шлюзы для выработки электроэнергии, а также дизельные генераторы и генераторы типа PACMAN, которые используют различные виды материалов в качестве топлива."
 
 /tipsAndTricks/jobs/youaredamright
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-    tipText = "The computer that controls the Dam can detect if the turbines are functioning correctly. If they aren't, manually go check their condition by examining them. If there's debris blocking it, use a crowbar to pull it out. If the turbine is stalling out, pulsing it with a multitool will reset it to its default working state."
+    tipText = "Компьютер, который управляет плотиной, может определить, правильно ли работают турбины. Если это не так, вручную проверьте их состояние, осмотрев их. Если турбину блокирует мусор, используйте лом, чтобы вытащить его. Если турбина заглохла, пульсирование с помощью мультитула вернет ее в рабочее состояние по умолчанию."
 
 /tipsAndTricks/jobs/smithing
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-    tipText = "Entice clients to buy from you by reminding them you can print ANY kind of ammunition from the bullet fabricator, as well as produce interesting gun mods, armor mods, tool mods, and even a flaming sword!"
+    tipText = "Побудите клиентов покупать у вас, напомнив им, что вы можете печатать ЛЮБЫЕ боеприпасы в bullet fabricator, а также создавать интересные моды для оружия, брони, инструментов и даже пылающий меч!"
 
 //	Supermatter tips commented out because we have progressed past the need for a Supermatter.
 //	Might want to re-add these if we ever get the opportunity to build our own Supermatter engines.
 
 //	/tipsAndTricks/jobs/engies_suppermatter_one
 //	jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-//	tipText = "The super matter is a fickle mistress and each guild has their own set up method. No method is strictly wrong;those who made such poor choices would be dead by now, surely..."
+//	tipText = "Суперматерия - переменчивая властительница, и у каждой гильдии есть свой собственный метод настройки. Ни один метод не является строго неправильным; те, кто сделал такой неправильный выбор, наверняка были бы уже мертвы.. Как и вся колония, а может и планета"
 
 //	/tipsAndTricks/jobs/engies_suppermatter_two
 //	jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-//	tipText = "Venting the super matter's overheated coolant may drop temperatures immediately, but without fresh coolant gas the super matter will almost surely delaminate."
+//	tipText = "Выпуск перегретой охлаждающей жидкости из суперматерии может привести к немедленному снижению температуры, но без свежего охлаждающего газа суперматерия почти наверняка расслаивается. И делает бум."
 
 //	tipsAndTricks/jobs/engies_suppermatter_three
 //	jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-//	tipText = "Woe betide the guild master who allows the crystal to delaminate, the number of such crystals dwindle. Any who cause such disgrace should go up with the engine rather than live with the shame."
+//	tipText = "Горе мастеру гильдии, который позволяет кристаллу расслаиваться каждый раз, ведь количество таких кристаллов сокращается. Любой, кто вызывает такой позор, должен разложиться вместе с двигателем, а не жить с этим клеймом позора"
 
 /tipsAndTricks/jobs/engies_lifekeeper
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-    tipText = "You are responsible for keeping this colony powered, habitable, and with breathable air. Make sure it stays like that at all times."
+    tipText = "Вы несете ответственность за поддержание этой колонии в рабочем состоянии, пригодной для жилья и с пригодным для дыхания воздухом. Убедитесь, что это остается таким всегда."
 
 /tipsAndTricks/jobs/engies_glass_fire
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-    tipText = "In case of fire, break glass."
+    tipText = "В случае пожара разбейте стекло."
 
 /tipsAndTricks/jobs/engies_firespacesuit
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-    tipText = "No Adept lives long without learning that firesuits are not space-proof suits, and not all void suits are fireproof."
+    tipText = "Ни один Адепт не проживет долго, не узнав, что противопожарные костюмы не выдержат вакуум космоса, и не все скафандры огнеупорны."
 
 /tipsAndTricks/jobs/theBlackBox
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-    tipText = "The NanoForge can be powered with any oddity that boosts Mechanical knowledge and is also an Anomaly. The NanoForge Black Box will always have an Anomaly."
+    tipText = "Nano Forge может быть оснащен любой странностью, которая повышает знания в области механики, а также является Аномалией. В черном ящике Nano Forge всегда будет аномалия."
 
 /tipsAndTricks/jobs/bullet_fab
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-    tipText = "The Bullet Fabricator generates usable material points based on the worth of the material in cash. The more expensive the material used, the more usable material you'll get."
+    tipText = "The Bullet Fabricator генерирует очки полезных материалов на основе стоимости материала наличными. Чем дороже используемый материал, тем более полезный материал вы получите."
 
 /tipsAndTricks/jobs/nanoforge
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-    tipText = "NanoForge makes compressed matter, this can fuel RCDs and RCD crossbows, but also is worth quite a lot of credits and makes great fuel in the Bullet Fabricator."
+    tipText = "Nano Forge производит сжатую материю, это может служить топливом для РЦД и арбалетов с РЦД, но также стоит довольно много кредитов и является отличным топливом для изготовления пуль."
 
 /tipsAndTricks/jobs/tric
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-    tipText = "Inaprovaline and Dylovene can be mixed together to produce Tricordazine - a mild regenerative compound that can treat brute/burns/toxin damage and even suffocation. Be careful though, more than thirty units will cause a deadly overdose!"
+    tipText = "Инапровалин и Диловен можно смешать вместе, чтобы получить Трикордразин - мягкое регенерирующее соединение, которое может лечить грубые повреждения / ожоги / токсины и даже удушье. Однако будьте осторожны, более тридцати единиц вызовут смертельную передозировку, старайтесь также не забывать что химикаты смешиваются также и в теле!"
 
 /tipsAndTricks/jobs/reagent_scanner_pda
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-    tipText = "There is a reagent scanner integrated in your PDA."
+    tipText = "В ваш КПК встроен сканер реагентов."
 
 /tipsAndTricks/jobs/medical_scanner_pda
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-    tipText = "Your PDA has an integrated medical scanner."
+    tipText = "В ваш КПК встроен медицинский сканер."
 
 /tipsAndTricks/jobs/cryo_bag_scanning
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-    tipText = "Medical scanners work through body bags, allowing you to scan people currently inside them. This includes stasis bags as well."
+    tipText = "Медицинские сканеры также работают через мешки для трупов, позволяя вам сканировать людей, находящихся в них в данный момент. Это также включает в себя стазисные мешки."
 
 /tipsAndTricks/jobs/detox_chem_clering
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-    tipText = "Dylovene, when injected, will clear toxic chemicals like pararein, blattedin, and general toxins. When consumed orally, it will not purge these poisons but will still treat toxin accumulation damage."
+    tipText = "Диловен при введении выводит токсичные химические вещества, такие как соединения, вдыхаемые и общие токсины. При пероральном употреблении он не выводит эти яды, но все равно лечит накопление токсинов."
 
 /tipsAndTricks/jobs/gas_scanner_pda
     jobs_list = list(/datum/job/cmo, /datum/job/technomancer)
-    tipText = "Inside of your PDA is an installed gas scanner."
+    tipText = "Внутри вашего КПК установлен газовый сканер."
 
 /tipsAndTricks/jobs/carbonPills
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-    tipText = "Carbon can be ingested to treat cases of poisoning and accidental overdose. 1u of carbon will remove 1u of anything in the stomach. This will not, however, purge chemicals in the bloodstream, nor will injecting carbon have the same effect."
+    tipText = "Углерод можно принимать внутрь для лечения случаев отравления и случайной передозировки. 1 часть углерода удалит 1 часть всего, что находится в желудке. Однако это не приведет к удалению химических веществ из кровотока, и инъекция углерода не будет иметь такого же эффекта."
 
 /tipsAndTricks/jobs/inaprov
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-    tipText = "Inaprovaline stabilize a patient in many ways and a go to chemical for critical patients."
+    tipText = "Инапровалин стабилизирует пациента во многих отношениях и является химическим средством для критических пациентов."
 
 /tipsAndTricks/jobs/spooder
 	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-	tipText = "Cht'mant are unaffected by Tricordazine, Kelotane, Dexalin, and Peridaxon, while Bicaridine is half as effective on them. Every other chem that isn't these will heal them normally."
+	tipText = "На Чт'мант не влияют Трикордазин, Келотан, Дилинг и Перидаксон, в то время как Бикаридин действует на них вдвое эффективнее. Любая другая химия, которая не является такой, излечит их нормально."
 
 /tipsAndTricks/jobs/spooder2
 	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-	tipText = "For Cht'mant, chemicals obtained from different roach meats will heal them like normal healing chems do to everyone else. Blattedin acts as Tricordazine, Diplopterum as Dexalin, Starkellin as Bicaridine, Seligitilin as Kelotane, Gewaltine as Dylovene and Fuhrerole as Peridaxon. Remember these overdose at 16 units and can be lethal!"
+	tipText = "Что касается Чт'манта, химические вещества, полученные из различных видов мяса тараканов, излечат их так же, как обычные целебные химикаты излечивают всех остальных. Выпускается в виде Трикордазина, Диплоптерума в виде Дексалина, Старкиллера в виде Бикаридина, Селигитилина в виде Келотана, Желатина в виде Диловена и Фюрерола в виде Перидаксона. Помните, что передозировка в 16 единиц может привести к летальному исходу!"
 
 /tipsAndTricks/jobs/spooder3
 	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-	tipText = "You can grind roach meat on your industrial grinder for useful chemicals. Blattedin and Diplopterum can be obtained from almost every roach, while you can get Seligitillin from Seuche roaches, Gewaltine from Jagers, Starkellin from Panzers, and Fuhrerole from Fuhrers."
+	tipText = "Вы можете измельчить мясо таракана на своей промышленной мясорубке для получения полезных химических веществ. Отбивную и Диплоптерум можно получить практически из любого таракана, в то время как из других тараканов можно получить Селигитиллин, из ягеров - Гевалтин, из панцеров-старкеллин, а из Фюрероле - Фюрерс."
 
 /tipsAndTricks/jobs/birb
 	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-	tipText = "Opifex breathe Nitrogen and are poisoned by Oxygen. By no means you should ever try and remove their special masks, not even for anesthesics. If you must perform surgery on one, administer either strong enough painkillers via injection or pills, or soporifics to avoid them suffering through the procedure."
+	tipText = "Опифекс дышит азотом и отравляется кислородом. Ни в коем случае не пытайтесь снимать с них специальные маски, даже для обезболивания. Если вам необходимо провести операцию на одном из них, введите либо достаточно сильные обезболивающие с помощью инъекций или таблеток, либо снотворные, чтобы избежать их страданий во время процедуры."
 
 /tipsAndTricks/jobs/overdose
 	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-	tipText = "Overdosing will cause adverse (and even lethal) effects to the patient until every single unit of the overdosing chemical is purged from their body. To treat overdose, first purge the overdosing chemical via Dyalisis or Stomach Pump on a Sleeper, or utilize 1u of Haloperidol for blood and Carbon pills for stomach. Only when it's all gone, treat the damage caused by it."
+	tipText = "Передозировка вызовет неблагоприятные (и даже смертельные) последствия для пациента до тех пор, пока из его организма не будет выведена каждая единица передозирующего химического вещества. Чтобы вылечить передозировку, сначала удалите передозирующее химическое вещество с помощью диализа или желудочного насоса у спящего, или используйте 1u Галоперидола для крови и угольные таблетки для желудка. Только когда все это исчезнет, устраните причиненный этим ущерб."
 
 /tipsAndTricks/jobs/lid_draw
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-    tipText = "You can draw reagents from bottles with a syringe, even through a closed lid."
+    tipText = "Вы можете набирать реагенты из флаконов с помощью шприца даже через закрытую крышку."
 
 /tipsAndTricks/jobs/crewMonitorHelp
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-    tipText = "You can use the crew monitoring program on computers to locate injured colonists. It can be downloaded on tablets or laptops for a portable solution. Medical storage always has one tablet for this purpose at the start of every shift."
+    tipText = "Вы можете использовать программу мониторинга экипажа на компьютерах, чтобы найти раненых колонистов. Его можно загрузить на планшеты или ноутбуки для портативного решения. В медицинском хранилище всегда есть один планшет для этой цели в начале каждой смены."
 
 /tipsAndTricks/jobs/odysseus_boons
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-    tipText = "The Odysseus medical mecha is a reliable and fast transport vehicle used best by paramedics or doctors acting as paramedics. The syringe gun module can scan and produce chemicals to deliver on the fly (provided you load it with syringes) and the sleeper module allows you to transport and dose patients inside with basic chems for stabilization on the way to Medbay."
+    tipText = "Медицинская мех Odysseus - это надежное и быстрое транспортное средство, которое лучше всего используется парамедиками или врачами, выполняющими функции парамедиков. Модуль шприц-пистолета может сканировать и производить химические вещества для доставки на лету (при условии, что вы загружаете его шприцами), а модуль слипера позволяет транспортировать и дозировать пациентов внутри с основными химическими препаратами для стабилизации по пути в медотсек."
 
 /tipsAndTricks/jobs/thermite
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-    tipText = "Thermite is a great way to take down walls."
+    tipText = "Термит - отличный способ разрушить стены."
 
 /tipsAndTricks/jobs/grenades
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
-    tipText = "You can make grenades for various purposes, from harmful (like explosion or EMPs) to helpful (like cleaning and weed killing)."
+    tipText = "Вы можете делать гранаты для различных целей, от вредных (например, взрыв или электромагнитное излучение) до полезных (например, уборка и уничтожение сорняков)."
 
 /tipsAndTricks/jobs/cyborgsDontBreathe
     jobs_list = list(/datum/job/cyborg)
-    tipText = "As a cyborg, you don't need oxygen/pressure to survive. You're also quite resistant to heat. Use it to your advantage."
+    tipText = "Как киборгу, вам не нужен кислород / давление, чтобы выжить. Вы также довольно устойчивы к высокой температуре. Используйте это в своих интересах."
 
 /tipsAndTricks/jobs/cyborgsChargersAreAmazing
     jobs_list = list(/datum/job/cyborg)
-    tipText = "Having a cyborg recharger with better manipulators will allow it to heal brute and burn based damage. It will, however, not repair broken plating or radios."
+    tipText = "Наличие зарядного устройства для киборгов с улучшенными манипуляторами позволит ему залечивать грубые повреждения и повреждения, основанные на ожогах. Однако это не приведет к ремонту сломанной обшивки или радиоприемников."
 
 /tipsAndTricks/jobs/siliconRemoteControl
     jobs_list = list(/datum/job/cyborg, /datum/job/ai)
-    tipText = "Silicons have the ability to remotely control machinery. You can open airlocks without bumping into them."
+    tipText = "Силиконы обладают способностью дистанционно управлять машинами. Вы можете открывать воздушные шлюзы, не натыкаясь на них."
 
 /tipsAndTricks/jobs/siliconShortcuts
     jobs_list = list(/datum/job/cyborg, /datum/job/ai)
-    tipText = "Most machinery has keyboard shortcuts. Try alt/shift/ctrl clicking on some. For example- airlocks, air/fire alarms, APC."
+    tipText = "У большинства машин есть сочетания клавиш. Попробуйте нажать alt / shift / ctrl на некоторых. Например - воздушные шлюзы, воздушная/пожарная сигнализация, APC."
 
 /tipsAndTricks/jobs/siliconRemoteControlTwo
     jobs_list = list(/datum/job/cyborg, /datum/job/ai)
-    tipText = "You can access some computer programs without interacting with actual computers using your \"Subsystems\", located in the silicon tab."
+    tipText = "Вы можете получить доступ к некоторым компьютерным программам, не взаимодействуя с реальными компьютерами, используя свои 'Подсистемы', расположенные на вкладке silicon."
 
 /tipsAndTricks/jobs/ai_can_controle_shells
     jobs_list = list(/datum/job/ai)
-    tipText = "As an AI you can remotely control drone shells."
+    tipText = "Как искусственный интеллект, вы можете дистанционно управлять снарядами дронов."
 
 /tipsAndTricks/jobs/pda_paper_scanner
     jobs_list = list(/datum/job/premier, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/smc, /datum/job/pg, /datum/job/rd)
-    tipText = "Your PDA has an integrated paper scanner and printer."
+    tipText = "Ваш КПК оснащен встроенным сканером бумаги и принтером."
 
 /tipsAndTricks/jobs/aiCanBeMoved
     jobs_list = list(/datum/job/ai)
-    tipText = "The AI core can be unwrenched and moved to a safer location, but is trackable by power consumption."
+    tipText = "Ядро искусственного интеллекта можно развернуть и переместить в более безопасное место, но его можно отслеживать по энергопотреблению."
 
 /tipsAndTricks/jobs/expeditionsAreFUN
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
-    tipText = "Expeditions are FUN! Try participating in one."
+    tipText = "Экспедиции - это ВЕСЕЛО! Попробуйте поучаствовать в одной из них."
 
 /tipsAndTricks/jobs/prostheticsForTheMeek
     jobs_list = list(/datum/job/roboticist)
-    tipText = "You can enhance the human body by installing prosthetics and modifications."
+    tipText = "Вы можете улучшить человеческое тело, установив протезы и модификации."
 
 /tipsAndTricks/jobs/chem_app
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist, /datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team)
-    tipText = "There is a program in your PDA called SIRC (Soteria Internal Reagent Catalogue) that can help you with chemistry."
+    tipText = "В вашем КПК есть программа под названием SIRC (Внутренний Каталог Реагентов Сотерии), которая может помочь вам с химией."
 
 /tipsAndTricks/jobs/drink_app
     jobs_list = list(/datum/job/clubworker, /datum/job/clubmanager)
-    tipText = "There is a program in your PDA called Neon Cocktails that can help you with making drinks."
+    tipText = "В вашем КПК есть программа под названием Neon Cocktails, которая может помочь вам в приготовлении напитков."
 
 /tipsAndTricks/jobs/upgrade_dispender
     jobs_list = list(/datum/job/clubworker, /datum/job/clubmanager)
-    tipText = "Your booze and soda dispenser can be hacked with a multitool to give more drink options. It can also be upgraded with advanced parts to charge faster, hold more power, and even make new drinks or chems."
+    tipText = "Ваш диспенсер для выпивки и содовой можно взломать с помощью мультитула, чтобы предоставить больше вариантов напитков. Его также можно модернизировать с помощью усовершенствованных деталей, чтобы заряжать быстрее, удерживать больше энергии и даже готовить новые напитки или химическую продукцию."
 
 /tipsAndTricks/jobs/upgrades
     jobs_list = list(/datum/job/rd, /datum/job/scientist)
-    tipText = "There are many machines that can be upgraded, use an RPED on them to learn what parts it contains, and upgrade those with better ones to increase their efficiency."
+    tipText = "Есть много машин, которые можно модернизировать, используйте на них RPED, чтобы узнать, какие детали он содержит, и обновите их более совершенными, чтобы повысить их эффективность."
 
 /tipsAndTricks/jobs/upgrade_chemdispenders_sleeper
     jobs_list = list(/datum/job/rd, /datum/job/scientist)
-    tipText = "Chem dispensers get more chemical capacity the higher their cell capacity is. Omega (Medium) cells are the best for them, don't waste Atomcells on them!"
+    tipText = "Дозаторы химикатов обладают большей химической емкостью, чем выше емкость их ячеек. Омега (средние) клетки лучше всего подходят для них, не тратьте на них атомные клетки!"
 
 /tipsAndTricks/jobs/bots
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
-    tipText = "Bots are tireless servants that you can create. No janitor? CleanBot to the rescue! Not enough medical staff? MedBot will at least patch them up! Lazy Gardener? Build a Gardenbot for them and charge them extra!"
+    tipText = "Боты - это неутомимые слуги, которых вы можете создать. Нет уборщика? Чистый бот_инок спешит на помощь! Не хватает медицинского персонала? Медбот, по крайней мере, залатает их! Ленивый Садовник? Постройте для них Садового робота и взимайте с них дополнительную плату!"
 
 /tipsAndTricks/jobs/ripley
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
-    tipText = "The Ripley mech is an universal tool for a variety of tasks, be it mining, building, or deconstructing."
+    tipText = "Мех Ripley - это универсальный инструмент для самых разных задач, будь то добыча полезных ископаемых, строительство или разрушение."
 
 /tipsAndTricks/jobs/firefighter
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
-    tipText = "The Ripley Firefighter is an enhanced version of the Ripley sporting more armor and being almost fire proof."
+    tipText = "Ripley Firefighter - это улучшенная версия Ripley, имеющая больше брони и почти несгораемая."
 
 /tipsAndTricks/jobs/odysseus
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
-    tipText = "The Odysseus is a reliable medical mech that can be used as a paramedic vehicle or mobile medical treatment machine."
+    tipText = "Odysseus - это надежный медицинский робот, который может использоваться в качестве фельдшерского автомобиля или мобильной машины для оказания медицинской помощи."
 
 /tipsAndTricks/jobs/gygax
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
-    tipText = "The Gygax is a combat mech. It is a lighly armored, but rather mobile, nightmare to any threats the colony might face."
+    tipText = "Гигакс - боевой мех. Это легкобронированный, но довольно мобильный кошмар для любых угроз, с которыми может столкнуться колония... Или же сама колония столкнется с Гигаксом"
 
 /tipsAndTricks/jobs/durand
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
-    tipText = "The Durand is a combat mech. It is heavily armored and extra scary in confined spaces due to its Defense Mode."
+    tipText = "Дюран - это боевой мех. Он сильно бронирован и особенно страшен в ограниченном пространстве из-за своего режима защиты."
 
 /tipsAndTricks/jobs/phazon
     jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist)
-    tipText = "The Phazon is a combat mech. It has the highest base movespeed, good armor, and can phase through anything thanks to stable bluespace technology."
+    tipText = "Фазон - это боевой мех. Он имеет самую высокую базовую скорость перемещения, хорошую броню и может проходить через что угодно благодаря стабильной технологии bluespace."
 
 /tipsAndTricks/jobs/wall_obelisk
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
-    tipText = "Around some parts of the station their are wall obelisks, they run on biomatter so it might be wise to check them and refill them form time to time."
+    tipText = "Вокруг некоторых частей станции есть настенные обелиски, они работают на биоматериале, поэтому, возможно, было бы разумно время от времени проверять их и пополнять."
 
 /tipsAndTricks/jobs/church_wine_anti_toxin
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
-    tipText = "The Absolutism Cahors Wine can be drank to help combat toxin damage or injected to be a mild painkiller."
+    tipText = "Вино Absolutism Cahors можно пить, чтобы помочь бороться с токсинами, или вводить в качестве легкого обезболивающего."
 
 /tipsAndTricks/jobs/best_dagger_ever
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
-    tipText = "The absolutism ritual knife can be thrown, this is useful for embeding the knife into someones back. If thrown into someone that is also apart of the Absolutism, it is less likely to embed."
+    tipText = "Ритуальный нож абсолютизма можно метать, это полезно для вонзания ножа в чью-то спину. Если его бросить в кого-то, кто также верует в абсолютизм, вероятность его внедрения будет меньше."
 
 /tipsAndTricks/jobs/skyfall_timer
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
-    tipText = "Scrap Beacon has an one hour delay before it can be used again, meaning in a productive shift you can use it 8 times before its end."
+    tipText = "Утилизационный маяк имеет задержку в один час, прежде чем его можно будет использовать снова, что означает, что в продуктивную смену вы можете использовать его 8 раз до ее окончания."
 
 /tipsAndTricks/jobs/plants_n_meat
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
-    tipText = "If your ever in need of biomatter, you can always buy or trade for plants and meat with Hunters or Gardener."
+    tipText = "Если вам когда-нибудь понадобится биоматерия, вы всегда можете купить или обменять ее на растения и мясо у Охотников или Садовников."
 
 /tipsAndTricks/jobs/cleaning_carbine
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
-    tipText = "The cleansing carbine as the name suggests fires cleaning pellets that when hit something will make a small bit of slippery foam that cleans. This can be used both defensively as lasting slip to get away from bigger foes and to normally clean the station if theirs no janitor around."
+    tipText = "Очищающий карабин, как следует из названия, стреляет очищающими гранулами, которые при попадании на что-либо образуют небольшое количество скользкой пены, которая очищает. Это можно использовать как в обороне, так и для длительного скольжения, чтобы уйти от более крупных врагов, и для обычной уборки станции, если поблизости нет уборщика."
 
 /tipsAndTricks/jobs/hunter_meds
     jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
-    tipText = "Tatonkas located in the barn can be bred using wheat and then butchered for bones, leather, and animal parts you can turn into medicine in the crafting menu."
+    tipText = "Татонки, находящиеся в амбаре, можно выращивать из пшеницы, а затем разделывать на кости, кожу и части животных, которые можно превратить в лекарство в меню крафта."
 
 /tipsAndTricks/jobs/hunter_knife
     jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
-    tipText = "Your tools are sacred, don't let anyone take or have your skinning knives. But you can still barter your halberds, crossbow, and armor."
+    tipText = "Ваши инструменты священны, не позволяйте никому брать ваши ножи для снятия шкуры. Но вы все еще можете обменять свои алебарды, арбалет и доспехи."
 
 /tipsAndTricks/jobs/hunter_stimulants
     jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
-    tipText = "When cluckers are butchered they drop a feather that can be turned into a painkiller in the crafting menu. This can be useful when combined with milk taken from tatonkas to boost your defenses."
+    tipText = "Когда клаккеров разделывают, из них выпадает перо, которое можно превратить в болеутоляющее в меню крафта. Это может быть полезно в сочетании с молоком из татонки, чтобы повысить вашу защиту."
 
 /tipsAndTricks/jobs/hunter_mutants
     jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
-    tipText = "Tatonkas and cerberuses have a small chance of mutating everytime one grows up. These mutant variants are much more valuable and much more sought after, but quite rare."
+    tipText = "У татонки и церберов есть небольшой шанс мутировать каждый раз, когда они взрослеют. Эти мутантные варианты гораздо более ценны и гораздо более востребованы, но довольно редки."
 
 /tipsAndTricks/jobs/hunter_allies
     jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
-    tipText = "The cerberus hounds are far sighted and loyal animals who won't ever attack you, they make great hunting allies by acting as distractions against larger enemies and emitting growls when they spot enemies you haven't."
+    tipText = "Гончие цербера - дальновидные и преданные животные, которые никогда не нападут на вас, они становятся отличными союзниками на охоте, отвлекая внимание от более крупных врагов и издавая рычание, когда замечают врагов, которых вы не заметили."
