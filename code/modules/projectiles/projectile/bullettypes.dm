@@ -879,6 +879,11 @@
 	step_delay = 0.9
 	recoil = 25
 	added_damage_bullet_pve = 15
+	
+/obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
+	if (!testing)
+		explosion(target, 0, 0, 3)
+	return TRUE
 
 //Miscellaneous
 /obj/item/projectile/bullet/blank
