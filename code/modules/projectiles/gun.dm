@@ -41,6 +41,7 @@
 	var/move_delay = 1
 	var/fire_sound = 'sound/weapons/Gunshot.ogg'
 	var/modded_sound = FALSE
+	var/fire_stacks = 0 //Should we apply fire stacks on hit?
 
 	var/fire_sound_text = "gunshot"
 	var/rigged = FALSE
@@ -453,6 +454,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			projectile.multiply_pve_damage(multiply_pve_damage)
 
 		projectile.multiply_pve_damage(proj_pve_damage_multiplier)
+
+		if(fire_stacks)
+			projectile.add_fire_stacks(fire_stacks)
 
 		if(muzzle_flash)
 			set_light(muzzle_flash)

@@ -79,6 +79,7 @@
 	var/agony = 0
 	var/embed = 0 // whether or not the projectile can embed itself in the mob
 	var/knockback = 0
+	var/fire_stacks = 0 //Whether to apply fire stacks
 
 	var/shrapnel_type //Do we have a special thing to embed in the target? If this is null, it will embed a generic 'shrapnel' item.
 
@@ -186,6 +187,9 @@
 	added_damage_bullet_pve = initial(added_damage_bullet_pve) * newmult
 	added_damage_laser_pve  = initial(added_damage_laser_pve) * newmult
 
+/obj/item/projectile/add_fire_stacks(newmult)
+	fire_stacks = initial(fire_stacks) + newmult
+
 // bullet/pellets redefines this
 /obj/item/projectile/proc/adjust_damages(var/list/newdamages)
 	if(!newdamages.len)
@@ -203,6 +207,10 @@
 		return FALSE
 	var/mob/living/L = target
 	if (!testing)
+		if(fire_stacks && iscarbon(L))
+			L.adjust_fire_stacks(fire_stacks)
+			L.IgniteMob()
+			src.visible_message(SPAN_WARNING("\The [src] sets [target] on fire!"))
 		L.apply_effects(stun, weaken, paralyze, irradiate, stutter, eyeblur, drowsy)
 	return TRUE
 

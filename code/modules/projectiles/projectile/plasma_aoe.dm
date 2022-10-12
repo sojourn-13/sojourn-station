@@ -9,7 +9,7 @@
 	var/heat_damage = 0 // FALSE or 0 to disable
 	var/emp_strength = 0 // Divides the effects by this amount, FALSE or 0 to disable
 
-	var/fire_stacks = FALSE
+	fire_stacks = FALSE
 	recoil = 30
 
 /obj/item/projectile/plasma/aoe/on_hit(atom/target)
