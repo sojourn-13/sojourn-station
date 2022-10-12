@@ -696,16 +696,9 @@
 /obj/item/projectile/bullet/shotgun/incendiary
 	//This is the best ammo for pvp in a shotgun, beating the stunshell with its pain and cooks anyone in any armor!
 	damage_types = list(BURN = 22.5) //We deal most of are damage with fire stacks
-	var/fire_stacks = 4 //40 pain a fire proc through ALL armor!
+	fire_stacks = 4 //40 pain a fire proc through ALL armor!
 	recoil = 38
 	added_damage_laser_pve = 22.5
-
-/obj/item/projectile/bullet/shotgun/incendiary/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if(iscarbon(target) && !testing)
-		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(fire_stacks)
-		M.IgniteMob()
 
 /obj/item/projectile/bullet/shotgun/scrap
 	damage_types = list(BRUTE = 27)
@@ -772,15 +765,8 @@
 	embed = FALSE
 	can_ricochet = FALSE
 	knockback = 0
-	var/fire_stacks = 4
+	fire_stacks = 4
 	recoil = 17
-
-/obj/item/projectile/bullet/kurtz_50/incendiary/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if(iscarbon(target) && !testing)
-		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(fire_stacks)
-		M.IgniteMob()
 
 /obj/item/projectile/bullet/heavy_rifle_408/railgun
 	can_ricochet = FALSE
@@ -797,15 +783,15 @@
 	can_ricochet = FALSE
 	knockback = 0
 	recoil = 18
-	var/fire_stacks = 4
-
+	fire_stacks = 4
+/*
 /obj/item/projectile/bullet/lrifle/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(iscarbon(target) && !testing)
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
-
+*/
 //Gauss rifle
 /obj/item/projectile/bullet/gauss
 	name = "gauss"
@@ -884,7 +870,7 @@
 	damage_types = list(BRUTE = 15)
 	agony = 5
 	knockback = 1
-	var/fire_stacks = 2
+	fire_stacks = 2
 	armor_penetration = 10
 	nocap_structures = TRUE
 	check_armour = ARMOR_BOMB
@@ -893,15 +879,6 @@
 	step_delay = 0.9
 	recoil = 25
 	added_damage_bullet_pve = 15
-
-/obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
-	if (!testing)
-		explosion(target, 0, 0, 3)
-		if(iscarbon(target))
-			var/mob/living/carbon/M = target
-			M.adjust_fire_stacks(fire_stacks)
-			M.IgniteMob()
-	return TRUE
 
 //Miscellaneous
 /obj/item/projectile/bullet/blank
