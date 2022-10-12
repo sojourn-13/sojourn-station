@@ -188,7 +188,7 @@
 	added_damage_laser_pve  = initial(added_damage_laser_pve) * newmult
 
 /obj/item/projectile/add_fire_stacks(newmult)
-	fire_stacks = newmult
+	fire_stacks = initial(fire_stacks) + newmult
 
 // bullet/pellets redefines this
 /obj/item/projectile/proc/adjust_damages(var/list/newdamages)
