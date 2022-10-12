@@ -40,15 +40,15 @@
 
 	perks = list(/datum/perk/stalker, /datum/perk/job/prospector_conditioning)
 
-	description = "The foreman leads the prospectors, a group of independent scavengers seeking fortune from ruins and scrap.<br>\
-	Your goal is to lead your team into hostile locations and take everything of value that isn't nailed down - and the nails too!<br>\
-	As potentially the youngest head of staff and the one expected to be in the most danger at all times you should be independent and cunning.<br>\
-	Your work is perhaps the most dangerous within the entire colony, so good combat and survival skills are essential."
+	description = "Бригадир командует старателями, группой независимых сборщиков, ищущих удачу в руинах и мусоре. <br>\
+    Ваша задача - вести вашу команду в опасные местности и забрать всё ценное, что не прибито гвоздями - и гвозди тоже!<br>\
+    Как потенциально самый молодой глава состава,  от вас ожидается быть в опасности почти всегда - вы должны быть независимы и хитры.<br>\
+    Ваша работа возможно самая опасная во всей колонии, поэтому хорошие навыки выживания и боя необходимы."
 
-	duties = "Assemble your team of prospectors and salvagers by equipping them with whatever you can find in your prep area and elsewhere.<br>\
-		Lead your team through dangerous areas and ensure they recover everything of value.<br>\
-		Keep everyone alive and ensure nobody is left behind.<br>\
-		Fill in any missing role on your team be it as muscle, medical, or technical support."
+	duties = "Соберите свою команду старателей и сборщиков, снаряжая их всем тем, что вы сможете найти у себя в отделе, или где либо ещё.<br>\
+        Ведите свою команду через опасные местности и обеспечьте гарантию того, что всё ценное будет собрано..<br>\
+        Держите всех в живых, и не смейте оставлять кого-либо позади.<br>\
+        Заполните пробелы в вашей команде, будь это боевая, медицинская, или техническая поддержка."
 
 /obj/landmark/join/start/foreman
 	name = "Foreman"
@@ -91,14 +91,14 @@
 
 	perks = list(/datum/perk/junkborn, /datum/perk/stalker)
 
-	description = "The Salvager is an informally trained specialist for the prospectors who functions as both an engineer and a doctor.<br>\
-	Your primary role is that of a field medic. Treat and stabilize the wounded on the combat backlines, and evacuate the critically injured.<br>\
-	Your secondary task is providing technical support to the team by breaching walls, building FOBs, repairing broken equipment, and extracting valuables from junk piles.<br>\
-	Remember that you are here to gain riches from the abandoned wilds. Don't waste time and resources mindlessly hunting creatures."
+	description = "Спасатель это неформальный обученный специалист, работающий как инженер и доктор.<br>\
+    Ваша основная роль - полевой медик. Лечите и стабилизируйте раненных в тылу боя, и эвакуируйте критически раненных.<br>\
+    Ваша вторая задача это обеспечение технической поддержки вашей команды - уничтожение стен, постройка ФОБов, починка оборудования, сбор полезных вещей из куч мусора.<br>\
+    Помните, что вы тут ради сбора полезного с заброшенных территорий. Не тратьте по пусту время и ресурсы, безрассудно охотясь на существ."
 
-	duties = "Extract resources for your employer. Use equipment to access new areas and gain a foothold in the wilderness.<br>\
-	Perform medical services on injured colleagues, from patching wounds to full field surgery.<br>\
-	Leave security duties to the hired muscle unless faced with no other option."
+	duties = "Сбор ресурсов для своего нанимателя. Используйте экипировку для получения доступа в новые зоны и закрепите свое присутствие на диких территориях.<br>\
+    Оказывайте медицинскую помощь вашим напарникам, от обработки ран до полноценной полевой хирургии.<br>\
+    Оставьте защиту группы нанятым вышибалам, кроме ситуаций с отсутствием такого выбора."
 
 /obj/landmark/join/start/salvager
 	name = "Salvager"
