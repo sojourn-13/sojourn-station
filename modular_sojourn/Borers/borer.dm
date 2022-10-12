@@ -311,12 +311,13 @@
 		else
 			to_chat(src, SPAN_NOTICE("Congratulations! You've reached Evolution Level 1, new reagents and new abilities are now available."))
 		produced_reagents |= list("inaprovaline", "tricordrazine", "synaptizine", "imidazoline", "hyronalin")
-		abilities_in_host |= list(/mob/living/simple_animal/borer/proc/say_host, /mob/living/simple_animal/borer/proc/whisper_host, /mob/living/simple_animal/borer/proc/commune)
+		abilities_in_host |= list(/mob/living/simple_animal/borer/proc/say_host, /mob/living/simple_animal/borer/proc/whisper_host, /mob/living/simple_animal/borer/proc/commune, /mob/living/simple_animal/borer/proc/sample_blood)
 		abilities_standalone |= list(/mob/living/simple_animal/borer/proc/commune)
 		if(host && !controlling)
 			verbs += /mob/living/simple_animal/borer/proc/say_host
 			verbs += /mob/living/simple_animal/borer/proc/whisper_host
 			verbs += /mob/living/simple_animal/borer/proc/commune
+			verbs += /mob/living/simple_animal/borer/proc/sample_blood
 		if(!host)
 			verbs += /mob/living/simple_animal/borer/proc/commune
 		max_chemicals += (borer_level * 10)

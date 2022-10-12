@@ -372,7 +372,7 @@
 	set desc = "Send a jolt of electricity through your host, reviving them."
 
 	if(host.stat != DEAD)
-		to_chat(usr, "Your host is already alive.")
+		to_chat(src, "Your host is already alive.")
 		return
 
 	if(chemicals < 500)
@@ -658,3 +658,213 @@
 
 		to_chat(H, SPAN_WARNING("Your nose begins to bleed..."))
 		H.drip_blood(1)
+
+/mob/living/simple_animal/borer/proc/sample_blood()
+	set category = "Abilities"
+	set name = "Sample blood"
+	set desc = "Discover what ails them."
+
+	if(!ishuman(host))
+		to_chat(src, SPAN_WARNING("This creature is too simplistic to care for."))
+		return
+
+	var/dat
+	var/delete
+	var/temphtml
+
+	if (delete && temphtml) //Window in buffer but its just simple message, so nothing
+		delete = delete
+	else if (!delete && temphtml) //Window in buffer - its a menu, dont add clear message
+		dat = text("[]<BR><BR><A href='?src=\ref[];clear=1'>Main Menu</A>", temphtml, src)
+	else
+		if (host) //are we inside?
+			dat = format_host_data(get_host_data())
+		else
+			dat = SPAN_WARNING("This is a bug.")
+
+	dat += text("<BR><A href='?src=\ref[];mach_close=scanconsole'>Close</A>", src)
+	src << browse(dat, "window=scanconsole;size=430x600")
+	return
+
+/mob/living/simple_animal/borer/proc/get_host_data()
+	if (!ishuman(host))
+		return
+	var/mob/living/carbon/human/H = host
+	var/list/host_data = list(
+		"stationtime" = stationtime2text(),
+		"stat" = H.stat,
+		"health" = round(H.health/H.maxHealth)*100,
+		"virus_present" = H.virus2.len,
+		"bruteloss" = H.getBruteLoss(),
+		"fireloss" = H.getFireLoss(),
+		"oxyloss" = H.getOxyLoss(),
+		"toxloss" = H.getToxLoss(),
+		"rads" = H.radiation,
+		"cloneloss" = H.getCloneLoss(),
+		"brainloss" = H.getBrainLoss(),
+		"paralysis" = H.paralysis,
+		"bodytemp" = H.bodytemperature,
+		"inaprovaline_amount" = H.reagents.get_reagent_amount("inaprovaline"),
+		"dexalin_amount" = H.reagents.get_reagent_amount("dexalin"),
+		"stoxin_amount" = H.reagents.get_reagent_amount("stoxin"),
+		"bicaridine_amount" = H.reagents.get_reagent_amount("bicaridine"),
+		"dermaline_amount" = H.reagents.get_reagent_amount("dermaline"),
+		"blood_amount" = round((H.vessel.get_reagent_amount("blood") / H.species.blood_volume)*100),
+		"disabilities" = H.sdisabilities,
+		"lung_ruptured" = H.is_lung_ruptured(),
+		"external_organs" = H.organs.Copy(),
+		"internal_organs" = H.internal_organs.Copy(),
+		"species_organs" = H.species.has_process, //Just pass a reference for this, it shouldn't ever be modified outside of the datum.
+		"NSA" = max(0, H.metabolism_effects.get_nsa()),
+		"NSA_threshold" = H.metabolism_effects.nsa_threshold
+		)
+	return host_data
+
+
+/mob/living/simple_animal/borer/proc/format_host_data(var/list/occ)
+	var/dat = "<font color='blue'><b>Sampling taken at [occ["stationtime"]]</b></font><br>"
+	dat += "<font color='blue'><b>Creature's vitality:</b></font><br>"
+
+	var/aux
+	switch (occ["stat"])
+		if(0)
+			aux = "Conscious"
+		if(1)
+			aux = "Unconscious"
+		else
+			aux = "Dead"
+	dat += text("[]\tHealth %: [] ([])</font><br>", ("<font color='[occ["health"] > 50 ? "blue" : "red"]>"), occ["health"], aux)
+	if (occ["virus_present"])
+		dat += "<font color='red'>Viral pathogen detected in blood stream.</font><br>"
+	dat += text("[]\t-Brute Damage %: []</font><br>", ("<font color='[occ["bruteloss"] < 60  ? "blue" : "red"]'>"), occ["bruteloss"])
+	dat += text("[]\t-Respiratory Damage %: []</font><br>", ("<font color='[occ["oxyloss"] < 60  ? "blue" : "red"]'>"), occ["oxyloss"])
+	dat += text("[]\t-Toxin Content %: []</font><br>", ("<font color='[occ["toxloss"] < 60  ? "blue" : "red"]'>"), occ["toxloss"])
+	dat += text("[]\t-Burn Severity %: []</font><br><br>", ("<font color='[occ["fireloss"] < 60  ? "blue" : "red"]'>"), occ["fireloss"])
+
+	dat += text("[]\tRadiation Level %: []</font><br>", ("<font color='[occ["rads"] < 10  ? "blue" : "red"]'>"), occ["rads"])
+	dat += text("[]\tGenetic Tissue Damage %: []</font><br>", ("<font color='[occ["cloneloss"] < 1  ? "blue" : "red"]'>"), occ["cloneloss"])
+	dat += text("[]\tApprox. Brain Damage %: []</font><br>", ("<font color='[occ["brainloss"] < 1  ? "blue" : "red"]'>"), occ["brainloss"])
+	dat += text("[]\tNeural System Accumulation: []/[]<br>", ("<font color='[occ["NSA"] < occ["NSA_threshold"]  ? "blue" : "red"]'>"), occ["NSA"], occ["NSA_threshold"])
+	dat += text("Paralysis Summary %: [] ([] seconds left!)<br>", occ["paralysis"], round(occ["paralysis"] / 4))
+	dat += text("Body Temperature: [occ["bodytemp"]-T0C]&deg;C ([occ["bodytemp"]*1.8-459.67]&deg;F)<br><HR>")
+
+	dat += text("[]\tBlood Level %: [] ([] units)</FONT><BR>", ("<font color='[occ["blood_amount"] > 80  ? "blue" : "red"]'>"), occ["blood_amount"], occ["blood_amount"])
+
+	dat += text("Inaprovaline: [] units<BR>", occ["inaprovaline_amount"])
+	dat += text("Soporific: [] units<BR>", occ["stoxin_amount"])
+	dat += text("[]\tDermaline: [] units</FONT><BR>", ("<font color='[occ["dermaline_amount"] < 30  ? "black" : "red"]'>"), occ["dermaline_amount"])
+	dat += text("[]\tBicaridine: [] units</font><BR>", ("<font color='[occ["bicaridine_amount"] < 30  ? "black" : "red"]'>"), occ["bicaridine_amount"])
+	dat += text("[]\tDexalin: [] units</font><BR>", ("<font color='[occ["dexalin_amount"] < 30  ? "black" : "red"]'>"), occ["dexalin_amount"])
+
+	dat += "<HR><table border='1'>"
+	dat += "<tr>"
+	dat += "<th>Organ</th>"
+	dat += "<th>Burn Damage</th>"
+	dat += "<th>Brute Damage</th>"
+	dat += "<th>Other Wounds</th>"
+	dat += "</tr>"
+
+	for(var/obj/item/organ/external/e in occ["external_organs"])
+		var/list/other_wounds = list()
+
+		dat += "<tr>"
+
+		for(var/datum/wound/W in e.wounds) if(W.internal)
+			other_wounds += "Internal bleeding"
+			break
+		if(e.organ_tag == BP_CHEST && occ["lung_ruptured"])
+			other_wounds += "Lung ruptured"
+		if(e.status & ORGAN_SPLINTED)
+			other_wounds += "Splinted"
+		if(e.status & ORGAN_BLEEDING)
+			other_wounds += "Bleeding"
+		if(BP_IS_ASSISTED(e))
+			other_wounds += "Assisted"
+		if(BP_IS_ROBOTIC(e))
+			other_wounds += "Prosthetic"
+		if(e.open)
+			other_wounds += "Open"
+
+		switch (e.germ_level)
+			if (0 to INFECTION_LEVEL_ONE - 1) //in the case of no infection, do nothing.
+			if (INFECTION_LEVEL_ONE to INFECTION_LEVEL_ONE + 200)
+				other_wounds += "Mild Infection"
+			if (INFECTION_LEVEL_ONE + 200 to INFECTION_LEVEL_ONE + 300)
+				other_wounds += "Mild Infection+"
+			if (INFECTION_LEVEL_ONE + 300 to INFECTION_LEVEL_ONE + 400)
+				other_wounds += "Mild Infection++"
+			if (INFECTION_LEVEL_TWO to INFECTION_LEVEL_TWO + 200)
+				other_wounds += "Acute Infection"
+			if (INFECTION_LEVEL_TWO + 200 to INFECTION_LEVEL_TWO + 300)
+				other_wounds += "Acute Infection+"
+			if (INFECTION_LEVEL_TWO + 300 to INFECTION_LEVEL_TWO + 400)
+				other_wounds += "Acute Infection++"
+			if (INFECTION_LEVEL_THREE to INFINITY)
+				other_wounds += "Septic"
+		if(e.rejecting)
+			other_wounds += "being rejected"
+		var/known_implants = list() //You know nothing, jon sno
+		if (e.implants.len)
+			var/unknown_body = FALSE
+			for(var/I in e.implants)
+				if(is_type_in_list(I,known_implants))
+					var/obj/item/implant/device = I
+					other_wounds -= "[device.get_scanner_name()] implanted"
+				else
+					unknown_body = TRUE
+			if(unknown_body)
+				other_wounds += "Inorganic substance detected."
+
+		if(!e.is_stump())
+			dat += "<td>[e.name]</td><td>[e.burn_dam]</td><td>[e.brute_dam]</td><td>[other_wounds.len ? jointext(other_wounds, ":") : "None"]</td>"
+		else
+			dat += "<td>[e.name]</td><td>-</td><td>-</td><td>Not Found</td>"
+		dat += "</tr>"
+
+	for(var/obj/item/organ/internal/I in occ["internal_organs"])
+		if(I.scanner_hidden)
+			continue
+
+		var/list/other_wounds = list()
+		if(BP_IS_ASSISTED(I))
+			other_wounds += "Assisted"
+		if(BP_IS_ROBOTIC(I))
+			other_wounds += "Prosthetic"
+
+		var/obj/item/organ/internal/bone/B = I
+		if(istype(B))
+			if(B.parent.status & ORGAN_BROKEN)
+				other_wounds += "[B.broken_description]"
+
+		var/infection = "None"
+		switch (I.germ_level)
+			if (0 to INFECTION_LEVEL_ONE - 1) //in the case of no infection, do nothing.
+			if (1 to INFECTION_LEVEL_ONE + 200)
+				infection = "Mild Infection"
+			if (INFECTION_LEVEL_ONE + 200 to INFECTION_LEVEL_ONE + 300)
+				infection = "Mild Infection+"
+			if (INFECTION_LEVEL_ONE + 300 to INFECTION_LEVEL_ONE + 400)
+				infection = "Mild Infection++"
+			if (INFECTION_LEVEL_TWO to INFECTION_LEVEL_TWO + 200)
+				infection = "Acute Infection"
+			if (INFECTION_LEVEL_TWO + 200 to INFECTION_LEVEL_TWO + 300)
+				infection = "Acute Infection+"
+			if (INFECTION_LEVEL_TWO + 300 to INFINITY)
+				infection = "Acute Infection++"
+		if(I.rejecting)
+			infection += "being rejected"
+		dat += "<tr>"
+		dat += "<td>[I.name]</td><td>N/A</td><td>[I.damage]</td><td>[other_wounds.len ? jointext(other_wounds, ":") : "None"]</td><td></td>"
+		dat += "</tr>"
+	dat += "</table>"
+
+	var/list/species_organs = occ["species_organs"]
+	for(var/organ_name in species_organs)
+		if(!locate(species_organs[organ_name]) in occ["internal_organs"])
+			dat += text("<font color='red'>No [organ_name] detected.</font><BR>")
+
+	if(occ["sdisabilities"] & BLIND)
+		dat += text("<font color='red'>Cataracts detected.</font><BR>")
+	if(occ["sdisabilities"] & NEARSIGHTED)
+		dat += text("<font color='red'>Retinal misalignment detected.</font><BR>")
+	return dat
