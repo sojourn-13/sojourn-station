@@ -504,6 +504,8 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
+	src.modules += new /obj/item/gripper/ammo(src)
+	src.modules += new /obj/item/gun/projectile/clarissa/moebius/auto_eject(src)
 	src.emag += new /obj/item/tool/baton/robot(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(80000)
