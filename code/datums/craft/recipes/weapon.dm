@@ -196,20 +196,6 @@
 		list(QUALITY_ADHESIVE, 15, 70)
 	)
 
-/datum/craft_recipe/weapon/energy_spear
-	name = "energy spear"
-	result = /obj/item/melee/energy/spear
-	icon_state = "gun"
-	steps = list(
-		list(/obj/item/stack/rods, 1, "time" = 15),
-		list(/obj/item/trash/material/e_sword_cutlass, 1, "time" = 5), // Let's tape it to a rod and call it a spear!
-		list(QUALITY_ADHESIVE, 15, 10),
-		list(QUALITY_PULSING, 10, 20), // We change the cutlass shape into a three-pronged spear through l33t h4ckz
-		list(/obj/item/cell/small/moebius/nuclear, 1),
-		list(/obj/item/stack/cable_coil, 10, "time" = 5),
-		list(QUALITY_WIRE_CUTTING, 15, 5)
-	)
-
 /datum/craft_recipe/weapon/mace
 	name = "makeshift mace"
 	result = /obj/item/tool/hammer/mace/makeshift
@@ -239,21 +225,61 @@
 		list(/obj/item/stack/rods, 3, "time" = 50)
 	)
 
-/datum/craft_recipe/weapon/spear // Greytiders rejoice.
-	name = "throwing spear"
+/datum/craft_recipe/weapon/glass_spear
+	name = "glass spear"
 	result = /obj/item/tool/spear
 	steps = list(
-		list(/obj/item/stack/rods, 1, "time" = 30),
-		list(/obj/item/material/shard, 1, "time" = 10),
-		list(/obj/item/stack/cable_coil, 5, "time" = 5)
+		list(/obj/item/stack/rods, 2, "time" = 30),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(/obj/item/stack/cable_coil, 2, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS, "time" = 10),
+		list(QUALITY_HAMMERING, 5, 10)
 	)
 
-/datum/craft_recipe/weapon/spoon
-	name = "spoon"
-	result = /obj/item/material/kitchen/utensil/spoon
+/datum/craft_recipe/weapon/glass_spear_alt
+	name = "shard spear"
+	result = /obj/item/tool/spear
 	steps = list(
-		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL)
+		list(/obj/item/stack/rods, 2, "time" = 30),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(/obj/item/stack/cable_coil, 2, "time" = 10),
+		list(/obj/item/material/shard, 1, "time" = 10)
 	)
+
+/datum/craft_recipe/weapon/steel_spear
+	name = "steel spear"
+	result = /obj/item/tool/spear/steel
+	steps = list(
+		list(/obj/item/stack/rods, 2, "time" = 30),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(/obj/item/stack/cable_coil, 2, "time" = 10),
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL, "time" = 10),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(QUALITY_HAMMERING, 5, 10))
+
+/datum/craft_recipe/weapon/plasteel_spear
+	name = "plasteel spear"
+	result = /obj/item/tool/spear/plasteel
+	steps = list(
+		list(/obj/item/stack/rods, 2, "time" = 30),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(/obj/item/stack/cable_coil, 2, "time" = 10),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 10),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(QUALITY_HAMMERING, 5, 10))
+
+/datum/craft_recipe/weapon/uranium_spear
+	name = "uranium spear"
+	result = /obj/item/tool/spear/uranium
+	steps = list(
+		list(/obj/item/stack/rods, 2, "time" = 30),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(/obj/item/stack/cable_coil, 2, "time" = 10),
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL, "time" = 10),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(CRAFT_MATERIAL, 1, MATERIAL_URANIUM, "time" = 10),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(QUALITY_HAMMERING, 5, 10))
 
 /datum/craft_recipe/weapon/teleportation_spear
 	name = "telespear"
@@ -263,6 +289,20 @@
 		list(/obj/item/stock_parts/subspace/crystal, 1),
 		list(/obj/item/device/assembly/igniter, 1),
 		list(/obj/item/stack/cable_coil, 10, "time" = 10)
+	)
+
+/datum/craft_recipe/weapon/energy_spear
+	name = "energy spear"
+	result = /obj/item/melee/energy/spear
+	icon_state = "gun"
+	steps = list(
+		list(/obj/item/stack/rods, 1, "time" = 15),
+		list(/obj/item/trash/material/e_sword_cutlass, 1, "time" = 5), // Let's tape it to a rod and call it a spear!
+		list(QUALITY_ADHESIVE, 15, 10),
+		list(QUALITY_PULSING, 10, 20), // We change the cutlass shape into a three-pronged spear through l33t h4ckz
+		list(/obj/item/cell/small/moebius/nuclear, 1),
+		list(/obj/item/stack/cable_coil, 10, "time" = 5),
+		list(QUALITY_WIRE_CUTTING, 15, 5)
 	)
 
 /datum/craft_recipe/weapon/improvised_maul
@@ -311,3 +351,10 @@
 		list(/obj/item/device/assembly/igniter, 1),
 		list(QUALITY_SCREW_DRIVING, 10, "time" = 30),
 		list(/obj/item/stack/cable_coil, 5))
+
+/datum/craft_recipe/weapon/spoon
+	name = "spoon"
+	result = /obj/item/material/kitchen/utensil/spoon
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL)
+	)
