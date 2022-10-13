@@ -98,7 +98,7 @@
 		return TRUE
 	var/list/click_params = params2list(params)
 	if(!click_params || !click_params["left"]) // Only left click
-		return TRUE 
+		return TRUE
 
 	object = resolve_world_target(object)
 	if(object)
@@ -108,6 +108,10 @@
 	return TRUE
 
 /datum/click_handler/fullauto/proc/shooting_loop()
+
+	if(!owner || !owner.mob || owner.mob.resting)
+		return FALSE
+
 	if(target)
 		owner.mob.face_atom(target)
 		do_fire()
