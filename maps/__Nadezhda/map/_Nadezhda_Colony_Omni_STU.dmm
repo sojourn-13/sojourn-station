@@ -6902,11 +6902,6 @@
 /obj/machinery/door/airlock/freezer{
 	req_access = list(28)
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/kitchen)
 "brl" = (
@@ -29219,11 +29214,6 @@
 	pixel_y = -30
 	},
 /obj/effect/floor_decal/industrial/warningred,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/kitchen)
 "fGA" = (
@@ -32169,11 +32159,6 @@
 /obj/effect/floor_decal/industrial/box/red/corners{
 	dir = 4;
 	icon_state = "box_corners_red"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/kitchen)
@@ -46055,14 +46040,6 @@
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/crew_quarters/hydroponics/garden)
-"iTq" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/crew_quarters/kitchen)
 "iTr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/cyan{
@@ -93550,11 +93527,6 @@
 "rJx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -94608,11 +94580,6 @@
 /obj/structure/closet/secure_closet/freezer/meat,
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 6
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
 	},
 /obj/structure/noticeboard/lonestar_service{
 	pixel_y = -31
@@ -98451,15 +98418,6 @@
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/rnd/server)
 "sIi" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	name = "fridge"
 	},
@@ -112928,14 +112886,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
-"vwf" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/crew_quarters/kitchen)
 "vwj" = (
 /obj/item/toy/plushie/fumo/arcueid,
 /obj/structure/barricade{
@@ -142665,7 +142615,7 @@ jps
 kwg
 cud
 sIi
-iTq
+rgG
 rTF
 cud
 vxM
@@ -143474,7 +143424,7 @@ cud
 cud
 egs
 uTx
-vwf
+dma
 smm
 jdf
 xQa
