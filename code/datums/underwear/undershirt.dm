@@ -180,3 +180,28 @@
 /datum/category_item/underwear/undershirt/midriffkeyhole
 	name = "Midriff keyhole Shirt"
 	icon_state = "midriffkeyhole"
+
+/datum/category_item/underwear/undershirt/cropped_tanktop
+	name = "Cropped Tank Top, feminine, v-neck"
+	icon_state = "tanktop_cropped_vneck"
+	has_color = TRUE
+	
+/datum/category_item/underwear/undershirt/tanktop_midriff
+	name = "Tanktop, midriff"
+	icon_state = "tank_midriff"
+	has_color = TRUE
+	
+/datum/category_item/underwear/undershirt/cropped_tanktop_midriff
+	name = "Cropped Tanktop, midriff"
+	icon_state = "tank_midriff_short"
+	has_color = TRUE
+	
+/datum/category_item/underwear/undershirt/blouse_fem
+	name = "Blouse, feminine"
+	icon_state = "blouse_fem"
+	has_color = TRUE
+	
+/datum/category_item/underwear/undershirt/sweater
+	name = "Sweater"
+	icon_state = "sweater"
+	has_color = TRUE

@@ -265,15 +265,7 @@
 	damage_types = list(BURN = 16)
 	check_armour = ARMOR_MELEE
 	kill_count = 3
-	var/fire_stacks = 3
-
-/obj/item/projectile/flamer_lob/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if (!testing)
-		if(isliving(target))
-			var/mob/living/M = target
-			M.adjust_fire_stacks(fire_stacks)
-			M.IgniteMob()
+	fire_stacks = 3
 
 /obj/item/projectile/flamer_lob/Move(atom/A)
 	..()
@@ -298,7 +290,7 @@
 	luminosity_power = 1
 	luminosity_color = COLOR_LIGHTING_RED_MACHINERY //Makes it not as blindingly red
 	luminosity_ttl = 1
-	var/fire_stacks = 1
+	fire_stacks = 1
 	var/flash_range = 1
 	var/light_duration = 1800
 	var/brightness = 10
@@ -317,16 +309,6 @@
 			luminosity_color = chaose_number
 
 	..()
-
-/obj/item/projectile/bullet/flare/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if (!testing)
-		if(iscarbon(target))
-			var/mob/living/carbon/M = target
-			playsound(src, 'sound/effects/Custom_flare.ogg', 100, 1)
-			M.adjust_fire_stacks(fire_stacks)
-			M.IgniteMob()
-			src.visible_message(SPAN_WARNING("\The [src] sets [target] on fire!"))
 
 /obj/item/projectile/bullet/flare/on_impact(var/atom/A)
 	var/turf/T = flash_range? src.loc : get_turf(A)

@@ -110,7 +110,7 @@
 	join_tag = /datum/job/doctor
 
 /datum/job/recovery_team
-	title = "Soteria 'Lifeline' Technician"
+	title = "Soteria Lifeline Technician"
 	flag = RECOVERYTEAM
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
