@@ -110,6 +110,8 @@
 
 	var/shock_resist = 0 // Resistance to paincrit
 
+	var/punch_damage_increase = 0 // increases... punch damage... can be affected by clothing or implants.
+
 	var/language_blackout = 0
 	var/suppress_communication = 0
 
