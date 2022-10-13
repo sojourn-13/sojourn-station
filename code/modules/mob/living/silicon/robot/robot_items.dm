@@ -629,7 +629,7 @@
 /obj/item/storage/bag/robotic/proc/add_to_storage(obj/item/target_item as obj)
 
 	if(max_w_class < target_item.w_class)
-		to_chat(usr, SPAN_NOTICE("[src] can not fit inside."))
+		to_chat(usr, SPAN_NOTICE("[target_item] can not fit inside."))
 		return FALSE
 
 
