@@ -627,17 +627,18 @@
 	return TRUE
 
 /obj/item/storage/bag/robotic/proc/add_to_storage(obj/item/target_item as obj)
+
+	if(max_w_class < target_item.w_class)
+		to_chat(usr, SPAN_NOTICE("[src] can not fit inside."))
+		return FALSE
+
+
 	if(used_storage_space < max_storage_space)
 		var/transfer //Used to track how much was transferred between stacks.
 		var/overfill_amount //Used to track just how much the bag would get filled over it's capacity.
 		if(istype(target_item, /obj/item/stack) && is_type_in_list(target_item, can_hold) || can_hold.len == 0 && !is_type_in_list(target_item, cant_hold))
 		//Checking if the item is a stack since they are processed differently, and if the item is allowed.
 			var/obj/item/stack/S = target_item
-
-			if(max_w_class < target_item.w_class)
-				to_chat(usr, SPAN_NOTICE("[src] can not fit inside."))
-				return FALSE
-
 			if(is_type_in_list(S, contents)) //Checking if the bag contains item's type to avoid needless looping.
 				for(var/obj/item/stack/current_stack in contents)
 					if(current_stack.amount < current_stack.max_amount)
