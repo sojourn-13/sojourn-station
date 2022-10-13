@@ -625,13 +625,11 @@ proc/is_blind(A)
 	if(stat == DEAD)
 		return FALSE
 
-	if(usr.health != usr.maxHealth)
+	if(health != maxHealth)
 		return FALSE
 
 
 	return TRUE
-	return
-
 
 /mob/get_sex()
 	return gender
