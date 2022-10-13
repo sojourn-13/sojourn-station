@@ -266,3 +266,5 @@
 /obj/proc/multiply_projectile_agony(newmult)
 
 /obj/proc/multiply_pve_damage(newmult)
+
+/obj/proc/add_fire_stacks(newmult)

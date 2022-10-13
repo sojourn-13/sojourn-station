@@ -605,6 +605,9 @@ proc/is_blind(A)
 /mob/proc/in_perfect_health()
 	return
 
+/mob/proc/in_good_health()
+	return
+
 /mob/living/in_perfect_health()
 	if(stat == DEAD)
 		return FALSE
@@ -624,6 +627,16 @@ proc/is_blind(A)
 			return FALSE
 
 	return ..()
+
+/mob/living/carbon/human/in_good_health()
+	if(stat == DEAD)
+		return FALSE
+
+	if(health != maxHealth)
+		return FALSE
+
+	return TRUE
+
 
 /mob/get_sex()
 	return gender
