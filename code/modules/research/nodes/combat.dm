@@ -28,7 +28,8 @@
 	required_tech_levels = list()
 	cost = 375
 
-	unlocks_designs = list(/datum/design/research/item/flash)
+	unlocks_designs = list(/datum/design/research/item/flash,
+						   /datum/design/research/item/weapon/weapon_upgrade/auto_eject_no_removal)
 
 
 

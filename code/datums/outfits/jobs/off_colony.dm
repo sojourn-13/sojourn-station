@@ -51,5 +51,5 @@
 	l_ear = /obj/item/tool/knife/shiv // Let's see if this frees up backpack content space.
 	id_type = FALSE
 	pda_type = FALSE
-	backpack_contents = list(/obj/item/storage/firstaid/outsider = 1, /obj/item/reagent_containers/food/drinks/flask/lithium = 1)
+	backpack_contents = list(/obj/item/storage/hcases/ammo/scrap/outsider = 1)
 
