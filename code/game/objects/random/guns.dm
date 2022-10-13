@@ -199,6 +199,33 @@
 	spawn_nothing_percentage = 80
 
 
+/obj/random/gun_handmade
+	name = "random handmade gun weapon"
+	icon_state = "gun-black"
+	spawn_nothing_percentage = 30
+
+/obj/random/gun_handmade/item_to_spawn()
+	return pickweight(list(/obj/item/gun/projectile/handmade_pistol = 1,\
+				/obj/item/gun/projectile/handmade_pistol/magnum = 1,\
+				/obj/item/gun/projectile/handmade_pistol/shotgun = 1,\
+				/obj/item/gun/projectile/handmade_pistol/anti_material = 1,\
+				/obj/item/gun/projectile/revolver/handmade = 1,\
+				/obj/item/gun/projectile/boltgun/handmade = 1,\
+				/obj/item/gun/projectile/shotgun/slidebarrel = 1,\
+				/obj/item/gun/energy/laser/makeshift = 1,\
+				/obj/item/gun/energy/lasersmg = 0.5,\
+				/obj/item/gun/energy/lasersmg/alt = 0.5,))
+
+/obj/random/gun_handmade/willspawn
+	name = "will spawn random handmade gun weapon"
+	spawn_nothing_percentage = 0
+	icon_state = "gun-black-hight"
+
+/obj/random/gun_handmade/low_chance
+	name = "low chance random handmade gun weapon"
+	icon_state = "gun-black-low"
+	spawn_nothing_percentage = 80
+
 /obj/random/gun_shotgun
 	name = "random shotgun"
 	icon_state = "gun-red"
@@ -283,6 +310,7 @@
 /obj/random/dungeon_gun_mods
 	name = "random gun mod"
 	icon_state = "gun-red"
+
 /obj/random/dungeon_gun_mods/item_to_spawn()
 	return pickweight(list(/obj/item/gun_upgrade/muzzle/silencer = 1,
 				/obj/item/gun_upgrade/muzzle/pain_maker = 0.3,
@@ -293,6 +321,8 @@
 				/obj/item/gun_upgrade/barrel/excruciator = 1,
 				/obj/item/gun_upgrade/trigger/dangerzone = 1,
 				/obj/item/gun_upgrade/trigger/cop_block = 0.5,
+				/obj/item/gun_upgrade/magwell/auto_eject = 0.5,
+				/obj/item/gun_upgrade/magwell/auto_eject/no_removal = 0.5,
 				/obj/item/gun_upgrade/mechanism/overshooter = 1,
 				/obj/item/gun_upgrade/mechanism/weintraub = 1,
 				/obj/item/gun_upgrade/mechanism/reverse_loader = 0.5,
@@ -309,11 +339,14 @@
 				/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = 0.01))
 
 /obj/random/dungeon_gun_mods/low_chance
-	name = "low chance random gun  mod"
+	name = "low chance random gun mod"
 	icon_state = "gun-red-low"
 	spawn_nothing_percentage = 80
 
 /obj/random/dungeon_gun_mods/voidwolf
+	name = "random voidwolf good only gun mod"
+	icon_state = "gun-red-low"
+	spawn_nothing_percentage = 0
 
 /obj/random/dungeon_gun_mods/voidwolf/item_to_spawn()
 	return pickweight(list( // i hate pickweight but fine

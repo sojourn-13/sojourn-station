@@ -633,6 +633,11 @@
 		if(istype(target_item, /obj/item/stack) && is_type_in_list(target_item, can_hold) || can_hold.len == 0 && !is_type_in_list(target_item, cant_hold))
 		//Checking if the item is a stack since they are processed differently, and if the item is allowed.
 			var/obj/item/stack/S = target_item
+
+			if(max_w_class < target_item.w_class)
+				to_chat(usr, SPAN_NOTICE("[src] can not fit inside."))
+				return FALSE
+
 			if(is_type_in_list(S, contents)) //Checking if the bag contains item's type to avoid needless looping.
 				for(var/obj/item/stack/current_stack in contents)
 					if(current_stack.amount < current_stack.max_amount)
@@ -775,7 +780,7 @@
 	w_class = ITEM_SIZE_BULKY
 	max_storage_space = DEFAULT_BULKY_STORAGE * 2
 	max_w_class = ITEM_SIZE_SMALL
-	can_hold = list()
+	can_hold = list(/obj/item) //hacky fix maybe to let them pick up items
 	cant_hold = list(/obj/item/disk/nuclear)
 
 /obj/item/storage/bag/robotic/trash/autoload(mob/user as mob)

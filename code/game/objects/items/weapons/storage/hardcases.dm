@@ -268,6 +268,19 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	desc = "A lacquer coated ammo can. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
 	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
 
+/obj/item/storage/hcases/ammo/scrap/outsider
+	exspand_when_spawned = FALSE //No exspanding cheats
+
+/obj/item/storage/hcases/ammo/scrap/outsider/populate_contents()
+	new /obj/random/gun_handmade/willspawn(src)
+	new /obj/item/device/lighting/toggleable/flashlight(src)
+	new /obj/item/cell/small/high(src)
+	new /obj/item/cell/medium/high(src)
+	new /obj/item/ammo_kit(src)
+	new /obj/item/storage/firstaid/outsider(src)
+	new /obj/item/reagent_containers/food/drinks/flask/lithium(src)
+
+
 //////////////////////////////////////////Cards//////////////////////////////////////////
 
 /obj/item/storage/hcases/cardcarp
@@ -389,7 +402,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/modular_computer/tablet/moebius/preset(src)
 	new /obj/item/gun/projectile/clarissa/moebius/preloaded_cbo(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
-	new /obj/item/gun_upgrade/muzzle/silencer(src)
 
 /obj/item/storage/hcases/med/medical_job_trama
 	exspand_when_spawned = FALSE //No exspanding cheats
