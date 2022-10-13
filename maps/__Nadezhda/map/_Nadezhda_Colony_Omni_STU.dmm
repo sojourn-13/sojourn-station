@@ -6214,6 +6214,7 @@
 /obj/structure/catwalk,
 /obj/random/techpart/low_chance,
 /obj/random/techpart/low_chance,
+/obj/structure/table/rack/shelf,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/side/f2section1)
 "bkQ" = (
@@ -17702,6 +17703,7 @@
 /obj/structure/catwalk,
 /obj/random/techpart/low_chance,
 /obj/random/techpart/low_chance,
+/obj/structure/table/rack/shelf,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/side/f2section1)
 "dwT" = (
@@ -67345,6 +67347,11 @@
 /obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"mIW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/maintenance_interior,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/hallway/side/f2section1)
 "mJb" = (
 /obj/structure/table/bench/wooden,
 /obj/machinery/light{
@@ -82792,6 +82799,7 @@
 "pFo" = (
 /obj/structure/catwalk,
 /obj/random/scrap,
+/obj/structure/table/rack/shelf,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/side/f2section1)
 "pFA" = (
@@ -151493,7 +151501,7 @@ fcO
 dwP
 fLN
 qtA
-and
+mIW
 rFO
 tJW
 bcg
