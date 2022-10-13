@@ -628,8 +628,8 @@ proc/is_blind(A)
 	if(health != maxHealth)
 		return FALSE
 
-
 	return TRUE
+
 
 /mob/get_sex()
 	return gender
