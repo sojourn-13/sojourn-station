@@ -97,7 +97,7 @@
 
 /obj/item/animal_part/emperor_silk_gland
 	name = "imperial silk gland"
-	desc = "The carefully extracted from a fallen Emperor spider. The silk from an Emperor spider is regarded as some of the strongest and finest ever seen."
+	desc = "The abdomen carefully extracted from a fallen Emperor spider leaving its silk gland intact. The silk from an Emperor spider is regarded as some of the strongest and finest ever seen but only very little can be extracted from each emperor.."
 	icon_state = "emperor_silk"
 	item_state = "emperor_silk"
 	price_tag = 1000
