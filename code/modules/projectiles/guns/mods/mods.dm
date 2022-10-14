@@ -731,7 +731,25 @@
 	GUN_UPGRADE_AUTOEJECT = TRUE)
 	I.req_gun_tags = list(GUN_MAGWELL)
 	I.gun_loc_tag = GUN_MAGWELL
-	I.prefix = "auto dropped"
+	I.prefix = "auto dropping"
+
+//Fancy verson
+/obj/item/gun_upgrade/magwell/auto_eject/no_removal
+	name = "SI \"Faller\" Magwell Clearer"
+	desc = "A rather oddly designed magwell clearing device that when added to guns that have an auto-eject magwell prevent it, if it dosn't prevent an auto-eject it will force the magwel itself out! When force-ejecting a mag, will play a beeping sound.\
+	Unlike the other versons on the market this was once added will not be removable as it replaces key components to be as seemless as possable."
+	can_remove = FALSE
+	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GLASS = 2, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1)
+
+/obj/item/gun_upgrade/magwell/auto_eject/no_removal/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_AUTOEJECT = TRUE)
+	I.req_gun_tags = list(GUN_MAGWELL)
+	I.gun_loc_tag = GUN_MAGWELL
+	I.prefix = "intrigated dropping"
+
 
 //Underbarrel aka bipods
 

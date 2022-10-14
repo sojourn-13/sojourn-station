@@ -3518,7 +3518,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "aKG" = (
 /obj/item/remains/deer,
 /turf/simulated/floor/asteroid/grass,
@@ -6902,13 +6902,8 @@
 /obj/machinery/door/airlock/freezer{
 	req_access = list(28)
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "brl" = (
 /obj/machinery/microwave/burnbarrel,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -11391,7 +11386,7 @@
 "cmR" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/wall,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "cmV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
@@ -11969,7 +11964,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "csY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
@@ -14338,7 +14333,7 @@
 "cOK" = (
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/white/brown_platform,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "cOR" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -24183,7 +24178,7 @@
 /obj/item/reagent_containers/food/snacks/chocolatebar,
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/white/brown_platform,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "eMx" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -29055,7 +29050,7 @@
 	pixel_y = 23
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "fER" = (
 /obj/structure/table/woodentable,
 /obj/item/reagent_containers/food/snacks/sliceable/bread,
@@ -29219,13 +29214,8 @@
 	pixel_y = -30
 	},
 /obj/effect/floor_decal/industrial/warningred,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "fGA" = (
 /obj/machinery/camera/network/medbay{
 	dir = 1
@@ -32170,13 +32160,8 @@
 	dir = 4;
 	icon_state = "box_corners_red"
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "ghX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/cluster/termite_no_despawn/lower_chance,
@@ -46055,14 +46040,6 @@
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/crew_quarters/hydroponics/garden)
-"iTq" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/eris/crew_quarters/kitchen_storage)
 "iTr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/cyan{
@@ -58063,7 +58040,7 @@
 /obj/item/reagent_containers/food/drinks/milk,
 /obj/item/storage/fancy/egg_box,
 /turf/simulated/floor/tiled/white/brown_platform,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "lcf" = (
 /obj/machinery/shower{
 	dir = 1
@@ -68516,7 +68493,7 @@
 /area/nadezhda/engineering/construction)
 "mXT" = (
 /turf/simulated/mineral,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "mXY" = (
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/effect/decal/cleanable/dirt,
@@ -90514,7 +90491,7 @@
 /area/nadezhda/rnd/server)
 "rgG" = (
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "rgK" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/engineering/workshop)
@@ -93550,11 +93527,6 @@
 "rJx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -94609,16 +94581,11 @@
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 6
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /obj/structure/noticeboard/lonestar_service{
 	pixel_y = -31
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "rTG" = (
 /obj/structure/grille{
 	desc = "Keeps the ruffians out. Hopefully.";
@@ -98451,22 +98418,13 @@
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/rnd/server)
 "sIi" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	name = "fridge"
 	},
 /obj/item/reagent_containers/food/drinks/milk,
 /obj/item/storage/fancy/egg_box,
 /turf/simulated/floor/tiled/white/brown_platform,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "sIn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/holoposter{
@@ -106013,7 +105971,7 @@
 "ugE" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /turf/simulated/floor/tiled/white/brown_platform,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "ugI" = (
 /obj/machinery/light{
 	dir = 4
@@ -112027,9 +111985,6 @@
 	opacity = 0
 	},
 /area/nadezhda/rnd/docking)
-"vnv" = (
-/turf/simulated/wall,
-/area/eris/crew_quarters/kitchen_storage)
 "vnB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9;
@@ -112931,14 +112886,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
-"vwf" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/crew_quarters/kitchen)
 "vwj" = (
 /obj/item/toy/plushie/fumo/arcueid,
 /obj/structure/barricade{
@@ -119920,7 +119867,7 @@
 "wIV" = (
 /obj/structure/sign/department/bar,
 /turf/simulated/wall,
-/area/eris/crew_quarters/kitchen_storage)
+/area/nadezhda/crew_quarters/kitchen)
 "wIZ" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -141253,10 +141200,10 @@ cwr
 cyr
 jTz
 wIV
-vnv
+cud
 cmR
-vnv
-vnv
+cud
+cud
 utm
 rIG
 jdf
@@ -141454,11 +141401,11 @@ wcv
 cwr
 efY
 ptB
-vnv
+cud
 mXT
 mXT
 mXT
-vnv
+cud
 iof
 fNh
 jdf
@@ -141656,11 +141603,11 @@ wcv
 cwr
 wLd
 bwh
-vnv
+cud
 mXT
 mXT
 mXT
-vnv
+cud
 wSq
 gAA
 qoC
@@ -141858,11 +141805,11 @@ wcv
 cwr
 cyr
 bwh
-vnv
+cud
 mXT
 mXT
 mXT
-vnv
+cud
 pLL
 jdf
 jdf
@@ -142060,11 +142007,11 @@ wcv
 cwr
 dqF
 mFH
-vnv
-vnv
-vnv
-vnv
-vnv
+cud
+cud
+cud
+cud
+cud
 rDw
 bgK
 iHQ
@@ -142262,11 +142209,11 @@ wcv
 cwr
 jps
 bwh
-vnv
+cud
 fEL
 rgG
 cOK
-vnv
+cud
 jdf
 pHC
 fNh
@@ -142464,11 +142411,11 @@ wcv
 cwr
 jps
 bwh
-vnv
+cud
 lce
 rgG
 eMt
-vnv
+cud
 jPv
 cev
 xZn
@@ -142666,11 +142613,11 @@ wcv
 cwr
 jps
 kwg
-vnv
+cud
 sIi
-iTq
+rgG
 rTF
-vnv
+cud
 vxM
 sZz
 mhb
@@ -142868,11 +142815,11 @@ bwh
 jVE
 efY
 qRb
-vnv
+cud
 ugE
 rgG
 ghW
-vnv
+cud
 xxL
 cfS
 efv
@@ -143070,11 +143017,11 @@ wXS
 cdl
 vws
 jVE
-vnv
+cud
 aKD
 csW
 fGw
-vnv
+cud
 rPe
 eqF
 xoD
@@ -143272,11 +143219,11 @@ gUG
 gIO
 bev
 wow
-vnv
-vnv
-vnv
+cud
+cud
+cud
 brf
-vnv
+cud
 iNL
 nqB
 efv
@@ -143477,7 +143424,7 @@ cud
 cud
 egs
 uTx
-vwf
+dma
 smm
 jdf
 xQa

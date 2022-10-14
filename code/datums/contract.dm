@@ -450,6 +450,15 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		to_chat(user, SPAN_NOTICE("Mandete completed: [name] ([reward] energy)"))
 
 	excelsior_energy += reward
+	var/datum/antag_faction/F = get_faction_by_id(FACTION_EXCELSIOR)
+	var/datum/objective/timed/excelsior/E = (locate(/datum/objective/timed/excelsior) in F.objectives)
+	if(E)
+		E.mandate_completion()
+	if(user)
+		if(E)
+			to_chat(user, SPAN_NOTICE("Mandate completed: [name] ([reward] energy, [E.time2minutes(E.mandate_increase)] minutes have been added to the detection countdown timer.)"))
+		else
+			to_chat(user, SPAN_NOTICE("Mandate completed: [name] ([reward] energy)"))
 	for (var/obj/machinery/complant_teleporter/t in excelsior_teleporters)
 		t.update_nano_data()
 
