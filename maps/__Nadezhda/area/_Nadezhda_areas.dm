@@ -50,6 +50,9 @@
 	forced_ambience = list('sound/ambience/maintambience.ogg')
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
 
+/area/nadezhda/maintenance/guild
+	name = "Guild Maintence"
+
 /area/nadezhda/maintenance/junk
 	name = "Junk Beacon"
 	icon_state = "disposal"
