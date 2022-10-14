@@ -6,6 +6,8 @@
 	icon_state = "dusters"
 	item_state = "dusters"
 	var/punch_increase = 5
+	var/dusters_givith = FALSE
+	var/to_remove_givith = FALSE
 	price_tag = 10
 
 /obj/item/clothing/gloves/dusters/silver
@@ -65,15 +67,22 @@
 	)
 	price_tag = 100
 
-/obj/item/clothing/gloves/dusters/New()
+/obj/item/clothing/gloves/dusters/dropped(var/mob/M)
 	..()
-	RegisterSignal(src, COMSIG_CLOTH_EQUIPPED, .proc/increase_punch_damage)
-	RegisterSignal(src, COMSIG_CLOTH_DROPPED, .proc/decrease_punch_damage)
+	update_dusters(M)
 
-/obj/item/clothing/gloves/dusters/proc/increase_punch_damage(mob/living/carbon/human/user)
-	if(istype(user))
-		user.punch_damage_increase += punch_increase
+/obj/item/clothing/gloves/dusters/equipped(var/mob/M)
+	.=..()
+	update_dusters(M)
 
-/obj/item/clothing/gloves/dusters/proc/decrease_punch_damage(mob/living/carbon/human/user)
+
+/obj/item/clothing/gloves/dusters/proc/update_dusters(mob/living/carbon/human/user)
 	if(istype(user))
-		user.punch_damage_increase -= punch_increase
+		if(user.gloves == src && !dusters_givith)
+			user.punch_damage_increase += punch_increase
+			dusters_givith = TRUE
+			to_remove_givith = TRUE
+		if(to_remove_givith && !(user.gloves == src))
+			user.punch_damage_increase -= punch_increase
+			dusters_givith = FALSE
+			to_remove_givith = FALSE
