@@ -33,19 +33,24 @@
 #define LANGUAGE_ESPERANTO	"Esperanto"
 #define LANGUAGE_YASSARI	"Yassari"
 
+//Alein / Species specific langauges.
 #define LANGUAGE_ROBOT "Robot Talk"
-#define LANGUAGE_DRONE "Drone Talk"
-#define LANGUAGE_MONKEY "Chimpanzee"
+#define LANGUAGE_OPIFEXEE "Opifexee"
+#define LANGUAGE_CHTMANT "Chthive"
+#define LANGUAGE_KRIOSAN "Kriosan"
+#define LANGUAGE_AKULA "Akula"
+#define LANGUAGE_MARQUA "Marqua"
+#define LANGUAGE_PLANT "Native Plant"
 
+// Special / Antag langauges.
+#define LANGUAGE_MONKEY "Chimpanzee"
+#define LANGUAGE_DRONE "Drone Talk"
 #define LANGUAGE_XENOMORPH "Xenomorph"
 #define LANGUAGE_HIVEMIND "Hivemind"
 #define LANGUAGE_CORTICAL "Cortical Link"
 #define LANGUAGE_CULT "Cult"
 #define LANGUAGE_OCCULT "Occult"
 #define LANGUAGE_BLITZ "Blitzshell Communique"
-#define LANGUAGE_OPIFEXEE "Opifexee"
-#define LANGUAGE_CHTMANT "Chthive"
-#define LANGUAGE_KRIOSAN "Kriosan"
 
 // Language flags.
 #define WHITELISTED  1   // Language is available if the speaker is whitelisted.
