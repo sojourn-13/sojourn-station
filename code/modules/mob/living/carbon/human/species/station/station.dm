@@ -588,7 +588,7 @@
 	default_form = FORM_FOLKEN
 	obligate_name = TRUE
 	obligate_form = TRUE
-	reagent_tag = IS_PLANT
+	reagent_tag = IS_TREE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "N/A"
 	num_alternate_languages = 2
@@ -635,7 +635,7 @@
 	default_form = FORM_MYCUS
 	obligate_name = TRUE
 	obligate_form = TRUE
-	reagent_tag = IS_PLANT
+	reagent_tag = IS_TREE
 	unarmed_types = list(/datum/unarmed_attack/punch/hammer_fist, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "N/A"
 	num_alternate_languages = 2

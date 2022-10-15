@@ -44,7 +44,7 @@
 #define IS_MARQUA 5
 #define IS_KRIOSAN 6
 #define IS_AKULA 7
-#define IS_PLANT 8
+#define IS_TREE 8
 #define IS_OPIFEX 9
 
 
