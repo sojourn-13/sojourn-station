@@ -106,7 +106,7 @@
 	M.stats.addTempStat(STAT_TGH, 10, STIM_TIME, "kriotol")
 	M.stats.addTempStat(STAT_VIG, 20, STIM_TIME, "kriotol")
 	M.add_chemical_effect(CE_DARKSIGHT, SEE_INVISIBLE_NOLIGHTING)
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.2)
 	M.add_chemical_effect(CE_PULSE, 2)
 
 /datum/reagent/stim/robustitol

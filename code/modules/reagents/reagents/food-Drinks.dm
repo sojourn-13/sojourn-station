@@ -1117,7 +1117,7 @@
 				M.adjustOxyLoss(0.3)
 				M.paralysis = max(M.paralysis, 5) // HEART ATTACK!
 				M.add_chemical_effect(CE_NOPULSE, 1)
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.9) // Fry_consumes_100_cups_of_coffee.gif
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.2) // Fry_consumes_100_cups_of_coffee.gif
 	M.make_jittery(20) // Except he's not calm!
 	M.adjustToxLoss(0.1) // An alternative to getting irradiated, nobody wants that.
 
@@ -1271,7 +1271,7 @@
 
 /datum/reagent/drink/nuka_cola/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.8)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.1)
 	M.make_jittery(20 * effect_multiplier)
 	M.druggy = max(M.druggy, 30 * effect_multiplier)
 	M.dizziness += 5 * effect_multiplier
