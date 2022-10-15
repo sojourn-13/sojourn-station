@@ -44,9 +44,8 @@
 #define IS_MARQUA 5
 #define IS_KRIOSAN 6
 #define IS_AKULA 7
-#define IS_MARQUA 8
-#define IS_PLANT 9
-#define IS_OPIFEX 10
+#define IS_PLANT 8
+#define IS_OPIFEX 9
 
 
 #define CE_STABLE "stable" // Inaprovaline

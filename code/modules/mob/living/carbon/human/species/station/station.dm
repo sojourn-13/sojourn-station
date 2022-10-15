@@ -292,6 +292,7 @@
 	name_plural = "Akulas"
 	default_form = FORM_AKULA
 	obligate_form = TRUE
+	reagent_tag = IS_AKULA
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/tail, /datum/unarmed_attack/bite/strong)
 	darksight = 3
 	num_alternate_languages = 2
@@ -587,6 +588,7 @@
 	default_form = FORM_FOLKEN
 	obligate_name = TRUE
 	obligate_form = TRUE
+	reagent_tag = IS_PLANT
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "N/A"
 	num_alternate_languages = 2
@@ -633,6 +635,7 @@
 	default_form = FORM_MYCUS
 	obligate_name = TRUE
 	obligate_form = TRUE
+	reagent_tag = IS_PLANT
 	unarmed_types = list(/datum/unarmed_attack/punch/hammer_fist, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "N/A"
 	num_alternate_languages = 2
