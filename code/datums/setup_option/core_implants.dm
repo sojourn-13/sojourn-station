@@ -43,7 +43,6 @@
 		/datum/job/chaplain,
 		/datum/job/chief_engineer,
 		/datum/job/merchant,
-		/datum/job/rd,
 		/datum/job/smc,
 		/datum/job/swo
 	) // The way to restrict this to one job could be done cleaner but this way easier so fuck it. -Kaz
