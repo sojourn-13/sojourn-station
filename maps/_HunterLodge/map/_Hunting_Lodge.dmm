@@ -454,6 +454,17 @@
 	},
 /obj/structure/catwalk,
 /obj/structure/catwalk,
+/obj/machinery/power/apc{
+	cell_type = /obj/item/cell/large/high;
+	dir = 4;
+	name = "East APC";
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "cp" = (
@@ -1977,7 +1988,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/smes/dummysimple{
-	output_level = 15000
+	output_level = 17000
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2063,6 +2074,12 @@
 /obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2405,23 +2422,6 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 10
 	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
-"tO" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/obj/machinery/power/apc{
-	cell_type = /obj/item/cell/large/high;
-	dir = 4;
-	name = "East APC";
-	pixel_x = 28;
-	pixel_y = 0
-	},
-/obj/structure/cable,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "tS" = (
@@ -2948,6 +2948,15 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"AL" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/wall/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Bq" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/structure/invislight,
@@ -6205,7 +6214,7 @@ iB
 dv
 VK
 LK
-tO
+LK
 co
 tU
 ax
@@ -6284,7 +6293,7 @@ oc
 dP
 VN
 RE
-RE
+AL
 cK
 RE
 RE
