@@ -2407,6 +2407,23 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
+"tO" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/obj/machinery/power/apc{
+	cell_type = /obj/item/cell/large/high;
+	dir = 4;
+	name = "East APC";
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/obj/structure/cable,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
 "tS" = (
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/wood/wild2,
@@ -6188,7 +6205,7 @@ iB
 dv
 VK
 LK
-LK
+tO
 co
 tU
 ax
