@@ -4,7 +4,7 @@
 	desc = "Rip and tear"
 	organ_efficiency = list(OP_MUSCLE = 100)
 	price_tag = 100
-	specific_organ_size = 0.5
+	specific_organ_size = 1
 	blood_req = 0.5
 	max_blood_storage = 2.5
 	nutriment_req = 0.5
@@ -17,7 +17,7 @@
 	desc = "Expand and contract"
 	nature = MODIFICATION_SILICON
 	organ_efficiency = list(OP_MUSCLE = 100)
-	specific_organ_size = 0.5
+	specific_organ_size = 1
 	matter = list(MATERIAL_STEEL = 1)
 
 /obj/item/organ/internal/muscle/super_muscle
@@ -26,7 +26,7 @@
 	icon_state = "human_muscle_super"
 	price_tag = 150
 	organ_efficiency = list(OP_MUSCLE = 150)
-	specific_organ_size = 0.6
+	specific_organ_size = 1.2
 
 /obj/item/organ/internal/muscle/super_muscle/exalt
 	name = "exalt muscle"
