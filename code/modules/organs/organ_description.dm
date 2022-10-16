@@ -85,7 +85,7 @@
 	vital = TRUE
 
 	w_class = ITEM_SIZE_NORMAL
-	max_volume = ITEM_SIZE_GARGANTUAN
+	max_volume = ITEM_SIZE_TITANIC
 
 	joint = "jaw"
 	amputation_point = "neck"
