@@ -508,12 +508,16 @@
 					H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/vender_e_shopper, "VENDER_E_SHOPPER", skill_gained = points_rewarded, learner = H)
 				//Small order of operations here to prevent first time buyers being SCAMMED out of point rewards and such.
 				var/task_level = H.learnt_tasks.get_task_mastery_level("VENDER_E_SHOPPER")
+
 				if(task_level < currently_vending.price) //so free stuff dosnt get discounted/givepoints
 					currently_vending.price -= task_level
+					wallet.worth -= currently_vending.price
+					credit_purchase("[wallet.owner_name] (chargecard)")
+					currently_vending.price += task_level //So we dont perma lower the price of things
+					return 1
 
 				wallet.worth -= currently_vending.price
 				credit_purchase("[wallet.owner_name] (chargecard)")
-				currently_vending.price += task_level //So we dont perma lower the price of things
 				return 1
 		wallet.worth -= currently_vending.price
 		credit_purchase("[wallet.owner_name] (chargecard)")
