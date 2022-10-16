@@ -27,6 +27,8 @@
 	custom_vendor = TRUE // Chemists can load it for MDs
 	can_stock = list(/obj/item/reagent_containers/glass, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/stack/medical, /obj/item/bodybag, /obj/item/device/scanner/health, /obj/item/reagent_containers/hypospray, /obj/item/storage/pill_bottle)
 	vendor_department = DEPARTMENT_MEDICAL
+	give_discounts = FALSE
+	give_discount_points = FALSE
 
 /obj/machinery/vending/wallmed
 	name = "MicroMed"

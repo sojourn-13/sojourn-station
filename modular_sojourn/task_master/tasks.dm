@@ -49,3 +49,23 @@
 	//log_debug("[forwards_refence] Has gained additonal insight.")
 	forwards_refence.sanity.give_insight(level + 3)
 	forwards_refence.sanity.give_insight_rest(level + 3)
+
+/datum/task_master/task/clay_thumb
+	name = "Potted Plant Maintainer"
+	key = "CLAY_THUMB_CONISOUR"
+	desc = "Do to maintaining small potted plants your knowings on biodiversity grows!"
+	gain_text = "Keeping potted plants alive sure is rewarding labour!"
+	level_threshholds = 5 //What looks like a low value is rather high, as this only gains bio on the second+ level up i.e first 5 points are wasted
+
+/datum/task_master/task/clay_thumb/activate_affect()
+	forwards_refence.stats.changeStat(STAT_BIO, 2) //so its accully vauleable
+
+/datum/task_master/task/vender_e_shopper
+	name = "Vender Point Shopper"
+	key = "VENDER_E_SHOPPER"
+	desc = "Paper bills, coins they all suck! The Card with your bank account attached to it is clearly the best way to shop!"
+	gain_text = "Shopping with an Ecard sure is the way to go."
+	level_threshholds = 10 //So people dont game this as easy
+
+/datum/task_master/task/vender_e_shopper/activate_affect()
+	forwards_refence.stats.changeStat(STAT_COG, 2) //so its accully vauleable

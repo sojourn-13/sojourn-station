@@ -26,6 +26,14 @@
 			return source_task
 	return null
 
+//Gets the level as a number
+/datum/task_master/labourer/proc/get_task_mastery_level(key)
+	RETURN_TYPE(/datum/task_master/task)
+	for(var/datum/task_master/task/source_task in learnt_tasks)
+		if(source_task.key == key)
+			return source_task.level
+	return FALSE
+
 
 /datum/task_master/labourer/proc/get_task_mastery_and_proc(key)
 	RETURN_TYPE(/datum/task_master/task)
