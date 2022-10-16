@@ -317,7 +317,7 @@
 			to_chat(usr, SPAN_DANGER("There is \a [I] sticking out of it."))
 	return
 
-#define MAX_MUSCLE_SPEED -0.5
+#define MAX_MUSCLE_SPEED -0.3 //Soj edit from -0.5, slowdown!
 
 /obj/item/organ/external/proc/get_tally()
 	if(is_broken() && !(status & ORGAN_SPLINTED))
@@ -341,11 +341,11 @@
 		. += 0.5
 
 
-	var/nerve_eff = max(owner.get_specific_organ_efficiency(OP_NERVE, organ_tag),1)
-	var/limb_eff = owner.get_limb_efficiency()
-	var/leg_eff = (limb_eff/100) - (limb_eff / nerve_eff)//Need more nerves to control those new muscles
+	var/nerve_efficiency = max(owner.get_specific_organ_efficiency(OP_NERVE, organ_tag),1)
+	var/limb_efficiency = owner.get_limb_efficiency()
+	var/leg_efficiency = (limb_efficiency/100) - (limb_efficiency / nerve_efficiency)//Need more nerves to control those new muscles
 
-	. += max(-(leg_eff/2), MAX_MUSCLE_SPEED)
+	. += max(-(leg_efficiency/2), MAX_MUSCLE_SPEED)
 
 	. += tally
 

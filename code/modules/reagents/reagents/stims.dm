@@ -344,7 +344,7 @@
 	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, STIM_TIME, "turbo")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "turbo")
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "turbo")
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.4)
 	M.add_chemical_effect(CE_PULSE, 2)
 
 /datum/reagent/stim/turbo/withdrawal_act(mob/living/carbon/M)

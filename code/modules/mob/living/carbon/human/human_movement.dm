@@ -20,13 +20,13 @@
 			else if(see_invisible != SEE_INVISIBLE_NOLIGHTING)
 				tally += 0.5
 	if(stats.getPerk(PERK_FAST_WALKER))
-		tally -= 0.5
-	if(stats.getPerk(PERK_NANITE_MUSCLE))
 		tally -= 0.4
+	if(stats.getPerk(PERK_NANITE_MUSCLE))
+		tally -= 0.3
 	if(stats.getPerk(PERK_SCUTTLEBUG))
 		tally -= 0.3
 	if(stats.getPerk(PERK_REZ_SICKNESS))
-		tally += 0.90
+		tally += 1
 
 	var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
 	if(C && C.active)

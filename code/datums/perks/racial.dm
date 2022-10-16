@@ -120,13 +120,13 @@
 	return ..()
 
 
-/datum/perk/slymarbo
+/datum/perk/battlecry
 	name = "Inspiring Battlecry"
 	desc = "Life has taught you that beyond sheer force of will, what made your kind conquer the stars was also a sense of camaraderie and cooperation among your battle brothers and sisters. Your heroic warcry can inspire yourself and others to better performance in combat."
 	active = FALSE
 	passivePerk = FALSE
 
-/datum/perk/slymarbo/activate()
+/datum/perk/battlecry/activate()
 	var/mob/living/carbon/human/user = usr
 	var/list/people_around = list()
 	if(!istype(user))
@@ -147,7 +147,7 @@
 	usr.emote("urah")
 	return ..()
 
-/datum/perk/slymarbo/proc/give_boost(mob/living/carbon/human/participant)
+/datum/perk/battlecry/proc/give_boost(mob/living/carbon/human/participant)
 	var/effect_time = 2 MINUTES
 	var/amount = 10
 	var/list/stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10, STAT_VIG = 10)
@@ -155,7 +155,7 @@
 		participant.stats.changeStat(stat, amount)
 		addtimer(CALLBACK(src, .proc/take_boost, participant, stat, amount), effect_time)
 
-/datum/perk/slymarbo/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
+/datum/perk/battlecry/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
 	participant.stats.changeStat(stat, -amount)
 
 
