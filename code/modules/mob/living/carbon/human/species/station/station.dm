@@ -199,8 +199,6 @@
 		STAT_MEC = 10
 	)
 
-	darksight = 1 //1 eyes
-
 	has_process = list(    // which required-organ checks are conducted.
 		OP_HEART        = /obj/item/organ/internal/heart,
 		OP_LUNGS        = /obj/item/organ/internal/lungs,
