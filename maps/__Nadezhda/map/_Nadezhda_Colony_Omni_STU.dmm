@@ -99840,6 +99840,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/matter_nanoforge,
+/obj/item/oddity/common/blueprint{
+	prob_perk = 100
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/engineering/workshop)
 "sKw" = (
