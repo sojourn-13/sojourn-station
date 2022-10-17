@@ -65,7 +65,13 @@
 	price_tag = 200
 	serial_type = "SI"
 
+/obj/item/gun/projectile/clarissa/moebius/auto_eject
+	initialized_upgrades = list(/obj/item/gun_upgrade/magwell/auto_eject/no_removal
+								)
+
 /obj/item/gun/projectile/clarissa/moebius/preloaded_cbo
+	initialized_upgrades = list(/obj/item/gun_upgrade/muzzle/silencer
+								)
 
 /obj/item/gun/projectile/clarissa/moebius/preloaded_cbo/New()
 	. = ..()

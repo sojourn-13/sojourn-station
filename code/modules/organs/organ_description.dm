@@ -44,7 +44,7 @@
 	cannot_amputate = TRUE
 
 	w_class = ITEM_SIZE_HUGE
-	max_volume = ITEM_SIZE_TITANIC + 1
+	max_volume = ITEM_SIZE_TITANIC + 3
 
 	joint = "neck"
 	amputation_point = "spine"
@@ -65,7 +65,7 @@
 	nerve_struck = -1
 
 	w_class = ITEM_SIZE_BULKY
-	max_volume = ITEM_SIZE_COLOSSAL
+	max_volume = ITEM_SIZE_COLOSSAL + 2
 
 	joint = "hip"
 	amputation_point = "lumbar"
@@ -85,7 +85,7 @@
 	vital = TRUE
 
 	w_class = ITEM_SIZE_NORMAL
-	max_volume = ITEM_SIZE_GARGANTUAN
+	max_volume = ITEM_SIZE_TITANIC + 1
 
 	joint = "jaw"
 	amputation_point = "neck"

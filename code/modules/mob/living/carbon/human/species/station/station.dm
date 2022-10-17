@@ -27,7 +27,7 @@
 	)
 	darksight = 2
 
-	perks = list(/datum/perk/tenacity, /datum/perk/iwillsurvive, /datum/perk/slymarbo)
+	perks = list(PERK_TENACITY, PERK_IWILLSURVIVE, PERK_BATTLECRY, PERK_DIVERSE_CULTURE)
 
 	spawn_flags = CAN_JOIN
 
@@ -67,7 +67,7 @@
 
 	darksight = 3
 
-	perks = list(/datum/perk/debtor, /datum/perk/splicer)
+	perks = list(PERK_DEBTOR, PERK_SPLICER, PERK_DIVERSE_CULTURE)
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/exalt,
@@ -157,7 +157,7 @@
 	permitted_wings = list()
 
 	darksight = 3 //Cat eyes
-	perks = list(/datum/perk/laststand,/datum/perk/bone, /datum/perk/brawn, /datum/perk/carnivore)
+	perks = list(PERK_LASTSTAND, PERK_BONE, PERK_BRAWN, PERK_CARNIVORE)
 
 /datum/species/sablekyne/get_bodytype()
 	return "Sablekyne"
@@ -199,8 +199,6 @@
 		STAT_MEC = 10
 	)
 
-	darksight = 1 //1 eyes
-
 	has_process = list(    // which required-organ checks are conducted.
 		OP_HEART        = /obj/item/organ/internal/heart,
 		OP_LUNGS        = /obj/item/organ/internal/lungs,
@@ -217,7 +215,7 @@
 	permitted_tail  = list()
 	permitted_wings = list()
 
-	perks = list(/datum/perk/suddenbrilliance,/datum/perk/inspired, /datum/perk/alien_nerves)
+	perks = list(PERK_SUDDENBRILLIANCE, PERK_INSPIRED, PERK_ALIEN_NERVES)
 
 /datum/species/marqua/get_bodytype()
 	return "Mar'Qua"
@@ -282,7 +280,7 @@
 		)
 	permitted_wings = list()
 
-	perks = list(/datum/perk/enhancedsenses, /datum/perk/exceptional_aim)
+	perks = list(PERK_PERFECT_SHOT, PERK_ENHANCEDSENSES)
 
 /datum/species/kriosan/get_bodytype()
 	return "Kriosan"
@@ -292,6 +290,7 @@
 	name_plural = "Akulas"
 	default_form = FORM_AKULA
 	obligate_form = TRUE
+	reagent_tag = IS_AKULA
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/tail, /datum/unarmed_attack/bite/strong)
 	darksight = 3
 	num_alternate_languages = 2
@@ -325,7 +324,7 @@
 	permitted_tail  = list("Akula Tail")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/recklessfrenzy, /datum/perk/iron_flesh, /datum/perk/carnivore)
+	perks = list(PERK_RECKLESSFRENZY, PERK_IRON_FLESH, PERK_CARNIVORE)
 
 /datum/species/akula/get_bodytype()
 	return "Akula"
@@ -360,7 +359,7 @@
 	permitted_tail  = list("Naramad Tail", "Naramad Tail 2")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/adrenalineburst,/datum/perk/born_warrior, /datum/perk/stay_hydrated)
+	perks = list(PERK_ADRENALINEBURST, PERK_BORN_WARRIOR, PERK_STAY_HYDRATED)
 
 /datum/species/naramad/get_bodytype()
 	return "Naramad"
@@ -402,7 +401,7 @@
 		"Feathered Wings, Large"
 		)
 
-	perks = list(/datum/perk/opifex_turret,/datum/perk/opifex_patchkit)
+	perks = list(PERK_OPIFEX_TURRET, PERK_OPIFEX_PATCHKIT)
 
 /datum/species/vox/get_bodytype()
 	return "Opifex"
@@ -576,7 +575,7 @@
 		"Spines, Short Membrane",
 		)
 
-	perks = list(/datum/perk/purgetoxins,/datum/perk/purgeinfections, /datum/perk/second_skin)
+	perks = list(PERK_PURGEINFECTIONS, PERK_PURGETOXINS, PERK_SECOND_SKIN)
 
 /datum/species/cindarite/get_bodytype()
 	return "Cindarite"
@@ -587,6 +586,7 @@
 	default_form = FORM_FOLKEN
 	obligate_name = TRUE
 	obligate_form = TRUE
+	reagent_tag = IS_TREE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "N/A"
 	num_alternate_languages = 2
@@ -633,6 +633,7 @@
 	default_form = FORM_MYCUS
 	obligate_name = TRUE
 	obligate_form = TRUE
+	reagent_tag = IS_TREE
 	unarmed_types = list(/datum/unarmed_attack/punch/hammer_fist, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "N/A"
 	num_alternate_languages = 2

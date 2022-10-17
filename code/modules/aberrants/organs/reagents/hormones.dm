@@ -62,7 +62,7 @@
 /datum/reagent/hormone/speedboost
 	name = "osteocalcin"		// Increases energy availability in muscles among other things, probably close enough
 	id = "osteocalcin"
-	effects = list(CE_SPEEDBOOST = 0.25)
+	effects = list(CE_SPEEDBOOST = 0.2)
 
 /datum/reagent/hormone/speedboost/alt
 	name = "noradrenaline"		// Fight or flight hormone

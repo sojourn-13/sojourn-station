@@ -33,7 +33,6 @@
 	icon_state = "magatama"
 	item_state = "magatama"
 	slot_flags = SLOT_ACCESSORY_BUFFER
-	w_class = ITEM_SIZE_NORMAL // Chonky cross
 
 /obj/machinery/door/holy/New()
 	GLOB.nt_doors += src

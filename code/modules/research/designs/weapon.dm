@@ -363,6 +363,9 @@
 	name = "Soteria \"DNA lock\" Finger Imprinter Trigger"
 	build_path = /obj/item/gun_upgrade/trigger/dnalock
 
+/datum/design/research/item/weapon/weapon_upgrade/auto_eject_no_removal
+	name = "Soteria \"Faller\" Magwell Clearer"
+	build_path = /obj/item/gun_upgrade/magwell/auto_eject/no_removal
 
 /*
 /datum/design/research/item/weapon/weapon_upgrade/isotope_diffuser

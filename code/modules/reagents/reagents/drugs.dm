@@ -359,7 +359,7 @@
 /datum/reagent/drug/hyperzine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(5))
 		M.emote(pick("twitch", "blink_r", "shiver"))
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.4)
 	M.add_chemical_effect(CE_PULSE, 2)
 	M.nutrition = max(M.nutrition - 0.5 * effect_multiplier, 0)
 
