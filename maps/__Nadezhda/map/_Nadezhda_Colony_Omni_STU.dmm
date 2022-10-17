@@ -114094,6 +114094,7 @@
 	pixel_y = 5
 	},
 /obj/item/soap,
+/obj/item/stack/cable_coil/random,
 /obj/item/clothing/head/welding,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
