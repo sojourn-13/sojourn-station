@@ -89,13 +89,13 @@
 		for(var/i in SSmobs.mob_list)
 			if(is_excelsior(i))
 				to_chat(i, text)
-
+/*
 		for(var/mob/observer/ghost/M as anything in GLOB.dead_mob_list)
 			if(!M.client)
 				continue
 			if(M.antagHUD || is_admin(M))
 				to_chat(M, "[text] ([ghost_follow_link(usr, M)])")
-
+*/
 
 		var/obj/item/storage/deferred/stash/sack/stash = new
 
