@@ -25,7 +25,7 @@
 	//Used for some tasks to gain levels for said task
 	var/value = 0
 
-	//Unused
+	//Weather or not the first level is gives you its activation affects
 	var/unlocked = FALSE
 
 	//Current level has has to do with value
@@ -69,3 +69,32 @@
 
 /datum/task_master/task/vender_e_shopper/activate_affect()
 	forwards_refence.stats.changeStat(STAT_COG, 2) //so its accully vauleable
+
+//Restlessness... Nawing hunger...
+/datum/task_master/task/return_to_sender
+	name = "Return To Sender"
+	key = "RETURN_TO_SENDER"
+	desc = "I was dead! Pulled back? Returned to this place this life?!"
+	gain_text = "Walking again?"
+	level_threshholds = 1
+	unlocked = TRUE //Morality
+
+/datum/task_master/task/return_to_sender/activate_affect()
+	forwards_refence.max_nutrition += (level * 15) //415 level 1 -> 445 level 2 -> 490 level 2 ect ect
+	forwards_refence.stats.changeStat(STAT_VIV, (level + 2)) //Exstreamly miner: 3 level 1 -> 7 level 2 -> 13 level 3 ect ect
+
+//Huskification
+/datum/task_master/task/rebound_case
+	name = "Rebound Case"
+	key = "REBOUND_CASE"
+	desc = "Alive, dead, alive dead. Put back together time and time again..."
+	gain_text = "Back again."
+	level_threshholds = 2
+	unlocked = TRUE //Immorality
+
+/datum/task_master/task/rebound_case/activate_affect()
+	forwards_refence.stats.changeStat(STAT_COG, -5) //Yes this is infact a bad thing
+	forwards_refence.vessel.maximum_volume  += 10 //Increases maxium blood do to your shock/recovering body panicing or something like that
+	forwards_refence.maxHealth += 5 //Scars and battle wounds heal back stronger.
+	forwards_refence.health += 5 //Scars and battle wounds heal back stronger.
+
