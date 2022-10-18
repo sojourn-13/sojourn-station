@@ -55,7 +55,7 @@
 	key = "CLAY_THUMB_CONISOUR"
 	desc = "Do to maintaining small potted plants your knowings on biodiversity grows!"
 	gain_text = "Keeping potted plants alive sure is rewarding labour!"
-	level_threshholds = 5 //What looks like a low value is rather high, as this only gains bio on the second+ level up i.e first 5 points are wasted
+	level_threshholds = 10 //What looks like a low value is rather high, as this only gains bio on the second+ level up i.e first 10 points are wasted
 
 /datum/task_master/task/clay_thumb/activate_affect()
 	forwards_refence.stats.changeStat(STAT_BIO, 2) //so its accully vauleable
