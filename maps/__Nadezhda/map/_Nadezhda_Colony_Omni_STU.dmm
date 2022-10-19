@@ -38601,7 +38601,7 @@
 "hpL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/binary/pump{
-	dir = 8
+	dir = 4
 	},
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -57816,7 +57816,7 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "kUY" = (
 /obj/machinery/atmospherics/binary/pump{
-	dir = 4
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/faction/neotheology_cross/gold{
@@ -114093,10 +114093,14 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/miningdock)
 "vtX" = (
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/mop,
 /obj/structure/table/rack,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 5
+	},
+/obj/item/soap,
+/obj/item/stack/cable_coil/random,
+/obj/item/clothing/head/welding,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
 "vtY" = (

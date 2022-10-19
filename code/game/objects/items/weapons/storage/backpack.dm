@@ -400,7 +400,7 @@
 	throw_speed = 1
 	throw_range = 4
 	max_w_class = null
-	max_storage_space = 16
+	max_storage_space = 24 //So we can hold even the biggest gun with the most attachments
 	can_hold = list(/obj/item/gun,
 		/obj/item/ammo_magazine
 		)
