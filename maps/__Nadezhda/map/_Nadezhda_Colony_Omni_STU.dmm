@@ -99840,6 +99840,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/matter_nanoforge,
+/obj/item/oddity/common/blueprint{
+	desc = "Crude replica of all the recipes that can be teached to the nanoforge, poorly copierd from the Nano Forge Black Box. You should get a proper one instead of this one!";
+	name = "nanoforge  blueprint";
+	prob_perk = 100
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/engineering/workshop)
 "sKw" = (
