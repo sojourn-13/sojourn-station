@@ -45,15 +45,15 @@
 							 /datum/computer_file/program/shield_control,
 							 /datum/computer_file/program/reports)
 
-	description = "The Guild Master is the head of the Artificers Guild, a group of skilled engineers. This colony is your pride.<br>\
-	You are to keep the colony running and constantly improve it as much as you are able. Let none question the efficacy of your labors.<br>\
-	As a leader, it is far more efficient for you to delegate work than attempting to solve everything yourself - spread the labor.<br>\
-	Machinery across the colony is your responsibility. Let no outsiders interfere or intrude into your domain - even Command staff are no exception.<br>\
-	Treat every Guild member like your family. Keep them paid, fed, and safe. You may be a part of the wider colony, but your own come first."
+	description = "Мастер Гильдии - глава Гильдии ремесленников, группы квалифицированных инженеров. Эта колония - ваша гордость.<br>\
+	Вы должны поддерживать колонию в рабочем состоянии и постоянно улучшать ее настолько, насколько это в ваших силах. Пусть никто не сомневается в эффективности ваших трудов.<br>\
+	Для вас, как для лидера, гораздо эффективнее делегировать работу, чем пытаться решать все самостоятельно - оптимизация и распределение труда вот что стоит вам запомнить.<br>\
+	Техника по всей колонии - это ваша ответственность. Не позволяйте посторонним вмешиваться или вторгаться в ваши владения - даже командный состав не является исключением.<br>\
+	Относитесь к каждому члену Гильдии как к своей семье. Обеспечьте им оплату, питание и защиту. Вы хоть и являетесь частью колонии, но ваши собственные интересы превыше всего."
 
-	duties = "Manage the Guild Adepts - set tasks and areas of focus.<br>\
-	Strive to protect the rights of your Adepts, as well as their safety and health.<br>\
-	Conduct your own repairs and projects as required - especially when low staffed. "
+	duties = "Управляйте адептами Гильдии - устанавливайте задачи и области сосредоточения.<br>\
+	Стремитесь защитить права своих Адептов, а также их безопасность и здоровье.<br>\
+	Проводите свои собственные ремонтные работы и проекты по мере необходимости - особенно при нехватке персонала. "
 
 	perks = list(/datum/perk/inspiration, /datum/perk/handyman)
 
@@ -101,16 +101,16 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shield_control)
 
-	description = "The Guild Adept is a member of one of the greatest engineering guilds in the galaxy, contracted to maintain this colony.<br>\
-Your main priority is ensuring the setup and maintenance of the colonies power grid. Seek guidance on this complex task if untrained.<br>\
-Outside of this, you should devote time to learning and configuring various systems. Everything can be improved, and new constructs can be made.<br>\
-This upgrade culture extends to your own arsenal - mod and upgrade your tools with parts from maintenance, or purchased from Lonestar or the Prospectors.<br>\
-Do not let outsiders, even Command Staff, interfere with the duties of the Guild. And remember - be ready to respond to emergency calls at any time."
+	description = "Адепт Гильдии является членом одной из величайших инженерных гильдий в галактике, заключившей контракт на содержание этой колонии.<br>\
+	Вашим главным приоритетом является обеспечение настройки и технического обслуживания электросети колоний. Обратитесь за советом в решении этой сложной задачи, если вы неподготовлены.<br>\
+	Помимо этого, вы должны посвятить время изучению и настройке различных систем. Все может быть улучшено, и могут быть созданы новые конструкции.<br>\
+	Эта культура обновления распространяется и на ваш собственный арсенал - модифицируйте и улучшайте свои инструменты с помощью деталей из технического обслуживания или приобретенных у Lonestar или Старателей.<br>\
+	Не позволяйте посторонним, даже Командному составу, вмешиваться в обязанности Гильдии. И помните - будьте готовы ответить на экстренные вызовы в любое время."
 
-	duties = "Start up the solars and generators.<br>\
-	Repair anything and anyone that needs some maintenance.<br>\
-	Respond to distress calls and patch breaches in the walls.<br>\
-	Keep every part of the colony powered, oxygenated, and ready to use."
+	duties = "Запустите солнечную батарею и генераторы.<br>\
+	Ремонтируйте все и вся, что нуждается в некотором обслуживании.<br>\
+	Отвечайте на сигналы бедствия и латайте бреши в стенах.<br>\
+	Поддерживайте питание каждой части колонии, насыщайте ее кислородом и сделайте все чтобы с технической точки зрения колония была работоспособна."
 
 	perks = list(/datum/perk/inspiration, /datum/perk/handyman)
 
