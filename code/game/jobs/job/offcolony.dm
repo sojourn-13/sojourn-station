@@ -27,14 +27,14 @@
 		STAT_COG = 0
 	)
 	playtimerequired = 1200
-	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As the hunt \
-	master your job is to lead your fledgling hunters on expeditions and generally work towards keeping them alive while thriving in your lodge. You are not nearly as well \
-	equipped as the colony is, but special training by the lodge has given you the ability to live off the land."
+	description = "Вы не являетесь частью колонии – по крайней мере пока.<br>\
+	Вместо этого вы решили присоединится к местной фракции охотников.<br>\
+	Время покажет на какой срок. Ваша задача как главы общины – вести свои охотников и сделать все возможное для их благополучия.<br>\
+	Ваше снаряжение не сравнится с колониальным, но охотничья закалка хорошо подготовила вас к тому, чтобы выживать за счет даров природы."
 
-	duties = "Keep your hunters alive, ensuring they don't get killed by the various dangerous fauna.<br>\
-		Ensure all of your hunters are equipped and working properly in teams.<br>\
-		Make sure that relations between the lodge and the colony remain good, in particular with the prospectors."
-
+	duties = "Не допустите гибели ваших охотников от рук и лап местной фауны.<br>\
+		Убедитесь, что ваши охотники хорошо снаряжены и способны работать в команде.<br>\
+		Поддерживайте хорошие отношения с колонией. Особенно со старателями."
 /obj/landmark/join/start/hunt_master
 	name = "Lodge Hunt Master"
 	icon_state = "player-black"
@@ -69,13 +69,14 @@
 		STAT_COG = 0
 	)
 
-	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As a lodge hunter \
-	your primary work is both as an animal rancher and big game hunter. Expeditions should be prepared for using whatever you can craft and make with your fellow hunters. Good lodge members \
-	work as a team under the direction of the hunt master or if present the lodge matriarch. An expert lodge hunter reads the lodge codex for the do's and dont's."
+	description = "Вы не являетесь частью колонии – по крайней мере пока. Вместо этого вы решили присоединится к местной фракции охотников.<br>\
+	Время покажет на какой срок. Будучи членом охотничьей общины, в ваши обязанности входит как заниматься животноводством, так и охотиться на крупную дичь.<br>\
+	Зачастую снаряжение для экспедиций придется создавать своими руками. Настоящие охотники всегда работают сообща под предводительством своего лидера или матриарха.<br>\
+	Долгожители общины хорошо знакомы с Кодексом охотничьей чести."
 
-	duties = "Care for, feed, and raise your various animals to harvest supplies and food.<br>\
-		Work with your fellow hunters to ensure you can take down dangerous fauna.<br>\
-		Build and maintain a thriving lodge in the wilderness."
+	duties = "Заботьтесь о благополучии вверенных вам животных, и да воздастся вам.<br>\
+		Работайте рука об руку с другими охотниками.<br>\
+		Сделайте все возможное для благополучия вашей общины.
 
 /obj/landmark/join/start/lodge_hunter
 	name = "Lodge Hunter"
@@ -108,14 +109,18 @@
 		STAT_COG = 10
 	)
 
-	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As a lodge herbalist \
-	your primary work is both as gardener and field medic for the lodge. Expeditions should be prepared for using whatever you can craft and make with your fellow hunters. Good lodge members \
-	work as a team under the direction of the hunt master or if present the lodge matriarch. An expert lodge hunter reads the lodge codex for the do's and dont's. While hunters are more combat \
-	focused, your purpose as an herbalist is to attend to the medical needs of your lodge, but additional skills as a crafter, gardener, and chemist are quite handy!"
+	description = "Вы не являетесь частью колонии – по крайней мере пока.<br>\
+	Вместо этого вы решили присоединится к местной фракции охотников. Время покажет на какой срок.<br>\
+	В сферу ответственности травника общины входят земледелие и медицина.<br>\
+	Зачастую снаряжение для экспедиций придется создавать своими руками.<br>\
+	Настоящие охотники всегда работают сообща под предводительством своего лидера или матриарха.<br>\
+	Долгожители общины хорошо знакомы с Кодексом охотничьей чести. Пока охотники в основном рискуют жизнью в бою, ваша задача – залатать их раны.<br>\
+	Дополнительные навыки в создании предметов, земледелии и химии тоже пригодятся."
 
-	duties = "Grow plants and harvest them for their medical reagents using your primitive chem lab.<br>\
-		Work as a medic for your lodge, keeping people alive and patching them up.<br>\
-		Build and maintain a thriving lodge in the wilderness."
+	duties = "Выращивайте полезные растения, чтобы затем использовать из для изготовления лекарств.<br>\
+		Станьте врачевателем для своей общины, который не позволит смерти забрать ваших товарищей.<br>\
+		Сделайте все возможное для благополучия вашей общины."
+
 
 /obj/landmark/join/start/lodge_herbalist
 	name = "Lodge Herbalist"
@@ -150,14 +155,16 @@
 		STAT_COG = 2
 	)
 
-	description = "You're an outsider, disconnected from the lodge and the colony as a whole. Whether you're an exile, stranded pirate, hermit, or just the right man in the wrong place you're \
-	entirely alone out here. What friends you can make and rely on should be cherished, for there are other looters and outsiders there who might be less than friendly short of giving out lead \
-	and ionized laser shots. You better stake your claim, fortify a safe spot, then venture out for supplies and whatever loot you can use, sell, or stockpile. Remember, you are not protected by \
-	colony law, few people with care or even raise an eyebrow if you're shot to death for whatever you're carrying."
+	description = "Вы чужак, не связанный ни с охотничьей общиной, ни с колонией как таковой.<br>\
+	Неважно кто вы – изгнанник, отшельник, потерпевший крушение пират или просто жертва обстоятельств – вы сами по себе.<br>\
+	Не разбрасывайтесь теми немногочисленными друзьями, что вам удастся найти, потому что большинству будет проще вас застрелить.<br>\
+	Лучше найдите себе нору поглубже и стягивайте в нее все полезное, что только удастся найти, чтобы потом пустить на ресурсы или продать.<br>\
+	И не забывайте – закону колонии на вас наплевать.<br>\
+	Едва ли кто-то за вас заступится. Разве что облегчит вашу ношу. Буквально."
 
-	duties = "Choose between building a home or becoming nomadic.<br>\
-		Make friends and avoid making enemies, as you're not protected like a colonist or hunter.<br>\
-		Avoid dying in the dangerous wilderness alone."
+	duties = "Определитесь, что вам ближе – обустраивать нору или быть кочевником.<br>\
+		Заводите себе друзей и избегайте создавать врагов. Никакой существующий закон вас не защитит.<br>\
+		Постарайтесь не умереть в одиночестве.
 
 /obj/landmark/join/start/outsider
 	name = "Outsider"

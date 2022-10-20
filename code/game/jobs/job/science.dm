@@ -43,16 +43,16 @@
 							/datum/computer_file/program/chem_catalog,
 							/datum/computer_file/program/reports)
 
-	description = "The Chief Research Overseer is the head of the research branch of the Soteria Institute, directing science activities.<br>\
-	The scientists under your command are working on a range of projects. Direct them towards the best interests of the organization.<br>\
-	With oversight over the funds, you may also purchase scientific artifacts and anything else of research value - even funding away missions.<br>\
-	Even use your position to request support from other factions if required. Most colonists do not understand your work, but know its value.<br>\
-	Of course, remember that you are a scientist yourself - feel free to get into the lab and work on R&D or xeno-related research.<br>\
-	The Medical wing also falls under the ownership of Soteria. You may use their resources - and they may use yours - as needed."
+	description = "Главный научный руководитель - руководитель исследовательского отделения Института 'Сотерия', руководящий научной деятельностью.<br>\
+	Ученые под вашим командованием работают над различным рядом проектов. Направляйте их к наилучшим интересам организации.<br>\
+	Контролируя бюджет, вы также можете приобретать научные артефакты и все остальное, представляющее ценность для исследований, даже финансируя миссии вне колонии.<br>\
+	Даже используйте свое положение, чтобы запросить поддержку у других фракций, если потребуется. Большинство колонистов не понимают вашей работы, но понимают ее ценность.<br>\
+	Конечно, помните, что вы сами ученый - не стесняйтесь заходить в лабораторию и заниматься РнД или ксено-исследованиями.<br>\
+	Медицинское крыло также находится в собственности Сотерии. Вы можете использовать их ресурсы - а они могут использовать ваши - по мере необходимости."
 
-	duties = "Direct the scientists under your command towards the bettering of all mankind.<br>\
-	Ensure a healthy stock of research equipment through management of department funds.<br>\
-	Consider organizing away missions and expeditions to acquire artifacts and other valuable items."
+	duties = "Направляйте ученых под вашим командованием на благо всего человечества.<br>\
+	Обеспечьте здоровый запас исследовательского оборудования и экипировки за счет управления фондом департамента.<br>\
+	Подумайте об организации миссий вне колонии и экспедиций для приобретения артефактов и других ценных предметов."
 
 /obj/landmark/join/start/rd
 	name = "Chief Research Overseer"
@@ -92,15 +92,15 @@
 		STAT_BIO = 10,
 	)
 
-	description = "The Scientist is a researcher representing the Soteria Institute, standing at the frontier of human advancement.<br>\
-	You may engage in a variety of research projects in four distinct fields - R&D, Xenoflora, Xenobiology, and Xenoarchaeology.<br>\
-	The manufacture of high tech devices is the primary source of income for Soteria, but artifacts and alien life may offer great potential.<br>\
-	Remember that dedicated specialists exist for robotics projects. You may work closely for general R&D, but avoid taking over robotics."
+	description = "Ученый - исследователь, представляющий Институт Сотерии, стоящий на передовой человеческого прогресса.<br>\
+	Вы можете участвовать в различных исследовательских проектах в четырех различных областях - РнД, Ксенофлора, ксенобиология и ксеноархеология.<br>\
+	Производство высокотехнологичных устройств является основным источником дохода для Сотерии, но артефакты и инопланетная жизнь могут так же показать большой потенциал.<br>\
+	Помните, что для проектов в области робототехники существуют отдельные специалисты. Вы можете тесно сотрудничать в области общих исследований и разработок, но избегайте брать на себя робототехнику."
 
-	duties = "Advance the cause of knowledge with various research projects.<br>\
-	Manufacture new devices and weapons as you advance up the R&D tree.<br>\
-	Manipulate plant DNA, and investigate alien life and devices.<br>\
-	Create unusual things, explore, learn, and have a scientific adventure."
+	duties = "Продвигайте дело познания с помощью различных исследовательских проектов.<br>\
+	Производите новые устройства и оружие по мере продвижения вверх по исследованиям РнД<br>\
+	Манипулируйте ДНК растений и исследуйте инопланетную жизнь и устройства.<br>\
+	Создавайте необычные вещи, исследуйте, учитесь и отправляйтесь в научное путешествие."
 
 /obj/landmark/join/start/scientist
 	name = "Soteria Scientist"
@@ -142,16 +142,16 @@
 
 	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert, /datum/perk/si_sci)
 
-	description = "The Roboticist is a specialized scientist with a busy workload - at the forefront of Soteria's service offerings.<br>\
-	You must maintain and upgrade the fleet of synthetics that keep the ship running, as well as constructing new ones on occasion.<br>\
-	In addition, you may be asked to manufacture prosthetic limbs and enhancements. Medical can perform the installation if you lack surgical skills.<br>\
-	Though not requested often you can also construct massive and powerful mechanized vehicles. These have powerful mining, rescue, and military applications.<br>\
-	Remember that you are ultimately running a commercial cybernetic clinic - charge for your valuable services to earn a living."
+	description = "Робототехник - это специализированный ученый с напряженной рабочей нагрузкой, который находится на передовой услуг Сотерии.<br>\
+	Вы должны поддерживать и модернизировать армию синтетиков, которые поддерживают колонию в рабочем состоянии, а также время от времени создавать новые.<br>\
+	Кроме того, вас могут попросить изготовить протезы конечностей и усовершенствования. Медицинский персонал может выполнить установку, если вам не хватает хирургических навыков.<br>\
+	Хотя это требуется не часто, вы также можете создавать массивные и мощные механизированные транспортные средства. Они имеют мощное горнорудное, спасательное и военное применение.<br>\
+	Помните, что в конечном счете вы управляете коммерческой кибернетической клиникой - платите за свои ценные услуги, чтобы зарабатывать на жизнь."
 
-	duties = "Repair, maintain and upgrade robots within the colony.<br>\
-	Maintain and implant new bionics in crewmembers.<br>\
-	Advertise bionics for sale and run a commercial cybernetic clinic.<br>\
-	Construct large mechas for specialized use in departments."
+	duties = "Ремонтируйте, обслуживайте и улучшайте роботов внутри колонии.<br>\
+	Поддерживайте и внедряйте новую бионику в членов экипажа.<br>\
+	Рекламируйте бионику для продажи и управляйте коммерческой клиникой кибернетики.<br>\
+	Создавайте огромных мехов для специального использования в отделах."
 
 /obj/landmark/join/start/roboticist
 	name = "Soteria Roboticist"
