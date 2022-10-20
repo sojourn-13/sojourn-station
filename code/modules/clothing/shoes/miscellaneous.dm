@@ -153,7 +153,7 @@
 
 /obj/item/clothing/shoes/aerostatic_boots
 	name = "aerostatic boots"
-	desc = "A pair of running shoes that are designed with speed in mind, that stated they dont really make you go faster, and look quite nice."
+	desc = "A pair of running shoes that are designed with speed in mind, though they don't really make you run faster, they just look quite nice."
 	icon_state = "aerostatic_boots"
 	can_hold_knife = TRUE
 
@@ -298,6 +298,10 @@
 	desc = "A pair of yellow shoes that extends past the ankle."
 	icon_state = "yellowhi"
 
+/obj/item/clothing/shoes/hitops/pink
+	name = "pink high-tops"
+	desc = "A pair of pink shoes that extends past the ankle."
+	icon_state = "pinkhi"
 /obj/item/clothing/shoes/customhitops
 	name = "high-tops"
 	desc = "A pair of customized high-tops in a tailored color."

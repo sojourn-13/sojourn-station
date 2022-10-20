@@ -133,13 +133,13 @@
 	item_state = "green_suit_skirt"
 
 /obj/item/clothing/under/suit_jacket/pink
-	name = "pink suit"
+	name = "jacketed pink suit"
 	desc = "A pink suit complete with a yellow shirt and red necktie."
 	icon_state = "pinksuit"
 	item_state = "pinksuit"
 
 /obj/item/clothing/under/suit_jacket/pinkskirt
-	name = "pink suit skirt"
+	name = "jacketed pink suit skirt"
 	desc = "A pink skirted suit complete with a yellow shirt and red necktie."
 	icon_state = "pinksuitskirt"
 	item_state = "pinksuitskirt"
@@ -343,3 +343,70 @@
 	desc = "A tan suit skirt complemented by a buttoned white shirt."
 	icon_state = "tansuitskirtbuttoned"
 	item_state = "tansuitskirtbuttoned"
+
+/obj/item/clothing/under/modular/pink
+	name = "pink suit"
+	desc = "A pair of pink suit pants complemented by a buttoned white shirt."
+	icon_state = "pink_suit"
+	item_state = "pink_suit"
+
+/obj/item/clothing/under/modular/pink_skirt
+	name = "pink suit skirt"
+	desc = "A pink suit skirt complemented by a buttoned white shirt."
+	icon_state = "pink_suit_skirt"
+	item_state = "pink_suit_skirt"
+
+/obj/item/clothing/under/modular/blacksuit
+	name = "black suit with tie"
+	desc = "A formal white shirt with black tie, on a pair of black suit pants. Please don't bark."
+	icon_state = "makima"
+	item_state = "makima"
+
+/obj/item/clothing/under/modular/greysuit
+	name = "grey suit"
+	desc = "A formal pair of grey pants with a white buttoned shirt."
+	icon_state = "greysuit"
+	item_state = "greysuit"
+
+/obj/item/clothing/under/modular/greysuit_skirt
+	name = "grey suit skirt"
+	desc = "A formal grey skirt with a white buttoned shirt."
+	icon_state = "greysuit_skirt"
+	item_state = "greysuit_skirt"
+
+/obj/item/clothing/under/modular/brown
+	name = "brown suit"
+	desc = "A formal pair of brown pants with a white buttoned shirt."
+	icon_state = "brown_suit"
+	item_state = "brown_suit"
+
+/obj/item/clothing/under/modular/brown_skirt
+	name = "brown suit skirt"
+	desc = "A formal brown skirt with a white buttoned shirt."
+	icon_state = "brown_suit-skirt"
+	item_state = "brown_suit-skirt"
+
+/obj/item/clothing/under/modular/cream
+	name = "cream suit"
+	desc = "A formal pair of cream pants with a white buttoned shirt."
+	icon_state = "cream_suit"
+	item_state = "cream_suit"
+
+/obj/item/clothing/under/modular/creamskirt
+	name = "cream suit skirt"
+	desc = "A formal cream skirt with a white buttoned shirt."
+	icon_state = "cream_suitskirt"
+	item_state = "cream_suitskirt"
+
+/obj/item/clothing/under/modular/olive
+	name = "olive suit"
+	desc = "A formal pair of olive pants with a white buttoned shirt."
+	icon_state = "olive_suit"
+	item_state = "olive_suit"
+
+/obj/item/clothing/under/modular/oliveskirt
+	name = " suit"
+	desc = "A formal olive skirt with a white buttoned shirt."
+	icon_state = "olive_suitskirt"
+	item_state = "olive_suitskirt"
+

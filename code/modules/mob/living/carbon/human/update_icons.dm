@@ -331,10 +331,10 @@ var/global/list/wings_icon_cache = list()
 	overlays_standing[UNDERWEAR_LAYER] = null
 
 	if(form.appearance_flags & HAS_UNDERWEAR)
-		var/icon/underwear = new/icon(form.underwear_icon, "blank")
+		var/icon/underwear = new/icon(form.get_mob_icon("underwear"), "blank")
 		for(var/entry in worn_underwear)
 			var/obj/item/underwear/UW = entry
-			var/icon/I = new /icon(form.underwear_icon, UW.icon_state)
+			var/icon/I = new /icon(form.get_mob_icon("underwear"), UW.icon_state)
 			if(UW.color)
 				I.Blend(UW.color, ICON_MULTIPLY)
 			underwear.Blend(I, ICON_OVERLAY)
@@ -661,6 +661,23 @@ mob/living/carbon/human/proc/get_wings_image()
 #define WORN_ID		"_id"
 #define WORN_MASK	"_ma"
 
+// Proc to instantly switch the user's clothing to either male or female version upon being worn
+// This is goodbye to a lot of alt style procs on clothing (and crossdressing)
+
+/mob/living/carbon/human/proc/get_gender_icon(var/g = MALE, var/slot)
+	var/list/icons = list(
+		"uniform"		= (g == MALE) ? 'icons/inventory/uniform/mob.dmi' : 'icons/inventory/uniform/mob_fem.dmi',
+		"suit"			= (g == MALE) ? 'icons/inventory/suit/mob.dmi' : 'icons/inventory/suit/mob_fem.dmi',
+		)
+	return icons[slot]
+
+// Contained sprite gender icons
+/mob/living/carbon/human/proc/get_gender_icon_contained(var/g = MALE)
+	if (g == FEMALE)
+		return "_f"
+	else
+		return
+
 //vvvvvv UPDATE_INV PROCS vvvvvv
 
 /mob/living/carbon/human/update_inv_w_uniform(var/update_icons=1)
@@ -676,12 +693,12 @@ mob/living/carbon/human/proc/get_wings_image()
 			else
 				under_icon = w_uniform.icon
 
-			under_state += w_uniform.icon_state + WORN_UNDER
+			under_state += w_uniform.icon_state + WORN_UNDER + get_gender_icon_contained(gender)
 
 		else if(w_uniform.icon_override)
 			under_icon = w_uniform.icon_override
 		else
-			under_icon = form.get_mob_icon("uniform")
+			under_icon = get_gender_icon(gender, "uniform")
 
 		//determine state to use
 		if (!under_state)
@@ -1014,7 +1031,7 @@ mob/living/carbon/human/proc/get_wings_image()
 	update_wings(update_icons)
 	if( wear_suit && istype(wear_suit, /obj/item/) )
 		var/image/standing
-		var/t_icon = form.get_mob_icon("suit")
+		var/t_icon = get_gender_icon(gender, "suit")
 		var/suit_state = ""
 		if(wear_suit.contained_sprite)
 			var/state = ""
@@ -1025,7 +1042,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			else
 				t_icon = image(icon = wear_suit.icon, icon_state = state)
 
-			suit_state += wear_suit.icon_state + WORN_SUIT
+			suit_state += wear_suit.icon_state + WORN_SUIT + get_gender_icon_contained(gender)
 
 		else if(wear_suit.icon_override)
 			t_icon = wear_suit.icon_override
