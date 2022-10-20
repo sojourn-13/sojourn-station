@@ -172,7 +172,7 @@
 /datum/gear/factionsoteria/penlight
 	display_name = "medical penlight"
 	path = /obj/item/device/lighting/toggleable/flashlight/pen
-	allowed_roles = list("Soteria Lifeline Technician","Soteria Doctor","Chief Biolab Overseer"))
+	allowed_roles = list("Soteria Lifeline Technician","Soteria Doctor","Chief Biolab Overseer")
 	slot = slot_ears
 	sort_category = "Faction: Soteria"
 	cost = 0
