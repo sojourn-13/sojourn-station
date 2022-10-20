@@ -23,13 +23,13 @@
 	perks = list(/datum/perk/market_prof, /datum/perk/bartender)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender //Re-using this.
-	description = "The Bartender runs the colony bar, providing colonists with drinks and entertainment.<br>\
-	Working with the Chef and Gardener, you make the big decisions. Run your business well - perhaps seek to maximise profits.<br>\
-	Although tips are a good source of income, your wider business acumen will truly decide your prosperity here."
+	description = "Бармен управляет баром колонии, предлагая колонистам напитки и развлечения.<br>\
+	Работая с шеф-поваром и садовником, вы принимаете важные решения. Ведите свой бизнес хорошо -  стремитесь максимизировать прибыль.<br>\
+	Хотя чаевые являются хорошим источником дохода, ваша деловая хватка в сфере разлива пьянящих зелий будет определять ваше процветание здесь."
 
-	duties = "Run the bar - provide a safe haven for food, drinks, and entertainment.<br>\
-		Seek extra sources of income from the venue - perhaps run deals or trade secrets.<br>\
-		Potentially take over cooking duties if a Chef is not present."
+	duties = "Управляя баром - создайте для колонистов комфортные условия для отдыха, перекуса или запоя.br>\
+		Ваши руки развязаны - заключайте тайные сделки, продавайте алкоголь по завышенной цене или же гоните фирменный самого<br>\
+		Также можете взять на себя ответственность за массовое пищевое отравление или всеобщий голод если шеф отсутствует."
 
 /obj/landmark/join/start/clubmanager
 	name = "Bartender"
@@ -61,13 +61,13 @@
 	perks = list(/datum/perk/market_prof, /datum/perk/bartender, /datum/perk/foodappraise)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/waiter
-	description = "The Chef works in the kitchen, ensuring that the colony remains well-fed and energetic.<br>\
-	You will typically work closely with a Bartender while cooking, cleaning, serving, and perhaps entertaining.<br>\
-	You are paid mainly through fulfilling requests for food. The successful Chef takes initiative by asking for customer orders."
+	description = "Шеф-повар работает на кухне, следя за тем, чтобы колония оставалась сытой и энергичной.<br>\
+	Как правило, вы будете тесно сотрудничать с барменом во время приготовления пищи, уборки, сервировки и, возможно, развлечений.<br>\
+	Вам платят в основном за выполнение запросов на еду. Успешный шеф-повар проявляет инициативу, запрашивая заказы у клиентов."
 
-	duties = "Provide enough meals to feed the colony. Aim for a variety of interesting and tasty dishes.<br>\
-		Ensure your customers are well-fed and looked after.<br>\
-		Potentially take over bartending duties if a Bartender is not present."
+	duties = "Pобеспечьте достаточное количество еды, чтобы накормить колонию. Стремитесь к разнообразию интересных и вкусных блюд.<br>\
+		Убедитесь, что ваши клиенты хорошо накормлены и им понравилась еда.<br>\
+		Потенциально возьмите на себя ответственность за то что колонисты спились в отсутствие Бармена."
 
 
 /obj/landmark/join/start/clubworker
@@ -101,15 +101,15 @@
 
 	perks = list(/datum/perk/market_prof, /datum/perk/greenthumb, /datum/perk/bartender)
 
-	description = "The Gardener toils in hydroponics - utilising seeds, tools, and fertilisers to grow bountiful crops.<br>\
-	More talented gardeners may dip into ranching. Your paddocks contain a few chickens and a cow. More exotic animals can be acquired as cargo imports.<br>\
-	You are the go-to expert for flora destruction - use shovels and hatchets, or seek more advanced equipment like flamethrowers and chainsaws.<br>\
-	Remember that your goods come at a price, and more exotic crops can command a higher price."
+	description = "Садовник занимается гидропоникой - использует семена, инструменты и удобрения для выращивания обильных урожаев.<br>\
+	Более талантливые садоводы могут заняться скотоводством. В ваших загонах содержится несколько кур и корова. Более экзотические животные могут быть приобретены в качестве импортного груза.<br>\
+	Вы являетесь опытным специалистом по уничтожению флоры - используйте лопаты и топоры или ищите более современное оборудование, такое как огнеметы и бензопилы. Устройте резню в среде хлорофила.<br>\
+	Помните, что ваши товары имеют свою цену, и более экзотические культуры могут стоить дороже."
 
-	duties = "Grow food. Ensure a good supply of raw vegetables and core grains - rice and wheat.<br>\
-		Raise animals for eggs, meat and recreation.<br>\
-		Maintain the potted plants around the colony.<br>\
-		Manage invasive flora around the colony and control fungal infestations."
+	duties = "Выращивайте пищу. Обеспечьте хороший запас сырых овощей и основных злаков - риса и пшеницы.<br>\
+		Разводите животных для получения яиц, мяса и эмоциональной разгрузки (другие расы не являются животными).<br>\
+		Поддерживайте растения в горшках вокруг колонии.<br>\
+		Управляйте агрессивной флорой вокруг колонии и контролируйте грибковые заражения."
 
 /obj/landmark/join/start/hydro
 	name = "Gardener"
@@ -147,14 +147,14 @@
 							 /datum/computer_file/program/wordprocessor,
 							 /datum/computer_file/program/reports)
 
-	description = "The Artist serves as a versatile performance artist here to entertain the colony.<br>\
-	You may find your colleagues distracted by boring duties or senseless bickering, so work hard to bring them some real culture.<br>\
-	The CEO pays you a terrible retaining fee, so use your wits to sustain yourself - perhaps ask your audience for donations.<br>\
-	In addition you do not gain desires like other members of the colony, instead you spend your insight at your workbench to create expensive works of art worth selling."
+	description = "артист выступает здесь в качестве универсального исполнителя, развлекающего колонию.<br>\
+	Вы можете обнаружить, что ваши коллеги отвлекаются на скучные обязанности или бессмысленные препирательства, поэтому усердно работайте, чтобы привить им настоящую культуру.<br>\
+	Генеральный директор платит вам ужасно низкую плату, так что используйте свой ум, чтобы обеспечить себя - возможно, попросите свою аудиторию о пожертвованиях.r>\
+	Кроме того, вы не получаете желаний, как другие члены колонии, вместо этого вы проводите свое время за своим рабочим столом, создавая дорогие произведения искусства, которые стоит продать."
 
-	duties = "Provide (family-friendly) entertainment to the crew with your varied talents.<br>\
-		Create and sell valuable works of art in your artist bench.<br>\
-		Try to be a successful rather than starving artist. The costume vendor and equipment in your cramped studio may prove useful."
+	duties = "Обеспечьте (Безопасное для семейного просмотра) развлечение для экипажа с помощью ваших разнообразных талантов.<br>\
+		Создавайте и продавайте ценные произведения искусства в своей мастерской художника.<br>\
+		Постарайтесь быть успешным, а не голодающим художником. Продавец костюмов и оборудование в вашей тесной студии могут оказаться полезными."
 
 /obj/landmark/join/start/artist
 	name = "Artist"
@@ -186,15 +186,15 @@
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/camera_monitor)
-	description = "The lowly Janitor, well paid but rarely respected, nevertheless provides a valuable service.<br>\
-	You will trundle around the colony, armed with your trusty janicart full of cleaning supplies, disposing of trash and pests.<br>\
-	Some minor maintenance also falls within your duties. Fix lights, correct broken vendors, replace floor tiles - ease the guild burden.<br>\
-	Although your status is miserable, your knowledge of maintenance may lead you to some valuable salvage for some extra cash."
+	description = "Скромный Уборщик, которому хорошо платят, но редко уважают, тем не менее оказывает ценную услугу.<br>\
+	Вы будете передвигаться по колонии, вооружившись своей верной тележкой, полной чистящих средств, избавляясь от мусора и вредителей.<br>\
+	В ваши обязанности также входит незначительное техническое обслуживание. Почините светильники, исправьте сломанные торговые автоматы, замените напольную плитку - облегчите бремя гильдии.<br>\
+	Несмотря на то, что ваш статус плачевен, ваши знания в области технического обслуживания могут привести вас к некоторому ценному спасению вашего авторитета."
 
-	duties = "Clean blood, dirt, rubble and messes. Don't clean up crime scenes!<br>\
-		Conduct minor repairs and maintenance when guild adepts aren't available.<br>\
-		Restock Newscasters to at lest 15 prints.<br>\
-		Deploy traps on burrows and do your best to handle the ongoing roach and spider problem."
+	duties = "Уберайте кровь, грязь, щебень и беспорядок. Не убирайте места преступлений!<br>\
+		Проводите мелкий ремонт и техническое обслуживание, когда адепты гильдии заняты.<br>\
+		Пополните запасы газет как минимум на 15 печатных изданий.<br>\
+		Расставляйте ловушки в норах и делайте все возможное, чтобы справиться с проблемой тараканов и пауков."
 
 /obj/landmark/join/start/janitor
 	name = "Janitor"
