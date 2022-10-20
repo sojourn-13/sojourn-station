@@ -3,7 +3,7 @@
  */
 /obj/item/clothing/under/rank/expedition_overseer
 	desc = "A brown suit complete with a white shirt and green tie. The fibre offers minor biohazard protection."
-	name = "research overseer's suit"
+	name = "Research Overseer's suit"
 	icon_state = "director"
 	item_state = "lb_suit"
 
@@ -11,7 +11,7 @@
 
 /obj/item/clothing/under/rank/scientist
 	desc = "A dark navy scientist's jacket complete with navy pants. The fibre offers minor biohazard protection."
-	name = "soteria scientist's uniform"
+	name = "Soteria Scientist's uniform"
 	icon_state = "science"
 	item_state = "w_suit"
 
@@ -20,7 +20,7 @@
 
 /obj/item/clothing/under/rank/chemist
 	desc = "A orange chemist's shirt complete with tan pants. The fiber offers minor biohazard protection."
-	name = "soteria chemist's uniform"
+	name = "Soteria Chemist's uniform"
 	icon_state = "chemistry"
 	item_state = "chemistry"
 
@@ -32,7 +32,7 @@
  */
 /obj/item/clothing/under/rank/moebius_biolab_officer
 	desc = "A white biolab overseer's shirt complete with tan pants. The fiber offers minor biohazard protection."
-	name = "biolab overseer's uniform"
+	name = "Biolab Overseer's uniform"
 	icon_state = "cmo"
 	item_state = "cmo"
 
@@ -41,7 +41,7 @@
 
 /obj/item/clothing/under/rank/virologist
 	desc = "A green virologist's shirt complete with tan pants. The fiber offers minor biohazard protection."
-	name = "soteria virologist's uniform"
+	name = "Soteria Virologist's uniform"
 	icon_state = "virology"
 	item_state = "w_suit"
 
@@ -50,7 +50,7 @@
 
 /obj/item/clothing/under/rank/medical
 	desc = "A blue doctor's shirt complete with tan pants. The fiber offers minor biohazard protection."
-	name = "soteria doctor's uniform"
+	name = "Soteria Doctor's uniform"
 	icon_state = "medical"
 	item_state = "medical"
 
@@ -77,13 +77,13 @@
 
 /obj/item/clothing/under/rank/psych
 	desc = "A calming turquoise turtleneck combined with dark blue slacks."
-	name = "soteria psychologist's turtleneck"
+	name = "Soteria psychologist's turtleneck"
 	icon_state = "psychturtle"
 	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/paramedic
-	desc = "A jumpsuit made by soteria for their recovery team members. It's made with reinforced fiber to offer more protection for recovery operators."
-	name = "soteria recovery team jumpsuit"
+	desc = "A jumpsuit made by soteria for their Lifeline Technicians. It's made with reinforced fiber to offer more protection for recovery operations."
+	name = "Soteria Lifeline Technician jumpsuit"
 	icon_state = "paramedic"
 	item_state = "paramedic"
 	permeability_coefficient = 0.50
@@ -97,8 +97,8 @@
 	)
 
 /obj/item/clothing/under/rank/paramedic/bdu
-	desc = "An old BDU that someone appears to have dyed in the signature colours of Soteria Recovery Team. It is made with reinforced fibers and sterile materials."
-	name = "soteria recovery team bdu"
+	desc = "An old BDU that someone appears to have dyed in the signature colours of Soteria Medical. It is made with reinforced fibers and sterile materials."
+	name = "Soteria Lifeline Technician bdu"
 	icon_state = "bdutt"
 	item_state = "bdutt"
 

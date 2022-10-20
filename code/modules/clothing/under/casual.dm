@@ -233,21 +233,27 @@
 
 /obj/item/clothing/under/hawaiian/vintage
 	name = "pink Hawaiian shirt"
-	desc = "A powder-pink Hawaiian shirt paired with dark khaki slacks.."
+	desc = "A powder-pink Hawaiian shirt paired with dark khaki slacks."
 	icon_state = "3005vintage"
 	item_state = "3005vintage"
 
 /obj/item/clothing/under/hawaiian/tropico
 	name = "green Hawaiian shirt"
-	desc = "A leafy green Hawaiian shirt paired with khaki slacks.."
+	desc = "A leafy green Hawaiian shirt paired with khaki slacks."
 	icon_state = "tropicopuke"
 	item_state = "tropicopuke"
 
 /obj/item/clothing/under/hawaiian/vice
 	name = "aquamarine Hawaiian shirt"
-	desc = "An ocean blue Hawaiian shirt paired with bluejeans. The shirt label read 'Vercetti! Remember the name!'."
+	desc = "An ocean blue Hawaiian shirt paired with bluejeans. The shirt's label reads 'Vercetti! Remember the name!'."
 	icon_state = "miamivice"
 	item_state = "miamivice"
+
+/obj/item/clothing/under/hawaiian/purple
+	name = "purple Hawaiian shirt"
+	desc = "A purple hawaiian shirt paired with dark khaki slacks."
+	icon_state = "purplevice" // Sprites by Obey#8642
+	item_state = "purplevice"
 
 /*Turtlenecks*/
 
@@ -309,14 +315,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Skinsuit Masculine"] = ""
-	options["Skinsuit Feminine"] = "_f"
-	options["Leotard Skinsuit Feminine"] = "_leo"
-	options["Leotard Skinsuit Masculine"] = "_leom"
-	options["Grey Skinsuit Masculine"] = "_gm"
-	options["Grey Skinsuit Feminine"] = "_gf"
-	options["Grey Leotard Skinsuit Feminine"] = "_gleo"
-	options["Grey Leotard Skinsuit Masculine"] = "_gleom"
+	options["Standard Skinsuit"] = ""
+	options["Leotard Skinsuit"] = "_leo"
+	options["Grey Skinsuit"] = "_g"
+	options["Grey Leotard Skinsuit"] = "_gleo"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

@@ -171,22 +171,51 @@
 
 /obj/item/clothing/suit/storage/puffer/purple
 	name = "purple puffer jacket"
-	desc = "A comfortable purple puffer vest."
+	desc = "A comfortable purple puffer jacket."
 	icon_state = "puffycoatpurple"
 	item_state = "puffycoatpurple"
 
 /obj/item/clothing/suit/storage/puffer/blue
 	name = "blue puffer jacket"
-	desc = "A comfortable blue puffer vest."
+	desc = "A comfortable blue puffer jacket."
 	icon_state = "puffycoatblue"
 	item_state = "puffycoatblue"
 
 /obj/item/clothing/suit/storage/puffer/red
 	name = "red puffer jacket"
-	desc = "A comfortable red puffer vest."
+	desc = "A comfortable red puffer jacket."
 	icon_state = "puffycoatred"
 	item_state = "puffycoatred"
 
+/obj/item/clothing/suit/storage/puffer/white
+	name = "white puffer jacket"
+	desc = "A comfortable white puffer jacket."
+	icon_state = "puffycoatwhite"
+	item_state = "puffycoatwhite"
+
+/obj/item/clothing/suit/storage/puffer/black
+	name = "black puffer jacket"
+	desc = "A comfortable black puffer jacket."
+	icon_state = "puffycoatblack"
+	item_state = "puffycoatblack"
+
+/obj/item/clothing/suit/storage/puffer/green
+	name = "green puffer jacket"
+	desc = "A comfortable green puffer jacket."
+	icon_state = "puffycoatgreen"
+	item_state = "puffycoatgreen"
+
+/obj/item/clothing/suit/storage/puffer/pink
+	name = "pink puffer jacket"
+	desc = "A comfortable pink puffer jacket."
+	icon_state = "puffycoatpink"
+	item_state = "puffycoatpink"
+
+/obj/item/clothing/suit/storage/puffer/yellow
+	name = "yellow puffer jacket"
+	desc = "A comfortable yellow puffer jacket."
+	icon_state = "puffycoatyellow"
+	item_state = "puffycoatyellow"
 
 /*Military Jackets*/
 
@@ -765,6 +794,8 @@ obj/item/clothing/suit/storage/toggle/peacoat
 		bio = 0,
 		rad = 0)
 
+/obj/item/clothing/suit/storage/puffy
+
 /*Helltaker drip - Seb*/
 /obj/item/clothing/suit/storage/wcoat/helltaker // Refactoring waistcoat stats into this one as it's meant to be more a worn suit than an attachable waistcoat. - Seb
 	name = "charming waistcoat"
@@ -860,9 +891,9 @@ obj/item/clothing/suit/sweater/blue
 
 /*Suit Jackets*/
 /obj/item/clothing/suit/storage/suitjacket/black
-	name = "black suit jacket"
-	desc = "A snappy black suit jacket."
-	icon_state = "ia_jacket"
+	name = "black buttoned suit jacket"
+	desc = "A snappy black suit jacket with buttons."
+	icon_state = "ia_jacket" // This one barely looks any different than the charcoal one.
 	body_parts_covered = UPPER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/suitjacket/blue
@@ -896,8 +927,8 @@ obj/item/clothing/suit/sweater/blue
 	body_parts_covered = UPPER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/suitjacket/navy
-	name = "navy suit jacket"
-	desc = "A snappy navy suit jacket."
+	name = "dark navy jacket"
+	desc = "A snappy dark navy jacket."
 	icon_state = "navy_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 
@@ -911,6 +942,48 @@ obj/item/clothing/suit/sweater/blue
 	name = "tan suit jacket"
 	desc = "A snappy tan suit jacket."
 	icon_state = "tan_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/pink
+	name = "pink suit jacket"
+	desc = "A snappy pink suit jacket."
+	icon_state = "pink_suitjacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/olive
+	name = "olive suit jacket"
+	desc = "A snappy olive suit jacket."
+	icon_state = "olive_suitjacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/navyjacket
+	name = "navy suit jacket"
+	desc = "A snappy navy suit jacket."
+	icon_state = "navy_suitjacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/cream
+	name = "cream suit jacket"
+	desc = "A snappy cream suit jacket."
+	icon_state = "cream_suitjacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/brown
+	name = "brown suit jacket"
+	desc = "A snappy brown suit jacket."
+	icon_state = "brown_suitjacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/grey
+	name = "grey suit jacket"
+	desc = "A snappy grey suit jacket."
+	icon_state = "grey_suitjacket"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/blackjacket
+	name = "black suit jacket"
+	desc = "A snappy black suit jacket."
+	icon_state = "black_suitjacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/suitjacket/helltaker
@@ -1038,33 +1111,6 @@ obj/item/clothing/suit/sweater/blue
 	item_state = "black_trench_m"
 	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-
-/obj/item/clothing/suit/storage/suitjacket/trenchcoat/verb/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["default"] = "black_trench_m"
-	options["feminine alt"] = "black_trench_f"
-
-	var/choice = input(M,"What kind of style do you want to change to?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		item_state = options[choice]
-		item_state_slots = list(
-			slot_back_str = options[choice]
-		)
-		to_chat(M, "You adjusted your trenchcoat's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
 
 /obj/item/clothing/suit/storage/suitjacket/livesey // The word Rum and the word Death should mean the same to you. - Seb
 	name = "Naval Surgeon jacket"
