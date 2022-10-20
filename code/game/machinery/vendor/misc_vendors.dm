@@ -247,4 +247,5 @@
 					/obj/item/clothing/under/dodgeball_blue = 0,
 					/obj/item/clothing/under/dodgeball_red = 0)
 	always_open = TRUE
-
+	give_discounts = FALSE
+	give_discount_points = FALSE

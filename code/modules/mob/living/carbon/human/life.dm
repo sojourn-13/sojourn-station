@@ -832,6 +832,7 @@
 				AdjustSleeping(rand(20,30))
 				updatehealth()
 				stats.removePerk(PERK_UNFINISHED_DELIVERY)
+				learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = src)
 			else
 				death()
 				blinded = 1
