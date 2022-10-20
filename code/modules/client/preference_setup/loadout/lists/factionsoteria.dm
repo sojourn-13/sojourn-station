@@ -173,6 +173,6 @@
 	display_name = "medical penlight"
 	path = /obj/item/device/lighting/toggleable/flashlight/pen
 	allowed_roles = list("Soteria Lifeline Technician","Soteria Doctor","Chief Biolab Overseer")
-	slot = slot_ears
+	slot = slot_r_ear
 	sort_category = "Faction: Soteria"
 	cost = 0
