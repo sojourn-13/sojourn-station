@@ -331,10 +331,10 @@ var/global/list/wings_icon_cache = list()
 	overlays_standing[UNDERWEAR_LAYER] = null
 
 	if(form.appearance_flags & HAS_UNDERWEAR)
-		var/icon/underwear = new/icon(form.get_mob_icon("underwear"), "blank")
+		var/icon/underwear = new/icon(get_gender_icon(gender, "underwear"), "blank")
 		for(var/entry in worn_underwear)
 			var/obj/item/underwear/UW = entry
-			var/icon/I = new /icon(form.get_mob_icon("underwear"), UW.icon_state)
+			var/icon/I = new /icon(get_gender_icon(gender, "underwear"), UW.icon_state)
 			if(UW.color)
 				I.Blend(UW.color, ICON_MULTIPLY)
 			underwear.Blend(I, ICON_OVERLAY)
@@ -668,6 +668,17 @@ mob/living/carbon/human/proc/get_wings_image()
 	var/list/icons = list(
 		"uniform"		= (g == MALE) ? 'icons/inventory/uniform/mob.dmi' : 'icons/inventory/uniform/mob_fem.dmi',
 		"suit"			= (g == MALE) ? 'icons/inventory/suit/mob.dmi' : 'icons/inventory/suit/mob_fem.dmi',
+		"gloves"		= 'icons/inventory/hands/mob.dmi',
+		"glasses"		= 'icons/inventory/eyes/mob.dmi',
+		"ears"			= 'icons/inventory/ears/mob.dmi',
+		"mask"			= 'icons/inventory/face/mob.dmi',
+		"hat"			= 'icons/inventory/head/mob.dmi',
+		"shoes"			= 'icons/inventory/feet/mob.dmi',
+		"misc"			= 'icons/mob/mob.dmi',
+		"belt"			= 'icons/inventory/belt/mob.dmi',
+		"s_store"		= 'icons/inventory/on_suit/mob.dmi',
+		"backpack"		= 'icons/inventory/back/mob.dmi',
+		"underwear"		= 'icons/inventory/underwear/mob.dmi'
 		)
 	return icons[slot]
 

@@ -257,6 +257,66 @@
 
 /*Turtlenecks*/
 
+/obj/item/clothing/under/turtleneck/black
+	name = "black turtleneck"
+	desc = "A black turtleneck complete with black pants."
+	icon_state = "tn_black"
+	item_state = "tn_black"
+
+/obj/item/clothing/under/turtleneck/blackbrown
+	name = "black and drab turtleneck"
+	desc = "A black turtleneck complete with brown pants."
+	icon_state = "tn_blackdrab"
+	item_state = "tn_blackdrab"
+
+/obj/item/clothing/under/turtleneck/blackskirt
+	name = "black turtleneck with skirt"
+	desc = "A black turtleneck. This one has a plain black skirt, for people who like their neck constrained but their legs free."
+	icon_state = "tn_blackskirt"
+	item_state = "tn_blackskirt"
+
+/obj/item/clothing/under/turtleneck/creamblack
+	name = "cream turtleneck"
+	desc = "A cream turtleneck complete with black pants."
+	icon_state = "tn_cream"
+	item_state = "tn_cream"
+
+/obj/item/clothing/under/turtleneck/creambrown
+	name = "cream drab turtleneck"
+	desc = "A cream turtleneck complete with brown pants."
+	icon_state = "tn_creamdrab"
+	item_state = "tn_creamdrab"
+
+/obj/item/clothing/under/turtleneck/creamskirt
+	name = "cream turtleneck with skirt"
+	desc = "A cream turtleneck. This one has a plain black skirt, for people who like their neck constrained but their legs free."
+	icon_state = "tn_creamskirt"
+	item_state = "tn_creamskirt"
+
+/obj/item/clothing/under/turtleneck/blueblack
+	name = "blue turtleneck"
+	desc = "A blue turtleneck complete with black pants."
+	icon_state = "tn_blue"
+	item_state = "tn_blue"
+
+/obj/item/clothing/under/turtleneck/bluebrown
+	name = "blue drab turtleneck"
+	desc = "A blue turtleneck complete with brown pants."
+	icon_state = "tn_bluedrab"
+	item_state = "tn_bluedrab"
+
+/obj/item/clothing/under/turtleneck/blueskirt
+	name = "blue turtleneck with skirt"
+	desc = "A blue turtleneck. This one has a plain black skirt, for people who like their neck constrained but their legs free."
+	icon_state = "tn_blueskirt"
+	item_state = "tn_blueskirt"
+
+/obj/item/clothing/under/turtleneck/the_bees
+	name = "bee turtleneck"
+	desc = "A yellow and brown turtleneck reminiscent of a bee's abdomen, complete with brown pants."
+	icon_state = "tn_bees"
+	item_state = "tn_bees"
+
 /obj/item/clothing/under/turtleneck/green
 	desc = "A turquoise turtleneck complete with dark blue slacks."
 	name = "green turtleneck"
