@@ -308,8 +308,10 @@
 	icon_state = "whitehi"
 	item_state_slots = list(slot_r_hand_str = "white", slot_l_hand_str = "white")
 
+// These were always identical to hi-tops, these sprites are all now in line with hi tops
+// and thus no longer necessary unless someone sprites a different enough sprite to justify them
 
-/*Sneakers*/
+/*Sneakers
 /obj/item/clothing/shoes/sneakers
 	name = "purple sneakers"
 	desc = "A pair of purple sneaker-style shoes. Drippy!"
@@ -324,6 +326,7 @@
 	name = "red sneakers"
 	desc = "A pair of red sneaker-style shoes. Drippy!"
 	icon_state = "sneakersblue"
+*/
 
 /*Cowboy*/
 

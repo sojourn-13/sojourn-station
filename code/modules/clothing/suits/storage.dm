@@ -854,12 +854,12 @@ obj/item/clothing/suit/sweater/blue
 	icon_state = "sweater_pink"
 
 /obj/item/clothing/suit/sweater/blackneck
-	name = "black turtleneck"
-	desc = "A tight turtleneck in black."
+	name = "black sweater"
+	desc = "A tight sweater in black."
 	icon_state = "turtleneck_black"
 
 /obj/item/clothing/suit/sweater
-	name = "christmas turtleneck"
+	name = "christmas sweater"
 	desc = "A very festive holiday sweater."
 	icon_state = "turtleneck_winterred"
 	slot_flags = SLOT_OCLOTHING
@@ -1107,8 +1107,8 @@ obj/item/clothing/suit/sweater/blue
 /obj/item/clothing/suit/storage/suitjacket/trenchcoat
 	name = "noir trenchcoat"
 	desc = "A long and rugged black trenchcoat, the perfect complement for your film noir ensemble. \n All you need now is a smoke, a whiskey, unlimited ammo and a license to kill." // Max Payne reference.
-	icon_state = "black_trench_m"
-	item_state = "black_trench_m"
+	icon_state = "black_trench"
+	item_state = "black_trench"
 	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 

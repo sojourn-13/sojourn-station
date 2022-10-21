@@ -210,7 +210,6 @@
 		//Under Clothing
 		/obj/item/clothing/under/dress/black = 4,
 		/obj/item/clothing/under/dress/white = 4,
-		/obj/item/clothing/under/helltaker = 4,
 		/obj/item/clothing/under/colony = 4,
 		/obj/item/clothing/under/johnny = 3,
 		/obj/item/clothing/under/raider = 3,
@@ -219,7 +218,6 @@
 		/obj/item/clothing/under/dress/red = 5,
 		/obj/item/clothing/under/dismas = 5,
 		/obj/item/clothing/under/fancy_redish_suit = 5,
-		/obj/item/clothing/under/top/dimmadome = 5,
 		/obj/item/clothing/under/top/haltertop = 5,
 		/obj/item/clothing/under/leisure = 5,
 		/obj/item/clothing/under/leisure/white = 5,
@@ -267,7 +265,6 @@
 		/obj/item/clothing/accessory/duster/donte = 5,
 		/obj/item/clothing/accessory/duster/denton = 5,
 		/obj/item/clothing/suit/storage/toggle/labcoat/poofy = 5,
-		/obj/item/clothing/suit/storage/texan = 2,
 		/obj/item/clothing/suit/storage/triad = 2,
 		/obj/item/clothing/suit/storage/akira = 2,
 		/obj/item/clothing/suit/storage/aerostatic_bomber_jacket = 3,
@@ -406,6 +403,8 @@
 		/obj/item/clothing/under/pants/leggings = 65,
 		/obj/item/clothing/under/pants/leggingswhite = 65,
 		/obj/item/clothing/under/pants/leggingsprint = 65,
+		/obj/item/clothing/under/jamrock_suit = 75,
+		/obj/item/clothing/under/aerostatic_suit = 75,
 		//Over Clothing
 		/obj/item/clothing/accessory/duster/brown = 40,
 		/obj/item/clothing/accessory/duster/chestnut = 40,
@@ -642,6 +641,8 @@
 		/obj/item/clothing/under/green = 4,
 		/obj/item/clothing/under/grey = 4,
 		/obj/item/clothing/under/black = 4,
+		/obj/item/clothing/under/helltaker = 4,
+		/obj/item/clothing/under/top/dimmadome = 5,
 		// Suit jackets
 		/obj/item/clothing/suit/storage/suitjacket = 10,
 		/obj/item/clothing/suit/storage/suitjacket/black = 10,
@@ -662,7 +663,9 @@
 		/obj/item/clothing/suit/storage/suitjacket/helltaker = 10,
 		/obj/item/clothing/suit/storage/suitjacket/helltaker/black = 10,
 		/obj/item/clothing/suit/storage/suitjacket/longcardigan_brown = 10,
-		/obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown = 10
+		/obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown = 10,
+		/obj/item/clothing/suit/storage/texan = 2
+
 	)
 
 	prices = list(
@@ -735,6 +738,7 @@
 		/obj/item/clothing/under/modular/blue = 40,
 		/obj/item/clothing/under/modular/blueskirt = 40,
 		/obj/item/clothing/under/modular/brown = 40,
+		/obj/item/clothing/under/modular/brown_skirt = 40,
 		/obj/item/clothing/under/modular/burgundy = 40,
 		/obj/item/clothing/under/modular/burgundyskirt = 40,
 		/obj/item/clothing/under/modular/charcoal = 40,
@@ -770,8 +774,6 @@
 		/obj/item/clothing/under/colony = 50,
 		/obj/item/clothing/under/fancy_redish_suit = 80,
 		/obj/item/clothing/under/top/dimmadome = 75,
-		/obj/item/clothing/under/jamrock_suit = 75,
-		/obj/item/clothing/under/aerostatic_suit = 75,
 	// Suit jackets
 		/obj/item/clothing/suit/storage/texan = 100,
 		/obj/item/clothing/suit/storage/suitjacket = 130,

@@ -338,7 +338,7 @@
 	icon_state = "tansuitbuttoned"
 	item_state = "tansuitbuttoned"
 
-/obj/item/clothing/under/modular
+/obj/item/clothing/under/modular/tanskirt
 	name = "tan suit skirt"
 	desc = "A tan suit skirt complemented by a buttoned white shirt."
 	icon_state = "tansuitskirtbuttoned"
@@ -405,7 +405,7 @@
 	item_state = "olive_suit"
 
 /obj/item/clothing/under/modular/oliveskirt
-	name = " suit"
+	name = "olive suit"
 	desc = "A formal olive skirt with a white buttoned shirt."
 	icon_state = "olive_suitskirt"
 	item_state = "olive_suitskirt"

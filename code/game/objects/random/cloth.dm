@@ -299,6 +299,26 @@
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
 
+/obj/random/cloth/bikehelms
+	name = "random biker helmet"
+	desc = "random colored biker helmet"
+	icon_state = "armor-grey"
+
+/obj/random/cloth/bikehelms/item_to_spawn()
+	return pickweight(list(/obj/item/clothing/head/helmet/biker = 8,
+				/obj/item/clothing/head/helmet/biker/white = 8,
+				/obj/item/clothing/head/helmet/biker/red = 8,
+				/obj/item/clothing/head/helmet/biker/green = 8,
+				/obj/item/clothing/head/helmet/biker/blue = 8,
+				/obj/item/clothing/head/helmet/biker/purple = 8,
+				/obj/item/clothing/head/helmet/biker/pink = 8,
+				/obj/item/clothing/head/helmet/biker/yellow = 8))
+
+/obj/random/cloth/bikehelms/low_chance
+	name = "low chance random biker helmet"
+	icon_state = "armor-grey-low"
+	spawn_nothing_percentage = 60
+
 /obj/random/cloth/gloves
 	name = "random gloves"
 	desc = "This is a random gloves."
