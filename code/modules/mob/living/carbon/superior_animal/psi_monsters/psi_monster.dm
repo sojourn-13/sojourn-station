@@ -205,8 +205,8 @@
 	icon_state = "ash"
 	anchored = TRUE
 	var/catalyst_drop = /obj/random/psi_catalyst
-	var/psion_chance = 25
-	var/normie_chance = 10
+	var/psion_chance = 30//Coffee edit: 25->30
+	var/normie_chance = 15//10->15
 
 /obj/effect/decal/cleanable/psi_ash/attack_hand(mob/user as mob)
 	if(user.stats.getPerk(PERK_PSION) && prob(psion_chance))
