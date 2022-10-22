@@ -85,7 +85,7 @@
 /datum/gear/factionsoteria/medicalscouter
 	display_name = "medical HUD, scouter"
 	path = /obj/item/clothing/glasses/hud/health/scouter
-	allowed_roles = list(JOBS_MEDICAL)
+	allowed_roles = list("Chief Biolab Overseer","Soteria Doctor","Soteria Lifeline Technician","Corpsman")
 	slot = slot_glasses
 	sort_category = "Faction: Soteria"
 
@@ -168,3 +168,11 @@
 	allowed_roles = list("Chief Research Overseer","Soteria Scientist","Soteria Roboticist")
 	slot = slot_gloves
 	sort_category = "Faction: Soteria"
+
+/datum/gear/factionsoteria/penlight
+	display_name = "medical penlight"
+	path = /obj/item/device/lighting/toggleable/flashlight/pen
+	allowed_roles = list("Soteria Lifeline Technician","Soteria Doctor","Chief Biolab Overseer")
+	slot = slot_r_ear
+	sort_category = "Faction: Soteria"
+	cost = 0

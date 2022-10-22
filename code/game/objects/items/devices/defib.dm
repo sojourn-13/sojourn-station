@@ -488,6 +488,9 @@
 	make_announcement("pings, \"Resuscitation successful.\"", "notice")
 	playsound(get_turf(src), 'sound/machines/defib_success.ogg', 50, 0)
 
+	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = H)
+
+
 	log_and_message_admins("used \a [src] to revive [key_name(H)].")
 
 

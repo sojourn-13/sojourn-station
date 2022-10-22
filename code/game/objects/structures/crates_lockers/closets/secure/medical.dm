@@ -33,7 +33,7 @@
 	new /obj/item/tool/wrench(src)
 
 /obj/structure/closet/secure_closet/personal/doctor
-	name = "soteria doctor's locker"
+	name = "Soteria Doctor's locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_medical_equip)
 	icon_state = "med"
@@ -76,7 +76,7 @@
 	new /obj/item/clothing/suit/storage/surgical_apron(src)
 
 /obj/structure/closet/secure_closet/personal/paramedic
-	name = "soteria field doctor's locker"
+	name = "Soteria Field Doctor's locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_medical_equip)
 	icon_state = "med"
@@ -96,7 +96,6 @@
 		if ("purple")
 			new /obj/item/clothing/under/scrubs/purple(src)
 			new /obj/item/clothing/head/surgery/purple(src)
-	new /obj/item/clothing/under/rank/paramedic(src)
 	new /obj/item/clothing/shoes/reinforced/medical(src)
 	new /obj/item/clothing/head/soft/medical(src)
 	new /obj/item/device/flash(src)
@@ -113,7 +112,7 @@
 	new /obj/item/storage/pouch/medical_supply(src)
 
 /obj/structure/closet/secure_closet/personal/orderly
-	name = "soteria recovery team locker"
+	name = "soteria Lifeline Technician locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_orderly)
 	icon_state = "traumateam"
@@ -123,16 +122,7 @@
 		new /obj/item/storage/backpack/medical(src)
 	else
 		new /obj/item/storage/backpack/satchel/medical(src)
-	switch(pick("blue", "green", "purple"))
-		if ("blue")
-			new /obj/item/clothing/under/scrubs(src)
-			new /obj/item/clothing/head/surgery(src)
-		if ("green")
-			new /obj/item/clothing/under/scrubs/green(src)
-			new /obj/item/clothing/head/surgery/green(src)
-		if ("purple")
-			new /obj/item/clothing/under/scrubs/purple(src)
-			new /obj/item/clothing/head/surgery/purple(src)
+	new /obj/item/clothing/under/rank/paramedic(src) // Not a surgery-oriented job, they don't need scrubs.
 	new /obj/item/device/lighting/toggleable/flashlight(src)
 	new /obj/item/device/radio(src)
 	new /obj/item/tool/crowbar(src)
@@ -148,7 +138,7 @@
 	new /obj/item/storage/hcases/med(src)
 
 /obj/structure/closet/secure_closet/reinforced/CMO
-	name = "soteria biolab overseer's locker"
+	name = "Soteria Biolab Overseer's locker"
 	req_access = list(access_cmo)
 	icon_state = "cmo"
 

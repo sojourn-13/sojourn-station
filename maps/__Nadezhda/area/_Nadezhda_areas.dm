@@ -513,7 +513,7 @@
 
 /area/nadezhda/command/bridgebar
 	name = "V.I.P. Bar"
-	icon_state = "nadezhdablue"
+	icon_state = "bar"
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/captain
@@ -791,6 +791,10 @@
 	name = "\improper Hydroponics"
 	icon_state = "hydro"
 
+/area/nadezhda/crew_quarters/botanist
+	name = "\improper Gardener's room"
+	icon_state = "hydro"
+
 /area/nadezhda/crew_quarters/hydroponics/garden
 	name = "\improper Garden"
 	icon_state = "garden"
@@ -808,6 +812,10 @@
 /area/nadezhda/crew_quarters/publichydro
 	name = "Public Hydroponics"
 	icon_state = "erisblue"
+
+/area/nadezhda/crew_quarters/techshop
+	name =  "Vacant Tech shops"
+	icon_state = "construction"
 
 //Church
 

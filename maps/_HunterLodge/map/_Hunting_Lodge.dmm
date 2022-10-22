@@ -63,13 +63,17 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "an" = (
-/obj/machinery/power/solar,
-/obj/structure/cable,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2";
 	pixel_y = 0
 	},
+/obj/machinery/power/solar,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ao" = (
@@ -440,10 +444,27 @@
 "co" = (
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /obj/structure/catwalk,
+/obj/structure/catwalk,
+/obj/machinery/power/apc{
+	cell_type = /obj/item/cell/large/high;
+	dir = 4;
+	name = "East APC";
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "cp" = (
@@ -460,18 +481,9 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ct" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "cu" = (
 /obj/machinery/light{
@@ -518,13 +530,16 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "cK" = (
-/obj/machinery/power/port_gen/pacman/diesel,
-/obj/item/reagent_containers/glass/bottle/petrel,
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Trophy Room"
 	},
-/turf/simulated/floor/plating/under,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge)
 "cN" = (
 /obj/structure/multiz/stairs/enter/bottom,
@@ -595,6 +610,7 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "de" = (
+/obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "dh" = (
@@ -652,12 +668,23 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dv" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "4-8";
+	pixel_x = 0
 	},
-/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dw" = (
@@ -736,42 +763,14 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dP" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/catwalk,
+/obj/machinery/power/solar,
+/obj/structure/cable,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dQ" = (
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2";
-	pixel_y = 0
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/structure/window/reinforced,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "dT" = (
 /obj/machinery/power/solar,
 /obj/structure/cable{
@@ -820,12 +819,12 @@
 /turf/simulated/open,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ea" = (
-/obj/structure/catwalk,
-/obj/machinery/power/solar_control,
+/obj/machinery/power/solar,
+/obj/structure/cable,
 /obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2";
-	pixel_y = 0
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -885,8 +884,16 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "et" = (
-/turf/simulated/wall/wood_old,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/effect/floor_decal/industrial/danger,
+/obj/structure/window/reinforced,
+/obj/machinery/power/port_gen/pacman/camp,
+/obj/effect/floor_decal/industrial/box,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eu" = (
 /obj/map_data/hunting_lodge,
 /turf/unsimulated/wall/jungle/variant,
@@ -932,6 +939,17 @@
 "eE" = (
 /obj/structure/sink/puddle,
 /turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"eI" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/obj/structure/table/woodentable,
+/obj/item/paper/solarsteup,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "eM" = (
 /obj/machinery/door/unpowered/simple/wood,
@@ -1028,14 +1046,9 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fv" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fw" = (
 /obj/machinery/light/floor{
 	dir = 8
@@ -1061,18 +1074,8 @@
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fA" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fB" = (
 /obj/structure/sink/kitchen{
@@ -1157,14 +1160,11 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fX" = (
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2";
-	pixel_y = 0
+/obj/machinery/conveyor/east{
+	id = "lodge_grinder"
 	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/hunting_lodge)
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "ga" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/spline/fancy{
@@ -1174,44 +1174,47 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "gc" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/light{
+	dir = 4
 	},
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d2 = 8;
+	icon_state = "1-8"
 	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gg" = (
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "gh" = (
+/obj/machinery/conveyor/east{
+	id = "lodge_grinder"
+	},
+/obj/structure/plasticflaps,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"gj" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/power/terminal{
+	dir = 1;
+	icon_state = "term"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
-"gj" = (
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "gk" = (
 /obj/structure/table/rack/shelf,
 /obj/item/reagent_containers/glass/beaker/large,
@@ -1290,15 +1293,9 @@
 "gE" = (
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "gG" = (
@@ -1411,6 +1408,7 @@
 	dir = 4;
 	light_color = "#0892d0"
 	},
+/obj/structure/closet/crate/bin,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "hq" = (
@@ -1526,17 +1524,17 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/hunting_lodge)
 "hX" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
+/obj/structure/catwalk,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ig" = (
@@ -1592,13 +1590,12 @@
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "iB" = (
-/obj/machinery/power/port_gen/pacman/diesel,
-/obj/item/reagent_containers/glass/bottle/petrel,
 /obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2";
 	pixel_y = 0
 	},
+/obj/machinery/power/solar,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "iE" = (
@@ -1640,14 +1637,9 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ja" = (
-/obj/machinery/power/tracker,
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2";
-	pixel_y = 0
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "je" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -1968,9 +1960,9 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "nt" = (
-/obj/structure/reagent_dispensers/fueltank/huge,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/effect/floor_decal/industrial/outline/red,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "nu" = (
 /obj/structure/bed/chair/comfy/black,
 /turf/simulated/floor/wood/wild1,
@@ -1983,42 +1975,22 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "nI" = (
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/invislight,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "nJ" = (
 /obj/effect/shuttle_landmark/hunting_lodge,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
 "nM" = (
-/obj/structure/catwalk,
-/obj/machinery/power/apc{
-	cell_type = /obj/item/cell/large/high;
-	dir = 4;
-	name = "East APC";
-	pixel_x = 28;
-	pixel_y = 0
-	},
-/obj/structure/invislight,
 /obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated/floor/plating/under,
+/obj/machinery/power/smes/dummysimple{
+	output_level = 17000
+	},
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "nS" = (
 /obj/structure/table/woodentable,
@@ -2036,19 +2008,22 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge)
 "oc" = (
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
+/obj/structure/catwalk,
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -2091,19 +2066,23 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ov" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "North APC";
+	pixel_y = 28
+	},
 /obj/structure/cable{
-	d1 = 1;
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	d1 = 4;
 	d2 = 8;
-	icon_state = "1-8"
+	icon_state = "4-8";
+	pixel_x = 0
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "oC" = (
 /obj/structure/table/bench/wooden,
 /obj/effect/floor_decal/spline/fancy{
@@ -2144,8 +2123,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "oP" = (
 /obj/structure/flora/big/bush3,
-/obj/random/flora/jungle_tree,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
 "oU" = (
 /obj/effect/floor_decal/border/stoneborder/corner,
@@ -2170,17 +2148,20 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "pw" = (
-/obj/machinery/power/solar,
 /obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
+	d1 = 4;
 	d2 = 8;
-	icon_state = "0-8"
+	icon_state = "4-8";
+	pixel_x = 0
 	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/structure/table/woodentable,
+/obj/item/stack/material/wood/random{
+	rand_max = 50;
+	rand_min = 30
+	},
+/obj/item/tool/fireaxe/woodsman,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "px" = (
 /obj/machinery/light{
 	dir = 1
@@ -2396,13 +2377,9 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "tj" = (
 /obj/structure/cable{
-	d1 = 4;
+	d1 = 2;
 	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 32
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -2448,36 +2425,17 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "tS" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "tU" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 2;
+	d1 = 1;
 	d2 = 4;
-	icon_state = "2-4"
+	icon_state = "1-4"
 	},
+/obj/structure/invislight,
+/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "tV" = (
@@ -2586,21 +2544,12 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "vv" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
 	},
 /obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/machinery/power/terminal{
-	dir = 4;
-	icon_state = "term"
-	},
-/obj/structure/cable,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "vA" = (
@@ -2826,16 +2775,16 @@
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "4-8";
+	pixel_x = 0
 	},
-/obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 2;
+	d1 = 1;
 	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "1-8"
 	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "yP" = (
 /obj/structure/bed/chair/custom/onestar/red{
 	dir = 1
@@ -2858,20 +2807,12 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "yY" = (
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/machinery/conveyor/east{
+	id = "lodge_grinder"
 	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/machinery/recycler,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "za" = (
 /obj/effect/floor_decal/spline/fancy{
 	dir = 5;
@@ -2919,22 +2860,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "zS" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
+/obj/structure/grille,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "zU" = (
@@ -2954,16 +2880,17 @@
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "4-8";
+	pixel_x = 0
 	},
-/obj/structure/catwalk,
+/obj/machinery/power/solar_control,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
 	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Ae" = (
 /obj/effect/floor_decal/border/carpet/black{
 	dir = 1
@@ -3006,36 +2933,29 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "AJ" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "AK" = (
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
+/obj/effect/floor_decal/industrial/danger,
+/obj/structure/window/reinforced,
+/obj/machinery/conveyor_switch{
+	id = "lodge_grinder"
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"AL" = (
 /obj/structure/cable{
+	d1 = 4;
 	d2 = 8;
-	icon_state = "0-8"
+	icon_state = "4-8";
+	pixel_x = 0
 	},
-/obj/structure/invislight,
-/turf/simulated/floor/plating/under,
+/turf/simulated/wall/wood,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Bq" = (
 /obj/effect/window_lwall_spawn/reinforced,
@@ -3125,19 +3045,22 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "CA" = (
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
+/obj/structure/catwalk,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -3267,23 +3190,9 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "DP" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/obj/structure/flora/big/bush2,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
 "DT" = (
 /obj/effect/floor_decal/border/stoneborder,
@@ -3342,18 +3251,11 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/hunting_lodge)
 "EG" = (
-/obj/machinery/power/port_gen/pacman/camp{
-	anchored = 1
+/obj/machinery/conveyor/east{
+	id = "lodge_grinder"
 	},
-/obj/item/stack/material/wood/full,
-/obj/item/stack/material/wood/full,
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2";
-	pixel_y = 0
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "EJ" = (
 /obj/structure/catwalk,
 /obj/machinery/suit_storage_unit/standard_unit,
@@ -3437,18 +3339,13 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "Gc" = (
 /obj/structure/cable{
-	d1 = 2;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "4-8";
+	pixel_x = 0
 	},
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Gz" = (
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/grass,
@@ -3468,6 +3365,7 @@
 /obj/structure/sign/misc/clock{
 	pixel_y = 34
 	},
+/obj/structure/closet/crate/bin,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "GN" = (
@@ -3553,23 +3451,10 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/hunting_lodge)
 "HS" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/machinery/power/smes/dummysimple{
+	output_level = 15000
 	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/plating/under,
+/turf/unsimulated/mineral,
 /area/nadezhda/outside/forest/hunting_lodge)
 "IB" = (
 /obj/machinery/door/airlock/highsecurity{
@@ -3601,15 +3486,22 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/hunting_lodge)
 "IO" = (
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
+/obj/structure/catwalk,
 /obj/structure/cable{
 	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 4;
 	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "4-8";
+	pixel_x = 0
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -3650,35 +3542,16 @@
 /turf/unsimulated/mineral/transition,
 /area/nadezhda/outside/forest/hunting_lodge)
 "JI" = (
-/obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/machinery/power/apc{
-	cell_type = /obj/item/cell/large/high;
-	dir = 4;
-	name = "East APC";
-	pixel_x = 28;
-	pixel_y = 0
-	},
-/obj/structure/cable{
-	d1 = 1;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "1-8"
+	icon_state = "4-8";
+	pixel_x = 0
 	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/structure/table/woodentable,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "JW" = (
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -3778,23 +3651,12 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "LE" = (
-/obj/structure/cable,
-/obj/machinery/power/smes/dummysimple,
-/turf/simulated/floor/plating,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "LI" = (
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/plating/under,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "LK" = (
 /obj/structure/cable{
@@ -3865,24 +3727,10 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "MK" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/effect/floor_decal/industrial/danger,
+/obj/structure/railing/grey,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "ML" = (
 /obj/structure/closet,
 /obj/effect/floor_decal/spline/fancy{
@@ -4076,27 +3924,11 @@
 /turf/simulated/wall/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Px" = (
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
+/obj/machinery/power/smes/dummysimple{
+	output_level = 15000
 	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/turf/unsimulated/mineral,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Py" = (
 /obj/structure/table/woodentable,
 /obj/item/storage/pill_bottle/dice,
@@ -4137,22 +3969,8 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Qp" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
+/obj/machinery/power/tracker,
+/obj/structure/cable,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Qv" = (
@@ -4409,19 +4227,11 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge)
 "UE" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/conveyor/east{
+	id = "lodge_grinder"
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "UI" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -4500,24 +4310,11 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "VK" = (
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -4551,15 +4348,9 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Xq" = (
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Xs" = (
 /obj/structure/catwalk,
 /obj/structure/catwalk,
@@ -4646,6 +4437,15 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge)
+"Yh" = (
+/obj/effect/floor_decal/industrial/danger,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/obj/structure/railing/grey,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Yo" = (
 /obj/structure/table/reinforced,
 /obj/random/claymore,
@@ -4929,12 +4729,12 @@ tz
 tz
 jY
 jY
-jY
-dT
-pw
-dT
-pw
-dT
+rg
+ay
+ay
+ay
+rg
+rg
 jY
 jY
 aa
@@ -5006,14 +4806,14 @@ tz
 tz
 tz
 jY
-jY
 dT
-dv
-pw
-dv
-pw
-dv
 dT
+dT
+VN
+dT
+dT
+dT
+rg
 jY
 aa
 aa
@@ -5084,14 +4884,14 @@ tz
 tz
 tz
 jY
-jY
-pw
-dv
-pw
-dv
-pw
-dv
-pw
+an
+IO
+hX
+VK
+hX
+CA
+ea
+rg
 jY
 aa
 BO
@@ -5162,14 +4962,14 @@ tz
 tz
 tz
 jY
-jY
-pw
-dv
-pw
-dv
-pw
-dv
-pw
+iB
+oc
+dP
+VN
+XL
+IO
+dP
+rg
 aa
 RE
 RE
@@ -5240,14 +5040,14 @@ tz
 tz
 tz
 jY
-jY
-pw
-dv
-pw
-dv
-pw
-dv
-AK
+iB
+oc
+dP
+ay
+XL
+IO
+dP
+BO
 RE
 RE
 Jh
@@ -5318,14 +5118,14 @@ tz
 tz
 tz
 jY
-jY
-pw
-dv
-pw
-dv
-pw
-dv
-AK
+iB
+oc
+dP
+ay
+XL
+IO
+dP
+BO
 RE
 qP
 MQ
@@ -5396,14 +5196,14 @@ tz
 tz
 tz
 jY
-jY
-pw
-dv
-pw
-dv
-pw
-dv
-AK
+iB
+oc
+dP
+ay
+XL
+IO
+dP
+BO
 RE
 qP
 MQ
@@ -5452,7 +5252,7 @@ nG
 hM
 hM
 hM
-xv
+hM
 WQ
 bo
 nV
@@ -5474,14 +5274,14 @@ tz
 tz
 tz
 jY
-jY
-pw
-dv
-pw
-dv
-pw
-dv
-AK
+iB
+oc
+dP
+ay
+XL
+IO
+dP
+BO
 RE
 RE
 Oj
@@ -5528,9 +5328,9 @@ hM
 hM
 hM
 hM
-hM
-hM
 ca
+ja
+xv
 WQ
 tn
 nV
@@ -5552,14 +5352,14 @@ tz
 tz
 tz
 jY
-jY
-pw
-dv
-pw
-dv
-pw
-dv
-pw
+iB
+oc
+dP
+ay
+XL
+IO
+dP
+rg
 aa
 RE
 WQ
@@ -5581,7 +5381,7 @@ ax
 ay
 AA
 RE
-QO
+tS
 lR
 Zo
 Zo
@@ -5589,7 +5389,7 @@ Zo
 Zo
 Zo
 As
-QO
+tS
 RE
 ay
 ay
@@ -5630,14 +5430,14 @@ tz
 tz
 tz
 jY
-jY
-pw
-dv
-pw
-dv
-pw
-dv
-AK
+iB
+oc
+dP
+ay
+XL
+IO
+dP
+BO
 RE
 RE
 jj
@@ -5708,14 +5508,14 @@ tz
 tz
 tz
 jY
-jY
-pw
-dv
-pw
-dv
-pw
-dv
-AK
+iB
+oc
+dP
+ay
+XL
+IO
+dP
+BO
 RE
 QO
 jj
@@ -5786,14 +5586,14 @@ tz
 tz
 tz
 jY
-jY
+iB
 oc
-gc
-IO
-gc
+dP
+ay
+XL
 IO
 dP
-nI
+BO
 RE
 vU
 jj
@@ -5864,14 +5664,14 @@ tz
 tz
 tz
 jY
-jY
-gj
-fA
-tS
-Qp
-tS
-UE
-AK
+iB
+oc
+dP
+ay
+XL
+IO
+dP
+BO
 RE
 QO
 jj
@@ -5942,14 +5742,14 @@ tz
 tz
 tz
 jY
-jY
-jY
-gj
+iB
+oc
+dP
+ay
+XL
 IO
-CA
-gj
-dv
-AK
+dP
+BO
 RE
 QO
 jj
@@ -6020,14 +5820,14 @@ tz
 tz
 tz
 jY
-jY
-jY
-jY
-jY
-pw
-Xq
-dv
-AK
+iB
+oc
+dP
+ay
+XL
+IO
+dP
+BO
 RE
 vU
 jj
@@ -6098,14 +5898,14 @@ tz
 tz
 tz
 jY
-jY
-et
-cK
-et
-pw
-yY
-zY
-AK
+iB
+oc
+dP
+ay
+XL
+IO
+dP
+BO
 RE
 QO
 jj
@@ -6176,14 +5976,14 @@ tz
 tz
 tz
 jY
-et
-VN
-fv
-co
-pw
-Xq
-dv
-AK
+iB
+oc
+dP
+ay
+XL
+IO
+dP
+BO
 RE
 RE
 jj
@@ -6254,15 +6054,15 @@ tz
 tz
 tz
 jY
-EG
-co
-EG
-ct
-pw
-pw
-dv
-dT
-BO
+iB
+oc
+dP
+ay
+XL
+IO
+dP
+ay
+AA
 RE
 CO
 WQ
@@ -6332,15 +6132,15 @@ tz
 tz
 tz
 jY
-EG
-ct
-EG
-ct
-pw
-pw
-dv
-dv
-AA
+iB
+oc
+dP
+VN
+VN
+vv
+VN
+ax
+QZ
 dY
 jj
 jj
@@ -6410,15 +6210,15 @@ tz
 tz
 tz
 jY
-et
+iB
 dv
-aB
-tj
-pw
-pw
+VK
+LK
+LK
+co
 tU
-LI
-AA
+ax
+QZ
 dY
 jj
 jj
@@ -6488,16 +6288,16 @@ tz
 tz
 tz
 jY
-EG
-ct
-EG
-ct
-pw
-pw
-yL
-pw
-aa
+iB
+oc
+dP
+VN
 RE
+AL
+cK
+RE
+RE
+WQ
 cG
 jj
 Rz
@@ -6566,16 +6366,16 @@ tz
 tz
 tz
 jY
-et
-dv
-nt
-dv
-pw
-pw
-yL
-pw
-aa
-RE
+iB
+oc
+dP
+rg
+WQ
+ov
+Gc
+Yh
+UE
+WQ
 cG
 jj
 iv
@@ -6645,14 +6445,14 @@ tz
 tz
 jY
 iB
-ov
-LK
-gc
-pw
-pw
-yL
-pw
+oc
+dP
 BO
+fA
+zY
+yL
+MK
+EG
 RE
 RE
 RE
@@ -6722,18 +6522,18 @@ tz
 tz
 tz
 jY
-jY
-jY
-XL
-ct
-pw
-pw
-yL
-dQ
-rg
-rg
+iB
+oc
+dP
 BO
-BO
+fA
+eI
+Gc
+AK
+gh
+fA
+AA
+AA
 RE
 gK
 gK
@@ -6800,17 +6600,17 @@ tz
 tz
 tz
 jY
-jY
-jY
-XL
-ct
-pw
-pw
-yL
+iB
+oc
+dP
+BO
+fA
+JI
+Gc
 dQ
-rg
-rg
-rg
+fX
+fA
+AA
 oP
 ay
 AA
@@ -6878,18 +6678,18 @@ tz
 tz
 tz
 jY
-jY
-jY
-XL
+iB
+oc
+dP
 ct
+fA
 pw
-pw
-yL
-pw
-rg
-rg
-Gz
-rg
+Gc
+et
+yY
+fA
+DP
+ay
 ay
 ag
 je
@@ -6956,17 +6756,17 @@ tz
 tz
 tz
 jY
-jY
-ja
-co
-dv
-pw
-pw
-yL
-dQ
+iB
+oc
+dP
 rg
-rg
-rg
+RE
+nM
+gj
+gc
+nt
+fA
+AA
 ay
 ag
 je
@@ -7034,16 +6834,16 @@ tz
 tz
 tz
 jY
-jY
-ea
-hX
-ct
-Px
-Px
-VK
-pw
+iB
+oc
+dP
 rg
-ay
+RE
+RE
+RE
+RE
+RE
+RE
 ay
 ag
 eX
@@ -7112,14 +6912,14 @@ tz
 tz
 tz
 jY
-jY
-jY
-XL
-MK
-vv
-AJ
-JI
+iB
+oc
+dP
 rg
+rg
+rg
+Gz
+Ju
 ay
 ag
 ag
@@ -7190,13 +6990,13 @@ tz
 tz
 tz
 jY
-dT
-jY
-dT
-HS
-LE
-gj
-aB
+iB
+oc
+dP
+zS
+zS
+zS
+rg
 ay
 ag
 eX
@@ -7268,13 +7068,13 @@ tz
 tz
 tz
 jY
-Gc
-LK
+zS
+tj
 gE
-dv
-pw
-rg
-ay
+gE
+Qp
+zS
+LI
 ag
 eX
 eX
@@ -7346,13 +7146,13 @@ tz
 tz
 tz
 jY
-nM
-fX
+jY
 zS
-gh
-DP
+zS
+zS
+zS
+zS
 rg
-ay
 je
 eX
 eX
@@ -7424,12 +7224,12 @@ tz
 tz
 tz
 aa
-zF
+jY
 rg
-XL
-an
-hX
+dO
 rg
+rg
+LI
 ay
 ag
 eX
@@ -7502,7 +7302,7 @@ tz
 tz
 tz
 aa
-tz
+aa
 aa
 aa
 aa
@@ -7716,7 +7516,7 @@ ld
 ay
 ds
 RE
-sp
+nI
 OY
 sp
 sp
@@ -7802,7 +7602,7 @@ RE
 ax
 dV
 RE
-sp
+nI
 sp
 sp
 fS
@@ -8070,7 +7870,7 @@ bq
 ee
 bn
 bq
-bq
+Xq
 WQ
 jj
 ur
@@ -8237,7 +8037,7 @@ jj
 jj
 hA
 WQ
-Cb
+LE
 Cb
 Cb
 Xz
@@ -8529,7 +8329,7 @@ hN
 il
 WQ
 WQ
-tz
+Px
 tz
 tz
 tz
@@ -8876,7 +8676,7 @@ aa
 aa
 aa
 aa
-aa
+HS
 aa
 aa
 aa
@@ -9464,7 +9264,7 @@ ar
 ar
 WQ
 wq
-jj
+fv
 iT
 Cb
 oe
@@ -9585,7 +9385,7 @@ jy
 qe
 jy
 Tl
-jj
+fv
 jj
 jj
 SM
@@ -10483,7 +10283,7 @@ WQ
 wo
 yC
 Cj
-MG
+fv
 jj
 oH
 IC
@@ -10706,10 +10506,10 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
+jH
+jH
+jH
+jH
 QK
 jj
 jj
@@ -10784,10 +10584,10 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
+jH
+jH
+jH
+jH
 WQ
 mz
 jj
@@ -10862,13 +10662,13 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
+jH
+jH
+jH
+jH
 WQ
-jj
-jj
+MG
+MG
 WQ
 uQ
 Pm
@@ -10940,10 +10740,10 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
+jH
+jH
+jH
+jH
 WQ
 WQ
 WQ
@@ -11018,11 +10818,11 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
+jH
+jH
+jH
+jH
+jH
 ar
 ar
 ar
@@ -11096,11 +10896,11 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
+jH
+jH
+jH
+jH
+jH
 ar
 ar
 ar
@@ -11174,11 +10974,11 @@ ar
 ar
 ar
 ar
-ar
-ar
-ar
-ar
-ar
+jH
+jH
+jH
+jH
+jH
 ar
 ar
 ar
@@ -12658,7 +12458,7 @@ Uv
 hD
 jj
 WQ
-mz
+AJ
 jj
 jj
 jj

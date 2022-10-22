@@ -536,6 +536,9 @@
 				WARNING("Mob [L] was Adenosine+ but already in the living or dead list still!")
 			GLOB.living_mob_list += L
 
+			L.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = L)
+
+
 			L.timeofdeath = 0
 			L.stat = UNCONSCIOUS //Life() can bring them back to consciousness if it needs to.
 			L.failed_last_breath = 0 //So mobs that died of oxyloss don't revive and have perpetual out of breath.
