@@ -452,6 +452,10 @@
 	unlocks_designs = list(/datum/design/research/circuit/industrial_autolathe,
 							/datum/design/research/circuit/recharger_industrial,
 							/datum/design/research/circuit/industrial_grinder,
+							/datum/design/research/circuit/sodadispenser,
+							/datum/design/research/circuit/coffeedispenser,
+							/datum/design/research/circuit/boozedispenser,
+							/datum/design/research/circuit/smelter,
 							/datum/design/research/circuit/advanced_grinder,
 							/datum/design/research/circuit/industrial_chems
 							)
