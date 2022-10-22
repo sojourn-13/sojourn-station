@@ -14,6 +14,8 @@
 		/obj/item/device/debugger = 5)
 	product_ads = "Spark them all!;Everything you need!"
 	auto_price = FALSE
+	give_discounts = FALSE
+	give_discount_points = FALSE
 
 /obj/machinery/vending/integrated_electronics_cases
 	name = "Integrated electronics cases and tools"
@@ -30,6 +32,8 @@
 		/obj/item/implanter = 6)
 	product_ads = "Automation for all your research needs!;Stainless steel!"
 	auto_price = FALSE
+	give_discounts = FALSE
+	give_discount_points = FALSE
 
 /obj/machinery/vending/integrated_electronics
 	name = "Integrated electronics"
@@ -137,3 +141,5 @@
 		/obj/item/integrated_circuit/converter/abs_to_rel_coords = 40)
 	product_ads = "Automation for people!;Hack them all!"
 	auto_price = FALSE
+	give_discounts = FALSE
+	give_discount_points = FALSE

@@ -62,6 +62,8 @@
 			SPAN_DANGER("Warning: user death event. Mobility control passed to integrated intelligence system.")
 		)
 
+	learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/rebound_case, "REBOUND_CASE", skill_gained = 1, learner = src)
+
 	. = ..(gibbed,form.death_message)
 	if(!gibbed)
 

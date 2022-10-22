@@ -236,7 +236,8 @@
 				/obj/item/clothing/head/helmet/space/void/odst/blue = 1,
 				/obj/item/clothing/head/helmet/space/void/odst/orange = 1,
 				/obj/item/clothing/head/helmet/space/void/SCAF = 1,
-				/obj/item/clothing/head/helmet/night_vision_helm = 0.5))
+				/obj/item/clothing/head/helmet/night_vision_helm = 0.5,
+				/obj/random/cloth/bikehelms = 1))
 
 /obj/random/cloth/helmet/low_chance
 	name = "low chance random helmet"
@@ -292,10 +293,31 @@
 				/obj/item/clothing/head/costume/history/anarchist = 1,
 				/obj/item/clothing/head/welding = 5,
 				/obj/item/clothing/head/ranger = 3,
-				/obj/item/clothing/head/inhaler = 1))
+				/obj/item/clothing/head/inhaler = 1,
+				/obj/random/cloth/bikehelms = 1))
 
 /obj/random/cloth/head/low_chance
 	name = "low chance random head"
+	icon_state = "armor-grey-low"
+	spawn_nothing_percentage = 60
+
+/obj/random/cloth/bikehelms
+	name = "random biker helmet"
+	desc = "random colored biker helmet"
+	icon_state = "armor-grey"
+
+/obj/random/cloth/bikehelms/item_to_spawn()
+	return pickweight(list(/obj/item/clothing/head/helmet/biker = 1,
+				/obj/item/clothing/head/helmet/biker/white = 1,
+				/obj/item/clothing/head/helmet/biker/red = 1,
+				/obj/item/clothing/head/helmet/biker/green = 1,
+				/obj/item/clothing/head/helmet/biker/blue = 1,
+				/obj/item/clothing/head/helmet/biker/purple = 1,
+				/obj/item/clothing/head/helmet/biker/pink = 1,
+				/obj/item/clothing/head/helmet/biker/yellow = 1))
+
+/obj/random/cloth/bikehelms/low_chance
+	name = "low chance random biker helmet"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
 

@@ -624,6 +624,65 @@
 	name = "gray tanker helmet"
 	icon_state = "tanker_helmet_gray"
 
+/obj/item/clothing/head/helmet/biker
+	name = "black biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in black."
+	icon_state = "celty" // Durarara reference
+	item_state = "celty"
+	item_flags = THICKMATERIAL
+	flags_inv = HIDEEARS|BLOCKHAIR|HIDEEYES|BLOCKFACEHAIR|HIDEFACE //Speaking with one on should be muffled
+	price_tag = 150
+	armor_list = list(
+		melee = 20,
+		bullet = 10,
+		energy = 5,
+		bomb = 15, // Shock-absorbent
+		bio = 0,
+		rad = 0
+	)
+
+/obj/item/clothing/head/helmet/biker/white
+	name = "white biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in white."
+	icon_state = "celty_white"
+	item_state = "celty_white"
+
+/obj/item/clothing/head/helmet/biker/red
+	name = "red biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in red."
+	icon_state = "celty_red"
+	item_state = "celty_red"
+
+/obj/item/clothing/head/helmet/biker/green
+	name = "green biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in green."
+	icon_state = "celty_green"
+	item_state = "celty_green"
+
+/obj/item/clothing/head/helmet/biker/blue
+	name = "blue biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in light blue."
+	icon_state = "celty_blue"
+	item_state = "celty_blue"
+
+/obj/item/clothing/head/helmet/biker/purple
+	name = "purple biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in purple."
+	icon_state = "celty_purple"
+	item_state = "celty_purple"
+
+/obj/item/clothing/head/helmet/biker/pink
+	name = "pink biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in pink."
+	icon_state = "celty_pink"
+	item_state = "celty_pink"
+
+/obj/item/clothing/head/helmet/biker/yellow
+	name = "yellow biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in yellow."
+	icon_state = "celty_yellow"
+	item_state = "celty_yellow"
+
 /obj/item/clothing/head/helmet/laserproof
 	name = "ablative helmet"
 	desc = "A helmet that excels in protecting the wearer against energy projectiles."
@@ -953,7 +1012,7 @@
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "steelpot"
 	armor_list = list(melee = 35, bullet = 30, energy = 0, bomb = 30, bio = 0, rad = 0) // slightly buffed IHS helmet minus energy resistance
-	flags_inv = BLOCKHEADHAIR
+	flags_inv = BLOCKHEADHAIR|HIDEEARS
 	body_parts_covered = HEAD|EARS
 	siemens_coefficient = 1
 

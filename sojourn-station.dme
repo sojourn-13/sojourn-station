@@ -3296,4 +3296,8 @@
 #include "modular_sojourn\cardgame_2\cardholder.dm"
 #include "modular_sojourn\cardgame_2\cardpacks_and_spawner.dm"
 #include "modular_sojourn\cardgame_2\items.dm"
+#include "modular_sojourn\task_master\_task_master_defines.dm"
+#include "modular_sojourn\task_master\human_helper.dm"
+#include "modular_sojourn\task_master\task_helpers.dm"
+#include "modular_sojourn\task_master\tasks.dm"
 // END_INCLUDE

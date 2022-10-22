@@ -880,6 +880,9 @@ default behaviour is:
 	//Mutations populated through horrendous genetic tampering.
 	unnatural_mutations = new(src)
 
+	//Skills and mastery holder
+	learnt_tasks = new(src)
+
 	generate_static_overlay()
 	for(var/mob/observer/eye/angel/A in GLOB.player_list)
 		if(A)
@@ -907,6 +910,8 @@ default behaviour is:
 	QDEL_NULL(static_overlay)
 
 	unnatural_mutations = null //causes a GC failure if we qdel-and it seems its not SUPPOSED to qdel, oddly
+
+	learnt_tasks = null
 
 	update_z(null)
 

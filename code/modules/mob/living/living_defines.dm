@@ -101,6 +101,10 @@
 	//Mutations populated through horrendous genetic tampering.
 	var/datum/genetics/genetics_holder/unnatural_mutations
 
+	//Task-Mastery - Gained by doing completely random tasks
+	var/datum/task_master/labourer/learnt_tasks
+
+
 	//How much material is used by the cloning process
 	var/clone_difficulty = CLONE_MEDIUM
 
