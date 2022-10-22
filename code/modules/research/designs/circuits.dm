@@ -27,6 +27,26 @@
 	build_path = /obj/item/circuitboard/arcade/orion_trail
 	category = CAT_MISC
 
+/datum/design/research/circuit/sodadispenser //COFFEE EDIT
+	name = "soda fountain dispenser"
+	build_path = /obj/item/circuitboard/chemical_dispenser/soda
+	category = CAT_MISC
+
+/datum/design/research/circuit/coffeedispenser //COFFEE EDIT
+	name = "coffee master dispenser"
+	build_path = /obj/item/circuitboard/chemical_dispenser/coffee_master
+	category = CAT_MISC
+	
+/datum/design/research/circuit/boozedispenser //COFFEE EDIT
+	name = "booze dispenser"
+	build_path = /obj/item/circuitboard/chemical_dispenser/beer
+	category = CAT_MISC
+
+/datum/design/research/circuit/smelter //COFFEE EDIT
+	name = "smelter"
+	build_path = /obj/item/circuitboard/smelter
+	category = CAT_MACHINE
+
 /datum/design/research/circuit/secdata
 	name = "security records console"
 	build_path = /obj/item/circuitboard/secure_data
