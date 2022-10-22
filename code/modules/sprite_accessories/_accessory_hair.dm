@@ -936,6 +936,7 @@
 	name = "Yasu Quills"
 	icon_state = "yasuquills"
 
+<<<<<<< HEAD
 /datum/sprite_accessory/hair/marquafrill
 	name = "Mar'Qua pointed frills"
 	icon_state = "sidespikes"
@@ -957,22 +958,27 @@
 	species_allowed = list(FORM_MARQUA)
 
 
+=======
+>>>>>>> parent of d043f248e (Mar'Qua stuff. (#3300))
 /datum/sprite_accessory/hair/marqua_veryshort
-	name = "Very Short Headtails"
+	name = "Mar'Qua Very Short Headtails"
 	icon_state = "marqua_hair_veryshort_s"
+	species_allowed = list(FORM_MARQUA)
 
 /datum/sprite_accessory/hair/marqua_short
-	name = "Short Headtails"
+	name = "Mar'Qua Short Headtails"
 	icon_state = "marqua_hair_short_s"
+	species_allowed = list(FORM_MARQUA)
 
 /datum/sprite_accessory/hair/marqua_average
-	name = "Average Headtails"
+	name = "Mar'Qua Average Headtails"
 	icon_state = "marqua_hair_average_s"
+	species_allowed = list(FORM_MARQUA)
 
 /datum/sprite_accessory/hair/marqua_long
-	name = "Long Headtails"
+	name = "Mar'Qua Long Headtails"
 	icon_state = "marqua_hair_verylong_s"
-
+	species_allowed = list(FORM_MARQUA)
 
 /datum/sprite_accessory/hair/folken
 	species_allowed = list(FORM_FOLKEN)
