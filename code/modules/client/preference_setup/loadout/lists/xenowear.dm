@@ -28,7 +28,6 @@
 	sort_category = "Xenowear"
 */
 
-<<<<<<< HEAD
 /datum/gear/xenowear/marquamask
 	display_name = "marqua gill mask"
 	path = /obj/item/clothing/mask/breathxeno/marqua
@@ -36,8 +35,6 @@
 	sort_category = "Xenowear"
 	cost = 0
 
-=======
->>>>>>> parent of d043f248e (Mar'Qua stuff. (#3300))
 /datum/gear/xenowear/opifexgasmask
 	display_name = "opifex gas mask"
 	path = /obj/item/clothing/mask/gas/opifex
