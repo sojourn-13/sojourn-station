@@ -116,13 +116,13 @@
 								"Player Setup", "Yes", "No") == "No")
 						ready = 0
 						return
-				var/datum/preferences/records_check = client.prefs.get_records()
-				if(!records_check)
-					if(alert(src,"Are you sure you wish to spawn without records? You will likely be arrested. \
-								If not, go to the Backround section of Setup Character and set Records.", \
-								"Player Setup", "Yes", "No") == "No")
-						ready = 0
-						return
+				// var/datum/preferences/records_check = client.prefs.get_records()
+				// if(!records_check)
+				// 	if(alert(src,"Are you sure you wish to spawn without records? You will likely be arrested.
+				// 				If not, go to the Backround section of Setup Character and set Records.",
+				// 				"Player Setup", "Yes", "No") == "No")
+				// 		ready = 0
+				// 		return
 			if(!BC_IsKeyAllowedToConnect(ckey) && !usr.client.holder)
 				alert("Border Control is enabled, and you haven't been whitelisted!  You're welcome to observe, \
 					   but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!" , "Border Control Active")
@@ -195,12 +195,12 @@
 			              If not, go to the Augmentation section of Setup Character and change the \"eyes\" slot from Removed to the desired kind of eyes.", \
 						  "Player Setup", "Yes", "No") == "No")
 				return 0
-		var/datum/preferences/records_check = client.prefs.get_records()
-		if(!records_check)
-			if(alert(src,"Are you sure you wish to spawn without records? You will likely be arrested. \
-						If not, go to the Backround section of Setup Character and set Records.", \
-						"Player Setup", "Yes", "No") == "No")
-				return 0
+		// var/datum/preferences/records_check = client.prefs.get_records()
+		// if(!records_check)
+		// 	if(alert(src,"Are you sure you wish to spawn without records? You will likely be arrested.
+		// 				If not, go to the Backround section of Setup Character and set Records.",
+		// 				"Player Setup", "Yes", "No") == "No")
+		// 		return 0
 		if(!check_rights(R_ADMIN, 0))
 			var/datum/species/S = all_species[client.prefs.species]
 			if((S.spawn_flags & IS_WHITELISTED) && !is_alien_whitelisted(src, client.prefs.species))
