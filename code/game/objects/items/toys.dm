@@ -1257,7 +1257,7 @@
 		qdel(src)
 
 /obj/item/toy/plushie/fumo/necochaos
-	name = "\improper Neco Arc chaos fumo"
+	name = "\improper Neco Arc Chaos fumo"
 	desc = "Hey! Taxi!"
 	icon_state = "neco-chaos"
 	phrase = "Money...ideals...canned cat food...nightmare."
