@@ -508,3 +508,15 @@
 	new /obj/item/tool/sword/saber(src)
 	new /obj/item/clothing/accessory/holster/saber(src)
 
+/obj/item/storage/box/costume/rando
+	name = "warlord costume box"
+	desc = "A box containing a large costume for a post-apocalyptic warlord"
+	icon_state = "box_of_doom_big"
+
+/obj/item/storage/box/costume/rando/populate_contents()
+	new /obj/item/clothing/under/costume/halloween/rando(src)
+	new /obj/item/clothing/head/costume/halloween/rando(src)
+	new /obj/item/reagent_containers/food/snacks/donkpocket/sinpocket(src)
+	new /obj/item/reagent_containers/food/snacks/donkpocket/sinpocket(src)
+	new /obj/item/reagent_containers/food/snacks/donkpocket/sinpocket(src) // Rando rations.
+

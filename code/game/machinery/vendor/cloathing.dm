@@ -41,6 +41,7 @@
 					/obj/item/storage/box/costume/pirate = 2,
 					/obj/item/storage/box/costume/plaguedoctor = 2,
 					/obj/item/storage/box/costume/owl = 2,
+					/obj/item/storage/box/costume/rando = 2,
 					/obj/item/storage/box/costume/santa = 2,
 					/obj/item/storage/box/costume/scarecrow = 2,
 					/obj/item/storage/box/costume/skeleton = 2,
@@ -102,6 +103,7 @@
 					/obj/item/storage/box/costume/pirate = 100,
 					/obj/item/storage/box/costume/plaguedoctor = 100,
 					/obj/item/storage/box/costume/owl = 100,
+					/obj/item/storage/box/costume/rando = 100,
 					/obj/item/storage/box/costume/santa = 100,
 					/obj/item/storage/box/costume/scarecrow = 100,
 					/obj/item/storage/box/costume/skeleton = 100,
@@ -463,6 +465,7 @@
 	vend_reply = "Have fun, you shameless pervert!"
 	products = list(
 				/obj/item/clothing/suit/costume/kinky/alyson = 5,
+				/obj/item/clothing/under/costume/kinky/hadakapron = 5,
 				/obj/item/clothing/suit/tabard = 5,
 				/obj/item/clothing/suit/tabard/blacksilk = 5,
 				/obj/item/clothing/under/costume/kinky/latex_maid = 5,
@@ -500,6 +503,7 @@
 				/obj/item/book/manual/religion/c_bible = 5)
 	prices = list(
 				/obj/item/clothing/suit/costume/kinky/alyson = 100,
+				/obj/item/clothing/under/costume/kinky/hadakapron = 75,
 				/obj/item/clothing/suit/tabard = 100,
 				/obj/item/clothing/suit/tabard/blacksilk = 100,
 				/obj/item/clothing/under/costume/kinky/latex_maid = 100,

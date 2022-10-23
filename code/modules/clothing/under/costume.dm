@@ -61,6 +61,33 @@ obj/item/clothing/under/costume/history/pirate
 	icon_state = "janimaid"
 	item_state = "janimaid"
 
+/obj/item/clothing/under/costume/maid/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Default Maid"] = "janimaid"
+	options["Victorian alt"] = "janimaid_alt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your clothing into [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /*Kinky*/
 
 /obj/item/clothing/under/costume/kinky/latex_maid
@@ -127,6 +154,12 @@ obj/item/clothing/under/costume/history/pirate
 	desc = "You already know what this is."
 	icon_state = "stripper_g"
 	item_state = "stripper_g"
+
+/obj/item/clothing/under/costume/kinky/hadakapron
+	name = "naked apron"
+	desc = "A very impractical yet very revealing apron meant to leave very little to the imagination."
+	icon_state = "hadakapron"
+	item_state = "hadakapron"
 
 /*Animal*/
 
@@ -336,6 +369,41 @@ obj/item/clothing/under/costume/history/pirate
 	item_state = "enclave"
 	body_parts_covered = ARMS|LEGS
 
+/obj/item/clothing/under/costume/halloween/rando
+	name = "army leader outfit"
+	desc = "A menacing, imposing costume of a warlord from a post-apocalyptic gang."
+	icon_state = "warlord"
+	item_state = "warlord"
+
+/obj/item/clothing/under/costume/halloween/rando/verb/toggle_style()
+	set name = "Adjust Costume"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["We d-don't need to f-fight..."] = "warlord"
+	options["..."] = "warlord_open"
+
+	var/choice = input(M,"W-what kind of s-style do you w-want?","Adjust Costume") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "Y-you adjusted your o-outfit's s-style. [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
+
 /*Misc*/
 
 /obj/item/clothing/under/costume/misc/rainbowjumpsuit
@@ -390,3 +458,4 @@ obj/item/clothing/under/costume/history/pirate
 	desc = "A gaudy looking jersey for some godforsaken team, while the tag on the back boasts about it bringing out infinate potential in a player it seems more like a relic. One of a time filled with mystics of trash and violence."
 	icon_state = "tackyjersey"
 	item_state = "tackyjersey"
+

@@ -39,7 +39,7 @@
 	new /obj/item/clothing/accessory/badge/smc(src)
 	new /obj/item/clothing/gloves/thick/swat/blackshield(src)
 	new /obj/item/storage/sheath/judgement/exultor/filled(src)
-	new /obj/item/device/radio/headset/headset_blackshield/bowman(src)
+	new /obj/item/device/radio/headset/heads/bscom/bowman(src)
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
 	if(prob(35))

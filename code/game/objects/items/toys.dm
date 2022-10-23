@@ -1220,14 +1220,15 @@
 	item_state = "egg3" // It's the green egg in items_left/righthand
 	w_class = ITEM_SIZE_TINY
 
-/obj/item/toy/plushie/fumo/arcueid // If people want to add more fumos, make them children of this one. - Seb
-	name = "neco arc fumo"
-	desc = "...What the fuck?"
-	icon_state = "arcueid"
-	phrase = "Burenyaa~"
-	var/pokesound = 'sound/sanity/burenyaa.ogg'
 
-/obj/item/toy/plushie/fumo/arcueid/attack_self(mob/user as mob)
+/obj/item/toy/plushie/fumo
+	name = "\improper placeholder fumo"
+	icon_state = "arcueid"
+	desc = "You shouldn't be seeing this..."
+	phrase = ""
+	var/pokesound = null
+
+/obj/item/toy/plushie/fumo/attack_self(mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(user.a_intent == I_HELP)
 		user.visible_message(SPAN_NOTICE("<b>\The [user]</b> hugs [src]!"),SPAN_NOTICE("You hug [src]!"))
@@ -1239,6 +1240,28 @@
 		user.visible_message(SPAN_NOTICE("<b>\The [user]</b> pokes the [src]."),SPAN_NOTICE("You poke the [src]."))
 		visible_message("[src] says, \"[phrase]\"")
 		playsound(src.loc, pokesound, 50, 0) // Should work for any pokesound anyone might want to add to fumos.
+
+/obj/item/toy/plushie/fumo/arcueid // Make sure all future fumos are children of /fumo and not this one.
+	name = "\improper Neco Arc fumo"
+	desc = "...What the fuck?"
+	icon_state = "arcueid"
+	phrase = "Burenyaa~"
+	pokesound = 'sound/sanity/burenyaa.ogg'
+
+/obj/item/toy/plushie/fumo/arcueid/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W,/obj/item/clothing/mask/smokable/cigarette)) // The Neco Arc plushie bums you a ciggie, do you give it one?
+		var/turf/T = get_turf(src)
+		new /obj/item/toy/plushie/fumo/necochaos(T)
+		to_chat(user, "You create an abomination.")
+		qdel(W)
+		qdel(src)
+
+/obj/item/toy/plushie/fumo/necochaos
+	name = "\improper Neco Arc chaos fumo"
+	desc = "Hey! Taxi!"
+	icon_state = "neco-chaos"
+	phrase = "Money...ideals...canned cat food...nightmare."
+	pokesound = 'sound/sanity/nyah.ogg'
 
 /obj/item/toy/plushie/carp
 	name = "carp space plushie"
