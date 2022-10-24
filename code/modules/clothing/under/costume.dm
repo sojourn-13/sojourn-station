@@ -373,41 +373,6 @@ obj/item/clothing/under/costume/history/pirate
 	item_state = "enclave"
 	body_parts_covered = ARMS|LEGS
 
-/obj/item/clothing/under/costume/halloween/rando
-	name = "army leader outfit"
-	desc = "A menacing, imposing costume of a warlord from a post-apocalyptic gang."
-	icon_state = "warlord"
-	item_state = "warlord"
-
-/obj/item/clothing/under/costume/halloween/rando/verb/toggle_style()
-	set name = "Adjust Costume"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["We d-don't need to f-fight..."] = "warlord"
-	options["..."] = "warlord_open"
-
-	var/choice = input(M,"W-what kind of s-style do you w-want?","Adjust Costume") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		item_state = options[choice]
-		item_state_slots = list(
-			slot_back_str = options[choice]
-		)
-		to_chat(M, "Y-you adjusted your o-outfit's s-style. [choice].")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
-
-
 /*Misc*/
 
 /obj/item/clothing/under/costume/misc/rainbowjumpsuit

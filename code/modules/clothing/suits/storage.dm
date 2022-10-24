@@ -476,6 +476,12 @@
 	icon_open = "denim_jacket_open"
 	icon_closed = "denim_jacket"
 
+/obj/item/clothing/suit/storage/toggle/leather/denimjacket/outlaw
+	name = "outlaw's denim jacket"
+	desc = "A raggedy denim jacket with a tied up red handkerchief. It lacks slits to button it up."
+	icon_state = "outlaw"
+	item_state = "outlaw"
+
 /obj/item/clothing/suit/storage/toggle/leather/denimvest
 	name = "denim vest"
 	desc = "A smart blue vest made out of denim"
@@ -1132,3 +1138,36 @@ obj/item/clothing/suit/sweater/blue
 	icon_state = "boxer_jacket"
 	item_state = "boxer_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/toggle/rando
+	name = "army leader outfit"
+	desc = "A menacing, imposing costume of a warlord from a post-apocalyptic gang."
+	icon_state = "warlord"
+	item_state = "warlord"
+
+/obj/item/clothing/suit/storage/toggle/rando/verb/toggle_style()
+	set name = "Adjust Costume"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["We d-don't need to f-fight..."] = "warlord"
+	options["..."] = "warlord_open"
+
+	var/choice = input(M,"W-what kind of s-style do you w-want?","Adjust Costume") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "Y-you adjusted your o-outfit's s-style. [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1

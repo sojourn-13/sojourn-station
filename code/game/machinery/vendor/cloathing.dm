@@ -40,6 +40,8 @@
 					/obj/item/storage/box/costume/police = 2,
 					/obj/item/storage/box/costume/pirate = 2,
 					/obj/item/storage/box/costume/plaguedoctor = 2,
+					/obj/item/storage/box/costume/rando = 2,
+					/obj/item/storage/box/costume/randoarmy = 5, // For your own personal army
 					/obj/item/storage/box/costume/owl = 2,
 					/obj/item/storage/box/costume/rando = 2,
 					/obj/item/storage/box/costume/santa = 2,
@@ -102,6 +104,8 @@
 					/obj/item/storage/box/costume/police = 100,
 					/obj/item/storage/box/costume/pirate = 100,
 					/obj/item/storage/box/costume/plaguedoctor = 100,
+					/obj/item/storage/box/costume/rando = 100,
+					/obj/item/storage/box/costume/randoarmy = 100,
 					/obj/item/storage/box/costume/owl = 100,
 					/obj/item/storage/box/costume/rando = 100,
 					/obj/item/storage/box/costume/santa = 100,

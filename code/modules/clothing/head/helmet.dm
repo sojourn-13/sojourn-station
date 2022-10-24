@@ -683,6 +683,12 @@
 	icon_state = "celty_yellow"
 	item_state = "celty_yellow"
 
+/obj/item/clothing/head/helmet/biker/football
+	name = "football helmet"
+	desc = "A helmet usually worn by either football players, or post-apocalyptic outlaws for protection."
+	icon_state = "rugby"
+	item_state = "rugby"
+
 /obj/item/clothing/head/helmet/laserproof
 	name = "ablative helmet"
 	desc = "A helmet that excels in protecting the wearer against energy projectiles."
