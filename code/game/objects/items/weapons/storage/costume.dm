@@ -516,7 +516,7 @@
 /obj/item/storage/box/costume/rando/populate_contents()
 	new /obj/item/clothing/under/costume/halloween/rando(src)
 	new /obj/item/clothing/head/costume/halloween/rando(src)
-	new /obj/item/reagent_containers/food/snacks/donkpocket/sinpocket(src)
-	new /obj/item/reagent_containers/food/snacks/donkpocket/sinpocket(src)
-	new /obj/item/reagent_containers/food/snacks/donkpocket/sinpocket(src) // Rando rations.
+	new /obj/item/reagent_containers/food/snacks/donkpocket(src)
+	new /obj/item/reagent_containers/food/snacks/donkpocket(src)
+	new /obj/item/reagent_containers/food/snacks/donkpocket(src) // Rando rations.
 
