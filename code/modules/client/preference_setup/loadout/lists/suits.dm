@@ -94,6 +94,10 @@
 	display_name = "kimono"
 	path = /obj/item/clothing/suit/fluff/kimono
 
+/datum/gear/suit/miko
+	display_name = "purple miko dress"
+	path = /obj/item/clothing/suit/fluff/miko
+
 /datum/gear/suit/labcoat
 	display_name = "labcoat"
 	path = /obj/item/clothing/suit/storage/toggle/labcoat
