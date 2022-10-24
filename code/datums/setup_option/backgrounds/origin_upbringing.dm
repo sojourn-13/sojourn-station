@@ -99,11 +99,12 @@
 
 	stat_modifiers = list(
 		STAT_ROB = -5,
-		STAT_TGH = 5, // Mechanically fitting tradeoff
+		STAT_TGH = -5,
 		STAT_VIG = 4,
 		STAT_BIO = 6,
 		STAT_MEC = 0,
-		STAT_COG = -5 // Brain fried from drugs
+		STAT_COG = -5, // Brain fried from drugs
+		STAT_VIV = 5
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/klutz
@@ -162,10 +163,10 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 4,
-		STAT_VIG = 0,
-		STAT_BIO = -8,
-		STAT_MEC = -8,
+		STAT_TGH = 0,
+		STAT_VIG = 4,
+		STAT_BIO = 4,
+		STAT_MEC = 4,
 		STAT_COG = -15
 	)
 
