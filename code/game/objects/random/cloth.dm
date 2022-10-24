@@ -314,7 +314,8 @@
 				/obj/item/clothing/head/helmet/biker/blue = 1,
 				/obj/item/clothing/head/helmet/biker/purple = 1,
 				/obj/item/clothing/head/helmet/biker/pink = 1,
-				/obj/item/clothing/head/helmet/biker/yellow = 1))
+				/obj/item/clothing/head/helmet/biker/yellow = 1,
+				/obj/item/clothing/head/helmet/biker/football = 1))
 
 /obj/random/cloth/bikehelms/low_chance
 	name = "low chance random biker helmet"
