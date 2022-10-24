@@ -1248,14 +1248,6 @@
 	phrase = "Burenyaa~"
 	pokesound = 'sound/sanity/burenyaa.ogg'
 
-/obj/item/toy/plushie/fumo/arcueid/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W,/obj/item/clothing/mask/smokable/cigarette)) // The Neco Arc plushie bums you a ciggie, do you give it one?
-		var/turf/T = get_turf(src)
-		new /obj/item/toy/plushie/fumo/necochaos(T)
-		to_chat(user, "You create an abomination.")
-		qdel(W)
-		qdel(src)
-
 /obj/item/toy/plushie/fumo/necochaos
 	name = "\improper Neco Arc Chaos fumo"
 	desc = "Hey! Taxi!"
