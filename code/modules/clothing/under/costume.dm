@@ -128,6 +128,7 @@ obj/item/clothing/under/costume/history/pirate
 	desc = "A very revealing leather outfit. Kinky."
 	icon_state = "darkholme"
 	item_state = "darkholme"
+	has_sensor = 0
 
 /obj/item/clothing/under/costume/kinky/sexy_clown
 	name = "sexy clown suit"
@@ -148,18 +149,21 @@ obj/item/clothing/under/costume/history/pirate
 	desc = "You already know what this is."
 	icon_state = "stripper_p"
 	item_state = "stripper_p"
+	has_sensor = 0
 
 /obj/item/clothing/under/costume/kinky/stripper_green
 	name = "green stripper outfit"
 	desc = "You already know what this is."
 	icon_state = "stripper_g"
 	item_state = "stripper_g"
+	has_sensor = 0
 
 /obj/item/clothing/under/costume/kinky/hadakapron
 	name = "naked apron"
 	desc = "A very impractical yet very revealing apron meant to leave very little to the imagination."
 	icon_state = "hadakapron"
 	item_state = "hadakapron"
+	has_sensor = 0
 
 /*Animal*/
 
