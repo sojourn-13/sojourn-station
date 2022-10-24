@@ -477,7 +477,7 @@
 	icon_closed = "denim_jacket"
 
 /obj/item/clothing/suit/storage/toggle/leather/denimjacket/outlaw
-	name = "outlaw's denim jacket"
+	name = "biker outlaw's denim jacket"
 	desc = "A raggedy denim jacket with a tied up red handkerchief. It lacks slits to button it up."
 	icon_state = "outlaw"
 	item_state = "outlaw"

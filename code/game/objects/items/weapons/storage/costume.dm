@@ -522,7 +522,7 @@
 	new /obj/item/reagent_containers/food/snacks/donkpocket(src) // Rando rations.
 
 /obj/item/storage/box/costume/randoarmy
-	name = "outlaw army costume"
+	name = "outlaw biker costume"
 	desc = "A box containing a costume for a post-apocalyptic biker outlaw of sorts."
 	icon_state = "box_of_doom"
 
@@ -531,4 +531,5 @@
 	new /obj/item/clothing/suit/storage/toggle/leather/denimjacket/outlaw(src)
 	new /obj/item/clothing/head/helmet/biker/football(src)
 	new /obj/item/clothing/shoes/reinforced(src)
+	new /obj/item/clothing/gloves/dusters(src)
 
