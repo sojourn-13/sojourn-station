@@ -63,8 +63,8 @@
 	perks = list(/datum/perk/space_asshole)
 
 	stat_modifiers = list(
-		STAT_ROB = 3,
-		STAT_TGH = 3, // Hardened by experience
+		STAT_ROB = 0,
+		STAT_TGH = 0,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
@@ -85,7 +85,7 @@
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 5 // :nerd:
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/drugaddict
@@ -146,12 +146,12 @@
 	hampered your ability to master any one discipline. Sure, you're smart, but without the experience and discipline of practical application it doesn't help you as much as anyone could hope."
 
 	stat_modifiers = list(
-		STAT_ROB = -3,
-		STAT_TGH = -3,
-		STAT_VIG = 0,
-		STAT_BIO = 4, // Knowledge
-		STAT_MEC = -5, // No practical application, all theory
-		STAT_COG = 10
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = -2,
+		STAT_BIO = -4,
+		STAT_MEC = -4,
+		STAT_COG = 15
 	)
 
 
@@ -224,7 +224,7 @@
 		STAT_ROB = 3,
 		STAT_TGH = 2,
 		STAT_VIG = 0,
-		STAT_BIO = 2,
+		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)
