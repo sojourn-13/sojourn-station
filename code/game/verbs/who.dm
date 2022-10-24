@@ -61,16 +61,14 @@
 	var/msg = ""
 	var/modmsg = ""
 	var/mentmsg = ""
-	var/event_staff_msg = ""
 	var/num_mods_online = 0
 	var/num_admins_online = 0
 	var/num_mentors_online = 0
-	var/num_event_staff_online = 0
 	if(holder)
 		for(var/client/C in admins)
-			if(R_ADMIN & C.holder.rights || (!(R_MOD & C.holder.rights) && !(R_MENTOR & C.holder.rights) && !(R_FUN & C.holder.rights)))
+			if(R_ADMIN & C.holder.rights || (!(R_MOD & C.holder.rights) && !(R_MENTOR & C.holder.rights))) //Used to determine who shows up in admin rows
 
-				if(C.holder.fakekey && (!(R_ADMIN & holder.rights) && !(R_MOD & holder.rights) && !(R_FUN & C.holder.rights))) //Mentors can't see stealthmins
+				if(C.holder.fakekey && (!(R_ADMIN & holder.rights) && !(R_MOD & holder.rights))) //Mentors can't see stealthmins
 					continue
 
 				msg += "\t[C] is a [C.holder.rank]"
@@ -119,23 +117,9 @@
 				mentmsg += "\n"
 				num_mentors_online++
 
-			else if(R_FUN & C.holder.rights)
-				event_staff_msg += "\t[C] is a [C.holder.rank]"
-				if(isobserver(C.mob))
-					event_staff_msg += " - Observing"
-				else if(isnewplayer(C.mob))
-					event_staff_msg += " - Lobby"
-				else
-					event_staff_msg += " - Playing"
-
-				if(C.is_afk())
-					num_event_staff_online += " (AFK - [C.inactivity2text()])"
-				event_staff_msg += "\n"
-				num_event_staff_online++
-
 	else
 		for(var/client/C in admins)
-			if(R_ADMIN & C.holder.rights || (!(R_MOD & C.holder.rights) && !(R_MENTOR & C.holder.rights) && !(R_FUN & C.holder.rights)))
+			if(R_ADMIN & C.holder.rights || (!(R_MOD & C.holder.rights) && !(R_MENTOR & C.holder.rights)))
 				if(!C.holder.fakekey)
 					msg += "\t[C] is a [C.holder.rank]\n"
 					num_admins_online++
@@ -145,9 +129,6 @@
 			else if (R_MENTOR & C.holder.rights)
 				mentmsg += "\t[C] is a [C.holder.rank]\n"
 				num_mentors_online++
-			else if (R_FUN & C.holder.rights)
-				event_staff_msg += "\t[C] is a [C.holder.rank]\n"
-				num_event_staff_online++
 
 	if(config.admin_irc)
 		to_chat(src, "<span class='info'>Adminhelps are also sent to IRC. If no admins are available in game try anyway and an admin on IRC may see it and respond.</span>")
@@ -158,9 +139,5 @@
 
 	if(config.show_mentors)
 		msg += "\n<b> Current Mentors ([num_mentors_online]):</b>\n" + mentmsg
-
-//	if(config.show_event_staffers) //Disabled needing a config for this one as we should always see the rank of event people
-	msg += "\n<b> Current Event Staff ([num_event_staff_online]):</b>\n" + event_staff_msg
-
 
 	to_chat(src, msg)
