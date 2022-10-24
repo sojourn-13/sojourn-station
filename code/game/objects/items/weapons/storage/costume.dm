@@ -508,3 +508,28 @@
 	new /obj/item/tool/sword/saber(src)
 	new /obj/item/clothing/accessory/holster/saber(src)
 
+/obj/item/storage/box/costume/rando
+	name = "warlord costume box"
+	desc = "A box containing a large costume for a post-apocalyptic warlord."
+	icon_state = "box_of_doom_big"
+
+/obj/item/storage/box/costume/rando/populate_contents()
+	new /obj/item/clothing/under/pants/black/outlaw(src)
+	new /obj/item/clothing/suit/storage/toggle/rando(src)
+	new /obj/item/clothing/head/costume/halloween/rando(src)
+	new /obj/item/reagent_containers/food/snacks/donkpocket(src)
+	new /obj/item/reagent_containers/food/snacks/donkpocket(src)
+	new /obj/item/reagent_containers/food/snacks/donkpocket(src) // Rando rations.
+
+/obj/item/storage/box/costume/randoarmy
+	name = "outlaw biker costume"
+	desc = "A box containing a costume for a post-apocalyptic biker outlaw of sorts."
+	icon_state = "box_of_doom"
+
+/obj/item/storage/box/costume/randoarmy/populate_contents()
+	new /obj/item/clothing/under/pants/black/outlaw(src)
+	new /obj/item/clothing/suit/storage/toggle/leather/denimjacket/outlaw(src)
+	new /obj/item/clothing/head/helmet/biker/football(src)
+	new /obj/item/clothing/shoes/reinforced(src)
+	new /obj/item/clothing/gloves/dusters(src)
+

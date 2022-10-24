@@ -16,8 +16,8 @@
 /obj/item/clothing/under/dodgeball_red
 	name = "red dodgeball uniform"
 	desc = "A red threaded uniform for gym dodgeball activities."
-	icon_state = "gym_M_red"
-	item_state = "gym_M_red"
+	icon_state = "gym_red"
+	item_state = "gym_red"
 
 // Proc for gender change deleted as it's no longer necessary - Seb
 /obj/item/clothing/under/dodgeball_blue

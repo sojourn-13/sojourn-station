@@ -191,7 +191,7 @@
 
 /datum/perk/linguist
 	name = "Linguist"
-	desc = "Having dedicated time and learning to foreign tongues, you find yourself knowing an extra language. Be it from your upbringing or schooling, you're fluent in not one, not two, but three languages!"
+	desc = "Having dedicated time to learn foreign tongues, you find yourself knowing an extra language. Be it from your upbringing or schooling, you're fluent in one more language than the average person!"
 	active = FALSE
 	passivePerk = FALSE
 	var/anti_cheat = FALSE
@@ -199,7 +199,7 @@
 /datum/perk/linguist/activate()
 	..()
 	if(anti_cheat)
-		to_chat(holder, "Recalling more then one babble is not as easy for someone unskilled as you.")
+		to_chat(holder, "Recalling more languages is not as easy for someone unskilled as you.")
 		return FALSE
 	anti_cheat = TRUE
 	var/mob/M = usr
@@ -212,7 +212,7 @@
 	options["Esperanto"] = LANGUAGE_ESPERANTO
 	options["Yassari"] = LANGUAGE_YASSARI
 	options["Ancient Latin"] = LANGUAGE_LATIN
-	var/choice = input(M,"What language do you know?","Linguist Choice") as null|anything in options
+	var/choice = input(M,"Which language do you know?","Linguist Choice") as null|anything in options
 	if(src && choice)
 		M.add_language(choice)
 		M.stats.removePerk(/datum/perk/linguist)
@@ -224,7 +224,7 @@
 
 /datum/perk/linguist_for_humans
 	name = "Diverse Culture"
-	desc = "Sol Fed conquiring the stars lead to almost every human having a round pallet of different languages."
+	desc = "Sol Fed conquering the stars led to almost every human having diverse knowledge of different languages."
 	active = FALSE
 	passivePerk = FALSE
 	var/anti_cheat = FALSE
@@ -232,7 +232,7 @@
 /datum/perk/linguist_for_humans/activate()
 	..()
 	if(anti_cheat)
-		to_chat(holder, "Recalling more then one babble is not as easy for someone unskilled as you.")
+		to_chat(holder, "Recalling more languages is not as easy for someone unskilled as you.")
 		return FALSE
 	anti_cheat = TRUE
 	var/mob/M = usr
@@ -245,7 +245,7 @@
 	options["Esperanto"] = LANGUAGE_ESPERANTO
 	options["Yassari"] = LANGUAGE_YASSARI
 	options["Ancient Latin"] = LANGUAGE_LATIN
-	var/choice = input(M,"What language do you know?","Linguist Choice") as null|anything in options
+	var/choice = input(M,"Which language do you know?","Linguist Choice") as null|anything in options
 	if(src && choice)
 		M.add_language(choice)
 		M.stats.removePerk(/datum/perk/linguist_for_humans)
@@ -275,8 +275,8 @@
 
 /datum/perk/alchemist
 	name = "Alchemy"
-	desc = "Weather form fun studdy or learned in the field of brewing random things together you know how to gather basic chemical components. \
-			Your NSA also has been slightly improved do to your experimentations. You can also see all reagents in beakers."
+	desc = "Whether from fun study or natural talent in the field of brewing random things together you know how to gather basic chemical compounds. \
+			Your NSA also has been slightly improved due to self experimentation. You can also see all reagents in beakers."
 	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
 
 /datum/perk/alchemist/assign(mob/living/carbon/human/H)
@@ -304,8 +304,8 @@
 
 /datum/perk/parkour
 	name = "Raiders Leap"
-	desc = "A life as a void wolf has given you amazing agility. You can climb railings, walls, and ladders much faster than others. In addition you can dodge, combat roll, and stand up from prone much \
-	faster. Finally, your rough and tumble movement makes falling from high heights deal alot less damage compared to others and you always land on your feet."
+	desc = "Life as a Void Wolf has given you amazing agility. You can climb railings, walls, and ladders much faster than others. In addition you can dodge, combat roll, and stand up from prone much \
+	faster. Finally, your rough and tumble movement makes falling from high heights deal a lot less damage compared to others and you will always land on your feet."
 	//icon_state = "parkour" //https://game-icons.net/1x1/delapouite/jump-across.html
 
 /datum/perk/parkour/assign(mob/living/carbon/human/H)
@@ -320,13 +320,23 @@
 
 /datum/perk/chaingun_smoker
 	name = "Unclean Living"
-	desc = "The bad conditions of your birth have led you to thrive in toxic environments, so much so that your body is dependent on having an unclean atmosphere. You feel tougher and slowly heal toxin damage when smoking."
+	desc = "The bad conditions of your upbringing have led you to thrive in toxic environments, so much so that your body is dependent on having an unclean atmosphere. You feel tougher and slowly heal toxin damage when smoking."
 	//icon_state = "cigarette" // https://game-icons.net
 
 /datum/perk/nightcrawler
 	name = "Nightcrawler"
-	desc = "You are faster in the darkness due to being used to it."
+	desc = "Having lived in a light-deprived enviroment for most of your life has honed your vision more than the average person.\nYour accelerated dark adaptation has also made you more photosensitive to sudden bright lights and flashes."
 	//icon_state = "night" // https://game-icons.net/1x1/lorc/night-sky.html
+
+/datum/perk/nightcrawler/assign(mob/living/carbon/human/H)
+	..()
+	holder.additional_darksight += 1
+	holder.flash_mod += 2
+
+/datum/perk/nightcrawler/remove()
+	holder.additional_darksight -= 1
+	holder.flash_mod -= 2
+	..()
 
 /datum/perk/fast_fingers
 	name = "Fast fingers"
@@ -526,7 +536,7 @@
 
 /datum/perk/job/prospector_conditioning
 	name = "Rough and Tumble"
-	desc = "You've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot, and even set on fire. Hell, even a few used needles in desperate times. You feel as though your body fights off the inflictions of to much NSA and addictions much better than others."
+	desc = "You've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot, and even set on fire. Hell, even a few used needles in desperate times. You feel as though your body fights off the inflictions of too much NSA and addictions much better than others."
 	perk_shared_ability = PERK_SHARED_SEE_ILLEGAL_REAGENTS
 
 /datum/perk/prospector_conditioning/assign(mob/living/carbon/human/H)
@@ -558,7 +568,7 @@
 	name = "Naturalist"
 	desc = "The secrets of natural remedies have been unlocked by the lodge after special training from folken tribes, given their alliance. This has granted you the ability to make better \
 	use of grown plants to harvest more fruit and more properly manage the use of medical supplies like blood tongues or powder pouches. As an added bonus, when harvesting soil \
-	or plant trays you always harvest an additional bonus! You are also a capable surgeon, able to alot more easily perform surgical steps to the point of rivaling real surgeons."
+	or plant trays you always harvest an additional bonus! You are also a capable surgeon, able to perform surgical steps a lot more easily, to the point of rivaling real surgeons."
 	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
 
 /datum/perk/si_sci
@@ -567,7 +577,7 @@
 
 /datum/perk/greenthumb
 	name = "Green Thumb"
-	desc = "After growing plants for years (or at least being around those that do) you have become a botanical expert. You can get all information about plants, from stats \
+	desc = "After growing plants for years (or at least being around those who do) you have become a botanical expert. You can get all information about plants, from stats \
 	        to harvest reagents, by examining them."
 	//icon_state = "greenthumb" // https://game-icons.net/1x1/delapouite/farmer.html
 
@@ -645,8 +655,8 @@
 //Chef's special perk
 
 /datum/perk/foodappraise
-	name = "Spice Food"
-	desc = "Your own special spice has anomalous properties that can enhance most food products."
+	name = "Spice up Food"
+	desc = "Your own special, secret touch in seasoning has anomalous properties that can enhance most food products."
 	active = FALSE
 	passivePerk = FALSE
 /datum/perk/foodappraise/activate()
@@ -655,12 +665,12 @@
 	if(!istype(user))
 		return ..()
 	if(!istype(F, /obj/item/reagent_containers/food/snacks))
-		to_chat(usr, SPAN_NOTICE("You can only spice food items!"))
+		to_chat(usr, SPAN_NOTICE("You can only season food items!"))
 		return FALSE
 	if(F.appraised == 1)
-		to_chat(usr, SPAN_NOTICE("This food item has already been spiced!"))
+		to_chat(usr, SPAN_NOTICE("This food item has already been seasoned!"))
 		return FALSE
-	to_chat(usr, SPAN_NOTICE("You quickly sprinkle some of your anomalous spice onto the food item, revealing its hidden properties."))
+	to_chat(usr, SPAN_NOTICE("You quickly sprinkle some of your anomalous seasoning onto the food item, revealing its hidden properties."))
 	//log_and_message_admins("used their [src] perk.")
 	F.chef_buff_type = rand(1,9) // We assign a random bufferino.
 	F.appraised = 1

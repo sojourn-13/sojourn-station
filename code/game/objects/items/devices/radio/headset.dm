@@ -193,6 +193,7 @@
 
 /obj/item/device/radio/headset/heads/hos/bowman
 	name = "warrant officer bowman headset"
+	desc = "The headset of the men who lock away your worthless lives, in a comfortable bowman style.\nThis has a small symbol denoting its built in back-up transmitter."
 	icon_state = "wo_headset_bowman"
 
 /obj/item/device/radio/headset/heads/bscom
@@ -200,6 +201,14 @@
 	desc = "The headset of the men who protects your worthless lives. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "bscom_headset"
 	item_state = "headset"
+	adhoc_fallback = TRUE
+	ks2type = /obj/item/device/encryptionkey/heads/hos
+
+/obj/item/device/radio/headset/heads/bscom/bowman
+	name = "blackshield commander bowman headset"
+	desc = "The headset of the men who protects your worthless lives, in a comfortable bowman style.\nThis has a small symbol denoting its built in back-up transmitter."
+	icon_state = "bs_bowman_headset"
+	item_state = "bs_bowman_headset"
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 
