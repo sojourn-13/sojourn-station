@@ -55,6 +55,11 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "A traditional Japanese kimono."
 	icon_state = "kimono"
 
+obj/item/clothing/suit/fluff/miko
+	name = "miko dress"
+	desc = "A traditional purple Japanese miko dress."
+	icon_state = "miko"
+
 /obj/item/clothing/suit/fluff/customs
 	name = "customs jacket"
 	desc = "A standard SolFed Customs formal jacket."

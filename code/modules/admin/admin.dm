@@ -12,13 +12,13 @@ var/global/floorIsLava = 0
 #define ADMIN_TP_DISPLAY(user,display) "<a href='?_src_=holder;traitor=\ref[user]'>[display]</a>"
 
 ////////////////////////////////
-/proc/message_admins(var/msg, tag = "admin_log", tagtext = "ADMIN LOG")
+/proc/message_admins(var/msg, tag = "admin_log", tagtext = "ADMIN LOG", mod_send_message = FALSE)
 	lobby_message(message = msg, color = "#FFA500")
 	var/m = "<span class=\"log_message\"><span class=\"prefix\">[tagtext]:</span> <span class=\"message\">[msg]</span></span>"
 	log_adminwarn(m)
 	for(var/client/C in admins)
 		m = "<span class=\"log_message\"><span class=\"message\">[msg]</span></span>"
-		if(check_rights(R_ADMIN, 0, C.mob))
+		if(check_rights(R_ADMIN, 0, C.mob) || (mod_send_message && check_rights(R_MOD, 0, C.mob)))
 			to_chat(C, m)
 
 /proc/msg_admin_attack(var/text, tag = "attack", tagtext = "ATTACK:") //Toggleable Attack Messages
