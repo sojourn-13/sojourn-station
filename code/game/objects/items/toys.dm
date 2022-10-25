@@ -238,6 +238,19 @@
 	anchored = 1
 	density = 0
 
+/obj/item/storage/box/foambow
+	name = "foam crossbow ammo"
+	desc = "A box containing ammo for the foam crossbow."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "foambox"
+
+/obj/item/storage/box/foambow/populate_contents()
+	new /obj/item/toy/ammo/crossbow(src)
+	new /obj/item/toy/ammo/crossbow(src)
+	new /obj/item/toy/ammo/crossbow(src)
+	new /obj/item/toy/ammo/crossbow(src)
+	new /obj/item/toy/ammo/crossbow(src)
+	new /obj/item/toy/ammo/crossbow(src)
 
 /*Toy Weapons*/
 /obj/item/toy/weapon/sword
@@ -513,10 +526,10 @@
 /*Civilian*/
 
 /obj/item/toy/figure/character/civilian/assistant
-	name = "assistant action figure"
+	name = "colonist action figure"
 	desc = "The lowly but dutiful helper. Civilians 1/7."
-	icon_state = "assistant"
-	toysay = "Greytide, stationwide!"
+	icon_state = "colonist"
+	toysay = "Where's dorms?"
 
 /obj/item/toy/figure/character/civilian/bartender
 	name = "bartender action figure"
@@ -558,43 +571,43 @@
 
 /obj/item/toy/figure/character/moebius/cmo
 	name = "biolab overseer action figure"
-	desc = "The health of the crew is in their hands. Soteria 1/9."
+	desc = "The health of the crew is in their hands. Soteria 1/8."
 	icon_state = "cmo"
 	toysay = "Suit sensors on, people!"
 
 /obj/item/toy/figure/character/moebius/rd
 	name = "research overseer action figure"
-	desc = "All research requests go through them. Soteria 2/9."
+	desc = "All research requests go through them. Soteria 2/8."
 	icon_state = "rd"
 	toysay = "One day, I'll get a rubber ducky on my office..."
 
 /obj/item/toy/figure/character/moebius/md
 	name = "medical doctor action figure"
-	desc = "They'll do their best to uphold the oath. Soteria 3/9."
+	desc = "They'll do their best to uphold the oath. Soteria 3/8."
 	icon_state = "md"
 	toysay = "You got the cash for treatment, right...?"
 
 /obj/item/toy/figure/character/moebius/psychologist
 	name = "psychologist action figure"
-	desc = "Diseases of the mind are just as deadly. Soteria 4/9."
+	desc = "Diseases of the mind are just as deadly. Soteria 4/8."
 	icon_state = "psychologist"
 	toysay = "Just come and have a seat."
 
 /obj/item/toy/figure/character/moebius/paramedic
-	name = "paramedic action figure"
-	desc = "They'll go anywhere to save a life. Soteria 5/9."
+	name = "lifeline technician action figure"
+	desc = "They'll go anywhere to save a life. Soteria 5/8."
 	icon_state = "paramedic"
 	toysay = "Your sensors are off, where are you?!"
 
 /obj/item/toy/figure/character/moebius/chemist
 	name = "chemist action figure"
-	desc = "Hopefully it won't blow up this time. Soteria 6/9."
+	desc = "Hopefully it won't blow up this time." // Job don't exist
 	icon_state = "chemist"
 	toysay = "Pills here!"
 
 /obj/item/toy/figure/character/moebius/scientist
 	name = "scientist action figure"
-	desc = "Their experiments sometimes go wacky. Soteria 7/9."
+	desc = "Their experiments sometimes go wacky. Soteria 7/8."
 	icon_state = "scientist"
 	toysay = "I swear that is just a new mutant tobacco strain I discovered, Officer..."
 
@@ -673,13 +686,13 @@
 /*Security*/
 
 /obj/item/toy/figure/character/ironhammer/hos
-	name = "commander action figure"
+	name = "warrant officer action figure"
 	desc = "The most formidable force on the station. Marshal 1/4."
 	icon_state = "hos"
 	toysay = "I'll be hugging my fax machine on my office if anyone needs me..."
 
 /obj/item/toy/figure/character/ironhammer/secofficer
-	name = "operative action figure"
+	name = "marshal officer action figure"
 	desc = "They don't make the law, but they enforce it. Marshal 2/4."
 	icon_state = "secofficer"
 	toysay = "Where's your gun case?"
@@ -927,8 +940,8 @@
 
 /obj/structure/plushie/carp
 	name = "plush carp"
-	desc = "A plushie of an elated carp! Straight from the wilds of the Nyx frontier, now right here in your hands."
-	icon_state = "carpplushie"
+	desc = "A plushie of an elated carp! Straight from the wilds of the Chromin 8 frontier, now right here in your hands."
+	icon_state = "carpplushie" // Realistically scary
 	phrase = "Glorf!"
 
 /obj/structure/plushie/beepsky
@@ -1034,55 +1047,55 @@
 	phrase = "Hug!"
 
 /obj/item/toy/plushie/fox
-	name = "fox red plushie"
+	name = "red fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "redfox"
 	phrase = "Gecker!"
 
 /obj/item/toy/plushie/fox/black
-	name = "fox black plushie"
+	name = "black fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "blackfox"
 	phrase = "Ack!"
 
 /obj/item/toy/plushie/fox/marble
-	name = "fox marble plushie"
+	name = "arctic fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "marblefox"
 	phrase = "Awoo!"
 
 /obj/item/toy/plushie/fox/blue
-	name = "fox blue plushie"
+	name = "blue fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "bluefox"
 	phrase = "Yoww!"
 
 /obj/item/toy/plushie/fox/orange
-	name = "fox orange plushie"
+	name = "orange fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "orangefox"
 	phrase = "Yagh!"
 
 /obj/item/toy/plushie/fox/coffee
-	name = "fox coffee plushie"
+	name = "coffee fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "coffeefox"
 	phrase = "Gerr!"
 
 /obj/item/toy/plushie/fox/pink
-	name = "fox pink plushie"
+	name = "pink fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "pinkfox"
 	phrase = "Yack!"
 
 /obj/item/toy/plushie/fox/purple
-	name = "fox purple plushie"
+	name = "purple fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "purplefox"
 	phrase = "Whine!"
 
 /obj/item/toy/plushie/fox/crimson
-	name = "fox crimson plushie"
+	name = "crimson fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "crimsonfox"
 	phrase = "Auuu!"
@@ -1094,63 +1107,63 @@
 	phrase = "Bleat!"
 
 /obj/item/toy/plushie/cat
-	name = "cat black plushie"
+	name = "black cat plushie"
 	desc = "A cat plush doll."
 	icon_state = "blackcat"
 	phrase = "Mlem!"
 
 /obj/item/toy/plushie/cat/grey
-	name = "cat grey plushie"
+	name = "grey cat plushie"
 	desc = "A cat plush doll."
 	icon_state = "greycat"
 	phrase = "Mraw!"
 
 /obj/item/toy/plushie/cat/white
-	name = "cat white plushie"
+	name = "white cat plushie"
 	desc = "A cat plush doll."
 	icon_state = "whitecat"
 	phrase = "Mew!"
 
 /obj/item/toy/plushie/cat/orange
-	name = "cat orange plushie"
+	name = "orange cat plushie"
 	desc = "A cat plush doll."
 	icon_state = "orangecat"
 	phrase = "Meow!"
 
 /obj/item/toy/plushie/cat/siamese
-	name = "cat siamese plushie"
+	name = "siamese cat plushie"
 	desc = "A cat plush doll."
 	icon_state = "siamesecat"
 	phrase = "Mrew?"
 
 /obj/item/toy/plushie/cat/tabby
-	name = "cat tabby plushie"
+	name = "tabby cat plushie"
 	desc = "A cat plush doll."
 	icon_state = "tabbycat"
 	phrase = "Purr!"
 
 /obj/item/toy/plushie/cat/tuxedo
-	name = "cat tuxedo plushie"
+	name = "tuxedo cat plushie"
 	desc = "A cat plush doll."
 	icon_state = "tuxedocat"
 	phrase = "Mrowww!!"
 
 /obj/item/toy/plushie/squid
-	name = "squid green plushie"
+	name = "green squid plushie"
 	desc = "A small, cute and loveable squid friend. This one is green."
 	icon_state = "greensquid"
 	slot_flags = SLOT_HEAD
 	phrase = "Squrr!"
 
 /obj/item/toy/plushie/squid/mint
-	name = "squid mint plushie"
+	name = "mint squid plushie"
 	desc = "A small, cute and loveable squid friend. This one is mint."
 	icon_state = "mintsquid"
 	slot_flags = SLOT_HEAD
 	phrase = "Blurble!"
 
 /obj/item/toy/plushie/squid/blue
-	name = "squid blue plushie"
+	name = "blue squid plushie"
 	desc = "A small, cute and loveable squid friend. This one is blue."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "bluesquid"
@@ -1158,21 +1171,21 @@
 	phrase = "Blob!"
 
 /obj/item/toy/plushie/squid/orange
-	name = "squid orange plushie"
+	name = "orange squid plushie"
 	desc = "A small, cute and loveable squid friend. This one is orange."
 	icon_state = "orangesquid"
 	slot_flags = SLOT_HEAD
 	phrase = "Squash!"
 
 /obj/item/toy/plushie/squid/yellow
-	name = "squid yellow plushie"
+	name = "yellow squid plushie"
 	desc = "A small, cute and loveable squid friend. This one is yellow."
 	icon_state = "yellowsquid"
 	slot_flags = SLOT_HEAD
 	phrase = "Glorble!"
 
 /obj/item/toy/plushie/squid/pink
-	name = "squid pink plushie"
+	name = "pink squid plushie"
 	desc = "A small, cute and loveable squid friend. This one is pink."
 	icon_state = "pinksquid"
 	slot_flags = SLOT_HEAD
@@ -1256,7 +1269,7 @@
 	pokesound = 'sound/sanity/nyah.ogg'
 
 /obj/item/toy/plushie/carp
-	name = "carp space plushie"
+	name = "space carp plushie"
 	desc = "An adorable stuffed toy that resembles a space carp."
 	icon_state = "basecarp"
 	attack_verb = list("bitten", "eaten", "fin slapped")
@@ -1273,43 +1286,43 @@
 	return ..()
 
 /obj/item/toy/plushie/carp/ice
-	name = "carp ice plushie"
+	name = "ice carp plushie"
 	icon_state = "icecarp"
 
 /obj/item/toy/plushie/carp/silent
-	name = "carp monochrome plushie"
+	name = "monochrome carp plushie"
 	icon_state = "silentcarp"
 
 /obj/item/toy/plushie/carp/electric
-	name = "carp electric plushie"
+	name = "electric carp plushie"
 	icon_state = "electriccarp"
 
 /obj/item/toy/plushie/carp/gold
-	name = "carp golden plushie"
+	name = "golden carp plushie"
 	icon_state = "goldcarp"
 
 /obj/item/toy/plushie/carp/toxin
-	name = "carp toxic plushie"
+	name = "toxic carp plushie"
 	icon_state = "toxincarp"
 
 /obj/item/toy/plushie/carp/dragon
-	name = "carp dragon plushie"
+	name = "dragon carp plushie"
 	icon_state = "dragoncarp"
 
 /obj/item/toy/plushie/carp/pink
-	name = "carp pink plushie"
+	name = "pink carp plushie"
 	icon_state = "pinkcarp"
 
 /obj/item/toy/plushie/carp/candy
-	name = "carp candy plushie"
+	name = "candy carp plushie"
 	icon_state = "candycarp"
 
 /obj/item/toy/plushie/carp/nebula
-	name = "carp nebula plushie"
+	name = "nebula carp plushie"
 	icon_state = "nebulacarp"
 
 /obj/item/toy/plushie/carp/void
-	name = "carp void plushie"
+	name = "void carp plushie"
 	icon_state = "voidcarp"
 
 /*Inflatable Duck*/

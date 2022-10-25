@@ -405,7 +405,7 @@
 	item_state = "olive_suit"
 
 /obj/item/clothing/under/modular/oliveskirt
-	name = "olive suit"
+	name = "olive suit skirt"
 	desc = "A formal olive skirt with a white buttoned shirt."
 	icon_state = "olive_suitskirt"
 	item_state = "olive_suitskirt"

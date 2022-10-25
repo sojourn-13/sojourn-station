@@ -36097,6 +36097,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
+"gPG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/plushies{
+	pixel_x = -28
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/quartermaster/office)
 "gPI" = (
 /obj/machinery/light{
 	dir = 4;
@@ -146598,7 +146605,7 @@ xFv
 xNt
 vNL
 djT
-nUl
+gPG
 maS
 fVU
 smj
