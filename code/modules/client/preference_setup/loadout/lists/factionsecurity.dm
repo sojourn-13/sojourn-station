@@ -102,6 +102,13 @@
 	slot = slot_head
 	sort_category = "Faction: Security"
 
+/datum/gear/factionsecurity/gloves
+	display_name = "blackshield combat gloves"
+	path = /obj/item/clothing/gloves/thick/swat/blackshield
+	allowed_roles = list("Blackshield Commander","Sergeant","Corpsman","Blackshield Trooper")
+	slot = slot_gloves
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/bdu
 	display_name = "security BDU selection"
 	path = /obj/item/clothing/under/rank/bdu
