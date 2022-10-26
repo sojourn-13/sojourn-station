@@ -16,8 +16,9 @@
 	desc = "A collection of subdermal organic exoskeleton plates, made to provide additional protection from brute force while remaining discrete."
 	allowed_organs = list(BP_CHEST)
 	icon_state = "orgarmor-chest"
-	matter = list(MATERIAL_BIOMATTER = 30)
+	matter = list(MATERIAL_BIOMATTER = 100)
 	is_organic_module = TRUE
+	price_tag = 500 //biological stuff is rather...worthy?
 
 /obj/item/biogoop/armor
 	name = "incomplete exeskeleton implant"
