@@ -233,6 +233,6 @@
 //Biological-Augmentation stuff. Will put more later.
 /datum/design/research/item/bioaugmentsdisk
 	name = "Soteria Advanced Bio-designs disk"
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 10, MATERIAL_GOLD = 10, MATERIAL_DIAMOND = 10)//THIS IS EXPENSIVE, but reduces the mass-production cringe.
+	materials = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 10, MATERIAL_GOLD = 10, MATERIAL_DIAMOND = 10)//THIS IS EXPENSIVE, but reduces the mass-production cringe.
 	build_path = /obj/item/computer_hardware/hard_drive/portable/design/omg/bioaugments
 	category = "Medical"
