@@ -138,3 +138,14 @@
 		/datum/design/organ/aberrant_organ/exmercenary/liver = 2,
 		/datum/design/organ/aberrant_organ/exmercenary/muscle = 2
 	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/omg/bioaugments //Yes, original.
+	disk_name = "Soteria Advanced Biological Designs"
+	license = 10 //The disk itself will be expensive, as well as: why?
+	designs = list(
+		/datum/design/organ/augments/night_bio = 2,
+		/datum/design/organ/augments/welder_bio = 2,
+		/datum/design/organ/augments/thermal_bio = 2,
+		/datum/design/organ/augments/muscle_organic = 2,//Should be a bit more but they are supposed to be in pairs.
+		/datum/design/organ/augments/armor_organic = 3
+	)
