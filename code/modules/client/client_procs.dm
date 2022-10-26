@@ -748,3 +748,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 /client/proc/colour_transition(list/colour_to = null, time = 10) //Call this with no parameters to reset to default.
 	animate(src, color = colour_to, time = time, easing = SINE_EASING)
+
+
+//En-abled by SoJ
+/client/proc/apply_fps(var/client_fps)
+	if(world.byond_version >= 511 && byond_version >= 511 && client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
+		vars["fps"] = prefs.clientfps

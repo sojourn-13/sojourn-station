@@ -175,6 +175,22 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	light_range = 0
 	anchored = 1
 
+/obj/machinery/newscaster/Initialize(mapload, ndir, building)
+	. = ..()
+	if(building)
+		// setDir(ndir)
+		dir = ndir
+		pixel_x = (dir & 3)? 0 : (dir == 4 ? -32 : 32)
+		pixel_y = (dir & 3)? (dir ==1 ? -32 : 32) : 0
+
+	paper_remaining = rand(3,15)            ///At most 15 prints and at minium 3. No max as storage as of now
+
+	GLOB.allCasters += src
+	unit_no = GLOB.allCasters.len
+	update_icon()
+
+
+
 /obj/machinery/newscaster/examine(mob/user)
 	..()
 	to_chat(user, "<span class='info'>The number of newsprints left states [src.paper_remaining].</span>")
@@ -194,13 +210,6 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	name = "security newscaster"
 	securityCaster = 1
 
-/obj/machinery/newscaster/New()         //Constructor, ho~
-	allCasters += src
-	src.paper_remaining = rand(3,15)            ///At most 15 prints and at minium 3. No max as storage as of now
-	for(var/obj/machinery/newscaster/NEWSCASTER in allCasters) // Let's give it an appropriate unit number
-		src.unit_no++
-	src.update_icon() //for any custom ones on the map...
-	..()                                //I just realised the newscasters weren't in the global machines list. The superconstructor call will tend to that
 /obj/machinery/newscaster/security_unit/directional/north
 	pixel_y = 32
 

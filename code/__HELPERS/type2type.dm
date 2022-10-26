@@ -37,9 +37,8 @@
 	return num
 
 // Returns the hex value of a number given a value assumed to be a base-ten value
+var/global/list/hexdigits = list("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F")
 /proc/num2hex(num, padlength)
-	var/global/list/hexdigits = list("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F")
-
 	. = ""
 	while(num > 0)
 		var/hexdigit = hexdigits[(num & 0xF) + 1]
@@ -65,10 +64,10 @@
 // Turns a direction into text
 /proc/num2dir(direction)
 	switch (direction)
-		if (1.0) return NORTH
-		if (2.0) return SOUTH
-		if (4.0) return EAST
-		if (8.0) return WEST
+		if (1) return NORTH
+		if (2) return SOUTH
+		if (4) return EAST
+		if (8) return WEST
 		else
 			log_world("UNKNOWN DIRECTION: [direction]")
 
@@ -284,22 +283,7 @@ GLOBAL_LIST_INIT(modulo_angle_to_dir, list(NORTH,NORTHEAST,EAST,SOUTHEAST,SOUTH,
 		else //regex everything else (works for /proc too)
 			return lowertext(replacetext("[the_type]", "[type2parent(the_type)]/", ""))
 
-// Converts a string into a list by splitting the string at each delimiter found. (discarding the seperator)
-/proc/text2list(text, delimiter="\n")
-	var/delim_len = length(delimiter)
-	if (delim_len < 1)
-		return list(text)
 /// Return html to load a url.
 /// for use inside of browse() calls to html assets that might be loaded on a cdn.
 /proc/url2htmlloader(url)
 	return {"<html><head><meta http-equiv="refresh" content="0;URL='[url]'"/></head><body onLoad="parent.location='[url]'"></body></html>"}
-
-	. = list()
-	var/last_found = 1
-	var/found
-
-	do
-		found       = findtext(text, delimiter, last_found, 0)
-		.          += copytext(text, last_found, found)
-		last_found  = found + delim_len
-	while (found)

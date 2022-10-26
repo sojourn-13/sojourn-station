@@ -46,8 +46,10 @@
 	var/irc_admin			//IRC admin that spoke with them last.
 	var/mute_irc = 0
 	var/warned_about_multikeying = 0	// Prevents people from being spammed about multikeying every time their mob changes.
-
-
+	var/ip_reputation = 0 //Do we think they're using a proxy/vpn? Only if IP Reputation checking is enabled in config.
+	var/account_age_in_days // Byond account age
+	var/first_seen = ""
+	var/first_seen_days_ago
 		////////////////////////////////////
 		//things that require the database//
 		////////////////////////////////////
@@ -55,7 +57,6 @@
 	var/registration_date = ""
 	var/country = ""
 	var/country_code = ""
-	var/first_seen_days_ago
 	/* security shit from asset cache (what the fuck) */
 	var/VPN_whitelist //avoid vpn cheking
 	var/list/related_ip = list()

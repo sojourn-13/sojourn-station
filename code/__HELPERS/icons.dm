@@ -784,15 +784,6 @@ proc/ColorTone(rgb, tone)
 
 	#undef PROCESS_OVERLAYS_OR_UNDERLAYS
 
-/proc/getIconMask(atom/A)//By yours truly. Creates a dynamic mask for a mob/whatever. /N
-	var/icon/alpha_mask = new(A.icon,A.icon_state)//So we want the default icon and icon state of A.
-	for(var/I in A.overlays)//For every image in overlays. var/image/I will not work, don't try it.
-		if(I:layer>A.layer)	continue//If layer is greater than what we need, skip it.
-		var/icon/image_overlay = new(I:icon,I:icon_state)//Blend only works with icon objects.
-		//Also, icons cannot directly set icon_state. Slower than changing variables but whatever.
-		alpha_mask.Blend(image_overlay,ICON_OR)//OR so they are lumped together in a nice overlay.
-	return alpha_mask//And now return the mask.
-
 // Creates a single icon from a given /atom type and store it for future use.  Only the first argument is required.
 proc/getFlatTypeIcon(var/path, defdir=2, deficon=null, defstate="", defblend=BLEND_DEFAULT, always_use_defdir = 0)
 	if(GLOB.initialTypeIcon[path])
@@ -1283,7 +1274,6 @@ proc/get_average_color(var/icon, var/icon_state, var/image_dir)
 	if(sourceonly)
 		return SSassets.transport.get_asset_url(key)
 	return "<img class='[extra_classes] icon icon-[icon_state]' src='[SSassets.transport.get_asset_url(key)]'>"
-
 /proc/icon2base64html(thing)
 	if (!thing)
 		return
