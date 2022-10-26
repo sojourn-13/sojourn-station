@@ -15,7 +15,9 @@
 	desc = "A set of organic muscles designed to be implanted into legs, empowering the body beyond what its normally capable of."
 	allowed_organs = list(BP_R_LEG, BP_L_LEG)
 	icon_state = "orgmuscle"
-	matter = list(MATERIAL_BIOMATTER = 15)
+	matter = list(MATERIAL_BIOMATTER = 50) //Bit more expensive due to 'LET US MAKE A BIO-INDUSTRY' and prevent some horrific crimes against the balance
+	is_organic_module = TRUE //in armor.dm we actually has this for armour. Why not muscles?
+	price_tag = 500 //biological stuff is rather...worthy?
 
 //Putting this here because blargh it.
 //Not like it needs to be anywhere in particular and I don't want to make an entire new file for a small parent.
