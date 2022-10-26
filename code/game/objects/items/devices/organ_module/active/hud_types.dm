@@ -43,8 +43,30 @@
 	desc = "Bio-Thermal Goggles, that can implanted in somebody's head. It.. twitches."
 	verb_name = "Activate Bio-Thermal Goggles"
 	icon_state = "bioshades"
+	matter = list(MATERIAL_BIOMATTER = 100)
 	holding_type = /obj/item/clothing/glasses/shades/thermal/bio
 	is_organic_module = TRUE
+	price_tag = 2750
+
+/obj/item/organ_module/active/hud/welder_bio
+	name = "embedded bio-welder overlays"
+	desc = "Bio-Welder Goggles, that can implanted in somebody's head. It.. twitches."
+	verb_name = "Activate Bio-Welder Goggles"
+	icon_state = "bioshades"
+	matter = list(MATERIAL_BIOMATTER = 100)
+	holding_type = /obj/item/clothing/glasses/welding/superior/shades/bio
+	is_organic_module = TRUE
+	price_tag = 875
+
+/obj/item/organ_module/active/hud/night_bio
+	name = "embedded bio-night vision overlays"
+	desc = "Bio-Night Vision Goggle, that can implanted in somebody's head. It.. twitches."
+	verb_name = "Activate Bio-Night Vision Goggles"
+	icon_state = "bioshades"
+	matter = list(MATERIAL_BIOMATTER = 100)
+	holding_type = /obj/item/clothing/glasses/shades/night/bio
+	is_organic_module = TRUE
+	price_tag = 1475 //Just technically it is a bit harder to make the fleshy ones.
 
 /obj/item/organ_module/active/hud/night_bio_mycus
 	name = "embedded nightvision membrane"
@@ -52,20 +74,4 @@
 	verb_name = "Activate Nightvision Membrane"
 	icon_state = "mycus_eye"
 	holding_type = /obj/item/clothing/glasses/shades/night/bio_mycus
-	is_organic_module = TRUE
-
-/obj/item/organ_module/active/hud/welder_bio
-	name = "embedded bio-welder overlays"
-	desc = "Bio-Welder Goggles, that can implanted in somebody's head. It.. twitches."
-	verb_name = "Activate Bio-Welder Goggles"
-	icon_state = "bioshades"
-	holding_type = /obj/item/clothing/glasses/welding/superior/shades/bio
-	is_organic_module = TRUE
-
-/obj/item/organ_module/active/hud/night_bio
-	name = "embedded bio-night vision overlays"
-	desc = "Bio-Night Vision Goggle, that can implanted in somebody's head. It.. twitches."
-	verb_name = "Activate Bio-Night Vision Goggles"
-	icon_state = "bioshades"
-	holding_type = /obj/item/clothing/glasses/shades/night/bio
 	is_organic_module = TRUE
