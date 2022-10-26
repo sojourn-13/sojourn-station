@@ -365,3 +365,22 @@
 
 /datum/design/organ/teratoma/special/stat_boost
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/special/stat_boost
+
+/datum/design/organ/augments
+	category = "Augments"
+	starts_unlocked = FALSE
+
+/datum/design/organ/augments/night_bio
+	build_path = /obj/item/organ_module/active/hud/night_bio
+
+/datum/design/organ/augments/welder_bio
+	build_path = /obj/item/organ_module/active/hud/welder_bio
+
+/datum/design/organ/augments/thermal_bio
+	build_path = /obj/item/organ_module/active/hud/thermal_bio
+
+/datum/design/organ/augments/muscle_organic
+	build_path = /obj/item/organ_module/muscle/organic
+
+/datum/design/organ/augments/armor_organic
+	build_path = /obj/item/organ_module/armor/organic
