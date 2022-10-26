@@ -798,7 +798,7 @@
 			vomit()
 			return
 
-		if("whistle" || "whistles")
+		if("whistle", "whistles")
 			if(!muzzled)
 				message = "whistles a tune."
 				playsound(loc, 'sound/misc/longwhistle.ogg', 25, 1, -3) //This is really loud, please don't spam it.
