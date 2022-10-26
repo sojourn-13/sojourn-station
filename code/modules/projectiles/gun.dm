@@ -1036,7 +1036,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if(item_upgrades.len)
 		data["attachments"] = list()
 		for(var/atom/A in item_upgrades)
-			data["attachments"] += list(list("name" = A.name, "icon" = getAtomCacheFilename(A)))
+			data["attachments"] += list(list("name" = A.name, "icon" = SSassets.transport.get_asset_url(A)))
 
 	return data
 
