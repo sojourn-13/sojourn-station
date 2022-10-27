@@ -29,6 +29,7 @@
 		FORM_UNBRANDED
 		)
 
+
 /datum/sprite_accessory/hair/bald
 	name = "Bald"
 	icon_state = "bald"
@@ -936,26 +937,6 @@
 	name = "Yasu Quills"
 	icon_state = "yasuquills"
 
-/datum/sprite_accessory/hair/marquafrill
-	name = "Mar'Qua pointed frills"
-	icon_state = "sidespikes"
-	species_allowed = list(FORM_MARQUA)
-
-/datum/sprite_accessory/hair/marqua_short_frill
-	name = "Mar'Qua short frills"
-	icon_state = "longears"
-	species_allowed = list(FORM_MARQUA)
-
-/datum/sprite_accessory/hair/marqua_witchhat
-	name = "Mar'Qua Erudite"
-	icon_state = "witchhat"
-	species_allowed = list(FORM_MARQUA)
-
-/datum/sprite_accessory/hair/marqua_cat
-	name = "Mar'Qua Tipped frills"
-	icon_state = "topears"
-	species_allowed = list(FORM_MARQUA)
-
 
 /datum/sprite_accessory/hair/marqua_veryshort
 	name = "Very Short Headtails"
@@ -972,7 +953,7 @@
 /datum/sprite_accessory/hair/marqua_long
 	name = "Long Headtails"
 	icon_state = "marqua_hair_verylong_s"
-	
+
 /datum/sprite_accessory/hair/split
 	name = "Split Headtails"
 	icon_state = "marqua_hair_split_s"
@@ -992,28 +973,63 @@
 /datum/sprite_accessory/hair/marqua_scarfverylong
 	name = "Scrarf Long Headtails"
 	icon_state = "marqua_hair_scarfverylong_s"
-	
+
 /datum/sprite_accessory/hair/marqua_wavylong
 	name = "Wavy Long Headtails"
 	icon_state = "marqua_hair_wavylong_s"
-	
+
 /datum/sprite_accessory/hair/marqua_wavyverylong
 	name = "Wavy Very Long Headtails"
 	icon_state = "marqua_hair_wavyverylong_s"
-	
+
 /datum/sprite_accessory/hair/marqua_pullback
 	name = "Pullback Headtails"
 	icon_state = "marqua_hair_pullback_s"
-	
+
 /datum/sprite_accessory/hair/marqua_pullbacklong
 	name = "Pullback Long Headtails"
 	icon_state = "marqua_hair_pullbacklong_s"
-	
+
 /datum/sprite_accessory/hair/marqua_pullbackverylong
 	name = "Pullback Very Long Headtails"
 	icon_state = "marqua_hair_pullbackverylong_s"
 
 
+/datum/sprite_accessory/hair/marqua_tiedlong
+	name = "Tied Long Headtails"
+	icon_state = "marqua_hair_tiedlong_s"
+
+/datum/sprite_accessory/hair/marqua_tiedverylong
+	name = "Tied Very Long Headtails"
+	icon_state = "marqua_hair_tiedverylong_s"
+
+/datum/sprite_accessory/hair/marqua_scarflong
+	name = "Scrarf Headtails"
+	icon_state = "marqua_hair_scarflong_s"
+
+/datum/sprite_accessory/hair/marqua_scarfverylong
+	name = "Scrarf Long Headtails"
+	icon_state = "marqua_hair_scarfverylong_s"
+
+/datum/sprite_accessory/hair/marqua_wavylong
+	name = "Wavy Long Headtails"
+	icon_state = "marqua_hair_wavylong_s"
+
+/datum/sprite_accessory/hair/marqua_wavyverylong
+	name = "Wavy Very Long Headtails"
+	icon_state = "marqua_hair_wavyverylong_s"
+
+/datum/sprite_accessory/hair/marqua_pullback
+	name = "Pullback Headtails"
+	icon_state = "marqua_hair_pullback_s"
+
+/datum/sprite_accessory/hair/marqua_pullbacklong
+	name = "Pullback Long Headtails"
+	icon_state = "marqua_hair_pullbacklong_s"
+
+/datum/sprite_accessory/hair/marqua_pullbackverylong
+	name = "Pullback Very Long Headtails"
+	icon_state = "marqua_hair_pullbackverylong_s"
 /datum/sprite_accessory/hair/folken
 	species_allowed = list(FORM_FOLKEN)
 
