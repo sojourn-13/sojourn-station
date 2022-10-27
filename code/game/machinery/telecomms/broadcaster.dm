@@ -348,15 +348,15 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 					blackbox.msg_medical += blackbox_msg
 				if(ENG_FREQ)
 					blackbox.msg_engineering += blackbox_msg
-				if(SEC_FREQ || BLS_FREQ || MAR_FREQ)
+				if(SEC_FREQ, BLS_FREQ, MAR_FREQ)
 					blackbox.msg_security += blackbox_msg
 				if(DTH_FREQ)
 					blackbox.msg_deathsquad += blackbox_msg
 				if(SYND_FREQ)
 					blackbox.msg_syndicate += blackbox_msg
-				if(SUP_FREQ || PRO_FREQ)
+				if(SUP_FREQ, PRO_FREQ)
 					blackbox.msg_cargo += blackbox_msg
-				if(SRV_FREQ || PT_BT_FREQ ||PT_RT_FREQ  || PT_YT_FREQ || PT_GT_FREQ)
+				if(SRV_FREQ, PT_BT_FREQ, PT_RT_FREQ, PT_YT_FREQ, PT_GT_FREQ)
 					blackbox.msg_service += blackbox_msg
 				if(NT_FREQ)
 					blackbox.msg_nt += blackbox_msg
@@ -525,15 +525,15 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 					blackbox.msg_medical += blackbox_msg
 				if(ENG_FREQ)
 					blackbox.msg_engineering += blackbox_msg
-				if(SEC_FREQ || BLS_FREQ || MAR_FREQ)
+				if(SEC_FREQ, BLS_FREQ, MAR_FREQ)
 					blackbox.msg_security += blackbox_msg
 				if(DTH_FREQ)
 					blackbox.msg_deathsquad += blackbox_msg
 				if(SYND_FREQ)
 					blackbox.msg_syndicate += blackbox_msg
-				if(SUP_FREQ || PRO_FREQ)
+				if(SUP_FREQ, PRO_FREQ)
 					blackbox.msg_cargo += blackbox_msg
-				if(SRV_FREQ || PT_BT_FREQ ||PT_RT_FREQ  || PT_YT_FREQ || PT_GT_FREQ)
+				if(SRV_FREQ, PT_BT_FREQ, PT_RT_FREQ, PT_YT_FREQ, PT_GT_FREQ)
 					blackbox.msg_service += blackbox_msg
 				if(NT_FREQ)
 					blackbox.msg_nt += blackbox_msg
