@@ -211,11 +211,10 @@ var/list/global/organ_rel_size = list(
 	while(counter>=1)
 		newletter=copytext_char(phrase,(leng-counter)+1,(leng-counter)+2)
 		if(rand(1,3)==3)
-			if(lowertext(newletter)=="о")	newletter="у"
-			if(lowertext(newletter)=="с")	newletter="з"
-			if(lowertext(newletter)=="а")	newletter="ах"
-			if(lowertext(newletter)=="с")	newletter="к"
-			if(lowertext(newletter)=="ч")	newletter="з"
+			if(lowertext(newletter)=="o")	newletter="u"
+			if(lowertext(newletter)=="s")	newletter="ch"
+			if(lowertext(newletter)=="a")	newletter="ah"
+			if(lowertext(newletter)=="c")	newletter="k"
 		switch(rand(1,7))
 			if(1,3,5)	newletter="[lowertext(newletter)]"
 			if(2,4,6)	newletter="[uppertext(newletter)]"
