@@ -813,7 +813,7 @@
 	light_color = COLOR_LIGHTING_GREEN_BRIGHT
 	icon_state = "amogus"
 	icon_deny = "amogus-deny"
-	product_slogans = "You're never too old to play with toys, of any kind!;As seen in posters among us toymakers!;Gotta collect 'em all!"
+	product_slogans = "Buy one for everyone!;As seen in posters among us toymakers!;Gotta collect 'em all!"
 	products = list(
 		/obj/item/toy/junk/bosunwhistle = 5,
 		/obj/item/gun/projectile/revolver/capgun = 5,
