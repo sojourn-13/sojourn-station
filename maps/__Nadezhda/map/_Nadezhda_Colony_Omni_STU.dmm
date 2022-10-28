@@ -55362,7 +55362,6 @@
 	dir = 2;
 	locked = 0;
 	name = "South APC";
-	operating = 0;
 	pixel_y = -28
 	},
 /obj/structure/cable/yellow,
