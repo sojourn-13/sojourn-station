@@ -808,7 +808,7 @@
 
 /obj/machinery/vending/plushies
 	name = "Toys 4 You"
-	desc = "Selling toys of all kinds for your inner child."
+	desc = "Sells toys of all kinds."
 	density = FALSE
 	light_color = COLOR_LIGHTING_GREEN_BRIGHT
 	icon_state = "amogus"
@@ -817,6 +817,7 @@
 	products = list(
 		/obj/item/toy/junk/bosunwhistle = 5,
 		/obj/item/gun/projectile/revolver/capgun = 5,
+		/obj/item/storage/box/blanks = 5, // One for every capgun, irrecoverable ammo unlike the foam darts
 		/obj/item/toy/weapon/crossbow = 5,
 		/obj/item/storage/box/foambow = 2,
 		/obj/item/toy/junk/xmas_tree = 5,
@@ -947,6 +948,7 @@
 	prices = list(
 		/obj/item/toy/junk/bosunwhistle = 25,
 		/obj/item/gun/projectile/revolver/capgun = 25,
+		/obj/item/storage/box/blanks = 10,
 		/obj/item/toy/weapon/crossbow = 50,
 		/obj/item/storage/box/foambow = 10,
 		/obj/item/toy/junk/xmas_tree = 25,
