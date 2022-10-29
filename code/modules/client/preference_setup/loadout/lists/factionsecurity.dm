@@ -250,6 +250,13 @@
 	slot = slot_glasses
 	sort_category = "Faction: Security"
 
+/datum/gear/factionsecurity/secpatch
+	display_name = "HUD eyepatch"
+	path = /obj/item/clothing/glasses/eyepatch/secpatch
+	allowed_roles = list(JOBS_SECURITY)
+	slot = slot_glasses
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/security_tact
 	display_name = "tactical security HUD"
 	path = /obj/item/clothing/glasses/sechud/tactical

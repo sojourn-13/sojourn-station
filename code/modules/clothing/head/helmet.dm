@@ -119,8 +119,8 @@
 	light_overlay = "bsfullhelm_light"
 
 /obj/item/clothing/head/helmet/ballistic/shieldfull/corpsman
-	name = "Corpsmans full helm"
-	desc = "Standard military gear. A full-faced vasriant of the common ballistic helmet. This one bears a few\
+	name = "Corpsman full helm"
+	desc = "Standard military gear. A full-faced variant of the common ballistic helmet. This one bears a few\
 	key upgrades, including sterile materials and contaminant resistant sealing."
 	armor_list = list(melee = 30, bullet = 40,energy = 20, bomb = 30, bio = 75, rad = 0)
 	action_button_name = "Toggle Headlamp"
@@ -143,7 +143,7 @@
 	options["Grey hooded fullhelm"] = "_gp"
 	options["Green hooeded fullhelm"] = "_grp"
 	options["Tan hooded fullhelm"] = "_tp"
-	options["camo hooded fullhelm"] = "_cp"
+	options["Camo hooded fullhelm"] = "_cp"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
@@ -159,10 +159,9 @@
 		return 1
 
 /obj/item/clothing/head/helmet/ballistic/sergeant
-	name = "Sergeants ballistic gorget"
-	desc = "Standard military gear. A somewhat uncommon piece of equipment, despite its unusual appearance\
-	this piece of headgear provides much-needed protection to oft-neglected locations while not interfering unduly\
-	with the users range of motion or ability to communicate."
+	name = "Sergeant's ballistic gorget"
+	desc = "Standard military gear. A somewhat uncommon piece of equipment, despite its unusual appearance\n this piece of headgear provides much-needed protection to oft-neglected locations while not interfering unduly\
+	with the user's range of motion or ability to communicate."
 	icon_state = "sergeanthelm"
 	item_state = "sergeanthelm"
 	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
@@ -178,7 +177,7 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["gorget standard"] = ""
+	options["gorget in standard mode"] = ""
 	options["goggles on"] = "_goggle"
 	options["cap on"] = "_cap"
 	options["beret on"] = "_beret"
