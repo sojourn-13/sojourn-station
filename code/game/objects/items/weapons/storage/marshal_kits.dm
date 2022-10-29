@@ -94,13 +94,13 @@
 
 //Ranger kits
 /obj/item/storage/box/m_kit/armstrong
-	name = "Armstrong Kit"
-	desc = "The standard Marshal box kit containing a Armstrong lever action rifle, a repeating rifle chambered in 10mm Magnum."
+	name = "Custer Kit"
+	desc = "The standard Marshal box kit containing a Custer lever action rifle, a variant of the famous Armstrong repeating rifle chambered in 8.6mm."
 
 	populate_contents()
-		new /obj/item/gun/projectile/boltgun/lever(src)
-		new /obj/item/ammo_magazine/ammobox/magnum_40(src)
-		new /obj/item/ammo_magazine/ammobox/magnum_40/rubber(src)
+		new /obj/item/gun/projectile/boltgun/lever/custer(src)
+		new /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small(src)
+		new /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/rubber(src)
 
 /obj/item/storage/box/m_kit/specop
 	name = "Spec-Op Caseless SMG Kit"
