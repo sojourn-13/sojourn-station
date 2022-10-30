@@ -45,7 +45,7 @@
 	update_icon()
 
 /obj/item/gun/projectile/automatic/c20r/sci
-	name = "bullpip SMG"
+	name = "Soteria \"Bullpip\" SMG"
 	desc = "A Soteria copy of the Scarborough Arms C-20r, not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses 9mm."
 	icon = 'icons/obj/guns/projectile/si_cr20.dmi'
 	damage_multiplier = 1
