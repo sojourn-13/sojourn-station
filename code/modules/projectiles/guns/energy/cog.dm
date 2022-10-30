@@ -27,6 +27,7 @@
 	This model has been modified by the Marshals to allow for non-lethal electrodes to be discharged as well as lasers, but at the cost of its cell-usage efficiency."
 	icon = 'icons/obj/guns/energy/cog_alt.dmi' // Using their proper sprite now
 	w_class = ITEM_SIZE_BULKY
+	damage_multiplier = 1.1 // More power consumed, higher damaging shots
 	fire_delay = 15
 	projectile_type = /obj/item/projectile/beam/stun
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 15, MATERIAL_SILVER = 10)
