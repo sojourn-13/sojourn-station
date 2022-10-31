@@ -871,15 +871,10 @@
 		/obj/item/toy/figure/character/ironhammer/detective = 5,
 		// Bobbleheads
 		/obj/item/toy/figure/character/bobblehead/acolyte = 5,
-		/obj/item/toy/figure/character/bobblehead/excelsior = 5,
-		/obj/item/toy/figure/character/bobblehead/serbian = 5,
-		/obj/item/toy/figure/character/bobblehead/carrion = 5,
 		/obj/item/toy/figure/character/bobblehead/roach = 5,
 		/obj/item/toy/figure/character/bobblehead/vagabond = 5,
 		/obj/item/toy/figure/character/bobblehead/rooster = 5,
 		/obj/item/toy/figure/character/bobblehead/barking_dog = 5,
-		/obj/item/toy/figure/character/bobblehead/red_soldier = 5,
-		/obj/item/toy/figure/character/bobblehead/metacat = 2, // There's only two.
 		/obj/item/toy/figure/character/bobblehead/shitcurity = 5,
 		/obj/item/toy/figure/character/bobblehead/metro_patrolman = 5,
 		// Dense plushies
@@ -943,6 +938,14 @@
 		// Office stuff
 		/obj/item/toy/desk/newtoncradle = 5,
 		/obj/item/toy/desk/dippingbird = 5
+	)
+
+	contraband = list(
+		/obj/item/toy/figure/character/bobblehead/excelsior = 5,
+		/obj/item/toy/figure/character/bobblehead/serbian = 5,
+		/obj/item/toy/figure/character/bobblehead/carrion = 5,
+		/obj/item/toy/figure/character/bobblehead/red_soldier = 5,
+		/obj/item/toy/figure/character/bobblehead/metacat = 2 // There's only two.
 	)
 
 	prices = list(
