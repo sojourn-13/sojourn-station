@@ -14,7 +14,7 @@
 #define BLEEDOUT			BITFLAG(7)
 #define GODMODE				BITFLAG(8)
 #define FAKEDEATH			BITFLAG(9)	// Replaces stuff like changeling.changeling_fakedeath.
-#define NO_ANTAG			BITFLAG(10)	// Players are restricted from gaining antag roles when occupying this mob
+#define NO_ANTAG_MOB		BITFLAG(10)	// Players are restricted from gaining antag roles when occupying this mob
 #define XENO_HOST			BITFLAG(11)	// Tracks whether we're gonna be a baby alien's mummy.
 #define ENABLE_AI			BITFLAG(12)	// Regardless of player control, the mob is using AI.
 
