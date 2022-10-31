@@ -26,7 +26,7 @@
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.9
 	species_restricted = list("exclude")
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	obscuration = LIGHT_OBSCURATION
 
 	var/obj/machinery/camera/camera
