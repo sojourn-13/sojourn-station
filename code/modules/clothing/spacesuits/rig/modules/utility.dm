@@ -276,6 +276,7 @@
 	selectable = 1
 	disruptive = 1
 	initial_beakers = list(
+		list(/obj/item/reagent_containers/glass/beaker/large, "inaprovaline",60),
 		list(/obj/item/reagent_containers/glass/beaker/large, "dexalinp",60),
 		list(/obj/item/reagent_containers/glass/beaker/large, "tramadol",60),
 		list(/obj/item/reagent_containers/glass/beaker/large, "bicaridine", 60),
