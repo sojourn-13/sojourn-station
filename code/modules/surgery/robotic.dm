@@ -129,7 +129,7 @@
 		SPAN_NOTICE("[user] disconnects [organ.get_surgery_name()] with \the [tool]."),
 		SPAN_NOTICE("You disconnect [organ.get_surgery_name()] with \the [tool].")
 	)
-	organ.droplimb(TRUE, DROPLIMB_EDGE)
+	organ.droplimb(TRUE, DISMEMBER_METHOD_EDGE)
 
 /datum/surgery_step/robotic/fix_bone
 	required_tool_quality = QUALITY_WELDING

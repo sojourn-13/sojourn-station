@@ -704,7 +704,7 @@
 		)
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
+		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
 		)
@@ -754,7 +754,7 @@
 		)
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
+		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
 		)
@@ -813,7 +813,7 @@
 		)
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
+		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
 		)
@@ -876,7 +876,7 @@
 		)
 
 	has_process = list(    // which required-process checks are conducted and defalut organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
+		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
 		)
@@ -936,7 +936,7 @@
 		)
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
+		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
 		)
@@ -997,7 +997,7 @@
 		)
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
+		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
 		)
@@ -1057,7 +1057,7 @@
 		)
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
+		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
 		)

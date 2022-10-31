@@ -37,7 +37,7 @@
 		if(prob(5))
 			var/mob/living/carbon/C = L
 			var/safety = C.eyecheck()
-			if(safety < FLASH_PROTECTION_MODERATE)
+			if(safety < FLASH_PROTECTION_MINOR)
 				var/flash_strength = 5
 				if(ishuman(L))
 					var/mob/living/carbon/human/H = L
