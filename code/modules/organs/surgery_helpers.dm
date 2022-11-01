@@ -32,7 +32,6 @@
 	status_data["cut_away"] = status & ORGAN_CUT_AWAY
 	status_data["bleeding"] = status & ORGAN_BLEEDING
 	status_data["broken"] = status & ORGAN_BROKEN
-	status_data["destroyed"] = status & ORGAN_DESTROYED
 	status_data["splintered"] = status & ORGAN_SPLINTED
 	status_data["dead"] = status & ORGAN_DEAD
 	status_data["mutated"] = status & ORGAN_MUTATED

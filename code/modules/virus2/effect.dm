@@ -85,7 +85,7 @@
 			if(prob(10))
 				spawn(50)
 					if(O)
-						O.droplimb(0,DROPLIMB_BLUNT)
+						O.droplimb(0,DISMEMBER_METHOD_BLUNT)
 		else
 			if(prob(75))
 				to_chat(mob, SPAN_WARNING("Your whole body feels like it might fall apart!"))

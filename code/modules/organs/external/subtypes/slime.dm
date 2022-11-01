@@ -13,6 +13,6 @@
 	var/raw_efficiency = 300
 	limb_efficiency = round(((raw_efficiency/(240+((2*raw_efficiency)/10))) * 100)) //Diminishing returns as total limb efficiency increases.
 
-/obj/item/organ/external/slime/droplimb(var/clean, var/disintegrate = DROPLIMB_EDGE, var/ignore_children = null)
-	disintegrate = DROPLIMB_BLUNT
+/obj/item/organ/external/slime/droplimb(var/clean, var/disintegrate = DISMEMBER_METHOD_EDGE, var/ignore_children = null)
+	disintegrate = DISMEMBER_METHOD_BLUNT
 	..()

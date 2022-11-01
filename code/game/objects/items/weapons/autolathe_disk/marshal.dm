@@ -125,6 +125,8 @@
 		/datum/design/autolathe/ammo/kurtz_ammobox_rubber = 0,
 		/datum/design/autolathe/ammo/kurtz_ammobox = 0,
 		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/mag_10x24 = 0,
+		/datum/design/autolathe/ammo/box_10x24_small = 1,
 		/datum/design/autolathe/ammo/lrifle_ammobox = 1,
 		/datum/design/autolathe/ammo/lrifle_ammobox_lethal = 1,
 		/datum/design/autolathe/ammo/lrifle_ammobox_rubber = 0,
@@ -181,7 +183,7 @@
 
 	license = 12
 	designs = list(
-		/datum/design/autolathe/gun/thompson = 4,
+		/datum/design/autolathe/gun/freedom = 4,
 		/datum/design/autolathe/ammo/smg_magnum_40 = 2,
 		/datum/design/autolathe/ammo/smg_magnum_40_rubber = 1,
 		/datum/design/autolathe/ammo/smg_magnum_40_lethal = 3,

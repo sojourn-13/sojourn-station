@@ -69,6 +69,7 @@
 		return
 	for(var/obj/O in src)
 		O.forceMove(loc)
+	autodoc_processor.stop()
 	occupant.forceMove(loc)
 	occupant.reset_view()
 	occupant.unset_machine()

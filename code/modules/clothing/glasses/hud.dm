@@ -34,7 +34,7 @@
 	name = "security HUD"
 	desc = "A heads-up display that scans the humans in view and provides accurate data about their ID status and security records."
 	icon_state = "securityhud"
-	flash_protection = FLASH_PROTECTION_MODERATE
+	flash_protection = FLASH_PROTECTION_MINOR
 	body_parts_covered = 0
 	var/global/list/jobs[0]
 
@@ -43,7 +43,7 @@
 	desc = "Polarized bioneural eyewear, designed to augment your vision."
 	icon_state = "jensenshades"
 	item_state = "jensenshades"
-	flash_protection = FLASH_PROTECTION_MODERATE
+	flash_protection = FLASH_PROTECTION_MINOR
 	vision_flags = SEE_MOBS
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 
@@ -55,7 +55,7 @@
 	desc = "A pair of stylish sunglasses with an integrated Security-HUD. No one said cops couldn't be stylish."
 	icon_state = "sunhud"
 	prescription = TRUE
-	flash_protection = FLASH_PROTECTION_MODERATE
+	flash_protection = FLASH_PROTECTION_MINOR
 
 	New()
 		..()
@@ -65,7 +65,7 @@
 /obj/item/clothing/glasses/sechud/tactical
 	name = "security tactical HUD"
 	desc = "Improved Flash-resistant goggles with inbuilt combat and security information."
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	icon_state = "swatgoggles"
 
 /obj/item/clothing/glasses/hud/broken/process_hud(mob/M)

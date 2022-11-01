@@ -5,7 +5,7 @@
 	ask_verb = list("sings")
 	exclaim_verb = list("sings")
 	colour = "alien"
-	key = "x"
+	key = "3"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"
 	has_written_form = FALSE

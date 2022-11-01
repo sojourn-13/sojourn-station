@@ -122,7 +122,7 @@
 	icon_state = "sun"
 	item_state = "sunglasses"
 	darkness_view = -1
-	flash_protection = FLASH_PROTECTION_MODERATE
+	flash_protection = FLASH_PROTECTION_MINOR
 	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/glasses/sunglasses/big
@@ -130,7 +130,7 @@
 	desc = "A rather large pair of sunglasses."
 	icon_state = "bigsunglasses"
 	item_state = "bigsunglasses"
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	darkness_view = -3
 	obscuration = MEDIUM_OBSCURATION
 
@@ -139,7 +139,7 @@
 	desc = "A stylish pair of small, circular sunglasses that keeps your eyes surprisingly well hidden."
 	icon_state = "hellgoggles"
 	item_state = "hellgoggles"
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	darkness_view = -3
 	obscuration = MEDIUM_OBSCURATION
 
@@ -149,7 +149,7 @@
 	icon_state = "aviator"
 	item_state = "aviator"
 	darkness_view = -1
-	flash_protection = FLASH_PROTECTION_MODERATE
+	flash_protection = FLASH_PROTECTION_MINOR
 
 /obj/item/clothing/glasses/aviator/red
 	name = "red aviators"
@@ -193,7 +193,7 @@
 	prescription = TRUE
 	action_button_name = "Switch Polarization"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 2)
-	flash_protection = FLASH_PROTECTION_MODERATE
+	flash_protection = FLASH_PROTECTION_MINOR
 
 /obj/item/clothing/glasses/ballistic/attack_self()
 	adjust()
@@ -210,7 +210,7 @@
 			flags_inv |= HIDEEYES
 			body_parts_covered |= EYES
 			icon_state = initial(icon_state)
-			flash_protection = FLASH_PROTECTION_MAJOR
+			flash_protection = FLASH_PROTECTION_MODERATE
 			darkness_view = -4
 			to_chat(usr, "You switch \the [src]' polarization on to protect your eyes.")
 		else
@@ -218,7 +218,7 @@
 			flags_inv &= ~HIDEEYES
 			body_parts_covered &= ~EYES
 			icon_state = "[initial(icon_state)]off"
-			flash_protection = FLASH_PROTECTION_MODERATE
+			flash_protection = FLASH_PROTECTION_MINOR
 			to_chat(usr, "You switch \the [src]' polarization to automatic.")
 		update_wear_icon()
 		usr.update_action_buttons()

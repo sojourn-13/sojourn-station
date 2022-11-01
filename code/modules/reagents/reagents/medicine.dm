@@ -791,7 +791,7 @@
 	M.heal_organ_damage(2 * effect_multiplier, 2 * effect_multiplier, 5 * effect_multiplier, 5 * effect_multiplier)
 	M.adjustToxLoss(-(2 + (M.getToxLoss() * 0.05)) * effect_multiplier)
 	if(dose > 3)
-		M.status_flags &= ~DISFIGURED
+		M.status_flags &= ~ORGAN_DISFIGURED
 	if(dose > 10)
 		M.make_dizzy(5)
 		M.make_jittery(5)

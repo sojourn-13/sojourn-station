@@ -36,6 +36,7 @@
 		update_icon()
 
 /obj/item/ammo_casing/Destroy()
+	qdel(BB)
 
 	BB = null
 
@@ -220,7 +221,7 @@
 	update_icon()
 
 /obj/item/ammo_magazine/Destroy()
-
+	QDEL_LIST(contents)
 	QDEL_LIST(stored_ammo)
 
 	. = ..()

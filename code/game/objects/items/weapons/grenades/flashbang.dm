@@ -72,7 +72,7 @@
 		eye_safety += 1
 
 //Flashing everyone
-	if(eye_safety < FLASH_PROTECTION_MAJOR)
+	if(eye_safety < FLASH_PROTECTION_MODERATE)
 		M.flash(3, FALSE , TRUE , TRUE , 15 - (15*eye_safety))
 
 //Now applying sound

@@ -946,3 +946,26 @@ default behaviour is:
 
 /mob/living/proc/eyecheck()
 	return 0
+
+/mob/living/verb/show_tasks()
+	set name		= "Show tasks"
+	set desc		= "Browse your character tasks."
+	set category	= "IC"
+	set src			= usr
+
+	var/list/data = list()
+	var/list/tasks = learnt_tasks.learnt_tasks
+	if(LAZYLEN(tasks))
+		for(var/task in tasks)
+			var/datum/task_master/task/T = task
+			data["tasks"] += list(list(
+				"name" = T.name,
+				"desc" = T.desc,
+				"value" = T.value,
+				"level_threshold" = T.level_threshholds,
+				"level" = T.level
+			))
+
+	var/datum/nanoui/ui = new(usr, src, "main", "tasks.tmpl", "Tasks", 500, 300)
+	ui.set_initial_data(data)	// when the ui is first opened this is the data it will use
+	ui.open()					// open the new ui window
