@@ -188,6 +188,9 @@ Turf and target are seperate in case you want to teleport some distance from a t
 /proc/sign(x)
 	return x!=0?x/abs(x):0
 
+/proc/spow(x,y)
+	return (sign(x) * (abs(x) ** y))
+
 /proc/getline(atom/M, atom/N)//Ultra-Fast Bresenham Line-Drawing Algorithm
 	var/px=M.x		//starting x
 	var/py=M.y
