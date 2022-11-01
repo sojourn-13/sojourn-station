@@ -410,3 +410,39 @@
 	icon_state = "olive_suitskirt"
 	item_state = "olive_suitskirt"
 
+/obj/item/clothing/under/modular/hakama_red
+	name = "white and red hakama"
+	desc = "A formal, traditional japanese clothing consisting of a white kimono and pleated red trousers."
+	icon_state = "hakama_red"
+	item_state = "hakama_red"
+
+/obj/item/clothing/under/modular/hakama_black
+	name = "white and black hakama"
+	desc = "A formal, traditional japanese clothing consisting of a white kimono and pleated black trousers."
+	icon_state = "hakama_black"
+	item_state = "hakama_black"
+
+/obj/item/clothing/under/modular/hakama_blue
+	name = "white and blue hakama"
+	desc = "A formal, traditional japanese clothing consisting of a white kimono and pleated blue trousers."
+	icon_state = "hakama_blue"
+	item_state = "hakama_blue"
+
+/obj/item/clothing/under/modular/hakama_br
+	name = "black and red hakama"
+	desc = "A formal, traditional japanese clothing consisting of a black kimono and pleated red trousers."
+	icon_state = "hakama_br"
+	item_state = "hakama_br"
+
+/obj/item/clothing/under/modular/hakama_bw
+	name = "black and white hakama"
+	desc = "A formal, traditional japanese clothing consisting of a black kimono and pleated white trousers."
+	icon_state = "hakama_bw"
+	item_state = "hakama_bw"
+
+/obj/item/clothing/under/modular/hakama_bb
+	name = "black and blue hakama"
+	desc = "A formal, traditional japanese clothing consisting of a black kimono and pleated blue trousers."
+	icon_state = "hakama_bb"
+	item_state = "hakama_bb"
+

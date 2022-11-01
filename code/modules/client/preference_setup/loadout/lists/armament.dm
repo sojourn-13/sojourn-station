@@ -70,3 +70,8 @@
 /datum/gear/armament/holster/saber/cutlass
 	display_name = "cutlass holster"
 	path = /obj/item/clothing/accessory/holster/saber/cutlass
+
+/datum/gear/armament/holster/saber/katana
+	display_name = "katana \"Saya\" sheath"
+	path = /obj/item/clothing/accessory/holster/saber/saya
+

@@ -550,7 +550,7 @@
 	product_ads = "Our clothes are guaranteed to suit you, make sure you suit the clothes as well.;The outfit doesn't make you, you make the outfit.;People will stare. Make it worth their while."
 	icon_state = "drip"
 	products = list(
-		// Ties
+	// Ties
 		/obj/item/clothing/accessory/tie/black = 8,
 		/obj/item/clothing/accessory/tie/blue = 8,
 		/obj/item/clothing/accessory/tie/blueclip = 8,
@@ -563,7 +563,7 @@
 		/obj/item/clothing/accessory/tie/white = 8,
 		/obj/item/clothing/accessory/tie/yellow = 8,
 		/obj/item/clothing/accessory/tie = 8,
-		// Shoes
+	// Shoes
 		/obj/item/clothing/shoes/laceup = 3,
 		/obj/item/clothing/shoes/laceup/white = 3,
 		/obj/item/clothing/shoes/highheels = 5,
@@ -578,7 +578,7 @@
 		/obj/item/clothing/shoes/flats/blue = 5,
 		/obj/item/clothing/shoes/flats/brown = 5,
 		/obj/item/clothing/shoes/flats/orange = 5,
-		// Suits (jumpsuit)
+	// Suits (jumpsuit)
 		/obj/item/clothing/under/suit_jacket/black = 4,
 		/obj/item/clothing/under/suit_jacket/blackskirt = 4,
 		/obj/item/clothing/under/suit_jacket/blazer = 4,
@@ -651,7 +651,14 @@
 		/obj/item/clothing/under/black = 4,
 		/obj/item/clothing/under/helltaker = 4,
 		/obj/item/clothing/under/top/dimmadome = 5,
-		// Suit jackets
+	// Oriental clothing
+		/obj/item/clothing/under/modular/hakama_red = 6,
+		/obj/item/clothing/under/modular/hakama_black = 6,
+		/obj/item/clothing/under/modular/hakama_blue = 6,
+		/obj/item/clothing/under/modular/hakama_br = 6,
+		/obj/item/clothing/under/modular/hakama_bw = 6,
+		/obj/item/clothing/under/modular/hakama_bb = 6,
+	// Suit jackets
 		/obj/item/clothing/suit/storage/suitjacket = 10,
 		/obj/item/clothing/suit/storage/suitjacket/black = 10,
 		/obj/item/clothing/suit/storage/suitjacket/blackjacket = 10,
@@ -672,7 +679,8 @@
 		/obj/item/clothing/suit/storage/suitjacket/helltaker/black = 10,
 		/obj/item/clothing/suit/storage/suitjacket/longcardigan_brown = 10,
 		/obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown = 10,
-		/obj/item/clothing/suit/storage/texan = 2
+		/obj/item/clothing/suit/storage/texan = 2,
+		/obj/item/clothing/suit/storage/suitjacket/haori = 6
 
 	)
 
@@ -782,6 +790,13 @@
 		/obj/item/clothing/under/colony = 50,
 		/obj/item/clothing/under/fancy_redish_suit = 80,
 		/obj/item/clothing/under/top/dimmadome = 75,
+	// Oriental clothing
+		/obj/item/clothing/under/modular/hakama_red = 50,
+		/obj/item/clothing/under/modular/hakama_black = 50,
+		/obj/item/clothing/under/modular/hakama_blue = 50,
+		/obj/item/clothing/under/modular/hakama_br = 50,
+		/obj/item/clothing/under/modular/hakama_bw = 50,
+		/obj/item/clothing/under/modular/hakama_bb = 50,
 	// Suit jackets
 		/obj/item/clothing/suit/storage/texan = 100,
 		/obj/item/clothing/suit/storage/suitjacket = 130,
@@ -803,7 +818,8 @@
 		/obj/item/clothing/suit/storage/suitjacket/helltaker = 150,
 		/obj/item/clothing/suit/storage/suitjacket/helltaker/black = 150,
 		/obj/item/clothing/suit/storage/suitjacket/longcardigan_brown = 130,
-		/obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown = 130
+		/obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown = 130,
+		/obj/item/clothing/suit/storage/suitjacket/haori = 100
 	)
 
 /obj/machinery/vending/plushies
