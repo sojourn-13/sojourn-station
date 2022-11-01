@@ -51,7 +51,7 @@
 	fire_delay = 10
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10)
 	init_firemodes = list(
-		list(mode_name="lethal", mode_desc="Fires a ball of condensed energy to disable people", projectile_type=/obj/item/projectile/energy/electrode, charge_cost = 300, fire_delay=50, icon="grenade", fire_sound='sound/weapons/Taser.ogg'),
+		list(mode_name="stun", mode_desc="Fires a ball of condensed energy to disable people", projectile_type=/obj/item/projectile/energy/electrode, charge_cost = 300, fire_delay=50, icon="grenade", fire_sound='sound/weapons/Taser.ogg'),
 		list(mode_name="lethal", mode_desc="Fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam/weak, charge_cost = 50, icon="kill", fire_sound='sound/weapons/Laser.ogg')
 	)
 	serial_type = "GP-SI"
