@@ -144,7 +144,7 @@
 				stat_def *= 2
 
 //Flashing everyone
-	if(eye_safety < FLASH_PROTECTION_MAJOR)
+	if(eye_safety < FLASH_PROTECTION_MODERATE)
 		flash(0, TRUE,TRUE,TRUE)
 
 

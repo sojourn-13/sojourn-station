@@ -657,11 +657,11 @@ var/list/rank_prefix = list(\
 ///Returns a number between -1 to 2
 /mob/living/carbon/human/eyecheck()
 	if(!species.has_process[OP_EYES]) //No eyes, can't hurt them.
-		return FLASH_PROTECTION_MAJOR
+		return FLASH_PROTECTION_MODERATE
 
 	var/eye_efficiency = get_organ_efficiency(OP_EYES)
 	if(eye_efficiency <= 0)
-		return FLASH_PROTECTION_MAJOR
+		return FLASH_PROTECTION_MODERATE
 
 	return flash_protection
 

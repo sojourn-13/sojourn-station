@@ -10,7 +10,7 @@
 
 	for(var/obj/item/organ/external/E in src.organs)
 		if (!(keep_only_robotics && !(E.nature == MODIFICATION_SILICON)))
-			E.droplimb(TRUE, DROPLIMB_EDGE, 1)
+			E.droplimb(TRUE, DISMEMBER_METHOD_EDGE, 1)
 			if(on_turf)
 				E.throw_at(get_edge_target_turf(src,pick(alldirs)),rand(1,max_range),30)
 
@@ -102,7 +102,7 @@
 	update_hair(0)
 
 	mutations.Add(HUSK)
-	status_flags |= DISFIGURED	//makes them unknown without fucking up other stuff like admintools
+	status_flags |= ORGAN_DISFIGURED	//makes them unknown without fucking up other stuff like admintools
 	update_body(1)
 	return
 
@@ -121,7 +121,7 @@
 	update_hair(0)
 
 	mutations.Add(SKELETON)
-	status_flags |= DISFIGURED
+	status_flags |= ORGAN_DISFIGURED
 	update_body(0)
 	return
 

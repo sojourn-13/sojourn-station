@@ -304,7 +304,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	item_state = "sunglasses"
 	vision_flags = (SEE_TURFS|SEE_OBJS|SEE_MOBS)
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 
 /obj/item/clothing/glasses/admin/bst/verb/toggle_xray(mode in list("X-Ray without Lighting", "X-Ray with Lighting", "Normal"))
 	set name = "Change Vision Mode"
