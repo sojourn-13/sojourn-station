@@ -36,10 +36,12 @@
 	)
 	serial_type = "NM"
 
+/* Far removed from original concept, do not uncomment. - Seb
+
 /obj/item/gun/energy/cog/sprocket
 	name = "Soteria \"Sprocket\" lasgun"
 	desc = "Originally a Greyson Positronic design, tinkered by Marshals to allow nonlethal reduction of rowdy personnel, this gun has been further modified by Soteria to include a foldable stock, \
-			making it lightweight and easy to operate by non-trained personnel, at the cost of its laser component being downsized making it pack less a bunch."
+			making it lightweight and easy to operate by non-trained personnel, at the cost of its laser component being downsized making it pack less of a punch."
 	icon = 'icons/obj/guns/energy/sprocket.dmi'
 	icon_state = "sprocket"
 	damage_multiplier = 0.9 // +0.1 when unfolded = baseline Cog
@@ -90,7 +92,7 @@
 	cell = new /obj/item/cell/medium/moebius/high(src)
 	. = ..()
 	update_icon()
-
+*/
 
 /obj/item/gun/energy/cog/sawn
     name = " \"Pinion\" lasgun"

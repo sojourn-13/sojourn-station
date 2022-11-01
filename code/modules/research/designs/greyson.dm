@@ -13,10 +13,12 @@
 	build_path = /obj/item/gun/energy/cog/gear
 	category = CAT_WEAPON
 
+/*
 /datum/design/research/item/greyson/cog_sprocket
 	name = "Soteria \"Sprocket\" lasgun"
 	build_path = /obj/item/gun/energy/cog/sprocket
 	category = CAT_WEAPON
+*/
 
 /datum/design/research/item/greyson/abnegate
 	name = "\"SST Abnegate\" handgun"
