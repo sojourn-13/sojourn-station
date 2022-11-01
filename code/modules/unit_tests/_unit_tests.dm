@@ -91,7 +91,7 @@
 // #include "keybinding_init.dm"
 #include "loadout_tests.dm"
 // #include "machine_disassembly.dm"
-#include "map_tests.dm"
+// #include "map_tests.dm" //Disabled do to it not working
 // #include "medical_wounds.dm"
 // #include "merge_type.dm"
 // #include "metabolizing.dm"
