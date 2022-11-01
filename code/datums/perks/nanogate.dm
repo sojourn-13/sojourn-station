@@ -25,8 +25,8 @@
 	holder.brute_mod_perk += 0.10
 
 /datum/perk/nanite_muscle/remove()
-	..()
 	holder.brute_mod_perk -= 0.10
+	..()
 
 /datum/perk/nanite_armor
 	name = "Nanite Skin-Weave"
@@ -40,9 +40,9 @@
 	holder.health += 40
 
 /datum/perk/nanite_armor/remove()
-	..()
 	holder.maxHealth -= 40
 	holder.health -= 40
+	..()
 
 /datum/perk/nanite_chem
 	name = "Nanite Chemicals"
