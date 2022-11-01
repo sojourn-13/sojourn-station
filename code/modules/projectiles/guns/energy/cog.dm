@@ -31,15 +31,15 @@
 	projectile_type = /obj/item/projectile/beam/stun
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 15, MATERIAL_SILVER = 10)
 	init_firemodes = list(
-		list(mode_name="stun", mode_desc="fires a concentrated stun beam", projectile_type=/obj/item/projectile/beam/stun, charge_cost = 60, icon="stun", fire_sound='sound/weapons/Taser3.ogg'),
-		list(mode_name="lethal", mode_desc="fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 60, icon="kill", fire_sound='sound/weapons/Laser4.ogg')
+		list(mode_name="stun", mode_desc="fires a concentrated stun beam", projectile_type=/obj/item/projectile/beam/stun, charge_cost = 50, icon="stun", fire_sound='sound/weapons/Taser3.ogg'),
+		list(mode_name="lethal", mode_desc="fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/Laser4.ogg')
 	)
 	serial_type = "NM"
 
 /obj/item/gun/energy/cog/sprocket
 	name = "Soteria \"Sprocket\" lasgun"
 	desc = "Originally a Greyson Positronic design, tinkered by Marshals to allow nonlethal reduction of rowdy personnel, this gun has been further modified by Soteria to include a foldable stock, \
-			making it lightweight and easy to operate by non-trained personnel."
+			making it lightweight and easy to operate by non-trained personnel, at the cost of its laser component being downsized making it pack less a bunch."
 	icon = 'icons/obj/guns/energy/sprocket.dmi'
 	icon_state = "sprocket"
 	damage_multiplier = 0.9 // +0.1 when unfolded = baseline Cog
@@ -49,9 +49,10 @@
 	folding_stock = TRUE // Foldable stock for easy carry
 	price_tag = 950
 	fire_delay = 10
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10)
 	init_firemodes = list(
-		list(mode_name="stun", mode_desc="Fires a concentrated stun beam", projectile_type=/obj/item/projectile/beam/stun, charge_cost = 50, icon="stun", fire_sound='sound/weapons/Taser3.ogg'),
-		list(mode_name="lethal", mode_desc="Fires a ball of condensed energy to disable people", projectile_type=/obj/item/projectile/energy/electrode, charge_cost = 300, fire_delay=50, icon="grenade", fire_sound='sound/weapons/Taser.ogg')
+		list(mode_name="lethal", mode_desc="Fires a ball of condensed energy to disable people", projectile_type=/obj/item/projectile/energy/electrode, charge_cost = 300, fire_delay=50, icon="grenade", fire_sound='sound/weapons/Taser.ogg'),
+		list(mode_name="lethal", mode_desc="Fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam/weak, charge_cost = 50, icon="kill", fire_sound='sound/weapons/Laser.ogg')
 	)
 	serial_type = "GP-SI"
 
