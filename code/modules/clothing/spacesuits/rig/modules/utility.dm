@@ -73,7 +73,7 @@
 	desc = "A clunky old ore scanner."
 	icon_state = "scanner"
 	interface_name = "ore detector"
-	interface_desc = "A sonar system for detecting large masses of ore."
+	interface_desc = "A sonar system used to detect large masses of ore."
 	engage_string = "Begin Scan"
 	usable = 1
 	selectable = 0
@@ -118,7 +118,7 @@
 
 /obj/item/rig_module/modular_injector
 	name = "mounted modular dispenser"
-	desc = "A specialized system for inserting chemicals"
+	desc = "A specialized system for injecting chemicals."
 	icon_state = "injector"
 	usable = TRUE
 	selectable = FALSE
@@ -245,7 +245,7 @@
 
 	if(target_mob != H)
 		to_chat(H, SPAN_DANGER("You inject [target_mob] with [injection_amount] unit\s of [beaker.name]."))
-	to_chat(target_mob, "<span class='danger'>You feel a rushing in your veins as [injection_amount] unit\s are injected in your bloodstream.</span>")
+	to_chat(target_mob, "<span class='danger'>You feel a rush in your veins as [injection_amount] unit\s of chemicals are injected in your bloodstream.</span>")
 	// Update display
 	beaker.reagents.trans_to_mob(target_mob, injection_amount, CHEM_BLOOD)
 	rebuild_charges()
@@ -253,7 +253,7 @@
 
 /obj/item/rig_module/modular_injector/combat
 	name = "mounted combat dispenser"
-	desc = "A specialized system for inserting chemicals meant for combat"
+	desc = "A specialized system for injecting combat stimulants."
 	price_tag = 7250
 	max_injection_amount = 30
 	max_beakers = 6
@@ -268,7 +268,7 @@
 
 /obj/item/rig_module/modular_injector/medical
 	name = "mounted medical injector"
-	desc = "A specialized system for inserting chemicals to pacients"
+	desc = "A specialized system for injecting chemicals in patients."
 	price_tag = 3750
 	max_injection_amount = 60
 	max_beakers = 6
@@ -276,8 +276,10 @@
 	selectable = 1
 	disruptive = 1
 	initial_beakers = list(
-		list(/obj/item/reagent_containers/glass/beaker/large, "bicaridine", 60),
 		list(/obj/item/reagent_containers/glass/beaker/large, "inaprovaline",60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "dexalinp",60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "tramadol",60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "bicaridine", 60),
 		list(/obj/item/reagent_containers/glass/beaker/large, "kelotane",60),
 		list(/obj/item/reagent_containers/glass/beaker/large, "anti_toxin", 60),
 		list(/obj/item/reagent_containers/glass/beaker/large, "spaceacillin", 60)

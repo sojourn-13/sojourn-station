@@ -1,23 +1,18 @@
 //snowflake guns for xenoarch because you can't override the update_icon() proc inside the giant mess that is find creation
-/obj/item/gun/energy/laser/xenoarch
+
+//energy guns
+/obj/item/gun/energy/cog/xenoarch
 	name = "Fossilised Gun"
 	icon = 'icons/obj/xenoarchaeology.dmi'
 	item_state_slots = null
 	icon_contained = FALSE
+	charge_cost = 100
+	projectile_type = /obj/item/projectile/beam/tesla/shotgun // thats right. Its a shotgun cog.
 
-/obj/item/gun/energy/laser/xenoarch/refresh_upgrades()
+/obj/item/gun/energy/cog/xenoarch/refresh_upgrades()
 	return
 
-/obj/item/gun/energy/laser/xenoarch/update_icon()
-	return
-
-/obj/item/gun/energy/laser/practice/xenoarch
-	name = "Fossilised Gun"
-	icon = 'icons/obj/xenoarchaeology.dmi'
-	item_state_slots = null
-	icon_contained = FALSE
-
-/obj/item/gun/energy/laser/practice/xenoarch/update_icon()
+/obj/item/gun/energy/cog/xenoarch/update_icon()
 	return
 
 /obj/item/gun/energy/xray/xenoarch
@@ -44,11 +39,39 @@
 /obj/item/gun/energy/captain/xenoarch/update_icon()
 	return
 
+//physical projectiles
 /obj/item/gun/projectile/revolver/xenoarch
 	name = "Fossilised Gun"
+	icon = 'icons/obj/xenoarchaeology.dmi'
+	max_shells = 12
 
 /obj/item/gun/projectile/revolver/xenoarch/refresh_upgrades()
 	return
 
 /obj/item/gun/projectile/revolver/xenoarch/update_icon()
+	return
+
+/obj/item/gun/projectile/revolver/sixshot/xenoarch
+	name = "Fossilized Gun"
+	icon = 'icons/obj/xenoarchaeology.dmi'
+	max_shells = 4
+	damage_multiplier = 1.2
+	saw_off = FALSE
+
+/obj/item/gun/projectile/revolver/sixshot/xenoarch/refresh_upgrades()
+	return
+
+/obj/item/gun/projectile/revolver/sixshot/xenoarch/update_icon()
+	return
+
+/obj/item/gun/projectile/boltgun/heavysniper/xenoarch
+	name = "Fossilized Gun"
+	icon = 'icons/obj/xenoarchaeology.dmi'
+	caliber = 999
+	damage_multiplier = 1.8 //It only gets one shot and can't be reloaded. Don't miss.
+
+/obj/item/gun/projectile/boltgun/heavysniper/xenoarch/refresh_upgrades()
+	return
+
+/obj/item/gun/projectile/boltgun/heavysniper/xenoarch/update_icon()
 	return

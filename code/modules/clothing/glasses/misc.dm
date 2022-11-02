@@ -18,10 +18,12 @@
 		if(!src.active)
 			src.active = !src.active
 			icon_state = initial(icon_state)
+			item_state = initial(item_state)
 			to_chat(usr, "You flip the eyepatch to cover your right eye.")
 		else
 			src.active = !src.active
 			icon_state = "[initial(icon_state)]_left"
+			item_state = "[initial(item_state)]_left"
 			to_chat(usr, "You flip the eyepatch to cover your left eye.")
 		update_wear_icon()
 		usr.update_action_buttons()
@@ -52,6 +54,25 @@
 			to_chat(usr, "You flip the eyepatch to cover your left eye.")
 		update_wear_icon()
 		usr.update_action_buttons()
+
+/obj/item/clothing/glasses/eyepatch/medpatch
+	name = "MediHUD eyepatch"
+	desc = "An eyepatch worn to cover a single eye, with a built-in heads-up display that scans the humans in view and provides accurate data about their health status."
+	icon_state = "hudpatch"
+	item_state = "hudpatch"
+
+/obj/item/clothing/glasses/eyepatch/process_hud(var/mob/M)
+	process_med_hud(M, 1)
+
+/obj/item/clothing/glasses/eyepatch/secpatch
+	name = "Tactical HUD eyepatch"
+	desc = "An eyepatch worn to cover a single eye, with a built-in heads-up display for combat and security information."
+	icon_state = "secpatch"
+	item_state = "secpatch"
+	flash_protection = FLASH_PROTECTION_MODERATE // They cover just one eye!
+
+/obj/item/clothing/glasses/eyepatch/secpatch/process_hud(var/mob/M)
+	process_sec_hud(M, 1)
 
 /obj/item/clothing/glasses/monocle
 	name = "monocle"

@@ -102,6 +102,13 @@
 	slot = slot_head
 	sort_category = "Faction: Security"
 
+/datum/gear/factionsecurity/gloves
+	display_name = "blackshield combat gloves"
+	path = /obj/item/clothing/gloves/thick/swat/blackshield
+	allowed_roles = list("Blackshield Commander","Sergeant","Corpsman","Blackshield Trooper")
+	slot = slot_gloves
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/bdu
 	display_name = "security BDU selection"
 	path = /obj/item/clothing/under/rank/bdu
@@ -239,6 +246,13 @@
 /datum/gear/factionsecurity/security
 	display_name = "security HUD"
 	path = /obj/item/clothing/glasses/hud/security
+	allowed_roles = list(JOBS_SECURITY)
+	slot = slot_glasses
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/secpatch
+	display_name = "HUD eyepatch"
+	path = /obj/item/clothing/glasses/eyepatch/secpatch
 	allowed_roles = list(JOBS_SECURITY)
 	slot = slot_glasses
 	sort_category = "Faction: Security"

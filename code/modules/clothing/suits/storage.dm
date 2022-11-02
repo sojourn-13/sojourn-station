@@ -1101,6 +1101,12 @@ obj/item/clothing/suit/sweater/blue
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/suit/storage/suitjacket/haori
+	name = "haori"
+	desc = "A black formal japanese jacket meant to be worn over a kimono, usually by men."
+	item_state = "haori"
+	icon_state = "haori"
+
 /obj/item/clothing/suit/storage/suitjacket/scav
 	name = "frontier jacket"
 	desc = "A rough make jacket, patched together from a variety of tough cloth, \

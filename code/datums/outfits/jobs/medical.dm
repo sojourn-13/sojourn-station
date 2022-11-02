@@ -43,8 +43,7 @@
 	r_ear  = /obj/item/reagent_containers/syringe/large
 	l_pocket = /obj/item/device/flash
 	r_pocket = /obj/item/handcuffs
-	backpack_contents = list(/obj/item/storage/hcases/med/medical_job_trama = 1)
-	suit_store = /obj/item/gun/projectile/automatic/c20r/sci/preloaded
+	backpack_contents = list(/obj/item/storage/hcases/med/medical_job_trama = 1) // Weapon selection moved inside the hardcase.
 
 /decl/hierarchy/outfit/job/medical/psychiatrist
 	name = OUTFIT_JOB_NAME("Soteria - Psychiatrist")
