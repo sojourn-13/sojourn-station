@@ -151,8 +151,8 @@
 	desc = "A rather large pair of sunglasses."
 	icon_state = "bigsunglasses"
 	item_state = "bigsunglasses"
-	flash_protection = FLASH_PROTECTION_MODERATE
-	darkness_view = -3
+	flash_protection = FLASH_PROTECTION_MINOR
+	darkness_view = -1
 	obscuration = MEDIUM_OBSCURATION
 
 /obj/item/clothing/glasses/sunglasses/helltaker // Part of the whole Helltaker dude drip. - Seb
@@ -160,8 +160,8 @@
 	desc = "A stylish pair of small, circular sunglasses that keeps your eyes surprisingly well hidden."
 	icon_state = "hellgoggles"
 	item_state = "hellgoggles"
-	flash_protection = FLASH_PROTECTION_MODERATE
-	darkness_view = -3
+	flash_protection = FLASH_PROTECTION_MINOR
+	darkness_view = -1
 	obscuration = MEDIUM_OBSCURATION
 
 /obj/item/clothing/glasses/aviator

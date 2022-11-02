@@ -1,6 +1,6 @@
 /decl/hierarchy/outfit/job/security
 	hierarchy_type = /decl/hierarchy/outfit/job/security
-	l_ear = /obj/item/device/radio/headset/headset_sec
+	l_ear = /obj/item/device/radio/headset/headset_sec/bowman
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/card/id/sec
@@ -13,7 +13,7 @@
 
 /decl/hierarchy/outfit/job/security/swo
 	name = OUTFIT_JOB_NAME("Marshal - Warrant Officer")
-	l_ear = /obj/item/device/radio/headset/heads/hos
+	l_ear = /obj/item/device/radio/headset/heads/hos/bowman
 	uniform = /obj/item/clothing/under/rank/ih_commander
 	suit = /obj/item/clothing/suit/armor/hos
 	l_pocket = /obj/item/device/flash
