@@ -27688,10 +27688,6 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/quartermaster/miningdock)
-"fpy" = (
-/obj/structure/undies_wardrobe,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/crew_quarters/sleep/cryo2)
 "fpz" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/machinery/light{
@@ -36097,6 +36093,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
+"gPG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/plushies{
+	pixel_x = -28
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/quartermaster/office)
 "gPI" = (
 /obj/machinery/light{
 	dir = 4;
@@ -55359,7 +55362,6 @@
 	dir = 2;
 	locked = 0;
 	name = "South APC";
-	operating = 0;
 	pixel_y = -28
 	},
 /obj/structure/cable/yellow,
@@ -64960,11 +64962,6 @@
 /obj/structure/table/marble,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"mkj" = (
-/obj/structure/closet/athletic_mixed,
-/obj/item/clothing/under/bathrobe,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/crew_quarters/sleep/cryo2)
 "mkk" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -75801,10 +75798,10 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/campground)
 "ojl" = (
-/obj/machinery/suit_storage_unit,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/undies_wardrobe,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "ojn" = (
@@ -94695,6 +94692,8 @@
 /obj/item/towel,
 /obj/item/towel,
 /obj/structure/window/reinforced/tinted/frosted,
+/obj/item/clothing/under/bathrobe,
+/obj/item/clothing/under/bathrobe,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "rJw" = (
@@ -138937,7 +138936,7 @@ hfy
 gzB
 gzB
 fKq
-mkj
+fKq
 fKq
 kmC
 wBc
@@ -139139,7 +139138,7 @@ hfy
 voc
 lpG
 fKq
-mkj
+fKq
 omm
 hfy
 hfy
@@ -139341,7 +139340,7 @@ hfy
 gzB
 gzB
 tYS
-mkj
+fKq
 fKq
 rJh
 kuS
@@ -139543,7 +139542,7 @@ hfy
 vLR
 lpG
 fKq
-mkj
+fKq
 fKq
 kmC
 wBc
@@ -139745,7 +139744,7 @@ hfy
 gzB
 gzB
 aGs
-fpy
+fKq
 fKq
 hfy
 hfy
@@ -146598,7 +146597,7 @@ xFv
 xNt
 vNL
 djT
-nUl
+gPG
 maS
 fVU
 smj

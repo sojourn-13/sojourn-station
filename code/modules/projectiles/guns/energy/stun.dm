@@ -43,8 +43,8 @@
 	damage_multiplier = 0.9
 	init_firemodes = list(
 		STUNBOLT,
-		list(mode_name="stunbolt", mode_desc="Fires a ball of condenced energy to disable people", projectile_type=/obj/item/projectile/energy/electrode, fire_delay=25, charge_cost = 300),
-		list(mode_name="stunshot", mode_desc="Fires a ball of highly condenced energy to disable people almost instantly", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=50, charge_cost = 600),
+		list(mode_name="stunbolt", mode_desc="Fires a ball of condensed energy to disable people", projectile_type=/obj/item/projectile/energy/electrode, fire_delay=25, charge_cost = 300),
+		list(mode_name="stunshot", mode_desc="Fires a ball of highly condensed energy to disable people almost instantly", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=50, charge_cost = 600),
 	)
 
 /obj/item/gun/energy/stunrevolver

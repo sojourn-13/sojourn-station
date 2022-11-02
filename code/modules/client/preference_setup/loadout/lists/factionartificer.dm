@@ -13,6 +13,13 @@
 	slot = slot_head
 	allowed_roles = list(JOBS_ENGINEERING)
 
+/datum/gear/factionartificer/mesonpatch
+	display_name = "meson eyepatch"
+	allowed_roles = list(JOBS_ENGINEERING)
+	path = /obj/item/clothing/glasses/powered/meson/eyepatch
+	sort_category = "Faction: Artificer"
+	slot = slot_glasses
+
 /datum/gear/factionartificer/normal_skirt
 	display_name = "plain skirt, artificer"
 	path = /obj/item/clothing/under/rank/engineer/skirt

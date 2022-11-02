@@ -111,3 +111,67 @@
 
 /obj/item/clothing/glasses/powered/night/guild/crafted
 	spawn_with_cell = FALSE
+
+/obj/item/clothing/glasses/powered/meson/eyepatch
+	name = "eyepatch meson"
+	desc = "An eyepatch worn to cover a single eye, with a built-in meson-spectrum scanner that unfortunately does not correct your lack of depth perception."
+	icon_state = "mesonpatch"
+	item_state = "mesonpatch"
+	off_state = "demesonpatch"
+	var/righteye = TRUE // For flipping the eyepatch
+
+/obj/item/clothing/glasses/powered/meson/eyepatch/toggle(mob/user, new_state = 0) // Snowflake rewrite of toggle proc so that it doesn't switch to right side default on activating.
+	if(new_state)
+		if(!cell || !cell.check_charge(tick_cost) && user)
+			to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
+			return
+		if(righteye)
+			icon_state = initial(icon_state)
+		else
+			icon_state = "[initial(icon_state)]_left"
+		active = TRUE
+		flash_protection = initial(flash_protection)
+		tint = initial(tint)
+		if(user)
+			if(activation_sound)
+				user << activation_sound
+			to_chat(user, SPAN_NOTICE("[src]'s optical matrix activates."))
+	else
+		active = FALSE
+		if(righteye)
+			icon_state = off_state
+		else
+			icon_state = "[off_state]_left"
+		flash_protection = FLASH_PROTECTION_NONE
+		tint = TINT_NONE
+		if(user)
+			to_chat(user, SPAN_NOTICE("[src]'s optical matrix shuts down."))
+	if(user)
+		user.update_inv_glasses()
+		user.update_action_buttons()
+
+/obj/item/clothing/glasses/powered/meson/eyepatch/verb/switcheye()
+	set name = "Change eyepatch side"
+	set category = "Flip Eyepatch"
+	set src in usr
+
+	if(usr.canmove && !usr.stat && !usr.restrained())
+		if(!righteye)
+			righteye = !righteye
+			if(active)
+				icon_state = "mesonpatch"
+			else
+				icon_state = "demesonpatch"
+			item_state = icon_state
+			to_chat(usr, "You flip the eyepatch to cover your right eye.")
+		else
+			righteye = !righteye
+			if(active)
+				icon_state = "mesonpatch_left"
+			else
+				icon_state = "demesonpatch_left"
+			item_state = icon_state
+			to_chat(usr, "You flip the eyepatch to cover your left eye.")
+		update_wear_icon()
+		usr.update_action_buttons()
+

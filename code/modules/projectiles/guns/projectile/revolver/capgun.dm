@@ -12,3 +12,19 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	fire_animatio = FALSE
 	serial_type = "TOY-CO"
+
+/obj/item/storage/box/blanks
+	name = "cap gun ammo"
+	desc = "A box containing ammo for the \"HS REV Miller\" cap gun."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "foambox"
+
+/obj/item/storage/box/foambow/populate_contents()
+	new /obj/item/ammo_casing/cap(src)
+	new /obj/item/ammo_casing/cap(src)
+	new /obj/item/ammo_casing/cap(src)
+	new /obj/item/ammo_casing/cap(src)
+	new /obj/item/ammo_casing/cap(src)
+	new /obj/item/ammo_casing/cap(src)
+	new /obj/item/ammo_casing/cap(src)
+

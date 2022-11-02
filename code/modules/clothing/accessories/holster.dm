@@ -328,3 +328,24 @@ Sword holsters
 	holstered = new holstered_spawn
 	update_icon()
 
+/obj/item/clothing/accessory/holster/saber/saya
+	name = "katana saya"
+	desc = "A traditional \"saya\", a sheath for a non-curved oriental sword known as a katana."
+	icon_state = "saya"
+	overlay_state = "saya"
+	slot = "utility"
+	can_hold = list(/obj/item/tool/sword/katana_makeshift, /obj/item/tool/sword/katana, /obj/item/tool/sword/katana/nano) // Only straight swords.
+
+/obj/item/clothing/accessory/holster/saber/saya/update_icon()
+	..()
+	cut_overlays()
+	if(contents.len)
+		add_overlay(image('icons/inventory/accessory/icon.dmi', "saya_layer"))
+
+/obj/item/clothing/accessory/holster/saber/saya/occupied
+	var/holstered_spawn = /obj/item/tool/sword/katana
+
+/obj/item/clothing/accessory/holster/saber/saya/occupied/Initialize()
+	holstered = new holstered_spawn
+	update_icon()
+
