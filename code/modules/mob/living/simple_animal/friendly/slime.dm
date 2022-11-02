@@ -40,7 +40,9 @@
 	var/sleeptime = movement_delay()
 	if(sleeptime <= 5) sleeptime = 5 // Maximum one action per half a second
 	spawn (sleeptime)
-		handle_AI()
+		if(stat == DEAD)
+			return
+		else handle_AI()
 	return
 
 /mob/living/simple_animal/slime/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
