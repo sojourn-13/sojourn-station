@@ -17,7 +17,6 @@
 	var/got_goods = FALSE
 	var/mob/living/Leader = null // AI variable - tells the slime to follow this person
 	var/holding_still = 0 // AI variable, cooloff-ish for how long it's going to stay in one place
-	var/AIproc = 0 // If it's 0, we need to launch an AI proc
 	var/list/speech_buffer = list() // Last phrase said near it and person who said it
 
 /mob/living/simple_animal/slime/New()
@@ -27,8 +26,8 @@
 
 /mob/living/simple_animal/slime/proc/handle_AI()  // the master AI process
 
-	if(stat == DEAD || client) return // If we're dead or have a client, we don't need AI
-		AIproc = 1
+	if(stat == DEAD || client) // If we're dead or have a client, we don't need AI
+		return
 
 	handle_speech()
 	if (Leader) //handle orders to stay or follow
