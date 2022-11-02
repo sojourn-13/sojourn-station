@@ -21,6 +21,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	var/list/bgstate_options = list("steel", "dark_steel", "white_tiles", "black_tiles", "wood", "carpet", "white", "black")
 
 	var/size_multiplier = RESIZE_NORMAL
+	var/scale_effect = 0
 
 	var/grad_style = 	"None"			//Gradient style
 	var/grad_color =	"#000000"		//Gradient Color
@@ -44,6 +45,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	from_file(S["hair_color"], pref.hair_color)
 	from_file(S["facial_color"], pref.facial_color)
 	from_file(S["size_multiplier"], pref.size_multiplier)
+	from_file(S["scale_effect"], pref.scale_effect)
 	from_file(S["gradient_style"], pref.grad_style)
 	from_file(S["gradient_color"], pref.grad_color)
 
@@ -60,6 +62,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	to_file(S["hair_color"], pref.hair_color)
 	to_file(S["facial_color"], pref.facial_color)
 	to_file(S["size_multiplier"], pref.size_multiplier)
+	to_file(S["scale_effect"], pref.scale_effect)
 	to_file(S["gradient_style"], pref.grad_style)
 	to_file(S["gradient_color"], pref.grad_color)
 
@@ -147,7 +150,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	else if(has_flag(mob_species_form, HAS_SKIN_TONE))
 		. += "<b>Skin Tone: </b><a href='?src=\ref[src];skin_tone=1'>[-pref.s_tone + 35]/220</a><br>"
 
-	. += "<b>Scale:</b> <a href='?src=\ref[src];size_multiplier=1'>[round(pref.size_multiplier*100)]%</a><br>"
+	. += "<b>Scale:</b> <a href='?src=\ref[src];size_multiplier=1'>[round((pref.scale_effect+50)*2)]%</a><br>"
 
 	. += "</td><td style = 'text-align:center;' width = 35%><b>Preview</b><br>"
 	. += "<div style ='padding-bottom:-2px;' class='statusDisplay'><img src=previewicon.png width=[pref.preview_icon.Width()] height=[pref.preview_icon.Height()]></div>"
@@ -384,13 +387,16 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			pref.f_style = new_f_style
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 	else if(href_list["size_multiplier"])
-		var/new_size = input(user, "Choose your character's size, ranging from 80% to 120% Please note that size is capped at these percentages. A size of 100 is considered close to 5'10 or 1.77 meters.", "Set Size") as num|null
-		if (!ISINRANGE(new_size,80,120))
-			pref.size_multiplier = 1
+		//This is scum. I scum people. Mwahahaha! --Evie
+		var/new_size_mult = input(user, "Choose your character's size, ranging from 80% to 120% Please note that size is capped at these percentages. A size of 100 is considered close to 5'10 or 1.77 meters.", "Set Size") as num|null
+		if (!ISINRANGE(new_size_mult,80,120))
+			//pref.size_multiplier = 1 		Obsolete
+			pref.scale_effect = 0
 			to_chat(user, "<span class='notice'>Invalid size.</span>")
 			return TOPIC_REFRESH_UPDATE_PREVIEW
-		else if(new_size)
-			pref.size_multiplier = (new_size/100)
+		else if(new_size_mult)
+		//	was pref.size_multiplier
+			pref.scale_effect = (new_size_mult/2-50)
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	return ..()

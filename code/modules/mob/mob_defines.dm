@@ -103,6 +103,7 @@ While it would be entirely possible to check the mob's move handlers list for th
 
 	var/default_pixel_x = 0
 	var/default_pixel_y = 0
+	var/default_pixel_z = 0
 	var/old_x = 0
 	var/old_y = 0
 	var/nutrition = 400  //carbon
