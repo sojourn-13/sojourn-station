@@ -125,8 +125,14 @@
 	return "plasma"
 
 //see /turf/simulated/mineral/New() in code/modules/mining/mine_turfs.dm
-/proc/get_random_digsite_type()
-	return pick(100;DIGSITE_GARDEN,95;DIGSITE_ANIMAL,90;DIGSITE_HOUSE,85;DIGSITE_TECHNICAL,80;DIGSITE_TEMPLE,75;DIGSITE_WAR)
+/proc/get_random_digsite_type(Z)
+	switch (Z)
+		if (2, 3, 4) return DIGSITE_HOUSE // all colony besides mines
+		if (8, 9) return DIGSITE_TECHNICAL //deep jungle
+		if (10) return DIGSITE_TEMPLE // swamp
+		if (15, 16) return pick(50;DIGSITE_GARDEN, 50;DIGSITE_ANIMAL) // hunter field
+		if (17, 18, 19, 20, 21) return DIGSITE_WAR // scrap haven
+		else return pick(100;DIGSITE_GARDEN,95;DIGSITE_ANIMAL,90;DIGSITE_HOUSE,85;DIGSITE_TECHNICAL,80;DIGSITE_TEMPLE,75;DIGSITE_WAR)
 
 /proc/get_random_find_type(var/digsite)
 
