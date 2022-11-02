@@ -183,7 +183,7 @@
 	if(opened)
 		icon_state = "xb_bodybag_open"
 	else if(contains_body > 0)
-		icon_state = "xb_bodybag_full"
+		icon_state = "xb_bodybag_closed"
 	else
 		icon_state = "xb_bodybag_closed"
 
