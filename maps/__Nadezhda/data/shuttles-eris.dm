@@ -1,8 +1,8 @@
 //Some helpers because so much copypasta for pods
 /datum/shuttle/autodock/ferry/escape_pod/erispod
 	category = /datum/shuttle/autodock/ferry/escape_pod/erispod
-//	sound_takeoff = 'sound/effects/rocket.ogg'
-//	sound_landing = 'sound/effects/rocket_backwards.ogg'
+	sound_takeoff = 'sound/effects/rocket.ogg'
+	sound_landing = 'sound/effects/rocket_backwards.ogg'
 	var/number = 1
 
 /datum/shuttle/autodock/ferry/escape_pod/erispod/New()
@@ -44,8 +44,7 @@
 	..()
 
 
-//Pods
-/*
+
 /datum/shuttle/autodock/ferry/escape_pod/erispod/escape_pod1
 	warmup_time = 10
 	shuttle_area = /area/shuttle/escape_pod1/station
@@ -67,8 +66,7 @@
 	number = 2
 /obj/effect/shuttle_landmark/escape_pod/transit/pod2
 	number = 2
-*/
-/*
+
 /datum/shuttle/autodock/overmap/exploration_shuttle
 	name = "Vasiliy Dokuchaev"
 	move_time = 50
@@ -90,10 +88,9 @@
 	name = "In transit"
 	landmark_tag = "nav_transit_expl"
 	base_turf = /turf/space
-*/
 
 
-/*
+
 /datum/shuttle/autodock/overmap/hulk
 	name = "Hulk"
 	move_time = 60
@@ -115,7 +112,8 @@
 	name = "In transit"
 	landmark_tag = "nav_transit_hulk"
 	base_turf = /turf/space
-*/
+
+
 //Skipjack
 //antag Shuttles disabled by nanako, 2018-09-15
 //These shuttles are created with a subtypesof loop at runtime. Starting points for the skipjack and merc shuttle are not currentl mapped in

@@ -1,4 +1,4 @@
-/*
+
 //Some helpers because so much copypasta for pods
 /datum/shuttle/autodock/ferry/escape_pod/erispod
 	category = /datum/shuttle/autodock/ferry/escape_pod/erispod
@@ -322,4 +322,3 @@
 	name = "Dock"
 	landmark_tag = "nav_cargo_vessel"
 	dock_target = "cargo_bay"
-*/

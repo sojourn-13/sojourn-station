@@ -14,7 +14,7 @@
 		"Hulk" = list("nav_dock_hulk")
 	)
 
-/*	generic_waypoints = list(
+	generic_waypoints = list(
 		"nav_merc_deck1",
 		"nav_merc_deck2",
 		"nav_merc_deck3",
@@ -41,7 +41,7 @@
 		"nav_deck3_aquila",
 		"nav_deck4_aquila",
 		"nav_bridge_aquila"
-	)*/
+	)
 
 /obj/machinery/computer/shuttle_control/explore/exploration_shuttle
 	name = "shuttle control console"
