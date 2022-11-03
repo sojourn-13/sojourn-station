@@ -69,7 +69,7 @@
 	desc = "An eyepatch worn to cover a single eye, with a built-in heads-up display for combat and security information."
 	icon_state = "secpatch"
 	item_state = "secpatch"
-	flash_protection = FLASH_PROTECTION_MODERATE // They cover just one eye!
+	flash_protection = FLASH_PROTECTION_MINOR // They cover just one eye!
 
 /obj/item/clothing/glasses/eyepatch/secpatch/process_hud(var/mob/M)
 	process_sec_hud(M, 1)
@@ -197,6 +197,7 @@
 	item_state = "blindfold"
 	tint = TINT_BLIND
 	obscuration = HEAVY_OBSCURATION
+	flash_protection = FLASH_PROTECTION_MAJOR // You are literally blind wearing these.
 
 /obj/item/clothing/glasses/blindfold/tape
 	name = "length of tape"
