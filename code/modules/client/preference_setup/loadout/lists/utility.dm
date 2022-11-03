@@ -29,11 +29,6 @@
 	display_name = "church lunch box"
 	path = /obj/item/storage/lunchbox/lemniscate
 
-/datum/gear/utility/hand_radio
-	display_name = "station bound radio"
-	path = /obj/item/device/radio
-	sort_category = "Utility"
-
 /datum/gear/utility/cane
 	display_name = "cane"
 	path = /obj/item/cane
@@ -65,14 +60,6 @@
 	display_name = "colony law"
 	path = /obj/item/book/manual/security_space_law
 	cost = 0
-
-/datum/gear/utility/crowbar
-	display_name = "crowbar"
-	path = /obj/item/tool/crowbar
-
-/datum/gear/utility/flashlight
-	display_name = "flashlight"
-	path = /obj/item/device/lighting/toggleable/flashlight
 
 /datum/gear/utility/folder
 	display_name = "folder selection"
@@ -108,49 +95,35 @@
 	path = /obj/item/device/paicard
 	cost = 2
 
-/datum/gear/utility/powercellsmall
-	display_name = "power cell, small"
-	path = /obj/item/cell/small/high
-	sort_category = "Utility"
-	cost = 2
-
-/datum/gear/utility/powercellmedium
-	display_name = "power cell, medium"
-	path = /obj/item/cell/medium/high
-	cost = 2
-
 /datum/gear/utility/silvercoin
 	display_name = "silver coin"
 	path = /obj/item/coin/silver
+	cost = 1
 
 /datum/gear/utility/tabletadvanced
 	display_name = "tablet computer, advanced"
 	path = /obj/item/modular_computer/tablet/preset/custom_loadout/advanced
-	cost = 3
+	cost = 4
 
 /datum/gear/utility/tabletcheap
 	display_name = "tablet computer, consumer"
 	path = /obj/item/modular_computer/tablet/preset/custom_loadout/cheap
-	cost = 2
+	cost = 3
 
 /datum/gear/utility/tts
 	display_name = "tts device"
 	path = /obj/item/device/text_to_speech
-	cost = 2
+	cost = 0
 
 /datum/gear/utility/wheelchair
 	display_name = "wheelchair"
 	path = /obj/item/wheelchair
-	cost = 2
+	cost = 0
 
 /datum/gear/utility/sling
 	display_name = "universal sling"
 	path = 	/obj/item/clothing/suit/sling
-	cost = 2
-
-/datum/gear/utility/ducttape
-	display_name = "duct tape"
-	path = /obj/item/tool/tape_roll
+	cost = 0
 
 /datum/gear/utility/guitar
 	display_name = "guitar"
