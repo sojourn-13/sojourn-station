@@ -210,6 +210,7 @@ uniquic_armor_act
 	damage -= (toughness * stat_affect + item_size_affect)
 	return max(0, damage)
 
+<<<<<<< HEAD
 /mob/living/carbon/human/proc/grab_redirect_attack(var/mob/living/carbon/human/attacker, var/obj/item/grab/G, var/obj/item/I)
 	var/mob/living/carbon/human/grabbed = G.affecting
 	visible_message(SPAN_DANGER("[src] redirects the blow at [grabbed]!"), SPAN_DANGER("You redirect the blow at [grabbed]!"))
@@ -234,6 +235,8 @@ uniquic_armor_act
 		qdel(G)
 		return //block is turned off, grab is GONE
 
+=======
+>>>>>>> 3df49479e3 (Blocking(melee) (#7704))
 /mob/living/carbon/human/resolve_item_attack(obj/item/I, mob/living/user, var/target_zone)
 	if(check_attack_throat(I, user))
 		return null
@@ -262,14 +265,21 @@ uniquic_armor_act
 	if(!affecting)
 		return FALSE//should be prevented by attacked_with_item() but for sanity.
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3df49479e3 (Blocking(melee) (#7704))
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		H.stop_blocking()
 
+<<<<<<< HEAD
 	var/EF = unique_armor_check(I, user, effective_force)
 	if(EF)
 		effective_force = EF
+=======
+	visible_message("<span class='danger'>[src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"] in the [affecting.name] with [I.name] by [user]!</span>")
+>>>>>>> 3df49479e3 (Blocking(melee) (#7704))
 
 	standard_weapon_hit_effects(I, user, effective_force, hit_zone)
 
@@ -281,9 +291,23 @@ uniquic_armor_act
 		return FALSE
 
 	if(blocking)
+<<<<<<< HEAD
 		if(istype(get_active_hand(), /obj/item/grab))//we are blocking with a human shield! We redirect the attack. You know, because grab doesn't exist as an item.
 			var/obj/item/grab/G = get_active_hand()
 			grab_redirect_attack(G, I)
+=======
+		stop_blocking()
+		visible_message(SPAN_WARNING("[src] blocks the blow!"), SPAN_WARNING("You block the blow!"))
+		effective_force = handle_blocking(effective_force)
+		if(effective_force == 0)
+			visible_message(SPAN_DANGER("The attack has been completely negated!"))
+			return FALSE
+
+	// Handle striking to cripple.
+	if(user.a_intent == I_DISARM)
+		effective_force /= 2 //half the effective force
+		if(!..(I, user, effective_force, hit_zone))
+>>>>>>> 3df49479e3 (Blocking(melee) (#7704))
 			return FALSE
 		else
 			stop_blocking()
