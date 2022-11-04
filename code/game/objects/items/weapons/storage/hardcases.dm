@@ -409,7 +409,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 /obj/item/storage/hcases/med/medical_job_trama/populate_contents()
 	new /obj/item/gearbox/traumatizedteam(src)
 	new /obj/item/gunbox/traumatizedteam(src) // Moved the weapon selection to here
-	new /obj/item/cell/medium/moebius/high // Returning their high capacity cell from Sprocket removal
+	new /obj/item/cell/medium/moebius/high(src) // Returning their high capacity cell from Sprocket removal
 	new /obj/item/clothing/suit/straight_jacket(src)
 	new /obj/item/storage/firstaid/soteria/large(src)
 	new /obj/item/gun/energy/sst/formatbound/preloaded(src)

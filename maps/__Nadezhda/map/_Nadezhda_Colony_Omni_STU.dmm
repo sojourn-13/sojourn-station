@@ -1550,6 +1550,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"aoQ" = (
+/obj/item/toy/plushie/fumo/necochaos,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/crew_quarters/kitchen)
 "aoW" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/dirt,
@@ -82828,8 +82832,12 @@
 "pBW" = (
 /obj/structure/catwalk,
 /obj/structure/table/rack/shelf,
-/obj/item/device/lighting,
-/obj/item/device/lighting,
+/obj/item/device/lighting/toggleable/flashlight{
+	pixel_x = -2
+	},
+/obj/item/device/lighting/toggleable/flashlight{
+	pixel_x = -2
+	},
 /turf/simulated/floor/plating/under,
 /area/mine/gulag)
 "pBY" = (
@@ -143380,7 +143388,7 @@ wLd
 bwh
 cud
 mXT
-mXT
+aoQ
 mXT
 cud
 wSq
