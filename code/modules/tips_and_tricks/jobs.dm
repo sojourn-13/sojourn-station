@@ -320,7 +320,7 @@
 
 /tipsAndTricks/jobs/best_dagger_ever
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
-    tipText = "The absolutism ritual knife can be thrown, this is useful for embeding the knife into someones back. If thrown into someone that is also apart of the Absolutism, it is less likely to embed."
+    tipText = "The absolutism ritual knife can be thrown, this is useful for embedding the knife into someone's back. If thrown into someone that is also a follower of Absolutism, it is less likely to embed."
 
 /tipsAndTricks/jobs/skyfall_timer
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
@@ -328,7 +328,7 @@
 
 /tipsAndTricks/jobs/plants_n_meat
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
-    tipText = "If your ever in need of biomatter, you can always buy or trade for plants and meat with Hunters or Gardener."
+    tipText = "If you're ever in need of biomatter, you can always buy or trade for plants and meat with Hunters or Gardener."
 
 /tipsAndTricks/jobs/cleaning_carbine
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
