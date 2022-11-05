@@ -46,8 +46,6 @@
 /obj/structure/annomlies_diet/flashy_coin/proc/flashy_check(mob/M)
 	flick("flash_hole_trigger", src)
 	addtimer(CALLBACK(src, .proc/check_for_angels), 16.2)
-	.=..()
-
 
 /obj/structure/annomlies_diet/flashy_coin/proc/check_for_angels(mob/M)
 	for(M in living_mobs_in_view(3, src))
@@ -56,7 +54,6 @@
 /obj/structure/annomlies_diet/flashy_coin/proc/loop_timer()
 	addtimer(CALLBACK(src, .proc/flashy_check), flashy_coin_timer)
 	addtimer(CALLBACK(src, .proc/loop_timer), flashy_coin_reppeater_timer)
-
 
 /obj/structure/annomlies_diet/flashy_coin/proc/flashy_stun(mob/living/carbon/M) //Flashbang_bang but bang-less.
 	if(ishuman(M))
@@ -114,12 +111,10 @@
 /obj/structure/annomlies_diet/haze/proc/nonchemical_reaction()
 	var/turf/T = get_turf(src)
 	heatwave(T, heavy_range, weak_range, heat_damage, fire_stacks, penetration)
-	.=..()
 
 /obj/structure/annomlies_diet/haze/proc/loop_timer()
 	addtimer(CALLBACK(src, .proc/nonchemical_reaction), infino_timer)
 	addtimer(CALLBACK(src, .proc/loop_timer), infino_reppeater_timer)
-
 
 /obj/structure/annomlies_diet/spidersilk
 	name = "Fairy silk"
