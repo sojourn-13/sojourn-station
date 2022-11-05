@@ -124,6 +124,25 @@
 
 	deploy(wearer)
 
+/obj/item/rig/verb/deploynt_suit()
+
+	set name = "Retract Hardsuit"
+	set desc = "Retract helmet, gloves and boots."
+	set category = "Hardsuit"
+	set src = usr.contents
+
+	if(!istype(wearer) || !wearer.back == src)
+		to_chat(usr, SPAN_WARNING("The hardsuit is not being worn."))
+		return
+
+	if(!check_suit_access(usr))
+		return
+
+	if(!check_power_cost(usr))
+		return
+
+	retract(wearer)
+
 /obj/item/rig/verb/toggle_seals_verb()
 
 	set name = "Toggle Hardsuit"
