@@ -185,8 +185,9 @@ Please contact me on #coderbus IRC. ~Carn x
 
 /mob/living/carbon/human/proc/get_scale()
 	//bastardised bay's code
-	var/mob/living/carbon/human/height_modifier = scale_effect
-	var/mob/living/carbon/human/build_modifier = scale_effect
+	var/mob/living/carbon/human/H = src
+	var/build_modifier = H.scale_effect
+	var/height_modifier = H.scale_effect
 	return list(
 		(1 + build_modifier * 0.01) * (tf_scale_x || 1),
 		(1 + height_modifier * 0.01) * (tf_scale_y || 1)
