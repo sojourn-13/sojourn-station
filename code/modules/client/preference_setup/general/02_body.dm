@@ -397,6 +397,11 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			pref.scale_effect = 0
 			to_chat(user, "<span class='notice'>Invalid size.</span>")
 			return TOPIC_REFRESH_UPDATE_PREVIEW
+		else if(new_size_mult == -10 || new_size_mult == 10)
+			to_chat(user, "<span class='notice'>You're trying to set character size value which will result broken sprites. Your scaling is auto adjusted.</span>")
+			if (new_size_mult == -10)
+				pref.scale_effect = -9
+			else pref.scale_effect = 9
 		else if(new_size_mult)
 		//	was pref.size_multiplier
 			pref.scale_effect = (new_size_mult)
