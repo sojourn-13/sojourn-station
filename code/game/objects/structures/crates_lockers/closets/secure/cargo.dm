@@ -98,19 +98,19 @@
 	req_access = list(access_foreman)
 	access_occupy = list(access_prospector)
 	icon_state = "prospector" // Mixed dirt/jungle camo for the soul, since they usually brave the jungle a lot. - Seb
-	var/main_weapon_cach
-	var/side_arm_cach
-	var/melee_cach
-	var/armor_cach
-	var/bag_cach
+	var/main_weapon_cache
+	var/side_arm_cache
+	var/melee_cache
+	var/armor_cache
+	var/bag_cache
 
 
 /obj/structure/closet/secure_closet/personal/prospector/proc/gain_rng()
-	main_weapon_cach = pickweight(list("SMG" = 18, "LMG" = 2, "GOOD_SMG" = 12, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 4))
-	side_arm_cach = pickweight(list("PISTOL" = 16, "REVOLVER" = 8, "GOOD_PISTOL" = 10, "HEAVY_PISTOL" = 2, "EGUN_P" = 4))
-	melee_cach = pickweight(list("MACHETE" = 18, "KATANA" = 6, "PHAMMER" = 4, "CHAINSAW" = 1))
-	bag_cach = pickweight(list("INDUSTERAL" = 36, "DUFFLE" = 28, "MILI" = 16, "BLUESPACE" = 1))
-	armor_cach = pickweight(list("BASIC_A" = 16, "BULLET_A" = 4, "EGUN_A" = 4, "MELLE_A" = 4))
+	main_weapon_cache = pickweight(list("SMG" = 18, "LMG" = 2, "GOOD_SMG" = 12, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 4))
+	side_arm_cache = pickweight(list("PISTOL" = 16, "REVOLVER" = 8, "GOOD_PISTOL" = 10, "HEAVY_PISTOL" = 2, "EGUN_P" = 4))
+	melee_cache = pickweight(list("MACHETE" = 18, "KATANA" = 6, "PHAMMER" = 4, "CHAINSAW" = 1))
+	bag_cache = pickweight(list("INDUSTRIAL" = 36, "DUFFEL" = 28, "MILI" = 16, "BLUESPACE" = 1))
+	armor_cache = pickweight(list("BASIC_A" = 16, "BULLET_A" = 4, "EGUN_A" = 4, "MELEE_A" = 4))
 
 /obj/structure/closet/secure_closet/personal/prospector/populate_contents()
 	gain_rng()
@@ -118,20 +118,20 @@
 	new /obj/item/device/radio/headset/headset_pro(src)
 	new /obj/item/clothing/accessory/cape/scav(src)
 
-	switch(bag_cach)
-		if("INDUSTERAL")
+	switch(bag_cache)
+		if("INDUSTRIAL")
 			if(prob(80))
 				new /obj/item/storage/backpack/satchel/industrial(src)
 			else
 				new /obj/item/storage/backpack/industrial(src)
-		if("DUFFLE")
+		if("DUFFEL")
 			new /obj/item/storage/backpack/duffelbag(src)
 		if("MILI")
 			new /obj/item/storage/backpack/military(src)
 		if("BLUESPACE")
 			new /obj/item/storage/backpack/holding(src)
 	//armor
-	switch(armor_cach)
+	switch(armor_cache)
 		if("BASIC_A")
 			new /obj/item/clothing/suit/storage/scavengerarmor(src)
 			new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
@@ -142,7 +142,7 @@
 			new /obj/item/clothing/head/helmet/ballistic(src)
 			new /obj/item/clothing/gloves/thick/combat(src)
 			new /obj/item/clothing/shoes/combat(src)
-		if("MELLE_A")
+		if("MELEE_A")
 			new /obj/item/clothing/suit/armor/heavy/riot(src)
 			new /obj/item/clothing/head/helmet/faceshield/riot(src)
 			new /obj/item/clothing/gloves/thick/combat(src)
@@ -154,7 +154,7 @@
 			new /obj/item/clothing/shoes/combat(src)
 
 	//longarms
-	switch(main_weapon_cach)
+	switch(main_weapon_cache)
 		if("SMG")
 			if(prob(50))
 				new /obj/item/gun/projectile/automatic/luger(src)
@@ -217,7 +217,7 @@
 	//pistols
 	new /obj/item/gun/projectile/automatic/slaught_o_matic(src)
 
-	switch(side_arm_cach)
+	switch(side_arm_cache)
 		if("PISTOL")
 			if(prob(50))
 				new /obj/item/gun/projectile/giskard(src)
@@ -266,7 +266,7 @@
 
 	//melee
 
-	switch(melee_cach)
+	switch(melee_cache)
 		if("MACHETE")
 			new /obj/item/clothing/accessory/holster/saber/machete(src)
 			new /obj/item/tool/sword/machete(src)
@@ -304,19 +304,19 @@
 	req_access = list(access_foreman)
 	access_occupy = list(access_prospector)
 	icon_state = "oldstyle" // Placeholder for lack of a better salvage-oriented looking locker.
-	var/main_weapon_cach
-	var/side_arm_cach
-	var/melee_cach
-	var/armor_cach
-	var/bag_cach
+	var/main_weapon_cache
+	var/side_arm_cache
+	var/melee_cache
+	var/armor_cache
+	var/bag_cache
 
 
 /obj/structure/closet/secure_closet/personal/salvager/proc/gain_rng()
-	main_weapon_cach = pickweight(list("SMG" = 12, "LMG" = 4, "GOOD_SMG" = 10, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 4))
-	side_arm_cach = pickweight(list("PISTOL" = 12, "REVOLVER" = 4, "GOOD_PISTOL" = 10, "HEAVY_PISTOL" = 2, "EGUN_P" = 4))
-	melee_cach = pickweight(list("MACHETE" = 12, "KATANA" = 8, "PHAMMER" = 4, "CHAINSAW" = 1))
-	bag_cach = pickweight(list("INDUSTERAL" = 24, "DUFFLE" = 16, "MILI" = 8, "BLUESPACE" = 1))
-	armor_cach = pickweight(list("BASIC_A" = 12, "BULLET_A" = 4, "EGUN_A" = 4, "MELLE_A" = 8))
+	main_weapon_cache = pickweight(list("SMG" = 12, "LMG" = 4, "GOOD_SMG" = 10, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 4))
+	side_arm_cache = pickweight(list("PISTOL" = 12, "REVOLVER" = 4, "GOOD_PISTOL" = 10, "HEAVY_PISTOL" = 2, "EGUN_P" = 4))
+	melee_cache = pickweight(list("MACHETE" = 12, "KATANA" = 8, "PHAMMER" = 4, "CHAINSAW" = 1))
+	bag_cache = pickweight(list("INDUSTRIAL" = 24, "DUFFEL" = 16, "MILI" = 8, "BLUESPACE" = 1))
+	armor_cache = pickweight(list("BASIC_A" = 12, "BULLET_A" = 4, "EGUN_A" = 4, "MELEE_A" = 8))
 
 /obj/structure/closet/secure_closet/personal/salvager/populate_contents()
 	gain_rng()
@@ -324,13 +324,13 @@
 	new /obj/item/device/radio/headset/headset_pro(src)
 	new /obj/item/clothing/accessory/cape/scav(src)
 
-	switch(bag_cach)
-		if("INDUSTERAL")
+	switch(bag_cache)
+		if("INDUSTRIAL")
 			if(prob(80))
 				new /obj/item/storage/backpack/satchel/industrial(src)
 			else
 				new /obj/item/storage/backpack/industrial(src)
-		if("DUFFLE")
+		if("DUFFEL")
 			new /obj/item/storage/backpack/duffelbag(src)
 		if("MILI")
 			new /obj/item/storage/backpack/military(src)
@@ -340,7 +340,7 @@
 	new /obj/item/clothing/suit/storage/scavengerarmor(src)
 	new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
 	//longarms
-	switch(main_weapon_cach)
+	switch(main_weapon_cache)
 		if("SMG")
 			if(prob(50))
 				new /obj/item/gun/projectile/automatic/luger(src)
@@ -403,7 +403,7 @@
 	//pistols
 	new /obj/item/gun/projectile/automatic/slaught_o_matic(src)
 
-	switch(side_arm_cach)
+	switch(side_arm_cache)
 		if("PISTOL")
 			if(prob(50))
 				new /obj/item/gun/projectile/giskard(src)
@@ -451,7 +451,7 @@
 				new /obj/item/cell/small/high(src)
 
 	//melee
-	switch(melee_cach)
+	switch(melee_cache)
 		if("MACHETE")
 			new /obj/item/clothing/accessory/holster/saber/machete(src)
 			new /obj/item/tool/sword/machete(src)
@@ -501,18 +501,18 @@
 //Small note from Trilby: Forman loot picks are basically just the BEST versons of the scav lockers so theirs no doble coin flip
 //Also dosnt have a side arm loot spawn but still has the vars for one if someone wants to mirrow it or do something like that in furchture
 
-	var/main_weapon_cach
-	var/side_arm_cach
-	var/melee_cach
-	var/armor_cach
-	var/bag_cach
+	var/main_weapon_cache
+	var/side_arm_cache
+	var/melee_cache
+	var/armor_cache
+	var/bag_cache
 
 /obj/structure/closet/secure_closet/reinforced/foreman/proc/gain_rng()
-	main_weapon_cach = pickweight(list("SMG" = 12, "LMG" = 4, "GOOD_SMG" = 10, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 4))
-	side_arm_cach = pickweight(list("PISTOL" = 12, "REVOLVER" = 4, "GOOD_PISTOL" = 10, "HEAVY_PISTOL" = 2, "EGUN_P" = 4))
-	melee_cach = pickweight(list("MACHETE" = 12, "KATANA" = 8, "PHAMMER" = 4, "CHAINSAW" = 1))
-	bag_cach = pickweight(list("INDUSTERAL" = 24, "DUFFLE" = 16, "MILI" = 8, "BLUESPACE" = 1))
-	armor_cach = pickweight(list("BASIC_A" = 12, "BULLET_A" = 4, "EGUN_A" = 4, "MELLE_A" = 8))
+	main_weapon_cache = pickweight(list("SMG" = 12, "LMG" = 4, "GOOD_SMG" = 10, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 4))
+	side_arm_cache = pickweight(list("PISTOL" = 12, "REVOLVER" = 4, "GOOD_PISTOL" = 10, "HEAVY_PISTOL" = 2, "EGUN_P" = 4))
+	melee_cache = pickweight(list("MACHETE" = 12, "KATANA" = 8, "PHAMMER" = 4, "CHAINSAW" = 1))
+	bag_cache = pickweight(list("INDUSTRIAL" = 24, "DUFFEL" = 16, "MILI" = 8, "BLUESPACE" = 1))
+	armor_cache = pickweight(list("BASIC_A" = 12, "BULLET_A" = 4, "EGUN_A" = 4, "MELEE_A" = 8))
 
 /obj/structure/closet/secure_closet/reinforced/foreman/populate_contents()
 	gain_rng()
@@ -522,13 +522,13 @@
 	new /obj/item/clothing/accessory/halfcape/foreman(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/scav/forman(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/guns/vector(src)
-	switch(bag_cach)
-		if("INDUSTERAL")
+	switch(bag_cache)
+		if("INDUSTRIAL")
 			if(prob(80))
 				new /obj/item/storage/backpack/satchel/industrial(src)
 			else
 				new /obj/item/storage/backpack/industrial(src)
-		if("DUFFLE")
+		if("DUFFEL")
 			new /obj/item/storage/backpack/duffelbag(src)
 		if("MILI")
 			new /obj/item/storage/backpack/military(src)
@@ -538,7 +538,7 @@
 	new /obj/item/clothing/head/helmet/foreman(src)
 	new /obj/item/clothing/suit/storage/vest/scav(src)
 	//Still roll the rng ones for laser proof armor other fancy armor types that are better in a case then are normal foreman one
-	switch(armor_cach)
+	switch(armor_cache)
 		if("BASIC_A")
 			new /obj/item/clothing/suit/storage/scavengerarmor(src)
 			new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
@@ -549,7 +549,7 @@
 			new /obj/item/clothing/head/helmet/ballistic(src)
 			new /obj/item/clothing/gloves/thick/combat(src)
 			new /obj/item/clothing/shoes/combat(src)
-		if("MELLE_A")
+		if("MELEE_A")
 			new /obj/item/clothing/suit/armor/heavy/riot(src)
 			new /obj/item/clothing/head/helmet/faceshield/riot(src)
 			new /obj/item/clothing/gloves/thick/combat(src)
@@ -561,7 +561,7 @@
 			new /obj/item/clothing/shoes/combat(src)
 
 	//longarms
-	switch(main_weapon_cach)
+	switch(main_weapon_cache)
 		if("SMG")
 			new /obj/item/gun/projectile/automatic/greasegun(src)
 			new /obj/item/ammo_magazine/smg_35(src)
@@ -603,7 +603,7 @@
 	new /obj/item/ammo_magazine/ammobox/kurtz_50/hv(src)
 	//melee
 
-	switch(melee_cach)
+	switch(melee_cache)
 		if("MACHETE")
 			new /obj/item/clothing/accessory/holster/saber/machete(src)
 			new /obj/item/tool/sword/machete(src)
