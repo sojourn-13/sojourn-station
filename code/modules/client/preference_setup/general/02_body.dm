@@ -79,7 +79,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	if(pref.size_multiplier == null || pref.size_multiplier < RESIZE_TINY || pref.size_multiplier > RESIZE_HUGE)
 		pref.size_multiplier = initial(pref.size_multiplier)
 	if (pref.size_multiplier != 1)
-		pref.scale_effect = round(pref.size_multiplier*100)		//So players don't have to rewrite their char sizes
+		pref.scale_effect = round(pref.size_multiplier * 100 - 100)		//So players don't have to rewrite their char sizes
 		pref.size_multiplier = initial(pref.size_multiplier)	//We don't need obsolete vars on our chars
 
 	if(!pref.species || !(pref.species in global.playable_species))
