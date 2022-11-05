@@ -106,11 +106,11 @@
 
 
 /obj/structure/closet/secure_closet/personal/prospector/proc/gain_rng()
-	main_weapon_cach = pickweight(list("SMG" = 12, "LMG" = 4, "GOOD_SMG" = 10, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 4))
-	side_arm_cach = pickweight(list("PISTOL" = 12, "REVOLVER" = 4, "GOOD_PISTOL" = 10, "HEAVY_PISTOL" = 2, "EGUN_P" = 4))
-	melee_cach = pickweight(list("MACHETE" = 12, "KATANA" = 8, "PHAMMER" = 4, "CHAINSAW" = 1))
-	bag_cach = pickweight(list("INDUSTERAL" = 24, "DUFFLE" = 16, "MILI" = 8, "BLUESPACE" = 1))
-	armor_cach = pickweight(list("BASIC_A" = 12, "BULLET_A" = 4, "EGUN_A" = 4, "MELLE_A" = 8))
+	main_weapon_cach = pickweight(list("SMG" = 18, "LMG" = 2, "GOOD_SMG" = 12, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 4))
+	side_arm_cach = pickweight(list("PISTOL" = 16, "REVOLVER" = 8, "GOOD_PISTOL" = 10, "HEAVY_PISTOL" = 2, "EGUN_P" = 4))
+	melee_cach = pickweight(list("MACHETE" = 18, "KATANA" = 6, "PHAMMER" = 4, "CHAINSAW" = 1))
+	bag_cach = pickweight(list("INDUSTERAL" = 36, "DUFFLE" = 28, "MILI" = 16, "BLUESPACE" = 1))
+	armor_cach = pickweight(list("BASIC_A" = 16, "BULLET_A" = 4, "EGUN_A" = 4, "MELLE_A" = 4))
 
 /obj/structure/closet/secure_closet/personal/prospector/populate_contents()
 	gain_rng()
