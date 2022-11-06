@@ -60,7 +60,7 @@
 /datum/gear/armament/dagger
 	display_name = "dagger"
 	path = /obj/item/tool/knife/dagger
-	cost = 2
+	cost = 3
 
 /datum/gear/armament/dagger/ceremonial
 	display_name = "Ceremonial knife"
