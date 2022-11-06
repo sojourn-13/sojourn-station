@@ -168,6 +168,8 @@
 	var/list/turf_list = list()
 	var/spidersilk
 	for(var/turf/T in orange(spread_range, get_turf(src)))
+		if(!can_pixy_dance_to(T))
+			continue
 		if(T.Enter(src)) // If we can "enter" on the tile then we can spread to it.
 			turf_list += T
 
@@ -193,6 +195,17 @@
 			light_color = "#FFE4E1"
 		addtimer(CALLBACK(src, .proc/spread), rand(spread_speed_slow,spread_speed_high)) //This constantly gets recalled by self. Thus to give people time to combat the shards they will get some time
 
+
+// Check the given turf to see if there is any special things that would prevent the spread
+/obj/structure/annomlies_diet/spidersilk/proc/can_pixy_dance_to(var/turf/T)
+	if(T)
+		if(istype(T, /turf/space)) // We can't spread in SPACE!
+			return FALSE
+		if(istype(T, /turf/simulated/open)) // Crystals can't float. Yet.
+			return FALSE
+		if(locate(/obj/structure/annomlies_diet/spidersilk) in T) // No stacking.
+			return FALSE
+	return TRUE
 
 /obj/structure/annomlies_diet/ball_lightning
 	name = "ball lightning"
