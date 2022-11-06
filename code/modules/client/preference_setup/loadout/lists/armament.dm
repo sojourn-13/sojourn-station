@@ -55,7 +55,7 @@
 /datum/gear/armament/ritual_knife
 	display_name = "ritual knife"
 	path = /obj/item/tool/knife/boot
-	cost = 4
+	cost = 3
 
 /datum/gear/armament/dagger
 	display_name = "dagger"
