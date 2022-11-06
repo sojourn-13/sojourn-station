@@ -79,7 +79,6 @@
 
 	QDEL_NULL(sanity)
 	QDEL_NULL(vessel)
-
 	worn_underwear.Cut()
 	return ..()
 

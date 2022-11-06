@@ -11,6 +11,7 @@
 	QDEL_NULL(parallax)
 	transform = null
 	QDEL_NULL(transform)
+	QDEL_NULL(shadow)
 	if(client)
 		for(var/atom/movable/AM in client.screen)
 			qdel(AM)

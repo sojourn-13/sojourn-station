@@ -52,6 +52,7 @@ var/global/list/image/splatter_cache=list()
 	..(ignore=TRUE)
 
 /obj/effect/decal/cleanable/blood/Destroy()
+	QDEL_NULL(weak_reference)
 	return ..()
 
 /obj/effect/decal/cleanable/blood/New()
