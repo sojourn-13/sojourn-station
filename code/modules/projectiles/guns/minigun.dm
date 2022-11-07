@@ -133,6 +133,7 @@
 
 // Removing the gun, but still connected
 /obj/item/minigun_backpack/MouseDrop(over_object)
+	..()
 	if(the_gun)
 		usr.visible_message(
 								SPAN_NOTICE("[usr] detach [the_gun] from [src]."),

@@ -61,6 +61,7 @@
 		return
 
 /obj/item/device/megaphone/MouseDrop(over_object)
+	..()
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
 		cell = null
 

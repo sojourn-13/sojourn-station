@@ -58,7 +58,7 @@
 			else
 				health -= 50
 
-/obj/structure/closet/crate/MouseDrop_T(mob/target, mob/user)
+/obj/structure/closet/crate/receive_mouse_drop(mob/target, mob/user)
 	var/mob/living/L = user
 	if(istype(L) && can_climb(L) && target == user)
 		do_climb(target)

@@ -41,6 +41,7 @@
 	return
 
 /obj/item/gun/ameridian/MouseDrop(over_object)
+	..()
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(core, usr))
 		core = null
 		update_icon()

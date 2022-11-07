@@ -207,11 +207,75 @@
 
 	return ..(user, distance, "", message)
 
+/obj/item/proc/dragged_onto(var/mob/user)
+	attack_hand(user)
+
 /obj/item/attack_hand(mob/user as mob)
-	if(pre_pickup(user))
-		pickup(user)
-		return TRUE
-	return FALSE
+	if(!user)
+		return
+
+	if(anchored)
+		return ..()
+
+	if(!user.check_dexterity(DEXTERITY_GRIP, silent = TRUE))
+
+		if(user.check_dexterity(DEXTERITY_KEYBOARDS, silent = TRUE))
+
+			if(loc == user)
+				to_chat(user, SPAN_NOTICE("You begin trying to remove \the [src]..."))
+				if(do_after(user, 3 SECONDS, src) && user.unEquip(src))
+					user.drop_from_inventory(src)
+				else
+					to_chat(user, SPAN_WARNING("You fail to remove \the [src]!"))
+				return
+
+			if(isturf(loc))
+				if(loc == get_turf(user))
+					attack_self(user)
+				else
+					dropInto(get_turf(user))
+				return
+
+			if(istype(loc, /obj/item/storage))
+				visible_message(SPAN_NOTICE("\The [user] fumbles \the [src] out of \the [loc]."))
+				var/obj/item/storage/bag = loc
+				bag.remove_from_storage(src)
+				dropInto(get_turf(bag))
+				return
+
+		to_chat(user, SPAN_WARNING("You are not dexterous enough to pick up \the [src]."))
+		return
+
+//	var/old_loc = loc
+	pickup(user)
+	if (istype(loc, /obj/item/storage))
+		var/obj/item/storage/S = loc
+		S.remove_from_storage(src)
+
+//	if(!QDELETED(throwing))
+//		throwing.finalize(hit=TRUE)
+
+	if (loc == user)
+		if(!user.unEquip(src))
+			return
+	else
+		if(isliving(loc))
+			return
+
+	if(QDELETED(src))
+		return // Unequipping changes our state, so must check here.
+
+	if(user.put_in_active_hand(src))
+//		if (isturf(old_loc))
+//			var/obj/effect/temporary/item_pickup_ghost/ghost = new(old_loc, src)
+//			ghost.animate_towards(user)
+		if(randpixel)
+			pixel_x = rand(-randpixel, randpixel)
+			pixel_y = rand(-randpixel/2, randpixel/2)
+			pixel_z = 0
+		else if(randpixel == 0)
+			pixel_x = 0
+			pixel_y = 0
 
 //	Places item in active hand and invokes pickup animation
 //	NOTE: This proc was created and replaced previous pickup() proc which is now called pre_pickup() as it makes more sense

@@ -20,8 +20,8 @@
 	var/const/ROOM_ERR_TOOLARGE = -2
 
 /obj/item/blueprints/attack_self(mob/M as mob)
-	if (!ishuman(M))
-		to_chat(M, "This stack of blue paper means nothing to you." ) //monkeys cannot into projecting
+	if (!ishuman(M) || !M.check_dexterity(DEXTERITY_COMPLEX_TOOLS)) // Monkeys et al. cannot blueprint.
+		to_chat(M, SPAN_WARNING("This stack of blue paper means nothing to you."))
 		return
 	interact()
 	return

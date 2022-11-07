@@ -48,7 +48,6 @@ see multiz/movement.dm for some info.
 	// A lazy list to contain a list of mobs who are currently scaling
 	// up this turf. Used in human/can_fall.
 
-	var/tmp/list/climbers = list()
 
 	pathing_pass_method = TURF_PATHING_PASS_PROC
 
@@ -263,7 +262,7 @@ see multiz/movement.dm for some info.
 	else
 		return null
 
-/turf/simulated/open/MouseDrop_T(mob/target, mob/user)
+/turf/simulated/open/receive_mouse_drop(mob/target, mob/user)
 	var/mob/living/H = user
 	var/obj/structure/S = locate(/obj/structure) in GetBelow(src)
 	if(istype(H) && can_descent(H, S) && target == user)

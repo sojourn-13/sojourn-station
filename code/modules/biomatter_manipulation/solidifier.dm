@@ -60,7 +60,7 @@
 					current_stack = new(loc)
 
 
-/obj/machinery/biomatter_solidifier/MouseDrop_T(obj/structure/reagent_dispensers/biomatter/tank, mob/user)
+/obj/machinery/biomatter_solidifier/receive_mouse_drop(obj/structure/reagent_dispensers/biomatter/tank, mob/user)
 	if(get_dir(loc, tank.loc) != port_dir)
 		to_chat(user, SPAN_WARNING("Doesn't connect. Port direction located at [dir2text(port_dir)] side of [src]"))
 		return

@@ -57,6 +57,9 @@
 	if(!allowed(usr))
 		return TRUE
 
+	if(!usr.check_dexterity(DEXTERITY_KEYBOARDS))
+		return TRUE
+
 	if(href_list["start"])
 		if(next_countdown > world.time)
 			return TRUE

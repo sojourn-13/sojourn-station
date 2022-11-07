@@ -212,7 +212,7 @@
 					examine(user)
 	update_icon()
 
-/obj/machinery/constructable_frame/machine_frame/MouseDrop_T(obj/A, mob/user, src_location, over_location, src_control, over_control, params)
+/obj/machinery/constructable_frame/machine_frame/receive_mouse_drop(obj/A, mob/user, src_location, over_location, src_control, over_control, params)
 	if(istype(A, /obj/item))
 		attackby(A, user)
 		return

@@ -80,6 +80,7 @@
 	layer = BELOW_OBJ_LAYER
 	anchored = 1
 	density = 1
+	required_interaction_dexterity = DEXTERITY_SIMPLE_MACHINES
 
 	var/icon_vend //Icon_state when vending
 	var/icon_deny //Icon_state when denying access

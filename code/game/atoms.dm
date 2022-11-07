@@ -18,6 +18,8 @@
 	var/fluorescent // Shows up under a UV light.
 	var/allow_spin = TRUE
 	var/used_now = FALSE //For tools system, check for it should forbid to work on atom for more than one user at time
+	var/list/climbers
+	var/climb_speed_mult = 1
 
 	/// Associative list containing FLAG -> transform_type. Holds all transform_types currently applying their effects to us.
 	var/list/transform_types = list()
@@ -980,3 +982,104 @@ its easier to just keep the beam vertical.
 
 	for (var/prefix in prefixes)
 		name = "[prefix] [name]"
+
+/atom/proc/can_climb(var/mob/living/user, post_climb_check=0)
+	if (!(flags & ATOM_FLAG_CLIMBABLE) || !user.can_touch(src) || (!post_climb_check && climbers && (user in climbers)))
+		return 0
+
+	if (!user.Adjacent(src))
+		to_chat(user, "<span class='danger'>You can't climb there, the way is blocked.</span>")
+		return 0
+
+	var/obj/occupied = turf_is_crowded(user)
+	if(occupied)
+		to_chat(user, "<span class='danger'>There's \a [occupied] in the way.</span>")
+		return 0
+	return 1
+
+/mob/proc/can_touch(var/atom/touching)
+	if(!touching.Adjacent(src) || incapacitated())
+		return FALSE
+	if(restrained())
+		to_chat(src, SPAN_WARNING("You are restrained."))
+		return FALSE
+	if (buckled)
+		to_chat(src, SPAN_WARNING("You are buckled down."))
+	return TRUE
+
+/atom/proc/turf_is_crowded(var/atom/ignore)
+	var/turf/T = get_turf(src)
+	if(!T || !istype(T))
+		return 0
+	for(var/atom/A in T.contents)
+		if(ignore && ignore == A)
+			continue
+		if(A.flags & ATOM_FLAG_CLIMBABLE)
+			continue
+		if(A.density && !(A.flags & ATOM_FLAG_CHECKS_BORDER)) //ON_BORDER structures are handled by the Adjacent() check.
+			return A
+	return 0
+
+/atom/proc/do_climb(var/mob/living/user)
+	if (!can_climb(user))
+		return 0
+
+	add_fingerprint(user)
+	user.visible_message("<span class='warning'>\The [user] starts climbing onto \the [src]!</span>")
+	LAZYDISTINCTADD(climbers,user)
+
+	if(!do_after(user,(issmall(user) ? MOB_CLIMB_TIME_SMALL : MOB_CLIMB_TIME_MEDIUM) * climb_speed_mult, src))
+		LAZYREMOVE(climbers,user)
+		return 0
+
+	if(!can_climb(user, post_climb_check=1))
+		LAZYREMOVE(climbers,user)
+		return 0
+
+	var/target_turf = get_turf(src)
+
+	//climbing over border objects like railings
+	if((flags & ATOM_FLAG_CHECKS_BORDER) && get_turf(user) == target_turf)
+		target_turf = get_step(src, dir)
+
+	user.forceMove(target_turf)
+
+	if (get_turf(user) == target_turf)
+		user.visible_message("<span class='warning'>\The [user] climbs onto \the [src]!</span>")
+	LAZYREMOVE(climbers,user)
+	return 1
+
+/atom/proc/object_shaken()
+	for(var/mob/living/M in climbers)
+		M.Weaken(1)
+		to_chat(M, "<span class='danger'>You topple as you are shaken off \the [src]!</span>")
+		climbers.Cut(1,2)
+
+	for(var/mob/living/M in get_turf(src))
+		if(M.lying) return //No spamming this on people.
+
+		M.Weaken(3)
+		to_chat(M, "<span class='danger'>You topple as \the [src] moves under you!</span>")
+
+		if(prob(25))
+
+			var/damage = rand(15,30)
+			var/mob/living/carbon/human/H = M
+			if(!istype(H))
+				to_chat(H, "<span class='danger'>You land heavily!</span>")
+				M.adjustBruteLoss(damage)
+				return
+
+			var/obj/item/organ/external/affecting = pick(H.organs)
+			if(affecting)
+				to_chat(M, "<span class='danger'>You land heavily on your [affecting.name]!</span>")
+				affecting.take_damage(damage, 0)
+				if(affecting.parent)
+					affecting.parent.add_autopsy_data("Misadventure", damage)
+			else
+				to_chat(H, "<span class='danger'>You land heavily!</span>")
+				H.adjustBruteLoss(damage)
+
+			H.UpdateDamageIcon()
+			H.updatehealth()
+	return

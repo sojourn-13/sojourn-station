@@ -46,7 +46,7 @@
 			to_chat(usr, "The scanner no longer shows limb damage.")
 
 /proc/medical_scan_action(atom/target, mob/living/user, obj/scanner, var/mode)
-	if (!user.IsAdvancedToolUser())
+	if (!user.check_dexterity(DEXTERITY_COMPLEX_TOOLS))
 		to_chat(user, SPAN_WARNING("You are not nimble enough to use this device."))
 		return
 

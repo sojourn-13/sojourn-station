@@ -461,7 +461,7 @@
 	try_put_inside(target, user)
 	return TRUE
 
-/obj/machinery/cryopod/MouseDrop_T(var/mob/living/L, mob/living/user)
+/obj/machinery/cryopod/receive_mouse_drop(var/mob/living/L, mob/living/user)
 	if(istype(L) && istype(user))
 		try_put_inside(L, user)
 

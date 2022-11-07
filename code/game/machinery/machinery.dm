@@ -124,6 +124,7 @@ Class Procs:
 	var/area/current_power_area // What area are we powering currently
 
 	var/blue_ink_tk_blocker = FALSE
+	var/required_interaction_dexterity = DEXTERITY_KEYBOARDS
 
 /obj/machinery/attack_tk(mob/user)
 	if(blue_ink_tk_blocker)
@@ -215,7 +216,7 @@ Class Procs:
 		return 1
 	if(user.lying || user.stat)
 		return 1
-	if(!user.IsAdvancedToolUser())
+	if(!user.check_dexterity(required_interaction_dexterity))
 		to_chat(usr, SPAN_WARNING("You don't have the dexterity to do this!"))
 		return 1
 

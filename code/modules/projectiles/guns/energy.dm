@@ -155,6 +155,7 @@
 
 
 /obj/item/gun/energy/MouseDrop(over_object)
+	..()
 	if(!self_recharge && !disposable)
 		if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
 			cell = null

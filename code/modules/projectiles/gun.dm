@@ -246,8 +246,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	if(!isliving(user))
 		return FALSE
-	if(!user.IsAdvancedToolUser())
-		return FALSE
+	if(!user.check_dexterity(DEXTERITY_WEAPONS))
+		return 0
 
 	var/mob/living/M = user
 	if(HULK in M.mutations)

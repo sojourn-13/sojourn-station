@@ -138,8 +138,8 @@ var/global/list/navbeacons			// no I don't like putting this in, but it will do 
 
 	attack_hand(var/mob/user)
 
-		if(!user.IsAdvancedToolUser())
-			return 0
+		if(!user.check_dexterity(DEXTERITY_TOUCHSCREENS))
+			return
 
 		interact(user, 0)
 
