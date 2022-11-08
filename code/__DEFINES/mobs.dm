@@ -335,6 +335,9 @@
 #define MOB_INPUT_MESSAGE "message"
 #define MOB_INPUT_NUM "num"
 
+#define MOB_CLIMB_TIME_SMALL 30
+#define MOB_CLIMB_TIME_MEDIUM 50
+
 #define FACTION_NEUTRAL "neutral"
 #define FACTION_EXCELSIOR "excelsior"
 #define FACTION_BORERS "borers"

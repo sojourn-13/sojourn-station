@@ -87,7 +87,7 @@
 		to_chat(usr, "You must be conscious to do that!")
 		return
 
-	if (!usr.IsAdvancedToolUser())
+	if (!usr.check_dexterity(DEXTERITY_COMPLEX_TOOLS))
 		return
 
 	var/scan_data = ""

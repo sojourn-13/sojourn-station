@@ -99,7 +99,7 @@
 /obj/structure/medical_stand/MouseDrop(var/mob/living/carbon/human/target, src_location, over_location)
 	..()
 	if(istype(target))
-		if(usr.stat == DEAD || !CanMouseDrop(target))
+		if(usr.stat == DEAD || !can_mouse_drop(target))
 			return
 		var/list/available_options = list()
 		if (tank)
@@ -112,7 +112,7 @@
 			action_type = input(usr, "What do you want to attach/detach?") as null|anything in available_options
 		else if(available_options.len)
 			action_type = available_options[1]
-		if(usr.stat == DEAD || !CanMouseDrop(target))
+		if(usr.stat == DEAD || !can_mouse_drop(target))
 			return
 		switch (action_type)
 			if("Gas mask")

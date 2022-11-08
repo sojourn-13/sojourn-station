@@ -102,7 +102,7 @@
 	buckle_mob(C)
 
 
-/obj/machinery/optable/MouseDrop_T(mob/target, mob/user)
+/obj/machinery/optable/receive_mouse_drop(mob/target, mob/user)
 
 	var/mob/living/M = user
 	if(user.stat || user.restrained() || !check_table(user) || !iscarbon(target))

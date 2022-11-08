@@ -162,7 +162,7 @@
 	return
 
 
-/obj/machinery/surveillance_pod/MouseDrop_T(mob/target, mob/user)
+/obj/machinery/surveillance_pod/receive_mouse_drop(mob/target, mob/user)
 	try_set_occupant(target, user)
 	add_fingerprint(user)
 	return TRUE

@@ -191,7 +191,7 @@
 
 /obj/structure/shield_deployed/MouseDrop(over_object, src_location, over_location)
 	..()
-	if(!CanMouseDrop(over_object))	return
+	if(!can_mouse_drop(over_object))	return
 	if(!(ishuman(usr) || isrobot(usr)))	return
 	if(reinforced)
 		to_chat(usr, SPAN_NOTICE("\The [src] needs collapsed first!"))

@@ -369,7 +369,7 @@
 	reagent_flags = OPENCONTAINER
 	var/busy = 0 	//Something's being washed at the moment
 
-/obj/structure/sink/MouseDrop_T(var/obj/item/thing, var/mob/user)
+/obj/structure/sink/receive_mouse_drop(var/obj/item/thing, var/mob/user)
 	. = ..()
 	if(!istype(thing) || !thing.is_drainable())
 		return

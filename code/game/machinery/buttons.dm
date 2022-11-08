@@ -12,6 +12,7 @@
 	active_power_usage = 4
 	var/_wifi_id
 	var/datum/wifi/sender/wifi_sender
+	required_interaction_dexterity = DEXTERITY_SIMPLE_MACHINES
 
 /obj/machinery/button/Initialize()
 	. = ..()

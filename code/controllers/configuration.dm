@@ -126,6 +126,8 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/revival_cloning = 1
 	var/revival_brain_life = -1
 
+	var/dex_malus_brainloss_threshold = 30 //The threshold of when brainloss begins to affect dexterity.
+
 	var/use_loyalty_implants = 0
 
 	var/welder_vision = 1
@@ -756,6 +758,8 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if("use_loyalty_implants")
 					config.use_loyalty_implants = 1
+				if("dexterity_malus_brainloss_threshold")
+					config.dex_malus_brainloss_threshold = text2num(value)
 
 				else
 					log_misc("Unknown setting in configuration: '[name]'")

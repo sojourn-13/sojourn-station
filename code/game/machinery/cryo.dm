@@ -324,7 +324,7 @@
 	update_icon()
 	return 1
 
-/obj/machinery/atmospherics/unary/cryo_cell/MouseDrop_T(var/mob/target, var/mob/user)
+/obj/machinery/atmospherics/unary/cryo_cell/receive_mouse_drop(var/mob/target, var/mob/user)
 	if(!ismob(target))
 		return
 	if (target.buckled)

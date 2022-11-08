@@ -11,6 +11,8 @@
 	opacity = 1
 	density = 1
 	layer = OPEN_DOOR_LAYER
+	required_interaction_dexterity = DEXTERITY_SIMPLE_MACHINES
+
 	var/open_layer = OPEN_DOOR_LAYER
 	var/closed_layer = CLOSED_DOOR_LAYER
 	var/visible = 1

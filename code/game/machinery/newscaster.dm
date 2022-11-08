@@ -231,8 +231,9 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 	if(!src.ispowered || src.isbroken)
 		return
 
-	if(!user.IsAdvancedToolUser())
-		return 0
+	if (!user.check_dexterity(DEXTERITY_SIMPLE_MACHINES))
+		to_chat(user, SPAN_WARNING("You are not nimble enough to use this device."))
+		return
 
 	if(ishuman(user) || issilicon(user))
 		var/mob/living/human_or_robot_user = user
@@ -830,7 +831,7 @@ obj/item/newspaper/attack_self(mob/user as mob)
 		switch(screen)
 			if(0) //Cover
 				dat+="<DIV ALIGN='center'><B><FONT SIZE=6>The Griffon</FONT></B></div>"
-				dat+="<DIV ALIGN='center'><FONT SIZE=2>[company_name]-standard newspaper, for use on [company_name]© Facilities</FONT></div><HR>"
+				dat+="<DIV ALIGN='center'><FONT SIZE=2>[company_name]-standard newspaper, for use on [company_name]ï¿½ Facilities</FONT></div><HR>"
 				if(isemptylist(src.news_content))
 					if(src.important_message)
 						dat+="Contents:<BR><ul><B><FONT COLOR='red'>**</FONT>Important Security Announcement<FONT COLOR='red'>**</FONT></B> <FONT SIZE=2>\[page [src.pages+2]\]</FONT><BR></ul>"

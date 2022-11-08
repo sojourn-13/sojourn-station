@@ -50,6 +50,7 @@
 	toggle_open(user)
 
 /obj/structure/fireaxecabinet/MouseDrop(over_object, src_location, over_location)
+	..()
 	if(over_object == usr)
 		var/mob/user = over_object
 		if(!istype(user))

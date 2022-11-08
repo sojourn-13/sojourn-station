@@ -207,7 +207,7 @@
 
 
 /mob/living/carbon/human/show_inv(mob/user as mob)
-	if(user.incapacitated()  || !user.Adjacent(src))
+	if(user.incapacitated()  || !user.Adjacent(src) || !user.check_dexterity(DEXTERITY_SIMPLE_MACHINES))
 		return
 
 	var/obj/item/clothing/under/suit
@@ -685,13 +685,6 @@ var/list/rank_prefix = list(\
 		return prob(100 / 2**(parent.w_class - affecting.w_class - 1))
 
 	return 1
-
-/mob/living/carbon/human/IsAdvancedToolUser(var/silent)
-	if(species.has_fine_manipulation)
-		return 1
-	if(!silent)
-		to_chat(src, SPAN_WARNING("You don't have the dexterity to use that!"))
-	return 0
 
 /mob/living/carbon/human/abiotic(var/full_body = 0)
 	if(full_body && ((src.l_hand && !( src.l_hand.abstract )) || (src.r_hand && !( src.r_hand.abstract )) || (src.back || src.wear_mask || src.head || src.shoes || src.w_uniform || src.wear_suit || src.glasses || src.l_ear || src.r_ear || src.gloves)))
@@ -1676,3 +1669,28 @@ var/list/rank_prefix = list(\
 								cleaned_human.update_inv_shoes(0)
 							cleaned_human.clean_blood(1)
 							to_chat(cleaned_human, SPAN_DANGER("[src] cleans your face!"))
+
+/mob/living/carbon/human/has_dexterity(var/dex_level)
+	. = check_dexterity(dex_level, silent = TRUE)
+
+/mob/living/carbon/human/check_dexterity(var/dex_level = DEXTERITY_FULL, var/silent, var/force_active_hand)
+	if(isnull(force_active_hand))
+		force_active_hand = get_active_hand_organ()
+	var/obj/item/organ/external/active_hand = force_active_hand
+	var/dex_malus = 0
+	if(getBrainLoss() && getBrainLoss() > config.dex_malus_brainloss_threshold) ///brainloss shouldn't instantly cripple you, so the effects only start once past the threshold and escalate from there.
+		dex_malus = round(clamp(round(getBrainLoss()-config.dex_malus_brainloss_threshold)/10, DEXTERITY_NONE, DEXTERITY_FULL))
+	if(!active_hand)
+		if(!silent)
+			to_chat(src, SPAN_WARNING("Your hand is missing!"))
+		return FALSE
+	if(!active_hand.is_usable())
+		to_chat(src, SPAN_WARNING("Your [active_hand.name] is unusable!"))
+		return
+	if((active_hand.get_dexterity()-dex_malus) < dex_level)
+		if(!silent && !dex_malus)
+			to_chat(src, SPAN_WARNING("Your [active_hand.name] doesn't have the dexterity to use that!"))
+		else if(!silent)
+			to_chat(src, SPAN_WARNING("Your [active_hand.name] doesn't respond properly!"))
+		return FALSE
+	return TRUE
