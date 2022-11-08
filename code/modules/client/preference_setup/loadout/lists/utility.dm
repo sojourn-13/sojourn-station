@@ -133,6 +133,10 @@
 	path = /obj/item/modular_computer/tablet/preset/custom_loadout/cheap
 	cost = 2
 
+/datum/gear/utility/wristmounted
+	display_name = "wristmounted computer"
+	path = /obj/item/modular_computer/wrist
+
 /datum/gear/utility/tts
 	display_name = "tts device"
 	path = /obj/item/device/text_to_speech

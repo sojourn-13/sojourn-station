@@ -107,6 +107,16 @@
 		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS)
 	)
 
+/datum/craft_recipe/machinery/computer/modularwrist
+	name = "modular frame, wristmounted"
+	result = /obj/item/modular_computer/wrist
+	icon_state = "electronic"
+	time = 200
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS)
+	)
+
 /datum/craft_recipe/machinery/computer/modulartablet
 	name = "modular frame, tablet"
 	result = /obj/item/modular_computer/tablet
