@@ -19,6 +19,24 @@
 		list(QUALITY_SAWING, 15, "time" = 30)
 	)
 
+/datum/craft_recipe/gun/stripper1
+	name = "handmade 6.5mm carbine stripper clip"
+	result = /obj/item/ammo_magazine/speed_loader_light_rifle_257/empty
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_SAWING, 10, "time" = 30), // Cut the unneeded corners...
+		list(QUALITY_HAMMERING, 10, "time" = 30) // ...and hammer them into shape!
+	)
+
+/datum/craft_recipe/gun/stripper2
+	name = "handmade 7.62mm rifle stripper clip"
+	result = /obj/item/ammo_magazine/speed_loader_rifle_75/empty
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_SAWING, 10, "time" = 30),
+		list(QUALITY_HAMMERING, 10, "time" = 30)
+	)
+
 /datum/craft_recipe/gun/arrows
 	name = "crude arrows"
 	result = /obj/item/ammo_casing/arrow/bulk
@@ -184,6 +202,18 @@
 		list(QUALITY_WELDING, 10, 20),
 		list(CRAFT_MATERIAL, 15, MATERIAL_WOOD),
 		list(QUALITY_SCREW_DRIVING, 10)
+	)
+
+/datum/craft_recipe/gun/maresleg
+	name = "\"Mares Leg\" lever shotgun"
+	result = /obj/item/gun/projectile/boltgun/lever/shotgun
+	steps = list(
+		list(/obj/item/gun/projectile/boltgun/lever, 1, time = 60),
+		list(QUALITY_ADHESIVE, 10, 60),
+		list(QUALITY_SCREW_DRIVING, 10),
+		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL),
+		list(QUALITY_BOLT_TURNING, 20, 30),
+		list(QUALITY_WELDING, 10, 20)
 	)
 
 /datum/craft_recipe/gun/makeshiftlaser

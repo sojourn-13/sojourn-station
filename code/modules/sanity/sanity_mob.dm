@@ -97,7 +97,7 @@
 	handle_breakdowns()
 	handle_Insight()
 	handle_level()
-	SEND_SIGNAL(owner, COMSIG_HUMAN_SANITY, level)
+	LEGACY_SEND_SIGNAL(owner, COMSIG_HUMAN_SANITY, level)
 
 /datum/sanity/proc/give_insight(value)
 	var/new_value = value
@@ -239,7 +239,7 @@
 
 	var/stat_pool = resting * 15
 	while(stat_pool--)
-		LAZYAPLUS(stat_change, pick(ALL_STATS), 1)
+		LAZYAPLUS(stat_change, pick(ALL_STATS_FOR_LEVEL_UP), 1)
 
 	for(var/stat in stat_change)
 		owner.stats.changeStat(stat, stat_change[stat])
@@ -253,6 +253,8 @@
 		to_chat(owner, SPAN_NOTICE("You have satisfied your cravings and improved your stats."))
 	owner.playsound_local(get_turf(owner), 'sound/sanity/rest.ogg', 100)
 	owner.pick_individual_objective()
+	owner.give_health_via_stats()
+	owner.metabolism_effects.calculate_nsa(TRUE) //So
 	resting = 0
 
 /datum/sanity/proc/oddity_stat_up(multiplier)
@@ -273,9 +275,9 @@
 		if(I.perk)
 			owner.stats.addPerk(I.perk)
 		for(var/mob/living/carbon/human/H in viewers(owner))
-			SEND_SIGNAL(H, COMSIG_HUMAN_ODDITY_LEVEL_UP, owner, O)
+			LEGACY_SEND_SIGNAL(H, COMSIG_HUMAN_ODDITY_LEVEL_UP, owner, O)
 		for(var/mob/living/carbon/human/H in viewers(owner))
-			SEND_SIGNAL(H, COMSIG_HUMAN_LEVEL_UP, owner, O)
+			LEGACY_SEND_SIGNAL(H, COMSIG_HUMAN_LEVEL_UP, owner, O)
 
 /datum/sanity/proc/onDamage(amount)
 	changeLevel(-SANITY_DAMAGE_HURT(amount, owner.stats.getStat(STAT_VIG)))

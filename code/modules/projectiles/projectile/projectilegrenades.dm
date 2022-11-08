@@ -2,6 +2,7 @@
 	name = "baton round"
 	icon_state = "grenade"
 	damage_types = list(BRUTE = 10)
+	added_damage_laser_pve = 10
 	agony = 80
 	check_armour = ARMOR_MELEE
 	armor_penetration = 0
@@ -13,6 +14,7 @@
 	name = "grenade shell"
 	icon_state = "grenade"
 	damage_types = list(BRUTE = 10)
+	added_damage_laser_pve = 10
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
@@ -21,14 +23,17 @@
 
 /obj/item/projectile/bullet/grenade/Move()	//Makes grenade shells cause their effect when they arrive at their target turf
 	if(get_turf(src) == get_turf(original))
-		grenade_effect(get_turf(src))
+		if (!testing)
+			grenade_effect(get_turf(src))
+		else
+			impact_atom = original
 		qdel(src)
 	else
 		..()
 
 /obj/item/projectile/bullet/grenade/on_impact(atom/target)	//Allows us to cause different effects for each grenade shell on hit
-	grenade_effect(target)
-
+	if (!testing)
+		grenade_effect(target)
 
 /obj/item/projectile/bullet/grenade
 	name = "blast shell"
@@ -40,6 +45,7 @@
 
 /obj/item/projectile/bullet/grenade/proc/grenade_effect(target)
 	explosion(target, devastation_range, heavy_impact_range, light_impact_range, flash_range)
+
 
 /obj/item/projectile/bullet/grenade/frag
 	name = "frag shell"
@@ -53,6 +59,11 @@
 
 /obj/item/projectile/bullet/grenade/frag/grenade_effect(target)
 	fragment_explosion(target, range, f_type, f_amount, f_damage, f_step, same_turf_hit_chance)
+
+/obj/item/projectile/bullet/grenade/frag/stinger
+	name = "stinger shell"
+	f_type = /obj/item/projectile/bullet/pellet/fragment/rubber
+	f_amount = 50 //25 less than a handheld grenade, still does a LOT of halloss
 
 //Weaker do to being used in a strong gun
 /obj/item/projectile/bullet/grenade/frag/nt
@@ -86,24 +97,28 @@
 	recoil = 5
 
 /obj/item/projectile/bullet/grenade/flash/grenade_effect(target)
-	fragment_explosion(target, light_impact_range, flash_range)
+	if (!testing)
+		fragment_explosion(target, light_impact_range, flash_range)
 	..()
-	for(var/obj/structure/closet/L in hear(7, get_turf(src)))
-		if(locate(/mob/living/carbon/, L))
-			for(var/mob/living/carbon/M in L)
-				flashbang_bang(get_turf(src), M)
+	if (!testing)
+		for(var/obj/structure/closet/L in hear(7, get_turf(src)))
+			if(locate(/mob/living/carbon/, L))
+				for(var/mob/living/carbon/M in L)
+					flashbang_bang(get_turf(src), M)
 
 
-	for(var/mob/living/carbon/M in hear(7, get_turf(src)))
-		flashbang_bang(get_turf(src), M)
+		for(var/mob/living/carbon/M in hear(7, get_turf(src)))
+			flashbang_bang(get_turf(src), M)
 
-	for(var/obj/effect/blob/B in hear(8,get_turf(src)))       		//Blob damage here
-		var/damage = round(30/(get_dist(B,get_turf(src))+1))
-		B.health -= damage
-		B.update_icon()
+		for(var/obj/effect/blob/B in hear(8,get_turf(src)))       		//Blob damage here
+			var/damage = round(30/(get_dist(B,get_turf(src))+1))
+			B.health -= damage
+			B.update_icon()
 
-	new/obj/effect/sparks(src.loc)
-	new/obj/effect/effect/smoke/illumination(src.loc, brightness=15)
+		new/obj/effect/sparks(src.loc)
+		new/obj/effect/effect/smoke/illumination(src.loc, brightness=15)
+	if (testing)
+		impact_atom = target
 	qdel(src)
 	return
 
@@ -129,11 +144,8 @@
 				stat_def *= 2
 
 //Flashing everyone
-	if(eye_safety < FLASH_PROTECTION_MODERATE)
-		if (M.HUDtech.Find("flash"))
-			flick("e_flash", M.HUDtech["flash"])
-		M.eye_blurry = max(M.eye_blurry, 15)
-		M.eye_blind = max(M.eye_blind, 5)
+	if(eye_safety < FLASH_PROTECTION_MAJOR)
+		flash(0, TRUE,TRUE,TRUE)
 
 
 

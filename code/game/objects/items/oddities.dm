@@ -25,6 +25,16 @@
 /obj/item/oddity/Initialize()
 	. = ..()
 	AddComponent(/datum/component/atom_sanity, sanity_value, "")
+	var/area/my_area = get_area(src.loc)
+	if(!my_area)
+		oddity_rolling()
+		return
+	if(my_area.name == "Deep Maintenance") //Shockingly this is how get area works
+		upgraded_oddity_rolling()
+	else
+		oddity_rolling()
+
+/obj/item/oddity/proc/oddity_rolling()
 	if(!perk && prob(prob_perk))
 		perk = get_oddity_perk()
 	if(oddity_stats)
@@ -33,8 +43,21 @@
 				oddity_stats[stat] = rand(min_stats, oddity_stats[stat])
 		AddComponent(/datum/component/inspiration, oddity_stats, perk)
 
+/obj/item/oddity/proc/upgraded_oddity_rolling()
+	if(!perk && prob(prob_perk+5))
+		perk = get_good_perk()
+	if(oddity_stats)
+		if(random_stats)
+			for(var/stat in oddity_stats)
+				oddity_stats[stat] = round((oddity_stats[stat] = rand(min_stats, oddity_stats[stat]) * 1.5))
+		AddComponent(/datum/component/inspiration, oddity_stats, perk)
+
 /proc/get_oddity_perk()
 	return pick(subtypesof(/datum/perk/oddity))
+
+
+/proc/get_good_perk()
+	return pick(GOOD_ODDITY_PERKS)
 
 /obj/item/oddity/examine(user)
 	..()
@@ -130,7 +153,7 @@
 /obj/item/oddity/common/paper_omega
 	name = "collection of obscure reports"
 	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar. The logo is faded, making it hard to tell if this was Greyson, Soteria, or an independent group."
-	icon_state = "paper_omega"
+	icon_state = "reports1"
 	prob_perk = 45 //The skeptical mind of the inker helps keep it grounded but it shows something unable to be shaken out of the mind
 	oddity_stats = list(
 		STAT_MEC = 6,
@@ -138,10 +161,14 @@
 		STAT_BIO = 6
 	)
 
+/obj/item/oddity/common/paper_omega/Initialize()
+	icon_state = "reports[rand(1,6)]" // All these unused sprites will now add variety to reports. - Seb
+	.=..()
+
 /obj/item/oddity/common/book_eyes
 	name = "observer book"
 	desc = "This book details information on some cybernetic creatures. Who did this? How is this even possible? The illustrations bear uncomfortable likeness to hivemind abominations."
-	icon_state = "book_eyes"
+	icon_state = "book_omega"
 	prob_perk = 15 //A book of robotic beings well fearing an upraising its paranioa in the puplics mind, only given power by mar qua
 	oddity_stats = list(
 		STAT_ROB = 7,
@@ -151,8 +178,8 @@
 
 /obj/item/oddity/common/book_omega
 	name = "occult book"
-	desc = "Most of the stories in this book seem to be the writings of madmen, but at least the stories are interesting. Some of the phrases are written in Latin, an odd thing in this day and age."
-	icon_state = "book_omega"
+	desc = "Most of the stories in this book seem to be the ramblings of a mad man, but at least the stories are interesting. Some of the phrases are written in Latin, an odd thing in this day and age."
+	icon_state = "book_eyes" // This sprite fits better an occult book, swapped with the observer one.
 	prob_perk = 15 //old wrighting with the madmans ink allows the mind to go a bit more wild then just a single paper
 	oddity_stats = list(
 		STAT_BIO = 5,
@@ -162,7 +189,7 @@
 
 /obj/item/oddity/common/broken_key
 	name = "broken key"
-	desc = "A yellow or golden key that goes to who knows what. The end bit broken off..."
+	desc = "An archaic yellow or golden key that belongs to an unknown door. The end bit has broken off..."
 	prob_perk = 75 //A key to an unknown item or place, this one gets quite the imagination...
 	icon_state = "broken_key"
 	oddity_stats = list(
@@ -171,7 +198,7 @@
 
 /obj/item/oddity/common/book_bible
 	name = "old bible"
-	desc = "Oh, how quickly we forgot."
+	desc = "This is the account of the heavens and the earth when they were created..."
 	icon_state = "book_bible"
 	prob_perk = 5 //Grounded and talked about, hard to think outside the box when given its history and known lore
 	oddity_stats = list(
@@ -181,7 +208,7 @@
 
 /obj/item/oddity/common/book_log
 	name = "forgotten logs"
-	desc = "A once detailed book containing information on all manner of things, slashes and now ruined pages are whats left..."
+	desc = "A once detailed book containing information on all manner of things, ruined pages and smudged writings are all what's left of it..."
 	icon_state = "book_log"
 	prob_perk = 15 //Grounded in the real life and the real planets nature anomliest yes but still has links to the plan
 	oddity_stats = list(
@@ -202,7 +229,7 @@
 
 /obj/item/oddity/common/healthscanner
 	name = "odd health scanner"
-	desc = "It's broken and stuck on some really strange readings. Was this even human?"
+	desc = "It's broken and stuck on some really strange readings. What species is this data from, even...?"
 	icon_state = "healthscanner"
 	item_state = "electronic"
 	prob_perk = 10 //Powerful as unreadable data is its not all that able to be exspanded on
@@ -245,7 +272,7 @@
 
 /obj/item/oddity/common/old_knife
 	name = "old knife"
-	desc = "Is this blood older than you? You can't tell and will never know."
+	desc = "Is this blood older than you? You can't tell and probably you will never know."
 	icon_state = "old_knife"
 	item_state = "knife"
 	prob_perk = 5 //Only so much you can imagine a knife about
@@ -294,7 +321,7 @@
 
 /obj/item/oddity/techno
 	name = "Unknown technological part"
-	desc = "A technological part made by Artificer Perfection Cube."
+	desc = "A technological part made by the Artificer Perfection Cube."
 	icon_state = "techno_part1"
 	prob_perk = 25 //Unknown tech unknown parts unknown uses by a cult much to exspand the mind in
 
@@ -314,7 +341,7 @@
 
 /obj/item/oddity/common/paper_bundle
 	name = "paper bundle"
-	desc = "Somewhere there is a truth, hidden under all of this scrap."
+	desc = "There surely is a glimmer of truth, hidden under all of this dissociated knowledge."
 	icon_state = "paper_bundle"
 	prob_perk = 20 //Data, so much data to grasp straws on
 	oddity_stats = list(
@@ -417,7 +444,7 @@
 /obj/item/oddity/rare/golden_cup
 	name = "Colony Games Trophy"
 	desc = "A trophy earned during the monthly competitions between various factions. The gold is fashioned from anomalous metal, giving it beneficial properties to carry with you. Hold your factions achievement high!"
-	icon_state = "golden_cup"
+	icon_state = "golden_cup" // Sprite by Dongels
 	min_stats = 5
 	oddity_stats = list(
 		STAT_ROB = 8,
@@ -573,7 +600,7 @@
 
 /obj/item/oddity/nt/pyramid
 	name = "Pyramid"
-	desc = "A small structure with various triangular bricks and forms a triangular frame. This one seems like a egyptian pyramid in specific, and have various ancient egyptian engravings about forgotten gods that only the today's history researcher may know, considering that various aspects of civilization has been lost over time as the old earth has lost their old history entities from the newer, non-earth born generations, or straight up alien. This lifts the important need to preserve history to never be forgotten. It seems this is supposed to be, more specifically, a figure of the Pyramid which Queen Khentkaus I has been buried. Anubis is the god more present on the arid, golden sand bricks and chiselled by hand."
+	desc = "A small sandstone pyramid, covered in bizzare engravings. The Cartographer of the Church of the Absolute has declared relics like this holy beyond any doubt, though none know exactly why."
 	icon_state = "pyramid"
 	oddity_stats = list(
 		STAT_TGH = 16
@@ -622,7 +649,7 @@
 /obj/item/oddity/code_book
 	name = "Marshal Code Handbook"
 	desc = "A heavy book with details and translations of the Marshal codes."
-	icon_state = "book_code"
+	icon_state = "instructional_rob" // Fits better with a supposed Marshal's logo up front. - Seb
 	oddity_stats = list(
 		STAT_VIG = 6
 	)
@@ -832,7 +859,7 @@
 		to_chat(user, "<span class='info'>Further attempts have gotten you no closer to solving the [src].</span>")
 		return
 	if(prob(openchance))
-		new /mob/living/simple_animal/hostile/stranger(user.loc)
+		new /mob/living/carbon/superior_animal/human/stranger(user.loc)
 		new /obj/item/oddity/rare/openedpuzzlebox(user.loc)
 		to_chat(user, SPAN_WARNING("[src] clicks and lights up!"))
 		qdel(src)

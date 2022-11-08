@@ -42,6 +42,10 @@
 		return
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
+	if (tool.amount <= 0)
+		to_chat(user, SPAN_WARNING("[tool_name] has no more uses left."))
+		return
+
 	if (target.getBruteLoss() > 0)
 		user.visible_message(SPAN_NOTICE("[user] begins treating the brute damage to [target]'s body with the [tool_name]."), \
 		SPAN_NOTICE("You begin treating the brute damage to [target]'s body with the [tool_name]."))
@@ -106,6 +110,10 @@
 
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
+	if (tool.amount <= 0)
+		to_chat(user, SPAN_WARNING("[tool_name] has no more uses left."))
+		return
+
 	if (target.getFireLoss() > 0)
 		user.visible_message(SPAN_NOTICE("[user] begins treating the burn damage to [target]'s body with the [tool_name]."), \
 		SPAN_NOTICE("You begin treating the burn damage to [target]'s body with the [tool_name].") )
@@ -161,6 +169,10 @@
 	if (!hasorgans(target))
 		return
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
+
+	if (tool.amount <= 0)
+		to_chat(user, SPAN_WARNING("[tool_name] has no more uses left."))
+		return
 
 	if (target.getToxLoss() >= 0 || world.time - target.timeofdeath > DEFIB_TIME_LIMIT)
 		user.visible_message(SPAN_NOTICE("[user] begins filtering out any toxins in [target]'s body and repairing any neural degradation with the [tool_name]."), \

@@ -7,7 +7,7 @@
 	item_charge_meter = TRUE
 	fire_sound = 'sound/weapons/Laser.ogg'
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 4)
-	w_class = ITEM_SIZE_HUGE
+	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
@@ -39,7 +39,7 @@
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
 	charge_cost = 400
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 8)
-	price_tag = 1400
+	price_tag = 1250
 	projectile_type = /obj/item/projectile/ion
 	init_recoil = CARBINE_RECOIL(1)
 	twohanded = FALSE

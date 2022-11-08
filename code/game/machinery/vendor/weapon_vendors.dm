@@ -49,8 +49,12 @@
 	/obj/item/ammo_magazine/highcap_pistol_35 = 3,
 	/obj/item/ammo_magazine/speed_loader_magnum_40/rubber = 3,
 	/obj/item/ammo_magazine/speed_loader_magnum_40 = 3,
+	/obj/item/ammo_magazine/speed_loader_kurtz_50 = 3,
+	/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 3,
 	/obj/item/ammo_magazine/magnum_40/rubber = 3,
 	/obj/item/ammo_magazine/magnum_40 = 3,
+	/obj/item/ammo_magazine/kurtz_50/rubber = 3,
+	/obj/item/ammo_magazine/kurtz_50 = 3,
 	/obj/item/ammo_magazine/smg_35/rubber = 3,
 	/obj/item/ammo_magazine/smg_35 = 3,
 	/obj/item/ammo_magazine/light_rifle_257/rubber = 3,
@@ -74,7 +78,7 @@
 	/obj/item/gun_upgrade/mechanism/weintraub = 2,
 	/obj/item/storage/pouch/pistol_holster = 2,
 	/obj/item/storage/pouch/ammo = 2,
-	/obj/item/storage/briefcase/rifle = 5,
+	/obj/item/storage/backpack/duffelbag/guncase = 35,
 	/obj/item/storage/box/smokes = 3)
 
 	prices = list(
@@ -120,8 +124,12 @@
 	/obj/item/ammo_magazine/highcap_pistol_35 = 80,
 	/obj/item/ammo_magazine/speed_loader_magnum_40/rubber = 40,
 	/obj/item/ammo_magazine/speed_loader_magnum_40 = 80,
+	/obj/item/ammo_magazine/speed_loader_kurtz_50 = 120,
+	/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 100,
 	/obj/item/ammo_magazine/magnum_40/rubber = 75,
 	/obj/item/ammo_magazine/magnum_40 = 150,
+	/obj/item/ammo_magazine/kurtz_50/rubber = 150,
+	/obj/item/ammo_magazine/kurtz_50 = 300,
 	/obj/item/ammo_magazine/smg_35/rubber = 100,
 	/obj/item/ammo_magazine/smg_35 = 200,
 	/obj/item/ammo_magazine/light_rifle_257/rubber = 125,
@@ -145,7 +153,7 @@
 	/obj/item/gun_upgrade/mechanism/weintraub = 200,
 	/obj/item/storage/pouch/pistol_holster = 50,
 	/obj/item/storage/pouch/ammo = 75,
-	/obj/item/storage/briefcase/rifle = 50,
+	/obj/item/storage/backpack/duffelbag/guncase = 25,
 	/obj/item/storage/box/smokes = 100)
 
 /obj/machinery/vending/security

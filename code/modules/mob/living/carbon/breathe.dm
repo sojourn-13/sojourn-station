@@ -78,6 +78,7 @@
 			smoke.reagents.trans_to_mob(src, 5, CHEM_INGEST, copy = 1)
 			smoke.reagents.trans_to_mob(src, 5, CHEM_BLOOD, copy = 1)
 			// I dunno, maybe the reagents enter the blood stream through the lungs?
+			smoke = null //In hopes of stopping a GC error
 			break // If they breathe in the nasty stuff once, no need to continue checking
 
 /mob/living/carbon/proc/handle_breath(datum/gas_mixture/breath)

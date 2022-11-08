@@ -56,9 +56,9 @@
 #define GUN_UPGRADE_OVERCHARGE_MAX "overcharge_max_mult"
 #define GUN_UPGRADE_OVERCHARGE_RATE "overcharge_rate_mult"
 #define GUN_UPGRADE_MELEE_DAMAGE "melee_damage"
-
+#define GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE "pve_proj_mult_damage"
 //Int additive
-#define GUN_UPGRADE_DAMAGEMOD_PLUS "damage_plus"
+#define GUN_UPGRADE_PAIN_MULT "pain_damage_plus"
 #define GUN_UPGRADE_MAGUP "magazine_addition"
 
 #define GUN_UPGRADE_DAMAGE_BRUTE "brute_damage"
@@ -109,8 +109,8 @@
 #define GUN_REVOLVER "revolver"
 #define GUN_INTERNAL_MAG "internal mag"
 #define GUN_BAYONET "bayonet"
-#define GUN_CALIBRE_35 "caliber .35"
-#define GUN_CALIBRE_50 "caliber .50"
+#define GUN_CALIBRE_9MM "caliber 9mm"
+#define GUN_CALIBRE_12MM "caliber 12mm"
 #define ARROW_FIRING "fires arrows"
 #define GUN_AMR "caliber 60-06"
 

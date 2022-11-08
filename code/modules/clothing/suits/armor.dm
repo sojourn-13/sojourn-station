@@ -600,11 +600,11 @@
 	desc = "A simple plate carrier modified for personal use, additional pouches have been attached to it's front, \
 	with matching knee and arm pads to protect limbs without hindering movement. \
 	Opening the plate pouch would reveal a sheet of some Greyson alloy, welded and forced into a shape for the vest, \
-	far lighter and offering more protection then it's more common ceramic counterparts."
+	far lighter and offering more protection then it's more common ceramic counterparts. \
+	Do to its scrappy yet robust design its able to take additional armor plates then a strandered heavy vest."
 	icon_state = "forehead_armor"
 	item_state = "forehead_armor"
-	max_upgrades = 0 //No upgrading this one
-	tool_qualities = list()
+	max_upgrades = 2 //Like all scav armor, this means investing into these will be better but buying gear will still be viable
 	matter = list(MATERIAL_PLASTEEL = 24, MATERIAL_PLASTIC = 35, MATERIAL_PLATINUM  = 4, MATERIAL_STEEL = 40) //worth stealing
 	price_tag = 1200
 	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
@@ -625,7 +625,6 @@
 	pockets.max_storage_space = 8
 	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
 
-//Blackshield armor
 /obj/item/clothing/suit/armor/platecarrier
 	name = "plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes."
@@ -643,6 +642,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
+//Marshal armor
 /obj/item/clothing/suit/armor/platecarrier/ih
 	name = "plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, in Marshals colors."
@@ -657,6 +657,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
+//Blackshield armor
 /obj/item/clothing/suit/armor/platecarrier/militia
 	name = "blackshield plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one bears the distinct IFF stripes of the Blackshield."

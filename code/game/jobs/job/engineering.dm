@@ -15,7 +15,9 @@
 	wage = WAGE_COMMAND
 	ideal_character_age = 50
 	minimum_character_age = 30
+	health_modifier = 5
 
+	disallow_species = list(FORM_UNBRANDED, FORM_SOTSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 	outfit_type = /decl/hierarchy/outfit/job/engineering/exultant
 
 	access = list(
@@ -74,11 +76,15 @@
 	selection_color = "#d5c88f"
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/engineering/engineer
-	alt_titles = list("Guild Electrician", "Guild Tinkerer", "Guild Pipefitter", "Guild Trainee")
+	alt_titles = list("Guild Trainee","Guild Electrician", "Guild Tinkerer", "Guild Pipefitter")
+	noob_name = "Guild Trainee"
 	access = list(
 		access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,
 		access_external_airlocks, access_construction, access_atmospherics
 	)
+
+	disallow_species = list(FORM_SOTSYNTH, FORM_BSSYNTH, FORM_NASHEF)
+
 
 	stat_modifiers = list(
 		STAT_MEC = 30,

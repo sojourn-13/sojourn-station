@@ -1,5 +1,16 @@
-#define chemical_dispenser_ENERGY_COST (CHEM_SYNTH_ENERGY * CELLRATE) //How many cell charge do we use per unit of chemical?
-#define BOTTLE_SPRITES list("bottle" , "potion", "tincture") //list of available bottle sprites
+
+//How many cell charge do we use per unit of chemical?
+#define chemical_dispenser_ENERGY_COST (CHEM_SYNTH_ENERGY * CELLRATE)
+
+//list of available bottle sprites, holding 60u bottles that hold just about any chem
+#define BOTTLE_SPRITES list("bottle", "potion", "tincture")
+
+//Pill bottles themselfs
+#define PILL_BOTTLE_MODELS list("pill_canister", "pill_lred", "pill_dred", \
+"pill_red", "pill_pink", "pill_orange", "pill_yellow", "pill_green", "pill_blue", \
+"pill_white", "pill_black", "pill_rainbow")
+
+//Syretties, the samll 5u refillable injectors
 #define SYRETTE_SPRITES list("syrette", "syrette_red", "syrette_orange", \
 "syrette_yellow", "syrette_green", "syrette_cyan", "syrette_blue", "syrette_magenta", \
 "syrette_spacealine", "syrette_hyperzine", "syrette_fun", "syrette_fun1", "syrette_antitox", \
@@ -119,15 +130,15 @@
 
 /obj/machinery/chemical_dispenser/ex_act(severity)
 	switch(severity)
-		if(1.0)
-			del(src)
+		if(1)
+			qdel(src)
 			return
-		if(2.0)
-			if (prob(50))
-				del(src)
+		if(2)
+			if(prob(50))
+				qdel(src)
 				return
 
-/obj/machinery/chemical_dispenser/ui_data()
+/obj/machinery/chemical_dispenser/nano_ui_data()
 	var/list/data = list()
 	data["amount"] = amount
 	data["energy"] = round(cell.charge)
@@ -142,12 +153,12 @@
 	data["chemicals"] = chemicals
 
 	if(beaker)
-		data["beaker"] = beaker.reagents.ui_data()
+		data["beaker"] = beaker.reagents.nano_ui_data()
 
 	return data
 
 /obj/machinery/chemical_dispenser/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data()
+	var/list/data = nano_ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -205,12 +216,14 @@
 	if(!Adjacent(user) || !I.Adjacent(user) || user.stat)
 		return ..()
 	if(istype(I, /obj/item/reagent_containers) && I.is_open_container() && !beaker)
-		I.forceMove(src)
-		I.add_fingerprint(user)
-		beaker = I
-		to_chat(user, SPAN_NOTICE("You add [I] to [src]."))
-		SSnano.update_uis(src) // update all UIs attached to src
-		return
+		if(user.drop_from_inventory(I))
+			user.drop_from_inventory(I)
+			I.forceMove(src)
+			I.add_fingerprint(user)
+			beaker = I
+			to_chat(user, SPAN_NOTICE("You add [I] to [src]."))
+			SSnano.update_uis(src) // update all UIs attached to src
+			return
 	. = ..()
 
 /obj/machinery/chemical_dispenser/attackby(obj/item/I, mob/living/user)

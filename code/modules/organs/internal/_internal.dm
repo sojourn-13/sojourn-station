@@ -1,19 +1,23 @@
 /obj/item/organ/internal
 	var/list/owner_verbs = list()
 	var/list/organ_efficiency = list()	//Efficency of an organ, should become the most important variable
-	var/unique_tag	//If an organ is unique and doesn't scale off of organ processes
-	var/specific_organ_size = 1  //Space organs take up in weight calculations, unaffected by w_class for balance reasons
-	var/max_blood_storage = 0	//How much blood an organ stores. Base is 5 * blood_req, so the organ can survive without blood for 5 ticks beofre taking damage (+ blood supply of blood vessels)
-	var/current_blood = 100	//How much blood is currently in the organ
-	var/blood_req = 0	//How much blood an organ takes to funcion
-	var/scanner_hidden = FALSE //Does this organ show on a body scanner?
-	var/nutriment_req = 0	//Controls passive nutriment loss
-	var/oxygen_req = 0	//If oxygen reqs are not satisfied, get debuff and brain starts taking damage
+	var/list/initial_owner_verbs = list()		// For refreshing when a mod is removed
+	var/list/initial_organ_efficiency = list()
+	var/unique_tag						//If an organ is unique and doesn't scale off of organ processes
+	var/specific_organ_size = 1 		//Space organs take up in weight calculations, unaffected by w_class for balance reasons
+	var/max_blood_storage = 0			//How much blood an organ stores. Base is 5 * blood_req, so the organ can survive without blood for 5 ticks beofre taking damage (+ blood supply of blood vessels)
+	var/current_blood = 100				//How much blood is currently in the organ
+	var/blood_req = 0					//How much blood an organ takes to funcion
+	var/scanner_hidden = FALSE 			//Does this organ show on a body scanner?
+	var/nutriment_req = 0				//Controls passive nutriment loss
+	var/oxygen_req = 0					//If oxygen reqs are not satisfied, get debuff and brain starts taking damage
 	layer = ABOVE_LYING_MOB_LAYER
 	origin_tech = list(TECH_BIO = 2)
 
 /obj/item/organ/internal/New(mob/living/carbon/human/holder, datum/organ_description/OD)
 	..()
+	initialize_organ_efficiencies()
+	initialize_owner_verbs()
 	update_icon()
 
 /obj/item/organ/internal/Process()
@@ -55,10 +59,10 @@
 	return organ_efficiency[process_define] - (organ_efficiency[process_define] * (damage / max_damage))
 
 /obj/item/organ/internal/take_damage(amount, silent)	//Deals damage to the organ itself
-	if( parent.limb_efficiency == 0)
-		damage = between(0, src.damage + (amount * 100 ), max_damage)
+	if(parent.limb_efficiency == 0)
+		damage = between(0, damage + (amount * 100 ), max_damage)
 	else
-		damage = between(0, src.damage + (amount * (100 / parent.limb_efficiency)), max_damage)
+		damage = between(0, damage + (amount * (100 / parent.limb_efficiency)), max_damage)
 	if(!(BP_IS_ROBOTIC(src)))
 		//only show this if the organ is not robotic
 		if(owner && parent && amount > 0 && !silent)
@@ -99,6 +103,8 @@
 
 /obj/item/organ/internal/examine(mob/user)
 	. = ..()
+	if(user.stats?.getStat(STAT_BIO) > STAT_LEVEL_BASIC)
+		to_chat(user, SPAN_NOTICE("Organ size: [specific_organ_size]"))
 	if(user.stats?.getStat(STAT_BIO) > STAT_LEVEL_EXPERT)
 		to_chat(user, SPAN_NOTICE("Requirements: <span style='color:red'>[blood_req]</span>/<span style='color:blue'>[oxygen_req]</span>/<span style='color:orange'>[nutriment_req]</span>"))
 
@@ -179,3 +185,38 @@
 			qdel(src)
 	else
 		..()
+
+// Store these so we can properly restore them when installing/removing mods
+/obj/item/organ/internal/proc/initialize_organ_efficiencies()
+	for(var/organ in organ_efficiency)
+		initial_organ_efficiency.Add(organ)
+		initial_organ_efficiency[organ] = organ_efficiency[organ]
+
+/obj/item/organ/internal/proc/initialize_owner_verbs()
+	for(var/V in owner_verbs)
+		initial_owner_verbs.Add(V)
+
+// For handling organ mods
+/obj/item/organ/internal/refresh_upgrades()
+	name = initial(name)
+	color = initial(color)
+	max_upgrades = initial(max_upgrades)
+	prefixes = list()
+	min_bruised_damage = initial(min_bruised_damage)
+	min_broken_damage = initial(min_broken_damage)
+	max_damage = initial(max_damage) ? initial(max_damage) : min_broken_damage * 2
+	owner_verbs = initial_owner_verbs.Copy()
+	organ_efficiency = initial_organ_efficiency.Copy()
+	scanner_hidden = initial(scanner_hidden)
+	unique_tag = initial(unique_tag)
+	specific_organ_size = initial(specific_organ_size)
+	max_blood_storage = initial(max_blood_storage)
+	current_blood = initial(current_blood)
+	blood_req = initial(blood_req)
+	nutriment_req = initial(nutriment_req)
+	oxygen_req = initial(oxygen_req)
+
+	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
+
+	for(var/prefix in prefixes)
+		name = "[prefix] [name]"

@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/lmg
 	name = "SA \"SAW\""
-	desc = "A exstreamly rare HMG produced on a commision. Uses 7.5mm Rifle rounds."
+	desc = "A exstreamly rare HMG produced on a commision. Uses 7.62mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/l6.dmi'
 	var/icon_base
 	icon_base = "l6"
@@ -16,7 +16,7 @@
 	caliber = CAL_RIFLE
 	tac_reloads = FALSE
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 5)
-	price_tag = 2500
+	price_tag = 2000
 	unload_sound 	= 'sound/weapons/guns/interact/lmg_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
@@ -112,7 +112,7 @@
 //Typical LMG/SAW, use this for the high end of "normal."
 /obj/item/gun/projectile/automatic/lmg/saw
 	name = "\"Pegasus\" light machinegun"
-	desc = "A common LMG chambered in .257 Carbine, accepting either boxes or standard magazines, though this calls into question some reliability issues. \
+	desc = "A common LMG chambered in 6.5mm Carbine, accepting either boxes or standard magazines, though this calls into question some reliability issues. \
 	This particular example bears a winged horse in laurels and a \"Pegasus\" nameplate, all other markings have been filed off."
 	icon = 'icons/obj/guns/projectile/lmg.dmi'
 	icon_base = "saw"
@@ -176,3 +176,62 @@
 /obj/item/gun/projectile/automatic/lmg/tk/Initialize()
 	. = ..()
 	update_icon()
+
+// I AM HEAVY WEAPONS GUY, AND THIS...IS MY WEAPON. - Seb
+/obj/item/gun/projectile/automatic/lmg/heroic
+	name = " \"Heroic\" General Purpose Machinegun"
+	desc = "The \"Heroic\" General Purpose Machinegun was created by Nadezhda Marshals in response to Blackshield's lack of suppressing fire armaments. \
+			Inspired by Seinemetall's Takeshi LMG, this GPMG features decent recoil control for its bore, and the bizarre capability of being silenced. \
+			Chambered in 7.62x39mm and meant for emplaced defense, its high rate of fire can mow down wave after wave of armored hostiles with sheer brutality."
+	icon = 'icons/obj/guns/projectile/heroic.dmi'
+	icon_base = "heroic" // Sprites by Albert7076
+	icon_state = "heroic"
+	item_state = "heroic"
+	fire_sound = 'sound/weapons/guns/fire/heroic_fire.ogg'
+	fire_sound_silenced = 'sound/weapons/guns/fire/silenced_mg.ogg' // Yay snowflake silenced sound!
+	caliber = CAL_RIFLE
+	damage_multiplier = 1.2 // With full auto penalties in mind (20%) this becomes a normal x1 damage modifier.
+	penetration_multiplier = 1.0
+	init_recoil = HMG_RECOIL(0.6) // Better slap a bipod on this one! Impossible to fire steady if not braced.
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE) // Believe it or not, an LMG that CAN be silenced.
+	serial_type = "NM"
+
+	init_firemodes = list(
+		FULL_AUTO_600, // Meant to be a supressive fire GPMG
+		BURST_5_ROUND,
+		BURST_8_ROUND
+		)
+
+// Even more special than the Takeshi so we have to do this all over again instead of being a Takeshi child
+/obj/item/gun/projectile/automatic/lmg/heroic/update_icon()
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (cover_open)
+		iconstring += "open"
+		itemstring += "-open"
+	else
+		iconstring += "closed"
+		itemstring += "-closed"
+
+	if (ammo_magazine)
+		var/percent = (ammo_magazine.stored_ammo.len / ammo_magazine.max_ammo) * 100
+		var/number = round(percent, 25)
+		iconstring += "[number]"
+		itemstring += "-mag"
+	else
+		iconstring += "-empty"
+		itemstring += "-nomag"
+
+	if (silenced)
+		iconstring += "_s"
+		itemstring += "_s"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+
+
+/obj/item/gun/projectile/automatic/lmg/heroic/Initialize()
+	. = ..()
+	update_icon()
+

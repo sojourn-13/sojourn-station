@@ -14,7 +14,6 @@
 	var/corporation = null
 	var/heat = 0
 
-
 /obj/proc/is_hot()
 	return heat
 
@@ -23,15 +22,6 @@
 
 /obj/examine(mob/user, distance=-1, infix, suffix)
 	..(user, distance, infix, suffix)
-	if(get_dist(user, src) <= 2)
-		if (corporation)
-			if (corporation in GLOB.global_corporations)
-				var/datum/corporation/C = GLOB.global_corporations[corporation]
-				to_chat(user, "<font color='[C.textcolor]'>You think this [src.name] create a \
-				<IMG CLASS=icon SRC=\ref[C.icon] ICONSTATE='[C.icon_state]'>\
-				[C.name]. [C.about]</font>")
-			else
-				to_chat(user, "You think this [src.name] create a [corporation].")
 	return distance == -1 || (get_dist(src, user) <= distance)
 
 
@@ -39,7 +29,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/Topic(href, href_list, var/datum/topic_state/state = GLOB.default_state)
+/obj/Topic(href, href_list, var/datum/nano_topic_state/state = GLOB.default_state)
 	if(..())
 		return 1
 
@@ -52,10 +42,10 @@
 	CouldNotUseTopic(usr)
 	return 1
 
-/obj/proc/OnTopic(mob/user, href_list, datum/topic_state/state)
+/obj/proc/OnTopic(mob/user, href_list, datum/nano_topic_state/state)
 	return TOPIC_NOACTION
 
-/obj/CanUseTopic(mob/user, datum/topic_state/state)
+/obj/CanUseTopic(mob/user, datum/nano_topic_state/state)
 	if(user.CanUseObjTopic(src))
 		return ..()
 	return STATUS_CLOSE
@@ -209,6 +199,19 @@
 	)
 	return TRUE
 
+/obj/proc/replace_item(obj/item/I_old, obj/item/I_new, mob/living/user)
+	if(!I_old || !I_new || !istype(user) || user.stat || !user.Adjacent(I_new) || !user.Adjacent(I_old) || !user.unEquip(I_new))
+		return FALSE
+	I_new.forceMove(src)
+	user.put_in_hands(I_old)
+	playsound(src.loc, 'sound/weapons/guns/interact/pistol_magout.ogg', 75, 1)
+	spawn(2)
+		playsound(src.loc, 'sound/weapons/guns/interact/pistol_magin.ogg', 75, 1)
+	user.visible_message(
+		"[user] replaces [I_old] with [I_new] in [src].",
+		SPAN_NOTICE("You replace [I_old] with [I_new] in [src]."))
+	return TRUE
+
 /obj/proc/insert_item(var/obj/item/I, var/mob/living/M)
 	if(!I || !M.unEquip(I))
 		return FALSE
@@ -261,3 +264,5 @@
 /obj/proc/multiply_projectile_step_delay(newmult)
 
 /obj/proc/multiply_projectile_agony(newmult)
+
+/obj/proc/multiply_pve_damage(newmult)

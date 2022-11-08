@@ -23,7 +23,6 @@
 	addtimer(CALLBACK(src, .proc/lower_entropy), 10 MINUTES, TIMER_STOPPABLE)
 
 /obj/machinery/telesci_inhibitor/nt_bluespace_seer/examine(mob/living/user, distance)
-	. = ..()
 	var/area/my_area = get_area(src)
 	if(my_area.bluespace_entropy)
 		to_chat(user, SPAN_NOTICE("Nullifer scanner reads the room to [my_area.bluespace_entropy] annomlst bluespace."))

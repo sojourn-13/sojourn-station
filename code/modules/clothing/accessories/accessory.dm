@@ -86,22 +86,22 @@
 
 /obj/item/clothing/accessory/tie/blueclip
 	name = "blue clip tie"
-	desc = "A neosilk clip-on tie with a striped blue design and clip."
+	desc = "A neosilk clip-on long tie with a striped blue design and clip."
 	icon_state = "bluecliptie"
 
 /obj/item/clothing/accessory/tie/bluestriped
 	name = "blue striped tie"
-	desc = "A neosilk clip-on tie with a striped blue design."
+	desc = "A neosilk clip-on long tie with a striped blue design."
 	icon_state = "bluelongtie"
 
 /obj/item/clothing/accessory/tie/darkgreen
 	name = "dark green tie"
-	desc = "A neosilk clip-on tie with a dark green design."
+	desc = "A neosilk clip-on long tie with a dark green design."
 	icon_state = "dgreentie"
 
 /obj/item/clothing/accessory/tie/navy
 	name = "navy tie"
-	desc = "A neosilk clip-on tie with a navy design."
+	desc = "A neosilk clip-on long tie with a navy design."
 	icon_state = "navytie"
 
 /obj/item/clothing/accessory/tie/red
@@ -111,17 +111,17 @@
 
 /obj/item/clothing/accessory/tie/redclip
 	name = "red clip tie"
-	desc = "A neosilk clip-on tie with a striped red design and clip."
+	desc = "A neosilk clip-on long tie with a striped red design and clip."
 	icon_state = "redcliptie"
 
 /obj/item/clothing/accessory/tie/redstriped
 	name = "red striped tie"
-	desc = "A neosilk clip-on tie with a striped red design."
+	desc = "A neosilk clip-on long tie with a striped red design."
 	icon_state = "redlongtie"
 
 /obj/item/clothing/accessory/tie/white
 	name = "white tie"
-	desc = "A neosilk clip-on tie with a white design."
+	desc = "A neosilk clip-on long tie with a white design."
 	icon_state = "whitetie"
 
 /obj/item/clothing/accessory/tie/yellow
@@ -365,8 +365,8 @@
 
 /obj/item/clothing/accessory/halfcape/ceo
 	name = "CEOs holo-mantle"
-	desc = "A fancy holo-mantle made from light-toned silk and bearing the rank markings of the Prime. Fine alabaster silks and gold trim, despite its seemingly similar\
-	 make to similar cloaks, its quality cannot be contested."
+	desc = "A fancy holo-mantle made from light-toned silk and bearing the rank markings of the Prime. Fine alabaster silks and gold trim, despite its seemingly similar \
+	make to similar cloaks, its quality cannot be contested."
 	icon_state = "half_ceo"
 
 
@@ -424,7 +424,7 @@
 
 /obj/item/clothing/accessory/job/cape/church/smallalt
 	name = "red Absolutists cloak"
-	icon_state = "churchcloakblack"
+	icon_state = "churchcloakred"
 	desc = "A sleek, luxurious cloak with red trim."
 
 /obj/item/clothing/accessory/job/cape/ironhammer
@@ -575,6 +575,106 @@
 		usr.update_action_buttons()
 		return 1
 
+/*Dusters*/
+
+/obj/item/clothing/accessory/duster
+	name = "tan duster"
+	desc = "A resilient tan duster composed of somewhat frayed fabric."
+	icon_state = "soldiercoat"
+	item_state = "soldiercoat"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+/obj/item/clothing/accessory/duster/brown
+	name = "brown duster"
+	desc = "A standard brown duster with an added collar."
+	icon_state = "duster"
+	item_state = "duster"
+
+/obj/item/clothing/accessory/duster/chestnut
+	name = "chestnut duster"
+	desc = "A worn brown duster with a tough metallic belt."
+	icon_state = "autumn"
+	item_state = "autumn"
+
+/obj/item/clothing/accessory/duster/crimson
+	name = "crimson duster"
+	desc = "A deep red duster coat with a thick layer of padding."
+	icon_state = "battlecoat"
+	item_state = "battlecoat"
+
+/obj/item/clothing/accessory/duster/bloodred
+	name = "blood red duster"
+	desc = "A deep red duster coat with black trim padding."
+	icon_state = "te_coat"
+	item_state = "te_coat"
+
+/obj/item/clothing/accessory/duster/gauntlet
+	name = "gauntlet duster"
+	desc = "A thick brown duster with a tough but comfortable design."
+	icon_state = "sheriff"
+	item_state = "sheriff"
+
+/obj/item/clothing/accessory/duster/ivory
+	name = "ivory duster"
+	desc = "A lightly toned duster with a thinly layered undercoat."
+	icon_state = "ranger"
+	item_state = "ranger"
+
+/obj/item/clothing/accessory/duster/lumber
+	name = "lumber duster"
+	desc = "A dark blue sleeveless duster with a clasp."
+	icon_state = "veteran"
+	item_state = "veteran"
+
+/obj/item/clothing/accessory/duster/navy
+	name = "navy duster"
+	desc = "A battered dark navy duster with a well-worn look."
+	icon_state = "courier"
+	item_state = "courier"
+
+/obj/item/clothing/accessory/duster/cyberpunklong
+	name = "cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long"
+	item_state = "cyberpunksleek_long"
+
+/obj/item/clothing/accessory/duster/cyberpunklong/green
+	name = "green cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long_green"
+	item_state = "cyberpunksleek_long_green"
+
+/obj/item/clothing/accessory/duster/cyberpunklong/black
+	name = "black cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long_black"
+	item_state = "cyberpunksleek_long_black"
+
+/obj/item/clothing/accessory/duster/cyberpunklong/white
+	name = "white cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long_white"
+	item_state = "cyberpunksleek_long_white"
+
+/obj/item/clothing/accessory/duster/bladerunner
+	name = "runner coat"
+	desc = "A sleek longcoat perfectly made for a driven person."
+	icon_state = "bladerunner_coat"
+	item_state = "bladerunner_coat"
+
+/obj/item/clothing/accessory/duster/donte
+	name = "exterminators jacket"
+	desc = "Your prom date won't know what to say when you show up wearing this stylish leather coat."
+	icon_state = "dante"
+	item_state = "dante"
+
+/obj/item/clothing/accessory/duster/denton
+	name = "futuristic coat"
+	desc = "whether hopping into action, or reading your coworkers emails, you'll be ready for any hostage situations"
+	icon_state = "denton"
+	item_state = "denton"
+
+/*BS Coats*/
+
 /obj/item/clothing/accessory/bscloak
 	name = "Blackshield longcoat"
 	desc = "A simple, durable longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
@@ -588,12 +688,23 @@
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER // Made them children of longcoat so should inherit but juuust in case...
 
 /obj/item/clothing/accessory/bscloak/olive
-	name = "Blackshield tan longcoat"
+	name = "Blackshield drab longcoat"
 	desc = "A simple, durable drab longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
 	icon_state = "bs_longcoat_green"
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /*Scarves*/
+
+/obj/item/clothing/accessory/scarf
+	name = "striped red scarf"
+	desc = "A striped red scarf."
+	icon_state = "stripedredscarf"
+	item_state = "stripedredscarf"
+	body_parts_covered = FACE
+	item_flags = FLEXIBLEMATERIAL
+	w_class = ITEM_SIZE_SMALL
+	gas_transfer_coefficient = 0.90
+	price_tag = 50
 
 /obj/item/clothing/accessory/scarf/black
 	name = "black scarf"
@@ -709,11 +820,6 @@
 	desc = "A blue neck scarf."
 	icon_state = "blue_scarf"
 	item_state = "blue_scarf"
-	body_parts_covered = FACE
-	item_flags = FLEXIBLEMATERIAL
-	w_class = ITEM_SIZE_SMALL
-	gas_transfer_coefficient = 0.90
-	price_tag = 50
 
 /obj/item/clothing/accessory/scarf/checkered
 	name = "checkered neck scarf"
@@ -751,12 +857,6 @@
 	icon_state = "stripedpurplescarf"
 	item_state = "stripedpurplescarf"
 
-/obj/item/clothing/accessory/scarf
-	name = "striped red scarf"
-	desc = "A striped red scarf."
-	icon_state = "stripedredscarf"
-	item_state = "stripedredscarf"
-
 /obj/item/clothing/accessory/ninjascarf /*Omitted from scarf selection because it's more of a costume piece.*/
 	name = "ninja scarf"
 	desc = "A stealthy, ominous scarf."
@@ -764,6 +864,74 @@
 	item_state = "ninja_scarf"
 	siemens_coefficient = 0
 
+//Sprites by Michiyamenotehifunana and Occulist
+/obj/item/clothing/accessory/shemaugh
+	name = "shemaugh"
+	desc = "A piece of light fabric, suited for protection in hot, arid climates."
+	icon_state = "shemaugh"
+	item_state = "shemaugh"
+
+/obj/item/clothing/accessory/shemaugh/blue
+	name = "blue shemaugh"
+	icon_state = "shemaugh-blue"
+	item_state = "shemaugh-blue"
+
+/obj/item/clothing/accessory/shemaugh/red
+	name = "red shemaugh"
+	icon_state = "shemaugh-red"
+	item_state = "shemaugh-red"
+
+/obj/item/clothing/accessory/shemaugh/grey
+	name = "grey shemaugh"
+	icon_state = "shemaugh-grey"
+	item_state = "shemaugh-grey"
+
+/obj/item/clothing/accessory/shemaugh/purple
+	name = "purple shemaugh"
+	icon_state = "shemaugh-purple"
+	item_state = "shemaugh-purple"
+
+/obj/item/clothing/accessory/shemaugh/pink
+	name = "pink shemaugh"
+	icon_state = "shemaugh-pink"
+	item_state = "shemaugh-pink"
+
+/obj/item/clothing/accessory/shemaugh/brown
+	name = "brown shemaugh"
+	icon_state = "shemaugh-brown"
+	item_state = "shemaugh-brown"
+
+/obj/item/clothing/accessory/shemaugh/copper
+	name = "copper shemaugh"
+	icon_state = "shemaugh-copper"
+	item_state = "shemaugh-copper"
+
+/obj/item/clothing/accessory/shemaugh/orange
+	name = "orange shemaugh"
+	icon_state = "shemaugh-orange"
+	item_state = "shemaugh-orange"
+
+/obj/item/clothing/accessory/shemaugh/yellow
+	name = "yellow shemaugh"
+	icon_state = "shemaugh-yellow"
+	item_state = "shemaugh-yellow"
+
+/obj/item/clothing/accessory/shemaugh/lime
+	name = "lime shemaugh"
+	icon_state = "shemaugh-lime"
+	item_state = "shemaugh-lime"
+
+/obj/item/clothing/accessory/shemaugh/cyan
+	name = "cyan shemaugh"
+	icon_state = "shemaugh-cyan"
+	item_state = "shemaugh-cyan"
+
+/obj/item/clothing/accessory/shemaugh/ice
+	name = "ice shemaugh"
+	icon_state = "shemaugh-ice"
+	item_state = "shemaugh-ice"
+
+//End of sprites by Michiyamenotehifunana and Occulist
 /*One-Off Stuff*/
 
 /obj/item/clothing/accessory/dropstraps
@@ -783,13 +951,13 @@
 	desc = "A lightweight polymer frame designed to hold a neck upright comfortably."
 	icon_state = "neckbrace"
 	item_state = "neckbrace"
-	
+
 /obj/item/clothing/accessory/pilotwebbing
 	name = "basic pilot harness"
 	desc = "A basic harness commonly used through out the galaxy from shuttle pilots to mech pilots. The harness itself has minimal safety strapping however would still ensure you're safely strapped into whatever cockpit you may be seated in."
 	icon_state = "basicpilot"
 	item_state = "basicpilot"
-	
+
 /obj/item/clothing/accessory/pilotwebbing/military
 	name = "military pilot harness"
 	desc = "A military harness commonly seen being used by pilots within military or paramilitary forces for their fighter pilots and combat mech pilots. The harness itself has extra safety strapping and buckles allowing for the attaching of safety ane EVA equipment in case of an emergency however would still ensure you're safely strapped into whatever cockpit you may be seated in."
@@ -1085,12 +1253,6 @@
 	icon_state = "wristwatch_fancy"
 	item_state = "wristwatch_fancy"
 
-/obj/item/clothing/accessory/bracelet/watch
-	name = "fancy watch"
-	desc = "An expensive watch with a red band wrapped around your wrist. Snazzy."
-	icon_state = "wristwatch_fancy"
-	item_state = "wristwatch_fancy"
-
 /obj/item/clothing/accessory/bracelet/watch/leather
 	name = "fancy leather watch"
 	desc = "An expensive watch with a leather brown band wrapped around your wrist. Snazzy."
@@ -1175,3 +1337,109 @@
 	item_state = "sweatervest_red"
 	overlay_state = "sweatervest_red"
 
+/* Passports/work visa/passcard */
+
+/obj/item/clothing/accessory/passcard
+	name = "general passcard"
+	desc = "A passcard issued by the Nadezhda Colony when someone gains permanent residency on Amethyn, in the Chromin 8 system."
+	icon_state = "passcard_general"
+	item_state = "general_passport"
+
+/obj/item/clothing/accessory/passcard/resident_card
+	name = "resident passcard"
+	desc = "A card issued by the Nadezhda Colony for colonists who are offered temporary residency on Amethyn, in the Chromin 8 system."
+	icon_state = "resident_card"
+	item_state = "passport"
+
+/obj/item/clothing/accessory/passcard/work_visa
+	name = "work visa"
+	desc = "A card issued by the Nadezhda Colony for colonists who are offered residency for the purpose of work on Amethyn, in the Chromin 8 system. "
+	icon_state = "workvisa"
+	item_state = "pass"
+
+/obj/item/clothing/accessory/passcard/new_damascus
+	name = "New Damascus passcard"
+	desc = "A passcard card issued to citizens of New Damascus, once a bustling manufacturing world that was rich in oxygen and low in moisture. New Damascus is an arid world slowly bringing itself back from the brink of economic collapse."
+	icon_state = "passcard_new_damascus"
+	item_state = "passport"
+
+/obj/item/clothing/accessory/passcard/fringe_colonies
+	name = "Outer Fringe passcard"
+	desc = "A passcard issued to citizens and colonists away from Sol space or Chromin itself. The look of this passcard may vary group to group, but no matter where it comes from, it's generally understood that whoever owns this passcard has never been a Solarian citizen."
+	icon_state = "passcard_coc"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/sanperitor
+	name = "Sanperitor passcard"
+	desc = "A passcard issued to citizens of Sanperitor, an low atmosphere world closer to its system's star then most species are comfortable living with. The intense solar radiation of the planet has caused those who reside there to naturally adapt to the toxins present in everyday life."
+	icon_state = "passcard_sanperitor"
+	item_state = "pass"
+
+/obj/item/clothing/accessory/passcard/rankorin
+	name = "Rankorin passcard"
+	desc = "A passcard issued to citizens of Rankorin. Rankorin is in many parts considered a 'death world' due to its highly toxic atmosphere, caused by a combination of natural flora and common storms of poisonous dusts clouds."
+	icon_state = "passcard_rankorin"
+	item_state = "pass"
+
+/obj/item/clothing/accessory/passcard/mardinat_yunan
+	name = "Mardinat Yanun passcard"
+	desc = "A passcard issued to citizens of Mardinat Yunan, initially selected for habitation for its rich gasses and potential for being located on an upcoming trade lane. This gas giant had many of its economic dreams dashed, with the gaseous mixture of the atmosphere being poor for fuel production and the trade lane never materializing."
+	icon_state = "passcard_madinat_yunan"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/thalatta
+	name = "Thalatta passcard"
+	desc = "A passcard issued to crewmembers of the City-Ship Thalatta, translated from the ancient Greek term for 'The Sea.' Thalatta is an aptly named mobile city that is ever-sailing through the great cosmic sea."
+	icon_state = "passcard_thalatta"
+	item_state = "pass"
+
+/obj/item/clothing/accessory/passcard/onkarth
+	name = "Onkarth passcard"
+	desc = "A passcard issued to citizens of Onkarth, the homeworld of the Sablekyne, a primarily desert planet of extreme conditions along the equator and northern fringes of civilization."
+	icon_state = "passcard_onkarth"
+	item_state = "passport"
+
+/obj/item/clothing/accessory/passcard/neapolis
+	name = "Neapolis passcard"
+	desc = "A passcard issued to citizens of Neapolis, a lush garden world that has modeled itself as an escape for repressed artists, political exiles, and individuals who would largely be ostracized by most major powers."
+	icon_state = "passcard_neopolis"
+	item_state = "passport"
+
+
+/obj/item/clothing/accessory/passcard/aqua_fria
+	name = "Aqua Fria passcard"
+	desc = "A passcard issued to citizens of Aqua Fria. Tucked away in a heavily populated system, this large aquatic world has made a reputation for being a substantial food source and home to a number of research institutes."
+	icon_state = "passcard_aqua_fria"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/donbettyr
+	name = "Donbettyr passcard"
+	desc = "A passcard issued to citizens of Donbettyr, the homeworld of the Akula. An old, primarily ocean world with two moons and few thousand separated areas of land making up a series of islands and archipelagos."
+	icon_state = "passcard_donbettyr"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/passport_sol
+	name = "old solarian passport"
+	desc = "An old passport issued to citizens of the Solarian Federation, this one seems to have been issued before the Bluespace Collapse. Why is it here? Is it a trinket?"
+	icon_state = "passport_sol"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/passport_general
+	name = "passport"
+	desc = "A passport issued to Nadezhda Colonists that live on Amethyn, in the Chromin 8 system."
+	icon_state = "general_passport"
+	item_state = "general_passport"
+
+/obj/item/clothing/accessory/passcard/passport_kriosan
+	name = "Kriosan passport"
+	desc = "A passport issued to Kriosans by the Kriosan Government who are working or living on Amethyn, in the Chromin 8 system."
+	icon_state = "workvisa"
+	item_state = "kuri"
+
+/obj/item/clothing/accessory/hunter_necklace
+	name = "Fang Tooth Necklace"
+	desc = "A collection of pristine fangs taken from the prey of the hunt tied with some leather strapping."
+	icon_state = "btnecklace"
+	item_state = "btnecklace"
+	slot_flags = SLOT_MASK | SLOT_ACCESSORY_BUFFER
+	price_tag = 1500

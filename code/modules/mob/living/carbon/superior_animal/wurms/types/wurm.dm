@@ -38,6 +38,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	wander = FALSE
 	fire_verb = "spits"
 	see_in_dark = 10
+	cant_gib = TRUE
 
 	destroy_surroundings = TRUE
 
@@ -94,7 +95,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 				continue*/
 
 // Mine a tile
-/mob/living/carbon/superior_animal/wurm/proc/mine(var/turf/simulated/mineral/M)
+/mob/living/carbon/superior_animal/wurm/proc/mine(turf/simulated/mineral/M)
 	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
 	M.GetDrilled() // Mine the turf
 	return TRUE
@@ -121,7 +122,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 
 	qdel(src)
 
-	//new /obj/effect/gibspawner/generic(src.loc) - This one is just anti-lag not really needed to giv these
+	//new /obj/effect/gibspawner/generic(loc) - This one is just anti-lag not really needed to giv these
 
 //////////////////
 //Types of Wurms//

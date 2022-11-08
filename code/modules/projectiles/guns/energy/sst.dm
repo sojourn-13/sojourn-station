@@ -1,10 +1,11 @@
-/obj/item/gun/energy/sst/Initialize()
+/obj/item/gun/energy/sst/add_initial_transforms()
 	. = ..()
-	src.transform *= 0.65
+
+	add_new_transformation(/datum/transform_type/modular, list(0.65, 0.65, flag = SST_INITIAL_SCALE_TRANSFORM, priority = SST_INITIAL_SCALE_TRANSFORM_PRIORITY))
 
 /obj/item/gun/energy/sst
 	name = "\"SST Abnegate\" handgun"
-	desc = "\"Soteria Surface Tension\" brand handgun. A cooperative project between Soteria Medical and Soteria Research, the Abnegate uses Greyson tech to internally synthesize soporific coated .35 calliber bullets. \
+	desc = "\"Soteria Surface Tension\" brand handgun. A cooperative project between Soteria Medical and Soteria Research, the Abnegate uses Greyson tech to internally synthesize soporific coated 9mm bullets. \
 	Initially designed at the request of orderlies for a proper way to sedate rowdy armored targets from a distance."
 	icon = 'icons/obj/guns/energy/abnegate.dmi'
 	icon_state = "abnegate"
@@ -17,7 +18,7 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_STEEL = 8, MATERIAL_SILVER = 8, MATERIAL_PLATINUM = 0.1)
 	charge_cost = 100
 	twohanded = FALSE
-	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_CALIBRE_9MM)
 	suitable_cell = /obj/item/cell/medium
 	fire_delay = 5
 	init_recoil = CARBINE_RECOIL(1)

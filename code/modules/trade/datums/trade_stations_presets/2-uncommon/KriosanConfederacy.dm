@@ -2,7 +2,10 @@
 	name_pool = list(
 		"Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greeting. Please amuse yourself with our stock.\""
 	)
+	icon_states = list("htu_destroyer", "ship")
 	uid = "kriosanconfederacy"
+	tree_x = 0.54
+	tree_y = 0.7
 	stations_recommended = list("mcronalds")
 	offer_limit = 20
 	base_income = 1600
@@ -17,7 +20,7 @@
 			/obj/item/gun/projectile/boltgun/light_wood,
 			/obj/item/gun/projectile/boltgun/sa,
 			/obj/item/gun/projectile/automatic/nordwind/strelki,
-			/obj/item/gun/projectile/boltgun/survivalrifle,
+			/obj/item/gun/projectile/automatic/survivalrifle,
 			/obj/item/gun/projectile/shotgun/doublebarrel,
 			/obj/item/gun/projectile/shotgun/pump,
 			/obj/item/tool/knife/dagger
@@ -34,6 +37,9 @@
 			/mob/living/simple_animal/corgi/puppy = good_data("Young Corgi", list(3, 5), 250),
 			/mob/living/simple_animal/lizard = good_data("Crate Pusher", list(2, 5), 100),
 			/mob/living/simple_animal/cat = good_data("Rat Slayer", list(4, 5), 150)
+		),
+		"Assault Armor" = list(
+			/obj/item/clothing/suit/space/void/assault = good_data("Assault Armor", list(3, 5), 20000)
 		)
 	)
 	hidden_inventory = list(

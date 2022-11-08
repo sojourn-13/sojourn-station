@@ -12,6 +12,66 @@
 	icon_state = "blue_pyjamas"
 	item_state = "w_suit"
 
+
+/obj/item/clothing/under/dodgeball_red
+	name = "red dodgeball uniform"
+	desc = "A red threaded uniform for gym dodgeball activities."
+	icon_state = "gym_M_red"
+	item_state = "gym_M_red"
+
+/obj/item/clothing/under/dodgeball_red/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Male"] = "gym_M_red"
+	options["Female"] = "gym_F_red"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your hides into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/under/dodgeball_blue
+	name = "blue dodgeball uniform"
+	desc = "A blue threaded uniform for gym dodgeball activities."
+	icon_state = "gym_M_blue"
+	item_state = "gym_M_blue"
+
+
+/obj/item/clothing/under/dodgeball_blue/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Male"] = "gym_M_blue"
+	options["Female"] = "gym_F_blue"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your hides into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /*Gowns and stuff*/
 
 /obj/item/clothing/under/bathrobe
@@ -666,6 +726,13 @@
 	item_state = "barmaid"
 	price_tag = 45
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
+
+/obj/item/clothing/under/fancy_redish_suit
+	name = "expensive brown suit"
+	desc = "A brown suit with a white undershirt and tie, its higher value comes form its likeness to being worn by many movie stars form Sol movies. Its also just well made."
+	icon_state = "apsuit"
+	item_state = "apsuit"
+	price_tag = 50
 
 /obj/item/clothing/under/helltaker
 	name = "black charming outfit" // Helltaker reference

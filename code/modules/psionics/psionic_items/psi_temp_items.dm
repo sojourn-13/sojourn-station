@@ -10,7 +10,8 @@
 	icon_state = "psi_omni"
 	force = WEAPON_FORCE_DANGEROUS
 	worksound = WORKSOUND_DRIVER_TOOL
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_HUGE
+	slot_flags = null
 	flags = CONDUCT
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 25, QUALITY_BOLT_TURNING = 25, QUALITY_DRILLING = 25, QUALITY_WELDING = 25, QUALITY_CAUTERIZING = 25, QUALITY_PRYING = 25, QUALITY_DIGGING = 25, QUALITY_PULSING = 25, QUALITY_WIRE_CUTTING = 25, QUALITY_HAMMERING = 25, QUALITY_SHOVELING = 25, QUALITY_EXCAVATION = 25, QUALITY_CLAMPING = 25, QUALITY_RETRACTING = 25, QUALITY_SAWING = 25, QUALITY_BONE_SETTING = 25, QUALITY_CUTTING = 25, QUALITY_BONE_GRAFTING = 25)
 	degradation = 0 // Can't degrade
@@ -43,6 +44,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	worksound = WORKSOUND_HAMMER
 	w_class = ITEM_SIZE_BULKY
+	slot_flags = null
 	origin_tech = list()
 	matter = list()
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
@@ -117,6 +119,7 @@
 	use_power_cost = 0 // Don't use power
 	max_upgrades = 0 // Can't upgrade it
 	price_tag = 0
+	slot_flags = null
 	var/mob/living/carbon/holder // The one that prevent the blade from fading
 
 /obj/item/tool/knife/psionic_blade/New(var/loc, var/mob/living/carbon/Maker)
@@ -195,6 +198,8 @@
 	fire_sound = 'sound/weapons/wave.ogg'
 	fire_sound_text = "kinetic blast"
 	max_upgrades = 0
+	slot_flags = null
+	w_class = ITEM_SIZE_HUGE
 	var/projectile_type = /obj/item/projectile/kinetic_blast // What does it shoot
 	var/use_amount = 1 // How many psi-points is used per shot
 	var/mob/living/carbon/holder // The one that prevent the fist from fading
@@ -330,7 +335,8 @@
 	var/list/explosion_values = list(0, 1, 2, 4) // Explosions strengths, same value as a regular missile.
 
 /obj/item/projectile/kinetic_blast_pyro/on_impact(atom/target)
-	explosion(loc, explosion_values[1], explosion_values[2], explosion_values[3], explosion_values[4])
+	if (!testing)
+		explosion(loc, explosion_values[1], explosion_values[2], explosion_values[3], explosion_values[4])
 	return TRUE
 
 /obj/item/projectile/kinetic_blast_electro

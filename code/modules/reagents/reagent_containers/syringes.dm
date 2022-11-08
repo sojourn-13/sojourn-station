@@ -25,6 +25,7 @@
 	var/image/filling //holds a reference to the current filling overlay
 	var/visible_name = "a syringe"
 	var/time = 30
+	price_tag = 3 //1 glass and 1 steel for something clean is reasonable
 
 /obj/item/reagent_containers/syringe/on_reagent_change()
 	if(mode == SYRINGE_INJECT && !reagents.total_volume)
@@ -42,7 +43,7 @@
 	update_icon()
 
 /obj/item/reagent_containers/syringe/attack_self(mob/user as mob)
-	if(user.stats.getStat(STAT_BIO) < 15 && !usr.stat_check(STAT_COG, 30) && !usr.stats.getPerk(PERK_ADDICT))
+	if(!user.stat_check(STAT_BIO, 10) && !user.stat_check(STAT_COG, 20) && !user.stats.getPerk(PERK_ADDICT))
 		to_chat(user, SPAN_WARNING("You have no idea how to properly use this syringe!"))
 		return
 
@@ -54,6 +55,7 @@
 		if(SYRINGE_BROKEN)
 			return
 	update_icon()
+	price_tag = 0
 
 /obj/item/reagent_containers/syringe/attack_hand()
 	..()
@@ -120,6 +122,7 @@
 						on_reagent_change()
 						reagents.handle_reactions()
 					to_chat(user, SPAN_NOTICE("You take a blood sample from [target]."))
+					price_tag = 0
 					for(var/mob/O in viewers(4, user))
 						O.show_message(SPAN_NOTICE("[user] takes a blood sample from [target]."), 1)
 
@@ -134,6 +137,7 @@
 
 				var/trans = target.reagents.trans_to_obj(src, amount_per_transfer_from_this)
 				to_chat(user, SPAN_NOTICE("You fill the syringe with [trans] units of the solution."))
+				price_tag = 0
 
 
 		if(SYRINGE_INJECT)
@@ -185,6 +189,7 @@
 				else if(!L.can_inject(user, TRUE))
 					return
 
+				price_tag = 0
 				if(target != user)
 					user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 					user.do_attack_animation(target)
@@ -202,6 +207,7 @@
 					user.visible_message(SPAN_WARNING("[user] injects \himself with [src]!"), SPAN_WARNING("You inject yourself with [src]."), range = 3)
 			var/trans
 			if(ismob(target))
+				price_tag = 0
 				trans = reagents.trans_to_mob(target, amount_per_transfer_from_this, CHEM_BLOOD)
 				admin_inject_log(user, target, src, reagents.log_list(), trans)
 				// user's stat check that causing pain if they are amateur

@@ -72,7 +72,7 @@
 	/obj/item/clothing/gloves/stungloves,
 	/obj/item/clothing/mask/balaclava/tactical,
 	/obj/item/clothing/glasses/sechud/tactical,
-	/obj/item/device/radio/headset/headset_sec)
+	/obj/item/device/radio/headset/headset_sec/bowman)
 
 	var/list/loadout_3 = list(/obj/item/clothing/under/rank/scientist,
 	/obj/item/clothing/head/bandana/orange,
@@ -222,7 +222,7 @@
 		A.disguise(loadout[10], user)
 
 
-/obj/item/clothing/under/chameleon/nano_ui_interact(mob/user, ui_key, datum/nanoui/ui, force_open, datum/nanoui/master_ui, datum/topic_state/state)
+/obj/item/clothing/under/chameleon/nano_ui_interact(mob/user, ui_key, datum/nanoui/ui, force_open, datum/nanoui/master_ui, datum/nano_topic_state/state)
 	var/list/data = list()
 
 	var/list/loadouts = list()

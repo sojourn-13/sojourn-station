@@ -8,7 +8,7 @@
 
 // Nonsensical value for l_color default, so we can detect if it gets set to null.
 #define NONSENSICAL_VALUE -99999
-/atom/proc/set_light(l_range, l_power, l_color = NONSENSICAL_VALUE)
+/atom/proc/set_light(l_range, l_power, l_color = NONSENSICAL_VALUE, no_update = FALSE)
 	. = 0 //make it less costly if nothing's changed
 
 	if(l_power != null && l_power != light_power)
@@ -21,7 +21,8 @@
 		light_color = l_color
 		. = 1
 
-	if(.) update_light()
+	if(. && !no_update)
+		update_light()
 
 #undef NONSENSICAL_VALUE
 
@@ -74,12 +75,6 @@
 		if(open.isOpen())
 			open.fallThrough(src)
 
-/atom/movable/Destroy()
-	var/turf/T = loc
-	if(opacity && istype(T))
-		T.reconsider_lights()
-	return ..()
-
 /atom/movable/Move()
 	var/turf/old_loc = loc
 	. = ..()
@@ -127,5 +122,5 @@
 
 /obj/item/dropped()
 	. = ..()
-	SEND_SIGNAL(src, COMSIG_ITEM_DROPPED, src)
+	LEGACY_SEND_SIGNAL(src, COMSIG_ITEM_DROPPED, src)
 	update_light()

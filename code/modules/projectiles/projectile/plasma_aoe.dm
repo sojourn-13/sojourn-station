@@ -13,10 +13,11 @@
 	recoil = 30
 
 /obj/item/projectile/plasma/aoe/on_hit(atom/target)
-	if(emp_strength)
-		empulse(target, aoe_strong, aoe_weak, strength=emp_strength)
-	if(heat_damage)
-		heatwave(target, aoe_strong, aoe_weak, heat_damage, fire_stacks, armor_penetration)
+	if (!testing)
+		if(emp_strength)
+			empulse(target, aoe_strong, aoe_weak, strength=emp_strength)
+		if(heat_damage)
+			heatwave(target, aoe_strong, aoe_weak, heat_damage, fire_stacks, armor_penetration)
 	..()
 
 /obj/item/projectile/plasma/aoe/ion
@@ -30,6 +31,7 @@
 	heat_damage = 20
 	emp_strength = 2
 	recoil = 5
+	added_damage_laser_pve = 10
 
 	fire_stacks = FALSE
 
@@ -45,6 +47,7 @@
 	recoil = 3
 
 	fire_stacks = FALSE
+	added_damage_laser_pve = 10
 
 /obj/item/projectile/plasma/aoe/heat
 	name = "high-temperature plasma blast"
@@ -58,6 +61,7 @@
 	recoil = 12
 
 	fire_stacks = TRUE
+	added_damage_laser_pve = 10
 
 /obj/item/projectile/plasma/aoe/heat/strong
 	name = "high-temperature plasma blast"
@@ -71,3 +75,4 @@
 	recoil = 80
 
 	fire_stacks = TRUE
+	added_damage_laser_pve = 26.5

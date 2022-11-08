@@ -37,7 +37,7 @@
 	name = "Excelsior \"Artileria Flare\""
 	desc = "ARTILERIA! This is a standard artillery signaling flare used by Excelsior forces. Better stay well away from it!"
 	icon = 'icons/obj/lighting.dmi'
-	icon_state = "flare-on"
-	item_state = "flare-on"
+	icon_state = "aflare-on"
+	item_state = "aflare-on"
 	heavy_range = 1.5
 	weak_range = 6

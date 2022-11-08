@@ -6,17 +6,25 @@
 	embed = 1 //the dart is shot fast enough to pierce space suits, so I guess splintering inside the target can be a thing. Should be rare due to low damage.
 	kill_count = 15 //shorter range
 	muzzle_type = null
+	reagent_flags = NO_REACT
 	var/reagent_amount = 15
 
 /obj/item/projectile/bullet/chemdart/New()
-	create_reagents(reagent_amount)
+	if (!testing)
+		create_reagents(reagent_amount)
 	..()
 
 /obj/item/projectile/bullet/chemdart/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
-		if(L.can_inject(target_zone = def_zone))
-			reagents.trans_to_mob(L, reagent_amount, CHEM_BLOOD)
+		if (!testing)
+			if(L.can_inject(target_zone = def_zone))
+				reagents.trans_to_mob(L, reagent_amount, CHEM_BLOOD)
+				return
+	reagents.splash(target, reagent_amount, reagent_amount/2)
+
+/obj/item/projectile/bullet/chemdart/on_impact(atom/target)
+	reagents.splash(target, reagent_amount, reagent_amount)
 
 /obj/item/ammo_casing/chemdart
 	name = "chemical dart"
@@ -126,6 +134,10 @@
 			B.reagents.trans_to_obj(dart, mix_amount)
 
 /obj/item/gun/projectile/dartgun/attack_self(mob/user)
+	src.interact(user)
+
+
+/obj/item/gun/projectile/dartgun/interact(mob/user)
 	user.set_machine(src)
 	var/dat = "<b>[src] mixing control:</b><br><br>"
 
@@ -158,11 +170,8 @@
 	onclose(user, "dartgun", src)
 
 /obj/item/gun/projectile/dartgun/proc/check_beaker_mixing(var/obj/item/B)
-	if(!mixing || !beakers)
-		return 0
-	for(var/obj/item/M in mixing)
-		if(M == B)
-			return 1
+	if(mixing && (B in mixing))
+		return 1
 	return 0
 
 /obj/item/gun/projectile/dartgun/Topic(href, href_list)
@@ -170,14 +179,11 @@
 	src.add_fingerprint(usr)
 	if(href_list["stop_mix"])
 		var/index = text2num(href_list["stop_mix"])
-		if(index <= beakers.len)
-			for(var/obj/item/M in mixing)
-				if(M == beakers[index])
-					mixing -= M
-					break
+		if(beakers[index] in mixing)
+			mixing.Remove(beakers[index])
 	else if (href_list["mix"])
 		var/index = text2num(href_list["mix"])
-		if(index <= beakers.len)
+		if(!(beakers[index] in mixing))
 			mixing += beakers[index]
 	else if (href_list["eject"])
 		var/index = text2num(href_list["eject"])
@@ -190,7 +196,7 @@
 				B.loc = get_turf(src)
 	else if (href_list["eject_cart"])
 		unload_ammo(usr)
-	src.updateUsrDialog()
+	src.updateDialog()
 	return
 
 /obj/item/gun/projectile/dartgun/vox

@@ -639,12 +639,14 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 /****************************
 	Burrow entering
 ****************************/
-/obj/structure/burrow/proc/enter_burrow(var/mob/living/L)
+/obj/structure/burrow/proc/enter_burrow(mob/living/L)
 	break_open()
 	spawn()
 		L.do_pickup_animation(src, L.loc)
-		sleep(8)
-		L.forceMove(src)
+		addtimer(CALLBACK(src, .proc/force_enter_burrow, L), 8)
+
+/obj/structure/burrow/proc/force_enter_burrow(mob/living/L)
+	L.forceMove(src)
 
 //Mobs that are summoned will walk up and attack this burrow
 //This will suck them in
@@ -658,7 +660,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 
 /obj/structure/burrow/proc/pull_mob(mob/living/L)
 	if (!L.incapacitated())//Can't flee if you're stunned
-		walk_to(L, src, 1, L.move_to_delay*RAND_DECIMAL(1,1.5))
+		SSmove_manager.move_to(L, src, 1, L.move_to_delay*RAND_DECIMAL(1,1.5))
 //We randomise the move delay a bit so that mobs don't just move in sync like particles of dust being sucked up
 
 
@@ -714,6 +716,8 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 			qdel(src)
 		else
 			collapse()
+			if(severity <= 2)
+				qdel(src)
 
 /obj/structure/burrow/preventsTurfInteractions()
 	if(isRevealed)

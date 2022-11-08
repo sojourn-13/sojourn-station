@@ -198,7 +198,7 @@
 //			P.virtual_scanner.afterattack(src, user, get_dist(src, user) <= 1)
 
 
-		SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
+		LEGACY_SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
 	else
 		. = ..()
 
@@ -222,6 +222,7 @@
 	..()
 	disrupt()
 
-/obj/item/implant/carrion_spider/holographic/bullet_act()
+/obj/item/implant/carrion_spider/holographic/bullet_act(var/obj/item/projectile/Proj)
 	..()
-	disrupt()
+	if (!(Proj.testing))
+		disrupt()

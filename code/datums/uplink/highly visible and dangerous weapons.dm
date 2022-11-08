@@ -26,14 +26,19 @@
 	path = /obj/item/melee/energy/sword
 
 /datum/uplink_item/item/visible_weapons/rafale
-	name = "Silenced .40 pistol"
+	name = "Silenced 10mm pistol"
 	item_cost = 6
 	path = /obj/item/storage/box/syndie_kit/pistol
 
 /datum/uplink_item/item/visible_weapons/akurra
-	name = "Silenced .50 pistol"
+	name = "Silenced 12mm pistol"
 	item_cost = 8
 	path = /obj/item/storage/box/syndie_kit/hpistol
+
+/datum/uplink_item/item/visible_weapons/painrevolver
+	name = "12mm Hornet Revolver"
+	item_cost = 8
+	path = /obj/item/storage/box/syndie_kit/painrevolver
 
 /datum/uplink_item/item/visible_weapons/riggedlaser
 	name = "Exosuit (APLU) Rigged Laser"

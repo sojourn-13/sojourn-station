@@ -15,8 +15,6 @@
 	maxHealth = 2500
 	break_stuff_probability = 95
 
-	var/hive_ender = FALSE // Basiclly a single check if we kill all of hivemind with are death
-
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 	megafauna_min_cooldown = 50
@@ -43,9 +41,9 @@
 
 /mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/death()
 	..()
-	if(hive_ender)
+	if(GLOB.hive_data_bool["tyrant_death_kills_hive"])
 		delhivetech()
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 
 /mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/proc/telenode()
 	var/list/atom/NODES = list()
@@ -67,7 +65,7 @@
 
 	. = ..()
 	if(!.)
-		walk(src, 0)
+		SSmove_manager.stop_looping(src)
 		return 0
 	if(client)
 		return 0
@@ -87,7 +85,7 @@
 /mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/OpenFire()
 	anger_modifier = CLAMP(((maxHealth - health)/50),0,20)
 	ranged_cooldown = world.time + 120
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 	telegraph()
 	spawn(rand(megafauna_min_cooldown, megafauna_max_cooldown))
 		if(prob(50))

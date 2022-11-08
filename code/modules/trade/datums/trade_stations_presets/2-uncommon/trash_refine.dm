@@ -3,6 +3,8 @@
 		"ITR 'Lancer'" = "IRS Trash Railgun 'Lancer': \"Hoho, you want some Trash?\""
 	)
 	uid = "trash"
+	tree_x = 0.1
+	tree_y = 0.8
 	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = UNCOMMON_GOODS
@@ -100,4 +102,4 @@
 	price_tag = 3
 
 /obj/item/stack/sheet/refined_scrap
-	price_tag = 5 //Proffit!
+	price_tag = 30 //Proffit!

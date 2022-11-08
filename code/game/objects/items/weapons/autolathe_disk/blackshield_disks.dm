@@ -26,6 +26,7 @@
 		/datum/design/autolathe/gun/strelki = 2,
 		/datum/design/autolathe/gun/watchtower = 3,
 		/datum/design/autolathe/gun/rushing_bull = 4,
+		/datum/design/autolathe/gun/bounty_lever = 4,
 		/datum/design/autolathe/gun/duty = 3,
 		//machinegun
 		/datum/design/autolathe/gun/saw = 4,
@@ -131,7 +132,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/luger
-	name = "NM .35 \"Vintovka Lyugera\" carbine"
+	name = "NM 9mm \"Vintovka Lyugera\" carbine"
 	disk_name = ""
 	icon_state = "blackshield"
 	license = 15
@@ -150,7 +151,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/NM_colt
-	name = "NM HG .35 \"Bronco\""
+	name = "NM HG 9mm \"Bronco\""
 	disk_name = ""
 	icon_state = "blackshield"
 	license = 8
@@ -168,7 +169,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/semyonovich
-	name = "Blackshield .35 Auto \"Semyonovich\""
+	name = "NM - 9mm PPV \"Semyonovich\""
 	disk_name = ""
 	icon_state = "blackshield"
 	license = 8
@@ -183,7 +184,7 @@
 
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/greasegun
-	name = "Blackshield - .35 Auto \"Grease Gun\""
+	name = "NM - 9mm \"Grease Gun\""
 	disk_name = ""
 	icon_state = "blackshield"
 
@@ -197,7 +198,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/buckler
-	name = "Blackshield - .35 Buckler SMG"
+	name = "NM - 9mm Buckler SMG"
 	disk_name = ""
 	icon_state = "blackshield"
 
@@ -211,7 +212,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/triage
-	name = "Blackshield - .40 Triage SMG"
+	name = "NM - 10mm Triage SMG"
 	disk_name = ""
 	icon_state = "blackshield"
 
@@ -225,7 +226,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki
-	name = "NM - 7.5mm \"Strelki\""
+	name = "NM - 7.62mm \"Strelki\""
 	disk_name = ""
 	icon_state = "blackshield"
 	license = 8
@@ -239,7 +240,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/watchtower
-	name = "NM - 7.5mm \"Watchtower\""
+	name = "NM - 7.62mm \"Watchtower\""
 	disk_name = ""
 	icon_state = "blackshield"
 	license = 8
@@ -253,7 +254,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/zatvor
-	name = "NM 7.5 bolt \"Zatvor\" rifle"
+	name = "NM - 7.62mm bolt \"Zatvor\" rifle"
 	disk_name = ""
 	icon_state = "blackshield"
 	license = 8
@@ -279,7 +280,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/duty
-	name = "NM - .257 Duty Rifle"
+	name = "NM - 6.5mm Duty Rifle"
 	disk_name = ""
 	icon_state = "blackshield"
 
@@ -298,7 +299,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/blackguard
-	name = "NM - .408 Blackguard Omni Rifle"
+	name = "NM - 8.6mm Blackguard Omni Rifle"
 	disk_name = ""
 	icon_state = "blackshield"
 
@@ -319,6 +320,19 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/rushing_bull = 3,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
+		/datum/design/autolathe/ammo/shotgun_illumination
+		)
+
+/obj/item/computer_hardware/hard_drive/portable/design/blackshield/bounty_lever
+	name = "NM - 20mm Bounty Lever Shotgun"
+	disk_name = ""
+	icon_state = "blackshield"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/bounty_lever = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
 		/datum/design/autolathe/ammo/shotgun_illumination

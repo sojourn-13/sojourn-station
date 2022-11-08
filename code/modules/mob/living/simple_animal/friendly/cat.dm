@@ -33,7 +33,7 @@
 	..()
 
 	if (turns_since_move > 5 || (flee_target || mousetarget))
-		walk_to(src,0)
+		SSmove_manager.move_to(src,0)
 		turns_since_move = 0
 
 		if (flee_target) //fleeing takes precendence
@@ -42,7 +42,7 @@
 			handle_movement_target()
 
 	if (!movement_target)
-		walk_to(src,0)
+		SSmove_manager.move_to(src,0)
 
 	spawn(2)
 		attack_mice()
@@ -71,7 +71,7 @@
 
 	if(movement_target)
 		stop_automated_movement = 1
-		walk_to(src,movement_target,0,seek_move_delay)
+		SSmove_manager.move_to(src,movement_target,0,seek_move_delay)
 
 /mob/living/simple_animal/cat/proc/attack_mice()
 	if((loc) && isturf(loc))
@@ -104,7 +104,7 @@
 	if (flee_target)
 		if(prob(25)) say("HSSSSS")
 		stop_automated_movement = 1
-		walk_away(src, flee_target, 7, 2)
+		SSmove_manager.move_away(src, flee_target, 7, 2)
 
 /mob/living/simple_animal/cat/proc/set_flee_target(atom/A)
 	if(A)
@@ -127,7 +127,8 @@
 
 /mob/living/simple_animal/cat/bullet_act(var/obj/item/projectile/proj)
 	. = ..()
-	set_flee_target(proj.firer? proj.firer : src.loc)
+	if (!(proj.testing))
+		set_flee_target(proj.firer? proj.firer : src.loc)
 
 /mob/living/simple_animal/cat/hitby(atom/movable/AM)
 	. = ..()
@@ -166,17 +167,17 @@
 		if (movement_target != friend)
 			if (current_dist > follow_dist && !ismouse(movement_target) && (friend in oview(src)))
 				//stop existing movement
-				walk_to(src,0)
+				SSmove_manager.move_to(src,0)
 				turns_since_scan = 0
 
 				//walk to friend
 				stop_automated_movement = 1
 				movement_target = friend
-				walk_to(src, movement_target, near_dist, seek_move_delay)
+				SSmove_manager.move_to(src, movement_target, near_dist, seek_move_delay)
 
 		//already following and close enough, stop
 		else if (current_dist <= near_dist)
-			walk_to(src,0)
+			SSmove_manager.move_to(src,0)
 			movement_target = null
 			stop_automated_movement = 0
 			if (prob(10))
@@ -299,8 +300,10 @@
 /mob/living/simple_animal/cat/runtime/attackby(var/obj/item/O, var/mob/user)
 	visible_message(SPAN_DANGER("[user]'s [O.name] harmlessly passes through \the [src]."))
 
+/*	// Commenting out so we can put the catto in the box
 /mob/living/simple_animal/cat/runtime/MouseDrop(atom/over_object)
 	return
+*/
 
 /mob/living/simple_animal/cat/runtime/attack_hand(mob/living/carbon/human/M as mob)
 
@@ -340,6 +343,8 @@
 /mob/living/simple_animal/cat/runtime/singularity_act()
 	return
 
+/*	This is for the sake of the cardboard box, and also parading the catto around
 /mob/living/simple_animal/cat/runtime/start_pulling(var/atom/movable/AM)
 	to_chat(src, SPAN_WARNING("Your hand passes through \the [src]."))
 	return
+*/

@@ -7,6 +7,8 @@
 		list(30, 30)
 	)
 	uid = "asterstradecapital"
+	tree_x = 0.58
+	tree_y = 0.9
 	start_discovered = TRUE
 	spawn_always = TRUE
 	markup = WHOLESALE_GOODS
@@ -23,6 +25,7 @@
 			/obj/item/storage/belt/utility,
 			/obj/item/device/lighting/toggleable/flashlight,
 			/obj/item/device/lighting/toggleable/flashlight/heavy,
+			/obj/item/device/lightreplacer,
 			/obj/item/tool/omnitool = good_data("Lonestar \"Munchkin 5000\"", list(1, 3), 1000),
 			/obj/item/tool/crowbar,
 			/obj/item/tool/screwdriver,
@@ -59,6 +62,8 @@
 			/obj/item/toy/weapon/katana,
 			/obj/item/toy/junk/snappop,
 			/obj/item/toy/junk/bosunwhistle,
+			/obj/item/toy/junk/dodgeball,
+			/obj/item/toy/junk/dodgeball/face,
 			/obj/item/toy/figure/character/bobblehead/excelsior,
 			/obj/item/toy/figure/character/bobblehead/serbian,
 			/obj/item/toy/figure/character/bobblehead/acolyte,
@@ -105,7 +110,9 @@
 			/obj/item/reagent_containers/glass/paint/white = good_data("White Paint", list(1, 10), 45),
 			/obj/item/storage/lunchbox = good_data("Lunchbox", list(1, 10), 30),
 			/obj/item/storage/lunchbox/rainbow = good_data("Rainbow Lunchbox", list(1, 10), 30),
-			/obj/item/storage/lunchbox/cat = good_data("Cat Lunchbox", list(1, 10), 30)
+			/obj/item/storage/lunchbox/cat = good_data("Cat Lunchbox", list(1, 10), 30),
+			/obj/item/contraband/poster,
+			/obj/item/device/eftpos
 		)
 	)
 
@@ -139,7 +146,7 @@
 			/obj/item/device/synthesized_instrument/trumpet,
 			/obj/item/device/synthesized_instrument/violin,
 			/obj/structure/synthesized_instrument/synthesizer/piano = good_data("Piano", list(-4, 2), 1200),
-			/obj/item/media/boombox = good_data("Boom Box", list(-400000000, -399999999), 300) //When will K5 fix this???
+			/obj/item/media/boombox = good_data("NT Boom Box", list(-400000000, -399999999), 300) //When will K5 fix this???
 		),
 		"Nicknacks & Bobbles" = list(
 			/obj/item/oddity/ls/collector_coin = custom_good_amount_range(list(3, 6)),

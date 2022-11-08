@@ -22,7 +22,7 @@
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.")
 	var/web_activity = 30
 	move_to_delay = 4 //slightly faster than guardians but slower than hunters
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 0, bullet = 0, energy = 5, bomb = 5, bio = 10, rad = 25, agony = 0)
 	var/egg_inject_chance = 0 //AHAHAHAHAHAHAHAAHAHAH, no
 	life_cycles_before_sleep = 3000 //We need more time to eat and web
 	inherent_mutations = list(MUTATION_PROT_MILK, MUTATION_SPIDER_FRIEND, MUTATION_NERVOUSNESS, MUTATION_DEAF)
@@ -69,10 +69,8 @@
 		target_mob = null
 		stance = initial(stance)
 		stop_automated_movement = initial(stop_automated_movement)
-		walk(src, 0)
+		SSmove_manager.stop_looping(src)
 		if(!has_made_spiderlings)
-			new /obj/effect/spider/spiderling/near_grown(src.loc)
-			new /obj/effect/spider/spiderling/near_grown(src.loc)
 			new /obj/effect/spider/spiderling/near_grown(src.loc)
 			new /obj/effect/spider/spiderling/near_grown(src.loc)
 			new /obj/effect/spider/spiderling/near_grown(src.loc)
@@ -89,8 +87,8 @@
 	icon_state = "webslinger"
 	icon_living = "webslinger"
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.","bounces happily in place!")
-	web_activity = 90
-	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
+	web_activity = 70
+	armor = list(melee = 15, bullet = 10, energy = 5, bomb = 5, bio = 10, rad = 25, agony = 0)
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/recluse
 	name = "recluse spider"
@@ -128,7 +126,7 @@
 	egg_inject_chance = 10 //Likely
 	//Giving the queen her own meat type which contains MENACE.
 	mob_size = MOB_LARGE
-	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 15, bullet = 10, energy = 5, bomb = 5, bio = 10, rad = 25, agony = 0)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_SPIDER_FRIEND, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 	armor_penetration = 35
 
@@ -177,7 +175,8 @@
 				if (cocoon_target)
 					busy = MOVING_TO_TARGET
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, cocoon_target, 1, move_to_delay)
+					if (stat != DEAD)
+						SSmove_manager.move_to(src, cocoon_target, 1, move_to_delay)
 					GiveUp(cocoon_target) //give up if we can't reach target
 					return
 
@@ -221,7 +220,8 @@
 							busy = MOVING_TO_TARGET
 							stop_automated_movement = 1
 							set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-							walk_to(src, cocoon_target, 1, move_to_delay)
+							if (stat != DEAD)
+								SSmove_manager.move_to(src, cocoon_target, 1, move_to_delay)
 							GiveUp(cocoon_target) //give up if we can't reach target
 
 		else if(busy == MOVING_TO_TARGET && cocoon_target)
@@ -229,7 +229,7 @@
 				busy = SPINNING_COCOON
 				src.visible_message(SPAN_NOTICE("\The [src] begins to secrete a sticky substance around \the [cocoon_target]."))
 				stop_automated_movement = 1
-				walk(src,0)
+				SSmove_manager.stop_looping(src)
 				spawn(50)
 					if(busy == SPINNING_COCOON)
 						if(cocoon_target && istype(cocoon_target.loc, /turf) && get_dist(src,cocoon_target) <= 1)

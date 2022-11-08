@@ -17,20 +17,20 @@
 	knockdown_odds = 1 //its affect shouldnt be stunlocks like this
 	inherent_mutations = list(MUTATION_EMP, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY, MUTATION_ROACH_BLOOD)
 
-/mob/living/carbon/superior_animal/roach/elektromagnetisch/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior_animal/roach/elektromagnetisch/UnarmedAttack(atom/A, proximity)
 	. = ..()
 	if(prob(5))
-		empulse(src.loc, 0, 3)
-		playsound(src.loc, list('sound/weapons/unknown_spacegun_burn.ogg', 'sound/weapons/unknown_spacegun_melt.ogg', 'sound/weapons/unknown_spacegun_incinerate.ogg', 'sound/weapons/unknown_spacegun_vaporize.ogg'), 50, 1)
+		empulse(loc, 0, 3)
+		playsound(loc, list('sound/weapons/guns/unknown_spacegun_burn.ogg', 'sound/weapons/guns/unknown_spacegun_melt.ogg', 'sound/weapons/guns/unknown_spacegun_incinerate.ogg', 'sound/weapons/guns/unknown_spacegun_vaporize.ogg'), 50, 1)
 
-/mob/living/carbon/superior_animal/roach/elektromagnetisch/death(var/gibbed,var/message = deathmessage)
+/mob/living/carbon/superior_animal/roach/elektromagnetisch/death(gibbed,message = deathmessage)
 	if (stat != DEAD)
 		target_mob = null
 		stance = initial(stance)
 		stop_automated_movement = initial(stop_automated_movement)
-		walk(src, 0)
-		playsound(src.loc, list('sound/weapons/unknown_spacegun_burn.ogg', 'sound/weapons/unknown_spacegun_melt.ogg', 'sound/weapons/unknown_spacegun_incinerate.ogg', 'sound/weapons/unknown_spacegun_vaporize.ogg'))
-		empulse(src.loc, 3,3) //Death mixes it making it even worst
+		SSmove_manager.stop_looping(src)
+		playsound(loc, list('sound/weapons/guns/unknown_spacegun_burn.ogg', 'sound/weapons/guns/unknown_spacegun_melt.ogg', 'sound/weapons/guns/unknown_spacegun_incinerate.ogg', 'sound/weapons/guns/unknown_spacegun_vaporize.ogg'))
+		empulse(loc, 3,3) //Death mixes it making it even worst
 
 		density = 0
 		layer = LYING_MOB_LAYER

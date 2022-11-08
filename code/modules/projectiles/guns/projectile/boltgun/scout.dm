@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/boltgun/scout
 	name = "\"Scout\" heavy boltgun"
-	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .408 Heavy Rifle rounds, it packs the reach, the punch and the accuracy for every occasion, however saying it kicks like a mule would only be a plain understatement."
+	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in 8.6x70mm Heavy Rifle rounds, it packs the reach, the punch and the accuracy for every occasion, however saying it kicks like a mule would only be a plain understatement."
 	icon = 'icons/obj/guns/projectile/heavyboltgun.dmi'
 	icon_state = "boltgun"
 	item_state = "boltgun"
@@ -10,7 +10,7 @@
 	extra_damage_mult_scoped = 0.2
 	init_recoil = HMG_RECOIL(0.8)
 	max_shells = 5
-	zoom_factor = 2.0
+	zoom_factors = list(2.0)
 	price_tag = 1500
 	sharp = 0
 	caliber = CAL_HRIFLE
@@ -26,7 +26,7 @@
 
 /obj/item/gun/projectile/boltgun/sawn/scout
 	name = "\"obrez\" heavy boltgun"
-	desc = "A crudly mangled and sawn-down .408 bolt action rifle. Rifle was fine."
+	desc = "A crudly mangled and sawn-down 8.6x70mm bolt action rifle. Rifle was fine."
 	icon = 'icons/obj/guns/projectile/sawnoff/heavyboltgun.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"

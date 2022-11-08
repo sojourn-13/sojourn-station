@@ -3,6 +3,8 @@
 		"LTB 'Vermouth'" = "Lonestar's Trade Beacon 'Vermouth' \"Best Drinks! Best Beverages! Ingredients for your cooks! Anything that is needed for your private bars and more!"
 	)
 	uid = "commissary"
+	tree_x = 0.42
+	tree_y = 0.9
 	start_discovered = TRUE
 	spawn_always = TRUE
 	base_income = 1600
@@ -90,7 +92,7 @@
 		"Kegs" = list(
 			/obj/structure/reagent_dispensers/beerkeg/cargo,
 			/obj/structure/reagent_dispensers/meadkeg/cargo,
-			/obj/structure/reagent_dispensers/premiumwhiske/cargo
+			/obj/structure/reagent_dispensers/premiumwhiskey/cargo
 		)
 	)
 
@@ -115,10 +117,10 @@
 /obj/structure/reagent_dispensers/meadkeg/cargo/New()
 	price_tag = 900
 
-/obj/structure/reagent_dispensers/premiumwhiske/cargo
+/obj/structure/reagent_dispensers/premiumwhiskey/cargo
 	price_tag = 5000
 
-/obj/structure/reagent_dispensers/premiumwhiske/cargo/New()
+/obj/structure/reagent_dispensers/premiumwhiskey/cargo/New()
 	price_tag = 500
 
 

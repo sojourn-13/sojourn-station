@@ -1,6 +1,6 @@
 /obj/item/gun/energy/sniperrifle
 	name = "\"Valkyrie\" laser rifle"
-	desc = "\"Valkyrie\" is an older design of Old Testament, \"Lightfall\" was based on it. A designated marksman rifle capable of shooting powerful ionized beams, this is a weapon for killing from a distance."
+	desc = "\"Valkyrie\" is one of the original Old Testament designs, the precursor to the \"Lightfall\". A designated marksman rifle capable of shooting powerful ionized beams, this is a weapon for killing from a distance."
 	icon = 'icons/obj/guns/energy/sniper.dmi'
 	icon_state = "sniper"
 	item_state = "sniper"
@@ -16,7 +16,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 9, MATERIAL_URANIUM = 6)
 	price_tag = 2500
 	cell_type = /obj/item/cell/medium
-	zoom_factor = 2.0
+	zoom_factors = list(1,2)
 	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
@@ -24,3 +24,5 @@
 	twohanded = TRUE
 	gun_tags = list(GUN_ENERGY)
 	serial_type = "Absolute"
+	action_button_name = "Switch zoom level"
+	action_button_proc = "switch_zoom"

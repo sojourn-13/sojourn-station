@@ -6,12 +6,13 @@
 	icon = 'icons/obj/guns/projectile/swat.dmi' //Sprites by Toriate#0657 many loves and thanks to this amazing spriter!
 	icon_state = "swat"
 	item_state = "swat"
+	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 4)
 	max_shells = 7 //Same as the gladstone
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
-	price_tag = 1250
+	price_tag = 1500
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.3
 	init_recoil = RIFLE_RECOIL(0.6)

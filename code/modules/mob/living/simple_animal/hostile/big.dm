@@ -74,7 +74,7 @@
 	walk_to(src,0)
 	movement_target = null
 	icon_state = icon_dead
-	density = 0
+	density = FALSE
 	return ..(gibbed,deathmessage)
 
 
@@ -213,6 +213,7 @@
 	mob_size = 3
 	leather_amount = 0 //No actual skin
 	bones_amount = 30 //Lots of bone-like chitin
+	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/stalker_chitin)
 	mob_size = MOB_LARGE
 	armor = list(melee = 15, bullet = 30, energy = 35, bomb = 5, bio = 10, rad = 25)
@@ -285,22 +286,27 @@
 	bones_amount = 10
 	mob_size = MOB_LARGE
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE)
+	var/alerted = FALSE
 
-/mob/living/simple_animal/hostile/retaliate/croakerlord/adjustBruteLoss(var/damage)
+/mob/living/simple_animal/hostile/retaliate/croakerlord/adjustBruteLoss(damage)
 	..()
-	visible_emote("slowly begins to open its many eyes as it looses an angered croak...")
-	icon_state = "leaper_alert"
-	icon_living = "leaper_alert"
+	if(!alerted)
+		visible_emote("slowly begins to open its many eyes as it looses an angered croak...")
+		icon_state = "leaper_alert"
+		icon_living = "leaper_alert"
+		alerted = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord/LoseTarget()
 	..()
 	icon_state = "leaper"
 	icon_living = "leaper"
+	alerted = FALSE
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord/LostTarget()
 	..()
 	icon_state = "leaper"
 	icon_living = "leaper"
+	alerted = FALSE
 
 // Credit to SlapDrink#0083 for the sprite.
 /mob/living/simple_animal/hostile/hell_pig
@@ -334,7 +340,7 @@
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 	mob_size = MOB_LARGE
 	armor = list(melee = 15, bullet = 10, energy = 20, bomb = 5, bio = 10, rad = 25)
-	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_BLINDNESS, MUTATION_NO_PAIN, MUTATION_HYPERION)
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_BLINDNESS, MUTATION_NO_PAIN, MUTATION_HYPERION, MUTATION_BLOOD_BANK)
 
 /mob/living/simple_animal/hostile/hell_pig/wendigo
 	name = "wendigo"
@@ -377,4 +383,4 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/slepnir_hoof,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 	armor = list(melee = 5, bullet = 10, energy = 10, bomb = 5, bio = 10, rad = 25)
-	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE, MUTATION_HYPERION)
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE, MUTATION_HYPERION, MUTATION_BLOOD_BANK)

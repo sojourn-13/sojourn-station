@@ -92,12 +92,15 @@
 			MiddleClickOn(A)
 		return 1
 	if(modifiers["shift"])
+		SEND_SIGNAL(src, COMSIG_SHIFTCLICK, A)
 		ShiftClickOn(A)
 		return 0
 	if(modifiers["alt"]) // alt and alt-gr (rightalt)
+		SEND_SIGNAL(src, COMSIG_ALTCLICK, A)
 		AltClickOn(A)
 		return 1
 	if(modifiers["ctrl"])
+		SEND_SIGNAL(src, COMSIG_CTRLCLICK, A)
 		CtrlClickOn(A)
 		return 1
 
@@ -137,7 +140,7 @@
 	if((!isturf(A) && A == loc) || (sdepth != -1 && sdepth <= 1))
 		// faster access to objects already on you
 		if(W)
-			var/resolved = (SEND_SIGNAL(W, COMSIG_IATTACK, A, src, params)) || (SEND_SIGNAL(A, COMSIG_ATTACKBY, W, src, params)) || W.resolve_attackby(A, src, params)
+			var/resolved = (LEGACY_SEND_SIGNAL(W, COMSIG_IATTACK, A, src, params)) || (LEGACY_SEND_SIGNAL(A, COMSIG_ATTACKBY, W, src, params)) || W.resolve_attackby(A, src, params)
 			if(!resolved && A && W)
 				W.afterattack(A, src, 1, params) // 1 indicates adjacency
 		else
@@ -156,7 +159,7 @@
 		if(A.Adjacent(src)) // see adjacent.dm
 			if(W)
 				// Return 1 in attackby() to prevent afterattack() effects (when safely moving items for example)
-				var/resolved = (SEND_SIGNAL(W, COMSIG_IATTACK, A, src, params)) || (SEND_SIGNAL(A, COMSIG_ATTACKBY, W, src, params)) || W.resolve_attackby(A, src, params)
+				var/resolved = (LEGACY_SEND_SIGNAL(W, COMSIG_IATTACK, A, src, params)) || (LEGACY_SEND_SIGNAL(A, COMSIG_ATTACKBY, W, src, params)) || W.resolve_attackby(A, src, params)
 				if(!resolved && A && W)
 					W.afterattack(A, src, 1, params) // 1: clicking something Adjacent
 			else
@@ -173,7 +176,16 @@
 	return 1
 
 /mob/proc/setClickCooldown(var/timeout)
-	next_click = max(world.time + timeout, next_click)
+	next_click = max(world.time + (timeout + gather_click_delay(src)), next_click)
+
+/mob/proc/gather_click_delay(mob/living/M as mob)
+	var/gathered = 0
+	if(ishuman(M))
+		var/mob/living/carbon/human/back_pack_checker = M
+		if(!back_pack_checker.back)
+			gathered -= 1
+	gathered += click_delay_addition
+	return gathered
 
 /mob/proc/can_click()
 	if(next_click <= world.time)
@@ -279,7 +291,7 @@
 	A.CtrlClick(src)
 	return
 /atom/proc/CtrlClick(var/mob/user)
-	SEND_SIGNAL(src, COMSIG_CLICK_CTRL, user)
+	LEGACY_SEND_SIGNAL(src, COMSIG_CLICK_CTRL, user)
 	return
 
 /atom/movable/CtrlClick(var/mob/user)
@@ -295,7 +307,7 @@
 	return
 
 /atom/proc/AltClick(var/mob/user)
-	SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
+	LEGACY_SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
 	var/turf/T = get_turf(src)
 	if(T && user.TurfAdjacent(T))
 		if(user.listed_turf == T)

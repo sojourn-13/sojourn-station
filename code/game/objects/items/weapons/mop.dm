@@ -103,17 +103,17 @@
 		for (var/mob/living/L in T)
 			attack(L)
 
-		if (turf_clear(T))
+		if (turf_clear_for_cleaning(T))
 			T.clean_partial(src, user, 1)
-		/* - This has issues and the perma-temp fix is to just allow you can clean walls
 		else if (user)
 			//You hit a wall!
-			user.setClickCooldown(15)
-			user.set_move_cooldown(15)
+			//Stunning you is dumb and unfun - Trilby
+			//user.setClickCooldown(15)
+			//user.set_move_cooldown(15)
 			shake_camera(user, 1, 1)
 			playsound(T,"thud", 20, 1, -3)
 			to_chat(user, SPAN_DANGER("There's not enough space for broad sweeps here!"))
-			return*/
+			return
 
 /obj/item/mop/proc/makeWet(atom/A, mob/user)
 	if(A.is_open_container())

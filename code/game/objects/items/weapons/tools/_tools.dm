@@ -69,6 +69,7 @@
 	var/precision = 0	//Subtracted from failure rates
 	var/workspeed = 1	//Worktimes are divided by this
 
+
 /******************************
 	/* Core Procs */
 *******************************/
@@ -83,7 +84,7 @@
 
 	if(use_fuel_cost)
 		create_reagents(max_fuel)
-		reagents.add_reagent("fuel", max_fuel)
+		reagents.add_reagent(my_fuel, max_fuel)
 
 	if(use_stock_cost)
 		stock = max_stock
@@ -181,7 +182,7 @@
 	return
 
 
-/obj/item/tool/ui_data(mob/user)
+/obj/item/tool/nano_ui_data(mob/user)
 	var/list/data = list()
 
 	if(tool_qualities)
@@ -207,7 +208,7 @@
 		data["use_power_cost_max"] = initial(use_power_cost) * 10
 
 	if(use_fuel_cost)
-		data["fuel"] = reagents ? reagents.ui_data() : null
+		data["fuel"] = reagents ? reagents.nano_ui_data() : null
 		data["max_fuel"] = max_fuel
 		data["use_fuel_cost"] = use_fuel_cost
 		data["use_fuel_cost_state"] = initial(use_fuel_cost) > use_fuel_cost ? "good" : initial(use_fuel_cost) < use_fuel_cost ? "bad" : ""
@@ -235,7 +236,7 @@
 	return data
 
 /obj/item/tool/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
-	var/list/data = ui_data(user)
+	var/list/data = nano_ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -786,11 +787,11 @@
 
 //Returns the amount of fuel in tool
 /obj/item/proc/get_fuel()
-	return ( reagents ? reagents.get_reagent_amount("fuel") : 0 )
+	return ( reagents ? reagents.get_reagent_amount(my_fuel) : 0 )
 
 /obj/item/tool/proc/consume_fuel(volume)
 	if(get_fuel() >= volume)
-		reagents.remove_reagent("fuel", volume)
+		reagents.remove_reagent(my_fuel, volume)
 		return TRUE
 	return FALSE
 
@@ -837,7 +838,7 @@
 	prefixes = list()
 
 	//Now lets have each upgrade reapply its modifications
-	SEND_SIGNAL(src, COMSIG_APPVAL, src)
+	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
 
 	for (var/prefix in prefixes)
 		name = "[prefix] [name]"

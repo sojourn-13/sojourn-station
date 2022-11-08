@@ -11,18 +11,28 @@
 	//internals
 	var/obj/machinery/hivemind_machine/node/master_node
 	var/list/wires_connections = list("0", "0", "0", "0")
-
+	var/my_area
 
 /obj/effect/plant/hivemind/New()
 	..()
 	icon = 'icons/obj/hivemind.dmi'
 	spawn(2)
 		update_neighbors()
-
+	var/area/A = get_area(src)
+	if(!A)
+		QDEL_IN(src, 1)
+		return
+	my_area = A.name
+	if(!(my_area in GLOB.hivemind_areas))
+		GLOB.hivemind_areas.Add(my_area)
+	GLOB.hivemind_areas[my_area]++
 
 /obj/effect/plant/hivemind/Destroy()
 	if(master_node)
 		master_node.my_wireweeds.Remove(src)
+	GLOB.hivemind_areas[my_area]--
+	if(!GLOB.hivemind_areas[my_area]) // Last wire in that area
+		GLOB.hivemind_areas.Remove(my_area)
 	return ..()
 
 
@@ -80,8 +90,39 @@
 
 
 /obj/effect/plant/hivemind/spread()
-	if(hive_mind_ai && master_node)
-		..()
+	if(!hive_mind_ai || !master_node || !neighbors.len)
+		return
+
+	var/turf/target_turf = pick(neighbors)
+	if(target_turf.is_hole && !GLOB.hive_data_bool["spread_on_lower_z_level"])
+		// Not removed from neighbors, in case settings are change later
+		return
+
+	target_turf = get_connecting_turf(target_turf, loc)
+	var/area/target_area = get_area(target_turf)
+
+	// Entering the area for the first time
+	if(!(target_area.name in GLOB.hivemind_areas))
+		// If area limit is disabled (set to 0), or less than current number of occupied areas - expand and mark that area as occupied
+		if(!GLOB.hive_data_float["maximum_controlled_areas"] || GLOB.hivemind_areas.len < GLOB.hive_data_float["maximum_controlled_areas"])
+			GLOB.hivemind_areas.Add(target_area.name)
+		else
+			return
+
+	// Track amount of weed in the area, so at 0 weed area would be marked as unoccupied
+	GLOB.hivemind_areas[target_area.name]++
+
+	for(var/i in target_turf.contents)
+		if(istype(i, /obj/effect/plant) || istype(i, /obj/effect/dead_plant))
+			visible_message("[src] consumes [i]!")
+			qdel(i)
+
+	// Created on the same loc, for move animation to play properly
+	var/obj/effect/plant/child = new type(get_turf(src), seed, src)
+	after_spread(child, target_turf)
+	// Update neighboring tiles
+	for(var/obj/effect/plant/hivemind/neighbor in range(1, target_turf))
+		neighbor.neighbors -= target_turf
 
 
 /obj/effect/plant/hivemind/life()
@@ -288,9 +329,15 @@
 		//human bodies
 		if(ishuman(subject))
 			var/mob/living/L = subject
+
+			if(GLOB.hive_data_bool["gibbing_dead"])
+			//We we dont touch the dead via are controler we dont want to pk people form the round
+				return
+
 			//if our target has cruciform, let's just leave it
 			if(is_neotheology_disciple(L))
 				return
+
 			for(var/obj/item/W in L)
 				L.drop_from_inventory(W)
 			var/M = pick(/mob/living/simple_animal/hostile/hivemind/himan, /mob/living/simple_animal/hostile/hivemind/phaser)

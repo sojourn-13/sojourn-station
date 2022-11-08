@@ -110,7 +110,7 @@
 
 /obj/item/slime_potion/slimes_speed/attackby(var/obj/item/clothing/C, mob/user as mob)
 	..()
-	if(C.slowdown < -0.1)//If target isn't already zooming
+	if(C.slowdown < 0)//If target isn't already zooming
 		to_chat(user, SPAN_WARNING("The tonic cant speed up this cloathing any more!"))
 		return ..()
 

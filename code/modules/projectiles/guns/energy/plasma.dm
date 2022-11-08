@@ -1,6 +1,6 @@
 /obj/item/gun/energy/plasma
 	name = "\"Dominion\" plasma rifle"
-	desc = "A weapon that uses advanced plasma generation technology to emit powerful blasts of energized matter. Due to its complexity and cost, it is rarely seen in use, except by specialists."
+	desc = "One of the last designs produced by the Old Testament, the \"Dominion\" uses advanced plasma generation technology to emit powerful blasts of energized matter or large, consuming fireballs. Due to its complexity and cost, it is usually reserved for specialists and elites."
 	icon = 'icons/obj/guns/energy/pulse.dmi'
 	icon_state = "pulse"
 	item_state = null	//so the human update icon uses the icon_state instead.
@@ -22,7 +22,7 @@
 	damage_multiplier = 0.9
 	init_firemodes = list(
 		list(mode_name="destroy", mode_desc="An armor-stripping plasma round", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
-		list(mode_name="impact", mode_desc="A relatively light plasma round that knocks people back", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', fire_delay=25, icon="kill", projectile_color = "#FF0000"),
+		list(mode_name="incinerate", mode_desc="A relatively heavy shot of super-heated plasma that creates a fireball on impact", projectile_type=/obj/item/projectile/plasma/aoe/heat, fire_sound='sound/effects/supermatter.ogg', charge_cost=160, fire_delay=25, icon="kill", projectile_color = "#FF0000"),
 	)
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 	serial_type = "Absolute"
@@ -44,7 +44,7 @@
 
 /obj/item/gun/energy/plasma/destroyer
 	name = "\"Purger\" plasma rifle"
-	desc = "A more recent \"Old Testament\" brand plasma rifle, developed in direct response to compete against the highly successful \"Cassad\" design."
+	desc = "An older \"Old Testament\" brand plasma rifle, developed in direct response to compete against the highly successful \"Cassad\" design. Reliable and capable of firing suppressive bursts of lower-temperature plasma."
 	icon = 'icons/obj/guns/energy/destroyer.dmi'
 	fire_sound = 'sound/weapons/pulse.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 10, MATERIAL_URANIUM = 5)
@@ -73,7 +73,7 @@
 	matter = list(MATERIAL_STEEL = 2, "biomatter" = 20)
 	disposable = TRUE
 	origin_tech = list(TECH_COMBAT = 1, TECH_PLASMA = 1)
-	price_tag = 200
+	price_tag = 250
 	fire_sound = 'sound/weapons/Laser.ogg'
 	cell_type = /obj/item/cell/small //can't recharge this one
 	sel_mode = 2

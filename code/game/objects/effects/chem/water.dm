@@ -14,7 +14,7 @@
 /obj/effect/effect/water/proc/set_color() // Call it after you move reagents to it
 	icon += reagents.get_color()
 
-/obj/effect/effect/water/proc/set_up(var/turf/target, var/step_count = 5, var/delay = 5)
+/obj/effect/effect/water/proc/set_up(var/turf/target, var/step_count = 5, var/delay = 5, var/lifespan = 10)
 	if(!target)
 		return
 	var/hit_mob = FALSE
@@ -51,7 +51,7 @@
 			if (T == get_turf(target))
 				break
 		sleep(delay)
-	sleep(10)
+	sleep(lifespan)
 	qdel(src)
 
 /obj/effect/effect/water/Move(var/atom/NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)

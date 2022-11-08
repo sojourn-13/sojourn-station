@@ -22,7 +22,7 @@
 
 /datum/gear/suit/duster
 	display_name = "duster selection"
-	path = /obj/item/clothing/suit/storage/duster
+	path = /obj/item/clothing/accessory/duster
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/suit/flannel
@@ -189,3 +189,6 @@
 	path = /obj/item/clothing/suit/space/anomaly
 	cost = 2 //Some good armor but slowdown
 */
+/datum/gear/suit/boxer_jacket
+	display_name = "boxer jacket"
+	path = /obj/item/clothing/suit/storage/boxer_jacket

@@ -49,6 +49,11 @@
 		variable = var_name
 
 	if(!variable)	return
+
+	if (GLOB.gvars_datum_protected_varlist[variable])
+		to_chat(usr, "\red This variable is protected from VV.")
+		return
+
 	var/default
 	var/var_value = O.vars[variable]
 	var/dir
@@ -129,6 +134,10 @@
 		original_name = "\ref[O] ([O])"
 	else
 		original_name = O:name
+
+	if (GLOB.gvars_datum_protected_varlist[variable])
+		to_chat(usr, "\red This variable is protected from VV.")
+		return
 
 	switch(class)
 

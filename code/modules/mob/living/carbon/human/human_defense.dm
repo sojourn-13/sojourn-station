@@ -16,33 +16,37 @@ meteor_act
 	var/obj/item/organ/external/organ = get_organ(def_zone)
 
 	//Shields
-	var/shield_check = check_shields(P.get_structure_damage(), P, null, def_zone, "the [P.name]")
-	if(shield_check)
-		if(shield_check < 0)
-			return shield_check
-		else
-			P.on_hit(src, def_zone)
-			return 2
+	if (!(P.testing))
+		var/shield_check = check_shields(P.get_structure_damage(), P, null, def_zone, "the [P.name]")
+		if(shield_check)
+			if(shield_check < 0)
+				return shield_check
+			else
+				P.on_hit(src, def_zone)
+				return 2
+	else
+		P.on_hit(src, def_zone)
+		return 2
 
 	//Checking absorb for spawning shrapnel
-	.=..(P , def_zone)
+	if (!(P.testing))
+		.=..(P , def_zone)
 
-	var/check_absorb = .
-	//Shrapnel
-	if(P.can_embed() && (check_absorb < 2) && !src.stats.getPerk(PERK_IRON_FLESH))
-		var/armor = getarmor_organ(organ, ARMOR_BULLET)
-		if(prob((20 + max(P.damage_types[BRUTE] - armor, -10) * P.embed_mult)))
-			if(!P.shrapnel_type)
-				var/obj/item/material/shard/shrapnel/SP = new()
-				SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
-				SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
-				SP.loc = organ
-				SP.gun_number = P.serial_type_index_bullet //"" to "" shouldnt be an issue
-				organ.embed(SP)
-			else
-				var/obj/item/newshrap = new P.shrapnel_type(organ)
-				organ.embed(newshrap)
-
+		var/check_absorb = .
+		//Shrapnel
+		if(P.can_embed() && (check_absorb < 2) && !src.stats.getPerk(PERK_IRON_FLESH))
+			var/armor = getarmor_organ(organ, ARMOR_BULLET)
+			if(prob((20 + max(P.damage_types[BRUTE] - armor, -10) * P.embed_mult)))
+				if(!P.shrapnel_type)
+					var/obj/item/material/shard/shrapnel/SP = new()
+					SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
+					SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
+					SP.loc = organ
+					SP.gun_number = P.serial_type_index_bullet //"" to "" shouldnt be an issue
+					organ.embed(SP)
+				else
+					var/obj/item/newshrap = new P.shrapnel_type(organ)
+					organ.embed(newshrap)
 
 /mob/living/carbon/human/hit_impact(damage, dir)
 	if(incapacitated(INCAPACITATION_DEFAULT|INCAPACITATION_BUCKLED_PARTIALLY))
@@ -103,16 +107,12 @@ meteor_act
 
 	switch (def_zone)
 		if(BP_L_ARM, BP_R_ARM)
-			var/c_hand
-			if (def_zone == BP_L_ARM)
-				c_hand = l_hand
-			else
-				c_hand = r_hand
+			var/obj/item/organ/external/hand = get_organ(def_zone)
 
-			if(c_hand && (stun_amount || agony_amount > 10))
+			if(hand && hand.mob_can_unequip(src) && (stun_amount || agony_amount > 10))
 				msg_admin_attack("[src.name] ([src.ckey]) was disarmed by a stun effect")
 
-				drop_from_inventory(c_hand)
+				drop_from_inventory(hand)
 				if (BP_IS_ROBOTIC(affected))
 					emote("pain", 1, "drops what they were holding, their [affected.name] malfunctioning!")
 				else
@@ -250,7 +250,7 @@ meteor_act
 		if(!..(I, user, effective_force, hit_zone))
 			return FALSE
 
-		attack_joint(affecting, I) //but can dislocate joints
+		attack_joint(affecting, I) //but can dislocate(strike nerve) joints
 	else if(!..())
 		return FALSE
 
@@ -309,12 +309,12 @@ meteor_act
 	return TRUE
 
 /mob/living/carbon/human/proc/attack_joint(var/obj/item/organ/external/organ, var/obj/item/W)
-	if(!organ || (organ.dislocated == 2) || (organ.dislocated == -1) )
+	if(!organ || (organ.nerve_struck == 2) || (organ.nerve_struck == -1))
 		return FALSE
 	//There was blocked var, removed now. For the sake of game balance, it was just replaced by 2
 	if(prob(W.force / 2))
 		visible_message("<span class='danger'>[src]'s [organ.joint] [pick("gives way","caves in","crumbles","collapses")]!</span>")
-		organ.dislocate(1)
+		organ.nerve_strike_add(1)
 		return TRUE
 	return FALSE
 

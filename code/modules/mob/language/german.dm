@@ -3,7 +3,13 @@
 	desc = "Language used by the descendants of Europe."
 	colour = "german"
 	key = "q"
+	partial_understanding = list(
+		LANGUAGE_ESPERANTO = 20,
+		LANGUAGE_COMMON = 25,
+		LANGUAGE_KRIOSAN = 75
+	)
 	space_chance = 80
+	has_written_form = TRUE
 	shorthand = "GE"
 	syllables = list("Frau", "Mann", "Waffe", "Schiff", "Bombe", "Explosion", "Grenze", "Strasse", "Halle", "Pistole", "Gewehr", "Uniform", "Kind", "Arzt", \
 					 "und", "ja", "nein", "vielleicht", "ob", "man", "Faust", "Auto", "fliegen", "Asteroid", "Hose", "laufen", "fahren","Raumschiff", \

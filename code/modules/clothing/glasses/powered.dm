@@ -10,10 +10,11 @@
 	var/tick_cost = 1
 	cell = null
 	suitable_cell = /obj/item/cell/small
+	var/spawn_with_cell = TRUE
 
 /obj/item/clothing/glasses/powered/Initialize()
 	. = ..()
-	if(!cell && suitable_cell)
+	if(!cell && suitable_cell && spawn_with_cell)
 		cell = new /obj/item/cell/small(src)
 
 /obj/item/clothing/glasses/powered/Process()
@@ -48,7 +49,7 @@
 
 /obj/item/clothing/glasses/powered/science
 	name = "science goggles"
-	desc = "These goggles scan the reagents within beakers, displaying them to you!"
+	desc = "A pair of goggles with a science HUD. These can show you reagents within transparent containers and organoid information."
 	icon_state = "purple"
 	item_state = "glasses"
 
@@ -69,6 +70,7 @@
 	origin_tech = list(TECH_MAGNET = 2, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
 	price_tag = 250
+	darkness_view = 1
 
 	tick_cost = 0.1
 
@@ -87,10 +89,25 @@
 	origin_tech = list(TECH_MAGNET = 2)
 	price_tag = 250
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 5, MATERIAL_URANIUM = 2)
-	tick_cost = 1
+	tick_cost = 0.5 //i.g a basic 100 will last 200 ticks
 
 /obj/item/clothing/glasses/powered/night/Initialize()
 	. = ..()
 	screenOverlay = global_hud.nvg
 
+/obj/item/clothing/glasses/powered/night/guild
+	name = "optimized night vision goggles"
+	desc = "Converted from boring mesons, this refined Guild design sports the benefits form the mesons power-saving making these last 10% longer than other NV goggles on the market!"
+	icon_state = "guild" // New sprites by Dromkii aka Ezoken#5894 !
+	item_state = "guild"
+	off_state = "deguild"
+	darkness_view = 7
+	see_invisible = SEE_INVISIBLE_NOLIGHTING
+	origin_tech = list(TECH_MAGNET = 3)
+	price_tag = 350
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 2, MATERIAL_PLASTEEL = 2, MATERIAL_URANIUM = 1)
+	tick_cost = 0.4 //10% more so you have a reason to go to the guild and get these
 
+
+/obj/item/clothing/glasses/powered/night/guild/crafted
+	spawn_with_cell = FALSE

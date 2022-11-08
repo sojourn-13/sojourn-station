@@ -18,11 +18,12 @@
 	var/gibs_color = "#666600"
 	var/last_stun_time = 0 //Used to avoid cheese
 	var/ignore_activate_all = FALSE
-
 	var/assigned_groups
 
 	var/obj/item/organ/internal/carrion/core/owner_core
 	var/mob/living/carbon/human/owner_mob
+
+	is_metal = FALSE
 
 /obj/item/implant/carrion_spider/New()
 	. = ..()
@@ -58,7 +59,8 @@
 
 /obj/item/implant/carrion_spider/bullet_act(obj/item/projectile/P, def_zone)
 	..()
-	die_from_attack()
+	if (!(P.testing))
+		die_from_attack()
 
 /obj/item/implant/carrion_spider/proc/die_from_attack()
 	visible_message(SPAN_WARNING("[src] explodes into a bloody mess"))

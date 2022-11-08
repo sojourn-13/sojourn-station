@@ -96,6 +96,10 @@ var/list/_client_preferences_by_type
 	else
 		GLOB.lobbyScreen.stop_music(preference_mob.client)
 
+/datum/client_preference/change_to_examine_tab
+	description = "Switch to examine tab upon examining a object"
+	key = "SWITCHEXAMINE"
+
 /datum/client_preference/play_ambiance
 	description ="Play ambience"
 	key = "SOUND_AMBIENCE"

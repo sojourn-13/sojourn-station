@@ -41,11 +41,11 @@
 				var/flash_strength = 5
 				if(ishuman(L))
 					var/mob/living/carbon/human/H = L
-					flash_strength *= H.species.flash_mod
+					flash_strength *= H.flash_mod
 				if(flash_strength > 0)
 					L.Weaken(flash_strength)
 					if (L.HUDtech.Find("flash"))
 						flick("e_flash", L.HUDtech["flash"])
-					L.visible_message(SPAN_DANGER("\the [src] flashes a bright green blinding \ [L]!"))
+					L.visible_message(SPAN_DANGER("\the [src] flashes a bright green, blinding \ [L]!"))
 			else
 				L.visible_message(SPAN_DANGER("\the [src] fails to blind \ [L]!"))

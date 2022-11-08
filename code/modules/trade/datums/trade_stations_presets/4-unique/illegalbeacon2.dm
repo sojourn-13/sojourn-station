@@ -3,6 +3,8 @@
 		"NSTB 'Introversion'" = "Nefarious-Space Trade Beacon 'Introversion'. The trade beacon is sending an automated message. \"Uplink established. Welcome, agent.\""
 	)
 	uid = "illegal2"
+	tree_x = 0.62
+	tree_y = 0.3
 	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = UNIQUE_GOODS
@@ -22,7 +24,9 @@
 			/obj/item/plastique,
 			/obj/item/clothing/glasses/powered/thermal/syndi,
 			/obj/item/noslipmodule,
-			/obj/item/storage/box/syndie_kit/imp_compress
+			/obj/item/storage/box/syndie_kit/imp_compress,
+			/obj/item/grenade/empgrenade,
+			/obj/item/storage/backpack/military = good_data("MOLLE pack", list(3, 8), 1000)
 		),
 		"Weapons" = list(
 			/obj/item/melee/energy/sword,
@@ -42,9 +46,21 @@
 			/obj/item/rig_module/fabricator/energy_net
 		),
 		"Software" = list(
-			/obj/item/computer_hardware/hard_drive/portable/advanced/shady = good_data("old data disk", list(1, 1), 900)
-		)
+			/obj/item/computer_hardware/hard_drive/portable/advanced/shady = good_data("old data disk", list(1, 1), 900),
+			/obj/item/computer_hardware/hard_drive/portable/design/guns/china = good_data("China Lake Disk", list(1, 1), 1100)
+		),
+		"Grenade Shells" = list(
+			/obj/item/ammo_casing/grenade = good_data("Baton Shell", list(4, 8), 100),
+			/obj/item/ammo_casing/grenade/blast = good_data("Blast Shell", list(2, 3), 800),
+			/obj/item/ammo_casing/grenade/frag = good_data("Frag Shell", list(2, 3), 800),
+			/obj/item/ammo_casing/grenade/frag/stinger = good_data("Stinger Shell", list(4, 8), 1200),
+			/obj/item/ammo_casing/grenade/emp = good_data("EMP Shell", list(1, 1), 1800),
+			/obj/item/ammo_casing/grenade/flash = good_data("Flash Shell", list(4, 8), 100)
+		),
 	)
 	offer_types = list(
-		/obj/item/stack/telecrystal = offer_data("telecrystal x50", 100000, 1)
+		/obj/item/stack/telecrystal = offer_data("telecrystal x50", 100000, 1),
+		/obj/item/device/radio/uplink = offer_data("Radio Uplink", 10000, 1),
+		/obj/item/card/emag = offer_data("Cryptographic Sequencer", 5000, 1),
+		/obj/item/clothing/glasses/powered/night/guild  = offer_data("Converted NV Goggles", 1200, 3)
 	)

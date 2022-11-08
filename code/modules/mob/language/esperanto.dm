@@ -4,9 +4,17 @@
 	speech_verb = list("insinuates")
 	ask_verb = list("implores")
 	exclaim_verb = list("posits")
+	has_written_form = TRUE
 	colour = "brass"
 	key = "e"
 	shorthand = "ES"
+	partial_understanding = list(
+		LANGUAGE_LATIN = 30,
+		LANGUAGE_CYRILLIC = 20,
+		LANGUAGE_SERBIAN = 20,
+		LANGUAGE_GERMAN = 25,
+		LANGUAGE_COMMON = 10
+	)
 	space_chance = 70
 	syllables = list(
 		"adapti", "adiau", "afabla", "ah", "aj", "ajn", "akcepti", "alveni", "alia", "angla", "apud", "audi", "bani", "bela", "bati", "bona",

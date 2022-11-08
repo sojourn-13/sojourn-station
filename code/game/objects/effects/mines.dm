@@ -59,9 +59,10 @@
 		explode()
 		return
 
-/obj/item/mine_old/bullet_act()
-	if(prob(90))
-		explode()
+/obj/item/mine_old/bullet_act(var/obj/item/projectile/Proj)
+	if (!(Proj.testing))
+		if(prob(90))
+			explode()
 
 /obj/item/mine_old/ex_act(severity)
 	if(severity <= 2 || prob(90))
@@ -78,6 +79,12 @@
 	if(ishuman(M))
 		for(var/mob/O in viewers(world.view, src.loc))
 			to_chat(O, "<font color='red'>[M] triggered the \icon[src] [src]</font>")
+		triggered = 1
+		call(src,triggerproc)(M)
+
+	if(istype(M, /mob/living/simple_animal/hostile/poporavtomat))
+		for(var/mob/O in viewers(world.view, src.loc))
+			to_chat(O, "<font color='red'>[M] steps over the \icon[src] [src] but still triggeres its payload.</font>")
 		triggered = 1
 		call(src,triggerproc)(M)
 

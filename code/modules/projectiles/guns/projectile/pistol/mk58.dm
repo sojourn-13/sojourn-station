@@ -1,13 +1,13 @@
 /obj/item/gun/projectile/mk58
 	name = "\"Thorn\" pistol"
-	desc = "The OT Thorn is a cheap, ubiquitous sidearm, that was one of the Old Testaments few ballistic creations, though it bears a clear resemblance to the Mk-58 Mod 0. Uses .35 Auto."
+	desc = "The first firearm produced by the Church of the Absolute, predating even the Testament, the OT Thorn is a cheap, ubiquitous sidearm and one of the few Church-branded ballistic weapons. Fires 9mm rounds and bears a suspicious resemblance to the Mk-58 Mod 0."
 	icon = 'icons/obj/guns/projectile/mk58.dmi'
 	icon_state = "mk58"
 	item_state = "mk58"
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
-	price_tag = 650
+	price_tag = 450
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	can_dual = TRUE
 	load_method = SINGLE_CASING|MAGAZINE
@@ -15,7 +15,7 @@
 	damage_multiplier = 1.1
 	penetration_multiplier = 0.9
 	init_recoil = HANDGUN_RECOIL(0.9)
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "Absolute"
 
 /obj/item/gun/projectile/mk58/update_icon()
@@ -37,12 +37,12 @@
 
 /obj/item/gun/projectile/mk58/wood
 	name = "\"Rose\" magnum pistol"
-	desc = "The OT Rose is a cheap, yet ubiquitous sidearm, that was one of the Old Testaments few ballistic creations. Uses .40 Auto-Mag. This one has a finely polished wood furnish."
+	desc = "The OT Rose was the first firearm produced by the Testament and one of the final Church ballistic inventions. Essentially a \"Thorn\" rechambered in 10mm with a fine wood finish to commemorate the Testament's founding."
 	icon = 'icons/obj/guns/projectile/mk58_wood.dmi'
 	icon_state = "mk58"
 	item_state = "mk58"
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
-	price_tag = 750
+	price_tag = 550
 	mag_well = MAG_WELL_PISTOL
 	caliber = CAL_MAGNUM
 	damage_multiplier = 0.9

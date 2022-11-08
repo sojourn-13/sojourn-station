@@ -253,8 +253,8 @@
 		generateHUD(data).show(user.client)
 		is_seeing |= user
 		user.s_active = src
-	SEND_SIGNAL(src, COMSIG_STORAGE_OPENED, user)
-	SEND_SIGNAL(user, COMSIG_STORAGE_OPENED, src)
+	LEGACY_SEND_SIGNAL(src, COMSIG_STORAGE_OPENED, user)
+	LEGACY_SEND_SIGNAL(user, COMSIG_STORAGE_OPENED, src)
 
 /obj/item/storage/proc/hide_from(var/mob/user)
 	is_seeing -= user
@@ -394,8 +394,6 @@
 		var/obj/item/storage/fancy/F = src
 		F.update_icon(1)
 
-	W.layer = initial(W.layer)
-	W.set_plane(initial(W.plane))
 
 	if (new_location)
 		W.loc = new_location
@@ -408,6 +406,8 @@
 		W.maptext = ""
 
 	W.on_exit_storage(src)
+	W.layer = initial(W.layer)
+	W.set_plane(initial(W.plane))
 	if(extraction_sound)
 		playsound(get_turf(src), extraction_sound, 100)
 	update_icon()

@@ -141,16 +141,12 @@
 
 /datum/perk/sanityboost/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk /= 1.2
-	holder.burn_mod_perk /= 1.2
-	holder.oxy_mod_perk /= 1.2
-	holder.toxin_mod_perk /= 1.2
+	holder.maxHealth += 40
+	holder.health += 40
 
 /datum/perk/sanityboost/remove()
-	holder.brute_mod_perk *= 1.2
-	holder.burn_mod_perk *= 1.2
-	holder.oxy_mod_perk *= 1.2
-	holder.toxin_mod_perk *= 1.2
+	holder.maxHealth -= 40
+	holder.health -= 40
 	..()
 
 /datum/perk/sure_step
@@ -180,7 +176,7 @@
 
 /datum/perk/space_asshole
 	name = "Rough Life"
-	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body and can dive into disposal chutes. Disposals deal no damage to you as well."
+	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body."
 	//icon_state = "bomb" // https://game-icons.net
 
 /datum/perk/space_asshole/assign(mob/living/carbon/human/H)
@@ -238,12 +234,30 @@
 		holder.metabolism_effects.nsa_mult += 0.25
 		holder.metabolism_effects.calculate_nsa()
 
-// Added on top , removed first
-/datum/perk/selfmedicated/chemist/remove()
+/datum/perk/chemist/chemist/remove()
 	if(holder)
 		holder.metabolism_effects.nsa_mult -= 0.25
 		holder.metabolism_effects.calculate_nsa()
 	..()
+
+/datum/perk/alchemist
+	name = "Alchemy"
+	desc = "Weather form fun studdy or learned in the field of brewing random things together you know how to gather basic chemical components. \
+			Your NSA also has been slightly improved do to your experimentations. You can also see all reagents in beakers."
+	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
+
+/datum/perk/alchemist/assign(mob/living/carbon/human/H)
+	..()
+	if(holder)
+		holder.metabolism_effects.nsa_mult += 0.05
+		holder.metabolism_effects.calculate_nsa()
+
+/datum/perk/alchemist/remove()
+	if(holder)
+		holder.metabolism_effects.nsa_mult -= 0.05
+		holder.metabolism_effects.calculate_nsa()
+	..()
+
 
 /datum/perk/bartender
 	name = "Bar Menu"
@@ -435,6 +449,8 @@
 	name = "Market Professional"
 	desc = "You've become an excellent appraiser of goods over the years. Just by looking at the item, you can know how much it would sell for in today's market rates."
 
+//Medical perks - relates to surgery and all
+
 /datum/perk/surgical_master
 	name = "Surgery Training"
 	desc = "While you may not know the more advanced medical procedures, your mandatory training on surgery for implantation purposes allows you to perform basic surgical procedures with ease."
@@ -446,7 +462,6 @@
 /datum/perk/robotics_expert
 	name = "Robotics Expert"
 	desc = "Your formal training and experience in advanced mech construction and complex devices has made you more adept at working with them."
-
 
 /datum/perk/robotics_expert/assign(mob/living/carbon/human/H)
 	..()
@@ -464,34 +479,35 @@
 
 /datum/perk/job/blackshield_conditioning
 	name = "Blackshield Conditioning"
-	desc = "Thanks to special and intensive training received in the course of your employment with Blackshield, your body is a bit more resistant to brute force damage and burns due to trauma conditioning."
+	desc = "Thanks to special and intensive training received in the course of your employment with Blackshield, with all the practice gained in space you feel you can jump from greater heights and know when to duck-and-cover."
 
 /datum/perk/blackshield_conditioning/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk -= 0.15
-	holder.burn_mod_perk -= 0.10
+	holder.mob_bomb_defense += 20
+	holder.falls_mod -= 0.4
 
 /datum/perk/blackshield_conditioning/remove()
-	holder.brute_mod_perk += 0.15
-	holder.burn_mod_perk += 0.10
+	holder.mob_bomb_defense -= 20
+	holder.falls_mod += 0.4
 	..()
 
 /datum/perk/job/prospector_conditioning
 	name = "Rough and Tumble"
-	desc = "You've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot, and even set on fire. As a result, you resist every type of damage just a little bit better than others not of similar toughness."
+	desc = "You've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot, and even set on fire. Hell, even a few used needles in desperate times. You feel as though your body fights off the inflictions of to much NSA and addictions much better than others."
+	perk_shared_ability = PERK_SHARED_SEE_ILLEGAL_REAGENTS
 
 /datum/perk/prospector_conditioning/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk -= 0.10
-	holder.burn_mod_perk -= 0.05
-	holder.oxy_mod_perk -= 0.10
-	holder.toxin_mod_perk -= 0.15
+	if(holder)
+		holder.metabolism_effects.addiction_chance_multiplier = 0.1
+		holder.metabolism_effects.nsa_bonus += 25
+		holder.metabolism_effects.calculate_nsa()
 
 /datum/perk/prospector_conditioning/remove()
-	holder.brute_mod_perk += 0.10
-	holder.burn_mod_perk += 0.05
-	holder.oxy_mod_perk += 0.10
-	holder.toxin_mod_perk += 0.15
+	if(holder)
+		holder.metabolism_effects.addiction_chance_multiplier = 1
+		holder.metabolism_effects.nsa_bonus -= 25
+		holder.metabolism_effects.calculate_nsa()
 	..()
 
 /datum/perk/job/butcher
@@ -588,6 +604,11 @@
 		holder.verbs -= codespeak_procs
 	..()
 
+/datum/perk/gunsmith
+	name = "Gunsmith Master"
+	desc = "You are a professional gunsmith, your knowledge allows to not only repair firearms but expertly craft them. \
+			This includes the machines required to do so, including the bullet fabricator."
+
 //Chef's special perk
 
 /datum/perk/foodappraise
@@ -607,7 +628,7 @@
 		to_chat(usr, SPAN_NOTICE("This food item has already been spiced!"))
 		return FALSE
 	to_chat(usr, SPAN_NOTICE("You quickly sprinkle some of your anomalous spice onto the food item, revealing its hidden properties."))
-	log_and_message_admins("used their [src] perk.")
+	//log_and_message_admins("used their [src] perk.")
 	F.chef_buff_type = rand(1,9) // We assign a random bufferino.
 	F.appraised = 1
 	switch(F.chef_buff_type)
@@ -633,3 +654,32 @@
 			F.reagents.add_reagent("nutriment", 15)
 		if(9)
 			F.name = "hearty [F.name]"
+
+
+
+
+//Ghost spawners
+
+/datum/perk/true_name
+	name = "Rename Self"
+	desc = "No one knows you thus your name is what ever you need or want to be."
+	active = FALSE
+	passivePerk = FALSE
+	var/anti_cheat = FALSE
+
+/datum/perk/true_name/activate()
+	..()
+	if(anti_cheat)
+		to_chat(holder, "You can only keep up so many personallitys.")
+		return FALSE
+	anti_cheat = TRUE
+	var/mob/M = usr
+	var/npc_name = input(M, "Choose your name: ", "Superstar Name", "VIP") as text
+	if(src && npc_name)
+		M.real_name = npc_name
+		M.stats.removePerk(/datum/perk/true_name)
+	anti_cheat = FALSE
+	return TRUE
+
+/datum/perk/true_name/remove()
+	..()

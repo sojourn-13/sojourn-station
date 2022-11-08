@@ -32,12 +32,12 @@
 	belt = /obj/item/storage/belt/medical
 	backpack_contents = list(/obj/item/storage/hcases/med/medical_job = 1)
 
-/decl/hierarchy/outfit/job/medical/trauma_team
-	name = OUTFIT_JOB_NAME("Soteria - Trauma Team")
+/decl/hierarchy/outfit/job/medical/recovery_team
+	name = OUTFIT_JOB_NAME("Soteria - Recovery Team")
 	uniform = /obj/item/clothing/under/rank/paramedic
 	id_type = /obj/item/card/id/med
 	pda_type = /obj/item/modular_computer/pda/science/medical
-	suit =  /obj/item/clothing/suit/armor/vest
+	suit =  /obj/item/clothing/suit/armor/vest/security
 	shoes = /obj/item/clothing/shoes/jackboots
 	belt = /obj/item/storage/belt/medical/emt
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
@@ -53,3 +53,17 @@
 	uniform = /obj/item/clothing/under/rank/psych
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	r_ear  = /obj/item/reagent_containers/syringe/large
+
+/decl/hierarchy/outfit/job/medical/doctor/medStudent
+	name = OUTFIT_JOB_NAME("Soteria - Soteria Medical Student")
+	suit =  /obj/item/clothing/suit/armor/vest
+
+/decl/hierarchy/outfit/job/medical/doctor/medNurse
+	name = OUTFIT_JOB_NAME("Soteria - Soteria Nurse")
+
+/decl/hierarchy/outfit/job/medical/doctor/medERPhys
+	name = OUTFIT_JOB_NAME("Soteria - Soteria Emergency Physician")
+
+/decl/hierarchy/outfit/job/medical/doctor/medSurgeon
+	name = OUTFIT_JOB_NAME("Soteria - Soteria Medical Surgeon")
+	suit = /obj/item/clothing/suit/storage/hazardvest

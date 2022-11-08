@@ -14,6 +14,7 @@
 	//range/ammo stuff
 	ranged = 1
 	rapid = 1
+	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
 	projectilesound = 'sound/weapons/guns/fire/pistol_fire.ogg'
@@ -56,12 +57,6 @@
 	return
 
 /mob/living/carbon/superior_animal/human/excelsior/handle_environment(var/datum/gas_mixture/environment) //are armor legit is a void suit
-	return
-
-/mob/living/carbon/superior_animal/human/excelsior/handle_cheap_breath(datum/gas_mixture/breath as anything)
-	return
-
-/mob/living/carbon/superior_animal/human/excelsior/handle_cheap_environment(datum/gas_mixture/environment as anything)
 	return
 
 /mob/living/carbon/superior_animal/human/excelsior/start_pulling(var/atom/movable/AM)

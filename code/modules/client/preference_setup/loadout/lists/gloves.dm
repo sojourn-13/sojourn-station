@@ -20,6 +20,13 @@
 	slot = slot_gloves
 	cost = 0 //Legit doesnt do much
 
+/datum/gear/gloves/rune_gloves
+	display_name = "gloves, rune gloves"
+	sort_category = "Gloves and Handwear"
+	path = /obj/item/clothing/gloves/runed
+	slot = slot_gloves
+	cost = 1
+
 /datum/gear/gloves/color
 	display_name = "gloves basic selection"
 	sort_category = "Gloves and Handwear"

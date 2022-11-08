@@ -292,6 +292,13 @@
 	w_class = ITEM_SIZE_BULKY
 	attack_verb = list("attacked", "slashed", "stabbed", "poked")
 
+/obj/item/toy/badtothebone // CHANANANA NANA
+	name = "replica skull"
+	desc = "A fake skull for theatrical purposes, it's neither alive nor almighty. Alas, poor Yorick..."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "yorick"
+	item_state = "yorick"
+
 /*
  * Snap pops
  */
@@ -1300,6 +1307,21 @@
 	icon = 'icons/inventory/belt/icon.dmi'
 	slot_flags = SLOT_BELT
 
+/*Inflatable Duck*/
+
+/obj/item/toy/junk/dodgeball
+	name = "dodgeball"
+	desc = "A rubber ball with air in it. Intented to be thrown at one a other for fun games."
+	icon_state = "wrench"
+	item_state = "contraband "
+	icon = 'icons/obj/toy.dmi'
+	attack_verb = list("tapped", "outted")
+
+/obj/item/toy/junk/dodgeball/face
+	name = "Buddy dodgeball"
+	icon_state = "contraband"
+	item_state = "contraband"
+	desc = "A rubber ball with air in it. Intented to be thrown at one a other for fun games. This one has a face on it."
 
 //////////////////////////////////////////////////////
 //				Magic 8-Ball / Conch				//

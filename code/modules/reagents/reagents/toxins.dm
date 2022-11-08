@@ -254,7 +254,7 @@
 	return TRUE
 
 /datum/reagent/toxin/plantbgone/touch_obj(obj/O, var/volume)
-	if(istype(O, /obj/effect/plant))
+	if(istype(O, /obj/effect/plant) && !istype(O, /obj/effect/plant/hivemind))
 		qdel(O)
 	if(istype(O, /obj/machinery/portable_atmospherics/hydroponics))
 		var/obj/machinery/portable_atmospherics/hydroponics/T = O
@@ -497,6 +497,7 @@
 	overdose = REAGENTS_OVERDOSE/3
 	addiction_chance = 0.01 //Will STILL likely always be addicting
 	nerve_system_accumulations = 10
+	metabolism = REM * 0.2 //but processes much faster than other toxins
 	strength = 0.3 //Rather lethal
 	heating_point = 523
 	heating_products = list("toxin")

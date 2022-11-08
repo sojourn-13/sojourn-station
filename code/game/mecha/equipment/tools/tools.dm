@@ -526,6 +526,30 @@
 			send_byjax(chassis.occupant,"exosuit.browser","\ref[src]",src.get_equip_info())
 		return
 
+/obj/item/mecha_parts/mecha_equipment/fist_plating
+	name = "mech plating"
+	desc = "Plating designed to cover and reinforce the limbs of exosuits to prevent impact damage to the machine during accidents in high risk environments."
+	icon_state = "mecha_fist"
+	range = 0 // Can't attack
+	force = 0
+	required_type = /obj/mecha
+	matter = list(MATERIAL_STEEL = 15) //Its only 30 damage compared to the 15 steel 60 damage sword
+	var/damage_reduction = 0.1
+
+	attach(obj/mecha/M)
+		..()
+		for(var/i in chassis.damage_absorption)
+			chassis.damage_absorption[i] -= damage_reduction
+		src.update_chassis_page()
+
+	detach(atom/moveto=null)
+		for(var/i in chassis.damage_absorption)
+			chassis.damage_absorption[i] += damage_reduction
+		..()
+
+	get_equip_info()
+		if(!chassis) return
+		return "<span style=\"color:[equip_ready?"#0f0":"#f00"];\">*</span>&nbsp;[src.name]"
 
 /obj/item/mecha_parts/mecha_equipment/armor_booster
 	name = "armor booster"
@@ -996,28 +1020,41 @@
 		if(!cargo_holder) return
 		if(isobj(target))
 			var/obj/O = target
-			if(!O.anchored)
-				if(cargo_holder.cargo.len < cargo_holder.cargo_capacity)
-					chassis.occupant_message("You lift [target] and start to load it into cargo compartment.")
-					chassis.visible_message("[chassis] lifts [target] and starts to load it into cargo compartment.")
-					set_ready_state(0)
-					chassis.use_power(energy_drain)
-					O.anchored = 1
-					var/T = chassis.loc
-					if(do_after_cooldown(target))
-						if(T == chassis.loc && src == chassis.selected)
-							cargo_holder.cargo += O
-							O.loc = chassis
-							O.anchored = 0
-							chassis.occupant_message(SPAN_NOTICE("[target] succesfully loaded."))
-							chassis.log_message("Loaded [O]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
-						else
-							chassis.occupant_message(SPAN_WARNING("You must hold still while handling objects."))
-							O.anchored = initial(O.anchored)
+			if(O.buckled_mob)
+				return
+			if(istype(target, /obj/structure/scrap))
+				occupant_message(SPAN_NOTICE("\The [chassis] begins compressing \the [O] with \the [src]."))
+				if(do_after_cooldown(O))
+					if(istype(O, /obj/structure/scrap))
+						var/obj/structure/scrap/S = O
+						S.make_cube()
+						occupant_message(SPAN_NOTICE("\The [chassis] compresses \the [O] into a cube with \the [src]."))
+				return
+			if(O.anchored && !istype(O, /obj/structure/salvageable))
+				occupant_message(SPAN_WARNING("[target] is firmly secured."))
+				return
+			if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
+				occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
+				return
+
+
+			occupant_message("You lift [target] and start to load it into cargo compartment.")
+			playsound(src,'sound/mecha/hydraulic.ogg',100,1)
+			chassis.visible_message("[chassis] lifts [target] and starts to load it into cargo compartment.")
+			set_ready_state(0)
+			chassis.use_power(energy_drain)
+			O.anchored = 1
+			var/T = chassis.loc
+			if(do_after_cooldown(target))
+				if(T == chassis.loc && src == chassis.selected)
+					cargo_holder.cargo += O
+					O.loc = chassis
+					O.anchored = 0
+					occupant_message(SPAN_NOTICE("[target] succesfully loaded."))
+					log_message("Loaded [O]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
 				else
-					chassis.occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
-			else
-				chassis.occupant_message(SPAN_WARNING("[target] is firmly secured."))
+					occupant_message(SPAN_WARNING("You must hold still while handling objects."))
+					O.anchored = initial(O.anchored)
 
 		else if(isliving(target))
 			var/mob/living/M = target

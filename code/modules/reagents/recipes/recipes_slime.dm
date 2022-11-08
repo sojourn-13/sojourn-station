@@ -4,7 +4,7 @@
 /datum/chemical_reaction/slime
 	var/required = null
 
-/datum/chemical_reaction/slime/ui_data()
+/datum/chemical_reaction/slime/nano_ui_data()
 	var/list/dat = ..()
 	dat["required_object"] = required
 	return dat
@@ -172,8 +172,7 @@
 	playsound(get_turf(holder.my_atom), 'sound/effects/phasein.ogg', 100, 1)
 	for(var/mob/living/carbon/human/M in viewers(get_turf(holder.my_atom), null))
 		if(M.eyecheck() < FLASH_PROTECTION_MODERATE)
-			if (M.HUDtech.Find("flash"))
-				flick("e_flash", M.HUDtech["flash"])
+			M.flash(0, FALSE , FALSE , FALSE, 0) // flashed by the gods or something idk
 
 	for(var/i = 1, i <= 4 + rand(1,2), i++)
 		var/chosen = pick(borks)
@@ -515,7 +514,33 @@
 	N.loc = get_turf(holder.my_atom)
 
 //Light Pink
-// I have no effects and there for am unloved ;-;
+//Peace thru a iron fist~
+/datum/chemical_reaction/slime/slaughto
+	result = null
+	required_reagents = list("plasticide" = 5)
+	result_amount = 1
+	required = /obj/item/slime_extract/lightpink
+	mix_message = "The slime extract begins to twist and bend!"
+
+/datum/chemical_reaction/slime/slaughto/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/gun/projectile/automatic/slaught_o_matic/N = new /obj/item/gun/projectile/automatic/slaught_o_matic
+	N.loc = get_turf(holder.my_atom)
+	N.choosen_color = "pink"
+	N.update_icon()
+
+//
+/datum/chemical_reaction/slime/peace_obedience
+	result = null
+	required_reagents = list("woodpulp" = 10)
+	result_amount = 1
+	required = /obj/item/slime_extract/lightpink
+	mix_message = "The slime extract begins to twist and bend!"
+
+/datum/chemical_reaction/slime/peace_obedience/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/material/baseballbat/N = new /obj/item/material/baseballbat
+	N.loc = get_turf(holder.my_atom)
 
 //Adamantine
 /datum/chemical_reaction/slime/golem
@@ -558,3 +583,5 @@
 	var/obj/item/stack/material/platinum/P = new /obj/item/stack/material/platinum
 	P.amount = 5
 	P.loc = get_turf(holder.my_atom)
+
+//Rainbow

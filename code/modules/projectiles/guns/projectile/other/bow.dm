@@ -48,14 +48,16 @@
 		add_overlay(arrow_overlay)
 
 /obj/item/gun/projectile/bow/attackby(obj/item/A, mob/user)
+	if(chambered)
+		return
 	..()
 	if(LAZYLEN(loaded))
 		chambered = loaded[1]
 		loaded -= chambered
 	update_icon()
 
-//attempts to unload src. If allow_dump is set to 0, the speedloader unloading method will be disabled
-/obj/item/gun/projectile/bow/unload_ammo(mob/user, var/allow_dump=1)
+
+/obj/item/gun/projectile/bow/unload_ammo(mob/user, allow_dump)
 	if(chambered)
 		user.put_in_hands(chambered)
 		chambered = null
@@ -102,7 +104,7 @@
 	matter = list(MATERIAL_BONE = 10, MATERIAL_WOOD = 10, MATERIAL_PLASTIC = 5)
 	penetration_multiplier = 1.5
 	gun_tags = list(ARROW_FIRING)
-	zoom_factor = 2.0
+	zoom_factors = list(2.0)
 	extra_damage_mult_scoped = 0.2
 	overcharge_timer_step = 4
 	price_tag = 1200
@@ -118,5 +120,5 @@
 	penetration_multiplier = 1.2
 	gun_tags = list(ARROW_FIRING)
 	max_upgrades = 4
-	zoom_factor = 1.4
+	zoom_factors = list(1.4)
 	extra_damage_mult_scoped = 0.1

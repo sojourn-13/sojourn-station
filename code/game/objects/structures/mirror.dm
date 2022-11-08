@@ -42,11 +42,12 @@
 
 /obj/structure/mirror/bullet_act(var/obj/item/projectile/Proj)
 
-	if(prob(Proj.get_structure_damage() * 2))
-		if(!shattered)
-			shatter()
-		else
-			playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, 1)
+	if (!(Proj.testing))
+		if(prob(Proj.get_structure_damage() * 2))
+			if(!shattered)
+				shatter()
+			else
+				playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, 1)
 	..()
 
 /obj/structure/mirror/attackby(obj/item/I as obj, mob/user as mob)

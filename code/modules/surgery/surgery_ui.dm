@@ -12,7 +12,7 @@
 	if(is_open() && !diagnosed)
 		try_autodiagnose(user)
 
-	var/list/data = ui_data(user)
+	var/list/data = nano_ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -21,7 +21,7 @@
 		ui.open()
 
 
-/obj/item/organ/external/ui_data(mob/user)
+/obj/item/organ/external/nano_ui_data(mob/user)
 	var/list/data = list()
 
 	data["status"] = get_status_data()
@@ -164,7 +164,7 @@
 			if(istype(usr, /mob/living))
 				var/mob/living/user = usr
 				var/target_stat = BP_IS_ROBOTIC(src) ? STAT_MEC : STAT_BIO
-				var/removal_time = 50 * usr.stats.getMult(target_stat, STAT_LEVEL_PROF)
+				var/removal_time = 70 * usr.stats.getMult(target_stat, STAT_LEVEL_PROF)
 				var/target = get_surgery_target()
 				var/obj/item/I = user.get_active_hand()
 
@@ -181,7 +181,7 @@
 					wait = do_after(user, removal_time, target, needhand = FALSE)
 
 				if(wait)
-					if(prob(40 + (FAILCHANCE_VERY_EASY + usr.stats.getStat(target_stat)))) //30 bio or mech will make you never fail when doing surgery
+					if(prob(FAILCHANCE_NORMAL + usr.stats.getStat(target_stat))) //Relatively easy skill-check, but still chance to fail if under 40 Bio. 0 Bio = 60% success rate, 40 bio = 100% success rate, etc.
 						for(var/obj/item/material/shard/shrapnel/shrapnel in src.implants)
 							implants -= shrapnel
 							shrapnel.loc = get_turf(src)

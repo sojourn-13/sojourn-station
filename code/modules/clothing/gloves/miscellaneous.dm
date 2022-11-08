@@ -6,6 +6,13 @@
 	armor_list = list(melee = 25, bullet = 10, energy = 25, bomb = 0, bio = 0, rad = 0)
 	price_tag = 250
 
+/obj/item/clothing/gloves/runed
+	name = "rune gloves"
+	desc = "An expensive designers gloves fitted with a golden ring and engraved with decretive runes."
+	icon_state = "runed_glove_ring"
+	item_state = "runed_glove_ring"
+	price_tag = 220
+
 /obj/item/clothing/gloves/cyborg
 	desc = "Beep boop."
 	name = "cyborg gloves"
@@ -100,6 +107,79 @@
 	item_state = "ihscombat"
 	armor_list = list(melee = 10, bullet = 60, energy = 10, bomb = 10, bio = 0, rad = 0)
 
+/obj/item/clothing/gloves/thick/swat/blackshield_corpsman
+	name = "corpsman combat gloves"
+	desc = "A pair of fire and impact-resistant corpsman combat gloves. This pair has an extra rubbery coating to help prevent germs."
+	icon_state = "corpsman_base_gloves"
+	item_state = "corpsman_base_gloves"
+	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 15, rad = 0)
+	siemens_coefficient = 0
+	price_tag = 250
+
+/obj/item/clothing/gloves/thick/swat/blackshield_corpsman/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Basics"] = "corpsman_base_gloves"
+	options["Night Camo"] = "corpsman_black_gloves"
+	options["Gray Clays Camo"] = "corpsman_drab_gloves"
+	options["Jungle Camo"] = "corpsman_green_gloves"
+	options["Swamp Camo"] = "corpsman_tan_gloves"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return TRUE
+
+
+/obj/item/clothing/gloves/thick/swat/blackshield //Combined effect of SWAT gloves and insulated gloves
+	name = "blackshield combat gloves"
+	icon_state = "bs_base_gloves"
+	item_state = "bs_base_gloves"
+	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
+	siemens_coefficient = 0
+	price_tag = 250
+
+/obj/item/clothing/gloves/thick/swat/blackshield/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Basics"] = "bs_base_gloves"
+	options["Night Camo"] = "bs_black_gloves"
+	options["Gray Clays Camo"] = "bs_drab_gloves"
+	options["Jungle Camo"] = "bs_green_gloves"
+	options["Swamp Camo"] = "bs_tan_gloves"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return TRUE
+
+
 /obj/item/clothing/gloves/thick/combat //Combined effect of SWAT gloves and insulated gloves
 	desc = "A pair of fire, shock-proof, and impact-resistant combat gloves."
 	name = "combat gloves"
@@ -108,6 +188,7 @@
 	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
 	price_tag = 250
+
 
 /obj/item/clothing/gloves/thick/hunter
 	desc = "Tough, tight fitting and reinforced with bone this pair of leather gloves blend a perfect compromise between durability and comfort thanks to the different materials used."
@@ -172,6 +253,16 @@
 	desc = "A pair of sterile nitrile gloves."
 	icon_state = "nitrile"
 	item_state = "nitrile"
+
+/obj/item/clothing/gloves/latex/regal
+	name = "regal white gloves"
+	desc = "A pair of white gloves, made with old fashioned gauze rather than latex. Still surprisingly sterile for all medical purposes."
+	icon_state = "regal"
+	item_state = "regal"
+	siemens_coefficient = 0
+	permeability_coefficient = 0.01
+	germ_level = 0
+	price_tag = 300 // A relic!
 
 /obj/item/clothing/gloves/botanic_leather
 	desc = "A pair of leather work gloves that protect against floral dangers such as thorns and barbs."

@@ -168,7 +168,9 @@
 		/obj/item/soap,
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
-		/obj/item/oddity/chimeric_fang_trophy
+		/obj/item/oddity/chimeric_fang_trophy,
+		/obj/item/device/binoculars,
+		/obj/item/device/lighting/glowstick/flare/torch
 	)
 
 /obj/item/storage/belt/utility/neotheology
@@ -185,7 +187,8 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
-		/obj/item/gun/energy/ntpistol
+		/obj/item/gun/energy/ntpistol,
+		/obj/item/device/binoculars
 	)
 
 /obj/item/storage/belt/utility/handmade
@@ -359,7 +362,8 @@
 		/obj/item/device/camera,
 		/obj/item/folder,
 		/obj/item/reagent_containers/food/snacks,
-		/obj/item/reagent_containers/food/drinks
+		/obj/item/reagent_containers/food/drinks,
+		/obj/item/device/binoculars // By popular demand. - Seb
 	)
 
 /obj/item/storage/belt/holding
@@ -454,7 +458,8 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
-		/obj/item/gun/energy/ntpistol
+		/obj/item/gun/energy/ntpistol,
+		/obj/item/device/binoculars
 	)
 
 /obj/item/storage/belt/champion
@@ -551,6 +556,18 @@
 
 		return 1
 
+//Start with normal
+/obj/item/storage/belt/webbing/artificer/ert
+	storage_slots = 9 //Like old belts used to be
+	max_w_class = ITEM_SIZE_NORMAL
 
-
-
+/obj/item/storage/belt/webbing/artificer/ert/populate_contents()
+	new /obj/item/tool/crowbar/pneumatic(src)
+	new /obj/item/tool/hammer/deadblow(src)
+	new /obj/item/tool/multitool/advanced(src)
+	new /obj/item/tool/screwdriver/electric(src)
+	new /obj/item/tool/shovel/power(src)
+	new /obj/item/tool/tape_roll/fiber(src)
+	new /obj/item/tool/baton/arcwelder(src)
+	new /obj/item/tool/wirecutters/armature(src)
+	new /obj/item/tool/wrench/big_wrench(src)

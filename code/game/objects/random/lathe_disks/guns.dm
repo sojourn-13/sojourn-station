@@ -67,7 +67,8 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/roe = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/sika = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/boltgun_sa = 6,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/zatvor = 3))
+				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/zatvor = 3,
+				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/bounty_lever = 2))
 
 /obj/random/lathe_disk/lmg
 	name = "random lmg lathe disk"
@@ -173,7 +174,8 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/basilisk = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 6,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/liberty = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/glock = 2))
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/glock = 2,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/judiciary =2))
 
 /obj/random/lathe_disk/grande
 	name = "random grande based lathe disk"

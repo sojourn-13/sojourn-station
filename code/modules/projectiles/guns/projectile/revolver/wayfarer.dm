@@ -8,6 +8,7 @@
 	icon = 'icons/obj/guns/projectile/wayfarer.dmi'
 	icon_state = "wayfarer"
 	item_state = "wayfarer"
+	excelsior = FALSE
 	drawChargeMeter = FALSE
 	caliber = "10x24"
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
@@ -15,7 +16,7 @@
 	ammo_type = /obj/item/ammo_magazine/c10x24
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 5, MATERIAL_IRON = 5, MATERIAL_WOOD = 3)
 	can_dual = TRUE
-	price_tag = 1750
+	price_tag = 1400
 	damage_multiplier = 1.6
 	penetration_multiplier = 2
 	init_recoil = RIFLE_RECOIL(0.1)

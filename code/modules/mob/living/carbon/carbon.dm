@@ -32,6 +32,7 @@
 	QDEL_NULL(touching)
 	QDEL_NULL(reagents) //TODO: test deleting QDEL_NULL(reagents) since QDEL_NULL(bloodstr) might be all we need
 	QDEL_NULL(bloodstr)
+	QDEL_NULL(metabolism_effects)
 	// qdel(metabolism_effects) //not sure why, but this causes a GC failure, maybe this isnt supposed to qdel?
 	// We don't qdel(bloodstr) because it's the same as qdel(reagents) // then why arent you qdeling reagents
 	QDEL_LIST(internal_organs)
@@ -241,6 +242,14 @@
 	dna = newDNA
 
 // ++++ROCKDTBEN++++ MOB PROCS //END
+
+/mob/living/carbon/flash(duration = 0, drop_items = FALSE, doblind = FALSE, doblurry = FALSE)
+	if(blinded)
+		return
+	if(species)
+		..(duration * flash_mod, drop_items, doblind, doblurry)
+	else
+		..(duration, drop_items, doblind, doblurry)
 
 //Throwing stuff
 /mob/proc/throw_item(atom/target)

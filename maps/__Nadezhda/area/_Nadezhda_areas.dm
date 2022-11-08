@@ -505,6 +505,7 @@
 /area/nadezhda/command/panic_room
 	name = "\improper Panic Room"
 	icon_state = "bridge"
+	flags = AREA_FLAG_CRITICAL | AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
 
 /area/nadezhda/command/bridgebar
@@ -516,6 +517,7 @@
 	name = "\improper Command - Premier's Office"
 	icon_state = "captain"
 	sound_env = SMALL_SOFTFLOOR
+	flags = AREA_FLAG_CRITICAL
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/captain/quarters
@@ -525,11 +527,13 @@
 	name = "\improper Command - Steward's Quarters"
 	icon_state = "head_quarters"
 	sound_env = SMALL_SOFTFLOOR
+	flags = AREA_FLAG_CRITICAL
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/cro
 	name = "\improper Research - CRO's Office"
 	icon_state = "head_quarters"
+	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 
 /area/nadezhda/command/cro/quarters
@@ -541,6 +545,7 @@
 /area/nadezhda/command/gmaster
 	name = "\improper Engineering - Guild Master's Office"
 	icon_state = "head_quarters"
+	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 
 /area/nadezhda/command/gmaster/quarters
@@ -552,6 +557,7 @@
 /area/nadezhda/command/cbo
 	name = "\improper Medbay - CBO's Office"
 	icon_state = "head_quarters"
+	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 
 /area/nadezhda/command/cbo/quarters
@@ -561,13 +567,14 @@
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/swo
-	name = "Warrent Officer's Office"
+	name = "Warrant Officer's Office"
 	icon_state = "hammerred"
+	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/swo/quarters
-	name = "Warrent Officer's Quarters"
+	name = "Warrant Officer's Quarters"
 	icon_state = "hammerred"
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
@@ -575,6 +582,7 @@
 /area/nadezhda/command/smc
 	name = "Blackshield Commander's Office"
 	icon_state = "hammerred"
+	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
@@ -587,6 +595,7 @@
 /area/nadezhda/command/prime
 	name = "Prime's Office"
 	icon_state = "head_quarters"
+	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
@@ -599,6 +608,7 @@
 /area/nadezhda/command/merchant
 	name = "\improper Lonestar - CEO's Office"
 	icon_state = "quart"
+	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 
 /area/nadezhda/command/teleporter
@@ -1190,6 +1200,9 @@ area/nadezhda/medical/medbaymeeting
 	name = "Medbay Upper Coridor"
 	icon_state = "erisgreen"
 
+/area/nadezhda/medical/organ_lab
+	name = "Organ Laboratory"
+
 //Security
 
 /area/nadezhda/security
@@ -1409,6 +1422,10 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Cargo Mining Dock"
 	icon_state = "mining"
 
+/area/nadezhda/quartermaster/mining_outside_doc
+	name = "\improper Cargo Mining Area"
+	icon_state = "mining"
+
 /area/nadezhda/quartermaster/disposaldrop
 	name = "Disposal and Delivery"
 	icon_state = "erisred"
@@ -1444,6 +1461,7 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/rnd/research
 	name = "\improper Research and Development"
 	icon_state = "research"
+	flags = AREA_FLAG_CRITICAL
 
 /area/nadezhda/rnd/researchbathroom
 	name = "\improper Research Bathroom"
@@ -1476,6 +1494,7 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/rnd/robotics
 	name = "\improper Robotics Lab"
 	icon_state = "robotics"
+	flags = AREA_FLAG_CRITICAL
 
 /area/nadezhda/rnd/rdoffice
 	name = "\improper Soteria Expedition Overseer's Office"

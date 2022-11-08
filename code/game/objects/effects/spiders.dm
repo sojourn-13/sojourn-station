@@ -99,14 +99,15 @@
 
 /obj/effect/spider/bullet_act(var/obj/item/projectile/Proj)
 	..()
-	if(BURN in Proj.damage_types)
-		for(var/obj/effect/spider/webby in range(1, src))
-			if(prob(80))
-				webby.ignite()
-		visible_message("<span class='warning'>\The [src] bursts into flame!</span>")
-		ignite()
-	health -= Proj.get_structure_damage()
-	healthCheck()
+	if (!(Proj.testing))
+		if(BURN in Proj.damage_types)
+			for(var/obj/effect/spider/webby in range(1, src))
+				if(prob(80))
+					webby.ignite()
+			visible_message("<span class='warning'>\The [src] bursts into flame!</span>")
+			ignite()
+		health -= Proj.get_structure_damage()
+		healthCheck()
 
 /obj/effect/spider/healthCheck()
 	if(health <= 0)
@@ -185,7 +186,7 @@
 	burn_overlay = "eggs_burning"
 	var/amount_grown = 0
 	var/spiderlings_lower = 2
-	var/spiderlings_upper = 4
+	var/spiderlings_upper = 3
 
 /obj/effect/spider/eggcluster/minor
 	amount_grown = 20
@@ -207,7 +208,14 @@
 
 	. = ..()
 
+/obj/effect/spider/eggcluster/proc/die()
+	visible_message("<span class='alert'>[src] dies!</span>")
+	new /obj/effect/decal/cleanable/spiderling_remains(loc)
+	qdel(src)
+
+
 /obj/effect/spider/eggcluster/Process()
+	..() //handle burning
 	amount_grown += rand(0,2)
 	if(amount_grown >= 100)
 		var/num = rand(spiderlings_lower,spiderlings_upper)
@@ -234,13 +242,14 @@
 	var/obj/machinery/atmospherics/unary/vent_pump/entry_vent
 	var/travelling_in_vent = 0
 	var/spawn_type = /obj/random/mob/spiders
+	var/death_prob = 20 //20% to just die rather then grow up, sad
+	var/age_prob = 30   //30% per processing tick to gain an grow amount
 
 /obj/effect/spider/spiderling/New(var/location, var/atom/parent)
 	pixel_x = rand(6,-6)
 	pixel_y = rand(6,-6)
 	START_PROCESSING(SSobj, src)
-	//50% chance to grow up
-	if(prob(50))
+	if(prob(age_prob))
 		amount_grown = 1
 	get_light_and_color(parent)
 	..()
@@ -249,7 +258,7 @@
 	STOP_PROCESSING(SSobj, src)
 	if(entry_vent)
 		entry_vent = null
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 	if (istype(loc, /obj/item/organ/external))
 		var/obj/item/organ/external/O = loc
 		O.implants -= src
@@ -325,7 +334,7 @@
 			var/list/nearby = trange(5, src) - loc
 			if(nearby.len)
 				var/target_atom = pick(nearby)
-				walk_to(src, target_atom, 5)
+				SSmove_manager.move_to(src, target_atom, 5)
 				if(prob(25))
 					src.visible_message("<span class='notice'>\The [src] skitters[pick(" away"," around","")].</span>")
 		else if(prob(1))
@@ -333,10 +342,13 @@
 			for(var/obj/machinery/atmospherics/unary/vent_pump/v in view(7,src))
 				if(!v.welded)
 					entry_vent = v
-					walk_to(src, entry_vent, 5)
+					SSmove_manager.move_to(src, entry_vent, 5)
 					break
 
 		if(amount_grown >= 100)
+			if(prob(death_prob)) //Sometimes we just dont make it past childhood
+				die()
+				return
 			new spawn_type(src.loc, src) //This spawns the random mob spawner that the spiderling grows into
 			qdel(src)
 	else if(isorgan(loc))
@@ -394,3 +406,5 @@
 /obj/effect/spider/spiderling/near_grown
 	amount_grown = 80
 	spawn_type = /obj/random/mob/spiders/spider_ling //This one cant spawn carrons
+	age_prob = 50 //coin flip if we grow up or not
+	death_prob = 10 //10% to just die rather then grow up, sad

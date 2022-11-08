@@ -57,6 +57,7 @@
 	icon = 'icons/obj/guns/projectile/operator.dmi'
 	icon_state = "operator"
 	item_state = "oporator"
+	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 4)
 	max_shells = 7
 	ammo_type = /obj/item/ammo_casing/shotgun
@@ -64,7 +65,7 @@
 	price_tag = 1000
 	damage_multiplier = 0.8
 	penetration_multiplier = 1.0
-	zoom_factor = 0.2
+	zoom_factors = list(0.2)
 	init_recoil = RIFLE_RECOIL(1.4)
 	folding_stock = TRUE //we can fold are stocks
 	can_dual = FALSE

@@ -342,8 +342,10 @@
 			if(spawn_type)
 				var/obj/item/gun/energy/new_gun = new spawn_type(src.loc)
 				new_item = new_gun
-				new_item.icon_state = "egun[rand(1,6)]"
+				new_gun.icon_state = "egun[rand(1,6)]"
 				new_gun.desc = "This is an antique energy weapon, you're not sure if it will fire or not."
+				new_gun.serial_type = "INDEX"
+				new_gun.serial_shown = FALSE
 
 				//5% chance to explode when first fired
 				//10% chance to have an unchargeable cell
@@ -361,11 +363,13 @@
 			item_type = "gun"
 		if(27)
 			//revolver
-			var/obj/item/gun/projectile/new_gun = new /obj/item/gun/projectile/revolver(src.loc)
+			var/obj/item/gun/projectile/new_gun = new /obj/item/gun/projectile/revolver/xenoarch(src.loc)
 			new_item = new_gun
-			new_item.icon_state = "gun[rand(1,4)]"
-			new_item.icon = 'icons/obj/xenoarchaeology.dmi'
-			new_item.price_tag = rand(950,2500)
+			new_gun.icon_state = "gun[rand(1,4)]"
+			new_gun.icon = 'icons/obj/xenoarchaeology.dmi'
+			new_gun.serial_type = "INDEX"
+			new_gun.serial_shown = FALSE
+			new_gun.price_tag = rand(950,2500)
 			//33% chance to be able to reload the gun with human ammunition
 			if(prob(66))
 				new_gun.caliber = "999"

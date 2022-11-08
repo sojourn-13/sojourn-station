@@ -214,10 +214,15 @@
 			return
 
 		I.add_fingerprint(user)
-		I.forceMove(src)
-		user.visible_message("[user.name] places \the [I] into \the [src].", \
-			"You place \the [I] into the [src].")
-		playsound(loc, 'sound/machines/vending_drop.ogg', 100, 1)
+		if(user.drop_from_inventory(I))
+			user.drop_from_inventory(I)
+			I.forceMove(src)
+			user.visible_message("[user.name] places \the [I] into \the [src].", \
+				"You place \the [I] into the [src].")
+			playsound(loc, 'sound/machines/vending_drop.ogg', 100, 1)
+		else
+			user.visible_message("[user.name] fails to throw away \the [I] into \the [src].", \
+				"You fail to throw away \the [I] into the [src].")
 		update()
 		return
 	. = ..()

@@ -106,12 +106,13 @@
 /turf/simulated/mineral/bullet_act(var/obj/item/projectile/Proj)
 
 	// Emitter blasts
-	if(istype(Proj, /obj/item/projectile/beam/emitter))
-		emitter_blasts_taken++
+	if (!(Proj.testing))
+		if(istype(Proj, /obj/item/projectile/beam/emitter))
+			emitter_blasts_taken++
 
-		if(emitter_blasts_taken > 1) // 2 blasts per tile
-			mined_ore = 4 //Were blasting away rock with high power lasers this takes quite a bit of time to set up and power.
-			GetDrilled()
+			if(emitter_blasts_taken > 1) // 2 blasts per tile
+				mined_ore = 4 //Were blasting away rock with high power lasers this takes quite a bit of time to set up and power.
+				GetDrilled()
 
 /turf/simulated/mineral/Bumped(AM)
 	. = ..()
@@ -345,10 +346,7 @@
 				if(prob(50))
 					M.adjustBruteLoss(5)
 			else
-				if (M.HUDtech.Find("flash"))
-					flick("flash", M.HUDtech["flash"])
-				if(prob(50))
-					M.Stun(5)
+				M.flash(10, TRUE, TRUE , TRUE, 10)
 			M.apply_effect(25, IRRADIATE)
 
 	//Add some rubble,  you did just clear out a big chunk of rock.

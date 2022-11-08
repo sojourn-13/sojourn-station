@@ -1,13 +1,10 @@
 /*
 Quick overview:
-
 Pipes combine to form pipelines
 Pipelines and other atmospheric objects combine to form pipe_networks
 	Note: A single pipe_network represents a completely open space
-
 Pipes -> Pipelines
 Pipelines + Other Objects -> Pipe network
-
 */
 /obj/machinery/atmospherics
 
@@ -86,7 +83,7 @@ obj/machinery/atmospherics/proc/check_connect_types(obj/machinery/atmospherics/a
 
 /obj/machinery/atmospherics/proc/check_icon_cache(var/safety = 0)
 	if(!SSatoms.initialized)
-		return 0
+		return FALSE
 	if(!istype(icon_manager))
 		if(!safety) //to prevent infinite loops
 			icon_manager = new()

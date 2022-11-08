@@ -7,7 +7,7 @@
 		/obj/item/stack/medical/bruise_pack = 20,
 		/obj/item/stack/medical/advanced/bruise_pack/mending_ichor = 100,
 	)
-
+	requires_perk = TRUE
 	duration = 80
 
 /datum/surgery_step/fix_organ/require_tool_message(mob/living/user)
@@ -56,6 +56,7 @@
 	target_organ_type = /obj/item/organ/internal/bone
 	required_tool_quality = QUALITY_BONE_GRAFTING
 	duration = 80
+	requires_perk = TRUE
 
 /datum/surgery_step/fix_bone/require_tool_message(mob/living/user)
 	to_chat(user, SPAN_WARNING("You need a Bone Gel, or item capable of [required_tool_quality]"))
@@ -127,8 +128,6 @@
 	)
 	organ.take_damage(10, 0, sharp=TRUE)
 
-
-
 /datum/surgery_step/fix_necrosis
 	required_tool_quality = QUALITY_CUTTING
 	duration = 140
@@ -169,6 +168,7 @@
 	duration = 100
 	blood_level = 1
 	can_infect = TRUE
+	requires_perk = TRUE
 
 /datum/surgery_step/fix_face/can_use(mob/living/user, obj/item/organ/external/head/organ, obj/item/tool)
 	return istype(organ) && organ.is_open() && organ.disfigured

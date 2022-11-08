@@ -186,104 +186,6 @@
 	desc = "A comfortable red puffer vest."
 	icon_state = "puffycoatred"
 	item_state = "puffycoatred"
-/*Dusters*/
-
-/obj/item/clothing/suit/storage/duster/brown
-	name = "brown duster"
-	desc = "A standard brown duster with an added collar."
-	icon_state = "duster"
-	item_state = "duster"
-
-/obj/item/clothing/suit/storage/duster/chestnut
-	name = "chestnut duster"
-	desc = "A worn brown duster with a tough metallic belt."
-	icon_state = "autumn"
-	item_state = "autumn"
-
-/obj/item/clothing/suit/storage/duster/crimson
-	name = "crimson duster"
-	desc = "A deep red duster coat with a thick layer of padding."
-	icon_state = "battlecoat"
-	item_state = "battlecoat"
-
-/obj/item/clothing/suit/storage/duster/bloodred
-	name = "blood red duster"
-	desc = "A deep red duster coat with black trim padding."
-	icon_state = "te_coat"
-	item_state = "te_coat"
-
-/obj/item/clothing/suit/storage/duster/gauntlet
-	name = "gauntlet duster"
-	desc = "A thick brown duster with a tough but comfortable design."
-	icon_state = "sheriff"
-	item_state = "sheriff"
-
-/obj/item/clothing/suit/storage/duster/ivory
-	name = "ivory duster"
-	desc = "A lightly toned duster with a thinly layered undercoat."
-	icon_state = "ranger"
-	item_state = "ranger"
-
-/obj/item/clothing/suit/storage/duster/lumber
-	name = "lumber duster"
-	desc = "A dark blue sleeveless duster with a clasp."
-	icon_state = "veteran"
-	item_state = "veteran"
-
-/obj/item/clothing/suit/storage/duster/navy
-	name = "navy duster"
-	desc = "A battered dark navy duster with a well-worn look."
-	icon_state = "courier"
-	item_state = "courier"
-
-/obj/item/clothing/suit/storage/duster
-	name = "tan duster"
-	desc = "A resilient tan duster composed of somewhat frayed fabric."
-	icon_state = "soldiercoat"
-	item_state = "soldiercoat"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-
-/obj/item/clothing/suit/storage/duster/cyberpunklong
-	name = "cyberpunk coat"
-	desc = "A sleek longcoat made of neo-laminated fabric."
-	icon_state = "cyberpunksleek_long"
-	item_state = "cyberpunksleek_long"
-
-/obj/item/clothing/suit/storage/duster/cyberpunklong/green
-	name = "green cyberpunk coat"
-	desc = "A sleek longcoat made of neo-laminated fabric."
-	icon_state = "cyberpunksleek_long_green"
-	item_state = "cyberpunksleek_long_green"
-
-/obj/item/clothing/suit/storage/duster/cyberpunklong/black
-	name = "black cyberpunk coat"
-	desc = "A sleek longcoat made of neo-laminated fabric."
-	icon_state = "cyberpunksleek_long_black"
-	item_state = "cyberpunksleek_long_black"
-
-/obj/item/clothing/suit/storage/duster/cyberpunklong/white
-	name = "white cyberpunk coat"
-	desc = "A sleek longcoat made of neo-laminated fabric."
-	icon_state = "cyberpunksleek_long_white"
-	item_state = "cyberpunksleek_long_white"
-
-/obj/item/clothing/suit/storage/duster/bladerunner
-	name = "runner coat"
-	desc = "A sleek longcoat perfectly made for a driven person."
-	icon_state = "bladerunner_coat"
-	item_state = "bladerunner_coat"
-
-/obj/item/clothing/suit/storage/duster/donte
-	name = "exterminators jacket"
-	desc = "Your prom date won't know what to say when you show up wearing this stylish leather coat."
-	icon_state = "dante"
-	item_state = "dante"
-
-/obj/item/clothing/suit/storage/duster/denton
-	name = "futuristic coat"
-	desc = "whether hopping into action, or reading your coworkers emails, you'll be ready for any hostage situations"
-	icon_state = "denton"
-	item_state = "denton"
 
 
 /*Military Jackets*/
@@ -346,7 +248,6 @@
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
-	allowed = list (/obj/item/device/flash, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight,/obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
 
 /obj/item/clothing/suit/storage/snowsuit/command
 	name = "command snowsuit"
@@ -871,7 +772,6 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	icon_state = "hellvest"
 	item_state = "hellvest"
 	item_state_slots = list(slot_r_hand_str = "wcoat", slot_l_hand_str = "wcoat")
-	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
 	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 	slot_flags = SLOT_OCLOTHING
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -1012,7 +912,6 @@ obj/item/clothing/suit/sweater/blue
 	desc = "A snappy tan suit jacket."
 	icon_state = "tan_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
-	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
 
 /obj/item/clothing/suit/storage/suitjacket/helltaker
 	name = "white suit jacket"
@@ -1091,7 +990,7 @@ obj/item/clothing/suit/sweater/blue
 /obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown
 	name = "blue cardigan coat"
 	desc = "A blue-brown cardigan coat. Has nice pockets and added shades of brown for contrast."
-	icon_state = "longcardigan_brown_m"
+	icon_state = "longcardigan_blue"
 	body_parts_covered = UPPER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/suitjacket/shortcardigan_blueandbrown/verb/toggle_style()
@@ -1104,7 +1003,7 @@ obj/item/clothing/suit/sweater/blue
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["default"] = "longcardigan_brown_m"
+	options["default"] = "longcardigan_blue"
 	options["default open"] = "longcardigan_blue_open"
 	options["dark blue"] = "longcardigan_blue_alt"
 	options["dark brown open"] = "longcardigan_blue_alt_open"
@@ -1131,3 +1030,59 @@ obj/item/clothing/suit/sweater/blue
 	the design soon found itself spread throughout the colony."
 	icon_state = "scav_jacket"
 	item_state = "scav_jacket"
+
+/obj/item/clothing/suit/storage/suitjacket/trenchcoat
+	name = "noir trenchcoat"
+	desc = "A long and rugged black trenchcoat, the perfect complement for your film noir ensemble. \n All you need now is a smoke, a whiskey, unlimited ammo and a license to kill." // Max Payne reference.
+	icon_state = "black_trench_m"
+	item_state = "black_trench_m"
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/trenchcoat/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default"] = "black_trench_m"
+	options["feminine alt"] = "black_trench_f"
+
+	var/choice = input(M,"What kind of style do you want to change to?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
+		to_chat(M, "You adjusted your trenchcoat's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/storage/suitjacket/livesey // The word Rum and the word Death should mean the same to you. - Seb
+	name = "Naval Surgeon jacket"
+	desc = "An archaic, green jacket meant for a naval surgeon to dress formally while still being on duty."
+	icon_state = "livesey"
+	item_state = "livesey"
+	armor_list = list(
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 10,
+		rad = 0
+	)
+
+/obj/item/clothing/suit/storage/boxer_jacket //I shoulda never smoked that shit now I'm overthrowing the soviet government
+	name = "Boxer jacket"
+	desc = "Uppercut their heads off."
+	icon_state = "boxer_jacket"
+	item_state = "boxer_jacket"
+	body_parts_covered = UPPER_TORSO|ARMS

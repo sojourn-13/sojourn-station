@@ -2,7 +2,7 @@
 	<h3>Specifications:</h3>
 	<div class="statusDisplay" style="overflow: auto;">
 		<h4>Weapon details:</h4>
-		
+
 		{{if data.damage_multiplier != 1}}
 			<div class="itemLabel">
 				Projectile damage multiplier:
@@ -11,7 +11,16 @@
 				 {{:data.damage_multiplier}}x
 			</div>
 		{{/if}}
-		
+
+		{{if data.proj_pve_damage_multiplier != 1}}
+			<div class="itemLabel">
+				Projectile PvE damage multiplier:
+			</div>
+			<div class="itemContent">
+				 {{:data.multiply_pve_damage}}x
+			</div>
+		{{/if}}
+
 		{{if data.pierce_multiplier != 0}}
 			<div class="itemLabel">
 				Projectile walls penetration:
@@ -20,7 +29,7 @@
 				{{:data.pierce_multiplier}} walls
 			</div>
 		{{/if}}
-		
+
 		{{if data.penetration_multiplier != 1}}
 			<div class="itemLabel">
 				Projectile AP multiplier: 
@@ -29,14 +38,23 @@
 				{{:data.penetration_multiplier}}x
 			</div>
 		{{/if}}
-		
+
+		{{if data.proj_agony_multiplier != 1}}
+			<div class="itemLabel">
+				Projectile Agony multiplier: 
+			</div>
+			<div class="itemContent">
+				{{:data.proj_agony_multiplier}}x
+			</div>
+		{{/if}}
+
 		<div class="itemLabel">
 			Fire delay: 
 		</div>
 			<div class="itemContent">
 				{{:data.fire_delay}} ms
 			</div>
-		
+
 		{{if data.burst > 1}}
 			<div class="itemLabel">
 				Rounds per burst: 
@@ -138,19 +156,33 @@
 				<div class="itemContent">
 					{{:data.projectile_name}}
 				</div>
-			
+
 			<div class="itemLabel">
-				Overall damage:
+				PvP damage:
 			</div>
 				<div class="itemContent">
 					{{:data.projectile_damage}}
 				</div>
-			
+
+			<div class="itemLabel">
+				Estimated  PvE Damage:
+			</div>
+				<div class="itemContent">
+					{{:data.projectile_damage_pve}}
+				</div>
+
 			<div class="itemLabel">
 				Overall AP:
 			</div>
 				<div class="itemContent">
 					{{:data.projectile_AP}}
+				</div>
+
+			<div class="itemLabel">
+				Overall Pain:
+			</div>
+				<div class="itemContent">
+					{{:data.projectile_pain}}
 				</div>
 
 			<div class="itemLabel">
@@ -197,7 +229,7 @@
 								<div class="itemContent">
 									{{:value.burst}}
 								</div>
-							
+
 						{{/if}}
 						{{if value.fire_delay}}
 							<div class="itemLabel">

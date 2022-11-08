@@ -32,8 +32,9 @@
 
 /obj/item/roach_egg/bullet_act(var/obj/item/projectile/Proj)
 	..()
-	health -= Proj.get_structure_damage()
-	healthcheck()
+	if (!(Proj.testing))
+		health -= Proj.get_structure_damage()
+		healthcheck()
 
 /obj/item/roach_egg/proc/healthcheck()
 	if(health <= 0)

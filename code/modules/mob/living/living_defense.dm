@@ -5,43 +5,94 @@
 //If you need to do something else with armor - just use getarmor() proc and do with those numbers all you want
 //Random absorb system was a cancer, and was removed from all across the codebase. Don't recreate it. Clockrigger 2019
 
-/mob/living/proc/damage_through_armor(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/attack_flag = ARMOR_MELEE, var/armour_pen = 0, var/used_weapon = null, var/sharp = 0, var/edge = 0, var/post_pen_mult = 1)
+/mob/living/proc/damage_through_armor(
+	damage					= 0,
+	damagetype				= BRUTE,
+	def_zone				= null,
+	attack_flag				= ARMOR_MELEE,
+	armour_pen				= 0,
+	used_weapon				= null,
+	sharp					= FALSE,
+	edge					= FALSE,
+	post_pen_mult			= 1,
+	added_damage_bullet_pve	= 0,
+	added_damage_laser_pve	= 0
+	)
 
 	if(damage == 0)
 		return FALSE
 
+	//Used for simple/super mobs do to their armor being checked twice
+	var/armor_times_mod = 1
+
+	if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/))
+		armor_times_mod = 0.5
+
 	//GDR - guaranteed damage reduction. It's a value that deducted from damage before all calculations
 	var/armor = getarmor(def_zone, attack_flag)
 	var/guaranteed_damage_red = armor * ARMOR_GDR_COEFFICIENT
-	var/armor_effectiveness = max(0, ( armor - armour_pen ) )
-	var/armor_overpenetration = armour_pen - armor // This basiclly lets us over penitrate to deal extra damage. 20 AP - 10 Armor would give 10, well the reverse would be -10
+	var/armor_effectiveness = max(0, ((armor * armor_times_mod) - armour_pen))
 	var/effective_damage = damage - guaranteed_damage_red
 
-	if(damagetype == HALLOSS)
-		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/))
-			effective_damage = round ( effective_damage * ( 100 - src.getarmor(def_zone, "agony") ) / 100 )
-		else
+	if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/))
+		var/mob_brute_armor = src.getarmor(def_zone, "bullet") //All brute over-pen checks bullet rather then melee for simple mobs to keep melee viable
+		var/mob_laser_armor = src.getarmor(def_zone, "energy")
+		var/mob_agony_armor = src.getarmor(def_zone, "agony")
+
+		//message_admins("mob_brute_armor = [mob_brute_armor]!")
+		//message_admins("mob_laser_armor = [mob_laser_armor]!")
+		//message_admins("mob_agony_armor = [mob_agony_armor]!")
+
+		//We take the armor pen and baseline armor for calulating the armor pen rather then the reduction so that we get correct values
+		var/burns_armor_overpenetration = armour_pen - mob_laser_armor
+		var/brute_armor_overpenetration = armour_pen - mob_brute_armor
+
+		//This is put here rather then above over-pen as we want to keep over-pen being with baseline armor rather then halfed.
+		mob_brute_armor = mob_brute_armor * armor_times_mod
+		mob_laser_armor = mob_laser_armor * armor_times_mod
+
+		//message_admins("brute_armor_overpenetration = [brute_armor_overpenetration]!")
+		//message_admins("burns_armor_overpenetration = [burns_armor_overpenetration]!")
+
+		//message_admins("effective_damage = [effective_damage]!")
+		//message_admins("added_damage_bullet_pve = [added_damage_bullet_pve]!")
+		//message_admins("added_damage_laser_pve = [added_damage_laser_pve]!")
+
+		if(damagetype == HALLOSS)
+			effective_damage =  max(0,round(effective_damage - mob_agony_armor))
+
+		if(damagetype == AGONY)
+			effective_damage =  max(0,round(effective_damage - mob_agony_armor))
+
+		if(brute_armor_overpenetration > 0 && damagetype == BRUTE)
+			effective_damage += max(0,round(brute_armor_overpenetration))
+
+		if(burns_armor_overpenetration > 0 && damagetype == BURN)
+			effective_damage += max(0,round(burns_armor_overpenetration))
+
+		//This is why we cut are armor, otherwise we would be checking base armor 2 times for reduction
+		if(added_damage_bullet_pve)
+			effective_damage += max(0,round(added_damage_bullet_pve - mob_brute_armor))
+
+		if(added_damage_laser_pve)
+			effective_damage += max(0,round(added_damage_laser_pve - mob_laser_armor))
+
+
+		//message_admins("post math effective_damage = [effective_damage]!")
+
+	else
+
+		if(damagetype == HALLOSS)
 			effective_damage = round(effective_damage * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)))
-	//Simple and superior mobs have a different way of dealing with agony damage.
-	if(damagetype == AGONY)
-		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/))
-			effective_damage = round ( effective_damage * ( 100 - src.getarmor(def_zone, "agony") ) / 100 )
+
 
 	if(effective_damage <= 0)
 		show_message(SPAN_NOTICE("Your armor fully absorbs the blow!"))
 		return FALSE
 
-	if(armor_overpenetration > 0 && damagetype == BRUTE) //did we even over-penitrate?
-		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
-			effective_damage += max(0,round(armor_overpenetration - src.getarmor(def_zone, "bullet"))) //We re-check are armor we over-pentrated, this counts both melee and bullets. We reduce are over AP as bullets tend to have a lot
-
-	if(armor_overpenetration > 0 && damagetype == BURN) //did we even over-penitrate?
-		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
-			effective_damage += max(0,round((armor_overpenetration - src.getarmor(def_zone, "energy")) * 2)) //We re-check are armor we over-pentrated, and then deal 2x damage do to being a laser, thus weaker then most bullets and most mobs having less engery armor.
-
 
 	//Here we can remove edge or sharpness from the blow
-	if ( (sharp || edge) && prob ( getarmor (def_zone, attack_flag) ) )
+	if((sharp || edge) && prob (getarmor(def_zone, attack_flag)))
 		sharp = 0
 		edge = 0
 
@@ -99,11 +150,11 @@
 /mob/living/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	var/hit_dir = get_dir(P, src)
 
-	if (P.is_hot() >= HEAT_MOBIGNITE_THRESHOLD)
+	if (P.is_hot() >= HEAT_MOBIGNITE_THRESHOLD && (!(P.testing)))
 		IgniteMob()
 
 	//Being hit while using a deadman switch
-	if(istype(get_active_hand(),/obj/item/device/assembly/signaler))
+	if(istype(get_active_hand(),/obj/item/device/assembly/signaler) && (!(P.testing)))
 		var/obj/item/device/assembly/signaler/signaler = get_active_hand()
 		if(signaler.deadman && prob(80))
 			log_and_message_admins("has triggered a signaler deadman's switch")
@@ -112,17 +163,21 @@
 
 	//Stun Beams
 	if(P.taser_effect)
-		stun_effect_act(0, P.agony, def_zone, P)
-		to_chat(src, SPAN_WARNING("You have been hit by [P]!"))
+		if (!(P.testing))
+			stun_effect_act(0, P.agony, def_zone, P)
+			to_chat(src, SPAN_WARNING("You have been hit by [P]!"))
+		else
+			P.on_impact(src, TRUE) //not sure if this will work
 		qdel(P)
 		return TRUE
 
-	if(P.knockback && hit_dir)
+	if(P.knockback && hit_dir && (!(P.testing)))
 		throw_at(get_edge_target_turf(src, hit_dir), P.knockback, P.knockback)
 
 	//Armor and damage
 	if(!P.nodamage)
-		hit_impact(P.get_structure_damage(), hit_dir)
+		if (!(P.testing))
+			hit_impact(P.get_structure_damage(), hit_dir)
 		for(var/damage_type in P.damage_types)
 			var/damage = P.damage_types[damage_type]
 			var/dmult = 1
@@ -133,15 +188,16 @@
 				if(is_type_in_list(src, P.supereffective_types, TRUE))
 					dmult += P.supereffective_mult
 			damage *= dmult
-			damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P), post_pen_mult = P.post_penetration_dammult)
+			if (!(P.testing))
+				damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P), post_pen_mult = P.post_penetration_dammult, added_damage_bullet_pve = P.added_damage_bullet_pve, added_damage_laser_pve = P.added_damage_laser_pve)
 
 
 	if(P.agony > 0 && istype(P,/obj/item/projectile/bullet))
-		hit_impact(P.agony, hit_dir)
-		damage_through_armor(P.agony, HALLOSS, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp = is_sharp(P), edge = has_edge(P))
+		if (!(P.testing))
+			hit_impact(P.agony, hit_dir)
+			damage_through_armor(P.agony, HALLOSS, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp = is_sharp(P), edge = has_edge(P))
 
-
-	P.on_hit(src, def_zone)
+	..()
 	return TRUE
 
 //Handles the effects of "stun" weapons
@@ -388,6 +444,11 @@
 					I.action = new/datum/action/item_action
 				I.action.name = I.action_button_name
 				I.action.target = I
+				if(I.action_button_proc)
+					I.action.action_type = AB_ITEM_PROC
+					I.action.procname = I.action_button_proc
+					if(I.action_button_arguments)
+						I.action.arguments = I.action_button_arguments
 			I.action.Grant(src)
 	return
 

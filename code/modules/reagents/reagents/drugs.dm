@@ -7,18 +7,18 @@
 
 /datum/reagent/drug/on_mob_add(mob/living/L)
 	..()
-	SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_ADD_DRUG)
+	LEGACY_SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_ADD_DRUG)
 
 /datum/reagent/drug/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(sanity_gain)
 		var/mob/living/carbon/human/H = M
 		if(istype(H))
 			H.sanity.onDrug(src, effect_multiplier)
-		SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
+		LEGACY_SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
 
 /datum/reagent/drug/on_mob_delete(mob/living/L)
 	..()
-	SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_DELETE_DRUG)
+	LEGACY_SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_DELETE_DRUG)
 
 /datum/reagent/drug/space_drugs
 	name = "Space drugs"
@@ -81,7 +81,7 @@
 		var/mob/living/carbon/human/H = M
 		if(istype(H))
 			H.sanity.onDrug(src, effect_multiplier)
-		SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
+		LEGACY_SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
 	..()
 
 /datum/reagent/drug/serotrotium
@@ -427,25 +427,17 @@
 	taste_description = "teeth"
 	reagent_state = LIQUID
 	color = "#e06270"
-	metabolism = REM
+	metabolism = REM * 0.5
 	overdose = REAGENTS_OVERDOSE/6
 	nerve_system_accumulations = 80
 	addiction_chance = 30
 
 /datum/reagent/drug/nosfernium/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_BLOODRESTORE, 3 * effect_multiplier)
-	M.adjustToxLoss(1.5)
-	M.adjustNutrition(-10)
-	if(prob(10 * effect_multiplier))
-		M.vomit()
-	if(prob(5))
-		spawn
-			M.emote("me", 1, "pukes up blood!")
-		M.drip_blood(20)
+	M.add_chemical_effect(CE_NOPULSE, 1)
 
 /datum/reagent/drug/nosfernium/withdrawal_act(mob/living/carbon/M)
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	M.adjustNutrition(-25)
 
-datum/reagent/drug/sanguinum/overdose(var/mob/living/carbon/M, var/alien)
+datum/reagent/drug/nosfernium/overdose(var/mob/living/carbon/human/M, var/alien)
 	M.adjustBrainLoss(5) // This is meant to be lethal. If you survive this give your doctor a pat on the back.

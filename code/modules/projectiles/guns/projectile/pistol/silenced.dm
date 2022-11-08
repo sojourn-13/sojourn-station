@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/silenced
 	name = "\"Rafale\" silenced pistol"
-	desc = "A high quality, specialty handgun exclusively produced (as the markings so proudly state) by Seinemetall Defense GmbH. Commonly used by police and SWAT teams during stealth operations. Uses .40 Auto-Mag. Has an integrated silencer which cannot be removed."
+	desc = "A high quality, specialty handgun exclusively produced (as the markings so proudly state) by Seinemetall Defense GmbH. Commonly used by police and SWAT teams during stealth operations. Uses 10mm Auto-Mag. Has an integrated silencer which cannot be removed."
 	icon = 'icons/obj/guns/projectile/rafale.dmi'
 	icon_state = "rafale"
 	item_state = "rafale"
@@ -10,7 +10,7 @@
 	silenced = TRUE
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
-	price_tag = 750
+	price_tag = 800
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	proj_step_multiplier = 0.8

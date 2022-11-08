@@ -3,18 +3,18 @@
 #define FOOD_MODE 4 // To give food.
 #define CONSOLE_MODE 8 // To act as a console
 
-/mob/living/carbon/superior_animal/nanobot/findTarget()
+/mob/living/carbon/superior_animal/nanobot/doTargetMessage()
 	. = ..()
-	if(.)
-		visible_emote("lets out a buzz as it detects a target!")
-		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1, -3)
+
+	visible_emote("lets out a buzz as it detects a target!")
+	playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1, -3)
 
 /mob/living/carbon/superior_animal/nanobot/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	..()
 
 /mob/living/carbon/superior_animal/nanobot/UnarmedAttack(var/mob/living/carbon/human/H, var/proximity)
 	if(medbot) // Are we in healing mode?
-		if(H == patient) // Are we "attacking" our patient?
+		if(H == patient && ishuman(H)) // Are we "attacking" our patient?
 			var/t = valid_healing_target(H)
 			if(!t)
 				visible_emote("state, \"Patient healed.\"")

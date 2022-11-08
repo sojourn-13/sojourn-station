@@ -490,6 +490,31 @@
 		M.bodytemperature += rand(15, 30)
 	holder.remove_reagent("frostoil", 5)
 
+/datum/reagent/organic/capsaicin/condensed/spider
+	name = "Spider Capsaicin"
+	id = "condensedcapsaicinspider"
+	description = "A strange organic substance with the same effects of Condensed Capsaicin, but only to non-spiders."
+
+/datum/reagent/organic/capsaicin/condensed/spider/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
+	if (issuperiorspider(M))
+		return
+
+	. = ..()
+
+/datum/reagent/organic/capsaicin/condensed/spider/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	if (issuperiorspider(M))
+		return
+
+	. = ..()
+
+/datum/reagent/organic/capsaicin/condensed/spider/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if (issuperiorspider(M))
+		return
+
+	. = ..()
+
+
+
 /* Drinks */
 
 /datum/reagent/drink

@@ -37,6 +37,7 @@
 /area/mine/unexplored
 	name = "Mine"
 	icon_state = "unexplored"
+	turf_initializer = new /datum/turf_initializer/mining()
 
 /area/mine/gulag
 	name = "Labor Mines"

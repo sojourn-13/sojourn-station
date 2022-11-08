@@ -195,12 +195,12 @@
 /*History*/
 
 /obj/item/clothing/head/costume/history/anarchist_cap
-	name = "anarchist hat"
+	name = "anarchist cap"
 	desc = "A black styled piss-cover with a white skull symbol on the front of it. Mother Anarchy loves her sons.."
 	icon_state = "anarchist_cap"
 
 /obj/item/clothing/head/costume/history/anarchist
-	name = "anarchist hat"
+	name = "black papakha"
 	desc = "A black dyed-fur hat with a white skull symbol on the front of it. Mother Anarchy is not for sale.."
 	icon_state = "anarchist"
 	body_parts_covered = 0
@@ -245,6 +245,12 @@
 	name = "court jester hat"
 	icon_state = "jester2"
 	desc = "The extravagant jangly hat of a court jester."
+
+/obj/item/clothing/head/costume/livesey
+	name = "naval surgeon tricorne"
+	desc = "A tricorne worn by naval surgeons of antiquity, complete with an advocate wig."
+	icon_state = "livesey"
+	flags_inv = HIDEEARS|BLOCKHAIR
 
 /*Job*/
 

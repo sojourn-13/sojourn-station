@@ -17,7 +17,7 @@ var/global/floorIsLava = 0
 	var/m = "<span class=\"log_message\"><span class=\"prefix\">[tagtext]:</span> <span class=\"message\">[msg]</span></span>"
 	log_adminwarn(m)
 	for(var/client/C in admins)
-		m = "<span class=\"log_message\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> <span class=\"message\">[msg]</span></span>"
+		m = "<span class=\"log_message\"><span class=\"message\">[msg]</span></span>"
 		if(check_rights(R_ADMIN, 0, C.mob))
 			to_chat(C, m)
 
@@ -1028,6 +1028,8 @@ ADMIN_VERB_ADD(/datum/admins/proc/spawn_var_copy, R_ADMIN|R_DEBUG|R_FUN, TRUE)
 
 		for(var/variable in newItem.vars)
 			if (variable == "type") //type is read-only, we will runtime if we don't have this check
+				continue
+			if (variable in GLOB.banned_vars) // these vars must never be applied
 				continue
 			if (variable in spawn_variables) // if a var exists in this, an admin wanted it to be carried over, so let's apply it
 				newItem.vars[variable] = spawn_variables[variable]

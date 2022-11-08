@@ -9,7 +9,7 @@
 	fire_sound = 'sound/weapons/Taser.ogg'
 	charge_cost = 100
 	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_PLASTIC = 6, MATERIAL_SILVER = 6)
-	price_tag = 750
+	price_tag = 650
 
 	projectile_type = /obj/item/projectile/beam/stun
 	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
@@ -42,7 +42,7 @@
 	charge_cost = 50
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 1)
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 4, MATERIAL_SILVER = 2)
-	price_tag = 250
+	price_tag = 300
 	modifystate = null
 	suitable_cell = /obj/item/cell/small
 	cell_type = /obj/item/cell/small
@@ -72,7 +72,7 @@
 	icon_state = "PDWU"
 	charge_cost = 25
 	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 4, MATERIAL_SILVER = 2, MATERIAL_URANIUM = 1)
-	price_tag = 450
+	price_tag = 500
 
 /obj/item/gun/energy/gun/martin/upgraded/update_mode()
 	var/datum/firemode/current_mode = firemodes[sel_mode]
@@ -95,7 +95,7 @@
 	charge_cost = 50
 	can_dual = TRUE
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_WOOD = 4, MATERIAL_SILVER = 2)
-	price_tag = 150
+	price_tag = 200
 	init_firemodes = list(
 		LETHAL,
 		WEAPON_CHARGE

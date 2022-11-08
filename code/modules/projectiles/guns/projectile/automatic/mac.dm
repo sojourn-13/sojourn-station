@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/mac
 	name = "\"MAC\" SMG"
-	desc = "A conceptual replica of an old and incredibly simple SMG. However, ergonomics were never good on the original, and recoil is rather significant. Essentially disposable. Uses .35 Auto."
+	desc = "A conceptual replica of an old and incredibly simple SMG. However, ergonomics were never good on the original, and recoil is rather significant. Essentially disposable. Uses 9mm."
 	icon = 'icons/obj/guns/projectile/mac.dmi'
 	icon_state = "mac"
 	item_state = "mac"
@@ -12,9 +12,9 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_SMG|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)
-	price_tag = 1000
+	price_tag = 700
 	damage_multiplier = 0.9
-	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_MAGWELL)
 	init_recoil = SMG_RECOIL(0.7)
 
 	init_firemodes = list(
@@ -50,7 +50,7 @@
 ///not for typical use: it WILL cause lag
 /obj/item/gun/projectile/automatic/mac/croon
 	name = "\"Croon\" mini-chaingun"
-	desc = "Essentially a box with a motor, this ultra-simple SMG is technically a chaingun. The markings are in strange runes, the only ledgible parts reading \"Croon HS-010 .35\" and the selector switch seems to be fully automatic in both directions."
+	desc = "Essentially a box with a motor, this ultra-simple SMG is technically a chaingun. The markings are in strange runes, the only ledgible parts reading \"Croon HS-010 9mm\" and the selector switch seems to be fully automatic in both directions."
 	icon = 'icons/obj/guns/projectile/hs010.dmi'
 	icon_state = "croon"
 	item_state = "croon"
@@ -65,7 +65,7 @@
 	price_tag = 1000
 	damage_multiplier = 0.75
 	init_recoil = SMG_RECOIL(0.3)
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
 	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
 
 	init_firemodes = list(

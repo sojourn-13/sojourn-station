@@ -822,8 +822,8 @@
 			if(B.damage > 0)
 				B.damage = max(B.damage - 5 * removed, 0)
 
-/datum/reagent/medicine/quickclot/overdose(mob/living/carbon/M, alien)
-	M.add_chemical_effect(CE_BLOODCLOT, min(1, 0.20))
+/datum/reagent/medicine/quickclot/overdose(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_BLOODCLOT, min(1, 0.20 * effect_multiplier))
 
 /datum/reagent/medicine/ossisine
 	name = "Ossisine"
@@ -1076,6 +1076,20 @@
 		M.vomit()
 */
 
+/datum/reagent/medicine/sterilizer
+	name = "sterilizer"
+	id = "sterilizer"
+	description = "Sterilizing solution used in making medical supplies. Don't.. drink it."
+	taste_description = "soap"
+	reagent_state = LIQUID
+	color = "#00FFFF"
+	scannable = 1
+
+/datum/reagent/medicine/sterilizer/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(prob(10 * effect_multiplier))
+		M.vomit()
+
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Meds made from animals. Unga.
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1128,16 +1142,3 @@
 	id = "tahcacillin"
 	description = "An all-purpose antiviral agent derived from tahca horns crushed into a blood mixed extract."
 	constant_metabolism = TRUE
-
-/datum/reagent/medicine/sterilizer
-	name = "sterilizer"
-	id = "sterilizer"
-	description = "Sterilizing solution used in making medical supplies. Don't.. drink it."
-	taste_description = "soap"
-	reagent_state = LIQUID
-	color = "#00FFFF"
-	scannable = 1
-
-/datum/reagent/medicine/sterilizer/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(prob(10 * effect_multiplier))
-		M.vomit()

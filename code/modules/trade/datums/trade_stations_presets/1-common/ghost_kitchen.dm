@@ -3,12 +3,15 @@
 		"GK 'Spector'" = "Ghost Kitchen 'Spector': \"We got tons of orders that need filling, will take anything you can cook."
 	)
 	uid = "ghostkitchen"
+	tree_x = 0.5
+	tree_y = 0.9
 	start_discovered = TRUE
 	spawn_always = TRUE
 	markup = 10 //These guys should only want to buy food never sell, so this dosnt matter.
 	offer_limit = 20
 	base_income = 0
 	wealth = 0
+	regain_stock = FALSE
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 300
 	stations_recommended = list("mcronalds") //Alt way to get to it

@@ -16,7 +16,7 @@
 	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
 
 	cant_be_pulled = TRUE
-
+	cant_gib = TRUE
 	maxHealth = 120
 	health = 120
 	randpixel = 0
@@ -30,6 +30,7 @@
 	overkill_gib = 0 // Set so we don't lose its death dust special clause.
 	overkill_dust = 0
 	contaminant_immunity = TRUE
+	never_stimulate_air = TRUE
 	mob_size = 3 // Can't contain that which isn't actually real.
 
 	move_to_delay = 2
@@ -82,6 +83,15 @@
 	friendly_to_colony = FALSE
 
 	known_languages = list(LANGUAGE_COMMON)
+
+	drop_items = list(/obj/random/psi)
+
+	var/psionic_respawn = TRUE
+	var/fast_respawn = 5 MINUTES
+	var/slow_respawn = 15 MINUTES
+	var/respawn_mob_type = /obj/random/mob/psi_monster
+	var/affects_chaos = FALSE
+
 
 /mob/living/carbon/superior_animal/psi_monster/New()
 	..()

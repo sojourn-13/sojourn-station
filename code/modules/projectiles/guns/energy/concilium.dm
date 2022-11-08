@@ -1,8 +1,8 @@
 /obj/item/gun/energy/concillium
 	name = "\"Concillium\" las-machinegun"
-	desc = "Newest creation of the New Testament made exactly to pin down enemies with rapid shots. \
-	The low damage and bad accuracy (considering the size) of this gun is not to be judged badly considering their rapid rate of fire and large energy capacity, \
-	allowing the user to keep firing, forcing enemies to seek cover instead of running against the rate of fire. "
+	desc = "Produced by the New Testament, made to pin down enemies with rapid shots.\
+	The low per-shot damage and poor accuracy of this gun is made up for by its rapid rate of fire and large energy capacity, \
+	allowing the user to sustain long periods of fire, forcing enemies to seek cover or be torn apart by a rain of laserfire. "
 	icon = 'icons/obj/guns/energy/concilium.dmi'
 	icon_state = "concilium"
 	item_state = null	//so the human update icon uses the icon_state instead.

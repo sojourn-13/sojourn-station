@@ -82,8 +82,8 @@
 	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/paramedic
-	desc = "A jumpsuit made by soteria for their trauma team members. It's made with reinforced fiber to offer more protection for recovery operators."
-	name = "soteria trauma team jumpsuit"
+	desc = "A jumpsuit made by soteria for their recovery team members. It's made with reinforced fiber to offer more protection for recovery operators."
+	name = "soteria recovery team jumpsuit"
 	icon_state = "paramedic"
 	item_state = "paramedic"
 	permeability_coefficient = 0.50
@@ -97,8 +97,8 @@
 	)
 
 /obj/item/clothing/under/rank/paramedic/bdu
-	desc = "An old BDU that someone appears to have dyed in the signature colours of Soteria Trauma Team. It is made with reinforced fibers and sterile materials."
-	name = "soteria trauma team bdu"
+	desc = "An old BDU that someone appears to have dyed in the signature colours of Soteria Recovery Team. It is made with reinforced fibers and sterile materials."
+	name = "soteria recovery team bdu"
 	icon_state = "bdutt"
 	item_state = "bdutt"
 

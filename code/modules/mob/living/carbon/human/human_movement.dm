@@ -65,6 +65,9 @@
 	if(slowdown)
 		tally += 1
 
+	if(added_movedelay)
+		tally += added_movedelay
+
 	tally += (r_hand?.slowdown_hold + l_hand?.slowdown_hold)
 
 	return tally
@@ -132,3 +135,7 @@
 /mob/living/carbon/human/proc/calc_momentum()
 	momentum_speed--
 	update_momentum()
+
+
+/mob/living/carbon/human/proc/clear_movement_delay(movement_clearing = 0)
+	added_movedelay -= movement_clearing

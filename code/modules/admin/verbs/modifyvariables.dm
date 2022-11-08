@@ -358,6 +358,10 @@ var/list/VVckey_edit = list("key", "ckey")
 
 		variable = param_var_name
 
+		if (GLOB.gvars_datum_protected_varlist[variable])
+			to_chat(usr, "\red This variable is protected from VV.")
+			return
+
 		var_value = O.vars[variable]
 
 		if(autodetect_class)
@@ -408,6 +412,11 @@ var/list/VVckey_edit = list("key", "ckey")
 		names = sortList(names)
 
 		variable = input("Which var?","Var") as null|anything in names
+
+		if (GLOB.gvars_datum_protected_varlist[variable])
+			to_chat(usr, "\red This variable is protected from VV.")
+			return
+
 		if(!variable)	return
 		var_value = O.vars[variable]
 
@@ -503,6 +512,10 @@ var/list/VVckey_edit = list("key", "ckey")
 	var/datum/marked_datum = holder.marked_datum()
 	if(marked_datum && class == "marked datum ([marked_datum.type])")
 		class = "marked datum"
+
+	if (GLOB.gvars_datum_protected_varlist[variable])
+		to_chat(usr, "\red This variable is protected from VV.")
+		return
 
 	switch(class)
 

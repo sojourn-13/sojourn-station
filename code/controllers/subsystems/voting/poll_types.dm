@@ -100,17 +100,18 @@
 /datum/poll/storyteller
 	name = "Storyteller"
 	question = "Choose storyteller"
+	next_vote = 60 MINUTES //After an hour if people want let them re-vote the story teller
 	time = 120
 	choice_types = list()
 	minimum_voters = 0
 	only_admin = FALSE
 
-	multiple_votes = FALSE
+	multiple_votes = TRUE
 	can_revote = TRUE
 	can_unvote = TRUE
-	cooldown = 30 MINUTES
+	cooldown = 60 MINUTES //Unlike other votes were not to spamable do to how annoying this can get
 	see_votes = TRUE
-	only_admin = TRUE
+	only_admin = FALSE
 
 	var/pregame = FALSE
 
@@ -291,6 +292,30 @@
 	text = "Stay aboard"
 
 
+/datum/poll/chaos_level_increase
+	name = "Increase Chaos Level"
+	question = "Do you want to increase the chaos level?"
+	description = "Higher chaos level makes storyteller events much more likely."
+	time = 120
+	minimum_win_percentage = 0.75 //High % needed for something that alters the whole round
+	cooldown = 30 MINUTES
+	next_vote = 90 MINUTES //Same lenght as bluespace jump
+	choice_types = list(/datum/vote_choice/yes_chaos_level, /datum/vote_choice/no_chaos_level)
+	only_admin = FALSE
+	can_revote = TRUE
+	can_unvote = TRUE
+
+
+/datum/vote_choice/yes_chaos_level
+	text = "Increase the chaos level!"
+
+/datum/vote_choice/yes_chaos_level/on_win()
+	GLOB.chaos_level += 1
+	for (var/mob/M as mob in SSmobs.mob_list)
+		to_chat(M, "<br><center><span class='danger'><b><font size=4>Chaos Level Increased</font></b><br></span></center><br>")
+
+/datum/vote_choice/no_chaos_level
+	text = "We have enough chaos already!"
 
 
 

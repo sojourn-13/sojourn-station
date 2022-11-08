@@ -12,7 +12,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
-	price_tag = 1650
+	price_tag = 850
 	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
@@ -55,7 +55,7 @@
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
-	price_tag = 1250
+	price_tag = 850
 	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE, GUN_MAGWELL)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 12)
 	saw_off = TRUE
@@ -100,18 +100,18 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle
 	name = "\"STS\" battle rifle"
-	desc = "A rugged STS-30.  Uses 7.5mm rifle rounds. We'll keep our land a free land, stop the enemy coming in."
+	desc = "A rugged STS-30.  Uses 7.62mm rifle rounds. We'll keep our land a free land, stop the enemy coming in."
 	icon = 'icons/obj/guns/projectile/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
-	price_tag = 1500
-	w_class = ITEM_SIZE_HUGE
+	price_tag = 1000
+	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 1
 	penetration_multiplier = 1.2
 	init_recoil = RIFLE_RECOIL(1.3)
-	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg'
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn
 
@@ -123,11 +123,12 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/sawn
 	name = "sawn down \"STS\" battle rifle"
-	desc = "A rugged STS-30.  Uses 7.5mm rifle rounds. This one has been shortened as much as possible while still able to function."
+	desc = "A rugged STS-30.  Uses 7.62mm rifle rounds. This one has been shortened as much as possible while still able to function."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
-	w_class = ITEM_SIZE_BULKY
+	price_tag = 800
+	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	penetration_multiplier = 1.0
@@ -141,18 +142,18 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield
 	name = "\"STS PARA\" Blackshield rifle"
-	desc = "A lightweight modified variant of the STS-30 that takes 7.5mm rounds, shedding wartime wood for modern plastic polymer. \
+	desc = "A lightweight modified variant of the STS-30 that takes 7.62mm rounds, shedding wartime wood for modern plastic polymer. \
 	The lightweight polymer, skeletal stock, and shortened barrel make this weapon much lighter than the standard STS with modified recievers and gas block for better recoil control. \
 	Two stamps are pressed into the side of the receiver: A 'M&C' logo and a blackshield logo."
 	icon = 'icons/obj/guns/projectile/sts35.dmi'
 	icon_state = "stspara"
 	item_state = "stspara"
-	w_class = ITEM_SIZE_HUGE
+	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 1.2 //Well oiled
 	init_recoil = RIFLE_RECOIL(1.5)
-	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg' // This is the sound ripped from a video of me shooting an FM FSL. As real as it gets. - Seb
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield
 	serial_type = "NM"
@@ -165,11 +166,11 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield
 	name = "sawn down Blackshield \"STS PARA\" rifle"
-	desc = "A rugged STS-35 with two round burst.  Uses 7.5mm rifle rounds. This one has been shortened as much as possible while still able to function still more effective then a normal STS-30 varent."
+	desc = "A rugged STS-35 with two round burst.  Uses 7.62mm rifle rounds. This one has been shortened as much as possible while still able to function still more effective then a normal STS-30 varent."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts30.dmi'
 	icon_state = "sts"
 	item_state = "sts"
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 1.0 //Rifle was fine
@@ -186,14 +187,14 @@
 
 /obj/item/gun/projectile/automatic/sts/hrifle
 	name = "\"STS\" heavy rifle"
-	desc = "A rugged STS-40. Uses .408 heavy rifle rounds. If we have to go alone, we'll go alone with pride."
+	desc = "A rugged STS-40. Uses 8.6x70mm heavy rifle rounds. If we have to go alone, we'll go alone with pride."
 	icon = 'icons/obj/guns/projectile/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"
 	w_class = ITEM_SIZE_HUGE
 	caliber = CAL_HRIFLE
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
-	price_tag = 1750
+	price_tag = 1500
 	penetration_multiplier = 1.1
 	damage_multiplier = 1.1
 	init_recoil = RIFLE_RECOIL(1.7)
@@ -207,10 +208,11 @@
 
 /obj/item/gun/projectile/automatic/sts/hrifle/sawn
 	name = "sawn down \"STS\" heavy rifle"
-	desc = "A rugged STS-40. Uses .408 heavy rifle rounds. This one has been shortened as much as possible while still able to function."
+	desc = "A rugged STS-40. Uses 8.6x70mm heavy rifle rounds. This one has been shortened as much as possible while still able to function."
 	icon = 'icons/obj/guns/projectile/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"
+	price_tag = 1125
 	w_class = ITEM_SIZE_BULKY
 	penetration_multiplier = 0.8
 	damage_multiplier = 1

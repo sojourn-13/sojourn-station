@@ -4,17 +4,20 @@
 	name_pool = list(
 		"RS 'Recoll'" = "Refinery Ship 'Recoll': \"Hey! We are a small refinery looking for customers. We accept all types of ores and we sell refined materials at cheap prices as well!\""
 	)
+	icon_states = list("htu_frigate", "ship")
 	uid = "materials"
+	tree_x = 0.1
+	tree_y = 0.9
 	markup = RARE_GOODS
 	base_income = 0		// Needs ore to refine
 	wealth = 0
 	offer_limit = 30
-	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	hidden_inv_threshold = 7000
+	recommendation_threshold = 8000
 	stations_recommended = list("trash")
 	inventory = list(
 		"Flares"  = list(
-			/obj/item/device/lighting/glowstick/flare,
+			/obj/item/device/lighting/glowstick/flare = good_data("Red Hand Flare", list(1, 5), 10),
 			/obj/item/ammo_magazine/ammobox/shotgun/flash,
 			/obj/item/gun/projectile/boltgun/flare_gun,
 			/obj/item/ammo_casing/flare/blue/prespawn,
@@ -39,7 +42,7 @@
 			/obj/item/stack/material/wood/full = good_data("wood planks (x120)", list(2, 5), 360),
 			/obj/item/stack/material/glass/full = good_data("glass sheets (x120)", list(2, 5), 720),
 			/obj/item/stack/material/plasma/full = good_data("plasma sheets (x120)", list(1, 2), 3600),
-			/obj/item/stack/material/glass/plasmaglass = good_data("borosilicate glass sheets (x120)", list(3, 5), 3600)
+			/obj/item/stack/material/glass/plasmaglass/full = good_data("borosilicate glass sheets (x120)", list(3, 5), 3600)
 		)
 	)
 
@@ -59,6 +62,8 @@
 
 	offer_types = list(
 		// Trash mats are priced based on expected value of sheets. Ores are priced based on smelting results and are priced slightly better than if the processed sheets were being sold directly.
+		/obj/item/tool/pickaxe = offer_data_mods("modified pickaxe (3 upgrades)", 1400, 2, OFFER_MODDED_TOOL, 3),
+		/obj/item/tool/shovel = offer_data_mods("modified shovel (3 upgrades)", 1400, 2, OFFER_MODDED_TOOL, 3),
 		/obj/item/trash/material/metal = offer_data("scrap metal", 120, 20),
 		/obj/item/trash/material/circuit = offer_data("burnt circuit", 90, 20),
 		/obj/item/trash/material/device = offer_data("broken device", 205, 20),

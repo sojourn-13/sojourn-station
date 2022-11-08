@@ -16,10 +16,10 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_SMG|MAG_WELL_PISTOL|MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_GLASS = 5)
-	price_tag = 700
+	price_tag = 600
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.1
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE, GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE, GUN_CALIBRE_9MM)
 	init_recoil = SMG_RECOIL(1)
 	folding_stock = TRUE //we can fold are stocks
 

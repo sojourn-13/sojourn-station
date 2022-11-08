@@ -90,7 +90,7 @@
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
 "ax" = (
-/obj/machinery/porta_turret/One_star,
+/obj/random/turret/os,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
 "ay" = (
@@ -5054,15 +5054,7 @@
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
 "rT" = (
-/obj/machinery/porta_turret/One_star{
-	check_access = 0
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
+/obj/random/turret/os,
 /turf/simulated/floor/bluegrid,
 /area/nadezhda/outside/one_star)
 "rU" = (
@@ -10347,22 +10339,6 @@
 /obj/random/mob/vox/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
-"Mu" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced,
-/obj/machinery/porta_turret/One_star{
-	check_access = 0
-	},
-/turf/simulated/floor/bluegrid,
-/area/nadezhda/outside/one_star)
 "Mv" = (
 /mob/living/simple_animal/hostile/republicon,
 /turf/unsimulated/mineral,
@@ -10535,16 +10511,8 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Nh" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/porta_turret/One_star{
-	check_access = 0
-	},
-/turf/simulated/floor/bluegrid,
+/obj/structure/low_wall/onestar,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
 "Ni" = (
 /obj/effect/decal/cleanable/dirt,
@@ -10659,7 +10627,7 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper)
 "NC" = (
-/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper,
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "ND" = (
@@ -11344,12 +11312,6 @@
 /obj/structure/salvageable/computer,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper)
-"QE" = (
-/obj/machinery/porta_turret/One_star{
-	check_access = 0
-	},
-/turf/simulated/floor/bluegrid,
-/area/nadezhda/outside/one_star)
 "QF" = (
 /obj/structure/table/onestar,
 /turf/simulated/floor/carpet,
@@ -11533,7 +11495,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "Rq" = (
-/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper,
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Rr" = (
@@ -12542,6 +12504,9 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"Vx" = (
+/turf/simulated/wall/untinted/onestar_reinforced,
+/area/asteroid/rogue)
 "Vy" = (
 /obj/random/traps/low_chance,
 /turf/simulated/floor/asteroid/grass,
@@ -12923,6 +12888,10 @@
 	},
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
+"Xb" = (
+/obj/machinery/cryopod/dormitory,
+/turf/simulated/floor/wood/wild5,
+/area/asteroid/rogue)
 "Xc" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/mineral/planet,
@@ -21722,11 +21691,11 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
+cE
+cE
+cE
+cE
+cE
 aV
 ER
 ER
@@ -21931,11 +21900,11 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
+cE
+EX
+cM
+cJ
+cE
 aV
 ES
 hi
@@ -22140,11 +22109,11 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
+cE
+df
+EX
+dh
+cE
 aV
 Kl
 hi
@@ -22349,11 +22318,11 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
+cE
+Xb
+EX
+dB
+cE
 aV
 Kl
 hi
@@ -22558,11 +22527,11 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
+cE
+cE
+SO
+cE
+cE
 aV
 ER
 hi
@@ -22769,7 +22738,7 @@ aV
 aV
 aV
 aV
-aV
+SO
 aV
 aV
 aV
@@ -22978,7 +22947,7 @@ aV
 aV
 aV
 aV
-aV
+Kl
 aV
 aV
 aV
@@ -30649,7 +30618,7 @@ aV
 aV
 af
 af
-ax
+ak
 ak
 ak
 ak
@@ -33587,12 +33556,12 @@ af
 af
 af
 af
-af
-af
-af
-af
-ES
-Zu
+Vx
+cE
+cE
+cE
+cE
+cE
 aV
 aV
 aV
@@ -33797,11 +33766,11 @@ aV
 FN
 aV
 aV
-aV
-aV
-aV
-ES
-aV
+cE
+Xb
+cM
+cJ
+cE
 aV
 aV
 aV
@@ -34006,11 +33975,11 @@ aV
 Zu
 FN
 aV
-aV
-aV
-aV
-FN
-aV
+cE
+EX
+EX
+df
+cE
 aV
 aV
 aV
@@ -34213,13 +34182,13 @@ aV
 aV
 aV
 Zu
-aV
-aV
-aV
-aV
 Zu
-Km
-aV
+SO
+SO
+EX
+dh
+dB
+cE
 aV
 aV
 aV
@@ -34423,12 +34392,12 @@ aV
 aV
 Zu
 Zu
-ER
-AV
-ES
-ES
-FN
 aV
+cE
+cE
+cE
+cE
+cE
 aV
 aV
 aV
@@ -72013,8 +71982,8 @@ pW
 qd
 pI
 af
-pk
-pk
+Nh
+Nh
 pI
 Td
 pN
@@ -72222,8 +72191,8 @@ rJ
 KO
 pI
 af
-QE
-pk
+rT
+Nh
 PY
 pN
 qD
@@ -72432,7 +72401,7 @@ pI
 eo
 af
 qi
-pk
+Nh
 pI
 Td
 pN
@@ -72443,7 +72412,7 @@ cB
 PE
 Vg
 pN
-Mu
+rT
 pN
 Yz
 ZT
@@ -72640,8 +72609,8 @@ rJ
 KQ
 pI
 af
-QE
-pk
+rT
+Nh
 pI
 pN
 qD
@@ -72849,8 +72818,8 @@ pZ
 qg
 pI
 af
-pk
-pk
+Nh
+Nh
 pI
 Td
 pN
@@ -73295,7 +73264,7 @@ al
 al
 al
 XG
-Nh
+rT
 af
 ZZ
 af

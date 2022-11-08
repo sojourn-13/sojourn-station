@@ -6,6 +6,7 @@
 	icon_state = "welderpack"
 	w_class = ITEM_SIZE_BULKY
 	var/max_fuel = 350
+	my_fuel = "fuel"
 
 /obj/item/weldpack/canister
 	name = "canister"
@@ -15,9 +16,18 @@
 	w_class = ITEM_SIZE_NORMAL
 	max_fuel = 100
 
+/obj/item/weldpack/canister/oil
+	name = "oil canister"
+	desc = "You may need it to keep additional oil on hand."
+	slot_flags = null
+	icon_state = "canister_oil"
+	my_fuel = "oil"
+	w_class = ITEM_SIZE_NORMAL
+	max_fuel = 100
+
 /obj/item/weldpack/Initialize()
 	create_reagents(max_fuel)
-	reagents.add_reagent("fuel", max_fuel)
+	reagents.add_reagent(my_fuel, max_fuel)
 	. = ..()
 
 /obj/item/weldpack/afterattack(obj/O as obj, mob/user as mob, proximity)

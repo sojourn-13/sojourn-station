@@ -33,11 +33,14 @@
 	//var/list/supporting_limbs = list(
 	var/mob/living/carbon/human/occultist //This is so we know who is wearing it.
 	var/pointgranted = 0 //Did we give you your cog?
+	var/pointremoved = 0 //Did we take you your cog?
 
 /obj/item/clothing/suit/space/occultist/dropped()
 	..()
-	occultist.stats.changeStat(STAT_COG, -5)
-	spawn(5)
+	if(!pointremoved)
+		occultist.stats.changeStat(STAT_COG, -5)
+		pointremoved = TRUE
+	spawn(2)
 	qdel(src)
 
 /obj/item/clothing/suit/space/occultist/equipped(var/mob/M)
@@ -72,6 +75,7 @@
 	light_applied = 0
 	var/mob/living/carbon/human/occultist
 	var/pointgranted = 0 //Did we give you your cog?
+	var/pointremoved = 0 //Did we take you your cog?
 
 	action_button_name = "Toggle Witchlight" //reflavor this so I can make it purple to go in line with the guns - Sigma
 	light_overlay = "helmet_light_occult" //Sadly this has to go in icons/obj/light_overlays because I can't figure out how to point it to a different one.
@@ -79,8 +83,10 @@
 
 /obj/item/clothing/head/helmet/space/occulthood/dropped()
 	..()
-	occultist.stats.changeStat(STAT_COG, -5)
-	spawn(5)
+	if(!pointremoved)
+		occultist.stats.changeStat(STAT_COG, -5)
+		pointremoved = TRUE
+	spawn(2)
 	qdel(src)
 
 /obj/item/clothing/head/helmet/space/occulthood/attack_self(mob/user) //Reflavoring because this is light from a place that does not know it.
@@ -133,11 +139,14 @@
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT //make these like spacesuit so it can be a real spacesuit
 	var/mob/living/carbon/human/occultist
 	var/pointgranted = 0 //Did we give you your cog?
+	var/pointremoved = 0 //Did we take you your cog?
 
 /obj/item/clothing/gloves/occultgloves/dropped()
 	..()
-	occultist.stats.changeStat(STAT_COG, -5)
-	spawn(5)
+	if(!pointremoved)
+		occultist.stats.changeStat(STAT_COG, -5)
+		pointremoved = TRUE
+	spawn(2)
 	qdel(src)
 
 /obj/item/clothing/gloves/occultgloves/equipped(var/mob/M)
@@ -173,11 +182,14 @@
 	siemens_coefficient = 0 //Insulated!
 	var/mob/living/carbon/human/occultist
 	var/pointgranted = 0 //Did we give you your cog?
+	var/pointremoved = 0 //Did we take you your cog?
 
 /obj/item/clothing/shoes/occultgreaves/dropped()
 	..()
-	occultist.stats.changeStat(STAT_COG, -5)
-	spawn(5)
+	if(!pointremoved)
+		occultist.stats.changeStat(STAT_COG, -5)
+		pointremoved = TRUE
+	spawn(2)
 	qdel(src)
 
 /obj/item/clothing/shoes/occultgreaves/equipped(var/mob/M)

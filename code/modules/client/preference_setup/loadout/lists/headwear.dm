@@ -19,6 +19,11 @@
 	path = /obj/item/clothing/head/beret
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/head/beretselect_fancy
+	display_name = "fashionable beret selection"
+	path = /obj/item/clothing/head/beret/fashion
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/head/beretcustom
 	display_name = "beret, customized"
 	path = /obj/item/clothing/head/beret/custom
@@ -119,3 +124,16 @@
 /datum/gear/head/maid
 	display_name = "maid headdress"
 	path = /obj/item/clothing/head/maid
+
+/datum/gear/head/anarchist
+	display_name = "anarchist cap"
+	path = /obj/item/clothing/head/costume/history/anarchist_cap
+
+/datum/gear/head/papakha
+	display_name = "black papakha"
+	path = /obj/item/clothing/head/costume/history/anarchist
+
+/datum/gear/head/livesey
+	display_name = "Naval Surgeon Tricorne"
+	path = /obj/item/clothing/head/costume/livesey
+

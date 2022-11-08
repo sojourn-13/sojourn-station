@@ -24,7 +24,7 @@
 /obj/item/biosyphon/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
 	GLOB.ironhammer_faction_item_loss++
 	. = ..()
@@ -71,7 +71,7 @@
 	STOP_PROCESSING(SSobj, src)
 	check_for_faithful(list())
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
 	GLOB.moebius_faction_item_loss++
 	..()
@@ -148,7 +148,7 @@
 
 /obj/item/reagent_containers/enricher/Destroy()
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
 	GLOB.moebius_faction_item_loss++
 	..()
@@ -213,7 +213,7 @@
 	item_state = "techno_tribalism"
 	origin_tech = list(TECH_MATERIAL = 8, TECH_ENGINEERING = 7, TECH_POWER = 2)
 	price_tag = 20000
-	var/list/oddity_stats = list(STAT_MEC = 0, STAT_COG = 0, STAT_BIO = 0, STAT_ROB = 0, STAT_TGH = 0, STAT_VIG = 0)
+	var/list/oddity_stats = list(STAT_MEC = 0, STAT_COG = 0, STAT_BIO = 0, STAT_ROB = 0, STAT_TGH = 0, STAT_VIG = 0, STAT_VIV = 0, STAT_ANA = 0)
 	var/last_produce = -30 MINUTES
 	var/items_count = 0
 /*
@@ -236,7 +236,7 @@ No more of that.
 
 /obj/item/device/techno_tribalism/Destroy()
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
 	GLOB.technomancer_faction_item_loss++
 	..()
@@ -250,25 +250,35 @@ No more of that.
 				oddity_stats[STAT_COG] += 3
 				oddity_stats[STAT_BIO] += 3
 				oddity_stats[STAT_MEC] += 3
+				oddity_stats[STAT_ANA] += 1
+				oddity_stats[STAT_VIV] += 1
 			else if(GLOB.all_faction_items[W] == GLOB.department_security)
 				oddity_stats[STAT_VIG] += 3
 				oddity_stats[STAT_TGH] += 3
 				oddity_stats[STAT_ROB] += 3
+				oddity_stats[STAT_ANA] += 1
+				oddity_stats[STAT_VIV] += 1
 			else if(GLOB.all_faction_items[W] == GLOB.department_church)
 				oddity_stats[STAT_BIO] += 3
 				oddity_stats[STAT_COG] += 2
 				oddity_stats[STAT_VIG] += 2
 				oddity_stats[STAT_TGH] += 2
+				oddity_stats[STAT_ANA] += 1
+				oddity_stats[STAT_VIV] += 1
 			else if(GLOB.all_faction_items[W] == GLOB.department_guild)
 				oddity_stats[STAT_COG] += 3
 				oddity_stats[STAT_MEC] += 3
 				oddity_stats[STAT_ROB] += 1
 				oddity_stats[STAT_VIG] += 2
+				oddity_stats[STAT_ANA] += 1
+				oddity_stats[STAT_VIV] += 1
 			else if(GLOB.all_faction_items[W] == GLOB.department_engineering)
 				oddity_stats[STAT_MEC] += 5
 				oddity_stats[STAT_COG] += 2
 				oddity_stats[STAT_TGH] += 1
 				oddity_stats[STAT_VIG] += 1
+				oddity_stats[STAT_ANA] += 1
+				oddity_stats[STAT_VIV] += 1
 			else if(GLOB.all_faction_items[W] == GLOB.department_command)
 				oddity_stats[STAT_ROB] += 2
 				oddity_stats[STAT_TGH] += 1
@@ -276,6 +286,8 @@ No more of that.
 				oddity_stats[STAT_MEC] += 1
 				oddity_stats[STAT_VIG] += 3
 				oddity_stats[STAT_COG] += 1
+				oddity_stats[STAT_ANA] += 1
+				oddity_stats[STAT_VIV] += 1
 			else
 				CRASH("[W], incompatible department")
 
@@ -357,7 +369,7 @@ No more of that.
 			to_chat(user, SPAN_WARNING("The [W] is not suitable for [src]!"))
 			return
 		to_chat(user, SPAN_NOTICE("You feed [W] to [src]."))
-		SEND_SIGNAL(user, COMSIG_OBJ_TECHNO_TRIBALISM, W)
+		LEGACY_SEND_SIGNAL(user, COMSIG_OBJ_TECHNO_TRIBALISM, W)
 		items_count += 1
 		qdel(W)
 
@@ -409,7 +421,7 @@ No more of that.
 /obj/item/maneki_neko/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
 	GLOB.guild_faction_item_loss++
 	..()
@@ -449,7 +461,7 @@ No more of that.
 /obj/item/maneki_neko/proc/destroy_lifes()
 	for(var/mob/living/carbon/human/H in followers)
 
-		for(var/stat in ALL_STATS)
+		for(var/stat in ALL_STATS_FOR_LEVEL_UP)
 			H.stats.changeStat(stat, -10)
 		var/neko = uppertext(src.name)
 		to_chat(H, SPAN_DANGER(pick("LIFE IS RUINED FOR ME! I CANNOT FIND [neko]!", "WHO STOLE MY [neko]!", "WHERE IS [neko]?!", "WHY I CANNOT FIND [neko]?!")))
@@ -481,7 +493,7 @@ No more of that.
 
 /obj/item/tool/sword/nt_sword/Destroy()
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
 	GLOB.neotheology_faction_item_loss++
 	..()
@@ -641,7 +653,7 @@ No more of that.
 /obj/item/reagent_containers/atomic_distillery/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
 	. = ..()
 

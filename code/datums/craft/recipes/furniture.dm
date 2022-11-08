@@ -11,6 +11,13 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
 	)
 
+/datum/craft_recipe/furniture/doublebed
+	name = "double bed"
+	result = /obj/structure/bed/double/padded
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL)
+	)
+
 /datum/craft_recipe/furniture/bonfire
 	name = "bonfire"
 	result = /obj/structure/bonfire
@@ -129,6 +136,17 @@
 	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_WOOD)
+	)
+
+/datum/craft_recipe/furniture/soilbed
+	name = "soil"
+	result = /obj/machinery/portable_atmospherics/hydroponics/soil
+	time = 90
+	icon_state = "woodworking"
+	steps = list(
+		list(/obj/item/stack/ore, 5),
+		list(/obj/item/stack/ore/glass, 5),
+		list(/obj/item/stack/rods, 3)
 	)
 
 /datum/craft_recipe/furniture/burnbarrel

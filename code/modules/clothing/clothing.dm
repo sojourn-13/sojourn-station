@@ -31,7 +31,7 @@
 
 	else if(!matter)
 		matter = list()
-	
+
 	matter.Add(list(MATERIAL_BIOMATTER = 5 * w_class))    // based of item size
 
 /obj/item/clothing/Destroy()
@@ -105,7 +105,7 @@
 
 	return english_list(body_partsL)
 
-/obj/item/clothing/ui_data()
+/obj/item/clothing/nano_ui_data()
 	var/list/data = list()
 	var/list/armorlist = armor.getList()
 	if(armorlist.len)
@@ -133,7 +133,7 @@
 	return data
 
 /obj/item/clothing/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
-	var/list/data = ui_data(user)
+	var/list/data = nano_ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -528,6 +528,7 @@ BLIND     // can't see anything
 
 /obj/item/clothing/shoes/attackby(var/obj/item/I, var/mob/user)
 	var/global/knifes
+	var/global/not_a_knife
 	if(istype(I,/obj/item/noslipmodule))
 		if (item_flags != 0)
 			noslip = item_flags
@@ -550,9 +551,14 @@ BLIND     // can't see anything
 			/obj/item/tool/knife/tacknife,
 			/obj/item/tool/knife/shiv
 		)
+	if(!not_a_knife)
+		not_a_knife = list(/obj/item/tool/knife/psionic_blade)
 	if(can_hold_knife && is_type_in_list(I, knifes))
 		if(holding)
 			to_chat(user, SPAN_WARNING("\The [src] is already holding \a [holding]."))
+			return
+		if(is_type_in_list(I, not_a_knife))
+			to_chat(user, SPAN_WARNING("\The [src] is not a real knife."))
 			return
 		if(user.unEquip(I, src))
 			holding = I
@@ -593,7 +599,11 @@ BLIND     // can't see anything
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	allowed = list(
 		/obj/item/clipboard,
-		/obj/item/storage/pouch/,
+		/obj/item/pen,
+		/obj/item/paper,
+		/obj/item/device/flash,
+		/obj/item/storage/pouch,
+		/obj/item/storage/sheath,
 		/obj/item/gun,
 		/obj/item/melee,
 		/obj/item/material,
@@ -609,14 +619,25 @@ BLIND     // can't see anything
 		/obj/item/device/lighting,
 		/obj/item/device/scanner,
 		/obj/item/reagent_containers/spray,
+		/obj/item/device/lighting/toggleable/flashlight,
+		/obj/item/storage/box/matches,
+		/obj/item/reagent_containers/food/drinks/flask,
 		/obj/item/device/radio,
 		/obj/item/clothing/mask,
+		/obj/item/storage/backpack/duffelbag/guncase,
 		/obj/item/implant/carrion_spider/holographic)
 	slot_flags = SLOT_OCLOTHING
 	var/blood_overlay_type = "suit"
 	siemens_coefficient = 0.9
 	w_class = ITEM_SIZE_NORMAL
 	var/list/extra_allowed = list()
+	blacklisted_allowed = list(
+		/obj/item/tool/knife/psionic_blade,
+		/obj/item/tool/hammer/telekinetic_fist,
+		/obj/item/tool/psionic_omnitool,
+		/obj/item/shield/riot/crusader/psionic,
+		/obj/item/gun/kinetic_blaster
+		)
 	equip_delay = 1 SECONDS
 
 	valid_accessory_slots = list("armband","decor")
@@ -653,6 +674,7 @@ BLIND     // can't see anything
 		3 = Report location
 		*/
 	var/displays_id = 1
+	var/rolldown = FALSE
 	equip_delay = 2 SECONDS
 
 	//convenience var for defining the icon state for the overlay used when the clothing is worn.
@@ -732,3 +754,13 @@ BLIND     // can't see anything
 		set_sensors(U)
 	else
 		return ..()
+
+/obj/item/clothing/under/verb/roll_down()
+	set name = "Toggle Jumpsuit"
+	set desc = "Toggle the appearance of your jumpsuit."
+	set category = "Object"
+
+	usr.visible_message("[usr] adjusts their jumpsuit.", \
+	"You adjust your jumpsuit.")
+	rolldown = !rolldown
+	usr.update_inv_w_uniform()

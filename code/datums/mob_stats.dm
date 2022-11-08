@@ -39,7 +39,7 @@
 /datum/stat_holder/proc/addTempStat(statName, Value, timeDelay, id = null)
 	var/datum/stat/S = stat_list[statName]
 	S.addModif(timeDelay, Value, id)
-	SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
+	LEGACY_SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
 
 /datum/stat_holder/proc/removeTempStat(statName, id)
 	if(!id)
@@ -56,7 +56,7 @@
 /datum/stat_holder/proc/changeStat(statName, Value)
 	var/datum/stat/S = stat_list[statName]
 	S.changeValue(Value)
-	SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
+	LEGACY_SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
 
 /datum/stat_holder/proc/setStat(statName, Value)
 	var/datum/stat/S = stat_list[statName]
@@ -65,7 +65,7 @@
 /datum/stat_holder/proc/getStat(statName, pure = FALSE)
 	if (!islist(statName))
 		var/datum/stat/S = stat_list[statName]
-		SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
+		LEGACY_SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
 		return S ? S.getValue(pure) : 0
 	else
 		log_debug("passed list to getStat()")
@@ -237,6 +237,15 @@
 /datum/stat/aiming
 	name = STAT_VIG
 	desc = "Here, paranoia is nothing but a useful trait. Improves your ability to control recoil on guns, helps you resist insanity."
+
+/datum/stat/vivification
+	name = STAT_VIV
+	desc = "The body can take only so much stimulation under normal circumstances. It takes a lot to train the body to handle drugs, be they helpful or harmful."
+
+/datum/stat/anatomy
+	name = STAT_ANA
+	desc = "The body itself; the more you know about how far you can push it, the easier it becomes to edge closer towards death's door."
+
 
 // Use to perform stat checks
 /mob/proc/stat_check(stat_path, needed)

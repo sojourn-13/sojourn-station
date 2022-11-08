@@ -1861,7 +1861,7 @@
 				<body>
 				<H1>Reactions and YOU!</H1>
 				So assuming you have never used a slime core before. The process is simple! One of your still living monkeys could do it.
-				Ideally youll want a dropper, syringe and something to store chemicals in for this. Make sure you have these ready!
+				Ideally you'll want a dropper, syringe and something to store chemicals in for this. Make sure you have these ready!
 				Some reactions take 1 unit of chemicals. Others take 5 units. With slime jelly being unique in compressing at 100 units.
 				<ol>
 					<li><a href='#1'>Grey</a></li>
@@ -1885,81 +1885,81 @@
 				</ol>
 				<a name='1'><H3>Grey</H3>
 				Grey slimes are the starting bread and butter of xenobio. Their reactions allow us to keep making monkeys and are vital to keeping the feeding process going.
-				blood is used to create monkey cubes
-				blattadin is used to make roach cubes
-				spider venom is used to make spiderlings.
+				Blood is used to create monkey cubes.
+				Blattedin is used to make roach cubes
+				Spider venom (Pararein) is used to make spiderlings.
 				<a name='2'><H3>Green</H3>
 				Ideally greens will be made when you have someone doing genetics. They are useful for purgers.
-				water will create a ready to use genetics purger
+				Water will create a ready to use genetics purger
 				plasma (more units at once the better) will create mutation toxin. This will turn people into slime people!
 				<a name='3'><h3>Metal</h3>
 				Metal slimes are a workhorse of the material production process. The first step in getting raw mats for our department.
-				plasma will produce metal sheets and the wonderous plasteel! Used in mass quantities by those seeking armaments or a mech.
-				water will produce some plastics. Ready to be molded into various shapes by lathes.
-				radium will produce uranium. Useful for batteries and such. Be careful of the initial burst of radiation. Protection is needed!
+				Plasma will produce metal sheets and the wondrous plasteel! Used in mass quantities by those seeking armaments or a mech.
+				Water will produce some plastic, ready to be molded into various shapes by lathes.
+				Radium will produce uranium. Useful for batteries and such. Be careful of the initial burst of radiation. Protection is needed!
 				<a name='4'><h3>Gold</h3>
-				Gold slimes are the gateway to adamantine slimes and produce the wonderous bars that every dragon dreams of.
-				plasma will produce gold! Wonderous gold.
+				Gold slimes are the gateway to adamantine slimes and produce the wondrous bars that every dragon dreams of.
+				plasma will produce gold! Wondrous gold.
 				nutriment in 5 units will produce honey. Delicious and useful for other reactions.
 				<a name='5'><h3>Silver</h3>
 				Silver slimes are a strange breed. They produce food based items. Not quite sure why. But it tends to be tasty. They can also produce silver! For batteries and such.
-				plasma will create a bright (eye protection suggested) flash before food appears! I've yet to figure out how it can cook such a strange abundance.
-				nutriment will create universal enzyme. A favorite of mine to make my favorite drinks. Sweet sweet curacoa.
-				liquid uranium will create silver bars. Useful and generally needed in decent quantities.
+				Plasma will create a bright (eye protection suggested) flash before food appears! I've yet to figure out how it can cook such a strange abundance.
+				Nutriment will create universal enzyme. A favorite of mine to make my favorite drinks. Sweet sweet curacao.
+				Liquid Uranium will create silver bars. Useful and generally needed in decent quantities.
 				<a name='6'><h3>Blue</h3>
-				Blue slimes are lesser used slime. They are generally used for glass.
-				water will result in frost oil. In large quantities they can make quite a bit. But generally xenoflora grows its own plants for it.
-				plasma will create glass and borosilicate glass. Borosilicate is harder to come by in a reliable manner so it does help with that if really needed.
+				Blue slimes are the least used slimes. They are generally used for glass.
+				Water will result in frost oil. In large quantities they can make quite a bit. But generally xenoflora grows its own plants for it.
+				Plasma will create glass and borosilicate glass. Borosilicate is harder to come by in a reliable manner so it does help with that if really needed.
 				<a name='7'><h3>Dark Blue</h3>
-				Dark blue slimes are a gateway slime to diamonds. Creating a unique jelly inside.
-				plasma results in a time delayed freezing effect that drastically lowers the temperature.
-				honey in 5 units results in the rarer pure slime jelly. A vary small amount is produced per reaction.
+				Dark blue slimes are a gateway slime to diamonds, creating a unique jelly inside.
+				Plasma results in a time delayed freezing effect that drastically lowers the temperature.
+				Honey in 5 units results in the rarer pure slime jelly. A vary small amount is produced per reaction.
 				<a name='8'><h3>Orange</h3>
-				Orange slimes are the way to upgrade clothing of various kinds. They lead to red slimes which in turn lead to oil.
-				water will create a slime jar. This one in particular makes clothing resistant to high temps (Not Flames!) and even pressure resistant.
-				plasma will create a violent reaction that results in mass fire. Be vary careful about doing this. Least you roast yourself or others.
-				blood will create pepper spray! Useful for would be wife poachers or spiders.
+				Orange slimes pave the way to upgrade clothing of various kinds. They lead to red slimes which in turn lead to oil.
+				Water will create a slime jar. This one in particular makes clothing resistant to high temps (Not Flames!) and even pressure resistant.
+				Plasma will create a violent reaction that results in mass fire. Be very careful about doing this, lest you roast yourself or others.
+				Blood will create pepper spray! Useful for would-be wife poachers or spiders.
 				<a name='9'><h3>Yellow</h3>
-				Easily one of my favorite slimes just for the light it creates. Altho dangerous if given blood.
-				blood causes a emp effect with quite a decent size to it. This can kill people with mechanical organs.
-				water creates slime lights! Its like having a floodlight in your pocket that never runs out!
-				plasma will create a slime jar. This one gives clothing a higher resistance to shocks. It might take more then one jar to make it shock proof tho.
+				Easily one of my favorite slimes just for the light it creates. Although dangerous if given blood.
+				Blood causes an EMP effect with quite a decent size to it. This can kill people with mechanical organs.
+				Water creates slime lights! It's like having a floodlight in your pocket that never runs out!
+				Plasma will create a slime jar. This one gives clothing a higher resistance to shocks. It might take more than one jar to make it shock proof though.
 				<a name='10'><h3>Purple</h3>
 				Purple slimes can be a core slime if people want to use slime steroids to produce more cores.
-				plasma creates a slime jar. This one causes baby slimes to split thier core into 3 but only while still alive.
-				suger creates more slime jelly. Usefull if you need to make more slime revival jars.
+				Plasma creates a slime jar. This one causes baby slimes to split their core into 3 but only while still alive.
+				Sugar creates more slime jelly. Usefull if you need to make more slime revival jars.
 				<a name='11'><h3>Dark Purple</h3>
 				Dark purple slimes are a staple. YOU NEED THESE! They are the only way to make more plasma without external shopping, trading or looting.
-				plasma creates more plasma sheets! Grind these down!
-				liquid uranium, gold and silver all at once will create a random tool mod. I havn't figured out how they go about this reaction yet. But its like a roulette on what you get.
+				Plasma creates more plasma sheets! Grind these down!
+				Liquid Uranium, Gold and Silver all at once will create a random tool mod. I havn't figured out how they go about this reaction yet. But its like a roulette on what you get.
 				<a name='12'><h3>Red</h3>
-				A valuable yet vary dangerous slime. They have alot of reactions tho.
-				plasma makes glycerol. A chemical used in nitroglycerin... explosives.
-				frostoil creates the rarely used materials of osmium and metallic hydrogen.
-				water creates a slime jar. This is one of the most wanted things xenobio produces. SPEED jars make armour easier to move in. But it takes alot of them.
-				blood... Never use this. It enrages all the slimes around. They become nothing short of rabid and completly hostile to everything.
+				A valuable yet very dangerous slime. They have a lot of reactions though.
+				Plasma makes Glycerol. A chemical used in Nitroglycerin... explosives.
+				Frost oil creates the rarely used materials of Osmium and Metallic Hydrogen.
+				Water creates a slime jar. This is one of the most wanted things xenobio produces. SPEED jars make armor easier to move in, but it takes alot of them.
+				Blood... Never use this. It enrages all the slimes around. They become nothing short of rabid and completely hostile to everything.
 				<a name='13'><h3>Pink</h3>
 				A slime coveted for making friends.
-				nutriment in 5 units will create a slime jar useful for taming baby slimes
-				honey in 5 units will create a simular slime jar but for adults.
+				Nutriment in 5 units will create a slime jar useful for taming baby slimes.
+				Honey in 5 units will create a similar slime jar but for adults.
 				<a name='14'><h3>Black</h3>
-				plasma will create a mutation toxin thats stronger then greens... It will fully turn someone into a slime... Vary dangerous.
-				advanced mutation toxin will cause a reaction like grey slimes with plasma. Except it can create a wide verity of colors instead of just grey!
+				Plasma will create a mutation toxin that's stronger than greens... It will fully turn someone into a slime... Very dangerous.
+				Advanced Mutation Toxin will cause a reaction like Grey Slimes with Plasma. Except it can create a wide variety of colors instead of just grey!
 				<a name='15'><h3>Oil</h3>
-				Oil slimes are a strange mix. They have few reactions most of which are nothing short of illigal. But the nonslipping power of them makes them wonderful.
-				plasma... This is nothing short of a hellishly strong hand grenade. Blackshield wishes they had fire power like this thing.
-				water will create a intresting mod for weapons. When applied to scopes it gives them thermal vision... which sadly is illigal.
-				lubricant in 5 units will create a reverse friction substance for shoes! NON SLIP SOLES! No more slipping on wet floors!
+				Oil slimes are a strange mix. They have few reactions, most of which are nothing short of illegal. But the nonslipping power of them makes them wonderful.
+				Plasma... This is nothing short of a hellishly strong hand grenade. Blackshield wishes they had fire power like this thing.
+				Water will create a intresting mod for weapons. When applied to scopes it gives them thermal vision... which sadly is illegal.
+				Space Lube in 5 units will create a reverse friction substance for shoes! NON SLIP SOLES! No more slipping on wet floors!
 				<a name='16'><h3>Light Pink</h3>
-				At one time these slimes created slime jars for taming adult slimes. But recently they have shown no reactions. Changes may be coming about with them.
+				A strange thing to see such friendly reactions become so forceful. Plastic produces a odd colored auto pistol. And wood pulp is reformed into bats.
 				<a name='17'><h3>Adamantine</h3>
 				The only source of renewable diamonds. They take alot of work to create regardless due to needing dark blue slimes.
-				plasma will create various strange runes upon the floor. I've worked on deciphering them but havn't fully been able to do so. I've seen golems appear from these runes however.
-				pure slime jelly will create diamonds! This creates some biomatter too leading me to believe the pure slime jelly is actually seperating the core into various aspects somehow.
-				liquid uranium, gold and silver will create platinum. Useful for posicells and a few stronger goods in RnD
+				Plasma will create various strange runes upon the floor. I've worked on deciphering them but haven't fully been able to do so. I've seen golems appear from these runes however.
+				Pure slime jelly will create diamonds! This creates some biomatter too leading me to believe the pure slime jelly is actually seperating the core into various aspects somehow.
+				Liquid Uranium, Gold and Silver at the same time will create Platinum. Useful for posicells and a few stronger goods in RnD
 				<a name='18'><h3>Rainbow</h3>
-				A rare slime that I have been unable to make split and have had difficulty keeping from making a mess. Fun at parties tho.
-				<p>Hopefully these notes can be condenced someday into something that will better help someone. Someday they too will be outdated im sure.
+				A rare slime that I have been unable to make split and have had difficulty keeping from making a mess. Fun at parties though.
+				<p>Hopefully these notes can be condensed someday into something that will better help someone. Someday they too will be outdated I'm sure.
 				</body>
 				</html>
 				"}

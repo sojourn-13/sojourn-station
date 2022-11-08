@@ -9,17 +9,6 @@
 	force = 20
 	required_type = /obj/mecha
 	embed_mult = 0 // Mech mounted weapons, shouldn't embed
-	
-/obj/item/mecha_parts/mecha_equipment/melee_weapon/fist
-	name = "mech melee plating"
-	desc = "Plating design to cover and reinforce the limbs of the mech to allow the pilot to punch or kick foes without inflicting damage upon the mech."
-	icon_state = "mecha_fist"
-	armor_penetration = ARMOR_PEN_DEEP
-	structure_damage_factor = 2
-	hitsound = 'sound/weapons/heavysmash.ogg'
-	var/icon/melee_overlay //Currently dosnt do anything but is here for sake of constancey
-	force = 45
-	matter = list(MATERIAL_STEEL = 15) //Its only 30 damage compared to the 15 steel 60 damage sword
 
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword
 	name = "mech sword"

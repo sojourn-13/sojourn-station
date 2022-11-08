@@ -32,6 +32,7 @@
 				/obj/item/gun/projectile/handmade_pistol = 2,\
 				/obj/item/gun/projectile/automatic/luger = 0.1, \
 				/obj/item/gun/projectile/boltgun/zatvor = 2, \
+				/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless = 0.5, \
 				//obj/item/gun/projectile/ladon/sa = 1,
 				/obj/item/gun/projectile/olivaw = 2,
 				/obj/item/gun_upgrade/barrel/forged = 2))
@@ -126,7 +127,8 @@
 				//obj/item/gun/projectile/automatic/omnirifle = 1,
 				//obj/item/gun/projectile/automatic/omnirifle/omnicarbine = 1,
 				//obj/item/gun/projectile/automatic/straylight = 3,
-				/obj/item/gun/projectile/shotgun/pug = 0.5))
+				/obj/item/gun/projectile/shotgun/pug = 0.5,
+				/obj/item/gun/projectile/revolver/hornet = 0.5))
 				//obj/item/gun/projectile/automatic/wirbelwind = 0.1))
 
 /obj/random/gun_combat/low_chance
@@ -150,7 +152,7 @@
 				/obj/item/gun/projectile/ladon = 1,\
 				/obj/item/gun/projectile/lamia/akurra = 1,\
 				/obj/item/gun/projectile/basilisk = 2,\
-				/obj/item/gun/projectile/boltgun/survivalrifle = 1,\
+				/obj/item/gun/projectile/automatic/survivalrifle = 1,\
 				/obj/item/gun/projectile/revolver/tacticool_revolver = 1,\
 				/obj/item/gun/projectile/revolver/mateba = 1,\
 				/obj/item/gun/projectile/silenced = 2,\
@@ -283,6 +285,7 @@
 	icon_state = "gun-red"
 /obj/random/dungeon_gun_mods/item_to_spawn()
 	return pickweight(list(/obj/item/gun_upgrade/muzzle/silencer = 1,
+				/obj/item/gun_upgrade/muzzle/pain_maker = 0.3,
 				/obj/item/gun_upgrade/barrel/forged = 1,
 				/obj/item/gun_upgrade/barrel/mag_accel = 1,
 				/obj/item/gun_upgrade/barrel/overheat = 1,
@@ -309,6 +312,15 @@
 	name = "low chance random gun  mod"
 	icon_state = "gun-red-low"
 	spawn_nothing_percentage = 80
+
+/obj/random/dungeon_gun_mods/voidwolf
+
+/obj/random/dungeon_gun_mods/voidwolf/item_to_spawn()
+	return pickweight(list( // i hate pickweight but fine
+		/obj/item/gun_upgrade/barrel/gauss = 1,
+		/obj/item/gun_upgrade/scope/killer = 1,
+		/obj/item/gun_upgrade/trigger/dangerzone = 1, //only good mods
+	))
 
 //Armor Mod Spawners
 /obj/random/dungeon_armor_mods

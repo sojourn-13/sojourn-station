@@ -1,4 +1,4 @@
-#define NSA_THRESHOLD_MINIMUM 20 //The lowest someone's NSA Threshhold can reach
+#define NSA_THRESHOLD_MINIMUM 50 //The lowest someone's NSA Threshhold can reach
 
 /datum/reagents/metabolism
 	var/metabolism_class //CHEM_TOUCH, CHEM_INGEST, or CHEM_BLOOD
@@ -32,6 +32,7 @@
 	var/list/nerve_system_accumulations = list() // Nerve system accumulations
 	var/nsa_threshold = 100
 	var/nsa_bonus = 0 //For various perks and organs affecting the nsa threshhold
+	var/nsa_viv = 0   //For stats increases
 	var/nsa_chem_bonus = 0 //For chems (detox in specific) affecting the nsa threshhold
 	var/nsa_mult = 1 //Multiplier for nsa, used by specific perks. Added so the number doesn't fuck with other numbers.
 	var/nsa_organ_bonus = 0 //For efficiency modifiers on the nerves
@@ -50,10 +51,11 @@
 //Must be called WHENEVER you modify nsa_bonus, nsa_chem_bonus, nsa_mult, or when you change nerve efficiency.
 //calc_nerves: Activates nerve efficiency recalculation, so its not recalculated every time.
 /datum/metabolism_effects/proc/calculate_nsa(calc_nerves = FALSE)
+	nsa_viv = parent.stats.getStat(STAT_VIV)
 	if(calc_nerves && ishuman(parent))
 		var/mob/living/carbon/human/parent_human = parent
 		nsa_organ_bonus = (parent_human.get_organ_efficiency(OP_NERVE) - 700) / 2
-	nsa_threshold = round((100 + nsa_bonus + nsa_chem_bonus + nsa_organ_bonus) * nsa_mult)
+	nsa_threshold = round((100 + nsa_bonus + nsa_chem_bonus + nsa_organ_bonus + nsa_viv) * nsa_mult)
 	nsa_threshold = max(nsa_threshold, NSA_THRESHOLD_MINIMUM) //Can't be below for any reason. Keeps
 	return nsa_threshold
 
@@ -73,7 +75,7 @@
 		return nerve_system_accumulations[tag]
 
 /datum/metabolism_effects/proc/get_nsa()
-	SEND_SIGNAL(parent, COMSING_NSA, nsa_current)
+	LEGACY_SEND_SIGNAL(parent, COMSING_NSA, nsa_current)
 	return nsa_current
 
 /datum/metabolism_effects/proc/get_nsa_target()
@@ -95,10 +97,10 @@
 /datum/metabolism_effects/proc/nsa_changed()
 	if(get_nsa() > nsa_threshold)
 		var/stat_mod = get_nsa() > 140 ? -20 : -10
-		for(var/stat in ALL_STATS)
+		for(var/stat in ALL_STATS_FOR_LEVEL_UP)
 			parent.stats.addTempStat(stat, stat_mod, INFINITY, "nsa_breach")
 	else
-		for(var/stat in ALL_STATS)
+		for(var/stat in ALL_STATS_FOR_LEVEL_UP)
 			parent.stats.removeTempStat(stat, "nsa_breach")
 	var/obj/screen/nsa/hud = parent.HUDneed["neural system accumulation"]
 	hud?.update_icon()
@@ -162,7 +164,7 @@
 			addiction_list.Add(new_reagent)
 			addiction_list[new_reagent] = 0
 			for(var/mob/living/carbon/human/H in viewers(parent))
-				SEND_SIGNAL(H, COMSIG_CARBON_ADICTION, parent, R)
+				LEGACY_SEND_SIGNAL(H, COMSIG_CARBON_ADICTION, parent, R)
 
 	if(is_type_in_list(R, addiction_list))
 		for(var/addiction in addiction_list)

@@ -4,6 +4,7 @@
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
 	damage_types = list(BURN = 70)
+	added_damage_laser_pve = 70
 	armor_penetration = 40
 	check_armour = ARMOR_ENERGY
 	muzzle_type = /obj/effect/projectile/plasma/muzzle
@@ -12,9 +13,10 @@
 	recoil = 20
 
 /obj/item/projectile/hydrogen/on_impact(atom/target)
-	explosion(loc, 0, 0, 2) // Smallest possible explosion
-	set_light(0)
-	return TRUE
+	if (!testing)
+		explosion(loc, 0, 0, 2) // Smallest possible explosion
+		set_light(0)
+		return TRUE
 
 /obj/item/projectile/hydrogen/pistol
 	kill_count = 10
@@ -29,22 +31,26 @@
 	recoil = 30
 
 /obj/item/projectile/hydrogen/cannon/on_impact(atom/target)
-	explosion(loc, 0, 1, 2, 4) // Same values as the missile.
-	set_light(0)
-	return TRUE
+	if (!testing)
+		explosion(loc, 0, 1, 2, 4) // Same values as the missile.
+		set_light(0)
+		return TRUE
 
 // Overcharged Shots
 /obj/item/projectile/hydrogen/max
 	damage_types = list(BURN = 90)
+	added_damage_laser_pve = 90
 	armor_penetration = 60
 	recoil = 40
 
 /obj/item/projectile/hydrogen/pistol/max
 	damage_types = list(BURN = 80)
+	added_damage_laser_pve = 80
 	armor_penetration = 60
 	recoil = 20
 
 /obj/item/projectile/hydrogen/cannon/max
 	damage_types = list(BURN = 100)
+	added_damage_laser_pve = 100
 	armor_penetration = 60
 	recoil = 60

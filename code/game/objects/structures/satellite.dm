@@ -8,8 +8,10 @@
 	if(cooldown == FALSE)
 		cooldown = TRUE
 		emp_in(src.loc, 4, 6, 0)
-		sleep(360)
-		cooldown = FALSE
+		addtimer(CALLBACK(src, .proc/cool_dowed), 360)
+
+/obj/structure/satellite/proc/cool_dowed()
+	cooldown = FALSE
 
 /obj/structure/satellite/proc/emp_in(turf/epicenter, heavy_range, light_range, log=0)
 	for(var/mob/M in range(heavy_range, epicenter))

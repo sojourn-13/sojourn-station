@@ -10,7 +10,7 @@
 //Silences the weapon, reduces damage multiplier slightly, Legacy port.
 /obj/item/gun_upgrade/muzzle/silencer
 	name = "Silencer"
-	desc = "A threaded silencer that can be attached to the muzzle of certain guns. Vastly reduces noise, but impedes muzzle velocity."
+	desc = "A threaded silencer that can be attached to the muzzle of certain guns. Vastly reduces noise."
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
 	icon_state = "silencer"
 	price_tag = 100
@@ -25,6 +25,33 @@
 	I.gun_loc_tag = GUN_MUZZLE
 	I.req_gun_tags = list(GUN_SILENCABLE)
 	I.prefix = "silenced"
+
+/obj/item/gun_upgrade/muzzle/pain_maker
+	name = "SA \"PainMaker\" muzzle"
+	desc = "A threaded barrel that can be attached to the muzzle of most projectile guns. \
+	Threaded barrel device made of a coil sensor and heater. As bullets pass the device they are slowed down and heated up by the coil, causing them to deform when hitting a target and imparting all their painful energy. \
+	Typically used when taking a hostages or kidnapping."
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
+	icon_state = "silencer"
+	price_tag = 100
+
+/obj/item/gun_upgrade/muzzle/pain_maker/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		UPGRADE_BULK = 2,
+		GUN_UPGRADE_STEPDELAY_MULT = 1.5,
+		GUN_UPGRADE_DAMAGE_MULT = 0.5,
+		GUN_UPGRADE_PEN_MULT = 0.5,
+		GUN_UPGRADE_PIERC_MULT = -3, //This does a LOT lowering range, as well as most guns being unable to wall bang with it
+		GUN_UPGRADE_OFFSET = 11,
+		GUN_UPGRADE_RECOIL = 1.5,
+		GUN_UPGRADE_PAIN_MULT = 2
+		)
+	I.gun_loc_tag = GUN_MUZZLE
+	I.req_gun_tags = list(GUN_PROJECTILE)
+	I.prefix = "LTL"
+
 
 //Decreases fire delay. Acquired through loot spawns or guild crafting
 /obj/item/gun_upgrade/barrel/forged
@@ -54,7 +81,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = 1.1,
+		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.1,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.1,
 		GUN_UPGRADE_RECOIL = 1.25,
 		UPGRADE_BULK = 1
@@ -144,7 +171,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = 1.3,
+		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.3,
 		GUN_UPGRADE_CHARGECOST = 1.15,
 		UPGRADE_BULK = 0.5,
 		)
@@ -163,7 +190,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = 1.45,
+		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.45,
 		GUN_UPGRADE_CHARGECOST = 1.25,
 		UPGRADE_BULK = 0.75,
 		)
@@ -254,10 +281,10 @@
 /* //This mod works fine but if a bullet hits an object it run times, my theory is its trying to make an effect work via rads that isn't coded properly either by ERIS or my bad porting.
 //For now this has been modified to not use rad damage since that has issues.
 */
-//Adds extra burns and toxin damage to .35 rounds. Acquired through raiding greyson machines or heavy SI investment.
+//Adds extra burns and toxin damage to 9mm rounds. Acquired through raiding greyson machines or heavy SI investment.
 /obj/item/gun_upgrade/mechanism/glass_widow
 	name = "Greyson \"Glass Widow\" infuser"
-	desc = "An old technology from the Greyson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits .35 caliber weapons only and coats the bullets in dangerous caustic toxins."
+	desc = "An old technology from the Greyson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits 9mm weapons only and coats the bullets in dangerous caustic toxins."
 	icon_state = "Glass_Widow"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 4, MATERIAL_PLATINUM = 4)
 	price_tag = 800
@@ -270,14 +297,14 @@
 		GUN_UPGRADE_DAMAGE_TOX = 10,
 		UPGRADE_BULK = 1
 		)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
+	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "infused"
 
-// Guild made upgrade kit that makes .50 guns a bit more viable
+// Guild made upgrade kit that makes 12mm guns a bit more viable
 /obj/item/gun_upgrade/mechanism/upgrade_kit
 	name = "Kurtz's refinement kit"
-	desc = "A kit made of plasteel designed to refit and refine any kurtz loaded .50 caliber weapon. This kit is produced by the Artificer's Guild so even \
+	desc = "A kit made of plasteel designed to refit and refine any kurtz loaded 12mm weapon. This kit is produced by the Artificer's Guild so even \
 	the heaviest caliber pistols might stand a chance of competing with their legendary myrmidon design."
 	icon_state = "kit_heavy_alt"
 	can_remove = FALSE
@@ -287,22 +314,22 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = 1.1, //10% more damage
+		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.1, //10% more damage
 		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9, //10% declay removed
 		GUN_UPGRADE_PEN_MULT = 1.2, //we shoot harder, but not by much
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.9, //We shoot somehwat faster (not hit scan)
 		GUN_UPGRADE_RECOIL = 0.85, //15% less recoil (dosnt help as much without stacking it with other mods)
 		UPGRADE_BULK = -1
 		)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_50)
+	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "kitted"
 
-// Rare Bluecross spawn clock cult brass kit that will make any .50 cal gun into something worth ya know... using...
+// Rare Bluecross spawn clock cult brass kit that will make any 12mm cal gun into something worth ya know... using...
 // Todo make Cult spawn with this and the clockwork block
 /obj/item/gun_upgrade/mechanism/brass_kit
 	name = "\"Brass Fighter\" refinement kit"
-	desc = "A kit made from brass and designed to improve .50 caliber kurtz weaponry. It's strange to look at in this day and age. It ticks, tocks, chimes, \
+	desc = "A kit made from brass and designed to improve 12mm caliber kurtz weaponry. It's strange to look at in this day and age. It ticks, tocks, chimes, \
 	and plays a faint melodic tone through brass gears and perptually grinding cogs. Was this an invention of the blue cross or a toy some other entity made?"
 	icon_state = "Clockblock"
 	can_remove = FALSE
@@ -313,6 +340,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.15, //15% more damage
+		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.15, //15% more damage to mobs
 		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8, //20% declay removed
 		GUN_UPGRADE_PEN_MULT = 2, //we shoot harder
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.6, //We shoot way faster (not hit scan)
@@ -320,7 +348,7 @@
 		GUN_UPGRADE_RECOIL = 0.75, //25% less recoil (dosnt help as much without stacking it with other mods)
 		UPGRADE_BULK = -2
 		)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_50)
+	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "brass kitted"
 
@@ -370,7 +398,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_BRUTE = 0.5, //7.5 extra damage at new max charge
+		GUN_UPGRADE_DAMAGE_BRUTE = 0.5, //7.62mm extra damage at new max charge
 		GUN_UPGRADE_OVERCHARGE_MAX = 1.5,
 		GUN_UPGRADE_OVERCHARGE_RATE = 0.35
 		)
@@ -427,7 +455,7 @@
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 2,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
-	GUN_UPGRADE_DAMAGE_MULT = 2,
+	GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 2,
 	GUN_UPGRADE_CHARGECOST = 2)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
@@ -561,7 +589,7 @@
 */
 /obj/item/gun_upgrade/mechanism/greyson_master_catalyst
 	name = "Greyson \"Master Unmaker\" infuser"
-	desc = "One of the rarest and most powerful weapon modification ever made by Greyson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
+	desc = "One of the rarest and most powerful weapon modifications ever made by Greyson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
 	icon_state = "psionic_catalyst"
 	matter = list(MATERIAL_PLATINUM = 5, MATERIAL_PLASTEEL = 3, MATERIAL_DIAMOND = 10)
 	price_tag = 4500
@@ -570,13 +598,15 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
+		UPGRADE_BULK = 1,
 		GUN_UPGRADE_DAMAGE_BRUTE = 10,
 		GUN_UPGRADE_DAMAGE_BURN = 10,
 		GUN_UPGRADE_DAMAGE_TOX = 5,
 		GUN_UPGRADE_DAMAGE_OXY = 5,
 		GUN_UPGRADE_DAMAGE_CLONE = 5,
 		GUN_UPGRADE_DAMAGE_HALLOSS = 5,
-		UPGRADE_BULK = 1
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
+		GUN_UPGRADE_CHARGECOST = 1.5
 	)
 	I.removal_time *= 10
 	I.gun_loc_tag = GUN_MECHANISM

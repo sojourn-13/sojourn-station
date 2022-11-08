@@ -5,7 +5,12 @@
 	GLOB.mob_list -= src
 	unset_machine()
 	QDEL_NULL(hud_used)
+	languages = null
+	move_intent = null
+	QDEL_NULL(weak_reference)
 	QDEL_NULL(parallax)
+	transform = null
+	QDEL_NULL(transform)
 	if(client)
 		for(var/atom/movable/AM in client.screen)
 			qdel(AM)
@@ -24,6 +29,10 @@
 		handler.mob = null
 
 	movement_handlers.Cut()
+
+	if (spawned_from)
+		spawned_from.currently_spawned[type] -= src
+		spawned_from = null
 
 	return ..()
 
@@ -77,8 +86,9 @@
 // message is the message output to anyone who can see e.g. "[src] does something!"
 // self_message (optional) is what the src mob sees  e.g. "You do something!"
 // blind_message (optional) is what blind people will hear e.g. "You hear something!"
+// target (optional) is the target that will ALWAYS be given the message
 
-/mob/visible_message(var/message, var/self_message, var/blind_message, var/range = world.view)
+/mob/visible_message(var/message, var/self_message, var/blind_message, var/range = world.view, var/mob/target, var/message_target = TRUE)
 	var/list/messageturfs = list()//List of turfs we broadcast to.
 	var/list/messagemobs = list()//List of living mobs nearby who can hear it, and distant ghosts who've chosen to hear it
 	for (var/turf in view(range, get_turf(src)))
@@ -92,7 +102,7 @@
 			continue
 		if (!M.client || istype(M, /mob/new_player))
 			continue
-		if(get_turf(M) in messageturfs)
+		if((get_turf(M) in messageturfs) || ((target && M == target) && (message_target)))
 			messagemobs += M
 
 	for(var/A in messagemobs)
@@ -162,7 +172,7 @@
 
 
 /mob/proc/Life()
-	SEND_SIGNAL(src, COMSIG_MOB_LIFE)
+	LEGACY_SEND_SIGNAL(src, COMSIG_MOB_LIFE)
 //	if(organStructure)
 //		organStructure.ProcessOrgans()
 	//handle_typing_indicator() //You said the typing indicator would be fine. The test determined that was a lie.
@@ -666,11 +676,6 @@
 /mob/proc/is_active()
 	return (0 >= usr.stat)
 
-/mob/proc/is_dead()
-	if (stat == DEAD) //attempted fix to this proc
-		return TRUE
-	return FALSE
-
 /mob/proc/is_mechanical()
 	if(mind && (mind.assigned_role == "Robot" || mind.assigned_role == "AI"))
 		return 1
@@ -765,26 +770,29 @@ All Canmove setting in this proc is temporary. This var should not be set from h
 /mob/proc/update_lying_buckled_and_verb_status()
 
 	if(!resting && cannot_stand() && can_stand_overridden())
-		lying = 0
+		lying = FALSE
 		canmove = TRUE //TODO: Remove this
 	else if(buckled)
-		anchored = 1
+		anchored = TRUE
 		if(istype(buckled))
 			if(buckled.buckle_lying == -1)
 				lying = incapacitated(INCAPACITATION_KNOCKDOWN)
 			else
 				lying = buckled.buckle_lying
 			if(buckled.buckle_movable)
-				anchored = 0
+				anchored = FALSE
 		canmove = FALSE //TODO: Remove this
 	else
 		lying = incapacitated(INCAPACITATION_KNOCKDOWN)
 		canmove = FALSE //TODO: Remove this
 
 	if(lying)
-		set_density(0)
-		if(l_hand) unEquip(l_hand)
-		if(r_hand) unEquip(r_hand)
+		if(l_hand)
+			unEquip(l_hand)
+		if(r_hand)
+			unEquip(r_hand)
+		if (!is_dead(src)) //to prevent dead mobs from always being set to dense. not sure if this is going to have consequences, but it hopefully shouldnt?
+			set_density(TRUE)
 	else
 		canmove = TRUE
 		set_density(initial(density))
@@ -792,13 +800,13 @@ All Canmove setting in this proc is temporary. This var should not be set from h
 
 	for(var/obj/item/grab/G in grabbed_by)
 		if(G.force_stand())
-			lying = 0
+			lying = TRUE
 
 	//Temporarily moved here from the various life() procs
 	//I'm fixing stuff incrementally so this will likely find a better home.
 	//It just makes sense for now. ~Carn
 	if( update_icon )	//forces a full overlay update
-		update_icon = 0
+		update_icon = FALSE
 		regenerate_icons()
 	else if( lying != lying_prev )
 		update_icons()
@@ -1403,3 +1411,11 @@ mob/proc/yank_out_object()
 
 		if(!ai_in_use && !is_in_use)
 			in_use = 0
+
+
+//SoJ
+
+/mob/proc/give_health_via_stats()
+	if(stats)
+		health += src.stats.getStat(STAT_ANA)
+		maxHealth += src.stats.getStat(STAT_ANA)

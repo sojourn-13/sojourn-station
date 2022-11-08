@@ -1,19 +1,3 @@
-#define TERMITE_HEALTH_LOW 25
-#define TERMITE_HEALTH_MED 50
-#define TERMITE_HEALTH_HIGH 75
-#define TERMITE_HEALTH_ULTRA 100
-
-#define TERMITE_DMG_LOW 15
-#define TERMITE_DMG_MED 25
-#define TERMITE_DMG_HIGH 40
-#define TERMITE_DMG_ULTRA 55
-
-#define TERMITE_SPEED_SLUG 9
-#define TERMITE_SPEED_LOW 7
-#define TERMITE_SPEED_MED 5
-#define TERMITE_SPEED_HIGH 3
-
-
 // Normal types of termites
 GLOBAL_LIST_INIT(termites_normal, list(/mob/living/carbon/superior_animal/termite/iron,
 									/mob/living/carbon/superior_animal/termite/silver,
@@ -25,7 +9,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 									/mob/living/carbon/superior_animal/termite/osmium))
 
 /mob/living/carbon/superior_animal/termite
-	name = "termite"
+	name = "Pekhota termite"
 	desc = "A termite, the earth and wood eaters of the colony. Hide your hard-wood kitchen floors and nick-nacks!"
 	icon = 'icons/mob/40x40.dmi' // Sprites made by Polyushko#0323
 	icon_state = "rabochiy_termite"
@@ -52,15 +36,30 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 	// Type of ore to spawn when the termite dies
 	var/ore
-
+	var/dropped_ore = FALSE
 	// The bane of termite's existence
 	var/obj/machinery/mining/drill/DD
 
 	//Controller that spawns the termites
 	var/datum/termite_controller/controller
 
+	get_stat_modifier = TRUE
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 20,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified = 20,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 3,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 30,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 15,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
+		/datum/stat_modifier/mob/living/damage/positive/mixed/mult/low = 5,
+		/datum/stat_modifier/mob/living/damage/negative/mixed/mult/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
+	)
 
 	range_telegraph = "chitin begins to crack and spikes emerge, as it prepares to launch them at"
+
+	cant_gib = TRUE
 
 /mob/living/carbon/superior_animal/termite/New(loc, obj/machinery/mining/drill/drill, datum/termite_controller/parent)
 	..()
@@ -77,7 +76,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 
 // Mine a tile
-/mob/living/carbon/superior_animal/termite/proc/mine(var/turf/simulated/mineral/M)
+/mob/living/carbon/superior_animal/termite/proc/mine(turf/simulated/mineral/M)
 	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
 	M.GetDrilled() // Mine the turf
 	return TRUE
@@ -95,7 +94,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	. = ..()
 
 // Spawn ores
-	if(ore)
+	if(ore && !dropped_ore)
+		dropped_ore = TRUE
 		var/nb_ores = rand(3, 5)
 		for(var/i in 1 to nb_ores)
 			new ore(loc)
@@ -141,7 +141,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 //Iron Termite - melee, low health, decent damage
 /mob/living/carbon/superior_animal/termite/iron
-	name = "worker termite"
+	name = "Pomoshchnik termite"
 	desc = "A termite that does the hard labor and odd-jobs around its colony. Jeez.. even termites have assistants."
 	icon_state = "rabochiy_termite" // Sprites made by Polyushko#0323
 	icon_dead = "rabochiy_gore"
@@ -169,7 +169,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 //Silver Termite - melee, slow, high-damage
 /mob/living/carbon/superior_animal/termite/silver
-	name = "warrior termite"
+	name = "Pushka termite"
 	desc = "A larger, scarier termite for when trouble abrews."
 	icon_state = "pekhota_termite" // Sprites made by Polyushko#0323
 	icon_dead = "pekhota_gore"
@@ -192,10 +192,9 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 //Loot related variables
 	ore = /obj/item/stack/ore/silver
 
-
 //Uranium Termite - ranged, slow, med-health, low damage
 /mob/living/carbon/superior_animal/termite/uranium
-	name = "miner termite"
+	name = "Smertnik termite"
 	desc = "A miner termite that has been hardened by the very surface beneath your feet."
 	icon_state = "smertnik_termite" // Sprites made by Polyushko#0323
 	icon_dead = "smertnik_gore_exploded"
@@ -225,7 +224,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 //Plasma Termite - melee, fast, med-damage
 /mob/living/carbon/superior_animal/termite/plasma
-	name = "warrior termite"
+	name = "Kop'ye termite"
 	desc = "A larger, scarier termite for when trouble abrews."
 	icon_state = "pushka_termite" // Sprites made by Polyushko#0323
 	icon_dead = "pushka_gore"
@@ -248,11 +247,10 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 //Loot related variables
 	ore = /obj/item/stack/ore/plasma
 
-
 //Diamond Wurm - melee, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite/diamond
-	name = "termite crusher"
-	desc = "A huge termite that specializes in crushing rocks. And heads."
+	name = "Koroleva termite"
+	desc = "A huge termite the queen of a local brew ready to crush anything it perseeves as a threat to its hive."
 	icon = 'icons/mob/mobs-termite.dmi' // Sprites made by Polyushko#0323
 	icon_state = "koroleva_termite"
 	icon_dead = "koroleva_gore"
@@ -276,10 +274,9 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 //Loot related variables
 	ore = /obj/item/stack/ore/diamond
 
-
-//Osmium Termite - melee, doesn't give a fuck, high-damage
+//Osmium Termite - ranged, doesn't give a fuck, high-damage
 /mob/living/carbon/superior_animal/termite/osmium
-	name = "termite king"
+	name = "Korol termite"
 	desc = "A king termite ready to defend and slay for his queen."
 	icon = 'icons/mob/mobs-termite.dmi' // Sprites made by Polyushko#0323
 	icon_state = "koroleva_termite"
@@ -300,6 +297,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 //Damage related variables
 	melee_damage_lower = TERMITE_DMG_LOW
 	melee_damage_upper = TERMITE_DMG_LOW
+
+	ranged = TRUE
 
 //Armor related variables
 	armor = list(melee = 50, bullet = 30, energy = 40, bomb = 50, bio = 100, rad = 0)

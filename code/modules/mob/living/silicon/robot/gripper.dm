@@ -4,6 +4,9 @@
 	name = "magnetic gripper"
 	desc = "A simple grasping tool specialized in construction and engineering work."
 	icon = 'icons/obj/device.dmi'
+
+	description_info = "Can be used to remove sticky tape from cameras on help intent."
+	description_antag = "Can be used for a strong brute attack on humans using harm intent."
 	icon_state = "gripper"
 
 	flags = NOBLUDGEON
@@ -162,6 +165,14 @@
 	if(wrapped) //Already have an item.
 		return//This is handled in /mob/living/silicon/robot/GripperClickOn
 
+	if(istype(target, /obj/machinery/camera) && user.a_intent == I_HELP)
+		var/obj/machinery/camera/cam = target
+		if(cam.taped)
+			to_chat(user, SPAN_NOTICE("You remove the tape from \the [cam] using the edge of your magnetic gripper."))
+			cam.icon_state = "camera"
+			cam.taped = 0
+			cam.set_status(1)
+
 	else if (istype(target, /obj/item/storage) && !istype(target, /obj/item/storage/pill_bottle) && !istype(target, /obj/item/storage/secure))
 		var/obj/item/storage/S = target
 		for (var/obj/item/C in S.contents)
@@ -259,20 +270,29 @@
 		/obj/item/integrated_circuit
 		)
 
-/obj/item/gripper/chemistry //A gripper designed for chemistry, to allow borgs to work efficiently in the lab
-	name = "chemistry gripper"
+/obj/item/gripper/chemistry //A gripper designed for chemistry and medical, to allow borgs to work efficiently in the lab
+	name = "medical gripper"
 	icon_state = "gripper-sci"
-	desc = "A specialised grasping tool designed for working in chemistry and pharmaceutical labs"
+	desc = "A specialised grasping tool designed for working in chemistry and pharmaceutical labs, as well as have basic surgical uses."
 
 	can_hold = list(
 		/obj/item/reagent_containers/glass,
 		/obj/item/reagent_containers/pill,
 		/obj/item/reagent_containers/spray,
 		/obj/item/reagent_containers/blood,
+		/obj/item/reagent_containers/hypospray,
 		/obj/item/storage/pill_bottle,
 		/obj/item/hand_labeler,
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
+		/obj/item/am_shielding_container,
+		/obj/item/organ,
+		/obj/item/organ_module,
+		/obj/item/device/mmi,
+		/obj/item/tank,
+		/obj/item/reagent_containers/food/snacks/meat, //For grinding up roaches
+		/obj/item/reagent_containers/food/snacks/grown, //For grinding up herbs
+
 		/obj/item/stack/material/plasma
 		)
 

@@ -67,7 +67,7 @@
 	build_path = /obj/item/mech_ammo_box/scattershot
 	starts_unlocked = TRUE
 	category = "Ammo"
-	
+
 /datum/design/research/item/mecha/ammo/cannon
 	name = "Autocannon ammunition box"
 	build_path = /obj/item/mech_ammo_box/cannon
@@ -129,7 +129,7 @@
 /datum/design/research/item/mecha/weapon/grenade_launcher
 	name = "SGL-6 grenade launcher"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang
-	
+
 /datum/design/research/item/mecha/cannon
 	name = "Autocannon"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon
@@ -147,10 +147,10 @@
 /datum/design/research/item/mecha/weapon/mecha_cutlass
 	name = "Mech Energy Cutlass"
 	build_path = /obj/item/mecha_parts/mecha_equipment/melee_weapon/cutlass
-	
+
 /datum/design/research/item/mecha/weapon/mecha_fist
 	name = "Mech Melee Plating"
-	build_path = /obj/item/mecha_parts/mecha_equipment/melee_weapon/fist
+	build_path = /obj/item/mecha_parts/mecha_equipment/fist_plating
 	starts_unlocked = TRUE
 
 // *** Nonweapon modules

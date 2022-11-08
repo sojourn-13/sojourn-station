@@ -16,6 +16,8 @@
 	minimum_character_age = 30
 	department_account_access = TRUE
 	playtimerequired = 2500
+	health_modifier = 25
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/smc
 
@@ -36,7 +38,6 @@
 	perks = list(/datum/perk/ass_of_concrete,
 				 /datum/perk/job/blackshield_conditioning,
 				 /datum/perk/job/bolt_reflect,
-				 /datum/perk/codespeak,
 				 /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -79,6 +80,8 @@
 	minimum_character_age = 30
 	department_account_access = TRUE
 	playtimerequired = 2500
+	health_modifier = 25
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/swo
 
@@ -97,7 +100,6 @@
 	)
 
 	perks = list(/datum/perk/ass_of_concrete,
-				 /datum/perk/job/bolt_reflect,
 				 /datum/perk/codespeak,
 				 /datum/perk/chem_contraband)
 
@@ -138,6 +140,8 @@
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
 	playtimerequired = 1200
+	health_modifier = 20
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/gunserg
 
@@ -158,7 +162,8 @@
 
 	perks = list(/datum/perk/market_prof,
 				 /datum/perk/codespeak,
-				 /datum/perk/chem_contraband)
+				 /datum/perk/chem_contraband,
+				 /datum/perk/gunsmith)
 
 	description = "The Supply Specialist is the right hand of the warrant officer and the defacto controller of the armory and armory shop. <br>\
 	Your role is mainly a desk job - with duties rarely taking you outside of the colony or even the armory.<br>\
@@ -192,6 +197,8 @@
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
 	playtimerequired = 1200
+	health_modifier = 20
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/serg
 
@@ -207,7 +214,7 @@
 		STAT_VIG = 25,
 	)
 
-	perks = list(/datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect, /datum/perk/chem_contraband)
+	perks = list(/datum/perk/job/bolt_reflect, /datum/perk/job/blackshield_conditioning, /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
@@ -239,10 +246,13 @@
 	spawn_positions = 2
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	alt_titles = list("Detective","Forensics Specialist")
+	noob_name = "Gumshoe"
+	alt_titles = list("Gumshoe","Detective","Forensics Specialist")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	playtimerequired = 1200
+	health_modifier = 5
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/inspector
 
@@ -294,9 +304,12 @@
 	spawn_positions = 2
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	alt_titles = list("Combat Medic","Combat Surgeon")
+	noob_name = "Corpsman Recruit"
+	alt_titles = list("Corpsman Recruit","Combat Medic","Combat Surgeon")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
+	health_modifier = 5
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/medspec
 
@@ -306,13 +319,13 @@
 	)
 
 	stat_modifiers = list(
-		STAT_BIO = 30,
+		STAT_BIO = 25,
 		STAT_TGH = 10,
 		STAT_VIG = 15,
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/medicalexpertise)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/job/blackshield_conditioning)
 				// /datum/perk/chemist -Thanos Voice: "I'm sorry little one..."
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
@@ -347,9 +360,12 @@
 	spawn_positions = 4
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	alt_titles = list("Blackshield Cadet", "Blackshield Militiamen")
+	noob_name = "Blackshield Cadet"
+	alt_titles = list("Blackshield Cadet","Blackshield Militiamen")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
+	health_modifier = 10
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/troop
 
@@ -397,9 +413,12 @@
 	spawn_positions = 4
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	alt_titles = list("Marshal Civil Servant", "Field Training Marshal")
+	noob_name = "Field Training Marshal"
+	alt_titles = list("Field Training Marshal","Marshal Civil Servant")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
+	health_modifier = 10
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/ihoper
 

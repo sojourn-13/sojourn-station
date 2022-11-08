@@ -107,7 +107,7 @@
 
 		owner.put_in_active_hand(spider)
 
-/obj/item/organ/internal/carrion/core/nano_ui_interact(mob/user, ui_key, datum/nanoui/ui, force_open, datum/nanoui/master_ui, datum/topic_state/state)
+/obj/item/organ/internal/carrion/core/nano_ui_interact(mob/user, ui_key, datum/nanoui/ui, force_open, datum/nanoui/master_ui, datum/nano_topic_state/state)
 	var/list/data = list()
 
 	var/list/spiders_in_list = list()
@@ -599,10 +599,11 @@
 		qdel(src)
 
 /obj/structure/spider_nest/bullet_act(obj/item/projectile/P, def_zone)
-	playsound(loc, 'sound/voice/shriek1.ogg', 85, 1, 8, 8)
-	spawn_spider()
-	visible_message(SPAN_WARNING("[src] bursts open!"))
-	qdel(src)
+	if (!(P.testing))
+		playsound(loc, 'sound/voice/shriek1.ogg', 85, 1, 8, 8)
+		spawn_spider()
+		visible_message(SPAN_WARNING("[src] bursts open!"))
+		qdel(src)
 	..()
 
 /obj/structure/spider_nest/proc/spawn_spider()

@@ -312,6 +312,7 @@
 			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 				to_chat(user, SPAN_NOTICE("You [anchored? "un" : ""]secured \the [src]!"))
 				anchored = !anchored
+				power_change()
 			return
 
 		if(QUALITY_SCREW_DRIVING)
@@ -323,6 +324,7 @@
 				if(panel_open)
 					add_overlay(image(icon, "[icon_type]-panel"))
 				SSnano.update_uis(src)
+				power_change()
 			return
 
 		if(QUALITY_WELDING)
@@ -347,7 +349,7 @@
 	if (currently_vending && earnings_account && !earnings_account.suspended)
 		var/paid = 0
 		var/handled = 0
-
+		power_change(src)
 		if (ID) //for IDs and PDAs and wallets with IDs
 			paid = pay_with_card(ID,I)
 			handled = 1
@@ -372,6 +374,7 @@
 	if (custom_vendor && ID)
 		var/datum/money_account/user_account = get_account(ID.associated_account_number)
 		managing = 1
+		power_change(src)
 		if (!user_account)
 			status_message = "Error: Unable to access account. Please contact technical support if problem persists."
 			status_error = 1
@@ -421,14 +424,17 @@
 			return
 
 	if (I && istype(I, /obj/item/spacecash))
+		power_change()
 		attack_hand(user)
 		return
 
 	else if((QUALITY_CUTTING in I.tool_qualities) || (QUALITY_WIRE_CUTTING in I.tool_qualities) || (QUALITY_PULSING in I.tool_qualities))
 		if(panel_open)
 			attack_hand(user)
+			power_change()
 		return
 	else if(istype(I, /obj/item/coin) && premium.len > 0)
+		power_change()
 		user.drop_item()
 		I.loc = src
 		coin = I

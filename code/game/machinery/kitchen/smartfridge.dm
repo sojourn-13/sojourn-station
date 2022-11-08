@@ -26,6 +26,8 @@
 	var/is_secure = 0
 	var/datum/wires/smartfridge/wires = null
 
+	atmos_canpass = CANPASS_NEVER
+
 
 
 /obj/machinery/smartfridge/secure
@@ -68,11 +70,13 @@
 ********************/
 /obj/machinery/smartfridge/secure/extract
 	name = "\improper slime extract SmartFridge"
-	desc = "A refrigerated storage unit for slime extracts"
+	desc = "A refrigerated storage unit for slime extracts and potions."
 	req_access = list(access_moebius)
 
 /obj/machinery/smartfridge/secure/extract/accept_check(var/obj/item/O as obj)
 	if(istype(O,/obj/item/slime_extract))
+		return 1
+	if(istype(O,/obj/item/slime_potion))
 		return 1
 	return 0
 
@@ -140,6 +144,7 @@
 	icon_off = "showcase-off"
 	icon_panel = "showcase-panel"
 	var/icon_fill = "showcase-fill"
+	density = FALSE // For placing atop tables as a proper storage, like on the old layout. - Seb
 
 /obj/machinery/smartfridge/drinks/accept_check(var/obj/item/O as obj)
 	if(istype(O,/obj/item/reagent_containers/glass) || istype(O,/obj/item/reagent_containers/food/drinks) || istype(O,/obj/item/reagent_containers/food/condiment))

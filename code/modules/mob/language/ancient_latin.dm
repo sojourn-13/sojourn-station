@@ -3,7 +3,14 @@
 	desc = "An ancient language once used by most of europe but now mainly used by followers of the Church of Absolute."
 	colour = "latin"
 	key = "l"
+	partial_understanding = list(
+		LANGUAGE_ESPERANTO = 30,
+		LANGUAGE_CULT = 40,
+		LANGUAGE_OCCULT = 40,
+		LANGUAGE_COMMON = 5
+	)
 	space_chance = 80
+	has_written_form = TRUE
 	speech_verb = list("states")
 	ask_verb = list("implores")
 	exclaim_verb = list("intently states")
@@ -20,3 +27,4 @@
                      "expono", "flamma", "flumen", "gladius", "gratus", "homo hominis", "horrendus", "illud", "imitor", "infeste", "iuro", \
                      "laeto letor", "laganum", "lector", "maneo", "mille", "missa", "medica", "optimus", "cedo", "comiter", "quia", "rumor", \
                      "siccus", "sano", "eruo", "denuo", "decor", "corona", "compostio", "color", "bellum", "bestia", "audax", "similis", "tres tria")
+

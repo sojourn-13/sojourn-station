@@ -312,9 +312,11 @@
 	options["Skinsuit Masculine"] = ""
 	options["Skinsuit Feminine"] = "_f"
 	options["Leotard Skinsuit Feminine"] = "_leo"
+	options["Leotard Skinsuit Masculine"] = "_leom"
 	options["Grey Skinsuit Masculine"] = "_gm"
 	options["Grey Skinsuit Feminine"] = "_gf"
 	options["Grey Leotard Skinsuit Feminine"] = "_gleo"
+	options["Grey Leotard Skinsuit Masculine"] = "_gleom"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -381,3 +383,9 @@
 	desc = "A white and gold summerdress, produced and oft worn by Abolutists"
 	icon_state = "summerdress_nt"
 	item_state = "summerdress_nt"
+
+/obj/item/clothing/under/sports
+	name= "White tank top"
+	desc= "Sweat stains not included."
+	icon_state = "sports"
+	item_state = "sports"

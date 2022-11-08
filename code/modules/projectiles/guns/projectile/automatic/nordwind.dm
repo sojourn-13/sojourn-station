@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/nordwind
 	name = "\"Nordwind\" precision rifle"
-	desc = "A \"Nordwind\" high-end police-grade marksman rifle manufactured by Seinemetall Defense GmbH equiped with a night-vision scope. Primarily used by law enforcement, counter-terror units, and private security. Uses 7.5mm Rifle rounds."
+	desc = "A \"Nordwind\" high-end police-grade marksman rifle manufactured by Seinemetall Defense GmbH equiped with a night-vision scope. Primarily used by law enforcement, counter-terror units, and private security. Uses 7.62mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/nordwind.dmi'
 	icon_state = "nordwind"
 	item_state = "nordwind"
@@ -19,7 +19,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
-	zoom_factor = 0.6
+	zoom_factors = list(0.6)
 	init_recoil = RIFLE_RECOIL(1.2)
 	extra_damage_mult_scoped = 0.5 //High class gun
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
@@ -42,8 +42,8 @@
 	mag_well = MAG_WELL_RIFLE
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10)
-	price_tag = 750
-	zoom_factor = 0.8
+	price_tag = 800
+	zoom_factors = list(0.8)
 	damage_multiplier = 1 //Little bit better Strelki
 	extra_damage_mult_scoped = 0.3
 	penetration_multiplier = 1.0
@@ -58,7 +58,7 @@
 /obj/item/gun/projectile/automatic/nordwind/strelki
 	name = "\"Strelki\" precision rifle"
 	desc = "A Strelki precision rifle, an inexpensive rifle of dubious quality made by Nadezhda Marshals gunsmiths.\
-			Its mostly wooden design and its usage of 7.5 rounds make it the ideal weapon for a hunter tired of a crude boltaction. The frontier's favorite sniper!"
+			Its mostly wooden design and its usage of 7.62mm rounds make it the ideal weapon for a hunter tired of a crude boltaction. The frontier's favorite sniper!"
 	icon = 'icons/obj/guns/projectile/strelki.dmi'
 	icon_state = "strelki"
 	item_state = "strelki"
@@ -67,8 +67,8 @@
 	mag_well = MAG_WELL_RIFLE
 	gun_tags = list(GUN_PROJECTILE)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_WOOD = 10)
-	price_tag = 750
-	zoom_factor = 0.6
+	price_tag = 700
+	zoom_factors = list(0.6)
 	damage_multiplier = 0.9
 	extra_damage_mult_scoped = 0.3
 	init_recoil = RIFLE_RECOIL(1)
@@ -111,7 +111,7 @@
 	slot_flags = SLOT_BACK|SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 6, MATERIAL_WOOD = 5)
 	price_tag = 450
-	zoom_factor = 0.0
+	zoom_factors = list()
 	init_recoil = SMG_RECOIL(2.3)
 	damage_multiplier = 0.8
 	saw_off = FALSE

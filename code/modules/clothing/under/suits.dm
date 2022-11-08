@@ -204,6 +204,24 @@
 	icon_state = "scratch_skirt"
 	item_state_slots = list(slot_r_hand_str = "scratch", slot_l_hand_str = "scratch")
 
+/obj/item/clothing/under/suit_jacket/twotonesuit
+    name = "two-tone suit"
+    desc = "a black and white suit worn by people with double the personality."
+    icon_state = "twotonesuit"
+    item_state = "twotonesuit"
+
+/obj/item/clothing/under/suit_jacket/interfacebluesuit
+    name = "blue suit coat"
+    desc = "a suit coat colored a dark teal. It's quite old in design, but looks brand new."
+    icon_state = "interfacebluesuit"
+    item_state = "interfacebluesuit"
+
+/obj/item/clothing/under/suit_jacket/livesey
+	name = "Naval Surgeon's suit"
+	desc = "A formal pair of burgundy pants with a big belt buckle, pairing with a golden buttoned teal jacket, a sign of prestige for naval surgeons."
+	icon_state = "doktor"
+	item_state = "doktor"
+
 /*Modular Suits*/
 
 /obj/item/clothing/under/modular/black

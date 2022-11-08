@@ -16,6 +16,8 @@
 	//The thing which is attempting to travel. May be a mob or a vehicle
 	var/atom/movable/M
 
+	var/list/given_transformations = list()
+
 	//The mob that is travelling, if any. Used only for messages
 	var/mob/mob
 
@@ -111,7 +113,8 @@
 	animate(M)
 	M.pixel_x = prev_x
 	M.pixel_y = prev_y
-	M.transform = prev_matrix
+	M.remove_transformations(given_transformations)
+	given_transformations.Cut()
 	M.alpha = prev_alpha
 	M.layer = prev_layer
 	M.set_plane(prev_plane)

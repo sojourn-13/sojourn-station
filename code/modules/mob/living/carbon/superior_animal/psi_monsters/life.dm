@@ -26,9 +26,6 @@
 		do_sparks(1, 0, src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
-		if(prob(50))
-			new /obj/effect/gibspawner/human(src.loc)
-			new /obj/effect/gibspawner/human(src.loc)
 		src.visible_message(SPAN_DANGER(first_teleport_callout))
 		playsound(src.loc, 'sound/hallucinations/hell_screech.ogg', 75, 1, 8, 8)
 		spawn(2)
@@ -39,9 +36,6 @@
 		do_sparks(1, 0, src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
-		if(prob(50))
-			new /obj/effect/gibspawner/human(src.loc)
-			new /obj/effect/gibspawner/human(src.loc)
 		if(dreaming_king)
 			src.visible_message(SPAN_DANGER("<b><font size='3px'>\the [src] appears from thin air in a shower of gore, wounded and screaming in rage as his court answers his call!</font><b>"))
 			new /mob/living/carbon/superior_animal/psi_monster/mind_gazer/viscount(src.loc)
@@ -75,9 +69,6 @@
 		do_sparks(1, 0, src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
-		if(prob(50))
-			new /obj/effect/gibspawner/human(src.loc)
-			new /obj/effect/gibspawner/human(src.loc)
 		src.visible_message(SPAN_DANGER(second_teleport_callout))
 		playsound(src.loc, 'sound/hallucinations/hell_screech.ogg', 75, 1, 8, 8)
 		spawn(2)
@@ -88,9 +79,6 @@
 		do_sparks(1, 0, src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
-		if(prob(50))
-			new /obj/effect/gibspawner/human(src.loc)
-			new /obj/effect/gibspawner/human(src.loc)
 		if(dreaming_king)
 			src.visible_message(SPAN_DANGER("<b><font size='3px'>\the [src] appears from thin air in a shower of gore, heavily wounded and howling in agony as his court answers his call!</font><b>"))
 			new /mob/living/carbon/superior_animal/psi_monster/flesh_behemoth/baron(src.loc)
@@ -118,10 +106,4 @@
 	return
 
 /mob/living/carbon/superior_animal/psi_monster/handle_environment(var/datum/gas_mixture/environment) //were made up!
-	return
-
-/mob/living/carbon/superior_animal/psi_monster/handle_cheap_breath(datum/gas_mixture/breath as anything)
-	return
-
-/mob/living/carbon/superior_animal/psi_monster/handle_cheap_environment(datum/gas_mixture/environment as anything)
 	return

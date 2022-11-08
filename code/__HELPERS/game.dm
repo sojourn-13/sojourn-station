@@ -1,11 +1,5 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
 
-#define RANGE_TURFS(RADIUS, CENTER) \
-  block( \
-    locate(max(CENTER.x-(RADIUS),1),          max(CENTER.y-(RADIUS),1),          CENTER.z), \
-    locate(min(CENTER.x+(RADIUS),world.maxx), min(CENTER.y+(RADIUS),world.maxy), CENTER.z) \
-  )
-
 /proc/dopage(src, target)
 	var/href_list
 	var/href
@@ -45,16 +39,31 @@
 	var/list/heard = view(range, source)
 	var/list/extra_heard = view(range+3, source) - heard
 	if(extra_heard.len)
-		for(var/ear in extra_heard)
-			if(!ishuman(ear))
-				continue
-			var/mob/living/carbon/human/H = ear
+		for(var/mob/living/carbon/human/H in extra_heard)
 			if(!H.stats.getPerk(PERK_EAR_OF_QUICKSILVER))
 				continue
-			heard += ear
+			heard += H
 	source.luminosity = lum
 
 	return heard
+
+/proc/hear_movables(range, atom/source)
+
+	. = list()
+
+	var/lum = source.luminosity
+	source.luminosity = world.view
+	for (var/atom/movable/AM in view(range+3, source))
+		if ((get_dist(AM, source) > range))
+			if (ishuman(AM))
+				var/mob/living/carbon/human/H = AM
+				if(!H.stats.getPerk(PERK_EAR_OF_QUICKSILVER))
+					continue
+				. += H
+		else
+			. += AM
+
+	source.luminosity = lum
 
 /proc/circlerange(center=usr, radius=3)
 
@@ -572,7 +581,9 @@
 	if(!starting_point)
 		return FALSE
 	for(var/mob/living/potential_attacker in SSmobs.mob_living_by_zlevel[starting_point.z])
-		if(!(potential_attacker.stat < DEAD))
+		if(potential_attacker == caller)
+			continue
+		if(potential_attacker.stat == DEAD)
 			continue
 		if(!(get_dist(starting_point, potential_attacker) <= distance))
 			continue

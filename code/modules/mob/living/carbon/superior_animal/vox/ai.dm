@@ -1,12 +1,11 @@
 //todo: Basiclly taming for roaches but with discount monkeys
 
-/mob/living/carbon/superior_animal/vox/findTarget()
+/mob/living/carbon/superior_animal/vox/doTargetMessage()
 	. = ..()
-	if(.)
-		//visible_emote("charges at [.]!") //commented out to reduce chat lag
-		playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
 
-/mob/living/carbon/superior_animal/vox/UnarmedAttack(var/atom/A, var/proximity)
+	playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
+
+/mob/living/carbon/superior_animal/vox/UnarmedAttack(atom/A, proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 		if(istype(L) && !L.weakened && prob(knock_over_odds))

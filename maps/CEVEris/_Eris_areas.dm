@@ -466,6 +466,11 @@
 	icon_state = "bar"
 	sound_env = LARGE_SOFTFLOOR
 
+/area/eris/crew_quarters/plasma_tag
+	name = "\improper Plasma Tag Area"
+	icon_state = "fitness"
+	sound_env = LARGE_SOFTFLOOR
+
 /area/eris/crew_quarters/barbackroom
 	name = "Bar Backroom"
 	icon_state = "erisgreen"

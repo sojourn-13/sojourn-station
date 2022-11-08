@@ -13,9 +13,16 @@
 	turns_per_move = 4
 	turns_since_move = 0
 
-	give_randomized_armor = TRUE //We get randomized addition armor
+	get_stat_modifier = TRUE //We get randomized addition armor
 
 	armor = list(melee = 10, bullet = 5, energy = 0, bomb = 5, bio = 20, rad = 0, agony = 0)
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified = 26,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/lambertian = 16,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 42,
+		/datum/stat_modifier/mob/living/speed/flat/positive/low = 9,
+	)
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 2
@@ -55,6 +62,8 @@
 
 	var/snacker = FALSE
 
+	do_friendly_fire_chance = 100
+
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
@@ -84,3 +93,7 @@
 
 	. = ..()
 
+/mob/living/carbon/superior_animal/roach/doTargetMessage()
+	. = ..()
+
+	playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)

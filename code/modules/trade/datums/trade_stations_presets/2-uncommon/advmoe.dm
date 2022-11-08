@@ -2,8 +2,10 @@
 	name_pool = list(
 		"SI 'Ningishzida'" = "SI Trade Beacon 'Ningishzida': Connection with the SI surplus network established."
 	)
-	icon_states = "moe_capital"
+	icon_states = list("moe_capital", "station")
 	uid = "moe_adv"
+	tree_x = 0.26
+	tree_y = 0.8
 	spawn_always = TRUE
 	markup = RARE_GOODS
 	offer_limit = 1
@@ -55,6 +57,7 @@
 		/obj/item/oddity/common/healthscanner = offer_data("odd health scanner", 800, 1),
 		/obj/item/oddity/common/disk = offer_data("broken design disk", 800, 1),
 		/obj/item/oddity/common/device = offer_data("odd device", 800, 1),
+		/obj/item/organ/internal/scaffold = offer_data_mods("aberrant organ (input, process, output, secondary)", 2400, 4, OFFER_ABERRANT_ORGAN_PLUS, 4),
 		/obj/item/slime_extract/lightpink = offer_data("light pink slime extract", 10000, 1),
 		/obj/item/slime_extract/black = offer_data("black slime extract", 10000, 1),
 		/obj/item/slime_extract/oil = offer_data("oil slime extract", 10000, 1),

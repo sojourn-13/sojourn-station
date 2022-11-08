@@ -1,14 +1,20 @@
+/*
+
+Just not fun
+
 /datum/storyevent/electrical_storm
 	id = "elec_storm"
 	name = "Electrical Storm"
 
 
 	event_type = /datum/event/electrical_storm
-	event_pools = list(EVENT_LEVEL_MUNDANE = POOL_THRESHOLD_MUNDANE,
+	event_pools = list(//EVENT_LEVEL_MUNDANE = POOL_THRESHOLD_MUNDANE, bumped to moderate as this is annoying
 	EVENT_LEVEL_MODERATE = POOL_THRESHOLD_MODERATE)
 
-	tags = list(TAG_SCARY, TAG_TARGETED, TAG_NEGATIVE)
+	ocurrences_max = 2 //Can only do this twice as its more annoying then fun
 
+	tags = list(TAG_SCARY, TAG_TARGETED, TAG_NEGATIVE)
+*/
 ////////////////////////////////////////////////
 
 /datum/event/electrical_storm

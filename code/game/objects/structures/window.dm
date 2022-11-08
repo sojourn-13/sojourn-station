@@ -21,6 +21,8 @@
 	var/silicate = 0 // number of units of silicate
 	var/no_color = FALSE //If true, don't apply a color to the base
 
+	atmos_canpass = CANPASS_PROC
+
 /obj/structure/window/can_prevent_fall()
 	return !is_fulltile()
 
@@ -146,10 +148,12 @@
 /obj/structure/window/bullet_act(var/obj/item/projectile/Proj)
 
 	var/proj_damage = Proj.get_structure_damage()
-	if(!proj_damage) return
+	if(!proj_damage)
+		return
 
 	..()
-	hit(proj_damage)
+	if (!(Proj.testing))
+		hit(proj_damage)
 	return
 
 
@@ -172,12 +176,14 @@
 /obj/structure/window/proc/is_full_window()
 	return (dir == SOUTHWEST || dir == SOUTHEAST || dir == NORTHWEST || dir == NORTHEAST)
 
-/obj/structure/window/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+/obj/structure/window/CanPass(atom/movable/mover, turf/target, height=0, air_group=0, direction)
 	if(istype(mover) && mover.checkpass(PASSGLASS))
 		return 1
 	if(is_full_window())
 		return 0	//full tile window, you can't move into it!
-	if(get_dir(loc, target) & dir)
+	if (isnull(direction))
+		direction = get_dir(loc, target)
+	if(direction & dir)
 		return !density
 	else
 		return 1

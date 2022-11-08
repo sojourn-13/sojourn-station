@@ -1,5 +1,5 @@
 /mob/living
-	see_in_dark = 2
+	see_in_dark = 7 //Makes it easyer for most mobs
 	see_invisible = SEE_INVISIBLE_LIVING
 
 	//Health and life related vars
@@ -7,6 +7,8 @@
 	health = 100 	//A mob's health
 
 	var/hud_updateflag = 0
+
+	var/death_threshold = HEALTH_THRESHOLD_SOFTCRIT
 
 	var/life_cycles_before_sleep = 60
 	var/life_cycles_before_scan = 360
@@ -16,7 +18,25 @@
 
 	var/inventory_shown = 1
 
+	var/melee_damage_lower = 0
+	var/melee_damage_upper = 0
+
+	var/list/projectile_damage_increment = list()
+	var/list/projectile_damage_mult = list()
+	var/inherent_projectile_mult = 1
+	var/inherent_projectile_increment = 0
+
+	var/projectile_speed_increment = 0
+	var/projectile_speed_mult = 1
+
+	/// The mob groups, defined in admin.dm, this mob is in. Stored as keys.
+	var/list/groups_in = list()
+	/// The buildmode holders this mob is currently selected by.
+	var/list/obj/effect/bmode/buildholder/selected_by = list()
+
 	var/armor_penetration = 0 //Used for generic attacks
+	var/projectile_armor_penetration_adjustment = 0
+	var/projectile_armor_penetration_mult = 1
 
 	//Damage related vars, NOTE: THESE SHOULD ONLY BE MODIFIED BY PROCS
 	var/bruteloss = 0.0	//Brutal damage caused by brute force (punching, being clubbed by a toolbox ect... this also accounts for pressure damage)
@@ -63,9 +83,12 @@
 	var/eye_blurry = 0	//Carbon
 	var/ear_damage = 0	//Carbon
 	var/stuttering = 0	//Carbon
+	var/flash_mod = 0	//Carbon
 	var/slurring = 0	//Carbon
 	var/slowdown = 0
 	var/job = null//Living
+
+	var/additional_darksight = 0	//Added to darksight
 
 	var/image/static_overlay // For static over-lays on living mobs
 	mob_classification = CLASSIFICATION_ORGANIC

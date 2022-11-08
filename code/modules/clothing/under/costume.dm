@@ -357,3 +357,9 @@ obj/item/clothing/under/costume/history/pirate
 			It consists of a red overshirt, silver shoulder pads, golden buttons, and a black cummerbund and trousers."
 	icon_state = "hunter_formal"
 	item_state = "hunter_formal"
+
+/obj/item/clothing/under/costume/misc/jersey
+	name = "tacky sports jersey"
+	desc = "A gaudy looking jersey for some godforsaken team, while the tag on the back boasts about it bringing out infinate potential in a player it seems more like a relic. One of a time filled with mystics of trash and violence."
+	icon_state = "tackyjersey"
+	item_state = "tackyjersey"

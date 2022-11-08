@@ -2,7 +2,9 @@
 	name_pool = list(
 		"MAV 'Caduceus'" = "Moebius Aid Vessel 'Caduceus':\n\"Hello there, we are from the Kriosan Confederacy. We will be leaving the system shortly but we can offer you medical supplies in the mean time.\"."
 	)
-	icon_states = "ship"
+	icon_states = list("moe_frigate", "ship")
+	tree_x = 0.26
+	tree_y = 0.9
 	start_discovered = TRUE
 	uid = "moe_basic"
 	spawn_always = TRUE
@@ -50,6 +52,22 @@
 			/obj/item/reagent_containers/blood/BMinus,
 			/obj/item/reagent_containers/blood/OPlus,
 			/obj/item/reagent_containers/blood/OMinus
+		),
+		"Protection" = list(
+			/obj/item/clothing/suit/radiation = good_data("Radiation Suit", list(3, 4), 600),
+			/obj/item/clothing/head/radiation = good_data("Radiation Hood", list(3, 4), 600),
+			/obj/item/clothing/suit/bio_suit/general = good_data("Gengeric Biohazard Suit", list(3, 4), 800),
+			/obj/item/clothing/head/bio_hood/general = good_data("Gengeric Biohazard Hood", list(3, 4), 800),
+			/obj/item/clothing/suit/bio_suit/virology = good_data("Virology Biohazard Suit", list(3, 4), 800),
+			/obj/item/clothing/head/bio_hood/virology = good_data("Virology Biohazard Hood", list(3, 4), 800),
+			/obj/item/clothing/suit/bio_suit/janitor = good_data("Janitor Biohazard Suit", list(3, 4), 800),
+			/obj/item/clothing/head/bio_hood/janitor = good_data("Janitor Biohazard Hood", list(3, 4), 800),
+			/obj/item/clothing/suit/bio_suit/security = good_data("Red Sec Biohazard Suit", list(3, 4), 800),
+			/obj/item/clothing/head/bio_hood/security = good_data("Red Sec Biohazard Hood", list(3, 4), 800),
+			/obj/item/clothing/suit/bio_suit/scientist = good_data("SI Biohazard Suit", list(3, 4), 800),
+			/obj/item/clothing/head/bio_hood/scientist = good_data("SI Biohazard Hood", list(3, 4), 800),
+			/obj/item/clothing/suit/bio_suit/cmo = good_data("CMO Biohazard Suit", list(3, 4), 800),
+			/obj/item/clothing/head/bio_hood/cmo = good_data("CMO Biohazard Hood", list(3, 4), 800)
 		),
 		"Misc" = list(
 //			/obj/item/virusdish/random,		// Spawns without an icon
@@ -100,6 +118,7 @@
 	)
 
 	offer_types = list(
+		/obj/item/organ/internal/scaffold = offer_data_mods("aberrant organ (input, process, output)", 1200, 4, OFFER_ABERRANT_ORGAN, 3),
 		/datum/reagent/medicine/ossisine = offer_data("ossissine bottle (60u)", 2000, 1),
 		/datum/reagent/nanites/uncapped/control_booster_utility = offer_data("Control Booster Utility bottle (60u)", 30000, 1),
 		/datum/reagent/nanites/uncapped/control_booster_combat = offer_data("Control Booster Combat bottle (60u)", 30000, 1)

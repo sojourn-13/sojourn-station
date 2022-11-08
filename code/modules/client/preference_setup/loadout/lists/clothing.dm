@@ -39,6 +39,12 @@
 	slot = slot_wear_mask
 	cost = 2
 
+/datum/gear/clothing/withnosurvivors
+	display_name = "rebreather"
+	path = /obj/item/clothing/mask/gas/bigguy
+	slot = slot_wear_mask
+	cost = 2
+
 /datum/gear/clothing/mask/costume/history/plaguedoctor
 	display_name = "Plague Doctor mask"
 	path = /obj/item/clothing/mask/costume/history/plaguedoctor
@@ -96,6 +102,7 @@ datum/gear/clothing/mask/tiki/New()
 		"happy tiki mask"				=	/obj/item/clothing/mask/costume/misc/tiki/happy,
 	)
 	gear_tweaks += new /datum/gear_tweak/path(tiki)
+
 /datum/gear/clothing/mimemask
 	display_name = "mime mask"
 	slot = slot_wear_mask

@@ -17,6 +17,8 @@
 #define PERK_HORRIBLE_DEEDS /datum/perk/oddity/horrible_deeds
 #define PERK_ABSOLUTE_GRAB /datum/perk/oddity/absolute_grab <-- This perk here may be implemented later and its code exists but is commented out.
 */
+// Name changer perk, meant for ghostspawners
+#define PERK_TRUE_NAME /datum/perk/true_name
 
 // oddity perks
 #define PERK_FAST_WALKER /datum/perk/oddity/fast_walker
@@ -32,6 +34,8 @@
 #define PERK_SHARP_MIND /datum/perk/oddity/sharp_mind
 #define PERK_BLACKBOX_INSIGHT /datum/perk/oddity/blackbox_insight
 #define PERK_STRANGTH /datum/perk/oddity/strangth
+#define PERK_MIND_OF_MATTER /datum/perk/oddity/mind_of_matter
+#define PERK_IRON_WILL /datum/perk/oddity/iron_will
 
 //roundstart perks (job and racial)
 #define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery
@@ -60,6 +64,7 @@
 #define PERK_MEDICAL_EXPERT /datum/perk/medicalexpertise
 #define PERK_SURGICAL_MASTER /datum/perk/surgical_master
 #define PERK_ADVANCED_MEDICAL /datum/perk/advanced_medical
+#define PERK_ALCHEMY /datum/perk/alchemist
 #define PERK_NERD /datum/perk/chemist
 #define PERK_ROBOTICS_EXPERT /datum/perk/robotics_expert
 #define PERK_ARTIST /datum/perk/job/artist
@@ -84,6 +89,7 @@
 #define PERK_LIMB_REGEN /datum/perk/limb_regen
 #define PERK_MIND_BOOST /datum/perk/slime_stat_boost/mental
 #define PERK_BODY_BOOST /datum/perk/slime_stat_boost/physical
+#define PERK_GUNSMITH /datum/perk/gunsmith
 
 // Psionic perks
 #define PERK_PSION /datum/perk/psion
@@ -122,3 +128,16 @@
 #define PERK_CARNIVORE /datum/perk/carnivore
 #define PERK_HERBIVORE /datum/perk/herbivore
 #define PERK_SNACKIVORE /datum/perk/oddity/snackivore
+
+#define GOOD_ODDITY_PERKS list(PERK_FAST_WALKER, \
+							   PERK_GUNSLINGER, \
+							   PERK_BALLS_OF_PLASTEEL, \
+							   PERK_HARDEN, \
+							   PERK_BETTER_TOXINS, \
+							   PERK_SHARP_MIND, \
+							   PERK_STRANGTH, \
+							   PERK_IRON_WILL, \
+							   PERK_SNACKIVORE)
+
+	//Temporary drug perks
+#define PERK_ULTRASURGEON /datum/perk/drug/ultrasurgeon

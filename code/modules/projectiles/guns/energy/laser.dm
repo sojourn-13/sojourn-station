@@ -1,6 +1,6 @@
 /obj/item/gun/energy/laser
 	name = "\"Lightfall\" laser rifle"
-	desc = "\"Old Testament\" brand laser carbine. Deadly and radiant, like the ire of God it represents."
+	desc = "\"Old Testament\" brand laser carbine. Deadly and radiant, like the divine wrath it represents."
 	icon = 'icons/obj/guns/energy/laser.dmi'
 	icon_state = "laser"
 	item_state = "laser"
@@ -11,7 +11,7 @@
 	force = WEAPON_FORCE_NORMAL
 	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 5)
-	price_tag = 1250
+	price_tag = 550
 	projectile_type = /obj/item/projectile/beam/midlaser
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
@@ -54,7 +54,7 @@
 	name = "OT LG \"Lightfall\" - P"
 	desc = "A modified version of \"Old Testament\" brand laser carbine, this one fires less concentrated energy bolts, designed for target practice."
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 2)
-	price_tag = 500
+	price_tag = 250
 	projectile_type = /obj/item/projectile/beam/practice
 
 /obj/item/gun/energy/captain
@@ -96,7 +96,7 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GLASS = 4)
-	price_tag = 1100
+	price_tag = 850
 	damage_multiplier = 0.8
 	init_recoil = CARBINE_RECOIL(0.2)
 	projectile_type = /obj/item/projectile/beam
@@ -158,7 +158,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10, MATERIAL_GOLD = 2)
 	charge_cost = 120
 	fire_delay = 10
-	price_tag = 1200
+	price_tag = 950
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
 		WEAPON_NORMAL
@@ -223,7 +223,7 @@
 	init_recoil = CARBINE_RECOIL(0.1)
 	damage_multiplier = 0.75
 	penetration_multiplier = 1.0
-	price_tag = 3000
+	price_tag = 1500
 	charge_cost = 20
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
@@ -340,7 +340,7 @@
 	can_dual = TRUE
 	charge_cost = 160
 	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_PLASTIC = 6, MATERIAL_SILVER = 6)
-	price_tag = 1600
+	price_tag = 1400
 
 	init_firemodes = list(
 		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound = 'sound/weapons/Taser.ogg', fire_delay=80, icon="stun"),

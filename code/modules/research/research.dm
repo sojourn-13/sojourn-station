@@ -39,6 +39,7 @@ Procs:
 	var/list/design_categories_protolathe = list()
 	var/list/design_categories_imprinter = list()
 	var/list/design_categories_mechfab = list()
+	var/list/design_categories_organfab = list()
 
 	var/list/researched_tech = list() // Tree = list(of_researched_tech)
 	var/list/researched_nodes = list() // All research nodes
@@ -156,6 +157,8 @@ Procs:
 		design_categories_imprinter |= cat
 	if(D.build_type & MECHFAB)
 		design_categories_mechfab |= cat
+	if(D.build_type & ORGAN_GROWER)
+		design_categories_organfab |= cat
 
 
 // Unlocks hidden tech trees
@@ -183,7 +186,8 @@ Procs:
 /datum/research/proc/can_load_file(datum/computer_file/file)
 	if(istype(file, /datum/computer_file/binary/research_points))
 		var/datum/computer_file/binary/research_points/research_points_file = file
-		return !(research_points_file.research_id in known_research_file_ids)
+		if(research_points_file.size >= 1)
+			return TRUE //!(research_points_file.research_id in known_research_file_ids) Soj edit we now just kill the file
 
 	return FALSE
 
@@ -193,8 +197,10 @@ Procs:
 
 	if(istype(file, /datum/computer_file/binary/research_points))
 		var/datum/computer_file/binary/research_points/research_points_file = file
-		known_research_file_ids += research_points_file.research_id
+		known_research_file_ids += research_points_file.research_id //Used for admins/logs still
 		adjust_research_points(research_points_file.size * 1000)
+		file.size = 0 //Just in case
+		file.holder.recalculate_size()
 		return TRUE
 
 	return FALSE

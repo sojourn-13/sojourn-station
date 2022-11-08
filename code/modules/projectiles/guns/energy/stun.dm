@@ -1,6 +1,6 @@
 /obj/item/gun/energy/taser
 	name = "\"Counselor\" stun gun"
-	desc = "The OT SP \"Counselor\" is a taser gun used for non-lethal takedowns. Originally developed by the Seinemetall Defense GmbH before being sold off to Old Testament as a non-lethal and safe alternative to plasma or ballistics."
+	desc = "The OT \"Counselor\" is a taser gun used for non-lethal takedowns. Originally developed by the Seinemetall Defense GmbH, the blueprints were obtained by an Absolutist and transferred to the incipient Old Testament as a nonlethal option for the new Church."
 	icon = 'icons/obj/guns/energy/taser.dmi'
 	icon_state = "taser"
 	item_state = null	//so the human update icon uses the icon_state instead.
@@ -20,6 +20,7 @@
 
 /obj/item/gun/energy/taser/make_old()
 	. = ..()
+	desc += " This one seems to predate the Church acquisition."
 	serial_type = "SD GmbH"
 
 /obj/item/gun/energy/taser/mounted
@@ -66,7 +67,7 @@
 /obj/item/gun/energy/stunrevolver/sci
 	name = "\"Hera\" stun revolver"
 	desc = "Also know as stun revolver. Seinemetall Defense GmbH with Soteria Institute solution for non-lethal takedowns, its rather simple deisign has a smaller capacity in exchange for S-cells use. \
-			The now outdated design was the base for the much more successfull \"Counselor\". This verson is almost identical to the \"Zeus\" only being repainted after Seinemetall Defense GmbH moved to ballistics based manufacturing."
+			The now outdated design was the base for the much more successful \"Counselor\". This verson is almost identical to the \"Zeus\" only being repainted after Seinemetall Defense GmbH moved to ballistics based manufacturing."
 	icon = 'icons/obj/guns/energy/si_stunrevolver.dmi'
 	serial_type = "SI"
 

@@ -13,6 +13,8 @@
 	var/shield_generate_power = 7500	//how much power we use when regenerating
 	var/shield_idle_power = 1500		//how much power we use when just being sustained.
 
+	atmos_canpass = CANPASS_NEVER
+
 /obj/machinery/shield/malfai
 	name = "emergency forcefield"
 	desc = "A weak forcefield which seems to be projected by the station's emergency atmosphere containment field"
@@ -61,13 +63,15 @@
 	..()
 
 /obj/machinery/shield/bullet_act(var/obj/item/projectile/Proj)
-	health -= Proj.get_structure_damage()
+	if (!(Proj.testing))
+		health -= Proj.get_structure_damage()
 	..()
-	check_failure()
-	set_opacity(TRUE)
-	spawn(20)
-		if(src)
-			set_opacity(FALSE)
+	if (!(Proj.testing))
+		check_failure()
+		set_opacity(TRUE)
+		spawn(20)
+			if(src)
+				set_opacity(FALSE)
 
 /obj/machinery/shield/ex_act(severity)
 	switch(severity)

@@ -25,6 +25,26 @@
 #define SEE_INVISIBLE_MINIMUM 5
 #define INVISIBILITY_MAXIMUM 100
 
+// MultiZAS directions.
+#define NORTHUP (NORTH|UP)
+#define EASTUP (EAST|UP)
+#define SOUTHUP (SOUTH|UP)
+#define WESTUP (WEST|UP)
+#define NORTHDOWN (NORTH|DOWN)
+#define EASTDOWN (EAST|DOWN)
+#define SOUTHDOWN (SOUTH|DOWN)
+#define WESTDOWN (WEST|DOWN)
+
+// Stat modifier defines
+#define MELEE_STATTAG (1<<1)
+#define RANGED_STATTAG (1<<2)
+#define DEFENSE_STATTAG (1<<3)
+#define NEGATIVE_DEFENSE_STATTAG (1<<4)
+#define NOTHING_STATTAG (1<<5)
+
+#define PRIOR_TO_APPLY "prior"
+#define AFTER_APPLY "after"
+
 // Some arbitrary defines to be used by self-pruning global lists.
 #define PROCESS_KILL 26 // Used to trigger removal from a processing list.
 #define MAX_GEAR_COST 5 // Used in chargen for accessory loadout limit.
@@ -187,6 +207,8 @@
 //distance
 #define RANGE_ADJACENT -1
 
+#define UNTIL(X) while(!(X)) stoplag()
+
 //Core implants
 #define CORE_ACTIVATED /datum/core_module/activatable
 
@@ -236,50 +258,20 @@
  //Preference save/load cooldown. This is in deciseconds.
 #define PREF_SAVELOAD_COOLDOWN 4 //Should be sufficiently hard to achieve without a broken mouse or autoclicker while still fulfilling its intended goal.
 
-#define JOINTEXT(X) jointext(X, null)
 
 //lazy text span classes defines.
 #define SPAN_NOTICE(text)  "<span class='notice'>[text]</span>"
 #define SPAN_WARNING(text) "<span class='warning'>[text]</span>"
 #define SPAN_DANGER(text)  "<span class='danger'>[text]</span>"
 #define SPAN_PSION(text)   "<b><font color='purple'>[text]</b></font>"
-#define span(class, text) ("<span class='[class]'>[text]</span>")
 // the thing below allow using SPANning in datum definition, the above can't.
 #define SPAN(class, X) "<span class='" + ##class + "'>" + ##X + "</span>"
 
 #define text_starts_with(text, start) (copytext(text, 1, length(start) + 1) == start)
 
-#define attack_animation(A) if(istype(A)) A.do_attack_animation(src)
-
 // Overlays
 // (placeholders for if/when TG overlays system is ported)
 //#define cut_overlays(...)			overlays.Cut()
-
-#define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
-
-#define random_id(key,min_id,max_id) uniqueness_repository.Generate(/datum/uniqueness_generator/id_random, key, min_id, max_id)
-
-#define sound_to(target, sound)                             target << sound
-//#define to_chat(target, message)                          target << message
-#define to_world(message)                                   to_chat(world, message)
-#define to_world_log(message)                               log_world(message)
-#define show_browser(target, browser_content, browser_name) target << browse(browser_content, browser_name)
-#define to_file(file_entry, source_var)                     file_entry << source_var
-#define from_file(file_entry, target_var)                   file_entry >> target_var
-#define send_rsc(target, rsc_content, rsc_name)             target << browse_rsc(rsc_content, rsc_name)
-#define open_link(target, url)             					target << link(url)
-
-#define send_output(target, msg, control) target << output(msg, control)
-#define send_link(target, url) target << link(url)
-
-#define any2ref(x) "\ref[x]"
-
-#define MAP_IMAGE_PATH "nano/images/[GLOB.maps_data.path]/"
-
-#define map_image_file_name(z_level) "[GLOB.maps_data.path]-[z_level].png"
-
-// Spawns multiple objects of the same type
-#define cast_new(type, num, args...) if((num) == 1) { new type(args) } else { for(var/i in 1 to num) { new type(args) } }
 
 #define CLIENT_FROM_VAR(I) (ismob(I) ? I:client : (istype(I, /client) ? I : (istype(I, /datum/mind) ? I:current?:client : null)))
 

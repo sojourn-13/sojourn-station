@@ -114,6 +114,12 @@
 	desc = "A sturdy pair of leather shoes."
 	icon_state = "leather"
 
+/obj/item/clothing/shoes/leather/regal
+	name = "Regal leather shoes"
+	desc = "A pair of leather shoes worn by a magistrate of sorts."
+	icon_state = "detective"
+	price_tag = 50
+
 /obj/item/clothing/shoes/jackboots/redboot
 	name = "red boots"
 	desc = "A pair of stylish red boots."

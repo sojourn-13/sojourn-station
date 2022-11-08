@@ -1,9 +1,10 @@
 // PRESETS
 var/global/list/station_networks = list(
-	NETWORK_FIRST_SECTION,
-	NETWORK_SECOND_SECTION,
-	NETWORK_THIRD_SECTION,
-	NETWORK_FOURTH_SECTION,
+	NETWORK_COLONY_SURFACE,
+	NETWORK_COLONY_UNDERGROUND,
+	NETWORK_COLONY_TRANSITION,
+	NETWORK_CHURCH,
+	NETWORK_PROP,
 	NETWORK_COMMAND,
 	NETWORK_ENGINE,
 	NETWORK_ENGINEERING,
@@ -12,8 +13,9 @@ var/global/list/station_networks = list(
 	NETWORK_MINE,
 	NETWORK_RESEARCH,
 	NETWORK_ROBOTS,
-	NETWORK_PRISON,
-	NETWORK_SECURITY
+	NETWORK_CARGO,
+	NETWORK_SECURITY,
+	NETWORK_PLASMA_TAG
 )
 
 var/global/list/engineering_networks = list(
@@ -27,17 +29,29 @@ var/global/list/engineering_networks = list(
 /obj/machinery/camera/network/crescent
 	network = list(NETWORK_CRESCENT)
 
-/obj/machinery/camera/network/fist_section
-	network = list(NETWORK_FIRST_SECTION)
+/obj/machinery/camera/network/gate
+	network = list(NETWORK_GATE)
 
-/obj/machinery/camera/network/second_section
-	network = list(NETWORK_SECOND_SECTION)
+/obj/machinery/camera/network/cargo
+	network = list(NETWORK_CARGO)
 
-/obj/machinery/camera/network/third_section
-	network = list(NETWORK_THIRD_SECTION)
+/obj/machinery/camera/network/colony_surface
+	network = list(NETWORK_COLONY_SURFACE)
 
-/obj/machinery/camera/network/fourth_section
-	network = list(NETWORK_FOURTH_SECTION)
+/obj/machinery/camera/network/colony_underground
+	network = list(NETWORK_COLONY_UNDERGROUND)
+
+/obj/machinery/camera/network/colony_transition
+	network = list(NETWORK_COLONY_TRANSITION)
+
+/obj/machinery/camera/network/church
+	network = list(NETWORK_CHURCH)
+
+/obj/machinery/camera/network/propis
+	network = list(NETWORK_PROP)
+
+/obj/machinery/camera/network/plasma_tag
+	network = list(NETWORK_PLASMA_TAG)
 
 /obj/machinery/camera/network/command
 	network = list(NETWORK_COMMAND)

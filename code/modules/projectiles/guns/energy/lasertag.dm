@@ -31,7 +31,7 @@
 	name = "plasma tag sniper"
 	desc = "Standard-issue weapon of the Imperial Guard. This one has a hologram projected scope attached that appears when the user looks down the sight. Fancy, but the gun itself is quite slow to fire as a result."
 	fire_delay = 10
-	zoom_factor = 1.2 //small zome factor so we can't snipe from all the way accross the map
+	zoom_factors = list(1.2) //small zome factor so we can't snipe from all the way accross the map
 
 /obj/item/gun/energy/lasertag/pistol
 	name = "plasma tag burst-pistol"
@@ -61,9 +61,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/blue
 	required_vest = /obj/item/clothing/suit/fluff/bluetag
 	init_firemodes = list(
-		list(mode_name="normal", mode_desc="Standered one shot", projectile_type=/obj/item/projectile/plasma/lastertag/blue, fire_sound='sound/weapons/Laser.ogg', icon="destroy"),
-		list(mode_name="knockback", mode_desc="Heavy hitting plasma impact that knocks people away", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
-		)
+		list(mode_name="normal", mode_desc="Standered one shot", projectile_type=/obj/item/projectile/plasma/lastertag/blue, fire_sound='sound/weapons/Laser.ogg', icon="destroy"))
 
 /obj/item/gun/energy/lasertag/sniper/blue
 	icon = 'icons/obj/guns/energy/bluetag.dmi'
@@ -97,8 +95,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/red
 	required_vest = /obj/item/clothing/suit/fluff/redtag
 	init_firemodes = list(
-		list(mode_name="normal", mode_desc="Standered one shot", projectile_type=/obj/item/projectile/plasma/lastertag/red, fire_sound='sound/weapons/Laser.ogg', icon="destroy"),
-		list(mode_name="knockback", mode_desc="Heavy hitting plasma impact that knocks people away", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
+		list(mode_name="normal", mode_desc="Standered one shot", projectile_type=/obj/item/projectile/plasma/lastertag/red, fire_sound='sound/weapons/Laser.ogg', icon="destroy")
 		)
 
 /obj/item/gun/energy/lasertag/sniper/red
@@ -133,9 +130,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/green
 	required_vest = /obj/item/clothing/suit/fluff/greentag
 	init_firemodes = list(
-		list(mode_name="normal", mode_desc="Standered one shot", projectile_type=/obj/item/projectile/plasma/lastertag/green, fire_sound='sound/weapons/Laser.ogg', icon="destroy"),
-		list(mode_name="knockback", mode_desc="Heavy hitting plasma impact that knocks people away", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
-		)
+		list(mode_name="normal", mode_desc="Standered one shot", projectile_type=/obj/item/projectile/plasma/lastertag/green, fire_sound='sound/weapons/Laser.ogg', icon="destroy"))
 
 /obj/item/gun/energy/lasertag/sniper/green
 	icon = 'icons/obj/guns/energy/greentag.dmi'
@@ -169,9 +164,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/yellow
 	required_vest = /obj/item/clothing/suit/fluff/yellowtag
 	init_firemodes = list(
-		list(mode_name="normal", mode_desc="Standered one shot", projectile_type=/obj/item/projectile/plasma/lastertag/yellow, fire_sound='sound/weapons/Laser.ogg', icon="destroy"),
-		list(mode_name="knockback", mode_desc="Heavy hitting plasma impact that knocks people away", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
-		)
+		list(mode_name="normal", mode_desc="Standered one shot", projectile_type=/obj/item/projectile/plasma/lastertag/yellow, fire_sound='sound/weapons/Laser.ogg', icon="destroy"))
 
 /obj/item/gun/energy/lasertag/sniper/yellow
 	icon = 'icons/obj/guns/energy/yellowtag.dmi'

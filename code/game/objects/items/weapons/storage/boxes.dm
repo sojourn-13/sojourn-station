@@ -726,6 +726,11 @@
 /obj/item/storage/box/data_disk/basic/empty/populate_contents()
 	return
 
+/*
+Boxes with clothing on them, unable to put them back if taken out because...
+...well, boxes can't normally fit clothes on them!
+*/
+
 /obj/item/storage/box/trooperuniform
 	name = "Trooper/Corpsman Service and Dress Kit"
 	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
@@ -784,6 +789,19 @@
 		new /obj/item/clothing/accessory/ranks/blank(src)
 		new /obj/item/clothing/accessory/ranks/blank(src)
 		new /obj/item/clothing/accessory/ranks/blank(src)
+
+/obj/item/storage/box/team_support
+	name = "Box of Team Support"
+	desc = "A box filled with everything needed to support the team, flag not included."
+	icon_state = "box"
+
+	New()
+		..()
+		new /obj/item/reagent_containers/food/snacks/popcorn(src)
+		new /obj/item/toy/junk/bosunwhistle(src)
+		new /obj/random/toy/plushie_onlysquid(src)
+		new /obj/item/device/binoculars(src)
+
 
 // Guild boxes, exclusively used to mass craft guild parts.
 /obj/item/storage/box/guild_manip

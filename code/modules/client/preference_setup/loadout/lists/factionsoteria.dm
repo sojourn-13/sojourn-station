@@ -22,7 +22,7 @@
 /datum/gear/factionsoteria/cloakmedical
 	display_name = "cloak, soteria medical"
 	path = /obj/item/clothing/accessory/job/cape/medical
-	allowed_roles = list("Soteria Doctor","Soteria Biolab Officer","Soteria Orderly","Soteria Trauma Team")
+	allowed_roles = list("Soteria Doctor","Soteria Biolab Officer","Soteria Client Recovery Specialist")
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"
 
@@ -34,30 +34,30 @@
 	sort_category = "Faction: Soteria"
 
 /datum/gear/factionsoteria/si_bdu
-	display_name = "trauma team bdu"
+	display_name = "recovery team bdu"
 	path = /obj/item/clothing/under/rank/paramedic/bdu
-	allowed_roles = list("Soteria Doctor","Chief Biolab Overseer","Soteria Trauma Team")
+	allowed_roles = list("Soteria Doctor","Chief Biolab Overseer","Soteria Client Recovery Specialist")
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"
 
 /datum/gear/factionsoteria/gorka_crew_med
 	display_name = "gorka jacket, soteria medical"
 	path = /obj/item/clothing/suit/gorka/toggle/crew_med
-	allowed_roles = list("Soteria Doctor","Chief Biolab Overseer","Soteria Trauma Team")
+	allowed_roles = list("Soteria Doctor","Chief Biolab Overseer","Soteria Client Recovery Specialist")
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"
 
 /datum/gear/factionsoteria/gorka_crew_sci
 	display_name = "gorka jacket, soteria research"
 	path = /obj/item/clothing/suit/gorka/toggle/gorka_crew_sci
-	allowed_roles = list("Chief Research Overseer","Soteria Scientist","Soteria Roboticist")
+	allowed_roles = list("Chief Research Overseer","Soteria Scientist","Soteria Client Recovery Specialist")
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"
 
 /datum/gear/factionsoteria/gorkamoebiusmedical
 	display_name = "gorka jumpsuit, soteria medical"
 	path = /obj/item/clothing/under/rank/medical/gorka_crew_med
-	allowed_roles = list("Soteria Doctor","Chief Biolab Overseer","Soteria Trauma Team")
+	allowed_roles = list("Soteria Doctor","Chief Biolab Overseer","Soteria Recovery Team")
 	slot = slot_w_uniform
 	sort_category = "Faction: Soteria"
 
@@ -71,7 +71,7 @@
 /datum/gear/factionsoteria/gorkapantsmedical
 	display_name = "gorka pants, soteria medical"
 	path = /obj/item/clothing/under/rank/medical/gorkapantscrewmed
-	allowed_roles = list("Soteria Doctor","Chief Biolab Overseer","Soteria Trauma Team")
+	allowed_roles = list("Soteria Doctor","Chief Biolab Overseer","Soteria Client Recovery Specialist")
 	slot = slot_w_uniform
 	sort_category = "Faction: Soteria"
 
@@ -100,14 +100,14 @@
 	display_name = "scrubs selection"
 	path = /obj/item/clothing/under/scrubs
 	flags = GEAR_HAS_TYPE_SELECTION
-	allowed_roles = list("Soteria Psychiatrist","Soteria Trauma Team","Soteria Doctor","Chief Biolab Overseer")
+	allowed_roles = list("Soteria Psychiatrist","Soteria Client Recovery Specialist","Soteria Doctor","Chief Biolab Overseer")
 	slot = slot_w_uniform
 	sort_category = "Faction: Soteria"
 
 /datum/gear/factionsoteria/surgical
 	display_name = "surgical cap selection"
 	path = /obj/item/clothing/head/surgery/
-	allowed_roles = list("Soteria Psychiatrist","Soteria Trauma Team","Soteria Doctor","Chief Biolab Overseer")
+	allowed_roles = list("Soteria Psychiatrist","Soteria Client Recovery Specialist","Soteria Doctor","Chief Biolab Overseer")
 	cost = 1
 	slot = slot_head
 	flags = GEAR_HAS_TYPE_SELECTION
@@ -116,7 +116,7 @@
 /datum/gear/factionsoteria/snowsuitmedical
 	display_name = "snowsuit, soteria medical"
 	path = /obj/item/clothing/suit/storage/snowsuit/medical
-	allowed_roles = list("Soteria Psychiatrist","Soteria Orderly","Soteria Trauma Team","Chief Biolab Overseer")
+	allowed_roles = list("Soteria Psychiatrist","Soteria Orderly","Soteria Client Recovery Specialist","Chief Biolab Overseer")
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"
 
@@ -130,7 +130,7 @@
 /datum/gear/factionsoteria/winterbootsmedical
 	display_name = "winter boots, soteria medical"
 	path = /obj/item/clothing/shoes/winter/medical
-	allowed_roles = list("Soteria Psychiatrist","Soteria Trauma Team","Soteria Doctor","Chief Biolab Overseer")
+	allowed_roles = list("Soteria Psychiatrist","Soteria Client Recovery Specialist","Soteria Doctor","Chief Biolab Overseer")
 	slot = slot_shoes
 	sort_category = "Faction: Soteria"
 
@@ -144,7 +144,7 @@
 /datum/gear/factionsoteria/wintercoatmedical
 	display_name = "winter coat, soteria medical"
 	path = /obj/item/clothing/suit/hooded/wintercoat/medical
-	allowed_roles = list("Soteria Psychiatrist","Soteria Trauma Team","Soteria Doctor","Chief Biolab Overseer")
+	allowed_roles = list("Soteria Psychiatrist","Soteria Client Recovery Specialist","Soteria Doctor","Chief Biolab Overseer")
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"
 

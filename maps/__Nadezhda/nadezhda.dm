@@ -90,6 +90,6 @@
 	is_contact_level = FALSE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
-	height = 2
+	height = 1
 
 

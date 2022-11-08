@@ -13,6 +13,8 @@
 	var/strength = 0
 	var/ticks_recovering = 10
 
+	atmos_canpass = CANPASS_ALWAYS
+
 /obj/effect/energy_field/New()
 	..()
 	update_nearby_tiles()
@@ -26,7 +28,8 @@
 	Stress(0.5 + severity)
 
 /obj/effect/energy_field/bullet_act(var/obj/item/projectile/Proj)
-	Stress(Proj.get_structure_damage() / 10)
+	if (!(Proj.testing))
+		Stress(Proj.get_structure_damage() / 10)
 
 /obj/effect/energy_field/proc/Stress(var/severity)
 	strength -= severity

@@ -574,7 +574,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	..()
 	pixel_x = rand(-10,10)
 	pixel_y = rand(-10,10)
-	transform = turn(transform,rand(0,360))
+
+/obj/item/trash/cigbutt/add_initial_transforms()
+	. = ..()
+
+	add_new_transformation(/datum/transform_type/random_rotation)
 
 /obj/item/trash/cigbutt/cigarbutt
 	name = "cigar butt"
@@ -1058,3 +1062,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "\improper Liberation Zippo lighter"
 	desc = "A cheap, mass produced Zippo for the working masses, its flame - much like the motto - goes ever upwards."
 	icon_state = "excelsior"
+
+/obj/item/flame/lighter/zippo/brass
+	name = "\improper Brass Zippo lighter"
+	desc = "A shiney brass zippo made to last, for some reason the metal is always cold to the touch and rather then the flint to start the flame makes a ticking sound when used."
+	icon_state = "brass_zippo"

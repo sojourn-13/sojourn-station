@@ -5,7 +5,9 @@
 
 	This may require engineering to wall them off, or ironhammer to guard them, to prevent unauthorised access
 	If conveniently placed,they may also offer new, rapid transit routes around the ship
-*/
+
+Disabled do to being a bit to unfun to deal with
+
 /datum/storyevent/wormholes
 	id = "wormholes"
 	name = "wormholes"
@@ -14,7 +16,7 @@
 	event_type = /datum/event/wormholes
 	event_pools = list(EVENT_LEVEL_MODERATE = POOL_THRESHOLD_MODERATE)
 	tags = list(TAG_POSITIVE, TAG_COMMUNAL)
-
+*/
 ////////////////////////////////////////////////////////
 /datum/event/wormholes
 	//The duration ranges from fairly long, to basically forever

@@ -31,8 +31,10 @@
 	src.destroySurroundings()
 
 /mob/living/carbon/superior_animal/RangedAttack()
-	if(!check_if_alive()) return
-	if(weakened) return
+	if(!check_if_alive())
+		return
+	if(weakened)
+		return
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(ranged)
@@ -40,7 +42,8 @@
 			OpenFire(targetted_mob)
 		else
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to(src, targetted_mob, 1, move_to_delay)
+			if (stat != DEAD)
+				SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 		if(ranged && istype(src, /mob/living/simple_animal/hostile/megafauna))
 			var/mob/living/simple_animal/hostile/megafauna/megafauna = src
 			sleep(rand(megafauna.megafauna_min_cooldown,megafauna.megafauna_max_cooldown))
@@ -48,20 +51,22 @@
 				if(prob(rand(15,25)))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, targetted_mob, 1, move_to_delay)
+					if (stat != DEAD)
+						SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 				else
 					OpenFire(targetted_mob)
 			else
 				if(prob(45))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to(src, targetted_mob, 1, move_to_delay)
+					if (stat != DEAD)
+						SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 				else
 					OpenFire(targetted_mob)
 		else
 			return
 
-/mob/living/carbon/superior_animal/proc/OpenFire(var/atom/firing_target)
+/mob/living/carbon/superior_animal/proc/OpenFire(var/atom/firing_target, var/obj/item/projectile/trace_arg)
 	if(!check_if_alive())
 		return
 	if(weakened)
@@ -71,12 +76,10 @@
 
 	if(rapid)
 		for(var/shotsfired = 0, shotsfired < rapid_fire_shooting_amount, shotsfired++)
-			if(!check_if_alive())
-				break
-			addtimer(CALLBACK(src, .proc/Shoot, target, loc, src), (delay_for_rapid_range * shotsfired))
+			addtimer(CALLBACK(src, .proc/Shoot, target, loc, src, 0, trace_arg), (delay_for_rapid_range * shotsfired))
 			handle_ammo_check()
 	else
-		Shoot(target, loc, src)
+		Shoot(target, loc, src, trace = trace_arg)
 		handle_ammo_check()
 
 	if (!firing_target)
@@ -94,8 +97,6 @@
 	return
 
 /mob/living/carbon/superior_animal/proc/handle_ammo_check()
-	if(casingtype)
-		new casingtype(get_turf(src))
 	if(!limited_ammo)
 		return //Quick return
 	rounds_left -= rounds_per_fire //modular, tho likely will always be one
@@ -110,19 +111,101 @@
 		ranged = FALSE
 		rapid = FALSE
 
-/mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0)
-	if(weakened) return
+/mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0, var/obj/item/projectile/trace)
+	if(weakened)
+		return
 	if(target == start)
+		return
+	if (is_dead(src))
 		return
 
 	var/obj/item/projectile/A = new projectiletype(user:loc)
-	visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"), 1)
-	if(casingtype)
-		new casingtype(get_turf(src))
-	playsound(user, projectilesound, 100, 1)
-	if(!A)	return
+	if(!A)
+		return
+
 	var/def_zone = get_exposed_defense_zone(target)
-	A.launch(target, def_zone)
+
+	var/datum/penetration_holder/trace_penetration
+
+	if (trace && trace.penetration_holder && ((!QDELETED(trace.penetration_holder)) && (!QDESTROYING(trace.penetration_holder))))
+		trace_penetration = trace.penetration_holder
+
+	var/do_we_shoot = TRUE
+
+	var/obj/item/projectile/new_trace = check_trajectory_raytrace(target, src, projectiletype)
+
+	spawn(0)
+
+		if (new_trace)
+			if (new_trace.impact_atom)
+				var/list/possible_targets = list()
+				if (trace_penetration && trace_penetration.force_penetration_on.len)
+					possible_targets = trace_penetration.force_penetration_on
+				possible_targets += new_trace.impact_atom
+				for (var/atom/entry in possible_targets)
+					var/mob/possible_target
+					if (ismecha(entry))
+						var/obj/mecha/mechtarget = entry
+						possible_target = mechtarget.occupant
+					else if (ismob(entry))
+						possible_target = entry
+					if (possible_target)
+						if (possible_target == target)
+							continue //we made the concious choice to attack them
+						else if (!(prob(do_friendly_fire_chance)) && (((!attack_same && (possible_target.faction == faction)) || (possible_target in friends)) || (possible_target.friendly_to_colony && friendly_to_colony)))
+							do_we_shoot = FALSE
+							break
+
+			if (do_we_shoot)
+				if (trace_penetration && trace_penetration.force_penetration_on && trace_penetration.force_penetration_on.len)
+					var/datum/penetration_holder/penetrator = A.penetration_holder
+
+					for (var/atom/penetrated in trace_penetration.force_penetration_on)
+						penetrator.force_penetration_on += penetrated
+
+		if (do_we_shoot)
+			var/offset_temp = right_before_firing()
+			A.launch(target, def_zone, firer_arg = src, angle_offset = offset_temp) //this is where we actually shoot the projectile
+			right_after_firing()
+			SEND_SIGNAL(src, COMSIG_SUPERIOR_FIRED_PROJECTILE, A)
+			visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"))
+			if(casingtype)
+				new casingtype(get_turf(src))
+			playsound(user, projectilesound, projectilevolume, 1)
+		else
+			QDEL_NULL(A)
+
+		if (trace)
+			if (trace.penetration_holder)
+				qdel(trace.penetration_holder)
+				trace.penetration_holder = null
+			QDEL_NULL(trace)
+
+		if (new_trace)
+			if (new_trace.penetration_holder)
+				qdel(new_trace.penetration_holder)
+				new_trace.penetration_holder = null
+			QDEL_NULL(new_trace)
+
+/// Ran right before A.launch in /mob/living/carbon/superior_animal/proc/Shoot. On base, is used for firing offset calculations.
+/mob/living/carbon/superior_animal/proc/right_before_firing(offset_positive = current_firing_offset, round_offset = FALSE)
+	if (round_offset)
+		offset_positive = round(offset_positive) //just to be safe
+
+	offset_positive = abs(offset_positive) //it should be positive, but lets just be safe
+
+	if (!offset_positive) //the rest of the code doesnt matter if we're just 0 or null
+		return offset_positive
+
+	var/offset_negative = INVERT_SIGN(offset_positive) //invert the sign, so it becomes negative
+
+	var/offset_to_return = rand(offset_negative, offset_positive) //now get a random value from between the two. the numbers between positive and negative are now our firing arc
+
+	return offset_to_return
+
+/// Ran right after A.launch in /mob/living/carbon/superior_animal/proc/Shoot. On base, does nothing.
+/mob/living/carbon/superior_animal/proc/right_after_firing()
+	return FALSE
 
 /mob/living/carbon/superior_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
 	if(weakened) return

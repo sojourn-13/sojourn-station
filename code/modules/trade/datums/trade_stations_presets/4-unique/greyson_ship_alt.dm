@@ -1,5 +1,8 @@
 /datum/trade_station/greyson_printer_ship
+	icon_states = list("greyson_frigate", "ship")
 	uid = "greyson_printer"
+	tree_x = 0.66
+	tree_y = 0.6
 	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = UNIQUE_GOODS
@@ -8,12 +11,13 @@
 	recommendations_needed = 1
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 4000
+	regain_stock = FALSE
 	name_pool = list("Dayinji" = "A still functioning, heavily armed greyson ship that still produces and offers wares, likely entirely unaware of Greyson Positronics collapse given its \
 	automated. It's a wonder it hasn't been raided, but then again its protected by a massive army of still functioning combat drones. This one specializes in a wide variety of interesting goods.")
 	inventory = list(
 		"Sheji pan" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/onestar/stockparts = good_data("GP Stockpart Disk", list(0, 1), 900),
-			/obj/item/computer_hardware/hard_drive/portable/design/onestar = good_data("GP Tool Disk", list(-2, 1), 1200)
+			/obj/item/computer_hardware/hard_drive/portable/design/onestar/stockparts = good_data("GP Stockpart Disk", list(30, 50), 900),
+			/obj/item/computer_hardware/hard_drive/portable/design/onestar = good_data("GP Tool Disk", list(30, 50), 1200)
 		),
 		"Gongju" = list(
 			/obj/item/tool/crowbar/onestar = custom_good_nameprice("GP Crowbar", list(-100, -50)),
@@ -39,8 +43,8 @@
 	)
 	hidden_inventory = list(
 		"Wuqi pan" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/onestar/cog = custom_good_nameprice("GP Cog Disk", list(1, 2)),
-			/obj/item/computer_hardware/hard_drive/portable/design/onestar/armor = custom_good_nameprice("GP Ablative Disk", list(1, 2))
+			/obj/item/computer_hardware/hard_drive/portable/design/onestar/cog = custom_good_nameprice("GP Cog Disk", list(50, 150)),
+			/obj/item/computer_hardware/hard_drive/portable/design/onestar/armor = custom_good_nameprice("GP Ablative Disk", list(20, 30))
 		),
 		"Wuqi yinshua" = list(
 			/obj/item/gun/energy/cog = good_data("GP Cog", list(-1, 0), 475)

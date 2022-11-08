@@ -32,6 +32,38 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+//Icons form Occult sprited By Zenitheevee (I think)
+/datum/sprite_accessory/ears/antlers_marked_small_occultported
+	name = "Antlers Mark, Small"
+	desc = ""
+	icon_state = "antlermarksmall"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/antlermarksmall_head_occultported
+	name = "Antlers Mark, Small Head"
+	desc = ""
+	icon_state = "antlermarksmall-head"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/antlers_mark_occultported
+	name = "Antlers Mark"
+	desc = ""
+	icon_state = "antlermark"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/antlermark_head_occultported
+	name = "Antlers Mark, Head"
+	desc = ""
+	icon_state = "antlermark-head"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+
+//End of Occult sprited things (That im aware of)
+
 /datum/sprite_accessory/ears/antlers_smallwithears
 	name = "Antlers, Small With Ears"
 	desc = ""
@@ -640,4 +672,11 @@
     desc = ""
     icon_state = "upwardshorns"
     colored_layers = 1
+    blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/sheep_horn
+    name = "Sheep Horn"
+    desc = ""
+    icon_state = "sheep_horn"
+    colored_layers = 2
     blend = ICON_MULTIPLY

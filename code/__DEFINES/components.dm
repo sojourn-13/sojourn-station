@@ -1,4 +1,11 @@
-#define SEND_SIGNAL(target, sigtype, arguments...) ( !target.comp_lookup || !target.comp_lookup[sigtype] ? NONE : target._SendSignal(sigtype, list(##arguments)) )
+/// Used to trigger signals and call procs registered for that signal
+/// The datum hosting the signal is automaticaly added as the first argument
+/// Returns a bitfield gathered from all registered procs
+/// Arguments given here are packaged in a list and given to _SendSignal
+#define SEND_SIGNAL(target, sigtype, arguments...) ( !target.comp_lookup || !target.comp_lookup[sigtype] ? NONE : target._SendSignal(sigtype, list(target, ##arguments)) )
+
+/// Depreciated. Use SEND_SIGNAL instead. This only exists for compatability.
+#define LEGACY_SEND_SIGNAL(target, sigtype, arguments...) ( !target.comp_lookup || !target.comp_lookup[sigtype] ? NONE : target._SendSignal(sigtype, list(##arguments)) )
 
 #define SEND_GLOBAL_SIGNAL(sigtype, arguments...) ( SEND_SIGNAL(SSdcs, sigtype, ##arguments) )
 
@@ -60,6 +67,9 @@
 #define COMSIG_ATOM_UNFASTEN "atom_unfasten" // set_anchored()
 #define COMSIG_CLICK_ALT "alt_click"//from atom/AltClick(): (/mob)
 #define COMSIG_CLICK_CTRL "ctrl_click"//from atom/CtrlClick(): (/mob)
+#define COMSIG_SHIFTCLICK "shiftclick" // used for ai_like_control component
+#define COMSIG_CTRLCLICK "ctrlclick" // used for ai_like_control component
+#define COMSIG_ALTCLICK "altclick" // used for ai_like_control component
 
 // /area signals
 #define COMSIG_AREA_SANCTIFY "sanctify_area"
@@ -75,6 +85,8 @@
 #define COMSIG_MOB_LIFE  "mob_life"							 //from mob/Life()
 #define COMSIG_MOB_LOGIN "mob_login"							//from mob/Login()
 #define COMSIG_MOB_DEATH "mob_death"							//from mob/death()
+
+#define COMSIG_TRACE_IMPACT "trace_impact" //Soj edit
 
 // /mob/living signals
 #define COMSIG_LIVING_STUN_EFFECT "stun_effect_act"			 //mob/living/proc/stun_effect_act()
@@ -100,6 +112,11 @@
 #define COMSIG_HUMAN_HEALTH "human_health"					   //from human/updatehealth()
 #define COMSIG_HUMAN_SANITY "human_sanity"						//from /datum/sanity/proc/onLife()
 #define COMSIG_HUMAN_INSTALL_IMPLANT "human_install_implant"
+
+// /mob/living/carbon/superior_animal signals
+#define COMSIG_SUPERIOR_FIRED_PROJECTILE "superior_fired_projectile"
+#define COMSIG_ATTACKED "attacked" // Soj edit, feel free to adapt this to other types
+
 // /datum/species signals
 
 // /obj signals
@@ -134,6 +151,13 @@
 
 //obj/item/gun signals
 #define COMSIG_GUN_POST_FIRE "gun_post_fire"	//from base of /obj/item/gun/proc/handle_post_fire(): (atom/target, pointblank, reflex)
+
+// ABERRANT signals
+#define COMSIG_ABERRANT_INPUT "aberrant_input"
+#define COMSIG_ABERRANT_PROCESS "aberrant_process"
+#define COMSIG_ABERRANT_OUTPUT "aberrant_output"
+#define COMSIG_ABERRANT_SECONDARY "aberrant_secondary"
+#define COMSIG_ABERRANT_COOLDOWN "aberrant_cooldown"
 
 /*******Component Specific Signals*******/
 //Janitor

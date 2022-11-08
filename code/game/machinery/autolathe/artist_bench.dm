@@ -23,7 +23,7 @@
 	var/datum/component/inspiration/inspiration
 	var/obj/item/oddity
 
-/obj/machinery/autolathe/artist_bench/ui_data()
+/obj/machinery/autolathe/artist_bench/nano_ui_data()
 	var/list/data = list()
 
 	data["have_disk"] = have_disk
@@ -44,7 +44,7 @@
 
 
 /obj/machinery/autolathe/artist_bench/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data(user, ui_key)
+	var/list/data = nano_ui_data(user, ui_key)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -259,7 +259,7 @@
 		if(ins_used >= 55)
 			stats_amt += 2//max = 2*4*2+6 = 24 points, min 2*4+6 = 14
 		for(var/i in 1 to stats_amt)
-			var/stat = pick(ALL_STATS)
+			var/stat = pick(ALL_STATS_FOR_LEVEL_UP)
 			oddity_stats[stat] = min(oddity_stats[stat]+rand(1,2))
 
 		O.oddity_stats = oddity_stats

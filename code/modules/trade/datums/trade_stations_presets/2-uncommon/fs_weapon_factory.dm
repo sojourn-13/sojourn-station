@@ -3,6 +3,8 @@
 	spawn_always = TRUE
 	markup = RARE_GOODS		// dept-specific stuff should be more expensive for guild
 	uid = "fs_guns"
+	tree_x = 0.82
+	tree_y = 0.7
 	offer_limit = 20
 	base_income = 0
 	wealth = 0
@@ -84,5 +86,6 @@
 		/obj/item/gun_upgrade/muzzle/silencer = offer_data("silencer", 150, 6),
 		/obj/item/gun_upgrade/barrel/bore = offer_data("bored barrel", 750, 2),
 		/obj/item/gun_upgrade/barrel/forged = offer_data("forged barrel", 750, 4),
-		/obj/item/gun_upgrade/magwell/auto_eject = offer_data("H&S \"Dropper\" Magwell Braker", 450, 5)
+		/obj/item/gun_upgrade/magwell/auto_eject = offer_data("H&S \"Dropper\" Magwell Braker", 450, 5),
+		/obj/item/clothing/glasses/powered/night/guild  = offer_data("Converted NV Goggles", 1000, 1)
 	)

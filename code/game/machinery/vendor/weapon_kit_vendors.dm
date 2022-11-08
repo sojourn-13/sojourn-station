@@ -185,7 +185,7 @@
 		/obj/item/storage/box/m_kit/wirbelwind = 5,
 		/obj/item/storage/box/m_kit/taser = 5,
 		/obj/item/storage/box/m_kit/liberty = 5,
-		/obj/item/storage/box/m_kit/glock = 5,
+		/obj/item/storage/box/m_kit/judiciary = 5,
 		/obj/item/storage/box/m_kit/standard_armor = 5,
 		/obj/item/storage/box/m_kit/bullet_proof = 5,
 		/obj/item/storage/box/m_kit/laser_armor = 5,
@@ -200,7 +200,7 @@
 		/obj/item/storage/box/m_kit/wirbelwind = 500,
 		/obj/item/storage/box/m_kit/taser = 500,
 		/obj/item/storage/box/m_kit/liberty = 1000,
-		/obj/item/storage/box/m_kit/glock = 750,
+		/obj/item/storage/box/m_kit/judiciary = 750,
 		/obj/item/storage/box/m_kit/standard_armor = 500,
 		/obj/item/storage/box/m_kit/bullet_proof = 850,
 		/obj/item/storage/box/m_kit/riot = 750,
@@ -278,7 +278,7 @@
 	var/items = list(
 					"Counselor Kit" = /obj/item/storage/box/m_kit/taser,
 					"Liberty Kit" = /obj/item/storage/box/m_kit/liberty,
-					"Sky Kit" = /obj/item/storage/box/m_kit/glock,
+					"Judiciary Kit" = /obj/item/storage/box/m_kit/judiciary,
 					"Wirbelwind Kit" = /obj/item/storage/box/m_kit/wirbelwind)
 	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
@@ -291,8 +291,8 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemRangerSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Deckard Kit" = /obj/item/storage/box/m_kit/deckard,
-					"Judge Kit" = /obj/item/storage/box/m_kit/judge,
-					"Zwang Kit" = /obj/item/storage/box/m_kit/zwang)
+					"Zwang Kit" = /obj/item/storage/box/m_kit/zwang,
+					"Judge Revolver Kit" = /obj/item/storage/box/m_kit/judge)
 	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)

@@ -25,15 +25,31 @@
 
 	mob_classification = CLASSIFICATION_SYNTHETIC
 
+	// Loot
+	var/drop_chance = 20
+	var/list/loot_possibilities = list(
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/input = 5,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/uncommon = 2,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/input/rare = 1,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/process = 5,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/output = 5,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/uncommon = 2,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/output/rare = 1,
+		/obj/item/organ/internal/scaffold/aberrant/teratoma/special = 3
+	)
+
 	//internals
 	var/obj/machinery/hivemind_machine/master
 	var/special_ability_cooldown = 0		//use ability_cooldown, don't touch this
 
 
-	New()
-		. = ..()
-		//here we change name, so design them according to this
-		name = pick("Warped ", "Altered ", "Modified ", "Upgraded ", "Abnormal ") + name
+/mob/living/simple_animal/hostile/hivemind/New()
+	. = ..()
+	if(!(real_name in GLOB.hivemind_mobs))
+		GLOB.hivemind_mobs.Add(real_name)
+	GLOB.hivemind_mobs[real_name]++
+	//here we change name, so design them according to this
+	name = pick("Warped ", "Altered ", "Modified ", "Upgraded ", "Abnormal ") + name
 
 //It's sets manually
 /mob/living/simple_animal/hostile/hivemind/proc/special_ability()
@@ -57,7 +73,7 @@
 /mob/living/simple_animal/hostile/hivemind/proc/mulfunction()
 	stance = HOSTILE_STANCE_IDLE //it give us some kind of stun effect
 	target_mob = null
-	walk(src, FALSE)
+	SSmove_manager.stop_looping(src)
 	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
 	sparks.set_up(3, 3, loc)
 	sparks.start()
@@ -119,7 +135,11 @@
 		if(B)
 			B.unbuckle_mob()
 
-
+	if(!hive_mind_ai)
+		if(prob(5))
+			death()
+		else if(prob(15))
+			mulfunction()
 
 /mob/living/simple_animal/hostile/hivemind/proc/speak()
 	var/mob/living/targetted_mob = (target_mob?.resolve())
@@ -144,8 +164,15 @@
 	adjustFireLoss(rand(20,80)*severity)
 
 /mob/living/simple_animal/hostile/hivemind/death()
+	GLOB.hivemind_mobs[real_name]--
+	if(!GLOB.hivemind_mobs[real_name])
+		GLOB.hivemind_mobs.Remove(real_name)
 	if(master) //for spawnable mobs
 		master.spawned_creatures.Remove(src)
+	if(prob(drop_chance))
+		var/loot_type = pickweight(loot_possibilities)
+		if(loot_type)
+			new loot_type(get_turf(src))
 	. = ..()
 
 
@@ -627,7 +654,7 @@
 	src.visible_message("<b>[src]</b> dies!")
 	destroy_surroundings = FALSE
 	fake_dead = TRUE
-	walk(src, FALSE)
+	SSmove_manager.stop_looping(src)
 	icon_state = icon_dead
 	fake_dead_wait_time = world.time + 10 SECONDS
 
@@ -746,7 +773,7 @@
 				if(get_dist(src, Corpse) <= 1)
 					special_ability(Corpse)
 				else
-					walk_to(src, Corpse, 1, 1, 4)
+					SSmove_manager.move_to(src, Corpse, 1, 1)
 				break
 
 
@@ -872,7 +899,10 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/mechiver/proc/destroy_passenger()
-	qdel(passenger)
+	if(GLOB.hive_data_bool["gibbing_dead"])
+		qdel(passenger)
+	else
+		release_passenger(TRUE) //HAS to be true or we do an endless loop!
 	passenger = null
 
 

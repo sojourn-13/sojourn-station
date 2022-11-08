@@ -92,6 +92,17 @@
 		/datum/design/autolathe/ammo/box_10x24 = 2,
 	)
 
+/obj/item/computer_hardware/hard_drive/portable/design/onestar/trouble_shooter
+	disk_name = "Greyson Positronics - Trouble Shooter"
+	icon_state = "onestar"
+
+	license = 6
+	designs = list(
+		/datum/design/autolathe/gun/trouble_shooter = 3,
+		/datum/design/autolathe/ammo/rifle,						//AK ammo
+		/datum/design/autolathe/ammo/rifle_lethal,
+		/datum/design/autolathe/ammo/rifle_ammobox
+	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/onestar/armor
 	disk_name = "Greyson Positronics - Ablative Vest"
@@ -264,7 +275,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_drozd
-	name = "design disk .35 Drozd SMG"
+	name = "design disk 9mm Drozd SMG"
 	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"Nobody is to be blamed for being born a slave; but a slave who not only eschews a striving for freedom but justifies and eulogies his slavery - such a slave is a lickspittle and a boor, who arouses a legitimate feeling of indignation, contempt, and loathing..\""
 	icon_state = "excelsior"

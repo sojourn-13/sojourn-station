@@ -100,7 +100,8 @@
 			START_PROCESSING(SSmachines, src)
 
 /obj/machinery/camera/bullet_act(var/obj/item/projectile/P)
-	take_damage(P.get_structure_damage())
+	if (!(P.testing))
+		take_damage(P.get_structure_damage())
 
 /obj/machinery/camera/ex_act(severity)
 	if(src.invuln)
@@ -150,6 +151,10 @@
 	if((wires.CanDeconstruct() || (stat & BROKEN)))
 		usable_qualities.Add(QUALITY_WELDING)
 
+	if(panel_open)
+		usable_qualities.Add(QUALITY_CUTTING)
+		usable_qualities.Add(QUALITY_PULSING)
+
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	switch(tool_type)
 
@@ -170,6 +175,7 @@
 						else
 							assembly.state = 1
 							to_chat(user, SPAN_NOTICE("You cut \the [src] free from the wall."))
+							assembly.update_plane()
 							new /obj/item/stack/cable_coil(src.loc, length=2)
 						assembly = null //so qdel doesn't eat it.
 					qdel(src)
@@ -184,6 +190,16 @@
 				"<span class='notice'>You screw the camera's panel [panel_open ? "open" : "closed"].</span>")
 				return
 			return
+
+		if(QUALITY_CUTTING)
+			if(panel_open)
+				interact(user)
+				return
+
+		if(QUALITY_PULSING)
+			if(panel_open)
+				interact(user)
+				return
 
 		if(QUALITY_SEALING)
 			if(taped)
@@ -202,11 +218,11 @@
 			return
 
 
-	if(istype(I, /obj/item/tool) && panel_open)
-		interact(user)
+	//if(istool(I) && panel_open)
+	//	interact(user)
 
 	// OTHER
-	else if (can_use() && isliving(user) && user.a_intent != I_HURT)
+	if (can_use() && isliving(user) && user.a_intent != I_HURT)
 		var/mob/living/U = user
 		var/list/mob/viewers = list()
 		if(istype(I, /obj/item/ducttape))

@@ -237,7 +237,7 @@
 
 /obj/item/device/taperecorder/proc/clear_memory(var/show_message = 1)
 
-	if(usr.is_dead())
+	if(is_dead(usr))
 		return
 	else if(emagged)
 		if(show_message)

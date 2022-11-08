@@ -173,10 +173,10 @@
 	result = /obj/item/melee/energy/sword/sabre
 	icon_state = "gun"
 	steps = list(
-		list(/obj/item/tool_upgrade/productivity/ergonomic_grip, 1, "time" = 5),
-		list(/obj/item/stock_parts/subspace/crystal, 1),
-		list(/obj/item/gun/energy/gun, 1, "time" = 5),
-		list(/obj/item/cell/medium/moebius/nuclear, 1),
+		list(/obj/item/trash/material/e_sword_cutlass, 1, "time" = 5), // Recycling!
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
+		list(QUALITY_WELDING, 10, 10), // Repairing the core e-sword we're using
+		list(/obj/item/cell/small/moebius/nuclear, 1), // Size doesn't justify an M-cell
 		list(/obj/item/stack/cable_coil, 10, "time" = 5),
 		list(QUALITY_ADHESIVE, 15, 70)
 	)
@@ -186,12 +186,28 @@
 	result = /obj/item/melee/energy/sword/sabre/dagger
 	icon_state = "gun"
 	steps = list(
-		list(/obj/item/tool_upgrade/productivity/ergonomic_grip, 1, "time" = 5),
-		list(/obj/item/stock_parts/subspace/crystal, 1),
-		list(/obj/item/gun/energy/gun/martin, 1, "time" = 5),
+		list(/obj/item/trash/material/e_sword_cutlass, 1, "time" = 5), // Repurposing!
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),
+		list(QUALITY_SAWING, 15, 10), // Reduce the size
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC),
+		list(QUALITY_HAMMERING, 10, 10), // Adjust the new shape
 		list(/obj/item/cell/small/moebius/nuclear, 1),
 		list(/obj/item/stack/cable_coil, 5, "time" = 5),
 		list(QUALITY_ADHESIVE, 15, 70)
+	)
+
+/datum/craft_recipe/weapon/energy_spear
+	name = "energy spear"
+	result = /obj/item/melee/energy/spear
+	icon_state = "gun"
+	steps = list(
+		list(/obj/item/stack/rods, 1, "time" = 15),
+		list(/obj/item/trash/material/e_sword_cutlass, 1, "time" = 5), // Let's tape it to a rod and call it a spear!
+		list(QUALITY_ADHESIVE, 15, 10),
+		list(QUALITY_PULSING, 10, 20), // We change the cutlass shape into a three-pronged spear through l33t h4ckz
+		list(/obj/item/cell/small/moebius/nuclear, 1),
+		list(/obj/item/stack/cable_coil, 10, "time" = 5),
+		list(QUALITY_WIRE_CUTTING, 15, 5)
 	)
 
 /datum/craft_recipe/weapon/mace

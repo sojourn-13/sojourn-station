@@ -19,7 +19,7 @@
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	fire_sound = 'sound/weapons/guns/fire/max_sawn_off.ogg' //Actual double barrel sound
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
-	price_tag = 650
+	price_tag = 600
 	init_recoil = RIFLE_RECOIL(1.3)
 	var/bolt_open = 0
 	burst_delay = 0
