@@ -57,7 +57,7 @@
 /datum/gear/factionsoteria/gorkamoebiusmedical
 	display_name = "gorka jumpsuit, soteria medical"
 	path = /obj/item/clothing/under/rank/medical/gorka_crew_med
-	allowed_roles = list("Soteria Doctor","Chief Biolab Overseer","Soteria Recovery Team")
+	allowed_roles = list("Soteria Doctor","Chief Biolab Overseer","Soteria Lifeline Technician")
 	slot = slot_w_uniform
 	sort_category = "Faction: Soteria"
 
