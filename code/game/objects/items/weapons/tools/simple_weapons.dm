@@ -207,7 +207,7 @@
 /obj/item/tool/sword/katana
 	name = "katana"
 	desc = "Modern Japanese-style blade that has no curve to it. This one looks pretty sharp."
-	icon_state = "katana"
+	icon_state = "katana" // New sprite courtesy of Kavric
 	item_state = "katana"
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 5, MATERIAL_DIAMOND = 1) //sharpened using diamond dust or whatever
 	slot_flags = SLOT_BELT | SLOT_BACK

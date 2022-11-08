@@ -298,8 +298,9 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	if(!src.ispowered || src.isbroken)
 		return
 
-	if(!user.IsAdvancedToolUser())
-		return 0
+	if (!user.check_dexterity(DEXTERITY_SIMPLE_MACHINES))
+		to_chat(user, SPAN_WARNING("You are not nimble enough to use this device."))
+		return
 
 	if(ishuman(user) || issilicon(user))
 		var/mob/living/human_or_robot_user = user
@@ -878,7 +879,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		switch(screen)
 			if(0) //Cover
 				dat+="<DIV ALIGN='center'><B><FONT SIZE=6>The Griffon</FONT></B></div>"
-				dat+="<DIV ALIGN='center'><FONT SIZE=2>[company_name]-standard newspaper, for use on [company_name]© Space Facilities</FONT></div><HR>"
+				dat+="<DIV ALIGN='center'><FONT SIZE=2>[company_name]-standard newspaper, for use on [company_name]© Facilities</FONT></div><HR>"
 				if(!length(news_content))
 					if(important_message)
 						dat+="Contents:<BR><ul><B><FONT COLOR='red'>**</FONT>Important Security Announcement<FONT COLOR='red'>**</FONT></B> <FONT SIZE=2>\[page [src.pages+2]\]</FONT><BR></ul>"

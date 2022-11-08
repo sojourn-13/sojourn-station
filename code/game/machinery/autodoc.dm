@@ -69,6 +69,7 @@
 		return
 	for(var/obj/O in src)
 		O.forceMove(loc)
+	autodoc_processor.stop()
 	occupant.forceMove(loc)
 	occupant.reset_view()
 	occupant.unset_machine()
@@ -105,7 +106,7 @@
 	src.add_fingerprint(user)
 	return TRUE
 
-/obj/machinery/autodoc/MouseDrop_T(var/mob/target, var/mob/user)
+/obj/machinery/autodoc/receive_mouse_drop(var/mob/target, var/mob/user)
 	if(!ismob(target))
 		return
 	if (src.occupant)

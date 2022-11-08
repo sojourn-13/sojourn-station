@@ -25,7 +25,7 @@ It focuses on spawning large numbers of moderate-to-weak monsters, and includes 
 #define INFESTATION_SPIDERLINGS "spiderlings"
 #define INFESTATION_SPIDERS "spider"
 #define INFESTATION_ROACHES "large insects"
-#define INFESTATION_TERMIE "large borrowing insects"
+#define INFESTATION_TERMIE "large burrowing insects"
 #define INFESTATION_HIVEBOTS "ancient synthetics"
 #define INFESTATION_SLIMES "slimes"
 //#define INFESTATION_YITHIAN "yithian"

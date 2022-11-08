@@ -64,7 +64,7 @@
 
 //Drag and drop onto tables
 //This is mainly so that janiborg can put things on tables
-/obj/structure/table/MouseDrop_T(atom/A, mob/user, src_location, over_location, src_control, over_control, params)
+/obj/structure/table/receive_mouse_drop(atom/A, mob/user, src_location, over_location, src_control, over_control, params)
 	if(istype(A.loc, /mob))
 		if (user.unEquip(A, loc))
 			set_pixel_click_offset(A, params)
@@ -78,7 +78,7 @@
 				set_pixel_click_offset(O, params, animate = TRUE)
 				return
 
-		else if (A.CanMouseDrop(loc, user))
+		else if (A.can_mouse_drop(loc, user))
 			//Mice can push around pens and paper, but not heavy tools
 			if (O.w_class <= user.can_pull_size)
 				O.forceMove(loc)

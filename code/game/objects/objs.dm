@@ -189,8 +189,8 @@
 	GLOB.hearing_objects.Remove(src)
 
 /obj/proc/eject_item(var/obj/item/I, var/mob/living/M)
-	if(!I || !M.IsAdvancedToolUser())
-		return FALSE
+	if(!I || !M.check_dexterity(DEXTERITY_KEYBOARDS))
+		return
 	M.put_in_hands(I)
 	playsound(src.loc, 'sound/weapons/guns/interact/pistol_magin.ogg', 75, 1)
 	M.visible_message(

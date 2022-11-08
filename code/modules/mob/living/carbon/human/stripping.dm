@@ -1,6 +1,6 @@
 /mob/living/carbon/human/proc/handle_strip(slot_to_strip, mob/living/user)
 
-	if(!slot_to_strip || !user.IsAdvancedToolUser())
+	if(!slot_to_strip || !user.check_dexterity(DEXTERITY_WEAPONS))
 		return
 
 	if(user.incapacitated()  || !user.Adjacent(src))

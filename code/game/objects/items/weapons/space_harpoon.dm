@@ -132,6 +132,7 @@
 	to_chat(user, SPAN_NOTICE("Mode set to [mode ? "transmiting" : "receiving"]."))
 
 /obj/item/bluespace_harpoon/MouseDrop(over_object)
+	..()
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
 		cell = null
 

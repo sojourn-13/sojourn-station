@@ -180,7 +180,7 @@
 		return
 	if(usr.stat || usr.restrained() )
 		return
-	if(!usr.IsAdvancedToolUser())
+	if(!usr.check_dexterity(DEXTERITY_KEYBOARDS))
 		return
 	if(get_dist(src, usr) <= 1 || isAI(usr))
 		if( href_list["close"] )

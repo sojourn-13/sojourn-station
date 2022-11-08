@@ -82,7 +82,7 @@
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/headset_mar
 
-/obj/item/device/radio/headset/headset_sec/bowman
+/obj/item/device/radio/headset/headset_sec/bowman		//Wearing a Marshal bowman aids against flashbangs. Same stats otherwise.
 	name = "marshal bowman headset"
 	desc = "This headset is a premium quality headset made for only true operators! Ignore.. the ten credit price tag and the rattling noise it makes when you shake it."
 	icon_state = "sec_headset_bowman"
@@ -191,7 +191,7 @@
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 
-/obj/item/device/radio/headset/heads/hos/bowman
+/obj/item/device/radio/headset/heads/hos/bowman		//Wearing a Marshal bowman aids against flashbangs. Same stats otherwise.
 	name = "warrant officer bowman headset"
 	desc = "The headset of the men who lock away your worthless lives, in a comfortable bowman style.\nThis has a small symbol denoting its built in back-up transmitter."
 	icon_state = "wo_headset_bowman"

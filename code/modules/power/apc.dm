@@ -921,8 +921,8 @@
 		return FALSE
 	if(inoperable())
 		return FALSE
-	if(!user.IsAdvancedToolUser())
-		return FALSE
+	if(!user.check_dexterity(DEXTERITY_KEYBOARDS))
+		return 0
 	if(user.restrained())
 		to_chat(user, SPAN_WARNING("You must have free hands to use [src]."))
 		return FALSE

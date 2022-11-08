@@ -502,6 +502,7 @@
 				/obj/item/clothing/accessory/holster/saber/greatsword = 1,
 				/obj/item/clothing/accessory/holster/saber/machete = 1,
 				/obj/item/clothing/accessory/holster/saber/cutlass = 1,
+				/obj/item/clothing/accessory/holster/saber/saya = 1,
 				/obj/item/clothing/accessory/holster/hip = 1,))
 
 /obj/random/cloth/holster/low_chance

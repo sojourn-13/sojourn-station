@@ -171,6 +171,28 @@ Please contact me on #coderbus IRC. ~Carn x
 
 	. = ..()
 
+	var/list/scale = get_scale()
+	animate(
+		src,
+		transform = matrix().Update(
+			scale_x = scale[1],
+			scale_y = scale[2],
+			rotation = lying ? 90 : 0,
+			offset_y = lying ? -6 - default_pixel_z : 16 * (scale[2] - 1)
+		),
+		time = ANIM_LYING_TIME
+	)
+
+/mob/living/carbon/human/proc/get_scale()
+	//bastardised bay's code
+	var/mob/living/carbon/human/H = src
+	var/build_modifier = H.scale_effect
+	var/height_modifier = H.scale_effect
+	return list(
+		(1 + build_modifier * 0.01) * (tf_scale_x || 1),
+		(1 + height_modifier * 0.01) * (tf_scale_y || 1)
+	)
+
 var/global/list/damage_icon_parts = list()
 
 var/global/list/marking_cache = list()

@@ -119,8 +119,8 @@
 	light_overlay = "bsfullhelm_light"
 
 /obj/item/clothing/head/helmet/ballistic/shieldfull/corpsman
-	name = "Corpsmans full helm"
-	desc = "Standard military gear. A full-faced vasriant of the common ballistic helmet. This one bears a few\
+	name = "Corpsman full helm"
+	desc = "Standard military gear. A full-faced variant of the common ballistic helmet. This one bears a few\
 	key upgrades, including sterile materials and contaminant resistant sealing."
 	armor_list = list(melee = 30, bullet = 40,energy = 20, bomb = 30, bio = 75, rad = 0)
 	action_button_name = "Toggle Headlamp"
@@ -143,7 +143,7 @@
 	options["Grey hooded fullhelm"] = "_gp"
 	options["Green hooeded fullhelm"] = "_grp"
 	options["Tan hooded fullhelm"] = "_tp"
-	options["camo hooded fullhelm"] = "_cp"
+	options["Camo hooded fullhelm"] = "_cp"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
@@ -159,10 +159,9 @@
 		return 1
 
 /obj/item/clothing/head/helmet/ballistic/sergeant
-	name = "Sergeants ballistic gorget"
-	desc = "Standard military gear. A somewhat uncommon piece of equipment, despite its unusual appearance\
-	this piece of headgear provides much-needed protection to oft-neglected locations while not interfering unduly\
-	with the users range of motion or ability to communicate."
+	name = "Sergeant's ballistic gorget"
+	desc = "Standard military gear. A somewhat uncommon piece of equipment, despite its unusual appearance\n this piece of headgear provides much-needed protection to oft-neglected locations while not interfering unduly\
+	with the user's range of motion or ability to communicate."
 	icon_state = "sergeanthelm"
 	item_state = "sergeanthelm"
 	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
@@ -178,7 +177,7 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["gorget standard"] = ""
+	options["gorget in standard mode"] = ""
 	options["goggles on"] = "_goggle"
 	options["cap on"] = "_cap"
 	options["beret on"] = "_beret"
@@ -505,7 +504,7 @@
 	)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	action_button_name = "Toggle Headlamp"
 	light_overlay = "technohelmet_light"
 	brightness_on = 5 //Slightly better do to the sear costs
@@ -541,7 +540,7 @@
 	armor_list = list(melee = 45, bullet = 45, energy = 40, bomb = 60, bio = 100, rad = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	action_button_name = "Toggle Headlamp"
 	light_overlay = "technohelmet_light"
 	brightness_on = 4
@@ -581,7 +580,7 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	matter = list(MATERIAL_STEEL = 20)
-	flash_protection = FLASH_PROTECTION_MODERATE
+	flash_protection = FLASH_PROTECTION_MINOR
 	max_upgrades = 2
 
 /obj/item/clothing/head/helmet/swat
@@ -853,7 +852,7 @@
 	desc = "A full helmet with a built in glow visor. This one appears to be fitted with new visor servos internally to protect from flashes as well as a bullet-proof reinforced mouth guard!"
 	icon_state = "ironhammer_wo_full"
 	item_state = "ironhammer_wo_full"
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 100, rad = 0)
 
@@ -886,7 +885,7 @@
 		rad = 0
 	)
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	action_button_name = "Toggle Security Hud"
 	var/obj/item/clothing/glasses/hud/security/hud
 	price_tag = 300
@@ -957,7 +956,7 @@
 		rad = 0
 	) //Low protection since it gives night vision with no battery.
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	action_button_name = "Toggle Thermal Night-Vision HUD"
 	var/obj/item/clothing/glasses/hud/security/jensenshades/hud
 	price_tag = 2000
@@ -1060,7 +1059,7 @@
 	var/flags_inv_up = HIDEEARS
 	body_parts_covered = HEAD|EARS|EYES|FACE
 	var/body_parts_covered_up = HEAD|EARS
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	var/flash_protection_up = FLASH_PROTECTION_NONE
 	action_button_name = "Flip Face Shield"
 	tool_qualities = list()

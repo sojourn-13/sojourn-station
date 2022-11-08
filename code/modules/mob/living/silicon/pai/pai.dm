@@ -121,6 +121,7 @@
 	..()
 
 /mob/living/silicon/pai/MouseDrop(atom/over_object)
+	..()
 	return
 
 /mob/living/silicon/pai/emp_act(severity)

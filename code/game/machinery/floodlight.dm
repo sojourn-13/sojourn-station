@@ -12,6 +12,7 @@
 	var/open = 0
 	var/brightness_on = 8		//can't remember what the maxed out value is
 	light_power = 2
+	required_interaction_dexterity = DEXTERITY_SIMPLE_MACHINES
 
 /obj/machinery/floodlight/Initialize()
 	. = ..()

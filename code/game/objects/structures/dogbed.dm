@@ -62,7 +62,7 @@
 	update_icon()
 
 // Basic clickdrag action
-/obj/structure/cardboardbox/MouseDrop_T(var/mob/target, var/mob/user)
+/obj/structure/cardboardbox/receive_mouse_drop(var/mob/target, var/mob/user)
 	if(user.stat || user.lying || !Adjacent(user) || !target.Adjacent(user)|| !iscatto(target))
 		return
 	sit_inside(target, user)

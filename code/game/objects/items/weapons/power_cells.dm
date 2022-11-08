@@ -439,6 +439,7 @@
 		return
 
 /obj/item/cell/large/hydrogen/MouseDrop(over_object)
+	..()
 	if(fuel_cell)
 		usr.visible_message(
 								SPAN_NOTICE("[usr] detach [fuel_cell] from [src]."),
@@ -489,6 +490,7 @@
 		return
 
 /obj/item/cell/large/ameridian/MouseDrop(over_object)
+	..()
 	if(core)
 		usr.visible_message(
 								SPAN_NOTICE("[usr] remove [core] from [src]."),
@@ -521,7 +523,7 @@
 	matter = list(MATERIAL_STEEL = 30)
 	cell = null
 	suitable_cell = /obj/item/cell
-	var/charge_per_cycle = 15
+	var/charge_per_cycle = 30
 	var/inuse = FALSE
 
 /obj/item/device/manual_charger/attackby(obj/item/I, mob/user)
@@ -531,15 +533,20 @@
 	..()
 
 /obj/item/device/manual_charger/MouseDrop(over_object)
+	..()
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
 		cell = null
 
 /obj/item/device/manual_charger/attack_self(mob/user)
 	if(!cell)
+		to_chat(user, SPAN_WARNING("Their is no cell currently loaded in the spool."))
 		return
+	if(0 >= cell.max_chargerate)
+		to_chat(user, SPAN_WARNING("This type of cell can't be recharged."))
+		return
+	inuse = TRUE
 	if(inuse)
 		to_chat(user, SPAN_WARNING("You are already charging the cell!"))
-	inuse = TRUE
 	user.visible_message(SPAN_NOTICE("[user] starts turning the handle on [src]."), SPAN_NOTICE("You start to turn the handle on [src]."))
 	if(do_after(user, 12 + (30 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
 		if(!cell)
@@ -558,4 +565,4 @@
 /obj/item/device/manual_charger/improv
 	name = "handmade manual recharger"
 	desc = "A handmade manual crank charger. Barely capable of charging cells."
-	charge_per_cycle = 4
+	charge_per_cycle = 10

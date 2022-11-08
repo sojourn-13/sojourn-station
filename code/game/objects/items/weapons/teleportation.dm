@@ -195,6 +195,7 @@ Frequency:
 	src.add_fingerprint(user)
 
 /obj/item/hand_tele/MouseDrop(over_object)
+	..()
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
 		cell = null
 

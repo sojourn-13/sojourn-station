@@ -11,6 +11,7 @@
 	price_tag = 5
 
 /obj/item/evidencebag/MouseDrop(var/obj/item/I as obj)
+	..()
 	if (!ishuman(usr))
 		return
 

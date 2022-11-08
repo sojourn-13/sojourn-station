@@ -183,8 +183,9 @@
 	return !patchnote.surgery_operations
 
 /datum/autodoc/Process()
-	if(!patient)
+	if(!patient || picked_patchnotes.len <= current_step)
 		stop()
+		return
 
 	while(!(picked_patchnotes[current_step].surgery_operations))
 		if(current_step + 1 > picked_patchnotes.len)
@@ -437,10 +438,17 @@
 	var/obj/item/card/id/id_card = patient.GetIdCard()
 	if(id_card)
 		patient_account = get_account(id_card.associated_account_number)
-		if(patient_account.security_level)
+		if(!patient_account || !patient_account.is_valid())
+			to_chat(patient, SPAN_WARNING("Proper banking account is needed."))
+		else if(patient_account.security_level)
 			var/attempt_pin = ""
 			attempt_pin = input("Enter pin code", "Autodoc payement") as num
 			patient_account = attempt_account_access(id_card.associated_account_number, attempt_pin, 2)
+
+/datum/autodoc/capitalist_autodoc/set_patient(var/mob/living/carbon/human/human = null)
+	..()
+	if (human == null)
+		patient_account = null
 
 /datum/autodoc/capitalist_autodoc/start()
 	if(!charge(processing_cost))

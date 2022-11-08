@@ -94,7 +94,7 @@
 		SSnano.update_uis(src)
 
 
-/obj/machinery/electrolyzer/MouseDrop_T(atom/movable/I, mob/user, src_location, over_location, src_control, over_control, params)
+/obj/machinery/electrolyzer/receive_mouse_drop(atom/movable/I, mob/user, src_location, over_location, src_control, over_control, params)
 	if(!Adjacent(user) || !I.Adjacent(user) || user.stat)
 		return ..()
 	if(istype(I, /obj/item/reagent_containers) && I.is_open_container() && (!beaker || !separation_beaker))
@@ -235,7 +235,7 @@
 /obj/item/device/makeshift_electrolyser/get_cell()
 	return cell
 
-/obj/item/device/makeshift_electrolyser/MouseDrop_T(atom/movable/C, mob/user, src_location, over_location, src_control, over_control, params)
+/obj/item/device/makeshift_electrolyser/receive_mouse_drop(atom/movable/C, mob/user, src_location, over_location, src_control, over_control, params)
 	if(!Adjacent(user) || !C.Adjacent(user))
 		return ..()
 	if(istype(C, suitable_cell) && !cell)

@@ -16,6 +16,10 @@
 	/obj/item/storage/pouch/baton_holster = 3
 	))
 
+/obj/random/pouch/always_spawn
+	name = "random always spawn pouch"
+	spawn_nothing_percentage = 0
+
 /obj/random/pouch/low_chance
 	name = "low chance random pouch"
 	icon_state = "box-green-low"

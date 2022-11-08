@@ -11,6 +11,7 @@
 	QDEL_NULL(parallax)
 	transform = null
 	QDEL_NULL(transform)
+	QDEL_NULL(shadow)
 	if(client)
 		for(var/atom/movable/AM in client.screen)
 			qdel(AM)
@@ -206,7 +207,7 @@
 	if ((incapacitation_flags & INCAPACITATION_FORCELYING) && (weakened || resting || pinned.len))
 		return 1
 
-	if ((incapacitation_flags & INCAPACITATION_UNCONSCIOUS) && (stat || paralysis || sleeping || (status_flags & FAKEDEATH)))
+	if ((incapacitation_flags & INCAPACITATION_KNOCKOUT) && (stat || paralysis || sleeping || (status_flags & FAKEDEATH)))
 		return 1
 
 	if((incapacitation_flags & INCAPACITATION_RESTRAINED) && restrained())
@@ -855,11 +856,6 @@ All Canmove setting in this proc is temporary. This var should not be set from h
 	set hidden = 1
 	return facedir(client.client_dir(SOUTH))
 
-
-//This might need a rename but it should replace the can this mob use things check
-/mob/proc/IsAdvancedToolUser()
-	return 0
-
 /mob/proc/Stun(amount)
 	if(status_flags & CANSTUN)
 		facing_dir = null
@@ -1419,3 +1415,12 @@ mob/proc/yank_out_object()
 	if(stats)
 		health += src.stats.getStat(STAT_ANA)
 		maxHealth += src.stats.getStat(STAT_ANA)
+
+// Let simple mobs press buttons and levers but nothing more complex.
+/mob/proc/has_dexterity(var/dex_level)
+	. = dex_level <= DEXTERITY_SIMPLE_MACHINES
+
+/mob/proc/check_dexterity(var/dex_level, var/silent)
+	. = has_dexterity(dex_level)
+	if(!. && !silent)
+		to_chat(src, FEEDBACK_YOU_LACK_DEXTERITY)

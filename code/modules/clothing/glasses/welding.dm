@@ -5,7 +5,7 @@
 	item_state = "welding-g"
 	action_button_name = "Flip Welding Goggles"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 2)
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	tint = TINT_HEAVY
 	obscuration = HEAVY_OBSCURATION
 
