@@ -4,6 +4,7 @@
 	allowed_roles = list("Chief Research Overseer","Soteria Scientist","Soteria Roboticist")
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"
+	cost = 0
 
 /datum/gear/factionsoteria/cloakmbo
 	display_name = "cloak, biolab overseer"

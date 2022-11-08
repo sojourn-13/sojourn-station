@@ -40,6 +40,7 @@
 /datum/gear/utility/crutch
 	display_name = "crutch"
 	path = /obj/item/cane/crutch
+	cost = 0
 
 /datum/gear/utility/clipboard
 	display_name = "clipboard"

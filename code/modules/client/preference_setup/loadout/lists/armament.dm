@@ -54,7 +54,7 @@
 
 /datum/gear/armament/ritual_knife
 	display_name = "ritual knife"
-	path = /obj/item/tool/knife/boot
+	path = /obj/item/tool/knife/ritual
 	cost = 3
 
 /datum/gear/armament/dagger
@@ -62,10 +62,11 @@
 	path = /obj/item/tool/knife/dagger
 	cost = 3
 
-/datum/gear/armament/dagger/ceremonial
-	display_name = "Ceremonial knife"
-	path = /obj/item/tool/knife/dagger/ceremonial
-	cost = 4
+/datum/gear/armament/dagger/family
+	display_name = "heirloom dagger"
+	path = /obj/item/tool/knife/heirloom_knife
+	cost = 2
+
 /datum/gear/armament/baton
 	display_name = "telescopic baton"
 	path = /obj/item/melee/telebaton
@@ -99,25 +100,11 @@
 	display_name = "katana \"Saya\" sheath"
 	path = /obj/item/clothing/accessory/holster/saber/saya
 
-/datum/gear/armament/katana
-	display_name = "Katana"
-	path = /obj/item/tool/sword/katana
-	cost = 4
-
-/datum/gear/armament/nano
-	display_name = "Soteria \"Muramasa\" Katana"
-	path = /obj/item/tool/sword/katana/nano
-	cost = 4
 
 /datum/gear/armament/makeshift/saber
 	display_name = "Decorative Saber"
 	path = /obj/item/tool/sword/saber
 	cost = 3
-
-/datum/gear/armament/makeshift/katana
-	display_name = "Makeshift katana"
-	path = /obj/item/tool/sword/katana_makeshift
-	cost = 1
 
 /datum/gear/armament/cutlass
 	display_name = "cutlass"
@@ -137,4 +124,5 @@
 /datum/gear/armament/holster/nt
 	display_name = "short sword"
 	path = /obj/item/tool/sword/nt/shortsword
-	cost = 2
+	allowed_roles = list("Prime","Vector")
+	cost = 1
