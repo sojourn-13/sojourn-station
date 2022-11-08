@@ -368,6 +368,21 @@
 	anchored = 1
 	reagent_flags = OPENCONTAINER
 	var/busy = 0 	//Something's being washed at the moment
+	var/reagent_id = "water"
+
+//Inspired by TG plumming
+	var/limited_reagents = TRUE
+	var/amount_of_reagents = 200
+	var/max_amount = 200
+	var/refill_rate = 0.5
+
+/obj/structure/sink/New()
+	..()
+	START_PROCESSING(SSobj, src)
+
+/obj/structure/sink/Process()
+	if(max_amount >= amount_of_reagents)
+		amount_of_reagents += refill_rate
 
 /obj/structure/sink/MouseDrop_T(var/obj/item/thing, var/mob/user)
 	. = ..()
@@ -398,6 +413,9 @@
 	if(!Adjacent(user))
 		return
 
+	if(amount_of_reagents < 40 && limited_reagents)
+		to_chat(user, SPAN_WARNING("The water presser seems to low to wash with."))
+
 	if(busy)
 		to_chat(user, SPAN_WARNING("Someone's already washing here."))
 		return
@@ -412,6 +430,7 @@
 
 	if(!Adjacent(user)) return		//Person has moved away from the sink
 
+	amount_of_reagents -= 40
 	user.clean_blood()
 	if(ishuman(user))
 		user:update_inv_gloves()
@@ -426,9 +445,16 @@
 
 	var/obj/item/reagent_containers/RG = O
 	if (istype(RG) && RG.is_refillable())
-		RG.reagents.add_reagent("water", min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
-		user.visible_message(SPAN_NOTICE("[user] fills \the [RG] using \the [src]."),SPAN_NOTICE("You fill \the [RG] using \the [src]."))
-		playsound(loc, 'sound/effects/watersplash.ogg', 100, 1)
+		var/amount_to_add = min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)
+		if(amount_to_add > amount_of_reagents)
+			amount_to_add = amount_of_reagents
+		if(amount_of_reagents && limited_reagents)
+			RG.reagents.add_reagent(reagent_id, amount_to_add)
+			user.visible_message(SPAN_NOTICE("[user] fills \the [RG] using \the [src]."),SPAN_NOTICE("You fill \the [RG] using \the [src]."))
+			playsound(loc, 'sound/effects/watersplash.ogg', 100, 1)
+			amount_of_reagents -= amount_to_add
+		else
+			to_chat(user, SPAN_WARNING("The sink seems to be out of presser"))
 		return 1
 
 	else if (istype(O, /obj/item/tool/baton))
