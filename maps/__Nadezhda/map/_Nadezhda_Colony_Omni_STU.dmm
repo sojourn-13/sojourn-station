@@ -107474,7 +107474,6 @@
 /area/nadezhda/security/prisoncells)
 "uhm" = (
 /obj/structure/table/standard,
-/obj/structure/table/standard,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -122160,7 +122159,6 @@
 	})
 "wQW" = (
 /obj/structure/table/standard,
-/obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/bioreactor)
 "wRb" = (
@@ -124147,7 +124145,6 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/storage)
 "xlO" = (
-/obj/structure/table/standard,
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/absolutism/bioreactor)
