@@ -335,7 +335,7 @@
 
 /obj/structure/bed/roller/MouseDrop(over_object, src_location, over_location)
 	..()
-	if(!can_mouse_drop(over_object))	return
+	if(!CanMouseDrop(over_object))	return
 	if(!(ishuman(usr) || isrobot(usr)))	return
 	if(over_object == buckled_mob && beaker)
 		if(iv_attached)

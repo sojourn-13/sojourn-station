@@ -114,7 +114,7 @@
 	move_into_gibber(user, target)
 	return TRUE
 
-/obj/machinery/gibber/receive_mouse_drop(mob/target, mob/user)
+/obj/machinery/gibber/MouseDrop_T(mob/target, mob/user)
 	if(user.stat || user.restrained())
 		return
 	move_into_gibber(user,target)
@@ -185,7 +185,7 @@
 	visible_message(SPAN_DANGER("You hear a loud squelchy grinding sound."))
 	playsound(loc, 'sound/machines/juicer.ogg', 50, 1)
 	operating = TRUE
-
+	
 
 	var/slab_name = occupant.name
 	var/slab_count = 0
@@ -250,13 +250,13 @@
 			if(ishuman(occupant))
 				src.occupant.ghostize()
 
-
+		
 			ishuman(occupant) ? occupant.gib(3, TRUE) : occupant.gib()
 
 			var/mob/living/to_delete = occupant
 			occupant = null
 			qdel(to_delete)
-
+			
 
 			playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
 			operating = FALSE

@@ -57,7 +57,6 @@
 		..()
 
 /obj/item/device/taperecorder/MouseDrop(over_object)
-	..()
 	if(mydrive && (src.loc == usr) && istype(over_object, /obj/screen/inventory/hand))
 		eject_usb()
 

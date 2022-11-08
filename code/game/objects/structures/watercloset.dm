@@ -384,7 +384,7 @@
 	if(max_amount >= amount_of_reagents)
 		amount_of_reagents += refill_rate
 
-/obj/structure/sink/receive_mouse_drop(var/obj/item/thing, var/mob/user)
+/obj/structure/sink/MouseDrop_T(var/obj/item/thing, var/mob/user)
 	. = ..()
 	if(!istype(thing) || !thing.is_drainable())
 		return

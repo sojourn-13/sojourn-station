@@ -31,8 +31,8 @@ obj/machinery/embedded_controller/radio/Destroy()
 
 /obj/machinery/embedded_controller/attack_hand(mob/user)
 
-	if (!user.check_dexterity(DEXTERITY_KEYBOARDS))
-		return
+	if(!user.IsAdvancedToolUser())
+		return 0
 
 	src.nano_ui_interact(user)
 

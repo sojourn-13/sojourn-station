@@ -61,7 +61,7 @@
 		msg_admin_attack("[user] ([user.ckey]) placed [target] ([target.ckey]) in a disposals unit. (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[usr.x];Y=[usr.y];Z=[usr.z]'>JMP</a>)")
 		return TRUE
 
-/obj/machinery/disposal/receive_mouse_drop(var/obj/item/I, mob/user, src_location, over_location, src_control, over_control, params)
+/obj/machinery/disposal/MouseDrop_T(var/obj/item/I, mob/user, src_location, over_location, src_control, over_control, params)
 
 
 
@@ -140,7 +140,7 @@
 
 // mouse drop another mob or self
 //
-/obj/machinery/disposal/receive_mouse_drop(atom/movable/A, mob/user)
+/obj/machinery/disposal/MouseDrop_T(atom/movable/A, mob/user)
 	if(ismob(A))
 		var/mob/target = A
 		if(user.stat || !user.canmove)
@@ -260,12 +260,12 @@
 		return
 
 	// Clumsy folks can only flush it.
-	if(user.check_dexterity(DEXTERITY_KEYBOARDS))
+	if(user.IsAdvancedToolUser(1))
 		interact(user, 0)
 	else
 		flush = !flush
 		update()
-		return
+	return
 
 // user interaction
 /obj/machinery/disposal/interact(mob/user, var/ai=0)

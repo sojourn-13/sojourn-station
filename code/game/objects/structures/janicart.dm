@@ -37,7 +37,7 @@
 		else
 			to_chat(user, "\icon[src] There is no bucket mounted on it!")
 
-/obj/structure/janitorialcart/receive_mouse_drop(atom/movable/O as mob|obj, mob/living/user as mob)
+/obj/structure/janitorialcart/MouseDrop_T(atom/movable/O as mob|obj, mob/living/user as mob)
 	if (istype(O, /obj/structure/mopbucket) && !mybucket)
 		O.forceMove(src)
 		mybucket = O

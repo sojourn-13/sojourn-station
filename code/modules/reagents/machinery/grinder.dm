@@ -42,7 +42,7 @@
 	limit = (25 + (man_rating * 5))
 	grinding_time = (60 - man_rating)
 
-/obj/machinery/reagentgrinder/receive_mouse_drop(atom/movable/I, mob/user, src_location, over_location, src_control, over_control, params)
+/obj/machinery/reagentgrinder/MouseDrop_T(atom/movable/I, mob/user, src_location, over_location, src_control, over_control, params)
 	if(!Adjacent(user) || !I.Adjacent(user) || user.incapacitated())
 		return ..()
 	insert(I, user)

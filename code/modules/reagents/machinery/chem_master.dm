@@ -45,7 +45,7 @@
 			if (prob(50))
 				qdel(src)
 
-/obj/machinery/chem_master/receive_mouse_drop(atom/movable/I, mob/user, src_location, over_location, src_control, over_control, params)
+/obj/machinery/chem_master/MouseDrop_T(atom/movable/I, mob/user, src_location, over_location, src_control, over_control, params)
 	if(!Adjacent(user) || !I.Adjacent(user) || user.stat)
 		return ..()
 	if(istype(I, /obj/item/reagent_containers) && I.is_open_container() && !beaker)

@@ -112,6 +112,7 @@
 
 	// Body/form vars.
 	var/list/inherent_verbs 	  // Species-specific verbs.
+	var/has_fine_manipulation = 1 // Can use small items.
 	var/siemens_coefficient = 1   // The lower, the thicker the skin and better the insulation.
 	var/darksight = 2             // Native darksight distance.
 	var/flags = 0                 // Various specific features.
@@ -144,8 +145,6 @@
 		BP_L_LEG =  new /datum/organ_description/leg/left/full,
 		BP_R_LEG =  new /datum/organ_description/leg/right/full
 		)
-
-	var/manual_dexterity = DEXTERITY_FULL
 
 	// Misc
 	var/list/genders = list(MALE, FEMALE)
@@ -414,6 +413,3 @@
 		H.add_language(LANGUAGE_MARQUA)
 	if(H.species.reagent_tag == IS_TREE)
 		H.add_language(LANGUAGE_PLANT)
-
-/datum/species/proc/get_manual_dexterity(var/mob/living/carbon/human/H)
-	. = manual_dexterity

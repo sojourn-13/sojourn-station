@@ -33,7 +33,6 @@
 
 // Removing the fuel canister
 /obj/item/gun/flamethrower/MouseDrop(over_object)
-	..()
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(fuel_can, usr))
 		fuel_can = null
 		update_icon()

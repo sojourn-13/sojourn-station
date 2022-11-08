@@ -80,9 +80,8 @@
 		..()
 
 /obj/item/device/defib_kit/MouseDrop()
-	..()
 	if(ismob(src.loc))
-		if(!can_mouse_drop(src))
+		if(!CanMouseDrop(src))
 			return
 		var/mob/M = src.loc
 		if(!M.unEquip(src))

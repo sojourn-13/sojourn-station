@@ -23,7 +23,7 @@
 	move_into_gibber(user, target)
 	return TRUE
 
-/obj/machinery/slime_compresser/receive_mouse_drop(mob/target, mob/user)
+/obj/machinery/slime_compresser/MouseDrop_T(mob/target, mob/user)
 	if(user.stat || user.restrained())
 		return
 	move_into_gibber(user,target)

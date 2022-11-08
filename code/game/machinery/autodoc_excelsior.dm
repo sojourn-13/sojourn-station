@@ -161,7 +161,7 @@
 	add_fingerprint(user)
 	return TRUE
 
-/obj/machinery/excelsior_autodoc/receive_mouse_drop(mob/target, mob/user)
+/obj/machinery/excelsior_autodoc/MouseDrop_T(mob/target, mob/user)
 	if(!ismob(target))
 		return
 	if (occupant)

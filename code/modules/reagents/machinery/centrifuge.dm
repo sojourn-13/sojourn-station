@@ -96,7 +96,7 @@
 			return
 	return ..()
 
-/obj/machinery/centrifuge/receive_mouse_drop(atom/movable/C, mob/user, src_location, over_location, src_control, over_control, params)
+/obj/machinery/centrifuge/MouseDrop_T(atom/movable/C, mob/user, src_location, over_location, src_control, over_control, params)
 	if(!Adjacent(user) || !C.Adjacent(user) || user.stat)
 		return ..()
 	if(!on && istype(C, /obj/item/reagent_containers) && C.is_open_container())
@@ -280,7 +280,7 @@
 	on = FALSE
 	SSnano.update_uis(src)
 
-/obj/item/device/makeshift_centrifuge/receive_mouse_drop(atom/movable/C, mob/user, src_location, over_location, src_control, over_control, params)
+/obj/item/device/makeshift_centrifuge/MouseDrop_T(atom/movable/C, mob/user, src_location, over_location, src_control, over_control, params)
 	if(!Adjacent(user) || !C.Adjacent(user) || user.stat)
 		return ..()
 	if(!on && istype(C, /obj/item/reagent_containers) && C.is_open_container())

@@ -936,7 +936,6 @@ FIRE ALARM
 	var/last_process = 0
 	var/wiresexposed = 0
 	var/buildstage = 2 // 2 = complete, 1 = no wires,  0 = circuit gone
-	required_interaction_dexterity = DEXTERITY_SIMPLE_MACHINES
 
 /obj/machinery/firealarm/update_icon()
 	cut_overlays()
