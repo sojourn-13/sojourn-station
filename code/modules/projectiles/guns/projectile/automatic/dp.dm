@@ -7,7 +7,7 @@
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
 	slot_flags = 0
-	max_shells = 96
+	max_shells = 1
 	damage_multiplier = 1.0
 	penetration_multiplier = 0.9
 	caliber = CAL_RIFLE
