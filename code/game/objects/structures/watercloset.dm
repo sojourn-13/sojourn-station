@@ -415,6 +415,7 @@
 
 	if(amount_of_reagents < 40 && limited_reagents)
 		to_chat(user, SPAN_WARNING("The water presser seems to low to wash with."))
+		return
 
 	if(busy)
 		to_chat(user, SPAN_WARNING("Someone's already washing here."))
@@ -486,9 +487,15 @@
 
 	to_chat(usr, SPAN_NOTICE("You start washing \the [I]."))
 
+	if(amount_of_reagents < 40 && limited_reagents)
+		to_chat(user, SPAN_WARNING("The water presser seems to low to wash with."))
+		return
+
 	busy = 1
 	sleep(40)
 	busy = 0
+
+	amount_of_reagents -= 40
 
 	if(user.loc != location) return				//User has moved
 	if(!I) return 								//Item's been destroyed while washing
