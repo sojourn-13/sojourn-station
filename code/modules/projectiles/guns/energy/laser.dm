@@ -282,7 +282,7 @@
 	cell_type = /obj/item/cell/medium
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_STEEL = 8, MATERIAL_WOOD = 10, MATERIAL_SILVER = 4)
-	fire_delay = 30
+	fire_delay = 20
 	init_recoil = CARBINE_RECOIL(1)
 	damage_multiplier = 1
 	penetration_multiplier = 0.7
@@ -343,8 +343,8 @@
 	price_tag = 1400
 
 	init_firemodes = list(
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound = 'sound/weapons/Taser.ogg', fire_delay=80, icon="stun"),
-		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Laser.ogg', fire_delay=40, icon="kill"),
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound = 'sound/weapons/Taser.ogg', fire_delay=35, icon="stun"),
+		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Laser.ogg', fire_delay=10, icon="kill"),
 	)
 	serial_type = "NM"
 
