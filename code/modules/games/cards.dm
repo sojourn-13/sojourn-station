@@ -152,7 +152,6 @@
 	user.visible_message("\The [user] shuffles [src].")
 
 /obj/item/deck/MouseDrop(atom/over)
-	..()
 	if(!usr || !over) return
 	if(!Adjacent(usr) || !over.Adjacent(usr)) return // should stop you from dragging through windows
 

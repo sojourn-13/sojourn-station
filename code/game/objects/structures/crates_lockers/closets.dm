@@ -248,8 +248,6 @@
 	if(src.broken)
 		to_chat(user, SPAN_WARNING("The [ctype] appears to be broken."))
 		return
-	if(!user.check_dexterity(DEXTERITY_COMPLEX_TOOLS))
-		return FALSE
 	if(CanToggleLock(user))
 		set_locked(!locked, user)
 	else
@@ -363,7 +361,7 @@
 
 /obj/structure/closet/affect_grab(var/mob/living/user, var/mob/living/target)
 	if(src.opened)
-		receive_mouse_drop(target, user)      //act like they were dragged onto the closet
+		MouseDrop_T(target, user)      //act like they were dragged onto the closet
 		return TRUE
 	return FALSE
 
@@ -507,7 +505,7 @@
 		src.attack_hand(user)
 	return
 
-/obj/structure/closet/receive_mouse_drop(atom/movable/O as mob|obj, mob/user as mob)
+/obj/structure/closet/MouseDrop_T(atom/movable/O as mob|obj, mob/user as mob)
 	if(istype(O, /obj/screen))	//fix for HUD elements making their way into the world	-Pete
 		return
 	if(O.loc == user)

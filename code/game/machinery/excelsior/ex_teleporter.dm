@@ -317,7 +317,7 @@ var/global/excelsior_last_draft = 0
 	try_put_inside(target, user)
 	return TRUE
 
-/obj/machinery/complant_teleporter/receive_mouse_drop(var/mob/living/L, mob/living/user)
+/obj/machinery/complant_teleporter/MouseDrop_T(var/mob/living/L, mob/living/user)
 	if(istype(L) && istype(user))
 		try_put_inside(L, user)
 

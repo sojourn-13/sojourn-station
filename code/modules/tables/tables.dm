@@ -210,7 +210,7 @@ var/list/custom_table_appearance = list(
 
 	return ..()
 
-/obj/structure/table/receive_mouse_drop(obj/item/stack/material/what)
+/obj/structure/table/MouseDrop_T(obj/item/stack/material/what)
 	if(can_reinforce && isliving(usr) && (!usr.stat) && istype(what) && usr.get_active_hand() == what && Adjacent(usr))
 		reinforce_table(what, usr)
 	else

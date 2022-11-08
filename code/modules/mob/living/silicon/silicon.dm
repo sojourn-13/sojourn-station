@@ -1,7 +1,6 @@
 /mob/living/silicon
 	gender = NEUTER
 	voice_name = "synthesized voice"
-	var/dexterity = DEXTERITY_FULL
 	var/syndicate = 0
 	var/const/MAIN_CHANNEL = "Main Frequency"
 	var/lawchannel = MAIN_CHANNEL // Default channel on which to state laws
@@ -61,9 +60,6 @@
 	for(var/datum/alarm_handler/AH in SSalarm.all_handlers)
 		AH.unregister_alarm(src)
 	. = ..()
-
-/mob/living/silicon/has_dexterity(var/dex_level)
-	return dexterity >= dex_level
 
 /mob/living/silicon/lay_down()
 	resting = FALSE
@@ -126,6 +122,9 @@
 
 /mob/living/silicon/proc/damage_mob(var/brute = 0, var/fire = 0, var/tox = 0)
 	return
+
+/mob/living/silicon/IsAdvancedToolUser()
+	return 1
 
 /mob/living/silicon/bullet_act(var/obj/item/projectile/Proj)
 	if (Proj.is_hot() >= HEAT_MOBIGNITE_THRESHOLD && (!(Proj.testing)))

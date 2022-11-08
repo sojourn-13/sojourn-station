@@ -439,7 +439,6 @@
 		return
 
 /obj/item/cell/large/hydrogen/MouseDrop(over_object)
-	..()
 	if(fuel_cell)
 		usr.visible_message(
 								SPAN_NOTICE("[usr] detach [fuel_cell] from [src]."),
@@ -490,7 +489,6 @@
 		return
 
 /obj/item/cell/large/ameridian/MouseDrop(over_object)
-	..()
 	if(core)
 		usr.visible_message(
 								SPAN_NOTICE("[usr] remove [core] from [src]."),
@@ -533,7 +531,6 @@
 	..()
 
 /obj/item/device/manual_charger/MouseDrop(over_object)
-	..()
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
 		cell = null
 

@@ -327,8 +327,8 @@
 		to_chat(user, "This device is not powered.")
 		return
 
-	if (!user.check_dexterity(DEXTERITY_KEYBOARDS))
-		return
+	if(!user.IsAdvancedToolUser())
+		return 0
 
 	currentarea = get_area(src.loc)
 	if(!currentarea)

@@ -41,7 +41,6 @@
 	return
 
 /mob/living/simple_animal/soul/MouseDrop(atom/over_object)
-	..()
 	return
 
 /mob/living/simple_animal/soul/attack_hand(mob/living/carbon/human/M as mob)

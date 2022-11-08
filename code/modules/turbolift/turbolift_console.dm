@@ -45,8 +45,6 @@
 /obj/structure/lift/interact(var/mob/user)
 	if(!lift.is_functional())
 		return 0
-	if(!user.check_dexterity(DEXTERITY_SIMPLE_MACHINES))
-		return FALSE
 	return 1
 // End base.
 

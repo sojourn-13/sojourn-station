@@ -279,7 +279,6 @@
 		to_chat(user, "The [card_slot.stored_card] is inserted into it.")
 
 /obj/item/modular_computer/MouseDrop(atom/over_object)
-	..()
 	var/mob/M = usr
 	if(!istype(over_object, /obj/screen) && can_interact(M))
 		return attack_self(M)

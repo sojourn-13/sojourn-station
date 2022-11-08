@@ -101,7 +101,7 @@
 /obj/item/dnainjector/attack(mob/M as mob, mob/user as mob)
 	if(!ismob(M))
 		return
-	if (!user.check_dexterity(DEXTERITY_COMPLEX_TOOLS))
+	if(!usr.IsAdvancedToolUser())
 		return
 	if(inuse)
 		return 0

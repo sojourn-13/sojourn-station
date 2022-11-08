@@ -76,7 +76,6 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 
 // Removing the plasma flask
 /obj/item/gun/hydrogen/MouseDrop(over_object)
-	..()
 	if(!connected)
 		if(secured)
 			to_chat(usr, "The fuel cell is screwed to the gun. You cannot remove it.")

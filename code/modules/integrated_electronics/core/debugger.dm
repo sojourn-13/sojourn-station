@@ -15,7 +15,7 @@
 
 /obj/item/device/integrated_electronics/debugger/attack_self(mob/user)
 	var/type_to_use = input("Please choose a type to use.","[src] type setting") as null|anything in list("string","number","ref","copy","null","id lock")
-	if (!user.check_dexterity(DEXTERITY_KEYBOARDS))
+	if(!user.IsAdvancedToolUser())
 		return
 
 	var/new_data = null
@@ -25,7 +25,7 @@
 			copy_values = FALSE
 			copy_id = FALSE
 			new_data = sanitize(user.get_input("Now type in a string", "[src] string writing", null, MOB_INPUT_TEXT, src), trim = 0)
-			if(istext(new_data) && user.check_dexterity(DEXTERITY_KEYBOARDS))
+			if(istext(new_data) && user.IsAdvancedToolUser())
 				data_to_write = new_data
 				to_chat(user, SPAN_NOTICE("You set \the [src]'s memory to \"[new_data]\"."))
 		if("number")
@@ -33,7 +33,7 @@
 			copy_values = FALSE
 			copy_id = FALSE
 			new_data = input(user, "Now type in a number.","[src] number writing") as null|num
-			if(isnum_safe(new_data) && user.check_dexterity(DEXTERITY_KEYBOARDS))
+			if(isnum_safe(new_data) && user.IsAdvancedToolUser())
 				data_to_write = new_data
 				to_chat(user, SPAN_NOTICE("You set \the [src]'s memory to [new_data]."))
 		if("ref")

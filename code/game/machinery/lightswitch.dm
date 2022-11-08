@@ -10,8 +10,6 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 20
 	power_channel = STATIC_LIGHT
-	required_interaction_dexterity = DEXTERITY_SIMPLE_MACHINES
-
 	var/slow_turning_on = FALSE
 	var/forceful_toggle = FALSE
 	var/on = 1

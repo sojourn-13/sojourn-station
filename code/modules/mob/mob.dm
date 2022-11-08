@@ -848,6 +848,11 @@ All Canmove setting in this proc is temporary. This var should not be set from h
 	set hidden = 1
 	return facedir(client.client_dir(SOUTH))
 
+
+//This might need a rename but it should replace the can this mob use things check
+/mob/proc/IsAdvancedToolUser()
+	return 0
+
 /mob/proc/Stun(amount)
 	if(status_flags & CANSTUN)
 		facing_dir = null
@@ -1415,12 +1420,3 @@ mob/proc/yank_out_object()
 	if(stats)
 		health += src.stats.getStat(STAT_ANA)
 		maxHealth += src.stats.getStat(STAT_ANA)
-
-// Let simple mobs press buttons and levers but nothing more complex.
-/mob/proc/has_dexterity(var/dex_level)
-	. = dex_level <= DEXTERITY_SIMPLE_MACHINES
-
-/mob/proc/check_dexterity(var/dex_level, var/silent)
-	. = has_dexterity(dex_level)
-	if(!. && !silent)
-		to_chat(src, FEEDBACK_YOU_LACK_DEXTERITY)

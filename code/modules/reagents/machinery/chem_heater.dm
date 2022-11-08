@@ -65,7 +65,7 @@
 		SSnano.update_uis(src)
 
 /* - A bit buggy allowing phantom beakers and other exploitable things - Trilby
-/obj/machinery/chem_heater/receive_mouse_drop(atom/movable/I, mob/user, src_location, over_location, src_control, over_control, params)
+/obj/machinery/chem_heater/MouseDrop_T(atom/movable/I, mob/user, src_location, over_location, src_control, over_control, params)
 	if(!Adjacent(user) || !I.Adjacent(user) || user.stat)
 		return ..()
 	if(istype(I, /obj/item/reagent_containers) && I.is_open_container())

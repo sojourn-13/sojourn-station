@@ -169,7 +169,7 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 	.=..()
 
 /obj/item/beartrap/proc/can_use(mob/user)
-	. = (user.check_dexterity(DEXTERITY_SIMPLE_MACHINES) && !issilicon(user) && !user.stat && !user.restrained())
+	return (user.IsAdvancedToolUser() && !user.stat && user.Adjacent(src))
 
 /obj/item/beartrap/proc/release_mob()
 	unbuckle_mob()

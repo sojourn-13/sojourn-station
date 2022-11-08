@@ -120,7 +120,7 @@
 
 //Drag and drop onto low walls. Copied from tables
 //This is mainly so that janiborg can put things on tables
-/obj/structure/low_wall/receive_mouse_drop(atom/A, mob/user, src_location, over_location, src_control, over_control, params)
+/obj/structure/low_wall/MouseDrop_T(atom/A, mob/user, src_location, over_location, src_control, over_control, params)
 	if(istype(A.loc, /mob))
 		user.unEquip(A, loc)
 		set_pixel_click_offset(A, params)

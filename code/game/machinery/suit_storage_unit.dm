@@ -118,8 +118,8 @@
 		return
 	if(stat & NOPOWER)
 		return
-	if (!user.check_dexterity(DEXTERITY_KEYBOARDS))
-		return
+	if(!user.IsAdvancedToolUser())
+		return 0
 	if(panel_open) //The maintenance panel is open. Time for some shady stuff
 		dat += "<HEAD><TITLE>Suit storage unit: Maintenance panel</TITLE></HEAD>"
 		dat += "<B>Maintenance panel controls</B><HR>"

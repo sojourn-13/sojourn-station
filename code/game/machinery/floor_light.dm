@@ -13,7 +13,6 @@ var/list/floor_light_cache = list()
 	active_power_usage = 20
 	power_channel = STATIC_LIGHT
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 3)
-	required_interaction_dexterity = DEXTERITY_SIMPLE_MACHINES
 
 	var/on
 	var/damaged
