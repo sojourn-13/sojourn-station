@@ -29,7 +29,7 @@
 	if(stat == DEAD || client) // If we're dead or have a client, we don't need AI
 		return
 
-	handle_speech()
+	handle_speech() //how the slime hears and talks back.
 	if (Leader) //handle orders to stay or follow
 		if (holding_still)
 			holding_still = max(holding_still - 1, 0)
@@ -39,11 +39,11 @@
 	var/sleeptime = movement_delay()
 	if(sleeptime <= 5) sleeptime = 5 // Maximum one action per half a second
 	spawn (sleeptime)
-		if(stat == DEAD)
+		if(stat == DEAD)//we want to double check to stop the Ai if the slime dies for some reason.
 			return
 		else handle_AI()
 	return
-
+// code blow is how the slime hears things.
 /mob/living/simple_animal/slime/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	speech_buffer = list()
 	speech_buffer.Add(speaker)
@@ -80,7 +80,7 @@
 	if (to_say)
 		say (to_say)
 
-/mob/living/simple_animal/slime/say(var/message)
+/mob/living/simple_animal/slime/say(var/message) //this cleans up the slimes speak.
 
 	message = sanitize(message)
 	message = capitalize(trim_left(message))
@@ -104,18 +104,22 @@
 	return ..(message, null, verb)
 
 /mob/living/simple_animal/slime/attackby(var/obj/item/storage/s, mob/living/user as mob)
-	if(got_goods == FALSE)
+	if(stat == DEAD) // we don't add things to dead slimes.
+		return
+	if(got_goods == FALSE && istype(s, /obj/item/storage))
 		user.visible_message(SPAN_NOTICE("[user] hands [s] to the [src]."))
 		user.drop_item()
 		src.contents += s
 		got_goods = TRUE
-		cut_overlays() //no proper layout for update_icons for the mood overlays.
+		cut_overlays()
 		add_overlay("aslime-stuffed")
 		return
-	to_chat(user, ("[src] looks a little flustered at having TWO things to carry."))
+	else if (istype(s, /obj/item/storage)) //is it a bag or something else we are trying to give the overburdened slime?
+		to_chat(user, ("[src] looks a little flustered at having TWO things to carry."))
+	else to_chat(user, ("[src] can't seem to carry this."))
 
 /mob/living/simple_animal/slime/attack_hand(mob/living/user as mob)
-	if (got_goods == FALSE)
+	if (got_goods == FALSE && stat != DEAD)
 		to_chat(user, "The [src] nuzzles your hand.")
 		return
 	else if (got_goods == TRUE && src.contents.len > 0)
@@ -123,8 +127,9 @@
 			s.loc = usr.loc
 		got_goods = FALSE
 		cut_overlays()
-		add_overlay("aslime-:3")
-		user.visible_message(SPAN_NOTICE("[user] has [src] put the bag down."))
+		if (stat != DEAD) // we only want it to get a updated face and show things when its alive.
+			add_overlay("aslime-:3")
+			user.visible_message(SPAN_NOTICE("[user] has [src] put the bag down."))
 
 /mob/living/simple_animal/slime/can_force_feed(var/feeder, var/food, var/feedback)
 	if(feedback)
@@ -138,6 +143,7 @@
 	icon_state = "grey adult slime"
 
 /mob/living/simple_animal/slime/adult/death()
+	..()
 	var/mob/living/simple_animal/slime/S1 = new /mob/living/simple_animal/slime (src.loc)
 	S1.icon_state = "[src.colour] baby slime"
 	S1.icon_living = "[src.colour] baby slime"

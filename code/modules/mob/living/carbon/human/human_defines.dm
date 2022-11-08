@@ -22,6 +22,7 @@
 	var/skin_color = "#FFE0D0"
 
 	var/size_multiplier = 1 //multiplier for the mob's icon size
+	var/scale_effect = 0	//new multiplier. The one above is obsolete
 	var/damage_multiplier = 1 //multiplies melee combat damage
 	var/icon_update = 1 //whether icon updating shall take place
 

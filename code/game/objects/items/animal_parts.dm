@@ -37,6 +37,7 @@
 	desc = "The hoof of a slepnir, capable of being turned into a combat stimulant or if you need to repair your tools quality tape."
 	icon_state = "slepnir_hoof"
 	item_state = "slepnir_hoof"
+	price_tag = 2000 //standardization with the other tengolo evolution drops.
 
 /obj/item/animal_part/cerberus_snout
 	name = "cerberus snout"
@@ -87,3 +88,39 @@
 	icon_state = "nightstalker_tooth"
 	item_state = "nightstalker_tooth"
 	price_tag = 600
+
+//start of the dok hunter arc
+/obj/item/animal_part/croaker_tongue
+	name = "croaker lord tongue"
+	desc = "A hulking tongue of a venerable Croaker Lord. A tool used by the Lord to hunt the various pest that encroached its domain. Even now trying to pull your hand away too fast from it causes it to grip to you like a vise."
+	icon_state = "croaker_tongue"
+	item_state = "croaker_tongue"
+	price_tag = 2000 //i kinda just eyeballed this cause its def rarer than a tahca antler but maybe not chimera fangs? idk
+
+/obj/item/animal_part/emperor_silk_gland
+	name = "imperial silk gland"
+	desc = "The abdomen carefully extracted from a fallen Emperor spider leaving its silk gland intact. The silk from an Emperor spider is regarded as some of the strongest and finest ever seen but only very little can be extracted from each emperor.."
+	icon_state = "emperor_silk"
+	item_state = "emperor_silk"
+	price_tag = 1000
+
+/obj/item/animal_part/kingly_pheromone_gland
+	name = "kingly silk gland"
+	desc = "The pheromone control center of the kaiser roaches, engorged from the sheer gigantism that created such a leviathan. If only you could fashion it in some way you could probably managed to pass by roaches even call them to your aid."
+	icon_state = "kingly_pheromone"
+	item_state = "kingly_pheromone"
+	price_tag = 2000 //theres only like 2 of them guarenteed to spawn on the map and ones balls deep in colony maint so with how rare they are its not likely to get more than one turned in by hunters.
+
+/obj/item/animal_part/hell_hide
+	name= "Hell Hide"
+	desc = "The Skinned hide from a berserk Hell Pig. Just holding it causes your blood to boil; if you were to treat it, it could make some incredible armor."
+	icon_state = "hell_hide"
+	item_state = "hell_hide"
+	price_tag = 2000 //as far as i know there are no guarenteed spawns of any of the tengolo evolutions so i feel the rarity merits the price.
+
+/obj/item/animal_part/cannibal_tooth
+	name = "cannibal tooth"
+	desc = "The tooth ripped from the maw of a slain Wendigo, its malformed ferocity chills your bones even now."
+	icon_state = "cannibal_tooth"
+	item_state = "cannibal_tooth"
+	price_tag = 2000
