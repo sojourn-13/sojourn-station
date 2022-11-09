@@ -4,11 +4,6 @@
 	sort_category = "Tools"
 	cost = 2
 
-/datum/gear/tools/makeshift_welding
-	display_name = "jury-rigged torch"
-	path = /obj/item/tool/weldingtool/improvised
-	cost = 1
-
 //------------
 
 /datum/gear/tools/screwdriver
@@ -23,23 +18,12 @@
 	path = /obj/item/tool/wrench
 	cost = 2
 
-/datum/gear/tools/sheet_spanner
-	display_name = "sheet spanner"
-	path = /obj/item/tool/wrench/improvised
-	cost = 1
-
-
 //------------
 
 /datum/gear/tools/wirecutters
 	display_name = "wire cutters"
 	path = /obj/item/tool/wirecutters
 	cost = 2
-
-/datum/gear/tools/wire_mangler
-	display_name = "wire mangler"
-	path = /obj/item/tool/wirecutters/improvised
-	cost = 1
 
 //------------
 
@@ -49,21 +33,11 @@
 	path = /obj/item/tool/crowbar
 	cost = 2
 
-/datum/gear/tools/rebar
-	display_name = "rebar"
-	path = /obj/item/tool/crowbar/improvised
-	cost = 1
-
 //------------
 /datum/gear/tools/multitool
 	display_name = "multitool"
 	path = /obj/item/tool/multitool
 	cost = 2
-
-/datum/gear/tools/makeshiftmultitool
-	display_name = "wire frier"
-	path = /obj/item/tool/multitool
-	cost = 1
 
 //------------
 
