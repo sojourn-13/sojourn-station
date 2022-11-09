@@ -439,7 +439,7 @@ A holder for items we make with Genetics. Helps add a visceral element to object
 
 /obj/item/genetics/flesh_sac/greater
 	name = "Flesh Sac"
-	desc = "An undilating facsimile of life, carrying with it unknown contents. Seems capable of much holding more than usual."
+	desc = "An undilating facsimile of life, carrying with it unknown contents. Seems capable of holding much more than usual."
 	max_loot_size = 40
 
 /obj/item/genetics/flesh_sac/greater/superior

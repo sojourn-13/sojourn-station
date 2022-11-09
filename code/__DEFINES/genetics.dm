@@ -54,6 +54,9 @@
 #define MUTATION_REGENERATION /datum/genetics/mutation/hyperion
 #define MUTATION_RAD_PROTECTION /datum/genetics/mutation/rad_protection
 #define MUTATION_BLOOD_BANK /datum/genetics/mutation/blood_bank
+#define MUTATION_BOMB_RESIST /datum/genetics/mutation/bomb_resist
+#define MUTATION_TERMITE_FRIEND /datum/genetics/mutation/termite_friend
+#define MUTATION_WURM_CRY /datum/genetics/mutation/wurm_cry
 //^^^ All mutations!
 
 
@@ -62,6 +65,7 @@
 #define MUT_TYPE_SKIN 1 //An exclusive mutation type for skin.
 #define MUT_TYPE_FACTION 2
 #define MUT_TYPE_EYES 3 //An exclusive mutation type for eyes.
+#define MUT_TYPE_MOUTH 4 //Exclusive for breaths, spits and crys.
 
 //Types of Mutation recipes:
 #define MUT_TYPE_COMBINATION 1
