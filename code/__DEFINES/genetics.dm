@@ -42,6 +42,9 @@
 #define MUTATION_S_MUSCLES /datum/genetics/mutation/sac_contents/s_muscles
 #define MUTATION_NERVES /datum/genetics/mutation/sac_contents/nerves
 #define MUTATION_S_NERVES /datum/genetics/mutation/sac_contents/s_nerves
+#define MUTATION_EYES /datum/genetics/mutation/sac_contents/eyes
+#define MUTATION_MARQUA_EYES /datum/genetics/mutation/sac_contents/marqua_eyes
+#define MUTATION_SLIME_BONE /datum/genetics/mutation/sac_contents/slime_bone
 #define MUTATION_HYPERION /datum/genetics/mutation/hyperion
 #define MUTATION_THICK_FUR /datum/genetics/mutation/thick_fur
 #define MUTATION_BAROTRAUMA /datum/genetics/mutation/barotrauma
@@ -57,6 +60,8 @@
 #define MUTATION_BOMB_RESIST /datum/genetics/mutation/bomb_resist
 #define MUTATION_TERMITE_FRIEND /datum/genetics/mutation/termite_friend
 #define MUTATION_WURM_CRY /datum/genetics/mutation/wurm_cry
+#define MUTATION_SPARK_BREATH /datum/genetics/mutation/spark_breath
+#define MUTATION_FLAME_RETARDENT /datum/genetics/mutation/flame_retardent
 //^^^ All mutations!
 
 
