@@ -96,7 +96,7 @@
 /datum/gear/tools/powercellmedium
 	display_name = "power cell, medium"
 	path = /obj/item/cell/medium/high
-	cost = 3
+	cost = 2
 
 /datum/gear/tools/ducttape
 	display_name = "duct tape"
