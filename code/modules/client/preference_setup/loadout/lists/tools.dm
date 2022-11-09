@@ -91,7 +91,7 @@
 /datum/gear/tools/powercellsmall
 	display_name = "power cell, small"
 	path = /obj/item/cell/small/high
-	cost = 3
+	cost = 2
 
 /datum/gear/tools/powercellmedium
 	display_name = "power cell, medium"
