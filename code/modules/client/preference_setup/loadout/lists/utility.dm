@@ -91,6 +91,7 @@
 	display_name = "matchbook"
 	path = /obj/item/storage/box/matches
 	cost = 0
+
 /datum/gear/utility/paicard
 	display_name = "personal AI device"
 	path = /obj/item/device/paicard
