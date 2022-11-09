@@ -55,7 +55,7 @@
 /datum/gear/utility/crayonbox
 	display_name = "crayon box"
 	path = /obj/item/storage/fancy/crayons
-	cost = 0
+	cost = 1
 
 /datum/gear/utility/corpreg
 	display_name = "colony law"
