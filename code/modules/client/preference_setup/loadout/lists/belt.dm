@@ -10,7 +10,7 @@
 	path = /obj/item/storage/belt/utility
 	cost = 2
 
-/datum/gear/belt/mkbelt
+/datum/gear/belt/toolbelt
 	display_name = "handmade tool belt"
 	path = /obj/item/storage/belt/utility/handmade
 	cost = 2
@@ -21,14 +21,14 @@
 	allowed_roles = list("Prime","Vector")
 	cost = 2
 
-/datum/gear/belt/nt_belt
+/datum/gear/belt/nt_belt_tactical
 	display_name = "Absolutism tactical belt"
 	path = /obj/item/storage/belt/security/neotheology
 	allowed_roles = list("Prime","Vector")
 	cost = 3
 
 
-/datum/gear/belt/mkbelt
+/datum/gear/belt/medbelt
 	display_name = "Medical belt, Selection EMT / Doctor"
 	path = /obj/item/storage/belt/medical
 	allowed_roles = list("Soteria Doctor","Soteria Biolab Officer","Soteria Lifeline Technician")
