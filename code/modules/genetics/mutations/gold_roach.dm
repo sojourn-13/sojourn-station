@@ -23,7 +23,7 @@
 		return product
 
 //If we cloned the right creature, purge this mutation so it'll generate a normal on_clone mutation when we go to butcher it.
-/datum/genetics/mutation/sac_contents/postCloneCreation(var/result)
+/datum/genetics/mutation/gold_roach/postCloneCreation(var/result)
 	if(!istype(result, /mob/living/carbon/superior_animal/roach/golden))
 		return
 	#ifdef JANEDEBUG
