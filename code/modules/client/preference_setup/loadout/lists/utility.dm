@@ -86,7 +86,8 @@
 /datum/gear/utility/lighter
 	display_name = "lighter"
 	path = /obj/item/flame/lighter
-	cost = 0
+	cost = 1
+
 /datum/gear/utility/matchbook
 	display_name = "matchbook"
 	path = /obj/item/storage/box/matches
