@@ -315,7 +315,6 @@
 		/obj/item/gun/projectile/basilisk,
 		/obj/item/gun/projectile/giskard,
 		/obj/item/gun/projectile/gyropistol,
-		/obj/item/gun/projectile/handmade_pistol,
 		/obj/item/gun/projectile/lamia,
 		/obj/item/gun/projectile/mk58,
 		/obj/item/gun/projectile/revolver/lemant,

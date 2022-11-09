@@ -123,21 +123,11 @@
 		list(QUALITY_HAMMERING, 30, "time" = 60)
 	)
 
-/datum/craft_recipe/repairs/sts_heavy_rifle
-	name = "STS heavy rifle"
-	result = /obj/item/gun/projectile/automatic/sts/hrifle
-	steps = list(
-		list(/obj/item/gun/projectile/automatic/sts/hrifle/sawn, 1, "time" = 60),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
-		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60)
-	)
-
 /datum/craft_recipe/repairs/solmarine
 	name = "Solarian carbine"
-	result = /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine
+	result = /obj/item/gun/projectile/automatic/omnirifle/solmarine
 	steps = list(
-		list(/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/sawn, 1, "time" = 60),
+		list(/obj/item/gun/projectile/automatic/omnirifle/solmarine/sawn, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),

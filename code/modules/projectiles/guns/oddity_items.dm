@@ -1,19 +1,6 @@
 //Oddity items are rare rewards from special locations that are usually highly defended by many or very powerful mobs, requiring effort to obtain them. They are often simple equipment with better stats
 //or unique effects. These should never be placed enmasse or in easily reached places. -Kaz
 //Guns
-/obj/item/gun/projectile/handmade_pistol/anti_material/reliable
-	name = "\"Finger of God\" handmade pistol"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	Whoever made this particular model did exceptional work. Unlike lesser handmade pistols, this one jams less and has much better shot capability. This one chambers 14.5mm anti material ammo."
-	icon = 'icons/obj/guns/projectile/hm_bluecross.dmi'
-	jam_chance = 5
-	damage_multiplier = 1.36
-	init_recoil = HANDGUN_RECOIL(2.5)
-	max_shells = 6
-	price_tag = 750
-	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 6) //Its now made of plasteel to show its whatever
-	serial_type = "BlueCross"
-
 /obj/item/gun/energy/sniperrifle/saint
 	name = "\"Saint\" laser rifle"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \

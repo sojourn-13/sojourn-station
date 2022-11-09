@@ -203,3 +203,26 @@
 	init_firemodes = list(
 		list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=2.5, move_delay=null, icon="semi"),
 		)
+
+/obj/item/gun/projectile/automatic/ak47/makeshift
+	name = "Homemade \"Kalashnikov\" rifle"
+	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
+			This is a copy of an ancient semi-automatic rifle chambered for 7.62mm. If it won't fire, percussive maintenance should get it working again. \
+			It is known for its easy maintenance, and low price. This gun is not in active military service anymore, but has become ubiquitous among criminals and insurgents. \
+			This crude copy shows just how forgiving the design can be."
+	icon = 'icons/obj/guns/projectile/ak_homemade.dmi'
+	w_class = ITEM_SIZE_HUGE
+	init_recoil = RIFLE_RECOIL(0.7)
+	mag_well = MAG_WELL_RIFLE
+
+	origin_tech = list(TECH_COMBAT = 2)	//bad copies don't give good science
+	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
+	damage_multiplier = 1.1
+	penetration_multiplier = 0
+
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY	//too poorly made for burst or automatic
+	)
+	matter = list(MATERIAL_STEEL = 22, MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 5, MATERIAL_WOOD = 12)
+	price_tag = 500
+	serial_type = ""

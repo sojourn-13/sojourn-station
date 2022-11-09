@@ -434,7 +434,6 @@
 	name = "SA rifle pack"
 	desc = "A small collection of SA disks"
 	initial_contents = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/guns/sts40 = 1,
 		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 1,
 		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk = 1
 	)

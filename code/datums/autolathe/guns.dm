@@ -252,7 +252,7 @@
 
 /datum/design/autolathe/gun/sol
 	name = "H&S CAR 6.5x39mm \"Solarian\""
-	build_path = /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine
+	build_path = /obj/item/gun/projectile/automatic/omnirifle/solmarine
 
 /datum/design/autolathe/gun/ostwind
 	name = "Seinemetall Defense GmbH AR 6.5x39mm \"Ostwind\""
@@ -371,33 +371,22 @@
 
 // . 4 0 8 H E A V Y  R I F L E S
 
-/datum/design/autolathe/gun/standard_omnirifle
-	name = "H&S 8.6x70mm \"Omnirifle\""
-	build_path = /obj/item/gun/projectile/automatic/omnirifle/standard
 
 /datum/design/autolathe/gun/scoped_omnirifle
 	name = "H&S BR 8.6x70mm \"Longarm\""
 	build_path = /obj/item/gun/projectile/automatic/omnirifle/scoped
 
 /datum/design/autolathe/gun/omnirifle
-	name = "NM H&S BR 8.6x70mm \"Hustler\""
+	name = "H&S 8.6x70mm \"Omnirifle\""
 	build_path = /obj/item/gun/projectile/automatic/omnirifle
-
-/datum/design/autolathe/gun/omnicarbine
-	name = "H&S BR 8.6x70mm \"Boar\""
-	build_path = /obj/item/gun/projectile/automatic/omnirifle/omnicarbine
 
 /datum/design/autolathe/gun/rds_omnicarbine
 	name = "H&S BR 8.6x70mm \"Boar\" RDS"
-	build_path = /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/rds
+	build_path = /obj/item/gun/projectile/automatic/omnirifle/rds
 
 /datum/design/autolathe/gun/scout
 	name = "H&S SR 8.6x70mm \"Scout\""
 	build_path = /obj/item/gun/projectile/boltgun/scout
-
-/datum/design/autolathe/gun/sts40
-	name = "SA BR - 8.6x70mm \"STS-40\""
-	build_path = /obj/item/gun/projectile/automatic/sts/hrifle
 
 /datum/design/autolathe/gun/custer
 	name = "H&S 8.6x70mm \"Custer\""

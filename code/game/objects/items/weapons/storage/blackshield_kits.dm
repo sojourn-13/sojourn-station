@@ -101,7 +101,7 @@
 	desc = "The standard Blackshield equipment kit containing an STS carbine, a powerful and all round deadly rifle that performs well in any circumstance."
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/rds(src)
+		new /obj/item/gun/projectile/automatic/omnirifle/rds(src)
 		new /obj/item/ammo_magazine/heavy_rifle_408(src)
 		new /obj/item/ammo_magazine/heavy_rifle_408(src)
 		new /obj/item/ammo_magazine/heavy_rifle_408(src)
