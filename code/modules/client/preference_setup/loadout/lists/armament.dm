@@ -64,7 +64,7 @@
 
 /datum/gear/armament/dagger/family
 	display_name = "heirloom dagger"
-	path = /obj/item/tool/knife/heirloom_knife
+	path = /obj/item/tool/knife/dagger/heirloom_knife
 	cost = 1
 
 /datum/gear/armament/baton

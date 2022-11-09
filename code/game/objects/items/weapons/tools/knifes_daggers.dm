@@ -167,7 +167,7 @@
 	max_upgrades = 4
 	price_tag = 300 // Fancy expensive paper weight.
 
-/obj/item/tool/knife/heirloom_knife
+/obj/item/tool/knife/dagger/heirloom_knife
 	name = "heirloom dagger"
 	desc = "This dagger was given to generations of family members that once hunted as a faint memory of trust and hope, while it isn't meant to be a weapon it certainly does the job of cutting things. Extremely handy not exactly valuable yet precious."
 	icon_state = "general_skinningknife"
