@@ -1,6 +1,6 @@
 /datum/gear/belt
 	display_name = "general belt"
-	path = /obj/item/storage/belt
+	path = /obj/item/storage/belt/champion
 	slot = slot_belt
 	sort_category = "Utility belts"
 	cost = 4
