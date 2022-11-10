@@ -65,7 +65,6 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/armstrong = 6,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/custer = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/roe = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/sika = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/boltgun_sa = 6,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/zatvor = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/bounty_lever = 2))

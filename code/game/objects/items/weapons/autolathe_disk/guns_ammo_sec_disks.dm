@@ -593,20 +593,6 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox_rubber,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/sika
-	disk_name = "Hunters Inc - 6.5mm Sika Rifle"
-	icon_state = "hunters"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/sika = 3,
-		/datum/design/autolathe/ammo/lrifle_speed_loader,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
-	)
-
 /obj/item/computer_hardware/hard_drive/portable/design/guns/roe
 	disk_name = "Hunters Inc - 6.5mm Roe Rifle"
 	icon_state = "hunters"

@@ -1,4 +1,4 @@
-/obj/item/gun/projectile/boltgun/light_wood
+/obj/item/gun/projectile/boltgun/light
 	name = "\"Roe\" light boltgun"
 	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in 6.5mm, it's a common varmint and plinking rifle."
 	icon = 'icons/obj/guns/projectile/lightboltgun_wood.dmi'
@@ -16,10 +16,10 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 10, MATERIAL_GLASS = 10)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
 	saw_off = TRUE
-	sawn = /obj/item/gun/projectile/boltgun/sawn/light_wood
+	sawn = /obj/item/gun/projectile/boltgun/sawn/light
 	serial_type = "Hunt Inc"
 
-/obj/item/gun/projectile/boltgun/sawn/light_wood
+/obj/item/gun/projectile/boltgun/sawn/light
 	name = "\"obrez\" light boltgun"
 	desc = "A crudly mangled and sawn-down 6.5mm bolt action rifle. Rifle was fine."
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun_wood.dmi'

@@ -162,7 +162,7 @@
 	name = "Roe light boltgun"
 	result = /obj/item/gun/projectile/boltgun/light
 	steps = list(
-		list(/obj/item/gun/projectile/boltgun/sawn/light_wood, 1, "time" = 60),
+		list(/obj/item/gun/projectile/boltgun/sawn/light, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
 		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),

@@ -23,7 +23,6 @@
 				/obj/item/gun/projectile/avasarala = 0.1,\
 				/obj/item/gun/projectile/shotgun/pump/sawn = 1,\
 				/obj/item/gun/projectile/shotgun/pump/obrez = 2,\
-				/obj/item/gun/projectile/boltgun/sawn/light_wood = 0.5,\
 				/obj/item/gun/projectile/boltgun/sawn/light = 0.5,\
 				/obj/item/gun/projectile/boltgun/sawn/true = 0.5,\
 				/obj/item/gun/projectile/boltgun/sawn/sa = 1,\
