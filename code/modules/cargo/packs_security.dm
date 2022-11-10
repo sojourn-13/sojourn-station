@@ -41,7 +41,7 @@
 /datum/supply_pack/fssmall
 	name = "HS Cheap Sidearms Crate"
 	contains = list(/obj/item/gun/projectile/colt, //225
-			/obj/item/gun/projectile/clarissa, //125
+			/obj/item/gun/projectile/giskard, //125
 			/obj/item/gun/projectile/olivaw) //225
 	cost = 575
 	containertype = /obj/structure/closet/crate/secure/weapon

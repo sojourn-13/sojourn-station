@@ -60,7 +60,7 @@
 /datum/gear/armament/dagger
 	display_name = "dagger"
 	path = /obj/item/tool/knife/dagger
-	cost = 3
+	cost = 2
 
 /datum/gear/armament/dagger/family
 	display_name = "heirloom dagger"
@@ -104,12 +104,12 @@
 /datum/gear/armament/makeshift/saber
 	display_name = "Decorative Saber"
 	path = /obj/item/tool/sword/saber
-	cost = 3
+	cost = 2
 
 /datum/gear/armament/cutlass
 	display_name = "cutlass"
 	path = /obj/item/tool/sword/saber/cutlass
-	cost = 3
+	cost = 2
 
 /datum/gear/armament/machete
 	display_name = "Machete"
@@ -119,7 +119,7 @@
 /datum/gear/armament/spear
 	display_name = "Steel Spear"
 	path = /obj/item/tool/spear/steel
-	cost = 3
+	cost = 4
 
 /datum/gear/armament/holster/nt
 	display_name = "short sword"

@@ -18,7 +18,6 @@
 			/obj/item/gun/projectile/automatic/c20r,
 			/obj/item/gun/projectile/automatic/sts/lrifle,
 			/obj/item/gun/projectile/automatic/sts/rifle,
-			/obj/item/gun/projectile/automatic/sts/hrifle,
 			/obj/item/gun/projectile/boltgun/lever,
 			/obj/item/gun/projectile/boltgun/sa,
 			/obj/item/gun/projectile/shotgun/pump/gladstone,

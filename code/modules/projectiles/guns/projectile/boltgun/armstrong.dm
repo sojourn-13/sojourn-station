@@ -22,8 +22,8 @@
 
 /obj/item/gun/projectile/boltgun/lever/custer
 	name = "\"Custer\" repeating rifle"
-	desc = "This sized-up version of the \"Armstrong\" sports a few improvements compared to its predesessor. \
-			Made to content with modern bolt actions in hunting, this repeating rifle sports a rifle cartiage for that extra punch!"
+	desc = "This sized-up version of the \"Armstrong\" sports a few improvements compared to its predecessor. \
+			Made to compete with modern bolt actions in hunting, this repeating rifle sports a heavy bore rifle cartridge to pack an extra punch!"
 	icon = 'icons/obj/guns/projectile/custer.dmi'
 	icon_state = "custer"
 	item_state = "custer"

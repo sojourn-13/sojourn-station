@@ -3334,7 +3334,7 @@
 "mw" = (
 /obj/item/pen/multi,
 /obj/item/remains,
-/obj/item/gun/projectile/clarissa,
+/obj/item/gun/projectile/giskard,
 /obj/item/ammo_magazine/highcap_pistol_35/highvelocity,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
@@ -6463,7 +6463,7 @@
 /obj/item/clothing/suit/armor/vest/iron_lock_security,
 /obj/item/ammo_magazine/ammobox/pistol_35/scrap,
 /obj/item/storage/pouch/pistol_holster,
-/obj/item/gun/projectile/clarissa,
+/obj/item/gun/projectile/giskard,
 /obj/item/ammo_magazine/highcap_pistol_35/empty,
 /obj/item/ammo_magazine/highcap_pistol_35/empty,
 /turf/simulated/floor/carpet,

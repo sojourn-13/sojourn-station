@@ -419,7 +419,7 @@
 			"thermite",
 			"tramadol",
 			"cryptobiolin",
-			"clonexadone",
+			"cronexidone",
 			"dermaline",
 			"dexalin",
 			"plasma",
