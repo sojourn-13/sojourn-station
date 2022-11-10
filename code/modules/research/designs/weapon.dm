@@ -46,7 +46,7 @@
 	build_path = /obj/item/gun/energy/centauri
 
 /datum/design/research/item/weapon/clarissa
-	build_path = /obj/item/gun/projectile/clarissa/moebius
+	build_path = /obj/item/gun/projectile/makarov/moebius
 
 /datum/design/research/item/weapon/decloner
 	name = "Prototype: Biological Demolecularizer"

@@ -16,7 +16,6 @@
 				/obj/item/gun/projectile/automatic/luger = 1,\
 				/obj/item/gun/projectile/boltgun/sa = 3,\
 				/obj/item/gun/projectile/boltgun/zatvor = 1,\
-				/obj/item/gun/projectile/clarissa = 2,\
 				//obj/item/gun/projectile/boltgun/scout/light = 2,
 				//obj/item/gun/projectile/boltgun/scout/light/wood = 3,
 				/obj/item/gun/projectile/shotgun/pump = 0.5,\
@@ -110,7 +109,7 @@
 				/obj/item/gun/projectile/automatic/thompson = 0.5,
 				/obj/item/gun/projectile/automatic/bren = 0.5,
 				/obj/item/gun/projectile/automatic/ak47/sawn = 1,\
-				/obj/item/gun/projectile/clarissa/makarov = 1,\
+				/obj/item/gun/projectile/makarov = 1,\
 				/obj/item/gun/projectile/shotgun/pug = 0.5,
 				/obj/item/gun/projectile/revolver/hornet = 0.5))
 
@@ -147,7 +146,7 @@
 				/obj/item/gun/projectile/lamia/scoped = 1,\
 				/obj/item/gun/projectile/lamia/scoped/dark = 1,\
 				/obj/item/gun/projectile/revolver/deckard = 0.4,\
-				/obj/item/gun/projectile/clarissa/makarov = 1.1,\
+				/obj/item/gun/projectile/makarov = 1.1,\
 				/obj/item/gun/projectile/boltgun/scout = 0.5))
 
 /obj/random/gun_fancy/low_chance

@@ -22,13 +22,9 @@
 	name = "H&S HG 9mm \"Giskard\""
 	build_path = /obj/item/gun/projectile/giskard
 
-/datum/design/autolathe/gun/clarissa
-	name = "H&S HG 9mm \"Clarissa\""
-	build_path = /obj/item/gun/projectile/clarissa
-
 /datum/design/autolathe/gun/makarov
 	name = "Excelsior 9mm \"Makarov\""
-	build_path = /obj/item/gun/projectile/clarissa/makarov
+	build_path = /obj/item/gun/projectile/makarov
 
 /datum/design/autolathe/gun/colt
 	name = "H&S HG 9mm \"Colt\""

@@ -18,7 +18,6 @@
 	//Pistol
 	/obj/item/gun/projectile/automatic/slaught_o_matic = 5,
 	/obj/item/gun/energy/gun/martin = 2,
-	/obj/item/gun/projectile/clarissa = 2,
 	/obj/item/gun/projectile/giskard = 2,
 	/obj/item/gun/projectile/olivaw = 2,
 	/obj/item/gun/projectile/colt = 2,
@@ -93,7 +92,6 @@
 	//Pistol
 	/obj/item/gun/projectile/automatic/slaught_o_matic = 100,
 	/obj/item/gun/energy/gun/martin = 250,
-	/obj/item/gun/projectile/clarissa = 250,
 	/obj/item/gun/projectile/giskard = 300,
 	/obj/item/gun/projectile/olivaw = 450,
 	/obj/item/gun/projectile/colt = 450,

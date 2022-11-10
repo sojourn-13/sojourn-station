@@ -251,7 +251,7 @@
 	desc = "The standard Blackshield equipment kit containing a standard makarov. Its power comes form its size making a good holdout pistol or able to be placed in almost any storage container making it deal for a overloaded trooper."
 
 	populate_contents()
-		new /obj/item/gun/projectile/clarissa/makarov(src)
+		new /obj/item/gun/projectile/makarov(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src) //Highcaps
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		new /obj/item/clothing/accessory/holster/leg(src)

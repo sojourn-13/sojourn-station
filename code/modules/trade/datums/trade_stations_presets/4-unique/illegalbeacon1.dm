@@ -21,7 +21,7 @@
 			/obj/item/clothing/suit/space/syndicate = custom_good_amount_range(list(1, 1)),
 			/obj/item/clothing/head/helmet/space/syndicate = custom_good_amount_range(list(1, 1)),
 			/obj/item/clothing/suit/space/void/merc = custom_good_amount_range(list(1, 1)),
-			/obj/item/gun/projectile/clarissa/makarov = custom_good_amount_range(list(1, 1)),
+			/obj/item/gun/projectile/makarov = custom_good_amount_range(list(1, 1)),
 			/obj/item/gun/projectile/lamia/akurra = custom_good_amount_range(list(1, 1))
 		),
 		"Sol Fed Stockpiles" = list(

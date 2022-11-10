@@ -160,7 +160,6 @@
 	designs = list(
 		/datum/design/autolathe/gun/giskard = 2,
 		/datum/design/autolathe/gun/olivaw = 2,
-		/datum/design/autolathe/gun/clarissa = 2,
 		/datum/design/autolathe/gun/detective,
 		/datum/design/autolathe/ammo/pistol_practice = 0,
 		/datum/design/autolathe/ammo/pistol_rubber,
