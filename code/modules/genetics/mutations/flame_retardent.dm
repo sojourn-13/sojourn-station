@@ -3,7 +3,7 @@
 /datum/genetics/mutation/flame_retardant
 	name = "Flame Retardant"
 	key = "MUTATION_FLAME_RETARDANT"
-	desc = "Causes a flame smothering fluid to be produced on the skin."
+	desc = "Causes a flame-smothering fluid to be permanently produced by the skin."
 	gain_text = "Your skin feels hydrated."
 	instability = 10
 	exclusive_type = MUT_TYPE_SKIN
