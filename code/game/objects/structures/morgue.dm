@@ -254,6 +254,7 @@
 	var/obj/structure/morgue/connected = null
 	anchored = 1
 	throwpass = 1
+	flags = OBJ_FLAG_MOVES_UNSUPPORTED | OBJ_FLAG_NOFALL
 
 /obj/structure/m_tray/Destroy()
 	if(connected && connected.connected == src)
@@ -477,6 +478,7 @@
 	var/obj/structure/crematorium/connected = null
 	anchored = 1
 	throwpass = 1
+	flags = OBJ_FLAG_MOVES_UNSUPPORTED | OBJ_FLAG_NOFALL
 
 /obj/structure/c_tray/Destroy()
 	if(connected && connected.connected == src)

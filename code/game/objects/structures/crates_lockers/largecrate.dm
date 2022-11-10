@@ -5,6 +5,7 @@
 	icon_state = "densecrate"
 	matter = list(MATERIAL_WOOD = 10)
 	density = 1
+	flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 
 /obj/structure/largecrate/attack_hand(mob/user as mob)
 	to_chat(user, SPAN_NOTICE("You need a crowbar to pry this open!"))

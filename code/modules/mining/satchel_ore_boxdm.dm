@@ -7,6 +7,7 @@
 	name = "ore box"
 	desc = "A heavy box used for storing ore."
 	density = 1
+	flags = ATOM_FLAG_CLIMBABLE
 
 /obj/structure/ore_box/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/stack/ore))

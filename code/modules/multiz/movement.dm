@@ -15,18 +15,62 @@
 	set name = "Move Upwards"
 	set category = "IC"
 
-	if(zMove(UP))
-		to_chat(usr, SPAN_NOTICE("You move upwards."))
+	move_up()
 
-/**
- * Verb for the mob to move down a z-level if possible.
- */
 /mob/verb/down()
-	set name = "Move Downwards"
+	set name = "Move Down"
 	set category = "IC"
 
-	if(zMove(DOWN))
-		to_chat(usr, SPAN_NOTICE("You move down."))
+	move_down()
+
+/mob/proc/move_up()
+	SelfMove(UP)
+
+/mob/proc/move_down()
+	SelfMove(DOWN)
+
+/mob/living/carbon/human/move_up()
+	var/turf/old_loc = loc
+	..()
+	if(loc != old_loc)
+		return
+
+	var/turf/simulated/open/O = GetAbove(src)
+	var/atom/climb_target
+	if(istype(O))
+		for(var/turf/T in RANGE_TURFS(1, O))
+			if(!T.is_hole)
+				climb_target = T
+			else
+				for(var/obj/I in T)
+					if(I.flags & OBJ_FLAG_NOFALL)
+						climb_target = I
+						break
+			if(climb_target)
+				break
+
+	if(climb_target)
+		climb_up(climb_target)
+
+/mob/living/carbon/human/proc/climb_up(atom/A)
+	if(!isturf(loc) || !shadow || is_physically_disabled())	// This destruction_timer check ideally wouldn't be required, but I'm not awake enough to refactor this to not need it.
+		return FALSE
+
+	var/turf/T = get_turf(A)
+	var/area/AR = get_area(T)
+	if(T.Adjacent(shadow) && T.CanZPass(src, UP)) //Certain structures will block passage from below, others not
+		if(AR.has_gravity() && !can_overcome_gravity())
+			return FALSE
+
+		visible_message("<span class='notice'>[src] starts climbing onto \the [A]!</span>", "<span class='notice'>You start climbing onto \the [A]!</span>")
+		if(do_after(src, 50, A))
+			visible_message("<span class='notice'>[src] climbs onto \the [A]!</span>", "<span class='notice'>You climb onto \the [A]!</span>")
+			src.Move(T)
+		else
+			visible_message("<span class='warning'>[src] gives up on trying to climb onto \the [A]!</span>", "<span class='warning'>You give up on trying to climb onto \the [A]!</span>")
+		return TRUE
+
+
 
 /**
  * Used to check if a mob can move up or down a Z-level and to then actually do the move.
@@ -121,6 +165,34 @@
  * @return	TRUE if the mob can move a Z-level of its own volition.
  *			FALSE otherwise.
  */
+
+/mob/proc/can_overcome_gravity()
+	return FALSE
+
+/mob/living/carbon/human/can_overcome_gravity()
+	//First do species check
+	if(species && species.can_overcome_gravity(src))
+		return 1
+	else
+/*		var/turf/T = loc
+		if(((T.get_physical_height() + T.get_fluid_depth()) >= FLUID_DEEP) || T.get_fluid_depth() >= FLUID_MAX_DEPTH)
+			if(can_float())
+				return 1
+*/
+		for(var/atom/a in src.loc)
+			if(a.flags & ATOM_FLAG_CLIMBABLE)
+				return 1
+
+		//Last check, list of items that could plausibly be used to climb but aren't climbable themselves
+		var/list/objects_to_stand_on = list(
+				/obj/item/stool,
+				/obj/structure/bed,
+			)
+		for(var/type in objects_to_stand_on)
+			if(locate(type) in src.loc)
+				return 1
+	return 0
+
 /mob/proc/can_ztravel(var/direction)
 	return FALSE
 

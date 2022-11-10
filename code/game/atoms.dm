@@ -107,6 +107,9 @@
 			//we were deleted
 			return
 
+	if(flags & ATOM_FLAG_CLIMBABLE)
+		verbs += /atom/proc/climb_on
+
 /**
  * The primary method that objects are setup in SS13 with
  *
@@ -982,6 +985,15 @@ its easier to just keep the beam vertical.
 
 	for (var/prefix in prefixes)
 		name = "[prefix] [name]"
+
+/atom/proc/climb_on()
+
+	set name = "Climb"
+	set desc = "Climbs onto an object."
+	set category = "Object"
+	set src in oview(1)
+
+	do_climb(usr)
 
 /atom/proc/can_climb(var/mob/living/user, post_climb_check=0)
 	if (!(flags & ATOM_FLAG_CLIMBABLE) || !user.can_touch(src) || (!post_climb_check && climbers && (user in climbers)))

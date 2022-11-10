@@ -6,6 +6,7 @@
 	density = TRUE
 	anchored = FALSE
 	reagent_flags = DRAINABLE | AMOUNT_VISIBLE
+	flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 	var/volume = 1500
 	var/starting_volume = 0
 	var/starting_reagent = null

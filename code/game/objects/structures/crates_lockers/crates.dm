@@ -9,6 +9,7 @@
 	open_sound = 'sound/machines/click.ogg'
 	close_sound = 'sound/machines/click.ogg'
 	price_tag = 50
+	flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 
 /obj/structure/closet/crate/close()
 	if(!src.opened)

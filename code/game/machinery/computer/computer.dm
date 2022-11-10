@@ -7,6 +7,7 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 300
 	active_power_usage = 300
+	flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 	var/processing = 0
 	var/CheckFaceFlag = 1 //for direction check
 	var/icon_keyboard = "generic_key"

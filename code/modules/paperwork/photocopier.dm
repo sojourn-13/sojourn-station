@@ -9,6 +9,7 @@
 	idle_power_usage = 30
 	active_power_usage = 200
 	power_channel = STATIC_EQUIP
+	flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 	var/obj/item/copyitem = null	//what's in the copier!
 	var/copies = 1	//how many copies to print!
 	var/toner = 30 //how much toner is left! woooooo~

@@ -73,6 +73,7 @@
 	name = "ladder"
 	desc = "A ladder. You can climb it up and down."
 	icon_state = "ladderdown"
+	flags = OBJ_FLAG_NOFALL
 	var/climb_delay = 30
 
 /obj/structure/multiz/ladder/find_target()

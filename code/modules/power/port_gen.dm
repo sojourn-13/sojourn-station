@@ -4,6 +4,7 @@
 	desc = "A portable generator for emergency backup power"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "portgen0"
+	flags = ATOM_FLAG_CLIMBABLE
 	var/off_icon = "portgen0"
 	var/on_icon = "portgen1"
 	density = 1

@@ -5,6 +5,7 @@
 	icon_state = "psiphon:0"
 	density = 1
 	w_class = ITEM_SIZE_NORMAL
+	flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 
 	var/on = 0
 	var/direction_out = 0 //0 = siphoning, 1 = releasing

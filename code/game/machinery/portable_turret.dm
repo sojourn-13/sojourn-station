@@ -546,6 +546,7 @@ var/list/turret_icons
 	health = 0
 	stat |= BROKEN	//enables the BROKEN bit
 	spark_system.start()	//creates some sparks because they look cool
+	flags |= ATOM_FLAG_CLIMBABLE // they're now climbable
 	update_icon()
 
 /obj/machinery/porta_turret/Process()

@@ -22,6 +22,7 @@ var/list/custom_table_appearance = list(
 	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 	throwpass = 1
 	matter = list(MATERIAL_STEEL = 2)
+	flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 	var/flipped = 0
 	maxHealth = 10
 	health = 10

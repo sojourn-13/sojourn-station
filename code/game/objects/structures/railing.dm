@@ -10,6 +10,7 @@
 	flags = ON_BORDER
 	icon_state = "railing0"
 	matter = list(MATERIAL_STEEL = 4)
+	flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CHECKS_BORDER | ATOM_FLAG_CLIMBABLE
 	var/broken = 0
 	health = 70
 	var/maxhealth = 70
@@ -35,11 +36,6 @@
 /obj/structure/railing/Initialize()
 	. = ..()
 	update_icon(FALSE)
-
-/obj/structure/railing/New(loc)
-	..()
-	if(climbable)
-		verbs += /obj/structure/proc/climb_on
 
 /obj/structure/railing/Created(var/mob/user)
 	anchored = FALSE

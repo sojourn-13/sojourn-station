@@ -38,7 +38,7 @@
 			if(H.species.can_shred(user))
 				attack_generic(user,1,"slices")
 
-	if(climbers.len && !(user in climbers))
+	if(climbers?.len && !(user in climbers))
 		user.visible_message(SPAN_WARNING("[user.name] shakes \the [src]."), \
 					SPAN_NOTICE("You shake \the [src]."))
 		structure_shaken()
@@ -59,20 +59,6 @@
 				return
 		if(3.0)
 			return
-
-/obj/structure/New()
-	..()
-	if(climbable)
-		verbs += /obj/structure/proc/climb_on
-
-/obj/structure/proc/climb_on()
-
-	set name = "Climb structure"
-	set desc = "Climbs onto a structure."
-	set category = "Object"
-	set src in oview(1)
-
-	do_climb(usr)
 
 /obj/structure/receive_mouse_drop(mob/target, mob/user)
 

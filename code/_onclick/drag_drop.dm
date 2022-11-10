@@ -4,13 +4,13 @@
 	almost anything into a trash can.
 */
 
-/atom/MouseDrop(atom/over)
+/atom/MouseDrop(atom/over, src_location, over_location, src_control, over_control, params)
 	SHOULD_CALL_PARENT(TRUE)
-	if(!can_mouse_drop(over, usr) || !handle_mouse_drop(over, usr))
+	if(!can_mouse_drop(over, usr, src_location, over_location, src_control, over_control, params) || !handle_mouse_drop(over, usr, src_location, over_location, src_control, over_control, params))
 		. = ..()
 
-/atom/proc/handle_mouse_drop(var/atom/over, var/mob/user)
-	. = over.receive_mouse_drop(src, user)
+/atom/proc/handle_mouse_drop(var/atom/over, var/mob/user, src_location, over_location, src_control, over_control, params)
+	. = over.receive_mouse_drop(src, user, src_location, over_location, src_control, over_control, params)
 
 // Can the user drop something onto this atom?
 /atom/proc/user_can_mousedrop_onto(var/mob/user, var/atom/being_dropped, var/incapacitation_flags)
@@ -20,7 +20,7 @@
 	return CanPhysicallyInteract(user)
 
 // This proc checks if an atom can be mousedropped onto the target by the user.
-/atom/proc/can_mouse_drop(var/atom/over, var/mob/user = usr, var/incapacitation_flags = INCAPACITATION_DEFAULT)
+/atom/proc/can_mouse_drop(var/atom/over, var/mob/user = usr, var/incapacitation_flags = INCAPACITATION_DEFAULT, src_location, over_location, src_control, over_control, params)
 	SHOULD_CALL_PARENT(TRUE)
 	if(!istype(user) || !istype(over) ||QDELETED(user) || QDELETED(over) || QDELETED(src))
 		return FALSE
@@ -30,12 +30,12 @@
 		return FALSE
 	return TRUE
 
-/atom/proc/check_mousedrop_adjacency(var/atom/over, var/mob/user)
+/atom/proc/check_mousedrop_adjacency(var/atom/over, var/mob/user, src_location, over_location, src_control, over_control, params)
 	. = (Adjacent(user) && over.Adjacent(user))
 
 // Receive a mouse drop.
 // Returns false if the atom is valid for dropping further up the chain, true if the drop has been handled.
-/atom/proc/receive_mouse_drop(var/atom/dropping, var/mob/user)
+/atom/proc/receive_mouse_drop(var/atom/dropping, var/mob/user, src_location, over_location, src_control, over_control, params)
 	var/mob/living/H = user
 	if(istype(H) && !H.anchored && can_climb(H) && dropping == user)
 		do_climb(dropping)

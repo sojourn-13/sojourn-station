@@ -6,6 +6,7 @@
 	desc = "Cats really don't like these things."
 	density = FALSE
 	anchored = TRUE
+	flags = OBJ_FLAG_NOFALL | OBJ_FLAG_MOVES_UNSUPPORTED
 
 
 /obj/structure/catwalk/New()

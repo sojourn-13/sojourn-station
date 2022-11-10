@@ -6,6 +6,7 @@
 	anchored = 1
 	reagent_flags = OPENCONTAINER
 	volume = 100
+	flags = ATOM_FLAG_OPEN_CONTAINER | ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE | ATOM_FLAG_NO_REACT
 
 	blue_ink_tk_blocker = TRUE //Removes bugs with teleportion
 

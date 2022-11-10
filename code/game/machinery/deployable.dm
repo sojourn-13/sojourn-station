@@ -57,6 +57,7 @@ for reference:
 	density = 1
 	health = 100
 	maxHealth = 100
+	flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 	var/material/material
 
 /obj/structure/barricade/New(newloc, material_name)

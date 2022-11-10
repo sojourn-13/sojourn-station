@@ -6,6 +6,7 @@
 	density = FALSE //This is a pain, it doesnt need to block walking
 	w_class = ITEM_SIZE_NORMAL
 	reagent_flags = OPENCONTAINER
+	flags = ATOM_FLAG_CLIMBABLE | ATOM_FLAG_OPEN_CONTAINER
 	var/amount_per_transfer_from_this = 5	//shit I dunno, adding this so syringes stop runtime erroring. --NeoFite
 
 

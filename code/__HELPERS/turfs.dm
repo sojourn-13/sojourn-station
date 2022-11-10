@@ -112,7 +112,12 @@
 	for(var/obj/O in source)
 		if(O.simulated)
 			O.forceMove(new_turf)
-
+/*
+	for(var/obj/O in source)
+		if(O.obj_flags & OBJ_FLAG_NOFALL)
+			supported = TRUE
+			break
+*/
 	for(var/mob/M in source)
 		if(isEye(M)) continue // If we need to check for more mobs, I'll add a variable
 		M.forceMove(new_turf)

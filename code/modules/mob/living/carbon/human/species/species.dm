@@ -157,6 +157,9 @@
 
 	var/pass_flags = 0
 
+/datum/species/proc/can_overcome_gravity(var/mob/living/carbon/human/H)
+	return FALSE
+
 /datum/species/proc/get_eyes(var/mob/living/carbon/human/H)
 	return
 

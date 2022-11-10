@@ -192,27 +192,34 @@
 /mob/proc/is_physically_disabled()
 	return incapacitated(INCAPACITATION_DISABLED)
 
+/mob/living/incapacitated(var/incapacitation_flags = INCAPACITATION_DEFAULT)
+	. = ..()
+	if(!.)
+		if((incapacitation_flags & INCAPACITATION_STUNNED)    && stunned)
+			return TRUE
+		if((incapacitation_flags & INCAPACITATION_FORCELYING) && weakened)
+			return TRUE
+		if((incapacitation_flags & INCAPACITATION_KNOCKOUT)   && paralysis||sleeping)
+			return TRUE
+		if((incapacitation_flags & INCAPACITATION_WEAKENED)   && weakened)
+			return TRUE
+
 /mob/proc/incapacitated(var/incapacitation_flags = INCAPACITATION_DEFAULT)
-	if ((incapacitation_flags & INCAPACITATION_STUNNED) && stunned)
-		return 1
-
-	if ((incapacitation_flags & INCAPACITATION_FORCELYING) && (weakened || resting || pinned.len))
-		return 1
-
-	if ((incapacitation_flags & INCAPACITATION_KNOCKOUT) && (stat || paralysis || sleeping || (status_flags & FAKEDEATH)))
-		return 1
-
+	if(status_flags & ENABLE_AI)
+		return TRUE
+	if((incapacitation_flags & INCAPACITATION_FORCELYING) && (resting || LAZYLEN(pinned)))
+		return TRUE
 	if((incapacitation_flags & INCAPACITATION_RESTRAINED) && restrained())
-		return 1
-
+		return TRUE
+	if((incapacitation_flags & INCAPACITATION_KNOCKOUT) && (stat || (status_flags & FAKEDEATH)))
+		return TRUE
 	if((incapacitation_flags & (INCAPACITATION_BUCKLED_PARTIALLY|INCAPACITATION_BUCKLED_FULLY)))
 		var/buckling = buckled()
 		if(buckling >= PARTIALLY_BUCKLED && (incapacitation_flags & INCAPACITATION_BUCKLED_PARTIALLY))
-			return 1
+			return TRUE
 		if(buckling == FULLY_BUCKLED && (incapacitation_flags & INCAPACITATION_BUCKLED_FULLY))
-			return 1
-
-	return 0
+			return TRUE
+	return FALSE
 
 #undef UNBUCKLED
 #undef PARTIALLY_BUCKLED

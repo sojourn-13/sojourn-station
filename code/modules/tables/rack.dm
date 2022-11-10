@@ -6,6 +6,7 @@
 	can_plate = 0
 	can_reinforce = 0
 	flipped = -1
+	flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 
 /obj/structure/table/rack/New()
 	..()

@@ -112,16 +112,6 @@
 	else
 		return ..()
 
-/obj/machinery/optable/verb/climb_on()
-	set name = "Climb On Table"
-	set category = "Object"
-	set src in oview(1)
-
-	if(usr.stat || !ishuman(usr) || usr.restrained() || !check_table(usr))
-		return
-
-	take_victim(usr,usr)
-
 /obj/machinery/optable/affect_grab(var/mob/user, var/mob/target)
 	take_victim(target,user)
 	return TRUE

@@ -16,6 +16,7 @@
 	icon_state = "filingcabinet"
 	density = 1
 	anchored = 1
+	flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 	var/list/can_hold = list(
 		/obj/item/paper,
 		/obj/item/folder,

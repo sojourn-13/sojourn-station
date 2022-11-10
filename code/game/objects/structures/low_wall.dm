@@ -26,6 +26,7 @@
 	icon = 'icons/obj/structures/low_wall.dmi'
 	icon_state = "metal"
 	throwpass = TRUE
+	flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE | ATOM_FLAG_CAN_BE_PAINTED | ATOM_FLAG_ADJACENT_EXCEPTION
 	var/connected = TRUE
 	var/wall_color = PLASTEEL_COLOUR
 	var/roundstart = FALSE
