@@ -61,7 +61,7 @@
 #define MUTATION_TERMITE_FRIEND /datum/genetics/mutation/termite_friend
 #define MUTATION_WURM_CRY /datum/genetics/mutation/wurm_cry
 #define MUTATION_SPARK_BREATH /datum/genetics/mutation/spark_breath
-#define MUTATION_FLAME_RETARDENT /datum/genetics/mutation/flame_retardent
+#define MUTATION_FLAME_RETARDANT /datum/genetics/mutation/flame_retardant
 //^^^ All mutations!
 
 
