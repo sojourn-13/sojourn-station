@@ -32,7 +32,7 @@
 	//Check if we have a smokeable in our hand.
 	if (istype(usr.get_active_hand(), /obj/item/clothing/mask/smokable))
 		var/obj/item/clothing/mask/smokable/ciggy = usr.get_active_hand()
-		usr.visible_message("[usr] lights \the [ciggy] with his breath.")
+		usr.visible_message("[usr] lights \the [ciggy] with their breath.")
 		ciggy.light()
 		return
 	if (istype(usr.get_active_hand(), /obj/item/paper))
