@@ -20,9 +20,7 @@
 		/datum/design/autolathe/gun/roe = 2,
 		/datum/design/autolathe/gun/sol = 3,
 		/datum/design/autolathe/gun/omnirifle = 2,
-		/datum/design/autolathe/gun/standard_omnirifle,
-		/datum/design/autolathe/gun/omnicarbine,
-		/datum/design/autolathe/gun/rds_omnicarbine = 2,
+		/datum/design/autolathe/gun/rds_omnicarbine = 3,
 		/datum/design/autolathe/gun/strelki = 2,
 		/datum/design/autolathe/gun/watchtower = 3,
 		/datum/design/autolathe/gun/rushing_bull = 4,
@@ -36,7 +34,6 @@
 		//STS
 		/datum/design/autolathe/gun/sts25,
 		/datum/design/autolathe/gun/sts30 = 2,
-		/datum/design/autolathe/gun/sts40 = 3,
 		//Flaregun
 		/datum/design/autolathe/gun/flare_gun,
 		//Misc

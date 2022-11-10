@@ -163,7 +163,7 @@
 	options["Shotgun Buckshot"] = "shot"
 	options["Shotgun Beanbag"] = "bean"
 	options["Shotgun Slug"] = "slug"
-	options[".60 Anti-Material"] = "antim"
+	options[".60 Anti-Materiel"] = "antim"
 	options["30mm rolled shot"] = "ball"
 	options[".22 flare shell"] = "flare"
 

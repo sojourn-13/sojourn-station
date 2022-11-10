@@ -15,7 +15,7 @@
 	metabolism = REM/2
 	heating_point = 523
 	heating_products = list("nanites")
-	scannable = 1
+	scannable = TRUE
 	affects_dead = 1
 	reagent_type = "Nanites"
 

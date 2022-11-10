@@ -405,7 +405,7 @@
 //// .60-06 ////
 /obj/item/ammo_casing/antim
 	name = "shell casing"
-	desc = "A 14.5mm Anti-Material shell."
+	desc = "A 14.5mm Anti-Materiel shell."
 	icon_state = "atmr"
 	spent_icon = "atmr-spent"
 	caliber = CAL_ANTIM
@@ -417,7 +417,7 @@
 
 /obj/item/ammo_casing/antim/scrap
 	name = "shell casing"
-	desc = "An old 14.5mm Anti-Material shell."
+	desc = "An old 14.5mm Anti-Materiel shell."
 	icon_state = "atmr_s"
 	spent_icon = "atmr_s-spent"
 	projectile_type = /obj/item/projectile/bullet/antim/scrap
@@ -428,7 +428,7 @@
 
 /obj/item/ammo_casing/antim/lethal
 	name = "\"Red-Nose\" shell casing"
-	desc = "A SA 14.5mm Anti-Material \"Red-Nose\" shell."
+	desc = "A SA 14.5mm Anti-Materiel \"Red-Nose\" shell."
 	icon_state = "atmr_red"
 	spent_icon = "atmr_red-spent"
 	projectile_type = /obj/item/projectile/bullet/antim/lethal
@@ -438,7 +438,7 @@
 
 /obj/item/ammo_casing/antim/ion
 	name = "\"Off-Switch\" shell casing"
-	desc = "A SA 14.5mm Anti-Material \"Off-Switch\" shell."
+	desc = "A SA 14.5mm Anti-Materiel \"Off-Switch\" shell."
 	icon_state = "atmr_red"
 	spent_icon = "atmr_red-spent"
 	projectile_type = /obj/item/projectile/bullet/antim/ion

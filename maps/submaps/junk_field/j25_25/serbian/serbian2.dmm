@@ -333,7 +333,6 @@
 /area/template_noop)
 "Dy" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/handmade_pistol/shotgun,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/template_noop)
 "Ed" = (

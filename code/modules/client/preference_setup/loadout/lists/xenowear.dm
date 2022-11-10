@@ -103,33 +103,35 @@
 	path = /obj/item/clothing/shoes/footwraps
 	slot = slot_shoes
 	sort_category = "Xenowear"
-	cost = 1
+	cost = 0
 
 /datum/gear/xenowear/footwraps1
 	display_name = "red footwraps"
 	path = /obj/item/clothing/shoes/footwraps2
 	slot = slot_shoes
 	sort_category = "Xenowear"
+	cost = 0
 
 /datum/gear/xenowear/footwraps2
 	display_name = "blue footwraps"
 	path = /obj/item/clothing/shoes/footwraps1
 	slot = slot_shoes
 	sort_category = "Xenowear"
+	cost = 0
 
 /datum/gear/xenowear/fingerlessgloves
 	display_name = "fingerless gloves"
 	path = /obj/item/clothing/gloves/fingerless
 	slot = slot_gloves
 	sort_category = "Xenowear"
-	cost = 1
+	cost = 0
 
 /datum/gear/xenowear/claw
 	display_name = "clawed glove"
 	path = /obj/item/clothing/gloves/botanic_leather/claw
 	slot = slot_gloves
 	sort_category = "Xenowear"
-
+	cost = 0
 /datum/gear/xenowear/loincloth
 	display_name = "loincloth"
 	path = /obj/item/clothing/under/loincloth
@@ -142,33 +144,33 @@
 	path = /obj/item/clothing/under/tribalhide
 	slot = slot_w_uniform
 	sort_category = "Xenowear"
-
+	cost = 0
 /datum/gear/xenowear/chestwrap
 	display_name = "chest wrap"
 	path = /obj/item/clothing/under/chestwrap
 	slot = slot_w_uniform
 	sort_category = "Xenowear"
-
+	cost = 0
 /datum/gear/xenowear/furs
 	display_name = "heavy fur robes"
 	path = /obj/item/clothing/suit/feline/furs
 	slot = slot_wear_suit
 	sort_category = "Xenowear"
-	cost = 1
+	cost = 0
 
 /datum/gear/xenowear/mantle
 	display_name = "hide mantle"
 	path = /obj/item/clothing/suit/lizard/mantle
 	slot = slot_wear_suit
 	sort_category = "Xenowear"
-	cost = 1
+	cost = 0
 
 /datum/gear/xenowear/roughspun
 	display_name = "roughspun robes"
 	path = /obj/item/clothing/suit/lizard/robe
 	slot = slot_wear_suit
 	sort_category = "Xenowear"
-	cost = 1
+	cost = 0
 
 /datum/gear/xenowear/toelessjackboots
 	display_name = "toeless jackboots"

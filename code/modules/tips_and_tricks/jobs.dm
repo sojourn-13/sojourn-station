@@ -312,7 +312,7 @@
 
 /tipsAndTricks/jobs/wall_obelisk
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
-    tipText = "Around some parts of the station their are wall obelisks, they run on biomatter so it might be wise to check them and refill them form time to time."
+    tipText = "Around some parts of the colony their are wall obelisks; they run on biomatter, so it might be wise to check them and refill them from time to time."
 
 /tipsAndTricks/jobs/church_wine_anti_toxin
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)

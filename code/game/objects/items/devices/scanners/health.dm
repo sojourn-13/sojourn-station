@@ -155,7 +155,7 @@
 				else
 					unknown++
 			if(reagentdata.len)
-				dat += span("highlight", "Beneficial reagents detected in subject's blood:")
+				dat += span("highlight", "List of reagents detected in subject's blood:") // Not all are beneficial. -Seb
 				for(var/d in reagentdata)
 					dat += reagentdata[d]
 			if(unknown)
@@ -175,7 +175,7 @@
 					var/datum/data/record/V = virusDB[ID]
 					dat += SPAN_WARNING("Warning: Pathogen [V.fields["name"]] detected in subject's blood. Known antigen : [V.fields["antigen"]]")
 	if (M.getCloneLoss())
-		dat += SPAN_WARNING("Subject appears to have been imperfectly cloned.")
+		dat += SPAN_WARNING("Subject appears to have cellular corruption.")
 	if (M.has_brain_worms())
 		dat += SPAN_WARNING("Subject suffering from aberrant brain activity. Recommend further scanning.")
 	else if (M.getBrainLoss() >= 60 || !M.has_brain())

@@ -4,6 +4,7 @@
 	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_wear_suit
 	sort_category = "Faction: Security"
+	cost = 0
 
 /datum/gear/factionsecurity/beretcommander
 	display_name = "beret, security head"

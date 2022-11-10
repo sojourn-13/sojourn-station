@@ -232,6 +232,7 @@
 	taste_description = "metal"
 	reagent_state = SOLID
 	color = "#353535"
+	scannable = TRUE // Helps with blood restoration, should avoid confusion with other stuff
 
 
 /datum/reagent/metal/iron/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
@@ -288,6 +289,7 @@
 	taste_description = "sweetness" //potassium is bitter in higher doses but sweet in lower ones.
 	reagent_state = SOLID
 	color = "#A0A0A0"
+	scannable = TRUE // Helps with pinpointing kidney failure
 
 /datum/reagent/metal/potassium/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()

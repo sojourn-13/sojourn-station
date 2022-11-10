@@ -363,8 +363,8 @@
 	..()
 
 // === Used by trade stations
-/obj/item/reagent_containers/glass/bottle/trade/clonexadone
-	preloaded_reagents = list("clonexadone" = 60)
+/obj/item/reagent_containers/glass/bottle/trade/cronexidone
+	preloaded_reagents = list("cronexidone" = 60)
 
 /obj/item/reagent_containers/glass/bottle/trade/imidazoline
 	preloaded_reagents = list("imidazoline" = 60)

@@ -37,7 +37,7 @@
 	hidden_inventory = list(
 		"Firearms" = list(
 			/obj/item/gun/projectile/automatic/c20r = custom_good_amount_range(list(1, 1)),
-			/obj/item/gun/projectile/automatic/sts/hrifle = custom_good_amount_range(list(1, 1))
+			/obj/item/gun/projectile/automatic/omnirifle = custom_good_amount_range(list(1, 1))
 		),
 		"RIG Modules" = list(
 			/obj/item/rig_module/autodoc,

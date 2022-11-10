@@ -386,10 +386,9 @@
 		"peridaxon","bicaridine","meralyne","hyperzine",
 		"rezadone","spaceacillin","ethylredoxrazine",
 		"stoxin","chloralhydrate","cryoxadone",
-		"clonexadone","ossisine","noexcutite","kyphotorin",
+		"cronexidone","ossisine","noexcutite","kyphotorin",
 		"detox","polystem","purger","addictol","aminazine",
-		"vomitol","haloperidol","paroxetine","citalopram",
-		"methylphenidate"
+		"haloperidol","paroxetine","citalopram","methylphenidate"
 	)
 
 /obj/machinery/chemical_dispenser/industrial

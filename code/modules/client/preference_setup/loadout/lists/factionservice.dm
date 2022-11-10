@@ -4,6 +4,7 @@
 	slot = slot_wear_suit
 	allowed_roles = list("Gardener")
 	sort_category = "Faction: Service"
+	cost = 0
 
 /datum/gear/factionservice/cloak
 	display_name = "cloak, service"

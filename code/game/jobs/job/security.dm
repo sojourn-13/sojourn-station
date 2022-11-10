@@ -90,7 +90,8 @@
 		access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 		access_moebius, access_engine, access_mining, access_construction, access_mailsorting,
 		access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_sec_shop,
-		access_external_airlocks, access_research_equipment, access_prospector, access_tcomsat, access_kitchen, access_medical_suits
+		access_external_airlocks, access_research_equipment, access_prospector, access_tcomsat, access_hydroponics,
+		access_bar, access_kitchen, access_medical_suits
 	)
 
 	stat_modifiers = list(
@@ -101,7 +102,8 @@
 
 	perks = list(/datum/perk/ass_of_concrete,
 				 /datum/perk/codespeak,
-				 /datum/perk/chem_contraband)
+				 /datum/perk/chem_contraband,
+				 /datum/perk/gunsmith)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -148,7 +150,8 @@
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
-		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen, access_medical_suits, access_sec_shop, access_forensics_lockers
+		access_external_airlocks, access_research_equipment, access_prospector,
+		access_hydroponics, access_bar, access_kitchen, access_medical_suits, access_sec_shop, access_forensics_lockers
 	)
 
 	stat_modifiers = list(
@@ -259,7 +262,8 @@
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels,
-		access_external_airlocks, access_prospector, access_brig, access_kitchen, access_medical_suits
+		access_external_airlocks, access_prospector, access_brig, access_hydroponics, access_bar, access_kitchen,
+		access_medical_suits
 	)
 
 	perks = list(/datum/perk/ear_of_quicksilver,
