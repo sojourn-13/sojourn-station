@@ -23,6 +23,8 @@
 	penetration_multiplier = 0
 	init_recoil = SMG_RECOIL(0.6)
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	serial_type = "INDEX"
+	serial_shown = FALSE
 
 /obj/item/gun/projectile/automatic/luty/update_icon()
 	..()
