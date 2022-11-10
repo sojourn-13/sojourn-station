@@ -1,7 +1,7 @@
 //Macro: MUTATION_FLAME_RETARDENT
 //runs a process every now and then to extinguish the holder
 /datum/genetics/mutation/flame_retardant
-	name = "Flame Retardent"
+	name = "Flame Retardant"
 	key = "MUTATION_FLAME_RETARDENT"
 	desc = "Causes a flame smothering fluid to be produced on the skin."
 	gain_text = "Your skin feels hydrated."
