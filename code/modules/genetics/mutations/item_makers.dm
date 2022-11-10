@@ -163,6 +163,6 @@
 /datum/genetics/mutation/sac_contents/slime_bone
 	name = "Slime bone"
 	key = "MUTATION_SLIME_BONE"
-	desc = "When cloned in an organ sac, creates a slimy cartalidge from an unidentified substance."
+	desc = "When cloned in an organ sac, creates a slimy cartilage from an unidentified substance."
 	sac_desc_modifier = "It wobbles and jiggles."
 	loot = list(/obj/item/organ/internal/bone/slime)
