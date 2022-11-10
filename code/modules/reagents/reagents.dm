@@ -29,8 +29,8 @@
 	var/addiction_chance = 0
 	var/withdrawal_threshold = 0
 	var/withdrawal_rate = REM * 2
-	var/scannable = 0 // Shows up on health analyzers.
-	var/affects_dead = 0
+	var/scannable = FALSE // If set to TRUE, the reagent shows up on health analyzers.
+	var/affects_dead = FALSE
 	var/glass_icon_state = null
 	var/glass_name = null
 	var/glass_desc = null

@@ -736,8 +736,8 @@
 //Fancy verson
 /obj/item/gun_upgrade/magwell/auto_eject/no_removal
 	name = "SI \"Faller\" Magwell Clearer"
-	desc = "A rather oddly designed magwell clearing device that when added to guns that have an auto-eject magwell prevent it, if it dosn't prevent an auto-eject it will force the magwel itself out! When force-ejecting a mag, will play a beeping sound.\
-	Unlike the other versons on the market this was once added will not be removable as it replaces key components to be as seemless as possable."
+	desc = "A rather oddly designed magwell clearing device that when added to guns that have an auto-eject magwell prevent it, if it dosn't prevent an auto-eject it will force the magwell itself out! When force-ejecting a mag, it will play a beeping sound.\
+	Unlike the other versions on the market this, once added, will not be removable as it replaces key components to be as seamless as possible."
 	can_remove = FALSE
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GLASS = 2, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1)
 
@@ -748,7 +748,7 @@
 	GUN_UPGRADE_AUTOEJECT = TRUE)
 	I.req_gun_tags = list(GUN_MAGWELL)
 	I.gun_loc_tag = GUN_MAGWELL
-	I.prefix = "intrigated dropping"
+	I.prefix = "integrated dropping"
 
 
 //Underbarrel aka bipods
@@ -831,7 +831,7 @@
 	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_MUZZLE
-	I.prefix = "silenced"
+	I.prefix = "badly silenced"
 
 /obj/item/gun_upgrade/mechanism/faulty
 	name = "Unknown Clockwork Mechanism"
@@ -867,7 +867,7 @@
 	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_SCOPE
-	I.prefix = "scoped"
+	I.prefix = "badly zeroed"
 
 /obj/item/gun_upgrade/mechanism/faulty_trapped
 	name = "Jammed loader"
@@ -884,7 +884,7 @@
 	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_MECHANISM
-	I.prefix = "feather trigger"
+	I.prefix = "trigger feathered"
 
 #define TRASH_GUNMODS list(/obj/item/gun_upgrade/trigger/faulty, /obj/item/gun_upgrade/barrel/faulty, \
 		/obj/item/gun_upgrade/muzzle/faulty, /obj/item/gun_upgrade/mechanism/faulty, \

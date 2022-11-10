@@ -249,7 +249,7 @@
 				occupant.heal_organ_damage(heal_brute,heal_fire)
 				occupant.adjustCloneLoss(-5) //Were always healing a bit of cloneloss, not much tho
 		var/has_cryo = occupant.reagents.get_reagent_amount("cryoxadone") >= 1
-		var/has_clonexa = occupant.reagents.get_reagent_amount("clonexadone") >= 1
+		var/has_clonexa = occupant.reagents.get_reagent_amount("cronexidone") >= 1
 		var/has_cryo_medicine = has_cryo || has_clonexa
 		if(beaker && !has_cryo_medicine)
 			beaker.reagents.trans_to_mob(occupant, 1, CHEM_BLOOD)

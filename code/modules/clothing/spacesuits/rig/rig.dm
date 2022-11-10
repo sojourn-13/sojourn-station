@@ -41,6 +41,11 @@
 	obscuration = LIGHT_OBSCURATION
 	tool_qualities = list(QUALITY_ARMOR = 100)
 	max_upgrades = 1
+	blacklist_upgrades = list(
+							/obj/item/tool_upgrade/augment = TRUE,
+							/obj/item/tool_upgrade/refinement = TRUE,
+							/obj/item/gun_upgrade = TRUE, // No tacticool rigs
+							/obj/item/tool_upgrade/artwork_tool_mod = TRUE)
 	var/interface_path = "hardsuit.tmpl"
 	var/ai_interface_path = "hardsuit.tmpl"
 	var/interface_title = "Hardsuit Controller"

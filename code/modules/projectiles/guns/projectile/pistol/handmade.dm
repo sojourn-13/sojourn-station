@@ -48,7 +48,7 @@
 /obj/item/gun/projectile/handmade_pistol/anti_material
 	name = "handmade man-opener"
 	desc = "An unreliable hand-crafted pistol liable to blow up in your hands, while it has a chance to jam with every shot its easy and cheap to make with customizable calibers. \
-	Reloading, clearing jams, and opening or closing the chamber is done with a screwdriver. This one chambers up to one 14.5x114mm anti material ammo. What mad man made this? It's jam chance and recoil \
+	Reloading, clearing jams, and opening or closing the chamber is done with a screwdriver. This one chambers up to one 14.5x114mm anti materiel ammo. What mad man made this? It's jam chance and recoil \
 	are much higher than normal."
 	caliber = CAL_ANTIM
 	max_shells = 1
