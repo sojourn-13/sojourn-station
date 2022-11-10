@@ -1,4 +1,4 @@
-//Macro: MUTATION_FLAME_RETARDENT
+//Macro: MUTATION_FLAME_RETARDANT
 //runs a process every now and then to extinguish the holder
 /datum/genetics/mutation/flame_retardant
 	name = "Flame Retardant"
