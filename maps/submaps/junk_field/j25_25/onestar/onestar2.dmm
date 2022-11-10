@@ -614,7 +614,6 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/effect/decal/cleanable/blood/drip,
-/obj/item/gun/projectile/handmade_pistol,
 /obj/random/ammo,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/template_noop)

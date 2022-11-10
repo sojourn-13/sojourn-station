@@ -56,16 +56,14 @@
 /obj/random/oddity_guns/item_to_spawn()
 	return pickweight(list(
 				//Bullet
-				//obj/item/gun/projectile/handmade_pistol/anti_material/reliable = 1,
 				/obj/item/gun/projectile/deaglebolt = 1,
-				/obj/item/gun/projectile/automatic/lmg/saw/unicorn = 1,
 				/obj/item/gun/projectile/revolver/mistral/elite = 1,
 				/obj/item/gun/projectile/shotgun/doublebarrel/bluecross_shotgun = 1,
 				/obj/item/gun/projectile/automatic/pulse_rifle = 1,
 				/obj/item/gun/projectile/silenced/rat = 1,
 				/obj/item/gun/projectile/automatic/maxim/replica = 1,
 				/obj/item/gun/projectile/revolver/deacon = 1,
-				/obj/item/gun/projectile/clarissa/devil_eye = 1,
+				/obj/item/gun/projectile/makarov/devil_eye = 1,
 				/obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic = 1,
 				/obj/item/gun/projectile/boltgun/bluecross = 1,
 				/obj/item/gun/projectile/that_gun = 1,
