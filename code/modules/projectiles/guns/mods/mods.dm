@@ -867,7 +867,7 @@
 	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_SCOPE
-	I.prefix = "badly zeroed"
+	I.prefix = "scope"
 
 /obj/item/gun_upgrade/mechanism/faulty_trapped
 	name = "Jammed loader"
