@@ -11,4 +11,4 @@
 
 /datum/genetics/mutation_recipe/combination/flame_retardant
 	required_mutations = list(MUTATION_COW_SKIN, MUTATION_IMBECILE)
-	result_path = MUTATION_FLAME_RETARDENT
+	result_path = MUTATION_FLAME_RETARDANT
