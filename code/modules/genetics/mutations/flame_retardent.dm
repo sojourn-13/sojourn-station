@@ -2,7 +2,7 @@
 //runs a process every now and then to extinguish the holder
 /datum/genetics/mutation/flame_retardant
 	name = "Flame Retardant"
-	key = "MUTATION_FLAME_RETARDENT"
+	key = "MUTATION_FLAME_RETARDANT"
 	desc = "Causes a flame smothering fluid to be produced on the skin."
 	gain_text = "Your skin feels hydrated."
 	instability = 10
