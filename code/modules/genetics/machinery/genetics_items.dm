@@ -564,7 +564,7 @@ Neglects to mention where to find its pieces.
 		"Some termites can be made even larger!",
 		"Loud sounds mixed with specific friends can lead to buddy's when you need it most.",
 		"Cats can be made both bigger and smaller!",
-		"Making a dog to big will result in a bear.",
+		"Making a dog too big will result in a bear.",
 		"The Gigantism gene only produces an Empress spider when combined with egg-laying spider DNA.",
 		"The Gigantism gene only produces an Emperor spider when combined with Tarantula-type spider DNA.",
 		"Do NOT, under ANY CIRCUMSTANCES, clone the combination of an emperor and an empress spider.",
