@@ -158,21 +158,9 @@
 		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
-/datum/craft_recipe/repairs/sika_boltgun
-	name = "Sika light boltgun"
-	result = /obj/item/gun/projectile/boltgun/light
-	steps = list(
-		list(/obj/item/gun/projectile/boltgun/sawn/light, 1, "time" = 60),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
-		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
-		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60)
-	)
-
 /datum/craft_recipe/repairs/roe_boltgun
 	name = "Roe light boltgun"
-	result = /obj/item/gun/projectile/boltgun/light_wood
+	result = /obj/item/gun/projectile/boltgun/light
 	steps = list(
 		list(/obj/item/gun/projectile/boltgun/sawn/light_wood, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),

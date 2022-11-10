@@ -262,13 +262,9 @@
 	name = "SA LMG 6.5x39mm \"Pegasus\""
 	build_path = /obj/item/gun/projectile/automatic/lmg/saw
 
-/datum/design/autolathe/gun/sika
-	name = "Hunters Inc BR 6.5x39mm \"Sika\""
-	build_path = /obj/item/gun/projectile/boltgun/light
-
 /datum/design/autolathe/gun/roe
 	name = "Hunters Inc BR 6.5x39mm \"Roe\""
-	build_path = /obj/item/gun/projectile/boltgun/light_wood
+	build_path = /obj/item/gun/projectile/boltgun/light
 
 /datum/design/autolathe/gun/nail_gun
 	name = "GP 6.5x39mm \"Nail\""
