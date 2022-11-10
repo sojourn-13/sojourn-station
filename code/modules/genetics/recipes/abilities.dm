@@ -10,5 +10,6 @@
 	result_path = MUTATION_SPARK_BREATH
 
 /datum/genetics/mutation_recipe/combination/flame_retardant
-	required_mutations = list(MUTATION_COW_SKIN, MUTATION_IMBECILE)
+	required_on_clone_types = list(/mob/living/carbon/superior_animal/giant_spider/hunter/pepper)
+	required_mutations = list(MUTATION_IMBECILE)
 	result_path = MUTATION_FLAME_RETARDANT
