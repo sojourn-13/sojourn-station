@@ -51,9 +51,9 @@
 	path = /obj/item/clothing/accessory/scarf/
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/accessory/shemaugh
-	display_name = "shemaugh selection"
-	path = /obj/item/clothing/accessory/shemaugh
+/datum/gear/accessory/shemagh
+	display_name = "shemagh selection"
+	path = /obj/item/clothing/accessory/shemagh
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/tie

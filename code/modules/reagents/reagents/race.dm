@@ -12,7 +12,7 @@
 	nerve_system_accumulations = 0
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/medicine/sabledone/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 200, TRUE)
@@ -44,7 +44,7 @@
 	nerve_system_accumulations = 0
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/medicine/hadrenol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustOxyLoss(-0.6)
@@ -63,7 +63,7 @@
 	nerve_system_accumulations = 0
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/medicine/hustim/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.heal_organ_damage(0.8, 0.4, 6)
@@ -142,7 +142,7 @@
 	nerve_system_accumulations = 0
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/medicine/sergatonin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_TGH, 25, STIM_TIME, "naratonin")
@@ -166,7 +166,7 @@
 	nerve_system_accumulations = 0
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/medicine/cindpetamol/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
 	M.adjustToxLoss(-8)

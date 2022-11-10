@@ -577,7 +577,7 @@
 	recoil = 10
 	added_damage_bullet_pve = 7.5
 
-//// 14.5×114mm Anti-Material Rifle Rounds ////
+//// 14.5×114mm Anti-Materiel Rifle Rounds ////
 /obj/item/projectile/bullet/antim
 	damage_types = list(BRUTE = 60)
 	armor_penetration = 100
@@ -879,7 +879,7 @@
 	step_delay = 0.9
 	recoil = 25
 	added_damage_bullet_pve = 15
-	
+
 /obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
 	if (!testing)
 		explosion(target, 0, 0, 3)

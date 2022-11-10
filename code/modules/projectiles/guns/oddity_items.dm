@@ -4,7 +4,7 @@
 /obj/item/gun/projectile/handmade_pistol/anti_material/reliable
 	name = "\"Finger of God\" handmade pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	Whoever made this particular model did exceptional work. Unlike lesser handmade pistols, this one jams less and has much better shot capability. This one chambers 14.5mm anti material ammo."
+	Whoever made this particular model did exceptional work. Unlike lesser handmade pistols, this one jams less and has much better shot capability. This one chambers 14.5mm anti materiel ammo."
 	icon = 'icons/obj/guns/projectile/hm_bluecross.dmi'
 	jam_chance = 5
 	damage_multiplier = 1.36
