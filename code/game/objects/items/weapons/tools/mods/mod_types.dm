@@ -481,10 +481,10 @@
 	UPGRADE_PRECISION = 10
 	)
 	I.required_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING, QUALITY_CLAMPING, QUALITY_BONE_SETTING, QUALITY_PULSING, QUALITY_SHOVELING, QUALITY_DIGGING)
-	I.prefix = "magnetic"
+	I.prefix = "magnetic tipped"
 
 /obj/item/tool_upgrade/refinement/ported_barrel
-	name = "ported barrel"
+	name = "composite barrel"
 	desc = "A barrel extension for a welding tool (or gun) which helps manage gas pressure and keep the torch (or barrel) steady. When attached to a gun it allows for greater recoil control and a smaller flash at the cost of stopping power."
 	icon_state = "ported_barrel"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 2)
@@ -510,7 +510,7 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_MUZZLE
 	I.required_qualities = list(QUALITY_WELDING)
-	I.prefix = "ported"
+	I.prefix = "composite barreled"
 
 /obj/item/tool_upgrade/refinement/compensatedbarrel
 	name = "gravity compensated barrel"
@@ -585,7 +585,7 @@
 	UPGRADE_HEALTH_THRESHOLD = -10,
 	UPGRADE_CELLPLUS = 1
 	)
-	I.prefix = "medium-cell"
+	I.prefix = "large-socketed"
 	I.req_fuel_cell = REQ_CELL
 
 /obj/item/tool_upgrade/augment/cell_adapt
@@ -608,7 +608,7 @@
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_CELLMINUS = 1,
 	UPGRADE_BULK = -2)
-	I.prefix = "medium-cell"
+	I.prefix = "small-socketed"
 	I.req_fuel_cell = REQ_CELL
 	I.req_gun_tags = list(GUN_ENERGY)
 	I.gun_loc_tag = GUN_MECHANISM
@@ -879,7 +879,7 @@
 	UPGRADE_DEGRADATION_MULT = 0.01,
 	UPGRADE_HEALTH_THRESHOLD = 10
 	)
-	I.prefix = "self-healing"
+	I.prefix = "self-repairing"
 
 /obj/item/tool_upgrade/augment/hydraulic
 	name = "hydraulic circuits"

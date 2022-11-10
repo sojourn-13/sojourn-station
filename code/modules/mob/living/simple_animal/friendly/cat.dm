@@ -31,7 +31,8 @@
 
 /mob/living/simple_animal/cat/Life()
 	..()
-
+	if (stat == DEAD)
+		return
 	if (turns_since_move > 5 || (flee_target || mousetarget))
 		SSmove_manager.move_to(src,0)
 		turns_since_move = 0
@@ -97,17 +98,20 @@
 
 /mob/living/simple_animal/cat/proc/handle_flee_target()
 	//see if we should stop fleeing
+	if (stat == DEAD)
+		flee_target = null
+
 	if (flee_target && !(flee_target.loc in view(src)))
 		flee_target = null
 		stop_automated_movement = 0
 
-	if (flee_target)
+	if (flee_target && stat != DEAD)
 		if(prob(25)) say("HSSSSS")
 		stop_automated_movement = 1
 		SSmove_manager.move_away(src, flee_target, 7, 2)
 
 /mob/living/simple_animal/cat/proc/set_flee_target(atom/A)
-	if(A)
+	if(A && stat != DEAD)
 		flee_target = A
 		turns_since_move = 5
 
