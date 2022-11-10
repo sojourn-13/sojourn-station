@@ -8,13 +8,13 @@
 	instability = 10
 	exclusive_type = MUT_TYPE_SKIN
 
-/datum/genetics/mutation/flame_retardent/onMobImplant()
+/datum/genetics/mutation/flame_retardant/onMobImplant()
 	initializeProcessing()
 
-/datum/genetics/mutation/flame_retardent/onMobRemove()
+/datum/genetics/mutation/flame_retardant/onMobRemove()
 	haltProcessing()
 
-/datum/genetics/mutation/flame_retardent/Process()
+/datum/genetics/mutation/flame_retardant/Process()
 	if(!..())
 		return
 	if(container.holder.bodytemperature >= 350)
