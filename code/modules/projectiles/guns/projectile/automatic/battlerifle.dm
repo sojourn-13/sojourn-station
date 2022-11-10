@@ -1,5 +1,5 @@
 /obj/item/gun/projectile/automatic/omnirifle
-	name = "\"Omnirifle\" heavy rifle"
+	name = "\"Omnirifle\""
 	desc = "A standard issue battle rifle issued to SolFed Marines, produced across the galaxy by state arsenals. \
 		 A weapon built for versatility and rugged reliability, it fires a variety of utility and specialized munitions. \
 		 Chambered in 8.6x70mm, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \

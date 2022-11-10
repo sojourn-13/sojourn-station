@@ -12,15 +12,6 @@
 	icon = 'icons/obj/guns/energy/sniper_saint.dmi'
 	serial_type = "BlueCross"
 
-/obj/item/gun/projectile/automatic/lmg/saw/unicorn
-	name = "\"Unicorn\" light machinegun"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	A small carved inscription of a unicorn has been cut into place near some additional added weights, giving this rifle amazing recoil control."
-	init_recoil = LMG_RECOIL(0.5)
-	price_tag = 3550
-	slowdown_hold = 0
-	serial_type = "BlueCross"
-
 /obj/item/gun/projectile/revolver/mistral/elite
 	name = "\"Elite\" magnum revolver"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
