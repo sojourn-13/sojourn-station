@@ -225,4 +225,5 @@
 	)
 	matter = list(MATERIAL_STEEL = 22, MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 5, MATERIAL_WOOD = 12)
 	price_tag = 500
-	serial_type = ""
+	serial_type = "INDEX"
+	serial_shown = FALSE
