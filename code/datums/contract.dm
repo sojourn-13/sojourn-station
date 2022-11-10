@@ -73,7 +73,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"Mech Shield droid" = /obj/item/mecha_parts/mecha_equipment/combat_shield,
 		"Mech RCD" = /obj/item/mecha_parts/mecha_equipment/tool/rcd,
 		"PBT Pacifier mounted taser" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser,
-		"Ultra AC 2"= /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg,
+		"Ultra AC 2"= /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/ultracannon,
 		"LBX AC 10 Scattershot" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot,
 		"CH-PS Immolator laser" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser,
 		"CH-LC Solaris laser cannon" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy,

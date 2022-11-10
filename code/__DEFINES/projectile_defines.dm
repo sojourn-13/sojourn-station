@@ -18,6 +18,13 @@
 #define CAL_CROSSBOW "bolt"
 #define CAL_ARROW "arrow"
 
+//Mech Caliber Defines
+#define CAL_MECH_MACHINEGUN 	"20mm"
+#define CAL_MECH_AUTOCANNON		"50mm HEAD"
+#define CAL_MECH_ULTRACANNON	"40mm HEAD"
+#define CAL_MECH_SHOTGUN		"30mm HEAD"
+#define CAL_MECH_MISSILE		"6.2 Missile"
+
 //Gun loading types
 #define SINGLE_CASING 	1	//The gun only accepts ammo_casings. ammo_magazines should never have this as their mag_type.
 #define SPEEDLOADER 	2	//Transfers casings from the mag to the gun when used.
