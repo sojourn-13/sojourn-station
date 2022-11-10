@@ -2,8 +2,8 @@
 // Should spawn in bag or in hand
 
 /datum/gear/armament
-	display_name = "Loaded Makarov .35 Auto pistol (Rubber)"
-	path = /obj/item/gun/projectile/makarov/preloaded
+	display_name = "Loaded Clarissa .35 Auto pistol (Rubber)"
+	path = /obj/item/gun/projectile/clarissa/preloaded
 	sort_category = "Armament"
 	cost = 1
 
