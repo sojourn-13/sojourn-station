@@ -27,7 +27,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	slowdown_hold = 0.5
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		list(mode_name="short bursts", mode_desc = "Short, rapid 5 round bursts", burst=5,    burst_delay=2, move_delay=6,  icon="burst"),
 		list(mode_name="long bursts", mode_desc = "Long, rapid 8 round bursts",  burst=8, burst_delay=4, move_delay=8,  icon="burst"),
 		list(mode_name="suppressing fire", mode_desc = "Suppressing, 16 round bursts",  burst=16, burst_delay=4, move_delay=11,  icon="burst")

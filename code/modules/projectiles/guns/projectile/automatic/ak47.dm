@@ -25,7 +25,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY
 		)
 	serial_type = "EXC"
@@ -102,7 +102,7 @@
 	mag_well = MAG_WELL_LSRIFLE
 	fire_sound = 'sound/weapons/Laser.ogg'
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		BURST_5_ROUND,
 		SEMI_AUTO_NODELAY
 		)
@@ -157,7 +157,7 @@
 
 	var/obj/item/gun/projectile/automatic/underslung/shotgun_3/shotgun
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY,
 		list(mode_name="fire shotgun", mode_desc="Shoot the underbarrel shotgun",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)

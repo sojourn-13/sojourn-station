@@ -30,6 +30,7 @@
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 
 	init_firemodes = list(
+	FULL_AUTO_200,
 	SEMI_AUTO_NODELAY
 	)
 	serial_type = "Sol Fed"
@@ -100,5 +101,7 @@
 	zoom_factors = list(0.4)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
+		FULL_AUTO_200,
 		BURST_3_ROUND
 		)
+	serial_type = "H&S"

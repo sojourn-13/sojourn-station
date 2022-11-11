@@ -24,7 +24,7 @@
 
 
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
 		)
@@ -119,7 +119,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
-		FULL_AUTO_400
+		FULL_AUTO_300
 		)
 
 /obj/item/gun/projectile/automatic/sts/rifle/sawn
@@ -139,7 +139,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
-		FULL_AUTO_400
+		FULL_AUTO_300
 		)
 
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield
@@ -165,7 +165,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
-		FULL_AUTO_400
+		FULL_AUTO_300
 		)
 
 	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE,
@@ -199,5 +199,5 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
-		FULL_AUTO_400
+		FULL_AUTO_300
 		)

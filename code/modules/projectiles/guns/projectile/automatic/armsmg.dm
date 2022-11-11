@@ -20,7 +20,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
 	init_recoil = EMBEDDED_RECOIL(0.8)
 	init_firemodes = list(
-		FULL_AUTO_400_NOLOSS,
+		FULL_AUTO_300_NOLOSS,
 		BURST_3_ROUND_NOLOSS,
 		SEMI_AUTO_NODELAY
 		)

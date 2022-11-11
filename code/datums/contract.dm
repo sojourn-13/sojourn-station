@@ -40,7 +40,7 @@ GLOBAL_LIST_INIT(excel_item_targets,list(
 		//"a hand teleporter" = /obj/item/hand_tele,
 		//"a bluespace Harpoon" = /obj/item/bluespace_harpoon,
 		//"a rocket-powered charge hammer" = /obj/item/tool/hammer/charge,
-		"the premier's antique laser gun" = /obj/item/gun/energy/captain
+		"Destiny antique laser gun" = /obj/item/gun/energy/captain
 
 	))
 
@@ -51,7 +51,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"Warlock velvet posion wine" = /obj/item/reagent_containers/food/drinks/bottle/pwine,
 		"explosive ordinance storage box" = /obj/item/storage/box/explosive,
 		"Frenchman butterfly knife" = /obj/item/material/butterfly/frenchman,
-		"the premier's antique laser gun" = /obj/item/gun/energy/captain,
+		"Destiny antique laser gun" = /obj/item/gun/energy/captain,
 		"Hand teleporter device" = /obj/item/hand_tele,
 		"Omnirifle" = /obj/item/gun/projectile/automatic/omnirifle,
 		"bluespace Harpoon" = /obj/item/bluespace_harpoon,
@@ -289,21 +289,21 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 	var/target_type
 
 	var/static/list/possible_items = list(
-		"the premier's antique laser gun" = /obj/item/gun/energy/captain,
+		"Destiny antique laser gun" = /obj/item/gun/energy/captain,
 		"a hand teleporter" = /obj/item/hand_tele,
 		"an RCD" = /obj/item/rcd,
 		"a jetpack" = /obj/item/tank/jetpack,
-		"a captain's jumpsuit" = /obj/item/clothing/under/rank/captain,
+		"a premier's jumpsuit" = /obj/item/clothing/under/rank/captain,
 		"a functional AI" = /obj/item/device/aicard,
-		"the Technomancer Exultant's advanced voidsuit control module" = /obj/item/rig/ce,
+		"the GM advanced voidsuit control module" = /obj/item/rig/ce,
 		"the station blueprints" = /obj/item/blueprints,
 		"a sample of slime extract" = /obj/item/slime_extract,
 		"a piece of corgi meat" = /obj/item/reagent_containers/food/snacks/meat/corgi,
-		"a Moebius expedition overseer's jumpsuit" = /obj/item/clothing/under/rank/expedition_overseer,
-		"a exultant's jumpsuit" = /obj/item/clothing/under/rank/exultant,
-		"a Moebius biolab officer's jumpsuit" = /obj/item/clothing/under/rank/moebius_biolab_officer,
-		"a Ironhammer commander's jumpsuit" = /obj/item/clothing/under/rank/ih_commander,
-		"a First Officer's jumpsuit" = /obj/item/clothing/under/rank/first_officer,
+		"a CRO's jumpsuit" = /obj/item/clothing/under/rank/expedition_overseer,
+		"a CEO's jumpsuit" = /obj/item/clothing/under/rank/exultant,
+		"a CMO's jumpsuit" = /obj/item/clothing/under/rank/moebius_biolab_officer,
+		"a CO's jumpsuit" = /obj/item/clothing/under/rank/ih_commander,
+		"a Steward's jumpsuit" = /obj/item/clothing/under/rank/first_officer,
 		"the hypospray" = /obj/item/reagent_containers/hypospray,
 		"the premier's pinpointer" = /obj/item/pinpointer,
 		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,

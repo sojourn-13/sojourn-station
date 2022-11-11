@@ -509,7 +509,7 @@
 
 /datum/component/item_upgrade/proc/add_values_gun(var/obj/item/gun/G)
 	if(weapon_upgrades[GUN_UPGRADE_FULLAUTO])
-		G.add_firemode(FULL_AUTO_400)
+		G.add_firemode(FULL_AUTO_300)
 
 /datum/component/item_upgrade/proc/apply_values_firemode(var/datum/firemode/F)
 	for(var/i in F.settings)
