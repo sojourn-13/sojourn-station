@@ -38,7 +38,7 @@
 ///////////
 
 /obj/item/mech_ammo_box/hmg
-	name = "20mm ammunition box"
+	name = "25mm ammunition box"
 	desc = "A box of ammo meant for loading into a HMG platforms."
 	icon_state = "boxhrifle-practice"
 	ammo_amount_left = 300

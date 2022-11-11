@@ -80,7 +80,7 @@
 	loaded = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/hmg
-	name = "\improper 20mm Heavy Machinegun \"Lynx\""
+	name = "\improper 25mm Heavy Machinegun \"Lynx\""
 	desc = "An ancient weapon once used to be mounted on cars as a squad support weapon now relic of it's time still fully capable of riddling anything moving with salvo of bullets."
 	icon_state = "mecha_makeshift_uac2"
 	equip_cooldown = 20

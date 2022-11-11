@@ -19,7 +19,7 @@
 #define CAL_ARROW "arrow"
 
 //Mech Caliber Defines
-#define CAL_MECH_MACHINEGUN 	"20mm"
+#define CAL_MECH_MACHINEGUN 	"25mm"
 #define CAL_MECH_AUTOCANNON		"60mm HEAD"
 #define CAL_MECH_ULTRACANNON	"50mm HEAD"
 #define CAL_MECH_SHOTGUN		"30mm HEAD"
