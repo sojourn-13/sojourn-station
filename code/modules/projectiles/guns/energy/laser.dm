@@ -13,6 +13,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 5)
 	price_tag = 550
 	projectile_type = /obj/item/projectile/beam/midlaser
+	fire_delay = 5
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
 		WEAPON_NORMAL,
@@ -53,8 +54,8 @@
 /obj/item/gun/energy/laser/practice
 	name = "OT LG \"Lightfall\" - P"
 	desc = "A modified version of \"Old Testament\" brand laser carbine, this one fires less concentrated energy bolts, designed for target practice."
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 2)
-	price_tag = 250
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_WOOD = 2)
+	price_tag = 150
 	projectile_type = /obj/item/projectile/beam/practice
 
 /obj/item/gun/energy/captain
