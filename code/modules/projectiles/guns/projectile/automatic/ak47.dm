@@ -214,6 +214,7 @@
 	w_class = ITEM_SIZE_HUGE
 	init_recoil = RIFLE_RECOIL(0.7)
 	mag_well = MAG_WELL_RIFLE
+	excelsior = FALSE
 
 	origin_tech = list(TECH_COMBAT = 2)	//bad copies don't give good science
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
