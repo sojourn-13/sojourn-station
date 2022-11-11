@@ -11,7 +11,7 @@
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_WOOD = 10, MATERIAL_GLASS = 3, MATERIAL_SILVER = 2, MATERIAL_GOLD = 1)
 	projectile_type = /obj/item/projectile/beam/musket
-	fire_delay = 25 //Musket so you know
+	fire_delay = 20 //Musket so you know
 	charge_cost = 50 //Slow fire rate and damage is meh
 	init_recoil = CARBINE_RECOIL(1)
 	price_tag = 900

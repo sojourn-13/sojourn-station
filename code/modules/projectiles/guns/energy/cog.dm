@@ -10,7 +10,7 @@
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 5)
 	projectile_type = /obj/item/projectile/beam
-	fire_delay = 12 //old technology
+	fire_delay = 10 //old technology
 	charge_cost = 50
 	price_tag = 800
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
@@ -27,7 +27,7 @@
 	This model has been modified by the Marshals to allow for non-lethal electrodes to be discharged as well as lasers, but at the cost of its cell-usage efficiency."
 	icon = 'icons/obj/guns/energy/cog_alt.dmi' // Using their proper sprite now
 	w_class = ITEM_SIZE_BULKY
-	fire_delay = 12
+	fire_delay = 10
 	projectile_type = /obj/item/projectile/beam/stun
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 15, MATERIAL_SILVER = 10)
 	init_firemodes = list(

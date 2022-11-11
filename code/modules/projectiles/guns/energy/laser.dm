@@ -228,7 +228,7 @@
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
 		BURST_8_ROUND,
-		FULL_AUTO_800
+		FULL_AUTO_600
 		)
 	serial_type = "NM"
 
