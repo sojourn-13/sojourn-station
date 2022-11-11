@@ -146,3 +146,23 @@
 		/obj/item/organ/internal/nerve/sensitive_nerve,
 		/obj/item/organ/internal/nerve/sensitive_nerve)
 
+/datum/genetics/mutation/sac_contents/eyes
+	name = "Humanoid eyes"
+	key = "MUTATION_EYES"
+	desc = "When cloned in an organ sac, produces functional eyes from an unidentified substance."
+	sac_desc_modifier = "It focuses on its surroundings."
+	loot = list(/obj/item/organ/internal/eyes)
+
+/datum/genetics/mutation/sac_contents/marqua_eyes
+	name = "Marqua eye"
+	key = "MUTATION_MARQUA_EYES"
+	desc = "When cloned in an organ sac, produces a single Mar'qua-like eye from an unidentified substance."
+	sac_desc_modifier = "It watches the world around it."
+	loot = list(/obj/item/organ/internal/eyes/marqua)
+
+/datum/genetics/mutation/sac_contents/slime_bone
+	name = "Slime bone"
+	key = "MUTATION_SLIME_BONE"
+	desc = "When cloned in an organ sac, creates a slimy cartilage from an unidentified substance."
+	sac_desc_modifier = "It wobbles and jiggles."
+	loot = list(/obj/item/organ/internal/bone/slime)
