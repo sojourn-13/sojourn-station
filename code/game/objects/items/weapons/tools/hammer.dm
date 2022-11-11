@@ -7,6 +7,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	worksound = WORKSOUND_HAMMER
 	w_class = ITEM_SIZE_SMALL
+	push_attack = TRUE
 	origin_tech = list(TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_WOOD = 2)
 	price_tag = 30

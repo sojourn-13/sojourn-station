@@ -13,6 +13,7 @@
 	edge = TRUE
 	tool_qualities = list(QUALITY_SAWING = 35, QUALITY_CUTTING = 20, QUALITY_WIRE_CUTTING = 20)
 	price_tag = 20
+	forced_broad_strike = TRUE
 	embed_mult = 1 //Serrated blades catch on bone more easily
 
 /obj/item/tool/saw/bs
