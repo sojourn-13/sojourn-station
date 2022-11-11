@@ -2235,6 +2235,7 @@
 #include "code\modules\mob\living\carbon\superior_animal\psi_monsters\attack.dm"
 #include "code\modules\mob\living\carbon\superior_animal\psi_monsters\life.dm"
 #include "code\modules\mob\living\carbon\superior_animal\psi_monsters\psi_monster.dm"
+#include "code\modules\mob\living\carbon\superior_animal\psi_monsters\types\corrupted_beings.dm"
 #include "code\modules\mob\living\carbon\superior_animal\psi_monsters\types\Ploge.dm"
 #include "code\modules\mob\living\carbon\superior_animal\psi_monsters\types\PsiImpressive.dm"
 #include "code\modules\mob\living\carbon\superior_animal\psi_monsters\types\PsiMega.dm"
