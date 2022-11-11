@@ -43,7 +43,7 @@
 	icon_state = "boxhrifle-practice"
 	ammo_amount_left = 300
 	ammo_max_amout = 300
-	amount_per_click = 3 //Hack to make them impossable to go into negitives
+	amount_per_click = 3 //Hack to make them impossable to go into negitives / It can still go into negatives
 	ammo_type = CAL_MECH_MACHINEGUN
 	price_tag = 30
 
@@ -52,7 +52,7 @@
 //////////////////
 
 /obj/item/mech_ammo_box/cannon
-	name = "50mm HEAD ammunition box"
+	name = "60mm HEAD ammunition box"
 	desc = "A box of ammo meant for loading into a AC platforms."
 	icon_state = "boxhrifle-practice"
 	ammo_amount_left = 25
@@ -62,7 +62,7 @@
 	price_tag = 30
 
 /obj/item/mech_ammo_box/ultracannon
-	name = "40mm HEAD ammunition box"
+	name = "50mm HEAD ammunition box"
 	desc = "A box of ammo meant for loading into a U-AC platforms."
 	icon_state = "boxhrifle-practice"
 	ammo_amount_left = 25
