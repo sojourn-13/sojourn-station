@@ -476,6 +476,19 @@
 /obj/item/ammo_casing/shotgun/prespawned
 	amount = 5
 
+/obj/item/ammo_casing/shotgun/ceramic
+	name = "ceramic slug"
+	desc = "A 20mm sabot slug with compact ceramic material inside."
+	icon_state = "s-shell_ceramic"
+	spent_icon = "s-shell_ceramic-spent"
+	shell_color = "ceramic"
+	caliber = CAL_SHOTGUN
+	projectile_type = /obj/item/projectile/bullet/shotgun/ceramic
+	maxamount = 5
+
+/obj/item/ammo_casing/shotgun/ceramic/prespawned
+	amount = 5
+
 /obj/item/ammo_casing/shotgun/scrap
 	name = "old shotgun slug"
 	desc = "An older 20mm slug."
