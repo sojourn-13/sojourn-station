@@ -47,21 +47,17 @@
 	designs = list(
 		/datum/design/autolathe/gun/judiciary,
 		/datum/design/autolathe/gun/liberty,
-		/datum/design/autolathe/gun/rev10,
 		/datum/design/autolathe/gun/amnesty = 2,
 		/datum/design/autolathe/gun/judge = 2,
 		//SMGs
-		/datum/design/autolathe/gun/wirbelwind = 2,
 		/datum/design/autolathe/gun/freedom = 2,
 		/datum/design/autolathe/gun/specop = 3,
 		//rifles
 		/datum/design/autolathe/gun/mamba = 3,
 		/datum/design/autolathe/gun/viper = 4,
-		/datum/design/autolathe/gun/ostwind = 5,
 		/datum/design/autolathe/gun/copperhead = 4,
 		//shotguns
 		/datum/design/autolathe/gun/operator = 4,
-		/datum/design/autolathe/gun/riot_shotgun = 4,
 		//machinegun
 		/datum/design/autolathe/gun/dp = 2,
 		/datum/design/autolathe/gun/bastard = 3,
@@ -71,7 +67,6 @@
 		/datum/design/autolathe/gun/grenade_launcher_lenar = 7,
 		//sniper
 		/datum/design/autolathe/gun/python = 5,
-		/datum/design/autolathe/gun/nordwind = 7,
 		//flaregun
 		/datum/design/autolathe/gun/flare_gun,
 		//laser

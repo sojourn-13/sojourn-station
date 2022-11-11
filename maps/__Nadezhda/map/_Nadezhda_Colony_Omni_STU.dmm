@@ -529,8 +529,13 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "adJ" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/box/emp_grenade_shells,
 /obj/machinery/light/small,
+/obj/item/gun/projectile/automatic/mamba/copperhead{
+	pixel_y = 4
+	},
+/obj/item/gun/projectile/automatic/mamba/copperhead{
+	pixel_y = -4
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "adR" = (
@@ -2037,15 +2042,13 @@
 /area/nadezhda/hallway/surface/section1)
 "auh" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/backpack/duffelbag/guncase,
-/obj/item/storage/backpack/duffelbag/guncase,
-/obj/item/storage/backpack/duffelbag/guncase,
-/obj/item/storage/pouch/pistol_holster,
-/obj/item/storage/pouch/pistol_holster,
-/obj/item/storage/pouch/pistol_holster,
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/item/gun/projectile/colt/liberty,
+/obj/item/gun/projectile/judiciary,
+/obj/item/gun/projectile/colt/liberty,
+/obj/item/gun/projectile/judiciary,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "aui" = (
@@ -8344,12 +8347,14 @@
 	},
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small,
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small,
+/obj/item/ammo_magazine/ammobox/rifle_75_small,
+/obj/item/ammo_magazine/ammobox/rifle_75_small,
 /obj/item/ammo_magazine/light_rifle_257,
 /obj/item/ammo_magazine/light_rifle_257,
 /obj/item/ammo_magazine/light_rifle_257,
-/obj/item/ammo_magazine/light_rifle_257_short,
-/obj/item/ammo_magazine/light_rifle_257_short,
-/obj/item/ammo_magazine/light_rifle_257_short,
+/obj/item/ammo_magazine/rifle_75,
+/obj/item/ammo_magazine/rifle_75,
+/obj/item/ammo_magazine/rifle_75,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "bFA" = (
@@ -24807,10 +24812,6 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/construction)
 "ePe" = (
-/obj/machinery/door/window/westleft{
-	name = "Grenades";
-	req_access = list(3)
-	},
 /obj/structure/closet{
 	name = "high explosive grenades"
 	},
@@ -24821,6 +24822,10 @@
 /obj/item/storage/box/blast_grenade_shells,
 /obj/item/storage/box/blast_grenade_shells,
 /obj/structure/window/reinforced,
+/obj/machinery/door/window/westleft{
+	name = "Sniper rifles";
+	req_access = list(3)
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "ePl" = (
@@ -25003,12 +25008,13 @@
 /obj/machinery/atm{
 	pixel_y = 32
 	},
-/obj/structure/table/steel_reinforced,
-/obj/item/modular_computer/tablet/lease/preset,
-/obj/item/folder/blue,
 /obj/effect/floor_decal/steeldecal/steel_decals10,
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/structure/filingcabinet{
+	pixel_x = 10;
+	density = 0
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
@@ -27912,9 +27918,6 @@
 /area/nadezhda/security/tactical_blackshield)
 "frf" = (
 /obj/structure/closet/secure_closet/warden,
-/obj/item/device/eftpos{
-	eftpos_name = "Marshal EFTPOS scanner"
-	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "frh" = (
@@ -30526,22 +30529,25 @@
 /turf/simulated/floor/plating,
 /area/colony)
 "fPq" = (
-/obj/item/storage/box/syndie_kit/antimaterial_rifle{
-	name = "SA AMR kit"
-	},
-/obj/machinery/door/window/westleft{
-	name = "Sniper rifles";
-	req_access = list(3)
-	},
-/obj/structure/window/reinforced,
-/obj/structure/closet/crate/secure/weapon{
-	name = "AMR crate";
-	req_access = list(3)
-	},
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 0
 	},
+/obj/machinery/door/window/westright{
+	name = "Sniper rifles";
+	req_access = list(3)
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 0
+	},
+/obj/structure/closet{
+	name = "LTL / EMP grenades"
+	},
+/obj/item/storage/box/emp_grenade_shells,
+/obj/item/storage/box/baton_rounds,
+/obj/item/storage/box/baton_rounds,
+/obj/item/storage/box/baton_rounds,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "fPr" = (
@@ -50604,10 +50610,10 @@
 /area/nadezhda/rnd/circuitlab)
 "jFD" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/wirbelwind{
+/obj/item/gun/projectile/automatic/texan{
 	pixel_y = 8
 	},
-/obj/item/gun/projectile/automatic/wirbelwind,
+/obj/item/gun/projectile/automatic/texan,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "jFF" = (
@@ -62970,9 +62976,13 @@
 	req_access = list(3)
 	},
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/riot_autoshotgun,
-/obj/item/gun/projectile/automatic/riot_autoshotgun{
-	pixel_y = 8
+/obj/item/gun/energy/sunrise{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/gun/energy/sunrise{
+	pixel_x = -5;
+	pixel_y = -3
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
@@ -65470,14 +65480,16 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "mnI" = (
 /obj/structure/table/rack,
+/obj/item/gun/projectile/automatic/mamba/viper{
+	pixel_y = 7
+	},
 /obj/machinery/door/window/southleft{
 	name = "Marksman weaponry";
 	req_access = list(3)
 	},
-/obj/item/gun/projectile/automatic/ostwind{
-	pixel_y = 6
+/obj/item/gun/projectile/automatic/mamba/python{
+	pixel_y = -4
 	},
-/obj/item/gun/projectile/automatic/nordwind,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "mnJ" = (
@@ -65734,10 +65746,10 @@
 	dir = 4;
 	pixel_x = 0
 	},
-/obj/item/gun/energy/cog{
-	pixel_y = 8
+/obj/item/gun/energy/cog/gear,
+/obj/item/gun/energy/cog/gear{
+	pixel_y = 10
 	},
-/obj/item/gun/energy/cog,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "mpR" = (
@@ -72117,8 +72129,6 @@
 "nAD" = (
 /obj/structure/table/rack/shelf,
 /obj/item/gun/projectile/grenade/lenar,
-/obj/item/storage/box/baton_rounds,
-/obj/item/storage/box/baton_rounds,
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
@@ -81407,6 +81417,15 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "png" = (
 /obj/structure/table/steel_reinforced,
+/obj/item/stock_parts/manipulator,
+/obj/item/circuitboard/vending,
+/obj/item/tool/screwdriver,
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stack/cable_coil/blue,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "pnh" = (
@@ -83526,14 +83545,6 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/eris/crew_quarters/plasma_tag)
 "pHy" = (
-/obj/item/stock_parts/manipulator,
-/obj/item/circuitboard/vending,
-/obj/item/tool/screwdriver,
-/obj/item/stack/material/steel{
-	amount = 8
-	},
-/obj/item/stock_parts/console_screen,
-/obj/item/stock_parts/matter_bin,
 /obj/machinery/button/remote/blast_door{
 	id = "shop_armory_blast_door";
 	name = "Shop Front Door";
@@ -83544,7 +83555,11 @@
 	dir = 1
 	},
 /obj/structure/table/steel_reinforced,
-/obj/item/stack/cable_coil/blue,
+/obj/item/folder/blue,
+/obj/item/modular_computer/tablet/lease/preset,
+/obj/item/device/eftpos{
+	eftpos_name = "Marshal EFTPOS scanner"
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
 "pHC" = (
@@ -88664,10 +88679,14 @@
 /obj/structure/closet/crate/secure/weapon{
 	name = "pistol crate"
 	},
-/obj/item/gun/projectile/revolver/mateba,
+/obj/item/gun/projectile/revolver/tacticool_revolver,
+/obj/item/gun/projectile/revolver/rev10,
+/obj/item/ammo_magazine/speed_loader_kurtz_50/lethal,
+/obj/item/ammo_magazine/speed_loader_kurtz_50/lethal,
+/obj/item/ammo_magazine/speed_loader_magnum_40,
+/obj/item/ammo_magazine/speed_loader_magnum_40,
 /obj/item/ammo_magazine/ammobox/kurtz_50,
-/obj/item/ammo_magazine/speed_loader_kurtz_50/lethal,
-/obj/item/ammo_magazine/speed_loader_kurtz_50/lethal,
+/obj/item/ammo_magazine/ammobox/magnum_40,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "qEA" = (
@@ -97991,6 +98010,12 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "son" = (
 /obj/structure/table/rack/shelf,
+/obj/item/storage/backpack/duffelbag/guncase,
+/obj/item/storage/backpack/duffelbag/guncase,
+/obj/item/storage/backpack/duffelbag/guncase,
+/obj/item/storage/pouch/pistol_holster,
+/obj/item/storage/pouch/pistol_holster,
+/obj/item/storage/pouch/pistol_holster,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "soq" = (
@@ -99013,13 +99038,13 @@
 	pixel_x = 0
 	},
 /obj/item/gun/projectile/automatic/mamba{
+	pixel_y = 7
+	},
+/obj/item/gun/projectile/automatic/mamba{
 	pixel_y = 2
 	},
 /obj/item/gun/projectile/automatic/mamba{
 	pixel_y = -4
-	},
-/obj/item/gun/projectile/automatic/mamba/copperhead{
-	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
@@ -116941,19 +116966,21 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "vTf" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 0
+	},
 /obj/machinery/door/window/westright{
 	name = "Sniper rifles";
 	req_access = list(3)
 	},
 /obj/structure/closet/crate/secure/weapon{
-	name = "DMR crate";
+	name = "AMR crate";
 	req_access = list(3)
 	},
-/obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 0
+/obj/item/storage/box/syndie_kit/antimaterial_rifle{
+	name = "SA AMR kit"
 	},
-/obj/item/gun/projectile/automatic/mamba/python,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "vTg" = (
@@ -123280,10 +123307,10 @@
 /obj/item/gun/projectile/automatic/ostwind{
 	pixel_y = 8
 	},
-/obj/item/gun/projectile/automatic/ostwind,
 /obj/structure/closet/crate/secure/weapon{
 	name = "rifle crate"
 	},
+/obj/item/gun/projectile/automatic/nordwind,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "xcL" = (
@@ -142808,7 +142835,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+krD
 krD
 krD
 krD
@@ -143010,7 +143037,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+krD
 krD
 krD
 krD
@@ -143212,7 +143239,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+krD
 krD
 kzg
 jyT
@@ -143414,7 +143441,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+krD
 krD
 eAI
 eAI
@@ -143616,7 +143643,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+krD
 krD
 vTf
 fPq
@@ -143818,7 +143845,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+krD
 krD
 krD
 krD
@@ -144020,13 +144047,13 @@ sFI
 sFI
 sFI
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+krD
+krD
+krD
+krD
+krD
+krD
+krD
 krD
 syC
 taJ

@@ -14,7 +14,7 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_HRIFLE
+	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
 	price_tag = 1500
 	penetration_multiplier = 1.0
@@ -67,6 +67,7 @@
 	icon_state = "DMR"
 	item_state = "DMR"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
+	mag_well = MAG_WELL_HRIFLE
 	price_tag = 1750
 	damage_multiplier = 1.2
 	auto_eject = 1
@@ -93,7 +94,7 @@
 	icon_state = "warthog"
 	item_state = "warthog"
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
-	mag_well = MAG_WELL_HRIFLE
+	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	price_tag = 1500
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.1

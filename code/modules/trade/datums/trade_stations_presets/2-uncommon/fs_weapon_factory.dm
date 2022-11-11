@@ -65,9 +65,8 @@
 		),
 		"Top Class Firearms" = list(
 			/obj/item/gun/projectile/boltgun/scout,
-			/obj/item/gun/projectile/avasarala,
 			/obj/item/gun/projectile/basilisk,
-			/obj/item/gun/projectile/revolver/mateba,
+			/obj/item/gun/projectile/revolver/hornet,
 			/obj/item/gun/projectile/revolver/tacticool_revolver
 		),
 		"High End Laser Guns" = list(

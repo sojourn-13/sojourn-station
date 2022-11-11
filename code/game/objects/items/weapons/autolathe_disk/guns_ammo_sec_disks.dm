@@ -234,32 +234,6 @@
 
 // 10mm pistols
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/ladon
-	disk_name = "H&S - 10mm Auto-Mag Porton Handgun"
-	icon_state = "frozenstar"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/ladon_hs = 3,
-		/datum/design/autolathe/ammo/magnum_practice = 0,
-		/datum/design/autolathe/ammo/magnum_rubber,
-		/datum/design/autolathe/ammo/magnum,
-		/datum/design/autolathe/ammo/magnum_lethal = 2,
-		)
-
-/obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/sa
-	disk_name = "SA - 10mm Auto-Mag Sigia Handgun"
-	icon_state = "sa"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/ladon_sa = 3,
-		/datum/design/autolathe/ammo/magnum_practice = 0,
-		/datum/design/autolathe/ammo/magnum_rubber,
-		/datum/design/autolathe/ammo/magnum,
-		/datum/design/autolathe/ammo/magnum_lethal = 2,
-		)
-
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/dark
 	disk_name = "Seinemetall Defense GmbH - 10mm Auto-Mag Ladon Handgun"
 	icon_state = "onestar"
@@ -369,19 +343,6 @@
 		/datum/design/autolathe/ammo/kurtz_lethal = 2,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/naga
-	disk_name = "M6 12mm Naga Handgun"
-	icon_state = "black"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/naga = 3,
-		/datum/design/autolathe/ammo/kurtz_practice = 0,
-		/datum/design/autolathe/ammo/kurtz_rubber,
-		/datum/design/autolathe/ammo/kurtz,
-		/datum/design/autolathe/ammo/kurtz_lethal = 2,,
-		)
-
 /obj/item/computer_hardware/hard_drive/portable/design/guns/akurra
 	disk_name = "SA - 12mm Akurra Silenced Handgun"
 	icon_state = "sa"
@@ -393,19 +354,6 @@
 		/datum/design/autolathe/ammo/kurtz_rubber,
 		/datum/design/autolathe/ammo/kurtz,
 		/datum/design/autolathe/ammo/kurtz_lethal = 2,
-		)
-
-/obj/item/computer_hardware/hard_drive/portable/design/guns/revolver_mateba
-	disk_name = "SA - 12mm Kurtz Mateba Revolver"
-	icon_state = "sa"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/revolver/mateba = 3,
-		/datum/design/autolathe/ammo/slkurtz_practice = 0,
-		/datum/design/autolathe/ammo/slkurtz_rubber,
-		/datum/design/autolathe/ammo/slkurtz,
-		/datum/design/autolathe/ammo/slkurtz_lethal = 2,
 		)
 
 // SHOTGUNS
@@ -499,22 +447,9 @@
 
 // SMGs
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/wirbelwind
-	disk_name = "Seinemetall Defense GmbH - 9mm Wirbelwind SMG"
-	icon_state = "frozenstar"
-
-	license = 12
-	designs = list(
-		/datum/design/autolathe/gun/wirbelwind = 3,
-		/datum/design/autolathe/ammo/smg_practice = 0,
-		/datum/design/autolathe/ammo/smg_rubber,
-		/datum/design/autolathe/ammo/smg,
-		/datum/design/autolathe/ammo/smg_lethal = 2,
-	)
-
 /obj/item/computer_hardware/hard_drive/portable/design/guns/texan
-	disk_name = "SA - 9mm Texan SMG"
-	icon_state = "sa"
+	disk_name = "Seinemetall Defense GmbH - 9mm Texan SMG"
+	icon_state = "frozenstar"
 
 	license = 12
 	designs = list(
@@ -607,23 +542,6 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/bren
-	disk_name = "No-Publisher - 6.5mm \"Kalashnabren\""
-	icon_state = "black"
-
-	license = 16
-	designs = list(
-		/datum/design/autolathe/gun/bren = 6,
-		/datum/design/autolathe/ammo/rifle_short_practice = 0,
-		/datum/design/autolathe/ammo/rifle_short_rubber,
-		/datum/design/autolathe/ammo/rifle_short,
-		/datum/design/autolathe/ammo/rifle_short_lethal = 2,
-		/datum/design/autolathe/ammo/rifle_practice = 1,
-		/datum/design/autolathe/ammo/rifle_rubber = 2,
-		/datum/design/autolathe/ammo/rifle = 2,
-		/datum/design/autolathe/ammo/rifle_lethal = 4,
-	)
-
 // 7.62mm Rifles
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov
@@ -680,7 +598,7 @@
 //8.6mm heavy rifles
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/omni
-	disk_name = "H&S NM - 8.6mm Omni Heavy Rifle"
+	disk_name = "H&S NM - 8.6mm Omnirifle"
 	icon_state = "ironhammer"
 
 	license = 12
@@ -692,6 +610,18 @@
 		/datum/design/autolathe/ammo/hrifle_lethal = 2,
 	)
 
+/obj/item/computer_hardware/hard_drive/portable/design/guns/omni/longarm
+	disk_name = "H&S NM - 8.6mm Longarm Omnirfile"
+	icon_state = "ironhammer"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/scoped_omnirifle = 4,
+		/datum/design/autolathe/ammo/hrifle_practice = 0,
+		/datum/design/autolathe/ammo/hrifle_rubber,
+		/datum/design/autolathe/ammo/hrifle,
+		/datum/design/autolathe/ammo/hrifle_lethal = 2,
+	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/scout
 	disk_name = "H&S - 8.6mm Scout Sniper Rifle"
@@ -940,31 +870,4 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/ammo/slpistol_rubber = 2,
 		/datum/design/autolathe/ammo/slpistol,
 		/datum/design/autolathe/ammo/slpistol_lethal,
-	)
-
-//.223 Guns
-
-/obj/item/computer_hardware/hard_drive/portable/design/guns/laser_ak
-	disk_name = "SI - \"Legkiy-Kalashnikov\" laser carbine"
-	icon_state = "moebius"
-
-	license = 22 //This is a lot by the looks but understand that each bullet prints in 1s, so 1 gun 1 mag 20 bullets
-	designs = list(
-		/datum/design/research/item/weapon/laser_ak,
-		/datum/design/research/item/ammo/laser_mag,
-		/datum/design/research/item/ammo/laser,
-		/datum/design/research/item/ammo/laser/ap,
-		/datum/design/research/item/ammo/laser/lethal,
-	)
-
-/obj/item/computer_hardware/hard_drive/portable/design/guns/laser_sniper
-	disk_name = "SI - \"Star Striker\" laser boltgun"
-	icon_state = "moebius"
-
-	license = 31 //This is a lot by the looks but understand that each bullet prints in 1s, so 1 gun and 30 bullets (3 reloads)
-	designs = list(
-		/datum/design/research/item/weapon/starstriker,
-		/datum/design/research/item/ammo/laser,
-		/datum/design/research/item/ammo/laser/ap,
-		/datum/design/research/item/ammo/laser/lethal,
 	)

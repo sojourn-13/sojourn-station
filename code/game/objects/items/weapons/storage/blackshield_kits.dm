@@ -121,20 +121,6 @@
 		new /obj/item/cell/medium(src)
 		new /obj/item/storage/pouch/tubular(src)
 
-/obj/item/storage/box/bs_kit/greasegun
-	name = "\improper Grease Gun Primary Kit"
-	desc = "The standard Blackshield equipment kit containing a grease gun, an unusual choice as its low damage and slow firing rate make it more of a specialist option. The built in silencer \
-	and high capacity submachine magazines are perfect for cover fire and hiding your position."
-
-	populate_contents()
-		new /obj/item/gun/projectile/automatic/greasegun(src)
-		new /obj/item/ammo_magazine/smg_35(src)
-		new /obj/item/ammo_magazine/smg_35(src)
-		new /obj/item/ammo_magazine/smg_35(src)
-		new /obj/item/ammo_magazine/smg_35(src)
-		new /obj/item/ammo_magazine/smg_35(src)
-		new /obj/item/storage/pouch/ammo(src)
-
 /obj/item/storage/box/bs_kit/triage
 	name = "\improper Triage Kit"
 	desc = "A box containing a standard issue Triage Smg issued uniquely to corpsmen. Boasting a compact frame, low rate of fire but decent stopping power to deal with armored threats."
@@ -204,7 +190,7 @@
 	shooters and people with something to compensate for."
 
 	populate_contents()
-		new /obj/item/gun/projectile/lamia/dark(src)
+		new /obj/item/gun/projectile/lamia(src)
 		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 		new /obj/item/clothing/accessory/holster/leg(src)

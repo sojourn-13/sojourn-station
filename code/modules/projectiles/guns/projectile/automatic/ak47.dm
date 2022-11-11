@@ -82,6 +82,7 @@
 	price_tag = 800
 	serial_type = "NM"
 
+<<<<<<< Updated upstream
 /obj/item/gun/projectile/automatic/ak47/akl
 	name = "\"Legkiy-Kalashnikov\" laser"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
@@ -108,6 +109,8 @@
 		)
 	serial_type = "SI"
 
+=======
+>>>>>>> Stashed changes
 /obj/item/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" rifle"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \

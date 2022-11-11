@@ -51,6 +51,7 @@
 /obj/item/gun/projectile/automatic/sbaw/Initialize()
 	. = ..()
 	update_icon()
+<<<<<<< Updated upstream
 
 
 /obj/item/gun/projectile/automatic/sbaw/admin
@@ -67,3 +68,5 @@
 	FULL_AUTO_300,
 	)
 	serial_type = "BlueCross"
+=======
+>>>>>>> Stashed changes
