@@ -651,6 +651,17 @@
 	recoil = 16
 	added_damage_bullet_pve = 20
 
+/obj/item/projectile/bullet/shotgun/ceramic
+	name = "ceramic slug"
+	icon_state = "slug"
+	damage_types = list(BRUTE = 30)
+	armor_penetration = 10
+	knockback = 1 //KER-BLAM!!!!
+	affective_damage_range = 4
+	affective_ap_range = 4
+	recoil = 20
+	added_damage_bullet_pve = 10
+
 /obj/item/projectile/bullet/shotgun/beanbag
 	name = "beanbag"
 	icon_state = "rubber"
@@ -815,16 +826,16 @@
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	icon_state = "birdshot-1"
-	damage_types = list(BRUTE = 9)
-	added_damage_bullet_pve = 9
+	damage_types = list(BRUTE = 11)
+	added_damage_bullet_pve = 10
 	agony = 5
 	pellets = 4
 	range_step = 1
 	spread_step = 10
 	knockback = 0 //We do not knockback do to issues with bullet douping
 	step_delay = 0.9
-	affective_damage_range = 1
-	affective_ap_range = 1
+	affective_damage_range = 2
+	affective_ap_range = 2
 	recoil = 11
 
 /obj/item/projectile/bullet/pellet/shotgun/Initialize()

@@ -675,6 +675,11 @@
 	icon_state = iconstring
 //	return
 
+/obj/item/ammo_magazine/ammobox/shotgun/ceramic
+	name = "ammunition packet (20mm Ceramic)"
+	icon_state = "slug"
+	ammo_type = /obj/item/ammo_casing/shotgun/ceramic
+
 /obj/item/ammo_magazine/ammobox/shotgun/blanks
 	name = "ammunition packet (20mm Blank)"
 	icon_state = "slug"
