@@ -81,7 +81,7 @@
 /datum/design/research/item/mecha/weapon
 
 /datum/design/research/item/mecha/weapon/hmg
-	name = "20mm Heavy Machinegun \"Lynx\""
+	name = "25mm Heavy Machinegun \"Lynx\""
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/hmg
 	starts_unlocked = TRUE
 
