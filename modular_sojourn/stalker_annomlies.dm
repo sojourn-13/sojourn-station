@@ -625,10 +625,11 @@
 
 	var/blade_runner = 100
 	var/blade_sharpness_aka_damage_per_running_on_it = 5
-	var/fuel = 1
+	var/fuel = 15
 
-	color = "#AA4A44"
-
+	light_power = 2
+	light_range = 3
+	light_color = "#AA4A44"
 	pixel_x = 0
 	pixel_y = 0
 
@@ -715,6 +716,8 @@
 	var/fresh_ice = 2
 	var/down_hill = 2
 	var/lanth_of_ice = 3
+	pixel_x = 0
+	pixel_y = 0
 
 /*
 /mob/living/proc/trip(tripped_on, stun_duration)
