@@ -409,7 +409,6 @@
 
 
 /obj/structure/annomlies_diet/echo/proc/activate()
-	return
 	toggle()
 
 /obj/structure/annomlies_diet/echo/proc/attack(mob/living/M, mob/living/user)
