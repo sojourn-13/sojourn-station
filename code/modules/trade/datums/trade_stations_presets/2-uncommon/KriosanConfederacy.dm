@@ -17,7 +17,6 @@
 	inventory = list(
 		"Hunting Gear" = list(
 			/obj/item/gun/projectile/boltgun/light,
-			/obj/item/gun/projectile/boltgun/light_wood,
 			/obj/item/gun/projectile/boltgun/sa,
 			/obj/item/gun/projectile/automatic/nordwind/strelki,
 			/obj/item/gun/projectile/automatic/survivalrifle,

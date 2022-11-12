@@ -34,7 +34,7 @@
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 	else
-		new /obj/item/gun/projectile/clarissa/makarov(src)
+		new /obj/item/gun/projectile/makarov(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 	if(prob(25))
@@ -242,7 +242,7 @@
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 			else
-				new /obj/item/gun/projectile/clarissa/makarov(src)
+				new /obj/item/gun/projectile/makarov(src)
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		if("HEAVY_PISTOL")
@@ -428,7 +428,7 @@
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 			else
-				new /obj/item/gun/projectile/clarissa/makarov(src)
+				new /obj/item/gun/projectile/makarov(src)
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		if("HEAVY_PISTOL")

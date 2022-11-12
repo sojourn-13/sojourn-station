@@ -295,7 +295,7 @@
 				Now go back to the lab and wait for your patient to be cloned. It won't be long now, I promise.
 
 				<a name='9'><h3>Step 9: Cryo and clean SE injector on person</h3>
-				Has your body been cloned yet? Great! As soon as the guy pops out, grab them and stick them in cryogenics. Clonexadone and Cryoxadone help rebuild their genetic material. Then grab your clean SE injector and jab it in them. Once you've injected them,
+				Has your body been cloned yet? Great! As soon as the guy pops out, grab them and stick them in cryogenics. Cronexidone and Cryoxadone help rebuild their genetic material. Then grab your clean SE injector and jab it in them. Once you've injected them,
 				they now have clean Structural Enzymes and their defects, if any, will disappear in a short while.
 
 				<a name='10'><h3>Step 10: Give person clothes back</h3>
@@ -1304,7 +1304,7 @@
 	author = "Victoria Ponsonby"
 	title = "Chef Recipes"
 	page_link = "Guide_to_Food_and_Drinks"
-				
+
 /obj/item/book/manual/h_book
 	name = "Holy Book"
 	desc = "An undescript book for an unnamed religion."

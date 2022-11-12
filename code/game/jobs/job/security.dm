@@ -102,7 +102,8 @@
 
 	perks = list(/datum/perk/ass_of_concrete,
 				 /datum/perk/codespeak,
-				 /datum/perk/chem_contraband)
+				 /datum/perk/chem_contraband,
+				 /datum/perk/gunsmith)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,

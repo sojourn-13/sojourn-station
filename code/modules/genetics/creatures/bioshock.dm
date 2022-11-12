@@ -51,7 +51,9 @@
 		MUTATION_BLOOD_BANK,
 		MUTATION_BOMB_RESIST,
 		MUTATION_TERMITE_FRIEND,
-		MUTATION_WURM_CRY)
+		MUTATION_WURM_CRY,
+		MUTATION_FLAME_RETARDANT,
+		MUTATION_SPARK_BREATH)
 	clone_difficulty = CLONE_EASY
 
 /mob/living/simple_animal/hostile/bioshock/organs
@@ -72,7 +74,10 @@
 		MUTATION_S_NERVES,
 		MUTATION_SAC,
 		MUTATION_G_SAC,
-		MUTATION_HYPERION,)
+		MUTATION_HYPERION,
+		MUTATION_MARQUA_EYES,
+		MUTATION_EYES,
+		MUTATION_SLIME_BONE)
 
 /mob/living/simple_animal/hostile/bioshock/disabled
 	name = "disabledshock"
@@ -93,3 +98,8 @@
 		MUTATION_UNBALANCED,
 		MUTATION_HONK,
 		MUTATION_SCREAMING)
+
+/mob/living/simple_animal/hostile/bioshock/testing
+	name = "Testshock"
+	desc = "Meant to only have the mutations being activly tested."
+	inherent_mutations = list()

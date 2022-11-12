@@ -64,6 +64,6 @@
 	fire_delay = 0.5
 	init_firemodes = list(
 	SEMI_AUTO_NODELAY,
-	FULL_AUTO_400,
+	FULL_AUTO_300,
 	)
 	serial_type = "BlueCross"

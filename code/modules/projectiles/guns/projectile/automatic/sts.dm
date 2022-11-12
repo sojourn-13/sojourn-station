@@ -24,7 +24,7 @@
 
 
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
 		)
@@ -119,7 +119,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
-		FULL_AUTO_400
+		FULL_AUTO_300
 		)
 
 /obj/item/gun/projectile/automatic/sts/rifle/sawn
@@ -139,7 +139,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
-		FULL_AUTO_400
+		FULL_AUTO_300
 		)
 
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield
@@ -165,7 +165,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
-		FULL_AUTO_400
+		FULL_AUTO_300
 		)
 
 	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE,
@@ -199,40 +199,5 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
-		FULL_AUTO_400
+		FULL_AUTO_300
 		)
-
-/obj/item/gun/projectile/automatic/sts/hrifle
-	name = "\"STS\" heavy rifle"
-	desc = "A rugged STS-40. Uses 8.6x70mm heavy rifle rounds. If we have to go alone, we'll go alone with pride."
-	icon = 'icons/obj/guns/projectile/sts40.dmi'
-	icon_state = "sts"
-	item_state = "sts"
-	w_class = ITEM_SIZE_HUGE
-	caliber = CAL_HRIFLE
-	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
-	price_tag = 1500
-	penetration_multiplier = 1.1
-	damage_multiplier = 1.1
-	init_recoil = RIFLE_RECOIL(1.7)
-	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
-	cocked_sound = 'sound/weapons/guns/interact/batrifle_cock.ogg'
-	saw_off = TRUE
-	sawn = /obj/item/gun/projectile/automatic/sts/hrifle/sawn
-	init_firemodes = list(
-		SEMI_AUTO_NODELAY
-		)
-
-/obj/item/gun/projectile/automatic/sts/hrifle/sawn
-	name = "sawn down \"STS\" heavy rifle"
-	desc = "A rugged STS-40. Uses 8.6x70mm heavy rifle rounds. This one has been shortened as much as possible while still able to function."
-	icon = 'icons/obj/guns/projectile/sts40.dmi'
-	icon_state = "sts"
-	item_state = "sts"
-	price_tag = 1125
-	w_class = ITEM_SIZE_BULKY
-	penetration_multiplier = 0.8
-	damage_multiplier = 1
-	init_recoil = RIFLE_RECOIL(1.8)
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
-	saw_off = FALSE

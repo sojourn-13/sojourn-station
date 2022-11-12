@@ -865,71 +865,71 @@
 	siemens_coefficient = 0
 
 //Sprites by Michiyamenotehifunana and Occulist
-/obj/item/clothing/accessory/shemaugh
-	name = "shemaugh"
+/obj/item/clothing/accessory/shemagh
+	name = "shemagh"
 	desc = "A piece of light fabric, suited for protection in hot, arid climates."
-	icon_state = "shemaugh"
-	item_state = "shemaugh"
+	icon_state = "shemagh"
+	item_state = "shemagh"
 
-/obj/item/clothing/accessory/shemaugh/blue
-	name = "blue shemaugh"
-	icon_state = "shemaugh-blue"
-	item_state = "shemaugh-blue"
+/obj/item/clothing/accessory/shemagh/blue
+	name = "blue shemagh"
+	icon_state = "shemagh-blue"
+	item_state = "shemagh-blue"
 
-/obj/item/clothing/accessory/shemaugh/red
-	name = "red shemaugh"
-	icon_state = "shemaugh-red"
-	item_state = "shemaugh-red"
+/obj/item/clothing/accessory/shemagh/red
+	name = "red shemagh"
+	icon_state = "shemagh-red"
+	item_state = "shemagh-red"
 
-/obj/item/clothing/accessory/shemaugh/grey
-	name = "grey shemaugh"
-	icon_state = "shemaugh-grey"
-	item_state = "shemaugh-grey"
+/obj/item/clothing/accessory/shemagh/grey
+	name = "grey shemagh"
+	icon_state = "shemagh-grey"
+	item_state = "shemagh-grey"
 
-/obj/item/clothing/accessory/shemaugh/purple
-	name = "purple shemaugh"
-	icon_state = "shemaugh-purple"
-	item_state = "shemaugh-purple"
+/obj/item/clothing/accessory/shemagh/purple
+	name = "purple shemagh"
+	icon_state = "shemagh-purple"
+	item_state = "shemagh-purple"
 
-/obj/item/clothing/accessory/shemaugh/pink
-	name = "pink shemaugh"
-	icon_state = "shemaugh-pink"
-	item_state = "shemaugh-pink"
+/obj/item/clothing/accessory/shemagh/pink
+	name = "pink shemagh"
+	icon_state = "shemagh-pink"
+	item_state = "shemagh-pink"
 
-/obj/item/clothing/accessory/shemaugh/brown
-	name = "brown shemaugh"
-	icon_state = "shemaugh-brown"
-	item_state = "shemaugh-brown"
+/obj/item/clothing/accessory/shemagh/brown
+	name = "brown shemagh"
+	icon_state = "shemagh-brown"
+	item_state = "shemagh-brown"
 
-/obj/item/clothing/accessory/shemaugh/copper
-	name = "copper shemaugh"
-	icon_state = "shemaugh-copper"
-	item_state = "shemaugh-copper"
+/obj/item/clothing/accessory/shemagh/copper
+	name = "copper shemagh"
+	icon_state = "shemagh-copper"
+	item_state = "shemagh-copper"
 
-/obj/item/clothing/accessory/shemaugh/orange
-	name = "orange shemaugh"
-	icon_state = "shemaugh-orange"
-	item_state = "shemaugh-orange"
+/obj/item/clothing/accessory/shemagh/orange
+	name = "orange shemagh"
+	icon_state = "shemagh-orange"
+	item_state = "shemagh-orange"
 
-/obj/item/clothing/accessory/shemaugh/yellow
-	name = "yellow shemaugh"
-	icon_state = "shemaugh-yellow"
-	item_state = "shemaugh-yellow"
+/obj/item/clothing/accessory/shemagh/yellow
+	name = "yellow shemagh"
+	icon_state = "shemagh-yellow"
+	item_state = "shemagh-yellow"
 
-/obj/item/clothing/accessory/shemaugh/lime
-	name = "lime shemaugh"
-	icon_state = "shemaugh-lime"
-	item_state = "shemaugh-lime"
+/obj/item/clothing/accessory/shemagh/lime
+	name = "lime shemagh"
+	icon_state = "shemagh-lime"
+	item_state = "shemagh-lime"
 
-/obj/item/clothing/accessory/shemaugh/cyan
-	name = "cyan shemaugh"
-	icon_state = "shemaugh-cyan"
-	item_state = "shemaugh-cyan"
+/obj/item/clothing/accessory/shemagh/cyan
+	name = "cyan shemagh"
+	icon_state = "shemagh-cyan"
+	item_state = "shemagh-cyan"
 
-/obj/item/clothing/accessory/shemaugh/ice
-	name = "ice shemaugh"
-	icon_state = "shemaugh-ice"
-	item_state = "shemaugh-ice"
+/obj/item/clothing/accessory/shemagh/ice
+	name = "ice shemagh"
+	icon_state = "shemagh-ice"
+	item_state = "shemagh-ice"
 
 //End of sprites by Michiyamenotehifunana and Occulist
 /*One-Off Stuff*/

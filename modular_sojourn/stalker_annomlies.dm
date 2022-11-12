@@ -630,7 +630,6 @@
 	light_power = 2
 	light_range = 3
 	light_color = "#AA4A44"
-
 	pixel_x = 0
 	pixel_y = 0
 

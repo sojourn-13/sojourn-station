@@ -3567,10 +3567,10 @@
 	name = "Science Expedition prep"
 	})
 "ahR" = (
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine{
+/obj/item/gun/projectile/automatic/omnirifle{
 	pixel_y = 4
 	},
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/rds,
+/obj/item/gun/projectile/automatic/omnirifle/rds,
 /obj/structure/closet/crate/serbcrate,
 /obj/random/gun_combat/low_chance,
 /obj/random/gun_combat/low_chance,

@@ -4,6 +4,7 @@
 	path = /obj/item/clothing/shoes/workboots
 	slot = slot_shoes
 	sort_category = "Shoes and Footwear"
+	cost = 0
 
 /datum/gear/trackshoes
 	display_name = "track shoes"

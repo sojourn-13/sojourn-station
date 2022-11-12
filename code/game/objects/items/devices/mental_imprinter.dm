@@ -11,7 +11,7 @@
 	price_tag = 1200
 
 /obj/item/device/mental_imprinter/proc/imprint(mob/living/carbon/human/user)
-	var/stat = input(user, "Select stat to boost", "Mental imprinter") as null|anything in ALL_STATS
+	var/stat = input(user, "Select stat to boost", "Mental imprinter") as null|anything in ALL_STATS_FOR_LEVEL_UP
 	if(!stat || spent)
 		return
 

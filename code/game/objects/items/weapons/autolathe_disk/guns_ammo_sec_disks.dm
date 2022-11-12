@@ -160,7 +160,6 @@
 	designs = list(
 		/datum/design/autolathe/gun/giskard = 2,
 		/datum/design/autolathe/gun/olivaw = 2,
-		/datum/design/autolathe/gun/clarissa = 2,
 		/datum/design/autolathe/gun/detective,
 		/datum/design/autolathe/ammo/pistol_practice = 0,
 		/datum/design/autolathe/ammo/pistol_rubber,
@@ -594,20 +593,6 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox_rubber,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/sika
-	disk_name = "Hunters Inc - 6.5mm Sika Rifle"
-	icon_state = "hunters"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/sika = 3,
-		/datum/design/autolathe/ammo/lrifle_speed_loader,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
-	)
-
 /obj/item/computer_hardware/hard_drive/portable/design/guns/roe
 	disk_name = "Hunters Inc - 6.5mm Roe Rifle"
 	icon_state = "hunters"
@@ -694,40 +679,13 @@
 
 //8.6mm heavy rifles
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/hustler
-	disk_name = "H&S NM - 8.6mm Hustler Heavy Rifle"
+/obj/item/computer_hardware/hard_drive/portable/design/guns/omni
+	disk_name = "H&S NM - 8.6mm Omni Heavy Rifle"
 	icon_state = "ironhammer"
 
 	license = 12
 	designs = list(
 		/datum/design/autolathe/gun/omnirifle = 3,
-		/datum/design/autolathe/ammo/hrifle_practice = 0,
-		/datum/design/autolathe/ammo/hrifle_rubber,
-		/datum/design/autolathe/ammo/hrifle,
-		/datum/design/autolathe/ammo/hrifle_lethal = 2,
-	)
-
-/obj/item/computer_hardware/hard_drive/portable/design/guns/boar
-	disk_name = "H&S - 8.6mm Boar Heavy Carbine"
-	icon_state = "frozenstar"
-
-	license = 6
-	designs = list(
-		/datum/design/autolathe/gun/omnicarbine = 3,
-		/datum/design/autolathe/gun/rds_omnicarbine = 4,
-		/datum/design/autolathe/ammo/hrifle_practice = 0,
-		/datum/design/autolathe/ammo/hrifle_rubber,
-		/datum/design/autolathe/ammo/hrifle,
-		/datum/design/autolathe/ammo/hrifle_lethal = 2,
-	)
-
-/obj/item/computer_hardware/hard_drive/portable/design/guns/sts40
-	disk_name = "SA - 8.6mm STS-40 Heavy Rifle"
-	icon_state = "sa"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/sts40 = 3,
 		/datum/design/autolathe/ammo/hrifle_practice = 0,
 		/datum/design/autolathe/ammo/hrifle_rubber,
 		/datum/design/autolathe/ammo/hrifle,
