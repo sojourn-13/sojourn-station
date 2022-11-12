@@ -20,7 +20,7 @@
 	penetration_multiplier = 1.0
 	damage_multiplier = 1.0
 	zoom_factors = list(0.4)
-	init_recoil = RIFLE_RECOIL(0.3)
+	init_recoil = RIFLE_RECOIL(1.0)
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
@@ -68,7 +68,7 @@
 	item_state = "DMR"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
 	mag_well = MAG_WELL_HRIFLE
-	price_tag = 1750
+	price_tag = 2000
 	damage_multiplier = 1.2
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
@@ -76,7 +76,7 @@
 	zoom_factors = list(1)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	init_recoil = RIFLE_RECOIL(0.7)
-	penetration_multiplier = 1.2
+	penetration_multiplier = 1.35
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
@@ -95,7 +95,7 @@
 	item_state = "warthog"
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
-	price_tag = 1500
+	price_tag = 1750
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.1
 	init_recoil = RIFLE_RECOIL(0.8)
