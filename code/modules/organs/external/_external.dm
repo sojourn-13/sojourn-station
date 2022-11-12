@@ -55,6 +55,7 @@
 	var/limb_efficiency = 100			// Limb efficiency modified by limbs internal organs
 
 	var/obj/item/organ_module/active/module = null
+	var/mob/living/simple_animal/borer/borer
 
 	// Joint/state stuff.
 	var/functions = NONE	// Functions performed by body part. Bitflag, see _defines/damage_organs.dm for possible values.

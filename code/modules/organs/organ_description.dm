@@ -114,6 +114,12 @@
 
 	joint = "left elbow"
 	amputation_point = "left shoulder"
+/obj/item/organ/external/l_arm/New(loc, mob/living/carbon/human/H)
+	..()
+	if(H && istype(H))
+		var/mob/living/simple_animal/borer/B = H.has_brain_worms(BP_L_ARM)
+		if(B)
+			B.infest_limb(src)
 
 /datum/organ_description/arm/left/full
 	additional_limb_parts = BP_L_ARM_EXTRA
@@ -127,6 +133,12 @@
 
 	joint = "right elbow"
 	amputation_point = "right shoulder"
+/obj/item/organ/external/r_arm/New(loc, mob/living/carbon/human/H)
+	..()
+	if(H && istype(H))
+		var/mob/living/simple_animal/borer/B = H.has_brain_worms(BP_R_ARM)
+		if(B)
+			B.infest_limb(src)
 
 /datum/organ_description/arm/right/full
 	additional_limb_parts = BP_R_ARM_EXTRA
@@ -150,6 +162,12 @@
 
 	joint = "left knee"
 	amputation_point = "left hip"
+/obj/item/organ/external/l_leg/New(loc, mob/living/carbon/human/H)
+	..()
+	if(H && istype(H))
+		var/mob/living/simple_animal/borer/B = H.has_brain_worms(BP_L_LEG)
+		if(B)
+			B.infest_limb(src)
 
 /datum/organ_description/leg/left/full
 	additional_limb_parts = BP_L_LEG_EXTRA
@@ -163,6 +181,12 @@
 
 	joint = "right knee"
 	amputation_point = "right hip"
+/obj/item/organ/external/r_leg/New(loc, mob/living/carbon/human/H)
+	..()
+	if(H && istype(H))
+		var/mob/living/simple_animal/borer/B = H.has_brain_worms(BP_R_LEG)
+		if(B)
+			B.infest_limb(src)
 
 /datum/organ_description/leg/right/full
 	additional_limb_parts = BP_R_LEG_EXTRA

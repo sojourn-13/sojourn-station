@@ -8,6 +8,30 @@
 	mob_swap_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 	mob_push_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 
+		// HUD data vars.
+	var/datum/hud_data/hud
+	var/hud_type
+	defaultHUD = ""
+
+		//Equipment slots
+	var/obj/item/wear_suit = null
+	var/obj/item/w_uniform = null
+	var/obj/item/shoes = null
+	var/obj/item/belt = null
+	var/obj/item/gloves = null
+	var/obj/item/glasses = null
+	var/obj/item/head = null
+	var/obj/item/l_ear = null
+	var/obj/item/r_ear = null
+	var/obj/item/wear_id = null
+	var/obj/item/r_store = null
+	var/obj/item/l_store = null
+	var/obj/item/s_store = null
+
+	var/obj/item/tank/internal = null
+	var/obj/item/handcuffed = null //Whether or not the mob is handcuffed
+	var/obj/item/legcuffed = null  //Same as handcuffs but for legs. Bear traps use this.
+
 	var/datum/weakref/target_mob
 	var/datum/component/spawner/nest
 	universal_understand = TRUE //QoL to admins controling mobs
@@ -125,8 +149,17 @@
 /mob/living/simple_animal/proc/beg(atom/thing, atom/holder)
 	visible_emote("gazes longingly at [holder]'s [thing]")
 
+// Builds the HUD using species-specific icons and usable slots.
+/mob/living/simple_animal/proc/build_hud(var/mob/living/carbon/human/H)
+	return
+
 /mob/living/simple_animal/New()
 	..()
+	if(hud_type)
+		hud = new hud_type()
+	else
+		hud = new()
+
 	if(!icon_living)
 		icon_living = icon_state
 	if(!icon_dead)

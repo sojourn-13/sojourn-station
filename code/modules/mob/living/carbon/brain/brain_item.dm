@@ -68,7 +68,7 @@
 	if(!(owner.status_flags & REBUILDING_ORGANS))
 		var/mob/living/simple_animal/borer/borer = owner.has_brain_worms()
 		if(borer)
-			borer.detatch() //Should remove borer if the brain is removed - RR
+			borer.detach() //Should remove borer if the brain is removed - RR
 
 		var/obj/item/organ/internal/carrion/core/C = owner.random_organ_by_process(BP_SPCORE)
 		if(C)

@@ -55,6 +55,28 @@ var/next_station_date_change = 1 DAYS
 /proc/worlddate2text()
 	return num2text(game_year) + "-" + time2text(world.timeofday, "MM-DD")
 
+/proc/formatTimeDuration(var/deciseconds)
+	var/m = round(deciseconds / 600)
+	var/s = (deciseconds % 600)/10
+	var/h = round(m / 60)
+	m = m % 60
+	if(h>0)
+		. += "[h]:"
+	if(h>0 || m > 0)
+		. += "[(m<10)?"0":""][m]:"
+	. += "[(s<10)?"0":""][s]"
+
+/proc/altFormatTimeDuration(var/deciseconds)
+	var/m = round(deciseconds / 600)
+	var/s = (deciseconds % 600)/10
+	var/h = round(m / 60)
+	m = m % 60
+	if(h > 0)
+		. += "[h]h "
+	if(m > 0)
+		. += "[m]m "
+	. += "[s]s"
+
 
 /* Returns 1 if it is the selected month and day */
 proc/isDay(var/month, var/day)

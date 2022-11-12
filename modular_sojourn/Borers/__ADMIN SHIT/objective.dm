@@ -9,7 +9,7 @@
 			return TRUE
 	return FALSE
 
-
+/*
 /datum/objective/borer_reproduce
 	explanation_text = "Reproduce at least once."
 
@@ -22,3 +22,4 @@
 		if(istype(B) && B.has_reproduced)
 			return TRUE
 	return FALSE
+*/

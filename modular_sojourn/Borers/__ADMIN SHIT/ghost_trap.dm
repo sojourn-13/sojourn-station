@@ -13,3 +13,4 @@
 	into the head of its victim. Use stealth, persuasion and your powers of mind control to keep you, \
 	your host and your eventual spawn safe and warm.")
 	to_chat(target, "You can speak to your victim with <b>say</b>, to other borers with <b>say [target.get_language_prefix()]x</b>, and use your Abilities tab to access powers.")
+

@@ -62,7 +62,7 @@
 
 /mob/living/captive_brain/emote(var/message)
 	return
-
+/*
 /mob/living/captive_brain/process_resist()
 	//Resisting control by an alien mind.
 	if(istype(src.loc,/mob/living/simple_animal/borer))
@@ -89,3 +89,4 @@
 		to_chat(src, SPAN_DANGER("You cannot escape."))
 
 	..()
+*/
