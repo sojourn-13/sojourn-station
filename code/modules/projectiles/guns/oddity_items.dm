@@ -134,7 +134,7 @@
 	saw_off = FALSE
 	serial_type = "BlueCross"
 
-/obj/item/gun/projectile/makarov/devil_eye
+/obj/item/gun/projectile/clarissa/devil_eye
 	name = "\"Devil Eye\" pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 			A small red eye has been painted onto the firing pin of this formerly undepowered pistol, this one has been modified with a better feed mechaism to allow \
@@ -143,6 +143,8 @@
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG
 	damage_multiplier = 1.5
 	icon = 'icons/obj/guns/projectile/clarissa.dmi'
+	icon_state = "clarissa"
+	item_state = "clarissa"
 	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/boltgun/lever/handcock

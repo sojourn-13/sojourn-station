@@ -100,6 +100,8 @@
 	icon = 'icons/obj/guns/projectile/clarissa_white.dmi'
 	price_tag = 200
 	serial_type = "SI"
+	icon_state = "clarissa"
+	item_state = "clarissa"
 
 /obj/item/gun/projectile/makarov/moebius/auto_eject
 	initialized_upgrades = list(/obj/item/gun_upgrade/magwell/auto_eject/no_removal

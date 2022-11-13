@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/luty
 	name = "Homemade \"Luty\" SMG"
 	desc = "A dead simple open-bolt automatic firearm, easily made and easily concealed.\
-			A gun that has gone by many names, from the Grease gun to the Carlo to the Swedish K. \
+			A gun that has gone by many names, from the STEN gun to the Carlo to the Swedish K. \
 			Some designs are too good to change."
 	icon = 'icons/obj/guns/projectile/luty.dmi'
 	icon_state = "luty"
@@ -30,14 +30,19 @@
 /obj/item/gun/projectile/automatic/luty/update_icon()
 	..()
 	cut_overlays()
-	icon_state = "[initial(icon_state)][safety ? "_safe" : ""]"
 
 	var/iconstring = initial(icon_state)
 
-	if (ammo_magazine || length(ammo_magazine.stored_ammo))
-		iconstring += "_full"
-	else
-		overlays += "empty[silenced ? "_s" : ""]"
+	iconstring = "[initial(icon_state)][safety ? "_safe" : ""]"
+
+	if (ammo_magazine)
+		iconstring += "-full"
+
+	if (silenced)
+		iconstring += "_s"
+
+
+	icon_state = iconstring
 
 /obj/item/gun/projectile/automatic/luty/Initialize()
 	. = ..()
