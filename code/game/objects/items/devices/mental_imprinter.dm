@@ -12,8 +12,8 @@
 
 /obj/item/device/mental_imprinter/proc/imprint(mob/living/carbon/human/user)
 	var/stat = input(user, "Select stat to boost", "Mental imprinter") as null|anything in ALL_STATS_TO_IMPRINT
-	if(!stat || spent)//If it's spent we won't attempt to use it again
-		return
+	if(!stat || spent || user.species.reagent_tag == IS_SYNTHETIC)//If it's spent we won't attempt to use it again
+		return//No synths because of stat meme
 
 	if(!istype(user) || !user.stats || user.incapacitated() || user.get_active_hand() != src || length(user.get_covering_equipped_items(EYES)))//Sanity
 		return
@@ -34,7 +34,7 @@
 	price_tag = 30
 
 /obj/item/device/mental_imprinter/attack(mob/M, mob/living/carbon/human/user, target_zone)//These are actually what affect if we can use it or not at all
-	if(!istype(user) || M != user || target_zone != BP_EYES || user.incapacitated() || spent)
+	if(!istype(user) || M != user || target_zone != BP_EYES || user.incapacitated() || spent || user.species.reagent_tag == IS_SYNTHETIC)
 		to_chat(user, SPAN_WARNING("[src] beeps, being unable to operate on you under current conditions!"))
 		playsound(usr, 'sound/machines/buzz-two.ogg', 20, -5)
 		return ..()

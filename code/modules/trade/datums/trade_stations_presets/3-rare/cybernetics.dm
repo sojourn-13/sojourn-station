@@ -38,11 +38,6 @@
 			/obj/item/organ/external/robotic/blackshield/r_arm,
 			/obj/item/organ/external/robotic/blackshield/l_leg,
 			/obj/item/organ/external/robotic/blackshield/r_leg
-		),
-		"Hardware Imprinters" = list(
-			/obj/item/device/hardware_imprinter/chemneutral,
-			/obj/item/device/hardware_imprinter/cogenhance,
-			/obj/item/device/hardware_imprinter/smartlink
 		)
 	)//No real better place to put this honestly
 
@@ -78,6 +73,3 @@
 
 /obj/item/organ/external/robotic/frozen_star
 	price_tag = 375 //basic
-
-/obj/item/device/hardware_imprinter
-	price_tag = 1200 //Supposed to be rare and expensive

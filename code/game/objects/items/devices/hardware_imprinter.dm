@@ -11,11 +11,11 @@
 	price_tag = 1200
 
 /obj/item/device/hardware_imprinter/proc/imprint(mob/living/carbon/human/user)//Janked up mental imprinter code
-	if(user.stats.getPerk(perk_imprinting) || user.stats.getPerk(perk_imprinting_forbidden))//What perks stop this from being usable to prevent things like kriosans getting double recoil reduction
-		return
-
 	if(spent)//Is it already used up or not
 		return
+
+	if(user.stats.getPerk(perk_imprinting) || user.stats.getPerk(perk_imprinting_forbidden) || user.species.reagent_tag == IS_SYNTHETIC)//What perks stop this from being usable to prevent things like kriosans getting double recoil reduction
+		return//Also no synths to prevent memes
 
 	if(!istype(user) || user.incapacitated() || user.get_active_hand() != src)//Checks for sanity
 		return
@@ -32,12 +32,12 @@
 	price_tag = 30
 
 /obj/item/device/hardware_imprinter/attack(mob/M, mob/living/carbon/human/user, target_zone)//These are actually what affect if we can use it or not at all
-	if(user.stats.getPerk(perk_imprinting) || user.stats.getPerk(perk_imprinting_forbidden)) //Reason we check for the perk we are printing too is that you don't waste one for nothing
-		to_chat(user, SPAN_WARNING("[src] beeps, refusing you as host!"))
+	if(spent)//If it's spent we can't use it
+		to_chat(user, SPAN_WARNING("[src] beeps, notifying you that it's spent!"))
 		playsound(usr, 'sound/machines/buzz-two.ogg', 20, -5)
 		return ..()
-	if(spent)
-		to_chat(user, SPAN_WARNING("[src] beeps, notifying you that it's spent!"))
+	if(user.stats.getPerk(perk_imprinting) || user.stats.getPerk(perk_imprinting_forbidden) || user.species.reagent_tag == IS_SYNTHETIC) //Reason we check for the perk we are printing too is that you don't waste one for nothing
+		to_chat(user, SPAN_WARNING("[src] beeps, refusing you as host!"))//No synths
 		playsound(usr, 'sound/machines/buzz-two.ogg', 20, -5)
 		return ..()
 	if(!istype(user) || M != user || target_zone != BP_EYES || user.incapacitated())
