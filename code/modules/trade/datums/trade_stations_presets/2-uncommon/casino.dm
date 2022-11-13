@@ -39,5 +39,5 @@
 	offer_types = list(
 		/obj/item/oddity/common/coin = offer_data("strange coin", 800, 1),
 		/obj/item/oddity/common/old_money = offer_data("old money", 800, 1),
-		/obj/item/storage/box = offer_data("cardboard box", 75, 5) // SUPPOSED to be a rebate for the boxes they sell. But, they use a special, non-box based storage method. For now, it's just a non-RNG method of getting favor for this station besides spending money on loot-boxes you may or may not need.
+		/datum/reagent/other/woodpulp = offer_data("wood pulp bottle (60u)", 400, 2) //Well, if boxes aren't acceptable, the reagent to MAKE the boxes should work.
 	)
