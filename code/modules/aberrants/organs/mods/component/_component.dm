@@ -91,17 +91,17 @@
 			else
 				holder.organ_efficiency.Add(organ)
 				holder.organ_efficiency[organ] = round(added_efficiency, 1)
+		
+		if(holder.owner && istype(holder.owner, /mob/living/carbon/human))
+			var/mob/living/carbon/human/H = holder.owner
+			for(var/process in organ_efficiency_mod)
+				if(!islist(H.internal_organs_by_efficiency[process]))
+					H.internal_organs_by_efficiency[process] = list()
+				H.internal_organs_by_efficiency[process] |= holder
 
 	if(organ_efficiency_multiplier)
 		for(var/organ in holder.organ_efficiency)
 			holder.organ_efficiency[organ] = round(holder.organ_efficiency[organ] * (1 + organ_efficiency_multiplier), 1)
-
-	if(holder.owner && istype(holder.owner, /mob/living/carbon/human))
-		var/mob/living/carbon/human/H = holder.owner
-		for(var/process in organ_efficiency_mod)
-			if(!islist(H.internal_organs_by_efficiency[process]))
-				H.internal_organs_by_efficiency[process] = list()
-			H.internal_organs_by_efficiency[process] |= holder
 
 	if(specific_organ_size_multiplier)
 		holder.specific_organ_size *= 1 - round(specific_organ_size_multiplier, 0.01)
