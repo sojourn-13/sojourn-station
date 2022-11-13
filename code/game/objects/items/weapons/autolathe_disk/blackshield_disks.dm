@@ -43,8 +43,8 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo
-	name = ""
-	disk_name = "Blackshield Ammo Sovereignty Pack"
+	name = "Blackshield Ammo Sovereignty Pack"
+	disk_name = ""
 	icon_state = "blackshield"
 	license = 30
 
