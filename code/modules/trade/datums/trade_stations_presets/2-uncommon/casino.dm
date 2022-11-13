@@ -29,12 +29,15 @@
 		)
 	)
 	hidden_inventory = list(
+		"Premium Assorted Goods" = list(
 			/obj/item/storage/deferred/disks = custom_good_amount_range(list(2, 4)),
 			/obj/item/storage/deferred/rig = custom_good_amount_range(list(2, 4)),
 			/obj/item/storage/deferred/tools = custom_good_amount_range(list(2, 4)),
 			/obj/item/gem //THE BIG TICKET ITEM
+		)
 	)
 	offer_types = list(
 		/obj/item/oddity/common/coin = offer_data("strange coin", 800, 1),
-		/obj/item/oddity/common/old_money = offer_data("old money", 800, 1)
+		/obj/item/oddity/common/old_money = offer_data("old money", 800, 1),
+		/obj/item/storage/box = offer_data("cardboard box", 75, 5) // SUPPOSED to be a rebate for the boxes they sell. But, they use a special, non-box based storage method. For now, it's just a non-RNG method of getting favor for this station besides spending money on loot-boxes you may or may not need.
 	)
