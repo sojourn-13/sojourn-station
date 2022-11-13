@@ -60,7 +60,7 @@
 		return
 
 	if(count_drones() >= config.max_maint_drones)
-		to_chat(user, "<span class='warning'>The drone control subsystems are tasked to capacity; they cannot support any more drones.</span>")
+		to_chat(user, "<span class='warning'>The control subsystems are tasked to capacity; they cannot support any more cyborgs.</span>")
 		return
 
 	var/mob/living/silicon/robot/new_borg = new drone_type(get_turf(src))
