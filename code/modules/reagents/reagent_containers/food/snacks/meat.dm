@@ -14,6 +14,7 @@
 	var/datum/genetics/genetics_holder/unnatural_mutations = new() //GMO in your MEAT
 	var/source_mob
 	var/source_name
+	price_tag = 20 //Partially to make it not dirt-cheap to buy from the beacon. Plus it's useful as biomatter, so it's worth something.
 
 //For initializing genetics information for meat, so it's easy to call.
 /obj/item/reagent_containers/food/snacks/meat/proc/initialize_genetics(mob/living/meat_source)
