@@ -14,7 +14,6 @@
 	recommendations_needed = 1
 	inventory = list(
 		"Projectiles" = list(
-			/obj/item/gun/projectile/automatic/mac,
 			/obj/item/gun/projectile/automatic/c20r,
 			/obj/item/gun/projectile/automatic/sts/lrifle,
 			/obj/item/gun/projectile/automatic/sts/rifle,

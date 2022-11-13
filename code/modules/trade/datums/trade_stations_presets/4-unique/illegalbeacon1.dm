@@ -29,6 +29,7 @@
 			/obj/item/gun/projectile/lamia/sf = custom_good_amount_range(list(1, 1)),
 			/obj/item/gun/projectile/colt/ten/dark = custom_good_amount_range(list(1, 1)),
 			/obj/item/gun/projectile/automatic/omnirifle/solmarine = custom_good_amount_range(list(1, 1)),
+			/obj/item/gun/projectile/automatic/greasegun = custom_good_amount_range(list(2, 3)),
 			/obj/item/gun/projectile/automatic/omnirifle = custom_good_amount_range(list(1, 1))
 		),
 		"Useful Stuff" = list(

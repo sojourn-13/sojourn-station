@@ -460,19 +460,6 @@
 		/datum/design/autolathe/ammo/smg_lethal = 2,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/mac
-	disk_name = "SA - 9mm MAC SMG"
-	icon_state = "sa"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/mac = 3,
-		/datum/design/autolathe/ammo/smg_practice = 0,
-		/datum/design/autolathe/ammo/smg_rubber,
-		/datum/design/autolathe/ammo/smg,
-		/datum/design/autolathe/ammo/smg_lethal = 2,
-	)
-
 // 6.5mm carbines
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sol

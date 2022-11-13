@@ -100,7 +100,7 @@
 /obj/random/lathe_disk/smg/item_to_spawn()
 	return pickweight(list(
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/texan = 6,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/mac = 6,
+				//obj/item/computer_hardware/hard_drive/portable/design/guns/mac = 6,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/bastard = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/buckler = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/thompson = 4,

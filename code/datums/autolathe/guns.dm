@@ -120,10 +120,6 @@
 	name = "Seinemetall Defense GmbH SMG 9mm \"Texan\""
 	build_path = /obj/item/gun/projectile/automatic/texan
 
-/datum/design/autolathe/gun/mac
-	name = "SA SMG 9mm \"MAC\""
-	build_path = /obj/item/gun/projectile/automatic/mac
-
 /datum/design/autolathe/gun/drozd
 	name = "Excelsior 9mm \"Drozd\""
 	build_path = /obj/item/gun/projectile/automatic/drozd
