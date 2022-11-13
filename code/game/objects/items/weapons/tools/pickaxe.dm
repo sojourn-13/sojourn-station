@@ -67,7 +67,7 @@
 	switched_off_qualities = list(QUALITY_EXCAVATION = 50, QUALITY_PRYING = 25)
 	switched_on_qualities = list(QUALITY_DIGGING = 50, QUALITY_PRYING = 25)
 	glow_color = COLOR_BLUE_LIGHT
-	degradation = 0.6
+	degradation = 2
 	workspeed = 1.2
 	use_power_cost = 0
 

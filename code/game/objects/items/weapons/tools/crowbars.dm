@@ -38,7 +38,7 @@
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLATINUM = 1)
 	tool_qualities = list(QUALITY_PRYING = 60, QUALITY_DIGGING = 20, QUALITY_HAMMERING = 20)
 	origin_tech = list(TECH_ENGINEERING = 1, TECH_MATERIAL = 2)
-	degradation = 0.6
+	degradation = 2
 	workspeed = 1.2
 	price_tag = 180 // Fancy but still just a crowbar.
 
