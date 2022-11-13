@@ -25,6 +25,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	serial_type = "INDEX"
 	serial_shown = FALSE
+	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_MAGWELL)
 
 /obj/item/gun/projectile/automatic/luty/update_icon()
 	..()
@@ -32,13 +33,11 @@
 	icon_state = "[initial(icon_state)][safety ? "_safe" : ""]"
 
 	var/iconstring = initial(icon_state)
-	var/itemstring = ""
 
-	if(ammo_magazine)
-		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
-		itemstring += "_full"
+	if (ammo_magazine || length(ammo_magazine.stored_ammo))
+		iconstring += "_full"
 	else
-		overlays += "slide[silenced ? "_s" : ""]"
+		overlays += "empty[silenced ? "_s" : ""]"
 
 /obj/item/gun/projectile/automatic/luty/Initialize()
 	. = ..()

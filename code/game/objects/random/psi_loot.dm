@@ -18,7 +18,7 @@
 	/obj/item/gun/energy/plasma/cassad/cult/deepmaints = 1,
 	/obj/item/gun/energy/gun/martin/cult/deepmaints = 1,
 	/obj/item/gun/energy/plasma/auretian/cult/deepmaints = 1,
-	/obj/item/gun/projectile/automatic/luty/cult/deepmaints = 1,
+	/obj/item/gun/projectile/automatic/greasegun/cult/deepmaints = 1,
 	//Tools
 	/obj/item/tool/multitool/advanced/cult/deepmaints = 1,
 	/obj/item/tool/shovel/power/cult/deepmaints = 1,
@@ -47,7 +47,7 @@
 	/obj/item/gun/energy/plasma/cassad/cult/deepmaints = 1,
 	/obj/item/gun/energy/gun/martin/cult/deepmaints = 1,
 	/obj/item/gun/energy/plasma/auretian/cult/deepmaints = 1,
-	/obj/item/gun/projectile/automatic/luty/cult/deepmaints = 1
+	/obj/item/gun/projectile/automatic/greasegun/cult/deepmaints = 1
 	))
 
 /obj/random/psi/guns/always_spawn

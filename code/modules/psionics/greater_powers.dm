@@ -15,7 +15,7 @@
 			/obj/item/gun/energy/plasma/auretian/cult = (1 + LStats[STAT_ROB]),
 			/obj/item/gun/projectile/automatic/sts/rifle/cult = (1 + LStats[STAT_VIG]),
 			/obj/item/gun/energy/laser/cult = (1 + LStats[STAT_COG]),
-			/obj/item/gun/projectile/automatic/luty/cult= (1 + LStats[STAT_TGH]),
+			/obj/item/gun/projectile/automatic/greasegun/cult= (1 + LStats[STAT_TGH]),
 			/obj/item/gun/energy/plasma/cassad/cult = (1 + LStats[STAT_BIO]),
 			/obj/item/gun/energy/gun/martin/cult = (1 + LStats[STAT_MEC])))
 
