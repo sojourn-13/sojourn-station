@@ -82,32 +82,6 @@
 	price_tag = 800
 	serial_type = "NM"
 
-/obj/item/gun/projectile/automatic/ak47/akl
-	name = "\"Legkiy-Kalashnikov\" laser"
-	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-	A modernized experimental version of an old Kalashnikov design, desginated to take .223 laser ammuniton. The future is now, comrade. This modified type is commonly found in use by void wolves and similar ilk."
-	icon = 'icons/obj/guns/projectile/akl.dmi'
-	icon_state = "AKL"
-	item_state = "AKL"
-	excelsior = FALSE
-	w_class = ITEM_SIZE_NORMAL
-	force = WEAPON_FORCE_NORMAL
-	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10, MATERIAL_GOLD = 5)
-	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_MAGNET = 3, TECH_POWER = 5)
-	price_tag = 1500
-	init_recoil = RIFLE_RECOIL(0.4)
-	damage_multiplier = 1.2 //We hold less ammo but deal about the same damage
-	saw_off = FALSE
-	caliber = CAL_SCI
-	mag_well = MAG_WELL_LSRIFLE
-	fire_sound = 'sound/weapons/Laser.ogg'
-	init_firemodes = list(
-		FULL_AUTO_300,
-		BURST_5_ROUND,
-		SEMI_AUTO_NODELAY
-		)
-	serial_type = "SI"
-
 /obj/item/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" rifle"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \

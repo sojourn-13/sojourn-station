@@ -645,7 +645,7 @@
 /obj/item/ammo_magazine/heavy_rifle_408
 	name = "heavy rifle magazine"
 	icon_state = "hrifle"
-	desc = "A 20 round magazine marked for 8.6x70mm Heavy Rifle."
+	desc = "A 14 round magazine marked for 8.6x70mm Heavy Rifle."
 	origin_tech = list(TECH_COMBAT = 2)
 	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
@@ -653,7 +653,7 @@
 	caliber = CAL_HRIFLE
 	matter = list(MATERIAL_STEEL = 4)
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
-	max_ammo = 20
+	max_ammo = 14
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/heavy_rifle_408/empty

@@ -82,7 +82,6 @@
 	return pickweight(list(
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/dp = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/semyonovich = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/bren = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/saw = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh = 1,
@@ -100,11 +99,9 @@
 
 /obj/random/lathe_disk/smg/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/wirbelwind = 7,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/texan = 6,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/mac = 6,
+				//obj/item/computer_hardware/hard_drive/portable/design/guns/mac = 6,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/bastard = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/greasegun = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/buckler = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/thompson = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/freedom = 2,
@@ -142,7 +139,7 @@
 
 /obj/random/lathe_disk/rifle_heavy/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/blackguard = 1,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/omni/longarm,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/omni = 4))
 
 
@@ -221,7 +218,6 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/rex10 = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/rev10 = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/revolver = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/revolver_mateba = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/stun_revolver = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/sixshot = 1))
 

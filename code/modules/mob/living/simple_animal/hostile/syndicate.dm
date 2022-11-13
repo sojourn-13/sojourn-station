@@ -305,7 +305,7 @@
 	icon_state = "syndicate_stormtrooper_pistol"
 	projectilesound = 'sound/weapons/guns/fire/revolver_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/kurtz_50
-	drop_items = list(/obj/item/gun/projectile/revolver/mateba)
+	drop_items = list(/obj/item/gun/projectile/revolver/mistral)
 
 /mob/living/simple_animal/hostile/elitemercenary/range/space/heavy/shotgun
 	ranged_cooldown = 4

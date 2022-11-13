@@ -121,16 +121,6 @@
 		new /obj/item/cell/medium/high(src)
 
 // Secondary kits
-/obj/item/storage/box/m_kit/wirbelwind
-	name = "\improper Wirbelwind Kit"
-	desc = "The standard Marshal box kit containing a wirbelwind submachine gun. Capable of fitting a holster and going full auto because who needs accuracy?"
-
-	populate_contents()
-		new /obj/item/gun/projectile/automatic/wirbelwind(src)
-		new /obj/item/ammo_magazine/smg_35/rubber(src)
-		new /obj/item/ammo_magazine/smg_35/rubber(src)
-		new /obj/item/ammo_magazine/smg_35(src)
-
 /obj/item/storage/box/m_kit/taser
 	name = "\improper Counselor Secondary kit"
 	desc = "The standard Marshal box kit containing a counselor stun gun. An all round solid sidearm to round out the Marshals non-lethal kit."
