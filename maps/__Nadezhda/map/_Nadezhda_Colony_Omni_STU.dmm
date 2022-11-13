@@ -23672,9 +23672,8 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/medical/reception)
 "eDH" = (
-/obj/structure/lattice,
-/turf/simulated/floor/plating/under,
-/area/turret_protected/ai_upload)
+/turf/simulated/open,
+/area/turret_protected/ai)
 "eDI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/cyan{
@@ -25690,6 +25689,17 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "eVT" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/box/red/corners,
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 8;
+	icon_state = "box_corners_red"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai)
 "eVX" = (
@@ -26325,8 +26335,26 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/security/prisoncells)
 "fbJ" = (
-/obj/structure/noticeboard/research,
-/turf/simulated/wall/r_wall,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 1;
+	icon_state = "box_corners_red"
+	},
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 4;
+	icon_state = "box_corners_red"
+	},
+/turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai)
 "fbK" = (
 /turf/simulated/floor/wood/wild2,
@@ -30644,22 +30672,9 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/triage_blackshield)
 "fPD" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -27;
-	pixel_y = 0
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark,
-/area/turret_protected/ai)
+/obj/structure/plushie/beepsky,
+/turf/simulated/wall/r_wall,
+/area/turret_protected/ai_upload)
 "fPE" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
@@ -31013,8 +31028,6 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
-/obj/structure/table/standard,
-/obj/item/device/aicard,
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai_upload)
 "fTU" = (
@@ -33186,7 +33199,7 @@
 	dir = 1
 	},
 /obj/structure/lattice,
-/turf/simulated/floor/plating/under,
+/turf/simulated/open,
 /area/turret_protected/ai_upload)
 "gnl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -37360,7 +37373,7 @@
 	dir = 8
 	},
 /obj/structure/lattice,
-/turf/simulated/floor/plating/under,
+/turf/simulated/open,
 /area/turret_protected/ai_upload)
 "hbY" = (
 /obj/structure/table/rack/shelf,
@@ -39551,6 +39564,9 @@
 /area/nadezhda/security/armory_blackshield)
 "hzk" = (
 /obj/machinery/computer/drone_control,
+/obj/structure/noticeboard/research{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/turret_protected/ai)
 "hzl" = (
@@ -46290,8 +46306,6 @@
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk,
-/obj/structure/table/standard,
-/obj/item/tool/multitool,
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai_upload)
 "iPI" = (
@@ -51121,8 +51135,7 @@
 	})
 "jKF" = (
 /obj/structure/lattice,
-/obj/structure/plushie/beepsky,
-/turf/simulated/floor/plating/under,
+/turf/simulated/open,
 /area/turret_protected/ai_upload)
 "jKO" = (
 /obj/item/stool/custom/bar_special,
@@ -68367,7 +68380,7 @@
 	pixel_y = -24
 	},
 /obj/structure/lattice,
-/turf/simulated/floor/plating/under,
+/turf/simulated/open,
 /area/turret_protected/ai_upload)
 "mOk" = (
 /obj/structure/sign/directions/elevator{
@@ -76223,7 +76236,18 @@
 	},
 /area/nadezhda/maintenance/undergroundfloor1north)
 "olZ" = (
-/turf/simulated/floor/plating/under,
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_x = -32
+	},
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/box/white/corners{
+	dir = 8;
+	icon_state = "box_corners_white"
+	},
+/obj/effect/floor_decal/industrial/box/white/corners,
+/turf/simulated/floor/tiled/dark/violetcorener,
 /area/turret_protected/ai_upload)
 "omb" = (
 /obj/machinery/door/airlock/glass{
@@ -87270,6 +87294,20 @@
 /obj/machinery/camera/motion/security{
 	dir = 8
 	},
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_x = 32
+	},
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/box/white/corners{
+	dir = 4;
+	icon_state = "box_corners_white"
+	},
+/obj/effect/floor_decal/industrial/box/white/corners{
+	dir = 1;
+	icon_state = "box_corners_white"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/turret_protected/ai_upload)
 "qqd" = (
@@ -91316,6 +91354,9 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "rbZ" = (
 /obj/effect/floor_decal/steeldecal/steel_decals10,
+/obj/structure/noticeboard/research{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/turret_protected/ai)
 "rca" = (
@@ -100918,7 +100959,7 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
-/obj/structure/plushie/beepsky,
+/obj/item/device/aicard,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/turret_protected/ai_upload)
 "sRX" = (
@@ -104107,6 +104148,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "txj" = (
 /obj/structure/table/standard,
+/obj/random/toy/plushie,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/server)
 "txp" = (
@@ -104563,7 +104605,8 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "tBv" = (
 /obj/structure/table/standard,
-/obj/structure/plushie/ian,
+/obj/item/storage/toolbox/electrical,
+/obj/item/tool/multitool,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/turret_protected/ai_upload)
 "tBF" = (
@@ -109278,6 +109321,15 @@
 	},
 /obj/structure/closet/wall_mounted/emcloset{
 	pixel_y = -32
+	},
+/obj/effect/floor_decal/industrial/warningwhite,
+/obj/effect/floor_decal/industrial/box/white/corners{
+	dir = 4;
+	icon_state = "box_corners_white"
+	},
+/obj/effect/floor_decal/industrial/box/white/corners{
+	dir = 8;
+	icon_state = "box_corners_white"
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
@@ -119799,6 +119851,17 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 4;
+	icon_state = "box_corners_red"
+	},
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 1;
+	icon_state = "box_corners_red"
+	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/turret_protected/ai_upload)
 "wrI" = (
@@ -120636,17 +120699,6 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/quartermaster/miningdock)
-"wza" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/obj/structure/table/standard,
-/obj/item/storage/toolbox/electrical,
-/turf/simulated/floor/plating/under,
-/area/turret_protected/ai_upload)
 "wzd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/security/showers{
@@ -121733,7 +121785,7 @@
 	dir = 1
 	},
 /obj/structure/lattice,
-/turf/simulated/floor/plating/under,
+/turf/simulated/open,
 /area/turret_protected/ai_upload)
 "wIC" = (
 /obj/item/trash/broken_robot_part,
@@ -198654,7 +198706,7 @@ rod
 fjV
 rod
 iFG
-fPD
+rod
 mPV
 eVT
 xRK
@@ -199068,10 +199120,10 @@ kkI
 mCx
 mCx
 bbq
-iog
-iog
-iog
-iog
+eDH
+eDH
+eDH
+eDH
 bbq
 mCx
 kPY
@@ -199259,7 +199311,7 @@ lPT
 lPT
 pXS
 lPT
-fbJ
+aDB
 hzk
 qDb
 dBJ
@@ -199270,10 +199322,10 @@ aDB
 mCx
 mCx
 iog
-iog
-iog
-iog
-iog
+eDH
+eDH
+eDH
+eDH
 iog
 mCx
 kgT
@@ -199453,13 +199505,13 @@ wVl
 xYZ
 xYZ
 iPA
-lPT
+fPD
 lPT
 jLh
 hyL
 lPT
 jKF
-eDH
+jKF
 lPT
 aDB
 mJb
@@ -199654,16 +199706,16 @@ rgz
 wZN
 lPT
 lPT
-wza
-eDH
+nUK
+jKF
 hbX
 cXo
 cXo
 hbX
-eDH
-eDH
+jKF
+jKF
 pXS
-fbJ
+aDB
 rbZ
 gQm
 ulo
@@ -199674,10 +199726,10 @@ aDB
 uAv
 mCx
 iog
-iog
-iog
-iog
-iog
+eDH
+eDH
+eDH
+eDH
 iog
 mCx
 dne
@@ -199857,12 +199909,12 @@ xbF
 nRJ
 lPT
 fTN
-eDH
+jKF
 cXo
 cXo
 cXo
-olZ
-eDH
+cXo
+jKF
 wIA
 lPT
 aDB
@@ -199876,10 +199928,10 @@ kkI
 uAv
 mCx
 bbq
-iog
-iog
-iog
-iog
+eDH
+eDH
+eDH
+eDH
 bbq
 mCx
 dWD
@@ -200048,7 +200100,7 @@ stw
 lPT
 mYq
 oSn
-pWN
+olZ
 pWN
 pWN
 pWN
@@ -200272,7 +200324,7 @@ mme
 hBP
 eti
 jVq
-eti
+fbJ
 bIY
 aDB
 aDB
@@ -200463,12 +200515,12 @@ xbF
 nRJ
 lPT
 nUK
-eDH
+jKF
 cXo
 cXo
 cXo
 cXo
-eDH
+jKF
 mOg
 lPT
 aDB
@@ -200665,13 +200717,13 @@ wZN
 lPT
 lPT
 nUK
-eDH
+jKF
 cXo
 cXo
 cXo
 uZA
-eDH
-eDH
+jKF
+jKF
 pXS
 aDB
 hSx
@@ -200867,7 +200919,7 @@ wVl
 xYZ
 xYZ
 mZl
-lPT
+fPD
 gEU
 dnx
 vhL
