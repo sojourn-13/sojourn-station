@@ -3,7 +3,7 @@
 	name = "\"Clarissa\" pistol"
 	desc = "A made on demand pocket pistol, uses older designs of fully plastic pistols used by spys to take down a target well looking like a civilian,\
 	but now commonly for self defence. Do to its full plastic internals it has a low power and impossable to maintain day to day use. Uses 9mm rounds."
-	icon = 'icons/obj/guns/projectile/clarissa.dmi'
+	icon = 'icons/obj/guns/projectile/clarissa_black.dmi'
 	icon_state = "clarissa"
 	item_state = "clarissa"
 	w_class = ITEM_SIZE_SMALL
