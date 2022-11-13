@@ -504,9 +504,6 @@ No more of that.
 	..()
 
 /obj/item/tool/sword/crusader/nt_sword_truth/attack_self(mob/user)
-	if(isBroken)
-		to_chat(user, SPAN_WARNING("\The [src] is broken."))
-		return
 	if(!wielded)
 		to_chat(user, SPAN_WARNING("You cannot use [src] special ability with one hand!"))
 		return

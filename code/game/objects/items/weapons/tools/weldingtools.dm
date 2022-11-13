@@ -96,7 +96,7 @@
 	glow_color = COLOR_RED_LIGHT
 	use_fuel_cost = 0.15
 	max_fuel = 20
-	degradation = 0.6
+	degradation = 2
 	heat = 2750
 	max_upgrades = 2
 	workspeed = 1.5
