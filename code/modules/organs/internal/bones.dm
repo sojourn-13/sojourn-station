@@ -42,7 +42,7 @@ obj/item/organ/internal/bone/add_initial_transforms()
 				"step" = /datum/surgery_step/robotic/fix_bone
 			)))
 	else
-		if(item_upgrades.len < max_upgrades)
+		/*if(item_upgrades.len < max_upgrades)
 			actions_list.Add(list(list(
 				"name" = "Attach Mod",
 				"organ" = "\ref[src]",
@@ -53,7 +53,7 @@ obj/item/organ/internal/bone/add_initial_transforms()
 				"name" = "Remove Mod",
 				"organ" = "\ref[src]",
 				"step" = /datum/surgery_step/remove_mod
-			)))
+			)))*/
 		actions_list.Add(list(list(
 			"name" = (parent.status & ORGAN_BROKEN) ? "Mend" : "Break",
 			"organ" = "\ref[src]",
