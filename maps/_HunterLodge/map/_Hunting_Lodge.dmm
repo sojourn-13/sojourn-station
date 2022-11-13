@@ -1969,7 +1969,6 @@
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "mP" = (
-/obj/item/gun/projectile/boltgun/sci,
 /turf/simulated/wall/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "np" = (

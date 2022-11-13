@@ -112,3 +112,28 @@
 /obj/item/gun/projectile/makarov/moebius/preloaded_cbo/New()
 	. = ..()
 	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_35/drum/soporific_cbo(src)
+
+/obj/item/gun/projectile/makarov/moebius/preloaded
+
+/obj/item/gun/projectile/makarov/moebius/preloaded/New()
+	. = ..()
+	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
+
+/obj/item/gun/projectile/makarov/moebius/update_icon()
+	..()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (ammo_magazine)
+		iconstring += "_mag"
+
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_slide"
+
+	if (silenced)
+		iconstring += "_s"
+		itemstring += "_s"
+
+	icon_state = iconstring
+	set_item_state(itemstring)

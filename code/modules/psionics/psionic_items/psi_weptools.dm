@@ -242,7 +242,7 @@
 	penetration_multiplier = 1
 	serial_shown = FALSE
 
-/obj/item/gun/projectile/automatic/greasegun/cult
+/obj/item/gun/projectile/automatic/luty/cult
 	name = "\"Super Nova\" psi-submachine gun"
 	desc = "A ballistic weapon forged from the mind of a psion who shaped an oddity into a weapon. One wonders how and why this weapon came to be. Perhaps that is the point?"
 	icon = 'icons/obj/guns/projectile/greasegun_psi.dmi'
@@ -253,7 +253,7 @@
 	penetration_multiplier = 1
 	serial_shown = FALSE
 
-/obj/item/gun/projectile/automatic/greasegun/cult/deepmaints
+/obj/item/gun/projectile/automatic/luty/cult/deepmaints
 	name = "\"Star Pepper\" psi-submachine gun"
 	desc = "A grease-gun mind-copy willed into reality with the concept of spraying and praying to hope kill whatever threat happens to be around you. In a sense, a reloadable Slaught-o-Matic conjured out of one's mind."
 	icon = 'icons/obj/guns/projectile/greasegun_psi.dmi'

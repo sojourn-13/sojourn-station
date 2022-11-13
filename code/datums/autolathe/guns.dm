@@ -56,14 +56,6 @@
 	name = "SA HG 10mm \"Lamia\""
 	build_path = /obj/item/gun/projectile/ladon
 
-/datum/design/autolathe/gun/ladon_hs
-	name = "H&S HG 10mm \"Porton\""
-	build_path = /obj/item/gun/projectile/ladon/hs
-
-/datum/design/autolathe/gun/ladon_sa
-	name = "Seinemetall Defense GmbH HG 10mm \"Sigia\""
-	build_path = /obj/item/gun/projectile/ladon/sa
-
 /datum/design/autolathe/gun/rafale
 	name = "Seinemetall Defense GmbH SHG 10mm \"Rafale\""
 	build_path = /obj/item/gun/projectile/silenced
@@ -102,21 +94,9 @@
 
 // 12mm H E A V Y
 
-/datum/design/autolathe/gun/revolver/mateba
-	name = "SA REV 12mm \"Mateba\""
-	build_path = /obj/item/gun/projectile/revolver/mateba
-
 /datum/design/autolathe/gun/lamia
 	name = "SA HG 12mm \"Lamia\""
 	build_path = /obj/item/gun/projectile/lamia
-
-/datum/design/autolathe/gun/naga
-	name = "HG 12mm \"Naga\""
-	build_path = /obj/item/gun/projectile/lamia/dark
-
-/datum/design/autolathe/gun/scoped_naga
-	name = "SolFed HG 12mm \"Gemini\" Advanced"
-	build_path = /obj/item/gun/projectile/lamia/scoped/dark
 
 /datum/design/autolathe/gun/scoped_lamia
 	name = "Seinemetall Defense GmbH HG 12mm \"Argos\" Advanced"
@@ -137,23 +117,15 @@
 /// S M G S
 
 /datum/design/autolathe/gun/texan
-	name = "SA SMG 9mm \"Texan\""
+	name = "Seinemetall Defense GmbH SMG 9mm \"Texan\""
 	build_path = /obj/item/gun/projectile/automatic/texan
-
-/datum/design/autolathe/gun/mac
-	name = "SA SMG 9mm \"MAC\""
-	build_path = /obj/item/gun/projectile/automatic/mac
-
-/datum/design/autolathe/gun/wirbelwind
-	name = "Seinemetall Defense GmbH SMG 9mm \"Wirbelwind\""
-	build_path = /obj/item/gun/projectile/automatic/wirbelwind
 
 /datum/design/autolathe/gun/drozd
 	name = "Excelsior 9mm \"Drozd\""
 	build_path = /obj/item/gun/projectile/automatic/drozd
 
 /datum/design/autolathe/gun/luger
-	name = "BR 9mm \"Vintovka Lyugera\" carbine"
+	name = "No-Publisher 9mm \"Vintovka Lyugera\" carbine"
 	build_path = /obj/item/gun/projectile/automatic/luger
 
 /datum/design/autolathe/gun/ppsh
@@ -163,10 +135,6 @@
 /datum/design/autolathe/gun/ppv
 	name = "BR 9mm \"Semyonovich\" assault SMG"
 	build_path = /obj/item/gun/projectile/automatic/ppsh/ppv
-
-/datum/design/autolathe/gun/greasegun
-	name = "BR 9mm \"Grease Gun\" assault SMG"
-	build_path = /obj/item/gun/projectile/automatic/greasegun
 
 /datum/design/autolathe/gun/buckler
 	name = "BR 9mm \"Buckler\" assault SMG"
@@ -282,10 +250,6 @@
 	name = "NM 6.5x39mm \"Viper\" DMR"
 	build_path = /obj/item/gun/projectile/automatic/mamba/viper
 
-/datum/design/autolathe/gun/bren
-	name = "\"Kalashnabren\" LMG"
-	build_path = /obj/item/gun/projectile/automatic/bren
-
 ///R I F L E S
 //7 . 5 m m
 
@@ -383,10 +347,6 @@
 /datum/design/autolathe/gun/custer
 	name = "H&S 8.6x70mm \"Custer\""
 	build_path = /obj/item/gun/projectile/boltgun/lever/custer
-
-/datum/design/autolathe/gun/blackguard
-	name = "NM BR 8.6x70mm \"Blackguard\" Omni Rifle"
-	build_path = /obj/item/gun/projectile/automatic/blackguard
 
 // 10mm rifles
 

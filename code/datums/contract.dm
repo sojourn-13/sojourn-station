@@ -30,7 +30,7 @@ GLOBAL_LIST_INIT(excel_item_targets,list(
 		//"a Cassad plasma rifle" = /obj/item/gun/energy/plasma/cassad,
 		"a Spider Rose energy gun" = /obj/item/gun/energy/gun,
 		"a Omnirfile heavy rifle" = /obj/item/gun/projectile/automatic/omnirifle,
-		"a MAC sub machine gun" = /obj/item/gun/projectile/automatic/mac,
+		//"a MAC sub machine gun" = /obj/item/gun/projectile/automatic/mac,
 		"a STS carbine" = /obj/item/gun/projectile/automatic/sts,
 		"a Colt handgun" = /obj/item/gun/projectile/colt,
 		//"a Lenar granade launcher" = /datum/design/autolathe/gun/grenade_launcher_lenar, What in the god damn?

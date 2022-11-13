@@ -31,7 +31,7 @@
 	name = "Stylish Revolver Pack Weapons Crate"
 	contains = list(/obj/item/gun/projectile/revolver/deckard, //700
 				/obj/item/gun/projectile/revolver/mistral, //450
-				/obj/item/gun/projectile/revolver/mateba, //500
+				/obj/item/gun/projectile/revolver/hornet, //500
 				/obj/item/gun/projectile/revolver/lemant) //225
 	cost = 1875
 	containertype = /obj/structure/closet/crate/secure/weapon
@@ -103,7 +103,7 @@
 
 /datum/supply_pack/kickasscrate
 	name = "LS Time to Kick Ass Specialty Crate"
-	contains = list(/obj/item/gun/projectile/avasarala, //600
+	contains = list(/obj/item/gun/projectile/basilisk, //600
 					/obj/item/ammo_magazine/kurtz_50,
 					/obj/item/ammo_magazine/kurtz_50,
 					/obj/item/clothing/gloves/thick/combat,

@@ -205,7 +205,7 @@
 	rapid = TRUE
 	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
-	drop_items = list(/obj/item/gun/projectile/automatic/ak47/akl/reaver_modded)
+	drop_items = list(/obj/item/gun/energy/firestorm/reaver_modded)
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 20
@@ -228,7 +228,7 @@
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/laserak
 	projectiletype = /obj/item/projectile/beam/weak/ap/reaver
-	drop_items = list(/obj/item/gun/projectile/automatic/ak47/akl/reaver_modded)
+	drop_items = list(/obj/item/gun/energy/firestorm/reaver_modded)
 
 	casingtype = /obj/item/ammo_casing/beam/ap/spent
 
@@ -238,7 +238,7 @@
 	rapid_fire_shooting_amount = 5 //we're using the burst 5 mode
 	delay_for_rapid_range = 0.22 SECONDS
 
-/obj/item/gun/projectile/automatic/ak47/akl/reaver_modded
+/obj/item/gun/energy/firestorm/reaver_modded
 
 	initialized_upgrades = list(/obj/item/gun_upgrade/trigger/dangerzone,
 								/obj/item/tool_upgrade/refinement/laserguide,

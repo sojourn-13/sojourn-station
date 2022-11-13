@@ -13122,10 +13122,10 @@
 /area/nadezhda/engineering/atmos/surface)
 "hYX" = (
 /obj/structure/table/standard,
-/obj/item/gun/projectile/automatic/blackguard{
+/obj/item/gun/projectile/automatic/omnirifle/scoped{
 	pixel_x = 12
 	},
-/obj/item/gun/projectile/automatic/blackguard{
+/obj/item/gun/projectile/automatic/omnirifle/scoped{
 	pixel_x = 12;
 	pixel_y = 8
 	},

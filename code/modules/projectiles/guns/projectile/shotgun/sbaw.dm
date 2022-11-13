@@ -52,7 +52,6 @@
 	. = ..()
 	update_icon()
 
-
 /obj/item/gun/projectile/automatic/sbaw/admin
 	name = "\"Gloryhammer\" payload rifle"
 	desc = "An obscene tool of destruction forged by ancient gods of warfare, sowing horror when you weild this Thunder Striking Wizard Thrasher."
