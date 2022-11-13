@@ -251,9 +251,16 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 						DestroySurroundings()
 					AttackTarget()
 
-/mob/living/simple_animal/hostile/proc/OpenFire(target_mob)
+/mob/living/simple_animal/hostile/proc/OpenFire(atom/target_mob)
 	var/target = target_mob
+
+	if(QDELETED(target_mob))
+		stance = HOSTILE_STANCE_IDLE
+		target_mob = null
+		return
+
 	visible_message("\red <b>[src]</b> [fire_verb] at [target]!", 1)
+
 
 	if(rapid)
 		spawn(1)
