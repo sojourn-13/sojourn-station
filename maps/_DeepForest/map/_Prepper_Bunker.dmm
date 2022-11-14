@@ -4351,7 +4351,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "tQ" = (
 /obj/structure/closet/cabinet,
-/obj/item/gun/projectile/boltgun/light_wood,
+/obj/item/gun/projectile/boltgun/light,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "tR" = (

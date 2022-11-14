@@ -79,10 +79,12 @@
 		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion,
 		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse,
 		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser,
+		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/ultracannon,
+		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon/military,
 		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot,
-		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg,
 		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flare,
 		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/explosive,
+		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/medium,
 		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang))
 
 /obj/random/mecha_equipment/low_chance

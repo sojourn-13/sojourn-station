@@ -25,7 +25,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
-		FULL_AUTO_400
+		FULL_AUTO_300
 		)
 	serial_type = "NM"
 
@@ -102,7 +102,7 @@
 	folding_stock = FALSE
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		list(mode_name="fire 40mm grenade", mode_desc="Shoot the built in underbarrel grenade launcher",  burst=1, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 

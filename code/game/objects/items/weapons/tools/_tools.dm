@@ -50,7 +50,6 @@
 	max_health = 500
 	var/health_threshold  = 40 // threshold in percent on which tool health stops dropping
 	var/lastNearBreakMessage = 0 // used to show messages that tool is about to break
-	var/isBroken = FALSE
 
 	var/force_upgrade_mults = 1
 
@@ -116,11 +115,8 @@
 
 /obj/item/tool/proc/adjustToolHealth(amount, user)
 	health = min(max_health, max(max_health * (health_threshold/100), health + amount))
-	if(!isBroken && health == 0)
+	if(health == 0)
 		breakTool()
-		isBroken = TRUE
-	else if(isBroken && health > 0)
-		isBroken = FALSE
 
 
 //Ignite plasma around, if we need it
@@ -161,17 +157,10 @@
 		src.cell = C
 		update_icon()
 		return
-
-	if(isBroken)
-		to_chat(user, SPAN_WARNING("\The [src] is broken."))
-		return
 	.=..()
 
 //Turning it on/off
 /obj/item/tool/attack_self(mob/user)
-	if(isBroken)
-		to_chat(user, SPAN_WARNING("\The [src] is broken."))
-		return
 	if(toggleable)
 		if(switched_on)
 			turn_off(user)
@@ -426,7 +415,7 @@
 	fail_chance = fail_chance - get_tool_quality(required_quality) - stat_modifer
 
 	// handle tool breaking
-	if(T && T.health == 0)
+	if(T && T.health <= 0)
 		T.breakTool(user)
 		return TOOL_USE_FAIL
 	else if(T && !T.health_threshold)
@@ -484,7 +473,7 @@
 		var/obj/machinery/door/airlock/AD = loc
 		AD.take_out_wedged_item()
 	playsound(get_turf(src), 'sound/effects/impacts/thud1.ogg', 50, 1 -3)
-	isBroken = TRUE
+	qdel(src)
 	return
 
 /******************************
@@ -896,10 +885,6 @@
 
 //Recharge the fuel at fueltank, also explode if switched on
 /obj/item/tool/afterattack(obj/O, mob/user, proximity)
-	// i assume tape cant be broken
-	if(isBroken)
-		to_chat(user, SPAN_WARNING("\The [src] is broken."))
-		return
 	if(use_fuel_cost)
 		if(!proximity) return
 		if((istype(O, /obj/structure/reagent_dispensers/fueltank) || istype(O, /obj/item/weldpack)) && get_dist(src,O) <= 1 && !has_quality(QUALITY_WELDING))
@@ -961,9 +946,6 @@
 
 //Triggers degradation and resource use upon attacks
 /obj/item/tool/resolve_attackby(atom/A, mob/user, params)
-	if(isBroken)
-		to_chat(user, SPAN_WARNING("\The [src] is broken."))
-		return
 	.=..()
 	//If the parent return value is true, then there won't be an attackby
 	//If there will be an attackby, we'll handle it there
@@ -1003,9 +985,6 @@
 
 
 /obj/item/tool/attack(mob/living/M, mob/living/user, var/target_zone)
-	if(isBroken)
-		to_chat(user, SPAN_WARNING("\The [src] is broken."))
-		return
 	if((user.a_intent == I_HELP) && ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/external/S = H.organs_by_name[user.targeted_organ]

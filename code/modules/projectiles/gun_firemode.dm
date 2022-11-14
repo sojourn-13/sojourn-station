@@ -4,7 +4,25 @@
 	A firemode is created from a list of fire mode settings. Each setting modifies the value of the gun var with the same name.
 	If the fire mode value for a setting is null, it will be replaced with the initial value of that gun's variable when the firemode is created.
 	Obviously not compatible with variables that take a null value. If a setting is not present, then the corresponding var will not be modified.
+
+	Fire delay 1 = 600 rounds per minute
+	Fire delay 2 = 300 rounds per minute
+	Fire delay 3 = 200 rounds per minute
+	Fire delay 4 = 150 rounds per minute
+	Fire delay 5 = 120 rounds per minute
+	Fire delay 6 = 100 rounds per minute
+	Fire delay 7 = 85~ rounds per minute
+	Fire delay 8 = 75  rounds per minute
+	Fire delay 9 = 66  rounds per minute
+	Fire delay 10 = 60 rounds per minute
+	Fire delay 11 = 54 rounds per minute
+	Fire delay 12 = 50 rounds per minute
+	Fire delay 13 = 46 rounds per minute
+	Fire delay 14 = 42 rounds per minute
+	Fire delay 15 = 40 rounds per minute
+
 */
+
 /datum/firemode
 	var/name = "default"
 	var/desc = "The default firemode"

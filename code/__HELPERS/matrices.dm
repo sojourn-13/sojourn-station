@@ -5,8 +5,8 @@
 /mob/living/carbon/human/shake_animation(var/intensity = 8) //Special Snowflake shake_animation redifining for players because of how scaling works.
 	var/init_px = pixel_x
 	var/shake_dir = pick(-1, 1)
-	animate(src, transform=turn(matrix(), intensity*shake_dir)*size_multiplier, pixel_x=init_px + 2*shake_dir, time=1)
-	animate(transform=matrix().Translate(0,16*(size_multiplier-1))*size_multiplier, pixel_x=init_px, time=6, easing=ELASTIC_EASING) //We're using the size multiplier on a matrix translated to make sure we are *all* on the same height on a tile.
+	animate(src, transform=turn(matrix(), intensity*shake_dir)*((scale_effect+100)/100), pixel_x=init_px + 2*shake_dir, time=1)
+	animate(transform=matrix().Translate(0,16*(((scale_effect+100)/100)-1))*((scale_effect+100)/100), pixel_x=init_px, time=6, easing=ELASTIC_EASING) //We're using the size multiplier on a matrix translated to make sure we are *all* on the same height on a tile.
 
 /atom/proc/shake_animation(var/intensity = 8)
 	var/init_px = pixel_x

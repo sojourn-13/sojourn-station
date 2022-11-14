@@ -235,7 +235,7 @@
 	if (overkill_dust && (amount >= overkill_dust) && (getFireLoss() >= maxHealth*2))
 		dust()
 
-mob/living/carbon/superior_animal/adjustToxLoss(amount)
+/mob/living/carbon/superior_animal/adjustToxLoss(amount)
 	if (toxin_immune)
 		return
 	. = ..()

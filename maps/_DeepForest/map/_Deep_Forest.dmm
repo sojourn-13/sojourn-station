@@ -463,7 +463,6 @@
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "bQ" = (
 /obj/structure/safe,
-/obj/item/gun/energy/decloner,
 /obj/item/gun/energy/floragun,
 /obj/item/gun/projectile/dartgun/vox/raider,
 /obj/item/gun/energy/lasercannon,

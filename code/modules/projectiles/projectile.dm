@@ -336,6 +336,9 @@
 	shot_from = launcher.name
 	silenced = launcher.item_flags & SILENT
 
+	if(QDELETED(target))
+		return FALSE
+
 	return launch(target, target_zone, x_offset, y_offset, angle_offset)
 
 //Used to change the direction of the projectile in flight.

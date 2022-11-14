@@ -439,7 +439,7 @@ A holder for items we make with Genetics. Helps add a visceral element to object
 
 /obj/item/genetics/flesh_sac/greater
 	name = "Flesh Sac"
-	desc = "An undilating facsimile of life, carrying with it unknown contents. Seems capable of much holding more than usual."
+	desc = "An undilating facsimile of life, carrying with it unknown contents. Seems capable of holding much more than usual."
 	max_loot_size = 40
 
 /obj/item/genetics/flesh_sac/greater/superior
@@ -560,7 +560,12 @@ Neglects to mention where to find its pieces.
 		"Roach DNA can be irradiated into a plethora of different breeds!",
 		"Warning- The Gigantism gene combined with roach DNA can have hazardous results!",
 		"Spider DNA can be irradiated into a plethora of different breeds!",
-		"The Gigantism gene only produces an Empress spider when combined with egg-laying spider DNA",
+		"Termite DNA can be irradiated to a plethora of different breeds!",
+		"Some termites can be made even larger!",
+		"Loud sounds mixed with specific friends can lead to buddy's when you need it most.",
+		"Cats can be made both bigger and smaller!",
+		"Making a dog too big will result in a bear.",
+		"The Gigantism gene only produces an Empress spider when combined with egg-laying spider DNA.",
 		"The Gigantism gene only produces an Emperor spider when combined with Tarantula-type spider DNA.",
 		"Do NOT, under ANY CIRCUMSTANCES, clone the combination of an emperor and an empress spider.",
 		"When you get right down to it, Tatonkas are really just two cows stitched together.",

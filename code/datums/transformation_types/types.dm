@@ -106,6 +106,7 @@
 	flag = HUMAN_SIZE_SCALING_TRANSFORM
 	priority = HUMAN_SIZE_SCALING_TRANSFORM_PRIORITY
 
+//I'm not sure if this obsolete or not. Size transofrmations should be handled now in update_icons.dm --Evie
 /datum/transform_type/human/size_scaling/update_values()
 	. = ..()
 

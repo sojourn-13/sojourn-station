@@ -21,6 +21,10 @@
 	required_mutations = list(MUTATION_NERVES, MUTATION_HYPERION)
 	result_path = MUTATION_S_NERVES
 
+/datum/genetics/mutation_recipe/combination/marqua_eyes
+	required_mutations = list(MUTATION_EYES, MUTATION_HYPERION)
+	result_path = MUTATION_MARQUA_EYES
+
 /datum/genetics/mutation_recipe/irradiation/flesh_sac_player
 	required_on_clone_types = list(/mob/living/carbon/human)
 	result_path = MUTATION_SAC

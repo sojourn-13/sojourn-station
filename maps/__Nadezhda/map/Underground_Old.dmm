@@ -35034,10 +35034,10 @@
 /area/nadezhda/command/armory)
 "bLN" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/wirbelwind{
+/obj/item/gun/projectile/automatic/texan{
 	pixel_y = 8
 	},
-/obj/item/gun/projectile/automatic/wirbelwind,
+/obj/item/gun/projectile/automatic/texan,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "bLO" = (
@@ -36596,7 +36596,7 @@
 /obj/structure/closet/crate/secure/weapon{
 	name = "pistol crate"
 	},
-/obj/item/gun/projectile/revolver/mateba,
+/obj/item/gun/projectile/revolver/minstral,
 /obj/item/ammo_magazine/ammobox/kurtz_50,
 /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal,
 /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal,
@@ -62756,7 +62756,6 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/maintenance/hideout)
 "cYw" = (
-/obj/item/gun/projectile/handmade_pistol,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/hideout)
 "cYx" = (

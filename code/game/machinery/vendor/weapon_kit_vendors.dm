@@ -11,7 +11,6 @@
 		/obj/item/storage/box/bs_kit/sts_para = 2,
 		/obj/item/storage/box/bs_kit/rds_omnicarbine = 2,
 		/obj/item/storage/box/bs_kit/cog = 3,
-		/obj/item/storage/box/bs_kit/greasegun = 3,
 		/obj/item/storage/box/bs_kit/triage = 2,
 		/obj/item/storage/box/bs_kit/buckler = 3,
 		/obj/item/storage/box/bs_kit/grizzly = 3,
@@ -35,7 +34,6 @@
 		/obj/item/storage/box/bs_kit/sts_para = 1200,
 		/obj/item/storage/box/bs_kit/rds_omnicarbine = 1200,
 		/obj/item/storage/box/bs_kit/cog = 750,
-		/obj/item/storage/box/bs_kit/greasegun = 750,
 		/obj/item/storage/box/bs_kit/triage = 1200,
 		/obj/item/storage/box/bs_kit/buckler = 750,
 		/obj/item/storage/box/bs_kit/grizzly = 750,
@@ -82,7 +80,6 @@
 					"Mosin Kit" = /obj/item/storage/box/bs_kit/mosin,
 					"STS Kit" = /obj/item/storage/box/bs_kit/sts,
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
-					"Grease Gun Kit" = /obj/item/storage/box/bs_kit/greasegun,
 					"Buckler SMG Kit" = /obj/item/storage/box/bs_kit/buckler,
 					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items]
@@ -98,7 +95,6 @@
 					"Mosin Kit" = /obj/item/storage/box/bs_kit/mosin,
 					"STS Kit" = /obj/item/storage/box/bs_kit/sts,
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
-					"Grease Gun Kit" = /obj/item/storage/box/bs_kit/greasegun,
 					"Buckler SMG Kit" = /obj/item/storage/box/bs_kit/buckler,
 					"Triage SMG Kit" = /obj/item/storage/box/bs_kit/triage,
 					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly)
@@ -182,7 +178,6 @@
 		/obj/item/storage/box/m_kit/operator = 5,
 		/obj/item/storage/box/m_kit/mamba = 5,
 		/obj/item/storage/box/m_kit/gear_lasgun = 5,
-		/obj/item/storage/box/m_kit/wirbelwind = 5,
 		/obj/item/storage/box/m_kit/taser = 5,
 		/obj/item/storage/box/m_kit/liberty = 5,
 		/obj/item/storage/box/m_kit/judiciary = 5,
@@ -197,7 +192,6 @@
 		/obj/item/storage/box/m_kit/operator = 750,
 		/obj/item/storage/box/m_kit/mamba = 750,
 		/obj/item/storage/box/m_kit/gear_lasgun = 750,
-		/obj/item/storage/box/m_kit/wirbelwind = 500,
 		/obj/item/storage/box/m_kit/taser = 500,
 		/obj/item/storage/box/m_kit/liberty = 1000,
 		/obj/item/storage/box/m_kit/judiciary = 750,
@@ -278,8 +272,7 @@
 	var/items = list(
 					"Counselor Kit" = /obj/item/storage/box/m_kit/taser,
 					"Liberty Kit" = /obj/item/storage/box/m_kit/liberty,
-					"Judiciary Kit" = /obj/item/storage/box/m_kit/judiciary,
-					"Wirbelwind Kit" = /obj/item/storage/box/m_kit/wirbelwind)
+					"Judiciary Kit" = /obj/item/storage/box/m_kit/judiciary)
 	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)

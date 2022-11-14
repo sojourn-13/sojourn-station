@@ -52,9 +52,9 @@
 	..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/tool/safety_clamp
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/flak/loaded
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/flak/loaded
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg/scrap/loaded
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/hmg/loaded
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster
 	ME.attach(src)
