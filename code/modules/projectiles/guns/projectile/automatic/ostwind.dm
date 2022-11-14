@@ -27,7 +27,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)

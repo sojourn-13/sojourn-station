@@ -4,6 +4,7 @@
 	allowed_roles = list("Chief Research Overseer","Soteria Scientist","Soteria Roboticist")
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"
+	cost = 0
 
 /datum/gear/factionsoteria/cloakmbo
 	display_name = "cloak, biolab overseer"
@@ -57,7 +58,7 @@
 /datum/gear/factionsoteria/gorkamoebiusmedical
 	display_name = "gorka jumpsuit, soteria medical"
 	path = /obj/item/clothing/under/rank/medical/gorka_crew_med
-	allowed_roles = list("Soteria Doctor","Chief Biolab Overseer","Soteria Recovery Team")
+	allowed_roles = list("Soteria Doctor","Chief Biolab Overseer","Soteria Lifeline Technician")
 	slot = slot_w_uniform
 	sort_category = "Faction: Soteria"
 

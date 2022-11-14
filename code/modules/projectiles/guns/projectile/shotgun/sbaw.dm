@@ -52,7 +52,6 @@
 	. = ..()
 	update_icon()
 
-
 /obj/item/gun/projectile/automatic/sbaw/admin
 	name = "\"Gloryhammer\" payload rifle"
 	desc = "An obscene tool of destruction forged by ancient gods of warfare, sowing horror when you weild this Thunder Striking Wizard Thrasher."
@@ -64,6 +63,6 @@
 	fire_delay = 0.5
 	init_firemodes = list(
 	SEMI_AUTO_NODELAY,
-	FULL_AUTO_400,
+	FULL_AUTO_300,
 	)
 	serial_type = "BlueCross"

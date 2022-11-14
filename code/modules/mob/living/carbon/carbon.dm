@@ -27,7 +27,7 @@
 	touching.my_atom = null
 
 	metabolism_effects.parent = null
-
+	reagents = null
 	QDEL_NULL(ingested)
 	QDEL_NULL(touching)
 	QDEL_NULL(reagents) //TODO: test deleting QDEL_NULL(reagents) since QDEL_NULL(bloodstr) might be all we need

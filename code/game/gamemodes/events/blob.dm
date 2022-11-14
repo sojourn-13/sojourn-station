@@ -28,10 +28,23 @@
 /datum/event/blob/start()
 	var/area/A = random_ship_area(filter_players = TRUE, filter_critical = TRUE)
 	var/turf/T = A.random_space()
+	var/active_players = 0
+	var/mob/living/carbon/human/fighter
 	if(!T)
 		log_and_message_admins("Blob failed to find a viable turf.")
 		kill()
 		return
+
+	for(fighter in GLOB.player_list)
+		if(fighter.mind.assigned_role in list(JOBS_ANTI_HIVEMIND))
+			active_players++
+
+	log_and_message_admins("Active Blob combative players number is [active_players].")
+	if(GLOB.hive_data_bool["pop_lock"])
+		if(active_players <= 7)
+			log_and_message_admins("Blob failed to spawn as their was less then 7 active players exspected to combat the blob.")
+			kill()
+			return
 
 	log_and_message_admins("Blob spawned at \the [get_area(T)]", location = T)
 	Blob = new /obj/effect/blob/core(T)
@@ -209,9 +222,6 @@
 		//If the core is gone, no more expansion
 		next_expansion = INFINITY
 
-
-
-
 /*
 	TO minimise performance costs at massive sizes, blobs will go to sleep once they're no longer at the
 	edge or relevant.
@@ -297,12 +307,6 @@
 		else
 			update_icon()
 			wake_neighbors()
-
-
-
-
-
-
 
 /*********************************
 	EXPANDING!

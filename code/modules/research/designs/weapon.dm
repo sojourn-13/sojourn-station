@@ -46,11 +46,7 @@
 	build_path = /obj/item/gun/energy/centauri
 
 /datum/design/research/item/weapon/clarissa
-	build_path = /obj/item/gun/projectile/clarissa/moebius
-
-/datum/design/research/item/weapon/decloner
-	name = "Prototype: Biological Demolecularizer"
-	build_path = /obj/item/gun/energy/decloner
+	build_path = /obj/item/gun/projectile/makarov/moebius
 
 /datum/design/research/item/weapon/slimegun
 	name = "Prototype: \"Ranch\" core stopper gun"
@@ -134,17 +130,6 @@
 			Despite the Artificer's Guild \"Hatton\" being traded on the free market through guild channels, \
 			this device suffers from a wide number of reliability issues stemming from it being lathe printed."
 	build_path = /obj/item/hatton/moebius
-
-//Starstriker - The gun thats able to strike the stars!
-/datum/design/research/item/weapon/starstriker
-	name = "\"Star Striker\" laser boltgun"
-	desc = "A mix of the lighter version of the Sike point 257 hunting rifle, but with the twist of using laser based casings rather then normal bullet based projectiles. Its cal is .233 unlike the gun its based on."
-	build_path = /obj/item/gun/projectile/boltgun/sci
-
-//LAK - The gun thats able to laser shot away most proplems
-/datum/design/research/item/weapon/laser_ak
-	name = "\"Legkiy-Kalashnikov\" laser carbine"
-	build_path = /obj/item/gun/projectile/automatic/ak47/akl
 
 //OP dart gun
 /datum/design/research/item/weapon/carbine_dartgun

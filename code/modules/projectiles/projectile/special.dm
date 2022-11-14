@@ -80,7 +80,7 @@
 
 		for(var/obj/effect/blob/B in hear(8,get_turf(src)))       		//Blob damage here
 			var/damage = round(30/(get_dist(B,get_turf(src))+1))
-			B.health -= damage
+			B.take_damage(damage)
 			B.update_icon()
 
 		new/obj/effect/sparks(src.loc)

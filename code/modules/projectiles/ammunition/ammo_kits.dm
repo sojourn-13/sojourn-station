@@ -33,6 +33,10 @@
 	var/material_points = 15 + extra_material_points // 10 steel and 5 cardboard
 
 	if(user.stats)
+		if(user.stats.getPerk(/datum/perk/handyman))
+			material_points += 11
+		if(user.stats.getPerk(/datum/perk/gunsmith))
+			material_points += 11
 		switch(user.stats.getStat(STAT_MEC))
 			if(STAT_LEVEL_BASIC to STAT_LEVEL_ADEPT)
 				material_points += 3
@@ -44,8 +48,6 @@
 				material_points += 12
 			if(STAT_LEVEL_GODLIKE to INFINITY)
 				material_points += 15
-		//if(user.stats.getPerk(/datum/perk/oddity/gunsmith))
-		//	material_points += 15
 
 	var/list/array = list(
 		CAL_RIFLE = list(
@@ -85,7 +87,11 @@
 			"20mm beanbag pile (5 ammo, 2 points)" = list(2, /obj/item/ammo_casing/shotgun/beanbag/scrap/prespawned),
 			"20mm slug box (30 ammo, 20 points)" = list(20, /obj/item/ammo_magazine/ammobox/shotgun/scrap_slug),
 			"20mm pellet box (30 ammo, 15 points)" = list(15, /obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet),
-			"20mm beanbag box (30 ammo, 10 points)" = list(10, /obj/item/ammo_magazine/ammobox/shotgun/scrap_beanbag)),
+			"20mm beanbag box (30 ammo, 10 points)" = list(10, /obj/item/ammo_magazine/ammobox/shotgun/scrap_beanbag),
+			"20mm ceramic pile (5 ammo, 5 points" = list(5, /obj/item/ammo_casing/shotgun/ceramic/prespawned),
+			"20mm ceramic box (30 ammo, 20 points)" = list (20, /obj/item/ammo_magazine/ammobox/shotgun/ceramic),
+			"20mm incendiary pile (5 ammo, 5 points" = list(5, /obj/item/ammo_casing/shotgun/incendiary/prespawned),
+			"20mm incendiary box (30 ammo, 20 points)" = list(20, /obj/item/ammo_magazine/ammobox/shotgun/incendiary)),
 		CAL_FLARE = list(
 			"flare (1 ammo, 1 points)" = list(1, /obj/item/ammo_casing/flare/old)),
 		CAL_BALL = list(
@@ -93,7 +99,8 @@
 			"17mm ball ammo box (30 ammo, 15 points)" = list(15, /obj/item/ammo_magazine/ammobox/ball)),
 		CAL_ANTIM = list(
 			"14.5mm ammo pile (3 ammo, 5 points)" = list(5, /obj/item/ammo_casing/antim/scrap/prespawned),
-			"14.5mm ammo box (5 ammo, 10 points)" = list(10, /obj/item/ammo_magazine/ammobox/antim/scrap)))
+			"14.5mm ammo box (5 ammo, 10 points)" = list(10, /obj/item/ammo_magazine/ammobox/antim/scrap)),
+		)
 
 	var/list/items_to_spawn = list()
 	var/user_is_choosing = TRUE
@@ -129,7 +136,6 @@
 			else
 				user_is_choosing = FALSE
 
-
 /*
 /obj/item/ammo_kit
 	name = "scrap Ammo Kit"
@@ -163,7 +169,7 @@
 	options["Shotgun Buckshot"] = "shot"
 	options["Shotgun Beanbag"] = "bean"
 	options["Shotgun Slug"] = "slug"
-	options[".60 Anti-Material"] = "antim"
+	options[".60 Anti-Materiel"] = "antim"
 	options["30mm rolled shot"] = "ball"
 	options[".22 flare shell"] = "flare"
 

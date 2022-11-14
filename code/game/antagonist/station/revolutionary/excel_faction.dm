@@ -107,7 +107,7 @@
 		new /obj/item/circuitboard/excelsior_teleporter(stash)
 		new /obj/item/soap/commie(stash)
 		new /obj/item/clothing/suit/space/void/excelsior(stash)
-		new /obj/item/gun/projectile/clarissa/makarov(stash)
+		new /obj/item/gun/projectile/makarov(stash)
 		new /obj/item/ammo_magazine/highcap_pistol_35(stash)
 		new /obj/item/ammo_magazine/highcap_pistol_35(stash)
 		new /obj/item/storage/toolbox/syndicate(stash)

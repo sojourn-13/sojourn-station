@@ -1,5 +1,5 @@
 /datum/reagent/stim
-	scannable = 1
+	scannable = TRUE
 	metabolism = REM/4
 	constant_metabolism = TRUE
 	reagent_type = "Stimulator"
@@ -518,7 +518,7 @@
 	taste_description = "sponge cake"
 	reagent_state = LIQUID
 	color = "#00FFFF"
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/stim/reviver/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(20 * effect_multiplier))

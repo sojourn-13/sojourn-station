@@ -153,20 +153,18 @@
 		"Exotic",
 			list(name="Ammo Strip (7.62mm Rifle)", cost=400, path=/obj/item/ammo_magazine/speed_loader_rifle_75),
 			list(name="Ammo Strip (8.6mm Rifle)", cost=400, path=/obj/item/ammo_magazine/speed_loader_heavy_rifle_408),
-			list(name="Shells (20mm Incendiary)", cost=400, path=/obj/item/ammo_casing/shotgun/incendiary/prespawned),
 			list(name="Shells (20mm Payload)", cost=500, path=/obj/item/ammo_casing/shotgun/payload/prespawned),
 			list(name="Heavy Rifle Drum Magazine (8.6mm Drum)", cost=700, path=/obj/item/ammo_magazine/heavy_rifle_408_drum),
 			list(name="Caseless Magazine (10x24mm Standard)", cost=500, path=/obj/item/ammo_magazine/c10x24),
 			list(name="Caseless Light Rifle Magazine (10x24mm Standard)", cost=100, path=/obj/item/ammo_magazine/rifle_10x24),
-			list(name="Ammo Magazine (19mm Gyro)", cost=500, path=/obj/item/ammo_magazine/a75),
 			list(name="Grenade Shell Baton", cost=250, path=/obj/item/ammo_casing/grenade),
 			list(name="Grenade Shell Flash", cost=250, path=/obj/item/ammo_casing/grenade/flash),
 			list(name="Grenade Shell Blast", cost=350, path=/obj/item/ammo_casing/grenade/blast),
 			list(name="Grenade Shell Frag", cost=350, path=/obj/item/ammo_casing/grenade/frag),
 			list(name="Grenade Shell Stinger", cost=300, path=/obj/item/ammo_casing/grenade/frag/stinger),
 			list(name="Grenade Shell EMP", cost=300, path=/obj/item/ammo_casing/grenade/emp),
-			list(name="14.5×114mm Anti-Material \"Red-Nose\"", cost=2400, path=/obj/item/ammo_casing/antim/lethal/prespawned),
-			list(name="14.5×114mm Anti-Material \"Off-Switch\"", cost=2400, path=/obj/item/ammo_casing/antim/ion/prespawned),
+			list(name="14.5×114mm Anti-Materiel \"Red-Nose\"", cost=2400, path=/obj/item/ammo_casing/antim/lethal/prespawned),
+			list(name="14.5×114mm Anti-Materiel \"Off-Switch\"", cost=2400, path=/obj/item/ammo_casing/antim/ion/prespawned),
 		"9mm Ammo Packets",
 			list(name="Packet (9mm Auto)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35),
 			list(name="Packet (9mm Auto high-velocity)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35/hv),
@@ -252,7 +250,7 @@
 			list(name="Box (10x24mm Caseless)", cost=1650, path=/obj/item/ammo_magazine/ammobox/c10x24),
 			list(name="Box (14.5×114mm AP)", cost=1650, path=/obj/item/ammo_magazine/ammobox/antim),
 		"Mech Boxes",
-			list(name="Ultra AC 2 ammunition box", cost=750, path=/obj/item/mech_ammo_box/lmg), //Cheap for the sake of sales, 35 x 2 = 70 so its a 11x~ mark up
+			list(name="Ultra AC 2 ammunition box", cost=750, path=/obj/item/mech_ammo_box/ultracannon), //Cheap for the sake of sales, 35 x 2 = 70 so its a 11x~ mark up
 			list(name="LBX AC 10 ammunition box", cost=750, path=/obj/item/mech_ammo_box/scattershot),
 	)
 

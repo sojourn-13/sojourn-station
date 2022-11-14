@@ -1250,7 +1250,9 @@
 		return
 	if(XRAY in mutations)
 		sight |= SEE_TURFS|SEE_MOBS|SEE_OBJS
-	if(unnatural_mutations.getMutation("MUTATION_CAT_EYES", TRUE) || stats.getPerk(PERK_NIGHTCRAWLER))
+	if(unnatural_mutations.getMutation("MUTATION_CAT_EYES", TRUE))
 		see_invisible = SEE_INVISIBLE_NOLIGHTING
+	if(unnatural_mutations.getMutation("MUTATION_ECHOLOCATION", TRUE))
+		see_invisible |= SEE_INVISIBLE_NOLIGHTING|SEE_MOBS
 	if(CE_DARKSIGHT in chem_effects)//TODO: Move this to where it belongs, doesn't work without being right here for now. -Kaz/k5.
 		see_invisible = min(see_invisible, chem_effects[CE_DARKSIGHT])

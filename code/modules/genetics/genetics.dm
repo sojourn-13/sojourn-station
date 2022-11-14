@@ -393,8 +393,10 @@
 				log_debug("Calling On player Remove Script: [mutation_to_remove.name]")
 				#endif
 				mutation_to_remove.onPlayerRemove()
+				return
 			if(istype(holder, /mob/living))
 				mutation_to_remove.onMobRemove()
+				return
 		removeMutation(mutation_to_remove.key, mutation_to_remove.count)
 	initialized = FALSE
 

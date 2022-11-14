@@ -631,7 +631,7 @@
 	lst[MATERIAL_COMPRESSED_MATTER] = 1 //we make this!
 
 /obj/machinery/matter_nanoforge/proc/check_user(mob/user)
-	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, STAT_LEVEL_EXPERT))
+	if(user.stats?.getPerk(PERK_HANDYMAN))
 		return TRUE
 	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
 	return FALSE

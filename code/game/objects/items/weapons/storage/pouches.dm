@@ -310,12 +310,11 @@
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(
-		/obj/item/gun/projectile/clarissa,
+		/obj/item/gun/projectile/makarov,
 		/obj/item/gun/projectile/colt,
 		/obj/item/gun/projectile/basilisk,
 		/obj/item/gun/projectile/giskard,
 		/obj/item/gun/projectile/gyropistol,
-		/obj/item/gun/projectile/handmade_pistol,
 		/obj/item/gun/projectile/lamia,
 		/obj/item/gun/projectile/mk58,
 		/obj/item/gun/projectile/revolver/lemant,

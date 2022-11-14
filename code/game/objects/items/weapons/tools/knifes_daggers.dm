@@ -167,6 +167,21 @@
 	max_upgrades = 4
 	price_tag = 300 // Fancy expensive paper weight.
 
+/obj/item/tool/knife/dagger/heirloom_knife
+	name = "heirloom dagger"
+	desc = "This dagger was given to generations of family members that once hunted as a faint memory of trust and hope, while it isn't meant to be a weapon it certainly does the job of cutting things. Extremely handy not exactly valuable yet precious."
+	icon_state = "general_skinningknife"
+	item_state = "fancydagger"
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 1)
+	embed_mult = 0.7
+	max_upgrades = 0
+	price_tag = 50 // Fancy expensive heirloom.... it is not exactly meant to be upgradable nor sold but the value that it holds is somehow more symbolic than material.
+	force = WEAPON_FORCE_WEAK
+	throwforce = WEAPON_FORCE_ROBUST
+	armor_penetration = ARMOR_PEN_GRAZING
+	tool_qualities = list(QUALITY_CUTTING = 35) //Can't be upgraded. Round start knife. Damage is bad not really good to selling either. Only fair give a good status to cutting things.
+	backstab_damage = 9
+
 /obj/item/tool/knife/dagger/bluespace
 	name = "\improper Soteria \"Displacement Dagger\""
 	desc = "A teleportation matrix attached to a dagger, for sending things you stab it into very far away."

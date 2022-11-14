@@ -75,6 +75,11 @@
 	//Can't do it sometimes
 	if(!usr.canmove || usr.stat || usr.restrained())
 		return 0
+
+	if(!icon_closed)
+		to_chat(usr, "This coat can not be bottoned.")
+		return 0
+
 	icon_state = icon_closed
 	to_chat(usr, "You button the coat.")
 	check_coat_verbs()
@@ -88,6 +93,11 @@
 	//Can't do it sometimes
 	if(!usr.canmove || usr.stat || usr.restrained())
 		return 0
+
+	if(!icon_open)
+		to_chat(usr, "This coat can not be unbottoned.")
+		return 0
+
 	icon_state = icon_open
 	to_chat(usr, "You unbutton the coat.")
 	check_coat_verbs()
@@ -100,6 +110,11 @@
 	//Can't do it sometimes
 	if(!usr.canmove || usr.stat || usr.restrained())
 		return 0
+
+	if(!icon_drape)
+		to_chat(usr, "This coat can not be draped.")
+		return 0
+
 	icon_state = icon_drape
 	to_chat(usr, "You drape the coat over your shoulders.")
 	check_coat_verbs()
