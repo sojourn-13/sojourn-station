@@ -134,7 +134,7 @@
 	saw_off = FALSE
 	serial_type = "BlueCross"
 
-/obj/item/gun/projectile/makarov/devil_eye
+/obj/item/gun/projectile/clarissa/devil_eye
 	name = "\"Devil Eye\" pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 			A small red eye has been painted onto the firing pin of this formerly undepowered pistol, this one has been modified with a better feed mechaism to allow \
@@ -142,6 +142,9 @@
 	price_tag = 2000
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG
 	damage_multiplier = 1.5
+	icon = 'icons/obj/guns/projectile/clarissa.dmi'
+	icon_state = "clarissa"
+	item_state = "clarissa"
 	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/boltgun/lever/handcock
@@ -163,12 +166,11 @@
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic
 	name = "\"Lockpick-o-Matic\""
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-			Someone had a sense of humor when designing this weapon."
+			A mix of several other Slot-o-Matics put together after being sawn apart to make a rainbow and then fitted with a long unreloadable 10x24 caseless mag."
 	caliber = "10x24"
 	ammo_type = "/obj/item/ammo_casing/pistol"
 	mag_well = MAG_WELL_PULSE
 	magazine_type = /obj/item/ammo_magazine/c10x24
-	price_tag = 15
 	gun_tags = list(GUN_PROJECTILE)
 	possible_colors = list("rainbow")
 	init_recoil = EMBEDDED_RECOIL(0.5)
@@ -211,7 +213,7 @@
 /obj/item/gun/projectile/that_gun
 	name = "\"That Gun\" revolver pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-			What the fuck?"
+			A sneaky postol weapon designed to like a revolver to fool people into thinking you only have six shots."
 	icon = 'icons/obj/guns/projectile/that_gun.dmi'
 	icon_state = "thatgun"
 	item_state = "thatgun"
@@ -298,7 +300,7 @@
 	serial_type = "Crimson Cross"
 
 /obj/item/gun/energy/lasersmg/p9evil/consume_next_projectile(mob/user)
-	visible_message(SPAN_WARNING("\The gun draws the life of the user!"))
+	visible_message(SPAN_WARNING("The [src] draws the life of the user!"))
 	playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 	user.maxHealth -=0.1
 	user.health -=0.1
