@@ -1,6 +1,11 @@
 // superior_animal and definition moved to superior_defines.dm
 /mob/living/carbon/superior_animal/New()
 	..()
+	if(hud_type)
+		hud = new hud_type()
+	else
+		hud = new()
+
 	if(!icon_living)
 		icon_living = icon_state
 	if(!icon_dead)

@@ -23,6 +23,7 @@
 		B.host_brain.ckey = null
 		B.host_brain.name = "host brain"
 		B.host_brain.real_name = "host brain"
+	B.update_hud()
 
 	//reset name if the borer changed it
 	fully_replace_character_name(null, B.host_name)

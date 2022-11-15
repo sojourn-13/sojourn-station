@@ -657,7 +657,7 @@
 	verb_type = /obj/item/verbs/borer/attached_arm/repair_bone
 	give_when_attached=1
 	antirequisites=list("bone_sword","bone_shield")
-
+/*
 /datum/unlockable/borer/arm/extend_o_arm_unlock
 	remove_on_detach = 0 // Borer-side, so we don't lose it.
 
@@ -672,7 +672,7 @@
 	cost=200
 	time=1 MINUTES
 	prerequisites=list("repair_bone")
-
+*/
 
 ////////////Leg Verbs////////////////////////////
 

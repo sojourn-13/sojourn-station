@@ -369,6 +369,7 @@
 	siemens_coefficient = 0
 	slot_flags = null
 	attack_verb = list("attacks", "slashes", "stabs", "slices", "tears", "rips", "dices", "cuts")
+	canremove = FALSE
 
 	var/mob/living/simple_animal/borer/parent_borer = null
 
@@ -419,6 +420,7 @@
 	matter = list(MATERIAL_BONE = 30)
 	throw_speed = 1
 	throw_range = 7
+	canremove = FALSE
 	w_class = ITEM_SIZE_BULKY
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	tool_qualities = list(QUALITY_HAMMERING = 45)
@@ -465,6 +467,7 @@
 	icon_state = "boneshield"
 	siemens_coefficient = 0
 	slot_flags = null
+	canremove = FALSE
 
 	var/mob/living/simple_animal/borer/parent_borer = null
 

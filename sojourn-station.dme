@@ -3297,6 +3297,8 @@
 #include "modular_sojourn\spaceleak.dm"
 #include "modular_sojourn\stalker_annomlies.dm"
 #include "modular_sojourn\Borers\borer.dm"
+#include "modular_sojourn\Borers\borer_hud.dm"
+#include "modular_sojourn\Borers\borer_hud_crap.dm"
 #include "modular_sojourn\Borers\carbon_powers.dm"
 #include "modular_sojourn\Borers\say.dm"
 #include "modular_sojourn\Borers\__ADMIN SHIT\antagonist.dm"

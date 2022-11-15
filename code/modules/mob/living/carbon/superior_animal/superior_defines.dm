@@ -13,6 +13,9 @@
 	// AI activation for players is handled in sanity , if it has sanity damage it activates AI.
 	sanity_damage = 0.5
 
+	var/datum/hud_data/hud
+	defaultHUD = ""
+	
 	var/eating_time = 900
 
 	/// Does this mob advance if they can't see their target?

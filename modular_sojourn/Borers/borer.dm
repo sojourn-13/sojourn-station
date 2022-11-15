@@ -4,6 +4,7 @@
 #define BORER_MODE_ATTACHED_CHEST 3
 #define BORER_MODE_ATTACHED_ARM 4
 #define BORER_MODE_ATTACHED_LEG 5
+#define BORER_MODE_INFESTED 6
 #define BORER_CAN_ASSUME_CONTROL TRUE
 
 var/global/borer_chem_types_head = typesof(/datum/borer_chem/head) - /datum/borer_chem - /datum/borer_chem/head
@@ -28,7 +29,7 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 	icon_living = "brainslug"
 	icon_dead = "brainslug_dead"
 	speed = 6
-	hud_type = /datum/hud_data/simple
+	hud_type = /datum/hud_data/borer
 
 	mob_size = MOB_MINISCULE
 
@@ -43,18 +44,26 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 	friendly = "prods"
 	wander = 0
 	pass_flags = PASSTABLE
-	universal_understand=1
+	universal_understand = 1
 	heat_damage_per_tick = 1
 	cold_damage_per_tick = 1
 
-	var/busy = 0 // So we aren't trying to lay many eggs at once.
+	colony_friend = 1
+	friendly_to_colony = 1
 
+	var/busy = 0 // So we aren't trying to lay many eggs at once.
 	var/chemicals = 10                      // Chemicals used for reproduction and spitting neurotoxin.
-	var/mob/living/host        // Human host for the brain worm.
-	var/hostlimb = null						// Which limb of the host is inhabited by the borer.
+
+	var/mob/living/host								// Generic host for the brain worm.
+	var/mob/living/captive_brain/host_brain			// Used for swapping control of the body back and forth.
+	var/mob/living/carbon/human/H					// Human host for the brain worm.
+	var/hostlimb									// Which limb of the host is inhabited by the borer.
+	var/mob/living/carbon/superior_animal/symbiont	// Superior host for the brain worm.
+	var/mob/living/simple_animal/parasitoid			// Lesser host for the brain worm.
+
 	var/truename                            // Name used for brainworm-speak.
-	var/mob/living/captive_brain/host_brain // Used for swapping control of the body back and forth.
 	var/host_name 							// Stores the old name of the host to revert to after namepick
+
 	var/controlling                         // Used in human death check.
 	var/list/avail_chems=list()
 	var/list/unlocked_chems_head=list()
@@ -88,8 +97,8 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 	var/channeling_bone_cocoon = 0
 	var/channeling_night_vision = 0
 
-	var/obj/item/weapon/gun/hookshot/flesh/extend_o_arm = null
-	var/extend_o_arm_unlocked = 0
+//	var/obj/item/weapon/gun/hookshot/flesh/extend_o_arm = null
+//	var/extend_o_arm_unlocked = 0
 
 	// Event handles
 	var/eh_emote
@@ -168,13 +177,12 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 
 /mob/living/simple_animal/borer/Life()
 	.=..()
-	if(host)
-		if(!stat && !host.stat)
-			if(health < 20)
-				health += 0.5
-			if(chemicals < 250 && !channeling)
-				chemicals++
-			host.AI_inactive = TRUE
+	if(host && !stat && !(host.stat == 2))
+		if(health < 20)
+			health += 0.5
+		if(chemicals < 250 && !channeling)
+			chemicals++
+		host.AI_inactive = TRUE
 
 /mob/living/simple_animal/borer/proc/update_verbs(var/mode)
 	if(verb_holders.len>0)
@@ -216,6 +224,8 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 				if(!C.unlockable)
 					avail_chems[C.name]=C
 			avail_chems += unlocked_chems_leg
+//		if(BORER_MODE_INFESTED)
+
 	if(host && !host.key && BORER_CAN_ASSUME_CONTROL) //allow borers to control empty minds
 		to_chat(src, "<span class='danger'>This host appears sufficiently simple for you to assume control.</span>")
 		verb_holders+=new /obj/item/verbs/borer/special(src)
@@ -315,14 +325,178 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 /mob/living/simple_animal/borer/Stat()
 	..()
 	if(statpanel("Status"))
-		stat("Health", health)
-		stat("Chemicals", chemicals)
+		stat("Health",health)
+		stat("Chemicals",chemicals)
+		if(host)
+			stat("Host's Health",host.health)
+		var/mob/living/carbon/human/H = host
+		var/obj/item/organ/internal/psionic_tumor/B = H.random_organ_by_process(BP_PSION)
+		if(B)
+			stat("Psi Essence", "[B.psi_points]/[B.max_psi_points]")
+
+
+/mob/living/simple_animal/borer/verb/Examine_host_stats()
+	set name		= "Examine Host Biology"
+	set desc		= "Browse your Host's capabilities."
+	set category	= "Alien"
+
+	if(iscarbon(host) || issilicon(host))
+		browse_hst_stats(src)
+	else
+		to_chat(usr, "It is hardly worth our attention.")
+
+/mob/living/simple_animal/borer/proc/browse_hst_stats()
+	var/additionalcss = {"
+		<style>
+			table {
+				float: left;
+			}
+			table, th, td {
+				border: #3333aa solid 1px;
+				border-radius: 5px;
+				padding: 5px;
+				text-align: center;
+			}
+			th{
+				background:#633;
+			}
+		</style>
+	"}
+	var/table_header = "<th>Stat Name<th>Stat Value"
+	var/list/S = list()
+	for(var/TS in ALL_STATS)
+		S += "<td>[TS]<td>[host.getStatStats(TS)]"
+	var/data = {"
+		[additionalcss]
+		["[host.name]'s stats"]<br>
+		<table width=20%>
+			<tr>[table_header]
+			<tr>[S.Join("<tr>")]
+		</table>
+	"}
+	// Perks
+	var/list/Plist = list()
+	var/column = 1
+	for(var/perk in host.stats.perks)
+		var/datum/perk/P = perk
+		//var/filename = sanitizeFileName("[P.type].png")
+		//var/asset = asset_cache.cache[filename] // this is definitely a hack, but getAtomCacheFilename accepts only atoms for no fucking reason whatsoever.
+		//if(asset)
+		if( column == 1)
+			Plist += "<td valign='middle'><span style='text-align:center'>[P.name]<br>[P.desc]</span></td>"
+			column = 2
+		else
+			Plist += "<td valign='middle'><span style='text-align:center'>[P.name]<br>[P.desc]</span></td><tr></tr>"
+			column = 1
+	data += {"
+		<table width=80%>
+			<th colspan=2>Perks</th>
+			<tr>[Plist.Join()]</tr>
+		</table>
+	"}
+
+	var/datum/browser/B = new(src, "StatsBrowser","[host.name]'s stats", 1000, 400)
+	B.set_content(data)
+	B.set_window_options("can_minimize=0")
+	B.open()
 
 /mob/living/simple_animal/borer/eyecheck()
 	if(host)
 		return host.eyecheck()
 	else
 		return ..()
+
+/mob/living/simple_animal/borer/verb/read_mind()
+	set category = "Alien"
+	set name = "Devour Thoughts"
+	set desc = "Extract information, languages and skills out of host's brain. May cause confusion and brain damage."
+
+	if(stat)
+		return
+
+	if(!host)
+		to_chat(src, SPAN_WARNING("You are not inside a host body."))
+		return
+
+	var/list/copied_stats = list()
+	if(host.stats)
+		for(var/stat_name in ALL_STATS_FOR_LEVEL_UP)
+			var/host_stat = host.stats.getStat(stat_name, pure=TRUE)
+			var/borer_stat = stats.getStat(stat_name, pure=TRUE)
+			if(host_stat > borer_stat)
+				var/devour = host_stat * (rand(5, 25)/100)
+				host.stats.changeStat(stat_name, round(-devour))
+				stats.changeStat(stat_name, round(devour))
+				copied_stats += stat_name
+
+	var/list/copied_languages = list()
+	for(var/datum/language/L in host.languages)
+		if(!(L.flags & HIVEMIND) && !can_speak(L))
+			add_language(L.name)
+			copied_languages += L.name
+
+	if(host.mind)
+		host.mind.show_memory(src)
+
+	var/copied_amount = length(copied_stats) + length(copied_languages)
+	if(copied_amount)
+		if(length(copied_stats))
+			to_chat(src, SPAN_NOTICE("You extracted some knowledge on [english_list(copied_stats)]."))
+
+		if(length(copied_languages))
+			to_chat(src, SPAN_NOTICE("You learned [english_list(copied_languages)]."))
+
+		to_chat(host, SPAN_DANGER("Your head spins, your memories thrown in disarray!"))
+		H.adjustBrainLoss(copied_amount * 4)
+		H?.sanity.onPsyDamage(copied_amount * 4)
+
+		host.make_dizzy(copied_amount * 4)
+		host.confused = max(host.confused, copied_amount * 4)
+
+/mob/living/simple_animal/borer/proc/write_mind()
+	set category = "Abilities"
+	set name = "Feed Mind"
+	set desc = "Write known skills and languages to host's brain. May cause confusion and brain damage."
+
+	if(stat)
+		return
+
+	if(!host)
+		to_chat(src, SPAN_WARNING("You are not inside a host body."))
+		return
+
+	var/list/copied_stats = list()
+	for(var/stat_name in ALL_STATS_FOR_LEVEL_UP)
+		var/borer_stat = stats.getStat(stat_name, pure=TRUE)
+		if(istype(host, /mob/living/carbon/human))
+			var/feast = borer_stat * (rand(25, 75)/100)
+			host.stats.changeStat(stat_name, feast)
+			copied_stats += stat_name
+		else if(istype(host, /mob/living/simple_animal))
+			host.stats.changeStat(stat_name, borer_stat)
+			copied_stats += stat_name
+
+	var/list/copied_languages = list()
+	for(var/datum/language/L in languages)
+		if(!(L.flags & HIVEMIND) && !host.can_speak(L))
+			host.add_language(L.name)
+			copied_languages += L.name
+
+
+	var/copied_amount = length(copied_stats) + length(copied_languages)
+	if(copied_amount)
+		if(length(copied_stats))
+			to_chat(src, SPAN_NOTICE("You put some knowledge on [english_list(copied_stats)] into your host's mind."))
+
+		if(length(copied_languages))
+			to_chat(src, SPAN_NOTICE("You teach your host [english_list(copied_languages)]."))
+
+		to_chat(host, SPAN_DANGER("Your head spins as new information fills your mind!"))
+		host.adjustBrainLoss(copied_amount * 2)
+		H?.sanity.onPsyDamage(copied_amount * 2)
+
+		host.make_dizzy(copied_amount * 2)
+		host.confused = max(host.confused, copied_amount * 2)
 
 // VERBS!
 /obj/item/verbs/borer/special/verb/bond_brain()
@@ -377,14 +551,14 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 		host_brain.name = host.real_name
 		host.ckey = src.ckey
 		var/mob/living/simple_animal/H = host
-		if(istype(H, /mob/living/simple_animal))
-			H?.hud_type |= /datum/hud_data/simple
+		if(istype(H, /mob/living/simple_animal) || istype(H, /mob/living/carbon/superior_animal))
 			update_hud()
 		controlling = 1
 		host.AI_inactive = TRUE
-	var/newname
+	host.verbs += /mob/living/proc/release_control
+/*	var/newname			/// uncancerfy renaming proc ///
 	for(var/i = 1 to 3)
-		newname = sanitizeName(stripped_input(host,"You may assume a new identity for the host you've infested. Enter a name, or cancel to keep your host's original name.", "Name change [4-i] [0-i != 1 ? "tries":"try"] left",""),1,MAX_NAME_LEN)
+		newname = host.rename_self(stripped_input(host,"You may assume a new identity for the host you've infested. Enter a name, or cancel to keep your host's original name.", "Name change [4-i] [0-i != 1 ? "tries":"try"] left",""),1,MAX_NAME_LEN)
 		if(!newname || newname == "")
 			if(alert(host,"Are you sure you want to keep your host's original name?",,"Yes","No") == "Yes")
 				break
@@ -394,8 +568,7 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 	if(newname)
 		host_name = host.real_name //store the old host name in the borer
 		host.fully_replace_character_name(null, newname)
-	host.verbs += /mob/living/proc/release_control
-	/* Broken
+	////////////////////////Broken////////////////////////
 	host.verbs += /mob/living/carbon/proc/punish_host
 	host.verbs += /mob/living/carbon/proc/spawn_larvae
 	*/
@@ -655,7 +828,7 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 /client/proc/borer_infest()
 	set category = "Alien"
 	set name = "Infest"
-	set desc = "Infest a suitable humanoid host."
+	set desc = "Infest a suitable host."
 
 	var/mob/living/simple_animal/borer/B=mob
 	if(!istype(B))
@@ -682,9 +855,12 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 	return limbname
 
 /mob/living/simple_animal/borer/proc/limb_to_mode(var/limb = null)
+	var/mode = 0
+	if(!istype(host, /mob/living/carbon/human))
+		mode = BORER_MODE_INFESTED
+		return mode
 	if(!limb)
 		return
-	var/mode = 0
 	switch(limb)
 		if(BP_HEAD)
 			mode = BORER_MODE_ATTACHED_HEAD
@@ -733,7 +909,7 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 /mob/living/simple_animal/borer/proc/infest()
 	set category = "Alien"
 	set name = "Infest"
-	set desc = "Infest a suitable humanoid host."
+	set desc = "Infest a suitable host."
 
 	if(host)
 		to_chat(src, "You are already within a host.")
@@ -759,7 +935,7 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 		if(C.stat != 2 && src.Adjacent(C))
 			choices += C
 
-	var/mob/living/carbon/human/M = input(src,"Who do you wish to infest?") in null|choices
+	var/mob/living/M = input(src,"Who do you wish to infest?") in null|choices
 
 	if(!M || !src)
 		return
@@ -767,7 +943,16 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 	if(!(src.Adjacent(M)))
 		return
 
-	var/area = M.get_organ(usr.targeted_organ)
+	if(!istype(M, /mob/living/carbon/human))
+		if(!do_after(src,50,M,0))
+			to_chat(src, "As [M] moves away, you are dislodged and fall to the ground.")
+			return
+		if(M in view(1, src))
+			to_chat(src, "You burrow into [M]'s body.")
+			src.perform_infestation(M, BP_HEAD)
+
+
+	var/area = src.targeted_organ
 	var/region = BP_HEAD
 
 	if(istype(M, /mob/living/carbon/human))
@@ -799,19 +984,17 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 			if(BP_L_FOOT)
 				region = BP_L_LEG
 
-		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/external/O = H.get_organ(region)
+	var/mob/living/carbon/human/H = M
+	for(var/obj/item/organ/external/O in H.organs)
 		if(!BP_IS_ORGANIC(O))
 			to_chat(src, "You cannot infest this host's inorganic [limb_to_name(region)]!")
 			return
-
 		if(BP_IS_REMOVED(O))
 			to_chat(src, "This host does not have a [limb_to_name(region)]!")
 			return
-
-	if(M.has_brain_worms(region))
-		to_chat(src, "This host's [limb_to_name(region)] is already infested!")
-		return
+		if(M.has_brain_worms(region))
+			to_chat(src, "This host's [limb_to_name(region)] is already infested!")
+			return
 
 	switch(region)
 		if(BP_HEAD)
@@ -833,7 +1016,7 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 			to_chat(src, "You slither up [M]'s left leg and begin probing at the back of their knee...")
 			to_chat(M, "<span class='sinister'>You feel something slithering up your left leg and probing just behind your knee...</span>")
 
-	if(!do_after(src,M,50))
+	if(!do_after(src,50,M,0))
 		to_chat(src, "As [M] moves away, you are dislodged and fall to the ground.")
 		return
 
@@ -861,7 +1044,7 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 		to_chat(src, "They are no longer in range!")
 		return
 
-/mob/living/simple_animal/borer/proc/perform_infestation(var/mob/living/carbon/M, var/body_region = BP_HEAD)
+/mob/living/simple_animal/borer/proc/perform_infestation(var/mob/living/M, var/body_region = BP_HEAD)
 	if(!M || !istype(M))
 		error("[src]: Unable to perform_infestation on [M]!")
 		return 0
@@ -881,6 +1064,8 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 	host_brain.name = M.name
 	host_brain.real_name = M.real_name
 
+	if(!istype(M,/mob/living/carbon/human))
+		M.update_hud()
 	// Tell our upgrades that we've attached.
 	for(var/uid in research.unlocked.Copy())
 		var/datum/unlockable/borer/U = research.get(uid)
@@ -895,6 +1080,7 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 */
 // So we can hear our host doing things.
 // NOTE:  We handle both visible and audible emotes because we're a brainslug that can see the impulses and shit.
+
 /mob/living/simple_animal/borer/proc/host_emote(var/list/args)
 	src.show_message(args["message"], args["m_type"])
 	host_brain.show_message(args["message"], args["m_type"])
@@ -1009,8 +1195,8 @@ var/global/borer_unlock_types_leg = typesof(/datum/unlockable/borer/leg) - /datu
 	set category = "Alien"
 
 	to_chat(src, "<span class='info'>You listen to the song of your host's nervous system, hunting for discordant notes...</span>")
-	spawn(5 SECONDS)
-		medical_scan_results(host, mode=1) // TODO... Make it more immersive
+	spawn(5)
+		medical_scan_results(host, 1) // TODO... Make it more immersive
 
 /mob/living/simple_animal/borer/proc/taste_blood()
 	set name = "Taste Blood"

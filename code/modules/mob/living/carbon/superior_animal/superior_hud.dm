@@ -1,14 +1,12 @@
-/mob/living/simple_animal/check_HUD()
-	var/mob/living/simple_animal/H = src
+/mob/living/carbon/superior_animal/check_HUD()
+	var/mob/living/carbon/superior_animal/H = src
 	if(!H.client)//no client, no HUD
 		return
 
 //	var/datum/hud/human/HUDdatum = global.HUDdatums[H.defaultHUD]
 	var/recreate_flag = FALSE
-	if(!H.defaultHUD && istype(H, /mob/living/simple_animal))
+	if(!H.defaultHUD && istype(H, /mob/living/carbon/superior_animal))
 		H.defaultHUD = "SimpleMob"
-		if(istype(H, /mob/living/simple_animal/borer))
-			defaultHUD = "BorerStyle"
 		recreate_flag = TRUE
 
 	if(recreate_flag)
@@ -22,8 +20,8 @@
 		H.recolor_HUD(H.client.prefs.UI_style_color, H.client.prefs.UI_style_alpha)
 	return recreate_flag
 
-/mob/living/simple_animal/check_HUD_style()
-	var/mob/living/simple_animal/H = src
+/mob/living/carbon/superior_animal/check_HUD_style()
+	var/mob/living/carbon/superior_animal/H = src
 
 	for (var/obj/screen/inventory/HUDinv in H.HUDinventory)
 
@@ -36,8 +34,8 @@
 			return FALSE
 	return TRUE
 
-/mob/living/simple_animal/minimalize_HUD()
-	var/mob/living/simple_animal/H = src
+/mob/living/carbon/superior_animal/minimalize_HUD()
+	var/mob/living/carbon/superior_animal/H = src
 	var/datum/hud/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 	if (H.client.prefs.UI_compact_style && HUDdatum.MinStyleFlag)
 		for (var/p in H.HUDneed)
@@ -112,7 +110,7 @@
 	return
 
 
-/mob/living/simple_animal/update_hud()
+/mob/living/carbon/superior_animal/update_hud()
 	if(client)
 		check_HUD()
 		client.screen |= contents
@@ -121,7 +119,7 @@
 	return
 
 
-/mob/living/simple_animal/create_HUD()
+/mob/living/carbon/superior_animal/create_HUD()
 
 	create_HUDinventory()
 	create_HUDneed()
@@ -130,8 +128,8 @@
 	recolor_HUD(src.client.prefs.UI_style_color, src.client.prefs.UI_style_alpha)
 	return
 
-/mob/living/simple_animal/create_HUDinventory()
-	var/mob/living/simple_animal/H = src
+/mob/living/carbon/superior_animal/create_HUDinventory()
+	var/mob/living/carbon/superior_animal/H = src
 	var/datum/hud/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 
 	for (var/gear_slot in hud.gear)//��������� �������� ���� (���������)
@@ -156,8 +154,8 @@
 			H.HUDinventory += inv_box
 	return
 
-/mob/living/simple_animal/create_HUDneed()
-	var/mob/living/simple_animal/H = src
+/mob/living/carbon/superior_animal/create_HUDneed()
+	var/mob/living/carbon/superior_animal/H = src
 	var/datum/hud/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 
 	for(var/HUDname in hud.ProcessHUD) //��������� �������� ���� (�� ���������)
@@ -177,8 +175,8 @@
 				H.HUDprocess += HUD//������� � �������������� ������
 	return
 
-/mob/living/simple_animal/create_HUDfrippery()
-	var/mob/living/simple_animal/H = src
+/mob/living/carbon/superior_animal/create_HUDfrippery()
+	var/mob/living/carbon/superior_animal/H = src
 	var/datum/hud/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 
 	//��������� �������� ���� (���������)
@@ -190,8 +188,8 @@
 		H.HUDfrippery += F
 	return
 
-/mob/living/simple_animal/create_HUDtech()
-	var/mob/living/simple_animal/H = src
+/mob/living/carbon/superior_animal/create_HUDtech()
+	var/mob/living/carbon/superior_animal/H = src
 	var/datum/hud/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 
 	//��������� ����������� ��������(damage,flash,pain... �������)
@@ -210,7 +208,7 @@
 
 
 
-/mob/living/simple_animal/dead_HUD()
+/mob/living/carbon/superior_animal/dead_HUD()
 	for (var/i=1,i<=HUDneed.len,i++)
 		var/obj/screen/H = HUDneed[HUDneed[i]]
 		H.DEADelize()

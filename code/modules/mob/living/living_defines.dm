@@ -6,6 +6,11 @@
 	maxHealth = 100 //Maximum health that should be possible.
 	health = 100 	//A mob's health
 
+		// HUD data vars.
+	var/datum/hud_data/simple
+	var/hud_type
+	defaultHUD = ""
+
 	var/hud_updateflag = 0
 
 	var/death_threshold = HEALTH_THRESHOLD_SOFTCRIT

@@ -10,7 +10,6 @@
 
 		// HUD data vars.
 	var/datum/hud_data/hud
-	var/hud_type
 	defaultHUD = ""
 
 		//Equipment slots

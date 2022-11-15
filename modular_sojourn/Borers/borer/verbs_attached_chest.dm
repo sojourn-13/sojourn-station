@@ -208,7 +208,7 @@
 				else if(!istype(I, /mob/living/simple_animal/borer))
 					unknown_body++
 			if(unknown_body)
-				imp += "Unknown body present:"
+				imp += "Inorganic substance detected:"
 
 		if(!AN && !open && !infected && !imp)
 			AN = "None:"

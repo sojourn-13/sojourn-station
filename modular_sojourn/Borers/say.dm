@@ -39,7 +39,7 @@
 			warm_bodies += victim
 	if(!host)
 		surrogate = safepick(warm_bodies)
-		return surrogate.say(message) //No host, no audible speech.
+		return surrogate.say(message) //No host, no audience.
 
 	to_chat(src, "You drop words into [host]'s mind: \"[message]\"")
 	to_chat(host, "Your own thoughts speak: \"[message]\"")
