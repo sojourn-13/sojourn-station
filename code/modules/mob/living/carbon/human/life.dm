@@ -997,6 +997,8 @@
 		health_threshold_softcrit -= 20
 	if(stats.getPerk(PERK_BONE))
 		health_threshold_softcrit -= 20
+	if(stats.getPerk(PERK_TENACITY))
+		health_threshold_softcrit -= 10
 	if(health < health_threshold_softcrit)// health 0 - stat makes you immediately collapse
 		shock_stage = max(shock_stage, 61)
 	else if(shock_resist)

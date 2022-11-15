@@ -47,50 +47,11 @@
 	scannable = TRUE
 
 /datum/reagent/medicine/hadrenol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.heal_organ_damage(0.6, 0.4, 3)
 	M.adjustOxyLoss(-0.6)
-	M.heal_organ_damage(0.3, 0.3)
-	M.adjustToxLoss(-0.3)
-	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
-	M.add_chemical_effect(CE_PAINKILLER, 25, TRUE)
-
-/datum/reagent/medicine/hustim
-	name = "Hustimdol"
-	id = "hustim"
-	description = "A chemical naturally produced by humans pushed to their limit. Induces a recovery coma to heal their wounds."
-	taste_description = "bitterness"
-	reagent_state = LIQUID
-	color = "#ded890"
-	nerve_system_accumulations = 0
-	appear_in_default_catalog = FALSE
-	constant_metabolism = TRUE
-	scannable = TRUE
-
-/datum/reagent/medicine/hustim/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.heal_organ_damage(0.8, 0.4, 6)
-	M.add_chemical_effect(CE_BLOODCLOT, min(1,0.4))
-	M.adjustOxyLoss(-2) //We are taking are deep breaths
-	M.adjustToxLoss(-1)
-	M.add_chemical_effect(CE_STABLE)
-	M.add_chemical_effect(CE_PAINKILLER, 45, TRUE)
-	M.add_chemical_effect(CE_BLOODRESTORE, 1.1 * effect_multiplier)
-	M.add_chemical_effect(CE_PULSE, -1)
-	//We also sleep are target, this will make it not as good to use against spiders still active or simple animals.
-	var/effective_dose = dose
-	if(issmall(M))
-		effective_dose *= 2
-
-	if(effective_dose < 1)
-		if(effective_dose == metabolism * 2 || prob(5))
-			M.emote("yawn")
-	else if(effective_dose < 3)
-		M.eye_blurry = max(M.eye_blurry, 10)
-	else if(effective_dose < 4)
-		if(prob(50))
-			M.Weaken(2)
-		M.drowsyness = max(M.drowsyness, 20)
-	else
-		M.sleeping = max(M.sleeping, 20)
-		M.drowsyness = max(M.drowsyness, 60)
+	M.adjustToxLoss(-0.5)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.2)
+	M.add_chemical_effect(CE_PAINKILLER, 35, TRUE)
 
 /datum/reagent/stim/kriotol
 	name = "Kriotol"
