@@ -15,13 +15,13 @@
 	stations_recommended = list("mcronalds", "serbian")
 	inventory = list(
 		"Basic Ingredients" = list(
-			/obj/item/reagent_containers/food/condiment/flour,
-			/obj/item/reagent_containers/food/drinks/milk,
-			/obj/item/storage/fancy/egg_box,
-			/obj/item/reagent_containers/food/snacks/tofu,
-			/obj/item/reagent_containers/food/snacks/meat,
+			/obj/item/reagent_containers/food/condiment/flour = good_data("flour sack", list(1, 2), 250),
+			/obj/item/reagent_containers/food/drinks/milk = good_data("milk carton", list(1, 2), 100),
+			/obj/item/storage/fancy/egg_box = good_data("egg box", list(1, 2), 300),
+			/obj/item/reagent_containers/food/snacks/tofu = good_data("tofu", list(1, 2), 20),
+			/obj/item/reagent_containers/food/snacks/meat = good_data("meat", list(1, 2), 25),
 			/obj/item/reagent_containers/food/condiment/enzyme,
-			/obj/item/reagent_containers/food/condiment/cookingoil
+			/obj/item/reagent_containers/food/condiment/cookingoil = good_data("cooking oil bottle", list(1, 2), 200)
 		),
 		"Drinks" = list(
 			/obj/item/reagent_containers/food/drinks/bottle/gin,
