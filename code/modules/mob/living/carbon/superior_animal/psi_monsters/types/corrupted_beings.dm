@@ -13,7 +13,7 @@
 	emote_see = list("howls in a broken voice", "wracks its claws against the ground", "gnarls")
 	turns_per_move = 3
 	attacktext = "carves"
-	faction = list("daskvey")
+	faction = "daskvey"
 
 	friendly_to_colony = FALSE
 

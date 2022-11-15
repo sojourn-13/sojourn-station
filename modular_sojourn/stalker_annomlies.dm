@@ -83,7 +83,7 @@
 	density = FALSE
 	anchored = TRUE
 	throwpass = 1
-	alpha = 45
+	alpha = 75
 	layer = FLY_LAYER
 	var/infino_timer = 60
 	var/infino_reppeater_timer = 120
@@ -106,11 +106,13 @@
 	if(isliving(M))
 		var/turf/T = get_turf(src)
 		heatwave(T, heavy_range, weak_range, heat_damage, fire_stacks, penetration)
+		visible_message(SPAN_WARNING("\red [src] sparks to life blasting a heat wave and flaming ambers!"))
 	.=..()
 
 /obj/structure/annomlies_diet/haze/proc/nonchemical_reaction()
 	var/turf/T = get_turf(src)
 	heatwave(T, heavy_range, weak_range, heat_damage, fire_stacks, penetration)
+	visible_message(SPAN_WARNING("\red [src] sparks to life blasting a heat wave and flaming ambers!"))
 
 /obj/structure/annomlies_diet/haze/proc/loop_timer()
 	addtimer(CALLBACK(src, .proc/nonchemical_reaction), infino_timer)
@@ -372,9 +374,13 @@
 	for(M in living_mobs_in_view(3, src))
 		gravitational_theory(M)
 
+/obj/structure/annomlies_diet/thumper/proc/warnings_for_newtons()
+	visible_message(SPAN_WARNING("\red [src] SLAMS down shaking the ground!"))
+
 /obj/structure/annomlies_diet/thumper/proc/harsh_winds(mob/M)
 	flick("crusher_cloud_crush", src)
 	addtimer(CALLBACK(src, .proc/check_for_newtons), 17.6)
+	addtimer(CALLBACK(src, .proc/warnings_for_newtons), 17.6)
 
 /obj/structure/annomlies_diet/thumper/proc/growing_season()
 	addtimer(CALLBACK(src, .proc/harsh_winds), apple_timer)
@@ -387,6 +393,10 @@
 	icon_state = "echo"
 	density = FALSE
 	anchored = TRUE
+
+	pixel_x = 0
+	pixel_y = 0
+
 	var/can_use = TRUE
 	var/saved_name
 	var/saved_description
@@ -415,7 +425,10 @@
 	if(!scan_mobs)
 		return
 
-/obj/structure/annomlies_diet/echo/Crossed(mob/living/M)
+/obj/structure/annomlies_diet/echo/Crossed(atom/M)
+	if(istype(M, /mob/observer) || istype(M, /obj/item/projectile))
+		return
+
 	afterattack(M, M)
 
 /obj/structure/annomlies_diet/echo/proc/afterattack(atom/target, mob/user, proximity)
@@ -560,7 +573,7 @@
 	if(dummy_active)
 		toggle()
 		can_use = 0
-		spawn(5 SECONDS)
+		spawn(1 SECONDS)
 			can_use = 1
 
 /obj/structure/annomlies_diet/echo/attackby()
@@ -571,10 +584,6 @@
 	..()
 	disrupt()
 
-/obj/structure/annomlies_diet/echo/bullet_act(var/obj/item/projectile/Proj)
-	..()
-	if (!(Proj.testing))
-		disrupt()
 
 /obj/structure/annomlies_diet/whirli
 	name = "Whirli"
@@ -589,22 +598,27 @@
 	var/kansists = 2
 	var/redboots = 100
 	var/black_and_white = 1
-	alpha = 45
+	alpha = 75
 
 /obj/structure/annomlies_diet/whirli/Crossed(mob/M)
 	if(M.allow_spin && src.allow_spin)
 		M.SpinAnimation(10,5)
-		M.stunned = black_and_white
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.adjustBruteLoss(witch)
+		addtimer(CALLBACK(H, /atom/proc/SpinAnimation, 3, 3), 1)
+		H.stunned = black_and_white
 		H.confused += kansists
 		H.updatehealth()
 		if(prob(redboots))
 			var/obj/item/organ/external/organ = H.get_organ(pick(BP_R_LEG, BP_L_LEG, BP_R_ARM, BP_L_ARM))
 			if(!organ)
+				H.visible_message("<font size=1>\red[H.name] is spun arouned by [src].</font><\red>", "\red[src] spins you around at high speeds!")
 				return
 			organ.droplimb(TRUE, DISMEMBER_METHOD_EDGE)
+			H.visible_message("<font size=1>\red[H.name] is spun arouned by [src].</font><\red>", "\red[src] spins you around ripping  a lim off!")
+		else
+			H.visible_message("<font size=1>\red[H.name] is spun arouned by [src].</font><\red>", "\red[src] spins you around at high speeds!")
 	.=..()
 
 
