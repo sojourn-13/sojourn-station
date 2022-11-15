@@ -116,17 +116,25 @@
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#5f95e2"
-	nerve_system_accumulations = 0
+	nerve_system_accumulations = 10
 	addiction_chance = 100
 	appear_in_default_catalog = FALSE
 
 /datum/reagent/stim/robustitol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_TGH, 60, STIM_TIME, "robustitol")
-	M.stats.addTempStat(STAT_ROB, 60, STIM_TIME, "robustitol")
-	M.stats.addTempStat(STAT_COG, -100, STIM_TIME, "robustitol")
-	M.stats.addTempStat(STAT_BIO, -100, STIM_TIME, "robustitol")
-	M.stats.addTempStat(STAT_VIG, -100, STIM_TIME, "robustitol")
-	M.stats.addTempStat(STAT_MEC, -100, STIM_TIME, "robustitol")
+	M.stats.addTempStat(STAT_TGH, 150, STIM_TIME, "robustitol")
+	M.stats.addTempStat(STAT_ROB, 150, STIM_TIME, "robustitol")
+	M.stats.addTempStat(STAT_COG, -250, STIM_TIME, "robustitol")
+	M.stats.addTempStat(STAT_BIO, -250, STIM_TIME, "robustitol")
+	M.stats.addTempStat(STAT_VIG, -250, STIM_TIME, "robustitol")
+	M.stats.addTempStat(STAT_MEC, -250, STIM_TIME, "robustitol")
+	M.add_chemical_effect(CE_DARKSIGHT, SEE_INVISIBLE_NOLIGHTING)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.2)
+	M.add_chemical_effect(CE_PULSE, 2)
+	M.add_chemical_effect(CE_PAINKILLER, 45, TRUE)
+	M.add_chemical_effect(CE_BLOODRESTORE, 1.1 * effect_multiplier)
+	M.add_chemical_effect(CE_PAINKILLER, 200, TRUE)
+	M.apply_effect(-50, AGONY, 0)
+
 
 /datum/reagent/drug/robustitol/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "robustitol_w")

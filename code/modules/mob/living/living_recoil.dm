@@ -25,6 +25,8 @@
 			scale = 0.5 //less recoil build up
 		if(usr.stats.getPerk(PERK_SMARTLINK))
 			scale = 0.7 //Not as crazy as racial because it's kriosan niche
+		if(usr.stats.getPerk(PERK_STRONGARMS))
+			scale = 0.8 //Just a little
 
 	if(recoil <= base)
 		recoil = 0

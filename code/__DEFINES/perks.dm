@@ -167,3 +167,40 @@
 
 	//Temporary drug perks
 #define PERK_ULTRASURGEON /datum/perk/drug/ultrasurgeon
+
+// Human/Abhuman Custom species racial perks
+//Body/Physical traits
+#define PERK_OVERADRENALINE /datum/perk/smalladrenaline //
+#define PERK_WILLOFPOWER /datum/perk/willofpower //
+#define PERK_BATTLEROAR /datum/perk/battleroar //
+
+#define PERK_LASTBREATH /datum/perk/lastbreath //
+#define PERK_PAINRESISTANCE /datum/perk/painresistance
+
+#define PERK_STRONGARMS /datum/perk/greataim //
+
+#define PERK_RECKLESSRAGE /datum/perk/recklessrage //
+
+#define PERK_OVERWORKEDSPEED /datum/perk/overworkedspeed //
+
+#define PERK_PURGEMALUSES /datum/perk/purgemaluses //
+#define PERK_OVERHEATING /datum/perk/viruspurge //
+
+//Mind Traits
+#define PERK_BODYSENSE /datum/perk/bodysense //
+
+//Actual physical traits WIP
+//#define PERK_COLD_BLOODED /datum/perk/
+//#define PERK_HOT_BLOODED /datum/perk/
+//#define PERK_FAST_METABOLISM /datum/perk/
+//#define PERK_SLOW_METABOLISM /datum/perk/
+
+//To be made
+//#define PERK_NON_CONDUCTIVE /datum/perk/
+//#define PERK_RENDING_CLAWS /datum/perk
+//#define PERK_NITROGEN_EXHALE /datum/perk/
+//#define PERK_NIGHT_SIGHT /datum/perk/
+//#define PERK_PHOTO_RESISTANCE /datum/perk/
+//#define PERK_AUTO_HISS /datum/perk/
+//#define PERK_CONDUCTIVE /datum/perk/
+//#define PERK_NO_DARK_SIGHT /datum/perk/
