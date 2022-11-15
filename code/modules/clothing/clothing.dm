@@ -17,11 +17,6 @@
 
 	//Used for hardsuits. If false, this piece cannot be retracted while the core module is engaged
 	var/retract_while_active = TRUE
-	blacklist_upgrades = list(
-							/obj/item/tool_upgrade/augment = TRUE,
-							/obj/item/tool_upgrade/refinement = TRUE,
-							/obj/item/gun_upgrade = TRUE, // Goodbye tacticool clothing
-							/obj/item/tool_upgrade/artwork_tool_mod = TRUE)
 
 /obj/item/clothing/Initialize(mapload, ...)
 	. = ..()

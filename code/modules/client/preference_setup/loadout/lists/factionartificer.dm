@@ -4,7 +4,6 @@
 	allowed_roles = list("Guild Master","Guild Adept")
 	slot = slot_wear_suit
 	sort_category = "Faction: Artificer"
-	cost = 0
 
 /datum/gear/factionartificer/berettechno
 	display_name = "beret, artificer"

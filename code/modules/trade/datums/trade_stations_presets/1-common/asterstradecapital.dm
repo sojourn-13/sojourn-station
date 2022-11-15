@@ -133,7 +133,7 @@
 			/obj/item/gun/projectile/revolver/longboi,
 			/obj/item/gun_upgrade/trigger/honker,
 			/obj/item/clothing/glasses/sunglasses/big,
-			/obj/item/gun/projectile/basilisk,
+			/obj/item/gun/projectile/avasarala,
 		),
 		"LSS Toolmods" = list(
 			/obj/item/tool_upgrade/productivity/diamond_blade,

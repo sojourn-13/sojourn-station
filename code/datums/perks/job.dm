@@ -326,21 +326,16 @@
 /datum/perk/nightcrawler
 	name = "Nightcrawler"
 	desc = "Having lived in a light-deprived enviroment for most of your life has honed your vision more than the average person.\nYour accelerated dark adaptation has also made you more photosensitive to sudden bright lights and flashes."
-	var/init_sight
-	var/init_flash
-	var/obj/screen/lightOverlay = null
 	//icon_state = "night" // https://game-icons.net/1x1/lorc/night-sky.html
 
 /datum/perk/nightcrawler/assign(mob/living/carbon/human/H)
 	..()
-	init_sight = holder.additional_darksight
-	init_flash = holder.flash_mod
-	holder.additional_darksight = 8
+	holder.additional_darksight += 1
 	holder.flash_mod += 2
 
 /datum/perk/nightcrawler/remove()
-	holder.additional_darksight = init_sight
-	holder.flash_mod = init_flash
+	holder.additional_darksight -= 1
+	holder.flash_mod -= 2
 	..()
 
 /datum/perk/fast_fingers

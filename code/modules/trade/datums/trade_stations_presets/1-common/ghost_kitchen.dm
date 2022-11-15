@@ -276,8 +276,6 @@
 		/obj/item/reagent_containers/glass/rag = offer_data("Rag", 40, 5),
 		/obj/item/reagent_containers/spray = offer_data("Spray Bottle", 40, 10),
 		/obj/item/mop = offer_data("Mop", 150, 2),
-		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 120),
-		/datum/reagent/organic/nutriment/flour = offer_data("flour bottle (60u)", 200, 3),
-		/datum/reagent/organic/nutriment/rice = offer_data("rice bottle (60u)", 200, 3)
+		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 120)
 	)
 

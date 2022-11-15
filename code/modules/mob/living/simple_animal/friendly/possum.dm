@@ -3,7 +3,6 @@
 	name = "opossum"
 	real_name = "opossum"
 	desc = "It's an opossum, a small scavenging marsupial."
-	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "possum"
 	speak_emote = list("hisses")
 	pass_flags = PASSTABLE
@@ -13,8 +12,7 @@
 	density = FALSE
 	mob_size = MOB_SMALL
 	inherent_mutations = list(MUTATION_NEARSIGHTED, MUTATION_SCREAMING, MUTATION_TOURETTES, MUTATION_THICK_FUR)
-	colony_friend = TRUE
-	friendly_to_colony = TRUE
+
 
 	var/is_angry = FALSE
 	var/play_dead_until = 0
@@ -68,6 +66,8 @@
 	name = "Poppy the Safety Possum"
 	desc = "It's an opossum, a small scavenging marsupial. It's wearing appropriate personal protective equipment, though."
 	icon_state = "poppy"
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 	var/list/aaa_words = list(
 		"delaminat",

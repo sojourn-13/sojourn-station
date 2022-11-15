@@ -24,7 +24,6 @@
 	destroy_surroundings = TRUE
 	friendly_to_colony = FALSE
 	colony_friend = FALSE
-	inherent_mutations = list(MUTATION_DEAF, MUTATION_RAND_UNSTABLE, MUTATION_IMBECILE)
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/termitemeat
 	meat_amount = 3
@@ -77,7 +76,6 @@
 	icon_dead = "rabochiy_gore"
 	projectilesound = 'sound/effects/creatures/acid_spit.ogg'
 	projectiletype = /obj/item/projectile/bullet/rock
-	inherent_mutations = list(MUTATION_DEAF, MUTATION_RAND_UNSTABLE, MUTATION_IMBECILE)
 
 //Health related variables
 	maxHealth = TERMITE_HEALTH_LOW
@@ -104,7 +102,6 @@
 	desc = "A larger, scarier termite for when trouble abrews."
 	icon_state = "pekhota_termite" // Sprites made by Polyushko#0323
 	icon_dead = "pekhota_gore"
-	inherent_mutations = list(MUTATION_DEAF, MUTATION_RAND_UNSTABLE, MUTATION_CLUMSY)
 
 //Health related variables
 	maxHealth = TERMITE_HEALTH_MED
@@ -134,7 +131,6 @@
 	comfy_range = 6 //How far we like to be form are targets when we fire!
 	projectiletype = /obj/item/projectile/bullet/rock
 	contaminant_immunity = TRUE
-	inherent_mutations = list(MUTATION_DEAF, MUTATION_RAND_UNSTABLE, MUTATION_RAD_PROTECTION)
 
 //Health related variables
 	maxHealth = TERMITE_HEALTH_MED
@@ -161,7 +157,6 @@
 	desc = "A larger, scarier termite for when trouble abrews."
 	icon_state = "pushka_termite" // Sprites made by Polyushko#0323
 	icon_dead = "pushka_gore"
-	inherent_mutations = list(MUTATION_DEAF, MUTATION_RAND_UNSTABLE, MUTATION_BOMB_RESIST)
 
 //Health related variables
 	maxHealth = TERMITE_HEALTH_LOW
@@ -189,7 +184,6 @@
 	icon_state = "koroleva_termite"
 	icon_dead = "koroleva_gore"
 	armor_penetration = 35
-	inherent_mutations = list(MUTATION_DEAF, MUTATION_RAND_UNSTABLE, MUTATION_GIGANTISM, MUTATION_PROT_MILK, MUTATION_TERMITE_FRIEND)
 
 //Health related variables
 	maxHealth = TERMITE_HEALTH_HIGH
@@ -220,7 +214,6 @@
 	projectiletype = /obj/item/projectile/bullet/spear
 	contaminant_immunity = TRUE
 	armor_penetration = 35
-	inherent_mutations = list(MUTATION_DEAF, MUTATION_RAND_UNSTABLE, MUTATION_GIGANTISM, MUTATION_SCREAMING)
 
 //Health related variables
 	maxHealth = TERMITE_HEALTH_HIGH
