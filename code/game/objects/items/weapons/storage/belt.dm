@@ -348,6 +348,7 @@
 		/obj/item/gun/projectile/mk58,
 		/obj/item/gun/projectile/revolver/lemant,
 		/obj/item/gun/energy/gun,
+		/obj/item/gun/projectile/clarissa,
 		/obj/item/gun/projectile/giskard,
 		/obj/item/gun/projectile/olivaw,
 		/obj/item/gun/projectile/revolver/detective,

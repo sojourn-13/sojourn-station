@@ -48,14 +48,12 @@
 
 	target_mob = null
 
-	LAZYCLEARLIST(objectsInView)
-	LAZYCLEARLIST(friends)
+	friends.Cut()
 
 	UnregisterSignal(src, COMSIG_ATTACKED)
 
 	lastarea = null
 
-	known_languages = null
 	. = ..()
 
 /mob/living/carbon/superior_animal/u_equip(obj/item/W as obj)

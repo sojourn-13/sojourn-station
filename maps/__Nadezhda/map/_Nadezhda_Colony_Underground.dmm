@@ -13331,6 +13331,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "azs" = (
+/obj/item/gun/projectile/handmade_pistol,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -38556,10 +38557,10 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "hWf" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/texan{
+/obj/item/gun/projectile/automatic/wirbelwind{
 	pixel_y = 8
 	},
-/obj/item/gun/projectile/automatic/texan,
+/obj/item/gun/projectile/automatic/wirbelwind,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "hWl" = (
@@ -60864,7 +60865,7 @@
 /obj/structure/closet/crate/secure/weapon{
 	name = "pistol crate"
 	},
-/obj/item/gun/projectile/revolver/tacticool_revolver,
+/obj/item/gun/projectile/revolver/mateba,
 /obj/item/ammo_magazine/ammobox/kurtz_50,
 /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal,
 /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal,

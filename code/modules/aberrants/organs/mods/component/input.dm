@@ -3,7 +3,6 @@
 	trigger_signal = COMSIG_ABERRANT_INPUT
 
 	var/check_mode
-	var/threshold
 	var/list/accepted_inputs = list()
 	var/list/input_qualities = list()
 
@@ -36,7 +35,7 @@
 	return description
 
 /datum/component/modification/organ/input/reagents/modify(obj/item/I, mob/living/user)
-	if(!LAZYLEN(input_qualities))
+	if(!input_qualities.len)
 		return
 
 	var/list/can_adjust = list("metabolic source", "reagent")
@@ -61,20 +60,14 @@
 		check_mode = adjustable_qualities[decision]
 
 	if(decision_adjust == "reagent")
+		var/decision = input("Choose a reagent:","Adjusting Organoid") as null|anything in input_qualities
+		if(!decision)
+			return
+
+		var/list/reagent_group = input_qualities[decision]
+
 		for(var/input in accepted_inputs)
-			var/list/possibilities = input_qualities.Copy()
-
-			if(LAZYLEN(accepted_inputs) > 1)
-				for(var/reagent in possibilities)
-					if(input != reagent && accepted_inputs.Find(reagent))
-						possibilities.Remove(reagent)
-
-			var/decision = input("Choose a reagent:","Adjusting Organoid") as null|anything in input_qualities
-			if(!decision)
-				return
-
-			var/list/new_reagent_input = input_qualities[decision]
-
+			var/new_reagent_input = pick(reagent_group)		// pick() allows one input type to fill muliple slots, thus enabling multiple outputs
 			accepted_inputs[accepted_inputs.Find(input)] = new_reagent_input
 
 /datum/component/modification/organ/input/reagents/trigger(atom/movable/holder, mob/living/carbon/owner)
@@ -93,7 +86,7 @@
 		for(var/reagent_path in accepted_inputs)
 			var/threshold_met = FALSE
 			if(istype(R, reagent_path))
-				if(R.volume > threshold)
+				if(R.volume > 0)
 					threshold_met = TRUE
 					var/removed = R.metabolism * organ_multiplier		// Consumes reagent based on organ health and how many ticks in between organ processes
 					R.remove_self(removed)
@@ -111,37 +104,37 @@
 	for(var/input in accepted_inputs)
 		switch(input)
 			if(BRUTE)
-				inputs += "brute ([threshold]), "
+				inputs += "brute, "
 			if(BURN)
-				inputs += "burn ([threshold]), "
+				inputs += "burn, "
 			if(TOX)
-				inputs += "toxin ([threshold]), "
+				inputs += "toxin, "
 			if(OXY)
-				inputs += "suffocation ([threshold]), "
+				inputs += "suffocation, "
 			if(CLONE)
-				inputs += "DNA degredation ([threshold]), "
+				inputs += "DNA degredation, "
 			if(HALLOSS)
-				inputs += "pain ([threshold]), "
+				inputs += "pain, "
 			if("brain")
-				inputs += "brain ([threshold]), "
+				inputs += "brain, "
 			if(PSY)
-				inputs += "sanity ([threshold]), "
+				inputs += "sanity, "
 		
 	inputs = copytext(inputs, 1, length(inputs) - 1)
 
 	var/description = "<span style='color:green'>Functional information (input):</span> injury response"
-	description += "\n<span style='color:green'>Damage types (threshold):</span> [inputs]"
+	description += "\n<span style='color:green'>Damage types:</span> [inputs]"
 
 	return description
 
 /datum/component/modification/organ/input/damage/modify(obj/item/I, mob/living/user)
-	if(!LAZYLEN(input_qualities))
+	if(!input_qualities.len)
 		return
 
 	for(var/input in accepted_inputs)
 		var/list/possibilities = input_qualities.Copy()
 
-		if(LAZYLEN(accepted_inputs) > 1)
+		if(accepted_inputs.len > 1)
 			for(var/dmg_name in possibilities)
 				var/dmg_type = possibilities[dmg_name]
 				if(input != dmg_type && accepted_inputs.Find(dmg_type))
@@ -181,7 +174,7 @@
 			if(PSY)
 				current_damage = H.sanity.max_level - H.sanity.level
 					
-		if(current_damage > threshold)
+		if(current_damage > 0)
 			threshold_met = TRUE
 
 		input += desired_damage_type
@@ -215,13 +208,13 @@
 	return description
 
 /datum/component/modification/organ/input/power_source/modify(obj/item/I, mob/living/user)
-	if(!LAZYLEN(input_qualities))
+	if(!input_qualities.len)
 		return
 
 	for(var/input in accepted_inputs)
 		var/list/possibilities = input_qualities.Copy()
 		
-		if(LAZYLEN(accepted_inputs) > 1)
+		if(accepted_inputs.len > 1)
 			for(var/source in possibilities)
 				var/source_type = possibilities[source]
 				if(input != source_type && accepted_inputs.Find(source_type))
@@ -283,7 +276,7 @@
 				owner.remove_from_mob(M)
 				qdel(M)
 		
-		if(energy_supplied > threshold)
+		if(energy_supplied)
 			var/magnitude = 0
 
 			if(energy_supplied > 4999999)

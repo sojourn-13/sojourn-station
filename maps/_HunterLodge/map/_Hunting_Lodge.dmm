@@ -41,7 +41,6 @@
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid,
 /obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/o2,
 /obj/random/firstaid,
 /obj/random/firstaid,
 /turf/simulated/floor/tiled/white,
@@ -130,11 +129,8 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "aB" = (
-/obj/effect/floor_decal/industrial/arrows/white{
-	dir = 8
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
+/turf/simulated/wall/wood_barrel,
+/area/nadezhda/outside/forest/hunting_lodge)
 "aC" = (
 /obj/structure/multiz/stairs/active{
 	dir = 2
@@ -203,7 +199,6 @@
 	pixel_y = -28
 	},
 /obj/machinery/light,
-/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "aY" = (
@@ -312,7 +307,6 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "bt" = (
 /obj/effect/window_lwall_spawn/reinforced,
-/obj/structure/curtain/open,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "bu" = (
@@ -892,13 +886,11 @@
 "et" = (
 /obj/effect/floor_decal/industrial/danger,
 /obj/structure/window/reinforced,
+/obj/machinery/power/port_gen/pacman/camp,
 /obj/effect/floor_decal/industrial/box,
 /obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
-	},
-/obj/machinery/power/port_gen/pacman/camp{
-	anchored = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -1220,12 +1212,6 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 4
-	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 28
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -1695,9 +1681,6 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 32
 	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 1
-	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "jv" = (
@@ -1765,7 +1748,6 @@
 /obj/item/device/lighting/toggleable/lantern,
 /obj/item/device/lighting/toggleable/lantern,
 /obj/item/device/lighting/toggleable/lantern,
-/obj/item/staff/broom,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "jR" = (
@@ -1924,8 +1906,6 @@
 	dir = 4;
 	light_color = "#0892d0"
 	},
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/cookingoil,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ms" = (
@@ -1969,6 +1949,7 @@
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "mP" = (
+/obj/item/gun/projectile/boltgun/sci,
 /turf/simulated/wall/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "np" = (
@@ -1987,9 +1968,11 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "nG" = (
-/obj/structure/multiz/ladder,
-/obj/effect/floor_decal/industrial/outline,
-/turf/simulated/floor/wood,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "nI" = (
 /obj/structure/closet/crate/bin,
@@ -2353,9 +2336,6 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 28
 	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 4
-	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "st" = (
@@ -2541,8 +2521,6 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "uX" = (
-/obj/structure/table/rack/shelf,
-/obj/item/storage/bag/chemistry,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "va" = (
@@ -2558,19 +2536,9 @@
 /obj/item/honey_frame,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
-"vf" = (
-/obj/structure/multiz/ladder/up{
-	pixel_y = 10
-	},
-/obj/effect/floor_decal/industrial/outline,
-/turf/simulated/floor/wood/wild1,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
 "vp" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 28
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2647,7 +2615,7 @@
 /obj/item/stack/cable_coil/random,
 /obj/item/stack/cable_coil/random,
 /obj/item/stack/cable_coil/random,
-/turf/simulated/floor/wood/wild2,
+/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "wq" = (
 /obj/random/furniture/pottedplant,
@@ -2673,7 +2641,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "wM" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/boltgun/light,
+/obj/item/gun/projectile/boltgun/light_wood,
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small/hv,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2706,11 +2674,6 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/cryopod/robot,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
-"xc" = (
-/obj/structure/table/marble,
-/obj/item/material/kitchen/rollingpin,
-/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "xf" = (
 /obj/machinery/light{
@@ -2795,7 +2758,7 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
-/turf/simulated/floor/wood/wild2,
+/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "yK" = (
 /obj/effect/floor_decal/spline/fancy{
@@ -2862,11 +2825,8 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/hunting_lodge)
 "zr" = (
-/obj/structure/sign/departmentold/medical1{
-	desc = "A sign labelling the medical wing of the Hunters Lodge. You'll probably get treatment here.";
-	pixel_x = 32
-	},
-/turf/simulated/floor/wood,
+/obj/structure/table/marble,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "zs" = (
 /obj/effect/floor_decal/spline/fancy/corner{
@@ -3004,12 +2964,9 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "Bv" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 32
+	pixel_x = 28
 	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 1
-	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "BB" = (
 /obj/effect/floor_decal/spline/fancy{
@@ -3058,7 +3015,7 @@
 "Cj" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
-/turf/simulated/floor/wood/wild2,
+/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Cm" = (
 /obj/effect/floor_decal/spline/fancy/corner{
@@ -3215,14 +3172,9 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Ds" = (
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 8
-	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -27;
-	pixel_y = 0
-	},
-/turf/simulated/floor/wood/wild2,
+/obj/structure/table/woodentable,
+/obj/item/staff/broom,
+/turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Dw" = (
 /obj/structure/extinguisher_cabinet{
@@ -3285,10 +3237,6 @@
 "Eu" = (
 /mob/living/carbon/superior_animal/lodge/clucker,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
-"Ev" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Ez" = (
 /obj/structure/multiz/stairs/enter/bottom{
@@ -3353,10 +3301,6 @@
 /obj/structure/table/rack/shelf,
 /obj/item/device/defib_kit/loaded,
 /obj/item/cell/large/moebius/high,
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Fy" = (
@@ -3393,12 +3337,6 @@
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
-"FZ" = (
-/obj/structure/closet/wall_mounted{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Gc" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -3786,10 +3724,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "MG" = (
 /obj/structure/reagent_dispensers/fueltank/huge,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/turf/simulated/floor/wood/wild2,
+/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "MK" = (
 /obj/effect/floor_decal/industrial/danger,
@@ -4097,15 +4032,6 @@
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/forest/hunting_lodge)
-"QX" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 32
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 1
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
 "QZ" = (
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -4351,9 +4277,6 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 28
 	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 4
-	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Vn" = (
@@ -4481,9 +4404,6 @@
 /obj/structure/reagent_dispensers/meadkeg,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 28
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -4859,9 +4779,9 @@ Aw
 Aw
 Aw
 Aw
-RE
-RE
-RE
+Aw
+Aw
+Aw
 Aw
 Aw
 Aw
@@ -4919,7 +4839,7 @@ RE
 pc
 jl
 Rn
-Ds
+QO
 Rn
 fO
 pc
@@ -4938,16 +4858,16 @@ RE
 RE
 RE
 RE
-vf
 RE
 RE
 RE
 RE
 RE
 RE
-RE
-RE
-RE
+AA
+ay
+aB
+BO
 RE
 Eo
 aN
@@ -5015,8 +4935,8 @@ RE
 av
 gg
 jO
+Ds
 LN
-gg
 va
 gg
 gg
@@ -5175,7 +5095,7 @@ jj
 jj
 iv
 jj
-zr
+jj
 jj
 db
 fJ
@@ -5328,11 +5248,11 @@ zF
 ah
 jR
 Fr
+nG
 hM
 hM
 hM
 hM
-Ev
 WQ
 bo
 nV
@@ -5720,7 +5640,7 @@ RE
 WQ
 vp
 dm
-FZ
+hM
 aZ
 LO
 WQ
@@ -8026,10 +7946,10 @@ WQ
 iX
 bq
 UY
-xc
+bn
 bq
 bq
-jv
+zr
 jj
 ur
 Rz
@@ -8107,7 +8027,7 @@ bn
 bX
 bq
 bq
-jv
+zr
 jj
 ur
 Rz
@@ -8195,7 +8115,7 @@ jj
 jj
 rQ
 WQ
-Bv
+Cb
 Cb
 wC
 gg
@@ -8350,7 +8270,7 @@ jj
 iv
 jj
 jj
-gg
+Bv
 Ae
 Cb
 Cb
@@ -9151,8 +9071,8 @@ RE
 bc
 UL
 uX
-nG
 wq
+jj
 fE
 Rz
 ur
@@ -9229,7 +9149,7 @@ mO
 jj
 jj
 jj
-aB
+jj
 jj
 ur
 Rz
@@ -9444,7 +9364,7 @@ jH
 ub
 MO
 jH
-ar
+jH
 jH
 MO
 ub
@@ -9658,7 +9578,7 @@ WQ
 jj
 jj
 jj
-ss
+jj
 cu
 jj
 xS
@@ -10286,7 +10206,7 @@ WQ
 WQ
 WQ
 WQ
-QX
+jj
 jj
 jj
 hq

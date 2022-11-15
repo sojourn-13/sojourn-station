@@ -3,26 +3,23 @@
 	path = /obj/item/clothing/mask/surgical
 	slot = slot_wear_mask
 	sort_category = "Clothing Pieces"
-	cost = 1
 
 /datum/gear/clothing/kriosan
 	display_name = "kriosan sterile mask"
 	path = /obj/item/clothing/mask/surgical/kriosan
 	slot = slot_wear_mask
-	cost = 1
+	cost = 2
 
 /datum/gear/clothing/bandana
 	display_name = "bandana mask selection"
 	path = /obj/item/clothing/mask/bandana
 	slot = slot_wear_mask
 	flags = GEAR_HAS_TYPE_SELECTION
-	cost = 0
 
 /datum/gear/clothing/balaclava
 	display_name = "balaclava"
 	path = /obj/item/clothing/mask/balaclava
 	slot = slot_wear_mask
-	cost = 1
 
 /datum/gear/clothing/gasmask
 	display_name = "gas mask"

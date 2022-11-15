@@ -11,9 +11,10 @@
 /datum/genetics/mutation/cat_eyes/onPlayerImplant()
 	if(!..())
 		return
-	var/mob/living/carbon/human/human_holder = container.holder
-	human_holder.flash_mod += 2
-	human_holder.additional_darksight += 1
+	if(ishuman(container.holder))
+		var/mob/living/carbon/human/human_holder = container.holder
+		human_holder.flash_mod += 2
+		human_holder.additional_darksight += 1
 
 /datum/genetics/mutation/cat_eyes/onPlayerRemove()
 	if(!..())

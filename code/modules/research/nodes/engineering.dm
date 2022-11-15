@@ -152,8 +152,7 @@
 							/datum/design/research/item/custom_circuit_assembly/advanced_designs,
 							/datum/design/research/item/detailer,
 							/datum/design/research/item/analyzer,
-							/datum/design/research/item/custom_circuit_assembly/cloning,
-							/datum/design/research/item/cogenhancer
+							/datum/design/research/item/custom_circuit_assembly/cloning
 							)
 
 /* No tesla engine?

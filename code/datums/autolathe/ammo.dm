@@ -905,7 +905,7 @@
 	build_path = /obj/item/ammo_magazine/rifle_10x24
 	materials = list(MATERIAL_STEEL = 2)
 
-//14.5×114mm anti-materiel
+//14.5×114mm anti-material
 /datum/design/autolathe/ammo/box_antim
 	name = "ammunition box (14.5×114mm)"
 	build_path = /obj/item/ammo_magazine/ammobox/antim

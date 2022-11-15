@@ -22,11 +22,12 @@
 		flick(anim, animation)
 		addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
 	else
-		qdel(src)
+		STOP_PROCESSING(SSmobs, src) //were dead, and have no possable way to revive
 
 /mob/proc/check_delete(var/atom/movable/overlay/animation)
 	if(animation)	qdel(animation)
 	if(src)			qdel(src)
+	STOP_PROCESSING(SSmobs, src) //were dead, and have no possable way to revive
 
 
 //This is the proc for turning a mob into ash. Mostly a copy of gib code (above).
@@ -58,7 +59,7 @@
 		flick(anim, animation)
 		addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
 	else
-		qdel(src)
+		STOP_PROCESSING(SSmobs, src) //were dead, and have no possable way to revive
 
 /mob/proc/death(gibbed,deathmessage="seizes up and falls limp...",show_dead_message = "You have died.")
 	if(stat == DEAD)

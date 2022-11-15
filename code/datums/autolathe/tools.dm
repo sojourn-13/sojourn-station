@@ -17,7 +17,6 @@
 /datum/design/autolathe/tool/multitool/multitool_onestar
 	name = "greyson positronic multitool"
 	build_path = /obj/item/tool/onestar_multitool
-	materials = list(MATERIAL_PLASTEEL = 1, MATERIAL_PLATINUM = 2)
 
 /datum/design/autolathe/tool/weldertool
 	name = "welding tool"
@@ -30,7 +29,6 @@
 /datum/design/autolathe/tool/weldertool_onestar
 	name = "greyson positronic welding tool"
 	build_path = /obj/item/tool/weldingtool/onestar
-	materials = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 1)
 
 /datum/design/autolathe/tool/weldermask
 	name = "welding mask"
@@ -51,12 +49,10 @@
 /datum/design/autolathe/tool/combi_driver
 	name = "combination drill"
 	build_path = /obj/item/tool/screwdriver/combi_driver
-	materials = list(MATERIAL_PLASTEEL = 2)
 
 /datum/design/autolathe/tool/combi_driver_onestar
 	name = "greyson positronic combination drill"
 	build_path = /obj/item/tool/screwdriver/combi_driver/onestar
-	materials = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 1)
 
 /datum/design/autolathe/tool/wirecutters
 	name = "wire cutters"
@@ -69,7 +65,6 @@
 /datum/design/autolathe/tool/onestar_pliers
 	name = "greyson positronic pliers"
 	build_path = /obj/item/tool/wirecutters/onestar_pliers
-	materials = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 1)
 
 /datum/design/autolathe/tool/ducttape
 	name = "roll of duct tape"
@@ -106,7 +101,6 @@
 /datum/design/autolathe/tool/hammer_onestar
 	name = "greyson sledgehammer"
 	build_path = /obj/item/tool/hammer/powered_hammer/onestar_hammer
-	materials = list(MATERIAL_PLASTEEL = 6, MATERIAL_PLATINUM = 2)
 
 /datum/design/autolathe/tool/ironhammer
 	name = "Seinemetall Defense \"Ironhammer\" Breaching Hammer"
@@ -123,12 +117,10 @@
 /datum/design/autolathe/tool/jackhammer_onestar
 	name = "greyson positronic jackhammer"
 	build_path = /obj/item/tool/pickaxe/jackhammer/onestar
-	materials = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 1)
 
 /datum/design/autolathe/tool/drill_onestar
 	name = "greyson positronic drill"
 	build_path = /obj/item/tool/pickaxe/drill/onestar
-	materials = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 1)
 
 /datum/design/autolathe/tool/pickaxe_excavation
 	name = "excavation pick"
@@ -137,7 +129,6 @@
 /datum/design/autolathe/tool/pickaxe_onestar
 	name = "greyson positronic pickaxe"
 	build_path = /obj/item/tool/pickaxe/onestar
-	materials = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 1)
 
 /datum/design/autolathe/tool/knife
 	name = "kitchen knife"
@@ -162,7 +153,6 @@
 /datum/design/autolathe/tool/onestar_shovel
 	name = "greyson positronic shovel"
 	build_path = /obj/item/tool/shovel/onestar_shovel
-	materials = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 1)
 
 /datum/design/autolathe/tool/combat_shovel
 	name = "combat shovel"
@@ -195,7 +185,6 @@
 /datum/design/autolathe/tool/onestar_saw
 	name = "greyson positronic saw"
 	build_path = /obj/item/tool/saw/onestar_saw
-	materials = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 1)
 
 /datum/design/autolathe/tool/circularsaw
 	name = "circular saw"
@@ -248,7 +237,6 @@
 /datum/design/autolathe/tool/omni_surgery_onestar
 	name = "greyson positronic medical multitool"
 	build_path = /obj/item/tool/medmultitool
-	materials = list(MATERIAL_PLASTEEL = 2, MATERIAL_PLATINUM = 1)
 
 /datum/design/autolathe/tool/bonegel
 	name = "bone gel"
