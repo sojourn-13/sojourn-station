@@ -14,7 +14,7 @@
 		to_chat(user, "<span class='warning'>You cannot take control of an autonomous, active drone.</span>")
 		return
 
-	if(health < -35 || HasTrait(CYBORG_TRAIT_EMAGGED))
+	if(health < 1 || HasTrait(CYBORG_TRAIT_EMAGGED))
 		to_chat(user, "<span class='notice'><b>WARNING:</b> connection timed out.</span>")
 		return
 
@@ -62,6 +62,12 @@
 	if(count_drones() >= config.max_maint_drones)
 		to_chat(user, "<span class='warning'>The control subsystems are tasked to capacity; they cannot support any more cyborgs.</span>")
 		return
+
+	if(user.amount_of_borgs_printed >= 1)
+		to_chat(user, "<span class='warning'>Maxium AI borgs per Unit Dispenced.</span>")
+		return
+
+	user.amount_of_borgs_printed += 1
 
 	var/mob/living/silicon/robot/new_borg = new drone_type(get_turf(src))
 	new_borg.assume_controll(user)
