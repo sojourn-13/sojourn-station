@@ -18,6 +18,6 @@
 	if(usr.stats.getPerk(PERK_SMARTLINK))
 		base_recoil -= 0.2 //Worse than kriosans but probably enough to matter
 		if(usr.stats.getPerk(PERK_STRONGARMS))
-			base_recoil = 1.5 //Just a little
+			base_recoil = 0.3 //Just a little
 
 	add_recoil(base_recoil)
