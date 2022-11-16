@@ -517,13 +517,13 @@
 
 /obj/structure/sink/fountain
 	name = "water fountain"
-	desc = "A small fountain of polished stone and has a small pump at the bottom that helps push fresh water."
+	desc = "A small fountain of polished stone that has a small pump at the bottom which helps pump out fresh water."
 	icon_state = "BaptismFont_Water"
 	refill_rate = 2
 
 /obj/structure/sink/basion
 	name = "water basion"
-	desc = "A deep basion of polished stone and has prefilled with fresh water."
+	desc = "A deep basin of polished stone that has been pre-filled with fresh water."
 	icon_state = "BaptismFont_Water"
 	limited_reagents = FALSE
 	refill_rate = 200

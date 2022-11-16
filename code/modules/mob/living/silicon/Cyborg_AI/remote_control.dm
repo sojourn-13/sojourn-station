@@ -64,7 +64,7 @@
 		return
 
 	if(user.amount_of_borgs_printed >= 1)
-		to_chat(user, "<span class='warning'>Maxium AI borgs per Unit Dispenced.</span>")
+		to_chat(user, "<span class='warning'>Maximum AI borgs per unit already dispensed.</span>")
 		return
 
 	user.amount_of_borgs_printed += 1
