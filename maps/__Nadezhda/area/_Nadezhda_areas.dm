@@ -346,7 +346,7 @@
 	forced_ambience = list('sound/ambience/lakeamb1.ogg', 'sound/ambience/lakeamb2.ogg', 'sound/ambience/lakeamb3.ogg')
 
 /area/nadezhda/outside/meadow
-	name = "Meadow"
+	name = "Deep Forest"
 	icon_state = "meadow"
 	sound_env = MOUNTAINS
 	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
