@@ -71,3 +71,6 @@
 			if(istype(T, /turf/space))
 				spawned_carp.Remove(C)
 				qdel(C)
+			if(istype(T, /turf/unsimulated/wall/jungle))
+				spawned_carp.Remove(C)
+				qdel(C)
