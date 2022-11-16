@@ -111,6 +111,8 @@ var/list/ai_verbs_default = list(
 
 	var/multitool_mode = 0
 
+	var/amount_of_borgs_printed = 0				// How many borgs we have printed per AI
+
 	defaultHUD = "Eris"
 
 /mob/living/silicon/ai/proc/add_ai_verbs()

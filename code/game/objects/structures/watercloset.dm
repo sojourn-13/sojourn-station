@@ -515,6 +515,19 @@
 			to_chat(user, SPAN_NOTICE("You empty the [O] into the [src]."))
 
 
+/obj/structure/sink/fountain
+	name = "water fountain"
+	desc = "A small fountain of polished stone that has a small pump at the bottom which helps pump out fresh water."
+	icon_state = "BaptismFont_Water"
+	refill_rate = 2
+
+/obj/structure/sink/basion
+	name = "water basion"
+	desc = "A deep basin of polished stone that has been pre-filled with fresh water."
+	icon_state = "BaptismFont_Water"
+	limited_reagents = FALSE
+	refill_rate = 200
+
 /obj/structure/sink/kitchen
 	name = "kitchen sink"
 	desc = "A HV-11B sink. Used for washing the hands and face, and utensils."
@@ -524,6 +537,8 @@
 	name = "puddle"
 	desc = "A puddle of still water. Great for splashing others."
 	icon_state = "puddle"
+	limited_reagents = FALSE
+	refill_rate = 200
 
 /obj/structure/sink/puddle/attack_hand(mob/M as mob)
 	icon_state = "puddle-splash"
