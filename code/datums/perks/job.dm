@@ -68,7 +68,7 @@
 
 /datum/perk/medicalexpertise
 	name = "Medical Expertise"
-	desc = "Your medical training and experience in the area of patient triage is unparalleled. 'Waste not, want not' is your motto, and you apply bandages and salves with utmost efficiency, sometimes using just the right ammount of them."
+	desc = "Your medical training and experience in the area of patient triage is unparalleled. 'Waste not, want not' is your motto, and you apply bandages and salves with utmost efficiency, sometimes using just the right amount of them."
 
 /datum/perk/solborn
 	name = "Sol Born"

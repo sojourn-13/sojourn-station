@@ -31,11 +31,19 @@
 	else
 		icon_state = initial(icon_state) + "_full"
 
-/obj/item/gun/projectile/lamia/sf
-	name = "\"Rattler\" heavy pistol"
-	desc = "An M6 \"Rattler\" heavy pistol, the mainline heavy sidearm of the galaxy. This one still bears SolFed markings either lost or stolen. Uses 12mm."
-	icon_state = "sfdark_lamia"
-	item_state = "sfdark_lamia"
+/obj/item/gun/projectile/lamia/gemini
+	name = "\"Gemini\" advanced heavy pistol"
+	desc = "The M6D \"Gemini\", a heavy pistol manufactured on Mars and often used by SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses 12mm."
+	icon_state = "scoped_dark_lamia"
+	item_state = "scoped_dark_lamia"
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
+	zoom_factors = list(0.4)
+	init_recoil = HANDGUN_RECOIL(0.7)
+	damage_multiplier = 1.3
+	price_tag = 1200
+	auto_eject = 1
+	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
+	blacklist_upgrades = list(/obj/item/tool_upgrade/refinement/laserguide = TRUE) // Already has an underbarrel one, hence the recoil control
 	serial_type = "Sol Fed"
 	serial_shown = TRUE
 
@@ -52,18 +60,19 @@
 	price_tag = 1100
 	serial_type = "SD GmbH"
 
-/obj/item/gun/projectile/lamia/akurra
-	name = "\"Akurra\" silenced heavy pistol"
-	desc = "The \"Akurra\", a specialized and heavily modified Lamia-pattern pistol that's been shaved down to a sleek gunfighter's tool.  This one is fitted with an integrated suppressor and gutter-sights. Uses 12mm."
-	icon_state = "akurra"
-	item_state = "akurra"
+/obj/item/gun/projectile/lamia/socom
+	name = "\"SOCOM\" silenced heavy pistol"
+	desc = "The M6C SOCOM, a variant of the M6 \"Naga\", it's a highly specialized and advanced handgun developed for the Solar Federation Special Operations Command. This one is fitted with a smart-linked optic and integrated suppressor. Uses 12mm."
+	icon_state = "socom"
+	item_state = "socom"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
-	init_recoil = HANDGUN_RECOIL(0.4)
+	init_recoil = HANDGUN_RECOIL(0.1)
+	zoom_factors = list(0.5)
 	silenced = TRUE
-	damage_multiplier = 0.95
-	penetration_multiplier = 1.2
+	penetration_multiplier = 1 // Assuming the silencer turns bullets into subsonic ammo, it has less velocity and thus less penetration.
 	price_tag = 1400
-	serial_type = "SA"
+	serial_type = "Sol Fed"
+	blacklist_upgrades = list(/obj/item/tool_upgrade/refinement/laserguide = TRUE) // Already has an underbarrel one, hence the recoil control
 
 /obj/item/gun/projectile/lamia/amnesty
 	name = "\"Amnesty\" heavy pistol"

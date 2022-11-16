@@ -211,7 +211,7 @@
 
 /obj/structure/annomlies_diet/ball_lightning
 	name = "ball lightning"
-	desc = "Floating ball of arcing electricity, it drifts through the air like a cloud, with its faint blue glow and distinct smell of ionized air."
+	desc = "A floating ball of arcing electricity, it quickly drifts through the air like a cloud, with its faint blue glow and distinct smell of ionized air."
 	icon_state = "ball_lightning"
 	item_state = "ball_lightning"
 	density = TRUE
@@ -321,7 +321,7 @@
 
 /obj/structure/annomlies_diet/thumper
 	name = "Thumper"
-	desc = "Glistening cloud of gold vapor. small arcs of electricity dance around inside it as it slams itself forcefully into the ground over and over."
+	desc = "A glistening cloud of gold vapors. Small arcs of electricity dance around inside it as it slams itself forcefully into the ground, over and over."
 	icon_state = "crusher_cloud"
 	item_state = "crusher_cloud"
 	density = FALSE
@@ -587,7 +587,7 @@
 
 /obj/structure/annomlies_diet/whirli
 	name = "Whirli"
-	desc = "A spiraling vortex of air, dust and debris are stuck in its spirals, even just standing around it gives the intense feeling of force behind it."
+	desc = "An intense vortex of air, dust and debris spirals around this area. Even just standing around it gives the intense feeling of a powerful vacuum force pulling you in."
 	icon_state = "whirli"
 	item_state = "whirli"
 	density = FALSE
@@ -613,12 +613,12 @@
 		if(prob(redboots))
 			var/obj/item/organ/external/organ = H.get_organ(pick(BP_R_LEG, BP_L_LEG, BP_R_ARM, BP_L_ARM))
 			if(!organ)
-				H.visible_message("<font size=1>\red[H.name] is spun arouned by [src].</font><\red>", "\red[src] spins you around at high speeds!")
+				H.visible_message("<font size=1>\red[H.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
 				return
 			organ.droplimb(TRUE, DISMEMBER_METHOD_EDGE)
-			H.visible_message("<font size=1>\red[H.name] is spun arouned by [src].</font><\red>", "\red[src] spins you around ripping  a lim off!")
+			H.visible_message("<font size=1>\red[H.name] is spun around by [src], a sickening sound coming from a limb being ripped off by vacuum force!.</font><\red>", "\red[src] spins you around, violently ripping one of your limbs off!")
 		else
-			H.visible_message("<font size=1>\red[H.name] is spun arouned by [src].</font><\red>", "\red[src] spins you around at high speeds!")
+			H.visible_message("<font size=1>\red[H.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
 	.=..()
 
 

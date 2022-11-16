@@ -189,7 +189,7 @@
 	desc = "12mm suppressed handgun and its kit."
 
 /obj/item/storage/box/syndie_kit/hpistol/populate_contents()
-	new /obj/item/gun/projectile/lamia/akurra(src)
+	new /obj/item/gun/projectile/lamia/socom(src)
 	new /obj/item/ammo_magazine/kurtz_50/hv(src)
 	new /obj/item/ammo_magazine/kurtz_50/hv(src)
 	new /obj/item/clothing/glasses/sunglasses(src)

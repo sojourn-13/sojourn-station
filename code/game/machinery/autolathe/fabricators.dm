@@ -156,7 +156,7 @@
 			list(name="Shells (20mm Payload)", cost=500, path=/obj/item/ammo_casing/shotgun/payload/prespawned),
 			list(name="Heavy Rifle Drum Magazine (8.6mm Drum)", cost=700, path=/obj/item/ammo_magazine/heavy_rifle_408_drum),
 			list(name="Caseless Magazine (10x24mm Standard)", cost=500, path=/obj/item/ammo_magazine/c10x24),
-			list(name="Caseless Light Rifle Magazine (10x24mm Standard)", cost=100, path=/obj/item/ammo_magazine/rifle_10x24),
+			list(name="Caseless Light Rifle Magazine (10x24mm Standard)", cost=100, path=/obj/item/ammo_magazine/smg_10x24),
 			list(name="Grenade Shell Baton", cost=250, path=/obj/item/ammo_casing/grenade),
 			list(name="Grenade Shell Flash", cost=250, path=/obj/item/ammo_casing/grenade/flash),
 			list(name="Grenade Shell Blast", cost=350, path=/obj/item/ammo_casing/grenade/blast),

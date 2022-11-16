@@ -29357,11 +29357,11 @@
 /area/nadezhda/outside/meadow)
 "fDx" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/riot_autoshotgun/operator,
-/obj/item/gun/projectile/automatic/riot_autoshotgun/operator{
+/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot,
+/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot{
 	pixel_y = -8
 	},
-/obj/item/gun/projectile/automatic/riot_autoshotgun/operator{
+/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot{
 	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/techmaint,

@@ -726,8 +726,8 @@
 	icon_state = "10x24"
 	initial_ammo = 0
 
-/obj/item/ammo_magazine/rifle_10x24
-	name = "light rifle magazine"
+/obj/item/ammo_magazine/smg_10x24 // Refactors as it's not intended for a rifle but rather the Spec Ops.
+	name = "high-capacity box magazine"
 	desc = "A 40 round magazine marked for 10x24mm rounds."
 	icon_state = "rifle"
 	mag_type = MAGAZINE

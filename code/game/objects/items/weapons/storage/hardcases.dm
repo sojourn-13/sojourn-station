@@ -412,7 +412,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/cell/medium/moebius/high(src) // Returning their high capacity cell from Sprocket removal
 	new /obj/item/clothing/suit/straight_jacket(src)
 	new /obj/item/storage/firstaid/soteria/large(src)
-	new /obj/item/gun/energy/sst/formatbound/preloaded(src)
+	new /obj/item/gun/energy/sst/preloaded(src) // They're now nonlethal and justifies getting an upgrade from science as nobody will ever want a downgrade.
 	new /obj/item/modular_computer/tablet/moebius/preset(src)
 
 //////////////////////////////////////////Engineering//////////////////////////////////////////
