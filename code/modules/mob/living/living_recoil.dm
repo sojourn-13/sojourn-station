@@ -26,7 +26,6 @@
 		if(usr.stats.getPerk(PERK_SMARTLINK))
 			scale = 0.7 //Not as crazy as racial because it's kriosan niche
 
-
 	if(recoil <= base)
 		recoil = 0
 	else
