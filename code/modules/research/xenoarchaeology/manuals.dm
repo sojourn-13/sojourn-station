@@ -45,7 +45,7 @@
 				<h1><a name="Tools">Knowing your tools</a></h1>
 				Every archaeologist has a plethora of tools at their disposal, but here's the important ones:<br>
 				<ul>
-					<li><b>Picks and pickaxes</b> - The bread and butter of your digging utensils. The big one works well on digging thru rocks. While
+					<li><b>Picks and pickaxes</b> - The bread and butter of your digging utensils. The big one works well on digging through rocks. While
 					The small one works well on actually excavating things.</li>
 					<li><b>Measuring tape</b> - don't leave home without it, you can use it to measure the depth you or someone else has dug.</li>
 					<li><b>GPS</b> - helps others to find you if something bad happens.</li>

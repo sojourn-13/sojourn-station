@@ -58,8 +58,8 @@
 	reagent_state = LIQUID
 	color = "#792300"
 	strength = 0.1
+	metabolism = REM * 0.1 // Make it not last forever
 	nerve_system_accumulations = 60
-	addiction_chance = 20
 	heating_point = 523
 	heating_products = list("toxin")
 
@@ -844,7 +844,7 @@
 /datum/reagent/toxin/wasp_toxin
 	name = "Wasp Inflamer"
 	id = "wasp_toxin"
-	description = "A toxin that paralizes through pain its victums."
+	description = "A toxin that paralizes its victims through pain."
 	taste_mult = 0.6
 	reagent_state = LIQUID
 	color = "#CF3600"

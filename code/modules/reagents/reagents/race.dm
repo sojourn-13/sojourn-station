@@ -47,11 +47,13 @@
 	scannable = TRUE
 
 /datum/reagent/medicine/hadrenol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.heal_organ_damage(0.6, 0.4, 3)
-	M.adjustOxyLoss(-0.6)
-	M.adjustToxLoss(-0.5)
-	M.add_chemical_effect(CE_BLOODCLOT, 0.2)
-	M.add_chemical_effect(CE_PAINKILLER, 35, TRUE)
+	M.heal_organ_damage(1, 0.8, 4, 2) // Barely buffed up Hustimdol without the sleepyness, any more would be too good. Remember this has a half hour cooldown.
+	M.adjustOxyLoss(-1)
+	M.adjustToxLoss(-1)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.4)
+	M.add_chemical_effect(CE_BLOODRESTORE, 1.1 * effect_multiplier) // Paramount due to how organ efficiency works
+	M.add_chemical_effect(CE_PAINKILLER, 45, TRUE) // Come on, stand up! You can do it!
+	M.add_chemical_effect(CE_STABLE)
 
 /datum/reagent/stim/kriotol
 	name = "Kriotol"

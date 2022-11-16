@@ -50,7 +50,7 @@
 	damage_multiplier = 1
 	max_shells = 1
 
-/obj/item/gun/projectile/automatic/riot_autoshotgun/operator
+/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot
 	name = "\"Operator\" combat shotgun"
 	desc = "The \"Operator\" shotgun appears to be a well designed model of shotgun complete with a polymer grip, holographic sights and a collapsing stock.  \
 			Designed by Nadezhda Marshal gunsmiths and surplus parts of the \"Mamba\" series of firearms this shotgun appears to be perfect for both close and medium range engagements."
@@ -70,7 +70,7 @@
 	folding_stock = TRUE //we can fold are stocks
 	can_dual = FALSE
 
-/obj/item/gun/projectile/automatic/riot_autoshotgun/operator/update_icon()
+/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot/update_icon()
 	..()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
