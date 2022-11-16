@@ -153,12 +153,12 @@
 	sac_desc_modifier = "It focuses on its surroundings."
 	loot = list(/obj/item/organ/internal/eyes)
 
-/datum/genetics/mutation/sac_contents/marqua_eyes
-	name = "Marqua eye"
-	key = "MUTATION_MARQUA_EYES"
-	desc = "When cloned in an organ sac, produces a single Mar'qua-like eye from an unidentified substance."
-	sac_desc_modifier = "It watches the world around it."
-	loot = list(/obj/item/organ/internal/eyes/marqua)
+// /datum/genetics/mutation/sac_contents/marqua_eyes
+// 	name = "Marqua eye"
+// 	key = "MUTATION_MARQUA_EYES"
+// 	desc = "When cloned in an organ sac, produces a single Mar'qua-like eye from an unidentified substance."
+// 	sac_desc_modifier = "It watches the world around it."
+// 	loot = list(/obj/item/organ/internal/eyes/marqua)
 
 /datum/genetics/mutation/sac_contents/slime_bone
 	name = "Slime bone"
