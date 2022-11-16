@@ -9,9 +9,7 @@
 		/datum/design/autolathe/gun/ten_dark,
 		/datum/design/autolathe/gun/NM_colt,
 		/datum/design/autolathe/gun/ladon = 2,
-		/datum/design/autolathe/gun/naga = 2,
 		//SMGs
-		/datum/design/autolathe/gun/greasegun = 2,
 		/datum/design/autolathe/gun/buckler = 3,
 		/datum/design/autolathe/gun/triage = 3,
 		//rifles
@@ -20,9 +18,7 @@
 		/datum/design/autolathe/gun/roe = 2,
 		/datum/design/autolathe/gun/sol = 3,
 		/datum/design/autolathe/gun/omnirifle = 2,
-		/datum/design/autolathe/gun/standard_omnirifle,
-		/datum/design/autolathe/gun/omnicarbine,
-		/datum/design/autolathe/gun/rds_omnicarbine = 2,
+		/datum/design/autolathe/gun/rds_omnicarbine = 3,
 		/datum/design/autolathe/gun/strelki = 2,
 		/datum/design/autolathe/gun/watchtower = 3,
 		/datum/design/autolathe/gun/rushing_bull = 4,
@@ -36,7 +32,6 @@
 		//STS
 		/datum/design/autolathe/gun/sts25,
 		/datum/design/autolathe/gun/sts30 = 2,
-		/datum/design/autolathe/gun/sts40 = 3,
 		//Flaregun
 		/datum/design/autolathe/gun/flare_gun,
 		//Misc
@@ -48,8 +43,8 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo
-	name = ""
-	disk_name = "Blackshield Ammo Sovereignty Pack"
+	name = "Blackshield Ammo Sovereignty Pack"
+	disk_name = ""
 	icon_state = "blackshield"
 	license = 30
 
@@ -132,7 +127,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/luger
-	name = "NM 9mm \"Vintovka Lyugera\" carbine"
+	name = "No-Publisher 9mm \"Vintovka Lyugera\" carbine"
 	disk_name = ""
 	icon_state = "blackshield"
 	license = 15
@@ -181,21 +176,6 @@
 		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
 		/datum/design/autolathe/ammo/pistol_35_drum/lethal = 2
 		)
-
-
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/greasegun
-	name = "NM - 9mm \"Grease Gun\""
-	disk_name = ""
-	icon_state = "blackshield"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/greasegun = 3,
-		/datum/design/autolathe/ammo/smg_practice = 0,
-		/datum/design/autolathe/ammo/smg_rubber,
-		/datum/design/autolathe/ammo/smg,
-		/datum/design/autolathe/ammo/smg_lethal = 2
-	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/buckler
 	name = "NM - 9mm Buckler SMG"
@@ -296,20 +276,6 @@
 		/datum/design/autolathe/ammo/lrifle = 2,
 		/datum/design/autolathe/ammo/lrifle_lethal = 4,
 		/datum/design/autolathe/ammo/lrifle_speed_loader
-	)
-
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/blackguard
-	name = "NM - 8.6mm Blackguard Omni Rifle"
-	disk_name = ""
-	icon_state = "blackshield"
-
-	license = 8 //RARE GUN REALLY RARE REALLY GOOD
-	designs = list(
-		/datum/design/autolathe/gun/blackguard = 6,
-		/datum/design/autolathe/ammo/hrifle_practice = 0,
-		/datum/design/autolathe/ammo/hrifle_rubber,
-		/datum/design/autolathe/ammo/hrifle,
-		/datum/design/autolathe/ammo/hrifle_lethal = 2
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/rushingbull

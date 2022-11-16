@@ -627,7 +627,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			for(var/i=3, i>0, i--)
 				sec_briefcase.contents += new /obj/item/spacecash/bundle/c1000
 			sec_briefcase.contents += new /obj/item/gun/energy/crossbow
-			sec_briefcase.contents += new /obj/item/gun/projectile/revolver/mateba
+			sec_briefcase.contents += new /obj/item/gun/projectile/revolver/hornet
 			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_magnum_40
 			sec_briefcase.contents += new /obj/item/plastique
 			M.equip_to_slot_or_del(sec_briefcase, slot_l_hand)
@@ -741,7 +741,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/device/radio/headset/heads/captain(M), slot_l_ear)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/powered/thermal/plain/eyepatch(M), slot_glasses)
 			M.equip_to_slot_or_del(new /obj/item/storage/backpack/satchel(M), slot_back)
-			M.equip_to_slot_or_del(new /obj/item/gun/projectile/revolver/mateba(M), slot_belt)
+			M.equip_to_slot_or_del(new /obj/item/gun/projectile/revolver/hornet(M), slot_belt)
 			M.equip_to_slot_or_del(new /obj/item/clothing/under/costume/history/soviet(M), slot_w_uniform)
 			var/obj/item/card/id/W = new(M)
 			W.name = "[M.real_name]'s ID Card"
@@ -768,7 +768,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			for(var/i=3, i>0, i--)
 				sec_briefcase.contents += new /obj/item/spacecash/bundle/c1000
 			sec_briefcase.contents += new /obj/item/gun/energy/crossbow
-			sec_briefcase.contents += new /obj/item/gun/projectile/revolver/mateba
+			sec_briefcase.contents += new /obj/item/gun/projectile/revolver/hornet
 			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_kurtz_50
 			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_kurtz_50
 			M.equip_to_slot_or_del(sec_briefcase, slot_l_hand)

@@ -17,7 +17,7 @@
 	name = OUTFIT_JOB_NAME("Lonestar - Cargo Technician")
 	uniform = /obj/item/clothing/under/rank/cargotech
 	suit = /obj/item/clothing/suit/storage/rank/cargo_jacket
-	belt = /obj/item/storage/belt/utility
+	belt = /obj/item/storage/belt/utility/full
 	pda_type = /obj/item/modular_computer/pda/cargo
 
 /decl/hierarchy/outfit/job/cargo/mining

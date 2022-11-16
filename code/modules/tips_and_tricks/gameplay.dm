@@ -11,6 +11,9 @@
 /tipsAndTricks/gameplay/fightBlob
     tipText = "Блоб обладет неприятной кислотной атакой, позволяющей им в ближнем бою расплавить ваше оружие и броню! Держитесь от них подальше или носите биостойкую одежду, чтобы сорвать ему тактику химической войны."
 
+/tipsAndTricks/gameplay/fightBlob_two
+    tipText = "Блобы удивительно слабы к взрывателям и дымовым гранатам. Используйте их в случаях, когда блобы захватывают колонию."
+
 /tipsAndTricks/gameplay/fuhrerRoachReinforcement
     tipText = "Таракан 'Фюрер' может вызвать целый батальон тараканов на подкрепление. Если ты услышишь его крик, БЕГИ!"
 
@@ -62,3 +65,11 @@
 
 /tipsAndTricks/gameplay/examinetab
     tipText = "Автоматическое переключение на вкладку 'Examine' при осмотре чего-либо может быть отключено в ваших настройках."
+
+/tipsAndTricks/gameplay/fighting_slimes
+    tipText = "Fire extinguishers well slow do work. But in cases were slimes are over running the colony its best to get slime batons."
+
+/tipsAndTricks/gameplay/fighting_slimes_two
+    tipText = "Slimes are weaker to cold then heat. You can use frost oil or bullets to greater affect, well lasers and pepper spray only make a slime stronger!"
+
+

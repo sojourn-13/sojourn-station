@@ -1,12 +1,12 @@
 //snowflake guns for xenoarch because you can't override the update_icon() proc inside the giant mess that is find creation
-
 //energy guns
 /obj/item/gun/energy/cog/xenoarch
 	name = "Fossilised Gun"
 	icon = 'icons/obj/xenoarchaeology.dmi'
 	item_state_slots = null
 	icon_contained = FALSE
-	charge_cost = 100
+	charge_cost = 200
+	self_recharge = TRUE
 	projectile_type = /obj/item/projectile/beam/tesla/shotgun // thats right. Its a shotgun cog.
 
 /obj/item/gun/energy/cog/xenoarch/refresh_upgrades()
@@ -20,6 +20,7 @@
 	icon = 'icons/obj/xenoarchaeology.dmi'
 	item_state_slots = null
 	icon_contained = FALSE
+	self_recharge = TRUE
 
 /obj/item/gun/energy/xray/xenoarch/refresh_upgrades()
 	return
@@ -67,8 +68,7 @@
 /obj/item/gun/projectile/boltgun/heavysniper/xenoarch
 	name = "Fossilized Gun"
 	icon = 'icons/obj/xenoarchaeology.dmi'
-	caliber = 999
-	damage_multiplier = 1.8 //It only gets one shot and can't be reloaded. Don't miss.
+	damage_multiplier = 1.5
 
 /obj/item/gun/projectile/boltgun/heavysniper/xenoarch/refresh_upgrades()
 	return

@@ -13,8 +13,8 @@
 	step_delay = 0.65
 	can_ricochet = TRUE
 
-	affective_damage_range = 2
-	affective_ap_range = 2
+	affective_damage_range = 3
+	affective_ap_range = 3
 	recoil = 3
 	added_damage_bullet_pve = 4
 
@@ -129,13 +129,13 @@
 
 	affective_damage_range = 3
 	affective_ap_range = 3
-	recoil = 4
+	recoil = 5
 	added_damage_bullet_pve = 9
 
 /obj/item/projectile/bullet/magnum_40/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 2)
-	agony = 3
+	agony = 4
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
@@ -152,7 +152,7 @@
 	nocap_structures = TRUE //Door breaching
 	affective_damage_range = 4
 	affective_ap_range = 4
-	recoil = 6
+	recoil = 7
 	added_damage_bullet_pve = 7
 
 /obj/item/projectile/bullet/magnum_40/rubber
@@ -164,7 +164,7 @@
 	embed = FALSE
 	sharp = FALSE
 	step_delay = 0.5
-	recoil = 2
+	recoil = 4
 	added_damage_bullet_pve = 2
 
 /obj/item/projectile/bullet/magnum_40/rubber/pepperball
@@ -213,7 +213,7 @@
 	embed = TRUE
 	sharp = TRUE
 	step_delay = 0.5
-	recoil = 2
+	recoil = 5
 	added_damage_bullet_pve = 21
 
 /obj/item/projectile/bullet/magnum_40/scrap
@@ -221,7 +221,7 @@
 	armor_penetration = 5
 	affective_damage_range = 1
 	affective_ap_range = 1
-	recoil = 1
+	recoil = 4
 	added_damage_bullet_pve = 7
 
 /obj/item/projectile/bullet/magnum_40/biomatter
@@ -235,7 +235,7 @@
 	sharp = FALSE
 	step_delay = 0.65
 	check_armour = ARMOR_BIO
-	recoil = 2
+	recoil = 4
 	added_damage_bullet_pve = 10
 
 /// 12mm Heavy Pistol ///
@@ -248,7 +248,7 @@
 	step_delay = 0.65
 	affective_damage_range = 3
 	affective_ap_range = 3
-	recoil = 7
+	recoil = 8
 	added_damage_bullet_pve = 9.5
 
 /obj/item/projectile/bullet/kurtz_50/rubber
@@ -260,7 +260,7 @@
 	armor_penetration = 0
 	can_ricochet = TRUE
 	step_delay = 0.75
-	recoil = 5
+	recoil = 6
 	added_damage_bullet_pve = 3
 
 /obj/item/projectile/bullet/kurtz_50/practice
@@ -283,7 +283,7 @@
 	penetrating = 0
 	can_ricochet = FALSE
 	step_delay = 0.8
-	recoil = 6
+	recoil = 10
 	added_damage_bullet_pve = 25
 
 /obj/item/projectile/bullet/kurtz_50/hv
@@ -296,7 +296,7 @@
 	affective_damage_range = 4
 	affective_ap_range = 4
 	nocap_structures = TRUE //We can breach doors rather well
-	recoil = 10
+	recoil = 12
 	added_damage_bullet_pve = 10
 
 
@@ -314,7 +314,7 @@
 	step_delay = 0.3
 	affective_damage_range = 7
 	affective_ap_range = 7
-	recoil = 2
+	recoil = 3
 	added_damage_bullet_pve = 8
 
 /obj/item/projectile/bullet/light_rifle_257/practice
@@ -326,7 +326,7 @@
 	sharp = FALSE
 	can_ricochet = FALSE
 	step_delay = 0.5
-	recoil = 1
+	recoil = 2
 	added_damage_bullet_pve = 2
 
 /obj/item/projectile/bullet/light_rifle_257/hv
@@ -337,7 +337,7 @@
 	affective_damage_range = 8 //Can snipe
 	affective_ap_range = 8
 	nocap_structures = TRUE //RATARATARAT down a door
-	recoil = 4
+	recoil = 5
 	added_damage_bullet_pve = 7
 
 /obj/item/projectile/bullet/light_rifle_257/rubber
@@ -351,7 +351,7 @@
 	sharp = FALSE
 	can_ricochet = TRUE
 	step_delay = 0.9
-	recoil = 1
+	recoil = 2
 	added_damage_bullet_pve = 3
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
@@ -365,7 +365,7 @@
 	embed = TRUE
 	sharp = TRUE
 	step_delay = 0.6
-	recoil = 1
+	recoil = 4
 	added_damage_bullet_pve = 15
 
 /obj/item/projectile/bullet/light_rifle_257/scrap
@@ -373,7 +373,7 @@
 	armor_penetration = 7
 	affective_damage_range = 4
 	affective_ap_range = 4
-	recoil = 1
+	recoil = 4
 	added_damage_bullet_pve = 6
 
 /obj/item/projectile/bullet/light_rifle_257/nomuzzle
@@ -471,15 +471,15 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408
 	icon_state = "bullet_heavy"
-	damage_types = list(BRUTE = 17)
-	armor_penetration = 30
+	damage_types = list(BRUTE = 20)
+	armor_penetration = 25
 	penetrating = 2
 	can_ricochet = TRUE
 	step_delay = 0.3
 	affective_damage_range = 8
 	affective_ap_range = 8
-	recoil = 10
-	added_damage_bullet_pve = 11
+	recoil = 12
+	added_damage_bullet_pve = 12
 
 /obj/item/projectile/bullet/heavy_rifle_408/rubber
 	name = "rubber bullet"
@@ -509,20 +509,20 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/hv
 	name = "sabot penetrator"
-	damage_types = list(BRUTE = 15)
-	armor_penetration = 48
+	damage_types = list(BRUTE = 16)
+	armor_penetration = 46
 	penetrating = 3
 	hitscan = TRUE
 	affective_damage_range = 9 //Sniping cal
 	affective_ap_range = 9
 	nocap_structures = TRUE //anit-wall/door
-	recoil = 14
+	recoil = 16
 	added_damage_bullet_pve = 9
 
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 17.5)
-	agony = 12
+	damage_types = list(BRUTE = 25)
+	agony = 14
 	post_penetration_dammult = 2
 	armor_penetration = 0 //Half of normal
 	penetrating = 0
@@ -530,15 +530,15 @@
 	embed = TRUE
 	sharp = TRUE
 	step_delay = 0.5
-	recoil = 8
+	recoil = 10
 	added_damage_bullet_pve = 26
 
 /obj/item/projectile/bullet/heavy_rifle_408/scrap
-	damage_types = list(BRUTE = 13)
+	damage_types = list(BRUTE = 15)
 	armor_penetration = 15 //half  of normal
-	affective_damage_range = 3
-	affective_ap_range = 3
-	recoil = 6
+	affective_damage_range = 4
+	affective_ap_range = 4
+	recoil = 8
 	added_damage_bullet_pve = 7
 
 ///Snowflake  ///
@@ -577,7 +577,7 @@
 	recoil = 10
 	added_damage_bullet_pve = 7.5
 
-//// 14.5×114mm Anti-Material Rifle Rounds ////
+//// 14.5×114mm Anti-Materiel Rifle Rounds ////
 /obj/item/projectile/bullet/antim
 	damage_types = list(BRUTE = 60)
 	armor_penetration = 100
@@ -650,6 +650,17 @@
 	affective_ap_range = 8
 	recoil = 16
 	added_damage_bullet_pve = 20
+
+/obj/item/projectile/bullet/shotgun/ceramic
+	name = "ceramic slug"
+	icon_state = "slug"
+	damage_types = list(BRUTE = 30)
+	armor_penetration = 10
+	knockback = 1 //KER-BLAM!!!!
+	affective_damage_range = 4
+	affective_ap_range = 4
+	recoil = 20
+	added_damage_bullet_pve = 10
 
 /obj/item/projectile/bullet/shotgun/beanbag
 	name = "beanbag"
@@ -815,16 +826,16 @@
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	icon_state = "birdshot-1"
-	damage_types = list(BRUTE = 9)
-	added_damage_bullet_pve = 9
+	damage_types = list(BRUTE = 11)
+	added_damage_bullet_pve = 10
 	agony = 5
 	pellets = 4
 	range_step = 1
 	spread_step = 10
 	knockback = 0 //We do not knockback do to issues with bullet douping
 	step_delay = 0.9
-	affective_damage_range = 1
-	affective_ap_range = 1
+	affective_damage_range = 2
+	affective_ap_range = 2
 	recoil = 11
 
 /obj/item/projectile/bullet/pellet/shotgun/Initialize()
@@ -879,7 +890,7 @@
 	step_delay = 0.9
 	recoil = 25
 	added_damage_bullet_pve = 15
-	
+
 /obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
 	if (!testing)
 		explosion(target, 0, 0, 3)

@@ -42,7 +42,8 @@ Has ability of every roach.
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/kaiser
 	meat_amount = 15
 	sanity_damage = 3
-
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/kingly_pheromone_gland)
 	ranged = TRUE // RUN, COWARD!
 	limited_ammo = TRUE //Do we run out of ammo?
 	rounds_left = 2 //We get 2 shots then go for melee, this makes us a threat

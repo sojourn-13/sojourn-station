@@ -30,5 +30,5 @@
 	offer_types = list(
 		/obj/item/bluespace_crystal = offer_data("bluespace crystal", 2000, 10),
 		/obj/item/device/mmi/digital/posibrain = offer_data("positronic brain", 750, 3),
-		/obj/item/reagent_containers/food/snacks/csandwich = offer_data("sandwich", 150, 1)
+		/obj/item/reagent_containers/food/snacks/csandwich = offer_data("sandwich", 400, 1)
 	)

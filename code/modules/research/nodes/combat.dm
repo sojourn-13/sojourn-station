@@ -194,8 +194,7 @@
 	required_tech_levels = list()
 	cost = 3750
 
-	unlocks_designs = list(	/datum/design/research/item/weapon/decloner,
-							/datum/design/research/item/weapon/centurio,
+	unlocks_designs = list(	/datum/design/research/item/weapon/centurio,
 							/datum/design/research/item/weapon/auretian
 						)
 
@@ -217,7 +216,6 @@
 							/datum/design/research/item/weapon/c20r,
 							/datum/design/research/item/ammo/smg_mag/lethal,
 							/datum/design/research/item/ammo/smg_mag/rubber,
-							/datum/design/research/item/weapon/starstriker,
 							/datum/design/research/item/ammo/laser,
 							/datum/design/research/item/ammo/laser/ap,
 							/datum/design/research/item/ammo/laser/lethal,
@@ -270,8 +268,6 @@
 	unlocks_designs = list(/datum/design/research/item/weapon/nuclear_gun,
 							/datum/design/research/item/weapon/lasercannon,
 							/datum/design/research/item/ammo/heavy_rifle_408,
-							/datum/design/research/item/ammo/laser_mag,
-							/datum/design/research/item/weapon/laser_ak,
 							/datum/design/research/item/weapon/centauri
 							)
 

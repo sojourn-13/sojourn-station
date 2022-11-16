@@ -208,7 +208,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "bk" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/boltgun/light_wood,
+/obj/item/gun/projectile/boltgun/light,
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	dir = 1;
@@ -2618,7 +2618,6 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "HM" = (
-/obj/item/gun/projectile/boltgun/sci,
 /turf/simulated/wall/wood_barrel,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "HP" = (

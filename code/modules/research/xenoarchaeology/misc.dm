@@ -103,6 +103,7 @@
 		new /obj/item/storage/bag/fossils(src)
 		new /obj/item/hand_labeler(src)
 		new /obj/item/taperoll/research(src)
+		new /obj/item/book/manual/excavation(src)
 		return
 
 //---- Isolation room air alarms

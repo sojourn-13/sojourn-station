@@ -88,6 +88,10 @@
 
 		organ.owner_pain(strength)
 
+		if (ishuman(organ.owner))
+			var/mob/living/carbon/human/H = organ.owner
+			H.update_surgery()
+
 
 /obj/item/organ/proc/try_surgery_step(step_type, mob/living/user, obj/item/tool, target, no_tool_message = FALSE)
 	var/datum/surgery_step/S = GLOB.surgery_steps[step_type]

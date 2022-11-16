@@ -38,8 +38,8 @@
 			/obj/item/organ/external/robotic/blackshield/r_arm,
 			/obj/item/organ/external/robotic/blackshield/l_leg,
 			/obj/item/organ/external/robotic/blackshield/r_leg
-		),
-	)
+		)
+	)//No real better place to put this honestly
 
 	offer_types = list(
 		/obj/item/organ_module/active/simple/armblade = offer_data("implanted armblade", 300, 0),

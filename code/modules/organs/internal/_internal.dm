@@ -197,13 +197,10 @@
 
 // Store these so we can properly restore them when installing/removing mods
 /obj/item/organ/internal/proc/initialize_organ_efficiencies()
-	for(var/organ in organ_efficiency)
-		initial_organ_efficiency.Add(organ)
-		initial_organ_efficiency[organ] = organ_efficiency[organ]
+	initial_organ_efficiency = organ_efficiency.Copy()
 
 /obj/item/organ/internal/proc/initialize_owner_verbs()
-	for(var/V in owner_verbs)
-		initial_owner_verbs.Add(V)
+	initial_owner_verbs = owner_verbs.Copy()
 
 // For handling organ mods
 /obj/item/organ/internal/refresh_upgrades()

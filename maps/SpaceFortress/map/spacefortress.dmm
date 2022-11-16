@@ -1741,11 +1741,11 @@
 /area/outpost/abandoned_fortress/powered_lit)
 "Od" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/clarissa/makarov,
-/obj/item/gun/projectile/clarissa/makarov,
-/obj/item/gun/projectile/clarissa/makarov,
-/obj/item/gun/projectile/clarissa/makarov,
-/obj/item/gun/projectile/clarissa/makarov,
+/obj/item/gun/projectile/makarov,
+/obj/item/gun/projectile/makarov,
+/obj/item/gun/projectile/makarov,
+/obj/item/gun/projectile/makarov,
+/obj/item/gun/projectile/makarov,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/outpost/abandoned_fortress/powered_lit)
 "Oi" = (

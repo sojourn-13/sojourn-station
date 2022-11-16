@@ -25,16 +25,18 @@
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
 		BURST_8_ROUND,
-		FULL_AUTO_400
+		FULL_AUTO_300
 		)
 	serial_type = "INDEX"
 	serial_shown = FALSE
 
+/*
 /obj/item/gun/energy/lasersmg/alt
 	name = "Disco Vazer \"Lasblender\""
 	desc = "This conversion of the \"MAC\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions. \
 	While this method is charge-effective, it worsens accuracy, and the chain-reaction makes the gun always fire in bursts. A viable choice for those who have lots of batteries and few bullets. \
 	Sometimes jokingly called the \"Disco Vazer\"."
+*/
 
 /obj/item/gun/energy/lasersmg/process_projectile(var/obj/item/projectile/P, mob/living/user, atom/target, var/target_zone, var/params=null)
 	projectile_color = pick(list("#FF0000", "#0000FF", "#00FF00", "#FFFF00", "#FF00FF", "#00FFFF", "#FFFFFF", "#000000"))

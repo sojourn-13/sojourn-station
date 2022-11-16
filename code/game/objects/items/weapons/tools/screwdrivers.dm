@@ -47,7 +47,7 @@
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 40, QUALITY_BOLT_TURNING = 40, QUALITY_DRILLING = 20)
-	degradation = 0.7
+	degradation = 1.5
 	use_power_cost = 0.54
 	suitable_cell = /obj/item/cell/small
 	max_upgrades = 4
@@ -70,7 +70,7 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 2)
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 60, QUALITY_BOLT_TURNING = 60, QUALITY_DRILLING = 25)
 	origin_tech = list(TECH_ENGINEERING = 3, TECH_MATERIAL = 2)
-	degradation = 0.6
+	degradation = 2.5
 	workspeed = 1.7
 	use_power_cost = 0.3
 	suitable_cell = /obj/item/cell/small

@@ -20,7 +20,7 @@
 	/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ak = 30,
 	/obj/item/gun/projectile/automatic/vintorez = 1,
 	/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_vintorez = 10,
-	/obj/item/gun/projectile/clarissa/makarov = 5,
+	/obj/item/gun/projectile/makarov = 5,
 	/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_makarov = 50,
 	/obj/item/ammo_magazine/light_rifle_257 = 50,
 	/obj/item/ammo_magazine/light_rifle_257 = 50,

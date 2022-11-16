@@ -83,7 +83,7 @@
 	switched_on_qualities = list(QUALITY_HAMMERING = 60)
 	switched_off_qualities = list(QUALITY_HAMMERING = 35)
 	toggleable = TRUE
-	degradation = 0.6
+	degradation = 2
 	use_power_cost = 1.5
 	workspeed = 1.5
 	max_upgrades = 2

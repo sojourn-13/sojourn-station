@@ -10,6 +10,10 @@
 	name = "laptop frame"
 	build_path = /obj/item/modular_computer/laptop
 
+/datum/design/autolathe/computer_part/frame_wristmount
+	name = "wristmounted computer frame"
+	build_path = /obj/item/modular_computer/wrist
+
 
 /datum/design/autolathe/computer_part/gps
 	name = "GPS sensor"

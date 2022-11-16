@@ -123,7 +123,7 @@
 			new/obj/item/clothing/mask/costume/job/luchador(src)
 		if(99 to 100)
 			new/obj/item/clothing/head/bearpelt(src)
-			new/obj/item/gun/projectile/clarissa/makarov(src)
+			new/obj/item/gun/projectile/makarov(src)
 
 /obj/structure/closet/crate/secure/loot/togglelock(mob/user as mob)
 	if(!locked)

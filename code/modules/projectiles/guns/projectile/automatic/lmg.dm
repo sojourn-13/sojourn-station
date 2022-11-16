@@ -24,7 +24,7 @@
 	init_recoil = HMG_RECOIL(1)
 	slowdown_hold = 1
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		BURST_5_ROUND,
 		BURST_8_ROUND
 		)
@@ -104,7 +104,7 @@
 	item_state = "pk_closed"
 	damage_multiplier = 0.9
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		BURST_5_ROUND,
 		BURST_8_ROUND
 		)
@@ -197,7 +197,7 @@
 	serial_type = "NM"
 
 	init_firemodes = list(
-		FULL_AUTO_600, // Meant to be a supressive fire GPMG
+		FULL_AUTO_300, // Meant to be a supressive fire GPMG
 		BURST_5_ROUND,
 		BURST_8_ROUND
 		)

@@ -15,11 +15,11 @@
 	price_tag = 800
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
-		WEAPON_NORMAL,
-		BURST_2_ROUND
+		WEAPON_NORMAL
 	)
 	twohanded = TRUE
 	serial_type = "GP"
+	max_upgrades = 4 //Older platform meaning 1 less
 
 /obj/item/gun/energy/cog/gear
 	name = "\"Gear\" lasgun"
@@ -27,7 +27,7 @@
 	This model has been modified by the Marshals to allow for non-lethal electrodes to be discharged as well as lasers, but at the cost of its cell-usage efficiency."
 	icon = 'icons/obj/guns/energy/cog_alt.dmi' // Using their proper sprite now
 	w_class = ITEM_SIZE_BULKY
-	fire_delay = 15
+	fire_delay = 10
 	projectile_type = /obj/item/projectile/beam/stun
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 15, MATERIAL_SILVER = 10)
 	init_firemodes = list(
@@ -95,20 +95,20 @@
 */
 
 /obj/item/gun/energy/cog/sawn
-    name = " \"Pinion\" lasgun"
-    icon = 'icons/obj/guns/energy/obrez_retro.dmi'
-    desc = "Nicknamed the 'Coglet', The \"Pinion\" lasgun is the result of advanced AI conforming the Cog to meet the demand of mercurial gun laws. Concessions have been made, but by excluding the stock and much of the focusing lens, the weapon just barely squeezes into a standard-issue holster."
-    icon_state = "shorty"
-    item_state = "shorty"
-    slot_flags = SLOT_BACK|SLOT_HOLSTER
-    matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
-    damage_multiplier = 0.7
-    penetration_multiplier = 0.7
-    charge_cost = 50
-    price_tag = 400
-    init_firemodes = list(
-        BURST_2_ROUND
-    )
-    twohanded = FALSE
-    init_recoil = HANDGUN_RECOIL(0.2)
-    serial_type = "GP-SI"
+	name = " \"Pinion\" lasgun"
+	icon = 'icons/obj/guns/energy/obrez_retro.dmi'
+	desc = "Nicknamed the 'Coglet', The \"Pinion\" lasgun is the result of advanced AI conforming the Cog to meet the demand of mercurial gun laws. Concessions have been made, but by excluding the stock and much of the focusing lens, the weapon just barely squeezes into a standard-issue holster."
+	icon_state = "shorty"
+	item_state = "shorty"
+	slot_flags = SLOT_BACK|SLOT_HOLSTER
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
+	damage_multiplier = 0.7
+	penetration_multiplier = 0.7
+	charge_cost = 50
+	price_tag = 400
+	init_firemodes = list(
+		WEAPON_NORMAL
+	)
+	twohanded = FALSE
+	init_recoil = HANDGUN_RECOIL(0.2)
+	serial_type = "GP-SI"
