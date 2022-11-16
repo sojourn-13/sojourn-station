@@ -8,7 +8,7 @@
 	name = "\"Makarov\" pistol"
 	desc = "Ammo not induced."
 	item_cost = 2 //Ammo not induced
-	path = /obj/item/gun/projectile/clarissa/makarov
+	path = /obj/item/gun/projectile/makarov
 
 /datum/uplink_item/item/visible_weapons/dartgun
 	name = "Dart Gun"

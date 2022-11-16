@@ -701,8 +701,8 @@
 	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/head/helmet/laserproof/marshal
-	icon_state = "ironhammer_ablative"
-	item_state = "ironhammer_ablative"
+	icon_state = "ablative_ironhammer"
+	item_state = "ablative_ironhammer"
 
 /obj/item/clothing/head/helmet/laserproof/iron_lock_security
 	name = "outdated ablative helmet"

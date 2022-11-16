@@ -4,7 +4,7 @@
 	path = /obj/item/clothing/suit/rank/botanist
 	slot = slot_wear_suit
 	sort_category = "Suits and Overwear"
-	cost = 1
+	cost = 0
 
 /datum/gear/suit/hell_apron
 	display_name = "lonestar black apron"

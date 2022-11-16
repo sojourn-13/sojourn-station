@@ -42,6 +42,9 @@
 #define MUTATION_S_MUSCLES /datum/genetics/mutation/sac_contents/s_muscles
 #define MUTATION_NERVES /datum/genetics/mutation/sac_contents/nerves
 #define MUTATION_S_NERVES /datum/genetics/mutation/sac_contents/s_nerves
+#define MUTATION_EYES /datum/genetics/mutation/sac_contents/eyes
+#define MUTATION_MARQUA_EYES /datum/genetics/mutation/sac_contents/marqua_eyes
+#define MUTATION_SLIME_BONE /datum/genetics/mutation/sac_contents/slime_bone
 #define MUTATION_HYPERION /datum/genetics/mutation/hyperion
 #define MUTATION_THICK_FUR /datum/genetics/mutation/thick_fur
 #define MUTATION_BAROTRAUMA /datum/genetics/mutation/barotrauma
@@ -54,6 +57,11 @@
 #define MUTATION_REGENERATION /datum/genetics/mutation/hyperion
 #define MUTATION_RAD_PROTECTION /datum/genetics/mutation/rad_protection
 #define MUTATION_BLOOD_BANK /datum/genetics/mutation/blood_bank
+#define MUTATION_BOMB_RESIST /datum/genetics/mutation/bomb_resist
+#define MUTATION_TERMITE_FRIEND /datum/genetics/mutation/termite_friend
+#define MUTATION_WURM_CRY /datum/genetics/mutation/wurm_cry
+#define MUTATION_SPARK_BREATH /datum/genetics/mutation/spark_breath
+#define MUTATION_FLAME_RETARDANT /datum/genetics/mutation/flame_retardant
 //^^^ All mutations!
 
 
@@ -62,6 +70,7 @@
 #define MUT_TYPE_SKIN 1 //An exclusive mutation type for skin.
 #define MUT_TYPE_FACTION 2
 #define MUT_TYPE_EYES 3 //An exclusive mutation type for eyes.
+#define MUT_TYPE_MOUTH 4 //Exclusive for breaths, spits and crys.
 
 //Types of Mutation recipes:
 #define MUT_TYPE_COMBINATION 1

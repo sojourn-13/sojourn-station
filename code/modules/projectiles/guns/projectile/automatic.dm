@@ -19,7 +19,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	auto_rack = TRUE
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
 		BURST_5_ROUND

@@ -7,6 +7,7 @@ var/const/RESIZE_SMALL = 0.85
 var/const/RESIZE_POCKET_PRINCE = 0.75
 var/const/RESIZE_TINY = 0.25
 
+//I'm not sure if this obsolete or not. Size transofrmations should be handled now in update_icons.dm --Evie
 /mob/living/carbon/human/proc/resize(var/new_size)
     if(size_multiplier == new_size)
         return 1

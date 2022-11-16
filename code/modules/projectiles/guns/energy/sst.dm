@@ -39,7 +39,7 @@
 	charge_cost = 100
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	suitable_cell = /obj/item/cell/medium
-	fire_delay = 12
+	fire_delay = 6
 	init_recoil = CARBINE_RECOIL(1.1)
 	can_dual = TRUE
 	damage_multiplier = 1.3

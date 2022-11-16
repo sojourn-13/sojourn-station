@@ -75,6 +75,8 @@
 #define PERK_ADDICT /datum/perk/addict
 #define PERK_GUNSMITH /datum/perk/gunsmith
 #define PERK_LINGUIST /datum/perk/linguist
+#define PERK_SOMELLIER /datum/perk/sommelier
+#define PERK_SOLBORN /datum/perk/solborn
 
 
 //Race Perks
@@ -125,6 +127,11 @@
 #define PERK_NANITE_MUSCLE /datum/perk/nanite_muscle
 #define PERK_NANITE_ARMOR /datum/perk/nanite_armor
 #define PERK_NANITE_AMMO /datum/perk/nanite_ammo
+
+// Imprinter Perks
+#define PERK_SMARTLINK /datum/perk/smartlink
+#define PERK_COGENHANCE /datum/perk/cognitive_enhancer
+#define PERK_CHEMNEUTRAL /datum/perk/chemical_neutralizer
 
 // Nanite Chem Perks.
 #define PERK_NANITE_CHEM /datum/perk/nanite_chem

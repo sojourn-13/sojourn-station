@@ -11,6 +11,11 @@
 	if(istype(parent_mob))
 		parent = parent_mob
 
+/datum/reagents/metabolism/Destroy()
+	parent = null
+	return ..()
+
+
 /datum/reagents/metabolism/proc/metabolize()
 	expose_temperature(parent.bodytemperature, 0.25)
 
@@ -47,6 +52,13 @@
 	var/addiction_tick = 1
 	/// The final chance for an addiction to manifest is multiplied by this value before being passed to prob.
 	var/addiction_chance_multiplier = 1
+
+/datum/metabolism_effects/Destroy()
+	parent = null
+	withdrawal_list.Cut()
+	active_withdrawals.Cut()
+	addiction_list.Cut()
+	return ..()
 
 //Must be called WHENEVER you modify nsa_bonus, nsa_chem_bonus, nsa_mult, or when you change nerve efficiency.
 //calc_nerves: Activates nerve efficiency recalculation, so its not recalculated every time.

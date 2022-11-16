@@ -4,3 +4,4 @@
 	display_name = "earmuffs"
 	path = /obj/item/clothing/ears/earmuffs
 	sort_category = "Earwear"
+	cost = 0

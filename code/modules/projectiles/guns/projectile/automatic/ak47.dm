@@ -25,7 +25,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY
 		)
 	serial_type = "EXC"
@@ -82,32 +82,6 @@
 	price_tag = 800
 	serial_type = "NM"
 
-/obj/item/gun/projectile/automatic/ak47/akl
-	name = "\"Legkiy-Kalashnikov\" laser"
-	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
-	A modernized experimental version of an old Kalashnikov design, desginated to take .223 laser ammuniton. The future is now, comrade. This modified type is commonly found in use by void wolves and similar ilk."
-	icon = 'icons/obj/guns/projectile/akl.dmi'
-	icon_state = "AKL"
-	item_state = "AKL"
-	excelsior = FALSE
-	w_class = ITEM_SIZE_NORMAL
-	force = WEAPON_FORCE_NORMAL
-	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10, MATERIAL_GOLD = 5)
-	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_MAGNET = 3, TECH_POWER = 5)
-	price_tag = 1500
-	init_recoil = RIFLE_RECOIL(0.4)
-	damage_multiplier = 1.2 //We hold less ammo but deal about the same damage
-	saw_off = FALSE
-	caliber = CAL_SCI
-	mag_well = MAG_WELL_LSRIFLE
-	fire_sound = 'sound/weapons/Laser.ogg'
-	init_firemodes = list(
-		FULL_AUTO_400,
-		BURST_5_ROUND,
-		SEMI_AUTO_NODELAY
-		)
-	serial_type = "SI"
-
 /obj/item/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" rifle"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
@@ -157,7 +131,7 @@
 
 	var/obj/item/gun/projectile/automatic/underslung/shotgun_3/shotgun
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY,
 		list(mode_name="fire shotgun", mode_desc="Shoot the underbarrel shotgun",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
@@ -203,3 +177,28 @@
 	init_firemodes = list(
 		list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=2.5, move_delay=null, icon="semi"),
 		)
+
+/obj/item/gun/projectile/automatic/ak47/makeshift
+	name = "Homemade \"Kalashnikov\" rifle"
+	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
+			This is a copy of an ancient semi-automatic rifle chambered for 7.62mm. If it won't fire, percussive maintenance should get it working again. \
+			It is known for its easy maintenance, and low price. This gun is not in active military service anymore, but has become ubiquitous among criminals and insurgents. \
+			This crude copy shows just how forgiving the design can be."
+	icon = 'icons/obj/guns/projectile/ak_homemade.dmi'
+	w_class = ITEM_SIZE_HUGE
+	init_recoil = RIFLE_RECOIL(0.7)
+	mag_well = MAG_WELL_RIFLE
+	excelsior = FALSE
+
+	origin_tech = list(TECH_COMBAT = 2)	//bad copies don't give good science
+	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
+	damage_multiplier = 1.1
+	penetration_multiplier = 0
+
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY	//too poorly made for burst or automatic
+	)
+	matter = list(MATERIAL_STEEL = 22, MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 5, MATERIAL_WOOD = 12)
+	price_tag = 500
+	serial_type = "INDEX"
+	serial_shown = FALSE

@@ -1603,7 +1603,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "eQ" = (
 /obj/structure/table/woodentable,
-/obj/item/gun/projectile/boltgun/light_wood,
+/obj/item/gun/projectile/boltgun/light,
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small/hv,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -1747,7 +1747,6 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fn" = (
 /obj/structure/table/woodentable,
-/obj/item/gun/projectile/boltgun/sci,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fo" = (

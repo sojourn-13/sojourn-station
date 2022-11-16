@@ -211,6 +211,8 @@
 
 	//Giving the emperor spider his own meat that has party drops. Reducing dropped meat to 3 from 4.
 	meat_amount = 4 //So its more worth killing these
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/emperor_silk_gland)
 	emote_see = list("chitters.","rubs its legs.","chitters in something that sounds like speech.")
 	mob_size = MOB_LARGE
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)

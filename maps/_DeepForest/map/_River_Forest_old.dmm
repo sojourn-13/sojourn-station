@@ -1811,7 +1811,7 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "xZ" = (
-/obj/item/gun/projectile/boltgun/light_wood,
+/obj/item/gun/projectile/boltgun/light,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
 "ya" = (

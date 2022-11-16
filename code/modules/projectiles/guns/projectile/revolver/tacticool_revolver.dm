@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/revolver/tacticool_revolver
 	name = "\"Tacticool\" heavy revolver"
-	desc = "When people complained that the Mateba was impractical due to its wrist snapping recoil, Scarborough Arms decided what it really needed was a tactical scope for sniping. Uses 12mm."
+	desc = "When people complained that other 12mm revolvers were impractical due to its wrist snapping recoil, Scarborough Arms decided what it really needed was a tactical scope for sniping. Uses 12mm."
 	icon = 'icons/obj/guns/projectile/tacticool_revolver.dmi'
 	icon_state = "tacticool_revolver"
 	item_state = "tacticool_revolver"

@@ -149,7 +149,7 @@
 
 /datum/chemical_reaction/syntiflesh
 	result = null
-	required_reagents = list("blood" = 5, "clonexadone" = 1)
+	required_reagents = list("blood" = 5, "cronexidone" = 1)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
 	mix_message = "The liquid tissue solidifies into a mass of meat."

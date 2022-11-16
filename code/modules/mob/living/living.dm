@@ -913,6 +913,9 @@ default behaviour is:
 
 	learnt_tasks = null
 
+	if(registered_z)
+		SSmobs.mob_living_by_zlevel[registered_z] -= src	// STOP_PROCESSING() doesn't remove the mob from this list
+
 	update_z(null)
 
 	destroy_HUD() //this should fix the harddel on humans

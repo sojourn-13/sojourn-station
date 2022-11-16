@@ -69,6 +69,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 
 	// Type of ore to spawn when the wurm dies
 	var/ore
+	var/drops_ore = TRUE
 
 	// The ennemy of all wurmkind
 	//var/obj/machinery/mining/drill/DD
@@ -113,7 +114,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	//	controller = null
 
 	// Spawn ores
-	if(ore)
+	if(ore && (drops_ore == TRUE))
 		var/nb_ores = rand(3, 5)
 		for(var/i in 1 to nb_ores)
 			new ore(loc)
@@ -205,7 +206,6 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 //Armor related variables
 	armor = list(melee = 35, bullet = 59, energy = 20, bomb = 50, bio = 100, rad = 0)
 
-
 //Loot related variables
 	ore = /obj/item/stack/ore/osmium
 
@@ -233,8 +233,35 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 //Armor related variables
 	armor = list(melee = 20, bullet = 35, energy = 50, bomb = 50, bio = 100, rad = 0)
 
-
 //Loot related variables
 	ore = /obj/item/stack/ore/osmium
 
 
+//Wurm summon for genetics. Friendly to colony. Colony isn't friendly to it.
+/mob/living/carbon/superior_animal/wurm/guardian
+	name = "wurm guardian"
+	desc = "A huge wurm that has come to someone's aid."
+	icon = 'icons/mob/64x64.dmi'
+	icon_state = "worm"
+	icon_living = "worm"
+	friendly_to_colony = TRUE
+	destroy_surroundings = FALSE
+
+//Health related variables
+	maxHealth = WURM_HEALTH_HIGH
+	health = WURM_HEALTH_HIGH
+
+//Movement related variables
+	move_to_delay = WURM_SPEED_SLUG
+	turns_per_move = 5
+
+//Damage related variables
+	melee_damage_lower = WURM_DMG_MED
+	melee_damage_upper = WURM_DMG_MED
+
+//Armor related variables
+	armor = list(melee = 20, bullet = 35, energy = 50, bomb = 50, bio = 100, rad = 0)
+
+//Loot related variables
+	ore = /obj/item/stack/ore/iron // given something just in case.
+	drops_ore = FALSE

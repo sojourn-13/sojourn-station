@@ -58,7 +58,7 @@
 	id = "glucose"
 	description = "Most important source of energy in all organisms."
 	color = "#FFFFFF"
-	scannable = 1
+	scannable = TRUE
 	injectable = 1
 	common = TRUE //It's basically sugar
 
@@ -275,7 +275,7 @@
 	reagent_state = LIQUID
 	color = "#BBEDA4"
 	overdose = REAGENTS_OVERDOSE
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/other/lipozine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0)
@@ -339,7 +339,7 @@
 	reagent_state = SOLID
 	color = "#FFFFFF"
 	overdose = REAGENTS_OVERDOSE
-	scannable = 1
+	scannable = TRUE
 	common = TRUE
 
 /datum/reagent/organic/blackpepper

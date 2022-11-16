@@ -79,7 +79,6 @@
 
 	QDEL_NULL(sanity)
 	QDEL_NULL(vessel)
-
 	worn_underwear.Cut()
 	return ..()
 
@@ -1159,6 +1158,8 @@ var/list/rank_prefix = list(\
 	maxHealth = species.total_health
 
 	spawn(0)
+		if(QDELETED(src))	// Needed because mannequins will continue this proc and runtime after being qdel'd
+			return
 		regenerate_icons()
 		if(!QDELETED(src))
 			if(vessel.total_volume < species.blood_volume)

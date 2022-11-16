@@ -125,6 +125,7 @@
 		/datum/design/autolathe/computer_part/frame_pda,
 		/datum/design/autolathe/computer_part/frame_tablet,
 		/datum/design/autolathe/computer_part/frame_laptop,
+		/datum/design/autolathe/computer_part/frame_wristmount,
 		/datum/design/research/item/computer_part/disk/micro,
 		/datum/design/research/item/computer_part/disk/small,
 		/datum/design/research/item/computer_part/disk/normal,

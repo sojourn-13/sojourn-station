@@ -34,7 +34,7 @@
 	slowdown_hold = 1 //Heavy massive gun, slow down
 	init_recoil = HMG_RECOIL(1.3)
 	init_firemodes = list(
-		FULL_AUTO_800,
+		FULL_AUTO_600,
 		list(mode_name="hyper-burst", mode_desc = "Short, rapid shot 3 round burst to stop any unarmed target", burst=3,    burst_delay=0.3, move_delay=2,  icon="burst"),
 		)
 	serial_type = "Sol Fed"

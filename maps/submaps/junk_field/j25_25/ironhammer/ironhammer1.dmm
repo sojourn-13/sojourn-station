@@ -297,7 +297,6 @@
 /area/template_noop)
 "to" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/handmade_pistol/shotgun,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/template_noop)
 "tv" = (
