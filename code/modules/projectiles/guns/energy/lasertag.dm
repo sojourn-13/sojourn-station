@@ -9,7 +9,7 @@
 	twohanded = TRUE
 	init_recoil = CARBINE_RECOIL(1)
 	matter = list(MATERIAL_PLASTIC = 6)
-	fire_sound = 'sound/weapons/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	projectile_type = /obj/item/projectile/plasma/lastertag/blue
 	var/required_vest
 	serial_type = "TOY-CO"

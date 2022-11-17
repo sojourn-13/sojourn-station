@@ -110,7 +110,7 @@
 	init_recoil = RIFLE_RECOIL(1.1)
 	fire_delay = 14 //Equivalent to a pump then fire time
 	damage_multiplier = 0.8
-	fire_sound = 'sound/weapons/energy_shotgun.ogg'
+	fire_sound = 'sound/weapons/energy/energy_shotgun.ogg'
 	init_firemodes = list(
 		list(mode_name="slug", mode_desc="fires a small metal chunk at light speeds", projectile_type=/obj/item/projectile/bullet/heavy_rifle_408/railgun, icon="kill"),
 		list(mode_name="grenade", mode_desc="fires a frag synth-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag/weak, charge_cost=30000, icon="grenade"),

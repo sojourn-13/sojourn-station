@@ -17,7 +17,7 @@ It also has more matterals then it takes to craft as a way to have a sunk cost.
 	It fires a super heated blast of concentrated laser pellets in a similar fashion to the Reductor, but loses stopping power rapidly over a distance, so it is most effective at point blank range. \
 	Unlike the Reductor or Myrmidon, the secondary firing mode uses a chemical blend to fire flare rounds, offering some utility. When overclock, the battery is turned into a rocket propelled grenade, \
 	use with caution. This design was originally blue-printed by the Soteria before cooperation with the Guild allowed for it to see regular use in the hands of an experienced guild adept."
-	fire_sound = 'sound/weapons/emitter2.ogg'
+	fire_sound = 'sound/weapons/energy/emitter2.ogg'
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun/energy
 	can_dual = FALSE
 	w_class = ITEM_SIZE_HUGE

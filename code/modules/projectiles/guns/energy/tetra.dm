@@ -5,8 +5,8 @@
 	icon = 'icons/obj/guns/energy/tetra.dmi'
 	icon_state = "tetra"
 	w_class = ITEM_SIZE_BULKY
-	fire_sound = 'sound/weapons/Laser2.ogg'
-	fire_sound_silenced = 'sound/weapons/quietlaser2.ogg'
+	fire_sound = 'sound/weapons/energy/Laser2.ogg'
+	fire_sound_silenced = 'sound/weapons/energy/quietlaser2.ogg'
 	suitable_cell = /obj/item/cell/medium
 	can_dual = TRUE
 	charge_meter = TRUE

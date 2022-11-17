@@ -136,13 +136,14 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	recoil = 4
 
 /obj/item/projectile/beam/xray
-	name = "xray beam"
+	name = "x-ray beam"
 	icon_state = "xray"
 	damage_types = list(BURN = 25)
 	added_damage_laser_pve = 25
 	armor_penetration = 40
 	eyeblur = 4
 	recoil = 1
+	penetrating = 1 //Pierces walls
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer
 	impact_type = /obj/effect/projectile/xray/impact
@@ -163,6 +164,13 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	if(isturf(target))
 		target.ex_act(2)
 	..()
+
+/obj/item/projectile/beam/pulse/heavy
+	name = "heavy pulse"
+	damage_types = list(BURN = 50)
+	added_damage_laser_pve = 50
+	armor_penetration = 35
+	recoil = 5
 
 /obj/item/projectile/beam/emitter
 	name = "emitter beam"

@@ -6,7 +6,7 @@
 	item_state = null	//so the human update icon uses the icon_state instead.
 	item_charge_meter = TRUE
 	can_dual = TRUE
-	fire_sound = 'sound/weapons/Taser.ogg'
+	fire_sound = 'sound/weapons/energy/Taser.ogg'
 	charge_cost = 100
 	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_PLASTIC = 6, MATERIAL_SILVER = 6)
 	price_tag = 650
@@ -88,7 +88,7 @@
 	icon_state = "ntpistol"
 	item_state = "ntpistol"
 	item_charge_meter = FALSE
-	fire_sound = 'sound/weapons/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 1)
 	w_class = ITEM_SIZE_SMALL
 	projectile_type = /obj/item/projectile/beam

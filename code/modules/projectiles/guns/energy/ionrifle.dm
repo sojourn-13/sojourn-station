@@ -5,7 +5,7 @@
 	icon_state = "ionrifle"
 	item_state = "ionrifle"
 	item_charge_meter = TRUE
-	fire_sound = 'sound/weapons/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 4)
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
@@ -32,7 +32,7 @@
 	item_state = "ionpistol"
 	item_charge_meter = TRUE
 	can_dual = TRUE
-	fire_sound = 'sound/weapons/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 3)
 	w_class = ITEM_SIZE_SMALL
 	flags = CONDUCT

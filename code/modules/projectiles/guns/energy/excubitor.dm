@@ -6,7 +6,7 @@
 	item_charge_meter = TRUE
 	desc = "Created by the Numericals and distributed by the Testament in hopes of combatting those who threaten the Absolute's floak. \
 	The Excubitor is a Halberd of Church design with a experimental plasma weapon built into the halberd itself that uses only Church-branded cells, consuming them and releasing their contents in a formidable burst of plasma and ionized shrapnel."
-	fire_sound = 'sound/weapons/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_WOOD = 25, MATERIAL_GLASS = 5, MATERIAL_GOLD = 2, MATERIAL_BIOMATTER = 120, MATERIAL_STEEL = 30)

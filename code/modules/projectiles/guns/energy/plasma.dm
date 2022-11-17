@@ -11,7 +11,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 7, MATERIAL_URANIUM = 8)
 	price_tag = 2000
 	origin_tech = list(TECH_COMBAT = 3, TECH_PLASMA = 2)
-	fire_sound = 'sound/weapons/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	projectile_type = /obj/item/projectile/beam
 	cell_type = /obj/item/cell/medium
 	sel_mode = 2
@@ -46,7 +46,7 @@
 	name = "\"Purger\" plasma rifle"
 	desc = "An older \"Old Testament\" brand plasma rifle, developed in direct response to compete against the highly successful \"Cassad\" design. Reliable and capable of firing suppressive bursts of lower-temperature plasma."
 	icon = 'icons/obj/guns/energy/destroyer.dmi'
-	fire_sound = 'sound/weapons/pulse.ogg'
+	fire_sound = 'sound/weapons/energy/pulse.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 10, MATERIAL_URANIUM = 5)
 	sel_mode = 1
 	projectile_type = /obj/item/projectile/beam/pulse
@@ -74,7 +74,7 @@
 	disposable = TRUE
 	origin_tech = list(TECH_COMBAT = 1, TECH_PLASMA = 1)
 	price_tag = 250
-	fire_sound = 'sound/weapons/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	cell_type = /obj/item/cell/small //can't recharge this one
 	sel_mode = 2
 	charge_cost = 12.5 // for 8 shots
@@ -93,7 +93,7 @@
 	desc = "An \"Soteria\" brand experimental weapon that uses coolant to fire deadly plasma projectiles without needing to cool down between shots, however the gun is extremly unstable without cooling."
 	icon = 'icons/obj/guns/energy/plasma.dmi'
 	icon_state = "plasma"
-	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	fire_sound = 'sound/weapons/energy/lasercannonfire.ogg'
 	projectile_type = /obj/item/projectile/plasma/heavy/super_heavy
 	cell_type = /obj/item/cell/medium
 	charge_cost = 100

@@ -7,7 +7,7 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6, MATERIAL_SILVER = 3)
 	price_tag = 1000
 	charge_cost = 50
-	fire_sound = 'sound/weapons/Taser.ogg'
+	fire_sound = 'sound/weapons/energy/Taser.ogg'
 	can_dual = TRUE
 	projectile_type = /obj/item/projectile/beam/stun
 

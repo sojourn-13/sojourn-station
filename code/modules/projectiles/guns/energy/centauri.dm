@@ -7,7 +7,7 @@
 	icon_state = "centauri"
 	item_state = "centauri"
 	item_charge_meter = TRUE
-	fire_sound = 'sound/weapons/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_POWER = 3)
 	w_class = ITEM_SIZE_NORMAL

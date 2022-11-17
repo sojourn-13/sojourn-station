@@ -5,7 +5,7 @@
 	icon_state = "cassad"
 	item_state = "cassad"
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 6, MATERIAL_URANIUM = 6)
-	fire_sound = 'sound/weapons/pulse.ogg'
+	fire_sound = 'sound/weapons/energy/pulse.ogg'
 	projectile_type = /obj/item/projectile/beam/pulse
 	sel_mode = 1
 	charge_cost = 40 //20 shots per high medium-sized cell

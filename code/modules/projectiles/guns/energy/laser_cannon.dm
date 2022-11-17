@@ -5,10 +5,10 @@
 	icon_state = "lasercannon"
 	item_state = "lasercannon"
 	item_charge_meter = TRUE
-	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	fire_sound = 'sound/weapons/energy/lasercannonfire.ogg'
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3, TECH_POWER = 3) //Shows that its not as high tech but still rather smartly designed
 	w_class = ITEM_SIZE_HUGE
-	slot_flags = SLOT_BELT|SLOT_BACK
+	slot_flags = SLOT_BACK //It's a cannon
 	projectile_type = /obj/item/projectile/beam/heavylaser
 	charge_cost = 100
 	fire_delay = 20

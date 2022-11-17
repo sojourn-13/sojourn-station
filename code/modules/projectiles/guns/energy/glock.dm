@@ -9,7 +9,7 @@
 	icon_state = "plaslock"
 	item_state = "plaslock"
 	item_charge_meter = TRUE
-	fire_sound = 'sound/weapons/pulse.ogg'
+	fire_sound = 'sound/weapons/energy/pulse.ogg'
 	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_POWER = 3)
 	w_class = ITEM_SIZE_NORMAL

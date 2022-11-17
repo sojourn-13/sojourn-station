@@ -7,8 +7,8 @@
 	desc = "Created by the Numericals and distributed by the Testament in hopes of combatting Excelsior and psionic creatures. \
 	The Antebellum is a plasma shotgun that uses only Church-branded cells, consuming them and releasing their contents in a formidable burst of plasma and ionized shrapnel.\
 	This one bears a cruciform rosary, for good luck."
-	fire_sound = 'sound/weapons/Laser.ogg'
-	slot_flags = SLOT_BELT|SLOT_BACK
+	fire_sound = 'sound/weapons/energy/Laser.ogg'
+	slot_flags = SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 15, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3, MATERIAL_GOLD = 2, MATERIAL_BIOMATTER = 30)
 	suitable_cell = /obj/item/cell/medium/neotheology

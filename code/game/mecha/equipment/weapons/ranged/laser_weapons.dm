@@ -71,13 +71,17 @@
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse
 	equip_cooldown = 30 //this is fine.
-	name = "eZ-13 mk2 heavy pulse rifle"
+	name = "\improper \"MPL-3 MK2\" heavy pulse rifle"
+	desc = "A remnant of bygone age even in it's full glory, unlike it's infantry version it features a burst mode with lack of any EMP elements."
 	icon_state = "mecha_pulse"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_URANIUM  =5)
+	projectiles_per_shot = 2
+	deviation = 3
+	fire_cooldown = 2
 	energy_drain = 150 //more expensive than a heavy, less than a multi-las, highly advanced laser!
 	origin_tech = list(TECH_MATERIAL = 3, TECH_COMBAT = 6, TECH_POWER = 4)
-	projectile = /obj/item/projectile/beam/pulse
-	fire_sound = 'sound/weapons/marauder.ogg'
+	projectile = /obj/item/projectile/beam/pulse/heavy
+	fire_sound = 'sound/weapons/energy/pulse2.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser
 	name = "\improper PBT \"Pacifier\" mounted taser"
