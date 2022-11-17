@@ -64,7 +64,7 @@
 	icon_state = "humility"
 	item_state = "humility"
 	charge_cost = 500
-	fire_sound = 'sound/weapons/energy_shotgun.ogg'
+	fire_sound = 'sound/weapons/energy/energy_shotgun.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL

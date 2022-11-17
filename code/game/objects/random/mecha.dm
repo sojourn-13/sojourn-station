@@ -74,7 +74,6 @@
 		/obj/item/mecha_parts/mecha_equipment/tool/passenger,
 		/obj/item/mecha_parts/mecha_equipment/thruster,
 		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser,
-		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/riggedlaser,
 		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy,
 		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion,
 		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse,

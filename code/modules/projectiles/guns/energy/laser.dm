@@ -151,7 +151,7 @@
 	icon_state = "lcore"
 	item_state = "lcore"
 	item_charge_meter = TRUE
-	fire_sound = 'sound/weapons/energy/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/aer9fire.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
 	projectile_type = /obj/item/projectile/beam/heavylaser
@@ -207,7 +207,7 @@
 	This once dated SMG design has been completely stripped down and shoved full of hardware from a Firestorm and Discolaser.\
 	However parts themselves appear to have been modified to allow for the beams to keep much of their power through high-focused lenses!\
 	Etched into the guns receiver on the left side is a script \"M\" letter."
-	icon = 'icons/obj/guns/energy/energy/sunrise.dmi'
+	icon = 'icons/obj/guns/energy/sunrise.dmi'
 	icon_state = "sunrise"
 	item_state = "sunrise"
 	fire_sound = 'sound/weapons/guns/fire/sunrise_fire.ogg'
@@ -290,7 +290,7 @@
 	price_tag = 900
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/Taser.ogg', charge_cost = 200, icon="stun"),
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/energy/Taser.ogg', charge_cost = 200, icon="stun"),
 		list(mode_name="buckshot", projectile_type=/obj/item/projectile/bullet/pellet/shotgun/energy, fire_sound='sound/weapons/guns/fire/sunrise_fire.ogg', charge_cost = 100, icon="kill"),
 	)
 	serial_type = "NM"
@@ -344,8 +344,8 @@
 	price_tag = 1400
 
 	init_firemodes = list(
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound = 'sound/weapons/Taser.ogg', fire_delay=35, icon="stun"),
-		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Laser.ogg', fire_delay=10, icon="kill"),
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound = 'sound/weapons/energy/Taser.ogg', fire_delay=35, icon="stun"),
+		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/energy/Laser.ogg', fire_delay=10, icon="kill"),
 	)
 	serial_type = "NM"
 

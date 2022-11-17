@@ -183,12 +183,12 @@
 	matter = list()
 	price_tag = 0
 	charge_cost = 50
-	fire_sound = 'sound/weapons/pulse.ogg'
+	fire_sound = 'sound/weapons/energy/pulse.ogg'
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.9
 	init_firemodes = list(
-		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser.ogg', fire_delay=8, icon="stun", projectile_color = "#8d25cc"),
-		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/Laser.ogg', fire_delay=12, icon="kill", projectile_color = "#461266"),
+		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/Taser.ogg', fire_delay=8, icon="stun", projectile_color = "#8d25cc"),
+		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/Laser.ogg', fire_delay=12, icon="kill", projectile_color = "#461266"),
 	)
 	serial_shown = FALSE
 

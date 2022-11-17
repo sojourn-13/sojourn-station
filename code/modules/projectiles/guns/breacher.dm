@@ -15,7 +15,7 @@
 	attack_verb = list("struck", "hit", "bashed")
 	price_tag = 500
 	var/obj/item/hatton_magazine/magazine
-	var/fire_sound = 'sound/weapons/pulse.ogg'
+	var/fire_sound = 'sound/weapons/energy/pulse.ogg'
 	var/fire_cooldown = 0
 	var/last_fired = 0
 	origin_tech = list(TECH_COMBAT = 2)

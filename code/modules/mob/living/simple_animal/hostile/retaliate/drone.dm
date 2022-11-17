@@ -20,7 +20,7 @@
 	maxHealth = 150
 	speed = 4
 	projectiletype = /obj/item/projectile/beam/drone
-	projectilesound = 'sound/weapons/laser3.ogg'
+	projectilesound = 'sound/weapons/energy/laser3.ogg'
 	destroy_surroundings = 0
 	leather_amount = 0
 	bones_amount = 0
@@ -58,7 +58,7 @@
 	..()
 	if(prob(5))
 		projectiletype = /obj/item/projectile/beam/pulse/drone
-		projectilesound = 'sound/weapons/pulse2.ogg'
+		projectilesound = 'sound/weapons/energy/pulse2.ogg'
 	trail = new /datum/effect/effect/system/trail/ion(src)
 	trail.set_up(src)
 	trail.start()
