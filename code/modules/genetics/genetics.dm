@@ -448,7 +448,7 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/human_target = target
 		if(human_target.random_organ_by_process(BP_NANOGATE))
-			to_chat(human_target, SPAN_DANGER("You hear a synthetic voice, \"FOREIGN ORGANISM DETECTED. NEUTRALIZING\" before you feel something eating away at you on a celluar level."))
+			to_chat(human_target, SPAN_DANGER("You hear a synthetic voice, \"FOREIGN ORGANISM DETECTED. NEUTRALIZING\" before you feel something eating away at you on a cellular level."))
 			target.adjustCloneLoss(10)
 			return FALSE
 

@@ -90,7 +90,7 @@
 	else
 		visible_message(SPAN_WARNING("With a forceful twist, [attacker] bents [target]'s [organ.name] into a painful jointlock!"))
 		to_chat(target, SPAN_DANGER("You feel extreme pain!"))
-		playsound(loc, 'sound/machines/Table_Fall.ogg', 50, 1, -1)
+		playsound(loc, 'sound/weapons/jointORbonebreak.ogg', 50, 1, -1)
 		affecting.adjustHalLoss(rand(30, 40))
 
 /obj/item/grab/proc/attack_eye(mob/living/carbon/human/target, mob/living/carbon/human/attacker)
@@ -157,7 +157,7 @@
 		target.damage_through_armor(damage, BRUTE, BP_CHEST, ARMOR_MELEE) //crunch
 		attacker.Weaken(2)
 		target.Stun(6)
-		playsound(loc, 'sound/machines/Table_Fall.ogg', 50, 1, -1)
+		playsound(loc, 'sound/weapons/jointORbonebreak.ogg', 50, 1, -1)
 		//attacker.regen_slickness()
 		//admin messaging
 		attacker.attack_log += text("\[[time_stamp()]\] <font color='red'>Suplexed [target.name] ([target.ckey])</font>")
@@ -232,7 +232,7 @@
 		apply_pinning(target, attacker)
 
 /obj/item/grab/proc/apply_pinning(mob/target, mob/attacker)
-	playsound(loc, 'sound/machines/Table_Fall.ogg', 50, 1, -1)
+	playsound(loc, 'sound/weapons/pinground.ogg', 50, 1, -1)
 	force_down = 1
 	target.Weaken(3)
 	target.lying = 1
@@ -263,7 +263,7 @@
 	target.damage_through_armor(damage, HALLOSS, BP_CHEST, ARMOR_MELEE)
 
 	target.Weaken(1)
-///	playsound(loc, 'sound/weapons/jointORbonebreak.ogg', 50, 1, -1)
+	playsound(loc, 'sound/weapons/jointORbonebreak.ogg', 50, 1, -1) // We have the sound now
 ///	attacker.regen_slickness(0.15)//sick, but a dropkick is even sicker
 
 	attacker.attack_log += text("\[[time_stamp()]\] <font color='red'>Fireman-thrown [target.name] ([target.ckey])</font>")

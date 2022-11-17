@@ -433,8 +433,8 @@
 
 /obj/item/projectile/bullet/rifle_75/rubber/soporific
 	name = "soporific coated rubber bullet"
-	damage_types = list(BRUTE = 1) // Minor damage from blunt trauma, it's meant to be LTL
-	added_damage_bullet_pve = 2 // Justifying the upgrade into a longarm for mob control
+	damage_types = list(BRUTE = 4) // Minor damage from blunt trauma, it's meant to be LTL
+	added_damage_bullet_pve = 10 // Justifying the upgrade into a longarm for mob control
 	agony = 30
 	var/spray = "stoxin"
 

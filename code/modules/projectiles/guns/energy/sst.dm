@@ -10,7 +10,7 @@
 	icon = 'icons/obj/guns/energy/abnegate.dmi'
 	icon_state = "abnegate"
 	item_state = "abnegate"
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
@@ -42,7 +42,7 @@
 	icon = 'icons/obj/guns/energy/format_bound.dmi'
 	icon_state = "format_bound"
 	item_state = "format_bound"
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	fire_sound = 'sound/weapons/rail.ogg'
 	charge_cost = 100
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	suitable_cell = /obj/item/cell/medium
@@ -64,7 +64,7 @@
 	icon_state = "humility"
 	item_state = "humility"
 	charge_cost = 500
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	fire_sound = 'sound/weapons/energy_shotgun.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
@@ -98,7 +98,7 @@
 	icon = 'icons/obj/guns/energy/system_cost.dmi'
 	icon_state = "system_cost"
 	item_state = "system_cost"
-	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/system_cost.ogg'  // Sky Driver sound from Eris
 	wielded_item_state = "_doble"
 	projectile_type=/obj/item/projectile/bullet/rifle_75/rubber/soporific
 	can_dual = FALSE
