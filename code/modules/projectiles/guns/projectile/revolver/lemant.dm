@@ -62,6 +62,7 @@
 	icon_state = "lemant_hero"
 	item_state = "lemant_hero"
 	caliber = CAL_50
+	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	max_shells = 6
 	price_tag = 500
@@ -71,7 +72,7 @@
 /obj/item/gun/projectile/underslung_shotgun
 	name = "underslung shotgun"
 	desc = "Not much more than a tube and a firing mechanism, this shotgun is designed to be fitted to another gun."
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	matter = null
@@ -159,6 +160,7 @@
 	icon = 'icons/obj/guns/projectile/lemant_blue.dmi'
 	icon_state = "lemant_blue"
 	item_state = "lemant_blue"
+	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	caliber = CAL_50
 	drawChargeMeter = FALSE
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)

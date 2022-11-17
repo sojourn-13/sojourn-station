@@ -47,7 +47,7 @@
 	item_state = "rex10"
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	fire_sound = 'sound/weapons/Gunshot_light.ogg'
+	fire_sound = 'sound/weapons/guns/fire/9mm_revolver.ogg'
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 6)
 	price_tag = 300
 	damage_multiplier = 1.2
@@ -66,7 +66,7 @@
 	item_state = "showdown"
 	caliber = CAL_50
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
-	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	price_tag = 900
 	damage_multiplier = 1
 	penetration_multiplier = 1.5

@@ -15,7 +15,7 @@
 	penetration_multiplier = 1
 	init_recoil = HANDGUN_RECOIL(1) //So it can accully be used
 	zoom_factors = list(0.2)
-	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'

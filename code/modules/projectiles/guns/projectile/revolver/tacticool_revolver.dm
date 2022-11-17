@@ -4,6 +4,7 @@
 	icon = 'icons/obj/guns/projectile/tacticool_revolver.dmi'
 	icon_state = "tacticool_revolver"
 	item_state = "tacticool_revolver"
+	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	caliber = CAL_50
 	max_shells = 5
 	fire_delay = 4
