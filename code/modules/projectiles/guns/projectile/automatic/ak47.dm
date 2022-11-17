@@ -193,7 +193,7 @@
 	origin_tech = list(TECH_COMBAT = 2)	//bad copies don't give good science
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
 	damage_multiplier = 1.1
-	penetration_multiplier = 0
+	penetration_multiplier = 0.8
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY	//too poorly made for burst or automatic
