@@ -31,31 +31,33 @@
 	projectile_type = /obj/item/projectile/beam/stun
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 15, MATERIAL_SILVER = 10)
 	init_firemodes = list(
-		list(mode_name="stun", mode_desc="fires a concentrated stun beam", projectile_type=/obj/item/projectile/beam/stun, charge_cost = 50, icon="stun", fire_sound='sound/weapons/Taser3.ogg'),
-		list(mode_name="lethal", mode_desc="fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/Laser4.ogg')
+		list(mode_name="stun", mode_desc="fires a concentrated stun beam", projectile_type=/obj/item/projectile/beam/stun, charge_cost = 100, icon="stun", fire_sound='sound/weapons/Taser3.ogg'),
+		list(mode_name="lethal", mode_desc="fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 60, icon="kill", fire_sound='sound/weapons/Laser4.ogg')
 	)
 	serial_type = "NM"
-
-/* Far removed from original concept, do not uncomment. - Seb
 
 /obj/item/gun/energy/cog/sprocket
 	name = "Soteria \"Sprocket\" lasgun"
 	desc = "Originally a Greyson Positronic design, tinkered by Marshals to allow nonlethal reduction of rowdy personnel, this gun has been further modified by Soteria to include a foldable stock, \
-			making it lightweight and easy to operate by non-trained personnel, at the cost of its laser component being downsized making it pack less of a punch."
+			making it lightweight and easy to operate by non-trained personnel. The main disabler laser can neutralize the rowdiest patients at the cost of heavy cell usage."
 	icon = 'icons/obj/guns/energy/sprocket.dmi'
 	icon_state = "sprocket"
 	damage_multiplier = 0.9 // +0.1 when unfolded = baseline Cog
 	penetration_multiplier = 0.8 // +0.2 when unfolded = base Cog
-	projectile_type = /obj/item/projectile/beam/stun
+	projectile_type = /obj/item/projectile/beam/hardstun // Snowflake 100% nonlethal projectile with reduced firerate
 	w_class = ITEM_SIZE_NORMAL // Starts folded, bulk added when unfolded FAR surpasses BULKY class
 	folding_stock = TRUE // Foldable stock for easy carry
-	price_tag = 950
-	fire_delay = 10
+	price_tag = 1000
+	fire_delay = 8 // Old platform modded to hell and tinkered by two factions
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10)
 	init_firemodes = list(
-		list(mode_name="stun", mode_desc="Fires a ball of condensed energy to disable people", projectile_type=/obj/item/projectile/energy/electrode, charge_cost = 300, fire_delay=50, icon="grenade", fire_sound='sound/weapons/Taser.ogg'),
-		list(mode_name="lethal", mode_desc="Fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam/weak, charge_cost = 50, icon="kill", fire_sound='sound/weapons/Laser.ogg')
+		list(mode_name="stun", mode_desc="fires a highly concentrated stun beam", projectile_type=/obj/item/projectile/beam/hardstun, charge_cost = 200, fire_delay=40, icon="grenade", fire_sound='sound/weapons/Taser.ogg'), // Three shots on a T1 M-cell should be enough to reduce someone
+		list(mode_name="lethal", mode_desc="Fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/Laser.ogg')
 	)
+	max_upgrades = 3 // Already tinkered enough, smaller frame, good stats
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE, // No warcrimes in medbay please
+							  /obj/item/tool_upgrade/augment/expansion = TRUE, // No cheating either. You get three upgrades, make the most of them.
+							  )
 	serial_type = "GP-SI"
 
 /obj/item/gun/energy/cog/sprocket/update_icon() // Necessary for the folded and unfolded states
@@ -92,7 +94,6 @@
 	cell = new /obj/item/cell/medium/moebius/high(src)
 	. = ..()
 	update_icon()
-*/
 
 /obj/item/gun/energy/cog/sawn
 	name = " \"Pinion\" lasgun"

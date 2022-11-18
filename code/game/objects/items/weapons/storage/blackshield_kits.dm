@@ -114,11 +114,11 @@
 
 	populate_contents()
 		new /obj/item/gun/energy/cog(src)
-		new /obj/item/cell/medium(src)
-		new /obj/item/cell/medium(src)
-		new /obj/item/cell/medium(src)
-		new /obj/item/cell/medium(src)
-		new /obj/item/cell/medium(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
 		new /obj/item/storage/pouch/tubular(src)
 
 /obj/item/storage/box/bs_kit/triage
