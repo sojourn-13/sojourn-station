@@ -75,3 +75,10 @@
 	desc = "A medbay stand before ruin."
 	mappath = 'maps/submaps/deepmaint_rooms/core/medbay.dmm'
 
+
+
+/datum/map_template/deepmaint_template/big/amongus
+	name = "amongus"
+	desc = "lmao 2 z-levels."
+	mappath = 'maps/submaps/amongus.dmm'
+	annihilate = TRUE
