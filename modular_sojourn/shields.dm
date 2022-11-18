@@ -126,12 +126,12 @@
 			return (check_cover(mover,target))
 
 		var/obj/item/projectile/P = mover
-		var/chance = 40
+		var/chance = 80
 		if(get_dist(P.starting, loc) <= 1)
 			return 1
 		if(health >= 1)
 			if(reinforced == TRUE)
-				chance += 40
+				chance += 20 //100% to block
 			if((prob(chance)) && (!(P.testing)))
 				damage(P.get_structure_damage())
 				visible_message(SPAN_WARNING("[P] hits \the [src]!"))
