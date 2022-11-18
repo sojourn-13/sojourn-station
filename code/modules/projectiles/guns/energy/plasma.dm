@@ -85,7 +85,7 @@
 
 	init_firemodes = list(
 		list(mode_name="Stun", mode_desc="A weakening bolt of plasma that disables people", projectile_type=/obj/item/projectile/plasma/stun, fire_sound='sound/weapons/energy/Taser.ogg', fire_delay=2, icon="stun", projectile_color = "#0000FF"),
-		list(mode_name="Melt", mode_desc="A heavyer plasma bolt designed to melt through armor and flesh alike", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
+		list(mode_name="Melt", mode_desc="A heavier plasma bolt designed to melt through armor and flesh alike", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
 	)
 
 /obj/item/gun/energy/plasma/super_heavy

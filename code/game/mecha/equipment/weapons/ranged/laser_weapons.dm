@@ -33,29 +33,29 @@
 	icon_state = "mecha_ion"
 	energy_drain = 500 //VERY strong, expensive to fire!
 	projectile = /obj/item/projectile/ion/heavy
-	fire_sound = 'sound/weapons/energy/Laser.ogg'
+	fire_sound = 'sound/mecha/weapons/ion.ogg'
 	price_tag = 300
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser
 	equip_cooldown = 5
 	name = "\improper MHM \"Immolator\" mining laser"
-	desc = "A right arm of the free world, classic mining laser with safeties overriden meaning it won't mine much besides hard metal off those unfortunate on the end of it."
+	desc = "A right arm of the free world, classic mining laser with safeties overriden meaning it won't mine much besides hard metal off those unfortunate at the end of it."
 	icon_state = "mecha_laser"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_SILVER  = 10)
 	energy_drain = 30
 	projectile = /obj/item/projectile/beam
-	fire_sound = 'sound/weapons/energy/Laser.ogg'
+	fire_sound = 'sound/mecha/weapons/laser.ogg'
 	price_tag = 400
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
 	equip_cooldown = 10
 	name = "\improper MHM-MS \"Solaris\" laser cannon" //Minerva Heavy Manufacturing - Milispec
-	desc = "A symbol of of oppression to many from colonists on the rim to pirates to even citizens of Sol herself, high-powered military laser used everywhere from vehicles to even spacecraft."
+	desc = "A symbol of oppression to many from colonists on the rim to pirates to even citizens of Sol herself, high-powered military laser used everywhere from vehicles to even spacecraft."
 	icon_state = "mecha_laser"
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15, MATERIAL_SILVER  =10)
 	energy_drain = 100
 	projectile = /obj/item/projectile/beam/heavylaser
-	fire_sound = 'sound/weapons/energy/lasercannonfire.ogg'
+	fire_sound = 'sound/mecha/weapons/laser_military.ogg'
 	required_type = list(/obj/mecha/combat)
 	price_tag = 500
 
@@ -71,7 +71,7 @@
 	projectiles_per_shot = 2
 	fire_cooldown = 5 //so we dont fire all our beams at the exact same instant. Remember! We track once a target is clicked!
 	required_type = list(/obj/mecha/combat)
-	fire_sound = 'sound/weapons/energy/lasercannonfire.ogg'
+	fire_sound = 'sound/mecha/weapons/laser_multi.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse
 	equip_cooldown = 30 //this is fine.
@@ -79,7 +79,8 @@
 	desc = "A remnant of bygone age even in it's full glory, unlike it's infantry version it features a burst mode with lack of any EMP elements."
 	icon_state = "mecha_pulse"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_URANIUM  =5)
-	projectiles_per_shot = 5
+	projectiles = 6
+	projectiles_per_shot = 3
 	deviation = 3
 	fire_cooldown = 4
 	energy_drain = 150 //more expensive than a heavy, less than a multi-las, highly advanced laser!
@@ -97,7 +98,7 @@
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_MHYDROGEN = 6, MATERIAL_TRITIUM = 6)
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 7, TECH_PLASMA = 10)
 	projectile = /obj/item/projectile/hydrogen/cannon/max
-	fire_sound = 'sound/weapons/energy/lasercannonfire.ogg'
+	fire_sound = 'sound/weapons/energy/pulse.ogg'
 	required_type = list(/obj/mecha/combat)
 	price_tag = 1300 //state of the art
 
@@ -108,7 +109,7 @@
 	icon_state = "mecha_pulse"
 	energy_drain = 50
 	projectile = /obj/item/projectile/sonic_bolt/heavy
-	fire_sound = 'sound/weapons/energy/Laser.ogg'
+	fire_sound = 'sound/mecha/weapons/basscannon.ogg'
 	price_tag = 200
 	required_type = list(/obj/mecha/combat, /obj/mecha/working)
 
