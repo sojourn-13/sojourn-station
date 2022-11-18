@@ -504,18 +504,6 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 //Church weapons, faster but more exspensive way for vectors to get their armorments without a disk
 /datum/nt_blueprint/weapons
 
-/datum/nt_blueprint/weapons/antebellum
-	name = "\"Antebellum\" Blunderbuss lasgun"
-	build_path = /obj/item/gun/energy/plasma/antebellum
-	materials = list(
-		/obj/item/stack/material/plasteel = 10,
-		/obj/item/stack/material/wood = 15,
-		/obj/item/stack/material/biomatter = 20,
-		/obj/item/stack/material/gold = 2,
-		/obj/item/stack/material/silver = 2
-	)
-	build_time = 3 SECONDS
-
 /datum/nt_blueprint/weapons/carpediem
 	name = "\"Carpediem\" lasgun"
 	build_path = /obj/item/gun/energy/carpediem

@@ -32198,7 +32198,6 @@
 	},
 /obj/item/computer_hardware/hard_drive/portable/design/guns/concillium,
 /obj/item/computer_hardware/hard_drive/portable/design/guns/counselor,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/antebellum,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/command/prime)
 "geH" = (
@@ -50387,7 +50386,6 @@
 /obj/item/gun/energy/plasma/destroyer,
 /obj/item/gun/energy/plasma/destroyer,
 /obj/item/gun/energy/plasma/destroyer,
-/obj/item/gun/energy/plasma/antebellum,
 /obj/item/gun/energy/carpediem,
 /obj/item/gun/energy/concillium,
 /turf/simulated/floor/tiled/dark/golden,

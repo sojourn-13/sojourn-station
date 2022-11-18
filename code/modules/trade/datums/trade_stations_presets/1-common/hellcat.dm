@@ -28,9 +28,7 @@
 		"Energy weapons" = list(
 			/obj/item/gun/energy/gun/martin,
 			/obj/item/gun/energy/laser,
-			/obj/item/gun/energy/tesla_shotgun,
-			/obj/item/gun/energy/tesla_shotgun/manual,
-			/obj/item/gun/energy/tesla_shotgun/high_damage
+			/obj/item/gun/energy/tesla_shotgun
 		),
 		"Projectile weapons" = list(
 			/obj/item/gun/projectile/glock,

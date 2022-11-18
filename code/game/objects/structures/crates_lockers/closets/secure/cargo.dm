@@ -207,12 +207,6 @@
 				new /obj/item/gun/energy/cog(src)
 				new /obj/random/powercell/medium_safe_lonestar(src)
 				new /obj/item/cell/medium(src)
-			else
-				new /obj/item/gun/energy/lasercore(src)
-				new /obj/random/powercell/medium_safe_lonestar(src)
-				new /obj/item/cell/medium(src)
-				new /obj/item/cell/medium(src)
-
 
 	//pistols
 	new /obj/item/gun/projectile/automatic/slaught_o_matic(src)
@@ -393,11 +387,6 @@
 			if(prob(50))
 				new /obj/item/gun/energy/cog(src)
 				new /obj/random/powercell/medium_safe_lonestar(src)
-				new /obj/item/cell/medium(src)
-			else
-				new /obj/item/gun/energy/lasercore(src)
-				new /obj/random/powercell/medium_safe_lonestar(src)
-				new /obj/item/cell/medium(src)
 				new /obj/item/cell/medium(src)
 
 
@@ -587,7 +576,7 @@
 			new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 			new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		if("EGUN")
-			new /obj/item/gun/energy/lasercore(src)
+			new /obj/item/gun/energy/lasercannon(src)
 			new /obj/random/powercell/medium_safe_lonestar(src)
 			new /obj/item/cell/medium(src)
 			new /obj/item/cell/medium(src)

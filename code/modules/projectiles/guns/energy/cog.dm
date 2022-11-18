@@ -36,64 +36,6 @@
 	)
 	serial_type = "NM"
 
-/* Far removed from original concept, do not uncomment. - Seb
-
-/obj/item/gun/energy/cog/sprocket
-	name = "Soteria \"Sprocket\" lasgun"
-	desc = "Originally a Greyson Positronic design, tinkered by Marshals to allow nonlethal reduction of rowdy personnel, this gun has been further modified by Soteria to include a foldable stock, \
-			making it lightweight and easy to operate by non-trained personnel, at the cost of its laser component being downsized making it pack less of a punch."
-	icon = 'icons/obj/guns/energy/sprocket.dmi'
-	icon_state = "sprocket"
-	damage_multiplier = 0.9 // +0.1 when unfolded = baseline Cog
-	penetration_multiplier = 0.8 // +0.2 when unfolded = base Cog
-	projectile_type = /obj/item/projectile/beam/stun
-	w_class = ITEM_SIZE_NORMAL // Starts folded, bulk added when unfolded FAR surpasses BULKY class
-	folding_stock = TRUE // Foldable stock for easy carry
-	price_tag = 950
-	fire_delay = 10
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10)
-	init_firemodes = list(
-		list(mode_name="stun", mode_desc="Fires a ball of condensed energy to disable people", projectile_type=/obj/item/projectile/energy/electrode, charge_cost = 300, fire_delay=50, icon="grenade", fire_sound='sound/weapons/Taser.ogg'),
-		list(mode_name="lethal", mode_desc="Fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam/weak, charge_cost = 50, icon="kill", fire_sound='sound/weapons/Laser.ogg')
-	)
-	serial_type = "GP-SI"
-
-/obj/item/gun/energy/cog/sprocket/update_icon() // Necessary for the folded and unfolded states
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
-
-	if(charge_meter)
-		var/ratio = 0
-
-		if(cell && cell.charge >= charge_cost)
-			ratio = cell.charge / cell.maxcharge
-			ratio = min(max(round(ratio, 0.25) * 100, 25), 100)
-
-		if(modifystate)
-			iconstring = "[modifystate][ratio]"
-		else
-			iconstring = "[initial(icon_state)][ratio]"
-
-		if(item_charge_meter)
-			itemstring += "-[item_modifystate][ratio]"
-
-	if(wielded)
-		itemstring += "_double"
-
-	if(!folded)
-		iconstring += "_stock"
-
-	icon_state = iconstring
-	set_item_state(itemstring)
-
-/obj/item/gun/energy/cog/sprocket/preloaded // Preloaded version for the Lifeline Tech gear
-
-/obj/item/gun/energy/cog/sprocket/preloaded/New()
-	cell = new /obj/item/cell/medium/moebius/high(src)
-	. = ..()
-	update_icon()
-*/
-
 /obj/item/gun/energy/cog/sawn
 	name = " \"Pinion\" lasgun"
 	icon = 'icons/obj/guns/energy/obrez_retro.dmi'

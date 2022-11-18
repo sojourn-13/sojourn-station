@@ -6,7 +6,7 @@
 	item_state = null	//so the human update icon uses the icon_state instead.
 	item_charge_meter = TRUE
 	w_class = ITEM_SIZE_HUGE
-	slot_flags = SLOT_BELT|SLOT_BACK
+	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 7, MATERIAL_URANIUM = 8)
 	price_tag = 2000

@@ -187,7 +187,6 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
-		/obj/item/gun/energy/ntpistol,
 		/obj/item/device/binoculars
 	)
 
@@ -457,7 +456,6 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
-		/obj/item/gun/energy/ntpistol,
 		/obj/item/device/binoculars
 	)
 

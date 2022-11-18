@@ -81,6 +81,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 /obj/item/projectile/beam/weak/smg
 	damage_types = list(BURN = 10)
 	added_damage_laser_pve = 10
+	fire_stacks = 2 //So it doesn't become dumb fast
 
 /obj/item/projectile/beam/weak/lethal
 	damage_types = list(BURN = 20)
@@ -180,6 +181,27 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	muzzle_type = /obj/effect/projectile/emitter/muzzle
 	tracer_type = /obj/effect/projectile/emitter/tracer
 	impact_type = /obj/effect/projectile/emitter/impact
+
+/obj/item/projectile/beam/radiation
+	name = "nuclear beam"
+	icon_state = "emitter"
+	damage_types = list(BURN = 40)
+	added_damage_laser_pve = 40
+	armor_penetration = 30 //Experimental and extremely rare but also self recharging so take it as you will
+	recoil = 7
+
+	muzzle_type = /obj/effect/projectile/emitter/muzzle
+	tracer_type = /obj/effect/projectile/emitter/tracer
+	impact_type = /obj/effect/projectile/emitter/impact
+
+/obj/item/projectile/beam/radiation/on_impact(atom/target)
+	var/mob/living/M = target
+	var/mob/living/carbon/human/H = M
+	if(ishuman(target))
+		if(istype(target, /mob/living/carbon/))
+			H.apply_effect(10,IRRADIATE)
+	else
+		return 1
 
 /obj/item/projectile/beam/sniper
 	name = "sniper beam"

@@ -70,7 +70,7 @@
 		),
 		"High End Laser Guns" = list(
 			/obj/item/gun/energy/firestorm,
-			/obj/item/gun/energy/lasercore,
+			/obj/item/gun/energy/xray,
 			/obj/item/gun/energy/pulse/cassad
 		)
 	)

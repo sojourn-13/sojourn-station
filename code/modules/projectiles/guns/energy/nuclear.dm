@@ -18,9 +18,9 @@
 	twohanded = TRUE
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE) //Were all three and can have a scope if someone wants
 	init_firemodes = list(
-		STUNBOLT,
-		LETHAL
-		)
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound = 'sound/weapons/energy/Taser.ogg', fire_delay=35, icon="stun"),
+		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/radiation, fire_sound='sound/weapons/energy/Laser.ogg', fire_delay=10, icon="kill"),
+	)
 
 	var/lightfail = 0
 	serial_type = "SI"

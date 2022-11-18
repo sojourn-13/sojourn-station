@@ -10,7 +10,7 @@
 	fire_sound = 'sound/effects/lightningshock.ogg'
 	suitable_cell = /obj/item/cell/medium
 	cell_type = /obj/item/cell/medium/moebius
-	slot_flags = SLOT_BELT|SLOT_BACK
+	slot_flags = SLOT_BACK
 	twohanded = TRUE
 	w_class = ITEM_SIZE_BULKY // It's a shotgun
 	can_dual = FALSE
@@ -20,53 +20,6 @@
 	self_recharge = TRUE
 	use_external_power = TRUE
 	serial_type = "Hellcat" //You only get them form this trade station so idk
-
-/obj/item/gun/energy/tesla_shotgun/manual
-	name = "\"Edison's Lament\" tesla shotgun"
-	desc = "An energy shotgun that drains power from a nearby APC. This one can be pumped to charge faster. Is it really better?"
-	icon = 'icons/obj/guns/energy/tesla_shotgun_manual.dmi'
-	icon_state = "tesla_shotgun_manual"
-	item_state = "tesla_shotgun_manual"
-	price_tag = 1950
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_GOLD = 2.5)
-	var/recentpump = 0 // World time so that people can't spam it.
-	var/pump_per_shot = 5 // How many pumps it takes to charge a single shot
-
-// Charge the cell by pumping it.
-/obj/item/gun/energy/tesla_shotgun/manual/attack_self(mob/user as mob)
-	if(!cell) // Check if we have a cell to charge.
-		to_chat(user, "The [src.name] doesn't have a cell to charge.")
-		return FALSE
-	else if(cell.charge >= cell.maxcharge) // Does the cell need charging?
-		to_chat(user, "The [src.name] is already charged.")
-		return FALSE
-	else if(world.time >= recentpump + 10) // Charge the cell.
-		to_chat(user, "You pump the [src.name].")
-		playsound(user, pumpshotgun_sound, 60, 1) // Sounds are nice...
-		flick("pumping", src) // ...But animations are even better
-		recentpump = world.time
-		cell.give(charge_cost / pump_per_shot) // So that we don't charge a whole shot each pump
-
-/obj/item/gun/energy/tesla_shotgun/high_damage
-	name = "\"Modern Solutions\" tesla shotgun"
-	desc = "An energy shotgun that drains power from a nearby APC. This one shoots a stronger beam than others."
-	icon = 'icons/obj/guns/energy/tesla_shotgun_powerful.dmi'
-	icon_state = "tesla_shotgun_powerful"
-	item_state = "tesla_shotgun_powerful"
-	price_tag = 2500
-	charge_cost = 200
-	projectile_type = /obj/item/projectile/beam/tesla/shotgun/strong
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_PLASMA = 2.5)
-
-/obj/item/gun/energy/tesla_shotgun/atomic
-	name = "\"Atom Bomb\" tesla shotgun"
-	desc = "An energy shotgun that drains power from a nearby APC. This one doesn't need an APC to charge thanks to an atomic power cell. Oh baby!"
-	icon = 'icons/obj/guns/energy/tesla_shotgun_atomic.dmi'
-	icon_state = "tesla_shotgun_atomic"
-	item_state = "tesla_shotgun_atomic"
-	cell_type = /obj/item/cell/medium/moebius/nuclear
-	price_tag = 3000
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_URANIUM = 2.5)
 
 /obj/item/gun/energy/tesla_shotgun/Process()
 	if(self_recharge) //Every [recharge_time] ticks, recharge a shot for the cyborg
