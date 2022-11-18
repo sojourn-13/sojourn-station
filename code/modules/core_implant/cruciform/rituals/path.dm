@@ -525,6 +525,7 @@
 
 /datum/ritual/targeted/cruciform/divisor/spawn_con/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
 	new /obj/item/gun/energy/taser(usr.loc)
+	new /obj/item/cell/medium/neotheology(usr.loc)
 	new /obj/item/storage/belt/security/neotheology(usr.loc)
 	new /obj/item/clothing/head/rank/divisor(usr.loc)
 	new /obj/item/clothing/suit/greatcoat/divisor(usr.loc)
