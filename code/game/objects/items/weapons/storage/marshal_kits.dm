@@ -38,10 +38,12 @@
 
 /obj/item/storage/box/m_kit/gear_lasgun
 	name = "\improper Gear Lasgun Kit"
-	desc = "The standard Marshal box kit containing a modified cog that fires stun beams only. For the economic officer."
+	desc = "The standard Marshal box kit containing a modified Cog lasgun that also fires stun beams. For the economic officer."
 
 	populate_contents()
 		new /obj/item/gun/energy/cog/gear(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)

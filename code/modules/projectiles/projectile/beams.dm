@@ -236,6 +236,20 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	impact_type = /obj/effect/projectile/stun/impact
 	recoil = 2
 
+/obj/item/projectile/beam/hardstun
+	name = "concentrated stun beam"
+	icon_state = "stun"
+	nodamage = 1
+	taser_effect = 1
+	agony = 65 // Middle ground between an instant electrode stun and stunbeam
+	damage_types = list(BURN = 0) // Just in case, this is supposed to be 100% nonlethal
+	added_damage_laser_pve = 5
+	muzzle_type = /obj/effect/projectile/stun/muzzle
+	tracer_type = /obj/effect/projectile/stun/tracer
+	impact_type = /obj/effect/projectile/stun/impact
+	eyeblur = 2 // Meant to disable people, combat advantage, agony fluff
+	recoil = 3 // Low rate of fire shouldn't be a problem but let's not spam it.
+
 //book "lasers"
 /obj/item/projectile/beam/sniper/judgement
 	name = "lighting"
