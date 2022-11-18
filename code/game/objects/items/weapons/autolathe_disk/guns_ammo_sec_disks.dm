@@ -711,6 +711,16 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 		/datum/design/autolathe/cell/small/high,
 	)
 
+/obj/item/computer_hardware/hard_drive/portable/design/guns/lasercore
+	disk_name = "H&S - Laser Core PDW E"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/lasercore = 2,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
 /obj/item/computer_hardware/hard_drive/portable/design/guns/firestorm
 	disk_name = "H&S - Firestorm PDW E"
 	icon_state = "frozenstar"

@@ -450,6 +450,27 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/ammo/grenade/flash = 2
 	)
 
+/obj/item/computer_hardware/hard_drive/portable/design/guns/antebellum
+	disk_name = "Absolute Armory - Antebellum Blunderbuss lasgun"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/plasma/antebellum = 3,
+		/datum/design/bioprinter/nt_cells/medium,
+	)
+
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/antebellum
+	disk_name = "Absolute Armory - Antebellum Blunderbuss lasgun Plus"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/plasma/antebellum,
+		/datum/design/bioprinter/nt_cells/medium,
+	)
+
 //Absolute Armory gun packs
 /obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns
 	disk_name = "Absolute Armory of the Old Testament"
@@ -577,6 +598,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/gun/pulse = 5,
 		/datum/design/autolathe/gun/pulse_destroyer = 8,
 		/datum/design/autolathe/gun/ionrifle = 3,
+		/datum/design/autolathe/gun/plasma/antebellum,
 		/datum/design/autolathe/gun/concillium = 10,
 		/datum/design/autolathe/gun/carpediem = 4
 	)
@@ -593,6 +615,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/gun/pulse = 5,
 		/datum/design/autolathe/gun/pulse_destroyer = 8,
 		/datum/design/autolathe/gun/ionrifle = 3,
+		/datum/design/autolathe/gun/plasma/antebellum,
 		/datum/design/autolathe/gun/concillium = 10,
 		/datum/design/autolathe/gun/carpediem = 4
 	)

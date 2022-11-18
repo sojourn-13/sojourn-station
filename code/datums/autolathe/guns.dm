@@ -424,6 +424,10 @@
 	name = "H&S PDW E \"Martin\""
 	build_path = /obj/item/gun/energy/gun/martin
 
+/datum/design/autolathe/gun/lasercore
+	name = "H&S PDW \"Laser Core\""
+	build_path = /obj/item/gun/energy/lasercore
+
 /datum/design/autolathe/gun/firestorm
 	name = "H&S PDW \"Firestorm\""
 	build_path = /obj/item/gun/energy/firestorm
@@ -479,6 +483,10 @@
 /datum/design/autolathe/gun/concillium
 	name = "NT Las-MG \"Concillium\""
 	build_path = /obj/item/gun/energy/concillium
+
+/datum/design/autolathe/gun/plasma/antebellum
+	name = "NT PR \"Antebellum\""
+	build_path = /obj/item/gun/energy/plasma/antebellum
 
 /datum/design/autolathe/gun/carpediem
 	name = "NT LM \"Carpediem\""

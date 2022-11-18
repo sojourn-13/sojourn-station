@@ -81,6 +81,10 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 /obj/item/projectile/beam/weak/smg
 	damage_types = list(BURN = 10)
 	added_damage_laser_pve = 10
+
+/obj/item/projectile/beam/weak/smg/firestorm
+	damage_types = list(BURN = 10)
+	added_damage_laser_pve = 10
 	fire_stacks = 2 //So it doesn't become dumb fast
 
 /obj/item/projectile/beam/weak/lethal
