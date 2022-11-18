@@ -265,7 +265,7 @@
 	throwforce = 1  //Throwing or dropping the item deletes it.
 	throw_speed = 1
 	throw_range = 1
-	w_class = ITEM_SIZE_BULKY//So you can't hide it in your pocket or some such.
+	w_class = ITEM_SIZE_NORMAL
 	flags = NOBLOODY
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	tool_qualities = list(QUALITY_CUTTING = 30,  QUALITY_WIRE_CUTTING = 20, QUALITY_LASER_CUTTING = 20, QUALITY_WELDING = 10, QUALITY_CAUTERIZING = 10)
