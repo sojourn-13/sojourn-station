@@ -213,7 +213,6 @@
 				new /obj/item/cell/medium(src)
 				new /obj/item/cell/medium(src)
 
-
 	//pistols
 	new /obj/item/gun/projectile/automatic/slaught_o_matic(src)
 

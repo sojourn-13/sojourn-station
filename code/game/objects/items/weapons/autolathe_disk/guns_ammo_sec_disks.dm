@@ -691,16 +691,6 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 
 // ENERGY ARMS
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lasercore
-	disk_name = "H&S - Laser Core PDW E"
-	icon_state = "frozenstar"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/lasercore = 2,
-		/datum/design/autolathe/cell/medium/high,
-	)
-
 /obj/item/computer_hardware/hard_drive/portable/design/guns/spiderrose
 	disk_name = "H&S - Spider Rose PDW E"
 	icon_state = "frozenstar"
@@ -719,6 +709,16 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 	designs = list(
 		/datum/design/autolathe/gun/energygun_martin = 2,
 		/datum/design/autolathe/cell/small/high,
+	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/lasercore
+	disk_name = "H&S - Laser Core PDW E"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/lasercore = 2,
+		/datum/design/autolathe/cell/medium/high,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/firestorm

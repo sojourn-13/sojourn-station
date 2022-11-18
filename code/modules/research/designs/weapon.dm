@@ -20,7 +20,7 @@
 	build_path = /obj/item/gun/energy/stunrevolver/sci
 
 /datum/design/research/item/weapon/nuclear_gun
-	name = "Prototype: Advanced Energy Gun"
+	name = "\"EBR-IV\" Nuclear Particle Rifle"
 	build_path = /obj/item/gun/energy/gun/nuclear
 
 /datum/design/research/item/weapon/lasercannon
