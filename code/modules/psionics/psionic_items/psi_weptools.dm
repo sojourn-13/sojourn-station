@@ -135,24 +135,6 @@
 //////////////////////////////
 //			Psionic Firearms
 //////////////////////////////
-/obj/item/gun/projectile/automatic/sts/rifle/cult
-	name = "\"Eclipse\" psi-rifle"
-	desc = "An STS conjured from the minds of a psion who shaped an oddity into a weapon. It is nearly identical to a normal STS-30 battle rifle, save for lacking as much penetration or stopping power."
-	icon = 'icons/obj/psionic/occgun.dmi'
-	icon_state = "eclipse"
-	origin_tech = list()
-	matter = list()
-	price_tag = 0
-	damage_multiplier = 0.9
-	penetration_multiplier = 0.9
-	serial_shown = FALSE
-
-/obj/item/gun/projectile/automatic/sts/rifle/cult/deepmaints
-	name = "\"Aster\" psi-rifle"
-	desc = "A rather perfect copy of an STS-30 made form either pure willpower or a desperate need for survival."
-	damage_multiplier = 1
-	penetration_multiplier = 1
-
 /obj/item/gun/energy/laser/cult
 	name = "\"Moonrise\" psi-laser rifle"
 	desc = "Radiant and deadly, a weapon forged from the mind of a psion who shaped an oddity into a weapon. Perhaps the twisted reimagination of the zealotry often attributed to the local cult. \
@@ -183,12 +165,12 @@
 	matter = list()
 	price_tag = 0
 	charge_cost = 50
-	fire_sound = 'sound/weapons/pulse.ogg'
+	fire_sound = 'sound/weapons/energy/pulse.ogg'
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.9
 	init_firemodes = list(
-		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser.ogg', fire_delay=8, icon="stun", projectile_color = "#8d25cc"),
-		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/Laser.ogg', fire_delay=12, icon="kill", projectile_color = "#461266"),
+		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/Taser.ogg', fire_delay=8, icon="stun", projectile_color = "#8d25cc"),
+		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/Laser.ogg', fire_delay=12, icon="kill", projectile_color = "#461266"),
 	)
 	serial_shown = FALSE
 
@@ -198,24 +180,6 @@
 	charge_cost = 25
 	damage_multiplier = 1
 	penetration_multiplier = 1
-
-/obj/item/gun/energy/gun/martin/cult
-	name = "\"Star\" psi-laser pistol"
-	desc = "A laser weapon formed from the mind of a psion who shaped an oddity into a weapon. A psionic copy of a martin, an oft overlooked and ignored weapon. Perhaps this is formed from the \
-	small thoughts that make all the difference?"
-	icon = 'icons/obj/guns/energy/psi_pdw.dmi'
-	origin_tech = list()
-	matter = list()
-	price_tag = 0
-	serial_shown = FALSE
-
-/obj/item/gun/energy/gun/martin/cult/deepmaints
-	name = "\"Blue Star\" psi-laser pistol"
-	desc = "A Martin made of the mind of someone wishing to have a real firearm, whether this was out of desperation or frustration is unknown, but it does seem to have failed its creator..."
-	icon = 'icons/obj/guns/energy/psi_pdw.dmi'
-	charge_cost = 25
-	damage_multiplier = 1.1
-	penetration_multiplier = 1.1
 
 /obj/item/gun/energy/plasma/auretian/cult
 	name = "\"Meteoroid\" psi-energy pistol"

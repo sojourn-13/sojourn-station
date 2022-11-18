@@ -63,7 +63,7 @@
 	add_fingerprint(user)
 	update_icon()
 
-/obj/item/gun/energy/ntpistol/mana
+/obj/item/gun/energy/ntpistol
 	name = "\"Mana from Heaven\" energy pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A blue and black version of the standard \"Serenity\" energy pistol, somehow despite looking just like a repainted job it conserves power unusually well."
@@ -198,7 +198,7 @@
 	icon = 'icons/obj/guns/energy/psychiccannon.dmi'
 	icon_state = "psychic_lasercannon"
 	item_state = "psychic_lasercannon"
-	fire_sound = 'sound/weapons/laser3.ogg'
+	fire_sound = 'sound/weapons/energy/laser3.ogg'
 	origin_tech = list(TECH_COMBAT = 19, TECH_MATERIAL = 19, TECH_MAGNET = 19, TECH_ILLEGAL = 19)
 	price_tag = 4000
 	damage_multiplier = 1.2

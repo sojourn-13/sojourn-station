@@ -13,11 +13,10 @@
 		var/list/LStats = active.oddity_stats
 		var/obj/item/cultweaponchoice = pickweight(list(
 			/obj/item/gun/energy/plasma/auretian/cult = (1 + LStats[STAT_ROB]),
-			/obj/item/gun/projectile/automatic/sts/rifle/cult = (1 + LStats[STAT_VIG]),
 			/obj/item/gun/energy/laser/cult = (1 + LStats[STAT_COG]),
 			/obj/item/gun/projectile/automatic/greasegun/cult= (1 + LStats[STAT_TGH]),
 			/obj/item/gun/energy/plasma/cassad/cult = (1 + LStats[STAT_BIO]),
-			/obj/item/gun/energy/gun/martin/cult = (1 + LStats[STAT_MEC])))
+			))
 
 		if(pay_power_cost(psi_point_cost))
 			playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)

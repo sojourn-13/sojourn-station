@@ -143,7 +143,6 @@
 
 /obj/random/gun_energy_cheap/item_to_spawn()
 	return pickweight(list(/obj/item/gun/energy/gun/martin = 2,\
-				/obj/item/gun/energy/ntpistol = 2,\
 				/obj/item/gun/energy/gun = 2,\
 				/obj/item/gun/energy/cog = 1,\
 				/obj/item/gun/energy/lasercannon = 1,\
@@ -239,7 +238,7 @@
 	icon_state = "gun-red"
 
 /obj/random/dungeon_gun_energy/item_to_spawn()
-	return pickweight(list(/obj/item/gun/energy/mindflayer = 2,
+	return pickweight(list(
 				/obj/item/gun/energy/xray = 2,
 				/obj/item/gun/energy/sniperrifle = 2,
 				/obj/item/gun/energy/laser/railgun = 1,

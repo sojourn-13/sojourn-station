@@ -258,7 +258,6 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/sunrise = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/centauri = 1,
 
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/nt_counselor = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/stun_revolver = 1,
 
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/nemesis = 2,

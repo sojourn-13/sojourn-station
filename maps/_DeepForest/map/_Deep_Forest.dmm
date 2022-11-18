@@ -351,7 +351,6 @@
 "bz" = (
 /obj/structure/safe,
 /obj/item/bluespace_harpoon,
-/obj/item/gun/energy/mindflayer,
 /obj/item/gun/energy/crossbow/largecrossbow,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,

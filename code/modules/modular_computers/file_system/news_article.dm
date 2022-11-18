@@ -101,3 +101,7 @@
 /datum/computer_file/data/news_article/fire_in_jungle
 	filename = "Fire In The Jungle"
 	server_file_path = 'news_articles/FIRE_IN_THE_JUNGLE.html'
+
+/datum/computer_file/data/news_article/Mangos_Untitled_Stream
+	filename = "Mango's Untitled Stream #473"
+	server_file_path = 'news_articles/Mangos_Untitled_Stream.html'

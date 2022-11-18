@@ -106,7 +106,7 @@
 	desc = "A Void Wolf mercenary wielding an energy rifle."
 	icon_state = "voidwolf"
 	icon_dead = "voidwolf_dead"
-	projectilesound = 'sound/weapons/laser.ogg'
+	projectilesound = 'sound/weapons/energy/laser.ogg'
 	melee_damage_lower = 10 //We dont like melee
 	melee_damage_upper = 15
 	maxHealth = 100
@@ -137,7 +137,7 @@
 	ranged = TRUE
 	rapid = FALSE
 	projectiletype = /obj/item/projectile/beam
-	projectilesound = 'sound/weapons/laser.ogg'
+	projectilesound = 'sound/weapons/energy/laser.ogg'
 	drop_items = list(/obj/item/tool/weldingtool/advanced, /obj/item/gun/energy/gun/martin)
 	limited_ammo = TRUE
 	mag_drop = TRUE
@@ -198,7 +198,7 @@
 	name = "Void Reaver Stormtrooper"
 	desc = "A void wolf reaver stormtrooper, vatgrown and given bionic enhancements, with far better equipment and decades of experience raiding ships and killing men under the command of a true reaver."
 	icon_state = "reaver_lasrak"
-	projectilesound = 'sound/weapons/Laser.ogg'
+	projectilesound = 'sound/weapons/energy/Laser.ogg'
 	melee_damage_lower = 20 //We dont like melee
 	melee_damage_upper = 25
 	ranged = TRUE
