@@ -5,7 +5,7 @@
 	item_state = null	//so the human update icon uses the icon_state instead.
 	item_charge_meter = TRUE
 	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous."
-	fire_sound = 'sound/weapons/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 5)
@@ -32,7 +32,7 @@
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 15, MATERIAL_SILVER = 10)
 	init_firemodes = list(
 		list(mode_name="stun", mode_desc="fires a concentrated stun beam", projectile_type=/obj/item/projectile/beam/stun, charge_cost = 100, icon="stun", fire_sound='sound/weapons/Taser3.ogg'),
-		list(mode_name="lethal", mode_desc="fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 60, icon="kill", fire_sound='sound/weapons/Laser4.ogg')
+		list(mode_name="lethal", mode_desc="fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/Laser4.ogg')
 	)
 	serial_type = "NM"
 
@@ -51,8 +51,8 @@
 	fire_delay = 8 // Old platform modded to hell and tinkered by two factions
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10)
 	init_firemodes = list(
-		list(mode_name="stun", mode_desc="fires a highly concentrated stun beam", projectile_type=/obj/item/projectile/beam/hardstun, charge_cost = 200, fire_delay=40, icon="grenade", fire_sound='sound/weapons/Taser.ogg'), // Three shots on a T1 M-cell should be enough to reduce someone
-		list(mode_name="lethal", mode_desc="Fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/Laser.ogg')
+		list(mode_name="stun", mode_desc="fires a highly concentrated stun beam", projectile_type=/obj/item/projectile/beam/hardstun, charge_cost = 200, fire_delay=40, icon="grenade", fire_sound='sound/weapons/energy/Taser.ogg'), // Three shots on a T1 M-cell should be enough to reduce someone
+		list(mode_name="lethal", mode_desc="Fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/energy/Laser.ogg')
 	)
 	max_upgrades = 3 // Already tinkered enough, smaller frame, good stats
 	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE, // No warcrimes in medbay please
