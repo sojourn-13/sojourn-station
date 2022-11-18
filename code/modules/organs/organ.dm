@@ -284,7 +284,7 @@
 /obj/item/organ/emp_act(severity)
 	if(!BP_IS_ROBOTIC(src))
 		return
-	
+
 	//Robotic body parts conduct EMPs way better than flesh
 	if(parent && BP_IS_ROBOTIC(parent))
 		switch (severity)
@@ -302,7 +302,7 @@
 				take_damage(20)
 			if(3)
 				take_damage(10)
-		
+
 
 // Gets the limb this organ is located in, if any
 /obj/item/organ/proc/get_limb()
