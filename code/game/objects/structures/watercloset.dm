@@ -449,11 +449,12 @@
 		var/amount_to_add = min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)
 		if(amount_to_add > amount_of_reagents)
 			amount_to_add = amount_of_reagents
-		if(amount_of_reagents && limited_reagents)
+		if(amount_of_reagents)
 			RG.reagents.add_reagent(reagent_id, amount_to_add)
 			user.visible_message(SPAN_NOTICE("[user] fills \the [RG] using \the [src]."),SPAN_NOTICE("You fill \the [RG] using \the [src]."))
 			playsound(loc, 'sound/effects/watersplash.ogg', 100, 1)
-			amount_of_reagents -= amount_to_add
+			if(limited_reagents)
+				amount_of_reagents -= amount_to_add
 		else
 			to_chat(user, SPAN_WARNING("The sink seems to be out of presser"))
 		return 1
@@ -487,7 +488,7 @@
 
 	to_chat(usr, SPAN_NOTICE("You start washing \the [I]."))
 
-	if(amount_of_reagents < 40 && limited_reagents)
+	if(amount_of_reagents < 40)
 		to_chat(user, SPAN_WARNING("The water presser seems to low to wash with."))
 		return
 
@@ -495,7 +496,8 @@
 	sleep(40)
 	busy = 0
 
-	amount_of_reagents -= 40
+	if(limited_reagents)
+		amount_of_reagents -= 40
 
 	if(user.loc != location) return				//User has moved
 	if(!I) return 								//Item's been destroyed while washing
