@@ -7,7 +7,7 @@
 		return src.default_attack
 	for(var/datum/unarmed_attack/u_attack in species.unarmed_attacks)
 		if(u_attack.is_usable(src, target, hit_zone))
-			if(pulling_punches)
+			if(holding_back)
 				var/datum/unarmed_attack/soft_variant = u_attack.get_sparring_variant()
 				if(soft_variant)
 					return soft_variant

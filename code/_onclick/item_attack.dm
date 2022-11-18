@@ -277,5 +277,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		power *= 2
 	if(effective_faction.Find(target.faction)) // Is the mob's in our list of factions we're effective against?
 		power *= damage_mult // Increase the damage
+		if(H.holding_back)
+			power /= 2
 	target.hit_with_weapon(src, user, power, hit_zone)
 	return
