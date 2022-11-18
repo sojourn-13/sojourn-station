@@ -68,6 +68,15 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A blue and black version of the standard \"Serenity\" energy pistol, somehow despite looking just like a repainted job it conserves power unusually well."
 	charge_cost = 2
+	projectile_type = /obj/item/projectile/beam
+	can_dual = TRUE
+	init_firemodes = list(
+		LETHAL,
+		WEAPON_CHARGE
+	)
+	twohanded = FALSE
+	suitable_cell = /obj/item/cell/small
+	cell_type = /obj/item/cell/small
 	price_tag = 2550
 	serial_type = "BlueCross"
 	icon = 'icons/obj/guns/energy/ntpistol_bluecross.dmi'
