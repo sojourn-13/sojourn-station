@@ -5,7 +5,9 @@
 	and often times will leave your body weaker for a short time..... and such reckless rage makes you have a extreme tunnel vision and bright lights are extremely effective againts you. Such is everything else really. You are tough but weak."
 	active = FALSE
 	passivePerk = FALSE
-
+	var/init_sight
+	var/init_flash
+	var/obj/screen/lightOverlay = null
 
 /datum/perk/recklessrage/assign(mob/living/carbon/human/H)
 	..()
