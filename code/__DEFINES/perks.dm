@@ -177,8 +177,6 @@
 #define PERK_LASTBREATH /datum/perk/lastbreath //
 #define PERK_PAINRESISTANCE /datum/perk/painresistance
 
-#define PERK_STRONGARMS /datum/perk/greataim //
-
 #define PERK_RECKLESSRAGE /datum/perk/recklessrage //
 
 #define PERK_OVERWORKEDSPEED /datum/perk/overworkedspeed //
