@@ -1,7 +1,7 @@
 /datum/gear/agumentation
 	display_name = "Adrenaline Genetic injector"
 	path = /obj/item/device/genetical_imprinter/smalladrenaline
-	sort_category = "Agumentation"
+	sort_category = "Genetic Agumentation"
 	cost = 2
 
 /datum/gear/agumentation/h_1
