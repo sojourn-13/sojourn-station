@@ -12,7 +12,6 @@
 #include "code\client_macros.dm"
 #include "code\global.dm"
 #include "code\hub.dm"
-#include "code\New_Hud_Manual_ru.dm"
 #include "code\stylesheet.dm"
 #include "code\world.dm"
 #include "code\__DEFINES\_compile_helpers.dm"
