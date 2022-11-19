@@ -7003,6 +7003,9 @@
 /obj/structure/flora/small/busha2,
 /turf/unsimulated/wall/jungle,
 /area/colony/exposedsun/pastgate)
+"zP" = (
+/turf/simulated/floor/rock/manmade/concrete,
+/area/nadezhda/outside/meadow)
 "zQ" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/bushb2,
@@ -11759,6 +11762,9 @@
 /obj/random/powercell/low_chance,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
+"Va" = (
+/turf/simulated/floor/rock/manmade/concrete,
+/area/asteroid/rogue)
 "Vb" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha2,
@@ -44385,7 +44391,7 @@ aV
 aV
 aV
 aV
-aV
+Va
 aV
 aV
 aV
@@ -86186,7 +86192,7 @@ Ad
 hA
 hA
 hA
-hA
+zP
 hA
 hA
 hA

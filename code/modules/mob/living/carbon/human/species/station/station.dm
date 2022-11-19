@@ -51,7 +51,7 @@
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
 	max_age = 200 //Effectively ageless, but human history is only so long.
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.1
+	hunger_factor = 1.1
 
 	dark_color = "#ffffff"
 	light_color = "#000000"
@@ -187,7 +187,7 @@
 	min_age = 18
 	max_age = 160
 	blurb = "no."
-	hunger_factor = DEFAULT_HUNGER_FACTOR/2
+	hunger_factor = 0.5
 	taste_sensitivity = TASTE_HYPERSENSITIVE
 
 	dark_color = "#afeeee"
@@ -249,7 +249,7 @@
 	max_age = 110
 	blurb = "no."
 	taste_sensitivity = TASTE_HYPERSENSITIVE
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.25
+	hunger_factor = 1.25
 	radiation_mod = 0.5
 	total_health = 150
 	siemens_coefficient = 2
@@ -311,7 +311,7 @@
 	max_age = 130
 	blurb = "no."
 	taste_sensitivity = TASTE_DULL
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.25
+	hunger_factor = 1.25
 
 	cold_level_1 = 240 //Default 270
 	cold_level_2 = 200 //Default 230
@@ -393,7 +393,7 @@
 	exhale_type = "carbon_dioxide"
 	siemens_coefficient = 0.5
 	spawn_flags = CAN_JOIN
-	hunger_factor = DEFAULT_HUNGER_FACTOR/2
+	hunger_factor = 0.5
 
 	stat_modifiers = list(
 		STAT_MEC = 5,
@@ -654,7 +654,7 @@
 	max_age = 200
 	flags = NO_PAIN | IS_PLANT | NO_POISON | NO_BREATHE
 	slowdown = 0.3
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.3
+	hunger_factor = 1.3
 	darksight = 6
 
 	burn_mod = 2						// Burn damage multiplier.
@@ -1105,7 +1105,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 2
+	hunger_factor = 2
 	spawn_flags = IS_RESTRICTED
 
 	burn_mod = 1.15

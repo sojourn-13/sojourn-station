@@ -2,7 +2,7 @@
 	name = "Coder Annomlie"
 	desc = "Something not meant to be seen by the eyes of players, \
 	sad."
-	icon = 'modular_sojourn/stalker_annomlies.dmi'
+	icon = 'modular_sojourn/annomlies/stalker_annomlies.dmi'
 	var/active = FALSE
 	pixel_x = 8
 	pixel_y = 8
@@ -666,6 +666,9 @@
 			if(prob(blade_runner))
 				to_chat(our_cutting, SPAN_WARNING("The red beam of light cuts into you."))
 				our_cutting.adjustBruteLoss(blade_sharpness_aka_damage_per_running_on_it)
+				if(!(our_cutting.species && our_cutting.species.flags & NO_BLOOD)) //We want the var for safety but we can do without the actual blood.
+					our_cutting.adjustBruteLoss(blade_sharpness_aka_damage_per_running_on_it) //FPB's get hit 2x
+					return
 				our_cutting.drip_blood(fuel)
 	.=..()
 
