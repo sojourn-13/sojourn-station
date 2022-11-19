@@ -16,11 +16,6 @@
 
 ////--------
 
-/datum/gear/agumentation/k_1
-	display_name = "Steadier Arms Genetic injector"
-	path = /obj/item/device/genetical_imprinter/greataim
-	cost = 2
-
 /datum/gear/agumentation/k_2
 	display_name = "Enchance Senses Genetic injector"
 	path = /obj/item/device/genetical_imprinter/bodysense
