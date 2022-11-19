@@ -53,7 +53,9 @@
 
 /obj/item/stalker_hand_annomlie/camo_shard
 	name = "The shard"
-	desc = "A smooth shard of black stone, its edges have been beveled down to smooth rounds. "
+	desc = "A smooth shard of black stone, its edges have been beveled down to smooth rounds."
+	icon_state = "shard"
+	item_state = "shard"
 	var/camo_set_to = 30
 	var/health_to_take = 40 //IDK
 	var/camo_we_have = 255
@@ -80,6 +82,8 @@
 /obj/item/stalker_hand_annomlie/star
 	name = "The star"
 	desc = "A black stone star, it is well polished and smoothed, its center is small enough to hold in the palm of a hand."
+	icon_state = "star"
+	item_state = "star"
 	var/darksight_givith = 2
 	var/flash_help_givith = 2
 	var/hunger_strike = 0.1
@@ -103,6 +107,8 @@
 /obj/item/stalker_hand_annomlie/hand
 	name = "The hand"
 	desc = "A black stone hand, it is polished and appears to be marked as an avian hand, with feathers carved into it."
+	icon_state = "feather"
+	item_state = "feather"
 	var/added_slowdown = 0.1
 	var/faction_allied = ""
 	var/faction_turner = "vox_tribe"
@@ -126,6 +132,8 @@
 /obj/item/stalker_hand_annomlie/dice
 	name = "The dice"
 	desc = "A smooth die, made of black stone, It is well polished and has no markings on its faces."
+	icon_state = "d201"
+	item_state = "d201"
 	var/rng_to_win = 50
 	var/timer_to_mins = 5
 	var/bread_won = 40
