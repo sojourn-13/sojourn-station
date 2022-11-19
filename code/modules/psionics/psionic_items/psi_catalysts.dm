@@ -138,6 +138,13 @@
 	Are we truly changing anything?"
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/psychoactive_manipulation
 
+/obj/item/device/psionic_catalyst/Hpsi_armor
+	name = "psionic catalyst: Durable shell"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	Pain accompanies you, broken bones, torn flesh have become your companions. This catalyst will help to minimize suffering by giving your mind and body a rest."
+	stored_power = /obj/item/organ/internal/psionic_tumor/proc/Hpsi_armor
+
 /obj/item/device/psionic_catalyst/add_initial_transforms()
 	. = ..()
 
@@ -173,6 +180,7 @@
 				/obj/item/device/psionic_catalyst/dream_seeker = 10,
 				/obj/item/device/psionic_catalyst/kings_decorum = 10,
 				/obj/item/device/psionic_catalyst/psionic_ascension = 10,
+				/obj/item/device/psionic_catalyst/Hpsi_armor = 7,
 				/obj/item/device/psionic_catalyst/heretical_ascension = 1))
 
 // Psi-related lore paperwork. Not really a good place to put this so here it is. -Kaz
