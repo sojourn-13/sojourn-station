@@ -1,9 +1,41 @@
 ///////////////////////////////////// Sablekyne Based Perks
 /datum/perk/lastbreath
 	name = "Last Stand"
-	desc = "You learned that your body is a tank, through will and biology you can ignore pain entirely for a short amount of time."
+	desc = "You learned that your body is a tank, through will and biology you can ignore pain entirely for a short amount of time. But aswell all of your robustuness toughness and in a way vigillance is way weaker than most and you can get addicted way easily aswell having a stronger neural system to handle heavy narcotics."
 	active = FALSE
 	passivePerk = FALSE
+
+/datum/perk/lastbreath/assign(mob/living/carbon/human/H)
+	..()
+	holder.stats.changeStat(STAT_ROB, -5)
+	holder.stats.changeStat(STAT_TGH, -5)
+	holder.stats.changeStat(STAT_VIG, -5)
+
+/datum/perk/lastbreath/remove()
+	holder.stats.changeStat(STAT_ROB, 5)
+	holder.stats.changeStat(STAT_TGH, 5)
+	holder.stats.changeStat(STAT_VIG, 5)
+	..()
+
+/datum/perk/lastbreath/assign(mob/living/carbon/human/H)
+	..()
+	holder.unnatural_mutations.total_instability += 10
+
+/datum/perk/lastbreath/remove()
+	holder.unnatural_mutations.total_instability -= 10
+	..()
+
+/datum/perk/lastbreath/assign(mob/living/carbon/human/H)
+	..()
+	holder.metabolism_effects.addiction_chance_multiplier = 2
+	holder.metabolism_effects.nsa_bonus += 20
+	holder.metabolism_effects.calculate_nsa()
+
+/datum/perk/lastbreath/remove()
+	holder.metabolism_effects.addiction_chance_multiplier = 1
+	holder.metabolism_effects.nsa_bonus -= 20
+	holder.metabolism_effects.calculate_nsa()
+	..()
 
 /datum/perk/lastbreath/activate()
 	var/mob/living/carbon/human/user = usr

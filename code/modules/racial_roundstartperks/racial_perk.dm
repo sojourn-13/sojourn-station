@@ -2,9 +2,42 @@
 /datum/perk/recklessrage
 	name = "Reckless Rage"
 	desc = "Your body is powerful and strong when you succumb to instinct, but doing so leaves you without much higher reasoning for a short time. The rush of chemicals is also highly addictive \
-	and often times will leave your body weaker for a short time."
+	and often times will leave your body weaker for a short time..... and such reckless rage makes you have a extreme tunnel vision and bright lights are extremely effective againts you. Such is everything else really. You are tough but weak."
 	active = FALSE
 	passivePerk = FALSE
+
+
+/datum/perk/recklessrage/assign(mob/living/carbon/human/H)
+	..()
+	init_sight = holder.additional_darksight
+	init_flash = holder.flash_mod
+	holder.additional_darksight = -3
+	holder.flash_mod += 4
+
+/datum/perk/recklessrage/remove()
+	holder.additional_darksight = init_sight
+	holder.flash_mod = init_flash
+	..()
+/datum/perk/recklessrage/assign(mob/living/carbon/human/H)
+	..()
+	holder.brute_mod_perk += 0.10
+	holder.burn_mod_perk += 0.10
+	holder.oxy_mod_perk += 0.10
+	holder.toxin_mod_perk += 0.10
+	holder.stats.changeStat(STAT_COG, -2)
+	holder.stats.changeStat(STAT_ANA, 1)
+	holder.stats.changeStat(STAT_BIO, -2)
+
+/datum/perk/recklessrage/remove()
+	holder.brute_mod_perk -= 0.10
+	holder.burn_mod_perk -= 0.10
+	holder.oxy_mod_perk -= 0.10
+	holder.toxin_mod_perk -= 0.10
+	holder.stats.changeStat(STAT_COG, 2)
+	holder.stats.changeStat(STAT_ANA, -1)
+	holder.stats.changeStat(STAT_BIO, 2)
+	..()
+
 
 /datum/perk/recklessrage/activate()
 	var/mob/living/carbon/human/user = usr
@@ -27,7 +60,7 @@
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#5f95e2"
-	nerve_system_accumulations = 20
+	nerve_system_accumulations = 105 // so people can't spam it with others perks
 	addiction_chance = 100
 	appear_in_default_catalog = FALSE
 
@@ -47,9 +80,33 @@
 ////////////////////////////////////////Naramad Based perks
 /datum/perk/overworkedspeed
 	name = "Sensorial Burst"
-	desc = "Several species are built for extreme speed, be it for charging forward and retreating back."
+	desc = "Several species are built for extreme speed, be it for charging forward and retreating back. But only due to a symbiotic relationship with fungal on your bones structures and muscles... making you expel left overs of its metabolism once a hour. "
 	active = FALSE
 	passivePerk = FALSE
+	var/cooldown = 60 MINUTES
+	var/initial_time
+
+/datum/perk/overworkedspeed/assign(mob/living/carbon/human/H)
+	..()
+	initial_time = world.time
+
+/datum/perk/overworkedspeed/on_process()
+	if(!..())
+		return
+	if(holder.species.flags & NO_BREATHE || holder.internal)
+		return
+	if(world.time < initial_time + cooldown)
+		return
+	initial_time = world.time
+	for(var/mob/living/carbon/human/H in viewers(5, holder))
+		if(H.stat == DEAD || H.internal || H.stats.getPerk(PERK_OVERWORKEDSPEED) || H.species.flags & NO_BREATHE)
+			continue
+		if(H.head?.item_flags & BLOCK_GAS_SMOKE_EFFECT || H.wear_mask?.item_flags & BLOCK_GAS_SMOKE_EFFECT || BP_IS_ROBOTIC(H.get_organ(BP_CHEST)))
+			continue
+
+		H.reagents?.add_reagent("amatoxin", 5)
+		H.emote("gasp")
+		to_chat(H, SPAN_WARNING("[holder] shudders"))
 
 /datum/perk/overworkedspeed/activate()
 	var/mob/living/carbon/human/user = usr
@@ -73,7 +130,7 @@
 	taste_description = "acid"
 	reagent_state = LIQUID
 	color = "#FF3300"
-	nerve_system_accumulations = 20
+	nerve_system_accumulations = 45
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
 	scannable = TRUE
@@ -87,7 +144,7 @@
 /////////////////////////////////////////Cindarite based perks
 /datum/perk/purgemaluses
 	name = "Purge Maluses"
-	desc = "You force your body to begin the process of removing toxins from your blood. All toxins, addictions, and stimulants are slowly purged while any toxin damage to your liver or body is healed but the effect leaves you exhausted."
+	desc = "You force your body to begin the process of removing toxins from your blood. All toxins, addictions, and stimulants are slowly purged while any toxin damage to your liver or body is healed but the effect leaves you exhausted.... and aswell making your body way more vunerable to toxins."
 	active = FALSE
 	passivePerk = FALSE
 
@@ -104,6 +161,15 @@
 	user.reagents.add_reagent("sataricillin", 5)
 	return ..()
 
+/datum/perk/purgemaluses/assign(mob/living/carbon/human/H)
+	..()
+	holder.toxin_mod_perk += 0.1 //Might be to high...
+
+/datum/perk/purgemaluses/remove()
+	holder.toxin_mod_perk -= 0.1
+	..()
+
+
 /datum/reagent/medicine/spaceacillin/sataricillin
 	name = "Sataricillin"
 	id = "sataricillin"
@@ -113,9 +179,19 @@
 
 /datum/perk/viruspurge
 	name = "Pathogenical Response"
-	desc = "Your body is adept not only at curing toxins and regulating its blood flow but also fighting off infections and disease in any form. All infections within you are slowly cured and diseases progression slowed if not outright cured, similar to as if you were injected with spaceacillin. Severe infections or late stage diseases may still need additional medical aid and this cannot restore necrotic tissue. It uses the method of heating the body commonly refered as fever."
+	desc = "Your body is adept not only at curing toxins and regulating its blood flow but also fighting off infections and disease in any form. All infections within you are slowly cured and diseases progression slowed if not outright cured, similar to as if you were injected with spaceacillin. Severe infections or late stage diseases may still need additional medical aid and this cannot restore necrotic tissue. It uses the method of heating the body commonly refered as fever. Aswell making you extremely vunerable to toxins."
 	active = FALSE
 	passivePerk = FALSE
+
+
+/datum/perk/viruspurge/assign(mob/living/carbon/human/H)
+	..()
+	holder.toxin_mod_perk += 0.2 //Might be to high...
+
+/datum/perk/viruspurge/remove()
+	holder.toxin_mod_perk -= 0.2
+	..()
+
 
 /datum/perk/viruspurge/activate()
 	var/mob/living/carbon/human/user = usr
@@ -137,7 +213,7 @@
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#FF3300"
-	nerve_system_accumulations = 20
+	nerve_system_accumulations = 45
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
 	scannable = TRUE
@@ -172,4 +248,4 @@
 
 /datum/reagent/medicine/citokinesimol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.bodytemperature += 2.5 * TEMPERATURE_DAMAGE_COEFFICIENT
+	M.bodytemperature += 5.5 * TEMPERATURE_DAMAGE_COEFFICIENT

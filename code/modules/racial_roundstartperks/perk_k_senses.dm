@@ -1,7 +1,7 @@
 //////////////////////////////////////Kriosan perks
 /datum/perk/bodysense
 	name = "Enhance Body"
-	desc = "You're a predator at heart and have the senses to match, for a short time your body toughens and your aim improves drastically as your senses enhance."
+	desc = "You're a predator at heart and have the senses to match, for a short time your body toughens and your aim improves drastically as your senses enhance. But aswell making you making you less resistant to blunt trauma."
 	active = FALSE
 	passivePerk = FALSE
 
@@ -18,9 +18,17 @@
 	user.reagents.add_reagent("trakritol", 3)
 	return ..()
 
-/datum/perk/greataim
-	name = "Instinctual Skill"
-	desc = "Alot of species understand the dynamics of air, to such a degree that guns are more extensions to one's hand than weapon."
+/datum/perk/bodysense/assign(mob/living/carbon/human/H)
+	..()
+	holder.brute_mod_perk += 0.1
+	holder.mob_bomb_defense -= 5
+	holder.falls_mod += 0.2
+
+/datum/perk/bodysense/remove()
+	holder.brute_mod_perk -= 0.1 // One third of subdermal armor
+	holder.mob_bomb_defense += 5
+	holder.falls_mod -= 0.2
+	..()
 
 /datum/reagent/stim/trakritol
 	name = "Trakritol"

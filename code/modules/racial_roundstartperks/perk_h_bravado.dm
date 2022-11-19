@@ -1,9 +1,31 @@
 ////////////////////////////////////// Perks
 /datum/perk/smalladrenaline
 	name = "Adrenaline"
-	desc = "Since the very own start of your own species, when everything looked grim, you are reminded of how you can muster a moment of bravado, reminding yourself that you are stronger than this. You toughen up your circulation and metabolism, allowing you to ignore some of your pain and maluses, while stopping your bleeding in a very mild way and lightly healing your wounds."
+	desc = "Since the very own start of your own species, when everything looked grim, you are reminded of how you can muster a moment of bravado, reminding yourself that you are stronger than this. You toughen up your circulation and metabolism, allowing you to ignore some of your pain and maluses, while stopping your bleeding in a very mild way and lightly healing your wounds. Due to this adaptation, you body is constantly resupplying your adrenaline glands in case of emergency and aswell making you more suceptible to additions and lower tolerance of NSA."
 	active = FALSE
 	passivePerk = FALSE
+
+/datum/perk/smalladrenaline/assign(mob/living/carbon/human/H)
+	..()
+	holder.maxHealth -=7
+	holder.health -=7
+
+/datum/perk/smalladrenaline/remove()
+	holder.maxHealth +=7
+	holder.health +=7
+	..()
+
+/datum/perk/smalladrenaline/assign(mob/living/carbon/human/H)
+	..()
+	holder.metabolism_effects.addiction_chance_multiplier = 2
+	holder.metabolism_effects.nsa_bonus -= 25
+	holder.metabolism_effects.calculate_nsa()
+
+/datum/perk/smalladrenaline/remove()
+	holder.metabolism_effects.addiction_chance_multiplier = 2
+	holder.metabolism_effects.nsa_bonus += 25
+	holder.metabolism_effects.calculate_nsa()
+	..()
 
 /datum/perk/smalladrenaline/activate()
 	var/mob/living/carbon/human/user = usr
@@ -12,15 +34,15 @@
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("The human body can only take so much, you'll need more time before you've recovered enough to use this again."))
 		return FALSE
-	cooldown_time = world.time + 30 MINUTES //Compared to its counter part it is bigger
+	cooldown_time = world.time + 7 MINUTES //Compared to its counter part it is LOWER due to its genuine drawnbacks.
 	user.visible_message("[user] body tensed up badly from the response of the pain, seemingly wincing in pain but steading themselves in a staggering bravado!", "You ain't givng up to the pain... !")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("hakronol", 20) // Due to being bigger the quantitiy is aswell bigger due to the chemical being way less effective. So it is meant to be a perk of long duration.
+	user.reagents.add_reagent("hakronol", 5)
 	return ..()
 
 /datum/perk/willofpower
 	name = "Will Of Steel"
-	desc = "You push your carnal desire to keep living until you can't, letting your body recover slightly from any type of toxic damage out of sheer force of will at the cost of becoming extremely exhausted while it works."
+	desc = "You push your carnal desire to keep living until you can't, letting your body recover slightly from any type of toxic damage out of sheer force of will at the cost of becoming extremely exhausted while it works. However due to your body adaptation, you can't muster to stay firm when you fall nor your skin is adapted enough to deal with rough abrasion such as explosion and shock waves."
 	active = FALSE
 	passivePerk = FALSE
 
@@ -31,18 +53,37 @@
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("The body can only take so much, you'll need more time to gather your strenght again."))
 		return FALSE
-	cooldown_time = world.time + 60 MINUTES
+	cooldown_time = world.time + 12 MINUTES
 	user.visible_message("[user]looked visibly tired as their body seems more lethargic, slowing down as they focus on managing their pain!", "You feel exhausted as you slow down to let your body recover, focusing on controlling your breathing while your body slowly mends some of your injuries.")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("hustikol", 20)
+	user.reagents.add_reagent("hustikol", 7)
 	return ..()
 
+/datum/perk/willofpower/activate/assign(mob/living/carbon/human/H)
+	..()
+	holder.mob_bomb_defense -= 25
+	holder.falls_mod -= 0.4
+
+/datum/perk/willofpower/activate/remove()
+	holder.mob_bomb_defense += 25
+	holder.falls_mod += 0.4
+	..()
 
 /datum/perk/battleroar
 	name = "Powerful Roar"
-	desc = "Life has taught you that your voice is powerful, what made your kind to conquer was also a sense of mighty, power and cooperation among your kind. Your heroic roar can inspire yourself and others to better performance in combat."
+	desc = "Life has taught you that your voice is powerful, what made your kind to conquer was also a sense of mighty, power and cooperation among your kind. Your heroic roar can inspire yourself and others to better performance in combat.... but making yourself slower and and heavier becoming way more sluggish climbing things and aswell taking more trauma when falling down"
 	active = FALSE
 	passivePerk = FALSE
+
+/datum/perk/battleroar/assign(mob/living/carbon/human/H)
+	..()
+	holder.mod_climb_delay += 0.45
+	holder.falls_mod += 0.3
+
+/datum/perk/battleroar/remove()
+	holder.mod_climb_delay -= 0.45
+	holder.falls_mod -= 0.3
+	..()
 
 /datum/perk/battleroar/activate()
 	var/mob/living/carbon/human/user = usr
@@ -85,7 +126,7 @@
 	taste_description = "grossness and pain"
 	reagent_state = LIQUID
 	color = "#8040FF"
-	nerve_system_accumulations = 20
+	nerve_system_accumulations = 45
 	appear_in_default_catalog = TRUE
 	constant_metabolism = TRUE
 	scannable = TRUE
@@ -104,16 +145,16 @@
 	taste_description = "bitterness and agony"
 	reagent_state = LIQUID
 	color = "#ded890"
-	nerve_system_accumulations = 20
+	nerve_system_accumulations = 45
 	appear_in_default_catalog = TRUE
 	constant_metabolism = TRUE
 	scannable = TRUE
 
 /datum/reagent/medicine/hustikol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.heal_organ_damage(0.3, 0.1, 2) //Trade Healing damage to  |
+	M.heal_organ_damage(0.02, 0.1, 2) //Trade Healing damage to  |
 	M.add_chemical_effect(CE_BLOODCLOT, min(4,2.6)) // Clotting V
-	M.adjustOxyLoss(-0.5) // Heart start beating faster. You get more oxygen to your limbs and or gans
-	M.adjustToxLoss(-0.3)
+	M.adjustOxyLoss(-0.3) // Heart start beating faster. You get more oxygen to your limbs and or gans
+	M.adjustToxLoss(-0.1)
 	M.add_chemical_effect(CE_STABLE)
 	M.add_chemical_effect(CE_PAINKILLER, 25, TRUE)
 	M.add_chemical_effect(CE_BLOODRESTORE, 2.5 * effect_multiplier) //Trade some parts of really good bonuses to blood restauration
