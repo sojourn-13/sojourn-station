@@ -21,12 +21,6 @@
 	desc = "An genetical augment that copies the very own start of your own species, you're a predator at heart and have the senses to match, for a short time your body toughens and your aim improves drastically as your senses enhance."
 	perk_imprinting = PERK_BODYSENSE
 
-/obj/item/device/genetical_imprinter/greataim
-	name = "Steadier arms Genetical injector"
-	desc = "An genetical augment that copies the very own start of your own species, alot of species understand the dynamics of air, to such a degree that guns are more extensions to one's hand than weapon."
-	perk_imprinting = PERK_STRONGARMS
-	perk_imprinting_forbidden = PERK_PERFECT_SHOT
-
 //////--------------- S
 
 /obj/item/device/genetical_imprinter/lastbreath
