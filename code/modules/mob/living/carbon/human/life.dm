@@ -1205,7 +1205,7 @@
 		bodytemperature += round(BODYTEMP_HEATING_MAX*(1-thermal_protection), 1)
 		if(world.time >= next_onfire_hal)
 			next_onfire_hal = world.time + 50
-			adjustHalLoss(fire_stacks*10 + 3)
+			adjustHalLoss(fire_stacks*5 + 3) //adjusted to be lower. You need time to put yourself out. And each roll only removes 2.5 stacks.
 
 /mob/living/carbon/human/rejuvenate()
 	sanity.setLevel(sanity.max_level)
