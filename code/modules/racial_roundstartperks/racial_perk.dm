@@ -76,6 +76,7 @@
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "furiadol_w")
 	M.Weaken(3)
 	M.Weaken(3)
+	M.Weaken(3)
 
 
 ////////////////////////////////////////Naramad Based perks
