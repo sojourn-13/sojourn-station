@@ -159,7 +159,7 @@
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("Your body aches with the pain of its recent purge, you'll need more rest before using this effect again."))
 		return FALSE
-	cooldown_time = world.time + 15 MINUTES
+	cooldown_time = world.time + 30 MINUTES
 	user.visible_message("[user] shivers slightly as they begin to slow down.", "You start to feel quite chilly and tired as your body begins purging toxins within your blood.")
 	log_and_message_admins("used their [src] perk.")
 	user.reagents.add_reagent("sataricillin", 5)
