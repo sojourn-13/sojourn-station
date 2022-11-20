@@ -11,24 +11,17 @@
 
 /datum/perk/recklessrage/assign(mob/living/carbon/human/H)
 	..()
-	init_sight = holder.additional_darksight
-	init_flash = holder.flash_mod
-	holder.additional_darksight = -3
-	holder.flash_mod += 4
-
-/datum/perk/recklessrage/remove()
-	holder.additional_darksight = init_sight
-	holder.flash_mod = init_flash
-	..()
-/datum/perk/recklessrage/assign(mob/living/carbon/human/H)
-	..()
 	holder.brute_mod_perk += 0.10
 	holder.burn_mod_perk += 0.10
 	holder.oxy_mod_perk += 0.10
 	holder.toxin_mod_perk += 0.10
 	holder.stats.changeStat(STAT_COG, -2)
-	holder.stats.changeStat(STAT_ANA, 1)
+	holder.stats.changeStat(STAT_VIV, 1)
 	holder.stats.changeStat(STAT_BIO, -2)
+	init_sight = holder.additional_darksight
+	init_flash = holder.flash_mod
+	holder.additional_darksight = -3
+	holder.flash_mod += 4
 
 /datum/perk/recklessrage/remove()
 	holder.brute_mod_perk -= 0.10
@@ -36,10 +29,10 @@
 	holder.oxy_mod_perk -= 0.10
 	holder.toxin_mod_perk -= 0.10
 	holder.stats.changeStat(STAT_COG, 2)
-	holder.stats.changeStat(STAT_ANA, -1)
+	holder.stats.changeStat(STAT_VIV, -1)
 	holder.stats.changeStat(STAT_BIO, 2)
-	holder.additional_darksight += 3
-	holder.flash_mod -= 4
+	holder.additional_darksight = init_sight
+	holder.flash_mod = init_flash
 	..()
 
 
