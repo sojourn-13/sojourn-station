@@ -79,6 +79,7 @@
 /datum/reagent/drug/furiadol/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "furiadol_w")
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "furiadol_w")
+	M.Weaken(3)
 
 
 ////////////////////////////////////////Naramad Based perks
