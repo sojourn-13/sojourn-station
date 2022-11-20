@@ -110,7 +110,7 @@
 			continue
 
 		H.reagents?.add_reagent("amatoxin", 5)
-		H.emote("gasp")
+		H.emote("cough")
 		to_chat(H, SPAN_WARNING("[holder] shudders"))
 
 /datum/perk/overworkedspeed/activate()
