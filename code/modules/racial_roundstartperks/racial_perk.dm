@@ -31,6 +31,8 @@
 	holder.stats.changeStat(STAT_COG, 2)
 	holder.stats.changeStat(STAT_VIV, -1)
 	holder.stats.changeStat(STAT_BIO, 2)
+	holder.additional_darksight += 3
+	holder.flash_mod -= 4
 	holder.additional_darksight = init_sight
 	holder.flash_mod = init_flash
 	..()
