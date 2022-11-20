@@ -158,7 +158,7 @@
 	M.add_chemical_effect(CE_STABLE)
 	M.add_chemical_effect(CE_PAINKILLER, 25, TRUE)
 	M.add_chemical_effect(CE_BLOODRESTORE, 2.5 * effect_multiplier) //Trade some parts of really good bonuses to blood restauration
-	M.add_chemical_effect(CE_PULSE, -3)
+	M.add_chemical_effect(CE_PULSE, 4) // Very fast pulse, helps regenerate lost blood faster coupled with its massive CE_BLOODRESTORE effect
 	//Sleeping aswell. So it is not used in combat.
 	var/effective_dose = dose
 	if(issmall(M))
