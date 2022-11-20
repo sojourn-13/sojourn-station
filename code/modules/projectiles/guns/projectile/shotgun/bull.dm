@@ -24,7 +24,7 @@
 	burst_delay = null
 	fire_delay = null
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/max_sawn_off.ogg' // It's a double barrel, gets a double barrel sound
 	move_delay = null
 	init_firemodes = list(
 		list(mode_name="Single barrel", mode_desc="Shoots one barrel", burst=1, icon="semi"),

@@ -67,9 +67,9 @@
     tipText = "Автоматическое переключение на вкладку 'Examine' при осмотре чего-либо может быть отключено в ваших настройках."
 
 /tipsAndTricks/gameplay/fighting_slimes
-    tipText = "Fire extinguishers well slow do work. But in cases were slimes are over running the colony its best to get slime batons."
+    tipText = "Fire extinguishers, while slow, do work. But in cases were slimes are overrunning the colony it's best to get slime batons."
 
 /tipsAndTricks/gameplay/fighting_slimes_two
-    tipText = "Slimes are weaker to cold then heat. You can use frost oil or bullets to greater affect, well lasers and pepper spray only make a slime stronger!"
+    tipText = "Slimes are weaker to cold than heat. You can use frost oil or bullets to greater affect, while lasers and pepper spray only make a slime stronger!"
 
 

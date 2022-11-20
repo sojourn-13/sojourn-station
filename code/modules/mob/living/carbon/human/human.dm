@@ -60,6 +60,7 @@
 	sanity = new(src)
 
 	flash_mod = species.flash_mod
+	movement_hunger_factors *= species.hunger_factor
 
 	AddComponent(/datum/component/fabric)
 

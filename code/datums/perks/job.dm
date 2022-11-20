@@ -68,7 +68,7 @@
 
 /datum/perk/medicalexpertise
 	name = "Medical Expertise"
-	desc = "Your medical training and experience in the area of patient triage is unparalleled. 'Waste not, want not' is your motto, and you apply bandages and salves with utmost efficiency, sometimes using just the right ammount of them."
+	desc = "Your medical training and experience in the area of patient triage is unparalleled. 'Waste not, want not' is your motto, and you apply bandages and salves with utmost efficiency, sometimes using just the right amount of them."
 
 /datum/perk/solborn
 	name = "Sol Born"
@@ -220,39 +220,6 @@
 	return TRUE
 
 /datum/perk/linguist/remove()
-	..()
-
-/datum/perk/linguist_for_humans
-	name = "Diverse Culture"
-	desc = "Sol Fed conquering the stars led to almost every human having diverse knowledge of different languages."
-	active = FALSE
-	passivePerk = FALSE
-	var/anti_cheat = FALSE
-
-/datum/perk/linguist_for_humans/activate()
-	..()
-	if(anti_cheat)
-		to_chat(holder, "Recalling more languages is not as easy for someone unskilled as you.")
-		return FALSE
-	anti_cheat = TRUE
-	var/mob/M = usr
-	var/list/options = list()
-	options["German"] = LANGUAGE_GERMAN
-	options["Jive"] = LANGUAGE_JIVE
-	options["Jana"] = LANGUAGE_JANA
-	options["Serbian"] = LANGUAGE_SERBIAN
-	options["Techno-Russian"] = LANGUAGE_CYRILLIC
-	options["Esperanto"] = LANGUAGE_ESPERANTO
-	options["Yassari"] = LANGUAGE_YASSARI
-	options["Ancient Latin"] = LANGUAGE_LATIN
-	var/choice = input(M,"Which language do you know?","Linguist Choice") as null|anything in options
-	if(src && choice)
-		M.add_language(choice)
-		M.stats.removePerk(/datum/perk/linguist_for_humans)
-	anti_cheat = FALSE
-	return TRUE
-
-/datum/perk/linguist_for_humans/remove()
 	..()
 
 /datum/perk/chemist

@@ -23,7 +23,7 @@
 	build_path = /obj/item/gun/projectile/giskard
 
 /datum/design/autolathe/gun/makarov
-	name = "Excelsior 9mm \"Makarov\""
+	name = "SolFed 9mm \"Makarov\"" // Clarification as this is NOT Excelsior tech.
 	build_path = /obj/item/gun/projectile/makarov
 
 /datum/design/autolathe/gun/colt
@@ -73,7 +73,7 @@
 	build_path = /obj/item/gun/projectile/colt/ten
 
 /datum/design/autolathe/gun/ten_dark
-	name = "HG 10mm \"Stallion\""
+	name = "SolFed 10mm \"Stallion\""
 	build_path = /obj/item/gun/projectile/colt/ten/dark
 
 /datum/design/autolathe/gun/revolver
@@ -106,9 +106,9 @@
 	name = "H&S HG 12mm \"Basilisk\""
 	build_path = /obj/item/gun/projectile/basilisk
 
-/datum/design/autolathe/gun/akurra
-	name = "SA SHG 12mm \"Akurra\""
-	build_path = /obj/item/gun/projectile/lamia/akurra
+/datum/design/autolathe/gun/socom
+	name = "SolFed M6C 12mm \"SOCOM\""
+	build_path = /obj/item/gun/projectile/lamia/socom
 
 /datum/design/autolathe/gun/amnesty
 	name = "NM 12mm Amnesty"
@@ -147,7 +147,7 @@
 	build_path = /obj/item/gun/projectile/automatic/vector
 
 /datum/design/autolathe/gun/thompson
-	name = "SA 10mm Magnum \"Chicago Typewriter\""
+	name = "SolFed 10mm Magnum \"Chicago Typewriter\""
 	build_path = /obj/item/gun/projectile/automatic/thompson
 
 /datum/design/autolathe/gun/triage
@@ -196,9 +196,9 @@
 	name = "BR \"Rushing Bull\" tactical shotgun"
 	build_path = /obj/item/gun/projectile/automatic/bull_autoshotgun
 
-/datum/design/autolathe/gun/operator
+/datum/design/autolathe/gun/opshot
 	name = "NM \"Operator\" tactical shotgun"
-	build_path = /obj/item/gun/projectile/automatic/riot_autoshotgun/operator
+	build_path = /obj/item/gun/projectile/automatic/riot_autoshotgun/opshot
 
 /datum/design/autolathe/gun/ak47_saiga
 	name = "SA CAR 20mm \"Saiga\""
@@ -215,7 +215,7 @@
 	build_path = /obj/item/gun/projectile/automatic/bastard
 
 /datum/design/autolathe/gun/sol
-	name = "H&S CAR 6.5x39mm \"Solarian\""
+	name = "SolFed CAR 6.5x39mm \"Solarian\""
 	build_path = /obj/item/gun/projectile/automatic/omnirifle/solmarine
 
 /datum/design/autolathe/gun/ostwind
@@ -424,10 +424,6 @@
 	name = "H&S PDW E \"Martin\""
 	build_path = /obj/item/gun/energy/gun/martin
 
-/datum/design/autolathe/gun/ntpistol
-	name = "NT LP \"Serenity\""
-	build_path = /obj/item/gun/energy/ntpistol
-
 /datum/design/autolathe/gun/lasercore
 	name = "H&S PDW \"Laser Core\""
 	build_path = /obj/item/gun/energy/lasercore
@@ -484,13 +480,13 @@
 	name = "NM \"Sunrise\" L-SMG"
 	build_path = /obj/item/gun/energy/sunrise
 
-/datum/design/autolathe/gun/plasma/antebellum
-	name = "NT PR \"Antebellum\""
-	build_path = /obj/item/gun/energy/plasma/antebellum
-
 /datum/design/autolathe/gun/concillium
 	name = "NT Las-MG \"Concillium\""
 	build_path = /obj/item/gun/energy/concillium
+
+/datum/design/autolathe/gun/plasma/antebellum
+	name = "NT PR \"Antebellum\""
+	build_path = /obj/item/gun/energy/plasma/antebellum
 
 /datum/design/autolathe/gun/carpediem
 	name = "NT LM \"Carpediem\""

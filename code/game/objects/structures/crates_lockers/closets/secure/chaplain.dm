@@ -28,7 +28,6 @@
 	new /obj/item/ammo_magazine/magnum_40(src)
 	new /obj/item/ammo_magazine/magnum_40/rubber(src)
 	new /obj/item/ammo_magazine/magnum_40/rubber(src)
-	new /obj/item/gun/energy/ntpistol(src)
 	new /obj/item/cell/small(src)
 	new /obj/item/tool/knife/neotritual(src)
 	new /obj/item/clothing/suit/armor/vest/prime(src)

@@ -217,7 +217,7 @@ Procs:
 	var/level = 0              //A simple number scale of the research level.
 	//Rare - Does work currently
 	var/rare = 1               //How much CentCom wants to get that tech. Used in supply shuttle tech cost calculation.
-	var/max_level              //Calculated based on the ammount of technologies
+	var/max_level              //Calculated based on the amount of technologies
 	var/shown = TRUE           //Used to hide tech that is not supposed to be shown from the start
 	var/item_tech_req          //Deconstructing items with this tech will unlock this tech tree
 

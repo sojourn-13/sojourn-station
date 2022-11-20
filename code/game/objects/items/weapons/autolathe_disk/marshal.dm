@@ -57,7 +57,7 @@
 		/datum/design/autolathe/gun/viper = 4,
 		/datum/design/autolathe/gun/copperhead = 4,
 		//shotguns
-		/datum/design/autolathe/gun/operator = 4,
+		/datum/design/autolathe/gun/opshot = 4,
 		//machinegun
 		/datum/design/autolathe/gun/dp = 2,
 		/datum/design/autolathe/gun/bastard = 3,
@@ -122,7 +122,7 @@
 		/datum/design/autolathe/ammo/kurtz_ammobox = 0,
 		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/mag_10x24 = 0,
-		/datum/design/autolathe/ammo/box_10x24_small = 1,
+		/datum/design/autolathe/ammo/box_10x24 = 3, // Two entire mags of a Pulse Rifle, thus costs 10% of license cost. It's also armory access exclusive.
 		/datum/design/autolathe/ammo/lrifle_ammobox = 1,
 		/datum/design/autolathe/ammo/lrifle_ammobox_lethal = 1,
 		/datum/design/autolathe/ammo/lrifle_ammobox_rubber = 0,
@@ -209,7 +209,7 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/operator = 3,
+		/datum/design/autolathe/gun/opshot = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
 		/datum/design/autolathe/ammo/shotgun_illumination,

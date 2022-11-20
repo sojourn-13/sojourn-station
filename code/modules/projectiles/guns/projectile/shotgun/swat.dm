@@ -8,6 +8,7 @@
 	item_state = "swat"
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_SHOTGUN
+	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 4)
 	max_shells = 7 //Same as the gladstone
 	ammo_type = /obj/item/ammo_casing/shotgun

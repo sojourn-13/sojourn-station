@@ -100,6 +100,10 @@
 	display_name = "katana \"Saya\" sheath"
 	path = /obj/item/clothing/accessory/holster/saber/saya
 
+/datum/gear/armament/holster/church
+	display_name = "Absolutist Sword Scabbard"
+	path = /obj/item/clothing/accessory/holster/saber/greatsword/churchprint
+	allowed_roles = list("Prime","Vector")
 
 /datum/gear/armament/makeshift/saber
 	display_name = "Decorative Saber"

@@ -209,6 +209,7 @@
 	desc = "Modern Japanese-style blade that has no curve to it. This one looks pretty sharp."
 	icon_state = "katana" // New sprite courtesy of Kavric
 	item_state = "katana"
+	hitsound = 'sound/weapons/heavyslash.ogg'
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 5, MATERIAL_DIAMOND = 1) //sharpened using diamond dust or whatever
 	slot_flags = SLOT_BELT | SLOT_BACK
 	force = WEAPON_FORCE_BRUTAL

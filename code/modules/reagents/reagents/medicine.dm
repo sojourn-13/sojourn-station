@@ -136,6 +136,7 @@
 	holder.remove_reagent("toxin", 0.4 * effect_multiplier)
 	holder.remove_reagent("blattedin", 0.4 * effect_multiplier) // Massive complains about its slow metabolization rate + poisoning actually working, plus dylo originally purged it, so I'm bringing it back. - Seb
 	holder.remove_reagent("wasp_toxin", 0.2 * effect_multiplier)
+	holder.remove_reagent("amatoxin", 0.2 * effect_multiplier) // We hate the shitbirds
 
 
 /datum/reagent/medicine/dylovene/overdose(var/mob/living/carbon/M, var/alien)
@@ -177,6 +178,8 @@
 	holder.remove_reagent("xenotoxin", 0.4 * effect_multiplier)
 	holder.remove_reagent("blattedin", 0.8 * effect_multiplier) // Consistency with Dylovene, making it a straight upgrade worth mixing.
 	holder.remove_reagent("wasp_toxin", 0.6 * effect_multiplier)
+	holder.remove_reagent("amatoxin", 0.4 * effect_multiplier)
+	holder.remove_reagent("xenotoxin", 0.2 * effect_multiplier) // Not the best removal but beats a dyalisis or juggling with haloperidol
 
 /datum/reagent/medicine/cordradaxon
 	name = "Cordradaxon"
@@ -576,7 +579,7 @@
 
 		for(var/obj/item/organ/I in H.internal_organs)
 			if((I.damage > 0) && !BP_IS_ROBOTIC(I) && !istype(I, /obj/item/organ/internal/bone)) //Stop healing bones, bones are not organs!
-				I.heal_damage(((0.3 + I.damage * 0.1) * effect_multiplier), FALSE) // Buffing the ammount it heals the more damaged the organ is, to help stave off MSOF cases
+				I.heal_damage(((0.3 + I.damage * 0.1) * effect_multiplier), FALSE) // Buffing the amount it heals the more damaged the organ is, to help stave off MSOF cases
 		var/obj/item/organ/internal/nerve/N = H.random_organ_by_process(OP_NERVE)
 		if(H && istype(H))
 			if(BP_IS_ROBOTIC(N))

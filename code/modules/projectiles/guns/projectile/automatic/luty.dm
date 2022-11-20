@@ -20,7 +20,7 @@
 		)
 	can_dual = 1
 	damage_multiplier = 0.8
-	penetration_multiplier = 0
+	penetration_multiplier = 0.6
 	init_recoil = SMG_RECOIL(0.6)
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	serial_type = "INDEX"

@@ -3,7 +3,7 @@
 	desc = "A basic energy-based gun."
 	icon = 'icons/obj/guns/energy/energy.dmi'
 	icon_state = "energy"
-	fire_sound = 'sound/weapons/Taser.ogg'
+	fire_sound = 'sound/weapons/energy/Taser.ogg'
 	fire_sound_text = "laser blast"
 
 	init_recoil = HANDGUN_RECOIL(0.1)

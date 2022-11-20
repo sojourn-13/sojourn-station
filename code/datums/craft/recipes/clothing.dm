@@ -160,8 +160,19 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL), // Bullets
 		list(QUALITY_WELDING, 10, 20),
 		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS), // Reflective plating?
-		list(CRAFT_MATERIAL, 2, MATERIAL_PLATINUM), // Bullets
 		list(QUALITY_ADHESIVE, 15, "time" = 60)
+	)
+
+/datum/craft_recipe/clothing/scavengerhelmet
+	name = "Scavenger Helmet"
+	result = /obj/item/clothing/head/helmet/handmade/scavengerhelmet
+	steps = list(
+		list(/obj/item/clothing/head/helmet/handmade, 1), // Take your average combat helm
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL), // More internal padding
+		list(QUALITY_HAMMERING, 10, 15), // Hammer it into place...
+		list(QUALITY_ADHESIVE, 15, 15), // Make sure it sticks!
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL), // Prepare the additional external plates...
+		list(QUALITY_WELDING, 10, 20), // ...and weld them into place, tadah!
 	)
 
 /datum/craft_recipe/clothing/muzzle
