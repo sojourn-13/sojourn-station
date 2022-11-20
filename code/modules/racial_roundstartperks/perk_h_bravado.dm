@@ -141,7 +141,7 @@
 /datum/reagent/medicine/hustikol
 	name = "Hustikol"
 	id = "hustikol"
-	description = "A chemical naturally produced by humans pushed to their limit. Induces a recovery coma to heal their wounds."
+	description = "A chemical naturally produced by several species that pushed  their body to its limit. Induces a recovery coma to heal their wounds."
 	taste_description = "bitterness and agony"
 	reagent_state = LIQUID
 	color = "#ded890"
@@ -153,9 +153,8 @@
 /datum/reagent/medicine/hustikol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.heal_organ_damage(0.02, 0.1, 2) //Trade Healing damage to  |
 	M.add_chemical_effect(CE_BLOODCLOT, min(4,2.6)) // Clotting V
-	M.adjustOxyLoss(-0.3) // Heart start beating faster. You get more oxygen to your limbs and or gans
+	M.adjustOxyLoss(-0.5) // Heart start beating faster. You get more oxygen to your limbs and organs
 	M.adjustToxLoss(-0.1)
-	M.add_chemical_effect(CE_STABLE)
 	M.add_chemical_effect(CE_PAINKILLER, 25, TRUE)
 	M.add_chemical_effect(CE_BLOODRESTORE, 2.5 * effect_multiplier) //Trade some parts of really good bonuses to blood restauration
 	M.add_chemical_effect(CE_PULSE, 4) // Very fast pulse, helps regenerate lost blood faster coupled with its massive CE_BLOODRESTORE effect
