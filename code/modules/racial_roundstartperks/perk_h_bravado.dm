@@ -169,7 +169,7 @@
 			M.emote("yawn")
 	else if(effective_dose < 10)
 		M.eye_blurry = max(M.eye_blurry, 10)
-	else if(effective_dose < 5)
+	else if(effective_dose < 8)
 		if(prob(50))
 			M.Weaken(2)
 		M.drowsyness = max(M.drowsyness, 10)
