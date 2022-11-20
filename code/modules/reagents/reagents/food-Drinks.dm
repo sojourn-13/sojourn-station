@@ -1467,7 +1467,7 @@
 /datum/reagent/ethanol/Kvass
 	name = "Kvass"
 	id = "Kvass"
-	description = "A traditonal, and very popular russian drink.Made on the colony."
+	description = "A traditonal, and very popular russian drink. Made on the colony."
 	taste_description = "sweet, yet very light dark beer."
 	color = "#9F3400d0"
 	strength = 60
@@ -1499,7 +1499,7 @@
 	description = "Made from assorted sweets, candies and even flowers."
 	taste_description = "sweet and smooth alcohol"
 	color = "#E33232d0" // rgb: 227, 50, 50
-	strength = 10
+	strength = 15
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "alco-redglass"
@@ -1513,7 +1513,7 @@
 	description = "A harsh salty alcohol that is from Japanese origin."
 	taste_description = "salt and young lemons"
 	color = "#FFFFFFd0" // rgb: 255, 255, 255
-	strength = 40
+	strength = 15
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "alco-whiteglass"
@@ -1527,7 +1527,7 @@
 	description = "Mix of Candy Liquor, Nanatsunoumi, Blue Curacao, and Melon Liquor that shockingly tastes good.."
 	taste_description = "luck"
 	color = "#FFFFFFd0" // rgb: 255, 255, 255
-	strength = 200 //Oh no
+	strength = 5 //Oh no
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "miss_fortuneglass"

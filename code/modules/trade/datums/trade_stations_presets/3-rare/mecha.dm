@@ -63,7 +63,6 @@
 			/obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill,
 			/obj/item/mecha_parts/mecha_equipment/tool/extinguisher,
 			/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
-			/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/riggedlaser,
 			/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/flak/loaded,
 			/obj/item/mecha_parts/mecha_equipment/thruster
 		)

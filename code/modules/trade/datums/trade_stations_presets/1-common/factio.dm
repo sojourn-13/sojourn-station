@@ -48,6 +48,9 @@
 			/obj/item/gun_upgrade = good_data("Gun Upgrade", list(-9900, -9850), 350),
 			/obj/item/tool/baton = good_data("Stun Baton", list(-9900, -9850), 550),
 			/obj/item/extinguisher = good_data("Extinguisher", list(-9900, -9850), 30)
+		),
+		"Assembly Kits" = list(
+			/obj/item/toy/consumer/kit/toaster = custom_good_amount_range(list(20, 50))
 		)
 	)
 

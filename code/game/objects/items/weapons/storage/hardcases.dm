@@ -409,10 +409,10 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 /obj/item/storage/hcases/med/medical_job_trama/populate_contents()
 	new /obj/item/gearbox/traumatizedteam(src)
 	new /obj/item/gunbox/traumatizedteam(src) // Moved the weapon selection to here
-	new /obj/item/cell/medium/moebius/high(src) // Returning their high capacity cell from Sprocket removal
+	new /obj/item/cell/medium/moebius/high(src) // Keeping the cell as a "second mag" for the Abnegate
 	new /obj/item/clothing/suit/straight_jacket(src)
 	new /obj/item/storage/firstaid/soteria/large(src)
-	new /obj/item/gun/energy/sst/formatbound/preloaded(src)
+	new /obj/item/gun/energy/sst/preloaded(src) // They're now nonlethal and justifies getting an upgrade from science as nobody will ever want a downgrade.
 	new /obj/item/modular_computer/tablet/moebius/preset(src)
 
 //////////////////////////////////////////Engineering//////////////////////////////////////////
@@ -522,9 +522,9 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	if(!stamped)
 		stamped = TRUE
 		var/list/options = list()
-		// Keeping this in case any other "sensible" option for a primary weapon for Lifeline Techs arrives.
+		// Keeping this in case any other "sensible" option for a primary weapon for Lifeline Techs arrives, just add them as an option here.
 		options["Bullpip SMG with HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_35/hv,/obj/item/ammo_magazine/smg_35/hv)
-		//options["Soteria \"Sprocket\" lasgun"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
+		options["Soteria \"Sprocket\" lasgun"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
 		var/choice = input(user,"Which gun will you take?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]

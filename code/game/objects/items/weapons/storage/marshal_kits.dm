@@ -38,21 +38,23 @@
 
 /obj/item/storage/box/m_kit/gear_lasgun
 	name = "\improper Gear Lasgun Kit"
-	desc = "The standard Marshal box kit containing a modified cog that fires stun beams only. For the economic officer."
+	desc = "The standard Marshal box kit containing a modified Cog lasgun that also fires stun beams. For the economic officer."
 
 	populate_contents()
 		new /obj/item/gun/energy/cog/gear(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
 		new /obj/item/storage/pouch/tubular(src)
 
-/obj/item/storage/box/m_kit/operator
+/obj/item/storage/box/m_kit/opshotkit
 	name = "Operator Kit"
 	desc = "The standard Marshal box kit containing a Operator shotgun, a folding stock shotgun for only TRUE operators!"
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/riot_autoshotgun/operator(src)
+		new /obj/item/gun/projectile/automatic/riot_autoshotgun/opshot(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun/beanbag(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
@@ -108,9 +110,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/specop(src)
-		new /obj/item/ammo_magazine/rifle_10x24(src)
-		new /obj/item/ammo_magazine/rifle_10x24(src)
-		new /obj/item/ammo_magazine/rifle_10x24(src)
+		new /obj/item/ammo_magazine/smg_10x24(src)
+		new /obj/item/ammo_magazine/smg_10x24(src)
+		new /obj/item/ammo_magazine/smg_10x24(src)
 
 /obj/item/storage/box/m_kit/peacekeeper
 	name = "Peacekeeper ESG Kit"

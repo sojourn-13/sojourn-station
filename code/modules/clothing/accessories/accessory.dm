@@ -876,60 +876,64 @@
 	icon_state = "shemagh-blue"
 	item_state = "shemagh-blue"
 
-/obj/item/clothing/accessory/shemagh/red
-	name = "red shemagh"
-	icon_state = "shemagh-red"
-	item_state = "shemagh-red"
-
-/obj/item/clothing/accessory/shemagh/grey
-	name = "grey shemagh"
-	icon_state = "shemagh-grey"
-	item_state = "shemagh-grey"
-
-/obj/item/clothing/accessory/shemagh/purple
-	name = "purple shemagh"
-	icon_state = "shemagh-purple"
-	item_state = "shemagh-purple"
-
-/obj/item/clothing/accessory/shemagh/pink
-	name = "pink shemagh"
-	icon_state = "shemagh-pink"
-	item_state = "shemagh-pink"
-
 /obj/item/clothing/accessory/shemagh/brown
 	name = "brown shemagh"
 	icon_state = "shemagh-brown"
 	item_state = "shemagh-brown"
+
+/obj/item/clothing/accessory/shemagh/camo
+	name = "camo shemagh"
+	icon_state = "shemagh-camo"
+	item_state = "shemagh-camo"
 
 /obj/item/clothing/accessory/shemagh/copper
 	name = "copper shemagh"
 	icon_state = "shemagh-copper"
 	item_state = "shemagh-copper"
 
-/obj/item/clothing/accessory/shemagh/orange
-	name = "orange shemagh"
-	icon_state = "shemagh-orange"
-	item_state = "shemagh-orange"
+/obj/item/clothing/accessory/shemagh/cyan
+	name = "cyan shemagh"
+	icon_state = "shemagh-cyan"
+	item_state = "shemagh-cyan"
 
-/obj/item/clothing/accessory/shemagh/yellow
-	name = "yellow shemagh"
-	icon_state = "shemagh-yellow"
-	item_state = "shemagh-yellow"
+/obj/item/clothing/accessory/shemagh/grey
+	name = "grey shemagh"
+	icon_state = "shemagh-grey"
+	item_state = "shemagh-grey"
+
+/obj/item/clothing/accessory/shemagh/ice
+	name = "ice shemagh"
+	icon_state = "shemagh-ice"
+	item_state = "shemagh-ice"
 
 /obj/item/clothing/accessory/shemagh/lime
 	name = "lime shemagh"
 	icon_state = "shemagh-lime"
 	item_state = "shemagh-lime"
 
-/obj/item/clothing/accessory/shemagh/cyan
-	name = "cyan shemagh"
-	icon_state = "shemagh-cyan"
-	item_state = "shemagh-cyan"
+/obj/item/clothing/accessory/shemagh/orange
+	name = "orange shemagh"
+	icon_state = "shemagh-orange"
+	item_state = "shemagh-orange"
 
-/obj/item/clothing/accessory/shemagh/ice
-	name = "ice shemagh"
-	icon_state = "shemagh-ice"
-	item_state = "shemagh-ice"
+/obj/item/clothing/accessory/shemagh/pink
+	name = "pink shemagh"
+	icon_state = "shemagh-pink"
+	item_state = "shemagh-pink"
+
+/obj/item/clothing/accessory/shemagh/purple
+	name = "purple shemagh"
+	icon_state = "shemagh-purple"
+	item_state = "shemagh-purple"
+/obj/item/clothing/accessory/shemagh/red
+	name = "red shemagh"
+	icon_state = "shemagh-red"
+	item_state = "shemagh-red"
+
+/obj/item/clothing/accessory/shemagh/yellow
+	name = "yellow shemagh"
+	icon_state = "shemagh-yellow"
+	item_state = "shemagh-yellow"
 
 //End of sprites by Michiyamenotehifunana and Occulist
 /*One-Off Stuff*/

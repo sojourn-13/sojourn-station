@@ -60,11 +60,9 @@
 		tally += (283.222 - bodytemperature) / 10 * 1.75
 	tally += stance_damage // missing/damaged legs or augs affect speed
 
-	if(slowdown)
-		tally += 1
+	tally += slowdown
 
-	if(added_movedelay)
-		tally += added_movedelay
+	tally += added_movedelay
 
 	tally += (r_hand?.slowdown_hold + l_hand?.slowdown_hold)
 

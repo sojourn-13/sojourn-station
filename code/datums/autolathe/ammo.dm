@@ -901,8 +901,8 @@
 	materials = list(MATERIAL_STEEL = 25)
 
 /datum/design/autolathe/ammo/mag_10x24
-	name = "rifle magazine (10x24mm Caseless)"
-	build_path = /obj/item/ammo_magazine/rifle_10x24
+	name = "high capacity box magazine (10x24mm Caseless)"
+	build_path = /obj/item/ammo_magazine/smg_10x24
 	materials = list(MATERIAL_STEEL = 2)
 
 //14.5×114mm anti-materiel

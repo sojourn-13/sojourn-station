@@ -51,6 +51,7 @@
 		//smg mags
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_lethal,
+		/datum/design/autolathe/ammo/mag_10x24, // The specific model of the Spec Ops.
 		// rifles
 		/datum/design/autolathe/ammo/lrifle,
 		/datum/design/autolathe/ammo/lrifle_short,
@@ -111,7 +112,8 @@
 		/datum/design/autolathe/ammo/hrifle_ammobox_small_rubber,
 		/datum/design/autolathe/ammo/hrifle_ammobox_small_lethal,
 		/datum/design/autolathe/ammo/hrifle_ammobox,
-		/datum/design/autolathe/ammo/shotgun_box = 5, //35 x 4 (140 shells well a full disk of 5 x 20 = 100)
+		/datum/design/autolathe/ammo/box_10x24_small = 2, // Small version moved here for Ranger ease of access, double the cost as the spec ops disk as it has double the points
+		/datum/design/autolathe/ammo/shotgun_box = 5, //35 x 4 (140 shells while a full disk of 5 x 20 = 100)
 		/datum/design/autolathe/ammo/shotgun_pellet_box = 5,
 		/datum/design/autolathe/container/ammocan_serb,
 	)
@@ -303,8 +305,8 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/thompson
-	disk_name = "SA - 10mm Thompson SMG"
-	icon_state = "sa"
+	disk_name = "SolFed - 10mm Thompson SMG"
+	icon_state = "solfed"
 
 	license = 12
 	designs = list(
@@ -343,13 +345,13 @@
 		/datum/design/autolathe/ammo/kurtz_lethal = 2,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/akurra
-	disk_name = "SA - 12mm Akurra Silenced Handgun"
-	icon_state = "sa"
+/obj/item/computer_hardware/hard_drive/portable/design/guns/socom
+	disk_name = "SF - 12mm \"SOCOM\" Silenced Handgun"
+	icon_state = "solfed"
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/akurra = 3,
+		/datum/design/autolathe/gun/socom = 3,
 		/datum/design/autolathe/ammo/kurtz_practice = 0,
 		/datum/design/autolathe/ammo/kurtz_rubber,
 		/datum/design/autolathe/ammo/kurtz,
@@ -384,7 +386,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sbaw
 	disk_name = "20mm SBAW disk"
-	icon_state = "ironhammer"
+	icon_state = "solfed"
 
 	license = 8
 	designs = list(
@@ -464,7 +466,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sol
 	disk_name = "H&S - 6.5mm \"Solarian\" Carbine"
-	icon_state = "ironhammer"
+	icon_state = "solfed"
 
 	license = 18
 	designs = list(
@@ -689,16 +691,6 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 
 // ENERGY ARMS
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lasercore
-	disk_name = "H&S - Laser Core PDW E"
-	icon_state = "frozenstar"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/lasercore = 2,
-		/datum/design/autolathe/cell/medium/high,
-	)
-
 /obj/item/computer_hardware/hard_drive/portable/design/guns/spiderrose
 	disk_name = "H&S - Spider Rose PDW E"
 	icon_state = "frozenstar"
@@ -717,6 +709,16 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 	designs = list(
 		/datum/design/autolathe/gun/energygun_martin = 2,
 		/datum/design/autolathe/cell/small/high,
+	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/lasercore
+	disk_name = "H&S - Laser Core PDW E"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/lasercore = 2,
+		/datum/design/autolathe/cell/medium/high,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/firestorm

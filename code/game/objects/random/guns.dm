@@ -48,7 +48,7 @@
 /obj/random/gun_normal/item_to_spawn()
 	return pickweight(list(/obj/item/gun/projectile/lamia = 0.1,\
 				/obj/item/gun/projectile/automatic/texan = 0.5,\
-				/obj/item/gun/projectile/lamia/sf = 0.1,\
+				/obj/item/gun/projectile/lamia/gemini = 0.09,\
 				/obj/item/gun/projectile/revolver/rev10/rex10 = 0.5,\
 				/obj/item/gun/projectile/revolver/rev10/rex10/showdown = 0.1,\
 				/obj/item/gun/projectile/basilisk = 0.5,\
@@ -115,7 +115,7 @@
 
 /obj/random/gun_fancy/item_to_spawn()
 	return pickweight(list(/obj/item/gun/projectile/ladon = 1,\
-				/obj/item/gun/projectile/lamia/akurra = 1,\
+				/obj/item/gun/projectile/lamia/socom = 1,\
 				/obj/item/gun/projectile/basilisk = 2,\
 				/obj/item/gun/projectile/automatic/survivalrifle = 1,\
 				/obj/item/gun/projectile/revolver/tacticool_revolver = 1,\
@@ -143,7 +143,6 @@
 
 /obj/random/gun_energy_cheap/item_to_spawn()
 	return pickweight(list(/obj/item/gun/energy/gun/martin = 2,\
-				/obj/item/gun/energy/ntpistol = 2,\
 				/obj/item/gun/energy/gun = 2,\
 				/obj/item/gun/energy/cog = 1,\
 				/obj/item/gun/energy/lasercannon = 1,\
@@ -239,7 +238,7 @@
 	icon_state = "gun-red"
 
 /obj/random/dungeon_gun_energy/item_to_spawn()
-	return pickweight(list(/obj/item/gun/energy/mindflayer = 2,
+	return pickweight(list(
 				/obj/item/gun/energy/xray = 2,
 				/obj/item/gun/energy/sniperrifle = 2,
 				/obj/item/gun/energy/laser/railgun = 1,

@@ -27,7 +27,7 @@
 		"Ammo" = list(
 			/obj/item/ammo_magazine/ammobox/rifle_75_small,
 			/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
-			/obj/item/ammo_magazine/rifle_10x24,
+			/obj/item/ammo_magazine/smg_10x24,
 			/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
 			/obj/item/ammo_magazine/ammobox/shotgun
 		),

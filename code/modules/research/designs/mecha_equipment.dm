@@ -113,34 +113,31 @@
 // Energy
 
 /datum/design/research/item/mecha/taser
-	name = "PBT \"Pacifier\" mounted taser"
+	name = "MHM \"Pacifier\" mounted taser"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser
 	starts_unlocked = TRUE
 
+/datum/design/research/item/mecha/weapon/ion
+	name = "PHM \"Nebula\" ion cannon"
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
+
 /datum/design/research/item/mecha/weapon/laser
-	name = "CH-PS \"Immolator\" laser"
+	name = "MHM \"Immolator\" mining laser"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser
 
-/datum/design/research/item/mecha/weapon/laser_rigged
-	name = "Jury-rigged welder-laser"
-	desc = "Allows for the construction of a welder-laser assembly package for non-combat exosuits."
-	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/riggedlaser
-	starts_unlocked = TRUE
-
 /datum/design/research/item/mecha/weapon/laser_heavy
-	name = "CH-LC \"Solaris\" laser cannon"
+	name = "MHM-MS \"Solaris\" laser cannon"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
 
 /datum/design/research/item/mecha/weapon/hydrogen
 	name = "Mech-mounted Hydrogen-Plasma Cannon"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/hydrogen
 
-/datum/design/research/item/mecha/weapon/ion
-	name = "MkIV ion heavy cannon"
-	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
 /datum/design/research/item/mecha/weapon/sonic
 	name = "mech-mounted sonic emitter"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/sonic
+
+//Explosives
 
 /datum/design/research/item/mecha/weapon/grenade_launcher
 	name = "SGL-6 grenade launcher"

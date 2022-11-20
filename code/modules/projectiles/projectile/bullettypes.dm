@@ -31,6 +31,8 @@
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific
 	name = "soporific coated rubber bullet"
+	damage_types = list(BRUTE = 0)
+	agony = 25
 	var/spray = "stoxin"
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/New()
@@ -47,8 +49,7 @@
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo
 	name = "soporific condensed plastic bullet"
-	damage_types = list(BRUTE = 0)
-	agony = 25
+	agony = 30
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
@@ -188,6 +189,8 @@
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific
 	name = "soporific coated rubber bullet"
+	damage_types = list(BRUTE = 0)
+	agony = 35
 	var/spray = "stoxin"
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific/New()
@@ -430,6 +433,9 @@
 
 /obj/item/projectile/bullet/rifle_75/rubber/soporific
 	name = "soporific coated rubber bullet"
+	damage_types = list(BRUTE = 4) // Minor damage from blunt trauma, it's meant to be LTL
+	added_damage_bullet_pve = 10 // Justifying the upgrade into a longarm for mob control
+	agony = 30
 	var/spray = "stoxin"
 
 /obj/item/projectile/bullet/rifle_75/rubber/soporific/New()
@@ -678,6 +684,9 @@
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific
 	name = "soporific coated beanbag"
+	damage_types = list(BRUTE = 10) // They still hurt!
+	agony = 65
+	added_damage_bullet_pve = 10 // For battling mobs as per gun description
 	var/spray = "stoxin"
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific/New()

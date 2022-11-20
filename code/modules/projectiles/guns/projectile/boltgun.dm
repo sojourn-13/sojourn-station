@@ -19,7 +19,7 @@
 	max_shells = 10
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
-	fire_sound_silenced = 'sound/weapons/guns/fire/hpistol_fire.ogg' //It makes it more quite but still a high caliber
+	fire_sound_silenced = 'sound/weapons/guns/fire/silenced_rifle.ogg' // More cohesive sound, still loud for its caliber
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 500
 	var/bolt_open = 0
