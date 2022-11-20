@@ -64,7 +64,7 @@
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#5f95e2"
-	nerve_system_accumulations = 105 // so people can't spam it with others perks
+	nerve_system_accumulations = 70 // Minimum baseline NSA for certain races/backgrounds is 80~85, this is also in par with MENACE
 	addiction_chance = 100
 	appear_in_default_catalog = FALSE
 
