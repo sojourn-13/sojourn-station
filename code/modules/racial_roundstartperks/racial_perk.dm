@@ -163,7 +163,7 @@
 	cooldown_time = world.time + 30 MINUTES
 	user.visible_message("[user] shivers slightly as they begin to slow down.", "You start to feel quite chilly and tired as your body begins purging toxins within your blood.")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("sataricillin", 5)
+	user.reagents.add_reagent("citokinesimol", 5)
 	return ..()
 
 /datum/perk/purgemaluses/assign(mob/living/carbon/human/H)
@@ -173,43 +173,6 @@
 /datum/perk/purgemaluses/remove()
 	holder.toxin_mod_perk -= 0.1
 	..()
-
-
-/datum/reagent/medicine/spaceacillin/sataricillin
-	name = "Sataricillin"
-	id = "sataricillin"
-	description = "An all-purpose antiviral agent naturally produced by several species that functions identically to Spaceacillin."
-	constant_metabolism = TRUE
-
-
-/datum/perk/viruspurge
-	name = "Pathogenical Response"
-	desc = "Your body is adept not only at curing toxins and regulating its blood flow but also fighting off infections and disease in any form. All infections within you are slowly cured and diseases progression slowed if not outright cured, similar to as if you were injected with spaceacillin. Severe infections or late stage diseases may still need additional medical aid and this cannot restore necrotic tissue. It uses the method of heating the body commonly refered as fever. Aswell making you extremely vunerable to toxins."
-	active = FALSE
-	passivePerk = FALSE
-
-
-/datum/perk/viruspurge/assign(mob/living/carbon/human/H)
-	..()
-	holder.toxin_mod_perk += 0.2 //Might be to high...
-
-/datum/perk/viruspurge/remove()
-	holder.toxin_mod_perk -= 0.2
-	..()
-
-
-/datum/perk/viruspurge/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
-		return ..()
-	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("Your chemical sacks have not refilled yet, you'll need more rest before using this effect again."))
-		return FALSE
-	cooldown_time = world.time + 60 MINUTES
-	user.visible_message("[user] shivers slightly before taking a deep breath.... they look hot... are they in a heavy fever?", "You shiver slightly and take a deep breath before willing your bodies chemical sacks to open and begin purging infections.")
-	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("citokinesimol", 5)
-	return ..()
 
 /datum/reagent/medicine/citokinesimol
 	name = "Citokinesimol"
@@ -251,6 +214,58 @@
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	M.add_chemical_effect(CE_PULSE, -1)
 
-/datum/reagent/medicine/citokinesimol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+
+//------
+/datum/perk/viruspurge
+	name = "Pathogenical Response"
+	desc = "Your body is adept not only at curing toxins and regulating its blood flow but also fighting off infections and disease in any form. All infections within you are slowly cured and diseases progression slowed if not outright cured, similar to as if you were injected with spaceacillin. Severe infections or late stage diseases may still need additional medical aid and this cannot restore necrotic tissue. It uses the method of heating the body commonly refered as fever. Aswell making you extremely vunerable to toxins."
+	active = FALSE
+	passivePerk = FALSE
+
+
+/datum/perk/viruspurge/assign(mob/living/carbon/human/H)
+	..()
+	holder.toxin_mod_perk += 0.2 //Might be to high...
+
+/datum/perk/viruspurge/remove()
+	holder.toxin_mod_perk -= 0.2
+	..()
+
+
+/datum/perk/viruspurge/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("Your chemical sacks have not refilled yet, you'll need more rest before using this effect again."))
+		return FALSE
+	cooldown_time = world.time + 60 MINUTES
+	user.visible_message("[user] shivers slightly before taking a deep breath.... they look hot... are they in a heavy fever?", "You shiver slightly and take a deep breath before willing your bodies chemical sacks to open and begin purging infections.")
+	log_and_message_admins("used their [src] perk.")
+	user.reagents.add_reagent("sataricillin", 5)
+	return ..()
+
+/datum/reagent/medicine/spaceacillin/sataricillin
+	name = "Sataricillin"
+	id = "sataricillin"
+	description = "An all-purpose antiviral agent naturally produced by several species that functions ALMOST identically to Spaceacillin."
+	constant_metabolism = TRUE
+
+#define FEVER_MESSAGE_DELAY 5*60*10
+
+/datum/reagent/medicine/spaceacillin/sataricillin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.adjustToxLoss(-((0.001 + (M.getToxLoss() * 0.01)) * effect_multiplier))
+	M.add_chemical_effect(CE_ANTITOX, 0.8)
+
+/datum/reagent/medicine/spaceacillin/sataricillin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(volume <= 0.1 && data != -1)
+		data = -1
+		to_chat(M, SPAN_WARNING("You feel normal now... golly that was some really heavy fever"))
+	else
+		if(world.time > data + FEVER_MESSAGE_DELAY)
+			data = world.time
+			to_chat(M, SPAN_NOTICE("You feel hot.... like really really hot...."))
+
+/datum/reagent/medicine/spaceacillin/sataricillin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.bodytemperature += 5.5 * TEMPERATURE_DAMAGE_COEFFICIENT
