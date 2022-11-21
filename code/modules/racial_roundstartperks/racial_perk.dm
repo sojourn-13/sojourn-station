@@ -75,9 +75,6 @@
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "furiadol_w")
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "furiadol_w")
 	M.Weaken(3)
-	M.Weaken(3)
-	M.Weaken(3)
-
 
 ////////////////////////////////////////Naramad Based perks
 /datum/perk/overworkedspeed
@@ -237,7 +234,7 @@
 		to_chat(usr, SPAN_NOTICE("Your chemical sacks have not refilled yet, you'll need more rest before using this effect again."))
 		return FALSE
 	cooldown_time = world.time + 60 MINUTES
-	user.visible_message("[user] shivers slightly before taking a deep breath.... they look hot... are they in a heavy fever?", "You shiver slightly and take a deep breath before willing your bodies chemical sacks to open and begin purging infections.")
+	user.visible_message("[user] shivers slightly before taking a deep breath. they look hot. are they in a heavy fever?", "You shiver slightly and take a deep breath before willing your bodies chemical sacks to open and begin purging infections.")
 	log_and_message_admins("used their [src] perk.")
 	user.reagents.add_reagent("sataricillin", 5)
 	return ..()
@@ -257,11 +254,11 @@
 /datum/reagent/medicine/spaceacillin/sataricillin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(volume <= 0.1 && data != -1)
 		data = -1
-		to_chat(M, SPAN_WARNING("You feel normal now... golly that was some really heavy fever"))
+		to_chat(M, SPAN_WARNING("You feel normal now. golly that was some really heavy fever"))
 	else
 		if(world.time > data + FEVER_MESSAGE_DELAY)
 			data = world.time
-			to_chat(M, SPAN_NOTICE("You feel hot.... like really really hot...."))
+			to_chat(M, SPAN_NOTICE("You feel hot. like really really hot."))
 
 /datum/reagent/medicine/spaceacillin/sataricillin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()

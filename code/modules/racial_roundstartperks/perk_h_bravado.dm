@@ -9,19 +9,14 @@
 	..()
 	holder.maxHealth -=7
 	holder.health -=7
-
-/datum/perk/smalladrenaline/remove()
-	holder.maxHealth +=7
-	holder.health +=7
-	..()
-
-/datum/perk/smalladrenaline/assign(mob/living/carbon/human/H)
-	..()
 	holder.metabolism_effects.addiction_chance_multiplier = 2
 	holder.metabolism_effects.nsa_bonus -= 25
 	holder.metabolism_effects.calculate_nsa()
 
+
 /datum/perk/smalladrenaline/remove()
+	holder.maxHealth +=7
+	holder.health +=7
 	holder.metabolism_effects.addiction_chance_multiplier = 2
 	holder.metabolism_effects.nsa_bonus += 25
 	holder.metabolism_effects.calculate_nsa()
@@ -59,12 +54,12 @@
 	user.reagents.add_reagent("hustikol", 7)
 	return ..()
 
-/datum/perk/willofpower/activate/assign(mob/living/carbon/human/H)
+/datum/perk/willofpower/assign(mob/living/carbon/human/H)
 	..()
 	holder.mob_bomb_defense -= 25
 	holder.falls_mod -= 0.4
 
-/datum/perk/willofpower/activate/remove()
+/datum/perk/willofpower/remove()
 	holder.mob_bomb_defense += 25
 	holder.falls_mod += 0.4
 	..()
@@ -118,7 +113,6 @@
 	participant.stats.changeStat(stat, -amount)
 
 
-
 /datum/reagent/medicine/hakronol
 	name = "Hakronol"
 	id = "hakronol"
@@ -133,9 +127,9 @@
 
 /datum/reagent/medicine/hakronol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustOxyLoss(-0.2)
-	M.heal_organ_damage(0.015, 0.015)
+	M.heal_organ_damage(0.15, 0.15)
 	M.adjustToxLoss(-0.1)
-	M.add_chemical_effect(CE_BLOODCLOT, 0.01)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
 	M.add_chemical_effect(CE_PAINKILLER, 10, TRUE)
 
 /datum/reagent/medicine/hustikol
@@ -151,8 +145,8 @@
 	scannable = TRUE
 
 /datum/reagent/medicine/hustikol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.heal_organ_damage(0.02, 0.1, 2) //Trade Healing damage to  |
-	M.add_chemical_effect(CE_BLOODCLOT, min(4,2.6)) // Clotting V
+	M.heal_organ_damage(0.2, 0.1, 2) //Trade Healing damage to  |
+	M.add_chemical_effect(CE_BLOODCLOT, 0.1) // Clotting V
 	M.adjustOxyLoss(-0.5) // Heart start beating faster. You get more oxygen to your limbs and organs
 	M.adjustToxLoss(-0.1)
 	M.add_chemical_effect(CE_PAINKILLER, 25, TRUE)

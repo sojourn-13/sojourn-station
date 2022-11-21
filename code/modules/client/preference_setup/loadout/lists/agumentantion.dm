@@ -2,31 +2,40 @@
 	display_name = "Adrenaline Genetic injector"
 	path = /obj/item/device/genetical_imprinter/smalladrenaline
 	sort_category = "Genetic Agumentation"
-	cost = 2
+	allowed_roles = list(\
+	"Blackshield Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer","Sergeant",\
+	"Guild Master","Guild Adept",\
+	"Chief Biolab Overseer","Soteria Doctor","Soteria Psychiatrist","Soteria Lifeline Technician",\
+	"Chief Research Overseer","Soteria Scientist","Soteria Roboticist",\
+	"Chief Executive Officer","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor","Artist",\
+	"Prime", "Vector",\
+	"Foreman","Salvager","Prospector",\
+	"Premier","Steward", "Colonist")
+	cost = 5
 
 /datum/gear/agumentation/h_1
 	display_name = "Will Of Power Genetic injector"
 	path = /obj/item/device/genetical_imprinter/willofpower
-	cost = 2
+	cost = 5
 
 /datum/gear/agumentation/h_2
 	display_name = "Battle Roar Genetic injector"
 	path = /obj/item/device/genetical_imprinter/battleroar
-	cost = 2
+	cost = 5
 
 ////--------
 
 /datum/gear/agumentation/k_2
 	display_name = "Enchance Senses Genetic injector"
 	path = /obj/item/device/genetical_imprinter/bodysense
-	cost = 2
+	cost = 5
 
 ///-------
 
 /datum/gear/agumentation/s_1
 	display_name = "Last Breath Genetic injector"
 	path = 	/obj/item/device/genetical_imprinter/lastbreath
-	cost = 2
+	cost = 5
 
 
 ///-------
@@ -34,26 +43,26 @@
 /datum/gear/agumentation/s_1
 	display_name = "Fast Paced Genetic injector"
 	path = /obj/item/device/genetical_imprinter/overworkedspeed
-	cost = 2
+	cost = 5
 
 ///-------
 
 /datum/gear/agumentation/c_1
 	display_name = "Purge Maluses Genetic injector"
 	path = /obj/item/device/genetical_imprinter/purgemaluses
-	cost = 2
+	cost = 5
 
 /datum/gear/agumentation/c_2
 	display_name = "Viral Purge Genetic injector"
 	path = /obj/item/device/genetical_imprinter/viruspurge
-	cost = 2
+	cost = 5
 
 ///-------
 
 /datum/gear/agumentation/a_1
 	display_name = "Recklessrage Genetic injector"
 	path = /obj/item/device/genetical_imprinter/recklessrage
-	cost = 2
+	cost = 5
 
 ///-------
 

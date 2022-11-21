@@ -10,28 +10,16 @@
 	holder.stats.changeStat(STAT_ROB, -5)
 	holder.stats.changeStat(STAT_TGH, -5)
 	holder.stats.changeStat(STAT_VIG, -5)
-
-/datum/perk/lastbreath/remove()
-	holder.stats.changeStat(STAT_ROB, 5)
-	holder.stats.changeStat(STAT_TGH, 5)
-	holder.stats.changeStat(STAT_VIG, 5)
-	..()
-
-/datum/perk/lastbreath/assign(mob/living/carbon/human/H)
-	..()
 	holder.unnatural_mutations.total_instability += 10
-
-/datum/perk/lastbreath/remove()
-	holder.unnatural_mutations.total_instability -= 10
-	..()
-
-/datum/perk/lastbreath/assign(mob/living/carbon/human/H)
-	..()
 	holder.metabolism_effects.addiction_chance_multiplier = 2
 	holder.metabolism_effects.nsa_bonus += 20
 	holder.metabolism_effects.calculate_nsa()
 
 /datum/perk/lastbreath/remove()
+	holder.stats.changeStat(STAT_ROB, 5)
+	holder.stats.changeStat(STAT_TGH, 5)
+	holder.stats.changeStat(STAT_VIG, 5)
+	holder.unnatural_mutations.total_instability -= 10
 	holder.metabolism_effects.addiction_chance_multiplier = 1
 	holder.metabolism_effects.nsa_bonus -= 20
 	holder.metabolism_effects.calculate_nsa()
@@ -64,4 +52,4 @@
 
 /datum/reagent/medicine/latkadone/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 75, TRUE)
-	M.apply_effect(-25, AGONY, 0)
+	M.apply_effect(-10, AGONY, 0)

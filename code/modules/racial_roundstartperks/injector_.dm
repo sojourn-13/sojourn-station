@@ -4,7 +4,7 @@
 	icon_state = "hardware_imprinter"
 	origin_tech = list(TECH_BIO = 1)
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_GLASS = 2)
-	matter_reagents = list("uncap nanites" = 10)
+	matter_reagents = list("uncap nanites" = 1)
 	var/perk_imprinting = PERK_SOMELLIER
 	var/perk_imprinting_forbidden = PERK_SOMELLIER
 	var/spent = FALSE
