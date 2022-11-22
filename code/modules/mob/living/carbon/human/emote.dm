@@ -630,6 +630,17 @@
 				else
 					message = "makes a noise."
 					m_type = 2
+		if ("snort")
+			if (miming)
+				message = "exhales through their nostrils."
+				m_type = 1
+			else
+				if (!muzzled)
+					message = "snorts!"
+					m_type = 2
+				else
+					message = "attempts to exhale."
+					m_type = 2
 
 		if ("whimper")
 			if (miming)
@@ -759,7 +770,7 @@
 				if(get_sex() == MALE)
 					playsound(loc, 'sound/voice/ura.ogg', 80, 1) //URAH!!!
 				else if(get_sex() == FEMALE || PLURAL || NEUTER)
-					playsound(loc, 'sound/voice/femalewarcry.ogg', 80, 1)
+					playsound(loc, 'sound/voice/f_warcry.ogg', 90) // Less cringe scream, FORWARD!!
 			else
 				message = "makes a very loud noise."
 				m_type = 2
@@ -777,7 +788,7 @@
 				m_type = 1
 			else
 				if(!muzzled)
-					message = "mrowls!"
+					message = "meows!"
 					m_type = 2
 					playsound(loc, 'sound/voice/meow1.ogg', 50, 1)
 
@@ -789,7 +800,7 @@
 				if(!muzzled)
 					message = "squeaks!"
 					m_type = 2
-					playsound(loc, "sound/effects/mouse_squeak.ogg", 50, 1)
+					playsound(loc, 'sound/effects/mouse_squeak.ogg', 50, 1)
 
 		if("vomit")
 			if(isSynthetic())
@@ -801,7 +812,13 @@
 		if("whistle", "whistles")
 			if(!muzzled)
 				message = "whistles a tune."
-				playsound(loc, 'sound/misc/longwhistle.ogg', 25, 1, -3) //This is really loud, please don't spam it.
+				switch(pick("1", "2", "3"))
+					if("1")
+						playsound(loc, 'sound/misc/longwhistle.ogg', 25, 1, -3)
+					if("2")
+						playsound(loc, 'sound/misc/roach.ogg', 50, 1,) // Fitting
+					if("3")
+						playsound(loc, 'sound/misc/weasel.ogg', 50, 1,)
 			else
 				message = "makes a light spitting noise, a poor attempt at a whistle."
 
@@ -811,6 +828,24 @@
 				playsound(loc, 'sound/misc/shortwhistle.ogg', 50, 1)
 			else
 				message = "makes a light spitting noise, a poor attempt at a whistle."
+
+		if("awhistle")
+			m_type = 2
+			if(!muzzled)
+				var/M = null
+				if(param)
+					for(var/mob/A in view(1, null)) // We must be able to see the person
+						if(param == A.name)
+							M = A
+							break
+				if(M)
+					message = "whistles to get [M]'s attention!"
+					playsound(loc, 'sound/misc/whistle_attention.ogg', 50, 1) // Hey! Taxi!
+				else
+					message = "whistles to get some attention!"
+					playsound(loc, 'sound/misc/whistle_attention.ogg', 50, 1)
+			else
+				message = "makes some noise to draw attention to [identifying_gender == "male" ? "himself" : identifying_gender == "female" ? "herself" : "themselves"]!"
 
 		if("snap", "snaps")
 			m_type = 2
@@ -856,100 +891,165 @@
 
 		if ("awoo")
 			m_type = 2
-			message = "awoo's cutely!"
-			playsound(loc, 'sound/voice/awoo.ogg', 50, 1, -1)
+			if(!muzzled)
+				message = "awoo's cutely!"
+				playsound(loc, 'sound/voice/awoo.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("nya")
-			message = "lets out a nyah~"
 			m_type = 2
-			playsound(loc, 'sound/voice/nya.ogg', 50, 1, -1)
+			if(!muzzled)
+				message = "lets out a nyah~"
+				playsound(loc, 'sound/voice/nya.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("peep")
-			message = "peeps like a bird."
 			m_type = 2
-			playsound(loc, 'sound/voice/peep.ogg', 50, 1, -1)
+			if(!muzzled)
+				message = "peeps like a bird."
+				playsound(loc, 'sound/voice/peep.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if("chirp")
-			message = "chirps!"
-			playsound(src.loc, 'sound/misc/nymphchirp.ogg', 50, 0)
 			m_type = 2
+			if(!muzzled)
+				message = "chirps!"
+				playsound(src.loc, 'sound/misc/nymphchirp.ogg', 50, 0)
+			else
+				message = "makes a strange noise."
 		if ("weh")
-			message = "weh's. Weh!"
 			m_type = 2
-			playsound(loc, 'sound/voice/weh.ogg', 50, 1, -1)
+			if(!muzzled)
+				message = "weh's. Weh!"
+				playsound(loc, 'sound/voice/weh.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("merp")
-			message = "merps."
 			m_type = 2
-			playsound(loc, 'sound/voice/merp.ogg', 50, 1, -1)
+			if(!muzzled)
+				message = "merps."
+				playsound(loc, 'sound/voice/merp.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("bark")
-			message = "barks!"
 			m_type = 2
-			playsound(loc, 'sound/voice/bark2.ogg', 50, 1, -1)
 			cloud_emote = "cloud-scream"
+			if(!muzzled)
+				message = "barks!"
+				playsound(loc, 'sound/voice/bark2.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("hiss")
-			message = "hisses!"
 			m_type = 2
-			playsound(loc, 'sound/voice/hiss.ogg', 50, 1, -1)
 			cloud_emote = "cloud-scream"
+			if(!muzzled)
+				message = "hisses!"
+				playsound(loc, 'sound/voice/hiss.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("squeak")
-			message = "lets out a squeak."
 			m_type = 2
-			playsound(loc, 'sound/effects/mouse_squeak.ogg', 50, 1, -1)
+			if(!muzzled)
+				message = "lets out a squeak."
+				playsound(loc, 'sound/effects/mouse_squeak.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("purr")
-			message = "purrs softly."
 			m_type = 2
-			playsound(loc, 'sound/voice/purr.ogg', 50, 1, -1)
+			if(!muzzled)
+				message = "purrs softly."
+				playsound(loc, 'sound/voice/purr.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("ycackle")
-			message = "cackles like a hyena!"
 			m_type = 2
-			playsound(loc, 'sound/voice/YeenCackle.ogg', 50, 1, -1)
 			cloud_emote = "cloud-scream"
+			if(!muzzled)
+				message = "cackles like a hyena!"
+				playsound(loc, 'sound/voice/YeenCackle.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("shriek")
-			message = "SHRIEKS!"
 			m_type = 2
-			playsound(loc, 'sound/voice/shriek.ogg', 50, 1, -1)
 			cloud_emote = "cloud-scream"
+			if(!muzzled)
+				message = "SHRIEKS!"
+				playsound(loc, 'sound/voice/shriek.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("bellow")
-			message = "bellows!"
 			m_type = 2
-			playsound(loc, 'sound/voice/LizardBellow.ogg', 50, 1, -1)
+			if(!muzzled)
+				message = "bellows!"
+				playsound(loc, 'sound/voice/LizardBellow.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("squeal")
-			message = "squeals."
-			playsound(loc, 'sound/voice/LizardSqueal.ogg', 50, 1, -1)
+			m_type = 2
+			if(!muzzled)
+				message = "squeals."
+				playsound(loc, 'sound/voice/LizardSqueal.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("moo")
 			m_type = 2
-			message = "moos."
-			playsound(loc, 'sound/voice/moo1.ogg', 50, 1, -1) //credit to minecraft for the sound effect!
+			if(!muzzled)
+				message = "moos."
+				playsound(loc, 'sound/voice/moo1.ogg', 50, 1, -1) //credit to minecraft for the sound effect!
+			else
+				message = "makes a strange noise."
 		if ("bleat")
 			m_type = 2
-			message = "bleats."
-			playsound(loc, 'sound/voice/bleat.ogg', 50, 1, -1) //credit to bigsoundbank for the effect.
+			if(!muzzled)
+				message = "bleats."
+				playsound(loc, 'sound/voice/bleat.ogg', 50, 1, -1) //credit to bigsoundbank for the effect.
+			else
+				message = "makes a strange noise."
 		if ("warble")
 			m_type = 2
-			message = "warbles."
-			playsound(loc, 'sound/voice/warble.ogg', 50, 1, -1)
+			if(!muzzled)
+				message = "warbles."
+				playsound(loc, 'sound/voice/warble.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("lwarble")
 			m_type = 2
-			message = "warbles."
-			playsound(loc, 'sound/voice/lowwarble.ogg', 50, 1, -1)
-		if ("croon1")
+			if(!muzzled)
+				message = "warbles."
+				playsound(loc, 'sound/voice/lowwarble.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
+		if ("croon")
 			m_type = 2
-			message = "croons."
-			playsound(loc, 'sound/voice/croon1.ogg', 50, 1, -1)
-		if ("croon2")
-			m_type = 2
-			message = "croons."
-			playsound(loc, 'sound/voice/croon2.ogg', 50, 1, -1)
+			if(!muzzled)
+				switch(pick("1", "2"))
+					if("1")
+						message = "croons."
+						playsound(loc, 'sound/voice/croon1.ogg', 50, 1, -1)
+					if("2")
+						message = "croons."
+						playsound(loc, 'sound/voice/croon2.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("croak")
 			m_type = 2
-			message = "croaks."
-			playsound(loc, 'sound/voice/croak.ogg', 50, 1, -1)
+			if(!muzzled)
+				message = "croaks."
+				playsound(loc, 'sound/voice/croak.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("chitter")
 			m_type = 2
-			message = "chitters."
-			playsound(loc, 'sound/voice/chitter1.ogg', 50, 1, -1)
+			if(!muzzled)
+				message = "chitters."
+				playsound(loc, 'sound/voice/chitter1.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
 		if ("help")
-			to_chat(src, "awoo, aslap-(none)/mob, bark, bellow, blink, blink_r, blush, bow-(none)/mob, burp, chirp, chitter, choke, chuckle, clap, croon1, croon2, croak, collapse, cough, cry, custom, deathgasp, drool, eyebrow, fastsway/qwag, \
-					flip, frown, gasp, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, moo, mumble, nod, nya, pale, peep, point-atom, \
+			to_chat(src, "awoo, aslap-(none)/mob, awhistle-(none)/mob, awoo, bark, bellow, bleat, blink, blink_r, blush, bow-(none)/mob, burp, chirp, chitter, choke, chuckle, clap, croon1, croon2, croak, collapse, cough, cry, custom, deathgasp, drool, eyebrow, \
+					flip, frown, gasp, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, moo, mumble, nod, nya, pale, peep, point-atom, qwhistle, \
 					raise, salute, scream, sneeze, shake, shiver, shriek, shrug, sigh, signal-#1-10, slap-(none)/mob, smile, sneeze, sniff, snore, stare-(none)/mob, stopsway/swag, squeak, squeal, sway/wag, swish, tremble, twitch, \
-					twitch_v, vomit, weh, whimper, wink, yawn, ycackle. Synthetics: beep, buzz, yes, no, rcough, rsneeze, ping")
+					twitch_v, urah, vomit, weh, whimper, wink, yawn, ycackle. Synthetics: beep, buzz, yes, no, rcough, rsneeze, ping")
 
 		else
 			to_chat(src, "\blue Unusable emote '[act]'. Say *help for a list.")
