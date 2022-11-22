@@ -58,9 +58,9 @@
 	else
 		usr.emote(message)
 
-/*
+//Coffe Edit: Subtle is returned. Unholy.
 /mob/verb/subtle_wrapper()
-	set name = "Subtle verb"
+	set name = "Subtle (Anti-ghost) verb"
 	set category = "IC"
 
 	var/message = input("", "subtle (text)") as text|null
@@ -78,7 +78,7 @@
 		usr.emote("subtle", usr.emote_type, message)
 	else
 		usr.emote(message)
-*/
+
 /mob/proc/say_dead(message)
 	if(say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, SPAN_DANGER("Speech is currently admin-disabled."))
