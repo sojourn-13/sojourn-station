@@ -395,7 +395,7 @@ meteor_act
 				var/embed_threshold = sharp? 3*I.w_class : 9*I.w_class
 
 
-				var/embed_chance = (damage - embed_threshold)*I.embed_mult
+				var/embed_chance = (damage*I.embed_mult - embed_threshold)/2
 				if (embed_chance > 0 && prob(embed_chance))
 					affecting.embed(I)
 

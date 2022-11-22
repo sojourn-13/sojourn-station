@@ -107,13 +107,13 @@
 	force = WEAPON_FORCE_PAINFUL
 	tool_qualities = list(QUALITY_CUTTING = 30,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
 	max_upgrades = 3
-	embed_mult = 3
+	embed_mult = 6
 	price_tag = 24
 
 /obj/item/tool/knife/neotritual/equipped(mob/living/H)
 	. = ..()
 	if(is_held() && is_neotheology_disciple(H))
-		embed_mult = 0.1
+		embed_mult = 0.05
 	else
 		embed_mult = initial(embed_mult)
 
@@ -130,7 +130,7 @@
 	armor_penetration = ARMOR_PEN_MODERATE
 	throwforce = WEAPON_FORCE_LETHAL
 	max_upgrades = 3
-	embed_mult = 0.3
+	embed_mult = 0.6
 	price_tag = 38
 
 /obj/item/tool/knife/dagger
@@ -163,7 +163,7 @@
 	icon_state = "fancydagger"
 	item_state = "fancydagger"
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1)
-	embed_mult = 0.3
+	embed_mult = 0.6
 	max_upgrades = 4
 	price_tag = 300 // Fancy expensive paper weight.
 
@@ -190,7 +190,7 @@
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 10, MATERIAL_GOLD = 5, MATERIAL_PLASMA = 20)
 	price_tag = 1200 // It teleports.
 	force = WEAPON_FORCE_NORMAL+1
-	embed_mult = 25 //You WANT it to embed
+	embed_mult = 50 //You WANT it to embed
 	suitable_cell = /obj/item/cell/small
 	toggleable = TRUE
 	use_power_cost = 0.4

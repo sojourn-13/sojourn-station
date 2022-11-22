@@ -15,7 +15,7 @@
 /obj/item/tool/sword/nt/equipped(mob/living/M)
 	. = ..()
 	if(is_held() && is_neotheology_disciple(M))
-		embed_mult = 0.1
+		embed_mult = 0.05
 	else
 		embed_mult = initial(embed_mult)
 
@@ -147,12 +147,12 @@
 /obj/item/tool/sword/nt/spear/equipped(mob/living/W)
 	. = ..()
 	if(is_held() && is_neotheology_disciple(W))
-		embed_mult = 0.1
+		embed_mult = 0.2
 	else
 		embed_mult = initial(embed_mult)
 
 /obj/item/tool/sword/nt/spear/dropped(mob/living/W)
-	embed_mult = 300
+	embed_mult = 600
 	..()
 
 /obj/item/tool/sword/nt/spear/on_embed(mob/user)
@@ -406,7 +406,7 @@
 /obj/item/stack/thrown/nt/equipped(mob/living/M)
 	..()
 	if(is_held() && is_neotheology_disciple(M))
-		embed_mult = 0.1
+		embed_mult = 0.2
 	else
 		embed_mult = initial(embed_mult)
 
@@ -431,5 +431,5 @@
 	//style_damage = 30 - todo port this maybe?
 
 /obj/item/stack/thrown/nt/verutum/launchAt()
-	embed_mult = 300
+	embed_mult = 600
 	..()
