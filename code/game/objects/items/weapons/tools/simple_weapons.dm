@@ -69,7 +69,7 @@
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
-	embed_mult = 1 //Axes cut deep, and their hooked shape catches on things
+	embed_mult = 1.2 //Axes cut deep, and their hooked shape catches on things
 	worksound = WORKSOUND_HARD_SLASH
 	price_tag = 190
 	item_icons = list(
