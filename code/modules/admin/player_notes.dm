@@ -92,7 +92,7 @@ datum/admins/proc/notes_gethtml(var/ckey)
 // AdminPM Logging stuff.
 
 datum/admins/proc/adminpmhistory_show(var/ckey)
-	usr << browse("<head><title>Player Admin-PM History</title></head><body>[adminpmhistory_gethtml(ckey)]</body>","window=adminpmhistory;size=700x400")
+	usr << browse("<head><meta charset=\"UTF-8\"><title>Player Admin-PM History</title></head><body>[adminpmhistory_gethtml(ckey)]</body>","window=adminpmhistory;size=700x400")
 
 datum/admins/proc/adminpmhistory_gethtml(var/ckey)
 
