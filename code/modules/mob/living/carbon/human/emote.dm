@@ -437,7 +437,7 @@
 					message = "sighs."
 					m_type = 2
 					if(get_sex() == FEMALE)
-						playsound(loc, 'sound/effects/mob_effects/f_sigh.ogg', 70)
+						playsound(loc, 'sound/effects/mob_effects/f_sigh.ogg', 80)
 					else
 						playsound(loc, 'sound/effects/mob_effects/m_sigh.ogg', 70)
 				else
@@ -770,7 +770,7 @@
 				if(get_sex() == MALE)
 					playsound(loc, 'sound/voice/ura.ogg', 80, 1) //URAH!!!
 				else if(get_sex() == FEMALE || PLURAL || NEUTER)
-					playsound(loc, 'sound/voice/f_warcry.ogg', 90) // Less cringe scream, FORWARD!!
+					playsound(loc, 'sound/voice/f_warcry.ogg', 100) // Less cringe scream, FORWARD!!
 			else
 				message = "makes a very loud noise."
 				m_type = 2
