@@ -486,7 +486,7 @@
 	off_icon = "portgen2"
 	on_icon = "portgen2_1"
 	sheet_path = /obj/item/stack/material/tritium
-	sheet_name = "Tritium Fuel Sheets"
+	sheet_name = "Tritium Sheets"
 
 	//I don't think tritium has any other use, so we might as well make this rewarding for players
 	//max safe power output (power level = 8) is 200 kW and lasts for 1 hour - 3 or 4 of these could power the station
@@ -505,12 +505,12 @@
 
 /obj/machinery/power/port_gen/pacman/camp
 	name = "C.A.M.P.E.R.P.A.C.M.A.N portable generator"
-	desc = "This pacman got its named form its low power rating of burning wood as fuel, tends to be used well people go out camping. Rated for 20 kW maximum safe output!"
+	desc = "This power generator got its name from its low power rating through burning wood as fuel. It tends to be used while people go out camping. Rated for 20 kW maximum safe output!"
 	icon_state = "portgen3"
 	off_icon = "portgen3"
 	on_icon = "portgen3_1"
 	sheet_path = /obj/item/stack/material/wood
-	sheet_name = "Wood Planks Fuel Sheets"
+	sheet_name = "Wooden Planks"
 
 	//Wood is everyware here, this is is rather weak
 	power_gen = 12000 //watts
@@ -525,12 +525,12 @@
 
 /obj/machinery/power/port_gen/pacman/miss
 	name = "M.I.S.S.P.A.C.M.A.N portable generator"
-	desc = "Using a girls best friend. Rated for 200 kW maximum safe output!"
+	desc = "Using a girl's best friend. Rated for 200 kW maximum safe output!"
 	icon_state = "portgen2"
 	off_icon = "portgen2"
 	on_icon = "portgen2_1"
 	sheet_path = /obj/item/stack/material/diamond
-	sheet_name = "Diamond Sheet Fuel Sheets"
+	sheet_name = "Diamond Sheets"
 
 	//diamonds are just as common as any other mat*
 	power_gen = 22500 //watts

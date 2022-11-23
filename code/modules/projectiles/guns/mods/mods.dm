@@ -10,7 +10,7 @@
 //Silences the weapon, reduces damage multiplier slightly, Legacy port.
 /obj/item/gun_upgrade/muzzle/silencer
 	name = "Silencer"
-	desc = "A threaded silencer that can be attached to the muzzle of certain guns. Vastly reduces noise, but impedes muzzle velocity."
+	desc = "A threaded silencer that can be attached to the muzzle of certain guns. Vastly reduces noise."
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
 	icon_state = "silencer"
 	price_tag = 100
@@ -25,6 +25,33 @@
 	I.gun_loc_tag = GUN_MUZZLE
 	I.req_gun_tags = list(GUN_SILENCABLE)
 	I.prefix = "silenced"
+
+/obj/item/gun_upgrade/muzzle/pain_maker
+	name = "SA \"PainMaker\" muzzle"
+	desc = "A threaded barrel that can be attached to the muzzle of most projectile guns. \
+	Threaded barrel device made of a coil sensor and heater. As bullets pass the device they are slowed down and heated up by the coil, causing them to deform when hitting a target and imparting all their painful energy. \
+	Typically used when taking a hostages or kidnapping."
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
+	icon_state = "silencer"
+	price_tag = 100
+
+/obj/item/gun_upgrade/muzzle/pain_maker/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		UPGRADE_BULK = 2,
+		GUN_UPGRADE_STEPDELAY_MULT = 2,
+		GUN_UPGRADE_DAMAGE_MULT = 0.5,
+		GUN_UPGRADE_PEN_MULT = 0.5,
+		GUN_UPGRADE_PIERC_MULT = -3, //This does a LOT lowering range, as well as most guns being unable to wall bang with it
+		GUN_UPGRADE_OFFSET = 21,
+		GUN_UPGRADE_RECOIL = 2.5,
+		GUN_UPGRADE_PAIN_MULT = 2
+		)
+	I.gun_loc_tag = GUN_MUZZLE
+	I.req_gun_tags = list(GUN_PROJECTILE)
+	I.prefix = "LTL"
+
 
 //Decreases fire delay. Acquired through loot spawns or guild crafting
 /obj/item/gun_upgrade/barrel/forged
@@ -41,7 +68,7 @@
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
-	I.prefix = "refined barrel"
+	I.prefix = "fluted barrel"
 
 //Makes a gun deal more damage. fire faster but recoil heavy
 /obj/item/gun_upgrade/barrel/bore
@@ -56,12 +83,12 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.1,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.1,
-		GUN_UPGRADE_RECOIL = 1.25,
+		GUN_UPGRADE_RECOIL = 1.25, // Better gas control should make it have less recoil actually but let's not question spessmen logic.
 		UPGRADE_BULK = 1
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
-	I.prefix = "bored barrel"
+	I.prefix = "polygonal rifled"
 
 //Increases penetration multiplier, projectile speed. Increases fire delay. Acquired via science
 /obj/item/gun_upgrade/barrel/mag_accel
@@ -104,7 +131,7 @@
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
-	I.prefix = "heated barreled"
+	I.prefix = "barrel heated"
 
 //Meme mod that swaps the firing sound for a bike horn noises at the cost of making every single thing about the gun shitty. Too funny not to put in, takes 2 minutes to remove since its a prank item.
 /obj/item/gun_upgrade/mechanism/bikehorn
@@ -189,7 +216,7 @@
 		GUN_UPGRADE_FORCESAFETY = FALSE,
 		)
 	I.gun_loc_tag = GUN_TRIGGER
-	I.prefix = "feather trigger"
+	I.prefix = "trigger feathered"
 
 //Disables the ability to toggle the safety, toggles the safety permanently on, takes 2 minutes to remove (yikes). Acquired through loot spawns
 /obj/item/gun_upgrade/trigger/cop_block
@@ -359,7 +386,7 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_MECHANISM
 	I.breakable = FALSE
-	I.prefix = "feather trigger"
+	I.prefix = "" // We do a little trolling. Don't fire guns the enemy drops without examining them!
 
 /obj/item/gun_upgrade/mechanism/tensioner
 	name = "weighted pulley kit"
@@ -394,7 +421,7 @@
 		)
 	I.req_gun_tags = list(ARROW_FIRING)
 	I.gun_loc_tag = GUN_MECHANISM
-	I.prefix = "heavy"
+	I.prefix = "light" // To differentiate = less damage
 
 
 //obj/item/gun_upgrade/underbarrel
@@ -562,7 +589,7 @@
 */
 /obj/item/gun_upgrade/mechanism/greyson_master_catalyst
 	name = "Greyson \"Master Unmaker\" infuser"
-	desc = "One of the rarest and most powerful weapon modification ever made by Greyson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
+	desc = "One of the rarest and most powerful weapon modifications ever made by Greyson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
 	icon_state = "psionic_catalyst"
 	matter = list(MATERIAL_PLATINUM = 5, MATERIAL_PLASTEEL = 3, MATERIAL_DIAMOND = 10)
 	price_tag = 4500
@@ -571,13 +598,15 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
+		UPGRADE_BULK = 1,
 		GUN_UPGRADE_DAMAGE_BRUTE = 10,
 		GUN_UPGRADE_DAMAGE_BURN = 10,
 		GUN_UPGRADE_DAMAGE_TOX = 5,
 		GUN_UPGRADE_DAMAGE_OXY = 5,
 		GUN_UPGRADE_DAMAGE_CLONE = 5,
 		GUN_UPGRADE_DAMAGE_HALLOSS = 5,
-		UPGRADE_BULK = 1
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
+		GUN_UPGRADE_CHARGECOST = 1.5
 	)
 	I.removal_time *= 10
 	I.gun_loc_tag = GUN_MECHANISM
@@ -620,7 +649,7 @@
 	I.gun_loc_tag = GUN_TRIGGER
 	I.req_gun_tags = list(GUN_ENERGY)
 	I.breakable = FALSE
-	I.prefix = "feather trigger"
+	I.prefix = "" // We do a little trolling. Don't fire guns the enemy drops without examining them!
 
 /obj/item/gun_upgrade/scope
 //	bad_type = /obj/item/gun_upgrade/scope
@@ -702,7 +731,25 @@
 	GUN_UPGRADE_AUTOEJECT = TRUE)
 	I.req_gun_tags = list(GUN_MAGWELL)
 	I.gun_loc_tag = GUN_MAGWELL
-	I.prefix = "auto dropped"
+	I.prefix = "auto dropping"
+
+//Fancy verson
+/obj/item/gun_upgrade/magwell/auto_eject/no_removal
+	name = "SI \"Faller\" Magwell Clearer"
+	desc = "A rather oddly designed magwell clearing device that when added to guns that have an auto-eject magwell prevent it, if it dosn't prevent an auto-eject it will force the magwell itself out! When force-ejecting a mag, it will play a beeping sound.\
+	Unlike the other versions on the market this, once added, will not be removable as it replaces key components to be as seamless as possible."
+	can_remove = FALSE
+	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GLASS = 2, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1)
+
+/obj/item/gun_upgrade/magwell/auto_eject/no_removal/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_AUTOEJECT = TRUE)
+	I.req_gun_tags = list(GUN_MAGWELL)
+	I.gun_loc_tag = GUN_MAGWELL
+	I.prefix = "integrated dropping"
+
 
 //Underbarrel aka bipods
 
@@ -724,7 +771,7 @@
 		UPGRADE_BULK = 1
 		)
 	I.gun_loc_tag = GUN_UNDERBARREL
-	I.prefix = "stablized"
+	I.prefix = "bipodal"
 
 //Trash mods, for putting on old guns
 
@@ -765,7 +812,7 @@
 	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_BARREL
-	I.prefix = "refined barrel"
+	I.prefix = "fluted barrel" // In line with forged barrel
 
 /obj/item/gun_upgrade/muzzle/faulty
 	name = "Failed Makeshift Silencer"
@@ -837,7 +884,7 @@
 	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_MECHANISM
-	I.prefix = "feather trigger"
+	I.prefix = "trigger feathered"
 
 #define TRASH_GUNMODS list(/obj/item/gun_upgrade/trigger/faulty, /obj/item/gun_upgrade/barrel/faulty, \
 		/obj/item/gun_upgrade/muzzle/faulty, /obj/item/gun_upgrade/mechanism/faulty, \

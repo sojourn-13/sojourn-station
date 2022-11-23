@@ -210,8 +210,9 @@
 	on_store_name = "Robotic Storage Oversight"
 	on_enter_occupant_message = "The storage unit broadcasts a sleep signal to you. Your systems start to shut down, and you enter low-power mode."
 	allow_occupant_types = list(/mob/living/silicon/robot)
-//	disallow_occupant_types = list(/mob/living/silicon/robot/drone) We infact can put drones in storage.
+	disallow_occupant_types = list(/mob/living/carbon/human)
 	applies_stasis = 0
+	time_till_despawn = 600 //1 minute. We want to be much faster then normal cryo
 
 /obj/machinery/cryopod/elevator
 	name = "Elevator to the Lower Colony"
@@ -228,7 +229,7 @@
 	time_till_despawn = 600 //1 minute. We want to be much faster then normal cryo, since waiting in an elevator for half an hour is a special kind of hell.
 
 	allow_occupant_types = list(/mob/living/silicon/robot,/mob/living/carbon/human)
-//	disallow_occupant_types = list(/mob/living/silicon/robot/drone) Why would the lower colony not want us?!
+	disallow_occupant_types = list(/mob/living/silicon/robot) //Needs to be done via the robotic storage as that does more fancy despawning
 
 /obj/machinery/cryopod/dormitory
 	name = "Long Sleep Bed"
@@ -245,7 +246,7 @@
 	time_till_despawn = 600 //1 minute. Quick log outs because of how it looks
 
 	allow_occupant_types = list(/mob/living/silicon/robot,/mob/living/carbon/human)
-	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
+	disallow_occupant_types = list(/mob/living/silicon/robot) //Needs to be done via the robotic storage as that does more fancy despawning
 
 /obj/machinery/cryopod/New()
 	announce = new /obj/item/device/radio/intercom(src)
@@ -426,7 +427,7 @@
 
 	//When the occupant is put into storage, their respawn time is reduced.
 	//This check exists for the benefit of people who get put into cryostorage while SSD and come back later
-	if (occupant.in_perfect_health())
+	if (occupant.in_good_health())
 		if (occupant.mind && occupant.mind.key)
 
 			//Whoever inhabited this body is long gone, we need some black magic to find where and who they are now
@@ -589,12 +590,14 @@
 
 	set_occupant(null)
 
-	spawn(30)
-		state("Please remember to check inside if any belongings are missing.")
-		playsound(loc, "robot_talk_light", 100, 0, 0)
+	addtimer(CALLBACK(src, .proc/seeyalater), 300)
+
+/obj/machinery/cryopod/proc/seeyalater()
+	state("Please remember to check inside if any belongings are missing.")
+	playsound(loc, "robot_talk_light", 100, 0, 0)
 
 //Notifications is set false when someone spawns in here
-/obj/machinery/cryopod/proc/set_occupant(var/mob/living/new_occupant, var/notifications = TRUE)
+/obj/machinery/cryopod/proc/set_occupant(mob/living/new_occupant, notifications = TRUE)
 	name = initial(name)
 	if(new_occupant)
 		occupant = new_occupant
@@ -624,10 +627,10 @@
 		if (notifications)
 			to_chat(occupant, SPAN_NOTICE("[on_enter_occupant_message]"))
 			to_chat(occupant, SPAN_NOTICE("<b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</b>"))
-		if (occupant.in_perfect_health() && notifications)
+		if (occupant.in_good_health() && notifications)
 			to_chat(occupant, SPAN_NOTICE("<b>Your respawn time will be reduced by 20 minutes, allowing you to respawn as a crewmember much more quickly.</b>"))
 		else if (notifications)
-			to_chat(occupant, SPAN_DANGER("<b>Because you are not in perfect health, going into cryosleep will not reduce your crew respawn time. \
+			to_chat(occupant, SPAN_DANGER("<b>Because you are not in good health, going into cryosleep will not reduce your crew respawn time. \
 			If you wish to respawn as a different crewmember, you should treat your injuries at medical first</b>"))
 
 	else

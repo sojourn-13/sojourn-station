@@ -50,6 +50,7 @@
 	var/drop1 = /obj/item/scrap_lump
 	var/drop2 = null
 	var/cell_drop = null
+	cant_gib = TRUE
 
 /mob/living/carbon/superior_animal/robot/handle_breath(datum/gas_mixture/breath) //we dont care about the air
 	return

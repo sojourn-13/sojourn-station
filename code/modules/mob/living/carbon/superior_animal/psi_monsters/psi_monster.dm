@@ -16,7 +16,7 @@
 	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
 
 	cant_be_pulled = TRUE
-
+	cant_gib = TRUE
 	maxHealth = 120
 	health = 120
 	randpixel = 0
@@ -60,6 +60,7 @@
 	var/poison_type = "mindmelter"
 	var/last_noise = -30000
 	var/chameleon_skill = 10
+	var/phaser = TRUE
 	var/healing_factor = 1
 	var/momento_mori = /obj/effect/decal/cleanable/psi_ash
 	var/death_present = FALSE

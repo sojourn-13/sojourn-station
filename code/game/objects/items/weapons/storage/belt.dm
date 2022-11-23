@@ -168,7 +168,9 @@
 		/obj/item/soap,
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
-		/obj/item/oddity/chimeric_fang_trophy
+		/obj/item/oddity/chimeric_fang_trophy,
+		/obj/item/device/binoculars,
+		/obj/item/device/lighting/glowstick/flare/torch
 	)
 
 /obj/item/storage/belt/utility/neotheology
@@ -185,7 +187,7 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
-		/obj/item/gun/energy/ntpistol
+		/obj/item/device/binoculars
 	)
 
 /obj/item/storage/belt/utility/handmade
@@ -345,7 +347,6 @@
 		/obj/item/gun/projectile/mk58,
 		/obj/item/gun/projectile/revolver/lemant,
 		/obj/item/gun/energy/gun,
-		/obj/item/gun/projectile/clarissa,
 		/obj/item/gun/projectile/giskard,
 		/obj/item/gun/projectile/olivaw,
 		/obj/item/gun/projectile/revolver/detective,
@@ -359,7 +360,8 @@
 		/obj/item/device/camera,
 		/obj/item/folder,
 		/obj/item/reagent_containers/food/snacks,
-		/obj/item/reagent_containers/food/drinks
+		/obj/item/reagent_containers/food/drinks,
+		/obj/item/device/binoculars // By popular demand. - Seb
 	)
 
 /obj/item/storage/belt/holding
@@ -386,10 +388,10 @@
 			var/held = W.get_equip_slot()
 			if (held == slot_l_hand)
 				var/obj/item/organ/external/E = H.get_organ(BP_L_ARM)
-				E.droplimb(0, DROPLIMB_BLUNT)
+				E.droplimb(0, DISMEMBER_METHOD_BLUNT)
 			else if (held == slot_r_hand)
 				var/obj/item/organ/external/E = H.get_organ(BP_R_ARM)
-				E.droplimb(0, DROPLIMB_BLUNT)
+				E.droplimb(0, DISMEMBER_METHOD_BLUNT)
 		user.drop_item()
 		return
 	..()
@@ -454,7 +456,7 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
-		/obj/item/gun/energy/ntpistol
+		/obj/item/device/binoculars
 	)
 
 /obj/item/storage/belt/champion

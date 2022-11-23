@@ -5,6 +5,7 @@
 	flags = PROXMOVE
 	blood_color = "#A10808"
 	var/datum/mind/mind
+	var/cant_gib = FALSE //This is used for mobs that dquel on death
 
 	//This is here for admins to modife for any player, mob for events or other things. Also antags could
 	//likely use this - I.E Bots with deeper scans could see through into a carrion or a Exl agent
@@ -102,6 +103,7 @@ While it would be entirely possible to check the mob's move handlers list for th
 
 	var/default_pixel_x = 0
 	var/default_pixel_y = 0
+	var/default_pixel_z = 0
 	var/old_x = 0
 	var/old_y = 0
 	var/nutrition = 400  //carbon

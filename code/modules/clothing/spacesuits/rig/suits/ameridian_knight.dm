@@ -33,7 +33,7 @@
 /obj/item/clothing/head/helmet/space/rig/ameridian_knight
 	name = "helmet"
 	retract_while_active = TRUE
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 
 /obj/item/clothing/shoes/magboots/rig/ameridian_knight
 	name = "greaves"

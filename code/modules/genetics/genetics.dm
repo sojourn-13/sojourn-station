@@ -393,8 +393,10 @@
 				log_debug("Calling On player Remove Script: [mutation_to_remove.name]")
 				#endif
 				mutation_to_remove.onPlayerRemove()
+				return
 			if(istype(holder, /mob/living))
 				mutation_to_remove.onMobRemove()
+				return
 		removeMutation(mutation_to_remove.key, mutation_to_remove.count)
 	initialized = FALSE
 
@@ -446,8 +448,11 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/human_target = target
 		if(human_target.random_organ_by_process(BP_NANOGATE))
-			to_chat(human_target, SPAN_DANGER("You hear a synthetic voice, \"FOREIGN ORGANISM DETECTED. NEUTRALIZING\" before you feel something eating away at you on a celluar level."))
+			to_chat(human_target, SPAN_DANGER("You hear a synthetic voice, \"FOREIGN ORGANISM DETECTED. NEUTRALIZING\" before you feel something eating away at you on a cellular level."))
 			target.adjustCloneLoss(10)
+			return FALSE
+
+		if(human_target.species && human_target.species.reagent_tag == IS_SYNTHETIC)
 			return FALSE
 
 	//Add the mutations in a separate loop from the activation step.
@@ -547,14 +552,14 @@
 
 
 //
-/datum/genetics/genetics_holder/ui_data(var/list/known_mutations)
+/datum/genetics/genetics_holder/nano_ui_data(var/list/known_mutations)
 	var/list/data = list()
 	data["instability"] = total_instability
 	var/list/mutation_pool_data = null
 	if(mutation_pool)
 		mutation_pool_data = list()
 		for(var/datum/genetics/mutation/selected_mutation in mutation_pool)
-			mutation_pool_data += list(selected_mutation.ui_data(known_mutations))
+			mutation_pool_data += list(selected_mutation.nano_ui_data(known_mutations))
 	data["mutation_pool"] = mutation_pool_data
 
 	return data
@@ -645,7 +650,7 @@
 	return duplicate
 
 //Obfuscate the data if we don't know it yet.
-/datum/genetics/mutation/ui_data(var/list/known_mutations)
+/datum/genetics/mutation/nano_ui_data(var/list/known_mutations)
 	var/list/data = list()
 	if(known_mutations[key])
 		data["source_mob"] = source_mob

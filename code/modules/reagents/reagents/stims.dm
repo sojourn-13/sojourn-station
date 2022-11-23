@@ -1,5 +1,5 @@
 /datum/reagent/stim
-	scannable = 1
+	scannable = TRUE
 	metabolism = REM/4
 	constant_metabolism = TRUE
 	reagent_type = "Stimulator"
@@ -344,7 +344,7 @@
 	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, STIM_TIME, "turbo")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "turbo")
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "turbo")
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.4)
 	M.add_chemical_effect(CE_PULSE, 2)
 
 /datum/reagent/stim/turbo/withdrawal_act(mob/living/carbon/M)
@@ -518,7 +518,7 @@
 	taste_description = "sponge cake"
 	reagent_state = LIQUID
 	color = "#00FFFF"
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/stim/reviver/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(20 * effect_multiplier))
@@ -535,6 +535,9 @@
 			if((L in GLOB.living_mob_list) || (L in GLOB.dead_mob_list))
 				WARNING("Mob [L] was Adenosine+ but already in the living or dead list still!")
 			GLOB.living_mob_list += L
+
+			L.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = L)
+
 
 			L.timeofdeath = 0
 			L.stat = UNCONSCIOUS //Life() can bring them back to consciousness if it needs to.

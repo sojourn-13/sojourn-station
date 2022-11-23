@@ -18,6 +18,7 @@
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/storage/belt/sci(src)
 	new /obj/item/storage/bag/xenobio(src)
+	new /obj/item/bodybag/xenobio(src)
 
 /obj/structure/closet/secure_closet/reinforced/RD
 	name = "soteria research overseer's locker"
@@ -45,3 +46,4 @@
 	new /obj/item/computer_hardware/hard_drive/portable/design/computer/rd(src)
 	new /obj/item/oddity/chem_book(src)
 	new /obj/item/storage/bag/xenobio(src)
+	new /obj/item/bodybag/xenobio(src)

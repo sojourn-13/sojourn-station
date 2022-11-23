@@ -86,22 +86,22 @@
 
 /obj/item/clothing/accessory/tie/blueclip
 	name = "blue clip tie"
-	desc = "A neosilk clip-on tie with a striped blue design and clip."
+	desc = "A neosilk clip-on long tie with a striped blue design and clip."
 	icon_state = "bluecliptie"
 
 /obj/item/clothing/accessory/tie/bluestriped
 	name = "blue striped tie"
-	desc = "A neosilk clip-on tie with a striped blue design."
+	desc = "A neosilk clip-on long tie with a striped blue design."
 	icon_state = "bluelongtie"
 
 /obj/item/clothing/accessory/tie/darkgreen
 	name = "dark green tie"
-	desc = "A neosilk clip-on tie with a dark green design."
+	desc = "A neosilk clip-on long tie with a dark green design."
 	icon_state = "dgreentie"
 
 /obj/item/clothing/accessory/tie/navy
 	name = "navy tie"
-	desc = "A neosilk clip-on tie with a navy design."
+	desc = "A neosilk clip-on long tie with a navy design."
 	icon_state = "navytie"
 
 /obj/item/clothing/accessory/tie/red
@@ -111,17 +111,17 @@
 
 /obj/item/clothing/accessory/tie/redclip
 	name = "red clip tie"
-	desc = "A neosilk clip-on tie with a striped red design and clip."
+	desc = "A neosilk clip-on long tie with a striped red design and clip."
 	icon_state = "redcliptie"
 
 /obj/item/clothing/accessory/tie/redstriped
 	name = "red striped tie"
-	desc = "A neosilk clip-on tie with a striped red design."
+	desc = "A neosilk clip-on long tie with a striped red design."
 	icon_state = "redlongtie"
 
 /obj/item/clothing/accessory/tie/white
 	name = "white tie"
-	desc = "A neosilk clip-on tie with a white design."
+	desc = "A neosilk clip-on long tie with a white design."
 	icon_state = "whitetie"
 
 /obj/item/clothing/accessory/tie/yellow
@@ -365,8 +365,8 @@
 
 /obj/item/clothing/accessory/halfcape/ceo
 	name = "CEOs holo-mantle"
-	desc = "A fancy holo-mantle made from light-toned silk and bearing the rank markings of the Prime. Fine alabaster silks and gold trim, despite its seemingly similar\
-	 make to similar cloaks, its quality cannot be contested."
+	desc = "A fancy holo-mantle made from light-toned silk and bearing the rank markings of the Prime. Fine alabaster silks and gold trim, despite its seemingly similar \
+	make to similar cloaks, its quality cannot be contested."
 	icon_state = "half_ceo"
 
 
@@ -424,7 +424,7 @@
 
 /obj/item/clothing/accessory/job/cape/church/smallalt
 	name = "red Absolutists cloak"
-	icon_state = "churchcloakblack"
+	icon_state = "churchcloakred"
 	desc = "A sleek, luxurious cloak with red trim."
 
 /obj/item/clothing/accessory/job/cape/ironhammer
@@ -695,6 +695,17 @@
 
 /*Scarves*/
 
+/obj/item/clothing/accessory/scarf
+	name = "striped red scarf"
+	desc = "A striped red scarf."
+	icon_state = "stripedredscarf"
+	item_state = "stripedredscarf"
+	body_parts_covered = FACE
+	item_flags = FLEXIBLEMATERIAL
+	w_class = ITEM_SIZE_SMALL
+	gas_transfer_coefficient = 0.90
+	price_tag = 50
+
 /obj/item/clothing/accessory/scarf/black
 	name = "black scarf"
 	desc = "A stylish black scarf."
@@ -809,11 +820,6 @@
 	desc = "A blue neck scarf."
 	icon_state = "blue_scarf"
 	item_state = "blue_scarf"
-	body_parts_covered = FACE
-	item_flags = FLEXIBLEMATERIAL
-	w_class = ITEM_SIZE_SMALL
-	gas_transfer_coefficient = 0.90
-	price_tag = 50
 
 /obj/item/clothing/accessory/scarf/checkered
 	name = "checkered neck scarf"
@@ -851,12 +857,6 @@
 	icon_state = "stripedpurplescarf"
 	item_state = "stripedpurplescarf"
 
-/obj/item/clothing/accessory/scarf
-	name = "striped red scarf"
-	desc = "A striped red scarf."
-	icon_state = "stripedredscarf"
-	item_state = "stripedredscarf"
-
 /obj/item/clothing/accessory/ninjascarf /*Omitted from scarf selection because it's more of a costume piece.*/
 	name = "ninja scarf"
 	desc = "A stealthy, ominous scarf."
@@ -865,71 +865,75 @@
 	siemens_coefficient = 0
 
 //Sprites by Michiyamenotehifunana and Occulist
-/obj/item/clothing/accessory/shemaugh
-	name = "shemaugh"
+/obj/item/clothing/accessory/shemagh
+	name = "shemagh"
 	desc = "A piece of light fabric, suited for protection in hot, arid climates."
-	icon_state = "shemaugh"
-	item_state = "shemaugh"
+	icon_state = "shemagh"
+	item_state = "shemagh"
 
-/obj/item/clothing/accessory/shemaugh/blue
-	name = "blue shemaugh"
-	icon_state = "shemaugh-blue"
-	item_state = "shemaugh-blue"
+/obj/item/clothing/accessory/shemagh/blue
+	name = "blue shemagh"
+	icon_state = "shemagh-blue"
+	item_state = "shemagh-blue"
 
-/obj/item/clothing/accessory/shemaugh/red
-	name = "red shemaugh"
-	icon_state = "shemaugh-red"
-	item_state = "shemaugh-red"
+/obj/item/clothing/accessory/shemagh/brown
+	name = "brown shemagh"
+	icon_state = "shemagh-brown"
+	item_state = "shemagh-brown"
 
-/obj/item/clothing/accessory/shemaugh/grey
-	name = "grey shemaugh"
-	icon_state = "shemaugh-grey"
-	item_state = "shemaugh-grey"
+/obj/item/clothing/accessory/shemagh/camo
+	name = "camo shemagh"
+	icon_state = "shemagh-camo"
+	item_state = "shemagh-camo"
 
-/obj/item/clothing/accessory/shemaugh/purple
-	name = "purple shemaugh"
-	icon_state = "shemaugh-purple"
-	item_state = "shemaugh-purple"
+/obj/item/clothing/accessory/shemagh/copper
+	name = "copper shemagh"
+	icon_state = "shemagh-copper"
+	item_state = "shemagh-copper"
 
-/obj/item/clothing/accessory/shemaugh/pink
-	name = "pink shemaugh"
-	icon_state = "shemaugh-pink"
-	item_state = "shemaugh-pink"
+/obj/item/clothing/accessory/shemagh/cyan
+	name = "cyan shemagh"
+	icon_state = "shemagh-cyan"
+	item_state = "shemagh-cyan"
 
-/obj/item/clothing/accessory/shemaugh/brown
-	name = "brown shemaugh"
-	icon_state = "shemaugh-brown"
-	item_state = "shemaugh-brown"
+/obj/item/clothing/accessory/shemagh/grey
+	name = "grey shemagh"
+	icon_state = "shemagh-grey"
+	item_state = "shemagh-grey"
 
-/obj/item/clothing/accessory/shemaugh/copper
-	name = "copper shemaugh"
-	icon_state = "shemaugh-copper"
-	item_state = "shemaugh-copper"
+/obj/item/clothing/accessory/shemagh/ice
+	name = "ice shemagh"
+	icon_state = "shemagh-ice"
+	item_state = "shemagh-ice"
 
-/obj/item/clothing/accessory/shemaugh/orange
-	name = "orange shemaugh"
-	icon_state = "shemaugh-orange"
-	item_state = "shemaugh-orange"
+/obj/item/clothing/accessory/shemagh/lime
+	name = "lime shemagh"
+	icon_state = "shemagh-lime"
+	item_state = "shemagh-lime"
 
-/obj/item/clothing/accessory/shemaugh/yellow
-	name = "yellow shemaugh"
-	icon_state = "shemaugh-yellow"
-	item_state = "shemaugh-yellow"
+/obj/item/clothing/accessory/shemagh/orange
+	name = "orange shemagh"
+	icon_state = "shemagh-orange"
+	item_state = "shemagh-orange"
 
-/obj/item/clothing/accessory/shemaugh/lime
-	name = "lime shemaugh"
-	icon_state = "shemaugh-lime"
-	item_state = "shemaugh-lime"
+/obj/item/clothing/accessory/shemagh/pink
+	name = "pink shemagh"
+	icon_state = "shemagh-pink"
+	item_state = "shemagh-pink"
 
-/obj/item/clothing/accessory/shemaugh/cyan
-	name = "cyan shemaugh"
-	icon_state = "shemaugh-cyan"
-	item_state = "shemaugh-cyan"
+/obj/item/clothing/accessory/shemagh/purple
+	name = "purple shemagh"
+	icon_state = "shemagh-purple"
+	item_state = "shemagh-purple"
+/obj/item/clothing/accessory/shemagh/red
+	name = "red shemagh"
+	icon_state = "shemagh-red"
+	item_state = "shemagh-red"
 
-/obj/item/clothing/accessory/shemaugh/ice
-	name = "ice shemaugh"
-	icon_state = "shemaugh-ice"
-	item_state = "shemaugh-ice"
+/obj/item/clothing/accessory/shemagh/yellow
+	name = "yellow shemagh"
+	icon_state = "shemagh-yellow"
+	item_state = "shemagh-yellow"
 
 //End of sprites by Michiyamenotehifunana and Occulist
 /*One-Off Stuff*/
@@ -1253,12 +1257,6 @@
 	icon_state = "wristwatch_fancy"
 	item_state = "wristwatch_fancy"
 
-/obj/item/clothing/accessory/bracelet/watch
-	name = "fancy watch"
-	desc = "An expensive watch with a red band wrapped around your wrist. Snazzy."
-	icon_state = "wristwatch_fancy"
-	item_state = "wristwatch_fancy"
-
 /obj/item/clothing/accessory/bracelet/watch/leather
 	name = "fancy leather watch"
 	desc = "An expensive watch with a leather brown band wrapped around your wrist. Snazzy."
@@ -1421,7 +1419,7 @@
 /obj/item/clothing/accessory/passcard/donbettyr
 	name = "Donbettyr passcard"
 	desc = "A passcard issued to citizens of Donbettyr, the homeworld of the Akula. An old, primarily ocean world with two moons and few thousand separated areas of land making up a series of islands and archipelagos."
-	icon_state = "passcard_aqua_fria"
+	icon_state = "passcard_donbettyr"
 	item_state = "badge"
 
 /obj/item/clothing/accessory/passcard/passport_sol
@@ -1441,3 +1439,11 @@
 	desc = "A passport issued to Kriosans by the Kriosan Government who are working or living on Amethyn, in the Chromin 8 system."
 	icon_state = "workvisa"
 	item_state = "kuri"
+
+/obj/item/clothing/accessory/hunter_necklace
+	name = "Fang Tooth Necklace"
+	desc = "A collection of pristine fangs taken from the prey of the hunt tied with some leather strapping."
+	icon_state = "btnecklace"
+	item_state = "btnecklace"
+	slot_flags = SLOT_MASK | SLOT_ACCESSORY_BUFFER
+	price_tag = 1500

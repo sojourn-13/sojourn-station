@@ -98,6 +98,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	. = ..()
 	files = new /datum/research(src) //Setup the research data holder.
 	SyncRDevices()
+	sync_tech() //To stop cheaters
 
 /obj/machinery/computer/rdconsole/Destroy()
 	files = null
@@ -372,7 +373,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 					can_build = min(can_build, can_build_temp)
 
 				designs_list += list(list(
-					"data" = D.ui_data(),
+					"data" = D.nano_ui_data(),
 					"id" = "\ref[D]",
 					"can_create" = can_build,
 					"missing_materials" = missing_materials,

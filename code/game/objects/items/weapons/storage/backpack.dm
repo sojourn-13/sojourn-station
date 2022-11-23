@@ -102,11 +102,11 @@
 			var/held = W.get_equip_slot()
 			if (held == slot_l_hand)
 				var/obj/item/organ/external/E = H.get_organ(BP_L_ARM)
-				E.droplimb(0, DROPLIMB_BLUNT)
+				E.droplimb(0, DISMEMBER_METHOD_BLUNT)
 				playsound(src.loc, 'sound/sanity/limb_tear_off.ogg', 100, 1)
 			else if (held == slot_r_hand)
 				var/obj/item/organ/external/E = H.get_organ(BP_R_ARM)
-				E.droplimb(0, DROPLIMB_BLUNT)
+				E.droplimb(0, DISMEMBER_METHOD_BLUNT)
 				playsound(src.loc, 'sound/sanity/limb_tear_off.ogg', 100, 1)
 		user.drop_item()
 		return
@@ -400,7 +400,7 @@
 	throw_speed = 1
 	throw_range = 4
 	max_w_class = null
-	max_storage_space = 16
+	max_storage_space = 24 //So we can hold even the biggest gun with the most attachments
 	can_hold = list(/obj/item/gun,
 		/obj/item/ammo_magazine
 		)

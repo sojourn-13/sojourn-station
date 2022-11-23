@@ -346,6 +346,7 @@
 		get_option(options_name).apply(character)
 
 	character.size_multiplier = size_multiplier
+	character.scale_effect = scale_effect
 
 /datum/preferences/proc/open_load_dialog(mob/user)
 	var/dat  = list()

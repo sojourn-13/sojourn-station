@@ -32,10 +32,11 @@
 
 /obj/machinery/telesci_inhibitor/nt_bluespace_seer/proc/lower_entropy(turf/T)
 	var/area/A = get_area(T)
-	if(A.bluespace_entropy > 0)
-		A.bluespace_entropy -= rand(5, 10)
-		update_icon()
-		is_on = FALSE
+	//This means that we can over-stablize the entropy in an area to crazy levels to prevent local stuff with higher uses as a buffer/blanket
+	A.bluespace_entropy -= rand(15, 30)
+	update_icon()
+	is_on = FALSE
+	GLOB.bluespace_entropy -= rand(10, 15)
 
 /obj/machinery/telesci_inhibitor/nt_bluespace_seer/attack_hand(mob/user as mob)
 	if(is_on)

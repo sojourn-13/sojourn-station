@@ -50,7 +50,6 @@
 	max_health = 500
 	var/health_threshold  = 40 // threshold in percent on which tool health stops dropping
 	var/lastNearBreakMessage = 0 // used to show messages that tool is about to break
-	var/isBroken = FALSE
 
 	var/force_upgrade_mults = 1
 
@@ -116,11 +115,8 @@
 
 /obj/item/tool/proc/adjustToolHealth(amount, user)
 	health = min(max_health, max(max_health * (health_threshold/100), health + amount))
-	if(!isBroken && health == 0)
+	if(health == 0)
 		breakTool()
-		isBroken = TRUE
-	else if(isBroken && health > 0)
-		isBroken = FALSE
 
 
 //Ignite plasma around, if we need it
@@ -161,17 +157,10 @@
 		src.cell = C
 		update_icon()
 		return
-
-	if(isBroken)
-		to_chat(user, SPAN_WARNING("\The [src] is broken."))
-		return
 	.=..()
 
 //Turning it on/off
 /obj/item/tool/attack_self(mob/user)
-	if(isBroken)
-		to_chat(user, SPAN_WARNING("\The [src] is broken."))
-		return
 	if(toggleable)
 		if(switched_on)
 			turn_off(user)
@@ -182,7 +171,7 @@
 	return
 
 
-/obj/item/tool/ui_data(mob/user)
+/obj/item/tool/nano_ui_data(mob/user)
 	var/list/data = list()
 
 	if(tool_qualities)
@@ -208,7 +197,7 @@
 		data["use_power_cost_max"] = initial(use_power_cost) * 10
 
 	if(use_fuel_cost)
-		data["fuel"] = reagents ? reagents.ui_data() : null
+		data["fuel"] = reagents ? reagents.nano_ui_data() : null
 		data["max_fuel"] = max_fuel
 		data["use_fuel_cost"] = use_fuel_cost
 		data["use_fuel_cost_state"] = initial(use_fuel_cost) > use_fuel_cost ? "good" : initial(use_fuel_cost) < use_fuel_cost ? "bad" : ""
@@ -236,7 +225,7 @@
 	return data
 
 /obj/item/tool/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
-	var/list/data = ui_data(user)
+	var/list/data = nano_ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -426,7 +415,7 @@
 	fail_chance = fail_chance - get_tool_quality(required_quality) - stat_modifer
 
 	// handle tool breaking
-	if(T && T.health == 0)
+	if(T && T.health <= 0)
 		T.breakTool(user)
 		return TOOL_USE_FAIL
 	else if(T && !T.health_threshold)
@@ -484,7 +473,7 @@
 		var/obj/machinery/door/airlock/AD = loc
 		AD.take_out_wedged_item()
 	playsound(get_turf(src), 'sound/effects/impacts/thud1.ogg', 50, 1 -3)
-	isBroken = TRUE
+	qdel(src)
 	return
 
 /******************************
@@ -896,16 +885,13 @@
 
 //Recharge the fuel at fueltank, also explode if switched on
 /obj/item/tool/afterattack(obj/O, mob/user, proximity)
-	// i assume tape cant be broken
-	if(isBroken)
-		to_chat(user, SPAN_WARNING("\The [src] is broken."))
-		return
 	if(use_fuel_cost)
 		if(!proximity) return
 		if((istype(O, /obj/structure/reagent_dispensers/fueltank) || istype(O, /obj/item/weldpack)) && get_dist(src,O) <= 1 && !has_quality(QUALITY_WELDING))
 			O.reagents.trans_to_obj(src, max_fuel)
 			to_chat(user, SPAN_NOTICE("[src] refueled"))
 			playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
+			update_icon()
 			return
 		else if((istype(O, /obj/structure/reagent_dispensers/fueltank) || istype(O, /obj/item/weldpack)) && get_dist(src,O) <= 1 && has_quality(QUALITY_WELDING))
 			message_admins("[key_name_admin(user)] triggered an explosion with a welding tool.")
@@ -960,9 +946,6 @@
 
 //Triggers degradation and resource use upon attacks
 /obj/item/tool/resolve_attackby(atom/A, mob/user, params)
-	if(isBroken)
-		to_chat(user, SPAN_WARNING("\The [src] is broken."))
-		return
 	.=..()
 	//If the parent return value is true, then there won't be an attackby
 	//If there will be an attackby, we'll handle it there
@@ -982,7 +965,7 @@
 			return
 		var/safety = H.eyecheck()
 		switch(safety)
-			if(FLASH_PROTECTION_MODERATE)
+			if(FLASH_PROTECTION_MINOR)
 				to_chat(H, SPAN_WARNING("Your eyes sting a little."))
 				E.damage += rand(1, 2)
 				if(E.damage > 12)
@@ -996,15 +979,12 @@
 				to_chat(H, SPAN_DANGER("Your equipment intensify the welder's glow. Your eyes itch and burn severely."))
 				H.eye_blurry += rand(12,20)
 				E.damage += rand(12, 16)
-		if(safety<FLASH_PROTECTION_MAJOR)
+		if(safety<FLASH_PROTECTION_MODERATE)
 			if(E.damage > 10)
 				to_chat(user, SPAN_WARNING("Your eyes are really starting to hurt. This can't be good for you!"))
 
 
 /obj/item/tool/attack(mob/living/M, mob/living/user, var/target_zone)
-	if(isBroken)
-		to_chat(user, SPAN_WARNING("\The [src] is broken."))
-		return
 	if((user.a_intent == I_HELP) && ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/external/S = H.organs_by_name[user.targeted_organ]

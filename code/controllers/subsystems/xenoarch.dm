@@ -22,7 +22,7 @@ SUBSYSTEM_DEF(xenoarch)
 			continue
 
 		digsite_spawning_turfs.Add(M)
-		var/digsite = get_random_digsite_type()
+		var/digsite = get_random_digsite_type(M.z)
 		var/target_digsite_size = rand(digsite_size_lower, digsite_size_upper)
 		var/list/processed_turfs = list()
 		var/list/turfs_to_process = list(M)

@@ -36,6 +36,8 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	colony_friend = TRUE
 
+	status_flags = CANWEAKEN|CANSTUN|CANPUSH
+
 /mob/living/silicon/Initialize()
 	GLOB.silicon_mob_list |= src
 	. = ..()

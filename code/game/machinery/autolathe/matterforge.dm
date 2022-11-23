@@ -71,11 +71,11 @@
 			total_mat = total_mat +  ((1 - lst[dmat]) * 10) * 2 + design_object.materials[dmat]
 		design_object.materials = list(MATERIAL_COMPRESSED_MATTER = total_mat)
 		var/datum/design/reference = SSresearch.get_design(f)
-		var/reference_icon = reference.ui_data["icon"]
+		var/reference_icon = reference.nano_ui_data["icon"]
 		if (!reference_icon)
 			continue
 		design_object.AssembleDesignUIData()
-		design_object.ui_data["icon"] = reference_icon
+		design_object.nano_ui_data["icon"] = reference_icon
 		files.Add(design_object)
 	qdel(c)
 	return files
@@ -99,7 +99,7 @@
 
 	return data
 
-/obj/machinery/matter_nanoforge/ui_data()
+/obj/machinery/matter_nanoforge/nano_ui_data()
 	var/list/data = list()
 
 	data["have_materials"] = have_materials
@@ -119,12 +119,12 @@
 
 	var/list/L = list()
 	for(var/datum/design/d in design_list)
-		L.Add(list(d.ui_data))
+		L.Add(list(d.nano_ui_data))
 	data["designs"] = L
 
 
 	if(current_design)
-		data["current"] = current_design.ui_data
+		data["current"] = current_design.nano_ui_data
 		data["progress"] = progress
 
 	var/list/Q = list()
@@ -132,7 +132,7 @@
 
 	for(var/i = 1; i <= queue.len; i++)
 		var/datum/design/picked_design = queue[i]
-		var/list/QR = picked_design.ui_data
+		var/list/QR = picked_design.nano_ui_data
 
 		QR["ind"] = i
 
@@ -154,7 +154,7 @@
 	return data
 
 /obj/machinery/matter_nanoforge/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	var/list/data = ui_data(user, ui_key)
+	var/list/data = nano_ui_data(user, ui_key)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -331,8 +331,8 @@
 					return //Prevents people from shoving in ammo to get matter
 
 				if(istype(O, /obj/item/ammo_casing))
-					return //Prevents people from shoving in ammo to get matter 
-					
+					return //Prevents people from shoving in ammo to get matter
+
 				if(istype(O, /obj/item/stack))
 					var/obj/item/stack/material/stack = O
 					total_material *= stack.get_amount()
@@ -631,7 +631,7 @@
 	lst[MATERIAL_COMPRESSED_MATTER] = 1 //we make this!
 
 /obj/machinery/matter_nanoforge/proc/check_user(mob/user)
-	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, STAT_LEVEL_EXPERT))
+	if(user.stats?.getPerk(PERK_HANDYMAN))
 		return TRUE
 	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
 	return FALSE

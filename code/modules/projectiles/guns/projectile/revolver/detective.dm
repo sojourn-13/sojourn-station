@@ -2,6 +2,7 @@
 	name = "\"Havelock\" revolver"
 	desc = "A cheap H&S J-frame revolver, simple, reliable, uses 9mm."
 	icon = 'icons/obj/guns/projectile/detective.dmi'
+	fire_sound = 'sound/weapons/guns/fire/9mm_revolver.ogg'
 	icon_state = "detective"
 	drawChargeMeter = FALSE
 	w_class = ITEM_SIZE_SMALL

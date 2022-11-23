@@ -1,6 +1,6 @@
 // Slime limbs.
 /obj/item/organ/external/slime
-	dislocated = -1
+	nerve_struck = -1
 	brute_mod = 1.15
 	burn_mod = 1.15
 
@@ -13,6 +13,6 @@
 	var/raw_efficiency = 300
 	limb_efficiency = round(((raw_efficiency/(240+((2*raw_efficiency)/10))) * 100)) //Diminishing returns as total limb efficiency increases.
 
-/obj/item/organ/external/slime/droplimb(var/clean, var/disintegrate = DROPLIMB_EDGE, var/ignore_children = null)
-	disintegrate = DROPLIMB_BLUNT
+/obj/item/organ/external/slime/droplimb(var/clean, var/disintegrate = DISMEMBER_METHOD_EDGE, var/ignore_children = null)
+	disintegrate = DISMEMBER_METHOD_BLUNT
 	..()

@@ -50,7 +50,7 @@
 
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
-	drop_items = list(/obj/item/gun/projectile/clarissa/makarov)
+	drop_items = list(/obj/item/gun/projectile/makarov)
 	faction = "excelsior"
 
 /mob/living/carbon/superior_animal/human/excelsior/handle_breath(datum/gas_mixture/breath) //we have are own air supplies

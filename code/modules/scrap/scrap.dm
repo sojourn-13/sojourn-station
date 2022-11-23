@@ -360,6 +360,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/pack/tech_loot = 3,
 		/obj/random/pouch,
 		/obj/item/stack/material/steel/random,
+		/obj/item/stack/material/plasteel/random = 0.6,
 		/obj/item/stack/rods/random,
 		/obj/item/material/shard,
 		/obj/random/junk/nondense,
@@ -378,7 +379,6 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/junkfood = 5,
 		/obj/random/junkfood,
 		/obj/random/booze,
-		/obj/item/stack/rods/random,
 		/obj/item/material/shard,
 		/obj/random/junk/nondense,
 		/obj/random/pack/rare = 0.3
@@ -398,6 +398,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/item/toy/weapon/crossbow,
 		/obj/item/material/shard,
 		/obj/item/stack/material/steel/random,
+		/obj/item/stack/material/plasteel/random = 0.6,
 		/obj/random/junk/nondense,
 		/obj/random/pack/rare = 0.3
 	)

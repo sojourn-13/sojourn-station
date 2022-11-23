@@ -140,7 +140,7 @@
 
 //Surgery tools
 /datum/design/research/item/surgery_kit
-	name = "Advanced Sugery Kit"
+	name = "Advanced Surgery Kit"
 	desc = "A box for advanced surgery tools."
 	build_path = /obj/item/storage/firstaid/surgery/si/empty
 	category = "Medical"

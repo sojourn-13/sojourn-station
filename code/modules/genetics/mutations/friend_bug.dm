@@ -33,7 +33,7 @@
 		container.holder.faction = "sproachder"
 	else
 		container.holder.faction = "spiders"
-		
+
 
 /datum/genetics/mutation/spider_friend/onMobRemove()
 	container.holder.faction = old_faction
@@ -50,7 +50,24 @@
 /datum/genetics/mutation/sproachder_friend/onMobImplant()
 	old_faction = container.holder.faction
 	container.holder.faction = "sproachder"
-		
+
 
 /datum/genetics/mutation/sproachder_friend/onMobRemove()
+	container.holder.faction = old_faction
+
+/datum/genetics/mutation/termite_friend
+	name = "Termite Friend"
+	key = "MUTATION_TERMITE_FRIEND"
+	desc = "Causes the body to produce a light electric signal. Termites and worms can probably sense this."
+	gain_text = "Your body tingles a bit."
+	exclusive_type = MUT_TYPE_FACTION
+	instability = 50 // this can be turned into a stronger ability that allows one to summon a friendly wurm once every 10ish minutes.
+	var/old_faction
+
+/datum/genetics/mutation/termite_friend/onMobImplant()
+	old_faction = container.holder.faction
+	container.holder.faction = "wurm"
+
+
+/datum/genetics/mutation/termite_friend/onMobRemove()
 	container.holder.faction = old_faction

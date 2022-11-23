@@ -32,7 +32,7 @@
 
 /obj/item/organ_module/active/hud/welder
 	name = "embedded welder shades"
-	desc = "Thermal Goggles, that can implanted in somebody's head."
+	desc = "Advanced Welder Goggles, that can implanted in somebody's head."
 	verb_name = "Activate Welder Goggles"
 	icon_state = "weldershades"
 	holding_type = /obj/item/clothing/glasses/welding/superior/shades

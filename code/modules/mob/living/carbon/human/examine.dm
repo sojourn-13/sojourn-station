@@ -239,7 +239,7 @@
 			continue
 
 	for(var/obj/item/organ/external/temp in organs)
-		if(BP_IS_SILICON(temp))
+		if(BP_IS_PROSTHETIC(temp))
 			var/part_display_name
 			if(copytext(temp.name, 1, 6) == "robot")
 				part_display_name = "\a [temp]"
@@ -266,8 +266,8 @@
 				is_bleeding["[temp.name]"] = "<span class='danger'>[His] [temp.name] is bleeding!</span><br>"
 		else
 			wound_flavor_text["[temp.name]"] = ""
-		if(temp.dislocated == 2)
-			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.joint] is dislocated!</span><br>"
+		if(temp.nerve_struck == 2)
+			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.joint] is dangling uselessly!</span><br>"
 		if(((temp.status & ORGAN_BROKEN) && temp.brute_dam > temp.min_broken_damage) || (temp.status & ORGAN_MUTATED))
 			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.name] is mangled!</span><br>"
 		if(temp.germ_level > INFECTION_LEVEL_ONE && temp.germ_level < INFECTION_LEVEL_TWO)//Occulus Edit: Infection status on examine

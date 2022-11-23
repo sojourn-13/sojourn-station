@@ -368,6 +368,21 @@
 	anchored = 1
 	reagent_flags = OPENCONTAINER
 	var/busy = 0 	//Something's being washed at the moment
+	var/reagent_id = "water"
+
+//Inspired by TG plumming
+	var/limited_reagents = TRUE
+	var/amount_of_reagents = 200
+	var/max_amount = 200
+	var/refill_rate = 0.5
+
+/obj/structure/sink/New()
+	..()
+	START_PROCESSING(SSobj, src)
+
+/obj/structure/sink/Process()
+	if(max_amount >= amount_of_reagents)
+		amount_of_reagents += refill_rate
 
 /obj/structure/sink/MouseDrop_T(var/obj/item/thing, var/mob/user)
 	. = ..()
@@ -398,6 +413,10 @@
 	if(!Adjacent(user))
 		return
 
+	if(amount_of_reagents < 40 && limited_reagents)
+		to_chat(user, SPAN_WARNING("The water presser seems to low to wash with."))
+		return
+
 	if(busy)
 		to_chat(user, SPAN_WARNING("Someone's already washing here."))
 		return
@@ -412,6 +431,7 @@
 
 	if(!Adjacent(user)) return		//Person has moved away from the sink
 
+	amount_of_reagents -= 40
 	user.clean_blood()
 	if(ishuman(user))
 		user:update_inv_gloves()
@@ -426,9 +446,17 @@
 
 	var/obj/item/reagent_containers/RG = O
 	if (istype(RG) && RG.is_refillable())
-		RG.reagents.add_reagent("water", min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
-		user.visible_message(SPAN_NOTICE("[user] fills \the [RG] using \the [src]."),SPAN_NOTICE("You fill \the [RG] using \the [src]."))
-		playsound(loc, 'sound/effects/watersplash.ogg', 100, 1)
+		var/amount_to_add = min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)
+		if(amount_to_add > amount_of_reagents)
+			amount_to_add = amount_of_reagents
+		if(amount_of_reagents)
+			RG.reagents.add_reagent(reagent_id, amount_to_add)
+			user.visible_message(SPAN_NOTICE("[user] fills \the [RG] using \the [src]."),SPAN_NOTICE("You fill \the [RG] using \the [src]."))
+			playsound(loc, 'sound/effects/watersplash.ogg', 100, 1)
+			if(limited_reagents)
+				amount_of_reagents -= amount_to_add
+		else
+			to_chat(user, SPAN_WARNING("The sink seems to be out of presser"))
 		return 1
 
 	else if (istype(O, /obj/item/tool/baton))
@@ -460,9 +488,16 @@
 
 	to_chat(usr, SPAN_NOTICE("You start washing \the [I]."))
 
+	if(amount_of_reagents < 40)
+		to_chat(user, SPAN_WARNING("The water presser seems to low to wash with."))
+		return
+
 	busy = 1
 	sleep(40)
 	busy = 0
+
+	if(limited_reagents)
+		amount_of_reagents -= 40
 
 	if(user.loc != location) return				//User has moved
 	if(!I) return 								//Item's been destroyed while washing
@@ -482,6 +517,19 @@
 			to_chat(user, SPAN_NOTICE("You empty the [O] into the [src]."))
 
 
+/obj/structure/sink/fountain
+	name = "water fountain"
+	desc = "A small fountain of polished stone that has a small pump at the bottom which helps pump out fresh water."
+	icon_state = "BaptismFont_Water"
+	refill_rate = 2
+
+/obj/structure/sink/basion
+	name = "water basion"
+	desc = "A deep basin of polished stone that has been pre-filled with fresh water."
+	icon_state = "BaptismFont_Water"
+	limited_reagents = FALSE
+	refill_rate = 200
+
 /obj/structure/sink/kitchen
 	name = "kitchen sink"
 	desc = "A HV-11B sink. Used for washing the hands and face, and utensils."
@@ -491,6 +539,8 @@
 	name = "puddle"
 	desc = "A puddle of still water. Great for splashing others."
 	icon_state = "puddle"
+	limited_reagents = FALSE
+	refill_rate = 200
 
 /obj/structure/sink/puddle/attack_hand(mob/M as mob)
 	icon_state = "puddle-splash"

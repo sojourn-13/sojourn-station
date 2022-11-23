@@ -25,19 +25,16 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/m41_reload.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/m41_cocked.ogg'
-	zoom_factor = 0.6
-	var/current_zoom_factor = 0.6
+	zoom_factors = list(0.6, 1.4, 2)
 	init_recoil = HMG_RECOIL(0.2)
 	serial_type = "Hunt Inc"
+	action_button_name = "Switch zoom level"
+	action_button_proc = "switch_zoom"
 
 	gun_tags = list(GUN_PROJECTILE, GUN_SIGHT, GUN_MAGWELL, GUN_SILENCABLE)
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY)
-
-/obj/item/gun/projectile/automatic/survivalrifle/examine(mob/user)
-	..()
-	to_chat(user, "<span class='info'>To adjust the scope CtrlClick.</span>")
 
 /obj/item/gun/projectile/automatic/survivalrifle/Initialize()
 	. = ..()
@@ -75,28 +72,3 @@
 	if(ammo_magazine)
 		add_overlay("ammo-[ammo_magazine.max_ammo]")
 
-/obj/item/gun/projectile/automatic/survivalrifle/CtrlClick(mob/user)
-	..()//COMSIG sending
-	if(zoom)
-		zoom()
-		to_chat(user, SPAN_NOTICE("You look up from the scope to adjust it."))
-	if(!can_interact(user) && !do_after(user, 10))
-		return
-	switch(current_zoom_factor)
-		if(0.6)
-			zoom_factor = 1.4
-			current_zoom_factor = 1.4
-			to_chat(user, SPAN_NOTICE("You adjust the scope to moderate zoom."))
-		if(1.4)
-			zoom_factor = 2
-			current_zoom_factor = 2
-			to_chat(user, SPAN_NOTICE("You adjust the scope to high zoom."))
-		if(2)
-			zoom_factor = 0.6
-			current_zoom_factor = 0.6
-			to_chat(user, SPAN_NOTICE("You adjust the scope to low zoom."))
-
-/obj/item/gun/projectile/automatic/survivalrifle/refresh_upgrades()
-	..()
-	//Super fancy over-ride to enforce that we cant get extra zoom nor lose it via shooting it
-	zoom_factor = current_zoom_factor

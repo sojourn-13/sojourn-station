@@ -16,7 +16,7 @@
 	price_tag = 2000
 	penetration_multiplier = 1.5 //50% more ap
 	damage_multiplier = 1.1 //Payload "rifle" has a scope so fair enough
-	zoom_factor = 0.4
+	zoom_factors = list(0.4)
 	fire_delay = 12
 	init_recoil = RIFLE_RECOIL(1.8)
 	fire_sound = 'sound/weapons/guns/fire/payload_fire.ogg'
@@ -52,7 +52,6 @@
 	. = ..()
 	update_icon()
 
-
 /obj/item/gun/projectile/automatic/sbaw/admin
 	name = "\"Gloryhammer\" payload rifle"
 	desc = "An obscene tool of destruction forged by ancient gods of warfare, sowing horror when you weild this Thunder Striking Wizard Thrasher."
@@ -64,6 +63,6 @@
 	fire_delay = 0.5
 	init_firemodes = list(
 	SEMI_AUTO_NODELAY,
-	FULL_AUTO_400,
+	FULL_AUTO_300,
 	)
 	serial_type = "BlueCross"

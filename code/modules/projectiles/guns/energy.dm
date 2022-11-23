@@ -3,7 +3,7 @@
 	desc = "A basic energy-based gun."
 	icon = 'icons/obj/guns/energy/energy.dmi'
 	icon_state = "energy"
-	fire_sound = 'sound/weapons/Taser.ogg'
+	fire_sound = 'sound/weapons/energy/Taser.ogg'
 	fire_sound_text = "laser blast"
 
 	init_recoil = HANDGUN_RECOIL(0.1)
@@ -192,7 +192,7 @@
 		return
 	..()
 
-/obj/item/gun/energy/ui_data(mob/user)
+/obj/item/gun/energy/nano_ui_data(mob/user)
 	var/list/data = ..()
 	data["charge_cost"] = charge_cost
 	var/obj/item/cell/C = get_cell()

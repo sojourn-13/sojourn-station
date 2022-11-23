@@ -27,6 +27,7 @@
 /obj/item/organ/internal/stomach/improved
 	name = "improved stomach"
 	desc = "A bottomless pit with extra bottoms tacked on."
+	icon_state = "endless_stomach"
 	organ_efficiency = list(OP_STOMACH = 150)
 	price_tag = 1150
 

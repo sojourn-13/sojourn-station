@@ -2,7 +2,7 @@
 /obj/item/book/manual/excavation
 	name = "Out on the Dig"
 	icon_state = "excavation"
-	author = "Professor Patrick Mason, Curator of the Antiquities Museum on Ichar VII"
+	author = "Professor Patrick Mason, Curator of the Antiquities Museum on Ichar VII, Edited by Professor Wisponellus for Nedezhda use."
 	title = "Out on the Dig"
 	dat = {"<html>
 				<head>
@@ -24,37 +24,39 @@
 					<li><a href="#Find">Finding the dig</a></li>
 					<li><a href="#Analyse">Analysing deposits</a></li>
 					<li><a href="#Excavate">Extracting your first find</a></li>
+					<li><a href="#Math">Every ones least favorite, Math</a></li>
 				</ol>
 				<br>
 
 				<h1><a name="Prep">Prepping the expedition</a></h1>
 				Every digsite I've been to, someone has forgotten something and I've never yet been to a dig that hasn't had me hiking to get to it - so gather your gear
-				and get it to the site the first time. You learn quick that time is money, when you've got a shipful of bandits searching for you the next valley over,
-				but don't be afraid to clear some space if there are any inconvenient boulders in the way.<br>
+				and get it to the site the first time. And most importantly if possible bring others. Share the workload and make an adventure that you and others can
+				talk about later. Someone capable of doing medical work, Someone capable of protecting the group and of course. Someone able to dig up finds.<br>
 				<ul>
-					<li>Floodlights (if it's dark)</li>
-					<li>Wooden trestle tables (for holding tools and finds)</li>
-					<li>Suspension field generator</li>
-					<li>Load bearing servitors (such as a mulebot, or hover-tray)</li>
-					<li>Spare energy packs</li>
+					<li>Communication Equipment (HAM radios. These are your lifelines!)</li>
+					<li>Medicinal Supplies (Someone always gets injured in someway.)</li>
+					<li>Suspension Field Generator (No field generator means little to no finds.)</li>
+					<li>Crates or Other Transport (You'll have alot to haul.)</li>
+					<li>Weapons and Ammo (You'll need it.)</li>
+					<li>Food (You will be crawling back starved without this.)
+					<li>Base Camp Equipment (Only needed if actually staying out. Power supply Solars ect.)
 				</ul><br>
-				<a href="#Contents">Contents</a>
 
 				<h1><a name="Tools">Knowing your tools</a></h1>
 				Every archaeologist has a plethora of tools at their disposal, but here's the important ones:<br>
 				<ul>
-					<li><b>Picks, pickaxes, and brushes</b> - don't underestimate the the smallest or largest in your arsenal, each one clears a different amount
-						of the rockface so each one has a use.</li>
-					<li><b>Measuring tape</b> - don't leave home without it, you can use it to measure the depth a rock face has been excavated to.</li>
-					<li><b>GPS locator</b> - knowing where you are is the first step to not be lost.</li>
+					<li><b>Picks and pickaxes</b> - The bread and butter of your digging utensils. The big one works well on digging through rocks. While
+					The small one works well on actually excavating things.</li>
+					<li><b>Measuring tape</b> - don't leave home without it, you can use it to measure the depth you or someone else has dug.</li>
+					<li><b>GPS</b> - helps others to find you if something bad happens.</li>
 					<li><b>Core sampler</b> - use this to take core samples from rock faces, which you can then run to the lab for analysis.</li>
-					<li><b>Depth scanner</b> - uses X-ray diffraction to locate anomalous densities in rock, indicating archaeological deposits or mineral veins.
+					<li><b>Depth scanner</b> - uses X-ray diffraction to locate anomalous densities in rock, indicating archaeological deposits.
 						Comes with a handy reference log containing coordinates and time of each scan.</li>
 					<li><b>Alden-Saraspova counter</b> - uses a patented application of Fourier Transform analysis to determine the difference between background and
 						exotic radiation. Use it to determine how far you are from anomalous energy sources.</li>
-					<li><b>Radio beacon locator</b> - leave a beacon at an item of interest, then track it down later with this handy gadget. Watch for interference from other
-						devices though.</li>
-					<li><b>Flashlight or portable light source</b> - Self explanatory, I hope.</li>
+					<li><b>Optical Mesons</b> - YOU WILL WANT THESE. These allow you to see far into the rocks. Helps to find the markings that stand out.
+					Without these your basically digging blind till your right up on a find. They take small battery cells.</li>
+					<li><b>Flashlight, floodlights or portable light source</b> - Self explanatory, I hope.</li>
 					<li><b>Environmental safety gear</b> - This one's dependent on the environment you're working in, but enclosed footwear and a pack of internals
 						could save your life.</li>
 					<li><b>Anomaly safety gear</b> - A biosealed and catalysis-resistant suit along with eye shielding, tinted hood, and non-reactive disposable gloves are
@@ -62,49 +64,72 @@
 					<li><b>Personal defence weapon</b> - Never know what you'll find on the dig: pirates, natives, ancient guardians, carnivorous wildlife...
 						it pays in blood to be prepared.</li>
 				</ul><br>
-				<a href="#Contents">Contents</a>
 
 				<h1><a name="Find">Finding the dig</a></h1>
-				Wouldn't be an archaeologist without their dig, but everyone has to start somewhere. Here's a basic procedure I go through when cataloguing a new planet:<br>
+				Wouldn't be an archaeologist without their dig, but everyone has to start somewhere.<br>
 				<ul>
-					<li><b>Get in touch with the locals</b> (in particular geologists, miners, and farmers) - Never know what's been turned up by accident, then left to
-						gather dust on a shelf.</li>
-					<li><b>Check the obvious areas first</b> - even if you're pressed for time, these ones are the generally easiest to search, and the most likely targets
-						of your rivals.</li>
-					<li><b>Do some prospecting</b> - the earth mother isn't in the habit of displaying her secrets to the world (although sometimes you get lucky).
-						Drop a shaft and clear away a bit of surface rock here and there, you never know what might be lurking below the surface.</li>
+					<li>Double <b>check your gear</b> then triple check it. Digs are a long walk away. Its not fun to find out you forgot something.</li>
+					<li><b>Check with others</b> to see if someone would like to come with for expiditions outside. Less likly to happen when working the mines.</li>
+					<li>Make sure to <b>notify your department</b> at the least that your heading out. Always let someone know where you are going.</li>
+					<li><b>Do some digging.</b> - the earth mother isn't in the habit of displaying her secrets to the world (although sometimes you get lucky).
+						Dig and clear away a bit of surface rock here and there, you never know what might be lurking below the surface.</li>
 					<li><b>Tips on unearthing a deposit</b> - How do you know when you're golden? Look for telltale white strata that looks strange or out of place, or if
 						something has broken under your pick while you're digging. Your depth scanner is your best friend, but even it can't distinguish between
 						ordinary minerals and ancient leavings, if in doubt then err on the side of caution.</li>
 				</ul><br>
-				<a href="#Contents">Contents</a>
 
 				<h1><a name="Analyse">Analysing the contents of a dig</a></h1>
-				You've found some unusual strata, but it's not all peaches from here. No archaeologist ever managed to pull a bone from the earth without doing thorough
-				chemical analysis on every two meters of rock face nearby.<br>
+				You've found some unusual strata, but it's not all peaches from here. This is where most xenoarcheologists find trouble their first few times.<br>
 				<ul>
-					<li><b>Take core samples</b> - Grab a rock core for every 4m^2.</li>
+					<li><b>Take core samples</b> - These are taken back to anomaly research to be scanned and turned into research points.</li>
 					<li><b>Clear around any potential finds</b> - Clear away ordinary rock, leaving your prizes reachable in a clearly marked area.</li>
 					<li><b>Haul off excess rock</b> - It's easy for a dig to get cluttered, and a neat archaeologist is a successful archaeologist.</li>
-					<li><b>Don't be afraid to be cautious</b> - It's slower sometimes, but the extra time will be worth the payoff when you find an Exolitic relic.</li>
-					<li><b>Chemical analysis</b> - I won't go into detail here, but the labwork is essential to any successful extraction. Marshal your core samples, and
-						send them off to the labcoated geniuses.</li>
+					<li><b>Don't be afraid to be cautious</b> - It's slower sometimes, but the extra time will be worth the payoff when you find a relic.</li>
+					<li><b>Secure your site.</b> - Be vary careful of what is around you when your working. A voidwolf, animal or golem coming up on you when
+						your working could spell a vary bad day.</li>
+					<li><b>Double check your depth scanner</b> - The depth scanner can be misread if you start to press for speed. And you only get one to three
+						finds at any particular site. Its better to slow down and recover all the finds at a location then to break half and have to look for more.</li>
 				</ul><br>
 				<a href="#Contents">Contents</a>
 
 				<h1><a name="Excavate">Extracting your first find</a></h1>
 				<ul>
 					<li><b>Scan the rock</b> - Use a depth scanner to determine the find's depth and clearance. DON'T FORGET THESE.</li>
-					<li><b>Choose stasis field</b> - Chemical analysis on a core sample from the rock face will tell you which field is necessary to extract the find safely.</li>
-					<li><b>Setup field gen</b> - Bolt it down, choose the field, check the charge, and activate it. If you forget it, you'll wish you hadn't when that priceless
-						Uryom vase crumbles as it sees the light of day.</li>
-					<li><b>FUNCTIONAL AND SAFE digging</b> - Dig into the rock until you've cleared away a depth equal to (the anomaly depth MINUS the clearance range). The find
-						should come loose on it's own, but it will be in the midst of a chunk of rock. Use a welder or miniature excavation tool to clear away the excess.</li>
-					<li><b>FANCY AND SPEEDY digging</b> - Dig into the rock until you've cleared away a depth equal to the anomaly depth, but without any of your strokes
-						entering the clearance range.</li>
-					<li><b>The big find</b> - Sometimes, you'll chance upon something big, both literally and figuratively. Giant statues and functioning remnants of Precursor
-						technology are just as exciting, to the right buyers. If your digging leaves a large boulder behind, dig into it normally and see if anything's hidden
-							inside.</li>
+					<li><b>Choose stasis field</b> - The suspension field generator should be wrenched into place, facing the find and set to the appropriate field.
+						A book on which setting is for which material type is provided by the lockers in the lower outpost.</li>
+					<li><b>Do the math</b> - Here comes where most people have issues. The math. I will further explain it below in the next section. Please
+						double check your math if you feel it might be off. You only get once chance at digging finds out.</li>
+					<li><b>Digging to the bubble</b> - finds are generally in a softer bubble that you will dig to. The first section of math should bring you to this.</li>
+					<li><b>Bracing the bubble. Getting the find.</b> - The suspension field will have to be turned on for this part. Once on, you want to dig the rest of
+						the way to the anomaly. THIS MUST BE DONE IN ONE SHOT. If you don't do it in one shot you will get a strange rock or worse. Break the find.</li>
+					<li><b>The dangerous ones.</b> - Sometimes, you'll chance upon something big, both literally and figuratively. Giant statues and functioning remnants of Precursor
+						technology are just as exciting, to the right buyers. If your digging leaves a large boulder behind, dig into it bit by bit. But wear
+						your anomaly suit and get ready. Anomalies can go off from the air once dug up.</li>
+				</ul><br>
+
+				<h1><a name="Maths">Every ones least favorite, Math</a></h1>
+				<ul>
+					<li><b>The first dig</b> - The formula for the overall process is below. You might have to look at the page a little differently to see it.</li>
+					<li>(Find Depth - Depth Dug - Clerance)</li>
+					<li>___________________________________</li>
+					<li>------Divide the top part by 2-----</li>
+					<li><b>The second dig</b> - For this part, The suspension field should be set and on. You'll dig this, then turn the field off.</li>
+					<li>--Clerance---</li>
+					<li>_____________</li>
+					<li>-Divide by 2-</li>
+					<li><b>But why?</b> - So why do we use this formula you might ask? Well lets go over it bit by bit for understanding.</li>
+					<li><b>Depth</b> -  Depth of the find is how far the object we are trying to dig out is.</li>
+					<li><b>Dug Depth</b> - Is how far we dug. Use the tape measure to find this one out.</li>
+					<li><b>Clearance</b> - Is how big the bubble of soft material around the find is. We don't want it collapsing so we dig to this part,
+						THEN dig the bubble itself only after we have started the suspension field.</li>
+					<li><b>But why do we divide?</b> - All data on our depth scanner comes in CM. But the smallest amount we can dig with the pick is 2cm
+						So to make sure we don't dig to far with the picks. We divide by two. Sense each "use" of the pick removes 2cm at a time.</li>
+					<li><b>OH NO I MESSED UP!</b> - Sometimes you'll do your math wrong. It happens. If you went to far you might have broken your find.
+						Not far enough or attempting to do two seperate digs into the bubble and you'll get a strange rock.
+						Using a welder on it still might save it! But it could also crumble away. Wont know till you try.</li>
+					<li><b>But wait theres more!</b> - If you dig out multiple finds and it suddenly shows something weird at 200 depth. Congrads.
+						You found a anomaly! Dig to 200CM and it should break into a boulder. Excavate 2cm by 2cm till it crumbles away to reveal your
+						potential death. Seriously. Wear your anomaly suit for this.</li>
 				</ul><br>
 				<a href="#Contents">Contents</a>
 
@@ -141,10 +166,17 @@
 
 				<h1><a name="Prep">Knowing your tool</a></h1>
 				The suspension field is quite the bulky tool. Hated or loved by many, it's a critical piece for us to do xenoarch correctly.
-				The suspension field has large bulky legs that we wrench into place. On top of having to make sure we have it facing the
-				right direction there's also the settings on it. It also requires power, but they should have a large cell in it to begin with
-				Of course you might have to replace that cell at some point too. Overall, it's a complicated piece with a lot of value.
-				In my workplace we only have two of them. So, if your workplace is like mine, make sure to not lose them to the wildlife. <br>
+				Xenoarch tends to be divided into types of actual finds. Our normal finds. Which we will simply continue to call such. And
+				anomalies, which can be far more dangerous and due to not needing a suspension field wont be covered in this guide.
+
+				The suspension field generator is capable of producing a net like field that holds things in place. We use this to keep our finds
+				from collapsing in on itself while we finish the final part of digging it out. To accomplish this we must understand how we can interact
+				with our equipment. The generator itself can be wrenched into place. And is powered by a large cell that it should have prepped inside
+				at the beginning of the shift. Its locked to various ID's and will have to be swipped by your ID to unlock it. And finally, its got alot
+				of various settings when unlocked. We will cover those below.
+				Overall, it's a complicated piece with a lot of value.
+				In my workplace we only have three of them. So, if your workplace is like mine, make sure to not lose them to the wildlife.
+				Normally we keep two of them below ground near anomaly research's mine entrance. And one uptop by expidition prep.<br>
 				<ul>
 					<li>Heavy and Bulky.</li>
 					<li>Requires wrench to get legs into place.</li>
@@ -157,11 +189,11 @@
 
 				<h1><a name="Setup">Setting up your generator</a></h1>
 				Now let's assume you dragged that bulky generator all the way out to your digsite. Congrats, it's heavy.
-				But now we have to get it against the dig itself. Make sure you have space for both it and you. You'll
-				have to dig a little more once its turned on. And of course, it should be facing the dig. Once it's
-				against the dig and facing it, just wrench the legs down and into place. It should be secure now. Then
-				Swipe your ID to unlock the device. It should give a whole bunch of options that will make newer
-				archeologist's heads spin.<br>
+				But now we have to get it against the dig itself. Make sure you have space for both the suspension field
+				and you by the digsite. You'll have to dig a little more once its turned on after all. And of course, it
+				should be facing the dig. Once in place wrench its legs down to brace it. And go ahead and swipe your ID
+				to unlock it if you havn't already. Make sure to check your depth scanner for what to set it too. And
+				if your not sure which setting is which. I have notes below for that.<br>
 				<ul>
 
 				</ul><br>
@@ -174,18 +206,19 @@
 				fields of science that won't be covered on a xenoarch focused setup guide. Please take your time to learn these. Eventually you
 				won't even need a book to refrence!<br>
 				<ul>
-					<li><b>Trace Organic Cells</b> - We use a Diffracted Carbon Dioxide Laser.</li>
-					<li><b>Long Exposure Particles</b> - We slow the particles down with a Potassium Refrigerant Cloud.</li>
-					<li><b>Crystalline Structures</b> - Trace around the crystals with a Nitrogen Tracer Field.</li>
-					<li><b>Metallic Derivative</b> - Make sure you don't mix the two metals up. Derivative takes Mercury Dispersion Waves.</li>
-					<li><b>Metallic Composite</b> - Make sure you don't mix the two metals up. Iron Wafer Conduction for composites.</li>
-					<li><b>Unknown</b> - If you picked up unknown then something is normally wrong. Make sure to make a note for Mkne. Nothing works here.</li>
+					<li><b>Trace Organic Cells</b> - We use a Diffracted <b>Carbon Dioxide Laser</b>.</li>
+					<li><b>Long Exposure Particles</b> - We slow the particles down with a <b>Potassium Refrigerant Cloud</b>.</li>
+					<li><b>Crystalline Structures</b> - Trace around the crystals with a <b>Nitrogen Tracer Field</b>.</li>
+					<li><b>Metallic Derivative</b> - Make sure you don't mix the two metals up. <b>Derivative takes Mercury Dispersion Waves</b>.</li>
+					<li><b>Metallic Composite</b> - Make sure you don't mix the two metals up. <b>Iron Wafer Conduction for composites</b>.</li>
+					<li><b>Unknown</b> - If you picked up unknown then something is normally wrong. Make sure to make a note for Mkne.</li>
 				</ul><br>
 				<a href="#Contents">Contents</a>
 
 				<h1><a name="End">Footnotes</a></h1>
-				After setting up and getting your settings ready, go ahead and turn it on and finish your digging. Make sure to turn it off and all when you're finished.
-				But overall, please be careful with the equipment. It's bulky and heavy and annoying to haul around, but there is only so many of them. And they are needed.
+				After setting up and getting your settings ready, go ahead and turn it on and finish your digging. Make sure to turn it off afterwards.
+				But overall, please be careful with the equipment. It's bulky and heavy and annoying to haul around,
+				but there is only so many of them. And they are needed for normal finds.
 				Eventually youll get the settings down. Its a memorization thing.<br>
 				<a href="#Contents">Contents</a>
 

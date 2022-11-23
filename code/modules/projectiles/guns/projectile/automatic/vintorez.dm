@@ -15,7 +15,7 @@
 	mag_well = MAG_WELL_RIFLE //need a new magwell type?
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 5)
 	price_tag = 1125
-	zoom_factor = 0.8 // double as IH_heavy
+	zoom_factors = list(0.8) // double as IH_heavy
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.2
 	extra_damage_mult_scoped = 0.3
@@ -25,7 +25,7 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		FULL_AUTO_400
+		FULL_AUTO_300
 		)
 	serial_type = "EXC"
 

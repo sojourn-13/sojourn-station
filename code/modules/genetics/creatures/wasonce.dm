@@ -50,6 +50,7 @@ Has ability of every roach.
 	mob_size =  3  // The same as Hivemind Tyrant
 	status_flags = 0
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
+	phaser = TRUE //WERE REALLLLL
 
 	life_cycles_before_sleep = 3000 //Keep this awake for longer than the regular mob.
 
@@ -127,7 +128,7 @@ Has ability of every roach.
 				L.visible_message(SPAN_DANGER("\the [src] uses its mass to knock over \the [L]!"))
 	. = ..()
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce/death(gibbed, deathmessage = "shreeks in its death as it voilently mutate into a explostion of gibs!")
+/mob/living/carbon/superior_animal/psi_monster/wasonce/death(gibbed, deathmessage = "shrieks in its death as it violently bursts into a shower of gibs!")
 	for(var/mob/living/drop_victim in captives)
 		drop_victim.loc = get_turf(src)
 	captives = list()

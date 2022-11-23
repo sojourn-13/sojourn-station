@@ -15,7 +15,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunt_master
 	health_modifier = 15
 
-	perks = list(/datum/perk/job/butcher)
+	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb)
 	access = list(access_huntmaster, access_hunter)
 
 	stat_modifiers = list(
@@ -27,9 +27,9 @@
 		STAT_COG = 0
 	)
 	playtimerequired = 1200
-	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As the hunt \
-	master your job is to lead your fledgling hunters on expeditions and generally work towards keeping them alive while thriving in your lodge. You are not nearly as well \
-	equipped as the colony is, but special training by the lodge has given you the ability to live off the land."
+	description = "You are not part of the colony, at least currently, having decided to take a shift with the local Lodge Hunters either temporarily or permanently. As the Hunt \
+	Master your job is to lead your fledgling hunters on expeditions and generally work towards keeping them alive while thriving in your lodge. You are not nearly as well \
+	equipped as the colony is, but special training by the Lodge has given you the ability to live off the land."
 
 	duties = "Keep your hunters alive, ensuring they don't get killed by the various dangerous fauna.<br>\
 		Ensure all of your hunters are equipped and working properly in teams.<br>\
@@ -69,9 +69,9 @@
 		STAT_COG = 0
 	)
 
-	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As a lodge hunter \
-	your primary work is both as an animal rancher and big game hunter. Expeditions should be prepared for using whatever you can craft and make with your fellow hunters. Good lodge members \
-	work as a team under the direction of the hunt master or if present the lodge matriarch. An expert lodge hunter reads the lodge codex for the do's and dont's."
+	description = "You are not part of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As a Lodge Hunter \
+	your primary work is both as an animal rancher and big game hunter. Expeditions should be prepared for using whatever you can craft and make with your fellow hunters. Good Lodge members \
+	work as a team under the direction of the Hunt Master or if present the Lodge Matriarch. An expert Lodge Hunter reads the Lodge codex for the do's and dont's."
 
 	duties = "Care for, feed, and raise your various animals to harvest supplies and food.<br>\
 		Work with your fellow hunters to ensure you can take down dangerous fauna.<br>\
@@ -108,10 +108,10 @@
 		STAT_COG = 10
 	)
 
-	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As a lodge herbalist \
-	your primary work is both as gardener and field medic for the lodge. Expeditions should be prepared for using whatever you can craft and make with your fellow hunters. Good lodge members \
-	work as a team under the direction of the hunt master or if present the lodge matriarch. An expert lodge hunter reads the lodge codex for the do's and dont's. While hunters are more combat \
-	focused, your purpose as an herbalist is to attend to the medical needs of your lodge, but additional skills as a crafter, gardener, and chemist are quite handy!"
+	description = "You are not part of the colony, at least currently, having decided to take a shift with the local Lodge Hunters either temporarily or permanently. As a Lodge Herbalist \
+	your primary work is both as gardener and field medic for the lodge. Expeditions should be prepared for using whatever you can craft and make with your fellow hunters. Good Lodge members \
+	work as a team under the direction of the Hunt Master or if present the Lodge Matriarch. While hunters are more combat focused, your purpose as an herbalist is to attend to the medical needs of your lodge, \
+	but additional skills as a crafter, gardener, and chemist are quite handy!"
 
 	duties = "Grow plants and harvest them for their medical reagents using your primitive chem lab.<br>\
 		Work as a medic for your lodge, keeping people alive and patching them up.<br>\

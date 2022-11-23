@@ -645,7 +645,7 @@
 /obj/item/ammo_magazine/heavy_rifle_408
 	name = "heavy rifle magazine"
 	icon_state = "hrifle"
-	desc = "A 20 round magazine marked for 8.6x70mm Heavy Rifle."
+	desc = "A 14 round magazine marked for 8.6x70mm Heavy Rifle."
 	origin_tech = list(TECH_COMBAT = 2)
 	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
@@ -653,7 +653,7 @@
 	caliber = CAL_HRIFLE
 	matter = list(MATERIAL_STEEL = 4)
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
-	max_ammo = 20
+	max_ammo = 14
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/heavy_rifle_408/empty
@@ -726,8 +726,8 @@
 	icon_state = "10x24"
 	initial_ammo = 0
 
-/obj/item/ammo_magazine/rifle_10x24
-	name = "light rifle magazine"
+/obj/item/ammo_magazine/smg_10x24 // Refactors as it's not intended for a rifle but rather the Spec Ops.
+	name = "high-capacity box magazine"
 	desc = "A 40 round magazine marked for 10x24mm rounds."
 	icon_state = "rifle"
 	mag_type = MAGAZINE
@@ -800,27 +800,22 @@
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/practice
 	name = "speed loader (9mm Special practice)"
-	icon_state = "slpistol_p"
 	ammo_type = /obj/item/ammo_casing/pistol_35/practice
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/hv
 	name = "speed loader (9mm Special high-velocity)"
-	icon_state = "slpistol_hv"
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/rubber
 	name = "speed loader (9mm Special rubber)"
-	icon_state = "slpistol_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/lethal
 	name = "speed loader (9mm Special hollow point)"
-	icon_state = "slpistol_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/scrap
 	name = "old speed loader (9mm Special)"
-	icon_state = "slpistol_s"
 	ammo_type = /obj/item/ammo_casing/pistol_35/scrap
 
 //////// 10mm SPEEDLOADERS //////////
@@ -848,32 +843,26 @@
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/practice
 	name = "speed loader (10mm Magnum practice)"
-	icon_state = "slmagnum_p"
 	ammo_type = /obj/item/ammo_casing/magnum_40/practice
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/highvelocity
 	name = "speed loader (10mm Magnum high-velocity)"
-	icon_state = "slmagnum_hv"
 	ammo_type = /obj/item/ammo_casing/magnum_40/hv
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/rubber
 	name = "speed loader (10mm Magnum rubber)"
-	icon_state = "slmagnum_r"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/lethal
 	name = "speed loader (10mm Magnum hollow-point)"
-	icon_state = "slmagnum_l"
 	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/scrap
 	name = "old speed loader (10mm Magnum)"
-	icon_state = "slmagnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/biomatter
 	name = "speed loader (10mm Magnum Caustic)"
-	icon_state = "slmagnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/biomatter
 
 //// 12mm speed loader ////
@@ -897,22 +886,18 @@
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/practice
 	name = "speed loader (12mm practice)"
-	icon_state = "slmagnum_p"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/practice
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber
 	name = "speed loader (12mm rubber)"
-	icon_state = "slmagnum_r"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal
 	name = "speed loader (12mm hollow-point)"
-	icon_state = "slmagnum_l"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/lethal
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/highvelocity
 	name = "speed loader (12mm high-velocity)"
-	icon_state = "slmagnum_hv"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/hv
 
 //////// RIFLE SPEEDLOADERS ////////

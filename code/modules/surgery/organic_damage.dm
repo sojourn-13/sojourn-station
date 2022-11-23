@@ -128,8 +128,6 @@
 	)
 	organ.take_damage(10, 0, sharp=TRUE)
 
-
-
 /datum/surgery_step/fix_necrosis
 	required_tool_quality = QUALITY_CUTTING
 	duration = 140

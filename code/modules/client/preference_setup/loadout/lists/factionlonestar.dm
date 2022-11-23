@@ -4,6 +4,7 @@
 	allowed_roles = list("Chief Executive Officer","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor")
 	slot = slot_w_uniform
 	sort_category = "Faction: Lonestar"
+	cost = 0
 
 /datum/gear/factionlonestar/cloakguild
 	display_name = "cloak, lonestar"

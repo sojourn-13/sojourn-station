@@ -16,7 +16,6 @@
 	//Guns and Lasers
 	/obj/item/gun/energy/laser/cult/deepmaints = 1,
 	/obj/item/gun/energy/plasma/cassad/cult/deepmaints = 1,
-	/obj/item/gun/energy/gun/martin/cult/deepmaints = 1,
 	/obj/item/gun/energy/plasma/auretian/cult/deepmaints = 1,
 	/obj/item/gun/projectile/automatic/greasegun/cult/deepmaints = 1,
 	//Tools
@@ -45,7 +44,6 @@
 	//Guns and Lasers
 	/obj/item/gun/energy/laser/cult/deepmaints = 1,
 	/obj/item/gun/energy/plasma/cassad/cult/deepmaints = 1,
-	/obj/item/gun/energy/gun/martin/cult/deepmaints = 1,
 	/obj/item/gun/energy/plasma/auretian/cult/deepmaints = 1,
 	/obj/item/gun/projectile/automatic/greasegun/cult/deepmaints = 1
 	))

@@ -171,6 +171,28 @@ Please contact me on #coderbus IRC. ~Carn x
 
 	. = ..()
 
+	var/list/scale = get_scale()
+	animate(
+		src,
+		transform = matrix().Update(
+			scale_x = scale[1],
+			scale_y = scale[2],
+			rotation = lying ? 90 : 0,
+			offset_y = lying ? -6 - default_pixel_z : 16 * (scale[2] - 1)
+		),
+		time = ANIM_LYING_TIME
+	)
+
+/mob/living/carbon/human/proc/get_scale()
+	//bastardised bay's code
+	var/mob/living/carbon/human/H = src
+	var/build_modifier = H.scale_effect
+	var/height_modifier = H.scale_effect
+	return list(
+		(1 + build_modifier * 0.01) * (tf_scale_x || 1),
+		(1 + height_modifier * 0.01) * (tf_scale_y || 1)
+	)
+
 var/global/list/damage_icon_parts = list()
 
 var/global/list/marking_cache = list()
@@ -331,10 +353,10 @@ var/global/list/wings_icon_cache = list()
 	overlays_standing[UNDERWEAR_LAYER] = null
 
 	if(form.appearance_flags & HAS_UNDERWEAR)
-		var/icon/underwear = new/icon(form.underwear_icon, "blank")
+		var/icon/underwear = new/icon(get_gender_icon(gender, "underwear"), "blank")
 		for(var/entry in worn_underwear)
 			var/obj/item/underwear/UW = entry
-			var/icon/I = new /icon(form.underwear_icon, UW.icon_state)
+			var/icon/I = new /icon(get_gender_icon(gender, "underwear"), UW.icon_state)
 			if(UW.color)
 				I.Blend(UW.color, ICON_MULTIPLY)
 			underwear.Blend(I, ICON_OVERLAY)
@@ -458,11 +480,11 @@ var/global/list/wings_icon_cache = list()
 			//Eris lacks hands and feet. This code should allow hands and feet.
 			//This exists because the sprites are separated over all limbs whereas this codebase doesn't have hands or feet.
 			//Apparently chest and groin are considered disembodied, which I otherwise used to exclude severed limbs.
-			var/valid = (part in organs_by_name) && organs_by_name[part] && ((part in BP_BASE_PARTS) || organs_by_name[part]:dislocated >= 0)
+			var/valid = (part in organs_by_name) && organs_by_name[part] && ((part in BP_BASE_PARTS) || organs_by_name[part]:nerve_struck >= 0)
 			if(!valid)
 				for(var/organ in organs_by_name)
 					var/obj/item/organ/external/O = organs_by_name[organ]
-					if(O.dislocated >= 0 && (part in O.additional_limb_parts))
+					if(O.nerve_struck >= 0 && (part in O.additional_limb_parts))
 						valid = TRUE
 						break
 			if(valid && ("[real_marking.icon_state]-[part]" in icon_states(real_marking.icon)))
@@ -661,6 +683,34 @@ mob/living/carbon/human/proc/get_wings_image()
 #define WORN_ID		"_id"
 #define WORN_MASK	"_ma"
 
+// Proc to instantly switch the user's clothing to either male or female version upon being worn
+// This is goodbye to a lot of alt style procs on clothing (and crossdressing)
+
+/mob/living/carbon/human/proc/get_gender_icon(var/g = MALE, var/slot)
+	var/list/icons = list(
+		"uniform"		= (g == MALE) ? 'icons/inventory/uniform/mob.dmi' : 'icons/inventory/uniform/mob_fem.dmi',
+		"suit"			= (g == MALE) ? 'icons/inventory/suit/mob.dmi' : 'icons/inventory/suit/mob_fem.dmi',
+		"gloves"		= 'icons/inventory/hands/mob.dmi',
+		"glasses"		= 'icons/inventory/eyes/mob.dmi',
+		"ears"			= 'icons/inventory/ears/mob.dmi',
+		"mask"			= 'icons/inventory/face/mob.dmi',
+		"hat"			= 'icons/inventory/head/mob.dmi',
+		"shoes"			= 'icons/inventory/feet/mob.dmi',
+		"misc"			= 'icons/mob/mob.dmi',
+		"belt"			= 'icons/inventory/belt/mob.dmi',
+		"s_store"		= 'icons/inventory/on_suit/mob.dmi',
+		"backpack"		= 'icons/inventory/back/mob.dmi',
+		"underwear"		= 'icons/inventory/underwear/mob.dmi'
+		)
+	return icons[slot]
+
+// Contained sprite gender icons
+/mob/living/carbon/human/proc/get_gender_icon_contained(var/g = MALE)
+	if (g == FEMALE)
+		return "_f"
+	else
+		return
+
 //vvvvvv UPDATE_INV PROCS vvvvvv
 
 /mob/living/carbon/human/update_inv_w_uniform(var/update_icons=1)
@@ -676,12 +726,12 @@ mob/living/carbon/human/proc/get_wings_image()
 			else
 				under_icon = w_uniform.icon
 
-			under_state += w_uniform.icon_state + WORN_UNDER
+			under_state += w_uniform.icon_state + WORN_UNDER + get_gender_icon_contained(gender)
 
 		else if(w_uniform.icon_override)
 			under_icon = w_uniform.icon_override
 		else
-			under_icon = form.get_mob_icon("uniform")
+			under_icon = get_gender_icon(gender, "uniform")
 
 		//determine state to use
 		if (!under_state)
@@ -1014,7 +1064,7 @@ mob/living/carbon/human/proc/get_wings_image()
 	update_wings(update_icons)
 	if( wear_suit && istype(wear_suit, /obj/item/) )
 		var/image/standing
-		var/t_icon = form.get_mob_icon("suit")
+		var/t_icon = get_gender_icon(gender, "suit")
 		var/suit_state = ""
 		if(wear_suit.contained_sprite)
 			var/state = ""
@@ -1025,7 +1075,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			else
 				t_icon = image(icon = wear_suit.icon, icon_state = state)
 
-			suit_state += wear_suit.icon_state + WORN_SUIT
+			suit_state += wear_suit.icon_state + WORN_SUIT + get_gender_icon_contained(gender)
 
 		else if(wear_suit.icon_override)
 			t_icon = wear_suit.icon_override

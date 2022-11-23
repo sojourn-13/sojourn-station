@@ -56,7 +56,7 @@
 	return
 
 
-/obj/machinery/power/eotp/ui_data(mob/user)
+/obj/machinery/power/eotp/nano_ui_data(mob/user)
 	var/list/data = list()
 	var/list/listed_armaments = list()
 	for(var/i=1 to armaments.len)
@@ -71,7 +71,7 @@
 
 
 /obj/machinery/power/eotp/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data(user, ui_key)
+	var/list/data = nano_ui_data(user, ui_key)
 
 	ui = SSnano.try_update_ui(user, eotp, ui_key, ui, data, force_open)
 	if (!ui)
@@ -134,12 +134,6 @@
 	cost = 10
 	min_cost = 5
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/mk58
-
-/datum/armament/item/disk/nt_counselor
-	name = "Disk - Serenity"
-	cost = 5
-	min_cost = 5
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/nt_counselor
 
 /datum/armament/item/disk/counselor
 	name = "Disk - Counselor"

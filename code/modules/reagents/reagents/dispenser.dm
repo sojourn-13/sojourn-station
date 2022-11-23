@@ -109,7 +109,7 @@
 	touch_met = 5
 	var/nutriment_factor = 0
 	var/strength = 10 // This is, essentially, units between stages - the lower, the stronger. Less fine tuning, more clarity.
-	var/strength_mod = 1
+	var/strength_mod = 2
 	var/toxicity = 1
 
 	var/druggy = 0
@@ -142,35 +142,35 @@
 	LEGACY_SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
 	return
 
-/datum/reagent/ethanol/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+/datum/reagent/ethanol/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustNutrition(nutriment_factor * (issmall(M) ? effect_multiplier * 2 : effect_multiplier))
-	var/strength_mod = 1
 
 	M.add_chemical_effect(CE_ALCOHOL, 1)
 
 //Tough people can drink a lot
-	var/tolerance = max(10, strength + M.stats.getStat(STAT_TGH))
+	var/tolerance = max(5, strength + (M.stats.getStat(STAT_TGH) * 0.5)) //TGH scaling is 50%
 
-	if(dose * strength_mod >= tolerance) // Early warning
-		M.make_dizzy(6) // It is decreased at the speed of 3 per tick
 
-	if(dose * strength_mod >= tolerance * 2) // Slurring
+	if(dose * strength_mod >= tolerance) // Slurring
 		M.slurring = max(M.slurring, 30)
 
-	if(dose * strength_mod >= tolerance * 3) // Confusion - walking in random directions
-		M.confused = max(M.confused, 20)
+	if(dose * strength_mod >= tolerance * 1.5) // Early warning
+		M.make_dizzy(6) // It is decreased at the speed of 3 per tick
 
-	if(dose * strength_mod >= tolerance * 4) // Blurry vision
-		M.eye_blurry = max(M.eye_blurry, 10)
+	if(dose * strength_mod >= tolerance * 2) // Confusion - walking in random directions
+		M.confused = max(M.confused, 3)
 
-	if(dose * strength_mod >= tolerance * 5) // Drowsyness - periodically falling asleep
-		M.drowsyness = max(M.drowsyness, 20)
+	if(dose * strength_mod >= tolerance * 3) // Blurry vision
+		M.eye_blurry = max(M.eye_blurry, 5)
 
-	if(dose * strength_mod >= tolerance * 7) // Pass out
-		M.paralysis = max(M.paralysis, 20)
-		M.sleeping  = max(M.sleeping, 30)
+	if(dose * strength_mod >= tolerance * 4) // Drowsyness - periodically falling asleep
+		M.drowsyness = max(M.drowsyness, 5)
 
-	if(dose * strength_mod >= tolerance * 9) // Toxic dose
+	if(dose * strength_mod >= tolerance * 5) // Pass out
+		M.paralysis = max(M.paralysis, 10)
+		M.sleeping  = max(M.sleeping, 15)
+
+	if(dose * strength_mod >= tolerance * 6) // Toxic dose
 		M.add_chemical_effect(CE_ALCOHOL_TOXIC, toxicity)
 
 
@@ -232,6 +232,7 @@
 	taste_description = "metal"
 	reagent_state = SOLID
 	color = "#353535"
+	scannable = TRUE // Helps with blood restoration, should avoid confusion with other stuff
 
 
 /datum/reagent/metal/iron/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
@@ -288,6 +289,7 @@
 	taste_description = "sweetness" //potassium is bitter in higher doses but sweet in lower ones.
 	reagent_state = SOLID
 	color = "#A0A0A0"
+	scannable = TRUE // Helps with pinpointing kidney failure
 
 /datum/reagent/metal/potassium/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()

@@ -82,11 +82,12 @@
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/headset_mar
 
-/obj/item/device/radio/headset/headset_sec/bowman
+/obj/item/device/radio/headset/headset_sec/bowman		//Wearing a Marshal bowman aids against flashbangs. Same stats otherwise.
 	name = "marshal bowman headset"
-	desc = "This headset is a premium quality headset made for only true operators! Ignore.. the ten credit price tag and the rattling noise it makes when you shake it."
+	desc = "This headset is a premium quality headset made for only true operators! Ignore.. the ten credit price tag and the rattling noise it makes when you shake it. This has a small symbol denoting its built in back-up transmitter"
 	icon_state = "sec_headset_bowman"
 	item_state = "headset"
+	adhoc_fallback = TRUE
 
 /obj/item/device/radio/headset/headset_blackshield
 	name = "blackshield radio headset"
@@ -98,10 +99,10 @@
 
 /obj/item/device/radio/headset/headset_blackshield/bowman
 	name = "blackshield bowman headset"
-	desc = "This headset is a questionable quality headset made years ago for Sol cargo poilets its hard to ingore the rattling noise when ever you turn your head to fast."
+	desc = "This headset is a questionable quality headset made years ago for Sol cargo poilets its hard to ingore the rattling noise when ever you turn your head to fast. This has a small symbol denoting its built in back-up transmitter"
 	icon_state = "bs_bowman_headset"
 	item_state = "bs_bowman_headset"
-
+	adhoc_fallback = TRUE
 
 /obj/item/device/radio/headset/radiohat_blackshield // No longer a cap, a honest to god cap with a FUNCTIONAL headset. - Seb
 	name = "blackshield radio hat"
@@ -191,8 +192,9 @@
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 
-/obj/item/device/radio/headset/heads/hos/bowman
+/obj/item/device/radio/headset/heads/hos/bowman		//Wearing a Marshal bowman aids against flashbangs. Same stats otherwise.
 	name = "warrant officer bowman headset"
+	desc = "The headset of the men who lock away your worthless lives, in a comfortable bowman style.\nThis has a small symbol denoting its built in back-up transmitter."
 	icon_state = "wo_headset_bowman"
 
 /obj/item/device/radio/headset/heads/bscom
@@ -200,6 +202,14 @@
 	desc = "The headset of the men who protects your worthless lives. This has a small symbol denoting its built in back-up transmitter."
 	icon_state = "bscom_headset"
 	item_state = "headset"
+	adhoc_fallback = TRUE
+	ks2type = /obj/item/device/encryptionkey/heads/hos
+
+/obj/item/device/radio/headset/heads/bscom/bowman
+	name = "blackshield commander bowman headset"
+	desc = "The headset of the men who protects your worthless lives, in a comfortable bowman style.\nThis has a small symbol denoting its built in back-up transmitter."
+	icon_state = "bs_bowman_headset"
+	item_state = "bs_bowman_headset"
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 

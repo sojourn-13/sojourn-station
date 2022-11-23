@@ -11,6 +11,14 @@
 		empulse(target, 1, 1)
 	return TRUE
 
+/obj/item/projectile/ion/heavy
+	name = "heavy ion bolt"
+
+/obj/item/projectile/ion/heavy/on_impact(atom/target)
+	if (!testing)
+		empulse(target, 2, 3)
+	return TRUE
+
 /obj/item/projectile/bullet/gyro
 	name = "explosive bolt"
 	icon_state = "bolter"
@@ -80,7 +88,7 @@
 
 		for(var/obj/effect/blob/B in hear(8,get_turf(src)))       		//Blob damage here
 			var/damage = round(30/(get_dist(B,get_turf(src))+1))
-			B.health -= damage
+			B.take_damage(damage)
 			B.update_icon()
 
 		new/obj/effect/sparks(src.loc)
@@ -265,15 +273,7 @@
 	damage_types = list(BURN = 16)
 	check_armour = ARMOR_MELEE
 	kill_count = 3
-	var/fire_stacks = 3
-
-/obj/item/projectile/flamer_lob/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if (!testing)
-		if(isliving(target))
-			var/mob/living/M = target
-			M.adjust_fire_stacks(fire_stacks)
-			M.IgniteMob()
+	fire_stacks = 3
 
 /obj/item/projectile/flamer_lob/Move(atom/A)
 	..()
@@ -298,7 +298,7 @@
 	luminosity_power = 1
 	luminosity_color = COLOR_LIGHTING_RED_MACHINERY //Makes it not as blindingly red
 	luminosity_ttl = 1
-	var/fire_stacks = 1
+	fire_stacks = 1
 	var/flash_range = 1
 	var/light_duration = 1800
 	var/brightness = 10
@@ -317,16 +317,6 @@
 			luminosity_color = chaose_number
 
 	..()
-
-/obj/item/projectile/bullet/flare/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if (!testing)
-		if(iscarbon(target))
-			var/mob/living/carbon/M = target
-			playsound(src, 'sound/effects/Custom_flare.ogg', 100, 1)
-			M.adjust_fire_stacks(fire_stacks)
-			M.IgniteMob()
-			src.visible_message(SPAN_WARNING("\The [src] sets [target] on fire!"))
 
 /obj/item/projectile/bullet/flare/on_impact(var/atom/A)
 	var/turf/T = flash_range? src.loc : get_turf(A)
@@ -382,6 +372,13 @@
 	impact_type = /obj/effect/projectile/line/impact
 	var/list/our_tracers
 	recoil = 2
+
+/obj/item/projectile/tether/lash
+	name = "fleshy tentral"
+	damage_types = list(BRUTE = 5)
+	nodamage = FALSE
+	stun = 2 //Horrors
+	weaken = 2 //Unspeakable
 
 /obj/item/projectile/tether/Initialize()
 	..()
@@ -451,3 +448,26 @@
 				P.pixel_y = location.pixel_y
 				P.activate()
 				our_tracers.Add(P) //this should be more performant than += since we don't need to be creating a bunch of new lists
+
+
+//OS Portable turret projectiles
+
+/obj/item/projectile/bullet/os_trurret_gauss
+	name = "ferrous slug"
+	damage_types = list(BRUTE = 15)
+	armor_penetration = 25
+	penetrating = 2
+	recoil = 30
+	step_delay = 0.4
+	sharp = TRUE	// Until all bullets are turned sharp by default
+
+/obj/item/projectile/beam/os_turret
+	name = "pulsed beam"
+	icon_state = "beam_blue"
+	damage_types = list(BURN = 15)
+	stutter = 3
+	recoil = 10
+
+	muzzle_type = /obj/effect/projectile/laser_blue/muzzle
+	tracer_type = /obj/effect/projectile/laser_blue/tracer
+	impact_type = /obj/effect/projectile/laser_blue/impact

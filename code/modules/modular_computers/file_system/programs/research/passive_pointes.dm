@@ -31,13 +31,18 @@
 		return
 	var/obj/item/computer_hardware/processor_unit/CPU = computer.processor_unit
 	var/obj/item/computer_hardware/hard_drive/HD = computer.hard_drive
+	var/obj/item/computer_hardware/hard_drive/portable/PD = computer.portable_drive
 
 	if(!istype(CPU) || !CPU.check_functionality() || !istype(HD))
 		message = "A fatal hardware error has been detected."
 		return
 
-	if(HD.used_capacity >= HD.max_capacity)
-		message = "Storage hard drive capacity error, clear space."
+	if(!istype(PD) || !PD.check_functionality())
+		message = "!!ERROR!! No Portal Data Disk! Please Insert Data Disk."
+		return
+
+	if(PD.used_capacity >= PD.max_capacity)
+		message = "Storage Data Disk capacity error, clear space."
 		return
 
 	progress += get_speed()
@@ -49,7 +54,7 @@
 		playsound(computer.loc, 'sound/machines/ping.ogg', 50, 1 -3)
 		message = "Successfully collected data points and saved metadata results."
 		var/datum/computer_file/binary/research_points/RP = new(target_progress/1000) // 1 Size = 1000 points.
-		HD.store_file(RP)
+		PD.store_file(RP)
 
 /datum/computer_file/program/point_miner/proc/reset()
 	running = FALSE
@@ -79,7 +84,7 @@
 		return 1
 
 
-/datum/nano_module/program/point_miner/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/point_miner/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
 	if(!ntnet_global)
 		return
 	var/datum/computer_file/program/point_miner/PRG = program
