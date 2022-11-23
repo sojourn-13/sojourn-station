@@ -35,7 +35,7 @@
 
 /datum/gear/armament/guncase
 	display_name = "Gun Case"
-	path = /obj/item/storage/backpack/duffelbag/guncase
+	path = /obj/item/storage/backpack/guncase
 	cost = 1
 
 /datum/gear/armament/flash
