@@ -65,6 +65,7 @@
 
 	var/message = input("", "subtle (text)") as text|null
 	if(message)
+		log_and_message_admins("Subtle verb => \"[message]\"")
 		subtle_verb(message)
 
 /mob/verb/subtle_verb(message as text)
