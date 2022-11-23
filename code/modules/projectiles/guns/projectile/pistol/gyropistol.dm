@@ -22,6 +22,9 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	serial_type = "SA"
 
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.6 // 60 vig
+
 /obj/item/gun/projectile/gyropistol/update_icon()
 	..()
 	if(ammo_magazine)

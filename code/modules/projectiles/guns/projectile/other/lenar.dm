@@ -13,6 +13,9 @@
 	price_tag = 1200
 	serial_type = "SD GmbH"
 
+	wield_delay = 1.5 SECOND
+	wield_delay_factor = 0.6 // 60 vig , heavy stuff
+
 /obj/item/gun/projectile/grenade/lenar/proc/update_charge()
 	var/ratio = loaded.len / max_shells
 	if(ratio < 0.33 && ratio != 0)

@@ -28,6 +28,9 @@
 	folding_stock = TRUE //we can fold are stocks
 	serial_type = "H&S"
 
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+
 /obj/item/gun/energy/firestorm/update_icon()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""

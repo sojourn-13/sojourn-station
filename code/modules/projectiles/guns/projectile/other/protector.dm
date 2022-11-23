@@ -23,6 +23,9 @@
 	twohanded = TRUE
 	serial_type = "Absolute"
 
+	wield_delay = 1.5 SECOND
+	wield_delay_factor = 0.6 // 60 vig , heavy stuff
+
 /* We no longer fire grenades like this. As we now use internal ammo
 /obj/item/gun/projectile/grenade/proc/load_grenade(obj/item/grenade/A, mob/user)  //For loading hand grenades, not ammo
 	if(!A.loadable)

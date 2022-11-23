@@ -88,6 +88,9 @@
 		list(mode_name="Melt", mode_desc="A heavier plasma bolt designed to melt through armor and flesh alike", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
 	)
 
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+
 /obj/item/gun/energy/plasma/super_heavy
 	name = "\"Ragefire\" Experimental Plasma Gun"
 	desc = "An \"Soteria\" brand experimental weapon that uses coolant to fire deadly plasma projectiles without needing to cool down between shots, however the gun is extremly unstable without cooling."

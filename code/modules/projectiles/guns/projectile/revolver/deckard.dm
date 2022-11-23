@@ -15,3 +15,6 @@
 	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	serial_type = "Sol Fed"
+
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.6 // 60 vig

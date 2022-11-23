@@ -23,6 +23,9 @@
 		)
 	serial_type = "Absolute"
 
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.4 // 40 vig
+
 	var/obj/item/gun/projectile/underslung_shotgun/shotgun
 	var/reload_delay = 5 // Delay between bullets when reloading from a box.
 
@@ -51,6 +54,8 @@
 	max_shells = 17
 	price_tag = 550
 	init_recoil = HANDGUN_RECOIL(0.3)// Exceptional weight helps with recoil control, but unwieldy enough to merely match the claw. -Kaz
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.6 // 60 vig
 
 /obj/item/gun/projectile/revolver/lemant/uppercut
 	name = "\"Pilgrim Hero\" kurtz revolver"
@@ -67,6 +72,8 @@
 	max_shells = 6
 	price_tag = 500
 	init_recoil = HANDGUN_RECOIL(1.3)// Massive recoil due to being a kurtz revolver without the weight to compensate for the blast. -Kaz
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.6 // 60 vig
 
 //Defined here, may be used elsewhere but for now its only used here. -Kaz
 /obj/item/gun/projectile/underslung_shotgun

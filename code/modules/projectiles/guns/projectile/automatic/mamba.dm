@@ -177,5 +177,8 @@
 		list(mode_name="semi-automatic", mode_desc = "A semi-automatic firemode.", mode_type = /datum/firemode/automatic, fire_delay=15, icon="auto"
 		))
 
+	wield_delay = 1.5 SECOND
+	wield_delay_factor = 0.4 // 40 vig to insta wield , heavy class rifle
+
 /obj/item/gun/projectile/automatic/mamba/python/Initialize()
 	. = ..()

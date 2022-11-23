@@ -34,6 +34,8 @@
 	SEMI_AUTO_NODELAY
 	)
 	serial_type = "Sol Fed"
+	wield_delay = 1.6 SECOND
+	wield_delay_factor = 0.5 // 50 vig to insta wield , heavy class battle rifle
 
 /obj/item/gun/projectile/automatic/omnirifle/update_icon()
 	..()

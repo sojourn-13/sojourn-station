@@ -25,6 +25,9 @@
 		BURST_5_ROUND
 		)
 
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.3 // 30 vig for insta wield
+
 
 //Automatic firing
 //Todo: Way more checks and safety here

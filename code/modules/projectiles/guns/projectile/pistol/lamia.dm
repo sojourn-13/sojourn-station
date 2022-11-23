@@ -21,6 +21,9 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_12MM)
 	serial_type = "H&S"
 
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.6 // 60 vig
+
 /obj/item/gun/projectile/lamia/update_icon()
 	..()
 

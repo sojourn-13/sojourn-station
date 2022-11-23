@@ -29,6 +29,9 @@
 		)
 	serial_type = "EXC"
 
+	wield_delay = 1.4 SECOND
+	wield_delay_factor = 0.4 // 40 vig to insta wield , heavy class assault rifle. Why is this 7.62 instead of 9mm? I'll never know.
+
 /obj/item/gun/projectile/automatic/vintorez/NM_colony
 	name = "\"Val\" silenced rifle"
 	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds."

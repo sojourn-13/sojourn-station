@@ -18,6 +18,8 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
 	serial_type = "H&S"
 
+	wield_delay = 0 SECOND //god it's bad
+
 /obj/item/gun/projectile/revolver/detective/update_icon()
 	..()
 

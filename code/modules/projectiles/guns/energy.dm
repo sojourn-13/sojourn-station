@@ -27,6 +27,9 @@
 	var/charge_tick = 0
 	gun_tags = list(GUN_ENERGY)
 
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+
 /obj/item/gun/energy/loadAmmoBestGuess()
 	var/obj/item/cell/chosenCell = null
 

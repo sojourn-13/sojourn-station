@@ -32,6 +32,9 @@
 	)
 	serial_type = "NM"
 
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+
 /obj/item/gun/energy/glock/update_icon()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""

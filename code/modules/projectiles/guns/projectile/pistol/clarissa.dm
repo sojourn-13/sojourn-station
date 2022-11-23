@@ -21,6 +21,8 @@
 	init_recoil = HANDGUN_RECOIL(0.2)
 	serial_type = "SA"
 
+	wield_delay = 0 SECOND
+
 /obj/item/gun/projectile/clarissa/preloaded
 
 /obj/item/gun/projectile/clarissa/preloaded/New()
@@ -68,6 +70,8 @@
 		SEMI_AUTO_NODELAY
 		)
 	serial_type = "Sol Fed"
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.2 // 20 vig
 
 /obj/item/gun/projectile/makarov/preloaded
 

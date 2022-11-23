@@ -22,6 +22,9 @@
 	serial_type = "GP"
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)
 
+	wield_delay = 1.5 SECOND
+	wield_delay_factor = 0.4 // 40 vig to insta wield , heavy class rifle
+
 /obj/item/gun/projectile/trouble_shooter/update_icon()
 	..()
 

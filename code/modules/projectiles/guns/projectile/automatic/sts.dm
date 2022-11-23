@@ -97,6 +97,8 @@
 	price_tag = 600
 	init_recoil = RIFLE_RECOIL(1.2)
 	saw_off = FALSE
+	wield_delay = 0.8 SECOND
+	wield_delay_factor = 0.2 // 20 vig for insta wield
 
 /obj/item/gun/projectile/automatic/sts/rifle
 	name = "\"STS\" battle rifle"
@@ -141,6 +143,8 @@
 		BURST_2_ROUND,
 		FULL_AUTO_300
 		)
+	wield_delay = 0.8 SECOND
+	wield_delay_factor = 0.2 // 20 vig for insta wield
 
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield
 	name = "\"STS PARA\" Blackshield rifle"
@@ -201,3 +205,5 @@
 		BURST_2_ROUND,
 		FULL_AUTO_300
 		)
+	wield_delay = 0.8 SECOND
+	wield_delay_factor = 0.2 // 20 vig for insta wield

@@ -20,6 +20,9 @@
 	can_dual = TRUE
 	serial_type = "H&S"
 
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.4 // 40 vig
+
 /obj/item/gun/projectile/revolver/rev10/update_icon()
 	..()
 	var/iconstring = initial(icon_state)

@@ -22,6 +22,9 @@
 		)
 	serial_type = "GP"
 
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.1 // 10 vig, Greyson & rare
+
 /obj/item/gun/projectile/rivet/update_icon()
 	..()
 
