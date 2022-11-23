@@ -847,6 +847,13 @@
 			else
 				message = "makes some noise to draw attention to [identifying_gender == "male" ? "himself" : identifying_gender == "female" ? "herself" : "themselves"]!"
 
+		if("zartan")
+			if(!muzzled)
+				message = "whistles a jolly good tune."
+				playsound(loc, 'sound/misc/zartan.ogg', 50, 1)
+			else
+				message = "mumbles a jolly good melody."
+
 		if("snap", "snaps")
 			m_type = 2
 			if(!restrained())
