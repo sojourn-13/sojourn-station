@@ -180,7 +180,7 @@
 	name = "\"Code RED\" Claw Energy"
 	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	Red cans are drunk faster."
-	icon_state = "claw_red"
+	icon_state = "claw_blue"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("energy_drink_monster" = 25, "sodawater" = 25, "cherryjelly" = 10)
 	volume = 60
@@ -189,7 +189,7 @@
 	name = "\"Code BLUE\" Claw Energy"
 	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	Code BLUE being counted as a mellow smooth taste that would be best cold."
-	icon_state = "claw_blue"
+	icon_state = "claw_red"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("energy_drink_monster" = 25, "sodawater" = 25, "berryjuice" = 10)
 	volume = 60
