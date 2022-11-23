@@ -47,18 +47,10 @@
 	display_name = "holy book"
 	path = /obj/item/book/manual/religion/h_book
 
-/datum/gear/pitcher
-	display_name = "insulated pitcher"
-	path = /obj/item/reagent_containers/food/drinks/pitcher
-
 /datum/gear/mug
 	display_name = "mug selection"
 	path = /obj/item/reagent_containers/food/drinks/mug
 	flags = GEAR_HAS_TYPE_SELECTION
-
-/datum/gear/neotheologybook
-	display_name = "absolutism ritual book"
-	path = /obj/item/book/ritual/cruciform
 
 /datum/gear/psi_juice
 	display_name = "cerebrix inhaler"
@@ -77,10 +69,6 @@
 /datum/gear/spaceball_pack
 	display_name = "spaceball booster pack"
 	path = /obj/item/pack/spaceball
-
-/datum/gear/vacflask
-	display_name = "vacuum flask"
-	path = /obj/item/reagent_containers/food/drinks/flask/vacuumflask
 
 /datum/gear/trackingimplanter
 	display_name = "implanter (tracking)"

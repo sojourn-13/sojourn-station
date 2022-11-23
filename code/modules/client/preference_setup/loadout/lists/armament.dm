@@ -43,11 +43,6 @@
 	path = /obj/item/device/flash
 	cost = 1
 
-/datum/gear/armament/boot_knife
-	display_name = "boot knife"
-	path = /obj/item/tool/knife/boot
-	cost = 2
-
 /datum/gear/armament/tacboot_knife
 	display_name = "tactical knife"
 	path = /obj/item/tool/knife/tacknife
@@ -57,11 +52,6 @@
 	display_name = "ritual knife"
 	path = /obj/item/tool/knife/ritual
 	cost = 3
-
-/datum/gear/armament/dagger
-	display_name = "dagger"
-	path = /obj/item/tool/knife/dagger
-	cost = 2
 
 /datum/gear/armament/dagger/family
 	display_name = "heirloom dagger"
@@ -114,22 +104,12 @@
 /datum/gear/armament/cutlass
 	display_name = "cutlass"
 	path = /obj/item/tool/sword/saber/cutlass
-	cost = 2
+	cost = 3
 
 /datum/gear/armament/machete
 	display_name = "Machete"
 	path = /obj/item/tool/sword/machete
-	cost = 2
-
-/datum/gear/armament/katana
-	display_name = "Katana"
-	path = /obj/item/tool/sword/katana
-	cost = 4 // Highest damage, same cost as the spear for balance
-
-/datum/gear/armament/spear
-	display_name = "Steel Spear"
-	path = /obj/item/tool/spear/steel
-	cost = 4
+	cost = 3
 
 /datum/gear/armament/holster/nt
 	display_name = "short sword"
