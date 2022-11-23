@@ -77,6 +77,7 @@
 	item_state = "onehammer"
 	wielded_icon = "onehammer_on"
 	switched_on_force = WEAPON_FORCE_LETHAL
+	armor_penetration = ARMOR_PEN_EXTREME // Somehow was not inheriting
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 3, MATERIAL_DIAMOND = 3)
 	price_tag = 860
@@ -181,6 +182,7 @@
 	item_state = "chargehammer0"
 	w_class = ITEM_SIZE_HUGE
 	switched_on_force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_EXTREME // On par with powered hammers
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	switched_on_qualities = list(QUALITY_HAMMERING = 60)
 	switched_off_qualities = list(QUALITY_HAMMERING = 35)

@@ -239,18 +239,23 @@ for reference:
 /obj/machinery/deployable/barrier/attackby(obj/item/W as obj, mob/user as mob)
 	if(user.a_intent == I_HELP && istype(W, /obj/item/gun))
 		var/obj/item/gun/G = W
-		G.gun_brace(user, src)
+		if(anchored == TRUE) // We need stable ground to brace our guns, wrench the barrier first!
+			G.gun_brace(user, src)
+			return
+		else
+			to_chat(user, SPAN_NOTICE("You can't brace your weapon - the [src] is not anchored down."))
 		return
+
 	if(W.GetIdCard())
 		if(allowed(user))
-			if	(emagged < 2.0)
+			if	(emagged < 2)
 				locked = !locked
 				anchored = !anchored
 				icon_state = "barrier[locked]"
-				if((locked == 1.0) && (emagged < 2.0))
+				if((locked == 1) && (emagged < 2))
 					to_chat(user, "Barrier lock toggled on.")
 					return
-				else if((locked == 0.0) && (emagged < 2.0))
+				else if((locked == 0) && (emagged < 2))
 					to_chat(user, "Barrier lock toggled off.")
 					return
 			else

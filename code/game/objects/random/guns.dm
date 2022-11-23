@@ -166,7 +166,9 @@
 				/obj/item/gun/projectile/boltgun/handmade = 1,\
 				/obj/item/gun/projectile/shotgun/slidebarrel = 1,\
 				/obj/item/gun/energy/laser/makeshift = 1,\
-				/obj/item/gun/energy/lasersmg = 1))
+				/obj/item/gun/energy/lasersmg = 1,\
+				/obj/item/gun/projectile/automatic/ak47/makeshift = 1,\
+				/obj/item/gun/projectile/automatic/luty = 1))
 
 /obj/random/gun_handmade/willspawn
 	name = "will spawn random handmade gun weapon"

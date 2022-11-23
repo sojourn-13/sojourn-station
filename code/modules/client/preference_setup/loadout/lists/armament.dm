@@ -5,6 +5,7 @@
 	display_name = "Loaded Clarissa .35 Auto pistol (Rubber)"
 	path = /obj/item/gun/projectile/clarissa/preloaded
 	sort_category = "Armament"
+	slot = slot_in_backpack
 	cost = 1
 
 /datum/gear/armament/ammo
@@ -119,6 +120,11 @@
 	display_name = "Machete"
 	path = /obj/item/tool/sword/machete
 	cost = 2
+
+/datum/gear/armament/katana
+	display_name = "Katana"
+	path = /obj/item/tool/sword/katana
+	cost = 4 // Highest damage, same cost as the spear for balance
 
 /datum/gear/armament/spear
 	display_name = "Steel Spear"

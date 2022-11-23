@@ -200,3 +200,16 @@
 	recoil = 50
 	added_damage_laser_pve = 27
 	fire_stacks = 0
+
+/obj/item/projectile/plasma/check_penetrate(var/atom/A)
+	if(istype(A, /obj/item/shield))
+		var/obj/item/shield/S = A
+		var/loss = round(S.durability / armor_penetration / 8)
+		block_damage(loss, A)
+		A.visible_message(SPAN_WARNING("\The [src] is weakened by the \the [A]!"))
+		playsound(A.loc, 'sound/weapons/shield/shielddissipate.ogg', 50, 1)
+		return TRUE
+	else if(istype(A, /obj/structure/barricade) || istype(A, /obj/structure/table) || istype(A, /obj/structure/low_wall))
+		return FALSE
+
+	return TRUE

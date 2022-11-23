@@ -3,11 +3,11 @@ var/global/list/robot_modules = list(
 	"Service" 					= /obj/item/robot_module/service,
 	"Research" 					= /obj/item/robot_module/research,
 	"Miner" 					= /obj/item/robot_module/miner,
-//	"Rescue" 					= /obj/item/robot_module/medical/rescue, Removed and condenced to medical verson - todo, admin only
+//	"Rescue" 					= /obj/item/robot_module/medical/rescue, Removed and condensed to medical verson - todo, admin only
 	"Medical" 					= /obj/item/robot_module/medical/general,
 	"Security" 					= /obj/item/robot_module/security/general,
 	"Engineering"					= /obj/item/robot_module/engineering/general,
-//	"Construction"					= /obj/item/robot_module/engineering/construction, Removed and condenced into contruction - todo, admin only
+//	"Construction"					= /obj/item/robot_module/engineering/construction, Removed and condensed into contruction - todo, admin only
 	"Custodial" 					= /obj/item/robot_module/custodial,
 	//"Combat" 					= /obj/item/robot_module/combat,
 	)

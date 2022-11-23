@@ -116,7 +116,7 @@
 //CLAW ENERGY DRINKS
 /obj/item/reagent_containers/food/drinks/cans/monster
 	name = "\"Nitro\" Claw Energy"
-	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore."
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking too much may cause heart damage, liver damage, and not living anymore."
 	icon_state = "energy_drink_monster"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("energy_drink_monster" = 40, "sugar" = 20)
@@ -124,7 +124,7 @@
 
 /obj/item/reagent_containers/food/drinks/cans/monster_no_sugar
 	name = "\"Boom\" Claw Energy"
-	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	This one is favored by the forty and up."
 	icon_state = "energy_drink_nosugar"
 	center_of_mass = list("x"=16, "y"=6)
@@ -133,7 +133,7 @@
 
 /obj/item/reagent_containers/food/drinks/cans/monster_orange
 	name = "\"Khaos\" Claw Energy"
-	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	This one is a mix of orange and mango."
 	icon_state = "energy_drink_orange"
 	center_of_mass = list("x"=16, "y"=6)
@@ -142,7 +142,7 @@
 
 /obj/item/reagent_containers/food/drinks/cans/monster_sol
 	name = "\"Fed\" Claw Energy"
-	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	With Sol Fed marketing and pineapple juice to give it a sweet tropical flavour and salty acid. Why does drinking this make you want to shoot kriosans?"
 	icon_state = "claw_soyfed"
 	center_of_mass = list("x"=16, "y"=6)
@@ -151,7 +151,7 @@
 
 /obj/item/reagent_containers/food/drinks/cans/monster_blood
 	name = "\"Crimson Punch\" Claw Energy"
-	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	Going full punk rock this Claw drink has a heavy iron and tomato after taste."
 	icon_state = "claw_punch"
 	center_of_mass = list("x"=16, "y"=6)
@@ -160,16 +160,16 @@
 
 /obj/item/reagent_containers/food/drinks/cans/monster_jungel
 	name = "\"Hay Fever\" Claw Energy"
-	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	Tropical flavours packed into a can making it exotic mix of biodiverse flavours."
 	icon_state = "claw_tropical"
 	center_of_mass = list("x"=16, "y"=6)
-	preloaded_reagents = list("energy_drink_monster" = 25, "limejuice" = 20, "watermelonjuice" = 10, "icetea" = 5)
+	preloaded_reagents = list("energy_drink_monster" = 25, "triplecitrus" = 20, "watermelonjuice" = 10, "icetea" = 5)
 	volume = 60
 
 /obj/item/reagent_containers/food/drinks/cans/monster_church
 	name = "\"Saint\" Claw Energy"
-	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	Does not give you golden wings."
 	icon_state = "claw_church"
 	center_of_mass = list("x"=16, "y"=6)
@@ -178,7 +178,7 @@
 
 /obj/item/reagent_containers/food/drinks/cans/monster_red
 	name = "\"Code RED\" Claw Energy"
-	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	Red cans are drunk faster."
 	icon_state = "claw_blue"
 	center_of_mass = list("x"=16, "y"=6)
@@ -187,11 +187,11 @@
 
 /obj/item/reagent_containers/food/drinks/cans/monster_blue
 	name = "\"Code BLUE\" Claw Energy"
-	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	Code BLUE being counted as a mellow smooth taste that would be best cold."
 	icon_state = "claw_red"
 	center_of_mass = list("x"=16, "y"=6)
-	preloaded_reagents = list("energy_drink_monster" = 25, "tonic" = 25, "cream" = 10)
+	preloaded_reagents = list("energy_drink_monster" = 25, "sodawater" = 25, "berryjuice" = 10)
 	volume = 60
 
 //BATON ENERGY DRINKS
@@ -199,7 +199,7 @@
 /obj/item/reagent_containers/food/drinks/cans/baton
 	name = "\"Taser Bolt\" Baton Energy Soda"
 	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
-	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
+	A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	A cocktail of sour juices to mix with the soda for to shock your taste buds."
 	icon_state = "bang_lemondrop"
 	center_of_mass = list("x"=16, "y"=6)
@@ -209,7 +209,7 @@
 /obj/item/reagent_containers/food/drinks/cans/baton_apple
 	name = "\"Red Ticket\" Baton Energy Soda"
 	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
-	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
+	A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	Lighter and less tasteful verson of Baton Energy Soda that was designed to be tolerable by anyone. Making it rarely liked by anyone..."
 	icon_state = "bang_apple_crisp"
 	center_of_mass = list("x"=16, "y"=6)
@@ -219,7 +219,7 @@
 /obj/item/reagent_containers/food/drinks/cans/baton_cola
 	name = "\"Paddy Wagon\" Baton Energy Soda"
 	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
-	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
+	A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	This one has a bit of cola mixed into it for flavor."
 	icon_state = "bang_peach"
 	center_of_mass = list("x"=16, "y"=6)
@@ -229,7 +229,7 @@
 /obj/item/reagent_containers/food/drinks/cans/baton_commando
 	name = "\"Commando\" Baton Energy Soda"
 	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
-	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
+	A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	Commando is mix of thirteenloko and standard baton energy designed to keep you wired."
 	icon_state = "bang_radical"
 	center_of_mass = list("x"=16, "y"=6)
@@ -239,17 +239,17 @@
 /obj/item/reagent_containers/food/drinks/cans/baton_detective
 	name = "\"Case Closer\" Baton Energy Soda"
 	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
-	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
+	A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	Beloved by rangers, detectives, and night owls because it will keep you awake on the middle of the night stake outs."
 	icon_state = "bang_pina_colada"
 	center_of_mass = list("x"=16, "y"=6)
-	preloaded_reagents = list("energy_drink_baton" = 25, "sodawater" = 15, "espresso" = 10, "sugar" = 10)
+	preloaded_reagents = list("energy_drink_baton" = 25, "sodawater" = 15, "atomicoffee" = 10, "sugar" = 10) // Marshall buff
 	volume = 60
 
 /obj/item/reagent_containers/food/drinks/cans/baton_rent_a_cop
 	name = "\"On The Beat\" Baton Energy Soda"
 	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
-	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
+	A warning label says drinking too much may cause heart damage, liver damage, and not living anymore. \
 	Shockingly this drink was designed to taste just as good warm as cold due to its target market being bike cops or those on foot patrol."
 	icon_state = "bang_rainbow"
 	center_of_mass = list("x"=16, "y"=6)

@@ -1,8 +1,8 @@
 /*
 Beams, they are rather harder to get armor against and dont have bullet drop off.
-Thus they are objectively always going to be outclassed by bullets in their idea use.
-Beams also can pass thought glass and are hitscan, thus making them great against most problems.
-In pvp they also have more lasting damages, such as infections, and pain form burns.
+Thus they are objectively always going to be outclassed by bullets in their ideal use.
+Beams also can pass through glass and are hitscan, thus making them great against most problems.
+In pvp they also have more lasting damages, such as infections, pain form burns, and nerve damage.
 */
 /obj/item/projectile/beam
 	name = "laser"
@@ -25,6 +25,16 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 
 	heat = 100
 	added_damage_laser_pve = 20
+
+/obj/item/projectile/beam/check_penetrate(var/atom/A) // For shields to actually block projectiles
+	if(istype(A, /obj/item/shield))
+		var/obj/item/shield/S = A
+		var/loss = round(S.durability / armor_penetration / 8)
+		block_damage(loss, A)
+		A.visible_message(SPAN_WARNING("\The [src] is weakened by the \the [A]!"))
+		playsound(A.loc, 'sound/weapons/shield/shielddissipate.ogg', 50, 1)
+		return 1
+	return 0
 
 /obj/item/projectile/beam/musket
 	name = "charged laser"

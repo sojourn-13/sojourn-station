@@ -198,7 +198,7 @@
 	new /obj/item/clipboard(src)
 	new /obj/item/device/camera(src)
 	new /obj/item/clothing/accessory/holster/armpit(src)
-	new /obj/item/storage/pouch/pistol_holster(src)
+	new /obj/item/storage/pouch/pistol_holster/cowboy(src) // More thematic
 	new /obj/item/implantpad(src)
 	new /obj/item/device/t_scanner/advanced(src)
 	new /obj/item/voucher/marshal/rangerprimary(src)
