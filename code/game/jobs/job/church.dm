@@ -27,11 +27,10 @@
 	outfit_type = /decl/hierarchy/outfit/job/church/chaplain
 
 	stat_modifiers = list(
-		STAT_MEC = 30,
-		STAT_BIO = 15,
-		STAT_COG = 10,
-		STAT_VIG = 15,
 		STAT_TGH = 10,
+		STAT_ROB = 20,
+		STAT_VIG = 15,
+		STAT_COG = 20
 	)
 
 	perks = list(/datum/perk/neat, /datum/perk/greenthumb, /datum/perk/channeling
@@ -83,10 +82,11 @@
 	alt_titles = list("Divisor","Factorial","Monomial","Lemniscate","Tessellate")
 	health_modifier = 5
 	stat_modifiers = list(
-	STAT_MEC = 25,
-	STAT_BIO = 10,
-	STAT_VIG = 10,
-	STAT_TGH = 5,
+		STAT_TGH = 10,
+		STAT_ROB = 10,
+		STAT_COG = 10,
+		STAT_MEC = 15,
+		STAT_BIO = 15,
 	)
 	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
 

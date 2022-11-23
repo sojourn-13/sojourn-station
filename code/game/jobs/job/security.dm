@@ -96,8 +96,8 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 40,
-		STAT_TGH = 40,
-		STAT_VIG = 30,
+		STAT_TGH = 30,
+		STAT_VIG = 40,
 	)
 
 	perks = list(/datum/perk/ass_of_concrete,
@@ -156,7 +156,7 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 25,
-		STAT_TGH = 25,
+		STAT_TGH = 20,
 		STAT_VIG = 25,
 	)
 
@@ -212,7 +212,7 @@
 	)
 
 	stat_modifiers = list(
-		STAT_ROB = 25,
+		STAT_ROB = 20,
 		STAT_TGH = 25,
 		STAT_VIG = 25,
 	)
@@ -324,9 +324,8 @@
 
 	stat_modifiers = list(
 		STAT_BIO = 25,
-		STAT_TGH = 10,
+		STAT_TGH = 5,
 		STAT_VIG = 15,
-		STAT_ROB = 10,
 	)
 
 	perks = list(/datum/perk/medicalexpertise, /datum/perk/job/blackshield_conditioning)
@@ -381,7 +380,7 @@
 	)
 
 	stat_modifiers = list(
-		STAT_ROB = 25,
+		STAT_ROB = 20,
 		STAT_TGH = 20,
 		STAT_VIG = 25,
 	)

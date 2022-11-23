@@ -627,10 +627,6 @@
 
 	stat_modifiers = list(
 		STAT_BIO = 10,
-		STAT_COG = 0,
-		STAT_MEC = 0,
-		STAT_ROB = 0,
-		STAT_TGH = 0,
 		STAT_VIG = 10
 	)
 
@@ -674,12 +670,7 @@
 	perks = list(PERK_DARK_HEAL)
 
 	stat_modifiers = list(
-		STAT_BIO = 0,
-		STAT_COG = 0,
-		STAT_MEC = 0,
 		STAT_ROB = 20,
-		STAT_TGH = 0,
-		STAT_VIG = 0
 	)
 
 	spawn_flags = CAN_JOIN

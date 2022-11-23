@@ -15,9 +15,9 @@
 	wage = WAGE_LABOUR_DUMB // Makes his own money via tips and selling drinks
 	health_modifier = -10
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_VIG = 15,
+		STAT_ROB = 10,
+		STAT_TGH = 10,
+		STAT_VIG = 5,
 	)
 
 	perks = list(/datum/perk/market_prof, /datum/perk/bartender)
@@ -55,7 +55,7 @@
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_TGH = 10,
-		STAT_BIO = 10, // They need it to butcher animals without hurting themselves.
+		STAT_BIO = 10,
 	)
 
 	perks = list(/datum/perk/market_prof, /datum/perk/bartender, /datum/perk/foodappraise)
@@ -94,9 +94,10 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/service/gardener
 	stat_modifiers = list(
-		STAT_BIO = 15,
-		STAT_TGH = 15,
+		STAT_BIO = 20,
+		STAT_TGH = 10,
 		STAT_ROB = 10,
+		STAT_COG = 10,
 	)
 
 	perks = list(/datum/perk/market_prof, /datum/perk/greenthumb, /datum/perk/bartender)
@@ -181,8 +182,10 @@
 	perks = list(/datum/perk/market_prof, /datum/perk/job/jingle_jangle, /datum/perk/neat) //Union has revoked their chemistry privileges
 
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_BIO = 10,
+		STAT_ROB = 15,
+		STAT_TGH = 10,
+		STAT_VIG = 15,
+		STAT_COG = 10,
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/camera_monitor)

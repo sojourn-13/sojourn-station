@@ -29,8 +29,7 @@
 		STAT_ROB = 30,
 		STAT_TGH = 30,
 		STAT_VIG = 30,
-		STAT_MEC = 10,
-		STAT_BIO = 10
+		STAT_MEC = 15,
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -82,8 +81,8 @@
 
 	stat_modifiers = list(
 		STAT_BIO = 15,
-		STAT_MEC = 20,
-		STAT_COG = 10,
+		STAT_MEC = 15,
+		STAT_COG = 15,
 		STAT_TGH = 10,
 		STAT_VIG = 10,
 		STAT_ROB = 10
@@ -131,8 +130,7 @@
 	stat_modifiers = list(
 		STAT_TGH = 20,
 		STAT_VIG = 20,
-		STAT_ROB = 20,
-		STAT_COG = 10
+		STAT_ROB = 20
 	)
 
 	perks = list(/datum/perk/stalker, /datum/perk/job/prospector_conditioning)

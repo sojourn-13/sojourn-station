@@ -133,10 +133,10 @@
 	)
 
 	stat_modifiers = list(
-		STAT_TGH = 20,
-		STAT_ROB = 20,
-		STAT_VIG = 10,
-		STAT_BIO = 20
+		STAT_BIO = 20,
+		STAT_ROB = 10,
+		STAT_TGH = 10,
+		STAT_VIG = 10
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/chem_catalog,
@@ -187,9 +187,8 @@
 	perks = list(/datum/perk/medicalexpertise, /datum/perk/psi_psychology, /datum/perk/chemist) //Your trained for this.
 
 	stat_modifiers = list(
-		STAT_BIO = 25,
-		STAT_COG = 20,
-		STAT_VIG = 5
+		STAT_BIO = 20,
+		STAT_COG = 30
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
