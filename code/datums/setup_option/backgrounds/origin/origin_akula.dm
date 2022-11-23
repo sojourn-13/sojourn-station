@@ -1,4 +1,6 @@
-/datum/category_item/setup_option/background/ethnicity/akulaganger
+/* +10 toughness converted into 2 anatomy with how conversion rate is rn */
+
+/datum/category_item/setup_option/background/origin/akulaganger
 	name = "Former Ganger"
 	desc = "Akula are a brutal people and some take this to another level. The fondness they possess for motor cycles and hover bikes have given way to a rise in gang-like culture. \
 			While the common akula is strong, most gangers train themselves in the 'honorable' way of fighting, favoring melee. Fixing up their bikes so often has also given them some mechanical knack.  \
@@ -8,37 +10,17 @@
 
 	restricted_to_species = list(FORM_AKULA)
 
-	perks = list(/datum/perk/chem_contraband)
-
 	stat_modifiers = list(
-		STAT_ROB = 10,
+		STAT_ROB = 15,
 		STAT_TGH = 0,
-		STAT_VIG = -6,
-		STAT_BIO = 4,
-		STAT_MEC = 7,
-		STAT_COG = -15
-	)
-
-
-/datum/category_item/setup_option/background/ethnicity/akulacommander
-	name = "Former Commander"
-	desc = "Military service for an akula is considered one of the most honorable professions one can take. Many become commanders within the Solarian Federation military, often leading small squads \
-			of Naramadi in ship to ship breaching squads or strike teams in ground assaults. Akula commanders are better trained with guns than most and adapt well to new things.  \
-			Service in the military, however, has its draw backs. Much of an akula's training is steeped solely in marksmanship as they cannot keep pace with the faster naramads and must take \
-			great care not to cause a friendly fire incident."
-
-	restricted_to_species = list(FORM_AKULA)
-
-	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 9,
-		STAT_BIO = 0,
+		STAT_VIG = -5,
+		STAT_BIO = 10,
 		STAT_MEC = -5,
-		STAT_COG = 4
+		STAT_COG = -15
+		STAT_ANA = 2
 	)
 
-/datum/category_item/setup_option/background/ethnicity/akulabreacher
+/datum/category_item/setup_option/background/origin/akulabreacher
 	name = "Former Breacher"
 	desc = "Military service for an akula is considered one of the most honorable professions one can take. Those who lack the skill and cunning for a command position are often designated as breachers. \
 			Akula breachers serve a single purpose, being the first person into a conflict that serves as a meat shield for those behind them in a stack.  \
@@ -48,11 +30,35 @@
 
 	restricted_to_species = list(FORM_AKULA)
 
+	perks = list(/datum/perk/lungs_of_iron)
+
 	stat_modifiers = list(
 		STAT_ROB = 10,
-		STAT_TGH = -10,
-		STAT_VIG = 5,
-		STAT_BIO = 0,
-		STAT_MEC = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 15,
+		STAT_BIO = -10,
+		STAT_MEC = -10,
 		STAT_COG = -5
+		STAT_ANA = 2
+	)
+
+/datum/category_item/setup_option/background/origin/akulacommander
+	name = "Former Commander"
+	desc = "Military service for an akula is considered one of the most honorable professions one can take. Many become commanders within the Solarian Federation military, often leading small squads \
+			of Naramadi in ship to ship breaching squads or strike teams in ground assaults. Akula commanders are better trained with guns than most and adapt well to new things.  \
+			Service in the military, however, has its draw backs. Much of an akula's training is steeped solely in marksmanship as they cannot keep pace with the faster naramads and must take \
+			great care not to cause a friendly fire incident."
+
+	restricted_to_species = list(FORM_AKULA)
+
+	perks = list(/datum/perk/lungs_of_iron)
+
+	stat_modifiers = list(
+		STAT_ROB = -5,
+		STAT_TGH = 5,
+		STAT_VIG = 5,
+		STAT_BIO = -10,
+		STAT_MEC = -10,
+		STAT_COG = 15
+		STAT_ANA = 2
 	)

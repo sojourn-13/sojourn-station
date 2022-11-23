@@ -1,4 +1,9 @@
-/datum/category_item/setup_option/background/ethnicity/opifex_mechanist
+/*
+		STAT_MEC = 5,
+		STAT_COG = 5
+*/
+
+/datum/category_item/setup_option/background/origin/opifex_mechanist
 	name = "Mechanist"
 	desc = "You are one of the many opifex trained in the ways of your craft by your scavenger fleet. Like your brothers you have a knack for adapting to new situations and using all things \
 	mechanical. Sadly, separated from your fleet you do not have access to the many useful robots that make life so much easier. That said, you always keep your various tools stowed away in a \
@@ -10,15 +15,15 @@
 	racial_implants = (/obj/item/organ_module/active/simple/opifex_pouch)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
-		STAT_BIO = 0,
-		STAT_MEC = 5,
-		STAT_COG = 5
+		STAT_ROB = -5,
+		STAT_TGH = -2,
+		STAT_VIG = -3,
+		STAT_BIO = -15,
+		STAT_MEC = 20,
+		STAT_COG = 15
 	)
 
-/datum/category_item/setup_option/background/ethnicity/opifexbiomech
+/datum/category_item/setup_option/background/origin/opifexbiomech
 	name = "Biomechanist"
 	desc = "While all opifex are trained in the workings of machines some are reserved for the biological aspect of their respective scavenger fleet. \
 			This training is usually towards the goal of maintaining the bio-mechanical augmentations used by the opifex, from installing nano-gates to replacing lost limbs with synthetic copies. \
@@ -35,12 +40,12 @@
 		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 10,
-		STAT_MEC = -5,
+		STAT_BIO = 25,
+		STAT_MEC = -10,
 		STAT_COG = -5
 	)
 
-/datum/category_item/setup_option/background/ethnicity/opifexcombattech
+/datum/category_item/setup_option/background/origin/opifexcombattech
 	name = "Combat Technician"
 	desc = "Some opifex are assigned the tasks of dealing with the hostile entities aboard ships they loot, be it creatures living on space hulks, machines still defending lost ships, \
 			or the crew of a recently boarded ship being mercilessly slaughtered so they can peacefully strip the shuttles tech. Combat technicians favor the use of range weaponry, often \
@@ -58,6 +63,6 @@
 		STAT_TGH = 4,
 		STAT_VIG = 10,
 		STAT_BIO = 0,
-		STAT_MEC = -7,
-		STAT_COG = -7
+		STAT_MEC = -2,
+		STAT_COG = -2
 	)

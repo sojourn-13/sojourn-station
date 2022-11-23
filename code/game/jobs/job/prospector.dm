@@ -37,7 +37,7 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
 
-	perks = list(/datum/perk/stalker, /datum/perk/job/prospector_conditioning)
+	perks = list(/datum/perk/stalker, /datum/perk/job/prospector_conditioning, /datum/perk/sure_step)
 
 	description = "The foreman leads the prospectors, a group of independent scavengers seeking fortune from ruins and scrap.<br>\
 	Your goal is to lead your team into hostile locations and take everything of value that isn't nailed down - and the nails too!<br>\
@@ -88,7 +88,7 @@
 		STAT_ROB = 10
 	)
 
-	perks = list(/datum/perk/junkborn, /datum/perk/stalker)
+	perks = list(/datum/perk/junkborn, /datum/perk/stalker, /datum/perk/sure_step)
 
 	description = "The Salvager is an informally trained specialist for the prospectors who functions as both an engineer and a doctor.<br>\
 	Your primary role is that of a field medic. Treat and stabilize the wounded on the combat backlines, and evacuate the critically injured.<br>\
@@ -133,7 +133,7 @@
 		STAT_ROB = 20
 	)
 
-	perks = list(/datum/perk/stalker, /datum/perk/job/prospector_conditioning)
+	perks = list(/datum/perk/stalker, /datum/perk/job/prospector_conditioning, /datum/perk/sure_step)
 
 	description = "The Prospector serves as hired muscle to the Foreman, positioned somewhere between meat shield and exterminator.<br>\
 	Your job is to keep the Salvagers and anyone else with you protected, handling the fighting and being the first to enter dangerous areas. <br>\

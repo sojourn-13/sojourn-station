@@ -1,4 +1,9 @@
-/datum/category_item/setup_option/background/ethnicity/northlander
+/*
+		STAT_ROB = 5,
+		STAT_TGH = 5
+*/
+
+/datum/category_item/setup_option/background/origin/northlander
 	name = "Northlander"
 	desc = "The northlander sablekyne are a people devoted to family and tradition, built to survive in the cold mountainous regions they call home. \
 			Northlanders live in a tougher environment then their southlander cousins, where fights and conflict between each other happens as commonly as attacks from the local wildlife. \
@@ -6,17 +11,17 @@
 			Then again, when all else fails and diplomacy falls through you can always rely on your claws."
 
 	stat_modifiers = list(
-		STAT_ROB = 5,
-		STAT_TGH = 5,
-		STAT_VIG = 0,
+		STAT_ROB = 15,
+		STAT_TGH = 15,
+		STAT_VIG = -10,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_COG = -10
 	)
 
 	restricted_to_species = list(FORM_SABLEKYNE)
 
-/datum/category_item/setup_option/background/ethnicity/southlander
+/datum/category_item/setup_option/background/origin/southlander
 	name = "Southlander"
 	desc = "The southlander sablekyne are a people who consider themselves simply better than anyone else, be it through martial or mental tasks. \
 			Southlanders hail from the brutally hot desert along the equator of Onkarth living behind fortified walls where they conduct most of the planets commerce. \
@@ -24,17 +29,17 @@
 			After all, only a brute needs to resort to violence when so many other options exists."
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 5,
-		STAT_VIG = 0,
+		STAT_ROB = 5,
+		STAT_TGH = 15,
+		STAT_VIG = -20,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 5
+		STAT_COG = 10
 	)
 
 	restricted_to_species = list(FORM_SABLEKYNE)
 
-/datum/category_item/setup_option/background/ethnicity/maunkyne
+/datum/category_item/setup_option/background/origin/maunkyne
 	name = "Maunkyne"
 	desc = "The maunkyne are the absolute lowest dregs of sablekyne society, users of a highly addictive drug they are permanently enslaved to. \
 			On their home-planet maunkyne are outcasts, executed in the north for the crime of existing and exiled in the south to the unforgiving desert wastes. \
@@ -47,8 +52,8 @@
 	perks = list(/datum/perk/addict)
 
 	stat_modifiers = list(
-		STAT_ROB = -10,
-		STAT_TGH = -10,
+		STAT_ROB = -5,
+		STAT_TGH = -5,
 		STAT_VIG = 0,
 		STAT_BIO = 10,
 		STAT_MEC = 0,
