@@ -629,7 +629,7 @@ BLIND     // can't see anything
 		/obj/item/reagent_containers/food/drinks/flask,
 		/obj/item/device/radio,
 		/obj/item/clothing/mask,
-		/obj/item/storage/backpack/duffelbag/guncase,
+		/obj/item/storage/backpack/guncase,
 		/obj/item/implant/carrion_spider/holographic)
 	slot_flags = SLOT_OCLOTHING
 	var/blood_overlay_type = "suit"

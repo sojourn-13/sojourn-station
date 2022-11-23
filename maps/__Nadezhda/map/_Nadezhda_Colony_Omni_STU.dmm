@@ -98197,9 +98197,9 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "son" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/backpack/duffelbag/guncase,
-/obj/item/storage/backpack/duffelbag/guncase,
-/obj/item/storage/backpack/duffelbag/guncase,
+/obj/item/storage/backpack/guncase,
+/obj/item/storage/backpack/guncase,
+/obj/item/storage/backpack/guncase,
 /obj/item/storage/pouch/pistol_holster,
 /obj/item/storage/pouch/pistol_holster,
 /obj/item/storage/pouch/pistol_holster,

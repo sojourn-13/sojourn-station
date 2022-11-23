@@ -82,7 +82,7 @@
 	/obj/item/storage/pouch/pistol_holster/cowboy = 5,
 	/obj/item/storage/pouch/kniferig = 5,
 	/obj/item/storage/pouch/ammo = 2,
-	/obj/item/storage/backpack/duffelbag/guncase = 35,
+	/obj/item/storage/backpack/guncase = 35,
 	/obj/item/storage/box/smokes = 3)
 
 	prices = list(
@@ -161,7 +161,7 @@
 	/obj/item/storage/pouch/pistol_holster/cowboy = 100, // Two pistols, double the price
 	/obj/item/storage/pouch/kniferig = 50,
 	/obj/item/storage/pouch/ammo = 75,
-	/obj/item/storage/backpack/duffelbag/guncase = 25,
+	/obj/item/storage/backpack/guncase = 25,
 	/obj/item/storage/box/smokes = 100)
 
 /obj/machinery/vending/security
