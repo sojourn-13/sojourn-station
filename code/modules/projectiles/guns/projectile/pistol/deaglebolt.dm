@@ -24,6 +24,9 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_12MM, GUN_CALIBRE_9MM)
 	serial_type = "BlueCross"
 
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.6 // 60 vig
+
 /obj/item/gun/projectile/deaglebolt/verb/change_caliber()
 	set name = "Change Caliber"
 	set desc = "For when you need to change your guns caliber, handy when you have more ammo of one type."

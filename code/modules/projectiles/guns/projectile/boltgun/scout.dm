@@ -23,6 +23,9 @@
 	slowdown_hold = 1
 	serial_type = "H&S"
 
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.3 // 30 vig, little heavier than normal
+
 
 /obj/item/gun/projectile/boltgun/sawn/scout
 	name = "\"obrez\" heavy boltgun"

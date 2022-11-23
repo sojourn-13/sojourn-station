@@ -19,6 +19,9 @@
 	sawn = /obj/item/gun/projectile/shotgun/pump/gladstone/sawn
 	serial_type = "H&S"
 
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.4 // 40 vig
+
 /obj/item/gun/projectile/shotgun/pump/gladstone/sawn
 	name = "\"Gladstone\" stakeout shotgun"
 	desc = "A venerable shotgun that's been destroyed by some sort of heartless monster. Can hold up to 4+1 20mm shells in its tube magazine."
@@ -33,6 +36,9 @@
 	price_tag = 550
 	init_recoil = RIFLE_RECOIL(2.4)
 	saw_off = FALSE
+
+	wield_delay = 0.7 SECOND
+	wield_delay_factor = 0.3 // 30 vig
 
 /obj/item/gun/projectile/shotgun/pump/gladstone/queen
 	name = "\"Fallen Empress\" hunting shotgun"

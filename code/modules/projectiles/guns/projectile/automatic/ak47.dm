@@ -115,6 +115,8 @@
 	damage_multiplier = 1
 	saw_off = FALSE
 	serial_type = "SA"
+	wield_delay = 0.8 SECOND
+	wield_delay_factor = 0.2 // 20 vig for insta wield
 
 /obj/item/gun/projectile/automatic/ak47/sa/tac
 	name = "Breacher \"Kalashnikov\" rifle"

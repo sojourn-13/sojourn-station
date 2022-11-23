@@ -17,3 +17,5 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	twohanded = TRUE
 	serial_type = "LSS"
+	wield_delay = 0.5 SECOND
+	wield_delay_factor = 0.5 // 50 vig

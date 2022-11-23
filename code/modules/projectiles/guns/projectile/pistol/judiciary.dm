@@ -24,6 +24,9 @@
 		)
 	serial_type = "NM"
 
+	wield_delay = 0.2 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+
 /obj/item/gun/projectile/judiciary/update_icon()
 	..()
 	var/iconstring = initial(icon_state)

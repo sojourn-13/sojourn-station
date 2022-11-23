@@ -33,6 +33,9 @@
 	allow_racking = FALSE
 	serial_type = "Hunter Inc"
 
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+
 /obj/item/gun/projectile/boltgun/sawn //subtype for code
 	name = "\"obrez\" mosin boltgun"
 	desc = "A crudly mangled and sawn-down 7.62mm bolt action rifle. The rifle was fine."

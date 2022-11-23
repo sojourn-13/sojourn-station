@@ -18,6 +18,9 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "Absolute"
 
+	wield_delay = 0.2 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+
 /obj/item/gun/projectile/mk58/update_icon()
 	..()
 	var/iconstring = initial(icon_state)

@@ -33,6 +33,9 @@
 		list(mode_name="suppressing fire", mode_desc="DAKKA 16 shots back to back to keep targets inside cover",  burst=16, burst_delay=4, move_delay=11,  icon="burst")
 		)
 
+	wield_delay = 2 SECOND
+	wield_delay_factor = 0.5 // 50 vig , excels are not as trained
+
 /obj/item/gun/projectile/automatic/maxim/NM_colony
 	name = "\"Maxim\" machine gun"
 	desc = "An old and surprisingly deprecated gun from the Excelsior. One of their more dangerous weapons, effective at dealing with crowds or suppressing firing lines."

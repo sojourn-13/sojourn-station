@@ -29,6 +29,9 @@
 		)
 	serial_type = "SD GmbH"
 
+	wield_delay = 0.9 SECOND
+	wield_delay_factor = 0.4 // 40 vig
+
 /obj/item/gun/projectile/automatic/riot_autoshotgun/robo
 	name = "intergrated \"State\" riot shotgun"
 	desc = "A Seinemetall Defense GmbH riot auto action shotgun, its uncommonly seen deployed in most police operation due to the success of the \"stolen\" \"Gladstone\" design. \
@@ -69,6 +72,9 @@
 	init_recoil = RIFLE_RECOIL(1.4)
 	folding_stock = TRUE //we can fold are stocks
 	can_dual = FALSE
+
+	wield_delay = 0.8 SECOND
+	wield_delay_factor = 0.4 // 40 vig , after all its designed for CQC
 
 /obj/item/gun/projectile/automatic/riot_autoshotgun/opshot/update_icon()
 	..()

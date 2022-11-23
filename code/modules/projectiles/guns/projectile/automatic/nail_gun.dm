@@ -32,6 +32,9 @@
 		)
 	serial_type = "GP"
 
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.2 // SMG level
+
 /obj/item/gun/projectile/automatic/nail_gun/update_icon()
 	..()
 

@@ -126,6 +126,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/folded = TRUE //IS are stock folded? - and that is yes we start folded
 	var/currently_firing = FALSE
 
+	var/wield_delay = 0 // Gun wielding delay , generally in seconds.
+	var/wield_delay_factor = 0 // A factor that characterizes weapon size , this makes it require more vig to insta-wield this weapon or less , values below 0 reduce the vig needed and above 1 increase it
+
 	//Gun numbers and stuf
 	var/serial_type = "INDEX" // Index will be used for detective scanners, if there is a serial type , the gun will add a number onto its final , if none , it won;'t show on examine
 	var/serial_shown = TRUE
@@ -135,6 +138,18 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/overcharge_rate = 1 //Base overcharge additive rate for the gun
 	var/overcharge_level = 0 //What our current overcharge level is. Peaks at overcharge_max
 	var/overcharge_max = 10
+
+/obj/item/gun/wield(mob/user)
+	if(!wield_delay)
+		..()
+		return
+	var/calculated_delay = wield_delay
+	if(ishuman(user))
+		calculated_delay = wield_delay - (wield_delay * (user.stats.getStat(STAT_VIG) / (100 * wield_delay_factor))) // wield delay - wield_delay * user vigilance / 100 * wield_factor
+	if (calculated_delay > 0 && do_after(user, calculated_delay, immobile = FALSE))
+		..()
+	else if (calculated_delay <= 0)
+		..()
 
 /obj/item/gun/proc/loadAmmoBestGuess()
 	return

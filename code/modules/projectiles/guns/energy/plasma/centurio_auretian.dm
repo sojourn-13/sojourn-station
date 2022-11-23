@@ -18,6 +18,9 @@
 		)
 	serial_type = "SI"
 
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+
 /obj/item/gun/energy/plasma/auretian
 	name = "\"Auretian\" energy pistol"
 	desc = "\"Soteria\" brand energy pistol, for personal overprotection. It has the advantage of using laser and plasma firing methods, \

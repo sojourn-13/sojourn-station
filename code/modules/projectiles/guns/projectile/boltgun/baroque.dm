@@ -41,3 +41,6 @@ Own a musket for department defense, since that's what the founding hunters inte
 	bolt_training = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_SIGHT)
 	serial_type = "Kriosan"
+
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.4 // 40 vig, it's a LITERAL MUSKET. Just as the founding fathers intended.......

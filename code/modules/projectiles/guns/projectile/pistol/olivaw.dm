@@ -23,6 +23,9 @@
 		)
 	serial_type = "H&S"
 
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.3 // 30 vig
+
 /obj/item/gun/projectile/olivaw/update_icon()
 	..()
 

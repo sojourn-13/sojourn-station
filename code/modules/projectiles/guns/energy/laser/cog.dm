@@ -21,6 +21,9 @@
 	serial_type = "GP"
 	max_upgrades = 4 //Older platform meaning 1 less
 
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+
 /obj/item/gun/energy/cog/gear
 	name = "\"Gear\" lasgun"
 	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous. \

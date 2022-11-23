@@ -27,6 +27,9 @@
 	auto_rack = TRUE //so if we get loaded were good
 	serial_type = "SA"
 
+	wield_delay = 2 SECOND
+	wield_delay_factor = 0.6 // 60 vig , heavy stuff
+
 /obj/item/gun/projectile/rpg/update_icon()
 	..()
 
