@@ -1,19 +1,6 @@
 //Oddity items are rare rewards from special locations that are usually highly defended by many or very powerful mobs, requiring effort to obtain them. They are often simple equipment with better stats
 //or unique effects. These should never be placed enmasse or in easily reached places. -Kaz
 //Guns
-/obj/item/gun/projectile/handmade_pistol/anti_material/reliable
-	name = "\"Finger of God\" handmade pistol"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	Whoever made this particular model did exceptional work. Unlike lesser handmade pistols, this one jams less and has much better shot capability. This one chambers 14.5mm anti material ammo."
-	icon = 'icons/obj/guns/projectile/hm_bluecross.dmi'
-	jam_chance = 5
-	damage_multiplier = 1.36
-	init_recoil = HANDGUN_RECOIL(2.5)
-	max_shells = 6
-	price_tag = 750
-	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 6) //Its now made of plasteel to show its whatever
-	serial_type = "BlueCross"
-
 /obj/item/gun/energy/sniperrifle/saint
 	name = "\"Saint\" laser rifle"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
@@ -23,15 +10,6 @@
 	price_tag = 3750
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_GOLD = 9, MATERIAL_URANIUM = 6) //The normal valk needs silver this is gold plated!
 	icon = 'icons/obj/guns/energy/sniper_saint.dmi'
-	serial_type = "BlueCross"
-
-/obj/item/gun/projectile/automatic/lmg/saw/unicorn
-	name = "\"Unicorn\" light machinegun"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	A small carved inscription of a unicorn has been cut into place near some additional added weights, giving this rifle amazing recoil control."
-	init_recoil = LMG_RECOIL(0.5)
-	price_tag = 3550
-	slowdown_hold = 0
 	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/revolver/mistral/elite
@@ -85,11 +63,21 @@
 	add_fingerprint(user)
 	update_icon()
 
-/obj/item/gun/energy/ntpistol/mana
+/obj/item/gun/energy/ntpistol
 	name = "\"Mana from Heaven\" energy pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	A blue and black version of the standard \"Serenity\" energy pistol, somehow despite looking just like a repainted job it conserves power unusually well."
+	A black and blue version of the defunct \"Serenity\" energy pistol, somehow despite looking just like a repainted job it conserves power unusually well."
+	icon_state = "ntpistol"
 	charge_cost = 2
+	projectile_type = /obj/item/projectile/beam
+	can_dual = TRUE
+	init_firemodes = list(
+		LETHAL,
+		WEAPON_CHARGE
+	)
+	twohanded = FALSE
+	suitable_cell = /obj/item/cell/small
+	cell_type = /obj/item/cell/small
 	price_tag = 2550
 	serial_type = "BlueCross"
 	icon = 'icons/obj/guns/energy/ntpistol_bluecross.dmi'
@@ -164,6 +152,9 @@
 	price_tag = 2000
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG
 	damage_multiplier = 1.5
+	icon = 'icons/obj/guns/projectile/clarissa.dmi'
+	icon_state = "clarissa"
+	item_state = "clarissa"
 	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/boltgun/lever/handcock
@@ -185,12 +176,11 @@
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic
 	name = "\"Lockpick-o-Matic\""
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-			Someone had a sense of humor when designing this weapon."
+			A mix of several other Slot-o-Matics put together after being sawn apart to make a rainbow and then fitted with a long unreloadable 10x24 caseless mag."
 	caliber = "10x24"
 	ammo_type = "/obj/item/ammo_casing/pistol"
 	mag_well = MAG_WELL_PULSE
 	magazine_type = /obj/item/ammo_magazine/c10x24
-	price_tag = 15
 	gun_tags = list(GUN_PROJECTILE)
 	possible_colors = list("rainbow")
 	init_recoil = EMBEDDED_RECOIL(0.5)
@@ -218,7 +208,7 @@
 	icon = 'icons/obj/guns/energy/psychiccannon.dmi'
 	icon_state = "psychic_lasercannon"
 	item_state = "psychic_lasercannon"
-	fire_sound = 'sound/weapons/laser3.ogg'
+	fire_sound = 'sound/weapons/energy/laser3.ogg'
 	origin_tech = list(TECH_COMBAT = 19, TECH_MATERIAL = 19, TECH_MAGNET = 19, TECH_ILLEGAL = 19)
 	price_tag = 4000
 	damage_multiplier = 1.2
@@ -233,7 +223,7 @@
 /obj/item/gun/projectile/that_gun
 	name = "\"That Gun\" revolver pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-			What the fuck?"
+			A sneaky postol weapon designed to like a revolver to fool people into thinking you only have six shots."
 	icon = 'icons/obj/guns/projectile/that_gun.dmi'
 	icon_state = "thatgun"
 	item_state = "thatgun"
@@ -241,7 +231,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	price_tag = 1420
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	can_dual = TRUE
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_H_PISTOL|MAG_WELL_PISTOL
@@ -315,12 +305,12 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
-		FULL_AUTO_400
+		FULL_AUTO_300
 		)
 	serial_type = "Crimson Cross"
 
 /obj/item/gun/energy/lasersmg/p9evil/consume_next_projectile(mob/user)
-	visible_message(SPAN_WARNING("\The gun draws the life of the user!"))
+	visible_message(SPAN_WARNING("The [src] draws the life of the user!"))
 	playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 	user.maxHealth -=0.1
 	user.health -=0.1

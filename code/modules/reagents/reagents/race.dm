@@ -12,7 +12,7 @@
 	nerve_system_accumulations = 0
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/medicine/sabledone/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 200, TRUE)
@@ -44,53 +44,16 @@
 	nerve_system_accumulations = 0
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/medicine/hadrenol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.adjustOxyLoss(-0.6)
-	M.heal_organ_damage(0.3, 0.3)
-	M.adjustToxLoss(-0.3)
-	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
-	M.add_chemical_effect(CE_PAINKILLER, 25, TRUE)
-
-/datum/reagent/medicine/hustim
-	name = "Hustimdol"
-	id = "hustim"
-	description = "A chemical naturally produced by humans pushed to their limit. Induces a recovery coma to heal their wounds."
-	taste_description = "bitterness"
-	reagent_state = LIQUID
-	color = "#ded890"
-	nerve_system_accumulations = 0
-	appear_in_default_catalog = FALSE
-	constant_metabolism = TRUE
-	scannable = 1
-
-/datum/reagent/medicine/hustim/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.heal_organ_damage(0.8, 0.4, 6)
-	M.add_chemical_effect(CE_BLOODCLOT, min(1,0.4))
-	M.adjustOxyLoss(-2) //We are taking are deep breaths
+	M.heal_organ_damage(1, 0.8, 4, 2) // Barely buffed up Hustimdol without the sleepyness, any more would be too good. Remember this has a half hour cooldown.
+	M.adjustOxyLoss(-1)
 	M.adjustToxLoss(-1)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.4)
+	M.add_chemical_effect(CE_BLOODRESTORE, 1.1 * effect_multiplier) // Paramount due to how organ efficiency works
+	M.add_chemical_effect(CE_PAINKILLER, 45, TRUE) // Come on, stand up! You can do it!
 	M.add_chemical_effect(CE_STABLE)
-	M.add_chemical_effect(CE_PAINKILLER, 45, TRUE)
-	M.add_chemical_effect(CE_BLOODRESTORE, 1.1 * effect_multiplier)
-	M.add_chemical_effect(CE_PULSE, -1)
-	//We also sleep are target, this will make it not as good to use against spiders still active or simple animals.
-	var/effective_dose = dose
-	if(issmall(M))
-		effective_dose *= 2
-
-	if(effective_dose < 1)
-		if(effective_dose == metabolism * 2 || prob(5))
-			M.emote("yawn")
-	else if(effective_dose < 3)
-		M.eye_blurry = max(M.eye_blurry, 10)
-	else if(effective_dose < 4)
-		if(prob(50))
-			M.Weaken(2)
-		M.drowsyness = max(M.drowsyness, 20)
-	else
-		M.sleeping = max(M.sleeping, 20)
-		M.drowsyness = max(M.drowsyness, 60)
 
 /datum/reagent/stim/kriotol
 	name = "Kriotol"
@@ -106,7 +69,7 @@
 	M.stats.addTempStat(STAT_TGH, 10, STIM_TIME, "kriotol")
 	M.stats.addTempStat(STAT_VIG, 20, STIM_TIME, "kriotol")
 	M.add_chemical_effect(CE_DARKSIGHT, SEE_INVISIBLE_NOLIGHTING)
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.2)
 	M.add_chemical_effect(CE_PULSE, 2)
 
 /datum/reagent/stim/robustitol
@@ -142,7 +105,7 @@
 	nerve_system_accumulations = 0
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/medicine/sergatonin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_TGH, 25, STIM_TIME, "naratonin")
@@ -166,7 +129,7 @@
 	nerve_system_accumulations = 0
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/medicine/cindpetamol/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
 	M.adjustToxLoss(-8)

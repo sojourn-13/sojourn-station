@@ -17,6 +17,9 @@
 	)
 	serial_type = "Absolute"
 
+/obj/item/arrow
+	var/recoil = 2  // Light recoil, it's just some cleaning stuff
+
 /obj/item/arrow/cleansing
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "toxin"

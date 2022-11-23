@@ -58,6 +58,7 @@
 	else
 		usr.emote(message)
 
+/*
 /mob/verb/subtle_wrapper()
 	set name = "Subtle verb"
 	set category = "IC"
@@ -77,7 +78,7 @@
 		usr.emote("subtle", usr.emote_type, message)
 	else
 		usr.emote(message)
-
+*/
 /mob/proc/say_dead(message)
 	if(say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, SPAN_DANGER("Speech is currently admin-disabled."))

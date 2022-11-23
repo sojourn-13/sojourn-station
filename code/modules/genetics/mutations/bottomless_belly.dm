@@ -1,7 +1,7 @@
 //Macro: MUTATION_BOTTOMLESS_BELLY
 /datum/genetics/mutation/bottomless_belly
 	name = "Bottomless"
-	key = "MUTATION_BAROTRAUMA"
+	key = "MUTATION_BOTTOMLESS_BELLY"
 	desc = "This is what allows dogs to eat and eat and eat."
 	gain_text = "You have the munchies."
 	var/old_max_nutrition

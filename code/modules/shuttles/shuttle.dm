@@ -48,19 +48,21 @@
 	SSshuttle.shuttles[src.name] = src
 	if(flags & SHUTTLE_FLAGS_PROCESS)
 		SSshuttle.process_shuttles += src
+/*
 	if(flags & SHUTTLE_FLAGS_SUPPLY)
 		if(SSsupply.shuttle)
 			CRASH("A supply shuttle is already defined.")
 		SSsupply.shuttle = src
-
+*/
 /datum/shuttle/Destroy()
 	current_location = null
 
 	SSshuttle.shuttles -= src.name
 	SSshuttle.process_shuttles -= src
+	/*
 	if(SSsupply.shuttle == src)
 		SSsupply.shuttle = null
-
+*/
 	. = ..()
 
 /datum/shuttle/proc/short_jump(var/obj/effect/shuttle_landmark/destination)
@@ -72,7 +74,7 @@
 		playsound(current_location, sound_takeoff, 100, 20, 0.2)
 	spawn(warmup_time*10)
 		if (moving_status == SHUTTLE_IDLE)
-			return FALSE	//someone cancelled the launch
+			return	//someone cancelled the launch
 
 		if(!fuel_check()) //fuel error (probably out of fuel) occured, so cancel the launch
 			var/datum/shuttle/autodock/S = src

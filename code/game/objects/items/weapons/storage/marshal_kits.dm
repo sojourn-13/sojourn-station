@@ -38,21 +38,23 @@
 
 /obj/item/storage/box/m_kit/gear_lasgun
 	name = "\improper Gear Lasgun Kit"
-	desc = "The standard Marshal box kit containing a modified cog that fires stun beams only. For the economic officer."
+	desc = "The standard Marshal box kit containing a modified Cog lasgun that also fires stun beams. For the economic officer."
 
 	populate_contents()
 		new /obj/item/gun/energy/cog/gear(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
 		new /obj/item/storage/pouch/tubular(src)
 
-/obj/item/storage/box/m_kit/operator
+/obj/item/storage/box/m_kit/opshotkit
 	name = "Operator Kit"
 	desc = "The standard Marshal box kit containing a Operator shotgun, a folding stock shotgun for only TRUE operators!"
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/riot_autoshotgun/operator(src)
+		new /obj/item/gun/projectile/automatic/riot_autoshotgun/opshot(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun/beanbag(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
@@ -94,13 +96,13 @@
 
 //Ranger kits
 /obj/item/storage/box/m_kit/armstrong
-	name = "Armstrong Kit"
-	desc = "The standard Marshal box kit containing a Armstrong lever action rifle, a repeating rifle chambered in 10mm Magnum."
+	name = "Custer Kit"
+	desc = "The standard Marshal box kit containing a Custer lever action rifle, a variant of the famous Armstrong repeating rifle chambered in 8.6mm."
 
 	populate_contents()
-		new /obj/item/gun/projectile/boltgun/lever(src)
-		new /obj/item/ammo_magazine/ammobox/magnum_40(src)
-		new /obj/item/ammo_magazine/ammobox/magnum_40/rubber(src)
+		new /obj/item/gun/projectile/boltgun/lever/custer(src)
+		new /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small(src)
+		new /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/rubber(src)
 
 /obj/item/storage/box/m_kit/specop
 	name = "Spec-Op Caseless SMG Kit"
@@ -108,9 +110,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/specop(src)
-		new /obj/item/ammo_magazine/rifle_10x24(src)
-		new /obj/item/ammo_magazine/rifle_10x24(src)
-		new /obj/item/ammo_magazine/rifle_10x24(src)
+		new /obj/item/ammo_magazine/smg_10x24(src)
+		new /obj/item/ammo_magazine/smg_10x24(src)
+		new /obj/item/ammo_magazine/smg_10x24(src)
 
 /obj/item/storage/box/m_kit/peacekeeper
 	name = "Peacekeeper ESG Kit"
@@ -121,16 +123,6 @@
 		new /obj/item/cell/medium/high(src)
 
 // Secondary kits
-/obj/item/storage/box/m_kit/wirbelwind
-	name = "\improper Wirbelwind Kit"
-	desc = "The standard Marshal box kit containing a wirbelwind submachine gun. Capable of fitting a holster and going full auto because who needs accuracy?"
-
-	populate_contents()
-		new /obj/item/gun/projectile/automatic/wirbelwind(src)
-		new /obj/item/ammo_magazine/smg_35/rubber(src)
-		new /obj/item/ammo_magazine/smg_35/rubber(src)
-		new /obj/item/ammo_magazine/smg_35(src)
-
 /obj/item/storage/box/m_kit/taser
 	name = "\improper Counselor Secondary kit"
 	desc = "The standard Marshal box kit containing a counselor stun gun. An all round solid sidearm to round out the Marshals non-lethal kit."

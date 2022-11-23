@@ -116,9 +116,6 @@
 	id = 10
 	},
 /obj/structure/table/onestar,
-/obj/machinery/button/switch{
-	id = 10
-	},
 /turf/simulated/floor/wood,
 /area/crawler)
 "z" = (
@@ -130,9 +127,6 @@
 	id = 11
 	},
 /obj/structure/table/onestar,
-/obj/machinery/button/switch{
-	id = 11
-	},
 /turf/simulated/floor/wood,
 /area/crawler)
 "B" = (

@@ -3,7 +3,7 @@
 ****************************************************/
 
 //These control the damage thresholds for the various ways of removing limbs
-#define DROPLIMB_THRESHOLD_EDGE 0.75
+#define DROPLIMB_THRESHOLD_EDGE 1.15
 #define DROPLIMB_THRESHOLD_TEAROFF 1.35
 #define DROPLIMB_THRESHOLD_DESTROY 1.5
 
@@ -63,7 +63,7 @@
 	var/cannot_break		// Impossible to fracture.
 	var/joint = "joint"		// Descriptive string used in dislocation.
 	var/amputation_point	// Descriptive string used in amputation.
-	var/dislocated = 0		// If you target a joint, you can dislocate the limb, impairing it's usefulness and causing pain
+	var/nerve_struck = 0		// If you target a joint, you can dislocate the limb, impairing it's usefulness and causing pain
 	var/encased				// Needs to be opened with a saw to access certain organs.
 	var/cavity_name = "cavity"				// Name of body part's cavity, displayed during cavity implant surgery
 	var/max_volume = ITEM_SIZE_SMALL	// Max w_class of cavity implanted items
@@ -115,7 +115,7 @@
 
 	src.max_damage = desc.max_damage
 	src.min_broken_damage = desc.min_broken_damage
-	src.dislocated = desc.dislocated
+	src.nerve_struck = desc.nerve_struck
 	src.vital = desc.vital
 	src.cannot_amputate = desc.cannot_amputate
 
@@ -317,7 +317,7 @@
 			to_chat(usr, SPAN_DANGER("There is \a [I] sticking out of it."))
 	return
 
-#define MAX_MUSCLE_SPEED -0.5
+#define MAX_MUSCLE_SPEED -0.3 //Soj edit from -0.5, slowdown!
 
 /obj/item/organ/external/proc/get_tally()
 	if(is_broken() && !(status & ORGAN_SPLINTED))
@@ -335,51 +335,52 @@
 			spawn(10)
 				qdel(spark_system)
 		. += 2
-	if(is_dislocated())
+	if(is_nerve_struck())
 		. += 1
 	if(status & ORGAN_SPLINTED)
 		. += 0.5
 
 
-	var/nerve_eff = max(owner.get_specific_organ_efficiency(OP_NERVE, organ_tag),1)
-	var/limb_eff = owner.get_limb_efficiency()
-	var/leg_eff = (limb_eff/100) - (limb_eff / nerve_eff)//Need more nerves to control those new muscles
+	var/nerve_efficiency = max(owner.get_specific_organ_efficiency(OP_NERVE, organ_tag),1)
+	var/limb_efficiency = owner.get_limb_efficiency()
+	var/leg_efficiency = (limb_efficiency/100) - (limb_efficiency / nerve_efficiency)//Need more nerves to control those new muscles
 
-	. += max(-(leg_eff/2), MAX_MUSCLE_SPEED)
+	. += max(-(leg_efficiency/2), MAX_MUSCLE_SPEED)
 
 	. += tally
 
-/obj/item/organ/external/proc/is_dislocated()
-	if(dislocated > 0)
+/obj/item/organ/external/proc/is_nerve_struck()
+	if(nerve_struck > 0)
 		return TRUE
 	if(parent)
-		return parent.is_dislocated()
+		return parent.is_nerve_struck()
 	return FALSE
 
-/obj/item/organ/external/proc/dislocate(var/primary)
-	if(dislocated != -1)
+/obj/item/organ/external/proc/nerve_strike_add(var/primary)
+	if(nerve_struck != -1)
 		if(primary)
-			dislocated = 2
+			nerve_struck = 2
 		else
-			dislocated = 1
-	owner.verbs |= /mob/living/carbon/human/proc/undislocate
+			nerve_struck = 1
 	if(children && children.len)
 		for(var/obj/item/organ/external/child in children)
-			child.dislocate()
+			child.nerve_strike_add()
 
-/obj/item/organ/external/proc/undislocate()
-	if(dislocated != -1)
-		dislocated = 0
+	spawn(100)
+		nerve_strike_remove()
+
+/obj/item/organ/external/proc/nerve_strike_remove()
+	if(nerve_struck != -1)
+		nerve_struck = 0
 	if(children && children.len)
 		for(var/obj/item/organ/external/child in children)
-			if(child.dislocated == 1)
-				child.undislocate()
+			if(child.nerve_struck == 1)
+				child.nerve_strike_remove()
 	if(owner)
 		owner.shock_stage += 20
 		for(var/obj/item/organ/external/limb in owner.organs)
-			if(limb.dislocated == 2)
+			if(limb.nerve_struck == 2)
 				return
-		owner.verbs -= /mob/living/carbon/human/proc/undislocate
 
 
 /obj/item/organ/external/proc/setBleeding()
@@ -482,7 +483,7 @@ This function completely restores a damaged organ to perfect condition.
 
 //Determines if we even need to process this organ.
 /obj/item/organ/external/proc/need_process()
-	if(status & (ORGAN_CUT_AWAY|ORGAN_BLEEDING|ORGAN_BROKEN|ORGAN_DESTROYED|ORGAN_SPLINTED|ORGAN_DEAD|ORGAN_MUTATED))
+	if(status & (ORGAN_CUT_AWAY|ORGAN_BLEEDING|ORGAN_BROKEN|ORGAN_SPLINTED|ORGAN_DEAD|ORGAN_MUTATED))
 		return TRUE
 	if((brute_dam || burn_dam) && !BP_IS_ROBOTIC(src)) //Robot limbs don't autoheal and thus don't need to process when damaged
 		return TRUE
@@ -526,8 +527,8 @@ This function completely restores a damaged organ to perfect condition.
 			if(owner && (owner.status_flags & REBUILDING_ORGANS))
 				return
 			for(var/obj/item/organ/external/limb in children)
-				limb.droplimb(FALSE, DROPLIMB_EDGE)
-			droplimb(FALSE, DROPLIMB_BLUNT)
+				limb.droplimb(FALSE, DISMEMBER_METHOD_EDGE)
+			droplimb(FALSE, DISMEMBER_METHOD_BLUNT)
 			owner?.gib() //In theory if droplimb is succesfull, the organ will have no owner and gib() should only get called if droplimb fails(Like on the upper body)
 
 //Updating germ levels. Handles organ germ levels and necrosis.
@@ -871,8 +872,9 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(owner) owner.update_body()
 
 /obj/item/organ/external/proc/unmutate()
-	status &= ~ORGAN_MUTATED
-	if(owner) owner.update_body()
+	if(!BP_IS_DEFORMED(src) && !BP_IS_PROSTHETIC(src))
+		src.status &= ~ORGAN_MUTATED
+		if(owner) owner.update_body()
 
 /obj/item/organ/external/proc/get_damage()	//returns total damage
 	return max(brute_dam + burn_dam - perma_injury, perma_injury)	//could use max_damage?
@@ -991,7 +993,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		return english_list(flavor_text)
 
 /obj/item/organ/external/is_usable()
-	return !is_dislocated() && !(status & (ORGAN_MUTATED|ORGAN_DEAD))
+	return !is_nerve_struck() && !(status & (ORGAN_MUTATED|ORGAN_DEAD))
 
 /obj/item/organ/external/proc/has_internal_bleeding()
 	for(var/datum/wound/W in wounds)

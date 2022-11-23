@@ -14,11 +14,9 @@
 	recommendations_needed = 1
 	inventory = list(
 		"Projectiles" = list(
-			/obj/item/gun/projectile/automatic/mac,
 			/obj/item/gun/projectile/automatic/c20r,
 			/obj/item/gun/projectile/automatic/sts/lrifle,
 			/obj/item/gun/projectile/automatic/sts/rifle,
-			/obj/item/gun/projectile/automatic/sts/hrifle,
 			/obj/item/gun/projectile/boltgun/lever,
 			/obj/item/gun/projectile/boltgun/sa,
 			/obj/item/gun/projectile/shotgun/pump/gladstone,
@@ -66,13 +64,13 @@
 		),
 		"Top Class Firearms" = list(
 			/obj/item/gun/projectile/boltgun/scout,
-			/obj/item/gun/projectile/avasarala,
 			/obj/item/gun/projectile/basilisk,
-			/obj/item/gun/projectile/revolver/mateba,
+			/obj/item/gun/projectile/revolver/hornet,
 			/obj/item/gun/projectile/revolver/tacticool_revolver
 		),
 		"High End Laser Guns" = list(
 			/obj/item/gun/energy/firestorm,
+			/obj/item/gun/energy/xray,
 			/obj/item/gun/energy/lasercore,
 			/obj/item/gun/energy/pulse/cassad
 		)

@@ -88,3 +88,23 @@
 		list(/obj/item/ameridian_core, 1, "time" = 25),
 		list(CRAFT_MATERIAL, 60, MATERIAL_AMERIDIAN, "time" = 25)
 	)
+
+// Consume!! Makes it's own tab. Not a big deal I guess.
+
+/datum/craft_recipe/consumer
+	category = "Consumer"
+	time = 200
+	related_stats = list(STAT_MEC)
+	icon_state = "device"
+
+
+/datum/craft_recipe/consumer/toaster
+	name = "toaster"
+	result = /obj/item/toy/consumer/product/toaster
+	steps = list(
+		list(/obj/item/toy/consumer/kit/toaster, 1, "time" = 50),
+		list(QUALITY_SCREW_DRIVING, 35, "time" = 170),
+		list(QUALITY_BOLT_TURNING, 35, "time" =  200),
+		list(QUALITY_SCREW_DRIVING, 35, "time" = 170),
+		list(QUALITY_PRYING, 35, "time" = 170)
+	)

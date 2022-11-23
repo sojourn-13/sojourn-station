@@ -133,10 +133,11 @@ proc/do_old_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool)
 			selectedStep.fail_step(user, M, zone, tool)		//malpractice~
 		else
 			to_chat(user, SPAN_WARNING("You must remain close to your patient to conduct surgery."))
-
+		/*
 		if (ishuman(M))
 			var/mob/living/carbon/human/H = M
 			H.update_surgery()
+		*/
 		return 1 //don't want to do weapony things after surgery
 
 	return 0

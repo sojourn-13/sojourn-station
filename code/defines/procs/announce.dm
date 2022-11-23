@@ -114,6 +114,8 @@ datum/announcement/proc/Log(message as text, message_title as text)
 /proc/level_eight_beta_announcement() //announcment which tells the crew that the hivemind has been killed, job well done crew.
 	command_announcement.Announce("Diagnostic Systems report level 8 Bio-mechanical infestation within the [station_name()] has been contained.")
 
+/proc/level_nine_announcement()
+	command_announcement.Announce("Confirmed outbreak of level 9 Excelsior communist infiltration within the [station_name()].", "Biohazard Alert")
 
 /proc/ion_storm_announcement()
 	command_announcement.Announce("It has come to our attention that an ion storm has formed.  Please monitor all electronic equipment for malfunctions.", "Anomaly Alert", new_sound = 'sound/AI/ionstorm.ogg')

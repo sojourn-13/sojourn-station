@@ -160,8 +160,19 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL), // Bullets
 		list(QUALITY_WELDING, 10, 20),
 		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS), // Reflective plating?
-		list(CRAFT_MATERIAL, 2, MATERIAL_PLATINUM), // Bullets
 		list(QUALITY_ADHESIVE, 15, "time" = 60)
+	)
+
+/datum/craft_recipe/clothing/scavengerhelmet
+	name = "Scavenger Helmet"
+	result = /obj/item/clothing/head/helmet/handmade/scavengerhelmet
+	steps = list(
+		list(/obj/item/clothing/head/helmet/handmade, 1), // Take your average combat helm
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL), // More internal padding
+		list(QUALITY_HAMMERING, 10, 15), // Hammer it into place...
+		list(QUALITY_ADHESIVE, 15, 15), // Make sure it sticks!
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL), // Prepare the additional external plates...
+		list(QUALITY_WELDING, 10, 20), // ...and weld them into place, tadah!
 	)
 
 /datum/craft_recipe/clothing/muzzle
@@ -470,3 +481,62 @@
 		list(QUALITY_CUTTING, 15, 30),
 	)
 
+// Nuckle Dusters and melee based things
+
+/datum/craft_recipe/clothing/dusters
+	name = "steel knuckle dusters"
+	result = /obj/item/clothing/gloves/dusters
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL), //Grab some steel
+		list(QUALITY_WELDING, 10, "time" = 30), //Weld it into basic form
+		list(QUALITY_HAMMERING, 15, 10) //Harden into shape
+	)
+
+/datum/craft_recipe/clothing/dusters/silver
+	name = "silver knuckle dusters"
+	result = /obj/item/clothing/gloves/dusters/silver
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_SILVER), //Grab some silver
+		list(QUALITY_WELDING, 10, "time" = 30), //Weld it into basic form
+		list(QUALITY_HAMMERING, 15, 10) //Harden into shape
+	)
+
+/datum/craft_recipe/clothing/dusters/plasteel
+	name = "plasteel knuckle dusters"
+	result = /obj/item/clothing/gloves/dusters/plasteel
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL), //Grab some plasteel
+		list(QUALITY_WELDING, 10, "time" = 30), //Weld it into basic form
+		list(QUALITY_HAMMERING, 15, 10) //Harden into shape
+	)
+
+/datum/craft_recipe/clothing/dusters/gold
+	name = "golden knuckle dusters"
+	result = /obj/item/clothing/gloves/dusters/gold
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_GOLD), //Grab some gold
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLATINUM), //Grab some platinum as well
+		list(QUALITY_WELDING, 10, "time" = 30), //Weld it into basic form
+		list(QUALITY_HAMMERING, 15, 10) //Harden into shape
+	)
+
+/datum/craft_recipe/clothing/dusters/platinum
+	name = "spiked platinum knuckle dusters"
+	result = /obj/item/clothing/gloves/dusters/platinum
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLATINUM), //Grab some platinum
+		list(QUALITY_WELDING, 10, "time" = 30), //Weld it into basic form
+		list(QUALITY_HAMMERING, 15, 10), //Harden into shape
+		list(/obj/item/tool_upgrade/augment/spikes, 1, "time" = 10) //Put 'spiked' in the name
+	)
+
+/datum/craft_recipe/clothing/dusters/gloves
+	name = "weighted knuckle gloves"
+	result = /obj/item/clothing/gloves/dusters/gloves
+	steps = list(
+		list(/obj/item/clothing/gloves/dusters, 1, "time" = 5), //Tear up the gloves
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL), //Grab some plasteel
+		list(QUALITY_HAMMERING, 15, 10), //Harden into powder
+		list(QUALITY_HAMMERING, 15, 10), //Harden into FINE powder
+		list(/obj/item/stack/medical/bruise_pack/handmade, 2, "time" = 10) //Cover the holes up
+	)

@@ -14,6 +14,14 @@
 	name = "Laurel wreath"
 	icon_state = "laurel"
 	desc = "A round wreath made of connected branches and leaves of the bay laurel."
+	armor_list = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 100, //drip
+		rad = 0
+	)
 	slot_flags = SLOT_HEAD | SLOT_EARS
 	body_parts_covered = 0
 
@@ -275,6 +283,14 @@ obj/item/clothing/head/ribbon/red
 	name = "numerical hat"
 	icon_state = "numerical_hat"
 	desc = "A tall hat for nurmerical of the faith. Can be turned inside out to turn form red to gray or gray to red"
+	armor_list = list( //same as the garb
+		melee = 10,
+		bullet = 0,
+		energy = 10,
+		bomb = 5,
+		bio = 100,
+		rad = 0
+	)
 
 /obj/item/clothing/head/numerical_hat/verb/toggle_style()
 	set name = "Adjust Style"

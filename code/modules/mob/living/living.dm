@@ -880,6 +880,9 @@ default behaviour is:
 	//Mutations populated through horrendous genetic tampering.
 	unnatural_mutations = new(src)
 
+	//Skills and mastery holder
+	learnt_tasks = new(src)
+
 	generate_static_overlay()
 	for(var/mob/observer/eye/angel/A in GLOB.player_list)
 		if(A)
@@ -902,7 +905,16 @@ default behaviour is:
 
 	QDEL_NULL(stats)
 
-	unnatural_mutations.holder = null //causes a GC failure if we qdel-and it seems its not SUPPOSED to qdel, oddly
+	static_overlay.loc = null
+	static_overlay.transform = null
+	QDEL_NULL(static_overlay)
+
+	unnatural_mutations = null //causes a GC failure if we qdel-and it seems its not SUPPOSED to qdel, oddly
+
+	learnt_tasks = null
+
+	if(registered_z)
+		SSmobs.mob_living_by_zlevel[registered_z] -= src	// STOP_PROCESSING() doesn't remove the mob from this list
 
 	update_z(null)
 
@@ -937,3 +949,26 @@ default behaviour is:
 
 /mob/living/proc/eyecheck()
 	return 0
+
+/mob/living/verb/show_tasks()
+	set name		= "Show tasks"
+	set desc		= "Browse your character tasks."
+	set category	= "IC"
+	set src			= usr
+
+	var/list/data = list()
+	var/list/tasks = learnt_tasks.learnt_tasks
+	if(LAZYLEN(tasks))
+		for(var/task in tasks)
+			var/datum/task_master/task/T = task
+			data["tasks"] += list(list(
+				"name" = T.name,
+				"desc" = T.desc,
+				"value" = T.value,
+				"level_threshold" = T.level_threshholds,
+				"level" = T.level
+			))
+
+	var/datum/nanoui/ui = new(usr, src, "main", "tasks.tmpl", "Tasks", 500, 300)
+	ui.set_initial_data(data)	// when the ui is first opened this is the data it will use
+	ui.open()					// open the new ui window

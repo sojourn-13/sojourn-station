@@ -29,8 +29,8 @@ GLOBAL_LIST_INIT(excel_item_targets,list(
 		"a Grizzly shotgun" = /obj/item/gun/projectile/shotgun/pump,
 		//"a Cassad plasma rifle" = /obj/item/gun/energy/plasma/cassad,
 		"a Spider Rose energy gun" = /obj/item/gun/energy/gun,
-		"a Hustler omni rifle" = /obj/item/gun/projectile/automatic/omnirifle,
-		"a MAC sub machine gun" = /obj/item/gun/projectile/automatic/mac,
+		"a Omnirfile heavy rifle" = /obj/item/gun/projectile/automatic/omnirifle,
+		//"a MAC sub machine gun" = /obj/item/gun/projectile/automatic/mac,
 		"a STS carbine" = /obj/item/gun/projectile/automatic/sts,
 		"a Colt handgun" = /obj/item/gun/projectile/colt,
 		//"a Lenar granade launcher" = /datum/design/autolathe/gun/grenade_launcher_lenar, What in the god damn?
@@ -40,55 +40,32 @@ GLOBAL_LIST_INIT(excel_item_targets,list(
 		//"a hand teleporter" = /obj/item/hand_tele,
 		//"a bluespace Harpoon" = /obj/item/bluespace_harpoon,
 		//"a rocket-powered charge hammer" = /obj/item/tool/hammer/charge,
-		"the premier's antique laser gun" = /obj/item/gun/energy/captain
+		"Destiny antique laser gun" = /obj/item/gun/energy/captain
 
 	))
 
 GLOBAL_LIST_INIT(blackshield_item_targets,list(
-		"Deckard revolver" = /obj/item/gun/projectile/revolver/deckard,
-		"Gladstone shotgun" = /obj/item/gun/projectile/shotgun/pump/gladstone,
-		"Cassad plasma rifle" = /obj/item/gun/energy/pulse/cassad,
-		"Spider Rose energy gun" = /obj/item/gun/energy/gun,
-		"Hustler omni rifle" = /obj/item/gun/projectile/automatic/omnirifle,
-		"MAC sub machine gun" = /obj/item/gun/projectile/automatic/mac,
-		"STS carbine" = /obj/item/gun/projectile/automatic/sts,
-		"M1911 10mm auto-mag handgun" = /obj/item/gun/projectile/colt/ten,
-		"Lenar granade launcher" = /obj/item/gun/projectile/grenade/lenar,
-		"Forged barrel" = /obj/item/gun_upgrade/barrel/forged,
-		"Penetrator magnetic accelerator barrel" = /obj/item/gun_upgrade/barrel/mag_accel,
-		"Magnetic overheat barrel" = /obj/item/gun_upgrade/barrel/overheat,
-		"Danger Zone Trigger" = /obj/item/gun_upgrade/trigger/dangerzone,
-		"Gauss Coil barrel" = /obj/item/gun_upgrade/barrel/gauss,
-		//"HandHolder Barrel Rail" = /obj/item/gun_upgrade/mechanism/gun_rail,
-		"Watchman scope" = /obj/item/gun_upgrade/scope/watchman,
-		"Contract Killer scope" = /obj/item/gun_upgrade/scope/killer,
-		"Melee armor plating" = /obj/item/tool_upgrade/armor/melee,
-		"Ballistic armor plating" = /obj/item/tool_upgrade/armor/bullet,
-		"Energy armor plating" = /obj/item/tool_upgrade/armor/energy,
-		"Bomb proofing armor plate" = /obj/item/tool_upgrade/armor/bomb,
-		"Hand RCD" = /obj/item/rcd,
-		//"bluespace Harpoon" = /obj/item/bluespace_harpoon,
-		"Mech CCW armor booster" = /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster,
-		"Mech Exosuit projectile armor booster" = /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster,
-		"Mech Shield droid" = /obj/item/mecha_parts/mecha_equipment/combat_shield,
-		"Mech RCD" = /obj/item/mecha_parts/mecha_equipment/tool/rcd,
-		"PBT Pacifier mounted taser" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser,
-		"Ultra AC 2"= /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg,
-		"LBX AC 10 Scattershot" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot,
-		"CH-PS Immolator laser" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser,
-		"CH-LC Solaris laser cannon" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy,
-		"MkIV ion heavy cannon" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion,
-		"SGL-6 grenade launcher" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang,
-		"Mounted rig combat injector" = /obj/item/rig_module/modular_injector/combat,
-		"hardsuit laser cannon"= /obj/item/rig_module/mounted,
-		"hardsuit laser gun"= /obj/item/rig_module/mounted/egun,
-		"hardsuit taser" = /obj/item/rig_module/mounted/taser,
-		"hardsuit grenade launcher" = /obj/item/rig_module/grenade_launcher,
-		"hardsuit integrated flash" = /obj/item/rig_module/device/flash,
-		"hardsuit integrated thermals" = /obj/item/rig_module/vision/thermal,
-		"hardsuit integrated power sink" = /obj/item/rig_module/power_sink,
-		"hardsuit integrated electrowarfare mod" = /obj/item/rig_module/electrowarfare_suite
-		/*
+		"No slip shoe-soels" =  /obj/item/noslipmodule,
+		"Voidwolf energy sword" = /obj/item/melee/energy/sword/pirate,
+		"Spy-bug microphone" = /obj/item/device/spy_bug,
+		"Warlock velvet posion wine" = /obj/item/reagent_containers/food/drinks/bottle/pwine,
+		"explosive ordinance storage box" = /obj/item/storage/box/explosive,
+		"Frenchman butterfly knife" = /obj/item/material/butterfly/frenchman,
+		"Destiny antique laser gun" = /obj/item/gun/energy/captain,
+		"Hand teleporter device" = /obj/item/hand_tele,
+		"Omnirifle" = /obj/item/gun/projectile/automatic/omnirifle,
+		"bluespace Harpoon" = /obj/item/bluespace_harpoon,
+
+		"thermal glasses" = /obj/item/clothing/glasses/powered/thermal,
+		"thermal implant" = /obj/item/organ_module/active/hud/thermal,
+		"thermal lenses" = /obj/item/clothing/glasses/attachable_lenses,
+		"thermal hardsuit module" = /obj/item/rig_module/vision/thermal,
+		"hardsuit powersink module" = /obj/item/rig_module/power_sink,
+		"hardsuit electrowarfare module" = /obj/item/rig_module/electrowarfare_suite,
+
+		"broken Excelsior implant" = /obj/item/implantcase/excelsior/broken,
+		"Excelsior branded soap" = /obj/item/soap/commie,
+		"Excelsior voidsuit" =  /obj/item/clothing/suit/space/void/excelsior,
 		"design disk Means of Production" = /obj/item/computer_hardware/hard_drive/portable/design/excelsior,
 		"design disk Means of Revolution" = /obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons,
 		"design disk Stocking Revolution" = /obj/item/computer_hardware/hard_drive/portable/design/ex_parts,
@@ -99,7 +76,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"design disk Kardashev-Mosin" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_boltgun,
 		"design disk Kalashnikov" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ak,
 		"design disk Reclaimer" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer,
-		"design disk Shpagin" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh,*/
+		"design disk Shpagin" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh,
 
 	))
 
@@ -312,21 +289,21 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 	var/target_type
 
 	var/static/list/possible_items = list(
-		"the premier's antique laser gun" = /obj/item/gun/energy/captain,
+		"Destiny antique laser gun" = /obj/item/gun/energy/captain,
 		"a hand teleporter" = /obj/item/hand_tele,
 		"an RCD" = /obj/item/rcd,
 		"a jetpack" = /obj/item/tank/jetpack,
-		"a captain's jumpsuit" = /obj/item/clothing/under/rank/captain,
+		"a premier's jumpsuit" = /obj/item/clothing/under/rank/captain,
 		"a functional AI" = /obj/item/device/aicard,
-		"the Technomancer Exultant's advanced voidsuit control module" = /obj/item/rig/ce,
+		"the GM advanced voidsuit control module" = /obj/item/rig/ce,
 		"the station blueprints" = /obj/item/blueprints,
 		"a sample of slime extract" = /obj/item/slime_extract,
 		"a piece of corgi meat" = /obj/item/reagent_containers/food/snacks/meat/corgi,
-		"a Moebius expedition overseer's jumpsuit" = /obj/item/clothing/under/rank/expedition_overseer,
-		"a exultant's jumpsuit" = /obj/item/clothing/under/rank/exultant,
-		"a Moebius biolab officer's jumpsuit" = /obj/item/clothing/under/rank/moebius_biolab_officer,
-		"a Ironhammer commander's jumpsuit" = /obj/item/clothing/under/rank/ih_commander,
-		"a First Officer's jumpsuit" = /obj/item/clothing/under/rank/first_officer,
+		"a CRO's jumpsuit" = /obj/item/clothing/under/rank/expedition_overseer,
+		"a CEO's jumpsuit" = /obj/item/clothing/under/rank/exultant,
+		"a CMO's jumpsuit" = /obj/item/clothing/under/rank/moebius_biolab_officer,
+		"a CO's jumpsuit" = /obj/item/clothing/under/rank/ih_commander,
+		"a Steward's jumpsuit" = /obj/item/clothing/under/rank/first_officer,
 		"the hypospray" = /obj/item/reagent_containers/hypospray,
 		"the premier's pinpointer" = /obj/item/pinpointer,
 		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
@@ -450,6 +427,15 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		to_chat(user, SPAN_NOTICE("Mandete completed: [name] ([reward] energy)"))
 
 	excelsior_energy += reward
+	var/datum/antag_faction/F = get_faction_by_id(FACTION_EXCELSIOR)
+	var/datum/objective/timed/excelsior/E = (locate(/datum/objective/timed/excelsior) in F.objectives)
+	if(E)
+		E.mandate_completion()
+	if(user)
+		if(E)
+			to_chat(user, SPAN_NOTICE("Mandate completed: [name] ([reward] energy, [E.time2minutes(E.mandate_increase)] minutes have been added to the detection countdown timer.)"))
+		else
+			to_chat(user, SPAN_NOTICE("Mandate completed: [name] ([reward] energy)"))
 	for (var/obj/machinery/complant_teleporter/t in excelsior_teleporters)
 		t.update_nano_data()
 

@@ -50,6 +50,9 @@
 	forced_ambience = list('sound/ambience/maintambience.ogg')
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
 
+/area/nadezhda/maintenance/guild
+	name = "Guild Maintence"
+
 /area/nadezhda/maintenance/junk
 	name = "Junk Beacon"
 	icon_state = "disposal"
@@ -337,23 +340,30 @@
 	is_dungeon_lootable = FALSE
 
 /area/nadezhda/outside/lakeside
-    name = "Lakeside"
-    icon_state = "erisblue"
-    sound_env = MOUNTAINS
-    forced_ambience = list('sound/ambience/lakeamb1.ogg', 'sound/ambience/lakeamb2.ogg', 'sound/ambience/lakeamb3.ogg')
+	name = "Lakeside"
+	icon_state = "erisblue"
+	sound_env = MOUNTAINS
+	forced_ambience = list('sound/ambience/lakeamb1.ogg', 'sound/ambience/lakeamb2.ogg', 'sound/ambience/lakeamb3.ogg')
 
 /area/nadezhda/outside/meadow
-    name = "Meadow"
-    icon_state = "meadow"
-    sound_env = MOUNTAINS
-    forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
+	name = "Deep Forest"
+	icon_state = "meadow"
+	sound_env = MOUNTAINS
+	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
+
+/area/nadezhda/outside/inside_colony
+	name = "Colony Meadow"
+	icon_state = "meadow"
+	sound_env = MOUNTAINS
+	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
+
 
 /area/nadezhda/outside/mountainsolars
-    name = "Mountain Solars"
-    icon_state = "meadow"
-    sound_env = MOUNTAINS
-    forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
-    is_dungeon_lootable = FALSE
+	name = "Mountain Solars"
+	icon_state = "meadow"
+	sound_env = MOUNTAINS
+	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
+	is_dungeon_lootable = FALSE
 
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
 
@@ -510,7 +520,7 @@
 
 /area/nadezhda/command/bridgebar
 	name = "V.I.P. Bar"
-	icon_state = "nadezhdablue"
+	icon_state = "bar"
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/captain
@@ -788,6 +798,10 @@
 	name = "\improper Hydroponics"
 	icon_state = "hydro"
 
+/area/nadezhda/crew_quarters/botanist
+	name = "\improper Gardener's room"
+	icon_state = "hydro"
+
 /area/nadezhda/crew_quarters/hydroponics/garden
 	name = "\improper Garden"
 	icon_state = "garden"
@@ -805,6 +819,10 @@
 /area/nadezhda/crew_quarters/publichydro
 	name = "Public Hydroponics"
 	icon_state = "erisblue"
+
+/area/nadezhda/crew_quarters/techshop
+	name =  "Vacant Tech shops"
+	icon_state = "construction"
 
 //Church
 

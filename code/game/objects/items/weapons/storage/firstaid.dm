@@ -218,9 +218,9 @@
 	new /obj/item/tool/hemostat/adv/si(src)
 	new /obj/item/tool/retractor/adv/si(src)
 	new /obj/item/tool/scalpel/advanced/si(src)
+	new /obj/item/tool/scalpel/laser(src)
 	new /obj/item/tool/cautery/adv/si(src)
 	new /obj/item/tool/tape_roll/bonegel/si(src)
-	new /obj/item/tool/surgicaldrill/adv/si(src)
 	new /obj/item/tool/surgicaldrill/adv/si(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 
@@ -693,7 +693,7 @@
 	item_state = "medicalpack"
 	max_w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 2)
-	can_hold = list(/obj/item/organ, /obj/item/reagent_containers/food, /obj/item/reagent_containers/glass)
+	can_hold = list(/obj/item/organ, /obj/item/modification/organ, /obj/item/reagent_containers/food, /obj/item/reagent_containers/glass)
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 	use_to_pickup = TRUE
 

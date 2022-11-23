@@ -568,7 +568,6 @@
 /area/template_noop)
 "YW" = (
 /obj/structure/table/onestar,
-/obj/item/gun/projectile/handmade_pistol/shotgun,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/template_noop)
 "YZ" = (

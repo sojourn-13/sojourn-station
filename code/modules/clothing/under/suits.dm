@@ -133,13 +133,13 @@
 	item_state = "green_suit_skirt"
 
 /obj/item/clothing/under/suit_jacket/pink
-	name = "pink suit"
+	name = "jacketed pink suit"
 	desc = "A pink suit complete with a yellow shirt and red necktie."
 	icon_state = "pinksuit"
 	item_state = "pinksuit"
 
 /obj/item/clothing/under/suit_jacket/pinkskirt
-	name = "pink suit skirt"
+	name = "jacketed pink suit skirt"
 	desc = "A pink skirted suit complete with a yellow shirt and red necktie."
 	icon_state = "pinksuitskirt"
 	item_state = "pinksuitskirt"
@@ -215,6 +215,12 @@
     desc = "a suit coat colored a dark teal. It's quite old in design, but looks brand new."
     icon_state = "interfacebluesuit"
     item_state = "interfacebluesuit"
+
+/obj/item/clothing/under/suit_jacket/livesey
+	name = "Naval Surgeon's suit"
+	desc = "A formal pair of burgundy pants with a big belt buckle, pairing with a golden buttoned teal jacket, a sign of prestige for naval surgeons."
+	icon_state = "doktor"
+	item_state = "doktor"
 
 /*Modular Suits*/
 
@@ -332,8 +338,111 @@
 	icon_state = "tansuitbuttoned"
 	item_state = "tansuitbuttoned"
 
-/obj/item/clothing/under/modular
+/obj/item/clothing/under/modular/tanskirt
 	name = "tan suit skirt"
 	desc = "A tan suit skirt complemented by a buttoned white shirt."
 	icon_state = "tansuitskirtbuttoned"
 	item_state = "tansuitskirtbuttoned"
+
+/obj/item/clothing/under/modular/pink
+	name = "pink suit"
+	desc = "A pair of pink suit pants complemented by a buttoned white shirt."
+	icon_state = "pink_suit"
+	item_state = "pink_suit"
+
+/obj/item/clothing/under/modular/pink_skirt
+	name = "pink suit skirt"
+	desc = "A pink suit skirt complemented by a buttoned white shirt."
+	icon_state = "pink_suit_skirt"
+	item_state = "pink_suit_skirt"
+
+/obj/item/clothing/under/modular/blacksuit
+	name = "black suit with tie"
+	desc = "A formal white shirt with black tie, on a pair of black suit pants. Please don't bark."
+	icon_state = "makima"
+	item_state = "makima"
+
+/obj/item/clothing/under/modular/greysuit
+	name = "grey suit"
+	desc = "A formal pair of grey pants with a white buttoned shirt."
+	icon_state = "greysuit"
+	item_state = "greysuit"
+
+/obj/item/clothing/under/modular/greysuit_skirt
+	name = "grey suit skirt"
+	desc = "A formal grey skirt with a white buttoned shirt."
+	icon_state = "greysuit_skirt"
+	item_state = "greysuit_skirt"
+
+/obj/item/clothing/under/modular/brown
+	name = "brown suit"
+	desc = "A formal pair of brown pants with a white buttoned shirt."
+	icon_state = "brown_suit"
+	item_state = "brown_suit"
+
+/obj/item/clothing/under/modular/brown_skirt
+	name = "brown suit skirt"
+	desc = "A formal brown skirt with a white buttoned shirt."
+	icon_state = "brown_suit-skirt"
+	item_state = "brown_suit-skirt"
+
+/obj/item/clothing/under/modular/cream
+	name = "cream suit"
+	desc = "A formal pair of cream pants with a white buttoned shirt."
+	icon_state = "cream_suit"
+	item_state = "cream_suit"
+
+/obj/item/clothing/under/modular/creamskirt
+	name = "cream suit skirt"
+	desc = "A formal cream skirt with a white buttoned shirt."
+	icon_state = "cream_suitskirt"
+	item_state = "cream_suitskirt"
+
+/obj/item/clothing/under/modular/olive
+	name = "olive suit"
+	desc = "A formal pair of olive pants with a white buttoned shirt."
+	icon_state = "olive_suit"
+	item_state = "olive_suit"
+
+/obj/item/clothing/under/modular/oliveskirt
+	name = "olive suit skirt"
+	desc = "A formal olive skirt with a white buttoned shirt."
+	icon_state = "olive_suitskirt"
+	item_state = "olive_suitskirt"
+
+/obj/item/clothing/under/modular/hakama_red
+	name = "white and red hakama"
+	desc = "A formal, traditional japanese clothing consisting of a white kimono and pleated red trousers."
+	icon_state = "hakama_red"
+	item_state = "hakama_red"
+
+/obj/item/clothing/under/modular/hakama_black
+	name = "white and black hakama"
+	desc = "A formal, traditional japanese clothing consisting of a white kimono and pleated black trousers."
+	icon_state = "hakama_black"
+	item_state = "hakama_black"
+
+/obj/item/clothing/under/modular/hakama_blue
+	name = "white and blue hakama"
+	desc = "A formal, traditional japanese clothing consisting of a white kimono and pleated blue trousers."
+	icon_state = "hakama_blue"
+	item_state = "hakama_blue"
+
+/obj/item/clothing/under/modular/hakama_br
+	name = "black and red hakama"
+	desc = "A formal, traditional japanese clothing consisting of a black kimono and pleated red trousers."
+	icon_state = "hakama_br"
+	item_state = "hakama_br"
+
+/obj/item/clothing/under/modular/hakama_bw
+	name = "black and white hakama"
+	desc = "A formal, traditional japanese clothing consisting of a black kimono and pleated white trousers."
+	icon_state = "hakama_bw"
+	item_state = "hakama_bw"
+
+/obj/item/clothing/under/modular/hakama_bb
+	name = "black and blue hakama"
+	desc = "A formal, traditional japanese clothing consisting of a black kimono and pleated blue trousers."
+	icon_state = "hakama_bb"
+	item_state = "hakama_bb"
+

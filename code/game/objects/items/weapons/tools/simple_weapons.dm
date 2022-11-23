@@ -69,7 +69,7 @@
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
-	embed_mult = 1 //Axes cut deep, and their hooked shape catches on things
+	embed_mult = 1.2 //Axes cut deep, and their hooked shape catches on things
 	worksound = WORKSOUND_HARD_SLASH
 	price_tag = 190
 	item_icons = list(
@@ -207,8 +207,9 @@
 /obj/item/tool/sword/katana
 	name = "katana"
 	desc = "Modern Japanese-style blade that has no curve to it. This one looks pretty sharp."
-	icon_state = "katana"
+	icon_state = "katana" // New sprite courtesy of Kavric
 	item_state = "katana"
+	hitsound = 'sound/weapons/heavyslash.ogg'
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 5, MATERIAL_DIAMOND = 1) //sharpened using diamond dust or whatever
 	slot_flags = SLOT_BELT | SLOT_BACK
 	force = WEAPON_FORCE_BRUTAL
@@ -458,14 +459,11 @@
 //POLEARMS
 /obj/item/tool/spear
 	icon = 'icons/obj/weapons.dmi'
-	icon_state = "spearglass0"
-	wielded_icon = "spearglass1"
-	name = "spear"
+	icon_state = "spear_glass"
+	item_state = "spear_glass"
+	wielded_icon = "spear_glass_wielded"
+	name = "shard spear"
 	desc = "A spiky bit of material tied onto a metal pole with some wire. It's an insult to spears across the galaxy - but it can still do some nasty damage and has some decent armor-piercing capabilities. Spears like these are often seen in the hands of vagrants, muggers, or desperate militias. Due to this weapon - if you could call it that - being so long, you're able to attack enemies from up to a tile away."
-	force = WEAPON_FORCE_PAINFUL
-	throwforce = WEAPON_FORCE_ROBUST // It's meant to be thrown
-	armor_penetration = ARMOR_PEN_MODERATE // It's a SPEAR!
-	structure_damage_factor = STRUCTURE_DAMAGE_WEAK
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	throw_speed = 3
@@ -478,11 +476,62 @@
 	embed_mult = 1.5
 	price_tag = 50
 	//attack_distance = 2
+
+
+	force = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_DANGEROUS
+	armor_penetration = ARMOR_PEN_MODERATE
+	throw_speed = 3
+	max_upgrades = 5
+
 	item_icons = list(
 		slot_back_str = 'icons/inventory/back/mob.dmi')
 	item_state_slots = list(
 		slot_back_str = "spearglass0_back"
 		)
+
+/obj/item/tool/spear/steel
+	name = "steel spear"
+	desc = "A steel spearhead welded to a crude metal shaft, made from two welded rods. It'll serve well enough."
+	icon_state = "spear_steel"
+	item_state = "spear_steel"
+	wielded_icon = "spear_steel_wielded"
+	force = WEAPON_FORCE_DANGEROUS
+	throwforce = WEAPON_FORCE_ROBUST
+	armor_penetration = ARMOR_PEN_DEEP
+	tool_qualities = list(QUALITY_CUTTING = 10,  QUALITY_WIRE_CUTTING = 5, QUALITY_SCREW_DRIVING = 5)
+	matter = list(MATERIAL_STEEL = 3)
+	structure_damage_factor = STRUCTURE_DAMAGE_WEAK
+
+/obj/item/tool/spear/plasteel
+	name = "plasteel spear"
+	desc = "A carefully crafted plasteel spearhead affixed to a metal shaft, it is welded securely on and feels balanced. Show them the past still lives."
+	icon_state = "spear_plasteel"
+	item_state = "spear_plasteel"
+	wielded_icon = "spear_plasteel_wielded"
+	force = WEAPON_FORCE_ROBUST
+	throwforce = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_DEEP
+	tool_qualities = list(QUALITY_CUTTING = 15,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 10)
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTEEL = 2)
+	structure_damage_factor = STRUCTURE_DAMAGE_NORMAL
+
+/obj/item/tool/spear/uranium
+	name = "uranium spear"
+	desc = "A steel spear with a uranium lined spearhead. Your foes may survive the stab, but the toxin will linger."
+	icon_state = "spear_uranium"
+	item_state = "spear_uranium"
+	wielded_icon = "spear_uranium_wielded"
+	force = WEAPON_FORCE_DANGEROUS
+	throwforce = WEAPON_FORCE_DANGEROUS
+	armor_penetration = ARMOR_PEN_DEEP
+	tool_qualities = list(QUALITY_CUTTING = 10,  QUALITY_WIRE_CUTTING = 5, QUALITY_SCREW_DRIVING = 5)
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_URANIUM = 1)
+
+/obj/item/tool/spear/uranium/apply_hit_effect(mob/living/carbon/human/target, mob/living/user, hit_zone)
+	..()
+	if(istype(target))
+		target.apply_effect(rand(5, 10), IRRADIATE)
 
 /obj/item/tool/spear/hunter_halberd
 	name = "halberd"

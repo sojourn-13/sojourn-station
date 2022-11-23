@@ -14,12 +14,24 @@
 	growth = 5 //We start out always maxed as to save on preformance
 	grower_helper = TRUE
 	self_improvement = FALSE
+	is_growing = TRUE
+
+/obj/structure/ameridian_crystal/spire/dormit
+	spread_range = -1
+	is_growing = FALSE
+
+/obj/structure/ameridian_crystal/spire/range_2
+	spread_range = 2
+
+/obj/structure/ameridian_crystal/spire/range_3
+	spread_range = 3
 
 /obj/structure/ameridian_crystal/spire/fake
 	spread_range = -1 //Invest 3 into me before a return
 	name = "artificial ameridian spire growth"
 	desc = "A colony planted verson of a sprite growth, made with tons of fragmented shards, and some pure ameridain cores."
 	colour_type = "FAKE"
+	is_growing = FALSE
 
 /obj/structure/ameridian_crystal/spire/examine(mob/user)
 	..()

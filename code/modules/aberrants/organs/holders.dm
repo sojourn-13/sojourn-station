@@ -33,6 +33,11 @@
 /obj/item/organ/internal/scaffold/Destroy()
 	..()
 	UnregisterSignal(src, COMSIG_ABERRANT_COOLDOWN)
+	if(LAZYLEN(item_upgrades))
+		for(var/datum/mod in item_upgrades)
+			SEND_SIGNAL(mod, COMSIG_REMOVE, src)
+			qdel(mod)
+	return ..()
 
 /obj/item/organ/internal/scaffold/Process()
 	..()
@@ -41,17 +46,22 @@
 
 /obj/item/organ/internal/scaffold/examine(mob/user)
 	. = ..()
-	if(user.stats?.getStat(STAT_BIO) >= STAT_LEVEL_EXPERT || user.stats?.getPerk(PERK_ADVANCED_MEDICAL))
-		if(item_upgrades.len)
-			to_chat(user, SPAN_NOTICE("Organoid grafts present ([item_upgrades.len]/[max_upgrades]). Use a laser cutting tool to remove."))
-		if(aberrant_cooldown_time > 0)
-			to_chat(user, SPAN_NOTICE("Average organ process duration: [aberrant_cooldown_time / (1 SECOND)] seconds"))
-		var/organs = ""
-		for(var/organ in organ_efficiency)
-			organs += organ + " ([organ_efficiency[organ]]), "
-		organs = copytext(organs, 1, length(organs) - 1)
-		to_chat(user, SPAN_NOTICE("Organ tissues present (efficiency): <span style='color:pink'>[organs ? organs : "none"]</span>"))
-	if(user.stats?.getStat(STAT_BIO) >= STAT_LEVEL_PROF || user.stats?.getPerk(PERK_ADVANCED_MEDICAL))
+	var/using_sci_goggles = FALSE
+	var/details_unlocked = FALSE
+	
+	if(ishuman(user))
+		// Goggles check
+		var/mob/living/carbon/human/H = user
+		if(istype(H.glasses, /obj/item/clothing/glasses/powered/science))
+			var/obj/item/clothing/glasses/powered/G = H.glasses
+			using_sci_goggles = G.active	// Meat vision
+
+		// Stat check
+		details_unlocked = (user.stats.getStat(STAT_BIO) >= STAT_LEVEL_PROF || user.stats?.getPerk(PERK_ADVANCED_MEDICAL)) ? TRUE : FALSE
+	else if(istype(user, /mob/observer/ghost))
+		details_unlocked = TRUE
+
+	if(using_sci_goggles || details_unlocked)
 		var/function_info
 		var/input_info
 		var/process_info
@@ -75,8 +85,13 @@
 						output_info + (output_info && secondary_info ? "\n" : null) +\
 						secondary_info
 
+		if(aberrant_cooldown_time > 0)
+			to_chat(user, SPAN_NOTICE("Average organ process duration: [aberrant_cooldown_time / (1 SECOND)] seconds"))
+
 		if(function_info)
 			to_chat(user, SPAN_NOTICE(function_info))
+	else
+		to_chat(user, SPAN_WARNING("You lack the biological knowledge required to understand its functions."))
 
 /obj/item/organ/internal/scaffold/update_icon()
 	if(use_generated_icon)
@@ -233,6 +248,7 @@
 	var/base_input_type = null
 	var/list/specific_input_type_pool = list()
 	var/input_mode = null
+	var/input_threshold = 0
 	var/list/process_info = list()
 	var/should_process_have_organ_stats = TRUE
 	var/list/output_pool = list()
@@ -280,7 +296,7 @@
 
 	var/obj/item/modification/organ/internal/input/I
 	if(ispath(input_mod_path, /obj/item/modification/organ/internal/input))
-		I = new input_mod_path(src, FALSE, null, input_info, input_mode, additional_input_info)
+		I = new input_mod_path(src, FALSE, null, input_info, input_mode, input_threshold, additional_input_info)
 
 	var/obj/item/modification/organ/internal/process/P
 	if(ispath(process_mod_path, /obj/item/modification/organ/internal/process))

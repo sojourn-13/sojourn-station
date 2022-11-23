@@ -106,7 +106,16 @@
 	if(user.stats?.getStat(STAT_BIO) > STAT_LEVEL_BASIC)
 		to_chat(user, SPAN_NOTICE("Organ size: [specific_organ_size]"))
 	if(user.stats?.getStat(STAT_BIO) > STAT_LEVEL_EXPERT)
+		var/organs
+		for(var/organ in organ_efficiency)
+			organs += organ + " ([organ_efficiency[organ]]), "
+		organs = copytext(organs, 1, length(organs) - 1)
+
 		to_chat(user, SPAN_NOTICE("Requirements: <span style='color:red'>[blood_req]</span>/<span style='color:blue'>[oxygen_req]</span>/<span style='color:orange'>[nutriment_req]</span>"))
+		to_chat(user, SPAN_NOTICE("Organ tissues present (efficiency): <span style='color:pink'>[organs ? organs : "none"]</span>"))
+
+		if(item_upgrades.len)
+			to_chat(user, SPAN_NOTICE("Organ grafts present ([item_upgrades.len]/[max_upgrades]). Use a laser cutting tool to remove."))
 
 /obj/item/organ/internal/is_usable()
 	return ..() && !is_broken()
@@ -188,13 +197,10 @@
 
 // Store these so we can properly restore them when installing/removing mods
 /obj/item/organ/internal/proc/initialize_organ_efficiencies()
-	for(var/organ in organ_efficiency)
-		initial_organ_efficiency.Add(organ)
-		initial_organ_efficiency[organ] = organ_efficiency[organ]
+	initial_organ_efficiency = organ_efficiency.Copy()
 
 /obj/item/organ/internal/proc/initialize_owner_verbs()
-	for(var/V in owner_verbs)
-		initial_owner_verbs.Add(V)
+	initial_owner_verbs = owner_verbs.Copy()
 
 // For handling organ mods
 /obj/item/organ/internal/refresh_upgrades()

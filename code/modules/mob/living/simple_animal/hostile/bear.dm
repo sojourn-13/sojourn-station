@@ -49,14 +49,14 @@
 					H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 					H.added_movedelay -= 0.1
 					addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, -0.1), 60)
-					to_chat(H, SPAN_WARNING("The [src] 's roar triggers the familiar feeling of flight or fight in you!"))
+					to_chat(H, SPAN_WARNING("\The [src] 's roar triggers the familiar feeling of flight or fight in you!"))
 				else
-					to_chat(H, SPAN_NOTICE("The natural insticts of fear become apparent, but you ingore such things."))
+					to_chat(H, SPAN_NOTICE("The natural insticts of fear become apparent, but you ignore such things."))
 					H.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 					H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 					H.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 					H.added_movedelay -= 0.1
-					addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, -0.1), 60) //Needs to be a negitive as it subtracts meaning its - - 0.1 (aka doble negitive so it adds)
+					addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, -0.1), 60) //Needs to be a negative as it subtracts meaning its - - 0.1 (aka doble negitive so it adds)
 
 		anchored = TRUE
 		addtimer(CALLBACK(src, .proc/unanchor), 10)

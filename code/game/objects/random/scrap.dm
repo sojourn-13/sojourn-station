@@ -36,12 +36,12 @@
 						/obj/structure/scrap/poor/large = 110,
 						/obj/structure/scrap/poor/structure = 90,
 						/obj/structure/scrap/large = 20,
-						/obj/structure/scrap/medical/large = 14,
-						/obj/structure/scrap/science/large = 14,
-						/obj/structure/scrap/vehicle/large = 20,
-						/obj/structure/scrap/cloth/large = 26,
-						/obj/structure/scrap/food/large = 40,
-						/obj/structure/scrap/guns/large = 3
+						/obj/structure/scrap/medical/large = 10,
+						/obj/structure/scrap/science/large = 20,
+						/obj/structure/scrap/vehicle/large = 30,
+						/obj/structure/scrap/cloth/large = 25,
+						/obj/structure/scrap/food/large = 1,
+						/obj/structure/scrap/guns/large = 5
 					))
 
 /obj/random/scrap/dense_weighted/low_chance
@@ -81,14 +81,14 @@
 
 /obj/random/scrap/sparse_weighted/item_to_spawn()
 		return pickweight(list(
-						/obj/structure/scrap/poor = 122,
+						/obj/structure/scrap/poor = 120,
 						/obj/structure/scrap = 40,
-						/obj/structure/scrap/medical = 12,
-						/obj/structure/scrap/science = 12,
-						/obj/structure/scrap/vehicle = 18,
-						/obj/structure/scrap/cloth = 30,
-						/obj/structure/scrap/food = 52,
-						/obj/structure/scrap/guns = 3
+						/obj/structure/scrap/medical = 10,
+						/obj/structure/scrap/science = 20,
+						/obj/structure/scrap/vehicle = 30,
+						/obj/structure/scrap/cloth = 25,
+						/obj/structure/scrap/food = 1,
+						/obj/structure/scrap/guns = 5
 					))
 
 /obj/random/scrap/sparse_weighted/low_chance
@@ -121,14 +121,12 @@
 
 /obj/random/scrap/beacon/sparse_weighted/item_to_spawn()
 		return pickweight(list(
-						/obj/structure/scrap/poor = 122,
+						/obj/structure/scrap/poor = 120,
 						/obj/structure/scrap = 40,
-						/obj/structure/scrap/medical = 12,
 						/obj/structure/scrap/science = 12,
 						/obj/structure/scrap/vehicle = 18,
-						/obj/structure/scrap/cloth = 30,
-						/obj/structure/scrap/food = 52,
-						/obj/structure/scrap/guns = 3
+						/obj/structure/scrap/cloth = 5,
+						/obj/structure/scrap/guns = 10
 					))
 
 
@@ -151,11 +149,9 @@
 		return pickweight(list(
 						/obj/structure/scrap/poor/large/beacon = 110,
 						/obj/structure/scrap/poor/structure/beacon = 90,
-						/obj/structure/scrap/large = 20,
-						/obj/structure/scrap/medical/large/beacon = 14,
-						/obj/structure/scrap/science/large/beacon = 14,
-						/obj/structure/scrap/vehicle/large/beacon = 20,
-						/obj/structure/scrap/cloth/large/beacon = 26,
-						/obj/structure/scrap/food/large/beacon = 40,
-						/obj/structure/scrap/guns/large/beacon = 3
+						/obj/structure/scrap/large = 60,
+						/obj/structure/scrap/science/large/beacon = 20,
+						/obj/structure/scrap/vehicle/large/beacon = 30,
+						/obj/structure/scrap/cloth/large/beacon = 5,
+						/obj/structure/scrap/guns/large/beacon = 10
 					))

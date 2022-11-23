@@ -57,8 +57,9 @@
 	name = "Glucose"
 	id = "glucose"
 	description = "Most important source of energy in all organisms."
+	taste_description = "sweetness"
 	color = "#FFFFFF"
-	scannable = 1
+	scannable = TRUE
 	injectable = 1
 	common = TRUE //It's basically sugar
 
@@ -275,7 +276,7 @@
 	reagent_state = LIQUID
 	color = "#BBEDA4"
 	overdose = REAGENTS_OVERDOSE
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/other/lipozine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0)
@@ -339,7 +340,7 @@
 	reagent_state = SOLID
 	color = "#FFFFFF"
 	overdose = REAGENTS_OVERDOSE
-	scannable = 1
+	scannable = TRUE
 	common = TRUE
 
 /datum/reagent/organic/blackpepper
@@ -554,21 +555,43 @@
 	name = "Claw Energy Drink"
 	id = "energy_drink_monster"
 	description = "The raw essence of a electrolytes."
+	overdose = REAGENTS_OVERDOSE * 2 // Two cans of boomer drink
 	taste_description = "chemical water"
 	color = "#c3b000a9"
 	adj_dizzy = -1
 	adj_drowsy = -2
 	adj_sleepy = -10
 
+/datum/reagent/drink/energy_drink_monster/overdose(mob/living/carbon/M)  // The label warned you.
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
+		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_LIVER)
+		if(istype(L) && !BP_IS_ROBOTIC(L))
+			L.take_damage(3, 0)
+		if(istype(C) && !BP_IS_ROBOTIC(C))
+			L.take_damage(3, 0)
+
 /datum/reagent/drink/energy_drink_baton
 	name = "Baton Energy Drink"
 	id = "energy_drink_baton"
 	description = "The raw essence of a electrolytes and carbonation."
 	taste_description = "carbonated chemical water"
+	overdose = REAGENTS_OVERDOSE * 2 // This is the equivalent of two liters according to core.dm
 	color = "#990066d0"
 	adj_dizzy = -1
 	adj_drowsy = -2
 	adj_sleepy = -10
+
+/datum/reagent/drink/energy_drink_baton/overdose(mob/living/carbon/M)  // The label warned you.
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
+		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_LIVER)
+		if(istype(L) && !BP_IS_ROBOTIC(L))
+			L.take_damage(3, 0)
+		if(istype(C) && !BP_IS_ROBOTIC(C))
+			L.take_damage(3, 0)
 
 // Juices
 
@@ -893,7 +916,7 @@
 	adj_drowsy = -3
 	adj_sleepy = -2
 	adj_temp = 10
-	overdose = 45
+	overdose = REAGENTS_OVERDOSE * 1.5 // 45u
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "hot_coffee"
@@ -925,7 +948,7 @@
 	description = "A strong coffee made by passing nearly boiling water through coffee seeds at high pressure."
 	taste_description = "bitter coffee"
 	taste_mult = 1
-	overdose = 40
+	overdose = REAGENTS_OVERDOSE + 10 // 40u
 	color = "#664300d3"
 	adj_dizzy = -10
 	adj_drowsy = -5
@@ -937,7 +960,7 @@
 
 /datum/reagent/drink/coffee/espresso/overdose(mob/living/carbon/M, alien)
 	M.make_jittery(10) // Stronger coffee, stronger consequences
-	M.add_chemical_effect(CE_PULSE, 2)
+	M.add_chemical_effect(CE_PULSE, 3)
 
 /datum/reagent/drink/coffee/icecoffee
 	name = "Iced Coffee"
@@ -1088,7 +1111,7 @@
 	description = "Every possible microgram of caffeine and flavor has been carefully extracted for your enjoyment, using the power of the atom. The perfect drink for those that wish to stay awake for days."
 	taste_description = "liquid tar"
 	color =  "#393815" // rgb: 57, 56, 21
-	overdose = 31 // A whole cup and a unit more.
+	overdose = REAGENTS_OVERDOSE + 1 // A whole cup and a unit more.
 
 	glass_icon_state = "atomicoffee"
 	glass_name = "Atomic Coffee"
@@ -1110,16 +1133,16 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_HEART) // I said to watch out!!
-		if(istype(C))
+		if(istype(C) && !BP_IS_ROBOTIC(C))
+			M.adjustOxyLoss(0.1) // Hyperventilating
+			M.add_chemical_effect(CE_PULSE, 4) // Heart beating TOO fast
 			if(C.is_bruised())
-				M.adjustOxyLoss(0.1)
-			else if(C.is_broken())
 				M.adjustOxyLoss(0.3)
 				M.paralysis = max(M.paralysis, 5) // HEART ATTACK!
 				M.add_chemical_effect(CE_NOPULSE, 1)
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.9) // Fry_consumes_100_cups_of_coffee.gif
-	M.make_jittery(20) // Except he's not calm!
-	M.adjustToxLoss(0.1) // An alternative to getting irradiated, nobody wants that.
+		M.add_chemical_effect(CE_SPEEDBOOST, 0.6) // Fry_consumes_100_cups_of_coffee.gif
+		M.make_jittery(40) // Except he's not calm!
+		M.adjustToxLoss(0.1) // An alternative to getting irradiated, nobody wants that.
 
 
 
@@ -1271,7 +1294,7 @@
 
 /datum/reagent/drink/nuka_cola/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.8)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.1)
 	M.make_jittery(20 * effect_multiplier)
 	M.druggy = max(M.druggy, 30 * effect_multiplier)
 	M.dizziness += 5 * effect_multiplier
@@ -1467,7 +1490,7 @@
 /datum/reagent/ethanol/Kvass
 	name = "Kvass"
 	id = "Kvass"
-	description = "A traditonal, and very popular russian drink.Made on the colony."
+	description = "A traditonal, and very popular russian drink. Made on the colony."
 	taste_description = "sweet, yet very light dark beer."
 	color = "#9F3400d0"
 	strength = 60
@@ -1499,7 +1522,7 @@
 	description = "Made from assorted sweets, candies and even flowers."
 	taste_description = "sweet and smooth alcohol"
 	color = "#E33232d0" // rgb: 227, 50, 50
-	strength = 10
+	strength = 15
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "alco-redglass"
@@ -1513,7 +1536,7 @@
 	description = "A harsh salty alcohol that is from Japanese origin."
 	taste_description = "salt and young lemons"
 	color = "#FFFFFFd0" // rgb: 255, 255, 255
-	strength = 40
+	strength = 15
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "alco-whiteglass"
@@ -1527,7 +1550,7 @@
 	description = "Mix of Candy Liquor, Nanatsunoumi, Blue Curacao, and Melon Liquor that shockingly tastes good.."
 	taste_description = "luck"
 	color = "#FFFFFFd0" // rgb: 255, 255, 255
-	strength = 200 //Oh no
+	strength = 5 //Oh no
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "miss_fortuneglass"

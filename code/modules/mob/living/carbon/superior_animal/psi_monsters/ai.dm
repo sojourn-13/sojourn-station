@@ -5,10 +5,11 @@
 		playsound(src.loc, list(aggro_noise), 120, 1)
 		last_noise = world.time + 30 SECONDS
 	//We do if src in case someone has a gun to 1 shot them mid-animation and kills them on the spot.
-	animate(src, alpha = chameleon_skill, time = 2)
-	spawn(3) if(src) animate(src, alpha = 55, time = 2)
-	spawn(3) if(src) animate(src, alpha = 155, time = 2)
-	spawn(3) if(src) animate(src, alpha = 255, time = 2)
+	if(phaser)
+		animate(src, alpha = chameleon_skill, time = 2)
+		spawn(3) if(src) animate(src, alpha = 55, time = 2)
+		spawn(3) if(src) animate(src, alpha = 155, time = 2)
+		spawn(3) if(src) animate(src, alpha = 255, time = 2)
 
 /mob/living/carbon/superior_animal/psi_monster/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)

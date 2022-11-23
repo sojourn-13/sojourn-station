@@ -49,13 +49,15 @@
 	if(!Adjacent(user) || !I.Adjacent(user) || user.stat)
 		return ..()
 	if(istype(I, /obj/item/reagent_containers) && I.is_open_container() && !beaker)
-		I.forceMove(src)
-		I.add_fingerprint(user)
-		src.beaker = I
-		to_chat(user, SPAN_NOTICE("You add [I] to [src]."))
-		updateUsrDialog()
-		icon_state = "mixer1"
-		return
+		if(user.drop_from_inventory(I))
+			user.drop_from_inventory(I)
+			I.forceMove(src)
+			I.add_fingerprint(user)
+			src.beaker = I
+			to_chat(user, SPAN_NOTICE("You add [I] to [src]."))
+			updateUsrDialog()
+			icon_state = "mixer1"
+			return
 	. = ..()
 
 /obj/machinery/chem_master/attackby(var/obj/item/B as obj, var/mob/user as mob)

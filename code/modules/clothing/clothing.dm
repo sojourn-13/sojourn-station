@@ -17,6 +17,11 @@
 
 	//Used for hardsuits. If false, this piece cannot be retracted while the core module is engaged
 	var/retract_while_active = TRUE
+	blacklist_upgrades = list(
+							/obj/item/tool_upgrade/augment = TRUE,
+							/obj/item/tool_upgrade/refinement = TRUE,
+							/obj/item/gun_upgrade = TRUE, // Goodbye tacticool clothing
+							/obj/item/tool_upgrade/artwork_tool_mod = TRUE)
 
 /obj/item/clothing/Initialize(mapload, ...)
 	. = ..()
@@ -105,7 +110,7 @@
 
 	return english_list(body_partsL)
 
-/obj/item/clothing/ui_data()
+/obj/item/clothing/nano_ui_data()
 	var/list/data = list()
 	var/list/armorlist = armor.getList()
 	if(armorlist.len)
@@ -133,7 +138,7 @@
 	return data
 
 /obj/item/clothing/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
-	var/list/data = ui_data(user)
+	var/list/data = nano_ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -599,7 +604,10 @@ BLIND     // can't see anything
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	allowed = list(
 		/obj/item/clipboard,
-		/obj/item/storage/pouch/,
+		/obj/item/pen,
+		/obj/item/paper,
+		/obj/item/device/flash,
+		/obj/item/storage/pouch,
 		/obj/item/storage/sheath,
 		/obj/item/gun,
 		/obj/item/melee,
@@ -616,6 +624,9 @@ BLIND     // can't see anything
 		/obj/item/device/lighting,
 		/obj/item/device/scanner,
 		/obj/item/reagent_containers/spray,
+		/obj/item/device/lighting/toggleable/flashlight,
+		/obj/item/storage/box/matches,
+		/obj/item/reagent_containers/food/drinks/flask,
 		/obj/item/device/radio,
 		/obj/item/clothing/mask,
 		/obj/item/storage/backpack/duffelbag/guncase,

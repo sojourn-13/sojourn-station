@@ -1,0 +1,18 @@
+<table style="width: 100%">
+	{{for data.tasks :task:task_i}}
+		<tr>
+			<td style="border: #3333aa solid 1px; border-radius: 5px; padding: 5px;">
+				<article>
+					<section>
+						<span class="label">{{:task.name}} (Level: {{:task.level}})</span>
+						<div class="content">{{:helper.displayBar(task.value, 0, task.level_threshold, 'average', task.value + " / " + task.level_threshold)}}</div>
+					</section>
+				</article>
+				<hr>
+				<article>
+					<section>
+						{{:task.desc}}
+					</section>
+				</article>
+	{{/for}}
+</table>

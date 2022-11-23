@@ -45,6 +45,7 @@
 	max_upgrades = 2
 	workspeed = 1.2
 	price_tag = 1400 // Super fancy
+	degradation = 2
 
 /obj/item/tool/medmultitool/medimplant
 	name = "soteria medical omnitool"

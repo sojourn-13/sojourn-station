@@ -8,7 +8,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 5)
 	price_tag = 450
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	can_dual = TRUE
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
@@ -71,7 +71,7 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.3
-	zoom_factor = 0.2
+	zoom_factors = list(0.2)
 	init_recoil = HANDGUN_RECOIL(0.6)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)
 	serial_type = "NM"

@@ -62,17 +62,19 @@
 
 	offer_types = list(
 		// Trash mats are priced based on expected value of sheets. Ores are priced based on smelting results and are priced slightly better than if the processed sheets were being sold directly.
+		/obj/item/tool/pickaxe = offer_data_mods("modified pickaxe (3 upgrades)", 1400, 2, OFFER_MODDED_TOOL, 3),
+		/obj/item/tool/shovel = offer_data_mods("modified shovel (3 upgrades)", 1400, 2, OFFER_MODDED_TOOL, 3),
 		/obj/item/trash/material/metal = offer_data("scrap metal", 120, 20),
 		/obj/item/trash/material/circuit = offer_data("burnt circuit", 90, 20),
 		/obj/item/trash/material/device = offer_data("broken device", 205, 20),
-		/obj/item/stack/ore/iron = offer_data("full stack of hematite", 2400, 2),
-		/obj/item/stack/ore/coal = offer_data("full stack of raw carbon", 2400, 2),
-		/obj/item/stack/ore/glass = offer_data("full stack of sand", 1200, 4),
-		/obj/item/stack/ore/silver = offer_data("full stack of native silver ore", 15000, 1),
-		/obj/item/stack/ore/gold = offer_data("full stack of native gold ore", 19200, 1),
-		/obj/item/stack/ore/diamond = offer_data("full stack of diamonds", 27000, 1),
-		/obj/item/stack/ore/osmium = offer_data("full stack of raw platinum", 19200, 1),
-		/obj/item/stack/ore/hydrogen = offer_data("full stack of raw hydrogen", 15000, 1),
-		/obj/item/stack/ore/uranium = offer_data("full stack of pitchblende", 27000, 1),
-		/obj/item/stack/ore/plasma = offer_data("full stack of plasma crystals", 9600, 1)
+		/obj/item/stack/ore/iron = offer_data("full stack of hematite", 300, 2),
+		/obj/item/stack/ore/coal = offer_data("full stack of raw carbon", 300, 2),
+		/obj/item/stack/ore/glass = offer_data("full stack of sand", 300, 4),
+		/obj/item/stack/ore/silver = offer_data("full stack of native silver ore", 900, 1),
+		/obj/item/stack/ore/gold = offer_data("full stack of native gold ore", 1800, 1),
+		/obj/item/stack/ore/diamond = offer_data("full stack of diamonds", 4500, 1),
+		/obj/item/stack/ore/osmium = offer_data("full stack of raw platinum", 3600, 1),
+		/obj/item/stack/ore/hydrogen = offer_data("full stack of raw hydrogen", 5040, 1),
+		/obj/item/stack/ore/uranium = offer_data("full stack of pitchblende", 3600, 1),
+		/obj/item/stack/ore/plasma = offer_data("full stack of plasma crystals", 1800, 1)
 	)

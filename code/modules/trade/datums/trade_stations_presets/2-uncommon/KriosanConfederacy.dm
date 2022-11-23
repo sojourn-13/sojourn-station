@@ -17,7 +17,6 @@
 	inventory = list(
 		"Hunting Gear" = list(
 			/obj/item/gun/projectile/boltgun/light,
-			/obj/item/gun/projectile/boltgun/light_wood,
 			/obj/item/gun/projectile/boltgun/sa,
 			/obj/item/gun/projectile/automatic/nordwind/strelki,
 			/obj/item/gun/projectile/automatic/survivalrifle,
@@ -28,7 +27,7 @@
 		"Ammo" = list(
 			/obj/item/ammo_magazine/ammobox/rifle_75_small,
 			/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
-			/obj/item/ammo_magazine/rifle_10x24,
+			/obj/item/ammo_magazine/smg_10x24,
 			/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
 			/obj/item/ammo_magazine/ammobox/shotgun
 		),

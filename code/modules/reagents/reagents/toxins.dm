@@ -11,7 +11,7 @@
 	metabolism = REM * 0.05 // 0.01 by default. They last a while and slowly kill you.
 	var/strength = 0.05 // How much damage it deals per unit
 	reagent_type = "Toxin"
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/toxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(strength)
@@ -58,8 +58,8 @@
 	reagent_state = LIQUID
 	color = "#792300"
 	strength = 0.1
+	metabolism = REM * 0.1 // Make it not last forever
 	nerve_system_accumulations = 60
-	addiction_chance = 20
 	heating_point = 523
 	heating_products = list("toxin")
 
@@ -767,7 +767,7 @@
 	color = "#ffb3b7"
 	nerve_system_accumulations = 5
 	addiction_chance = 10
-	scannable = 1
+	scannable = TRUE
 	metabolism = REM/4
 	constant_metabolism = TRUE
 
@@ -838,3 +838,27 @@
 	if(istype(L))
 		L.adjustHalLoss(50)
 		L.adjustToxLoss(20)
+
+
+//Wasp toxin
+/datum/reagent/toxin/wasp_toxin
+	name = "Wasp Inflamer"
+	id = "wasp_toxin"
+	description = "A toxin that paralizes its victims through pain."
+	taste_mult = 0.6
+	reagent_state = LIQUID
+	color = "#CF3600"
+	strength = 0.2
+	metabolism = REM * 2
+	var/agony_amount = 4
+
+/datum/reagent/toxin/wasp_toxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.species && (H.species.flags & (NO_PAIN)))
+			return
+
+		M.apply_effect(agony_amount, AGONY, 0)
+		if(prob(5))
+			to_chat(M, SPAN_DANGER("You feel like your insides are burning!"))

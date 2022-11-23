@@ -98,7 +98,7 @@
 
 	return data
 
-/obj/machinery/nanite_reconstitution_apparatus/ui_data() //UI Stuffs. Used in templates
+/obj/machinery/nanite_reconstitution_apparatus/nano_ui_data() //UI Stuffs. Used in templates
 	var/list/data = list()
 
 	data["currentItem"] = loaded_item?.name
@@ -113,7 +113,7 @@
 
 
 /obj/machinery/nanite_reconstitution_apparatus/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS) //Calls specific templates for the UI
-	var/list/data = ui_data(user, ui_key)
+	var/list/data = nano_ui_data(user, ui_key)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)

@@ -60,6 +60,6 @@
 			if(prob(50))
 				var/obj/item/organ/external/E = wearer.get_organ(pick(list(BP_L_ARM, BP_L_LEG, BP_R_ARM, BP_R_LEG)))
 				if(E)
-					E.droplimb(FALSE, DROPLIMB_BLUNT)
+					E.droplimb(FALSE, DISMEMBER_METHOD_BLUNT)
 				else
 					visible_message(SPAN_DANGER("A meaty spike shoots out of [wearer]'s limb stump"))

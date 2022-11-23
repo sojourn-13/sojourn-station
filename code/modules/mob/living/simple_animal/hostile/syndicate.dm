@@ -141,7 +141,7 @@
 	ranged_cooldown = 2
 	rapid = 0
 	icon_state = "syndicate_pistol"
-	drop_items = list(/obj/item/gun/projectile/clarissa/makarov)
+	drop_items = list(/obj/item/gun/projectile/makarov)
 
 /mob/living/simple_animal/hostile/syndicate/ranged/heavy
 	ranged_cooldown = 3
@@ -171,7 +171,7 @@
 	ranged_cooldown = 2
 	rapid = 0
 	icon_state = "syndicate_space_pistol"
-	drop_items = list(/obj/item/gun/projectile/clarissa/makarov)
+	drop_items = list(/obj/item/gun/projectile/makarov)
 
 /mob/living/simple_animal/hostile/syndicate/ranged/space/heavy
 	ranged_cooldown = 2
@@ -305,7 +305,7 @@
 	icon_state = "syndicate_stormtrooper_pistol"
 	projectilesound = 'sound/weapons/guns/fire/revolver_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/kurtz_50
-	drop_items = list(/obj/item/gun/projectile/revolver/mateba)
+	drop_items = list(/obj/item/gun/projectile/revolver/mistral)
 
 /mob/living/simple_animal/hostile/elitemercenary/range/space/heavy/shotgun
 	ranged_cooldown = 4

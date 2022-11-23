@@ -119,8 +119,8 @@
 	light_overlay = "bsfullhelm_light"
 
 /obj/item/clothing/head/helmet/ballistic/shieldfull/corpsman
-	name = "Corpsmans full helm"
-	desc = "Standard military gear. A full-faced vasriant of the common ballistic helmet. This one bears a few\
+	name = "Corpsman full helm"
+	desc = "Standard military gear. A full-faced variant of the common ballistic helmet. This one bears a few\
 	key upgrades, including sterile materials and contaminant resistant sealing."
 	armor_list = list(melee = 30, bullet = 40,energy = 20, bomb = 30, bio = 75, rad = 0)
 	action_button_name = "Toggle Headlamp"
@@ -143,7 +143,7 @@
 	options["Grey hooded fullhelm"] = "_gp"
 	options["Green hooeded fullhelm"] = "_grp"
 	options["Tan hooded fullhelm"] = "_tp"
-	options["camo hooded fullhelm"] = "_cp"
+	options["Camo hooded fullhelm"] = "_cp"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
@@ -159,10 +159,9 @@
 		return 1
 
 /obj/item/clothing/head/helmet/ballistic/sergeant
-	name = "Sergeants ballistic gorget"
-	desc = "Standard military gear. A somewhat uncommon piece of equipment, despite its unusual appearance\
-	this piece of headgear provides much-needed protection to oft-neglected locations while not interfering unduly\
-	with the users range of motion or ability to communicate."
+	name = "Sergeant's ballistic gorget"
+	desc = "Standard military gear. A somewhat uncommon piece of equipment, despite its unusual appearance\n this piece of headgear provides much-needed protection to oft-neglected locations while not interfering unduly\
+	with the user's range of motion or ability to communicate."
 	icon_state = "sergeanthelm"
 	item_state = "sergeanthelm"
 	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
@@ -178,7 +177,7 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["gorget standard"] = ""
+	options["gorget in standard mode"] = ""
 	options["goggles on"] = "_goggle"
 	options["cap on"] = "_cap"
 	options["beret on"] = "_beret"
@@ -505,7 +504,7 @@
 	)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	action_button_name = "Toggle Headlamp"
 	light_overlay = "technohelmet_light"
 	brightness_on = 5 //Slightly better do to the sear costs
@@ -541,7 +540,7 @@
 	armor_list = list(melee = 45, bullet = 45, energy = 40, bomb = 60, bio = 100, rad = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	action_button_name = "Toggle Headlamp"
 	light_overlay = "technohelmet_light"
 	brightness_on = 4
@@ -581,7 +580,7 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	matter = list(MATERIAL_STEEL = 20)
-	flash_protection = FLASH_PROTECTION_MODERATE
+	flash_protection = FLASH_PROTECTION_MINOR
 	max_upgrades = 2
 
 /obj/item/clothing/head/helmet/swat
@@ -624,6 +623,71 @@
 	name = "gray tanker helmet"
 	icon_state = "tanker_helmet_gray"
 
+/obj/item/clothing/head/helmet/biker
+	name = "black biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in black."
+	icon_state = "celty" // Durarara reference
+	item_state = "celty"
+	item_flags = THICKMATERIAL
+	flags_inv = HIDEEARS|BLOCKHAIR|HIDEEYES|BLOCKFACEHAIR|HIDEFACE //Speaking with one on should be muffled
+	price_tag = 150
+	armor_list = list(
+		melee = 20,
+		bullet = 10,
+		energy = 5,
+		bomb = 15, // Shock-absorbent
+		bio = 0,
+		rad = 0
+	)
+
+/obj/item/clothing/head/helmet/biker/white
+	name = "white biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in white."
+	icon_state = "celty_white"
+	item_state = "celty_white"
+
+/obj/item/clothing/head/helmet/biker/red
+	name = "red biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in red."
+	icon_state = "celty_red"
+	item_state = "celty_red"
+
+/obj/item/clothing/head/helmet/biker/green
+	name = "green biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in green."
+	icon_state = "celty_green"
+	item_state = "celty_green"
+
+/obj/item/clothing/head/helmet/biker/blue
+	name = "blue biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in light blue."
+	icon_state = "celty_blue"
+	item_state = "celty_blue"
+
+/obj/item/clothing/head/helmet/biker/purple
+	name = "purple biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in purple."
+	icon_state = "celty_purple"
+	item_state = "celty_purple"
+
+/obj/item/clothing/head/helmet/biker/pink
+	name = "pink biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in pink."
+	icon_state = "celty_pink"
+	item_state = "celty_pink"
+
+/obj/item/clothing/head/helmet/biker/yellow
+	name = "yellow biker helmet"
+	desc = "A helmet usually worn by bikers to protect their heads. This one comes in yellow."
+	icon_state = "celty_yellow"
+	item_state = "celty_yellow"
+
+/obj/item/clothing/head/helmet/biker/football
+	name = "football helmet"
+	desc = "A helmet usually worn by either football players, or post-apocalyptic outlaws for protection."
+	icon_state = "rugby"
+	item_state = "rugby"
+
 /obj/item/clothing/head/helmet/laserproof
 	name = "ablative helmet"
 	desc = "A helmet that excels in protecting the wearer against energy projectiles."
@@ -637,8 +701,8 @@
 	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/head/helmet/laserproof/marshal
-	icon_state = "ironhammer_ablative"
-	item_state = "ironhammer_ablative"
+	icon_state = "ablative_ironhammer"
+	item_state = "ablative_ironhammer"
 
 /obj/item/clothing/head/helmet/laserproof/iron_lock_security
 	name = "outdated ablative helmet"
@@ -678,12 +742,43 @@
 	name = "bucket-helm"
 	desc = "A bucket with two holes for eyes and some smaller ones for ventilation, with steel added to gain some protection. One may say, <i>'Situla Vult!'</i>."
 	icon_state = "hm_greathelm"
-	armor_list = list(melee = 27, bullet = 29,energy = 27, bomb = 3, bio = 1, rad = 0)
+	armor_list = list(melee = 27, bullet = 15,energy = 25, bomb = 12, bio = 1, rad = 0) // Only difference with handmade combat helmet is 2 sheets of metal, shouldn't be that far superior.
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS|EYES
 	siemens_coefficient = 0.6
 	price_tag = 85
 	obscuration = MEDIUM_OBSCURATION
+
+/obj/item/clothing/head/helmet/handmade/scavengerhelmet
+	name = "scavenger helmet"
+	desc = "A sturdy, handcrafted helmet. It's well balanced and sits low on your head, with padding on the inside."
+	icon_state = "scav_helmet"
+	armor_list = list(melee = 35, bullet = 20, energy = 25, bomb = 25, bio = 0, rad = 0)
+	price_tag = 200
+	max_upgrades = 1 // Good baseline already
+
+/obj/item/clothing/head/helmet/handmade/scavengerhelmet/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["scavenger grey"] = "scav_helmet"
+	options["scavenger brown"] = "quak" // Quad damage!
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] colors.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/armor/helmet/penance
 	name = "penance helmet"
@@ -788,7 +883,7 @@
 	desc = "A full helmet with a built in glow visor. This one appears to be fitted with new visor servos internally to protect from flashes as well as a bullet-proof reinforced mouth guard!"
 	icon_state = "ironhammer_wo_full"
 	item_state = "ironhammer_wo_full"
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 100, rad = 0)
 
@@ -821,7 +916,7 @@
 		rad = 0
 	)
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	action_button_name = "Toggle Security Hud"
 	var/obj/item/clothing/glasses/hud/security/hud
 	price_tag = 300
@@ -892,7 +987,7 @@
 		rad = 0
 	) //Low protection since it gives night vision with no battery.
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	action_button_name = "Toggle Thermal Night-Vision HUD"
 	var/obj/item/clothing/glasses/hud/security/jensenshades/hud
 	price_tag = 2000
@@ -953,7 +1048,7 @@
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "steelpot"
 	armor_list = list(melee = 35, bullet = 30, energy = 0, bomb = 30, bio = 0, rad = 0) // slightly buffed IHS helmet minus energy resistance
-	flags_inv = BLOCKHEADHAIR
+	flags_inv = BLOCKHEADHAIR|HIDEEARS
 	body_parts_covered = HEAD|EARS
 	siemens_coefficient = 1
 
@@ -995,7 +1090,7 @@
 	var/flags_inv_up = HIDEEARS
 	body_parts_covered = HEAD|EARS|EYES|FACE
 	var/body_parts_covered_up = HEAD|EARS
-	flash_protection = FLASH_PROTECTION_MAJOR
+	flash_protection = FLASH_PROTECTION_MODERATE
 	var/flash_protection_up = FLASH_PROTECTION_NONE
 	action_button_name = "Flip Face Shield"
 	tool_qualities = list()

@@ -413,3 +413,18 @@
 		list(CRAFT_MATERIAL, 8, MATERIAL_LEATHER, "time" = 30),
 		list(QUALITY_ADHESIVE, 10, "time" = 60)
 	)
+
+/datum/craft_recipe/lodge/hunter_necklace
+	name = "Fang Tooth Necklace"
+	result = /obj/item/clothing/accessory/hunter_necklace
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_LEATHER, "time" = 60),
+		list(QUALITY_CUTTING, 15, "time" = 50),
+		list(/obj/item/animal_part/wolf_tooth, 1, "time" = 10),
+		list(/obj/item/animal_part/wolf_tooth, 1, "time" = 10),
+		list(/obj/item/animal_part/wolf_tooth, 1, "time" = 10),
+		list(/obj/item/animal_part/wolf_tooth, 1, "time" = 10),
+		list(/obj/item/animal_part/wolf_tooth, 1, "time" = 10),
+		list(QUALITY_WIRE_CUTTING, 15, "time" = 70)
+	)

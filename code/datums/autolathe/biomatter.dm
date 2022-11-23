@@ -359,15 +359,23 @@
 	build_path = /obj/item/storage/pouch/ammo
 
 /datum/design/bioprinter/pouch/baton_holster
-	name = "Baton pouch"
+	name = "Baton holster"
 	build_path = /obj/item/storage/pouch/baton_holster
 
 /datum/design/bioprinter/pouch/pistol_holster
-	name = "Pistol holster pouch"
+	name = "Pistol holster"
 	build_path = /obj/item/storage/pouch/pistol_holster
 
+/datum/design/bioprinter/pouch/pistol_double
+	name = "Belt pistol holster"
+	build_path = /obj/item/storage/pouch/pistol_holster/cowboy
+
+/datum/design/bioprinter/pouch/kniferig
+	name = "Throwing knives scabbard"
+	build_path = /obj/item/storage/pouch/kniferig
+
 /datum/design/bioprinter/pouch/engineering_supply
-	name = "Engineering supply pouch"
+	name = "Engineering supplies pouch"
 	build_path = /obj/item/storage/pouch/engineering_supply
 
 /datum/design/bioprinter/pouch/engineering_tools
@@ -375,7 +383,7 @@
 	build_path = /obj/item/storage/pouch/engineering_tools
 
 /datum/design/bioprinter/pouch/janitor_supply
-	name = "Janitor supply pouch"
+	name = "Janitor supplies pouch"
 	build_path = /obj/item/storage/pouch/janitor_supply
 
 /datum/design/bioprinter/pouch/small_generic/purple

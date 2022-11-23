@@ -173,7 +173,7 @@
 
 	for(var/mob/living/carbon/M in oviewers(3, null))
 		var/safety = M.eyecheck()
-		if(safety < FLASH_PROTECTION_MODERATE)
+		if(safety < FLASH_PROTECTION_MINOR)
 			M.flash(0, FALSE, FALSE, TRUE)
 
 	return
@@ -191,7 +191,7 @@
 			if(iscarbon(loc))
 				var/mob/living/carbon/M = loc
 				var/safety = M.eyecheck()
-				if(safety < FLASH_PROTECTION_MODERATE)
+				if(safety < FLASH_PROTECTION_MINOR)
 					M.flash(10-(10*safety), FALSE, FALSE, TRUE)
 					for(var/mob/O in viewers(M, null))
 						O.show_message("<span class='disarm'>[M] is blinded by the flash!</span>")

@@ -90,7 +90,8 @@
 		access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 		access_moebius, access_engine, access_mining, access_construction, access_mailsorting,
 		access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_sec_shop,
-		access_external_airlocks, access_research_equipment, access_prospector, access_tcomsat, access_kitchen, access_medical_suits
+		access_external_airlocks, access_research_equipment, access_prospector, access_tcomsat, access_hydroponics,
+		access_bar, access_kitchen, access_medical_suits
 	)
 
 	stat_modifiers = list(
@@ -101,7 +102,8 @@
 
 	perks = list(/datum/perk/ass_of_concrete,
 				 /datum/perk/codespeak,
-				 /datum/perk/chem_contraband)
+				 /datum/perk/chem_contraband,
+				 /datum/perk/gunsmith)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -148,7 +150,8 @@
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
-		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen, access_medical_suits, access_sec_shop, access_forensics_lockers
+		access_external_airlocks, access_research_equipment, access_prospector,
+		access_hydroponics, access_bar, access_kitchen, access_medical_suits, access_sec_shop, access_forensics_lockers
 	)
 
 	stat_modifiers = list(
@@ -246,8 +249,8 @@
 	spawn_positions = 2
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	noob_name = "Gumshoe"
-	alt_titles = list("Gumshoe","Detective","Forensics Specialist")
+	noob_name = "Junior Ranger"
+	alt_titles = list("Junior Ranger","Detective","Forensics Specialist")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	playtimerequired = 1200
@@ -259,7 +262,8 @@
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels,
-		access_external_airlocks, access_prospector, access_brig, access_kitchen, access_medical_suits
+		access_external_airlocks, access_prospector, access_brig, access_hydroponics, access_bar, access_kitchen,
+		access_medical_suits
 	)
 
 	perks = list(/datum/perk/ear_of_quicksilver,
@@ -304,8 +308,8 @@
 	spawn_positions = 2
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	noob_name = "Corpsman Recruit"
-	alt_titles = list("Corpsman Recruit","Combat Medic","Combat Surgeon")
+	noob_name = "Corpsman Cadet"
+	alt_titles = list("Corpsman Cadet", "Combat Medic")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
@@ -361,7 +365,7 @@
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	noob_name = "Blackshield Cadet"
-	alt_titles = list("Blackshield Cadet","Blackshield Militiamen")
+	alt_titles = list("Blackshield Cadet")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10
@@ -413,8 +417,8 @@
 	spawn_positions = 4
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	noob_name = "Field Training Marshal"
-	alt_titles = list("Field Training Marshal","Marshal Civil Servant")
+	noob_name = "Junior Marshal Officer"
+	alt_titles = list("Junior Marshal Officer", "Marshal Civil Servant")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10

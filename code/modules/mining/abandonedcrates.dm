@@ -75,7 +75,7 @@
 		if(65 to 68)
 			var/t = rand(4,7)
 			for(var/i = 0, i < t, ++i)
-				var/newitem = pick(typesof(/obj/item/stock_parts) - /obj/item/stock_parts - /obj/item/stock_parts/subspace)
+				var/newitem = pick(typesof(/obj/item/stock_parts) - /obj/item/stock_parts - /obj/item/stock_parts/subspace - /obj/item/stock_parts/blackshield/stskit)
 				new newitem(src)
 		if(69 to 72)
 			new/obj/item/tool/pickaxe/drill(src)
@@ -123,7 +123,7 @@
 			new/obj/item/clothing/mask/costume/job/luchador(src)
 		if(99 to 100)
 			new/obj/item/clothing/head/bearpelt(src)
-			new/obj/item/gun/projectile/clarissa/makarov(src)
+			new/obj/item/gun/projectile/makarov(src)
 
 /obj/structure/closet/crate/secure/loot/togglelock(mob/user as mob)
 	if(!locked)

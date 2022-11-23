@@ -84,10 +84,6 @@
 /mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
-"ar" = (
-/obj/machinery/power/smes,
-/turf/simulated/floor/tiled/derelict,
-/area/nadezhda/outside/one_star/fo_internal)
 "as" = (
 /obj/structure/table/rack/shelf,
 /obj/random/toolbox/low_chance,
@@ -434,7 +430,7 @@
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "bL" = (
-/obj/machinery/porta_turret/One_star,
+/obj/random/turret/os,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "bM" = (
@@ -530,7 +526,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "cg" = (
-/obj/machinery/porta_turret/One_star,
+/obj/random/turret/os,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "ch" = (
@@ -1953,7 +1949,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
 "hE" = (
-/obj/machinery/porta_turret/One_star,
+/obj/random/turret/os,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
 "hF" = (
@@ -1978,7 +1974,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
 "hI" = (
-/obj/machinery/porta_turret/One_star,
+/obj/random/turret/os,
 /obj/structure/railing/grey{
 	dir = 8
 	},
@@ -1992,7 +1988,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
 "hK" = (
-/obj/machinery/porta_turret/One_star,
+/obj/random/turret/os,
 /obj/structure/railing/grey{
 	dir = 1
 	},
@@ -3338,7 +3334,7 @@
 "mw" = (
 /obj/item/pen/multi,
 /obj/item/remains,
-/obj/item/gun/projectile/clarissa,
+/obj/item/gun/projectile/giskard,
 /obj/item/ammo_magazine/highcap_pistol_35/highvelocity,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
@@ -3436,7 +3432,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "mO" = (
-/obj/machinery/porta_turret/One_star,
+/obj/random/turret/os,
 /obj/structure/railing/grey{
 	dir = 1
 	},
@@ -4122,7 +4118,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "pe" = (
-/obj/machinery/power/port_gen/pacman/diesel,
+/obj/machinery/power/port_gen/os_generator,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "pf" = (
@@ -5469,7 +5465,7 @@
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_outside)
 "tD" = (
-/obj/machinery/porta_turret/One_star,
+/obj/random/turret/os,
 /obj/structure/railing{
 	dir = 1
 	},
@@ -5479,7 +5475,7 @@
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_outside)
 "tE" = (
-/obj/machinery/porta_turret/One_star,
+/obj/random/turret/os,
 /obj/structure/railing{
 	dir = 4
 	},
@@ -5489,7 +5485,7 @@
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_outside)
 "tF" = (
-/obj/machinery/porta_turret/One_star,
+/obj/random/turret/os,
 /obj/structure/railing,
 /obj/structure/railing{
 	dir = 8
@@ -5497,7 +5493,7 @@
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_outside)
 "tG" = (
-/obj/machinery/porta_turret/One_star,
+/obj/random/turret/os,
 /obj/structure/railing,
 /obj/structure/railing{
 	dir = 4
@@ -6467,7 +6463,7 @@
 /obj/item/clothing/suit/armor/vest/iron_lock_security,
 /obj/item/ammo_magazine/ammobox/pistol_35/scrap,
 /obj/item/storage/pouch/pistol_holster,
-/obj/item/gun/projectile/clarissa,
+/obj/item/gun/projectile/giskard,
 /obj/item/ammo_magazine/highcap_pistol_35/empty,
 /obj/item/ammo_magazine/highcap_pistol_35/empty,
 /turf/simulated/floor/carpet,
@@ -15272,9 +15268,9 @@ ab
 ac
 ac
 am
-ar
+pe
 am
-ar
+pe
 am
 ax
 aG
@@ -15424,9 +15420,9 @@ ab
 ac
 ac
 am
-ar
+pe
 an
-ar
+pe
 am
 ay
 aH
@@ -45985,8 +45981,8 @@ mR
 nm
 ac
 am
-ar
-ar
+pe
+pe
 nm
 ac
 pg
@@ -46137,8 +46133,8 @@ am
 am
 ac
 eh
-ar
-ar
+pe
+pe
 am
 nF
 am
@@ -46441,8 +46437,8 @@ ep
 ov
 ac
 eb
-ar
-ar
+pe
+pe
 am
 aJ
 ph
@@ -46593,8 +46589,8 @@ nq
 am
 ao
 am
-ar
-ar
+pe
+pe
 eh
 am
 eh

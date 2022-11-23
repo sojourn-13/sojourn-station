@@ -5,7 +5,7 @@
 	tag = "icon-cargoshwall8"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "ab" = (
 /turf/unsimulated/wall,
 /area/space)
@@ -115,7 +115,7 @@
 	tag = "icon-cargoshwall9"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "ay" = (
 /obj/machinery/light{
 	dir = 8;
@@ -123,7 +123,7 @@
 	pixel_y = 0
 	},
 /turf/simulated/shuttle/floor/mining,
-/area/supply/dock)
+/area/space)
 "az" = (
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/holodeck/source_theatre)
@@ -152,12 +152,9 @@
 	icon_state = "9,23"
 	},
 /area/centcom/evac)
-"aF" = (
-/turf/unsimulated/wall,
-/area/centcom/suppy)
 "aG" = (
 /turf/simulated/shuttle/floor/mining,
-/area/supply/dock)
+/area/space)
 "aH" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
 	frequency = 1380;
@@ -168,19 +165,19 @@
 	tag_door = "supply_shuttle_hatch"
 	},
 /turf/simulated/shuttle/floor/mining,
-/area/supply/dock)
+/area/space)
 "aI" = (
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
-/area/supply/dock)
+/area/space)
 "aJ" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall12";
 	tag = "icon-cargoshwall12"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "aK" = (
 /obj/structure/window/reinforced/holowindow{
 	dir = 4
@@ -212,15 +209,7 @@
 	icon_state = "plating";
 	name = "plating"
 	},
-/area/centcom/suppy)
-"aP" = (
-/turf/unsimulated/wall{
-	desc = "That looks like it doesn't open easily.";
-	icon = 'icons/obj/doors/rapid_pdoor.dmi';
-	icon_state = "pdoor1";
-	name = "Shuttle Bay Blast Door"
-	},
-/area/centcom/suppy)
+/area/space)
 "aQ" = (
 /obj/machinery/conveyor/east{
 	id = "QMLoad"
@@ -228,7 +217,7 @@
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
-/area/supply/dock)
+/area/space)
 "aR" = (
 /turf/simulated/floor/holofloor/desert,
 /area/holodeck/source_picnicarea)
@@ -249,7 +238,7 @@
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
-/area/supply/dock)
+/area/space)
 "aV" = (
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
@@ -310,7 +299,7 @@
 	tag = "icon-cargoshwall14"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "bd" = (
 /obj/machinery/door/airlock/maintenance{
 	frequency = 1380;
@@ -321,46 +310,46 @@
 	req_access = list(50)
 	},
 /turf/simulated/shuttle/floor/mining,
-/area/supply/dock)
+/area/space)
 "be" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall7";
 	tag = "icon-cargoshwall7"
 	},
-/area/supply/dock)
+/area/space)
 "bf" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall6";
 	tag = "icon-cargoshwall6"
 	},
-/area/supply/dock)
+/area/space)
 "bg" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall5";
 	tag = "icon-cargoshwall5"
 	},
-/area/supply/dock)
+/area/space)
 "bh" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall4";
 	tag = "icon-cargoshwall4"
 	},
-/area/supply/dock)
+/area/space)
 "bi" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall3";
 	tag = "icon-cargoshwall3"
 	},
-/area/supply/dock)
+/area/space)
 "bj" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall2";
 	tag = "icon-cargoshwall2"
 	},
-/area/supply/dock)
+/area/space)
 "bk" = (
 /turf/simulated/shuttle/wall/cargo,
-/area/supply/dock)
+/area/space)
 "bl" = (
 /obj/structure/table/holo_woodentable,
 /turf/simulated/floor/holofloor/desert,
@@ -371,7 +360,7 @@
 	tag = "icon-cargoshwall16"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "bn" = (
 /turf/simulated/floor/holofloor/tiled,
 /area/holodeck/source_theatre)
@@ -381,14 +370,14 @@
 	tag = "icon-cargoshwall19"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "bp" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall21";
 	tag = "icon-cargoshwall21"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "bq" = (
 /turf/simulated/floor/holofloor/carpet,
 /area/holodeck/source_theatre)
@@ -397,7 +386,7 @@
 	dir = 8
 	},
 /turf/simulated/shuttle/floor/mining,
-/area/supply/dock)
+/area/space)
 "bs" = (
 /obj/machinery/conveyor/west{
 	id = "QMLoad2"
@@ -405,7 +394,7 @@
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
-/area/supply/dock)
+/area/space)
 "bt" = (
 /obj/machinery/conveyor/west{
 	id = "QMLoad2"
@@ -414,89 +403,89 @@
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
-/area/supply/dock)
+/area/space)
 "bu" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall23";
 	tag = "icon-cargoshwall23"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "bv" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall26";
 	tag = "icon-cargoshwall26"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "bw" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall10";
 	tag = "icon-cargoshwall10"
 	},
-/area/supply/dock)
+/area/space)
 "bx" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall34";
 	tag = "icon-cargoshwall34"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "by" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall35";
 	tag = "icon-cargoshwall35"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "bz" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall36";
 	tag = "icon-cargoshwall36"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "bA" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall11";
 	tag = "icon-cargoshwall11"
 	},
-/area/supply/dock)
+/area/space)
 "bB" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall37";
 	tag = "icon-cargoshwall37"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "bC" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall38";
 	tag = "icon-cargoshwall38"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "bD" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall39";
 	tag = "icon-cargoshwall39"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "bE" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall40";
 	tag = "icon-cargoshwall40"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "bF" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall41";
 	tag = "icon-cargoshwall41"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/supply/dock)
+/area/space)
 "bG" = (
 /obj/effect/shuttle_landmark/transit/surface_transport,
 /turf/space,
@@ -520,7 +509,7 @@
 	icon_state = "cargoshwall13";
 	tag = "icon-cargoshwall13"
 	},
-/area/supply/dock)
+/area/space)
 "bL" = (
 /obj/structure/table/standard,
 /obj/structure/mirror/antag{
@@ -598,7 +587,7 @@
 	icon_state = "cargoshwall15";
 	tag = "icon-cargoshwall15"
 	},
-/area/supply/dock)
+/area/space)
 "bV" = (
 /turf/unsimulated/mineral,
 /area/space)
@@ -649,14 +638,13 @@
 	icon_state = "cargoshwall17";
 	tag = "icon-cargoshwall17"
 	},
-/area/supply/dock)
+/area/space)
 "cf" = (
-/obj/effect/shuttle_landmark/supply/centcom,
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall18";
 	tag = "icon-cargoshwall18"
 	},
-/area/supply/dock)
+/area/space)
 "cg" = (
 /obj/structure/closet,
 /turf/simulated/floor/carpet,
@@ -687,7 +675,7 @@
 	icon_state = "cargoshwall20";
 	tag = "icon-cargoshwall20"
 	},
-/area/supply/dock)
+/area/space)
 "cm" = (
 /obj/structure/flora/pottedplant{
 	icon_state = "plant-06";
@@ -733,7 +721,7 @@
 	icon_state = "cargoshwall22";
 	tag = "icon-cargoshwall22"
 	},
-/area/supply/dock)
+/area/space)
 "cu" = (
 /obj/random/closet_maintloot,
 /turf/simulated/floor/tiled/dark,
@@ -798,7 +786,7 @@
 	icon_state = "cargoshwall24";
 	tag = "icon-cargoshwall24"
 	},
-/area/supply/dock)
+/area/space)
 "cC" = (
 /obj/structure/table/standard,
 /obj/random/gun_combat,
@@ -811,7 +799,7 @@
 	icon_state = "cargoshwall25";
 	tag = "icon-cargoshwall25"
 	},
-/area/supply/dock)
+/area/space)
 "cE" = (
 /turf/simulated/floor/holofloor/space,
 /area/holodeck/source_space)
@@ -900,43 +888,43 @@
 	icon_state = "cargoshwall27";
 	tag = "icon-cargoshwall27"
 	},
-/area/supply/dock)
+/area/space)
 "cY" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall28";
 	tag = "icon-cargoshwall28"
 	},
-/area/supply/dock)
+/area/space)
 "cZ" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall29";
 	tag = "icon-cargoshwall29"
 	},
-/area/supply/dock)
+/area/space)
 "da" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall30";
 	tag = "icon-cargoshwall30"
 	},
-/area/supply/dock)
+/area/space)
 "db" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall31";
 	tag = "icon-cargoshwall31"
 	},
-/area/supply/dock)
+/area/space)
 "dc" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall32";
 	tag = "icon-cargoshwall32"
 	},
-/area/supply/dock)
+/area/space)
 "dd" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall33";
 	tag = "icon-cargoshwall33"
 	},
-/area/supply/dock)
+/area/space)
 "de" = (
 /obj/landmark/mob/holocarprandom,
 /turf/simulated/floor/holofloor/space,
@@ -2141,7 +2129,7 @@
 /obj/structure/table/steel,
 /obj/item/computer_hardware/hard_drive/portable/design/security,
 /obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/naga,
+/obj/item/computer_hardware/hard_drive/portable/design/guns/lamia,
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/dark,
 /turf/simulated/floor/tiled/dark/golden,
 /area/shuttle/skipjack_area)
@@ -2641,7 +2629,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/storage/fancy/cigarettes=10,/obj/item/storage/box/matches=10,/obj/item/flame/lighter/zippo=4,/obj/item/clothing/mask/smokable/cigarette/cigar/havana=2)
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/skipjack_area)
@@ -3275,7 +3263,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/storage/fancy/cigarettes=10,/obj/item/storage/box/matches=10,/obj/item/flame/lighter/zippo=4,/obj/item/clothing/mask/smokable/cigarette/cigar/havana=2)
 	},
 /turf/simulated/floor/wood/wild3,
 /area/centcom/merc_base)
@@ -3816,7 +3804,7 @@
 /obj/machinery/vending/assist{
 	contraband = null;
 	name = "AntagCorpVend";
-	products = list(/obj/item/device/assembly/prox_sensor = 5, /obj/item/device/assembly/signaler = 4, /obj/item/device/assembly/infra = 4, /obj/item/device/assembly/prox_sensor = 4, /obj/item/handcuffs = 8, /obj/item/device/flash = 4, /obj/item/cartridge/signal = 4, /obj/item/clothing/glasses/sunglasses = 4)
+	products = list(/obj/item/device/assembly/prox_sensor=5,/obj/item/device/assembly/signaler=4,/obj/item/device/assembly/infra=4,/obj/item/device/assembly/prox_sensor=4,/obj/item/handcuffs=8,/obj/item/device/flash=4,/obj/item/cartridge/signal=4,/obj/item/clothing/glasses/sunglasses=4)
 	},
 /obj/machinery/light{
 	dir = 4
@@ -3879,7 +3867,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/storage/fancy/cigarettes=10,/obj/item/storage/box/matches=10,/obj/item/flame/lighter/zippo=4,/obj/item/clothing/mask/smokable/cigarette/cigar/havana=2)
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/shuttle/mercshuttle_area)
@@ -6355,7 +6343,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/storage/fancy/cigarettes=10,/obj/item/storage/box/matches=10,/obj/item/flame/lighter/zippo=4,/obj/item/clothing/mask/smokable/cigarette/cigar/havana=2)
 	},
 /obj/machinery/light{
 	dir = 1
@@ -24593,21 +24581,21 @@ qH
 qH
 qH
 qH
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 qH
 qH
 qH
@@ -24795,7 +24783,7 @@ qH
 qH
 qH
 qH
-aF
+ab
 aO
 aO
 aO
@@ -24809,7 +24797,7 @@ aO
 aO
 aO
 aO
-aF
+ab
 qH
 qH
 qH
@@ -24997,7 +24985,7 @@ qH
 qH
 qH
 qH
-aF
+ab
 aO
 aa
 ax
@@ -25011,7 +24999,7 @@ bv
 bx
 aO
 aO
-aF
+ab
 qH
 qH
 qH
@@ -25199,7 +25187,7 @@ qH
 qH
 qH
 qH
-aF
+ab
 aO
 be
 bw
@@ -25213,7 +25201,7 @@ cX
 by
 aO
 aO
-aF
+ab
 qH
 qH
 qH
@@ -25401,7 +25389,7 @@ qH
 qH
 qH
 qH
-aF
+ab
 aO
 bf
 ay
@@ -25415,7 +25403,7 @@ cY
 bz
 aO
 aO
-aF
+ab
 qH
 qH
 qH
@@ -25603,7 +25591,7 @@ qH
 qH
 qH
 qH
-aF
+ab
 aO
 bg
 aG
@@ -25617,7 +25605,7 @@ cZ
 bB
 aO
 aO
-aF
+ab
 qH
 qH
 qH
@@ -25805,7 +25793,7 @@ qH
 qH
 qH
 qH
-aF
+ab
 aO
 bh
 aH
@@ -25819,7 +25807,7 @@ da
 bC
 aO
 aO
-aF
+ab
 qH
 qH
 qH
@@ -26007,7 +25995,7 @@ qH
 qH
 qH
 qH
-aF
+ab
 aO
 bi
 aI
@@ -26021,7 +26009,7 @@ db
 bD
 aO
 aO
-aF
+ab
 qH
 qH
 qH
@@ -26209,7 +26197,7 @@ qH
 qH
 qH
 qH
-aF
+ab
 aO
 bj
 aI
@@ -26223,7 +26211,7 @@ dc
 bE
 aO
 aO
-aF
+ab
 qH
 qH
 qH
@@ -26411,7 +26399,7 @@ qH
 qH
 qH
 qH
-aF
+ab
 aO
 bk
 bA
@@ -26425,7 +26413,7 @@ dd
 bF
 aO
 aO
-aF
+ab
 qH
 qH
 qH
@@ -26613,7 +26601,7 @@ qH
 qH
 qH
 qH
-aF
+ab
 aO
 aO
 aO
@@ -26627,7 +26615,7 @@ aO
 aO
 aO
 aO
-aF
+ab
 qH
 qH
 qH
@@ -26815,21 +26803,21 @@ qH
 qH
 qH
 qH
-aF
-aP
-aP
-aP
-aP
-aP
-aP
-aP
-aP
-aP
-aP
-aP
-aP
-aP
-aF
+ab
+eb
+eb
+eb
+eb
+eb
+eb
+eb
+eb
+eb
+eb
+eb
+eb
+eb
+ab
 qH
 qH
 qH

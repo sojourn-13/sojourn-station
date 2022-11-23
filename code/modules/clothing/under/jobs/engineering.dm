@@ -28,7 +28,7 @@
 	)
 
 /obj/item/clothing/under/rank/engineer
-	desc = "A yellow engineering jumpsuit worn by Guild adepts. It has minor radiation shielding."
+	desc = "A yellow engineering jumpsuit worn by Guild Adepts. It has minor radiation shielding."
 	name = "adept's jumpsuit"
 	icon_state = "engine"
 	item_state = "engi_suit"
@@ -42,7 +42,7 @@
 	)
 
 /obj/item/clothing/under/rank/engineer/padded
-	desc = "A yellow engineering jumpsuit worn by Guild adepts. It has minor radiation shielding and some decorative padding."
+	desc = "A yellow engineering jumpsuit worn by Guild Adepts. It has minor radiation shielding and some decorative padding."
 	name = "adept's jumpsuit"
 	icon_state = "artificer_armored_jumpsuit"
 	item_state = "artificer_armored_jumpsuit"
@@ -56,7 +56,7 @@
 	)
 
 /obj/item/clothing/under/rank/engineer/skirt
-	desc = "A yellow engineering skirt worn by Guild adepts. It has minor radiation shielding."
+	desc = "A yellow engineering skirt worn by Guild Adepts. It has minor radiation shielding."
 	name = "adept's skirt"
 	icon_state = "artificer_apprentice_skirt"
 	item_state = "artificer_apprentice_skirt"
@@ -70,7 +70,7 @@
 	)
 
 /obj/item/clothing/under/rank/engineer/skirt/alt
-	desc = "A yellow engineering skirt worn by Guild adepts. It has minor radiation shielding and some decorative padding."
+	desc = "A yellow engineering skirt worn by Guild Adepts. It has minor radiation shielding and some decorative padding."
 	name = "adept's padded skirt"
 	icon_state = "artificer_jumpskirt_adept"
 	item_state = "artificer_jumpskirt_adept"
@@ -90,7 +90,7 @@
 	item_state = "bl_suit"
 
 /obj/item/clothing/under/rank/engineer/adv
-	desc = "A plastic coated and padded engineering suit warn by guide adepts that know they are going into dangerous areas for repair work. Offers full radiation protection."
+	desc = "A plastic coated and padded engineering suit worn by Guild Adepts heading into dangerously radioactive areas for repair work. Offers full radiation protection."
 	name = "adept's padded emergency suit"
 	icon_state = "engineadv"
 	item_state = "engineadv"
@@ -104,7 +104,7 @@
 	)
 
 /obj/item/clothing/under/rank/engineer/adv_master
-	desc = "A plastic coated and iron woven engineering suit warn by guide masters that know they are going into dangerous areas for repair work. Offers full radiation protection."
+	desc = "A plastic-coated and iron-woven engineering suit worn by Guild Masters heading into dangerously radioactive areas for repair work. Offers full radiation protection."
 	name = "adept's padded emergency suit"
 	icon_state = "chiefengineeradv"
 	item_state = "chiefengineeradv"

@@ -54,6 +54,7 @@
 "az" = (
 /obj/random/material,
 /obj/item/trash/mre,
+/mob/living/carbon/superior_animal/psi_monster/mind_gazer,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "aA" = (
@@ -354,6 +355,10 @@
 "ge" = (
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
+"hS" = (
+/mob/living/carbon/superior_animal/psi_monster/flesh_tower,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/deepmaint)
 "iD" = (
 /obj/item/material/shard,
 /obj/structure/table,
@@ -477,8 +482,17 @@
 /obj/random/material,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
+"ud" = (
+/obj/item/stack/material/plasteel/random,
+/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/deepmaint)
 "uf" = (
 /obj/item/material/shard,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/deepmaint)
+"ug" = (
+/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "uN" = (
@@ -508,12 +522,14 @@
 /obj/item/stack/material/plasteel/random,
 /obj/item/stack/material/plastic/random,
 /obj/item/trash/material/metal,
+/mob/living/carbon/superior_animal/psi_monster/flesh_tower,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "yK" = (
 /obj/random/voidsuit/damaged,
 /obj/random/gun_normal,
 /obj/random/material_rare,
+/mob/living/carbon/superior_animal/psi_monster/mind_gazer,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "zi" = (
@@ -567,10 +583,7 @@
 /obj/item/ammo_magazine/rifle_75/highvelocity,
 /obj/item/trash/mre_can,
 /obj/structure/bed/chair,
-/obj/item/gun/projectile/automatic/vintorez{
-	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds.";
-	name = "Unmarked Vintorez silenced carbine"
-	},
+/obj/item/gun/projectile/automatic/vintorez/NM_colony,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "Gp" = (
@@ -584,6 +597,11 @@
 /obj/item/material/shard,
 /obj/random/junk,
 /turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"Hi" = (
+/obj/item/ammo_magazine/light_rifle_257/empty,
+/mob/living/carbon/superior_animal/psi_monster/flesh_tower,
+/turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "Ip" = (
 /obj/item/stack/material/plastic/random,
@@ -667,6 +685,11 @@
 /obj/item/material/shard,
 /turf/simulated/floor/tiled/dark,
 /area/deepmaint)
+"ST" = (
+/obj/item/stack/rods,
+/mob/living/carbon/superior_animal/psi_monster/flesh_tower,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/deepmaint)
 "Tf" = (
 /obj/item/material/shard,
 /obj/item/stack/material/plastic/random,
@@ -699,6 +722,7 @@
 /obj/random/material_rare,
 /obj/item/trash/mre_candy,
 /obj/random/cluster/psi_monster,
+/mob/living/carbon/superior_animal/psi_monster/mind_gazer,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "Yf" = (
@@ -867,7 +891,7 @@ ac
 aK
 cg
 eB
-bk
+ud
 cg
 bN
 au
@@ -935,7 +959,7 @@ cc
 bU
 aQ
 bf
-ah
+Hi
 bN
 bM
 aY
@@ -943,7 +967,7 @@ XK
 mN
 aC
 bG
-bi
+ST
 aG
 cd
 cr
@@ -1005,13 +1029,13 @@ bU
 OI
 bi
 cg
-cg
+ug
 zi
 Op
 bN
 aA
 bN
-cg
+ug
 cg
 bW
 ah
@@ -1030,7 +1054,7 @@ jX
 Qy
 bO
 cg
-cg
+hS
 sD
 Yf
 cg

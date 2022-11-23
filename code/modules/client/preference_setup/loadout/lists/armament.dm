@@ -5,6 +5,7 @@
 	display_name = "Loaded Clarissa .35 Auto pistol (Rubber)"
 	path = /obj/item/gun/projectile/clarissa/preloaded
 	sort_category = "Armament"
+	slot = slot_in_backpack
 	cost = 1
 
 /datum/gear/armament/ammo
@@ -42,6 +43,31 @@
 	path = /obj/item/device/flash
 	cost = 1
 
+/datum/gear/armament/boot_knife
+	display_name = "boot knife"
+	path = /obj/item/tool/knife/boot
+	cost = 2
+
+/datum/gear/armament/tacboot_knife
+	display_name = "tactical knife"
+	path = /obj/item/tool/knife/tacknife
+	cost = 2
+
+/datum/gear/armament/ritual_knife
+	display_name = "ritual knife"
+	path = /obj/item/tool/knife/ritual
+	cost = 3
+
+/datum/gear/armament/dagger
+	display_name = "dagger"
+	path = /obj/item/tool/knife/dagger
+	cost = 2
+
+/datum/gear/armament/dagger/family
+	display_name = "heirloom dagger"
+	path = /obj/item/tool/knife/dagger/heirloom_knife
+	cost = 1
+
 /datum/gear/armament/baton
 	display_name = "telescopic baton"
 	path = /obj/item/melee/telebaton
@@ -70,3 +96,43 @@
 /datum/gear/armament/holster/saber/cutlass
 	display_name = "cutlass holster"
 	path = /obj/item/clothing/accessory/holster/saber/cutlass
+
+/datum/gear/armament/holster/saber/katana
+	display_name = "katana \"Saya\" sheath"
+	path = /obj/item/clothing/accessory/holster/saber/saya
+
+/datum/gear/armament/holster/church
+	display_name = "Absolutist Sword Scabbard"
+	path = /obj/item/clothing/accessory/holster/saber/greatsword/churchprint
+	allowed_roles = list("Prime","Vector")
+
+/datum/gear/armament/makeshift/saber
+	display_name = "Decorative Saber"
+	path = /obj/item/tool/sword/saber
+	cost = 2
+
+/datum/gear/armament/cutlass
+	display_name = "cutlass"
+	path = /obj/item/tool/sword/saber/cutlass
+	cost = 2
+
+/datum/gear/armament/machete
+	display_name = "Machete"
+	path = /obj/item/tool/sword/machete
+	cost = 2
+
+/datum/gear/armament/katana
+	display_name = "Katana"
+	path = /obj/item/tool/sword/katana
+	cost = 4 // Highest damage, same cost as the spear for balance
+
+/datum/gear/armament/spear
+	display_name = "Steel Spear"
+	path = /obj/item/tool/spear/steel
+	cost = 4
+
+/datum/gear/armament/holster/nt
+	display_name = "short sword"
+	path = /obj/item/tool/sword/nt/shortsword
+	allowed_roles = list("Prime","Vector")
+	cost = 1

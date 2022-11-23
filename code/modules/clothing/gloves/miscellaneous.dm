@@ -254,6 +254,16 @@
 	icon_state = "nitrile"
 	item_state = "nitrile"
 
+/obj/item/clothing/gloves/latex/regal
+	name = "regal white gloves"
+	desc = "A pair of white gloves, made with old fashioned gauze rather than latex. Still surprisingly sterile for all medical purposes."
+	icon_state = "regal"
+	item_state = "regal"
+	siemens_coefficient = 0
+	permeability_coefficient = 0.01
+	germ_level = 0
+	price_tag = 300 // A relic!
+
 /obj/item/clothing/gloves/botanic_leather
 	desc = "A pair of leather work gloves that protect against floral dangers such as thorns and barbs."
 	name = "botanist's leather gloves"

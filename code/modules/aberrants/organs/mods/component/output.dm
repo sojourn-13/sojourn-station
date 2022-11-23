@@ -11,7 +11,7 @@
 
 /datum/component/modification/organ/output/reagents/get_function_info()
 	var/metabolism = mode == CHEM_BLOOD ? "bloodstream" : "stomach"
-	
+
 	var/outputs
 	for(var/output in possible_outputs)
 		var/datum/reagent/R = output
@@ -25,7 +25,7 @@
 	return description
 
 /datum/component/modification/organ/output/reagents/modify(obj/item/I, mob/living/user)
-	if(!output_qualities.len)
+	if(!LAZYLEN(output_qualities))
 		return
 
 	var/list/can_adjust = list("metabolic target", "reagent")
@@ -53,15 +53,21 @@
 			if(mode == CHEM_INGEST)
 				O.name = "gastric organoid"
 				O.desc = "Functional tissue of one or more organs in graftable form. Produces reagents in the stomach."
+				O.description_info = "Produces reagents in the stomach when triggered.\n\n\
+									Use a laser cutting tool to change the metabolism target or reagent type.\n\
+									Reagents can only be swapped for like reagents."
 			else if(mode == CHEM_BLOOD)
 				O.name = "hepatic organoid"
 				O.desc = "Functional tissue of one or more organs in graftable form. Secretes reagents into the bloodstream."
+				O.description_info = "Produces reagents in the bloodstream when triggered.\n\n\
+									Use a laser cutting tool to change the metabolism target or reagent type.\n\
+									Reagents can only be swapped for like reagents."
 
 	if(decision_adjust == "reagent")
 		for(var/output in possible_outputs)
 			var/list/possibilities = output_qualities.Copy()
 
-			if(possible_outputs.len > 1)
+			if(LAZYLEN(possible_outputs) > 1)
 				for(var/effect_name in possibilities)
 					var/effect_type = possibilities[effect_name]
 					if(output != effect_type && possible_outputs.Find(effect_type))
@@ -86,17 +92,17 @@
 	var/datum/reagents/metabolism/RM = owner.get_metabolism_handler(mode)
 	var/triggered = FALSE
 
-	if(input.len && input.len <= possible_outputs.len)
+	if(LAZYLEN(input))
 		for(var/i in input)
 			var/index = input.Find(i)
 			var/is_input_valid = input[i] ? TRUE : FALSE
-			if(is_input_valid)
+			if(is_input_valid && index <= LAZYLEN(possible_outputs))
 				var/input_multiplier = input[i]
 				var/datum/reagent/output = possible_outputs[index]
 				var/amount_to_add = possible_outputs[output] * organ_multiplier * input_multiplier
 				RM.add_reagent(initial(output.id), amount_to_add)
 				triggered = TRUE
-	
+
 	if(triggered)
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_SECONDARY, holder, owner)
@@ -138,13 +144,13 @@
 	return description
 
 /datum/component/modification/organ/output/chemical_effects/modify(obj/item/I, mob/living/user)
-	if(!output_qualities.len)
+	if(!LAZYLEN(output_qualities))
 		return
 
 	for(var/output in possible_outputs)
 		var/list/possibilities = output_qualities.Copy()
 
-		if(possible_outputs.len > 1)
+		if(LAZYLEN(possible_outputs) > 1)
 			for(var/effect_name in possibilities)
 				var/effect_type = possibilities[effect_name]
 				if(output != effect_type && possible_outputs.Find(effect_type))
@@ -171,18 +177,18 @@
 	var/datum/reagents/metabolism/RM = owner.get_metabolism_handler(CHEM_BLOOD)
 	var/triggered = FALSE
 
-	if(input.len && input.len <= possible_outputs.len)
+	if(LAZYLEN(input))
 		for(var/i in input)
 			var/index = input.Find(i)
 			var/is_input_valid = input[i] ? TRUE : FALSE
-			if(is_input_valid)
+			if(is_input_valid && index <= LAZYLEN(possible_outputs))
 				var/input_multiplier = input[i]
 				var/datum/reagent/output = possible_outputs[index]
 				var/amount_to_add = initial(output.metabolism) * organ_multiplier * input_multiplier
-				RM.remove_reagent(initial(output.id), 1000)	// Soj seems to have issues with chems processing slower than organs
+				RM.remove_reagent(initial(output.id), 1000)	// Terrible substitute for lag adjustment
 				RM.add_reagent(initial(output.id), amount_to_add)
 				triggered = TRUE
-	
+
 	if(triggered)
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_SECONDARY, holder, owner)
@@ -204,13 +210,13 @@
 	return description
 
 /datum/component/modification/organ/output/stat_boost/modify(obj/item/I, mob/living/user)
-	if(!output_qualities.len)
+	if(!LAZYLEN(output_qualities))
 		return
 
 	for(var/output in possible_outputs)
 		var/list/possibilities = output_qualities.Copy()
 		var/output_amount = possible_outputs[output]
-		if(possible_outputs.len > 1)
+		if(LAZYLEN(possible_outputs) > 1)
 			for(var/stat in possibilities)
 				if(output != stat && possible_outputs.Find(stat))
 					possibilities.Remove(stat)
@@ -233,17 +239,17 @@
 	var/delay = S.aberrant_cooldown_time + 2 SECONDS
 	var/triggered = FALSE
 
-	if(input.len && iscarbon(owner))
+	if(LAZYLEN(input) && iscarbon(owner))
 		for(var/i in input)
 			var/index = input.Find(i)
 			var/is_input_valid = input[i] ? TRUE : FALSE
-			if(is_input_valid && index <= possible_outputs.len)
+			if(is_input_valid && index <= LAZYLEN(possible_outputs))
 				var/input_multiplier = input[i]
 				var/stat = possible_outputs[index]
 				var/magnitude = possible_outputs[stat] * organ_multiplier * input_multiplier
 				owner.stats.addTempStat(stat, magnitude, delay, "\ref[parent]")
 				triggered = TRUE
-	
+
 	if(triggered)
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_SECONDARY, holder, owner)
@@ -264,11 +270,11 @@
 	var/organ_multiplier = (S.max_damage - S.damage) / S.max_damage
 	var/triggered = FALSE
 
-	if(input.len && ishuman(owner))
+	if(LAZYLEN(input) && ishuman(owner))
 		for(var/i in input)
 			var/index = input.Find(i)
 			var/is_input_valid = input[i]
-			if(is_input_valid)
+			if(is_input_valid && index <= LAZYLEN(possible_outputs))
 				var/input_multiplier = input[i]
 				var/mob/living/carbon/human/H = owner
 				var/damage_type = possible_outputs[index]
@@ -277,8 +283,8 @@
 				H.adjustBrainLoss(damage_amount)		// Added brainloss because we're gaining insight and most damage is trivial anyway
 				H.sanity.give_insight(damage_amount)
 				triggered = TRUE
-				
-	if(triggered)			
+
+	if(triggered)
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_SECONDARY, holder, owner)
 
@@ -333,7 +339,7 @@
 		active_owner_verb_adds |= old_owner_verb_adds
 		are_values_stored = TRUE
 
-	if(input.len)
+	if(LAZYLEN(input))
 		for(var/i in input)
 			var/is_input_valid = input[i]
 			if(is_input_valid)
@@ -346,7 +352,7 @@
 				oxygen_req_mod = active_oxygen_req_mod * organ_multiplier * input_multiplier
 				owner_verb_adds = active_owner_verb_adds.Copy()
 
-				if(active_organ_efficiency_mod.len)
+				if(LAZYLEN(active_organ_efficiency_mod))
 					for(var/process in active_organ_efficiency_mod)
 						if(!islist(H.internal_organs_by_efficiency[process]))
 							H.internal_organs_by_efficiency[process] = list()
@@ -356,14 +362,14 @@
 				LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
 				LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_SECONDARY, holder, owner)
 				return TRUE
-	
+
 	organ_efficiency_mod = old_organ_efficiency_mod
 	blood_req_mod = old_blood_req_mod
 	nutriment_req_mod = old_nutriment_req_mod
 	oxygen_req_mod = old_oxygen_req_mod
 	owner_verb_adds = old_owner_verb_adds
 
-	if(active_organ_efficiency_mod.len && !organ_efficiency_mod.len)
+	if(LAZYLEN(active_organ_efficiency_mod) && !LAZYLEN(organ_efficiency_mod))
 		for(var/process in active_organ_efficiency_mod)
 			if(!islist(H.internal_organs_by_efficiency[process]))
 				H.internal_organs_by_efficiency[process] = list()

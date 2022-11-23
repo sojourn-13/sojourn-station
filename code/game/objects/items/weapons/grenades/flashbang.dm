@@ -28,7 +28,7 @@
 
 	for(var/obj/effect/blob/B in hear(8,get_turf(src)))	//Blob damage here
 		var/damage = round(30/(get_dist(B,get_turf(src))+1))
-		B.health -= damage
+		B.take_damage(damage)
 		B.update_icon()
 
 	new/obj/effect/sparks(loc)
@@ -62,8 +62,12 @@
 		if(ishuman(M))
 			if(istype(M:l_ear, /obj/item/clothing/ears/earmuffs) || istype(M:r_ear, /obj/item/clothing/ears/earmuffs))
 				ear_safety += 2
-			if(HULK in M.mutations)
-				ear_safety += 1
+			if(istype(M:l_ear, /obj/item/device/radio/headset/headset_sec/bowman) || istype(M:r_ear, /obj/item/device/radio/headset/headset_sec/bowman))
+				ear_safety += 2
+			if(istype(M:l_ear, /obj/item/device/radio/headset/heads/hos/bowman) || istype(M:r_ear, /obj/item/device/radio/headset/heads/hos/bowman))
+				ear_safety += 2
+//			if(HULK in M.mutations)
+//				ear_safety += 1
 			if(istype(M:head, /obj/item/clothing/head/helmet))
 				ear_safety += 1
 			if(M.stats.getPerk(PERK_EAR_OF_QUICKSILVER))
@@ -72,7 +76,7 @@
 		eye_safety += 1
 
 //Flashing everyone
-	if(eye_safety < FLASH_PROTECTION_MAJOR)
+	if(eye_safety < FLASH_PROTECTION_MODERATE)
 		M.flash(3, FALSE , TRUE , TRUE , 15 - (15*eye_safety))
 
 //Now applying sound

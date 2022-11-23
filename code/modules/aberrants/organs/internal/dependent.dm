@@ -10,7 +10,7 @@
 	should_process_have_organ_stats = FALSE
 	output_pool = ALL_STANDARD_ORGAN_EFFICIENCIES
 	output_info = list(1)
-	special_info = list(STAT_ROB, 3)
+	special_info = list(STAT_ROB, 10)
 
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater
@@ -19,7 +19,7 @@
 		/datum/reagent/ethanol/beer, /datum/reagent/ethanol/ale, /datum/reagent/ethanol/mead
 	)
 	input_mode = CHEM_INGEST
-	special_info = list(STAT_ROB, 3)		// specfic organs will have better buffs
+	special_info = list(STAT_ROB, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater/New()
 	..()
@@ -38,17 +38,17 @@
 /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater/liver
 	name = "wifebeater's liver"
 	output_pool = list(OP_LIVER)
-	special_info = list(STAT_ROB, 6)
+	special_info = list(STAT_ROB, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater/stomach
 	name = "wifebeater's stomach"
 	output_pool = list(OP_STOMACH)
-	special_info = list(STAT_ROB, 6)
+	special_info = list(STAT_ROB, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater/kidney
 	name = "wifebeater's kidney"
 	output_pool = list(OP_KIDNEYS)
-	special_info = list(STAT_ROB, 6)
+	special_info = list(STAT_ROB, 10)
 
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic
@@ -58,7 +58,7 @@
 		/datum/reagent/ethanol/vodka, /datum/reagent/ethanol/whiskey, /datum/reagent/ethanol/wine
 	)
 	input_mode = CHEM_INGEST
-	special_info = list(STAT_MEC, 3)
+	special_info = list(STAT_MEC, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic/New()
 	..()
@@ -77,17 +77,17 @@
 /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic/liver
 	name = "functional alcoholic's liver"
 	output_pool = list(OP_LIVER)
-	special_info = list(STAT_MEC, 6)
+	special_info = list(STAT_MEC, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic/stomach
 	name = "functional alcoholic's stomach"
 	output_pool = list(OP_STOMACH)
-	special_info = list(STAT_MEC, 6)
+	special_info = list(STAT_MEC, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic/kidney
 	name = "functional alcoholic's kidney"
 	output_pool = list(OP_KIDNEYS)
-	special_info = list(STAT_MEC, 6)
+	special_info = list(STAT_MEC, 10)
 
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/classy
@@ -96,7 +96,7 @@
 		/datum/reagent/ethanol/martini, /datum/reagent/ethanol/coffee/b52, /datum/reagent/ethanol/black_russian, /datum/reagent/ethanol/gintonic
 	)
 	input_mode = CHEM_INGEST
-	special_info = list(STAT_COG, 3)
+	special_info = list(STAT_COG, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/classy/New()
 	..()
@@ -115,17 +115,17 @@
 /obj/item/organ/internal/scaffold/aberrant/dependent/classy/liver
 	name = "aristocrat's liver"
 	output_pool = list(OP_LIVER)
-	special_info = list(STAT_COG, 6)
+	special_info = list(STAT_COG, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/classy/stomach
 	name = "aristocrat's stomach"
 	output_pool = list(OP_STOMACH)
-	special_info = list(STAT_COG, 6)
+	special_info = list(STAT_COG, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/classy/kidney
 	name = "aristocrat's kidney"
 	output_pool = list(OP_KIDNEYS)
-	special_info = list(STAT_COG, 6)
+	special_info = list(STAT_COG, 10)
 
 	
 /obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary
@@ -134,7 +134,7 @@
 		/datum/reagent/stim/bouncer, /datum/reagent/stim/steady, /datum/reagent/stim/violence
 	)
 	input_mode = CHEM_BLOOD
-	special_info = list(STAT_VIG, 3)
+	special_info = list(STAT_VIG, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/New()
 	..()
@@ -153,17 +153,17 @@
 /obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/blood_vessel
 	name = "ex-mercenary's blood vessel"
 	output_pool = list(OP_BLOOD_VESSEL)
-	special_info = list(STAT_VIG, 3)
+	special_info = list(STAT_VIG, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/liver
 	name = "ex-mercenary's liver"
 	output_pool = list(OP_LIVER)
-	special_info = list(STAT_VIG, 6)
+	special_info = list(STAT_VIG, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/exmercenary/muscle
 	name = "ex-mercenary's muscle"
 	output_pool = list(OP_MUSCLE)
-	special_info = list(STAT_VIG, 3)
+	special_info = list(STAT_VIG, 10)
 
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/mobster
@@ -172,7 +172,7 @@
 		/datum/reagent/drug/space_drugs, /datum/reagent/drug/psilocybin
 	)
 	input_mode = CHEM_BLOOD
-	special_info = list(STAT_TGH, 3)
+	special_info = list(STAT_TGH, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/mobster/New()
 	..()
@@ -191,17 +191,17 @@
 /obj/item/organ/internal/scaffold/aberrant/dependent/mobster/blood_vessel
 	name = "mobster's blood vessel"
 	output_pool = list(OP_BLOOD_VESSEL)
-	special_info = list(STAT_TGH, 3)
+	special_info = list(STAT_TGH, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/mobster/liver
 	name = "mobster's liver"
 	output_pool = list(OP_LIVER)
-	special_info = list(STAT_TGH, 6)
+	special_info = list(STAT_TGH, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/mobster/muscle
 	name = "mobster's muscle"
 	output_pool = list(OP_MUSCLE)
-	special_info = list(STAT_TGH, 3)
+	special_info = list(STAT_TGH, 10)
 
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/chemist
@@ -210,7 +210,7 @@
 		/datum/reagent/stim/pro_surgeon, /datum/reagent/medicine/aminazine, /datum/reagent/medicine/citalopram
 	)
 	input_mode = CHEM_BLOOD
-	special_info = list(STAT_BIO, 3)
+	special_info = list(STAT_BIO, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/chemist/New()
 	..()
@@ -229,16 +229,16 @@
 /obj/item/organ/internal/scaffold/aberrant/dependent/chemist/blood_vessel
 	name = "chemist's blood vessel"
 	output_pool = list(OP_BLOOD_VESSEL)
-	special_info = list(STAT_BIO, 3)
+	special_info = list(STAT_BIO, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/chemist/liver
 	name = "chemist's liver"
 	output_pool = list(OP_LIVER)
-	special_info = list(STAT_BIO, 6)
+	special_info = list(STAT_BIO, 10)
 
 /obj/item/organ/internal/scaffold/aberrant/dependent/chemist/kidney
 	name = "chemist's kidney"
 	output_pool = list(OP_KIDNEYS)
-	special_info = list(STAT_BIO, 6)
+	special_info = list(STAT_BIO, 10)
 
 // Soj uses Viv (NSA stat, "addict") and Anatomy (health stat, "bodybuilder")

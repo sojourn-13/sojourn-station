@@ -79,6 +79,7 @@
 	var/agony = 0
 	var/embed = 0 // whether or not the projectile can embed itself in the mob
 	var/knockback = 0
+	var/fire_stacks = 0 //Whether to apply fire stacks
 
 	var/shrapnel_type //Do we have a special thing to embed in the target? If this is null, it will embed a generic 'shrapnel' item.
 
@@ -186,6 +187,10 @@
 	added_damage_bullet_pve = initial(added_damage_bullet_pve) * newmult
 	added_damage_laser_pve  = initial(added_damage_laser_pve) * newmult
 
+/obj/item/projectile/add_fire_stacks(newmult)
+	fire_stacks = initial(fire_stacks) + newmult
+
+// bullet/pellets redefines this
 /obj/item/projectile/proc/adjust_damages(var/list/newdamages)
 	if(!newdamages.len)
 		return
@@ -202,6 +207,10 @@
 		return FALSE
 	var/mob/living/L = target
 	if (!testing)
+		if(fire_stacks && iscarbon(L))
+			L.adjust_fire_stacks(fire_stacks)
+			L.IgniteMob()
+			src.visible_message(SPAN_WARNING("\The [src] sets [target] on fire!"))
 		L.apply_effects(stun, weaken, paralyze, irradiate, stutter, eyeblur, drowsy)
 	return TRUE
 
@@ -326,6 +335,9 @@
 	original_firer = firer
 	shot_from = launcher.name
 	silenced = launcher.item_flags & SILENT
+
+	if(QDELETED(target))
+		return FALSE
 
 	return launch(target, target_zone, x_offset, y_offset, angle_offset)
 
@@ -1084,6 +1096,30 @@
 			P.pixel_x = location.pixel_x
 			P.pixel_y = location.pixel_y
 			P.activate(P.lifetime)
+
+/obj/item/projectile/proc/block_damage(var/amount, atom/A)
+	amount /= armor_penetration
+	var/dmg_total = 0
+	var/dmg_remaining = 0
+	for(var/dmg_type in damage_types)
+		var/dmg = damage_types[dmg_type]
+		if(!(dmg_type == HALLOSS))
+			dmg_total += dmg
+		if(dmg && amount)
+			var/dmg_armor_difference = dmg - amount
+			amount = dmg_armor_difference ? 0 : -dmg_armor_difference
+			dmg = dmg_armor_difference ? dmg_armor_difference : 0
+			if(!(dmg_type == HALLOSS))
+				dmg_remaining += dmg
+		if(dmg)
+			damage_types[dmg_type] = dmg
+		else
+			damage_types -= dmg_type
+	if(!damage_types.len)
+		on_impact(A)
+		qdel(A)
+
+	return dmg_total ? (dmg_remaining / dmg_total) : 0
 
 //"Tracing" projectile
 /obj/item/projectile/test //Used to see if you can hit them.

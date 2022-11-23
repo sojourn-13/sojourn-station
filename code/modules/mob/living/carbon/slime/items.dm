@@ -62,7 +62,7 @@
 	if(M.mind)
 		to_chat(user, SPAN_WARNING(" The slime resists!"))
 		return ..()
-	var/mob/living/simple_animal/adultslime/pet = new /mob/living/simple_animal/adultslime(M.loc)
+	var/mob/living/simple_animal/slime/adultslime/pet = new /mob/living/simple_animal/slime/adultslime(M.loc)
 	pet.icon_state = "[M.colour] adult slime"
 	pet.icon_living = "[M.colour] adult slime"
 	pet.icon_dead = "[M.colour] baby slime dead"

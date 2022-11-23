@@ -192,6 +192,15 @@
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD
 
+/obj/item/clothing/head/costume/halloween/rando
+	name = "warlord's helmet"
+	desc = "A menacing, imposing and spiky helmet of a post-apocalyptic warlord. It conceals one's face quite well..."
+	icon_state = "rando"
+	item_state = "rando"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EYES
+
+
 /*History*/
 
 /obj/item/clothing/head/costume/history/anarchist_cap
@@ -245,6 +254,12 @@
 	name = "court jester hat"
 	icon_state = "jester2"
 	desc = "The extravagant jangly hat of a court jester."
+
+/obj/item/clothing/head/costume/livesey
+	name = "naval surgeon tricorne"
+	desc = "A tricorne worn by naval surgeons of antiquity, complete with an advocate wig."
+	icon_state = "livesey"
+	flags_inv = HIDEEARS|BLOCKHAIR
 
 /*Job*/
 
