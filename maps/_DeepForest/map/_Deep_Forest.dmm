@@ -10143,6 +10143,10 @@
 /obj/random/toolbox,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"NV" = (
+/obj/random/mob/prepper_ranged,
+/turf/simulated/floor/tiled/white/panels,
+/area/nadezhda/dungeon/outside/prepper)
 "NW" = (
 /obj/random/mob/voidwolf,
 /turf/simulated/floor/tiled/dark,
@@ -12156,7 +12160,7 @@
 /turf/simulated/wall,
 /area/nadezhda/dungeon/outside/zoo)
 "WD" = (
-/mob/living/carbon/superior_animal/sentinal_seeker,
+/obj/random/mob/prepper_boss_lowchance,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper)
 "WG" = (
@@ -12604,7 +12608,7 @@
 /area/nadezhda/outside/meadow)
 "YD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/mob/prepper_ranged,
+/obj/random/mob/prepper_boss_lowchance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
 "YE" = (
@@ -17314,7 +17318,7 @@ To
 dT
 Oh
 dT
-dT
+NV
 ki
 WD
 Ry
@@ -18147,7 +18151,7 @@ ab
 ab
 fC
 Rz
-dT
+NV
 dT
 IB
 eG
