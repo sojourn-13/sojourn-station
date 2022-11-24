@@ -541,9 +541,10 @@
 	if(0 >= cell.max_chargerate)
 		to_chat(user, SPAN_WARNING("This type of cell can't be recharged."))
 		return
-	inuse = TRUE
 	if(inuse)
 		to_chat(user, SPAN_WARNING("You are already charging the cell!"))
+		return
+	inuse = TRUE
 	user.visible_message(SPAN_NOTICE("[user] starts turning the handle on [src]."), SPAN_NOTICE("You start to turn the handle on [src]."))
 	if(do_after(user, 12 + (30 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
 		if(!cell)
