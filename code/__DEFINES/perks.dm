@@ -3,8 +3,6 @@
 #define PERK_PAPER_WORM /datum/perk/paper_worm
 #define PERK_NIHILIST /datum/perk/nihilist
 #define PERK_MORALIST /datum/perk/moralist
-#define PERK_ALCOHOLIC /datum/perk/alcoholic
-#define PERK_ALCOHOLIC_ACTIVE /datum/perk/alcoholic_active
 #define PERK_DRUG_ADDICT /datum/perk/drug_addict
 #define PERK_NOBLE /datum/perk/noble
 #define PERK_RAT /datum/perk/rat
@@ -38,6 +36,8 @@
 
 //roundstart perks (job)
 #define PERK_FREELACER /datum/perk/freelancer
+#define PERK_ALCOHOLIC /datum/perk/alcoholic
+#define PERK_ALCOHOLIC_ACTIVE /datum/perk/alcoholic_active
 #define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery
 #define PERK_LUNGS_OF_IRON /datum/perk/lungs_of_iron
 #define PERK_BLOOD_OF_LEAD /datum/perk/blood_of_lead

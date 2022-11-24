@@ -204,17 +204,16 @@
 	desc = "Your presence instills fear and loyality into those under you, bred and raised for this very purpose you are capable of making others perform beyond their limits."
 
 /datum/perk/presence/assign(mob/living/carbon/human/H)
-	..()
-	if(holder)
+	if(..())
 		holder.brute_mod_perk -= 0.1
 		holder.burn_mod_perk -= 0.1
-		holder.stats.addStat(STAT_VIG) += 5
+		holder.stats.changeStat(STAT_VIG, 5)
 
 /datum/perk/presence/remove()
 	if(holder)
 		holder.brute_mod_perk += 0.1
 		holder.burn_mod_perk += 0.1
-		holder.stats.addStat(STAT_VIG) -= 5
+		holder.stats.changeStat(STAT_VIG, -5)
 	..()
 
 ////////////////////////////////////////Akula perks
