@@ -1,6 +1,6 @@
 /*
-		STAT_BIO = 5,
-		STAT_COG = 5
+		STAT_BIO = 4
+		STAT_COG = 2
 */
 
 /datum/category_item/setup_option/background/origin/chtmantro
@@ -13,14 +13,14 @@
 	restricted_to_species = list(FORM_CHTMANT)
 	allow_modifications = FALSE
 	perks = list(/datum/perk/scuttlebug, /datum/perk/repair_goo)
-
+// Mec = 5
 	stat_modifiers = list(
-		STAT_ROB = 8,
-		STAT_TGH = 7,
-		STAT_VIG = 7,
-		STAT_BIO = 8,
-		STAT_MEC = -7,
-		STAT_COG = -1
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 4,
+		STAT_MEC = 5,
+		STAT_COG = 2
 	)
 
 /datum/category_item/setup_option/background/origin/chtmantru
@@ -38,14 +38,14 @@
 	perks = list(/datum/perk/ichor)
 	racial_implants = (/obj/item/organ_module/active/simple/surgical/cht_mant)
 	restricted_jobs = list(/datum/job/pro)
-
+// Cog = 3 Bio = 2
 	stat_modifiers = list(
-		STAT_ROB = -8,
-		STAT_TGH = -8,
-		STAT_VIG = -8,
-		STAT_BIO = 15,
-		STAT_MEC = 3,
-		STAT_COG = 16
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 6,
+		STAT_MEC = 0,
+		STAT_COG = 5
 	)
 
 /datum/category_item/setup_option/background/origin/chtmantra
@@ -62,12 +62,12 @@
 
 	perks = list(/datum/perk/chitinarmor)
 	racial_implants = (/obj/item/organ_module/active/simple/cht_mant_claws)
-
+// Rob = 3 Vig = 2
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 10,
-		STAT_VIG = 0,
-		STAT_BIO = -5,
-		STAT_MEC = -10,
+		STAT_ROB = 3,
+		STAT_TGH = 0,
+		STAT_VIG = 2,
+		STAT_BIO = 4,
+		STAT_MEC = 0,
 		STAT_COG = 0
 	)

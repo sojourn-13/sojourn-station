@@ -14,7 +14,7 @@
 		STAT_VIG = 0,
 		STAT_BIO = 30,
 		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_COG = 15
 	)
 
 /datum/category_item/setup_option/background/origin/sot_synth_engineer
@@ -34,7 +34,7 @@
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 15,
-		STAT_COG = 0
+		STAT_COG = 15
 	)
 
 /datum/category_item/setup_option/background/origin/sot_synth_combat
@@ -53,8 +53,8 @@
 		STAT_TGH = 15,
 		STAT_VIG = 15,
 		STAT_BIO = 0,
-		STAT_MEC = -5,
-		STAT_COG = -5
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/origin/ag_synth_mech_adept
@@ -74,7 +74,7 @@
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 30,
-		STAT_COG = 0
+		STAT_COG = 15
 	)
 
 /datum/category_item/setup_option/background/origin/ag_synth_sturdy
@@ -89,8 +89,8 @@
 	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 20,
+		STAT_ROB = 5,
+		STAT_TGH = 25,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
@@ -114,7 +114,7 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 20,
-		STAT_TGH = 10,
+		STAT_TGH = 15,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 10,
@@ -152,7 +152,7 @@
 	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 20,
+		STAT_ROB = 25,
 		STAT_TGH = 20,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
@@ -173,7 +173,7 @@
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 20,
-		STAT_VIG = 20,
+		STAT_VIG = 25,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -193,7 +193,7 @@
 		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 30,
+		STAT_BIO = 45,
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)
@@ -210,9 +210,9 @@
 
 	//Compared to the soteria combat model and blackshield synths you get 20 armor across the body vs. 30/35 respectively, so what you lack in natural defense is made up in offense. -Kaz
 	stat_modifiers = list(
-		STAT_ROB = 20,
-		STAT_TGH = 20,
-		STAT_VIG = 20,
+		STAT_ROB = 15,
+		STAT_TGH = 15,
+		STAT_VIG = 15,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -232,7 +232,7 @@
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_TGH = 10,
-		STAT_VIG = 10,
+		STAT_VIG = 5,
 		STAT_BIO = 0, //Given 10 bio racially.
 		STAT_MEC = 10,
 		STAT_COG = 10
@@ -249,12 +249,12 @@
 	restricted_to_species = list(FORM_FBP, FORM_UNBRANDED)
 
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_VIG = 15,
-		STAT_BIO = 15,
-		STAT_MEC = 15,
-		STAT_COG = 15
+		STAT_ROB = 7,
+		STAT_TGH = 7,
+		STAT_VIG = 7,
+		STAT_BIO = 7,
+		STAT_MEC = 7,
+		STAT_COG = 7
 	)
 
 /datum/category_item/setup_option/background/origin/full_body_prosthetic_fighter
@@ -290,7 +290,7 @@
 		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 25,
+		STAT_BIO = 20,
 		STAT_MEC = 25,
 		STAT_COG = 35 // Good on paper, but since you cannot be a psion, at best it helps with hacking and disarming landmines.
 	)

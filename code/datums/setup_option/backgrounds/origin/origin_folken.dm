@@ -1,6 +1,5 @@
-/*
-		STAT_BIO = 10,
-		STAT_VIG = 10
+/* Racial
+		STAT_BIO = 6
 */
 
 /datum/category_item/setup_option/background/origin/folken_elder
@@ -11,15 +10,15 @@
 
 	restricted_to_species = list(FORM_FOLKEN)
 
-	perks = list()
+	perks = list(/datum/perk/oddity/sharp_mind)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
-		STAT_VIG = 10,
-		STAT_BIO = 15,
+		STAT_VIG = 0,
+		STAT_BIO = 6,
 		STAT_MEC = 0,
-		STAT_COG = 20
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/origin/folken_sprout
@@ -31,13 +30,13 @@
 	restricted_to_species = list(FORM_FOLKEN)
 
 	perks = list(PERK_FOLKEN_HEALING_YOUNG)
-
+//Mec = 5
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
-		STAT_VIG = 10,
-		STAT_BIO = 10,
-		STAT_MEC = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 6,
+		STAT_MEC = 5,
 		STAT_COG = 0
 	)
 
@@ -50,12 +49,12 @@
 	restricted_to_species = list(FORM_FOLKEN)
 
 	perks = list(PERK_ODD_REROLL)
-
+// Bio = 5
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
-		STAT_VIG = 10,
-		STAT_BIO = 10,
+		STAT_VIG = 0,
+		STAT_BIO = 11,
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)

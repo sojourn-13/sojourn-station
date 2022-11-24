@@ -1,6 +1,7 @@
 /*
-		STAT_ROB = 5,
-		STAT_TGH = 5
+		STAT_ROB = 2,
+		STAT_TGH = 2,
+		STAT_VIG = 2
 */
 
 /datum/category_item/setup_option/background/origin/northlander
@@ -9,14 +10,14 @@
 			Northlanders live in a tougher environment then their southlander cousins, where fights and conflict between each other happens as commonly as attacks from the local wildlife. \
 			The focus on physical martial success leaves far less time for study and as a result while you are a bit tougher you are not as learned. \
 			Then again, when all else fails and diplomacy falls through you can always rely on your claws."
-
+// Rob = 2 Tgh = 3
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_VIG = -10,
+		STAT_ROB = 4,
+		STAT_TGH = 5,
+		STAT_VIG = 2,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = -10
+		STAT_COG = 0
 	)
 
 	restricted_to_species = list(FORM_SABLEKYNE)
@@ -27,14 +28,14 @@
 			Southlanders hail from the brutally hot desert along the equator of Onkarth living behind fortified walls where they conduct most of the planets commerce. \
 			Southlanders are not shy about combat but their focus on more mental pursuits leave them less capable than their northern cousins. \
 			After all, only a brute needs to resort to violence when so many other options exists."
-
+// Rob = 1 Tgh = 1 Vig = 1 Bio = 1 Mec = 1
 	stat_modifiers = list(
-		STAT_ROB = 5,
-		STAT_TGH = 15,
-		STAT_VIG = -20,
-		STAT_BIO = 0,
-		STAT_MEC = 0,
-		STAT_COG = 10
+		STAT_ROB = 3,
+		STAT_TGH = 3,
+		STAT_VIG = 3,
+		STAT_BIO = 1,
+		STAT_MEC = 1,
+		STAT_COG = 0
 	)
 
 	restricted_to_species = list(FORM_SABLEKYNE)
@@ -50,12 +51,12 @@
 	restricted_to_species = list(FORM_SABLEKYNE)
 
 	perks = list(/datum/perk/addict)
-
+//Bio = 5
 	stat_modifiers = list(
-		STAT_ROB = -5,
-		STAT_TGH = -5,
-		STAT_VIG = 0,
-		STAT_BIO = 10,
+		STAT_ROB = 2,
+		STAT_TGH = 2,
+		STAT_VIG = 2,
+		STAT_BIO = 5,
 		STAT_MEC = 0,
-		STAT_COG = 10
+		STAT_COG = 0
 	)

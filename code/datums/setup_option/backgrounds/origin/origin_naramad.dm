@@ -1,8 +1,10 @@
 /*
-		STAT_TGH = 10, == Converted to 2 ANA
-		STAT_ROB = 10,
-		STAT_VIG = -10,
-		STAT_COG = -10
+		STAT_TGH = 4,
+		STAT_ROB = 2,
+
+		STAT_BIO = -5  //
+		STAT_MEC = -5
+		STAT_COG = -10 //Dumb as a stump, you get no compensation
 */
 
 /datum/category_item/setup_option/background/origin/naramadnorth
@@ -15,15 +17,14 @@
 			Once their service is finished, it is rare for this group that is so dependant and comfortable around their own to not return home."
 
 	restricted_to_species = list(FORM_NARAMAD)
-
+//Rob = 5
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_TGH = 20,
-		STAT_VIG = -30,
-		STAT_BIO = 5,
-		STAT_MEC = 0,
-		STAT_COG = -15
-		STAT_ANA = 2
+		STAT_ROB = 7,
+		STAT_TGH = 4,
+		STAT_VIG = 0,
+		STAT_BIO = -5,
+		STAT_MEC = -5,
+		STAT_COG = -10
 	)
 
 /datum/category_item/setup_option/background/origin/naramadsouth
@@ -35,15 +36,14 @@
 			the workings of the body."
 
 	restricted_to_species = list(FORM_NARAMAD)
-
+// Cog = 5
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_TGH = 0,
-		STAT_VIG = -10,
-		STAT_BIO = -25,
-		STAT_MEC = 10,
-		STAT_COG = 5
-		STAT_ANA = 2
+		STAT_ROB = 2,
+		STAT_TGH = 4,
+		STAT_VIG = 0,
+		STAT_BIO = -5,
+		STAT_MEC = -5,
+		STAT_COG = -5
 	)
 
 /datum/category_item/setup_option/background/origin/naramadeast
@@ -57,15 +57,14 @@
 
 	restricted_depts = SCIENCE | MEDICAL | ENGINEERING | COMMAND
 	restricted_jobs = list(/datum/job/salvager, /datum/job/supsec, /datum/job/serg, /datum/job/inspector, /datum/job/medspec, /datum/job/officer)
-
+//Rob = 2 Vig = 3
 	stat_modifiers = list(
-		STAT_ROB = 20,
-		STAT_TGH = 0,
-		STAT_VIG = 5,
-		STAT_BIO = -20,
-		STAT_MEC = -20,
-		STAT_COG = -25
-		STAT_ANA = 2
+		STAT_ROB = 4,
+		STAT_TGH = 4,
+		STAT_VIG = 3,
+		STAT_BIO = -5,
+		STAT_MEC = -5,
+		STAT_COG = -10
 	)
 
 /datum/category_item/setup_option/background/origin/naramadspacer
@@ -78,12 +77,12 @@
 	restricted_to_species = list(FORM_NARAMAD)
 
 	perks = list(/datum/perk/lungs_of_iron)
-
+//Mec = 5
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = -15,
-		STAT_VIG = -10,
-		STAT_BIO = 5,
-		STAT_MEC = 5,
-		STAT_COG = 5
+		STAT_ROB = 2,
+		STAT_TGH = 4,
+		STAT_VIG = 0,
+		STAT_BIO = -5,
+		STAT_MEC = 0,
+		STAT_COG = -10
 	)

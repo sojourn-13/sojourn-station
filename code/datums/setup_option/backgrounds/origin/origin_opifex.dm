@@ -1,6 +1,6 @@
 /*
-		STAT_MEC = 5,
-		STAT_COG = 5
+		STAT_MEC = 6 For Engi and Mech
+		STAT_BIO = 6 For Biomechanist
 */
 
 /datum/category_item/setup_option/background/origin/opifex_mechanist
@@ -13,14 +13,14 @@
 
 	perks = list(/datum/perk/opifex_backup)
 	racial_implants = (/obj/item/organ_module/active/simple/opifex_pouch)
-
+//Mec = 5
 	stat_modifiers = list(
-		STAT_ROB = -5,
-		STAT_TGH = -2,
-		STAT_VIG = -3,
-		STAT_BIO = -15,
-		STAT_MEC = 20,
-		STAT_COG = 15
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 11,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/origin/opifexbiomech
@@ -35,14 +35,14 @@
 
 	perks = list(/datum/perk/opifex_backup_medical)
 	racial_implants = (/obj/item/organ_module/active/simple/opifex_pouch)
-
+//Mec = 5
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 25,
-		STAT_MEC = -10,
-		STAT_COG = -5
+		STAT_BIO = 6,
+		STAT_MEC = 5,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/origin/opifexcombattech
@@ -57,12 +57,12 @@
 
 	perks = list(/datum/perk/opifex_backup_combat)
 	racial_implants = (/obj/item/organ_module/active/simple/opifex_pouch)
-
+//Vig = 5
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 4,
-		STAT_VIG = 10,
+		STAT_TGH = 0,
+		STAT_VIG = 5,
 		STAT_BIO = 0,
-		STAT_MEC = -2,
-		STAT_COG = -2
+		STAT_MEC = 6,
+		STAT_COG = 0
 	)

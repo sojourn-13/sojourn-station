@@ -1,8 +1,7 @@
-/*
+/* Racial
 		STAT_BIO = 2,
 		STAT_COG = 2,
 		STAT_MEC = 2,
-		STAT_TGH = 2
 */
 
 /datum/category_item/setup_option/background/origin/cindarbunker
@@ -13,14 +12,14 @@
 			their physical health, so biological maintenance is just as important as physical."
 
 	restricted_to_species = list(FORM_CINDAR)
-
+//Vig = 4 Mec = 1
 	stat_modifiers = list(
-		STAT_ROB = -5,
-		STAT_TGH = -3,
-		STAT_VIG = 0,
-		STAT_BIO = 12,
-		STAT_MEC = 12,
-		STAT_COG = 7
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 4,
+		STAT_BIO = 2,
+		STAT_MEC = 3,
+		STAT_COG = 2
 	)
 
 /datum/category_item/setup_option/background/origin/cindarspacer
@@ -31,11 +30,13 @@
 
 	restricted_to_species = list(FORM_CINDAR)
 
+	perks = list(/datum/perk/lungs_of_iron)
+//Mec = 4 Cog = 1
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 12,
+		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = -8,
-		STAT_MEC = 17,
-		STAT_COG = -13
+		STAT_BIO = 2,
+		STAT_MEC = 6,
+		STAT_COG = 3
 	)

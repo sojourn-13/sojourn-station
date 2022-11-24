@@ -268,7 +268,7 @@
 		)
 	permitted_wings = list()
 
-	perks = list(PERK_PERFECT_SHOT, PERK_ENHANCEDSENSES)
+	perks = list(PERK_ENHANCEDSENSES)
 
 /datum/species/kriosan/get_bodytype()
 	return "Kriosan"
@@ -308,7 +308,7 @@
 	permitted_tail  = list("Akula Tail")
 	permitted_wings = list()
 
-	perks = list(PERK_RECKLESSFRENZY, PERK_IRON_FLESH, PERK_CARNIVORE)
+	perks = list(PERK_IRON_FLESH)
 
 /datum/species/akula/get_bodytype()
 	return "Akula"

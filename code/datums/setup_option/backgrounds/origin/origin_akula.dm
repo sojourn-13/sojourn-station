@@ -1,64 +1,37 @@
-/* +10 toughness converted into 2 anatomy with how conversion rate is rn */
+/* +6 Toughness as their racial */
 
-/datum/category_item/setup_option/background/origin/akulaganger
-	name = "Former Ganger"
-	desc = "Akula are a brutal people and some take this to another level. The fondness they possess for motor cycles and hover bikes have given way to a rise in gang-like culture. \
-			While the common akula is strong, most gangers train themselves in the 'honorable' way of fighting, favoring melee. Fixing up their bikes so often has also given them some mechanical knack.  \
-			Days and weeks of patching themselves up after a bar fight or gang-land style shooting have made most pretty self reliant but, sadly even the clever gangers eventually get caught. \
-			While criminal backgrounds are often overlooked, yours is one of public record and far more brutal than most, made known by either your boasting, tattoos, or records. \
-			Security is still willing to hire you, but your records should note your history."
+/datum/category_item/setup_option/background/origin/akulabase
+	name = "True-Born"
+	desc = "You are a true akula with all the nitty gritty of it, constantly angered by the smallest inconvinience towering over everyone in your vicinity, you are the apex predator after all. \
+	Or perhaps you are just more adjusted than most of your kinsmen and capable of living alongside your oppressors in space without biting their face off. \
+	Whichever the case you are the definition of peak form of your species compared to your emancipated brethren, show them what it means to be a true warrior and not just a shark with makeup."
 
 	restricted_to_species = list(FORM_AKULA)
 
+	perks = list(PERK_RECKLESSFRENZY, PERK_CARNIVORE)
+
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 0,
-		STAT_VIG = -5,
-		STAT_BIO = 10,
-		STAT_MEC = -5,
-		STAT_COG = -15
-		STAT_ANA = 2
+		STAT_ROB = 2,
+		STAT_TGH = 6,
+		STAT_VIG = 3,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
 
-/datum/category_item/setup_option/background/origin/akulabreacher
-	name = "Former Breacher"
-	desc = "Military service for an akula is considered one of the most honorable professions one can take. Those who lack the skill and cunning for a command position are often designated as breachers. \
-			Akula breachers serve a single purpose, being the first person into a conflict that serves as a meat shield for those behind them in a stack.  \
-			While impressive, this position strains even the well known toughness of most akula and leaves them with lasting injuries. \
-			The training breachers get is also exclusive, focused entirely on melee assisted by large shields as a hulking charging akula rushing a position attracts more concentrated \
-			fire, thus freeing up the soldiers in the back to make clear picked shots."
+/datum/category_item/setup_option/background/origin/akulasudak //Accept your fate as a worse shark :sunglasso:
+	name = "Sudak"
+	desc = "You are a sudak, akula that choose path of submission to human meddling losing much of the natural strenght in process, making you look almost nothing like your once kinsmen. \
+	More human-like docile cutesy shark to tourists, utter abomination that deserves extermination to your brethren, this is what you have to deal with your entire world being summed up simply as prejudice. \
+	There is a chance you still recall your animalistic insticts but the odds are low, will you stay a submissive akula or prove to them that you are their equal."
 
 	restricted_to_species = list(FORM_AKULA)
 
-	perks = list(/datum/perk/lungs_of_iron)
-
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_TGH = 0,
-		STAT_VIG = 15,
-		STAT_BIO = -10,
-		STAT_MEC = -10,
-		STAT_COG = -5
-		STAT_ANA = 2
-	)
-
-/datum/category_item/setup_option/background/origin/akulacommander
-	name = "Former Commander"
-	desc = "Military service for an akula is considered one of the most honorable professions one can take. Many become commanders within the Solarian Federation military, often leading small squads \
-			of Naramadi in ship to ship breaching squads or strike teams in ground assaults. Akula commanders are better trained with guns than most and adapt well to new things.  \
-			Service in the military, however, has its draw backs. Much of an akula's training is steeped solely in marksmanship as they cannot keep pace with the faster naramads and must take \
-			great care not to cause a friendly fire incident."
-
-	restricted_to_species = list(FORM_AKULA)
-
-	perks = list(/datum/perk/lungs_of_iron)
-
-	stat_modifiers = list(
-		STAT_ROB = -5,
-		STAT_TGH = 5,
-		STAT_VIG = 5,
-		STAT_BIO = -10,
-		STAT_MEC = -10,
-		STAT_COG = 15
-		STAT_ANA = 2
+		STAT_ROB = 0,
+		STAT_TGH = 6,
+		STAT_VIG = 1,
+		STAT_BIO = 2,
+		STAT_MEC = 2,
+		STAT_COG = 0
 	)

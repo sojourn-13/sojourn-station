@@ -1,5 +1,5 @@
-/*
-		STAT_ROB = 20,
+/* Racial
+		STAT_ROB = 6, Cryptic Cog
 */
 
 /datum/category_item/setup_option/background/origin/mushroom
@@ -13,14 +13,14 @@
 
 	perks = list(PERK_MUSH_FOLLOWER)
 	racial_implants_head = (/obj/item/organ_module/active/hud/night_bio_mycus)
-
+// Bio = 5
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = -5,
-		STAT_VIG = -5,
-		STAT_BIO = 25,
-		STAT_MEC = -5,
-		STAT_COG = -5
+		STAT_ROB = 6,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 5,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/origin/slime
@@ -34,14 +34,14 @@
 
 	perks = list(PERK_SLIME_FOLLOWER)
 	racial_implants_head = (/obj/item/organ_module/active/hud/night_bio_mycus)
-
+//Tgh = 5
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 25,
-		STAT_VIG = -5,
-		STAT_BIO = -5,
-		STAT_MEC = -5,
-		STAT_COG = -5
+		STAT_ROB = 6,
+		STAT_TGH = 5,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/origin/cryptic
@@ -54,12 +54,12 @@
 
 	restricted_to_species = list(FORM_MYCUS)
 	racial_implants_head = (/obj/item/organ_module/active/hud/night_bio_mycus)
-
+// Mec = 5
 	stat_modifiers = list(
-		STAT_ROB = 11,
-		STAT_TGH = -8,
-		STAT_VIG = -8,
-		STAT_BIO = 10,
-		STAT_MEC = 10,
-		STAT_COG = 5
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 5,
+		STAT_COG = 6
 	)

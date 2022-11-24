@@ -1,7 +1,5 @@
 /*
-		STAT_BIO = 10,
-		STAT_COG = 10,
-		STAT_MEC = 10
+		STAT_COG = 6
 */
 
 /datum/category_item/setup_option/background/origin/marquaintelligensia
@@ -14,14 +12,14 @@
 
 	restricted_depts = SECURITY
 	restricted_jobs = list(/datum/job/pro, /datum/job/foreman)
-
+// Cog = 5
 	stat_modifiers = list(
-		STAT_ROB = -10,
-		STAT_TGH = -10,
-		STAT_VIG = -5,
-		STAT_BIO = 15,
-		STAT_MEC = 15,
-		STAT_COG = 25
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 11
 	)
 
 
@@ -32,14 +30,14 @@
 			As a menial you lack the higher training of most mar'qua but a life of labor has made you toughened to the rigors of life, the sole benefit of low born status."
 
 	restricted_to_species = list(FORM_MARQUA)
-
+// Mec = 4 Rob = 1
 	stat_modifiers = list(
-		STAT_ROB = 6,
-		STAT_TGH = -10,
-		STAT_VIG = -15,
-		STAT_BIO = 12,
-		STAT_MEC = 25,
-		STAT_COG = 12
+		STAT_ROB = 1,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 4,
+		STAT_COG = 6
 	)
 
 
@@ -51,12 +49,12 @@
 			improved their physical ability quite well."
 
 	restricted_to_species = list(FORM_MARQUA)
-
+// Tgh = 2 Vig = 3
 	stat_modifiers = list(
-		STAT_ROB = 4,
-		STAT_TGH = 9,
-		STAT_VIG = 12,
-		STAT_BIO = 6,
-		STAT_MEC = -1,
-		STAT_COG = 0
+		STAT_ROB = 0,
+		STAT_TGH = 2,
+		STAT_VIG = 3,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 6
 	)

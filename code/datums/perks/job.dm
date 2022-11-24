@@ -1,3 +1,24 @@
+/datum/perk/freelancer
+	name = "Freelancer"
+	desc = "Whatever was your job, you never stayed in one place for too long or had lasting contracts. \
+			This perk checks your highest stat, lowers it by 10 and improves all others by 4."
+
+/datum/perk/freelancer/assign(mob/living/carbon/human/H)
+	if(!..())
+		return
+	var/maxstat = -INFINITY
+	var/maxstatname
+	spawn(1)
+		for(var/name in ALL_STATS_VANILLA)
+			if(holder.stats.getStat(name, TRUE) > maxstat)
+				maxstat = holder.stats.getStat(name, TRUE)
+				maxstatname = name
+		for(var/name in ALL_STATS_VANILLA)//So this doesn't just delete or increase your anatomy/viv
+			if(name != maxstatname)
+				holder.stats.changeStat(name, 4)
+			else
+				holder.stats.changeStat(name, -10)
+
 /// Basically a marker perk. If the user has this perk, another will be given in certain conditions.
 /datum/perk/inspiration
 	name = "Exotic Inspiration"

@@ -1,7 +1,6 @@
-/*
+/* Racial
 	stat_modifiers = list(
-		STAT_TGH = 5,
-		STAT_VIG = 5
+		STAT_VIG = 6 // Castellan has Toughness instead
 	)
 */
 
@@ -14,12 +13,12 @@
 
 	restricted_to_species = list(FORM_KRIOSAN)
 
-	perks = list(/datum/perk/lungs_of_iron)
+	perks = list(PERK_GUNSMITH)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 5,
-		STAT_VIG = 25,
+		STAT_TGH = 0,
+		STAT_VIG = 6,
 		STAT_BIO = 0,
 		STAT_MEC = 5,
 		STAT_COG = 0
@@ -35,13 +34,15 @@
 
 	restricted_to_species = list(FORM_KRIOSAN)
 
+	perks = list(PERK_PERFECT_SHOT)
+
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 10,
-		STAT_VIG = 10,
-		STAT_BIO = -5,
-		STAT_MEC = -5,
-		STAT_COG = -15
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 11,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/origin/castallen
@@ -52,11 +53,13 @@
 
 	restricted_to_species = list(FORM_KRIOSAN)
 
+	perks = list(PERK_PRESENCE)
+
 	stat_modifiers = list(
 		STAT_ROB = 5,
-		STAT_TGH = 10,
-		STAT_VIG = -10,
-		STAT_BIO = -10,
-		STAT_MEC = 5,
-		STAT_COG = 10
+		STAT_TGH = 6,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
