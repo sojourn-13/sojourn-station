@@ -103,10 +103,10 @@
 	icon_state = "sec_tomahawk"
 	wielded_icon = "sec_tomahawk"
 	force = WEAPON_FORCE_DANGEROUS
-	throwforce = WEAPON_FORCE_BRUTAL
+	throwforce = WEAPON_FORCE_DANGEROUS
 	slot_flags = SLOT_BELT|SLOT_BACK
 	tool_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 25, QUALITY_PRYING = 15)
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	price_tag = 45
 
 /obj/item/tool/minihoe
