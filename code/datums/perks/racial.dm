@@ -215,6 +215,38 @@
 		holder.burn_mod_perk += 0.1
 		holder.stats.changeStat(STAT_VIG, -5)
 	..()
+	
+/datum/perk/presence/activate()
+	var/mob/living/carbon/human/user = usr
+	var/list/people_around = list()
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("You cannot muster your willpower to have a terrify people just yet."))
+		return FALSE
+	cooldown_time = world.time + 15 MINUTES
+	log_and_message_admins("used their [src] perk.")
+	for(var/mob/living/carbon/human/H in view(user))
+		if(H != user && !isdeaf(H))
+			people_around.Add(H)
+	if(people_around.len > 0)
+		for(var/mob/living/carbon/human/participant in people_around)
+			to_chat(participant, SPAN_NOTICE("You feel completly scared and terrified by a roar!"))
+			give_boost(participant)
+	give_boost(usr)
+	usr.emote("bellow")
+	return ..()
+
+/datum/perk/presence/proc/give_boost(mob/living/carbon/human/participant)
+	var/effect_time = 2 MINUTES
+	var/amount = -10
+	var/list/stats_to_boost = list(STAT_ROB = -10, STAT_TGH = -10, STAT_VIG = -10)
+	for(var/stat in stats_to_boost)
+		participant.stats.changeStat(stat, amount)
+		addtimer(CALLBACK(src, .proc/take_boost, participant, stat, amount), effect_time)
+
+/datum/perk/presence/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
+	participant.stats.changeStat(stat, -amount)
 
 ////////////////////////////////////////Akula perks
 /datum/perk/recklessfrenzy
