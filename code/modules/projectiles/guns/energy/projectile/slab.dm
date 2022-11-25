@@ -7,7 +7,7 @@
 	icon_state = "slab"
 	item_state = "slab"
 	charge_meter = FALSE
-	item_charge_meter = TRUE
+	item_charge_meter = FALSE
 	self_recharge = 1
 	recharge_time = 20
 	recharge_amount = 30
@@ -16,13 +16,7 @@
 	damage_multiplier = 1.3 //Less capacity and charge speed than a Posi'd Myrmidion, even when fully tuned; hits like a brick, to compensate.
 	penetration_multiplier = 1.3
 	cell_type = /obj/item/cell/medium
-	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	w_class = ITEM_SIZE_NORMAL
-	force = WEAPON_FORCE_NORMAL
 	origin_tech = list(TECH_COMBAT = 6, TECH_MAGNET = 6, TECH_ENGINEERING = 6)
-	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 4, MATERIAL_SILVER = 5)
-	gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
-	twohanded = FALSE
 	init_firemodes = list(
 		list(mode_name="kill", mode_desc="fires scrap at relativistic speed", icon="kill"),
 		list(mode_name="superkill", mode_desc="blows all your charge on a single, piercing shot", penetrating = 3, penetration_multiplier = 3, fire_delay = 25, charge_cost = 600, icon="destroy"),
