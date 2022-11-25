@@ -57,12 +57,14 @@
 	light_color = "#000000"
 
 	stat_modifiers = list(
-		STAT_BIO = 5,
-		STAT_COG = 5,
-		STAT_MEC = 5,
-		STAT_ROB = 5,
-		STAT_TGH = 5,
-		STAT_VIG = 5
+		STAT_BIO = 10,
+		STAT_COG = 10,
+		STAT_MEC = 10,
+		STAT_ROB = 10,
+		STAT_TGH = 10,
+		STAT_VIG = 10,
+		STAT_VIV = -5,
+		STAT_ANA = 2
 	)
 
 	darksight = 3
