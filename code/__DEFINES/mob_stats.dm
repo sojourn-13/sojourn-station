@@ -12,6 +12,7 @@
 #define ALL_STATS	list(STAT_MEC,STAT_COG,STAT_BIO,STAT_ROB,STAT_TGH,STAT_VIG,STAT_VIV,STAT_ANA)
 #define ALL_STATS_FOR_LEVEL_UP	list(STAT_MEC,STAT_COG,STAT_BIO,STAT_ROB,STAT_TGH,STAT_VIG,STAT_VIV) //Cant naturally gain more ana
 #define ALL_STATS_TO_IMPRINT list(STAT_MEC,STAT_COG,STAT_BIO,STAT_ROB,STAT_VIG) //So that people stop memeing the imprinter
+#define ALL_STATS_VANILLA list(STAT_MEC,STAT_COG,STAT_BIO,STAT_ROB,STAT_TGH,STAT_VIG) //Eris vanilla stats
 
 #define STAT_LEVEL_NONE     0
 #define STAT_LEVEL_BASIC    15
@@ -19,6 +20,7 @@
 #define STAT_LEVEL_EXPERT   40
 #define STAT_LEVEL_PROF     60
 #define STAT_LEVEL_GODLIKE	80
+#define STAT_LEVEL_GOD		120 //You cannot go past this
 
 #define STAT_LEVEL_MIN      0 // Min stat value selectable
 #define STAT_LEVEL_MAX      60 // Max stat value selectable

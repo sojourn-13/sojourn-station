@@ -1,11 +1,8 @@
 //fate perks, commented out since most effect the sanity system and we don't use that system. -Kaz
 /*
 #define PERK_PAPER_WORM /datum/perk/paper_worm
-#define PERK_FREELACER /datum/perk/freelancer
 #define PERK_NIHILIST /datum/perk/nihilist
 #define PERK_MORALIST /datum/perk/moralist
-#define PERK_ALCOHOLIC /datum/perk/alcoholic
-#define PERK_ALCOHOLIC_ACTIVE /datum/perk/alcoholic_active
 #define PERK_DRUG_ADDICT /datum/perk/drug_addict
 #define PERK_NOBLE /datum/perk/noble
 #define PERK_RAT /datum/perk/rat
@@ -38,6 +35,9 @@
 #define PERK_IRON_WILL /datum/perk/oddity/iron_will
 
 //roundstart perks (job)
+#define PERK_FREELACER /datum/perk/freelancer
+#define PERK_ALCOHOLIC /datum/perk/alcoholic
+#define PERK_ALCOHOLIC_ACTIVE /datum/perk/alcoholic_active
 #define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery
 #define PERK_LUNGS_OF_IRON /datum/perk/lungs_of_iron
 #define PERK_BLOOD_OF_LEAD /datum/perk/blood_of_lead
@@ -96,8 +96,9 @@
 #define PERK_INSPIRED /datum/perk/inspired
 #define PERK_ALIEN_NERVES /datum/perk/alien_nerves
 //Kriosan
-#define PERK_PERFECT_SHOT /datum/perk/exceptional_aim
 #define PERK_ENHANCEDSENSES /datum/perk/enhancedsenses
+#define PERK_PERFECT_SHOT /datum/perk/exceptional_aim
+#define PERK_PRESENCE /datum/perk/presence
 //Akula
 #define PERK_IRON_FLESH /datum/perk/iron_flesh
 #define PERK_RECKLESSFRENZY /datum/perk/recklessfrenzy

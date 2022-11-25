@@ -1,15 +1,62 @@
+/datum/perk/freelancer
+	name = "Freelancer"
+	desc = "Whatever was your job, you never stayed in one place for too long or had lasting contracts. \
+			This perk checks your highest stat, lowers it by 10 and improves all others by 4."
+
+/datum/perk/freelancer/assign(mob/living/carbon/human/H)
+	if(!..())
+		return
+	var/maxstat = -INFINITY
+	var/maxstatname
+	spawn(1)
+		for(var/name in ALL_STATS_VANILLA)
+			if(holder.stats.getStat(name, TRUE) > maxstat)
+				maxstat = holder.stats.getStat(name, TRUE)
+				maxstatname = name
+		for(var/name in ALL_STATS_VANILLA)//So this doesn't just delete or increase your anatomy/viv
+			if(name != maxstatname)
+				holder.stats.changeStat(name, 4)
+			else
+				holder.stats.changeStat(name, -10)
+
+/datum/perk/alcoholic
+	name = "Alcoholic"
+	desc = "You imagined the egress from all your trouble and pain at the bottom of the bottle, but the way only led to a labyrinth. \
+			You never stopped from coming back to it, trying again and again, poisoning your mind until you lost control. Now your face bears witness to your self-destruction. \
+			There is only one key to survival, and it is the liquid that has shown you the way down. \
+			You have a permanent alcohol addiction, which gives you a boost to combat stats while under the influence and lowers your cognition permanently."
+
+/datum/perk/alcoholic/assign(mob/living/carbon/human/H)
+	if(..() && !(/datum/reagent/ethanol in holder.metabolism_effects.addiction_list))
+		var/datum/reagent/R = new /datum/reagent/ethanol
+		holder.metabolism_effects.addiction_list.Add(R)
+
+/datum/perk/alcoholic_active
+	name = "Alcoholic - active"
+	desc = "Your inner drunk-fu."
+
+/datum/perk/alcoholic_active/assign(mob/living/carbon/human/H)
+	..()
+	holder.stats.addTempStat(STAT_ROB, 15, INFINITY, "Fate Alcoholic")
+	holder.stats.addTempStat(STAT_TGH, 15, INFINITY, "Fate Alcoholic")
+	holder.stats.addTempStat(STAT_VIG, 15, INFINITY, "Fate Alcoholic")
+
+/datum/perk/alcoholic_active/remove()
+	holder.stats.removeTempStat(STAT_ROB, "Fate Alcoholic")
+	holder.stats.removeTempStat(STAT_TGH, "Fate Alcoholic")
+	holder.stats.removeTempStat(STAT_VIG, "Fate Alcoholic")
+	..()
+
 /// Basically a marker perk. If the user has this perk, another will be given in certain conditions.
 /datum/perk/inspiration
 	name = "Exotic Inspiration"
 	desc = "The best ideas come from a mind not entirely sober, any alcohol will give you that much needed boost... somehow."
-	//icon_state = "inspiration" // https://game-icons.net/1x1/delapouite/booze.html
 
 /datum/perk/active_inspiration
 	name = "Exotic Inspiration (Active)"
 	desc = "The alcohol you imbibed is granting you that much needed boost in inspiration for your next project...somehow."
 	gain_text = "You feel a sudden rush of alcohol-induced inspiration..."
 	lose_text = "Your sudden flash of brilliance fades away..."
-	//icon_state = "inspiration_active" // https://game-icons.net/1x1/lorc/enlightenment.html
 
 /datum/perk/active_inspiration/assign(mob/living/carbon/human/H)
 	..()

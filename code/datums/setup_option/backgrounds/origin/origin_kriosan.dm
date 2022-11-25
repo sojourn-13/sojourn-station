@@ -1,4 +1,10 @@
-/datum/category_item/setup_option/background/ethnicity/jaeger
+/* Racial
+	stat_modifiers = list(
+		STAT_VIG = 6 // Castellan has Toughness instead
+	)
+*/
+
+/datum/category_item/setup_option/background/origin/jaeger
 	name = "Jaeger"
 	desc = "The jaegers are a group of frontier kriosan who plot the course for the spread of the kriosan civilization. \
 			Jaegers are practical, individualistic, and self reliant with a rigid set of personal beliefs and stubbornness to the point of coming off as arrogant. \
@@ -7,16 +13,18 @@
 
 	restricted_to_species = list(FORM_KRIOSAN)
 
+	perks = list(PERK_GUNSMITH)
+
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
-		STAT_VIG = 5,
+		STAT_VIG = 6,
 		STAT_BIO = 0,
 		STAT_MEC = 5,
 		STAT_COG = 0
 	)
 
-/datum/category_item/setup_option/background/ethnicity/vorhut
+/datum/category_item/setup_option/background/origin/vorhut
 	name = "Former Vorhut Soldier"
 	desc = "All Vorhut technically are soldiers, but a very real distinction is drawn between the civilians and the dedicated soldiers who serve as their empire's career storm troopers. \
 	Vorhut battalions were originally formed and trained by the survivors of the rebellion with experience fighting the Solarian military, and were seen as fanatical and violent extremists. \
@@ -26,16 +34,18 @@
 
 	restricted_to_species = list(FORM_KRIOSAN)
 
+	perks = list(PERK_PERFECT_SHOT)
+
 	stat_modifiers = list(
-		STAT_ROB = 5,
-		STAT_TGH = 10,
-		STAT_VIG = 5,
-		STAT_BIO = 5,
-		STAT_MEC = -10,
-		STAT_COG = -15
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 11,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
 
-/datum/category_item/setup_option/background/ethnicity/castallen
+/datum/category_item/setup_option/background/origin/castallen
 	name = "Castellen"
 	desc = "The castellen are the noble elite and highborn of the kriosan, genetically superior to the common folk they rule over but rarely found outside their own empire. \
 			Castellens are widely known for their considerable size and physical merit but lack the practical training in most areas compared to others, in particular those dealing with people or \
@@ -43,11 +53,13 @@
 
 	restricted_to_species = list(FORM_KRIOSAN)
 
+	perks = list(PERK_PRESENCE)
+
 	stat_modifiers = list(
 		STAT_ROB = 5,
-		STAT_TGH = 5,
-		STAT_VIG = -10,
-		STAT_BIO = -10,
-		STAT_MEC = 5,
-		STAT_COG = 5
+		STAT_TGH = 6,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)

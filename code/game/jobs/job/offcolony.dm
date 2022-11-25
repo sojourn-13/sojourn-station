@@ -24,7 +24,6 @@
 		STAT_ROB = 15,
 		STAT_VIG = 15,
 		STAT_MEC = 5,
-		STAT_COG = 0
 	)
 	playtimerequired = 1200
 	description = "You are not part of the colony, at least currently, having decided to take a shift with the local Lodge Hunters either temporarily or permanently. As the Hunt \
@@ -66,7 +65,6 @@
 		STAT_ROB = 10,
 		STAT_VIG = 10,
 		STAT_MEC = 5,
-		STAT_COG = 0
 	)
 
 	description = "You are not part of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As a Lodge Hunter \

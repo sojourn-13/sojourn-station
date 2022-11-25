@@ -1,4 +1,4 @@
-/datum/category_item/setup_option/background/ethnicity/sot_synth_medical
+/datum/category_item/setup_option/background/origin/sot_synth_medical
 	name = "Medical Positronic"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. Your specific model was designed with \
 	in-house medical imaging, surgical support systems, and a suite of data stored biological reference documents fed to the brain within through a real-time artificial intelligence system. The entire \
@@ -14,10 +14,10 @@
 		STAT_VIG = 0,
 		STAT_BIO = 30,
 		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_COG = 15
 	)
 
-/datum/category_item/setup_option/background/ethnicity/sot_synth_engineer
+/datum/category_item/setup_option/background/origin/sot_synth_engineer
 	name = "Engineering Positronic"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. Your specific model was designed with \
 	sturdy reinforced chassis functions and augmented tool support to further enhance your innate skills. Due to an often times self tinkering habit, engineering FBP's are made sturdy and equipped \
@@ -34,10 +34,10 @@
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 15,
-		STAT_COG = 0
+		STAT_COG = 15
 	)
 
-/datum/category_item/setup_option/background/ethnicity/sot_synth_combat
+/datum/category_item/setup_option/background/origin/sot_synth_combat
 	name = "Combat Positronic"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. Combat positronics are built specifically \
 	for the protection of colony interests but allowed to retain their free will, unlike other cyborgs. Combat positronics have the sturdiest physical designs and enhanced hydraulic systems to \
@@ -53,11 +53,11 @@
 		STAT_TGH = 15,
 		STAT_VIG = 15,
 		STAT_BIO = 0,
-		STAT_MEC = -5,
-		STAT_COG = -5
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
 
-/datum/category_item/setup_option/background/ethnicity/ag_synth_mech_adept
+/datum/category_item/setup_option/background/origin/ag_synth_mech_adept
 	name = "Mechanical Adept"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. Your specific model was designed with \
 	a suite of integrated repair AI modules and augmented tool support to further enhance your innate skills. While not as sturdy as some other models of FBP's such as the Soteria designs the \
@@ -74,10 +74,10 @@
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 30,
-		STAT_COG = 0
+		STAT_COG = 15
 	)
 
-/datum/category_item/setup_option/background/ethnicity/ag_synth_sturdy
+/datum/category_item/setup_option/background/origin/ag_synth_sturdy
 	name = "\"Long-Haul\" Body Chassis"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This particular model is the work of Tacitus \
 	O'Conner himself, artificer guild grand master. Unlike the mechanical adept model this chassis is built to last, being far more sturdy and capable of performing alone or with teams of engineers cut \
@@ -89,15 +89,15 @@
 	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 20,
+		STAT_ROB = 5,
+		STAT_TGH = 25,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 15
 	)
 
-/datum/category_item/setup_option/background/ethnicity/ag_synth_mine
+/datum/category_item/setup_option/background/origin/ag_synth_mine
 	name = "\"Depts-Class\" Body Chassis"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This particular model is made with mining in \
 	mind. Unlike the mechanical adept model this chassis is built work long hard hours in the darkness, being far more able to smash down rock veins and dig out tunnels rich with both soft \
@@ -114,14 +114,14 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 20,
-		STAT_TGH = 10,
+		STAT_TGH = 15,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 10,
 		STAT_COG = 0
 	)
 
-/datum/category_item/setup_option/background/ethnicity/blackshield_security
+/datum/category_item/setup_option/background/origin/blackshield_security
 	name = "Non-Lethal Model"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This particular model is designed for \
 	non-lethal engagements, meant to capture people alive and with minimal harm. Thanks to a wide variety of scenarios catching targets can present, be it bounty hunting, criminal arrest, or just \
@@ -140,7 +140,7 @@
 		STAT_COG = 0
 	)
 
-/datum/category_item/setup_option/background/ethnicity/blackshield_melee
+/datum/category_item/setup_option/background/origin/blackshield_melee
 	name = "Close-Quarters Combat Model"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This model is designed for melee conflict. \
 	CQC positronics have the sturdiest physical designs and enhanced hydraulic systems to further enhance their physical strength. In-built armor plating and AI-fed combat techniques given \
@@ -152,7 +152,7 @@
 	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 20,
+		STAT_ROB = 25,
 		STAT_TGH = 20,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
@@ -160,7 +160,7 @@
 		STAT_COG = 0
 	)
 
-/datum/category_item/setup_option/background/ethnicity/blackshield_ranged
+/datum/category_item/setup_option/background/origin/blackshield_ranged
 	name = "Ballistic Model"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This model is designed for ranged engagements. \
 	Ballistic positronics are slightly less sturdy than their CQC and non-lethal counterparts, but still have a sturdy chassis and AI-guided targeting systems to aid in shooting. \
@@ -173,13 +173,13 @@
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 20,
-		STAT_VIG = 20,
+		STAT_VIG = 25,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)
 
-/datum/category_item/setup_option/background/ethnicity/church_agrolyte
+/datum/category_item/setup_option/background/origin/church_agrolyte
 	name = "Agrolyte Model"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This model comes with the express purpose of \
 	farming and cultivating life and crops. While comparitively weaker than other models, the agrolyte is exceptional at all things biological be it raising and maintaining crops or tending to animals \
@@ -193,12 +193,12 @@
 		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 30,
+		STAT_BIO = 45,
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)
 
-/datum/category_item/setup_option/background/ethnicity/church_combat
+/datum/category_item/setup_option/background/origin/church_combat
 	name = "Knight Model"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This one was designed for combat. \
 	While not nearly as armored as a soteria or blackshield synthetic, the knight comes with a built in shortsword and many wire-jack tendons capable of allowing it to punch through armor \
@@ -210,15 +210,15 @@
 
 	//Compared to the soteria combat model and blackshield synths you get 20 armor across the body vs. 30/35 respectively, so what you lack in natural defense is made up in offense. -Kaz
 	stat_modifiers = list(
-		STAT_ROB = 20,
-		STAT_TGH = 20,
-		STAT_VIG = 20,
+		STAT_ROB = 15,
+		STAT_TGH = 15,
+		STAT_VIG = 15,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)
 
-/datum/category_item/setup_option/background/ethnicity/church_religion
+/datum/category_item/setup_option/background/origin/church_religion
 	name = "Ceremony Model"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This one is the most common form of synthetic \
 	utilized by the church. Ceremonial models come with a built in ritual knife and bible, allowing them to always access their litanies. Additionally, they have a wide array of skills, allowing them \
@@ -232,14 +232,14 @@
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_TGH = 10,
-		STAT_VIG = 10,
+		STAT_VIG = 5,
 		STAT_BIO = 0, //Given 10 bio racially.
 		STAT_MEC = 10,
 		STAT_COG = 10
 	)
 
 // FBP's lack a base racial bonus, what you see here is all they get.
-/datum/category_item/setup_option/background/ethnicity/full_body_prosthetic_generic
+/datum/category_item/setup_option/background/origin/full_body_prosthetic_generic
 	name = "Generic Chassis"
 	desc = "The form of a Full Body Prosthetic is one in which a formerly organic person has suffered terminal extensive damage to the point the body could not be saved. Though under rare circumstances \
 	a synthetic may choose this chassis type, more often than not FBP's are survivors of conflicts, accidents, or terminal diseases. The transition from an organic body to a mechanical one is often \
@@ -249,15 +249,15 @@
 	restricted_to_species = list(FORM_FBP, FORM_UNBRANDED)
 
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_VIG = 15,
-		STAT_BIO = 15,
-		STAT_MEC = 15,
-		STAT_COG = 15
+		STAT_ROB = 7,
+		STAT_TGH = 7,
+		STAT_VIG = 7,
+		STAT_BIO = 7,
+		STAT_MEC = 7,
+		STAT_COG = 7
 	)
 
-/datum/category_item/setup_option/background/ethnicity/full_body_prosthetic_fighter
+/datum/category_item/setup_option/background/origin/full_body_prosthetic_fighter
 	name = "Veteran Chassis"
 	desc = "The form of a Full Body Prosthetic is one in which a formerly organic person has suffered terminal extensive damage to the point the body could not be saved. Though under rare circumstances \
 	a synthetic may choose this chassis type, more often than not FBP's are survivors of conflicts, accidents, or terminal diseases. The transition from an organic body to a mechanical one is often \
@@ -276,7 +276,7 @@
 		STAT_COG = 0
 	)
 
-/datum/category_item/setup_option/background/ethnicity/full_body_prosthetic_scholar
+/datum/category_item/setup_option/background/origin/full_body_prosthetic_scholar
 	name = "Scholar Chassis"
 	desc = "The form of a Full Body Prosthetic is one in which a formerly organic person has suffered terminal extensive damage to the point the body could not be saved. Though under rare circumstances \
 	a synthetic may choose this chassis type, more often than not FBP's are survivors of conflicts, accidents, or terminal diseases. The transition from an organic body to a mechanical one is often \
@@ -290,7 +290,7 @@
 		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 25,
+		STAT_BIO = 20,
 		STAT_MEC = 25,
 		STAT_COG = 35 // Good on paper, but since you cannot be a psion, at best it helps with hacking and disarming landmines.
 	)
