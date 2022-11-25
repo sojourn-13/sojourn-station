@@ -24,6 +24,7 @@
 	var/disposable = FALSE
 	var/use_external_power = 0 //if set, the weapon will look for an external power source to draw from, otherwise it recharges magically
 	var/recharge_time = 4
+	var/recharge_amount = null //If set, the gun will recharge this many units per recharge_time, rather than restoring exactly enough for one shot
 	var/charge_tick = 0
 	gun_tags = list(GUN_ENERGY)
 
@@ -85,7 +86,10 @@
 			if(!external || !external.use(charge_cost)) //Take power from the borg...
 				return 0
 
-		cell.give(charge_cost) //... to recharge the shot
+		if(recharge_amount)
+			cell.give(recharge_amount)
+		else
+			cell.give(charge_cost) //... to recharge the shot
 		update_icon()
 	return 1
 
