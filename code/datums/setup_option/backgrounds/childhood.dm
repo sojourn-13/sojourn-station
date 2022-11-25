@@ -13,7 +13,7 @@
 	meaning after the destruction of your home-world. Or maybe it wasn't your homeworld that was destroyed, maybe it was just your way of life. Regardless, you've left a burned bridge behind you and \
 	can no longer go back. Your rough life has hardened you against the worst possible situations."
 
-	perks = list(/datum/perk/space_asshole)
+	perks = list(/datum/perk/space_asshole, /datum/perk/oddity/strangth)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -53,9 +53,9 @@
 		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 0,
-		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_BIO = 1,
+		STAT_MEC = 1,
+		STAT_COG = 5
 	)
 
 /datum/category_item/setup_option/background/childhood/drug_addict
@@ -105,7 +105,7 @@
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
-		STAT_VIG = 0,
+		STAT_VIG = 5,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -139,15 +139,17 @@
 		FORM_AKULA, FORM_MARQUA, FORM_NARAMAD,
 		FORM_CINDAR)
 
+	perks = list(/datum/perk/oddity/harden)
+
 	racial_implants = (/obj/item/organ_module/active/simple/wolverine)
 
 	stat_modifiers = list(
-		STAT_ROB = 3,
+		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 0,
-		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_BIO = -3,
+		STAT_MEC = -3,
+		STAT_COG = -3
 	)
 
 /datum/category_item/setup_option/background/childhood/entrepreneur
@@ -192,7 +194,7 @@
 		STAT_VIG = -4,
 		STAT_BIO = -4,
 		STAT_MEC = -4,
-		STAT_COG = 0 // A peaceful mind is a lazy mind
+		STAT_COG = 8 // A peaceful mind is a sharp mind
 	)
 
 /datum/category_item/setup_option/background/childhood/psionic_mania
@@ -205,8 +207,8 @@
 	perks = list(/datum/perk/psi_mania)
 
 	stat_modifiers = list(
-		STAT_ROB = 4,
-		STAT_TGH = 4, // Hardened by violent thoughts probably put to practice
+		STAT_ROB = 9,
+		STAT_TGH = 9, // Hardened by violent thoughts probably put to practice
 		STAT_VIG = -4,
 		STAT_BIO = -4,
 		STAT_MEC = -4,

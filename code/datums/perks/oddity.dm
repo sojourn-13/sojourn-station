@@ -51,7 +51,7 @@
 
 /datum/perk/oddity/harden
 	name = "Natural Armor"
-	desc = "Your skin has become harder, more durable, able to accept blunt force and endure."
+	desc = "Your skin became harder, more durable, able to accept blunt force and endure."
 	gain_text = "After all you've endured, you can't help but feel tougher than normal, your skin feels like iron."
 	//icon_state = "" // - No icon, suggestion - Riot Shield?
 

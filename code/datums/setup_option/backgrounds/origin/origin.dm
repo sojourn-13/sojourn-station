@@ -90,6 +90,8 @@
 	This life while much calmer than those in the 'inner sphere' leaves you leagues behind in education, but instead your body is more adapted to struggles of the frontier \
 	You might not be as smart as most humans but when push comes to shove you get the job done unlike those pansies."
 
+	perks = list(/datum/perk/oddity/mind_of_matter)
+
 	restricted_to_species = list(FORM_HUMAN)
 //Rob = 3 Tgh = 3 Vig = 3 Mec = 1
 	stat_modifiers = list(
@@ -106,6 +108,8 @@
 	desc = "Where science made living way easier for everyone, there are some places where it made horrors beyond imagination. One of these being dubbed Vat-Growns. \
 	While cloning is deemed impossible flash growth on other hand is achievable with mixed results, you are what happens when one of them succeeds. \
 	Mentally stunted, pumped full of steroids since your birth and lead into life of servitude, you are your own master now and it's up to you on what to do with your fate."
+
+	perks = list(/datum/perk/oddity/fast_walker)
 
 	restricted_to_species = list(FORM_HUMAN)
 //Rob = 7 Tgh = 3

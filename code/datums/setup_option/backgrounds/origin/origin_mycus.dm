@@ -55,11 +55,14 @@
 	restricted_to_species = list(FORM_MYCUS)
 	racial_implants_head = (/obj/item/organ_module/active/hud/night_bio_mycus)
 // Mec = 5
+// Why lamas why!
+	perks = list(/datum/perk/oddity/sharp_mind)
+
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 0,
+		STAT_BIO = 5,
 		STAT_MEC = 5,
 		STAT_COG = 6
 	)

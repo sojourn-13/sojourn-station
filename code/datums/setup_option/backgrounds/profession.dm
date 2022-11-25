@@ -138,6 +138,6 @@
 		STAT_VIG = -3,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 9
+		STAT_COG = 10
 	)
 

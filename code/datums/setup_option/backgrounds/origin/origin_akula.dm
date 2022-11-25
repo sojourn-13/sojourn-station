@@ -29,9 +29,9 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 6,
-		STAT_VIG = 1,
-		STAT_BIO = 2,
-		STAT_MEC = 2,
-		STAT_COG = 0
+		STAT_TGH = 2, //You lose your frenzy so you kinda need to have some sorta of compensation
+		STAT_VIG = 3,
+		STAT_BIO = 7,
+		STAT_MEC = 7,
+		STAT_COG = 5
 	)
