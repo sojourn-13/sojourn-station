@@ -51,18 +51,19 @@
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
 	max_age = 200 //Effectively ageless, but human history is only so long.
-	hunger_factor = 1.1
+	hunger_factor = 1.3
 
 	dark_color = "#ffffff"
 	light_color = "#000000"
 
 	stat_modifiers = list(
-		STAT_BIO = 5,
-		STAT_COG = 5,
-		STAT_MEC = 5,
-		STAT_ROB = 5,
-		STAT_TGH = 5,
-		STAT_VIG = 5
+		STAT_BIO = 10,
+		STAT_COG = 10,
+		STAT_MEC = 10,
+		STAT_ROB = 10,
+		STAT_TGH = 10,
+		STAT_VIG = 10,
+		STAT_VIV = -10
 	)
 
 	darksight = 3
