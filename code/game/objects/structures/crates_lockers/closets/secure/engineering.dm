@@ -28,6 +28,7 @@
 	new /obj/item/storage/hcases/parts(src)
 	new /obj/item/storage/hcases/engi(src)
 	new /obj/item/rpd(src)
+	new /obj/item/gun/energy/laser/railgun/pistol/slab(src)
 	if(prob(50))
 		new /obj/item/tool_upgrade/augment/ai_tool(src)
 	else if(prob(50))
