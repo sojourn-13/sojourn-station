@@ -63010,6 +63010,10 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/engineering/atmos)
 "lQe" = (
+/obj/item/modular_computer/console/preset/trade{
+	dir = 4;
+	pixel_x = -4
+	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/merchant)
 "lQg" = (
@@ -64382,6 +64386,7 @@
 /obj/machinery/camera/network/cargo{
 	dir = 1
 	},
+/obj/item/oddity/rare/golden_cup,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/office)
 "mdn" = (
@@ -89276,15 +89281,15 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
-/obj/machinery/smelter{
-	name = "primary smelter";
-	output_side = 4;
-	refuse_output_side = 1
-	},
 /obj/machinery/conveyor/east{
 	dir = 1;
 	id = "disposals upper";
 	operating = 1
+	},
+/obj/machinery/smelter/cargo_t2_parts{
+	output_side = 4;
+	name = "primary smelter";
+	refuse_output_side = 1
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/quartermaster/disposaldrop)
@@ -94541,10 +94546,10 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos/storage)
 "rFp" = (
-/obj/structure/table/rack/shelf,
+/obj/structure/table/standard,
 /obj/item/oddity/rare/golden_cup,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/pros/prep)
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/absolutism/bioreactor)
 "rFq" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -202096,7 +202101,7 @@ xYU
 prO
 prO
 mCq
-xlO
+rFp
 beK
 sFI
 sFI
@@ -235997,7 +236002,7 @@ mcJ
 lVF
 ihz
 kiN
-rFp
+wQs
 gLr
 yhU
 rRY

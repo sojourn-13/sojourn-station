@@ -28,6 +28,18 @@
 
 	var/forbidden_materials = list(MATERIAL_CARDBOARD,MATERIAL_WOOD,MATERIAL_BIOMATTER)
 
+/obj/machinery/smelter/cargo_t2_parts
+
+/obj/machinery/smelter/cargo_t2_parts/Initialize()
+	. = ..()
+	component_parts = list()
+	component_parts += new /obj/item/stock_parts/manipulator/nano(null)
+	component_parts += new /obj/item/stock_parts/scanning_module/adv(null)
+	component_parts += new /obj/item/stock_parts/micro_laser/high(null)
+	component_parts += new /obj/item/stock_parts/matter_bin/adv(null)
+	component_parts += new /obj/item/stock_parts/matter_bin/adv(null)
+	RefreshParts()
+	update_icon()
 
 /obj/machinery/smelter/Initialize()
 	. = ..()
@@ -81,7 +93,10 @@
 			return
 		current_item = O
 		return
-
+	for(var/mob/M in get_step(src, input_side))
+		if(M.anchored) //If this somehow is a thing then bam you dont move same as above
+			continue
+		eject(M, refuse_output_side)
 
 /obj/machinery/smelter/proc/smelt()
 	smelt_item(current_item)
@@ -151,7 +166,10 @@
 	return 0
 
 /obj/machinery/smelter/proc/eject(obj/O, output_dir)
-	O.loc = get_step(src, output_dir)
+	var/turf/T = get_step(src, output_dir)
+	if(T.density)
+		return
+	O.loc = T
 
 
 /obj/machinery/smelter/proc/eject_material_stack(material)
