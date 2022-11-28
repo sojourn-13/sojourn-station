@@ -79,7 +79,7 @@
 	name = "ritual knife"
 	desc = "The unearthly energies that once powered this blade are now dormant."
 	icon = 'icons/obj/wizard.dmi'
-	icon_state = "render"
+	icon_state = "ritual_dagger" // why the fuck ??? why it was render???????????
 	force = WEAPON_FORCE_PAINFUL
 	backstab_damage = 14
 	price_tag = 7
