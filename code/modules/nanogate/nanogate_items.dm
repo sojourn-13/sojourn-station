@@ -10,12 +10,11 @@
 		energy = 30,
 		bomb = 25,
 		bio = 100,
-		rad = 100
-	) // the suit is less armored than a psion suit but provides alot more utility. -Kaz.
-	emp_protection = 10
-	slowdown = 0
+		rad = 50
+	)
+	slowdown = 0.3
 	item_flags = STOPPRESSUREDAMAGE | THICKMATERIAL | DRAG_AND_DROP_UNEQUIP | EQUIP_SOUNDS
-	offline_slowdown = 0
+	offline_slowdown = 2
 	offline_vision_restriction = 0
 	drain = 2
 	canremove = FALSE // It is attached to your back
