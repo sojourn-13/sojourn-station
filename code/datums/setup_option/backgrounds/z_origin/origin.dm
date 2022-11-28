@@ -65,6 +65,24 @@
 		STAT_COG = 5
 	)
 
+/datum/category_item/setup_option/background/background/humanexplorer
+	name = "Explorer Ancestry"
+	desc = "Explorers have no planets nor lands nor ships or stations to call their own. Born as vagrants on the endeless space, or that being a ship, a colony or who knows, they don't stay too much and often go into exploring the stars, \
+	a solid comprehension of pretty much everything is needed, which leads to the descendants of explorers quickly coming to learn their environment and technology exceptionally well. Living in places that often changes in such degree. \
+	. You might have been born from explorers who finally put down roots on a planet or stayed in space, in either case they made sure to pass along \
+	their technical and physical skills to you."
+
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN)
+
+	stat_modifiers = list(
+		STAT_ROB = 3,
+		STAT_TGH = 3,
+		STAT_VIG = 3,
+		STAT_BIO = 6,
+		STAT_MEC = 6,
+		STAT_COG = 6
+	)
+
 /datum/category_item/setup_option/background/origin/sol
 	name = "Sol-Born"
 	desc = "A catch all term to describe Humans and Abhumans born within inner borders of Sol, among alien races more of a deragotary slur, as such it is within certain circles \
@@ -120,4 +138,22 @@
 		STAT_BIO = 3,
 		STAT_MEC = 3,
 		STAT_COG = 3
+	)
+
+
+/datum/category_item/setup_option/background/origin/humancolony
+	name = "Colony Ancestry"
+	desc = "A catch all term to describe Humans and Abhumans born within Solarian Colonies. Those born here have access to much more prestigious and advanced education facilities, \
+	along with various military pathways to choose from. Colony born humans tend to be widely skilled and physically better off than most as a result of clean living and access to \
+	better form of education than most. You may have been born on a colony world or be the child of those that were, in either case you still reap the benefits of good genetics."
+
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN)
+
+	stat_modifiers = list(
+		STAT_ROB = 4,
+		STAT_TGH = 4,
+		STAT_VIG = 4,
+		STAT_BIO = 7,
+		STAT_MEC = 7,
+		STAT_COG = 7
 	)
