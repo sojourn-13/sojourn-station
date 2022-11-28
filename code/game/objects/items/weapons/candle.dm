@@ -13,6 +13,17 @@
 	wax = rand(800, 1000) // Enough for 27-33 minutes. 30 minutes on average.
 	..()
 
+
+/obj/item/flame/candle/pre_lit
+
+
+/obj/item/flame/candle/pre_lit/endless
+	endless_burn = TRUE
+
+/obj/item/flame/candle/pre_lit/New()
+	..()
+	light(flavor_text = SPAN_NOTICE("\The [name] lights up."))
+
 /obj/item/flame/candle/update_icon()
 	var/i
 	if(wax > 1500)
