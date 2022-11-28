@@ -24,6 +24,9 @@
 		)
 	serial_type = "EXC"
 
+	wield_delay = 0.5 SECOND
+	wield_delay_factor = 0.1 // 10 vig
+
 /obj/item/gun/projectile/automatic/drozd/NM_colony
 	name = "\"Kompleks\" SMG"
 	desc = "An excellent fully automatic submachinegun. Famous for it's perfomance in close quarters. Uses 9mm rounds."

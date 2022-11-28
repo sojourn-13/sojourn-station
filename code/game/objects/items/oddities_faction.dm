@@ -63,7 +63,7 @@
 	var/stats_buff = list(STAT_BIO, STAT_COG, STAT_MEC)
 	var/list/mob/living/carbon/human/currently_affected = list()
 
-/obj/item/von_krabin/New()
+/obj/item/device/von_krabin/New()
 	..()
 	GLOB.all_faction_items[src] = GLOB.department_moebius
 
@@ -504,9 +504,6 @@ No more of that.
 	..()
 
 /obj/item/tool/sword/crusader/nt_sword_truth/attack_self(mob/user)
-	if(isBroken)
-		to_chat(user, SPAN_WARNING("\The [src] is broken."))
-		return
 	if(!wielded)
 		to_chat(user, SPAN_WARNING("You cannot use [src] special ability with one hand!"))
 		return
@@ -547,7 +544,7 @@ No more of that.
 
 	for(var/obj/effect/blob/B in hear(8,get_turf(src)))       		//Blob damage here
 		var/damage = round(30/(get_dist(B,get_turf(src))+1))
-		B.health -= damage
+		B.take_damage(damage)
 		B.update_icon()
 
 	new/obj/effect/sparks(loc)

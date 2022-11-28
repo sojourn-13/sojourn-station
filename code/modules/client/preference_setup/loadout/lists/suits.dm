@@ -4,7 +4,7 @@
 	path = /obj/item/clothing/suit/rank/botanist
 	slot = slot_wear_suit
 	sort_category = "Suits and Overwear"
-	cost = 1
+	cost = 0
 
 /datum/gear/suit/hell_apron
 	display_name = "lonestar black apron"
@@ -93,6 +93,10 @@
 /datum/gear/suit/kimono
 	display_name = "kimono"
 	path = /obj/item/clothing/suit/fluff/kimono
+
+/datum/gear/suit/miko
+	display_name = "purple miko dress"
+	path = /obj/item/clothing/suit/fluff/miko
 
 /datum/gear/suit/labcoat
 	display_name = "labcoat"
@@ -189,3 +193,6 @@
 	path = /obj/item/clothing/suit/space/anomaly
 	cost = 2 //Some good armor but slowdown
 */
+/datum/gear/suit/boxer_jacket
+	display_name = "boxer jacket"
+	path = /obj/item/clothing/suit/storage/boxer_jacket

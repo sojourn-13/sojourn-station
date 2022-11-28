@@ -36,7 +36,7 @@ var/global/list/image/splatter_cache=list()
 				var/obj/item/clothing/shoes/S = shoe
 				to_chat(user, "<span class='info'>some <B>[initial(S.name)]</B> </B></span>") //as cool as  [icon2html(initial(S.icon) is it dosnt work well
 		else
-			to_chat(user, "<span class='info'>These footprints have no shoe prints that you can reconise</span>")
+			to_chat(user, "<span class='info'>These footprints have no shoe prints that you can recognize</span>")
 
 /obj/effect/decal/cleanable/blood/reveal_blood()
 	if(!fluorescent)
@@ -52,6 +52,7 @@ var/global/list/image/splatter_cache=list()
 	..(ignore=TRUE)
 
 /obj/effect/decal/cleanable/blood/Destroy()
+	QDEL_NULL(weak_reference)
 	return ..()
 
 /obj/effect/decal/cleanable/blood/New()

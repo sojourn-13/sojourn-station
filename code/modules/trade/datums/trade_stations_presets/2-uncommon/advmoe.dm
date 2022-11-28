@@ -29,10 +29,10 @@
 		),
 		"Chemical Surplus" = list(
 			/obj/item/reagent_containers/glass/bottle/inaprovaline = custom_good_amount_range(list(1, 3)),
-			/obj/item/reagent_containers/glass/bottle/antitoxin = custom_good_amount_range(list(1, 3)),
+			/obj/item/reagent_containers/glass/bottle/antitoxin = good_data("dylovene bottle", list(1,3), 200),
 			/obj/item/reagent_containers/glass/bottle/trade/kelotane = good_data("kelotane bottle", list(1, 3), 200),
 			/obj/item/reagent_containers/glass/bottle/trade/bicaridine = good_data("bicaridine bottle", list(1, 3), 200),
-			/obj/item/reagent_containers/glass/bottle/trade/clonexadone = good_data("clonexadone bottle", list(1, 3), 800),
+			/obj/item/reagent_containers/glass/bottle/trade/cronexidone = good_data("cronexidone bottle", list(1, 3), 800),
 			/obj/item/reagent_containers/glass/bottle/trade/imidazoline = good_data("imidazoline bottle", list(1, 3), 400),
 			/obj/item/reagent_containers/glass/bottle/trade/alkysine = good_data("alkysine bottle", list(1, 3), 400)
 		)
@@ -57,6 +57,7 @@
 		/obj/item/oddity/common/healthscanner = offer_data("odd health scanner", 800, 1),
 		/obj/item/oddity/common/disk = offer_data("broken design disk", 800, 1),
 		/obj/item/oddity/common/device = offer_data("odd device", 800, 1),
+		/obj/item/organ/internal/scaffold = offer_data_mods("aberrant organ (input, process, output, secondary)", 2400, 4, OFFER_ABERRANT_ORGAN_PLUS, 4),
 		/obj/item/slime_extract/lightpink = offer_data("light pink slime extract", 10000, 1),
 		/obj/item/slime_extract/black = offer_data("black slime extract", 10000, 1),
 		/obj/item/slime_extract/oil = offer_data("oil slime extract", 10000, 1),

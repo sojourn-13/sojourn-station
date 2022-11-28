@@ -82,6 +82,7 @@
 /obj/item/gun/projectile/Destroy()
 	QDEL_NULL(chambered)
 	QDEL_NULL(ammo_magazine)
+	QDEL_LIST(loaded)
 	return ..()
 
 /obj/item/gun/projectile/proc/cock_gun(mob/user)
@@ -286,7 +287,7 @@
 			inserted_casing.maxamount = C.maxamount
 			inserted_casing.amount = 1 //Were only taking 1 shell, prevents ammo douping
 			//This here makes ot so if were loading in pre-shot sells it dosnt magiclly give it a BB
-			if(ispath(inserted_casing.projectile_type) && inserted_casing.BB)
+			if(ispath(inserted_casing.projectile_type) && C.BB)
 				inserted_casing.BB = new inserted_casing.projectile_type(inserted_casing)
 			else
 				inserted_casing.BB = null
@@ -410,7 +411,7 @@
 	unload_ammo(usr)
 */
 
-/obj/item/gun/projectile/ui_data(mob/user)
+/obj/item/gun/projectile/nano_ui_data(mob/user)
 	var/list/data = ..()
 	data["caliber"] = caliber
 	data["current_ammo"] = get_ammo()

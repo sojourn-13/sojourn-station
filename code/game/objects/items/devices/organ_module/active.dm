@@ -19,7 +19,7 @@
 
 /obj/item/organ_module/active/proc/can_activate(var/mob/living/carbon/human/H, var/obj/item/organ/external/E)
 	//As long as you're awake you can toggle your own body
-	if(H.incapacitated(INCAPACITATION_UNCONSCIOUS))
+	if(H.incapacitated(INCAPACITATION_KNOCKOUT))
 		to_chat(H, SPAN_WARNING("You can't do that now!"))
 		return
 /*

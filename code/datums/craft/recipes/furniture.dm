@@ -138,6 +138,17 @@
 		list(CRAFT_MATERIAL, 20, MATERIAL_WOOD)
 	)
 
+/datum/craft_recipe/furniture/soilbed
+	name = "soil"
+	result = /obj/machinery/portable_atmospherics/hydroponics/soil
+	time = 90
+	icon_state = "woodworking"
+	steps = list(
+		list(/obj/item/stack/ore, 5),
+		list(/obj/item/stack/ore/glass, 5),
+		list(/obj/item/stack/rods, 3)
+	)
+
 /datum/craft_recipe/furniture/burnbarrel
 	name = "burn barrel"
 	result = /obj/machinery/microwave/burnbarrel

@@ -54,31 +54,49 @@
 			to_chat(user, "<span class='info'>The invasive other plants wilt away.</span>")
 			needs_to_be_deweeded = FALSE
 			remove_dead_weeds = TRUE
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 2, learner = H)
 			return
 		if(istype(I, /obj/item/tool/minihoe))
 			to_chat(user, "<span class='info'>You remove the invasive plants.</span>")
 			needs_to_be_deweeded = FALSE
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
 			return
 	if(remove_dead_weeds)
 		if(istype(I, /obj/item/tool/minihoe)  || istype(I, /obj/item/tool/scythe))
 			to_chat(user, "<span class='info'>The dead plants are no more.</span>")
 			remove_dead_weeds = FALSE
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
 			return
 	if(needs_to_be_pest_b_goned)
 		if(istype(I, /obj/item/plantspray))
 			to_chat(user, "<span class='info'>The harmful pests slowly die out.</span>")
 			needs_to_be_pest_b_goned = FALSE
 			remove_dead_pets = TRUE
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
 			return
 	if(remove_dead_pets)
 		if(istype(I, /obj/item/tool/shovel))
 			to_chat(user, "<span class='info'>The dead pests are no more.</span>")
 			remove_dead_pets = FALSE
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
 			return
 	if(needs_to_be_watered)
 		if(istype(I, /obj/item/plantspray/water))
 			to_chat(user, "<span class='info'>The water rejuvenates the plants.</span>")
 			needs_to_be_watered = FALSE
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 3, learner = H)
 			return
 
 //grass

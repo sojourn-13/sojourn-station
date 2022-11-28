@@ -92,6 +92,17 @@
 		/datum/design/autolathe/ammo/box_10x24 = 2,
 	)
 
+/obj/item/computer_hardware/hard_drive/portable/design/onestar/trouble_shooter
+	disk_name = "Greyson Positronics - Trouble Shooter"
+	icon_state = "onestar"
+
+	license = 6
+	designs = list(
+		/datum/design/autolathe/gun/trouble_shooter = 3,
+		/datum/design/autolathe/ammo/rifle,						//AK ammo
+		/datum/design/autolathe/ammo/rifle_lethal,
+		/datum/design/autolathe/ammo/rifle_ammobox
+	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/onestar/armor
 	disk_name = "Greyson Positronics - Ablative Vest"

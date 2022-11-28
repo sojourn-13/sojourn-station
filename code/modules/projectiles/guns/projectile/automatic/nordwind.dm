@@ -19,7 +19,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
-	zoom_factor = 0.6
+	zoom_factors = list(0.6)
 	init_recoil = RIFLE_RECOIL(1.2)
 	extra_damage_mult_scoped = 0.5 //High class gun
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
@@ -29,6 +29,9 @@
 		BURST_3_ROUND
 		)
 	serial_type = "SD GmbH"
+
+	wield_delay = 1.5 SECOND
+	wield_delay_factor = 0.4 // 40 vig to insta wield , heavy class rifle
 
 /obj/item/gun/projectile/automatic/nordwind/watchtower
 	name = "\"Watchtower\" DMR"
@@ -43,7 +46,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10)
 	price_tag = 800
-	zoom_factor = 0.8
+	zoom_factors = list(0.8)
 	damage_multiplier = 1 //Little bit better Strelki
 	extra_damage_mult_scoped = 0.3
 	penetration_multiplier = 1.0
@@ -68,7 +71,7 @@
 	gun_tags = list(GUN_PROJECTILE)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_WOOD = 10)
 	price_tag = 700
-	zoom_factor = 0.6
+	zoom_factors = list(0.6)
 	damage_multiplier = 0.9
 	extra_damage_mult_scoped = 0.3
 	init_recoil = RIFLE_RECOIL(1)
@@ -80,6 +83,9 @@
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/nordwind/strelki/sawn
 	serial_type = "NM"
+
+	wield_delay = 1.3 SECOND
+	wield_delay_factor = 0.3 // 30 vig to insta wield , not heavy class but not light
 
 /obj/item/gun/projectile/automatic/nordwind/update_icon()
 	..()
@@ -111,8 +117,11 @@
 	slot_flags = SLOT_BACK|SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 6, MATERIAL_WOOD = 5)
 	price_tag = 450
-	zoom_factor = 0.0
+	zoom_factors = list()
 	init_recoil = SMG_RECOIL(2.3)
 	damage_multiplier = 0.8
 	saw_off = FALSE
 	serial_type = "NM"
+
+	wield_delay = 0.8 SECOND
+	wield_delay_factor = 0.2 // 20 vig to insta wield, sawn

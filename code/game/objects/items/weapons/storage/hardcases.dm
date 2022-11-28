@@ -268,6 +268,20 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	desc = "A lacquer coated ammo can. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
 	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
 
+/obj/item/storage/hcases/ammo/scrap/outsider
+	desc = "A harcase containing what little you could scavenge for your own survival. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
+	exspand_when_spawned = FALSE //No exspanding cheats
+
+/obj/item/storage/hcases/ammo/scrap/outsider/populate_contents()
+	new /obj/random/gun_handmade/willspawn(src)
+	new /obj/item/device/lighting/toggleable/flashlight(src)
+	new /obj/item/cell/small/high(src)
+	new /obj/item/cell/medium/high(src)
+	new /obj/item/ammo_kit(src)
+	new /obj/item/storage/firstaid/outsider(src)
+	new /obj/item/reagent_containers/food/drinks/flask/lithium(src)
+
+
 //////////////////////////////////////////Cards//////////////////////////////////////////
 
 /obj/item/storage/hcases/cardcarp
@@ -387,20 +401,19 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	//Has medicals items inside it to save on spawn storage.
 	new /obj/item/storage/firstaid/soteria(src)
 	new /obj/item/modular_computer/tablet/moebius/preset(src)
-	new /obj/item/gun/projectile/clarissa/moebius/preloaded_cbo(src)
+	new /obj/item/gun/projectile/makarov/moebius/preloaded_cbo(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
-	new /obj/item/gun_upgrade/muzzle/silencer(src)
 
 /obj/item/storage/hcases/med/medical_job_trama
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/med/medical_job_trama/populate_contents()
-	new /obj/item/clothing/suit/straight_jacket(src)
 	new /obj/item/gearbox/traumatizedteam(src)
+	new /obj/item/gunbox/traumatizedteam(src) // Moved the weapon selection to here
+	new /obj/item/cell/medium/moebius/high(src) // Keeping the cell as a "second mag" for the Abnegate
+	new /obj/item/clothing/suit/straight_jacket(src)
 	new /obj/item/storage/firstaid/soteria/large(src)
-	new /obj/item/gun/energy/sst/formatbound/preloaded(src)
-	new /obj/item/cell/medium/moebius/high(src)
-	new /obj/item/ammo_magazine/smg_35/hv(src)
+	new /obj/item/gun/energy/sst/preloaded(src) // They're now nonlethal and justifies getting an upgrade from science as nobody will ever want a downgrade.
 	new /obj/item/modular_computer/tablet/moebius/preset(src)
 
 //////////////////////////////////////////Engineering//////////////////////////////////////////
@@ -459,7 +472,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	if(!stamped)
 		stamped = TRUE
 		var/list/options = list()
-		options["Osprey - precision rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/fancy,/obj/item/ammo_magazine/heavy_rifle_408,/obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408/rubber)
+		options["Copperhead - assault rifle"] = list(/obj/item/gun/projectile/automatic/mamba/copperhead,/obj/item/ammo_magazine/rifle_75,/obj/item/ammo_magazine/rifle_75, /obj/item/ammo_magazine/rifle_75/rubber)
 		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags, /obj/item/ammo_magazine/ammobox/c10x24_small)
 		options["Galaxy - Plasma pistol"] = list(/obj/item/gun/energy/glock,/obj/item/cell/medium/high)
 		var/choice = input(user,"What type of equipment?") as null|anything in options
@@ -473,13 +486,13 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		else
 			stamped = FALSE
 
-obj/item/gearbox/traumatizedteam
-	name ="Recovery Team's equipment kit."
-	desc = "A secure box containing the heavy duty protective gear of the Soteria Recovery Team."
+/obj/item/gearbox/traumatizedteam
+	name = "Lifeline Technician's equipment kit"
+	desc = "A secure box containing the heavy duty protective gear of the Soteria Lifeline Technicians."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "secure"
 
-obj/item/gearbox/traumatizedteam/attack_self(mob/living/user)
+/obj/item/gearbox/traumatizedteam/attack_self(mob/living/user)
 	..()
 	var/stamped
 	if(!stamped)
@@ -487,7 +500,7 @@ obj/item/gearbox/traumatizedteam/attack_self(mob/living/user)
 		var/list/options = list()
 		options["Recovery Team RIG"] = list(/obj/item/rig/recovery_suit/equipped)
 		options["Advanced Paramedic Armor"] = list(/obj/item/clothing/suit/armor/paramedic,/obj/item/clothing/head/helmet/faceshield/paramedic)
-		var/choice = input(user,"What type of equipment?") as null|anything in options
+		var/choice = input(user,"Which armor will you take?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]
 			for(var/new_type in things_to_spawn)
@@ -497,3 +510,30 @@ obj/item/gearbox/traumatizedteam/attack_self(mob/living/user)
 			qdel(src)
 		else
 			stamped = FALSE
+
+/obj/item/gunbox/traumatizedteam
+	name = "Lifeline Technician's self-defense guncase"
+	desc = "A secure box containing the weapon of choice for the Soteria Lifeline Technician."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "medbriefcase"
+
+/obj/item/gunbox/traumatizedteam/attack_self(mob/living/user)
+	..()
+	var/stamped
+	if(!stamped)
+		stamped = TRUE
+		var/list/options = list()
+		// Keeping this in case any other "sensible" option for a primary weapon for Lifeline Techs arrives, just add them as an option here.
+		options["Bullpip SMG with HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_35/hv,/obj/item/ammo_magazine/smg_35/hv)
+		options["Soteria \"Sprocket\" lasgun"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
+		var/choice = input(user,"Which gun will you take?") as null|anything in options
+		if(src && choice)
+			var/list/things_to_spawn = options[choice]
+			for(var/new_type in things_to_spawn)
+				var/atom/movable/AM = new new_type(get_turf(src))
+				if(istype(AM, /obj/item/gun/))
+					to_chat(user, "You have chosen \the [AM].")
+			qdel(src)
+		else
+			stamped = FALSE
+

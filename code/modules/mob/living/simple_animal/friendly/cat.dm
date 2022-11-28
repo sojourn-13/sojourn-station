@@ -5,7 +5,7 @@
 	icon_state = "cat2"
 	item_state = "cat2"
 	speak_emote = list("purrs", "meows")
-	emote_see = list("shakes their head", "shivers")
+	emote_see = list("shakes their head", "shivers", "flicks their tail sideways")
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
@@ -31,7 +31,8 @@
 
 /mob/living/simple_animal/cat/Life()
 	..()
-
+	if (stat == DEAD)
+		return
 	if (turns_since_move > 5 || (flee_target || mousetarget))
 		SSmove_manager.move_to(src,0)
 		turns_since_move = 0
@@ -58,6 +59,8 @@
 			if(visible.len)
 				var/atom/A = pick(visible)
 				visible_emote("suddenly stops and stares at something unseen[istype(A) ? " near [A]":""].")
+				visible_emote("hisses as their fur stands on edge!") // GHOST DETECTED. CATTO NO LIKE.
+				playsound(loc, 'sound/effects/creatures/cat_hiss.ogg', 50, 1, -1)
 
 /mob/living/simple_animal/cat/proc/handle_movement_target()
 	//if our target is neither inside a turf or inside a human(???), stop
@@ -97,17 +100,21 @@
 
 /mob/living/simple_animal/cat/proc/handle_flee_target()
 	//see if we should stop fleeing
+	if (stat == DEAD)
+		flee_target = null
+
 	if (flee_target && !(flee_target.loc in view(src)))
 		flee_target = null
 		stop_automated_movement = 0
 
-	if (flee_target)
+	if (flee_target && stat != DEAD)
 		if(prob(25)) say("HSSSSS")
+		playsound(loc, 'sound/effects/creatures/cat_hiss.ogg', 50, 1, -1)
 		stop_automated_movement = 1
 		SSmove_manager.move_away(src, flee_target, 7, 2)
 
 /mob/living/simple_animal/cat/proc/set_flee_target(atom/A)
-	if(A)
+	if(A && stat != DEAD)
 		flee_target = A
 		turns_since_move = 5
 
@@ -182,6 +189,7 @@
 			stop_automated_movement = 0
 			if (prob(10))
 				say("Meow!")
+				playsound(loc, 'sound/voice/meow1.ogg', 50, 1)
 
 	if (!friend || movement_target != friend)
 		..()
@@ -195,6 +203,7 @@
 			if (prob((friend.stat < DEAD)? 50 : 15))
 				var/verb = pick("meows", "mews", "mrowls")
 				visible_emote(pick("[verb] in distress.", "[verb] anxiously."))
+				playsound(loc, 'sound/voice/meow1.ogg', 50, 1)
 
 		else
 			if (prob(5))
@@ -203,10 +212,12 @@
 								   "rubs against [friend].",
 								   "purrs."))
 				src.visible_message("<span class='name'>[src]</span> [msg5].")
+				playsound(loc, 'sound/voice/purr.ogg', 50, 1, -1)
 	else if (friend.health <= 50)
 		if (prob(10))
 			var/verb = pick("meows", "mews", "mrowls")
 			visible_emote("[verb] anxiously.")
+			playsound(loc, 'sound/voice/meow1.ogg', 50, 1)
 
 /mob/living/simple_animal/cat/fluff/verb/friend()
 	set name = "Become Friends"
@@ -216,6 +227,7 @@
 	if(friend && usr == friend)
 		set_dir(get_dir(src, friend))
 		say("Meow!")
+		playsound(loc, 'sound/voice/meow1.ogg', 50, 1)
 		return
 
 	if (ishuman(usr))
@@ -224,6 +236,7 @@
 			friend = usr
 			set_dir(get_dir(src, friend))
 			say("Meow!")
+			playsound(loc, 'sound/voice/meow1.ogg', 50, 1)
 			return
 
 	to_chat(usr, SPAN_NOTICE("[src] ignores you."))
@@ -328,6 +341,7 @@
 			M.visible_message(SPAN_WARNING("[M] tries to kick \the [src] but passes through."))
 			M.do_attack_animation(src)
 			visible_message(SPAN_WARNING("\The [src] hisses."))
+			playsound(loc, 'sound/effects/creatures/cat_hiss.ogg', 50, 1, -1) // NO HURT CATTO!
 
 	return
 
@@ -343,7 +357,7 @@
 /mob/living/simple_animal/cat/runtime/singularity_act()
 	return
 
-/*	This is for the sake of the cardboard box, and also parading the catto around
+/*	This is commented out for the sake of the cardboard box, and also parading the catto around
 /mob/living/simple_animal/cat/runtime/start_pulling(var/atom/movable/AM)
 	to_chat(src, SPAN_WARNING("Your hand passes through \the [src]."))
 	return

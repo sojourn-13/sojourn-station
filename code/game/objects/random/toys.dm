@@ -177,7 +177,8 @@
 				/obj/structure/plushie/drone,\
 				/obj/structure/plushie/carp,\
 				/obj/structure/plushie/beepsky,\
-				/obj/item/toy/plushie/fumo/arcueid) // Not a dense structure like the rest, but it's actually life sized.
+				/obj/item/toy/plushie/fumo/arcueid,\
+				/obj/item/toy/plushie/fumo/necochaos) // Not a dense structure like the rest, but it's actually life sized.
 
 /obj/random/toy/plushie_onlycarp
 	name = "random carp plushie"
@@ -278,7 +279,8 @@
 				/obj/item/toy/plushie/mouse,\
 				/obj/item/toy/plushie/octopus,\
 				/obj/item/toy/plushie/spider,\
-				/obj/item/toy/plushie/fumo/arcueid)
+				/obj/item/toy/plushie/fumo/arcueid,\
+				/obj/item/toy/plushie/fumo/necochaos)
 
 /obj/random/toy/plushie
 	name = "random plushie"
@@ -335,7 +337,8 @@
 				/obj/structure/plushie/drone,\
 				/obj/structure/plushie/carp,\
 				/obj/structure/plushie/beepsky,\
-				/obj/item/toy/plushie/fumo/arcueid)
+				/obj/item/toy/plushie/fumo/arcueid,\
+				/obj/item/toy/plushie/fumo/necochaos)
 
 /*Arcade Junk*/
 

@@ -66,6 +66,7 @@
 	reagent_list = null
 	if(my_atom && my_atom.reagents == src)
 		my_atom.reagents = null
+	my_atom = null
 
 /* Internal procs */
 
@@ -591,7 +592,7 @@
 			return X
 
 // NanoUI / TG UI data
-/datum/reagents/ui_data()
+/datum/reagents/nano_ui_data()
 	var/list/data = list()
 
 	data["total_volume"] = total_volume

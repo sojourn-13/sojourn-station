@@ -16,7 +16,7 @@
 	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
 
 	cant_be_pulled = TRUE
-
+	cant_gib = TRUE
 	maxHealth = 120
 	health = 120
 	randpixel = 0
@@ -60,6 +60,7 @@
 	var/poison_type = "mindmelter"
 	var/last_noise = -30000
 	var/chameleon_skill = 10
+	var/phaser = TRUE
 	var/healing_factor = 1
 	var/momento_mori = /obj/effect/decal/cleanable/psi_ash
 	var/death_present = FALSE
@@ -85,6 +86,12 @@
 	known_languages = list(LANGUAGE_COMMON)
 
 	drop_items = list(/obj/random/psi)
+
+	var/psionic_respawn = TRUE
+	var/fast_respawn = 5 MINUTES
+	var/slow_respawn = 15 MINUTES
+	var/respawn_mob_type = /obj/random/mob/psi_monster
+	var/affects_chaos = FALSE
 
 
 /mob/living/carbon/superior_animal/psi_monster/New()

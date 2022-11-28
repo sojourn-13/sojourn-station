@@ -18,7 +18,7 @@
 	)
 
 /datum/craft_recipe/medical/rag
-	name = "rag form clothing"
+	name = "rag from clothing"
 	result = /obj/item/reagent_containers/glass/rag
 	icon_state = "clothing"
 	steps = list(
@@ -26,7 +26,7 @@
 	)
 
 /datum/craft_recipe/medical/rag/alt
-	name = "rag form cloth"
+	name = "rag from cloth"
 	result = /obj/item/reagent_containers/glass/rag
 	icon_state = "clothing"
 	steps = list(

@@ -99,6 +99,13 @@
 	handle_level()
 	LEGACY_SEND_SIGNAL(owner, COMSIG_HUMAN_SANITY, level)
 
+/datum/sanity/Destroy()
+	UnregisterSignal(owner, COMSIG_MOB_LIFE)
+	UnregisterSignal(owner, COMSIG_HUMAN_SAY)
+	owner = null
+	QDEL_LIST(breakdowns)
+	return ..()
+
 /datum/sanity/proc/give_insight(value)
 	var/new_value = value
 	if(value > 0)
@@ -138,7 +145,7 @@
 			breakdowns -= B
 
 /datum/sanity/proc/handle_Insight()
-	give_insight((INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier) * (owner.stats.getPerk(PERK_INSPIRED) ? 1.5 : 1) * (owner.stats.getPerk(PERK_NANOGATE) ? 0.3 : 1))
+	give_insight((INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier) * (owner.stats.getPerk(PERK_INSPIRED) ? 1.5 : 1) * (owner.stats.getPerk(PERK_NANOGATE) ? 0.3 : 1) * (owner.stats.getPerk(PERK_COGENHANCE) ? 1.1 : 1))
 	while(resting < max_resting && insight >= 100)
 		if(owner.stats.getPerk(PERK_ARTIST))
 			to_chat(owner, SPAN_NOTICE("You have gained inspiration.[resting ? null : " Now you need to put it to good use by creating works of art. You cannot gain more inspiration until you do."]"))
@@ -273,7 +280,8 @@
 			to_chat(owner, SPAN_NOTICE("Your [stat] stat goes up by [stat_up]"))
 			owner.stats.changeStat(stat, stat_up)
 		if(I.perk)
-			owner.stats.addPerk(I.perk)
+			if(owner.stats.addPerk(I.perk))
+				I.perk = null
 		for(var/mob/living/carbon/human/H in viewers(owner))
 			LEGACY_SEND_SIGNAL(H, COMSIG_HUMAN_ODDITY_LEVEL_UP, owner, O)
 		for(var/mob/living/carbon/human/H in viewers(owner))

@@ -17,6 +17,8 @@ So sometimes this event can result in people finding new and interesting things
 	EVENT_LEVEL_MODERATE = POOL_THRESHOLD_MODERATE)
 	weight = 0.5 //Make this less common since its very long lasting
 
+	ocurrences_max = 1 //Can only do this once as its more annoying then fun
+
 	tags = list(TAG_SCARY, TAG_COMMUNAL)
 
 

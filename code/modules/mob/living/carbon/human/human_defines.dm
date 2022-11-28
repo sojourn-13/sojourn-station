@@ -22,6 +22,7 @@
 	var/skin_color = "#FFE0D0"
 
 	var/size_multiplier = 1 //multiplier for the mob's icon size
+	var/scale_effect = 0	//new multiplier. The one above is obsolete
 	var/damage_multiplier = 1 //multiplies melee combat damage
 	var/icon_update = 1 //whether icon updating shall take place
 
@@ -109,6 +110,8 @@
 	var/datum/sanity/sanity = null
 
 	var/shock_resist = 0 // Resistance to paincrit
+
+	var/punch_damage_increase = 0 // increases... punch damage... can be affected by clothing or implants.
 
 	var/language_blackout = 0
 	var/suppress_communication = 0

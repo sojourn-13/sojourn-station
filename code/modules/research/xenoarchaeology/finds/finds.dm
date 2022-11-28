@@ -335,69 +335,36 @@
 		if(26)
 			//energy gun
 			var/spawn_type = pick(\
-			/obj/item/gun/energy/laser/practice/xenoarch,\
-			/obj/item/gun/energy/laser/xenoarch,\
+			/obj/item/gun/energy/cog/xenoarch,\
 			/obj/item/gun/energy/xray/xenoarch,\
 			/obj/item/gun/energy/captain/xenoarch)
 			if(spawn_type)
 				var/obj/item/gun/energy/new_gun = new spawn_type(src.loc)
 				new_item = new_gun
 				new_gun.icon_state = "egun[rand(1,6)]"
-				new_gun.desc = "This is an antique energy weapon, you're not sure if it will fire or not."
+				new_gun.desc = "This is an antique energy weapon, Wonder how it shoots."
 				new_gun.serial_type = "INDEX"
 				new_gun.serial_shown = FALSE
-
-				//5% chance to explode when first fired
-				//10% chance to have an unchargeable cell
-				//15% chance to gain a random amount of starting energy, otherwise start with an empty cell
-				if(prob(5))
-					new_gun.cell.rigged = TRUE
-				if(prob(10))
-					new_gun.cell.maxcharge = 0
-				if(prob(15))
-					new_gun.cell.charge = rand(0, new_gun.cell.maxcharge)
-				else
-					new_gun.cell.charge = 0
-			new_item.price_tag = rand(950,2500)
-
+				new_gun.cell.charge = new_gun.cell.maxcharge
+				new_item.price_tag = rand(950,2500)
 			item_type = "gun"
+
 		if(27)
-			//revolver
-			var/obj/item/gun/projectile/new_gun = new /obj/item/gun/projectile/revolver/xenoarch(src.loc)
-			new_item = new_gun
-			new_gun.icon_state = "gun[rand(1,4)]"
-			new_gun.icon = 'icons/obj/xenoarchaeology.dmi'
-			new_gun.serial_type = "INDEX"
-			new_gun.serial_shown = FALSE
-			new_gun.price_tag = rand(950,2500)
-			//33% chance to be able to reload the gun with human ammunition
-			if(prob(66))
-				new_gun.caliber = "999"
-
-			//33% chance to fill it with a random amount of bullets
-			new_gun.max_shells = rand(1,12)
-			if(prob(33))
-				var/num_bullets = rand(1,new_gun.max_shells)
-				if(num_bullets < new_gun.loaded.len)
-					new_gun.loaded.Cut()
-					for(var/i = 1, i <= num_bullets, i++)
-						var/A = new_gun.ammo_type
-						new_gun.loaded += new A(new_gun)
-				else
-					for(var/obj/item/I in new_gun)
-						if(new_gun.loaded.len > num_bullets)
-							if(I in new_gun.loaded)
-								new_gun.loaded.Remove(I)
-								I.loc = null
-						else
-							break
-			else
-				for(var/obj/item/I in new_gun)
-					if(I in new_gun.loaded)
-						new_gun.loaded.Remove(I)
-						I.loc = null
-
+			//projectile guns
+			var/spawn_type = pick(\
+			/obj/item/gun/projectile/revolver/xenoarch,\
+			/obj/item/gun/projectile/revolver/sixshot/xenoarch,\
+			/obj/item/gun/projectile/boltgun/heavysniper/xenoarch)
+			if(spawn_type)
+				var/obj/item/gun/projectile/new_gun = new spawn_type(src.loc)
+				new_item = new_gun
+				new_gun.icon_state = "gun[rand(1,4)]"
+				new_gun.desc = "This is a antique firearm. Cleaned and ready to use."
+				new_gun.serial_type = "INDEX"
+				new_gun.serial_shown = FALSE
+				new_gun.price_tag = rand(950,2500)
 			item_type = "gun"
+
 		if(28)
 			//completely unknown alien device
 			if(prob(50))

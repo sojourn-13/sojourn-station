@@ -64,10 +64,12 @@
 		beaker.reagents.handle_reactions()
 		SSnano.update_uis(src)
 
+/* - A bit buggy allowing phantom beakers and other exploitable things - Trilby
 /obj/machinery/chem_heater/MouseDrop_T(atom/movable/I, mob/user, src_location, over_location, src_control, over_control, params)
 	if(!Adjacent(user) || !I.Adjacent(user) || user.stat)
 		return ..()
 	if(istype(I, /obj/item/reagent_containers) && I.is_open_container())
+		user.drop_from_inventory(I)
 		I.add_fingerprint(user)
 		replace_beaker(user, I)
 		to_chat(user, SPAN_NOTICE("You add [I] to [src]."))
@@ -75,6 +77,7 @@
 		update_icon()
 		return
 	. = ..()
+*/
 
 /obj/machinery/chem_heater/attackby(obj/item/I, mob/user, params)
 	if(default_deconstruction(I, user))
@@ -112,7 +115,7 @@
 	nano_ui_interact(user)
 
 /obj/machinery/chem_heater/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data()
+	var/list/data = nano_ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -127,13 +130,13 @@
 
 
 
-/obj/machinery/chem_heater/ui_data()
+/obj/machinery/chem_heater/nano_ui_data()
 	var/data = list()
 	data["target_temperature"] = target_temperature
 	data["on"] = on
 
 	if(beaker)
-		data["beaker"] = beaker.reagents.ui_data()
+		data["beaker"] = beaker.reagents.nano_ui_data()
 	return data
 
 

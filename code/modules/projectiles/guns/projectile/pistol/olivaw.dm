@@ -4,7 +4,7 @@
 	icon = 'icons/obj/guns/projectile/olivawcivil.dmi'
 	icon_state = "olivawcivil"
 	item_state = "pistol"
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	can_dual = TRUE
@@ -22,6 +22,9 @@
 		list(mode_name="2-round bursts", mode_desc="Shoots two rounds back to back", burst=2, fire_delay=0.2, move_delay=4,    	icon="burst"),
 		)
 	serial_type = "H&S"
+
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.3 // 30 vig
 
 /obj/item/gun/projectile/olivaw/update_icon()
 	..()

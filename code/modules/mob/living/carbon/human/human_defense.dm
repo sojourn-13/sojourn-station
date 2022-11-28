@@ -107,16 +107,12 @@ meteor_act
 
 	switch (def_zone)
 		if(BP_L_ARM, BP_R_ARM)
-			var/c_hand
-			if (def_zone == BP_L_ARM)
-				c_hand = l_hand
-			else
-				c_hand = r_hand
+			var/obj/item/organ/external/hand = get_organ(def_zone)
 
-			if(c_hand && (stun_amount || agony_amount > 10))
+			if(hand && hand.mob_can_unequip(src) && (stun_amount || agony_amount > 10))
 				msg_admin_attack("[src.name] ([src.ckey]) was disarmed by a stun effect")
 
-				drop_from_inventory(c_hand)
+				drop_from_inventory(hand)
 				if (BP_IS_ROBOTIC(affected))
 					emote("pain", 1, "drops what they were holding, their [affected.name] malfunctioning!")
 				else
@@ -254,7 +250,7 @@ meteor_act
 		if(!..(I, user, effective_force, hit_zone))
 			return FALSE
 
-		attack_joint(affecting, I) //but can dislocate joints
+		attack_joint(affecting, I) //but can dislocate(strike nerve) joints
 	else if(!..())
 		return FALSE
 
@@ -313,12 +309,12 @@ meteor_act
 	return TRUE
 
 /mob/living/carbon/human/proc/attack_joint(var/obj/item/organ/external/organ, var/obj/item/W)
-	if(!organ || (organ.dislocated == 2) || (organ.dislocated == -1) )
+	if(!organ || (organ.nerve_struck == 2) || (organ.nerve_struck == -1))
 		return FALSE
 	//There was blocked var, removed now. For the sake of game balance, it was just replaced by 2
 	if(prob(W.force / 2))
 		visible_message("<span class='danger'>[src]'s [organ.joint] [pick("gives way","caves in","crumbles","collapses")]!</span>")
-		organ.dislocate(1)
+		organ.nerve_strike_add(1)
 		return TRUE
 	return FALSE
 
@@ -399,7 +395,7 @@ meteor_act
 				var/embed_threshold = sharp? 3*I.w_class : 9*I.w_class
 
 
-				var/embed_chance = (damage - embed_threshold)*I.embed_mult
+				var/embed_chance = (damage*I.embed_mult - embed_threshold)/2
 				if (embed_chance > 0 && prob(embed_chance))
 					affecting.embed(I)
 

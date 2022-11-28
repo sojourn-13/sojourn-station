@@ -65,7 +65,6 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/armstrong = 6,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/custer = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/roe = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/sika = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/boltgun_sa = 6,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/zatvor = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/bounty_lever = 2))
@@ -83,7 +82,6 @@
 	return pickweight(list(
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/dp = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/semyonovich = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/bren = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/saw = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh = 1,
@@ -101,11 +99,9 @@
 
 /obj/random/lathe_disk/smg/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/wirbelwind = 7,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/texan = 6,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/mac = 6,
+				//obj/item/computer_hardware/hard_drive/portable/design/guns/mac = 6,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/bastard = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/greasegun = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/buckler = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/thompson = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/freedom = 2,
@@ -141,18 +137,10 @@
 	name = "random heavy rifle lathe disk"
 	icon_state = "tech-green"
 
-/obj/random/lathe_disk/rifle_heavy/low_chance
-	name = "low chance heavy rifle lathe disk"
-	icon_state = "tech-green-low"
-	spawn_nothing_percentage = 80
-
 /obj/random/lathe_disk/rifle_heavy/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/blackguard = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/hustler = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/boar = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/sts40 = 6))
-
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/omni/longarm,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/omni = 4))
 
 
 /obj/random/lathe_disk/pistol
@@ -230,7 +218,6 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/rex10 = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/rev10 = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/revolver = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/revolver_mateba = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/stun_revolver = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/sixshot = 1))
 
@@ -271,7 +258,6 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/sunrise = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/centauri = 1,
 
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/nt_counselor = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/stun_revolver = 1,
 
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/nemesis = 2,

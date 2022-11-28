@@ -29,6 +29,9 @@
 	serial_type = "INDEX"
 	serial_shown = FALSE
 
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.4 // 40 vig to insta wield
+
 /obj/item/gun/projectile/automatic/motherfucker/attack_self(mob/living/user)
 	if(world.time >= recentpumpmsg + 10)
 		recentpumpmsg = world.time

@@ -362,7 +362,7 @@
 	)
 
 /datum/craft_recipe/guild/heavypulserifle
-	name = "jury-rigged EZ-13 MK2 heavy pulse rifle"
+	name = "\"PL-3\" Heavy Pulse Rifle"
 	result = /obj/item/gun/energy/laser/heavypulserifle
 	icon_state = "gun"
 	steps = list(
@@ -449,7 +449,7 @@
 
 //Wearables =========================
 /datum/craft_recipe/guild/nv_guild
-	name = "Converted NV Goggles"
+	name = "Optimized NV Goggles"
 	result = /obj/item/clothing/glasses/powered/night/guild/crafted
 	icon_state = "clothing"
 	steps = list(
@@ -759,6 +759,37 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER)
+	)
+
+/datum/craft_recipe/guild/safety_clamp
+	name = "Hydraulic clamp overclock: KILL CLAMP"
+	result = /obj/item/mecha_parts/mecha_equipment/tool/safety_clamp
+	steps = list(
+		list(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp, 1, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 30, "time" = 40),
+		list(/obj/item/tool_upgrade/productivity/motor, 1, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 10, 70),
+		list(/obj/item/tool_upgrade/augment/hydraulic, 1, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 10, 70),
+		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 30, "time" = 40),
+		list(/obj/item/tool_upgrade/augment/spikes, 1, "time" = 60)
+	)
+
+/datum/craft_recipe/guild/tesla_energy_relay
+	name = "Mech energy relay"
+	result = /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_WELDING, 45, "time" = 40),
+		list(QUALITY_BOLT_TURNING, 40, 70),
+		list(/obj/item/computer_hardware/tesla_link, 2, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(/obj/item/stack/cable_coil, 15, "time" = 90),
+		list(QUALITY_WIRE_CUTTING, 25, "time" = 90),
+		list(/obj/item/stock_parts/capacitor/guild, 1, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 10, 70),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD)
 	)
 
 /datum/craft_recipe/guild/guild_bin

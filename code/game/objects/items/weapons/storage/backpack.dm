@@ -102,11 +102,11 @@
 			var/held = W.get_equip_slot()
 			if (held == slot_l_hand)
 				var/obj/item/organ/external/E = H.get_organ(BP_L_ARM)
-				E.droplimb(0, DROPLIMB_BLUNT)
+				E.droplimb(0, DISMEMBER_METHOD_BLUNT)
 				playsound(src.loc, 'sound/sanity/limb_tear_off.ogg', 100, 1)
 			else if (held == slot_r_hand)
 				var/obj/item/organ/external/E = H.get_organ(BP_R_ARM)
-				E.droplimb(0, DROPLIMB_BLUNT)
+				E.droplimb(0, DISMEMBER_METHOD_BLUNT)
 				playsound(src.loc, 'sound/sanity/limb_tear_off.ogg', 100, 1)
 		user.drop_item()
 		return
@@ -224,6 +224,23 @@
 	desc = "Designed for planetary infantry, holds a lot of equipment."
 	icon_state = "backpack_military"
 	max_storage_space = DEFAULT_HUGE_STORAGE * 1.3
+
+/obj/item/storage/backpack/guncase
+	name = "gun case"
+	desc = "A sturdy metal case made for transporting ranged weaponry."
+	icon_state = "rifle_case"
+	flags = CONDUCT
+	force = WEAPON_FORCE_NORMAL
+	throwforce = WEAPON_FORCE_NORMAL
+	w_class = ITEM_SIZE_BULKY
+	throw_speed = 1
+	throw_range = 4
+	max_w_class = null
+	max_storage_space = 24 //So we can hold even the biggest gun with the most attachments
+	can_hold = list(/obj/item/gun,
+		/obj/item/ammo_magazine
+		)
+	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 4)
 
 /*
  * Backsport Types (alternative style)
@@ -388,20 +405,3 @@
 	max_storage_space = DEFAULT_HUGE_STORAGE * 1.5
 	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_PLASTIC = 3)
 	equip_access = FALSE
-
-/obj/item/storage/backpack/duffelbag/guncase
-	name = "gun case"
-	desc = "A sturdy metal case made for transporting ranged weaponry."
-	icon_state = "rifle_case"
-	flags = CONDUCT
-	force = WEAPON_FORCE_NORMAL
-	throwforce = WEAPON_FORCE_NORMAL
-	w_class = ITEM_SIZE_BULKY
-	throw_speed = 1
-	throw_range = 4
-	max_w_class = null
-	max_storage_space = 16
-	can_hold = list(/obj/item/gun,
-		/obj/item/ammo_magazine
-		)
-	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 4)

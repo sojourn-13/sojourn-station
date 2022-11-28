@@ -138,7 +138,7 @@
 				qdel(src)
 				return
 
-/obj/machinery/chemical_dispenser/ui_data()
+/obj/machinery/chemical_dispenser/nano_ui_data()
 	var/list/data = list()
 	data["amount"] = amount
 	data["energy"] = round(cell.charge)
@@ -153,12 +153,12 @@
 	data["chemicals"] = chemicals
 
 	if(beaker)
-		data["beaker"] = beaker.reagents.ui_data()
+		data["beaker"] = beaker.reagents.nano_ui_data()
 
 	return data
 
 /obj/machinery/chemical_dispenser/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data()
+	var/list/data = nano_ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -216,12 +216,14 @@
 	if(!Adjacent(user) || !I.Adjacent(user) || user.stat)
 		return ..()
 	if(istype(I, /obj/item/reagent_containers) && I.is_open_container() && !beaker)
-		I.forceMove(src)
-		I.add_fingerprint(user)
-		beaker = I
-		to_chat(user, SPAN_NOTICE("You add [I] to [src]."))
-		SSnano.update_uis(src) // update all UIs attached to src
-		return
+		if(user.drop_from_inventory(I))
+			user.drop_from_inventory(I)
+			I.forceMove(src)
+			I.add_fingerprint(user)
+			beaker = I
+			to_chat(user, SPAN_NOTICE("You add [I] to [src]."))
+			SSnano.update_uis(src) // update all UIs attached to src
+			return
 	. = ..()
 
 /obj/machinery/chemical_dispenser/attackby(obj/item/I, mob/living/user)
@@ -384,10 +386,9 @@
 		"peridaxon","bicaridine","meralyne","hyperzine",
 		"rezadone","spaceacillin","ethylredoxrazine",
 		"stoxin","chloralhydrate","cryoxadone",
-		"clonexadone","ossisine","noexcutite","kyphotorin",
+		"cronexidone","ossisine","noexcutite","kyphotorin",
 		"detox","polystem","purger","addictol","aminazine",
-		"vomitol","haloperidol","paroxetine","citalopram",
-		"methylphenidate"
+		"haloperidol","paroxetine","citalopram","methylphenidate"
 	)
 
 /obj/machinery/chemical_dispenser/industrial

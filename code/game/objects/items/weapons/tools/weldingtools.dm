@@ -96,7 +96,7 @@
 	glow_color = COLOR_RED_LIGHT
 	use_fuel_cost = 0.15
 	max_fuel = 20
-	degradation = 0.6
+	degradation = 2
 	heat = 2750
 	max_upgrades = 2
 	workspeed = 1.5
@@ -106,11 +106,14 @@
 /obj/item/tool/weldingtool/oil_burner
 	name = "oil burner"
 	desc = "A oil burner used for lighting or to slowly boil things."
-	icon_state = "oil_burner"
-	item_state = "oil_burner"
+	icon_state = "oil_lamp"
+	item_state = "oil_lamp"
 	switched_on_qualities = list(QUALITY_HEATING = 35, QUALITY_CAUTERIZING = 10, QUALITY_WIRE_CUTTING = 10)
 	use_fuel_cost = 0.001
 	max_fuel = 10
 	my_fuel = "oil"
 	sparks_on_use = FALSE
 	eye_hazard = FALSE
+
+/obj/item/tool/weldingtool/oil_burner/Created()
+	return

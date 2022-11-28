@@ -42,7 +42,6 @@
 
 /datum/component/item_upgrade/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_IATTACK, .proc/attempt_install)
-	RegisterSignal(parent, COMSIG_ATTACKBY, .proc/attempt_install)
 	RegisterSignal(parent, COMSIG_EXAMINE, .proc/on_examine)
 	RegisterSignal(parent, COMSIG_REMOVE, .proc/uninstall)
 
@@ -387,8 +386,8 @@
 /datum/component/item_upgrade/proc/apply_values_gun(var/obj/item/gun/G)
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT])
 		G.damage_multiplier *= weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT]
-	if(weapon_upgrades[GUN_UPGRADE_DAMAGEMOD_PLUS])
-		G.damage_multiplier += weapon_upgrades[GUN_UPGRADE_DAMAGEMOD_PLUS]
+	if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
+		G.proj_agony_multiplier += weapon_upgrades[GUN_UPGRADE_PAIN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
 		G.penetration_multiplier *= weapon_upgrades[GUN_UPGRADE_PEN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
@@ -447,8 +446,10 @@
 	if(weapon_upgrades[UPGRADE_COLOR])
 		G.color = weapon_upgrades[UPGRADE_COLOR]
 	if(weapon_upgrades[GUN_UPGRADE_ZOOM])
-		G.zoom_factor += weapon_upgrades[GUN_UPGRADE_ZOOM]
-		G.initialize_scope()
+		if(G.zoom_factors.len <1)
+			var/newtype = weapon_upgrades[GUN_UPGRADE_ZOOM]
+			G.zoom_factors.Add(newtype)
+			G.initialize_scope()
 		if(istype(G.loc, /mob))
 			var/mob/user = G.loc
 			user.update_action_buttons()
@@ -508,7 +509,7 @@
 
 /datum/component/item_upgrade/proc/add_values_gun(var/obj/item/gun/G)
 	if(weapon_upgrades[GUN_UPGRADE_FULLAUTO])
-		G.add_firemode(FULL_AUTO_400)
+		G.add_firemode(FULL_AUTO_300)
 
 /datum/component/item_upgrade/proc/apply_values_firemode(var/datum/firemode/F)
 	for(var/i in F.settings)
@@ -574,6 +575,13 @@
 			else
 				to_chat(user, SPAN_WARNING("Decreases projectile damage by [abs(amount*100)]%"))
 
+		if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
+			var/amount = weapon_upgrades[GUN_UPGRADE_PAIN_MULT]-1
+			if(amount > 0)
+				to_chat(user, SPAN_NOTICE("Increases projectile agony damage by [amount*100]%"))
+			else
+				to_chat(user, SPAN_WARNING("Decreases projectile agony damage by [abs(amount*100)]%"))
+
 		if(weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE]-1
 			if(amount > 0)
@@ -626,33 +634,33 @@
 		if(weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT]-1
 			if(amount > 0)
-				to_chat(user, SPAN_WARNING("Slows down the weapons projectile by [amount*100]%"))
+				to_chat(user, SPAN_WARNING("Slows down the weapon's projectile by [amount*100]%"))
 			else
-				to_chat(user, SPAN_NOTICE("Speeds up the weapons projectile by [abs(amount*100)]%"))
+				to_chat(user, SPAN_NOTICE("Speeds up the weapon's projectile by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DNALOCK] == 1)
 			to_chat(user, SPAN_WARNING("Adds a biometric scanner to the weapon."))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE])
-			to_chat(user, SPAN_NOTICE("Modifies projectile brute damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE]] damage points"))
+			to_chat(user, SPAN_NOTICE("Modifies projectile's brute damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE]] damage points"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BURN])
-			to_chat(user, SPAN_NOTICE("Modifies projectile burn damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BURN]] damage points"))
+			to_chat(user, SPAN_NOTICE("Modifies projectile's burn damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BURN]] damage points"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_TOX])
-			to_chat(user, SPAN_NOTICE("Modifies projectile toxic damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_TOX]] damage points"))
+			to_chat(user, SPAN_NOTICE("Modifies projectile's toxic damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_TOX]] damage points"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_OXY])
-			to_chat(user, SPAN_NOTICE("Modifies projectile oxy-loss damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_OXY]] damage points"))
+			to_chat(user, SPAN_NOTICE("Modifies projectile's oxy-loss damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_OXY]] damage points"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_CLONE])
-			to_chat(user, SPAN_NOTICE("Modifies projectile clone damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_CLONE]] damage points"))
+			to_chat(user, SPAN_NOTICE("Modifies projectile's cellular damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_CLONE]] damage points"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_HALLOSS])
-			to_chat(user, SPAN_NOTICE("Modifies projectile pseudo damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_HALLOSS]] damage points"))
+			to_chat(user, SPAN_NOTICE("Modifies projectile's pain trauma by [weapon_upgrades[GUN_UPGRADE_DAMAGE_HALLOSS]] points"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION])
-			to_chat(user, SPAN_NOTICE("Modifies projectile radiation damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION]] damage points"))
+			to_chat(user, SPAN_NOTICE("Modifies projectile's radiation damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION]] damage points"))
 
 
 		if(weapon_upgrades[GUN_UPGRADE_RECOIL])

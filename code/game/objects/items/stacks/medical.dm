@@ -249,12 +249,13 @@
 	singular_name = "Soteria medical gauze"
 	desc = "An advanced sterile gauze to wrap around bloody stumps. Unlike the regular gauze, these have more charges, and sterilize wounds as ointment would, as well as treating small amounts of toxins. Hand-made, with love, by Soteria Medical staff."
 	icon_state = "sr_brutepack"
+	preloaded_reagents = list("quickclot" = 5, "sterilizine" = 10)
 	fancy_icon = TRUE
 	disinfectant  = TRUE
 	amount = 8
 	max_amount = 8
-	heal_brute = 10
-	heal_toxin = 5
+	heal_brute = 20 // Everything handmade and faction-wise will always be superior. See: Hand-Forged manipulators
+	heal_toxin = 8
 	price_tag = 25
 
 /obj/item/stack/medical/ointment
@@ -341,10 +342,11 @@
 /obj/item/stack/medical/ointment/soteria
 	name = "Soteria branded ointment"
 	singular_name = "Soteria branded ointment"
-	desc = "Used to treat those nasty burns. Unlike regular ointment this one has a Soteria logo on it, containing more ointment per-tube."
+	desc = "Used to treat those nasty burns. Unlike regular ointments this one has a Soteria logo on it, its formula massively improved by including toxin-purging sterilizing crystals."
 	icon_state = "sr_ointment"
-	heal_burn = 15
-	heal_toxin = 5
+	preloaded_reagents = list("dermaline" = 5, "sterilizine" = 10)
+	heal_burn = 20
+	heal_toxin = 10
 	amount = 8
 	max_amount = 8
 

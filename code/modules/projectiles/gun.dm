@@ -41,6 +41,7 @@
 	var/move_delay = 1
 	var/fire_sound = 'sound/weapons/Gunshot.ogg'
 	var/modded_sound = FALSE
+	var/fire_stacks = 0 //Should we apply fire stacks on hit?
 
 	var/fire_sound_text = "gunshot"
 	var/rigged = FALSE
@@ -55,8 +56,9 @@
 	var/muzzle_flash = 3
 	var/dual_wielding
 	var/can_dual = FALSE // Controls whether guns can be dual-wielded (firing two at once).
-	var/zoom_factor = 0 //How much to scope in when using weapon
-
+	var/active_zoom_factor = 1 //Index of currently selected zoom factor
+	var/list/zoom_factors = list()//How much to scope in when using weapon,
+	var/list/initial_zoom_factors = list()
 /*
 
 NOTE: For the sake of standardizing guns and extra vision range, here's a general guideline for zooming factor.
@@ -84,7 +86,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/dna_lock_sample = "not_set" //real_name from mob who installed DNA-lock
 	var/dna_user_sample = "not_set" //Current user's real_name
 
-	var/next_fire_time = 0
+	var/can_fire_next = 1
 
 	var/sel_mode = 1 //index of the currently selected mode
 	var/list/firemodes = list()
@@ -109,7 +111,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/recentwield = 0 // to prevent spammage
 	var/proj_step_multiplier = 1
 	var/proj_pve_damage_multiplier = 1 //Damage against mobs that are not player multiplier
-	var/list/proj_damage_adjust = list() //What additional damage do we give to the bullet. Type(string) -> Amount(int)
+	var/list/proj_damage_adjust = list() //What additional damage do we give to the bullet. Type(string) -> Amount(int), damage is divided for pellets
 
 	var/eject_animatio = FALSE //Only currenly in bolt guns. Check boltgun.dm for more information on this
 	var/fire_animatio = FALSE //Only used in revolvers atm, animation for each shot being fired
@@ -124,6 +126,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/folded = TRUE //IS are stock folded? - and that is yes we start folded
 	var/currently_firing = FALSE
 
+	var/wield_delay = 0 // Gun wielding delay , generally in seconds.
+	var/wield_delay_factor = 0 // A factor that characterizes weapon size , this makes it require more vig to insta-wield this weapon or less , values below 0 reduce the vig needed and above 1 increase it
+
 	//Gun numbers and stuf
 	var/serial_type = "INDEX" // Index will be used for detective scanners, if there is a serial type , the gun will add a number onto its final , if none , it won;'t show on examine
 	var/serial_shown = TRUE
@@ -133,6 +138,18 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/overcharge_rate = 1 //Base overcharge additive rate for the gun
 	var/overcharge_level = 0 //What our current overcharge level is. Peaks at overcharge_max
 	var/overcharge_max = 10
+
+/obj/item/gun/wield(mob/user)
+	if(!wield_delay)
+		..()
+		return
+	var/calculated_delay = wield_delay
+	if(ishuman(user))
+		calculated_delay = wield_delay - (wield_delay * (user.stats.getStat(STAT_VIG) / (100 * wield_delay_factor))) // wield delay - wield_delay * user vigilance / 100 * wield_factor
+	if (calculated_delay > 0 && do_after(user, calculated_delay, immobile = FALSE))
+		..()
+	else if (calculated_delay <= 0)
+		..()
 
 /obj/item/gun/proc/loadAmmoBestGuess()
 	return
@@ -144,6 +161,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		recoil = getRecoil()
 	else if(!istype(recoil, /datum/recoil))
 		error("Invalid type [recoil.type] found in .recoil during /obj Initialize()")
+	initial_zoom_factors = zoom_factors.Copy()
 	. = ..()
 	initialize_firemodes()
 	initialize_scope()
@@ -391,10 +409,14 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			return FALSE
 	return TRUE
 
+/obj/item/gun/proc/ready_to_shoot()
+	can_fire_next = TRUE
+
+
 /obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, extra_proj_damagemult = 0, extra_proj_penmult = 0, extra_proj_wallbangmult = 0, extra_proj_stepdelaymult = 0, multiply_projectile_agony = 0, multiply_pve_damage = 0)
 	if(!user || !target) return
 
-	if((world.time < next_fire_time) || currently_firing)
+	if(!can_fire_next || currently_firing)
 		if (!suppress_delay_warning && world.time % 3) //to prevent spam
 			to_chat(user, SPAN_WARNING("[src] is not ready to fire again!"))
 		return
@@ -409,7 +431,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	var/shoot_time = (burst - 1)* burst_delay
 	user.setClickCooldown(shoot_time) //no clicking on things while shooting
-	next_fire_time = world.time + shoot_time
+	can_fire_next = FALSE
+	addtimer(CALLBACK(src, /obj/item/gun/proc/ready_to_shoot), fire_delay)
 
 	if(muzzle_flash)
 		set_light(muzzle_flash)
@@ -452,6 +475,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 		projectile.multiply_pve_damage(proj_pve_damage_multiplier)
 
+		if(fire_stacks)
+			projectile.add_fire_stacks(fire_stacks)
+
 		if(muzzle_flash)
 			set_light(muzzle_flash)
 
@@ -488,7 +514,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 	user.set_move_cooldown(move_delay)
 	if(!twohanded && user.stats.getPerk(PERK_GUNSLINGER))
-		next_fire_time = world.time + fire_delay - fire_delay * 0.33
+		addtimer(CALLBACK(src, /obj/item/gun/proc/ready_to_shoot), min(0, (fire_delay - fire_delay * 0.33)))
 
 	if((CLUMSY in user.mutations) && prob(40)) //Clumsy handling
 		var/obj/P = consume_next_projectile()
@@ -728,18 +754,31 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		else
 			to_chat(user, SPAN_WARNING("You can\'t properly place your weapon on \the [target] because of the foregrip!"))
 
-/obj/item/gun/proc/toggle_scope(mob/living/user)
+/obj/item/gun/proc/toggle_scope(mob/living/user, switchzoom = FALSE)
 	//looking through a scope limits your periphereal vision
 	//still, increase the view size by a tiny amount so that sniping isn't too restricted to NSEW
-	if(!zoom_factor)
+	if(!zoom_factors)
 		zoom = FALSE
 		return
-	var/zoom_offset = round(world.view * zoom_factor)
-	var/view_size = round(world.view + zoom_factor)
+	var/tozoom = zoom_factors[active_zoom_factor]
+	var/zoom_offset = round(world.view * tozoom)
+	var/view_size = round(world.view + tozoom)
 
-	zoom(zoom_offset, view_size)
+	zoom(zoom_offset, view_size, switchzoom)
 	check_safety_cursor(user)
 	update_hud_actions()
+
+/obj/item/gun/proc/switch_zoom(mob/living/user)
+	if(!zoom_factors)
+		return null
+	if(zoom_factors.len <= 1)
+		return null
+//	update_firemode(FALSE) //Disable the old firing mode before we switch away from it
+	active_zoom_factor++
+	if(active_zoom_factor > zoom_factors.len)
+		active_zoom_factor = 1
+	refresh_upgrades()
+	toggle_scope(user, TRUE)
 
 /obj/item/gun/examine(mob/user)
 	..()
@@ -783,7 +822,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 /obj/item/gun/proc/initialize_scope()
 	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/scope) in hud_actions
-	if(zoom_factor > 0)
+	if(zoom_factors.len >= 1)
 		if(!action)
 			action = new /obj/screen/item_action/top_bar/gun/scope
 			action.owner = src
@@ -956,12 +995,13 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	toggle_safety(usr)
 
-/obj/item/gun/ui_data(mob/user)
+/obj/item/gun/nano_ui_data(mob/user)
 	var/list/data = list()
 	data["damage_multiplier"] = damage_multiplier
 	data["multiply_pve_damage"] = proj_pve_damage_multiplier
 	data["pierce_multiplier"] = pierce_multiplier
 	data["penetration_multiplier"] = penetration_multiplier
+	data["proj_agony_multiplier"] = proj_agony_multiplier
 
 	data["fire_delay"] = fire_delay //time between shot, in ms
 	data["burst"] = burst //How many shots are fired per click
@@ -1020,7 +1060,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	return data
 
-/obj/item/gun/Topic(href, href_list, var/datum/topic_state/state)
+/obj/item/gun/Topic(href, href_list, var/datum/nano_topic_state/state)
 	if(..(href, href_list, state))
 		return 1
 
@@ -1069,7 +1109,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	restrict_safety = initial(restrict_safety)
 	dna_compare_samples = initial(dna_compare_samples)
 	rigged = initial(rigged)
-	zoom_factor = initial(zoom_factor)
+	zoom_factors = initial_zoom_factors.Copy()
 	darkness_view = initial(darkness_view)
 	vision_flags = initial(vision_flags)
 	see_invisible_gun = initial(see_invisible_gun)
@@ -1129,6 +1169,11 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 /* //Eris has this but it, unsurpringly, has issues, just gonna comment it out for now incase I use the code for something else later.
 /obj/item/gun/proc/generate_guntags()
+	if(recoil.getRating(RECOIL_BASE) < recoil.getRating(RECOIL_TWOHAND))
+		gun_tags |= GUN_GRIP
 	if(!zoom_factor && !(slot_flags & SLOT_HOLSTER))
+	if(zoom_factors.len < 1 && !(slot_flags & SLOT_HOLSTER))
 		gun_tags |= GUN_SCOPE
+	if(!sharp)
+		gun_tags |= SLOT_BAYONET
 */

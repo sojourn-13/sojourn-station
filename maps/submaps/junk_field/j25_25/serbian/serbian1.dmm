@@ -372,7 +372,6 @@
 /area/template_noop)
 "tv" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/handmade_pistol/shotgun,
 /turf/simulated/floor/reinforced,
 /area/template_noop)
 "tK" = (

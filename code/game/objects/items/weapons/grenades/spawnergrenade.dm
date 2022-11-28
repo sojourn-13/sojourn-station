@@ -17,9 +17,8 @@
 		var/turf/T = get_turf(src)
 		playsound(T, 'sound/effects/phasein.ogg', 100, 1)
 		for(var/mob/living/carbon/human/M in viewers(T, null))
-			if(M.eyecheck() < FLASH_PROTECTION_MODERATE && will_flash == TRUE)
-				if (M.HUDtech.Find("flash"))
-					flick("e_flash", M.HUDtech["flash"])
+			if(M.eyecheck() < FLASH_PROTECTION_MINOR && will_flash == TRUE)
+				M.flash(0, FALSE , FALSE , FALSE , 0)
 
 		for(var/i=1, i<=deliveryamt, i++)
 			var/atom/movable/x = new spawner_type

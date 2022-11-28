@@ -75,7 +75,6 @@
 		),
 		"Energy Weapons" = list(
 			/obj/item/gun/energy/taser,
-			/obj/item/gun/energy/ntpistol,
 			/obj/item/gun/energy/laser = custom_good_amount_range(list(1, 5)),
 			/obj/item/gun/energy/ionrifle = custom_good_amount_range(list(1, 4)),
 			/obj/item/gun/energy/sniperrifle = custom_good_amount_range(list(-8, 1)),
@@ -148,7 +147,8 @@
 	offer_types = list(
 		/obj/item/clothing/suit/space/void/NTvoid = offer_data("angel voidsuit", 1250, 15),
 		/obj/item/clothing/shoes/hermes_shoes = offer_data("hermes shoes", 420, 10),
-		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 120)
+		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 120),
+		/obj/item/reagent_containers/food/snacks/meat = offer_data("meat", 80, 20) //Buys it for less than Dionis/McRonalds, but is willing to buy more of it.
 	)
 
 /obj/item/reagent_containers/food/drinks/cans/cahors/cargo

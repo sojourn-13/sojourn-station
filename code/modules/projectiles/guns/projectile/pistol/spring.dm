@@ -22,6 +22,8 @@
 		)
 	serial_type = "GP"
 
+	wield_delay = 0 SECOND
+
 /obj/item/gun/projectile/spring/update_icon()
 	..()
 

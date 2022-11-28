@@ -379,7 +379,7 @@ datum/wound/puncture/massive
 		damage_amt /= 2
 
 	switch(losstype)
-		if(DROPLIMB_EDGE, DROPLIMB_BLUNT)
+		if(DISMEMBER_METHOD_EDGE, DISMEMBER_METHOD_BLUNT)
 			damage_type = CUT
 			max_bleeding_stage = 3 //clotted stump and above can bleed.
 			stages = list(
@@ -388,7 +388,7 @@ datum/wound/puncture/massive
 				"clotted stump" = damage_amt*0.5,
 				"scarred stump" = 0
 				)
-		if(DROPLIMB_BURN)
+		if(DISMEMBER_METHOD_BURN)
 			damage_type = BURN
 			stages = list(
 				"ripped charred stump" = damage_amt*1.3,

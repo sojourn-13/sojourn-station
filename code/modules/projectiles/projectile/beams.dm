@@ -1,8 +1,8 @@
 /*
 Beams, they are rather harder to get armor against and dont have bullet drop off.
-Thus they are objectively always going to be outclassed by bullets in their idea use.
-Beams also can pass thought glass and are hitscan, thus making them great against most problems.
-In pvp they also have more lasting damages, such as infections, and pain form burns.
+Thus they are objectively always going to be outclassed by bullets in their ideal use.
+Beams also can pass through glass and are hitscan, thus making them great against most problems.
+In pvp they also have more lasting damages, such as infections, pain form burns, and nerve damage.
 */
 /obj/item/projectile/beam
 	name = "laser"
@@ -25,6 +25,16 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 
 	heat = 100
 	added_damage_laser_pve = 20
+
+/obj/item/projectile/beam/check_penetrate(var/atom/A) // For shields to actually block projectiles
+	if(istype(A, /obj/item/shield))
+		var/obj/item/shield/S = A
+		var/loss = round(S.durability / armor_penetration / 8)
+		block_damage(loss, A)
+		A.visible_message(SPAN_WARNING("\The [src] is weakened by the \the [A]!"))
+		playsound(A.loc, 'sound/weapons/shield/shielddissipate.ogg', 50, 1)
+		return 1
+	return 0
 
 /obj/item/projectile/beam/musket
 	name = "charged laser"
@@ -82,6 +92,11 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	damage_types = list(BURN = 10)
 	added_damage_laser_pve = 10
 
+/obj/item/projectile/beam/weak/smg/firestorm
+	damage_types = list(BURN = 10)
+	added_damage_laser_pve = 10
+	fire_stacks = 2 //So it doesn't become dumb fast
+
 /obj/item/projectile/beam/weak/lethal
 	damage_types = list(BURN = 20)
 	added_damage_laser_pve = 20
@@ -136,13 +151,14 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	recoil = 4
 
 /obj/item/projectile/beam/xray
-	name = "xray beam"
+	name = "x-ray beam"
 	icon_state = "xray"
 	damage_types = list(BURN = 25)
 	added_damage_laser_pve = 25
 	armor_penetration = 40
 	eyeblur = 4
 	recoil = 1
+	penetrating = 1 //Pierces walls
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer
 	impact_type = /obj/effect/projectile/xray/impact
@@ -164,6 +180,13 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 		target.ex_act(2)
 	..()
 
+/obj/item/projectile/beam/pulse/heavy
+	name = "heavy pulse"
+	damage_types = list(BURN = 50)
+	added_damage_laser_pve = 50
+	armor_penetration = 35
+	recoil = 5
+
 /obj/item/projectile/beam/emitter
 	name = "emitter beam"
 	icon_state = "emitter"
@@ -172,6 +195,27 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	muzzle_type = /obj/effect/projectile/emitter/muzzle
 	tracer_type = /obj/effect/projectile/emitter/tracer
 	impact_type = /obj/effect/projectile/emitter/impact
+
+/obj/item/projectile/beam/radiation
+	name = "nuclear beam"
+	icon_state = "emitter"
+	damage_types = list(BURN = 40)
+	added_damage_laser_pve = 40
+	armor_penetration = 30 //Experimental and extremely rare but also self recharging so take it as you will
+	recoil = 7
+
+	muzzle_type = /obj/effect/projectile/emitter/muzzle
+	tracer_type = /obj/effect/projectile/emitter/tracer
+	impact_type = /obj/effect/projectile/emitter/impact
+
+/obj/item/projectile/beam/radiation/on_impact(atom/target)
+	var/mob/living/M = target
+	var/mob/living/carbon/human/H = M
+	if(ishuman(target))
+		if(istype(target, /mob/living/carbon/))
+			H.apply_effect(30,IRRADIATE)//woop woop ass blast USA woop woop
+	else
+		return 1
 
 /obj/item/projectile/beam/sniper
 	name = "sniper beam"
@@ -201,6 +245,20 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	tracer_type = /obj/effect/projectile/stun/tracer
 	impact_type = /obj/effect/projectile/stun/impact
 	recoil = 2
+
+/obj/item/projectile/beam/hardstun
+	name = "concentrated stun beam"
+	icon_state = "stun"
+	nodamage = 1
+	taser_effect = 1
+	agony = 65 // Middle ground between an instant electrode stun and stunbeam
+	damage_types = list(BURN = 0) // Just in case, this is supposed to be 100% nonlethal
+	added_damage_laser_pve = 5
+	muzzle_type = /obj/effect/projectile/stun/muzzle
+	tracer_type = /obj/effect/projectile/stun/tracer
+	impact_type = /obj/effect/projectile/stun/impact
+	eyeblur = 2 // Meant to disable people, combat advantage, agony fluff
+	recoil = 3 // Low rate of fire shouldn't be a problem but let's not spam it.
 
 //book "lasers"
 /obj/item/projectile/beam/sniper/judgement

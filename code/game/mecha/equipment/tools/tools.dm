@@ -1020,28 +1020,41 @@
 		if(!cargo_holder) return
 		if(isobj(target))
 			var/obj/O = target
-			if(!O.anchored)
-				if(cargo_holder.cargo.len < cargo_holder.cargo_capacity)
-					chassis.occupant_message("You lift [target] and start to load it into cargo compartment.")
-					chassis.visible_message("[chassis] lifts [target] and starts to load it into cargo compartment.")
-					set_ready_state(0)
-					chassis.use_power(energy_drain)
-					O.anchored = 1
-					var/T = chassis.loc
-					if(do_after_cooldown(target))
-						if(T == chassis.loc && src == chassis.selected)
-							cargo_holder.cargo += O
-							O.loc = chassis
-							O.anchored = 0
-							chassis.occupant_message(SPAN_NOTICE("[target] succesfully loaded."))
-							chassis.log_message("Loaded [O]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
-						else
-							chassis.occupant_message(SPAN_WARNING("You must hold still while handling objects."))
-							O.anchored = initial(O.anchored)
+			if(O.buckled_mob)
+				return
+			if(istype(target, /obj/structure/scrap))
+				occupant_message(SPAN_NOTICE("\The [chassis] begins compressing \the [O] with \the [src]."))
+				if(do_after_cooldown(O))
+					if(istype(O, /obj/structure/scrap))
+						var/obj/structure/scrap/S = O
+						S.make_cube()
+						occupant_message(SPAN_NOTICE("\The [chassis] compresses \the [O] into a cube with \the [src]."))
+				return
+			if(O.anchored && !istype(O, /obj/structure/salvageable))
+				occupant_message(SPAN_WARNING("[target] is firmly secured."))
+				return
+			if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
+				occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
+				return
+
+
+			occupant_message("You lift [target] and start to load it into cargo compartment.")
+			playsound(src,'sound/mecha/hydraulic.ogg',100,1)
+			chassis.visible_message("[chassis] lifts [target] and starts to load it into cargo compartment.")
+			set_ready_state(0)
+			chassis.use_power(energy_drain)
+			O.anchored = 1
+			var/T = chassis.loc
+			if(do_after_cooldown(target))
+				if(T == chassis.loc && src == chassis.selected)
+					cargo_holder.cargo += O
+					O.loc = chassis
+					O.anchored = 0
+					occupant_message(SPAN_NOTICE("[target] succesfully loaded."))
+					log_message("Loaded [O]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
 				else
-					chassis.occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
-			else
-				chassis.occupant_message(SPAN_WARNING("[target] is firmly secured."))
+					occupant_message(SPAN_WARNING("You must hold still while handling objects."))
+					O.anchored = initial(O.anchored)
 
 		else if(isliving(target))
 			var/mob/living/M = target

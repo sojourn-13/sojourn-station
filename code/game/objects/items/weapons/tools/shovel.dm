@@ -51,7 +51,7 @@
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6, MATERIAL_PLATINUM = 3)
 	tool_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 45, QUALITY_EXCAVATION = 45)
 	workspeed = 1.4
-	degradation = 0.8
+	degradation = 2
 	max_upgrades = 2
 	price_tag = 320 // Still just a shovel.
 

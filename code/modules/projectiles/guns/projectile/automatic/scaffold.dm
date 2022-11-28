@@ -24,10 +24,13 @@
 	init_recoil = LMG_RECOIL(0.6)
 	serial_type = "GP"
 
+	wield_delay = 1.4 SECOND
+	wield_delay_factor = 0.4 // 40 vig for insta wield
+
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE ,GUN_SCOPE, GUN_MAGWELL)
 
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)

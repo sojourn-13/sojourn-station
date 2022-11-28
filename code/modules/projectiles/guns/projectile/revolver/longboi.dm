@@ -3,6 +3,7 @@
 	desc = "A novelty revolver made by the Lonestar with a stupidly long barrel favored by those with less sense than style, its extended barrel gives it incredible recoil control but loses stopping power and penetration. Uses 12mm."
 	icon = 'icons/obj/guns/projectile/Long_Revolver.dmi'
 	icon_state = "longRevolver"
+	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_50
 	slot_flags = SLOT_BACK|SLOT_BELT	//Can't fit a holster due to length
@@ -16,3 +17,5 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	twohanded = TRUE
 	serial_type = "LSS"
+	wield_delay = 0.5 SECOND
+	wield_delay_factor = 0.5 // 50 vig

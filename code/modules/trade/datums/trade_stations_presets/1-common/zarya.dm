@@ -62,7 +62,8 @@
 
 		"Bystroye Stroitel'stvo" = list(
 			/obj/item/rcd/industrial = good_data("Industrial RCD", list(-1, 1), 4500),
-			/obj/item/rcd = good_data("RCD", list(1, 2), 2500)
+			/obj/item/rcd = good_data("RCD", list(1, 2), 2500),
+			/obj/item/hatton_magazine= good_data("Hatton TUBE", list(3, 5), 1000)
 		),
 
 		"Antiveshchestvo" = list(
@@ -91,6 +92,12 @@
 
 	offer_types = list(
 		//obj/item/tool_upgrade = offer_data("tool upgrade", 200, 0),				// base price: 200 exploitable with other trade stations
+		/obj/item/tool/crowbar = offer_data_mods("modified crowbar (6 upgrades)", 2800, 2, OFFER_MODDED_TOOL, 6),
+		/obj/item/tool/screwdriver = offer_data_mods("modified screwdriver (6 upgrades)", 2800, 2, OFFER_MODDED_TOOL, 6),
+		/obj/item/tool/shovel = offer_data_mods("modified shovel (6 upgrades)", 2800, 2, OFFER_MODDED_TOOL, 6),
+		/obj/item/tool/wirecutters = offer_data_mods("modified wirecutters (6 upgrades)", 2800, 2, OFFER_MODDED_TOOL, 6),
+		/obj/item/tool/wrench = offer_data_mods("modified wrench (6 upgrades)", 2800, 2, OFFER_MODDED_TOOL, 6),
+		/obj/item/tool/weldingtool = offer_data_mods("modified welding tool (6 upgrades)", 2800, 2, OFFER_MODDED_TOOL, 6),
 		/obj/item/tool/crowbar/onestar = offer_data("greyson crowbar", 1000, 3),
 		/obj/item/tool/pickaxe/onestar = offer_data("greyson pickaxe", 1000, 3),
 		/obj/item/tool/pickaxe/jackhammer/onestar = offer_data("greyson jackhammer", 1000, 3),

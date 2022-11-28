@@ -10,7 +10,7 @@
 	extra_damage_mult_scoped = 0.2
 	init_recoil = HMG_RECOIL(0.8)
 	max_shells = 5
-	zoom_factor = 2.0
+	zoom_factors = list(2.0)
 	price_tag = 1500
 	sharp = 0
 	caliber = CAL_HRIFLE
@@ -22,6 +22,9 @@
 	sawn = /obj/item/gun/projectile/boltgun/sawn/scout
 	slowdown_hold = 1
 	serial_type = "H&S"
+
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.3 // 30 vig, little heavier than normal
 
 
 /obj/item/gun/projectile/boltgun/sawn/scout

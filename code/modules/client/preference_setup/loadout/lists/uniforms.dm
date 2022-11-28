@@ -4,6 +4,7 @@
 	path = /obj/item/clothing/under/bride_white
 	slot = slot_w_uniform
 	sort_category = "Uniforms and Casual Dress"
+	cost = 0
 
 /datum/gear/uniform/tracksuit
 	display_name = "track suit"
@@ -249,3 +250,7 @@
 /datum/gear/uniform/jersey
 	display_name = "tacky jersey"
 	path = /obj/item/clothing/under/costume/misc/jersey
+
+/datum/gear/uniform/sports
+	display_name = "white tank top"
+	path = /obj/item/clothing/under/sports

@@ -74,13 +74,12 @@
 		return
 
 /obj/structure/closet/body_bag/update_icon()
-    if(opened)
-        icon_state = "bodybag_open"
-    else
-        if(contains_body > 0)
-            icon_state = "bodybag_full"
-        else
-            icon_state = "bodybag_closed"
+	if(opened)
+		icon_state = "bodybag_open"
+	else if(contains_body > 0)
+		icon_state = "bodybag_full"
+	else
+		icon_state = "bodybag_closed"
 
 /obj/item/bodybag/cryobag
 	name = "stasis bag"
@@ -162,3 +161,51 @@
 
 /obj/structure/closet/body_bag/attackby(obj/item/W, mob/user)
 	..() // Allows to use health analyzer on the mob inside
+
+/obj/item/bodybag/xenobio
+	name = "xenobio body bag"
+	desc = "A folded bag designed for the storage and transportation of slimes and monkeys."
+	icon_state = "xb_bodybag_folded"
+
+	attack_self(mob/user)
+		var/obj/structure/closet/body_bag/xenobio/R = new /obj/structure/closet/body_bag/xenobio(user.loc)
+		R.add_fingerprint(user)
+		qdel(src)
+
+/obj/structure/closet/body_bag/xenobio
+	name = "xenobio body bag"
+	desc = "A plastic bag designed for the storage and transportation of monkeys and slimes."
+	icon_state = "xb_bodybag"
+	item_path = /obj/item/bodybag/xenobio //What item do we get back when folding it up?
+	storage_capacity = (MOB_MEDIUM * 10) //Holds 10 monkeys or slimes. Ideally this will fully clean a pen in one go.
+
+/obj/structure/closet/body_bag/xenobio/update_icon()
+	if(opened)
+		icon_state = "xb_bodybag_open"
+	else if(contains_body > 0)
+		icon_state = "xb_bodybag_closed"
+	else
+		icon_state = "xb_bodybag_closed"
+
+/obj/structure/closet/body_bag/xenobio/store_misc(var/stored_units)
+	return 0 //set to zero for safty. You shouldn't be able to add items to the xenobio version.
+
+/obj/structure/closet/body_bag/xenobio/store_items(var/stored_units)
+	return 0 //set to zero for safty. You shouldn't be able to add items to the xenobio version.
+
+/obj/structure/closet/body_bag/xenobio/store_mobs(var/stored_units)
+	var/added_units = 0
+	for(var/mob/living/M in src.loc)
+		if(!istype(M,/mob/living/carbon/slime) && !istype(M,/mob/living/carbon/human/monkey))
+			continue
+		if(M.buckled || M.pinned.len)
+			continue
+		if(stored_units + added_units + M.mob_size > storage_capacity)
+			break
+		if(M.client)
+			M.client.perspective = EYE_PERSPECTIVE
+			M.client.eye = src
+		M.forceMove(src)
+		added_units += M.mob_size
+		contains_body = added_units
+	return contains_body

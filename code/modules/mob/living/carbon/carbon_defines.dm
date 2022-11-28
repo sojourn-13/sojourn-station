@@ -41,5 +41,6 @@
 	colony_friend = TRUE //For mobs to make sure if they are also friendly dont attack humans
 	friendly_to_colony = TRUE //So we dont attack monkeys/BST/People if we allied
 
+	var/movement_hunger_factors = 1
 	//TODO: move to brain
 

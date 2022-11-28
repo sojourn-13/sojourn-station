@@ -35,6 +35,23 @@
 	item_cost = 2
 	path = /obj/item/gun_upgrade/mechanism/glass_widow
 	antag_roles = ROLES_UPLINK_BASE
+
+/datum/uplink_item/item/stealthy_weapons/silencer
+	name = "Silencer"
+	item_cost = 1
+	path = /obj/item/gun_upgrade/muzzle/silencer
+
+/datum/uplink_item/item/stealthy_weapons/pain_maker
+	name = "SA \"PainMaker\" muzzle"
+	item_cost = 2
+	path = /obj/item/gun_upgrade/muzzle/pain_maker
+
+/datum/uplink_item/item/stealthy_weapons/dna_trigger
+	name = "SI \"DNA lock\" trigger"
+	item_cost = 2 //low do to like being really really unuseful
+	path = /obj/item/gun_upgrade/trigger/dnalock
+
+
 /*
 //Remove Lens from premisis -Hex
 /datum/uplink_item/item/stealthy_weapons/eye_banger

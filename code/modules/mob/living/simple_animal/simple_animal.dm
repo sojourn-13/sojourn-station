@@ -531,7 +531,7 @@
 		stat(null, "Health: [round((health / maxHealth) * 100)]%")
 
 /mob/living/simple_animal/death(gibbed, deathmessage = "dies!")
-	walk_to(src,0)
+	SSmove_manager.stop_looping(src)
 	movement_target = null
 	icon_state = icon_dead
 	density = FALSE
@@ -540,9 +540,7 @@
 	return ..(gibbed,deathmessage)
 
 /mob/living/simple_animal/ex_act(severity)
-	if(!blinded)
-		if (HUDtech.Find("flash"))
-			flick("flash", HUDtech["flash"])
+	flash(0, FALSE,FALSE,FALSE)
 	switch (severity)
 		if (1)
 			adjustBruteLoss(500)

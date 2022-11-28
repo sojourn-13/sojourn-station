@@ -12,7 +12,7 @@
 	if(is_open() && !diagnosed)
 		try_autodiagnose(user)
 
-	var/list/data = ui_data(user)
+	var/list/data = nano_ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -21,7 +21,7 @@
 		ui.open()
 
 
-/obj/item/organ/external/ui_data(mob/user)
+/obj/item/organ/external/nano_ui_data(mob/user)
 	var/list/data = list()
 
 	data["status"] = get_status_data()

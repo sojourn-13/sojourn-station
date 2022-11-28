@@ -1,17 +1,25 @@
 /datum/design/research/item/greyson/cog
-	name = "GP \"Cog\" lasegun"
+	name = "GP \"Cog\" lasgun"
 	build_path = /obj/item/gun/energy/cog
 	category = CAT_WEAPON
 
 /datum/design/research/item/greyson/cog_sawn
-	name = "GP \"Pinion\" lasegun"
+	name = "GP \"Pinion\" lasgun"
 	build_path = /obj/item/gun/energy/cog/sawn
 	category = CAT_WEAPON
 
+/*	// Unneeded with the introduction of the Sprocket, keeps this variant as Marshal exclusive
 /datum/design/research/item/greyson/cog_gear
-	name = "GP \"Gear\" lasegun"
+	name = "GP \"Gear\" lasgun"
 	build_path = /obj/item/gun/energy/cog/gear
 	category = CAT_WEAPON
+*/
+
+/datum/design/research/item/greyson/cog_sprocket
+	name = "Soteria \"Sprocket\" lasgun"
+	build_path = /obj/item/gun/energy/cog/sprocket
+	category = CAT_WEAPON
+
 
 /datum/design/research/item/greyson/abnegate
 	name = "\"SST Abnegate\" handgun"

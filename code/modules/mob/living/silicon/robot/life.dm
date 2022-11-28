@@ -11,6 +11,7 @@
 
 	if(client)
 		handle_regular_hud_updates()
+		handle_regular_status_updates()
 		update_items()
 	if (src.stat != DEAD) //still using power
 		use_power()
@@ -25,6 +26,36 @@
 
 	for(var/mob/living/L in view(7)) //Sucks to put this here, but otherwise mobs will ignore them
 		L.try_activate_ai()
+
+/mob/living/silicon/robot/Life_Check_Light()
+	set invisibility = 0
+	set background = 1
+
+	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
+		return
+
+	//Status updates, death etc.
+	clamp_values()
+	handle_actions()
+
+	if(client)
+		handle_regular_hud_updates()
+		handle_regular_status_updates()
+		update_items()
+	if (src.stat != DEAD) //still using power
+		use_power()
+		process_killswitch()
+		process_locks()
+		process_queued_alarms()
+	else
+		if (!src.death_notified && src.connected_ai)
+			src.notify_ai(ROBOT_NOTIFICATION_SIGNAL_LOST)
+			src.death_notified = TRUE
+	update_lying_buckled_and_verb_status()
+
+	for(var/mob/living/L in view(7)) //Sucks to put this here, but otherwise mobs will ignore them
+		L.try_activate_ai()
+
 
 /mob/living/silicon/robot/proc/clamp_values()
 
@@ -158,16 +189,9 @@
 		return
 
 
-
-
-
-
-
 	for (var/obj/screen/H in HUDprocess)
 //		var/obj/screen/B = H
 		H.Process()
-
-
 
 	return 1
 

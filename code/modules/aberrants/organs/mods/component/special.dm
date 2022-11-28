@@ -15,13 +15,13 @@
 /datum/component/modification/organ/on_item_examine/brainloss/moderate
 	damage = 5
 
-/datum/component/modification/organ/on_item_examine/brainloss/trigger(obj/item/holder, mob/owner)
-	if(!holder || !owner)
+/datum/component/modification/organ/on_item_examine/brainloss/trigger(mob/user)
+	if(!user)
 		return
-	if(isliving(owner))
-		var/mob/living/L = owner	// NOTE: In this case, owner means the mob that examined the holder, not the mob the holder is attached to
+	if(ishuman(user))
+		var/mob/living/L = user
 		L.adjustBrainLoss(damage)
-		L.apply_damage(PSY, damage)
+		L.apply_damage(damage, PSY)
 
 
 /datum/component/modification/organ/on_pickup
@@ -61,23 +61,27 @@
 	var/effect
 
 /datum/component/modification/organ/on_cooldown/chemical_effect/get_function_info()
+	var/datum/reagent/hormone/H
+	if(ispath(effect, /datum/reagent/hormone))
+		H = effect
+
 	var/effect_desc
 	switch(effect)
-		if(/datum/reagent/hormone/bloodrestore)
+		if(/datum/reagent/hormone/bloodrestore, /datum/reagent/hormone/bloodrestore/alt)
 			effect_desc = "blood restoration"
-		if(/datum/reagent/hormone/bloodclot)
+		if(/datum/reagent/hormone/bloodclot, /datum/reagent/hormone/bloodclot/alt)
 			effect_desc = "blood clotting"
-		if(/datum/reagent/hormone/painkiller)
+		if(/datum/reagent/hormone/painkiller, /datum/reagent/hormone/painkiller/alt)
 			effect_desc = "painkiller"
-		if(/datum/reagent/hormone/antitox)
+		if(/datum/reagent/hormone/antitox, /datum/reagent/hormone/antitox/alt)
 			effect_desc = "anti-toxin"
-		if(/datum/reagent/hormone/oxygenation)
+		if(/datum/reagent/hormone/oxygenation, /datum/reagent/hormone/oxygenation/alt)
 			effect_desc = "oxygenation"
-		if(/datum/reagent/hormone/speedboost)
+		if(/datum/reagent/hormone/speedboost, /datum/reagent/hormone/speedboost/alt)
 			effect_desc = "augmented agility"
 
 	var/description = "<span style='color:purple'>Functional information (secondary):</span> secretes a hormone"
-	description += "\n<span style='color:purple'>Effect produced:</span> [effect_desc]"
+	description += "\n<span style='color:purple'>Effect produced:</span> [effect_desc] (type ["[initial(H.hormone_type)]"])"
 
 	return description
 
@@ -93,7 +97,6 @@
 
 	var/datum/reagent/output = effect
 	var/amount_to_add = initial(output.metabolism) * organ_multiplier
-	RM.remove_reagent(initial(output.id), 1000)	// Soj seems to have issues with chems processing slower than organs
 	RM.add_reagent(initial(output.id), amount_to_add)
 
 /datum/component/modification/organ/on_cooldown/stat_boost

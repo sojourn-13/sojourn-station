@@ -9,6 +9,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	max_shells = 6 //less ammo and regular recoil
 	ammo_type = /obj/item/ammo_casing/shotgun
+	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
 	price_tag = 1250
 	damage_multiplier = 1.2
@@ -17,6 +18,9 @@
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/combat/sawn
 	serial_type = "Absolute"
+
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.4 // 40 vig
 
 /obj/item/gun/projectile/shotgun/pump/combat/sawn
 	name = "\"Regulator\" stakeout shotgun"
@@ -32,3 +36,6 @@
 	damage_multiplier = 0.9
 	fire_delay = 12
 	saw_off = FALSE
+
+	wield_delay = 0.7 SECOND
+	wield_delay_factor = 0.3 // 30 vig

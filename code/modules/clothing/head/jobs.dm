@@ -195,7 +195,7 @@
 	name = "blue surgical cap"
 	desc = "A sterile blue surgical cap for medical operations."
 	icon_state = "surgcap_blue"
-	flags_inv = BLOCKHEADHAIR
+	flags_inv = BLOCKHEADHAIR|HIDEEARS
 
 /obj/item/clothing/head/surgery/purple
 	name = "purple surgical cap"

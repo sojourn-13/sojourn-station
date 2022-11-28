@@ -158,12 +158,12 @@ cannot isolate or combine desired genes.
 
 	var/active_mutation_data
 	if(active_mutation)
-		active_mutation_data = active_mutation.ui_data(known_mutations)
+		active_mutation_data = active_mutation.nano_ui_data(known_mutations)
 	data["active_mutation"] = active_mutation_data
 
 	var/mutations_to_combine_data
 	if(mutations_to_combine)
-		mutations_to_combine_data = mutations_to_combine.ui_data(known_mutations)
+		mutations_to_combine_data = mutations_to_combine.nano_ui_data(known_mutations)
 	data["mutations_to_combine"] = mutations_to_combine_data
 
 	var/can_combine = FALSE
@@ -185,7 +185,7 @@ cannot isolate or combine desired genes.
 	if(new_discovered_mutations)
 		analyzed_mutation_data = list()
 		for(var/datum/genetics/mutation/target_mutation in new_discovered_mutations)
-			analyzed_mutation_data += list(target_mutation.ui_data(known_mutations))
+			analyzed_mutation_data += list(target_mutation.nano_ui_data(known_mutations))
 	data["analyzed_mutations"] = analyzed_mutation_data
 
 	debug_ui_data = data

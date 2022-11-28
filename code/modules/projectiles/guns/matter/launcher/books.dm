@@ -4,7 +4,7 @@
 	icon_state = "biblegun"
 	icon = 'icons/obj/guns/matter/books.dmi'
 	slot_flags = SLOT_BELT
-	fire_sound = 'sound/weapons/Taser.ogg'
+	fire_sound = 'sound/weapons/energy/Taser.ogg'
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2, TECH_BIO = 6)
 	matter_type = MATERIAL_BIOMATTER
 	max_stored_matter = 15
@@ -38,7 +38,7 @@
 /obj/item/gun/matter/holybook/staff
 	name = "\improper Harmony Scepter"
 	desc = "A golden scepter with a leather wrapped handle, capable of being loaded with biomatter to fire off healing beams of energy that can heal most types of standard damage. Also heavy enough \
-	to bash your enemies over the head."
+	to bash your enemies over the head. Handmade by the Numericals under divine inspiration, scepters like this are extremely rare and difficult to replace."
 	icon = 'icons/obj/guns/matter/harmony_scepter.dmi'
 	icon_state = "harmony_scepter"
 	projectile_type = /obj/item/projectile/beam/sniper/healing/harmony

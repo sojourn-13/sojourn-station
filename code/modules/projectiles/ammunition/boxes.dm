@@ -267,6 +267,7 @@
 	name = "ammunition packet (old 6.5mm Carbine)"
 	icon_state = "clrifle_s"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/scrap
+	w_class = ITEM_SIZE_NORMAL
 	max_ammo = 30
 
 ////7.62mm Rifle////
@@ -476,7 +477,7 @@
 	max_ammo = 15
 
 /obj/item/ammo_magazine/ammobox/antim/scrap
-	name = "ammunition box (old 14.5mm Anti Material)"
+	name = "ammunition box (old 14.5mm Anti Materiel)"
 	icon_state = "antim_s"
 	ammo_type = /obj/item/ammo_casing/antim/scrap
 	max_ammo = 5
@@ -673,6 +674,11 @@
 
 	icon_state = iconstring
 //	return
+
+/obj/item/ammo_magazine/ammobox/shotgun/ceramic
+	name = "ammunition packet (20mm Ceramic)"
+	icon_state = "slug"
+	ammo_type = /obj/item/ammo_casing/shotgun/ceramic
 
 /obj/item/ammo_magazine/ammobox/shotgun/blanks
 	name = "ammunition packet (20mm Blank)"

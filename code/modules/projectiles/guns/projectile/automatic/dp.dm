@@ -7,7 +7,7 @@
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
 	slot_flags = 0
-	max_shells = 96
+	max_shells = 1
 	damage_multiplier = 1.0
 	penetration_multiplier = 0.9
 	caliber = CAL_RIFLE
@@ -27,12 +27,15 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	slowdown_hold = 0.5
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		list(mode_name="short bursts", mode_desc = "Short, rapid 5 round bursts", burst=5,    burst_delay=2, move_delay=6,  icon="burst"),
 		list(mode_name="long bursts", mode_desc = "Long, rapid 8 round bursts",  burst=8, burst_delay=4, move_delay=8,  icon="burst"),
 		list(mode_name="suppressing fire", mode_desc = "Suppressing, 16 round bursts",  burst=16, burst_delay=4, move_delay=11,  icon="burst")
 		)
 	serial_type = "NM"
+
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.5 // 50 vig for instant wield
 
 obj/item/gun/projectile/automatic/dp/update_icon()
 	..()

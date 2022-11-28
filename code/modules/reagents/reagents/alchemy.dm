@@ -5,7 +5,7 @@
 	taste_description = "salt of metal"
 	reagent_state = LIQUID
 	color = "#660000"
-	scannable = 0
+	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.001 //Takes a long time to remove
 	overdose = 1
@@ -49,7 +49,7 @@
 	taste_description = "bitter demise"
 	reagent_state = LIQUID
 	color = "#660000"
-	scannable = 0
+	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.1
 	overdose = 1
@@ -79,7 +79,7 @@
 	taste_description = "charcoal"
 	reagent_state = LIQUID
 	color = "#660000"
-	scannable = 0
+	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.1
 	overdose = 1
@@ -108,7 +108,7 @@
 	taste_description = "dry iron"
 	reagent_state = LIQUID
 	color = "#660000"
-	scannable = 0
+	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.01 //We crash hard
 	overdose = 1
@@ -142,7 +142,7 @@
 	taste_description = "shivers"
 	reagent_state = LIQUID
 	color = "#660000"
-	scannable = 0
+	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.001
 	overdose = 1
@@ -175,7 +175,7 @@
 	taste_description = "bitter demise"
 	reagent_state = SOLID //for sake of simple
 	color = "#660000"
-	scannable = 0
+	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.1
 	overdose = 1
@@ -203,7 +203,7 @@
 	taste_description = "liquid fire"
 	reagent_state = LIQUID //for sake of simple
 	color = "#660000"
-	scannable = 0
+	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.1
 	overdose = 1
@@ -231,7 +231,7 @@
 	taste_description = "smelling salts and exspensive metal"
 	reagent_state = LIQUID //for sake of simple
 	color = "#660000"
-	scannable = 0
+	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.01
 	overdose = 1
@@ -253,7 +253,7 @@
 	taste_description = "dry cheese and raw stake"
 	reagent_state = LIQUID //for sake of simple
 	color = "#660000"
-	scannable = 0
+	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.01
 	overdose = 1
@@ -274,7 +274,7 @@
 	taste_description = "sand with mint leafs"
 	reagent_state = LIQUID //for sake of simple
 	color = "#660000"
-	scannable = 0
+	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.1
 	overdose = 1
@@ -296,7 +296,7 @@
 	taste_description = "red wine and stale cheese"
 	reagent_state = LIQUID //for sake of simple
 	color = "#660000"
-	scannable = 0
+	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.1
 	overdose = 1
@@ -317,7 +317,7 @@
 	taste_description = "zapping away your taste buds"
 	reagent_state = LIQUID //for sake of simple
 	color = "#660000"
-	scannable = 0
+	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 1
 	overdose = 1

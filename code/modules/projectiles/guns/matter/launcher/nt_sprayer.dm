@@ -1,6 +1,6 @@
 /obj/item/gun/matter/launcher/nt_sprayer
 	name = "cleansing carbine"
-	desc = "\"Old Testament\" brand cleansing carbine. Uses solid biomass as ammo and dispense cleansing liquid on hit. Despite many attempts, nobody is quite sure how it works."
+	desc = "\"Old Testament\" brand cleansing carbine. Uses solid biomass as ammo and dispense cleansing liquid on hit. Despite many attempts to reverse-engineer it, nobody outside of the Numericals is quite sure how it works."
 	icon_state = "nt_sprayer"
 	icon = 'icons/obj/guns/matter/nt_sprayer.dmi'
 	slot_flags = SLOT_BACK|SLOT_BELT
@@ -16,6 +16,9 @@
 		list(mode_name="stronger", mode_desc="Small long lasting cleansing bolt that cleans a few tiles", projectile_type=/obj/item/arrow/cleansing/bigger, fire_sound='sound/weapons/Genhit.ogg', fire_delay=25, icon="toxin", projectile_cost = 1.5),
 	)
 	serial_type = "Absolute"
+
+/obj/item/arrow
+	var/recoil = 2  // Light recoil, it's just some cleaning stuff
 
 /obj/item/arrow/cleansing
 	icon = 'icons/obj/projectiles.dmi'
@@ -35,7 +38,7 @@
 
 /obj/item/gun/matter/launcher/nt_sprayer/mini
 	name = "\"Spot\" cleaning pistol"
-	desc = "The janitor's choice of cleaner. Uses cellulose based solution to clean upto 99% of dirt grime and oil, even comes with a sling to fit on your back."
+	desc = "The janitor's choice of cleaner. Uses cellulose based solution to clean upto 99% of dirt grime and oil, even comes with a sling to fit on your back. Legally distinct from the Old Testament's cleansing carbine."
 	icon_state = "si_sprayer"
 	icon = 'icons/obj/guns/matter/nt_sprayer.dmi'
 	w_class = ITEM_SIZE_NORMAL

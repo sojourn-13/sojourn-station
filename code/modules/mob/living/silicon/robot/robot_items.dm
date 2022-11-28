@@ -627,6 +627,12 @@
 	return TRUE
 
 /obj/item/storage/bag/robotic/proc/add_to_storage(obj/item/target_item as obj)
+
+	if(max_w_class < target_item.w_class)
+		to_chat(usr, SPAN_NOTICE("[target_item] can not fit inside."))
+		return FALSE
+
+
 	if(used_storage_space < max_storage_space)
 		var/transfer //Used to track how much was transferred between stacks.
 		var/overfill_amount //Used to track just how much the bag would get filled over it's capacity.
@@ -775,7 +781,7 @@
 	w_class = ITEM_SIZE_BULKY
 	max_storage_space = DEFAULT_BULKY_STORAGE * 2
 	max_w_class = ITEM_SIZE_SMALL
-	can_hold = list()
+	can_hold = list(/obj/item) //hacky fix maybe to let them pick up items
 	cant_hold = list(/obj/item/disk/nuclear)
 
 /obj/item/storage/bag/robotic/trash/autoload(mob/user as mob)

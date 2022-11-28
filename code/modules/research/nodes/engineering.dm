@@ -152,7 +152,8 @@
 							/datum/design/research/item/custom_circuit_assembly/advanced_designs,
 							/datum/design/research/item/detailer,
 							/datum/design/research/item/analyzer,
-							/datum/design/research/item/custom_circuit_assembly/cloning
+							/datum/design/research/item/custom_circuit_assembly/cloning,
+							/datum/design/research/item/cogenhancer
 							)
 
 /* No tesla engine?
@@ -186,9 +187,9 @@
 	required_tech_levels = list()
 	cost = 375
 
-	unlocks_designs = list(/datum/design/research/circuit/ordercomp,
-						   /datum/design/research/circuit/supplycomp,
-						   /datum/design/research/item/computer_part/price)
+	unlocks_designs = list(/datum/design/research/item/computer_part/price)
+							//datum/design/research/circuit/ordercomp,
+							//datum/design/research/circuit/supplycomp,
 
 //TOOLS BRANCH
 // TO ADD: ore_redemption, mining_equipment_vendor, mining_fabricator?

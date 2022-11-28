@@ -101,7 +101,7 @@
 	desc = "The standard Blackshield equipment kit containing an STS carbine, a powerful and all round deadly rifle that performs well in any circumstance."
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/rds(src)
+		new /obj/item/gun/projectile/automatic/omnirifle/rds(src)
 		new /obj/item/ammo_magazine/heavy_rifle_408(src)
 		new /obj/item/ammo_magazine/heavy_rifle_408(src)
 		new /obj/item/ammo_magazine/heavy_rifle_408(src)
@@ -114,26 +114,12 @@
 
 	populate_contents()
 		new /obj/item/gun/energy/cog(src)
-		new /obj/item/cell/medium(src)
-		new /obj/item/cell/medium(src)
-		new /obj/item/cell/medium(src)
-		new /obj/item/cell/medium(src)
-		new /obj/item/cell/medium(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
 		new /obj/item/storage/pouch/tubular(src)
-
-/obj/item/storage/box/bs_kit/greasegun
-	name = "\improper Grease Gun Primary Kit"
-	desc = "The standard Blackshield equipment kit containing a grease gun, an unusual choice as its low damage and slow firing rate make it more of a specialist option. The built in silencer \
-	and high capacity submachine magazines are perfect for cover fire and hiding your position."
-
-	populate_contents()
-		new /obj/item/gun/projectile/automatic/greasegun(src)
-		new /obj/item/ammo_magazine/smg_35(src)
-		new /obj/item/ammo_magazine/smg_35(src)
-		new /obj/item/ammo_magazine/smg_35(src)
-		new /obj/item/ammo_magazine/smg_35(src)
-		new /obj/item/ammo_magazine/smg_35(src)
-		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/bs_kit/triage
 	name = "\improper Triage Kit"
@@ -204,7 +190,7 @@
 	shooters and people with something to compensate for."
 
 	populate_contents()
-		new /obj/item/gun/projectile/lamia/dark(src)
+		new /obj/item/gun/projectile/lamia(src)
 		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
@@ -251,7 +237,7 @@
 	desc = "The standard Blackshield equipment kit containing a standard makarov. Its power comes form its size making a good holdout pistol or able to be placed in almost any storage container making it deal for a overloaded trooper."
 
 	populate_contents()
-		new /obj/item/gun/projectile/clarissa/makarov(src)
+		new /obj/item/gun/projectile/makarov(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src) //Highcaps
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		new /obj/item/clothing/accessory/holster/leg(src)

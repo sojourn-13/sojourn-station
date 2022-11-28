@@ -58,8 +58,9 @@
 	// TODO: offers
 	offer_types = list(
 		/obj/structure/scrap_cube = offer_data("compressed scrap cube", 80, 3),
-		/obj/item/reagent_containers/food/snacks/baconburger = offer_data("bacon burger", 150, 5),
-		/obj/item/reagent_containers/food/snacks/blt = offer_data("blt sandwich", 180, 12)
+		/obj/item/reagent_containers/food/snacks/baconburger = offer_data("bacon burger", 500, 4),
+		/obj/item/reagent_containers/food/snacks/blt = offer_data("blt sandwich", 500, 4),
+		/obj/item/storage/bag/sheetsnatcher = offer_data("sheet snatcher", 300, 4)
 	)
 //imo way better place of doing the whole list to be in same file as the ship - Trilby
 /obj/random/scrap

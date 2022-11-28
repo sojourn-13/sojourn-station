@@ -354,7 +354,7 @@
 	seed_name = "ambrosia omni"
 	display_name = "ambrosia omni"
 	mutants = null
-	evolutions = list("ambrosiapanacea" = list("clonexadone"))
+	evolutions = list("ambrosiapanacea")
 	chems = list("nutriment"=list(1), "tricordrazine"=list(1,10), "anti_toxin"=list(1,10), "bicaridine"=list(2), "dexalinp"=list(2), "kelotane"=list(2),"copper"=list(2),"stoxin"=list(2))
 
 /datum/seed/ambrosia/omni/New()
@@ -368,7 +368,7 @@
 	display_name = "ambrosia panacea"
 	mutants = null
 	evolutions = null
-	chems = list("nutriment"=list(1), "clonexadone"=list(5), "cordradaxon"=list(5,20),"peridaxon"=list(5,20),"respiradoxon"=list(5,20),"vermicetol"=list(5,20),"rezadone"=list(5,20),"vomitol"=list(5,20),"quickclot"=list(5,20),"ossissine"=list(5,20))
+	chems = list("nutriment"=list(1), "cronexidone"=list(5), "cordradaxon"=list(5,20),"peridaxon"=list(5,20),"respiradoxon"=list(5,20),"vermicetol"=list(5,20),"rezadone"=list(5,20),"quickclot"=list(5,20),"ossissine"=list(5,20))
 	exude_gasses = list("sleeping_agent" = 4)
 
 /datum/seed/ambrosia/panacea/New()
@@ -718,7 +718,7 @@
 		"radium",
 		"ryetalyn",
 		"alkysine",
-		"clonexadone",
+		"cronexidone",
 		"thermite",
 		"tramadol",
 		"cryptobiolin",
@@ -1281,7 +1281,7 @@
 	kitchen_tag = "trinitygrass"
 	mutants = null
 	evolutions = null
-	chems = list ("clonexadone" = list(1,20))
+	chems = list ("cronexidone" = list(1,20))
 	exude_gasses = list("sleeping_agent" = 3)
 
 /datum/seed/grass/maiden/trinitygrass/New()

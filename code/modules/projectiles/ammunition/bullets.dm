@@ -4,6 +4,7 @@
 	desc = "A 9mm bullet casing."
 	icon_state = "pistol_c_l"
 	spent_icon = "pistol_c_l-spent"
+	shell_color = "l"
 	caliber = CAL_PISTOL
 	projectile_type = /obj/item/projectile/bullet/pistol_35
 	maxamount = 15
@@ -12,6 +13,7 @@
 	desc = "A 9mm high-velocity bullet casing."
 	icon_state = "pistol_c_hv"
 	spent_icon = "pistol_c_hv-spent"
+	shell_color = "hv"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/hv
 
 /obj/item/ammo_casing/pistol_35/hv/spent
@@ -21,12 +23,14 @@
 	desc = "A 9mm practice bullet casing."
 	icon_state = "pistol_c_p"
 	spent_icon = "pistol_c_p-spent"
+	shell_color = "p"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/practice
 
 /obj/item/ammo_casing/pistol_35/rubber
 	desc = "A 9mm rubber bullet casing."
 	icon_state = "pistol_c_r"
 	spent_icon = "pistol_c_r-spent"
+	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber
 
 /obj/item/ammo_casing/pistol_35/rubber/soporific_cbo
@@ -38,12 +42,14 @@
 
 /obj/item/ammo_casing/pistol_35/lethal
 	desc = "A 9mm hollow-point bullet casing."
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/lethal
 
 /obj/item/ammo_casing/pistol_35/scrap
 	desc = "An old 9mm bullet casing."
 	icon_state = "pistol_c_s"
 	spent_icon = "pistol_c_s-spent"
+	shell_color = "s"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/scrap
 
 /obj/item/ammo_casing/pistol_35/scrap/prespawned
@@ -57,6 +63,7 @@
 	desc = "A caseless 9mm caustic."
 	projectile_type = /obj/item/projectile/bullet/pistol_35/biomatter
 	icon_state = "clrifle_c_s"
+	shell_color = "s"
 	is_caseless = TRUE
 
 //// 10mm ////
@@ -66,6 +73,7 @@
 	icon_state = "magnum_c_l"
 	spent_icon = "magnum_c_l-spent"
 	caliber = CAL_MAGNUM
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/magnum_40
 	maxamount = 6
 
@@ -73,18 +81,21 @@
 	desc = "A 10mm Magnum practice bullet casing."
 	icon_state = "magnum_c_p"
 	spent_icon = "magnum_c_p-spent"
+	shell_color = "p"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/practice
 
 /obj/item/ammo_casing/magnum_40/hv
 	desc = "A 10mm Magnum high-velocity bullet casing."
 	icon_state = "magnum_c_hv"
 	spent_icon = "magnum_c_hv-spent"
+	shell_color = "hv"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/hv
 
 /obj/item/ammo_casing/magnum_40/rubber
 	desc = "A 10mm Magnum rubber bullet casing."
 	icon_state = "magnum_c_r"
 	spent_icon = "magnum_c_r-spent"
+	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber
 
 /obj/item/ammo_casing/magnum_40/rubber/pepperball
@@ -97,6 +108,7 @@
 	desc = "A 10mm Magnum hollow point bullet casing."
 	icon_state = "magnum_c_l"
 	spent_icon = "magnum_c_l-spent"
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/lethal
 
 /obj/item/ammo_casing/magnum_40/laser
@@ -107,6 +119,7 @@
 	desc = "An old 10mm Magnum bullet casing."
 	icon_state = "magnum_c_s"
 	spent_icon = "magnum_c_s-spent"
+	shell_color = "s"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/scrap
 
 /obj/item/ammo_casing/magnum_40/scrap/prespawned
@@ -116,7 +129,11 @@
 	desc = "A caseless 10mm Magnum Caustic."
 	projectile_type = /obj/item/projectile/bullet/magnum_40/biomatter
 	icon_state = "clrifle_c_p"
+	shell_color = "s"
 	is_caseless = TRUE
+
+/obj/item/ammo_casing/magnum_40/spent
+	projectile_type = null
 
 //// 6.5 carbine ////
 
@@ -269,6 +286,12 @@
 	desc = "A 8.6mm laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/heavy_rifle_408
 
+/obj/item/ammo_casing/heavy_rifle_408/spent
+	projectile_type = null
+
+/obj/item/ammo_casing/heavy_rifle_408/hv/spent
+	projectile_type = null
+
 ///10mm caseless
 /obj/item/ammo_casing/c10x24
 	desc = "A 10x24mm caseless cartidge."
@@ -340,6 +363,7 @@
 	desc = "A 12mm bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50
+	shell_color = "l"
 	icon_state = "lrifle_c_l"
 	spent_icon = "lrifle_c_l-spent"
 
@@ -347,6 +371,7 @@
 	desc = "A 12mm rubber bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/rubber
+	shell_color = "r"
 	icon_state = "lrifle_c_r"
 	spent_icon = "lrifle_c_r-spent"
 
@@ -354,6 +379,7 @@
 	desc = "A 12mm practice bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/practice
+	shell_color = "p"
 	icon_state = "lrifle_c_p"
 	spent_icon = "lrifle_c_p-spent"
 
@@ -361,12 +387,14 @@
 	desc = "A 12mm high-velocity bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/hv
+	shell_color = "hv"
 	icon_state = "lrifle_c_hv"
 	spent_icon = "lrifle_c_hv-spent"
 
 /obj/item/ammo_casing/kurtz_50/lethal
 	desc = "A 12mm hollow point bullet casing."
 	caliber = CAL_50
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/lethal
 
 /obj/item/ammo_casing/kurtz_50/laser
@@ -377,7 +405,7 @@
 //// .60-06 ////
 /obj/item/ammo_casing/antim
 	name = "shell casing"
-	desc = "A 14.5mm Anti-Material shell."
+	desc = "A 14.5mm Anti-Materiel shell."
 	icon_state = "atmr"
 	spent_icon = "atmr-spent"
 	caliber = CAL_ANTIM
@@ -389,7 +417,7 @@
 
 /obj/item/ammo_casing/antim/scrap
 	name = "shell casing"
-	desc = "An old 14.5mm Anti-Material shell."
+	desc = "An old 14.5mm Anti-Materiel shell."
 	icon_state = "atmr_s"
 	spent_icon = "atmr_s-spent"
 	projectile_type = /obj/item/projectile/bullet/antim/scrap
@@ -400,7 +428,7 @@
 
 /obj/item/ammo_casing/antim/lethal
 	name = "\"Red-Nose\" shell casing"
-	desc = "A SA 14.5mm Anti-Material \"Red-Nose\" shell."
+	desc = "A SA 14.5mm Anti-Materiel \"Red-Nose\" shell."
 	icon_state = "atmr_red"
 	spent_icon = "atmr_red-spent"
 	projectile_type = /obj/item/projectile/bullet/antim/lethal
@@ -410,7 +438,7 @@
 
 /obj/item/ammo_casing/antim/ion
 	name = "\"Off-Switch\" shell casing"
-	desc = "A SA 14.5mm Anti-Material \"Off-Switch\" shell."
+	desc = "A SA 14.5mm Anti-Materiel \"Off-Switch\" shell."
 	icon_state = "atmr_red"
 	spent_icon = "atmr_red-spent"
 	projectile_type = /obj/item/projectile/bullet/antim/ion
@@ -442,7 +470,23 @@
 	projectile_type = /obj/item/projectile/bullet/shotgun
 	maxamount = 5
 
+/obj/item/ammo_casing/shotgun/spent
+	projectile_type = null
+
 /obj/item/ammo_casing/shotgun/prespawned
+	amount = 5
+
+/obj/item/ammo_casing/shotgun/ceramic
+	name = "ceramic slug"
+	desc = "A 20mm sabot slug with compact ceramic material inside."
+	icon_state = "s-shell_ceramic"
+	spent_icon = "s-shell_ceramic-spent"
+	shell_color = "ceramic"
+	caliber = CAL_SHOTGUN
+	projectile_type = /obj/item/projectile/bullet/shotgun/ceramic
+	maxamount = 5
+
+/obj/item/ammo_casing/shotgun/ceramic/prespawned
 	amount = 5
 
 /obj/item/ammo_casing/shotgun/scrap

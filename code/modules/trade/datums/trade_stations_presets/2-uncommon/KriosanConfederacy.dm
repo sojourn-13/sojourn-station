@@ -17,7 +17,6 @@
 	inventory = list(
 		"Hunting Gear" = list(
 			/obj/item/gun/projectile/boltgun/light,
-			/obj/item/gun/projectile/boltgun/light_wood,
 			/obj/item/gun/projectile/boltgun/sa,
 			/obj/item/gun/projectile/automatic/nordwind/strelki,
 			/obj/item/gun/projectile/automatic/survivalrifle,
@@ -28,7 +27,7 @@
 		"Ammo" = list(
 			/obj/item/ammo_magazine/ammobox/rifle_75_small,
 			/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
-			/obj/item/ammo_magazine/rifle_10x24,
+			/obj/item/ammo_magazine/smg_10x24,
 			/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
 			/obj/item/ammo_magazine/ammobox/shotgun
 		),
@@ -37,6 +36,9 @@
 			/mob/living/simple_animal/corgi/puppy = good_data("Young Corgi", list(3, 5), 250),
 			/mob/living/simple_animal/lizard = good_data("Crate Pusher", list(2, 5), 100),
 			/mob/living/simple_animal/cat = good_data("Rat Slayer", list(4, 5), 150)
+		),
+		"Assault Armor" = list(
+			/obj/item/clothing/suit/space/void/assault = good_data("Assault Armor", list(3, 5), 20000)
 		)
 	)
 	hidden_inventory = list(

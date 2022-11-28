@@ -81,13 +81,13 @@
 	..()
 
 //////////////////////////////////////Human perks
-/datum/perk/tenacity
-	name = "Tenacity"
-	desc = "When everything looks grim, you can muster a moment of bravado, reminding yourself that you ain't got time to bleed. You toughen up your metabolism, allowing you to ignore some of your pain, while stopping your bleeding and slightly healing your wounds."
+/datum/perk/iwillsurvive
+	name = "Will to Survive"
+	desc = "Your determination to survive and push on takes precedent before your other instincs making you ignore some of your pain and letting your body recover faster."
 	active = FALSE
 	passivePerk = FALSE
 
-/datum/perk/tenacity/activate()
+/datum/perk/iwillsurvive/activate()
 	var/mob/living/carbon/human/user = usr
 	if(!istype(user))
 		return ..()
@@ -100,33 +100,13 @@
 	user.reagents.add_reagent("adrenol", 5)
 	return ..()
 
-/datum/perk/iwillsurvive
-	name = "Will to Survive"
-	desc = "You push your primal desire to keep living to its limit, letting your body recover slightly from any internal damage out of sheer force of will at the cost of becoming extremely exhausted while it works."
-	active = FALSE
-	passivePerk = FALSE
-
-/datum/perk/iwillsurvive/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
-		return ..()
-	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("The human body can only take so much punishment, you'll need more time before you've recovered enough to use this again."))
-		return FALSE
-	cooldown_time = world.time + 30 MINUTES
-	user.visible_message("[user] closes their eyes and takes a deep breath, slowing down as they focus on recovering!", "You feel exhausted as you slow down to let your body recover, focusing on controlling your breathing while your body slowly mends some of your internal damage.")
-	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("hustim", 5)
-	return ..()
-
-
-/datum/perk/slymarbo
+/datum/perk/battlecry
 	name = "Inspiring Battlecry"
 	desc = "Life has taught you that beyond sheer force of will, what made your kind conquer the stars was also a sense of camaraderie and cooperation among your battle brothers and sisters. Your heroic warcry can inspire yourself and others to better performance in combat."
 	active = FALSE
 	passivePerk = FALSE
 
-/datum/perk/slymarbo/activate()
+/datum/perk/battlecry/activate()
 	var/mob/living/carbon/human/user = usr
 	var/list/people_around = list()
 	if(!istype(user))
@@ -147,7 +127,7 @@
 	usr.emote("urah")
 	return ..()
 
-/datum/perk/slymarbo/proc/give_boost(mob/living/carbon/human/participant)
+/datum/perk/battlecry/proc/give_boost(mob/living/carbon/human/participant)
 	var/effect_time = 2 MINUTES
 	var/amount = 10
 	var/list/stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10, STAT_VIG = 10)
@@ -155,9 +135,45 @@
 		participant.stats.changeStat(stat, amount)
 		addtimer(CALLBACK(src, .proc/take_boost, participant, stat, amount), effect_time)
 
-/datum/perk/slymarbo/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
+/datum/perk/battlecry/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
 	participant.stats.changeStat(stat, -amount)
 
+/datum/perk/tenacity
+	name = "Tenacity"
+	desc = "Humans were always resilient, not letting anything or anyone to get in way of their goals. Due to this your body is way more adapted to anything thrown it's way letting you push onward for just a little bit longer than others."
+
+/datum/perk/linguist_for_humans
+	name = "Diverse Culture"
+	desc = "Sol Fed conquering the stars led to almost every human having diverse knowledge of different languages."
+	active = FALSE
+	passivePerk = FALSE
+	var/anti_cheat = FALSE
+
+/datum/perk/linguist_for_humans/activate()
+	..()
+	if(anti_cheat)
+		to_chat(holder, "Recalling more languages is not as easy for someone unskilled as you.")
+		return FALSE
+	anti_cheat = TRUE
+	var/mob/M = usr
+	var/list/options = list()
+	options["German"] = LANGUAGE_GERMAN
+	options["Jive"] = LANGUAGE_JIVE
+	options["Jana"] = LANGUAGE_JANA
+	options["Serbian"] = LANGUAGE_SERBIAN
+	options["Techno-Russian"] = LANGUAGE_CYRILLIC
+	options["Esperanto"] = LANGUAGE_ESPERANTO
+	options["Yassari"] = LANGUAGE_YASSARI
+	options["Ancient Latin"] = LANGUAGE_LATIN
+	var/choice = input(M,"Which language do you know?","Linguist Choice") as null|anything in options
+	if(src && choice)
+		M.add_language(choice)
+		M.stats.removePerk(/datum/perk/linguist_for_humans)
+	anti_cheat = FALSE
+	return TRUE
+
+/datum/perk/linguist_for_humans/remove()
+	..()
 
 //////////////////////////////////////Kriosan perks
 /datum/perk/enhancedsenses

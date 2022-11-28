@@ -30,7 +30,7 @@
 
 	for(var/obj/effect/blob/B in view(8,src))
 		var/damage = round(30/(get_dist(B,src)+1))
-		B.health -= damage
+		B.take_damage(damage)
 		B.update_icon()
 	sleep(80)
 	icon_state = initial(icon_state) + "_off"

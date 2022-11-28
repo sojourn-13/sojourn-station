@@ -228,8 +228,8 @@
 
 
 	HUDoverlays = list(
-		"flash" 		=  list("type" = /obj/screen, "loc" = "WEST,SOUTH to EAST,NORTH", "icon_state" = "blank"),
-		"blind" 		=  list("type" = /obj/screen, "loc" = "WEST,SOUTH to EAST,NORTH", "icon_state" = "blank"),
+		"flash" 		=  list("type" = /obj/screen/full_1_tile_overlay, "loc" = "WEST,SOUTH to EAST,NORTH", "icon_state" = "blank"),
+		"blind" 		=  list("type" = /obj/screen/full_1_tile_overlay, "loc" = "WEST,SOUTH to EAST,NORTH", "icon_state" = "blank"),
 		"glassesoverlay" = list("type" = /obj/screen/silicon/glasses_overlay, "loc" = "1,1", )
 	)
 

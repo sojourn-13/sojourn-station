@@ -84,6 +84,13 @@
 		attached_meter.target = null
 		attached_meter = null
 
+	if(node1)
+		node1.disconnect(src)
+		node1 = null
+	if(node2)
+		node2.disconnect(src)
+		node2 = null
+
 	. = ..()
 
 	return QDEL_HINT_QUEUE
@@ -189,9 +196,9 @@
 	alpha = 255
 
 	switch(dir)
-		if(SOUTH || NORTH)
+		if(SOUTH, NORTH)
 			initialize_directions = SOUTH|NORTH
-		if(EAST || WEST)
+		if(EAST, WEST)
 			initialize_directions = EAST|WEST
 		if(NORTHEAST)
 			initialize_directions = NORTH|EAST
@@ -320,12 +327,12 @@
 	if(reference == node1)
 		if(istype(node1, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-		node1 = null
+	node1 = null
 
 	if(reference == node2)
 		if(istype(node2, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-		node2 = null
+	node2 = null
 
 	update_icon()
 
@@ -486,17 +493,17 @@
 	if(reference == node1)
 		if(istype(node1, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-		node1 = null
+	node1 = null
 
 	if(reference == node2)
 		if(istype(node2, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-		node2 = null
+	node2 = null
 
 	if(reference == node3)
 		if(istype(node3, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-		node3 = null
+	node3 = null
 
 	update_icon()
 
@@ -727,22 +734,22 @@
 	if(reference == node1)
 		if(istype(node1, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-		node1 = null
+	node1 = null
 
 	if(reference == node2)
 		if(istype(node2, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-		node2 = null
+	node2 = null
 
 	if(reference == node3)
 		if(istype(node3, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-		node3 = null
+	node3 = null
 
 	if(reference == node4)
 		if(istype(node4, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-		node4 = null
+	node4 = null
 
 	update_icon()
 
@@ -977,7 +984,7 @@
 	if(reference == node)
 		if(istype(node, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-		node = null
+	node = null
 
 	update_icon()
 
@@ -1082,6 +1089,8 @@
 	if(node1)
 		node1.disconnect(src)
 
+	node1 = null
+
 	. = ..()
 
 /obj/machinery/atmospherics/pipe/tank/pipeline_expansion()
@@ -1113,7 +1122,7 @@
 	if(reference == node1)
 		if(istype(node1, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-		node1 = null
+	node1 = null
 
 	update_underlays()
 
@@ -1249,6 +1258,8 @@
 	if(node1)
 		node1.disconnect(src)
 
+	node1 = null
+
 	. = ..()
 
 /obj/machinery/atmospherics/pipe/vent/pipeline_expansion()
@@ -1278,7 +1289,7 @@
 	if(reference == node1)
 		if(istype(node1, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-		node1 = null
+	node1 = null
 
 	update_icon()
 

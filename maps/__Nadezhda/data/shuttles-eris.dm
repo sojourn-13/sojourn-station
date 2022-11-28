@@ -237,7 +237,7 @@
 
 
 //Cargo shuttle
-
+/*
 /datum/shuttle/autodock/ferry/supply/drone
 	name = "Supply Shuttle"
 	location = 1
@@ -246,7 +246,7 @@
 	waypoint_offsite = "nav_cargo_start"
 	waypoint_station = "nav_cargo_vessel"
 	default_docking_controller = "supply_shuttle"
-
+*/
 /obj/effect/shuttle_landmark/supply/centcom
 	name = "Centcom"
 	landmark_tag = "nav_cargo_start"

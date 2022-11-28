@@ -96,7 +96,7 @@
 					to_chat(user, SPAN_DANGER("You was interrupted!"))
 					return
 				user.visible_message(SPAN_DANGER("[user] is rip the [H]'s head off!"),SPAN_DANGER("You rip the [H]'s head off."))
-				E.droplimb(TRUE, DROPLIMB_EDGE)
+				E.droplimb(TRUE, DISMEMBER_METHOD_EDGE)
 				grip_item(E, user)
 			else
 				to_chat(user, SPAN_DANGER("[H] missing his head!"))

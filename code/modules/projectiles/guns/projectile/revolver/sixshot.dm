@@ -9,7 +9,7 @@
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	max_shells = 6
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_STEEL = 5)
 	price_tag = 500
 	damage_multiplier = 0.8
@@ -18,6 +18,9 @@
 	sawn = /obj/item/gun/projectile/revolver/sixshot/sawn
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "SA"
+
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.4 // 40 vig
 
 /obj/item/gun/projectile/revolver/sixshot/conversion
 	name = "\"Ten-Shot\" conversion shotgun"
@@ -54,3 +57,6 @@
 	damage_multiplier = 0.7
 	penetration_multiplier = 0.8
 	init_recoil = RIFLE_RECOIL(2.3)
+
+	wield_delay = 0.8 SECOND
+	wield_delay_factor = 0.6 // 60 vig

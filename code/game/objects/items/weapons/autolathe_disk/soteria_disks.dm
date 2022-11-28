@@ -33,7 +33,7 @@
 		/datum/design/autolathe/misc/bodybag,
 		/datum/design/research/item/medical/autopsy_scanner,
 		/datum/design/research/item/medical/roller_bed,
-		/datum/design/autolathe/gun/dnalock_mod,
+		/datum/design/research/item/weapon/weapon_upgrade/dnalock_mod,
 		/datum/design/autolathe/container/hcase_med
 	)
 
@@ -75,7 +75,7 @@
 		/datum/design/research/item/clothing/health = 2,
 		/datum/design/autolathe/clothing/si_xenobio_hood,
 		/datum/design/autolathe/clothing/si_xenobio_suit,
-		/datum/design/autolathe/gun/dnalock_mod,
+		/datum/design/research/item/weapon/weapon_upgrade/dnalock_mod,
 		/datum/design/autolathe/container/hcase_med
 	)
 
@@ -125,6 +125,7 @@
 		/datum/design/autolathe/computer_part/frame_pda,
 		/datum/design/autolathe/computer_part/frame_tablet,
 		/datum/design/autolathe/computer_part/frame_laptop,
+		/datum/design/autolathe/computer_part/frame_wristmount,
 		/datum/design/research/item/computer_part/disk/micro,
 		/datum/design/research/item/computer_part/disk/small,
 		/datum/design/research/item/computer_part/disk/normal,

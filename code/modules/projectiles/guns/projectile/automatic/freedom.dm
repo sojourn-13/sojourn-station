@@ -16,7 +16,7 @@
 	matter = list(MATERIAL_PLASTEEL = 14, MATERIAL_PLASTIC = 8)
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	zoom_factor = 0.2
+	zoom_factors = list(0.2)
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.1
 	init_recoil = HANDGUN_RECOIL(0.9)
@@ -26,6 +26,9 @@
 		FULL_AUTO_600_NOLOSS
 		)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)
+
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.3 // Heavy smg , 30 vig to insta wield
 
 /obj/item/gun/projectile/automatic/freedom/update_icon()
 	..()
