@@ -285,18 +285,17 @@
 	can_be_refilled = FALSE
 
 /obj/item/reagent_containers/hypospray/autoinjector/large //bigger storage, not refillable. great for medical to sell, I suppose?
-	name = "autoinjector plus" //placeholder
-	desc = "A larger, more robust autoinjector whos design prevents refilling. This one holds about twice as much and takes a bit longer to use. " //placeholder
-	icon_state = "supeyrette"
+	name = "advanced autoinjector" //placeholder
+	desc = "A larger, more robust autoinjector whos design prevents refilling, but allows for much more storage. A proprietary Soteria design."
+	icon_state = "supeyrette" //fancy animated sprite courtesy of Guidesu.
 	item_state = "supeyrette"
 	amount_per_transfer_from_this = 10
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
-	reagent_flags = INJECTABLE | DRAINABLE | AMOUNT_VISIBLE | REFILLABLE
+	reagent_flags = INJECTABLE | DRAINABLE | AMOUNT_VISIBLE
 	volume = 10
 	preloaded_reagents = list("inaprovaline" = 10)
-	can_be_refilled = FALSE //For cargos
-	baseline_sprite = "supeyrette_inopravoline"
-	injtime = 4 //100% longer inject time for 100% more storage.
+	can_be_refilled = FALSE //No refill!!!
+	baseline_sprite = "supeyrette"
+	injtime = 5 //150% longer inject time for 100% more storage.A worthy trade off for this tool
 
 
 /obj/item/reagent_containers/hypospray/autoinjector/large/chemmaters
