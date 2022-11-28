@@ -20,7 +20,7 @@
 #define STAT_LEVEL_EXPERT   40
 #define STAT_LEVEL_PROF     60
 #define STAT_LEVEL_GODLIKE	80
-#define STAT_LEVEL_GOD		120 //You cannot go past this
+#define STAT_LEVEL_GOD		300 //You cannot go past this... as i think it is really resonable as a value.
 
 #define STAT_LEVEL_MIN      0 // Min stat value selectable
 #define STAT_LEVEL_MAX      60 // Max stat value selectable
