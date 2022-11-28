@@ -283,3 +283,24 @@
 	preloaded_reagents = list("kelotane" = 1.25, "dermaline" = 1.25, "tricordrazine" = 1.25, "polystem" = 1.25)
 	price_tag = 100
 	can_be_refilled = FALSE
+
+/obj/item/reagent_containers/hypospray/autoinjector/large //bigger storage, not refillable. great for medical to sell, I suppose?
+	name = "autoinjector plus" //placeholder
+	desc = "A larger, more robust autoinjector whos design prevents refilling. This one holds about twice as much and takes a bit longer to use. " //placeholder
+	icon_state = "supeyrette"
+	item_state = "supeyrette"
+	amount_per_transfer_from_this = 10
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
+	reagent_flags = INJECTABLE | DRAINABLE | AMOUNT_VISIBLE | REFILLABLE
+	volume = 10
+	preloaded_reagents = list("inaprovaline" = 10)
+	can_be_refilled = FALSE //For cargos
+	baseline_sprite = "supeyrette_inopravoline"
+	injtime = 4 //100% longer inject time for 100% more storage.
+
+
+/obj/item/reagent_containers/hypospray/autoinjector/large/chemmaters
+	icon_state = "supeyrette" //still missing the icons from doll.
+	item_state = "supeyrette"
+	baseline_sprite = "syrette"
+	preloaded_reagents = list()
