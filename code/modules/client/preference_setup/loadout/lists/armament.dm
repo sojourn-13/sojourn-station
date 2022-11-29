@@ -91,6 +91,10 @@
 	display_name = "katana \"Saya\" sheath"
 	path = /obj/item/clothing/accessory/holster/saber/saya
 
+/datum/gear/armament/holster/saber/machete
+	display_name = "machete scabbard"
+	path = /obj/item/clothing/accessory/holster/saber/machete
+
 /datum/gear/armament/holster/church
 	display_name = "Absolutist Sword Scabbard"
 	path = /obj/item/clothing/accessory/holster/saber/greatsword/churchprint
