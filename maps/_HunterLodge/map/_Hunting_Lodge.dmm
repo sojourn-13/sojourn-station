@@ -1996,8 +1996,10 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/machinery/power/smes/dummysimple{
-	output_level = 17000
+/obj/machinery/power/smes/buildable{
+	name = "simple power storage unit";
+	desc = "A overly simplified high-capacity superconducting magnetic energy storage (SMES) unit. It goes as far as to have big red arrows pointing to the switches, and indentations on the controles to allow even the blind or unable to read to set this SMES.";
+	skill_check = -30
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
