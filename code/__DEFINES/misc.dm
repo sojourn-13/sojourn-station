@@ -207,7 +207,7 @@
 //distance
 #define RANGE_ADJACENT -1
 
-#define UNTIL(X) while(!(X)) stoplag()
+//#define UNTIL(X) while(!(X)) stoplag() old one
 
 //Core implants
 #define CORE_ACTIVATED /datum/core_module/activatable
@@ -345,6 +345,8 @@
 
 //Prevent the master controller from starting automatically
 #define NO_INIT_PARAMETER "no-init"
+//Force the log directory to be something specific in the data/logs folder
+#define OVERRIDE_LOG_DIRECTORY_PARAMETER "log-directory"
 
 /// Required minimum values to see reagents in a beaker
 #define HUMAN_REQ_COG_FOR_REG 35

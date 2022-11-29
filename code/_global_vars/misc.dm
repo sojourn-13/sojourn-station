@@ -26,3 +26,7 @@ GLOBAL_LIST_INIT(custom_kits, list(
 		/obj/item/ammo_magazine/ammobox/light_rifle_257,
 		/obj/item/ammo_magazine/ammobox/light_rifle_257,
 		/obj/item/ammo_magazine/ammobox/light_rifle_257)))
+
+GLOBAL_VAR(log_directory)
+// LOGGING  MOVE ME //
+GLOBAL_PROTECT(log_directory)
