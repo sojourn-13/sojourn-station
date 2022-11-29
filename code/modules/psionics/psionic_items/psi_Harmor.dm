@@ -4,7 +4,7 @@
 // Psionic armor, seperate from weptools.dm because it uses a different type of vanishing code than temporary hand held items. -Kaz
 
 /obj/item/clothing/suit/space/occulHtist //In line with the syndicate spacesuit except not able to be taken off. Maybe give it some other bonuses too?
-	name = "Psion Armor"
+	name = "psion heavy armor"
 	icon_state = "armor"
 	item_state = "armor"
 	icon = 'icons/obj/psionic/occHicon.dmi'
@@ -58,6 +58,7 @@
 	desc = "This is a massive helmet with a large and durable visor, looking through which you see the world through the veil of nothingness itself. You are detached from reality and it cannot harm you. You control reality, not it controls you. \
 	This is a very good defense, but maintaining it requires constant concentration."
 	slot_flags = SLOT_HEAD
+	item_flags = THICKMATERIAL|BLOCK_GAS_SMOKE_EFFECT|LIGHT_OBSCURATION
 	matter = list()
 	armor_list = list(
 		melee = 60,
@@ -77,7 +78,7 @@
 	var/pointremoved = 0 //Did we take you your cog?
 
 	action_button_name = "Toggle Witchlight" //reflavor this so I can make it purple to go in line with the guns - Sigma
-	light_overlay = "helmet_light_occult" //Sadly this has to go in icons/obj/light_overlays because I can't figure out how to point it to a different one.
+	light_overlay = "helmet_light" //Sadly this has to go in icons/obj/light_overlays because I can't figure out how to point it to a different one.
 										  //Currently it's located in the icons/obj/light_overlays folder, proc is at /obj/item/clothing/head/on_update_icon(mob/user) -Sigma
 
 /obj/item/clothing/head/helmet/space/occultHhood/dropped()
@@ -104,6 +105,7 @@
 	icon_state = "gloves"
 	icon_override = 'icons/obj/psionic/occHmob.dmi'
 	slot_flags = SLOT_GLOVES
+	item_flags = THICKMATERIAL
 	siemens_coefficient = 1 //Insulated!
 	matter = list()
 	armor_list = list(
@@ -146,6 +148,7 @@
 	item_state = "shoes"
 	icon_state = "shoes"
 	icon_override = 'icons/obj/psionic/occHmob.dmi'
+	item_flags = THICKMATERIAL
 	slot_flags = SLOT_FEET
 	matter = list()
 	armor_list = list(

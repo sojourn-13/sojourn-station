@@ -291,3 +291,20 @@
 		owner.replace_in_slot(new /obj/item/clothing/suit/space/occulHtist, slot_wear_suit, skip_covering_check = TRUE)
 		owner.replace_in_slot(new /obj/item/clothing/gloves/occultHgloves, slot_gloves, skip_covering_check = TRUE)
 		owner.replace_in_slot(new /obj/item/clothing/head/helmet/space/occultHhood, slot_head, skip_covering_check = TRUE)
+
+/obj/item/organ/internal/psionic_tumor/proc/Light_psi_armor()
+	set category = "Psionic powers"
+	set name = "Void robe (6)"
+	set desc = "When applied, it creates an ultra-light protected cloak, spurring the wearer to new adventures in the kingdom of the king of dreams! Each part of the kit enhances the psion's thinking abilities and accelerates his step."
+	psi_point_cost = 6
+
+	if(pay_power_cost(psi_point_cost))
+		playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/hallucinations/i_see_you2.ogg','sound/effects/phasein.ogg'), 50, 1, 1, -3)
+		owner.visible_message(
+			SPAN_DANGER("[src.owner]'s Flesh and clothing merge together, tiny crumbs, small objects, streams of thoughts and ideas are pulled together to him, forming on his body a solid armor woven from matter itself, held together by only one will of the psion!"),
+			SPAN_DANGER("Your flesh and clothes, the surrounding space and the thoughts of others are put together, forming a massive obsidian armor on your body!")
+			)
+		owner.replace_in_slot(new /obj/item/clothing/shoes/occultLgreaves, slot_shoes, skip_covering_check = TRUE)
+		owner.replace_in_slot(new /obj/item/clothing/gloves/occultLgloves, slot_gloves, skip_covering_check = TRUE)
+		owner.replace_in_slot(new /obj/item/clothing/suit/space/occulLtist, slot_wear_suit, skip_covering_check = TRUE)
+		owner.replace_in_slot(new /obj/item/clothing/head/helmet/space/occultLhood, slot_head, skip_covering_check = TRUE)
