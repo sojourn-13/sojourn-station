@@ -15,6 +15,7 @@
  *		Action figures
  *		Plushies
  *		Toy cult sword
+ *		Misc. Crafting for export goods, by Wilson! They're functionally useless, so what better place to have them?
  */
 
 
@@ -1411,3 +1412,33 @@
 	name = "dipping bird model"
 	desc = "A favorite amongst clerks and desk jockeys."
 	icon_state= "dippybird"
+
+//Consumer!!!
+
+/obj/item/toy/consumer
+	name = "Notably Generic Consumer Concept"
+	desc = "Do NOT consume. Oh my goodness gracious."
+	icon = 'icons/obj/crafts_consumergood.dmi'
+
+/obj/item/toy/consumer/kit
+	name = "Notably Generic Consumer Kit"
+	desc = "Do NOT assemble. Oh me oh my."
+	icon = 'icons/obj/crafts_consumergood.dmi'
+	price_tag = 60
+
+/obj/item/toy/consumer/product
+	matter = list(MATERIAL_STEEL = 3)
+	name = " Notably Generic Consumer Product"
+	desc = "Do NOT produce."
+	icon = 'icons/obj/crafts_consumergood.dmi'
+	price_tag = 125
+
+/obj/item/toy/consumer/kit/toaster
+	name = "toaster assembly kit"
+	desc = "Everything you need to assemble your very own toolbox themed toaster!"
+	icon_state = "placeholder_device"
+
+/obj/item/toy/consumer/product/toaster
+	name = "toolbox toaster"
+	desc = "A toolbox themed toaster! Too bad there's no compatible outlets here. Only comes in red. Keep away from bathtubs."
+	icon_state = "toaster"

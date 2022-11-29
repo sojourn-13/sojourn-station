@@ -89,7 +89,6 @@
 		..()
 
 /obj/item/tool/hydrogen_sword/MouseDrop(over_object)
-	..()
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(fuel_cell, usr))
 		fuel_cell = null
 		if(active)
@@ -175,7 +174,6 @@
 		..()
 
 /obj/item/hydrogen_grenade/MouseDrop(over_object)
-	..()
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(fuel_cell, usr))
 		fuel_cell = null
 		if(armed)

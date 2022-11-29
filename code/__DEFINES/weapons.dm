@@ -46,19 +46,37 @@
 #define STRUCTURE_DAMAGE_DESTRUCTIVE 	2.0
 #define STRUCTURE_DAMAGE_BORING 		3
 
+
+/*
+Fire delay 1 = 600 rounds per minute
+Fire delay 2 = 300 rounds per minute
+Fire delay 3 = 200 rounds per minute
+Fire delay 4 = 150 rounds per minute
+Fire delay 5 = 120 rounds per minute
+Fire delay 6 = 100 rounds per minute
+Fire delay 7 = 85~ rounds per minute
+Fire delay 8 = 75  rounds per minute
+Fire delay 9 = 66  rounds per minute
+Fire delay 10 = 60 rounds per minute
+Fire delay 11 = 54 rounds per minute
+Fire delay 12 = 50 rounds per minute
+Fire delay 13 = 46 rounds per minute
+Fire delay 14 = 42 rounds per minute
+Fire delay 15 = 40 rounds per minute
+*/
+
 //Quick defines for fire modes
-#define FULL_AUTO_300		list(mode_name = "full auto",    mode_desc = "300 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 3  , icon="auto", damage_mult_add = -0.2)
-#define FULL_AUTO_400		list(mode_name = "full auto",    mode_desc = "400 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 2.5, icon="auto", damage_mult_add = -0.2)
-#define FULL_AUTO_600		list(mode_name = "full auto",    mode_desc = "600 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 2  , icon="auto", damage_mult_add = -0.2)
-#define FULL_AUTO_700		list(mode_name = "full auto",    mode_desc = "700 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 1.5, icon="auto", damage_mult_add = -0.2)
-#define FULL_AUTO_800		list(mode_name = "fuller auto",  mode_desc = "800 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 1,   icon="auto", damage_mult_add = -0.2)
+#define FULL_AUTO_150		list(mode_name = "full auto",    mode_desc = "150 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 4  , icon="auto", damage_mult_add = -0.2)
+#define FULL_AUTO_200		list(mode_name = "full auto",    mode_desc = "200 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 3  , icon="auto", damage_mult_add = -0.2)
+#define FULL_AUTO_300		list(mode_name = "full auto",    mode_desc = "300 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 2  , icon="auto", damage_mult_add = -0.2)
+#define FULL_AUTO_600		list(mode_name = "fuller auto",  mode_desc = "600 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 1  , icon="auto", damage_mult_add = -0.2)
 
-#define FULL_AUTO_300_NOLOSS		list(mode_name = "full auto",    mode_desc = "300 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 3  , icon="auto")
-#define FULL_AUTO_400_NOLOSS		list(mode_name = "full auto",    mode_desc = "400 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 2.5, icon="auto")
-#define FULL_AUTO_600_NOLOSS		list(mode_name = "full auto",    mode_desc = "600 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 2  , icon="auto")
-#define FULL_AUTO_800_NOLOSS		list(mode_name = "fuller auto",  mode_desc = "800 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 1,   icon="auto")
+#define FULL_AUTO_150_NOLOSS		list(mode_name = "full auto",    mode_desc = "150 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 4  , icon="auto")
+#define FULL_AUTO_200_NOLOSS		list(mode_name = "full auto",    mode_desc = "200 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 3  , icon="auto")
+#define FULL_AUTO_300_NOLOSS		list(mode_name = "full auto",    mode_desc = "300 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 2  , icon="auto")
+#define FULL_AUTO_600_NOLOSS		list(mode_name = "fuller auto",  mode_desc = "600 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 1,   icon="auto")
 
-#define SEMI_AUTO_NODELAY	list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=0.2, move_delay=null, icon="semi") //Some delay
+#define SEMI_AUTO_NODELAY	list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=0, move_delay=null, icon="semi") //Some delay
 
 #define BURST_2_ROUND		list(mode_name="2-round bursts", mode_desc = "Short, two shot bursts",     burst=2, fire_delay=null, move_delay=2, icon="burst", damage_mult_add = -0.2)
 #define BURST_3_ROUND		list(mode_name="3-round bursts", mode_desc = "Short, three shot bursts",   burst=3, fire_delay=null, move_delay=4, icon="burst", damage_mult_add = -0.2)
@@ -75,8 +93,8 @@
 #define WEAPON_NORMAL		list(mode_name="standard", burst =1, icon="semi")
 #define WEAPON_CHARGE		list(mode_name="charge mode", mode_desc="Hold down the trigger, and let loose a more powerful shot", mode_type = /datum/firemode/charge, icon="charge")
 
-#define STUNBOLT			list(mode_name="stun", mode_desc="Stun bolt until they're eating the floortiles", projectile_type=/obj/item/projectile/beam/stun, item_modifystate="stun", fire_sound='sound/weapons/Taser.ogg', icon="stun")
-#define LETHAL				list(mode_name="kill", mode_desc="To defeat the Vagabond, shoot it until it dies", projectile_type=/obj/item/projectile/beam, item_modifystate="kill", fire_sound='sound/weapons/Laser.ogg', icon="kill")
+#define STUNBOLT			list(mode_name="stun", mode_desc="Stun bolt until they're eating the floortiles", projectile_type=/obj/item/projectile/beam/stun, item_modifystate="stun", fire_sound='sound/weapons/energy/Taser.ogg', icon="stun")
+#define LETHAL				list(mode_name="kill", mode_desc="To defeat the Vagabond, shoot it until it dies", projectile_type=/obj/item/projectile/beam, item_modifystate="kill", fire_sound='sound/weapons/energy/Laser.ogg', icon="kill")
 
 
 #define VIG_OVERCHARGE_GEN 0.05

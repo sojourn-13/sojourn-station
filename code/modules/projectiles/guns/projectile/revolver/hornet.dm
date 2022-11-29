@@ -15,9 +15,12 @@
 	penetration_multiplier = 1
 	init_recoil = HANDGUN_RECOIL(1) //So it can accully be used
 	zoom_factors = list(0.2)
-	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	serial_type = "SA"
+
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.6 // 60 vig

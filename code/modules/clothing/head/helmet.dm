@@ -701,8 +701,8 @@
 	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/head/helmet/laserproof/marshal
-	icon_state = "ironhammer_ablative"
-	item_state = "ironhammer_ablative"
+	icon_state = "ablative_ironhammer"
+	item_state = "ablative_ironhammer"
 
 /obj/item/clothing/head/helmet/laserproof/iron_lock_security
 	name = "outdated ablative helmet"
@@ -742,12 +742,43 @@
 	name = "bucket-helm"
 	desc = "A bucket with two holes for eyes and some smaller ones for ventilation, with steel added to gain some protection. One may say, <i>'Situla Vult!'</i>."
 	icon_state = "hm_greathelm"
-	armor_list = list(melee = 27, bullet = 29,energy = 27, bomb = 3, bio = 1, rad = 0)
+	armor_list = list(melee = 27, bullet = 15,energy = 25, bomb = 12, bio = 1, rad = 0) // Only difference with handmade combat helmet is 2 sheets of metal, shouldn't be that far superior.
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS|EYES
 	siemens_coefficient = 0.6
 	price_tag = 85
 	obscuration = MEDIUM_OBSCURATION
+
+/obj/item/clothing/head/helmet/handmade/scavengerhelmet
+	name = "scavenger helmet"
+	desc = "A sturdy, handcrafted helmet. It's well balanced and sits low on your head, with padding on the inside."
+	icon_state = "scav_helmet"
+	armor_list = list(melee = 35, bullet = 20, energy = 25, bomb = 25, bio = 0, rad = 0)
+	price_tag = 200
+	max_upgrades = 1 // Good baseline already
+
+/obj/item/clothing/head/helmet/handmade/scavengerhelmet/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["scavenger grey"] = "scav_helmet"
+	options["scavenger brown"] = "quak" // Quad damage!
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] colors.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/armor/helmet/penance
 	name = "penance helmet"

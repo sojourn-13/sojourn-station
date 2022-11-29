@@ -334,6 +334,9 @@
 	spawn(1) if(src) qdel(src)
 */
 /obj/plant_spawner/New()
+	addtimer(CALLBACK(src, /obj/plant_spawner/proc/spawn_growth), 2)
+
+/obj/plant_spawner/proc/spawn_growth()
 	var/datum/seed/S = plant_controller.seeds[seedtype]
 	S.harvest(loc,0,0,1)
 	spawn(5) if(src) qdel(src)
@@ -346,6 +349,9 @@
 
 /obj/plant_spawner/grass
 	seedtype = "grass"
+
+/obj/plant_spawner/wheat
+	seedtype = "wheat"
 
 /obj/plant_spawner/poppy
 	seedtype = "poppies"

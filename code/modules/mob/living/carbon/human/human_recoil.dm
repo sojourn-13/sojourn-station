@@ -15,5 +15,7 @@
 
 	if(usr.stats.getPerk(PERK_PERFECT_SHOT))
 		base_recoil -= 0.4 //less recoil if your a good shot
+	if(usr.stats.getPerk(PERK_SMARTLINK))
+		base_recoil -= 0.1 //Worse than kriosans but probably enough to matter
 
 	add_recoil(base_recoil)

@@ -4,6 +4,7 @@
 	allowed_roles = list("Premier")
 	slot = slot_wear_suit
 	sort_category = "Faction: Command"
+	cost = 0
 
 /datum/gear/factioncommand/cloakcaptain
 	display_name = "cloak, premier"

@@ -175,15 +175,10 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aR" = (
-/obj/structure/sink{
-	density = 1;
-	desc = "A small fountain of polished stone and has a small pump at the bottom that helps push fresh water.";
-	icon_state = "BaptismFont_Water";
-	name = "Water Fountain"
-	},
 /obj/effect/floor_decal/spline/fancy{
 	color = "#6c3d26"
 	},
+/obj/structure/sink/basion,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aS" = (
@@ -1968,10 +1963,6 @@
 /obj/machinery/honey_extractor,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
-"mP" = (
-/obj/item/gun/projectile/boltgun/sci,
-/turf/simulated/wall/wood,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
 "np" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1;
@@ -2273,12 +2264,7 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "rd" = (
-/obj/structure/sink{
-	density = 1;
-	desc = "A small fountain of polished stone and has a small pump at the bottom that helps push fresh water.";
-	icon_state = "BaptismFont_Water";
-	name = "Water Fountain"
-	},
+/obj/structure/sink/basion,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "rg" = (
@@ -2674,7 +2660,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "wM" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/boltgun/light_wood,
+/obj/item/gun/projectile/boltgun/light,
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small/hv,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -9499,7 +9485,7 @@ ar
 ar
 ar
 ar
-mP
+WQ
 jj
 jj
 Cb

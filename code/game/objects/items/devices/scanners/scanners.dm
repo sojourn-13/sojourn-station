@@ -53,7 +53,7 @@
 /obj/item/device/scanner/proc/can_use(mob/user)
 	if (user.incapacitated())
 		return
-	if (!user.check_dexterity(DEXTERITY_COMPLEX_TOOLS))
+	if (!user.IsAdvancedToolUser())
 		return
 	if(!cell_use_check(charge_per_use))
 		to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
@@ -113,7 +113,6 @@
 		update_icon()
 
 /obj/item/device/scanner/MouseDrop(over_object)
-	..()
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
 		cell = null
 

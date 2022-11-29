@@ -116,7 +116,6 @@
 
 // Removing the gun, but still connected
 /obj/item/hydrogen_fuel_cell/backpack/MouseDrop(over_object)
-	..()
 	if(the_gun)
 		usr.visible_message(
 								SPAN_NOTICE("[usr] detach the [the_gun.name] from the [src.name]."),

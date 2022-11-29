@@ -2129,7 +2129,7 @@
 /obj/structure/table/steel,
 /obj/item/computer_hardware/hard_drive/portable/design/security,
 /obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/naga,
+/obj/item/computer_hardware/hard_drive/portable/design/guns/lamia,
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/dark,
 /turf/simulated/floor/tiled/dark/golden,
 /area/shuttle/skipjack_area)

@@ -40,5 +40,5 @@
 /obj/item/craft/attackby(obj/item/I, mob/living/user)
 	return continue_crafting(I, user)
 
-/obj/item/craft/receive_mouse_drop(atom/A, mob/user, src_location, over_location, src_control, over_control, params)
+/obj/item/craft/MouseDrop_T(atom/A, mob/user, src_location, over_location, src_control, over_control, params)
 	return continue_crafting(A, user)

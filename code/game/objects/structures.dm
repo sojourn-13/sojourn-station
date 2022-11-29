@@ -5,6 +5,7 @@
 	var/climbable
 	var/breakable
 	var/parts
+	var/list/climbers = list()
 
 /**
  * An overridable proc used by SSfalling to determine whether if the object deals
@@ -74,13 +75,40 @@
 
 	do_climb(usr)
 
-/obj/structure/receive_mouse_drop(mob/target, mob/user)
+/obj/structure/MouseDrop_T(mob/target, mob/user)
 
 	var/mob/living/H = user
 	if(istype(H) && can_climb(H) && target == user)
 		do_climb(target)
 	else
 		return ..()
+
+/obj/structure/proc/can_climb(var/mob/living/user, post_climb_check=0)
+	if (!climbable || !can_touch(user) || (!post_climb_check && (user in climbers)))
+		return 0
+
+	if (!user.Adjacent(src))
+		to_chat(user, SPAN_DANGER("You can't climb there, the way is blocked."))
+		return 0
+
+	var/obj/occupied = turf_is_crowded()
+	if(occupied)
+		to_chat(user, SPAN_DANGER("There's \a [occupied] in the way."))
+		return 0
+	return 1
+
+/obj/structure/proc/turf_is_crowded()
+	var/turf/T = get_turf(src)
+	if(!T || !istype(T))
+		return 0
+	for(var/obj/O in T.contents)
+		if(istype(O,/obj/structure))
+			var/obj/structure/S = O
+			if(S.climbable) continue
+		//ON_BORDER structures are handled by the Adjacent() check.
+		if(O && O.density && !(O.flags & ON_BORDER))
+			return O
+	return 0
 
 /obj/structure/proc/neighbor_turf_passable()
 	var/turf/T = get_step(src, src.dir)
@@ -95,6 +123,30 @@
 			else if(O.density == 1)
 				return 0
 	return 1
+
+/obj/structure/proc/do_climb(mob/living/user)
+	if (!can_climb(user))
+		return
+
+	user.visible_message(SPAN_WARNING("[user] starts climbing onto \the [src]!"))
+	climbers |= user
+
+	var/delay = (issmall(user) ? 20 : 34) * user.mod_climb_delay
+	var/duration = max(delay * user.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66)
+	if(!do_after(user, duration, src))
+		climbers -= user
+		return
+
+	if (!can_climb(user, post_climb_check=1))
+		climbers -= user
+		return
+
+	user.forceMove(get_turf(src))
+
+	if (get_turf(user) == get_turf(src))
+		user.visible_message(SPAN_WARNING("[user] climbs onto \the [src]!"))
+	climbers -= user
+	add_fingerprint(user)
 
 /obj/structure/proc/structure_shaken()
 	for(var/mob/living/M in climbers)

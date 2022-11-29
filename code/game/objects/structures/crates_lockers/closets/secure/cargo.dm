@@ -34,7 +34,7 @@
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 	else
-		new /obj/item/gun/projectile/clarissa/makarov(src)
+		new /obj/item/gun/projectile/makarov(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 	if(prob(25))
@@ -171,9 +171,9 @@
 				new /obj/item/ammo_magazine/rifle_75(src)
 				new /obj/item/ammo_magazine/rifle_75(src)
 			else
-				new /obj/item/gun/projectile/automatic/bren(src)
-				new /obj/item/ammo_magazine/light_rifle_257(src)
-				new /obj/item/ammo_magazine/light_rifle_257(src)
+				new /obj/item/gun/projectile/automatic/ak47/makeshift(src)
+				new /obj/item/ammo_magazine/rifle_75(src)
+				new /obj/item/ammo_magazine/rifle_75(src)
 		if("SHOTGUN")
 			if(prob(50))
 				new /obj/item/gun/projectile/shotgun/doublebarrel(src)
@@ -213,7 +213,6 @@
 				new /obj/item/cell/medium(src)
 				new /obj/item/cell/medium(src)
 
-
 	//pistols
 	new /obj/item/gun/projectile/automatic/slaught_o_matic(src)
 
@@ -242,18 +241,19 @@
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 			else
-				new /obj/item/gun/projectile/clarissa/makarov(src)
+				new /obj/item/gun/projectile/makarov(src)
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		if("HEAVY_PISTOL")
 			if(prob(50))
-				new /obj/item/gun/projectile/avasarala(src)
-				new /obj/item/ammo_magazine/kurtz_50(src)
-				new /obj/item/ammo_magazine/kurtz_50(src)
-			else
 				new /obj/item/gun/projectile/basilisk(src)
 				new /obj/item/ammo_magazine/kurtz_50(src)
 				new /obj/item/ammo_magazine/kurtz_50(src)
+			else
+				new /obj/item/gun/projectile/revolver/longboi(src)
+				new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+				new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+				new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
 		if("EGUN_P")
 			if(prob(50))
 				new /obj/item/gun/energy/gun(src)
@@ -357,9 +357,9 @@
 				new /obj/item/ammo_magazine/rifle_75(src)
 				new /obj/item/ammo_magazine/rifle_75(src)
 			else
-				new /obj/item/gun/projectile/automatic/bren(src)
-				new /obj/item/ammo_magazine/light_rifle_257(src)
-				new /obj/item/ammo_magazine/light_rifle_257(src)
+				new /obj/item/gun/projectile/automatic/ak47/makeshift(src)
+				new /obj/item/ammo_magazine/rifle_75(src)
+				new /obj/item/ammo_magazine/rifle_75(src)
 		if("SHOTGUN")
 			if(prob(50))
 				new /obj/item/gun/projectile/shotgun/doublebarrel(src)
@@ -428,18 +428,19 @@
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 			else
-				new /obj/item/gun/projectile/clarissa/makarov(src)
+				new /obj/item/gun/projectile/makarov(src)
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		if("HEAVY_PISTOL")
 			if(prob(50))
-				new /obj/item/gun/projectile/avasarala(src)
-				new /obj/item/ammo_magazine/kurtz_50(src)
-				new /obj/item/ammo_magazine/kurtz_50(src)
-			else
 				new /obj/item/gun/projectile/basilisk(src)
 				new /obj/item/ammo_magazine/kurtz_50(src)
 				new /obj/item/ammo_magazine/kurtz_50(src)
+			else
+				new /obj/item/gun/projectile/revolver/longboi(src)
+				new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+				new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+				new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
 		if("EGUN_P")
 			if(prob(50))
 				new /obj/item/gun/energy/gun(src)
@@ -563,19 +564,14 @@
 	//longarms
 	switch(main_weapon_cache)
 		if("SMG")
-			new /obj/item/gun/projectile/automatic/greasegun(src)
+			new /obj/item/gun/projectile/automatic/luger(src)
 			new /obj/item/ammo_magazine/smg_35(src)
 			new /obj/item/ammo_magazine/smg_35(src)
 		if("LMG")
 			//Well not a lmg at the top its still a good gun to roll in its place
-			if(prob(50))
-				new /obj/item/gun/projectile/automatic/nordwind/strelki(src)
-				new /obj/item/ammo_magazine/rifle_75(src)
-				new /obj/item/ammo_magazine/rifle_75(src)
-			else
-				new /obj/item/gun/projectile/automatic/bren(src)
-				new /obj/item/ammo_magazine/light_rifle_257(src)
-				new /obj/item/ammo_magazine/light_rifle_257(src)
+			new /obj/item/gun/projectile/automatic/nordwind/strelki(src)
+			new /obj/item/ammo_magazine/rifle_75(src)
+			new /obj/item/ammo_magazine/rifle_75(src)
 		if("SHOTGUN")
 			new /obj/item/gun/projectile/shotgun/pump(src)
 			new /obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet(src)

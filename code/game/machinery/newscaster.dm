@@ -298,9 +298,8 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	if(!src.ispowered || src.isbroken)
 		return
 
-	if (!user.check_dexterity(DEXTERITY_SIMPLE_MACHINES))
-		to_chat(user, SPAN_WARNING("You are not nimble enough to use this device."))
-		return
+	if(!user.IsAdvancedToolUser())
+		return 0
 
 	if(ishuman(user) || issilicon(user))
 		var/mob/living/human_or_robot_user = user

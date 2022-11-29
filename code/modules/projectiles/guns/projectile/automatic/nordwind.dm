@@ -30,6 +30,9 @@
 		)
 	serial_type = "SD GmbH"
 
+	wield_delay = 1.5 SECOND
+	wield_delay_factor = 0.4 // 40 vig to insta wield , heavy class rifle
+
 /obj/item/gun/projectile/automatic/nordwind/watchtower
 	name = "\"Watchtower\" DMR"
 	desc = "A designated marksman rifle designed in cooperation between the marshals and the blackshield, made with lightweight materials and simple, easy to maintain components. \
@@ -81,6 +84,9 @@
 	sawn = /obj/item/gun/projectile/automatic/nordwind/strelki/sawn
 	serial_type = "NM"
 
+	wield_delay = 1.3 SECOND
+	wield_delay_factor = 0.3 // 30 vig to insta wield , not heavy class but not light
+
 /obj/item/gun/projectile/automatic/nordwind/update_icon()
 	..()
 
@@ -116,3 +122,6 @@
 	damage_multiplier = 0.8
 	saw_off = FALSE
 	serial_type = "NM"
+
+	wield_delay = 0.8 SECOND
+	wield_delay_factor = 0.2 // 20 vig to insta wield, sawn

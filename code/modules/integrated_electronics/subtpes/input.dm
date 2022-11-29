@@ -77,7 +77,7 @@
 
 /obj/item/integrated_circuit/input/numberpad/ask_for_input(mob/user)
 	var/new_input = input(user, "Enter a number, please.",displayed_name) as null|num
-	if(isnum_safe(new_input) && user.check_dexterity(DEXTERITY_KEYBOARDS))
+	if(isnum_safe(new_input) && user.IsAdvancedToolUser())
 		set_pin_data(IC_OUTPUT, 1, new_input)
 		push_data()
 		activate_pin(1)
@@ -88,7 +88,7 @@
 /obj/item/integrated_circuit/input/numberpad/OnICTopic(href_list, mob/user)
 	if(href_list["enter_number"])
 		var/new_input = input(user, "Enter a number, please.", displayed_name) as num|null
-		if(isnum_safe(new_input) && user.check_dexterity(DEXTERITY_KEYBOARDS))
+		if(isnum_safe(new_input) && user.IsAdvancedToolUser())
 			set_pin_data(IC_OUTPUT, 1, new_input)
 			push_data()
 			activate_pin(1)
@@ -109,7 +109,7 @@
 
 /obj/item/integrated_circuit/input/textpad/ask_for_input(mob/user)
 	var/new_input = sanitize(input(user, "Enter some words, please.", displayed_name) as text|null)
-	if(istext(new_input) && user.check_dexterity(DEXTERITY_KEYBOARDS))
+	if(istext(new_input) && user.IsAdvancedToolUser())
 		set_pin_data(IC_OUTPUT, 1, new_input)
 		push_data()
 		activate_pin(1)
@@ -121,7 +121,7 @@
 	if(href_list["enter_words"])
 		var/new_input = input(user, "Enter some words, please.", displayed_name)
 		new_input = sanitize(new_input)
-		if(istext(new_input) && user.check_dexterity(DEXTERITY_KEYBOARDS))
+		if(istext(new_input) && user.IsAdvancedToolUser())
 			set_pin_data(IC_OUTPUT, 1, new_input)
 			push_data()
 			activate_pin(1)
@@ -142,7 +142,7 @@
 
 /obj/item/integrated_circuit/input/colorpad/ask_for_input(mob/user)
 	var/new_color = input(user, "Enter a color, please.", "Color", "#ffffff") as color|null
-	if(new_color && user.check_dexterity(DEXTERITY_KEYBOARDS))
+	if(new_color && user.IsAdvancedToolUser())
 		set_pin_data(IC_OUTPUT, 1, new_color)
 		push_data()
 		activate_pin(1)
@@ -153,7 +153,7 @@
 /obj/item/integrated_circuit/input/colorpad/OnICTopic(href_list, mob/user)
 	if(href_list["enter_color"])
 		var/new_color = input(user, "Enter a color, please.", "Color", "#ffffff") as color|null
-		if(new_color && user.check_dexterity(DEXTERITY_KEYBOARDS))
+		if(new_color && user.IsAdvancedToolUser())
 			set_pin_data(IC_OUTPUT, 1, new_color)
 			push_data()
 			activate_pin(1)
@@ -855,7 +855,7 @@
 	.["None (Dangerous)"] = "tport=random"
 
 /obj/item/integrated_circuit/input/teleporter_locator/OnICTopic(href_list, mob/user)
-	if(href_list["tport"] && user.check_dexterity(DEXTERITY_KEYBOARDS))
+	if(href_list["tport"] && user.IsAdvancedToolUser())
 		var/output = href_list["tport"] == "random" ? null : locate(href_list["tport"])
 		set_pin_data(IC_OUTPUT, 1, output && WEAKREF(output))
 		push_data()
@@ -1238,7 +1238,7 @@
 			.["[I]"] = "select=[I]"
 
 /obj/item/integrated_circuit/input/selection/OnICTopic(href_list, mob/user)
-	if(href_list["select"] && user.check_dexterity(DEXTERITY_KEYBOARDS))
+	if(href_list["select"] && user.IsAdvancedToolUser())
 		var/selected = sanitize(href_list["select"])
 		if(selected)
 			selected_value = selected

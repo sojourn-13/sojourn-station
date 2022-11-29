@@ -19,11 +19,14 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	auto_rack = TRUE
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
 		BURST_5_ROUND
 		)
+
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.3 // 30 vig for insta wield
 
 
 //Automatic firing

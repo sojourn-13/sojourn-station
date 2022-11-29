@@ -18,6 +18,9 @@
 	var/list/rockets = new/list()
 	serial_type = "SA"
 
+	wield_delay = 2 SECOND
+	wield_delay_factor = 0.6 // 60 vig , heavy stuff
+
 /obj/item/gun/launcher/rocket/examine(mob/user)
 	if(!..(user, 2))
 		return

@@ -5,7 +5,7 @@
 	wielded_icon = "metalbat1"
 	item_state = "metalbat0"
 	attack_verb = list("smashed", "beaten", "slammed", "smacked", "struck", "battered", "bonked")
-	hitsound = 'sound/weapons/genhit3.ogg'
+	hitsound = 'sound/weapons/blunthit.ogg' // Ouch!
 	default_material = MATERIAL_WOOD
 	force_divisor = 0.84           // 15 when unwielded 22 when wielded with weight 18 (wood)
 	slot_flags = SLOT_BACK

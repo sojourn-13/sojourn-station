@@ -8,6 +8,7 @@
 	drawChargeMeter = FALSE
 	max_shells = 6
 	caliber = CAL_PISTOL
+	fire_sound = 'sound/weapons/guns/fire/9mm_revolver.ogg'
 	origin_tech = list(TECH_COMBAT = 10, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/pistol_35
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)

@@ -310,12 +310,11 @@
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(
-		/obj/item/gun/projectile/clarissa,
+		/obj/item/gun/projectile/makarov,
 		/obj/item/gun/projectile/colt,
 		/obj/item/gun/projectile/basilisk,
 		/obj/item/gun/projectile/giskard,
 		/obj/item/gun/projectile/gyropistol,
-		/obj/item/gun/projectile/handmade_pistol,
 		/obj/item/gun/projectile/lamia,
 		/obj/item/gun/projectile/mk58,
 		/obj/item/gun/projectile/revolver/lemant,
@@ -344,6 +343,40 @@
 	cut_overlays()
 	if(contents.len)
 		add_overlay(image('icons/inventory/pockets/icon.dmi', "pistol_layer"))
+
+/obj/item/storage/pouch/pistol_holster/cowboy
+	name = "belt holster"
+	desc = "Can hold two handguns in. Quick on the draw!"
+	icon_state = "double_holster"
+	item_state = "double_holster"
+	price_tag = 100
+	matter = list(MATERIAL_BIOMATTER = 24) // Two holsters in one!
+	slot_flags = SLOT_BELT|SLOT_DENYPOCKET
+	max_w_class = ITEM_SIZE_HUGE
+	storage_slots = 2
+
+/obj/item/storage/pouch/pistol_holster/cowboy/update_icon()
+	..()
+	cut_overlays()
+	if(contents.len)
+		add_overlay(image('icons/inventory/pockets/icon.dmi', "gun_[contents.len]"))
+
+/obj/item/storage/pouch/kniferig
+	name = "throwing knife rig"
+	desc = "A rig for professionals at knife throwing."
+	icon_state = "knife"
+	item_state = "knife"
+	price_tag = 50
+	storage_slots = 4
+	can_hold = list(
+		/obj/item/stack/thrown/throwing_knife
+		)
+
+/obj/item/storage/pouch/kniferig/update_icon()
+	..()
+	cut_overlays()
+	if(contents.len)
+		add_overlay(image('icons/inventory/pockets/icon.dmi', "knife_[contents.len]"))
 
 /obj/item/storage/pouch/baton_holster
 	name = "baton sheath"

@@ -729,7 +729,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		update_icon()
 
 /obj/item/clothing/mask/vape/MouseDrop(over_object)
-	..()
 	if(screw)
 		if((loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
 			cell = null

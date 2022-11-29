@@ -8,7 +8,7 @@
 	name = "\"Makarov\" pistol"
 	desc = "Ammo not induced."
 	item_cost = 2 //Ammo not induced
-	path = /obj/item/gun/projectile/clarissa/makarov
+	path = /obj/item/gun/projectile/makarov
 
 /datum/uplink_item/item/visible_weapons/dartgun
 	name = "Dart Gun"
@@ -30,7 +30,7 @@
 	item_cost = 6
 	path = /obj/item/storage/box/syndie_kit/pistol
 
-/datum/uplink_item/item/visible_weapons/akurra
+/datum/uplink_item/item/visible_weapons/socom
 	name = "Silenced 12mm pistol"
 	item_cost = 8
 	path = /obj/item/storage/box/syndie_kit/hpistol
@@ -39,11 +39,6 @@
 	name = "12mm Hornet Revolver"
 	item_cost = 8
 	path = /obj/item/storage/box/syndie_kit/painrevolver
-
-/datum/uplink_item/item/visible_weapons/riggedlaser
-	name = "Exosuit (APLU) Rigged Laser"
-	item_cost = 4
-	path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/riggedlaser
 
 /datum/uplink_item/item/visible_weapons/revolver
 	name = "Revolver"

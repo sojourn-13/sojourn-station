@@ -2,6 +2,7 @@
 	name = "\"Havelock\" revolver"
 	desc = "A cheap H&S J-frame revolver, simple, reliable, uses 9mm."
 	icon = 'icons/obj/guns/projectile/detective.dmi'
+	fire_sound = 'sound/weapons/guns/fire/9mm_revolver.ogg'
 	icon_state = "detective"
 	drawChargeMeter = FALSE
 	w_class = ITEM_SIZE_SMALL
@@ -16,6 +17,8 @@
 	init_recoil = HANDGUN_RECOIL(0.5) //Rule of Cool
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
 	serial_type = "H&S"
+
+	wield_delay = 0 SECOND //god it's bad
 
 /obj/item/gun/projectile/revolver/detective/update_icon()
 	..()

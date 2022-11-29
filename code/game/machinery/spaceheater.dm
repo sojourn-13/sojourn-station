@@ -5,8 +5,6 @@
 	icon_state = "sheater0"
 	name = "space heater"
 	desc = "Made by space amish using traditional space techniques, this heater is guaranteed not to set the colony on fire."
-	required_interaction_dexterity = DEXTERITY_SIMPLE_MACHINES
-
 	var/obj/item/cell/large/cell
 	var/on = 0
 	var/set_temperature = T0C + 50	//K

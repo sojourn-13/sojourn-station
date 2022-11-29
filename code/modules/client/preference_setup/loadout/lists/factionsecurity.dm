@@ -4,6 +4,7 @@
 	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_wear_suit
 	sort_category = "Faction: Security"
+	cost = 0
 
 /datum/gear/factionsecurity/beretcommander
 	display_name = "beret, security head"
@@ -247,21 +248,18 @@
 	display_name = "security HUD"
 	path = /obj/item/clothing/glasses/hud/security
 	allowed_roles = list(JOBS_SECURITY)
-	slot = slot_glasses
 	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/secpatch
 	display_name = "HUD eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch/secpatch
 	allowed_roles = list(JOBS_SECURITY)
-	slot = slot_glasses
 	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/security_tact
 	display_name = "tactical security HUD"
 	path = /obj/item/clothing/glasses/sechud/tactical
 	allowed_roles = list(JOBS_SECURITY)
-	slot = slot_glasses
 	sort_category = "Faction: Security"
 	cost = 2 //has flash protection
 
@@ -269,7 +267,6 @@
 	display_name = "HUD Glasses"
 	path = /obj/item/clothing/glasses/sechud
 	allowed_roles = list(JOBS_SECURITY)
-	slot = slot_glasses
 	sort_category = "Faction: Security"
 	cost = 2 //has flash protection
 

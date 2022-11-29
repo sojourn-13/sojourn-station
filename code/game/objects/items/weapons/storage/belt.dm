@@ -187,7 +187,6 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
-		/obj/item/gun/energy/ntpistol,
 		/obj/item/device/binoculars
 	)
 
@@ -348,7 +347,6 @@
 		/obj/item/gun/projectile/mk58,
 		/obj/item/gun/projectile/revolver/lemant,
 		/obj/item/gun/energy/gun,
-		/obj/item/gun/projectile/clarissa,
 		/obj/item/gun/projectile/giskard,
 		/obj/item/gun/projectile/olivaw,
 		/obj/item/gun/projectile/revolver/detective,
@@ -458,7 +456,6 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
-		/obj/item/gun/energy/ntpistol,
 		/obj/item/device/binoculars
 	)
 

@@ -245,7 +245,7 @@
 		..()
 
 
-/obj/structure/window/reinforced/bioreactor/receive_mouse_drop(mob/victim, mob/user as mob)
+/obj/structure/window/reinforced/bioreactor/MouseDrop_T(mob/victim, mob/user as mob)
 	if(!ismob(victim) || !ishuman(user) || victim.anchored)
 		return
 	var/base_chance = 70

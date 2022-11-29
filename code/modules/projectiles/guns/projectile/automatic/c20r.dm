@@ -27,10 +27,13 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_SCOPE, GUN_MAGWELL)
 
 	init_firemodes = list(
-		FULL_AUTO_400_NOLOSS,
+		FULL_AUTO_200_NOLOSS,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND_NOLOSS
 		)
+
+	wield_delay = 0.5 SECOND
+	wield_delay_factor = 0.1 // 10 vig
 
 /obj/item/gun/projectile/automatic/c20r/update_icon()
 	cut_overlays()

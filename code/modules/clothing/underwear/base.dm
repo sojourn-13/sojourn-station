@@ -18,7 +18,6 @@
 	DelayedEquipUnderwear(user, target)
 
 /obj/item/underwear/MouseDrop(var/atom/target)
-	..()
 	DelayedEquipUnderwear(usr, target)
 
 /obj/item/underwear/proc/CanEquipUnderwear(var/mob/user, var/mob/living/carbon/human/H)

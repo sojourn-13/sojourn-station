@@ -261,7 +261,6 @@
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/template_noop)
 "bb" = (
-/obj/item/gun/projectile/handmade_pistol,
 /obj/machinery/power/port_gen/os_generator,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/template_noop)

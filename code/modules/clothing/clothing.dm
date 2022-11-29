@@ -17,6 +17,11 @@
 
 	//Used for hardsuits. If false, this piece cannot be retracted while the core module is engaged
 	var/retract_while_active = TRUE
+	blacklist_upgrades = list(
+							/obj/item/tool_upgrade/augment = TRUE,
+							/obj/item/tool_upgrade/refinement = TRUE,
+							/obj/item/gun_upgrade = TRUE, // Goodbye tacticool clothing
+							/obj/item/tool_upgrade/artwork_tool_mod = TRUE)
 
 /obj/item/clothing/Initialize(mapload, ...)
 	. = ..()
@@ -624,7 +629,7 @@ BLIND     // can't see anything
 		/obj/item/reagent_containers/food/drinks/flask,
 		/obj/item/device/radio,
 		/obj/item/clothing/mask,
-		/obj/item/storage/backpack/duffelbag/guncase,
+		/obj/item/storage/backpack/guncase,
 		/obj/item/implant/carrion_spider/holographic)
 	slot_flags = SLOT_OCLOTHING
 	var/blood_overlay_type = "suit"

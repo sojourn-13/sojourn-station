@@ -22,9 +22,11 @@
 	init_recoil = LMG_RECOIL(0.4)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		FULL_AUTO_400_NOLOSS
+		FULL_AUTO_600_NOLOSS
 		)
 	serial_type = "NM"
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.3 // Heavy smg , 30 vig to insta wield
 
 /obj/item/gun/projectile/automatic/specop/update_icon()
 	..()

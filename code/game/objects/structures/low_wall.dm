@@ -120,7 +120,7 @@
 
 //Drag and drop onto low walls. Copied from tables
 //This is mainly so that janiborg can put things on tables
-/obj/structure/low_wall/receive_mouse_drop(atom/A, mob/user, src_location, over_location, src_control, over_control, params)
+/obj/structure/low_wall/MouseDrop_T(atom/A, mob/user, src_location, over_location, src_control, over_control, params)
 	if(istype(A.loc, /mob))
 		user.unEquip(A, loc)
 		set_pixel_click_offset(A, params)
@@ -154,7 +154,8 @@
 /obj/structure/low_wall/proc/check_cover(obj/item/projectile/P, turf/from)
 	if (get_dist(P.starting, loc) <= 1) //Simulates firing over the low wall
 		return TRUE
-	//For some reason there was an IF(TRUE) here, re-add if it breaks anything to have it removed - Wizard
+	if(get_dist(loc, P.trajectory.target) > 1 ) // Target turf must be adjacent for it to count as cover
+		return TRUE
 	if(ismob(P.original))
 		var/mob/M = P.original
 		if(M.lying)

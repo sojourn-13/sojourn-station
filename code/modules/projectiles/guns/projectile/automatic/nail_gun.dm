@@ -26,11 +26,14 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_SCOPE, GUN_MAGWELL)
 
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
 	serial_type = "GP"
+
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.2 // SMG level
 
 /obj/item/gun/projectile/automatic/nail_gun/update_icon()
 	..()

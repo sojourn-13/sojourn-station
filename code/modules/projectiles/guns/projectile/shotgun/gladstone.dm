@@ -11,12 +11,16 @@
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.1 //Combat shotgun shouldn't be worse than makeshift shotgun
 	ammo_type = /obj/item/ammo_casing/shotgun
+	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	price_tag = 850
 	init_recoil = RIFLE_RECOIL(1.2)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/gladstone/sawn
 	serial_type = "H&S"
+
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.4 // 40 vig
 
 /obj/item/gun/projectile/shotgun/pump/gladstone/sawn
 	name = "\"Gladstone\" stakeout shotgun"
@@ -32,6 +36,9 @@
 	price_tag = 550
 	init_recoil = RIFLE_RECOIL(2.4)
 	saw_off = FALSE
+
+	wield_delay = 0.7 SECOND
+	wield_delay_factor = 0.3 // 30 vig
 
 /obj/item/gun/projectile/shotgun/pump/gladstone/queen
 	name = "\"Fallen Empress\" hunting shotgun"

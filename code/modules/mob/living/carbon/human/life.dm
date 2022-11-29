@@ -997,6 +997,8 @@
 		health_threshold_softcrit -= 20
 	if(stats.getPerk(PERK_BONE))
 		health_threshold_softcrit -= 20
+	if(stats.getPerk(PERK_TENACITY))
+		health_threshold_softcrit -= 10
 	if(health < health_threshold_softcrit)// health 0 - stat makes you immediately collapse
 		shock_stage = max(shock_stage, 61)
 	else if(shock_resist)
@@ -1205,7 +1207,7 @@
 		bodytemperature += round(BODYTEMP_HEATING_MAX*(1-thermal_protection), 1)
 		if(world.time >= next_onfire_hal)
 			next_onfire_hal = world.time + 50
-			adjustHalLoss(fire_stacks*10 + 3)
+			adjustHalLoss(fire_stacks*5 + 3) //adjusted to be lower. You need time to put yourself out. And each roll only removes 2.5 stacks.
 
 /mob/living/carbon/human/rejuvenate()
 	sanity.setLevel(sanity.max_level)
@@ -1252,5 +1254,7 @@
 		sight |= SEE_TURFS|SEE_MOBS|SEE_OBJS
 	if(unnatural_mutations.getMutation("MUTATION_CAT_EYES", TRUE))
 		see_invisible = SEE_INVISIBLE_NOLIGHTING
+	if(unnatural_mutations.getMutation("MUTATION_ECHOLOCATION", TRUE))
+		see_invisible |= SEE_INVISIBLE_NOLIGHTING|SEE_MOBS
 	if(CE_DARKSIGHT in chem_effects)//TODO: Move this to where it belongs, doesn't work without being right here for now. -Kaz/k5.
 		see_invisible = min(see_invisible, chem_effects[CE_DARKSIGHT])

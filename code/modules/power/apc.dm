@@ -916,19 +916,19 @@
 /obj/machinery/power/apc/proc/can_use(mob/user, var/loud = 0) //used by attack_hand() and Topic()
 	if (user.stat)
 		to_chat(user, SPAN_WARNING("You must be conscious to use [src]!"))
-		return FALSE
+		return 0
 	if(!user.client)
-		return FALSE
+		return 0
 	if(inoperable())
-		return FALSE
-	if(!user.check_dexterity(DEXTERITY_KEYBOARDS))
+		return 0
+	if(!user.IsAdvancedToolUser())
 		return 0
 	if(user.restrained())
 		to_chat(user, SPAN_WARNING("You must have free hands to use [src]."))
-		return FALSE
+		return 0
 	if(user.lying)
 		to_chat(user, SPAN_WARNING("You must stand to use [src]!"))
-		return FALSE
+		return 0
 	autoflag = 5
 	if (issilicon(user))
 		var/permit = 0 // Malfunction variable. If AI hacks APC it can control it even without AI control wire.

@@ -23,9 +23,12 @@
 
 	//while also preserving ability to shoot as fast as you can click and maintain recoil good enough
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY
 		)
+
+	wield_delay = 0.8 SECOND
+	wield_delay_factor = 0.4 // 40 vig , after all its designed for CQC
 
 /obj/item/gun/projectile/shotgun/pug/update_icon()
 	cut_overlays()

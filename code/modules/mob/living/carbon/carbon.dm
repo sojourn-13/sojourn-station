@@ -55,9 +55,9 @@
 	. = ..()
 	if(.)
 		if (src.nutrition && src.stat != 2)
-			src.nutrition -= DEFAULT_HUNGER_FACTOR/10
+			src.nutrition -= (movement_hunger_factors * (DEFAULT_HUNGER_FACTOR/10))
 			if (move_intent.flags & MOVE_INTENT_EXERTIVE)
-				src.nutrition -= DEFAULT_HUNGER_FACTOR/10
+				src.nutrition -= (movement_hunger_factors * (DEFAULT_HUNGER_FACTOR/10))
 
 		if(is_watching == TRUE)
 			reset_view(null)
@@ -413,6 +413,3 @@
 
 /mob/living/carbon/proc/need_breathe()
 	return TRUE
-
-/mob/living/carbon/has_dexterity(var/dex_level)
-	. = ..() && (species.get_manual_dexterity() >= dex_level)

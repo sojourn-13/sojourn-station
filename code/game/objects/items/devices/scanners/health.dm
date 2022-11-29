@@ -46,7 +46,7 @@
 			to_chat(usr, "The scanner no longer shows limb damage.")
 
 /proc/medical_scan_action(atom/target, mob/living/user, obj/scanner, var/mode)
-	if (!user.check_dexterity(DEXTERITY_COMPLEX_TOOLS))
+	if (!user.IsAdvancedToolUser())
 		to_chat(user, SPAN_WARNING("You are not nimble enough to use this device."))
 		return
 
@@ -155,7 +155,7 @@
 				else
 					unknown++
 			if(reagentdata.len)
-				dat += span("highlight", "Beneficial reagents detected in subject's blood:")
+				dat += span("highlight", "List of reagents detected in subject's blood:") // Not all are beneficial. -Seb
 				for(var/d in reagentdata)
 					dat += reagentdata[d]
 			if(unknown)
@@ -175,7 +175,7 @@
 					var/datum/data/record/V = virusDB[ID]
 					dat += SPAN_WARNING("Warning: Pathogen [V.fields["name"]] detected in subject's blood. Known antigen : [V.fields["antigen"]]")
 	if (M.getCloneLoss())
-		dat += SPAN_WARNING("Subject appears to have been imperfectly cloned.")
+		dat += SPAN_WARNING("Subject appears to have cellular corruption.")
 	if (M.has_brain_worms())
 		dat += SPAN_WARNING("Subject suffering from aberrant brain activity. Recommend further scanning.")
 	else if (M.getBrainLoss() >= 60 || !M.has_brain())

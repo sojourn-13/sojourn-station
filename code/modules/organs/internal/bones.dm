@@ -20,6 +20,7 @@ obj/item/organ/internal/bone/add_initial_transforms()
 			SPAN_DANGER("Something feels like it shattered in your [name]"),
 			SPAN_DANGER("You hear a sickening crack.")
 		)
+		playsound(loc, 'sound/weapons/jointORbonebreak.ogg', 50, 1, -1) // Auditory cue of having a bone break on you
 		if(owner.species && !(owner.species.flags & NO_PAIN))
 			owner.emote("scream")
 
@@ -94,7 +95,7 @@ obj/item/organ/internal/bone/add_initial_transforms()
 	prefixes = list()
 	min_bruised_damage = initial(min_bruised_damage)
 	min_broken_damage = initial(min_broken_damage)
-	max_damage = initial(max_damage)
+	max_damage = initial(max_damage) ? initial(max_damage) : min_broken_damage * 2
 	owner_verbs = initial(owner_verbs)
 	organ_efficiency = initial_organ_efficiency.Copy()
 	scanner_hidden = initial(scanner_hidden)

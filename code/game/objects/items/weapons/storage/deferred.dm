@@ -204,7 +204,7 @@
 	name = "sidearm crate"
 	desc = "A crate containing six Makarov 9mm pistols, 200 rounds of ammunition, and six fixed-blade combat knives."
 	icon_state = "serbcrate_deferred_green"
-	initial_contents = list(/obj/item/gun/projectile/clarissa/makarov = 6,
+	initial_contents = list(/obj/item/gun/projectile/makarov = 6,
 	/obj/item/ammo_magazine/highcap_pistol_35  = 20,
 	/obj/item/tool/knife/boot = 6)
 
@@ -304,7 +304,7 @@
 	name = "excelsior crate"
 	desc = "A crate containing everything you need for the revolution."
 	icon_state = "exc_deferred"
-	initial_contents = list(/obj/item/gun/projectile/clarissa/makarov = 2,
+	initial_contents = list(/obj/item/gun/projectile/makarov = 2,
 	/obj/item/ammo_magazine/highcap_pistol_35  = 4,
 	/obj/item/tool/knife/boot = 1,
 	/obj/item/circuitboard/excelsior_teleporter = 1,
@@ -434,7 +434,6 @@
 	name = "SA rifle pack"
 	desc = "A small collection of SA disks"
 	initial_contents = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/guns/sts40 = 1,
 		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 1,
 		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk = 1
 	)

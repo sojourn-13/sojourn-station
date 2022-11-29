@@ -16,3 +16,5 @@
 	init_recoil = RIFLE_RECOIL(0.6)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "SD GmbH"
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.4 // 40 vig

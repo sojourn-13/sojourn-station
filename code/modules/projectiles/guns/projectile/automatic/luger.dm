@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/luger
 	name = "\"Vintovka Lyugera\" carbine"
 	desc = "An old-world pistol mutilated and modified into an SMG of sorts. Reliable, well crafted but bulky. Amazingly it.. works! The look is hard to describe.. a mix between 'makeshift' and 'amazing'. \
-	While able to take both 9mm pistol and SMG magazines the gun appears to lack a proper fire selection. Figures it's made by Nadezhda Marshals gunsmiths."
+	While able to take both 9mm pistol and SMG magazines the gun appears to lack a proper fire selection."
 	icon = 'icons/obj/guns/projectile/luger.dmi'
 	icon_state = "luger"
 	item_state = "luger"
@@ -18,7 +18,10 @@
 		FULL_AUTO_600_NOLOSS,
 		SEMI_AUTO_NODELAY,
 		)
-	serial_type = "NM"
+	serial_type = ""
+
+	wield_delay = 0.5 SECOND
+	wield_delay_factor = 0.1 // 10 vig
 
 /obj/item/gun/projectile/automatic/luger/update_icon()
 	..()

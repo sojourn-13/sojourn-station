@@ -40,7 +40,6 @@
 	..(user, new_state)
 
 /obj/item/clothing/glasses/powered/MouseDrop(over_object)
-	..()
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
 		cell = null
 

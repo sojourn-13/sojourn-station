@@ -37,7 +37,7 @@
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 1, MATERIAL_DIAMOND = 1)
 	origin_tech = list(TECH_MAGNET = 6, TECH_ENGINEERING = 6)
 	use_power_cost = 0.01
-	degradation = 0.6
+	degradation = 2
 	workspeed = 1.6
 	max_upgrades = 5 //UNLIMITED MODS!
 	suitable_cell = /obj/item/cell/medium

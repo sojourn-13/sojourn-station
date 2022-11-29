@@ -25,9 +25,12 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		FULL_AUTO_400
+		FULL_AUTO_300
 		)
 	serial_type = "EXC"
+
+	wield_delay = 1.4 SECOND
+	wield_delay_factor = 0.4 // 40 vig to insta wield , heavy class assault rifle. Why is this 7.62 instead of 9mm? I'll never know.
 
 /obj/item/gun/projectile/automatic/vintorez/NM_colony
 	name = "\"Val\" silenced rifle"

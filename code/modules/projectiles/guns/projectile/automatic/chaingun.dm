@@ -34,12 +34,15 @@
 	slowdown_hold = 1 //Heavy massive gun, slow down
 	init_recoil = HMG_RECOIL(1.3)
 	init_firemodes = list(
-		FULL_AUTO_800,
+		FULL_AUTO_600,
 		list(mode_name="hyper-burst", mode_desc = "Short, rapid shot 3 round burst to stop any unarmed target", burst=3,    burst_delay=0.3, move_delay=2,  icon="burst"),
 		)
 	serial_type = "Sol Fed"
 
 	var/cover_open = 0
+
+	wield_delay = 2.5 SECOND
+	wield_delay_factor = 0.6 // 60 vig , holy shit big gun
 
 /obj/item/gun/projectile/automatic/chaingun/special_check(mob/user)
 	if(cover_open)

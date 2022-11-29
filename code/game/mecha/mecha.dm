@@ -1410,7 +1410,7 @@ assassination method if you time it right*/
 
 	move_inside(usr)
 
-/obj/mecha/receive_mouse_drop(var/mob/target, var/mob/user)
+/obj/mecha/MouseDrop_T(var/mob/target, var/mob/user)
 	if(istype(user) && target == user)
 		move_inside(user)
 

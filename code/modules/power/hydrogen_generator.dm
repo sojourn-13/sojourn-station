@@ -92,7 +92,6 @@
 
 // Drag-click proc, we use it to remove the fuel cell
 /obj/machinery/power/hydrogen_gen/MouseDrop(over_object)
-	..()
 	DropFuelCell(usr)
 
 // Proc when attacking the generator with something, used for upgrades, inserting fuel cells & wrenching it to the ground

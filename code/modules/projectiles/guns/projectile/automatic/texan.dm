@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/texan
 	name = "\"Texan\" SMG"
-	desc = "The Texan is a reliable assault weapon, mass-produced by \"Scarborough Arms\" for raiding parities in tight ship hall, with a moderate effectiveness against soft body armor. Uses 9mm rounds."
+	desc = "The Texan is a reliable assault weapon, mass-produced by SD GmbH for raiding parities in tight ship hall, with a moderate effectiveness against soft body armor. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/texan.dmi'
 	icon_state = "texan"
 	item_state = "texan"
@@ -17,13 +17,15 @@
 	penetration_multiplier = 1.5
 	init_recoil = SMG_RECOIL(0.5)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL)
-	serial_type = "SA"
+	serial_type = "SD GmbH"
 
 	init_firemodes = list(
-		FULL_AUTO_400_NOLOSS,
+		FULL_AUTO_600_NOLOSS,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND_NOLOSS
 		)
+	wield_delay = 0.5 SECOND
+	wield_delay_factor = 0.1 // 10 vig
 
 /obj/item/gun/projectile/automatic/texan/update_icon()
 	..()

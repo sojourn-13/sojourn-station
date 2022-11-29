@@ -421,7 +421,7 @@
 	set name = "Split"
 	set category = "Object"
 
-	if (!usr.check_dexterity(DEXTERITY_SIMPLE_MACHINES))
+	if (!usr.IsAdvancedToolUser())
 		return
 
 

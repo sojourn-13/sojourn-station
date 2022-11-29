@@ -11,6 +11,14 @@
 		empulse(target, 1, 1)
 	return TRUE
 
+/obj/item/projectile/ion/heavy
+	name = "heavy ion bolt"
+
+/obj/item/projectile/ion/heavy/on_impact(atom/target)
+	if (!testing)
+		empulse(target, 2, 3)
+	return TRUE
+
 /obj/item/projectile/bullet/gyro
 	name = "explosive bolt"
 	icon_state = "bolter"

@@ -23,11 +23,14 @@
 	auto_eject = 1
 	init_recoil = SMG_RECOIL(1.2)
 	init_firemodes = list(
-		FULL_AUTO_800_NOLOSS,
+		FULL_AUTO_600_NOLOSS,
 		BURST_3_ROUND_NOLOSS,
 		BURST_8_ROUND_NOLOSS,
 		)
 	serial_type = "EXC"
+
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.3 // Heavy smg , 30 vig to insta wield
 
 /obj/item/gun/projectile/automatic/ppsh/NM_colony
 	name = "\"Ekaterina\" assault SMG"

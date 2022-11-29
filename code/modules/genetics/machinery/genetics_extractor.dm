@@ -83,6 +83,9 @@
 		if(ispath(s_animal.meat_type, /obj/item/reagent_containers/food/snacks/meat))
 			temp_meat_count = s_animal.meat_amount
 			temp_meat_type = s_animal.meat_type
+	else if(istype(target, /mob/living/carbon/slime))
+		temp_meat_count = 1 //slimes don't normally have meat. So we add one so we can pull a single sample off.
+		temp_meat_type = /obj/item/reagent_containers/food/snacks/meat
 
 	if(temp_meat_count <= 0)
 		src.visible_message(SPAN_WARNING("The pulper gently reminds: \"That is creature has no genetic material, hun~\""))

@@ -43,6 +43,12 @@
 	build_path = /obj/item/modular_computer/tablet/moebius
 	category = "Medical"
 
+/datum/design/research/item/cogenhancer
+	name = "Cognitive Enhancer Implanter"
+	desc = "A device used to install Cognitive Enhancer."
+	build_path = /obj/item/device/hardware_imprinter/cogenhance
+	category = "Medical"
+
 //Bluespace stuff
 
 /datum/design/research/item/ano_scanner

@@ -3,11 +3,11 @@ var/global/list/robot_modules = list(
 	"Service" 					= /obj/item/robot_module/service,
 	"Research" 					= /obj/item/robot_module/research,
 	"Miner" 					= /obj/item/robot_module/miner,
-//	"Rescue" 					= /obj/item/robot_module/medical/rescue, Removed and condenced to medical verson - todo, admin only
+//	"Rescue" 					= /obj/item/robot_module/medical/rescue, Removed and condensed to medical verson - todo, admin only
 	"Medical" 					= /obj/item/robot_module/medical/general,
 	"Security" 					= /obj/item/robot_module/security/general,
 	"Engineering"					= /obj/item/robot_module/engineering/general,
-//	"Construction"					= /obj/item/robot_module/engineering/construction, Removed and condenced into contruction - todo, admin only
+//	"Construction"					= /obj/item/robot_module/engineering/construction, Removed and condensed into contruction - todo, admin only
 	"Custodial" 					= /obj/item/robot_module/custodial,
 	//"Combat" 					= /obj/item/robot_module/combat,
 	)
@@ -287,7 +287,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/projectile/clarissa/moebius/auto_eject(src)
+	src.modules += new /obj/item/gun/projectile/makarov/moebius/auto_eject(src)
 	src.emag += new /obj/item/melee/energy/sword(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
@@ -387,7 +387,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/projectile/clarissa/moebius/auto_eject(src)
+	src.modules += new /obj/item/gun/projectile/makarov/moebius/auto_eject(src)
 	src.emag += new /obj/item/reagent_containers/spray/acid(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
@@ -505,7 +505,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/projectile/clarissa/moebius/auto_eject(src)
+	src.modules += new /obj/item/gun/projectile/makarov/moebius/auto_eject(src)
 	src.emag += new /obj/item/tool/baton/robot(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(80000)
@@ -984,7 +984,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/storage/part_replacer(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/projectile/clarissa/moebius/auto_eject(src)
+	src.modules += new /obj/item/gun/projectile/makarov/moebius/auto_eject(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
 

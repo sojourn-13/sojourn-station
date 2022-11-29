@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/boltgun/heavysniper
 	name = "Anti-Materiel Rifle"
-	desc = "A heavy anti-material rifle fitted with a night-vision scope, it was originally designed for use against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease. Fires armor piercing .60-06 shells."
+	desc = "A heavy anti-materiel rifle fitted with a night-vision scope, it was originally designed for use against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease. Fires armor piercing 14.5mm shells."
 	icon = 'icons/obj/guns/projectile/heavysniper.dmi'
 	icon_state = "heavysniper"
 	item_state = "heavysniper"
@@ -34,6 +34,9 @@
 	serial_type = "SA"
 	action_button_name = "Switch zoom level"
 	action_button_proc = "switch_zoom"
+
+	wield_delay = 2 SECOND
+	wield_delay_factor = 0.6 // 60 vig, heavy as shit
 
 
 /obj/item/weaponparts

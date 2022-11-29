@@ -8,6 +8,7 @@
 	language = null
 	default_language = LANGUAGE_MONKEY
 	mob_size = MOB_SMALL
+	has_fine_manipulation = 0
 	show_ssd = null
 
 	unarmed_types = list(/datum/unarmed_attack/bite, /datum/unarmed_attack/claws)

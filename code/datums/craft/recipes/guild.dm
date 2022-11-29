@@ -362,7 +362,7 @@
 	)
 
 /datum/craft_recipe/guild/heavypulserifle
-	name = "jury-rigged EZ-13 MK2 heavy pulse rifle"
+	name = "\"PL-3\" Heavy Pulse Rifle"
 	result = /obj/item/gun/energy/laser/heavypulserifle
 	icon_state = "gun"
 	steps = list(

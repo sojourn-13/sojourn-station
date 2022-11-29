@@ -16,7 +16,7 @@
 	load_method = SINGLE_CASING|SPEEDLOADER
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	handle_casings = EJECT_CASINGS
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1250
@@ -28,6 +28,9 @@
 		list(mode_name="semiauto", mode_desc="Shoot once per pull after chambering", burst=1, fire_delay=5, move_delay=null, icon="semi")
 		)
 	serial_type = "SD GmbH"
+
+	wield_delay = 0.9 SECOND
+	wield_delay_factor = 0.4 // 40 vig
 
 /obj/item/gun/projectile/automatic/riot_autoshotgun/robo
 	name = "intergrated \"State\" riot shotgun"
@@ -50,7 +53,7 @@
 	damage_multiplier = 1
 	max_shells = 1
 
-/obj/item/gun/projectile/automatic/riot_autoshotgun/operator
+/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot
 	name = "\"Operator\" combat shotgun"
 	desc = "The \"Operator\" shotgun appears to be a well designed model of shotgun complete with a polymer grip, holographic sights and a collapsing stock.  \
 			Designed by Nadezhda Marshal gunsmiths and surplus parts of the \"Mamba\" series of firearms this shotgun appears to be perfect for both close and medium range engagements."
@@ -70,7 +73,10 @@
 	folding_stock = TRUE //we can fold are stocks
 	can_dual = FALSE
 
-/obj/item/gun/projectile/automatic/riot_autoshotgun/operator/update_icon()
+	wield_delay = 0.8 SECOND
+	wield_delay_factor = 0.4 // 40 vig , after all its designed for CQC
+
+/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot/update_icon()
 	..()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
