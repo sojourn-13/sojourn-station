@@ -6,22 +6,22 @@
 /datum/unit_test/area_contents/Run()
 	var/static/list/exempt_areas = typesof(
 		/area/space, /area/skipjack_station,
-		/area/shuttle, /area/holodeck, /area/nadezhda/pros,
-		/area/turbolift, /area/mine, /area/asteroid,
+		/area/shuttle, /area/holodeck,
+		/area/turbolift, /area/mine, /area/asteroid, /area/nadezhda/quartermaster/underground_to_surface_disposal,
 		/area/nadezhda/quartermaster/mining_outside_doc,
 		/area/colony, /area/nadezhda/dungeon, /area/nadezhda/outside)
 
 	var/static/list/exempt_from_atmos = typesof(
 		/area/eris/maintenance, /area/eris/storage,
 		/area/eris/engineering/atmos/storage,
-		/area/eris/engineering/construction, /area/nadezhda/pros,
+		/area/eris/engineering/construction, /area/nadezhda/quartermaster/underground_to_surface_disposal,
 		/area/eris/rnd/server, /area/mine, /area/asteroid,
 		/area/nadezhda/quartermaster/mining_outside_doc,
 		/area/colony, /area/nadezhda/dungeon, /area/nadezhda/outside)
 
 	var/static/list/exempt_from_apc = typesof(
 		/area/eris/engineering/construction,
-		/area/eris/medical/genetics, /area/nadezhda/pros,
+		/area/eris/medical/genetics, /area/nadezhda/quartermaster/underground_to_surface_disposal,
 		/area/turbolift, /area/mine, /area/asteroid,
 		/area/nadezhda/quartermaster/mining_outside_doc,
 		/area/colony, /area/nadezhda/dungeon, /area/nadezhda/outside)
