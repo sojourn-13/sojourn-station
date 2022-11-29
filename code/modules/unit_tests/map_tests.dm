@@ -17,7 +17,8 @@
 		/area/eris/engineering/construction, /area/nadezhda/quartermaster/underground_to_surface_disposal,
 		/area/eris/rnd/server, /area/mine, /area/asteroid,
 		/area/nadezhda/quartermaster/mining_outside_doc,
-		/area/colony, /area/nadezhda/dungeon, /area/nadezhda/outside)
+		/area/colony, /area/nadezhda/dungeon, /area/nadezhda/outside,
+		/area/nadezhda/crew_quarters/hydroponics/garden, /area/nadezhda/pros/shuttle) //These are outside
 
 	var/static/list/exempt_from_apc = typesof(
 		/area/eris/engineering/construction,
