@@ -1402,11 +1402,6 @@ mob/proc/yank_out_object()
 		if(timeinjob > 0)
 			to_chat(src, "You have spent [timeinjob] minutes playing as [J.title].")
 
-
-// Code taken from /code/game/objects/objs.dm Line 136 to allow support for Mob's UIs
-/mob/proc/interact(mob/user as mob)
-	return
-
 /mob/proc/updateDialog()
 	// Check that people are actually using the machine. If not, don't update anymore.
 	if(in_use)
