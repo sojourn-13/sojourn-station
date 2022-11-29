@@ -121,7 +121,7 @@
 /datum/computer_file/program/trade/proc/remove_from_shop_list(path, amount)
 	var/list/inventory_list = open_shop_list()		// Get reference to inventory list
 	if(inventory_list.Find(path))					// If path exists, subtract from amount
-		inventory_list[path] -= amount					// Not using LAZYAMINUS() because we only want to sanitize the whole list if the path is removed
+		inventory_list[path] -= amount				// Not using LAZYAMINUS() because we only want to sanitize the whole list if the path is removed
 		if(inventory_list[path] < 1)				// If amount is less than 1, remove from list
 			inventory_list -= path
 			sanitize_shop_list()						// Don't need to sanitize every time, just when we're removing a path from the list
@@ -682,7 +682,7 @@
 				"is_discovered" =	"[is_discovered]",
 				"x" =				ts_tree_x,
 				"y" =				ts_tree_y,
-				"icon" =			"[TS.overmap_object.icon_stages[2 - is_discovered]]"
+				"icon" =			"[TS.icon_states[2 - is_discovered]]"
 			)
 			LAZYADD(trade_tree, list(trade_tree_data))
 
