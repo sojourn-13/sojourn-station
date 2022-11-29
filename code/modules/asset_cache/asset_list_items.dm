@@ -1,18 +1,27 @@
-// //DEFINITIONS FOR ASSET DATUMS START HERE.
+//DEFINITIONS FOR ASSET DATUMS START HERE.
 
-// /datum/asset/simple/tgui
-// 	keep_local_name = TRUE
-// 	assets = list(
-// 		"tgui.bundle.js" = file("tgui/public/tgui.bundle.js"),
-// 		"tgui.bundle.css" = file("tgui/public/tgui.bundle.css"),
-// 	)
+/datum/asset/simple/tgui
+	keep_local_name = TRUE
+	assets = list(
+		"tgui.bundle.js" = file("tgui/public/tgui.bundle.js"),
+		"tgui.bundle.css" = file("tgui/public/tgui.bundle.css"),
+	)
 
-// /datum/asset/simple/tgui_panel
-// 	keep_local_name = TRUE
-// 	assets = list(
-// 		"tgui-panel.bundle.js" = file("tgui/public/tgui-panel.bundle.js"),
-// 		"tgui-panel.bundle.css" = file("tgui/public/tgui-panel.bundle.css"),
-// 	)
+/datum/asset/simple/tgui_panel
+	keep_local_name = TRUE
+	assets = list(
+		"tgui-panel.bundle.js" = file("tgui/public/tgui-panel.bundle.js"),
+		"tgui-panel.bundle.css" = file("tgui/public/tgui-panel.bundle.css"),
+	)
+
+/datum/asset/simple/namespaced/tgfont
+	assets = list(
+		"tgfont.eot" = file("tgui/packages/tgfont/static/tgfont.eot"),
+		"tgfont.woff2" = file("tgui/packages/tgfont/static/tgfont.woff2"),
+	)
+	parents = list(
+		"tgfont.css" = file("tgui/packages/tgfont/static/tgfont.css"),
+	)
 
 // /datum/asset/simple/headers
 // 	assets = list(
@@ -397,7 +406,22 @@
 		var/datum/design/design = D
 
 		var/filename = sanitizeFileName("[design.build_path].png")
-		var/icon/I = getFlatTypeIcon(design.build_path)
+
+		var/atom/item = design.build_path
+		var/icon_file = initial(item.icon)
+		var/icon_state = initial(item.icon_state)
+
+		// eugh
+		if (!icon_file)
+			icon_file = ""
+
+		#ifdef UNIT_TESTS
+		if(!(icon_state in icon_states(icon_file)))
+			// stack_trace("design [D] with icon '[icon_file]' missing state '[icon_state]'")
+			continue
+		#endif
+		var/icon/I = icon(icon_file, icon_state, SOUTH)
+
 		assets[filename] = I
 	..()
 

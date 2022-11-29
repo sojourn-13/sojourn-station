@@ -30,3 +30,6 @@ GLOBAL_LIST_INIT(custom_kits, list(
 GLOBAL_VAR(log_directory)
 // LOGGING  MOVE ME //
 GLOBAL_PROTECT(log_directory)
+
+// TGUI MOVE ME //
+GLOBAL_DATUM(changelog_tgui, /datum/changelog)
