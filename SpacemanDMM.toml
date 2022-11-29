@@ -1,4 +1,4 @@
-environment = "cev_eris.dme"
+environment = "sojourn-station.dme"
 
 [langserver]
 dreamchecker = true
