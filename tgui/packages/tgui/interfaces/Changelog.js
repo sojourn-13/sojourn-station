@@ -174,38 +174,26 @@ export class Changelog extends Component {
 
     const header = (
       <Section>
-        <h1>SoJ</h1>
+        <h1>CEV Eris</h1>
         <p>
           <b>Thanks to: </b>
           Baystation 12, /vg/station, NTstation, CDK Station devs,
           FacepunchStation, GoonStation devs, the original Space Station 13
-          developers, CEV Eris, Invisty for the title image and the countless others who
+          developers, Invisty for the title image and the countless others who
           have contributed to the game, issue tracker or wiki over the years.
-        </p>
-         <p>
-          <b>Staff & Credits: </b>
-          Server Host: K5
-          Creative Director: T306206
-          Head of Resources: TrilbySpaseClone
-          HeadAdmins: Rebel0
-          Admins: D the Snek, Kavrick, Medizan
-          Moderators: Jul Waters, Microminty, SSGT_BR, LostEcho, Husky Husk
-          Discord Manager: K5
-          Thanks: All of our contributors - whether sprite, code, map, or lore - and testers.
-          Special Thanks: CEV Eris and the original SpaceStation developers.
         </p>
         <p>
           {'Current project maintainers can be found '}
-          <a href="https://github.com/sojourn-13/sojourn-station?tab=members">here</a>
+          <a href="https://github.com/discordia-space?tab=members">here</a>
           {', recent GitHub contributors can be found '}
-          <a href="https://github.com/sojourn-13/sojourn-station/pulse/monthly">
+          <a href="https://github.com/discordia-space/CEV-Eris/pulse/monthly">
             here
           </a>
           .
         </p>
         <p>
           {'You can also join our discord '}
-          <a href="https://discordapp.com/invite/aXrM3SDyEw">here</a>.
+          <a href="https://discordapp.com/invite/uc7nk29">here</a>.
         </p>
         {dateDropdown}
       </Section>
