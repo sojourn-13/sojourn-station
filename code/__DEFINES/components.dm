@@ -58,6 +58,9 @@
 #define COMSIG_RITUAL "ritual"
 #define COMSIG_TRANSATION "transation"          //from transfer_funds()
 
+/// from datum ui_act (usr, action)
+#define COMSIG_UI_ACT "COMSIG_UI_ACT"
+
 // /datum/mecha signals
 #define COMSIG_HUD_DELETED "hud_deleted"
 
