@@ -49,7 +49,7 @@
 
 /obj/item/shield/proc/adjustShieldDurability(amount, user)
 	durability = CLAMP(durability + amount, 0, max_durability)
-	if(durability == 0)
+	if(durability <= 0)
 		breakShield(user)
 
 /obj/item/shield/attackby(obj/item/I, mob/user)
