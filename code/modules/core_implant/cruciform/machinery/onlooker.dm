@@ -1,7 +1,7 @@
 
 //Sprite by Près de l'oiseau#2625
 /obj/machinery/telesci_inhibitor/nt_bluespace_seer
-	name = "Absolute Nullifer"
+	name = "Absolute Nullifier"
 	desc = "A floating pillar of size that was developed by the church numerals under Browne's direction for monitoring bluespace entropy. \
 	Also known to block telescience teleportation."
 	icon = 'icons/obj/machines/church_looker.dmi'
@@ -25,10 +25,10 @@
 /obj/machinery/telesci_inhibitor/nt_bluespace_seer/examine(mob/living/user, distance)
 	var/area/my_area = get_area(src)
 	if(my_area.bluespace_entropy)
-		to_chat(user, SPAN_NOTICE("Nullifer scanner reads the room to [my_area.bluespace_entropy] annomlst bluespace."))
+		to_chat(user, SPAN_NOTICE("The Nullifier's scanner is detecting bluespace entropy in this room to be [my_area.bluespace_entropy] zeframs."))
 
 	if(GLOB.bluespace_entropy)
-		to_chat(user, SPAN_NOTICE("Nullifer scanner is giving off [GLOB.bluespace_entropy] on the planet."))
+		to_chat(user, SPAN_NOTICE("The Nullifier's global scanner notifies of stellar discrepancy at [GLOB.bluespace_entropy] zeframs of bluespace entropy on the planet."))
 
 /obj/machinery/telesci_inhibitor/nt_bluespace_seer/proc/lower_entropy(turf/T)
 	var/area/A = get_area(T)

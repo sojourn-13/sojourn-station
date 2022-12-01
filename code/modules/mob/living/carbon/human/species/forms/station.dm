@@ -328,7 +328,7 @@
 	blood_color = "#05FF9B"
 	flesh_color = "#05FFFB"
 
-	remains_type = /obj/effect/decal/cleanable/ash // TODO : Better remains
+	remains_type = /obj/effect/decal/cleanable/slimecorpse // Snowflake remains done, sorry carrions!
 	death_message = "rapidly loses cohesion, splattering across the ground..."
 
 /datum/species_form/sudak

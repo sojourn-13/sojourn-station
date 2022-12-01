@@ -29,7 +29,7 @@
 	user.stats.addPerk(perk_imprinting) //What perk we are imprinting
 	to_chat(user, SPAN_DANGER("[src] plunges into your eye, installing new hardware!"))
 	playsound(usr, 'sound/effects/refill.ogg', 50, -5)
-	user.emote("scream")//It is drilling into you so yeah bit painful
+	user.emote("painscream")//It is drilling into you so yeah bit painful
 
 	spent = TRUE
 	price_tag = 30

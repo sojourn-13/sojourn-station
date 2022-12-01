@@ -12792,6 +12792,11 @@
 /area/nadezhda/engineering/atmos/surface)
 "cyG" = (
 /obj/structure/table/reinforced,
+/obj/item/reagent_containers/glass/beaker{
+	preloaded_reagents = list("plasma"=30);
+	pixel_x = 1;
+	pixel_y = 3
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "cyI" = (
@@ -18276,7 +18281,7 @@
 /obj/machinery/reagentgrinder/portable,
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/reagent_containers/glass/beaker{
-	preloaded_reagents = list("plasma"=20)
+	preloaded_reagents = list("plasma"=30)
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology)
@@ -22878,12 +22883,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "euC" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -27;
-	pixel_y = 0
-	},
 /obj/effect/floor_decal/industrial/warningred{
-	dir = 8
+	dir = 1
 	},
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_y = 32
@@ -30048,6 +30049,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "fJA" = (
 /obj/machinery/door/airlock/maintenance_common,
+/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/eris/crew_quarters/plasma_tag)
 "fJB" = (
@@ -51792,7 +51794,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "guild_lobby";
+	id = "premier_office";
 	name = "Office Shutters";
 	opacity = 0
 	},
@@ -56821,7 +56823,7 @@
 /area/nadezhda/security/sechall)
 "kKK" = (
 /obj/machinery/door/airlock/maintenance_medical{
-	name = "Cyrogenic Storage";
+	name = "Cryogenic Storage";
 	req_access = list(5)
 	},
 /obj/machinery/door/firedoor,
@@ -77031,6 +77033,7 @@
 	name = "Medbay Total Lockdown";
 	opacity = 0
 	},
+/obj/structure/curtain/open,
 /turf/simulated/floor/plating,
 /area/nadezhda/medical/psych)
 "otN" = (
@@ -86131,7 +86134,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "guild_lobby";
+	id = "premier_office";
 	name = "Office Shutters";
 	opacity = 0
 	},
@@ -112891,7 +112894,6 @@
 /obj/structure/table/rack/shelf,
 /obj/item/storage/box/rxglasses,
 /obj/item/storage/box/rxglasses,
-/obj/item/stack/material/plasma/random,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/chemistry)
 "veR" = (
@@ -122133,7 +122135,7 @@
 	},
 /obj/machinery/door/airlock/glass_medical{
 	name = "Organ Laboratory";
-	req_access = list(5)
+	req_access = list(45)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4

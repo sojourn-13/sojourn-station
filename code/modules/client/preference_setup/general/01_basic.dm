@@ -156,7 +156,7 @@
 		var/new_gender = input(user, "Choose your character's gender identity:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.gender_identity ? pref.gender_identity : "Default") as null|anything in (list("Default" = "") + GLOB.gender_datums)
 		if(new_gender && CanUseTopic(user) && (new_gender in (list("Default" = "") + GLOB.gender_datums)))
 			if(new_gender == "Default")
-				pref.gender_identity = null
+				pref.gender_identity = pref.gender // This should stop "default" from defaulting into genderlessness.
 			else
 				pref.gender_identity = new_gender
 		return TOPIC_REFRESH_UPDATE_PREVIEW
