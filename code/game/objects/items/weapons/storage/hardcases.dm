@@ -269,6 +269,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
 
 /obj/item/storage/hcases/ammo/scrap/outsider
+	desc = "A harcase containing what little you could scavenge for your own survival. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/ammo/scrap/outsider/populate_contents()

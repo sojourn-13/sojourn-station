@@ -248,21 +248,18 @@
 	display_name = "security HUD"
 	path = /obj/item/clothing/glasses/hud/security
 	allowed_roles = list(JOBS_SECURITY)
-	slot = slot_glasses
 	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/secpatch
 	display_name = "HUD eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch/secpatch
 	allowed_roles = list(JOBS_SECURITY)
-	slot = slot_glasses
 	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/security_tact
 	display_name = "tactical security HUD"
 	path = /obj/item/clothing/glasses/sechud/tactical
 	allowed_roles = list(JOBS_SECURITY)
-	slot = slot_glasses
 	sort_category = "Faction: Security"
 	cost = 2 //has flash protection
 
@@ -270,7 +267,6 @@
 	display_name = "HUD Glasses"
 	path = /obj/item/clothing/glasses/sechud
 	allowed_roles = list(JOBS_SECURITY)
-	slot = slot_glasses
 	sort_category = "Faction: Security"
 	cost = 2 //has flash protection
 

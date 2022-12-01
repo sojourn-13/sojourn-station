@@ -138,6 +138,12 @@
 	Are we truly changing anything?"
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/psychoactive_manipulation
 
+/obj/item/device/psionic_catalyst/Light_psi_armor
+	name = "psionic catalyst: Void robe"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: TEST"
+	stored_power = /obj/item/organ/internal/psionic_tumor/proc/Light_psi_armor
+
 /obj/item/device/psionic_catalyst/Hpsi_armor
 	name = "psionic catalyst: Durable shell"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
@@ -189,7 +195,8 @@
 				/obj/item/device/psionic_catalyst/dream_seeker = 10,
 				/obj/item/device/psionic_catalyst/kings_decorum = 10,
 				/obj/item/device/psionic_catalyst/psionic_ascension = 10,
-				/obj/item/device/psionic_catalyst/Hpsi_armor = 7,
+				/obj/item/device/psionic_catalyst/Hpsi_armor = 4,
+				/obj/item/device/psionic_catalyst/Light_psi_armor = 4,
 				/obj/item/device/psionic_catalyst/heretical_ascension = 1))
 
 // Psi-related lore paperwork. Not really a good place to put this so here it is. -Kaz

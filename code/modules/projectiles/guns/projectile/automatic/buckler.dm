@@ -30,6 +30,9 @@
 		)
 	serial_type = "NM"
 
+	wield_delay = 0.5 SECOND
+	wield_delay_factor = 0.1 // 10 vig
+
 /obj/item/gun/projectile/automatic/buckler/update_icon()
 	..()
 	var/iconstring = initial(icon_state)

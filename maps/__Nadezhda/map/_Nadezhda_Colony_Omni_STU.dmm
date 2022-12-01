@@ -15984,6 +15984,10 @@
 "dey" = (
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"deH" = (
+/obj/mecha/working/ripley/firefighter,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/engineering/workshop)
 "deI" = (
 /obj/machinery/door/window{
 	base_state = "right";
@@ -20103,7 +20107,7 @@
 	dir = 8
 	},
 /obj/structure/table/rack/shelf,
-/obj/item/stack/material/diamond/tenstack,
+/obj/item/stack/material/diamond,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/engineering/workshop)
 "dTv" = (
@@ -40568,7 +40572,7 @@
 "hKs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/rack/shelf,
-/obj/random/gun_cheap/low_chance,
+/obj/random/gun_cheap,
 /obj/random/gun_cheap/low_chance,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
@@ -57370,7 +57374,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/rack/shelf,
 /obj/random/gun_energy_cheap/low_chance,
-/obj/random/gun_energy_cheap/low_chance,
+/obj/random/gun_energy_cheap,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
 "kPU" = (
@@ -63010,6 +63014,10 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/engineering/atmos)
 "lQe" = (
+/obj/item/modular_computer/console/preset/trade{
+	dir = 4;
+	pixel_x = -4
+	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/merchant)
 "lQg" = (
@@ -64382,6 +64390,7 @@
 /obj/machinery/camera/network/cargo{
 	dir = 1
 	},
+/obj/item/oddity/rare/golden_cup,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/office)
 "mdn" = (
@@ -71556,9 +71565,9 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
-/obj/item/storage/part_replacer/mini,
 /obj/structure/table/rack/shelf,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/engineering/workshop)
 "ntK" = (
@@ -89276,15 +89285,15 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
-/obj/machinery/smelter{
-	name = "primary smelter";
-	output_side = 4;
-	refuse_output_side = 1
-	},
 /obj/machinery/conveyor/east{
 	dir = 1;
 	id = "disposals upper";
 	operating = 1
+	},
+/obj/machinery/smelter/cargo_t2_parts{
+	output_side = 4;
+	name = "primary smelter";
+	refuse_output_side = 1
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/quartermaster/disposaldrop)
@@ -94541,10 +94550,10 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos/storage)
 "rFp" = (
-/obj/structure/table/rack/shelf,
+/obj/structure/table/standard,
 /obj/item/oddity/rare/golden_cup,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/pros/prep)
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/absolutism/bioreactor)
 "rFq" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -98197,9 +98206,9 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "son" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/backpack/duffelbag/guncase,
-/obj/item/storage/backpack/duffelbag/guncase,
-/obj/item/storage/backpack/duffelbag/guncase,
+/obj/item/storage/backpack/guncase,
+/obj/item/storage/backpack/guncase,
+/obj/item/storage/backpack/guncase,
 /obj/item/storage/pouch/pistol_holster,
 /obj/item/storage/pouch/pistol_holster,
 /obj/item/storage/pouch/pistol_holster,
@@ -121926,6 +121935,11 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
+"wKm" = (
+/obj/structure/table/rack/shelf,
+/obj/item/storage/part_replacer/mini,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/engineering/workshop)
 "wKo" = (
 /mob/living/carbon/superior_animal/roach/nanite,
 /obj/structure/flora/small/trailrockb2,
@@ -191177,9 +191191,9 @@ rbK
 rKx
 shL
 lHE
-tYq
+wKm
 ntC
-tYq
+deH
 rgK
 wkI
 xbq
@@ -191381,7 +191395,7 @@ shL
 wkZ
 rPd
 tXh
-rPd
+ozb
 rgK
 wkR
 xcV
@@ -191588,7 +191602,7 @@ vju
 wkZ
 xdC
 xFo
-psY
+rPd
 psY
 hKs
 kPS
@@ -202101,7 +202115,7 @@ xYU
 prO
 prO
 mCq
-xlO
+rFp
 beK
 sFI
 sFI
@@ -236002,7 +236016,7 @@ mcJ
 lVF
 ihz
 kiN
-rFp
+wQs
 gLr
 yhU
 rRY

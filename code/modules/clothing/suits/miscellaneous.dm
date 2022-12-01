@@ -405,7 +405,7 @@ obj/item/clothing/suit/fluff/miko
 	armor_list = list(
 		melee = 20,
 		bullet = 10,
-		energy = 20, //Decent starting armor but intentionally shitty because outsiders are hard mode. Scavenge better. Triumph or die! -Kaz
+		energy = 20,
 		bomb = 10,
 		bio = 5,
 		rad = 5

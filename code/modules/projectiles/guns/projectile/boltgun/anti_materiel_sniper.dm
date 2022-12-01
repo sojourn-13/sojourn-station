@@ -35,6 +35,9 @@
 	action_button_name = "Switch zoom level"
 	action_button_proc = "switch_zoom"
 
+	wield_delay = 2 SECOND
+	wield_delay_factor = 0.6 // 60 vig, heavy as shit
+
 
 /obj/item/weaponparts
 	var/part_color = ""

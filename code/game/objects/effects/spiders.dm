@@ -24,6 +24,7 @@
 	return
 
 /obj/effect/spider/Destroy()
+	QDEL_NULL(weak_reference)
 	if(is_processing)
 		cut_overlays()
 		STOP_PROCESSING(SSobj, src)

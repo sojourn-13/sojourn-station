@@ -20,6 +20,9 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	serial_type = "SD GmbH"
 
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.4 // 40 vig
+
 /obj/item/gun/projectile/silenced/update_icon()
 	..()
 

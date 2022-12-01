@@ -429,3 +429,20 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 /obj/effect/step_trigger/colony_to_crash_2_B
 	id = "colony_to_crash_2_B"
 	id_target = "colony_to_crash_1_B"
+
+
+/obj/effect/step_trigger/temple_to_bigtemple_1_B
+	id = "temple_to_bigtemple_1_B"
+	id_target = "temple_to_bigtemple_2_B"
+
+/obj/effect/step_trigger/temple_to_bigtemple_2_B
+	id = "temple_to_bigtemple_2_B"
+	id_target = "temple_to_bigtemple_1_B"
+
+/obj/effect/step_trigger/temple_to_bigtemple_1_A
+	id = "temple_to_bigtemple_1_A"
+	id_target = "temple_to_bigtemple_2_A"
+
+/obj/effect/step_trigger/temple_to_bigtemple_2_A
+	id = "temple_to_bigtemple_2_A"
+	id_target = "temple_to_bigtemple_1_A"

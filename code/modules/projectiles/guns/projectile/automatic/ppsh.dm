@@ -29,6 +29,9 @@
 		)
 	serial_type = "EXC"
 
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.3 // Heavy smg , 30 vig to insta wield
+
 /obj/item/gun/projectile/automatic/ppsh/NM_colony
 	name = "\"Ekaterina\" assault SMG"
 	desc = "An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm; taking only specific drum magizines."

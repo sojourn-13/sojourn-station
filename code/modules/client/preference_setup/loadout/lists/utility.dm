@@ -17,26 +17,32 @@
 	display_name = "lunch box"
 	path = /obj/item/storage/lunchbox
 	cost = 0
+
 /datum/gear/lunchbox_cat
 	display_name = "cat lunch box"
 	path = /obj/item/storage/lunchbox/cat
 	cost = 0
+
 /datum/gear/lunchbox_rainbow
 	display_name = "rainbow lunch box"
 	path = /obj/item/storage/lunchbox/rainbow
 	cost = 0
+
 /datum/gear/lunchbox_church
 	display_name = "church lunch box"
 	path = /obj/item/storage/lunchbox/lemniscate
 	cost = 0
+
 /datum/gear/utility/cane
 	display_name = "cane"
 	path = /obj/item/cane
 	cost = 0
+
 /datum/gear/utility/canewhite
 	display_name = "cane, white"
 	path = /obj/item/cane/whitecane
 	cost = 0
+
 /datum/gear/utility/crutch
 	display_name = "crutch"
 	path = /obj/item/cane/crutch
@@ -56,11 +62,6 @@
 	display_name = "crayon box"
 	path = /obj/item/storage/fancy/crayons
 	cost = 1
-
-/datum/gear/utility/corpreg
-	display_name = "colony law"
-	path = /obj/item/book/manual/security_space_law
-	cost = 0
 
 /datum/gear/utility/folder
 	display_name = "folder selection"
@@ -160,11 +161,11 @@
 /datum/gear/utility/tinfoil
 	display_name = "anti-psion hat"
 	path = /obj/item/clothing/head/psionic/tinfoil
-	cost = 3
+	cost = 1 //Has materas so its still a little bit of costs
 
 /datum/gear/utility/costume
 	display_name = "costume kit"
 	path = /obj/item/storage/box/costume
 	flags = GEAR_HAS_TYPE_SELECTION
-	cost = 2 //Style at a cost! - also cardboard
+	cost = 1 //Style at a cost! - also cardboard
 

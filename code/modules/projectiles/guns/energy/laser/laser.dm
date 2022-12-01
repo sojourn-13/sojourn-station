@@ -22,6 +22,9 @@
 	twohanded = TRUE
 	serial_type = "Absolute"
 
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+
 /obj/item/gun/energy/laser/mounted
 	self_recharge = TRUE
 	use_external_power = TRUE
@@ -81,6 +84,9 @@
 	twohanded = FALSE
 	serial_type = "GP"
 
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+
 /obj/item/gun/energy/zwang
 	name = "\"Zwang\" energy revolver"
 	desc = "The \"Zwang\" is a law enforcer's best friend of a sidearm. Carrying both an extremely effective lethal and non-lethal firemode. \
@@ -99,6 +105,9 @@
 		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/energy/Laser.ogg', fire_delay=10, icon="kill"),
 	)
 	serial_type = "NM"
+
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.2 // 20 vig
 
 /obj/item/gun/energy/zwang/update_icon()
 	..()

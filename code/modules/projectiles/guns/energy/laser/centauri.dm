@@ -28,3 +28,6 @@
 		BURST_5_ROUND
 		)
 	serial_type = "SI"
+
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.2 // 20 vig

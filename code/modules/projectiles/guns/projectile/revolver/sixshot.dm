@@ -19,6 +19,9 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "SA"
 
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.4 // 40 vig
+
 /obj/item/gun/projectile/revolver/sixshot/conversion
 	name = "\"Ten-Shot\" conversion shotgun"
 	desc = "A unique, revolving shotgun using a revolver cylinder. You can't tell if the person who made it deserves an award or to be tried as a criminal. This one has been given a belt \
@@ -54,3 +57,6 @@
 	damage_multiplier = 0.7
 	penetration_multiplier = 0.8
 	init_recoil = RIFLE_RECOIL(2.3)
+
+	wield_delay = 0.8 SECOND
+	wield_delay_factor = 0.6 // 60 vig

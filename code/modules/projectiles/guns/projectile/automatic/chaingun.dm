@@ -41,6 +41,9 @@
 
 	var/cover_open = 0
 
+	wield_delay = 2.5 SECOND
+	wield_delay_factor = 0.6 // 60 vig , holy shit big gun
+
 /obj/item/gun/projectile/automatic/chaingun/special_check(mob/user)
 	if(cover_open)
 		to_chat(user, SPAN_WARNING("[src]'s mechanism is open! Close it before firing!"))

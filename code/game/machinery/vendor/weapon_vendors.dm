@@ -73,12 +73,16 @@
 	/obj/item/ammo_casing/flare/blue/prespawn = 15,
 	/obj/item/ammo_casing/flare/green/prespawn = 15,
 	//Misc
-	/obj/item/clothing/accessory/holster/armpit = 2,
-	/obj/item/clothing/accessory/holster/leg = 2,
+	/obj/item/clothing/accessory/holster/armpit = 5,
+	/obj/item/clothing/accessory/holster/waist = 5,
+	/obj/item/clothing/accessory/holster/hip = 5,
+	/obj/item/clothing/accessory/holster/leg = 5,
 	/obj/item/gun_upgrade/mechanism/weintraub = 2,
-	/obj/item/storage/pouch/pistol_holster = 2,
+	/obj/item/storage/pouch/pistol_holster = 5,
+	/obj/item/storage/pouch/pistol_holster/cowboy = 5,
+	/obj/item/storage/pouch/kniferig = 5,
 	/obj/item/storage/pouch/ammo = 2,
-	/obj/item/storage/backpack/duffelbag/guncase = 35,
+	/obj/item/storage/backpack/guncase = 35,
 	/obj/item/storage/box/smokes = 3)
 
 	prices = list(
@@ -149,11 +153,15 @@
 	/obj/item/ammo_casing/flare/green/prespawn = 80,
 	//Misc
 	/obj/item/clothing/accessory/holster/armpit = 50,
+	/obj/item/clothing/accessory/holster/waist = 50,
+	/obj/item/clothing/accessory/holster/hip = 50,
 	/obj/item/clothing/accessory/holster/leg = 50,
 	/obj/item/gun_upgrade/mechanism/weintraub = 200,
 	/obj/item/storage/pouch/pistol_holster = 50,
+	/obj/item/storage/pouch/pistol_holster/cowboy = 100, // Two pistols, double the price
+	/obj/item/storage/pouch/kniferig = 50,
 	/obj/item/storage/pouch/ammo = 75,
-	/obj/item/storage/backpack/duffelbag/guncase = 25,
+	/obj/item/storage/backpack/guncase = 25,
 	/obj/item/storage/box/smokes = 100)
 
 /obj/machinery/vending/security

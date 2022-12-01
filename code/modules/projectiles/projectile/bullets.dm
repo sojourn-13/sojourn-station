@@ -71,6 +71,9 @@ Bullet also tend to have more armor against them do to this and can be douged un
 	if(istype(A, /turf/simulated/wall))
 		var/turf/simulated/wall/W = A
 		chance = round(damage/W.material.integrity*180)
+	else if(istype(A, /obj/item/shield)) // Shields block projectiles as intended
+		var/obj/item/shield/S = A
+		chance = round(S.durability / armor_penetration / 8)
 	else if(istype(A, /obj/machinery/door))
 		var/obj/machinery/door/D = A
 		chance = round(damage/D.maxHealth*180)
@@ -81,9 +84,10 @@ Bullet also tend to have more armor against them do to this and can be douged un
 		chance = damage
 
 	if(prob(chance) || (A in holder.force_penetration_on))
-		if(A.opacity)
+		if(A.opacity || istype(A, /obj/item/shield))
 			//display a message so that people on the other side aren't so confused
 			A.visible_message(SPAN_WARNING("\The [src] pierces through \the [A]!"))
+			playsound(A.loc, 'sound/weapons/shield/shieldpen.ogg', 50, 1)
 		if (testing)
 			holder.force_penetration_on += A //we are only tracking as a trace
 		else

@@ -32,6 +32,9 @@
 
 	var/cover_open = 0
 
+	wield_delay = 2 SECOND
+	wield_delay_factor = 0.6 // 60 vig for instant wield
+
 /obj/item/gun/projectile/automatic/lmg/special_check(mob/user)
 	if(cover_open)
 		to_chat(user, SPAN_WARNING("[src]'s cover is open! Close it before firing!"))

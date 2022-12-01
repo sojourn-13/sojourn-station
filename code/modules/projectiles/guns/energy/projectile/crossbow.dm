@@ -18,6 +18,9 @@
 	price_tag = 1250
 	serial_type = "Absolute"
 
+	wield_delay = 0.8 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+
 /obj/item/gun/energy/crossbow/ninja
 	name = "energy dart thrower"
 	desc = "Mini energy crossbow, though this looks black market and doesn't at all resemble existing similar weapons."

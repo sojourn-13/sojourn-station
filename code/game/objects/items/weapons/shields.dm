@@ -43,13 +43,13 @@
 		new /obj/item/material/shard/shrapnel(user.loc)
 	else
 		new /obj/item/material/shard/shrapnel(get_turf(src))
-	playsound(get_turf(src), 'sound/effects/impacts/thud1.ogg', 50, 1 -3)
+	playsound(get_turf(src), 'sound/items/electronic_assembly_emptying.ogg', 50, 1 -3)
 	spawn(10) qdel(src)
 	return
 
 /obj/item/shield/proc/adjustShieldDurability(amount, user)
 	durability = CLAMP(durability + amount, 0, max_durability)
-	if(durability == 0)
+	if(durability <= 0)
 		breakShield(user)
 
 /obj/item/shield/attackby(obj/item/I, mob/user)
@@ -111,7 +111,8 @@
 		protected_area = protected_area | get_partial_protected_area(user)
 	if(protected_area.Find(def_zone) && check_shield_arc(user, bad_arc, damage_source))
 		if(!damage_source.check_penetrate(src))
-			visible_message(SPAN_DANGER("\The [user] blocks [damage_source] with \his [src]!"))
+			visible_message(SPAN_DANGER("\The [user] blocks \the [damage_source] with \the [src]!"))
+			playsound(user.loc, 'sound/weapons/shield/shieldblock.ogg', 50, 1)
 			return 1
 	return 0
 
@@ -177,7 +178,7 @@
 	throw_range = 6
 	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_MATERIAL = 2)
-	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_GLASS = 5, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 12)
 	price_tag = 100
 	attack_verb = list("shoved", "bashed")
@@ -237,7 +238,7 @@
 	price_tag = 230
 	base_block_chance = 60
 	attack_verb = list("shoved", "bashed")
-	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 5, energy = 10, bomb = 0, bio = 0, rad = 0)
 	var/cooldown = 0 //shield bash cooldown. based on world.time
 	var/picked_by_human = FALSE
 	var/mob/living/carbon/human/picking_human
@@ -255,7 +256,7 @@
 
 /obj/item/shield/riot/handle_shield(mob/user)
 	. = ..()
-	if(.) playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)
+	if(.) playsound(user.loc, 'sound/weapons/shield/shieldmelee.ogg', 50, 1)
 
 /obj/item/shield/riot/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	if(MOVING_QUICKLY(user))
@@ -341,14 +342,32 @@
 	matter = list(MATERIAL_STEEL = 8)
 	base_block_chance = 40
 	max_durability = 125 //So we can brake and need healing time to time
-	durability = 125
+
+/obj/item/shield/riot/dozershield
+	name = "bulldozer shield"
+	desc = "A crude beast of a shield hewn from slabs of metal welded to a locker door, it has been forged into a wall that stands between you and your foes."
+	icon_state = "dozershield"
+	item_state = "dozershield"
+	flags = CONDUCT
+	slot_flags = SLOT_BACK
+	force = WEAPON_FORCE_DANGEROUS
+	throwforce = WEAPON_FORCE_DANGEROUS
+	throw_speed = 1
+	throw_range = 4
+	w_class = ITEM_SIZE_HUGE
+	matter = list(MATERIAL_STEEL = 16, MATERIAL_PLASTEEL = 10)
+	price_tag = 200
+	base_block_chance = 55
+	max_durability = 200
+	durability = 180
+	slowdown_hold = 1 // Unwieldy and makeshift in nature
 
 /obj/item/shield/hardsuit
 	name = "hardsuit shield"
 	desc = "A massive ballistic shield that seems impossible to wield without mechanical assist."
 	icon = 'icons/obj/weapons.dmi'
-	icon_state = "riot"
-	item_state = "metal"
+	icon_state = "hardshield"
+	item_state = "hardshield"
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
@@ -439,7 +458,7 @@
 	throw_range = 6
 	matter = list(MATERIAL_STEEL = 6)
 	base_block_chance = 40
-	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 2, energy = 10, bomb = 0, bio = 0, rad = 0)
 	max_durability = 100 //So we can brake and need healing time to time
 	durability = 100
 

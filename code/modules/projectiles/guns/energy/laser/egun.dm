@@ -23,6 +23,9 @@
 		)
 	serial_type = "H&S"
 
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+
 /obj/item/gun/energy/gun/mounted
 	name = "mounted energy gun"
 	self_recharge = 1
@@ -46,6 +49,9 @@
 	modifystate = null
 	suitable_cell = /obj/item/cell/small
 	cell_type = /obj/item/cell/small
+
+	wield_delay = 0.2 SECOND
+	wield_delay_factor = 0.2 // 20 vig
 
 /obj/item/gun/energy/gun/martin/preloaded
 

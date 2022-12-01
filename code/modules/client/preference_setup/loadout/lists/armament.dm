@@ -5,6 +5,7 @@
 	display_name = "Loaded Clarissa .35 Auto pistol (Rubber)"
 	path = /obj/item/gun/projectile/clarissa/preloaded
 	sort_category = "Armament"
+	slot = slot_in_backpack
 	cost = 1
 
 /datum/gear/armament/ammo
@@ -34,18 +35,13 @@
 
 /datum/gear/armament/guncase
 	display_name = "Gun Case"
-	path = /obj/item/storage/backpack/duffelbag/guncase
+	path = /obj/item/storage/backpack/guncase
 	cost = 1
 
 /datum/gear/armament/flash
 	display_name = "flash"
 	path = /obj/item/device/flash
 	cost = 1
-
-/datum/gear/armament/boot_knife
-	display_name = "boot knife"
-	path = /obj/item/tool/knife/boot
-	cost = 2
 
 /datum/gear/armament/tacboot_knife
 	display_name = "tactical knife"
@@ -56,11 +52,6 @@
 	display_name = "ritual knife"
 	path = /obj/item/tool/knife/ritual
 	cost = 3
-
-/datum/gear/armament/dagger
-	display_name = "dagger"
-	path = /obj/item/tool/knife/dagger
-	cost = 2
 
 /datum/gear/armament/dagger/family
 	display_name = "heirloom dagger"
@@ -100,6 +91,10 @@
 	display_name = "katana \"Saya\" sheath"
 	path = /obj/item/clothing/accessory/holster/saber/saya
 
+/datum/gear/armament/holster/saber/machete
+	display_name = "machete scabbard"
+	path = /obj/item/clothing/accessory/holster/saber/machete
+
 /datum/gear/armament/holster/church
 	display_name = "Absolutist Sword Scabbard"
 	path = /obj/item/clothing/accessory/holster/saber/greatsword/churchprint
@@ -113,17 +108,12 @@
 /datum/gear/armament/cutlass
 	display_name = "cutlass"
 	path = /obj/item/tool/sword/saber/cutlass
-	cost = 2
+	cost = 3
 
 /datum/gear/armament/machete
 	display_name = "Machete"
 	path = /obj/item/tool/sword/machete
-	cost = 2
-
-/datum/gear/armament/spear
-	display_name = "Steel Spear"
-	path = /obj/item/tool/spear/steel
-	cost = 4
+	cost = 3
 
 /datum/gear/armament/holster/nt
 	display_name = "short sword"

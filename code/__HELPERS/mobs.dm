@@ -261,13 +261,13 @@ Proc for attack log creation, because really why not
 			progbar.update(world.time - starttime)
 
 		if(immobile)
-			if(!user || user.incapacitated(incapacitation_flags) || user.loc != original_loc)
+			if(user.loc != original_loc)
 				. = 0
 				break
 
-			if(target_loc && (!target || target_loc != target.loc))
-				. = 0
-				break
+		if(target_loc && (!target || target_loc != target.loc))
+			. = 0
+			break
 
 		if(needhand)
 			if(user.get_active_hand() != holding)

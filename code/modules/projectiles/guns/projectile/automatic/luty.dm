@@ -27,6 +27,8 @@
 	serial_shown = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_MAGWELL)
 
+	wield_delay = 0 // No delay for this , its litteraly a junk gun
+
 /obj/item/gun/projectile/automatic/luty/update_icon()
 	..()
 	cut_overlays()

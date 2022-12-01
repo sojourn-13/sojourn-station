@@ -16,7 +16,7 @@
 			crew_data["alert"] = TRUE
 		if(H.getFireLoss() >= 100)
 			crew_data["alert"] = TRUE
-		if(H.getToxLoss() >= 100)
+		if(H.getToxLoss() >= 70) // At this point liver failure and MSOF start to happen, it's necessary that medical knows as soon as it happens
 			crew_data["alert"] = TRUE
 	return ..()
 

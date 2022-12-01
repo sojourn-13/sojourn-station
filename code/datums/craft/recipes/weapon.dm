@@ -118,6 +118,17 @@
 		list(/obj/item/storage/belt, 1, "time" = 10)
 	)
 
+/datum/craft_recipe/weapon/dozershield
+	name = "bulldozer shield"
+	result = /obj/item/shield/riot/dozershield
+	steps = list (
+		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL), // Frame
+		list(/obj/structure/closet, 1, "time" = 30), // We need its door
+		list(QUALITY_WELDING, 10, 20), // Take the closet's door out
+		list(QUALITY_SAWING, 10, 20), // Weld it to the frame
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL), // Reinforce with anti ballistics
+		list(QUALITY_WELDING, 10, 20)) // Weld the "kevlar" to finish
+
 /datum/craft_recipe/weapon/homewrecker
 	name = "homewrecker"
 	result = /obj/item/tool/hammer/homewrecker

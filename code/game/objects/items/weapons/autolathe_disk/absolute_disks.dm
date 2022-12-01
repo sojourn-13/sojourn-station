@@ -544,6 +544,8 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/bioprinter/pouch/ammo,
 		/datum/design/bioprinter/pouch/baton_holster,
 		/datum/design/bioprinter/pouch/pistol_holster,
+		/datum/design/bioprinter/pouch/pistol_double,
+		/datum/design/bioprinter/pouch/kniferig,
 		//mods
 		/datum/design/autolathe/tool_upgrade/sanctifier,
 		/datum/design/autolathe/gun_upgrade/barrel/excruciator,

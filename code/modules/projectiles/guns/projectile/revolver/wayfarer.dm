@@ -24,3 +24,5 @@
 	max_upgrades = 7 //Holds more slots do to being exl gun and not that good cal wise/easy to get
 	serial_type = "INDEX"
 	serial_shown = FALSE
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.3 // 30 vig

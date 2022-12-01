@@ -19,6 +19,9 @@
 	sawn = /obj/item/gun/projectile/shotgun/pump/combat/sawn
 	serial_type = "Absolute"
 
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.4 // 40 vig
+
 /obj/item/gun/projectile/shotgun/pump/combat/sawn
 	name = "\"Regulator\" stakeout shotgun"
 	desc = "Designed for close encounters, the Regulator is widely regarded as a weapon of choice for protecting against boarders. \
@@ -33,3 +36,6 @@
 	damage_multiplier = 0.9
 	fire_delay = 12
 	saw_off = FALSE
+
+	wield_delay = 0.7 SECOND
+	wield_delay_factor = 0.3 // 30 vig
