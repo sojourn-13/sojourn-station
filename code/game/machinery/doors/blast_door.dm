@@ -214,7 +214,7 @@
 		if(ishuman(L)) //For humans
 			var/mob/living/carbon/human/H = L
 			H.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
-			H.emote("scream")
+			H.emote("painscream")
 			H.Weaken(5)
 		else //for simple_animals & borgs
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)

@@ -515,7 +515,7 @@
 
 /obj/item/storage/box/costume/rando/populate_contents()
 	new /obj/item/clothing/under/pants/black/outlaw(src)
-	new /obj/item/clothing/suit/storage/toggle/rando(src)
+	new /obj/item/clothing/suit/storage/rando(src)
 	new /obj/item/clothing/head/costume/halloween/rando(src)
 	new /obj/item/reagent_containers/food/snacks/donkpocket(src)
 	new /obj/item/reagent_containers/food/snacks/donkpocket(src)

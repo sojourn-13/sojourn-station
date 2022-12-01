@@ -528,7 +528,7 @@
 	H.stun_effect_act(2, 120, target_zone)
 	var/burn_damage = H.electrocute_act(burn_damage_amt*2, src, def_zone = target_zone)
 	if(burn_damage > 15 && H.can_feel_pain())
-		H.emote("scream")
+		H.emote("painscream")
 
 	log_attack("[user.name]/([user.ckey]) shocked [H.name] ([H.ckey]) using [name]")
 

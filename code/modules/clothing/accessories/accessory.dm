@@ -265,11 +265,6 @@
 	desc = "A raggedy cloak made of leather and reclaimed materials, can be worn over one's armor as a sign of pride for their outcast nature."
 	icon_state = "outcast_cloak"
 
-/obj/item/clothing/accessory/cape/scav
-	name = "makeshift cape"
-	desc = "A cape haphazardly cut from a large bolt of water resistant fabric, while some may wear it for the style, others would prefer it's use as a quick poncho, if it'll every rain."
-	icon_state = "scav_mantle"
-
 /obj/item/clothing/accessory/cape/blackedge
 	name = "heavy black cloak"
 	desc = "A rough and heavy black cloak for draping over yourself like some kind of cave dwelling royal."
