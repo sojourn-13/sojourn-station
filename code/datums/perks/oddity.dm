@@ -245,10 +245,10 @@
 			H.adjustFireLoss(-healing_power)
 
 /datum/perk/bluespace
-	name = "Bluespace Alinement"
-	desc = "The sci tool is taxing on the mind but rewarding... Along with some other side affects..."
-	gain_text = "With such much look and inside into stablizing bluespace you cant help but feel its affects."
-	lose_text = "Time cures all."
+	name = "Bluespace Alignement"
+	desc = "The Tuning Device is taxing on the mind but rewarding... Along with some other side affects..."
+	gain_text = "Having stared too much into the abyss that is Bluespace itself, you can't help but feel its gaze staring back at you."
+	lose_text = "The death heat of the universe strays further away... for now."
 	//icon_state = "" // - No icon, suggestion, vortex?
 	var/initial_time
 

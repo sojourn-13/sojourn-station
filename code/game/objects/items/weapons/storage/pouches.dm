@@ -364,10 +364,10 @@
 /obj/item/storage/pouch/kniferig
 	name = "throwing knife rig"
 	desc = "A rig for professionals at knife throwing."
-	icon_state = "knife"
-	item_state = "knife"
+	icon_state = "kniferig"
+	item_state = "kniferig"
 	price_tag = 50
-	storage_slots = 4
+	storage_slots = 4 // 12 knives total counting stacks
 	can_hold = list(
 		/obj/item/stack/thrown/throwing_knife
 		)

@@ -2894,6 +2894,7 @@
 #include "code\modules\psionics\psionic_items\psi_artifacts.dm"
 #include "code\modules\psionics\psionic_items\psi_catalysts.dm"
 #include "code\modules\psionics\psionic_items\psi_Harmor.dm"
+#include "code\modules\psionics\psionic_items\psi_Larmor.dm"
 #include "code\modules\psionics\psionic_items\psi_misc.dm"
 #include "code\modules\psionics\psionic_items\psi_temp_items.dm"
 #include "code\modules\psionics\psionic_items\psi_weptools.dm"

@@ -62,6 +62,8 @@
 	icon_state = "engivend"
 	icon_deny = "engivend-deny"
 	products = list(/obj/item/clothing/glasses/powered/meson = 2,
+					/obj/item/clothing/glasses/welding = 2,
+					/obj/item/clothing/head/welding = 2,
 					/obj/item/tool/multitool = 4,
 					/obj/item/airlock_electronics = 10,
 					/obj/item/circuitboard/apc = 10,
