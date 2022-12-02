@@ -363,3 +363,35 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 			var/mob/living/L = target
 			L.bodytemperature += (heat/250) * TEMPERATURE_DAMAGE_COEFFICIENT //1/5th the strength of hell ramen per tick, since you can unload with a smg
 	..()
+
+/obj/item/projectile/beam/eyemind
+	name = "Eyeblur laser"
+	icon_state = "laser"
+	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
+	damage_types = list(BURN = 0)
+	added_damage_laser_pve = 0
+	check_armour = FALSE
+	eyeblur = 5
+	sharp = 1
+	embed = 0 //the dart is shot fast enough to pierce space suits, so I guess splintering inside the target can be a thing. Should be rare due to low damage.
+	kill_count = 0 //shorter range
+	muzzle_type = null
+	reagent_flags = NO_REACT
+	var/reagent_amount = 15
+
+/obj/item/projectile/bullet/chemdart/New()
+	if (!testing)
+		create_reagents(reagent_amount = ("tearoutseer"))
+	..()
+
+/obj/item/projectile/bullet/chemdart/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if (!testing)
+			if(L.can_inject(target_zone = def_zone))
+				reagents.trans_to_mob(L, reagent_amount, CHEM_BLOOD)
+				return
+	reagents.splash(target, reagent_amount, reagent_amount/2)
+
+/obj/item/projectile/bullet/chemdart/on_impact(atom/target)
+	reagents.splash(target, reagent_amount, reagent_amount)

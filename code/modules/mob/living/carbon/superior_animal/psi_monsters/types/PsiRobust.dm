@@ -59,6 +59,9 @@
 	speak_chance = 15
 	attacktext = "stroked"
 
+/mob/living/carbon/superior_animal/psi_monster/memory/summoned
+	psionic_respawn = FALSE
+
 /mob/living/carbon/superior_animal/psi_monster/flesh_tower
 	name = "flesh tower"
 	desc = "A billowing tower of flesh, oozing pus and acid. Thought to locate its targets psionically, though it seems incapable of seeing its own kind, often hitting and even killing them in its bid \

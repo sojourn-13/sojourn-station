@@ -862,3 +862,31 @@
 		M.apply_effect(agony_amount, AGONY, 0)
 		if(prob(5))
 			to_chat(M, SPAN_DANGER("You feel like your insides are burning!"))
+
+/datum/reagent/tearoutseer
+	name = "Tearoutseer"
+	id = "tearoutseer"
+	description =  "A dangerous poison that has a negative impact on your perception of the world."
+	taste_description = "uncertainty"
+	reagent_state = LIQUID
+	color = "#492f7c"
+	scannable = TRUE
+	appear_in_default_catalog = TRUE
+	metabolism =  0.1
+	overdose =  0.1
+
+/datum/reagent/tearoutseer/overdose(mob/living/carbon/M)
+	M.adjustToxLoss(5)
+
+/datum/reagent/tearoutseer/affect_blood(mob/living/carbon/M)
+	M.adjustToxLoss(10) //DONT INJECT IT
+
+/datum/reagent/tearoutseer/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.eye_blurry = max(M.eye_blurry - (-5 * effect_multiplier), 0)
+	M.eye_blind = max(M.eye_blind - (-5 * effect_multiplier), 0)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/eyes/E = H.random_organ_by_process(OP_EYES)
+		if(E && istype(E))
+			if(E.damage > 0)
+				E.damage = max(E.damage - (-5), 0)
