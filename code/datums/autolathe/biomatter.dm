@@ -240,7 +240,7 @@
 	build_path = /obj/item/tool/sword/nt/flanged
 
 /datum/design/autolathe/sword/nt_power
-	name = "NT Powersword"
+	name = "NT Forceblade"
 	build_path = /obj/item/tool/sword/nt/power
 
 //[GRENADES]
