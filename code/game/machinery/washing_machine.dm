@@ -32,7 +32,8 @@
 	/obj/item/bedsheet,
 	/obj/item/storage/belt,
 	/obj/item/storage/backpack,
-	/obj/item/rig)
+	/obj/item/rig,
+	/obj/item/towel)
 
 /obj/machinery/washing_machine/Destroy()
 	qdel(crayon)
