@@ -246,6 +246,78 @@
 		target.throw_at(get_edge_target_turf(target, throwdir),whack_speed,whack_speed)
 	..()
 
+/obj/item/tool/sword/nt/power
+	name = "\"Vexilar\" forceblade"
+	desc = "A hefty greatsword with golden wiring embedded into its handle and blade, designed to channel the power of a cruciform to project an ultra-sharp energy blade. \
+	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
+	icon_state = "nt_force"
+	item_state = "nt_force"
+	switched_on_icon_state = "nt_force_on"
+	switched_on_item_state = "nt_force_on"
+	force = WEAPON_FORCE_DANGEROUS
+	armor_penetration = ARMOR_PEN_MODERATE
+	w_class = ITEM_SIZE_HUGE
+	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 4, MATERIAL_GOLD = 3)
+	toggleable = TRUE
+	switched_on_force = WEAPON_FORCE_BRUTAL
+	switched_on_pen = ARMOR_PEN_MASSIVE
+	switched_on_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 30)
+	active_time = 50
+	var/faith_cost = 50 //How much faith does it take to use this?
+
+/obj/item/tool/sword/nt/power/attack_self(mob/living/user)
+	if(!user.get_core_implant(/obj/item/implant/core_implant/cruciform)) //No cruciform, no activation
+		to_chat(user, SPAN_WARNING("You have absolutely no idea how this works."))
+		return FALSE
+	else
+		var/obj/item/implant/core_implant/cruciform/user_cruci = user.get_core_implant(/obj/item/implant/core_implant/cruciform)
+		if(user_cruci.power < faith_cost)
+			to_chat(user, SPAN_WARNING("Your cruciform has to recharge before you activate the [name]!"))
+			return FALSE
+		else
+			user_cruci.use_power(faith_cost)
+	..()
+
+
+/*
+/obj/item/tool/sword/nt/power/attack_self(mob/living/user)
+	if(!wielded)
+		to_chat(user, SPAN_WARNING("You must wield this in both hands to activate it!"))
+	..()
+	else if(wielded)
+		if(!user.get_core_implant(/obj/item/implant/core_implant/cruciform)) //No cruciform, no activation
+			to_chat(user, SPAN_WARNING("You have absolutely no idea how this works."))
+			return FALSE
+		if(!switched_on)
+			turn_on()
+			current_user = user
+			user_cruci = user.get_core_implant(/obj/item/implant/core_implant/cruciform)
+			to_chat(user, SPAN_WARNING("user: [current_user] \ncruciform: [user_cruci] \n cruciform power: [user_cruci.power]"))
+		if(switched_on)
+			turn_off()
+			current_user = null
+			user_cruci = null
+			to_chat(user, SPAN_WARNING("user: [current_user] \ncruciform: [user_cruci] \n cruciform power: [user_cruci.power]"))
+
+/obj/item/tool/sword/nt/power/unwield(mob/living/user)
+	..()
+	if(switched_on)
+		to_chat(user, SPAN_WARNING("The [name] turns off as you loosen your grip."))
+
+/obj/item/tool/sword/nt/power/Process()
+	..()
+	if((!wielded) && switched_on) //No longer held by the user.
+		visible_message("The [name] falls silent as soon as it leaves its wielder's grip.")
+		turn_off()
+	if(switched_on)
+		if(user_cruci.power < faith_cost)
+			visible_message("The [name] falls silent and dull, unable to draw any more power.")
+			turn_off()
+			visible_message("user: [current_user] \ncruciform: [user_cruci] \n cruciform power: [user_cruci.power]")
+		else
+			user_cruci.use_power(faith_cost)
+			visible_message("user: [current_user] \ncruciform: [user_cruci] \n cruciform power: [user_cruci.power]")
+*/
 /obj/item/shield/riot/nt
 	name = "shield"
 	desc = "A saintly looking shield, let the God protect you. \
