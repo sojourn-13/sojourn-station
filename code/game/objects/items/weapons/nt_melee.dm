@@ -277,47 +277,6 @@
 		else
 			user_cruci.use_power(faith_cost)
 	..()
-
-
-/*
-/obj/item/tool/sword/nt/power/attack_self(mob/living/user)
-	if(!wielded)
-		to_chat(user, SPAN_WARNING("You must wield this in both hands to activate it!"))
-	..()
-	else if(wielded)
-		if(!user.get_core_implant(/obj/item/implant/core_implant/cruciform)) //No cruciform, no activation
-			to_chat(user, SPAN_WARNING("You have absolutely no idea how this works."))
-			return FALSE
-		if(!switched_on)
-			turn_on()
-			current_user = user
-			user_cruci = user.get_core_implant(/obj/item/implant/core_implant/cruciform)
-			to_chat(user, SPAN_WARNING("user: [current_user] \ncruciform: [user_cruci] \n cruciform power: [user_cruci.power]"))
-		if(switched_on)
-			turn_off()
-			current_user = null
-			user_cruci = null
-			to_chat(user, SPAN_WARNING("user: [current_user] \ncruciform: [user_cruci] \n cruciform power: [user_cruci.power]"))
-
-/obj/item/tool/sword/nt/power/unwield(mob/living/user)
-	..()
-	if(switched_on)
-		to_chat(user, SPAN_WARNING("The [name] turns off as you loosen your grip."))
-
-/obj/item/tool/sword/nt/power/Process()
-	..()
-	if((!wielded) && switched_on) //No longer held by the user.
-		visible_message("The [name] falls silent as soon as it leaves its wielder's grip.")
-		turn_off()
-	if(switched_on)
-		if(user_cruci.power < faith_cost)
-			visible_message("The [name] falls silent and dull, unable to draw any more power.")
-			turn_off()
-			visible_message("user: [current_user] \ncruciform: [user_cruci] \n cruciform power: [user_cruci.power]")
-		else
-			user_cruci.use_power(faith_cost)
-			visible_message("user: [current_user] \ncruciform: [user_cruci] \n cruciform power: [user_cruci.power]")
-*/
 /obj/item/shield/riot/nt
 	name = "shield"
 	desc = "A saintly looking shield, let the God protect you. \
