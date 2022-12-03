@@ -49,5 +49,5 @@ calculate text size per text.
 				else if(percent <= minimum_percent)
 					continue
 				out.Add("[size][tastes[i]]")
-	to_chat(src, "<span class='notice'>You can't taste [english_list(out,"anything discernible.")]</span>" ) // Either your species lack taste, or whatever you were consuming is so watered down you can't taste it.
+	to_chat(src, "<span class='notice'>You can taste [english_list(out,"nothing worthy of note.")]</span>" ) // Either your species lack taste, or whatever you were consuming is so watered down you can't taste it.
 	from.trans_to_holder(target,amount,multiplier,copy) //complete transfer
