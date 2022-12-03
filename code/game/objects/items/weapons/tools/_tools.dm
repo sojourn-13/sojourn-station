@@ -687,7 +687,7 @@
 		force = switched_on_force
 		if(wielded)
 			force *= 1.3
-	if(!isnull(switched_on_pen))
+	if(switched_on_pen)
 		armor_penetration = switched_on_pen
 	if(glow_color)
 		set_light(l_range = 1.7, l_power = 1.3, l_color = glow_color)
@@ -711,8 +711,10 @@
 	switched_on = FALSE
 	STOP_PROCESSING(SSobj, src)
 	tool_qualities = switched_off_qualities
-	force = initial(force)
-	armor_penetration = initial(armor_penetration)
+	if(switched_on_force)
+		force = initial(force)
+	if(switched_on_pen)
+		armor_penetration = initial(armor_penetration)
 	if(glow_color)
 		set_light(l_range = 0, l_power = 0, l_color = glow_color)
 	if(switched_on_icon_state)
