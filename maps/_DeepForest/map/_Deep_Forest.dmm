@@ -12906,6 +12906,9 @@
 /obj/item/oddity/common/old_newspaper,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
+"ZX" = (
+/turf/simulated/floor/rock/manmade/concrete,
+/area/asteroid/rogue)
 "ZZ" = (
 /obj/structure/flora/small/trailrockb2,
 /obj/machinery/light/floor,
@@ -44392,7 +44395,7 @@ aV
 aV
 aV
 aV
-aV
+ZX
 aV
 aV
 aV
