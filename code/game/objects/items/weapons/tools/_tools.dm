@@ -59,10 +59,14 @@
 	var/switched_on = FALSE	//Curent status of tool. Dont edit this in subtypes vars, its for procs only.
 	var/switched_on_qualities = list()	//This var will REPLACE tool_qualities when tool will be toggled on.
 	var/switched_on_force = null
+	var/switched_on_pen = null
+	var/switched_on_icon_state = null
+	var/switched_on_item_state = null
 	var/switched_off_qualities = list()	//This var will REPLACE tool_qualities when tool will be toggled off. So its possible for tool to have diferent qualities both for ON and OFF state.
 	var/create_hot_spot = FALSE	 //Set this TRUE to ignite plasma on turf with tool upon activation
 	var/glow_color = null	//Set color of glow upon activation, or leave it null if you dont want any light
 	var/last_tooluse = 0 //When the tool was last used for a tool operation. This is set both at the start of an operation, and after the doafter call
+	var/active_time = null //If set to an integer, the tool cannot be manually turned off, and will instead remain on for that many ticks.
 
 	//Vars for tool upgrades
 	var/precision = 0	//Subtracted from failure rates
@@ -163,6 +167,9 @@
 /obj/item/tool/attack_self(mob/user)
 	if(toggleable)
 		if(switched_on)
+			if(active_time)
+				to_chat(user, SPAN_NOTICE("You can't turn off \the [src] manually!"))
+				return FALSE
 			turn_off(user)
 		else
 			turn_on(user)
@@ -680,12 +687,23 @@
 		force = switched_on_force
 		if(wielded)
 			force *= 1.3
+	if(!isnull(switched_on_pen))
+		armor_penetration = switched_on_pen
 	if(glow_color)
 		set_light(l_range = 1.7, l_power = 1.3, l_color = glow_color)
+	if(switched_on_icon_state)
+		icon_state = switched_on_icon_state
+	if(switched_on_item_state)
+		item_state = switched_on_item_state
 	START_PROCESSING(SSobj, src)
 	update_icon()
 	update_wear_icon()
-	return TRUE
+	if(!active_time)
+		return TRUE
+	else
+		spawn(active_time)
+			to_chat(user, SPAN_NOTICE("\The [src] turns off automatically."))
+			turn_off()
 
 /obj/item/tool/proc/turn_off(var/mob/user)
 	if(user)
@@ -694,8 +712,13 @@
 	STOP_PROCESSING(SSobj, src)
 	tool_qualities = switched_off_qualities
 	force = initial(force)
+	armor_penetration = initial(armor_penetration)
 	if(glow_color)
 		set_light(l_range = 0, l_power = 0, l_color = glow_color)
+	if(switched_on_icon_state)
+		icon_state = initial(icon_state)
+	if(switched_on_item_state)
+		icon_state = initial(item_state)
 	update_icon()
 	update_wear_icon()
 
