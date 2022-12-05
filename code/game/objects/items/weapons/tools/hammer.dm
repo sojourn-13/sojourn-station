@@ -33,7 +33,7 @@
 	icon_state = "powered_hammer"
 	item_state = "powered_hammer"
 	wielded_icon = "powered_hammer_on"
-	switched_on_force = WEAPON_FORCE_BRUTAL
+	switched_on_forcemult = 2.2 //33 total
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BELT|SLOT_BACK
@@ -42,7 +42,7 @@
 	switched_on_qualities = list(QUALITY_HAMMERING = 45)
 	switched_off_qualities = list(QUALITY_HAMMERING = 30)
 	toggleable = TRUE
-	armor_penetration = ARMOR_PEN_EXTREME
+	armor_penetration = ARMOR_PEN_EXTREME // Retains AP when turned off - it's a hammer.
 	degradation = 0.7
 	use_power_cost = 2
 	suitable_cell = /obj/item/cell/medium
@@ -76,8 +76,8 @@
 	icon_state = "onehammer"
 	item_state = "onehammer"
 	wielded_icon = "onehammer_on"
-	switched_on_force = WEAPON_FORCE_LETHAL
-	armor_penetration = ARMOR_PEN_EXTREME // Somehow was not inheriting
+	switched_on_forcemult = 2.6 // 39 total
+	armor_penetration = ARMOR_PEN_EXTREME // Retains AP when turned off - it's a hammer.
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 3, MATERIAL_DIAMOND = 3)
 	price_tag = 860
@@ -181,8 +181,8 @@
 	wielded_icon = "chargehammer1"
 	item_state = "chargehammer0"
 	w_class = ITEM_SIZE_HUGE
-	switched_on_force = WEAPON_FORCE_BRUTAL
-	armor_penetration = ARMOR_PEN_EXTREME // On par with powered hammers
+	switched_on_forcemult = 2.2
+	armor_penetration = ARMOR_PEN_EXTREME // Retains AP when turned off - it's a hammer.
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	switched_on_qualities = list(QUALITY_HAMMERING = 60)
 	switched_off_qualities = list(QUALITY_HAMMERING = 35)

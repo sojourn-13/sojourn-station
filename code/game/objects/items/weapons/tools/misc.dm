@@ -188,7 +188,7 @@
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "multitool_improvised"
 	force = WEAPON_FORCE_PAINFUL
-	switched_on_force = WEAPON_FORCE_PAINFUL * 0.8
+	switched_on_forcemult = 0.8
 	worksound = WORKSOUND_DRIVER_TOOL
 	flags = CONDUCT
 	switched_on_qualities = list(

@@ -282,7 +282,7 @@
 	use_power_cost = 1.2
 	sparks_on_use = TRUE
 	force = WEAPON_FORCE_WEAK
-	switched_on_force = WEAPON_FORCE_PAINFUL
+	switched_on_forcemult = 2.1 //15
 	throwforce = WEAPON_FORCE_WEAK
 	suitable_cell = /obj/item/cell/medium
 	toggleable = TRUE

@@ -256,12 +256,14 @@
 	switched_on_item_state = "nt_force_on"
 	force = WEAPON_FORCE_DANGEROUS
 	armor_penetration = ARMOR_PEN_MODERATE
-	w_class = ITEM_SIZE_HUGE
+	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 4, MATERIAL_GOLD = 3)
 	toggleable = TRUE
-	switched_on_force = WEAPON_FORCE_BRUTAL
-	switched_on_pen = ARMOR_PEN_MASSIVE
+	switched_on_forcemult = 1.75 //35 total; slightly better than a halberd
+	switched_on_penmult = 2 //30 total; same as a halberd
 	switched_on_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 30)
+	switched_off_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
+	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
 	active_time = 50
 	var/faith_cost = 50 //How much faith does it take to use this?
 
