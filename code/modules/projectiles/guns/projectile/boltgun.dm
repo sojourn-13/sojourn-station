@@ -156,12 +156,6 @@
 	if(!bolt_open)
 		to_chat(user, SPAN_WARNING("You add in ammo [src] while the bolt is closed!"))
 		return
-	//Prevents a bug, banaid-fix
-	if(istype(A, /obj/item/ammo_casing))
-		var/obj/item/ammo_casing/C = A
-		if(C.is_caseless)
-			to_chat(user, SPAN_WARNING("Adding in caseless ammo into [src] would trigger a chain reaction in the chamber!"))
-			return
 	..()
 
 /obj/item/gun/projectile/boltgun/unload_ammo(mob/user, var/allow_dump=1)
