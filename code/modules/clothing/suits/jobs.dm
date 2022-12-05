@@ -69,7 +69,7 @@
 		rad = 0
 )
 
-/obj/item/clothing/under/rank/fatigues/kav/verb/toggle_style()
+/obj/item/clothing/suit/storage/cargovest/verb/toggle_style()
 	set name = "Adjust style"
 	set category = "Object"
 	set src in usr
