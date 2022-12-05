@@ -643,7 +643,7 @@
 	price_tag = 250
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	max_durability = 100 //So we can brake and need healing time to time
-	durability = 125
+	durability = 100
 	var/cooldown = 0 //shield bash cooldown. based on world.time
 	var/picked_by_human = FALSE
 	var/mob/living/carbon/human/picking_human
