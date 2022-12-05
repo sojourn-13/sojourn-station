@@ -624,3 +624,50 @@
 		set_light(1.5, 1.5, COLOR_LIGHTING_RED_BRIGHT)
 	else
 		set_light(0)
+		
+/obj/item/shield/parry
+	name = "parry dagger"
+	desc = "A parry dagger forged in a specific way to easily parry other melee attacks with ease, sacrificing its lethality in exchange."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "dagger"
+	item_state = "dagger"
+	flags = CONDUCT
+	w_class = ITEM_SIZE_SMALL
+	slot_flags = SLOT_BELT
+	force = WEAPON_FORCE_NORMAL
+	throwforce = WEAPON_FORCE_DANGEROUS
+	throw_speed = 2
+	throw_range = 6
+	armor_list = list(melee = 15, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 2)
+	price_tag = 250
+	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	max_durability = 100 //So we can brake and need healing time to time
+	durability = 100
+	var/cooldown = 0 //shield bash cooldown. based on world.time
+	var/picked_by_human = FALSE
+	var/mob/living/carbon/human/picking_human
+
+/obj/item/shield/parry/handle_shield(mob/user)
+	. = ..()
+	if(.) playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)
+
+/obj/item/shield/buckler/get_protected_area(mob/user)
+	var/list/p_area = list(BP_CHEST)
+
+	if(user.get_equipped_item(slot_l_hand) == src)
+		p_area.Add(BP_L_ARM)
+	else if(user.get_equipped_item(slot_r_hand) == src)
+		p_area.Add(BP_R_ARM)
+
+	return p_area
+
+/obj/item/shield/parry/get_partial_protected_area(mob/user)
+	return list(BP_GROIN,BP_HEAD)
+
+
+/obj/item/shield/buckler/proc/on_bash(var/obj/item/W, var/mob/user)
+	if(cooldown < world.time - 25)
+		user.visible_message(SPAN_WARNING("[user] slashes [src] with [W]!"))
+		playsound(user.loc, 'sound/weapons/sharphit.ogg', 50, 1)
+		cooldown = world.time
