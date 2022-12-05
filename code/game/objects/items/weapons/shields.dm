@@ -650,7 +650,7 @@
 
 /obj/item/shield/parrying/handle_shield(mob/user)
 	. = ..()
-	if(.) playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)
+	if(.) playsound(user.loc, 'sound/weapons/shield/shieldmelee.ogg', 50, 1)
 
 /obj/item/shield/parrying/get_protected_area(mob/user)
 	var/list/p_area = list(BP_CHEST)
