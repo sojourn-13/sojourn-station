@@ -638,7 +638,7 @@
 	throwforce = WEAPON_FORCE_DANGEROUS
 	throw_speed = 2
 	throw_range = 6
-	armor_list = list(melee = 15, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2)
 	price_tag = 250
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
