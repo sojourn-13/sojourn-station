@@ -34,7 +34,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL),
 		list(QUALITY_WELDING, 10, "time" = 30),
-		list(QUALITY_HAMMERING, 10, "time" = 20)
+		list(QUALITY_HAMMERING, 10, "time" = 20),
 		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 10)
 	)
 
