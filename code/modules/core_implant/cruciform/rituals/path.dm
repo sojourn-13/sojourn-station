@@ -753,184 +753,133 @@
 		if(synth) // Did they have any prosthetics?
 			add_effect(H, FILTER_HOLY_GLOW, 25) // Make them glow.
 
-/datum/ritual/cruciform/factorial/production_litany
-	name = "Prayer of the Forge"
-	phrase = "Nobis facultas artificii concessa est, rerum clavis, quae sola fatum beatum est."
-	desc = "Requests an armory weapons disk from the church reserves, obtained by praying at the altar. The disk in question is always from the new or old testament weapons division. Though useful, \
-	it can only be used every hour."
+/datum/ritual/cruciform/factorial/omnitool
+	name = "Touch of the Engine-Speaker"
+	phrase = "Ferro, audi verba mea et tactum senties meum."
+	desc = "Channels the power of your cruciform into an incorporeal omnitool."
 	power = 40
 	cooldown = TRUE
-	cooldown_time = 60 MINUTES
-	cooldown_category = "production_litany"
-	success_message = "On the verge of audibility you hear pleasant music, an autolathe disk slides out from a slot within the altar."
-	var/anti_cheat = FALSE
+	cooldown_time = 30 SECONDS
+	cooldown_category = "omnitool_litany"
+	success_message = "Your hand glows with holy light, and you feel more in tune with the machinery around you."
 
-/datum/ritual/cruciform/factorial/production_litany/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
-	var/list/OBJS = get_front(user)
-
-	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS
-
-	if(!altar)
-		fail("This is not an altar, the litany is useless.", user, C)
-		return FALSE
-
-	if(anti_cheat)
-		fail("Your Greed will resault in your downfall. Take your requested item, and wait your turn like the rest.", user, C)
-		return FALSE
-
-	anti_cheat = TRUE
-
-	if(altar)
-		var/response = input(user, "Which upgrade do you require?") in list("New Testament Arms Disk", "Old Testament Arms Disk", "Cancel Litany")
-		if (response == "New Testament Arms Disk")
-			new /obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
-			anti_cheat = FALSE
-			return TRUE
-		if (response == "Old Testament Arms Disk")
-			new /obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
-			anti_cheat = FALSE
-			return TRUE
-		if (response == "Cancel Litany")
-			fail("You decide not to obtain church artifice at this time.", user, C)
-			anti_cheat = FALSE
-			return FALSE
-	anti_cheat = FALSE
+/datum/ritual/cruciform/factorial/omnitool/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+	var/obj/item/tool/factorial_omni/tool = new /obj/item/tool/factorial_omni(src, user)
+	usr.put_in_active_hand(tool)
 	set_personal_cooldown(user)
 	return TRUE
 
 /datum/ritual/cruciform/factorial/mod_litany
 	name = "Hymn of the Engineer"
 	phrase = "Fiducia intra Absolutum precipua est machinae sanctitati confidere, sed semper meminisse debet, limites semper infiniti sunt."
-	desc = "Requests unique mods special to the factorial path or fully finished cruciform upgrades, allowing for greater benefits and drawbacks with church artifice. Due to the complexity of the technology, this litany may only be used \
+	desc = "Creates unique mods or cruciform upgrades. Due to the complexity of the technology, this litany may only be used \
 	once every two hours. One must still perform the rites of installation to upgrade one's cruciform."
 	power = 40
 	cooldown = TRUE
-	cooldown_time = 120 MINUTES
+	cooldown_time = 90 MINUTES
 	cooldown_category = "mod_litany"
-	success_message = "On the verge of audibility you hear pleasant music, a compartment opens within the altar, a specialized upgrade sliding out."
+	success_message = "On the verge of audibility you hear pleasant music. Seemingly working on their own, your hands shape a brand new device."
 	var/anti_cheat = FALSE
 
 /datum/ritual/cruciform/factorial/mod_litany/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
-	var/list/OBJS = get_front(user)
-
-	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS
-
-	if(!altar)
-		fail("This is not an altar, the litany is useless.", user, C)
-		return FALSE
-
 	if(anti_cheat)
 		fail("Your Greed will resault in your downfall. Take your requested item, and wait your turn like the rest.", user, C)
 		return FALSE
 
 	anti_cheat = TRUE
 
-	if(altar)
-		var/response = input(user, "Which upgrade do you require?") in list("Excrutiator Hyper Lens", "Overclocked Sanctifier", "Nature's Blessing", "Cleansing Presence", "Faith's Shield", "Martyr's Gift", "Wrath of God", "Speed of the Chosen", "Cancel Litany")
-		if (response == "Excrutiator Hyper Lens")
-			new /obj/item/gun_upgrade/barrel/excruciator_plus(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
-			set_personal_cooldown(user)
-			anti_cheat = FALSE
-			return TRUE
-		if (response == "Overclocked Sanctifier")
-			new /obj/item/tool_upgrade/augment/sanctifier_plus(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
-			set_personal_cooldown(user)
-			anti_cheat = FALSE
-			return TRUE
-		if (response == "Nature's Blessing")
-			new /obj/item/cruciform_upgrade/natures_blessing(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
-			set_personal_cooldown(user)
-			anti_cheat = FALSE
-			return TRUE
-		if (response == "Cleansing Presence")
-			new /obj/item/cruciform_upgrade/cleansing_presence(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
-			set_personal_cooldown(user)
-			anti_cheat = FALSE
-			return TRUE
-		if (response == "Faith's Shield")
-			new /obj/item/cruciform_upgrade/faiths_shield(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
-			set_personal_cooldown(user)
-			anti_cheat = FALSE
-			return TRUE
-		if (response == "Martyr's Gift")
-			new /obj/item/cruciform_upgrade/martyr_gift(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
-			set_personal_cooldown(user)
-			anti_cheat = FALSE
-			return TRUE
-		if (response == "Wrath of God")
-			new /obj/item/cruciform_upgrade/wrath_of_god(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
-			set_personal_cooldown(user)
-			anti_cheat = FALSE
-			return TRUE
-		if (response == "Speed of the Chosen")
-			new /obj/item/cruciform_upgrade/speed_of_the_chosen(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
-			set_personal_cooldown(user)
-			anti_cheat = FALSE
-			return TRUE
-		if (response == "Cancel Litany")
-			fail("You decide not to obtain church artifice at this time.", user, C)
-			anti_cheat = FALSE
-			return FALSE
-	set_personal_cooldown(user)
+	var/response = input(user, "Which upgrade do you require?") in list("Holy Oils", "Righteous Seal", "Nature's Blessing", "Cleansing Presence", "Faith's Shield", "Martyr's Gift", "Wrath of God", "Speed of the Chosen", "Cancel Litany")
+	if (response == "Holy Oils")
+		new /obj/item/tool_upgrade/augment/holy_oils(user.loc)
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= nutri_cost)
+				user.nutrition -= nutri_cost
+			else
+				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				user.vessel.remove_reagent("blood",blood_cost)
+		set_personal_cooldown(user)
+		anti_cheat = FALSE
+		return TRUE
+	if (response == "Righteous Seal")
+		new /obj/item/tool_upgrade/augment/crusader_seal(user.loc)
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= nutri_cost)
+				user.nutrition -= nutri_cost
+			else
+				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				user.vessel.remove_reagent("blood",blood_cost)
+		set_personal_cooldown(user)
+		anti_cheat = FALSE
+		return TRUE
+	if (response == "Nature's Blessing")
+		new /obj/item/cruciform_upgrade/natures_blessing(user.loc)
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= nutri_cost)
+				user.nutrition -= nutri_cost
+			else
+				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				user.vessel.remove_reagent("blood",blood_cost)
+		set_personal_cooldown(user)
+		anti_cheat = FALSE
+		return TRUE
+	if (response == "Cleansing Presence")
+		new /obj/item/cruciform_upgrade/cleansing_presence(user.loc)
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= nutri_cost)
+				user.nutrition -= nutri_cost
+			else
+				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				user.vessel.remove_reagent("blood",blood_cost)
+		set_personal_cooldown(user)
+		anti_cheat = FALSE
+		return TRUE
+	if (response == "Faith's Shield")
+		new /obj/item/cruciform_upgrade/faiths_shield(user.loc)
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= nutri_cost)
+				user.nutrition -= nutri_cost
+			else
+				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				user.vessel.remove_reagent("blood",blood_cost)
+		set_personal_cooldown(user)
+		anti_cheat = FALSE
+		return TRUE
+	if (response == "Martyr's Gift")
+		new /obj/item/cruciform_upgrade/martyr_gift(user.loc)
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= nutri_cost)
+				user.nutrition -= nutri_cost
+			else
+				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				user.vessel.remove_reagent("blood",blood_cost)
+		set_personal_cooldown(user)
+		anti_cheat = FALSE
+		return TRUE
+	if (response == "Wrath of God")
+		new /obj/item/cruciform_upgrade/wrath_of_god(user.loc)
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= nutri_cost)
+				user.nutrition -= nutri_cost
+			else
+				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				user.vessel.remove_reagent("blood",blood_cost)
+		set_personal_cooldown(user)
+		anti_cheat = FALSE
+		return TRUE
+	if (response == "Speed of the Chosen")
+		new /obj/item/cruciform_upgrade/speed_of_the_chosen(user.loc)
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= nutri_cost)
+				user.nutrition -= nutri_cost
+			else
+				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				user.vessel.remove_reagent("blood",blood_cost)
+		set_personal_cooldown(user)
+		anti_cheat = FALSE
+		return TRUE
+	if (response == "Cancel Litany")
+		fail("You decide not to obtain church artifice at this time.", user, C)
+		anti_cheat = FALSE
+		return FALSE
 	anti_cheat = FALSE
 	return TRUE
