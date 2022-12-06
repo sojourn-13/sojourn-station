@@ -788,7 +788,7 @@
 
 	anti_cheat = TRUE
 
-	var/response = input(user, "Which upgrade do you require?") in list("Holy Oils", "Crusader's Seal", "Nature's Blessing", "Cleansing Presence", "Faith's Shield", "Martyr's Gift", "Wrath of God", "Speed of the Chosen", "Cancel Litany")
+	var/response = input(user, "Which upgrade do you require?") in list("Holy Oils", "Righteous Seal", "Nature's Blessing", "Cleansing Presence", "Faith's Shield", "Martyr's Gift", "Wrath of God", "Speed of the Chosen", "Cancel Litany")
 	if (response == "Holy Oils")
 		new /obj/item/tool_upgrade/augment/holy_oils(user.loc)
 		if(user.species?.reagent_tag != IS_SYNTHETIC)
@@ -800,7 +800,7 @@
 		set_personal_cooldown(user)
 		anti_cheat = FALSE
 		return TRUE
-	if (response == "Crusader's Seal")
+	if (response == "Righteous Seal")
 		new /obj/item/tool_upgrade/augment/crusader_seal(user.loc)
 		if(user.species?.reagent_tag != IS_SYNTHETIC)
 			if(user.nutrition >= nutri_cost)
