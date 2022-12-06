@@ -179,6 +179,7 @@
 	I.req_gun_tags = list(GUN_ENERGY)
 	I.prefix = "focused"
 
+/*
 /obj/item/gun_upgrade/barrel/excruciator_plus
 	name = "Factorial \"EXCRUCIATOR\" hyper lens"
 	desc = "It's time for us to shine. This device has been modified by members of the factorial path, doubling its strength and drawbacks, for better or worse."
@@ -200,7 +201,7 @@
 
 /obj/item/gun_upgrade/trigger
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1)
-
+*/
 //Disables the ability to toggle the safety, toggles the safety permanently off, decreases fire delay. Acquired through loot spawns
 /obj/item/gun_upgrade/trigger/dangerzone
 	name = "\"Danger Zone\" Trigger"
