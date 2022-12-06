@@ -58,8 +58,8 @@
 	var/toggleable = FALSE	//Determines if it can be switched ON or OFF, for example, if you need a tool that will consume power/fuel upon turning it ON only. Such as welder.
 	var/switched_on = FALSE	//Curent status of tool. Dont edit this in subtypes vars, its for procs only.
 	var/switched_on_qualities = list()	//This var will REPLACE tool_qualities when tool will be toggled on.
-	var/switched_on_force = null
-	var/switched_on_pen = null
+	var/switched_on_forcemult = null
+	var/switched_on_penmult = null
 	var/switched_on_icon_state = null
 	var/switched_on_item_state = null
 	var/switched_off_qualities = list()	//This var will REPLACE tool_qualities when tool will be toggled off. So its possible for tool to have diferent qualities both for ON and OFF state.
@@ -683,12 +683,10 @@
 		to_chat(user, SPAN_NOTICE("\The [src] turns on."))
 	switched_on = TRUE
 	tool_qualities = switched_on_qualities
-	if(!isnull(switched_on_force))
-		force = switched_on_force
-		if(wielded)
-			force *= 1.3
-	if(switched_on_pen)
-		armor_penetration = switched_on_pen
+	if(switched_on_forcemult)
+		force *= switched_on_forcemult
+	if(switched_on_penmult)
+		armor_penetration *= switched_on_penmult
 	if(glow_color)
 		set_light(l_range = 1.7, l_power = 1.3, l_color = glow_color)
 	if(switched_on_icon_state)
@@ -711,10 +709,10 @@
 	switched_on = FALSE
 	STOP_PROCESSING(SSobj, src)
 	tool_qualities = switched_off_qualities
-	if(switched_on_force)
-		force = initial(force)
-	if(switched_on_pen)
-		armor_penetration = initial(armor_penetration)
+	if(switched_on_forcemult)
+		force /= switched_on_forcemult
+	if(switched_on_forcemult)
+		armor_penetration /= switched_on_penmult
 	if(glow_color)
 		set_light(l_range = 0, l_power = 0, l_color = glow_color)
 	if(switched_on_icon_state)
@@ -842,7 +840,7 @@
 	stunforce = initial(stunforce)
 	agonyforce = initial(agonyforce)
 
-	switched_on_force = initial(switched_on_force)
+
 	extra_bulk = initial(extra_bulk)
 	item_flags = initial(item_flags)
 	name = initial(name)

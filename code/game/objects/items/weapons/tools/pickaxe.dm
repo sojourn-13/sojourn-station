@@ -62,7 +62,7 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 2, MATERIAL_DIAMOND = 2)
 	price_tag = 900 //Diamond and fancy.
 	origin_tech = list(TECH_MATERIAL = 3, TECH_ENGINEERING = 2, TECH_POWER = 3)
-	switched_on_force = WEAPON_FORCE_ROBUST
+	switched_on_forcemult = 1.3 //26
 	tool_qualities = list(QUALITY_EXCAVATION = 50, QUALITY_PRYING = 25)
 	switched_off_qualities = list(QUALITY_EXCAVATION = 50, QUALITY_PRYING = 25)
 	switched_on_qualities = list(QUALITY_DIGGING = 50, QUALITY_PRYING = 25)
