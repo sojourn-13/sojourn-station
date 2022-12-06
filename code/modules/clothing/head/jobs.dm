@@ -5,6 +5,12 @@
 	icon_state = "chefhat"
 	item_state = "chefhat"
 
+//Cargo Tech
+/obj/item/clothing/head/rank/cargosoft
+	name = "lonestar cap"
+	desc = "A grey cap with the Lonestar logo on it."
+	icon_state = "cargosoft"
+
 //Captain
 
 /obj/item/clothing/head/rank/captain
