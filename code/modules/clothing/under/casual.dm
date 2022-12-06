@@ -447,7 +447,7 @@
 	item_state = "summerdress_nt"
 
 /obj/item/clothing/under/sports
-	name= "White tank top"
-	desc= "Sweat stains not included."
+	name = "White tank top"
+	desc = "Sweat stains not included."
 	icon_state = "sports"
 	item_state = "sports"
