@@ -796,7 +796,7 @@
 	I.prefix = "blessed"
 
 /obj/item/tool_upgrade/augment/crusader_seal
-	name = "crusader's seal"
+	name = "righteous seal"
 	desc = "A runic seal that interfaces with a weapon in unclear ways, but which enhances its deadliness at the cost of heightened power drain. Often given as a reward to those who risk their safety in the name of the Absolute."
 	icon_state = "seal"
 	matter = list(MATERIAL_BIOMATTER = 3, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1, MATERIAL_GLASS = 1)
@@ -814,7 +814,7 @@
 		GUN_UPGRADE_CHARGECOST = 1.25,
 		UPGRADE_BULK = 0.5,
 		)
-	I.prefix = "crusader's"
+	I.prefix = "righteous"
 
 /*
 /obj/item/tool_upgrade/augment/hammer_addon
