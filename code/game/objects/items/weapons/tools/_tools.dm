@@ -711,7 +711,7 @@
 	tool_qualities = switched_off_qualities
 	if(switched_on_forcemult)
 		force /= switched_on_forcemult
-	if(switched_on_forcemult)
+	if(switched_on_penmult)
 		armor_penetration /= switched_on_penmult
 	if(glow_color)
 		set_light(l_range = 0, l_power = 0, l_color = glow_color)
