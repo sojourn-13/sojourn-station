@@ -638,6 +638,7 @@
 	throwforce = WEAPON_FORCE_DANGEROUS
 	throw_speed = 2
 	throw_range = 6
+	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2)
 	price_tag = 250
