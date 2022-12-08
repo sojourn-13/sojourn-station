@@ -1,21 +1,6 @@
 // These powers are specific to certain jobs and are obtained by joining as that job with the proper implant. They may be balanced differently and may cost standard or greater power points.
 
 // Psychiatrist/Psychologist
-/obj/item/organ/internal/psionic_tumor/proc/peace_of_mind()
-	set category = "Psionic powers"
-	set name = "Peace of Mind (2)"
-	set desc = "Expend two psi points to put whatever person you are currently grabbing to sleep for a short time."
-	psi_point_cost = 2
-
-	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
-	if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
-		usr.visible_message(
-				SPAN_DANGER("[usr] places a hand upon [L] attempting to put them to sleep!"),
-				SPAN_DANGER("You place your hand on [L] expanding your mind and attempting to put them to sleep!")
-				)
-		L.AdjustSleeping(60)
-	else
-		usr.show_message("\blue You are not holding someone you can use this power on.")
 
 /obj/item/organ/internal/psionic_tumor/proc/psionic_heal_other()
 	set category = "Psionic powers"
@@ -25,6 +10,14 @@
 	psi_point_cost = 2
 
 	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
+
+	if(L.psi_blocking >= 10)
+		owner.stun_effect_act(0, L.psi_blocking * 5, BP_HEAD)
+		owner.weakened = L.psi_blocking
+		usr.show_message(SPAN_DANGER("Your head pulsates with pain as your mind bashes against an unbreakable barrier!"))
+		return
+
+
 	if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
 		usr.visible_message(
 				SPAN_DANGER("[usr] places a hand on [L], their wounds cleanly sealing and healing!"),
@@ -41,6 +34,13 @@
 	psi_point_cost = 3
 
 	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
+
+	if(L.psi_blocking >= 10)
+		owner.stun_effect_act(0, L.psi_blocking * 5, BP_HEAD)
+		owner.weakened = L.psi_blocking
+		usr.show_message(SPAN_DANGER("Your head pulsates with pain as your mind bashes against an unbreakable barrier!"))
+		return
+
 	if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
 		usr.visible_message(
 				SPAN_DANGER("[usr] places a hand on [L], the air seeming to shimmer for a moment!"),
@@ -55,12 +55,19 @@
 
 /obj/item/organ/internal/psionic_tumor/proc/psionic_gift()
 	set category = "Psionic powers"
-	set name = "Gift of the Psion (7)"
-	set desc = "Expend seven psi points of your psi essence to offer enhanced mental powers to whoever you are grappling. In psions, you allow them to recover their psi essence twice as often. \
+	set name = "Gift of the Psion (4)"
+	set desc = "Expend four psi points of your psi essence to offer enhanced mental powers to whoever you are grappling. In psions, you allow them to recover their psi essence twice as often. \
 	In non-psions, you enhance the body and mind by an exceptional degree."
-	psi_point_cost = 7
+	psi_point_cost = 4
 
 	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
+
+	if(L.psi_blocking >= 10)
+		owner.stun_effect_act(0, L.psi_blocking * 5, BP_HEAD)
+		owner.weakened = L.psi_blocking
+		usr.show_message(SPAN_DANGER("Your head pulsates with pain as your mind bashes against an unbreakable barrier!"))
+		return
+
 	if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
 		if(L && L.stats.getPerk(PERK_PSION))
 			usr.visible_message(
