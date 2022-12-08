@@ -56,7 +56,7 @@
 /obj/item/organ/internal/psionic_tumor/proc/psionic_gift()
 	set category = "Psionic powers"
 	set name = "Gift of the Psion (4)"
-	set desc = "Expend seven psi points of your psi essence to offer enhanced mental powers to whoever you are grappling. In psions, you allow them to recover their psi essence twice as often. \
+	set desc = "Expend four psi points of your psi essence to offer enhanced mental powers to whoever you are grappling. In psions, you allow them to recover their psi essence twice as often. \
 	In non-psions, you enhance the body and mind by an exceptional degree."
 	psi_point_cost = 4
 
