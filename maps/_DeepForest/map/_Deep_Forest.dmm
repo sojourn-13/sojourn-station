@@ -11766,9 +11766,6 @@
 /obj/random/powercell/low_chance,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
-"Va" = (
-/turf/simulated/floor/rock/manmade/concrete,
-/area/asteroid/rogue)
 "Vb" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha2,
@@ -12909,6 +12906,9 @@
 /obj/item/oddity/common/old_newspaper,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
+"ZX" = (
+/turf/simulated/floor/rock/manmade/concrete,
+/area/asteroid/rogue)
 "ZZ" = (
 /obj/structure/flora/small/trailrockb2,
 /obj/machinery/light/floor,
@@ -22486,7 +22486,7 @@ Km
 Kl
 Kl
 ER
-ad
+ER
 ER
 ER
 ER
@@ -44395,7 +44395,7 @@ aV
 aV
 aV
 aV
-Va
+ZX
 aV
 aV
 aV

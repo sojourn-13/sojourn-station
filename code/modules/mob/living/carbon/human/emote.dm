@@ -266,7 +266,7 @@
 							if("1")
 								playsound(src, 'sound/effects/mob_effects/f_chuckle.ogg', 70)
 							if("2")
-								playsound(src, 'sound/effects/mob_effects/f_chuckle2.ogg', 70)
+								playsound(src, 'sound/effects/mob_effects/f_chuckle2.ogg', 40)
 					else
 						switch(pick("1", "2"))
 							if("1")
@@ -404,13 +404,13 @@
 							if("1")
 								playsound(src, 'sound/effects/mob_effects/f_giggle.ogg', 70)
 							if("2")
-								playsound(src, 'sound/effects/mob_effects/f_giggle2.ogg', 70)
+								playsound(src, 'sound/effects/mob_effects/f_giggle2.ogg', 50)
 					else
 						switch(pick("1", "2"))
 							if("1")
-								playsound(src, 'sound/effects/mob_effects/m_giggle.ogg', 70)
+								playsound(src, 'sound/effects/mob_effects/m_giggle.ogg', 50)
 							if("2")
-								playsound(src, 'sound/effects/mob_effects/m_giggle2.ogg', 70)
+								playsound(src, 'sound/effects/mob_effects/m_giggle2.ogg', 50)
 				else
 					message = "makes a noise."
 					m_type = 2
@@ -487,7 +487,7 @@
 					message = "sighs."
 					m_type = 2
 					if(get_sex() == FEMALE)
-						playsound(loc, 'sound/effects/mob_effects/f_sigh.ogg', 80)
+						playsound(loc, 'sound/effects/mob_effects/f_sigh.ogg', 70)
 					else
 						playsound(loc, 'sound/effects/mob_effects/m_sigh.ogg', 70)
 				else
@@ -507,17 +507,17 @@
 							if("1")
 								playsound(src, 'sound/voice/f_laugh.ogg', 70)
 							if("2")
-								playsound(src, 'sound/voice/f_laugh2.ogg', 70)
+								playsound(src, 'sound/voice/f_laugh2.ogg', 50)
 							if("3")
-								playsound(src, 'sound/voice/f_laugh3.ogg', 70)
+								playsound(src, 'sound/voice/f_laugh3.ogg', 50)
 					else
 						switch(pick("1", "2", "3"))
 							if("1")
 								playsound(src, 'sound/voice/m_laugh.ogg', 70)
 							if("2")
-								playsound(src, 'sound/voice/m_laugh2.ogg', 70)
+								playsound(src, 'sound/voice/m_laugh2.ogg', 20)
 							if("3")
-								playsound(src, 'sound/voice/m_laugh3.ogg', 70)
+								playsound(src, 'sound/voice/m_laugh3.ogg', 20)
 				else
 					message = "makes a noise."
 					m_type = 2
@@ -561,7 +561,7 @@
 				if(get_sex() == FEMALE)
 					switch(pick("1", "2", "3"))
 						if("1")
-							playsound(loc, 'sound/effects/mob_effects/moan_f1.ogg', 80)
+							playsound(loc, 'sound/effects/mob_effects/moan_f1.ogg', 40)
 						if("2")
 							playsound(loc, 'sound/effects/mob_effects/moan_f2.ogg', 80)
 						if("3")

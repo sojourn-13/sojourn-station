@@ -239,6 +239,10 @@
 	name = "NT Flanged Mace"
 	build_path = /obj/item/tool/sword/nt/flanged
 
+/datum/design/autolathe/sword/nt_power
+	name = "NT Forceblade"
+	build_path = /obj/item/tool/sword/nt/power
+
 //[GRENADES]
 /datum/design/autolathe/grenade/nt_heatwave
 	name = "NT HG \"Inferno\""

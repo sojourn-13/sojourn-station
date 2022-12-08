@@ -737,6 +737,7 @@
 	I.prefix = "sanctified"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
 
+/*
 /obj/item/tool_upgrade/augment/sanctifier_plus
 	name = "overclocked sanctifier"
 	icon_state = "sanctifier_plus"
@@ -765,6 +766,55 @@
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "over sanctified"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
+*/
+
+/obj/item/tool_upgrade/augment/holy_oils
+	name = "holy oils"
+	icon_state = "oils" //yes it's a recoloured teapot
+	desc = "Oils of unknown composition, used by Factorials to anoint both tools and weapons. Applied properly, they can render a tool more efficient - but require the user to take their time when using it."
+	matter = list(MATERIAL_BIOMATTER = 10)
+	price_tag = 20
+
+/obj/item/tool_upgrade/augment/holy_oils/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_SANCTIFY = TRUE,
+	UPGRADE_FORCE_MOD = 8,
+	UPGRADE_PRECISION = 10,
+	UPGRADE_HEALTH_THRESHOLD = 10,
+	UPGRADE_DEGRADATION_MULT = 0.8,
+	UPGRADE_WORKSPEED = -0.5
+	)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_RECOIL = 0.8,
+	GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
+	GUN_UPGRADE_MOVE_DELAY_MULT = 1.2,
+	GUN_UPGRADE_CHARGECOST = 0.8
+	)
+	I.gun_loc_tag = GUN_MECHANISM
+	I.prefix = "blessed"
+
+/obj/item/tool_upgrade/augment/crusader_seal
+	name = "righteous seal"
+	desc = "A runic seal that interfaces with a weapon in unclear ways, but which enhances its deadliness at the cost of heightened power drain. Often given as a reward to those who risk their safety in the name of the Absolute."
+	icon_state = "seal"
+	matter = list(MATERIAL_BIOMATTER = 3, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1, MATERIAL_GLASS = 1)
+	price_tag = 160
+
+/obj/item/tool_upgrade/augment/crusader_seal/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+		UPGRADE_FORCE_MULT = 1.1,
+		UPGRADE_FUELCOST_MULT = 1.25
+	)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.1,
+		GUN_UPGRADE_CHARGECOST = 1.25,
+		UPGRADE_BULK = 0.5,
+		)
+	I.prefix = "righteous"
 
 /*
 /obj/item/tool_upgrade/augment/hammer_addon

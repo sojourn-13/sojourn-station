@@ -361,7 +361,8 @@
 		/obj/item/folder,
 		/obj/item/reagent_containers/food/snacks,
 		/obj/item/reagent_containers/food/drinks,
-		/obj/item/device/binoculars // By popular demand. - Seb
+		/obj/item/device/binoculars, // By popular demand. - Seb
+		/obj/item/tool/baton/mini
 	)
 
 /obj/item/storage/belt/holding
