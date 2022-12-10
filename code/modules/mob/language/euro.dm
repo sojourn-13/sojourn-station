@@ -1,10 +1,10 @@
-/datum/language/german
-	name = LANGUAGE_GERMAN
-	desc = "Language used by the descendants of Europe."
-	colour = "german"
+/datum/language/euro
+	name = LANGUAGE_EURO
+	desc = "Language used by the descendants of Europe. Typically spoken around core-world colonies of Sol-Fed and among those in government positions."
+	colour = "euro"
 	key = "q"
 	partial_understanding = list(
-		LANGUAGE_ESPERANTO = 20,
+		LANGUAGE_ROMANA = 20,
 		LANGUAGE_COMMON = 25,
 		LANGUAGE_KRIOSAN = 75
 	)

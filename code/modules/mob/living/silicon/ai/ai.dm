@@ -199,9 +199,9 @@ var/list/ai_verbs_default = list(
 	//Languages
 	add_language(LANGUAGE_ROBOT, 1)
 	add_language(LANGUAGE_COMMON, 1)
-	add_language(LANGUAGE_SERBIAN, 1)
+	add_language(LANGUAGE_ILLYRIAN, 1)
 	add_language(LANGUAGE_JIVE, 1) //can understand but obviously can't speak it.
-	add_language(LANGUAGE_GERMAN, 1)
+	add_language(LANGUAGE_EURO, 1)
 	add_language(LANGUAGE_JANA, 1)
 	add_language(LANGUAGE_CYRILLIC, 1)
 	add_language(LANGUAGE_LATIN, 1)
