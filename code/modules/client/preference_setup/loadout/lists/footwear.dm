@@ -78,7 +78,6 @@
 /datum/gear/shoes/duty
 	display_name = "duty jackboots"
 	path = /obj/item/clothing/shoes/jackboots/duty
-	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/shoes/leather
 	display_name = "leather shoes"
