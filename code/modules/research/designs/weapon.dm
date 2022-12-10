@@ -261,48 +261,6 @@
 	name = "Syringe Gun Cartridge"
 	build_path = /obj/item/syringe_cartridge
 
-/datum/design/research/item/ammo/laser_mag
-	name = "Laser 5.56mm casing mag (empty)"
-	desc = "A 20 round magazine marked for 5.56mm Carbine laser ammunition."
-	build_path = /obj/item/ammo_magazine/rifle_223/empty
-	materials = list(MATERIAL_STEEL = 5) // It's an empty 20 round mag. 15 steel a piece base cost is too much.
-
-/datum/design/research/item/ammo/laser  // Smaller investment and technically more cost-efficient, but more useful for boltgun users than anyone else.
-	name = "\"Star Striker\" casing"
-	desc = "A 30 round packet of casings for the Star Striker laser rifle, its cal is 5.56mm."
-	build_path = /obj/item/ammo_magazine/ammobox/laser_223
-	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_SILVER = 2.5) //Takes silver
-
-/datum/design/research/item/ammo/laser/ap
-	name = "\"Star Striker\" piercing laser casing."
-	desc = "A 30 round packet of casings for the Star Striker laser rifle. Meant for penetration of armor, its cal is 5.56mm."
-	build_path = /obj/item/ammo_magazine/ammobox/laser_223/ap
-	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5) //Takes gold
-
-/datum/design/research/item/ammo/laser/lethal
-	name = "\"Star Striker\" dense laser casing."
-	desc = "A 30 round packet of casings for the Star Striker laser rifle. Compact laser that deals more damage but is easily blocked by armor, its cal is 5.56mm."
-	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_PLASMA = 2.5) //Takes plasma
-	build_path = /obj/item/ammo_magazine/ammobox/laser_223/lethal
-
-/datum/design/research/item/ammo/laser/box // larger initial investment, but highly beneficial for Laser AK users.
-	name = "\"Legkiy-Kalashnikov\" standard laser box"
-	desc = "A 200 round box of casings for the Legkiy-Kalashnikov laser carbine, its cal is 5.56mm."
-	build_path = /obj/item/ammo_magazine/ammobox/laser_223/box
-	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50, MATERIAL_SILVER = 25)
-
-/datum/design/research/item/ammo/laser/ap/box
-	name = "\"Legkiy-Kalashnikov\" piercing laser box."
-	desc = "A 200 round box of casings for the Legkiy-Kalashnikov laser carbine. Meant for penetration of armor, its cal is 5.56mm."
-	build_path = /obj/item/ammo_magazine/ammobox/laser_223/ap/box
-	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50, MATERIAL_GOLD = 25)
-
-/datum/design/research/item/ammo/laser/lethal/box
-	name = "\"Legkiy-Kalashnikov\" dense laser box."
-	desc = "A 200 round box of casings for the Legkiy-Kalashnikov laser carbine. Compact laser that deals more damage but is easily blocked by armor, its cal is 5.56mm."
-	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50, MATERIAL_PLASMA = 25)
-	build_path = /obj/item/ammo_magazine/ammobox/laser_223/lethal/box
-
 /datum/design/research/item/ammo/hydroflaskette
 	name = "Compressed metallic hydrogen flask"
 	desc = "A small flask for metallic hydrogen. Used in hydroplasma weapons and tools."
