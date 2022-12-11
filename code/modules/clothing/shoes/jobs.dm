@@ -31,15 +31,38 @@
 	siemens_coefficient = 0.8
 	can_hold_knife = TRUE
 
-/obj/item/clothing/shoes/jackboots/duty/long
-	name = "knee-high duty boots"
-	desc = "A pair of standard-issue police steel-toed boots. These reach up all the way to the knees for god knows what reason."
-	icon_state = "duty_long"
+/obj/item/clothing/shoes/jackboots/duty/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/clothing/shoes/jackboots/duty/heel
-	name = "knee-high heeled duty boots"
-	desc = "A pair of standard-issue police steel-toed boots. They look like they were designed for a different kind of service."
-	icon_state = "duty_heel"
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Default"] = "duty"
+	options["Default Knee High"] = "duty_long"
+	options["Default Heel Knee High"] = "duty_heel"
+	options["Lighter"] = "duty_sec"
+	options["Lighter Knee High"] = "duty_long_sec"
+	options["Lighter Heel Knee High"] = "duty_heel_sec"
+	options["Brown"] = "duty_dirt_kicker"
+	options["Brown Knee High"] = "duty_long_dirt_kicker"
+	options["Brown Heel Knee High"] = "duty_heel_dirt_kicker"
+	options["Camo Green"] = "duty_rainboots"
+	options["Camo Knee High"] = "duty_long_rainboots"
+	options["Camo Heel Knee High"] = "duty_heel_rainboots"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your boot's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/shoes/reinforced
 	name = "reinforced boots"
@@ -104,36 +127,36 @@
 	price_tag = 120
 
 /obj/item/clothing/shoes/hunterboots
-    name = "Hunter Boots"
-    desc = "A pair of shin high boots made of tahca or mukhwa leather. The neck is adorned with fur and what seem to be some sort of smooth scales. \
-            They fit your feet snuggly, you could run in these forever."
-    icon_state = "hunterboots"
-    item_state = "hunterboots"
-    force = WEAPON_FORCE_HARMLESS
-    armor_list = list(melee = 20, bullet = 5, energy = 10, bomb = 5, bio = 25, rad = 5)
-    siemens_coefficient = 0.6
-    price_tag = 200
-    can_hold_knife = 1
+	name = "Hunter Boots"
+	desc = "A pair of shin high boots made of tahca or mukhwa leather. The neck is adorned with fur and what seem to be some sort of smooth scales. \
+			They fit your feet snuggly, you could run in these forever."
+	icon_state = "hunterboots"
+	item_state = "hunterboots"
+	force = WEAPON_FORCE_HARMLESS
+	armor_list = list(melee = 20, bullet = 5, energy = 10, bomb = 5, bio = 25, rad = 5)
+	siemens_coefficient = 0.6
+	price_tag = 200
+	can_hold_knife = 1
 
 /obj/item/clothing/shoes/hunterboots/verb/toggle_style()
-    set name = "Adjust Style"
-    set category = "Object"
-    set src in usr
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-    if(!isliving(loc))
-        return
+	if(!isliving(loc))
+		return
 
-    var/mob/M = usr
-    var/list/options = list()
-    options["Tahca Hide boots"] = "hunterboots"
-    options["Mukhwa Leather boots"] = "hunterboots_alt"
+	var/mob/M = usr
+	var/list/options = list()
+	options["Tahca Hide boots"] = "hunterboots"
+	options["Mukhwa Leather boots"] = "hunterboots_alt"
 
-    var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
-    if(src && choice && !M.incapacitated() && Adjacent(M))
-        icon_state = options[choice]
-        to_chat(M, "You adjusted your boot's style into [choice] mode.")
-        update_icon()
-        update_wear_icon()
-        usr.update_action_buttons()
-        return 1
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your boot's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1

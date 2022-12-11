@@ -851,3 +851,18 @@
 			break
 	if(!gotdir)
 		qdel(src)
+
+//Soj edits - readds these
+//blob effect
+
+
+// timed process
+// use power
+
+#define LIGHTING_POWER_FACTOR 20		//20W per unit luminosity
+
+
+/obj/machinery/light/Process()
+	if(on)
+		use_power(light_range * LIGHTING_POWER_FACTOR, STATIC_LIGHT)
+
