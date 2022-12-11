@@ -92,13 +92,13 @@ h1.alert, h2.alert		{color: #000000;}
 .monkey					{color: #22228B;}
 .rough					{font-family: Trebuchet MS, cursive, sans-serif;}
 .say_quote				{font-family: Georgia, Verdana, sans-serif;}
-.russian				{color: #635d17}
-.serbian				{color: #Ad6f1d}
+.slavic					{color: #635d17}
+.illyrian				{color: #Ad6f1d}
 .jive					{color: #666666}
-.german					{color: #990000}
+.euro					{color: #990000}
 .jana					{color: #993399}
 .latin					{color: #deb63d}
-.esperanto				{color: #ed7961}
+.romana					{color: #ed7961}
 .yassari				{color: #5fbf4e}
 .kriosan				{color: #ff8000}
 .marqua					{color: #00FFFF}

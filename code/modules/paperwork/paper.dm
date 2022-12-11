@@ -574,14 +574,14 @@
 /*
  * Premade paper
  */
-/obj/item/paper/german
-	language = LANGUAGE_GERMAN
+/obj/item/paper/euro
+	language = LANGUAGE_EURO
 
-/obj/item/paper/russian
+/obj/item/paper/slavic
 	language = LANGUAGE_CYRILLIC
 
-/obj/item/paper/warcrime
-	language = LANGUAGE_SERBIAN
+/obj/item/paper/illyrian
+	language = LANGUAGE_ILLYRIAN
 
 /obj/item/paper/jana
 	language = LANGUAGE_JANA
@@ -595,8 +595,8 @@
 /obj/item/paper/latin
 	language = LANGUAGE_LATIN
 
-/obj/item/paper/esperanto
-	language = LANGUAGE_ESPERANTO
+/obj/item/paper/romana
+	language = LANGUAGE_ROMANA
 
 /obj/item/paper/cult
 	language = LANGUAGE_CULT	//May god save your soul.

@@ -1,18 +1,18 @@
-/datum/language/esperanto
-	name = LANGUAGE_ESPERANTO
+/datum/language/romana
+	name = LANGUAGE_ROMANA
 	desc = "A language mixed from the various Latin based languages of Earth, holding comminalities with French, Spanish, Italian and other dialects."
 	speech_verb = list("insinuates")
 	ask_verb = list("implores")
 	exclaim_verb = list("posits")
 	has_written_form = TRUE
 	colour = "brass"
-	key = "e"
-	shorthand = "ES"
+	key = "m"
+	shorthand = "LR"
 	partial_understanding = list(
 		LANGUAGE_LATIN = 30,
 		LANGUAGE_CYRILLIC = 20,
-		LANGUAGE_SERBIAN = 20,
-		LANGUAGE_GERMAN = 25,
+		LANGUAGE_ILLYRIAN = 20,
+		LANGUAGE_EURO = 25,
 		LANGUAGE_COMMON = 10
 	)
 	space_chance = 70

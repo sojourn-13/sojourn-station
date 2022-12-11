@@ -1,16 +1,16 @@
 
-/datum/language/serbian
-	name = LANGUAGE_SERBIAN
-	desc = "Language popular among Serbian mercenaries, pirates, and criminals."
-	colour = "serbian"
-	key = "x"
+/datum/language/illyrian
+	name = LANGUAGE_ILLYRIAN
+	desc = "A language derived from Earth's Balkan regions. Commonly spoken as a linguia franca among urban background mercenaries, pirates, and within criminal trades."
+	colour = "illyrian"
+	key = "i"
 	space_chance = 80
 	has_written_form = TRUE
 	partial_understanding = list(
 		LANGUAGE_CYRILLIC = 60,
-		LANGUAGE_ESPERANTO = 20
+		LANGUAGE_ROMANA = 20
 	)
-	shorthand = "SB"
+	shorthand = "IL"
 	syllables = list("zena", "rob", "macka", "tvoj", "ruke", "jebote", "placenik", "tsatsh", "da", "zivim", "cich", "jovan", "be", "ot", \
 					 "ja", "tamo", "moj", "za", "gdje", "su", "brodove", "noge", "da", "ne", "svemirskog", "pochemu", "zasto","ljubav", \
 					 "zajebavati", "krevet", "tabela", "za", "red", "dan", "voyna", "rat", "razmisljam", "bubasvaba", "zdravlje", "dan", "novac", \

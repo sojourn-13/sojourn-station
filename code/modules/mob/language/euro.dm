@@ -1,16 +1,16 @@
-/datum/language/german
-	name = LANGUAGE_GERMAN
-	desc = "Language used by the descendants of Europe."
-	colour = "german"
-	key = "q"
+/datum/language/euro
+	name = LANGUAGE_EURO
+	desc = "Language used by the descendants of Europe, particularly influenced by Germanic derived languages. Typically spoken around core-world colonies of Sol-Fed and among those in government positions."
+	colour = "euro"
+	key = "e"
 	partial_understanding = list(
-		LANGUAGE_ESPERANTO = 20,
+		LANGUAGE_ROMANA = 20,
 		LANGUAGE_COMMON = 25,
 		LANGUAGE_KRIOSAN = 75
 	)
 	space_chance = 80
 	has_written_form = TRUE
-	shorthand = "GE"
+	shorthand = "EU"
 	syllables = list("Frau", "Mann", "Waffe", "Schiff", "Bombe", "Explosion", "Grenze", "Strasse", "Halle", "Pistole", "Gewehr", "Uniform", "Kind", "Arzt", \
 					 "und", "ja", "nein", "vielleicht", "ob", "man", "Faust", "Auto", "fliegen", "Asteroid", "Hose", "laufen", "fahren","Raumschiff", \
  					 "Serbien", "Eisenhammer", "Soteria", "Atmosphaere", "Generator", "Ingenieur", "Religion", "Ratte", "Priester", "Käfer", "Armee", "Regierung", "neu", \
