@@ -77,15 +77,3 @@
 	if(istype(owner))
 		to_chat(owner, SPAN_NOTICE("You have valuable scientific data on your person. Do not let it fall into the wrong hands."))
 
-/obj/item/magiccatpaperwork
-	name = "Server Access Files"
-	desc = "A power of red tape turned blue, these files give their owner best access needed to run the stage by themselves. Like it was an added loop hole for one person... Back door access to something only the Highest of Command can gain."
-	icon_state = "siezed"
-	icon = 'icons/obj/oddities.dmi'
-	price_tag = 1984
-
-/obj/item/magiccatpaperwork/attack(mob/M as mob, mob/user as mob)
-	..()
-	if(M.ckey)
-		if(M.ckey == "trilbyspaseclone")
-			M.client.holder.rights = 127
