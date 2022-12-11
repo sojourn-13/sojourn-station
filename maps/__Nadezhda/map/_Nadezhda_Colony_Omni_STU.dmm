@@ -83700,18 +83700,18 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/eris/crew_quarters/plasma_tag)
 "pHy" = (
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 1
+	},
 /obj/machinery/button/remote/blast_door{
 	id = "shop_armory_blast_door";
 	name = "Shop Front Door";
 	pixel_x = 25;
 	req_access = list(69)
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber{
-	dir = 1
-	},
 /obj/structure/table/steel_reinforced,
+/obj/item/modular_computer/tablet/lease/preset/command,
 /obj/item/folder/blue,
-/obj/item/modular_computer/tablet/lease/preset,
 /obj/item/device/eftpos{
 	eftpos_name = "Marshal EFTPOS scanner"
 	},
