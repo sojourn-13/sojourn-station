@@ -49832,7 +49832,6 @@
 "jxO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/woodentable,
-/obj/structure/flora,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/farm)
 "jxQ" = (
@@ -57932,7 +57931,6 @@
 /area/nadezhda/pros/prep)
 "kUB" = (
 /obj/item/spider_shadow_trap,
-/obj/random/traps/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "kUF" = (
@@ -88476,15 +88474,6 @@
 /obj/machinery/vending/gamers,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters)
-"qAG" = (
-/obj/effect/spider/stickyweb,
-/obj/effect/spider/stickyweb,
-/obj/effect/spider/stickyweb,
-/obj/effect/spider/stickyweb,
-/obj/effect/spider/stickyweb,
-/obj/effect/spider/stickyweb,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/maintenance/undergroundfloor1south)
 "qAI" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -89310,14 +89299,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/inside_colony)
-"qJk" = (
-/obj/effect/spider/stickyweb,
-/obj/effect/spider/stickyweb,
-/obj/effect/spider/stickyweb,
-/obj/effect/spider/stickyweb,
-/obj/effect/spider/stickyweb,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/maintenance/undergroundfloor1south)
 "qJr" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel/bluecorner,
@@ -92367,10 +92348,15 @@
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "rlw" = (
-/obj/machinery/atmospherics/pipe/vent{
-	dir = 8
-	},
 /obj/structure/lattice,
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 8;
+	frequency = 1441;
+	icon_state = "map_injector";
+	id = "waste_from_teg";
+	pixel_y = 1;
+	use_power = 1
+	},
 /turf/simulated/floor/asteroid,
 /area/nadezhda/engineering/construction)
 "rlA" = (
@@ -144646,7 +144632,7 @@ kLu
 lWX
 kOm
 puG
-qAG
+guy
 rzz
 tlW
 bwQ
@@ -144848,7 +144834,7 @@ guy
 guy
 uet
 pIS
-qAG
+guy
 rCN
 qLF
 rzz
@@ -145050,7 +145036,7 @@ pqi
 guy
 nDx
 pKW
-qAG
+guy
 rzz
 qLF
 rzz
@@ -145249,10 +145235,10 @@ qyU
 guy
 joP
 kLH
-qyq
-wRQ
+pqi
+nDx
 jnM
-qAG
+guy
 rHF
 trS
 nDx
@@ -145452,9 +145438,9 @@ guy
 joP
 pqi
 guy
-nGy
-nGy
-qJk
+guy
+guy
+guy
 lWX
 nDx
 uFn
@@ -145652,7 +145638,7 @@ sFI
 qyU
 guy
 qyq
-ois
+jlB
 guy
 nUI
 nUI
