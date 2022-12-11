@@ -30,7 +30,7 @@
 #define LANGUAGE_EURO		"Eurolang"
 #define LANGUAGE_JANA	    "Jana"
 #define LANGUAGE_LATIN 		"Latin"
-#define LANGUAGE_ROMANA		"Internacional"
+#define LANGUAGE_ROMANA		"Lingua Romana"
 #define LANGUAGE_YASSARI	"Yassari"
 
 //Alein / Species specific langauges.

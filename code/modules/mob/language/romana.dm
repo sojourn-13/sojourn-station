@@ -6,8 +6,8 @@
 	exclaim_verb = list("posits")
 	has_written_form = TRUE
 	colour = "brass"
-	key = "e"
-	shorthand = "ES"
+	key = "m"
+	shorthand = "LR"
 	partial_understanding = list(
 		LANGUAGE_LATIN = 30,
 		LANGUAGE_CYRILLIC = 20,

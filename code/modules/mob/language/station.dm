@@ -92,7 +92,7 @@
 
 /datum/language/russian
 	name = LANGUAGE_CYRILLIC
-	desc = "A language derived from Earth's Eastern European and Central Asian regions. Commonly spoken in forntier colonies and finding its home on many agricultural worlds."
+	desc = "A language derived from Earth's Eastern European and Central Asian regions. Commonly spoken in frontier colonies, it finds its home on many agricultural worlds."
 	colour = "slavic"
 	key = "r"
 	partial_understanding = list(
@@ -114,5 +114,5 @@
 					 "portal", "systema", "electronika", "nigilizm", "anarhizm", "communistu", "tupuye", "sopla", "obshivka", "obtekaemost", \
 					 "dinamica", "statica", "organizacuya", "yeyenet", "radio", "peredacha", "priem", "slushno", "chastota", "gerts", "stantiya", \
 					 "suda", "huyar", "odin", "dva", "tri", "holod", "granata", "ne", "re", "ru", "korabl")
-	shorthand = "RU"
+	shorthand = "SL"
 

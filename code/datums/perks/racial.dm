@@ -162,7 +162,7 @@
 	options["Jana"] = LANGUAGE_JANA
 	options["Illyrian"] = LANGUAGE_ILLYRIAN
 	options["Interslavic"] = LANGUAGE_CYRILLIC
-	options["Internacional"] = LANGUAGE_ROMANA
+	options["Lingua Romana"] = LANGUAGE_ROMANA
 	options["Yassari"] = LANGUAGE_YASSARI
 	options["Latin"] = LANGUAGE_LATIN
 	var/choice = input(M,"Which language do you know?","Linguist Choice") as null|anything in options
