@@ -233,6 +233,7 @@
 	options["monomial armor"] = "monomial_armor"
 	options["divisor armor"] = "divisor_armor"
 	options["tessellate armor"] = "tessellate_armor"
+	options["vector breastplate"] = "absolute_breast"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -341,6 +342,9 @@
 	var/list/options = list()
 	options["prime dark"] = "prime"
 	options["prime royal"] = "prime_alt"
+	options["prime saint"] = "prime_saint"
+	options["prime paladin"] = "prime_paladin"
+	options["prime paladin alt"] = "prime_paladin_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
