@@ -45,7 +45,7 @@
 
 	if(pay_power_cost(psi_point_cost))
 		var/mob/living/carbon/superior_animal/S = get_grabbed_mob(owner)
-		if(istype(S, /mob/living/carbon/superior_animal) && pay_power_cost(psi_point_cost))
+		if(istype(S, /mob/living/carbon/superior_animal))
 			usr.visible_message(
 					SPAN_DANGER("[usr] places a hand on [S], a ripple of psionic energy blasting through the air as its forced to serve!"),
 					SPAN_DANGER("You place your hand upon [S], focusing your will and making this creature serve!")
@@ -55,7 +55,7 @@
 			S.friendly_to_colony = TRUE
 			S.loseTarget()
 		var/mob/living/simple_animal/hostile/A = get_grabbed_mob(owner)
-		if(istype(A, /mob/living/simple_animal/hostile) && pay_power_cost(psi_point_cost))
+		if(istype(A, /mob/living/simple_animal/hostile))
 			usr.visible_message(
 					SPAN_DANGER("[usr] places a hand on [A], a ripple of psionic energy blasting through the air as its forced to serve!"),
 					SPAN_DANGER("You place your hand upon [A], focusing your will and making this creature serve!")

@@ -8,7 +8,7 @@
 	tunnels, but you are not assured safety or that you will be alone once on the other side. Using this power strains the body and will weaken you for a short time."
 	psi_point_cost = 5
 
-	if(alert(usr, "Are you sure you want to do this?", "Journey to Nowhere", "Yes", "No") == "Yes" && pay_power_cost(psi_point_cost))
+	if(alert(usr, "Are you sure you want to do this?", "Journey to Nowhere", "Yes", "No") == "Yes")
 		if(pay_power_cost(psi_point_cost))
 			var/mob/living/L = get_grabbed_mob(owner)		//Grab anyone we have grabbed
 			var/turf/simulated/floor/target					//this is where we are teleporting
