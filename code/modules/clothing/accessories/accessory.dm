@@ -418,19 +418,19 @@
 	desc = "A thick, luxurious cloak with red trim."
 
 /obj/item/clothing/accessory/job/cape/church/small
-	name = "Absolutists cloak"
+	name = "black Absolutist cloak"
 	icon_state = "churchcloakblack"
-	desc = "A sleek, luxurious cloak with golden trim."
+	desc = "A sleek, luxurious black cloak with golden trim."
 
 /obj/item/clothing/accessory/job/cape/church/small/red
-	name = "Absolutists cloak"
+	name = "red Absolutist cloak"
 	icon_state = "churchcloakred"
-	desc = "A sleek, luxurious cloak with golden trim."
+	desc = "A sleek, luxurious red cloak with golden trim."
 
 /obj/item/clothing/accessory/job/cape/church/small/white
-	name = "Absolutists cloak"
+	name = "white Absolutist cloak"
 	icon_state = "churchcloakwhite"
-	desc = "A sleek, luxurious cloak with golden trim."
+	desc = "A sleek, luxurious white cloak with golden trim."
 
 /obj/item/clothing/accessory/job/cape/ironhammer
 	name = "security cloak"
