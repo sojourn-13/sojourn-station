@@ -288,11 +288,14 @@
 	icon_state = "nt_shield"
 	item_state = "nt_shield"
 	force = WEAPON_FORCE_DANGEROUS
-	armor_list = list(melee = 20, bullet = 30, energy = 30, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 20, bullet = 20, energy = 10, bomb = 15, bio = 0, rad = 0)
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 10, MATERIAL_GOLD = 5)
 	price_tag = 1000
 	base_block_chance = 60
 	item_flags = DRAG_AND_DROP_UNEQUIP
+
+	max_durability = 180
+	durability = 180
 
 	item_icons = list(
 		slot_back_str = 'icons/inventory/back/mob.dmi')
@@ -361,8 +364,8 @@
 	price_tag = 300
 	base_block_chance = 45
 	item_flags = DRAG_AND_DROP_UNEQUIP
-	max_durability = 110 //So we can brake and need healing time to time
-	durability = 110
+	max_durability = 60 //So we can brake and need healing time to time
+	durability = 60
 	var/obj/item/storage/internal/container
 	var/storage_slots = 1
 	var/max_w_class = ITEM_SIZE_HUGE
