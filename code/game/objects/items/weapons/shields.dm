@@ -36,6 +36,7 @@
 	armor_list = list(melee = 10, bullet = 10, energy = 5, bomb = 0, bio = 0, rad = 0)
 	var/max_durability = 200 //So we can brake and need healing time to time
 	var/durability = 200
+	var/can_block_proj = TRUE
 
 /obj/item/shield/proc/breakShield(mob/user)
 	if(user)
@@ -111,7 +112,7 @@
 	var/list/protected_area = get_protected_area(user)
 	if(prob(50))
 		protected_area = protected_area | get_partial_protected_area(user)
-	if(protected_area.Find(def_zone) && check_shield_arc(user, bad_arc, damage_source))
+	if(protected_area.Find(def_zone) && check_shield_arc(user, bad_arc, damage_source) && can_block_proj)
 		visible_message(SPAN_DANGER("\The [user] blocks \the [damage_source] with \the [src]!"))
 		adjustShieldDurability(-damage_source.damage_types[BRUTE], user)
 		adjustShieldDurability(-damage_source.damage_types[BURN], user)
@@ -653,6 +654,7 @@
 	var/cooldown = 0 //shield bash cooldown. based on world.time
 	var/picked_by_human = FALSE
 	var/mob/living/carbon/human/picking_human
+	can_block_proj = FALSE
 
 /obj/item/shield/parrying/handle_shield(mob/user)
 	. = ..()
