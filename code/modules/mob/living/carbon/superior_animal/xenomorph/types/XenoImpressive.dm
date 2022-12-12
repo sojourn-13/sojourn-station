@@ -9,10 +9,20 @@
 	health = 500
 	attack_sound = list('sound/xenomorph/alien_footstep_charge1.ogg', 'sound/xenomorph/alien_footstep_charge2.ogg', 'sound/xenomorph/alien_footstep_charge3.ogg')
 
-	armor = list(melee = 15, bullet = 15, energy = 10, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 35, bullet = 35, energy = 15, bomb = 30, bio = 100, rad = 100)
 
 	melee_damage_lower = 30
 	melee_damage_upper = 35
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/health/mult/positive/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
+	)
 
 /mob/living/carbon/superior_animal/xenomorph/warrior/shrike/screecher
 	name = "screecher"
@@ -26,6 +36,16 @@
 
 	melee_damage_lower = 20
 	melee_damage_upper = 25
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/health/mult/positive/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
+	)
 
 /mob/living/carbon/superior_animal/xenomorph/runner/ravager
 	name = "ravager"
@@ -58,6 +78,16 @@
 	melee_damage_upper = 35
 	poison_per_bite = 5
 
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/health/mult/positive/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
+	)
+
 /mob/living/carbon/superior_animal/xenomorph/warrior/hivelord
 	name = "hivelord"
 	desc = "A powerful xenomorph hivelord, of all the xenomorph shock troops, the hivelord stands as the most durable titan."
@@ -69,7 +99,17 @@
 	maxHealth = 600
 	health = 600
 
-	armor = list(melee = 20, bullet = 25, energy = 15, bomb = 30, bio = 100, rad = 100)
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/health/mult/positive/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
+	)
+
+	armor = list(melee = 30, bullet = 30, energy = 15, bomb = 30, bio = 100, rad = 100)
 
 	melee_damage_lower = 30
 	melee_damage_upper = 35

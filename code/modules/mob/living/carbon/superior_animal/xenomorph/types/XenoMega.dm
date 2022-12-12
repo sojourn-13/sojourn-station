@@ -12,7 +12,17 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 
-	armor = list(melee = 20, bullet = 25, energy = 15, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 30, bullet = 35, energy = 5, bomb = 30, bio = 100, rad = 100)
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/health/mult/positive/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
+	)
 
 	move_to_delay = 2
 	turns_per_move = 12
@@ -30,7 +40,7 @@
 	health = 3000
 	poison_per_bite = 10
 
-	armor = list(melee = 20, bullet = 25, energy = 15, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 40, bullet = 45, energy = 15, bomb = 30, bio = 100, rad = 100)
 
 
 	melee_damage_lower = 40
