@@ -49,6 +49,11 @@
 	gain_text = "You feel your pace quickening, your thoughts barely catching up with your stride..."
 	//icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
 
+/datum/perk/oddity/fast_walker/assign(mob/living/carbon/human/H)
+	..()
+	if(holder.stats.getPerk(PERK_FAST_WALKER)) // Prevents stacking the same perk over and over for Emperor spider levels of speed. - Seb
+		return FALSE
+
 /datum/perk/oddity/harden
 	name = "Natural Armor"
 	desc = "Your skin has become harder, more durable, able to accept blunt force and endure."

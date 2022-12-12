@@ -92,9 +92,12 @@
 
 /datum/language/russian
 	name = LANGUAGE_CYRILLIC
-	desc = "A language derived from Earth's Eastern European and Central Asian regions. Commonly spoken in frontier colonies, it finds its home on many agricultural worlds."
+	desc = "A language derived from Earth's Eastern European and Central Asian regions. Commonly spoken in frontier colonies, it also finds home on many agricultural worlds."
 	colour = "slavic"
 	key = "r"
+	speech_verb = list("spouts")
+	ask_verb = list("crudely asks")
+	exclaim_verb = list("blurts out")
 	partial_understanding = list(
 		LANGUAGE_ILLYRIAN = 60,
 		LANGUAGE_ROMANA = 20
