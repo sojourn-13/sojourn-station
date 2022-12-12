@@ -1,9 +1,12 @@
 
 /datum/language/illyrian
 	name = LANGUAGE_ILLYRIAN
-	desc = "A language derived from Earth's Balkan regions. Commonly spoken as a linguia franca among urban background mercenaries, pirates, and within criminal trades."
+	desc = "A language derived from Earth's Balkan regions. Commonly spoken as a lingua franca among urban background mercenaries, pirates, and within criminal trades."
 	colour = "illyrian"
 	key = "i"
+	speech_verb = list("utters")
+	ask_verb = list("crudely asks")
+	exclaim_verb = list("yawps")
 	space_chance = 80
 	has_written_form = TRUE
 	partial_understanding = list(

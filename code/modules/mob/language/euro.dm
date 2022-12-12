@@ -3,6 +3,9 @@
 	desc = "Language used by the descendants of Europe, particularly influenced by Germanic derived languages. Typically spoken around core-world colonies of Sol-Fed and among those in government positions."
 	colour = "euro"
 	key = "e"
+	speech_verb = list("enounces")
+	ask_verb = list("inquires")
+	exclaim_verb = list("proclaims")
 	partial_understanding = list(
 		LANGUAGE_ROMANA = 20,
 		LANGUAGE_COMMON = 25,
