@@ -923,7 +923,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			icon_state = "[base_state]on"
 			item_state = "[base_state]on"
 			if(istype(src, /obj/item/flame/lighter/zippo) )
-				playsound(src, 'sound/items/zippo.ogg', 20, 1, 1)
+				playsound(src, 'sound/items/zippo_open.ogg', 20, 1, 1)
 				user.visible_message("<span class='rose'>Without even breaking stride, [user] flips open and lights \the [src] in one smooth movement.</span>")
 			else
 				playsound(src, 'sound/items/lighter.ogg', 20, 1, 1)
@@ -946,7 +946,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			icon_state = "[base_state]"
 			item_state = "[base_state]"
 			if(istype(src, /obj/item/flame/lighter/zippo) )
-				playsound(src, 'sound/items/zippo.ogg', 20, 1, 1)
+				playsound(src, 'sound/items/zippo_close.ogg', 20, 1, 1)
 				user.visible_message("<span class='rose'>You hear a quiet click, as [user] shuts off \the [src] without even looking at what they're doing.</span>")
 			else
 				playsound(src, 'sound/items/lighter.ogg', 20, 1, 1)
