@@ -24,9 +24,9 @@ var/global/list/robot_modules = list(
 	var/networks = list()
 	var/languages = list(							//Any listed language will be understandable. Any set to 1 will be speakable
 					LANGUAGE_COMMON = 1,
-					LANGUAGE_SERBIAN = 1,
+					LANGUAGE_ILLYRIAN = 1,
 					LANGUAGE_CYRILLIC = 1,
-					LANGUAGE_GERMAN = 1,
+					LANGUAGE_EURO = 1,
 					LANGUAGE_JANA = 1,
 					LANGUAGE_LATIN = 1,
 					LANGUAGE_JIVE = 0
@@ -769,7 +769,7 @@ var/global/list/robot_modules = list(
 	channels = list("Service" = 1)
 	languages = list(
 					LANGUAGE_COMMON = 1,
-					LANGUAGE_SERBIAN = 1,
+					LANGUAGE_ILLYRIAN = 1,
 					LANGUAGE_CYRILLIC = 1,
 					LANGUAGE_JIVE = 0
 					)
