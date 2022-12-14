@@ -282,7 +282,7 @@
 	use_power_cost = 1.2
 	sparks_on_use = TRUE
 	force = WEAPON_FORCE_WEAK
-	switched_on_force = WEAPON_FORCE_PAINFUL
+	switched_on_forcemult = 2.1 //15
 	throwforce = WEAPON_FORCE_WEAK
 	suitable_cell = /obj/item/cell/medium
 	toggleable = TRUE
@@ -291,6 +291,30 @@
 	max_upgrades = 3
 	agonyforce = 40
 	hitcost = 100
+
+/obj/item/tool/baton/arcwelder/marqua
+	name = "Mar'quaian arcwelder"
+	desc = "An ergonomic cell loading arc welder, made of a strange alloy, and seemingly constructed without any screws welds or bolts on its surface, perfectly polished. Uses a medium cell."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "skrell_welder_arc"
+	item_state = "skrell_welder_arc"
+	w_class = ITEM_SIZE_NORMAL
+	worksound = WORKSOUND_WELDING
+	switched_on_qualities = list(QUALITY_WELDING = 85, QUALITY_PULSING = 70, QUALITY_WIRE_CUTTING = 25, QUALITY_CAUTERIZING = 40)
+	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 3)
+	price_tag = 7000 //valuable given its design
+	use_power_cost = 0.2
+	sparks_on_use = FALSE
+	force = WEAPON_FORCE_WEAK
+	switched_on_forcemult = 3.1
+	throwforce = WEAPON_FORCE_WEAK
+	suitable_cell = /obj/item/cell/medium
+	toggleable = TRUE
+	create_hot_spot = TRUE
+	glow_color = COLOR_BLUE_LIGHT
+	max_upgrades = 0
+	agonyforce = 80
+	hitcost = 10
 
 /obj/item/tool/baton/arcwelder/cyborg
 	desc = "A specialized tool designed by the Artificer's Guild. It functions as a battery powered welder and multitool. This version has a regulation on it preventing it to be used as a taser."

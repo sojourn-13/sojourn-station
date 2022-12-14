@@ -30,7 +30,7 @@
 	var/message = "<B>[src]</B> [input]"
 
 	///List of symbols that we dont want a dot after
-	var/list/punctuation = list("!","?",".")
+	var/list/punctuation = list("!","?",".","~",">") // The carat is a necessary fix for emotes ending with </span>
 
 	///Last character in the message
 	var/last_character = copytext(message,length_char(message))

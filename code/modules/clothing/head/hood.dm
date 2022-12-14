@@ -80,5 +80,13 @@
 /obj/item/clothing/head/hood/absolutecloakhood
 	name = "absolute cloak hood"
 	desc = "Protect yourself from the elements or conceal your identity, in the name of the Absolute."
+	armor_list = list(
+		melee = 0,
+		bullet = 0, //unarmoured, but bioproof
+		energy = 0,
+		bomb = 0,
+		bio = 100,
+		rad = 0
+	)
 	icon_state = "absolutecloakhood"
 	item_state = "absolutecloakhood"

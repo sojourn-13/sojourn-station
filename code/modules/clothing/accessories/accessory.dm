@@ -265,11 +265,6 @@
 	desc = "A raggedy cloak made of leather and reclaimed materials, can be worn over one's armor as a sign of pride for their outcast nature."
 	icon_state = "outcast_cloak"
 
-/obj/item/clothing/accessory/cape/scav
-	name = "makeshift cape"
-	desc = "A cape haphazardly cut from a large bolt of water resistant fabric, while some may wear it for the style, others would prefer it's use as a quick poncho, if it'll every rain."
-	icon_state = "scav_mantle"
-
 /obj/item/clothing/accessory/cape/blackedge
 	name = "heavy black cloak"
 	desc = "A rough and heavy black cloak for draping over yourself like some kind of cave dwelling royal."
@@ -279,6 +274,11 @@
 	name = "heavy brown cloak"
 	desc = "A rough and heavy brown cloak, perfectly suited to marching through the cold to the front door of an old friend."
 	icon_state = "browncloak"
+
+/obj/item/clothing/accessory/cape/prospie
+	name = "prospector mantle"
+	desc = "A rough mantle of salvaged hydrophobic materials typically worn around one's shoulders. While some may wear it for style, others prefer its use as decent camouflage on the humid amethian jungle."
+	icon_state = "prospie_cape"
 
 // Head of Departments
 /obj/item/clothing/accessory/job/cape
@@ -418,14 +418,19 @@
 	desc = "A thick, luxurious cloak with red trim."
 
 /obj/item/clothing/accessory/job/cape/church/small
-	name = "black Absolutists cloak"
+	name = "black Absolutist cloak"
 	icon_state = "churchcloakblack"
-	desc = "A sleek, luxurious cloak with black trim."
+	desc = "A sleek, luxurious black cloak with golden trim."
 
-/obj/item/clothing/accessory/job/cape/church/smallalt
-	name = "red Absolutists cloak"
+/obj/item/clothing/accessory/job/cape/church/small/red
+	name = "red Absolutist cloak"
 	icon_state = "churchcloakred"
-	desc = "A sleek, luxurious cloak with red trim."
+	desc = "A sleek, luxurious red cloak with golden trim."
+
+/obj/item/clothing/accessory/job/cape/church/small/white
+	name = "white Absolutist cloak"
+	icon_state = "churchcloakwhite"
+	desc = "A sleek, luxurious white cloak with golden trim."
 
 /obj/item/clothing/accessory/job/cape/ironhammer
 	name = "security cloak"

@@ -22,5 +22,5 @@
 		return
 
 	initial_time = world.time
-	container.holder.visible_message("<span class='name'>[container.holder]</span> screams!")
+	container.holder.emote("scream")
 	return

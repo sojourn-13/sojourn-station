@@ -741,7 +741,7 @@
 
 /datum/sprite_accessory/hair/vriska_s
 	name = "Vriska"
-	icon_state = "vriska_s"
+	icon_state = "vriska"
 
 /datum/sprite_accessory/hair/undercut
 	name = "Undercut"

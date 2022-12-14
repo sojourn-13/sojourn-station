@@ -361,9 +361,11 @@
 	icon_state = "rip_and_tear"
 	hitsound = WORKSOUND_CHAINSAW
 	worksound = WORKSOUND_CHAINSAW
-	force = WEAPON_FORCE_GODLIKE
+	force = WEAPON_FORCE_DANGEROUS
+	switched_on_forcemult = 4.4 //88
 	w_class = ITEM_SIZE_NORMAL
-	armor_penetration = ARMOR_PEN_HALF
+	armor_penetration = ARMOR_PEN_DEEP
+	switched_on_penmult = 2.5 //50
 	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 3)
 	tool_qualities = list(QUALITY_SAWING = 70, QUALITY_CUTTING = 60, QUALITY_WIRE_CUTTING = 30)
 	max_upgrades = 1//Already over powered.

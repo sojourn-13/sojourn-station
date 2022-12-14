@@ -376,49 +376,6 @@
 	ammo_type = /obj/item/ammo_casing/c10x24
 	max_ammo = 80 //6.6 reloads of the SWAT, 2 of the bond, almost 1 full pulse mag
 
-//// .223 laser shot!
-
-/obj/item/ammo_magazine/ammobox/laser_223
-	name = "ammunition packet (5.56mm L)"
-	icon_state = "223-laser"
-	desc = "A packet of 5.56mm laser round."
-	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = CAL_SCI
-	ammo_type = /obj/item/ammo_casing/beam
-	max_ammo = 30
-
-/obj/item/ammo_magazine/ammobox/laser_223/ap
-	name = "ammunition packet (5.56mm PL)"
-	icon_state = "223-ap-laser"
-	ammo_type = /obj/item/ammo_casing/beam/ap
-
-/obj/item/ammo_magazine/ammobox/laser_223/lethal
-	name = "ammunition packet (5.56mm DL)"
-	icon_state = "223-lethal-laser"
-	ammo_type = /obj/item/ammo_casing/beam
-
-/obj/item/ammo_magazine/ammobox/laser_223/box
-	name = "ammunition box (5.56mm L)"
-	icon_state = "box223-laser"
-	desc = "A large box of 5.56mm laser round."
-	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = CAL_SCI
-	ammo_type = /obj/item/ammo_casing/beam
-	max_ammo = 200
-	w_class = ITEM_SIZE_BULKY
-
-/obj/item/ammo_magazine/ammobox/laser_223/ap/box
-	name = "ammunition box (5.56mm PL)"
-	icon_state = "box223-ap-laser"
-	ammo_type = /obj/item/ammo_casing/beam/ap
-	max_ammo = 200
-
-/obj/item/ammo_magazine/ammobox/laser_223/lethal/box
-	name = "ammunition box (5.56mm DL)"
-	icon_state = "box223-lethal-laser"
-	ammo_type = /obj/item/ammo_casing/beam
-	max_ammo = 200
-
 //// 12mm heavy pistol
 
 /obj/item/ammo_magazine/ammobox/kurtz_50

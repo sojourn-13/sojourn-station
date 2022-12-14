@@ -243,7 +243,7 @@ var/list/disciples = list()
 	//access = list(access_nt_disciple) //So they can try and recuit people - Correction people just cant stop abusing everything ever.
 	power = 50
 	max_power = 50
-	power_regen = 1.5
+	power_regen = 1
 	path = "lemn"
 
 /obj/item/implant/core_implant/cruciform/monomial
@@ -253,7 +253,7 @@ var/list/disciples = list()
 	implant_type = /obj/item/implant/core_implant/cruciform/monomial
 	power = 90
 	max_power = 90
-	power_regen = 0.1
+	power_regen = 0.2
 	path = "mono"
 
 /obj/item/implant/core_implant/cruciform/divisor
@@ -273,7 +273,7 @@ var/list/disciples = list()
 	implant_type = /obj/item/implant/core_implant/cruciform/factorial
 	power = 50
 	max_power = 50
-	power_regen = 0.2
+	power_regen = 0.4
 	path = "fact"
 
 /obj/item/implant/core_implant/cruciform/omni

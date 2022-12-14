@@ -22,7 +22,7 @@ obj/item/organ/internal/bone/add_initial_transforms()
 		)
 		playsound(loc, 'sound/weapons/jointORbonebreak.ogg', 50, 1, -1) // Auditory cue of having a bone break on you
 		if(owner.species && !(owner.species.flags & NO_PAIN))
-			owner.emote("scream")
+			owner.emote("painscream")
 
 	parent.status |= ORGAN_BROKEN	//Holding the status on the parent organ to make transition to erismed organ processes easier.
 	broken_description = pick("broken","fracture","hairline fracture")

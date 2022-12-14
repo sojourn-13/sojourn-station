@@ -145,13 +145,13 @@
 
 	add_language(LANGUAGE_ROBOT, 1)
 	add_language(LANGUAGE_COMMON, 1)
-	add_language(LANGUAGE_SERBIAN, 1)
+	add_language(LANGUAGE_ILLYRIAN, 1)
 	add_language(LANGUAGE_JIVE, 0)
-	add_language(LANGUAGE_GERMAN, 1)
+	add_language(LANGUAGE_EURO, 1)
 	add_language(LANGUAGE_JANA, 1)
 	add_language(LANGUAGE_CYRILLIC, 1)
 	add_language(LANGUAGE_LATIN, 1)
-	add_language(LANGUAGE_ESPERANTO, 1)
+	add_language(LANGUAGE_ROMANA, 1)
 	add_language(LANGUAGE_YASSARI, 1)
 
 	wires = new(src)
