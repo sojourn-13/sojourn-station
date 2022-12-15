@@ -25,7 +25,7 @@
 // Languages.
 #define LANGUAGE_COMMON		"English Common"
 #define LANGUAGE_CYRILLIC	"Interslavic"
-#define LANGUAGE_ILLYRIAN	"Illryan"
+#define LANGUAGE_ILLYRIAN	"Illyrian"
 #define LANGUAGE_JIVE		"Jive"
 #define LANGUAGE_EURO		"Eurolang"
 #define LANGUAGE_JANA	    "Jana"
