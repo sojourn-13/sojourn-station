@@ -76,6 +76,8 @@ particle whenever the target moves
 /datum/effect/effect/system/trail/fire
 	trail_effect = /obj/effect/trail_particle/fire
 
+/datum/effect/effect/system/trail/fire/psion
+	trail_effect = /obj/effect/trail_particle/fire/psion
 
 /********************************************************
 	Jetpack Trails
@@ -128,6 +130,16 @@ Their only special behaviour atm is to delete themselves shortly after creation
 	icon_state = "fire_trails"
 
 /obj/effect/trail_particle/fire/Initialize()
+	..()
+	var/turf/T = get_turf(src)
+	T?.hotspot_expose(1000,100)
+
+/obj/effect/trail_particle/fire/psion
+	name = "psi-fire trail"
+	icon_state = "psifire_trails"
+	color = "#53377A"
+
+/obj/effect/trail_particle/fire/psion/Initialize()
 	..()
 	var/turf/T = get_turf(src)
 	T?.hotspot_expose(1000,100)

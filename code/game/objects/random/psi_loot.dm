@@ -12,12 +12,18 @@
 	/obj/item/tool/saw/chain/cult/deepmaints = 1,
 	/obj/item/tool/sword/machete/cult/deepmaints = 1,
 	/obj/item/tool/sword/cleaver/cult/deepmaints = 1,
+	/obj/item/tool/hammer/powered_hammer/cult/deepmaints = 1,
+	/obj/item/melee/telebaton/cult/deepmaints = 1,
+	/obj/item/melee/energy/sword/sabre/dagger/cult/deepmaints = 1,
+	/obj/item/tool/fireaxe/militia_tomahawk/cult/deepmaints  = 1,
+	/obj/item/shield/hardsuit/cult/deepmaints = 1,
 	/obj/item/tool/power_fist/cult/deepmaints = 1,
 	//Guns and Lasers
 	/obj/item/gun/energy/laser/cult/deepmaints = 1,
 	/obj/item/gun/energy/plasma/cassad/cult/deepmaints = 1,
 	/obj/item/gun/energy/plasma/auretian/cult/deepmaints = 1,
 	/obj/item/gun/projectile/automatic/greasegun/cult/deepmaints = 1,
+	/obj/item/gun/energy/cog/cult/deepmaints = 1,
 	//Tools
 	/obj/item/tool/multitool/advanced/cult/deepmaints = 1,
 	/obj/item/tool/shovel/power/cult/deepmaints = 1,
@@ -45,6 +51,7 @@
 	/obj/item/gun/energy/laser/cult/deepmaints = 1,
 	/obj/item/gun/energy/plasma/cassad/cult/deepmaints = 1,
 	/obj/item/gun/energy/plasma/auretian/cult/deepmaints = 1,
+	/obj/item/gun/energy/cog/cult/deepmaints = 1,
 	/obj/item/gun/projectile/automatic/greasegun/cult/deepmaints = 1
 	))
 
@@ -88,6 +95,7 @@
 	//Tools
 	/obj/item/tool/sword/cult/deepmaints = 1,
 	/obj/item/tool/hammer/homewrecker/cult/deepmaints = 1,
+	/obj/item/tool/hammer/powered_hammer/cult/deepmaints = 1,
 	/obj/item/tool/saw/chain/cult/deepmaints = 1,
 	/obj/item/tool/sword/machete/cult/deepmaints = 1,
 	/obj/item/tool/sword/cleaver/cult/deepmaints = 1,

@@ -35,7 +35,8 @@
 	filled with the fires of ambition to create and destroy."
 	icon = 'icons/obj/psionic/occhammer.dmi'
 	icon_state = "soulcrusher"
-	wielded_icon = "soulcrusher_wielded"
+	item_state = "soulcrusher0"
+	wielded_icon = "soulcrusher1"
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	force_unwielded = WEAPON_FORCE_ROBUST
 	slot_flags = SLOT_BELT|SLOT_BACK
@@ -116,6 +117,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "psi_powerfist"
 	item_state = "psi_powerfist"
+	suitable_cell = /obj/item/cell/medium/psion
 	origin_tech = list()
 	matter = list()
 	switched_on_qualities = list(QUALITY_HAMMERING = 13, QUALITY_SHOVELING = 13, QUALITY_DIGGING = 13)
@@ -131,6 +133,237 @@
 /obj/item/tool/power_fist/cult/deepmaints/attack()
 	..()
 	usr.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+
+/obj/item/tool/spear/hunter_halberd/deepmaints
+	name = "wild intuition"
+	desc = "A two-handed halberd decorated with bronze and the idea of pursuit. Drive them all the way to the woods, into your trap. The spirit of the hunt is calling."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "psi_halberd"
+	item_state = "psi_halberd"
+	wielded_icon = "psi_halberd_wielded"
+	origin_tech = list()
+	matter = list()
+	flags = CONDUCT
+	sharp = TRUE
+	edge = TRUE
+	embed_mult = 80
+	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	tool_qualities = list(QUALITY_SAWING = 5, QUALITY_CLAMPING = 10, QUALITY_CAUTERIZING = 20, QUALITY_RETRACTING = 10, QUALITY_BONE_SETTING = 15)
+	effective_faction = list("psi_monster") // Which faction the halberd is effective against.
+	damtype = BURN
+	throwforce = WEAPON_FORCE_LETHAL
+
+
+/obj/item/tool/hammer/powered_hammer/cult
+	name = "unexpected memory"
+	desc = "This is a large hammer forged from obsidian under the guidance of the psion's thought about the gravity of what is happening around. A piece of steel at its working part distorts the air, allowing you to look at the world through the eyes of a fading mind."
+	icon_state = "psipowered_hammer"
+	item_state = "psipowered_hammer"
+	wielded_icon = "psipowered_hammer_on"
+	damtype = BURN
+	switched_on_force = WEAPON_FORCE_BRUTAL
+	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
+	w_class = ITEM_SIZE_BULKY
+	slot_flags = SLOT_BELT|SLOT_BACK
+	origin_tech = list()
+	matter = list()
+	price_tag = 0
+	switched_on_qualities = list(QUALITY_HAMMERING = 45)
+	switched_off_qualities = list(QUALITY_HAMMERING = 30)
+	toggleable = TRUE
+	armor_penetration = ARMOR_PEN_EXTREME
+	degradation = 3.5
+	use_power_cost = 8
+	suitable_cell = /obj/item/cell/medium/psion
+	max_upgrades = 4
+	item_icons = list(
+		slot_back_str = 'icons/obj/tools.dmi')
+	item_state_slots = list(
+		slot_back_str = "psionehammer_back"
+		)
+
+/obj/item/tool/hammer/powered_hammer/cult/turn_on(mob/user)
+
+	if (cell && cell.charge > 0)
+		item_state = "[initial(item_state)]_on"
+		to_chat(user, SPAN_NOTICE("You switch [src] on."))
+		playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
+		..()
+	else
+		item_state = initial(item_state)
+		to_chat(user, SPAN_WARNING("[src] has no power!"))
+
+/obj/item/tool/hammer/powered_hammer/cult/turn_off(mob/user)
+	item_state = initial(item_state)
+	playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
+	to_chat(user, SPAN_NOTICE("You switch [src] off."))
+	..()
+
+/obj/item/tool/hammer/powered_hammer/cult/deepmaints
+	name = "the destroyer of reason"
+	desc = "How pleasantly her bones crunched. Time after time, you remember thoughts that are not your own, touching the handle of this beautiful instrument. Their skulls were being torn apart, and their minds were being released from their shells, splashing on the walls. Primordial rage seizes you, from just looking at this titanic hammer."
+	icon_state = "psipowered_hammer"
+	item_state = "psipowered_hammer"
+	wielded_icon = "psipowered_hammer_on"
+	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
+	switched_on_force = WEAPON_FORCE_LETHAL
+	switched_on_qualities = list(QUALITY_HAMMERING = 60)
+	switched_off_qualities = list(QUALITY_HAMMERING = 35)
+	workspeed = 1.5
+	max_upgrades = 2
+	use_power_cost = 4
+
+/obj/item/melee/telebaton/cult/deepmaints
+	name = "hidden thoughts"
+	desc = "You could use it for personal protection, but you could never stop, you pursue her day after day, do not give her the opportunity to exhale without your presence. Ah, how beautiful her blood was. The tip of this object pulsates with heat. Touching the handle of this baton, a real sadist wakes up in you."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "psytelebaton_0"
+	item_state = "psytelebaton_0"
+	slot_flags = SLOT_BELT
+	w_class = ITEM_SIZE_SMALL
+	force = 3
+	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
+	origin_tech = list()
+	matter = list()
+
+/obj/item/melee/telebaton/cult/deepmaints/attack_self(mob/user as mob)
+	on = !on
+	if(on)
+		user.visible_message(
+			SPAN_WARNING("\The [user] reveals his thoughts!"),
+			SPAN_WARNING("You He reveals his thoughts!"),
+			"You hear an ominous click."
+		)
+		icon_state = "psytelebaton_1"
+		item_state = "psytelebaton_1"
+		update_wear_icon()
+		w_class = ITEM_SIZE_NORMAL
+		force = WEAPON_FORCE_PAINFUL//quite robust
+			damtype = BURN
+		attack_verb = list("smacked", "struck", "slapped")
+	else
+		user.visible_message(
+			SPAN_NOTICE("\The [user] collapses their thoughts. For now..."),
+			SPAN_NOTICE("You desire, and your thoughts are destroyed, plunging you into an empty madness."),
+			"You hear a click."
+		)
+		icon_state = "psytelebaton_0"
+		item_state = "psytelebaton_0"
+		update_wear_icon()
+		w_class = ITEM_SIZE_SMALL
+		force = 3//not so robust now
+		attack_verb = list("hit", "punched")
+
+	playsound(src.loc, 'sound/weapons/energy/pulse.ogg', 50, 1)
+	add_fingerprint(user)
+
+	if(blood_overlay && blood_DNA && (blood_DNA.len >= 0)) //updates blood overlay, if any
+		cut_overlays()//this might delete other item over-lays as well but eeeeeeeh
+
+		var/icon/I = new /icon(src.icon, src.icon_state)
+		I.Blend(new /icon('icons/effects/blood.dmi', rgb(255,255,255)),ICON_ADD)
+		I.Blend(new /icon('icons/effects/blood.dmi', "itemblood"),ICON_MULTIPLY)
+		blood_overlay = I
+
+		add_overlay(blood_overlay)
+
+	return
+
+/obj/item/melee/telebaton/cult/deepmaints/attack(mob/target as mob, mob/living/user as mob)
+	if(on)
+		if(user.a_intent == I_HELP)
+			damtype = HALLOSS
+			force = WEAPON_FORCE_PAINFUL
+			armor_penetration = ARMOR_PEN_MODERATE
+
+		if(user.a_intent == I_DISARM)
+			damtype = HALLOSS
+			force = 18 //3 more then help but not as good as a wooden classic
+			armor_penetration = ARMOR_PEN_SHALLOW
+
+		if(user.a_intent == I_HURT)
+			damtype = BURN
+			force = WEAPON_FORCE_DANGEROUS
+
+		if ((CLUMSY in user.mutations) && prob(10))
+			to_chat(user, SPAN_WARNING("You club yourself over the head."))
+			user.Weaken(0.1 * force)
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				H.damage_through_armor(2 * force, BRUTE, BP_HEAD, ARMOR_MELEE)
+			else
+				user.take_organ_damage(2*force)
+			return
+		if(..())
+			playsound(src.loc, 'sound/effects/woodhit.ogg', 50, 1, -1)
+			return
+	else
+		return ..()
+
+/obj/item/melee/energy/sword/sabre/dagger/cult/deepmaints
+	name = "psagger"
+	desc = "an amazingly shaped blade made of hard light that does not obey the surrounding reality. His disregard for the postulates of this world can only be compared with its terrible instability."
+	icon_state = "psidagger0"
+	blade_color = null
+	damtype = BURN
+	armor_penetration = ARMOR_PEN_EXTREME
+	active_force =  WEAPON_FORCE_DANGEROUS
+	active_throwforce =  WEAPON_FORCE_DANGEROUS
+	origin_tech = list()
+	matter = list()
+
+/obj/item/melee/energy/sword/sabre/dagger/cult/deepmaints/activate(mob/living/user)
+	if(!active)
+		to_chat(user, SPAN_NOTICE("\The [src] is now energized."))
+	..()
+	icon_state = "psidagger"
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "strikes", "cut")
+	tool_qualities = list(QUALITY_CUTTING = 25,  QUALITY_WIRE_CUTTING = 15, QUALITY_LASER_CUTTING = 1, QUALITY_WELDING = 10, QUALITY_CAUTERIZING = 10)
+
+/obj/item/tool/fireaxe/militia_tomahawk/cult/deepmaints
+	name = "black ideals"
+	desc = "This is the faithful tomahawk of the guard, distorted by the dead mind of the commander of the black shield. Just once it was enough for him to take this tool in his hands to deprive all his subordinates of sleep. Blood flowed like a river."
+	icon_state = "psi_tomahawk"
+	wielded_icon = "psi_tomahawk2"
+	effective_faction = list("roach")
+	damtype = BURN
+	force = WEAPON_FORCE_BRUTAL
+	throwforce = WEAPON_FORCE_BRUTAL
+	slot_flags = SLOT_BELT|SLOT_BACK
+	tool_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 25, QUALITY_PRYING = 15, QUALITY_CLAMPING = 10, QUALITY_CAUTERIZING = 20, QUALITY_RETRACTING = 10, QUALITY_BONE_SETTING = 15)
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list()
+	matter = list()
+	price_tag = 0
+
+/obj/item/shield/hardsuit/cult/deepmaints
+	name = "deep principles"
+	desc = "The world around you is extremely unstable. This is the only thing that makes any sense in the empty and dark endless tunnels. His eye sees the truth, even though the shell is cracked, but the direct path to deliverance has already been paved."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "psishield"
+	item_state = "psishield"
+	flags = CONDUCT
+	slot_flags = SLOT_BACK
+	force = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_PAINFUL
+	throw_speed = 1
+	throw_range = 1
+	w_class = ITEM_SIZE_HUGE
+	origin_tech = list()
+	matter = list()
+	price_tag = 0
+	base_block_chance = 70
+	attack_verb = list("smashed", "bashed")
+	armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 10, bio = 0, rad = 0)
+	max_durability = 250 //So we can brake and need healing time to time
+	durability = 150
+	picked_by_human = TRUE
+	cleanup = FALSE
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "psishield"
+		)
 
 //////////////////////////////
 //			Psionic Firearms
@@ -181,6 +414,24 @@
 	damage_multiplier = 1
 	penetration_multiplier = 1
 
+/obj/item/gun/energy/gun/martin/cult
+    name = "\"Star\" psi-laser pistol"
+    desc = "A laser weapon formed from the mind of a psion who shaped an oddity into a weapon. A psionic copy of a martin, an oft overlooked and ignored weapon. Perhaps this is formed from the \
+    small thoughts that make all the difference?"
+    icon = 'icons/obj/guns/energy/psi_pdw.dmi'
+    origin_tech = list()
+    matter = list()
+    price_tag = 0
+    serial_shown = FALSE
+
+/obj/item/gun/energy/gun/martin/cult/deepmaints
+    name = "\"Blue Star\" psi-laser pistol"
+    desc = "A Martin made of the mind of someone wishing to have a real firearm, whether this was out of desperation or frustration is unknown, but it does seem to have failed its creator..."
+    icon = 'icons/obj/guns/energy/psi_pdw.dmi'
+    charge_cost = 25
+    damage_multiplier = 1.1
+    penetration_multiplier = 1.1
+
 /obj/item/gun/energy/plasma/auretian/cult
 	name = "\"Meteoroid\" psi-energy pistol"
 	desc = "An energy weapon forged from the mind of a psion who shaped an oddity into a weapon. The iconic auretian is a weapon that the Soteria employs often and frequently among its staff, \
@@ -224,6 +475,53 @@
 	damage_multiplier = 1
 	penetration_multiplier = 1.2
 
+/obj/item/gun/energy/cog/cult/deepmaints
+	name = "\"Shaky ideals\" psi-energy rifle"
+	icon = 'icons/obj/guns/energy/psicog.dmi'
+	icon_state = "psicog"
+	item_state = "psicog"
+	item_charge_meter = TRUE
+	desc = "A massive idea put into service in this careless world.  The nightmare of sleep reeks like a ray of light in the impenetrable darkness."
+	fire_sound = 'sound/weapons/wave.ogg'
+	slot_flags = SLOT_BELT|SLOT_BACK
+	w_class = ITEM_SIZE_BULKY
+	origin_tech = list()
+	matter = list()
+	projectile_color = "#53377A"
+	projectile_type = /obj/item/projectile/beam/midlaser
+	fire_delay = 12
+	charge_cost = 60
+	price_tag = 0
+	gun_tags = list(GUN_LASER, GUN_ENERGY)
+	init_firemodes = list(
+		WEAPON_NORMAL
+	)
+	twohanded = TRUE
+	max_upgrades = 4
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "psicog"
+		)
+
+/obj/item/gun/projectile/automatic/sts/rifle/cult/deepmaints
+	name = "\"Eclipse\" psi-rifle"
+	desc = "A ballistic weapon forged from the mind of a psion who shaped an oddity into a weapon. One wonders how and why this weapon came to be. Perhaps that is the point?"
+	icon = 'icons/obj/psionic/occgun.dmi'
+	icon_state = "eclipse"
+	item_state = "eclipse"
+	origin_tech = list()
+	matter = list()
+	price_tag = 0
+	damage_multiplier = 0.8
+	penetration_multiplier = 0.9
+	origin_tech = list()
+	matter = list()
+	price_tag = 0
+	max_upgrades = 3
+	damage_multiplier = 1.1 //the uncheap
+	saw_off = FALSE
+
 //////////////////////////////
 //			Psionic Tools
 //////////////////////////////
@@ -239,7 +537,7 @@
 	use_power_cost = 0.50
 	workspeed = 1.2
 	max_upgrades = 4
-	suitable_cell = /obj/item/cell/medium
+	suitable_cell = /obj/item/cell/medium/psion
 
 /obj/item/tool/multitool/advanced/cult/deepmaints
 	name = "multi-mind"
@@ -252,6 +550,7 @@
 	use_power_cost = 0.25
 	workspeed = 1.3
 	max_upgrades = 4
+	suitable_cell = /obj/item/cell/medium/psion
 
 /obj/item/tool/shovel/power/cult
 	name = "pit delver"
@@ -262,6 +561,7 @@
 	origin_tech = list()
 	price_tag = 0
 	tool_qualities = list(QUALITY_SHOVELING = 53, QUALITY_DIGGING = 42, QUALITY_EXCAVATION = 34, QUALITY_HAMMERING = 6)
+	suitable_cell = /obj/item/cell/medium/psion
 
 /obj/item/tool/shovel/power/cult/deepmaints
 	name = "hollow labour"
@@ -276,6 +576,7 @@
 	origin_tech = list()
 	price_tag = 0
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 42, QUALITY_BOLT_TURNING = 42, QUALITY_DRILLING = 36, QUALITY_RETRACTING = 22)
+	suitable_cell = /obj/item/cell/small/psion
 
 /obj/item/tool/screwdriver/combi_driver/cult/deepmaints
 	name = "mind-driver"
@@ -333,4 +634,3 @@
 	name = "thought spanner"
 	desc = "A large wrench with sharp teeth for cutting wires and bolting large plates together. Its hammering weight is reminiscent of the mental pressure exercised upon someone trying to get a project done in time."
 	tool_qualities = list(QUALITY_BOLT_TURNING = 60, QUALITY_HAMMERING = 60, QUALITY_WIRE_CUTTING = 20)
-

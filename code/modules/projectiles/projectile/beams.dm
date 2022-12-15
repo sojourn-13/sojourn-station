@@ -150,6 +150,16 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	impact_type = /obj/effect/projectile/laser_heavy/impact
 	recoil = 4
 
+/obj/item/projectile/beam/xray/mindlaserxray
+	name = "psion x-ray light beam"
+	icon_state = "psychic_beam_heavy"
+	damage_types = list(BURN = 20)
+	added_damage_laser_pve = 20
+	armor_penetration = 15
+	eyeblur = 2
+	recoil = 1
+	penetrating = 1
+
 /obj/item/projectile/beam/xray
 	name = "x-ray beam"
 	icon_state = "xray"

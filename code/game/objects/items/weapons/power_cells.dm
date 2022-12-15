@@ -234,6 +234,19 @@
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
 	maxcharge = 1100
 
+/obj/item/cell/medium/psion
+	name = "Memory of energy \"Psicell 600M\""
+	desc = "This is an echo of the memory of a working and efficient battery. Unfortunately, it cannot be recharged, and also does not represent any value except for use here and now."
+	icon_state = "psion"
+	matter = list()
+	maxcharge = 600
+	max_chargerate = 0
+	created_max_charge = TRUE
+
+/obj/item/cell/medium/psion/zero
+	charge = 0
+	starts_max_charge = FALSE
+
 /obj/item/cell/medium/neotheology
 	name = "Absolute \"Spark 1000M\""
 	desc = "Absolute branded non-rechargeable M-standardized power cell."
@@ -276,6 +289,19 @@
 	maxcharge = 200
 
 /obj/item/cell/small/high/depleted
+	charge = 0
+	starts_max_charge = FALSE
+
+/obj/item/cell/small/psion
+	name = "A fleeting vision \"Psicell 100S\""
+	desc = "A vague memory of a spark. Unfortunately, it cannot be recharged, and also does not represent any value except for use here and now."
+	icon_state = "s_psion"
+	matter = list()
+	maxcharge = 100
+	max_chargerate = 0
+	created_max_charge = TRUE
+
+/obj/item/cell/small/psion/zero
 	charge = 0
 	starts_max_charge = FALSE
 

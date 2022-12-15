@@ -286,6 +286,26 @@
 /obj/item/projectile/flamer_lob/flamethrower
 	kill_count = 5
 
+/obj/item/projectile/flamer_lob/psi
+	name = "blob of psifuel"
+	icon_state = null
+	damage_types = list(BURN = 10)
+	check_armour = ARMOR_MELEE
+	kill_count = 3
+	fire_stacks = 2
+	luminosity_color = COLOR_PURPLE
+	hitsound_wall = "sound/effects/fireplace.ogg"
+	list/mob_hit_sound = list('sound/effects/fireplace.ogg')
+
+/obj/item/projectile/flamer_lob/Move(atom/A)
+	..()
+	if (!testing)
+		var/turf/T = get_turf(src)
+		if(T)
+			new/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel/psi(T, 1 , 1)
+			new/obj/effect/trail_particle/fire/psion(T, 1 , 1)
+			T.hotspot_expose((T20C*2) + 380,500)
+
 /obj/item/projectile/bullet/flare
 	name = "flare"
 	icon_state = "flare"
@@ -449,6 +469,190 @@
 				P.activate()
 				our_tracers.Add(P) //this should be more performant than += since we don't need to be creating a bunch of new lists
 
+/obj/item/projectile/tether/psionicattraction
+	name = "Psionic attraction."
+	muzzle_type = /obj/effect/projectile/psion/muzzle
+	tracer_type = /obj/effect/projectile/psion/tracer
+	impact_type = /obj/effect/projectile/psion/impact
+	damage_types = list(BRUTE = 15)
+	nodamage = FALSE
+	kill_count = 2
+	stun = 2
+	weaken = 1
+
+/obj/item/projectile/tether/psionicattraction/Initialize()
+	..()
+	our_tracers = list()
+
+/obj/item/projectile/tether/psionicattraction/on_impact(target)
+	for(var/obj/effect/tokill in our_tracers)
+		qdel(tokill)
+	..()
+	var/atom/movable/AM
+	var/reel_in_self = FALSE
+	if (!testing)
+		if(isturf(target))
+			reel_in_self = TRUE
+		if(ismovable(target))
+			AM = target
+			reel_in_self = AM.anchored
+
+		if(reel_in_self)
+			original_firer.throw_at(target, 10, 2, original_firer)
+			visible_message(SPAN_WARNING("[src] begins reeling in, pulling [original_firer] towards [target]!"))
+			return
+
+		visible_message(SPAN_WARNING("[src] begins reeling in, pulling [target] towards [original_firer]!"))
+		AM.throw_at(original_firer, 10, 1, original_firer)
+
+/obj/item/projectile/tether/psionicattraction/muzzle_effect(var/matrix/T)
+	if (!testing)
+		if (!location)
+			return
+
+		if(silenced)
+			return
+
+		if(ispath(muzzle_type))
+			var/obj/effect/projectile/M = new muzzle_type(get_turf(src))
+
+			if(istype(M))
+				if(proj_color)
+					var/icon/I = new(M.icon, M.icon_state)
+					I.Blend(proj_color)
+					M.icon = I
+				M.set_transform(T)
+				M.pixel_x = location.pixel_x
+				M.pixel_y = location.pixel_y
+				M.activate()
+				our_tracers.Add(M)
+
+/obj/item/projectile/tether/psionicattraction/tracer_effect(var/matrix/M)
+
+	if (!testing)
+
+		if (!location)
+			return
+
+		if(ispath(tracer_type))
+			var/obj/effect/projectile/P = new tracer_type(location.loc)
+
+			if(istype(P))
+				if(proj_color)
+					var/icon/I = new(P.icon, P.icon_state)
+					I.Blend(proj_color)
+					P.icon = I
+				P.set_transform(M)
+				P.pixel_x = location.pixel_x
+				P.pixel_y = location.pixel_y
+				P.activate()
+				our_tracers.Add(P)
+
+/obj/item/projectile/tether/hummercharge
+	name = "psi hammer charge"
+	muzzle_type = /obj/effect/projectile/psihummer/muzzle
+	tracer_type = /obj/effect/projectile/psihummer/tracer
+	impact_type = /obj/effect/projectile/psihummer/impact
+	damage_types = list(BRUTE = 0)
+	kill_count = 2
+	nodamage = FALSE
+	stun = 4
+	weaken = 1
+
+/obj/item/projectile/tether/hummercharge/Initialize()
+	..()
+	our_tracers = list()
+
+/obj/item/projectile/tether/hummercharge/on_impact(target)
+	for(var/obj/effect/tokill in our_tracers)
+		qdel(tokill)
+	..()
+	var/atom/movable/AM
+	var/reel_in_self = FALSE
+	if (!testing)
+		if(isturf(target))
+			reel_in_self = TRUE
+		if(ismovable(target))
+			AM = target
+			reel_in_self = AM.anchored
+
+		if(reel_in_self)
+			original_firer.throw_at(target, 10, 2, original_firer)
+			visible_message(SPAN_WARNING("[src] begins reeling in, pulling [original_firer] towards [target]!"))
+			return
+
+		visible_message(SPAN_WARNING("[src] begins reeling in, pulling [target] towards [original_firer]!"))
+		AM.throw_at(original_firer, 10, 1, original_firer)
+
+/obj/item/projectile/tether/hummercharge/muzzle_effect(var/matrix/T)
+	if (!testing)
+		if (!location)
+			return
+
+		if(silenced)
+			return
+
+		if(ispath(muzzle_type))
+			var/obj/effect/projectile/M = new muzzle_type(get_turf(src))
+
+			if(istype(M))
+				if(proj_color)
+					var/icon/I = new(M.icon, M.icon_state)
+					I.Blend(proj_color)
+					M.icon = I
+				M.set_transform(T)
+				M.pixel_x = location.pixel_x
+				M.pixel_y = location.pixel_y
+				M.activate()
+				our_tracers.Add(M)
+
+/obj/item/projectile/tether/hummercharge/tracer_effect(var/matrix/M)
+
+	if (!testing)
+
+		if (!location)
+			return
+
+		if(ispath(tracer_type))
+			var/obj/effect/projectile/P = new tracer_type(location.loc)
+
+			if(istype(P))
+				if(proj_color)
+					var/icon/I = new(P.icon, P.icon_state)
+					I.Blend(proj_color)
+					P.icon = I
+				P.set_transform(M)
+				P.pixel_x = location.pixel_x
+				P.pixel_y = location.pixel_y
+				P.activate()
+				our_tracers.Add(P)
+
+/obj/item/projectile/sonic_bolt/punch
+	name = "Heavy punch"
+	icon = 'icons/effects/projectiles.dmi'
+	icon_state = "punch"
+	damage_types = list(BRUTE = 20)
+	check_armour = ARMOR_MELEE
+	mob_hit_sound = list('sound/effects/bang.ogg')
+	hitsound_wall = "sound/effects/bang.ogg"
+	armor_penetration = 10 // It is a sound-wave liquifing organs I guess
+	kill_count = 1
+	golem_damage_bonus = 0 // Damage multiplier against ameridians.
+	recoil = 1
+
+/obj/item/projectile/halberd
+	name = "halberd"
+	icon = 'icons/effects/projectiles.dmi'
+	icon_state = "halberd"
+	damage_types = list(BRUTE = 50)
+	added_damage_laser_pve = 80
+	irradiate = 10
+	armor_penetration = 30
+	check_armour = ARMOR_MELEE
+	embed = TRUE
+	shrapnel_type = /obj/item/tool/spear/hunter_halberd/deepmaints
+	affective_damage_range = 4
+	affective_ap_range = 2
 
 //OS Portable turret projectiles
 

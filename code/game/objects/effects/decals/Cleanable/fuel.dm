@@ -82,3 +82,37 @@
 
 	amount *= 0.25
 
+/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel/psi
+	name = "psi mist"
+	desc = "A small, low mist of the purple gas..."
+	icon_state = "psion"
+	alpha = 240 //Less seeable
+	anchored = 0
+	color = "#53377A"
+	turf/origin
+
+/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel/psi/New(newLoc, _amount = 1, d = 0, var/turf/_origin)
+	origin = _origin
+	set_dir(d) //Setting this direction means you won't get torched by your own flamethrower.
+	. = ..()
+
+/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel/psi/Spread()
+	//The spread for flamethrower fuel is much more precise, to create a wide fire pattern.
+	var/turf/simulated/S = loc
+	if(amount < 0.1)
+		S.hotspot_expose((T20C*2) + 380,500)
+		return
+
+	if(!istype(S)) return
+
+	for(var/d in list(turn(dir,90),turn(dir,-90), dir))
+		var/turf/simulated/O = get_step(S,d)
+		if (O == origin)
+			continue //No torching the user
+		if(!(locate(/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel/psi) in O))
+
+			if(O.CanPass(null, S, 0, 0) && S.CanPass(null, O, 0, 0))
+				new/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel/psi(O,amount*0.25,d)
+		O.hotspot_expose((T20C*2) + 380,500) //Light flamethrower fuel on fire immediately.
+
+	amount *= 0.25

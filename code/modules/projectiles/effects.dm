@@ -196,3 +196,35 @@
 /obj/effect/projectile/line/impact
 	icon_state = "impact_line"
 	lifetime = 1
+
+//Psion Grappler
+
+/obj/effect/projectile/psion/tracer
+	icon_state = "psion"
+
+/obj/effect/projectile/psion/tracer/activate(kill_delay)//do nothing, only go away once we hit something
+
+/obj/effect/projectile/psion/muzzle
+	icon_state = "muzzle_psion"
+
+/obj/effect/projectile/line/muzzle/activate(kill_delay)//do nothing, only go away once we hit something
+
+/obj/effect/projectile/psion/impact
+	icon_state = "impact_psion"
+	lifetime = 1
+
+//Hummer charge
+
+/obj/effect/projectile/psihummer/tracer
+	icon_state = "psihummer"
+
+/obj/effect/projectile/psihummer/tracer/activate(kill_delay)//do nothing, only go away once we hit something
+
+/obj/effect/projectile/psihummer/muzzle
+	icon_state = "muzzle_psihummer"
+
+/obj/effect/projectile/line/muzzle/activate(kill_delay)//do nothing, only go away once we hit something
+
+/obj/effect/projectile/psihummer/impact
+	icon_state = "impact_psihummer"
+	lifetime = 1.5
