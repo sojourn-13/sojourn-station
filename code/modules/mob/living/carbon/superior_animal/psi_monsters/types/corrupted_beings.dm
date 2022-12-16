@@ -268,8 +268,8 @@
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_shooter
 	name = "Daskveyian Cultist "
 	desc = "A reformed soul by the Hand of Daskvey, they spend their time occupied with daily routine, trying to fend off the insanity of their own perdicament, while better learning their new powers."
-	icon_state = "psion_m"
-	icon_living = "psion_m"
+	icon_state = "psion_v"
+	icon_living = "psion_v"
 	maxHealth = 150
 	health = 150
 	melee_damage_lower = 15
