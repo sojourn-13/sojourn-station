@@ -37,7 +37,7 @@
 	icon = 'icons/mob/mobs-daskvey.dmi'
 	maxHealth = 250
 	health = 250
-	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
+	attack_sound = 'sound/weapons/slice.ogg'
 	melee_damage_lower = 26
 	melee_damage_upper = 26
 	emote_see = list("looks left then right", "breaths heavilly", "adjusts their armour")
@@ -117,7 +117,10 @@
 	move_to_delay = 4
 	attacktext = "bashes"
 
-	drop_items = list(/obj/item/gun/energy/plasma/cassad/cult)
+	viewRange = 20
+	comfy_range = 20
+
+	drop_items = list(/obj/item/gun/energy/laser/cult/deepmaints)
 
 	delay_for_range = 2 SECONDS
 	limited_ammo = FALSE
@@ -161,8 +164,8 @@
 	armor_penetration = 15
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/rifle
-	name = "Daskveyian Sharpshooter"
-	desc = "The soul of a hunter, wearing the mask of the warrior their steady aim serves a new purpouse now protecting their brothers and sisters in the Hand of Daskvey."
+	name = "Daskveyian Rifleperson"
+	desc = "A basic rifleperson of the Hand of Daskvey. Shadowed behind the mask of the warrior, they find peace with weapon in hand, for no duty is more important to freedom, than to take up arms for it."
 
 	icon_state = "psisolder_hm_rifle"
 	icon_living = "psisolder_hm_rifle"
