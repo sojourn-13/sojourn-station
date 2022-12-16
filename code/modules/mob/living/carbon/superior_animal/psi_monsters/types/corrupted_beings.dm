@@ -308,8 +308,8 @@
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_master
 	name = "Daskveyian Hand "
 	desc = "A master of the mind, reformed and guided true by the Hand of Daskvey. The members of the Hands form the parties of preach leaders, and assistants to the acolytes. Their knowledge of psionics is of a scholarly level."
-	icon_state = "psion_m"
-	icon_living = "psion_m"
+	icon_state = "psion_v_master"
+	icon_living = "psion_v_master"
 	maxHealth = 150
 	health = 150
 	melee_damage_lower = 15
