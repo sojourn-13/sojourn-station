@@ -1,5 +1,5 @@
 //#include "map/spacefortress.dmm"
-//#include "map/blackstone_temple.dmm"
+#include "map/blackstone_temple.dmm"
 
 /obj/map_data/spacefortress
 	name = "Excelsior Fortress"
