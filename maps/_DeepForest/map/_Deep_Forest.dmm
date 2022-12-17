@@ -713,7 +713,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/soap/syndie,
 /obj/machinery/light/small,
-/obj/item/implanter/adrenalin,
+/obj/item/implanter/adrenaline,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "cQ" = (

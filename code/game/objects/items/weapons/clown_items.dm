@@ -33,8 +33,8 @@
 	matter = list(MATERIAL_BIOMATTER = 12)
 	var/how_many_times_we_can_pull_a_pro_clown_gamer_move = 3 //How many times we can slip something before we got to give it more water
 	var/slip_power = 3 //how powerful is our slip?
-	var/clean_speed = 50 //How fast we are at cleaning
-	var/reagent_storage = 20 //How many units we store
+	var/clean_speed = 50 //How fast we are at cleaning. The smaller the number, the faster.
+	var/reagent_storage = 20 //How many units of liquid we can store before we need to be wettened to work once more
 	var/cleaning_reagent = "cleaner" //What do we use to clean?
 	var/bless_tile = FALSE
 
@@ -119,13 +119,15 @@
 	..()
 
 /obj/item/soap/nanotrasen
-	desc = "A NanoTrasen-brand bar of soap. Smells of plasma."
-	icon_state = "soapnt"
+	name = "white soap"
+	desc = "An immaculately white bar of soap. Somehow, it smells like plasma."
+	icon_state = "soapwhite"
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 4
-	clean_speed = 45 //Plasma is red
+	clean_speed = 40 // Plasma isn't red! But makes it go fasta!
 	matter = list(MATERIAL_BIOMATTER = 11, MATERIAL_PLASMA = 1)
 
 /obj/item/soap/deluxe
+	name = "deluxe soap"
 	icon_state = "soapdeluxe"
 	clean_speed = 40
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 5
@@ -136,8 +138,9 @@
 	..()
 
 /obj/item/soap/church
+	name = "holy soap" // Be clean or be dead
 	desc = "An Absolutism-brand bar of soap. It has a faithful smell."
-	icon_state = "soapchuchie"
+	icon_state = "soapchurch"
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 6
 	clean_speed = 45
 	reagent_storage = 25 //we can clean 5 more tiles before needing more water
@@ -146,7 +149,8 @@
 	price_tag = 30
 
 /obj/item/soap/syndie
-	desc = "An untrustworthy bar of soap. Smells of fear."
+	name = "suspicious soap"
+	desc = "A suspicious bar of soap. Smells like crime and hospitals."
 	icon_state = "soapsyndie"
 	clean_speed = 35 //Almost the same as a mop
 	reagent_storage = 30 //Same as mop
@@ -169,7 +173,7 @@
 	icon_state = "soaproach_red"
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 10
 	clean_speed = 45
-	reagent_storage = 10 //less then normal
+	reagent_storage = 10 //less than normal
 	slip_power = 2 //weak due to being handmade
 
 /obj/item/soap/hunters/New()
@@ -182,7 +186,7 @@
 /obj/item/soap/bluespase
 	desc = "An anomalous bar of blue soap created by an unknown person (or group?), their work marked by a blue cross.\
 	These items are known to vanish and reappear when left alone. Smells of bluespace and hospitals."
-	icon_state = "soapblue"
+	icon_state = "soapbluespace"
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 30
 	clean_speed = 15 // 2x faster then a mop
 	reagent_storage = 60 //2x more then a mop

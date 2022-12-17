@@ -973,6 +973,10 @@
 	. = ..()
 	update_icon()
 
+/obj/item/ammo_magazine/speed_loader_heavy_rifle_408/empty
+	icon_state = "stripper_base"
+	initial_ammo = 0
+
 //////// SHOTGUN SPEEDLOADERS ////////
 /obj/item/ammo_magazine/speed_loader_shotgun
 	name = "20mm loader tube (sabot slug)"

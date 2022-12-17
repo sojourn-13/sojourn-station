@@ -598,7 +598,9 @@
 /obj/item/ammo_casing/shotgun/payload
 	name = "explosive shell"
 	desc = "A 20mm explosive shell."
-	shell_color = "i"
+	icon_state = "s-shell_p"
+	spent_icon = "s-shell_p-spent"
+	shell_color = "p"
 	projectile_type = /obj/item/projectile/bullet/shotgun/payload
 	maxamount = 5
 	is_caseless = TRUE
@@ -621,8 +623,8 @@
 /obj/item/ammo_casing/shotgun/plasma_heavy
 	name = "heavy plasma shell"
 	desc = "A 20mm heavy plasma shot shell."
-	icon_state = "plasmashell"
-	spent_icon = "plasmashell-spent"
+	icon_state = "plasmaheavy"
+	spent_icon = "plasmaheavy-spent"
 	shell_color = "i"
 	projectile_type = /obj/item/projectile/plasma/heavy/shell
 	maxamount = 5

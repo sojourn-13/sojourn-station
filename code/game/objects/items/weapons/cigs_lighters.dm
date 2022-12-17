@@ -923,10 +923,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			icon_state = "[base_state]on"
 			item_state = "[base_state]on"
 			if(istype(src, /obj/item/flame/lighter/zippo) )
-				playsound(src, 'sound/items/zippo_open.ogg', 20, 1, 1)
+				playsound(src, 'sound/items/zippo_open.ogg', 80)
 				user.visible_message("<span class='rose'>Without even breaking stride, [user] flips open and lights \the [src] in one smooth movement.</span>")
 			else
-				playsound(src, 'sound/items/lighter.ogg', 20, 1, 1)
+				playsound(src, 'sound/items/lighter.ogg', 80)
 				if(prob(95))
 					user.visible_message(SPAN_NOTICE("After a few attempts, [user] manages to light \the [src]."))
 				else
