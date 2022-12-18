@@ -46,6 +46,8 @@
 	attacktext = "cuts into"
 	faction = "daskvey"
 
+	psionic_respawn = FALSE
+
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
