@@ -153,13 +153,14 @@
 	return ..()
 
 /obj/item/gun/projectile/boltgun/load_ammo(var/obj/item/A, mob/user)
-	if(!bolt_open)
-		to_chat(user, SPAN_WARNING("You add in ammo [src] while the bolt is closed!"))
-		return
+	if(istype(A, /obj/item/ammo_casing)) // Should prevent the following message while sawing down the gun or adding a mod. - Seb
+		if(!bolt_open)
+			to_chat(user, SPAN_WARNING("You cannot add in ammo to \the [src] while the bolt is closed!"))
+			return
 	..()
 
 /obj/item/gun/projectile/boltgun/unload_ammo(mob/user, var/allow_dump=1)
 	if(!bolt_open)
-		to_chat(user, SPAN_WARNING("You can't take out ammo [src] while the bolt is closed!"))
+		to_chat(user, SPAN_WARNING("You can't take ammo out of \the [src] while the bolt is closed!"))
 		return
 	..()

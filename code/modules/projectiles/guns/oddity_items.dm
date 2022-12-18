@@ -359,6 +359,8 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 			The only thing they fear is you."
 	icon_state = "rip_and_tear"
+	switched_on_icon_state = "rip_and_tear"
+	switched_on_item_state = "rip_and_tear"
 	hitsound = WORKSOUND_CHAINSAW
 	worksound = WORKSOUND_CHAINSAW
 	force = WEAPON_FORCE_DANGEROUS
@@ -373,6 +375,23 @@
 	use_power_cost = 1
 	suitable_cell = /obj/item/cell/medium
 	price_tag = 1850
+
+/obj/item/tool/saw/hyper/doombringer/turn_on(mob/user)
+	if (cell && cell.charge >= 1)
+		item_state = "[initial(item_state)]_on"
+		to_chat(user, SPAN_NOTICE("You rev up the [src]. Rip and Tear until it's done."))
+		playsound(loc, 'sound/items/chainsaw_on.ogg', 40)
+		..()
+	else
+		item_state = initial(item_state)
+		to_chat(user, SPAN_WARNING("[src] has no power!"))
+
+/obj/item/tool/saw/hyper/doombringer/turn_off(mob/user)
+	item_state = initial(item_state)
+	playsound(loc, 'sound/items/chainsaw_off.ogg', 80)
+	to_chat(user, SPAN_NOTICE("You turn the [src] off."))
+	..()
+
 
 //Armor
 

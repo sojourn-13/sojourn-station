@@ -106,6 +106,10 @@
 	display_name = "labcoat"
 	path = /obj/item/clothing/suit/storage/toggle/labcoat
 
+/datum/gear/suit/labcoat_purple
+	display_name = "purple labcoat"
+	path = /obj/item/clothing/suit/storage/toggle/labcoat/purple
+
 /datum/gear/suit/formal_labcoat
 	display_name = "formal labcoat"
 	path = /obj/item/clothing/suit/storage/toggle/labcoat/poofy

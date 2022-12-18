@@ -634,17 +634,17 @@
 
 /obj/item/ammo_magazine/ammobox/shotgun/ceramic
 	name = "ammunition packet (20mm Ceramic)"
-	icon_state = "slug"
+	icon_state = "ceramic"
 	ammo_type = /obj/item/ammo_casing/shotgun/ceramic
 
 /obj/item/ammo_magazine/ammobox/shotgun/blanks
 	name = "ammunition packet (20mm Blank)"
-	icon_state = "slug"
+	icon_state = "practice"
 	ammo_type = /obj/item/ammo_casing/shotgun/blank
 
 /obj/item/ammo_magazine/ammobox/shotgun/practiceshells
 	name = "ammunition packet (20mm Practice Shells)"
-	icon_state = "slug"
+	icon_state = "practice"
 	ammo_type = /obj/item/ammo_casing/shotgun/practice
 
 /obj/item/ammo_magazine/ammobox/shotgun/beanbags
@@ -660,7 +660,7 @@
 //used in mapping only cases
 /obj/item/ammo_magazine/ammobox/shotgun/flashshells
 	name = "signaling ammunition packet (20mm Illumination)"
-	icon_state = "stunslug"
+	icon_state = "illum"
 	matter = list(MATERIAL_CARDBOARD = 2)
 	w_class = ITEM_SIZE_BULKY
 	ammo_type = /obj/item/ammo_casing/shotgun/illumination
@@ -668,7 +668,7 @@
 
 /obj/item/ammo_magazine/ammobox/shotgun/flash
 	name = "ammunition packet (20mm Illumination)"
-	icon_state = "stunslug"
+	icon_state = "illum"
 	ammo_type = /obj/item/ammo_casing/shotgun/illumination
 
 /obj/item/ammo_magazine/ammobox/shotgun/stunshells
@@ -683,12 +683,12 @@
 
 /obj/item/ammo_magazine/ammobox/shotgun/incendiary
 	name = "ammunition packet (20mm Incendiary)"
-	icon_state = "explosive"
+	icon_state = "incendiary"
 	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
 
 /obj/item/ammo_magazine/ammobox/shotgun/scrap_beanbag
 	name = "old ammunition packet (20mm Beanbag)"
-	icon_state = "shot_scrap"
+	icon_state = "shot_rs"
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag/scrap
 
 /obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet
@@ -698,6 +698,6 @@
 
 /obj/item/ammo_magazine/ammobox/shotgun/scrap_slug
 	name = "old ammunition packet (20mm Slug)"
-	icon_state = "shot_scrap"
+	icon_state = "shot_ss"
 	ammo_type = /obj/item/ammo_casing/shotgun/scrap
 

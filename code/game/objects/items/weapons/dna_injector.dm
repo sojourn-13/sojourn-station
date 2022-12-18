@@ -163,7 +163,7 @@
 
 /obj/item/dnainjector/xraymut
 	name = "\improper DNA injector (Xray)"
-	desc = "Finally you can see what the Captain does."
+	desc = "Finally you can see what the people do in dorms."
 	datatype = DNA2_BUF_SE
 	value = 0xFFF
 	//block = 8
