@@ -1242,6 +1242,15 @@
 	phrase = ""
 	var/pokesound = null
 
+/obj/item/toy/plushie/fumo/marisa
+	icon_state = "fumoplushie_marisa"
+
+/obj/item/toy/plushie/fumo/astolfo
+	icon_state = "fumoplushie_astolfo"
+
+/obj/item/toy/plushie/fumo/cirno
+	icon_state = "fumoplushie_cirno"
+
 /obj/item/toy/plushie/fumo/attack_self(mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(user.a_intent == I_HELP)
