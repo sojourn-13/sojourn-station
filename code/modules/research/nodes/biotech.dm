@@ -104,8 +104,7 @@
 							/datum/design/research/circuit/extractor,
 							/datum/design/research/circuit/seed_extractor,
 							/datum/design/research/circuit/editor,
-							/datum/design/research/item/weapon/flora_gun,
-							/datum/design/research/item/botany_disk
+							/datum/design/research/item/weapon/flora_gun
 							)
 
 /datum/technology/portable_chemistry

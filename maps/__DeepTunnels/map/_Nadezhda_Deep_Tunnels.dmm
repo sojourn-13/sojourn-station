@@ -3810,7 +3810,6 @@
 "jT" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/tablet/lease/preset/medical,
-/obj/item/storage/box/botanydisk,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostbotany)
 "jU" = (

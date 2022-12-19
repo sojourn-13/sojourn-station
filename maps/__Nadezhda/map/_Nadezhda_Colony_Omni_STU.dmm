@@ -13826,8 +13826,6 @@
 /obj/item/honey_frame,
 /obj/item/bee_pack,
 /obj/item/bee_smoker,
-/obj/item/storage/box/botanydisk,
-/obj/item/storage/box/botanydisk,
 /obj/item/beehive_assembly,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
