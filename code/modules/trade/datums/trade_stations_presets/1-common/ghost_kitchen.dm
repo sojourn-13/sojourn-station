@@ -14,7 +14,7 @@
 	regain_stock = FALSE
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 300
-	stations_recommended = list("mcronalds") //Alt way to get to it
+	stations_recommended = list("mcronalds", "botany") //Alt way to get to it
 	inventory = list(
 		"Non-Meals" = list(
 			/obj/item/reagent_containers/food/snacks/rawcutlet = good_data("Raw Cutlet", list(-100, -50), 5),
