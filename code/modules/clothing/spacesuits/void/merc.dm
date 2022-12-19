@@ -136,7 +136,7 @@
 	item_state = "scaf_mil"
 	helmet = /obj/item/clothing/head/helmet/space/void/SCAF/blackshield
 
-//Voidsuit for traitors
+//Voidsuit for contractors
 /obj/item/clothing/head/helmet/space/void/merc
 	name = "blood-red voidsuit helmet"
 	desc = "An advanced helmet designed for work in special operations. This version is additionally reinforced against melee attacks."

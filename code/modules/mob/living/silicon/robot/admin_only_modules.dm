@@ -30,7 +30,7 @@
 
 	..(R)
 
-//Syndicate borg is intended for summoning by traitors. Not currently implemented
+//Syndicate borg is intended for summoning by contractors. Not currently implemented
 /obj/item/robot_module/syndicate
 	name = "syndicate robot module"
 	hide_on_manifest = TRUE
