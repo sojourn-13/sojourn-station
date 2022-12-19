@@ -1,4 +1,4 @@
-GLOBAL_LIST_EMPTY(various_antag_contracts)	//Contracts from "Various" emloyers, currently used by Traitors, Changelings and Blitzshells
+GLOBAL_LIST_EMPTY(various_antag_contracts)	//Contracts from "Various" emloyers, currently used by contractors, Changelings and Blitzshells
 GLOBAL_LIST_EMPTY(excel_antag_contracts)	//Excelsior contracts
 GLOBAL_LIST_EMPTY(blackshield_antag_contracts)	//Excelsior contracts
 GLOBAL_LIST_INIT(antag_item_targets,list(
@@ -173,7 +173,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		candidates -= candidate_mind
 
 		// Implant contracts are 75% less likely to target contract-based antags to reduce the amount of cheesy self-implants
-		if((player_is_antag_id(candidate_mind, ROLE_TRAITOR) || player_is_antag_id(candidate_mind, ROLE_CARRION)) && prob(75))
+		if((player_is_antag_id(candidate_mind, ROLE_CONTRACTOR) || player_is_antag_id(candidate_mind, ROLE_CARRION)) && prob(75))
 			continue
 
 		// No check for cruciform because the spying implant can bypass it

@@ -10,7 +10,7 @@
 	caliber = CAL_SHOTGUN
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_DRUM //Made for drums, this way it can't be OP despite being literal traitor shotgun
+	mag_well = MAG_WELL_DRUM //Made for drums, this way it can't be OP despite being literal contractor shotgun
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1250
 	fire_sound = 'sound/weapons/guns/fire/riot_shotgun.ogg' //Meatier sound

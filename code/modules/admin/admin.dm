@@ -9,7 +9,7 @@ var/global/floorIsLava = 0
 #define ADMIN_PP_DISPLAY(user,display) "<a href='?_src_=holder;adminplayeropts=\ref[user]'>[display]</a>"
 #define ADMIN_VV_DISPLAY(atom,display) "<a href='?_src_=vars;Vars=\ref[atom]'>[display]</a>"
 #define ADMIN_SM_DISPLAY(user,display) "<a href='?_src_=holder;subtlemessage=\ref[user]'>[display]</a>"
-#define ADMIN_TP_DISPLAY(user,display) "<a href='?_src_=holder;traitor=\ref[user]'>[display]</a>"
+#define ADMIN_TP_DISPLAY(user,display) "<a href='?_src_=holder;contractor=\ref[user]'>[display]</a>"
 
 ////////////////////////////////
 /proc/message_admins(var/msg, tag = "admin_log", tagtext = "ADMIN LOG", mod_send_message = FALSE)
@@ -141,7 +141,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/show_player_panel, null, TRUE)
 	body += {"
 		<br><br>\[
 		<a href='?_src_=vars;Vars=\ref[M]'>VV</a> -
-		<a href='?src=\ref[src];traitor=\ref[M]'>TP</a> -
+		<a href='?src=\ref[src];contractor=\ref[M]'>TP</a> -
 		<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a> -
 		<a href='?src=\ref[src];subtlemessage=\ref[M]'>SM</a> -
 		[admin_jump_link(M, src)] -
@@ -171,7 +171,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/show_player_panel, null, TRUE)
 		<A href='?src=\ref[src];jumpto=\ref[M]'><b>Jump to</b></A> |
 		<A href='?src=\ref[src];getmob=\ref[M]'>Get</A>
 		<br><br>
-		[check_rights(R_ADMIN|R_MOD,0) ? "<A href='?src=\ref[src];traitor=\ref[M]'>Traitor panel</A> | " : "" ]
+		[check_rights(R_ADMIN|R_MOD,0) ? "<A href='?src=\ref[src];contractor=\ref[M]'>contractor panel</A> | " : "" ]
 		<A href='?src=\ref[src];narrateto=\ref[M]'>Narrate to</A> |
 		<A href='?src=\ref[src];subtlemessage=\ref[M]'>Subtle message</A>
 	"}
@@ -1051,12 +1051,12 @@ ADMIN_VERB_ADD(/datum/admins/proc/list_var_copies, R_ADMIN|R_DEBUG|R_FUN, TRUE)
 		to_chat(usr, key_to_print) //prints the keys, not the values
 
 // -Removed due to rare practical use. Moved to debug verbs ~Errorage,
-//ADMIN_VERB_ADD(/datum/admins/proc/show_traitor_panel, R_ADMIN, TRUE)
+//ADMIN_VERB_ADD(/datum/admins/proc/show_contractor_panel, R_ADMIN, TRUE)
 //interface which shows a mob's mind
-/datum/admins/proc/show_traitor_panel(var/mob/M in SSmobs.mob_list)
+/datum/admins/proc/show_contractor_panel(var/mob/M in SSmobs.mob_list)
 	set category = "Admin"
 	set desc = "Edit mobs's memory and role"
-	set name = "Show Traitor Panel"
+	set name = "Show contractor Panel"
 
 	if(!istype(M))
 		to_chat(usr, "This can only be used on instances of type /mob")
@@ -1251,7 +1251,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/force_mode_latespawn, R_ADMIN, FALSE)
 /datum/admins/proc/force_mode_latespawn()
 	set category = "Admin"
 	set name = "Force Mode Spawn"
-	set desc = "Force autotraitor to proc."
+	set desc = "Force autocontractor to proc."
 
 	if (!istype(src,/datum/admins))
 		src = usr.client.holder
