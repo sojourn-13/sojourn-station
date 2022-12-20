@@ -37,70 +37,51 @@
 		cargo_holder = M
 		return
 
-	action(atom/target)
+	attack_object(obj/T, mob/living/user) //attack_object override for all of the clamp's fancy interactions
 		if(!action_checks(target)) return
 		if(!cargo_holder) return
 
 		//loading
-		if(isobj(target))
-			var/obj/O = target
-			if(O.buckled_mob)
-				return
-			if(locate(/mob/living) in O)
-				occupant_message(SPAN_WARNING("You can't load living things into the cargo compartment."))
-				return
-			if(istype(target, /obj/structure/scrap))
-				occupant_message(SPAN_NOTICE("\The [chassis] begins compressing \the [O] with \the [src]."))
-				if(do_after_cooldown(O))
-					if(istype(O, /obj/structure/scrap))
-						var/obj/structure/scrap/S = O
-						S.make_cube()
-						occupant_message(SPAN_NOTICE("\The [chassis] compresses \the [O] into a cube with \the [src]."))
-				return
-			if(O.anchored && !istype(O, /obj/structure/salvageable))
-				occupant_message(SPAN_WARNING("[target] is firmly secured."))
-				return
-			if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
-				occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
-				return
+		if(T.buckled_mob)
+			return
+		if(locate(/mob/living) in T)
+			occupant_message(SPAN_WARNING("You can't load living things into the cargo compartment."))
+			return
+		if(istype(T, /obj/structure/scrap))
+			occupant_message(SPAN_NOTICE("\The [chassis] begins compressing \the [O] with \the [src]."))
+			if(do_after_cooldown(T))
+				if(istype(T, /obj/structure/scrap))
+					var/obj/structure/scrap/S = T
+					S.make_cube()
+					occupant_message(SPAN_NOTICE("\The [chassis] compresses \the [O] into a cube with \the [src]."))
+			return
+		if(T.anchored && !istype(T, /obj/structure/salvageable))
+			occupant_message(SPAN_WARNING("[T] is firmly secured."))
+			return
+		if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
+			occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
+			return
 
-
-			occupant_message("You lift [target] and start to load it into cargo compartment.")
-			playsound(src,'sound/mecha/hydraulic.ogg',100,1)
-			chassis.visible_message("[chassis] lifts [target] and starts to load it into cargo compartment.")
-			set_ready_state(0)
-			chassis.use_power(energy_drain)
-			O.anchored = 1
-			var/T = chassis.loc
-			if(do_after_cooldown(target))
-				if(T == chassis.loc && src == chassis.selected)
-					cargo_holder.cargo += O
-					O.loc = chassis
-					O.anchored = 0
-					occupant_message(SPAN_NOTICE("[target] succesfully loaded."))
-					log_message("Loaded [O]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
-				else
-					occupant_message(SPAN_WARNING("You must hold still while handling objects."))
-					O.anchored = initial(O.anchored)
-
-		//attacking
-		else if(isliving(target))
-			var/mob/living/M = target
-			if(M.stat>1) return
-			if(chassis.occupant.a_intent == I_HURT)
-				M.take_overall_damage(dam_force)
-				M.adjustOxyLoss(round(dam_force/2))
-				M.updatehealth()
-				occupant_message(SPAN_WARNING("You squeeze [target] with [src.name]. Something cracks."))
-				chassis.visible_message(SPAN_WARNING("[chassis] squeezes [target]."))
+		occupant_message("You lift [T] and start to load it into cargo compartment.")
+		playsound(src,'sound/mecha/hydraulic.ogg',100,1)
+		chassis.visible_message("[chassis] lifts [T] and starts to load it into cargo compartment.")
+		set_ready_state(0)
+		chassis.use_power(energy_drain)
+		T.anchored = 1
+		var/L = chassis.loc
+		if(do_after_cooldown(T))
+			if(L == chassis.loc && src == chassis.selected)
+				cargo_holder.cargo += T
+				T.loc = chassis
+				T.anchored = 0
+				occupant_message(SPAN_NOTICE("[T] succesfully loaded."))
+				log_message("Loaded [T]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
 			else
-				step_away(M,chassis)
-				occupant_message("You push [target] out of the way.")
-				chassis.visible_message("[chassis] pushes [target] out of the way.")
-			set_ready_state(0)
-			chassis.use_power(energy_drain)
-			do_after_cooldown()
-		return 1
+				occupant_message(SPAN_WARNING("You must hold still while handling objects."))
+				T.anchored = initial(T.anchored)
+
+		return ..()
+
 
 /obj/item/mecha_parts/mecha_equipment/tool/drill
 	name = "drill"

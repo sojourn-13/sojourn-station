@@ -7,7 +7,7 @@
 	name = "mecha equipment"
 	icon = 'icons/mecha/mecha_equipment.dmi'
 	icon_state = "mecha_equip"
-	force = 5
+	force = 10
 	origin_tech = list(TECH_MATERIAL = 2)
 	matter = list(MATERIAL_STEEL = 20)
 	var/equip_cooldown = 0 //time between 'uses'
@@ -112,7 +112,7 @@
 /obj/item/mecha_parts/mecha_equipment/attack(mob/living/M, mob/living/user, target_zone) // Copy of item_attack code, modified to not take into account user stats or health since the mech's doing all the hard work
 	if(!user)
 		return FALSE
-	
+
 	if(!force || (flags & NOBLUDGEON))
 		return FALSE
 
@@ -134,9 +134,9 @@
 		chassis.visible_message("[chassis] pushes [M] out of the way.")
 	else
 		var/hit_zone = M.resolve_item_attack(src, user, target_zone) // Zone targetting
-		if(hit_zone) 
+		if(hit_zone)
 		//	do_attack_animation(chassis) // TODO - Make mech animation happen
-			apply_hit_effect(M, user, hit_zone) 
+			apply_hit_effect(M, user, hit_zone)
 
 	// Mech equipment delay, not going to use click speed for mechs, I don't think it would be too balanced - Wizard
 	user.setClickCooldown(equip_cooldown)

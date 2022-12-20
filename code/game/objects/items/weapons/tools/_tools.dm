@@ -543,7 +543,7 @@
 				return
 			//Drop the tool on the floor
 			if("drop")
-				if(user)
+				if(user && !istype(src,/obj/item/mecha_parts/mecha_equipment))
 					to_chat(user, SPAN_DANGER("You drop [src] on the floor."))
 					user.drop_from_inventory(src)
 				else if(istype(loc, /obj/machinery/door/airlock))
@@ -556,9 +556,16 @@
 			//Hit yourself
 			if("slip")
 				var/mob/living/carbon/human/H = user
-				to_chat(user, SPAN_DANGER("Your hand slips while working with [src]!"))
-				attack(H, H, H.get_holding_hand(src))
-				return
+				if(istype(src,/obj/item/mecha_parts/mecha_equipment)) //Mecha test
+					var/obj/item/mecha_parts/mecha_equipment/E = src
+					var/atom/U = E.chassis
+					to_chat(user, SPAN_DANGER("Your controls slip while working with [src]!"))
+					E.attack_object(U,H)
+					return
+				else
+					to_chat(user, SPAN_DANGER("Your hand slips while working with [src]!"))
+					attack(H, H, H.get_holding_hand(src))
+					return
 
 			//Hit a random atom around you
 			if("swing")
@@ -578,7 +585,7 @@
 
 			//Throw the tool in a random direction
 			if("throw")
-				if(user)
+				if(user && !istype(src,/obj/item/mecha_parts/mecha_equipment))
 					var/mob/living/carbon/human/H = user
 					var/throw_target = pick(trange(6, user))
 					to_chat(user, SPAN_DANGER("Your [src] flies away!"))
@@ -596,20 +603,22 @@
 
 			//Stab yourself in the hand so hard your tool embeds
 			if("stab")
-				var/mob/living/carbon/human/H = user
-				to_chat(user, SPAN_DANGER("You accidentally stuck [src] in your hand!"))
-				H.get_organ(H.get_holding_hand(src)).embed(src)
-				return
+				if(!istype(src,/obj/item/mecha_parts/mecha_equipment))
+					var/mob/living/carbon/human/H = user
+					to_chat(user, SPAN_DANGER("You accidentally stuck [src] in your hand!"))
+					H.get_organ(H.get_holding_hand(src)).embed(src)
+					return
 
 			//The fuel in the tool ignites and sets you aflame
 			if("burn")
-				to_chat(user, SPAN_DANGER("You ignite the fuel of the [src]!"))
-				var/fuel = T.get_fuel()
-				T.consume_fuel(fuel)
-				user.adjust_fire_stacks(fuel/10)
-				user.IgniteMob()
-				T.update_icon()
-				return
+				if(!istype(src,/obj/item/mecha_parts/mecha_equipment))
+					to_chat(user, SPAN_DANGER("You ignite the fuel of the [src]!"))
+					var/fuel = T.get_fuel()
+					T.consume_fuel(fuel)
+					user.adjust_fire_stacks(fuel/10)
+					user.IgniteMob()
+					T.update_icon()
+					return
 
 			//The cell explodes
 			//This can happen even with non-tools which contain a cell
