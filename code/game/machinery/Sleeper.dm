@@ -29,14 +29,16 @@
 
 /obj/machinery/sleeper/hyper
 	name = "hyper-sleeper"
-	desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner. Unlike standard sleepers this one comes with additional chemical synthesizers but is one of a kind."
+	desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner. Unlike standard sleepers, this one comes with additional chemical synthesizers, but is one of a kind."
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "hypersleeper"
 	scanning = 4 //Hyper has 4 scanners.
+	idle_power_usage = 30 // Complicated, high power machinery
+	active_power_usage = 400
 	color = "#a4bdba"
 	circuit = /obj/item/circuitboard/sleeper/hyper
 	level0 = list(
-		"tricordrazine" ="Tricordrazine", "tramadol" = "Tramadol", "dexalinp" = "Dexalin Plus", "bicaridine" = "Bicaridine", "dermaline" = "Dermaline", "carthatoline" = "Carthatoline", "peridaxon" = "Peridaxon")
+		"tramadol" = "Tramadol", "dexalinp" = "Dexalin Plus", "bicaridine" = "Bicaridine", "dermaline" = "Dermaline", "carthatoline" = "Carthatoline", "peridaxon" = "Peridaxon")
 
 /obj/machinery/sleeper/Initialize()
 	. = ..()

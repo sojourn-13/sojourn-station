@@ -31,6 +31,9 @@
 		src.icon_state = _icon_state
 	..()
 
+/obj/screen/examine(mob/user)
+	if(desc)
+		to_chat(user, SPAN_NOTICE(desc))
 
 /obj/screen/Process()
 	return
@@ -51,11 +54,13 @@
 
 
 /obj/screen/Click(location, control, params)
-	if(!usr)
-		return TRUE
+	// Object Click() processed before and separately from mob's ClickOn(), thus every shift click doubles as just click
+	// This is a band aid to prevent such behavior
+	var/list/modifiers = params2list(params)
+	if(desc && modifiers["shift"])
+		return
 
 	switch(name)
-
 		if("equip")
 			if (istype(usr.loc,/obj/mecha)) // stops inventory actions in a mech
 				return TRUE
@@ -65,8 +70,7 @@
 
 		if("Reset Machine")
 			usr.unset_machine()
-		else
-			return FALSE
+
 	return TRUE
 //--------------------------------------------------close---------------------------------------------------------
 
@@ -334,6 +338,9 @@
 //--------------------------------------------------health---------------------------------------------------------
 /obj/screen/health
 	name = "health"
+	desc = "Not your actual health, but an estimate of how much pain you feel.\
+	<br>Experience too much of it, and you will lose consciousness.\
+	<br>Pain tolerance scales with your Toughness."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "health0"
 	screen_loc = "15,7"
@@ -377,6 +384,8 @@
 	add_overlay( ovrls["health7"])
 
 /obj/screen/health/Click()
+	if(!..())
+		return
 	if(ishuman(parentmob))
 		var/mob/living/carbon/human/H = parentmob
 		H.check_self_for_injuries()
@@ -384,7 +393,11 @@
 //--------------------------------------------------health end---------------------------------------------------------
 //--------------------------------------------------sanity---------------------------------------------------------
 /obj/screen/sanity
-	name = "sanity"
+	name = "inspiration"
+	desc = "The color of the icon displays how close you are to receive an epiphany from your experiences.\
+	Once your inspiration is high enough, you will crave for food, drinks or drugs, to be able to reflect upon all you've learned so far. \
+	Satisfy these cravings and you'll be able to \"rest\", improving upon your stats slightly, or depending on any anomalies held, \
+	you'll gain a new perk, for ill or good, and better stat gains."
 	icon_state = "blank"
 
 /obj/screen/sanity/New()
@@ -451,6 +464,9 @@
 //--------------------------------------------------nsa---------------------------------------------------------
 /obj/screen/nsa
 	name = "nsa"
+	desc = "Neural System Accumulation depicts strain your body is experiencing from processing potent chemicals.\
+	<br>It is increased (or decreased) by certain chemicals and character backgrounds.\
+	<br>Going beyond your body's limits has negative consequences, starting from vomits and ranging to heavy intoxication."
 	icon_state = "blank"
 
 /obj/screen/nsa/New()
@@ -505,6 +521,7 @@
 //--------------------------------------------------nutrition---------------------------------------------------------
 /obj/screen/nutrition
 	name = "nutrition"
+	desc = "This bar shows how satiated you are in terms of hunger. Being malnourished (orange and below) significantly slows you down. Not updated immediately after eating."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "blank"
 	screen_loc = "15,6"
@@ -544,6 +561,9 @@
 //--------------------------------------------------bodytemp---------------------------------------------------------
 /obj/screen/bodytemp
 	name = "bodytemp"
+	desc = "Temperature of your body. Affected by environment, health, and certain reagents.\
+	<br>Fever might be a sign of untreated infection.\
+	<br>You are slowed down if your body temperature is low enough, and hurt if it is high enough."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "blank"
 	screen_loc = "15,8"
@@ -613,6 +633,8 @@
 //--------------------------------------------------pressure---------------------------------------------------------
 /obj/screen/pressure
 	name = "pressure"
+	desc = "Barometric pressure experienced by your body.\
+	<br>Being in an environment with extreme pressure without a voidsuit is fatal."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "blank"
 	screen_loc = "15,13"

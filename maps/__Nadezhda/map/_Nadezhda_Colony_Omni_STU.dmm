@@ -50825,6 +50825,11 @@
 /obj/random/contraband/low_chance,
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"jHI" = (
+/obj/structure/table/woodentable,
+/obj/item/material/kitchen/rollingpin,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/absolutism/vectorrooms)
 "jHL" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk,
@@ -118366,10 +118371,11 @@
 /obj/item/reagent_containers/food/drinks/milk,
 /obj/item/reagent_containers/food/drinks/milk,
 /obj/item/reagent_containers/food/snacks/meat,
-/obj/item/material/kitchen/rollingpin,
 /obj/machinery/light_switch{
 	pixel_y = 30
 	},
+/obj/item/reagent_containers/food/drinks/bottle/cream,
+/obj/item/reagent_containers/food/drinks/bottle/cream,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/absolutism/vectorrooms)
 "weT" = (
@@ -234885,7 +234891,7 @@ oQZ
 elF
 xzr
 riw
-kyl
+jHI
 rYv
 rYv
 rYv
